@@ -18,7 +18,8 @@ pg.dorm3d_shop_template = setmetatable({
 		14,
 		15,
 		16,
-		17
+		17,
+		18
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -198,7 +199,7 @@ pg.base.dorm3d_shop_template = {
 		type = 2,
 		id = 9,
 		room_id = 20220,
-		order = "12",
+		order = "13",
 		unlock = "",
 		panel = {
 			2,
@@ -219,7 +220,7 @@ pg.base.dorm3d_shop_template = {
 		type = 2,
 		id = 10,
 		room_id = 20220,
-		order = "15",
+		order = "16",
 		unlock = "",
 		panel = {
 			2,
@@ -240,7 +241,7 @@ pg.base.dorm3d_shop_template = {
 		type = 2,
 		id = 11,
 		room_id = 30221,
-		order = "13",
+		order = "14",
 		unlock = "",
 		panel = {
 			2,
@@ -261,7 +262,7 @@ pg.base.dorm3d_shop_template = {
 		type = 2,
 		id = 12,
 		room_id = 19903,
-		order = "14",
+		order = "15",
 		unlock = "",
 		panel = {
 			2,
@@ -282,7 +283,7 @@ pg.base.dorm3d_shop_template = {
 		type = 2,
 		id = 13,
 		room_id = 0,
-		order = "16",
+		order = "17",
 		unlock = "",
 		panel = {
 			5
@@ -305,7 +306,7 @@ pg.base.dorm3d_shop_template = {
 		type = 2,
 		id = 14,
 		room_id = 0,
-		order = "17",
+		order = "18",
 		unlock = "",
 		panel = {
 			5
@@ -374,6 +375,27 @@ pg.base.dorm3d_shop_template = {
 		},
 		banners = {
 			"banner_beach4"
+		}
+	},
+	{
+		name = "Foot Massager",
+		rarity = 4,
+		item_id = 3022102,
+		type = 2,
+		id = 18,
+		room_id = 30221,
+		order = "12",
+		unlock = "",
+		panel = {
+			2,
+			3,
+			4
+		},
+		shop_id = {
+			260322
+		},
+		banners = {
+			"banner_gift3022102"
 		}
 	}
 }

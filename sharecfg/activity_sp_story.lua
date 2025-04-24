@@ -3164,6 +3164,151 @@ pg.activity_sp_story = {
 			}
 		}
 	},
+	[181] = {
+		story_type = 1,
+		pre_event = "",
+		name = "EPS-1 The Banquet",
+		unlock_conditions = "",
+		change_prefab = "",
+		change_background = "star_level_bg_541",
+		story = "YANGQIYUJINZHIQI1",
+		change_bgm = "story-richang-light",
+		id = 181,
+		lock = ""
+	},
+	[182] = {
+		story_type = 1,
+		name = "EPS-2 The NA Ocean Purification Campaign",
+		unlock_conditions = "Clear EPS-1.",
+		change_bgm = "story-tulipa",
+		change_prefab = "",
+		change_background = "star_level_bg_188",
+		id = 182,
+		story = "YANGQIYUJINZHIQI2",
+		pre_event = {
+			181
+		},
+		lock = {
+			{
+				4,
+				181
+			}
+		}
+	},
+	[183] = {
+		story_type = 1,
+		name = "EPS-3 Nieuwe Haven",
+		unlock_conditions = "Clear EPS-2.",
+		change_bgm = "theme-tulipa",
+		change_prefab = "",
+		change_background = "bg_yujin_1",
+		id = 183,
+		story = "YANGQIYUJINZHIQI3",
+		pre_event = {
+			182
+		},
+		lock = {
+			{
+				4,
+				182
+			}
+		}
+	},
+	[184] = {
+		story_type = 1,
+		name = "EPS-4 Supplementary Intel",
+		unlock_conditions = "Clear EPS-3.",
+		change_bgm = "story-tulipa",
+		change_prefab = "",
+		change_background = "bg_yujin_2",
+		id = 184,
+		story = "YANGQIYUJINZHIQI4",
+		pre_event = {
+			183
+		},
+		lock = {
+			{
+				4,
+				183
+			}
+		}
+	},
+	[185] = {
+		story_type = 1,
+		name = "EPS-5 Setting Sail",
+		unlock_conditions = "Clear EPS-4.",
+		change_bgm = "battle-tulipa",
+		change_prefab = "",
+		change_background = "bg_yujin_cg1",
+		id = 185,
+		story = "YANGQIYUJINZHIQI5",
+		pre_event = {
+			184
+		},
+		lock = {
+			{
+				4,
+				184
+			}
+		}
+	},
+	[186] = {
+		story_type = 2,
+		name = "EPS-6 The Tulipans' First Battle – 1",
+		unlock_conditions = "Clear EPS-5.",
+		change_bgm = "battle-tulipa",
+		change_prefab = "",
+		change_background = "bg_yujin_3",
+		id = 186,
+		story = "1916001",
+		pre_event = {
+			185
+		},
+		lock = {
+			{
+				4,
+				185
+			}
+		}
+	},
+	[187] = {
+		story_type = 2,
+		name = "EPS-7 The Tulipans' First Battle – 2",
+		unlock_conditions = "Clear EPS-6.",
+		change_bgm = "story-tulipa",
+		change_prefab = "",
+		change_background = "bg_yujin_cg2",
+		id = 187,
+		story = "1916002",
+		pre_event = {
+			186
+		},
+		lock = {
+			{
+				4,
+				186
+			}
+		}
+	},
+	[188] = {
+		story_type = 1,
+		name = "EPS-8 Flames and Sprouts",
+		unlock_conditions = "Clear EPS-7.",
+		change_bgm = "theme-tulipa",
+		change_prefab = "",
+		change_background = "bg_yujin_2",
+		id = 188,
+		story = "YANGQIYUJINZHIQI8",
+		pre_event = {
+			187
+		},
+		lock = {
+			{
+				4,
+				187
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -3332,6 +3477,14 @@ pg.activity_sp_story = {
 		173,
 		174,
 		175,
-		176
+		176,
+		181,
+		182,
+		183,
+		184,
+		185,
+		186,
+		187,
+		188
 	}
 }

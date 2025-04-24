@@ -3,18 +3,19 @@ pg.dorm3d_rooms = {
 	{
 		invite_icon = "",
 		invite_banner = "",
-		type = 2,
+		tag = "",
 		resource_name = "Tianlangxing_DB",
 		assets_prefix = "Tianlangxing",
+		type = 2,
 		invite_cost = "",
-		tag = "",
-		room_des = "",
+		is_common = 0,
 		scene_info = "map_siriushostel_01|Tianlangxing_DB/SiriusHostel",
 		in_map = "floor_1",
 		room = "Sirius",
 		invite_mark = "",
 		id = 1,
 		room_bgm = "story-room-sirius",
+		room_des = "",
 		character = {
 			20220
 		},
@@ -82,18 +83,19 @@ pg.dorm3d_rooms = {
 	{
 		invite_icon = "",
 		invite_banner = "",
-		type = 2,
+		tag = "",
 		resource_name = "Nengdai_DB",
 		assets_prefix = "Nengdai",
+		type = 2,
 		invite_cost = "",
-		tag = "",
-		room_des = "",
+		is_common = 0,
 		scene_info = "map_noshirohostel_01|Nengdai_DB/Noshirohostel",
 		in_map = "floor_1",
 		room = "Noshiro",
 		invite_mark = "",
 		id = 2,
 		room_bgm = "story-room-noshiro",
+		room_des = "",
 		character = {
 			30221
 		},
@@ -123,7 +125,8 @@ pg.dorm3d_rooms = {
 			21,
 			22,
 			23,
-			31
+			31,
+			32
 		},
 		ar_anim = {
 			{
@@ -161,18 +164,19 @@ pg.dorm3d_rooms = {
 	{
 		invite_icon = "",
 		invite_banner = "",
-		type = 2,
+		tag = "",
 		resource_name = "Ankeleiqi_DB",
 		assets_prefix = "Ankeleiqi",
+		type = 2,
 		invite_cost = "",
-		tag = "",
-		room_des = "",
+		is_common = 0,
 		scene_info = "map_anchoragehostel_01|Ankeleiqi_DB/Anchoragehostel",
 		in_map = "floor_1",
 		room = "Anchorage",
 		invite_mark = "",
 		id = 3,
 		room_bgm = "story-room-anchorage",
+		room_des = "",
 		character = {
 			19903
 		},
@@ -229,12 +233,13 @@ pg.dorm3d_rooms = {
 		}
 	},
 	{
-		tag = "beach",
-		room_des = "The seaside, swimsuits, beach volleyball... Enjoy the beach sunshine!",
 		type = 1,
+		room_des = "The seaside, swimsuits, beach volleyball... Enjoy the beach sunshine!",
+		tag = "beach",
 		resource_name = "Beach",
 		assets_prefix = "Beach",
 		scene_info = "map_beach_02|Beach",
+		is_common = 0,
 		in_map = "floor_1",
 		room = "Beach",
 		id = 4,
@@ -395,11 +400,11 @@ pg.dorm3d_rooms = {
 		}
 	},
 	{
-		invite_cost = "",
+		type = 1,
 		recall_list = "",
 		default_zone = "",
 		resource_name = "Bathroom",
-		type = 1,
+		invite_cost = "",
 		ar_anim = "",
 		room_bgm = "story-room-sirius",
 		room_des = "",
@@ -412,6 +417,7 @@ pg.dorm3d_rooms = {
 		invite_icon = "",
 		invite_banner = "",
 		assets_prefix = "Bathroom",
+		is_common = 1,
 		id = 5,
 		character = {
 			20220

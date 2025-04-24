@@ -940161,6 +940161,6410 @@ _G.pg.base.expedition_data_template[1904001] = {
 	},
 }
 
+_G.pg.base.expedition_data_template[1910001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910001,
+	effect_prefab = "",
+	exp = 130,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1910001,
+	level = 26,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200427,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910002,
+	effect_prefab = "",
+	exp = 148,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1910002,
+	level = 27,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200427,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910003,
+	effect_prefab = "",
+	exp = 168,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1910003,
+	level = 28,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200427,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910004,
+	effect_prefab = "",
+	exp = 130,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1910004,
+	level = 26,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200427,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910005,
+	effect_prefab = "",
+	exp = 148,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1910005,
+	level = 27,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200427,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910006,
+	effect_prefab = "",
+	exp = 168,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1910006,
+	level = 28,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200427,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910007,
+	effect_prefab = "",
+	exp = 130,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1910007,
+	level = 26,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200427,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910008,
+	effect_prefab = "",
+	exp = 148,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1910008,
+	level = 27,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200427,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910009,
+	effect_prefab = "",
+	exp = 168,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1910009,
+	level = 28,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200427,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910013,
+	effect_prefab = "",
+	exp = 217,
+	exp_commander = 0,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenzhanlie_i",
+	icon_type = 2,
+	id = 1910013,
+	level = 30,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 80,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200420,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910301,
+	effect_prefab = "",
+	exp = 196,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenquzhu_i",
+	icon_type = 2,
+	id = 1910301,
+	level = 29,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 70,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200420,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910302,
+	effect_prefab = "",
+	exp = 196,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenqingxun_i",
+	icon_type = 2,
+	id = 1910302,
+	level = 29,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 70,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200420,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910101] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910101,
+	effect_prefab = "",
+	exp = 205,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1910101,
+	level = 41,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200428,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910102] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910102,
+	effect_prefab = "",
+	exp = 231,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1910102,
+	level = 42,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200428,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910103] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910103,
+	effect_prefab = "",
+	exp = 258,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1910103,
+	level = 43,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200428,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910104] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910104,
+	effect_prefab = "",
+	exp = 205,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1910104,
+	level = 41,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200428,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910105] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910105,
+	effect_prefab = "",
+	exp = 231,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1910105,
+	level = 42,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200428,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910106] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910106,
+	effect_prefab = "",
+	exp = 258,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1910106,
+	level = 43,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200428,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910107] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910107,
+	effect_prefab = "",
+	exp = 205,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1910107,
+	level = 41,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200428,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910108] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910108,
+	effect_prefab = "",
+	exp = 231,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1910108,
+	level = 42,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200428,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910109] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910109,
+	effect_prefab = "",
+	exp = 258,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1910109,
+	level = 43,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200428,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910113] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910113,
+	effect_prefab = "",
+	exp = 326,
+	exp_commander = 0,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ganraozhe",
+	icon_type = 2,
+	id = 1910113,
+	level = 45,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 80,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200421,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910303] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910303,
+	effect_prefab = "",
+	exp = 297,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenqingxun_i",
+	icon_type = 2,
+	id = 1910303,
+	level = 44,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 70,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200421,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910304] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910304,
+	effect_prefab = "",
+	exp = 297,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenzhongxun_i",
+	icon_type = 2,
+	id = 1910304,
+	level = 44,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 70,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200421,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910201] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910101,
+	effect_prefab = "",
+	exp = 280,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1910201,
+	level = 56,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200429,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910202] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910102,
+	effect_prefab = "",
+	exp = 313,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1910202,
+	level = 57,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200429,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910203] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910103,
+	effect_prefab = "",
+	exp = 348,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1910203,
+	level = 58,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200429,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910204] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910104,
+	effect_prefab = "",
+	exp = 280,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1910204,
+	level = 56,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200429,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910205] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910105,
+	effect_prefab = "",
+	exp = 313,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1910205,
+	level = 57,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200429,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910206] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910106,
+	effect_prefab = "",
+	exp = 348,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1910206,
+	level = 58,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200429,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910207] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910107,
+	effect_prefab = "",
+	exp = 280,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1910207,
+	level = 56,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200429,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910208] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910108,
+	effect_prefab = "",
+	exp = 313,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1910208,
+	level = 57,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200429,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910209] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910109,
+	effect_prefab = "",
+	exp = 348,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1910209,
+	level = 58,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200429,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910213] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910213,
+	effect_prefab = "",
+	exp = 435,
+	exp_commander = 1,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "gulite_special",
+	icon_type = 1,
+	id = 1910213,
+	level = 60,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200422,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1910305] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1910305,
+	effect_prefab = "",
+	exp = 398,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ganraozhe",
+	icon_type = 2,
+	id = 1910305,
+	level = 59,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 70,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200422,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911001,
+	effect_prefab = "",
+	exp = 380,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1911001,
+	level = 76,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200430,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911002,
+	effect_prefab = "",
+	exp = 423,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1911002,
+	level = 77,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200430,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911003,
+	effect_prefab = "",
+	exp = 468,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1911003,
+	level = 78,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200430,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911004,
+	effect_prefab = "",
+	exp = 380,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1911004,
+	level = 76,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200430,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911005,
+	effect_prefab = "",
+	exp = 423,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1911005,
+	level = 77,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200430,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911006,
+	effect_prefab = "",
+	exp = 468,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1911006,
+	level = 78,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200430,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911007,
+	effect_prefab = "",
+	exp = 380,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1911007,
+	level = 76,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200430,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911008,
+	effect_prefab = "",
+	exp = 423,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1911008,
+	level = 77,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200430,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911009,
+	effect_prefab = "",
+	exp = 468,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1911009,
+	level = 78,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200430,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911013,
+	effect_prefab = "",
+	exp = 580,
+	exp_commander = 1,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenzhanlie_i",
+	icon_type = 2,
+	id = 1911013,
+	level = 80,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 80,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200423,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911301,
+	effect_prefab = "",
+	exp = 533,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenqingxun_i",
+	icon_type = 2,
+	id = 1911301,
+	level = 79,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 70,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200423,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911302,
+	effect_prefab = "",
+	exp = 533,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenzhongxun_i",
+	icon_type = 2,
+	id = 1911302,
+	level = 79,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 70,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200423,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911101] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911101,
+	effect_prefab = "",
+	exp = 455,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1911101,
+	level = 91,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200431,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911102] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911102,
+	effect_prefab = "",
+	exp = 506,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1911102,
+	level = 92,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200431,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911103] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911103,
+	effect_prefab = "",
+	exp = 558,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1911103,
+	level = 93,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200431,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911104] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911104,
+	effect_prefab = "",
+	exp = 455,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1911104,
+	level = 91,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200431,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911105] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911105,
+	effect_prefab = "",
+	exp = 506,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1911105,
+	level = 92,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200431,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911106] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911106,
+	effect_prefab = "",
+	exp = 558,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1911106,
+	level = 93,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200431,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911107] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911107,
+	effect_prefab = "",
+	exp = 455,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1911107,
+	level = 91,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200431,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911108] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911108,
+	effect_prefab = "",
+	exp = 506,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1911108,
+	level = 92,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200431,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911109] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911109,
+	effect_prefab = "",
+	exp = 558,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1911109,
+	level = 93,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200431,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911113] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911113,
+	effect_prefab = "",
+	exp = 689,
+	exp_commander = 2,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ganraozhe",
+	icon_type = 2,
+	id = 1911113,
+	level = 95,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 80,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200424,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911303] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911303,
+	effect_prefab = "",
+	exp = 634,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenzhanlie_i",
+	icon_type = 2,
+	id = 1911303,
+	level = 94,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 70,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200424,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911304] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "theme-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911304,
+	effect_prefab = "",
+	exp = 634,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "sairenhangmu_i",
+	icon_type = 2,
+	id = 1911304,
+	level = 94,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 70,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200424,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911201] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911101,
+	effect_prefab = "",
+	exp = 505,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1911201,
+	level = 101,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200432,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911202] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911102,
+	effect_prefab = "",
+	exp = 561,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1911202,
+	level = 102,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200432,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911203] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911103,
+	effect_prefab = "",
+	exp = 618,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1911203,
+	level = 103,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200432,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911204] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911104,
+	effect_prefab = "",
+	exp = 505,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1911204,
+	level = 101,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200432,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911205] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911105,
+	effect_prefab = "",
+	exp = 561,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1911205,
+	level = 102,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200432,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911206] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911106,
+	effect_prefab = "",
+	exp = 618,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1911206,
+	level = 103,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200432,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911207] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911107,
+	effect_prefab = "",
+	exp = 505,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1911207,
+	level = 101,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200432,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911208] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911108,
+	effect_prefab = "",
+	exp = 561,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1911208,
+	level = 102,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200432,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911209] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911109,
+	effect_prefab = "",
+	exp = 618,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1911209,
+	level = 103,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200432,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911213] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911213,
+	effect_prefab = "",
+	exp = 761,
+	exp_commander = 3,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "gulite_special",
+	icon_type = 1,
+	id = 1911213,
+	level = 105,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56000,
+		},
+		{
+			2,
+			200425,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1911305] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1911305,
+	effect_prefab = "",
+	exp = 702,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ganraozhe",
+	icon_type = 2,
+	id = 1911305,
+	level = 104,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 70,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200425,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1914001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1914001,
+	effect_prefab = "",
+	exp = 530,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1914001,
+	level = 106,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200433,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1914002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1914002,
+	effect_prefab = "",
+	exp = 588,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1914002,
+	level = 107,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200433,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1914003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1914003,
+	effect_prefab = "",
+	exp = 648,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srqz2",
+	icon_type = 1,
+	id = 1914003,
+	level = 108,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200433,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1914004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1914004,
+	effect_prefab = "",
+	exp = 530,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1914004,
+	level = 106,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200433,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1914005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1914005,
+	effect_prefab = "",
+	exp = 588,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1914005,
+	level = 107,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200433,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1914006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1914006,
+	effect_prefab = "",
+	exp = 648,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srzl2",
+	icon_type = 1,
+	id = 1914006,
+	level = 108,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200433,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1914007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1914007,
+	effect_prefab = "",
+	exp = 530,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1914007,
+	level = 106,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200433,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1914008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1914008,
+	effect_prefab = "",
+	exp = 588,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1914008,
+	level = 107,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200433,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1914009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1914009,
+	effect_prefab = "",
+	exp = 648,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "srhm2",
+	icon_type = 1,
+	id = 1914009,
+	level = 108,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200433,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1914013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1914013,
+	effect_prefab = "",
+	exp = 797,
+	exp_commander = 4,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "gulite_special",
+	icon_type = 1,
+	id = 1914013,
+	level = 110,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56000,
+		},
+		{
+			2,
+			200426,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1914301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1914301,
+	effect_prefab = "",
+	exp = 736,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ganraozhe",
+	icon_type = 2,
+	id = 1914301,
+	level = 109,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 70,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200426,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1916001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1916001,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1916001,
+	level = 110,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 300,
+	type = 99,
+	map_id = {
+		{
+			50192,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1916002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-tulipa",
+	difficulty = 2,
+	dungeon_id = 1916002,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1916002,
+	level = 110,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 300,
+	type = 99,
+	map_id = {
+		{
+			50193,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
 _G.pg.base.expedition_data_template[5000020] = {
 	SLG_destroy_FX = "",
 	add_icon = "",

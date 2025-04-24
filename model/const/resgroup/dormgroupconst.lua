@@ -214,37 +214,43 @@ function var0_0.GetDownloadResourceDic()
 		var2_0 = {}
 
 		for iter0_18, iter1_18 in ipairs(pg.dorm3d_rooms.all) do
-			local var0_18 = string.lower(pg.dorm3d_rooms[iter1_18].resource_name)
+			local var0_18 = pg.dorm3d_rooms[iter1_18]
 
-			var2_0[var0_18] = true
+			if var0_18.is_common then
+				-- block empty
+			else
+				local var1_18 = string.lower(var0_18.resource_name)
+
+				var2_0[var1_18] = true
+			end
 		end
 	end
 
-	local var1_18 = {}
+	local var2_18 = {}
 
 	for iter2_18, iter3_18 in ipairs(DormGroupConst.GetDownloadList()) do
-		local var2_18 = "common"
+		local var3_18 = "common"
 
 		for iter4_18, iter5_18 in pairs(var1_0) do
-			local var3_18, var4_18 = string.find(iter3_18, iter5_18)
+			local var4_18, var5_18 = string.find(iter3_18, iter5_18)
 
-			if var4_18 then
-				local var5_18 = string.split(string.sub(iter3_18, var4_18 + 1), "/")[1]
+			if var5_18 then
+				local var6_18 = string.split(string.sub(iter3_18, var5_18 + 1), "/")[1]
 
-				if var2_0[var5_18] then
-					var2_18 = iter4_18 .. "_" .. var5_18
+				if var2_0[var6_18] then
+					var3_18 = iter4_18 .. "_" .. var6_18
 				end
 
 				break
 			end
 		end
 
-		var1_18[var2_18] = var1_18[var2_18] or {}
+		var2_18[var3_18] = var2_18[var3_18] or {}
 
-		table.insert(var1_18[var2_18], iter3_18)
+		table.insert(var2_18[var3_18], iter3_18)
 	end
 
-	return var1_18
+	return var2_18
 end
 
 function var0_0.DelDir(arg0_19)

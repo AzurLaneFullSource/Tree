@@ -316,6 +316,8 @@ pg.strategy_data_template = setmetatable({
 		201319,
 		201320,
 		201321,
+		201361,
+		201365,
 		205001,
 		205002,
 		205003,
@@ -3820,6 +3822,28 @@ pg.base.strategy_data_template = {
 		icon = "201321",
 		buff_type = 0,
 		desc = "The following effects activate based on your Exploration Count on this stage:\n1+: All ships in your fleet have their stats decreased by 15% and the enemy Flagship's DMG dealt decreases by 20%.\n2+: The enemy Flagship gains the Antibodies status; after the enemy Flaship appears, every time a ship in your Main Fleet fires her Main Guns, launches an airstrike, or launches torpedoes and missiles, the enemy Flagship takes 10%/10%/5% less DMG from the corresponding attack type the next time they are hit by it (each attack type debuff can stack up to 7 times).\n3+: All ships in your fleet have their stats decreased by an additional 15%, and every 5s, the ship in your fleet with the highest HP percentage loses 5% of her max HP.\n4+: All effects that restore your ships' HP become DMG-dealing effects instead, and a whirlpool that increases your fleet's DMG taken by 50% will slowly move across the battlefield following your Vanguard.",
+		arg = {}
+	},
+	[201361] = {
+		buff_id = 201361,
+		name = "Toward Tulipa's Seas",
+		iconSize = "",
+		type = 10,
+		id = 201361,
+		icon = "201361",
+		buff_type = 0,
+		desc = "At regular intervals, rotating shields that can negate a set number of enemy shells deploy around your ships.\nIf a Kingdom of Tulipa ship receives this shield, she also recovers a little HP.",
+		arg = {}
+	},
+	[201365] = {
+		buff_id = 201365,
+		name = "Dam Defense System",
+		iconSize = "",
+		type = 10,
+		id = 201365,
+		icon = "201365",
+		buff_type = 0,
+		desc = "During battle, friendly coastal batteries will provide supporting barrages.",
 		arg = {}
 	},
 	[205001] = {

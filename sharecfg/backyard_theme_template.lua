@@ -4746,6 +4746,43 @@ pg.backyard_theme_template = {
 			320306
 		}
 	},
+	[121] = {
+		Cfg_1 = 5,
+		name = "Tulipan Countryside",
+		hot = 1,
+		is_view = 1,
+		id = 121,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "Gentle breezes and fragrant flowers – these are the delights of life in the countryside!",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "xc2themeicon",
+		deblocking = 1,
+		order = 122,
+		ids = {
+			321001,
+			321002,
+			321101,
+			321102,
+			321103,
+			321104,
+			321105,
+			321106,
+			321107,
+			321108,
+			321109,
+			321110,
+			321111,
+			321112,
+			321113,
+			321115,
+			321116,
+			321117,
+			321118
+		}
+	},
 	all = {
 		1,
 		2,
@@ -4854,6 +4891,7 @@ pg.backyard_theme_template = {
 		117,
 		118,
 		119,
-		120
+		120,
+		121
 	}
 }

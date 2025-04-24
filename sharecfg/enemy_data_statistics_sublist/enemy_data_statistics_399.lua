@@ -1,1200 +1,1502 @@
 pg = pg or {}
 pg.enemy_data_statistics_399 = {
-	[295109] = {
-		cannon = 184,
-		name = "Renown META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 14,
-		base = 90675,
-		durability_growth = 0,
-		antiaircraft = 218,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 15,
-		hit = 50,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 70000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
+	[296232] = {
+		cannon = 152,
 		fog_fx = "",
-		id = 295109,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50500,
-				LV = 2
-			}
-		}
-	},
-	[295110] = {
-		cannon = 198,
-		name = "Renown META",
-		reload = 150,
-		cannon_growth = 0,
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 15,
-		base = 90675,
-		durability_growth = 0,
-		antiaircraft = 231,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 15,
-		hit = 55,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 110000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295110,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50500,
-				LV = 2
-			}
-		}
-	},
-	[295111] = {
-		cannon = 212,
-		name = "Renown META",
-		reload = 150,
+		luck = 0,
+		dodge = 0,
 		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 16,
-		base = 90675,
-		durability_growth = 0,
-		antiaircraft = 244,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 16,
-		hit = 60,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 150000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295111,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50500,
-				LV = 2
-			}
-		}
-	},
-	[295112] = {
-		cannon = 227,
-		name = "Renown META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 17,
-		base = 90675,
-		durability_growth = 0,
-		antiaircraft = 257,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 17,
-		hit = 65,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 230000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295112,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50500,
-				LV = 3
-			}
-		}
-	},
-	[295113] = {
-		cannon = 242,
-		name = "Renown META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 18,
-		base = 90675,
-		durability_growth = 0,
-		antiaircraft = 270,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 18,
-		hit = 70,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 310000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295113,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50500,
-				LV = 3
-			}
-		}
-	},
-	[295114] = {
-		cannon = 258,
-		name = "Renown META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 19,
-		base = 90675,
-		durability_growth = 0,
-		antiaircraft = 283,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 19,
-		hit = 75,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 390000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295114,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50500,
-				LV = 3
-			}
-		}
-	},
-	[295115] = {
-		cannon = 274,
-		name = "Renown META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 20,
-		base = 90675,
-		durability_growth = 0,
-		antiaircraft = 296,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 20,
-		hit = 80,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 480000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295115,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50500,
-				LV = 4
-			}
-		}
-	},
-	[295116] = {
-		cannon = 291,
-		name = "Renown META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 21,
-		base = 90675,
-		durability_growth = 0,
-		antiaircraft = 309,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 21,
-		hit = 85,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 600000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295116,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50500,
-				LV = 4
-			}
-		}
-	},
-	[295117] = {
-		cannon = 308,
-		name = "Renown META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 22,
-		base = 90675,
-		durability_growth = 0,
-		antiaircraft = 322,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 22,
-		hit = 90,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 780000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295117,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50500,
-				LV = 4
-			}
-		}
-	},
-	[295118] = {
-		cannon = 326,
-		name = "Renown META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 23,
-		base = 90675,
-		durability_growth = 0,
-		antiaircraft = 335,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 23,
-		hit = 95,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 1000000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295118,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50500,
-				LV = 5
-			}
-		}
-	},
-	[295119] = {
-		cannon = 345,
-		name = "Renown META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 24,
-		base = 90675,
-		durability_growth = 0,
-		antiaircraft = 348,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 24,
-		hit = 100,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 1240000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295119,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50500,
-				LV = 5
-			}
-		}
-	},
-	[295120] = {
-		cannon = 381,
-		name = "Renown META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 25,
-		base = 90675,
-		durability_growth = 0,
-		antiaircraft = 368,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 25,
-		hit = 110,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 1480000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295120,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50500,
-				LV = 5
-			}
-		}
-	},
-	[295121] = {
-		cannon = 149,
-		name = "Arizona META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 11,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 166,
-		reload_growth = 0,
-		dodge_growth = 0,
 		speed = 20,
-		luck = 15,
-		hit = 35,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 54000,
+		id = 296232,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295121,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
+				ID = 201050,
 				LV = 1
 			}
 		}
 	},
-	[295122] = {
-		cannon = 162,
-		name = "Arizona META",
-		reload = 150,
-		cannon_growth = 0,
+	[296233] = {
+		cannon = 171,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 12,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 175,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 15,
-		hit = 40,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 58000,
+		id = 296233,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295122,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
+				ID = 201050,
 				LV = 1
 			}
 		}
 	},
-	[295123] = {
-		cannon = 175,
-		name = "Arizona META",
-		reload = 150,
-		cannon_growth = 0,
+	[296234] = {
+		cannon = 190,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 13,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 186,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 15,
-		hit = 45,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 63000,
+		id = 296234,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295123,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
+				ID = 201050,
 				LV = 1
 			}
 		}
 	},
-	[295124] = {
-		cannon = 188,
-		name = "Arizona META",
-		reload = 150,
-		cannon_growth = 0,
+	[296235] = {
+		cannon = 209,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 14,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 196,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 15,
-		hit = 50,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 76000,
+		id = 296235,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295124,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 2
+				ID = 201050,
+				LV = 1
 			}
 		}
 	},
-	[295125] = {
-		cannon = 203,
-		name = "Arizona META",
-		reload = 150,
-		cannon_growth = 0,
+	[296236] = {
+		cannon = 228,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 15,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 207,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 15,
-		hit = 55,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 120000,
+		id = 296236,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295125,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 2
+				ID = 201050,
+				LV = 1
 			}
 		}
 	},
-	[295126] = {
-		cannon = 217,
-		name = "Arizona META",
-		reload = 150,
-		cannon_growth = 0,
+	[296237] = {
+		cannon = 247,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 16,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 218,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 16,
-		hit = 60,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 160000,
+		id = 296237,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295126,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 2
+				ID = 201050,
+				LV = 1
 			}
 		}
 	},
-	[295127] = {
-		cannon = 232,
-		name = "Arizona META",
-		reload = 150,
-		cannon_growth = 0,
+	[296238] = {
+		cannon = 266,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 17,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 230,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 17,
-		hit = 65,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 250000,
+		id = 296238,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295127,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 3
+				ID = 201050,
+				LV = 1
 			}
 		}
 	},
-	[295128] = {
-		cannon = 248,
-		name = "Arizona META",
-		reload = 150,
-		cannon_growth = 0,
+	[296239] = {
+		cannon = 285,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 18,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 242,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 18,
-		hit = 70,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 340000,
+		id = 296239,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295128,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 3
+				ID = 201050,
+				LV = 1
 			}
 		}
 	},
-	[295129] = {
-		cannon = 264,
-		name = "Arizona META",
-		reload = 150,
-		cannon_growth = 0,
+	[296240] = {
+		cannon = 304,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 19,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 255,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 19,
-		hit = 75,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 420000,
+		id = 296240,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295129,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 3
+				ID = 201050,
+				LV = 1
 			}
 		}
 	},
-	[295130] = {
-		cannon = 280,
-		name = "Arizona META",
-		reload = 150,
-		cannon_growth = 0,
+	[296241] = {
+		cannon = 323,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 20,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 267,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 20,
-		hit = 80,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 520000,
+		id = 296241,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295130,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 4
+				ID = 201050,
+				LV = 1
 			}
 		}
 	},
-	[295131] = {
-		cannon = 298,
-		name = "Arizona META",
-		reload = 150,
-		cannon_growth = 0,
+	[296242] = {
+		cannon = 342,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 21,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 281,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 21,
-		hit = 85,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 650000,
+		id = 296242,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295131,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 4
+				ID = 201050,
+				LV = 1
 			}
 		}
 	},
-	[295132] = {
-		cannon = 315,
-		name = "Arizona META",
-		reload = 150,
-		cannon_growth = 0,
+	[296243] = {
+		cannon = 361,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 22,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 294,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 22,
-		hit = 90,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 840000,
+		id = 296243,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295132,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 4
+				ID = 201050,
+				LV = 1
 			}
 		}
 	},
-	[295133] = {
-		cannon = 334,
-		name = "Arizona META",
-		reload = 150,
-		cannon_growth = 0,
+	[296244] = {
+		cannon = 380,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 23,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 308,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 23,
-		hit = 95,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 1080000,
+		id = 296244,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295133,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 5
+				ID = 201050,
+				LV = 1
 			}
 		}
 	},
-	[295134] = {
-		cannon = 353,
-		name = "Arizona META",
-		reload = 150,
-		cannon_growth = 0,
+	[296245] = {
+		cannon = 400,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		pilot_ai_template_id = 70270,
 		air = 0,
-		hit_growth = 0,
-		dodge = 24,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 323,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		speed = 20,
+		reload = 150,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 24,
-		hit = 100,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 1340000,
+		id = 296245,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		torpedo = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295134,
+		antiaircraft = 0,
+		scale = 100,
+		hit_growth = 0,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 0.7
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 5
+				ID = 201050,
+				LV = 1
 			}
 		}
 	},
-	[295135] = {
-		cannon = 390,
-		name = "Arizona META",
-		reload = 150,
-		cannon_growth = 0,
+	[296246] = {
+		cannon = 133,
+		fog_fx = "",
+		rarity = 2,
 		speed_growth = 0,
+		speed = 20,
 		air = 0,
-		hit_growth = 0,
-		dodge = 25,
-		base = 90718,
-		durability_growth = 0,
-		antiaircraft = 352,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296246,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 25,
-		hit = 110,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
 		torpedo = 0,
-		durability = 1600000,
+		base = 90535,
+		durability = 99999,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295135,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
 		buff_list = {
 			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 5
+				ID = 201057,
+				LV = 1
 			}
 		}
 	},
-	[295136] = {
+	[296247] = {
+		cannon = 152,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296247,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296248] = {
+		cannon = 171,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296248,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296249] = {
+		cannon = 190,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296249,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296250] = {
+		cannon = 209,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296250,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296251] = {
+		cannon = 228,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296251,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296252] = {
+		cannon = 247,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296252,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296253] = {
+		cannon = 266,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296253,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296254] = {
+		cannon = 285,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296254,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296255] = {
+		cannon = 304,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296255,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296256] = {
+		cannon = 323,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296256,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296257] = {
+		cannon = 342,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296257,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296258] = {
+		cannon = 361,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296258,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296259] = {
+		cannon = 380,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296259,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296260] = {
+		cannon = 400,
+		fog_fx = "",
+		rarity = 2,
+		speed_growth = 0,
+		speed = 20,
+		air = 0,
+		luck = 0,
+		dodge = 0,
+		cannon_growth = 0,
+		reload = 150,
+		id = 296260,
+		reload_growth = 0,
+		dodge_growth = 0,
+		icon = "sairenboss11",
+		star = 2,
+		hit = 0,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo = 0,
+		base = 90535,
+		durability = 99999,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antisub = 0,
+		hit_growth = 0,
+		scale = 100,
+		cld_box = {
+			0.1,
+			0.1,
+			0.1
+		},
+		specific_fx_scale = {
+			jiejie_loop = 1.2
+		},
+		appear_fx = {
+			"jiejie_loop"
+		},
+		buff_list = {
+			{
+				ID = 201057,
+				LV = 1
+			}
+		}
+	},
+	[296261] = {
 		cannon = 135,
-		name = "Queen Elizabeth META",
-		reload = 150,
-		cannon_growth = 0,
+		battle_unit_type = 15,
+		fog_fx = "",
 		speed_growth = 0,
+		pilot_ai_template_id = 20006,
 		air = 0,
-		hit_growth = 0,
-		dodge = 25,
-		base = 90748,
-		durability_growth = 0,
-		antiaircraft = 124,
+		speed = 25,
+		dodge = 0,
+		id = 296261,
+		cannon_growth = 0,
+		rarity = 1,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 30,
-		luck = 15,
-		hit = 35,
+		armor = 0,
+		star = 1,
+		hit = 0,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 54000,
+		reload = 150,
+		base = 90977,
+		durability = 9333,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295136,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 1
-			},
-			{
-				ID = 200380,
-				LV = 1
-			}
-		}
-	},
-	[295137] = {
-		cannon = 155,
-		name = "Queen Elizabeth META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
 		hit_growth = 0,
-		dodge = 28,
-		base = 90748,
-		durability_growth = 0,
-		antiaircraft = 141,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 30,
-		luck = 15,
-		hit = 40,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
+		luck = 0,
 		torpedo = 0,
-		durability = 58000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
+		durability_growth = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295137,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			},
-			{
-				ID = 50510,
-				LV = 1
-			},
-			{
-				ID = 200380,
-				LV = 1
-			}
-		}
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		equipment_list = {},
+		buff_list = {}
 	}
 }

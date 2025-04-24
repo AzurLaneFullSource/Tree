@@ -237,6 +237,36 @@ pg.dorm3d_gift = {
 			}
 		}
 	},
+	[3022102] = {
+		ship_group_id = 30221,
+		display = "Relieve your stress, soothe your mind, and feel your body's energy return to you!",
+		rarity = 4,
+		unlock_dialogue_id = 20530,
+		id = 3022102,
+		icon = "dorm3dicon/3Ddrom_nengdai_FancyGift2",
+		name = "Foot Massager",
+		favor_trigger_id = 1004,
+		reply_dialogue_id = {
+			{
+				30221,
+				20305
+			}
+		},
+		shop_id = {
+			260322
+		},
+		unlock_tips = {
+			4
+		},
+		unlock_banners = {
+			{
+				30221,
+				{
+					"banner_gift3022102"
+				}
+			}
+		}
+	},
 	[1990301] = {
 		ship_group_id = 19903,
 		display = "An adorably colored canvas that seems to capture all of Anchorage's world within. Every line reflects her innocence.",
@@ -278,7 +308,8 @@ pg.dorm3d_gift = {
 			2022002
 		},
 		[30221] = {
-			3022101
+			3022101,
+			3022102
 		},
 		[19903] = {
 			1990301
@@ -291,6 +322,7 @@ pg.dorm3d_gift = {
 		2022001,
 		2022002,
 		3022101,
+		3022102,
 		1990301
 	}
 }

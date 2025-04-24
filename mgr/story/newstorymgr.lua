@@ -686,9 +686,13 @@ function var0_0.OnStart(arg0_68)
 
 	arg0_68:TrackingStart()
 	arg0_68:SendNotification(GAME.STORY_BEGIN, arg0_68.storyScript:GetName())
-	arg0_68:SendNotification(GAME.STORY_UPDATE, {
-		storyId = arg0_68.storyScript:GetName()
-	})
+
+	if not arg0_68:IsReView() then
+		arg0_68:SendNotification(GAME.STORY_UPDATE, {
+			storyId = arg0_68.storyScript:GetName()
+		})
+	end
+
 	pg.DelegateInfo.New(arg0_68)
 
 	for iter0_68, iter1_68 in ipairs(arg0_68.players) do

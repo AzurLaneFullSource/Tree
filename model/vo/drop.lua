@@ -861,9 +861,13 @@ function var0_0.InitSwitch()
 				end,
 				[15] = function()
 					local var0_130 = getProxy(ActivityProxy)
-					local var1_130 = var0_130:getActivityByType(ActivityConst.ACTIVITY_TYPE_WORLDINPICTURE)
+					local var1_130 = var0_130:getActivityById(arg0_117:getConfig("link_id"))
 
-					if var1_130 and not var1_130:isEnd() then
+					if not var1_130 or var1_130:isEnd() then
+						return
+					end
+
+					if var1_130:getConfig("type") == ActivityConst.ACTIVITY_TYPE_WORLDINPICTURE then
 						local var2_130 = pg.activity_event_grid[var1_130.data1]
 
 						if arg0_117.id == var2_130.ticket_item then
@@ -871,6 +875,8 @@ function var0_0.InitSwitch()
 						elseif arg0_117.id == var2_130.explore_item then
 							var1_130.data3 = var1_130.data3 + arg0_117.count
 						end
+					elseif var1_130:getConfig("type") == ActivityConst.ACTIVITY_TYPE_EXPEDITION then
+						var1_130.data3 = var1_130.data3 + arg0_117.count
 					end
 
 					var0_130:updateActivity(var1_130)

@@ -135,6 +135,7 @@ function var0_0.nationPointFilter(arg0_9)
 		Nation.FF,
 		Nation.MNF,
 		Nation.FR,
+		Nation.NL,
 		Nation.META
 	}
 

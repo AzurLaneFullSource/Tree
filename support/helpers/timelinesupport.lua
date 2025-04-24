@@ -18,6 +18,7 @@ function var0_0.EachSubDirector(arg0_2, arg1_2)
 		table.IpairsCArray(TimelineHelper.GetTimelineTracks(var0_3), function(arg0_4, arg1_4)
 			arg1_2(arg0_4, arg1_4)
 		end)
+		var0_0.EachSubDirector(var0_3, arg1_2)
 	end)
 end
 

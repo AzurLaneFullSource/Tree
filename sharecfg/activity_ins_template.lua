@@ -11642,7 +11642,7 @@ pg.activity_ins_template = {
 		}
 	},
 	[449] = {
-		ship_group = 70508,
+		ship_group = 70502,
 		name = "Sovetsky Soyuz",
 		sculpture = "suweiaitongmengNew",
 		message_persist = "ins_449",
@@ -11696,7 +11696,7 @@ pg.activity_ins_template = {
 		}
 	},
 	[451] = {
-		ship_group = 70509,
+		ship_group = 70508,
 		name = "Poltava",
 		sculpture = "boertawa",
 		message_persist = "ins_451",
@@ -14222,58 +14222,181 @@ pg.activity_ins_template = {
 		ship_group = 10713,
 		name = "Franklin",
 		sculpture = "fulankelin",
-		message_persist = "",
-		picture_persist = "",
+		message_persist = "ins_547",
+		picture_persist = "https://blhxusstatic.yo-star.com/pic/250327_fulankelinDSbp683inu2ek6Xu.png",
 		group_id = 547,
 		id = 547,
-		is_active = 1,
-		time_persist = {},
-		npc_discuss_persist = {}
+		is_active = 0,
+		time_persist = {
+			{
+				2025,
+				3,
+				27
+			},
+			{
+				13,
+				48,
+				17
+			}
+		},
+		npc_discuss_persist = {
+			5705,
+			5710,
+			5715
+		}
 	},
 	[548] = {
 		ship_group = 10234,
 		name = "Santa Fe",
 		sculpture = "shengtafei",
-		message_persist = "",
-		picture_persist = "",
+		message_persist = "ins_548",
+		picture_persist = "https://blhxusstatic.yo-star.com/pic/250327_shengtafeiQcv1Z5ctF76AKtx4.png",
 		group_id = 548,
 		id = 548,
-		is_active = 1,
-		time_persist = {},
-		npc_discuss_persist = {}
+		is_active = 0,
+		time_persist = {
+			{
+				2025,
+				3,
+				28
+			},
+			{
+				17,
+				12,
+				17
+			}
+		},
+		npc_discuss_persist = {
+			5725,
+			5729,
+			5736
+		}
 	},
 	[549] = {
 		ship_group = 10153,
 		name = "Miller",
 		sculpture = "mile",
-		message_persist = "",
-		picture_persist = "",
+		message_persist = "ins_549",
+		picture_persist = "https://blhxusstatic.yo-star.com/pic/250327_mileoR8EXJUtiZWK0Udi.png",
 		group_id = 549,
 		id = 549,
-		is_active = 1,
-		time_persist = {},
-		npc_discuss_persist = {}
+		is_active = 0,
+		time_persist = {
+			{
+				2025,
+				3,
+				29
+			},
+			{
+				20,
+				6,
+				17
+			}
+		},
+		npc_discuss_persist = {
+			5745,
+			5747,
+			5751
+		}
 	},
 	[550] = {
 		ship_group = 70207,
 		name = "Voroshilov",
 		sculpture = "fuluoxiluofu",
-		message_persist = "",
-		picture_persist = "",
+		message_persist = "ins_550",
+		picture_persist = "https://blhxusstatic.yo-star.com/pic/250327_fuluoxiluofuNTQJNKuicWZBa0cJ.png",
 		group_id = 550,
 		id = 550,
-		is_active = 1,
-		time_persist = {},
-		npc_discuss_persist = {}
+		is_active = 0,
+		time_persist = {
+			{
+				2025,
+				3,
+				30
+			},
+			{
+				10,
+				3,
+				17
+			}
+		},
+		npc_discuss_persist = {
+			5761,
+			5764,
+			5771
+		}
 	},
 	[551] = {
 		ship_group = 30317,
 		name = "Suzu?",
 		sculpture = "linggu",
-		message_persist = "",
-		picture_persist = "",
+		message_persist = "ins_551",
+		picture_persist = "https://blhxusstatic.yo-star.com/pic/250327_lingguprb3MfM6aaVmhCIg.png",
 		group_id = 551,
 		id = 551,
+		is_active = 0,
+		time_persist = {
+			{
+				2025,
+				3,
+				31
+			},
+			{
+				0,
+				1,
+				17
+			}
+		},
+		npc_discuss_persist = {
+			5779,
+			5783,
+			5785
+		}
+	},
+	[552] = {
+		ship_group = 110201,
+		name = "De Zeven Provinci?n",
+		sculpture = "qisheng",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 552,
+		id = 552,
+		is_active = 1,
+		time_persist = {},
+		npc_discuss_persist = {}
+	},
+	[553] = {
+		ship_group = 110101,
+		name = "Evertsen",
+		sculpture = "aifosen",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 553,
+		id = 553,
+		is_active = 1,
+		time_persist = {},
+		npc_discuss_persist = {}
+	},
+	[554] = {
+		ship_group = 70208,
+		name = "Oleg",
+		sculpture = "aoliege",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 554,
+		id = 554,
+		is_active = 1,
+		time_persist = {},
+		npc_discuss_persist = {}
+	},
+	[555] = {
+		ship_group = 70509,
+		name = "Kazan ",
+		sculpture = "kashan",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 555,
+		id = 555,
 		is_active = 1,
 		time_persist = {},
 		npc_discuss_persist = {}
@@ -14820,6 +14943,10 @@ pg.activity_ins_template = {
 		548,
 		549,
 		550,
-		551
+		551,
+		552,
+		553,
+		554,
+		555
 	}
 }

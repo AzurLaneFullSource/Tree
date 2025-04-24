@@ -26,7 +26,8 @@ var0_0.NationOrder = {
 	Nation.SN,
 	Nation.FF,
 	Nation.MNF,
-	Nation.ITA
+	Nation.ITA,
+	Nation.NL
 }
 var0_0.NationResName = {
 	"nation_all_",
@@ -38,8 +39,15 @@ var0_0.NationResName = {
 	"nation_beilian_",
 	"nation_ziyou_",
 	"nation_weixi_",
-	"nation_sading_"
+	"nation_sading_",
+	"nation_yujinwangguo_"
 }
+
+if LOCK_NATION_HNLMS then
+	table.removebyvalue(var0_0.NationOrder, Nation.NL)
+	table.removebyvalue(var0_0.NationResName, "nation_yujinwangguo_")
+end
+
 var0_0.TECH_NATION_ATTRS = {
 	AttributeType.Durability,
 	AttributeType.Cannon,

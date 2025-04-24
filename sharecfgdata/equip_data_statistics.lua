@@ -133085,6 +133085,112 @@ _G.pg.base.equip_data_statistics[80452] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[80461] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 80461,
+	name = "专属弹幕-七省I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61741,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80462] = {
+	base = 80461,
+	id = 80462,
+	name = "专属弹幕-七省II",
+	weapon_id = {
+		61742,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[80471] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 80471,
+	name = "专属弹幕-小安克雷奇I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170751,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80472] = {
+	base = 80471,
+	id = 80472,
+	name = "专属弹幕-小安克雷奇II",
+	weapon_id = {
+		170752,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[85000] = {
 	ammo = 3,
 	attribute_2 = "cannon",
@@ -162412,6 +162518,123 @@ _G.pg.base.equip_data_statistics[150631] = {
 	id = 150631,
 	value_1 = "28",
 	value_2 = 21,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150640] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	descrip = "Their floral aroma lingers on the hand that presented them.",
+	icon = "150640",
+	id = 150640,
+	name = "Bouquet of Tulips",
+	nationality = 11,
+	rarity = 4,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "200",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			60840,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"HNLMS",
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150641] = {
+	base = 150640,
+	id = 150641,
+	value_1 = "230",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150642] = {
+	base = 150640,
+	id = 150642,
+	value_1 = "260",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150643] = {
+	base = 150640,
+	id = 150643,
+	value_1 = "290",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150644] = {
+	base = 150640,
+	id = 150644,
+	value_1 = "320",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150645] = {
+	base = 150640,
+	id = 150645,
+	value_1 = "350",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150646] = {
+	base = 150640,
+	id = 150646,
+	value_1 = "380",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150647] = {
+	base = 150640,
+	id = 150647,
+	value_1 = "410",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150648] = {
+	base = 150640,
+	id = 150648,
+	value_1 = "440",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150649] = {
+	base = 150640,
+	id = 150649,
+	value_1 = "470",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150650] = {
+	base = 150640,
+	id = 150650,
+	value_1 = "500",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150651] = {
+	anti_siren = 100,
+	base = 150640,
+	id = 150651,
+	value_1 = "530",
 	hidden_skill_id = {},
 }
 
