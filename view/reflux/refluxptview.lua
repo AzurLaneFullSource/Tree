@@ -99,7 +99,7 @@ function var0_0.updateTpl(arg0_11, arg1_11, arg2_11)
 	local var16_11 = arg2_11 < var13_11 and Color.gray or Color.white
 	local var17_11 = arg1_11:GetComponentsInChildren(typeof(Image)):ToTable()
 
-	for iter0_11, iter1_11 in iparis(var17_11) do
+	for iter0_11, iter1_11 in ipairs(var17_11) do
 		iter1_11.color = var16_11
 	end
 

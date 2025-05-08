@@ -165,6 +165,7 @@ end
 function var0_0.Update(arg0_21)
 	arg0_21.view:Update()
 	arg0_21.map:Update()
+	Physics2D.Simulate(1 / (Application.targetFrameRate or 60))
 
 	if arg0_21.IsStarting and arg0_21.map:GetPlayer():IsDeath() then
 		arg0_21:EndGame()

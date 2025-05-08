@@ -6,7 +6,7 @@ pg.painting_filte_world = {
 	},
 	{
 		key = 2,
-		name = "hao"
+		name = "xizhang"
 	},
 	{
 		key = 3,
@@ -14,7 +14,7 @@ pg.painting_filte_world = {
 	},
 	{
 		key = 4,
-		name = "hermit"
+		name = "deyizhi"
 	},
 	{
 		key = 5,
@@ -22,7 +22,7 @@ pg.painting_filte_world = {
 	},
 	{
 		key = 6,
-		name = "linuo"
+		name = "feilong_alter"
 	},
 	{
 		key = 7,
@@ -122,7 +122,7 @@ pg.painting_filte_world = {
 	},
 	{
 		key = 31,
-		name = "salatuojia"
+		name = "guanghui"
 	},
 	{
 		key = 32,
@@ -158,7 +158,7 @@ pg.painting_filte_world = {
 	},
 	{
 		key = 40,
-		name = "u47"
+		name = "ruihe"
 	},
 	{
 		key = 41,
@@ -174,11 +174,11 @@ pg.painting_filte_world = {
 	},
 	{
 		key = 44,
-		name = "yanzhan"
+		name = "shengli"
 	},
 	{
 		key = 45,
-		name = "nuofuke"
+		name = "shengwang"
 	},
 	{
 		key = 46,
@@ -198,7 +198,7 @@ pg.painting_filte_world = {
 	},
 	{
 		key = 50,
-		name = "guanghui"
+		name = "u47"
 	},
 	{
 		key = 51,
@@ -222,11 +222,11 @@ pg.painting_filte_world = {
 	},
 	{
 		key = 56,
-		name = "shengwang"
+		name = "qiye_dark_shadow"
 	},
 	{
 		key = 57,
-		name = "shengli"
+		name = "ying"
 	},
 	{
 		key = 58,
@@ -234,11 +234,11 @@ pg.painting_filte_world = {
 	},
 	{
 		key = 59,
-		name = "mingshi"
+		name = "hao"
 	},
 	{
 		key = 60,
-		name = "deyizhi"
+		name = "linuo"
 	},
 	{
 		key = 61,
@@ -250,63 +250,63 @@ pg.painting_filte_world = {
 	},
 	{
 		key = 63,
-		name = "feilong_alter"
-	},
-	{
-		key = 64,
-		name = "aidingbao"
-	},
-	{
-		key = 65,
-		name = "lumang"
-	},
-	{
-		key = 66,
-		name = "hude"
-	},
-	{
-		key = 67,
-		name = "ying"
-	},
-	{
-		key = 68,
 		name = "xiefeierde"
 	},
 	{
-		key = 69,
-		name = "shentong"
-	},
-	{
-		key = 70,
-		name = "juejiang"
-	},
-	{
-		key = 71,
-		name = "ruihe"
-	},
-	{
-		key = 72,
+		key = 64,
 		name = "jiahezhanlie"
 	},
 	{
-		key = 73,
-		name = "qiye_dark_shadow"
-	},
-	{
-		key = 74,
+		key = 65,
 		name = "zaoshen"
 	},
 	{
-		key = 75,
+		key = 66,
 		name = "yuekegongjue"
 	},
 	{
-		key = 76,
+		key = 67,
+		name = "juejiang"
+	},
+	{
+		key = 68,
+		name = "aidingbao"
+	},
+	{
+		key = 69,
+		name = "salatuojia"
+	},
+	{
+		key = 70,
+		name = "mingshi"
+	},
+	{
+		key = 71,
+		name = "nuofuke"
+	},
+	{
+		key = 72,
+		name = "hude"
+	},
+	{
+		key = 73,
 		name = "kubo"
 	},
 	{
+		key = 74,
+		name = "lumang"
+	},
+	{
+		key = 75,
+		name = "hermit"
+	},
+	{
+		key = 76,
+		name = "shentong"
+	},
+	{
 		key = 77,
-		name = "xizhang"
+		name = "yanzhan"
 	},
 	all = {
 		1,

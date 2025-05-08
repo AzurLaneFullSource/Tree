@@ -2,7 +2,7 @@ pg = pg or {}
 pg.dorm3d_volleyball = {
 	[20220] = {
 		id = 20220,
-		scene_name = "tlx_volleyball",
+		scene_name = "TLX_volleyball",
 		endScore = 6,
 		jinchang = {
 			{

@@ -81,6 +81,8 @@ function var1_0.InitCri(arg0_8, arg1_8)
 		arg0_8.bgmWaveAnalyzer = GetOrAddComponent(var1_9, typeof(CriAtomWaveAnalyzer))
 
 		arg0_8.bgmWaveAnalyzer:Init()
+		arg0_8.criInst:RemoveChannel(var1_0.C_TIMELINE)
+		arg0_8.criInst:CreateChannel(var1_0.C_TIMELINE, CriWareMgr.CRI_CHANNEL_TYPE.MULTI)
 		arg1_8()
 	end)
 end

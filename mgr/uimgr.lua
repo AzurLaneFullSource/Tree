@@ -19,7 +19,7 @@ local function var2_0(arg0_1)
 	end
 
 	arg0_1.downsample = 2
-	arg0_1.blurSize = 1.5
+	arg0_1.blurSize = 1
 	arg0_1.blurIteration = 2
 end
 
@@ -29,7 +29,7 @@ local function var3_0(arg0_2)
 	end
 
 	arg0_2.downsample = 2
-	arg0_2.blurSize = 1.5
+	arg0_2.blurSize = 1
 	arg0_2.blurIteration = 4
 end
 
@@ -39,7 +39,7 @@ local function var4_0(arg0_3)
 	end
 
 	arg0_3.downsample = 2
-	arg0_3.blurSize = 1.5
+	arg0_3.blurSize = 1
 	arg0_3.blurIteration = 1
 end
 
@@ -49,7 +49,7 @@ local function var5_0(arg0_4)
 	end
 
 	arg0_4.downsample = 2
-	arg0_4.blurSize = 1.5
+	arg0_4.blurSize = 1
 	arg0_4.blurIteration = 1
 end
 

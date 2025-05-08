@@ -190,154 +190,166 @@ function var0_0.CheckWorldTest(arg0_35)
 	end
 end
 
+function var0_0.OnAppPauseForSDK(arg0_36, arg1_36)
+	arg0_36:Call("OnAppPauseForSDK", arg1_36)
+end
+
+function var0_0.UserEventUpload(arg0_37, arg1_37)
+	arg0_37:Call("UserEventUpload", arg1_37)
+end
+
+function var0_0.GameShare(arg0_38, arg1_38, arg2_38)
+	arg0_38:Call("GameShare", arg1_38, arg2_38)
+end
+
 local function var1_0()
-	function var0_0.GetYostarUid(arg0_37)
-		return arg0_37:Get("GetYostarUid")
+	function var0_0.GetYostarUid(arg0_40)
+		return arg0_40:Get("GetYostarUid")
 	end
 
-	function var0_0.GetYostarTransCode(arg0_38)
-		return arg0_38:Get("GetTransCode")
+	function var0_0.GetYostarTransCode(arg0_41)
+		return arg0_41:Get("GetTransCode")
 	end
 
-	function var0_0.AiriLoginSDK(arg0_39)
-		arg0_39:Call("AiriLogin")
+	function var0_0.AiriLoginSDK(arg0_42)
+		arg0_42:Call("AiriLogin")
 	end
 
-	function var0_0.TranscodeRequest(arg0_40)
-		arg0_40:Call("TranscodeRequest")
+	function var0_0.TranscodeRequest(arg0_43)
+		arg0_43:Call("TranscodeRequest")
 	end
 
-	function var0_0.LoginWithTranscode(arg0_41, arg1_41, arg2_41)
-		arg0_41:Call("LoginWithTranscode", arg1_41, arg2_41)
+	function var0_0.LoginWithTranscode(arg0_44, arg1_44, arg2_44)
+		arg0_44:Call("LoginWithTranscode", arg1_44, arg2_44)
 	end
 
-	function var0_0.LoginWithSocial(arg0_42, arg1_42, arg2_42, arg3_42)
-		arg0_42:Call("LoginWithSocial", arg1_42, arg2_42, arg3_42)
+	function var0_0.LoginWithSocial(arg0_45, arg1_45, arg2_45, arg3_45)
+		arg0_45:Call("LoginWithSocial", arg1_45, arg2_45, arg3_45)
 	end
 
-	function var0_0.LoginWithDevice(arg0_43)
-		arg0_43:Call("LoginWithDevice")
+	function var0_0.LoginWithDevice(arg0_46)
+		arg0_46:Call("LoginWithDevice")
 	end
 
-	function var0_0.AiriBuy(arg0_44, arg1_44, arg2_44, arg3_44)
-		arg0_44:Call("AiriBuy", arg1_44, arg2_44, arg3_44)
+	function var0_0.AiriBuy(arg0_47, arg1_47, arg2_47, arg3_47)
+		arg0_47:Call("AiriBuy", arg1_47, arg2_47, arg3_47)
 	end
 
-	function var0_0.LinkSocial(arg0_45, arg1_45, arg2_45, arg3_45)
-		arg0_45:Call("LinkSocial", arg1_45, arg2_45, arg3_45)
+	function var0_0.LinkSocial(arg0_48, arg1_48, arg2_48, arg3_48)
+		arg0_48:Call("LinkSocial", arg1_48, arg2_48, arg3_48)
 	end
 
-	function var0_0.UnlinkSocial(arg0_46, arg1_46)
-		arg0_46:Call("UnlinkSocial", arg1_46)
+	function var0_0.UnlinkSocial(arg0_49, arg1_49)
+		arg0_49:Call("UnlinkSocial", arg1_49)
 	end
 
-	function var0_0.IsSocialLink(arg0_47, arg1_47)
+	function var0_0.IsSocialLink(arg0_50, arg1_50)
 		if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
-			return arg0_47:Get("IsSocialLink", arg1_47)
+			return arg0_50:Get("IsSocialLink", arg1_50)
 		else
 			return false
 		end
 	end
 
-	function var0_0.GetSocialName(arg0_48, arg1_48)
+	function var0_0.GetSocialName(arg0_51, arg1_51)
 		if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
-			return arg0_48:Get("GetSocialName", arg1_48)
+			return arg0_51:Get("GetSocialName", arg1_51)
 		else
 			return "none"
 		end
 	end
 
-	function var0_0.GetIsBirthSet(arg0_49)
+	function var0_0.GetIsBirthSet(arg0_52)
 		if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
-			return arg0_49:Get("GetIsBirthSet")
+			return arg0_52:Get("GetIsBirthSet")
 		end
 
 		return true
 	end
 
-	function var0_0.SetBirth(arg0_50, arg1_50)
-		arg0_50:Call("SetBirth", arg1_50)
+	function var0_0.SetBirth(arg0_53, arg1_53)
+		arg0_53:Call("SetBirth", arg1_53)
 	end
 
-	function var0_0.ClearAccountCache(arg0_51)
-		arg0_51:Call("ClearAccountCache")
+	function var0_0.ClearAccountCache(arg0_54)
+		arg0_54:Call("ClearAccountCache")
 	end
 
-	function var0_0.GameShare(arg0_52, arg1_52, arg2_52)
-		arg0_52:Call("GameShare", arg1_52, arg2_52)
+	function var0_0.GameShare(arg0_55, arg1_55, arg2_55)
+		arg0_55:Call("GameShare", arg1_55, arg2_55)
 	end
 
-	function var0_0.VerificationCodeReq(arg0_53, arg1_53)
-		arg0_53:Call("VerificationCodeReq", arg1_53)
+	function var0_0.VerificationCodeReq(arg0_56, arg1_56)
+		arg0_56:Call("VerificationCodeReq", arg1_56)
 	end
 
-	function var0_0.OpenYostarHelp(arg0_54)
-		arg0_54:Call("OpenYostarHelp")
+	function var0_0.OpenYostarHelp(arg0_57)
+		arg0_57:Call("OpenYostarHelp")
 	end
 
-	function var0_0.OnAppPauseForSDK(arg0_55, arg1_55)
-		arg0_55:Call("OnAppPauseForSDK", arg1_55)
+	function var0_0.OnAppPauseForSDK(arg0_58, arg1_58)
+		arg0_58:Call("OnAppPauseForSDK", arg1_58)
 	end
 
-	function var0_0.UserEventUpload(arg0_56, arg1_56)
-		arg0_56:Call("UserEventUpload", arg1_56)
+	function var0_0.UserEventUpload(arg0_59, arg1_59)
+		arg0_59:Call("UserEventUpload", arg1_59)
 	end
 
-	function var0_0.ShowSurvey(arg0_57, arg1_57, arg2_57)
-		return arg0_57:Call("ShowSurvey", arg1_57, arg2_57)
+	function var0_0.ShowSurvey(arg0_60, arg1_60, arg2_60)
+		return arg0_60:Call("ShowSurvey", arg1_60, arg2_60)
 	end
 
-	function var0_0.CheckAiriCanBuy(arg0_58)
+	function var0_0.CheckAiriCanBuy(arg0_61)
 		if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
-			return arg0_58:Get("CheckAiriCanBuy")
+			return arg0_61:Get("CheckAiriCanBuy")
 		else
 			return true
 		end
 	end
 
-	function var0_0.CheckHadAccountCache(arg0_59)
+	function var0_0.CheckHadAccountCache(arg0_62)
 		if PLATFORM_CODE == PLATFORM_JP then
-			return arg0_59:Get("CheckHadAccountCache")
+			return arg0_62:Get("CheckHadAccountCache")
 		else
 			return true
 		end
 	end
 
-	function var0_0.AccountDelete(arg0_60)
+	function var0_0.AccountDelete(arg0_63)
 		if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
-			return arg0_60:Get("AccountDelete")
+			return arg0_63:Get("AccountDelete")
 		else
 			return true
 		end
 	end
 
-	function var0_0.AccountReborn(arg0_61)
+	function var0_0.AccountReborn(arg0_64)
 		if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
-			return arg0_61:Get("AccountReborn")
+			return arg0_64:Get("AccountReborn")
 		else
 			return true
 		end
 	end
 
-	function var0_0.ConfirmLinkGooglePlayGame(arg0_62)
+	function var0_0.ConfirmLinkGooglePlayGame(arg0_65)
 		if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
-			return arg0_62:Get("ConfirmLinkGooglePlayGame")
+			return arg0_65:Get("ConfirmLinkGooglePlayGame")
 		else
 			return true
 		end
 	end
 
-	function var0_0.ConfirmUnLinkGooglePlayGame(arg0_63)
+	function var0_0.ConfirmUnLinkGooglePlayGame(arg0_66)
 		if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
-			return arg0_63:Get("ConfirmUnLinkGooglePlayGame")
+			return arg0_66:Get("ConfirmUnLinkGooglePlayGame")
 		else
 			return true
 		end
 	end
 
-	function var0_0.BindYostarPass(arg0_64)
+	function var0_0.BindYostarPass(arg0_67)
 		if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
-			return arg0_64:Get("BindYostarPass")
+			return arg0_67:Get("BindYostarPass")
 		else
 			return true
 		end
@@ -347,12 +359,12 @@ local function var1_0()
 	AIRI_GEN_LIMIT_TIME = 30
 
 	function GetAiriGenCodeTimeRemain()
-		local var0_65 = Time.realtimeSinceStartup - AIRI_LAST_GEN_TIME
+		local var0_68 = Time.realtimeSinceStartup - AIRI_LAST_GEN_TIME
 
-		if var0_65 > AIRI_GEN_LIMIT_TIME or AIRI_LAST_GEN_TIME == 0 then
+		if var0_68 > AIRI_GEN_LIMIT_TIME or AIRI_LAST_GEN_TIME == 0 then
 			return 0
 		else
-			return math.floor(AIRI_GEN_LIMIT_TIME - var0_65)
+			return math.floor(AIRI_GEN_LIMIT_TIME - var0_68)
 		end
 	end
 end
@@ -362,97 +374,85 @@ if PLATFORM_CODE == PLATFORM_US then
 end
 
 local function var2_0()
-	function var0_0.YoStarLoginSDK(arg0_67)
+	function var0_0.YoStarLoginSDK(arg0_70)
 		if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
-			arg0_67:Call("Login")
+			arg0_70:Call("Login")
 		end
 	end
 
-	function var0_0.YoStarPay(arg0_68, arg1_68, arg2_68, arg3_68)
+	function var0_0.YoStarPay(arg0_71, arg1_71, arg2_71, arg3_71)
 		if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
-			arg0_68:Call("Pay", arg1_68, arg2_68, arg3_68)
+			arg0_71:Call("Pay", arg1_71, arg2_71, arg3_71)
 		end
 	end
 
-	function var0_0.GameShare(arg0_69, arg1_69, arg2_69)
+	function var0_0.GameShare(arg0_72, arg1_72, arg2_72)
 		if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
-			arg0_69:Call("SystemShare", arg1_69, arg2_69)
+			arg0_72:Call("SystemShare", arg1_72, arg2_72)
 		end
 	end
 
-	function var0_0.YostarOpenAiHelp(arg0_70)
+	function var0_0.YostarOpenAiHelp(arg0_73)
 		if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
-			arg0_70:Call("ShowAihelp")
+			arg0_73:Call("ShowAihelp")
 		end
 	end
 
-	function var0_0.OnAppPauseForSDK(arg0_71, arg1_71)
+	function var0_0.OnAppPauseForSDK(arg0_74, arg1_74)
 		if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
-			arg0_71:Call("OnAppPauseForSDK", arg1_71)
+			arg0_74:Call("OnAppPauseForSDK", arg1_74)
 		end
 	end
 
-	function var0_0.YoStarShowSurvey(arg0_72, arg1_72, arg2_72)
+	function var0_0.YoStarShowSurvey(arg0_75, arg1_75, arg2_75)
 		if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
-			return arg0_72:Call("ShowSurvey", arg1_72, arg2_72)
+			return arg0_75:Call("ShowSurvey", arg1_75, arg2_75)
 		end
 	end
 
-	function var0_0.YoStarCheckCanBuy(arg0_73)
+	function var0_0.YoStarCheckCanBuy(arg0_76)
 		if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
-			return arg0_73:Get("CheckYoStarCanBuy")
+			return arg0_76:Get("CheckYoStarCanBuy")
 		end
 	end
 
-	function var0_0.YoStarCheckHadAccountCache(arg0_74)
+	function var0_0.YoStarCheckHadAccountCache(arg0_77)
 		if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
-			return arg0_74:Get("CheckHadAccountCache")
+			return arg0_77:Get("CheckHadAccountCache")
 		end
 	end
 
-	function var0_0.YoStarShowUserCenter(arg0_75)
+	function var0_0.YoStarShowUserCenter(arg0_78)
 		if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
-			return arg0_75:Get("ShowUserCenter")
+			return arg0_78:Get("ShowUserCenter")
 		end
 	end
 
-	function var0_0.YoStarRoleInfoUpload(arg0_76)
+	function var0_0.YoStarRoleInfoUpload(arg0_79)
 		if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
-			return arg0_76:Get("RoleInfoUpload")
+			return arg0_79:Get("RoleInfoUpload")
 		end
 	end
 
-	function var0_0.YoStarShowSwitchAccount(arg0_77)
+	function var0_0.YoStarShowSwitchAccount(arg0_80)
 		if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
-			return arg0_77:Get("ShowSwitchAccount")
+			return arg0_80:Get("ShowSwitchAccount")
 		end
 	end
 
-	function var0_0.YoStarShowAccountCenter(arg0_78)
+	function var0_0.YoStarShowAccountCenter(arg0_81)
 		if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
-			return arg0_78:Get("ShowAccountCenter")
+			return arg0_81:Get("ShowAccountCenter")
 		end
 	end
 
-	function var0_0.UserEventUpload(arg0_79, arg1_79)
-		arg0_79:Call("UserEventUpload", arg1_79)
+	function var0_0.UserEventUpload(arg0_82, arg1_82)
+		arg0_82:Call("UserEventUpload", arg1_82)
 	end
 end
 
 if PLATFORM_CODE == PLATFORM_JP then
 	var2_0()
-end
-
-function var0_0.OnAppPauseForSDK(arg0_80, arg1_80)
-	arg0_80:Call("OnAppPauseForSDK", arg1_80)
-end
-
-function var0_0.UserEventUpload(arg0_81, arg1_81)
-	arg0_81:Call("UserEventUpload", arg1_81)
-end
-
-function var0_0.GameShare(arg0_82, arg1_82, arg2_82)
-	arg0_82:Call("GameShare", arg1_82, arg2_82)
 end
 
 function var0_0.UserCenter(arg0_83)
