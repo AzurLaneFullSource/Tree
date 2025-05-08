@@ -14,7 +14,7 @@ function var0_0.register(arg0_1)
 	local var0_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND)
 
 	arg0_1.viewComponent:setActivity(var0_1)
-	arg0_1.viewComponent:setNodeIds(getProxy(IslandProxy):GetNodeIds())
+	arg0_1.viewComponent:setNodeIds(getProxy(SixthAnniversaryIslandProxy):GetNodeIds())
 	arg0_1.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
 
 	local var1_1 = getProxy(ActivityProxy):getActivityById(ActivityConst.ISLAND_GAME_ID):getConfig("config_id")
@@ -123,7 +123,7 @@ function var0_0.initNotificationHandleDic(arg0_16)
 			arg0_20.viewComponent:refreshNode(var0_20.node_id)
 		end,
 		[GAME.ZERO_HOUR_OP_DONE] = function(arg0_21, arg1_21)
-			getProxy(IslandProxy):CheckAndRequest(function()
+			getProxy(SixthAnniversaryIslandProxy):CheckAndRequest(function()
 				arg0_21.viewComponent.nodeItemList:align(#arg0_21.viewComponent.ids)
 				arg0_21.viewComponent:refreshDailyPanel()
 			end)
@@ -159,7 +159,7 @@ function var0_0.initNotificationHandleDic(arg0_16)
 			}))
 		end,
 		[GAME.ISLAND_FLOWER_GET_DONE] = function(arg0_27, arg1_27)
-			for iter0_27, iter1_27 in pairs(getProxy(IslandProxy):GetNodeDic()) do
+			for iter0_27, iter1_27 in pairs(getProxy(SixthAnniversaryIslandProxy):GetNodeDic()) do
 				if iter1_27:getConfig("type") == 5 and iter1_27:getConfig("params")[1] == "flowerfield" then
 					arg0_27.viewComponent:refreshNode(iter0_27)
 				end

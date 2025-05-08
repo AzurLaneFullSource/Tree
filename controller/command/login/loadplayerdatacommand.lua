@@ -227,7 +227,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			true
 		},
 		{
-			IslandProxy,
+			SixthAnniversaryIslandProxy,
 			true
 		},
 		{
@@ -268,6 +268,10 @@ function var0_0.execute(arg0_1, arg1_1)
 		},
 		{
 			GMTProxy,
+			true
+		},
+		{
+			IslandProxy,
 			true
 		}
 	})

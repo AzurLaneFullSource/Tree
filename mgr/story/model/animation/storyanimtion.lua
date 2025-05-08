@@ -1,6 +1,6 @@
 local var0_0 = class("StoryAnimtion")
 
-function var0_0.Ctor(arg0_1, arg1_1)
+function var0_0.Ctor(arg0_1)
 	arg0_1.tweens = {}
 	arg0_1.timers = {}
 	arg0_1.timeScale = 1
@@ -359,9 +359,17 @@ function var0_0.ClearAllTimers(arg0_47)
 	arg0_47.timers = {}
 end
 
-function var0_0.ClearAnimation(arg0_48)
-	arg0_48:ClearAllTween()
-	arg0_48:ClearAllTimers()
+function var0_0.ClearTimer(arg0_48, arg1_48)
+	if arg1_48 and arg0_48.timers[arg1_48] then
+		arg0_48.timers[arg1_48]:Stop()
+
+		arg0_48.timers[arg1_48] = nil
+	end
+end
+
+function var0_0.ClearAnimation(arg0_49)
+	arg0_49:ClearAllTween()
+	arg0_49:ClearAllTimers()
 end
 
 return var0_0

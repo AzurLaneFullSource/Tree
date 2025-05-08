@@ -26,4 +26,5 @@ var0_0.GROUP_DAILY = "group_daily"
 var0_0.GROUP_COMBAT = "group_Combat"
 var0_0.GROUP_EDUCATE = "group_educate"
 var0_0.GROUP_DORM3D = "group_DORM3D"
+var0_0.GROUP_ISLAND = "group_island"
 LayerWeightConst = var0_0

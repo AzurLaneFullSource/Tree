@@ -152,12 +152,18 @@ function var0_0.didEnter(arg0_8)
 	arg0_8.escFlag = false
 
 	onButton(arg0_8, arg0_8.close, function()
-		arg0_8:PlayExitAnimation(function()
+		if arg0_8.isExitPlay then
+			return
+		end
+
+		arg0_8.isExitPlay = true
+
+		arg0_8:PlayUIAnimation(arg0_8._tf, "exit", function()
 			if arg0_8.currentForm == var0_0.FORM_BATTLE then
 				arg0_8:emit(NotificationMediator.BATTLE_CHAT_CLOSE)
 			end
 
-			arg0_8:emit(BaseUI.ON_CLOSE)
+			arg0_8:closeView()
 		end)
 	end, SFX_CANCEL)
 	onButton(arg0_8, arg0_8.emoji, function()

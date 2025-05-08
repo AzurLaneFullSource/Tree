@@ -47,10 +47,10 @@ function var0_0.init(arg0_3)
 		setParent(arg0_4, arg0_3._map, false)
 
 		local var0_4 = GameObject.Find("UICamera/Canvas"):GetComponent(typeof(Canvas)).sortingOrder
-		local var1_4 = arg0_4:GetComponentsInChildren(typeof(Renderer))
+		local var1_4 = arg0_4:GetComponentsInChildren(typeof(Renderer)):ToTable()
 
-		for iter0_4 = 0, var1_4.Length - 1 do
-			var1_4[iter0_4].sortingOrder = var0_4 + 1
+		for iter0_4, iter1_4 in ipairs(var1_4) do
+			iter1_4.sortingOrder = var0_4 + 1
 		end
 
 		arg0_3.mapeffect = arg0_4

@@ -10,10 +10,10 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 end
 
 local function var1_0(arg0_2, arg1_2)
-	local var0_2 = arg0_2:GetComponentsInChildren(typeof(Animator), true)
+	local var0_2 = arg0_2:GetComponentsInChildren(typeof(Animator), true):ToTable()
 
-	for iter0_2 = 0, var0_2.Length - 1 do
-		var0_2[iter0_2].speed = arg1_2
+	for iter0_2, iter1_2 in ipairs(var0_2) do
+		iter1_2.speed = arg1_2
 	end
 end
 

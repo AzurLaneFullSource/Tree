@@ -285,10 +285,10 @@ function var0_0.initUI(arg0_12)
 	var0_12.aspectRatio, var0_12.aspectRatio = var0_12.aspectRatio, 1
 	arg0_12.UIFXList = arg0_12:findTF("maps/UI_FX_list")
 
-	local var1_12 = arg0_12.UIFXList:GetComponentsInChildren(typeof(Renderer))
+	local var1_12 = arg0_12.UIFXList:GetComponentsInChildren(typeof(Renderer)):ToTable()
 
-	for iter2_12 = 0, var1_12.Length - 1 do
-		var1_12[iter2_12].sortingOrder = -1
+	for iter2_12, iter3_12 in ipairs(var1_12) do
+		iter3_12.sortingOrder = -1
 	end
 
 	local var2_12 = pg.UIMgr.GetInstance()

@@ -172,4 +172,11 @@ function var0_0.BuildNewEducate(arg0_16)
 	return var3_0(arg0_16.track_typ, arg0_16.int_args, arg0_16.str_args)
 end
 
+function var0_0.BuildNewMainUI(arg0_17)
+	return var3_0(28, {
+		arg0_17.isNewMainUI,
+		arg0_17.isLogin
+	}, {})
+end
+
 return var0_0

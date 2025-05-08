@@ -26412,3 +26412,305 @@ _G.pg.base.spweapon_data_statistics[14090] = {
 	},
 }
 
+_G.pg.base.spweapon_data_statistics[14100] = {
+	attribute_1 = "cannon",
+	attribute_2 = "reload",
+	descrip = "由特殊兵装核心制造出来的专属特制兵装",
+	effect_id = 901020,
+	effect_id_display = 901020,
+	icon = "14100",
+	id = 14100,
+	important = 2,
+	level = 1,
+	name = "一张王牌 ",
+	next = 14101,
+	prev = 0,
+	rarity = 4,
+	tech = 0,
+	type = 4,
+	uncraftable = 0,
+	unique = 10316,
+	upgrade_id = 101,
+	value_1 = 13,
+	value_1_random = 10,
+	value_2 = 6,
+	value_2_random = 5,
+	usability = {
+		3,
+	},
+	skill_upgrade = {
+		{
+			0,
+			1012480,
+		},
+	},
+	label = {},
+}
+
+_G.pg.base.spweapon_data_statistics[14101] = {
+	base = 14100,
+	id = 14101,
+	level = 2,
+	next = 14102,
+	prev = 14100,
+	upgrade_id = 102,
+	value_1 = 14,
+	value_2 = 6,
+}
+
+_G.pg.base.spweapon_data_statistics[14102] = {
+	base = 14100,
+	id = 14102,
+	level = 3,
+	next = 14103,
+	prev = 14101,
+	upgrade_id = 103,
+	value_1 = 15,
+	value_2 = 7,
+}
+
+_G.pg.base.spweapon_data_statistics[14103] = {
+	base = 14100,
+	id = 14103,
+	level = 4,
+	next = 14104,
+	prev = 14102,
+	upgrade_id = 104,
+	value_1 = 16,
+	value_2 = 8,
+}
+
+_G.pg.base.spweapon_data_statistics[14104] = {
+	base = 14100,
+	id = 14104,
+	level = 5,
+	next = 14105,
+	prev = 14103,
+	upgrade_id = 105,
+	value_1 = 17,
+	value_2 = 9,
+}
+
+_G.pg.base.spweapon_data_statistics[14105] = {
+	base = 14100,
+	id = 14105,
+	level = 6,
+	next = 14106,
+	prev = 14104,
+	upgrade_id = 106,
+	value_1 = 18,
+	value_2 = 10,
+}
+
+_G.pg.base.spweapon_data_statistics[14106] = {
+	base = 14100,
+	id = 14106,
+	level = 7,
+	next = 14107,
+	prev = 14105,
+	upgrade_id = 107,
+	value_1 = 19,
+	value_2 = 11,
+}
+
+_G.pg.base.spweapon_data_statistics[14107] = {
+	base = 14100,
+	id = 14107,
+	level = 8,
+	next = 14108,
+	prev = 14106,
+	upgrade_id = 108,
+	value_1 = 20,
+	value_2 = 12,
+}
+
+_G.pg.base.spweapon_data_statistics[14108] = {
+	base = 14100,
+	id = 14108,
+	level = 9,
+	next = 14109,
+	prev = 14107,
+	upgrade_id = 109,
+	value_1 = 21,
+	value_2 = 13,
+}
+
+_G.pg.base.spweapon_data_statistics[14109] = {
+	base = 14100,
+	id = 14109,
+	level = 10,
+	next = 14110,
+	prev = 14108,
+	upgrade_id = 110,
+	value_1 = 23,
+	value_2 = 14,
+}
+
+_G.pg.base.spweapon_data_statistics[14110] = {
+	base = 14100,
+	id = 14110,
+	level = 11,
+	next = 0,
+	prev = 14109,
+	upgrade_id = 111,
+	value_1 = 25,
+	value_2 = 15,
+	skill_upgrade = {
+		{
+			12480,
+			1012480,
+		},
+	},
+}
+
+_G.pg.base.spweapon_data_statistics[14120] = {
+	attribute_1 = "cannon",
+	attribute_2 = "reload",
+	descrip = "由特殊兵装核心制造出来的专属特制兵装",
+	effect_id = 902030,
+	effect_id_display = 902030,
+	icon = "14120",
+	id = 14120,
+	important = 2,
+	level = 1,
+	name = "属于夜晚的余兴",
+	next = 14121,
+	prev = 0,
+	rarity = 4,
+	tech = 0,
+	type = 6,
+	uncraftable = 0,
+	unique = 70501,
+	upgrade_id = 101,
+	value_1 = 8,
+	value_1_random = 10,
+	value_2 = 8,
+	value_2_random = 5,
+	usability = {
+		5,
+	},
+	skill_upgrade = {
+		{
+			0,
+			1013050,
+		},
+	},
+	label = {},
+}
+
+_G.pg.base.spweapon_data_statistics[14121] = {
+	base = 14120,
+	id = 14121,
+	level = 2,
+	next = 14122,
+	prev = 14120,
+	upgrade_id = 102,
+	value_1 = 9,
+	value_2 = 9,
+}
+
+_G.pg.base.spweapon_data_statistics[14122] = {
+	base = 14120,
+	id = 14122,
+	level = 3,
+	next = 14123,
+	prev = 14121,
+	upgrade_id = 103,
+	value_1 = 10,
+	value_2 = 10,
+}
+
+_G.pg.base.spweapon_data_statistics[14123] = {
+	base = 14120,
+	id = 14123,
+	level = 4,
+	next = 14124,
+	prev = 14122,
+	upgrade_id = 104,
+	value_1 = 11,
+	value_2 = 11,
+}
+
+_G.pg.base.spweapon_data_statistics[14124] = {
+	base = 14120,
+	id = 14124,
+	level = 5,
+	next = 14125,
+	prev = 14123,
+	upgrade_id = 105,
+	value_1 = 12,
+	value_2 = 12,
+}
+
+_G.pg.base.spweapon_data_statistics[14125] = {
+	base = 14120,
+	id = 14125,
+	level = 6,
+	next = 14126,
+	prev = 14124,
+	upgrade_id = 106,
+	value_1 = 14,
+	value_2 = 14,
+}
+
+_G.pg.base.spweapon_data_statistics[14126] = {
+	base = 14120,
+	id = 14126,
+	level = 7,
+	next = 14127,
+	prev = 14125,
+	upgrade_id = 107,
+	value_1 = 15,
+	value_2 = 15,
+}
+
+_G.pg.base.spweapon_data_statistics[14127] = {
+	base = 14120,
+	id = 14127,
+	level = 8,
+	next = 14128,
+	prev = 14126,
+	upgrade_id = 108,
+	value_1 = 16,
+	value_2 = 16,
+}
+
+_G.pg.base.spweapon_data_statistics[14128] = {
+	base = 14120,
+	id = 14128,
+	level = 9,
+	next = 14129,
+	prev = 14127,
+	upgrade_id = 109,
+	value_1 = 17,
+	value_2 = 17,
+}
+
+_G.pg.base.spweapon_data_statistics[14129] = {
+	base = 14120,
+	id = 14129,
+	level = 10,
+	next = 14130,
+	prev = 14128,
+	upgrade_id = 110,
+	value_1 = 18,
+	value_2 = 18,
+}
+
+_G.pg.base.spweapon_data_statistics[14130] = {
+	base = 14120,
+	id = 14130,
+	level = 11,
+	next = 0,
+	prev = 14129,
+	upgrade_id = 111,
+	value_1 = 20,
+	value_2 = 20,
+	skill_upgrade = {
+		{
+			13050,
+			1013050,
+		},
+	},
+}
+

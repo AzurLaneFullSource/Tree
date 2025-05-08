@@ -877,6 +877,7 @@ end
 
 function var0_0.didEnter(arg0_73)
 	pg.UIMgr.GetInstance():OverlayPanel(arg0_73.blurPanel)
+	arg0_73:PlayUIAnimation(arg0_73.blurPanel, "enter")
 	setActive(arg0_73.stampBtn, getProxy(TaskProxy):mingshiTouchFlagEnabled() and arg0_73.contextData.mode ~= var0_0.MODE_GUILD_BOSS)
 	arg0_73:UpdateGuildViewEquipmentsBtn()
 	onButton(arg0_73, arg0_73.stampBtn, function()

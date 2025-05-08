@@ -213,25 +213,21 @@ function removeOnButton(arg0_28)
 end
 
 function removeAllOnButton(arg0_29)
-	local var0_29 = arg0_29:GetComponentsInChildren(typeof(Button))
+	local var0_29 = arg0_29:GetComponentsInChildren(typeof(Button)):ToTable()
 
-	for iter0_29 = 1, var0_29.Length do
-		local var1_29 = var0_29[iter0_29 - 1]
-
-		if var1_29 ~= nil then
-			var1_29.onClick:RemoveAllListeners()
+	for iter0_29, iter1_29 in ipairs(var0_29) do
+		if iter1_29 ~= nil then
+			iter1_29.onClick:RemoveAllListeners()
 		end
 	end
 end
 
 function ClearAllText(arg0_30)
-	local var0_30 = arg0_30:GetComponentsInChildren(typeof(Text))
+	local var0_30 = arg0_30:GetComponentsInChildren(typeof(Text)):ToTable()
 
-	for iter0_30 = 1, var0_30.Length do
-		local var1_30 = var0_30[iter0_30 - 1]
-
-		if var1_30 ~= nil then
-			var1_30.text = ""
+	for iter0_30, iter1_30 in ipairs(var0_30) do
+		if iter1_30 ~= nil then
+			iter1_30.text = ""
 		end
 	end
 end
@@ -1005,9 +1001,9 @@ end
 function getSceneRootTFDic(arg0_125)
 	local var0_125 = {}
 
-	table.IpairsCArray(arg0_125:GetRootGameObjects(), function(arg0_126, arg1_126)
-		var0_125[arg1_126.name] = arg1_126.transform
-	end)
+	for iter0_125, iter1_125 in ipairs(arg0_125:GetRootGameObjects():ToTable()) do
+		var0_125[iter1_125.name] = iter1_125.transform
+	end
 
 	return var0_125
 end

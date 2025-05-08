@@ -64,22 +64,8 @@ local function var16_0(arg0_1, arg1_1)
 			arg0_2._tf = arg0_1
 			arg0_2._animator = GetComponent(findTF(arg0_2._tf, "ad/anim"), typeof(Animator))
 			arg0_2.angleTf = findTF(arg0_2._tf, "ad/angle")
-			arg0_2.leftBoundPoints = {}
-
-			local var0_2 = GetComponent(findTF(arg0_2._tf, "ad/angle/left"), typeof("UnityEngine.PolygonCollider2D"))
-
-			for iter0_2 = 0, var0_2.points.Length - 1 do
-				table.insert(arg0_2.leftBoundPoints, var0_2.points[iter0_2])
-			end
-
-			arg0_2.rightBoundPoints = {}
-
-			local var1_2 = GetComponent(findTF(arg0_2._tf, "ad/angle/right"), typeof("UnityEngine.PolygonCollider2D"))
-
-			for iter1_2 = 0, var1_2.points.Length - 1 do
-				table.insert(arg0_2.rightBoundPoints, var1_2.points[iter1_2])
-			end
-
+			arg0_2.leftBoundPoints = GetComponent(findTF(arg0_2._tf, "ad/angle/left"), typeof("UnityEngine.PolygonCollider2D")):ToTable()
+			arg0_2.rightBoundPoints = GetComponent(findTF(arg0_2._tf, "ad/angle/right"), typeof("UnityEngine.PolygonCollider2D")):ToTable()
 			arg0_2.localRotation = Vector3(0, 0, 0)
 			arg0_2.circlePos = findTF(arg0_2._tf, "ad/angle/circle").anchoredPosition
 
@@ -1044,58 +1030,57 @@ end
 function var0_0.createPoints(arg0_51, arg1_51)
 	local var0_51 = {}
 	local var1_51 = 0
-	local var2_51 = GetComponent(arg1_51, "EdgeCollider2D")
+	local var2_51 = GetComponent(arg1_51, "EdgeCollider2D").points:ToTable()
 
-	for iter0_51 = 0, var2_51.points.Length - 1 do
-		local var3_51 = var2_51.points[iter0_51]
+	for iter0_51, iter1_51 in ipairs(var2_51) do
+		local var3_51 = Vector2(0, 0)
 		local var4_51 = Vector2(0, 0)
-		local var5_51 = Vector2(0, 0)
+		local var5_51 = 0
 		local var6_51 = 0
-		local var7_51 = 0
 
-		if iter0_51 >= 1 then
-			local var8_51 = var2_51.points[iter0_51 - 1]
-			local var9_51 = var2_51.points[iter0_51]
+		if iter0_51 > 1 then
+			local var7_51 = var2_51[iter0_51 - 1]
+			local var8_51 = var2_51[iter0_51]
 
-			var1_51 = var1_51 + math.sqrt(math.pow(var9_51.x - var8_51.x, 2) + math.pow(var9_51.y - var8_51.y, 2))
+			var1_51 = var1_51 + math.sqrt(math.pow(var8_51.x - var7_51.x, 2) + math.pow(var8_51.y - var7_51.y, 2))
 		end
 
-		if iter0_51 < var2_51.points.Length - 1 then
-			local var10_51 = var2_51.points[iter0_51]
-			local var11_51 = var2_51.points[iter0_51 + 1]
-			local var12_51 = math.atan(math.abs(var11_51.y - var10_51.y) / math.abs(var11_51.x - var10_51.x))
+		if iter0_51 < #var2_51 then
+			local var9_51 = var2_51[iter0_51]
+			local var10_51 = var2_51[iter0_51 + 1]
+			local var11_51 = math.atan(math.abs(var10_51.y - var9_51.y) / math.abs(var10_51.x - var9_51.x))
 
-			var7_51 = math.atan2(var11_51.y - var10_51.y, var11_51.x - var10_51.x) * math.rad2Deg
+			var6_51 = math.atan2(var10_51.y - var9_51.y, var10_51.x - var9_51.x) * math.rad2Deg
 
-			local var13_51 = var11_51.x > var10_51.x and 1 or -1
-			local var14_51 = var11_51.y > var10_51.y and 1 or -1
+			local var12_51 = var10_51.x > var9_51.x and 1 or -1
+			local var13_51 = var10_51.y > var9_51.y and 1 or -1
 
-			var5_51.x = var13_51
-			var5_51.y = var14_51
-			var4_51.x = math.cos(var12_51) * var13_51
-			var4_51.y = math.sin(var12_51) * var14_51
-		elseif iter0_51 == var2_51.points.Length - 1 then
-			local var15_51 = var2_51.points[iter0_51 - 1]
-			local var16_51 = var2_51.points[iter0_51]
-			local var17_51 = math.atan(math.abs(var16_51.y - var15_51.y) / math.abs(var16_51.x - var15_51.x))
+			var4_51.x = var12_51
+			var4_51.y = var13_51
+			var3_51.x = math.cos(var11_51) * var12_51
+			var3_51.y = math.sin(var11_51) * var13_51
+		elseif iter0_51 == #var2_51 then
+			local var14_51 = var2_51[iter0_51 - 1]
+			local var15_51 = var2_51[iter0_51]
+			local var16_51 = math.atan(math.abs(var15_51.y - var14_51.y) / math.abs(var15_51.x - var14_51.x))
 
-			var7_51 = math.atan2(var16_51.y - var15_51.y, var16_51.x - var15_51.x) * math.rad2Deg
+			var6_51 = math.atan2(var15_51.y - var14_51.y, var15_51.x - var14_51.x) * math.rad2Deg
 
-			local var18_51 = var16_51.x > var15_51.x and 1 or -1
-			local var19_51 = var16_51.y > var15_51.y and 1 or -1
+			local var17_51 = var15_51.x > var14_51.x and 1 or -1
+			local var18_51 = var15_51.y > var14_51.y and 1 or -1
 
-			var5_51.x = var18_51
-			var5_51.y = var19_51
-			var4_51.x = math.cos(var17_51) * var18_51
-			var4_51.y = math.sin(var17_51) * var19_51
+			var4_51.x = var17_51
+			var4_51.y = var18_51
+			var3_51.x = math.cos(var16_51) * var17_51
+			var3_51.y = math.sin(var16_51) * var18_51
 		end
 
 		table.insert(var0_51, {
-			pos = var3_51,
+			pos = iter1_51,
 			distance = var1_51,
-			move = var4_51,
-			direct = var5_51,
-			angle = var7_51
+			move = var3_51,
+			direct = var4_51,
+			angle = var6_51
 		})
 	end
 

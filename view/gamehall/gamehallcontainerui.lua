@@ -83,9 +83,6 @@ function var0_0.Ctor(arg0_1, arg1_1)
 		local var2_1 = var12_0[iter1_1]
 		local var3_1 = findTF(arg0_1.pos, var2_1.pos)
 		local var4_1 = GetComponent(findTF(arg0_1.pos, var2_1.spine), typeof(SpineAnimUI))
-
-		print(var2_1.bound)
-
 		local var5_1 = GetComponent(findTF(arg0_1.pos, var2_1.bound), typeof(BoxCollider2D))
 		local var6_1 = arg0_1.pos:InverseTransformPoint(var5_1.bounds.min)
 		local var7_1 = arg0_1.pos:InverseTransformPoint(var5_1.bounds.max)

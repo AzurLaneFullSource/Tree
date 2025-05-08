@@ -158,6 +158,10 @@ function var0_0.SwitchPage(arg0_21, arg1_21)
 
 	arg0_21.page = var0_21
 
+	if isa(var0_21, Settings3DPage) then
+		arg0_21.hasShow3d = true
+	end
+
 	if isa(var0_21, SettingsOtherPage) and isActive(arg0_21.otherTip) then
 		setActive(arg0_21.otherTip, false)
 	end
@@ -194,7 +198,9 @@ function var0_0.onBackPressed(arg0_24)
 end
 
 function var0_0.willExit(arg0_25)
-	Dorm3dRoomTemplateScene.SettingQuality()
+	if arg0_25.hasShow3d then
+		GraphicSettingConst.SettingQuality()
+	end
 
 	for iter0_25, iter1_25 in pairs(arg0_25.pages) do
 		iter1_25:Destroy()

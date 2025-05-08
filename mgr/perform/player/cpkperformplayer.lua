@@ -68,7 +68,7 @@ function var0_0.Play(arg0_3, arg1_3, arg2_3, arg3_3)
 				arg0_3._anim:Play()
 			end
 
-			arg0_3.player:SetMaxFrameDrop(CriManaMovieMaterial.MaxFrameDrop.Infinite)
+			arg0_3.player:SetMaxFrameDrop(CriWare.CriManaMovieMaterialBase.MaxFrameDrop.Infinite)
 			arg0_3.player:SetCpkTotalTimeCallback(function(arg0_6)
 				arg0_3.time = arg0_6
 

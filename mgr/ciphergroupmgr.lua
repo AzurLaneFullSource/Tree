@@ -122,65 +122,63 @@ function var0_0.DelFile_Old(arg0_10, arg1_10)
 	warning("hash path:" .. var3_10)
 
 	if PathMgr.FileExists(var3_10) then
-		local var4_10 = PathMgr.ReadAllLines(var3_10)
-		local var5_10 = var4_10.Length
+		local var4_10 = PathMgr.ReadAllLines(var3_10):ToTable()
+		local var5_10 = #var4_10
 		local var6_10 = {}
 
-		for iter2_10 = 0, var5_10 - 1 do
-			local var7_10 = var4_10[iter2_10]
-
-			if not var1_10(var7_10) then
-				warning("add origin hash:" .. var7_10)
-				table.insert(var6_10, var7_10)
+		for iter2_10, iter3_10 in ipairs(var4_10) do
+			if not var1_10(iter3_10) then
+				warning("add origin hash:" .. iter3_10)
+				table.insert(var6_10, iter3_10)
 			else
-				warning("find del hash:" .. var7_10)
+				warning("find del hash:" .. iter3_10)
 
-				local var8_10 = var7_10
-				local var9_10 = System.Array.CreateInstance(typeof(System.String), 3)
-				local var10_10 = string.split(var8_10, ",")
+				local var7_10 = iter3_10
+				local var8_10 = System.Array.CreateInstance(typeof(System.String), 3)
+				local var9_10 = string.split(var7_10, ",")
 
-				for iter3_10 = 0, 2 do
-					local var11_10 = var10_10[iter3_10 + 1]
+				for iter4_10 = 1, 3 do
+					local var10_10 = var9_10[iter4_10]
 
-					warning("add info:" .. var11_10)
+					warning("add info:" .. var10_10)
 
-					var9_10[iter3_10] = var11_10
+					var8_10[iter4_10 - 1] = var10_10
 				end
 
-				table.insert(var2_10, var9_10)
+				table.insert(var2_10, var8_10)
 			end
 		end
 
-		local var12_10 = #var6_10
+		local var11_10 = #var6_10
 
-		warning("new hash count:" .. var12_10)
+		warning("new hash count:" .. var11_10)
 
-		if var12_10 < var5_10 then
+		if var11_10 < var5_10 then
 			if GroupHelper.IsGroupVerLastest(var0_0.GroupName) then
-				local var13_10 = Application.persistentDataPath .. "/" .. arg0_10.group.localVersionFile
+				local var12_10 = Application.persistentDataPath .. "/" .. arg0_10.group.localVersionFile
 
-				System.IO.File.WriteAllText(var13_10, "0.0.1")
-				warning("ver write:" .. var13_10)
+				System.IO.File.WriteAllText(var12_10, "0.0.1")
+				warning("ver write:" .. var12_10)
 			end
 
-			local var14_10 = System.Array.CreateInstance(typeof(System.String), var12_10)
+			local var13_10 = System.Array.CreateInstance(typeof(System.String), var11_10)
 
-			for iter4_10, iter5_10 in ipairs(var6_10) do
-				var14_10[iter4_10 - 1] = iter5_10
+			for iter5_10, iter6_10 in ipairs(var6_10) do
+				var13_10[iter5_10 - 1] = iter6_10
 			end
 
-			System.IO.File.WriteAllLines(var3_10, var14_10)
+			System.IO.File.WriteAllLines(var3_10, var13_10)
 			warning("hash write:" .. var3_10)
 		end
 	end
 
 	if arg0_10.group.toUpdate then
-		for iter6_10, iter7_10 in ipairs(var2_10) do
-			local var15_10 = iter7_10[0]
+		for iter7_10, iter8_10 in ipairs(var2_10) do
+			local var14_10 = iter8_10[0]
 
-			warning("re add info:" .. var15_10)
-			arg0_10.group.toUpdate:Add(iter7_10)
-			arg0_10.group:UpdateFileDownloadStates(var15_10, DownloadState.CheckToUpdate)
+			warning("re add info:" .. var14_10)
+			arg0_10.group.toUpdate:Add(iter8_10)
+			arg0_10.group:UpdateFileDownloadStates(var14_10, DownloadState.CheckToUpdate)
 		end
 
 		if arg0_10.group.state == DownloadState.UpdateSuccess then

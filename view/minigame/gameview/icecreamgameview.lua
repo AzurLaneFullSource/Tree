@@ -1126,10 +1126,10 @@ function var0_0.updateWalker(arg0_73)
 end
 
 function var0_0.setAnimatorSpeed(arg0_74, arg1_74, arg2_74)
-	local var0_74 = arg1_74:GetComponentsInChildren(typeof(Animator), true)
+	local var0_74 = arg1_74:GetComponentsInChildren(typeof(Animator), true):ToTable()
 
-	for iter0_74 = 0, var0_74.Length - 1 do
-		var0_74[iter0_74].speed = arg2_74
+	for iter0_74, iter1_74 in ipairs(var0_74) do
+		iter1_74.speed = arg2_74
 	end
 end
 

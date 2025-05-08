@@ -85,7 +85,7 @@ function var0_0.loginProcessHandler(arg0_11)
 			var0_12 = getProxy(UserProxy):getLastLoginUser()
 
 			arg0_11.viewComponent:setLastLogin(var0_12)
-		elseif var1_11 == LoginType.PLATFORM_AIRIJP or var1_11 == LoginType.PLATFORM_AIRIUS then
+		elseif var1_11 == LoginType.PLATFORM_YOSTARJP or var1_11 == LoginType.PLATFORM_YOSTARUS then
 			arg0_11.viewComponent:switchToAiriLogin()
 		end
 
@@ -256,14 +256,14 @@ function var0_0.handleNotification(arg0_19, arg1_19)
 				elseif var1_19 == 3 or var1_19 == 6 then
 					arg0_19.viewComponent:switchToServer()
 				elseif var1_19 == 1 or var1_19 == 9 or var1_19 == 11 or var1_19 == 12 then
-					if var0_21 == LoginType.PLATFORM_AIRIJP or var0_21 == LoginType.PLATFORM_AIRIUS then
+					if var0_21 == LoginType.PLATFORM_YOSTARJP or var0_21 == LoginType.PLATFORM_YOSTARUS then
 						arg0_19.viewComponent:switchToAiriLogin()
 					else
 						arg0_19.viewComponent:switchToLogin()
 					end
 				elseif var0_21 == LoginType.PLATFORM or var0_21 == LoginType.PLATFORM_TENCENT then
 					arg0_19.viewComponent:switchToServer()
-				elseif var0_21 == LoginType.PLATFORM_AIRIJP or var0_21 == LoginType.PLATFORM_AIRIUS then
+				elseif var0_21 == LoginType.PLATFORM_YOSTARJP or var0_21 == LoginType.PLATFORM_YOSTARUS then
 					arg0_19.viewComponent:switchToAiriLogin()
 				else
 					arg0_19.viewComponent:switchToLogin()
@@ -280,7 +280,7 @@ function var0_0.handleNotification(arg0_19, arg1_19)
 
 				if var0_22 == LoginType.PLATFORM or LoginType.PLATFORM_TENCENT then
 					arg0_19.viewComponent:switchToServer()
-				elseif var0_22 == LoginType.PLATFORM_AIRIJP or var0_22 == LoginType.PLATFORM_AIRIUS then
+				elseif var0_22 == LoginType.PLATFORM_YOSTARJP or var0_22 == LoginType.PLATFORM_YOSTARUS then
 					arg0_19.viewComponent:switchToAiriLogin()
 				else
 					arg0_19.viewComponent:switchToLogin()

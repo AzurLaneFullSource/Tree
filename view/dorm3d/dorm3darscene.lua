@@ -1,5 +1,5 @@
 local var0_0 = class("Dorm3dARScene", import("view.base.BaseUI"))
-local var1_0 = "arscene|common/ar"
+local var1_0 = "ARScene|common/ar"
 
 var0_0.AR_FAIL_CODE = {
 	[0] = "None",
@@ -40,11 +40,11 @@ end
 function var0_0.preload(arg0_7, arg1_7)
 	arg0_7.room = getProxy(ApartmentProxy):getRoom(arg0_7.contextData.roomId)
 
-	local var0_7, var1_7 = unpack(string.split(string.lower(var1_0), "|"))
+	local var0_7, var1_7 = unpack(string.split(var1_0, "|"))
 
 	seriesAsync({
 		function(arg0_8)
-			SceneOpMgr.Inst:LoadSceneAsync("dorm3d/scenesres/scenes/" .. var1_7 .. "/" .. var0_7 .. "_scene", var0_7, LoadSceneMode.Additive, function(arg0_9, arg1_9)
+			SceneOpMgr.Inst:LoadSceneAsync(string.lower("dorm3d/scenesres/scenes/" .. var1_7 .. "/" .. var0_7 .. "_scene"), var0_7, LoadSceneMode.Additive, function(arg0_9, arg1_9)
 				arg0_8()
 			end)
 		end,
@@ -380,9 +380,9 @@ function var0_0.willExit(arg0_39)
 	arg0_39.loader:Clear()
 	arg0_39.aiHelperSC:Destroy()
 
-	local var0_39, var1_39 = unpack(string.split(string.lower(var1_0), "|"))
+	local var0_39, var1_39 = unpack(string.split(var1_0, "|"))
 
-	SceneOpMgr.Inst:UnloadSceneAsync(var1_39, var0_39)
+	SceneOpMgr.Inst:UnloadSceneAsync(string.lower("dorm3d/scenesres/scenes/" .. var1_39 .. "/" .. var0_39 .. "_scene"), var0_39)
 
 	if arg0_39.luHandle then
 		LateUpdateBeat:RemoveListener(arg0_39.luHandle)
@@ -401,7 +401,7 @@ function var0_0.findUI(arg0_40)
 	setActive(arg0_40.tipsLabel, false)
 
 	arg0_40.snapShot = GameObject.Find("ARCanvas").transform
-	arg0_40.arCamera = GameObject.Find("AR Camera"):GetComponent("Camera")
+	arg0_40.arCamera = GameObject.Find("Main Camera"):GetComponent("Camera")
 
 	setActive(arg0_40.snapShot, false)
 

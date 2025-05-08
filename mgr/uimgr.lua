@@ -11,8 +11,7 @@ var0_0.CameraUI = 1
 var0_0.CameraLevel = 2
 var0_0.CameraOverlay = 3
 var0_0.OptimizedBlur = 1
-var0_0.StaticBlur = 2
-var0_0.PartialBlur = 3
+var0_0.PartialBlur = 2
 
 local function var2_0(arg0_1)
 	if arg0_1 == nil then
@@ -20,8 +19,8 @@ local function var2_0(arg0_1)
 	end
 
 	arg0_1.downsample = 2
-	arg0_1.blurSize = 4
-	arg0_1.blurIterations = 2
+	arg0_1.blurSize = 1.5
+	arg0_1.blurIteration = 2
 end
 
 local function var3_0(arg0_2)
@@ -40,8 +39,8 @@ local function var4_0(arg0_3)
 	end
 
 	arg0_3.downsample = 2
-	arg0_3.blurSize = 4
-	arg0_3.blurIterations = 1
+	arg0_3.blurSize = 1.5
+	arg0_3.blurIteration = 1
 end
 
 local function var5_0(arg0_4)
@@ -71,6 +70,7 @@ function var0_0.Init(arg0_5, arg1_5)
 	arg0_5.overlayCamera = tf(GameObject.Find("OverlayCamera"))
 	arg0_5.overlayCameraComp = arg0_5.overlayCamera:GetComponent("Camera")
 	arg0_5.overlayCameraComp.allowMSAA = false
+	arg0_5.uiCameraComp = arg0_5.uiCamera:GetComponent("Camera")
 	arg0_5.UIMain = arg0_5.uiCamera:Find("Canvas/UIMain")
 	arg0_5.LevelMain = arg0_5.levelCamera:Find("Canvas/UIMain")
 	arg0_5.OverlayMain = arg0_5.overlayCamera:Find("Overlay/UIMain")
@@ -79,24 +79,17 @@ function var0_0.Init(arg0_5, arg1_5)
 	arg0_5._normalUIMain = nil
 	arg0_5._cameraBlurPartial = arg0_5.uiCamera:GetComponent("UIPartialBlur")
 	arg0_5._levelCameraPartial = arg0_5.levelCamera:GetComponent("UIPartialBlur")
-
-	ReflectionHelp.RefCallMethod(typeof("UIPartialBlur"), "Cleanup", arg0_5._levelCameraPartial)
-
-	arg0_5._levelCameraPartial.blurCam = arg0_5.levelCameraComp
 	arg0_5.cameraBlurs = {
 		[var0_0.CameraUI] = {
 			arg0_5.uiCamera:GetComponent("BlurOptimized"),
-			arg0_5.uiCamera:GetComponent("UIStaticBlur"),
 			arg0_5._cameraBlurPartial
 		},
 		[var0_0.CameraLevel] = {
 			arg0_5.levelCamera:GetComponent("BlurOptimized"),
-			arg0_5.levelCamera:GetComponent("UIStaticBlur"),
 			arg0_5._levelCameraPartial
 		},
 		[var0_0.CameraOverlay] = {
-			arg0_5.overlayCamera:GetComponent("BlurOptimized"),
-			(arg0_5.overlayCamera:GetComponent("UIStaticBlur"))
+			(arg0_5.overlayCamera:GetComponent("BlurOptimized"))
 		}
 	}
 	arg0_5.camLockStatus = {
@@ -411,7 +404,6 @@ function var0_0.TempOverlayPanelPB(arg0_34, arg1_34, arg2_34)
 
 	var8_0 = {
 		var0_34:GetComponent("BlurOptimized"),
-		var0_34:GetComponent("UIStaticBlur"),
 		var0_34:GetComponent("UIPartialBlur")
 	}
 
@@ -454,16 +446,13 @@ end
 function var0_0.BlurCamera(arg0_38, arg1_38, arg2_38, arg3_38)
 	if not arg0_38.camLockStatus[arg1_38] or arg3_38 then
 		local var0_38 = arg0_38.cameraBlurs[arg1_38][var0_0.OptimizedBlur]
-		local var1_38 = arg0_38.cameraBlurs[arg1_38][var0_0.StaticBlur]
 
 		if arg2_38 then
 			var0_38.enabled = true
 			var0_38.staticBlur = true
-			var1_38.enabled = false
 		else
 			var0_38.enabled = true
 			var0_38.staticBlur = false
-			var1_38.enabled = false
 		end
 
 		if arg3_38 then
@@ -474,10 +463,7 @@ end
 
 function var0_0.UnblurCamera(arg0_39, arg1_39, arg2_39)
 	if not arg0_39.camLockStatus[arg1_39] or arg2_39 then
-		local var0_39 = arg0_39.cameraBlurs[arg1_39][var0_0.OptimizedBlur]
-
-		arg0_39.cameraBlurs[arg1_39][var0_0.StaticBlur].enabled = false
-		var0_39.enabled = false
+		arg0_39.cameraBlurs[arg1_39][var0_0.OptimizedBlur].enabled = false
 
 		if arg2_39 then
 			arg0_39.camLockStatus[arg1_39] = false
@@ -485,15 +471,9 @@ function var0_0.UnblurCamera(arg0_39, arg1_39, arg2_39)
 	end
 end
 
-function var0_0.GetStaticRtt(arg0_40, arg1_40)
-	local var0_40 = arg0_40.cameraBlurs[arg1_40][var0_0.OptimizedBlur]
-
-	return (ReflectionHelp.RefGetField(typeof("UnityStandardAssets.ImageEffects.BlurOptimized"), "staticRtt", var0_40))
-end
-
-function var0_0.SetMainCamBlurTexture(arg0_41, arg1_41)
-	local var0_41 = arg0_41.mainCamera:GetComponent(typeof(Camera))
-	local var1_41 = ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "GetTemporary", {
+function var0_0.SetMainCamBlurTexture(arg0_40, arg1_40)
+	local var0_40 = arg0_40.mainCamera:GetComponent(typeof(Camera))
+	local var1_40 = ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "GetTemporary", {
 		typeof("System.Int32"),
 		typeof("System.Int32"),
 		typeof("System.Int32")
@@ -503,26 +483,26 @@ function var0_0.SetMainCamBlurTexture(arg0_41, arg1_41)
 		0
 	})
 
-	var0_41.targetTexture = var1_41
+	var0_40.targetTexture = var1_40
 
-	var0_41:Render()
+	var0_40:Render()
 
-	local var2_41 = var1_0.ShaderMgr.GetInstance():BlurTexture(var1_41)
+	local var2_40 = var1_0.ShaderMgr.GetInstance():BlurTexture(var1_40)
 
-	var0_41.targetTexture = nil
+	var0_40.targetTexture = nil
 
 	ReflectionHelp.RefCallStaticMethod(typeof("UnityEngine.RenderTexture"), "ReleaseTemporary", {
 		typeof("UnityEngine.RenderTexture")
 	}, {
-		var1_41
+		var1_40
 	})
 
-	arg1_41.uvRect = var0_41.rect
-	arg1_41.texture = var2_41
+	arg1_40.uvRect = var0_40.rect
+	arg1_40.texture = var2_40
 
-	return var2_41
+	return var2_40
 end
 
-function var0_0.GetMainCamera(arg0_42)
-	return arg0_42.mainCamera
+function var0_0.GetMainCamera(arg0_41)
+	return arg0_41.mainCamera
 end

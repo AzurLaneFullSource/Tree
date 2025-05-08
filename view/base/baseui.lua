@@ -316,223 +316,180 @@ end
 function var0_0.enter(arg0_37)
 	arg0_37:quickExit()
 	arg0_37:PlayBGM()
+	arg0_37:emit(var0_0.DID_ENTER)
 
-	local function var0_37()
-		arg0_37:emit(var0_0.DID_ENTER)
-
-		if arg0_37:lowerAdpter() then
-			setActive(pg.CameraFixMgr.GetInstance().adpterTr, false)
-		end
-
-		if not arg0_37._isCachedView then
-			arg0_37:didEnter()
-			arg0_37:ShowOrHideResUI(true)
-		end
-
-		if tobool(arg0_37:loadingQueue()) and arg0_37.contextData.resumeCallback then
-			local var0_38 = arg0_37.contextData.resumeCallback
-
-			arg0_37.contextData.resumeCallback = nil
-
-			var0_38()
-		end
-
-		arg0_37:emit(var0_0.AVALIBLE)
-		arg0_37:onUIAnimEnd(function()
-			pg.SeriesGuideMgr.GetInstance():start({
-				view = arg0_37.__cname,
-				code = {
-					pg.SeriesGuideMgr.CODES.MAINUI
-				}
-			})
-			pg.NewGuideMgr.GetInstance():OnSceneEnter({
-				view = arg0_37.__cname
-			})
-		end)
+	if arg0_37:lowerAdpter() then
+		setActive(pg.CameraFixMgr.GetInstance().adpterTr, false)
 	end
 
-	arg0_37:inOutAnim(true, var0_37)
-end
-
-function var0_0.closeView(arg0_40)
-	if arg0_40.contextData.isLayer then
-		arg0_40:emit(var0_0.ON_CLOSE)
-	else
-		arg0_40:emit(var0_0.ON_BACK)
+	if not arg0_37._isCachedView then
+		arg0_37:didEnter()
+		arg0_37:ShowOrHideResUI(true)
 	end
-end
 
-function var0_0.didEnter(arg0_41)
-	return
-end
+	if tobool(arg0_37:loadingQueue()) and arg0_37.contextData.resumeCallback then
+		local var0_37 = arg0_37.contextData.resumeCallback
 
-function var0_0.willExit(arg0_42)
-	return
-end
+		arg0_37.contextData.resumeCallback = nil
 
-function var0_0.exit(arg0_43)
-	arg0_43.exited = true
+		var0_37()
+	end
 
-	arg0_43:StopBgm()
-	pg.DelegateInfo.Dispose(arg0_43)
-
-	local function var0_43()
-		arg0_43:willExit()
-		arg0_43:ShowOrHideResUI(false)
-		arg0_43:detach()
-
-		if arg0_43:lowerAdpter() then
-			setActive(pg.CameraFixMgr.GetInstance().adpterTr, true)
-		end
-
-		pg.NewGuideMgr.GetInstance():OnSceneExit({
-			view = arg0_43.__cname
+	arg0_37:emit(var0_0.AVALIBLE)
+	arg0_37:onUIAnimEnd(function()
+		pg.SeriesGuideMgr.GetInstance():start({
+			view = arg0_37.__cname,
+			code = {
+				pg.SeriesGuideMgr.CODES.MAINUI
+			}
 		})
-		pg.NewStoryMgr.GetInstance():OnSceneExit({
-			view = arg0_43.__cname
+		pg.NewGuideMgr.GetInstance():OnSceneEnter({
+			view = arg0_37.__cname
 		})
-		arg0_43:emit(var0_0.DID_EXIT)
-	end
-
-	arg0_43:inOutAnim(false, var0_43)
-end
-
-function var0_0.inOutAnim(arg0_45, arg1_45, arg2_45)
-	local var0_45 = false
-
-	if arg1_45 then
-		if not IsNil(arg0_45._tf:GetComponent(typeof(Animation))) then
-			arg0_45.animTF = arg0_45._tf
-		else
-			arg0_45.animTF = arg0_45:findTF("blur_panel")
-		end
-
-		if arg0_45.animTF ~= nil then
-			local var1_45 = arg0_45.animTF:GetComponent(typeof(Animation))
-			local var2_45 = arg0_45.animTF:GetComponent(typeof(UIEventTrigger))
-
-			if var1_45 ~= nil and var2_45 ~= nil then
-				if var1_45:get_Item("enter") == nil then
-					originalPrint("cound not found enter animation")
-				else
-					var1_45:Play("enter")
-				end
-			elseif var1_45 ~= nil then
-				originalPrint("cound not found [UIEventTrigger] component")
-			elseif var2_45 ~= nil then
-				originalPrint("cound not found [Animation] component")
-			end
-		end
-	end
-
-	if not var0_45 then
-		arg2_45()
-	end
-end
-
-function var0_0.PlayExitAnimation(arg0_46, arg1_46)
-	local var0_46 = arg0_46._tf:GetComponent(typeof(Animation))
-	local var1_46 = arg0_46._tf:GetComponent(typeof(UIEventTrigger))
-
-	var1_46.didExit:RemoveAllListeners()
-	var1_46.didExit:AddListener(function()
-		var1_46.didExit:RemoveAllListeners()
-		arg1_46()
 	end)
-	var0_46:Play("exit")
 end
 
-function var0_0.attach(arg0_48, arg1_48)
-	return
-end
-
-function var0_0.ClearTweens(arg0_49, arg1_49)
-	arg0_49:cleanManagedTween(arg1_49)
-end
-
-function var0_0.RemoveTempCache(arg0_50)
-	local var0_50 = arg0_50:getUIName()
-
-	PoolMgr.GetInstance():DelTempCache(var0_50)
-end
-
-function var0_0.detach(arg0_51, arg1_51)
-	arg0_51._isLoaded = false
-
-	pg.LayerWeightMgr.GetInstance():DelFromOverlay(arg0_51._tf)
-	pg.DynamicBgMgr.GetInstance():ClearBg(arg0_51:getUIName())
-	arg0_51:disposeEvent()
-	arg0_51:ClearTweens(false)
-
-	arg0_51._tf = nil
-
-	local var0_51 = PoolMgr.GetInstance()
-	local var1_51 = arg0_51:getUIName()
-
-	if arg0_51._go ~= nil and var1_51 then
-		var0_51:ReturnUI(var1_51, arg0_51._go)
-
-		arg0_51._go = nil
-	end
-end
-
-function var0_0.findGO(arg0_52, arg1_52, arg2_52)
-	assert(arg0_52._go, "game object should exist")
-
-	return findGO(arg2_52 or arg0_52._go, arg1_52)
-end
-
-function var0_0.findTF(arg0_53, arg1_53, arg2_53)
-	assert(arg0_53._tf, "transform should exist")
-
-	return findTF(arg2_53 or arg0_53._tf, arg1_53)
-end
-
-function var0_0.getTpl(arg0_54, arg1_54, arg2_54)
-	local var0_54 = arg0_54:findTF(arg1_54, arg2_54)
-
-	var0_54:SetParent(arg0_54._tf, false)
-	SetActive(var0_54, false)
-
-	return var0_54
-end
-
-function var0_0.setSpriteTo(arg0_55, arg1_55, arg2_55, arg3_55)
-	local var0_55 = arg2_55:GetComponent(typeof(Image))
-
-	var0_55.sprite = arg0_55:findTF(arg1_55):GetComponent(typeof(Image)).sprite
-
-	if arg3_55 then
-		var0_55:SetNativeSize()
-	end
-end
-
-function var0_0.setImageAmount(arg0_56, arg1_56, arg2_56)
-	arg1_56:GetComponent(typeof(Image)).fillAmount = arg2_56
-end
-
-function var0_0.setVisible(arg0_57, arg1_57)
-	arg0_57:ShowOrHideResUI(arg1_57)
-
-	if arg1_57 then
-		arg0_57:OnVisible()
+function var0_0.closeView(arg0_39)
+	if arg0_39.contextData.isLayer then
+		arg0_39:emit(var0_0.ON_CLOSE)
 	else
-		arg0_57:OnDisVisible()
+		arg0_39:emit(var0_0.ON_BACK)
+	end
+end
+
+function var0_0.didEnter(arg0_40)
+	return
+end
+
+function var0_0.willExit(arg0_41)
+	return
+end
+
+function var0_0.exit(arg0_42)
+	arg0_42.exited = true
+
+	arg0_42:StopBgm()
+	pg.DelegateInfo.Dispose(arg0_42)
+	arg0_42:willExit()
+	arg0_42:ShowOrHideResUI(false)
+	arg0_42:detach()
+
+	if arg0_42:lowerAdpter() then
+		setActive(pg.CameraFixMgr.GetInstance().adpterTr, true)
 	end
 
-	setActiveViaLayer(arg0_57._tf, arg1_57)
+	pg.NewGuideMgr.GetInstance():OnSceneExit({
+		view = arg0_42.__cname
+	})
+	pg.NewStoryMgr.GetInstance():OnSceneExit({
+		view = arg0_42.__cname
+	})
+	arg0_42:emit(var0_0.DID_EXIT)
 end
 
-function var0_0.OnVisible(arg0_58)
+function var0_0.PlayUIAnimation(arg0_43, arg1_43, arg2_43, arg3_43)
+	local var0_43 = arg1_43:GetComponent(typeof(Animation))
+	local var1_43 = arg1_43:GetComponent(typeof(UIEventTrigger))
+
+	var1_43.didExit:RemoveAllListeners()
+	var1_43.didExit:AddListener(function()
+		var1_43.didExit:RemoveAllListeners()
+		arg3_43()
+	end)
+	var0_43:Play(arg2_43)
+end
+
+function var0_0.attach(arg0_45, arg1_45)
 	return
 end
 
-function var0_0.OnDisVisible(arg0_59)
+function var0_0.ClearTweens(arg0_46, arg1_46)
+	arg0_46:cleanManagedTween(arg1_46)
+end
+
+function var0_0.RemoveTempCache(arg0_47)
+	local var0_47 = arg0_47:getUIName()
+
+	PoolMgr.GetInstance():DelTempCache(var0_47)
+end
+
+function var0_0.detach(arg0_48, arg1_48)
+	arg0_48._isLoaded = false
+
+	pg.LayerWeightMgr.GetInstance():DelFromOverlay(arg0_48._tf)
+	pg.DynamicBgMgr.GetInstance():ClearBg(arg0_48:getUIName())
+	arg0_48:disposeEvent()
+	arg0_48:ClearTweens(false)
+
+	arg0_48._tf = nil
+
+	local var0_48 = PoolMgr.GetInstance()
+	local var1_48 = arg0_48:getUIName()
+
+	if arg0_48._go ~= nil and var1_48 then
+		var0_48:ReturnUI(var1_48, arg0_48._go)
+
+		arg0_48._go = nil
+	end
+end
+
+function var0_0.findGO(arg0_49, arg1_49, arg2_49)
+	assert(arg0_49._go, "game object should exist")
+
+	return findGO(arg2_49 or arg0_49._go, arg1_49)
+end
+
+function var0_0.findTF(arg0_50, arg1_50, arg2_50)
+	assert(arg0_50._tf, "transform should exist")
+
+	return findTF(arg2_50 or arg0_50._tf, arg1_50)
+end
+
+function var0_0.getTpl(arg0_51, arg1_51, arg2_51)
+	local var0_51 = arg0_51:findTF(arg1_51, arg2_51)
+
+	var0_51:SetParent(arg0_51._tf, false)
+	SetActive(var0_51, false)
+
+	return var0_51
+end
+
+function var0_0.setSpriteTo(arg0_52, arg1_52, arg2_52, arg3_52)
+	local var0_52 = arg2_52:GetComponent(typeof(Image))
+
+	var0_52.sprite = arg0_52:findTF(arg1_52):GetComponent(typeof(Image)).sprite
+
+	if arg3_52 then
+		var0_52:SetNativeSize()
+	end
+end
+
+function var0_0.setImageAmount(arg0_53, arg1_53, arg2_53)
+	arg1_53:GetComponent(typeof(Image)).fillAmount = arg2_53
+end
+
+function var0_0.setVisible(arg0_54, arg1_54)
+	arg0_54:ShowOrHideResUI(arg1_54)
+
+	if arg1_54 then
+		arg0_54:OnVisible()
+	else
+		arg0_54:OnDisVisible()
+	end
+
+	setActiveViaLayer(arg0_54._tf, arg1_54)
+end
+
+function var0_0.OnVisible(arg0_55)
 	return
 end
 
-function var0_0.onBackPressed(arg0_60)
-	arg0_60:emit(var0_0.ON_BACK_PRESSED)
+function var0_0.OnDisVisible(arg0_56)
+	return
+end
+
+function var0_0.onBackPressed(arg0_57)
+	arg0_57:emit(var0_0.ON_BACK_PRESSED)
 end
 
 return var0_0

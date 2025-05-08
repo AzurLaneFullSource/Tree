@@ -20,7 +20,7 @@ function var0_0.LoadBg(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2, arg5_2, arg6_2)
 				local var0_3 = arg0_3:GetComponent(typeof(CriManaEffectUI))
 
 				if var0_3 then
-					var0_3.renderMode = ReflectionHelp.RefGetField(typeof("CriManaMovieMaterial+RenderMode"), "Always", nil)
+					var0_3.renderMode = CriWare.CriManaMovieMaterialBase.RenderMode.Always
 
 					var0_3:Pause(false)
 				end

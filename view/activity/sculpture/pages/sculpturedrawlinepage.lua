@@ -188,17 +188,14 @@ end
 function var0_0.OnOneKey(arg0_27)
 	arg0_27.points = {}
 
-	local var0_27 = arg0_27.onekeyTrack.points
+	for iter0_27, iter1_27 in ipairs(arg0_27.onekeyTrack.points:ToTable()) do
+		local var0_27 = arg0_27.tracker:TransformPoint(iter1_27)
+		local var1_27 = Vector3(var0_27.x, var0_27.y, -1)
 
-	for iter0_27 = 1, var0_27.Length do
-		local var1_27 = var0_27[iter0_27 - 1]
-		local var2_27 = arg0_27.tracker:TransformPoint(var1_27)
-		local var3_27 = Vector3(var2_27.x, var2_27.y, -1)
-
-		table.insert(arg0_27.points, var3_27)
+		table.insert(arg0_27.points, var1_27)
 	end
 
-	local function var4_27(arg0_28)
+	local function var2_27(arg0_28)
 		if not arg0_27.pen then
 			arg0_27.pen = Object.Instantiate(arg0_27.penTpl, arg0_28, Quaternion.New(0, 0, 0, 0), arg0_27.frame)
 		else
@@ -206,18 +203,18 @@ function var0_0.OnOneKey(arg0_27)
 		end
 	end
 
-	local var5_27 = {}
+	local var3_27 = {}
 
-	for iter1_27 = 1, #arg0_27.points do
-		table.insert(var5_27, function(arg0_29)
-			var4_27(arg0_27.points[iter1_27])
+	for iter2_27 = 1, #arg0_27.points do
+		table.insert(var3_27, function(arg0_29)
+			var2_27(arg0_27.points[iter2_27])
 			onNextTick(arg0_29)
 		end)
 	end
 
 	arg0_27.cg.blocksRaycasts = false
 
-	seriesAsync(var5_27, function()
+	seriesAsync(var3_27, function()
 		arg0_27:OnPass()
 
 		arg0_27.cg.blocksRaycasts = true

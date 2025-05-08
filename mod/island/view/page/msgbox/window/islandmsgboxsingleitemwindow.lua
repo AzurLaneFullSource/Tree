@@ -1,0 +1,71 @@
+local var0_0 = class("IslandMsgBoxSingleItemWindow", import(".IslandCommonMsgboxWindow"))
+
+function var0_0.getUIName(arg0_1)
+	return "IslandCommonMsgBoxWithSingleItem"
+end
+
+function var0_0.OnLoaded(arg0_2)
+	var0_0.super.OnLoaded(arg0_2)
+
+	arg0_2.itemTr = arg0_2:findTF("IslandItemTpl")
+	arg0_2.nameTxt = arg0_2:findTF("name"):GetComponent(typeof(Text))
+	arg0_2.ownTxt = arg0_2:findTF("own"):GetComponent(typeof(Text))
+	arg0_2.uiItemList = UIItemList.New(arg0_2:findTF("list"), arg0_2:findTF("list/tpl"))
+
+	setText(arg0_2:findTF("label/Text"), i18n1("获取途径"))
+end
+
+function var0_0.OnShow(arg0_3)
+	var0_0.super.OnShow(arg0_3)
+
+	local var0_3 = arg0_3.settings.itemId
+
+	arg0_3:FlushMain(var0_3)
+	arg0_3:FlushAcquiringWay(var0_3)
+end
+
+function var0_0.FlushMain(arg0_4, arg1_4)
+	local var0_4 = pg.island_item_data_template[arg1_4]
+
+	arg0_4.nameTxt.text = var0_4.name
+	arg0_4.contentTxt.text = var0_4.desc
+
+	local var1_4 = getProxy(IslandProxy):GetIsland():GetInventoryAgency():GetOwnCount(arg1_4)
+
+	arg0_4.ownTxt.text = i18n1("已拥有:") .. setColorStr(var1_4, "#39beff")
+
+	local var2_4 = Drop.New({
+		count = 0,
+		type = DROP_TYPE_ISLAND_ITEM,
+		id = arg1_4
+	})
+
+	updateDrop(arg0_4.itemTr, var2_4)
+end
+
+function var0_0.FlushAcquiringWay(arg0_5, arg1_5)
+	local var0_5 = IslandItem.New({
+		num = 0,
+		id = arg1_5
+	}):GetAcquiringWay()
+
+	arg0_5.uiItemList:make(function(arg0_6, arg1_6, arg2_6)
+		if arg0_6 == UIItemList.EventUpdate then
+			local var0_6 = var0_5[arg1_6 + 1]
+
+			setText(arg2_6:Find("Text"), var0_6[1])
+			setText(arg2_6:Find("go/Text"), i18n1("前往"))
+			onButton(arg0_5, arg2_6:Find("go"), function()
+				arg0_5:GetMsgBoxMgr():emit(IslandMediator.OPEN_PAGE, var0_6[2])
+				arg0_5:Hide()
+			end, SFX_PANEL)
+		end
+	end)
+	arg0_5.uiItemList:align(#var0_5)
+end
+
+function var0_0.FlushBtn(arg0_8, arg1_8)
+	setActive(arg0_8.cancelBtn, false)
+end
+
+return var0_0

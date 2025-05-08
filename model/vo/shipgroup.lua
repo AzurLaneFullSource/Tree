@@ -286,20 +286,24 @@ function var0_0.updateMarriedFlag(arg0_28)
 	arg0_28.married = 1
 end
 
-function var0_0.isBluePrintGroup(arg0_29)
-	return var0_0.IsBluePrintGroup(arg0_29.id)
+function var0_0.IsMarried(arg0_29)
+	return arg0_29.married == 1
 end
 
-function var0_0.getBluePrintChangeSkillList(arg0_30)
-	assert(arg0_30:isBluePrintGroup(), "ShipGroup " .. arg0_30.id .. "isn't BluePrint")
-
-	return pg.ship_data_blueprint[arg0_30.id].change_skill
+function var0_0.isBluePrintGroup(arg0_30)
+	return var0_0.IsBluePrintGroup(arg0_30.id)
 end
 
-function var0_0.GetNationTxt(arg0_31)
-	local var0_31 = arg0_31.shipConfig.nationality
+function var0_0.getBluePrintChangeSkillList(arg0_31)
+	assert(arg0_31:isBluePrintGroup(), "ShipGroup " .. arg0_31.id .. "isn't BluePrint")
 
-	return Nation.Nation2facionName(var0_31) .. "-" .. Nation.Nation2Name(var0_31)
+	return pg.ship_data_blueprint[arg0_31.id].change_skill
+end
+
+function var0_0.GetNationTxt(arg0_32)
+	local var0_32 = arg0_32.shipConfig.nationality
+
+	return Nation.Nation2facionName(var0_32) .. "-" .. Nation.Nation2Name(var0_32)
 end
 
 var0_0.CONDITION_FORBIDDEN = -1
@@ -307,68 +311,68 @@ var0_0.CONDITION_CLEAR = 0
 var0_0.CONDITION_INTIMACY = 1
 var0_0.CONDITION_MARRIED = 2
 
-function var0_0.VoiceReplayCodition(arg0_32, arg1_32)
-	local var0_32 = true
-	local var1_32 = ""
+function var0_0.VoiceReplayCodition(arg0_33, arg1_33)
+	local var0_33 = true
+	local var1_33 = ""
 
-	if arg0_32:isBluePrintGroup() then
-		local var2_32 = getProxy(TechnologyProxy):getBluePrintById(arg0_32.id)
+	if arg0_33:isBluePrintGroup() then
+		local var2_33 = getProxy(TechnologyProxy):getBluePrintById(arg0_33.id)
 
-		assert(var2_32, "blueprint can not be nil >>" .. arg0_32.id)
+		assert(var2_33, "blueprint can not be nil >>" .. arg0_33.id)
 
-		local var3_32 = var2_32:getUnlockVoices()
+		local var3_33 = var2_33:getUnlockVoices()
 
-		if not table.contains(var3_32, arg1_32.key) then
-			local var4_32 = var2_32:getUnlockLevel(arg1_32.key)
+		if not table.contains(var3_33, arg1_33.key) then
+			local var4_33 = var2_33:getUnlockLevel(arg1_33.key)
 
-			if var4_32 > 0 then
-				var0_32 = false
+			if var4_33 > 0 then
+				var0_33 = false
 
-				return var0_32, i18n("ship_profile_voice_locked_design", var4_32)
+				return var0_33, i18n("ship_profile_voice_locked_design", var4_33)
 			end
 		end
 	end
 
-	if arg0_32:isMetaGroup() then
-		local var5_32 = getProxy(BayProxy):getMetaShipByGroupId(arg0_32.id):getMetaCharacter()
-		local var6_32 = var5_32:getUnlockedVoiceList()
+	if arg0_33:isMetaGroup() then
+		local var5_33 = getProxy(BayProxy):getMetaShipByGroupId(arg0_33.id):getMetaCharacter()
+		local var6_33 = var5_33:getUnlockedVoiceList()
 
-		if not table.contains(var6_32, arg1_32.key) then
-			local var7_32 = var5_32:getUnlockVoiceRepairPercent(arg1_32.key)
+		if not table.contains(var6_33, arg1_33.key) then
+			local var7_33 = var5_33:getUnlockVoiceRepairPercent(arg1_33.key)
 
-			if var7_32 > 0 then
-				var0_32 = false
+			if var7_33 > 0 then
+				var0_33 = false
 
-				return var0_32, i18n("ship_profile_voice_locked_meta", var7_32)
+				return var0_33, i18n("ship_profile_voice_locked_meta", var7_33)
 			end
 		end
 	end
 
-	if arg1_32.unlock_condition[1] == var0_0.CONDITION_INTIMACY then
-		if arg0_32.maxIntimacy < arg1_32.unlock_condition[2] then
-			var0_32 = false
-			var1_32 = i18n("ship_profile_voice_locked_intimacy", math.floor(arg1_32.unlock_condition[2] / 100))
+	if arg1_33.unlock_condition[1] == var0_0.CONDITION_INTIMACY then
+		if arg0_33.maxIntimacy < arg1_33.unlock_condition[2] then
+			var0_33 = false
+			var1_33 = i18n("ship_profile_voice_locked_intimacy", math.floor(arg1_33.unlock_condition[2] / 100))
 		end
-	elseif arg1_32.unlock_condition[1] == var0_0.CONDITION_MARRIED and arg0_32.married == 0 then
-		var0_32 = false
+	elseif arg1_33.unlock_condition[1] == var0_0.CONDITION_MARRIED and arg0_33.married == 0 then
+		var0_33 = false
 
-		if arg0_32:IsXIdol() then
-			var1_32 = i18n("ship_profile_voice_locked_propose_imas")
+		if arg0_33:IsXIdol() then
+			var1_33 = i18n("ship_profile_voice_locked_propose_imas")
 		else
-			var1_32 = i18n("ship_profile_voice_locked_propose")
+			var1_33 = i18n("ship_profile_voice_locked_propose")
 		end
 	end
 
-	return var0_32, var1_32
+	return var0_33, var1_33
 end
 
-function var0_0.GetMaxIntimacy(arg0_33)
-	return arg0_33.maxIntimacy / 100 + (arg0_33.married and arg0_33.married * 1000 or 0)
+function var0_0.GetMaxIntimacy(arg0_34)
+	return arg0_34.maxIntimacy / 100 + (arg0_34.married and arg0_34.married * 1000 or 0)
 end
 
-function var0_0.isSpecialFilter(arg0_34)
-	for iter0_34, iter1_34 in ipairs(arg0_34.shipConfig.tag_list) do
-		if iter1_34 == "special" then
+function var0_0.isSpecialFilter(arg0_35)
+	for iter0_35, iter1_35 in ipairs(arg0_35.shipConfig.tag_list) do
+		if iter1_35 == "special" then
 			return true
 		end
 	end
@@ -376,16 +380,16 @@ function var0_0.isSpecialFilter(arg0_34)
 	return false
 end
 
-function var0_0.getGroupId(arg0_35)
-	return arg0_35.id
+function var0_0.getGroupId(arg0_36)
+	return arg0_36.id
 end
 
-function var0_0.isRemoulded(arg0_36)
-	return arg0_36.remoulded
+function var0_0.isRemoulded(arg0_37)
+	return arg0_37.remoulded
 end
 
-function var0_0.isMetaGroup(arg0_37)
-	return var0_0.IsMetaGroup(arg0_37.id)
+function var0_0.isMetaGroup(arg0_38)
+	return var0_0.IsMetaGroup(arg0_38.id)
 end
 
 local var2_0 = {
@@ -397,199 +401,199 @@ local var2_0 = {
 	feeling1 = true
 }
 
-function var0_0.getIntimacyName(arg0_38, arg1_38)
-	if not var2_0[arg1_38] then
+function var0_0.getIntimacyName(arg0_39, arg1_39)
+	if not var2_0[arg1_39] then
 		return
 	end
 
-	if arg0_38:isMetaGroup() then
-		return i18n("meta_voice_name_" .. arg1_38)
-	elseif arg0_38:IsXIdol() then
-		return i18n("idolmaster_voice_name_" .. arg1_38)
+	if arg0_39:isMetaGroup() then
+		return i18n("meta_voice_name_" .. arg1_39)
+	elseif arg0_39:IsXIdol() then
+		return i18n("idolmaster_voice_name_" .. arg1_39)
 	end
 end
 
-function var0_0.getProposeType(arg0_39)
-	if arg0_39:isMetaGroup() then
+function var0_0.getProposeType(arg0_40)
+	if arg0_40:isMetaGroup() then
 		return "meta"
-	elseif arg0_39:IsXIdol() then
+	elseif arg0_40:IsXIdol() then
 		return "imas"
 	else
 		return "default"
 	end
 end
 
-function var0_0.IsXIdol(arg0_40)
-	return arg0_40:getNation() == Nation.IDOL_LINK
+function var0_0.IsXIdol(arg0_41)
+	return arg0_41:getNation() == Nation.IDOL_LINK
 end
 
-function var0_0.CanUseShareSkin(arg0_41)
-	return arg0_41.groupConfig.share_group_id and #arg0_41.groupConfig.share_group_id > 0
+function var0_0.CanUseShareSkin(arg0_42)
+	return arg0_42.groupConfig.share_group_id and #arg0_42.groupConfig.share_group_id > 0
 end
 
-function var0_0.rarity2bgPrint(arg0_42, arg1_42)
-	return shipRarity2bgPrint(arg0_42:getRarity(arg1_42), arg0_42:isBluePrintGroup(), arg0_42:isMetaGroup())
+function var0_0.rarity2bgPrint(arg0_43, arg1_43)
+	return shipRarity2bgPrint(arg0_43:getRarity(arg1_43), arg0_43:isBluePrintGroup(), arg0_43:isMetaGroup())
 end
 
-function var0_0.rarity2bgPrintForGet(arg0_43, arg1_43, arg2_43)
-	return skinId2bgPrint(arg2_43 or arg0_43:GetSkin(arg1_43).id) or arg0_43:rarity2bgPrint(arg1_43)
+function var0_0.rarity2bgPrintForGet(arg0_44, arg1_44, arg2_44)
+	return skinId2bgPrint(arg2_44 or arg0_44:GetSkin(arg1_44).id) or arg0_44:rarity2bgPrint(arg1_44)
 end
 
-function var0_0.setEquipCodes(arg0_44, arg1_44)
-	arg0_44.equipCodes = arg1_44
+function var0_0.setEquipCodes(arg0_45, arg1_45)
+	arg0_45.equipCodes = arg1_45
 end
 
-function var0_0.getEquipCodes(arg0_45)
-	return arg0_45.equipCodes
+function var0_0.getEquipCodes(arg0_46)
+	return arg0_46.equipCodes
 end
 
-function var0_0.GetAllChangeSkinIds(arg0_46)
-	if not ShipGroup.IsChangeSkin(arg0_46) then
+function var0_0.GetAllChangeSkinIds(arg0_47)
+	if not ShipGroup.IsChangeSkin(arg0_47) then
 		return {
-			arg0_46
+			arg0_47
 		}
 	end
 
-	local var0_46 = ShipGroup.GetChangeSkinMainId(arg0_46)
-	local var1_46 = {
-		var0_46
+	local var0_47 = ShipGroup.GetChangeSkinMainId(arg0_47)
+	local var1_47 = {
+		var0_47
 	}
-	local var2_46 = arg0_46
+	local var2_47 = arg0_47
 
-	for iter0_46 = 1, 10 do
-		local var3_46 = ShipGroup.GetChangeSkinNextId(var2_46)
+	for iter0_47 = 1, 10 do
+		local var3_47 = ShipGroup.GetChangeSkinNextId(var2_47)
 
-		if not table.contains(var1_46, var3_46) then
-			table.insert(var1_46, var3_46)
+		if not table.contains(var1_47, var3_47) then
+			table.insert(var1_47, var3_47)
 		end
 
-		var2_46 = var3_46
+		var2_47 = var3_47
 
-		if ShipGroup.GetChangeSkinIndex(var2_46) == 1 then
-			return var1_46
+		if ShipGroup.GetChangeSkinIndex(var2_47) == 1 then
+			return var1_47
 		end
 	end
 
-	return var1_46
+	return var1_47
 end
 
-function var0_0.IsChangeSkin(arg0_47)
-	return var0_0.GetChangeSkinData(arg0_47)
+function var0_0.IsChangeSkin(arg0_48)
+	return var0_0.GetChangeSkinData(arg0_48)
 end
 
-function var0_0.GetChangeSkinMainId(arg0_48)
-	if not var0_0.IsChangeSkin(arg0_48) then
-		return arg0_48
+function var0_0.GetChangeSkinMainId(arg0_49)
+	if not var0_0.IsChangeSkin(arg0_49) then
+		return arg0_49
 	end
 
-	local var0_48 = pg.ship_skin_template[arg0_48].ship_group
-	local var1_48 = var0_0.GetChangeSkinGroupId(arg0_48)
+	local var0_49 = pg.ship_skin_template[arg0_49].ship_group
+	local var1_49 = var0_0.GetChangeSkinGroupId(arg0_49)
 
-	if var0_0.GetChangeSkinIndex(arg0_48) == 1 then
-		return arg0_48
+	if var0_0.GetChangeSkinIndex(arg0_49) == 1 then
+		return arg0_49
 	end
 
-	local var2_48 = ShipSkin.GetAllSkinByGroup(var0_48)
+	local var2_49 = ShipSkin.GetAllSkinByGroup(var0_49)
 
-	for iter0_48, iter1_48 in ipairs(var2_48) do
-		if var0_0.IsChangeSkin(iter1_48.id) then
-			local var3_48 = var0_0.GetChangeSkinGroupId(iter1_48.id)
-			local var4_48 = var0_0.GetChangeSkinIndex(iter1_48.id)
+	for iter0_49, iter1_49 in ipairs(var2_49) do
+		if var0_0.IsChangeSkin(iter1_49.id) then
+			local var3_49 = var0_0.GetChangeSkinGroupId(iter1_49.id)
+			local var4_49 = var0_0.GetChangeSkinIndex(iter1_49.id)
 
-			if var3_48 == var1_48 and var4_48 == 1 then
-				print("获得到了skinId :" .. arg0_48 .. " 的A面皮肤id" .. iter1_48.id)
+			if var3_49 == var1_49 and var4_49 == 1 then
+				print("获得到了skinId :" .. arg0_49 .. " 的A面皮肤id" .. iter1_49.id)
 
-				return iter1_48.id
+				return iter1_49.id
 			end
 		end
 	end
 
-	return arg0_48
+	return arg0_49
 end
 
-function var0_0.GetChangeSkinData(arg0_49)
-	local var0_49 = pg.ship_skin_template[arg0_49]
+function var0_0.GetChangeSkinData(arg0_50)
+	local var0_50 = pg.ship_skin_template[arg0_50]
 
-	if var0_49 and var0_49.change_skin and var0_49.change_skin ~= "" and table.contains(var0_49.tag, ShipSkin.WITH_CHANGE) then
-		return var0_49.change_skin
+	if var0_50 and var0_50.change_skin and var0_50.change_skin ~= "" and table.contains(var0_50.tag, ShipSkin.WITH_CHANGE) then
+		return var0_50.change_skin
 	end
 
 	return nil
 end
 
-function var0_0.IsSameChangeSkinGroup(arg0_50, arg1_50)
-	if not ShipGroup.IsChangeSkin(arg0_50) or not ShipGroup.IsChangeSkin(arg1_50) then
+function var0_0.IsSameChangeSkinGroup(arg0_51, arg1_51)
+	if not ShipGroup.IsChangeSkin(arg0_51) or not ShipGroup.IsChangeSkin(arg1_51) then
 		return false
 	end
 
-	return ShipGroup.GetChangeSkinGroupId(arg0_50) == ShipGroup.GetChangeSkinGroupId(arg1_50)
+	return ShipGroup.GetChangeSkinGroupId(arg0_51) == ShipGroup.GetChangeSkinGroupId(arg1_51)
 end
 
-function var0_0.GetChangeSkinGroupId(arg0_51)
-	return var0_0.GetChangeSkinData(arg0_51) and var0_0.GetChangeSkinData(arg0_51).group or nil
+function var0_0.GetChangeSkinGroupId(arg0_52)
+	return var0_0.GetChangeSkinData(arg0_52) and var0_0.GetChangeSkinData(arg0_52).group or nil
 end
 
-function var0_0.GetChangeSkinNextId(arg0_52)
-	return var0_0.GetChangeSkinData(arg0_52) and var0_0.GetChangeSkinData(arg0_52).next or nil
+function var0_0.GetChangeSkinNextId(arg0_53)
+	return var0_0.GetChangeSkinData(arg0_53) and var0_0.GetChangeSkinData(arg0_53).next or nil
 end
 
-function var0_0.GetChangeSkinIndex(arg0_53)
-	return var0_0.GetChangeSkinData(arg0_53) and var0_0.GetChangeSkinData(arg0_53).index or nil
+function var0_0.GetChangeSkinIndex(arg0_54)
+	return var0_0.GetChangeSkinData(arg0_54) and var0_0.GetChangeSkinData(arg0_54).index or nil
 end
 
-function var0_0.GetChangeSkinState(arg0_54)
-	return var0_0.GetChangeSkinData(arg0_54) and var0_0.GetChangeSkinData(arg0_54).state or nil
+function var0_0.GetChangeSkinState(arg0_55)
+	return var0_0.GetChangeSkinData(arg0_55) and var0_0.GetChangeSkinData(arg0_55).state or nil
 end
 
-function var0_0.GetChangeSkinAction(arg0_55)
-	return var0_0.GetChangeSkinData(arg0_55) and var0_0.GetChangeSkinData(arg0_55).action or nil
+function var0_0.GetChangeSkinAction(arg0_56)
+	return var0_0.GetChangeSkinData(arg0_56) and var0_0.GetChangeSkinData(arg0_56).action or nil
 end
 
-function var0_0.GetStoreChangeSkinId(arg0_56, arg1_56)
-	if not arg1_56 or arg1_56 == 0 then
+function var0_0.GetStoreChangeSkinId(arg0_57, arg1_57)
+	if not arg1_57 or arg1_57 == 0 then
 		return nil
 	end
 
-	print("尝试获取group_id = " .. tostring(arg0_56) .. "ship id =" .. tostring(arg1_56))
+	print("尝试获取group_id = " .. tostring(arg0_57) .. "ship id =" .. tostring(arg1_57))
 
-	local var0_56 = var0_0.GetStoreChangeSkinPrefsName(arg0_56, arg1_56)
-	local var1_56 = PlayerPrefs.GetInt(var0_56)
-
-	if not var1_56 or var1_56 == 0 then
-		return nil
-	end
-
-	return var1_56
-end
-
-function var0_0.SetStoreChangeSkinId(arg0_57, arg1_57, arg2_57)
 	local var0_57 = var0_0.GetStoreChangeSkinPrefsName(arg0_57, arg1_57)
+	local var1_57 = PlayerPrefs.GetInt(var0_57)
 
-	PlayerPrefs.SetInt(var0_57, arg2_57)
+	if not var1_57 or var1_57 == 0 then
+		return nil
+	end
+
+	return var1_57
 end
 
-function var0_0.GetStoreChangeSkinPrefsName(arg0_58, arg1_58)
-	local var0_58 = "change_skin_group_$1_$2"
-	local var1_58 = string.gsub(var0_58, "%$1", arg1_58)
+function var0_0.SetStoreChangeSkinId(arg0_58, arg1_58, arg2_58)
+	local var0_58 = var0_0.GetStoreChangeSkinPrefsName(arg0_58, arg1_58)
 
-	return (string.gsub(var1_58, "%$2", arg0_58))
+	PlayerPrefs.SetInt(var0_58, arg2_58)
 end
 
-function var0_0.SetShipChangeSkin(arg0_59, arg1_59, arg2_59, arg3_59)
-	local var0_59 = getProxy(BayProxy):getShipById(arg0_59)
+function var0_0.GetStoreChangeSkinPrefsName(arg0_59, arg1_59)
+	local var0_59 = "change_skin_group_$1_$2"
+	local var1_59 = string.gsub(var0_59, "%$1", arg1_59)
 
-	if not var0_59 then
+	return (string.gsub(var1_59, "%$2", arg0_59))
+end
+
+function var0_0.SetShipChangeSkin(arg0_60, arg1_60, arg2_60, arg3_60)
+	local var0_60 = getProxy(BayProxy):getShipById(arg0_60)
+
+	if not var0_60 then
 		return
 	end
 
-	ShipGroup.SetStoreChangeSkinId(arg1_59, arg0_59, arg2_59)
+	ShipGroup.SetStoreChangeSkinId(arg1_60, arg0_60, arg2_60)
 
-	if var0_59.id == arg0_59 and arg3_59 then
-		var0_59:updateSkinId(arg2_59)
-		getProxy(BayProxy):updateShip(var0_59)
+	if var0_60.id == arg0_60 and arg3_60 then
+		var0_60:updateSkinId(arg2_60)
+		getProxy(BayProxy):updateShip(var0_60)
 	end
 
-	pg.m02:sendNotification(GAME.CHANGE_SKIN_UPDATE, var0_59)
+	pg.m02:sendNotification(GAME.CHANGE_SKIN_UPDATE, var0_60)
 end
 
 return var0_0

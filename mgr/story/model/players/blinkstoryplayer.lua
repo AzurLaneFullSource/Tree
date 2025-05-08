@@ -8,12 +8,12 @@ function var0_0.UpdateBg(arg0_1, arg1_1)
 
 	local var0_1 = arg0_1.blurOptimized.downsample
 	local var1_1 = arg0_1.blurOptimized.blurSize
-	local var2_1 = arg0_1.blurOptimized.blurIterations
+	local var2_1 = arg0_1.blurOptimized.blurIteration
 
 	arg0_1.defaultBlueValues = {
 		downsample = var0_1,
 		blurSize = var1_1,
-		blurIterations = var2_1
+		blurIteration = var2_1
 	}
 end
 
@@ -122,7 +122,7 @@ function var0_0.ClearToBlur(arg0_25, arg1_25, arg2_25)
 	arg0_25.blurFlag = true
 	arg0_25.blurOptimized.downsample = 0
 	arg0_25.blurOptimized.blurSize = 0
-	arg0_25.blurOptimized.blurIterations = 0
+	arg0_25.blurOptimized.blurIteration = 0
 	arg0_25.blurOptimized.enabled = true
 
 	local var0_25 = arg1_25.closeTime
@@ -131,7 +131,7 @@ function var0_0.ClearToBlur(arg0_25, arg1_25, arg2_25)
 
 	arg0_25:TweenValueWithEase(arg0_25._go, 0, 3, var0_25 * var2_25, 0, var1_25, function(arg0_26)
 		arg0_25.blurOptimized.blurSize = arg0_26
-		arg0_25.blurOptimized.blurIterations = arg0_26
+		arg0_25.blurOptimized.blurIteration = arg0_26
 	end, arg2_25)
 end
 
@@ -142,7 +142,7 @@ function var0_0.BlurToClear(arg0_27, arg1_27, arg2_27)
 
 	arg0_27:TweenValueWithEase(arg0_27._go, 3, 0, var0_27 * var2_27, 0, var1_27, function(arg0_28)
 		arg0_27.blurOptimized.blurSize = arg0_28
-		arg0_27.blurOptimized.blurIterations = arg0_28
+		arg0_27.blurOptimized.blurIteration = arg0_28
 	end, function()
 		arg0_27:ClearBlur()
 		arg2_27()
@@ -154,7 +154,7 @@ function var0_0.ClearBlur(arg0_30)
 		arg0_30.blurOptimized.enabled = false
 		arg0_30.blurOptimized.downsample = arg0_30.defaultBlueValues.downsample
 		arg0_30.blurOptimized.blurSize = arg0_30.defaultBlueValues.blurSize
-		arg0_30.blurOptimized.blurIterations = arg0_30.defaultBlueValues.blurIterations
+		arg0_30.blurOptimized.blurIteration = arg0_30.defaultBlueValues.blurIteration
 		arg0_30.blurFlag = false
 	end
 end

@@ -21,10 +21,10 @@ function var0_0.didEnter(arg0_2)
 end
 
 local function var1_0(arg0_4, arg1_4)
-	local var0_4 = arg0_4:GetComponentsInChildren(typeof(Animator), true)
+	local var0_4 = arg0_4:GetComponentsInChildren(typeof(Animator), true):ToTable()
 
-	for iter0_4 = 0, var0_4.Length - 1 do
-		var0_4[iter0_4].speed = arg1_4
+	for iter0_4, iter1_4 in ipairs(var0_4) do
+		iter1_4.speed = arg1_4
 	end
 end
 

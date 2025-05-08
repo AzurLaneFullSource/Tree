@@ -78,7 +78,7 @@ function var0_0.preload(arg0_8, arg1_8)
 	arg0_8.sceneRootName = "beach"
 	arg0_8.sceneName = "map_beach_01"
 	arg0_8.timelineSceneRootName = pg.dorm3d_dorm_template[var0_8].asset_name
-	arg0_8.timelineSceneName = string.lower(arg0_8.volleyballCfg.scene_name)
+	arg0_8.timelineSceneName = arg0_8.volleyballCfg.scene_name
 
 	seriesAsync({
 		function(arg0_9)
@@ -279,12 +279,12 @@ function var0_0.initScene(arg0_26)
 
 		var2_28:Stop()
 
-		local var3_28 = var0_28:GetComponentsInChildren(typeof(UnityEngine.Playables.PlayableDirector), true)
+		local var3_28 = var0_28:GetComponentsInChildren(typeof(UnityEngine.Playables.PlayableDirector)):ToTable()
 
-		for iter0_28 = 0, var3_28.Length - 1 do
-			var3_28[iter0_28].playOnAwake = false
+		for iter0_28, iter1_28 in ipairs(var3_28) do
+			iter1_28.playOnAwake = false
 
-			var3_28[iter0_28]:Stop()
+			iter1_28:Stop()
 		end
 
 		table.insert(arg0_26.totalDirectorList, {
@@ -846,28 +846,25 @@ end
 
 function var0_0.DoTimelineRandomTrack(arg0_91, arg1_91)
 	local var0_91 = {}
-	local var1_91 = TimelineHelper.GetTimelineTracks(arg1_91)
 
-	for iter0_91 = 0, var1_91.Length - 1 do
-		local var2_91 = var1_91[iter0_91]
+	for iter0_91, iter1_91 in ipairs(TimelineHelper.GetTimelineTracks(arg1_91):ToTable()) do
+		if iter1_91.name ~= "Markers" then
+			iter1_91.muted = true
 
-		if var2_91.name ~= "Markers" then
-			var2_91.muted = true
-
-			table.insert(var0_91, var2_91)
+			table.insert(var0_91, iter1_91)
 		end
 	end
 
 	if #var0_91 > 0 then
-		local var3_91 = var0_91[math.random(#var0_91)]
+		local var1_91 = var0_91[math.random(#var0_91)]
 
 		underscore.each(var0_91, function(arg0_92)
-			if arg0_92.name == var3_91.name then
+			if arg0_92.name == var1_91.name then
 				arg0_92.muted = false
 			end
 		end)
 
-		arg0_91.debugTrackName.text = var3_91.name
+		arg0_91.debugTrackName.text = var1_91.name
 	else
 		arg0_91.debugTrackName.text = "track cnt 0"
 	end

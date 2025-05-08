@@ -14,7 +14,7 @@ local function var1_0(arg0_3, arg1_3)
 	return function(arg0_4, arg1_4)
 		local var0_4 = arg0_4.__name
 
-		if arg0_3 == 1 and cs[var0_4][arg1_4] then
+		if arg0_3 == 1 and cs[var0_4][arg1_4] and not pg.base[var0_4][arg1_4] then
 			LuaHelper.SetConfVal(var0_4, cs[var0_4][arg1_4][1], cs[var0_4][arg1_4][2])
 		end
 
@@ -117,3 +117,4 @@ require("buffCfg")
 require("cardCfg")
 require("genVertify")
 require("buffFXPreloadList")
+require("nodecanvas/Include")

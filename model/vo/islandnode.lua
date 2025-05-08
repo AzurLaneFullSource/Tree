@@ -18,7 +18,7 @@ function var0_0.IsUnlock(arg0_3)
 end
 
 function var0_0.GetUnlock(arg0_4)
-	local var0_4 = getProxy(IslandProxy)
+	local var0_4 = getProxy(SixthAnniversaryIslandProxy)
 	local var1_4 = arg0_4:getConfig("open_need")
 	local var2_4 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2)
 	local var3_4 = var2_4 and var2_4:GetTotalBuildingLevel() or 0
@@ -42,7 +42,7 @@ end
 function var0_0.ChangeVisual(arg0_8)
 	local var0_8 = arg0_8:getConfig("node_change")
 
-	return var0_8 ~= 0 and getProxy(IslandProxy):GetNode(var0_8):IsUnlock()
+	return var0_8 ~= 0 and getProxy(SixthAnniversaryIslandProxy):GetNode(var0_8):IsUnlock()
 end
 
 function var0_0.IsCompleted(arg0_9)

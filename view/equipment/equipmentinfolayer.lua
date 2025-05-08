@@ -120,7 +120,7 @@ function var0_0.didEnter(arg0_9)
 		arg0_9:updateOperation4()
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_9._tf, true, {
+	pg.UIMgr.GetInstance():BlurPanel(arg0_9._tf, false, {
 		weight = arg0_9:getWeightFromData()
 	})
 end

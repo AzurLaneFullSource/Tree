@@ -17,6 +17,8 @@ function var0_0.execute(arg0_1, arg1_1)
 		var2_1:updatePlayer(var3_1)
 	elseif var0_1.type == DROP_TYPE_ITEM then
 		getProxy(BagProxy):removeItemById(var0_1.id, var0_1.count)
+	elseif var0_1.type == DROP_TYPE_ISLAND_ITEM then
+		getProxy(IslandProxy):GetIsland():GetInventoryAgency():RemoveItem(var0_1.id, var0_1.count)
 	else
 		assert(false, "no support for type --" .. var0_1.type)
 	end

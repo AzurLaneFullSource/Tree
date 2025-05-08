@@ -11,7 +11,7 @@ return {
 			side = 2,
 			bgName = "bg_yujin_3",
 			hidePaintObj = true,
-			say = "The fleet failed on at full speed, and soon the Tulipan coastline lit up by cannon fire came into view.",
+			say = "The fleet sailed on at full speed, and soon the Tulipan coastline lit up by cannon fire came into view.",
 			bgm = "battle-tulipa",
 			flashout = {
 				black = true,

@@ -1,11 +1,17 @@
 GraphicSettingConst = {}
 
 local var0_0 = GraphicSettingConst
-local var1_0 = {
+
+var0_0.SettingType = {
 	toggle = 1,
 	select = 2
 }
-
+var0_0.SettingLevel = {
+	High = 3,
+	Mid = 2,
+	Low = 1,
+	Custom = 4
+}
 var0_0.assetPath = {
 	"Default_LowQualitySettings",
 	"Default_MediumQualitySettings",
@@ -14,249 +20,259 @@ var0_0.assetPath = {
 }
 var0_0.settings = {
 	{
-		CsharpValue = "enableGPUDriver",
-		specialIos = true,
-		cfgId = 1,
-		playerPrefsname = "allowGpGpu",
-		tips = i18n("grapihcs3d_setting_gpgpu_warning")
+		tips = "grapihcs3d_setting_gpgpu_warning",
+		settingType = 1,
+		Cname = "EnableGPUDriver",
+		playerPrefsname = "enableGPUDriver",
+		settingName = "允许GPGPU",
+		isShow = 1
 	},
 	{
-		CsharpValue = "enableHighRenderingQuality",
-		playerPrefsname = "enableHighRenderingQuality",
-		cfgId = 2
-	},
-	{
-		CsharpValue = "depthRenderingMode",
-		playerPrefsname = "depthRenderingMode",
-		cfgId = 3,
-		EnumType = "RenderingMode",
-		Enum = {
-			Auto = 1,
-			Enabled = 2
-		}
-	},
-	{
-		CsharpValue = "shaderQuality",
-		playerPrefsname = "shaderQuality",
-		cfgId = 4,
-		EnumType = "Quality",
-		Enum = {
-			High = 3,
-			Medium = 2,
-			Low = 1
-		}
-	},
-	{
-		CsharpValue = "msaaSamples",
-		special = true,
-		cfgId = 5,
-		playerPrefsname = "msaaSamples",
-		EnumType = "MSAASamples",
-		Enum = {
-			None = 1,
-			MSAA2x = 2,
-			MSAA8x = 4,
-			MSAA4x = 3
-		}
-	},
-	{
-		CsharpValue = "resolution",
-		playerPrefsname = "maximumResolution",
-		cfgId = 6,
-		EnumType = "Resolution",
-		Enum = {
-			_900P = 2,
-			_720P = 1,
-			_1080P = 3,
-			_2k = 4
-		}
-	},
-	{
-		CsharpValue = "staticResolution",
-		playerPrefsname = "staticResolution",
-		cfgId = 7,
-		EnumType = "ResolutionSize",
-		Enum = {
-			_10 = 1,
-			_60 = 6,
-			Full = 10,
-			_30 = 3,
-			Half = 5,
-			_40 = 4,
-			_70 = 7,
-			_90 = 9,
-			_80 = 8,
-			_20 = 2
-		}
-	},
-	{
-		CsharpValue = "staticMinResolution",
-		playerPrefsname = "staticMinResolution",
-		cfgId = 8,
-		EnumType = "MinResolution",
-		Enum = {
-			_540P = 2,
-			_720P = 3,
-			_360P = 1
-		}
-	},
-	{
-		CsharpValue = "textureSize",
-		playerPrefsname = "textureSize",
-		cfgId = 9,
-		EnumType = "TextureSize",
-		Enum = {
-			Half = 2,
-			Full = 1,
-			Eighth = 4,
-			Quarter = 3
-		}
-	},
-	{
-		CsharpValue = "bakedShadowMode",
-		playerPrefsname = "bakedShadowMode",
-		cfgId = 10,
-		EnumType = "BakedShadowMode",
-		Enum = {
-			StaticShadowMapSoft = 2,
-			Shadowmask = 4,
-			StaticShadowMapHard = 3,
-			Disabled = 1
-		}
-	},
-	{
-		CsharpValue = "enableShadow",
-		playerPrefsname = "enableShadow",
-		cfgId = 11
-	},
-	{
-		CsharpValue = "enableReflection",
-		playerPrefsname = "enableReflection",
-		cfgId = 12
-	},
-	{
-		CsharpValue = "enableAddLights",
-		playerPrefsname = "enableAddLights",
-		cfgId = 13
-	},
-	{
-		CsharpValue = "enableOutline",
-		playerPrefsname = "enableOutline",
-		cfgId = 14
-	},
-	{
-		CsharpValue = "postProcessQuality",
-		playerPrefsname = "postProcessQuality",
-		cfgId = 15,
-		EnumType = "PostQuality",
-		Enum = {
-			Off = 1,
-			On = 2,
-			HighQuality = 3
+		settingType = 2,
+		Cname = "Resolution",
+		playerPrefsname = "resolution",
+		settingName = "最大分辨率",
+		isShow = 1,
+		optionNames = {
+			"720p",
+			"1080p",
+			"2K"
 		},
-		childList = {
-			16,
-			17,
-			18,
-			19
+		options = {
+			1280,
+			1920,
+			2560
 		}
 	},
 	{
-		CsharpValue = "enablePostAntialiasing",
+		settingType = 2,
+		Cname = "RenderingQuality",
+		playerPrefsname = "renderingQuality",
+		settingName = "渲染精度",
+		isShow = 1,
+		optionNames = {
+			"低",
+			"高"
+		},
+		options = {
+			0,
+			1
+		}
+	},
+	{
+		settingType = 2,
+		Cname = "ShaderQuality",
+		playerPrefsname = "shaderQuality",
+		settingName = "Shader级别",
+		isShow = 1,
+		optionNames = {
+			"低",
+			"高"
+		},
+		options = {
+			0,
+			1
+		}
+	},
+	{
+		settingType = 1,
+		Cname = "EnableAdditionalLights",
+		playerPrefsname = "enableAdditionalLights",
+		settingName = "多光源",
+		isShow = 1
+	},
+	{
+		settingType = 2,
+		Cname = "ShadowQuality",
+		playerPrefsname = "shadowQuality",
+		settingName = "阴影精度",
+		isShow = 1,
+		optionNames = {
+			"关",
+			"低",
+			"中",
+			"高"
+		},
+		options = {
+			0,
+			1,
+			2,
+			3
+		}
+	},
+	{
+		settingType = 2,
+		Cname = "ShadowUpdateMode",
+		playerPrefsname = "shadowUpdateMode",
+		settingName = "阴影更新频率",
+		isShow = 1,
+		optionNames = {
+			"低更新频率",
+			"中更新频率",
+			"高更新频率",
+			"每帧更新"
+		},
+		options = {
+			0,
+			1,
+			2,
+			3
+		}
+	},
+	{
+		settingType = 1,
+		Cname = "EnablePostProcess",
+		playerPrefsname = "enablePostProcess",
+		settingName = "后处理",
+		isShow = 1
+	},
+	{
+		settingType = 1,
+		Cname = "EnableReflection",
+		playerPrefsname = "enableReflection",
+		settingName = "反射",
+		isShow = 1
+	},
+	{
+		parentId = 8,
+		settingType = 1,
+		Cname = "EnablePostAntialiasing",
 		playerPrefsname = "enablePostAntialiasing",
-		parentSetting = "postProcessQuality",
-		cfgId = 16
+		settingName = "抗锯齿",
+		isShow = 1
 	},
 	{
-		CsharpValue = "enableHDR",
+		parentId = 8,
+		settingType = 1,
+		Cname = "EnableHDR",
 		playerPrefsname = "enableHDR",
-		parentSetting = "postProcessQuality",
-		cfgId = 17
+		settingName = "HDR",
+		isShow = 1
 	},
 	{
-		CsharpValue = "enableDOF",
+		parentId = 8,
+		settingType = 1,
+		Cname = "EnableDof",
 		playerPrefsname = "enableDOF",
-		parentSetting = "postProcessQuality",
-		cfgId = 18
+		settingName = "景深",
+		isShow = 1
 	},
 	{
-		CsharpValue = "enableDistort",
+		parentId = 8,
+		settingType = 1,
+		Cname = "EnableDistort",
 		playerPrefsname = "enableDistort",
-		parentSetting = "postProcessQuality",
-		cfgId = 19
+		settingName = "扭曲",
+		isShow = 1
+	},
+	{
+		settingType = 2,
+		Cname = "CharacterQuality",
+		playerPrefsname = "characterQuality",
+		settingName = "角色精度",
+		isShow = 1,
+		optionNames = {
+			"低",
+			"中",
+			"高"
+		},
+		options = {
+			0,
+			1,
+			2
+		}
+	},
+	{
+		settingType = 2,
+		Cname = "TerrainLayerQuality",
+		playerPrefsname = "terrainLayerQuality",
+		settingName = "地形精度",
+		isShow = 1,
+		optionNames = {
+			"低",
+			"中",
+			"高"
+		},
+		options = {
+			0,
+			1,
+			2
+		}
 	}
 }
 
-function var0_0.HandleCustomSetting()
-	local var0_1 = PlayerPrefs.GetInt("dorm3d_graphics_settings", 2)
-	local var1_1 = var0_0.assetPath[var0_1]
-	local var2_1 = LoadAny("three3dquaitysettings/defaultsettings", var1_1)
-	local var3_1 = PLATFORM == PLATFORM_IPHONEPLAYER
+function var0_0.InitDefautQuality()
+	if PlayerPrefs.GetInt("dorm3d_graphics_settings", 0) == 0 then
+		local var0_1 = DevicePerformanceUtil.GetDevicePerformanceLevel()
 
-	if var3_1 and var0_1 == 3 then
-		return var0_0.HandleIosSettings(var2_1)
-	end
+		if PLATFORM == PLATFORM_IPHONEPLAYER then
+			local var1_1 = SystemInfo.deviceModel or ""
 
-	if var0_1 ~= 4 then
-		return var2_1
-	end
+			local function var2_1(arg0_2)
+				local var0_2 = string.match(arg0_2, "iPad(%d+)")
+				local var1_2 = tonumber(var0_2)
 
-	for iter0_1, iter1_1 in ipairs(var0_0.settings) do
-		local var4_1 = pg.dorm3d_graphic_setting[iter1_1.cfgId]
-		local var5_1 = PlayerPrefs.GetInt(iter1_1.playerPrefsname, 0)
-
-		if var5_1 ~= 0 then
-			if var4_1.displayType == var1_0.toggle then
-				var5_1 = var5_1 == 2 and true or false
-			end
-		else
-			var5_1 = ReflectionHelp.RefGetField(var2_1:GetType(), iter1_1.CsharpValue, var2_1)
-		end
-
-		if var4_1.displayType == var1_0.select then
-			if iter1_1.childList ~= nil and var5_1 == 1 then
-				print(123)
-			else
-				if iter1_1.special then
-					var5_1 = 1
+				if var1_2 and var1_2 >= 8 then
+					return true
 				end
 
-				for iter2_1, iter3_1 in pairs(iter1_1.Enum) do
-					if iter3_1 == var5_1 then
-						var5_1 = iter2_1
+				return false
+			end
 
-						break
-					end
+			local function var3_1(arg0_3)
+				local var0_3 = string.match(arg0_3, "iPhone(%d+)")
+				local var1_3 = tonumber(var0_3)
+
+				if var1_3 and var1_3 >= 13 then
+					return true
 				end
 
-				local var6_1 = ReflectionHelp.RefGetField(typeof("BLHX.Rendering." .. iter1_1.EnumType), tostring(var5_1), nil)
-
-				ReflectionHelp.RefSetField(var2_1:GetType(), iter1_1.CsharpValue, var2_1, var6_1)
-			end
-		else
-			if iter1_1.specialIos and var3_1 then
-				var5_1 = false
+				return false
 			end
 
-			ReflectionHelp.RefSetField(var2_1:GetType(), iter1_1.CsharpValue, var2_1, var5_1)
+			if var2_1(var1_1) or var3_1(var1_1) then
+				var0_1 = DevicePerformanceLevel.High
+			end
 		end
-	end
 
-	return var2_1
+		local var4_1 = var0_1 == DevicePerformanceLevel.High and 3 or var0_1 == DevicePerformanceLevel.Mid and 2 or 1
+
+		PlayerPrefs.SetInt("dorm3d_graphics_settings", var4_1)
+
+		Dorm3dRoomTemplateScene.FirstDefaultSetting = var4_1
+	end
 end
 
-function var0_0.HandleIosSettings(arg0_2)
-	for iter0_2, iter1_2 in ipairs(var0_0.settings) do
-		local var0_2 = ReflectionHelp.RefGetField(arg0_2:GetType(), iter1_2.CsharpValue, arg0_2)
+function var0_0.SettingQuality()
+	local var0_4 = PlayerPrefs.GetInt("dorm3d_graphics_settings", 4)
+	local var1_4 = var0_0.assetPath[var0_4]
+	local var2_4 = LoadAny("three3dquaitysettings/defaultsettings", var1_4)
 
-		if iter1_2.specialIos then
-			local var1_2 = false
+	if var0_4 ~= 4 then
+		BLHX.Rendering.GlobalQualitySettings.SetOverrideQualitySettings(var2_4)
 
-			ReflectionHelp.RefSetField(arg0_2:GetType(), iter1_2.CsharpValue, arg0_2, var1_2)
+		return
+	end
+
+	for iter0_4, iter1_4 in ipairs(var0_0.settings) do
+		local var3_4 = PlayerPrefs.GetInt(iter1_4.playerPrefsname, -1)
+
+		if var3_4 ~= -1 then
+			if iter1_4.settingType == var0_0.SettingType.toggle then
+				var3_4 = var3_4 == 1 and true or false
+			end
+
+			var2_4[iter1_4.Cname] = var3_4
 		end
 	end
 
-	return arg0_2
+	BLHX.Rendering.GlobalQualitySettings.SetOverrideQualitySettings(var2_4)
+end
+
+function var0_0.ClearPlayerPrefs()
+	for iter0_5, iter1_5 in ipairs(var0_0.settings) do
+		PlayerPrefs.DeleteKey(iter1_5.playerPrefsname)
+	end
 end
 
 return var0_0

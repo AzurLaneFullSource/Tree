@@ -28,6 +28,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
+	warning("onloaded")
 	eachChild(arg0_2._tf, function(arg0_3)
 		setActive(arg0_3, false)
 	end)
@@ -36,7 +37,7 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.loopCpkTF:GetComponent(typeof(Image)).enabled = false
 	arg0_2.loopCpkPlayer = arg0_2.loopCpkTF:Find("cpk/usm"):GetComponent(typeof(CriManaCpkUI))
 
-	arg0_2.loopCpkPlayer:SetMaxFrameDrop(CriManaMovieMaterial.MaxFrameDrop.Infinite)
+	arg0_2.loopCpkPlayer:SetMaxFrameDrop(CriWare.CriManaMovieMaterialBase.MaxFrameDrop.Infinite)
 
 	arg0_2.cpkHandler = NewEducateCpkHandler.New(arg0_2._tf:Find("cpk"))
 	arg0_2.pictureHandler = NewEducatePictureHandler.New(arg0_2._tf:Find("picture"))
@@ -105,7 +106,6 @@ function var0_0.PlayLoopCpk(arg0_7, arg1_7)
 		arg0_7.loopCpkTF:GetComponent(typeof(Image)).enabled = true
 	end)
 	setActive(arg0_7.loopCpkTF, true)
-	arg0_7.loopCpkPlayer.player:Stop()
 	arg0_7.loopCpkPlayer:PlayCpk()
 end
 
@@ -116,6 +116,7 @@ function var0_0.StopLoopCpk(arg0_9)
 end
 
 function var0_0.StartNode(arg0_10, arg1_10)
+	warning("startnode")
 	arg0_10:Show()
 
 	arg0_10.stystemNo = arg0_10.contextData.char:GetFSM():GetStystemNo()

@@ -258,7 +258,7 @@ function var0_0.didEnter(arg0_12)
 	})
 
 	if arg0_12.contextData.system ~= SYSTEM_BOSS_RUSH and arg0_12.contextData.system ~= SYSTEM_BOSS_RUSH_EX and arg0_12.contextData.system ~= SYSTEM_ACT_BOSS and arg0_12.contextData.system ~= SYSTEM_BOSS_SINGLE and arg0_12.contextData.system ~= SYSTEM_BOSS_SINGLE_VARIABLE then
-		ys.Battle.BattleCameraUtil.GetInstance().ActiveMainCemera(false)
+		ys.Battle.BattleCameraUtil.GetInstance().ActiveMainCamera(false)
 	end
 
 	arg0_12._grade.transform.localScale = Vector3(1.5, 1.5, 0)

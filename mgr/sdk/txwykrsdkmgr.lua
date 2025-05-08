@@ -5,12 +5,46 @@ function var0_0.CheckPretest()
 	return NetConst.GATEWAY_HOST == "bl-kr-test.xdg.com" and NetConst.GATEWAY_PORT == 30001 or IsUnityEditor
 end
 
+function var0_0.GetPNInfo()
+	local var0_2 = "null"
+	local var1_2 = "null"
+	local var2_2 = "not logged in"
+	local var3_2 = getProxy(PlayerProxy)
+
+	if var3_2 then
+		var0_2 = var3_2:getData().id
+		var1_2 = var3_2:getData().level
+		var2_2 = var3_2:getData().name
+	end
+
+	local var4_2 = "none"
+	local var5_2 = getProxy(UserProxy):getData()
+
+	if var5_2 then
+		var4_2 = getProxy(ServerProxy):getLastServer(var5_2.uid).id
+	end
+
+	local var6_2 = PNInfo.New(var0_2, var1_2)
+
+	return {
+		info = PNInfo.New(var0_2, var1_2),
+		playerID = var0_2,
+		playerName = var2_2,
+		playerLevel = var1_2,
+		serverID = var4_2
+	}
+end
+
+function var0_0.GetClientVer()
+	return (BundleWizard.Inst:GetGroupMgr(GroupMainHelper.DefaultGroupName).CurrentVersion:ToString())
+end
+
 function var0_0.GoSDkLoginScene()
 	var1_0:GoLoginScene()
 end
 
-function var0_0.LoginSdk(arg0_3)
-	var1_0:Login(0)
+function var0_0.LoginSdk(arg0_5)
+	var1_0:Login()
 end
 
 function var0_0.SdkGateWayLogined()
@@ -25,98 +59,61 @@ function var0_0.LogoutSDK()
 	var1_0:LocalLogout()
 end
 
-function var0_0.EnterServer(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7, arg5_7, arg6_7)
-	var1_0:EnterServer(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7 * 1000, arg5_7, "vip0", arg6_7)
+function var0_0.EnterServer(arg0_9, arg1_9, arg2_9, arg3_9, arg4_9, arg5_9, arg6_9)
+	return
 end
 
-function var0_0.SdkLevelUp(arg0_8, arg1_8)
-	var1_0:LevelUp(arg1_8, arg0_8)
+function var0_0.SdkLevelUp(arg0_10, arg1_10)
+	return
 end
 
 function var0_0.UserCenter()
-	local var0_9 = getProxy(PlayerProxy)
-	local var1_9 = "未登入"
+	local var0_11 = var0_0.GetPNInfo()
+	local var1_11 = var0_0.GetClientVer()
 
-	if var0_9 then
-		var1_9 = var0_9:getData().name
-	end
-
-	local var2_9 = BundleWizard.Inst:GetGroupMgr("DEFAULT_RES").CurrentVersion:ToString()
-
-	var1_0:UserCenter(var1_9, var2_9, "1")
+	var1_0:UserCenter(var0_11.playerName, var1_11, var0_11.serverID, var0_11.info)
 end
 
 function var0_0.BugReport()
-	local var0_10 = getProxy(UserProxy):getData()
-	local var1_10 = getProxy(ServerProxy):getLastServer(var0_10.uid)
-	local var2_10 = getProxy(PlayerProxy)
-	local var3_10 = ""
+	local var0_12 = var0_0.GetPNInfo()
+	local var1_12 = var0_0.GetClientVer()
 
-	if var2_10 then
-		var3_10 = var2_10:getData().name
-	end
-
-	local var4_10 = BundleWizard.Inst:GetGroupMgr("DEFAULT_RES").CurrentVersion:ToString()
-
-	var1_0:BugReport(var3_10, var4_10, var1_10.id)
+	var1_0:BugReport(var0_12.playerName, var1_12, var0_12.serverID, var0_12.info)
 end
 
 function var0_0.StoreReview()
-	var1_0:StoreReview()
+	local var0_13 = var0_0.GetPNInfo()
+	local var1_13 = var0_0.GetClientVer()
+
+	var1_0:StoreReview(var0_13.playerName, var1_13, var0_13.serverID, var0_13.info)
 end
 
-function var0_0.ShareImg(arg0_12, arg1_12)
-	var1_0:ShareImg(arg0_12, arg1_12)
+function var0_0.ShareImg(arg0_14)
+	var1_0:ShareImg(arg0_14, "")
 end
 
 function var0_0.CompletedTutorial()
-	var1_0:CompletedTutorial()
+	return
 end
 
 function var0_0.UnlockAchievement()
-	var1_0:UnlockAchievement()
+	return
+end
+
+function var0_0.OnAndoridBackPress()
+	PressBack()
 end
 
 function var0_0.QueryWithProduct()
-	local function var0_15()
-		local var0_16 = ""
-
-		for iter0_16, iter1_16 in ipairs(pg.pay_data_display.all) do
-			local var1_16 = pg.pay_data_display[iter1_16]
-
-			var0_16 = var0_16 .. var1_16.id_str .. ";"
-		end
-
-		return var0_16
-	end
-
-	local function var1_15(arg0_17, arg1_17)
-		for iter0_17, iter1_17 in ipairs(pg.pay_data_display.all) do
-			local var0_17 = pg.pay_data_display[iter1_17]
-
-			if var0_17.id_str == arg0_17 and var0_17.money ~= arg1_17 then
-				originalPrint(string.format("<color=#ff0000>%s的商品价格和本地的价格不同</color> 本地价格：%s, 服务器价格：%s", var0_17.name, var0_17.money, arg1_17))
-			end
-		end
-	end
-
-	var1_0:QueryWithProduct(var0_15(), function(arg0_18)
-		local var0_18 = string.split(arg0_18, ";")
-
-		for iter0_18, iter1_18 in ipairs(var0_18) do
-			local var1_18 = string.split(iter1_18, "|")
-			local var2_18 = var1_18[1]
-			local var3_18 = var1_18[2]
-
-			var1_15(var2_18, var3_18)
-		end
-	end)
+	return
 end
 
 function var0_0.SdkPay(arg0_19, arg1_19, arg2_19, arg3_19, arg4_19, arg5_19, arg6_19, arg7_19, arg8_19, arg9_19)
-	local var0_19 = getProxy(PlayerProxy):getRawData().level
+	local var0_19 = var0_0.GetPNInfo()
+	local var1_19 = var0_19.serverID .. "-" .. var0_19.playerID .. "-" .. arg4_19
 
-	var1_0:Pay(arg0_19, arg1_19, arg2_19, arg3_19, arg4_19, arg5_19, arg6_19, arg7_19, var0_19)
+	originalPrint("SdkPay nonce", tostring(var1_19))
+	var1_0:Pay(arg0_19, var1_19, var0_19.info)
 end
 
 function var0_0.BindCPU()
@@ -233,6 +230,44 @@ end
 
 function var0_0.Survey(arg0_33)
 	Application.OpenURL(arg0_33)
+end
+
+function OnQueryProductsSucess(arg0_34)
+	local function var0_34(arg0_35, arg1_35)
+		for iter0_35, iter1_35 in ipairs(pg.pay_data_display.all) do
+			local var0_35 = pg.pay_data_display[iter1_35]
+
+			if var0_35.id_str == arg0_35 and var0_35.money ~= arg1_35 then
+				-- block empty
+			end
+		end
+	end
+
+	local var1_34 = arg0_34.Count
+
+	for iter0_34 = 0, var1_34 - 1 do
+		local var2_34 = arg0_34[iter0_34]
+		local var3_34 = var2_34.ProductID
+		local var4_34 = var2_34.Price
+
+		var0_34(var3_34, var4_34)
+	end
+end
+
+function OnAdRewards(arg0_36)
+	return
+end
+
+function OnQuerySubscriptionSuccess(arg0_37)
+	return
+end
+
+function OnRequestPayment(arg0_38)
+	return
+end
+
+function OnQuerySuccess(arg0_39, arg1_39)
+	return
 end
 
 return var0_0

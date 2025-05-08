@@ -106,7 +106,7 @@ end
 
 function var0_0.LoadScene(arg0_11, arg1_11)
 	gcAll(true)
-	SceneOpMgr.Inst:LoadSceneAsync("scenes/worldmap3d", "worldmap3d", LoadSceneMode.Additive, function(arg0_12, arg1_12)
+	SceneOpMgr.Inst:LoadSceneAsync("scenes/worldmap3d", "WorldMap3D", LoadSceneMode.Additive, function(arg0_12, arg1_12)
 		arg0_11.transform = tf(arg0_12:GetRootGameObjects()[0])
 
 		setActive(arg0_11.transform, false)
@@ -183,7 +183,7 @@ function var0_0.ReturnScene(arg0_16)
 		var1_16.alpha = 1
 
 		var1_16:UpdateAlpha()
-		SceneOpMgr.Inst:UnloadSceneAsync("scene/worldmap3d", "worldmap3d")
+		SceneOpMgr.Inst:UnloadSceneAsync("scene/worldmap3d", "WorldMap3D")
 
 		arg0_16.cmPointer = nil
 	end

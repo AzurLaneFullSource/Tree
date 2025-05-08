@@ -703,7 +703,7 @@ function var0_0.readyToAchieve(arg0_22)
 			return var0_60:GetServerTime() >= var0_60:GetTimeToNextTime(math.max(arg0_60.data1, arg0_60.data2))
 		end,
 		[ActivityConst.ACTIVITY_TYPE_ISLAND] = function(arg0_61)
-			for iter0_61, iter1_61 in pairs(getProxy(IslandProxy):GetNodeDic()) do
+			for iter0_61, iter1_61 in pairs(getProxy(SixthAnniversaryIslandProxy):GetNodeDic()) do
 				if iter1_61:IsVisual() and iter1_61:RedDotHint() then
 					return true
 				end

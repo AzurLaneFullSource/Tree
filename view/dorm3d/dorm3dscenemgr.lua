@@ -91,9 +91,6 @@ function var0_0.LoadTimelineScene(arg0_9, arg1_9, arg2_9)
 				var0_13:Stop()
 				TimelineSupport.InitTimeline(var0_13)
 				TimelineSupport.InitSubtitle(var0_13, arg1_9.callName)
-
-				arg1_9.unloadDirector = var0_13
-
 				arg0_12()
 			end)
 		end)
@@ -117,10 +114,6 @@ function var0_0.UnloadTimelineScene(arg0_15, arg1_15, arg2_15, arg3_15)
 
 	if tobool(arg2_15) == tobool(var0_15.isCache) then
 		local var1_15 = var0_15.assetRootName
-
-		if var0_15.unloadDirector then
-			TimelineSupport.UnloadPlayable(var0_15.unloadDirector)
-		end
 
 		SceneOpMgr.Inst:UnloadSceneAsync(string.lower("dorm3d/character/scenes/" .. var1_15 .. "/timeline/" .. arg1_15 .. "/" .. arg1_15 .. "_scene"), arg1_15, function()
 			arg0_15.cacheSceneDic[arg1_15] = nil
@@ -210,8 +203,6 @@ function var0_0.ChangeArtScene(arg0_17, arg1_17, arg2_17)
 end
 
 function var0_0.ChangeSubScene(arg0_26, arg1_26, arg2_26)
-	arg1_26 = string.lower(arg1_26)
-
 	warning(arg0_26.subSceneInfo, "->", arg1_26, arg1_26 == arg0_26.subSceneInfo)
 
 	if arg1_26 == arg0_26.subSceneInfo then

@@ -14,8 +14,8 @@ local function var6_0(arg0_1)
 	})[arg0_1]
 end
 
-local function var7_0()
-	local var0_2 = pg.NewStoryMgr.GetInstance():GetPlaySpeed()
+local function var7_0(arg0_2)
+	local var0_2 = arg0_2:GetPlaySpeed()
 	local var1_2 = table.indexof(Story.STORY_AUTO_SPEED, var0_2 or 0)
 
 	if var1_2 <= 0 or var1_2 > #Story.STORY_AUTO_SPEED then
@@ -25,7 +25,7 @@ local function var7_0()
 	return var6_0(var1_2)
 end
 
-function var0_0.Ctor(arg0_3, arg1_3)
+function var0_0.Ctor(arg0_3, arg1_3, arg2_3)
 	pg.DelegateInfo.New(arg0_3)
 
 	arg0_3._tf = arg1_3
@@ -43,6 +43,7 @@ function var0_0.Ctor(arg0_3, arg1_3)
 	arg0_3.speedPanelImg = arg0_3.speedPanel:Find("adpter/frame/speed/Text"):GetComponent(typeof(Image))
 	arg0_3.speedPanelAnim = arg0_3.speedPanel:GetComponent(typeof(Animation))
 	arg0_3.speedPanelAniEvent = arg0_3.speedPanel:GetComponent(typeof(DftAniEvent))
+	arg0_3.onUpdate = arg2_3
 
 	arg0_3:Init()
 end
@@ -63,7 +64,10 @@ function var0_0.Init(arg0_4)
 		onButton(arg0_4, iter1_4, function()
 			local var0_7 = Story.STORY_AUTO_SPEED[iter0_4]
 
-			pg.NewStoryMgr.GetInstance():UpdatePlaySpeed(var0_7)
+			if arg0_4.onUpdate then
+				arg0_4.onUpdate(var0_7)
+			end
+
 			arg0_4:HideSettings()
 		end, SFX_PANEL)
 	end
@@ -71,10 +75,12 @@ function var0_0.Init(arg0_4)
 	arg0_4.speedPanelStatus = var3_0
 end
 
-function var0_0.Show(arg0_8)
+function var0_0.Show(arg0_8, arg1_8)
+	arg0_8.story = arg1_8
+
 	setActive(arg0_8.speedBtn, true)
 
-	arg0_8.speedImg.sprite = GetSpriteFromAtlas("ui/story_atlas", var7_0())
+	arg0_8.speedImg.sprite = GetSpriteFromAtlas("ui/story_atlas", var7_0(arg1_8))
 
 	arg0_8.speedImg:SetNativeSize()
 	arg0_8.speedAniEvent:SetEndEvent(function()
@@ -95,7 +101,7 @@ function var0_0.ShowSettings(arg0_11)
 	setActive(arg0_11.speedBtn, false)
 	setActive(arg0_11.speedPanel, true)
 
-	local var0_11 = var7_0()
+	local var0_11 = var7_0(arg0_11.story)
 
 	arg0_11.speedPanelImg.sprite = GetSpriteFromAtlas("ui/story_atlas", var0_11)
 
@@ -145,7 +151,7 @@ end
 
 function var0_0.HideSettings(arg0_16)
 	arg0_16:RemoveTimer()
-	arg0_16:Show()
+	arg0_16:Show(arg0_16.story)
 	arg0_16.speedPanelAnim:Stop()
 	arg0_16.speedPanelAnim:Play("anim_newstoryUI_speedpanel_out")
 

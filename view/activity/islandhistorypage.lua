@@ -211,7 +211,7 @@ function var0_0.updateMap(arg0_6, arg1_6)
 		end
 	end
 
-	local var7_6 = getProxy(IslandProxy):GetNode(arg0_6.showMapId):IsCompleted()
+	local var7_6 = getProxy(SixthAnniversaryIslandProxy):GetNode(arg0_6.showMapId):IsCompleted()
 
 	print("mapId :" .. arg0_6.showMapId .. " get flag = " .. tostring(var7_6))
 	setActive(arg0_6.finalAward, var3_6 and not var7_6)

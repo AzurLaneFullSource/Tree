@@ -317,7 +317,7 @@ function AiriLogin(arg0_44)
 	local function var0_44()
 		local var0_45 = User.New({
 			type = 1,
-			arg1 = PLATFORM_AIRIJP,
+			arg1 = PLATFORM_YOSTARJP,
 			arg2 = arg0_44.UID,
 			arg3 = arg0_44.ACCESS_TOKEN
 		})

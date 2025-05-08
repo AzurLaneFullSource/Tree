@@ -12,6 +12,9 @@ var0_0.ResBlueprintFragment = 9
 var0_0.ResClassField = 10
 var0_0.ResStoreGold = 16
 var0_0.ResStoreOil = 17
+var0_0.ResIslandGold = 18
+var0_0.ResIslandGem = 19
+var0_0.ResIslandSpeedUpTicket = 20
 var0_0.ResBattery = 101
 var0_0.ResPT = 102
 

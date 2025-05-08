@@ -69,7 +69,6 @@ function var0_0.init(arg0_2)
 	setActive(arg0_2.shareUI, false)
 
 	arg0_2.ysScreenShoter = arg0_2._tf:Find("Shoter"):GetComponent(typeof(YSTool.YSScreenShoter))
-	arg0_2.ysScreenRecorder = arg0_2._tf:Find("Shoter"):GetComponent(typeof(YSTool.YSScreenRecorder))
 	arg0_2.skinSelectPanel = arg0_2._tf:Find("SkinSelectPanel")
 
 	setActive(arg0_2.skinSelectPanel, false)
@@ -207,56 +206,49 @@ function var0_0.didEnter(arg0_7)
 
 		if not arg0_7.recordState then
 			local function var1_15(arg0_17)
-				if arg0_17 ~= -1 then
+				if not arg0_17 then
 					var0_15(true)
 
 					arg0_7.recordState = false
 
 					LeanTween.moveX(arg0_7.stopRecBtn, arg0_7.stopRecBtn.rect.width, 0.15)
+				else
+					arg0_7.recordState = true
 				end
 			end
 
-			local function var2_15(arg0_18)
-				warning("开始录屏结果：" .. tostring(arg0_18))
-			end
-
-			local function var3_15()
+			local function var2_15()
 				setActive(arg0_7.stopRecBtn, true)
 				LeanTween.moveX(arg0_7.stopRecBtn, 0, 0.15):setOnComplete(System.Action(function()
 					var0_0.SetMute(true)
-					arg0_7.ysScreenRecorder:BeforeStart()
-					arg0_7.ysScreenRecorder:StartRecord(var2_15, var1_15)
-				end))
 
-				if PLATFORM_CODE == PLATFORM_JP and pg.SdkMgr.GetInstance():GetChannelUID() == "2" then
-					print("start recording : play sound")
-					NotificationMgr.Inst:PlayStartRecordSound()
-				end
+					arg0_7.recordFilePath = YSNormalTool.RecordTool.GenRecordFilePath()
+
+					YSNormalTool.RecordTool.StartRecording(var1_15, arg0_7.recordFilePath)
+				end))
 			end
 
 			seriesAsync({
-				function(arg0_21)
-					CameraHelper.Request3DDorm(arg0_21, nil)
+				function(arg0_20)
+					PermissionHelper.Request3DDorm(arg0_20, nil)
 				end,
-				function(arg0_22)
-					arg0_7.recordState = true
-
+				function(arg0_21)
 					var0_15(false)
 
-					local var0_22 = PlayerPrefs.GetInt("hadShowForVideoTipDorm", 0)
+					local var0_21 = PlayerPrefs.GetInt("hadShowForVideoTipDorm", 0)
 
-					if not var0_22 or var0_22 <= 0 then
+					if not var0_21 or var0_21 <= 0 then
 						PlayerPrefs.SetInt("hadShowForVideoTipDorm", 1)
 
 						arg0_7:findTF("Text", arg0_7.videoTipPanel):GetComponent("Text").text = i18n("word_take_video_tip")
 
 						onButton(arg0_7, arg0_7.videoTipPanel, function()
 							setActive(arg0_7.videoTipPanel, false)
-							var3_15()
+							var2_15()
 						end)
 						setActive(arg0_7.videoTipPanel, true)
 					else
-						var3_15()
+						var2_15()
 					end
 				end
 			})
@@ -265,46 +257,53 @@ function var0_0.didEnter(arg0_7)
 	onButton(arg0_7, arg0_7.stopRecBtn, function()
 		arg0_7.recordState = false
 
-		local function var0_24(arg0_25)
-			warning("结束录屏结果：" .. tostring(arg0_25))
+		local function var0_23(arg0_24)
+			if arg0_24 and PLATFORM == PLATFORM_ANDROID then
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					content = i18n("word_save_video"),
+					onNo = function()
+						if System.IO.File.Exists(arg0_7.recordFilePath) then
+							System.IO.File.Delete(arg0_7.recordFilePath)
+						end
+					end,
+					onYes = function()
+						YSNormalTool.MediaTool.SaveVideoToAlbum(arg0_7.recordFilePath, function(arg0_27, arg1_27)
+							if arg0_27 then
+								pg.TipsMgr.GetInstance():ShowTips(i18n("word_save_ok"))
+
+								if System.IO.File.Exists(arg0_7.recordFilePath) then
+									System.IO.File.Delete(arg0_7.recordFilePath)
+								end
+							end
+						end)
+					end
+				})
+			end
+
+			arg0_7.recordState = false
 		end
 
-		local function var1_24(arg0_26)
-			setActive(arg0_7.centerPanel, arg0_26)
+		local function var1_23(arg0_28)
+			setActive(arg0_7.centerPanel, arg0_28)
 
-			arg0_7:findTF("RightTop"):GetComponent("CanvasGroup").alpha = arg0_26 and 1 or 0
+			arg0_7:findTF("RightTop"):GetComponent("CanvasGroup").alpha = arg0_28 and 1 or 0
 		end
 
 		if not LeanTween.isTweening(go(arg0_7.stopRecBtn)) then
 			LeanTween.moveX(arg0_7.stopRecBtn, arg0_7.stopRecBtn.rect.width, 0.15):setOnComplete(System.Action(function()
 				setActive(arg0_7.stopRecBtn, false)
 				seriesAsync({
-					function(arg0_28)
-						arg0_7.ysScreenRecorder:StopRecord(var0_24)
-
-						if PLATFORM == PLATFORM_ANDROID then
-							pg.MsgboxMgr.GetInstance():ShowMsgBox({
-								content = i18n("word_save_video"),
-								onNo = function()
-									arg0_7.ysScreenRecorder:DiscardVideo()
-								end,
-								onYes = function()
-									local var0_30 = arg0_7.ysScreenRecorder:GetVideoFilePath()
-
-									MediaSaver.SaveVideoWithPath(var0_30)
-								end
-							})
-						end
-
-						var1_24(true)
+					function(arg0_30)
+						YSNormalTool.RecordTool.StopRecording(var0_23)
+						var1_23(true)
 						var0_0.SetMute(false)
 
-						local var0_28 = arg0_7.room:GetCameraZones()[arg0_7.zoneIndex]
-						local var1_28 = Dorm3dCameraAnim.New({
+						local var0_30 = arg0_7.room:GetCameraZones()[arg0_7.zoneIndex]
+						local var1_30 = Dorm3dCameraAnim.New({
 							configId = arg0_7.animID
 						})
 
-						pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCamera(arg0_7.scene.apartment:GetConfigID(), 2, arg0_7.room:GetConfigID(), Dorm3dTrackCommand.BuildCameraMsg(var0_28:GetName(), var1_28:GetStateName(), arg0_7.cameraSettings.depthOfField.focusDistance.value, arg0_7.cameraSettings.depthOfField.blurRadius.value, arg0_7.cameraSettings.postExposure.value, arg0_7.cameraSettings.contrast.value, arg0_7.cameraSettings.saturate.value)))
+						pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCamera(arg0_7.scene.apartment:GetConfigID(), 2, arg0_7.room:GetConfigID(), Dorm3dTrackCommand.BuildCameraMsg(var0_30:GetName(), var1_30:GetStateName(), arg0_7.cameraSettings.depthOfField.focusDistance.value, arg0_7.cameraSettings.depthOfField.blurRadius.value, arg0_7.cameraSettings.postExposure.value, arg0_7.cameraSettings.contrast.value, arg0_7.cameraSettings.saturate.value)))
 					end
 				})
 			end))
@@ -332,12 +331,6 @@ function var0_0.didEnter(arg0_7)
 
 		local function var2_32(arg0_35, arg1_35)
 			arg0_7:emit(Dorm3dPhotoMediator.SHARE_PANEL, arg1_35, arg0_35)
-
-			if PLATFORM_CODE == PLATFORM_JP and pg.SdkMgr.GetInstance():GetChannelUID() == "2" then
-				print("start photo : play sound")
-				NotificationMgr.Inst:PlayShutterSound()
-			end
-
 			getProxy(Dorm3dChatProxy):TriggerEvent({
 				{
 					value = 1,
@@ -1434,13 +1427,13 @@ end
 
 function var0_0.SetMute(arg0_135)
 	if arg0_135 then
-		CriAtom.SetCategoryVolume("Category_CV", 0)
-		CriAtom.SetCategoryVolume("Category_BGM", 0)
-		CriAtom.SetCategoryVolume("Category_SE", 0)
+		CriWare.CriAtom.SetCategoryVolume("Category_CV", 0)
+		CriWare.CriAtom.SetCategoryVolume("Category_BGM", 0)
+		CriWare.CriAtom.SetCategoryVolume("Category_SE", 0)
 	else
-		CriAtom.SetCategoryVolume("Category_CV", pg.CriMgr.GetInstance():getCVVolume())
-		CriAtom.SetCategoryVolume("Category_BGM", pg.CriMgr.GetInstance():getBGMVolume())
-		CriAtom.SetCategoryVolume("Category_SE", pg.CriMgr.GetInstance():getSEVolume())
+		CriWare.CriAtom.SetCategoryVolume("Category_CV", pg.CriMgr.GetInstance():getCVVolume())
+		CriWare.CriAtom.SetCategoryVolume("Category_BGM", pg.CriMgr.GetInstance():getBGMVolume())
+		CriWare.CriAtom.SetCategoryVolume("Category_SE", pg.CriMgr.GetInstance():getSEVolume())
 	end
 end
 

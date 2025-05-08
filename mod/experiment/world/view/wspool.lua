@@ -10,12 +10,12 @@ function var0_0.Setup(arg0_1, arg1_1)
 	arg0_1.pools = {}
 	arg0_1.pooltf = GameObject.Find("__Pool__").transform
 
-	local var0_1 = GetComponent(arg1_1, "ItemList").prefabItem
+	local var0_1 = GetComponent(arg1_1, "ItemList").prefabItem:ToTable()
 
 	arg0_1.tplDic = {}
 
-	for iter0_1 = 0, var0_1.Length - 1 do
-		arg0_1.tplDic[var0_1[iter0_1].name] = var0_1[iter0_1]
+	for iter0_1, iter1_1 in ipairs(var0_1) do
+		arg0_1.tplDic[iter1_1.name] = iter1_1
 	end
 
 	setActive(arg1_1, false)

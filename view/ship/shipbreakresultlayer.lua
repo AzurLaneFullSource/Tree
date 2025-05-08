@@ -98,10 +98,10 @@ function var0_0.updateStatistics(arg0_5)
 		local var1_6 = findTF(var0_6, "layers")
 
 		if not IsNil(var1_6) then
-			local var2_6 = var1_6:GetComponentsInChildren(typeof(Image))
+			local var2_6 = var1_6:GetComponentsInChildren(typeof(Image)):ToTable()
 
-			for iter0_6 = 1, var2_6.Length do
-				var2_6[iter0_6 - 1].color = Color.New(0, 0, 0)
+			for iter0_6, iter1_6 in ipairs(var2_6) do
+				iter1_6.color = Color.New(0, 0, 0)
 			end
 		end
 

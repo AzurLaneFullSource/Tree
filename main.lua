@@ -34,9 +34,8 @@ end
 QualitySettings.vSyncCount = 0
 QualitySettings.skinWeights = ReflectionHelp.RefGetField(typeof("UnityEngine.SkinWeights"), "Unlimited", nil)
 
-tolua.loadassembly("com.blhx.builtin-pipeline.runtime")
-Dorm3dRoomTemplateScene.InitDefautQuality()
-Dorm3dRoomTemplateScene.SettingQuality()
+GraphicSettingConst.InitDefautQuality()
+GraphicSettingConst.SettingQuality()
 ReflectionHelp.RefSetField(typeof("ResourceMgr"), "_asyncMax", ResourceMgr.Inst, 30)
 
 tf(GameObject.Find("EventSystem")):GetComponent(typeof(EventSystem)).sendNavigationEvents = false
@@ -51,10 +50,12 @@ if IsUnityEditor then
 	end
 end
 
-ResourceMgr.Inst.enableAssetNameFinder = false
-
 if (PLATFORM_CODE == PLATFORM_CH and CSharpVersion < 48 or PLATFORM_CODE == PLATFORM_CHT) and PLATFORM == 8 then
 	pg.SdkMgr.GetInstance():InitSDK()
+end
+
+if PLATFORM_CODE == PLATFORM_CH then
+	BilibiliSdkMgr.checkSimulator = false
 end
 
 pg.TimeMgr.GetInstance():Init()
@@ -313,6 +314,7 @@ local function var1_0(arg0_12)
 			pg.BgmMgr.GetInstance():Init(arg0_33)
 		end,
 		function(arg0_34)
+			pg.SettingsGroupMgr.GetInstance():Init()
 			pg.FileDownloadMgr.GetInstance():Init(arg0_34)
 		end,
 		function(arg0_35)
@@ -351,14 +353,25 @@ seriesAsync({
 	var0_0,
 	var1_0
 }, function(arg0_44)
+	require("HybridCLRConst")
+
+	local var0_44 = Application.streamingAssetsPath .. "/AssetBundles/hybridclr/patch/"
+	local var1_44 = HybridCLRConst.PatchDllList
+
+	Sandystar.HybridCLRTool.HybridCLRHelper.LoadPatchDLL(var0_44, var1_44)
+
+	local var2_44 = Application.persistentDataPath .. "/AssetBundles/hybridclr/hotfix/"
+	local var3_44 = HybridCLRConst.HotfixDllList
+
+	Sandystar.HybridCLRTool.HybridCLRHelper.LoadHotfixDLL(var2_44, var3_44)
 	pg.SdkMgr.GetInstance():QueryWithProduct()
 	print("loading cost: " .. os.clock() - var2_0)
 	VersionMgr.Inst:DestroyUI()
 
-	local var0_44 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
+	local var4_44 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
 
-	if not IsNil(var0_44) then
-		Object.Destroy(var0_44)
+	if not IsNil(var4_44) then
+		Object.Destroy(var4_44)
 	end
 
 	Screen.sleepTimeout = SleepTimeout.SystemSetting

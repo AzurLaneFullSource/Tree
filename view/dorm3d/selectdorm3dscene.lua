@@ -703,12 +703,7 @@ function var0_0.willExit(arg0_74)
 	end
 
 	if arg0_74.clearSceneCache then
-		BLHX.Rendering.EngineCore.TryDispose(true)
-
-		local var0_74 = typeof("BLHX.Rendering.Executor")
-		local var1_74 = ReflectionHelp.RefGetProperty(var0_74, "Instance", nil)
-
-		ReflectionHelp.RefCallMethod(var0_74, "TryHandleWaitLinkList", var1_74)
+		-- block empty
 	end
 end
 

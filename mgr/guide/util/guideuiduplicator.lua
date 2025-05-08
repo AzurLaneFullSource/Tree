@@ -26,28 +26,24 @@ end
 
 local function var2_0(arg0_4)
 	local var0_4 = arg0_4:GetComponent(typeof(Button))
-	local var1_4 = arg0_4:GetComponentsInChildren(typeof(Button))
+	local var1_4 = arg0_4:GetComponentsInChildren(typeof(Button)):ToTable()
 
-	for iter0_4 = 1, var1_4.Length do
-		local var2_4 = var1_4[iter0_4 - 1]
-
-		if var0_4 ~= var2_4 then
-			var2_4.enabled = false
+	for iter0_4, iter1_4 in ipairs(var1_4) do
+		if var0_4 ~= iter1_4 then
+			iter1_4.enabled = false
 		end
 	end
 
-	local var3_4 = arg0_4:GetComponent(typeof(Toggle))
-	local var4_4 = arg0_4:GetComponentsInChildren(typeof(Toggle))
+	local var2_4 = arg0_4:GetComponent(typeof(Toggle))
+	local var3_4 = arg0_4:GetComponentsInChildren(typeof(Toggle)):ToTable()
 
-	for iter1_4 = 1, var4_4.Length do
-		local var5_4 = var4_4[iter1_4 - 1]
-
-		if var3_4 ~= var5_4 then
-			var5_4.enabled = false
+	for iter2_4, iter3_4 in ipairs(var3_4) do
+		if var2_4 ~= iter3_4 then
+			iter3_4.enabled = false
 		end
 	end
 
-	if var3_4 then
+	if var2_4 then
 		setToggleEnabled(arg0_4, true)
 	end
 end
@@ -69,10 +65,10 @@ local function var4_0(arg0_7)
 		Animator,
 		Animation
 	}) do
-		local var0_7 = arg0_7:GetComponentsInChildren(typeof(iter1_7))
+		local var0_7 = arg0_7:GetComponentsInChildren(typeof(iter1_7)):ToTable()
 
-		for iter2_7 = 1, var0_7.Length do
-			var0_7[iter2_7 - 1].enabled = false
+		for iter2_7, iter3_7 in ipairs(var0_7) do
+			iter3_7.enabled = false
 		end
 	end
 end
@@ -103,12 +99,10 @@ function var0_0.InitDuplication(arg0_8, arg1_8, arg2_8, arg3_8)
 	var3_0(arg1_8)
 
 	if not arg3_8.keepScrollTxt then
-		local var2_8 = arg1_8:GetComponentsInChildren(typeof(ScrollText))
+		local var2_8 = arg1_8:GetComponentsInChildren(typeof(ScrollText)):ToTable()
 
-		for iter0_8 = 1, var2_8.Length do
-			local var3_8 = var2_8[iter0_8 - 1]
-
-			setActive(var3_8.gameObject, false)
+		for iter0_8, iter1_8 in ipairs(var2_8) do
+			setActive(iter1_8.gameObject, false)
 		end
 	end
 

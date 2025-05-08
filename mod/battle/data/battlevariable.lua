@@ -7,7 +7,7 @@ var0_0.Battle.BattleVariable = var0_0.Battle.BattleVariable or {}
 local var1_0 = var0_0.Battle.BattleVariable
 local var2_0 = var0_0.Battle.BattleConfig
 
-function var1_0.Init()
+function var1_0.Init(arg0_1)
 	var1_0.speedRatioByIFF = {
 		[0] = 1,
 		1,
@@ -26,7 +26,9 @@ function var1_0.Init()
 
 	local var0_1 = pg.UIMgr.GetInstance():GetMainCamera()
 
-	setActive(var0_1, true)
+	if not arg0_1 then
+		setActive(var0_1, true)
+	end
 
 	var1_0._camera = var0_1:GetComponent(typeof(Camera))
 	var1_0._cameraTF = var1_0._camera.transform
@@ -67,7 +69,7 @@ local var8_0 = 0
 
 function var1_0.UpdateCameraPositionArgs()
 	local var0_3 = var1_0._cameraTF.position
-	local var1_3 = var1_0._camera.orthographicSize
+	local var1_3 = pg.CameraFixMgr.GetInstance():GetCameraOrthographicSize(var1_0._camera)
 
 	if var1_0._lastCameraPos == var0_3 and var1_0._lastCameraSize == var1_3 then
 		return

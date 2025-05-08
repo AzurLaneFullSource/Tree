@@ -32,264 +32,289 @@ function var0_0.OnLoad(arg0_3, arg1_3)
 			arg0_3._initTriggerEvent = nil
 		end
 	end)
+
+	arg0_3.spinePainting:setEventTriggerCallback(function(arg0_5)
+		arg0_3:onSpinePaintingEvent(arg0_5)
+	end)
 end
 
-function var0_0.AdJustOrderInLayer(arg0_5, arg1_5)
-	local var0_5 = 0
-	local var1_5 = arg0_5.container:GetComponent(typeof(Canvas))
+function var0_0.AdJustOrderInLayer(arg0_6, arg1_6)
+	local var0_6 = 0
+	local var1_6 = arg0_6.container:GetComponent(typeof(Canvas))
 
-	if var1_5 and var1_5.overrideSorting and var1_5.sortingOrder ~= 0 then
-		local var2_5 = arg0_5.spTF:GetComponentsInChildren(typeof(Canvas))
+	if var1_6 and var1_6.overrideSorting and var1_6.sortingOrder ~= 0 then
+		local var2_6 = arg0_6.spTF:GetComponentsInChildren(typeof(Canvas)):ToTable()
 
-		for iter0_5 = 1, var2_5.Length do
-			local var3_5 = var2_5[iter0_5 - 1]
-
-			var3_5.overrideSorting = true
-			var0_5 = var3_5.sortingOrder - var1_5.sortingOrder
-			var3_5.sortingOrder = var1_5.sortingOrder
+		for iter0_6, iter1_6 in ipairs(var2_6) do
+			iter1_6.overrideSorting = true
+			var0_6 = iter1_6.sortingOrder - var1_6.sortingOrder
+			iter1_6.sortingOrder = var1_6.sortingOrder
 		end
 	end
 
-	local var4_5 = arg0_5.bgTr:GetComponent(typeof(Canvas))
+	local var3_6 = arg0_6.bgTr:GetComponent(typeof(Canvas))
 
-	if var4_5 and var4_5.overrideSorting and var4_5.sortingOrder ~= 0 then
-		local var5_5 = arg0_5.spBg:GetComponentsInChildren(typeof(Canvas))
+	if var3_6 and var3_6.overrideSorting and var3_6.sortingOrder ~= 0 then
+		local var4_6 = arg0_6.spBg:GetComponentsInChildren(typeof(Canvas)):ToTable()
 
-		for iter1_5 = 1, var5_5.Length do
-			local var6_5 = var5_5[iter1_5 - 1]
-
-			var6_5.overrideSorting = true
-			var6_5.sortingOrder = var6_5.sortingOrder - var0_5
+		for iter2_6, iter3_6 in ipairs(var4_6) do
+			iter3_6.overrideSorting = true
+			iter3_6.sortingOrder = iter3_6.sortingOrder - var0_6
 		end
 
-		local var7_5 = arg0_5.spBg:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer"))
+		local var5_6 = arg0_6.spBg:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer")):ToTable()
 
-		for iter2_5 = 1, var7_5.Length do
-			local var8_5 = var7_5[iter2_5 - 1]
-			local var9_5 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", var8_5) - var0_5
+		for iter4_6, iter5_6 in ipairs(var5_6) do
+			local var6_6 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", iter5_6) - var0_6
 
-			ReflectionHelp.RefSetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", var8_5, var9_5)
+			ReflectionHelp.RefSetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", iter5_6, var6_6)
 		end
 	end
 end
 
-function var0_0.InitSpecialTouch(arg0_6)
-	arg0_6.specialClickDic = {}
+function var0_0.InitSpecialTouch(arg0_7)
+	local var0_7 = arg0_7.ship:getPainting()
 
-	local var0_6 = findTF(arg0_6.spTF:GetChild(0), "hitArea")
+	arg0_7.specialClickDic = {}
 
-	if not var0_6 then
+	local var1_7 = findTF(arg0_7.spTF:GetChild(0), "hitArea")
+
+	if not var1_7 then
 		return
 	end
 
-	eachChild(var0_6, function(arg0_7)
-		if arg0_7.name == "drag" then
-			arg0_6.dragEvent = GetOrAddComponent(arg0_7, typeof(EventTriggerListener))
+	eachChild(var1_7, function(arg0_8)
+		if arg0_7:getDragTouchAble(arg0_8.name, var0_7, false) then
+			arg0_7.dragEvent = GetOrAddComponent(arg0_8, typeof(EventTriggerListener))
 
-			arg0_6.dragEvent:AddPointDownFunc(function(arg0_8, arg1_8)
-				arg0_6.dragActive = true
-				arg0_6.dragStart = arg1_8.position
+			arg0_7.dragEvent:AddPointDownFunc(function(arg0_9, arg1_9)
+				arg0_7.dragActive = true
+				arg0_7.dragStart = arg1_9.position
 			end)
-			arg0_6.dragEvent:AddPointUpFunc(function(arg0_9, arg1_9)
-				if arg0_6.dragActive then
-					arg0_6.dragActive = false
-					arg0_6.dragOffset = Vector2(arg0_6.dragStart.x - arg1_9.position.x, arg0_6.dragStart.y - arg1_9.position.y)
+			arg0_7.dragEvent:AddPointUpFunc(function(arg0_10, arg1_10)
+				if arg0_7.dragActive then
+					arg0_7.dragActive = false
+					arg0_7.dragOffset = Vector2(arg0_7.dragStart.x - arg1_10.position.x, arg0_7.dragStart.y - arg1_10.position.y)
 
-					if math.abs(arg0_6.dragOffset.x) < 200 or math.abs(arg0_6.dragOffset.y) < 200 then
-						arg0_6.dragUp = arg1_9.position
+					if math.abs(arg0_7.dragOffset.x) < 200 or math.abs(arg0_7.dragOffset.y) < 200 then
+						arg0_7.dragUp = arg1_10.position
 
-						if arg0_6.spinePainting:isInAction() then
+						if arg0_7.spinePainting:isInAction() then
 							return
 						end
 
-						if not arg0_6.spinePainting:DoDragClick() then
-							local var0_9 = arg0_6.uiCam:ScreenToWorldPoint(arg1_9.position)
+						local var0_10
 
-							for iter0_9 = 1, #arg0_6.specialClickDic do
-								local var1_9 = arg0_6.specialClickDic[iter0_9]
-								local var2_9 = var1_9.tf:InverseTransformPoint(var0_9)
+						if arg0_7:getDragTouchAble(arg0_8.name, var0_7, true) then
+							var0_10 = arg0_7.spinePainting:readyDragAction(arg0_8.name)
+						end
 
-								if math.abs(var2_9.x) < var1_9.bound.x / 2 and math.abs(var2_9.y) < var1_9.bound.y / 2 then
-									arg0_6:PrepareTriggerAction(var1_9.name)
-									arg0_6:TriggerPersonalTask(var1_9.task)
+						if not var0_10 then
+							local var1_10 = arg0_7.uiCam:ScreenToWorldPoint(arg1_10.position)
+
+							for iter0_10 = 1, #arg0_7.specialClickDic do
+								local var2_10 = arg0_7.specialClickDic[iter0_10]
+								local var3_10 = var2_10.tf:InverseTransformPoint(var1_10)
+
+								if math.abs(var3_10.x) < var2_10.bound.x / 2 and math.abs(var3_10.y) < var2_10.bound.y / 2 then
+									arg0_7:PrepareTriggerAction(var2_10.name)
+									arg0_7:TriggerPersonalTask(var2_10.task)
 								end
 							end
 						end
 					end
 				end
 			end)
-			arg0_6.dragEvent:AddDragFunc(function(arg0_10, arg1_10)
-				if arg0_6.dragActive then
-					if arg0_6.isDragAndZoomState then
-						arg0_6.dragActive = false
+			arg0_7.dragEvent:AddDragFunc(function(arg0_11, arg1_11)
+				if arg0_7.dragActive then
+					if arg0_7.isDragAndZoomState then
+						arg0_7.dragActive = false
 
 						return
 					end
 
-					if arg0_6.chatting then
-						arg0_6.dragActive = false
+					if arg0_7.chatting then
+						arg0_7.dragActive = false
 
 						return
 					end
 
-					arg0_6.dragOffset = Vector2(arg0_6.dragStart.x - arg1_10.position.x, arg0_6.dragStart.y - arg1_10.position.y)
+					arg0_7.dragOffset = Vector2(arg0_7.dragStart.x - arg1_11.position.x, arg0_7.dragStart.y - arg1_11.position.y)
 
-					if math.abs(arg0_6.dragOffset.x) > 200 or math.abs(arg0_6.dragOffset.y) > 200 then
-						arg0_6.dragActive = false
+					if math.abs(arg0_7.dragOffset.x) > 200 or math.abs(arg0_7.dragOffset.y) > 200 then
+						arg0_7.dragActive = false
 
-						arg0_6.spinePainting:DoDragTouch()
+						arg0_7.spinePainting:readyDragAction(arg0_8.name)
 					end
 				end
 			end)
 		else
-			local var0_7 = arg0_6:GetSpecialTouchEvent(arg0_7.name)
+			local var0_8 = arg0_7:GetSpecialTouchEvent(arg0_8.name)
 
-			if var0_7 then
-				table.insert(arg0_6.specialClickDic, {
-					name = var0_7,
-					task = arg0_6.ship.groupId,
-					bound = arg0_7.sizeDelta,
-					tf = arg0_7
+			if var0_8 then
+				table.insert(arg0_7.specialClickDic, {
+					name = var0_8,
+					task = arg0_7.ship.groupId,
+					bound = arg0_8.sizeDelta,
+					tf = arg0_8
 				})
 			end
 
-			onButton(arg0_6, arg0_7, function()
-				if arg0_6.spinePainting:isInAction() then
+			onButton(arg0_7, arg0_8, function()
+				if arg0_7.spinePainting:isInAction() then
 					return
 				end
 
-				local var0_11 = arg0_6:GetSpecialTouchEvent(arg0_7.name)
+				local var0_12 = arg0_7:GetSpecialTouchEvent(arg0_8.name)
 
-				if arg0_7.name == "special" then
-					if arg0_6.isDragAndZoomState then
+				if arg0_7:getDragTouchAble(arg0_8.name, var0_7, true) then
+					if arg0_7.isDragAndZoomState then
 						return
 					end
 
-					if arg0_6.chatting then
+					if arg0_7.chatting then
 						return
 					end
 
-					arg0_6.spinePainting:DoSpecialTouch()
-				else
-					arg0_6:TriggerEvent(var0_11)
-					arg0_6:TriggerPersonalTask(arg0_6.ship.groupId)
+					arg0_7.spinePainting:readyDragAction(arg0_8.name)
+				elseif var0_12 then
+					arg0_7:TriggerEvent(var0_12)
+					arg0_7:TriggerPersonalTask(arg0_7.ship.groupId)
 				end
 			end)
 		end
 	end)
 end
 
-function var0_0.OnClick(arg0_12)
-	if arg0_12.spinePainting:isInAction() then
+function var0_0.OnClick(arg0_13)
+	if arg0_13.spinePainting:isInAction() then
 		return
 	end
 
-	local var0_12 = arg0_12:CollectTouchEvents()
+	local var0_13 = arg0_13:CollectTouchEvents()
 
-	arg0_12:TriggerEvent(var0_12[math.ceil(math.random(#var0_12))])
+	arg0_13:TriggerEvent(var0_13[math.ceil(math.random(#var0_13))])
 end
 
-function var0_0.OnEnableTimerEvent(arg0_13)
-	return not arg0_13.spinePainting:isInAction()
+function var0_0.OnEnableTimerEvent(arg0_14)
+	return not arg0_14.spinePainting:isInAction()
 end
 
-function var0_0.PrepareTriggerAction(arg0_14, arg1_14)
-	local var0_14
-	local var1_14
+function var0_0.PrepareTriggerAction(arg0_15, arg1_15)
+	local var0_15
+	local var1_15
 
-	if pg.AssistantInfo.assistantEvents[arg1_14] then
-		var0_14 = pg.AssistantInfo.assistantEvents[arg1_14].action
-
-		local var2_14 = SpinePaintingConst.ship_action_extend[arg0_14.spinePainting:getPaintingName()]
-
-		if var2_14 and table.contains(var2_14, var0_14) then
-			var1_14 = true
-		end
+	if pg.AssistantInfo.assistantEvents[arg1_15] then
+		var0_15 = pg.AssistantInfo.assistantEvents[arg1_15].action
+		var1_15 = arg0_15.spinePainting:getAnimationExist(var0_15)
 	end
 
-	if var1_14 then
-		arg0_14.spinePainting:SetOnceAction(var0_14, nil, function()
-			arg0_14:TryToTriggerEvent(arg1_14)
+	if var1_15 then
+		arg0_15.spinePainting:SetOnceAction(var0_15, nil, function()
+			arg0_15:TryToTriggerEvent(arg1_15)
 		end, true)
 	else
-		arg0_14:TryToTriggerEvent(arg1_14)
+		arg0_15:TryToTriggerEvent(arg1_15)
 	end
 end
 
-function var0_0.OnDisplayWorld(arg0_16, arg1_16)
-	local var0_16 = arg0_16.ship:getCVIntimacy()
-	local var1_16 = ShipExpressionHelper.GetExpression(arg0_16.paintingName, arg1_16, var0_16, arg0_16.ship.skinId)
+function var0_0.onSpinePaintingEvent(arg0_17, arg1_17)
+	arg0_17:TryToTriggerEvent(arg1_17)
+	arg0_17:TriggerPersonalTask(arg0_17.ship.groupId)
+end
 
-	if var1_16 ~= "" then
-		arg0_16.spinePainting:SetAction(var1_16, 1)
-		arg0_16.spinePainting:displayWord(true)
+function var0_0.getDragTouchAble(arg0_18, arg1_18, arg2_18, arg3_18)
+	local var0_18 = SpinePaintingConst.ship_drag_datas[arg2_18]
+
+	if not var0_18 then
+		return false
+	end
+
+	if var0_18.drag_data and var0_18.click_trigger ~= arg3_18 then
+		return false
+	end
+
+	if var0_18.hit_area then
+		return table.contains(var0_18.hit_area, arg1_18)
+	end
+
+	return false
+end
+
+function var0_0.OnDisplayWorld(arg0_19, arg1_19)
+	local var0_19 = arg0_19.ship:getCVIntimacy()
+	local var1_19 = ShipExpressionHelper.GetExpression(arg0_19.paintingName, arg1_19, var0_19, arg0_19.ship.skinId)
+
+	if var1_19 ~= "" then
+		arg0_19.spinePainting:SetAction(var1_19, 1)
+		arg0_19.spinePainting:displayWord(true)
 	end
 end
 
-function var0_0.OnDisplayWordEnd(arg0_17)
-	var0_0.super.OnDisplayWordEnd(arg0_17)
-	arg0_17.spinePainting:SetEmptyAction(1)
-	arg0_17.spinePainting:displayWord(false)
+function var0_0.OnDisplayWordEnd(arg0_20)
+	var0_0.super.OnDisplayWordEnd(arg0_20)
+	arg0_20.spinePainting:SetEmptyAction(1)
+	arg0_20.spinePainting:displayWord(false)
 end
 
-function var0_0.OnLongPress(arg0_18)
-	if arg0_18.isFoldState then
+function var0_0.OnLongPress(arg0_21)
+	if arg0_21.isFoldState then
 		return
 	end
 
 	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
-		shipId = arg0_18.ship.id
+		shipId = arg0_21.ship.id
 	})
 end
 
-function var0_0.PlayChangeSkinActionIn(arg0_19, arg1_19)
-	if arg0_19.spinePainting and arg0_19.spinePainting:getInitFlag() then
-		arg0_19:TriggerEvent("event_login")
+function var0_0.PlayChangeSkinActionIn(arg0_22, arg1_22)
+	if arg0_22.spinePainting and arg0_22.spinePainting:getInitFlag() then
+		arg0_22:TriggerEvent("event_login")
 	else
-		arg0_19._initTriggerEvent = "event_login"
+		arg0_22._initTriggerEvent = "event_login"
 	end
 
-	if arg1_19 and arg1_19.callback then
-		arg1_19.callback({
+	if arg1_22 and arg1_22.callback then
+		arg1_22.callback({
 			flag = true
 		})
 	end
 end
 
-function var0_0.PlayChangeSkinActionOut(arg0_20, arg1_20)
-	if arg1_20 and arg1_20.callback then
-		arg1_20.callback({
+function var0_0.PlayChangeSkinActionOut(arg0_23, arg1_23)
+	if arg1_23 and arg1_23.callback then
+		arg1_23.callback({
 			flag = true
 		})
 	end
 end
 
-function var0_0.OnUnload(arg0_21)
-	if arg0_21.spinePainting then
-		arg0_21.spinePainting:Dispose()
-
-		arg0_21.spinePainting = nil
-	end
-
-	if arg0_21.dragEvent then
-		ClearEventTrigger(arg0_21.dragEvent)
-	end
-end
-
-function var0_0.GetOffset(arg0_22)
-	return arg0_22.spTF.localPosition.x
-end
-
-function var0_0.OnPuase(arg0_23)
-	if arg0_23.spinePainting then
-		arg0_23.spinePainting:SetVisible(false)
-	end
-end
-
-function var0_0.OnResume(arg0_24)
+function var0_0.OnUnload(arg0_24)
 	if arg0_24.spinePainting then
-		arg0_24.spinePainting:SetVisible(true)
-		arg0_24.spinePainting:SetEmptyAction(1)
+		arg0_24.spinePainting:Dispose()
+
+		arg0_24.spinePainting = nil
+	end
+
+	if arg0_24.dragEvent then
+		ClearEventTrigger(arg0_24.dragEvent)
+	end
+end
+
+function var0_0.GetOffset(arg0_25)
+	return arg0_25.spTF.localPosition.x
+end
+
+function var0_0.OnPuase(arg0_26)
+	if arg0_26.spinePainting then
+		arg0_26.spinePainting:SetVisible(false)
+	end
+end
+
+function var0_0.OnResume(arg0_27)
+	if arg0_27.spinePainting then
+		arg0_27.spinePainting:SetVisible(true)
+		arg0_27.spinePainting:SetEmptyAction(1)
 	end
 end
 

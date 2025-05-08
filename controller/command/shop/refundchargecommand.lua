@@ -1,8 +1,14 @@
 local var0_0 = class("RefundChargeCommand", pm.SimpleCommand)
 
 function var0_0.execute(arg0_1, arg1_1)
-	if (PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP) and not pg.SdkMgr.GetInstance():CheckAiriCanBuy() then
-		print("wait for a second, Do not click quickly~")
+	if PLATFORM_CODE == PLATFORM_JP then
+		if not pg.SdkMgr.GetInstance():YoStarCheckCanBuy() then
+			originalPrint("wait for a second, Do not click quickly~")
+
+			return
+		end
+	elseif PLATFORM_CODE == PLATFORM_US and not pg.SdkMgr.GetInstance():CheckAiriCanBuy() then
+		originalPrint("wait for a second, Do not click quickly~")
 
 		return
 	end
@@ -28,45 +34,56 @@ function var0_0.execute(arg0_1, arg1_1)
 		if arg0_2.result == 0 then
 			if var1_1.tradeNoPrev ~= arg0_2.pay_id then
 				if (PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US) and pg.SdkMgr.GetInstance():GetIsPlatform() then
-					if pg.SdkMgr.GetInstance():CheckAudit() then
-						originalPrint("serverTag:audit 请求购买物品")
-						pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "audit", arg0_2.pay_id)
-					elseif pg.SdkMgr.GetInstance():CheckPreAudit() then
-						originalPrint("serverTag:preAudit 请求购买物品")
-						pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "preAudit", arg0_2.pay_id)
-					elseif pg.SdkMgr.GetInstance():CheckPretest() then
-						originalPrint("serverTag:preTest 请求购买物品")
-						pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "preAudit", arg0_2.pay_id)
-					elseif pg.SdkMgr.GetInstance():CheckGoogleSimulator() then
-						originalPrint("serverTag:test 请求购买物品")
-						pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "test", arg0_2.pay_id)
-					else
-						originalPrint("serverTag:production 请求购买物品")
-						pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "production", arg0_2.pay_id)
-					end
+					if PLATFORM_CODE == PLATFORM_JP then
+						local var0_2 = var4_1:getConfig("airijp_id")
+						local var1_2 = arg0_2.url
+						local var2_2 = arg0_2.pay_id
 
-					originalPrint("请求购买的airijp_id为：" .. var4_1:getConfig("airijp_id"))
-					originalPrint("请求购买的id为：" .. arg0_2.pay_id)
+						originalPrint("请求购买的productId：" .. var0_2)
+						originalPrint("请求购买的url：" .. var1_2)
+						originalPrint("请求购买的id为：" .. var2_2)
+						pg.SdkMgr.GetInstance():YoStarPay(var0_2, var1_2, var2_2)
+					elseif PLATFORM_CODE == PLATFORM_US then
+						if pg.SdkMgr.GetInstance():CheckAudit() then
+							originalPrint("serverTag:audit 请求购买物品")
+							pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "audit", arg0_2.pay_id)
+						elseif pg.SdkMgr.GetInstance():CheckPreAudit() then
+							originalPrint("serverTag:preAudit 请求购买物品")
+							pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "preAudit", arg0_2.pay_id)
+						elseif pg.SdkMgr.GetInstance():CheckPretest() then
+							originalPrint("serverTag:preTest 请求购买物品")
+							pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "preAudit", arg0_2.pay_id)
+						elseif pg.SdkMgr.GetInstance():CheckGoogleSimulator() then
+							originalPrint("serverTag:test 请求购买物品")
+							pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "test", arg0_2.pay_id)
+						else
+							originalPrint("serverTag:production 请求购买物品")
+							pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "production", arg0_2.pay_id)
+						end
+
+						originalPrint("请求购买的airijp_id为：" .. var4_1:getConfig("airijp_id"))
+						originalPrint("请求购买的id为：" .. arg0_2.pay_id)
+					end
 				else
-					local var0_2 = var4_1:firstPayDouble() and var3_1
-					local var1_2 = getProxy(PlayerProxy):getData()
-					local var2_2 = var4_1:getConfig("money") * 100
-					local var3_2 = var4_1:getConfig("name")
-					local var4_2 = 0
+					local var3_2 = var4_1:firstPayDouble() and var3_1
+					local var4_2 = getProxy(PlayerProxy):getData()
+					local var5_2 = var4_1:getConfig("money") * 100
+					local var6_2 = var4_1:getConfig("name")
+					local var7_2 = 0
 
-					if var0_2 then
-						var4_2 = var4_1:getConfig("gem") * 2
+					if var3_2 then
+						var7_2 = var4_1:getConfig("gem") * 2
 					else
-						var4_2 = var4_1:getConfig("gem") + var4_1:getConfig("extra_gem")
+						var7_2 = var4_1:getConfig("gem") + var4_1:getConfig("extra_gem")
 					end
 
-					local var5_2 = arg0_2.pay_id
-					local var6_2 = var4_1:getConfig("subject")
-					local var7_2 = "-" .. var1_2.id .. "-" .. var5_2
-					local var8_2 = arg0_2.url or ""
-					local var9_2 = arg0_2.order_sign or ""
+					local var8_2 = arg0_2.pay_id
+					local var9_2 = var4_1:getConfig("subject")
+					local var10_2 = "-" .. var4_2.id .. "-" .. var8_2
+					local var11_2 = arg0_2.url or ""
+					local var12_2 = arg0_2.order_sign or ""
 
-					pg.SdkMgr.GetInstance():SdkPay(var4_1:getConfig("id_str"), var2_2, var3_2, var4_2, var5_2, var6_2, var7_2, var1_2.name, var8_2, var9_2)
+					pg.SdkMgr.GetInstance():SdkPay(var4_1:getConfig("id_str"), var5_2, var6_2, var7_2, var8_2, var9_2, var10_2, var4_2.name, var11_2, var12_2)
 				end
 
 				var1_1.tradeNoPrev = arg0_2.pay_id

@@ -60905,7 +60905,7 @@ _G.pg.base.ship_skin_words[603061] = {
 
 _G.pg.base.ship_skin_words[605010] = {
 	battle = "Eternal Flagship Vittorio Veneto, sallying forth!",
-	detail = "This may be unbecoming fo me to say, but nevertheless... It would delight me if you would use one of our baths. It would let you fully appreciate the splendor of our Empire.",
+	detail = "This may be unbecoming for me to say, but nevertheless... It would delight me if you used one of our baths. It would let you fully appreciate the splendor of our Empire.",
 	drop_descrip = "Vittorio Veneto-class battleship – Vittorio Veneto.",
 	expedition = "Were my tortellini to your tastes? I must make more to give to the returning commission team, you see.",
 	feeling1 = "It seems I must reassess the Empire's future...",

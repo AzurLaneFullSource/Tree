@@ -522,28 +522,28 @@ function var7_0.Pause(arg0_44)
 	arg0_44:PauseCharacterAction(true)
 
 	for iter0_44, iter1_44 in pairs(arg0_44._areaList) do
-		local var0_44 = iter1_44._go:GetComponentsInChildren(typeof(ParticleSystem))
+		local var0_44 = iter1_44._go:GetComponentsInChildren(typeof(ParticleSystem)):ToTable()
 
-		for iter2_44 = 0, var0_44.Length - 1 do
-			var0_44[iter2_44]:Pause()
+		for iter2_44, iter3_44 in ipairs(var0_44) do
+			iter3_44:Pause()
 		end
 	end
 
 	arg0_44._cameraUtil:PauseShake()
 
-	for iter3_44, iter4_44 in ipairs(arg0_44._arcEffectList) do
-		local var1_44 = iter4_44._go:GetComponentsInChildren(typeof(ParticleSystem))
+	for iter4_44, iter5_44 in ipairs(arg0_44._arcEffectList) do
+		local var1_44 = iter5_44._go:GetComponentsInChildren(typeof(ParticleSystem)):ToTable()
 
-		for iter5_44 = 0, var1_44.Length - 1 do
-			var1_44[iter5_44]:Pause()
+		for iter6_44, iter7_44 in ipairs(var1_44) do
+			iter7_44:Pause()
 		end
 	end
 
-	for iter6_44, iter7_44 in pairs(arg0_44._particleBulletList) do
-		local var2_44 = iter6_44._go:GetComponentsInChildren(typeof(ParticleSystem))
+	for iter8_44, iter9_44 in pairs(arg0_44._particleBulletList) do
+		local var2_44 = iter8_44._go:GetComponentsInChildren(typeof(ParticleSystem)):ToTable()
 
-		for iter8_44 = 0, var2_44.Length - 1 do
-			var2_44[iter8_44]:Pause()
+		for iter10_44, iter11_44 in ipairs(var2_44) do
+			iter11_44:Pause()
 		end
 	end
 end
@@ -552,28 +552,28 @@ function var7_0.Resume(arg0_45)
 	arg0_45:PauseCharacterAction(false)
 
 	for iter0_45, iter1_45 in pairs(arg0_45._areaList) do
-		local var0_45 = iter1_45._go:GetComponentsInChildren(typeof(ParticleSystem))
+		local var0_45 = iter1_45._go:GetComponentsInChildren(typeof(ParticleSystem)):ToTable()
 
-		for iter2_45 = 0, var0_45.Length - 1 do
-			var0_45[iter2_45]:Play()
+		for iter2_45, iter3_45 in ipairs(var0_45) do
+			iter3_45:Pause()
 		end
 	end
 
 	arg0_45._cameraUtil:ResumeShake()
 
-	for iter3_45, iter4_45 in ipairs(arg0_45._arcEffectList) do
-		local var1_45 = iter4_45._go:GetComponentsInChildren(typeof(ParticleSystem))
+	for iter4_45, iter5_45 in ipairs(arg0_45._arcEffectList) do
+		local var1_45 = iter5_45._go:GetComponentsInChildren(typeof(ParticleSystem)):ToTable()
 
-		for iter5_45 = 0, var1_45.Length - 1 do
-			var1_45[iter5_45]:Play()
+		for iter6_45, iter7_45 in ipairs(var1_45) do
+			iter7_45:Pause()
 		end
 	end
 
-	for iter6_45, iter7_45 in pairs(arg0_45._particleBulletList) do
-		local var2_45 = iter6_45._go:GetComponentsInChildren(typeof(ParticleSystem))
+	for iter8_45, iter9_45 in pairs(arg0_45._particleBulletList) do
+		local var2_45 = iter8_45._go:GetComponentsInChildren(typeof(ParticleSystem)):ToTable()
 
-		for iter8_45 = 0, var2_45.Length - 1 do
-			var2_45[iter8_45]:Play()
+		for iter10_45, iter11_45 in ipairs(var2_45) do
+			iter11_45:Pause()
 		end
 	end
 end

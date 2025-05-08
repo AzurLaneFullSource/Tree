@@ -78,7 +78,6 @@ function var0_0.init(arg0_2)
 	arg0_2.snapshot = arg0_2:findTF("snapshot")
 	arg0_2.webcam = arg0_2.snapshot:GetComponent(typeof(WebCam))
 	arg0_2.ysScreenShoter = arg0_2.snapshot:GetComponent(typeof(YSTool.YSScreenShoter))
-	arg0_2.ysScreenRecorder = arg0_2.snapshot:GetComponent(typeof(YSTool.YSScreenRecorder))
 	arg0_2.paint = arg0_2:findTF("container/paint")
 	arg0_2.live2d = arg0_2:findTF("live2d", arg0_2.paint)
 	arg0_2.spine = arg0_2:findTF("spine", arg0_2.paint)
@@ -161,11 +160,6 @@ function var0_0.didEnter(arg0_10)
 
 				Tex2DExtension.LoadImage(var0_15, arg0_15)
 				arg0_10:emit(var0_0.SHARE_PANEL, var0_15, arg0_15)
-
-				if PLATFORM_CODE == PLATFORM_JP and pg.SdkMgr.GetInstance():GetChannelUID() == "2" then
-					print("start photo : play sound")
-					NotificationMgr.Inst:PlayShutterSound()
-				end
 			end
 
 			arg0_10.ysScreenShoter:TakeScreenShotData(var0_13, var1_13)
@@ -173,44 +167,37 @@ function var0_0.didEnter(arg0_10)
 			setActive(arg0_10.ui, false)
 
 			local function var2_13(arg0_16)
-				if arg0_16 ~= -1 then
+				if not arg0_16 then
 					setActive(arg0_10.ui, true)
 					LeanTween.moveX(arg0_10.stopRecBtn, arg0_10.stopRecBtn.rect.width, 0.15)
 				end
 			end
 
-			local function var3_13(arg0_17)
-				warning("开始录屏结果：" .. tostring(arg0_17))
-			end
-
-			local function var4_13()
+			local function var3_13()
 				setActive(arg0_10.stopRecBtn, true)
 				LeanTween.moveX(arg0_10.stopRecBtn, 0, 0.15):setOnComplete(System.Action(function()
 					arg0_10:SetMute(true)
-					arg0_10.ysScreenRecorder:BeforeStart()
-					arg0_10.ysScreenRecorder:StartRecord(var3_13, var2_13)
+
+					arg0_10.recordFilePath = YSNormalTool.RecordTool.GenRecordFilePath()
+
+					YSNormalTool.RecordTool.StartRecording(var2_13, arg0_10.recordFilePath)
 				end))
 			end
 
-			local var5_13 = PlayerPrefs.GetInt("hadShowForVideoTip")
+			local var4_13 = PlayerPrefs.GetInt("hadShowForVideoTip")
 
-			if not var5_13 or var5_13 <= 0 then
+			if not var4_13 or var4_13 <= 0 then
 				PlayerPrefs.SetInt("hadShowForVideoTip", 1)
 
 				arg0_10:findTF("Text", arg0_10.videoTipPanel):GetComponent("Text").text = i18n("word_take_video_tip")
 
 				onButton(arg0_10, arg0_10.videoTipPanel, function()
 					setActive(arg0_10.videoTipPanel, false)
-					var4_13()
-
-					if PLATFORM_CODE == PLATFORM_JP and pg.SdkMgr.GetInstance():GetChannelUID() == "2" then
-						print("start recording : play sound")
-						NotificationMgr.Inst:PlayStartRecordSound()
-					end
+					var3_13()
 				end)
 				setActive(arg0_10.videoTipPanel, true)
 			else
-				var4_13()
+				var3_13()
 			end
 		end
 	end)
@@ -275,31 +262,35 @@ function var0_0.didEnter(arg0_10)
 	end)
 	var0_10()
 	onButton(arg0_10, arg0_10.stopRecBtn, function()
-		local function var0_27(arg0_28)
-			warning("结束录屏结果：" .. tostring(arg0_28))
+		local function var0_26(arg0_27)
+			if arg0_27 and PLATFORM == PLATFORM_ANDROID then
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					content = i18n("word_save_video"),
+					onNo = function()
+						if System.IO.File.Exists(arg0_10.recordFilePath) then
+							System.IO.File.Delete(arg0_10.recordFilePath)
+						end
+					end,
+					onYes = function()
+						YSNormalTool.MediaTool.SaveVideoToAlbum(arg0_10.recordFilePath, function(arg0_30, arg1_30)
+							if arg0_30 then
+								pg.TipsMgr.GetInstance():ShowTips(i18n("word_save_ok"))
+
+								if System.IO.File.Exists(arg0_10.recordFilePath) then
+									System.IO.File.Delete(arg0_10.recordFilePath)
+								end
+							end
+						end)
+					end
+				})
+			end
 		end
 
 		if not LeanTween.isTweening(go(arg0_10.stopRecBtn)) then
 			LeanTween.moveX(arg0_10.stopRecBtn, arg0_10.stopRecBtn.rect.width, 0.15):setOnComplete(System.Action(function()
 				setActive(arg0_10.ui, true)
 				setActive(arg0_10.stopRecBtn, false)
-				arg0_10.ysScreenRecorder:StopRecord(var0_27)
-
-				if PLATFORM == PLATFORM_ANDROID then
-					pg.MsgboxMgr.GetInstance():ShowMsgBox({
-						content = i18n("word_save_video"),
-						onNo = function()
-							arg0_10.ysScreenRecorder:DiscardVideo()
-						end,
-						onYes = function()
-							local var0_31 = arg0_10.ysScreenRecorder:GetVideoFilePath()
-
-							warning("源录像路径：" .. tostring(var0_31))
-							MediaSaver.SaveVideoWithPath(var0_31)
-						end
-					})
-				end
-
+				YSNormalTool.RecordTool.StopRecording(var0_26)
 				arg0_10:SetMute(false)
 			end))
 		end
@@ -828,13 +819,13 @@ end
 
 function var0_0.SetMute(arg0_68, arg1_68)
 	if arg1_68 then
-		CriAtom.SetCategoryVolume("Category_CV", 0)
-		CriAtom.SetCategoryVolume("Category_BGM", 0)
-		CriAtom.SetCategoryVolume("Category_SE", 0)
+		CriWare.CriAtom.SetCategoryVolume("Category_CV", 0)
+		CriWare.CriAtom.SetCategoryVolume("Category_BGM", 0)
+		CriWare.CriAtom.SetCategoryVolume("Category_SE", 0)
 	else
-		CriAtom.SetCategoryVolume("Category_CV", pg.CriMgr.GetInstance():getCVVolume())
-		CriAtom.SetCategoryVolume("Category_BGM", pg.CriMgr.GetInstance():getBGMVolume())
-		CriAtom.SetCategoryVolume("Category_SE", pg.CriMgr.GetInstance():getSEVolume())
+		CriWare.CriAtom.SetCategoryVolume("Category_CV", pg.CriMgr.GetInstance():getCVVolume())
+		CriWare.CriAtom.SetCategoryVolume("Category_BGM", pg.CriMgr.GetInstance():getBGMVolume())
+		CriWare.CriAtom.SetCategoryVolume("Category_SE", pg.CriMgr.GetInstance():getSEVolume())
 	end
 end
 

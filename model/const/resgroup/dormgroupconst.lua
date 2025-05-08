@@ -91,7 +91,7 @@ function var0_0.DormDownload(arg0_5)
 					onFinish = arg0_7
 				}
 
-				var0_0.ExtraDownload(var1_7.dataList[1], var1_7.onFinish)
+				var0_0.ExtraDownload(var1_7)
 			end)
 			table.insert(var0_5, function(arg0_8, arg1_8)
 				local var0_8 = var0_0.DormDownloadLock.roomId
@@ -107,100 +107,92 @@ function var0_0.DormDownload(arg0_5)
 	seriesAsync(var0_5, arg0_5.finishFunc)
 end
 
-function var0_0.ExtraDownload(arg0_9, arg1_9)
-	local var0_9 = arg0_9.groupName
-	local var1_9 = #arg0_9.fileNameList > 0 and GroupHelper.CreateArrByLuaFileList(var0_9, arg0_9.fileNameList) or nil
+function var0_0.ExtraDownload(arg0_9)
+	local var0_9 = arg0_9.onFinish
+	local var1_9 = arg0_9.dataList[1]
+	local var2_9 = var1_9.groupName
+	local var3_9 = #var1_9.fileNameList > 0 and GroupHelper.CreateArrByLuaFileList(var2_9, var1_9.fileNameList) or nil
 
-	if not var1_9 or var1_9.Length == 0 then
-		arg1_9()
+	if not var3_9 or var3_9.Length == 0 then
+		var0_9()
 
 		return
 	end
 
-	local var2_9 = GroupHelper.GetGroupMgrByName(var0_9)
+	local function var4_9(arg0_10, arg1_10, arg2_10, arg3_10, arg4_10, arg5_10)
+		local var0_10 = tonumber(tostring(arg3_10))
+		local var1_10 = tonumber(tostring(arg4_10))
 
-	local function var3_9(arg0_10, arg1_10, arg2_10, arg3_10)
-		if var0_0.DormDownloadLock.curSize ~= arg2_10 then
-			var0_0.DormDownloadLock.curSize = arg2_10
-			var0_0.DormDownloadLock.totalSize = arg3_10
+		if var0_0.DormDownloadLock.curSize ~= var0_10 then
+			var0_0.DormDownloadLock.curSize = var0_10
+			var0_0.DormDownloadLock.totalSize = var1_10
 
 			pg.m02:sendNotification(var0_0.NotifyDormDownloadProgress)
 		end
 	end
 
-	local function var4_9(arg0_11, arg1_11)
+	local function var5_9(arg0_11, arg1_11, arg2_11)
 		return
 	end
 
-	local function var5_9(arg0_12, arg1_12)
-		warning("----------------------Tag 单组下载完成,恢复UpdateD----------------------")
+	local function var6_9(arg0_12, arg1_12)
+		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataDownload(var0_0.DormDownloadLock.roomId, arg0_12 and 1 or 2))
 
-		var2_9.isPauseUpdateD = false
+		if arg0_12 then
+			var0_9(true)
+		else
+			local function var0_12()
+				var0_0.ExtraDownload(arg0_9)
+			end
 
-		warning("----------------------Tag 单组下载完成,调用groupComplete----------------------")
-		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataDownload(var0_0.DormDownloadLock.roomId, 1))
-		arg1_9(true)
-	end
+			local function var1_12()
+				var0_9()
+			end
 
-	local var6_9
-
-	local function var7_9(arg0_13, arg1_13)
-		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataDownload(var0_0.DormDownloadLock.roomId, 2))
-
-		local function var0_13()
-			var0_0.ExtraDownload(arg0_9, arg1_9)
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				modal = true,
+				locked = true,
+				content = i18n("file_down_mgr_error", "", ""),
+				onYes = var0_12,
+				onNo = var1_12,
+				onClose = var1_12,
+				weight = LayerWeightConst.TOP_LAYER
+			})
 		end
-
-		local function var1_13()
-			var2_9.isPauseUpdateD = false
-
-			arg1_9()
-		end
-
-		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			modal = true,
-			locked = true,
-			content = i18n("file_down_mgr_error", arg0_13, arg1_13),
-			onYes = var0_13,
-			onNo = var1_13,
-			onClose = var1_13,
-			weight = LayerWeightConst.TOP_LAYER
-		})
 	end
 
 	pg.m02:sendNotification(var0_0.NotifyDormDownloadStart)
-	warning("----------------------Tag 停止UpdateD----------------------")
 
-	var2_9.isPauseUpdateD = true
+	local var7_9 = BundleWizardUpdater.Inst:GetFileList(var1_9.groupName, var1_9.fileNameList)
+	local var8_9 = BundleWizardUpdater.Inst:CreateListInfo(var1_9.groupName, var7_9, var5_9, var6_9, var4_9)
 
-	warning("----------------------Tag 开始UpdateFileArray----------------------")
-	var2_9:UpdateFileArray(var1_9, var3_9, var4_9, var5_9, var7_9)
+	BundleWizardUpdater.Inst:StartUpdate(var8_9)
 end
 
 function var0_0.IsDownloading()
-	local var0_16 = GroupHelper.GetGroupMgrByName(var0_0.DormGroupName)
+	local var0_15 = GroupHelper.GetGroupMgrByName(var0_0.DormGroupName)
 
 	return var0_0.DormDownloadLock or GroupHelper.GetGroupMgrByName(var0_0.DormGroupName).state == DownloadState.Updating
 end
 
 function var0_0.GetDownloadList()
-	local var0_17 = {}
-	local var1_17 = GroupHelper.GetGroupMgrByName(var0_0.DormGroupName)
+	local var0_16 = {}
+	local var1_16 = GroupHelper.GetGroupMgrByName(var0_0.DormGroupName)
 
-	if var1_17.toUpdate then
-		local var2_17 = var1_17.toUpdate.Count
+	if var1_16.toUpdate then
+		local var2_16 = var1_16.toUpdate.Count
 
-		for iter0_17 = 0, var2_17 - 1 do
-			local var3_17 = var1_17.toUpdate[iter0_17]
-			local var4_17 = var3_17[0]
-			local var5_17 = var3_17[1]
-			local var6_17 = var3_17[2]
+		for iter0_16 = 0, var2_16 - 1 do
+			local var3_16 = var1_16.toUpdate[iter0_16]
+			local var4_16 = var3_16[0]
+			local var5_16 = var3_16[1]
+			local var6_16 = var3_16[2]
 
-			table.insert(var0_17, var4_17)
+			table.insert(var0_16, var4_16)
 		end
 	end
 
-	return var0_17
+	return var0_16
 end
 
 local var1_0 = {
@@ -213,94 +205,95 @@ function var0_0.GetDownloadResourceDic()
 	if not var2_0 then
 		var2_0 = {}
 
-		for iter0_18, iter1_18 in ipairs(pg.dorm3d_rooms.all) do
-			local var0_18 = pg.dorm3d_rooms[iter1_18]
+		for iter0_17, iter1_17 in ipairs(pg.dorm3d_rooms.all) do
+			local var0_17 = pg.dorm3d_rooms[iter1_17]
 
-			if var0_18.is_common == 1 then
+			if var0_17.is_common == 1 then
 				-- block empty
 			else
-				local var1_18 = string.lower(var0_18.resource_name)
+				local var1_17 = string.lower(var0_17.resource_name)
 
-				var2_0[var1_18] = true
+				var2_0[var1_17] = true
 			end
 		end
 	end
 
-	local var2_18 = {}
+	local var2_17 = {}
 
-	for iter2_18, iter3_18 in ipairs(DormGroupConst.GetDownloadList()) do
-		local var3_18 = "common"
+	for iter2_17, iter3_17 in ipairs(DormGroupConst.GetDownloadList()) do
+		local var3_17 = "common"
 
-		for iter4_18, iter5_18 in pairs(var1_0) do
-			local var4_18, var5_18 = string.find(iter3_18, iter5_18)
+		for iter4_17, iter5_17 in pairs(var1_0) do
+			local var4_17, var5_17 = string.find(iter3_17, iter5_17)
 
-			if var5_18 then
-				local var6_18 = string.split(string.sub(iter3_18, var5_18 + 1), "/")[1]
+			if var5_17 then
+				local var6_17 = string.split(string.sub(iter3_17, var5_17 + 1), "/")[1]
 
-				if var2_0[var6_18] then
-					var3_18 = iter4_18 .. "_" .. var6_18
+				if var2_0[var6_17] then
+					var3_17 = iter4_17 .. "_" .. var6_17
 				end
 
 				break
 			end
 		end
 
-		var2_18[var3_18] = var2_18[var3_18] or {}
+		var2_17[var3_17] = var2_17[var3_17] or {}
 
-		table.insert(var2_18[var3_18], iter3_18)
+		table.insert(var2_17[var3_17], iter3_17)
 	end
 
-	return var2_18
+	return var2_17
 end
 
-function var0_0.DelDir(arg0_19)
-	local var0_19 = Application.persistentDataPath .. "/AssetBundles/"
-	local var1_19 = var0_19 .. arg0_19
+function var0_0.DelDir(arg0_18)
+	local var0_18 = Application.persistentDataPath .. "/AssetBundles/"
+	local var1_18 = var0_18 .. arg0_18
 
-	if not var0_19:match("/$") then
-		var0_19 = var0_19 .. "/"
+	if not var0_18:match("/$") then
+		var0_18 = var0_18 .. "/"
 	end
 
-	originalPrint("fullCacheDirPath", tostring(var0_19))
-	originalPrint("shortDirPath:", tostring(arg0_19))
-	originalPrint("fullDirPath", tostring(var1_19))
+	originalPrint("fullCacheDirPath", tostring(var0_18))
+	originalPrint("shortDirPath:", tostring(arg0_18))
+	originalPrint("fullDirPath", tostring(var1_18))
 
-	local var2_19 = {}
-	local var3_19 = System.IO.Directory
-	local var4_19 = ReflectionHelp.RefGetField(typeof("System.IO.SearchOption"), "AllDirectories", nil)
+	local var2_18 = {}
+	local var3_18 = System.IO.Directory
+	local var4_18 = ReflectionHelp.RefGetField(typeof("System.IO.SearchOption"), "AllDirectories", nil)
 
-	originalPrint("fullDirPath Exist:", tostring(var3_19.Exists(var1_19)))
+	originalPrint("fullDirPath Exist:", tostring(var3_18.Exists(var1_18)))
 
-	if var3_19.Exists(var1_19) then
-		local var5_19 = var3_19.GetFiles(var1_19, "*", var4_19)
+	if var3_18.Exists(var1_18) then
+		local var5_18 = var3_18.GetFiles(var1_18, "*", var4_18):ToTable()
 
-		for iter0_19 = 0, var5_19.Length - 1 do
-			local var6_19 = var5_19[iter0_19]:gsub("\\", "/")
-			local var7_19 = string.sub(var6_19, #var0_19 + 1)
+		for iter0_18, iter1_18 in ipairs(var5_18) do
+			iter1_18 = iter1_18:gsub("\\", "/")
 
-			table.insert(var2_19, var7_19)
+			local var6_18 = string.sub(iter1_18, #var0_18 + 1)
+
+			table.insert(var2_18, var6_18)
 		end
 	end
 
-	originalPrint("filePathList first:", tostring(var2_19[1]))
-	originalPrint("filePathList last:", tostring(var2_19[#var2_19]))
+	originalPrint("filePathList first:", tostring(var2_18[1]))
+	originalPrint("filePathList last:", tostring(var2_18[#var2_18]))
 
-	local var8_19 = #var2_19
+	local var7_18 = #var2_18
 
-	if var8_19 > 0 then
-		local var9_19 = System.Array.CreateInstance(typeof(System.String), var8_19)
+	if var7_18 > 0 then
+		local var8_18 = System.Array.CreateInstance(typeof(System.String), var7_18)
 
-		for iter1_19 = 0, var8_19 - 1 do
-			var9_19[iter1_19] = var2_19[iter1_19 + 1]
+		for iter2_18 = 0, var7_18 - 1 do
+			var8_18[iter2_18] = var2_18[iter2_18 + 1]
 		end
 
-		var0_0.GetDormMgr():DelFile(var9_19)
+		var0_0.GetDormMgr():DelFile(var8_18)
 	end
 end
 
-function var0_0.DelRoom(arg0_20, arg1_20)
-	for iter0_20, iter1_20 in ipairs(arg1_20) do
-		var0_0.DelDir(var1_0[iter1_20] .. arg0_20)
+function var0_0.DelRoom(arg0_19, arg1_19)
+	for iter0_19, iter1_19 in ipairs(arg1_19) do
+		var0_0.DelDir(var1_0[iter1_19] .. arg0_19)
 	end
 end
 

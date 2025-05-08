@@ -1,8 +1,9 @@
 local var0_0 = class("StoryRecorder")
 local var1_0 = "#5ce6ff"
-local var2_0 = "#70747F"
-local var3_0 = "#BCBCBC"
-local var4_0 = "#FFFFFF"
+local var2_0 = "#39BFFF"
+local var3_0 = "#70747F"
+local var4_0 = "#BCBCBC"
+local var5_0 = "#FFFFFF"
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.recordList = {}
@@ -41,14 +42,14 @@ function var0_0.Convert(arg0_4)
 	return var0_4
 end
 
-local function var5_0(arg0_5)
+function var0_0.FormatContent(arg0_5, arg1_5)
 	local var0_5 = {
 		"<size=%d+>",
 		"</size>",
 		"<color=%w+>",
 		"</color>"
 	}
-	local var1_5 = arg0_5
+	local var1_5 = arg1_5
 
 	for iter0_5, iter1_5 in ipairs(var0_5) do
 		var1_5 = string.gsub(var1_5, iter1_5, "")
@@ -62,7 +63,7 @@ function var0_0.CollectAsideContent(arg0_6, arg1_6, arg2_6)
 	local var1_6 = {}
 
 	for iter0_6, iter1_6 in ipairs(var0_6) do
-		table.insert(var1_6, var5_0(iter1_6[1]))
+		table.insert(var1_6, arg0_6:FormatContent(iter1_6[1]))
 	end
 
 	table.insert(arg1_6, {
@@ -85,7 +86,7 @@ function var0_0.CollectDialogueContent(arg0_7, arg1_7, arg2_7)
 	local function var4_7()
 		local var0_8 = arg2_7:GetNameColor()
 
-		return var3_7 and var1_0 or var0_8 or var3_0
+		return var3_7 and var1_0 or var0_8 or var4_0
 	end
 
 	local var5_7 = arg2_7:GetContent()
@@ -95,7 +96,7 @@ function var0_0.CollectDialogueContent(arg0_7, arg1_7, arg2_7)
 		name = var1_7,
 		nameColor = var4_7(),
 		list = {
-			setColorStr(var5_0(var5_7), var3_7 and var1_0 or var4_0)
+			setColorStr(arg0_7:FormatContent(var5_7), var3_7 and var1_0 or var5_0)
 		},
 		isPlayer = var3_7
 	})
@@ -106,7 +107,7 @@ function var0_0.CollectDialogueContent(arg0_7, arg1_7, arg2_7)
 
 		for iter0_7, iter1_7 in ipairs(arg2_7:GetOptions()) do
 			local var8_7 = iter1_7[2] == var6_7
-			local var9_7 = setColorStr("[ " .. var5_0(iter1_7[1]) .. " ]", var8_7 and var1_0 or var2_0)
+			local var9_7 = setColorStr("[ " .. arg0_7:FormatContent(iter1_7[1]) .. " ]", var8_7 and var1_0 or var3_0)
 
 			table.insert(var7_7, var9_7)
 		end

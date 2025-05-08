@@ -36,7 +36,7 @@ function var0_0.init(arg0_6)
 	pg.UIMgr.GetInstance():OverlayPanel(arg0_6.rtTop)
 
 	arg0_6.effectObjs = {}
-	arg0_6.proxy = getProxy(IslandProxy)
+	arg0_6.proxy = getProxy(SixthAnniversaryIslandProxy)
 
 	local var0_6 = pg.TimeMgr.GetInstance()
 	local var1_6 = arg0_6._tf:Find("map/content")
@@ -280,7 +280,7 @@ function var0_0.focus(arg0_24, arg1_24, arg2_24, arg3_24)
 end
 
 function var0_0.triggerNode(arg0_28, arg1_28)
-	local var0_28 = getProxy(IslandProxy):GetNode(arg1_28)
+	local var0_28 = getProxy(SixthAnniversaryIslandProxy):GetNode(arg1_28)
 
 	if var0_28:IsNew() then
 		arg0_28:emit(SixthAnniversaryIslandMediator.MARK_NODE_AFTER_NEW, arg1_28)
@@ -373,7 +373,7 @@ end
 
 function var0_0.refreshNode(arg0_41, arg1_41)
 	local var0_41 = arg0_41.nodeItemList.container:Find(arg1_41)
-	local var1_41 = getProxy(IslandProxy):GetNode(arg1_41)
+	local var1_41 = getProxy(SixthAnniversaryIslandProxy):GetNode(arg1_41)
 	local var2_41 = var1_41:IsVisual()
 
 	setActive(var0_41:Find("click"), var2_41)
@@ -484,7 +484,7 @@ function var0_0.didEnter(arg0_48)
 		end)
 	elseif arg0_48.contextData.checkMain then
 		table.insert(var0_48, function(arg0_50)
-			local var0_50 = getProxy(IslandProxy)
+			local var0_50 = getProxy(SixthAnniversaryIslandProxy)
 			local var1_50 = underscore.filter(underscore.map(arg0_48.ids, function(arg0_51)
 				return var0_50:GetNode(arg0_51)
 			end), function(arg0_52)

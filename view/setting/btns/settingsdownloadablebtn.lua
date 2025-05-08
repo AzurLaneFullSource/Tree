@@ -32,164 +32,159 @@ function var0_0.Init(arg0_3)
 	setSlider(arg0_3.loadProgress, 0, 1, 0)
 	setActive(arg0_3.loadDot, false)
 	setActive(arg0_3.loadLoading, false)
+	onButton(arg0_3, arg0_3._tf, function()
+		local var0_4 = arg0_3:GetDownloadGroup()
+		local var1_4 = pg.SettingsGroupMgr:GetInstance():GetState(var0_4)
+
+		if arg0_3:isNeedUpdate() and var1_4 ~= pg.SettingsGroupMgr.State.Updating then
+			local var2_4 = {
+				var0_4
+			}
+			local var3_4 = pg.SettingsGroupMgr:GetInstance():GetTotalSize(var2_4)
+			local var4_4 = HashUtil.BytesToString(var3_4)
+
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				type = MSGBOX_TYPE_NORMAL,
+				content = string.format(i18n("group_download_tip", var4_4)),
+				onYes = function()
+					pg.SettingsGroupMgr:GetInstance():StartDownload(var0_4, var2_4)
+				end
+			})
+		end
+	end, SFX_PANEL)
 	arg0_3:Check()
 end
 
-function var0_0.InitPrefsBar(arg0_4)
-	arg0_4.prefsBar = findTF(arg0_4._tf, "PrefsBar")
+function var0_0.InitPrefsBar(arg0_6)
+	arg0_6.prefsBar = findTF(arg0_6._tf, "PrefsBar")
 
-	setText(findTF(arg0_4.prefsBar, "Text"), i18n("setting_group_prefs_tip"))
-	setActive(arg0_4.prefsBar, true)
+	setText(findTF(arg0_6.prefsBar, "Text"), i18n("setting_group_prefs_tip"))
+	setActive(arg0_6.prefsBar, true)
 
-	local var0_4 = arg0_4:GetDownloadGroup()
+	local var0_6 = arg0_6:GetDownloadGroup()
 
-	arg0_4.hideTip = true
+	arg0_6.hideTip = true
 
-	onToggle(arg0_4, arg0_4.prefsBar, function(arg0_5)
-		if arg0_5 == true then
-			GroupHelper.SetGroupPrefsByName(var0_4, DMFileChecker.Prefs.Max)
+	onToggle(arg0_6, arg0_6.prefsBar, function(arg0_7)
+		if arg0_7 == true then
+			GroupHelper.SetGroupPrefsByName(var0_6, DMFileChecker.Prefs.Max)
 		else
-			GroupHelper.SetGroupPrefsByName(var0_4, DMFileChecker.Prefs.Min)
+			GroupHelper.SetGroupPrefsByName(var0_6, DMFileChecker.Prefs.Min)
 		end
 
-		if not arg0_4.hideTip then
+		if not arg0_6.hideTip then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("group_prefs_switch_tip"))
 		end
 	end, SFX_PANEL)
-	triggerToggle(arg0_4.prefsBar, GroupHelper.GetGroupPrefsByName(var0_4) == DMFileChecker.Prefs.Max)
+	triggerToggle(arg0_6.prefsBar, GroupHelper.GetGroupPrefsByName(var0_6) == DMFileChecker.Prefs.Max)
 
-	arg0_4.hideTip = false
+	arg0_6.hideTip = false
 end
 
-function var0_0.Check(arg0_6)
-	local var0_6 = arg0_6:GetDownloadGroup()
-	local var1_6 = BundleWizard.Inst:GetGroupMgr(var0_6)
-
-	arg0_6.timer = Timer.New(function()
-		arg0_6:UpdateDownLoadState()
+function var0_0.Check(arg0_8)
+	arg0_8.timer = Timer.New(function()
+		arg0_8:UpdateDownLoadState()
 	end, 0.5, -1)
 
-	arg0_6.timer:Start()
-	arg0_6:UpdateDownLoadState()
+	arg0_8.timer:Start()
+	arg0_8:UpdateDownLoadState()
+end
 
-	if var1_6.state == DownloadState.None then
-		var1_6:CheckD()
+function var0_0.UpdateDownLoadState(arg0_10)
+	local var0_10 = arg0_10:GetDownloadGroup()
+	local var1_10 = BundleWizard.Inst:GetGroupMgr(var0_10)
+	local var2_10
+	local var3_10
+	local var4_10
+	local var5_10
+	local var6_10
+	local var7_10 = false
+	local var8_10 = pg.SettingsGroupMgr:GetInstance():GetState(var0_10)
+	local var9_10
+	local var10_10
+	local var11_10
+
+	if IsUnityEditor then
+		var9_10 = 1
+		var11_10 = 1
+	else
+		var9_10 = tonumber(var1_10.localVersion.Build)
+		var11_10 = tonumber(var1_10.serverVersion.Build)
 	end
 
-	onButton(arg0_6, arg0_6._tf, function()
-		local var0_8 = var1_6.state
-
-		if var0_8 == DownloadState.CheckFailure then
-			var1_6:CheckD()
-		elseif var0_8 == DownloadState.CheckToUpdate or var0_8 == DownloadState.UpdateFailure then
-			VersionMgr.Inst:RequestUIForUpdateD(var0_6, true)
+	if var8_10 == pg.SettingsGroupMgr.State.None then
+		if var9_10 < var11_10 then
+			var3_10 = i18n("word_maingroup_checktoupdate")
+			var4_10 = string.format("V.%d > V.%d", var9_10, var11_10)
+			var6_10 = true
+		else
+			var3_10 = i18n("word_maingroup_updatesuccess")
+			var4_10 = string.format("V.%d", var1_10.CurrentVersion.Build)
+			var6_10 = false
 		end
-	end, SFX_PANEL)
-end
 
-function var0_0.UpdateDownLoadState(arg0_9)
-	local var0_9 = arg0_9:GetDownloadGroup()
-	local var1_9 = BundleWizard.Inst:GetGroupMgr(var0_9)
-	local var2_9 = var1_9.state
-	local var3_9
-	local var4_9
-	local var5_9
-	local var6_9
-	local var7_9
-	local var8_9 = false
+		var5_10 = 0
+		var7_10 = false
+	elseif var8_10 == pg.SettingsGroupMgr.State.Updating then
+		local var12_10, var13_10 = pg.SettingsGroupMgr:GetInstance():GetCountProgress(var0_10)
 
-	if var2_9 == DownloadState.None then
-		local var9_9 = arg0_9:GetLocaltion(var2_9, 1)
+		var3_10 = i18n("word_maingroup_updating")
+		var4_10 = string.format("(%d/%d)", var12_10, var13_10)
+		var5_10 = var12_10 / math.max(var13_10, 1)
+		var6_10 = false
+		var7_10 = true
+	elseif var8_10 == pg.SettingsGroupMgr.State.Success then
+		var3_10 = i18n("word_maingroup_updatesuccess")
+		var4_10 = "V." .. var1_10.CurrentVersion.Build
+		var5_10 = 1
+		var6_10 = false
+		var7_10 = false
+	elseif var8_10 == pg.SettingsGroupMgr.State.Fail then
+		var3_10 = i18n("word_maingroup_updatefailure")
 
-		var4_9 = arg0_9:GetLocaltion(var2_9, 2)
-		var5_9 = "DOWNLOAD"
-		var6_9 = 0
-		var7_9 = false
-	elseif var2_9 == DownloadState.Checking then
-		local var10_9 = arg0_9:GetLocaltion(var2_9, 1)
+		if var9_10 < var11_10 then
+			var4_10 = string.format("V.%d > V.%d", var9_10, var11_10)
+		else
+			var4_10 = string.format("V.%d", var1_10.CurrentVersion.Build)
+		end
 
-		var4_9 = arg0_9:GetLocaltion(var2_9, 2)
-		var5_9 = "CHECKING"
-		var6_9 = 0
-		var7_9 = false
-	elseif var2_9 == DownloadState.CheckToUpdate then
-		local var11_9 = arg0_9:GetLocaltion(var2_9, 1)
-
-		var4_9 = arg0_9:GetLocaltion(var2_9, 2)
-		var5_9 = string.format("V.%d > V.%d", var1_9.localVersion.Build, var1_9.serverVersion.Build)
-		var6_9 = 0
-		var7_9 = true
-	elseif var2_9 == DownloadState.CheckOver then
-		local var12_9 = arg0_9:GetLocaltion(var2_9, 1)
-
-		var4_9 = arg0_9:GetLocaltion(var2_9, 2)
-		var5_9 = "V." .. var1_9.CurrentVersion.Build
-		var6_9 = 1
-		var7_9 = false
-	elseif var2_9 == DownloadState.CheckFailure then
-		local var13_9 = arg0_9:GetLocaltion(var2_9, 1)
-
-		var4_9 = arg0_9:GetLocaltion(var2_9, 2)
-		var5_9 = string.format("ERROR(CODE:%d)", var1_9.errorCode)
-		var6_9 = 0
-		var7_9 = false
-	elseif var2_9 == DownloadState.Updating then
-		local var14_9 = arg0_9:GetLocaltion(var2_9, 1)
-
-		var4_9 = string.format("(%d/%d)", var1_9.downloadCount, var1_9.downloadTotal)
-		var5_9 = var1_9.downPath
-		var6_9 = var1_9.downloadCount / math.max(var1_9.downloadTotal, 1)
-		var7_9 = false
-		var8_9 = true
-	elseif var2_9 == DownloadState.UpdateSuccess then
-		local var15_9 = arg0_9:GetLocaltion(var2_9, 1)
-
-		var4_9 = arg0_9:GetLocaltion(var2_9, 2)
-		var5_9 = "V." .. var1_9.CurrentVersion.Build
-		var6_9 = 1
-		var7_9 = false
-	elseif var2_9 == DownloadState.UpdateFailure then
-		local var16_9 = arg0_9:GetLocaltion(var2_9, 1)
-
-		var4_9 = arg0_9:GetLocaltion(var2_9, 2)
-		var5_9 = string.format("ERROR(CODE:%d)", var1_9.errorCode)
-		var6_9 = var1_9.downloadCount / math.max(var1_9.downloadTotal, 1)
-		var7_9 = true
+		var5_10 = 0
+		var6_10 = true
+		var7_10 = false
 	end
 
-	if var5_9:len() > 15 then
-		var5_9 = var5_9:sub(1, 12) .. "..."
-	end
-
-	setText(arg0_9.loadInfo1, var4_9)
-	setText(arg0_9.loadInfo2, var5_9)
-	setSlider(arg0_9.loadProgress, 0, 1, var6_9)
-	setActive(arg0_9.loadProgressHandle, var6_9 ~= 0 and var6_9 ~= 1)
-	setActive(arg0_9.loadDot, var7_9)
-	setActive(arg0_9.loadLoading, var8_9)
-	setActive(arg0_9.loadLabelNew, var2_9 == DownloadState.CheckToUpdate)
+	setText(arg0_10.loadInfo1, var3_10)
+	setText(arg0_10.loadInfo2, var4_10)
+	setSlider(arg0_10.loadProgress, 0, 1, var5_10)
+	setActive(arg0_10.loadProgressHandle, var5_10 ~= 0 and var5_10 ~= 1)
+	setActive(arg0_10.loadDot, var6_10)
+	setActive(arg0_10.loadLoading, var7_10)
+	setActive(arg0_10.loadLabelNew, var9_10 < var11_10)
 end
 
-function var0_0.Dispose(arg0_10)
-	pg.DelegateInfo.Dispose(arg0_10)
+function var0_0.Dispose(arg0_11)
+	pg.DelegateInfo.Dispose(arg0_11)
 
-	if arg0_10.timer then
-		arg0_10.timer:Stop()
+	if arg0_11.timer then
+		arg0_11.timer:Stop()
 
-		arg0_10.timer = nil
+		arg0_11.timer = nil
 	end
 end
 
-function var0_0.GetDownloadGroup(arg0_11)
-	assert(false, "overwrite me !!!")
-end
-
-function var0_0.GetLocaltion(arg0_12, arg1_12, arg2_12)
+function var0_0.GetDownloadGroup(arg0_12)
 	assert(false, "overwrite me !!!")
 end
 
 function var0_0.GetTitle(arg0_13)
 	assert(false, "overwrite me !!!")
+end
+
+function var0_0.isNeedUpdate(arg0_14)
+	local var0_14 = arg0_14:GetDownloadGroup()
+	local var1_14 = BundleWizard.Inst:GetGroupMgr(var0_14)
+
+	return tonumber(var1_14.localVersion.Build) < tonumber(var1_14.serverVersion.Build)
 end
 
 return var0_0

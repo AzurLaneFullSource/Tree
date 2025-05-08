@@ -36,11 +36,11 @@ function var0_0.didEnter(arg0_3)
 		end
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3.confirmBtnTrans, function()
-		local var0_6 = pg.TimeMgr.GetInstance():STimeDescS(pg.TimeMgr.GetInstance():GetServerTime(), "*t")
-		local var1_6 = "azur" .. var0_6.year .. var0_6.month .. var0_6.day .. var0_6.hour .. var0_6.min .. var0_6.sec .. ".jpg"
-		local var2_6 = Application.persistentDataPath .. "/" .. var1_6
-
-		MediaSaver.SaveImageWithBytes(var2_6, arg0_3.bytes)
+		YSNormalTool.MediaTool.SaveImageWithBytes(arg0_3.bytes, function(arg0_7, arg1_7)
+			if arg0_7 then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("word_save_ok"))
+			end
+		end)
 		pg.TipsMgr.GetInstance():ShowTips(i18n("word_save_ok"))
 		arg0_3:closeView()
 	end)
@@ -49,32 +49,32 @@ function var0_0.didEnter(arg0_3)
 	end)
 end
 
-function var0_0.willExit(arg0_8)
+function var0_0.willExit(arg0_9)
 	return
 end
 
-function var0_0.showUserAgreement(arg0_9, arg1_9)
-	setButtonEnabled(arg0_9.userAgreenConfirmTF, true)
+function var0_0.showUserAgreement(arg0_10, arg1_10)
+	setButtonEnabled(arg0_10.userAgreenConfirmTF, true)
 
-	local var0_9
+	local var0_10
 
-	arg0_9.userAgreenTitleTF = arg0_9:findTF("UserAgreement/window/title")
-	arg0_9.userAgreenTitleTF:GetComponent("Text").text = i18n("word_snapshot_share_title")
+	arg0_10.userAgreenTitleTF = arg0_10:findTF("UserAgreement/window/title")
+	arg0_10.userAgreenTitleTF:GetComponent("Text").text = i18n("word_snapshot_share_title")
 
-	setActive(arg0_9.userAgreenTF, true)
-	setText(arg0_9.userAgreenTF:Find("window/container/scrollrect/content/Text"), i18n("word_snapshot_share_agreement"))
-	onButton(arg0_9, arg0_9.userRefuseConfirmTF, function()
-		setActive(arg0_9.userAgreenTF, false)
+	setActive(arg0_10.userAgreenTF, true)
+	setText(arg0_10.userAgreenTF:Find("window/container/scrollrect/content/Text"), i18n("word_snapshot_share_agreement"))
+	onButton(arg0_10, arg0_10.userRefuseConfirmTF, function()
+		setActive(arg0_10.userAgreenTF, false)
 	end)
-	onButton(arg0_9, arg0_9.userAgreenConfirmTF, function()
-		setActive(arg0_9.userAgreenTF, false)
+	onButton(arg0_10, arg0_10.userAgreenConfirmTF, function()
+		setActive(arg0_10.userAgreenTF, false)
 
-		if arg1_9 then
-			arg1_9()
+		if arg1_10 then
+			arg1_10()
 		end
 	end)
-	onButton(arg0_9, arg0_9.closeUserAgreenTF, function()
-		setActive(arg0_9.userAgreenTF, false)
+	onButton(arg0_10, arg0_10.closeUserAgreenTF, function()
+		setActive(arg0_10.userAgreenTF, false)
 	end)
 end
 

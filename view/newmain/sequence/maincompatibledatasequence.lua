@@ -3,7 +3,7 @@ local var0_0 = class("MainCompatibleDataSequence")
 function var0_0.Execute(arg0_1, arg1_1)
 	seriesAsync({
 		function(arg0_2)
-			getProxy(IslandProxy):CheckAndRequest(arg0_2)
+			getProxy(SixthAnniversaryIslandProxy):CheckAndRequest(arg0_2)
 		end,
 		function(arg0_3)
 			arg0_1:CheckSpecialDayForEducateChar(arg0_3)

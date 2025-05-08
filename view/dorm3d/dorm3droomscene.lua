@@ -1232,22 +1232,22 @@ function var0_0.ExitTouchMode(arg0_130)
 	end)
 end
 
-function var0_0.ChangeWalkScene(arg0_137, arg1_137, arg2_137)
+function var0_0.ChangeWalkScene(arg0_137, arg1_137, arg2_137, arg3_137)
 	local var0_137 = arg0_137.ladyDict[arg0_137.apartment:GetConfigID()]
 
 	seriesAsync({
 		function(arg0_138)
-			arg0_137:ChangeArtScene(arg1_137, arg0_138)
+			arg0_137:ChangeArtScene(arg2_137, arg0_138)
 		end,
 		function(arg0_139)
-			var0_137:ChangeSubScene(arg1_137, arg0_139)
+			var0_137:ChangeSubScene(arg2_137, arg0_139)
 		end,
 		function(arg0_140)
 			arg0_137:emit(arg0_137.SHOW_BLOCK)
 
-			if arg1_137 == arg0_137.dormSceneMgr.sceneInfo then
+			if arg1_137 == "back" then
 				arg0_137:SetUI(arg0_140, "back")
-			elseif arg0_137.uiState ~= "walk" then
+			elseif arg1_137 == "change" and arg0_137.uiState ~= "walk" then
 				arg0_137:SetUI(arg0_140, "walk")
 			else
 				arg0_140()
@@ -1255,8 +1255,8 @@ function var0_0.ChangeWalkScene(arg0_137, arg1_137, arg2_137)
 		end
 	}, function()
 		arg0_137:emit(arg0_137.HIDE_BLOCK)
-		arg0_137:SetBlackboardValue(var0_137, "inWalk", arg1_137 ~= arg0_137.dormSceneMgr.sceneInfo)
-		existCall(arg2_137)
+		arg0_137:SetBlackboardValue(var0_137, "inWalk", arg1_137 == "change")
+		existCall(arg3_137)
 	end)
 end
 
@@ -2405,11 +2405,11 @@ function var0_0.PerformanceQueue(arg0_260, arg1_260, arg2_260)
 
 						var0_285.walkBornPoint = arg0_263.params.point or "Default"
 
-						arg0_260:ChangeWalkScene(var1_285 .. "|" .. var2_285, arg0_285)
+						arg0_260:ChangeWalkScene(arg0_263.name, var1_285 .. "|" .. var2_285, arg0_285)
 					elseif arg0_263.name == "back" then
 						var0_285.walkBornPoint = nil
 
-						arg0_260:ChangeWalkScene(arg0_260.dormSceneMgr.sceneInfo, arg0_285)
+						arg0_260:ChangeWalkScene(arg0_263.name, arg0_260.dormSceneMgr.sceneInfo, arg0_285)
 					elseif arg0_263.name == "set" then
 						local function var3_285()
 							local var0_286 = arg0_285

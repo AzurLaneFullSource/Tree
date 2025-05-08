@@ -19,7 +19,11 @@ function var0_0.Dispose(arg0_2)
 end
 
 function var0_0.initData(arg0_3)
-	arg0_3.mgr = pg.MainGroupMgr:GetInstance()
+	arg0_3.mgr = pg.SettingsGroupMgr:GetInstance()
+	arg0_3.infoName = "MainGroup"
+	arg0_3.groupNameList = {
+		PaintingGroupConst.PaintingGroupName
+	}
 end
 
 function var0_0.findUI(arg0_4, arg1_4)
@@ -40,20 +44,16 @@ end
 
 function var0_0.addListener(arg0_5)
 	onButton(arg0_5, arg0_5._tf, function()
-		local var0_6 = arg0_5.mgr:GetState()
-
-		if var0_6 == DownloadState.CheckFailure then
-			arg0_5.mgr:StartCheckD()
-		elseif var0_6 == DownloadState.CheckToUpdate or var0_6 == DownloadState.UpdateFailure then
-			local var1_6 = arg0_5.mgr:GetTotalSize()
-			local var2_6 = HashUtil.BytesToString(var1_6)
+		if arg0_5.mgr:GetState(arg0_5.infoName) ~= pg.SettingsGroupMgr.State.Updating then
+			local var0_6 = arg0_5.mgr:GetTotalSize(arg0_5.groupNameList)
+			local var1_6 = HashUtil.BytesToString(var0_6)
 
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_NORMAL,
-				content = string.format(i18n("main_group_msgbox_content", var2_6)),
+				content = string.format(i18n("main_group_msgbox_content", var1_6)),
 				onYes = function()
 					GroupMainHelper.SavePrefs(DMFileChecker.Prefs.Max)
-					arg0_5.mgr:StartUpdateD()
+					arg0_5.mgr:StartDownload(arg0_5.infoName, arg0_5.groupNameList)
 				end
 			})
 		end
@@ -61,10 +61,6 @@ function var0_0.addListener(arg0_5)
 end
 
 function var0_0.check(arg0_8)
-	if arg0_8.mgr:GetState() == DownloadState.None then
-		arg0_8.mgr:StartCheckD()
-	end
-
 	arg0_8.timer = Timer.New(function()
 		arg0_8:updateUI()
 	end, 0.5, -1)
@@ -74,49 +70,29 @@ function var0_0.check(arg0_8)
 end
 
 function var0_0.updateUI(arg0_10)
-	local var0_10 = arg0_10.mgr:GetState()
+	local var0_10 = arg0_10.mgr:GetState(arg0_10.infoName)
 
-	if var0_10 == DownloadState.None then
-		setText(arg0_10.btnText, "无状态")
-		setActive(arg0_10.loadingIcon, false)
-		setActive(arg0_10.newIcon, false)
-		setActive(arg0_10.finishIcon, false)
-	elseif var0_10 == DownloadState.Checking then
-		setText(arg0_10.btnText, i18n("word_maingroup_checking"))
-		setActive(arg0_10.loadingIcon, false)
-		setActive(arg0_10.newIcon, false)
-		setActive(arg0_10.finishIcon, false)
-	elseif var0_10 == DownloadState.CheckToUpdate then
+	if var0_10 == pg.SettingsGroupMgr.State.None then
 		setText(arg0_10.btnText, i18n("word_maingroup_checktoupdate"))
 		setActive(arg0_10.loadingIcon, false)
 		setActive(arg0_10.newIcon, true)
 		setActive(arg0_10.finishIcon, false)
-	elseif var0_10 == DownloadState.CheckOver then
-		setText(arg0_10.btnText, "No Update")
-		setActive(arg0_10.loadingIcon, false)
-		setActive(arg0_10.newIcon, false)
-		setActive(arg0_10.finishIcon, false)
-	elseif var0_10 == DownloadState.CheckFailure then
-		setText(arg0_10.btnText, i18n("word_maingroup_checkfailure"))
-		setActive(arg0_10.loadingIcon, false)
-		setActive(arg0_10.newIcon, false)
-		setActive(arg0_10.finishIcon, false)
-	elseif var0_10 == DownloadState.Updating then
+	elseif var0_10 == pg.SettingsGroupMgr.State.Updating then
 		setText(arg0_10.btnText, i18n("word_maingroup_updating"))
 		setActive(arg0_10.loadingIcon, true)
 		setActive(arg0_10.newIcon, false)
 		setActive(arg0_10.finishIcon, false)
 
-		local var1_10, var2_10 = arg0_10.mgr:GetCountProgress()
+		local var1_10, var2_10 = arg0_10.mgr:GetCountProgress(arg0_10.infoName)
 
 		setSlider(arg0_10.progressBar, 0, var2_10, var1_10)
 		setText(arg0_10.btnText, var1_10 .. "/" .. var2_10)
-	elseif var0_10 == DownloadState.UpdateSuccess then
+	elseif var0_10 == pg.SettingsGroupMgr.State.Success then
 		setText(arg0_10.btnText, i18n("word_maingroup_updatesuccess"))
 		setActive(arg0_10.loadingIcon, false)
 		setActive(arg0_10.newIcon, false)
 		setActive(arg0_10.finishIcon, true)
-	elseif var0_10 == DownloadState.UpdateFailure then
+	elseif var0_10 == pg.SettingsGroupMgr.State.Fail then
 		setText(arg0_10.btnText, i18n("word_maingroup_updatefailure"))
 		setActive(arg0_10.loadingIcon, false)
 		setActive(arg0_10.newIcon, false)

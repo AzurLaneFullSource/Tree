@@ -240,20 +240,16 @@ var0_0.PoisonEffect = "san_low"
 
 function var0_0.ArrayEffectOrder(arg0_15, arg1_15)
 	local var0_15 = {}
-	local var1_15 = arg0_15:GetComponentsInChildren(typeof(Renderer), true)
+	local var1_15 = arg0_15:GetComponentsInChildren(typeof(Renderer), true):ToTable()
 
-	for iter0_15 = 0, var1_15.Length - 1 do
-		table.insert(var0_15, var1_15[iter0_15])
-	end
+	table.insertto(var0_15, var1_15)
 
-	local var2_15 = arg0_15:GetComponentsInChildren(typeof(Canvas), true)
+	local var2_15 = arg0_15:GetComponentsInChildren(typeof(Canvas), true):ToTable()
 
-	for iter1_15 = 0, var2_15.Length - 1 do
-		table.insert(var0_15, var2_15[iter1_15])
-	end
+	table.insertto(var0_15, var2_15)
 
-	for iter2_15, iter3_15 in ipairs(var0_15) do
-		iter3_15.sortingOrder = iter3_15.sortingOrder + arg1_15
+	for iter0_15, iter1_15 in ipairs(var0_15) do
+		iter1_15.sortingOrder = iter1_15.sortingOrder + arg1_15
 	end
 end
 

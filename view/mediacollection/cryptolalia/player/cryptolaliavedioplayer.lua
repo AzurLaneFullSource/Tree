@@ -245,25 +245,24 @@ end
 
 local function var11_0(arg0_23)
 	local var0_23 = var6_0(arg0_23)
-	local var1_23 = PathMgr.ReadAllLines(var0_23)
-	local var2_23 = {}
+	local var1_23 = {}
+	local var2_23 = PathMgr.ReadAllLines(var0_23):ToTable()
 
-	for iter0_23 = 1, var1_23.Length do
-		local var3_23 = var1_23[iter0_23 - 1]
-		local var4_23 = string.match(var3_23, "#%d+#%d+$")
-		local var5_23 = string.split(var4_23, "#")
-		local var6_23 = var5_23[2]
-		local var7_23 = var5_23[3]
-		local var8_23 = string.gsub(var3_23, var4_23, "")
+	for iter0_23, iter1_23 in ipairs(var2_23) do
+		local var3_23 = string.match(iter1_23, "#%d+#%d+$")
+		local var4_23 = string.split(var3_23, "#")
+		local var5_23 = var4_23[2]
+		local var6_23 = var4_23[3]
+		local var7_23 = string.gsub(iter1_23, var3_23, "")
 
-		table.insert(var2_23, {
-			startTime = tonumber(var6_23),
-			endTime = tonumber(var7_23),
-			content = var8_23
+		table.insert(var1_23, {
+			startTime = tonumber(var5_23),
+			endTime = tonumber(var6_23),
+			content = var7_23
 		})
 	end
 
-	return var2_23
+	return var1_23
 end
 
 function var0_0.LoadVedioPlayer(arg0_24, arg1_24, arg2_24)

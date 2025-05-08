@@ -51,28 +51,20 @@ function var1_0.Init(arg0_1, arg1_1)
 end
 
 function var1_0.InitCri(arg0_8, arg1_8)
-	arg0_8.criInitializer = GameObject.Find("CRIWARE"):GetComponent(typeof(CriWareInitializer))
+	arg0_8.criInitializer = GameObject.Find("CRIWARE"):GetComponent(typeof(CriWare.CriWareInitializer))
 	arg0_8.criInitializer.fileSystemConfig.numberOfLoaders = 128
 	arg0_8.criInitializer.manaConfig.numberOfDecoders = 128
 	arg0_8.criInitializer.atomConfig.useRandomSeedWithTime = true
+	arg0_8.criInitializer.DecrypterConfig.key = "621561580448882"
 
 	arg0_8.criInitializer:Initialize()
 
 	arg0_8.criInst = CriWareMgr.Inst
 
 	arg0_8.criInst:Init(function()
-		CriAtom.SetCategoryVolume(var1_0.Category_CV, arg0_8:getCVVolume())
-		CriAtom.SetCategoryVolume(var1_0.Category_SE, arg0_8:getSEVolume())
-		CriAtom.SetCategoryVolume(var1_0.Category_BGM, arg0_8:getBGMVolume())
-		arg0_8.criInst:RemoveChannel("C_VOICE")
-		Object.Destroy(GameObject.Find("CRIWARE/C_VOICE"))
-		arg0_8.criInst:CreateChannel(var1_0.C_VOICE, CriWareMgr.CRI_CHANNEL_TYPE.MULTI_NOT_REPEAT)
-
-		CriWareMgr.C_VOICE = var1_0.C_VOICE
-
-		arg0_8.criInst:RemoveChannel("C_TIMELINE")
-		Object.Destroy(GameObject.Find("CRIWARE/C_TIMELINE"))
-		arg0_8.criInst:CreateChannel(var1_0.C_TIMELINE, CriWareMgr.CRI_CHANNEL_TYPE.WITHOUT_LIMIT)
+		CriWare.CriAtom.SetCategoryVolume(var1_0.Category_CV, arg0_8:getCVVolume())
+		CriWare.CriAtom.SetCategoryVolume(var1_0.Category_SE, arg0_8:getSEVolume())
+		CriWare.CriAtom.SetCategoryVolume(var1_0.Category_BGM, arg0_8:getBGMVolume())
 
 		local var0_9 = arg0_8.criInst:GetChannelData(var1_0.C_VOICE)
 
@@ -84,6 +76,11 @@ function var1_0.InitCri(arg0_8, arg1_8)
 
 		arg0_8.criInst:GetChannelData(var1_0.C_BATTLE_CV_EXTRA).channelPlayer.volume = 0.6
 
+		local var1_9 = GameObject.Find("CRIWARE/C_BGM")
+
+		arg0_8.bgmWaveAnalyzer = GetOrAddComponent(var1_9, typeof(CriAtomWaveAnalyzer))
+
+		arg0_8.bgmWaveAnalyzer:Init()
 		arg1_8()
 	end)
 end
@@ -185,7 +182,7 @@ function var1_0.CheckFModeEvent(arg0_19, arg1_19, arg2_19, arg3_19)
 end
 
 function var1_0.CheckHasCue(arg0_24, arg1_24, arg2_24)
-	local var0_24 = CriAtom.GetCueSheet(arg1_24)
+	local var0_24 = CriWare.CriAtom.GetCueSheet(arg1_24)
 
 	return var0_24 ~= nil and var0_24.acb:Exists(arg2_24)
 end
@@ -340,7 +337,7 @@ end
 
 function var1_0.setCVVolume(arg0_53, arg1_53)
 	PlayerPrefs.SetFloat("cv_vol", arg1_53)
-	CriAtom.SetCategoryVolume(var1_0.Category_CV, arg1_53)
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_CV, arg1_53)
 end
 
 function var1_0.getBGMVolume(arg0_54)
@@ -349,7 +346,7 @@ end
 
 function var1_0.setBGMVolume(arg0_55, arg1_55)
 	PlayerPrefs.SetFloat("bgm_vol", arg1_55)
-	CriAtom.SetCategoryVolume(var1_0.Category_BGM, arg1_55)
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_BGM, arg1_55)
 end
 
 function var1_0.getSEVolume(arg0_56)
@@ -358,7 +355,7 @@ end
 
 function var1_0.setSEVolume(arg0_57, arg1_57)
 	PlayerPrefs.SetFloat("se_vol", arg1_57)
-	CriAtom.SetCategoryVolume(var1_0.Category_SE, arg1_57)
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_SE, arg1_57)
 end
 
 function var1_0.InitBgmCfg(arg0_58, arg1_58)
@@ -453,4 +450,9 @@ function var1_0.GetCueInfo(arg0_64, arg1_64, arg2_64, arg3_64, arg4_64)
 			arg0_64:UnloadCueSheet(arg1_64)
 		end
 	end)
+end
+
+function var1_0.SetBgmWaveAnalyzerOnCapture(arg0_66, arg1_66, arg2_66)
+	arg0_66.bgmWaveAnalyzer.OnCaptureL = arg1_66
+	arg0_66.bgmWaveAnalyzer.OnCaptureR = arg2_66
 end

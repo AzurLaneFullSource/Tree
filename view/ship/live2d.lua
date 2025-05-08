@@ -201,8 +201,6 @@ local function var11_0(arg0_11, arg1_11, arg2_11)
 	if not arg0_11.isPlaying or arg2_11 then
 		local var1_11 = var1_0.action2Id[arg1_11]
 
-		print(" 开始播放动作id = " .. tostring(arg1_11))
-
 		if var1_11 then
 			arg0_11.playActionName = arg1_11
 
@@ -365,7 +363,7 @@ local function var15_0(arg0_15, arg1_15)
 	end
 
 	local var0_15 = false
-	local var1_15 = ReflectionHelp.RefGetField(typeof(Live2dChar), "reactPos", arg0_15.liveCom)
+	local var1_15 = arg0_15.liveCom.reactPos
 	local var2_15 = arg0_15._animator:GetCurrentAnimatorStateInfo(0)
 	local var3_15 = {
 		reactPos = var1_15,
@@ -496,16 +494,8 @@ local function var16_0(arg0_16)
 		end
 	end))
 
-	arg0_16.paraRanges = ReflectionHelp.RefGetField(typeof(Live2dChar), "paraRanges", arg0_16.liveCom)
-	arg0_16.destinations = {}
-
-	local var6_16 = ReflectionHelp.RefGetProperty(typeof(Live2dChar), "Destinations", arg0_16.liveCom)
-
-	for iter5_16 = 0, var6_16.Length - 1 do
-		local var7_16 = var6_16[iter5_16]
-
-		table.insert(arg0_16.destinations, var6_16[iter5_16])
-	end
+	arg0_16.paraRanges = arg0_16.liveCom.paraRanges
+	arg0_16.destinations = ReflectionHelp.RefGetProperty(typeof(Live2dChar), "Destinations", arg0_16.liveCom):ToTable()
 end
 
 function var0_0.checkActionExist(arg0_23, arg1_23)
@@ -598,18 +588,17 @@ local function var17_0(arg0_29, arg1_29)
 	arg0_29.animationClipNames = {}
 
 	if arg0_29._animator and arg0_29._animator.runtimeAnimatorController then
-		local var0_29 = arg0_29._animator.runtimeAnimatorController.animationClips
-		local var1_29 = var0_29.Length
+		local var0_29 = arg0_29._animator.runtimeAnimatorController.animationClips:ToTable()
 
-		for iter0_29 = 0, var1_29 - 1 do
-			table.insert(arg0_29.animationClipNames, var0_29[iter0_29].name)
+		for iter0_29, iter1_29 in ipairs(var0_29) do
+			table.insert(arg0_29.animationClipNames, iter1_29.name)
 		end
 	end
 
-	local var2_29 = var1_0.action2Id.idle
+	local var1_29 = var1_0.action2Id.idle
 
 	arg0_29.liveCom:SetReactMotions(var1_0.idleActions)
-	arg0_29.liveCom:SetAction(var2_29)
+	arg0_29.liveCom:SetAction(var1_29)
 
 	function arg0_29.liveCom.FinishAction(arg0_30)
 		arg0_29:live2dActionChange(false)
@@ -678,10 +667,10 @@ local function var17_0(arg0_29, arg1_29)
 	arg0_29.state = var0_0.STATE_INITED
 
 	if arg0_29.delayChangeParamater and #arg0_29.delayChangeParamater > 0 then
-		for iter1_29 = 1, #arg0_29.delayChangeParamater do
-			local var3_29 = arg0_29.delayChangeParamater[iter1_29]
+		for iter2_29 = 1, #arg0_29.delayChangeParamater do
+			local var2_29 = arg0_29.delayChangeParamater[iter2_29]
 
-			arg0_29:changeParamaterValue(var3_29[1], var3_29[2])
+			arg0_29:changeParamaterValue(var2_29[1], var2_29[2])
 		end
 
 		arg0_29.delayChangeParamater = nil
@@ -891,10 +880,11 @@ function var0_0.setReactPos(arg0_43, arg1_43)
 		arg0_43.liveCom:IgonreReactPos(arg1_43)
 
 		if arg1_43 then
-			ReflectionHelp.RefSetField(typeof(Live2dChar), "inDrag", arg0_43.liveCom, false)
+			arg0_43.liveCom.inDrag = false
 		end
 
-		ReflectionHelp.RefSetField(typeof(Live2dChar), "reactPos", arg0_43.liveCom, Vector3(0, 0, 0))
+		arg0_43.liveCom.reactPos = Vector3(0, 0, 0)
+
 		arg0_43:updateDragsSateData()
 	end
 end
@@ -1066,7 +1056,7 @@ function var0_0.changeIdleIndex(arg0_57, arg1_57)
 		idle = arg0_57.idleIndex,
 		idle_change = var0_57
 	})
-	print("now set idle index is " .. arg1_57)
+	print("live2d 待机动作设置为 = " .. arg1_57)
 
 	arg0_57.idleIndex = arg1_57
 
@@ -1099,8 +1089,7 @@ function var0_0.CheckStopDrag(arg0_60)
 
 	if var0_60.l2d_ignore_drag and var0_60.l2d_ignore_drag == 1 then
 		arg0_60.liveCom.ResponseClick = false
-
-		ReflectionHelp.RefSetField(typeof(Live2dChar), "inDrag", arg0_60.liveCom, false)
+		arg0_60.liveCom.inDrag = false
 	end
 end
 
@@ -1147,17 +1136,20 @@ function var0_0.Dispose(arg0_63)
 
 		arg0_63.liveCom.FinishAction = nil
 		arg0_63.liveCom.EventAction = nil
+
+		arg0_63.liveCom:SetMouseInputActions(nil, nil)
 	end
 
 	arg0_63:saveLive2dData()
-	arg0_63.liveCom:SetMouseInputActions(nil, nil)
 
 	arg0_63._readlyToStop = false
 	arg0_63.state = var0_0.STATE_DISPOSE
 
-	pg.Live2DMgr.GetInstance():StopLoadingLive2d(arg0_63.live2dRequestId)
+	if arg0_63.live2dRequestId then
+		pg.Live2DMgr.GetInstance():StopLoadingLive2d(arg0_63.live2dRequestId)
 
-	arg0_63.live2dRequestId = nil
+		arg0_63.live2dRequestId = nil
+	end
 
 	if arg0_63.drags then
 		for iter0_63 = 1, #arg0_63.drags do
@@ -1167,14 +1159,14 @@ function var0_0.Dispose(arg0_63)
 		arg0_63.drags = {}
 	end
 
-	if arg0_63.live2dData.gyro == 1 then
-		Input.gyro.enabled = false
-	end
-
 	if arg0_63.live2dData then
 		arg0_63.live2dData:Clear()
 
 		arg0_63.live2dData = nil
+
+		if arg0_63.live2dData and arg0_63.live2dData.gyro == 1 then
+			Input.gyro.enabled = false
+		end
 	end
 
 	arg0_63:live2dActionChange(false)
@@ -1192,10 +1184,9 @@ end
 
 function var0_0.AtomSouceFresh(arg0_65)
 	local var0_65 = pg.CriMgr.GetInstance():getAtomSource(pg.CriMgr.C_VOICE)
-	local var1_65 = arg0_65._go:GetComponent("CubismCriSrcMouthInput")
-	local var2_65 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Framework.MouthMovement.CubismCriSrcMouthInput"), "Analyzer", var1_65)
+	local var1_65 = arg0_65._go:GetComponent("CubismCriSrcMouthInput").Analyzer
 
-	var0_65:AttachToAnalyzer(var2_65)
+	var0_65:AttachToAnalyzer(var1_65)
 
 	if arg0_65.updateAtom then
 		arg0_65.updateAtom = false

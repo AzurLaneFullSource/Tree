@@ -22,10 +22,10 @@ end
 function var1_0.SetSortingOrder(arg0_2, arg1_2)
 	arg0_2 = tf(arg0_2)
 
-	local var0_2 = arg0_2:GetComponents(typeof(Renderer))
+	local var0_2 = arg0_2:GetComponents(typeof(Renderer)):ToTable()
 
-	for iter0_2 = 0, var0_2.Length - 1 do
-		var0_2[iter0_2].sortingOrder = arg1_2
+	for iter0_2, iter1_2 in ipairs(var0_2) do
+		iter1_2.sortingOrder = arg1_2
 	end
 
 	local var1_2 = arg0_2:GetComponent(typeof(Canvas))
@@ -34,18 +34,18 @@ function var1_0.SetSortingOrder(arg0_2, arg1_2)
 		var1_2.sortingOrder = arg1_2
 	end
 
-	for iter1_2 = 0, arg0_2.childCount - 1 do
-		var1_0.SetSortingOrder(arg0_2:GetChild(iter1_2), arg1_2)
+	for iter2_2 = 0, arg0_2.childCount - 1 do
+		var1_0.SetSortingOrder(arg0_2:GetChild(iter2_2), arg1_2)
 	end
 end
 
 function var1_0.AddSortingOrder(arg0_3, arg1_3)
 	arg0_3 = tf(arg0_3)
 
-	local var0_3 = arg0_3:GetComponents(typeof(Renderer))
+	local var0_3 = arg0_3:GetComponents(typeof(Renderer)):ToTable()
 
-	for iter0_3 = 0, var0_3.Length - 1 do
-		var0_3[iter0_3].sortingOrder = var0_3[iter0_3].sortingOrder + arg1_3
+	for iter0_3, iter1_3 in ipairs(var0_3) do
+		iter1_3.sortingOrder = iter1_3.sortingOrder + arg1_3
 	end
 
 	local var1_3 = arg0_3:GetComponent(typeof(Canvas))
@@ -54,7 +54,7 @@ function var1_0.AddSortingOrder(arg0_3, arg1_3)
 		var1_3.sortingOrder = var1_3.sortingOrder + arg1_3
 	end
 
-	for iter1_3 = 0, arg0_3.childCount - 1 do
-		var1_0.AddSortingOrder(arg0_3:GetChild(iter1_3), arg1_3)
+	for iter2_3 = 0, arg0_3.childCount - 1 do
+		var1_0.AddSortingOrder(arg0_3:GetChild(iter2_3), arg1_3)
 	end
 end
