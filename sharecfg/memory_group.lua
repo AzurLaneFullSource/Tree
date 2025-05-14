@@ -223,6 +223,8 @@ pg.memory_group = setmetatable({
 		323,
 		324,
 		325,
+		326,
+		327,
 		501,
 		502,
 		503,
@@ -5266,6 +5268,38 @@ pg.base.memory_group = {
 			4316,
 			4317,
 			4318
+		}
+	},
+	[326] = {
+		id = 326,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5924,
+		title = "Planning the Villa Vacation",
+		memories = {
+			4331,
+			4332,
+			4333,
+			4334,
+			4335
+		}
+	},
+	[327] = {
+		id = 327,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 5924,
+		title = "March of the Neversetting Sun",
+		memories = {
+			4341,
+			4342,
+			4343,
+			4344,
+			4345,
+			4346,
+			4347
 		}
 	},
 	[501] = {

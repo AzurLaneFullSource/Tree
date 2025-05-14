@@ -165423,6 +165423,30 @@ _G.pg.base.item_virtual_data_statistics[65092] = {
 	combination_display = {},
 }
 
+_G.pg.base.item_virtual_data_statistics[65095] = {
+	display = "Used to exchange for a portrait frame. Removed after the event ends.",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "Props/xunliandianshu_20250514",
+	id = 65095,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Training Pts",
+	order = 0,
+	rarity = 2,
+	replace_item = 0,
+	shop_id = -1,
+	time_limit = 0,
+	type = 98,
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
 _G.pg.base.item_virtual_data_statistics[65500] = {
 	display = "A commemorative medal issued by the Iron Blood Resistance celebrating your triumph over the Star Beast.\n—Our world shall not perish. Not today, not ever.",
 	drop_gold_max = 0,

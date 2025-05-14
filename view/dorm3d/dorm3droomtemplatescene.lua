@@ -3438,7 +3438,7 @@ function var0_0.SwitchAnim(arg0_319, arg1_319, arg2_319, arg3_319)
 end
 
 function var0_0.PlayFaceAnim(arg0_322, arg1_322, arg2_322, arg3_322)
-	arg1_322.ladyAnimator:CrossFadeInFixedTime(arg2_322, 0.2, arg1_322.ladyAnimFaceLayerIndex)
+	arg1_322.ladyAnimator:CrossFadeInFixedTime(arg2_322, 0, arg1_322.ladyAnimFaceLayerIndex)
 	existCall(arg3_322)
 end
 

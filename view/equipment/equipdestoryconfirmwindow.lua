@@ -100,6 +100,10 @@ function var0_0.Updatelayout(arg0_11)
 		table.insert(var0_11, i18n("destroy_high_intensify_tip", ""))
 	end
 
+	if #var0_11 == 0 then
+		table.insert(var0_11, i18n("destroy_importantequipment_tip"))
+	end
+
 	setText(arg0_11.title, i18n("destroy_eliteequipment_tip", table.concat(var0_11, ",")))
 
 	local var1_11 = underscore.any(arg0_11.equips, function(arg0_14)

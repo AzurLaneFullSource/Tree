@@ -1,6 +1,119 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_12 = {
+	[403041] = {
+		ship_group = 40304,
+		name = "Dark Demon Princess",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 403041,
+		group_index = 1,
+		l2d_ignore_drag = 0,
+		painting = "deyizhi_2",
+		shop_id = 0,
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 7,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "deyizhi_2",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "For a servant, your eyes are good... *coughs*... I'm an Ironblood Princess, the Queen of Night, Deutschland! Servant? No. I am the first of my family. Come, kiss the ring of royalty!",
+		voice_actor = 28,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.77,
+					1.22,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.77,
+					1.22,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.24,
+					0.01,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.77,
+					1.22,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.49,
+							2.38,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[403042] = {
 		ship_group = 40304,
 		name = "Service Time?!",
@@ -13339,121 +13452,6 @@ pg.base.ship_skin_template_12 = {
 							-0.46,
 							2.4,
 							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[431230] = {
-		ship_group = 40123,
-		name = "Keeper of the Comf-Fort",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 431230,
-		group_index = 10,
-		l2d_ignore_drag = 0,
-		painting = "z23_9",
-		shop_id = 0,
-		illustrator = 1,
-		l2d_voice_calibrate = "",
-		shop_type_id = 20,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		bg = "109",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 4,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "z23_9",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "*sigh*... Taking care of Meowfficers is more work than you'd think... They're awfully needy for support units. Commander, make absolute sure you don't turn out like them.",
-		voice_actor = 3,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.005,
-					0.998,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.005,
-					0.998,
-					0
-				}
-			},
-			torpedo = {
-				{
-					-0.007,
-					-0.002,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.998,
-					1.012,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.399,
-							2.475,
-							-0.27
 						}
 					}
 				}

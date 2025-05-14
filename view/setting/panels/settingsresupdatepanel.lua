@@ -14,10 +14,10 @@ end
 
 function var0_0.OnInit(arg0_4)
 	arg0_4.tpl = arg0_4._tf:Find("Tpl")
-	arg0_4.containerTF = arg0_4._tf:Find("list")
+	arg0_4.containerTF = arg0_4._tf:Find("options/list")
 	arg0_4.iconTF = arg0_4._tf:Find("Icon")
 
-	local var0_4 = arg0_4._tf:Find("MainGroup")
+	local var0_4 = arg0_4._tf:Find("options/MainGroup")
 	local var1_4 = not GroupMainHelper.IsVerSameWithServer()
 
 	setActive(var0_4, var1_4)

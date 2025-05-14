@@ -121,7 +121,7 @@ function var0_0.didEnter(arg0_13)
 		end, SFX_PANEL)
 	end
 
-	setActive(arg0_13.otherTip, PlayerPrefs.GetFloat("firstIntoOtherPanel") == 0)
+	setActive(arg0_13.otherTip, PlayerPrefs.GetInt("firstIntoOtherPanel", 0) == 0)
 	arg0_13:EnterDefaultPage()
 end
 

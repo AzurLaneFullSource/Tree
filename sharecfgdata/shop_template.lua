@@ -32607,7 +32607,7 @@ _G.pg.base.shop_template[70529] = {
 	id = 70529,
 	limit_args2 = "",
 	num = 1,
-	order = 300,
+	order = 100,
 	resource_num = 1180,
 	resource_type = 14,
 	tag = 0,
@@ -41306,8 +41306,8 @@ _G.pg.base.shop_template[70773] = {
 	time = {
 		{
 			{
-				2024,
-				11,
+				2025,
+				5,
 				14,
 			},
 			{
@@ -41318,9 +41318,9 @@ _G.pg.base.shop_template[70773] = {
 		},
 		{
 			{
-				2024,
-				12,
-				4,
+				2025,
+				5,
+				19,
 			},
 			{
 				23,
@@ -46380,8 +46380,8 @@ _G.pg.base.shop_template[70912] = {
 	time = {
 		{
 			{
-				2024,
-				11,
+				2025,
+				5,
 				14,
 			},
 			{
@@ -46392,9 +46392,9 @@ _G.pg.base.shop_template[70912] = {
 		},
 		{
 			{
-				2024,
-				12,
-				4,
+				2025,
+				5,
+				19,
 			},
 			{
 				23,

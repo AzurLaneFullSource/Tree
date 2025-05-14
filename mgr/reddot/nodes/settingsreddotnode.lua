@@ -23,7 +23,7 @@ function var0_0.CheckCV(arg0_2)
 
 	var1_2 = Timer.New(function()
 		if var0_2.state == DownloadState.CheckToUpdate then
-			var0_0.CanUpdateCV = true
+			var0_0.CanUpdateCV = not GroupHelper.IsGroupVerLastest("CV")
 
 			arg0_2:SetData(false)
 		end

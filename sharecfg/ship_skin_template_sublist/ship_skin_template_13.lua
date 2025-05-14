@@ -1,6 +1,121 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_13 = {
+	[431230] = {
+		ship_group = 40123,
+		name = "Keeper of the Comf-Fort",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		l2d_drag_rate = "",
+		id = 431230,
+		group_index = 10,
+		l2d_ignore_drag = 0,
+		painting = "z23_9",
+		shop_id = 0,
+		illustrator = 1,
+		l2d_voice_calibrate = "",
+		shop_type_id = 20,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		bg = "109",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 4,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		prefab = "z23_9",
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "*sigh*... Taking care of Meowfficers is more work than you'd think... They're awfully needy for support units. Commander, make absolute sure you don't turn out like them.",
+		voice_actor = 3,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.005,
+					0.998,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.005,
+					0.998,
+					0
+				}
+			},
+			torpedo = {
+				{
+					-0.007,
+					-0.002,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.998,
+					1.012,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.399,
+							2.475,
+							-0.27
+						}
+					}
+				}
+			}
+		}
+	},
 	[431232] = {
 		ship_group = 40123,
 		name = "Upgrade Failure?!",
@@ -13976,137 +14091,6 @@ pg.base.ship_skin_template_13 = {
 					}
 				}
 			}
-		}
-	},
-	[603031] = {
-		ship_group = 60303,
-		name = "Seaside Coincidence",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		l2d_drag_rate = "",
-		id = 603031,
-		group_index = 1,
-		l2d_ignore_drag = 0,
-		painting = "bola_2",
-		shop_id = 70528,
-		illustrator = -1,
-		shop_type_id = 6,
-		lip_smoothing = 0,
-		bg = "117",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		prefab = "bola_2",
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Zara, how dastardly of you to spike the ball at such a time– Eek?! Commander?! Why are you in a place like that?",
-		voice_actor = 146,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			1,
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.26,
-					1.001,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.29,
-					1.001,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.04,
-					0.01,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.26,
-					0.997,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.507,
-							2.381,
-							0
-						}
-					}
-				}
-			}
-		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_head"
-		},
-		l2d_voice_calibrate = {
-			use_event = true
 		}
 	}
 }

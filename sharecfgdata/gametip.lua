@@ -8692,6 +8692,10 @@ _G.pg.base.gametip.destroy_high_level_tip = {
 	tip = "<color=#92fc63>$1 is higher than lv. 1</color>",
 }
 
+_G.pg.base.gametip.destroy_importantequipment_tip = {
+	tip = "<color=#92fc63>Important</color>",
+}
+
 _G.pg.base.gametip.destroy_eliteequipment_tip = {
 	tip = "You've selected $1 gear(s).",
 }

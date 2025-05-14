@@ -14357,46 +14357,116 @@ pg.activity_ins_template = {
 		ship_group = 110201,
 		name = "De Zeven Provinci?n",
 		sculpture = "qisheng",
-		message_persist = "",
-		picture_persist = "",
+		message_persist = "ins_552",
+		picture_persist = "https://blhxusstatic.yo-star.com/pic/250424_qisheng11Mjqo90dKaiOX1x.png",
 		group_id = 552,
 		id = 552,
-		is_active = 1,
-		time_persist = {},
-		npc_discuss_persist = {}
+		is_active = 0,
+		time_persist = {
+			{
+				2025,
+				4,
+				24
+			},
+			{
+				12,
+				6,
+				17
+			}
+		},
+		npc_discuss_persist = {
+			5795,
+			5802
+		}
 	},
 	[553] = {
 		ship_group = 110101,
 		name = "Evertsen",
 		sculpture = "aifosen",
-		message_persist = "",
-		picture_persist = "",
+		message_persist = "ins_553",
+		picture_persist = "https://blhxusstatic.yo-star.com/pic/250424_aifosenuelEAmoLrsUMv4NT.png",
 		group_id = 553,
 		id = 553,
-		is_active = 1,
-		time_persist = {},
-		npc_discuss_persist = {}
+		is_active = 0,
+		time_persist = {
+			{
+				2025,
+				4,
+				25
+			},
+			{
+				13,
+				28,
+				17
+			}
+		},
+		npc_discuss_persist = {
+			5812,
+			5819,
+			5823
+		}
 	},
 	[554] = {
 		ship_group = 70208,
 		name = "Oleg",
 		sculpture = "aoliege",
-		message_persist = "",
-		picture_persist = "",
+		message_persist = "ins_554",
+		picture_persist = "https://blhxusstatic.yo-star.com/pic/250424_aoliegeaMieEcOzNOCT75U4.png",
 		group_id = 554,
 		id = 554,
-		is_active = 1,
-		time_persist = {},
-		npc_discuss_persist = {}
+		is_active = 0,
+		time_persist = {
+			{
+				2025,
+				4,
+				26
+			},
+			{
+				17,
+				44,
+				17
+			}
+		},
+		npc_discuss_persist = {
+			5834,
+			5839,
+			5845
+		}
 	},
 	[555] = {
 		ship_group = 70509,
 		name = "Kazan ",
 		sculpture = "kashan",
-		message_persist = "",
-		picture_persist = "",
+		message_persist = "ins_555",
+		picture_persist = "https://blhxusstatic.yo-star.com/pic/250424_kashanaMieEcOzNOCT75U4.png",
 		group_id = 555,
 		id = 555,
+		is_active = 0,
+		time_persist = {
+			{
+				2025,
+				4,
+				27
+			},
+			{
+				11,
+				17,
+				17
+			}
+		},
+		npc_discuss_persist = {
+			5855,
+			5860
+		}
+	},
+	[556] = {
+		ship_group = 70202,
+		name = "Pamiat' Merkuria",
+		sculpture = "shuixingjinian",
+		message_persist = "",
+		picture_persist = "",
+		group_id = 556,
+		id = 556,
 		is_active = 1,
 		time_persist = {},
 		npc_discuss_persist = {}
@@ -14947,6 +15017,7 @@ pg.activity_ins_template = {
 		552,
 		553,
 		554,
-		555
+		555,
+		556
 	}
 }
