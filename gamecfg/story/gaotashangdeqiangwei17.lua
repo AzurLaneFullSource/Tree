@@ -672,7 +672,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			actorName = "A Rose on the High Tower\n\n<size=45>17 A Different Royal Navy</size>",
+			actorName = "Cleopatra",
 			say = "Understood!",
 			typewriter = {
 				speed = 0.05,

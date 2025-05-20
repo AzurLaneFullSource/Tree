@@ -93,7 +93,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -105,7 +105,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -140,7 +140,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -152,7 +152,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -164,7 +164,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -205,7 +205,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -291,7 +291,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -303,7 +303,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -327,7 +327,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -399,7 +399,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -433,7 +433,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -462,7 +462,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -498,7 +498,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -510,7 +510,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -522,7 +522,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -558,7 +558,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -570,7 +570,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -582,7 +582,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -594,7 +594,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -606,7 +606,7 @@ return {
 		},
 		{
 			side = 2,
-			actorName = "A Rose on the High Tower\n\n<size=45>1 The Usherer of a New Age</size>",
+			actorName = "Cleopatra",
 			bgName = "bg_gaotaqiangwei_cg1",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
