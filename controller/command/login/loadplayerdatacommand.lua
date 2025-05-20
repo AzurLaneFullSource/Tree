@@ -273,6 +273,10 @@ function var0_0.execute(arg0_1, arg1_1)
 		{
 			IslandProxy,
 			true
+		},
+		{
+			CommanderManualProxy,
+			true
 		}
 	})
 	pg.ConnectionMgr.GetInstance():setPacketIdx(1)
@@ -297,7 +301,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			pg.SdkMgr.GetInstance():CreateRole(var0_2.id, var0_2.name, var0_2.level, var0_2.registerTime, var0_2:getTotalGem())
 		end
 
-		pg.SeriesGuideMgr.GetInstance():setPlayer(var0_2)
+		pg.SeriesGuideMgr.GetInstance():Init(var1_1, var0_2)
 		WorldGuider.GetInstance():Init()
 
 		local var3_2 = getProxy(UserProxy):getData()

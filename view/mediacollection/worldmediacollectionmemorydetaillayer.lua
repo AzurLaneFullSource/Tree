@@ -27,6 +27,8 @@ function var0_0.OnInit(arg0_2)
 	setActive(var0_2, false)
 
 	arg0_2.loader = AutoLoader.New()
+	arg0_2.memoryItemViewport = arg0_2:findTF("Viewport", arg0_2.memoryItemList)
+	arg0_2.memoryItemsGrid = arg0_2:findTF("Viewport/Content", arg0_2.memoryItemList):GetComponent(typeof(GridLayoutGroup))
 
 	setText(arg0_2._tf:Find("ItemRect/ProgressDesc"), i18n("world_collection_2"))
 
@@ -107,16 +109,40 @@ function var0_0.PlayMemory(arg0_9, arg1_9)
 	end
 end
 
-function var0_0.ShowSubMemories(arg0_11, arg1_11)
+function var0_0.ShowSubMemories(arg0_11, arg1_11, arg2_11)
 	arg0_11.contextData.memoryGroup = arg1_11.id
 	arg0_11.memories = _.map(arg1_11.memories, function(arg0_12)
 		return pg.memory_template[arg0_12]
 	end)
 
-	arg0_11.memoryItemList:SetTotalCount(#arg0_11.memories, 0)
+	local var0_11 = 0
 
-	local var0_11 = #arg0_11.memories
-	local var1_11 = _.reduce(arg0_11.memories, 0, function(arg0_13, arg1_13)
+	if arg2_11 then
+		local var1_11 = 0
+
+		for iter0_11 = 1, #arg0_11.memories do
+			if arg0_11.memories[iter0_11].id == arg2_11 then
+				var1_11 = iter0_11
+
+				break
+			end
+		end
+
+		if var1_11 > 0 then
+			local var2_11 = arg0_11.memoryItemList
+			local var3_11 = arg0_11.memoryItemsGrid.cellSize.y + arg0_11.memoryItemsGrid.spacing.y
+			local var4_11 = arg0_11.memoryItemsGrid.constraintCount
+			local var5_11 = var3_11 * math.ceil(#arg0_11.memories / var4_11)
+
+			var0_11 = (var3_11 * math.floor((var1_11 - 1) / var4_11) + var2_11.paddingFront) / (var5_11 - arg0_11.memoryItemViewport.rect.height)
+			var0_11 = Mathf.Clamp01(var0_11)
+		end
+	end
+
+	arg0_11.memoryItemList:SetTotalCount(#arg0_11.memories, var0_11)
+
+	local var6_11 = #arg0_11.memories
+	local var7_11 = _.reduce(arg0_11.memories, 0, function(arg0_13, arg1_13)
 		if arg1_13.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(arg1_13.story, true) then
 			arg0_13 = arg0_13 + 1
 		end
@@ -124,21 +150,21 @@ function var0_0.ShowSubMemories(arg0_11, arg1_11)
 		return arg0_13
 	end)
 
-	setText(arg0_11._tf:Find("ItemRect/ProgressText"), var1_11 .. "/" .. var0_11)
+	setText(arg0_11._tf:Find("ItemRect/ProgressText"), var7_11 .. "/" .. var6_11)
 
-	local var2_11 = _.filter(pg.re_map_template.all, function(arg0_14)
+	local var8_11 = _.filter(pg.re_map_template.all, function(arg0_14)
 		return pg.re_map_template[arg0_14].memory_group == arg1_11.id
 	end)
-	local var3_11 = var1_11 < var0_11 and #var2_11 > 0
+	local var9_11 = var7_11 < var6_11 and #var8_11 > 0
 
-	setActive(arg0_11._tf:Find("ItemRect/UnlockTip"), var3_11)
+	setActive(arg0_11._tf:Find("ItemRect/UnlockTip"), var9_11)
 
-	if var3_11 then
-		local var4_11 = _.map(_.sort(Map.GetRearChaptersOfRemaster(var2_11[1])), function(arg0_15)
+	if var9_11 then
+		local var10_11 = _.map(_.sort(Map.GetRearChaptersOfRemaster(var8_11[1])), function(arg0_15)
 			return getProxy(ChapterProxy):getChapterById(arg0_15, true):getConfig("chapter_name")
 		end)
 
-		setText(arg0_11._tf:Find("ItemRect/UnlockTip"), i18n("levelScene_remaster_unlock_tip", arg1_11.title, table.concat(var4_11, "/")))
+		setText(arg0_11._tf:Find("ItemRect/UnlockTip"), i18n("levelScene_remaster_unlock_tip", arg1_11.title, table.concat(var10_11, "/")))
 	end
 end
 

@@ -9,7 +9,9 @@ function var0_0.init(arg0_2)
 	arg0_2.helpBtn = arg0_2:findTF("mainPanel/helpBtn")
 	arg0_2.chatBtn = arg0_2:findTF("mainPanel/left/chatBtn")
 	arg0_2.juusBtn = arg0_2:findTF("mainPanel/left/juusBtn")
+	arg0_2.musicPlayerView = MainMusicPlayerView.New(arg0_2._tf, arg0_2.event)
 
+	arg0_2.musicPlayerView:SetExtra(arg0_2._tf:Find("MusicPlayer"))
 	arg0_2:ChangeChatTip()
 	arg0_2:ChangeJuusTip()
 	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, false, {
@@ -20,55 +22,82 @@ end
 
 function var0_0.didEnter(arg0_3)
 	arg0_3:SetUp()
-	triggerButton(arg0_3.chatBtn)
+	arg0_3:FlushMusicPlayer()
+
+	if arg0_3.contextData.current then
+		SetActive(arg0_3:findTF("choose", arg0_3.chatBtn), arg0_3.contextData.current == "chat")
+		SetActive(arg0_3:findTF("choose", arg0_3.juusBtn), arg0_3.contextData.current == "juus")
+	else
+		triggerButton(arg0_3.chatBtn)
+	end
 end
 
-function var0_0.SetUp(arg0_4)
-	onButton(arg0_4, arg0_4.bg, function()
-		arg0_4:OnClose()
+function var0_0.FlushMusicPlayer(arg0_4)
+	local var0_4 = pg.BgmMgr.GetInstance():GetNow() == "MainMusicPlayer"
+
+	if tobool(arg0_4.musicPlayerView:isShowing()) ~= var0_4 then
+		if var0_4 then
+			arg0_4.musicPlayerView:ExecuteAction("Show", false)
+		else
+			arg0_4.musicPlayerView:ExecuteAction("Hide")
+		end
+	end
+end
+
+function var0_0.SetUp(arg0_5)
+	onButton(arg0_5, arg0_5.bg, function()
+		arg0_5:OnClose()
 	end, SFX_PANEL)
-	onButton(arg0_4, arg0_4.helpBtn, function()
+	onButton(arg0_5, arg0_5.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.music_juus.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0_4, arg0_4.chatBtn, function()
-		if isActive(arg0_4:findTF("choose", arg0_4.juusBtn)) then
-			arg0_4:emit(InstagramMainMediator.CLOSE_JUUS_DETAIL)
+	onButton(arg0_5, arg0_5.chatBtn, function()
+		arg0_5.contextData.current = "chat"
+
+		if isActive(arg0_5:findTF("choose", arg0_5.juusBtn)) then
+			arg0_5:emit(InstagramMainMediator.CLOSE_JUUS_DETAIL)
 		end
 
-		SetActive(arg0_4:findTF("choose", arg0_4.chatBtn), true)
-		SetActive(arg0_4:findTF("choose", arg0_4.juusBtn), false)
-		arg0_4:emit(InstagramMainMediator.OPEN_CHAT)
-		arg0_4:emit(InstagramMainMediator.CLOSE_JUUS)
+		SetActive(arg0_5:findTF("choose", arg0_5.chatBtn), arg0_5.contextData.current == "chat")
+		SetActive(arg0_5:findTF("choose", arg0_5.juusBtn), arg0_5.contextData.current == "juus")
+		arg0_5:emit(InstagramMainMediator.OPEN_CHAT)
+		arg0_5:emit(InstagramMainMediator.CLOSE_JUUS)
 	end, SFX_PANEL)
-	onButton(arg0_4, arg0_4.juusBtn, function()
-		SetActive(arg0_4:findTF("choose", arg0_4.chatBtn), false)
-		SetActive(arg0_4:findTF("choose", arg0_4.juusBtn), true)
-		arg0_4:emit(InstagramMainMediator.OPEN_JUUS)
-		arg0_4:emit(InstagramMainMediator.CLOSE_CHAT)
+	onButton(arg0_5, arg0_5.juusBtn, function()
+		arg0_5.contextData.current = "juus"
+
+		SetActive(arg0_5:findTF("choose", arg0_5.chatBtn), arg0_5.contextData.current == "chat")
+		SetActive(arg0_5:findTF("choose", arg0_5.juusBtn), arg0_5.contextData.current == "juus")
+		arg0_5:emit(InstagramMainMediator.OPEN_JUUS)
+		arg0_5:emit(InstagramMainMediator.CLOSE_CHAT)
 	end, SFX_PANEL)
 end
 
-function var0_0.OnClose(arg0_9)
-	if isActive(arg0_9:findTF("choose", arg0_9.juusBtn)) then
-		arg0_9:emit(InstagramMainMediator.JUUS_BACK_PRESSED)
+function var0_0.OnClose(arg0_10)
+	if isActive(arg0_10:findTF("choose", arg0_10.juusBtn)) then
+		arg0_10:emit(InstagramMainMediator.JUUS_BACK_PRESSED)
 	else
-		arg0_9:closeView()
+		arg0_10:closeView()
 	end
 end
 
-function var0_0.ChangeJuusTip(arg0_10)
-	local var0_10 = getProxy(InstagramProxy)
+function var0_0.ChangeJuusTip(arg0_11)
+	local var0_11 = getProxy(InstagramProxy)
 
-	SetActive(arg0_10:findTF("tip", arg0_10.juusBtn), var0_10:ShouldShowTip())
+	SetActive(arg0_11:findTF("tip", arg0_11.juusBtn), var0_11:ShouldShowTip())
 end
 
-function var0_0.ChangeChatTip(arg0_11)
-	local var0_11 = getProxy(InstagramChatProxy)
+function var0_0.ChangeChatTip(arg0_12)
+	local var0_12 = getProxy(InstagramChatProxy)
 
-	SetActive(arg0_11:findTF("tip", arg0_11.chatBtn), var0_11:ShouldShowTip())
+	SetActive(arg0_12:findTF("tip", arg0_12.chatBtn), var0_12:ShouldShowTip())
+end
+
+function var0_0.willExit(arg0_13)
+	arg0_13.musicPlayerView:Destroy()
 end
 
 return var0_0

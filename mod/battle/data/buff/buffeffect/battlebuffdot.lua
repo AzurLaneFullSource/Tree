@@ -22,7 +22,6 @@ end
 
 function var4_0.SetArgs(arg0_3, arg1_3, arg2_3)
 	arg0_3._number = arg0_3._tempData.arg_list.number or 0
-	arg0_3._numberBase = arg0_3._number
 	arg0_3._time = arg0_3._tempData.arg_list.time or 0
 	arg0_3._nextEffectTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg0_3._time
 	arg0_3._maxHPRatio = arg0_3._tempData.arg_list.maxHPRatio or 0
@@ -50,6 +49,8 @@ function var4_0.SetArgs(arg0_3, arg1_3, arg2_3)
 		arg0_3._igniteAttr = arg0_3._tempData.arg_list.attr
 		arg0_3._igniteCoefficient = arg0_3._tempData.arg_list.k
 		arg0_3._igniteDMG = var2_0.CalculateIgniteDamage(arg0_3._orb, arg0_3._igniteAttr, arg0_3._igniteCoefficient)
+	elseif arg0_3._infection then
+		arg0_3._igniteDMG = arg0_3._infection
 	else
 		arg0_3._igniteDMG = 0
 	end
@@ -58,6 +59,7 @@ function var4_0.SetArgs(arg0_3, arg1_3, arg2_3)
 		arg1_3:CloakExpose(arg0_3._cloakExpose)
 	end
 
+	arg0_3._infective = arg0_3._tempData.arg_list.infective
 	arg0_3._proxy = var0_0.Battle.BattleDataProxy.GetInstance()
 end
 
@@ -67,9 +69,7 @@ end
 
 function var4_0.onUpdate(arg0_5, arg1_5, arg2_5, arg3_5)
 	if arg3_5.timeStamp >= arg0_5._nextEffectTime then
-		local var0_5 = arg0_5:CalcNumber(arg1_5, arg2_5)
-
-		arg0_5._proxy:HandleDirectDamage(arg1_5, var0_5)
+		arg0_5:doDamage(arg1_5, arg2_5)
 
 		if arg1_5:IsAlive() then
 			arg0_5._nextEffectTime = arg0_5._nextEffectTime + arg0_5._time
@@ -77,60 +77,94 @@ function var4_0.onUpdate(arg0_5, arg1_5, arg2_5, arg3_5)
 	end
 end
 
-function var4_0.onRemove(arg0_6, arg1_6, arg2_6)
-	local var0_6 = arg0_6:CalcNumber(arg1_6, arg2_6)
-
-	arg0_6._proxy:HandleDirectDamage(arg1_6, var0_6)
+function var4_0.onSink(arg0_6, arg1_6, arg2_6, arg3_6)
+	arg0_6:handleInfect(arg1_6, arg2_6)
 end
 
-function var4_0.CalcNumber(arg0_7, arg1_7, arg2_7)
-	if arg0_7._metaDot then
-		local var0_7 = var0_0.Battle.BattleDataProxy.GetInstance():GetInitData()
+function var4_0.onRemove(arg0_7, arg1_7, arg2_7)
+	arg0_7:doDamage(arg1_7, arg2_7)
+end
 
-		return (var2_0.CaclulateMetaDotaDamage(var0_7.bossConfigId, var0_7.bossLevel))
-	else
-		local var1_7 = var2_0.CaclulateDOTDamageEnhanceRate(arg0_7._tempData, arg0_7._orb, arg1_7)
-		local var2_7, var3_7 = arg1_7:GetHP()
-		local var4_7 = var2_7 * arg0_7._currentHPRatio + var3_7 * arg0_7._maxHPRatio + arg0_7._number + arg0_7._igniteDMG
+function var4_0.doDamage(arg0_8, arg1_8, arg2_8)
+	local var0_8 = arg1_8:IsAlive()
+	local var1_8 = arg0_8:CalcNumber(arg1_8, arg2_8)
 
-		if arg0_7._randExtraRange > 0 then
-			var4_7 = var4_7 + math.random(0, arg0_7._randExtraRange)
-		end
+	arg0_8._proxy:HandleDirectDamage(arg1_8, var1_8)
 
-		local var5_7 = var4_7 * (1 + var1_7)
-
-		return math.max(0, math.floor(math.min(var2_7 - var3_7 * arg0_7._minRestHPRatio, var5_7 * arg2_7._stack * var1_0.GetCurrent(arg1_7, "repressReduce"))))
+	if not arg1_8:IsAlive() and var0_8 then
+		arg0_8:handleInfect(arg1_8, arg2_8)
 	end
 end
 
-function var4_0.SetOrb(arg0_8, arg1_8, arg2_8, arg3_8)
-	arg0_8._orb = arg2_8
-	arg0_8._level = arg3_8
+function var4_0.handleInfect(arg0_9, arg1_9, arg2_9)
+	if not arg0_9._infective then
+		return
+	end
 
-	arg1_8:SetOrbLevel(arg0_8._level)
+	local var0_9 = arg0_9._infective.target_choise
+	local var1_9 = arg0_9._infective.arg_list
+	local var2_9 = arg0_9:getTargetList(arg1_9, var0_9, var1_9, {})
+
+	for iter0_9, iter1_9 in ipairs(var2_9) do
+		local var3_9 = var0_0.Battle.BattleBuffUnit.New(arg2_9:GetID(), arg2_9:GetLv())
+
+		var3_9:SetInfection(arg0_9._igniteDMG)
+		iter1_9:AddBuff(var3_9)
+	end
 end
 
-function var4_0.UpdateCloakLock(arg0_9)
-	local var0_9 = arg0_9:GetBuffList()
-	local var1_9 = 0
-	local var2_9 = {}
+function var4_0.CalcNumber(arg0_10, arg1_10, arg2_10)
+	if arg0_10._metaDot then
+		local var0_10 = var0_0.Battle.BattleDataProxy.GetInstance():GetInitData()
 
-	for iter0_9, iter1_9 in pairs(var0_9) do
-		for iter2_9, iter3_9 in ipairs(iter1_9._effectList) do
-			if iter3_9:GetEffectType() == var4_0.FX_TYPE then
-				local var3_9 = iter3_9._cloakExpose
-				local var4_9 = iter3_9._exposeGroup
-				local var5_9 = var2_9[var4_9] or 0
+		return (var2_0.CaclulateMetaDotaDamage(var0_10.bossConfigId, var0_10.bossLevel))
+	else
+		local var1_10 = var2_0.CaclulateDOTDamageEnhanceRate(arg0_10._tempData, arg0_10._orb, arg1_10)
+		local var2_10, var3_10 = arg1_10:GetHP()
+		local var4_10 = var2_10 * arg0_10._currentHPRatio + var3_10 * arg0_10._maxHPRatio + arg0_10._number + arg0_10._igniteDMG
 
-				if var5_9 < var3_9 then
-					var1_9 = var1_9 + var3_9 - var5_9
-					var5_9 = var3_9
+		if arg0_10._randExtraRange > 0 then
+			var4_10 = var4_10 + math.random(0, arg0_10._randExtraRange)
+		end
+
+		local var5_10 = var4_10 * (1 + var1_10)
+
+		return math.max(0, math.floor(math.min(var2_10 - var3_10 * arg0_10._minRestHPRatio, var5_10 * arg2_10._stack * var1_0.GetCurrent(arg1_10, "repressReduce"))))
+	end
+end
+
+function var4_0.SetOrb(arg0_11, arg1_11, arg2_11, arg3_11)
+	arg0_11._orb = arg2_11
+	arg0_11._level = arg3_11
+
+	arg1_11:SetOrbLevel(arg0_11._level)
+end
+
+function var4_0.SetInfection(arg0_12, arg1_12)
+	arg0_12._infection = arg1_12
+end
+
+function var4_0.UpdateCloakLock(arg0_13)
+	local var0_13 = arg0_13:GetBuffList()
+	local var1_13 = 0
+	local var2_13 = {}
+
+	for iter0_13, iter1_13 in pairs(var0_13) do
+		for iter2_13, iter3_13 in ipairs(iter1_13._effectList) do
+			if iter3_13:GetEffectType() == var4_0.FX_TYPE then
+				local var3_13 = iter3_13._cloakExpose
+				local var4_13 = iter3_13._exposeGroup
+				local var5_13 = var2_13[var4_13] or 0
+
+				if var5_13 < var3_13 then
+					var1_13 = var1_13 + var3_13 - var5_13
+					var5_13 = var3_13
 				end
 
-				var2_9[var4_9] = var5_9
+				var2_13[var4_13] = var5_13
 			end
 		end
 	end
 
-	arg0_9:CloakOnFire(var1_9)
+	arg0_13:CloakOnFire(var1_13)
 end

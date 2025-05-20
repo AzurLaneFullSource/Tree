@@ -8,6 +8,7 @@ function var0_0.init(arg0_2)
 	arg0_2.recallBtn = arg0_2:findTF("Main/recall")
 	arg0_2.cryptolaliaBtn = arg0_2:findTF("Main/cryptolalia")
 	arg0_2.archiveBtn = arg0_2:findTF("Main/archive")
+	arg0_2.archiveLockTF = arg0_2.archiveBtn:Find("lock")
 	arg0_2.recordBtn = arg0_2:findTF("Main/record")
 	arg0_2.albumBtn = arg0_2:findTF("Main/album")
 
@@ -43,7 +44,19 @@ function var0_0.didEnter(arg0_3)
 			arg0_3:emit(WorldMediaCollectionEntranceMediator.OPEN_CRYPTOLALIA)
 		end
 	end, SFX_PANEL)
+
+	local var0_3 = pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "WorldMediator")
+
+	setActive(arg0_3.archiveLockTF, not var0_3)
 	onButton(arg0_3, arg0_3.archiveBtn, function()
+		if not var0_3 then
+			local var0_8 = pg.open_systems_limited[19]
+
+			pg.TipsMgr.GetInstance():ShowTips(i18n("no_open_system_tip", var0_8.name, var0_8.level))
+
+			return
+		end
+
 		arg0_3:emit(WorldMediaCollectionEntranceMediator.OPEN_ARCHIVE)
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3.recordBtn, function()

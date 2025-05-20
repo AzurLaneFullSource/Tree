@@ -274,13 +274,21 @@ function var0_0.filterByCamp(arg0_26, arg1_26)
 		return true
 	end
 
-	for iter0_26 = 2, #ShipIndexCfg.camp do
-		local var0_26 = bit.lshift(1, iter0_26 - 2)
+	local var0_26 = underscore.to_array(ShipIndexCfg.camp)
 
-		if bit.band(var0_26, arg1_26) > 0 then
-			local var1_26 = ShipIndexCfg.camp[iter0_26].types
+	if LOCK_NATION_HNLMS then
+		var0_26 = underscore.filter(var0_26, function(arg0_27)
+			return #arg0_27.types ~= 1 or arg0_27.types[1] ~= Nation.NL
+		end)
+	end
 
-			for iter1_26, iter2_26 in ipairs(var1_26) do
+	for iter0_26 = 2, #var0_26 do
+		local var1_26 = bit.lshift(1, iter0_26 - 2)
+
+		if bit.band(var1_26, arg1_26) > 0 then
+			local var2_26 = var0_26[iter0_26].types
+
+			for iter1_26, iter2_26 in ipairs(var2_26) do
 				if iter2_26 == Nation.LINK then
 					if arg0_26:getNation() >= Nation.LINK then
 						return true
@@ -320,18 +328,18 @@ var0_0.RarityNames = {
 	"index_rare6"
 }
 
-function var0_0.filterByRarity(arg0_27, arg1_27)
-	if not arg1_27 or arg1_27 == var0_0.RarityAll then
+function var0_0.filterByRarity(arg0_28, arg1_28)
+	if not arg1_28 or arg1_28 == var0_0.RarityAll then
 		return true
 	end
 
-	for iter0_27 = 2, #ShipIndexCfg.rarity do
-		local var0_27 = bit.lshift(1, iter0_27 - 2)
+	for iter0_28 = 2, #ShipIndexCfg.rarity do
+		local var0_28 = bit.lshift(1, iter0_28 - 2)
 
-		if bit.band(var0_27, arg1_27) > 0 then
-			local var1_27 = ShipIndexCfg.rarity[iter0_27].types
+		if bit.band(var0_28, arg1_28) > 0 then
+			local var1_28 = ShipIndexCfg.rarity[iter0_28].types
 
-			if table.contains(var1_27, arg0_27:getRarity()) then
+			if table.contains(var1_28, arg0_28:getRarity()) then
 				return true
 			end
 		end
@@ -430,35 +438,35 @@ end
 table.insert(var0_0.ExtraNames, "index_dressed")
 table.insert(var0_0.ExtraNames, "index_marry")
 
-function var0_0.filterByExtra(arg0_28, arg1_28)
-	if not arg1_28 or arg1_28 == var0_0.ExtraAll then
+function var0_0.filterByExtra(arg0_29, arg1_29)
+	if not arg1_29 or arg1_29 == var0_0.ExtraAll then
 		return true
 	end
 
-	if arg1_28 == var0_0.ExtraSkin then
-		return arg0_28:hasAvailiableSkin()
-	elseif arg1_28 == var0_0.ExtraRemould then
-		return arg0_28:isRemouldable() and not arg0_28:isAllRemouldFinish()
-	elseif arg1_28 == var0_0.Extrastrengthen then
-		return not arg0_28:isMetaShip() and not arg0_28:isIntensifyMax()
-	elseif arg1_28 == var0_0.ExtraUpgrade then
-		return arg0_28:canUpgrade()
-	elseif arg1_28 == var0_0.ExtraNotMaxLv then
-		return arg0_28:notMaxLevelForFilter()
-	elseif arg1_28 == var0_0.ExtraAwakening then
-		return arg0_28:isAwakening()
-	elseif arg1_28 == var0_0.ExtraAwakening2 then
-		return arg0_28:isAwakening2()
-	elseif arg1_28 == var0_0.ExtraSpecial then
-		return arg0_28:isSpecialFilter()
-	elseif arg1_28 == var0_0.ExtraProposeSkin then
-		return arg0_28:hasProposeSkin()
-	elseif arg1_28 == var0_0.ExtraUniqueSpWeapon then
-		return arg0_28:HasUniqueSpWeapon()
-	elseif arg1_28 == var0_0.DRESSED then
-		return not arg0_28:IsDefaultSkin() and arg0_28:getRemouldSkinId() ~= arg0_28.skinId
-	elseif arg1_28 == var0_0.ExtraMarry then
-		return arg0_28.propose
+	if arg1_29 == var0_0.ExtraSkin then
+		return arg0_29:hasAvailiableSkin()
+	elseif arg1_29 == var0_0.ExtraRemould then
+		return arg0_29:isRemouldable() and not arg0_29:isAllRemouldFinish()
+	elseif arg1_29 == var0_0.Extrastrengthen then
+		return not arg0_29:isMetaShip() and not arg0_29:isIntensifyMax()
+	elseif arg1_29 == var0_0.ExtraUpgrade then
+		return arg0_29:canUpgrade()
+	elseif arg1_29 == var0_0.ExtraNotMaxLv then
+		return arg0_29:notMaxLevelForFilter()
+	elseif arg1_29 == var0_0.ExtraAwakening then
+		return arg0_29:isAwakening()
+	elseif arg1_29 == var0_0.ExtraAwakening2 then
+		return arg0_29:isAwakening2()
+	elseif arg1_29 == var0_0.ExtraSpecial then
+		return arg0_29:isSpecialFilter()
+	elseif arg1_29 == var0_0.ExtraProposeSkin then
+		return arg0_29:hasProposeSkin()
+	elseif arg1_29 == var0_0.ExtraUniqueSpWeapon then
+		return arg0_29:HasUniqueSpWeapon()
+	elseif arg1_29 == var0_0.DRESSED then
+		return not arg0_29:IsDefaultSkin() and arg0_29:getRemouldSkinId() ~= arg0_29.skinId
+	elseif arg1_29 == var0_0.ExtraMarry then
+		return arg0_29.propose
 	end
 
 	return false
@@ -480,21 +488,21 @@ var0_0.CollExtraNames = {
 	"index_not_obtained"
 }
 
-function var0_0.filterByCollExtra(arg0_29, arg1_29)
-	if not arg1_29 or arg1_29 == var0_0.CollExtraAll then
+function var0_0.filterByCollExtra(arg0_30, arg1_30)
+	if not arg1_30 or arg1_30 == var0_0.CollExtraAll then
 		return true
 	end
 
-	if arg1_29 == var0_0.CollExtraSpecial then
-		return arg0_29:isSpecialFilter()
+	if arg1_30 == var0_0.CollExtraSpecial then
+		return arg0_30:isSpecialFilter()
 	end
 
-	if arg1_29 == var0_0.CollExtraNotObtained then
-		local var0_29 = arg0_29:getGroupId()
-		local var1_29 = arg0_29:isRemoulded()
-		local var2_29 = getProxy(CollectionProxy):getShipGroup(var0_29)
+	if arg1_30 == var0_0.CollExtraNotObtained then
+		local var0_30 = arg0_30:getGroupId()
+		local var1_30 = arg0_30:isRemoulded()
+		local var2_30 = getProxy(CollectionProxy):getShipGroup(var0_30)
 
-		if ShipGroup.getState(var0_29, var2_29, var1_29) ~= ShipGroup.STATE_UNLOCK then
+		if ShipGroup.getState(var0_30, var2_30, var1_30) ~= ShipGroup.STATE_UNLOCK then
 			return true
 		end
 	end

@@ -87,6 +87,18 @@ function SendCmdCommand.execute(arg0_4, arg1_4)
 					print(getProxy(PlayerProxy):getRawData().guideIndex)
 				else
 					arg0_4:sendNotification(GAME.UPDATE_GUIDE_INDEX, {
+						isNewVersion = false,
+						index = tonumber(var0_4.arg2)
+					})
+				end
+			end
+		elseif var0_4.arg1 == "newguide" then
+			if Application.isEditor then
+				if not var0_4.arg2 or var0_4.arg2 == "" then
+					print(getProxy(PlayerProxy):getRawData().newGuideIndex)
+				else
+					arg0_4:sendNotification(GAME.UPDATE_GUIDE_INDEX, {
+						isNewVersion = true,
 						index = tonumber(var0_4.arg2)
 					})
 				end

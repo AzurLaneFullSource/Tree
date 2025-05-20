@@ -26,7 +26,15 @@ function var0_0.Backward(arg0_4)
 
 	arg0_4.contextData.recordGroup = nil
 
-	arg0_4:OpenGroupLayer()
+	if arg0_4.contextData.storyNodeID then
+		local var0_4 = arg0_4.contextData.storyNodeID
+
+		arg0_4.contextData.storyNodeID = nil
+
+		arg0_4.viewParent:WarpToStoryNode(var0_4)
+	else
+		arg0_4:OpenGroupLayer()
+	end
 
 	return true
 end

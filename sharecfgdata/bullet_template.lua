@@ -2543,7 +2543,7 @@ _G.pg.base.bullet_template[850] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -6014,7 +6014,7 @@ _G.pg.base.bullet_template[1006] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -6073,7 +6073,7 @@ _G.pg.base.bullet_template[1007] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -6132,7 +6132,7 @@ _G.pg.base.bullet_template[1008] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -6678,7 +6678,7 @@ _G.pg.base.bullet_template[1106] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -6737,7 +6737,7 @@ _G.pg.base.bullet_template[1107] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -6796,7 +6796,7 @@ _G.pg.base.bullet_template[1108] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -7289,7 +7289,7 @@ _G.pg.base.bullet_template[1206] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -7348,7 +7348,7 @@ _G.pg.base.bullet_template[1207] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -7407,7 +7407,7 @@ _G.pg.base.bullet_template[1208] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -7529,7 +7529,7 @@ _G.pg.base.bullet_template[1210] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -7588,7 +7588,7 @@ _G.pg.base.bullet_template[1211] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -7965,7 +7965,7 @@ _G.pg.base.bullet_template[1306] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -8024,7 +8024,7 @@ _G.pg.base.bullet_template[1307] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -8083,7 +8083,7 @@ _G.pg.base.bullet_template[1308] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -8367,7 +8367,7 @@ _G.pg.base.bullet_template[1351] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -8540,7 +8540,7 @@ _G.pg.base.bullet_template[1402] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -8659,7 +8659,7 @@ _G.pg.base.bullet_template[1404] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -8721,7 +8721,7 @@ _G.pg.base.bullet_template[1405] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -9187,7 +9187,7 @@ _G.pg.base.bullet_template[1413] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -9249,7 +9249,7 @@ _G.pg.base.bullet_template[1414] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 400,
 		},
 	},
@@ -9368,7 +9368,7 @@ _G.pg.base.bullet_template[1416] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 900,
 		},
 	},
@@ -9533,7 +9533,7 @@ _G.pg.base.bullet_template[1419] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 1200,
 		},
 	},
@@ -9887,7 +9887,7 @@ _G.pg.base.bullet_template[1425] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -10052,7 +10052,7 @@ _G.pg.base.bullet_template[1428] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -10294,7 +10294,7 @@ _G.pg.base.bullet_template[1501] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -10364,7 +10364,7 @@ _G.pg.base.bullet_template[1502] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -10434,7 +10434,7 @@ _G.pg.base.bullet_template[1503] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -10504,7 +10504,7 @@ _G.pg.base.bullet_template[1504] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -10574,7 +10574,7 @@ _G.pg.base.bullet_template[1505] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -10644,7 +10644,7 @@ _G.pg.base.bullet_template[1506] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -10778,7 +10778,7 @@ _G.pg.base.bullet_template[1511] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -10848,7 +10848,7 @@ _G.pg.base.bullet_template[1512] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -10918,7 +10918,7 @@ _G.pg.base.bullet_template[1513] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -10988,8 +10988,78 @@ _G.pg.base.bullet_template[1514] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2500,
+		},
+	},
+	extra_param = {
+		accuracy = "chargeBulletAccuracy",
+		gravity = -0.05,
+		randomOffsetX = 19,
+		randomOffsetZ = 19,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[1515] = {
+	alert_fx = "AlertArea",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/torpedo-hit",
+	id = 1515,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "battle/sink",
+	modle_ID = "kuasheHE",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 80,
+	range_offset = 20,
+	type = 2,
+	velocity = 12,
+	damage_type = {
+		1.45,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			3,
+			0.8,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 16,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 311,
+			group_level = 4,
+			rant = 7500,
 		},
 	},
 	extra_param = {
@@ -11122,7 +11192,7 @@ _G.pg.base.bullet_template[1521] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -11192,7 +11262,7 @@ _G.pg.base.bullet_template[1522] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -11262,7 +11332,7 @@ _G.pg.base.bullet_template[1523] = {
 	attach_buff = {
 		{
 			buff_id = 11101,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -11520,7 +11590,7 @@ _G.pg.base.bullet_template[1541] = {
 	attach_buff = {
 		{
 			buff_id = 312,
-			level = 3,
+			group_level = 3,
 			rant = 3000,
 		},
 	},
@@ -11653,7 +11723,7 @@ _G.pg.base.bullet_template[1551] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -11723,7 +11793,7 @@ _G.pg.base.bullet_template[1552] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -11857,7 +11927,7 @@ _G.pg.base.bullet_template[1561] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -11927,7 +11997,7 @@ _G.pg.base.bullet_template[1562] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -11997,7 +12067,7 @@ _G.pg.base.bullet_template[1563] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2500,
 		},
 	},
@@ -12131,7 +12201,7 @@ _G.pg.base.bullet_template[1565] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2500,
 		},
 	},
@@ -12265,7 +12335,7 @@ _G.pg.base.bullet_template[1570] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -12399,7 +12469,7 @@ _G.pg.base.bullet_template[1580] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2500,
 		},
 	},
@@ -12469,7 +12539,7 @@ _G.pg.base.bullet_template[1581] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2500,
 		},
 	},
@@ -12539,7 +12609,7 @@ _G.pg.base.bullet_template[1590] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -12609,7 +12679,7 @@ _G.pg.base.bullet_template[1591] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -13424,7 +13494,7 @@ _G.pg.base.bullet_template[1617] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1500,
 		},
 	},
@@ -13491,7 +13561,7 @@ _G.pg.base.bullet_template[1618] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1500,
 		},
 	},
@@ -13558,7 +13628,7 @@ _G.pg.base.bullet_template[1619] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1500,
 		},
 	},
@@ -13940,7 +14010,7 @@ _G.pg.base.bullet_template[1706] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -13999,7 +14069,7 @@ _G.pg.base.bullet_template[1707] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -14058,7 +14128,7 @@ _G.pg.base.bullet_template[1708] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -14233,7 +14303,7 @@ _G.pg.base.bullet_template[1711] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 400,
 		},
 	},
@@ -18072,7 +18142,7 @@ _G.pg.base.bullet_template[2113] = {
 	attach_buff = {
 		{
 			buff_id = 339,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -18138,7 +18208,7 @@ _G.pg.base.bullet_template[2114] = {
 	attach_buff = {
 		{
 			buff_id = 11581,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -18204,7 +18274,7 @@ _G.pg.base.bullet_template[2115] = {
 	attach_buff = {
 		{
 			buff_id = 326,
-			level = 1,
+			group_level = 1,
 			rant = 6000,
 		},
 	},
@@ -18981,7 +19051,7 @@ _G.pg.base.bullet_template[2128] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 2400,
 		},
 	},
@@ -19243,7 +19313,7 @@ _G.pg.base.bullet_template[2132] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 2400,
 		},
 	},
@@ -20277,7 +20347,7 @@ _G.pg.base.bullet_template[2206] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -20336,7 +20406,7 @@ _G.pg.base.bullet_template[2207] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -20395,7 +20465,7 @@ _G.pg.base.bullet_template[2208] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -20517,7 +20587,7 @@ _G.pg.base.bullet_template[2210] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -20947,7 +21017,7 @@ _G.pg.base.bullet_template[2306] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -21006,7 +21076,7 @@ _G.pg.base.bullet_template[2307] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -21065,7 +21135,7 @@ _G.pg.base.bullet_template[2308] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -21357,7 +21427,7 @@ _G.pg.base.bullet_template[2400] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -21419,7 +21489,7 @@ _G.pg.base.bullet_template[2401] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -21497,7 +21567,7 @@ _G.pg.base.bullet_template[2402] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -21559,7 +21629,7 @@ _G.pg.base.bullet_template[2403] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -32775,7 +32845,7 @@ _G.pg.base.bullet_template[19018] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 350,
 		},
 	},
@@ -32834,7 +32904,7 @@ _G.pg.base.bullet_template[19019] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 350,
 		},
 	},
@@ -32893,7 +32963,7 @@ _G.pg.base.bullet_template[19020] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 350,
 		},
 	},
@@ -32955,7 +33025,7 @@ _G.pg.base.bullet_template[19021] = {
 	attach_buff = {
 		{
 			buff_id = 321,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -33199,7 +33269,7 @@ _G.pg.base.bullet_template[19025] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -33324,7 +33394,7 @@ _G.pg.base.bullet_template[19027] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -33453,7 +33523,7 @@ _G.pg.base.bullet_template[19029] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -33523,7 +33593,7 @@ _G.pg.base.bullet_template[19030] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -33593,7 +33663,7 @@ _G.pg.base.bullet_template[19031] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -33663,7 +33733,7 @@ _G.pg.base.bullet_template[19032] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -33733,7 +33803,7 @@ _G.pg.base.bullet_template[19033] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -33803,7 +33873,7 @@ _G.pg.base.bullet_template[19034] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -33873,7 +33943,7 @@ _G.pg.base.bullet_template[19035] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -33943,7 +34013,7 @@ _G.pg.base.bullet_template[19036] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -34013,7 +34083,7 @@ _G.pg.base.bullet_template[19037] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -34083,7 +34153,7 @@ _G.pg.base.bullet_template[19038] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -34153,7 +34223,7 @@ _G.pg.base.bullet_template[19039] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -34223,7 +34293,7 @@ _G.pg.base.bullet_template[19040] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -34293,7 +34363,7 @@ _G.pg.base.bullet_template[19041] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -34363,7 +34433,7 @@ _G.pg.base.bullet_template[19042] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -34433,7 +34503,7 @@ _G.pg.base.bullet_template[19043] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -34503,7 +34573,7 @@ _G.pg.base.bullet_template[19044] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -34573,7 +34643,7 @@ _G.pg.base.bullet_template[19045] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -34643,7 +34713,7 @@ _G.pg.base.bullet_template[19046] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -34713,7 +34783,7 @@ _G.pg.base.bullet_template[19047] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -34783,7 +34853,7 @@ _G.pg.base.bullet_template[19048] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -35960,7 +36030,7 @@ _G.pg.base.bullet_template[19069] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -36019,7 +36089,7 @@ _G.pg.base.bullet_template[19070] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -36078,7 +36148,7 @@ _G.pg.base.bullet_template[19071] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -36137,7 +36207,7 @@ _G.pg.base.bullet_template[19072] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -36196,7 +36266,7 @@ _G.pg.base.bullet_template[19073] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -36255,7 +36325,7 @@ _G.pg.base.bullet_template[19074] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -36314,7 +36384,7 @@ _G.pg.base.bullet_template[19075] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -36373,7 +36443,7 @@ _G.pg.base.bullet_template[19076] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -36432,7 +36502,7 @@ _G.pg.base.bullet_template[19077] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -36491,7 +36561,7 @@ _G.pg.base.bullet_template[19078] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -36622,7 +36692,7 @@ _G.pg.base.bullet_template[19080] = {
 	attach_buff = {
 		{
 			buff_id = 322,
-			level = 1,
+			group_level = 1,
 			rant = 150,
 		},
 	},
@@ -37006,7 +37076,7 @@ _G.pg.base.bullet_template[19086] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -37122,7 +37192,7 @@ _G.pg.base.bullet_template[19088] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -37501,7 +37571,7 @@ _G.pg.base.bullet_template[19094] = {
 	attach_buff = {
 		{
 			buff_id = 322,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -37755,7 +37825,7 @@ _G.pg.base.bullet_template[19098] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -37827,7 +37897,7 @@ _G.pg.base.bullet_template[19099] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -37899,7 +37969,7 @@ _G.pg.base.bullet_template[19100] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -37971,7 +38041,7 @@ _G.pg.base.bullet_template[19101] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -38043,7 +38113,7 @@ _G.pg.base.bullet_template[19102] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -38119,7 +38189,7 @@ _G.pg.base.bullet_template[19103] = {
 	attach_buff = {
 		{
 			buff_id = 324,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -38178,7 +38248,7 @@ _G.pg.base.bullet_template[19104] = {
 	attach_buff = {
 		{
 			buff_id = 325,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -38240,7 +38310,7 @@ _G.pg.base.bullet_template[19105] = {
 	attach_buff = {
 		{
 			buff_id = 410,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -38313,7 +38383,7 @@ _G.pg.base.bullet_template[19106] = {
 	attach_buff = {
 		{
 			buff_id = 410,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -39678,7 +39748,7 @@ _G.pg.base.bullet_template[19128] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 3000,
 		},
 	},
@@ -40029,7 +40099,7 @@ _G.pg.base.bullet_template[19134] = {
 	attach_buff = {
 		{
 			buff_id = 328,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -40091,7 +40161,7 @@ _G.pg.base.bullet_template[19135] = {
 	attach_buff = {
 		{
 			buff_id = 329,
-			level = 1,
+			group_level = 1,
 			rant = 7000,
 		},
 	},
@@ -40161,7 +40231,7 @@ _G.pg.base.bullet_template[19136] = {
 	attach_buff = {
 		{
 			buff_id = 329,
-			level = 1,
+			group_level = 1,
 			rant = 7000,
 		},
 	},
@@ -40241,7 +40311,7 @@ _G.pg.base.bullet_template[19137] = {
 	attach_buff = {
 		{
 			buff_id = 329,
-			level = 1,
+			group_level = 1,
 			rant = 7000,
 		},
 	},
@@ -40313,7 +40383,7 @@ _G.pg.base.bullet_template[19138] = {
 	attach_buff = {
 		{
 			buff_id = 329,
-			level = 1,
+			group_level = 1,
 			rant = 7000,
 		},
 	},
@@ -40385,7 +40455,7 @@ _G.pg.base.bullet_template[19139] = {
 	attach_buff = {
 		{
 			buff_id = 329,
-			level = 1,
+			group_level = 1,
 			rant = 7000,
 		},
 	},
@@ -40444,7 +40514,7 @@ _G.pg.base.bullet_template[19140] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -40582,7 +40652,7 @@ _G.pg.base.bullet_template[19142] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 300,
 		},
 	},
@@ -40764,7 +40834,7 @@ _G.pg.base.bullet_template[19145] = {
 	attach_buff = {
 		{
 			buff_id = 330,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -41187,7 +41257,7 @@ _G.pg.base.bullet_template[19152] = {
 	attach_buff = {
 		{
 			buff_id = 332,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -41304,7 +41374,7 @@ _G.pg.base.bullet_template[19154] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -41363,7 +41433,7 @@ _G.pg.base.bullet_template[19155] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -41594,7 +41664,7 @@ _G.pg.base.bullet_template[19159] = {
 	attach_buff = {
 		{
 			buff_id = 402,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -41661,7 +41731,7 @@ _G.pg.base.bullet_template[19160] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -41720,7 +41790,7 @@ _G.pg.base.bullet_template[19161] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -41779,7 +41849,7 @@ _G.pg.base.bullet_template[19162] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -41838,7 +41908,7 @@ _G.pg.base.bullet_template[19163] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -41897,7 +41967,7 @@ _G.pg.base.bullet_template[19164] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -41956,7 +42026,7 @@ _G.pg.base.bullet_template[19165] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -42015,7 +42085,7 @@ _G.pg.base.bullet_template[19166] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -42074,7 +42144,7 @@ _G.pg.base.bullet_template[19167] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -42133,7 +42203,7 @@ _G.pg.base.bullet_template[19168] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -42192,7 +42262,7 @@ _G.pg.base.bullet_template[19169] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -42251,7 +42321,7 @@ _G.pg.base.bullet_template[19170] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -42638,7 +42708,7 @@ _G.pg.base.bullet_template[19177] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -43741,7 +43811,7 @@ _G.pg.base.bullet_template[19193] = {
 	attach_buff = {
 		{
 			buff_id = 405,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -43807,7 +43877,7 @@ _G.pg.base.bullet_template[19194] = {
 	attach_buff = {
 		{
 			buff_id = 405,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -43869,7 +43939,7 @@ _G.pg.base.bullet_template[19195] = {
 	attach_buff = {
 		{
 			buff_id = 405,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -43936,7 +44006,7 @@ _G.pg.base.bullet_template[19196] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 2,
+			group_level = 2,
 			rant = 7000,
 		},
 	},
@@ -44002,7 +44072,7 @@ _G.pg.base.bullet_template[19197] = {
 	attach_buff = {
 		{
 			buff_id = 318,
-			level = 2,
+			group_level = 2,
 			rant = 7000,
 		},
 	},
@@ -44072,7 +44142,7 @@ _G.pg.base.bullet_template[19198] = {
 	attach_buff = {
 		{
 			buff_id = 403,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -44198,7 +44268,7 @@ _G.pg.base.bullet_template[19200] = {
 	attach_buff = {
 		{
 			buff_id = 1090071,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -44257,7 +44327,7 @@ _G.pg.base.bullet_template[19201] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -44316,7 +44386,7 @@ _G.pg.base.bullet_template[19202] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -44375,7 +44445,7 @@ _G.pg.base.bullet_template[19203] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -44434,7 +44504,7 @@ _G.pg.base.bullet_template[19204] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -44493,7 +44563,7 @@ _G.pg.base.bullet_template[19205] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -44552,7 +44622,7 @@ _G.pg.base.bullet_template[19206] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -44611,7 +44681,7 @@ _G.pg.base.bullet_template[19207] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -44670,7 +44740,7 @@ _G.pg.base.bullet_template[19208] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -44729,7 +44799,7 @@ _G.pg.base.bullet_template[19209] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -44788,7 +44858,7 @@ _G.pg.base.bullet_template[19210] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -44907,7 +44977,7 @@ _G.pg.base.bullet_template[19212] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -45562,7 +45632,7 @@ _G.pg.base.bullet_template[19222] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -45704,7 +45774,7 @@ _G.pg.base.bullet_template[19224] = {
 	attach_buff = {
 		{
 			buff_id = 329,
-			level = 1,
+			group_level = 1,
 			rant = 7000,
 		},
 	},
@@ -45773,7 +45843,7 @@ _G.pg.base.bullet_template[19225] = {
 	attach_buff = {
 		{
 			buff_id = 329,
-			level = 1,
+			group_level = 1,
 			rant = 7000,
 		},
 	},
@@ -45843,7 +45913,7 @@ _G.pg.base.bullet_template[19226] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -46015,7 +46085,7 @@ _G.pg.base.bullet_template[19229] = {
 	attach_buff = {
 		{
 			buff_id = 106082,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -46074,7 +46144,7 @@ _G.pg.base.bullet_template[19230] = {
 	attach_buff = {
 		{
 			buff_id = 106095,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -46133,7 +46203,7 @@ _G.pg.base.bullet_template[19231] = {
 	attach_buff = {
 		{
 			buff_id = 106095,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -46283,7 +46353,7 @@ _G.pg.base.bullet_template[19233] = {
 	attach_buff = {
 		{
 			buff_id = 106112,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -46707,7 +46777,7 @@ _G.pg.base.bullet_template[19240] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -46773,7 +46843,7 @@ _G.pg.base.bullet_template[19241] = {
 	attach_buff = {
 		{
 			buff_id = 342,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -46841,7 +46911,7 @@ _G.pg.base.bullet_template[19242] = {
 	attach_buff = {
 		{
 			buff_id = 342,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -48045,7 +48115,7 @@ _G.pg.base.bullet_template[19262] = {
 	attach_buff = {
 		{
 			buff_id = 343,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -48107,7 +48177,7 @@ _G.pg.base.bullet_template[19263] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -48179,7 +48249,7 @@ _G.pg.base.bullet_template[19264] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -48251,7 +48321,7 @@ _G.pg.base.bullet_template[19265] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -48323,7 +48393,7 @@ _G.pg.base.bullet_template[19266] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -48395,7 +48465,7 @@ _G.pg.base.bullet_template[19267] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -48467,7 +48537,7 @@ _G.pg.base.bullet_template[19268] = {
 	attach_buff = {
 		{
 			buff_id = 346,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -48537,7 +48607,7 @@ _G.pg.base.bullet_template[19269] = {
 	attach_buff = {
 		{
 			buff_id = 344,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -48596,7 +48666,7 @@ _G.pg.base.bullet_template[19270] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 7000,
 		},
 	},
@@ -48655,7 +48725,7 @@ _G.pg.base.bullet_template[19271] = {
 	attach_buff = {
 		{
 			buff_id = 345,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -48783,7 +48853,7 @@ _G.pg.base.bullet_template[19273] = {
 	attach_buff = {
 		{
 			buff_id = 347,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -48842,7 +48912,7 @@ _G.pg.base.bullet_template[19274] = {
 	attach_buff = {
 		{
 			buff_id = 347,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -49304,7 +49374,7 @@ _G.pg.base.bullet_template[19281] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -49609,7 +49679,7 @@ _G.pg.base.bullet_template[19286] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -49860,7 +49930,7 @@ _G.pg.base.bullet_template[19290] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 300,
 		},
 	},
@@ -49919,7 +49989,7 @@ _G.pg.base.bullet_template[19291] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -49981,7 +50051,7 @@ _G.pg.base.bullet_template[19292] = {
 	attach_buff = {
 		{
 			buff_id = 351,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -50050,7 +50120,7 @@ _G.pg.base.bullet_template[19293] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -50187,7 +50257,7 @@ _G.pg.base.bullet_template[19295] = {
 	attach_buff = {
 		{
 			buff_id = 357,
-			level = 3,
+			group_level = 3,
 			rant = 10000,
 		},
 	},
@@ -50253,7 +50323,7 @@ _G.pg.base.bullet_template[19296] = {
 	attach_buff = {
 		{
 			buff_id = 357,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -50312,7 +50382,7 @@ _G.pg.base.bullet_template[19297] = {
 	attach_buff = {
 		{
 			buff_id = 357,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -50608,7 +50678,7 @@ _G.pg.base.bullet_template[19302] = {
 	attach_buff = {
 		{
 			buff_id = 349,
-			level = 1,
+			group_level = 1,
 			rant = 6000,
 		},
 	},
@@ -50741,7 +50811,7 @@ _G.pg.base.bullet_template[19304] = {
 	attach_buff = {
 		{
 			buff_id = 354,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -51036,7 +51106,7 @@ _G.pg.base.bullet_template[19309] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -51276,7 +51346,7 @@ _G.pg.base.bullet_template[19313] = {
 	attach_buff = {
 		{
 			buff_id = 332,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -51394,7 +51464,7 @@ _G.pg.base.bullet_template[19315] = {
 	attach_buff = {
 		{
 			buff_id = 407,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -51467,7 +51537,7 @@ _G.pg.base.bullet_template[19316] = {
 	attach_buff = {
 		{
 			buff_id = 408,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -51904,7 +51974,7 @@ _G.pg.base.bullet_template[19323] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -52143,7 +52213,7 @@ _G.pg.base.bullet_template[19327] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -52215,7 +52285,7 @@ _G.pg.base.bullet_template[19328] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -52630,7 +52700,7 @@ _G.pg.base.bullet_template[19335] = {
 	attach_buff = {
 		{
 			buff_id = 107129,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -52689,7 +52759,7 @@ _G.pg.base.bullet_template[19336] = {
 	attach_buff = {
 		{
 			buff_id = 107129,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -53015,7 +53085,7 @@ _G.pg.base.bullet_template[19341] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -53204,7 +53274,7 @@ _G.pg.base.bullet_template[19344] = {
 	attach_buff = {
 		{
 			buff_id = 355,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -53629,7 +53699,7 @@ _G.pg.base.bullet_template[19351] = {
 	attach_buff = {
 		{
 			buff_id = 411,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -53702,7 +53772,7 @@ _G.pg.base.bullet_template[19352] = {
 	attach_buff = {
 		{
 			buff_id = 412,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -53775,7 +53845,7 @@ _G.pg.base.bullet_template[19353] = {
 	attach_buff = {
 		{
 			buff_id = 413,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -53848,7 +53918,7 @@ _G.pg.base.bullet_template[19354] = {
 	attach_buff = {
 		{
 			buff_id = 414,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -53921,7 +53991,7 @@ _G.pg.base.bullet_template[19355] = {
 	attach_buff = {
 		{
 			buff_id = 415,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -53994,7 +54064,7 @@ _G.pg.base.bullet_template[19356] = {
 	attach_buff = {
 		{
 			buff_id = 416,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -54067,7 +54137,7 @@ _G.pg.base.bullet_template[19357] = {
 	attach_buff = {
 		{
 			buff_id = 417,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -54140,7 +54210,7 @@ _G.pg.base.bullet_template[19358] = {
 	attach_buff = {
 		{
 			buff_id = 418,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -54213,7 +54283,7 @@ _G.pg.base.bullet_template[19359] = {
 	attach_buff = {
 		{
 			buff_id = 419,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -54286,7 +54356,7 @@ _G.pg.base.bullet_template[19360] = {
 	attach_buff = {
 		{
 			buff_id = 420,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -54359,7 +54429,7 @@ _G.pg.base.bullet_template[19361] = {
 	attach_buff = {
 		{
 			buff_id = 421,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -54432,7 +54502,7 @@ _G.pg.base.bullet_template[19362] = {
 	attach_buff = {
 		{
 			buff_id = 422,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -54505,7 +54575,7 @@ _G.pg.base.bullet_template[19363] = {
 	attach_buff = {
 		{
 			buff_id = 423,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -54578,7 +54648,7 @@ _G.pg.base.bullet_template[19364] = {
 	attach_buff = {
 		{
 			buff_id = 424,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -54651,7 +54721,7 @@ _G.pg.base.bullet_template[19365] = {
 	attach_buff = {
 		{
 			buff_id = 425,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -54724,7 +54794,7 @@ _G.pg.base.bullet_template[19366] = {
 	attach_buff = {
 		{
 			buff_id = 426,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -54797,7 +54867,7 @@ _G.pg.base.bullet_template[19367] = {
 	attach_buff = {
 		{
 			buff_id = 427,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -54870,7 +54940,7 @@ _G.pg.base.bullet_template[19368] = {
 	attach_buff = {
 		{
 			buff_id = 428,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -54943,7 +55013,7 @@ _G.pg.base.bullet_template[19369] = {
 	attach_buff = {
 		{
 			buff_id = 429,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -55016,7 +55086,7 @@ _G.pg.base.bullet_template[19370] = {
 	attach_buff = {
 		{
 			buff_id = 430,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -55595,7 +55665,7 @@ _G.pg.base.bullet_template[19379] = {
 	attach_buff = {
 		{
 			buff_id = 442,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -56581,7 +56651,7 @@ _G.pg.base.bullet_template[19394] = {
 	attach_buff = {
 		{
 			buff_id = 449,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -56814,7 +56884,7 @@ _G.pg.base.bullet_template[19398] = {
 	attach_buff = {
 		{
 			buff_id = 450,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -56876,7 +56946,7 @@ _G.pg.base.bullet_template[19399] = {
 	attach_buff = {
 		{
 			buff_id = 451,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -57000,7 +57070,7 @@ _G.pg.base.bullet_template[19401] = {
 	attach_buff = {
 		{
 			buff_id = 454,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -57062,7 +57132,7 @@ _G.pg.base.bullet_template[19402] = {
 	attach_buff = {
 		{
 			buff_id = 525,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -57209,7 +57279,7 @@ _G.pg.base.bullet_template[19404] = {
 	attach_buff = {
 		{
 			buff_id = 529,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -57648,7 +57718,7 @@ _G.pg.base.bullet_template[19411] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -57707,7 +57777,7 @@ _G.pg.base.bullet_template[19412] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -57766,7 +57836,7 @@ _G.pg.base.bullet_template[19413] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -57825,7 +57895,7 @@ _G.pg.base.bullet_template[19414] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -57884,7 +57954,7 @@ _G.pg.base.bullet_template[19415] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -57943,7 +58013,7 @@ _G.pg.base.bullet_template[19416] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -58002,7 +58072,7 @@ _G.pg.base.bullet_template[19417] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -58061,7 +58131,7 @@ _G.pg.base.bullet_template[19418] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -58120,7 +58190,7 @@ _G.pg.base.bullet_template[19419] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -58179,7 +58249,7 @@ _G.pg.base.bullet_template[19420] = {
 	attach_buff = {
 		{
 			buff_id = 333,
-			level = 3,
+			group_level = 3,
 			rant = 950,
 		},
 	},
@@ -58291,7 +58361,7 @@ _G.pg.base.bullet_template[19422] = {
 	attach_buff = {
 		{
 			buff_id = 457,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -58403,7 +58473,7 @@ _G.pg.base.bullet_template[19424] = {
 	attach_buff = {
 		{
 			buff_id = 398,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -58475,7 +58545,7 @@ _G.pg.base.bullet_template[19425] = {
 	attach_buff = {
 		{
 			buff_id = 398,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -59150,7 +59220,7 @@ _G.pg.base.bullet_template[19436] = {
 	attach_buff = {
 		{
 			buff_id = 399,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -59341,7 +59411,7 @@ _G.pg.base.bullet_template[19439] = {
 	attach_buff = {
 		{
 			buff_id = 469,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -59858,7 +59928,7 @@ _G.pg.base.bullet_template[19447] = {
 	attach_buff = {
 		{
 			buff_id = 470,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -59928,7 +59998,7 @@ _G.pg.base.bullet_template[19448] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 10000,
 		},
 	},
@@ -60117,7 +60187,7 @@ _G.pg.base.bullet_template[19451] = {
 	attach_buff = {
 		{
 			buff_id = 16002,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -60418,7 +60488,7 @@ _G.pg.base.bullet_template[19456] = {
 	attach_buff = {
 		{
 			buff_id = 471,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -60657,7 +60727,7 @@ _G.pg.base.bullet_template[19460] = {
 	attach_buff = {
 		{
 			buff_id = 16122,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -60719,7 +60789,7 @@ _G.pg.base.bullet_template[19461] = {
 	attach_buff = {
 		{
 			buff_id = 16122,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -61247,7 +61317,7 @@ _G.pg.base.bullet_template[19469] = {
 	attach_buff = {
 		{
 			buff_id = 472,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -61502,7 +61572,7 @@ _G.pg.base.bullet_template[19473] = {
 	attach_buff = {
 		{
 			buff_id = 473,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -61579,7 +61649,7 @@ _G.pg.base.bullet_template[19474] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 10000,
 		},
 	},
@@ -62304,7 +62374,7 @@ _G.pg.base.bullet_template[19486] = {
 	attach_buff = {
 		{
 			buff_id = 475,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -62376,7 +62446,7 @@ _G.pg.base.bullet_template[19487] = {
 	attach_buff = {
 		{
 			buff_id = 477,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -62448,7 +62518,7 @@ _G.pg.base.bullet_template[19488] = {
 	attach_buff = {
 		{
 			buff_id = 478,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -62520,7 +62590,7 @@ _G.pg.base.bullet_template[19489] = {
 	attach_buff = {
 		{
 			buff_id = 479,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -62592,7 +62662,7 @@ _G.pg.base.bullet_template[19490] = {
 	attach_buff = {
 		{
 			buff_id = 480,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -62664,7 +62734,7 @@ _G.pg.base.bullet_template[19491] = {
 	attach_buff = {
 		{
 			buff_id = 476,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -62936,7 +63006,7 @@ _G.pg.base.bullet_template[19495] = {
 	attach_buff = {
 		{
 			buff_id = 481,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -63008,7 +63078,7 @@ _G.pg.base.bullet_template[19496] = {
 	attach_buff = {
 		{
 			buff_id = 482,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -63483,7 +63553,7 @@ _G.pg.base.bullet_template[19503] = {
 	attach_buff = {
 		{
 			buff_id = 371,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -63542,7 +63612,7 @@ _G.pg.base.bullet_template[19504] = {
 	attach_buff = {
 		{
 			buff_id = 371,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -63601,7 +63671,7 @@ _G.pg.base.bullet_template[19505] = {
 	attach_buff = {
 		{
 			buff_id = 371,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -63660,7 +63730,7 @@ _G.pg.base.bullet_template[19506] = {
 	attach_buff = {
 		{
 			buff_id = 371,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -63732,7 +63802,7 @@ _G.pg.base.bullet_template[19507] = {
 	attach_buff = {
 		{
 			buff_id = 372,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -63942,7 +64012,7 @@ _G.pg.base.bullet_template[19510] = {
 	attach_buff = {
 		{
 			buff_id = 372,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -64010,7 +64080,7 @@ _G.pg.base.bullet_template[19511] = {
 	attach_buff = {
 		{
 			buff_id = 14852,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -64081,7 +64151,7 @@ _G.pg.base.bullet_template[19512] = {
 	attach_buff = {
 		{
 			buff_id = 14853,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -64169,7 +64239,7 @@ _G.pg.base.bullet_template[19513] = {
 	attach_buff = {
 		{
 			buff_id = 441,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -64247,7 +64317,7 @@ _G.pg.base.bullet_template[19514] = {
 	attach_buff = {
 		{
 			buff_id = 441,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -64844,7 +64914,7 @@ _G.pg.base.bullet_template[19522] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -65529,7 +65599,7 @@ _G.pg.base.bullet_template[19533] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -65946,7 +66016,7 @@ _G.pg.base.bullet_template[19540] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -66791,7 +66861,7 @@ _G.pg.base.bullet_template[19554] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -66971,7 +67041,7 @@ _G.pg.base.bullet_template[19557] = {
 	attach_buff = {
 		{
 			buff_id = 446,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -67050,7 +67120,7 @@ _G.pg.base.bullet_template[19558] = {
 	attach_buff = {
 		{
 			buff_id = 446,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -67119,7 +67189,7 @@ _G.pg.base.bullet_template[19559] = {
 	attach_buff = {
 		{
 			buff_id = 447,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -67185,7 +67255,7 @@ _G.pg.base.bullet_template[19560] = {
 	attach_buff = {
 		{
 			buff_id = 448,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -67604,7 +67674,7 @@ _G.pg.base.bullet_template[19567] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -67676,7 +67746,7 @@ _G.pg.base.bullet_template[19568] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -67738,7 +67808,7 @@ _G.pg.base.bullet_template[19569] = {
 	attach_buff = {
 		{
 			buff_id = 318,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -68224,7 +68294,7 @@ _G.pg.base.bullet_template[19576] = {
 	attach_buff = {
 		{
 			buff_id = 15134,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -68533,7 +68603,7 @@ _G.pg.base.bullet_template[19581] = {
 	attach_buff = {
 		{
 			buff_id = 386,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -68592,7 +68662,7 @@ _G.pg.base.bullet_template[19582] = {
 	attach_buff = {
 		{
 			buff_id = 388,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -68854,7 +68924,7 @@ _G.pg.base.bullet_template[19586] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -68913,7 +68983,7 @@ _G.pg.base.bullet_template[19587] = {
 	attach_buff = {
 		{
 			buff_id = 393,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -68972,7 +69042,7 @@ _G.pg.base.bullet_template[19588] = {
 	attach_buff = {
 		{
 			buff_id = 393,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -69031,7 +69101,7 @@ _G.pg.base.bullet_template[19589] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -69450,7 +69520,7 @@ _G.pg.base.bullet_template[19596] = {
 	attach_buff = {
 		{
 			buff_id = 452,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -69520,7 +69590,7 @@ _G.pg.base.bullet_template[19597] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -69832,7 +69902,7 @@ _G.pg.base.bullet_template[19602] = {
 	attach_buff = {
 		{
 			buff_id = 453,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -69896,7 +69966,7 @@ _G.pg.base.bullet_template[19603] = {
 	attach_buff = {
 		{
 			buff_id = 453,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -70155,7 +70225,7 @@ _G.pg.base.bullet_template[19607] = {
 	attach_buff = {
 		{
 			buff_id = 15445,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -70473,7 +70543,7 @@ _G.pg.base.bullet_template[19612] = {
 	attach_buff = {
 		{
 			buff_id = 455,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -70543,7 +70613,7 @@ _G.pg.base.bullet_template[19613] = {
 	attach_buff = {
 		{
 			buff_id = 455,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -70884,7 +70954,7 @@ _G.pg.base.bullet_template[19618] = {
 	attach_buff = {
 		{
 			buff_id = 456,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -70954,7 +71024,7 @@ _G.pg.base.bullet_template[19619] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -71021,7 +71091,7 @@ _G.pg.base.bullet_template[19620] = {
 	attach_buff = {
 		{
 			buff_id = 458,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -71648,7 +71718,7 @@ _G.pg.base.bullet_template[19630] = {
 	attach_buff = {
 		{
 			buff_id = 459,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -71709,7 +71779,7 @@ _G.pg.base.bullet_template[19631] = {
 	attach_buff = {
 		{
 			buff_id = 460,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -71770,7 +71840,7 @@ _G.pg.base.bullet_template[19632] = {
 	attach_buff = {
 		{
 			buff_id = 461,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -71831,7 +71901,7 @@ _G.pg.base.bullet_template[19633] = {
 	attach_buff = {
 		{
 			buff_id = 462,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -71892,7 +71962,7 @@ _G.pg.base.bullet_template[19634] = {
 	attach_buff = {
 		{
 			buff_id = 463,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -71953,7 +72023,7 @@ _G.pg.base.bullet_template[19635] = {
 	attach_buff = {
 		{
 			buff_id = 464,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -72014,7 +72084,7 @@ _G.pg.base.bullet_template[19636] = {
 	attach_buff = {
 		{
 			buff_id = 465,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -72075,7 +72145,7 @@ _G.pg.base.bullet_template[19637] = {
 	attach_buff = {
 		{
 			buff_id = 466,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -72136,7 +72206,7 @@ _G.pg.base.bullet_template[19638] = {
 	attach_buff = {
 		{
 			buff_id = 467,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -72197,7 +72267,7 @@ _G.pg.base.bullet_template[19639] = {
 	attach_buff = {
 		{
 			buff_id = 468,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -72453,7 +72523,7 @@ _G.pg.base.bullet_template[19643] = {
 	attach_buff = {
 		{
 			buff_id = 524,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -72669,7 +72739,7 @@ _G.pg.base.bullet_template[19646] = {
 	attach_buff = {
 		{
 			buff_id = 524,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -73240,7 +73310,7 @@ _G.pg.base.bullet_template[19656] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -74175,7 +74245,7 @@ _G.pg.base.bullet_template[19671] = {
 	attach_buff = {
 		{
 			buff_id = 483,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -74295,7 +74365,7 @@ _G.pg.base.bullet_template[19673] = {
 	attach_buff = {
 		{
 			buff_id = 484,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -74367,7 +74437,7 @@ _G.pg.base.bullet_template[19674] = {
 	attach_buff = {
 		{
 			buff_id = 484,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -74793,7 +74863,7 @@ _G.pg.base.bullet_template[19681] = {
 	attach_buff = {
 		{
 			buff_id = 800682,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -75306,7 +75376,7 @@ _G.pg.base.bullet_template[19689] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -75679,7 +75749,7 @@ _G.pg.base.bullet_template[19695] = {
 	attach_buff = {
 		{
 			buff_id = 530,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -75740,7 +75810,7 @@ _G.pg.base.bullet_template[19696] = {
 	attach_buff = {
 		{
 			buff_id = 530,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -75802,7 +75872,7 @@ _G.pg.base.bullet_template[19697] = {
 	attach_buff = {
 		{
 			buff_id = 800752,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -75861,7 +75931,7 @@ _G.pg.base.bullet_template[19698] = {
 	attach_buff = {
 		{
 			buff_id = 486,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -75920,7 +75990,7 @@ _G.pg.base.bullet_template[19699] = {
 	attach_buff = {
 		{
 			buff_id = 532,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -75979,7 +76049,7 @@ _G.pg.base.bullet_template[19700] = {
 	attach_buff = {
 		{
 			buff_id = 531,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -76174,7 +76244,7 @@ _G.pg.base.bullet_template[19703] = {
 	attach_buff = {
 		{
 			buff_id = 487,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -76261,7 +76331,7 @@ _G.pg.base.bullet_template[19704] = {
 	attach_buff = {
 		{
 			buff_id = 106175,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -76323,7 +76393,7 @@ _G.pg.base.bullet_template[19705] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -76458,7 +76528,7 @@ _G.pg.base.bullet_template[19707] = {
 	attach_buff = {
 		{
 			buff_id = 800825,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -76910,7 +76980,7 @@ _G.pg.base.bullet_template[19714] = {
 	attach_buff = {
 		{
 			buff_id = 489,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -76982,7 +77052,7 @@ _G.pg.base.bullet_template[19715] = {
 	attach_buff = {
 		{
 			buff_id = 489,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -77338,7 +77408,7 @@ _G.pg.base.bullet_template[19721] = {
 	attach_buff = {
 		{
 			buff_id = 110071,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -77404,7 +77474,7 @@ _G.pg.base.bullet_template[19722] = {
 	attach_buff = {
 		{
 			buff_id = 110094,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -77546,7 +77616,7 @@ _G.pg.base.bullet_template[19724] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -77612,7 +77682,7 @@ _G.pg.base.bullet_template[19725] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -77742,7 +77812,7 @@ _G.pg.base.bullet_template[19727] = {
 	attach_buff = {
 		{
 			buff_id = 110183,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -77883,7 +77953,7 @@ _G.pg.base.bullet_template[19729] = {
 	attach_buff = {
 		{
 			buff_id = 110183,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -77949,7 +78019,7 @@ _G.pg.base.bullet_template[19730] = {
 	attach_buff = {
 		{
 			buff_id = 110094,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -78284,7 +78354,7 @@ _G.pg.base.bullet_template[19736] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -78482,7 +78552,7 @@ _G.pg.base.bullet_template[19739] = {
 	attach_buff = {
 		{
 			buff_id = 801045,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -78555,7 +78625,7 @@ _G.pg.base.bullet_template[19740] = {
 	attach_buff = {
 		{
 			buff_id = 801046,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -79851,7 +79921,7 @@ _G.pg.base.bullet_template[19761] = {
 	attach_buff = {
 		{
 			buff_id = 490,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -79915,7 +79985,7 @@ _G.pg.base.bullet_template[19762] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -80161,7 +80231,7 @@ _G.pg.base.bullet_template[19766] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 800,
 		},
 	},
@@ -81417,7 +81487,7 @@ _G.pg.base.bullet_template[19787] = {
 	attach_buff = {
 		{
 			buff_id = 534,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -81552,7 +81622,7 @@ _G.pg.base.bullet_template[19789] = {
 	attach_buff = {
 		{
 			buff_id = 110145,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -81622,7 +81692,7 @@ _G.pg.base.bullet_template[19790] = {
 	attach_buff = {
 		{
 			buff_id = 110145,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -82256,7 +82326,7 @@ _G.pg.base.bullet_template[19800] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -82326,7 +82396,7 @@ _G.pg.base.bullet_template[19801] = {
 	attach_buff = {
 		{
 			buff_id = 301,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -82396,7 +82466,7 @@ _G.pg.base.bullet_template[19802] = {
 	attach_buff = {
 		{
 			buff_id = 302,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -82466,7 +82536,7 @@ _G.pg.base.bullet_template[19803] = {
 	attach_buff = {
 		{
 			buff_id = 303,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -82536,7 +82606,7 @@ _G.pg.base.bullet_template[19804] = {
 	attach_buff = {
 		{
 			buff_id = 304,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -82606,7 +82676,7 @@ _G.pg.base.bullet_template[19805] = {
 	attach_buff = {
 		{
 			buff_id = 305,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -82676,7 +82746,7 @@ _G.pg.base.bullet_template[19806] = {
 	attach_buff = {
 		{
 			buff_id = 306,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -82746,7 +82816,7 @@ _G.pg.base.bullet_template[19807] = {
 	attach_buff = {
 		{
 			buff_id = 307,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -82816,7 +82886,7 @@ _G.pg.base.bullet_template[19808] = {
 	attach_buff = {
 		{
 			buff_id = 308,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -82886,7 +82956,7 @@ _G.pg.base.bullet_template[19809] = {
 	attach_buff = {
 		{
 			buff_id = 309,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -82956,7 +83026,7 @@ _G.pg.base.bullet_template[19810] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -84775,7 +84845,7 @@ _G.pg.base.bullet_template[19844] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 10000,
 		},
 	},
@@ -85702,7 +85772,7 @@ _G.pg.base.bullet_template[19860] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -85892,7 +85962,7 @@ _G.pg.base.bullet_template[19863] = {
 	attach_buff = {
 		{
 			buff_id = 320,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -86083,7 +86153,7 @@ _G.pg.base.bullet_template[19866] = {
 	attach_buff = {
 		{
 			buff_id = 800714,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -86152,7 +86222,7 @@ _G.pg.base.bullet_template[19867] = {
 	attach_buff = {
 		{
 			buff_id = 800714,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -86218,7 +86288,7 @@ _G.pg.base.bullet_template[19868] = {
 	attach_buff = {
 		{
 			buff_id = 491,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -86812,7 +86882,7 @@ _G.pg.base.bullet_template[19878] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -87312,7 +87382,7 @@ _G.pg.base.bullet_template[19886] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -87841,7 +87911,7 @@ _G.pg.base.bullet_template[19895] = {
 	attach_buff = {
 		{
 			buff_id = 325,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -87900,7 +87970,7 @@ _G.pg.base.bullet_template[19896] = {
 	attach_buff = {
 		{
 			buff_id = 325,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -87972,7 +88042,7 @@ _G.pg.base.bullet_template[19897] = {
 	attach_buff = {
 		{
 			buff_id = 325,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -88211,7 +88281,7 @@ _G.pg.base.bullet_template[19902] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -88401,7 +88471,7 @@ _G.pg.base.bullet_template[19905] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -88647,7 +88717,7 @@ _G.pg.base.bullet_template[19909] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -88812,7 +88882,7 @@ _G.pg.base.bullet_template[19912] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -88871,7 +88941,7 @@ _G.pg.base.bullet_template[19913] = {
 	attach_buff = {
 		{
 			buff_id = 18,
-			level = 1,
+			group_level = 1,
 			rant = 1500,
 		},
 	},
@@ -89353,7 +89423,7 @@ _G.pg.base.bullet_template[19921] = {
 	attach_buff = {
 		{
 			buff_id = 20,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -89488,7 +89558,7 @@ _G.pg.base.bullet_template[19923] = {
 	attach_buff = {
 		{
 			buff_id = 19032,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -89640,7 +89710,7 @@ _G.pg.base.bullet_template[19925] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -89959,7 +90029,7 @@ _G.pg.base.bullet_template[19930] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -90210,7 +90280,7 @@ _G.pg.base.bullet_template[19934] = {
 	attach_buff = {
 		{
 			buff_id = 316,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -90276,7 +90346,7 @@ _G.pg.base.bullet_template[19935] = {
 	attach_buff = {
 		{
 			buff_id = 317,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -90349,7 +90419,7 @@ _G.pg.base.bullet_template[19936] = {
 	attach_buff = {
 		{
 			buff_id = 317,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -90432,7 +90502,7 @@ _G.pg.base.bullet_template[19937] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -90498,7 +90568,7 @@ _G.pg.base.bullet_template[19938] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -90678,7 +90748,7 @@ _G.pg.base.bullet_template[19941] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -90806,7 +90876,7 @@ _G.pg.base.bullet_template[19943] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -90872,7 +90942,7 @@ _G.pg.base.bullet_template[19944] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 3000,
 		},
 	},
@@ -91332,7 +91402,7 @@ _G.pg.base.bullet_template[19951] = {
 	attach_buff = {
 		{
 			buff_id = 318,
-			level = 2,
+			group_level = 2,
 			rant = 7000,
 		},
 	},
@@ -91398,7 +91468,7 @@ _G.pg.base.bullet_template[19952] = {
 	attach_buff = {
 		{
 			buff_id = 319,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -91597,7 +91667,7 @@ _G.pg.base.bullet_template[19956] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -91854,7 +91924,7 @@ _G.pg.base.bullet_template[19960] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 150,
 		},
 	},
@@ -92556,7 +92626,7 @@ _G.pg.base.bullet_template[19971] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -93120,7 +93190,7 @@ _G.pg.base.bullet_template[19980] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 800,
 		},
 	},
@@ -93438,7 +93508,7 @@ _G.pg.base.bullet_template[19985] = {
 	attach_buff = {
 		{
 			buff_id = 11101,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -94018,7 +94088,7 @@ _G.pg.base.bullet_template[19994] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 10000,
 		},
 	},
@@ -94137,7 +94207,7 @@ _G.pg.base.bullet_template[19996] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 10000,
 		},
 	},
@@ -94199,7 +94269,7 @@ _G.pg.base.bullet_template[19997] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -94268,7 +94338,7 @@ _G.pg.base.bullet_template[19998] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -98963,7 +99033,7 @@ _G.pg.base.bullet_template[30056] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -99371,7 +99441,7 @@ _G.pg.base.bullet_template[30063] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -103170,7 +103240,7 @@ _G.pg.base.bullet_template[41009] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -103743,7 +103813,7 @@ _G.pg.base.bullet_template[50500] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -105063,7 +105133,7 @@ _G.pg.base.bullet_template[70221] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -105132,7 +105202,7 @@ _G.pg.base.bullet_template[70231] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -105201,7 +105271,7 @@ _G.pg.base.bullet_template[70241] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -105270,7 +105340,7 @@ _G.pg.base.bullet_template[70251] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -106521,7 +106591,7 @@ _G.pg.base.bullet_template[71211] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -106756,7 +106826,7 @@ _G.pg.base.bullet_template[72011] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -107041,7 +107111,7 @@ _G.pg.base.bullet_template[72061] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -107153,7 +107223,7 @@ _G.pg.base.bullet_template[72081] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -107212,7 +107282,7 @@ _G.pg.base.bullet_template[72091] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -107550,7 +107620,7 @@ _G.pg.base.bullet_template[72151] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -107669,7 +107739,7 @@ _G.pg.base.bullet_template[72211] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -107738,7 +107808,7 @@ _G.pg.base.bullet_template[72221] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -107973,7 +108043,7 @@ _G.pg.base.bullet_template[72251] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -108032,7 +108102,7 @@ _G.pg.base.bullet_template[72252] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -108091,7 +108161,7 @@ _G.pg.base.bullet_template[72255] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -108150,7 +108220,7 @@ _G.pg.base.bullet_template[72256] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -108781,7 +108851,7 @@ _G.pg.base.bullet_template[73211] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -110339,7 +110409,7 @@ _G.pg.base.bullet_template[74121] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -111420,7 +111490,7 @@ _G.pg.base.bullet_template[76021] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -112071,7 +112141,7 @@ _G.pg.base.bullet_template[79051] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -112553,7 +112623,7 @@ _G.pg.base.bullet_template[79111] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -112725,7 +112795,7 @@ _G.pg.base.bullet_template[79131] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -113089,7 +113159,7 @@ _G.pg.base.bullet_template[79221] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -113466,7 +113536,7 @@ _G.pg.base.bullet_template[79241] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -113631,7 +113701,7 @@ _G.pg.base.bullet_template[79243] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -113690,7 +113760,7 @@ _G.pg.base.bullet_template[79245] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -113855,7 +113925,7 @@ _G.pg.base.bullet_template[79247] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -113914,7 +113984,7 @@ _G.pg.base.bullet_template[79251] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -113973,7 +114043,7 @@ _G.pg.base.bullet_template[79253] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -114032,7 +114102,7 @@ _G.pg.base.bullet_template[79252] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -114091,7 +114161,7 @@ _G.pg.base.bullet_template[79254] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -114456,7 +114526,7 @@ _G.pg.base.bullet_template[79321] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 800,
 		},
 	},
@@ -116947,7 +117017,7 @@ _G.pg.base.bullet_template[79611] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -117112,7 +117182,7 @@ _G.pg.base.bullet_template[79613] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -117171,7 +117241,7 @@ _G.pg.base.bullet_template[79615] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -117336,7 +117406,7 @@ _G.pg.base.bullet_template[79617] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -117753,7 +117823,7 @@ _G.pg.base.bullet_template[79661] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -118461,7 +118531,7 @@ _G.pg.base.bullet_template[79711] = {
 	attach_buff = {
 		{
 			buff_id = 350,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -118583,7 +118653,7 @@ _G.pg.base.bullet_template[79722] = {
 	attach_buff = {
 		{
 			buff_id = 348,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -121996,7 +122066,7 @@ _G.pg.base.bullet_template[79973] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -122062,7 +122132,7 @@ _G.pg.base.bullet_template[79974] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -122263,7 +122333,7 @@ _G.pg.base.bullet_template[79977] = {
 	attach_buff = {
 		{
 			buff_id = 150016,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -122322,7 +122392,7 @@ _G.pg.base.bullet_template[79978] = {
 	attach_buff = {
 		{
 			buff_id = 150084,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -122559,7 +122629,7 @@ _G.pg.base.bullet_template[79982] = {
 	attach_buff = {
 		{
 			buff_id = 150143,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -123895,7 +123965,7 @@ _G.pg.base.bullet_template[80014] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -124256,7 +124326,7 @@ _G.pg.base.bullet_template[110102] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -124375,7 +124445,7 @@ _G.pg.base.bullet_template[110112] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -124614,7 +124684,7 @@ _G.pg.base.bullet_template[110124] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -124686,7 +124756,7 @@ _G.pg.base.bullet_template[110131] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -125105,7 +125175,7 @@ _G.pg.base.bullet_template[110145] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -130177,7 +130247,7 @@ _G.pg.base.bullet_template[130319] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -130957,7 +131027,7 @@ _G.pg.base.bullet_template[140014] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -131026,7 +131096,7 @@ _G.pg.base.bullet_template[140015] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -131162,7 +131232,7 @@ _G.pg.base.bullet_template[160871] = {
 	attach_buff = {
 		{
 			buff_id = 16603,
-			level = 1,
+			group_level = 1,
 			rant = 7000,
 		},
 	},
@@ -131278,7 +131348,7 @@ _G.pg.base.bullet_template[160873] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -132141,7 +132211,7 @@ _G.pg.base.bullet_template[160887] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -132459,7 +132529,7 @@ _G.pg.base.bullet_template[160892] = {
 	attach_buff = {
 		{
 			buff_id = 17858,
-			level = 1,
+			group_level = 1,
 			rant = 7000,
 		},
 	},
@@ -132521,7 +132591,7 @@ _G.pg.base.bullet_template[160893] = {
 	attach_buff = {
 		{
 			buff_id = 17858,
-			level = 1,
+			group_level = 1,
 			rant = 7000,
 		},
 	},
@@ -132603,7 +132673,7 @@ _G.pg.base.bullet_template[160894] = {
 	attach_buff = {
 		{
 			buff_id = 17921,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -132722,7 +132792,7 @@ _G.pg.base.bullet_template[160895] = {
 	attach_buff = {
 		{
 			buff_id = 17921,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -132841,7 +132911,7 @@ _G.pg.base.bullet_template[160896] = {
 	attach_buff = {
 		{
 			buff_id = 17921,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -132960,7 +133030,7 @@ _G.pg.base.bullet_template[160897] = {
 	attach_buff = {
 		{
 			buff_id = 17921,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -133067,7 +133137,7 @@ _G.pg.base.bullet_template[160898] = {
 	attach_buff = {
 		{
 			buff_id = 17921,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -133135,7 +133205,7 @@ _G.pg.base.bullet_template[160899] = {
 	attach_buff = {
 		{
 			buff_id = 17921,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -133203,7 +133273,7 @@ _G.pg.base.bullet_template[160900] = {
 	attach_buff = {
 		{
 			buff_id = 17921,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -133271,7 +133341,7 @@ _G.pg.base.bullet_template[160901] = {
 	attach_buff = {
 		{
 			buff_id = 17921,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -133339,7 +133409,7 @@ _G.pg.base.bullet_template[160902] = {
 	attach_buff = {
 		{
 			buff_id = 17921,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -133467,7 +133537,7 @@ _G.pg.base.bullet_template[160904] = {
 	attach_buff = {
 		{
 			buff_id = 150028,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -133602,7 +133672,7 @@ _G.pg.base.bullet_template[160906] = {
 	attach_buff = {
 		{
 			buff_id = 150028,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -133714,7 +133784,7 @@ _G.pg.base.bullet_template[160907] = {
 	attach_buff = {
 		{
 			buff_id = 150028,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -133818,7 +133888,7 @@ _G.pg.base.bullet_template[160908] = {
 	attach_buff = {
 		{
 			buff_id = 150028,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -133882,7 +133952,7 @@ _G.pg.base.bullet_template[160909] = {
 	attach_buff = {
 		{
 			buff_id = 150045,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -133956,7 +134026,7 @@ _G.pg.base.bullet_template[160910] = {
 	attach_buff = {
 		{
 			buff_id = 150045,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -134030,7 +134100,7 @@ _G.pg.base.bullet_template[160911] = {
 	attach_buff = {
 		{
 			buff_id = 150045,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -134104,7 +134174,7 @@ _G.pg.base.bullet_template[160912] = {
 	attach_buff = {
 		{
 			buff_id = 150045,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -134518,7 +134588,7 @@ _G.pg.base.bullet_template[160919] = {
 	attach_buff = {
 		{
 			buff_id = 19869,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -135736,7 +135806,7 @@ _G.pg.base.bullet_template[160938] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -135802,7 +135872,7 @@ _G.pg.base.bullet_template[160939] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -137377,7 +137447,7 @@ _G.pg.base.bullet_template[160965] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -137811,7 +137881,7 @@ _G.pg.base.bullet_template[160973] = {
 	attach_buff = {
 		{
 			buff_id = 111162,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -137877,7 +137947,7 @@ _G.pg.base.bullet_template[160974] = {
 	attach_buff = {
 		{
 			buff_id = 111161,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -137939,7 +138009,7 @@ _G.pg.base.bullet_template[160975] = {
 	attach_buff = {
 		{
 			buff_id = 111118,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -138004,7 +138074,7 @@ _G.pg.base.bullet_template[160976] = {
 	attach_buff = {
 		{
 			buff_id = 111118,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -138066,7 +138136,7 @@ _G.pg.base.bullet_template[160977] = {
 	attach_buff = {
 		{
 			buff_id = 111119,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -138131,7 +138201,7 @@ _G.pg.base.bullet_template[160978] = {
 	attach_buff = {
 		{
 			buff_id = 111119,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -138473,7 +138543,7 @@ _G.pg.base.bullet_template[160984] = {
 	attach_buff = {
 		{
 			buff_id = 801462,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -138557,7 +138627,7 @@ _G.pg.base.bullet_template[160985] = {
 	attach_buff = {
 		{
 			buff_id = 801462,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -138757,7 +138827,7 @@ _G.pg.base.bullet_template[160988] = {
 	attach_buff = {
 		{
 			buff_id = 111172,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -138816,7 +138886,7 @@ _G.pg.base.bullet_template[160989] = {
 	attach_buff = {
 		{
 			buff_id = 1090342,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -139108,7 +139178,7 @@ _G.pg.base.bullet_template[160994] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -139167,7 +139237,7 @@ _G.pg.base.bullet_template[160995] = {
 	attach_buff = {
 		{
 			buff_id = 1019094,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -139226,7 +139296,7 @@ _G.pg.base.bullet_template[160996] = {
 	attach_buff = {
 		{
 			buff_id = 1019094,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -139293,7 +139363,7 @@ _G.pg.base.bullet_template[160997] = {
 	attach_buff = {
 		{
 			buff_id = 1019094,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -139371,14 +139441,14 @@ _G.pg.base.bullet_template[160998] = {
 		0,
 		0,
 	},
-	hit_type = {
+	hit_type = {},
+	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
-	attach_buff = {},
 	extra_param = {},
 }
 
@@ -139494,7 +139564,7 @@ _G.pg.base.bullet_template[161000] = {
 	attach_buff = {
 		{
 			buff_id = 801515,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -139584,7 +139654,7 @@ _G.pg.base.bullet_template[161001] = {
 	attach_buff = {
 		{
 			buff_id = 801515,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -139643,7 +139713,7 @@ _G.pg.base.bullet_template[161002] = {
 	attach_buff = {
 		{
 			buff_id = 801515,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -139733,7 +139803,7 @@ _G.pg.base.bullet_template[161003] = {
 	attach_buff = {
 		{
 			buff_id = 801515,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -139823,7 +139893,7 @@ _G.pg.base.bullet_template[161004] = {
 	attach_buff = {
 		{
 			buff_id = 801515,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -139942,7 +140012,7 @@ _G.pg.base.bullet_template[161007] = {
 	attach_buff = {
 		{
 			buff_id = 150675,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -140016,7 +140086,7 @@ _G.pg.base.bullet_template[161008] = {
 	attach_buff = {
 		{
 			buff_id = 150675,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -140077,7 +140147,7 @@ _G.pg.base.bullet_template[161009] = {
 	attach_buff = {
 		{
 			buff_id = 150675,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -140151,7 +140221,7 @@ _G.pg.base.bullet_template[161010] = {
 	attach_buff = {
 		{
 			buff_id = 150675,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -140683,7 +140753,7 @@ _G.pg.base.bullet_template[161019] = {
 	attach_buff = {
 		{
 			buff_id = 150813,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -140753,7 +140823,7 @@ _G.pg.base.bullet_template[161020] = {
 	attach_buff = {
 		{
 			buff_id = 150813,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -140823,7 +140893,7 @@ _G.pg.base.bullet_template[161021] = {
 	attach_buff = {
 		{
 			buff_id = 150813,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -140884,7 +140954,7 @@ _G.pg.base.bullet_template[161022] = {
 	attach_buff = {
 		{
 			buff_id = 150875,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -140958,7 +141028,7 @@ _G.pg.base.bullet_template[161023] = {
 	attach_buff = {
 		{
 			buff_id = 150875,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -141422,7 +141492,7 @@ _G.pg.base.bullet_template[161032] = {
 	attach_buff = {
 		{
 			buff_id = 801573,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -141496,7 +141566,7 @@ _G.pg.base.bullet_template[161033] = {
 	attach_buff = {
 		{
 			buff_id = 150929,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -141568,7 +141638,7 @@ _G.pg.base.bullet_template[161034] = {
 	attach_buff = {
 		{
 			buff_id = 150929,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -141634,7 +141704,7 @@ _G.pg.base.bullet_template[161035] = {
 	attach_buff = {
 		{
 			buff_id = 1090314,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -142458,7 +142528,7 @@ _G.pg.base.bullet_template[161048] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -143409,7 +143479,7 @@ _G.pg.base.bullet_template[161061] = {
 	attach_buff = {
 		{
 			buff_id = 801645,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -143842,6 +143912,221 @@ _G.pg.base.bullet_template[161068] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {},
+}
+
+_G.pg.base.bullet_template[161069] = {
+	alert_fx = "AlertArea",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 161069,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "",
+	modle_ID = "zidan_aixin",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 150,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.1,
+		1.1,
+		1.1,
+	},
+	DMG_font = {
+		{
+			1,
+			1.1,
+		},
+		{
+			1,
+			1.1,
+		},
+		{
+			1,
+			1.1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		7,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 151173,
+			group_level = 1,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		gravity = -0.05,
+		randomOffsetX = 1,
+		randomOffsetZ = 1,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[161070] = {
+	alert_fx = "TorAlert",
+	ammo_type = 4,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "TorpedoHit3",
+	hit_sfx = "battle/torpedo-hit",
+	id = 161070,
+	miss_fx = "",
+	miss_sfx = "",
+	modle_ID = "Torpedo01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 150,
+	range_offset = 0,
+	type = 3,
+	velocity = 5,
+	damage_type = {
+		0.8,
+		1,
+		1.3,
+	},
+	DMG_font = {
+		{
+			3,
+			0.8,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			3,
+			1.3,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = -0.05,
+		},
+		{
+			flip = false,
+			t = 0.6,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 3,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[161071] = {
+	alert_fx = "TorAlert",
+	ammo_type = 4,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "TorpedoHit3",
+	hit_sfx = "battle/torpedo-hit",
+	id = 161071,
+	miss_fx = "",
+	miss_sfx = "",
+	modle_ID = "Torpedo01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 150,
+	range_offset = 0,
+	type = 3,
+	velocity = 5,
+	damage_type = {
+		0.8,
+		1,
+		1.3,
+	},
+	DMG_font = {
+		{
+			3,
+			0.8,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			3,
+			1.3,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0.05,
+		},
+		{
+			flip = false,
+			t = 0.6,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 3,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		diveFilter = {
+			2,
+		},
+	},
 }
 
 _G.pg.base.bullet_template[161081] = {
@@ -144346,6 +144631,826 @@ _G.pg.base.bullet_template[161095] = {
 	extra_param = {},
 }
 
+_G.pg.base.bullet_template[161101] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 161101,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shi_huoqiu",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 1,
+			group_level = 1,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[161102] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 161102,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shi_huoqiu",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 2,
+			group_level = 1,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[161103] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 161103,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shi_huoqiu",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 3,
+			group_level = 1,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[161104] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 161104,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shi_huoqiu",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 4,
+			group_level = 1,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[161105] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 161105,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shi_huoqiu",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 5,
+			group_level = 1,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[161106] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 161106,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shi_huoqiu",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 6,
+			group_level = 1,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[161107] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 161107,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shi_huoqiu",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 7,
+			group_level = 1,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[161108] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 161108,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shi_huoqiu",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 8,
+			group_level = 1,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[161109] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 161109,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shi_huoqiu",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 9,
+			group_level = 1,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[161110] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 161110,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shi_huoqiu",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 10,
+			group_level = 1,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
 _G.pg.base.bullet_template[161211] = {
 	alert_fx = "",
 	ammo_type = 3,
@@ -144398,7 +145503,7 @@ _G.pg.base.bullet_template[161211] = {
 	attach_buff = {
 		{
 			buff_id = 800854,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -144457,7 +145562,7 @@ _G.pg.base.bullet_template[161221] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -144710,7 +145815,7 @@ _G.pg.base.bullet_template[161301] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -144838,7 +145943,7 @@ _G.pg.base.bullet_template[161361] = {
 	attach_buff = {
 		{
 			buff_id = 19682,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -144908,7 +146013,7 @@ _G.pg.base.bullet_template[161371] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -144977,7 +146082,7 @@ _G.pg.base.bullet_template[161372] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -145107,7 +146212,7 @@ _G.pg.base.bullet_template[161431] = {
 	attach_buff = {
 		{
 			buff_id = 19697,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -145169,7 +146274,7 @@ _G.pg.base.bullet_template[161441] = {
 	attach_buff = {
 		{
 			buff_id = 19697,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -145235,7 +146340,7 @@ _G.pg.base.bullet_template[161451] = {
 	attach_buff = {
 		{
 			buff_id = 19759,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -145303,7 +146408,7 @@ _G.pg.base.bullet_template[161461] = {
 	attach_buff = {
 		{
 			buff_id = 19759,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -145426,7 +146531,7 @@ _G.pg.base.bullet_template[161472] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -145907,7 +147012,7 @@ _G.pg.base.bullet_template[162331] = {
 	attach_buff = {
 		{
 			buff_id = 1013272,
-			level = 3,
+			group_level = 3,
 			rant = 10000,
 		},
 	},
@@ -147851,7 +148956,7 @@ _G.pg.base.bullet_template[163391] = {
 	attach_buff = {
 		{
 			buff_id = 1017203,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -147923,7 +149028,7 @@ _G.pg.base.bullet_template[163392] = {
 	attach_buff = {
 		{
 			buff_id = 1017203,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -147995,7 +149100,7 @@ _G.pg.base.bullet_template[163393] = {
 	attach_buff = {
 		{
 			buff_id = 1017203,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -148067,7 +149172,7 @@ _G.pg.base.bullet_template[163394] = {
 	attach_buff = {
 		{
 			buff_id = 1017203,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -148139,7 +149244,7 @@ _G.pg.base.bullet_template[163401] = {
 	attach_buff = {
 		{
 			buff_id = 1017203,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -148211,7 +149316,7 @@ _G.pg.base.bullet_template[163402] = {
 	attach_buff = {
 		{
 			buff_id = 1017203,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -148283,7 +149388,7 @@ _G.pg.base.bullet_template[163403] = {
 	attach_buff = {
 		{
 			buff_id = 1017203,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -148355,7 +149460,7 @@ _G.pg.base.bullet_template[163404] = {
 	attach_buff = {
 		{
 			buff_id = 1017203,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -148427,7 +149532,7 @@ _G.pg.base.bullet_template[163405] = {
 	attach_buff = {
 		{
 			buff_id = 1017203,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -148499,7 +149604,7 @@ _G.pg.base.bullet_template[163406] = {
 	attach_buff = {
 		{
 			buff_id = 1017203,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -148568,7 +149673,7 @@ _G.pg.base.bullet_template[163411] = {
 	attach_buff = {
 		{
 			buff_id = 1017254,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -148634,7 +149739,7 @@ _G.pg.base.bullet_template[163421] = {
 	attach_buff = {
 		{
 			buff_id = 1017213,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -148700,7 +149805,7 @@ _G.pg.base.bullet_template[163422] = {
 	attach_buff = {
 		{
 			buff_id = 1017213,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -151329,7 +152434,7 @@ _G.pg.base.bullet_template[164031] = {
 	attach_buff = {
 		{
 			buff_id = 536,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -151466,7 +152571,7 @@ _G.pg.base.bullet_template[164033] = {
 	attach_buff = {
 		{
 			buff_id = 536,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -151605,7 +152710,7 @@ _G.pg.base.bullet_template[164035] = {
 	attach_buff = {
 		{
 			buff_id = 536,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -151744,7 +152849,7 @@ _G.pg.base.bullet_template[164037] = {
 	attach_buff = {
 		{
 			buff_id = 536,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -151883,7 +152988,7 @@ _G.pg.base.bullet_template[164039] = {
 	attach_buff = {
 		{
 			buff_id = 536,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -152022,7 +153127,7 @@ _G.pg.base.bullet_template[164041] = {
 	attach_buff = {
 		{
 			buff_id = 536,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -152161,7 +153266,7 @@ _G.pg.base.bullet_template[164043] = {
 	attach_buff = {
 		{
 			buff_id = 536,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -154169,7 +155274,7 @@ _G.pg.base.bullet_template[164231] = {
 	attach_buff = {
 		{
 			buff_id = 801174,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -158548,7 +159653,7 @@ _G.pg.base.bullet_template[164681] = {
 	attach_buff = {
 		{
 			buff_id = 150209,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -158614,7 +159719,7 @@ _G.pg.base.bullet_template[164731] = {
 	attach_buff = {
 		{
 			buff_id = 19798,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -159808,7 +160913,7 @@ _G.pg.base.bullet_template[164815] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -159882,7 +160987,7 @@ _G.pg.base.bullet_template[164816] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -160054,7 +161159,7 @@ _G.pg.base.bullet_template[164819] = {
 	attach_buff = {
 		{
 			buff_id = 150325,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -160124,7 +161229,7 @@ _G.pg.base.bullet_template[164820] = {
 	attach_buff = {
 		{
 			buff_id = 324,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -160619,7 +161724,7 @@ _G.pg.base.bullet_template[164881] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -161405,7 +162510,7 @@ _G.pg.base.bullet_template[164991] = {
 	attach_buff = {
 		{
 			buff_id = 150299,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -161641,7 +162746,7 @@ _G.pg.base.bullet_template[165091] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -161847,7 +162952,7 @@ _G.pg.base.bullet_template[165161] = {
 	attach_buff = {
 		{
 			buff_id = 1090314,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -164202,7 +165307,7 @@ _G.pg.base.bullet_template[165361] = {
 	attach_buff = {
 		{
 			buff_id = 11009,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -164268,7 +165373,7 @@ _G.pg.base.bullet_template[165362] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -164917,7 +166022,7 @@ _G.pg.base.bullet_template[165509] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -166183,7 +167288,7 @@ _G.pg.base.bullet_template[167001] = {
 	attach_buff = {
 		{
 			buff_id = 150752,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -166647,7 +167752,7 @@ _G.pg.base.bullet_template[167016] = {
 	attach_buff = {
 		{
 			buff_id = 150762,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -166770,7 +167875,7 @@ _G.pg.base.bullet_template[167031] = {
 	attach_buff = {
 		{
 			buff_id = 801533,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -166840,7 +167945,7 @@ _G.pg.base.bullet_template[167032] = {
 	attach_buff = {
 		{
 			buff_id = 801533,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -169486,7 +170591,7 @@ _G.pg.base.bullet_template[167651] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -169553,7 +170658,7 @@ _G.pg.base.bullet_template[167670] = {
 	attach_buff = {
 		{
 			buff_id = 1012489,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -169616,7 +170721,7 @@ _G.pg.base.bullet_template[167671] = {
 	attach_buff = {
 		{
 			buff_id = 1012489,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -169675,7 +170780,7 @@ _G.pg.base.bullet_template[167672] = {
 	attach_buff = {
 		{
 			buff_id = 1012489,
-			level = 1,
+			group_level = 1,
 			rant = 120,
 		},
 	},
@@ -169734,7 +170839,7 @@ _G.pg.base.bullet_template[167673] = {
 	attach_buff = {
 		{
 			buff_id = 1012489,
-			level = 1,
+			group_level = 1,
 			rant = 140,
 		},
 	},
@@ -169793,7 +170898,7 @@ _G.pg.base.bullet_template[167674] = {
 	attach_buff = {
 		{
 			buff_id = 1012489,
-			level = 1,
+			group_level = 1,
 			rant = 160,
 		},
 	},
@@ -169852,7 +170957,7 @@ _G.pg.base.bullet_template[167675] = {
 	attach_buff = {
 		{
 			buff_id = 1012489,
-			level = 1,
+			group_level = 1,
 			rant = 180,
 		},
 	},
@@ -169911,7 +171016,7 @@ _G.pg.base.bullet_template[167676] = {
 	attach_buff = {
 		{
 			buff_id = 1012489,
-			level = 1,
+			group_level = 1,
 			rant = 210,
 		},
 	},
@@ -169970,7 +171075,7 @@ _G.pg.base.bullet_template[167677] = {
 	attach_buff = {
 		{
 			buff_id = 1012489,
-			level = 1,
+			group_level = 1,
 			rant = 240,
 		},
 	},
@@ -170029,7 +171134,7 @@ _G.pg.base.bullet_template[167678] = {
 	attach_buff = {
 		{
 			buff_id = 1012489,
-			level = 1,
+			group_level = 1,
 			rant = 270,
 		},
 	},
@@ -170088,7 +171193,7 @@ _G.pg.base.bullet_template[167679] = {
 	attach_buff = {
 		{
 			buff_id = 1012489,
-			level = 1,
+			group_level = 1,
 			rant = 310,
 		},
 	},
@@ -170147,11 +171252,1997 @@ _G.pg.base.bullet_template[167680] = {
 	attach_buff = {
 		{
 			buff_id = 1012489,
-			level = 1,
+			group_level = 1,
 			rant = 350,
 		},
 	},
 	extra_param = {},
+}
+
+_G.pg.base.bullet_template[167681] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMiss",
+	hit_sfx = "battle/hit",
+	id = 167681,
+	miss_fx = "ShellMiss",
+	miss_sfx = "battle/sink",
+	modle_ID = "Bullet1",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 5,
+	type = 1,
+	velocity = 10,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151212,
+			group_level = 1,
+			rant = 10000,
+		},
+	},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[167682] = {
+	alert_fx = "TorAlert",
+	ammo_type = 4,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "TorpedoHit3",
+	hit_sfx = "battle/torpedo-hit",
+	id = 167682,
+	miss_fx = "ShellMiss",
+	miss_sfx = "battle/sink",
+	modle_ID = "Torpedo01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 150,
+	range_offset = 20,
+	type = 3,
+	velocity = 2,
+	damage_type = {
+		0.8,
+		1,
+		1.3,
+	},
+	DMG_font = {
+		{
+			3,
+			0.8,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			3,
+			1.3,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 3,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 151212,
+			group_level = 1,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[167881] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 167881,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "zidan_shizi",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		8,
+		4,
+		80,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 1,
+			group_level = 2,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		mirror = true,
+	},
+}
+
+_G.pg.base.bullet_template[167882] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 167882,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "zidan_shizi",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		8,
+		4,
+		80,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 2,
+			group_level = 2,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		mirror = true,
+	},
+}
+
+_G.pg.base.bullet_template[167883] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 167883,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "zidan_shizi",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		8,
+		4,
+		80,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 3,
+			group_level = 2,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		mirror = true,
+	},
+}
+
+_G.pg.base.bullet_template[167884] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 167884,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "zidan_shizi",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		8,
+		4,
+		80,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 4,
+			group_level = 2,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		mirror = true,
+	},
+}
+
+_G.pg.base.bullet_template[167885] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 167885,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "zidan_shizi",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		8,
+		4,
+		80,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 5,
+			group_level = 2,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		mirror = true,
+	},
+}
+
+_G.pg.base.bullet_template[167886] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 167886,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "zidan_shizi",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		8,
+		4,
+		80,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 6,
+			group_level = 2,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		mirror = true,
+	},
+}
+
+_G.pg.base.bullet_template[167887] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 167887,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "zidan_shizi",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		8,
+		4,
+		80,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 7,
+			group_level = 2,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		mirror = true,
+	},
+}
+
+_G.pg.base.bullet_template[167888] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 167888,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "zidan_shizi",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		8,
+		4,
+		80,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 8,
+			group_level = 2,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		mirror = true,
+	},
+}
+
+_G.pg.base.bullet_template[167889] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 167889,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "zidan_shizi",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		8,
+		4,
+		80,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 9,
+			group_level = 2,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		mirror = true,
+	},
+}
+
+_G.pg.base.bullet_template[167890] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 167890,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "zidan_shizi",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		8,
+		4,
+		80,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151222,
+			buff_level = 10,
+			group_level = 2,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		mirror = true,
+	},
+}
+
+_G.pg.base.bullet_template[167891] = {
+	alert_fx = "AlertArea",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMissRedFire",
+	hit_sfx = "battle/hit",
+	id = 167891,
+	miss_fx = "ShellMissRedFire",
+	miss_sfx = "",
+	modle_ID = "bullet_shi_tail_big",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 2,
+	velocity = 15,
+	damage_type = {
+		1.4,
+		1.1,
+		0.9,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 311,
+			group_level = 1,
+			rant = 5000,
+		},
+	},
+	extra_param = {
+		airdrop = true,
+		dropOffset = true,
+		gravity = -0.1,
+		offsetY = 60,
+		randomOffsetX = 16,
+		randomOffsetZ = 16,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[167683] = {
+	alert_fx = "",
+	ammo_type = 2,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "Clhit",
+	hit_sfx = "battle/hit",
+	id = 167683,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "battle/sink",
+	modle_ID = "zidan_jianqi_lan",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 22,
+	damage_type = {
+		0.8,
+		1,
+		1.3,
+	},
+	DMG_font = {
+		{
+			2,
+			0.8,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1.3,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151256,
+			group_level = 1,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[167684] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "Clhit",
+	hit_sfx = "battle/hit",
+	id = 167684,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "battle/sink",
+	modle_ID = "zidan_jianqi_hong",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 0,
+	type = 1,
+	velocity = 22,
+	damage_type = {
+		1.35,
+		0.95,
+		0.75,
+	},
+	DMG_font = {
+		{
+			3,
+			1.2,
+		},
+		{
+			3,
+			0.9,
+		},
+		{
+			3,
+			0.7,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151255,
+			group_level = 1,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[167685] = {
+	alert_fx = "",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "battle/hit",
+	id = 167685,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 16,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		airdrop = true,
+		gravity = 0,
+		offsetY = 1,
+		timeToExplode = 3.01,
+		diveFilter = {
+			1,
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[167686] = {
+	alert_fx = "AlertArea",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "telafaerjia_guangxian",
+	hit_sfx = "battle/hit",
+	id = 167686,
+	miss_fx = "ShellMiss",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 16,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 151265,
+			buff_level = 1,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		airdrop = true,
+		gravity = 0,
+		offsetY = 1,
+		timeToExplode = 0.01,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[167687] = {
+	alert_fx = "AlertArea",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "telafaerjia_guangxian",
+	hit_sfx = "battle/hit",
+	id = 167687,
+	miss_fx = "ShellMiss",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 16,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 151265,
+			buff_level = 2,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		airdrop = true,
+		gravity = 0,
+		offsetY = 1,
+		timeToExplode = 0.01,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[167688] = {
+	alert_fx = "AlertArea",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "telafaerjia_guangxian",
+	hit_sfx = "battle/hit",
+	id = 167688,
+	miss_fx = "ShellMiss",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 16,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 151265,
+			buff_level = 3,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		airdrop = true,
+		gravity = 0,
+		offsetY = 1,
+		timeToExplode = 0.01,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[167689] = {
+	alert_fx = "AlertArea",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "telafaerjia_guangxian",
+	hit_sfx = "battle/hit",
+	id = 167689,
+	miss_fx = "ShellMiss",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 16,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 151265,
+			buff_level = 4,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		airdrop = true,
+		gravity = 0,
+		offsetY = 1,
+		timeToExplode = 0.01,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[167690] = {
+	alert_fx = "AlertArea",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "telafaerjia_guangxian",
+	hit_sfx = "battle/hit",
+	id = 167690,
+	miss_fx = "ShellMiss",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 16,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 151265,
+			buff_level = 5,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		airdrop = true,
+		gravity = 0,
+		offsetY = 1,
+		timeToExplode = 0.01,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[167691] = {
+	alert_fx = "AlertArea",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "telafaerjia_guangxian",
+	hit_sfx = "battle/hit",
+	id = 167691,
+	miss_fx = "ShellMiss",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 16,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 151265,
+			buff_level = 6,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		airdrop = true,
+		gravity = 0,
+		offsetY = 1,
+		timeToExplode = 0.01,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[167692] = {
+	alert_fx = "AlertArea",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "telafaerjia_guangxian",
+	hit_sfx = "battle/hit",
+	id = 167692,
+	miss_fx = "ShellMiss",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 16,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 151265,
+			buff_level = 7,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		airdrop = true,
+		gravity = 0,
+		offsetY = 1,
+		timeToExplode = 0.01,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[167693] = {
+	alert_fx = "AlertArea",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "telafaerjia_guangxian",
+	hit_sfx = "battle/hit",
+	id = 167693,
+	miss_fx = "ShellMiss",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 16,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 151265,
+			buff_level = 8,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		airdrop = true,
+		gravity = 0,
+		offsetY = 1,
+		timeToExplode = 0.01,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[167694] = {
+	alert_fx = "AlertArea",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "telafaerjia_guangxian",
+	hit_sfx = "battle/hit",
+	id = 167694,
+	miss_fx = "ShellMiss",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 16,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 151265,
+			buff_level = 9,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		airdrop = true,
+		gravity = 0,
+		offsetY = 1,
+		timeToExplode = 0.01,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[167695] = {
+	alert_fx = "AlertArea",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "telafaerjia_guangxian",
+	hit_sfx = "battle/hit",
+	id = 167695,
+	miss_fx = "ShellMiss",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 16,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 151265,
+			buff_level = 10,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		airdrop = true,
+		gravity = 0,
+		offsetY = 1,
+		timeToExplode = 0.01,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[167951] = {
+	alert_fx = "TorAlert",
+	ammo_type = 4,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "TorpedoHit3",
+	hit_sfx = "battle/torpedo-hit",
+	id = 167951,
+	miss_fx = "",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 3,
+	range_offset = 0,
+	type = 3,
+	velocity = 5,
+	damage_type = {
+		0.8,
+		1,
+		1.3,
+	},
+	DMG_font = {
+		{
+			3,
+			0.8,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			1.3,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 10,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		diveFilter = {
+			2,
+		},
+	},
 }
 
 _G.pg.base.bullet_template[170001] = {
@@ -170425,7 +173516,7 @@ _G.pg.base.bullet_template[170014] = {
 	attach_buff = {
 		{
 			buff_id = 485,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -170525,7 +173616,7 @@ _G.pg.base.bullet_template[170015] = {
 	attach_buff = {
 		{
 			buff_id = 485,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -170584,7 +173675,7 @@ _G.pg.base.bullet_template[170016] = {
 	attach_buff = {
 		{
 			buff_id = 485,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -171470,7 +174561,7 @@ _G.pg.base.bullet_template[170092] = {
 	attach_buff = {
 		{
 			buff_id = 800871,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -172801,7 +175892,7 @@ _G.pg.base.bullet_template[170181] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -172862,7 +175953,7 @@ _G.pg.base.bullet_template[170182] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -172924,7 +176015,7 @@ _G.pg.base.bullet_template[170183] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -175001,7 +178092,7 @@ _G.pg.base.bullet_template[170511] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -175070,7 +178161,7 @@ _G.pg.base.bullet_template[170512] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -175485,7 +178576,7 @@ _G.pg.base.bullet_template[170571] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -175730,7 +178821,7 @@ _G.pg.base.bullet_template[170642] = {
 	attach_buff = {
 		{
 			buff_id = 801533,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -175792,7 +178883,7 @@ _G.pg.base.bullet_template[170643] = {
 	attach_buff = {
 		{
 			buff_id = 801533,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -176038,7 +179129,7 @@ _G.pg.base.bullet_template[170671] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -176508,7 +179599,7 @@ _G.pg.base.bullet_template[170714] = {
 	attach_buff = {
 		{
 			buff_id = 151069,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -176680,7 +179771,7 @@ _G.pg.base.bullet_template[170718] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -176747,7 +179838,7 @@ _G.pg.base.bullet_template[170719] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -176860,6 +179951,523 @@ _G.pg.base.bullet_template[170752] = {
 	extra_param = {},
 }
 
+_G.pg.base.bullet_template[170771] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMiss",
+	hit_sfx = "battle/hit",
+	id = 170771,
+	miss_fx = "ShellMiss",
+	miss_sfx = "battle/sink",
+	modle_ID = "BulletUSA5_low",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 10,
+	type = 1,
+	velocity = 15,
+	damage_type = {
+		1.1,
+		1.1,
+		1.1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[170772] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMiss",
+	hit_sfx = "battle/hit",
+	id = 170772,
+	miss_fx = "ShellMiss",
+	miss_sfx = "battle/sink",
+	modle_ID = "BulletUSA_low",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 10,
+	type = 1,
+	velocity = 15,
+	damage_type = {
+		1.1,
+		1.1,
+		1.1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[170773] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMiss",
+	hit_sfx = "battle/hit",
+	id = 170773,
+	miss_fx = "ShellMiss",
+	miss_sfx = "battle/sink",
+	modle_ID = "BulletUSA_big",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 10,
+	type = 1,
+	velocity = 0.75,
+	damage_type = {
+		1.2,
+		1.2,
+		1.2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = -0.025,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 0.22,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+	},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 151283,
+			group_level = 1,
+			rant = 10000,
+		},
+	},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[170774] = {
+	alert_fx = "TorAlert",
+	ammo_type = 4,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "TorpedoHit3",
+	hit_sfx = "battle/torpedo-hit",
+	id = 170774,
+	miss_fx = "",
+	miss_sfx = "",
+	modle_ID = "Torpedo01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 150,
+	range_offset = 20,
+	type = 3,
+	velocity = 4,
+	damage_type = {
+		0.8,
+		1,
+		1.3,
+	},
+	DMG_font = {
+		{
+			3,
+			0.8,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			3,
+			1.3,
+		},
+	},
+	acceleration = {
+		tracker = {
+			angular = 1.6,
+			range = 14,
+		},
+	},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 3,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 151284,
+			group_level = 1,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[170781] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "Clhit",
+	hit_sfx = "battle/hit",
+	id = 170781,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "battle/sink",
+	modle_ID = "heihailunna_jiandan01",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 35,
+	range_offset = 0,
+	type = 5,
+	velocity = 3,
+	damage_type = {
+		1.35,
+		0.95,
+		0.75,
+	},
+	DMG_font = {
+		{
+			3,
+			1.2,
+		},
+		{
+			3,
+			0.9,
+		},
+		{
+			3,
+			0.7,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0.1,
+			v = 0,
+		},
+	},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0,
+		shrapnel = {
+			{
+				barrage_ID = 81111,
+				bullet_ID = 170782,
+				emitterType = "BattleBulletEmitter",
+				reaim = {
+					"TargetHarmRandomByWeight",
+				},
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[170782] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "Clhit",
+	hit_sfx = "battle/hit",
+	id = 170782,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "battle/sink",
+	modle_ID = "heihailunna_jiandan01",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 12,
+	damage_type = {
+		1.35,
+		0.95,
+		0.75,
+	},
+	DMG_font = {
+		{
+			3,
+			1.2,
+		},
+		{
+			3,
+			0.9,
+		},
+		{
+			3,
+			0.7,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[170783] = {
+	alert_fx = "",
+	ammo_type = 2,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "Clhit",
+	hit_sfx = "battle/hit",
+	id = 170783,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "battle/sink",
+	modle_ID = "heihailunna_jiandan04",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 35,
+	range_offset = 0,
+	type = 5,
+	velocity = 3,
+	damage_type = {
+		0.8,
+		1,
+		1.3,
+	},
+	DMG_font = {
+		{
+			2,
+			0.8,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1.3,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0.1,
+			v = 0,
+		},
+	},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0,
+		shrapnel = {
+			{
+				barrage_ID = 81111,
+				bullet_ID = 170784,
+				emitterType = "BattleBulletEmitter",
+				reaim = {
+					"TargetHarmRandomByWeight",
+				},
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[170784] = {
+	alert_fx = "",
+	ammo_type = 2,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "Clhit",
+	hit_sfx = "battle/hit",
+	id = 170784,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "battle/sink",
+	modle_ID = "heihailunna_jiandan04",
+	out_bound = 0,
+	pierce_count = 99,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 12,
+	damage_type = {
+		0.8,
+		1,
+		1.3,
+	},
+	DMG_font = {
+		{
+			2,
+			0.8,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			2,
+			1.3,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
 _G.pg.base.bullet_template[233333] = {
 	alert_fx = "",
 	ammo_type = 1,
@@ -176965,7 +180573,7 @@ _G.pg.base.bullet_template[300001] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -177024,7 +180632,7 @@ _G.pg.base.bullet_template[300002] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -177083,7 +180691,7 @@ _G.pg.base.bullet_template[300003] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -177142,7 +180750,7 @@ _G.pg.base.bullet_template[300004] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -177201,7 +180809,7 @@ _G.pg.base.bullet_template[300005] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -177260,7 +180868,7 @@ _G.pg.base.bullet_template[300006] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -177319,7 +180927,7 @@ _G.pg.base.bullet_template[300007] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -177378,7 +180986,7 @@ _G.pg.base.bullet_template[300008] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -177437,7 +181045,7 @@ _G.pg.base.bullet_template[300009] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -177496,7 +181104,7 @@ _G.pg.base.bullet_template[300010] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -177555,7 +181163,7 @@ _G.pg.base.bullet_template[300011] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -177614,7 +181222,7 @@ _G.pg.base.bullet_template[300012] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -177673,7 +181281,7 @@ _G.pg.base.bullet_template[300013] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -177732,7 +181340,7 @@ _G.pg.base.bullet_template[300014] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -179099,7 +182707,7 @@ _G.pg.base.bullet_template[300122] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -179158,7 +182766,7 @@ _G.pg.base.bullet_template[300123] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -179217,7 +182825,7 @@ _G.pg.base.bullet_template[300124] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -179276,7 +182884,7 @@ _G.pg.base.bullet_template[300125] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -179335,7 +182943,7 @@ _G.pg.base.bullet_template[300126] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -179394,7 +183002,7 @@ _G.pg.base.bullet_template[300127] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -180201,7 +183809,7 @@ _G.pg.base.bullet_template[300208] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -180339,7 +183947,7 @@ _G.pg.base.bullet_template[300210] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -180477,7 +184085,7 @@ _G.pg.base.bullet_template[300212] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -180549,7 +184157,7 @@ _G.pg.base.bullet_template[300213] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -180621,7 +184229,7 @@ _G.pg.base.bullet_template[300214] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -180759,7 +184367,7 @@ _G.pg.base.bullet_template[300216] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -180897,7 +184505,7 @@ _G.pg.base.bullet_template[300218] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -180969,7 +184577,7 @@ _G.pg.base.bullet_template[300219] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -181533,7 +185141,7 @@ _G.pg.base.bullet_template[300401] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -183353,7 +186961,7 @@ _G.pg.base.bullet_template[350001] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -183420,7 +187028,7 @@ _G.pg.base.bullet_template[350002] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -183487,7 +187095,7 @@ _G.pg.base.bullet_template[350003] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -184576,7 +188184,7 @@ _G.pg.base.bullet_template[362006] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -185663,7 +189271,7 @@ _G.pg.base.bullet_template[363016] = {
 	attach_buff = {
 		{
 			buff_id = 324,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -186379,7 +189987,7 @@ _G.pg.base.bullet_template[364010] = {
 	attach_buff = {
 		{
 			buff_id = 16002,
-			level = 10,
+			group_level = 10,
 			rant = 10000,
 		},
 	},
@@ -186686,7 +190294,7 @@ _G.pg.base.bullet_template[364015] = {
 	attach_buff = {
 		{
 			buff_id = 407,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -188909,7 +192517,7 @@ _G.pg.base.bullet_template[400801] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -188968,7 +192576,7 @@ _G.pg.base.bullet_template[399911] = {
 	attach_buff = {
 		{
 			buff_id = 312,
-			level = 3,
+			group_level = 3,
 			rant = 3000,
 		},
 	},
@@ -189099,7 +192707,7 @@ _G.pg.base.bullet_template[399913] = {
 	attach_buff = {
 		{
 			buff_id = 312,
-			level = 3,
+			group_level = 3,
 			rant = 3000,
 		},
 	},
@@ -189973,7 +193581,7 @@ _G.pg.base.bullet_template[399928] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -190085,7 +193693,7 @@ _G.pg.base.bullet_template[399930] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -190144,7 +193752,7 @@ _G.pg.base.bullet_template[399931] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -190203,7 +193811,7 @@ _G.pg.base.bullet_template[399932] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -190488,7 +194096,7 @@ _G.pg.base.bullet_template[399937] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -191050,7 +194658,7 @@ _G.pg.base.bullet_template[399947] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -191522,7 +195130,7 @@ _G.pg.base.bullet_template[399955] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -191581,7 +195189,7 @@ _G.pg.base.bullet_template[399956] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -191640,7 +195248,7 @@ _G.pg.base.bullet_template[399957] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -191699,7 +195307,7 @@ _G.pg.base.bullet_template[399958] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -191864,7 +195472,7 @@ _G.pg.base.bullet_template[399963] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -192847,7 +196455,7 @@ _G.pg.base.bullet_template[399988] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -193573,7 +197181,7 @@ _G.pg.base.bullet_template[400000] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -194902,7 +198510,7 @@ _G.pg.base.bullet_template[470401] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -196587,7 +200195,7 @@ _G.pg.base.bullet_template[500401] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -196945,7 +200553,7 @@ _G.pg.base.bullet_template[500501] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -198343,7 +201951,7 @@ _G.pg.base.bullet_template[500701] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -210203,7 +213811,7 @@ _G.pg.base.bullet_template[594091] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -210771,7 +214379,7 @@ _G.pg.base.bullet_template[600121] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -210830,7 +214438,7 @@ _G.pg.base.bullet_template[600131] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -210908,7 +214516,7 @@ _G.pg.base.bullet_template[600231] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -210986,7 +214594,7 @@ _G.pg.base.bullet_template[600232] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -211170,7 +214778,7 @@ _G.pg.base.bullet_template[600222] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -218151,7 +221759,7 @@ _G.pg.base.bullet_template[630001] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -218210,7 +221818,7 @@ _G.pg.base.bullet_template[630002] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -219478,7 +223086,7 @@ _G.pg.base.bullet_template[650006] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -223951,7 +227559,7 @@ _G.pg.base.bullet_template[670011] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -224768,7 +228376,7 @@ _G.pg.base.bullet_template[680007] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -224827,7 +228435,7 @@ _G.pg.base.bullet_template[680008] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -224886,7 +228494,7 @@ _G.pg.base.bullet_template[680009] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -224945,7 +228553,7 @@ _G.pg.base.bullet_template[680010] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -225004,7 +228612,7 @@ _G.pg.base.bullet_template[680011] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -226138,7 +229746,7 @@ _G.pg.base.bullet_template[680029] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -229264,7 +232872,7 @@ _G.pg.base.bullet_template[690501] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -229333,7 +232941,7 @@ _G.pg.base.bullet_template[690502] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -229402,7 +233010,7 @@ _G.pg.base.bullet_template[690503] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -229471,7 +233079,7 @@ _G.pg.base.bullet_template[690504] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -229540,7 +233148,7 @@ _G.pg.base.bullet_template[690505] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -229609,7 +233217,7 @@ _G.pg.base.bullet_template[690506] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -229678,7 +233286,7 @@ _G.pg.base.bullet_template[690507] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -229747,7 +233355,7 @@ _G.pg.base.bullet_template[690508] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -229816,7 +233424,7 @@ _G.pg.base.bullet_template[690509] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -229885,7 +233493,7 @@ _G.pg.base.bullet_template[690510] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -229954,7 +233562,7 @@ _G.pg.base.bullet_template[690511] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -230023,7 +233631,7 @@ _G.pg.base.bullet_template[690512] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -230092,7 +233700,7 @@ _G.pg.base.bullet_template[690513] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -230161,7 +233769,7 @@ _G.pg.base.bullet_template[690514] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -230230,7 +233838,7 @@ _G.pg.base.bullet_template[690515] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -230299,7 +233907,7 @@ _G.pg.base.bullet_template[690516] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -230368,7 +233976,7 @@ _G.pg.base.bullet_template[690517] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -230437,7 +234045,7 @@ _G.pg.base.bullet_template[690518] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -230506,7 +234114,7 @@ _G.pg.base.bullet_template[690519] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -230575,7 +234183,7 @@ _G.pg.base.bullet_template[690520] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -230644,7 +234252,7 @@ _G.pg.base.bullet_template[690521] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -236867,7 +240475,7 @@ _G.pg.base.bullet_template[710001] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -237642,7 +241250,7 @@ _G.pg.base.bullet_template[710031] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -240427,7 +244035,7 @@ _G.pg.base.bullet_template[710213] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -240559,7 +244167,7 @@ _G.pg.base.bullet_template[710221] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -241084,7 +244692,7 @@ _G.pg.base.bullet_template[710230] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -241585,7 +245193,7 @@ _G.pg.base.bullet_template[720007] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -244445,7 +248053,7 @@ _G.pg.base.bullet_template[730047] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -244504,7 +248112,7 @@ _G.pg.base.bullet_template[730048] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -244563,7 +248171,7 @@ _G.pg.base.bullet_template[730049] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 300,
 		},
 	},
@@ -244622,7 +248230,7 @@ _G.pg.base.bullet_template[730050] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -245285,7 +248893,7 @@ _G.pg.base.bullet_template[730060] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -245344,7 +248952,7 @@ _G.pg.base.bullet_template[730061] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -245403,7 +249011,7 @@ _G.pg.base.bullet_template[730062] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -245462,7 +249070,7 @@ _G.pg.base.bullet_template[730063] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -245521,7 +249129,7 @@ _G.pg.base.bullet_template[730064] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -245580,7 +249188,7 @@ _G.pg.base.bullet_template[730065] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -245639,7 +249247,7 @@ _G.pg.base.bullet_template[730066] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -245698,7 +249306,7 @@ _G.pg.base.bullet_template[730067] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -245757,7 +249365,7 @@ _G.pg.base.bullet_template[730068] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -245816,7 +249424,7 @@ _G.pg.base.bullet_template[730069] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -245894,7 +249502,7 @@ _G.pg.base.bullet_template[730070] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -245972,7 +249580,7 @@ _G.pg.base.bullet_template[730071] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -246137,7 +249745,7 @@ _G.pg.base.bullet_template[730074] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -246517,7 +250125,7 @@ _G.pg.base.bullet_template[730080] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -246576,7 +250184,7 @@ _G.pg.base.bullet_template[730081] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -246635,7 +250243,7 @@ _G.pg.base.bullet_template[730082] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -246694,7 +250302,7 @@ _G.pg.base.bullet_template[730083] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -246753,7 +250361,7 @@ _G.pg.base.bullet_template[730084] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -246812,7 +250420,7 @@ _G.pg.base.bullet_template[730085] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -246871,7 +250479,7 @@ _G.pg.base.bullet_template[730086] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -246930,7 +250538,7 @@ _G.pg.base.bullet_template[730087] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -246989,7 +250597,7 @@ _G.pg.base.bullet_template[730088] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -247048,7 +250656,7 @@ _G.pg.base.bullet_template[730089] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -247299,7 +250907,7 @@ _G.pg.base.bullet_template[730093] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -248869,7 +252477,7 @@ _G.pg.base.bullet_template[730118] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -249068,7 +252676,7 @@ _G.pg.base.bullet_template[730121] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -250649,7 +254257,7 @@ _G.pg.base.bullet_template[730146] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 500,
 		},
 	},
@@ -250727,7 +254335,7 @@ _G.pg.base.bullet_template[730147] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 500,
 		},
 	},
@@ -250805,7 +254413,7 @@ _G.pg.base.bullet_template[730148] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 500,
 		},
 	},
@@ -250883,7 +254491,7 @@ _G.pg.base.bullet_template[730149] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 500,
 		},
 	},
@@ -251040,7 +254648,7 @@ _G.pg.base.bullet_template[730151] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 500,
 		},
 	},
@@ -251131,7 +254739,7 @@ _G.pg.base.bullet_template[730152] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 500,
 		},
 	},
@@ -255133,7 +258741,7 @@ _G.pg.base.bullet_template[750038] = {
 	attach_buff = {
 		{
 			buff_id = 313,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -258604,7 +262212,7 @@ _G.pg.base.bullet_template[750096] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -272689,7 +276297,7 @@ _G.pg.base.bullet_template[770001] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -272757,7 +276365,7 @@ _G.pg.base.bullet_template[770002] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1200,
 		},
 	},
@@ -273439,7 +277047,7 @@ _G.pg.base.bullet_template[770013] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1200,
 		},
 	},
@@ -273583,7 +277191,7 @@ _G.pg.base.bullet_template[770015] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1200,
 		},
 	},
@@ -273769,7 +277377,7 @@ _G.pg.base.bullet_template[770018] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1200,
 		},
 	},
@@ -273835,7 +277443,7 @@ _G.pg.base.bullet_template[770019] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1200,
 		},
 	},
@@ -275132,7 +278740,7 @@ _G.pg.base.bullet_template[780004] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -275297,7 +278905,7 @@ _G.pg.base.bullet_template[780007] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -277041,7 +280649,7 @@ _G.pg.base.bullet_template[780034] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -277174,7 +280782,7 @@ _G.pg.base.bullet_template[780036] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -277558,7 +281166,7 @@ _G.pg.base.bullet_template[780042] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -278644,7 +282252,7 @@ _G.pg.base.bullet_template[780059] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -278806,7 +282414,7 @@ _G.pg.base.bullet_template[780061] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 500,
 		},
 	},
@@ -278935,7 +282543,7 @@ _G.pg.base.bullet_template[780063] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 500,
 		},
 	},
@@ -279075,7 +282683,7 @@ _G.pg.base.bullet_template[780065] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 500,
 		},
 	},
@@ -281087,7 +284695,7 @@ _G.pg.base.bullet_template[780095] = {
 	attach_buff = {
 		{
 			buff_id = 324,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -283630,7 +287238,7 @@ _G.pg.base.bullet_template[800004] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 800,
 		},
 	},
@@ -283760,7 +287368,7 @@ _G.pg.base.bullet_template[800006] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -283830,7 +287438,7 @@ _G.pg.base.bullet_template[800007] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -284020,7 +287628,7 @@ _G.pg.base.bullet_template[800010] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 800,
 		},
 	},
@@ -285236,7 +288844,7 @@ _G.pg.base.bullet_template[800031] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -285308,7 +288916,7 @@ _G.pg.base.bullet_template[800032] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -285370,7 +288978,7 @@ _G.pg.base.bullet_template[800033] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -287326,7 +290934,7 @@ _G.pg.base.bullet_template[800063] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -287385,7 +290993,7 @@ _G.pg.base.bullet_template[800064] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -287444,7 +291052,7 @@ _G.pg.base.bullet_template[800065] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -287503,7 +291111,7 @@ _G.pg.base.bullet_template[800066] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -287562,7 +291170,7 @@ _G.pg.base.bullet_template[800067] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -287621,7 +291229,7 @@ _G.pg.base.bullet_template[800068] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -287680,7 +291288,7 @@ _G.pg.base.bullet_template[800069] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -292090,7 +295698,7 @@ _G.pg.base.bullet_template[810002] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 800,
 		},
 	},
@@ -292353,7 +295961,7 @@ _G.pg.base.bullet_template[810006] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -296019,7 +299627,7 @@ _G.pg.base.bullet_template[810064] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -296088,7 +299696,7 @@ _G.pg.base.bullet_template[810065] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -296157,7 +299765,7 @@ _G.pg.base.bullet_template[810066] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -296226,7 +299834,7 @@ _G.pg.base.bullet_template[810067] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -296295,7 +299903,7 @@ _G.pg.base.bullet_template[810068] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -296364,7 +299972,7 @@ _G.pg.base.bullet_template[810069] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -296433,7 +300041,7 @@ _G.pg.base.bullet_template[810070] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -296943,7 +300551,7 @@ _G.pg.base.bullet_template[810078] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -297012,7 +300620,7 @@ _G.pg.base.bullet_template[810079] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -297081,7 +300689,7 @@ _G.pg.base.bullet_template[810080] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -297150,7 +300758,7 @@ _G.pg.base.bullet_template[810081] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -297219,7 +300827,7 @@ _G.pg.base.bullet_template[810082] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -297288,7 +300896,7 @@ _G.pg.base.bullet_template[810083] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -297357,7 +300965,7 @@ _G.pg.base.bullet_template[810084] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -297867,8 +301475,8 @@ _G.pg.base.bullet_template[810092] = {
 	attach_buff = {
 		{
 			buff_id = 311,
+			group_level = 4,
 			hit_ignore = true,
-			level = 4,
 			rant = 10000,
 		},
 	},
@@ -297937,8 +301545,8 @@ _G.pg.base.bullet_template[810093] = {
 	attach_buff = {
 		{
 			buff_id = 311,
+			group_level = 4,
 			hit_ignore = true,
-			level = 4,
 			rant = 10000,
 		},
 	},
@@ -298007,8 +301615,8 @@ _G.pg.base.bullet_template[810094] = {
 	attach_buff = {
 		{
 			buff_id = 311,
+			group_level = 4,
 			hit_ignore = true,
-			level = 4,
 			rant = 10000,
 		},
 	},
@@ -298077,8 +301685,8 @@ _G.pg.base.bullet_template[810095] = {
 	attach_buff = {
 		{
 			buff_id = 311,
+			group_level = 4,
 			hit_ignore = true,
-			level = 4,
 			rant = 10000,
 		},
 	},
@@ -298147,8 +301755,8 @@ _G.pg.base.bullet_template[810096] = {
 	attach_buff = {
 		{
 			buff_id = 311,
+			group_level = 4,
 			hit_ignore = true,
-			level = 4,
 			rant = 10000,
 		},
 	},
@@ -298217,8 +301825,8 @@ _G.pg.base.bullet_template[810097] = {
 	attach_buff = {
 		{
 			buff_id = 311,
+			group_level = 4,
 			hit_ignore = true,
-			level = 4,
 			rant = 10000,
 		},
 	},
@@ -298287,8 +301895,8 @@ _G.pg.base.bullet_template[810098] = {
 	attach_buff = {
 		{
 			buff_id = 311,
+			group_level = 4,
 			hit_ignore = true,
-			level = 4,
 			rant = 10000,
 		},
 	},
@@ -300815,7 +304423,7 @@ _G.pg.base.bullet_template[810136] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 800,
 		},
 	},
@@ -300899,7 +304507,7 @@ _G.pg.base.bullet_template[810137] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 800,
 		},
 	},
@@ -301071,7 +304679,7 @@ _G.pg.base.bullet_template[810139] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 800,
 		},
 	},
@@ -301653,7 +305261,7 @@ _G.pg.base.bullet_template[810148] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 800,
 		},
 	},
@@ -322636,7 +326244,7 @@ _G.pg.base.bullet_template[840075] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -322700,7 +326308,7 @@ _G.pg.base.bullet_template[840076] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -324788,7 +328396,7 @@ _G.pg.base.bullet_template[840109] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -330080,7 +333688,7 @@ _G.pg.base.bullet_template[852112] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -330793,7 +334401,7 @@ _G.pg.base.bullet_template[852221] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -330972,7 +334580,7 @@ _G.pg.base.bullet_template[852224] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -331034,7 +334642,7 @@ _G.pg.base.bullet_template[852231] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -338906,7 +342514,7 @@ _G.pg.base.bullet_template[853001] = {
 	attach_buff = {
 		{
 			buff_id = 313,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -338984,7 +342592,7 @@ _G.pg.base.bullet_template[853011] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -339543,7 +343151,7 @@ _G.pg.base.bullet_template[853041] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -339605,7 +343213,7 @@ _G.pg.base.bullet_template[853042] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -339963,7 +343571,7 @@ _G.pg.base.bullet_template[853104] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -340022,7 +343630,7 @@ _G.pg.base.bullet_template[853105] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -340081,7 +343689,7 @@ _G.pg.base.bullet_template[853106] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -342105,7 +345713,7 @@ _G.pg.base.bullet_template[853200] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -342174,7 +345782,7 @@ _G.pg.base.bullet_template[853201] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -342243,7 +345851,7 @@ _G.pg.base.bullet_template[853202] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -342312,7 +345920,7 @@ _G.pg.base.bullet_template[853203] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -342381,7 +345989,7 @@ _G.pg.base.bullet_template[853204] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -342450,7 +346058,7 @@ _G.pg.base.bullet_template[853205] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -342519,7 +346127,7 @@ _G.pg.base.bullet_template[853206] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -342588,7 +346196,7 @@ _G.pg.base.bullet_template[853207] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -342657,7 +346265,7 @@ _G.pg.base.bullet_template[853208] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -342726,7 +346334,7 @@ _G.pg.base.bullet_template[853209] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -342795,7 +346403,7 @@ _G.pg.base.bullet_template[853210] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -342864,7 +346472,7 @@ _G.pg.base.bullet_template[853211] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -342933,7 +346541,7 @@ _G.pg.base.bullet_template[853212] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -343002,7 +346610,7 @@ _G.pg.base.bullet_template[853213] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -343071,7 +346679,7 @@ _G.pg.base.bullet_template[853214] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -343140,7 +346748,7 @@ _G.pg.base.bullet_template[853215] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -343209,7 +346817,7 @@ _G.pg.base.bullet_template[853216] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -343278,7 +346886,7 @@ _G.pg.base.bullet_template[853217] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -343347,7 +346955,7 @@ _G.pg.base.bullet_template[853218] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -343416,7 +347024,7 @@ _G.pg.base.bullet_template[853219] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -343485,7 +347093,7 @@ _G.pg.base.bullet_template[853220] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -343554,7 +347162,7 @@ _G.pg.base.bullet_template[853221] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -343623,7 +347231,7 @@ _G.pg.base.bullet_template[853222] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -343692,7 +347300,7 @@ _G.pg.base.bullet_template[853223] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -343761,7 +347369,7 @@ _G.pg.base.bullet_template[853224] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -343830,7 +347438,7 @@ _G.pg.base.bullet_template[853225] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -343899,7 +347507,7 @@ _G.pg.base.bullet_template[853226] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -343968,7 +347576,7 @@ _G.pg.base.bullet_template[853227] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -344037,8 +347645,8 @@ _G.pg.base.bullet_template[853228] = {
 	attach_buff = {
 		{
 			buff_id = 311,
+			group_level = 4,
 			hit_ignore = true,
-			level = 4,
 			rant = 10000,
 		},
 	},
@@ -344107,8 +347715,8 @@ _G.pg.base.bullet_template[853229] = {
 	attach_buff = {
 		{
 			buff_id = 311,
+			group_level = 4,
 			hit_ignore = true,
-			level = 4,
 			rant = 10000,
 		},
 	},
@@ -344177,8 +347785,8 @@ _G.pg.base.bullet_template[853230] = {
 	attach_buff = {
 		{
 			buff_id = 311,
+			group_level = 4,
 			hit_ignore = true,
-			level = 4,
 			rant = 10000,
 		},
 	},
@@ -344247,8 +347855,8 @@ _G.pg.base.bullet_template[853231] = {
 	attach_buff = {
 		{
 			buff_id = 311,
+			group_level = 4,
 			hit_ignore = true,
-			level = 4,
 			rant = 10000,
 		},
 	},
@@ -344317,8 +347925,8 @@ _G.pg.base.bullet_template[853232] = {
 	attach_buff = {
 		{
 			buff_id = 311,
+			group_level = 4,
 			hit_ignore = true,
-			level = 4,
 			rant = 10000,
 		},
 	},
@@ -344387,8 +347995,8 @@ _G.pg.base.bullet_template[853233] = {
 	attach_buff = {
 		{
 			buff_id = 311,
+			group_level = 4,
 			hit_ignore = true,
-			level = 4,
 			rant = 10000,
 		},
 	},
@@ -344457,8 +348065,8 @@ _G.pg.base.bullet_template[853234] = {
 	attach_buff = {
 		{
 			buff_id = 311,
+			group_level = 4,
 			hit_ignore = true,
-			level = 4,
 			rant = 10000,
 		},
 	},
@@ -344872,7 +348480,7 @@ _G.pg.base.bullet_template[853311] = {
 	attach_buff = {
 		{
 			buff_id = 313,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -344931,7 +348539,7 @@ _G.pg.base.bullet_template[853312] = {
 	attach_buff = {
 		{
 			buff_id = 313,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -344990,7 +348598,7 @@ _G.pg.base.bullet_template[853313] = {
 	attach_buff = {
 		{
 			buff_id = 313,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -345049,7 +348657,7 @@ _G.pg.base.bullet_template[853314] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -345108,7 +348716,7 @@ _G.pg.base.bullet_template[853315] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -345167,7 +348775,7 @@ _G.pg.base.bullet_template[853316] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -345702,7 +349310,7 @@ _G.pg.base.bullet_template[853353] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -346172,7 +349780,7 @@ _G.pg.base.bullet_template[853391] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -346241,7 +349849,7 @@ _G.pg.base.bullet_template[853392] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -346310,7 +349918,7 @@ _G.pg.base.bullet_template[853393] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -346379,7 +349987,7 @@ _G.pg.base.bullet_template[853394] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -346448,7 +350056,7 @@ _G.pg.base.bullet_template[853395] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -346517,7 +350125,7 @@ _G.pg.base.bullet_template[853401] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -346586,7 +350194,7 @@ _G.pg.base.bullet_template[853402] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -346655,7 +350263,7 @@ _G.pg.base.bullet_template[853403] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -346724,7 +350332,7 @@ _G.pg.base.bullet_template[853404] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -346793,7 +350401,7 @@ _G.pg.base.bullet_template[853405] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -346862,7 +350470,7 @@ _G.pg.base.bullet_template[853411] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -346931,7 +350539,7 @@ _G.pg.base.bullet_template[853412] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -347000,7 +350608,7 @@ _G.pg.base.bullet_template[853413] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -347069,7 +350677,7 @@ _G.pg.base.bullet_template[853414] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -347138,7 +350746,7 @@ _G.pg.base.bullet_template[853415] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -348365,7 +351973,7 @@ _G.pg.base.bullet_template[855004] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -350055,7 +353663,7 @@ _G.pg.base.bullet_template[855230] = {
 	attach_buff = {
 		{
 			buff_id = 9498,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -350540,7 +354148,7 @@ _G.pg.base.bullet_template[855260] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -350609,7 +354217,7 @@ _G.pg.base.bullet_template[855261] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -350678,7 +354286,7 @@ _G.pg.base.bullet_template[855262] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -350747,7 +354355,7 @@ _G.pg.base.bullet_template[855263] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -350816,7 +354424,7 @@ _G.pg.base.bullet_template[855264] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -350885,7 +354493,7 @@ _G.pg.base.bullet_template[855265] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -350954,7 +354562,7 @@ _G.pg.base.bullet_template[855266] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -351023,7 +354631,7 @@ _G.pg.base.bullet_template[855267] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -351092,7 +354700,7 @@ _G.pg.base.bullet_template[855268] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -351161,7 +354769,7 @@ _G.pg.base.bullet_template[855269] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -351230,7 +354838,7 @@ _G.pg.base.bullet_template[855270] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -351299,7 +354907,7 @@ _G.pg.base.bullet_template[855271] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -351368,7 +354976,7 @@ _G.pg.base.bullet_template[855272] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -351437,7 +355045,7 @@ _G.pg.base.bullet_template[855273] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -351506,7 +355114,7 @@ _G.pg.base.bullet_template[855274] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -351575,7 +355183,7 @@ _G.pg.base.bullet_template[855275] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -351644,7 +355252,7 @@ _G.pg.base.bullet_template[855276] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -351713,7 +355321,7 @@ _G.pg.base.bullet_template[855277] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -351782,7 +355390,7 @@ _G.pg.base.bullet_template[855278] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -351851,7 +355459,7 @@ _G.pg.base.bullet_template[855279] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -351920,7 +355528,7 @@ _G.pg.base.bullet_template[855280] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -351989,7 +355597,7 @@ _G.pg.base.bullet_template[855281] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -352058,7 +355666,7 @@ _G.pg.base.bullet_template[855282] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -352127,7 +355735,7 @@ _G.pg.base.bullet_template[855283] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -352196,7 +355804,7 @@ _G.pg.base.bullet_template[855284] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -352265,7 +355873,7 @@ _G.pg.base.bullet_template[855285] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -352334,7 +355942,7 @@ _G.pg.base.bullet_template[855286] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -352403,7 +356011,7 @@ _G.pg.base.bullet_template[855287] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -352472,7 +356080,7 @@ _G.pg.base.bullet_template[855288] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -352541,7 +356149,7 @@ _G.pg.base.bullet_template[855289] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -352610,7 +356218,7 @@ _G.pg.base.bullet_template[855290] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -352679,7 +356287,7 @@ _G.pg.base.bullet_template[855291] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -352748,7 +356356,7 @@ _G.pg.base.bullet_template[855292] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -352817,7 +356425,7 @@ _G.pg.base.bullet_template[855293] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -352886,7 +356494,7 @@ _G.pg.base.bullet_template[855294] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -352955,7 +356563,7 @@ _G.pg.base.bullet_template[855295] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -353024,7 +356632,7 @@ _G.pg.base.bullet_template[855296] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -353093,7 +356701,7 @@ _G.pg.base.bullet_template[855297] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -353162,7 +356770,7 @@ _G.pg.base.bullet_template[855298] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -353231,7 +356839,7 @@ _G.pg.base.bullet_template[855299] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -353300,7 +356908,7 @@ _G.pg.base.bullet_template[855300] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -353369,7 +356977,7 @@ _G.pg.base.bullet_template[855301] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -353438,7 +357046,7 @@ _G.pg.base.bullet_template[855302] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -353507,7 +357115,7 @@ _G.pg.base.bullet_template[855303] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -353576,7 +357184,7 @@ _G.pg.base.bullet_template[855304] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -353645,7 +357253,7 @@ _G.pg.base.bullet_template[855305] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -353714,7 +357322,7 @@ _G.pg.base.bullet_template[855306] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -353783,7 +357391,7 @@ _G.pg.base.bullet_template[855307] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -353852,7 +357460,7 @@ _G.pg.base.bullet_template[855308] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -353921,7 +357529,7 @@ _G.pg.base.bullet_template[855309] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -353990,7 +357598,7 @@ _G.pg.base.bullet_template[855310] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -354059,7 +357667,7 @@ _G.pg.base.bullet_template[855311] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -354128,7 +357736,7 @@ _G.pg.base.bullet_template[855312] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -354197,7 +357805,7 @@ _G.pg.base.bullet_template[855313] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -354266,7 +357874,7 @@ _G.pg.base.bullet_template[855314] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -354335,7 +357943,7 @@ _G.pg.base.bullet_template[855315] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -355122,7 +358730,7 @@ _G.pg.base.bullet_template[855450] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -358368,7 +361976,7 @@ _G.pg.base.bullet_template[855618] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -358438,7 +362046,7 @@ _G.pg.base.bullet_template[855619] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 5,
+			group_level = 5,
 			rant = 10000,
 		},
 	},
@@ -358608,7 +362216,7 @@ _G.pg.base.bullet_template[855622] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -359407,7 +363015,7 @@ _G.pg.base.bullet_template[855635] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -359547,7 +363155,7 @@ _G.pg.base.bullet_template[855637] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -359973,7 +363581,7 @@ _G.pg.base.bullet_template[855644] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -361736,7 +365344,7 @@ _G.pg.base.bullet_template[855672] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -361805,7 +365413,7 @@ _G.pg.base.bullet_template[855673] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -361874,7 +365482,7 @@ _G.pg.base.bullet_template[855674] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -361943,7 +365551,7 @@ _G.pg.base.bullet_template[855675] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -362012,7 +365620,7 @@ _G.pg.base.bullet_template[855676] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -362081,7 +365689,7 @@ _G.pg.base.bullet_template[855677] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -362150,7 +365758,7 @@ _G.pg.base.bullet_template[855678] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -362219,7 +365827,7 @@ _G.pg.base.bullet_template[855679] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -362288,7 +365896,7 @@ _G.pg.base.bullet_template[855680] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -362357,7 +365965,7 @@ _G.pg.base.bullet_template[855681] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -362426,7 +366034,7 @@ _G.pg.base.bullet_template[855682] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -362495,7 +366103,7 @@ _G.pg.base.bullet_template[855683] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -362564,7 +366172,7 @@ _G.pg.base.bullet_template[855684] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -362633,7 +366241,7 @@ _G.pg.base.bullet_template[855685] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -362702,7 +366310,7 @@ _G.pg.base.bullet_template[855686] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -362771,7 +366379,7 @@ _G.pg.base.bullet_template[855687] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -362840,7 +366448,7 @@ _G.pg.base.bullet_template[855688] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -362909,7 +366517,7 @@ _G.pg.base.bullet_template[855689] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -362978,7 +366586,7 @@ _G.pg.base.bullet_template[855690] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -363047,7 +366655,7 @@ _G.pg.base.bullet_template[855691] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -364489,7 +368097,7 @@ _G.pg.base.bullet_template[855714] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -364622,7 +368230,7 @@ _G.pg.base.bullet_template[855716] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -375878,7 +379486,7 @@ _G.pg.base.bullet_template[856578] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -375947,7 +379555,7 @@ _G.pg.base.bullet_template[856579] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -376016,7 +379624,7 @@ _G.pg.base.bullet_template[856580] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -376085,7 +379693,7 @@ _G.pg.base.bullet_template[856581] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -376154,7 +379762,7 @@ _G.pg.base.bullet_template[856582] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -376223,7 +379831,7 @@ _G.pg.base.bullet_template[856583] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -376292,7 +379900,7 @@ _G.pg.base.bullet_template[856584] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -376361,7 +379969,7 @@ _G.pg.base.bullet_template[856585] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -376430,7 +380038,7 @@ _G.pg.base.bullet_template[856586] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -376499,7 +380107,7 @@ _G.pg.base.bullet_template[856587] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -376568,7 +380176,7 @@ _G.pg.base.bullet_template[856588] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -376637,7 +380245,7 @@ _G.pg.base.bullet_template[856589] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -376706,7 +380314,7 @@ _G.pg.base.bullet_template[856590] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -376775,7 +380383,7 @@ _G.pg.base.bullet_template[856591] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -376844,7 +380452,7 @@ _G.pg.base.bullet_template[856592] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -376913,7 +380521,7 @@ _G.pg.base.bullet_template[856593] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -376982,7 +380590,7 @@ _G.pg.base.bullet_template[856594] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -377051,7 +380659,7 @@ _G.pg.base.bullet_template[856595] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -377120,7 +380728,7 @@ _G.pg.base.bullet_template[856596] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -377189,7 +380797,7 @@ _G.pg.base.bullet_template[856597] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -377258,7 +380866,7 @@ _G.pg.base.bullet_template[856598] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -394350,7 +397958,7 @@ _G.pg.base.bullet_template[870005] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -394420,7 +398028,7 @@ _G.pg.base.bullet_template[870006] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -394826,7 +398434,7 @@ _G.pg.base.bullet_template[870011] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -394952,7 +398560,7 @@ _G.pg.base.bullet_template[870013] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -395021,7 +398629,7 @@ _G.pg.base.bullet_template[870014] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -395090,7 +398698,7 @@ _G.pg.base.bullet_template[870015] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -395159,7 +398767,7 @@ _G.pg.base.bullet_template[870016] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -395228,7 +398836,7 @@ _G.pg.base.bullet_template[870017] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -395297,7 +398905,7 @@ _G.pg.base.bullet_template[870018] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -395366,7 +398974,7 @@ _G.pg.base.bullet_template[870019] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -395435,7 +399043,7 @@ _G.pg.base.bullet_template[870020] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -395504,7 +399112,7 @@ _G.pg.base.bullet_template[870021] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -395573,7 +399181,7 @@ _G.pg.base.bullet_template[870022] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -395642,7 +399250,7 @@ _G.pg.base.bullet_template[870023] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -395711,7 +399319,7 @@ _G.pg.base.bullet_template[870024] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -395780,7 +399388,7 @@ _G.pg.base.bullet_template[870025] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -395849,7 +399457,7 @@ _G.pg.base.bullet_template[870026] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -395918,7 +399526,7 @@ _G.pg.base.bullet_template[870027] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -395987,7 +399595,7 @@ _G.pg.base.bullet_template[870028] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -396056,7 +399664,7 @@ _G.pg.base.bullet_template[870029] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -396125,7 +399733,7 @@ _G.pg.base.bullet_template[870030] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -396194,7 +399802,7 @@ _G.pg.base.bullet_template[870031] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -396263,7 +399871,7 @@ _G.pg.base.bullet_template[870032] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -396332,7 +399940,7 @@ _G.pg.base.bullet_template[870033] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -396401,7 +400009,7 @@ _G.pg.base.bullet_template[870034] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -396470,7 +400078,7 @@ _G.pg.base.bullet_template[870035] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -396539,7 +400147,7 @@ _G.pg.base.bullet_template[870036] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -396608,7 +400216,7 @@ _G.pg.base.bullet_template[870037] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -396677,7 +400285,7 @@ _G.pg.base.bullet_template[870038] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -396746,7 +400354,7 @@ _G.pg.base.bullet_template[870039] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -396815,7 +400423,7 @@ _G.pg.base.bullet_template[870040] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -396884,7 +400492,7 @@ _G.pg.base.bullet_template[870041] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -407027,7 +410635,7 @@ _G.pg.base.bullet_template[879002] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -407097,7 +410705,7 @@ _G.pg.base.bullet_template[879003] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -407167,7 +410775,7 @@ _G.pg.base.bullet_template[879004] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -407237,7 +410845,7 @@ _G.pg.base.bullet_template[879005] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -407307,7 +410915,7 @@ _G.pg.base.bullet_template[879006] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -407377,7 +410985,7 @@ _G.pg.base.bullet_template[879007] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -407447,7 +411055,7 @@ _G.pg.base.bullet_template[879008] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -407517,7 +411125,7 @@ _G.pg.base.bullet_template[879009] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -407587,7 +411195,7 @@ _G.pg.base.bullet_template[879010] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -407657,7 +411265,7 @@ _G.pg.base.bullet_template[879011] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -407727,7 +411335,7 @@ _G.pg.base.bullet_template[879012] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -407797,7 +411405,7 @@ _G.pg.base.bullet_template[879013] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -407931,7 +411539,7 @@ _G.pg.base.bullet_template[879015] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -408001,7 +411609,7 @@ _G.pg.base.bullet_template[879016] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -408071,7 +411679,7 @@ _G.pg.base.bullet_template[879017] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -408141,7 +411749,7 @@ _G.pg.base.bullet_template[879018] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -408211,7 +411819,7 @@ _G.pg.base.bullet_template[879019] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -408281,7 +411889,7 @@ _G.pg.base.bullet_template[879020] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -408351,7 +411959,7 @@ _G.pg.base.bullet_template[879021] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -408421,7 +412029,7 @@ _G.pg.base.bullet_template[879022] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -408491,7 +412099,7 @@ _G.pg.base.bullet_template[879023] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -408561,7 +412169,7 @@ _G.pg.base.bullet_template[879024] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -408631,7 +412239,7 @@ _G.pg.base.bullet_template[879025] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -408701,7 +412309,7 @@ _G.pg.base.bullet_template[879026] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -411542,7 +415150,7 @@ _G.pg.base.bullet_template[891407] = {
 	attach_buff = {
 		{
 			buff_id = 332,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -412853,7 +416461,7 @@ _G.pg.base.bullet_template[891616] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -413111,7 +416719,7 @@ _G.pg.base.bullet_template[891620] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -413180,7 +416788,7 @@ _G.pg.base.bullet_template[891621] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -413249,7 +416857,7 @@ _G.pg.base.bullet_template[891622] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -413318,7 +416926,7 @@ _G.pg.base.bullet_template[891623] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -413387,7 +416995,7 @@ _G.pg.base.bullet_template[891624] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -418334,7 +421942,7 @@ _G.pg.base.bullet_template[892730] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -423767,7 +427375,7 @@ _G.pg.base.bullet_template[893006] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -441446,7 +445054,7 @@ _G.pg.base.bullet_template[900502] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -443750,7 +447358,7 @@ _G.pg.base.bullet_template[900538] = {
 	attach_buff = {
 		{
 			buff_id = 600066,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -444182,7 +447790,7 @@ _G.pg.base.bullet_template[900544] = {
 	attach_buff = {
 		{
 			buff_id = 600074,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -444350,7 +447958,7 @@ _G.pg.base.bullet_template[900546] = {
 	attach_buff = {
 		{
 			buff_id = 600075,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -444627,7 +448235,7 @@ _G.pg.base.bullet_template[900549] = {
 	attach_buff = {
 		{
 			buff_id = 600089,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -444767,7 +448375,7 @@ _G.pg.base.bullet_template[900551] = {
 	attach_buff = {
 		{
 			buff_id = 600089,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -444829,7 +448437,7 @@ _G.pg.base.bullet_template[900552] = {
 	attach_buff = {
 		{
 			buff_id = 600095,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -444899,7 +448507,7 @@ _G.pg.base.bullet_template[900553] = {
 	attach_buff = {
 		{
 			buff_id = 600096,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -444969,7 +448577,7 @@ _G.pg.base.bullet_template[900554] = {
 	attach_buff = {
 		{
 			buff_id = 600097,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -445039,12 +448647,12 @@ _G.pg.base.bullet_template[900555] = {
 	attach_buff = {
 		{
 			buff_id = 11101,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 		{
 			buff_id = 600150,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -445113,12 +448721,12 @@ _G.pg.base.bullet_template[900556] = {
 	attach_buff = {
 		{
 			buff_id = 11101,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 		{
 			buff_id = 600151,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -445187,12 +448795,12 @@ _G.pg.base.bullet_template[900557] = {
 	attach_buff = {
 		{
 			buff_id = 11101,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 		{
 			buff_id = 600152,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -445258,7 +448866,7 @@ _G.pg.base.bullet_template[900558] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -445317,7 +448925,7 @@ _G.pg.base.bullet_template[900559] = {
 	attach_buff = {
 		{
 			buff_id = 600186,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -445376,7 +448984,7 @@ _G.pg.base.bullet_template[900560] = {
 	attach_buff = {
 		{
 			buff_id = 600187,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -445435,7 +449043,7 @@ _G.pg.base.bullet_template[900561] = {
 	attach_buff = {
 		{
 			buff_id = 600188,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -448176,7 +451784,7 @@ _G.pg.base.bullet_template[900341] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -449748,7 +453356,7 @@ _G.pg.base.bullet_template[900111] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -451216,7 +454824,7 @@ _G.pg.base.bullet_template[989002] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -451275,7 +454883,7 @@ _G.pg.base.bullet_template[989003] = {
 	attach_buff = {
 		{
 			buff_id = 18,
-			level = 1,
+			group_level = 1,
 			rant = 1500,
 		},
 	},
@@ -451334,7 +454942,7 @@ _G.pg.base.bullet_template[989004] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 500,
 		},
 	},
@@ -451460,7 +455068,7 @@ _G.pg.base.bullet_template[989006] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 2,
+			group_level = 2,
 			rant = 2000,
 		},
 	},
@@ -451530,7 +455138,7 @@ _G.pg.base.bullet_template[989007] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 2000,
 		},
 	},
@@ -456679,7 +460287,7 @@ _G.pg.base.bullet_template[990261] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -459248,7 +462856,7 @@ _G.pg.base.bullet_template[20020001] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -459373,7 +462981,7 @@ _G.pg.base.bullet_template[20020030] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -459577,7 +463185,7 @@ _G.pg.base.bullet_template[20020033] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -460281,7 +463889,7 @@ _G.pg.base.bullet_template[20022302] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -461326,7 +464934,7 @@ _G.pg.base.bullet_template[20022700] = {
 	attach_buff = {
 		{
 			buff_id = 316,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -461392,7 +465000,7 @@ _G.pg.base.bullet_template[20022701] = {
 	attach_buff = {
 		{
 			buff_id = 316,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -461584,7 +465192,7 @@ _G.pg.base.bullet_template[20030020] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -461656,7 +465264,7 @@ _G.pg.base.bullet_template[20030021] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -461728,7 +465336,7 @@ _G.pg.base.bullet_template[20030022] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -461800,7 +465408,7 @@ _G.pg.base.bullet_template[20030023] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -461872,7 +465480,7 @@ _G.pg.base.bullet_template[20030024] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -461944,7 +465552,7 @@ _G.pg.base.bullet_template[20030025] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -462016,7 +465624,7 @@ _G.pg.base.bullet_template[20030026] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -462142,7 +465750,7 @@ _G.pg.base.bullet_template[20030370] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 6000,
 		},
 	},
@@ -462212,7 +465820,7 @@ _G.pg.base.bullet_template[20030371] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 6000,
 		},
 	},
@@ -464384,7 +467992,7 @@ _G.pg.base.bullet_template[20032005] = {
 	attach_buff = {
 		{
 			buff_id = 11101,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -464755,7 +468363,7 @@ _G.pg.base.bullet_template[20032104] = {
 	attach_buff = {
 		{
 			buff_id = 11101,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -468656,7 +472264,7 @@ _G.pg.base.bullet_template[20041030] = {
 	attach_buff = {
 		{
 			buff_id = 316,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -469358,7 +472966,7 @@ _G.pg.base.bullet_template[20042003] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -469430,7 +473038,7 @@ _G.pg.base.bullet_template[20042004] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -469502,7 +473110,7 @@ _G.pg.base.bullet_template[20042005] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -469574,7 +473182,7 @@ _G.pg.base.bullet_template[20042006] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2400,
 		},
 	},
@@ -469646,7 +473254,7 @@ _G.pg.base.bullet_template[20042007] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2400,
 		},
 	},
@@ -469718,7 +473326,7 @@ _G.pg.base.bullet_template[20042008] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2400,
 		},
 	},
@@ -469970,7 +473578,7 @@ _G.pg.base.bullet_template[20042400] = {
 	attach_buff = {
 		{
 			buff_id = 316,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -470038,7 +473646,7 @@ _G.pg.base.bullet_template[20042600] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -470106,7 +473714,7 @@ _G.pg.base.bullet_template[20042601] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -473485,7 +477093,7 @@ _G.pg.base.bullet_template[20046110] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -477747,7 +481355,7 @@ _G.pg.base.bullet_template[20062120] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -477811,7 +481419,7 @@ _G.pg.base.bullet_template[20062121] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -477875,7 +481483,7 @@ _G.pg.base.bullet_template[20062122] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -477939,7 +481547,7 @@ _G.pg.base.bullet_template[20062123] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -478003,7 +481611,7 @@ _G.pg.base.bullet_template[20062124] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -478067,7 +481675,7 @@ _G.pg.base.bullet_template[20062125] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -478131,7 +481739,7 @@ _G.pg.base.bullet_template[20062126] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -478195,7 +481803,7 @@ _G.pg.base.bullet_template[20062127] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -478259,7 +481867,7 @@ _G.pg.base.bullet_template[20062128] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -478323,7 +481931,7 @@ _G.pg.base.bullet_template[20062129] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -478387,7 +481995,7 @@ _G.pg.base.bullet_template[20062130] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -478451,7 +482059,7 @@ _G.pg.base.bullet_template[20062131] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -478515,7 +482123,7 @@ _G.pg.base.bullet_template[20062132] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -478579,7 +482187,7 @@ _G.pg.base.bullet_template[20062133] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -478643,7 +482251,7 @@ _G.pg.base.bullet_template[20062134] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -478707,7 +482315,7 @@ _G.pg.base.bullet_template[20062135] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -478771,7 +482379,7 @@ _G.pg.base.bullet_template[20062136] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -478835,7 +482443,7 @@ _G.pg.base.bullet_template[20062137] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -479409,7 +483017,7 @@ _G.pg.base.bullet_template[20071002] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -481771,7 +485379,7 @@ _G.pg.base.bullet_template[20084200] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 6000,
 		},
 	},
@@ -481841,7 +485449,7 @@ _G.pg.base.bullet_template[20084201] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 6000,
 		},
 	},
@@ -481911,7 +485519,7 @@ _G.pg.base.bullet_template[20084202] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 6000,
 		},
 	},
@@ -481981,7 +485589,7 @@ _G.pg.base.bullet_template[20084203] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 6000,
 		},
 	},
@@ -482051,7 +485659,7 @@ _G.pg.base.bullet_template[20084204] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 6000,
 		},
 	},
@@ -482118,7 +485726,7 @@ _G.pg.base.bullet_template[20084300] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 400,
 		},
 	},
@@ -482177,7 +485785,7 @@ _G.pg.base.bullet_template[20084301] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 400,
 		},
 	},
@@ -482236,7 +485844,7 @@ _G.pg.base.bullet_template[20084302] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 400,
 		},
 	},
@@ -482295,7 +485903,7 @@ _G.pg.base.bullet_template[20084303] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 400,
 		},
 	},
@@ -482354,7 +485962,7 @@ _G.pg.base.bullet_template[20084304] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 400,
 		},
 	},
@@ -482413,7 +486021,7 @@ _G.pg.base.bullet_template[20084305] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 400,
 		},
 	},
@@ -482472,7 +486080,7 @@ _G.pg.base.bullet_template[20084306] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 400,
 		},
 	},
@@ -482531,7 +486139,7 @@ _G.pg.base.bullet_template[20084307] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 400,
 		},
 	},
@@ -482590,7 +486198,7 @@ _G.pg.base.bullet_template[20084308] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 400,
 		},
 	},
@@ -482649,7 +486257,7 @@ _G.pg.base.bullet_template[20084309] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 400,
 		},
 	},
@@ -484218,7 +487826,7 @@ _G.pg.base.bullet_template[20092200] = {
 	attach_buff = {
 		{
 			buff_id = 316,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -486970,7 +490578,7 @@ _G.pg.base.bullet_template[20110320] = {
 	attach_buff = {
 		{
 			buff_id = 316,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -487341,7 +490949,7 @@ _G.pg.base.bullet_template[20111010] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -487400,7 +491008,7 @@ _G.pg.base.bullet_template[20111011] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -487459,7 +491067,7 @@ _G.pg.base.bullet_template[20111012] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -487518,7 +491126,7 @@ _G.pg.base.bullet_template[20111013] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -487577,7 +491185,7 @@ _G.pg.base.bullet_template[20111014] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -487636,7 +491244,7 @@ _G.pg.base.bullet_template[20111015] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -487854,7 +491462,7 @@ _G.pg.base.bullet_template[20111200] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -487923,7 +491531,7 @@ _G.pg.base.bullet_template[20113000] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -487992,7 +491600,7 @@ _G.pg.base.bullet_template[20113001] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -488061,7 +491669,7 @@ _G.pg.base.bullet_template[20113002] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -488130,7 +491738,7 @@ _G.pg.base.bullet_template[20113003] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -488199,7 +491807,7 @@ _G.pg.base.bullet_template[20113004] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -488268,7 +491876,7 @@ _G.pg.base.bullet_template[20113005] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -488337,7 +491945,7 @@ _G.pg.base.bullet_template[20113006] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -488406,7 +492014,7 @@ _G.pg.base.bullet_template[20113007] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -488475,7 +492083,7 @@ _G.pg.base.bullet_template[20113008] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -488544,7 +492152,7 @@ _G.pg.base.bullet_template[20113009] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -488613,7 +492221,7 @@ _G.pg.base.bullet_template[20113010] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -488682,7 +492290,7 @@ _G.pg.base.bullet_template[20113011] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -488751,7 +492359,7 @@ _G.pg.base.bullet_template[20113100] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -488820,7 +492428,7 @@ _G.pg.base.bullet_template[20113101] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -488889,7 +492497,7 @@ _G.pg.base.bullet_template[20113102] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -488958,7 +492566,7 @@ _G.pg.base.bullet_template[20113103] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -489027,7 +492635,7 @@ _G.pg.base.bullet_template[20113104] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -489096,7 +492704,7 @@ _G.pg.base.bullet_template[20113105] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -489165,7 +492773,7 @@ _G.pg.base.bullet_template[20113106] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -489234,7 +492842,7 @@ _G.pg.base.bullet_template[20113107] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -489303,7 +492911,7 @@ _G.pg.base.bullet_template[20113108] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -489372,7 +492980,7 @@ _G.pg.base.bullet_template[20113109] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -489441,7 +493049,7 @@ _G.pg.base.bullet_template[20113110] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -489510,7 +493118,7 @@ _G.pg.base.bullet_template[20113111] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -489579,7 +493187,7 @@ _G.pg.base.bullet_template[20113200] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -489648,7 +493256,7 @@ _G.pg.base.bullet_template[20113201] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -489717,7 +493325,7 @@ _G.pg.base.bullet_template[20113202] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -489786,7 +493394,7 @@ _G.pg.base.bullet_template[20113203] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -489855,7 +493463,7 @@ _G.pg.base.bullet_template[20113204] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -489924,7 +493532,7 @@ _G.pg.base.bullet_template[20113205] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -489993,7 +493601,7 @@ _G.pg.base.bullet_template[20113206] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -490062,7 +493670,7 @@ _G.pg.base.bullet_template[20113207] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -490131,7 +493739,7 @@ _G.pg.base.bullet_template[20113208] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -490200,7 +493808,7 @@ _G.pg.base.bullet_template[20113209] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -490269,7 +493877,7 @@ _G.pg.base.bullet_template[20113210] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -490338,7 +493946,7 @@ _G.pg.base.bullet_template[20113211] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -490407,7 +494015,7 @@ _G.pg.base.bullet_template[20113212] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -490476,7 +494084,7 @@ _G.pg.base.bullet_template[20113213] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -490545,7 +494153,7 @@ _G.pg.base.bullet_template[20113214] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -490614,7 +494222,7 @@ _G.pg.base.bullet_template[20113215] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -490683,7 +494291,7 @@ _G.pg.base.bullet_template[20113400] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -490752,7 +494360,7 @@ _G.pg.base.bullet_template[20113401] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -490821,7 +494429,7 @@ _G.pg.base.bullet_template[20113402] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -490890,7 +494498,7 @@ _G.pg.base.bullet_template[20113403] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -490959,7 +494567,7 @@ _G.pg.base.bullet_template[20113404] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -491028,7 +494636,7 @@ _G.pg.base.bullet_template[20113405] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -491097,7 +494705,7 @@ _G.pg.base.bullet_template[20113406] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -491166,7 +494774,7 @@ _G.pg.base.bullet_template[20113407] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -491235,7 +494843,7 @@ _G.pg.base.bullet_template[20113408] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -491304,7 +494912,7 @@ _G.pg.base.bullet_template[20113409] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -491373,7 +494981,7 @@ _G.pg.base.bullet_template[20113410] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -491442,7 +495050,7 @@ _G.pg.base.bullet_template[20113411] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -491511,7 +495119,7 @@ _G.pg.base.bullet_template[20113412] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -491580,7 +495188,7 @@ _G.pg.base.bullet_template[20113413] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -491649,7 +495257,7 @@ _G.pg.base.bullet_template[20113414] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -491718,7 +495326,7 @@ _G.pg.base.bullet_template[20113415] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -491787,7 +495395,7 @@ _G.pg.base.bullet_template[20113416] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -491856,7 +495464,7 @@ _G.pg.base.bullet_template[20113417] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -491925,7 +495533,7 @@ _G.pg.base.bullet_template[20113418] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -491994,7 +495602,7 @@ _G.pg.base.bullet_template[20113419] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -492063,7 +495671,7 @@ _G.pg.base.bullet_template[20113420] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -492132,7 +495740,7 @@ _G.pg.base.bullet_template[20113421] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -492201,7 +495809,7 @@ _G.pg.base.bullet_template[20113422] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -492270,7 +495878,7 @@ _G.pg.base.bullet_template[20113423] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -492339,7 +495947,7 @@ _G.pg.base.bullet_template[20113424] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -492408,7 +496016,7 @@ _G.pg.base.bullet_template[20113425] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -492477,7 +496085,7 @@ _G.pg.base.bullet_template[20113426] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -492733,7 +496341,7 @@ _G.pg.base.bullet_template[20115000] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -492792,7 +496400,7 @@ _G.pg.base.bullet_template[20115001] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -492851,7 +496459,7 @@ _G.pg.base.bullet_template[20115002] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -492910,7 +496518,7 @@ _G.pg.base.bullet_template[20115003] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -492969,7 +496577,7 @@ _G.pg.base.bullet_template[20115004] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -493028,7 +496636,7 @@ _G.pg.base.bullet_template[20115005] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -493087,7 +496695,7 @@ _G.pg.base.bullet_template[20115006] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -493146,7 +496754,7 @@ _G.pg.base.bullet_template[20115007] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -493205,7 +496813,7 @@ _G.pg.base.bullet_template[20115008] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -493264,7 +496872,7 @@ _G.pg.base.bullet_template[20115009] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -494492,7 +498100,7 @@ _G.pg.base.bullet_template[20115200] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -494561,7 +498169,7 @@ _G.pg.base.bullet_template[20115201] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -494630,7 +498238,7 @@ _G.pg.base.bullet_template[20115202] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -494699,7 +498307,7 @@ _G.pg.base.bullet_template[20115203] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -494768,7 +498376,7 @@ _G.pg.base.bullet_template[20115204] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -494837,7 +498445,7 @@ _G.pg.base.bullet_template[20115205] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -494906,7 +498514,7 @@ _G.pg.base.bullet_template[20115206] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -494975,7 +498583,7 @@ _G.pg.base.bullet_template[20115207] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -495044,7 +498652,7 @@ _G.pg.base.bullet_template[20115210] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -495113,7 +498721,7 @@ _G.pg.base.bullet_template[20115211] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -495182,7 +498790,7 @@ _G.pg.base.bullet_template[20115212] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -495251,7 +498859,7 @@ _G.pg.base.bullet_template[20115213] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -495320,7 +498928,7 @@ _G.pg.base.bullet_template[20115214] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -495389,7 +498997,7 @@ _G.pg.base.bullet_template[20115215] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -495458,7 +499066,7 @@ _G.pg.base.bullet_template[20115216] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -495527,7 +499135,7 @@ _G.pg.base.bullet_template[20115217] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -495596,7 +499204,7 @@ _G.pg.base.bullet_template[20115218] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -495665,7 +499273,7 @@ _G.pg.base.bullet_template[20115219] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -495734,7 +499342,7 @@ _G.pg.base.bullet_template[20115220] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -495803,7 +499411,7 @@ _G.pg.base.bullet_template[20115221] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -495872,7 +499480,7 @@ _G.pg.base.bullet_template[20115222] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -495941,7 +499549,7 @@ _G.pg.base.bullet_template[20115223] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -496010,7 +499618,7 @@ _G.pg.base.bullet_template[20115224] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -496079,7 +499687,7 @@ _G.pg.base.bullet_template[20115225] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -496148,7 +499756,7 @@ _G.pg.base.bullet_template[20115226] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -496217,7 +499825,7 @@ _G.pg.base.bullet_template[20115227] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -496286,7 +499894,7 @@ _G.pg.base.bullet_template[20115228] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -496355,7 +499963,7 @@ _G.pg.base.bullet_template[20115229] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 600,
 		},
 	},
@@ -496424,7 +500032,7 @@ _G.pg.base.bullet_template[20115300] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 6000,
 		},
 	},
@@ -496493,7 +500101,7 @@ _G.pg.base.bullet_template[20115301] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 6000,
 		},
 	},
@@ -496562,7 +500170,7 @@ _G.pg.base.bullet_template[20115302] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 6000,
 		},
 	},
@@ -496631,7 +500239,7 @@ _G.pg.base.bullet_template[20115500] = {
 	attach_buff = {
 		{
 			buff_id = 79110,
-			level = 3,
+			group_level = 3,
 			rant = 10000,
 		},
 	},
@@ -496701,7 +500309,7 @@ _G.pg.base.bullet_template[20115501] = {
 	attach_buff = {
 		{
 			buff_id = 79110,
-			level = 3,
+			group_level = 3,
 			rant = 10000,
 		},
 	},
@@ -496771,7 +500379,7 @@ _G.pg.base.bullet_template[20115510] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -496840,7 +500448,7 @@ _G.pg.base.bullet_template[20115511] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -496909,7 +500517,7 @@ _G.pg.base.bullet_template[20115512] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -496978,7 +500586,7 @@ _G.pg.base.bullet_template[20115513] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -497047,7 +500655,7 @@ _G.pg.base.bullet_template[20115514] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -497116,7 +500724,7 @@ _G.pg.base.bullet_template[20115515] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -497773,7 +501381,7 @@ _G.pg.base.bullet_template[20115610] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -497832,7 +501440,7 @@ _G.pg.base.bullet_template[20115611] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -497891,7 +501499,7 @@ _G.pg.base.bullet_template[20115612] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -497950,7 +501558,7 @@ _G.pg.base.bullet_template[20115613] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -498009,7 +501617,7 @@ _G.pg.base.bullet_template[20115614] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -498540,7 +502148,7 @@ _G.pg.base.bullet_template[20116400] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -498609,7 +502217,7 @@ _G.pg.base.bullet_template[20116401] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -498678,7 +502286,7 @@ _G.pg.base.bullet_template[20116402] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -500640,7 +504248,7 @@ _G.pg.base.bullet_template[20117000] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -501531,7 +505139,7 @@ _G.pg.base.bullet_template[20119800] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -501601,7 +505209,7 @@ _G.pg.base.bullet_template[20119801] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -501671,7 +505279,7 @@ _G.pg.base.bullet_template[20119802] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -501741,7 +505349,7 @@ _G.pg.base.bullet_template[20119803] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -501811,7 +505419,7 @@ _G.pg.base.bullet_template[20119804] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -501881,7 +505489,7 @@ _G.pg.base.bullet_template[20119805] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -501951,7 +505559,7 @@ _G.pg.base.bullet_template[20119806] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -502021,7 +505629,7 @@ _G.pg.base.bullet_template[20119807] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -502091,7 +505699,7 @@ _G.pg.base.bullet_template[20119808] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -502161,7 +505769,7 @@ _G.pg.base.bullet_template[20119809] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -502231,7 +505839,7 @@ _G.pg.base.bullet_template[20119810] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -502301,7 +505909,7 @@ _G.pg.base.bullet_template[20119811] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -502371,7 +505979,7 @@ _G.pg.base.bullet_template[20119900] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -502440,7 +506048,7 @@ _G.pg.base.bullet_template[20119901] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -502509,7 +506117,7 @@ _G.pg.base.bullet_template[20119902] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -502578,7 +506186,7 @@ _G.pg.base.bullet_template[20119903] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -502647,7 +506255,7 @@ _G.pg.base.bullet_template[20119904] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -502716,7 +506324,7 @@ _G.pg.base.bullet_template[20119905] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -502785,7 +506393,7 @@ _G.pg.base.bullet_template[20119906] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -534318,7 +537926,7 @@ _G.pg.base.bullet_template[20135322] = {
 	attach_buff = {
 		{
 			buff_id = 316,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -536340,7 +539948,7 @@ _G.pg.base.bullet_template[20139200] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -536399,7 +540007,7 @@ _G.pg.base.bullet_template[20139201] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -536458,7 +540066,7 @@ _G.pg.base.bullet_template[20139202] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -536517,7 +540125,7 @@ _G.pg.base.bullet_template[20139203] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -536576,7 +540184,7 @@ _G.pg.base.bullet_template[20139204] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -536635,7 +540243,7 @@ _G.pg.base.bullet_template[20139205] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -536694,7 +540302,7 @@ _G.pg.base.bullet_template[20139206] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -536753,7 +540361,7 @@ _G.pg.base.bullet_template[20139207] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -536812,7 +540420,7 @@ _G.pg.base.bullet_template[20139208] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -536871,7 +540479,7 @@ _G.pg.base.bullet_template[20139209] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -536930,7 +540538,7 @@ _G.pg.base.bullet_template[20139210] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -536996,7 +540604,7 @@ _G.pg.base.bullet_template[20139220] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -537062,7 +540670,7 @@ _G.pg.base.bullet_template[20139221] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -537128,7 +540736,7 @@ _G.pg.base.bullet_template[20139222] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -537194,7 +540802,7 @@ _G.pg.base.bullet_template[20139223] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -537260,7 +540868,7 @@ _G.pg.base.bullet_template[20139224] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -537326,7 +540934,7 @@ _G.pg.base.bullet_template[20139225] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -537392,7 +541000,7 @@ _G.pg.base.bullet_template[20139226] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -537458,7 +541066,7 @@ _G.pg.base.bullet_template[20139227] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -537524,7 +541132,7 @@ _G.pg.base.bullet_template[20139228] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -537590,7 +541198,7 @@ _G.pg.base.bullet_template[20139229] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -537656,7 +541264,7 @@ _G.pg.base.bullet_template[20139230] = {
 	attach_buff = {
 		{
 			buff_id = 8680,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -538286,7 +541894,7 @@ _G.pg.base.bullet_template[20213010] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -538352,7 +541960,7 @@ _G.pg.base.bullet_template[20213020] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -538414,7 +542022,7 @@ _G.pg.base.bullet_template[20214010] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -540343,7 +543951,7 @@ _G.pg.base.bullet_template[20218110] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -540527,7 +544135,7 @@ _G.pg.base.bullet_template[20218121] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -540586,7 +544194,7 @@ _G.pg.base.bullet_template[20219110] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -542218,7 +545826,7 @@ _G.pg.base.bullet_template[20223010] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -542284,7 +545892,7 @@ _G.pg.base.bullet_template[20223020] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -542406,7 +546014,7 @@ _G.pg.base.bullet_template[20224010] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -542557,7 +546165,7 @@ _G.pg.base.bullet_template[20226111] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -542616,7 +546224,7 @@ _G.pg.base.bullet_template[20226120] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -543609,7 +547217,7 @@ _G.pg.base.bullet_template[20228311] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -543803,7 +547411,7 @@ _G.pg.base.bullet_template[20229180] = {
 	attach_buff = {
 		{
 			buff_id = 11581,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -543869,7 +547477,7 @@ _G.pg.base.bullet_template[20229220] = {
 	attach_buff = {
 		{
 			buff_id = 11581,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -544292,7 +547900,7 @@ _G.pg.base.bullet_template[20230010] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -544351,7 +547959,7 @@ _G.pg.base.bullet_template[20231010] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -544463,7 +548071,7 @@ _G.pg.base.bullet_template[20232010] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -544525,7 +548133,7 @@ _G.pg.base.bullet_template[20233010] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -544594,7 +548202,7 @@ _G.pg.base.bullet_template[20233011] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -544663,7 +548271,7 @@ _G.pg.base.bullet_template[20233012] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -544729,7 +548337,7 @@ _G.pg.base.bullet_template[20236110] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -544841,7 +548449,7 @@ _G.pg.base.bullet_template[20237120] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -544960,7 +548568,7 @@ _G.pg.base.bullet_template[20237130] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -545026,7 +548634,7 @@ _G.pg.base.bullet_template[20237131] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -545085,7 +548693,7 @@ _G.pg.base.bullet_template[20238110] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -545153,7 +548761,7 @@ _G.pg.base.bullet_template[20238111] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -545221,7 +548829,7 @@ _G.pg.base.bullet_template[20238112] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -545768,7 +549376,7 @@ _G.pg.base.bullet_template[20238220] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -545907,7 +549515,7 @@ _G.pg.base.bullet_template[20239111] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -545975,7 +549583,7 @@ _G.pg.base.bullet_template[20239112] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -546043,7 +549651,7 @@ _G.pg.base.bullet_template[20239120] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -546372,7 +549980,7 @@ _G.pg.base.bullet_template[20239210] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -546444,7 +550052,7 @@ _G.pg.base.bullet_template[20239211] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -546516,7 +550124,7 @@ _G.pg.base.bullet_template[20239212] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -546588,7 +550196,7 @@ _G.pg.base.bullet_template[20239213] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -547542,7 +551150,7 @@ _G.pg.base.bullet_template[20239250] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -547608,7 +551216,7 @@ _G.pg.base.bullet_template[20239251] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -548454,7 +552062,7 @@ _G.pg.base.bullet_template[20239270] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -549401,7 +553009,7 @@ _G.pg.base.bullet_template[20244030] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -549470,7 +553078,7 @@ _G.pg.base.bullet_template[20244040] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -549539,7 +553147,7 @@ _G.pg.base.bullet_template[20244041] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -550912,7 +554520,7 @@ _G.pg.base.bullet_template[20248110] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -553720,7 +557328,7 @@ _G.pg.base.bullet_template[20249115] = {
 	attach_buff = {
 		{
 			buff_id = 11101,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -554058,7 +557666,7 @@ _G.pg.base.bullet_template[20249124] = {
 	attach_buff = {
 		{
 			buff_id = 11101,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -559827,7 +563435,7 @@ _G.pg.base.bullet_template[20300210] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -561095,7 +564703,7 @@ _G.pg.base.bullet_template[20301210] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -561161,7 +564769,7 @@ _G.pg.base.bullet_template[20301211] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -561227,7 +564835,7 @@ _G.pg.base.bullet_template[20301212] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -561293,7 +564901,7 @@ _G.pg.base.bullet_template[20301213] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -561359,7 +564967,7 @@ _G.pg.base.bullet_template[20301214] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -561425,7 +565033,7 @@ _G.pg.base.bullet_template[20301215] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -561491,7 +565099,7 @@ _G.pg.base.bullet_template[20301216] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -561557,7 +565165,7 @@ _G.pg.base.bullet_template[20301217] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -561623,7 +565231,7 @@ _G.pg.base.bullet_template[20301218] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -561689,7 +565297,7 @@ _G.pg.base.bullet_template[20301219] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -561755,7 +565363,7 @@ _G.pg.base.bullet_template[20301220] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -561821,7 +565429,7 @@ _G.pg.base.bullet_template[20301221] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -561887,7 +565495,7 @@ _G.pg.base.bullet_template[20301222] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -561953,7 +565561,7 @@ _G.pg.base.bullet_template[20301223] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -562019,7 +565627,7 @@ _G.pg.base.bullet_template[20301224] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -562085,7 +565693,7 @@ _G.pg.base.bullet_template[20301225] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -562151,7 +565759,7 @@ _G.pg.base.bullet_template[20301226] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -562217,7 +565825,7 @@ _G.pg.base.bullet_template[20301227] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -562283,7 +565891,7 @@ _G.pg.base.bullet_template[20301228] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -562349,7 +565957,7 @@ _G.pg.base.bullet_template[20301229] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -562415,7 +566023,7 @@ _G.pg.base.bullet_template[20301230] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -562481,7 +566089,7 @@ _G.pg.base.bullet_template[20301231] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -562547,7 +566155,7 @@ _G.pg.base.bullet_template[20301232] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -562613,7 +566221,7 @@ _G.pg.base.bullet_template[20301233] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -562679,7 +566287,7 @@ _G.pg.base.bullet_template[20301234] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -562745,7 +566353,7 @@ _G.pg.base.bullet_template[20301235] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -562811,7 +566419,7 @@ _G.pg.base.bullet_template[20301236] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -562877,7 +566485,7 @@ _G.pg.base.bullet_template[20301237] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -562943,7 +566551,7 @@ _G.pg.base.bullet_template[20301238] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -563009,7 +566617,7 @@ _G.pg.base.bullet_template[20301239] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -563075,7 +566683,7 @@ _G.pg.base.bullet_template[20301240] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -563141,7 +566749,7 @@ _G.pg.base.bullet_template[20301241] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -563207,7 +566815,7 @@ _G.pg.base.bullet_template[20301242] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -563273,7 +566881,7 @@ _G.pg.base.bullet_template[20301243] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -563339,7 +566947,7 @@ _G.pg.base.bullet_template[20301244] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -563405,7 +567013,7 @@ _G.pg.base.bullet_template[20301245] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -563471,7 +567079,7 @@ _G.pg.base.bullet_template[20301246] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -563537,7 +567145,7 @@ _G.pg.base.bullet_template[20301247] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -563603,7 +567211,7 @@ _G.pg.base.bullet_template[20301248] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -563669,7 +567277,7 @@ _G.pg.base.bullet_template[20301249] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -563735,7 +567343,7 @@ _G.pg.base.bullet_template[20301250] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -563801,7 +567409,7 @@ _G.pg.base.bullet_template[20301251] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -563867,7 +567475,7 @@ _G.pg.base.bullet_template[20301252] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -563933,7 +567541,7 @@ _G.pg.base.bullet_template[20301253] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -563999,7 +567607,7 @@ _G.pg.base.bullet_template[20301254] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -565047,7 +568655,7 @@ _G.pg.base.bullet_template[20303302] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -565599,7 +569207,7 @@ _G.pg.base.bullet_template[20303357] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 2500,
 		},
 	},
@@ -567540,7 +571148,7 @@ _G.pg.base.bullet_template[20320050] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 6000,
 		},
 	},
@@ -569786,7 +573394,7 @@ _G.pg.base.bullet_template[20321600] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -569864,7 +573472,7 @@ _G.pg.base.bullet_template[20321601] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -570865,7 +574473,7 @@ _G.pg.base.bullet_template[20322020] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -571830,7 +575438,7 @@ _G.pg.base.bullet_template[20400100] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 10000,
 		},
 	},
@@ -572147,7 +575755,7 @@ _G.pg.base.bullet_template[20400513] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 1500,
 		},
 	},
@@ -572401,7 +576009,7 @@ _G.pg.base.bullet_template[20400523] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 1500,
 		},
 	},
@@ -572718,7 +576326,7 @@ _G.pg.base.bullet_template[20400533] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 1500,
 		},
 	},
@@ -572972,7 +576580,7 @@ _G.pg.base.bullet_template[20400543] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 1500,
 		},
 	},
@@ -573469,7 +577077,7 @@ _G.pg.base.bullet_template[20400613] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 1800,
 		},
 	},
@@ -573744,7 +577352,7 @@ _G.pg.base.bullet_template[20400623] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 1800,
 		},
 	},
@@ -573803,7 +577411,7 @@ _G.pg.base.bullet_template[20400624] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 1500,
 		},
 	},
@@ -574120,7 +577728,7 @@ _G.pg.base.bullet_template[20400633] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 1800,
 		},
 	},
@@ -574395,7 +578003,7 @@ _G.pg.base.bullet_template[20400643] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 1800,
 		},
 	},
@@ -574454,7 +578062,7 @@ _G.pg.base.bullet_template[20400644] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 2,
+			group_level = 2,
 			rant = 1500,
 		},
 	},
@@ -579254,7 +582862,7 @@ _G.pg.base.bullet_template[20404100] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -579325,7 +582933,7 @@ _G.pg.base.bullet_template[20404101] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -579396,7 +583004,7 @@ _G.pg.base.bullet_template[20404102] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -579467,7 +583075,7 @@ _G.pg.base.bullet_template[20404103] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -579538,7 +583146,7 @@ _G.pg.base.bullet_template[20404104] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -579609,7 +583217,7 @@ _G.pg.base.bullet_template[20404105] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -579680,7 +583288,7 @@ _G.pg.base.bullet_template[20404106] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -579751,7 +583359,7 @@ _G.pg.base.bullet_template[20404107] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -579822,7 +583430,7 @@ _G.pg.base.bullet_template[20404108] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -579893,7 +583501,7 @@ _G.pg.base.bullet_template[20404109] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -579964,7 +583572,7 @@ _G.pg.base.bullet_template[20404110] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -580035,7 +583643,7 @@ _G.pg.base.bullet_template[20404111] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -580106,7 +583714,7 @@ _G.pg.base.bullet_template[20404112] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -580177,7 +583785,7 @@ _G.pg.base.bullet_template[20404113] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -580248,7 +583856,7 @@ _G.pg.base.bullet_template[20404114] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -580319,7 +583927,7 @@ _G.pg.base.bullet_template[20404115] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -580390,7 +583998,7 @@ _G.pg.base.bullet_template[20404116] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -580461,7 +584069,7 @@ _G.pg.base.bullet_template[20404117] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -580532,7 +584140,7 @@ _G.pg.base.bullet_template[20404118] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -580603,7 +584211,7 @@ _G.pg.base.bullet_template[20404119] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -580674,7 +584282,7 @@ _G.pg.base.bullet_template[20404120] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -580745,7 +584353,7 @@ _G.pg.base.bullet_template[20404121] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -580816,7 +584424,7 @@ _G.pg.base.bullet_template[20404122] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -580887,7 +584495,7 @@ _G.pg.base.bullet_template[20404123] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -580958,7 +584566,7 @@ _G.pg.base.bullet_template[20404124] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -581029,7 +584637,7 @@ _G.pg.base.bullet_template[20404125] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -581100,7 +584708,7 @@ _G.pg.base.bullet_template[20404126] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -581171,7 +584779,7 @@ _G.pg.base.bullet_template[20404127] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -581242,7 +584850,7 @@ _G.pg.base.bullet_template[20404128] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -581313,7 +584921,7 @@ _G.pg.base.bullet_template[20404129] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -581384,7 +584992,7 @@ _G.pg.base.bullet_template[20404130] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -581455,7 +585063,7 @@ _G.pg.base.bullet_template[20404131] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -581526,7 +585134,7 @@ _G.pg.base.bullet_template[20404132] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -581597,7 +585205,7 @@ _G.pg.base.bullet_template[20404133] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -581668,7 +585276,7 @@ _G.pg.base.bullet_template[20404134] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -581739,7 +585347,7 @@ _G.pg.base.bullet_template[20404135] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -581810,7 +585418,7 @@ _G.pg.base.bullet_template[20404136] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -581881,7 +585489,7 @@ _G.pg.base.bullet_template[20404137] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -581952,7 +585560,7 @@ _G.pg.base.bullet_template[20404138] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -582023,7 +585631,7 @@ _G.pg.base.bullet_template[20404139] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -582094,7 +585702,7 @@ _G.pg.base.bullet_template[20404140] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -582165,7 +585773,7 @@ _G.pg.base.bullet_template[20404141] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -582236,7 +585844,7 @@ _G.pg.base.bullet_template[20404142] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -582307,7 +585915,7 @@ _G.pg.base.bullet_template[20404143] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -582378,7 +585986,7 @@ _G.pg.base.bullet_template[20404144] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -582449,7 +586057,7 @@ _G.pg.base.bullet_template[20404145] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -582520,7 +586128,7 @@ _G.pg.base.bullet_template[20404146] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -582591,7 +586199,7 @@ _G.pg.base.bullet_template[20404147] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -582662,7 +586270,7 @@ _G.pg.base.bullet_template[20404148] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -582733,7 +586341,7 @@ _G.pg.base.bullet_template[20404149] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -582817,7 +586425,7 @@ _G.pg.base.bullet_template[20404200] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -582889,7 +586497,7 @@ _G.pg.base.bullet_template[20404201] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -582955,7 +586563,7 @@ _G.pg.base.bullet_template[20404202] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -583021,7 +586629,7 @@ _G.pg.base.bullet_template[20404203] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -583087,7 +586695,7 @@ _G.pg.base.bullet_template[20404204] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -583153,7 +586761,7 @@ _G.pg.base.bullet_template[20404205] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -583219,7 +586827,7 @@ _G.pg.base.bullet_template[20404206] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -583338,7 +586946,7 @@ _G.pg.base.bullet_template[20409100] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -584330,7 +587938,7 @@ _G.pg.base.bullet_template[20409210] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -584389,7 +587997,7 @@ _G.pg.base.bullet_template[20409211] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -584448,7 +588056,7 @@ _G.pg.base.bullet_template[20409212] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -584507,7 +588115,7 @@ _G.pg.base.bullet_template[20409213] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -584566,7 +588174,7 @@ _G.pg.base.bullet_template[20409214] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -584625,7 +588233,7 @@ _G.pg.base.bullet_template[20409215] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -584684,7 +588292,7 @@ _G.pg.base.bullet_template[20409216] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -584743,7 +588351,7 @@ _G.pg.base.bullet_template[20409217] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -584802,7 +588410,7 @@ _G.pg.base.bullet_template[20409218] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -584861,7 +588469,7 @@ _G.pg.base.bullet_template[20409219] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -584920,7 +588528,7 @@ _G.pg.base.bullet_template[20409220] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -584979,7 +588587,7 @@ _G.pg.base.bullet_template[20409221] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -585038,7 +588646,7 @@ _G.pg.base.bullet_template[20409222] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -585097,7 +588705,7 @@ _G.pg.base.bullet_template[20409223] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -585156,7 +588764,7 @@ _G.pg.base.bullet_template[20409224] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -585215,7 +588823,7 @@ _G.pg.base.bullet_template[20409225] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -585274,7 +588882,7 @@ _G.pg.base.bullet_template[20409226] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -585333,7 +588941,7 @@ _G.pg.base.bullet_template[20409227] = {
 	attach_buff = {
 		{
 			buff_id = 79040,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -586567,7 +590175,7 @@ _G.pg.base.bullet_template[20410200] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -587977,7 +591585,7 @@ _G.pg.base.bullet_template[20412000] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -588036,7 +591644,7 @@ _G.pg.base.bullet_template[20412001] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -588095,7 +591703,7 @@ _G.pg.base.bullet_template[20412002] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -588154,7 +591762,7 @@ _G.pg.base.bullet_template[20412003] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -588213,7 +591821,7 @@ _G.pg.base.bullet_template[20412010] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -588272,7 +591880,7 @@ _G.pg.base.bullet_template[20412011] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -588331,7 +591939,7 @@ _G.pg.base.bullet_template[20412012] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -588390,7 +591998,7 @@ _G.pg.base.bullet_template[20412013] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -602717,7 +606325,7 @@ _G.pg.base.bullet_template[20430010] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -602776,7 +606384,7 @@ _G.pg.base.bullet_template[20430011] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -602835,7 +606443,7 @@ _G.pg.base.bullet_template[20430020] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -602894,7 +606502,7 @@ _G.pg.base.bullet_template[20430021] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -602956,7 +606564,7 @@ _G.pg.base.bullet_template[20430100] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -603025,7 +606633,7 @@ _G.pg.base.bullet_template[20430101] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -603094,7 +606702,7 @@ _G.pg.base.bullet_template[20430102] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -603163,7 +606771,7 @@ _G.pg.base.bullet_template[20430103] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -603232,7 +606840,7 @@ _G.pg.base.bullet_template[20430104] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -603301,7 +606909,7 @@ _G.pg.base.bullet_template[20430105] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -603370,7 +606978,7 @@ _G.pg.base.bullet_template[20430106] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -603439,7 +607047,7 @@ _G.pg.base.bullet_template[20430107] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -603508,7 +607116,7 @@ _G.pg.base.bullet_template[20430108] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -603577,7 +607185,7 @@ _G.pg.base.bullet_template[20430109] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -603646,7 +607254,7 @@ _G.pg.base.bullet_template[20430110] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -603715,7 +607323,7 @@ _G.pg.base.bullet_template[20430111] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -603784,7 +607392,7 @@ _G.pg.base.bullet_template[20430120] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -603853,7 +607461,7 @@ _G.pg.base.bullet_template[20430121] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -603922,7 +607530,7 @@ _G.pg.base.bullet_template[20430122] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -603991,7 +607599,7 @@ _G.pg.base.bullet_template[20430123] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -604060,7 +607668,7 @@ _G.pg.base.bullet_template[20430124] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -604129,7 +607737,7 @@ _G.pg.base.bullet_template[20430125] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -604198,7 +607806,7 @@ _G.pg.base.bullet_template[20430126] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -604267,7 +607875,7 @@ _G.pg.base.bullet_template[20430127] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -604336,7 +607944,7 @@ _G.pg.base.bullet_template[20430128] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -604405,7 +608013,7 @@ _G.pg.base.bullet_template[20430129] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -604474,7 +608082,7 @@ _G.pg.base.bullet_template[20430130] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -604543,7 +608151,7 @@ _G.pg.base.bullet_template[20430131] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -604612,7 +608220,7 @@ _G.pg.base.bullet_template[20430140] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -604681,7 +608289,7 @@ _G.pg.base.bullet_template[20430141] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -604750,7 +608358,7 @@ _G.pg.base.bullet_template[20430142] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -604819,7 +608427,7 @@ _G.pg.base.bullet_template[20430143] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -604888,7 +608496,7 @@ _G.pg.base.bullet_template[20430144] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -604957,7 +608565,7 @@ _G.pg.base.bullet_template[20430145] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -605026,7 +608634,7 @@ _G.pg.base.bullet_template[20430146] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -605095,7 +608703,7 @@ _G.pg.base.bullet_template[20430147] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -605164,7 +608772,7 @@ _G.pg.base.bullet_template[20430148] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -605233,7 +608841,7 @@ _G.pg.base.bullet_template[20430149] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -605302,7 +608910,7 @@ _G.pg.base.bullet_template[20430150] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -605371,7 +608979,7 @@ _G.pg.base.bullet_template[20430151] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -605864,7 +609472,7 @@ _G.pg.base.bullet_template[20430500] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -605933,7 +609541,7 @@ _G.pg.base.bullet_template[20430501] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -606002,7 +609610,7 @@ _G.pg.base.bullet_template[20430502] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -606071,7 +609679,7 @@ _G.pg.base.bullet_template[20430503] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -606140,7 +609748,7 @@ _G.pg.base.bullet_template[20430504] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -606209,7 +609817,7 @@ _G.pg.base.bullet_template[20430505] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -606278,7 +609886,7 @@ _G.pg.base.bullet_template[20430506] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -607653,7 +611261,7 @@ _G.pg.base.bullet_template[20431110] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -607725,7 +611333,7 @@ _G.pg.base.bullet_template[20431111] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -607787,7 +611395,7 @@ _G.pg.base.bullet_template[20431600] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -607856,7 +611464,7 @@ _G.pg.base.bullet_template[20431601] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -608104,7 +611712,7 @@ _G.pg.base.bullet_template[20435100] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 1,
+			group_level = 1,
 			rant = 8000,
 		},
 	},
@@ -614884,7 +618492,7 @@ _G.pg.base.bullet_template[21300141] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -615082,7 +618690,7 @@ _G.pg.base.bullet_template[21300161] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -615267,7 +618875,7 @@ _G.pg.base.bullet_template[21300221] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -615339,7 +618947,7 @@ _G.pg.base.bullet_template[21300311] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -615463,7 +619071,7 @@ _G.pg.base.bullet_template[21300331] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -615548,7 +619156,7 @@ _G.pg.base.bullet_template[21300341] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -615628,7 +619236,7 @@ _G.pg.base.bullet_template[21300342] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -615915,7 +619523,7 @@ _G.pg.base.bullet_template[21400111] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -616011,7 +619619,7 @@ _G.pg.base.bullet_template[21400112] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -616130,7 +619738,7 @@ _G.pg.base.bullet_template[21400114] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -616208,7 +619816,7 @@ _G.pg.base.bullet_template[21400115] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -616286,7 +619894,7 @@ _G.pg.base.bullet_template[21400116] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -616345,7 +619953,7 @@ _G.pg.base.bullet_template[21400117] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -616409,7 +620017,7 @@ _G.pg.base.bullet_template[21400118] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -616493,7 +620101,7 @@ _G.pg.base.bullet_template[21400119] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -616632,7 +620240,7 @@ _G.pg.base.bullet_template[21400311] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -618545,7 +622153,7 @@ _G.pg.base.bullet_template[29500150] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -618611,7 +622219,7 @@ _G.pg.base.bullet_template[29500160] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -618677,7 +622285,7 @@ _G.pg.base.bullet_template[29500161] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -618743,7 +622351,7 @@ _G.pg.base.bullet_template[29500162] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -618809,7 +622417,7 @@ _G.pg.base.bullet_template[29500163] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -619066,7 +622674,7 @@ _G.pg.base.bullet_template[29500203] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 100,
 		},
 	},
@@ -623919,7 +627527,7 @@ _G.pg.base.bullet_template[29502400] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 3,
+			group_level = 3,
 			rant = 4000,
 		},
 	},
@@ -624498,7 +628106,7 @@ _G.pg.base.bullet_template[29610000] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -624564,7 +628172,7 @@ _G.pg.base.bullet_template[29610001] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -624724,7 +628332,7 @@ _G.pg.base.bullet_template[29610020] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -624790,7 +628398,7 @@ _G.pg.base.bullet_template[29610021] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -625382,7 +628990,7 @@ _G.pg.base.bullet_template[29621110] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -625460,7 +629068,7 @@ _G.pg.base.bullet_template[29621111] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -625767,7 +629375,7 @@ _G.pg.base.bullet_template[29621130] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -625833,7 +629441,7 @@ _G.pg.base.bullet_template[29621131] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -627405,7 +631013,7 @@ _G.pg.base.bullet_template[29641100] = {
 	attach_buff = {
 		{
 			buff_id = 310,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -634366,7 +637974,7 @@ _G.pg.base.bullet_template[29645041] = {
 	attach_buff = {
 		{
 			buff_id = 380,
-			level = 3,
+			group_level = 3,
 			rant = 10000,
 		},
 	},
@@ -634430,7 +638038,7 @@ _G.pg.base.bullet_template[29645042] = {
 	attach_buff = {
 		{
 			buff_id = 380,
-			level = 3,
+			group_level = 3,
 			rant = 10000,
 		},
 	},
@@ -639788,7 +643396,7 @@ _G.pg.base.bullet_template[29646026] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -641345,7 +644953,7 @@ _G.pg.base.bullet_template[29646049] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -641414,7 +645022,7 @@ _G.pg.base.bullet_template[29646050] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -641483,7 +645091,7 @@ _G.pg.base.bullet_template[29646051] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -641552,7 +645160,7 @@ _G.pg.base.bullet_template[29646052] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -641621,7 +645229,7 @@ _G.pg.base.bullet_template[29646053] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -641690,7 +645298,7 @@ _G.pg.base.bullet_template[29646054] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -641759,7 +645367,7 @@ _G.pg.base.bullet_template[29646055] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -641828,7 +645436,7 @@ _G.pg.base.bullet_template[29646056] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -641897,7 +645505,7 @@ _G.pg.base.bullet_template[29646057] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -641966,7 +645574,7 @@ _G.pg.base.bullet_template[29646058] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -642035,7 +645643,7 @@ _G.pg.base.bullet_template[29646059] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -642104,7 +645712,7 @@ _G.pg.base.bullet_template[29646060] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -642173,7 +645781,7 @@ _G.pg.base.bullet_template[29646061] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -642242,7 +645850,7 @@ _G.pg.base.bullet_template[29646062] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -642311,7 +645919,7 @@ _G.pg.base.bullet_template[29646063] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -642380,7 +645988,7 @@ _G.pg.base.bullet_template[29646064] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -642449,7 +646057,7 @@ _G.pg.base.bullet_template[29646065] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -642518,7 +646126,7 @@ _G.pg.base.bullet_template[29646066] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -642587,7 +646195,7 @@ _G.pg.base.bullet_template[29646067] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -642656,7 +646264,7 @@ _G.pg.base.bullet_template[29646068] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -642725,7 +646333,7 @@ _G.pg.base.bullet_template[29646069] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -642794,7 +646402,7 @@ _G.pg.base.bullet_template[29646070] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -642863,7 +646471,7 @@ _G.pg.base.bullet_template[29646071] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -642932,7 +646540,7 @@ _G.pg.base.bullet_template[29646072] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -645987,7 +649595,7 @@ _G.pg.base.bullet_template[29648041] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -646056,7 +649664,7 @@ _G.pg.base.bullet_template[29648042] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -647647,7 +651255,7 @@ _G.pg.base.bullet_template[29649003] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 2000,
 		},
 	},
@@ -647989,7 +651597,7 @@ _G.pg.base.bullet_template[29649008] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -648336,7 +651944,7 @@ _G.pg.base.bullet_template[29649013] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -648923,7 +652531,7 @@ _G.pg.base.bullet_template[29649021] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -649007,7 +652615,7 @@ _G.pg.base.bullet_template[29649022] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -649091,7 +652699,7 @@ _G.pg.base.bullet_template[29649023] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -649150,7 +652758,7 @@ _G.pg.base.bullet_template[29649024] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -649490,7 +653098,7 @@ _G.pg.base.bullet_template[29649029] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -650319,7 +653927,7 @@ _G.pg.base.bullet_template[29650001] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -650448,7 +654056,7 @@ _G.pg.base.bullet_template[29650003] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -651243,7 +654851,7 @@ _G.pg.base.bullet_template[29650016] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -651305,7 +654913,7 @@ _G.pg.base.bullet_template[29650017] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -654277,7 +657885,7 @@ _G.pg.base.bullet_template[29651018] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -654346,7 +657954,7 @@ _G.pg.base.bullet_template[29651019] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -654415,7 +658023,7 @@ _G.pg.base.bullet_template[29651020] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -654484,7 +658092,7 @@ _G.pg.base.bullet_template[29651021] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -659729,7 +663337,7 @@ _G.pg.base.bullet_template[29652029] = {
 	ammo_type = 1,
 	antisub_enhancement = 0,
 	effect_type = 1,
-	hit_fx = "jiguang_shouji",
+	hit_fx = "jiguang_shouji_yellow",
 	hit_sfx = "",
 	id = 29652029,
 	miss_fx = "None",
@@ -670617,7 +674225,7 @@ _G.pg.base.bullet_template[29656017] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -671190,7 +674798,7 @@ _G.pg.base.bullet_template[29656026] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -671259,7 +674867,7 @@ _G.pg.base.bullet_template[29656027] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -671328,7 +674936,7 @@ _G.pg.base.bullet_template[29656028] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -671397,7 +675005,7 @@ _G.pg.base.bullet_template[29656029] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -673335,7 +676943,7 @@ _G.pg.base.bullet_template[29656060] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -673404,7 +677012,7 @@ _G.pg.base.bullet_template[29656061] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -673599,7 +677207,7 @@ _G.pg.base.bullet_template[29656064] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -673668,7 +677276,7 @@ _G.pg.base.bullet_template[29656065] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -673863,7 +677471,7 @@ _G.pg.base.bullet_template[29656068] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -673932,7 +677540,7 @@ _G.pg.base.bullet_template[29656069] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -674127,7 +677735,7 @@ _G.pg.base.bullet_template[29656072] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -674196,7 +677804,7 @@ _G.pg.base.bullet_template[29656073] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -674391,7 +677999,7 @@ _G.pg.base.bullet_template[29656076] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -674460,7 +678068,7 @@ _G.pg.base.bullet_template[29656077] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -676784,7 +680392,7 @@ _G.pg.base.bullet_template[29657013] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -676870,7 +680478,7 @@ _G.pg.base.bullet_template[29657014] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -676956,7 +680564,7 @@ _G.pg.base.bullet_template[29657015] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -677377,7 +680985,7 @@ _G.pg.base.bullet_template[29657022] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -677449,7 +681057,7 @@ _G.pg.base.bullet_template[29657023] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -678123,7 +681731,7 @@ _G.pg.base.bullet_template[29657034] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -678584,7 +682192,7 @@ _G.pg.base.bullet_template[29657040] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 3000,
 		},
 	},
@@ -678988,7 +682596,7 @@ _G.pg.base.bullet_template[29657046] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -679088,7 +682696,7 @@ _G.pg.base.bullet_template[29657047] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -679512,7 +683120,7 @@ _G.pg.base.bullet_template[29658001] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -680085,7 +683693,7 @@ _G.pg.base.bullet_template[29658010] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -680154,7 +683762,7 @@ _G.pg.base.bullet_template[29658011] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -680223,7 +683831,7 @@ _G.pg.base.bullet_template[29658012] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -680292,7 +683900,7 @@ _G.pg.base.bullet_template[29658013] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -685956,7 +689564,7 @@ _G.pg.base.bullet_template[29659022] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -686200,7 +689808,7 @@ _G.pg.base.bullet_template[29659026] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -686268,7 +689876,7 @@ _G.pg.base.bullet_template[29659027] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 800,
 		},
 	},
@@ -691685,7 +695293,7 @@ _G.pg.base.bullet_template[3002103] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -696015,7 +699623,7 @@ _G.pg.base.bullet_template[3005009] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 2000,
 		},
 	},
@@ -697269,7 +700877,7 @@ _G.pg.base.bullet_template[3009001] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -704932,7 +708540,7 @@ _G.pg.base.bullet_template[3021143] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -707091,7 +710699,7 @@ _G.pg.base.bullet_template[3022331] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 6000,
 		},
 	},
@@ -707160,7 +710768,7 @@ _G.pg.base.bullet_template[3022332] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 6000,
 		},
 	},
@@ -707229,7 +710837,7 @@ _G.pg.base.bullet_template[3022333] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 6000,
 		},
 	},
@@ -728950,7 +732558,7 @@ _G.pg.base.bullet_template[3039027] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -729824,7 +733432,7 @@ _G.pg.base.bullet_template[3039043] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -729896,7 +733504,7 @@ _G.pg.base.bullet_template[3039044] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -735015,7 +738623,7 @@ _G.pg.base.bullet_template[3041132] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -735082,7 +738690,7 @@ _G.pg.base.bullet_template[3041133] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -735152,7 +738760,7 @@ _G.pg.base.bullet_template[3041134] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -741115,7 +744723,7 @@ _G.pg.base.bullet_template[3049020] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -742037,7 +745645,7 @@ _G.pg.base.bullet_template[3049101] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 800,
 		},
 	},
@@ -742215,7 +745823,7 @@ _G.pg.base.bullet_template[3049104] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -752235,7 +755843,7 @@ _G.pg.base.bullet_template[3053030] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -752304,7 +755912,7 @@ _G.pg.base.bullet_template[3053031] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -752373,7 +755981,7 @@ _G.pg.base.bullet_template[3053032] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -752442,7 +756050,7 @@ _G.pg.base.bullet_template[3053033] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -752511,7 +756119,7 @@ _G.pg.base.bullet_template[3053034] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -752580,7 +756188,7 @@ _G.pg.base.bullet_template[3053035] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -754645,7 +758253,7 @@ _G.pg.base.bullet_template[3056001] = {
 	attach_buff = {
 		{
 			buff_id = 329,
-			level = 1,
+			group_level = 1,
 			rant = 7000,
 		},
 	},
@@ -754717,7 +758325,7 @@ _G.pg.base.bullet_template[3056002] = {
 	attach_buff = {
 		{
 			buff_id = 329,
-			level = 1,
+			group_level = 1,
 			rant = 7000,
 		},
 	},
@@ -754789,7 +758397,7 @@ _G.pg.base.bullet_template[3056003] = {
 	attach_buff = {
 		{
 			buff_id = 329,
-			level = 1,
+			group_level = 1,
 			rant = 7000,
 		},
 	},
@@ -754851,7 +758459,7 @@ _G.pg.base.bullet_template[3056004] = {
 	attach_buff = {
 		{
 			buff_id = 329,
-			level = 1,
+			group_level = 1,
 			rant = 7000,
 		},
 	},
@@ -754920,7 +758528,7 @@ _G.pg.base.bullet_template[3056005] = {
 	attach_buff = {
 		{
 			buff_id = 329,
-			level = 1,
+			group_level = 1,
 			rant = 7000,
 		},
 	},
@@ -762022,7 +765630,7 @@ _G.pg.base.bullet_template[3059338] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -763274,7 +766882,7 @@ _G.pg.base.bullet_template[3059419] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -763711,7 +767319,7 @@ _G.pg.base.bullet_template[3059507] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -764853,7 +768461,7 @@ _G.pg.base.bullet_template[3059620] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -766427,7 +770035,7 @@ _G.pg.base.bullet_template[3060301] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -766496,7 +770104,7 @@ _G.pg.base.bullet_template[3060302] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -766565,7 +770173,7 @@ _G.pg.base.bullet_template[3060303] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -766634,7 +770242,7 @@ _G.pg.base.bullet_template[3060304] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -766703,7 +770311,7 @@ _G.pg.base.bullet_template[3060305] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -766772,7 +770380,7 @@ _G.pg.base.bullet_template[3060306] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -766841,7 +770449,7 @@ _G.pg.base.bullet_template[3060307] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -766910,7 +770518,7 @@ _G.pg.base.bullet_template[3060308] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -770349,7 +773957,7 @@ _G.pg.base.bullet_template[3061401] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -770408,7 +774016,7 @@ _G.pg.base.bullet_template[3061402] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -770467,7 +774075,7 @@ _G.pg.base.bullet_template[3061403] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -770526,7 +774134,7 @@ _G.pg.base.bullet_template[3061404] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -770585,7 +774193,7 @@ _G.pg.base.bullet_template[3061405] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -770644,7 +774252,7 @@ _G.pg.base.bullet_template[3061406] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -770703,7 +774311,7 @@ _G.pg.base.bullet_template[3061407] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -770762,7 +774370,7 @@ _G.pg.base.bullet_template[3061408] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -770874,7 +774482,7 @@ _G.pg.base.bullet_template[3061410] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 200,
 		},
 	},
@@ -770936,7 +774544,7 @@ _G.pg.base.bullet_template[3061411] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -771005,7 +774613,7 @@ _G.pg.base.bullet_template[3061412] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -771074,7 +774682,7 @@ _G.pg.base.bullet_template[3061413] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -771143,7 +774751,7 @@ _G.pg.base.bullet_template[3061414] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -771212,7 +774820,7 @@ _G.pg.base.bullet_template[3061415] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -771281,7 +774889,7 @@ _G.pg.base.bullet_template[3061416] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -771350,7 +774958,7 @@ _G.pg.base.bullet_template[3061417] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -771419,7 +775027,7 @@ _G.pg.base.bullet_template[3061418] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -772476,7 +776084,7 @@ _G.pg.base.bullet_template[3061434] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -772535,7 +776143,7 @@ _G.pg.base.bullet_template[3061435] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -772597,7 +776205,7 @@ _G.pg.base.bullet_template[3061436] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -772666,7 +776274,7 @@ _G.pg.base.bullet_template[3061437] = {
 	attach_buff = {
 		{
 			buff_id = 79020,
-			level = 3,
+			group_level = 3,
 			rant = 2800,
 		},
 	},
@@ -779794,7 +783402,7 @@ _G.pg.base.bullet_template[3070013] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 2000,
 		},
 	},
@@ -780523,7 +784131,7 @@ _G.pg.base.bullet_template[3070205] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -780592,7 +784200,7 @@ _G.pg.base.bullet_template[3070206] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -780661,7 +784269,7 @@ _G.pg.base.bullet_template[3070207] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -780730,7 +784338,7 @@ _G.pg.base.bullet_template[3070208] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -780799,7 +784407,7 @@ _G.pg.base.bullet_template[3070209] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -780868,7 +784476,7 @@ _G.pg.base.bullet_template[3070210] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -780937,7 +784545,7 @@ _G.pg.base.bullet_template[3070211] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -781006,7 +784614,7 @@ _G.pg.base.bullet_template[3070212] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -781453,7 +785061,7 @@ _G.pg.base.bullet_template[3070219] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -781522,7 +785130,7 @@ _G.pg.base.bullet_template[3070220] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -781591,7 +785199,7 @@ _G.pg.base.bullet_template[3070221] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -781660,7 +785268,7 @@ _G.pg.base.bullet_template[3070222] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -781729,7 +785337,7 @@ _G.pg.base.bullet_template[3070223] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -797451,7 +801059,7 @@ _G.pg.base.bullet_template[3081001] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -797521,7 +801129,7 @@ _G.pg.base.bullet_template[3081002] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -798899,7 +802507,7 @@ _G.pg.base.bullet_template[3081023] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -798968,7 +802576,7 @@ _G.pg.base.bullet_template[3081024] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -799037,7 +802645,7 @@ _G.pg.base.bullet_template[3081025] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -799106,7 +802714,7 @@ _G.pg.base.bullet_template[3081026] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -799553,7 +803161,7 @@ _G.pg.base.bullet_template[3081033] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -799622,7 +803230,7 @@ _G.pg.base.bullet_template[3081034] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -799691,7 +803299,7 @@ _G.pg.base.bullet_template[3081035] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -799760,7 +803368,7 @@ _G.pg.base.bullet_template[3081036] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -799829,7 +803437,7 @@ _G.pg.base.bullet_template[3081037] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -799898,7 +803506,7 @@ _G.pg.base.bullet_template[3081038] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -799967,7 +803575,7 @@ _G.pg.base.bullet_template[3081039] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -800036,7 +803644,7 @@ _G.pg.base.bullet_template[3081040] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -800105,7 +803713,7 @@ _G.pg.base.bullet_template[3081041] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -800174,7 +803782,7 @@ _G.pg.base.bullet_template[3081042] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -800243,7 +803851,7 @@ _G.pg.base.bullet_template[3081043] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -800312,7 +803920,7 @@ _G.pg.base.bullet_template[3081044] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -800381,7 +803989,7 @@ _G.pg.base.bullet_template[3081045] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -800450,7 +804058,7 @@ _G.pg.base.bullet_template[3081046] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -800519,7 +804127,7 @@ _G.pg.base.bullet_template[3081047] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -800588,7 +804196,7 @@ _G.pg.base.bullet_template[3081048] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -800657,7 +804265,7 @@ _G.pg.base.bullet_template[3081049] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -800726,7 +804334,7 @@ _G.pg.base.bullet_template[3081050] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -800795,7 +804403,7 @@ _G.pg.base.bullet_template[3081051] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -800864,7 +804472,7 @@ _G.pg.base.bullet_template[3081052] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -800933,7 +804541,7 @@ _G.pg.base.bullet_template[3081053] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -801002,7 +804610,7 @@ _G.pg.base.bullet_template[3081054] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -801071,7 +804679,7 @@ _G.pg.base.bullet_template[3081055] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -801140,7 +804748,7 @@ _G.pg.base.bullet_template[3081056] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -801209,7 +804817,7 @@ _G.pg.base.bullet_template[3081057] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -801278,7 +804886,7 @@ _G.pg.base.bullet_template[3081058] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -801347,7 +804955,7 @@ _G.pg.base.bullet_template[3081059] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -801416,7 +805024,7 @@ _G.pg.base.bullet_template[3081060] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -801485,7 +805093,7 @@ _G.pg.base.bullet_template[3081061] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -801554,7 +805162,7 @@ _G.pg.base.bullet_template[3081062] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -801623,7 +805231,7 @@ _G.pg.base.bullet_template[3081063] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -801692,7 +805300,7 @@ _G.pg.base.bullet_template[3081064] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -801761,7 +805369,7 @@ _G.pg.base.bullet_template[3081065] = {
 	attach_buff = {
 		{
 			buff_id = 323,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -801830,7 +805438,7 @@ _G.pg.base.bullet_template[3081066] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -801899,7 +805507,7 @@ _G.pg.base.bullet_template[3081067] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -809542,7 +813150,7 @@ _G.pg.base.bullet_template[3086007] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -811872,7 +815480,7 @@ _G.pg.base.bullet_template[3086045] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -817478,7 +821086,7 @@ _G.pg.base.bullet_template[3105005] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -817864,7 +821472,7 @@ _G.pg.base.bullet_template[3105011] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -817933,7 +821541,7 @@ _G.pg.base.bullet_template[3105012] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -818002,7 +821610,7 @@ _G.pg.base.bullet_template[3105013] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -818071,7 +821679,7 @@ _G.pg.base.bullet_template[3105014] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -818140,7 +821748,7 @@ _G.pg.base.bullet_template[3105015] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -818209,7 +821817,7 @@ _G.pg.base.bullet_template[3105016] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -818278,7 +821886,7 @@ _G.pg.base.bullet_template[3105017] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -818347,7 +821955,7 @@ _G.pg.base.bullet_template[3105018] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -818416,7 +822024,7 @@ _G.pg.base.bullet_template[3105019] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -818485,7 +822093,7 @@ _G.pg.base.bullet_template[3105020] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -818554,7 +822162,7 @@ _G.pg.base.bullet_template[3105021] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -818623,7 +822231,7 @@ _G.pg.base.bullet_template[3105022] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -818692,7 +822300,7 @@ _G.pg.base.bullet_template[3105023] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -818761,7 +822369,7 @@ _G.pg.base.bullet_template[3105024] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -818830,7 +822438,7 @@ _G.pg.base.bullet_template[3105025] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -818899,7 +822507,7 @@ _G.pg.base.bullet_template[3105026] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -818968,7 +822576,7 @@ _G.pg.base.bullet_template[3105027] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -819037,7 +822645,7 @@ _G.pg.base.bullet_template[3105028] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -819106,7 +822714,7 @@ _G.pg.base.bullet_template[3105029] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -819175,7 +822783,7 @@ _G.pg.base.bullet_template[3105030] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -819244,7 +822852,7 @@ _G.pg.base.bullet_template[3105031] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -819313,7 +822921,7 @@ _G.pg.base.bullet_template[3105032] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -819382,7 +822990,7 @@ _G.pg.base.bullet_template[3105033] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -819451,7 +823059,7 @@ _G.pg.base.bullet_template[3105034] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -819520,7 +823128,7 @@ _G.pg.base.bullet_template[3105035] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -819589,7 +823197,7 @@ _G.pg.base.bullet_template[3105036] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -819658,7 +823266,7 @@ _G.pg.base.bullet_template[3105037] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -819727,7 +823335,7 @@ _G.pg.base.bullet_template[3105038] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -819796,7 +823404,7 @@ _G.pg.base.bullet_template[3105039] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -830406,8 +834014,8 @@ _G.pg.base.bullet_template[3109015] = {
 	attach_buff = {
 		{
 			buff_id = 200650,
+			group_level = 1,
 			hit_ignore = true,
-			level = 1,
 			rant = 10000,
 		},
 	},
@@ -832731,7 +836339,7 @@ _G.pg.base.bullet_template[3115014] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -832800,7 +836408,7 @@ _G.pg.base.bullet_template[3115015] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -832869,7 +836477,7 @@ _G.pg.base.bullet_template[3115016] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -832938,7 +836546,7 @@ _G.pg.base.bullet_template[3115017] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -833007,7 +836615,7 @@ _G.pg.base.bullet_template[3115018] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -833391,7 +836999,7 @@ _G.pg.base.bullet_template[3115024] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -833460,7 +837068,7 @@ _G.pg.base.bullet_template[3115025] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -833529,7 +837137,7 @@ _G.pg.base.bullet_template[3115026] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -833598,7 +837206,7 @@ _G.pg.base.bullet_template[3115027] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -833667,7 +837275,7 @@ _G.pg.base.bullet_template[3115028] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -834051,7 +837659,7 @@ _G.pg.base.bullet_template[3115034] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -837875,7 +841483,7 @@ _G.pg.base.bullet_template[3119042] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -842214,7 +845822,7 @@ _G.pg.base.bullet_template[3119420] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -842283,7 +845891,7 @@ _G.pg.base.bullet_template[3119421] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -842352,7 +845960,7 @@ _G.pg.base.bullet_template[3119422] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -842421,7 +846029,7 @@ _G.pg.base.bullet_template[3119423] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -842490,7 +846098,7 @@ _G.pg.base.bullet_template[3119424] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -842559,7 +846167,7 @@ _G.pg.base.bullet_template[3119425] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -842628,7 +846236,7 @@ _G.pg.base.bullet_template[3119426] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -842697,7 +846305,7 @@ _G.pg.base.bullet_template[3119427] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -844264,7 +847872,7 @@ _G.pg.base.bullet_template[3119452] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -844333,7 +847941,7 @@ _G.pg.base.bullet_template[3119453] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -844402,7 +848010,7 @@ _G.pg.base.bullet_template[3119454] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -844471,7 +848079,7 @@ _G.pg.base.bullet_template[3119455] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -844540,7 +848148,7 @@ _G.pg.base.bullet_template[3119456] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -844924,7 +848532,7 @@ _G.pg.base.bullet_template[3119462] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -844993,7 +848601,7 @@ _G.pg.base.bullet_template[3119463] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -845062,7 +848670,7 @@ _G.pg.base.bullet_template[3119464] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -845131,7 +848739,7 @@ _G.pg.base.bullet_template[3119465] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -845200,7 +848808,7 @@ _G.pg.base.bullet_template[3119466] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -845584,7 +849192,7 @@ _G.pg.base.bullet_template[3119472] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -845653,7 +849261,7 @@ _G.pg.base.bullet_template[3119473] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -845722,7 +849330,7 @@ _G.pg.base.bullet_template[3119474] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -845791,7 +849399,7 @@ _G.pg.base.bullet_template[3119475] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -845860,7 +849468,7 @@ _G.pg.base.bullet_template[3119476] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -845929,7 +849537,7 @@ _G.pg.base.bullet_template[3119477] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -846550,7 +850158,7 @@ _G.pg.base.bullet_template[3119487] = {
 	attach_buff = {
 		{
 			buff_id = 300,
-			level = 2,
+			group_level = 2,
 			rant = 3000,
 		},
 	},
@@ -862870,7 +866478,7 @@ _G.pg.base.bullet_template[3139305] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 3000,
 		},
 	},
@@ -865226,7 +868834,7 @@ _G.pg.base.bullet_template[3139501] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -865297,7 +868905,7 @@ _G.pg.base.bullet_template[3139502] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -865368,7 +868976,7 @@ _G.pg.base.bullet_template[3139503] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -865439,7 +869047,7 @@ _G.pg.base.bullet_template[3139504] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -865510,7 +869118,7 @@ _G.pg.base.bullet_template[3139505] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -865581,7 +869189,7 @@ _G.pg.base.bullet_template[3139506] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -865652,7 +869260,7 @@ _G.pg.base.bullet_template[3139507] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -865723,7 +869331,7 @@ _G.pg.base.bullet_template[3139508] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -865794,7 +869402,7 @@ _G.pg.base.bullet_template[3139509] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -865865,7 +869473,7 @@ _G.pg.base.bullet_template[3139510] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -865936,7 +869544,7 @@ _G.pg.base.bullet_template[3139511] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -866007,7 +869615,7 @@ _G.pg.base.bullet_template[3139512] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -866078,7 +869686,7 @@ _G.pg.base.bullet_template[3139513] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -866149,7 +869757,7 @@ _G.pg.base.bullet_template[3139514] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -866220,7 +869828,7 @@ _G.pg.base.bullet_template[3139515] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -866291,7 +869899,7 @@ _G.pg.base.bullet_template[3139516] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -866362,7 +869970,7 @@ _G.pg.base.bullet_template[3139517] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -866433,7 +870041,7 @@ _G.pg.base.bullet_template[3139518] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -866504,7 +870112,7 @@ _G.pg.base.bullet_template[3139519] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -866575,7 +870183,7 @@ _G.pg.base.bullet_template[3139520] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -866646,7 +870254,7 @@ _G.pg.base.bullet_template[3139521] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -866717,7 +870325,7 @@ _G.pg.base.bullet_template[3139522] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -866788,7 +870396,7 @@ _G.pg.base.bullet_template[3139523] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -866859,7 +870467,7 @@ _G.pg.base.bullet_template[3139524] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -866930,7 +870538,7 @@ _G.pg.base.bullet_template[3139525] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 10000,
 		},
 	},
@@ -867134,7 +870742,7 @@ _G.pg.base.bullet_template[3139528] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 10000,
 		},
 	},
@@ -867500,7 +871108,7 @@ _G.pg.base.bullet_template[3139534] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -867571,7 +871179,7 @@ _G.pg.base.bullet_template[3139535] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -867642,7 +871250,7 @@ _G.pg.base.bullet_template[3139536] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -867713,7 +871321,7 @@ _G.pg.base.bullet_template[3139537] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -867784,7 +871392,7 @@ _G.pg.base.bullet_template[3139538] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -867855,7 +871463,7 @@ _G.pg.base.bullet_template[3139539] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -867926,7 +871534,7 @@ _G.pg.base.bullet_template[3139540] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -867997,7 +871605,7 @@ _G.pg.base.bullet_template[3139541] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -868068,7 +871676,7 @@ _G.pg.base.bullet_template[3139542] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -868139,7 +871747,7 @@ _G.pg.base.bullet_template[3139543] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -868210,7 +871818,7 @@ _G.pg.base.bullet_template[3139544] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -868281,7 +871889,7 @@ _G.pg.base.bullet_template[3139545] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -868352,7 +871960,7 @@ _G.pg.base.bullet_template[3139546] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -868423,7 +872031,7 @@ _G.pg.base.bullet_template[3139547] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -868786,7 +872394,7 @@ _G.pg.base.bullet_template[3139553] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -868856,7 +872464,7 @@ _G.pg.base.bullet_template[3139554] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -869466,7 +873074,7 @@ _G.pg.base.bullet_template[3139563] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -869891,7 +873499,7 @@ _G.pg.base.bullet_template[3139707] = {
 	attach_buff = {
 		{
 			buff_id = 200834,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -870208,7 +873816,7 @@ _G.pg.base.bullet_template[3139712] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -870320,7 +873928,7 @@ _G.pg.base.bullet_template[3139714] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -892690,7 +896298,7 @@ _G.pg.base.bullet_template[3151221] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -892759,7 +896367,7 @@ _G.pg.base.bullet_template[3151222] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -892828,7 +896436,7 @@ _G.pg.base.bullet_template[3151223] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -892897,7 +896505,7 @@ _G.pg.base.bullet_template[3151224] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -892966,7 +896574,7 @@ _G.pg.base.bullet_template[3151225] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -893035,7 +896643,7 @@ _G.pg.base.bullet_template[3151226] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -894741,7 +898349,7 @@ _G.pg.base.bullet_template[3151253] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -894810,7 +898418,7 @@ _G.pg.base.bullet_template[3151254] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -894879,7 +898487,7 @@ _G.pg.base.bullet_template[3151255] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -894948,7 +898556,7 @@ _G.pg.base.bullet_template[3151256] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -895017,7 +898625,7 @@ _G.pg.base.bullet_template[3151257] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -895086,7 +898694,7 @@ _G.pg.base.bullet_template[3151258] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -900353,7 +903961,7 @@ _G.pg.base.bullet_template[3155026] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 2000,
 		},
 	},
@@ -906223,7 +909831,7 @@ _G.pg.base.bullet_template[3162009] = {
 	attach_buff = {
 		{
 			buff_id = 200959,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -906292,7 +909900,7 @@ _G.pg.base.bullet_template[3162010] = {
 	attach_buff = {
 		{
 			buff_id = 200959,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -906361,7 +909969,7 @@ _G.pg.base.bullet_template[3162011] = {
 	attach_buff = {
 		{
 			buff_id = 200959,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -906430,7 +910038,7 @@ _G.pg.base.bullet_template[3162012] = {
 	attach_buff = {
 		{
 			buff_id = 200959,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -906499,7 +910107,7 @@ _G.pg.base.bullet_template[3162013] = {
 	attach_buff = {
 		{
 			buff_id = 200959,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -906568,7 +910176,7 @@ _G.pg.base.bullet_template[3162014] = {
 	attach_buff = {
 		{
 			buff_id = 200959,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -906637,7 +910245,7 @@ _G.pg.base.bullet_template[3162015] = {
 	attach_buff = {
 		{
 			buff_id = 200959,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -908909,7 +912517,7 @@ _G.pg.base.bullet_template[3164017] = {
 	attach_buff = {
 		{
 			buff_id = 200959,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -908978,7 +912586,7 @@ _G.pg.base.bullet_template[3164018] = {
 	attach_buff = {
 		{
 			buff_id = 200959,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -909047,7 +912655,7 @@ _G.pg.base.bullet_template[3164019] = {
 	attach_buff = {
 		{
 			buff_id = 200959,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -909116,7 +912724,7 @@ _G.pg.base.bullet_template[3164020] = {
 	attach_buff = {
 		{
 			buff_id = 200959,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -910324,7 +913932,7 @@ _G.pg.base.bullet_template[3165001] = {
 	attach_buff = {
 		{
 			buff_id = 471,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -914592,7 +918200,7 @@ _G.pg.base.bullet_template[3173008] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -921672,7 +925280,7 @@ _G.pg.base.bullet_template[3180105] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -921741,7 +925349,7 @@ _G.pg.base.bullet_template[3180106] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -922753,7 +926361,7 @@ _G.pg.base.bullet_template[3180216] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -922965,7 +926573,7 @@ _G.pg.base.bullet_template[3181202] = {
 	attach_buff = {
 		{
 			buff_id = 201001,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -923034,7 +926642,7 @@ _G.pg.base.bullet_template[3181203] = {
 	attach_buff = {
 		{
 			buff_id = 201001,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -923103,7 +926711,7 @@ _G.pg.base.bullet_template[3181204] = {
 	attach_buff = {
 		{
 			buff_id = 201001,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -923172,7 +926780,7 @@ _G.pg.base.bullet_template[3181205] = {
 	attach_buff = {
 		{
 			buff_id = 201001,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -923241,7 +926849,7 @@ _G.pg.base.bullet_template[3181206] = {
 	attach_buff = {
 		{
 			buff_id = 201001,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -923310,7 +926918,7 @@ _G.pg.base.bullet_template[3181207] = {
 	attach_buff = {
 		{
 			buff_id = 201001,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -923379,7 +926987,7 @@ _G.pg.base.bullet_template[3181208] = {
 	attach_buff = {
 		{
 			buff_id = 201001,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -923448,7 +927056,7 @@ _G.pg.base.bullet_template[3181209] = {
 	attach_buff = {
 		{
 			buff_id = 201001,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -928822,8 +932430,8 @@ _G.pg.base.bullet_template[3185002] = {
 	attach_buff = {
 		{
 			buff_id = 201014,
+			group_level = 1,
 			hit_ignore = true,
-			level = 1,
 			rant = 10000,
 		},
 	},
@@ -930777,7 +934385,7 @@ _G.pg.base.bullet_template[3185033] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -931631,7 +935239,7 @@ _G.pg.base.bullet_template[3185047] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -931946,8 +935554,8 @@ _G.pg.base.bullet_template[3187004] = {
 	attach_buff = {
 		{
 			buff_id = 200994,
+			group_level = 1,
 			hit_ignore = true,
-			level = 1,
 			rant = 10000,
 		},
 	},
@@ -932016,8 +935624,8 @@ _G.pg.base.bullet_template[3187005] = {
 	attach_buff = {
 		{
 			buff_id = 201019,
+			group_level = 1,
 			hit_ignore = true,
-			level = 1,
 			rant = 10000,
 		},
 	},
@@ -932374,7 +935982,7 @@ _G.pg.base.bullet_template[3191001] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -932446,7 +936054,7 @@ _G.pg.base.bullet_template[3191002] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -932518,7 +936126,7 @@ _G.pg.base.bullet_template[3191003] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -932590,7 +936198,7 @@ _G.pg.base.bullet_template[3191004] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -932887,7 +936495,7 @@ _G.pg.base.bullet_template[3193001] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -933797,7 +937405,7 @@ _G.pg.base.bullet_template[3195001] = {
 	attach_buff = {
 		{
 			buff_id = 201020,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -935027,7 +938635,7 @@ _G.pg.base.bullet_template[3201010] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -937231,7 +940839,7 @@ _G.pg.base.bullet_template[3201110] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -938456,7 +942064,7 @@ _G.pg.base.bullet_template[3201128] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -940216,7 +943824,7 @@ _G.pg.base.bullet_template[3201230] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -940348,7 +943956,7 @@ _G.pg.base.bullet_template[3201232] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -940828,7 +944436,7 @@ _G.pg.base.bullet_template[3201240] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -941387,7 +944995,7 @@ _G.pg.base.bullet_template[3204009] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -941519,7 +945127,7 @@ _G.pg.base.bullet_template[3204011] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -941588,7 +945196,7 @@ _G.pg.base.bullet_template[3204012] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -941657,7 +945265,7 @@ _G.pg.base.bullet_template[3204013] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -941726,7 +945334,7 @@ _G.pg.base.bullet_template[3204014] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -941795,7 +945403,7 @@ _G.pg.base.bullet_template[3204015] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -941864,7 +945472,7 @@ _G.pg.base.bullet_template[3204016] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -944729,7 +948337,7 @@ _G.pg.base.bullet_template[3205029] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -949553,7 +953161,7 @@ _G.pg.base.bullet_template[3205129] = {
 	attach_buff = {
 		{
 			buff_id = 79021,
-			level = 3,
+			group_level = 3,
 			rant = 8000,
 		},
 	},
@@ -953752,7 +957360,7 @@ _G.pg.base.bullet_template[3207501] = {
 	attach_buff = {
 		{
 			buff_id = 201101,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -953824,7 +957432,7 @@ _G.pg.base.bullet_template[3207502] = {
 	attach_buff = {
 		{
 			buff_id = 201101,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -953896,7 +957504,7 @@ _G.pg.base.bullet_template[3207503] = {
 	attach_buff = {
 		{
 			buff_id = 201101,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -953968,7 +957576,7 @@ _G.pg.base.bullet_template[3207504] = {
 	attach_buff = {
 		{
 			buff_id = 201101,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -954040,7 +957648,7 @@ _G.pg.base.bullet_template[3207505] = {
 	attach_buff = {
 		{
 			buff_id = 201101,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -954112,7 +957720,7 @@ _G.pg.base.bullet_template[3207506] = {
 	attach_buff = {
 		{
 			buff_id = 201101,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -955472,7 +959080,7 @@ _G.pg.base.bullet_template[3214001] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -957884,7 +961492,7 @@ _G.pg.base.bullet_template[3216001] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -970222,7 +973830,7 @@ _G.pg.base.bullet_template[3218507] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -970292,7 +973900,7 @@ _G.pg.base.bullet_template[3218508] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -970364,7 +973972,7 @@ _G.pg.base.bullet_template[3218509] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -970436,7 +974044,7 @@ _G.pg.base.bullet_template[3218510] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -970508,7 +974116,7 @@ _G.pg.base.bullet_template[3218511] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -970580,7 +974188,7 @@ _G.pg.base.bullet_template[3218512] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -970652,7 +974260,7 @@ _G.pg.base.bullet_template[3218513] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -970724,7 +974332,7 @@ _G.pg.base.bullet_template[3218514] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -970796,7 +974404,7 @@ _G.pg.base.bullet_template[3218515] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -971402,7 +975010,7 @@ _G.pg.base.bullet_template[3220010] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -972412,7 +976020,7 @@ _G.pg.base.bullet_template[3220028] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 1000,
 		},
 	},
@@ -978046,7 +981654,7 @@ _G.pg.base.bullet_template[3224018] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 2000,
 		},
 	},
@@ -978495,7 +982103,7 @@ _G.pg.base.bullet_template[3224025] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -978564,7 +982172,7 @@ _G.pg.base.bullet_template[3224026] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -978633,7 +982241,7 @@ _G.pg.base.bullet_template[3224027] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -978702,7 +982310,7 @@ _G.pg.base.bullet_template[3224028] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -978771,7 +982379,7 @@ _G.pg.base.bullet_template[3224029] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 5000,
 		},
 	},
@@ -982998,7 +986606,7 @@ _G.pg.base.bullet_template[3226024] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 2000,
 		},
 	},
@@ -985224,7 +988832,7 @@ _G.pg.base.bullet_template[3227205] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -985346,7 +988954,7 @@ _G.pg.base.bullet_template[3227207] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 4,
+			group_level = 4,
 			rant = 5000,
 		},
 	},
@@ -985413,7 +989021,7 @@ _G.pg.base.bullet_template[3227208] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -985475,7 +989083,7 @@ _G.pg.base.bullet_template[3227209] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -985542,7 +989150,7 @@ _G.pg.base.bullet_template[3227210] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 300,
 		},
 	},
@@ -986483,7 +990091,7 @@ _G.pg.base.bullet_template[3228017] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1000339,7 +1003947,7 @@ _G.pg.base.bullet_template[3239103] = {
 	attach_buff = {
 		{
 			buff_id = 401,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -1001102,7 +1004710,7 @@ _G.pg.base.bullet_template[3239013] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 2000,
 		},
 	},
@@ -1006598,7 +1010206,7 @@ _G.pg.base.bullet_template[3240104] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -1006676,7 +1010284,7 @@ _G.pg.base.bullet_template[3240105] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 2,
+			group_level = 2,
 			rant = 1000,
 		},
 	},
@@ -1009169,7 +1012777,7 @@ _G.pg.base.bullet_template[3241107] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1009609,7 +1013217,7 @@ _G.pg.base.bullet_template[3243201] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1009930,7 +1013538,7 @@ _G.pg.base.bullet_template[3243206] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1009999,7 +1013607,7 @@ _G.pg.base.bullet_template[3243207] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1010068,7 +1013676,7 @@ _G.pg.base.bullet_template[3243208] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1010137,7 +1013745,7 @@ _G.pg.base.bullet_template[3243209] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1010458,7 +1014066,7 @@ _G.pg.base.bullet_template[3243214] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1010527,7 +1014135,7 @@ _G.pg.base.bullet_template[3243215] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1010596,7 +1014204,7 @@ _G.pg.base.bullet_template[3243216] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1010665,7 +1014273,7 @@ _G.pg.base.bullet_template[3243217] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1010734,7 +1014342,7 @@ _G.pg.base.bullet_template[3243218] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1010803,7 +1014411,7 @@ _G.pg.base.bullet_template[3243219] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1015832,7 +1019440,7 @@ _G.pg.base.bullet_template[3245008] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1018109,7 +1021717,7 @@ _G.pg.base.bullet_template[3245208] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1021821,7 +1025429,7 @@ _G.pg.base.bullet_template[3246058] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1023570,7 +1027178,7 @@ _G.pg.base.bullet_template[3207008] = {
 	attach_buff = {
 		{
 			buff_id = 400,
-			level = 1,
+			group_level = 1,
 			rant = 2000,
 		},
 	},
@@ -1023637,7 +1027245,7 @@ _G.pg.base.bullet_template[3207009] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 1000,
 		},
 	},
@@ -1026611,7 +1030219,7 @@ _G.pg.base.bullet_template[3251015] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1026806,7 +1030414,7 @@ _G.pg.base.bullet_template[3251018] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1026875,7 +1030483,7 @@ _G.pg.base.bullet_template[3251019] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1027070,7 +1030678,7 @@ _G.pg.base.bullet_template[3251022] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1027139,7 +1030747,7 @@ _G.pg.base.bullet_template[3251023] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1027334,7 +1030942,7 @@ _G.pg.base.bullet_template[3251026] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1027403,7 +1031011,7 @@ _G.pg.base.bullet_template[3251027] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1027598,7 +1031206,7 @@ _G.pg.base.bullet_template[3251030] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1027667,7 +1031275,7 @@ _G.pg.base.bullet_template[3251031] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1028406,7 +1032014,7 @@ _G.pg.base.bullet_template[3251043] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1028727,7 +1032335,7 @@ _G.pg.base.bullet_template[3251048] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1028796,7 +1032404,7 @@ _G.pg.base.bullet_template[3251049] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1028865,7 +1032473,7 @@ _G.pg.base.bullet_template[3251050] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1028934,7 +1032542,7 @@ _G.pg.base.bullet_template[3251051] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 1,
+			group_level = 1,
 			rant = 5000,
 		},
 	},
@@ -1029000,7 +1032608,7 @@ _G.pg.base.bullet_template[3252001] = {
 	attach_buff = {
 		{
 			buff_id = 311,
-			level = 3,
+			group_level = 3,
 			rant = 800,
 		},
 	},
@@ -1029485,7 +1033093,7 @@ _G.pg.base.bullet_template[3252009] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -1032718,7 +1036326,7 @@ _G.pg.base.bullet_template[3254003] = {
 	attach_buff = {
 		{
 			buff_id = 334,
-			level = 1,
+			group_level = 1,
 			rant = 3000,
 		},
 	},
@@ -1038656,6 +1042264,15300 @@ _G.pg.base.bullet_template[3264501] = {
 	},
 }
 
+_G.pg.base.bullet_template[3270201] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3270201,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu03",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 5,
+	velocity = 3,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+		lastTime = 0.01,
+		velocity_offsetF = 1,
+		shrapnel = {
+			{
+				barrage_ID = 3270203,
+				bullet_ID = 3270202,
+				emitterType = "BattleBulletEmitter",
+				initialSplit = true,
+				reaim = 1,
+			},
+			{
+				barrage_ID = 3270203,
+				bullet_ID = 3270203,
+				emitterType = "BattleBulletEmitter",
+				initialSplit = true,
+				reaim = 1,
+			},
+			{
+				barrage_ID = 3270203,
+				bullet_ID = 3270204,
+				emitterType = "BattleBulletEmitter",
+				initialSplit = true,
+				reaim = 1,
+			},
+			{
+				barrage_ID = 3270203,
+				bullet_ID = 3270205,
+				emitterType = "BattleBulletEmitter",
+				initialSplit = true,
+				reaim = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3270202] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3270202,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan10",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 6,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3270203] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3270203,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan10",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 7,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3270204] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3270204,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan10",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 8,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3270205] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3270205,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan10",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 9,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3270206] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3270206,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu06",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 5,
+	velocity = 3,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+		lastTime = 0.01,
+		velocity_offsetF = 1,
+		shrapnel = {
+			{
+				barrage_ID = 3270205,
+				bullet_ID = 3270207,
+				emitterType = "BattleBulletEmitter",
+				initialSplit = true,
+				reaim = 1,
+			},
+			{
+				barrage_ID = 3270206,
+				bullet_ID = 3270208,
+				emitterType = "BattleBulletEmitter",
+				initialSplit = true,
+				reaim = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3270207] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3270207,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan09",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 2,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3270208] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3270208,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan09",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3270209] = {
+	alert_fx = "",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3270209,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_blue",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1.4,
+		0.9,
+		0.7,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3270210] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3270210,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newBullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 4,
+	damage_type = {
+		1,
+		0.8,
+		0.6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271101] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271101,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3271105,
+				bullet_ID = 3271102,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3271102] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271102,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_blue",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271103] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271103,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu06",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5.5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271104] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271104,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu06",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4.5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271105] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271105,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu06",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3.5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271106] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271106,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu06",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 2.5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271107] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271107,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu06",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 1.5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271108] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271108,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_blue",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271109] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271109,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 1,
+	range_offset = 0,
+	type = 5,
+	velocity = 10,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3271110,
+				bullet_ID = 3271110,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3271110] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271110,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_blue",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 10,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3271111,
+				bullet_ID = 3271111,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			{
+				barrage_ID = 3271112,
+				bullet_ID = 3271111,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3271111] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271111,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newbullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271112] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271112,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 1,
+	range_offset = 0,
+	type = 5,
+	velocity = 10,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3271113,
+				bullet_ID = 3271113,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3271113] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271113,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_cyan",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 10,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3271114,
+				bullet_ID = 3271114,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			{
+				barrage_ID = 3271115,
+				bullet_ID = 3271114,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3271114] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271114,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shenyuanbullet1",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271115] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271115,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3271121,
+				bullet_ID = 3271116,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3271116] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271116,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newbullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1,
+		0.8,
+		0.6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271201] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271201,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3271203,
+				bullet_ID = 3271202,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3271203,
+				bullet_ID = 3271203,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3271202] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271202,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_blue",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 8,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271203] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271203,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_xiaoyu03",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 6,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271204] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMissBig",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3271204,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "",
+	modle_ID = "shenyuanbullet4",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 2,
+	velocity = 9,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			4,
+			0.7,
+		},
+		{
+			2,
+			1.3,
+		},
+		{
+			2,
+			1.1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 5,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.5,
+		randomOffsetX = 24,
+		randomOffsetZ = 24,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3271205] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271205,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_blue",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271206] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271206,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_blue",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271207] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271207,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_blue",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271208] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271208,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu06",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 2,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3271208,
+				bullet_ID = 3271210,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3271209] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271209,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu06",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 2,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3271209,
+				bullet_ID = 3271210,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3271210] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271210,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan09",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271211] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271211,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu03",
+	out_bound = 4,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 5,
+	velocity = 6,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = -0.1,
+		},
+		{
+			flip = false,
+			t = 3,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3271214,
+				bullet_ID = 3271212,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 2,
+				initialSplit = true,
+			},
+			{
+				barrage_ID = 3271215,
+				bullet_ID = 3271212,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 2,
+				initialSplit = true,
+			},
+			{
+				barrage_ID = 3271216,
+				bullet_ID = 3271213,
+				emitterType = "BattleBulletEmitter",
+				reaim = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3271212] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271212,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_blue",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 4,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3271213] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3271213,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_cyan",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 4,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3274001] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3274001,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3274004,
+				bullet_ID = 3274002,
+				emitterType = "BattleBulletEmitter",
+				reaim = {
+					"TargetEnemyLeaderShip",
+				},
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3274002] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3274002,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bulletGER",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 10,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		0.1,
+		0.1,
+		0.1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3274003] = {
+	alert_fx = "AlertArea",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "paodan_huoqiu_hit",
+	hit_sfx = "",
+	id = 3274003,
+	miss_fx = "paodan_huoqiu_hit",
+	miss_sfx = "",
+	modle_ID = "paodan_huoqiu_small",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0,
+	damage_type = {
+		0.8,
+		0.9,
+		1.1,
+	},
+	DMG_font = {
+		{
+			3,
+			0.9,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			3,
+			1.1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 6,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 334,
+			group_level = 1,
+			rant = 3000,
+		},
+	},
+	extra_param = {
+		airdrop = true,
+		gravity = -0.05,
+		launchVrtSpeed = -4,
+		offsetY = 70,
+		targetOffsetX = -1,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3274004] = {
+	alert_fx = "AlertArea",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMissBig",
+	hit_sfx = "battle/hit",
+	id = 3274004,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "",
+	modle_ID = "kuasheHE",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 15,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			3,
+			1.3,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 12,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 311,
+			group_level = 1,
+			rant = 5000,
+		},
+	},
+	extra_param = {
+		gravity = -0.05,
+		randomOffsetX = 16,
+		randomOffsetZ = 16,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3274005] = {
+	alert_fx = "AlertArea",
+	ammo_type = 2,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMissBig",
+	hit_sfx = "battle/hit",
+	id = 3274005,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "",
+	modle_ID = "kuasheAP",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 15,
+	damage_type = {
+		0.5,
+		1.3,
+		1.1,
+	},
+	DMG_font = {
+		{
+			4,
+			0.7,
+		},
+		{
+			2,
+			1.3,
+		},
+		{
+			2,
+			1.1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 12,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.05,
+		randomOffsetX = 16,
+		randomOffsetZ = 16,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3274006] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3274006,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3274014,
+				bullet_ID = 3274007,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3274015,
+				bullet_ID = 3274007,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3274016,
+				bullet_ID = 3274007,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3274017,
+				bullet_ID = 3274007,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3274007] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3274007,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "BulletUSA2_low",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 8,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = -0.032,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 0.4,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 0.8,
+			u = 0.15,
+			v = 0,
+		},
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3274008] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3274008,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_red",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 8,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = -0.05,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3274024,
+				bullet_ID = 3274009,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			{
+				barrage_ID = 3274025,
+				bullet_ID = 3274009,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			{
+				barrage_ID = 3274026,
+				bullet_ID = 3274010,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			{
+				barrage_ID = 3274027,
+				bullet_ID = 3274010,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3274009] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3274009,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bulletGER",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 10,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3274010] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3274010,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 10,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3274011] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3274011,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 8,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		randomLaunchOffsetX = 8,
+		randomLaunchOffsetZ = 24,
+		velocity_offsetF = 4,
+		shrapnel = {
+			{
+				barrage_ID = 3274029,
+				bullet_ID = 3274012,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				inheritSpeed = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3274012] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3274012,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 10,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3274013] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3274013,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "suolian_long",
+	out_bound = 1,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 12.8,
+	range_offset = 0,
+	type = 15,
+	velocity = 0.01,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		0.5,
+		0.5,
+		0.5,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		cldMax = 24,
+		ignoreB = true,
+		ignoreShield = true,
+		scaleSpeed = 1.5,
+	},
+}
+
+_G.pg.base.bullet_template[3274014] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3274014,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 14,
+	damage_type = {
+		0,
+		0,
+		0,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		0.1,
+		0.1,
+		0.1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 8908,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3274015] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3274015,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 1,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 1,
+	range_offset = 0,
+	type = 5,
+	velocity = 15,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3274037,
+				bullet_ID = 3274016,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3274016] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3274016,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "suolian_long",
+	out_bound = 1,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 150,
+	range_offset = 0,
+	type = 15,
+	velocity = 15,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		0.5,
+		0.5,
+		0.5,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		cldMax = 24,
+		ignoreB = true,
+		ignoreShield = true,
+		scaleSpeed = 24,
+	},
+}
+
+_G.pg.base.bullet_template[3274017] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3274017,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 1,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.1,
+	range_offset = 0,
+	type = 5,
+	velocity = 10,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3274035,
+				bullet_ID = 3274013,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3274036,
+				bullet_ID = 3274014,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 1,
+				bullet_ID = 3274015,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3274018] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3274018,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bulletGER",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 1,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0.5,
+			u = 0.03,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 2,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		randomLaunchOffsetZ = 50,
+	},
+}
+
+_G.pg.base.bullet_template[3274019] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3274019,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 1,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0.5,
+			u = 0.03,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 2,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		randomLaunchOffsetZ = 50,
+	},
+}
+
+_G.pg.base.bullet_template[3275001] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275001,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3275202,
+				bullet_ID = 3275002,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275203,
+				bullet_ID = 3275003,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275002] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275002,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shi_bullet",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 6,
+	damage_type = {
+		2,
+		2,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		5,
+		5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3275003] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275003,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3275201,
+				bullet_ID = 3275004,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275004] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275004,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "BulletUSA_big",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3275005] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275005,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shi_bullet",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 25,
+	range_offset = 0,
+	type = 5,
+	velocity = 5,
+	damage_type = {
+		2,
+		2,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		5,
+		5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3275206,
+				bullet_ID = 3275006,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275207,
+				bullet_ID = 3275007,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275006] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275006,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "mofazidan02_nt",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 1.5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 6,
+			u = 0.02,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 6.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		velocity_offsetF = 0.5,
+	},
+}
+
+_G.pg.base.bullet_template[3275007] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275007,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "mofazidan04_nt",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 1.5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 6,
+			u = 0.02,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 6.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		velocity_offsetF = 0.5,
+	},
+}
+
+_G.pg.base.bullet_template[3275008] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275008,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3275208,
+				bullet_ID = 3275009,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275209,
+				bullet_ID = 3275010,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275210,
+				bullet_ID = 3275011,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275211,
+				bullet_ID = 3275012,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275212,
+				bullet_ID = 3275013,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275213,
+				bullet_ID = 3275014,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275214,
+				bullet_ID = 3275015,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275215,
+				bullet_ID = 3275016,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275216,
+				bullet_ID = 3275017,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275217,
+				bullet_ID = 3275018,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275009] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275009,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275010] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275010,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3.3,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275011] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275011,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3.6,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275012] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275012,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3.9,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275013] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275013,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4.2,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275014] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275014,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4.5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275015] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275015,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4.8,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275016] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275016,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5.1,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275017] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275017,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5.4,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275018] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275018,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5.7,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275019] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275019,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3275217,
+				bullet_ID = 3275020,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275216,
+				bullet_ID = 3275021,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275215,
+				bullet_ID = 3275022,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275214,
+				bullet_ID = 3275023,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275213,
+				bullet_ID = 3275024,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275212,
+				bullet_ID = 3275025,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275211,
+				bullet_ID = 3275026,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275210,
+				bullet_ID = 3275027,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275209,
+				bullet_ID = 3275028,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275208,
+				bullet_ID = 3275029,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275020] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275020,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275021] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275021,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3.3,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275022] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275022,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3.6,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275023] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275023,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3.9,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275024] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275024,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4.2,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275025] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275025,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4.5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275026] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275026,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4.8,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275027] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275027,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5.1,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275028] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275028,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5.4,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275029] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275029,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5.7,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275050] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275050,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shiex_shadow",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 1,
+	damage_type = {
+		0,
+		0,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 1,
+			u = 0.1,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 2,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		10,
+		10,
+		10,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 201359,
+			group_level = 1,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275051] = {
+	alert_fx = "",
+	ammo_type = 5,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275051,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shiex_shadow",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 15,
+	damage_type = {
+		0,
+		0,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		10,
+		10,
+		10,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3275226,
+				bullet_ID = 3275052,
+				emitterType = "BattleBulletEmitter",
+				initialSplit = true,
+				reaim = {
+					"TargetEnemyLeaderShip",
+				},
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275052] = {
+	alert_fx = "",
+	ammo_type = 5,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275052,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jianqi_fire",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 1,
+	damage_type = {
+		3,
+		3,
+		3,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 2,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 2.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		6,
+		6,
+		6,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3275227,
+				bullet_ID = 3275053,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			{
+				barrage_ID = 3275228,
+				bullet_ID = 3275054,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275053] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275053,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan05",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 2,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3275054] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275054,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "mofazidan04_nt",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 1.5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3275055] = {
+	alert_fx = "TorAlert",
+	ammo_type = 5,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275055,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jianqi_fire",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 10,
+	damage_type = {
+		3,
+		3,
+		3,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		6,
+		6,
+		6,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3275230,
+				bullet_ID = 3275056,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			{
+				barrage_ID = 3275231,
+				bullet_ID = 3275057,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275056] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275056,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan05",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 2,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3275057] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275057,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "mofazidan04_nt",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 1.5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3275059] = {
+	alert_fx = "AlertArea",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMissRedFire",
+	hit_sfx = "battle/hit",
+	id = 3275059,
+	miss_fx = "ShellMissRedFire",
+	miss_sfx = "",
+	modle_ID = "kuasheHE",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 15,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			3,
+			1.3,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 12,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 311,
+			group_level = 1,
+			rant = 5000,
+		},
+	},
+	extra_param = {
+		gravity = -0.05,
+		randomOffsetX = 16,
+		randomOffsetZ = 16,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275060] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275060,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 8,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		randomLaunchOffsetZ = 5,
+		shrapnel = {
+			{
+				barrage_ID = 3275051,
+				bullet_ID = 3275062,
+				emitterType = "BattleBulletEmitter",
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275061] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275061,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 8,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		randomLaunchOffsetZ = 5,
+		shrapnel = {
+			{
+				barrage_ID = 3275052,
+				bullet_ID = 3275063,
+				emitterType = "BattleBulletEmitter",
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275062] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275062,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shuidizidan04",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3275063] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275063,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shuidizidan05",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3275064] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275064,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "xiafei_baiseyumao",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 2,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3275201] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275201,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3275202,
+				bullet_ID = 3275202,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275203,
+				bullet_ID = 3275203,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275202] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275202,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shi_bullet",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 6,
+	damage_type = {
+		3,
+		4.5,
+		6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		5,
+		5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275203] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275203,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3275201,
+				bullet_ID = 3275204,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275204] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275204,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "BulletUSA_big",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275205] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275205,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shi_bullet",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 25,
+	range_offset = 0,
+	type = 5,
+	velocity = 5,
+	damage_type = {
+		3,
+		4.5,
+		6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		5,
+		5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3275206,
+				bullet_ID = 3275206,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275207,
+				bullet_ID = 3275207,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275206] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275206,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "mofazidan02_nt",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 1.5,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 6,
+			u = 0.02,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 6.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+		velocity_offsetF = 0.5,
+	},
+}
+
+_G.pg.base.bullet_template[3275207] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275207,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "mofazidan04_nt",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 1.5,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 6,
+			u = 0.02,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 6.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+		velocity_offsetF = 0.5,
+	},
+}
+
+_G.pg.base.bullet_template[3275208] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275208,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3275208,
+				bullet_ID = 3275209,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275209,
+				bullet_ID = 3275210,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275210,
+				bullet_ID = 3275211,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275211,
+				bullet_ID = 3275212,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275212,
+				bullet_ID = 3275213,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275213,
+				bullet_ID = 3275214,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275214,
+				bullet_ID = 3275215,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275215,
+				bullet_ID = 3275216,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275216,
+				bullet_ID = 3275217,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275217,
+				bullet_ID = 3275218,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275209] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275209,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275210] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275210,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3.3,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275211] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275211,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3.6,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275212] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275212,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3.9,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275213] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275213,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4.2,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275214] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275214,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4.5,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275215] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275215,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4.8,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275216] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275216,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5.1,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275217] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275217,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5.4,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275218] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275218,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5.7,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275219] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275219,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3275217,
+				bullet_ID = 3275220,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275216,
+				bullet_ID = 3275221,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275215,
+				bullet_ID = 3275222,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275214,
+				bullet_ID = 3275223,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275213,
+				bullet_ID = 3275224,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275212,
+				bullet_ID = 3275225,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275211,
+				bullet_ID = 3275226,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275210,
+				bullet_ID = 3275227,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275209,
+				bullet_ID = 3275228,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3275208,
+				bullet_ID = 3275229,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275220] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275220,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275221] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275221,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3.3,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275222] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275222,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3.6,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275223] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275223,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3.9,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275224] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275224,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4.2,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275225] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275225,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4.5,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275226] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275226,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4.8,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275227] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275227,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5.1,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275228] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275228,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5.4,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275229] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275229,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5.7,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		4,
+		4,
+		4,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275230] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275230,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuashe",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -45,
+		targetFixZ = 83,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275231] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275231,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuasheHE",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -45,
+		targetFixZ = 68,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275232] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275232,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuashe",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -45,
+		targetFixZ = 53,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275233] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275233,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuasheHE",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -45,
+		targetFixZ = 38,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275234] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275234,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuashe",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -45,
+		targetFixZ = 23,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275235] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275235,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuasheHE",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -55,
+		targetFixZ = 83,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275236] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275236,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuashe",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -55,
+		targetFixZ = 68,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275237] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275237,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuasheHE",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -55,
+		targetFixZ = 53,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275238] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275238,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuashe",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -55,
+		targetFixZ = 38,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275239] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275239,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuasheHE",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -55,
+		targetFixZ = 23,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275240] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275240,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuashe",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -65,
+		targetFixZ = 83,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275241] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275241,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuasheHE",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -65,
+		targetFixZ = 68,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275242] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275242,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuashe",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -65,
+		targetFixZ = 53,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275243] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275243,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuasheHE",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -65,
+		targetFixZ = 38,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275244] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275244,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuashe",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -65,
+		targetFixZ = 23,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275245] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275245,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuasheHE",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -75,
+		targetFixZ = 83,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275246] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275246,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuashe",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -75,
+		targetFixZ = 68,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275247] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275247,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuasheHE",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -75,
+		targetFixZ = 53,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275248] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275248,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuashe",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -75,
+		targetFixZ = 38,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275249] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitPurple_short",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3275249,
+	miss_fx = "ShellHitPurple_short",
+	miss_sfx = "",
+	modle_ID = "kuasheHE",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 10,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 15,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.15,
+		ignoreB = true,
+		targetFixX = -75,
+		targetFixZ = 23,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275250] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275250,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shiex_shadow",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 1,
+	damage_type = {
+		0,
+		0,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 1,
+			u = 0.1,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 2,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		10,
+		10,
+		10,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 201359,
+			group_level = 1,
+			hit_ignore = true,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275251] = {
+	alert_fx = "",
+	ammo_type = 5,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275251,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shiex_shadow",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 15,
+	damage_type = {
+		0,
+		0,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		10,
+		10,
+		10,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3275226,
+				bullet_ID = 3275252,
+				emitterType = "BattleBulletEmitter",
+				initialSplit = true,
+				reaim = {
+					"TargetEnemyLeaderShip",
+				},
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275252] = {
+	alert_fx = "",
+	ammo_type = 5,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275252,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jianqi_fire",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 1,
+	damage_type = {
+		3,
+		4.5,
+		6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 2,
+			u = 0.2,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 2.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		6,
+		6,
+		6,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3275227,
+				bullet_ID = 3275253,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			{
+				barrage_ID = 3275228,
+				bullet_ID = 3275254,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275253] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275253,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan05",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 2,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275254] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275254,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "mofazidan04_nt",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 1.5,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275255] = {
+	alert_fx = "TorAlert",
+	ammo_type = 5,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275255,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jianqi_fire",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 10,
+	damage_type = {
+		3,
+		4.5,
+		6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		6,
+		6,
+		6,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3275230,
+				bullet_ID = 3275256,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			{
+				barrage_ID = 3275231,
+				bullet_ID = 3275257,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275256] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275256,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan05",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 2,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275257] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275257,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "mofazidan04_nt",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 1.5,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275258] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275258,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "AlertArea_Laser",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 20,
+	type = 10,
+	velocity = 1,
+	damage_type = {
+		1,
+		1.25,
+		1.5,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.7,
+		1.7,
+		1.7,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		mainFilter = true,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275259] = {
+	alert_fx = "AlertArea",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMissRedFire",
+	hit_sfx = "battle/hit",
+	id = 3275259,
+	miss_fx = "ShellMissRedFire",
+	miss_sfx = "",
+	modle_ID = "kuasheHE",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 2,
+	velocity = 15,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			3,
+			1.3,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			3,
+			0.9,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 12,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 311,
+			group_level = 1,
+			rant = 5000,
+		},
+	},
+	extra_param = {
+		gravity = -0.05,
+		randomOffsetX = 5,
+		randomOffsetZ = 5,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275260] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275260,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 8,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		randomLaunchOffsetZ = 5,
+		shrapnel = {
+			{
+				barrage_ID = 3275251,
+				bullet_ID = 3275262,
+				emitterType = "BattleBulletEmitter",
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275261] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275261,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu04",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 8,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		randomLaunchOffsetZ = 5,
+		shrapnel = {
+			{
+				barrage_ID = 3275252,
+				bullet_ID = 3275263,
+				emitterType = "BattleBulletEmitter",
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275262] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275262,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shuidizidan04",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275263] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275263,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shuidizidan05",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275264] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275264,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "xiafei_baiseyumao",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 2,
+	damage_type = {
+		1,
+		1.5,
+		2,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275501] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "paodan_huoqiu_hit",
+	hit_sfx = "",
+	id = 3275501,
+	miss_fx = "paodan_huoqiu_hit",
+	miss_sfx = "",
+	modle_ID = "shi_bullet_m",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 10,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		5,
+		5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3275502] = {
+	alert_fx = "",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitSmall",
+	hit_sfx = "battle/hit",
+	id = 3275502,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "xiafei_heiseyumao",
+	out_bound = 0,
+	pierce_count = 1,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0.3,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 6,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		dropOffset = true,
+		gravity = -0.001,
+		randomOffsetX = 15,
+		randomOffsetZ = 15,
+		targetOffsetX = 5,
+		targetOffsetZ = 3,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275503] = {
+	alert_fx = "",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitSmall",
+	hit_sfx = "battle/hit",
+	id = 3275503,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "xiafei_heiseyumao",
+	out_bound = 0,
+	pierce_count = 1,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0.3,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 6,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		dropOffset = true,
+		gravity = -0.001,
+		randomOffsetX = 15,
+		randomOffsetZ = 15,
+		targetOffsetX = 5,
+		targetOffsetZ = -3,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275504] = {
+	alert_fx = "",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitSmall",
+	hit_sfx = "battle/hit",
+	id = 3275504,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "xiafei_heiseyumao",
+	out_bound = 0,
+	pierce_count = 1,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0.3,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 6,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		dropOffset = true,
+		gravity = -0.001,
+		randomOffsetX = 15,
+		randomOffsetZ = 15,
+		targetOffsetX = 5,
+		targetOffsetZ = 25,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275505] = {
+	alert_fx = "",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitSmall",
+	hit_sfx = "battle/hit",
+	id = 3275505,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "xiafei_heiseyumao",
+	out_bound = 0,
+	pierce_count = 1,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0.3,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 6,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		dropOffset = true,
+		gravity = -0.001,
+		randomOffsetX = 15,
+		randomOffsetZ = 15,
+		targetOffsetX = 5,
+		targetOffsetZ = -25,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275506] = {
+	alert_fx = "",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitSmall",
+	hit_sfx = "battle/hit",
+	id = 3275506,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "xiafei_heiseyumao",
+	out_bound = 0,
+	pierce_count = 1,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0.3,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 6,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		dropOffset = true,
+		gravity = -0.001,
+		randomOffsetX = 15,
+		randomOffsetZ = 15,
+		targetOffsetX = 5,
+		targetOffsetZ = 31,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275507] = {
+	alert_fx = "",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHitSmall",
+	hit_sfx = "battle/hit",
+	id = 3275507,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "xiafei_heiseyumao",
+	out_bound = 0,
+	pierce_count = 1,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0.3,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 6,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		dropOffset = true,
+		gravity = -0.001,
+		randomOffsetX = 15,
+		randomOffsetZ = 15,
+		targetOffsetX = 5,
+		targetOffsetZ = -31,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275508] = {
+	alert_fx = "AlertArea",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275508,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bisimai_jiguang",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			3,
+			1.4,
+		},
+		{
+			3,
+			1.1,
+		},
+		{
+			3,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 12,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		airdrop = true,
+		gravity = 0,
+		offsetY = 1,
+		randomOffsetX = 10,
+		randomOffsetZ = 10,
+		timeToExplode = 1,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275509] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275509,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.1,
+	range_offset = 0,
+	type = 5,
+	velocity = 3,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1.2,
+		},
+		{
+			2,
+			1.2,
+		},
+		{
+			2,
+			1.2,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.1,
+		shrapnel = {
+			{
+				barrage_ID = 3276006,
+				bullet_ID = 3275510,
+				emitterType = "BattleBulletEmitter",
+			},
+			{
+				barrage_ID = 3276007,
+				bullet_ID = 3275511,
+				emitterType = "BattleBulletEmitter",
+			},
+			{
+				barrage_ID = 3276007,
+				bullet_ID = 3275512,
+				emitterType = "BattleBulletEmitter",
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3275510] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275510,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.1,
+	range_offset = 0,
+	type = 9,
+	velocity = 3,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1.2,
+		},
+		{
+			2,
+			1.2,
+		},
+		{
+			2,
+			1.2,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		10,
+		10,
+		10,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 4,
+		time = 1,
+	},
+	attach_buff = {
+		{
+			buff_id = 8794,
+			effect_id = "zhaohuanchushou_yujing",
+			friendly = false,
+		},
+	},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275511] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275511,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.1,
+	range_offset = 0,
+	type = 9,
+	velocity = 3,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1.2,
+		},
+		{
+			2,
+			1.2,
+		},
+		{
+			2,
+			1.2,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		10,
+		10,
+		10,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 1,
+		time = 1.5,
+	},
+	attach_buff = {
+		{
+			buff_id = 8794,
+			effect_id = "zhaohuanchushou_chushou",
+			friendly = false,
+		},
+	},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275512] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275512,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.1,
+	range_offset = 0,
+	type = 1,
+	velocity = 0.05,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1.2,
+		},
+		{
+			2,
+			1.2,
+		},
+		{
+			2,
+			1.2,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		6,
+		6,
+		6,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+
+_G.pg.base.bullet_template[3275513] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3275513,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 15,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1.2,
+		},
+		{
+			2,
+			1.2,
+		},
+		{
+			2,
+			1.2,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.1,
+		shrapnel = {
+			{
+				barrage_ID = 3276005,
+				bullet_ID = 3275509,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3276001] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3276001,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newBullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 6,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3276002] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3276002,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newBullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 6.5,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3276003] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3276003,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newBullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 7,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3276004] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3276004,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newBullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 7.5,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3276005] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3276005,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newBullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 8,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3276006] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3276006,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newBullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 8.5,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3276007] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3276007,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newBullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 9,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3276008] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3276008,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newBullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 9.5,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3276009] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3276009,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newBullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 10,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3276010] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3276010,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newBullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 120,
+	range_offset = 0,
+	type = 1,
+	velocity = 10.5,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3276011] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3276011,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_maoxi",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 10,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		0.1,
+		0.1,
+		0.1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3276012] = {
+	alert_fx = "AlertArea",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMissBig",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3276012,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "",
+	modle_ID = "Bomberbomb1000",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0,
+	damage_type = {
+		0.8,
+		0.9,
+		1.1,
+	},
+	DMG_font = {
+		{
+			3,
+			0.9,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			3,
+			1.1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 10,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		airdrop = true,
+		gravity = -0.05,
+		launchVrtSpeed = -4,
+		offsetY = 70,
+		randomOffsetX = 24,
+		randomOffsetZ = 24,
+		targetOffsetX = -1,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279001] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279001,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newBullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 15,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279002] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279002,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shenyuanbullet1",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 15,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279003] = {
+	alert_fx = "TorAlert",
+	ammo_type = 4,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "TorpedoHit3",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3279003,
+	miss_fx = "",
+	miss_sfx = "",
+	modle_ID = "unknownV_sairenyulei",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 3,
+	velocity = 3,
+	damage_type = {
+		0.8,
+		1,
+		1.3,
+	},
+	DMG_font = {
+		{
+			3,
+			0.8,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			3,
+			1.3,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 3,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279004] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMissBig",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3279004,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "",
+	modle_ID = "shenyuanbullet4",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 2,
+	velocity = 9,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			4,
+			0.7,
+		},
+		{
+			2,
+			1.3,
+		},
+		{
+			2,
+			1.1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 5,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.5,
+		randomOffsetX = 10,
+		randomOffsetZ = 10,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279005] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279005,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3279009,
+				bullet_ID = 3279006,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279006] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279006,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "doubleBulletUSA_blue",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 12,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279007] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279007,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_blue",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			4,
+			0.8,
+		},
+		{
+			4,
+			0.6,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279008] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "jiguang_shouji",
+	hit_sfx = "battle/hit",
+	id = 3279008,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "Al_Laser_short",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 10,
+	velocity = 1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.7,
+		1.7,
+		1.7,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		mainFilter = true,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279009] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279009,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3279017,
+				bullet_ID = 3279010,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 3279018,
+				bullet_ID = 3279011,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279010] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279010,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newBullet3",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 8,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = 0.27,
+		},
+		{
+			flip = false,
+			t = 0.5,
+			u = 0,
+			v = -0.27,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0,
+			v = 0.5,
+		},
+		{
+			flip = false,
+			t = 1.3,
+			u = 0,
+			v = -0.5,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279011] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279011,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shenyuanbullet1",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 8,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = 0,
+			v = -0.27,
+		},
+		{
+			flip = false,
+			t = 0.5,
+			u = 0,
+			v = 0.27,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0,
+			v = -0.5,
+		},
+		{
+			flip = false,
+			t = 1.3,
+			u = 0,
+			v = 0.5,
+		},
+		{
+			flip = false,
+			t = 1.5,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279012] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279012,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newbullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 7,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279013] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279013,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shenyuanbullet1",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 8,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279014] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279014,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newbullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 9,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279015] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279015,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "shenyuanbullet1",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 8,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279016] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279016,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newbullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 7,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279017] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMissBlueFire",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3279017,
+	miss_fx = "ShellMissBlueFire",
+	miss_sfx = "",
+	modle_ID = "lanhuopaodan03",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 2,
+	velocity = 12,
+	damage_type = {
+		1,
+		1.1,
+		1.2,
+	},
+	DMG_font = {
+		{
+			4,
+			0.7,
+		},
+		{
+			2,
+			1.3,
+		},
+		{
+			2,
+			1.1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 10,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.1,
+		ignoreB = true,
+		ignoreShield = true,
+		targetOffsetX = 0,
+		targetOffsetZ = 12.21,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279018] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMissBlueFire",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3279018,
+	miss_fx = "ShellMissBlueFire",
+	miss_sfx = "",
+	modle_ID = "lanhuopaodan03",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 2,
+	velocity = 12,
+	damage_type = {
+		1,
+		1.1,
+		1.2,
+	},
+	DMG_font = {
+		{
+			4,
+			0.7,
+		},
+		{
+			2,
+			1.3,
+		},
+		{
+			2,
+			1.1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 10,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.1,
+		ignoreB = true,
+		ignoreShield = true,
+		targetOffsetX = -12.84,
+		targetOffsetZ = 2.88,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279019] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMissBlueFire",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3279019,
+	miss_fx = "ShellMissBlueFire",
+	miss_sfx = "",
+	modle_ID = "lanhuopaodan03",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 2,
+	velocity = 12,
+	damage_type = {
+		1,
+		1.1,
+		1.2,
+	},
+	DMG_font = {
+		{
+			4,
+			0.7,
+		},
+		{
+			2,
+			1.3,
+		},
+		{
+			2,
+			1.1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 10,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.1,
+		ignoreB = true,
+		ignoreShield = true,
+		targetOffsetX = 12.84,
+		targetOffsetZ = 2.88,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279020] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMissBlueFire",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3279020,
+	miss_fx = "ShellMissBlueFire",
+	miss_sfx = "",
+	modle_ID = "lanhuopaodan03",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 2,
+	velocity = 12,
+	damage_type = {
+		1,
+		1.1,
+		1.2,
+	},
+	DMG_font = {
+		{
+			4,
+			0.7,
+		},
+		{
+			2,
+			1.3,
+		},
+		{
+			2,
+			1.1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 10,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.1,
+		ignoreB = true,
+		ignoreShield = true,
+		targetOffsetX = -7.95,
+		targetOffsetZ = -12.21,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279021] = {
+	alert_fx = "AlertArea",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMissBlueFire",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3279021,
+	miss_fx = "ShellMissBlueFire",
+	miss_sfx = "",
+	modle_ID = "lanhuopaodan03",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 2,
+	velocity = 12,
+	damage_type = {
+		1,
+		1.1,
+		1.2,
+	},
+	DMG_font = {
+		{
+			4,
+			0.7,
+		},
+		{
+			2,
+			1.3,
+		},
+		{
+			2,
+			1.1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 10,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.1,
+		ignoreB = true,
+		ignoreShield = true,
+		targetOffsetX = 7.95,
+		targetOffsetZ = -12.21,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279022] = {
+	alert_fx = "AlertArea",
+	ammo_type = 3,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMissPoison",
+	hit_sfx = "battle/torpedo-hit",
+	id = 3279022,
+	miss_fx = "ShellMissPoison",
+	miss_sfx = "",
+	modle_ID = "lanhuopaodan04",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 2,
+	velocity = 12,
+	damage_type = {
+		1.35,
+		0.95,
+		0.7,
+	},
+	DMG_font = {
+		{
+			4,
+			0.7,
+		},
+		{
+			2,
+			1.3,
+		},
+		{
+			2,
+			1.1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 10,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 311,
+			group_level = 2,
+			rant = 2000,
+		},
+	},
+	extra_param = {
+		gravity = -0.1,
+		ignoreB = true,
+		ignoreShield = true,
+		targetOffsetX = 0,
+		targetOffsetZ = 0,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279023] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279023,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan10",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 10,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279024] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279024,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_blue",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 8,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = -0.04,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279025] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279025,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu03",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3279032,
+				bullet_ID = 3279026,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279026] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279026,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "DoubleBulletUSA_blue",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 12,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279027] = {
+	alert_fx = "AlertArea",
+	ammo_type = 6,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "paodan_shandian_hit",
+	hit_sfx = "",
+	id = 3279027,
+	miss_fx = "paodan_shandian_hit",
+	miss_sfx = "",
+	modle_ID = "paodan_shandian",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 0,
+	damage_type = {
+		0.8,
+		0.9,
+		1.1,
+	},
+	DMG_font = {
+		{
+			3,
+			0.9,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			3,
+			1.1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 6,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		airdrop = true,
+		gravity = -0.05,
+		launchVrtSpeed = -4,
+		offsetY = 70,
+		randomOffsetX = 20,
+		randomOffsetZ = 20,
+		targetOffsetX = -1,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279028] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279028,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3279035,
+				bullet_ID = 3279029,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279029] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279029,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "newBullet3",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 2,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 1,
+			u = 0.05,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 2,
+			u = 0,
+			v = 0,
+		},
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279030] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "jiguang_shouji",
+	hit_sfx = "battle/hit",
+	id = 3279030,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "Al_Laser02",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 10,
+	velocity = 1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.7,
+		1.7,
+		1.7,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		mainFilter = true,
+		diveFilter = {
+			2,
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279031] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279031,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_blue",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 4,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			4,
+			0.8,
+		},
+		{
+			4,
+			0.6,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3279041,
+				bullet_ID = 3279033,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			{
+				barrage_ID = 730222,
+				bullet_ID = 730154,
+				emitterType = "BattleBulletEmitter",
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279032] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279032,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_blue",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 5,
+	velocity = 4,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			4,
+			0.8,
+		},
+		{
+			4,
+			0.6,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3279042,
+				bullet_ID = 3279033,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+				initialSplit = true,
+			},
+			{
+				barrage_ID = 730222,
+				bullet_ID = 730154,
+				emitterType = "BattleBulletEmitter",
+				initialSplit = true,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279033] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279033,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan10",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 2.5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279034] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279034,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_xiaoyu03",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 2,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279035] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279035,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_xiaoyu03",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 2.5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279036] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279036,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_xiaoyu03",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279037] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279037,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_xiaoyu03",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3.5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279038] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279038,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 1,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.1,
+	range_offset = 0,
+	type = 5,
+	velocity = 10,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 830014,
+				bullet_ID = 3279039,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279039] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279039,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 1,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.1,
+	range_offset = 0,
+	type = 5,
+	velocity = 10,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 830018,
+				bullet_ID = 3279040,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 830019,
+				bullet_ID = 3279041,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 830020,
+				bullet_ID = 3279042,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 830021,
+				bullet_ID = 3279043,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 830022,
+				bullet_ID = 3279044,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 830023,
+				bullet_ID = 3279045,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279040] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279040,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan10",
+	out_bound = 1,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3.2,
+	damage_type = {
+		1,
+		0.8,
+		0.6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279041] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279041,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan10",
+	out_bound = 1,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4,
+	damage_type = {
+		1,
+		0.8,
+		0.6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279042] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279042,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan10",
+	out_bound = 1,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5,
+	damage_type = {
+		1,
+		0.8,
+		0.6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279043] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279043,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan10",
+	out_bound = 1,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 6.2,
+	damage_type = {
+		1,
+		0.8,
+		0.6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279044] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279044,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan10",
+	out_bound = 1,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 7.6,
+	damage_type = {
+		1,
+		0.8,
+		0.6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279045] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279045,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan10",
+	out_bound = 1,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 9,
+	damage_type = {
+		1,
+		0.8,
+		0.6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279046] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279046,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 1,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.1,
+	range_offset = 0,
+	type = 5,
+	velocity = 10,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 830014,
+				bullet_ID = 3279047,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279047] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279047,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 1,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.1,
+	range_offset = 0,
+	type = 5,
+	velocity = 10,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 830018,
+				bullet_ID = 3279048,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 830019,
+				bullet_ID = 3279049,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 830020,
+				bullet_ID = 3279050,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 830021,
+				bullet_ID = 3279051,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 830022,
+				bullet_ID = 3279052,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			{
+				barrage_ID = 830023,
+				bullet_ID = 3279053,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279048] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279048,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan09",
+	out_bound = 1,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 3.2,
+	damage_type = {
+		1,
+		0.8,
+		0.6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279049] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279049,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan09",
+	out_bound = 1,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4,
+	damage_type = {
+		1,
+		0.8,
+		0.6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279050] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279050,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan09",
+	out_bound = 1,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5,
+	damage_type = {
+		1,
+		0.8,
+		0.6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279051] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279051,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan09",
+	out_bound = 1,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 6.2,
+	damage_type = {
+		1,
+		0.8,
+		0.6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279052] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279052,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan09",
+	out_bound = 1,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 7.6,
+	damage_type = {
+		1,
+		0.8,
+		0.6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279053] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279053,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "jiantouzidan09",
+	out_bound = 1,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 9,
+	damage_type = {
+		1,
+		0.8,
+		0.6,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279054] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279054,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3279046,
+				bullet_ID = 3279055,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[3279055] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279055,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "heifangzhou_zhongyu_blue",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.5,
+		1.5,
+		1.5,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279056] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279056,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu06",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 4.5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279057] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279057,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu06",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
+_G.pg.base.bullet_template[3279058] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3279058,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu06",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 5.5,
+	damage_type = {
+		1,
+		0.9,
+		0.8,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+
 _G.pg.base.bullet_template[3400001] = {
 	alert_fx = "TorAlert",
 	ammo_type = 1,
@@ -1041040,7 +1059942,7 @@ _G.pg.base.bullet_template[3511020] = {
 	attach_buff = {
 		{
 			buff_id = 511020,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -1041172,7 +1060074,7 @@ _G.pg.base.bullet_template[3512040] = {
 	attach_buff = {
 		{
 			buff_id = 512040,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -1041238,7 +1060140,7 @@ _G.pg.base.bullet_template[3521010] = {
 	attach_buff = {
 		{
 			buff_id = 521010,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},
@@ -1042218,7 +1061120,7 @@ _G.pg.base.bullet_template[9999952] = {
 	attach_buff = {
 		{
 			buff_id = 398,
-			level = 1,
+			group_level = 1,
 			rant = 10000,
 		},
 	},

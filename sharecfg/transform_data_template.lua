@@ -330,6 +330,18 @@ pg.transform_data_template = setmetatable({
 		9209,
 		9210,
 		9211,
+		9401,
+		9402,
+		9403,
+		9404,
+		9405,
+		9406,
+		9407,
+		9408,
+		9409,
+		9410,
+		9411,
+		9412,
 		10101,
 		10102,
 		10103,
@@ -13541,6 +13553,462 @@ pg.base.transform_data_template = {
 		},
 		gear_score = {
 			50
+		}
+	},
+	[9401] = {
+		use_gold = 400,
+		name = "Hull Improvement Ⅰ",
+		star_limit = 2,
+		id = 9401,
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 1,
+		descrip = "",
+		icon = "hp_1",
+		skill_id = 0,
+		condition_id = {},
+		effect = {
+			{
+				durability = 45
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18001,
+					2
+				}
+			}
+		},
+		gear_score = {
+			10
+		}
+	},
+	[9402] = {
+		use_gold = 600,
+		name = "Evasion Enhancement Ⅰ",
+		star_limit = 2,
+		id = 9402,
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 5,
+		descrip = "",
+		icon = "dd_1",
+		skill_id = 0,
+		condition_id = {
+			9401
+		},
+		effect = {
+			{
+				dodge = 5
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18001,
+					3
+				}
+			}
+		},
+		gear_score = {
+			10
+		}
+	},
+	[9403] = {
+		use_gold = 800,
+		name = "Main Gun Improvement Ⅰ",
+		star_limit = 3,
+		id = 9403,
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 20,
+		descrip = "",
+		icon = "mgup_1",
+		skill_id = 0,
+		condition_id = {
+			9401
+		},
+		effect = {
+			{
+				equipment_proficiency_1 = 0.05
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18001,
+					3
+				}
+			}
+		},
+		gear_score = {
+			15
+		}
+	},
+	[9404] = {
+		use_gold = 1000,
+		name = "Firepower Enhancement Ⅰ",
+		star_limit = 3,
+		id = 9404,
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 25,
+		descrip = "",
+		icon = "cn_1",
+		skill_id = 0,
+		condition_id = {
+			9403
+		},
+		effect = {
+			{
+				cannon = 10
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18001,
+					5
+				}
+			}
+		},
+		gear_score = {
+			15
+		}
+	},
+	[9405] = {
+		use_gold = 1200,
+		name = "Torpedo Improvement Ⅰ",
+		star_limit = 4,
+		id = 9405,
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 35,
+		descrip = "",
+		icon = "tpup_1",
+		skill_id = 0,
+		condition_id = {
+			9403
+		},
+		effect = {
+			{
+				equipment_proficiency_2 = 0.05
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18002,
+					3
+				}
+			}
+		},
+		gear_score = {
+			20
+		}
+	},
+	[9406] = {
+		use_gold = 1500,
+		name = "Torpedo Enhancement Ⅰ",
+		star_limit = 4,
+		id = 9406,
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 40,
+		descrip = "",
+		icon = "tp_1",
+		skill_id = 0,
+		condition_id = {
+			9405
+		},
+		effect = {
+			{
+				torpedo = 10
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18002,
+					2
+				}
+			}
+		},
+		gear_score = {
+			20
+		}
+	},
+	[9407] = {
+		use_gold = 1800,
+		name = "Motor Enhancement",
+		star_limit = 4,
+		id = 9407,
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 50,
+		descrip = "",
+		icon = "sp_1",
+		skill_id = 0,
+		condition_id = {
+			9405
+		},
+		effect = {
+			{
+				speed = 3
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18002,
+					5
+				}
+			}
+		},
+		gear_score = {
+			25
+		}
+	},
+	[9408] = {
+		use_gold = 2000,
+		name = "Evasion Enhancement Ⅱ",
+		star_limit = 4,
+		id = 9408,
+		max_level = 2,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 55,
+		descrip = "",
+		icon = "dd_2",
+		skill_id = 0,
+		condition_id = {
+			9402,
+			9407
+		},
+		effect = {
+			{
+				dodge = 5
+			},
+			{
+				dodge = 10
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18002,
+					1
+				}
+			},
+			{
+				{
+					18002,
+					2
+				}
+			}
+		},
+		gear_score = {
+			10,
+			15
+		}
+	},
+	[9409] = {
+		use_gold = 2500,
+		name = "Hull Improvement Ⅱ",
+		star_limit = 5,
+		id = 9409,
+		max_level = 2,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 70,
+		descrip = "",
+		icon = "hp_2",
+		skill_id = 0,
+		condition_id = {
+			9407
+		},
+		effect = {
+			{
+				durability = 45
+			},
+			{
+				durability = 75
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18003,
+					1
+				}
+			},
+			{
+				{
+					18003,
+					1
+				}
+			}
+		},
+		gear_score = {
+			10,
+			20
+		}
+	},
+	[9410] = {
+		use_gold = 3000,
+		name = "Torpedo Enhancement Ⅱ",
+		star_limit = 5,
+		id = 9410,
+		max_level = 2,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 75,
+		descrip = "",
+		icon = "tp_2",
+		skill_id = 0,
+		condition_id = {
+			9409
+		},
+		effect = {
+			{
+				torpedo = 5
+			},
+			{
+				torpedo = 15
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18003,
+					1
+				},
+				{
+					17023,
+					5
+				}
+			},
+			{
+				{
+					18003,
+					2
+				},
+				{
+					17023,
+					15
+				}
+			}
+		},
+		gear_score = {
+			10,
+			20
+		}
+	},
+	[9411] = {
+		use_gold = 4000,
+		name = "Modernization",
+		star_limit = 5,
+		id = 9411,
+		max_level = 1,
+		skin_id = 201149,
+		use_ship = 1,
+		level_limit = 85,
+		descrip = "Retrofit complete. The following changes have been applied:\nTRP +25, EVA +20, <color=#92fc63>Main Gun base +1</color>",
+		icon = "mt_red",
+		skill_id = 0,
+		condition_id = {
+			9409,
+			9410
+		},
+		effect = {
+			{
+				torpedo = 25,
+				dodge = 20
+			}
+		},
+		ship_id = {
+			{
+				201144,
+				201524
+			}
+		},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18003,
+					3
+				}
+			}
+		},
+		gear_score = {
+			50
+		}
+	},
+	[9412] = {
+		use_gold = 3000,
+		name = "Tactical Learning",
+		star_limit = 5,
+		id = 9412,
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		level_limit = 90,
+		descrip = "习得技能【萤火虫突袭】",
+		icon = "skill_red",
+		skill_id = 151190,
+		condition_id = {
+			9411
+		},
+		effect = {
+			{
+				skill_id = 151190
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18003,
+					2
+				},
+				{
+					17023,
+					20
+				}
+			}
+		},
+		gear_score = {
+			30
 		}
 	},
 	[10101] = {

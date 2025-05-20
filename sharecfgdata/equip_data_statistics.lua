@@ -58432,6 +58432,194 @@ _G.pg.base.equip_data_statistics[24353] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[24400] = {
+	ammo = 2,
+	attribute_2 = "cannon",
+	damage = "76 x 3",
+	descrip = "The triple 406mm guns that were to be mounted on the Lion-class battleship.",
+	icon = "24400",
+	id = 24400,
+	name = "Prototype Triple 406mm Mk.II Main Gun Mount",
+	nationality = 2,
+	rarity = 6,
+	speciality = "<[VOL]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 4,
+	value_2 = 65,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {
+		3,
+	},
+	ammo_info = {
+		{
+			2,
+			1515,
+		},
+	},
+	equip_info = {
+		1,
+		2,
+		6,
+		10,
+		11,
+		12,
+	},
+	weapon_id = {
+		24400,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		4,
+		5,
+		10,
+		13,
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"HMS",
+		"BB",
+		"MG",
+		"HE",
+	},
+}
+
+_G.pg.base.equip_data_statistics[24401] = {
+	base = 24400,
+	damage = "84 x 3",
+	id = 24401,
+	weapon_id = {
+		24401,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[24402] = {
+	base = 24400,
+	damage = "92 x 3",
+	id = 24402,
+	weapon_id = {
+		24402,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[24403] = {
+	base = 24400,
+	damage = "100 x 3",
+	id = 24403,
+	weapon_id = {
+		24403,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[24404] = {
+	base = 24400,
+	damage = "108 x 3",
+	id = 24404,
+	weapon_id = {
+		24404,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[24405] = {
+	base = 24400,
+	damage = "117 x 3",
+	id = 24405,
+	weapon_id = {
+		24405,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[24406] = {
+	base = 24400,
+	damage = "126 x 3",
+	id = 24406,
+	weapon_id = {
+		24406,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[24407] = {
+	base = 24400,
+	damage = "135 x 3",
+	id = 24407,
+	weapon_id = {
+		24407,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[24408] = {
+	base = 24400,
+	damage = "144 x 3",
+	id = 24408,
+	weapon_id = {
+		24408,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[24409] = {
+	base = 24400,
+	damage = "153 x 3",
+	id = 24409,
+	weapon_id = {
+		24409,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[24410] = {
+	base = 24400,
+	damage = "162 x 3",
+	id = 24410,
+	weapon_id = {
+		24410,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[24411] = {
+	anti_siren = 100,
+	base = 24400,
+	damage = "162 x 3",
+	id = 24411,
+	weapon_id = {
+		24411,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[24412] = {
+	anti_siren = 200,
+	base = 24400,
+	damage = "162 x 3",
+	id = 24412,
+	weapon_id = {
+		24412,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[24413] = {
+	anti_siren = 300,
+	base = 24400,
+	damage = "162 x 3",
+	id = 24413,
+	weapon_id = {
+		24413,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[25000] = {
 	ammo = 5,
 	attribute_2 = "torpedo",
@@ -164070,6 +164258,165 @@ _G.pg.base.equip_data_statistics[170722] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[170761] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 170761,
+	name = "逐光之焰-格伦维尔I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170761,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[170762] = {
+	base = 170761,
+	id = 170762,
+	name = "逐光之焰-格伦维尔II",
+	weapon_id = {
+		170762,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[170771] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 170771,
+	name = "专属弹幕-克利奥佩特拉I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61751,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[170772] = {
+	base = 170771,
+	id = 170772,
+	name = "专属弹幕-克利奥佩特拉II",
+	weapon_id = {
+		61752,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[170781] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 170781,
+	name = "专属弹幕-特拉法尔加",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61761,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[170782] = {
+	base = 170781,
+	id = 170782,
+	name = "专属弹幕-特拉法尔加",
+	weapon_id = {
+		61762,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[180000] = {
 	ammo = 3,
 	descrip = "默认装备",
@@ -166670,6 +167017,131 @@ _G.pg.base.equip_data_statistics[3247004] = {
 		3247004,
 	},
 	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[3276001] = {
+	ammo = 2,
+	descrip = "No description",
+	icon = "1",
+	id = 3276001,
+	name = "【2025狮UR活动 剧情】构建者 主炮弹幕",
+	nationality = 0,
+	rarity = 5,
+	speciality = "<[LOCK]>",
+	tech = 3,
+	torpedo_ammo = 0,
+	type = 2,
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {
+		3,
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3276001,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		5,
+		10,
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		5,
+		10,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[3276002] = {
+	ammo = 5,
+	descrip = "No description",
+	icon = "1",
+	id = 3276002,
+	name = "【2025狮UR活动 剧情】构建者 鱼雷触手",
+	nationality = 0,
+	rarity = 5,
+	speciality = "<[TRP]>",
+	tech = 3,
+	torpedo_ammo = 0,
+	type = 5,
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3276002,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		2,
+		3,
+		10,
+		18,
+		20,
+		21,
+	},
+	part_sub = {
+		1,
+		2,
+		3,
+		10,
+		18,
+		20,
+		21,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[3276003] = {
+	ammo = 5,
+	descrip = "No description",
+	icon = "1",
+	id = 3276003,
+	name = "【2025狮UR活动 剧情】构建者 舰载机",
+	nationality = 0,
+	rarity = 5,
+	speciality = "<[BOMB]>",
+	tech = 3,
+	torpedo_ammo = 0,
+	type = 7,
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		3276003,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7,
+		10,
+	},
+	part_sub = {
+		6,
+		7,
+		10,
+	},
+	equip_parameters = {},
+	label = {},
 }
 
 _G.pg.base.equip_data_statistics[800000] = {

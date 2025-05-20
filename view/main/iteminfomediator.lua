@@ -25,7 +25,8 @@ function var0_0.register(arg0_1)
 		arg0_1.viewComponent:PlayOpenBox(var0_3:getConfig("display_effect"), function()
 			arg0_1:sendNotification(GAME.USE_ITEM, {
 				id = arg1_3,
-				count = arg2_3
+				count = arg2_3,
+				isEquipBox = var0_3:getConfig("type") == Item.EQUIPMENT_BOX_TYPE_5
 			})
 		end)
 	end)

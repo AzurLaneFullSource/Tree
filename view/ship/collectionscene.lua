@@ -241,11 +241,19 @@ function var0_0.didEnter(arg0_17)
 	arg0_17.helpBtn = arg0_17:findTF("help_btn", arg0_17.leftPanel)
 
 	onButton(arg0_17, arg0_17.helpBtn, function()
-		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			type = MSGBOX_TYPE_HELP,
-			helps = pg.gametip.collection_help.tip,
-			weight = LayerWeightConst.THIRD_LAYER
-		})
+		if arg0_17.contextData.toggle == var0_0.MUSIC_INDEX then
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				type = MSGBOX_TYPE_HELP,
+				helps = pg.gametip.NewMusic_help.tip,
+				weight = LayerWeightConst.THIRD_LAYER
+			})
+		else
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				type = MSGBOX_TYPE_HELP,
+				helps = pg.gametip.collection_help.tip,
+				weight = LayerWeightConst.THIRD_LAYER
+			})
+		end
 	end, SFX_PANEL)
 
 	local var0_17 = arg0_17:findTF("stamp", arg0_17.top)
@@ -302,7 +310,7 @@ function var0_0.didEnter(arg0_17)
 					if iter0_17 ~= var0_0.MUSIC_INDEX then
 						if arg0_17.musicView and arg0_17.musicView:CheckState(BaseSubView.STATES.INITED) then
 							arg0_17.musicView:tryPauseMusic()
-							arg0_17.musicView:closeSongListPanel()
+							arg0_17.musicView:closeAlbumListPanel()
 						end
 
 						pg.BgmMgr.GetInstance():ContinuePlay()

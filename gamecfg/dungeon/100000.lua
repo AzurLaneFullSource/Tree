@@ -177,11 +177,92 @@ return {
 					}
 				},
 				{
+					triggerType = 0,
+					waveIndex = 102,
+					conditionType = 1,
+					preWaves = {
+						101
+					},
+					triggerParam = {},
+					spawn = {
+						{
+							monsterTemplateID = 10,
+							moveCast = true,
+							delay = 0,
+							corrdinate = {
+								10,
+								0,
+								80
+							},
+							buffList = {
+								8001,
+								8007
+							}
+						},
+						{
+							monsterTemplateID = 10,
+							moveCast = true,
+							delay = 0,
+							corrdinate = {
+								0,
+								0,
+								67
+							},
+							buffList = {
+								8001,
+								8007
+							}
+						},
+						{
+							monsterTemplateID = 10,
+							moveCast = true,
+							delay = 0,
+							corrdinate = {
+								5,
+								0,
+								55
+							},
+							buffList = {
+								8001,
+								8007
+							}
+						},
+						{
+							monsterTemplateID = 10,
+							moveCast = true,
+							delay = 0,
+							corrdinate = {
+								0,
+								0,
+								48
+							},
+							buffList = {
+								8001,
+								8007
+							}
+						},
+						{
+							monsterTemplateID = 10,
+							moveCast = true,
+							delay = 0,
+							corrdinate = {
+								10,
+								0,
+								35
+							},
+							buffList = {
+								8001,
+								8007
+							}
+						}
+					}
+				},
+				{
 					triggerType = 3,
 					waveIndex = 201,
 					conditionType = 0,
 					preWaves = {
-						101
+						102
 					},
 					triggerParams = {
 						id = "S002"
@@ -206,17 +287,31 @@ return {
 									26120
 								},
 								properties = {
-									cannon = 200,
+									cannon = 400,
 									air = 0,
 									antiaircraft = 300,
 									torpedo = 0,
 									durability = 2880,
-									reload = 83,
+									reload = 300,
 									armor = 115,
 									dodge = 0,
 									speed = 31,
 									luck = 38,
 									hit = 140
+								},
+								skills = {
+									{
+										id = 10290,
+										level = 10
+									},
+									{
+										id = 2,
+										level = 10
+									},
+									{
+										id = 340,
+										level = 10
+									}
 								}
 							},
 							{
@@ -230,17 +325,31 @@ return {
 									26120
 								},
 								properties = {
-									cannon = 230,
+									cannon = 450,
 									air = 0,
 									antiaircraft = 300,
 									torpedo = 0,
 									durability = 3600,
-									reload = 83,
+									reload = 300,
 									armor = 189,
 									dodge = 96,
 									speed = 28.3,
 									luck = 14,
 									hit = 140
+								},
+								skills = {
+									{
+										id = 10540,
+										level = 10
+									},
+									{
+										id = 2,
+										level = 10
+									},
+									{
+										id = 340,
+										level = 10
+									}
 								}
 							}
 						}
@@ -517,7 +626,7 @@ return {
 						402
 					},
 					triggerParams = {
-						timeout = 45
+						timeout = 25
 					}
 				},
 				{
@@ -527,7 +636,7 @@ return {
 						402
 					},
 					triggerParams = {
-						timeout = 39
+						timeout = 19
 					}
 				},
 				{
@@ -550,7 +659,7 @@ return {
 						402
 					},
 					triggerParams = {
-						timeout = 42
+						timeout = 22
 					}
 				},
 				{
@@ -598,12 +707,12 @@ return {
 					false
 				},
 				properties = {
-					cannon = 100,
+					cannon = 120,
 					air = 0,
 					antiaircraft = 310,
-					torpedo = 150,
+					torpedo = 450,
 					durability = 2360,
-					reload = 83,
+					reload = 300,
 					armor = 98,
 					dodge = 164,
 					speed = 31.5,
@@ -614,6 +723,14 @@ return {
 					{
 						id = 4,
 						level = 1
+					},
+					{
+						id = 4051,
+						level = 10
+					},
+					{
+						id = 21232,
+						level = 10
 					}
 				}
 			},
@@ -632,12 +749,12 @@ return {
 					false
 				},
 				properties = {
-					cannon = 100,
+					cannon = 120,
 					air = 0,
 					antiaircraft = 310,
-					torpedo = 150,
+					torpedo = 450,
 					durability = 2360,
-					reload = 83,
+					reload = 300,
 					armor = 98,
 					dodge = 164,
 					speed = 31.5,
@@ -648,6 +765,18 @@ return {
 					{
 						id = 4,
 						level = 1
+					},
+					{
+						id = 2061,
+						level = 10
+					},
+					{
+						id = 2011,
+						level = 10
+					},
+					{
+						id = 21222,
+						level = 10
 					}
 				}
 			}

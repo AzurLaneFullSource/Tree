@@ -5,10 +5,7 @@ function var0_0.GetContainer(arg0_1)
 end
 
 function var0_0.InShowTime(arg0_2)
-	local var0_2 = TrainingCampScene.isNormalActOn()
-	local var1_2 = TrainingCampScene.isTecActOn()
-
-	return var0_2 or var1_2
+	return true
 end
 
 function var0_0.GetUIName(arg0_3)
@@ -16,12 +13,12 @@ function var0_0.GetUIName(arg0_3)
 end
 
 function var0_0.OnClick(arg0_4)
-	arg0_4.event:emit(NewMainMediator.GO_SCENE, SCENE.TRAININGCAMP)
+	arg0_4.event:emit(NewMainMediator.GO_SCENE, SCENE.COMMANDER_MANUAL)
 end
 
 function var0_0.OnRegister(arg0_5)
 	arg0_5.redDot = EffectRedDotNode.New(arg0_5._tf, {
-		pg.RedDotMgr.TYPES.ACT_NEWBIE
+		pg.RedDotMgr.TYPES.COMMANDER_MANUAL
 	})
 
 	pg.redDotHelper:AddNode(arg0_5.redDot)

@@ -35,7 +35,7 @@ function var0_0.initNotificationHandleDic(arg0_3)
 			end)
 		end,
 		[GAME.USE_ITEM_DONE] = function(arg0_7, arg1_7)
-			local var0_7 = arg1_7:getBody()
+			local var0_7 = arg1_7:getBody().drops
 
 			if #var0_7 > 0 then
 				arg0_7.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_7)

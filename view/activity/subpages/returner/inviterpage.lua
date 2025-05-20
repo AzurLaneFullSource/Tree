@@ -23,6 +23,9 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.pushDisBtn = arg0_1._tf:Find("push_btn_dis")
 	arg0_1.codeTxt = arg0_1._tf:Find("code"):GetComponent(typeof(Text))
 	arg0_1.taskLockPanel = arg0_1._tf:Find("task_lock_panel")
+
+	setText(arg0_1.taskLockPanel:Find("Text"), i18n("word_sell_lock"))
+
 	arg0_1.taskPanel = arg0_1._tf:Find("task_panel")
 	arg0_1.taskItemTF = arg0_1._tf:Find("task_panel/item")
 	arg0_1.taskProgress = arg0_1._tf:Find("task_panel/progress")

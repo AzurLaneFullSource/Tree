@@ -662,27 +662,31 @@ function var0_0.didEnter(arg0_36)
 	setActive(arg0_36.militaryExerciseBtn:Find("lock"), not var4_36)
 	setActive(arg0_36.entranceLayer:Find("btns/btn_pvp/lock"), not var4_36)
 
-	local var5_36 = LimitChallengeConst.IsOpen()
+	local var5_36 = pg.SystemOpenMgr.GetInstance():isOpenSystem(arg0_36.player.level, "WorldMediator")
 
-	setActive(arg0_36.challengeBtn:Find("lock"), not var5_36)
-	setActive(arg0_36.entranceLayer:Find("btns/btn_challenge/lock"), not var5_36)
+	setActive(arg0_36.entranceLayer:Find("enters/enter_world/enter/lock"), not var5_36)
 
-	local var6_36 = LimitChallengeConst.IsInAct()
+	local var6_36 = LimitChallengeConst.IsOpen()
 
-	setActive(arg0_36.challengeBtn, var6_36)
-	setActive(arg0_36.entranceLayer:Find("btns/btn_challenge"), var6_36)
+	setActive(arg0_36.challengeBtn:Find("lock"), not var6_36)
+	setActive(arg0_36.entranceLayer:Find("btns/btn_challenge/lock"), not var6_36)
 
-	local var7_36 = LimitChallengeConst.IsShowRedPoint()
+	local var7_36 = LimitChallengeConst.IsInAct()
 
-	setActive(arg0_36.entranceLayer:Find("btns/btn_challenge/tip"), var7_36)
+	setActive(arg0_36.challengeBtn, var7_36)
+	setActive(arg0_36.entranceLayer:Find("btns/btn_challenge"), var7_36)
+
+	local var8_36 = LimitChallengeConst.IsShowRedPoint()
+
+	setActive(arg0_36.entranceLayer:Find("btns/btn_challenge/tip"), var8_36)
 	arg0_36:initMapBtn(arg0_36.btnPrev, -1)
 	arg0_36:initMapBtn(arg0_36.btnNext, 1)
 	arg0_36:registerActBtn()
 
 	if arg0_36.contextData.editEliteChapter then
-		local var8_36 = getProxy(ChapterProxy):getChapterById(arg0_36.contextData.editEliteChapter)
+		local var9_36 = getProxy(ChapterProxy):getChapterById(arg0_36.contextData.editEliteChapter)
 
-		arg0_36:displayFleetEdit(var8_36)
+		arg0_36:displayFleetEdit(var9_36)
 
 		arg0_36.contextData.editEliteChapter = nil
 	elseif arg0_36.contextData.selectedChapterVO then
@@ -691,9 +695,9 @@ function var0_0.didEnter(arg0_36)
 		arg0_36.contextData.selectedChapterVO = nil
 	end
 
-	local var9_36 = arg0_36.contextData.chapterVO
+	local var10_36 = arg0_36.contextData.chapterVO
 
-	if not var9_36 or not var9_36.active then
+	if not var10_36 or not var10_36.active then
 		arg0_36:tryPlaySubGuide()
 	end
 

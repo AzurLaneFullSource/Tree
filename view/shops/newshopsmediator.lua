@@ -271,9 +271,9 @@ function var0_0.handleNotification(arg0_23, arg1_23)
 	elseif var0_23 == ActivityProxy.ACTIVITY_SHOP_SHOW_AWARDS then
 		arg0_23.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_23.awards, var1_23.callback)
 	elseif var0_23 == GAME.USE_ITEM_DONE then
-		if table.getCount(var1_23) ~= 0 then
+		if #var1_23.drops ~= 0 then
 			arg0_23.viewComponent:emit(BaseUI.ON_AWARD, {
-				items = var1_23
+				items = var1_23.drops
 			})
 		end
 	elseif var0_23 == GAME.FRAG_SELL_DONE then

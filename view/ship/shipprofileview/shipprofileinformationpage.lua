@@ -215,9 +215,9 @@ function var0_0.GetCvList(arg0_23, arg1_23)
 
 	if arg1_23 then
 		if pg.ship_skin_template[arg0_23.skin.id].spine_use_live2d == 1 then
-			var0_23 = pg.AssistantInfo.GetCVListForProfile(true)
+			var0_23 = pg.AssistantInfo.GetCVListForProfile(true, arg0_23.skin.id)
 		else
-			var0_23 = pg.AssistantInfo.GetCVListForProfile()
+			var0_23 = pg.AssistantInfo.GetCVListForProfile(false, arg0_23.skin.id)
 		end
 	else
 		var0_23 = ShipWordHelper.GetCVList()

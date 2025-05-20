@@ -410,3 +410,33 @@ function envFunc(arg0_32, arg1_32, ...)
 
 	return unpackEx(var1_32)
 end
+
+local function var8_0(arg0_35, arg1_35)
+	return arg0_35 ~= nil and type(arg0_35) == arg1_35
+end
+
+function injectClassProcess(arg0_36, arg1_36, arg2_36)
+	local var0_36 = setmetatable({
+		__index = function(arg0_37, arg1_37)
+			local var0_37 = rawget(arg0_37, "class")
+
+			if var8_0(arg1_36[arg1_37], "function") then
+				return var0_37[arg1_37]
+			elseif var8_0(var0_37[arg1_37], "function") then
+				return function(...)
+					return arg2_36(var0_37[arg1_37], ...)
+				end
+			else
+				local var1_37 = rawget(arg0_37, arg1_37)
+
+				if var1_37 == nil then
+					return var0_37[arg1_37]
+				else
+					return var1_37
+				end
+			end
+		end
+	}, arg0_36.class)
+
+	setmetatable(arg0_36, var0_36)
+end

@@ -44,6 +44,7 @@ end
 function var0_0.OnLoad(arg0_4, arg1_4)
 	local var0_4 = arg0_4:GetPaintingName()
 
+	arg0_4:ClearScalePart()
 	LoadPaintingPrefabAsync(arg0_4.container, arg0_4.paintingName, var0_4, "mainNormal", function()
 		if arg0_4:IsExited() then
 			arg0_4:UnLoad()
@@ -62,6 +63,7 @@ function var0_0.OnLoad(arg0_4, arg1_4)
 		end
 
 		arg0_4:Breath()
+		arg0_4:InitScalePart()
 		arg1_4()
 	end)
 end
@@ -377,49 +379,61 @@ function var0_0.OnEnableOrDisableDragAndZoom(arg0_37, arg1_37)
 	end
 end
 
-function var0_0.OnFold(arg0_38, arg1_38)
-	if not arg1_38 then
-		arg0_38:Breath()
+function var0_0.GetPaintingTransform(arg0_38)
+	return arg0_38:GetMeshPainting()
+end
+
+function var0_0.GetPartScaleData(arg0_39)
+	return pg.ship_skin_template[arg0_39.ship.skinId].part_scale.paint
+end
+
+function var0_0.GetPartStateType(arg0_40)
+	return MainPaintingView.STATE_PAINTING
+end
+
+function var0_0.OnFold(arg0_41, arg1_41)
+	if not arg1_41 then
+		arg0_41:Breath()
 	end
 end
 
-function var0_0.GetOffset(arg0_39)
+function var0_0.GetOffset(arg0_42)
 	return MainPaintingView.MESH_POSITION_X_OFFSET
 end
 
-function var0_0.OnPuase(arg0_40)
-	arg0_40:StopBreath()
-end
-
-function var0_0.OnResume(arg0_41)
-	checkCullResume(arg0_41.container:Find("fitter"):GetChild(0))
-	arg0_41:Breath()
-end
-
-function var0_0.Unload(arg0_42)
-	var0_0.super.Unload(arg0_42)
-
-	arg0_42.expression = nil
-end
-
-function var0_0.OnUnload(arg0_43)
+function var0_0.OnPuase(arg0_43)
 	arg0_43:StopBreath()
-	arg0_43:ClearSpecialDrag()
+end
 
-	if arg0_43.loadPaintingName then
-		retPaintingPrefab(arg0_43.container, arg0_43.loadPaintingName)
+function var0_0.OnResume(arg0_44)
+	checkCullResume(arg0_44.container:Find("fitter"):GetChild(0))
+	arg0_44:Breath()
+end
 
-		arg0_43.loadPaintingName = nil
+function var0_0.Unload(arg0_45)
+	var0_0.super.Unload(arg0_45)
+
+	arg0_45.expression = nil
+end
+
+function var0_0.OnUnload(arg0_46)
+	arg0_46:StopBreath()
+	arg0_46:ClearSpecialDrag()
+
+	if arg0_46.loadPaintingName then
+		retPaintingPrefab(arg0_46.container, arg0_46.loadPaintingName)
+
+		arg0_46.loadPaintingName = nil
 	end
 end
 
-function var0_0.OnPuase(arg0_44)
-	arg0_44:ClearEffect()
+function var0_0.OnPuase(arg0_47)
+	arg0_47:ClearEffect()
 end
 
-function var0_0.Dispose(arg0_45)
-	var0_0.super.Dispose(arg0_45)
-	arg0_45:ClearEffect()
+function var0_0.Dispose(arg0_48)
+	var0_0.super.Dispose(arg0_48)
+	arg0_48:ClearEffect()
 end
 
 return var0_0

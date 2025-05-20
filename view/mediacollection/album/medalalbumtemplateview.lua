@@ -1,6 +1,7 @@
 local var0_0 = class("StarLightMedalAlbumView", import("view.base.BaseUI"))
 
 var0_0.ICON_SCALE = 1.35
+var0_0.MEDAL_COUNT = 8
 
 function var0_0.SetMedalGroupData(arg0_1, arg1_1)
 	arg0_1.medalGroupList = arg1_1
@@ -14,7 +15,7 @@ function var0_0.SetMedalGroupData(arg0_1, arg1_1)
 
 	local var0_1 = arg0_1.currentMedalGroup:getConfig("activity_medal_ids")
 
-	for iter0_1 = 1, 8 do
+	for iter0_1 = 1, arg0_1.MEDAL_COUNT do
 		local var1_1 = var0_1[iter0_1]
 
 		LoadImageSpriteAsync("activitymedal/" .. var1_1 .. "_l", arg0_1.slots[iter0_1].slot, true)
@@ -48,7 +49,7 @@ function var0_0.FindUI(arg0_5)
 	arg0_5.nextBtn = arg0_5:findTF("Desk/nextBtn")
 	arg0_5.slots = {}
 
-	for iter0_5 = 1, 8 do
+	for iter0_5 = 1, arg0_5.MEDAL_COUNT do
 		arg0_5.slots[iter0_5] = {
 			slot = arg0_5._tf:Find("Desk/Slot" .. iter0_5),
 			active = arg0_5._tf:Find("Desk/Slot" .. iter0_5 .. "/active"),
@@ -78,7 +79,7 @@ function var0_0.AddListener(arg0_7)
 		arg0_7:closeView()
 	end, SFX_CANCEL)
 
-	for iter0_7 = 1, 8 do
+	for iter0_7 = 1, arg0_7.MEDAL_COUNT do
 		onButton(arg0_7, arg0_7.slots[iter0_7].click, function()
 			arg0_7:showMedalView(iter0_7)
 		end)
@@ -135,7 +136,7 @@ end
 function var0_0.UpdateView(arg0_17)
 	local var0_17 = arg0_17.currentMedalGroup:GetMedalList()
 
-	for iter0_17 = 1, 8 do
+	for iter0_17 = 1, arg0_17.MEDAL_COUNT do
 		local var1_17 = arg0_17.currentMedalGroup:getConfig("activity_medal_ids")[iter0_17]
 		local var2_17 = arg0_17.slots[iter0_17]
 

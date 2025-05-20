@@ -32,11 +32,6 @@ function var0_0.OnDataSetting(arg0_2)
 end
 
 function var0_0.OnFirstFlush(arg0_3)
-	for iter0_3 = 1, #arg0_3.list do
-		setActive(arg0_3:findTF("accomplish", arg0_3.list[iter0_3]), false)
-		setActive(arg0_3:findTF("Check_point", arg0_3.list[iter0_3]), false)
-	end
-
 	onButton(arg0_3, arg0_3.getBtn, function()
 		if not arg0_3.remainCnt or arg0_3.remainCnt <= 0 then
 			return
@@ -70,94 +65,60 @@ function var0_0.OnFirstFlush(arg0_3)
 			return
 		end
 
-		seriesAsync({
-			function(arg0_8)
-				if not pg.NewStoryMgr.GetInstance():IsPlayed(arg0_3.preStory) then
-					pg.NewStoryMgr.GetInstance():Play(arg0_3.preStory, arg0_8)
-				else
-					arg0_8()
-				end
-			end
-		}, function()
-			local var0_9 = Context.New({
-				mediator = HolidayVillaMapScene,
-				viewComponent = HolidayVillaMapMediator
-			})
-
-			arg0_3:emit(ActivityMediator.ON_ADD_SUBLAYER, var0_9)
-		end)
+		arg0_3:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.HOLIDAY_VILLA_MAP)
 	end, SFX_PANEL)
 end
 
-function var0_0.OnUpdateFlush(arg0_10)
-	arg0_10.nday = arg0_10.activity.data3
+function var0_0.OnUpdateFlush(arg0_8)
+	arg0_8.nday = arg0_8.activity.data3
 
-	local var0_10 = arg0_10:IsFinishSign()
+	local var0_8 = arg0_8:IsFinishSign()
 
-	arg0_10.count = 0
+	setActive(arg0_8.got, false)
+	setActive(arg0_8.go, not arg0_8:IsLockLiner() and var0_8)
+	setActive(arg0_8.Notbtn, arg0_8:IsLockLiner())
 
-	for iter0_10 = 1, #arg0_10.taskGroup do
-		arg0_10.curTaskVO = arg0_10.taskProxy:getTaskVO(arg0_10.taskGroup[iter0_10])
+	if not var0_8 then
+		setActive(arg0_8.Notbtn, false)
 
-		if arg0_10.curTaskVO ~= nil and arg0_10.curTaskVO:getTaskStatus() == 2 then
-			arg0_10.count = iter0_10
-		end
-	end
+		local var1_8 = arg0_8.taskGroup[arg0_8.nday]
 
-	setActive(arg0_10.got, false)
-	setActive(arg0_10.go, not arg0_10:IsLockLiner() and arg0_10.count >= 5)
-	setActive(arg0_10.Notbtn, arg0_10:IsLockLiner())
+		arg0_8.curTaskVO = arg0_8.taskProxy:getTaskById(var1_8) or arg0_8.taskProxy:getFinishTaskById(var1_8)
+		arg0_8.remainCnt = math.min(arg0_8.activity:getDayIndex(), #arg0_8.taskGroup) - arg0_8.nday
 
-	if not var0_10 then
-		setActive(arg0_10.Notbtn, false)
-
-		local var1_10 = arg0_10.taskGroup[arg0_10.nday]
-
-		arg0_10.curTaskVO = arg0_10.taskProxy:getTaskById(var1_10) or arg0_10.taskProxy:getFinishTaskById(var1_10)
-		arg0_10.remainCnt = math.min(arg0_10.activity:getDayIndex(), #arg0_10.taskGroup) - arg0_10.nday
-
-		if arg0_10.curTaskVO:getTaskStatus() == 1 then
-			arg0_10.remainCnt = arg0_10.remainCnt + 1
+		if arg0_8.curTaskVO:getTaskStatus() == 1 then
+			arg0_8.remainCnt = arg0_8.remainCnt + 1
 		end
 
-		warning("self.remainCnt   :", arg0_10.remainCnt)
-		setActive(arg0_10.getBtn_tip, arg0_10.remainCnt > 0)
-		setActive(arg0_10.getBtn, arg0_10.remainCnt > 0)
-		setActive(arg0_10.got, arg0_10.remainCnt == 0)
-		setActive(arg0_10.countbg, true)
-		setText(arg0_10.countText, i18n("liner_sign_cnt_tip") .. arg0_10.remainCnt)
+		warning("self.remainCnt   :", arg0_8.remainCnt)
+		setActive(arg0_8.getBtn_tip, arg0_8.remainCnt > 0)
+		setActive(arg0_8.getBtn, arg0_8.remainCnt > 0)
+		setActive(arg0_8.got, arg0_8.remainCnt == 0)
+		setActive(arg0_8.countbg, true)
+		setText(arg0_8.countText, i18n("liner_sign_cnt_tip") .. arg0_8.remainCnt)
 	else
-		setActive(arg0_10.countbg, false)
-		setActive(arg0_10.getBtn, false)
+		setActive(arg0_8.countbg, false)
+		setActive(arg0_8.getBtn, false)
 	end
 
-	for iter1_10 = 1, #arg0_10.list do
-		setActive(arg0_10:findTF("accomplish", arg0_10.list[iter1_10]), false)
-		setActive(arg0_10:findTF("Check_point", arg0_10.list[iter1_10]), false)
-
-		if arg0_10.count > 0 and iter1_10 <= arg0_10.count then
-			setActive(arg0_10:findTF("accomplish", arg0_10.list[iter1_10]), true)
-
-			arg0_10.list[iter1_10]:GetComponent(typeof(Image)).color = Color.New(1, 1, 1, 0)
-		end
-	end
-
-	if arg0_10.count + 1 <= 5 then
-		setActive(arg0_10:findTF("Check_point", arg0_10.list[arg0_10.count + 1]), true)
+	for iter0_8, iter1_8 in ipairs(arg0_8.list) do
+		setActive(arg0_8:findTF("accomplish", arg0_8.list[iter0_8]), var0_8 or iter0_8 < arg0_8.nday)
+		setImageAlpha(iter1_8, (var0_8 or iter0_8 < arg0_8.nday) and 0 or 1)
+		setActive(arg0_8:findTF("Check_point", arg0_8.list[iter0_8]), not var0_8 and iter0_8 == arg0_8.nday)
 	end
 end
 
-function var0_0.IsFinishSign(arg0_11)
-	local var0_11 = arg0_11.taskGroup[#arg0_11.taskGroup]
-	local var1_11 = arg0_11.taskProxy:getTaskById(var0_11) or arg0_11.taskProxy:getFinishTaskById(var0_11)
+function var0_0.IsFinishSign(arg0_9)
+	local var0_9 = arg0_9.taskGroup[#arg0_9.taskGroup]
+	local var1_9 = arg0_9.taskProxy:getTaskById(var0_9) or arg0_9.taskProxy:getFinishTaskById(var0_9)
 
-	return var1_11 and var1_11:getTaskStatus() == 2
+	return var1_9 and var1_9:getTaskStatus() == 2
 end
 
-function var0_0.IsLockLiner(arg0_12)
-	local var0_12 = getProxy(ActivityProxy):getActivityById(ActivityConst.HOLIDAY_ACT_ID)
+function var0_0.IsLockLiner(arg0_10)
+	local var0_10 = getProxy(ActivityProxy):getActivityById(ActivityConst.HOLIDAY_ACT_ID)
 
-	return not var0_12 or var0_12:isEnd()
+	return not var0_10 or var0_10:isEnd()
 end
 
 return var0_0

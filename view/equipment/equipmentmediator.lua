@@ -273,10 +273,28 @@ function var0_0.handleNotification(arg0_17, arg1_17)
 	elseif var0_17 == PlayerProxy.UPDATED then
 		arg0_17.viewComponent:setPlayer(var1_17)
 	elseif var0_17 == GAME.USE_ITEM_DONE then
-		if #var1_17 > 0 then
+		if #var1_17.drops > 0 then
 			arg0_17.viewComponent:emit(BaseUI.ON_WORLD_ACHIEVE, {
 				animation = true,
-				items = var1_17
+				items = var1_17.drops,
+				removeFunc = function()
+					if var1_17.isEquipBox then
+						local var0_18 = underscore.map(var1_17.drops, function(arg0_19)
+							return Equipment.New({
+								id = arg0_19.id,
+								count = arg0_19.count
+							})
+						end)
+
+						arg0_17:addSubLayers(Context.New({
+							viewComponent = ResolveEquipmentLayer,
+							mediator = ResolveEquipmentMediator,
+							data = {
+								Equipments = var0_18
+							}
+						}))
+					end
+				end
 			})
 		end
 	elseif var0_17 == GAME.FRAG_SELL_DONE then
@@ -285,12 +303,6 @@ function var0_0.handleNotification(arg0_17, arg1_17)
 		arg0_17.canUpdate = true
 
 		arg0_17.viewComponent:setEquipmentUpdate()
-
-		if #var1_17 > 0 then
-			arg0_17.viewComponent:emit(BaseUI.ON_AWARD, {
-				items = var1_17
-			})
-		end
 	elseif var0_17 == BagProxy.ITEM_UPDATED then
 		if arg0_17.canUpdate then
 			local var2_17 = getProxy(BagProxy):getItemsByExclude()
@@ -329,8 +341,8 @@ function var0_0.handleNotification(arg0_17, arg1_17)
 	end
 end
 
-function var0_0.remove(arg0_18)
-	getProxy(SettingsProxy):setEquipSceneIndex(arg0_18.contextData.warp)
+function var0_0.remove(arg0_20)
+	getProxy(SettingsProxy):setEquipSceneIndex(arg0_20.contextData.warp)
 end
 
 return var0_0

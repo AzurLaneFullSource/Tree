@@ -23,7 +23,7 @@ function var0_0.didEnter(arg0_4)
 end
 
 function var0_0.initEvent(arg0_5)
-	if not arg0_5.handle and IsUnityEditor then
+	if not arg0_5.handle then
 		arg0_5.handle = UpdateBeat:CreateListener(arg0_5.OnUpdate, arg0_5)
 
 		UpdateBeat:AddListener(arg0_5.handle)
@@ -32,7 +32,7 @@ function var0_0.initEvent(arg0_5)
 	arg0_5:bind(WatermelonGameEvent.LEVEL_GAME, function(arg0_6, arg1_6, arg2_6)
 		if arg1_6 then
 			arg0_5:resumeGame()
-			arg0_5:onGameOver()
+			arg0_5:onGameOver(false)
 		else
 			arg0_5:resumeGame()
 		end
@@ -67,7 +67,7 @@ function var0_0.initEvent(arg0_5)
 		arg0_5:closeView()
 	end)
 	arg0_5:bind(WatermelonGameEvent.GAME_OVER, function(arg0_14, arg1_14, arg2_14)
-		arg0_5:onGameOver()
+		arg0_5:onGameOver(arg1_14)
 	end)
 	arg0_5:bind(WatermelonGameEvent.SHOW_RULE, function(arg0_15, arg1_15, arg2_15)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
@@ -76,6 +76,7 @@ function var0_0.initEvent(arg0_5)
 		})
 	end)
 	arg0_5:bind(WatermelonGameEvent.SHOW_RANK, function(arg0_16, arg1_16, arg2_16)
+		arg0_5:getRankData()
 		arg0_5.popUI:showRank(true)
 	end)
 	arg0_5:bind(WatermelonGameEvent.READY_START, function(arg0_17, arg1_17, arg2_17)
@@ -95,227 +96,268 @@ function var0_0.initEvent(arg0_5)
 		arg0_5:addScore(arg1_20.num)
 		arg0_5.gameUI:addScore(arg1_20)
 	end)
+	arg0_5:bind(WatermelonGameEvent.UPDATE_NEXT_BALL, function(arg0_21, arg1_21, arg2_21)
+		arg0_5.gameUI:updateBallId(arg1_21)
+	end)
 end
 
-function var0_0.initUI(arg0_21)
-	var1_0:setGameTpl(findTF(arg0_21._tf, "tpl"))
-	setActive(findTF(arg0_21._tf, "tpl"), false)
+function var0_0.initUI(arg0_22)
+	var1_0:setGameTpl(findTF(arg0_22._tf, "tpl"))
+	setActive(findTF(arg0_22._tf, "tpl"), false)
 
-	arg0_21.clickMask = findTF(arg0_21._tf, "clickMask")
-	arg0_21.popUI = WatermelonGamePopUI.New(arg0_21._tf, arg0_21, arg0_21._gameVo)
+	arg0_22.clickMask = findTF(arg0_22._tf, "clickMask")
+	arg0_22.popUI = WatermelonGamePopUI.New(arg0_22._tf, arg0_22, arg0_22._gameVo)
 
-	arg0_21.popUI:clearUI()
+	arg0_22.popUI:clearUI()
 
-	arg0_21.gameUI = WatermelonGamingUI.New(arg0_21._tf, arg0_21, arg0_21._gameVo)
+	arg0_22.gameUI = WatermelonGamingUI.New(arg0_22._tf, arg0_22, arg0_22._gameVo)
 
-	arg0_21.gameUI:show(false)
+	arg0_22.gameUI:show(false)
 
-	arg0_21.menuUI = WatermelonGameMenuUI.New(arg0_21._tf, arg0_21, arg0_21._gameVo)
+	arg0_22.menuUI = WatermelonGameMenuUI.New(arg0_22._tf, arg0_22, arg0_22._gameVo)
 
-	arg0_21.menuUI:update(arg0_21:GetMGHubData())
-	arg0_21.menuUI:show(true)
+	arg0_22.menuUI:update(arg0_22:GetMGHubData())
+	arg0_22.menuUI:show(true)
 
-	arg0_21.gameScene = WatermelonGameScene.New(arg0_21._tf, arg0_21, arg0_21._gameVo)
+	arg0_22.gameScene = WatermelonGameScene.New(arg0_22._tf, arg0_22, arg0_22._gameVo)
 end
 
-function var0_0.changeBgm(arg0_22, arg1_22)
-	local var0_22
+function var0_0.changeBgm(arg0_23, arg1_23)
+	local var0_23
 
-	if arg1_22 == PipeGameConst.bgm_type_default then
-		var0_22 = arg0_22:getBGM()
+	if arg1_23 == PipeGameConst.bgm_type_default then
+		var0_23 = arg0_23:getBGM()
 
-		if not var0_22 then
+		if not var0_23 then
 			if pg.CriMgr.GetInstance():IsDefaultBGM() then
-				var0_22 = pg.voice_bgm.NewMainScene.default_bgm
+				var0_23 = pg.voice_bgm.NewMainScene.default_bgm
 			else
-				var0_22 = pg.voice_bgm.NewMainScene.bgm
+				var0_23 = pg.voice_bgm.NewMainScene.bgm
 			end
 		end
-	elseif arg1_22 == PipeGameConst.bgm_type_menu then
-		var0_22 = WatermelonGameConst.menu_bgm
-	elseif arg1_22 == PipeGameConst.bgm_type_game then
-		var0_22 = WatermelonGameConst.game_bgm
+	elseif arg1_23 == PipeGameConst.bgm_type_menu then
+		var0_23 = WatermelonGameConst.menu_bgm
+	elseif arg1_23 == PipeGameConst.bgm_type_game then
+		var0_23 = WatermelonGameConst.game_bgm
 	end
 
-	if arg0_22.bgm ~= var0_22 then
-		arg0_22.bgm = var0_22
+	if arg0_23.bgm ~= var0_23 then
+		arg0_23.bgm = var0_23
 
-		pg.BgmMgr.GetInstance():Push(arg0_22.__cname, var0_22)
+		pg.BgmMgr.GetInstance():Push(arg0_23.__cname, var0_23)
 	end
 end
 
-function var0_0.OnUpdate(arg0_23)
-	arg0_23:gameStep()
+function var0_0.OnUpdate(arg0_24)
+	arg0_24:gameStep()
 end
 
-function var0_0.readyStart(arg0_24)
-	arg0_24.readyStartFlag = true
+function var0_0.readyStart(arg0_25)
+	arg0_25.readyStartFlag = true
 
 	var1_0:prepare()
-	arg0_24.popUI:readyStart()
-	arg0_24.menuUI:show(false)
-	arg0_24.gameUI:show(false)
+	arg0_25.popUI:readyStart()
+	arg0_25.menuUI:show(false)
+	arg0_25.gameUI:show(false)
 end
 
-function var0_0.gameStart(arg0_25)
-	arg0_25.readyStartFlag = false
-	arg0_25.gameStartFlag = true
-	arg0_25.sendSuccessFlag = false
+function var0_0.gameStart(arg0_26)
+	arg0_26.readyStartFlag = false
+	arg0_26.gameStartFlag = true
+	arg0_26.sendSuccessFlag = false
 
-	arg0_25.popUI:popCountUI(false)
-	arg0_25.gameUI:start()
-	arg0_25.gameUI:show(true)
-	arg0_25.gameScene:start()
-	arg0_25:timerStart()
-	arg0_25:changeBgm(PipeGameConst.bgm_type_game)
+	arg0_26.popUI:popCountUI(false)
+	arg0_26.gameUI:start()
+	arg0_26.gameUI:show(true)
+	arg0_26.gameScene:start()
+	arg0_26:timerStart()
+	arg0_26:changeBgm(PipeGameConst.bgm_type_game)
 end
 
-function var0_0.changeSpeed(arg0_26, arg1_26)
+function var0_0.changeSpeed(arg0_27, arg1_27)
 	return
 end
 
-function var0_0.gameStep(arg0_27)
-	if arg0_27.gameStartFlag and not arg0_27.gameStop then
-		arg0_27:stepRunTimeData()
-		arg0_27.gameUI:step(var1_0.deltaTime)
-		arg0_27.gameScene:step(var1_0.deltaTime)
+function var0_0.gameStep(arg0_28)
+	if arg0_28.gameStartFlag and not arg0_28.gameStop then
+		arg0_28:stepRunTimeData()
+		arg0_28.gameUI:step(var1_0.deltaTime)
+		arg0_28.gameScene:step(var1_0.deltaTime)
 		Physics2D.Simulate(var1_0.deltaTime)
 	end
 
 	if IsUnityEditor then
 		if Input.GetKeyDown(KeyCode.A) then
-			arg0_27.gameUI:press(KeyCode.A, true)
+			arg0_28.gameUI:press(KeyCode.A, true)
 		end
 
 		if Input.GetKeyUp(KeyCode.A) then
-			arg0_27.gameUI:press(KeyCode.A, false)
+			arg0_28.gameUI:press(KeyCode.A, false)
 		end
 
 		if Input.GetKeyDown(KeyCode.D) then
-			arg0_27.gameUI:press(KeyCode.D, true)
+			arg0_28.gameUI:press(KeyCode.D, true)
 		end
 
 		if Input.GetKeyUp(KeyCode.D) then
-			arg0_27.gameUI:press(KeyCode.D, false)
+			arg0_28.gameUI:press(KeyCode.D, false)
 		end
 
 		if Input.GetKeyDown(KeyCode.J) then
-			arg0_27.gameUI:press(KeyCode.J, true)
+			arg0_28.gameUI:press(KeyCode.J, true)
 		end
 	end
 end
 
-function var0_0.timerStart(arg0_28)
-	arg0_28.gamestop = false
-end
-
-function var0_0.timerResume(arg0_29)
+function var0_0.timerStart(arg0_29)
 	arg0_29.gamestop = false
-
-	arg0_29.gameScene:resume()
 end
 
-function var0_0.timerStop(arg0_30)
-	arg0_30.gamestop = true
+function var0_0.timerResume(arg0_30)
+	arg0_30.gamestop = false
 
-	arg0_30.gameScene:stop()
+	arg0_30.gameScene:resume()
 end
 
-function var0_0.stepRunTimeData(arg0_31)
-	local var0_31 = Time.deltaTime
+function var0_0.timerStop(arg0_31)
+	arg0_31.gamestop = true
 
-	var1_0.gameTime = var1_0.gameTime - var0_31
-	var1_0.gameStepTime = var1_0.gameStepTime + var0_31
-	var1_0.deltaTime = var0_31
+	arg0_31.gameScene:stop()
 end
 
-function var0_0.addScore(arg0_32, arg1_32)
-	var1_0.scoreNum = var1_0.scoreNum + arg1_32
+function var0_0.getRankData(arg0_32)
+	pg.m02:sendNotification(GAME.MINI_GAME_FRIEND_RANK, {
+		id = var1_0.gameId,
+		callback = function(arg0_33)
+			local var0_33 = {}
+
+			for iter0_33 = 1, #arg0_33 do
+				local var1_33 = {}
+
+				for iter1_33, iter2_33 in pairs(arg0_33[iter0_33]) do
+					var1_33[iter1_33] = iter2_33
+				end
+
+				table.insert(var0_33, var1_33)
+			end
+
+			table.sort(var0_33, function(arg0_34, arg1_34)
+				if arg0_34.score ~= arg1_34.score then
+					return arg0_34.score > arg1_34.score
+				elseif arg0_34.time_data ~= arg1_34.time_data then
+					return arg0_34.time_data > arg1_34.time_data
+				else
+					return arg0_34.player_id < arg1_34.player_id
+				end
+			end)
+			arg0_32.popUI:updateRankData(var0_33)
+		end
+	})
 end
 
-function var0_0.onGameOver(arg0_33)
-	if arg0_33.settlementFlag then
+function var0_0.stepRunTimeData(arg0_35)
+	local var0_35 = Time.deltaTime
+
+	var1_0.gameTime = var1_0.gameTime - var0_35
+	var1_0.gameStepTime = var1_0.gameStepTime + var0_35
+	var1_0.deltaTime = var0_35
+end
+
+function var0_0.addScore(arg0_36, arg1_36)
+	var1_0.scoreNum = var1_0.scoreNum + arg1_36
+end
+
+function var0_0.onGameOver(arg0_37, arg1_37)
+	if arg0_37.settlementFlag then
 		return
 	end
 
-	arg0_33:timerStop()
-	arg0_33:clearController()
-
-	arg0_33.settlementFlag = true
-
-	setActive(arg0_33.clickMask, true)
-	LeanTween.delayedCall(go(arg0_33._tf), 0.1, System.Action(function()
-		arg0_33.settlementFlag = false
-		arg0_33.gameStartFlag = false
-
-		setActive(arg0_33.clickMask, false)
-		arg0_33.popUI:updateSettlementUI()
-		arg0_33.popUI:popSettlementUI(true)
-	end))
-end
-
-function var0_0.OnApplicationPaused(arg0_35)
-	if not arg0_35.gameStartFlag then
-		return
-	end
-
-	if arg0_35.readyStartFlag then
-		return
-	end
-
-	if arg0_35.settlementFlag then
-		return
-	end
-
-	arg0_35:pauseGame()
-	arg0_35.popUI:popPauseUI()
-end
-
-function var0_0.clearController(arg0_36)
-	arg0_36.gameScene:clear()
-end
-
-function var0_0.pauseGame(arg0_37)
-	arg0_37.gameStop = true
-
-	arg0_37:changeSpeed(0)
 	arg0_37:timerStop()
+	arg0_37:clearController()
+
+	arg0_37.settlementFlag = true
+
+	setActive(arg0_37.clickMask, true)
+	LeanTween.delayedCall(go(arg0_37._tf), 0.1, System.Action(function()
+		arg0_37.settlementFlag = false
+		arg0_37.gameStartFlag = false
+
+		setActive(arg0_37.clickMask, false)
+		arg0_37.popUI:updateSettlementUI()
+		arg0_37.popUI:popSettlementUI(true)
+	end))
+
+	local var0_37 = arg1_37 and 1 or 0
+
+	arg0_37:emit(BaseMiniGameMediator.GAME_FINISH_TRACKING, {
+		game_id = arg0_37._gameVo.gameId,
+		hub_id = arg0_37._gameVo.hubId,
+		isComplete = var0_37
+	})
 end
 
-function var0_0.resumeGame(arg0_38)
-	arg0_38.gameStop = false
+function var0_0.OnApplicationPaused(arg0_39)
+	if not arg0_39.gameStartFlag then
+		return
+	end
 
-	arg0_38:changeSpeed(1)
-	arg0_38:timerStart()
-end
-
-function var0_0.onBackPressed(arg0_39)
 	if arg0_39.readyStartFlag then
 		return
 	end
 
-	if not arg0_39.gameStartFlag then
+	if arg0_39.settlementFlag then
+		return
+	end
+
+	arg0_39:pauseGame()
+	arg0_39.popUI:popPauseUI()
+end
+
+function var0_0.clearController(arg0_40)
+	arg0_40.gameScene:clear()
+end
+
+function var0_0.pauseGame(arg0_41)
+	arg0_41.gameStop = true
+
+	arg0_41:changeSpeed(0)
+	arg0_41:timerStop()
+end
+
+function var0_0.resumeGame(arg0_42)
+	arg0_42.gameStop = false
+
+	arg0_42:changeSpeed(1)
+	arg0_42:timerStart()
+end
+
+function var0_0.onBackPressed(arg0_43)
+	if arg0_43.readyStartFlag then
+		return
+	end
+
+	if not arg0_43.gameStartFlag then
 		return
 	else
-		if arg0_39.settlementFlag then
+		if arg0_43.settlementFlag then
 			return
 		end
 
-		arg0_39.popUI:backPressed()
+		arg0_43.popUI:backPressed()
 	end
 end
 
-function var0_0.OnSendMiniGameOPDone(arg0_40, arg1_40)
+function var0_0.OnSendMiniGameOPDone(arg0_44, arg1_44)
 	return
 end
 
-function var0_0.willExit(arg0_41)
-	if arg0_41.handle then
-		UpdateBeat:RemoveListener(arg0_41.handle)
+function var0_0.willExit(arg0_45)
+	if arg0_45.handle then
+		UpdateBeat:RemoveListener(arg0_45.handle)
 	end
 
-	if arg0_41._tf and LeanTween.isTweening(go(arg0_41._tf)) then
-		LeanTween.cancel(go(arg0_41._tf))
+	if arg0_45._tf and LeanTween.isTweening(go(arg0_45._tf)) then
+		LeanTween.cancel(go(arg0_45._tf))
 	end
 
 	Time.timeScale = 1

@@ -533,68 +533,220 @@ function var0_0.OnUpdateShip(arg0_69, arg1_69)
 	return
 end
 
-function var0_0.Dispose(arg0_70)
-	arg0_70:disposeEvent()
+function var0_0.InitScalePart(arg0_70)
+	local var0_70 = arg0_70:GetPartScaleData()
 
-	arg0_70.isExited = true
+	if var0_70 and #var0_70 > 0 then
+		arg0_70.partScaleList = {}
+		arg0_70.partScaleSelectList = {}
 
-	pg.DelegateInfo.Dispose(arg0_70)
+		local var1_70 = arg0_70:GetPaintingTransform()
 
-	if arg0_70.state == var3_0 then
-		arg0_70:UnLoad()
+		if var1_70 then
+			for iter0_70, iter1_70 in ipairs(var0_70) do
+				local var2_70 = findTF(var1_70, iter1_70)
+
+				if var2_70 then
+					local var3_70 = GetOrAddComponent(var2_70, typeof(PinchZoom))
+
+					var3_70.enabled = false
+
+					PoolMgr.GetInstance():GetUI("mainuiscalepart", false, function(arg0_71)
+						SetParent(arg0_71, var2_70)
+						setActive(arg0_71, false)
+						table.insert(arg0_70.partScaleSelectList, {
+							tf = tf(arg0_71),
+							name = iter1_70
+						})
+					end)
+					onButton(arg0_70._event, var2_70, function()
+						if arg0_70.partScaleFlag then
+							arg0_70.selectPartName = iter1_70
+
+							arg0_70:updateSelectPartScale()
+						end
+					end)
+					arg0_70:ResetPartScale(true)
+					table.insert(arg0_70.partScaleList, {
+						name = iter1_70,
+						tf = var2_70,
+						com = var3_70
+					})
+				end
+			end
+		end
+	end
+end
+
+function var0_0.updatePartCotent(arg0_73, arg1_73)
+	for iter0_73 = 1, #arg0_73.partScaleSelectList do
+		if arg1_73 then
+			arg0_73:emit(NewMainScene.SET_SCALE_PART_CONTENT, arg0_73.partScaleSelectList[iter0_73].tf)
+		else
+			setParent(arg0_73.partScaleSelectList[iter0_73].tf, arg0_73:GetPaintingTransform(), true)
+		end
+	end
+end
+
+function var0_0.updateSelectPartScale(arg0_74)
+	for iter0_74 = 1, #arg0_74.partScaleList do
+		local var0_74 = arg0_74.partScaleList[iter0_74]
+		local var1_74 = arg0_74.partScaleFlag and var0_74.name == arg0_74.selectPartName
+
+		var0_74.com.enabled = var1_74
+
+		setActive(arg0_74.partScaleSelectList[iter0_74].tf, arg0_74.partScaleFlag and arg0_74.partScaleSelectList[iter0_74].name == arg0_74.selectPartName)
+	end
+end
+
+function var0_0.ClearScalePart(arg0_75)
+	if arg0_75.partScaleList and #arg0_75.partScaleList > 0 then
+		for iter0_75 = 1, #arg0_75.partScaleList do
+			if arg0_75.partScaleList[iter0_75].tf then
+				removeOnButton(arg0_75.partScaleList[iter0_75].tf)
+			end
+		end
+
+		arg0_75.partScaleList = nil
 	end
 
-	arg0_70.cvLoader:Dispose()
+	if arg0_75.partScaleSelectList and #arg0_75.partScaleSelectList > 0 then
+		for iter1_75 = 1, #arg0_75.partScaleSelectList do
+			if arg0_75.partScaleSelectList[iter1_75].tf then
+				PoolMgr.GetInstance():ReturnUI("mainuiscalepart", go(arg0_75.partScaleSelectList[iter1_75].tf))
+			end
+		end
 
-	arg0_70.cvLoader = nil
-	arg0_70.triggerWhenLoaded = false
-
-	arg0_70:RemoveTimer()
-	arg0_70:RemoveMoveTimer()
-	arg0_70:RemoveChatTimer()
+		arg0_75.partScaleSelectList = nil
+	end
 end
 
-function var0_0.OnLoad(arg0_71, arg1_71)
-	arg1_71()
+function var0_0.OnEnablePartScale(arg0_76, arg1_76)
+	if arg0_76.partScaleList then
+		arg0_76.partScaleFlag = arg1_76
+		arg0_76.selectPartName = nil
+
+		for iter0_76 = 1, #arg0_76.partScaleList do
+			local var0_76 = arg0_76.partScaleList[iter0_76].tf
+
+			GetOrAddComponent(var0_76, typeof(CanvasGroup)).blocksRaycasts = arg1_76
+		end
+
+		arg0_76:updateSelectPartScale()
+		arg0_76:updatePartCotent(arg1_76)
+
+		if not arg1_76 then
+			arg0_76:ResetPartScale(true)
+		end
+	end
 end
 
-function var0_0.OnUnload(arg0_72)
+function var0_0.ResetPartScale(arg0_77, arg1_77)
+	if arg0_77.partScaleList and #arg0_77.partScaleList > 0 then
+		for iter0_77 = 1, #arg0_77.partScaleList do
+			local var0_77 = arg0_77.partScaleList[iter0_77].tf
+			local var1_77 = arg0_77.partScaleList[iter0_77].name
+			local var2_77 = arg1_77 and getProxy(SettingsProxy):getSkinScaleSetting(arg0_77.ship, arg0_77:GetPartStateType(), var1_77) or 1
+
+			var0_77.localScale = Vector3(var2_77, var2_77, var2_77)
+		end
+	end
+end
+
+function var0_0.SavePartScaleData(arg0_78)
+	if not arg0_78.partScaleList or #arg0_78.partScaleList == 0 then
+		return
+	end
+
+	if not arg0_78.ship then
+		return
+	end
+
+	for iter0_78 = 1, #arg0_78.partScaleList do
+		local var0_78 = arg0_78.partScaleList[iter0_78]
+		local var1_78 = arg0_78:GetPartStateType()
+		local var2_78 = var0_78.name
+		local var3_78 = var0_78.tf.localScale.x
+
+		getProxy(SettingsProxy):setSkinScaleSetting(arg0_78.ship, var1_78, var2_78, var3_78)
+	end
+end
+
+function var0_0.GetPaintingTransform(arg0_79)
+	return nil
+end
+
+function var0_0.GetPartScaleData(arg0_80)
+	return nil
+end
+
+function var0_0.GetPartStateType(arg0_81)
 	return
 end
 
-function var0_0.OnClick(arg0_73)
+function var0_0.Dispose(arg0_82)
+	arg0_82:disposeEvent()
+
+	arg0_82.isExited = true
+
+	pg.DelegateInfo.Dispose(arg0_82)
+
+	if arg0_82.state == var3_0 then
+		arg0_82:UnLoad()
+	end
+
+	arg0_82.cvLoader:Dispose()
+
+	arg0_82.cvLoader = nil
+	arg0_82.triggerWhenLoaded = false
+
+	arg0_82:RemoveTimer()
+	arg0_82:RemoveMoveTimer()
+	arg0_82:RemoveChatTimer()
+	arg0_82:ClearScalePart()
+end
+
+function var0_0.OnLoad(arg0_83, arg1_83)
+	arg1_83()
+end
+
+function var0_0.OnUnload(arg0_84)
 	return
 end
 
-function var0_0.OnLongPress(arg0_74)
+function var0_0.OnClick(arg0_85)
 	return
 end
 
-function var0_0.OnTriggerEvent(arg0_75)
+function var0_0.OnLongPress(arg0_86)
 	return
 end
 
-function var0_0.OnTriggerEventAuto(arg0_76)
+function var0_0.OnTriggerEvent(arg0_87)
 	return
 end
 
-function var0_0.OnDisplayWorld(arg0_77, arg1_77)
+function var0_0.OnTriggerEventAuto(arg0_88)
 	return
 end
 
-function var0_0.OnFold(arg0_78, arg1_78)
+function var0_0.OnDisplayWorld(arg0_89, arg1_89)
 	return
 end
 
-function var0_0.OnEnableOrDisableDragAndZoom(arg0_79, arg1_79)
+function var0_0.OnFold(arg0_90, arg1_90)
 	return
 end
 
-function var0_0.OnPuase(arg0_80)
+function var0_0.OnEnableOrDisableDragAndZoom(arg0_91, arg1_91)
 	return
 end
 
-function var0_0.OnResume(arg0_81)
+function var0_0.OnPuase(arg0_92)
+	return
+end
+
+function var0_0.OnResume(arg0_93)
 	return
 end
 

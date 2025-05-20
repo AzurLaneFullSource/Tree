@@ -69,6 +69,8 @@ pg.pay_data_display = setmetatable({
 		88,
 		89,
 		90,
+		91,
+		92,
 		1000,
 		1001,
 		1002,
@@ -176,6 +178,9 @@ pg.pay_data_display = setmetatable({
 		2047,
 		2048,
 		2049,
+		2050,
+		2051,
+		2052,
 		5011,
 		5012,
 		5013,
@@ -7272,6 +7277,234 @@ pg.base.pay_data_display = {
 			{
 				2,
 				81212,
+				1
+			}
+		}
+	},
+	[91] = {
+		name = "Swimsuit Lucky Bag 2025 A",
+		limit_group = 0,
+		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack. ",
+		type = 1,
+		subject = "Swimsuit Lucky Bag 2025 A",
+		limit_arg = 1,
+		name_display = "Swimsuit Lucky Bag 2025 A",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 2999,
+		id = 91,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai24",
+		skin_inquire_relation = 86213,
+		id_str = "com.yostaren.azurlane.luckybag57",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a random character outfit, 2025 Gems, and a large amount of supplies.",
+		airijp_id = "com.yostaren.azurlane.luckybag57",
+		extra_service_item = {
+			{
+				2,
+				86213,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86213,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81213,
+				1
+			}
+		}
+	},
+	[92] = {
+		name = "Swimsuit Lucky Bag 2024 Rerun",
+		limit_group = 0,
+		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack. ",
+		type = 1,
+		subject = "Swimsuit Lucky Bag 2024 Rerun",
+		limit_arg = 1,
+		name_display = "Swimsuit Lucky Bag 2024 Rerun",
+		show_group = "",
+		type_order = 2,
+		extra_service = 3,
+		money = 2999,
+		id = 92,
+		tag = 2,
+		gem = 0,
+		limit_type = 2,
+		picture = "fudai13",
+		skin_inquire_relation = 86204,
+		id_str = "com.yostaren.azurlane.luckybag58",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a random character outfit, 2024 Gems, and a large amount of supplies.",
+		airijp_id = "com.yostaren.azurlane.luckybag58",
+		extra_service_item = {
+			{
+				2,
+				86204,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86204,
+				1
+			},
+			{
+				1,
+				14,
+				2024
+			},
+			{
+				2,
+				42056,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81204,
 				1
 			}
 		}
@@ -16625,6 +16858,242 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40023,
+				1
+			}
+		}
+	},
+	[2050] = {
+		name = "Battle UI Pack - Seaside Splash",
+		limit_group = 105,
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		subject = "Battle UI Pack - Seaside Splash",
+		limit_arg = 0,
+		name_display = "Battle UI Pack - Seaside Splash",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 1199,
+		id = 2050,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui5",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack26",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a new combat UI theme.",
+		airijp_id = "com.yostaren.azurlane.pack26",
+		extra_service_item = {
+			{
+				31,
+				204,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				204,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[2051] = {
+		name = "Battle UI Pack - Seaside Splash (Basic)",
+		limit_group = 105,
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		subject = "Battle UI Pack - Seaside Splash (Basic)",
+		limit_arg = 1,
+		name_display = "Battle UI Pack - Seaside Splash (Basic)",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 1199,
+		id = 2051,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui5",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack26",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a new combat UI theme.",
+		airijp_id = "com.yostaren.azurlane.pack26",
+		extra_service_item = {
+			{
+				31,
+				204,
+				1
+			},
+			{
+				1,
+				1,
+				1000
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				204,
+				1
+			},
+			{
+				1,
+				1,
+				1000
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40060,
+				1
+			}
+		}
+	},
+	[2052] = {
+		name = "Battle UI Pack - Seaside Splash (Premium)",
+		limit_group = 105,
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		subject = "Battle UI Pack - Seaside Splash (Premium)",
+		limit_arg = 1,
+		name_display = "Battle UI Pack - Seaside Splash (Premium)",
+		show_group = "uigift",
+		type_order = 4,
+		extra_service = 3,
+		money = 3699,
+		id = 2052,
+		tag = 2,
+		gem = 0,
+		limit_type = 5,
+		picture = "ui5",
+		skin_inquire_relation = 0,
+		id_str = "com.yostaren.azurlane.pack27",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a new combat UI theme and Gems x 3,060.",
+		airijp_id = "com.yostaren.azurlane.pack27",
+		extra_service_item = {
+			{
+				31,
+				204,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					5,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					6,
+					11
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				204,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40061,
 				1
 			}
 		}

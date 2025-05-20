@@ -71,7 +71,28 @@ return {
 				text = var0_0[3]
 			},
 			ui = {
-				path = "OverlayCamera/Overlay/UIMain/ItemInfoUI(Clone)/window/actions/use_button",
+				path = "OverlayCamera/Overlay/UIMain/ItemInfoUI(Clone)/window/actions/use_one_button",
+				pathIndex = -1,
+				triggerType = {
+					1
+				},
+				fingerPos = {
+					posY = -37.87,
+					posX = 49.89
+				}
+			}
+		},
+		{
+			alpha = 0.298,
+			style = {
+				dir = 1,
+				mode = 2,
+				posY = -252,
+				posX = -393,
+				text = var0_0[3]
+			},
+			ui = {
+				path = "OverlayCamera/Overlay/UIMain/ItemInfoUI(Clone)/operate/actions/confirm_button",
 				pathIndex = -1,
 				triggerType = {
 					1

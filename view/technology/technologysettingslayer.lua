@@ -41,6 +41,7 @@ function var0_0.didEnter(arg0_3)
 	arg0_3:updateActCatchupBtn()
 	triggerButton(arg0_3.leftBtnList[1])
 	triggerToggle(arg0_3.showFinish, arg0_3.showFinishFlag == 1 and true or false)
+	getProxy(CommanderManualProxy):TaskProgressAdd(2024, 1)
 end
 
 function var0_0.willExit(arg0_4)

@@ -35,7 +35,9 @@ function var0_0.execute(arg0_1, arg1_1)
 
 			arg0_1:sendNotification(GAME.ADD_ITEM, var0_2)
 			arg0_1:sendNotification(GAME.USE_ITEM_DONE, {
-				var0_2
+				drops = {
+					var0_2
+				}
 			})
 		else
 			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg0_2.result))

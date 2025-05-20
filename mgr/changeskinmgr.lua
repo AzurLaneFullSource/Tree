@@ -5,6 +5,7 @@ local var0_0 = pg.ChangeSkinMgr
 local var1_0 = 1
 local var2_0 = 2
 local var3_0 = 3
+local var4_0 = 4
 
 function var0_0.Init(arg0_1, arg1_1)
 	arg0_1._go = nil
@@ -32,6 +33,7 @@ function var0_0.initUI(arg0_2, arg1_2)
 			arg0_2._spineContent = findTF(arg0_2._go, "ad/spine")
 			arg0_2._mvContent = findTF(arg0_2._go, "ad/mv")
 			arg0_2._live2dContent = findTF(arg0_2._go, "ad/live2d")
+			arg0_2._animatorContent = findTF(arg0_2._go, "ad/animator")
 
 			arg1_2()
 		end)
@@ -39,22 +41,27 @@ function var0_0.initUI(arg0_2, arg1_2)
 end
 
 function var0_0.preloadChangeAction(arg0_4, arg1_4, arg2_4)
-	arg0_4._isloading = true
-
 	local var0_4 = ShipGroup.GetChangeSkinAction(arg1_4)
-	local var1_4 = "changeskin/" .. var0_4
 
-	PoolMgr.GetInstance():GetPrefab(var1_4, "", true, function(arg0_5)
-		if var1_4 then
-			PoolMgr.GetInstance():ReturnPrefab(var1_4, "", arg0_5, false)
-		end
+	if var0_4 and var0_4 ~= "" then
+		arg0_4._isloading = true
 
-		if arg2_4 then
-			arg2_4()
-		end
+		local var1_4 = "changeskin/" .. var0_4
 
-		arg0_4._isloading = false
-	end)
+		PoolMgr.GetInstance():GetPrefab(var1_4, "", true, function(arg0_5)
+			if var1_4 then
+				PoolMgr.GetInstance():ReturnPrefab(var1_4, "", arg0_5, false)
+			end
+
+			if arg2_4 then
+				arg2_4()
+			end
+
+			arg0_4._isloading = false
+		end)
+	elseif arg2_4 then
+		arg2_4()
+	end
 end
 
 function var0_0.isAble(arg0_6)
@@ -70,9 +77,10 @@ function var0_0.play(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
 	arg0_7.changeIndex = ShipGroup.GetChangeSkinIndex(arg1_7)
 	arg0_7.changeState = ShipGroup.GetChangeSkinState(arg1_7)
 	arg0_7.changAction = ShipGroup.GetChangeSkinAction(arg1_7)
-	arg0_7._loadObjectName = "changeskin/" .. arg0_7.changAction
 
 	if arg0_7.changeState == var1_0 then
+		arg0_7._loadObjectName = "changeskin/" .. arg0_7.changAction
+
 		PoolMgr.GetInstance():GetPrefab(arg0_7._loadObjectName, "", true, function(arg0_8)
 			arg0_7._go:SetActive(true)
 
@@ -108,33 +116,64 @@ function var0_0.play(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
 		-- block empty
 	elseif arg0_7.changeState == var3_0 then
 		-- block empty
+	elseif arg0_7.changeState == var4_0 then
+		arg0_7._loadObjectName = "changeskin/changeempty"
+
+		PoolMgr.GetInstance():GetPrefab(arg0_7._loadObjectName, "", true, function(arg0_10)
+			arg0_7._go:SetActive(true)
+
+			arg0_7._loadObject = arg0_10
+			arg0_7._aniamtorTf = tf(arg0_10)
+
+			arg0_7._aniamtorTf:SetParent(arg0_7._spineContent, false)
+			setActive(arg0_7._aniamtorTf, true)
+
+			arg0_7._animatorCom = GetComponent(findTF(arg0_7._aniamtorTf, "ad/animator"), typeof(Animator))
+			arg0_7._dftEventCom = GetComponent(findTF(arg0_7._aniamtorTf, "ad/animator"), typeof(DftAniEvent))
+
+			local var0_10 = "change_" .. arg0_7.changeIndex
+
+			arg0_7._animatorCom:SetTrigger(var0_10)
+			arg0_7._dftEventCom:SetTriggerEvent(function(arg0_11)
+				if arg2_7 then
+					arg2_7()
+				end
+			end)
+			arg0_7._dftEventCom:SetEndEvent(function(arg0_12)
+				if arg3_7 then
+					arg3_7()
+				end
+
+				arg0_7:finish(arg4_7)
+			end)
+		end)
 	end
 end
 
-function var0_0.finish(arg0_10, arg1_10)
-	if LeanTween.isTweening(arg0_10._go) then
-		LeanTween.cancel(arg0_10._go)
+function var0_0.finish(arg0_13, arg1_13)
+	if LeanTween.isTweening(arg0_13._go) then
+		LeanTween.cancel(arg0_13._go)
 	end
 
 	LeanTween.delayedCall(0.5, System.Action(function()
-		if arg0_10._spineAnimUI then
-			arg0_10._spineAnimUI:SetActionCallBack(nil)
+		if arg0_13._spineAnimUI then
+			arg0_13._spineAnimUI:SetActionCallBack(nil)
 
-			arg0_10._spineAnimUI = nil
+			arg0_13._spineAnimUI = nil
 		end
 
-		if arg0_10._loadObject then
-			PoolMgr.GetInstance():ReturnPrefab(arg0_10._loadObjectName, "", arg0_10._loadObject, true)
+		if arg0_13._loadObject then
+			PoolMgr.GetInstance():ReturnPrefab(arg0_13._loadObjectName, "", arg0_13._loadObject, true)
 		end
 
-		arg0_10._inPlaying = false
+		arg0_13._inPlaying = false
 
-		if arg0_10._go then
-			arg0_10._go:SetActive(false)
+		if arg0_13._go then
+			arg0_13._go:SetActive(false)
 		end
 
-		if arg1_10 then
-			arg1_10()
+		if arg1_13 then
+			arg1_13()
 		end
 	end))
 end

@@ -115,14 +115,29 @@ function var0_0.handleNotification(arg0_14, arg1_14)
 					}
 				}))
 			else
-				arg0_14:addSubLayers(Context.New({
-					mediator = NewSkinMediator,
-					viewComponent = NewSkinLayer,
-					data = {
-						skinId = var3_14.effect_args[1],
-						timeLimit = var3_14.genre == ShopArgs.SkinShopTimeLimit
-					}
-				}))
+				local function var5_14()
+					arg0_14:addSubLayers(Context.New({
+						mediator = NewSkinMediator,
+						viewComponent = NewSkinLayer,
+						data = {
+							skinId = var3_14.effect_args[1],
+							timeLimit = var3_14.genre == ShopArgs.SkinShopTimeLimit
+						}
+					}))
+				end
+
+				if PaintingShowScene.GetSkinShowAble(var4_14) then
+					arg0_14:addSubLayers(Context.New({
+						mediator = PaintingShowMediator,
+						viewComponent = PaintingShowScene,
+						data = {
+							skinId = var4_14,
+							callback = var5_14
+						}
+					}))
+				else
+					var5_14()
+				end
 			end
 
 			arg0_14.viewComponent:OnShopping(var1_14.id)

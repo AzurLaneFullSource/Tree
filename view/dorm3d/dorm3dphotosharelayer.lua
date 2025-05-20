@@ -38,13 +38,8 @@ function var0_0.didEnter(arg0_3)
 		if var0_5 then
 			local var1_5 = pg.ShareMgr.GetInstance()
 			local var2_5 = var0_5:Find("frame").sizeDelta
-			local var3_5 = arg0_3:TakePhoto(pg.ShareMgr.TypeDorm3dPhoto, var2_5)
 
-			YSNormalTool.MediaTool.SaveImageWithBytes(var3_5, function(arg0_6, arg1_6)
-				if arg0_6 then
-					pg.TipsMgr.GetInstance():ShowTips(i18n("word_save_ok"))
-				end
-			end)
+			arg0_3:TakePhoto(pg.ShareMgr.TypeDorm3dPhoto, var2_5)
 		end
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3._tf:Find("Mask"), function()
@@ -62,237 +57,250 @@ function var0_0.didEnter(arg0_3)
 	})
 end
 
-function var0_0.willExit(arg0_10)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_10._tf)
+function var0_0.willExit(arg0_9)
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_9._tf)
 end
 
-function var0_0.exit(arg0_11)
-	var0_0.super.exit(arg0_11)
+function var0_0.exit(arg0_10)
+	var0_0.super.exit(arg0_10)
 end
 
-function var0_0.AfterSelectFrame(arg0_12, arg1_12)
-	arg0_12.selectFrameId = arg1_12.selectFrameId
+function var0_0.AfterSelectFrame(arg0_11, arg1_11)
+	arg0_11.selectFrameId = arg1_11.selectFrameId
 
-	for iter0_12, iter1_12 in pairs(arg0_12.frameDic) do
-		setActive(iter1_12, false)
+	for iter0_11, iter1_11 in pairs(arg0_11.frameDic) do
+		setActive(iter1_11, false)
 	end
 
-	arg0_12:LoadFrame(arg1_12.imagePos, arg1_12.imageScale, arg1_12.specialPosDic)
+	arg0_11:LoadFrame(arg1_11.imagePos, arg1_11.imageScale, arg1_11.specialPosDic)
 end
 
-function var0_0.InitFrame(arg0_13)
-	arg0_13.selectFrameId = 1001
+function var0_0.InitFrame(arg0_12)
+	arg0_12.selectFrameId = 1001
 
-	arg0_13:LoadFrame({
+	arg0_12:LoadFrame({
 		0,
 		0
 	})
 end
 
-function var0_0.LoadFrame(arg0_14, arg1_14, arg2_14, arg3_14)
-	local var0_14 = pg.dorm3d_camera_photo_frame[arg0_14.selectFrameId]
-	local var1_14 = var0_14.frameTfName == "FilmFrame"
-	local var2_14 = var0_14.frameTfName == "InsFrame"
+function var0_0.LoadFrame(arg0_13, arg1_13, arg2_13, arg3_13)
+	local var0_13 = pg.dorm3d_camera_photo_frame[arg0_13.selectFrameId]
+	local var1_13 = var0_13.frameTfName == "FilmFrame"
+	local var2_13 = var0_13.frameTfName == "InsFrame"
 
-	local function var3_14(arg0_15)
-		local var0_15 = arg0_15:Find("mask/realImage")
-		local var1_15 = var0_15:GetComponent(typeof(RawImage))
+	local function var3_13(arg0_14)
+		local var0_14 = arg0_14:Find("mask/realImage")
+		local var1_14 = var0_14:GetComponent(typeof(RawImage))
 
-		var1_15.texture = arg0_14.contextData.photoTex
-		var0_15.sizeDelta = GameObject.Find("OverlayCamera").transform:GetChild(0).sizeDelta
+		var1_14.texture = arg0_13.contextData.photoTex
+		var0_14.sizeDelta = GameObject.Find("OverlayCamera").transform:GetChild(0).sizeDelta
 
-		setAnchoredPosition(var1_15, {
-			x = arg1_14.x,
-			y = arg1_14.y
+		setAnchoredPosition(var1_14, {
+			x = arg1_13.x,
+			y = arg1_13.y
 		})
 
-		if arg2_14 then
-			var0_15.localScale = arg2_14
+		if arg2_13 then
+			var0_14.localScale = arg2_13
 		end
 
-		if arg3_14 then
-			local var2_15 = {
+		if arg3_13 then
+			local var2_14 = {
 				"mask_up/realImage"
 			}
 
-			if var1_14 then
-				table.insert(var2_15, "mask_down/realImage")
+			if var1_13 then
+				table.insert(var2_14, "mask_down/realImage")
 			end
 
-			local var3_15 = {
+			local var3_14 = {
 				"upPos",
 				"downPos"
 			}
-			local var4_15 = {
+			local var4_14 = {
 				"upScale",
 				"downScale"
 			}
 
-			for iter0_15, iter1_15 in ipairs(var2_15) do
-				local var5_15 = arg0_15:Find(iter1_15)
-				local var6_15 = var5_15:GetComponent(typeof(RawImage))
+			for iter0_14, iter1_14 in ipairs(var2_14) do
+				local var5_14 = arg0_14:Find(iter1_14)
+				local var6_14 = var5_14:GetComponent(typeof(RawImage))
 
-				var6_15.texture = arg0_14.contextData.photoTex
+				var6_14.texture = arg0_13.contextData.photoTex
 
-				local var7_15 = GameObject.Find("OverlayCamera").transform:GetChild(0)
+				local var7_14 = GameObject.Find("OverlayCamera").transform:GetChild(0)
 
-				if var2_14 and iter1_15 == "mask_up/realImage" then
-					var5_15.sizeDelta = Vector2(var7_15.sizeDelta.x / 10, var7_15.sizeDelta.y / 10)
+				if var2_13 and iter1_14 == "mask_up/realImage" then
+					var5_14.sizeDelta = Vector2(var7_14.sizeDelta.x / 10, var7_14.sizeDelta.y / 10)
 				else
-					var5_15.sizeDelta = var7_15.sizeDelta
+					var5_14.sizeDelta = var7_14.sizeDelta
 				end
 
-				local var8_15 = var3_15[iter0_15]
+				local var8_14 = var3_14[iter0_14]
 
-				setAnchoredPosition(var6_15, {
-					x = arg3_14[var8_15].x,
-					y = arg3_14[var8_15].y
+				setAnchoredPosition(var6_14, {
+					x = arg3_13[var8_14].x,
+					y = arg3_13[var8_14].y
 				})
 
-				local var9_15 = arg3_14[var4_15[iter0_15]]
+				local var9_14 = arg3_13[var4_14[iter0_14]]
 
-				if var9_15 then
-					var5_15.localScale = var9_15
+				if var9_14 then
+					var5_14.localScale = var9_14
 				end
 			end
 		end
 	end
 
-	local var4_14 = arg0_14.frameDic[arg0_14.selectFrameId]
+	local var4_13 = arg0_13.frameDic[arg0_13.selectFrameId]
 
-	if var4_14 then
-		setActive(var4_14, true)
-		var3_14(var4_14)
+	if var4_13 then
+		setActive(var4_13, true)
+		var3_13(var4_13)
 
 		return
 	end
 
-	if arg0_14.loadingDic[arg0_14.selectFrameId] then
+	if arg0_13.loadingDic[arg0_13.selectFrameId] then
 		return
 	end
 
-	local var5_14 = arg0_14.selectFrameId
+	local var5_13 = arg0_13.selectFrameId
 
-	ResourceMgr.Inst:getAssetAsync("ui/" .. var0_14.frameTfName, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_16)
-		arg0_14.loadingDic[var5_14] = false
+	ResourceMgr.Inst:getAssetAsync("ui/" .. var0_13.frameTfName, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_15)
+		arg0_13.loadingDic[var5_13] = false
 
-		local var0_16 = Object.Instantiate(arg0_16, arg0_14.photoAdapter).transform
+		local var0_15 = Object.Instantiate(arg0_15, arg0_13.photoAdapter).transform
 
-		arg0_14.frameDic[var5_14] = var0_16
+		arg0_13.frameDic[var5_13] = var0_15
 
-		if arg0_14.selectFrameId == var5_14 then
-			var3_14(var0_16)
+		if arg0_13.selectFrameId == var5_13 then
+			var3_13(var0_15)
 		else
-			setActive(var0_16, false)
+			setActive(var0_15, false)
 		end
 
-		var0_16:Find("mask/realImage"):GetComponent(typeof(ScrollRect)).enabled = false
-		var0_16:Find("mask/realImage"):GetComponent(typeof(PinchZoom)).enabled = false
+		var0_15:Find("mask/realImage"):GetComponent(typeof(ScrollRect)).enabled = false
+		var0_15:Find("mask/realImage"):GetComponent(typeof(PinchZoom)).enabled = false
 
-		local var1_16 = var0_16:Find("mask_up/realImage")
-		local var2_16 = var0_16:Find("mask_down/realImage")
+		local var1_15 = var0_15:Find("mask_up/realImage")
+		local var2_15 = var0_15:Find("mask_down/realImage")
 
-		if var1_16 then
-			var1_16:GetComponent(typeof(PinchZoom)).enabled = false
+		if var1_15 then
+			var1_15:GetComponent(typeof(PinchZoom)).enabled = false
 		end
 
-		if var2_16 then
-			var2_16:GetComponent(typeof(PinchZoom)).enabled = false
+		if var2_15 then
+			var2_15:GetComponent(typeof(PinchZoom)).enabled = false
 		end
 
-		var3_14(var0_16)
+		var3_13(var0_15)
 	end), true, true)
 end
 
-function var0_0.TakePhoto(arg0_17, arg1_17, arg2_17)
-	local var0_17 = {}
-	local var1_17 = {}
-	local var2_17 = {}
-	local var3_17 = pg.share_template[arg1_17]
+function var0_0.TakePhoto(arg0_16, arg1_16, arg2_16)
+	local var0_16 = {}
+	local var1_16 = {}
+	local var2_16 = {}
+	local var3_16 = pg.share_template[arg1_16]
 
-	assert(var3_17, "share_template not exist: " .. arg1_17)
-	_.each(var3_17.hidden_comps, function(arg0_18)
+	assert(var3_16, "share_template not exist: " .. arg1_16)
+	_.each(var3_16.hidden_comps, function(arg0_17)
+		local var0_17 = GameObject.Find(arg0_17)
+
+		if not IsNil(var0_17) and var0_17.activeSelf then
+			table.insert(var0_16, var0_17)
+			var0_17:SetActive(false)
+		end
+	end)
+	_.each(var3_16.show_comps, function(arg0_18)
 		local var0_18 = GameObject.Find(arg0_18)
 
-		if not IsNil(var0_18) and var0_18.activeSelf then
-			table.insert(var0_17, var0_18)
-			var0_18:SetActive(false)
+		if not IsNil(var0_18) and not var0_18.activeSelf then
+			table.insert(var1_16, var0_18)
+			var0_18:SetActive(true)
 		end
 	end)
-	_.each(var3_17.show_comps, function(arg0_19)
-		local var0_19 = GameObject.Find(arg0_19)
+	_.each(var3_16.move_comps, function(arg0_19)
+		local var0_19 = GameObject.Find(arg0_19.path)
 
-		if not IsNil(var0_19) and not var0_19.activeSelf then
-			table.insert(var1_17, var0_19)
-			var0_19:SetActive(true)
-		end
-	end)
-	_.each(var3_17.move_comps, function(arg0_20)
-		local var0_20 = GameObject.Find(arg0_20.path)
+		if not IsNil(var0_19) then
+			local var1_19 = var0_19.transform.anchoredPosition.x
+			local var2_19 = var0_19.transform.anchoredPosition.y
+			local var3_19 = arg0_19.x
+			local var4_19 = arg0_19.y
 
-		if not IsNil(var0_20) then
-			local var1_20 = var0_20.transform.anchoredPosition.x
-			local var2_20 = var0_20.transform.anchoredPosition.y
-			local var3_20 = arg0_20.x
-			local var4_20 = arg0_20.y
-
-			table.insert(var2_17, {
-				var0_20,
-				var1_20,
-				var2_20
+			table.insert(var2_16, {
+				var0_19,
+				var1_19,
+				var2_19
 			})
-			setAnchoredPosition(var0_20, {
-				x = var3_20,
-				y = var4_20
+			setAnchoredPosition(var0_19, {
+				x = var3_19,
+				y = var4_19
 			})
 		end
 	end)
 
-	local var4_17 = GameObject.Find(var3_17.camera):GetComponent(typeof(Camera))
-	local var5_17 = var4_17.transform:GetChild(0)
-	local var6_17 = ScreenShooter.New(Screen.width, Screen.height, TextureFormat.ARGB32)
-	local var7_17 = arg0_17:TakeTexture(var6_17, var4_17)
+	local var4_16 = GameObject.Find(var3_16.camera):GetComponent(typeof(Camera))
+	local var5_16 = var4_16.transform:GetChild(0)
 
-	_.each(var0_17, function(arg0_21)
-		arg0_21:SetActive(true)
-	end)
+	local function var6_16(arg0_20)
+		_.each(var0_16, function(arg0_21)
+			arg0_21:SetActive(true)
+		end)
 
-	var0_17 = {}
+		var0_16 = {}
 
-	_.each(var1_17, function(arg0_22)
-		arg0_22:SetActive(false)
-	end)
+		_.each(var1_16, function(arg0_22)
+			arg0_22:SetActive(false)
+		end)
 
-	var1_17 = {}
+		var1_16 = {}
 
-	_.each(var2_17, function(arg0_23)
-		setAnchoredPosition(arg0_23[1], {
-			x = arg0_23[2],
-			y = arg0_23[3]
-		})
-	end)
+		_.each(var2_16, function(arg0_23)
+			setAnchoredPosition(arg0_23[1], {
+				x = arg0_23[2],
+				y = arg0_23[3]
+			})
+		end)
 
-	var2_17 = {}
+		var2_16 = {}
 
-	local var8_17 = arg2_17.x / var5_17.sizeDelta.x * Screen.width
-	local var9_17 = arg2_17.y / var5_17.sizeDelta.y * Screen.height
-	local var10_17 = UnityEngine.Texture2D.New(var8_17, var9_17)
-	local var11_17 = (Screen.width - var8_17) / 2
-	local var12_17 = (Screen.height - var9_17) / 2
-	local var13_17 = var7_17:GetPixels(var11_17, var12_17, var8_17, var9_17)
+		local var0_20 = arg2_16.x / var5_16.sizeDelta.x * Screen.width
+		local var1_20 = arg2_16.y / var5_16.sizeDelta.y * Screen.height
+		local var2_20 = UnityEngine.Texture2D.New(var0_20, var1_20)
+		local var3_20 = (Screen.width - var0_20) / 2
+		local var4_20 = (Screen.height - var1_20) / 2
+		local var5_20 = arg0_20:GetPixels(var3_20, var4_20, var0_20, var1_20)
 
-	var10_17:SetPixels(var13_17)
-	var10_17:Apply()
+		var2_20:SetPixels(var5_20)
+		var2_20:Apply()
 
-	local var14_17 = var6_17:EncodeToJPG(var10_17)
+		local var6_20 = Tex2DExtension.EncodeToJPG(var2_20)
 
-	return (Tex2DExtension.EncodeToJPG(var14_17))
+		YSNormalTool.MediaTool.SaveImageWithBytes(var6_20, function(arg0_24, arg1_24)
+			if arg0_24 then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("word_save_ok"))
+			end
+		end)
+	end
+
+	tolua.loadassembly("Yongshi.BLHotUpdate.Runtime.Rendering")
+	ReflectionHelp.RefCallStaticMethodEx(typeof("BLHX.Rendering.HotUpdate.ScreenShooterPass"), "TakePhoto", {
+		typeof(Camera),
+		typeof("UnityEngine.Events.UnityAction`1[UnityEngine.Object]")
+	}, {
+		var4_16,
+		UnityEngine.Events.UnityAction_UnityEngine_Object(var6_16)
+	})
 end
 
-function var0_0.TakeTexture(arg0_24, arg1_24, arg2_24)
-	local var0_24 = arg1_24:TakePhoto(arg2_24)
+function var0_0.TakeTexture(arg0_25, arg1_25, arg2_25)
+	local var0_25 = arg1_25:TakePhoto(arg2_25)
 
-	return (arg1_24:EncodeToJPG(var0_24))
+	return (arg1_25:EncodeToJPG(var0_25))
 end
 
 return var0_0

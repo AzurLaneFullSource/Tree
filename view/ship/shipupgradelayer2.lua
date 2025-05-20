@@ -16,6 +16,9 @@ end
 function var0_0.init(arg0_4)
 	arg0_4.leftPanel = arg0_4:findTF("blur_panel/left_panel")
 	arg0_4.stages = arg0_4:findTF("stageScrollRect/stages", arg0_4.leftPanel)
+
+	setText(arg0_4.leftPanel:Find("bg/title/Image"), i18n("word_preview"))
+
 	arg0_4.stagesSnap = arg0_4:findTF("stageScrollRect", arg0_4.leftPanel):GetComponent("HorizontalScrollSnap")
 	arg0_4.breakView = arg0_4:findTF("content/Text", arg0_4.leftPanel)
 	arg0_4.rightPanel = arg0_4:findTF("blur_panel/right_panel")
@@ -32,6 +35,11 @@ function var0_0.init(arg0_4)
 	arg0_4.appendStarTips = arg0_4:findTF("bottom/panel_title/tip", arg0_4.rightPanel)
 	arg0_4.tipActive = arg0_4:findTF("bottom/break_btn/tip_active", arg0_4.rightPanel)
 	arg0_4.tipDeactive = arg0_4:findTF("bottom/break_btn/tip_deactive", arg0_4.rightPanel)
+
+	setText(arg0_4.rightPanel:Find("bottom/panel_title/tip"), i18n("breakout_tip"))
+	setText(arg0_4.rightPanel:Find("bottom/break_btn/tip_deactive/values/ok"), i18n("text_confirm"))
+	setText(arg0_4.rightPanel:Find("bottom/break_btn/tip_active/image/ok"), i18n("text_confirm"))
+
 	arg0_4.recommandBtn = arg0_4.rightPanel:Find("bottom/auto_btn")
 	arg0_4.isEnoughItems = true
 	arg0_4.sea = arg0_4:findTF("sea", arg0_4.leftPanel)

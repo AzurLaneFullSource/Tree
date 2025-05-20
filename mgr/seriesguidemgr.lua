@@ -3,7 +3,6 @@ pg.SeriesGuideMgr = singletonClass("SeriesGuideMgr")
 
 local var0_0 = pg.SeriesGuideMgr
 local var1_0 = false
-local var2_0 = 29
 
 function log(...)
 	if var1_0 then
@@ -11,7 +10,7 @@ function log(...)
 	end
 end
 
-local var3_0 = {
+local var2_0 = {
 	IDLE = 1,
 	BUSY = 2
 }
@@ -23,222 +22,273 @@ var0_0.CODES = {
 }
 
 function var0_0.isRunning(arg0_2)
-	return arg0_2.state == var3_0.BUSY
+	return arg0_2.state == var2_0.BUSY
 end
 
-function var0_0.isNotFinish(arg0_3)
-	local var0_3 = getProxy(PlayerProxy)
+function var0_0.IsInit(arg0_3)
+	return arg0_3.state and arg0_3.state >= var2_0.IDLE
+end
 
-	if var0_3 then
-		return var0_3:getRawData().guideIndex < 28
+function var0_0.isNotFinish(arg0_4)
+	local var0_4 = getProxy(PlayerProxy)
+
+	if var0_4 then
+		return var0_4:getRawData():GetGuideIndex(arg0_4:IsNewVersion()) < arg0_4.lastIndex - 1
 	end
 end
 
-function var0_0.loadGuide(arg0_4, arg1_4)
-	return require("GameCfg.guide.newguide." .. arg1_4)
+function var0_0.IsNewVersion(arg0_5)
+	return arg0_5.isNewVersion
 end
 
-function var0_0.getStepConfig(arg0_5, arg1_5)
-	return arg0_5.guideCfgs[arg1_5]
+function var0_0.loadGuide(arg0_6, arg1_6)
+	print("load guide script:", arg1_6)
+
+	return require("GameCfg.guide.newguide." .. arg1_6)
 end
 
-function var0_0.Init(arg0_6, arg1_6)
-	arg0_6.state = var3_0.IDLE
-	arg0_6.guideCfgs = arg0_6:loadGuide("SG001")
-	arg0_6.guideMgr = pg.NewGuideMgr.GetInstance()
-	arg0_6.protocols = {}
-	arg0_6.onReceiceProtocol = nil
-
-	arg1_6()
+function var0_0.getStepConfig(arg0_7, arg1_7)
+	return arg0_7.guideCfgs[arg1_7]
 end
 
-function var0_0.dispatch(arg0_7, arg1_7)
-	if arg0_7:canPlay(arg1_7) then
-		arg0_7.guideMgr:PlayNothing()
+function var0_0.CheckNewVersion(arg0_8, arg1_8, arg2_8)
+	if arg1_8 then
+		return true
+	end
+
+	local var0_8 = arg2_8:GetGuideIndex(true)
+	local var1_8 = arg2_8:GetGuideIndex(false)
+
+	print("guild index:", var0_8, var1_8)
+
+	return var1_8 <= var0_8
+end
+
+function var0_0.Init(arg0_9, arg1_9, arg2_9)
+	arg0_9.state = var2_0.IDLE
+	arg0_9.isNewVersion = arg0_9:CheckNewVersion(arg1_9, arg2_9)
+
+	local var0_9 = arg0_9.isNewVersion and "SG002" or "SG001"
+
+	arg0_9.guideCfgs = arg0_9:loadGuide(var0_9)
+	arg0_9.lastIndex = #arg0_9.guideCfgs + 1
+	arg0_9.guideMgr = pg.NewGuideMgr.GetInstance()
+	arg0_9.protocols = {}
+	arg0_9.onReceiceProtocol = nil
+
+	arg0_9:setPlayer(arg2_9)
+end
+
+function var0_0.dispatch(arg0_10, arg1_10)
+	if arg0_10:canPlay(arg1_10) then
+		arg0_10.guideMgr:PlayNothing()
 	end
 end
 
-function var0_0.start(arg0_8, arg1_8)
-	if arg0_8:canPlay(arg1_8) then
-		arg0_8.state = var3_0.BUSY
+function var0_0.start(arg0_11, arg1_11)
+	if arg0_11:canPlay(arg1_11) then
+		arg0_11.state = var2_0.BUSY
 
-		arg0_8.guideMgr:StopNothing()
+		arg0_11.guideMgr:StopNothing()
 
-		arg0_8.stepConfig = arg0_8:getStepConfig(arg0_8.currIndex)
+		arg0_11.stepConfig = arg0_11:getStepConfig(arg0_11.currIndex)
 
-		local function var0_8(arg0_9)
-			arg0_8.state = var3_0.IDLE
-			arg0_8.protocols = {}
+		local function var0_11(arg0_12)
+			arg0_11.state = var2_0.IDLE
+			arg0_11.protocols = {}
 
-			if not arg0_8.stepConfig.interrupt then
-				arg0_8:doNextStep(arg0_8.currIndex, arg0_9)
+			if not arg0_11.stepConfig.interrupt then
+				arg0_11:doNextStep(arg0_11.currIndex, arg0_12)
 			end
 		end
 
-		arg0_8:doGuideStep(arg1_8, function(arg0_10, arg1_10)
-			if arg0_8.stepConfig.end_segment and arg1_10 then
-				arg0_8.guideMgr:Play(arg0_8.stepConfig.end_segment, arg1_8.code, function()
-					var0_8(arg0_10)
+		arg0_11:doGuideStep(arg1_11, function(arg0_13, arg1_13)
+			if arg0_11.stepConfig.end_segment and arg1_13 then
+				arg0_11.guideMgr:Play(arg0_11.stepConfig.end_segment, arg1_11.code, function()
+					var0_11(arg0_13)
+				end, nil, function(arg0_15, arg1_15)
+					arg0_11:Record(arg0_11.currIndex - 1, arg0_15, arg1_15, arg0_11.stepConfig.end_segment)
 				end)
 			else
-				var0_8(arg0_10)
+				var0_11(arg0_13)
 			end
 		end)
 	end
 end
 
-function var0_0.doGuideStep(arg0_12, arg1_12, arg2_12)
-	if arg0_12.stepConfig.condition then
-		local var0_12, var1_12 = arg0_12:checkCondition(arg1_12)
-		local var2_12 = var1_12 > arg0_12.currIndex
+function var0_0.doGuideStep(arg0_16, arg1_16, arg2_16)
+	if arg0_16.stepConfig.condition then
+		local var0_16, var1_16, var2_16 = arg0_16:checkCondition(arg1_16)
+		local var3_16 = var2_16 and var1_16 > arg0_16.currIndex
 
-		arg0_12:updateIndex(var1_12, function()
-			arg2_12({
-				var0_12
-			}, var2_12)
+		arg0_16:updateIndex(var1_16, function()
+			arg2_16({
+				var0_16
+			}, var3_16)
 		end)
 	else
-		local var3_12 = arg0_12.stepConfig.segment[arg0_12:getSegmentIndex()]
-		local var4_12 = var3_12[1]
-		local var5_12 = var3_12[2]
+		local var4_16 = arg0_16.stepConfig.segment[arg0_16:getSegmentIndex()]
+		local var5_16 = var4_16[1]
+		local var6_16 = var4_16[2]
 
-		assert(var5_12, "protocol can not be nil")
+		assert(var6_16, "protocol can not be nil")
 
-		local var6_12 = {
-			function(arg0_14)
-				arg0_12.guideMgr:Play(var4_12, arg1_12.code, arg0_14, function()
-					arg0_12:updateIndex(var2_0)
+		local var7_16 = {
+			function(arg0_18)
+				arg0_16.guideMgr:Play(var5_16, arg1_16.code, arg0_18, function()
+					arg0_16:updateIndex(arg0_16.lastIndex)
+				end, function(arg0_20, arg1_20)
+					arg0_16:Record(arg0_16.currIndex, arg0_20, arg1_20, var5_16)
 				end)
-				arg0_12.guideMgr:PlayNothing()
+				arg0_16.guideMgr:PlayNothing()
 			end,
-			function(arg0_16)
-				if _.any(arg0_12.protocols, function(arg0_17)
-					return arg0_17.protocol == var5_12
+			function(arg0_21)
+				if _.any(arg0_16.protocols, function(arg0_22)
+					return arg0_22.protocol == var6_16
 				end) then
-					arg0_16()
+					arg0_21()
 
 					return
 				end
 
-				function arg0_12.onReceiceProtocol(arg0_18)
-					if arg0_18 == var5_12 then
-						arg0_12.onReceiceProtocol = nil
+				function arg0_16.onReceiceProtocol(arg0_23)
+					if arg0_23 == var6_16 then
+						arg0_16.onReceiceProtocol = nil
 
-						arg0_16()
+						arg0_21()
 					end
 				end
 			end,
-			function(arg0_19)
-				arg0_12.guideMgr:StopNothing()
-				arg0_12:increaseIndex(arg0_19)
+			function(arg0_24)
+				arg0_16.guideMgr:StopNothing()
+				arg0_16:increaseIndex(arg0_24)
 			end
 		}
 
-		seriesAsync(var6_12, function()
-			arg2_12({
+		seriesAsync(var7_16, function()
+			arg2_16({
 				var0_0.CODES.GUIDER
 			}, true)
 		end)
 	end
 end
 
-function var0_0.getSegmentIndex(arg0_21)
-	local var0_21 = 1
+function var0_0.Record(arg0_26, arg1_26, arg2_26, arg3_26, arg4_26)
+	local var0_26 = pg.TimeMgr.GetInstance():GetServerTime() - arg3_26
 
-	if arg0_21.stepConfig.getSegment then
-		var0_21 = arg0_21.stepConfig.getSegment()
-	end
-
-	return var0_21
+	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildGuide(arg0_26:IsNewVersion(), arg1_26, arg2_26, var0_26, arg4_26))
 end
 
-local var4_0 = 1
-local var5_0 = 2
+function var0_0.getSegmentIndex(arg0_27)
+	local var0_27 = 1
 
-function var0_0.checkCondition(arg0_22, arg1_22)
-	local var0_22 = arg0_22.stepConfig
-	local var1_22
-	local var2_22
-	local var3_22 = var0_22.condition.arg
+	if arg0_27.stepConfig.getSegment then
+		var0_27 = arg0_27.stepConfig.getSegment()
+	end
 
-	if var3_22[1] == var4_0 then
-		local var4_22 = {
-			protocol = var3_22[2],
-			func = var0_22.condition.func
+	return var0_27
+end
+
+local var3_0 = 1
+local var4_0 = 2
+local var5_0 = 3
+
+function var0_0.checkCondition(arg0_28, arg1_28)
+	local var0_28 = arg0_28.stepConfig
+	local var1_28
+	local var2_28
+	local var3_28 = true
+	local var4_28 = var0_28.condition.arg
+
+	if var4_28[1] == var3_0 then
+		local var5_28 = {
+			protocol = var4_28[2],
+			func = var0_28.condition.func
 		}
 
-		var2_22, var1_22 = arg0_22:checkPtotocol(var4_22, arg1_22)
-	elseif var3_22[1] == var5_0 then
-		local var5_22 = getProxy(PlayerProxy):getRawData()
-		local var6_22 = getProxy(BayProxy):getShipById(var5_22.character)
+		var2_28, var1_28 = arg0_28:checkPtotocol(var5_28, arg1_28)
+	elseif var4_28[1] == var4_0 then
+		local var6_28 = getProxy(PlayerProxy):getRawData()
+		local var7_28 = getProxy(BayProxy):getShipById(var6_28.character)
 
-		var2_22, var1_22 = var0_22.condition.func(var6_22)
-		arg0_22.stepConfig.condition = nil
+		var2_28, var1_28 = var0_28.condition.func(var7_28)
+		arg0_28.stepConfig.condition = nil
+	elseif var4_28[1] == var5_0 then
+		var2_28, var1_28 = var0_28.condition.func(NewServerCarnivalScene.isShow())
+		arg0_28.stepConfig.condition = nil
+		var3_28 = false
 	end
 
-	assert(var1_22, "index can not be nil")
+	assert(var1_28, "index can not be nil")
 
-	return var2_22, var1_22
+	return var2_28, var1_28, var3_28
 end
 
-function var0_0.checkPtotocol(arg0_23, arg1_23, arg2_23)
-	local var0_23 = arg1_23.protocol
-	local var1_23 = _.select(arg0_23.protocols, function(arg0_24)
-		return arg0_24.protocol == var0_23
+function var0_0.checkPtotocol(arg0_29, arg1_29, arg2_29)
+	local var0_29 = arg1_29.protocol
+	local var1_29 = _.select(arg0_29.protocols, function(arg0_30)
+		return arg0_30.protocol == var0_29
 	end)[1] or {}
 
-	return arg1_23.func(arg2_23.view, var1_23.args)
+	return arg1_29.func(arg2_29.view, var1_29.args)
 end
 
-function var0_0.increaseIndex(arg0_25, arg1_25)
-	local var0_25 = arg0_25.currIndex + 1
+function var0_0.increaseIndex(arg0_31, arg1_31)
+	local var0_31 = arg0_31.currIndex + 1
 
-	arg0_25:updateIndex(var0_25, arg1_25)
+	arg0_31:updateIndex(var0_31, arg1_31)
 end
 
-function var0_0.updateIndex(arg0_26, arg1_26, arg2_26)
+function var0_0.updateIndex(arg0_32, arg1_32, arg2_32)
+	local var0_32 = arg0_32:IsNewVersion()
+
 	pg.m02:sendNotification(GAME.UPDATE_GUIDE_INDEX, {
-		index = arg1_26,
-		callback = arg2_26
+		isNewVersion = var0_32,
+		index = arg1_32,
+		callback = arg2_32
 	})
 end
 
-function var0_0.doNextStep(arg0_27, arg1_27, arg2_27)
-	arg0_27.stepConfig = nil
+function var0_0.doNextStep(arg0_33, arg1_33, arg2_33)
+	arg0_33.stepConfig = nil
 
-	if arg0_27:isEnd() then
+	if arg0_33:isEnd() then
 		return
 	end
 
-	local var0_27 = arg0_27.guideCfgs[arg1_27]
-	local var1_27 = {
-		view = var0_27.view[#var0_27.view],
-		code = arg2_27
+	local var0_33 = arg0_33.guideCfgs[arg1_33]
+	local var1_33 = {
+		view = var0_33.view[#var0_33.view],
+		code = arg2_33
 	}
 
-	if arg0_27:canPlay(var1_27) then
-		arg0_27:start(var1_27)
+	if arg0_33:canPlay(var1_33) then
+		arg0_33:start(var1_33)
 	end
 end
 
-function var0_0.isEnd(arg0_28)
-	return arg0_28.currIndex > #arg0_28.guideCfgs or not ENABLE_GUIDE
+function var0_0.isEnd(arg0_34)
+	return arg0_34.currIndex > #arg0_34.guideCfgs or not ENABLE_GUIDE
 end
 
-function var0_0.receiceProtocol(arg0_29, arg1_29, arg2_29, arg3_29)
-	table.insert(arg0_29.protocols, {
-		protocol = arg1_29,
-		args = arg2_29,
-		data = arg3_29
+function var0_0.receiceProtocol(arg0_35, arg1_35, arg2_35, arg3_35)
+	if not arg0_35:IsInit() then
+		return
+	end
+
+	table.insert(arg0_35.protocols, {
+		protocol = arg1_35,
+		args = arg2_35,
+		data = arg3_35
 	})
 
-	if arg0_29.onReceiceProtocol then
-		arg0_29.onReceiceProtocol(arg1_29)
+	if arg0_35.onReceiceProtocol then
+		arg0_35.onReceiceProtocol(arg1_35)
 	end
 end
 
-function var0_0.canPlay(arg0_30, arg1_30)
-	if arg0_30.state ~= var3_0.IDLE then
+function var0_0.canPlay(arg0_36, arg1_36)
+	if arg0_36.state ~= var2_0.IDLE then
 		log("guider is busy")
 
 		return false
@@ -250,28 +300,28 @@ function var0_0.canPlay(arg0_30, arg1_30)
 		return false
 	end
 
-	if not arg0_30.guideMgr then
+	if not arg0_36.guideMgr then
 		log("guideMgr is nil")
 
 		return false
 	end
 
-	if not arg0_30.plevel then
+	if not arg0_36.playerLevel then
 		log("player is nil")
 
 		return false
 	end
 
-	if arg0_30:isEnd() then
+	if arg0_36:isEnd() then
 		log("guider is end")
 
 		return false
 	end
 
-	local var0_30 = arg0_30:getStepConfig(arg0_30.currIndex)
+	local var0_36 = arg0_36:getStepConfig(arg0_36.currIndex)
 
-	if not table.contains(var0_30.view, arg1_30.view) then
-		log("view is erro", arg0_30.currIndex, arg1_30.view, var0_30.view[1], var0_30.view[2])
+	if not table.contains(var0_36.view, arg1_36.view) then
+		log("view is erro", arg0_36.currIndex, arg1_36.view, var0_36.view[1], var0_36.view[2])
 
 		return false
 	end
@@ -279,45 +329,42 @@ function var0_0.canPlay(arg0_30, arg1_30)
 	return true
 end
 
-function var0_0.setPlayer(arg0_31, arg1_31)
-	arg0_31.plevel = arg1_31.level
-	arg0_31.pguideIndex = arg1_31.guideIndex
-	arg0_31.currIndex = arg1_31.guideIndex
+function var0_0.setPlayer(arg0_37, arg1_37)
+	arg0_37.playerLevel = arg1_37.level
 
-	arg0_31:compatibleOldPlayer()
+	local var0_37 = arg1_37:GetGuideIndex(arg0_37:IsNewVersion())
+
+	arg0_37.playerIndex = var0_37
+	arg0_37.currIndex = var0_37
+
+	arg0_37:compatibleOldPlayer()
 end
 
-function var0_0.dispose(arg0_32)
-	arg0_32.plevel = nil
-	arg0_32.guideIndex = nil
-	arg0_32.protocols = {}
-	arg0_32.state = var3_0.IDLE
+function var0_0.dispose(arg0_38)
+	arg0_38.playerLevel = nil
+	arg0_38.protocols = {}
+	arg0_38.state = var2_0.IDLE
 end
 
-function var0_0.compatibleOldPlayer(arg0_33)
-	if not arg0_33.plevel then
+function var0_0.compatibleOldPlayer(arg0_39)
+	if not arg0_39.playerLevel then
 		return
 	end
 
-	local function var0_33()
-		local var0_34 = getProxy(PlayerProxy):getRawData()
-
-		var0_34.guideIndex = var2_0
-
-		arg0_33:setPlayer(var0_34)
-		arg0_33:updateIndex(var0_34.guideIndex)
+	local function var0_39()
+		arg0_39:updateIndex(arg0_39.lastIndex)
 	end
 
-	if arg0_33.plevel >= 5 and arg0_33.pguideIndex < var2_0 then
-		var0_33()
+	if arg0_39.playerLevel >= 5 and arg0_39.playerIndex < arg0_39.lastIndex then
+		var0_39()
 
 		return
 	end
 
-	if arg0_33.pguideIndex ~= var2_0 then
+	if arg0_39.playerIndex ~= arg0_39.lastIndex then
 		pg.SystemGuideMgr.GetInstance():FixGuide(function()
-			if arg0_33.pguideIndex > 1 and arg0_33.pguideIndex < 101 then
-				var0_33()
+			if arg0_39.playerIndex > 1 and arg0_39.playerIndex < 101 then
+				var0_39()
 			end
 		end)
 	end

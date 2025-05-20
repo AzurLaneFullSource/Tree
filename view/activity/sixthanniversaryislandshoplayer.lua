@@ -58,19 +58,21 @@ function var0_0.updateGoodsCard(arg0_9, arg1_9, arg2_9)
 	local var1_9 = var0_9 and not arg2_9:CheckArgLimit()
 
 	setGray(arg1_9, var1_9)
-	setActive(arg1_9:Find("btn_pay"), var0_9)
-	setActive(arg1_9:Find("btn_unable"), not var0_9)
+
+	local var2_9 = arg2_9:GetConsume()
+
+	setActive(arg1_9:Find("btn_unable"), var2_9:getOwnedCount() < var2_9.count)
 	setButtonEnabled(arg1_9, var0_9)
 
-	local var2_9 = {
+	local var3_9 = {
 		type = arg2_9:getConfig("commodity_type"),
 		id = arg2_9:getConfig("commodity_id"),
 		count = arg2_9:getConfig("num")
 	}
 
-	updateDrop(arg1_9:Find("icon/IconTpl"), var2_9)
+	updateDrop(arg1_9:Find("icon/IconTpl"), var3_9)
 	onNextTick(function()
-		changeToScrollText(arg1_9:Find("Text"), var2_9:getConfig("name"))
+		changeToScrollText(arg1_9:Find("Text"), var3_9:getConfig("name"))
 	end)
 	GetImageSpriteFromAtlasAsync(Drop.New({
 		type = arg2_9:getConfig("resource_category"),
@@ -79,12 +81,12 @@ function var0_0.updateGoodsCard(arg0_9, arg1_9, arg2_9)
 	setText(arg1_9:Find("btn_pay/cost"), arg2_9:getConfig("resource_num"))
 	setText(arg1_9:Find("btn_unable/cost"), arg2_9:getConfig("resource_num"))
 
-	local var3_9 = arg2_9:getConfig("num_limit")
+	local var4_9 = arg2_9:getConfig("num_limit")
 
-	if var3_9 == 0 then
+	if var4_9 == 0 then
 		setText(arg1_9:Find("limit"), i18n("common_no_limit"))
 	else
-		setText(arg1_9:Find("limit"), i18n("islandshop_tips2") .. math.max(arg2_9:GetPurchasableCnt(), 0) .. "/" .. var3_9)
+		setText(arg1_9:Find("limit"), i18n("islandshop_tips2") .. math.max(arg2_9:GetPurchasableCnt(), 0) .. "/" .. var4_9)
 	end
 end
 

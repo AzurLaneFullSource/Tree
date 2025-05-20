@@ -109,119 +109,135 @@ function var0_0.FileExists(arg0_12)
 	return PathMgr.FileExists(var0_12)
 end
 
-function var0_0.TakePhoto(arg0_13)
-	local var0_13 = pg.UIMgr.GetInstance().UIMain.parent
-	local var1_13 = var0_13.sizeDelta.x
-	local var2_13 = var0_13.sizeDelta.y
-
-	return ScreenShooter.TakePhoto(arg0_13, var1_13, var2_13)
+function var0_0.TakePreview(arg0_13, arg1_13)
+	var0_0.TakePhoto(arg0_13, arg1_13)
 end
 
-function var0_0.TakeIcon(arg0_14)
-	local var0_14 = pg.UIMgr.GetInstance().UIMain.parent
-	local var1_14 = var0_14.sizeDelta.x
-	local var2_14 = var0_14.sizeDelta.y
-	local var3_14 = 426
-	local var4_14 = 320
-	local var5_14 = var1_14 * 0.5 - var3_14 * 0.5
-	local var6_14 = var2_14 * 0.5 - var4_14 * 0.5
-	local var7_14 = UnityEngine.Rect.New(var5_14, var6_14, var3_14, var4_14)
+function var0_0.TakeIcon(arg0_14, arg1_14)
+	local var0_14 = 426
+	local var1_14 = 320
 
-	return ScreenShooter.TakePhoto(arg0_14, var1_14, var1_14, var7_14)
+	var0_0.TakePhoto(arg0_14, function(arg0_15)
+		if arg0_15.width < var0_14 or arg0_15.height < var1_14 then
+			arg1_14(arg0_15)
+
+			return
+		end
+
+		local var0_15 = arg0_15.width * 0.5 - var0_14 * 0.5
+		local var1_15 = arg0_15.height * 0.5 - var1_14 * 0.5
+		local var2_15 = arg0_15:GetPixels(var0_15, var1_15, var0_14, var1_14)
+		local var3_15 = UnityEngine.Texture2D.New(var0_14, var1_14)
+
+		var3_15:SetPixels(var2_15)
+		var3_15:Apply()
+		arg1_14(var3_15)
+	end)
 end
 
-function var0_0.SavePhoto(arg0_15, arg1_15, arg2_15, arg3_15)
+function var0_0.TakePhoto(arg0_16, arg1_16)
+	tolua.loadassembly("Yongshi.BLHotUpdate.Runtime.Rendering")
+	ReflectionHelp.RefCallStaticMethodEx(typeof("BLHX.Rendering.HotUpdate.ScreenShooterPass"), "TakePhoto", {
+		typeof(Camera),
+		typeof("UnityEngine.Events.UnityAction`1[UnityEngine.Object]")
+	}, {
+		arg0_16,
+		UnityEngine.Events.UnityAction_UnityEngine_Object(arg1_16)
+	})
+end
+
+function var0_0.SavePhoto(arg0_17, arg1_17, arg2_17, arg3_17)
 	seriesAsync({
-		function(arg0_16)
-			local var0_16 = var8_0(arg0_15 .. "_icon")
-
-			ScreenShooter.SaveTextureToLocal(var0_16, arg2_15, true)
-			arg0_16()
-		end,
-		function(arg0_17)
-			onNextTick(arg0_17)
-		end,
 		function(arg0_18)
-			local var0_18 = var8_0(arg0_15)
+			local var0_18 = var8_0(arg0_17 .. "_icon")
 
-			ScreenShooter.SaveTextureToLocal(var0_18, arg1_15, true)
+			ScreenShooter.SaveTextureToLocal(var0_18, arg2_17, true)
 			arg0_18()
+		end,
+		function(arg0_19)
+			onNextTick(arg0_19)
+		end,
+		function(arg0_20)
+			local var0_20 = var8_0(arg0_17)
+
+			ScreenShooter.SaveTextureToLocal(var0_20, arg1_17, true)
+			arg0_20()
 		end
 	}, function()
-		if arg3_15 then
-			arg3_15()
+		if arg3_17 then
+			arg3_17()
 		end
 	end)
 end
 
-local function var15_0(arg0_20)
-	return _.detect(var0_0.caches, function(arg0_21)
-		return arg0_21.name == arg0_20
+local function var15_0(arg0_22)
+	return _.detect(var0_0.caches, function(arg0_23)
+		return arg0_23.name == arg0_22
 	end)
 end
 
-local function var16_0(arg0_22, arg1_22, arg2_22)
-	local function var0_22(arg0_23)
-		if arg0_23 then
+local function var16_0(arg0_24, arg1_24, arg2_24)
+	local function var0_24(arg0_25)
+		if arg0_25 then
 			var0_0.CheckCache()
 			table.insert(var0_0.caches, {
-				name = arg0_22,
-				asset = arg0_23
+				name = arg0_24,
+				asset = arg0_25
 			})
 		end
 
-		arg2_22(arg0_23)
+		arg2_24(arg0_25)
 	end
 
-	if not arg1_22 or arg1_22 == "" then
-		var0_22(nil)
-	elseif var0_0.FileExists(arg0_22) and arg1_22 == var10_0(var8_0(arg0_22)) then
-		var11_0(arg0_22, arg1_22, var0_22)
+	if not arg1_24 or arg1_24 == "" then
+		var0_24(nil)
+	elseif var0_0.FileExists(arg0_24) and arg1_24 == var10_0(var8_0(arg0_24)) then
+		var11_0(arg0_24, arg1_24, var0_24)
 	else
-		var12_0(arg0_22, arg1_22, var0_22)
+		var12_0(arg0_24, arg1_24, var0_24)
 	end
 end
 
-function var0_0.GetTexture(arg0_24, arg1_24, arg2_24)
-	local var0_24 = var15_0(arg0_24)
+function var0_0.GetTexture(arg0_26, arg1_26, arg2_26)
+	local var0_26 = var15_0(arg0_26)
 
-	if var0_24 then
-		arg2_24(var0_24.asset)
+	if var0_26 then
+		arg2_26(var0_26.asset)
 
 		return
 	end
 
-	var16_0(arg0_24, arg1_24, arg2_24)
+	var16_0(arg0_26, arg1_26, arg2_26)
 end
 
-function var0_0.GetNonCacheTexture(arg0_25, arg1_25, arg2_25)
-	if not arg1_25 or arg1_25 == "" then
-		arg2_25(nil)
-	elseif var0_0.FileExists(arg0_25) and arg1_25 == var10_0(var8_0(arg0_25)) then
-		var11_0(arg0_25, arg1_25, arg2_25)
+function var0_0.GetNonCacheTexture(arg0_27, arg1_27, arg2_27)
+	if not arg1_27 or arg1_27 == "" then
+		arg2_27(nil)
+	elseif var0_0.FileExists(arg0_27) and arg1_27 == var10_0(var8_0(arg0_27)) then
+		var11_0(arg0_27, arg1_27, arg2_27)
 	else
-		var12_0(arg0_25, arg1_25, arg2_25)
+		var12_0(arg0_27, arg1_27, arg2_27)
 	end
 end
 
-function var0_0.UploadTexture(arg0_26, arg1_26)
-	var14_0(arg0_26, arg1_26)
+function var0_0.UploadTexture(arg0_28, arg1_28)
+	var14_0(arg0_28, arg1_28)
 end
 
-function var0_0.DeleteTexture(arg0_27, arg1_27)
-	var13_0(arg0_27, arg1_27)
+function var0_0.DeleteTexture(arg0_29, arg1_29)
+	var13_0(arg0_29, arg1_29)
 end
 
-function var0_0.GetMd5(arg0_28)
-	local var0_28 = var8_0(arg0_28)
+function var0_0.GetMd5(arg0_30)
+	local var0_30 = var8_0(arg0_30)
 
-	return var10_0(var0_28)
+	return var10_0(var0_30)
 end
 
-function var0_0.GetIconMd5(arg0_29)
-	local var0_29 = arg0_29 .. "_icon"
+function var0_0.GetIconMd5(arg0_31)
+	local var0_31 = arg0_31 .. "_icon"
 
-	return var0_0.GetMd5(var0_29)
+	return var0_0.GetMd5(var0_31)
 end
 
 function var0_0.CheckCache()
@@ -232,39 +248,39 @@ function var0_0.CheckCache()
 end
 
 function var0_0.CheckSaveDirectory()
-	local var0_31 = var7_0()
+	local var0_33 = var7_0()
 
-	if not System.IO.Directory.Exists(var0_31) then
-		System.IO.Directory.CreateDirectory(var0_31)
+	if not System.IO.Directory.Exists(var0_33) then
+		System.IO.Directory.CreateDirectory(var0_33)
 	end
 end
 
-function var0_0.ClearCaches(arg0_32)
+function var0_0.ClearCaches(arg0_34)
 	if not var0_0.caches or #var0_0.caches == 0 then
 		return
 	end
 
-	for iter0_32, iter1_32 in ipairs(arg0_32) do
-		for iter2_32 = #var0_0.caches, 1, -1 do
-			if var0_0.caches[iter2_32].name == iter1_32 then
-				var0_0.ClearCache(iter2_32, destroy)
+	for iter0_34, iter1_34 in ipairs(arg0_34) do
+		for iter2_34 = #var0_0.caches, 1, -1 do
+			if var0_0.caches[iter2_34].name == iter1_34 then
+				var0_0.ClearCache(iter2_34, destroy)
 			end
 		end
 	end
 end
 
-function var0_0.ClearCache(arg0_33, arg1_33)
-	local var0_33 = table.remove(var0_0.caches, arg0_33)
+function var0_0.ClearCache(arg0_35, arg1_35)
+	local var0_35 = table.remove(var0_0.caches, arg0_35)
 
-	if arg1_33 and not IsNil(var0_33.asset) then
-		Object.Destroy(var0_33.asset)
+	if arg1_35 and not IsNil(var0_35.asset) then
+		Object.Destroy(var0_35.asset)
 	end
 end
 
 function var0_0.ClearAllCacheAsyn()
-	for iter0_34, iter1_34 in pairs(var0_0.caches) do
-		if not IsNil(iter1_34.asset) then
-			Object.Destroy(iter1_34.asset)
+	for iter0_36, iter1_36 in pairs(var0_0.caches) do
+		if not IsNil(iter1_36.asset) then
+			Object.Destroy(iter1_36.asset)
 		end
 	end
 

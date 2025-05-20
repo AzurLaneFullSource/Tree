@@ -2869,32 +2869,43 @@ function var0_0.IsMatchKey(arg0_234, arg1_234)
 
 	arg1_234 = string.lower(string.gsub(arg1_234, "%.", "%%."))
 
-	return string.find(string.lower(arg0_234:GetDefaultName()), arg1_234)
+	local var0_234 = {
+		arg0_234:getName(),
+		arg0_234:GetDefaultName()
+	}
+
+	if var0_234[1] == var0_234[2] then
+		table.remove(var0_234)
+	end
+
+	return underscore.any(var0_234, function(arg0_235)
+		return string.find(string.lower(arg0_235), arg1_234)
+	end)
 end
 
-function var0_0.IsOwner(arg0_235)
-	return tobool(arg0_235.id)
+function var0_0.IsOwner(arg0_236)
+	return tobool(arg0_236.id)
 end
 
-function var0_0.GetUniqueId(arg0_236)
-	return arg0_236.id
+function var0_0.GetUniqueId(arg0_237)
+	return arg0_237.id
 end
 
-function var0_0.ShowPropose(arg0_237)
-	if not arg0_237.propose then
+function var0_0.ShowPropose(arg0_238)
+	if not arg0_238.propose then
 		return false
 	else
-		return not HXSet.isHxPropose() or arg0_237:IsOwner() and arg0_237:GetUniqueId() == getProxy(PlayerProxy):getRawData():GetProposeShipId()
+		return not HXSet.isHxPropose() or arg0_238:IsOwner() and arg0_238:GetUniqueId() == getProxy(PlayerProxy):getRawData():GetProposeShipId()
 	end
 end
 
-function var0_0.GetColorName(arg0_238, arg1_238)
-	arg1_238 = arg1_238 or arg0_238:getName()
+function var0_0.GetColorName(arg0_239, arg1_239)
+	arg1_239 = arg1_239 or arg0_239:getName()
 
-	if PlayerPrefs.GetInt("SHIP_NAME_COLOR", PLATFORM_CODE == PLATFORM_CH and 1 or 0) == 1 and arg0_238.propose then
-		return setColorStr(arg1_238, "#FFAACEFF")
+	if PlayerPrefs.GetInt("SHIP_NAME_COLOR", PLATFORM_CODE == PLATFORM_CH and 1 or 0) == 1 and arg0_239.propose then
+		return setColorStr(arg1_239, "#FFAACEFF")
 	else
-		return arg1_238
+		return arg1_239
 	end
 end
 
@@ -2913,42 +2924,42 @@ local var9_0 = {
 	}
 }
 
-function var0_0.GetFrameAndEffect(arg0_239, arg1_239)
-	arg1_239 = tobool(arg1_239)
+function var0_0.GetFrameAndEffect(arg0_240, arg1_240)
+	arg1_240 = tobool(arg1_240)
 
-	local var0_239
-	local var1_239
+	local var0_240
+	local var1_240
 
-	if arg0_239.propose then
-		if arg0_239:isMetaShip() then
-			var1_239 = string.format(var9_0.effect[1])
-			var0_239 = string.format(var9_0.frame[1])
-		elseif arg0_239:isBluePrintShip() then
-			var1_239 = string.format(var9_0.effect[2])
-			var0_239 = string.format(var9_0.frame[2], arg0_239:rarity2bgPrint())
+	if arg0_240.propose then
+		if arg0_240:isMetaShip() then
+			var1_240 = string.format(var9_0.effect[1])
+			var0_240 = string.format(var9_0.frame[1])
+		elseif arg0_240:isBluePrintShip() then
+			var1_240 = string.format(var9_0.effect[2])
+			var0_240 = string.format(var9_0.frame[2], arg0_240:rarity2bgPrint())
 		else
-			var1_239 = string.format(var9_0.effect[3])
-			var0_239 = string.format(var9_0.frame[3])
+			var1_240 = string.format(var9_0.effect[3])
+			var0_240 = string.format(var9_0.frame[3])
 		end
 
-		if not arg0_239:ShowPropose() then
-			var0_239 = nil
+		if not arg0_240:ShowPropose() then
+			var0_240 = nil
 		end
-	elseif arg0_239:isMetaShip() then
-		var1_239 = string.format(var9_0.effect[4], arg0_239:rarity2bgPrint())
-	elseif arg0_239:getRarity() == ShipRarity.SSR then
-		var1_239 = string.format(var9_0.effect[5])
+	elseif arg0_240:isMetaShip() then
+		var1_240 = string.format(var9_0.effect[4], arg0_240:rarity2bgPrint())
+	elseif arg0_240:getRarity() == ShipRarity.SSR then
+		var1_240 = string.format(var9_0.effect[5])
 	end
 
-	if arg1_239 then
-		var1_239 = var1_239 and var1_239 .. "_1"
+	if arg1_240 then
+		var1_240 = var1_240 and var1_240 .. "_1"
 	end
 
-	return var0_239, var1_239
+	return var0_240, var1_240
 end
 
-function var0_0.GetRecordPosKey(arg0_240)
-	return arg0_240.skinId
+function var0_0.GetRecordPosKey(arg0_241)
+	return arg0_241.skinId
 end
 
 return var0_0

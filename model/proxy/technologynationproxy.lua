@@ -454,7 +454,17 @@ function var0_0.getNationPointList(arg0_26)
 end
 
 function var0_0.getNationPoint(arg0_27, arg1_27)
-	return arg0_27.nationToPoint[arg1_27]
+	if arg1_27 == 0 then
+		local var0_27 = 0
+
+		for iter0_27, iter1_27 in pairs(arg0_27.nationToPoint) do
+			var0_27 = math.max(var0_27, iter1_27)
+		end
+
+		return var0_27
+	else
+		return arg0_27.nationToPoint[arg1_27]
+	end
 end
 
 function var0_0.getLeftTime(arg0_28)

@@ -20,6 +20,8 @@ function var0_0.register(arg0_1)
 			var0_2:display("loaded")
 
 			arg0_1.data[var0_2.id] = var0_2
+
+			arg0_1:CommanderManualTaskProgressAdd(var0_2)
 		end
 
 		for iter2_2 = 1, FormationUI.MAX_FLEET_NUM do
@@ -123,6 +125,7 @@ function var0_0.updateFleet(arg0_6, arg1_6)
 		arg0_6.data[arg1_6.id]:display("updated")
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inFleet")
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inPvP")
+		arg0_6:CommanderManualTaskProgressAdd(arg1_6)
 	elseif arg0_6.extraFleets[arg1_6.id] ~= nil then
 		arg0_6.extraFleets[arg1_6.id] = arg1_6
 
@@ -572,6 +575,67 @@ function var0_0.GetBossRushFleets(arg0_37, arg1_37, arg2_37)
 	end)
 
 	return var0_37
+end
+
+function var0_0.CommanderManualTaskProgressAdd(arg0_39, arg1_39)
+	local var0_39 = getProxy(CommanderManualProxy)
+	local var1_39 = arg1_39:isLegalToFight()
+
+	if var1_39 == true and #arg1_39.vanguardShips >= TeamType.VanguardMax then
+		var0_39:TaskProgressAdd(2013, 1)
+
+		local var2_39 = {
+			ShipType.QuZhu,
+			ShipType.QingXun,
+			ShipType.ZhongXun
+		}
+
+		for iter0_39, iter1_39 in ipairs(arg1_39.vanguardShips) do
+			local var3_39 = getProxy(BayProxy):getShipById(iter1_39):getConfig("type")
+
+			if table.contains(var2_39, var3_39) then
+				table.removebyvalue(var2_39, var3_39)
+			end
+		end
+
+		if #var2_39 == 0 then
+			var0_39:TaskProgressAdd(2014, 1)
+		end
+	end
+
+	if var1_39 == true and #arg1_39.mainShips >= TeamType.MainMax then
+		var0_39:TaskProgressAdd(2015, 1)
+
+		local var4_39 = {
+			ShipType.ZhengHang,
+			ShipType.ZhanLie,
+			ShipType.ZhanLie
+		}
+
+		for iter2_39, iter3_39 in ipairs(arg1_39.mainShips) do
+			local var5_39 = getProxy(BayProxy):getShipById(iter3_39):getConfig("type")
+
+			if table.contains(var4_39, var5_39) then
+				table.removebyvalue(var4_39, var5_39)
+			end
+		end
+
+		if #var4_39 == 0 then
+			var0_39:TaskProgressAdd(2016, 1)
+		end
+	end
+
+	if var1_39 == true and arg1_39:GetGearScoreSum() > 1000 then
+		var0_39:TaskProgressAdd(2017, 1)
+	end
+
+	if var1_39 == true and arg1_39:getFleetType() == FleetType.Submarine then
+		var0_39:TaskProgressAdd(2018, 1)
+	end
+
+	if var1_39 == true and not arg1_39:isFirstFleet() and not arg1_39:isSubmarineFleet() then
+		var0_39:TaskProgressAdd(2019, 1)
+	end
 end
 
 return var0_0

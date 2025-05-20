@@ -142,13 +142,26 @@ var0_0.ship_drag_datas = {
 			"touch_body",
 			"touch_special",
 			"touch_special_2",
-			"touch_special_back"
+			"touch_special_back",
+			"touch_head_2"
 		},
 		action_enable = {
-			"normal"
+			{
+				name = "normal",
+				ignore = {}
+			},
+			{
+				name = "touch_special_normal",
+				ignore = {
+					"touch_body",
+					"touch_head",
+					"change_out"
+				}
+			}
 		},
 		drag_data = {
 			type = 1,
+			lock_layer = true,
 			config_client = {
 				{
 					change_idle = "normal",
@@ -161,18 +174,22 @@ var0_0.ship_drag_datas = {
 				{
 					change_idle = "normal",
 					idle = "normal",
-					action = "touch_body",
+					action = "touch_head",
 					is_default = true,
 					event = "TouchHead",
 					hit = "touch_head"
 				},
 				{
 					change_idle = "touch_special_normal",
-					idle = "normal",
 					action = "touch_special",
-					is_default = true,
+					idle = "normal",
 					event = "TouchSpecial",
-					hit = "touch_special"
+					is_default = true,
+					fold = true,
+					hit = "touch_special",
+					effect_hide = {
+						"lihui_siwanshi_4"
+					}
 				},
 				{
 					change_idle = "",
@@ -183,11 +200,47 @@ var0_0.ship_drag_datas = {
 					hit = "touch_special_2"
 				},
 				{
+					change_idle = "",
+					idle = "touch_special_normal",
+					action = "",
+					is_default = false,
+					event = "TouchHead",
+					hit = "touch_head_2"
+				},
+				{
 					change_idle = "normal",
 					idle = "touch_special_normal",
 					action = "touch_special_2",
+					fold = true,
 					is_default = false,
-					hit = "touch_special_back"
+					hit = "touch_special_back",
+					effect_hide = {
+						"lihui_siwanshi_4"
+					}
+				}
+			}
+		}
+	},
+	telinida_2 = {
+		click_trigger = false,
+		multiple_face = {},
+		hit_area = {
+			"drag"
+		},
+		drag_data = {
+			type = 1,
+			config_client = {
+				{
+					is_default = true,
+					idle = "normal",
+					action = "drag",
+					change_idle = "ex"
+				},
+				{
+					is_default = false,
+					idle = "ex",
+					action = "drag_ex",
+					change_idle = "normal"
 				}
 			}
 		}

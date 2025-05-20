@@ -1751,5 +1751,21 @@ pg.voice_actor_CN = {
 	[450] = {
 		code = 450,
 		actor_name = "Mami Uchida"
+	},
+	[451] = {
+		code = 451,
+		actor_name = "Mai Kanazawa"
+	},
+	[452] = {
+		code = 452,
+		actor_name = "Madoka Yonezawa"
+	},
+	[453] = {
+		code = 453,
+		actor_name = "Yuri Usui"
+	},
+	[454] = {
+		code = 454,
+		actor_name = "Tsugumi Sakuragi"
 	}
 }

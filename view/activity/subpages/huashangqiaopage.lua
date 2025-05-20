@@ -13,9 +13,9 @@ function var0_0.OnInit(arg0_1)
 	arg0_1.shop_time = arg0_1.bg:Find("shop/shop_times/time"):GetComponent("Text")
 	arg0_1.Manual = arg0_1.bg:Find("Manual"):GetComponent("Button")
 
-	SetActive(arg0_1.build_times, fasle)
-	SetActive(arg0_1.fight_times, fasle)
-	SetActive(arg0_1.shop_times, fasle)
+	SetActive(arg0_1.build_times, false)
+	SetActive(arg0_1.fight_times, false)
+	SetActive(arg0_1.shop_times, false)
 end
 
 function var0_0.OnDataSetting(arg0_2)

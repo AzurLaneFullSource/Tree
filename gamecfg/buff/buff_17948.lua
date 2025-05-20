@@ -1,35 +1,15 @@
 return {
 	init_effect = "",
 	name = "",
-	time = 2.5,
+	time = 3,
 	color = "red",
 	picture = "",
-	desc = "戳刺状态",
+	desc = "",
 	stack = 1,
 	id = 17948,
 	icon = 17940,
 	last_effect = "",
 	effect_list = {
-		{
-			type = "BattleBuffFixDamage",
-			trigger = {
-				"onBeforeTakeDamage"
-			},
-			arg_list = {
-				cap_hp_rate_max = 0.05
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "hammerDamagePrevent",
-				number = 0.8
-			}
-		},
 		{
 			type = "BattleBuffCount",
 			trigger = {

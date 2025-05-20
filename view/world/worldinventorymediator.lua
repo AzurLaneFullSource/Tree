@@ -90,10 +90,10 @@ function var0_0.handleNotification(arg0_8, arg1_8)
 	if var0_8 == EquipmentProxy.EQUIPMENT_UPDATED then
 		arg0_8.viewComponent:setEquipment(var1_8)
 	elseif var0_8 == GAME.USE_ITEM_DONE then
-		if table.getCount(var1_8) ~= 0 then
+		if #var1_8.drops ~= 0 then
 			arg0_8.viewComponent:emit(BaseUI.ON_AWARD, {
 				animation = true,
-				items = var1_8
+				items = var1_8.drops
 			})
 		end
 	elseif var0_8 == GAME.FRAG_SELL_DONE then

@@ -39,7 +39,7 @@ function var0_0.OnInit(arg0_3)
 		else
 			arg0_3:UnMarkRemind()
 		end
-	end, SFX_PANEl)
+	end, SFX_PANEL)
 	triggerToggle(arg0_3.remindBtn, true)
 end
 

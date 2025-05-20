@@ -134,14 +134,24 @@ end
 
 function var0_0.GetTexture2D(arg0_10, arg1_10, arg2_10, arg3_10, arg4_10, arg5_10, arg6_10)
 	if not arg0_10.instance then
-		arg6_10()
+		if PathMgr.FileExists(arg2_10) == false then
+			arg6_10(false)
+
+			return
+		end
+
+		local var0_10 = System.IO.File.ReadAllBytes(arg2_10)
+		local var1_10 = UnityEngine.Texture2D.New(arg4_10, arg5_10, TextureFormat.ARGB32, false)
+
+		Tex2DExtension.LoadImage(var1_10, var0_10)
+		arg6_10(true, var1_10)
 
 		return
 	end
 
-	local var0_10 = OSSBUCKETNAME
+	local var2_10 = OSSBUCKETNAME
 
-	arg0_10.instance:GetTexture(var0_10, FOLDERNAME .. arg1_10, arg2_10, arg3_10, arg4_10, arg5_10, arg6_10)
+	arg0_10.instance:GetTexture(var2_10, FOLDERNAME .. arg1_10, arg2_10, arg3_10, arg4_10, arg5_10, arg6_10)
 end
 
 function var0_0.AddExpireTimer(arg0_11, arg1_11)

@@ -10,8 +10,13 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 	arg0_1.battleItems = {}
 	arg0_1.dropItems = {}
 	arg0_1.textLastTimes = findTF(arg0_1.menuUI, "lastTimes/desc")
+	arg0_1.btnRank = findTF(arg0_1.menuUI, "btnRank")
 	arg0_1.btnHome = findTF(arg0_1.menuUI, "btnHome")
+
+	GetComponent(arg0_1.btnRank, typeof(Image)):SetNativeSize()
+
 	arg0_1.imgHelp = findTF(arg0_1.menuUI, "imgHelp")
+	arg0_1.highScore = findTF(arg0_1.menuUI, "highScore/text")
 
 	setActive(arg0_1.imgHelp, false)
 	onButton(arg0_1._event, findTF(arg0_1.menuUI, "rightPanelBg/arrowUp"), function()
@@ -37,17 +42,26 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 	end, SFX_CANCEL)
 	onButton(arg0_1._event, findTF(arg0_1.menuUI, "btnRule"), function()
 		arg0_1._event:emit(WatermelonGameEvent.SHOW_RULE, true)
-		setActive(arg0_1.imgHelp, true)
 	end, SFX_CANCEL)
 	onButton(arg0_1._event, arg0_1.imgHelp, function()
 		arg0_1._event:emit(WatermelonGameEvent.SHOW_RULE, false)
-		setActive(arg0_1.imgHelp, false)
 	end, SFX_CANCEL)
 
 	arg0_1.btnStart = findTF(arg0_1.menuUI, "btnStart")
 
 	onButton(arg0_1._event, arg0_1.btnStart, function()
 		arg0_1._event:emit(WatermelonGameEvent.READY_START)
+	end, SFX_CANCEL)
+	onButton(arg0_1._event, arg0_1.btnRank, function()
+		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
+			hubid = arg0_1.mgHubData.id,
+			cmd = MiniGameOPCommand.CMD_SPECIAL_TRACK,
+			args1 = {
+				arg0_1._gameVo.gameId,
+				103
+			}
+		})
+		arg0_1._event:emit(WatermelonGameEvent.SHOW_RANK)
 	end, SFX_CANCEL)
 	onButton(arg0_1._event, arg0_1.btnHome, function()
 		arg0_1._event:emit(WatermelonGameEvent.ON_HOME)
@@ -65,11 +79,21 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 		setParent(var3_1, findTF(arg0_1.menuUI, "battList/Viewport/Content"))
 
 		local var4_1 = iter0_1
+
+		GetSpriteFromAtlasAsync(WatermelonGameConst.ui_atlas, "DAY" .. var4_1, function(arg0_10)
+			if arg0_10 then
+				setImageSprite(findTF(var3_1, "state_open/desc"), arg0_10, true)
+				setImageSprite(findTF(var3_1, "state_clear/desc"), arg0_10, true)
+				setImageSprite(findTF(var3_1, "state_current/desc"), arg0_10, true)
+				setImageSprite(findTF(var3_1, "state_closed/desc"), arg0_10, true)
+			end
+		end)
+
 		local var5_1 = findTF(var3_1, "icon")
 		local var6_1 = {
 			type = var1_1[iter0_1][1],
 			id = var1_1[iter0_1][2],
-			amount = var1_1[iter0_1][3]
+			count = var1_1[iter0_1][3]
 		}
 
 		updateDrop(var5_1, var6_1)
@@ -85,94 +109,99 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 	end
 end
 
-function var0_0.show(arg0_10, arg1_10)
-	setActive(arg0_10.menuUI, arg1_10)
+function var0_0.show(arg0_12, arg1_12)
+	setActive(arg0_12.menuUI, arg1_12)
 end
 
-function var0_0.setGameRoomUI(arg0_11, arg1_11)
-	if arg1_11 then
-		setActive(findTF(arg0_11.menuUI, "lastTimes"), false)
-		setActive(findTF(arg0_11.menuUI, "btnRank"), false)
+function var0_0.setGameRoomUI(arg0_13, arg1_13)
+	if arg1_13 then
+		setActive(findTF(arg0_13.menuUI, "lastTimes"), false)
+		setActive(findTF(arg0_13.menuUI, "btnRank"), false)
 	end
 end
 
-function var0_0.update(arg0_12, arg1_12)
-	arg0_12.mgHubData = arg1_12
+function var0_0.update(arg0_14, arg1_14)
+	arg0_14.mgHubData = arg1_14
 
-	local var0_12 = arg0_12:getGameUsedTimes(arg1_12)
-	local var1_12 = arg0_12:getGameTimes(arg1_12)
+	local var0_14 = arg0_14:getGameUsedTimes(arg1_14)
+	local var1_14 = arg0_14:getGameTimes(arg1_14)
 
-	setText(arg0_12.textLastTimes, var1_12)
+	setText(arg0_14.textLastTimes, var1_14)
 
-	for iter0_12 = 1, 7 do
-		setActive(findTF(arg0_12.battleItems[iter0_12], "state_open"), false)
-		setActive(findTF(arg0_12.battleItems[iter0_12], "state_closed"), false)
-		setActive(findTF(arg0_12.battleItems[iter0_12], "state_clear"), false)
-		setActive(findTF(arg0_12.battleItems[iter0_12], "state_current"), false)
+	for iter0_14 = 1, 7 do
+		setActive(findTF(arg0_14.battleItems[iter0_14], "state_open"), false)
+		setActive(findTF(arg0_14.battleItems[iter0_14], "state_closed"), false)
+		setActive(findTF(arg0_14.battleItems[iter0_14], "state_clear"), false)
+		setActive(findTF(arg0_14.battleItems[iter0_14], "state_current"), false)
 
-		if iter0_12 <= var0_12 then
-			SetParent(arg0_12.dropItems[iter0_12], findTF(arg0_12.battleItems[iter0_12], "state_clear/icon"))
-			setActive(arg0_12.dropItems[iter0_12], true)
-			setActive(findTF(arg0_12.battleItems[iter0_12], "state_clear"), true)
-		elseif iter0_12 == var0_12 + 1 and var1_12 >= 1 then
-			setActive(findTF(arg0_12.battleItems[iter0_12], "state_current"), true)
-			SetParent(arg0_12.dropItems[iter0_12], findTF(arg0_12.battleItems[iter0_12], "state_current/icon"))
-			setActive(arg0_12.dropItems[iter0_12], true)
-		elseif var0_12 < iter0_12 and iter0_12 <= var0_12 + var1_12 then
-			setActive(findTF(arg0_12.battleItems[iter0_12], "state_open"), true)
-			SetParent(arg0_12.dropItems[iter0_12], findTF(arg0_12.battleItems[iter0_12], "state_open/icon"))
-			setActive(arg0_12.dropItems[iter0_12], true)
+		if iter0_14 <= var0_14 then
+			SetParent(arg0_14.dropItems[iter0_14], findTF(arg0_14.battleItems[iter0_14], "state_clear/icon"))
+			setActive(arg0_14.dropItems[iter0_14], true)
+			setActive(findTF(arg0_14.battleItems[iter0_14], "state_clear"), true)
+		elseif iter0_14 == var0_14 + 1 and var1_14 >= 1 then
+			setActive(findTF(arg0_14.battleItems[iter0_14], "state_current"), true)
+			SetParent(arg0_14.dropItems[iter0_14], findTF(arg0_14.battleItems[iter0_14], "state_current/icon"))
+			setActive(arg0_14.dropItems[iter0_14], true)
+		elseif var0_14 < iter0_14 and iter0_14 <= var0_14 + var1_14 then
+			setActive(findTF(arg0_14.battleItems[iter0_14], "state_open"), true)
+			SetParent(arg0_14.dropItems[iter0_14], findTF(arg0_14.battleItems[iter0_14], "state_open/icon"))
+			setActive(arg0_14.dropItems[iter0_14], true)
 		else
-			setActive(findTF(arg0_12.battleItems[iter0_12], "state_closed"), true)
-			SetParent(arg0_12.dropItems[iter0_12], findTF(arg0_12.battleItems[iter0_12], "state_closed/icon"))
-			setActive(arg0_12.dropItems[iter0_12], true)
+			setActive(findTF(arg0_14.battleItems[iter0_14], "state_closed"), true)
+			SetParent(arg0_14.dropItems[iter0_14], findTF(arg0_14.battleItems[iter0_14], "state_closed/icon"))
+			setActive(arg0_14.dropItems[iter0_14], true)
 		end
 	end
 
-	local var2_12 = 1 - (var0_12 - 3 < 0 and 0 or var0_12 - 3) / (arg0_12.totalTimes - 4)
+	local var2_14 = 1 - (var0_14 - 3 < 0 and 0 or var0_14 - 3) / (arg0_14.totalTimes - 4)
 
-	if var2_12 > 1 then
-		var2_12 = 1
+	if var2_14 > 1 then
+		var2_14 = 1
 	end
 
-	scrollTo(arg0_12.battleScrollRect, 0, var2_12)
+	scrollTo(arg0_14.battleScrollRect, 0, var2_14)
+
+	local var3_14 = getProxy(MiniGameProxy):GetHighScore(arg0_14._gameVo.gameId)
+	local var4_14 = var3_14 and #var3_14 > 0 and var3_14[1] or 0
+
+	setText(arg0_14.highScore, var4_14)
 end
 
-function var0_0.CheckGet(arg0_13)
-	local var0_13 = arg0_13.mgHubData
+function var0_0.CheckGet(arg0_15)
+	local var0_15 = arg0_15.mgHubData
 
-	setActive(findTF(arg0_13.menuUI, "got"), false)
+	setActive(findTF(arg0_15.menuUI, "got"), false)
 
-	local var1_13 = arg0_13:getUltimate(var0_13)
+	local var1_15 = arg0_15:getUltimate(var0_15)
 
-	if var1_13 and var1_13 ~= 0 then
-		setActive(findTF(arg0_13.menuUI, "got"), true)
+	if var1_15 and var1_15 ~= 0 then
+		setActive(findTF(arg0_15.menuUI, "got"), true)
 	end
 
-	if var1_13 == 0 then
-		if arg0_13._gameVo.totalTimes > arg0_13:getGameUsedTimes(var0_13) then
+	if var1_15 == 0 then
+		if arg0_15._gameVo.totalTimes > arg0_15:getGameUsedTimes(var0_15) then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = var0_13.id,
+			hubid = var0_15.id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
-		setActive(findTF(arg0_13.menuUI, "got"), true)
+		setActive(findTF(arg0_15.menuUI, "got"), true)
 	end
 end
 
-function var0_0.getGameTimes(arg0_14, arg1_14)
-	return arg1_14.count
+function var0_0.getGameTimes(arg0_16, arg1_16)
+	return arg1_16.count
 end
 
-function var0_0.getGameUsedTimes(arg0_15, arg1_15)
-	return arg1_15.usedtime
+function var0_0.getGameUsedTimes(arg0_17, arg1_17)
+	return arg1_17.usedtime
 end
 
-function var0_0.getUltimate(arg0_16, arg1_16)
-	return arg1_16.ultimate
+function var0_0.getUltimate(arg0_18, arg1_18)
+	return arg1_18.ultimate
 end
 
 return var0_0

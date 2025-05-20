@@ -45,7 +45,17 @@ function var0_0.OnLoad(arg0_4, arg1_4)
 		arg1_4()
 
 		if arg0_4._initTriggerAction then
-			arg0_4:TriggerEvent(arg0_4._initTriggerAction)
+			for iter0_5, iter1_5 in ipairs(arg0_4._initTriggerAction) do
+				local var0_5 = pg.AssistantInfo.assistantEvents[iter1_5].action
+
+				if arg0_4.live2dChar:checkActionExist(var0_5) then
+					arg0_4.live2dChar:TriggerAction(var0_5)
+
+					arg0_4._initTriggerAction = nil
+
+					break
+				end
+			end
 
 			arg0_4._initTriggerAction = nil
 		end
@@ -255,9 +265,16 @@ end
 
 function var0_0.PlayChangeSkinActionIn(arg0_21, arg1_21)
 	if arg0_21.live2dChar:IsLoaded() then
-		arg0_21:TriggerEvent("event_login")
+		if arg0_21.live2dChar:checkActionExist("change_in") then
+			arg0_21:TriggerEvent("event_change_in")
+		else
+			arg0_21:TriggerEvent("event_login")
+		end
 	else
-		arg0_21._initTriggerAction = "event_login"
+		arg0_21._initTriggerAction = {
+			"event_change_in",
+			"event_login"
+		}
 	end
 
 	if arg1_21 and arg1_21.callback then
@@ -268,66 +285,92 @@ function var0_0.PlayChangeSkinActionIn(arg0_21, arg1_21)
 end
 
 function var0_0.PlayChangeSkinActionOut(arg0_22, arg1_22)
-	if arg1_22 and arg1_22.callback then
+	if arg0_22.live2dChar:IsLoaded() and arg0_22.live2dChar:checkActionExist("change_out") then
+		arg0_22:playSkinOut(arg1_22)
+	elseif arg1_22 and arg1_22.callback then
 		arg1_22.callback({
 			flag = true
 		})
 	end
 end
 
-function var0_0.OnDisplayWorld(arg0_23)
+function var0_0.playSkinOut(arg0_23, arg1_23)
+	local function var0_23()
+		if arg1_23 and arg1_23.callback then
+			arg1_23.callback({
+				flag = true
+			})
+		end
+	end
+
+	if not arg0_23.live2dChar:TriggerAction("change_out", function()
+		return
+	end, false, function()
+		if var0_23 then
+			var0_23()
+
+			var0_23 = nil
+		end
+	end) and var0_23 then
+		var0_23()
+
+		var0_23 = nil
+	end
+end
+
+function var0_0.OnDisplayWorld(arg0_27)
 	return
 end
 
-function var0_0.OnPuase(arg0_24)
-	arg0_24:RemoveScreenChangeTimer()
-	arg0_24:ResetContainerPosition()
-
-	arg0_24.actionWaiting = false
-
-	arg0_24.live2dChar:SetVisible(false)
-end
-
-function var0_0.OnUpdateShip(arg0_25, arg1_25)
-	if arg1_25 then
-		arg0_25.live2dChar:updateShip(arg1_25)
-	end
-end
-
-function var0_0.SetContainerVisible(arg0_26, arg1_26)
-	setActive(arg0_26.live2dContainer, arg1_26)
-end
-
-function var0_0.OnResume(arg0_27)
-	arg0_27:SetContainerVisible(true)
-	arg0_27:AddScreenChangeTimer()
-	arg0_27:UpdateContainerPosition()
-	arg0_27.live2dChar:SetVisible(true)
-	arg0_27.live2dChar:UpdateAtomSource()
-end
-
-function var0_0.Dispose(arg0_28)
-	var0_0.super.Dispose(arg0_28)
-	arg0_28:RemoveSeTimer()
+function var0_0.OnPuase(arg0_28)
 	arg0_28:RemoveScreenChangeTimer()
+	arg0_28:ResetContainerPosition()
 
-	if arg0_28.eventTrigger then
-		ClearEventTrigger(arg0_28.eventTrigger)
+	arg0_28.actionWaiting = false
+
+	arg0_28.live2dChar:SetVisible(false)
+end
+
+function var0_0.OnUpdateShip(arg0_29, arg1_29)
+	if arg1_29 then
+		arg0_29.live2dChar:updateShip(arg1_29)
 	end
 end
 
-function var0_0.GetOffset(arg0_29)
-	return arg0_29.live2dContainer.localPosition.x
+function var0_0.SetContainerVisible(arg0_30, arg1_30)
+	setActive(arg0_30.live2dContainer, arg1_30)
 end
 
-function var0_0.GetCenterPos(arg0_30)
-	return arg0_30.live2dContainer.position
+function var0_0.OnResume(arg0_31)
+	arg0_31:SetContainerVisible(true)
+	arg0_31:AddScreenChangeTimer()
+	arg0_31:UpdateContainerPosition()
+	arg0_31.live2dChar:SetVisible(true)
+	arg0_31.live2dChar:UpdateAtomSource()
 end
 
-function var0_0.IslimitYPos(arg0_31)
-	local var0_31 = arg0_31.ship:getPainting()
+function var0_0.Dispose(arg0_32)
+	var0_0.super.Dispose(arg0_32)
+	arg0_32:RemoveSeTimer()
+	arg0_32:RemoveScreenChangeTimer()
 
-	return var0_31 == "biaoqiang" or var0_31 == "z23" or var0_31 == "lafei" or var0_31 == "lingbo" or var0_31 == "mingshi" or var0_31 == "xuefeng"
+	if arg0_32.eventTrigger then
+		ClearEventTrigger(arg0_32.eventTrigger)
+	end
+end
+
+function var0_0.GetOffset(arg0_33)
+	return arg0_33.live2dContainer.localPosition.x
+end
+
+function var0_0.GetCenterPos(arg0_34)
+	return arg0_34.live2dContainer.position
+end
+
+function var0_0.IslimitYPos(arg0_35)
+	local var0_35 = arg0_35.ship:getPainting()
+
+	return var0_35 == "biaoqiang" or var0_35 == "z23" or var0_35 == "lafei" or var0_35 == "lingbo" or var0_35 == "mingshi" or var0_35 == "xuefeng"
 end
 
 return var0_0

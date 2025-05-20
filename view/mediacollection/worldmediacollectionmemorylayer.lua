@@ -156,23 +156,33 @@ function var0_0.SwitchReddotMemory(arg0_18)
 	arg0_18:GetGroupLayer().buffer:SwitchReddotMemory()
 end
 
-function var0_0.ShowSubMemories(arg0_19, ...)
+function var0_0.ShowSubMemories(arg0_19, arg1_19, arg2_19, arg3_19)
 	local var0_19 = arg0_19:GetDetailLayer()
 
 	var0_19.buffer:Show()
-	var0_19.buffer:ShowSubMemories(...)
-	arg0_19:HideGroupLayer()
+	var0_19.buffer:ShowSubMemories(arg1_19, arg3_19)
+
+	if not arg2_19 then
+		arg0_19:HideGroupLayer()
+	end
 end
 
 function var0_0.Return2MemoryGroup(arg0_20)
-	if not arg0_20.contextData.memoryGroup then
+	local var0_20 = arg0_20.contextData.memoryGroup
+	local var1_20 = arg0_20:GetGroupLayer()
+
+	if var1_20:GetCurrentMode() == var1_20.LINE_MODE then
+		if not var0_20 then
+			var1_20:SwitchStoryLineMode(var1_20.FORM_MODE)
+		else
+			var1_20.storyLineView:TryPlayBGM()
+		end
+	elseif not var0_20 then
 		return
 	end
 
-	local var0_20 = arg0_20:GetGroupLayer()
-
-	var0_20.buffer:Show()
-	var0_20.buffer:Return2MemoryGroup()
+	var1_20.buffer:Show()
+	var1_20.buffer:Return2MemoryGroup()
 
 	arg0_20.contextData.memoryGroup = nil
 
@@ -181,26 +191,37 @@ function var0_0.Return2MemoryGroup(arg0_20)
 	return true
 end
 
-function var0_0.UpdateView(arg0_21)
-	local var0_21
+function var0_0.Return2Line(arg0_21)
+	return
+end
 
-	if arg0_21.contextData.memoryGroup then
-		var0_21 = arg0_21.groupUI
+function var0_0.UpdateView(arg0_22)
+	local var0_22
+
+	if arg0_22.contextData.memoryGroup then
+		var0_22 = arg0_22.groupUI
 	else
-		var0_21 = arg0_21.detailUI
+		var0_22 = arg0_22.detailUI
 	end
 
-	if not var0_21 then
+	if not var0_22 then
 		return
 	end
 
-	var0_21.buffer:UpdateView()
+	var0_22.buffer:UpdateView()
 end
 
-function var0_0.OnDestroy(arg0_22)
-	arg0_22:CloseDetailLayer()
-	arg0_22:CloseGroupLayer()
-	var0_0.super.OnDestroy(arg0_22)
+function var0_0.WrapToStoryLine(arg0_23, arg1_23)
+	local var0_23 = arg0_23:GetGroupLayer()
+
+	var0_23:SwitchStoryLineMode(var0_23.LINE_MODE)
+	var0_23.storyLineView:ShowNodeDetail(arg1_23)
+end
+
+function var0_0.OnDestroy(arg0_24)
+	arg0_24:CloseDetailLayer()
+	arg0_24:CloseGroupLayer()
+	var0_0.super.OnDestroy(arg0_24)
 end
 
 return var0_0

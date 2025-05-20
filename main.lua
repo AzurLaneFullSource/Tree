@@ -280,71 +280,68 @@ local function var1_0(arg0_12)
 			pg.NewGuideMgr.GetInstance():Init(arg0_21)
 		end,
 		function(arg0_22)
-			pg.SeriesGuideMgr.GetInstance():Init(arg0_22)
+			pg.ToastMgr.GetInstance():Init(arg0_22)
 		end,
 		function(arg0_23)
-			pg.ToastMgr.GetInstance():Init(arg0_23)
+			pg.WorldToastMgr.GetInstance():Init(arg0_23)
 		end,
 		function(arg0_24)
-			pg.WorldToastMgr.GetInstance():Init(arg0_24)
+			pg.SecondaryPWDMgr.GetInstance():Init(arg0_24)
 		end,
 		function(arg0_25)
-			pg.SecondaryPWDMgr.GetInstance():Init(arg0_25)
+			pg.ShipFlagMgr.GetInstance():Init(arg0_25)
 		end,
 		function(arg0_26)
-			pg.ShipFlagMgr.GetInstance():Init(arg0_26)
+			pg.NewStoryMgr.GetInstance():Init(arg0_26)
 		end,
 		function(arg0_27)
-			pg.NewStoryMgr.GetInstance():Init(arg0_27)
+			pg.RedDotMgr.GetInstance():Init(arg0_27)
 		end,
 		function(arg0_28)
-			pg.RedDotMgr.GetInstance():Init(arg0_28)
+			pg.UserAgreementMgr.GetInstance():Init(arg0_28)
 		end,
 		function(arg0_29)
-			pg.UserAgreementMgr.GetInstance():Init(arg0_29)
+			pg.BrightnessMgr.GetInstance():Init(arg0_29)
 		end,
 		function(arg0_30)
-			pg.BrightnessMgr.GetInstance():Init(arg0_30)
+			pg.ConfigTablePreloadMgr.GetInstance():Init(arg0_30)
 		end,
 		function(arg0_31)
-			pg.ConfigTablePreloadMgr.GetInstance():Init(arg0_31)
+			pg.CameraFixMgr.GetInstance():Init(arg0_31)
 		end,
 		function(arg0_32)
-			pg.CameraFixMgr.GetInstance():Init(arg0_32)
+			pg.BgmMgr.GetInstance():Init(arg0_32)
 		end,
 		function(arg0_33)
-			pg.BgmMgr.GetInstance():Init(arg0_33)
+			pg.SettingsGroupMgr.GetInstance():Init()
+			pg.FileDownloadMgr.GetInstance():Init(arg0_33)
 		end,
 		function(arg0_34)
-			pg.SettingsGroupMgr.GetInstance():Init()
-			pg.FileDownloadMgr.GetInstance():Init(arg0_34)
+			pg.RepairResMgr.GetInstance():Init(arg0_34)
 		end,
 		function(arg0_35)
-			pg.RepairResMgr.GetInstance():Init(arg0_35)
+			pg.NodeCanvasMgr.GetInstance():Init(arg0_35)
 		end,
 		function(arg0_36)
-			pg.NodeCanvasMgr.GetInstance():Init(arg0_36)
+			pg.SceneAnimMgr.GetInstance():Init(arg0_36)
 		end,
 		function(arg0_37)
-			pg.SceneAnimMgr.GetInstance():Init(arg0_37)
+			pg.PerformMgr.GetInstance():Init(arg0_37)
 		end,
 		function(arg0_38)
-			pg.PerformMgr.GetInstance():Init(arg0_38)
+			pg.ClickEffectMgr.GetInstance():Init(arg0_38)
 		end,
 		function(arg0_39)
-			pg.ClickEffectMgr.GetInstance():Init(arg0_39)
+			pg.CameraRTMgr.GetInstance():Init(arg0_39)
 		end,
 		function(arg0_40)
-			pg.CameraRTMgr.GetInstance():Init(arg0_40)
+			pg.GameTrackerMgr.GetInstance():Init(arg0_40)
 		end,
 		function(arg0_41)
-			pg.GameTrackerMgr.GetInstance():Init(arg0_41)
+			pg.GMTMgr.GetInstance():Init(arg0_41)
 		end,
 		function(arg0_42)
-			pg.GMTMgr.GetInstance():Init(arg0_42)
-		end,
-		function(arg0_43)
-			pg.ChangeSkinMgr.GetInstance():Init(arg0_43)
+			pg.ChangeSkinMgr.GetInstance():Init(arg0_42)
 		end
 	}, arg0_12)
 end
@@ -354,35 +351,35 @@ local var2_0 = os.clock()
 seriesAsync({
 	var0_0,
 	var1_0
-}, function(arg0_44)
+}, function(arg0_43)
 	require("HybridCLRConst")
 
-	local var0_44 = Application.streamingAssetsPath .. "/AssetBundles/hybridclr/patch/"
-	local var1_44 = HybridCLRConst.PatchDllList
+	local var0_43 = Application.streamingAssetsPath .. "/AssetBundles/hybridclr/patch/"
+	local var1_43 = HybridCLRConst.PatchDllList
 
-	Sandystar.HybridCLRTool.HybridCLRHelper.LoadPatchDLL(var0_44, var1_44)
+	Sandystar.HybridCLRTool.HybridCLRHelper.LoadPatchDLL(var0_43, var1_43)
 
-	local var2_44 = Application.persistentDataPath .. "/AssetBundles/hybridclr/hotfix/"
-	local var3_44 = HybridCLRConst.HotfixDllList
+	local var2_43 = Application.persistentDataPath .. "/AssetBundles/hybridclr/hotfix/"
+	local var3_43 = HybridCLRConst.HotfixDllList
 
-	Sandystar.HybridCLRTool.HybridCLRHelper.LoadHotfixDLL(var2_44, var3_44)
+	Sandystar.HybridCLRTool.HybridCLRHelper.LoadHotfixDLL(var2_43, var3_43)
 	pg.SdkMgr.GetInstance():QueryWithProduct()
 	print("loading cost: " .. os.clock() - var2_0)
 	VersionMgr.Inst:DestroyUI()
 
-	local var4_44 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
+	local var4_43 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
 
-	if not IsNil(var4_44) then
-		Object.Destroy(var4_44)
+	if not IsNil(var4_43) then
+		Object.Destroy(var4_43)
 	end
 
 	Screen.sleepTimeout = SleepTimeout.SystemSetting
 
 	pg.UIMgr.GetInstance():displayLoadingBG(true)
 
-	if arg0_44 then
-		pg.UIMgr.GetInstance():Loading(arg0_44)
-		error(arg0_44)
+	if arg0_43 then
+		pg.UIMgr.GetInstance():Loading(arg0_43)
+		error(arg0_43)
 
 		return
 	end

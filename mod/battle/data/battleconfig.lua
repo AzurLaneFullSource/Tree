@@ -224,6 +224,7 @@ var0_0.DOT_CONFIG[2] = {
 	hit = "flooding_accuracy"
 }
 var0_0.DOT_CONFIG[10] = {}
+var0_0.DOT_CONFIG[20516] = {}
 var0_0.DOT_CONFIG_DEFAULT = {
 	reduce = 0,
 	shorten = 0,

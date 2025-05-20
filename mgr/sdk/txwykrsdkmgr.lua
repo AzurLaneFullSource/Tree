@@ -82,10 +82,12 @@ function var0_0.BugReport()
 end
 
 function var0_0.StoreReview()
-	local var0_13 = var0_0.GetPNInfo()
-	local var1_13 = var0_0.GetClientVer()
+	if var0_0.GetIsPlatform() then
+		local var0_13 = var0_0.GetPNInfo()
+		local var1_13 = var0_0.GetClientVer()
 
-	var1_0:StoreReview(var0_13.playerName, var1_13, var0_13.serverID, var0_13.info)
+		var1_0:StoreReview(var0_13.playerName, var1_13, var0_13.serverID, var0_13.info)
+	end
 end
 
 function var0_0.ShareImg(arg0_14)

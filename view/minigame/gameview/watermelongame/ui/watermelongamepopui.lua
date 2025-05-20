@@ -139,7 +139,6 @@ function var0_0.setRankItemData(arg0_16, arg1_16, arg2_16, arg3_16)
 
 	setText(findTF(arg1_16, "rank/count"), tostring(arg3_16))
 	setText(findTF(arg1_16, "score"), tostring(var3_16))
-	setText(findTF(arg1_16, "time"), tostring(var4_16))
 	setActive(findTF(arg1_16, "imgMy"), var5_16)
 end
 
@@ -151,94 +150,123 @@ function var0_0.setChildVisible(arg0_17, arg1_17, arg2_17)
 	end
 end
 
-function var0_0.updateSettlementUI(arg0_18)
-	GetComponent(findTF(arg0_18.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
+function var0_0.initRankUI(arg0_18)
+	arg0_18.rankUI = findTF(arg0_18._tf, "pop/RankUI")
 
-	local var0_18 = arg0_18._gameVo.mgData:GetRuntimeData("elements")
-	local var1_18 = var0_18 and #var0_18 > 0 and var0_18[1] or 0
-	local var2_18 = arg0_18._gameVo.scoreNum
+	arg0_18:showRank(false)
+	GetComponent(findTF(arg0_18.rankUI, "ad/img/score"), typeof(Image)):SetNativeSize()
+	GetComponent(findTF(arg0_18.rankUI, "ad/img/time"), typeof(Image)):SetNativeSize()
 
-	setActive(findTF(arg0_18.settlementUI, "ad/new"), var1_18 < var2_18)
+	arg0_18._rankImg = findTF(arg0_18.rankUI, "ad/img")
+	arg0_18._rankBtnClose = findTF(arg0_18.rankUI, "ad/btnClose")
+	arg0_18._rankContent = findTF(arg0_18.rankUI, "ad/list/content")
+	arg0_18._rankItemTpl = findTF(arg0_18.rankUI, "ad/list/content/itemTpl")
+	arg0_18._rankEmpty = findTF(arg0_18.rankUI, "ad/empty")
+	arg0_18._rankDesc = findTF(arg0_18.rankUI, "ad/desc")
+	arg0_18._rankItems = {}
 
-	local var3_18 = findTF(arg0_18.settlementUI, "ad/highText")
-	local var4_18 = findTF(arg0_18.settlementUI, "ad/currentText")
-
-	setText(var4_18, var2_18)
-	setText(var3_18, var1_18)
-
-	local var5_18 = arg0_18._gameVo:getGameTimes()
-
-	if var5_18 and var5_18 > 0 and not arg0_18.sendSuccessFlag then
-		arg0_18._event:emit(WatermelonGameEvent.SUBMIT_GAME_SUCCESS)
-	end
-
-	arg0_18._event:emit(WatermelonGameEvent.SUBMIT_GAME_SUCCESS)
+	setActive(arg0_18._rankItemTpl, false)
+	onButton(arg0_18._event, findTF(arg0_18.rankUI, "ad/close"), function()
+		arg0_18:showRank(false)
+	end, SFX_CANCEL)
+	onButton(arg0_18._event, arg0_18._rankBtnClose, function()
+		arg0_18:showRank(false)
+	end, SFX_CANCEL)
+	setText(arg0_18._rankDesc, i18n(WatermelonGameConst.rank_tip))
 end
 
-function var0_0.backPressed(arg0_19)
-	if isActive(arg0_19.pauseUI) then
-		arg0_19:resumeGame()
-		arg0_19._event:emit(WatermelonGameEvent.PAUSE_GAME, false)
-	elseif isActive(arg0_19.leaveUI) then
-		arg0_19:resumeGame()
-		arg0_19._event:emit(WatermelonGameEvent.LEVEL_GAME, false)
-	elseif not isActive(arg0_19.pauseUI) and not isActive(arg0_19.pauseUI) then
-		if not arg0_19._gameVo.startSettlement then
-			arg0_19:popPauseUI()
-			arg0_19._event:emit(WatermelonGameEvent.PAUSE_GAME, true)
+function var0_0.showRank(arg0_21, arg1_21)
+	setActive(arg0_21.rankUI, arg1_21)
+end
+
+function var0_0.updateSettlementUI(arg0_22)
+	GetComponent(findTF(arg0_22.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
+
+	local var0_22 = arg0_22._gameVo.scoreNum
+	local var1_22 = getProxy(MiniGameProxy):GetHighScore(arg0_22._gameVo.gameId)
+	local var2_22 = var1_22 and #var1_22 > 0 and var1_22[1] or 0
+
+	setActive(findTF(arg0_22.settlementUI, "ad/new"), var2_22 < var0_22)
+
+	if var0_22 > 0 and var2_22 < var0_22 then
+		arg0_22._event:emit(WatermelonGameEvent.STORE_SERVER, {
+			var0_22,
+			1
+		})
+	end
+
+	local var3_22 = findTF(arg0_22.settlementUI, "ad/highText")
+	local var4_22 = findTF(arg0_22.settlementUI, "ad/currentText")
+
+	setText(var4_22, var0_22)
+	setText(var3_22, var2_22)
+	arg0_22._event:emit(WatermelonGameEvent.SUBMIT_GAME_SUCCESS)
+end
+
+function var0_0.backPressed(arg0_23)
+	if isActive(arg0_23.pauseUI) then
+		arg0_23:resumeGame()
+		arg0_23._event:emit(WatermelonGameEvent.PAUSE_GAME, false)
+	elseif isActive(arg0_23.leaveUI) then
+		arg0_23:resumeGame()
+		arg0_23._event:emit(WatermelonGameEvent.LEVEL_GAME, false)
+	elseif not isActive(arg0_23.pauseUI) and not isActive(arg0_23.pauseUI) then
+		if not arg0_23._gameVo.startSettlement then
+			arg0_23:popPauseUI()
+			arg0_23._event:emit(WatermelonGameEvent.PAUSE_GAME, true)
 		end
 	else
-		arg0_19:resumeGame()
+		arg0_23:resumeGame()
 	end
 end
 
-function var0_0.resumeGame(arg0_20)
-	setActive(arg0_20.leaveUI, false)
-	setActive(arg0_20.pauseUI, false)
+function var0_0.resumeGame(arg0_24)
+	setActive(arg0_24.leaveUI, false)
+	setActive(arg0_24.pauseUI, false)
 end
 
-function var0_0.popLeaveUI(arg0_21)
-	if isActive(arg0_21.pauseUI) then
-		setActive(arg0_21.pauseUI, false)
+function var0_0.popLeaveUI(arg0_25)
+	if isActive(arg0_25.pauseUI) then
+		setActive(arg0_25.pauseUI, false)
 	end
 
-	setActive(arg0_21.leaveUI, true)
+	setActive(arg0_25.leaveUI, true)
 end
 
-function var0_0.popPauseUI(arg0_22)
-	if isActive(arg0_22.leaveUI) then
-		setActive(arg0_22.leaveUI, false)
+function var0_0.popPauseUI(arg0_26)
+	if isActive(arg0_26.leaveUI) then
+		setActive(arg0_26.leaveUI, false)
 	end
 
-	setActive(arg0_22.pauseUI, true)
+	setActive(arg0_26.pauseUI, true)
 end
 
-function var0_0.updateGameUI(arg0_23, arg1_23)
-	setText(arg0_23.scoreTf, arg1_23.scoreNum)
-	setText(arg0_23.gameTimeS, math.ceil(arg1_23.gameTime))
+function var0_0.updateGameUI(arg0_27, arg1_27)
+	setText(arg0_27.scoreTf, arg1_27.scoreNum)
+	setText(arg0_27.gameTimeS, math.ceil(arg1_27.gameTime))
 end
 
-function var0_0.readyStart(arg0_24)
-	arg0_24:popCountUI(true)
-	arg0_24.countAnimator:Play("count")
+function var0_0.readyStart(arg0_28)
+	arg0_28:popCountUI(true)
+	arg0_28.countAnimator:Play("count")
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(WatermelonGameConst.SFX_COUNT_DOWN)
 end
 
-function var0_0.popCountUI(arg0_25, arg1_25)
-	setActive(arg0_25.countUI, arg1_25)
+function var0_0.popCountUI(arg0_29, arg1_29)
+	setActive(arg0_29.countUI, arg1_29)
 end
 
-function var0_0.popSettlementUI(arg0_26, arg1_26)
-	setActive(arg0_26.settlementUI, arg1_26)
+function var0_0.popSettlementUI(arg0_30, arg1_30)
+	setActive(arg0_30.settlementUI, arg1_30)
 end
 
-function var0_0.popRankUI(arg0_27, arg1_27)
-	setActive(arg0_27.rankUI, arg1_27)
+function var0_0.popRankUI(arg0_31, arg1_31)
+	setActive(arg0_31.rankUI, arg1_31)
 end
 
-function var0_0.clearUI(arg0_28)
-	setActive(arg0_28.settlementUI, false)
-	setActive(arg0_28.countUI, false)
+function var0_0.clearUI(arg0_32)
+	setActive(arg0_32.settlementUI, false)
+	setActive(arg0_32.countUI, false)
 end
 
 return var0_0

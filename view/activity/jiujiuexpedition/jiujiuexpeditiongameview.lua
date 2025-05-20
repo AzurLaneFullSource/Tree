@@ -122,7 +122,7 @@ function var0_0.didEnter(arg0_4)
 		cmd = 0,
 		activity_id = arg0_4.activityId
 	})
-	arg0_4:SwitchToDefaultBGM()
+	pg.BgmMgr.GetInstance():ContinuePlay()
 end
 
 function var0_0.activityUpdate(arg0_10)

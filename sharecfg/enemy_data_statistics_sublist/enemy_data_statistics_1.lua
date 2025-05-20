@@ -21,7 +21,7 @@ pg.enemy_data_statistics_1 = {
 		air_growth = 0,
 		reload = 150,
 		base = 90106,
-		durability = 280,
+		durability = 200,
 		armor_growth = 210,
 		torpedo_growth = 1600,
 		luck_growth = 0,
@@ -60,7 +60,7 @@ pg.enemy_data_statistics_1 = {
 		rarity = 4,
 		fog_fx = "",
 		base = 90213,
-		durability = 16000,
+		durability = 60000,
 		armor_growth = 952,
 		torpedo_growth = 376,
 		antiaircraft = 21,
@@ -92,9 +92,13 @@ pg.enemy_data_statistics_1 = {
 			"appearQ"
 		},
 		equipment_list = {
-			100202,
-			310003,
-			8
+			680404,
+			680405,
+			680406,
+			680407,
+			680414,
+			680415,
+			680416
 		}
 	},
 	[12] = {
@@ -118,7 +122,7 @@ pg.enemy_data_statistics_1 = {
 		air_growth = 0,
 		reload = 150,
 		base = 90232,
-		durability = 24000,
+		durability = 80000,
 		armor_growth = 1918,
 		torpedo_growth = 0,
 		luck_growth = 0,
@@ -149,9 +153,11 @@ pg.enemy_data_statistics_1 = {
 			"appearQ"
 		},
 		equipment_list = {
-			100202,
-			310011,
-			310008
+			610050,
+			610051,
+			610052,
+			610053,
+			610055
 		}
 	},
 	[50001] = {
