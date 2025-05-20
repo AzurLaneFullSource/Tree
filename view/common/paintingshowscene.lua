@@ -33,6 +33,10 @@ local var1_0 = {
 		2
 	}
 }
+local var2_0 = {
+	ShipSkin.WITH_LIVE2D,
+	ShipSkin.WITH_SPINE
+}
 
 function var0_0.getUIName(arg0_1)
 	return "PaintingShowUI"
@@ -44,6 +48,7 @@ function var0_0.didEnter(arg0_2)
 	arg0_2.spineContainer = findTF(arg0_2.ad, "paint/spinePainting")
 	arg0_2.l2dContainner = findTF(arg0_2.ad, "paint/live2d")
 	arg0_2.paintingContainer = findTF(arg0_2.ad, "paint")
+	arg0_2.paintingFitter = findTF(arg0_2.ad, "paint/fitter")
 	arg0_2.effectContainer = findTF(arg0_2.ad, "paint/effect")
 	arg0_2.flushAnimator = GetComponent(findTF(arg0_2.ad, "flush"), typeof(Animator))
 	arg0_2.flushEevent = GetComponent(findTF(arg0_2.ad, "flush"), typeof(DftAniEvent))
@@ -114,26 +119,36 @@ function var0_0.startShowing(arg0_10)
 	if not arg0_10.l2dFlag then
 		local var0_10 = pg.ship_skin_template[arg0_10.skinId]
 		local var1_10 = var0_10.get_showing.data and var0_10.get_showing.data or var1_0
+		local var2_10
+		local var3_10
+
+		if arg0_10.paintOffset then
+			var2_10 = Vector2(arg0_10.paintOffset[1], arg0_10.paintOffset[2])
+			var3_10 = arg0_10.paintOffset[3]
+		else
+			var2_10 = Vector2(0, 0)
+			var3_10 = 1
+		end
 
 		arg0_10.showDatas = {}
 
 		for iter0_10 = 1, #var1_10 do
-			local var2_10 = var1_10[iter0_10]
-			local var3_10 = Vector2(var2_10[1], var2_10[2])
-			local var4_10 = var2_10[3]
-			local var5_10
-			local var6_10
+			local var4_10 = var1_10[iter0_10]
+			local var5_10 = Vector2(var4_10[1] + var2_10.x, var4_10[2] + var2_10.y)
+			local var6_10 = var4_10[3] * var3_10
+			local var7_10
+			local var8_10
 
-			if #var2_10 >= 4 then
-				var5_10 = Vector3(var2_10[1] + var2_10[4], var2_10[2] + var2_10[5], 0)
-				var6_10 = var2_10[6]
+			if #var4_10 >= 4 then
+				var7_10 = Vector3(var4_10[1] + var2_10.x + var4_10[4], var4_10[2] + var2_10.y + var4_10[5], 0)
+				var8_10 = var4_10[6]
 			end
 
 			table.insert(arg0_10.showDatas, {
-				pos = var3_10,
-				scale = var4_10,
-				move = var5_10,
-				move_time = var6_10
+				pos = var5_10,
+				scale = var6_10,
+				move = var7_10,
+				move_time = var8_10
 			})
 		end
 
@@ -170,22 +185,25 @@ end
 
 function var0_0.loadShowPaint(arg0_14, arg1_14, arg2_14, arg3_14)
 	arg0_14.loading = true
-
-	local var0_14 = Ship.New({
+	arg0_14.flagShip = Ship.New({
 		configId = arg1_14,
 		skin_id = arg2_14
 	})
+
+	local var0_14 = arg0_14.flagShip
 	local var1_14 = MainPaintingView.GetAssistantStatus(var0_14)
+	local var2_14 = var0_14:GetSkinConfig().tag
+	local var3_14 = pg.ship_skin_template[arg0_14.skinId]
 
 	if var1_14 == MainPaintingView.STATE_SPINE_PAINTING then
-		local var2_14 = SpinePainting.GenerateData({
+		local var4_14 = SpinePainting.GenerateData({
 			ship = var0_14,
 			position = Vector3(0, 0, 0),
 			parent = arg0_14.spineContainer,
 			effectParent = arg0_14.effectContainer
 		})
 
-		arg0_14.spinePainting = SpinePainting.New(var2_14, function(arg0_15)
+		arg0_14.spinePainting = SpinePainting.New(var4_14, function(arg0_15)
 			local var0_15 = arg0_15:GetSpineTrasform():GetComponent(typeof(ItemList)).prefabItem:ToTable()
 
 			for iter0_15, iter1_15 in ipairs(var0_15) do
@@ -201,23 +219,29 @@ function var0_0.loadShowPaint(arg0_14, arg1_14, arg2_14, arg3_14)
 			arg3_14()
 		end)
 	elseif var1_14 == MainPaintingView.STATE_PAINTING then
-		local var3_14 = var0_14:getPainting()
-		local var4_14 = var0_0.StaticGetPaintingName(var3_14)
+		arg0_14.paintOffset = var3_14.get_showing.paint_offset and var3_14.get_showing.paint_offset or nil
 
-		LoadPaintingPrefabAsync(arg0_14.paintingContainer, var3_14, var4_14, "mainNormal", function()
+		if (table.contains(var2_14, ShipSkin.WITH_LIVE2D) or table.contains(var2_14, ShipSkin.WITH_SPINE)) and not arg0_14.paintOffset then
+			arg0_14.paintingFitter.localScale = Vector3(1.1, 1.1, 1.1)
+		end
+
+		local var5_14 = var0_14:getPainting()
+		local var6_14 = var0_0.StaticGetPaintingName(var5_14)
+
+		LoadPaintingPrefabAsync(arg0_14.paintingContainer, var5_14, var6_14, "mainNormal", function()
 			arg0_14.loading = false
 
 			arg3_14()
 		end)
 	elseif var1_14 == MainPaintingView.STATE_L2D then
-		local var5_14 = Live2D.GenerateData({
+		local var7_14 = Live2D.GenerateData({
 			ship = var0_14,
 			scale = Vector3(52, 52, 52),
 			position = Vector3(0, 0, -1),
 			parent = arg0_14.l2dContainner
 		})
 
-		arg0_14.live2dChar = Live2D.New(var5_14, function(arg0_17)
+		arg0_14.live2dChar = Live2D.New(var7_14, function(arg0_17)
 			arg0_14:updateL2dSortMode(arg0_17)
 			arg0_17:IgonreReactPos(true)
 
@@ -226,10 +250,16 @@ function var0_0.loadShowPaint(arg0_14, arg1_14, arg2_14, arg3_14)
 			arg3_14()
 		end)
 	else
-		local var6_14 = var0_14:getPainting()
-		local var7_14 = var0_0.StaticGetPaintingName(var6_14)
+		arg0_14.paintOffset = var3_14.get_showing.paint_offset and var3_14.get_showing.paint_offset or nil
 
-		LoadPaintingPrefabAsync(arg0_14.paintingContainer, var6_14, var7_14, "mainNormal", function()
+		if (table.contains(var2_14, ShipSkin.WITH_LIVE2D) or table.contains(var2_14, ShipSkin.WITH_SPINE)) and not arg0_14.paintOffset then
+			arg0_14.paintingFitter.localScale = Vector3(1.1, 1.1, 1.1)
+		end
+
+		local var8_14 = var0_14:getPainting()
+		local var9_14 = var0_0.StaticGetPaintingName(var8_14)
+
+		LoadPaintingPrefabAsync(arg0_14.paintingContainer, var8_14, var9_14, "mainNormal", function()
 			arg0_14.loading = false
 		end)
 	end

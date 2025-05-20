@@ -1,14 +1,14 @@
 return {
 	effect_list = {
 		{
-			type = "BattleBuffAddBuff",
+			type = "BattleBuffCastSkill",
 			trigger = {
 				"onUpdate"
 			},
 			arg_list = {
-				buff_id = 151302,
 				quota = 1,
-				time = 18
+				time = 18,
+				skill_id = 151303
 			}
 		}
 	},

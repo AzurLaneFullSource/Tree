@@ -1,5 +1,52 @@
 pg = pg or {}
 pg.enemy_data_statistics_273 = {
+	[16504202] = {
+		cannon = 154,
+		name = "Joffre Mechanicus Pawn - Striker",
+		type = 3,
+		speed_growth = 0,
+		pilot_ai_template_id = 10001,
+		air = 0,
+		fog_fx = "",
+		dodge = 11,
+		speed = 20,
+		luck = 22,
+		antisub = 0,
+		reload_growth = 0,
+		dodge_growth = 156,
+		antiaircraft_growth = 3200,
+		reload = 150,
+		hit = 20,
+		antisub_growth = 0,
+		air_growth = 0,
+		cannon_growth = 1760,
+		base = 90648,
+		icon_type = 3,
+		armor_growth = 0,
+		torpedo_growth = 1600,
+		antiaircraft = 205,
+		hit_growth = 210,
+		armor = 0,
+		durability = 15950,
+		torpedo = 135,
+		id = 16504202,
+		durability_growth = 291200,
+		luck_growth = 0,
+		battle_unit_type = 90,
+		specific_fx_scale = {
+			yuanchou_gongjian = 0.04
+		},
+		appear_fx = {
+			"appearQ",
+			"yuanchou_gongjian"
+		},
+		equipment_list = {
+			1101094,
+			1101099,
+			1101104,
+			1101109
+		}
+	},
 	[16504203] = {
 		cannon = 210,
 		name = "La Galissonnière Mechanicus Pawn - Striker",
@@ -1275,41 +1322,6 @@ pg.enemy_data_statistics_273 = {
 		equipment_list = {
 			1002091,
 			1002096
-		}
-	},
-	[16511101] = {
-		cannon = 6,
-		reload = 150,
-		speed_growth = 0,
-		cannon_growth = 468,
-		battle_unit_type = 50,
-		air = 0,
-		base = 90423,
-		dodge = 15,
-		durability_growth = 18800,
-		antiaircraft = 20,
-		speed = 33,
-		reload_growth = 0,
-		dodge_growth = 222,
-		luck = 0,
-		antiaircraft_growth = 1638,
-		hit = 14,
-		antisub_growth = 0,
-		air_growth = 0,
-		fog_fx = "",
-		torpedo = 54,
-		durability = 510,
-		armor_growth = 0,
-		torpedo_growth = 4491,
-		luck_growth = 0,
-		hit_growth = 210,
-		armor = 0,
-		antisub = 0,
-		id = 16511101,
-		equipment_list = {
-			1002101,
-			1002106,
-			1002111
 		}
 	}
 }

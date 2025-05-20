@@ -11944,7 +11944,7 @@ _G.pg.base.ship_data_breakout[201384] = {
 
 _G.pg.base.ship_data_breakout[201391] = {
 	breakout_id = 201392,
-	breakout_view = "Unlock All Out Assault/Main gun efficiency +5%",
+	breakout_view = "Unlock All Out Assault I/Main gun efficiency +5%",
 	icon = "10001",
 	id = 201391,
 	level = 10,
@@ -12070,7 +12070,7 @@ _G.pg.base.ship_data_breakout[201514] = {
 
 _G.pg.base.ship_data_breakout[201521] = {
 	breakout_id = 201522,
-	breakout_view = "Learns All Out Assault I/Main Gun efficiency +5%",
+	breakout_view = "Unlock All Out Assault I/Main Gun efficiency +5%",
 	icon = "10001",
 	id = 201521,
 	level = 10,
@@ -12103,7 +12103,7 @@ _G.pg.base.ship_data_breakout[201522] = {
 
 _G.pg.base.ship_data_breakout[201523] = {
 	breakout_id = 201524,
-	breakout_view = "Improves All Out Assault I/All weapons' efficiency +5%",
+	breakout_view = "Improve All Out Assault/All weapons' efficiency +5%",
 	icon = "10001",
 	id = 201523,
 	level = 70,
@@ -14149,7 +14149,7 @@ _G.pg.base.ship_data_breakout[202344] = {
 
 _G.pg.base.ship_data_breakout[202351] = {
 	breakout_id = 202352,
-	breakout_view = "Learns All Out Assault I/Main Gun efficiency +5%",
+	breakout_view = "Unlock All Out Assault I/Main Gun efficiency +5%",
 	icon = "10001",
 	id = 202351,
 	level = 10,

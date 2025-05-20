@@ -144648,7 +144648,7 @@ _G.pg.base.bullet_template[161101] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -144668,26 +144668,7 @@ _G.pg.base.bullet_template[161101] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
 		6,
 		2,
@@ -144730,7 +144711,7 @@ _G.pg.base.bullet_template[161102] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -144750,26 +144731,7 @@ _G.pg.base.bullet_template[161102] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
 		6,
 		2,
@@ -144812,7 +144774,7 @@ _G.pg.base.bullet_template[161103] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -144832,26 +144794,7 @@ _G.pg.base.bullet_template[161103] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
 		6,
 		2,
@@ -144894,7 +144837,7 @@ _G.pg.base.bullet_template[161104] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -144914,26 +144857,7 @@ _G.pg.base.bullet_template[161104] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
 		6,
 		2,
@@ -144976,7 +144900,7 @@ _G.pg.base.bullet_template[161105] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -144996,26 +144920,7 @@ _G.pg.base.bullet_template[161105] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
 		6,
 		2,
@@ -145058,7 +144963,7 @@ _G.pg.base.bullet_template[161106] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -145078,26 +144983,7 @@ _G.pg.base.bullet_template[161106] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
 		6,
 		2,
@@ -145140,7 +145026,7 @@ _G.pg.base.bullet_template[161107] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -145160,26 +145046,7 @@ _G.pg.base.bullet_template[161107] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
 		6,
 		2,
@@ -145222,7 +145089,7 @@ _G.pg.base.bullet_template[161108] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -145242,26 +145109,7 @@ _G.pg.base.bullet_template[161108] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
 		6,
 		2,
@@ -145304,7 +145152,7 @@ _G.pg.base.bullet_template[161109] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -145324,26 +145172,7 @@ _G.pg.base.bullet_template[161109] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
 		6,
 		2,
@@ -145386,7 +145215,7 @@ _G.pg.base.bullet_template[161110] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -145406,26 +145235,7 @@ _G.pg.base.bullet_template[161110] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
 		6,
 		2,
@@ -171401,7 +171211,7 @@ _G.pg.base.bullet_template[167881] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -171421,30 +171231,11 @@ _G.pg.base.bullet_template[167881] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
-		8,
+		30,
 		4,
-		80,
+		30,
 	},
 	cld_offset = {
 		0,
@@ -171485,7 +171276,7 @@ _G.pg.base.bullet_template[167882] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -171505,30 +171296,11 @@ _G.pg.base.bullet_template[167882] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
-		8,
+		30,
 		4,
-		80,
+		30,
 	},
 	cld_offset = {
 		0,
@@ -171569,7 +171341,7 @@ _G.pg.base.bullet_template[167883] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -171589,30 +171361,11 @@ _G.pg.base.bullet_template[167883] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
-		8,
+		30,
 		4,
-		80,
+		30,
 	},
 	cld_offset = {
 		0,
@@ -171653,7 +171406,7 @@ _G.pg.base.bullet_template[167884] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -171673,30 +171426,11 @@ _G.pg.base.bullet_template[167884] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
-		8,
+		30,
 		4,
-		80,
+		30,
 	},
 	cld_offset = {
 		0,
@@ -171737,7 +171471,7 @@ _G.pg.base.bullet_template[167885] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -171757,30 +171491,11 @@ _G.pg.base.bullet_template[167885] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
-		8,
+		30,
 		4,
-		80,
+		30,
 	},
 	cld_offset = {
 		0,
@@ -171821,7 +171536,7 @@ _G.pg.base.bullet_template[167886] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -171841,30 +171556,11 @@ _G.pg.base.bullet_template[167886] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
-		8,
+		30,
 		4,
-		80,
+		30,
 	},
 	cld_offset = {
 		0,
@@ -171905,7 +171601,7 @@ _G.pg.base.bullet_template[167887] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -171925,30 +171621,11 @@ _G.pg.base.bullet_template[167887] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
-		8,
+		30,
 		4,
-		80,
+		30,
 	},
 	cld_offset = {
 		0,
@@ -171989,7 +171666,7 @@ _G.pg.base.bullet_template[167888] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -172009,30 +171686,11 @@ _G.pg.base.bullet_template[167888] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
-		8,
+		30,
 		4,
-		80,
+		30,
 	},
 	cld_offset = {
 		0,
@@ -172073,7 +171731,7 @@ _G.pg.base.bullet_template[167889] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -172093,30 +171751,11 @@ _G.pg.base.bullet_template[167889] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
-		8,
+		30,
 		4,
-		80,
+		30,
 	},
 	cld_offset = {
 		0,
@@ -172157,7 +171796,7 @@ _G.pg.base.bullet_template[167890] = {
 	range = 200,
 	range_offset = 0,
 	type = 1,
-	velocity = 3,
+	velocity = 8,
 	damage_type = {
 		1.4,
 		1.1,
@@ -172177,30 +171816,11 @@ _G.pg.base.bullet_template[167890] = {
 			0.9,
 		},
 	},
-	acceleration = {
-		{
-			flip = false,
-			t = 0,
-			u = 0,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1,
-			u = 0.2,
-			v = 0,
-		},
-		{
-			flip = false,
-			t = 1.5,
-			u = 0,
-			v = 0,
-		},
-	},
+	acceleration = {},
 	cld_box = {
-		8,
+		30,
 		4,
-		80,
+		30,
 	},
 	cld_offset = {
 		0,

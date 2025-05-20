@@ -736,7 +736,7 @@ _G.pg.base.shop_template[25] = {
 	limit_args = {
 		"count",
 		2000,
-		2999,
+		3999,
 	},
 }
 

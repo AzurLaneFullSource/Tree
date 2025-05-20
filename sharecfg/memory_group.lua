@@ -5533,7 +5533,7 @@ pg.base.memory_group = {
 		icon = "title_event",
 		type = 2,
 		link_event = 5952,
-		title = "",
+		title = "Midsummer Returns! The Villa Reconstruction",
 		group_id = "",
 		memories = {
 			4351,
@@ -5571,7 +5571,7 @@ pg.base.memory_group = {
 		icon = "title_event",
 		type = 2,
 		link_event = 5941,
-		title = "高塔上的蔷薇",
+		title = "A Rose on the High Tower",
 		group_id = "",
 		memories = {
 			4381,

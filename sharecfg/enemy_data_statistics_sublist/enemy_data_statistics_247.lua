@@ -1,5 +1,41 @@
 pg = pg or {}
 pg.enemy_data_statistics_247 = {
+	[15909002] = {
+		cannon = 200,
+		reload = 150,
+		speed_growth = 0,
+		cannon_growth = 0,
+		pilot_ai_template_id = 10001,
+		air = 446,
+		battle_unit_type = 70,
+		dodge = 12,
+		base = 90648,
+		durability_growth = 0,
+		antiaircraft = 300,
+		reload_growth = 0,
+		dodge_growth = 284,
+		speed = 24,
+		luck = 28,
+		hit = 150,
+		antisub_growth = 0,
+		air_growth = 0,
+		antiaircraft_growth = 0,
+		torpedo = 0,
+		durability = 330000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		hit_growth = 0,
+		armor = 0,
+		id = 15909002,
+		fog_fx = "",
+		antisub = 0,
+		specific_fx_scale = {},
+		appear_fx = {
+			"bossguangxiao"
+		},
+		equipment_list = {}
+	},
 	[16000001] = {
 		cannon = 5,
 		hit_growth = 144,
@@ -1227,55 +1263,6 @@ pg.enemy_data_statistics_247 = {
 			1000760,
 			1000765,
 			1000770
-		}
-	},
-	[16000301] = {
-		cannon = 140,
-		name = "Jupiter's Phantom",
-		type = 5,
-		speed_growth = 0,
-		hit_growth = 210,
-		air = 0,
-		durability = 8900,
-		armor = 0,
-		antisub = 0,
-		reload = 150,
-		luck_growth = 0,
-		battle_unit_type = 95,
-		dodge_growth = 156,
-		antisub_growth = 0,
-		air_growth = 0,
-		base = 90665,
-		icon_type = 5,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		speed = 20,
-		luck = 0,
-		id = 16000301,
-		scale = 180,
-		cannon_growth = 0,
-		pilot_ai_template_id = 10001,
-		fog_fx = "",
-		dodge = 11,
-		reload_growth = 0,
-		hit = 14,
-		torpedo = 30,
-		durability_growth = 0,
-		antiaircraft = 115,
-		antiaircraft_growth = 0,
-		armor_type = 3,
-		specific_fx_scale = {},
-		appear_fx = {
-			"bossguangxiao",
-			"appearQ"
-		},
-		equipment_list = {
-			3001401,
-			3001402,
-			3001403,
-			3001404,
-			3001405,
-			3001406
 		}
 	}
 }

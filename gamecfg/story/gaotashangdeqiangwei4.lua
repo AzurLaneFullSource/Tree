@@ -11,7 +11,7 @@ return {
 			say = "Not even a few minutes after the Mesektet had taken flight, the dead-silent sea suddenly bubbled, as if boiling.",
 			bgm = "theme-lion",
 			location = {
-				"？？？·未知海域",
+				"??? - Unknown sea",
 				3
 			},
 			typewriter = {

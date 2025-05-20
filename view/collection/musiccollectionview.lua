@@ -652,7 +652,7 @@ function var0_0.updatePlayPanel(arg0_60, arg1_60)
 
 	local var4_60 = var1_60.name
 
-	setText(arg0_60.playPanelNameText, var4_60)
+	changeToScrollText(arg0_60.playPanelNameText, var4_60)
 	setActive(arg0_60.likeOnImg, arg0_60.likeDic[var1_60.id])
 	setActive(arg0_60.playBtn, false)
 	setActive(arg0_60.playDesc, true)

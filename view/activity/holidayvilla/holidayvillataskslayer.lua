@@ -52,7 +52,6 @@ function var0_0.UpdateView(arg0_8)
 			arg0_8.isGottask = arg0_8:ISGot(arg0_8.task, arg0_8.config_client[iter0_8][iter1_8])
 
 			if arg0_8.isGottask ~= 2 then
-				warning(iter0_8, "                   ", arg0_8.config_client[iter0_8][iter1_8])
 				table.insert(arg0_8.config_data, arg0_8.config_client[iter0_8][iter1_8])
 
 				break
@@ -216,7 +215,7 @@ function var0_0.updateAwards(arg0_17, arg1_17, arg2_17, arg3_17)
 
 			updateDrop(findTF(var2_17, "mask"), var5_17)
 			onButton(arg0_17, var2_17:Find("mask"), function()
-				arg0_17:emit(BaseUI.ON_DROP, var5_17)
+				arg0_17:emit(BaseUI.ON_ITEM, var5_17)
 			end, SFX_PANEL)
 		end
 	end

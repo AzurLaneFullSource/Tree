@@ -444,7 +444,7 @@ return {
 			{
 				tmpID = 900501,
 				configId = 900501,
-				skinId = 201130,
+				skinId = 201390,
 				id = 2,
 				level = 120,
 				equipment = {

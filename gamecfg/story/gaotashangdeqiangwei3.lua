@@ -67,7 +67,7 @@ return {
 			nameColor = "#A9F548FF",
 			say = "Haha! Hahahaha! Haaahahah!",
 			location = {
-				"？？？·未知海域",
+				"??? - Unknown sea",
 				3
 			},
 			typewriter = {

@@ -18979,7 +18979,7 @@ _G.pg.base.ship_skin_words[201380] = {
 				19901,
 			},
 			1,
-			"聚会的话……（究竟是拒绝还是接受比较好……）",
+			"A party...? (Should I refuse, or...)",
 			0,
 		},
 		{
@@ -18987,7 +18987,7 @@ _G.pg.base.ship_skin_words[201380] = {
 				20501,
 			},
 			1,
-			"为了皇家的荣耀而战！",
+			"For the glory of the Royal Navy!",
 			0,
 		},
 	},
@@ -29597,7 +29597,7 @@ _G.pg.base.ship_skin_words[236032] = {
 _G.pg.base.ship_skin_words[237030] = {
 	battle = "",
 	detail = "You came just in time for the cake to finish baking. I didn't even have time to change out of my apron. Heehee, not that I'd mind at all if you... \"accidentally\" saw me in a state of disrobe.",
-	drop_descrip = "",
+	drop_descrip = "Commander, come and try this cake I made... Oh? Heehee, of course I know. That's the ring that symbolizes our eternal vow. I promise to cherish both you and the ring forever...",
 	expedition = "Go ahead and greet everyone. I'll have sweets ready and waiting for their return!",
 	feeling1 = "",
 	feeling2 = "",
@@ -78683,7 +78683,7 @@ _G.pg.base.ship_skin_words[9707060] = {
 _G.pg.base.ship_skin_words[9707070] = {
 	battle = "Glorious, of the Royal Navy, spares no foes!",
 	detail = "...Would you also like a cup of tea? I'll brew it right away. Please wait a moment.",
-	drop_descrip = "",
+	drop_descrip = "Good day to you, Commander. I'm the Royal Navy aircraft carrier Glorious. It's an honour to be here, and I thank you for having me.",
 	expedition = "How long has it been since I saw a fleet so replete with supplies? ...Commander, the commission is done. Leave the rest to me.",
 	feeling1 = "...What's the matter? You called for me, didn't you?",
 	feeling2 = "Commander, where are the port's nicest views? I'm in the mood to go out for a while... Don't worry. I just need some fresh air.",

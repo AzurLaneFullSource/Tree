@@ -11,7 +11,7 @@ return {
 			say = "We arrived at the \"repairable and dormant facility\" that Compiler spoke of.",
 			bgm = "story-antix-past",
 			location = {
-				"皇家·格拉摩根谷地区",
+				"Royal Islands - Vale of Glamorgan",
 				3
 			},
 			typewriter = {

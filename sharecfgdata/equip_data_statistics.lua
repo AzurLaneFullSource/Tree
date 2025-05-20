@@ -164316,7 +164316,7 @@ _G.pg.base.equip_data_statistics[170771] = {
 	descrip = "Barrage",
 	icon = "1",
 	id = 170771,
-	name = "专属弹幕-克利奥佩特拉I",
+	name = "All Out Assault I",
 	nationality = 0,
 	rarity = 1,
 	speciality = "<[NA]>",
@@ -164357,7 +164357,7 @@ _G.pg.base.equip_data_statistics[170771] = {
 _G.pg.base.equip_data_statistics[170772] = {
 	base = 170771,
 	id = 170772,
-	name = "专属弹幕-克利奥佩特拉II",
+	name = "All Out Assault II",
 	weapon_id = {
 		61752,
 	},
@@ -164369,7 +164369,7 @@ _G.pg.base.equip_data_statistics[170781] = {
 	descrip = "Barrage",
 	icon = "1",
 	id = 170781,
-	name = "专属弹幕-特拉法尔加",
+	name = "All Out Assault",
 	nationality = 0,
 	rarity = 1,
 	speciality = "<[NA]>",
@@ -164410,7 +164410,7 @@ _G.pg.base.equip_data_statistics[170781] = {
 _G.pg.base.equip_data_statistics[170782] = {
 	base = 170781,
 	id = 170782,
-	name = "专属弹幕-特拉法尔加",
+	name = "All Out Assault",
 	weapon_id = {
 		61762,
 	},

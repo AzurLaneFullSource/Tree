@@ -2528,7 +2528,7 @@ pg.medal_template = {
 		target_id = "5913"
 	},
 	[200051] = {
-		explain1 = "A Rose on the High Tower.",
+		explain1 = "A Rose on the High Tower",
 		name = "A Rose on the High Tower Medal",
 		explain2 = "Event",
 		type = 0,
@@ -2549,7 +2549,7 @@ pg.medal_template = {
 		target_id = "5970"
 	},
 	[200061] = {
-		explain1 = "The Villa Reconstruction.",
+		explain1 = "Villa Resort",
 		name = "The Villa Reconstruction Medal",
 		explain2 = "Event",
 		type = 0,

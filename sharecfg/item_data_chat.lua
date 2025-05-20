@@ -106,10 +106,10 @@ pg.item_data_chat = {
 	},
 	[610] = {
 		time_limit_type = 0,
-		name = "海滨的轻浪",
+		name = "Tropical Waves",
 		id = 610,
 		time_second = 0,
-		desc = "漫步于海滨，倾听海浪的细语。\n<color=#A7A7AAFF>通过参与「夏日重建！海岛别墅度假计划！」活动获取</color>",
+		desc = "Walk along the beach and lend an ear to the waves. \n<color=#A7A7AAFF>Obtained by participating in the Midsummer Returns: The Villa Reconstruction event.</color>",
 		scene = {}
 	},
 	[10001] = {

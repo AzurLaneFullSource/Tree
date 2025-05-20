@@ -42,7 +42,7 @@ pg.tutorial_handbook_task = {
 		eng_name = "HANDBOOK",
 		type = 1,
 		id = 100201,
-		lock_name = "未解锁",
+		lock_name = "Locked",
 		unlock = {
 			23510
 		},
@@ -80,7 +80,7 @@ pg.tutorial_handbook_task = {
 		eng_name = "HANDBOOK",
 		type = 1,
 		id = 100301,
-		lock_name = "未解锁",
+		lock_name = "Locked",
 		unlock = {
 			23511
 		},
@@ -118,7 +118,7 @@ pg.tutorial_handbook_task = {
 		eng_name = "HANDBOOK",
 		type = 1,
 		id = 100401,
-		lock_name = "未解锁",
+		lock_name = "Locked",
 		unlock = {
 			23512
 		},
@@ -156,7 +156,7 @@ pg.tutorial_handbook_task = {
 		eng_name = "HANDBOOK",
 		type = 1,
 		id = 100501,
-		lock_name = "未解锁",
+		lock_name = "Locked",
 		unlock = {
 			23513
 		},
@@ -194,7 +194,7 @@ pg.tutorial_handbook_task = {
 		eng_name = "HANDBOOK",
 		type = 1,
 		id = 100601,
-		lock_name = "未解锁",
+		lock_name = "Locked",
 		unlock = {
 			23514
 		},
@@ -232,7 +232,7 @@ pg.tutorial_handbook_task = {
 		eng_name = "HANDBOOK",
 		type = 1,
 		id = 100701,
-		lock_name = "未解锁",
+		lock_name = "Locked",
 		unlock = {
 			23515
 		},
@@ -270,7 +270,7 @@ pg.tutorial_handbook_task = {
 		eng_name = "HANDBOOK",
 		type = 1,
 		id = 100801,
-		lock_name = "未解锁",
+		lock_name = "Locked",
 		unlock = {
 			23516
 		},
@@ -308,7 +308,7 @@ pg.tutorial_handbook_task = {
 		eng_name = "HANDBOOK",
 		type = 1,
 		id = 100901,
-		lock_name = "未解锁",
+		lock_name = "Locked",
 		unlock = {
 			23517
 		},

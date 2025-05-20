@@ -129,7 +129,7 @@ end
 
 function var0_0.ShowTaskSubmitCall(arg0_10, arg1_10)
 	for iter0_10, iter1_10 in ipairs(arg0_10.commanderManualPages) do
-		if table.contains(iter1_10.taskIdList, arg1_10) then
+		if table.contains(iter1_10.taskIdList, arg1_10) and not iter1_10:IsTaskComplete(arg1_10) then
 			iter1_10:AddFinishedTaskId(arg1_10)
 			iter1_10:AddPt()
 

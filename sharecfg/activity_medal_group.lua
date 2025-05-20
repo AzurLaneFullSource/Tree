@@ -245,7 +245,7 @@ pg.activity_medal_group = {
 		id = 5970,
 		entrance_picture = "medalAlbum/5970",
 		is_out_of_print = 0,
-		group_name = "高塔上的蔷薇",
+		group_name = "A Rose on the High Tower",
 		activity_medal_ids = {
 			597001,
 			597002,
@@ -294,7 +294,7 @@ pg.activity_medal_group = {
 		id = 5971,
 		entrance_picture = "medalAlbum/5971",
 		is_out_of_print = 0,
-		group_name = "夏日重建",
+		group_name = "Villa Resort",
 		activity_medal_ids = {
 			597101,
 			597102,
