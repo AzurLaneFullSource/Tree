@@ -11,7 +11,7 @@ return {
 			say = "The group disembarked the luxurious train, stepping back into the desolate world.",
 			bgm = "theme-brokenworld-sad",
 			location = {
-				"第五战区·目标建筑群废墟周边",
+				"5th Combat Sector - Near target ruins",
 				3
 			},
 			typewriter = {

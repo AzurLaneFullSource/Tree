@@ -11,7 +11,7 @@ return {
 			say = "Once the light fades, I find myself in a wasteland I've never seen before.",
 			bgm = "story-antix-past",
 			location = {
-				"？？？·？？？",
+				"Unknown location",
 				3
 			},
 			typewriter = {

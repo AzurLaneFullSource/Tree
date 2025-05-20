@@ -28805,7 +28805,8 @@ _G.pg.base.gametip.NewMusic_help = {
 	tip = {
 		{
 			icon = {
-				atlas = "helpbg/music_help',path='",
+				atlas = "helpbg/music_help",
+				path = "",
 			},
 		},
 		ImageMode = true,
@@ -29041,6 +29042,6 @@ _G.pg.base.gametip.storyline_goto = {
 }
 
 _G.pg.base.gametip.holiday_villa_locked = {
-	tip = "完成<color=#92fc63>假日别墅筹备中</color>活动后解锁",
+	tip = "Unlocks after completing the <color=#92fc63>The Villa Vacation</color> event.",
 }
 

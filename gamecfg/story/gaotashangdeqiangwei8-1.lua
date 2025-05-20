@@ -12,7 +12,7 @@ return {
 			say = "KABOOOM!",
 			bgm = "theme-lion",
 			location = {
-				"某处空域·辉翼太阳船",
+				"In the air - Aboard the Mesektet",
 				3
 			},
 			typewriter = {

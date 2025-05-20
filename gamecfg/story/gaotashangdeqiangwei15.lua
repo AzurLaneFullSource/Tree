@@ -10,7 +10,7 @@ return {
 			say = "Elizabeth META wandered through the empty void.",
 			bgm = "story-startravel",
 			location = {
-				"？？？·？？？",
+				"Unknown location",
 				3
 			},
 			typewriter = {
