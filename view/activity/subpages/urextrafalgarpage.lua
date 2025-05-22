@@ -1,4 +1,5 @@
 local var0_0 = class("UrExTrafalgarPage", import(".TemplatePage.UrExchangeTemplatePage"))
+local var1_0 = pg.activity_holiday_site
 
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
@@ -9,13 +10,15 @@ function var0_0.OnInit(arg0_1)
 			local var1_2 = getProxy(MiniGameProxy):GetHubByGameId(var0_2).count == 0
 
 			local function var2_2()
-				if var0_2 == 76 then
+				local var0_3 = getProxy(TaskProxy)
+				local var1_3 = getProxy(ActivityProxy):getActivityById(ActivityConst.HOLIDAY_ACT_ID):getConfig("config_client").function_id
+				local var2_3 = var1_0[var1_3[3]].task_id
+
+				if var0_3:getTaskVO(var2_3):getTaskStatus() == 2 then
+					arg0_2:emit(ActivityMediator.GO_MINI_GAME, var0_2)
+				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_minigame_unlock"))
-
-					return
 				end
-
-				arg0_2:emit(ActivityMediator.GO_MINI_GAME, var0_2)
 			end
 
 			return var1_2 and "1/1" or "0/1", not var1_2 and var2_2 or nil

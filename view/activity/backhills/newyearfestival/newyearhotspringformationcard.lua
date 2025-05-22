@@ -64,6 +64,10 @@ function var0_0.flush(arg0_3)
 
 	setRectShipCardFrame(arg0_3.frame, var3_3, var4_3)
 	setFrameEffect(arg0_3.otherBg, var5_3)
+
+	local var6_3 = arg0_3.shipVO:getShipType()
+
+	setImageSprite(arg0_3.shipType, GetSpriteFromAtlas("shiptype", shipType2print(var6_3)))
 end
 
 function var0_0.updateProps(arg0_5, arg1_5)

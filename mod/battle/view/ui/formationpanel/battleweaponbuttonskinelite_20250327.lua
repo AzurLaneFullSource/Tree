@@ -93,22 +93,22 @@ function var1_0.updateProgressBar(arg0_5)
 end
 
 function var1_0.OnOverLoadChange(arg0_6, arg1_6)
-	if arg0_6._progressInfo:GetCount() < 1 then
+	if arg0_6._progressInfo:IsOverLoad() then
 		arg0_6._block:SetActive(true)
 		arg0_6:OnUnfill()
 	else
 		arg0_6._block:SetActive(false)
 		arg0_6:OnFilled()
+	end
 
-		if arg1_6 and arg1_6.Data then
-			local var0_6 = arg1_6.Data.preCast
+	if arg0_6._progressInfo:GetCount() >= 1 and arg1_6 and arg1_6.Data then
+		local var0_6 = arg1_6.Data.preCast
 
-			if var0_6 then
-				if var0_6 == 0 then
-					quickCheckAndPlayAnimator(arg0_6._skin, "weapon_button_progress_filled")
-				elseif var0_6 > 0 then
-					quickCheckAndPlayAnimator(arg0_6._skin, "weapon_button_progress_charge")
-				end
+		if var0_6 then
+			if var0_6 == 0 then
+				quickCheckAndPlayAnimator(arg0_6._skin, "weapon_button_progress_filled")
+			elseif var0_6 > 0 then
+				quickCheckAndPlayAnimator(arg0_6._skin, "weapon_button_progress_charge")
 			end
 		end
 	end

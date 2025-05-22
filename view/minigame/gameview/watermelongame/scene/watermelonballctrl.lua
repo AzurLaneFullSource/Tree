@@ -89,6 +89,7 @@ function var0_0.clear(arg0_5)
 	arg0_5.countId = WatermelonGameConst.ball_count_id
 	arg0_5.tickToOver = nil
 
+	setActive(arg0_5._megerEffect, false)
 	arg0_5:clearBallContainer()
 end
 
@@ -295,10 +296,14 @@ function var0_0.setCreateCd(arg0_25)
 end
 
 function var0_0.initBallData(arg0_26, arg1_26, arg2_26)
+	setActive(arg1_26, true)
+
 	local var0_26 = arg2_26 and arg2_26 or arg0_26:getRandomIdByWeight()
 	local var1_26 = WatermelonGameConst.ball_data[var0_26]
+	local var2_26 = GetComponent(arg1_26, typeof(UnityEngine.CircleCollider2D))
+	local var3_26 = GetComponent(arg1_26, "Rigidbody2D")
 
-	GetComponent(arg1_26, typeof(UnityEngine.CircleCollider2D)).radius = var1_26.size
+	var2_26.radius = var1_26.size
 
 	arg0_26:setChildVisible(findTF(arg1_26, "size_image"), false)
 	setActive(findTF(arg1_26, "size_image/" .. var0_26), true)
@@ -306,11 +311,10 @@ function var0_0.initBallData(arg0_26, arg1_26, arg2_26)
 	arg0_26.countId = arg0_26.countId + 1
 	arg1_26.name = "ball_" .. arg0_26.countId
 
-	setActive(arg1_26, true)
-
 	return {
 		id = var1_26.id,
 		tf = arg1_26,
+		rigidbody = var3_26,
 		count = arg0_26.countId,
 		name = arg1_26.name,
 		next = var1_26.next_id,

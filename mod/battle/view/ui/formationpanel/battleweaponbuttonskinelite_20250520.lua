@@ -48,22 +48,22 @@ function var1_0.OnCountChange(arg0_3)
 end
 
 function var1_0.OnOverLoadChange(arg0_4, arg1_4)
-	if arg0_4._progressInfo:GetCount() < 1 then
+	if arg0_4._progressInfo:IsOverLoad() then
 		arg0_4._block:SetActive(true)
 		arg0_4:OnUnfill()
 	else
 		arg0_4._block:SetActive(false)
 		arg0_4:OnFilled()
+	end
 
-		if arg1_4 and arg1_4.Data then
-			local var0_4 = arg1_4.Data.preCast
+	if arg0_4._progressInfo:GetCount() >= 1 and arg1_4 and arg1_4.Data then
+		local var0_4 = arg1_4.Data.preCast
 
-			if var0_4 then
-				if var0_4 == 0 then
-					quickCheckAndPlayAnimator(arg0_4._skin, "weapon_button_progress_filled")
-				elseif var0_4 > 0 then
-					quickCheckAndPlayAnimator(arg0_4._skin, "weapon_button_progress_charge")
-				end
+		if var0_4 then
+			if var0_4 == 0 then
+				quickCheckAndPlayAnimator(arg0_4._skin, "weapon_button_progress_filled")
+			elseif var0_4 > 0 then
+				quickCheckAndPlayAnimator(arg0_4._skin, "weapon_button_progress_charge")
 			end
 		end
 	end
