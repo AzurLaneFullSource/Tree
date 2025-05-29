@@ -1287,190 +1287,205 @@ local var1_0 = {
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.ANNIVERSARY_ISLAND_SEA)
 	end,
 	ShipBluePrintMediator = function(arg0_218, arg1_218)
-		local var0_218 = PaintingGroupConst.GetPaintingNameListForTec()
-		local var1_218 = {
-			isShowBox = true,
-			paintingNameList = var0_218,
-			finishFunc = arg1_218
-		}
+		local var0_218 = {}
+		local var1_218 = getProxy(TechnologyProxy):getAllBluePrintShipIds()
 
-		PaintingGroupConst.PaintingDownload(var1_218)
-	end,
-	SwichSkinMediator = function(arg0_219, arg1_219)
-		local var0_219 = PaintingGroupConst.GetPaintingNameListByShipVO(arg0_219.context.data.shipVO)
-		local var1_219 = {
-			isShowBox = true,
-			paintingNameList = var0_219,
-			finishFunc = arg1_219
-		}
+		if #var1_218 > 0 then
+			table.insert(var0_218, function(arg0_219)
+				pg.m02:sendNotification(GAME.GET_PHANTOM_QUEST_PROGRESS, {
+					shipIds = var1_218,
+					callback = arg0_219
+				})
+			end)
+		end
 
-		PaintingGroupConst.PaintingDownload(var1_219)
-	end,
-	NewShipMediator = function(arg0_220, arg1_220)
-		local var0_220 = arg0_220.context.data.ship
-		local var1_220 = {}
+		table.insert(var0_218, function(arg0_220)
+			local var0_220 = PaintingGroupConst.GetPaintingNameListForTec()
+			local var1_220 = {
+				isShowBox = true,
+				paintingNameList = var0_220,
+				finishFunc = arg0_220
+			}
 
-		PaintingGroupConst.AddPaintingNameByShipConfigID(var1_220, var0_220.configId)
-
-		local var2_220 = {
-			isShowBox = false,
-			paintingNameList = var1_220,
-			finishFunc = arg1_220
-		}
-
-		PaintingGroupConst.PaintingDownload(var2_220)
-	end,
-	EquipCodeShareMediator = function(arg0_221, arg1_221)
-		local var0_221 = {}
-
-		table.insert(var0_221, function(arg0_222)
-			pg.m02:sendNotification(GAME.EQUIP_CODE_REQUEST, {
-				shipGroupId = arg0_221.context.data.shipGroupId,
-				callback = arg0_222
-			})
+			PaintingGroupConst.PaintingDownload(var1_220)
 		end)
-		seriesAsync(var0_221, arg1_221)
+		seriesAsync(var0_218, arg1_218)
 	end,
-	BuildShipRegularExchangeMediator = function(arg0_223, arg1_223)
+	SwichSkinMediator = function(arg0_221, arg1_221)
+		local var0_221 = PaintingGroupConst.GetPaintingNameListByShipVO(arg0_221.context.data.shipVO)
+		local var1_221 = {
+			isShowBox = true,
+			paintingNameList = var0_221,
+			finishFunc = arg1_221
+		}
+
+		PaintingGroupConst.PaintingDownload(var1_221)
+	end,
+	NewShipMediator = function(arg0_222, arg1_222)
+		local var0_222 = arg0_222.context.data.ship
+		local var1_222 = {}
+
+		PaintingGroupConst.AddPaintingNameByShipConfigID(var1_222, var0_222.configId)
+
+		local var2_222 = {
+			isShowBox = false,
+			paintingNameList = var1_222,
+			finishFunc = arg1_222
+		}
+
+		PaintingGroupConst.PaintingDownload(var2_222)
+	end,
+	EquipCodeShareMediator = function(arg0_223, arg1_223)
 		local var0_223 = {}
 
-		for iter0_223, iter1_223 in ipairs(pg.ship_data_create_exchange[REGULAR_BUILD_POOL_EXCHANGE_ID].exchange_ship_id) do
-			PaintingGroupConst.AddPaintingNameByShipConfigID(var0_223, iter1_223)
+		table.insert(var0_223, function(arg0_224)
+			pg.m02:sendNotification(GAME.EQUIP_CODE_REQUEST, {
+				shipGroupId = arg0_223.context.data.shipGroupId,
+				callback = arg0_224
+			})
+		end)
+		seriesAsync(var0_223, arg1_223)
+	end,
+	BuildShipRegularExchangeMediator = function(arg0_225, arg1_225)
+		local var0_225 = {}
+
+		for iter0_225, iter1_225 in ipairs(pg.ship_data_create_exchange[REGULAR_BUILD_POOL_EXCHANGE_ID].exchange_ship_id) do
+			PaintingGroupConst.AddPaintingNameByShipConfigID(var0_225, iter1_225)
 		end
 
 		PaintingGroupConst.PaintingDownload({
 			isShowBox = false,
-			paintingNameList = var0_223,
-			finishFunc = arg1_223
+			paintingNameList = var0_225,
+			finishFunc = arg1_225
 		})
 	end,
-	EducateMediator = function(arg0_224, arg1_224)
-		EducateHelper.ReqEducateDataCheck(arg1_224)
+	EducateMediator = function(arg0_226, arg1_226)
+		EducateHelper.ReqEducateDataCheck(arg1_226)
 	end,
-	NewEducateSelectMediator = function(arg0_225, arg1_225)
+	NewEducateSelectMediator = function(arg0_227, arg1_227)
 		seriesAsync({
-			function(arg0_226)
-				EducateHelper.ReqEducateDataCheck(arg0_226)
+			function(arg0_228)
+				EducateHelper.ReqEducateDataCheck(arg0_228)
 			end,
-			function(arg0_227)
-				getProxy(NewEducateProxy):ReqDataCheck(arg0_227)
+			function(arg0_229)
+				getProxy(NewEducateProxy):ReqDataCheck(arg0_229)
 			end
 		}, function()
 			NewEducateHelper.TrackExitTime()
 			getProxy(NewEducateProxy):SetCurChar(0)
-			arg1_225()
+			arg1_227()
 		end)
 	end,
-	NewEducateMainMediator = function(arg0_229, arg1_229)
-		local var0_229 = arg0_229.context.data.id
+	NewEducateMainMediator = function(arg0_231, arg1_231)
+		local var0_231 = arg0_231.context.data.id
 
-		getProxy(NewEducateProxy):SetCurChar(var0_229)
+		getProxy(NewEducateProxy):SetCurChar(var0_231)
 		NewEducateHelper.TrackEnterTime()
-		arg1_229()
+		arg1_231()
 	end,
-	CourtYardMediator = function(arg0_230, arg1_230)
+	CourtYardMediator = function(arg0_232, arg1_232)
 		if not pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "BackYardMediator") then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("word_systemClose"))
 
 			return
 		end
 
-		arg1_230()
+		arg1_232()
 	end,
-	Dorm3dRoomMediator = function(arg0_231, arg1_231)
-		local var0_231 = arg0_231.context.data
+	Dorm3dRoomMediator = function(arg0_233, arg1_233)
+		local var0_233 = arg0_233.context.data
 
-		if not var0_231.timeIndex then
-			if pg.dorm3d_rooms[var0_231.roomId].type == 2 then
-				local var1_231 = PlayerPrefs.GetInt(ApartmentProxy.GetTimePPName(var0_231.roomId), 1)
+		if not var0_233.timeIndex then
+			if pg.dorm3d_rooms[var0_233.roomId].type == 2 then
+				local var1_233 = PlayerPrefs.GetInt(ApartmentProxy.GetTimePPName(var0_233.roomId), 1)
 
-				if var1_231 == 0 then
-					var1_231 = ApartmentProxy.GetTimeIndex(tonumber(pg.TimeMgr.GetInstance():CurrentSTimeDesc("%H")))
+				if var1_233 == 0 then
+					var1_233 = ApartmentProxy.GetTimeIndex(tonumber(pg.TimeMgr.GetInstance():CurrentSTimeDesc("%H")))
 				end
 
-				var0_231.timeIndex = var1_231
+				var0_233.timeIndex = var1_233
 			else
-				var0_231.timeIndex = 1
+				var0_233.timeIndex = 1
 			end
 
-			var0_231.pendingDic = ApartmentProxy.PendingRandom(var0_231.roomId, var0_231.groupIds)
+			var0_233.pendingDic = ApartmentProxy.PendingRandom(var0_233.roomId, var0_233.groupIds)
 		end
 
-		local var2_231 = arg0_231.context.data.roomId
+		local var2_233 = arg0_233.context.data.roomId
 
-		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataEnter(var2_231, 1))
+		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataEnter(var2_233, 1))
 
-		if pg.dorm3d_rooms[var2_231].type == 2 then
-			pg.m02:sendNotification(GAME.DORM_RECORD_VISIT, pg.dorm3d_rooms[var2_231].character[1])
+		if pg.dorm3d_rooms[var2_233].type == 2 then
+			pg.m02:sendNotification(GAME.DORM_RECORD_VISIT, pg.dorm3d_rooms[var2_233].character[1])
 		end
 
 		getProxy(ApartmentProxy):RecordEnterTime()
 		getProxy(ApartmentProxy):InitGiftDaily()
 
-		local var3_231 = arg0_231.context.onRemoved
+		local var3_233 = arg0_233.context.onRemoved
 
-		function arg0_231.context.onRemoved()
-			local var0_232 = 0
-			local var1_232 = getProxy(ApartmentProxy):GetEnterTime()
+		function arg0_233.context.onRemoved()
+			local var0_234 = 0
+			local var1_234 = getProxy(ApartmentProxy):GetEnterTime()
 
-			if var1_232 then
-				var0_232 = pg.TimeMgr.GetInstance():GetServerTime() - var1_232
+			if var1_234 then
+				var0_234 = pg.TimeMgr.GetInstance():GetServerTime() - var1_234
 			end
 
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataEnter(var2_231, 2, var0_232))
-			existCall(var3_231)
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataEnter(var2_233, 2, var0_234))
+			existCall(var3_233)
 		end
 
-		arg1_231()
+		arg1_233()
 	end,
-	SelectDorm3DMediator = function(arg0_233, arg1_233)
+	SelectDorm3DMediator = function(arg0_235, arg1_235)
 		if LOCK_DORM3D_SYSTEM then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_system_switch"))
 		else
-			arg1_233()
+			arg1_235()
 		end
 	end,
-	NewSkinShopMediator = function(arg0_234, arg1_234)
+	NewSkinShopMediator = function(arg0_236, arg1_236)
 		if LOCK_SKIN_SHOP_ENTER and getProxy(PlayerProxy):getData().level < LOCK_SKIN_SHOP_ENTER_LEVEL then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_shipUpgradeLayer2_levelError"))
 		else
-			arg1_234()
+			arg1_236()
 		end
 	end,
-	Dorm3dShopMediator = function(arg0_235, arg1_235)
+	Dorm3dShopMediator = function(arg0_237, arg1_237)
 		getProxy(ApartmentProxy):InitGiftDaily()
-		arg1_235()
+		arg1_237()
 	end,
-	CommanderManualMediator = function(arg0_236, arg1_236)
+	CommanderManualMediator = function(arg0_238, arg1_238)
 		getProxy(CommanderManualProxy):GetPagesTasks()
-		arg1_236()
+		arg1_238()
 	end
 }
 
-function SCENE.CheckPreloadData(arg0_237, arg1_237)
-	local var0_237 = {}
+function SCENE.CheckPreloadData(arg0_239, arg1_239)
+	local var0_239 = {}
 
-	table.insert(var0_237, function(arg0_238)
-		switch(arg0_237.context.mediator.__cname, var1_0, function(arg0_239, arg1_239)
-			arg1_239()
-		end, arg0_237, arg0_238)
+	table.insert(var0_239, function(arg0_240)
+		switch(arg0_239.context.mediator.__cname, var1_0, function(arg0_241, arg1_241)
+			arg1_241()
+		end, arg0_239, arg0_240)
 	end)
 
-	local var1_237 = arg0_237.context.viewComponent:loadingQueue()
+	local var1_239 = arg0_239.context.viewComponent:loadingQueue()
 
-	if var1_237 then
-		table.insert(var0_237, function(arg0_240)
-			local var0_240 = arg0_237.context.data
+	if var1_239 then
+		table.insert(var0_239, function(arg0_242)
+			local var0_242 = arg0_239.context.data
 
-			arg0_237.context.irregularSequence = true
+			arg0_239.context.irregularSequence = true
 
-			var1_237(function(arg0_241)
-				var0_240.resumeCallback = arg0_241
+			var1_239(function(arg0_243)
+				var0_242.resumeCallback = arg0_243
 
-				arg0_240()
+				arg0_242()
 			end)
 		end)
 	end
 
-	seriesAsync(var0_237, arg1_237)
+	seriesAsync(var0_239, arg1_239)
 end

@@ -226,22 +226,21 @@ function var0_0.loadShowPaint(arg0_14, arg1_14, arg2_14, arg3_14)
 		end
 
 		local var5_14 = var0_14:getPainting()
-		local var6_14 = var0_0.StaticGetPaintingName(var5_14)
 
-		LoadPaintingPrefabAsync(arg0_14.paintingContainer, var5_14, var6_14, "mainNormal", function()
+		LoadPaintingPrefabAsync(arg0_14.paintingContainer, var5_14, var5_14, "mainNormal", function()
 			arg0_14.loading = false
 
 			arg3_14()
 		end)
 	elseif var1_14 == MainPaintingView.STATE_L2D then
-		local var7_14 = Live2D.GenerateData({
+		local var6_14 = Live2D.GenerateData({
 			ship = var0_14,
 			scale = Vector3(52, 52, 52),
 			position = Vector3(0, 0, -1),
 			parent = arg0_14.l2dContainner
 		})
 
-		arg0_14.live2dChar = Live2D.New(var7_14, function(arg0_17)
+		arg0_14.live2dChar = Live2D.New(var6_14, function(arg0_17)
 			arg0_14:updateL2dSortMode(arg0_17)
 			arg0_17:IgonreReactPos(true)
 
@@ -256,10 +255,9 @@ function var0_0.loadShowPaint(arg0_14, arg1_14, arg2_14, arg3_14)
 			arg0_14.paintingFitter.localScale = Vector3(1.1, 1.1, 1.1)
 		end
 
-		local var8_14 = var0_14:getPainting()
-		local var9_14 = var0_0.StaticGetPaintingName(var8_14)
+		local var7_14 = var0_14:getPainting()
 
-		LoadPaintingPrefabAsync(arg0_14.paintingContainer, var8_14, var9_14, "mainNormal", function()
+		LoadPaintingPrefabAsync(arg0_14.paintingContainer, var7_14, var7_14, "mainNormal", function()
 			arg0_14.loading = false
 		end)
 	end
@@ -275,10 +273,6 @@ end
 
 function var0_0.StaticGetPaintingName(arg0_20)
 	local var0_20 = arg0_20
-
-	if checkABExist("painting/" .. var0_20 .. "_n") and PlayerPrefs.GetInt("paint_hide_other_obj_" .. var0_20, 0) ~= 0 then
-		var0_20 = var0_20 .. "_n"
-	end
 
 	if HXSet.isHx() then
 		return var0_20

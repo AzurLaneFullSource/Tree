@@ -105,8 +105,8 @@ function var0_0.RegisterEvent(arg0_3)
 		arg0_3:OnClickBtn(var0_5, arg1_5)
 	end)
 	onButton(arg0_3, arg0_3.changeSkinUI, function()
-		if ShipGroup.IsChangeSkin(arg0_3.skinId) then
-			arg0_3.changeSkinId = ShipGroup.GetChangeSkinNextId(arg0_3.skinId)
+		if ShipSkin.IsChangeSkin(arg0_3.skinId) then
+			arg0_3.changeSkinId = ShipSkin.GetChangeSkinNextId(arg0_3.skinId)
 
 			arg0_3:Flush(arg0_3.commodity)
 		end
@@ -123,9 +123,10 @@ function var0_0.Flush(arg0_7, arg1_7)
 	arg0_7:FlushStyle(false)
 
 	local var0_7 = arg0_7.commodity and arg0_7.commodity.id == arg1_7.id
-	local var1_7 = ShipGroup.IsChangeSkin(arg0_7.skinId)
 
 	arg0_7.skinId = arg1_7:getSkinId()
+
+	local var1_7 = ShipSkin.IsChangeSkin(arg0_7.skinId)
 
 	arg0_7:FlushChangeSkin(arg1_7)
 
@@ -156,16 +157,16 @@ end
 
 function var0_0.FlushChangeSkin(arg0_8, arg1_8)
 	local var0_8 = arg0_8.skinId
-	local var1_8 = ShipGroup.IsChangeSkin(var0_8)
+	local var1_8 = ShipSkin.IsChangeSkin(var0_8)
 
 	setActive(arg0_8.changeSkinUI, var1_8 and true or false)
 
 	if var1_8 then
-		local var2_8 = ShipGroup.GetChangeSkinGroupId(var0_8)
+		local var2_8 = ShipSkin.GetChangeSkinGroupId(var0_8)
 
 		if not arg0_8.changeSkinId then
 			arg0_8.changeSkinId = var0_8
-		elseif ShipGroup.GetChangeSkinGroupId(arg0_8.changeSkinId) == var2_8 then
+		elseif ShipSkin.GetChangeSkinGroupId(arg0_8.changeSkinId) == var2_8 then
 			arg0_8.skinId = arg0_8.changeSkinId
 		else
 			arg0_8.changeSkinId = arg0_8.skinId
@@ -451,7 +452,7 @@ end
 function var0_0.FlushPainting(arg0_34, arg1_34)
 	local var0_34 = arg0_34:GetPaintingState(arg1_34)
 	local var1_34 = pg.ship_skin_template[arg0_34.skinId].painting
-	local var2_34 = ShipGroup.GetChangeSkinData(arg0_34.skinId) and true or false
+	local var2_34 = ShipSkin.GetChangeSkinData(arg0_34.skinId) and true or false
 
 	if var0_34 == var2_0 and not arg0_34:ExistL2dRes(var1_34) or var0_34 == var3_0 and not arg0_34:ExistSpineRes(var1_34) then
 		var0_34 = var1_0
@@ -584,7 +585,12 @@ function var0_0.LoadL2dPainting(arg0_39, arg1_39)
 			arg0_39:ClearL2dPainting()
 		end
 
+		arg0_40:setSortingLayer(LayerWeightConst.L2D_DEFAULT_LAYER)
 		pg.UIMgr.GetInstance():LoadingOff()
+
+		if var2_39:getSkinId() == 299024 then
+			arg0_40:setPosition(Vector3(150, 40, 0))
+		end
 	end)
 end
 
@@ -1243,6 +1249,12 @@ function var0_0.Dispose(arg0_97)
 	pg.DelegateInfo.Dispose(arg0_97)
 	arg0_97:ClearSwitchBgAnim()
 	pg.DynamicBgMgr.GetInstance():ClearBg(arg0_97:getUIName())
+
+	if arg0_97.live2dChar then
+		arg0_97.live2dChar:Dispose()
+
+		arg0_97.live2dChar = nil
+	end
 
 	if arg0_97.voucherMsgBox then
 		arg0_97.voucherMsgBox:Destroy()

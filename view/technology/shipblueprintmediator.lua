@@ -13,6 +13,8 @@ var0_0.SHOW_SKILL_INFO = "ShipBluePrintMediator:SHOW_SKILL_INFO"
 var0_0.SET_TECHNOLOGY_VERSION = "ShipBluePrintMediator:SET_TECHNOLOGY_VERSION"
 var0_0.SIMULATION_BATTLE = "ShipBluePrintMediator:SIMULATION_BATTLE"
 var0_0.QUICK_EXCHAGE_BLUEPRINT = "ShipBluePrintMediator:QUICK_EXCHAGE_BLUEPRINT"
+var0_0.FINISH_PHANTOM_QUEST = "ShipBluePrintMediator.FINISH_PHANTOM_QUEST"
+var0_0.OPEN_PHANTOM_LAYER = "ShipBluePrintMediator.OPEN_PHANTOM_LAYER"
 
 function var0_0.register(arg0_1)
 	PlayerPrefs.SetString("technology_day_mark", pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d", true))
@@ -142,6 +144,26 @@ function var0_0.register(arg0_1)
 	arg0_1:bind(var0_0.QUICK_EXCHAGE_BLUEPRINT, function(arg0_16, arg1_16)
 		arg0_1:sendNotification(GAME.QUICK_EXCHANGE_BLUEPRINT, arg1_16)
 	end)
+	arg0_1:bind(var0_0.FINISH_PHANTOM_QUEST, function(arg0_17, arg1_17, arg2_17)
+		arg0_1:sendNotification(GAME.FINISH_PHANTOM_QUEST, {
+			bluePrintId = arg1_17,
+			questId = arg2_17
+		})
+	end)
+	arg0_1:bind(var0_0.OPEN_PHANTOM_LAYER, function(arg0_18, arg1_18)
+		arg0_1:addSubLayers(Context.New({
+			mediator = DockyardMediator,
+			viewComponent = DockyardScene,
+			data = {
+				mode = DockyardScene.MODE_SHIP_PHANTOM,
+				techVersion = arg1_18
+			},
+			onRemoved = function()
+				arg0_1.viewComponent:changeEffectVisible(true)
+			end
+		}))
+		arg0_1.viewComponent:changeEffectVisible(false)
+	end)
 
 	local var4_1 = var0_1:getBluePrints()
 
@@ -154,7 +176,7 @@ function var0_0.register(arg0_1)
 	arg0_1.viewComponent:setTaskVOs(getProxy(TaskProxy):getTasksForBluePrint())
 end
 
-function var0_0.listNotificationInterests(arg0_17)
+function var0_0.listNotificationInterests(arg0_20)
 	return {
 		GAME.BUILD_SHIP_BLUEPRINT_DONE,
 		TechnologyProxy.BLUEPRINT_UPDATED,
@@ -171,67 +193,70 @@ function var0_0.listNotificationInterests(arg0_17)
 		GAME.BEGIN_STAGE_DONE,
 		GAME.MOD_BLUEPRINT_ANIM_LOCK,
 		GAME.PURSUING_RESET_DONE,
-		GAME.QUICK_EXCHANGE_BLUEPRINT_DONE
+		GAME.QUICK_EXCHANGE_BLUEPRINT_DONE,
+		GAME.FINISH_PHANTOM_QUEST_DONE
 	}
 end
 
-function var0_0.handleNotification(arg0_18, arg1_18)
-	local var0_18 = arg1_18:getName()
-	local var1_18 = arg1_18:getBody()
+function var0_0.handleNotification(arg0_21, arg1_21)
+	local var0_21 = arg1_21:getName()
+	local var1_21 = arg1_21:getBody()
 
-	if var0_18 == TechnologyProxy.BLUEPRINT_UPDATED then
-		arg0_18.viewComponent:updateShipBluePrintVO(var1_18)
-	elseif var0_18 == GAME.EXCHANG_BLUEPRINT_DONE then
-		arg0_18.viewComponent:clearSelected()
-		arg0_18.viewComponent:updateExchangeItems()
-		arg0_18.viewComponent:updateBuildInfo()
-	elseif var0_18 == TaskProxy.TASK_ADDED or TaskProxy.TASK_UPDATED == var0_18 or TaskProxy.TASK_REMOVED == var0_18 then
-		arg0_18.viewComponent:setTaskVOs(getProxy(TaskProxy):getTasksForBluePrint())
-		arg0_18.viewComponent:updateTaskList()
-		arg0_18.viewComponent:updateTasksProgress()
-	elseif var0_18 == GAME.SUBMIT_TASK_DONE then
-		local var2_18 = arg0_18.contextData.shipBluePrintVO
+	if var0_21 == TechnologyProxy.BLUEPRINT_UPDATED then
+		arg0_21.viewComponent:updateShipBluePrintVO(var1_21)
+	elseif var0_21 == GAME.EXCHANG_BLUEPRINT_DONE then
+		arg0_21.viewComponent:clearSelected()
+		arg0_21.viewComponent:updateExchangeItems()
+		arg0_21.viewComponent:updateBuildInfo()
+	elseif var0_21 == TaskProxy.TASK_ADDED or TaskProxy.TASK_UPDATED == var0_21 or TaskProxy.TASK_REMOVED == var0_21 then
+		arg0_21.viewComponent:setTaskVOs(getProxy(TaskProxy):getTasksForBluePrint())
+		arg0_21.viewComponent:updateTaskList()
+		arg0_21.viewComponent:updateTasksProgress()
+	elseif var0_21 == GAME.SUBMIT_TASK_DONE then
+		local var2_21 = arg0_21.contextData.shipBluePrintVO
 
-		if var2_18 and var2_18:isDeving() and var2_18:isFinishedAllTasks() then
-			local var3_18 = getProxy(TechnologyProxy)
-			local var4_18 = var3_18:getBluePrintById(var2_18.id)
+		if var2_21 and var2_21:isDeving() and var2_21:isFinishedAllTasks() then
+			local var3_21 = getProxy(TechnologyProxy)
+			local var4_21 = var3_21:getBluePrintById(var2_21.id)
 
-			var4_18:finish()
-			var3_18:updateBluePrint(var4_18)
+			var4_21:finish()
+			var3_21:updateBluePrint(var4_21)
 		end
-	elseif var0_18 == GAME.FINISH_SHIP_BLUEPRINT_DONE or var0_18 == GAME.ITEM_LOCK_SHIP_BLUPRINT_DONE then
-		arg0_18:addSubLayers(Context.New({
+	elseif var0_21 == GAME.FINISH_SHIP_BLUEPRINT_DONE or var0_21 == GAME.ITEM_LOCK_SHIP_BLUPRINT_DONE then
+		arg0_21:addSubLayers(Context.New({
 			mediator = NewShipMediator,
 			viewComponent = NewShipLayer,
 			data = {
-				ship = var1_18.ship,
-				canSkipBatch = var1_18.canSkipBatch
+				ship = var1_21.ship,
+				canSkipBatch = var1_21.canSkipBatch
 			},
 			onRemoved = function()
 				pg.NewStoryMgr.GetInstance():Play("FANGAN2")
 			end
 		}))
-	elseif GAME.STOP_BLUEPRINT_DONE == var0_18 then
-		arg0_18.viewComponent:clearTimers(var1_18.id)
-	elseif GAME.MOD_BLUEPRINT_DONE == var0_18 then
-		arg0_18.viewComponent:doModAnim(var1_18.oldBluePrint, var1_18.newBluePrint)
-		arg0_18.viewComponent:updateAllPursuingCostTip()
-	elseif var0_18 == BayProxy.SHIP_ADDED or BayProxy.SHIP_UPDATED == var0_18 then
-		local var5_18 = getProxy(BayProxy)
+	elseif GAME.STOP_BLUEPRINT_DONE == var0_21 then
+		arg0_21.viewComponent:clearTimers(var1_21.id)
+	elseif GAME.MOD_BLUEPRINT_DONE == var0_21 then
+		arg0_21.viewComponent:doModAnim(var1_21.oldBluePrint, var1_21.newBluePrint)
+		arg0_21.viewComponent:updateAllPursuingCostTip()
+	elseif var0_21 == BayProxy.SHIP_ADDED or BayProxy.SHIP_UPDATED == var0_21 then
+		local var5_21 = getProxy(BayProxy)
 
-		arg0_18.viewComponent:setShipVOs(var5_18:getRawData())
-	elseif GAME.BUILD_SHIP_BLUEPRINT_DONE == var0_18 then
-		arg0_18.viewComponent:buildStartAni("researchStartWindow")
-	elseif var0_18 == GAME.BEGIN_STAGE_DONE then
-		arg0_18:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1_18)
-	elseif var0_18 == GAME.MOD_BLUEPRINT_ANIM_LOCK then
-		arg0_18.viewComponent.noUpdateMod = true
-	elseif var0_18 == GAME.PURSUING_RESET_DONE then
+		arg0_21.viewComponent:setShipVOs(var5_21:getRawData())
+	elseif GAME.BUILD_SHIP_BLUEPRINT_DONE == var0_21 then
+		arg0_21.viewComponent:buildStartAni("researchStartWindow")
+	elseif var0_21 == GAME.BEGIN_STAGE_DONE then
+		arg0_21:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1_21)
+	elseif var0_21 == GAME.MOD_BLUEPRINT_ANIM_LOCK then
+		arg0_21.viewComponent.noUpdateMod = true
+	elseif var0_21 == GAME.PURSUING_RESET_DONE then
 		-- block empty
-	elseif var0_18 == GAME.QUICK_EXCHANGE_BLUEPRINT_DONE then
-		arg0_18.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_18, function()
-			arg0_18.viewComponent:updateShipBluePrintVO()
+	elseif var0_21 == GAME.QUICK_EXCHANGE_BLUEPRINT_DONE then
+		arg0_21.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_21, function()
+			arg0_21.viewComponent:updateShipBluePrintVO()
 		end)
+	elseif var0_21 == GAME.FINISH_PHANTOM_QUEST_DONE then
+		arg0_21.viewComponent:updatePhantomQuest()
 	end
 end
 

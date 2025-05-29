@@ -4,6 +4,9 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.Ctor(arg0_1, arg1_1)
 
 	arg0_1.subImage = arg0_1:findTF("sub", arg0_1.bgPanel):GetComponent(typeof(Image))
+
+	setActive(arg0_1.subImage.gameObject, false)
+
 	arg0_1.bgRecord = nil
 end
 
@@ -37,7 +40,17 @@ function var0_0.UpdateBg(arg0_4, arg1_4)
 	if var0_4 then
 		setActive(arg0_4.subImage.gameObject, true)
 
-		arg0_4.subImage.sprite = arg0_4:GetBg(var0_4)
+		local var1_4 = arg0_4:GetBg(var0_4)
+
+		if var1_4 then
+			arg0_4.subImage.sprite = var1_4
+
+			originalPrint("story sub bg load : " .. tostring(var0_4))
+		else
+			warning("story sub bg load faild : " .. tostring(var0_4))
+		end
+	else
+		setActive(arg0_4.subImage.gameObject, false)
 	end
 
 	if not arg1_4:GetBgName() then

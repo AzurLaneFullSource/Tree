@@ -423,48 +423,53 @@ local function var16_0(arg0_16)
 	arg0_16._listenerParameters = {}
 	arg0_16._listenerStepIndex = 0
 
+	local var0_16 = "live2D初始化id列表："
+
 	for iter1_16, iter2_16 in ipairs(arg0_16.live2dData.shipL2dId) do
-		local var0_16 = pg.ship_l2d[iter2_16]
+		local var1_16 = pg.ship_l2d[iter2_16]
 
-		if var0_16 and arg0_16:getDragEnable(var0_16) then
-			local var1_16 = Live2dDrag.New(var0_16, arg0_16.live2dData)
-			local var2_16 = arg0_16.liveCom:GetCubismParameter(var0_16.parameter)
+		if var1_16 and arg0_16:getDragEnable(var1_16) then
+			var0_16 = var0_16 .. var1_16.id .. ","
 
-			var1_16:setParameterCom(var2_16)
-			var1_16:setEventCallback(function(arg0_17, arg1_17)
+			local var2_16 = Live2dDrag.New(var1_16, arg0_16.live2dData)
+			local var3_16 = arg0_16.liveCom:GetCubismParameter(var1_16.parameter)
+
+			var2_16:setParameterCom(var3_16)
+			var2_16:setEventCallback(function(arg0_17, arg1_17)
 				var14_0(arg0_16, arg0_17, arg1_17)
 				var13_0(arg0_16, arg0_17, arg1_17)
 			end)
-			arg0_16.liveCom:AddParameterValue(var1_16.parameterName, var1_16.startValue, var6_0[var1_16.mode])
+			arg0_16.liveCom:AddParameterValue(var2_16.parameterName, var2_16.startValue, var6_0[var2_16.mode])
 
-			if var0_16.relation_parameter and var0_16.relation_parameter.list then
-				local var3_16 = var0_16.relation_parameter.list
+			if var1_16.relation_parameter and var1_16.relation_parameter.list then
+				local var4_16 = var1_16.relation_parameter.list
 
-				for iter3_16, iter4_16 in ipairs(var3_16) do
-					local var4_16 = arg0_16.liveCom:GetCubismParameter(iter4_16.name)
+				for iter3_16, iter4_16 in ipairs(var4_16) do
+					local var5_16 = arg0_16.liveCom:GetCubismParameter(iter4_16.name)
 
-					if var4_16 then
-						var1_16:addRelationComData(var4_16, iter4_16)
+					if var5_16 then
+						var2_16:addRelationComData(var5_16, iter4_16)
 
-						local var5_16 = iter4_16.mode or var0_16.mode
+						local var6_16 = iter4_16.mode or var1_16.mode
 
-						arg0_16.liveCom:AddParameterValue(iter4_16.name, iter4_16.start or var1_16.startValue or 0, var6_0[var5_16])
+						arg0_16.liveCom:AddParameterValue(iter4_16.name, iter4_16.start or var2_16.startValue or 0, var6_0[var6_16])
 					end
 				end
 			end
 
-			table.insert(arg0_16.drags, var1_16)
+			table.insert(arg0_16.drags, var2_16)
 
-			if not table.contains(arg0_16._listenerParameters, var2_16) then
-				table.insert(arg0_16._listenerParameters, var2_16)
+			if not table.contains(arg0_16._listenerParameters, var3_16) then
+				table.insert(arg0_16._listenerParameters, var3_16)
 			end
 
-			if var1_16.drawAbleName and var1_16.drawAbleName ~= "" and not table.contains(arg0_16.dragParts, var1_16.drawAbleName) then
-				table.insert(arg0_16.dragParts, var1_16.drawAbleName)
+			if var2_16.drawAbleName and var2_16.drawAbleName ~= "" and not table.contains(arg0_16.dragParts, var2_16.drawAbleName) then
+				table.insert(arg0_16.dragParts, var2_16.drawAbleName)
 			end
 		end
 	end
 
+	print(var0_16)
 	arg0_16.liveCom:SetDragParts(arg0_16.dragParts)
 
 	arg0_16.eventTrigger = GetOrAddComponent(arg0_16.liveCom.transform.parent, typeof(EventTriggerListener))
@@ -963,7 +968,7 @@ function var0_0.resetL2dData(arg0_52)
 			arg0_52._tf.position = arg0_52._l2dPosition
 		end
 	end))
-	Live2dConst.ClearLive2dSave(arg0_52.live2dData.ship.skinId, arg0_52.live2dData.ship.id)
+	Live2dConst.ClearLive2dSave(arg0_52.live2dData.ship:getSkinId(), arg0_52.live2dData.ship.id)
 	arg0_52:Reset()
 	arg0_52:changeIdleIndex(0)
 	arg0_52:loadLive2dData()
@@ -1069,132 +1074,170 @@ function var0_0.live2dActionChange(arg0_58, arg1_58)
 	arg0_58:updateDragsSateData()
 end
 
-function var0_0.updateDragsSateData(arg0_59)
-	local var0_59 = {
-		idleIndex = arg0_59.idleIndex,
-		isPlaying = arg0_59.isPlaying,
-		ignoreReact = arg0_59.ignoreReact,
-		actionName = arg0_59.playActionName
+function var0_0.setPosition(arg0_59, arg1_59)
+	arg0_59._tf.localPosition = arg1_59
+end
+
+function var0_0.updateDragsSateData(arg0_60)
+	local var0_60 = {
+		idleIndex = arg0_60.idleIndex,
+		isPlaying = arg0_60.isPlaying,
+		ignoreReact = arg0_60.ignoreReact,
+		actionName = arg0_60.playActionName
 	}
 
-	if arg0_59.drags then
-		for iter0_59 = 1, #arg0_59.drags do
-			arg0_59.drags[iter0_59]:updateStateData(var0_59)
+	if arg0_60.drags then
+		for iter0_60 = 1, #arg0_60.drags do
+			arg0_60.drags[iter0_60]:updateStateData(var0_60)
 		end
 	end
 end
 
-function var0_0.CheckStopDrag(arg0_60)
-	local var0_60 = arg0_60.live2dData:GetShipSkinConfig()
+function var0_0.CheckStopDrag(arg0_61)
+	local var0_61 = arg0_61.live2dData:GetShipSkinConfig()
 
-	if var0_60.l2d_ignore_drag and var0_60.l2d_ignore_drag == 1 then
-		arg0_60.liveCom.ResponseClick = false
-		arg0_60.liveCom.inDrag = false
+	if var0_61.l2d_ignore_drag and var0_61.l2d_ignore_drag == 1 then
+		arg0_61.liveCom.ResponseClick = false
+		arg0_61.liveCom.inDrag = false
 	end
 end
 
-function var0_0.changeParamaterValue(arg0_61, arg1_61, arg2_61)
-	if arg0_61:IsLoaded() then
-		if not arg1_61 or string.len(arg1_61) == 0 then
+function var0_0.changeParamaterValue(arg0_62, arg1_62, arg2_62)
+	if arg0_62:IsLoaded() then
+		if not arg1_62 or string.len(arg1_62) == 0 then
 			return
 		end
 
-		local var0_61 = arg0_61.liveCom:GetCubismParameter(arg1_61)
+		local var0_62 = arg0_62.liveCom:GetCubismParameter(arg1_62)
 
-		if not var0_61 then
+		if not var0_62 then
 			return
 		end
 
-		arg0_61.liveCom:AddParameterValue(var0_61, arg2_61, var6_0[1])
+		arg0_62.liveCom:AddParameterValue(var0_62, arg2_62, var6_0[1])
 	else
-		if not arg0_61.delayChangeParamater then
-			arg0_61.delayChangeParamater = {}
+		if not arg0_62.delayChangeParamater then
+			arg0_62.delayChangeParamater = {}
 		end
 
-		table.insert(arg0_61.delayChangeParamater, {
-			arg1_61,
-			arg2_61
+		table.insert(arg0_62.delayChangeParamater, {
+			arg1_62,
+			arg2_62
 		})
 	end
 end
 
-function var0_0.changeDragParameter(arg0_62, arg1_62, arg2_62)
-	if arg0_62:IsLoaded() and arg0_62.drags then
-		for iter0_62 = 1, #arg0_62.drags do
-			if arg0_62.drags[iter0_62].parameterName and arg0_62.drags[iter0_62].parameterName == arg1_62 then
-				arg0_62.drags[iter0_62]:setTargetValue(arg2_62)
+function var0_0.changeDragParameter(arg0_63, arg1_63, arg2_63)
+	if arg0_63:IsLoaded() and arg0_63.drags then
+		for iter0_63 = 1, #arg0_63.drags do
+			if arg0_63.drags[iter0_63].parameterName and arg0_63.drags[iter0_63].parameterName == arg1_63 then
+				arg0_63.drags[iter0_63]:setTargetValue(arg2_63)
 			end
 		end
 	end
 end
 
-function var0_0.Dispose(arg0_63)
-	if arg0_63.state == var0_0.STATE_INITED then
-		if arg0_63._go then
-			Destroy(arg0_63._go)
+function var0_0.setSortingLayer(arg0_64, arg1_64)
+	arg0_64:updateL2dSortMode()
+
+	local var0_64 = arg0_64._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
+	local var1_64 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
+
+	ReflectionHelp.RefSetProperty(var1_64, "SortingOrder", var0_64, arg1_64)
+end
+
+function var0_0.updateL2dSortMode(arg0_65)
+	local var0_65 = arg0_65._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
+	local var1_65 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
+	local var2_65 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontOrder", nil)
+
+	ReflectionHelp.RefSetProperty(var1_65, "SortingMode", var0_65, var2_65)
+end
+
+function var0_0.Dispose(arg0_66)
+	if arg0_66.state == var0_0.STATE_INITED then
+		if arg0_66._go then
+			Destroy(arg0_66._go)
 		end
 
-		arg0_63.liveCom.FinishAction = nil
-		arg0_63.liveCom.EventAction = nil
+		arg0_66.liveCom.FinishAction = nil
+		arg0_66.liveCom.EventAction = nil
 
-		arg0_63.liveCom:SetMouseInputActions(nil, nil)
+		arg0_66.liveCom:SetMouseInputActions(nil, nil)
 	end
 
-	arg0_63:saveLive2dData()
+	arg0_66:saveLive2dData()
 
-	arg0_63._readlyToStop = false
-	arg0_63.state = var0_0.STATE_DISPOSE
+	arg0_66._readlyToStop = false
+	arg0_66.state = var0_0.STATE_DISPOSE
 
-	if arg0_63.live2dRequestId then
-		pg.Live2DMgr.GetInstance():StopLoadingLive2d(arg0_63.live2dRequestId)
+	if arg0_66.live2dRequestId then
+		pg.Live2DMgr.GetInstance():StopLoadingLive2d(arg0_66.live2dRequestId)
 
-		arg0_63.live2dRequestId = nil
+		arg0_66.live2dRequestId = nil
 	end
 
-	if arg0_63.drags then
-		for iter0_63 = 1, #arg0_63.drags do
-			arg0_63.drags[iter0_63]:dispose()
+	if arg0_66.drags then
+		for iter0_66 = 1, #arg0_66.drags do
+			arg0_66.drags[iter0_66]:dispose()
 		end
 
-		arg0_63.drags = {}
+		arg0_66.drags = {}
 	end
 
-	if arg0_63.live2dData then
-		arg0_63.live2dData:Clear()
+	if arg0_66.live2dData then
+		arg0_66.live2dData:Clear()
 
-		arg0_63.live2dData = nil
+		arg0_66.live2dData = nil
 
-		if arg0_63.live2dData and arg0_63.live2dData.gyro == 1 then
+		if arg0_66.live2dData and arg0_66.live2dData.gyro == 1 then
 			Input.gyro.enabled = false
 		end
 	end
 
-	arg0_63:live2dActionChange(false)
+	arg0_66:live2dActionChange(false)
 
-	if arg0_63.timer then
-		arg0_63.timer:Stop()
+	if arg0_66.timer then
+		arg0_66.timer:Stop()
 
-		arg0_63.timer = nil
+		arg0_66.timer = nil
 	end
 end
 
-function var0_0.UpdateAtomSource(arg0_64)
-	arg0_64.updateAtom = true
+function var0_0.UpdateAtomSource(arg0_67)
+	arg0_67.updateAtom = true
 end
 
-function var0_0.AtomSouceFresh(arg0_65)
-	local var0_65 = pg.CriMgr.GetInstance():getAtomSource(pg.CriMgr.C_VOICE)
-	local var1_65 = arg0_65._go:GetComponent("CubismCriSrcMouthInput").Analyzer
+function var0_0.AtomSouceFresh(arg0_68)
+	local var0_68 = pg.CriMgr.GetInstance():getAtomSource(pg.CriMgr.C_VOICE)
+	local var1_68 = arg0_68._go:GetComponent("CubismCriSrcMouthInput").Analyzer
 
-	var0_65:AttachToAnalyzer(var1_65)
+	var0_68:AttachToAnalyzer(var1_68)
 
-	if arg0_65.updateAtom then
-		arg0_65.updateAtom = false
+	if arg0_68.updateAtom then
+		arg0_68.updateAtom = false
 	end
 end
 
-function var0_0.addKeyBoard(arg0_66)
+function var0_0.addKeyBoard(arg0_69)
 	return
+end
+
+function var0_0.SetL2dSortingLayer(arg0_70, arg1_70)
+	var0_0.UpdateL2dSortMode(arg0_70)
+
+	local var0_70 = arg0_70:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
+	local var1_70 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
+
+	ReflectionHelp.RefSetProperty(var1_70, "SortingOrder", var0_70, arg1_70)
+end
+
+function var0_0.UpdateL2dSortMode(arg0_71)
+	local var0_71 = arg0_71:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
+	local var1_71 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
+	local var2_71 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontOrder", nil)
+
+	ReflectionHelp.RefSetProperty(var1_71, "SortingMode", var0_71, var2_71)
 end
 
 return var0_0

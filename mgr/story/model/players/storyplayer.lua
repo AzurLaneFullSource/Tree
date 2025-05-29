@@ -28,6 +28,9 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.oldPhoto = arg0_1:findTF("front/oldphoto"):GetComponent(typeof(Image))
 	arg0_1.bgPanel = arg0_1:findTF("back/bg")
 	arg0_1.bgPanelCg = arg0_1.bgPanel:GetComponent(typeof(CanvasGroup))
+
+	setActive(arg0_1:findTF("back/bg/sub"), false)
+
 	arg0_1.bgImage = arg0_1:findTF("image", arg0_1.bgPanel):GetComponent(typeof(Image))
 	arg0_1.mainImg = arg0_1._tf:GetComponent(typeof(Image))
 	arg0_1.castPanel = arg0_1:findTF("front/cast_panel")

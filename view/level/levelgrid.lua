@@ -7,7 +7,7 @@ function var0_0.init(arg0_1)
 	var0_0.super.init(arg0_1)
 
 	arg0_1.levelCam = GameObject.Find("LevelCamera"):GetComponent(typeof(Camera))
-	GameObject.Find("LevelCamera/Canvas"):GetComponent(typeof(Canvas)).sortingOrder = ChapterConst.PriorityMin
+	GameObject.Find("LevelCamera/Canvas"):GetComponent(typeof(Canvas)).sortingOrder = ChapterConst.PriorityMin - 1
 	arg0_1.quadTws = {}
 	arg0_1.presentTws = {}
 	arg0_1.markTws = {}

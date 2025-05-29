@@ -86,19 +86,6 @@ function var0_0.Ctor(arg0_8, arg1_8)
 	local var0_8 = arg0_8.character
 
 	arg0_8.educateCharacter = arg1_8.child_display or 0
-
-	if var0_8 then
-		if type(var0_8) == "number" then
-			arg0_8.character = var0_8
-			arg0_8.characters = {
-				var0_8
-			}
-		else
-			arg0_8.character = var0_8[1]
-			arg0_8.characters = var0_8
-		end
-	end
-
 	arg0_8.id = arg1_8.id
 	arg0_8.name = arg1_8.name
 	arg0_8.level = arg1_8.level or arg1_8.lv
@@ -199,26 +186,20 @@ function var0_0.Ctor(arg0_8, arg1_8)
 	arg0_8.mingshiCount = 0
 	arg0_8.chatMsgBanTime = arg1_8.chat_msg_ban_time or 0
 	arg0_8.randomShipMode = arg1_8.random_ship_mode or 0
-	arg0_8.customRandomShips = {}
-
-	for iter14_8, iter15_8 in ipairs(arg1_8.random_ship_list or {}) do
-		table.insert(arg0_8.customRandomShips, iter15_8)
-	end
-
 	arg0_8.buildShipNotification = {}
 
-	for iter16_8, iter17_8 in ipairs(arg1_8.taking_ship_list or {}) do
+	for iter14_8, iter15_8 in ipairs(arg1_8.taking_ship_list or {}) do
 		table.insert(arg0_8.buildShipNotification, {
-			uid = iter17_8.uid,
-			new = iter17_8.isnew == 1
+			uid = iter15_8.uid,
+			new = iter15_8.isnew == 1
 		})
 	end
 
 	arg0_8.proposeShipId = arg1_8.marry_ship
 	arg0_8.unlockCryptolaliaList = {}
 
-	for iter18_8, iter19_8 in ipairs(arg1_8.soundstory or {}) do
-		table.insert(arg0_8.unlockCryptolaliaList, iter19_8)
+	for iter16_8, iter17_8 in ipairs(arg1_8.soundstory or {}) do
+		table.insert(arg0_8.unlockCryptolaliaList, iter17_8)
 	end
 
 	arg0_8.displayInfo = arg1_8.display or {}
@@ -345,15 +326,15 @@ function var0_0.updateResources(arg0_21, arg1_21)
 end
 
 function var0_0.getPainting(arg0_22)
-	local var0_22
+	local var0_22 = pg.ship_skin_template[arg0_22.skinId]
 
-	if ShipGroup.GetChangeSkinData(arg0_22.skinId) then
-		local var1_22 = ShipGroup.GetChangeSkinGroupId(arg0_22.skinId)
-		local var2_22 = ShipGroup.GetStoreChangeSkinId(var1_22, arg0_22.character)
+	if ShipSkin.GetChangeSkinData(arg0_22.skinId) then
+		local var1_22 = ShipSkin.GetChangeSkinGroupId(arg0_22.skinId)
+		local var2_22 = ShipSkin.GetStoreChangeSkinId(var1_22)
 
-		var0_22 = var2_22 and pg.ship_skin_template[var2_22] or pg.ship_skin_template[arg0_22.skinId]
-	else
-		var0_22 = pg.ship_skin_template[arg0_22.skinId]
+		if var2_22 then
+			var0_22 = pg.ship_skin_template[var2_22]
+		end
 	end
 
 	return var0_22 and var0_22.painting or "unknown"
@@ -598,6 +579,14 @@ function var0_0.addExp(arg0_54, arg1_54)
 		elseif arg0_54.level == 40 then
 			pg.TrackerMgr.GetInstance():Tracking(TRACKING_USER_LEVEL_FORTY)
 		end
+
+		if arg0_54.level == 10 then
+			pg.TrackerMgr.GetInstance():Tracking(TRACKING_EXP_LV_10)
+		elseif arg0_54.level == 20 then
+			pg.TrackerMgr.GetInstance():Tracking(TRACKING_EXP_LV_20)
+		elseif arg0_54.level == 30 then
+			pg.TrackerMgr.GetInstance():Tracking(TRACKING_EXP_LV_30)
+		end
 	end
 end
 
@@ -726,79 +715,99 @@ function var0_0.GetRegisterTime(arg0_78)
 	return arg0_78.registerTime
 end
 
-function var0_0.GetFlagShip(arg0_79)
-	local var0_79 = getProxy(SettingsProxy)
-	local var1_79 = var0_79:getCurrentSecretaryIndex()
-	local var2_79
-
-	if var0_79:IsOpenRandomFlagShip() then
-		var2_79 = arg0_79:GetRandomFlagShip(var1_79)
-	else
-		var2_79 = arg0_79:GetNativeFlagShip(var1_79)
-	end
-
-	return var2_79
+function var0_0.GetFlagShipPhantomMark(arg0_79)
+	return ShipPhantom.PackMark(arg0_79.character, arg0_79.phantomId)
 end
 
-local function var5_0(arg0_80)
+function var0_0.GetShipPhantomMarks(arg0_80)
 	local var0_80 = {}
-	local var1_80 = {}
-	local var2_80 = getProxy(SettingsProxy):GetFlagShipDisplayMode()
-	local var3_80 = getProxy(PlayerProxy):getRawData():ExistEducateChar()
 
-	if var2_80 == FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR and not var3_80 then
-		var2_80 = FlAG_SHIP_DISPLAY_ALL
-
-		getProxy(SettingsProxy):SetFlagShipDisplayMode(var2_80)
+	for iter0_80, iter1_80 in ipairs(arg0_80.characters) do
+		table.insert(var0_80, ShipPhantom.PackMark(iter1_80, arg0_80.phantoms[iter0_80]))
 	end
 
-	if var2_80 ~= FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR then
-		local var4_80 = getProxy(BayProxy)
+	return var0_80
+end
 
-		for iter0_80, iter1_80 in ipairs(arg0_80) do
-			var0_80[iter0_80] = defaultValue(var4_80:RawGetShipById(iter1_80), false)
+function var0_0.GetFlagShip(arg0_81)
+	local var0_81 = getProxy(SettingsProxy)
+	local var1_81 = var0_81:getCurrentSecretaryIndex()
+	local var2_81
 
-			table.insert(var1_80, iter0_80)
+	if var0_81:IsOpenRandomFlagShip() then
+		var2_81 = arg0_81:GetRandomFlagShip(var1_81)
+	else
+		var2_81 = arg0_81:GetNativeFlagShip(var1_81)
+	end
+
+	return var2_81
+end
+
+local function var5_0(arg0_82)
+	local var0_82 = {}
+	local var1_82 = {}
+	local var2_82 = getProxy(SettingsProxy):GetFlagShipDisplayMode()
+	local var3_82 = getProxy(PlayerProxy):getRawData():ExistEducateChar()
+
+	if var2_82 == FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR and not var3_82 then
+		var2_82 = FlAG_SHIP_DISPLAY_ALL
+
+		getProxy(SettingsProxy):SetFlagShipDisplayMode(var2_82)
+	end
+
+	if var2_82 ~= FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR then
+		local var4_82 = getProxy(BayProxy)
+
+		for iter0_82, iter1_82 in ipairs(arg0_82) do
+			var0_82[iter0_82] = false
+
+			local var5_82 = var4_82:GetShipPhantom(iter1_82)
+
+			if var5_82 then
+				var0_82[iter0_82] = var5_82
+			end
+
+			table.insert(var1_82, iter0_82)
 		end
 	end
 
-	if var3_80 and var2_80 ~= FlAG_SHIP_DISPLAY_ONLY_SHIP then
-		table.insert(var1_80, PlayerVitaeShipsPage.EDUCATE_CHAR_SLOT_ID)
+	if var3_82 and var2_82 ~= FlAG_SHIP_DISPLAY_ONLY_SHIP then
+		table.insert(var1_82, PlayerVitaeShipsPage.EDUCATE_CHAR_SLOT_ID)
 
-		local var5_80 = getProxy(PlayerProxy):getRawData():GetEducateCharacter()
-		local var6_80 = VirtualEducateCharShip.New(var5_80)
+		local var6_82 = getProxy(PlayerProxy):getRawData():GetEducateCharacter()
+		local var7_82 = VirtualEducateCharShip.New(var6_82)
 
-		var0_80[PlayerVitaeShipsPage.EDUCATE_CHAR_SLOT_ID] = var6_80
+		var0_82[PlayerVitaeShipsPage.EDUCATE_CHAR_SLOT_ID] = var7_82
 	end
 
-	return var0_80, var1_80
+	return var0_82, var1_82
 end
 
-function var0_0.GetNativeFlagShip(arg0_81, arg1_81)
-	local var0_81, var1_81 = var5_0(arg0_81.characters)
-	local var2_81 = getProxy(SettingsProxy)
+function var0_0.GetNativeFlagShip(arg0_83, arg1_83)
+	local var0_83, var1_83 = var5_0(arg0_83:GetShipPhantomMarks())
+	local var2_83 = getProxy(SettingsProxy)
 
 	if getProxy(PlayerProxy):getFlag("battle") then
-		local var3_81 = math.random(#var1_81)
+		local var3_83 = math.random(#var1_83)
 
-		arg1_81 = var1_81[var3_81]
+		arg1_83 = var1_83[var3_83]
 
-		var2_81:setCurrentSecretaryIndex(var3_81)
+		var2_83:setCurrentSecretaryIndex(var3_83)
 	end
 
-	local var4_81 = var0_81[arg1_81]
+	local var4_83 = var0_83[arg1_83]
 
-	if not var4_81 then
-		local var5_81 = PlayerVitaeShipsPage.GetSlotIndexList()
-		local var6_81 = table.indexof(var5_81, arg1_81)
+	if not var4_83 then
+		local var5_83 = PlayerVitaeShipsPage.GetSlotIndexList()
+		local var6_83 = table.indexof(var5_83, arg1_83)
 
-		if var6_81 and var6_81 > 0 then
-			for iter0_81 = var6_81 + 1, #var5_81 do
-				arg1_81 = var5_81[iter0_81]
-				var4_81 = var0_81[arg1_81]
+		if var6_83 and var6_83 > 0 then
+			for iter0_83 = var6_83 + 1, #var5_83 do
+				arg1_83 = var5_83[iter0_83]
+				var4_83 = var0_83[arg1_83]
 
-				if var4_81 then
-					var2_81:setCurrentSecretaryIndex(iter0_81)
+				if var4_83 then
+					var2_83:setCurrentSecretaryIndex(iter0_83)
 
 					break
 				end
@@ -806,43 +815,42 @@ function var0_0.GetNativeFlagShip(arg0_81, arg1_81)
 		end
 	end
 
-	if not var4_81 then
-		arg1_81 = 1
+	if not var4_83 then
+		arg1_83 = 1
 
-		var2_81:setCurrentSecretaryIndex(arg1_81)
+		var2_83:setCurrentSecretaryIndex(arg1_83)
 
-		var4_81 = var0_81[arg1_81]
+		var4_83 = var0_83[arg1_83]
 	end
 
-	return var4_81
+	return var4_83
 end
 
-function var0_0.GetRandomFlagShip(arg0_82, arg1_82)
-	local var0_82 = getProxy(SettingsProxy)
-	local var1_82 = var0_82:GetRandomFlagShipList()
-	local var2_82, var3_82 = var5_0(var1_82)
+function var0_0.GetRandomFlagShip(arg0_84, arg1_84)
+	local var0_84 = getProxy(SettingsProxy)
+	local var1_84, var2_84 = var5_0(var0_84:GetRandomFlagShipList())
 
 	if getProxy(PlayerProxy):getFlag("battle") then
-		local var4_82 = math.random(#var3_82)
+		local var3_84 = math.random(#var2_84)
 
-		arg1_82 = var3_82[var4_82]
+		arg1_84 = var2_84[var3_84]
 
-		var0_82:setCurrentSecretaryIndex(var4_82)
+		var0_84:setCurrentSecretaryIndex(var3_84)
 	end
 
-	local var5_82 = var2_82[arg1_82]
+	local var4_84 = var1_84[arg1_84]
 
-	if not var5_82 then
-		local var6_82 = PlayerVitaeShipsPage.GetSlotIndexList()
-		local var7_82 = table.indexof(var6_82, arg1_82)
+	if not var4_84 then
+		local var5_84 = PlayerVitaeShipsPage.GetSlotIndexList()
+		local var6_84 = table.indexof(var5_84, arg1_84)
 
-		if var7_82 and var7_82 > 0 then
-			for iter0_82 = var7_82 + 1, #var6_82 do
-				arg1_82 = var6_82[iter0_82]
-				var5_82 = var2_82[arg1_82]
+		if var6_84 and var6_84 > 0 then
+			for iter0_84 = var6_84 + 1, #var5_84 do
+				arg1_84 = var5_84[iter0_84]
+				var4_84 = var1_84[arg1_84]
 
-				if var5_82 then
-					var0_82:setCurrentSecretaryIndex(iter0_82)
+				if var4_84 then
+					var0_84:setCurrentSecretaryIndex(iter0_84)
 
 					break
 				end
@@ -850,92 +858,78 @@ function var0_0.GetRandomFlagShip(arg0_82, arg1_82)
 		end
 	end
 
-	if not var5_82 then
-		local var8_82 = {}
+	if not var4_84 then
+		local var7_84 = {}
 
-		for iter1_82, iter2_82 in pairs(var2_82) do
-			if iter2_82 then
-				table.insert(var8_82, iter1_82)
+		for iter1_84, iter2_84 in pairs(var1_84) do
+			if iter2_84 then
+				table.insert(var7_84, iter1_84)
 			end
 		end
 
-		if #var8_82 > 0 then
-			arg1_82 = var8_82[math.random(1, #var8_82)]
-			var5_82 = var2_82[arg1_82]
+		if #var7_84 > 0 then
+			arg1_84 = var7_84[math.random(1, #var7_84)]
+			var4_84 = var1_84[arg1_84]
 
-			local var9_82 = table.indexof(var3_82, arg1_82)
+			local var8_84 = table.indexof(var2_84, arg1_84)
 
-			if var9_82 then
-				var0_82:setCurrentSecretaryIndex(var9_82)
+			if var8_84 then
+				var0_84:setCurrentSecretaryIndex(var8_84)
 			end
 		end
 	end
 
-	if not var5_82 then
-		arg1_82 = 1
+	if not var4_84 then
+		arg1_84 = 1
 
-		var0_82:setCurrentSecretaryIndex(arg1_82)
+		var0_84:setCurrentSecretaryIndex(arg1_84)
 
-		var5_82 = var2_82[arg1_82]
+		var4_84 = var1_84[arg1_84]
 	end
 
-	return var5_82
+	return var4_84
 end
 
-function var0_0.GetNextFlagShip(arg0_83)
+function var0_0.GetNextFlagShip(arg0_85)
 	getProxy(SettingsProxy):rotateCurrentSecretaryIndex()
 
-	return arg0_83:GetFlagShip()
+	return arg0_85:GetFlagShip()
 end
 
-function var0_0.IsOpenShipEvaluationImpeach(arg0_84)
-	return not LOCK_IMPEACH and arg0_84.level >= pg.gameset.report_level_limit.key_value
+function var0_0.IsOpenShipEvaluationImpeach(arg0_86)
+	return not LOCK_IMPEACH and arg0_86.level >= pg.gameset.report_level_limit.key_value
 end
 
-function var0_0.ShouldCheckCustomName(arg0_85)
-	return arg0_85:GetCommonFlag(REVERT_CUSTOM_NAME)
+function var0_0.ShouldCheckCustomName(arg0_87)
+	return arg0_87:GetCommonFlag(REVERT_CUSTOM_NAME)
 end
 
-function var0_0.WhetherServerModifiesName(arg0_86)
-	return arg0_86:GetCommonFlag(ILLEGALITY_PLAYER_NAME)
+function var0_0.WhetherServerModifiesName(arg0_88)
+	return arg0_88:GetCommonFlag(ILLEGALITY_PLAYER_NAME)
 end
 
-function var0_0.GetManifesto(arg0_87)
-	return arg0_87.manifesto or ""
+function var0_0.GetManifesto(arg0_89)
+	return arg0_89.manifesto or ""
 end
 
-function var0_0.GetName(arg0_88)
-	return arg0_88.name
+function var0_0.GetName(arg0_90)
+	return arg0_90.name
 end
 
-function var0_0.GetRandomFlagShipMode(arg0_89)
-	if arg0_89.randomShipMode <= 0 then
-		if arg0_89:GetCommonFlag(RANDOM_FLAG_SHIP_MODE) then
-			arg0_89.randomShipMode = SettingsRandomFlagShipAndSkinPanel.SHIP_LOCKED
+function var0_0.GetRandomFlagShipMode(arg0_91)
+	if arg0_91.randomShipMode <= 0 then
+		if arg0_91:GetCommonFlag(RANDOM_FLAG_SHIP_MODE) then
+			arg0_91.randomShipMode = SettingsRandomFlagShipAndSkinPanel.SHIP_LOCKED
 		else
-			arg0_89.randomShipMode = SettingsRandomFlagShipAndSkinPanel.SHIP_FREQUENTLYUSED
+			arg0_91.randomShipMode = SettingsRandomFlagShipAndSkinPanel.SHIP_FREQUENTLYUSED
 		end
 	end
 
-	return arg0_89.randomShipMode
+	return arg0_91.randomShipMode
 end
 
-function var0_0.UpdateRandomFlagShipMode(arg0_90, arg1_90)
-	arg0_90.randomShipMode = arg1_90
-end
-
-function var0_0.GetCustomRandomShipList(arg0_91)
-	local var0_91 = {}
-
-	for iter0_91, iter1_91 in ipairs(arg0_91.customRandomShips) do
-		table.insert(var0_91, iter1_91)
-	end
-
-	return var0_91
-end
-
-function var0_0.UpdateCustomRandomShipList(arg0_92, arg1_92)
-	arg0_92.customRandomShips = arg1_92
+function var0_0.UpdateRandomFlagShipMode(arg0_92, arg1_92)
+	arg0_92.randomShipMode = arg1_92
 end
 
 function var0_0.SetProposeShipId(arg0_93, arg1_93)

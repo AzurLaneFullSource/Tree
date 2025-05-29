@@ -164446,6 +164446,44 @@ _G.pg.base.equip_data_statistics[180000] = {
 	label = {},
 }
 
+_G.pg.base.equip_data_statistics[180001] = {
+	ammo = 1,
+	descrip = "默认装备",
+	icon = "1",
+	id = 180001,
+	name = "小埃吉尔自带强化型副炮",
+	nationality = 4,
+	rarity = 1,
+	speciality = "<[LOCK]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 2,
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {
+		2,
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		180001,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		3,
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"KMS",
+		"DD",
+		"MG",
+		"AP",
+	},
+}
+
 _G.pg.base.equip_data_statistics[594017] = {
 	ammo = 2,
 	attribute_2 = "cannon",

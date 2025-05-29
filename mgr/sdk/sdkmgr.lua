@@ -487,125 +487,129 @@ function var0_0.UnlockAchievement(arg0_90)
 	arg0_90:Call("UnlockAchievement")
 end
 
-function var0_0.IsBindFaceBook(arg0_91)
+function var0_0.EventTrack(arg0_91, arg1_91)
+	arg0_91:Call("EventTrack", arg1_91)
+end
+
+function var0_0.IsBindFaceBook(arg0_92)
 	if PLATFORM_CODE == PLATFORM_CHT then
-		return arg0_91:Get("IsBindFaceBook")
+		return arg0_92:Get("IsBindFaceBook")
 	end
 end
 
-function var0_0.IsBindApple(arg0_92)
+function var0_0.IsBindApple(arg0_93)
 	if PLATFORM_CODE == PLATFORM_CHT then
-		return arg0_92:Get("IsBindApple")
+		return arg0_93:Get("IsBindApple")
 	end
 end
 
-function var0_0.IsBindGoogle(arg0_93)
+function var0_0.IsBindGoogle(arg0_94)
 	if PLATFORM_CODE == PLATFORM_CHT then
-		return arg0_93:Get("IsBindGoogle")
+		return arg0_94:Get("IsBindGoogle")
 	end
 end
 
-function var0_0.IsBindPhone(arg0_94)
+function var0_0.IsBindPhone(arg0_95)
 	if PLATFORM_CODE == PLATFORM_CHT then
-		return arg0_94:Get("IsBindPhone")
+		return arg0_95:Get("IsBindPhone")
 	end
 end
 
-function var0_0.IsBindGameCenter(arg0_95)
+function var0_0.IsBindGameCenter(arg0_96)
 	if PLATFORM_CODE == PLATFORM_CHT then
 		return false
 	end
 end
 
-function var0_0.CanTriggerDeepLinking(arg0_96)
+function var0_0.CanTriggerDeepLinking(arg0_97)
 	if PLATFORM_CODE == PLATFORM_CHT then
-		return arg0_96:Get("CanTriggerDeepLinking")
+		return arg0_97:Get("CanTriggerDeepLinking")
 	else
 		return false
 	end
 end
 
-function var0_0.TriggerDeepLinking(arg0_97)
-	arg0_97:Call("TriggerDeepLinking")
+function var0_0.TriggerDeepLinking(arg0_98)
+	arg0_98:Call("TriggerDeepLinking")
 end
 
-function var0_0.BindSocial(arg0_98, arg1_98)
-	if arg1_98 == 1 then
-		arg0_98:BindFaceBook()
-	elseif arg1_98 == 2 then
-		arg0_98:BindGoogle()
-	elseif arg1_98 == 3 then
-		arg0_98:BindPhone()
-	elseif arg1_98 == 4 then
-		-- block empty
-	elseif arg1_98 == 5 then
-		arg0_98:BindApple()
-	end
-end
-
-function var0_0.UnbindSocial(arg0_99, arg1_99)
+function var0_0.BindSocial(arg0_99, arg1_99)
 	if arg1_99 == 1 then
-		arg0_99:UnBindFaceBook()
+		arg0_99:BindFaceBook()
 	elseif arg1_99 == 2 then
-		arg0_99:UnBindGoogle()
+		arg0_99:BindGoogle()
 	elseif arg1_99 == 3 then
-		arg0_99:UnBindPhone()
+		arg0_99:BindPhone()
 	elseif arg1_99 == 4 then
 		-- block empty
+	elseif arg1_99 == 5 then
+		arg0_99:BindApple()
 	end
 end
 
-function var0_0.BindFaceBook(arg0_100)
-	arg0_100:Call("BindFaceBook")
+function var0_0.UnbindSocial(arg0_100, arg1_100)
+	if arg1_100 == 1 then
+		arg0_100:UnBindFaceBook()
+	elseif arg1_100 == 2 then
+		arg0_100:UnBindGoogle()
+	elseif arg1_100 == 3 then
+		arg0_100:UnBindPhone()
+	elseif arg1_100 == 4 then
+		-- block empty
+	end
 end
 
-function var0_0.BindApple(arg0_101)
-	arg0_101:Call("BindApple")
+function var0_0.BindFaceBook(arg0_101)
+	arg0_101:Call("BindFaceBook")
 end
 
-function var0_0.BindGoogle(arg0_102)
-	arg0_102:Call("BindGoogle")
+function var0_0.BindApple(arg0_102)
+	arg0_102:Call("BindApple")
 end
 
-function var0_0.BindPhone(arg0_103)
-	arg0_103:Call("BindPhone")
+function var0_0.BindGoogle(arg0_103)
+	arg0_103:Call("BindGoogle")
 end
 
-function var0_0.UnBindFaceBook(arg0_104)
-	arg0_104:Call("UnBindFaceBook")
+function var0_0.BindPhone(arg0_104)
+	arg0_104:Call("BindPhone")
 end
 
-function var0_0.UnBindGoogle(arg0_105)
-	arg0_105:Call("UnBindGoogle")
+function var0_0.UnBindFaceBook(arg0_105)
+	arg0_105:Call("UnBindFaceBook")
 end
 
-function var0_0.UnBindPhone(arg0_106)
-	arg0_106:Call("UnBindPhone")
+function var0_0.UnBindGoogle(arg0_106)
+	arg0_106:Call("UnBindGoogle")
 end
 
-function var0_0.ShowLicence(arg0_107)
-	arg0_107:Call("ShowLicence")
+function var0_0.UnBindPhone(arg0_107)
+	arg0_107:Call("UnBindPhone")
 end
 
-function var0_0.ShowPrivate(arg0_108)
-	arg0_108:Call("ShowPrivate")
+function var0_0.ShowLicence(arg0_108)
+	arg0_108:Call("ShowLicence")
 end
 
-function var0_0.OpenMiniProgram(arg0_109)
-	arg0_109:Call("OpenMiniProgram")
+function var0_0.ShowPrivate(arg0_109)
+	arg0_109:Call("ShowPrivate")
 end
 
-function var0_0.GetProduct(arg0_110, arg1_110)
+function var0_0.OpenMiniProgram(arg0_110)
+	arg0_110:Call("OpenMiniProgram")
+end
+
+function var0_0.GetProduct(arg0_111, arg1_111)
 	if PLATFORM_CODE == PLATFORM_CHT then
-		return arg0_110:Get("GetProduct", arg1_110)
+		return arg0_111:Get("GetProduct", arg1_111)
 	end
 end
 
-function var0_0.GetDeviceId(arg0_111)
+function var0_0.GetDeviceId(arg0_112)
 	if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
-		return arg0_111:Get("GetDeviceId")
+		return arg0_112:Get("GetDeviceId")
 	elseif PLATFORM_CODE == PLATFORM_KR then
-		return arg0_111:Get("GetDeviceModel")
+		return arg0_112:Get("GetDeviceModel")
 	elseif PLATFORM_CODE == PLATFORM_CHT then
 		return SystemInfo.deviceUniqueIdentifier
 	else
@@ -614,30 +618,30 @@ function var0_0.GetDeviceId(arg0_111)
 end
 
 function InLoginScene()
-	local function var0_112()
+	local function var0_113()
 		return getProxy(UserProxy):GetLoginedFlag()
 	end
 
-	if pg.SdkMgr.GetInstance():IsInLoginScene() and not var0_112() then
+	if pg.SdkMgr.GetInstance():IsInLoginScene() and not var0_113() then
 		return true
 	end
 
 	return false
 end
 
-function var0_0.GetPlatformCode(arg0_114, arg1_114)
+function var0_0.GetPlatformCode(arg0_115, arg1_115)
 	if PLATFORM_CODE == PLATFORM_CHT then
-		return arg0_114:Get("GetPackageCode", arg1_114)
+		return arg0_115:Get("GetPackageCode", arg1_115)
 	else
 		return nil
 	end
 end
 
-function var0_0.IgnorePlatform(arg0_115, arg1_115)
-	local var0_115 = arg0_115.pcode
+function var0_0.IgnorePlatform(arg0_116, arg1_116)
+	local var0_116 = arg0_116.pcode
 
-	if var0_115 and arg1_115 and #arg1_115 > 0 and _.any(arg1_115, function(arg0_116)
-		return tostring(arg0_116) == var0_115
+	if var0_116 and arg1_116 and #arg1_116 > 0 and _.any(arg1_116, function(arg0_117)
+		return tostring(arg0_117) == var0_116
 	end) then
 		return true
 	end

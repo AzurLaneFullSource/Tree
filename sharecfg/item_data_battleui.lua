@@ -84,6 +84,18 @@ pg.item_data_battleui = {
 		icon = "106",
 		scene = {}
 	},
+	[107] = {
+		key = "SkinNormal_20250529",
+		name = "Radiant Stars",
+		desc = "Brightly do the stars glow, projecting their mysterious patterns across the galaxy, their each and every detail speaking to a longing for space and adventure.",
+		display_icon = "ui_107",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "世界巡游二十三期获取",
+		id = 107,
+		icon = "107",
+		scene = {}
+	},
 	[201] = {
 		key = "SkinNormal_20241209",
 		name = "Christmas",
@@ -140,6 +152,7 @@ pg.item_data_battleui = {
 		104,
 		105,
 		106,
+		107,
 		201,
 		202,
 		203,

@@ -239,7 +239,7 @@ function var0_0.GetPaintingTransform(arg0_18)
 end
 
 function var0_0.GetPartScaleData(arg0_19)
-	return pg.ship_skin_template[arg0_19.ship.skinId].part_scale.spine
+	return pg.ship_skin_template[arg0_19.ship:getSkinId()].part_scale.spine
 end
 
 function var0_0.GetPartStateType(arg0_20)
@@ -266,7 +266,7 @@ end
 
 function var0_0.OnDisplayWorld(arg0_22, arg1_22)
 	local var0_22 = arg0_22.ship:getCVIntimacy()
-	local var1_22 = ShipExpressionHelper.GetExpression(arg0_22.paintingName, arg1_22, var0_22, arg0_22.ship.skinId)
+	local var1_22 = ShipExpressionHelper.GetExpression(arg0_22.paintingName, arg1_22, var0_22, arg0_22.ship:getSkinId())
 
 	if var1_22 and var1_22 ~= "" then
 		arg0_22.spinePainting:SetAction(var1_22, 1)

@@ -46,6 +46,9 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	table.insert(arg0_1.tags, arg0_1.tr:Find("real_tpl/tag/activity"))
 	table.insert(arg0_1.tags, arg0_1.tr:Find("real_tpl/tag/time"))
 	table.insert(arg0_1.tags, arg0_1.tr:Find("real_tpl/tag/discount"))
+
+	arg0_1.packageTag = arg0_1.tr:Find("real_tpl/package_tag")
+
 	setActive(arg0_1.countDown, false)
 end
 
@@ -74,6 +77,13 @@ function var0_0.update(arg0_2, arg1_2, arg2_2, arg3_2)
 
 	if arg0_2.viewBtn then
 		setActive(arg0_2.viewBtn, arg1_2:isChargeType() and arg1_2:CanViewSkinProbability())
+	end
+
+	if arg0_2.packageTag then
+		local var1_2 = arg1_2:GetPackageTag()
+
+		setActive(arg0_2.packageTag, var1_2 ~= "")
+		setText(arg0_2.packageTag:Find("Text"), var1_2)
 	end
 
 	if arg1_2:isChargeType() then

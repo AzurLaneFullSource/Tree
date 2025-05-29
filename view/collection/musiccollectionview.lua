@@ -608,7 +608,7 @@ function var0_0.updateAlbumTF(arg0_56, arg1_56, arg2_56)
 	local var3_56 = MusicCollectionConst.MUSIC_COVER_PATH_PREFIX .. var2_56
 
 	arg0_56.resLoader:LoadSprite(var3_56, var2_56, arg1_56:Find("icon/face"), false)
-	setText(arg1_56:Find("name"), var0_56)
+	changeToScrollText(arg1_56:Find("name"), var0_56)
 	setActive(arg1_56:Find("icon/main"), var0_56 == arg0_56.appreciateProxy:getMainPlayerAlbumName())
 
 	local var4_56 = arg0_56.musicPlayer and arg0_56.musicPlayer.albumName == var0_56

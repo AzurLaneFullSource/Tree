@@ -30,46 +30,39 @@ function var0_0.preload(arg0_2, arg1_2)
 	GetSpriteFromAtlasAsync(var6_2, "", arg1_2)
 end
 
-function var0_0.setShipVOs(arg0_3, arg1_3)
-	arg0_3.shipVOs = arg1_3
-	arg0_3.sameShipVOs = arg0_3:getSameGroupShips()
-end
+function var0_0.init(arg0_3)
+	arg0_3._shake = arg0_3:findTF("shake_panel")
+	arg0_3._shade = arg0_3:findTF("shade")
+	arg0_3._bg = arg0_3._shake:Find("bg")
+	arg0_3._staticBg = arg0_3._bg:Find("static_bg")
+	arg0_3._paintingTF = arg0_3._shake:Find("paint")
+	arg0_3._dialogue = arg0_3._shake:Find("dialogue")
+	arg0_3._skinName = arg0_3._dialogue:Find("name"):GetComponent(typeof(Text))
+	arg0_3._left = arg0_3._shake:Find("left_panel")
+	arg0_3._viewBtn = arg0_3._left:Find("view_btn")
+	arg0_3._shareBtn = arg0_3._left:Find("share_btn")
+	arg0_3.clickTF = arg0_3._shake:Find("click")
+	arg0_3.newTF = arg0_3._shake:Find("New")
+	arg0_3.timelimit = arg0_3._shake:Find("timelimit")
 
-function var0_0.init(arg0_4)
-	arg0_4._shake = arg0_4:findTF("shake_panel")
-	arg0_4._shade = arg0_4:findTF("shade")
-	arg0_4._bg = arg0_4._shake:Find("bg")
-	arg0_4._staticBg = arg0_4._bg:Find("static_bg")
-	arg0_4._paintingTF = arg0_4._shake:Find("paint")
-	arg0_4._dialogue = arg0_4._shake:Find("dialogue")
-	arg0_4._skinName = arg0_4._dialogue:Find("name"):GetComponent(typeof(Text))
-	arg0_4._left = arg0_4._shake:Find("left_panel")
-	arg0_4._viewBtn = arg0_4._left:Find("view_btn")
-	arg0_4._shareBtn = arg0_4._left:Find("share_btn")
-	arg0_4.clickTF = arg0_4._shake:Find("click")
-	arg0_4.newTF = arg0_4._shake:Find("New")
-	arg0_4.timelimit = arg0_4._shake:Find("timelimit")
+	setActive(arg0_3.newTF, false)
 
-	setActive(arg0_4.newTF, false)
+	arg0_3.changeSkinBtn = arg0_3:findTF("set_skin_btn", arg0_3._shake)
+	arg0_3.selectPanel = arg0_3:findTF("select_ship_panel")
+	arg0_3.isTimeLimit = arg0_3.contextData.timeLimit
 
-	arg0_4.changeSkinBtn = arg0_4:findTF("set_skin_btn", arg0_4._shake)
-	arg0_4.selectPanel = arg0_4:findTF("select_ship_panel")
-	arg0_4.selectPanelCloseBtn = arg0_4:findTF("window/top/btnBack", arg0_4.selectPanel)
-	arg0_4.shipContent = arg0_4:findTF("window/sliders/scroll_rect/content", arg0_4.selectPanel)
-	arg0_4.shipCardTpl = arg0_4._tf:GetComponent("ItemList").prefabItem[0]
-	arg0_4.confirmChangeBtn = arg0_4:findTF("window/exchange_btn", arg0_4.selectPanel)
-	arg0_4.flagShipToggle = arg0_4:findTF("window/flag_ship", arg0_4.selectPanel)
-
-	setActive(arg0_4.selectPanel, false)
-
-	arg0_4.isTimeLimit = arg0_4.contextData.timeLimit
-
-	setActive(arg0_4.timelimit, arg0_4.isTimeLimit)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_4._tf, {
+	setActive(arg0_3.timelimit, arg0_3.isTimeLimit)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_3._tf, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 
-	arg0_4.isLoadBg = false
+	arg0_3.isLoadBg = false
+	arg0_3.selectShipPage = ChangeShipSkinPage.New(arg0_3._parentTf, arg0_3.event)
+	arg0_3.selectShipPage.isNew = true
+
+	function arg0_3.selectShipPage.hideCallback()
+		arg0_3:closeView()
+	end
 end
 
 function var0_0.voice(arg0_5, arg1_5)
@@ -221,317 +214,225 @@ function var0_0.didEnter(arg0_17)
 
 		arg0_17:showExitTip()
 	end, SFX_CANCEL)
-	onButton(arg0_17, arg0_17.selectPanel, function()
-		arg0_17:closeSelectPanel()
-	end, SFX_PANEL)
 
-	local var1_17 = getProxy(SettingsProxy):GetSetFlagShip()
+	arg0_17.sameShipVOs = arg0_17:GetShips(arg0_17.contextData.skinId)
 
-	onToggle(arg0_17, arg0_17.flagShipToggle, function(arg0_22)
-		arg0_17.flagShipMark = arg0_22
-	end, SFX_PANEL)
-	triggerToggle(arg0_17.flagShipToggle, var1_17)
-	arg0_17:onSwitch(arg0_17.changeSkinBtn, table.getCount(arg0_17.sameShipVOs) > 0)
+	arg0_17:onSwitch(arg0_17.changeSkinBtn, #arg0_17.sameShipVOs > 0)
 end
 
-function var0_0.onBackPressed(arg0_23)
+function var0_0.GetShips(arg0_21, arg1_21)
+	local var0_21 = getProxy(BayProxy):CanUseShareSkinPhantoms(arg1_21)
+
+	table.sort(var0_21, CompareFuncs({
+		function(arg0_22)
+			return arg0_22:getSkinId() == arg1_21 and 1 or 0
+		end,
+		function(arg0_23)
+			return -arg0_23.level
+		end,
+		function(arg0_24)
+			return -arg0_24:getStar()
+		end,
+		function(arg0_25)
+			return arg0_25.inFleet and 0 or 1
+		end,
+		function(arg0_26)
+			return arg0_26.createTime
+		end
+	}))
+
+	return var0_21
+end
+
+function var0_0.onBackPressed(arg0_27)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	if arg0_23.isInView then
-		arg0_23:hidePaintView(true)
+	if arg0_27.isInView then
+		arg0_27:hidePaintView(true)
 
 		return
 	end
 
-	if isActive(arg0_23.selectPanel) then
-		arg0_23:closeSelectPanel()
+	if arg0_27.selectShipPage:isShowing() then
+		arg0_27.selectShipPage:Hide()
 
 		return
 	end
 
-	if isActive(arg0_23.clickTF) then
-		triggerButton(arg0_23.clickTF)
+	if isActive(arg0_27.clickTF) then
+		triggerButton(arg0_27.clickTF)
 	end
 end
 
-function var0_0.onSwitch(arg0_24, arg1_24, arg2_24)
-	onButton(arg0_24, arg1_24, function()
-		if arg2_24 then
-			arg0_24:openSelectPanel()
+function var0_0.onSwitch(arg0_28, arg1_28, arg2_28)
+	onButton(arg0_28, arg1_28, function()
+		if arg2_28 then
+			arg0_28:openSelectPanel()
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("err_cloth_change_noship", arg0_24.shipName))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("err_cloth_change_noship", arg0_28.shipName))
 		end
 	end)
 end
 
-function var0_0.getSameGroupShips(arg0_26)
-	local var0_26 = {}
-	local var1_26 = arg0_26.contextData.skinId
-	local var2_26 = pg.ship_skin_template[var1_26].ship_group
+function var0_0.paintView(arg0_30)
+	local var0_30 = {}
+	local var1_30 = arg0_30._shake.childCount
+	local var2_30 = 0
 
-	for iter0_26, iter1_26 in pairs(arg0_26.shipVOs) do
-		if iter1_26.groupId == var2_26 then
-			var0_26[iter1_26.id] = iter1_26
-		end
-	end
+	while var2_30 < var1_30 do
+		local var3_30 = arg0_30._shake:GetChild(var2_30)
 
-	local var3_26 = getProxy(BayProxy):CanUseShareSkinShips(var1_26)
+		if var3_30.gameObject.activeSelf and var3_30 ~= arg0_30._paintingTF and var3_30 ~= arg0_30._bg then
+			var0_30[#var0_30 + 1] = var3_30
 
-	for iter2_26, iter3_26 in ipairs(var3_26) do
-		var0_26[iter3_26.id] = iter3_26
-	end
-
-	return var0_26
-end
-
-function var0_0.paintView(arg0_27)
-	local var0_27 = {}
-	local var1_27 = arg0_27._shake.childCount
-	local var2_27 = 0
-
-	while var2_27 < var1_27 do
-		local var3_27 = arg0_27._shake:GetChild(var2_27)
-
-		if var3_27.gameObject.activeSelf and var3_27 ~= arg0_27._paintingTF and var3_27 ~= arg0_27._bg then
-			var0_27[#var0_27 + 1] = var3_27
-
-			setActive(var3_27, false)
+			setActive(var3_30, false)
 		end
 
-		var2_27 = var2_27 + 1
+		var2_30 = var2_30 + 1
 	end
 
 	openPortrait()
 
-	local var4_27 = arg0_27._paintingTF
-	local var5_27 = var4_27.anchoredPosition.x
-	local var6_27 = var4_27.anchoredPosition.y
-	local var7_27 = var4_27.rect.width
-	local var8_27 = var4_27.rect.height
-	local var9_27 = arg0_27._tf.rect.width / UnityEngine.Screen.width
-	local var10_27 = arg0_27._tf.rect.height / UnityEngine.Screen.height
-	local var11_27 = var7_27 / 2
-	local var12_27 = var8_27 / 2
-	local var13_27
-	local var14_27
+	local var4_30 = arg0_30._paintingTF
+	local var5_30 = var4_30.anchoredPosition.x
+	local var6_30 = var4_30.anchoredPosition.y
+	local var7_30 = var4_30.rect.width
+	local var8_30 = var4_30.rect.height
+	local var9_30 = arg0_30._tf.rect.width / UnityEngine.Screen.width
+	local var10_30 = arg0_30._tf.rect.height / UnityEngine.Screen.height
+	local var11_30 = var7_30 / 2
+	local var12_30 = var8_30 / 2
+	local var13_30
+	local var14_30
 
-	if not LeanTween.isTweening(go(var4_27)) then
-		LeanTween.moveX(rtf(var4_27), 150, 0.5):setEase(LeanTweenType.easeInOutSine)
+	if not LeanTween.isTweening(go(var4_30)) then
+		LeanTween.moveX(rtf(var4_30), 150, 0.5):setEase(LeanTweenType.easeInOutSine)
 	end
 
-	local var15_27 = GetOrAddComponent(arg0_27._bg, "MultiTouchZoom")
+	local var15_30 = GetOrAddComponent(arg0_30._bg, "MultiTouchZoom")
 
-	var15_27:SetZoomTarget(arg0_27._paintingTF)
+	var15_30:SetZoomTarget(arg0_30._paintingTF)
 
-	local var16_27 = GetOrAddComponent(arg0_27._bg, "EventTriggerListener")
-	local var17_27 = true
+	local var16_30 = GetOrAddComponent(arg0_30._bg, "EventTriggerListener")
+	local var17_30 = true
 
-	var15_27.enabled = true
-	var16_27.enabled = true
+	var15_30.enabled = true
+	var16_30.enabled = true
 
-	local var18_27 = false
+	local var18_30 = false
 
-	var16_27:AddPointDownFunc(function(arg0_28)
+	var16_30:AddPointDownFunc(function(arg0_31)
 		if Input.touchCount == 1 or IsUnityEditor then
-			var18_27 = true
-			var17_27 = true
+			var18_30 = true
+			var17_30 = true
 		elseif Input.touchCount >= 2 then
-			var17_27 = false
-			var18_27 = false
+			var17_30 = false
+			var18_30 = false
 		end
 	end)
-	var16_27:AddPointUpFunc(function(arg0_29)
+	var16_30:AddPointUpFunc(function(arg0_32)
 		if Input.touchCount <= 2 then
-			var17_27 = true
+			var17_30 = true
 		end
 	end)
-	var16_27:AddBeginDragFunc(function(arg0_30, arg1_30)
-		var18_27 = false
-		var13_27 = arg1_30.position.x * var9_27 - var11_27 - tf(arg0_27._paintingTF).localPosition.x
-		var14_27 = arg1_30.position.y * var10_27 - var12_27 - tf(arg0_27._paintingTF).localPosition.y
+	var16_30:AddBeginDragFunc(function(arg0_33, arg1_33)
+		var18_30 = false
+		var13_30 = arg1_33.position.x * var9_30 - var11_30 - tf(arg0_30._paintingTF).localPosition.x
+		var14_30 = arg1_33.position.y * var10_30 - var12_30 - tf(arg0_30._paintingTF).localPosition.y
 	end)
-	var16_27:AddDragFunc(function(arg0_31, arg1_31)
-		if var17_27 then
-			local var0_31 = tf(arg0_27._paintingTF).localPosition
+	var16_30:AddDragFunc(function(arg0_34, arg1_34)
+		if var17_30 then
+			local var0_34 = tf(arg0_30._paintingTF).localPosition
 
-			tf(arg0_27._paintingTF).localPosition = Vector3(arg1_31.position.x * var9_27 - var11_27 - var13_27, arg1_31.position.y * var10_27 - var12_27 - var14_27, -22)
+			tf(arg0_30._paintingTF).localPosition = Vector3(arg1_34.position.x * var9_30 - var11_30 - var13_30, arg1_34.position.y * var10_30 - var12_30 - var14_30, -22)
 		end
 	end)
-	onButton(arg0_27, arg0_27._bg, function()
-		arg0_27:hidePaintView()
+	onButton(arg0_30, arg0_30._bg, function()
+		arg0_30:hidePaintView()
 	end, SFX_CANCEL)
 
-	function var0_0.hidePaintView(arg0_33, arg1_33)
-		if not arg1_33 and not var18_27 then
+	function var0_0.hidePaintView(arg0_36, arg1_36)
+		if not arg1_36 and not var18_30 then
 			return
 		end
 
-		var16_27.enabled = false
-		var15_27.enabled = false
+		var16_30.enabled = false
+		var15_30.enabled = false
 
-		RemoveComponent(arg0_33._bg, "Button")
+		RemoveComponent(arg0_36._bg, "Button")
 
-		for iter0_33, iter1_33 in ipairs(var0_27) do
-			setActive(iter1_33, true)
+		for iter0_36, iter1_36 in ipairs(var0_30) do
+			setActive(iter1_36, true)
 		end
 
 		closePortrait()
-		LeanTween.cancel(go(arg0_33._paintingTF))
+		LeanTween.cancel(go(arg0_36._paintingTF))
 
-		arg0_33._paintingTF.localScale = Vector3(1, 1, 1)
+		arg0_36._paintingTF.localScale = Vector3(1, 1, 1)
 
-		setAnchoredPosition(arg0_33._paintingTF, {
-			x = var5_27,
-			y = var6_27
+		setAnchoredPosition(arg0_36._paintingTF, {
+			x = var5_30,
+			y = var6_30
 		})
 
-		arg0_33.isInView = false
+		arg0_36.isInView = false
 
-		setActive(arg0_33.clickTF, true)
+		setActive(arg0_36.clickTF, true)
 	end
 end
 
-function var0_0.recyclePainting(arg0_34)
-	if arg0_34._shipVO then
-		retPaintingPrefab(arg0_34._paintingTF, arg0_34._shipVO:getPainting())
+function var0_0.recyclePainting(arg0_37)
+	if arg0_37._shipVO then
+		retPaintingPrefab(arg0_37._paintingTF, arg0_37._shipVO:getPainting())
 	end
 end
 
-function var0_0.openSelectPanel(arg0_35)
-	removeAllChildren(arg0_35.shipContent)
-
-	arg0_35.isOpenSelPanel = true
-	arg0_35.selectIds = {}
-
-	setActive(arg0_35.selectPanel, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_35.selectPanel, false, {
-		weight = LayerWeightConst.TOP_LAYER
-	})
-
-	arg0_35.shipCards = {}
-
-	local var0_35 = {}
-
-	for iter0_35, iter1_35 in pairs(arg0_35.sameShipVOs) do
-		table.insert(var0_35, iter1_35)
-	end
-
-	table.sort(var0_35, function(arg0_36, arg1_36)
-		if arg0_36.level == arg1_36.level then
-			local var0_36 = arg0_36:getStar()
-			local var1_36 = arg1_36:getStar()
-
-			if var0_36 == var1_36 then
-				local var2_36 = arg0_36.inFleet and 1 or 0
-				local var3_36 = arg1_36.inFleet and 1 or 0
-
-				if var2_36 == var3_36 then
-					return arg0_36.createTime < arg1_36.createTime
-				else
-					return var3_36 < var2_36
-				end
-			else
-				return var1_36 < var0_36
-			end
-		else
-			return arg0_36.level > arg1_36.level
-		end
-	end)
-
-	for iter2_35, iter3_35 in ipairs(var0_35) do
-		local var1_35 = cloneTplTo(arg0_35.shipCardTpl, arg0_35.shipContent)
-		local var2_35 = ShipDetailCard.New(var1_35.gameObject)
-
-		var2_35:update(iter3_35, arg0_35.contextData.skinId)
-
-		arg0_35.shipCards[iter3_35.id] = var2_35
-
-		onToggle(arg0_35, var2_35.tr, function(arg0_37)
-			var2_35:updateSelected(arg0_37)
-
-			if arg0_37 then
-				table.insert(arg0_35.selectIds, var2_35.shipVO.id)
-			else
-				for iter0_37, iter1_37 in pairs(arg0_35.selectIds) do
-					if iter1_37 == var2_35.shipVO.id then
-						table.remove(arg0_35.selectIds, iter0_37)
-
-						break
-					end
-				end
-			end
-		end)
-	end
-
-	onButton(arg0_35, arg0_35.confirmChangeBtn, function()
-		if not arg0_35.selectIds or #arg0_35.selectIds <= 0 then
-			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("new_skin_no_choose"),
-				weight = LayerWeightConst.TOP_LAYER + 1,
-				onYes = function()
-					arg0_35:emit(var0_0.ON_CLOSE)
-				end
-			})
-
-			return
-		end
-
-		arg0_35:emit(NewSkinMediator.SET_SKIN, arg0_35.selectIds, arg0_35.flagShipMark)
-	end)
-	onButton(arg0_35, arg0_35.selectPanelCloseBtn, function()
-		arg0_35:closeSelectPanel()
-	end)
+function var0_0.openSelectPanel(arg0_38)
+	arg0_38.selectShipPage:ExecuteAction("Show", ShipSkin.New({
+		id = arg0_38.contextData.skinId
+	}))
 end
 
-function var0_0.updateShipCards(arg0_41)
-	for iter0_41, iter1_41 in pairs(arg0_41.shipCards or {}) do
-		local var0_41 = arg0_41.sameShipVOs[iter0_41]
+function var0_0.updateShipCards(arg0_39)
+	for iter0_39, iter1_39 in pairs(arg0_39.shipCards or {}) do
+		local var0_39 = arg0_39.sameShipVOs[iter0_39]
 
-		if var0_41 then
-			iter1_41:update(var0_41, arg0_41.contextData.skinId)
+		if var0_39 then
+			iter1_39:update(var0_39, arg0_39.contextData.skinId)
 		end
 	end
 end
 
-function var0_0.closeSelectPanel(arg0_42)
-	if arg0_42.isOpenSelPanel then
-		arg0_42.isOpenSelPanel = nil
-
-		setActive(arg0_42.selectPanel, false)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_42.selectPanel, arg0_42._tf)
-	end
-end
-
-function var0_0.playOpening(arg0_43, arg1_43, arg2_43)
+function var0_0.playOpening(arg0_40, arg1_40, arg2_40)
 	pg.CpkPlayMgr.GetInstance():PlayCpkMovie(function()
 		return
 	end, function()
-		if arg1_43 then
-			arg1_43()
+		if arg1_40 then
+			arg1_40()
 		end
-	end, "ui/skinunlockanim", arg2_43, false, false, {
+	end, "ui/skinunlockanim", arg2_40, false, false, {
 		weight = LayerWeightConst.THIRD_LAYER
 	})
 end
 
-function var0_0.willExit(arg0_46)
+function var0_0.willExit(arg0_43)
 	pg.CpkPlayMgr.GetInstance():DisposeCpkMovie()
 
-	local var0_46 = arg0_46._skinConfig.ship_group * 10 + 1
-	local var1_46 = pg.ship_data_statistics[var0_46]
+	local var0_43 = arg0_43._skinConfig.ship_group * 10 + 1
+	local var1_43 = pg.ship_data_statistics[var0_43]
 
-	pg.TipsMgr.GetInstance():ShowTips(i18n("ship_newSkinLayer_get", var1_46.name, arg0_46._skinConfig.name), COLOR_GREEN)
-	arg0_46:recyclePainting()
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_46._tf)
-	arg0_46:stopVoice()
+	pg.TipsMgr.GetInstance():ShowTips(i18n("ship_newSkinLayer_get", var1_43.name, arg0_43._skinConfig.name), COLOR_GREEN)
+	arg0_43:recyclePainting()
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_43._tf)
+	arg0_43:stopVoice()
 
-	if arg0_46.loadedCVBankName then
-		pg.CriMgr.UnloadCVBank(arg0_46.loadedCVBankName)
+	if arg0_43.loadedCVBankName then
+		pg.CriMgr.UnloadCVBank(arg0_43.loadedCVBankName)
 
-		arg0_46.loadedCVBankName = nil
+		arg0_43.loadedCVBankName = nil
 	end
 
-	arg0_46:closeSelectPanel()
+	arg0_43.selectShipPage:Destroy()
 	cameraPaintViewAdjust(false)
 end
 

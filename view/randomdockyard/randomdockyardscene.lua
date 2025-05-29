@@ -12,9 +12,7 @@ function var0_0.OnChangeRandomShips(arg0_2)
 	arg0_2.randomFlagShips = nil
 	arg0_2.dockyardShips = nil
 
-	if arg0_2.mode ~= var0_0.MODE_VIEW then
-		arg0_2:Switch(var0_0.MODE_VIEW)
-	end
+	arg0_2:Switch(var0_0.MODE_VIEW)
 end
 
 function var0_0.init(arg0_3)
@@ -40,6 +38,7 @@ function var0_0.init(arg0_3)
 	arg0_3.indexBtn = arg0_3:findTF("blur_panel/adapt/top/index_button")
 	arg0_3.indexBtnSel = arg0_3.indexBtn:Find("Image")
 	arg0_3.selectedCntTxt = arg0_3:findTF("blur_panel/select_panel/bottom_info/bg_input/count"):GetComponent(typeof(Text))
+	arg0_3.phantomToggle = arg0_3._tf:Find("toggle_phantom")
 	arg0_3.selectPanelFrame = arg0_3:findTF("blur_panel/select_panel/bottom_info/bg_input")
 
 	setActive(arg0_3.sortUp, false)
@@ -148,6 +147,10 @@ function var0_0.didEnter(arg0_5)
 		arg0_5:OnUpdateItem(arg0_7, arg1_7)
 	end
 
+	function arg0_5.scrollrect.onReturnItem(arg0_8, arg1_8)
+		arg0_5:onReturnItem(arg0_8, arg1_8)
+	end
+
 	onButton(arg0_5, arg0_5.backBtn, function()
 		if arg0_5.mode ~= var0_0.MODE_VIEW then
 			arg0_5:Switch(var0_0.MODE_VIEW)
@@ -187,19 +190,19 @@ function var0_0.didEnter(arg0_5)
 
 		arg0_5:OnAll()
 	end, SFX_PANEL)
-	onToggle(arg0_5, arg0_5.frequentlyUseToggle, function(arg0_14)
-		arg0_5.frequentlyUseFlags[arg0_5.mode] = arg0_14
-
-		local var0_14 = arg0_5:GetShipList(arg0_5.mode)
-
-		arg0_5:FlushShipList(var0_14)
-	end, SFX_PANEL)
-	onToggle(arg0_5, arg0_5.lockToggle, function(arg0_15)
-		arg0_5.lockFlags[arg0_5.mode] = arg0_15
+	onToggle(arg0_5, arg0_5.frequentlyUseToggle, function(arg0_15)
+		arg0_5.frequentlyUseFlags[arg0_5.mode] = arg0_15
 
 		local var0_15 = arg0_5:GetShipList(arg0_5.mode)
 
 		arg0_5:FlushShipList(var0_15)
+	end, SFX_PANEL)
+	onToggle(arg0_5, arg0_5.lockToggle, function(arg0_16)
+		arg0_5.lockFlags[arg0_5.mode] = arg0_16
+
+		local var0_16 = arg0_5:GetShipList(arg0_5.mode)
+
+		arg0_5:FlushShipList(var0_16)
 	end, SFX_PANEL)
 	onButton(arg0_5, arg0_5.sortBtn, function()
 		arg0_5.sortFlags[arg0_5.mode] = not arg0_5.sortFlags[arg0_5.mode]
@@ -207,289 +210,306 @@ function var0_0.didEnter(arg0_5)
 		setActive(arg0_5.sortUp, arg0_5.sortFlags[arg0_5.mode])
 		setActive(arg0_5.sortDown, not arg0_5.sortFlags[arg0_5.mode])
 
-		local var0_16 = arg0_5:GetShipList(arg0_5.mode)
+		local var0_17 = arg0_5:GetShipList(arg0_5.mode)
 
-		arg0_5:FlushShipList(var0_16)
+		arg0_5:FlushShipList(var0_17)
 	end, SFX_PANEL)
 	onButton(arg0_5, arg0_5.indexBtn, function()
 		arg0_5:emit(RandomDockYardMediator.OPEN_INDEX, {
-			OnFilter = function(arg0_18)
-				arg0_5:OnFilter(arg0_18)
+			OnFilter = function(arg0_19)
+				arg0_5:OnFilter(arg0_19)
 			end,
 			defaultIndex = arg0_5.indexDatas[arg0_5.mode]
 		})
 	end, SFX_PANEL)
+	setToggleEnabled(arg0_5.phantomToggle, false)
+	onButton(arg0_5, arg0_5.phantomToggle:Find("off"), function()
+		arg0_5:emit(RandomDockYardMediator.OPEN_PHANTOM_LAYER)
+	end, SFX_PANEL)
 	arg0_5:Switch(var0_0.MODE_VIEW)
 end
 
-function var0_0.GetRandomFlagShips(arg0_19)
-	if not arg0_19.randomFlagShips then
-		local var0_19 = getProxy(PlayerProxy):getRawData()
+function var0_0.GetRandomFlagShips(arg0_21)
+	if not arg0_21.randomFlagShips then
+		local var0_21 = getProxy(PlayerProxy):getRawData()
 
-		arg0_19.randomFlagShips = {}
+		arg0_21.randomFlagShips = {}
+		arg0_21.phantomCount = 0
 
-		local var1_19 = getProxy(BayProxy)
+		local var1_21 = getProxy(BayProxy)
 
-		for iter0_19, iter1_19 in ipairs(var0_19:GetCustomRandomShipList()) do
-			local var2_19 = var1_19:RawGetShipById(iter1_19)
+		for iter0_21, iter1_21 in ipairs(var1_21:getRandomFlagShipPhantomMarks()) do
+			local var2_21 = var1_21:GetShipPhantom(iter1_21)
 
-			if var2_19 then
-				table.insert(arg0_19.randomFlagShips, var2_19)
+			if var2_21 then
+				if var2_21.phantomId == 0 then
+					table.insert(arg0_21.randomFlagShips, var2_21)
+				else
+					arg0_21.phantomCount = arg0_21.phantomCount + 1
+				end
 			end
 		end
 	end
 
-	return arg0_19.randomFlagShips
+	return arg0_21.randomFlagShips
 end
 
-function var0_0.GetDockYardShipAndNotInRandom(arg0_20)
-	if not arg0_20.dockyardShips then
-		local var0_20 = arg0_20:GetRandomFlagShips()
-		local var1_20 = {}
+function var0_0.GetDockYardShipAndNotInRandom(arg0_22)
+	if not arg0_22.dockyardShips then
+		local var0_22 = arg0_22:GetRandomFlagShips()
+		local var1_22 = {}
 
-		for iter0_20, iter1_20 in ipairs(var0_20) do
-			var1_20[iter1_20.id] = true
+		for iter0_22, iter1_22 in ipairs(var0_22) do
+			var1_22[iter1_22.id] = true
 		end
 
-		arg0_20.dockyardShips = {}
+		arg0_22.dockyardShips = {}
 
-		local var2_20 = getProxy(BayProxy):getRawData()
+		local var2_22 = getProxy(BayProxy):getRawData()
 
-		for iter2_20, iter3_20 in pairs(var2_20) do
-			if not var1_20[iter3_20.id] and not iter3_20:isActivityNpc() then
-				table.insert(arg0_20.dockyardShips, iter3_20)
+		for iter2_22, iter3_22 in pairs(var2_22) do
+			if not var1_22[iter3_22.id] and not iter3_22:isActivityNpc() then
+				table.insert(arg0_22.dockyardShips, iter3_22)
 			end
 		end
 	end
 
-	return arg0_20.dockyardShips
+	return arg0_22.dockyardShips
 end
 
-function var0_0.GetShipList(arg0_21, arg1_21)
-	local var0_21 = {}
+function var0_0.GetShipList(arg0_23, arg1_23)
+	local var0_23 = {}
 
-	if arg1_21 == var0_0.MODE_VIEW then
-		var0_21 = arg0_21:GetRandomFlagShips()
-	elseif arg1_21 == var0_0.MODE_ADD then
-		var0_21 = arg0_21:GetDockYardShipAndNotInRandom()
-	elseif arg1_21 == var0_0.MODE_REMOVE then
-		var0_21 = arg0_21:GetRandomFlagShips()
+	if arg1_23 == var0_0.MODE_VIEW then
+		var0_23 = arg0_23:GetRandomFlagShips()
+	elseif arg1_23 == var0_0.MODE_ADD then
+		var0_23 = arg0_23:GetDockYardShipAndNotInRandom()
+	elseif arg1_23 == var0_0.MODE_REMOVE then
+		var0_23 = arg0_23:GetRandomFlagShips()
 	end
 
-	return var0_21
+	return var0_23
 end
 
-function var0_0.Switch(arg0_22, arg1_22)
-	arg0_22:Clear()
+function var0_0.Switch(arg0_24, arg1_24)
+	arg0_24:Clear()
 
-	arg0_22.selected = {}
+	arg0_24.selected = {}
 
-	local var0_22 = arg0_22:GetShipList(arg1_22)
+	local var0_24 = arg0_24:GetShipList(arg1_24)
 
-	arg0_22:UpdateModeStyle(arg1_22, #var0_22)
+	arg0_24:UpdateModeStyle(arg1_24, #var0_24)
 
-	arg0_22.mode = arg1_22
+	arg0_24.mode = arg1_24
 
-	arg0_22:FlushShipList(var0_22)
+	arg0_24:FlushShipList(var0_24)
 
-	if arg0_22.mode == var0_0.MODE_VIEW then
-		arg0_22:UpdateSelectedCnt(var0_22)
+	if arg0_24.mode == var0_0.MODE_VIEW then
+		arg0_24:UpdateSelectedCnt(#var0_24 + arg0_24.phantomCount)
 	else
-		arg0_22:UpdateSelectedCnt(arg0_22.selected)
+		arg0_24:UpdateSelectedCnt(table.getCount(arg0_24.selected))
 	end
+
+	setActive(arg0_24.phantomToggle, arg0_24.mode == var0_0.MODE_VIEW)
 end
 
-function var0_0.UpdateModeStyle(arg0_23, arg1_23, arg2_23)
-	arg0_23.titleImg.sprite = arg0_23.titles[arg1_23]
+function var0_0.UpdateModeStyle(arg0_25, arg1_25, arg2_25)
+	arg0_25.titleImg.sprite = arg0_25.titles[arg1_25]
 
-	arg0_23.titleImg:SetNativeSize()
+	arg0_25.titleImg:SetNativeSize()
 
-	arg0_23.titleEnImg.sprite = arg0_23.titleEns[arg1_23]
+	arg0_25.titleEnImg.sprite = arg0_25.titleEns[arg1_25]
 
-	arg0_23.titleEnImg:SetNativeSize()
-	setActive(arg0_23.addBtn, arg1_23 == var0_0.MODE_VIEW)
-	setActive(arg0_23.removeBtn, arg1_23 == var0_0.MODE_VIEW)
-	setActive(arg0_23.cancelBtn, arg1_23 == var0_0.MODE_ADD or arg1_23 == var0_0.MODE_REMOVE)
-	setActive(arg0_23.confirmBtn, arg1_23 == var0_0.MODE_ADD or arg1_23 == var0_0.MODE_REMOVE)
-	setActive(arg0_23.allBtn, arg1_23 == var0_0.MODE_ADD or arg1_23 == var0_0.MODE_REMOVE)
+	arg0_25.titleEnImg:SetNativeSize()
+	setActive(arg0_25.addBtn, arg1_25 == var0_0.MODE_VIEW)
+	setActive(arg0_25.removeBtn, arg1_25 == var0_0.MODE_VIEW)
+	setActive(arg0_25.cancelBtn, arg1_25 == var0_0.MODE_ADD or arg1_25 == var0_0.MODE_REMOVE)
+	setActive(arg0_25.confirmBtn, arg1_25 == var0_0.MODE_ADD or arg1_25 == var0_0.MODE_REMOVE)
+	setActive(arg0_25.allBtn, arg1_25 == var0_0.MODE_ADD or arg1_25 == var0_0.MODE_REMOVE)
 
-	arg0_23.tipTxt.text = arg0_23.tips[arg1_23]
-	arg0_23.selectedTxt.text = arg0_23.selectedTxts[arg1_23]
+	arg0_25.tipTxt.text = arg0_25.tips[arg1_25]
+	arg0_25.selectedTxt.text = arg0_25.selectedTxts[arg1_25]
 
-	setButtonEnabled(arg0_23.removeBtn, arg1_23 == var0_0.MODE_VIEW and arg2_23 > 0)
-	setAnchoredPosition(arg0_23.selectPanelFrame, {
-		x = arg1_23 == var0_0.MODE_VIEW and 0 or 180
+	setButtonEnabled(arg0_25.removeBtn, arg1_25 == var0_0.MODE_VIEW and arg2_25 > 0)
+	setAnchoredPosition(arg0_25.selectPanelFrame, {
+		x = arg1_25 == var0_0.MODE_VIEW and 0 or 180
 	})
 end
 
-function var0_0.OnConfirm(arg0_24)
-	local var0_24 = {}
+function var0_0.OnConfirm(arg0_26)
+	local var0_26 = {}
 
-	for iter0_24, iter1_24 in pairs(arg0_24.selected) do
-		table.insert(var0_24, iter0_24)
+	for iter0_26, iter1_26 in pairs(arg0_26.selected) do
+		table.insert(var0_26, iter0_26)
 	end
 
-	local function var1_24()
-		if arg0_24.mode == var0_0.MODE_ADD then
-			arg0_24:emit(RandomDockYardMediator.ON_ADD_SHIPS, var0_24)
-		elseif arg0_24.mode == var0_0.MODE_REMOVE then
-			arg0_24:emit(RandomDockYardMediator.ON_REMOVE_SHIPS, var0_24)
+	local function var1_26()
+		if arg0_26.mode == var0_0.MODE_ADD then
+			arg0_26:emit(RandomDockYardMediator.ON_ADD_SHIPS, var0_26)
+		elseif arg0_26.mode == var0_0.MODE_REMOVE then
+			arg0_26:emit(RandomDockYardMediator.ON_REMOVE_SHIPS, var0_26)
 		end
 	end
 
-	local var2_24 = arg0_24.msgBoxTitle[arg0_24.mode]
-	local var3_24 = arg0_24.msgBoxSubTitle[arg0_24.mode]
+	local var2_26 = arg0_26.msgBoxTitle[arg0_26.mode]
+	local var3_26 = arg0_26.msgBoxSubTitle[arg0_26.mode]
 
-	arg0_24.msgbox:ExecuteAction("Flush", var2_24, var3_24, var0_24, var1_24)
+	arg0_26.msgbox:ExecuteAction("Flush", var2_26, var3_26, var0_26, var1_26)
 end
 
-function var0_0.OnAll(arg0_26)
-	for iter0_26, iter1_26 in ipairs(arg0_26.displays) do
-		arg0_26.selected[iter1_26.id] = true
+function var0_0.OnAll(arg0_28)
+	for iter0_28, iter1_28 in ipairs(arg0_28.displays) do
+		arg0_28.selected[iter1_28.id] = true
 	end
 
-	arg0_26.scrollrect:SetTotalCount(#arg0_26.displays)
-	arg0_26:UpdateSelectedCnt(arg0_26.selected)
+	arg0_28.scrollrect:SetTotalCount(#arg0_28.displays)
+	arg0_28:UpdateSelectedCnt(table.getCount(arg0_28.selected))
 end
 
-function var0_0.UpdateSelectedCnt(arg0_27, arg1_27)
-	local var0_27 = 0
+function var0_0.UpdateSelectedCnt(arg0_29, arg1_29)
+	arg0_29.selectedCntTxt.text = arg1_29
 
-	for iter0_27, iter1_27 in pairs(arg1_27) do
-		var0_27 = var0_27 + 1
-	end
-
-	arg0_27.selectedCntTxt.text = var0_27
-
-	setButtonEnabled(arg0_27.confirmBtn, var0_27 > 0)
-	setActive(arg0_27.confirmBtnMask, var0_27 <= 0)
+	setButtonEnabled(arg0_29.confirmBtn, arg1_29 > 0)
+	setActive(arg0_29.confirmBtnMask, arg1_29 <= 0)
 end
 
-local function var1_0(arg0_28)
-	return arg0_28.sortIndex ~= ShipIndexConst.SortLevel or arg0_28.typeIndex ~= ShipIndexConst.TypeAll or arg0_28.campIndex ~= ShipIndexConst.CampAll or arg0_28.rarityIndex ~= ShipIndexConst.RarityAll or arg0_28.extraIndex ~= ShipIndexConst.ExtraALL
+local function var1_0(arg0_30)
+	return arg0_30.sortIndex ~= ShipIndexConst.SortLevel or arg0_30.typeIndex ~= ShipIndexConst.TypeAll or arg0_30.campIndex ~= ShipIndexConst.CampAll or arg0_30.rarityIndex ~= ShipIndexConst.RarityAll or arg0_30.extraIndex ~= ShipIndexConst.ExtraALL
 end
 
-function var0_0.OnFilter(arg0_29, arg1_29)
-	local var0_29 = arg0_29.indexDatas[arg0_29.mode]
+function var0_0.OnFilter(arg0_31, arg1_31)
+	local var0_31 = arg0_31.indexDatas[arg0_31.mode]
 
-	var0_29.sortIndex = arg1_29.sortIndex
-	var0_29.typeIndex = arg1_29.typeIndex
-	var0_29.campIndex = arg1_29.campIndex
-	var0_29.rarityIndex = arg1_29.rarityIndex
-	var0_29.extraIndex = arg1_29.extraIndex
+	var0_31.sortIndex = arg1_31.sortIndex
+	var0_31.typeIndex = arg1_31.typeIndex
+	var0_31.campIndex = arg1_31.campIndex
+	var0_31.rarityIndex = arg1_31.rarityIndex
+	var0_31.extraIndex = arg1_31.extraIndex
 
-	setActive(arg0_29.indexBtnSel, var1_0(var0_29))
+	setActive(arg0_31.indexBtnSel, var1_0(var0_31))
 
-	local var1_29 = arg0_29:GetShipList(arg0_29.mode)
+	local var1_31 = arg0_31:GetShipList(arg0_31.mode)
 
-	arg0_29:FlushShipList(var1_29)
+	arg0_31:FlushShipList(var1_31)
 end
 
-function var0_0.OnItemUpdate(arg0_30, arg1_30)
-	local var0_30 = RandomDockYardCard.New(arg1_30)
+function var0_0.OnItemUpdate(arg0_32, arg1_32)
+	local var0_32 = RandomDockYardCard.New(arg1_32)
 
-	onButton(arg0_30, var0_30._go, function()
-		if arg0_30.mode == var0_0.MODE_VIEW then
+	onButton(arg0_32, var0_32._go, function()
+		if arg0_32.mode == var0_0.MODE_VIEW then
 			return
 		end
 
-		if arg0_30.selected[var0_30.ship.id] then
-			arg0_30.selected[var0_30.ship.id] = nil
+		if arg0_32.selected[var0_32.ship.id] then
+			arg0_32.selected[var0_32.ship.id] = nil
 		else
-			arg0_30.selected[var0_30.ship.id] = true
+			arg0_32.selected[var0_32.ship.id] = true
 		end
 
-		arg0_30:UpdateSelectedCnt(arg0_30.selected)
-		var0_30:UpdateSelected(arg0_30.selected[var0_30.ship.id])
+		arg0_32:UpdateSelectedCnt(table.getCount(arg0_32.selected))
+		var0_32:UpdateSelected(arg0_32.selected[var0_32.ship.id])
 	end, SFX_PANEL)
 
-	arg0_30.cards[arg1_30] = var0_30
+	arg0_32.cards[arg1_32] = var0_32
 end
 
-function var0_0.OnUpdateItem(arg0_32, arg1_32, arg2_32)
-	local var0_32 = arg0_32.cards[arg2_32]
+function var0_0.OnUpdateItem(arg0_34, arg1_34, arg2_34)
+	local var0_34 = arg0_34.cards[arg2_34]
 
-	if not var0_32 then
-		arg0_32:OnItemUpdate(arg2_32)
+	if not var0_34 then
+		arg0_34:OnItemUpdate(arg2_34)
 
-		var0_32 = arg0_32.cards[arg2_32]
+		var0_34 = arg0_34.cards[arg2_34]
 	end
 
-	local var1_32 = arg0_32.displays[arg1_32 + 1]
-	local var2_32 = arg0_32.selected[var1_32.id]
+	local var1_34 = arg0_34.displays[arg1_34 + 1]
+	local var2_34 = arg0_34.selected[var1_34.id]
 
-	var0_32:Update(var1_32, var2_32)
+	var0_34:Update(var1_34, var2_34)
 end
 
-function var0_0.FlushShipList(arg0_33, arg1_33)
-	arg0_33.displays = {}
-
-	arg0_33:FilterShips(arg1_33, arg0_33.displays)
-	arg0_33:SortShips(arg0_33.displays)
-
-	local var0_33 = #arg0_33.displays
-
-	arg0_33.scrollrect:SetTotalCount(var0_33)
-	setActive(arg0_33.emptyTr, var0_33 <= 0)
-end
-
-function var0_0.FilterShips(arg0_34, arg1_34, arg2_34)
-	local var0_34 = arg0_34.lockFlags[arg0_34.mode]
-	local var1_34 = arg0_34.frequentlyUseFlags[arg0_34.mode]
-	local var2_34 = arg0_34.indexDatas[arg0_34.mode]
-
-	local function var3_34(arg0_35)
-		local var0_35 = not var0_34 or not not arg0_35:IsLocked()
-		local var1_35 = not var1_34 or not not arg0_35:IsPreferenceTag()
-		local var2_35 = ShipIndexConst.filterByType(arg0_35, var2_34.typeIndex)
-		local var3_35 = ShipIndexConst.filterByCamp(arg0_35, var2_34.campIndex)
-		local var4_35 = ShipIndexConst.filterByRarity(arg0_35, var2_34.rarityIndex)
-		local var5_35 = ShipIndexConst.filterByExtra(arg0_35, var2_34.extraIndex)
-
-		return var0_35 and var1_35 and var2_35 and var3_35 and var4_35 and var5_35
+function var0_0.onReturnItem(arg0_35, arg1_35, arg2_35)
+	if arg0_35.exited then
+		return
 	end
 
-	for iter0_34, iter1_34 in ipairs(arg1_34) do
-		if var3_34(iter1_34) then
-			table.insert(arg2_34, iter1_34)
+	local var0_35 = arg0_35.cards[arg2_35]
+
+	if var0_35 then
+		var0_35:Dispose()
+	end
+end
+
+function var0_0.FlushShipList(arg0_36, arg1_36)
+	arg0_36.displays = {}
+
+	arg0_36:FilterShips(arg1_36, arg0_36.displays)
+	arg0_36:SortShips(arg0_36.displays)
+
+	local var0_36 = #arg0_36.displays
+
+	arg0_36.scrollrect:SetTotalCount(var0_36)
+	setActive(arg0_36.emptyTr, var0_36 <= 0)
+end
+
+function var0_0.FilterShips(arg0_37, arg1_37, arg2_37)
+	local var0_37 = arg0_37.lockFlags[arg0_37.mode]
+	local var1_37 = arg0_37.frequentlyUseFlags[arg0_37.mode]
+	local var2_37 = arg0_37.indexDatas[arg0_37.mode]
+
+	local function var3_37(arg0_38)
+		local var0_38 = not var0_37 or not not arg0_38:IsLocked()
+		local var1_38 = not var1_37 or not not arg0_38:IsPreferenceTag()
+		local var2_38 = ShipIndexConst.filterByType(arg0_38, var2_37.typeIndex)
+		local var3_38 = ShipIndexConst.filterByCamp(arg0_38, var2_37.campIndex)
+		local var4_38 = ShipIndexConst.filterByRarity(arg0_38, var2_37.rarityIndex)
+		local var5_38 = ShipIndexConst.filterByExtra(arg0_38, var2_37.extraIndex)
+
+		return var0_38 and var1_38 and var2_38 and var3_38 and var4_38 and var5_38
+	end
+
+	for iter0_37, iter1_37 in ipairs(arg1_37) do
+		if var3_37(iter1_37) then
+			table.insert(arg2_37, iter1_37)
 		end
 	end
 end
 
-function var0_0.SortShips(arg0_36, arg1_36)
-	local var0_36 = arg0_36.indexDatas[arg0_36.mode]
-	local var1_36 = arg0_36.sortFlags[arg0_36.mode]
-	local var2_36 = var0_36.sortIndex
-	local var3_36, var4_36 = ShipIndexConst.getSortFuncAndName(var2_36, var1_36)
+function var0_0.SortShips(arg0_39, arg1_39)
+	local var0_39 = arg0_39.indexDatas[arg0_39.mode]
+	local var1_39 = arg0_39.sortFlags[arg0_39.mode]
+	local var2_39 = var0_39.sortIndex
+	local var3_39, var4_39 = ShipIndexConst.getSortFuncAndName(var2_39, var1_39)
 
-	table.insert(var3_36, 1, function(arg0_37)
-		return -arg0_37.activityNpc
+	table.insert(var3_39, 1, function(arg0_40)
+		return -arg0_40.activityNpc
 	end)
-	table.sort(arg1_36, CompareFuncs(var3_36))
+	table.sort(arg1_39, CompareFuncs(var3_39))
 
-	arg0_36.sortTxt.text = i18n(var4_36)
+	arg0_39.sortTxt.text = i18n(var4_39)
 end
 
-function var0_0.onBackPressed(arg0_38)
-	var0_0.super.onBackPressed(arg0_38)
+function var0_0.onBackPressed(arg0_41)
+	var0_0.super.onBackPressed(arg0_41)
 end
 
-function var0_0.Clear(arg0_39)
-	for iter0_39, iter1_39 in pairs(arg0_39.cards) do
-		iter1_39:Dispose()
+function var0_0.Clear(arg0_42)
+	for iter0_42, iter1_42 in pairs(arg0_42.cards) do
+		iter1_42:Dispose()
 	end
 
-	arg0_39.cards = {}
+	arg0_42.cards = {}
 end
 
-function var0_0.willExit(arg0_40)
-	arg0_40.titles = nil
+function var0_0.willExit(arg0_43)
+	arg0_43.titles = nil
 
-	if arg0_40.msgbox then
-		arg0_40.msgbox:Destroy()
+	if arg0_43.msgbox then
+		arg0_43.msgbox:Destroy()
 	end
 
-	arg0_40.msgbox = nil
+	arg0_43.msgbox = nil
 end
 
 return var0_0

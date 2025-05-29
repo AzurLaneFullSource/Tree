@@ -268,7 +268,7 @@ function var0_0.execute(arg0_1, arg1_1)
 				local var14_10 = {}
 
 				if var5_1.skin_id ~= 0 then
-					var7_1:updateSkinId(var5_1.skin_id)
+					var7_1:updateSkinId(var5_1.skin_id, 0)
 					table.insert(var14_10, {
 						count = 1,
 						type = DROP_TYPE_SKIN,

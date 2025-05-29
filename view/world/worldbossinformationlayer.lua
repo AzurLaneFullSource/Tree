@@ -90,6 +90,14 @@ function var0_0.didEnter(arg0_3)
 		local var0_9 = arg0_3.ShowBuffIndex == 1 and "switchOn" or "switchOff"
 
 		arg0_3.buffListAnimator:Play(var0_9, -1, 0)
+
+		if var0_9 == "switchOn" then
+			arg0_3.EquipmentBuffTF:SetAsLastSibling()
+		else
+			arg0_3.AdditionBuffTF:SetAsLastSibling()
+		end
+
+		arg0_3.switchBuffBtn:SetAsLastSibling()
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3.awardBtn, function()
 		arg0_3:GetAwardPanel().buffer:UpdateView(arg0_3:GetCurrentAttachment())

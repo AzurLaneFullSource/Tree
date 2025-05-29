@@ -131,7 +131,7 @@ function var0_0.TrackingSwitchShip(arg0_19)
 	end
 
 	local var1_19 = var0_19:GetFlagShip()
-	local var2_19 = var1_19.skinId
+	local var2_19 = var1_19:getSkinId()
 
 	if isa(var1_19, VirtualEducateCharShip) then
 		var2_19 = 0

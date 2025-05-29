@@ -9460,7 +9460,7 @@ _G.pg.base.gametip.show_chat_warning = {
 _G.pg.base.gametip.help_shipblueprintui = {
 	tip = {
 		{
-			info = "1. Starting Development:\nYou can begin development on a PR/DR ship once you meet her development requirements, which are shown at the center of the Shipyard screen when a ship has been selected.\nTo start developing a ship, select one and tap the Commence button. You can only develop 1 PR/DR ship at a time.\n\n2. Development Tasks:\nThe ship you've chosen to develop will unlock after you complete all her development tasks.\nAfter starting development, you will immediately gain access to the first task, and each subsequent task will unlock in order at 24-hour intervals.\nSome tasks may have prerequisites before you can begin making progress.\n\n3. Changing Your Development Target:\nWhile you cannot develop 2 ships at once, you can switch which one you're developing before you complete all tasks.\nAny progress you've made on your current development tasks, as well as the unlocked tasks themselves, will be saved if you choose to switch development targets.\nOnce you do this, you must wait 24 hours before you can change targets again.\n\n4. Completing Development:\nUpon completing all development tasks for a ship, she will join your dock and you unlock the ability to Enhance her.\nTo begin development on a new PR/DR ship, you must go to the Development Dock and select one. New development targets are not chosen automatically.\n\n5. Enhancing PR/DR Ships:\nIn contrast to ordinary ships, PR/DR ships require Blueprints to be Enhanced. Blueprints are mainly acquired through conducting research at the Research Academy.\nEnhancing a PR/DR ship will raise her stats, unlock new skills, and give her new abilities, similar to ordinary ships.\n6. Enhancing with Coins:\nSome PR/DR ships can also be Enhanced and undergo Fate Simulation with Coins as a substitute for Blueprints. \nThe Coin cost depends on how many times you've used this method of Enhancement previously in a day, as well as whether the ship is classified as a PR or a DR. The first 15 times each day are discounted.\nThe following tables list the Coin cost per number of Blueprints substituted:\n\nFor a PR ship:\n1 to 2: Free\n3 to 4: 90% discount\n5 to 7: 80% discount\n8 to 9: 60% discount\n10 to 15: 30% discount\n16 and onward: 0% discount; Blueprints cost 1,500 Coins each.\n\nFor a DR ship:\n1 to 2: Free\n3 to 6: 90% discount\n7 to 10: 80% discount\n11 to 15: 50% discount\n16 and onward: 0% discount; Blueprints cost 6,000 Coins each.\n\nThe game will automatically calculate the Coin cost for you when using this method of Enhancement. The Coin cost resets daily at 4:00 AM.\n\n7. PR/DR Ship Level Caps:\nPR/DR ships do not need to be Limit Broken to be able to reach level 100. However, past that, you must still use Cognitive Chips and Coins to further increase their level caps. \n\n8. Fate Simulation:\nOnce a PR/DR ship reaches Development Level 30, she can undergo Fate Simulation, etching a historical record of sorts into her hull to be more akin to regular ships.\nIn gameplay terms, Fate Simulation will allow you to use additional Blueprints to further enhance the capabilities of your PR/DR ship.\nFate Simulation is done in 5 steps. The first 4 steps grant a boost to the ship's Luck stat, and the final 5th step grants an upgrade to one of her skills.\nYou can also use Coins in place of Blueprints. Please refer to section 6 above for more details.\n\n9. Battle Simulations:\nYou can preview the performance of certain PR/DRs through the Battle Simulation mode.\nTo access it, simply select a ship and tap the Battle Simulation button. You will then be sent into a special battle with the ship you selected.\n\nPlease note that the ships' stats and loadouts are preset in this mode, and may not accurately reflect their real performance.",
+			info = "\n1. Starting Development:\nYou can begin development on a PR/DR shipgirl once you meet her development requirements, which are shown at the center of the Shipyard screen when a shipgirl has been selected.\nTo start developing a shipgirl, select one and tap the Commence button. You can only develop 1 PR or DR shipgirl at a time.\n\n2. Development Tasks:\nThe shipgirl you've chosen to develop will unlock after you complete all her development tasks.\nAfter starting development, you will immediately gain access to the first task, and each subsequent task will unlock in order at 24-hour intervals.\nSome tasks may have prerequisites before you can begin making progress.\n\n3. Changing Your Development Target:\nAlthough you cannot develop 2 shipgirls at once, you are able to switch which one you're currently developing before you complete all tasks.\nAny progress you've made on your current development tasks, as well as the unlocked tasks themselves, will be saved if you choose to switch development targets.\nOnce you do this, you must wait 24 hours before you can change targets again.\n\n4. Completing Development:\nUpon completing all development tasks for a shipgirl, she will join your dock and you unlock the ability to Enhance her.\nTo begin development on a new PR or DR shipgirl, you must go to the Development Dock and select one. New development targets are not chosen automatically.\n\n5. Enhancing PR Or DR Ships:\nIn contrast to ordinary shipgirls, PR/DR shipgirls require Blueprints to be Enhanced. Blueprints are mainly acquired through conducting research at the Research Academy.\nEnhancing a PR/DR shipgirl will raise her stats, unlock new skills, and give her new abilities, similar to ordinary shipgirls.\n6. Enhancing with Coins:\nSome PR/DR shipgirls can also be Enhanced and undergo Fate Simulation with Coins as a substitute for Blueprints. \nThe Coin cost depends on how many times you've used this method of Enhancement previously in a day, as well as whether the shipgirl is classified as a PR or a DR. The first 15 times each day are discounted.\nThe following tables list the Coin cost per number of Blueprints substituted:\n\nFor a PR shipgirl:\n1 to 2: Free\n3 to 4: 90% discount\n5 to 7: 80% discount\n8 to 9: 60% discount\n10 to 15: 30% discount\n16 and onward: 0% discount; Blueprints cost 1,500 Coins each.\n\nFor a DR shipgirl:\n1 to 2: Free\n3 to 6: 90% discount\n7 to 10: 80% discount\n11 to 15: 50% discount\n16 and onward: 0% discount; Blueprints cost 6,000 Coins each.\n\nThe game will automatically calculate the Coin cost for you when using this method of Enhancement. The Coin cost resets daily at 4:00 AM.\n\n7. PR/DR Shipgirl Level Caps:\nPR/DR shipgirls do not need to be Limit Broken to be able to reach level 100. However, past that, you must still use Cognitive Chips and Coins to further increase their level caps. \n\n8. Fate Simulation:\nOnce a PR/DR shipgirl reaches Development Level 30, she can undergo Fate Simulation, etching a historical record of sorts into her hull to be more akin to a standard shipgirl.\nIn gameplay terms, Fate Simulation will allow you to use additional Blueprints to further enhance the capabilities of your PR/DR shipgirl.\nFate Simulation is done in 5 steps. The first 4 steps grant a boost to the shipgirl's Luck stat, and the final 5th step grants an upgrade to one of her skills.\nYou can also use Coins in place of Blueprints. Please refer to section 6 above for more details.\n\n9. Battle Simulations:\nYou can preview the performance of certain PR/DR shipgirls through the Battle Simulation mode.\nTo access it, simply select a shipgirl and tap the Battle Simulation button. You will then be sent into a special battle with the shipgirl you selected.\n\nPlease note that the shipgirls' stats and loadouts are preset in this mode, and may not accurately reflect their real performance.\n\n- Skin Projection Overview -\n1. The skin projection feature unlocks once a PR/DR shipgirl reaches level 100.\n2. This will give you access to personal missions. Completing them will allow you to create a skin projection for the shipgirl in question.\n3. The skin projections you create can be applied on the secretary slots on the main menu.\n4. You can manage your skin projections from the Shipyard or from the details screen for the shipgirl who has it.\n",
 		},
 	},
 }
@@ -18477,6 +18477,10 @@ _G.pg.base.gametip.maid_task_tips1 = {
 	},
 }
 
+_G.pg.base.gametip.shop_akashi_pick_title = {
+	tip = "Akashi\nRecommends",
+}
+
 _G.pg.base.gametip.shop_diamond_title = {
 	tip = "Gems",
 }
@@ -19142,6 +19146,26 @@ _G.pg.base.gametip.battlepass_main_help_2504 = {
 }
 
 _G.pg.base.gametip.cruise_task_help_2504 = {
+	tip = {
+		{
+			info = "- Regarding Cruise Missions - \n· Two types of missions will be released at the same time at the start of the campaign season:\na) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.\nb) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.\n\n· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.\n\n· You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.\nWe do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.\nAny purchased Cruise Mission Vouchers will remain even after the campaign season ends.",
+		},
+	},
+}
+
+_G.pg.base.gametip.battlepass_main_tip_2506 = {
+	tip = "Complete seasonal missions <icon name=pt w=0.5 h=0.5/> during the 2025.6.1 - 2025.7.31 Cruise Mission season and obtain rewards such as <color=#854747>Grenville META</color> and more!",
+}
+
+_G.pg.base.gametip.battlepass_main_help_2506 = {
+	tip = {
+		{
+			info = "Cruise Missions Seasonal Campaign\n2025/6/1 00:00 – 2025/7/31 23:59\n\n- Overview -\n\\\"\"Cruise Missions\\\"\" is a seasonal campaign where you can complete special missions, collect Progress Pts., and obtain great rewards for reaching certain Progress milestones.\nAdditionally, you can unlock an additional set of \\\"\"Fair Winds Cruise\\\"\" rewards by purchasing the \\\"\"Fair Winds Cruise Pass\\\"\" item from Akashi's shop.\nGrenville META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfit for Hatsuzuki, \\\"\"Luxurious Celebration Time.\\\"\"\n\n- How to Play -\n· Two types of missions will be released at the same time at the start of the campaign season:\na) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.\nb) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.\n· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.\n· If you purchase a Fair Winds Cruise Pass, you will automatically receive 15 levels worth of progress (1500 Progress Pts).\n· You can receive rewards for reaching certain Progress milestones. There are two types of rewards:\na) Cruise Rewards - Rewards that can be obtained based on the total number of accumulated Progress Pts. There are a total of 100 levels.\nb) Fair Winds Rewards - An additional set of rewards that will be unlocked when you purchase a Fair Winds Cruise Pass. As with the regular Cruise Rewards, there are a total of 100 levels, and they can be collected alongside Cruise Rewards at the same Progress level.\n· When the campaign season ends, your Progress Pts will be reset.\n\n- Tips - \n· Play at your own pace\nCruise Missions have a total of 100 Progress levels, and are not meant to be cleared in one session. We recommend that you complete them at your own pace.\n\n· Fair Winds Cruise Pass\nIf you purchase a Fair Winds Cruise Pass from Akashi's shop, you will automatically earn 1500 Progress Pts and unlock access to valuable rewards. Furthermore, there is an exclusive outfit available only through the Fair Winds rewards, so please plan accordingly.\n\n· Skipping Missions (not recommended)\nYou can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.\nWe do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.\nAny purchased Cruise Mission Vouchers will remain even after the campaign season ends.",
+		},
+	},
+}
+
+_G.pg.base.gametip.cruise_task_help_2506 = {
 	tip = {
 		{
 			info = "- Regarding Cruise Missions - \n· Two types of missions will be released at the same time at the start of the campaign season:\na) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.\nb) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.\n\n· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.\n\n· You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.\nWe do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.\nAny purchased Cruise Mission Vouchers will remain even after the campaign season ends.",
@@ -26941,6 +26965,10 @@ _G.pg.base.gametip.cruise_title_2504 = {
 	tip = "Seasonal Missions – S22",
 }
 
+_G.pg.base.gametip.cruise_title_2506 = {
+	tip = "Seasonal Missions – S23",
+}
+
 _G.pg.base.gametip.battlepass_main_time_title = {
 	tip = "Time Remaining:",
 }
@@ -29043,5 +29071,112 @@ _G.pg.base.gametip.storyline_goto = {
 
 _G.pg.base.gametip.holiday_villa_locked = {
 	tip = "Unlocks after completing the <color=#92fc63>The Villa Vacation</color> event.",
+}
+
+_G.pg.base.gametip.tech_shadow_change_button_1 = {
+	tip = "Skin Projection",
+}
+
+_G.pg.base.gametip.tech_shadow_change_button_2 = {
+	tip = "Shipgirl\nDevelopment",
+}
+
+_G.pg.base.gametip.tech_shadow_limit_text = {
+	tip = "Unlocks at Level $1",
+}
+
+_G.pg.base.gametip.tech_shadow_commit_tip = {
+	tip = "This action will spend <color=#92fc63>$1</color>. Continue?",
+}
+
+_G.pg.base.gametip.shadow_scene_name = {
+	tip = "Skin Projection",
+}
+
+_G.pg.base.gametip.shadow_unlock_tip = {
+	tip = "Complete skin projection missions to unlock the feature.",
+}
+
+_G.pg.base.gametip.shadow_skin_change_success = {
+	tip = "Successfully changed the currently projected skin.",
+}
+
+_G.pg.base.gametip.add_skin_secretary_ship = {
+	tip = "Add to Secretary Slot",
+}
+
+_G.pg.base.gametip.add_skin_random_secretary_ship_list = {
+	tip = "Add Random Secretary",
+}
+
+_G.pg.base.gametip.choose_secretary_change_to_this_ship = {
+	tip = "Please select a slot.",
+}
+
+_G.pg.base.gametip.random_ship_custom_mode_add_shadow_complete = {
+	tip = "Shipgirl has been added to your random secretary list.",
+}
+
+_G.pg.base.gametip.random_ship_custom_mode_remove_shadow_complete = {
+	tip = "Shipgirl has been removed from your random secretary list.",
+}
+
+_G.pg.base.gametip.choose_secretary_change_title = {
+	tip = "Secretary",
+}
+
+_G.pg.base.gametip.ship_random_secretary_tag = {
+	tip = "Random Secretary",
+}
+
+_G.pg.base.gametip.projection_help = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/projection_help1",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
+
+_G.pg.base.gametip.littleaijier_npc = {
+	tip = {
+		{
+			info = "- Overview -\nDuring the event, Little Ägir will provisionally join your fleet. Fight boss fleets to earn Trust. Collect enough Trust to have Little Ägir permanently join your fleet!",
+		},
+		{
+			info = "- How to Play -\n· Collect Trust during the event period to have Little Ägir permanently join your fleet.\n· Trust can be gathered by defeating the boss fleet of campaign maps starting from Chapter 3 on normal difficulty and event maps (not including War Archives). If Little Ägir is in the fleet that defeats the boss and she is still afloat, you'll receive double the amount of Trust.\n· The Trust you've collected can be turned in for additional rewards on the event banner.",
+		},
+		{
+			info = "· You will not be able to give a Promise Ring to Little Ägir until you have formally recruited her to the fleet. You will also not be able to Retire her or use her as Enhancement or Limit Break material.",
+		},
+		{
+			info = "· If Little Ägir has not been formally recruited by the end of the event, she will leave the port.",
+		},
+		{
+			info = "· Rewards for reaching certain amounts of Trust will unlock in phases, one phase per day up to May 1st.",
+		},
+		{
+			info = "· Little Ägir cannot participate in Operation Siren or META Showdowns until she has been formally recruited.",
+		},
+		{
+			info = "· Little Ägir cannot participate in Guild Bosses until she has been formally recruited.￼",
+		},
+	},
 }
 

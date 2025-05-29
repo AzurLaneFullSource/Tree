@@ -137,6 +137,7 @@ function var0_0.execute(arg0_1, arg1_1)
 				arg0_1:sendNotification(GAME.TRACKING_ERROR, {
 					chapter = var8_1
 				})
+				pg.TrackerMgr.GetInstance():Tracking(TRACKING_STRIKE_FAILD)
 
 				return
 			end

@@ -146,7 +146,7 @@ function var0_0.Reload(arg0_19, arg1_19)
 	arg0_19.painting = var2_19
 	arg0_19.state = var0_19
 	arg0_19.bgToggle = PlayerPrefs.GetInt("paint_hide_other_obj_" .. arg0_19.painting.paintingName, 0)
-	arg0_19.skinId = arg1_19.skinId
+	arg0_19.skinId = arg1_19:getSkinId()
 end
 
 function var0_0.Refresh(arg0_20, arg1_20, arg2_20)
@@ -161,7 +161,7 @@ function var0_0.ShouldReLoad(arg0_21, arg1_21)
 	local var0_21 = var0_0.GetAssistantStatus(arg1_21)
 	local var1_21 = PlayerPrefs.GetInt("paint_hide_other_obj_" .. arg0_21.painting.paintingName, 0)
 
-	if arg0_21.skinId == arg0_21.ship.skinId and arg1_21.id == arg0_21.ship.id and arg0_21.state == var0_21 and arg0_21.bgToggle == var1_21 and arg1_21:GetRecordPosKey() == arg0_21.ship:GetRecordPosKey() and not arg0_21.reloadOnResume then
+	if arg0_21.skinId == arg0_21.ship:getSkinId() and arg1_21.id == arg0_21.ship.id and arg0_21.state == var0_21 and arg0_21.bgToggle == var1_21 and arg1_21:GetRecordPosKey() == arg0_21.ship:GetRecordPosKey() and not arg0_21.reloadOnResume then
 		return false
 	else
 		if arg0_21.reloadOnResume then

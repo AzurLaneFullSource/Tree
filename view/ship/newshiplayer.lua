@@ -415,7 +415,7 @@ function var0_0.DisplayWord(arg0_19)
 	else
 		local var6_19
 
-		var6_19, var2_19, var1_19 = ShipWordHelper.GetWordAndCV(arg0_19._shipVO.skinId, ShipWordHelper.WORD_TYPE_UNLOCK)
+		var6_19, var2_19, var1_19 = ShipWordHelper.GetWordAndCV(arg0_19._shipVO:getSkinId(), ShipWordHelper.WORD_TYPE_UNLOCK)
 	end
 
 	setWidgetText(arg0_19._dialogue, SwitchSpecialChar(var1_19, true), "Text")

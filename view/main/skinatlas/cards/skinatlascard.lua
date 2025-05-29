@@ -28,11 +28,9 @@ function var0_0.Update(arg0_2, arg1_2, arg2_2)
 
 	local var0_2 = arg1_2:getConfig("ship_group")
 	local var1_2 = getProxy(BayProxy):findShipsByGroup(var0_2)
-	local var2_2 = _.any(var1_2, function(arg0_4)
-		return ShipGroup.IsSameChangeSkinGroup(arg0_4.skinId, arg1_2.id) or arg0_4.skinId == arg1_2.id
-	end)
+	local var2_2 = not arg1_2:WithoutUse()
 
-	setActive(arg0_2.usingTr, #var1_2 > 0 and var2_2)
+	setActive(arg0_2.usingTr, var2_2)
 
 	local var3_2 = getProxy(CollectionProxy).shipGroups[var0_2] == nil
 
@@ -42,7 +40,7 @@ function var0_0.Update(arg0_2, arg1_2, arg2_2)
 
 	arg0_2.name.text = shortenString(var4_2, 7)
 
-	local var5_2 = ShipGroup.GetChangeSkinData(arg0_2.skin.id)
+	local var5_2 = ShipSkin.GetChangeSkinData(arg0_2.skin.id)
 
 	setActive(arg0_2.changeSkinUI, var5_2 and true or false)
 
@@ -57,51 +55,51 @@ function var0_0.Update(arg0_2, arg1_2, arg2_2)
 	arg0_2:FlushTags(arg1_2:getConfig("tag"))
 end
 
-function var0_0.changeSkinNext(arg0_5)
-	if ShipGroup.GetChangeSkinData(arg0_5.skin.id) then
-		local var0_5 = ShipGroup.GetChangeSkinNextId(arg0_5.skin.id)
-		local var1_5 = ShipSkin.New({
-			id = var0_5
+function var0_0.changeSkinNext(arg0_4)
+	if ShipSkin.GetChangeSkinData(arg0_4.skin.id) then
+		local var0_4 = ShipSkin.GetChangeSkinNextId(arg0_4.skin.id)
+		local var1_4 = ShipSkin.New({
+			id = var0_4
 		})
 
-		arg0_5:Update(var1_5, arg0_5.index)
+		arg0_4:Update(var1_4, arg0_4.index)
 	end
 end
 
-function var0_0.FlushTags(arg0_6, arg1_6)
-	local var0_6 = -10
-	local var1_6 = arg0_6.tags[1]
+function var0_0.FlushTags(arg0_5, arg1_5)
+	local var0_5 = -10
+	local var1_5 = arg0_5.tags[1]
 
-	for iter0_6 = #arg0_6.tags + 1, #arg1_6 do
-		local var2_6 = Object.Instantiate(var1_6, var1_6.parent)
+	for iter0_5 = #arg0_5.tags + 1, #arg1_5 do
+		local var2_5 = Object.Instantiate(var1_5, var1_5.parent)
 
-		arg0_6.tags[iter0_6] = var2_6
+		arg0_5.tags[iter0_5] = var2_5
 	end
 
-	for iter1_6 = 1, #arg1_6 do
-		local var3_6 = arg0_6.tags[iter1_6]
+	for iter1_5 = 1, #arg1_5 do
+		local var3_5 = arg0_5.tags[iter1_5]
 
-		setActive(var3_6, true)
-		LoadSpriteAtlasAsync("SkinIcon", "type_" .. ShipSkin.Tag2Name(arg1_6[iter1_6]), function(arg0_7)
-			if arg0_6.exited then
+		setActive(var3_5, true)
+		LoadSpriteAtlasAsync("SkinIcon", "type_" .. ShipSkin.Tag2Name(arg1_5[iter1_5]), function(arg0_6)
+			if arg0_5.exited then
 				return
 			end
 
-			var3_6:GetComponent(typeof(Image)).sprite = arg0_7
+			var3_5:GetComponent(typeof(Image)).sprite = arg0_6
 		end)
 
-		local var4_6 = var1_6.localPosition.y - (iter1_6 - 1) * (var1_6.sizeDelta.x + var0_6)
+		local var4_5 = var1_5.localPosition.y - (iter1_5 - 1) * (var1_5.sizeDelta.x + var0_5)
 
-		var3_6.localPosition = Vector3(var3_6.localPosition.x, var4_6, 0)
+		var3_5.localPosition = Vector3(var3_5.localPosition.x, var4_5, 0)
 	end
 
-	for iter2_6 = #arg1_6 + 1, #arg0_6.tags do
-		setActive(arg0_6.tags[iter2_6], false)
+	for iter2_5 = #arg1_5 + 1, #arg0_5.tags do
+		setActive(arg0_5.tags[iter2_5], false)
 	end
 end
 
-function var0_0.Dispose(arg0_8)
-	arg0_8.exited = true
+function var0_0.Dispose(arg0_7)
+	arg0_7.exited = true
 end
 
 return var0_0

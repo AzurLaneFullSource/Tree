@@ -47717,6 +47717,179 @@ pg.equip_skin_template = {
 			"wash"
 		}
 	},
+	[2097] = {
+		hit_sfx = "",
+		bullet_name = "zidan_guangying",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		name = "Convergence Shell",
+		themeid = 107,
+		desc = "A symphony of light and dark in the midst of supercriticality.",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		orbit_ui = "",
+		orbit_combat_anima_change = "",
+		icon = "96821",
+		orbit_combat = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		miss_sfx = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "zidan_guangying_hit",
+		id = 2097,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			1,
+			2,
+			3
+		},
+		weapon_ids = {
+			101,
+			101
+		}
+	},
+	[2098] = {
+		hit_sfx = "",
+		bullet_name = "yulei_liangchi",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		name = "Paradox Torpedo",
+		themeid = 107,
+		desc = "A paradoxical measure of time and space – it gauges existence and nonexistence.",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		orbit_ui = "",
+		orbit_combat_anima_change = "",
+		icon = "96822",
+		orbit_combat = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		miss_sfx = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "yulei_liangchi_hit",
+		id = 2098,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			5,
+			13
+		},
+		weapon_ids = {
+			107,
+			107
+		}
+	},
+	[2099] = {
+		hit_sfx = "",
+		bullet_name = "paodan_rimian",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		name = "Spiral Sundial Shell",
+		themeid = 107,
+		desc = "Its base, emblazoned with a spiral, represents the flow of time and eternity.",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		orbit_ui = "",
+		orbit_combat_anima_change = "",
+		icon = "96823",
+		orbit_combat = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		miss_sfx = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "paodan_rimian_hit",
+		id = 2099,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	},
+	[2100] = {
+		hit_sfx = "",
+		bullet_name = "",
+		name = "Ring of Antinomy",
+		type = 1,
+		preview_hit_distance = 0,
+		themeid = 107,
+		orbit_ui = "shebei_fanhuanui",
+		desc = "A loop made up of opposite colors. Contradictory, yet in unison.",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = false,
+		miss_sfx = "",
+		orbit_combat_anima_change = "",
+		icon = "96824",
+		orbit_combat = "shebei_fanhuan",
+		orbit_ui_back = 1,
+		mirror = 0,
+		rarity = 4,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 2100,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				-0.2,
+				-1,
+				-0.91
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				-10,
+				100
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	},
 	[3002] = {
 		hit_sfx = "",
 		bullet_name = "",
@@ -50164,6 +50337,10 @@ pg.equip_skin_template = {
 		2094,
 		2095,
 		2096,
+		2097,
+		2098,
+		2099,
+		2100,
 		3002,
 		3004,
 		3005,

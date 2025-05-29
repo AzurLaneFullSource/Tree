@@ -4831,3 +4831,13 @@ function ArabicToRoman(arg0_343)
 
 	return var2_343
 end
+
+function stringInset(arg0_345, ...)
+	for iter0_345, iter1_345 in ipairs({
+		...
+	}) do
+		arg0_345 = string.gsub(arg0_345, "$" .. iter0_345, iter1_345)
+	end
+
+	return arg0_345
+end

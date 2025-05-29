@@ -17,17 +17,16 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	setActive(arg0_1._tf, false)
 end
 
-function var0_0.setShipData(arg0_2, arg1_2, arg2_2)
+function var0_0.setShipData(arg0_2, arg1_2)
 	arg0_2._skinId = arg1_2
-	arg0_2._shipId = arg2_2
 
-	local var0_2 = ShipGroup.GetChangeSkinGroupId(arg0_2._skinId)
-	local var1_2 = ShipGroup.GetStoreChangeSkinId(var0_2, arg0_2._shipId)
+	local var0_2 = ShipSkin.GetChangeSkinGroupId(arg0_2._skinId)
+	local var1_2 = ShipSkin.GetStoreChangeSkinId(var0_2)
 
 	arg0_2._toggleIndex = 1
 
 	if var1_2 then
-		arg0_2._toggleIndex = ShipGroup.GetChangeSkinIndex(var1_2)
+		arg0_2._toggleIndex = ShipSkin.GetChangeSkinIndex(var1_2)
 	end
 
 	setActive(arg0_2._tf, true)
@@ -36,7 +35,7 @@ end
 
 function var0_0.setSkinData(arg0_3, arg1_3)
 	arg0_3._skinId = arg1_3
-	arg0_3._toggleIndex = ShipGroup.GetChangeSkinIndex(arg1_3)
+	arg0_3._toggleIndex = ShipSkin.GetChangeSkinIndex(arg1_3)
 
 	setActive(arg0_3._tf, true)
 	arg0_3:updateUI()

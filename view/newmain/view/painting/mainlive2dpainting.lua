@@ -75,17 +75,7 @@ function var0_0.ResetState(arg0_6)
 end
 
 function var0_0.AdJustOrderInLayer(arg0_7, arg1_7)
-	local var0_7 = arg0_7.container:GetComponent(typeof(Canvas))
-
-	if var0_7 and var0_7.overrideSorting and var0_7.sortingOrder ~= 0 then
-		local var1_7 = arg1_7._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
-		local var2_7 = var0_7.sortingOrder
-		local var3_7 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
-
-		ReflectionHelp.RefSetProperty(var3_7, "SortingOrder", var1_7, var2_7)
-
-		arg0_7.isModifyOrder = true
-	end
+	arg1_7:setSortingLayer(LayerWeightConst.L2D_DEFAULT_LAYER)
 end
 
 function var0_0.ResetOrderInLayer(arg0_8)
@@ -249,7 +239,7 @@ function var0_0.PlayCV(arg0_18, arg1_18, arg2_18, arg3_18, arg4_18)
 		arg0_18.seTimer:Start()
 	end
 
-	local var0_18 = ShipWordHelper.RawGetCVKey(arg0_18.ship.skinId)
+	local var0_18 = ShipWordHelper.RawGetCVKey(arg0_18.ship:getSkinId())
 	local var1_18 = pg.CriMgr.GetCVBankName(var0_18)
 
 	arg0_18.cvLoader:Load(var1_18, arg3_18, arg2_18, arg4_18)

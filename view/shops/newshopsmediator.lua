@@ -1,5 +1,6 @@
 local var0_0 = class("NewShopsMediator", import("..base.ContextMediator"))
 
+var0_0.FAST_BUILD_ITEM_ID = 61004
 var0_0.ON_SHOPPING = "NewShopsMediator:ON_SHOPPING"
 var0_0.REFRESH_STREET_SHOP = "NewShopsMediator:REFRESH_STREET_SHOP"
 var0_0.REFRESH_MILITARY_SHOP = "NewShopsMediator:REFRESH_MILITARY_SHOP"

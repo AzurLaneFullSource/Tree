@@ -34,10 +34,7 @@ function var0_0.preload(arg0_3, arg1_3)
 			local var1_5 = "ShipDetailView"
 
 			if not var0_5:HasCacheUI(var1_5) then
-				var0_5:GetUI(var1_5, true, function(arg0_6)
-					var0_5:ReturnUI(var1_5, arg0_6)
-					arg0_5()
-				end)
+				var0_5:PreloadUI(var1_5, arg0_5)
 			else
 				arg0_5()
 			end
@@ -45,448 +42,450 @@ function var0_0.preload(arg0_3, arg1_3)
 	}, arg1_3)
 end
 
-function var0_0.setPlayer(arg0_7, arg1_7)
-	arg0_7.player = arg1_7
+function var0_0.setPlayer(arg0_6, arg1_6)
+	arg0_6.player = arg1_6
 
-	arg0_7:GetShareData():SetPlayer(arg1_7)
+	arg0_6:GetShareData():SetPlayer(arg1_6)
 end
 
-function var0_0.setShipList(arg0_8, arg1_8)
-	arg0_8.shipList = arg1_8
+function var0_0.setShipList(arg0_7, arg1_7)
+	arg0_7.shipList = arg1_7
 end
 
-function var0_0.setShip(arg0_9, arg1_9)
-	arg0_9:GetShareData():SetShipVO(arg1_9)
+function var0_0.setShip(arg0_8, arg1_8)
+	arg0_8:GetShareData():SetShipVO(arg1_8)
 
-	local var0_9 = false
+	local var0_8 = false
 
-	if arg0_9.shipVO and arg0_9.shipVO.id ~= arg1_9.id then
-		arg0_9:StopPreVoice()
+	if arg0_8.shipVO and arg0_8.shipVO.id ~= arg1_8.id then
+		arg0_8:StopPreVoice()
 
-		var0_9 = true
+		var0_8 = true
 	end
 
-	arg0_9.shipVO = arg1_9
+	arg0_8.shipVO = arg1_8
 
-	setActive(arg0_9.npcFlagTF, arg1_9:isActivityNpc())
-	arg0_9:setToggleEnable()
+	setActive(arg0_8.npcFlagTF, arg1_8:isActivityNpc())
+	arg0_8:setToggleEnable()
 
-	local var1_9 = pg.ship_skin_template[arg0_9.shipVO.skinId]
+	local var1_8 = pg.ship_skin_template[arg0_8.shipVO:getSkinId()]
 
-	arg0_9.isSpBg = var1_9.rarity_bg and var1_9.rarity_bg ~= ""
+	arg0_8.isSpBg = var1_8.rarity_bg and var1_8.rarity_bg ~= ""
 
-	arg0_9:updatePreference(arg1_9)
-	arg0_9.shipDetailView:ActionInvokeExclusive("UpdateUI")
-	arg0_9.shipFashionView:ActionInvokeExclusive("UpdateUI")
-	arg0_9.shipEquipView:ActionInvokeExclusive("UpdateUI")
+	arg0_8:updatePreference(arg1_8)
+	arg0_8.shipDetailView:ActionInvokeExclusive("UpdateUI")
+	arg0_8.shipFashionView:ActionInvokeExclusive("UpdateUI")
+	arg0_8.shipEquipView:ActionInvokeExclusive("UpdateUI")
 
-	if var0_9 and not arg0_9:checkToggleActive(ShipViewConst.currentPage) then
-		triggerToggle(arg0_9.detailToggle, true)
-	end
-end
-
-function var0_0.equipmentChange(arg0_10)
-	if arg0_10.shipDetailView then
-		arg0_10.shipDetailView:ActionInvoke("UpdateUI")
+	if var0_8 and not arg0_8:checkToggleActive(ShipViewConst.currentPage) then
+		triggerToggle(arg0_8.detailToggle, true)
 	end
 end
 
-function var0_0.setToggleEnable(arg0_11)
-	for iter0_11, iter1_11 in pairs(arg0_11.togglesList) do
-		setActive(iter1_11, arg0_11:checkToggleActive(iter0_11))
+function var0_0.equipmentChange(arg0_9)
+	if arg0_9.shipDetailView then
+		arg0_9.shipDetailView:ActionInvoke("UpdateUI")
 	end
-
-	setActive(arg0_11.technologyToggle, arg0_11.shipVO:isBluePrintShip())
-	SetActive(arg0_11.metaToggle, arg0_11.shipVO:isMetaShip())
 end
 
-function var0_0.checkToggleActive(arg0_12, arg1_12)
-	if arg1_12 == ShipViewConst.PAGE.DETAIL then
+function var0_0.setToggleEnable(arg0_10)
+	for iter0_10, iter1_10 in pairs(arg0_10.togglesList) do
+		setActive(iter1_10, arg0_10:checkToggleActive(iter0_10))
+	end
+
+	setActive(arg0_10.technologyToggle, arg0_10.shipVO:isBluePrintShip())
+	SetActive(arg0_10.metaToggle, arg0_10.shipVO:isMetaShip())
+end
+
+function var0_0.checkToggleActive(arg0_11, arg1_11)
+	if arg1_11 == ShipViewConst.PAGE.DETAIL then
 		return true
-	elseif arg1_12 == ShipViewConst.PAGE.EQUIPMENT then
+	elseif arg1_11 == ShipViewConst.PAGE.EQUIPMENT then
 		return true
-	elseif arg1_12 == ShipViewConst.PAGE.INTENSIFY then
-		return not arg0_12.shipVO:isTestShip() and not arg0_12.shipVO:isBluePrintShip() and not arg0_12.shipVO:isMetaShip()
-	elseif arg1_12 == ShipViewConst.PAGE.UPGRADE then
-		return not arg0_12.shipVO:isTestShip() and not arg0_12.shipVO:isBluePrintShip() and not arg0_12.shipVO:isMetaShip()
-	elseif arg1_12 == ShipViewConst.PAGE.REMOULD then
-		return not arg0_12.shipVO:isTestShip() and not arg0_12.shipVO:isBluePrintShip() and pg.ship_data_trans[arg0_12.shipVO.groupId] and not arg0_12.shipVO:isMetaShip()
-	elseif arg1_12 == ShipViewConst.PAGE.FASHION then
-		if not arg0_12:hasFashion() then
+	elseif arg1_11 == ShipViewConst.PAGE.INTENSIFY then
+		return not arg0_11.shipVO:isTestShip() and not arg0_11.shipVO:isBluePrintShip() and not arg0_11.shipVO:isMetaShip()
+	elseif arg1_11 == ShipViewConst.PAGE.UPGRADE then
+		return not arg0_11.shipVO:isTestShip() and not arg0_11.shipVO:isBluePrintShip() and not arg0_11.shipVO:isMetaShip()
+	elseif arg1_11 == ShipViewConst.PAGE.REMOULD then
+		return not arg0_11.shipVO:isTestShip() and not arg0_11.shipVO:isBluePrintShip() and pg.ship_data_trans[arg0_11.shipVO.groupId] and not arg0_11.shipVO:isMetaShip()
+	elseif arg1_11 == ShipViewConst.PAGE.FASHION then
+		if not arg0_11:hasFashion() then
 			return false
 		else
-			local var0_12
-			local var1_12
+			local var0_11
+			local var1_11
 
 			if not PaintingGroupConst.IsPaintingNeedCheck() then
-				var1_12 = false
+				var1_11 = false
 			else
-				local var2_12 = PaintingGroupConst.GetPaintingNameListByShipVO(arg0_12.shipVO)
+				local var2_11 = PaintingGroupConst.GetPaintingNameListByShipVO(arg0_11.shipVO)
 
-				var1_12 = PaintingGroupConst.CalcPaintingListSize(var2_12) > 0
+				var1_11 = PaintingGroupConst.CalcPaintingListSize(var2_11) > 0
 			end
 
-			return not var1_12
+			return not var1_11
 		end
 	else
 		return false
 	end
 end
 
-function var0_0.setSkinList(arg0_13, arg1_13)
-	arg0_13.shipFashionView:ActionInvoke("SetSkinList", arg1_13)
+function var0_0.setSkinList(arg0_12, arg1_12)
+	arg0_12.shipFashionView:ActionInvoke("SetSkinList", arg1_12)
 end
 
-function var0_0.updateLock(arg0_14)
-	arg0_14.shipDetailView:ActionInvoke("UpdateLock")
+function var0_0.updateLock(arg0_13)
+	arg0_13.shipDetailView:ActionInvoke("UpdateLock")
 end
 
-function var0_0.updatePreferenceTag(arg0_15)
-	arg0_15.shipDetailView:ActionInvoke("UpdatePreferenceTag")
+function var0_0.updatePreferenceTag(arg0_14)
+	arg0_14.shipDetailView:ActionInvoke("UpdatePreferenceTag")
 end
 
-function var0_0.updateFashionTag(arg0_16)
-	arg0_16.shipDetailView:ActionInvoke("UpdateFashionTag")
+function var0_0.updateFashionTag(arg0_15)
+	arg0_15.shipDetailView:ActionInvoke("UpdateFashionTag")
 end
 
-function var0_0.closeRecordPanel(arg0_17)
-	arg0_17.shipDetailView:ActionInvoke("CloseRecordPanel")
+function var0_0.closeRecordPanel(arg0_16)
+	arg0_16.shipDetailView:ActionInvoke("CloseRecordPanel")
 end
 
-function var0_0.updateRecordEquipments(arg0_18, arg1_18)
-	arg0_18.shipDetailView:UpdateRecordEquipments(arg1_18)
-	arg0_18.shipDetailView:UpdateRecordSpWeapons(arg1_18)
+function var0_0.updateRecordEquipments(arg0_17, arg1_17)
+	arg0_17.shipDetailView:UpdateRecordEquipments(arg1_17)
+	arg0_17.shipDetailView:UpdateRecordSpWeapons(arg1_17)
 end
 
-function var0_0.setModPanel(arg0_19, arg1_19)
-	arg0_19.modPanel = arg1_19
+function var0_0.setModPanel(arg0_18, arg1_18)
+	arg0_18.modPanel = arg1_18
 end
 
-function var0_0.setMaxLevelHelpFlag(arg0_20, arg1_20)
-	arg0_20.maxLevelHelpFlag = arg1_20
+function var0_0.setMaxLevelHelpFlag(arg0_19, arg1_19)
+	arg0_19.maxLevelHelpFlag = arg1_19
 end
 
-function var0_0.checkMaxLevelHelp(arg0_21)
-	if not arg0_21.maxLevelHelpFlag and arg0_21.shipVO and arg0_21.shipVO:isReachNextMaxLevel() then
-		arg0_21:openHelpPage()
+function var0_0.checkMaxLevelHelp(arg0_20)
+	if not arg0_20.maxLevelHelpFlag and arg0_20.shipVO and arg0_20.shipVO:isReachNextMaxLevel() then
+		arg0_20:openHelpPage()
 
-		arg0_21.maxLevelHelpFlag = true
+		arg0_20.maxLevelHelpFlag = true
 
 		getProxy(SettingsProxy):setMaxLevelHelp(true)
 	end
 end
 
-function var0_0.GetShareData(arg0_22)
-	if not arg0_22.shareData then
-		arg0_22.shareData = ShipViewShareData.New(arg0_22.contextData)
+function var0_0.GetShareData(arg0_21)
+	if not arg0_21.shareData then
+		arg0_21.shareData = ShipViewShareData.New(arg0_21.contextData)
 
-		arg0_22.shipDetailView:SetShareData(arg0_22.shareData)
-		arg0_22.shipFashionView:SetShareData(arg0_22.shareData)
-		arg0_22.shipEquipView:SetShareData(arg0_22.shareData)
-		arg0_22.shipEquipView:ActionInvoke("InitEvent")
-		arg0_22.shipHuntingRangeView:SetShareData(arg0_22.shareData)
-		arg0_22.shipCustomMsgBox:SetShareData(arg0_22.shareData)
-		arg0_22.shipChangeNameView:SetShareData(arg0_22.shareData)
+		arg0_21.shipDetailView:SetShareData(arg0_21.shareData)
+		arg0_21.shipFashionView:SetShareData(arg0_21.shareData)
+		arg0_21.shipEquipView:SetShareData(arg0_21.shareData)
+		arg0_21.shipEquipView:ActionInvoke("InitEvent")
+		arg0_21.shipHuntingRangeView:SetShareData(arg0_21.shareData)
+		arg0_21.shipCustomMsgBox:SetShareData(arg0_21.shareData)
+		arg0_21.shipChangeNameView:SetShareData(arg0_21.shareData)
 	end
 
-	return arg0_22.shareData
+	return arg0_21.shareData
 end
 
-function var0_0.hasFashion(arg0_23)
-	return arg0_23.shareData:HasFashion()
+function var0_0.hasFashion(arg0_22)
+	return arg0_22.shareData:HasFashion()
 end
 
-function var0_0.DisplayRenamePanel(arg0_24, arg1_24)
-	arg0_24.shipChangeNameView:Load()
-	arg0_24.shipChangeNameView:ActionInvoke("DisplayRenamePanel", arg1_24)
+function var0_0.DisplayRenamePanel(arg0_23, arg1_23)
+	arg0_23.shipChangeNameView:Load()
+	arg0_23.shipChangeNameView:ActionInvoke("DisplayRenamePanel", arg1_23)
 end
 
-function var0_0.init(arg0_25)
-	arg0_25:initShip()
-	arg0_25:initPages()
-	arg0_25:initEvents()
+function var0_0.init(arg0_24)
+	arg0_24:initShip()
+	arg0_24:initPages()
+	arg0_24:initEvents()
 
-	arg0_25.mainCanvasGroup = arg0_25._tf:GetComponent(typeof(CanvasGroup))
-	arg0_25.commonCanvasGroup = arg0_25:findTF("blur_panel/adapt"):GetComponent(typeof(CanvasGroup))
+	arg0_24.mainCanvasGroup = arg0_24._tf:GetComponent(typeof(CanvasGroup))
+	arg0_24.commonCanvasGroup = arg0_24:findTF("blur_panel/adapt"):GetComponent(typeof(CanvasGroup))
 	Input.multiTouchEnabled = false
 end
 
-function var0_0.initShip(arg0_26)
-	arg0_26.shipInfo = arg0_26:findTF("main/character")
+function var0_0.initShip(arg0_25)
+	arg0_25.shipInfo = arg0_25:findTF("main/character")
 
-	setActive(arg0_26.shipInfo, true)
+	setActive(arg0_25.shipInfo, true)
 
-	arg0_26.tablePainting = {
-		arg0_26:findTF("painting", arg0_26.shipInfo),
-		arg0_26:findTF("painting2", arg0_26.shipInfo)
+	arg0_25.tablePainting = {
+		arg0_25:findTF("painting", arg0_25.shipInfo),
+		arg0_25:findTF("painting2", arg0_25.shipInfo)
 	}
-	arg0_26.nowPainting = nil
-	arg0_26.isRight = true
-	arg0_26.blurPanel = arg0_26:findTF("blur_panel")
-	arg0_26.common = arg0_26.blurPanel:Find("adapt")
-	arg0_26.npcFlagTF = arg0_26.common:Find("name/npc")
-	arg0_26.shipName = arg0_26.common:Find("name")
-	arg0_26.shipInfoStarTpl = arg0_26.shipName:Find("star_tpl")
-	arg0_26.nameEditFlag = arg0_26.shipName:Find("nameRect/editFlag")
+	arg0_25.nowPainting = nil
+	arg0_25.isRight = true
+	arg0_25.blurPanel = arg0_25:findTF("blur_panel")
+	arg0_25.common = arg0_25.blurPanel:Find("adapt")
+	arg0_25.npcFlagTF = arg0_25.common:Find("name/npc")
+	arg0_25.shipName = arg0_25.common:Find("name")
+	arg0_25.shipInfoStarTpl = arg0_25.shipName:Find("star_tpl")
+	arg0_25.nameEditFlag = arg0_25.shipName:Find("nameRect/editFlag")
 
-	setActive(arg0_26.shipName, true)
-	setActive(arg0_26.shipInfoStarTpl, false)
-	setActive(arg0_26.nameEditFlag, false)
+	setActive(arg0_25.shipName, true)
+	setActive(arg0_25.shipInfoStarTpl, false)
+	setActive(arg0_25.nameEditFlag, false)
 
-	arg0_26.energyTF = arg0_26.shipName:Find("energy")
-	arg0_26.energyDescTF = arg0_26.energyTF:Find("desc")
-	arg0_26.energyText = arg0_26.energyTF:Find("desc/desc")
+	arg0_25.energyTF = arg0_25.shipName:Find("energy")
+	arg0_25.energyDescTF = arg0_25.energyTF:Find("desc")
+	arg0_25.energyText = arg0_25.energyTF:Find("desc/desc")
 
-	setActive(arg0_26.energyDescTF, false)
+	setActive(arg0_25.energyDescTF, false)
 
-	arg0_26.character = arg0_26:findTF("main/character")
-	arg0_26.chat = arg0_26:findTF("main/character/chat")
-	arg0_26.chatBg = arg0_26:findTF("main/character/chat/chatbgtop")
-	arg0_26.chatText = arg0_26:findTF("Text", arg0_26.chat)
-	rtf(arg0_26.chat).localScale = Vector3.New(0, 0, 1)
-	arg0_26.initChatBgH = arg0_26.chatBg.sizeDelta.y
-	arg0_26.initChatTextH = arg0_26.chatText.sizeDelta.y
-	arg0_26.initfontSize = arg0_26.chatText:GetComponent(typeof(Text)).fontSize
+	arg0_25.character = arg0_25:findTF("main/character")
+	arg0_25.chat = arg0_25:findTF("main/character/chat")
+	arg0_25.chatBg = arg0_25:findTF("main/character/chat/chatbgtop")
+	arg0_25.chatText = arg0_25:findTF("Text", arg0_25.chat)
+	rtf(arg0_25.chat).localScale = Vector3.New(0, 0, 1)
+	arg0_25.initChatBgH = arg0_25.chatBg.sizeDelta.y
+	arg0_25.initChatTextH = arg0_25.chatText.sizeDelta.y
+	arg0_25.initfontSize = arg0_25.chatText:GetComponent(typeof(Text)).fontSize
 end
 
-function var0_0.initPages(arg0_27)
+function var0_0.initPages(arg0_26)
 	ShipViewConst.currentPage = nil
-	arg0_27.background = arg0_27:findTF("background")
+	arg0_26.background = arg0_26:findTF("background")
 
-	setActive(arg0_27.background, true)
+	setActive(arg0_26.background, true)
 
-	arg0_27.main = arg0_27:findTF("main")
-	arg0_27.mainMask = arg0_27.main:GetComponent(typeof(RectMask2D))
-	arg0_27.toggles = arg0_27:findTF("left_length/frame/root", arg0_27.common)
-	arg0_27.detailToggle = arg0_27.toggles:Find("detail_toggle")
-	arg0_27.equipmentToggle = arg0_27.toggles:Find("equpiment_toggle")
-	arg0_27.intensifyToggle = arg0_27.toggles:Find("intensify_toggle")
-	arg0_27.upgradeToggle = arg0_27.toggles:Find("upgrade_toggle")
-	arg0_27.remouldToggle = arg0_27.toggles:Find("remould_toggle")
-	arg0_27.technologyToggle = arg0_27.toggles:Find("technology_toggle")
-	arg0_27.metaToggle = arg0_27.toggles:Find("meta_toggle")
-	arg0_27.togglesList = {}
-	arg0_27.togglesList[ShipViewConst.PAGE.DETAIL] = arg0_27.detailToggle
-	arg0_27.togglesList[ShipViewConst.PAGE.EQUIPMENT] = arg0_27.equipmentToggle
-	arg0_27.togglesList[ShipViewConst.PAGE.INTENSIFY] = arg0_27.intensifyToggle
-	arg0_27.togglesList[ShipViewConst.PAGE.UPGRADE] = arg0_27.upgradeToggle
-	arg0_27.togglesList[ShipViewConst.PAGE.REMOULD] = arg0_27.remouldToggle
-	arg0_27.detailContainer = arg0_27.main:Find("detail_container")
+	arg0_26.main = arg0_26:findTF("main")
+	arg0_26.mainMask = arg0_26.main:GetComponent(typeof(RectMask2D))
+	arg0_26.toggles = arg0_26:findTF("left_length/frame/root", arg0_26.common)
+	arg0_26.detailToggle = arg0_26.toggles:Find("detail_toggle")
+	arg0_26.equipmentToggle = arg0_26.toggles:Find("equpiment_toggle")
+	arg0_26.intensifyToggle = arg0_26.toggles:Find("intensify_toggle")
+	arg0_26.upgradeToggle = arg0_26.toggles:Find("upgrade_toggle")
+	arg0_26.remouldToggle = arg0_26.toggles:Find("remould_toggle")
+	arg0_26.technologyToggle = arg0_26.toggles:Find("technology_toggle")
+	arg0_26.metaToggle = arg0_26.toggles:Find("meta_toggle")
+	arg0_26.togglesList = {}
+	arg0_26.togglesList[ShipViewConst.PAGE.DETAIL] = arg0_26.detailToggle
+	arg0_26.togglesList[ShipViewConst.PAGE.EQUIPMENT] = arg0_26.equipmentToggle
+	arg0_26.togglesList[ShipViewConst.PAGE.INTENSIFY] = arg0_26.intensifyToggle
+	arg0_26.togglesList[ShipViewConst.PAGE.UPGRADE] = arg0_26.upgradeToggle
+	arg0_26.togglesList[ShipViewConst.PAGE.REMOULD] = arg0_26.remouldToggle
+	arg0_26.detailContainer = arg0_26.main:Find("detail_container")
 
-	setAnchoredPosition(arg0_27.detailContainer, {
+	setAnchoredPosition(arg0_26.detailContainer, {
 		x = 1300
 	})
 
-	arg0_27.fashionContainer = arg0_27.main:Find("fashion_container")
+	arg0_26.fashionContainer = arg0_26.main:Find("fashion_container")
 
-	setAnchoredPosition(arg0_27.fashionContainer, {
+	setAnchoredPosition(arg0_26.fashionContainer, {
 		x = 900
 	})
 
-	arg0_27.equipContainer = arg0_27.main:Find("equip_container")
-	arg0_27.equipLCon = arg0_27.equipContainer:Find("equipment_l_container")
-	arg0_27.equipRCon = arg0_27.equipContainer:Find("equipment_r_container")
-	arg0_27.equipBCon = arg0_27.equipContainer:Find("equipment_b_container")
+	arg0_26.equipContainer = arg0_26.main:Find("equip_container")
+	arg0_26.equipLCon = arg0_26.equipContainer:Find("equipment_l_container")
+	arg0_26.equipRCon = arg0_26.equipContainer:Find("equipment_r_container")
+	arg0_26.equipBCon = arg0_26.equipContainer:Find("equipment_b_container")
 
-	setAnchoredPosition(arg0_27.equipRCon, {
+	setAnchoredPosition(arg0_26.equipRCon, {
 		x = 750
 	})
-	setAnchoredPosition(arg0_27.equipLCon, {
+	setAnchoredPosition(arg0_26.equipLCon, {
 		x = -700
 	})
-	setAnchoredPosition(arg0_27.equipBCon, {
+	setAnchoredPosition(arg0_26.equipBCon, {
 		y = -540
 	})
 
-	arg0_27.shipDetailView = ShipDetailView.New(arg0_27.detailContainer, arg0_27.event, arg0_27.contextData)
-	arg0_27.shipFashionView = ShipFashionView.New(arg0_27.fashionContainer, arg0_27.event, arg0_27.contextData)
-	arg0_27.shipEquipView = ShipEquipView.New(arg0_27.equipContainer, arg0_27.event, arg0_27.contextData)
-	arg0_27.shipHuntingRangeView = ShipHuntingRangeView.New(arg0_27._tf, arg0_27.event, arg0_27.contextData)
-	arg0_27.shipCustomMsgBox = ShipCustomMsgBox.New(arg0_27._tf, arg0_27.event, arg0_27.contextData)
-	arg0_27.shipChangeNameView = ShipChangeNameView.New(arg0_27._tf, arg0_27.event, arg0_27.contextData)
-	arg0_27.expItemUsagePage = ShipExpItemUsagePage.New(arg0_27._tf, arg0_27.event, arg0_27.contextData)
-	arg0_27.viewList = {}
-	arg0_27.viewList[ShipViewConst.PAGE.DETAIL] = arg0_27.shipDetailView
-	arg0_27.viewList[ShipViewConst.PAGE.FASHION] = arg0_27.shipFashionView
-	arg0_27.viewList[ShipViewConst.PAGE.EQUIPMENT] = arg0_27.shipEquipView
+	arg0_26.shipDetailView = ShipDetailView.New(arg0_26.detailContainer, arg0_26.event, arg0_26.contextData)
+	arg0_26.shipFashionView = ShipFashionView.New(arg0_26.fashionContainer, arg0_26.event, arg0_26.contextData)
+	arg0_26.shipEquipView = ShipEquipView.New(arg0_26.equipContainer, arg0_26.event, arg0_26.contextData)
+	arg0_26.shipHuntingRangeView = ShipHuntingRangeView.New(arg0_26._tf, arg0_26.event, arg0_26.contextData)
+	arg0_26.shipCustomMsgBox = ShipCustomMsgBox.New(arg0_26._tf, arg0_26.event, arg0_26.contextData)
+	arg0_26.shipChangeNameView = ShipChangeNameView.New(arg0_26._tf, arg0_26.event, arg0_26.contextData)
+	arg0_26.expItemUsagePage = ShipExpItemUsagePage.New(arg0_26._tf, arg0_26.event, arg0_26.contextData)
+	arg0_26.viewList = {}
+	arg0_26.viewList[ShipViewConst.PAGE.DETAIL] = arg0_26.shipDetailView
+	arg0_26.viewList[ShipViewConst.PAGE.FASHION] = arg0_26.shipFashionView
+	arg0_26.viewList[ShipViewConst.PAGE.EQUIPMENT] = arg0_26.shipEquipView
 
-	onButton(arg0_27, arg0_27.shipName, function()
-		if arg0_27.shipVO.propose and not arg0_27.shipVO:IsXIdol() then
+	onButton(arg0_26, arg0_26.shipName, function()
+		if arg0_26.shipVO.propose and not arg0_26.shipVO:IsXIdol() then
 			if not pg.PushNotificationMgr.GetInstance():isEnableShipName() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("word_rename_switch_tip"))
 
 				return
 			end
 
-			local var0_28 = arg0_27.shipVO.renameTime + 2592000 - pg.TimeMgr.GetInstance():GetServerTime()
+			local var0_27 = arg0_26.shipVO.renameTime + 2592000 - pg.TimeMgr.GetInstance():GetServerTime()
 
-			if var0_28 > 0 then
-				local var1_28 = math.floor(var0_28 / 60 / 60 / 24)
+			if var0_27 > 0 then
+				local var1_27 = math.floor(var0_27 / 60 / 60 / 24)
 
-				if var1_28 < 1 then
-					var1_28 = 1
+				if var1_27 < 1 then
+					var1_27 = 1
 				end
 
-				pg.TipsMgr.GetInstance():ShowTips(i18n("word_rename_time_tip", var1_28))
+				pg.TipsMgr.GetInstance():ShowTips(i18n("word_rename_time_tip", var1_27))
 			else
-				arg0_27:DisplayRenamePanel(true)
+				arg0_26:DisplayRenamePanel(true)
 			end
 		end
 	end, SFX_PANEL)
 end
 
-function var0_0.initEvents(arg0_29)
-	arg0_29:bind(ShipViewConst.SWITCH_TO_PAGE, function(arg0_30, arg1_30)
-		arg0_29:gotoPage(arg1_30)
+function var0_0.initEvents(arg0_28)
+	arg0_28:bind(ShipViewConst.SWITCH_TO_PAGE, function(arg0_29, arg1_29)
+		arg0_28:gotoPage(arg1_29)
 	end)
-	arg0_29:bind(ShipViewConst.LOAD_PAINTING, function(arg0_31, arg1_31, arg2_31)
-		arg0_29:loadPainting(arg1_31, arg2_31)
+	arg0_28:bind(ShipViewConst.LOAD_PAINTING, function(arg0_30, arg1_30, arg2_30)
+		arg0_28:loadPainting(arg1_30, arg2_30)
 	end)
-	arg0_29:bind(ShipViewConst.LOAD_PAINTING_BG, function(arg0_32, arg1_32, arg2_32, arg3_32)
-		arg0_29:loadSkinBg(arg1_32, arg2_32, arg3_32, arg0_29.isSpBg)
+	arg0_28:bind(ShipViewConst.LOAD_PAINTING_BG, function(arg0_31, arg1_31, arg2_31, arg3_31)
+		arg0_28:loadSkinBg(arg1_31, arg2_31, arg3_31, arg0_28.isSpBg)
 	end)
-	arg0_29:bind(ShipViewConst.HIDE_SHIP_WORD, function(arg0_33)
-		arg0_29:hideShipWord()
+	arg0_28:bind(ShipViewConst.HIDE_SHIP_WORD, function(arg0_32)
+		arg0_28:hideShipWord()
 	end)
-	arg0_29:bind(ShipViewConst.SET_CLICK_ENABLE, function(arg0_34, arg1_34)
-		arg0_29.mainCanvasGroup.blocksRaycasts = arg1_34
-		arg0_29.commonCanvasGroup.blocksRaycasts = arg1_34
-		GetComponent(arg0_29.detailContainer, "CanvasGroup").blocksRaycasts = arg1_34
+	arg0_28:bind(ShipViewConst.SET_CLICK_ENABLE, function(arg0_33, arg1_33)
+		arg0_28.mainCanvasGroup.blocksRaycasts = arg1_33
+		arg0_28.commonCanvasGroup.blocksRaycasts = arg1_33
+		GetComponent(arg0_28.detailContainer, "CanvasGroup").blocksRaycasts = arg1_33
 	end)
-	arg0_29:bind(ShipViewConst.SHOW_CUSTOM_MSG, function(arg0_35, arg1_35)
-		arg0_29.shipCustomMsgBox:Load()
-		arg0_29.shipCustomMsgBox:ActionInvoke("showCustomMsgBox", arg1_35)
+	arg0_28:bind(ShipViewConst.SHOW_CUSTOM_MSG, function(arg0_34, arg1_34)
+		arg0_28.shipCustomMsgBox:Load()
+		arg0_28.shipCustomMsgBox:ActionInvoke("showCustomMsgBox", arg1_34)
 	end)
-	arg0_29:bind(ShipViewConst.HIDE_CUSTOM_MSG, function(arg0_36)
-		arg0_29.shipCustomMsgBox:ActionInvoke("hideCustomMsgBox")
+	arg0_28:bind(ShipViewConst.HIDE_CUSTOM_MSG, function(arg0_35)
+		arg0_28.shipCustomMsgBox:ActionInvoke("hideCustomMsgBox")
 	end)
-	arg0_29:bind(ShipViewConst.DISPLAY_HUNTING_RANGE, function(arg0_37, arg1_37)
+	arg0_28:bind(ShipViewConst.DISPLAY_HUNTING_RANGE, function(arg0_36, arg1_36)
+		if arg1_36 then
+			arg0_28.shipHuntingRangeView:Load()
+			arg0_28.shipHuntingRangeView:ActionInvoke("DisplayHuntingRange")
+		else
+			arg0_28.shipHuntingRangeView:HideHuntingRange()
+		end
+	end)
+	arg0_28:bind(ShipViewConst.PAINT_VIEW, function(arg0_37, arg1_37)
 		if arg1_37 then
-			arg0_29.shipHuntingRangeView:Load()
-			arg0_29.shipHuntingRangeView:ActionInvoke("DisplayHuntingRange")
+			arg0_28:paintView()
 		else
-			arg0_29.shipHuntingRangeView:HideHuntingRange()
+			arg0_28:hidePaintView(true)
 		end
 	end)
-	arg0_29:bind(ShipViewConst.PAINT_VIEW, function(arg0_38, arg1_38)
-		if arg1_38 then
-			arg0_29:paintView()
-		else
-			arg0_29:hidePaintView(true)
-		end
-	end)
-	arg0_29:bind(ShipViewConst.SHOW_EXP_ITEM_USAGE, function(arg0_39, arg1_39)
-		arg0_29.expItemUsagePage:ExecuteAction("Show", arg1_39)
+	arg0_28:bind(ShipViewConst.SHOW_EXP_ITEM_USAGE, function(arg0_38, arg1_38)
+		arg0_28.expItemUsagePage:ExecuteAction("Show", arg1_38)
 	end)
 end
 
-function var0_0.didEnter(arg0_40)
-	arg0_40:addRingDragListenter()
-	onButton(arg0_40, arg0_40:findTF("top/back_btn", arg0_40.common), function()
-		GetOrAddComponent(arg0_40._tf, typeof(CanvasGroup)).interactable = false
+function var0_0.didEnter(arg0_39)
+	arg0_39:addRingDragListenter()
+	onButton(arg0_39, arg0_39:findTF("top/back_btn", arg0_39.common), function()
+		GetOrAddComponent(arg0_39._tf, typeof(CanvasGroup)).interactable = false
 
-		if not arg0_40.everTriggerBack then
+		if not arg0_39.everTriggerBack then
 			LeanTween.delayedCall(0.3, System.Action(function()
-				arg0_40:closeView()
+				arg0_39:closeView()
 			end))
 
-			arg0_40.everTriggerBack = true
+			arg0_39.everTriggerBack = true
 		end
 	end, SFX_CANCEL)
-	onButton(arg0_40, arg0_40.npcFlagTF, function()
+	onButton(arg0_39, arg0_39.npcFlagTF, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_shipinfo_actnpc.tip
 		})
 	end, SFX_PANEL)
 
-	arg0_40.helpBtn = arg0_40:findTF("help_btn", arg0_40.common)
+	arg0_39.helpBtn = arg0_39:findTF("help_btn", arg0_39.common)
 
-	onButton(arg0_40, arg0_40.helpBtn, function()
-		arg0_40:openHelpPage(ShipViewConst.currentPage)
+	onButton(arg0_39, arg0_39.helpBtn, function()
+		arg0_39:openHelpPage(ShipViewConst.currentPage)
 	end, SFX_PANEL)
 
-	for iter0_40, iter1_40 in pairs(arg0_40.togglesList) do
-		if iter1_40 == arg0_40.upgradeToggle or iter1_40 == arg0_40.remouldToggle or iter1_40 == arg0_40.equipmentToggle then
-			onToggle(arg0_40, iter1_40, function(arg0_45)
-				if arg0_45 then
-					if LeanTween.isTweening(go(arg0_40.chat)) then
-						LeanTween.cancel(go(arg0_40.chat))
+	for iter0_39, iter1_39 in pairs(arg0_39.togglesList) do
+		if iter1_39 == arg0_39.upgradeToggle or iter1_39 == arg0_39.remouldToggle or iter1_39 == arg0_39.equipmentToggle then
+			onToggle(arg0_39, iter1_39, function(arg0_44)
+				if arg0_44 then
+					if LeanTween.isTweening(go(arg0_39.chat)) then
+						LeanTween.cancel(go(arg0_39.chat))
 					end
 
-					rtf(arg0_40.chat).localScale = Vector3.New(0, 0, 1)
-					arg0_40.chatFlag = false
+					rtf(arg0_39.chat).localScale = Vector3.New(0, 0, 1)
+					arg0_39.chatFlag = false
 
-					arg0_40:switchToPage(iter0_40)
+					arg0_39:switchToPage(iter0_39)
 				end
 			end, SFX_PANEL)
 		else
-			onToggle(arg0_40, iter1_40, function(arg0_46)
-				if arg0_46 then
-					arg0_40:switchToPage(iter0_40)
+			onToggle(arg0_39, iter1_39, function(arg0_45)
+				if arg0_45 then
+					arg0_39:switchToPage(iter0_39)
 				end
 			end, SFX_PANEL)
 		end
 	end
 
-	onButton(arg0_40, arg0_40.technologyToggle, function()
-		arg0_40:emit(ShipMainMediator.ON_TECHNOLOGY, arg0_40.shipVO)
+	onButton(arg0_39, arg0_39.technologyToggle, function()
+		arg0_39:emit(ShipMainMediator.ON_TECHNOLOGY, arg0_39.shipVO)
 	end, SFX_PANEL)
-	onButton(arg0_40, arg0_40.metaToggle, function()
-		arg0_40:emit(ShipMainMediator.ON_META, arg0_40.shipVO)
+	onButton(arg0_39, arg0_39.metaToggle, function()
+		arg0_39:emit(ShipMainMediator.ON_META, arg0_39.shipVO)
 	end, SFX_PANEL)
-	onButton(arg0_40, tf(arg0_40.character), function()
+	onButton(arg0_39, tf(arg0_39.character), function()
 		if ShipViewConst.currentPage ~= ShipViewConst.PAGE.FASHION then
-			arg0_40:displayShipWord("detail")
+			arg0_39:displayShipWord("detail")
 		end
 	end)
-	onButton(arg0_40, arg0_40.energyTF, function()
-		arg0_40:showEnergyDesc()
+	onButton(arg0_39, arg0_39.energyTF, function()
+		arg0_39:showEnergyDesc()
 		getProxy(CommanderManualProxy):TaskProgressAdd(2022, 1)
 	end)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_40.chat, {
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_39.chat, {
 		groupName = LayerWeightConst.GROUP_SHIPINFOUI
 	})
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_40.blurPanel, {
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_39.blurPanel, {
 		groupName = LayerWeightConst.GROUP_SHIPINFOUI
 	})
 
-	local var0_40 = arg0_40:checkToggleActive(arg0_40.contextData.page) and arg0_40.contextData.page or ShipViewConst.PAGE.DETAIL
+	local var0_39 = arg0_39:checkToggleActive(arg0_39.contextData.page) and arg0_39.contextData.page or ShipViewConst.PAGE.DETAIL
 
-	arg0_40:gotoPage(var0_40)
+	arg0_39:gotoPage(var0_39)
 
 	if ShipViewConst.currentPage == ShipViewConst.PAGE.DETAIL then
-		arg0_40:displayShipWord(arg0_40:getInitmacyWords())
-		arg0_40:checkMaxLevelHelp()
+		arg0_39:displayShipWord(arg0_39:getInitmacyWords())
+		arg0_39:checkMaxLevelHelp()
 	end
+
+	arg0_39:changePaintingSortLayer(true)
 end
 
-function var0_0.openHelpPage(arg0_51, arg1_51)
-	if arg1_51 == ShipViewConst.PAGE.EQUIPMENT then
+function var0_0.openHelpPage(arg0_50, arg1_50)
+	if arg1_50 == ShipViewConst.PAGE.EQUIPMENT then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_shipinfo_equip.tip,
 			weight = LayerWeightConst.THIRD_LAYER
 		})
-	elseif arg1_51 == ShipViewConst.PAGE.DETAIL then
+	elseif arg1_50 == ShipViewConst.PAGE.DETAIL then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_shipinfo_detail.tip,
 			weight = LayerWeightConst.THIRD_LAYER
 		})
-	elseif arg1_51 == ShipViewConst.PAGE.INTENSIFY then
+	elseif arg1_50 == ShipViewConst.PAGE.INTENSIFY then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_shipinfo_intensify.tip,
 			weight = LayerWeightConst.THIRD_LAYER
 		})
-	elseif arg1_51 == ShipViewConst.PAGE.UPGRADE then
+	elseif arg1_50 == ShipViewConst.PAGE.UPGRADE then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_shipinfo_upgrate.tip,
 			weight = LayerWeightConst.THIRD_LAYER
 		})
-	elseif arg1_51 == ShipViewConst.PAGE.FASHION then
+	elseif arg1_50 == ShipViewConst.PAGE.FASHION then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_shipinfo_fashion.tip,
@@ -501,420 +500,421 @@ function var0_0.openHelpPage(arg0_51, arg1_51)
 	end
 end
 
-function var0_0.showAwakenCompleteAni(arg0_52, arg1_52)
-	local function var0_52()
-		arg0_52.awakenAni:SetActive(true)
+function var0_0.showAwakenCompleteAni(arg0_51, arg1_51)
+	local function var0_51()
+		arg0_51.awakenAni:SetActive(true)
 
-		arg0_52.awakenPlay = true
+		arg0_51.awakenPlay = true
 
-		onButton(arg0_52, arg0_52.awakenAni, function()
-			arg0_52.awakenAni:GetComponent("Animator"):SetBool("endFlag", true)
+		onButton(arg0_51, arg0_51.awakenAni, function()
+			arg0_51.awakenAni:GetComponent("Animator"):SetBool("endFlag", true)
 		end)
 
-		local var0_53 = tf(arg0_52.awakenAni)
+		local var0_52 = tf(arg0_51.awakenAni)
 
-		pg.UIMgr.GetInstance():BlurPanel(var0_53, false, {
+		pg.UIMgr.GetInstance():BlurPanel(var0_52, false, {
 			weight = LayerWeightConst.TOP_LAYER
 		})
-		setText(arg0_52:findTF("window/desc", arg0_52.awakenAni), arg1_52)
-		var0_53:GetComponent("DftAniEvent"):SetEndEvent(function(arg0_55)
-			arg0_52.awakenAni:GetComponent("Animator"):SetBool("endFlag", false)
-			pg.UIMgr.GetInstance():UnblurPanel(var0_53, arg0_52.common)
-			arg0_52.awakenAni:SetActive(false)
+		setText(arg0_51:findTF("window/desc", arg0_51.awakenAni), arg1_51)
+		var0_52:GetComponent("DftAniEvent"):SetEndEvent(function(arg0_54)
+			arg0_51.awakenAni:GetComponent("Animator"):SetBool("endFlag", false)
+			pg.UIMgr.GetInstance():UnblurPanel(var0_52, arg0_51.common)
+			arg0_51.awakenAni:SetActive(false)
 
-			arg0_52.awakenPlay = false
+			arg0_51.awakenPlay = false
 		end)
 	end
 
-	local var1_52 = arg0_52:findTF("AwakenCompleteWindows(Clone)")
+	local var1_51 = arg0_51:findTF("AwakenCompleteWindows(Clone)")
 
-	if var1_52 then
-		arg0_52.awakenAni = go(var1_52)
+	if var1_51 then
+		arg0_51.awakenAni = go(var1_51)
 	end
 
-	if not arg0_52.awakenAni then
-		PoolMgr.GetInstance():GetUI("AwakenCompleteWindows", true, function(arg0_56)
-			arg0_56:SetActive(true)
+	if not arg0_51.awakenAni then
+		PoolMgr.GetInstance():GetUI("AwakenCompleteWindows", true, function(arg0_55)
+			arg0_55:SetActive(true)
 
-			arg0_52.awakenAni = arg0_56
+			arg0_51.awakenAni = arg0_55
 
-			var0_52()
+			var0_51()
 		end)
 	else
-		var0_52()
+		var0_51()
 	end
 end
 
-function var0_0.updatePreference(arg0_57, arg1_57)
-	local var0_57 = arg1_57:getConfigTable()
-	local var1_57 = arg0_57.shipVO:getName()
+function var0_0.updatePreference(arg0_56, arg1_56)
+	local var0_56 = arg1_56:getConfigTable()
+	local var1_56 = arg0_56.shipVO:getName()
 
-	setScrollText(arg0_57.shipName:Find("nameRect/name_mask/Text"), var1_57)
-	setText(arg0_57:findTF("english_name", arg0_57.shipName), var0_57.english_name)
-	setActive(arg0_57.nameEditFlag, arg1_57.propose and not arg1_57:IsXIdol())
+	setScrollText(arg0_56.shipName:Find("nameRect/name_mask/Text"), var1_56)
+	setText(arg0_56:findTF("english_name", arg0_56.shipName), var0_56.english_name)
+	setActive(arg0_56.nameEditFlag, arg1_56.propose and not arg1_56:IsXIdol())
 
-	local var2_57 = GetSpriteFromAtlas("energy", arg1_57:getEnergyPrint())
+	local var2_56 = GetSpriteFromAtlas("energy", arg1_56:getEnergyPrint())
 
-	if not var2_57 then
+	if not var2_56 then
 		warning("找不到疲劳")
 	end
 
-	setImageSprite(arg0_57.energyTF, var2_57, true)
-	setActive(arg0_57.energyTF, true)
+	setImageSprite(arg0_56.energyTF, var2_56, true)
+	setActive(arg0_56.energyTF, true)
 
-	local var3_57 = arg0_57:findTF("stars", arg0_57.shipName)
+	local var3_56 = arg0_56:findTF("stars", arg0_56.shipName)
 
-	removeAllChildren(var3_57)
+	removeAllChildren(var3_56)
 
-	local var4_57 = arg1_57:getStar()
-	local var5_57 = arg1_57:getMaxStar()
+	local var4_56 = arg1_56:getStar()
+	local var5_56 = arg1_56:getMaxStar()
 
-	for iter0_57 = 1, var5_57 do
-		local var6_57 = cloneTplTo(arg0_57.shipInfoStarTpl, var3_57, "star_" .. iter0_57)
+	for iter0_56 = 1, var5_56 do
+		local var6_56 = cloneTplTo(arg0_56.shipInfoStarTpl, var3_56, "star_" .. iter0_56)
 
-		setActive(var6_57:Find("star_tpl"), iter0_57 <= var4_57)
-		setActive(var6_57:Find("empty_star_tpl"), true)
+		setActive(var6_56:Find("star_tpl"), iter0_56 <= var4_56)
+		setActive(var6_56:Find("empty_star_tpl"), true)
 	end
 
 	if ShipViewConst.currentPage ~= ShipViewConst.PAGE.FASHION then
-		arg0_57:loadPainting(arg0_57.shipVO:getPainting())
-		arg0_57:loadSkinBg(arg0_57.shipVO:rarity2bgPrintForGet(), arg0_57.shipVO:isBluePrintShip(), arg0_57.shipVO:isMetaShip(), arg0_57.isSpBg)
+		arg0_56:loadPainting(arg0_56.shipVO:getPainting())
+		arg0_56:loadSkinBg(arg0_56.shipVO:rarity2bgPrintForGet(), arg0_56.shipVO:isBluePrintShip(), arg0_56.shipVO:isMetaShip(), arg0_56.isSpBg)
 	end
 
-	local var7_57 = GetSpriteFromAtlas("shiptype", arg1_57:getShipType())
+	local var7_56 = GetSpriteFromAtlas("shiptype", arg1_56:getShipType())
 
-	if not var7_57 then
-		warning("找不到船形, shipConfigId: " .. arg1_57.configId)
+	if not var7_56 then
+		warning("找不到船形, shipConfigId: " .. arg1_56.configId)
 	end
 
-	setImageSprite(arg0_57:findTF("type", arg0_57.shipName), var7_57, true)
+	setImageSprite(arg0_56:findTF("type", arg0_56.shipName), var7_56, true)
 end
 
-function var0_0.doUpgradeMaxLeveAnim(arg0_58, arg1_58, arg2_58, arg3_58)
-	arg0_58.inUpgradeAnim = true
+function var0_0.doUpgradeMaxLeveAnim(arg0_57, arg1_57, arg2_57, arg3_57)
+	arg0_57.inUpgradeAnim = true
 
-	arg0_58.shipDetailView:DoLeveUpAnim(arg1_58, arg2_58, function()
-		if arg3_58 then
-			arg3_58()
+	arg0_57.shipDetailView:DoLeveUpAnim(arg1_57, arg2_57, function()
+		if arg3_57 then
+			arg3_57()
 		end
 
-		arg0_58.inUpgradeAnim = nil
+		arg0_57.inUpgradeAnim = nil
 	end)
 end
 
-function var0_0.addRingDragListenter(arg0_60)
-	local var0_60 = GetOrAddComponent(arg0_60._tf, "EventTriggerListener")
-	local var1_60
-	local var2_60 = 0
-	local var3_60
+function var0_0.addRingDragListenter(arg0_59)
+	local var0_59 = GetOrAddComponent(arg0_59._tf, "EventTriggerListener")
+	local var1_59
+	local var2_59 = 0
+	local var3_59
 
-	var0_60:AddBeginDragFunc(function()
-		var2_60 = 0
-		var1_60 = nil
+	var0_59:AddBeginDragFunc(function()
+		var2_59 = 0
+		var1_59 = nil
 	end)
-	var0_60:AddDragFunc(function(arg0_62, arg1_62)
-		if not arg0_60.inPaintingView then
-			local var0_62 = arg1_62.position
+	var0_59:AddDragFunc(function(arg0_61, arg1_61)
+		if not arg0_59.inPaintingView then
+			local var0_61 = arg1_61.position
 
-			if not var1_60 then
-				var1_60 = var0_62
+			if not var1_59 then
+				var1_59 = var0_61
 			end
 
-			var2_60 = var0_62.x - var1_60.x
+			var2_59 = var0_61.x - var1_59.x
 		end
 	end)
-	var0_60:AddDragEndFunc(function(arg0_63, arg1_63)
-		if not arg0_60.inPaintingView then
-			if var2_60 < -50 then
-				if not arg0_60.isLoading then
-					arg0_60:emit(ShipMainMediator.NEXTSHIP, -1)
+	var0_59:AddDragEndFunc(function(arg0_62, arg1_62)
+		if not arg0_59.inPaintingView then
+			if var2_59 < -50 then
+				if not arg0_59.isLoading then
+					arg0_59:emit(ShipMainMediator.NEXTSHIP, -1)
 				end
-			elseif var2_60 > 50 and not arg0_60.isLoading then
-				arg0_60:emit(ShipMainMediator.NEXTSHIP)
+			elseif var2_59 > 50 and not arg0_59.isLoading then
+				arg0_59:emit(ShipMainMediator.NEXTSHIP)
 			end
 		end
 	end)
 end
 
-function var0_0.showEnergyDesc(arg0_64)
-	if arg0_64.energyTimer then
+function var0_0.showEnergyDesc(arg0_63)
+	if arg0_63.energyTimer then
 		return
 	end
 
-	setActive(arg0_64.energyDescTF, true)
+	setActive(arg0_63.energyDescTF, true)
 
-	local var0_64, var1_64 = arg0_64.shipVO:getEnergyPrint()
+	local var0_63, var1_63 = arg0_63.shipVO:getEnergyPrint()
 
-	setText(arg0_64.energyText, i18n(var1_64))
+	setText(arg0_63.energyText, i18n(var1_63))
 
-	arg0_64.energyTimer = Timer.New(function()
-		setActive(arg0_64.energyDescTF, false)
-		arg0_64.energyTimer:Stop()
+	arg0_63.energyTimer = Timer.New(function()
+		setActive(arg0_63.energyDescTF, false)
+		arg0_63.energyTimer:Stop()
 
-		arg0_64.energyTimer = nil
+		arg0_63.energyTimer = nil
 	end, 2, 1)
 
-	arg0_64.energyTimer:Start()
+	arg0_63.energyTimer:Start()
 end
 
-function var0_0.displayShipWord(arg0_66, arg1_66, arg2_66)
+function var0_0.displayShipWord(arg0_65, arg1_65, arg2_65)
 	if ShipViewConst.currentPage == ShipViewConst.PAGE.EQUIPMENT or ShipViewConst.currentPage == ShipViewConst.PAGE.UPGRADE then
-		rtf(arg0_66.chat).localScale = Vector3.New(0, 0, 1)
+		rtf(arg0_65.chat).localScale = Vector3.New(0, 0, 1)
 
 		return
 	end
 
-	if arg2_66 or not arg0_66.chatFlag then
-		arg0_66.chatFlag = true
-		arg0_66.chat.localScale = Vector3.zero
+	if arg2_65 or not arg0_65.chatFlag then
+		arg0_65.chatFlag = true
+		arg0_65.chat.localScale = Vector3.zero
 
-		setActive(arg0_66.chat, true)
+		setActive(arg0_65.chat, true)
 
-		arg0_66.chat.localPosition = Vector3(arg0_66.character.localPosition.x + 100, arg0_66.chat.localPosition.y, 0)
+		arg0_65.chat.localPosition = Vector3(arg0_65.character.localPosition.x + 100, arg0_65.chat.localPosition.y, 0)
 
-		local var0_66 = arg0_66.shipVO:getCVIntimacy()
+		local var0_65 = arg0_65.shipVO:getCVIntimacy()
 
-		arg0_66.chat:SetAsLastSibling()
+		arg0_65.chat:SetAsLastSibling()
 
-		if findTF(arg0_66.nowPainting, "fitter").childCount > 0 then
-			ShipExpressionHelper.SetExpression(findTF(arg0_66.nowPainting, "fitter"):GetChild(0), arg0_66.paintingCode, arg1_66, var0_66)
+		if findTF(arg0_65.nowPainting, "fitter").childCount > 0 then
+			ShipExpressionHelper.SetExpression(findTF(arg0_65.nowPainting, "fitter"):GetChild(0), arg0_65.paintingCode, arg1_65, var0_65)
 		end
 
-		local var1_66, var2_66, var3_66 = ShipWordHelper.GetWordAndCV(arg0_66.shipVO.skinId, arg1_66, nil, nil, var0_66)
-		local var4_66 = arg0_66.chatText:GetComponent(typeof(Text))
+		local var1_65, var2_65, var3_65 = ShipWordHelper.GetWordAndCV(arg0_65.shipVO:getSkinId(), arg1_65, nil, nil, var0_65)
+		local var4_65 = arg0_65.chatText:GetComponent(typeof(Text))
 
 		if PLATFORM_CODE ~= PLATFORM_US then
-			setText(arg0_66.chatText, SwitchSpecialChar(var3_66))
+			setText(arg0_65.chatText, SwitchSpecialChar(var3_65))
 		else
-			var4_66.fontSize = arg0_66.initfontSize
+			var4_65.fontSize = arg0_65.initfontSize
 
-			setTextEN(arg0_66.chatText, var3_66)
+			setTextEN(arg0_65.chatText, var3_65)
 
-			while var4_66.preferredHeight > arg0_66.initChatTextH do
-				var4_66.fontSize = var4_66.fontSize - 2
+			while var4_65.preferredHeight > arg0_65.initChatTextH do
+				var4_65.fontSize = var4_65.fontSize - 2
 
-				setTextEN(arg0_66.chatText, var3_66)
+				setTextEN(arg0_65.chatText, var3_65)
 
-				if var4_66.fontSize < 20 then
+				if var4_65.fontSize < 20 then
 					break
 				end
 			end
 		end
 
-		if #var4_66.text > CHAT_POP_STR_LEN then
-			var4_66.alignment = TextAnchor.MiddleLeft
+		if #var4_65.text > CHAT_POP_STR_LEN then
+			var4_65.alignment = TextAnchor.MiddleLeft
 		else
-			var4_66.alignment = TextAnchor.MiddleCenter
+			var4_65.alignment = TextAnchor.MiddleCenter
 		end
 
-		local var5_66 = var4_66.preferredHeight + 120
+		local var5_65 = var4_65.preferredHeight + 120
 
-		if var5_66 > arg0_66.initChatBgH then
-			arg0_66.chatBg.sizeDelta = Vector2.New(arg0_66.chatBg.sizeDelta.x, var5_66)
+		if var5_65 > arg0_65.initChatBgH then
+			arg0_65.chatBg.sizeDelta = Vector2.New(arg0_65.chatBg.sizeDelta.x, var5_65)
 		else
-			arg0_66.chatBg.sizeDelta = Vector2.New(arg0_66.chatBg.sizeDelta.x, arg0_66.initChatBgH)
+			arg0_65.chatBg.sizeDelta = Vector2.New(arg0_65.chatBg.sizeDelta.x, arg0_65.initChatBgH)
 		end
 
-		local var6_66 = var4_0
+		local var6_65 = var4_0
 
-		local function var7_66()
-			if arg0_66.chatFlag then
-				if arg0_66.chatani1Id then
-					LeanTween.cancel(arg0_66.chatani1Id)
+		local function var7_65()
+			if arg0_65.chatFlag then
+				if arg0_65.chatani1Id then
+					LeanTween.cancel(arg0_65.chatani1Id)
 				end
 
-				if arg0_66.chatani2Id then
-					LeanTween.cancel(arg0_66.chatani2Id)
+				if arg0_65.chatani2Id then
+					LeanTween.cancel(arg0_65.chatani2Id)
 				end
 			end
 
-			arg0_66.chatani1Id = LeanTween.scale(rtf(arg0_66.chat.gameObject), Vector3.New(1, 1, 1), var3_0):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
-				arg0_66.chatani2Id = LeanTween.scale(rtf(arg0_66.chat.gameObject), Vector3.New(0, 0, 1), var3_0):setEase(LeanTweenType.easeInBack):setDelay(var3_0 + var6_66):setOnComplete(System.Action(function()
-					arg0_66.chatFlag = nil
+			arg0_65.chatani1Id = LeanTween.scale(rtf(arg0_65.chat.gameObject), Vector3.New(1, 1, 1), var3_0):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
+				arg0_65.chatani2Id = LeanTween.scale(rtf(arg0_65.chat.gameObject), Vector3.New(0, 0, 1), var3_0):setEase(LeanTweenType.easeInBack):setDelay(var3_0 + var6_65):setOnComplete(System.Action(function()
+					arg0_65.chatFlag = nil
 				end)).uniqueId
 			end)).uniqueId
 		end
 
-		if var2_66 then
-			arg0_66:StopPreVoice()
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var2_66, function(arg0_70)
-				if arg0_70 then
-					var6_66 = arg0_70:GetLength() * 0.001
+		if var2_65 then
+			arg0_65:StopPreVoice()
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var2_65, function(arg0_69)
+				if arg0_69 then
+					var6_65 = arg0_69:GetLength() * 0.001
 				end
 
-				var7_66()
+				var7_65()
 			end)
 
-			arg0_66.preVoiceContent = var2_66
+			arg0_65.preVoiceContent = var2_65
 		else
-			var7_66()
+			var7_65()
 		end
 	end
 end
 
-function var0_0.StopPreVoice(arg0_71)
-	if arg0_71.preVoiceContent ~= nil then
-		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(arg0_71.preVoiceContent)
+function var0_0.StopPreVoice(arg0_70)
+	if arg0_70.preVoiceContent ~= nil then
+		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(arg0_70.preVoiceContent)
 	end
 end
 
-function var0_0.startChatTimer(arg0_72)
-	if arg0_72.chatFlag then
+function var0_0.startChatTimer(arg0_71)
+	if arg0_71.chatFlag then
 		return
 	end
 
-	if arg0_72.chatTimer then
-		arg0_72.chatTimer:Stop()
+	if arg0_71.chatTimer then
+		arg0_71.chatTimer:Stop()
 
-		arg0_72.chatTimer = nil
+		arg0_71.chatTimer = nil
 	end
 
-	arg0_72.chatTimer = Timer.New(function()
-		arg0_72:displayShipWord(arg0_72:getInitmacyWords())
+	arg0_71.chatTimer = Timer.New(function()
+		arg0_71:displayShipWord(arg0_71:getInitmacyWords())
 	end, var6_0, 1)
 
-	arg0_72.chatTimer:Start()
+	arg0_71.chatTimer:Start()
 end
 
-function var0_0.hideShipWord(arg0_74)
-	if arg0_74.chatFlag then
-		if arg0_74.chatani1Id then
-			LeanTween.cancel(arg0_74.chatani1Id)
+function var0_0.hideShipWord(arg0_73)
+	if arg0_73.chatFlag then
+		if arg0_73.chatani1Id then
+			LeanTween.cancel(arg0_73.chatani1Id)
 		end
 
-		if arg0_74.chatani2Id then
-			LeanTween.cancel(arg0_74.chatani2Id)
+		if arg0_73.chatani2Id then
+			LeanTween.cancel(arg0_73.chatani2Id)
 		end
 
-		LeanTween.scale(rtf(arg0_74.chat.gameObject), Vector3.New(0, 0, 1), var3_0):setEase(LeanTweenType.easeInBack):setOnComplete(System.Action(function()
-			arg0_74.chatFlag = nil
+		LeanTween.scale(rtf(arg0_73.chat.gameObject), Vector3.New(0, 0, 1), var3_0):setEase(LeanTweenType.easeInBack):setOnComplete(System.Action(function()
+			arg0_73.chatFlag = nil
 		end))
 	end
 
-	arg0_74:StopPreVoice()
+	arg0_73:StopPreVoice()
 end
 
-function var0_0.gotoPage(arg0_76, arg1_76)
-	if arg1_76 == ShipViewConst.PAGE.FASHION then
-		local function var0_76()
-			arg0_76:switchToPage(arg1_76)
+function var0_0.gotoPage(arg0_75, arg1_75)
+	if arg1_75 == ShipViewConst.PAGE.FASHION then
+		local function var0_75()
+			arg0_75:switchToPage(arg1_75)
 		end
 
-		arg0_76:checkPaintingRes(var0_76)
+		arg0_75:checkPaintingRes(var0_75)
 	else
-		triggerToggle(arg0_76.togglesList[arg1_76], true)
+		triggerToggle(arg0_75.togglesList[arg1_75], true)
 	end
 end
 
-function var0_0.switchToPage(arg0_78, arg1_78, arg2_78)
-	local function var0_78(arg0_79, arg1_79)
-		setActive(arg0_78.detailContainer, false)
+function var0_0.switchToPage(arg0_77, arg1_77, arg2_77)
+	local function var0_77(arg0_78, arg1_78)
+		setActive(arg0_77.detailContainer, false)
 
-		if arg0_79 == ShipViewConst.PAGE.DETAIL then
-			setActive(arg0_78.detailContainer, arg1_79)
+		if arg0_78 == ShipViewConst.PAGE.DETAIL then
+			setActive(arg0_77.detailContainer, arg1_78)
 
-			local var0_79 = arg1_79 and {
-				arg0_78.detailContainer.rect.width + 200,
+			local var0_78 = arg1_78 and {
+				arg0_77.detailContainer.rect.width + 200,
 				0
 			} or {
 				0,
-				arg0_78.detailContainer.rect.width + 200
+				arg0_77.detailContainer.rect.width + 200
 			}
 
-			shiftPanel(arg0_78.detailContainer, var0_79[2], 0, var2_0, 0):setFrom(var0_79[1])
-		elseif arg0_79 == ShipViewConst.PAGE.EQUIPMENT then
-			local var1_79 = {
-				-(arg0_78.equipLCon.rect.width + 190),
+			shiftPanel(arg0_77.detailContainer, var0_78[2], 0, var2_0, 0):setFrom(var0_78[1])
+		elseif arg0_78 == ShipViewConst.PAGE.EQUIPMENT then
+			local var1_78 = {
+				-(arg0_77.equipLCon.rect.width + 190),
 				190
 			}
-			local var2_79 = {
-				arg0_78.equipRCon.rect.width,
+			local var2_78 = {
+				arg0_77.equipRCon.rect.width,
 				10
 			}
-			local var3_79 = {
-				-arg0_78.equipBCon.rect.height,
+			local var3_78 = {
+				-arg0_77.equipBCon.rect.height,
 				0
 			}
-			local var4_79 = arg1_79 and 1 or 2
-			local var5_79 = arg1_79 and 2 or 1
+			local var4_78 = arg1_78 and 1 or 2
+			local var5_78 = arg1_78 and 2 or 1
 
-			shiftPanel(arg0_78.equipLCon, var1_79[var5_79], 0, var2_0, 0):setFrom(var1_79[var4_79])
-			shiftPanel(arg0_78.equipRCon, var2_79[var5_79], 0, var2_0, 0):setFrom(var2_79[var4_79])
-			shiftPanel(arg0_78.equipBCon, 0, var3_79[var5_79], var2_0, 0):setFrom(var3_79[var4_79])
-		elseif arg0_79 == ShipViewConst.PAGE.FASHION then
-			local var6_79 = arg1_79 and {
-				arg0_78.fashionContainer.rect.width + 150,
+			shiftPanel(arg0_77.equipLCon, var1_78[var5_78], 0, var2_0, 0):setFrom(var1_78[var4_78])
+			shiftPanel(arg0_77.equipRCon, var2_78[var5_78], 0, var2_0, 0):setFrom(var2_78[var4_78])
+			shiftPanel(arg0_77.equipBCon, 0, var3_78[var5_78], var2_0, 0):setFrom(var3_78[var4_78])
+		elseif arg0_78 == ShipViewConst.PAGE.FASHION then
+			local var6_78 = arg1_78 and {
+				arg0_77.fashionContainer.rect.width + 150,
 				0
 			} or {
 				0,
-				arg0_78.fashionContainer.rect.width + 150
+				arg0_77.fashionContainer.rect.width + 150
 			}
 
-			shiftPanel(arg0_78.fashionContainer, var6_79[2], 0, var2_0, 0):setFrom(var6_79[1])
+			shiftPanel(arg0_77.fashionContainer, var6_78[2], 0, var2_0, 0):setFrom(var6_78[1])
 
-			if arg1_79 then
-				arg0_78.shipFashionView:ActionInvoke("UpdateFashion")
+			if arg1_78 then
+				arg0_77.shipFashionView:ActionInvoke("UpdateFashion")
 			end
-		elseif arg0_79 == ShipViewConst.PAGE.INTENSIFY then
-			if arg1_79 then
-				arg0_78:emit(ShipMainMediator.OPEN_INTENSIFY)
+		elseif arg0_78 == ShipViewConst.PAGE.INTENSIFY then
+			if arg1_78 then
+				arg0_77:emit(ShipMainMediator.OPEN_INTENSIFY)
 			else
-				arg0_78:emit(ShipMainMediator.CLOSE_INTENSIFY)
+				arg0_77:emit(ShipMainMediator.CLOSE_INTENSIFY)
 			end
-		elseif arg0_79 == ShipViewConst.PAGE.UPGRADE then
-			if arg1_79 then
-				arg0_78:emit(ShipMainMediator.ON_UPGRADE)
+		elseif arg0_78 == ShipViewConst.PAGE.UPGRADE then
+			if arg1_78 then
+				arg0_77:emit(ShipMainMediator.ON_UPGRADE)
 			else
-				arg0_78:emit(ShipMainMediator.CLOSE_UPGRADE)
+				arg0_77:emit(ShipMainMediator.CLOSE_UPGRADE)
 			end
-		elseif arg0_79 == ShipViewConst.PAGE.REMOULD then
-			if arg1_79 then
-				arg0_78:emit(ShipMainMediator.OPEN_REMOULD)
+		elseif arg0_78 == ShipViewConst.PAGE.REMOULD then
+			if arg1_78 then
+				arg0_77:emit(ShipMainMediator.OPEN_REMOULD)
 			else
-				arg0_78:emit(ShipMainMediator.CLOSE_REMOULD)
+				arg0_77:emit(ShipMainMediator.CLOSE_REMOULD)
 			end
 		end
 
-		arg0_78:blurPage(arg0_79, arg1_79)
+		arg0_77:blurPage(arg0_78, arg1_78)
 
-		if arg0_79 ~= ShipViewConst.PAGE.FASHION then
-			arg0_78.fashionSkinId = arg0_78.shipVO.skinId
+		if arg0_78 ~= ShipViewConst.PAGE.FASHION then
+			arg0_77.fashionSkinId = arg0_77.shipVO:getSkinId()
 
-			arg0_78:loadPainting(arg0_78.shipVO:getPainting())
+			arg0_77:loadPainting(arg0_77.shipVO:getPainting())
 		end
 
-		local var7_79 = not ShipViewConst.IsSubLayerPage(arg0_79)
-		local var8_79 = arg0_78.bgEffect[arg0_78.shipVO:getRarity()]
+		local var7_78 = not ShipViewConst.IsSubLayerPage(arg0_78)
+		local var8_78 = arg0_77.bgEffect[arg0_77.shipVO:getRarity()]
 
-		if var8_79 then
-			setActive(var8_79, arg0_79 ~= ShipViewConst.PAGE.REMOULD and arg0_78.shipVO.bluePrintFlag and arg0_78.shipVO.bluePrintFlag == 0)
+		if var8_78 then
+			setActive(var8_78, arg0_78 ~= ShipViewConst.PAGE.REMOULD and arg0_77.shipVO.bluePrintFlag and arg0_77.shipVO.bluePrintFlag == 0)
+			arg0_77:changePaintingSortLayer(true)
 		end
 
-		setActive(arg0_78.helpBtn, var7_79)
+		setActive(arg0_77.helpBtn, var7_78)
 	end
 
 	function switchHandler()
-		if arg1_78 == ShipViewConst.currentPage and arg2_78 then
-			var0_78(arg1_78, true)
-		elseif arg1_78 ~= ShipViewConst.currentPage then
+		if arg1_77 == ShipViewConst.currentPage and arg2_77 then
+			var0_77(arg1_77, true)
+		elseif arg1_77 ~= ShipViewConst.currentPage then
 			if ShipViewConst.currentPage then
-				var0_78(ShipViewConst.currentPage, false)
+				var0_77(ShipViewConst.currentPage, false)
 			end
 
-			ShipViewConst.currentPage = arg1_78
-			arg0_78.contextData.page = arg1_78
+			ShipViewConst.currentPage = arg1_77
+			arg0_77.contextData.page = arg1_77
 
-			var0_78(arg1_78, true)
-			arg0_78:switchPainting()
+			var0_77(arg1_77, true)
+			arg0_77:switchPainting()
 		end
 	end
 
-	if arg0_78.viewList[arg1_78] ~= nil then
-		local var1_78 = arg0_78.viewList[arg1_78]
+	if arg0_77.viewList[arg1_77] ~= nil then
+		local var1_77 = arg0_77.viewList[arg1_77]
 
-		if not var1_78:GetLoaded() then
-			var1_78:Load()
-			var1_78:CallbackInvoke(switchHandler)
+		if not var1_77:GetLoaded() then
+			var1_77:Load()
+			var1_77:CallbackInvoke(switchHandler)
 		else
 			switchHandler()
 		end
@@ -923,194 +923,221 @@ function var0_0.switchToPage(arg0_78, arg1_78, arg2_78)
 	end
 end
 
-function var0_0.blurPage(arg0_81, arg1_81, arg2_81)
-	local var0_81 = pg.UIMgr.GetInstance()
+function var0_0.blurPage(arg0_80, arg1_80, arg2_80)
+	local var0_80 = pg.UIMgr.GetInstance()
 
-	if arg1_81 == ShipViewConst.PAGE.DETAIL then
-		arg0_81.shipDetailView:ActionInvoke("OnSelected", arg2_81)
-	elseif arg1_81 == ShipViewConst.PAGE.EQUIPMENT then
-		arg0_81.shipEquipView:ActionInvoke("OnSelected", arg2_81)
-	elseif arg1_81 == ShipViewConst.PAGE.FASHION then
-		arg0_81.shipFashionView:ActionInvoke("OnSelected", arg2_81)
-	elseif arg1_81 == ShipViewConst.PAGE.INTENSIFY then
+	if arg1_80 == ShipViewConst.PAGE.DETAIL then
+		arg0_80.shipDetailView:ActionInvoke("OnSelected", arg2_80)
+	elseif arg1_80 == ShipViewConst.PAGE.EQUIPMENT then
+		arg0_80.shipEquipView:ActionInvoke("OnSelected", arg2_80)
+	elseif arg1_80 == ShipViewConst.PAGE.FASHION then
+		arg0_80.shipFashionView:ActionInvoke("OnSelected", arg2_80)
+	elseif arg1_80 == ShipViewConst.PAGE.INTENSIFY then
 		-- block empty
-	elseif arg1_81 == ShipViewConst.PAGE.UPGRADE then
+	elseif arg1_80 == ShipViewConst.PAGE.UPGRADE then
 		-- block empty
-	elseif arg1_81 == ShipViewConst.PAGE.REMOULD then
+	elseif arg1_80 == ShipViewConst.PAGE.REMOULD then
 		-- block empty
 	end
 end
 
-function var0_0.switchPainting(arg0_82)
-	setActive(arg0_82.shipInfo, not ShipViewConst.IsSubLayerPage(ShipViewConst.currentPage))
-	setActive(arg0_82.shipName, not ShipViewConst.IsSubLayerPage(ShipViewConst.currentPage))
+function var0_0.switchPainting(arg0_81)
+	setActive(arg0_81.shipInfo, not ShipViewConst.IsSubLayerPage(ShipViewConst.currentPage))
+	setActive(arg0_81.shipName, not ShipViewConst.IsSubLayerPage(ShipViewConst.currentPage))
 
 	if ShipViewConst.currentPage == ShipViewConst.PAGE.EQUIPMENT then
-		shiftPanel(arg0_82.shipInfo, -20, 0, var2_0, 0)
+		shiftPanel(arg0_81.shipInfo, -20, 0, var2_0, 0)
 
-		arg0_82.paintingFrameName = "zhuangbei"
+		arg0_81.paintingFrameName = "zhuangbei"
 	else
-		shiftPanel(arg0_82.shipInfo, -460, 0, var2_0, 0)
+		shiftPanel(arg0_81.shipInfo, -460, 0, var2_0, 0)
 
-		arg0_82.paintingFrameName = "chuanwu"
+		arg0_81.paintingFrameName = "chuanwu"
 	end
 
-	local var0_82 = GetOrAddComponent(findTF(arg0_82.nowPainting, "fitter"), "PaintingScaler")
+	local var0_81 = GetOrAddComponent(findTF(arg0_81.nowPainting, "fitter"), "PaintingScaler")
 
-	var0_82:Snapshoot()
+	var0_81:Snapshoot()
 
-	var0_82.FrameName = arg0_82.paintingFrameName
+	var0_81.FrameName = arg0_81.paintingFrameName
 
-	local var1_82 = LeanTween.value(go(arg0_82.nowPainting), 0, 1, var2_0):setOnUpdate(System.Action_float(function(arg0_83)
-		var0_82.Tween = arg0_83
-		arg0_82.chat.localPosition = Vector3(arg0_82.character.localPosition.x + 100, arg0_82.chat.localPosition.y, 0)
+	local var1_81 = LeanTween.value(go(arg0_81.nowPainting), 0, 1, var2_0):setOnUpdate(System.Action_float(function(arg0_82)
+		var0_81.Tween = arg0_82
+		arg0_81.chat.localPosition = Vector3(arg0_81.character.localPosition.x + 100, arg0_81.chat.localPosition.y, 0)
 	end)):setEase(LeanTweenType.easeInOutSine)
 end
 
-function var0_0.setPreOrNext(arg0_84, arg1_84, arg2_84)
-	if arg1_84 then
-		arg0_84.isRight = true
+function var0_0.setPreOrNext(arg0_83, arg1_83, arg2_83)
+	if arg1_83 then
+		arg0_83.isRight = true
 	else
-		arg0_84.isRight = false
+		arg0_83.isRight = false
 	end
 
-	if arg0_84.shipVO:getGroupId() ~= arg2_84:getGroupId() then
-		arg0_84.switchCnt = (arg0_84.switchCnt or 0) + 1
+	if arg0_83.shipVO:getGroupId() ~= arg2_83:getGroupId() then
+		arg0_83.switchCnt = (arg0_83.switchCnt or 0) + 1
 	end
 
-	if arg0_84.switchCnt and arg0_84.switchCnt >= 10 then
+	if arg0_83.switchCnt and arg0_83.switchCnt >= 10 then
 		gcAll()
 
-		arg0_84.switchCnt = 0
+		arg0_83.switchCnt = 0
 	end
 end
 
-function var0_0.loadPainting(arg0_85, arg1_85, arg2_85)
-	local var0_85 = arg1_85
+function var0_0.loadPainting(arg0_84, arg1_84, arg2_84)
+	local var0_84 = arg1_84
 
-	arg1_85 = MainMeshImagePainting.StaticGetPaintingName(var0_85)
+	arg1_84 = MainMeshImagePainting.StaticGetPaintingName(var0_84)
 
-	if arg0_85.isLoading == true then
+	if arg0_84.isLoading == true then
 		return
 	end
 
-	for iter0_85, iter1_85 in pairs(arg0_85.tablePainting) do
-		iter1_85.localScale = Vector3(1, 1, 1)
+	for iter0_84, iter1_84 in pairs(arg0_84.tablePainting) do
+		iter1_84.localScale = Vector3(1, 1, 1)
 	end
 
-	if arg0_85.LoadShipVOId and not arg2_85 and arg0_85.LoadShipVOId == arg0_85.shipVO.id and arg0_85.LoadPaintingCode == arg1_85 and not arg2_85 then
+	if arg0_84.LoadShipVOId and not arg2_84 and arg0_84.LoadShipVOId == arg0_84.shipVO.id and arg0_84.LoadPaintingCode == arg1_84 and not arg2_84 then
 		return
 	end
 
-	local var1_85 = 0
-	local var2_85 = arg0_85.isRight and 1800 or -1800
-	local var3_85 = arg0_85:getPaintingFromTable(false)
+	local var1_84 = 0
+	local var2_84 = arg0_84.isRight and 1800 or -1800
+	local var3_84 = arg0_84:getPaintingFromTable(false)
 
-	arg0_85.isLoading = true
+	arg0_84.isLoading = true
 
-	local var4_85 = arg0_85.paintingCode
-	local var5_85 = {}
+	local var4_84 = arg0_84.paintingCode
+	local var5_84 = {}
 
-	if var3_85 then
-		table.insert(var5_85, function(arg0_86)
-			local var0_86 = var3_85:GetComponent(typeof(RectTransform))
-			local var1_86 = var3_85:GetComponent(typeof(CanvasGroup))
+	if var3_84 then
+		table.insert(var5_84, function(arg0_85)
+			local var0_85 = var3_84:GetComponent(typeof(RectTransform))
+			local var1_85 = var3_84:GetComponent(typeof(CanvasGroup))
 
-			LeanTween.cancel(go(var1_86))
-			LeanTween.alphaCanvas(var1_86, 0, 0.3):setFrom(1):setUseEstimatedTime(true)
-			LeanTween.moveX(var0_86, -var2_85, 0.3):setFrom(0):setOnComplete(System.Action(function()
-				retPaintingPrefab(var3_85, var4_85)
-				arg0_86()
+			LeanTween.cancel(go(var1_85))
+			LeanTween.alphaCanvas(var1_85, 0, 0.3):setFrom(1):setUseEstimatedTime(true)
+			LeanTween.moveX(var0_85, -var2_84, 0.3):setFrom(0):setOnComplete(System.Action(function()
+				retPaintingPrefab(var3_84, var4_84)
+				arg0_85()
 			end))
 		end)
 	end
 
-	local var6_85 = arg0_85:getPaintingFromTable(true)
+	local var6_84 = arg0_84:getPaintingFromTable(true)
 
-	arg0_85.paintingCode = arg1_85
+	arg0_84.paintingCode = arg1_84
 
-	if arg0_85.paintingCode and var6_85 then
-		local var7_85 = var6_85:GetComponent(typeof(RectTransform))
+	if arg0_84.paintingCode and var6_84 then
+		local var7_84 = var6_84:GetComponent(typeof(RectTransform))
 
-		table.insert(var5_85, function(arg0_88)
-			arg0_85.nowPainting = var6_85
+		table.insert(var5_84, function(arg0_87)
+			arg0_84.nowPainting = var6_84
 
-			LoadPaintingPrefabAsync(var6_85, var0_85, arg0_85.paintingCode, arg0_85.paintingFrameName or "chuanwu", function()
-				local var0_89 = arg0_85.shipVO:getCVIntimacy()
-				local var1_89 = arg0_85:getInitmacyWords()
+			LoadPaintingPrefabAsync(var6_84, var0_84, arg0_84.paintingCode, arg0_84.paintingFrameName or "chuanwu", function()
+				local var0_88 = arg0_84.shipVO:getCVIntimacy()
+				local var1_88 = arg0_84:getInitmacyWords()
 
-				ShipExpressionHelper.SetExpression(findTF(var6_85, "fitter"):GetChild(0), arg0_85.paintingCode, var1_89, var0_89)
-				arg0_88()
+				ShipExpressionHelper.SetExpression(findTF(var6_84, "fitter"):GetChild(0), arg0_84.paintingCode, var1_88, var0_88)
+				arg0_87()
 			end)
 		end)
-		table.insert(var5_85, function(arg0_90)
-			LeanTween.cancel(go(var7_85))
-			LeanTween.moveX(var7_85, 0, 0.3):setFrom(var2_85):setOnComplete(System.Action(arg0_90))
+		table.insert(var5_84, function(arg0_89)
+			LeanTween.cancel(go(var7_84))
+			LeanTween.moveX(var7_84, 0, 0.3):setFrom(var2_84):setOnComplete(System.Action(arg0_89))
 
-			local var0_90 = var6_85:GetComponent(typeof(CanvasGroup))
+			local var0_89 = var6_84:GetComponent(typeof(CanvasGroup))
 
-			LeanTween.alphaCanvas(var0_90, 1, 0.3):setFrom(0):setUseEstimatedTime(true)
+			LeanTween.alphaCanvas(var0_89, 1, 0.3):setFrom(0):setUseEstimatedTime(true)
 		end)
 	end
 
-	parallelAsync(var5_85, function()
-		arg0_85.LoadShipVOId = arg0_85.shipVO.id
-		arg0_85.LoadPaintingCode = arg1_85
-		arg0_85.isLoading = false
+	parallelAsync(var5_84, function()
+		arg0_84.LoadShipVOId = arg0_84.shipVO.id
+		arg0_84.LoadPaintingCode = arg1_84
+		arg0_84.isLoading = false
 	end)
 end
 
-function var0_0.getPaintingFromTable(arg0_92, arg1_92)
-	if arg0_92.tablePainting == nil then
+function var0_0.getPaintingFromTable(arg0_91, arg1_91)
+	if arg0_91.tablePainting == nil then
 		print("self.tablePainting为空")
 
 		return
 	end
 
-	for iter0_92 = 1, #arg0_92.tablePainting do
-		if findTF(arg0_92.tablePainting[iter0_92], "fitter").childCount == 0 then
-			if arg1_92 == true and arg0_92.tablePainting[iter0_92] then
-				return arg0_92.tablePainting[iter0_92]
+	for iter0_91 = 1, #arg0_91.tablePainting do
+		if findTF(arg0_91.tablePainting[iter0_91], "fitter").childCount == 0 then
+			if arg1_91 == true and arg0_91.tablePainting[iter0_91] then
+				return arg0_91.tablePainting[iter0_91]
 			end
-		elseif arg1_92 == false and arg0_92.tablePainting[iter0_92] then
-			return arg0_92.tablePainting[iter0_92]
+		elseif arg1_91 == false and arg0_91.tablePainting[iter0_91] then
+			return arg0_91.tablePainting[iter0_91]
 		end
 	end
 end
 
-function var0_0.loadSkinBg(arg0_93, arg1_93, arg2_93, arg3_93, arg4_93)
-	if not arg0_93.bgEffect then
-		arg0_93.bgEffect = {}
+function var0_0.loadSkinBg(arg0_92, arg1_92, arg2_92, arg3_92, arg4_92)
+	if not arg0_92.bgEffect then
+		arg0_92.bgEffect = {}
 	end
 
-	if arg0_93.shipSkinBg ~= arg1_93 or arg0_93.isDesign ~= arg2_93 or arg0_93.isMeta ~= arg3_93 then
-		arg0_93.shipSkinBg = arg1_93
-		arg0_93.isDesign = arg2_93
-		arg0_93.isMeta = arg3_93
+	if arg0_92.shipSkinBg ~= arg1_92 or arg0_92.isDesign ~= arg2_92 or arg0_92.isMeta ~= arg3_92 then
+		arg0_92.shipSkinBg = arg1_92
+		arg0_92.isDesign = arg2_92
+		arg0_92.isMeta = arg3_92
 
-		if arg0_93.isDesign then
-			if arg0_93.metaBg then
-				setActive(arg0_93.metaBg, false)
+		if arg0_92.isDesign then
+			if arg0_92.metaBg then
+				setActive(arg0_92.metaBg, false)
 			end
 
-			if arg0_93.bgEffect then
-				for iter0_93, iter1_93 in pairs(arg0_93.bgEffect) do
-					setActive(iter1_93, false)
+			if arg0_92.bgEffect then
+				for iter0_92, iter1_92 in pairs(arg0_92.bgEffect) do
+					setActive(iter1_92, false)
 				end
 			end
 
-			if arg0_93.designBg and arg0_93.designName ~= "raritydesign" .. arg0_93.shipVO:getRarity() then
-				PoolMgr.GetInstance():ReturnUI(arg0_93.designName, arg0_93.designBg)
+			if arg0_92.designBg and arg0_92.designName ~= "raritydesign" .. arg0_92.shipVO:getRarity() then
+				PoolMgr.GetInstance():ReturnUI(arg0_92.designName, arg0_92.designBg)
 
-				arg0_93.designBg = nil
+				arg0_92.designBg = nil
 			end
 
-			if not arg0_93.designBg then
-				PoolMgr.GetInstance():GetUI("raritydesign" .. arg0_93.shipVO:getRarity(), true, function(arg0_94)
-					arg0_93.designBg = arg0_94
-					arg0_93.designName = "raritydesign" .. arg0_93.shipVO:getRarity()
+			if not arg0_92.designBg then
+				PoolMgr.GetInstance():GetUI("raritydesign" .. arg0_92.shipVO:getRarity(), true, function(arg0_93)
+					arg0_92.designBg = arg0_93
+					arg0_92.designName = "raritydesign" .. arg0_92.shipVO:getRarity()
 
-					arg0_94.transform:SetParent(arg0_93._tf, false)
+					arg0_93.transform:SetParent(arg0_92._tf, false)
+
+					arg0_93.transform.localPosition = Vector3(1, 1, 1)
+					arg0_93.transform.localScale = Vector3(1, 1, 1)
+
+					arg0_93.transform:SetSiblingIndex(1)
+					setActive(arg0_93, true)
+				end)
+			else
+				setActive(arg0_92.designBg, true)
+			end
+		elseif arg0_92.isMeta then
+			if arg0_92.designBg then
+				setActive(arg0_92.designBg, false)
+			end
+
+			if arg0_92.metaBg and arg0_92.metaName ~= "raritymeta" .. arg0_92.shipVO:getRarity() then
+				PoolMgr.GetInstance():ReturnUI(arg0_92.metaName, arg0_92.metaBg)
+
+				arg0_92.metaBg = nil
+			end
+
+			if not arg0_92.metaBg then
+				PoolMgr.GetInstance():GetUI("raritymeta" .. arg0_92.shipVO:getRarity(), true, function(arg0_94)
+					arg0_92.metaBg = arg0_94
+					arg0_92.metaName = "raritymeta" .. arg0_92.shipVO:getRarity()
+
+					arg0_94.transform:SetParent(arg0_92._tf, false)
 
 					arg0_94.transform.localPosition = Vector3(1, 1, 1)
 					arg0_94.transform.localScale = Vector3(1, 1, 1)
@@ -1119,70 +1146,74 @@ function var0_0.loadSkinBg(arg0_93, arg1_93, arg2_93, arg3_93, arg4_93)
 					setActive(arg0_94, true)
 				end)
 			else
-				setActive(arg0_93.designBg, true)
-			end
-		elseif arg0_93.isMeta then
-			if arg0_93.designBg then
-				setActive(arg0_93.designBg, false)
-			end
-
-			if arg0_93.metaBg and arg0_93.metaName ~= "raritymeta" .. arg0_93.shipVO:getRarity() then
-				PoolMgr.GetInstance():ReturnUI(arg0_93.metaName, arg0_93.metaBg)
-
-				arg0_93.metaBg = nil
-			end
-
-			if not arg0_93.metaBg then
-				PoolMgr.GetInstance():GetUI("raritymeta" .. arg0_93.shipVO:getRarity(), true, function(arg0_95)
-					arg0_93.metaBg = arg0_95
-					arg0_93.metaName = "raritymeta" .. arg0_93.shipVO:getRarity()
-
-					arg0_95.transform:SetParent(arg0_93._tf, false)
-
-					arg0_95.transform.localPosition = Vector3(1, 1, 1)
-					arg0_95.transform.localScale = Vector3(1, 1, 1)
-
-					arg0_95.transform:SetSiblingIndex(1)
-					setActive(arg0_95, true)
-				end)
-			else
-				setActive(arg0_93.metaBg, true)
+				setActive(arg0_92.metaBg, true)
 			end
 		else
-			if arg0_93.designBg then
-				setActive(arg0_93.designBg, false)
+			if arg0_92.designBg then
+				setActive(arg0_92.designBg, false)
 			end
 
-			if arg0_93.metaBg then
-				setActive(arg0_93.metaBg, false)
+			if arg0_92.metaBg then
+				setActive(arg0_92.metaBg, false)
 			end
 
-			for iter2_93 = 1, 5 do
-				local var0_93 = arg0_93.shipVO:getRarity()
+			for iter2_92 = 1, 5 do
+				local var0_92 = arg0_92.shipVO:getRarity()
 
-				if arg0_93.bgEffect[iter2_93] then
-					setActive(arg0_93.bgEffect[iter2_93], iter2_93 == var0_93 and ShipViewConst.currentPage ~= ShipViewConst.PAGE.REMOULD and not arg4_93)
-				elseif var0_93 > 2 and var0_93 == iter2_93 and not arg4_93 then
-					PoolMgr.GetInstance():GetUI("al_bg02_" .. var0_93 - 1, true, function(arg0_96)
-						arg0_93.bgEffect[iter2_93] = arg0_96
+				if arg0_92.bgEffect[iter2_92] then
+					setActive(arg0_92.bgEffect[iter2_92], iter2_92 == var0_92 and ShipViewConst.currentPage ~= ShipViewConst.PAGE.REMOULD and not arg4_92)
+				elseif var0_92 > 2 and var0_92 == iter2_92 and not arg4_92 then
+					PoolMgr.GetInstance():GetUI("al_bg02_" .. var0_92 - 1, true, function(arg0_95)
+						arg0_92.bgEffect[iter2_92] = arg0_95
 
-						arg0_96.transform:SetParent(arg0_93._tf, false)
+						arg0_95.transform:SetParent(arg0_92._tf, false)
 
-						arg0_96.transform.localPosition = Vector3(0, 0, 0)
-						arg0_96.transform.localScale = Vector3(1, 1, 1)
+						arg0_95.transform.localPosition = Vector3(0, 0, 0)
+						arg0_95.transform.localScale = Vector3(1, 1, 1)
 
-						arg0_96.transform:SetSiblingIndex(1)
-						setActive(arg0_96, not ShipViewConst.IsSubLayerPage(ShipViewConst.currentPage))
+						arg0_95.transform:SetSiblingIndex(1)
+						setActive(arg0_95, not ShipViewConst.IsSubLayerPage(ShipViewConst.currentPage))
 					end)
 				end
+
+				arg0_92:changePaintingSortLayer(true)
 			end
 		end
 
-		GetSpriteFromAtlasAsync("bg/star_level_bg_" .. arg1_93, "", function(arg0_97)
-			if not arg0_93.exited and arg0_93.shipSkinBg == arg1_93 then
-				setImageSprite(arg0_93.background, arg0_97)
+		GetSpriteFromAtlasAsync("bg/star_level_bg_" .. arg1_92, "", function(arg0_96)
+			if not arg0_92.exited and arg0_92.shipSkinBg == arg1_92 then
+				setImageSprite(arg0_92.background, arg0_96)
 			end
 		end)
+	end
+end
+
+function var0_0.changePaintingSortLayer(arg0_97, arg1_97)
+	local var0_97
+	local var1_97 = arg1_97 and 12 or -1
+
+	for iter0_97, iter1_97 in ipairs(arg0_97.tablePainting) do
+		GetComponent(iter1_97, typeof(Canvas)).sortingOrder = var1_97
+	end
+
+	if arg1_97 then
+		local var2_97 = arg0_97.shipVO:getRarity()
+
+		if arg0_97.isDesign and arg0_97.designBg then
+			setActive(arg0_97.designBg, true)
+		elseif arg0_97.bgEffect and var2_97 and arg0_97.bgEffect[var2_97] then
+			setActive(arg0_97.bgEffect[var2_97], true)
+		end
+	else
+		if arg0_97.designBg then
+			setActive(arg0_97.designBg, false)
+		end
+
+		if arg0_97.bgEffect then
+			for iter2_97, iter3_97 in pairs(arg0_97.bgEffect) do
+				setActive(iter3_97, false)
+			end
+		end
 	end
 end
 

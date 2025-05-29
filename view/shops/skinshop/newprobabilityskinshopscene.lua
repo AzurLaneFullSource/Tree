@@ -144,6 +144,12 @@ function var0_0.willExit(arg0_18)
 		arg0_18.itemView = nil
 	end
 
+	if arg0_18.mainView then
+		arg0_18.mainView:Dispose()
+
+		arg0_18.mainView = nil
+	end
+
 	if arg0_18.chargeTipWindow then
 		arg0_18.chargeTipWindow:Destroy()
 

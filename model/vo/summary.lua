@@ -90,7 +90,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 		local var10_1 = var9_1:getShipById(iter5_1)
 
 		if var10_1 and var8_1[var10_1.skinId] then
-			arg0_1.skinId = var10_1.skinId
+			arg0_1.skinId = var10_1:getSkinId()
 
 			break
 		end

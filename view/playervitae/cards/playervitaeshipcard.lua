@@ -155,9 +155,9 @@ function var0_0.OnUpdate(arg0_15, arg1_15, arg2_15, arg3_15, arg4_15, arg5_15)
 	arg0_15.native = arg5_15
 
 	local var0_15 = arg3_15[arg2_15]
-	local var1_15 = getProxy(BayProxy):RawGetShipById(var0_15)
+	local var1_15 = getProxy(BayProxy):GetShipPhantom(var0_15)
 
-	if not arg0_15.displayShip or arg0_15.displayShipSkinId ~= var1_15.skinId or arg0_15.displayShip.id ~= var1_15.id then
+	if not arg0_15.displayShip or arg0_15.displayShipSkinId ~= var1_15:getSkinId() or arg0_15.displayShip.id ~= var1_15.id then
 		arg0_15:UpdateShip(var1_15)
 	end
 

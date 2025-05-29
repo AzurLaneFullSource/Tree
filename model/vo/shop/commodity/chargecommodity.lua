@@ -295,4 +295,20 @@ function var0_0.GetLimitDesc(arg0_32)
 	return ""
 end
 
+function var0_0.GetInfoTip(arg0_33)
+	if not arg0_33:isItemBox() or arg0_33:getConfig("tip_open") == 0 then
+		return ""
+	else
+		return arg0_33:getConfig("tip")
+	end
+end
+
+function var0_0.GetPackageTag(arg0_34)
+	if not arg0_34:isItemBox() or arg0_34:getConfig("package_tag_open") == 0 then
+		return ""
+	else
+		return arg0_34:getConfig("package_tag")
+	end
+end
+
 return var0_0

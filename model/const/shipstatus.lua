@@ -135,7 +135,7 @@ function var0_0.ShipStatusToTag(arg0_2, arg1_2)
 			"red",
 			i18n("word_status_world")
 		}
-	elseif getProxy(SettingsProxy):IsRandomFlagShip(arg0_2.id) then
+	elseif getProxy(SettingsProxy):IsRandomFlagShip(arg0_2:GetShipPhantomMark()) then
 		return {
 			"shipstatus",
 			"light_yellow",

@@ -165567,6 +165567,30 @@ _G.pg.base.item_virtual_data_statistics[65099] = {
 	combination_display = {},
 }
 
+_G.pg.base.item_virtual_data_statistics[65100] = {
+	display = "A currency earned from completing Cruise Missions during the seasonal campaign, used to obtain milestone rewards. Will disappear after the campaign season ends. ",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "props/battlepass_pt",
+	id = 65100,
+	is_world = 0,
+	link_id = 7023,
+	max_num = 0,
+	name = "Progress Pts",
+	order = 0,
+	rarity = 2,
+	replace_item = 0,
+	shop_id = -1,
+	time_limit = 0,
+	type = 0,
+	virtual_type = 21,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
 _G.pg.base.item_virtual_data_statistics[65500] = {
 	display = "A commemorative medal issued by the Iron Blood Resistance celebrating your triumph over the Star Beast.\n—Our world shall not perish. Not today, not ever.",
 	drop_gold_max = 0,
@@ -168286,6 +168310,30 @@ _G.pg.base.item_virtual_data_statistics[66006] = {
 	shop_id = -1,
 	time_limit = 0,
 	type = 0,
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
+_G.pg.base.item_virtual_data_statistics[68081] = {
+	display = "Little Ruler of the Abyssal Kingdom event item used to fully recruit Little Ägir to your fleet. Removed after the event ends.",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "Props/xiaoaijierPT",
+	id = 68081,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Trust - Little Ägir",
+	order = 0,
+	rarity = 2,
+	replace_item = 0,
+	shop_id = -1,
+	time_limit = 0,
+	type = 98,
 	virtual_type = 0,
 	display_icon = {},
 	price = {},
@@ -176458,6 +176506,59 @@ _G.pg.base.item_virtual_data_statistics[86213] = {
 		{
 			202351,
 			2000,
+		},
+	},
+}
+
+_G.pg.base.item_virtual_data_statistics[86214] = {
+	display = "不会被看到",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "Props/clothIcon",
+	id = 86214,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Random Skin",
+	order = 0,
+	rarity = 4,
+	replace_item = 0,
+	shop_id = -1,
+	time_limit = 0,
+	type = 98,
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			207055,
+			1400,
+		},
+		{
+			403142,
+			1400,
+		},
+		{
+			299024,
+			1400,
+		},
+		{
+			502043,
+			1400,
+		},
+		{
+			705042,
+			1580,
+		},
+		{
+			105102,
+			1410,
+		},
+		{
+			105093,
+			1410,
 		},
 	},
 }

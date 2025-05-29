@@ -4,7 +4,18 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	local var0_1 = arg1_1.display or {}
 
 	arg0_1.icon = arg1_1.icon or var0_1.icon
-	arg0_1.character = arg1_1.character or var0_1.character
+
+	if arg1_1.character then
+		arg0_1.characters = underscore.map(arg1_1.character, function(arg0_2)
+			return arg0_2.key
+		end)
+		arg0_1.phantoms = underscore.map(arg1_1.character, function(arg0_3)
+			return arg0_3.value
+		end)
+		arg0_1.character = arg0_1.characters[1]
+		arg0_1.phantomId = arg0_1.phantoms[1] or 0
+	end
+
 	arg0_1.skinId = arg1_1.skin_id or var0_1.skin or 0
 
 	if arg0_1.skinId == 0 then

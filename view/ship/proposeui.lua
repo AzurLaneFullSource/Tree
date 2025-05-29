@@ -715,7 +715,7 @@ function var0_0.showProposePanel(arg0_52)
 
 				arg0_52.storybg.localScale = Vector3(1.2, 1.2, 1.2)
 
-				local var0_54 = arg0_52.weddingReview and arg0_52.reviewSkinID or arg0_52.shipVO.skinId
+				local var0_54 = arg0_52.weddingReview and arg0_52.reviewSkinID or arg0_52.shipVO:getSkinId()
 
 				arg0_52.handId = pg.ship_skin_template[var0_54].hand_id
 
@@ -963,7 +963,7 @@ function var0_0.displayShipWord(arg0_88, arg1_88)
 	elseif arg0_88.proposeSkin then
 		var4_88 = arg0_88.proposeSkin.id
 	else
-		var4_88 = arg0_88.shipVO.skinId
+		var4_88 = arg0_88.shipVO:getSkinId()
 	end
 
 	local var5_88 = ShipWordHelper.GetL2dCvCalibrate(var4_88, arg1_88)
@@ -1200,8 +1200,10 @@ function var0_0.createLive2D(arg0_108, arg1_108)
 		elseif arg0_108.proposeSkin then
 			var2_109 = arg0_108.proposeSkin.id
 		else
-			var2_109 = arg0_108.shipVO.skinId
+			var2_109 = arg0_108.shipVO:getSkinId()
 		end
+
+		Live2D.SetL2dSortingLayer(arg0_109, -999)
 
 		var1_109.localPosition = BuildVector3(pg.ship_skin_template[var2_109].live2d_offset) + Vector3(0, 0, 100)
 		var1_109.localScale = Vector3.Scale(Vector3(1, 1, 10), var1_109.localScale)

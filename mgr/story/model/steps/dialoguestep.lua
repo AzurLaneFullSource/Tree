@@ -597,9 +597,9 @@ end
 
 function var0_0.GetShipSkinId(arg0_52)
 	if arg0_52.actor == var0_0.ACTOR_TYPE_FLAGSHIP then
-		local var0_52 = getProxy(PlayerProxy):getRawData().character
+		local var0_52 = getProxy(PlayerProxy):getRawData()
 
-		return getProxy(BayProxy):getShipById(var0_52).skinId
+		return getProxy(BayProxy):GetShipPhantom(var0_52:GetFlagShipPhantomMark()):getSkinId()
 	elseif arg0_52.actor == var0_0.ACTOR_TYPE_PLAYER then
 		return nil
 	elseif not arg0_52.actor then

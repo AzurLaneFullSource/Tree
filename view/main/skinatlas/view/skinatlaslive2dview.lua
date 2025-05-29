@@ -76,11 +76,11 @@ function var0_0.OnClick(arg0_7)
 end
 
 function var0_0.GetTouchEvent(arg0_8, arg1_8)
-	return (var1_0.filterAssistantEvents(var1_0.getAssistantTouchEvents(arg1_8), arg0_8.ship.skinId, 0))
+	return (var1_0.filterAssistantEvents(var1_0.getAssistantTouchEvents(arg1_8), arg0_8.ship:getSkinId(), 0))
 end
 
 function var0_0.GetIdleEvents(arg0_9)
-	return (var1_0.filterAssistantEvents(var1_0.IdleEvents, arg0_9.ship.skinId, 0))
+	return (var1_0.filterAssistantEvents(var1_0.IdleEvents, arg0_9.ship:getSkinId(), 0))
 end
 
 function var0_0.GetEventConfig(arg0_10, arg1_10)

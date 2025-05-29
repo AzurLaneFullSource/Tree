@@ -35,4 +35,8 @@ function var0_0.GetRecordPosKey(arg0_5)
 	return arg0_5.educateCharId .. "" .. arg0_5.id
 end
 
+function var0_0.getSkinId(arg0_6)
+	return arg0_6.skinId
+end
+
 return var0_0

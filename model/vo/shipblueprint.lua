@@ -828,4 +828,68 @@ function var0_0.isPursuingCostTip(arg0_67)
 	return arg0_67:isPursuing() and arg0_67:isUnlock() and not arg0_67:isMaxIntensifyLevel() and not arg0_67:isShipModMaxIntensifyLevel(getProxy(BayProxy):getShipById(arg0_67.shipId)) and getProxy(TechnologyProxy):calcPursuingCost(arg0_67, 1) == 0
 end
 
+function var0_0.setPhantomQuestProgress(arg0_68, arg1_68, arg2_68)
+	arg0_68.phantomQuestProgress = arg0_68.phantomQuestProgress or {}
+	arg0_68.phantomQuestProgress[arg1_68] = arg2_68
+end
+
+function var0_0.getPhantomQuestCostDrop(arg0_69)
+	if arg0_69.config.type == 5 then
+		return Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = PlayerConst.ResDiamond,
+			count = arg0_69.config.target_num
+		})
+	else
+		return nil
+	end
+end
+
+function var0_0.getPhantomQuestProgress(arg0_70, arg1_70)
+	assert(arg0_70.shipId)
+
+	return switch(arg1_70, {
+		function()
+			return getProxy(BayProxy):getShipById(arg0_70.shipId).level
+		end,
+		function()
+			return arg0_70.level + (arg0_70.level < arg0_70:getMaxLevel() and 0 or arg0_70.fateLevel)
+		end,
+		function()
+			return arg0_70.phantomQuestProgress[3] or 0
+		end,
+		function()
+			return getProxy(BayProxy):getShipById(arg0_70.shipId).propose and 1 or 0
+		end,
+		function()
+			return Drop.New({
+				type = DROP_TYPE_RESOURCE,
+				id = PlayerConst.ResDiamond
+			}):getOwnedCount()
+		end
+	})
+end
+
+function var0_0.getPhantomQuestInfo(arg0_76, arg1_76)
+	local var0_76 = pg.technology_shadow_unlock[arg1_76]
+
+	return {
+		config = var0_76,
+		progress = arg0_76:getPhantomQuestProgress(var0_76.type),
+		unlocked = tobool(getProxy(BayProxy):getShipById(arg0_76.shipId).phantomDic[arg1_76])
+	}
+end
+
+function var0_0.getAllPhantomQuestInfo(arg0_77)
+	return underscore.map(pg.technology_shadow_unlock.all, function(arg0_78)
+		return arg0_77:getPhantomQuestInfo(arg0_78)
+	end)
+end
+
+function var0_0.isUnlockShipPhantom(arg0_79)
+	local var0_79 = getGameset("technology_shadow_unlock_lv")[1]
+
+	return arg0_79:isFetched() and var0_79 <= getProxy(BayProxy):getShipById(arg0_79.shipId).level
+end
+
 return var0_0

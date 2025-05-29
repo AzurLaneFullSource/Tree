@@ -541,6 +541,7 @@ function var0_0.confirm(arg0_30, arg1_30)
 
 			local var7_30 = {
 				isChargeType = true,
+				infoTip = arg1_30:GetInfoTip(),
 				icon = "chargeicon/" .. arg1_30:getConfig("picture"),
 				name = arg1_30:getConfig("name_display"),
 				tipExtra = var5_30,

@@ -4,168 +4,164 @@ function var0_0.setShip(arg0_1, arg1_1)
 	arg0_1.shipVO = arg1_1
 end
 
-function var0_0.setShipSkin(arg0_2, arg1_2)
-	arg0_2.shipVO.skinId = arg1_2
-end
+function var0_0.GetShareSkins(arg0_2)
+	local var0_2 = getProxy(ShipSkinProxy):GetShareSkinsForShip(arg0_2.shipVO)
 
-function var0_0.GetShareSkins(arg0_3)
-	local var0_3 = getProxy(ShipSkinProxy):GetShareSkinsForShip(arg0_3.shipVO)
-
-	return (_.map(var0_3, function(arg0_4)
-		return pg.ship_skin_template[arg0_4.id]
+	return (_.map(var0_2, function(arg0_3)
+		return pg.ship_skin_template[arg0_3.id]
 	end))
 end
 
-function var0_0.setSkinList(arg0_5, arg1_5)
-	arg0_5.skinList = arg1_5
-	arg0_5.skins = arg0_5:getGroupSkinList(arg0_5.shipVO.groupId)
-	arg0_5.shareSkins = arg0_5:GetShareSkins()
+function var0_0.setSkinList(arg0_4, arg1_4)
+	arg0_4.skinList = arg1_4
+	arg0_4.skins = arg0_4:getGroupSkinList(arg0_4.shipVO.groupId)
+	arg0_4.shareSkins = arg0_4:GetShareSkins()
 end
 
-function var0_0.getUIName(arg0_6)
+function var0_0.getUIName(arg0_5)
 	return "SwichSkinLayer"
 end
 
-function var0_0.back(arg0_7)
-	arg0_7:emit(var0_0.ON_CLOSE)
+function var0_0.back(arg0_6)
+	arg0_6:emit(var0_0.ON_CLOSE)
 end
 
-function var0_0.init(arg0_8)
-	arg0_8.shareBtn = arg0_8:findTF("select_skin/share_btn")
+function var0_0.init(arg0_7)
+	arg0_7.shareBtn = arg0_7:findTF("select_skin/share_btn")
 end
 
-function var0_0.didEnter(arg0_9)
-	arg0_9:initSelectSkinPanel()
-	triggerToggle(arg0_9.shareBtn, false)
-	setActive(arg0_9.shareBtn, #arg0_9.shareSkins > 0)
+function var0_0.didEnter(arg0_8)
+	arg0_8:initSelectSkinPanel()
+	triggerToggle(arg0_8.shareBtn, false)
+	setActive(arg0_8.shareBtn, #arg0_8.shareSkins > 0)
 end
 
-function var0_0.initSelectSkinPanel(arg0_10)
-	arg0_10.skinPanel = arg0_10._tf
+function var0_0.initSelectSkinPanel(arg0_9)
+	arg0_9.skinPanel = arg0_9._tf
 
-	local var0_10 = arg0_10:findTF("select_skin/btnBack", arg0_10.skinPanel)
-	local var1_10 = arg0_10:findTF("print", arg0_10.skinPanel)
+	local var0_9 = arg0_9:findTF("select_skin/btnBack", arg0_9.skinPanel)
+	local var1_9 = arg0_9:findTF("print", arg0_9.skinPanel)
 
-	onButton(arg0_10, var0_10, function()
-		arg0_10:back()
+	onButton(arg0_9, var0_9, function()
+		arg0_9:back()
 	end)
-	onButton(arg0_10, var1_10, function()
-		arg0_10:back()
+	onButton(arg0_9, var1_9, function()
+		arg0_9:back()
 	end)
-	onToggle(arg0_10, arg0_10.shareBtn, function(arg0_13)
-		if arg0_13 then
-			arg0_10:Flush(arg0_10.shareSkins)
+	onToggle(arg0_9, arg0_9.shareBtn, function(arg0_12)
+		if arg0_12 then
+			arg0_9:Flush(arg0_9.shareSkins)
 		else
-			arg0_10:Flush(arg0_10.skins)
+			arg0_9:Flush(arg0_9.skins)
 		end
 	end, SFX_PANEL)
 
-	arg0_10.skinScroll = arg0_10:findTF("select_skin/style_scroll", arg0_10.skinPanel)
-	arg0_10.skinContainer = arg0_10:findTF("view_port", arg0_10.skinScroll)
-	arg0_10.skinCard = arg0_10._go:GetComponent(typeof(ItemList)).prefabItem[0]
+	arg0_9.skinScroll = arg0_9:findTF("select_skin/style_scroll", arg0_9.skinPanel)
+	arg0_9.skinContainer = arg0_9:findTF("view_port", arg0_9.skinScroll)
+	arg0_9.skinCard = arg0_9._go:GetComponent(typeof(ItemList)).prefabItem[0]
 
-	setActive(arg0_10.skinCard, false)
+	setActive(arg0_9.skinCard, false)
 
-	arg0_10.skinCardMap = {}
+	arg0_9.skinCardMap = {}
 end
 
-function var0_0.openSelectSkinPanel(arg0_14)
-	arg0_14:Flush(arg0_14.skins)
+function var0_0.openSelectSkinPanel(arg0_13)
+	arg0_13:Flush(arg0_13.skins)
 end
 
-function var0_0.Flush(arg0_15, arg1_15)
-	for iter0_15 = arg0_15.skinContainer.childCount, #arg1_15 - 1 do
-		cloneTplTo(arg0_15.skinCard, arg0_15.skinContainer)
+function var0_0.Flush(arg0_14, arg1_14)
+	for iter0_14 = arg0_14.skinContainer.childCount, #arg1_14 - 1 do
+		cloneTplTo(arg0_14.skinCard, arg0_14.skinContainer)
 	end
 
-	for iter1_15 = #arg1_15, arg0_15.skinContainer.childCount - 1 do
-		setActive(arg0_15.skinContainer:GetChild(iter1_15), false)
+	for iter1_14 = #arg1_14, arg0_14.skinContainer.childCount - 1 do
+		setActive(arg0_14.skinContainer:GetChild(iter1_14), false)
 	end
 
-	local var0_15 = getProxy(ShipSkinProxy)
-	local var1_15 = arg0_15.skinContainer.childCount
+	local var0_14 = getProxy(ShipSkinProxy)
+	local var1_14 = arg0_14.skinContainer.childCount
 
-	for iter2_15, iter3_15 in ipairs(arg1_15) do
-		local var2_15 = arg0_15.skinContainer:GetChild(iter2_15 - 1)
-		local var3_15 = arg0_15.skinCardMap[var2_15]
+	for iter2_14, iter3_14 in ipairs(arg1_14) do
+		local var2_14 = arg0_14.skinContainer:GetChild(iter2_14 - 1)
+		local var3_14 = arg0_14.skinCardMap[var2_14]
 
-		if not var3_15 then
-			var3_15 = ShipSkinCard.New(var2_15.gameObject)
-			arg0_15.skinCardMap[var2_15] = var3_15
+		if not var3_14 then
+			var3_14 = ShipSkinCard.New(var2_14.gameObject)
+			arg0_14.skinCardMap[var2_14] = var3_14
 		end
 
-		local var4_15 = arg0_15.shipVO:getRemouldSkinId() == iter3_15.id and arg0_15.shipVO:isRemoulded()
-		local var5_15 = arg0_15.shipVO:proposeSkinOwned(iter3_15) or table.contains(arg0_15.skinList, iter3_15.id) or var4_15 or iter3_15.skin_type == ShipSkin.SKIN_TYPE_OLD or var0_15:hasSkin(iter3_15.id)
+		local var4_14 = arg0_14.shipVO:getRemouldSkinId() == iter3_14.id and arg0_14.shipVO:isRemoulded()
+		local var5_14 = arg0_14.shipVO:proposeSkinOwned(iter3_14) or table.contains(arg0_14.skinList, iter3_14.id) or var4_14 or iter3_14.skin_type == ShipSkin.SKIN_TYPE_OLD or var0_14:hasSkin(iter3_14.id)
 
-		var3_15:updateData(arg0_15.shipVO, iter3_15, var5_15)
+		var3_14:updateData(arg0_14.shipVO, iter3_14, var5_14)
 
-		local var6_15 = arg0_15.shipVO:useSkin(iter3_15.id)
+		local var6_14 = arg0_14.shipVO:useSkin(iter3_14.id)
 
-		var3_15:updateUsing(var6_15)
-		removeOnButton(var2_15)
+		var3_14:updateUsing(var6_14)
+		removeOnButton(var2_14)
 
-		local var7_15 = arg0_15.shipVO:getRemouldSkinId() == iter3_15.id and arg0_15.shipVO:isRemoulded()
-		local var8_15 = (arg0_15.shipVO:proposeSkinOwned(iter3_15) or table.contains(arg0_15.skinList, iter3_15.id) or var7_15) and 1 or 0
-		local var9_15 = iter3_15.shop_id > 0 and pg.shop_template[iter3_15.shop_id] or nil
-		local var10_15 = var9_15 and not pg.TimeMgr.GetInstance():inTime(var9_15.time)
-		local var11_15 = iter3_15.id == arg0_15.shipVO.skinId
-		local var12_15 = iter3_15.id == arg0_15.shipVO:getConfig("skin_id") or var8_15 >= 1 or iter3_15.skin_type == ShipSkin.SKIN_TYPE_OLD or var0_15:hasSkin(iter3_15.id)
-		local var13_15 = getProxy(ShipSkinProxy):InForbiddenSkinListAndShow(iter3_15.id)
+		local var7_14 = arg0_14.shipVO:getRemouldSkinId() == iter3_14.id and arg0_14.shipVO:isRemoulded()
+		local var8_14 = (arg0_14.shipVO:proposeSkinOwned(iter3_14) or table.contains(arg0_14.skinList, iter3_14.id) or var7_14) and 1 or 0
+		local var9_14 = iter3_14.shop_id > 0 and pg.shop_template[iter3_14.shop_id] or nil
+		local var10_14 = var9_14 and not pg.TimeMgr.GetInstance():inTime(var9_14.time)
+		local var11_14 = iter3_14.id == arg0_14.shipVO:getSkinId()
+		local var12_14 = iter3_14.id == arg0_14.shipVO:getConfig("skin_id") or var8_14 >= 1 or iter3_14.skin_type == ShipSkin.SKIN_TYPE_OLD or var0_14:hasSkin(iter3_14.id)
+		local var13_14 = getProxy(ShipSkinProxy):InForbiddenSkinListAndShow(iter3_14.id)
 
-		onToggle(arg0_15, var3_15.hideObjToggleTF, function(arg0_16)
-			PlayerPrefs.SetInt("paint_hide_other_obj_" .. var3_15.paintingName, arg0_16 and 1 or 0)
-			var3_15:flushSkin()
-			arg0_15:emit(SwichSkinMediator.UPDATE_SKINCONFIG, arg0_15.shipVO.skinId)
+		onToggle(arg0_14, var3_14.hideObjToggleTF, function(arg0_15)
+			PlayerPrefs.SetInt("paint_hide_other_obj_" .. var3_14.paintingName, arg0_15 and 1 or 0)
+			var3_14:flushSkin()
+			arg0_14:emit(SwichSkinMediator.UPDATE_SKINCONFIG, arg0_14.shipVO:getSkinId())
 		end, SFX_PANEL)
-		onButton(arg0_15, var3_15.changeSkinTF, function(arg0_17)
-			local var0_17 = ShipGroup.GetChangeSkinNextId(iter3_15.id)
-			local var1_17 = ShipGroup.GetChangeSkinGroupId(iter3_15.id)
+		onButton(arg0_14, var3_14.changeSkinTF, function(arg0_16)
+			local var0_16 = ShipSkin.GetChangeSkinNextId(iter3_14.id)
 
-			ShipGroup.SetShipChangeSkin(arg0_15.shipVO.id, var1_17, var0_17, true)
+			ShipSkin.SetStoreChangeSkinId(var0_16)
+			pg.m02:sendNotification(GAME.CHANGE_SKIN_UPDATE, arg0_14.shipVO:GetShipPhantomMark())
 		end, SFX_PANEL)
-		onButton(arg0_15, var2_15, function()
-			if var11_15 then
-				arg0_15:back()
-			elseif ShipSkin.IsShareSkin(arg0_15.shipVO, iter3_15.id) and not ShipSkin.CanUseShareSkinForShip(arg0_15.shipVO, iter3_15.id) then
+		onButton(arg0_14, var2_14, function()
+			if var11_14 then
+				arg0_14:back()
+			elseif ShipSkin.IsShareSkin(arg0_14.shipVO, iter3_14.id) and not ShipSkin.CanUseShareSkinForShip(arg0_14.shipVO, iter3_14.id) then
 				-- block empty
-			elseif var12_15 then
-				arg0_15:emit(SwichSkinMediator.CHANGE_SKIN, arg0_15.shipVO.id, iter3_15.id == arg0_15.shipVO:getConfig("skin_id") and 0 or iter3_15.id)
-				arg0_15:back()
-			elseif var9_15 then
-				if var10_15 or var13_15 then
+			elseif var12_14 then
+				arg0_14:emit(SwichSkinMediator.CHANGE_SKIN, arg0_14.shipVO:GetShipPhantomMark(), iter3_14.id == arg0_14.shipVO:getConfig("skin_id") and 0 or iter3_14.id)
+				arg0_14:back()
+			elseif var9_14 then
+				if var10_14 or var13_14 then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_skin_out_of_stock"))
 				else
-					local var0_18 = Goods.Create({
-						shop_id = var9_15.id
+					local var0_17 = Goods.Create({
+						shop_id = var9_14.id
 					}, Goods.TYPE_SKIN)
 
-					if var0_18:isDisCount() and var0_18:IsItemDiscountType() then
-						arg0_15:emit(SwichSkinMediator.BUY_ITEM_BY_ACT, var9_15.id, 1)
+					if var0_17:isDisCount() and var0_17:IsItemDiscountType() then
+						arg0_14:emit(SwichSkinMediator.BUY_ITEM_BY_ACT, var9_14.id, 1)
 					else
-						local var1_18 = var0_18:GetPrice()
-						local var2_18 = i18n("text_buy_fashion_tip", var1_18, iter3_15.name)
+						local var1_17 = var0_17:GetPrice()
+						local var2_17 = i18n("text_buy_fashion_tip", var1_17, iter3_14.name)
 
 						pg.MsgboxMgr.GetInstance():ShowMsgBox({
-							content = var2_18,
+							content = var2_17,
 							onYes = function()
-								arg0_15:emit(SwichSkinMediator.BUY_ITEM, var9_15.id, 1)
+								arg0_14:emit(SwichSkinMediator.BUY_ITEM, var9_14.id, 1)
 							end
 						})
 					end
 				end
 			end
 		end)
-		setActive(var2_15, true)
+		setActive(var2_14, true)
 	end
 end
 
-function var0_0.getGroupSkinList(arg0_20, arg1_20)
-	return getProxy(ShipSkinProxy):GetAllSkinForShip(arg0_20.shipVO)
+function var0_0.getGroupSkinList(arg0_19, arg1_19)
+	return getProxy(ShipSkinProxy):GetAllSkinForShip(arg0_19.shipVO)
 end
 
-function var0_0.willExit(arg0_21)
-	for iter0_21, iter1_21 in pairs(arg0_21.skinCardMap) do
-		iter1_21:clear()
+function var0_0.willExit(arg0_20)
+	for iter0_20, iter1_20 in pairs(arg0_20.skinCardMap) do
+		iter1_20:clear()
 	end
 end
 

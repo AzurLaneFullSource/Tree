@@ -29,7 +29,7 @@ local function var2_0()
 	end
 
 	if PLATFORM_CODE == PLATFORM_JP then
-		table.insert(var0_1, var1_0.CREATE_INHERIT)
+		-- block empty
 	end
 
 	return var0_1

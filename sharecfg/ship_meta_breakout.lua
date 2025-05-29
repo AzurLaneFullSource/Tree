@@ -26,6 +26,10 @@ pg.ship_meta_breakout = setmetatable({
 		9701062,
 		9701063,
 		9701064,
+		9701071,
+		9701072,
+		9701073,
+		9701074,
 		9702011,
 		9702012,
 		9702013,
@@ -570,6 +574,69 @@ pg.base.ship_meta_breakout = {
 		id = 9701064,
 		item1 = 21036,
 		pre_id = 9701063,
+		weapon_ids = {}
+	},
+	[9701071] = {
+		breakout_view = "Unlock Cinders of Hope - Grenville/Main gun efficiency +5%",
+		gold = 500,
+		breakout_id = 9701072,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9701071,
+		item1 = 21047,
+		pre_id = 0,
+		weapon_ids = {
+			170761
+		}
+	},
+	[9701072] = {
+		breakout_view = "Torpedo base +1/Torpedo preload +1/Main gun efficiency +10%",
+		gold = 1500,
+		breakout_id = 9701073,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9701072,
+		item1 = 21047,
+		pre_id = 9701071,
+		weapon_ids = {
+			108,
+			108
+		}
+	},
+	[9701073] = {
+		breakout_view = "Improve Cinders of Hope - Grenville/All weapons' efficiency +5%",
+		gold = 2500,
+		breakout_id = 9701074,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9701073,
+		item1 = 21047,
+		pre_id = 9701072,
+		weapon_ids = {
+			170762
+		}
+	},
+	[9701074] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9701074,
+		item1 = 21047,
+		pre_id = 9701073,
 		weapon_ids = {}
 	},
 	[9702011] = {

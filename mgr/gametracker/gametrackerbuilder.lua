@@ -199,4 +199,10 @@ function var0_0.BuildGuide(arg0_18, arg1_18, arg2_18, arg3_18, arg4_18)
 	end
 end
 
+function var0_0.BuildPhantom(arg0_19)
+	return var3_0(31, {
+		arg0_19
+	}, {})
+end
+
 return var0_0

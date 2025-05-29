@@ -96,7 +96,7 @@ function var0_0.GetPbList(arg0_16)
 end
 
 function var0_0.GetPaintingOffset(arg0_17, arg1_17)
-	local var0_17 = pg.ship_skin_newmainui_shift[arg1_17.skinId]
+	local var0_17 = pg.ship_skin_newmainui_shift[arg1_17:getSkinId()]
 
 	if var0_17 then
 		local var1_17 = arg0_17:GetConfigShift(var0_17)

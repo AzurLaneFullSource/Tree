@@ -100,7 +100,7 @@ function var0_0.register(arg0_1)
 	end)
 	arg0_1:bind(var0_0.GO_SNAPSHOT, function(arg0_13)
 		local var0_13 = arg0_1.viewComponent.bgView.ship
-		local var1_13 = var0_13.skinId
+		local var1_13 = var0_13:getSkinId()
 		local var2_13 = arg0_1.viewComponent.paintingView:IsLive2DState()
 		local var3_13
 
@@ -156,9 +156,6 @@ function var0_0.register(arg0_1)
 		arg0_1:addSubLayers(arg1_20)
 	end)
 	arg0_1:bind(var0_0.CHANGE_SKIN_TOGGLE, function(arg0_21, arg1_21)
-		local var0_21 = ShipGroup.GetChangeSkinGroupId(arg1_21.skin_id)
-		local var1_21 = ShipGroup.GetChangeSkinNextId(arg1_21.ship_id)
-
 		arg0_1:sendNotification(GAME.CHANGE_SKIN_AB, arg1_21)
 	end)
 end
