@@ -539,28 +539,29 @@ function var0_0.GetCvDataForShip(arg0_34, arg1_34)
 		return nil
 	end
 
-	local var0_34 = arg0_34:getCVIntimacy()
-	local var1_34 = string.split(arg1_34, "_")
-	local var2_34
+	local var0_34 = arg0_34:getSkinId()
+	local var1_34 = arg0_34:getCVIntimacy()
+	local var2_34 = string.split(arg1_34, "_")
 	local var3_34
 	local var4_34
 	local var5_34
 	local var6_34
 	local var7_34
+	local var8_34
 
-	if var1_34[1] == "main" then
-		var2_34, var4_34, var3_34 = ShipWordHelper.GetWordAndCV(arg0_34.skinId, var1_34[1], tonumber(var1_34[2]), nil, var0_34)
-		var5_34 = ShipWordHelper.GetL2dCvCalibrate(arg0_34.skinId, var1_34[1], tonumber(var1_34[2]))
-		var6_34 = ShipWordHelper.GetL2dSoundEffect(arg0_34.skinId, var1_34[1], tonumber(var1_34[2]))
+	if var2_34[1] == "main" then
+		var3_34, var5_34, var4_34 = ShipWordHelper.GetWordAndCV(var0_34, var2_34[1], tonumber(var2_34[2]), nil, var1_34)
+		var6_34 = ShipWordHelper.GetL2dCvCalibrate(var0_34, var2_34[1], tonumber(var2_34[2]))
+		var7_34 = ShipWordHelper.GetL2dSoundEffect(var0_34, var2_34[1], tonumber(var2_34[2]))
 	else
-		var2_34, var4_34, var3_34 = ShipWordHelper.GetWordAndCV(arg0_34.skinId, arg1_34, nil, nil, var0_34)
-		var5_34 = ShipWordHelper.GetL2dCvCalibrate(arg0_34.skinId, arg1_34)
-		var6_34 = ShipWordHelper.GetL2dSoundEffect(arg0_34.skinId, arg1_34)
+		var3_34, var5_34, var4_34 = ShipWordHelper.GetWordAndCV(var0_34, arg1_34, nil, nil, var1_34)
+		var6_34 = ShipWordHelper.GetL2dCvCalibrate(var0_34, arg1_34)
+		var7_34 = ShipWordHelper.GetL2dSoundEffect(var0_34, arg1_34)
 	end
 
-	local var8_34 = var5_34 == -1
+	local var9_34 = var6_34 == -1
 
-	return var2_34, var4_34, var3_34, var5_34, var6_34, var8_34
+	return var3_34, var5_34, var4_34, var6_34, var7_34, var9_34
 end
 
 return var0_0

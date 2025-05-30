@@ -20,7 +20,6 @@ function var0_0.OnInit(arg0_2)
 	arg0_2:InitEvent()
 	setParent(arg0_2.randomFlagToggle, arg0_2._tf.parent)
 	setActive(arg0_2.randomFlagToggle, true)
-	triggerToggle(arg0_2.randomFlagToggle, arg0_2:GetShipVO():getRandomFlag())
 end
 
 function var0_0.InitDetail(arg0_3)
@@ -469,6 +468,7 @@ function var0_0.UpdateUI(arg0_39)
 	arg0_39:UpdateEquipments(var0_39)
 	arg0_39:UpdateLock()
 	arg0_39:UpdatePreferenceTag()
+	triggerToggle(arg0_39.randomFlagToggle, arg0_39:GetShipVO():getRandomFlag())
 end
 
 function var0_0.UpdateIntimacy(arg0_40, arg1_40)

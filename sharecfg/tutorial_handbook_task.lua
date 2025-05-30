@@ -694,7 +694,7 @@ pg.tutorial_handbook_task = {
 	},
 	[201201] = {
 		pt = 68910,
-		name = "Medal Shop",
+		name = "Medallion",
 		eng_name = "HANDBOOK",
 		type = 2,
 		id = 201201,
