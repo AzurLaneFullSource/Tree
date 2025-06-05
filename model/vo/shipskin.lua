@@ -420,20 +420,20 @@ function var0_0.GetShareGroupIds(arg0_46)
 end
 
 function var0_0.GetAllChangeSkinIds(arg0_47)
-	if not ShipSkin.GetChangeSkinMainId(arg0_47) then
+	if not var0_0.GetChangeSkinMainId(arg0_47) then
 		return {
 			arg0_47
 		}
 	end
 
-	local var0_47 = ShipSkin.GetChangeSkinMainId(arg0_47)
+	local var0_47 = var0_0.GetChangeSkinMainId(arg0_47)
 	local var1_47 = {
 		var0_47
 	}
 	local var2_47 = arg0_47
 
 	for iter0_47 = 1, 10 do
-		local var3_47 = ShipSkin.GetChangeSkinNextId(var2_47)
+		local var3_47 = var0_0.GetChangeSkinNextId(var2_47)
 
 		if not table.contains(var1_47, var3_47) then
 			table.insert(var1_47, var3_47)
@@ -441,7 +441,7 @@ function var0_0.GetAllChangeSkinIds(arg0_47)
 
 		var2_47 = var3_47
 
-		if ShipSkin.GetChangeSkinIndex(var2_47) == 1 then
+		if var0_0.GetChangeSkinIndex(var2_47) == 1 then
 			return var1_47
 		end
 	end
@@ -452,7 +452,7 @@ end
 function var0_0.IsChangeSkin(arg0_48)
 	local var0_48 = pg.ship_skin_template[arg0_48]
 
-	return table.contains(var0_48.tag, ShipSkin.WITH_CHANGE)
+	return table.contains(var0_48.tag, var0_0.WITH_CHANGE)
 end
 
 function var0_0.GetChangeSkinMainId(arg0_49)
@@ -460,26 +460,8 @@ function var0_0.GetChangeSkinMainId(arg0_49)
 		return arg0_49
 	end
 
-	local var0_49 = pg.ship_skin_template[arg0_49].ship_group
-	local var1_49 = var0_0.GetChangeSkinGroupId(arg0_49)
-
-	if var0_0.GetChangeSkinIndex(arg0_49) == 1 then
-		return arg0_49
-	end
-
-	local var2_49 = ShipSkin.GetAllSkinByGroup(var0_49)
-
-	for iter0_49, iter1_49 in ipairs(var2_49) do
-		if var0_0.IsChangeSkin(iter1_49.id) then
-			local var3_49 = var0_0.GetChangeSkinGroupId(iter1_49.id)
-			local var4_49 = var0_0.GetChangeSkinIndex(iter1_49.id)
-
-			if var3_49 == var1_49 and var4_49 == 1 then
-				print("获得到了skinId :" .. arg0_49 .. " 的A面皮肤id" .. iter1_49.id)
-
-				return iter1_49.id
-			end
-		end
+	while var0_0.GetChangeSkinIndex(arg0_49) ~= 1 do
+		arg0_49 = var0_0.GetChangeSkinNextId(arg0_49)
 	end
 
 	return arg0_49
@@ -504,7 +486,7 @@ function var0_0.IsSameChangeSkinGroup(arg0_51, arg1_51)
 		return false
 	end
 
-	return ShipSkin.GetChangeSkinGroupId(arg0_51) == ShipSkin.GetChangeSkinGroupId(arg1_51)
+	return var0_0.GetChangeSkinGroupId(arg0_51) == var0_0.GetChangeSkinGroupId(arg1_51)
 end
 
 function var0_0.GetChangeSkinGroupId(arg0_52)

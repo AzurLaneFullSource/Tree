@@ -436,6 +436,17 @@ function var0_0.updateActivityData(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
 		elseif arg1_3.cmd == 2 and var0_3 == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
 			arg3_3:RecordLastRequestTime()
 		end
+	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE then
+		if arg1_3.cmd == 2 then
+			table.insert(arg3_3.data2_list, arg1_3.arg1)
+			arg0_3:sendNotification(GAME.FINISH_STAGE_DONE, {
+				statistics = arg1_3.statistics,
+				score = arg1_3.statistics._battleScore,
+				system = SYSTEM_REWARD_PERFORM
+			})
+
+			return arg3_3
+		end
 	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_EXPEDITION then
 		if arg1_3.cmd == 0 then
 			return arg3_3

@@ -160,6 +160,7 @@ function var0_0.register(arg0_1)
 			},
 			onRemoved = function()
 				arg0_1.viewComponent:changeEffectVisible(true)
+				arg0_1.viewComponent:updateMod()
 			end
 		}))
 		arg0_1.viewComponent:changeEffectVisible(false)

@@ -401,7 +401,7 @@ pg.world_joint_boss_template = {
 		}
 	},
 	{
-		state = "stop",
+		state = "always",
 		name = "Kirov META",
 		painting = "jiluofu",
 		boss_level_id = 181,
@@ -683,6 +683,64 @@ pg.world_joint_boss_template = {
 			0.9
 		}
 	},
+	{
+		item_id = 100000,
+		name = "Kawakaze META",
+		painting = "jiangfeng",
+		boss_level_id = 271,
+		id = 19,
+		meta_id = 970108,
+		description = {
+			{
+				"Nitouryuu - Sunset Glow",
+				2,
+				" Kawakaze META periodically activates <color=#92fc63>Nitouryuu - Sunset Glow</color>, decreasing the SPD of her target for 0.5s while performing a special cross slash and firing a crescent moon-shaped barrage. <color=#92fc63>Targets hit by the cross slash take fixed DMG equal to 5.0% of their max HP.</color>\n<color=#92fc63>Targets hit by the crescent moon barrage take torpedo DMG.</color>。"
+			},
+			{
+				"Shadows of the Past",
+				3,
+				"\nEvery 10 times that the cross slash of Nitouryuu - Sunset Glow hits and deals DMG, and every time Kawakaze META loses 20.0% of her max HP: summons a Bloody Shadow, <color=#92fc63>increases Kawakaze META's FP and TRP, and increases the activation frequency of Nitouryuu - Sunset Glow</color>."
+			}
+		},
+		state = {
+			{
+				{
+					2025,
+					6,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					9,
+					3
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		p_offset = {
+			-376,
+			465,
+			0.73,
+			0.73
+		},
+		p_offset_other = {
+			236,
+			484,
+			0.68,
+			0.68
+		}
+	},
 	all = {
 		1,
 		2,
@@ -701,6 +759,7 @@ pg.world_joint_boss_template = {
 		15,
 		16,
 		17,
-		18
+		18,
+		19
 	}
 }

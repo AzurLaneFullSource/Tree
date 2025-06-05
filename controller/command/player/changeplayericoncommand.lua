@@ -27,6 +27,18 @@ function var0_0.execute(arg0_1, arg1_1)
 		return
 	end
 
+	for iter0_1 = #var2_1, 1, -1 do
+		for iter1_1 = iter0_1 - 1, 1, -1 do
+			print(var2_1[iter0_1], var2_1[iter1_1])
+
+			if var2_1[iter0_1] == var2_1[iter1_1] then
+				table.remove(var2_1, iter0_1)
+
+				break
+			end
+		end
+	end
+
 	local var7_1 = underscore.map(var2_1, function(arg0_3)
 		local var0_3, var1_3 = ShipPhantom.UnpackMark(arg0_3)
 

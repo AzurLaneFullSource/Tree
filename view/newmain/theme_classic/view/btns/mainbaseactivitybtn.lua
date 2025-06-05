@@ -213,6 +213,8 @@ function var0_0.Skip(arg0_22, arg1_22)
 		}))
 	elseif arg1_22.type == GAMEUI_BANNER_15 then
 		arg0_22:emit(NewMainMediator.SKIP_INS)
+	elseif arg1_22.type == GAMEUI_BANNER_16 then
+		arg0_22:emit(NewMainMediator.SKIP_CORE_ACTIVITY, arg1_22.param)
 	end
 end
 

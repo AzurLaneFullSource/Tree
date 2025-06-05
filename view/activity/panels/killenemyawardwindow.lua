@@ -9,6 +9,7 @@ local function var1_0(arg0_1, arg1_1, arg2_1, arg3_1)
 			setText(arg2_2:Find("title/Text"), "PHASE " .. arg1_2 + 1)
 			setActive(arg2_2:Find("target/Text"), false)
 			setText(arg2_2:Find("target/title"), var1_2)
+			setActive(arg2_2:Find("target/icon"), false)
 
 			local var2_2 = {
 				type = var0_2[1],

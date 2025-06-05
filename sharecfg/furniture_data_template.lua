@@ -164,6 +164,7 @@ pg.furniture_data_template = setmetatable({
 			302,
 			303,
 			304,
+			307,
 			100002,
 			100003,
 			100004,
@@ -251,7 +252,11 @@ pg.furniture_data_template = setmetatable({
 			31103,
 			31104,
 			54104,
-			54105
+			54105,
+			323001,
+			323002,
+			323101,
+			323102
 		},
 		[8] = {
 			106,
@@ -3649,7 +3654,8 @@ pg.furniture_data_template = setmetatable({
 			296,
 			302,
 			303,
-			304
+			304,
+			307
 		},
 		[7] = {
 			211,
@@ -3852,7 +3858,9 @@ pg.furniture_data_template = setmetatable({
 			319117,
 			320115,
 			321114,
-			322116
+			322116,
+			323101,
+			323102
 		},
 		[4] = {
 			1001,
@@ -3962,7 +3970,8 @@ pg.furniture_data_template = setmetatable({
 			319001,
 			320001,
 			321001,
-			322001
+			322001,
+			323001
 		},
 		[3] = {
 			1002,
@@ -4073,7 +4082,8 @@ pg.furniture_data_template = setmetatable({
 			319002,
 			320002,
 			321002,
-			322002
+			322002,
+			323002
 		},
 		{
 			1101,
@@ -6778,6 +6788,7 @@ pg.furniture_data_template = setmetatable({
 			302,
 			303,
 			304,
+			307,
 			100002,
 			100004,
 			100005,
@@ -8858,7 +8869,8 @@ pg.furniture_data_template = setmetatable({
 			322113,
 			322114,
 			322115,
-			322116
+			322116,
+			323101
 		},
 		[11] = {
 			131,
@@ -8910,7 +8922,8 @@ pg.furniture_data_template = setmetatable({
 			312115,
 			316112,
 			316121,
-			317107
+			317107,
+			323102
 		},
 		[14] = {
 			214,
@@ -9044,7 +9057,8 @@ pg.furniture_data_template = setmetatable({
 			319001,
 			320001,
 			321001,
-			322001
+			322001,
+			323001
 		},
 		{
 			1002,
@@ -9155,7 +9169,8 @@ pg.furniture_data_template = setmetatable({
 			319002,
 			320002,
 			321002,
-			322002
+			322002,
+			323002
 		},
 		[5] = {
 			1101,
@@ -10034,6 +10049,7 @@ pg.furniture_data_template = setmetatable({
 		302,
 		303,
 		304,
+		307,
 		100002,
 		100003,
 		100004,
@@ -13069,7 +13085,11 @@ pg.furniture_data_template = setmetatable({
 		322113,
 		322114,
 		322115,
-		322116
+		322116,
+		323001,
+		323002,
+		323101,
+		323102
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -21016,6 +21036,49 @@ pg.base.furniture_data_template = {
 		canputonGrid = {},
 		can_trigger = {
 			1
+		},
+		interAction_group = {}
+	},
+	[307] = {
+		effect = "",
+		name = "Break Through the Dark",
+		gain_by = "Illusory Drifters",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 1,
+		themeId = 0,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "The mark of a new story beyond the borders of reality and fiction. Given to Commanders who participated in the collab event.",
+		tag = 8,
+		icon = "brsxunzhangicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 5,
+		deblocking = 1,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 307,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"brsxunzhang",
+				"normal"
+			}
 		},
 		interAction_group = {}
 	},
@@ -156495,6 +156558,234 @@ pg.base.furniture_data_template = {
 		followBone = {
 			"char",
 			-1
+		},
+		interAction_group = {}
+	},
+	[323001] = {
+		icon = "dibanbrsicon",
+		name = "Monochrome World",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		themeId = 0,
+		picture = "brs/dibanbrs",
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		spine_extra = "",
+		level = 1,
+		describe = "A parallel world of white and black.",
+		rarity = 4,
+		advice = 0,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		id = 323001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[323002] = {
+		icon = "qiangbibrsicon",
+		name = "Monochrome World",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		themeId = 0,
+		picture = "brs/qiangbibrs",
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		spine_extra = "",
+		level = 5,
+		describe = "A parallel world of white and black.",
+		rarity = 4,
+		advice = 0,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		id = 323002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[323101] = {
+		effect = "",
+		name = "Insane Armament",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A massive artillery platform inspired by the existence of a certain girl.",
+		themeId = 0,
+		icon = "dapaobrsicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 323101,
+		can_rotate = 0,
+		size = {
+			7,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"dapaobrsB",
+				"normal"
+			},
+			{
+				"dapaobrsT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{
+				{
+					-11.7,
+					128.13
+				},
+				{
+					194,
+					268
+				},
+				"brs/dapaobrs_mask"
+			},
+			{
+				-2.9,
+				-65
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[323102] = {
+		effect = "",
+		name = "Floating Fate",
+		gain_by = "",
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A means of transport that floats in midair. A clever concept... putting aside its difficulty of use.",
+		themeId = 0,
+		icon = "liandaobrsicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 323102,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"liandaobrs",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			},
+			0.8
+		},
+		followBone = {
+			"char",
+			1
 		},
 		interAction_group = {}
 	}

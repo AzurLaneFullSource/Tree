@@ -239,7 +239,7 @@ function var0_0.InitSkinList(arg0_20)
 end
 
 function var0_0.showSkinProfile(arg0_23, arg1_23, arg2_23, arg3_23)
-	local var0_23 = ShipSkin.IsChangeSkin(arg2_23.id) and true or false
+	local var0_23 = ShipSkin.IsChangeSkin(arg2_23.id)
 
 	setActive(arg0_23.btnChangeSkin, var0_23)
 
@@ -587,6 +587,7 @@ function var0_0.CreateLive2D(arg0_49)
 
 	local var3_49 = Live2D.GenerateData({
 		ship = Ship.New({
+			noChangeSkin = true,
 			configId = var0_49,
 			skin_id = arg0_49.skin.id,
 			propose = arg0_49.shipGroup.married
@@ -925,6 +926,7 @@ function var0_0.CreateSpinePainting(arg0_79)
 		local var0_79 = arg0_79.shipGroup:getShipConfigId()
 		local var1_79 = SpinePainting.GenerateData({
 			ship = Ship.New({
+				noChangeSkin = true,
 				configId = var0_79,
 				skin_id = arg0_79.skin.id
 			}),

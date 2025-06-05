@@ -48,35 +48,36 @@ function var0_0.CollectCommanderStories(arg0_5, arg1_5)
 end
 
 function var0_0.CollectNpcStories(arg0_6, arg1_6)
-	local var0_6 = getProxy(ActivityProxy):getActivityById(ActivityConst.ACT_NPC_SHIP_ID)
-	local var1_6 = getProxy(TaskProxy)
+	for iter0_6, iter1_6 in ipairs(getGameset("act_npc_ship_id")[2]) do
+		local var0_6 = getProxy(ActivityProxy):getActivityById(iter1_6)
 
-	if var0_6 and not var0_6:isEnd() then
-		local var2_6 = var0_6:getConfig("config_client")
+		if var0_6 and not var0_6:isEnd() then
+			local var1_6 = var0_6:getConfig("config_client")
 
-		if var2_6.npc then
-			local var3_6 = var2_6.npc[1]
-			local var4_6 = var2_6.npc[2]
+			if var1_6.npc then
+				local var2_6 = var1_6.npc[1]
+				local var3_6 = var1_6.npc[2]
 
-			if var3_6 and var3_6 ~= "" then
-				table.insert(arg1_6, var3_6)
-			end
-
-			if var4_6 and type(var4_6) == "number" then
-				local function var5_6(arg0_7)
-					local var0_7 = var1_6:getTaskById(var4_6) or var1_6:getFinishTaskById(var4_6)
-
-					if var0_7 and var0_7:isFinish() and not var0_7:isReceive() then
-						pg.m02:sendNotification(GAME.FETCH_NPC_SHIP, {
-							taskId = var0_7.id,
-							callback = arg0_7
-						})
-					else
-						arg0_7()
-					end
+				if var2_6 and var2_6 ~= "" then
+					table.insert(arg1_6, var2_6)
 				end
 
-				table.insert(arg1_6, var5_6)
+				if var3_6 and type(var3_6) == "number" then
+					local function var4_6(arg0_7)
+						local var0_7 = getProxy(TaskProxy):getTaskVO(var3_6)
+
+						if var0_7 and var0_7:isFinish() and not var0_7:isReceive() then
+							pg.m02:sendNotification(GAME.FETCH_NPC_SHIP, {
+								taskId = var0_7.id,
+								callback = arg0_7
+							})
+						else
+							arg0_7()
+						end
+					end
+
+					table.insert(arg1_6, var4_6)
+				end
 			end
 		end
 	end

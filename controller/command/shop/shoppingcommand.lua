@@ -139,8 +139,6 @@ function var0_0.execute(arg0_1, arg1_1)
 
 			if var3_1.id == NewShopsMediator.FAST_BUILD_ITEM_ID then
 				pg.TrackerMgr.GetInstance():Tracking(TRACKING_BUILD_OR_SKIN_FAILD)
-			else
-				pg.TrackerMgr.GetInstance():Tracking(TRACKING_PAY_FAILD)
 			end
 		elseif not ItemTipPanel.ShowItemTip(DROP_TYPE_RESOURCE, var3_1.resource_type) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("buyProp_noResource_error", var16_1))

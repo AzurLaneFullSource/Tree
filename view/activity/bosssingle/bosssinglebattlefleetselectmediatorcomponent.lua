@@ -139,7 +139,7 @@ function var0_0.bindBattleEvents(arg0_6)
 		local var6_10 = arg0_6._target_.contextData.stageIDs[arg1_10]
 		local var7_10 = arg0_6._target_.contextData.useOilLimit[arg1_10]
 
-		arg0_6._target_:sendNotification(GAME.GO_SCENE, SCENE.BOSS_SINGLE_PRECONBAT, {
+		arg0_6._target_:sendNotification(GAME.GO_SCENE, SCENE.BOSS_SINGLE_PRECOMBAT, {
 			system = var5_10,
 			stageId = var6_10,
 			actId = arg0_6._target_.contextData.activityID,

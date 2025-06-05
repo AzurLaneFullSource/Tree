@@ -52,10 +52,10 @@ end
 function var0_0.CollectActivity(arg0_10)
 	local var0_10 = 0
 	local var1_10
-	local var2_10 = getProxy(ActivityProxy):getRawData()
+	local var2_10 = getProxy(ActivityProxy):getPanelActivities()
 
 	for iter0_10, iter1_10 in pairs(var2_10) do
-		if not iter1_10:isEnd() and iter1_10:isShow() and iter1_10:readyToAchieve() then
+		if iter1_10:readyToAchieve() then
 			var0_10 = var0_10 + 1
 
 			if not var1_10 or var1_10 and var1_10.id > iter1_10.id then

@@ -20,7 +20,7 @@ function var0_0.init(arg0_3)
 
 	arg0_3.selectedMarks = {}
 
-	for iter0_3, iter1_3 in ipairs(arg0_3.contextData.selectedMarks) do
+	for iter0_3, iter1_3 in ipairs(arg0_3.contextData.selectedMarks or {}) do
 		local var0_3, var1_3 = ShipPhantom.UnpackMark(iter1_3)
 
 		if var1_3 == 0 then

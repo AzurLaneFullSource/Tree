@@ -1934,6 +1934,7 @@ function shoppingBatch(arg0_136, arg1_136, arg2_136, arg3_136, arg4_136)
 					})
 				elseif arg4_136 then
 					pg.TipsMgr.GetInstance():ShowTips(i18n(arg4_136))
+					pg.TrackerMgr.GetInstance():Tracking(TRACKING_BUILD_OR_SKIN_FAILD)
 				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("main_playerInfoLayer_error_changeNameNoGem"))
 				end
@@ -2025,6 +2026,8 @@ function gotoChargeScene(arg0_142, arg1_142)
 			noRes = arg1_142
 		})
 	end
+
+	pg.TrackerMgr.GetInstance():Tracking(TRACKING_BUILD_OR_SKIN_FAILD)
 end
 
 function clearDrop(arg0_143)

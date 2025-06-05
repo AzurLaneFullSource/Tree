@@ -1386,11 +1386,14 @@ function var0_0.GenBattleData(arg0_35)
 
 			local var176_35 = var1_35 == SYSTEM_BOSS_SINGLE_VARIABLE and 100 or 10
 			local var177_35 = var167_35[arg0_35.contextData.mainFleetId + var176_35]
-			local var178_35 = _.values(var177_35:getCommanders())
-			local var179_35 = var177_35:getTeamByName(TeamType.Submarine)
 
-			for iter64_35, iter65_35 in ipairs(var179_35) do
-				var173_35(iter65_35, var178_35, var0_35.SubUnitList, var172_35)
+			if var177_35 then
+				local var178_35 = _.values(var177_35:getCommanders())
+				local var179_35 = var177_35:getTeamByName(TeamType.Submarine)
+
+				for iter64_35, iter65_35 in ipairs(var179_35) do
+					var173_35(iter65_35, var178_35, var0_35.SubUnitList, var172_35)
+				end
 			end
 
 			local var180_35 = getProxy(PlayerProxy):getRawData()
@@ -1400,8 +1403,10 @@ function var0_0.GenBattleData(arg0_35)
 
 			local var182_35 = pg.strategy_data_template
 
-			for iter66_35, iter67_35 in ipairs(arg0_35.contextData.variableBuffList) do
-				table.insert(var0_35.ChapterBuffIDs, var182_35[iter67_35].buff_id)
+			if arg0_35.contextData.variableBuffList then
+				for iter66_35, iter67_35 in ipairs(arg0_35.contextData.variableBuffList) do
+					table.insert(var0_35.ChapterBuffIDs, var182_35[iter67_35].buff_id)
+				end
 			end
 
 			local var183_35 = var181_35:GetEnemyDataByStageId(arg0_35.contextData.stageId):GetOilLimit()
@@ -1423,14 +1428,17 @@ function var0_0.GenBattleData(arg0_35)
 			end
 
 			var186_35(var168_35, var183_35[1] or 0)
-			var186_35(var177_35, var183_35[2] or 0)
 
-			if var177_35:isLegalToFight() == true and var184_35 <= var180_35.oil then
-				var0_35.SubFlag = 1
-				var0_35.TotalSubAmmo = 1
+			if var177_35 then
+				var186_35(var177_35, var183_35[2] or 0)
+
+				if var177_35:isLegalToFight() == true and var184_35 <= var180_35.oil then
+					var0_35.SubFlag = 1
+					var0_35.TotalSubAmmo = 1
+				end
+
+				var0_35.SubCommanderList = var177_35:buildBattleBuffList()
 			end
-
-			var0_35.SubCommanderList = var177_35:buildBattleBuffList()
 
 			arg0_35.viewComponent:setFleet(var170_35, var171_35, var172_35)
 		end

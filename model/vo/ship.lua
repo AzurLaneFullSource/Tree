@@ -752,6 +752,7 @@ function var0_0.Ctor(arg0_49, arg1_49)
 		arg0_49:updateSkinId(iter9_49.value, iter9_49.key)
 	end
 
+	arg0_49.noChangeSkin = arg1_49.noChangeSkin or false
 	arg0_49.phantomRandomFlag = {}
 
 	for iter10_49, iter11_49 in ipairs(arg1_49.char_random_flag or {}) do
@@ -849,13 +850,12 @@ end
 
 function var0_0.getSkinId(arg0_58, arg1_58)
 	local var0_58 = arg0_58:getPhandomSkin(arg1_58 or 0)
-	local var1_58 = ShipSkin.GetChangeSkinGroupId(var0_58)
 
-	if var1_58 then
-		local var2_58 = ShipSkin.GetStoreChangeSkinId(var1_58)
+	if not arg0_58.noChangeSkin and ShipSkin.IsChangeSkin(var0_58) then
+		local var1_58 = ShipSkin.GetStoreChangeSkinId(ShipSkin.GetChangeSkinGroupId(var0_58))
 
-		if var2_58 then
-			return var2_58
+		if var1_58 then
+			return var1_58
 		end
 	end
 

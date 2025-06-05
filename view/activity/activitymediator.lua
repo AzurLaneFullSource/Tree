@@ -51,10 +51,9 @@ var0_0.GO_CHANGE_SHOP = "go Change shop"
 var0_0.GO_Activity_level = "go Activity level"
 var0_0.ON_ADD_SUBLAYER = "ActivityMediator.ON_ADD_SUBLAYER"
 var0_0.GO_SPECIAL_EXERCISE = "go Special exercise"
+var0_0.GO_SINGLE_PRECOMBAT = "ActivityMediator.GO_SINGLE_PRECOMBAT"
 
 function var0_0.register(arg0_1)
-	arg0_1.UIAvalibleCallbacks = {}
-
 	arg0_1:bind(var0_0.GO_MONOPOLY2024, function(arg0_2, arg1_2, arg2_2)
 		arg0_1:addSubLayers(Context.New({
 			mediator = MonopolyCar2024Mediator,
@@ -412,26 +411,31 @@ function var0_0.register(arg0_1)
 			}
 		})
 	end)
+	arg0_1:bind(var0_0.GO_SINGLE_PRECOMBAT, function(arg0_53, arg1_53)
+		arg0_1:addSubLayers(Context.New({
+			mediator = BossSinglePreCombatLiteMediator,
+			viewComponent = BossSinglePreCombatLiteLayer,
+			data = {
+				system = arg1_53.system,
+				stageId = arg1_53.stageId,
+				actId = arg1_53.activityID,
+				fleets = arg1_53.fleets
+			}
+		}))
+	end)
+	arg0_1.viewComponent:setActivities(arg0_1:getDisplayActivity())
 
-	local var0_1 = getProxy(ActivityProxy)
+	local var0_1 = getProxy(PlayerProxy):getRawData()
 
-	arg0_1.viewComponent:setActivities(var0_1:getPanelActivities())
+	arg0_1.viewComponent:setPlayer(var0_1)
 
-	local var1_1 = getProxy(PlayerProxy):getRawData()
+	local var1_1 = getProxy(BayProxy):getShipById(var0_1.character)
 
-	arg0_1.viewComponent:setPlayer(var1_1)
-
-	local var2_1 = getProxy(BayProxy):getShipById(var1_1.character)
-
-	arg0_1.viewComponent:setFlagShip(var2_1)
+	arg0_1.viewComponent:setFlagShip(var1_1)
 end
 
-function var0_0.onUIAvalible(arg0_53)
-	arg0_53.UIAvalible = true
-
-	_.each(arg0_53.UIAvalibleCallbacks, function(arg0_54)
-		arg0_54()
-	end)
+function var0_0.getDisplayActivity(arg0_54)
+	return getProxy(ActivityProxy):getPanelActivities()
 end
 
 function var0_0.initNotificationHandleDic(arg0_55)
@@ -636,7 +640,7 @@ function var0_0.initNotificationHandleDic(arg0_55)
 			arg0_89.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_89.awards, function()
 				local var0_90 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_UR_EXCHANGE)
 
-				if var0_90 and not var0_90:isShow() then
+				if var0_90 and not var0_90:isShow() and var0_90:isCorePage(arg0_89.contextData.coreName) then
 					arg0_89.viewComponent:removeActivity(var0_90.id)
 				end
 
