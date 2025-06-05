@@ -1767,5 +1767,9 @@ pg.voice_actor_CN = {
 	[454] = {
 		code = 454,
 		actor_name = "Tsugumi Sakuragi"
+	},
+	[459] = {
+		code = 459,
+		actor_name = "Kana Hanazawa"
 	}
 }

@@ -19,7 +19,7 @@ function var0_0.OnLoaded(arg0_2)
 
 	arg0_2.contentSizeFitter = arg0_2.panelContainer:GetComponent(typeof(ContentSizeFitter))
 	arg0_2.cg = arg0_2._tf:GetComponent(typeof(CanvasGroup))
-	arg0_2.scrollrect = arg0_2._tf:GetComponent(typeof(ScrollRect))
+	arg0_2.scrollrect = arg0_2.panelContainer:GetComponent(typeof(ScrollRect))
 
 	arg0_2:InitPanels()
 	setActive(arg0_2._tf, true)
