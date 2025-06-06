@@ -560,7 +560,7 @@ function var0_0.LoadL2dPainting(arg0_39, arg1_39)
 		local var4_39 = ShipGroup.getDefaultShipConfig(var3_39)
 
 		var2_39 = Ship.New({
-			id = 999,
+			noChangeSkin = true,
 			configId = var4_39.id,
 			skin_id = var0_39
 		})
@@ -615,7 +615,7 @@ function var0_0.LoadSpinePainting(arg0_42, arg1_42)
 		local var4_42 = ShipGroup.getDefaultShipConfig(var3_42)
 
 		var2_42 = Ship.New({
-			id = 999,
+			noChangeSkin = true,
 			configId = var4_42.id,
 			skin_id = var0_42
 		})
