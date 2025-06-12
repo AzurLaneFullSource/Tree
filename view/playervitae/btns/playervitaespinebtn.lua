@@ -19,7 +19,7 @@ function var0_0.GetDefaultValue(arg0_3)
 end
 
 function var0_0.OnSwitch(arg0_4, arg1_4)
-	if ShipSkin.GetChangeSkinData(arg0_4.ship:getSkinId()) and true or false then
+	if (ShipSkin.GetChangeSkinData(arg0_4.ship:getSkinId()) and true or false) and not Live2dConst.GetLive2DArm32MatchAble() then
 		getProxy(SettingsProxy):setCharacterSetting(arg0_4.ship.id, SHIP_FLAG_L2D, arg1_4)
 	end
 

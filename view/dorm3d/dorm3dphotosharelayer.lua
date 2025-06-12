@@ -39,7 +39,19 @@ function var0_0.didEnter(arg0_3)
 			local var1_5 = pg.ShareMgr.GetInstance()
 			local var2_5 = var0_5:Find("frame").sizeDelta
 
-			arg0_3:TakePhoto(pg.ShareMgr.TypeDorm3dPhoto, var2_5)
+			if pg.dorm3d_camera_photo_frame[arg0_3.selectFrameId].frameTfName == "WoodFrame" then
+				local var3_5 = var0_5:Find("frame"):GetComponent("Image").sprite
+				local var4_5 = var0_5:Find("mask").sizeDelta
+				local var5_5 = Object.Instantiate(var3_5.texture)
+				local var6_5 = UnityEngine.Texture2D.New(var3_5.rect.width, var3_5.rect.height)
+				local var7_5 = var5_5:GetPixels(0, 0, var3_5.rect.width, var3_5.rect.height)
+
+				var6_5:SetPixels(var7_5)
+				var6_5:Apply()
+				arg0_3:TakePhoto(pg.ShareMgr.TypeDorm3dPhoto, var2_5, var6_5, var4_5)
+			else
+				arg0_3:TakePhoto(pg.ShareMgr.TypeDorm3dPhoto, var2_5)
+			end
 		end
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3._tf:Find("Mask"), function()
@@ -199,7 +211,7 @@ function var0_0.LoadFrame(arg0_13, arg1_13, arg2_13, arg3_13)
 	end), true, true)
 end
 
-function var0_0.TakePhoto(arg0_16, arg1_16, arg2_16)
+function var0_0.TakePhoto(arg0_16, arg1_16, arg2_16, arg3_16, arg4_16)
 	local var0_16 = {}
 	local var1_16 = {}
 	local var2_16 = {}
@@ -278,10 +290,30 @@ function var0_0.TakePhoto(arg0_16, arg1_16, arg2_16)
 		var2_20:SetPixels(var5_20)
 		var2_20:Apply()
 
-		local var6_20 = Tex2DExtension.EncodeToJPG(var2_20)
+		if not arg4_16 then
+			local var6_20 = Tex2DExtension.EncodeToPNG(var2_20)
 
-		YSNormalTool.MediaTool.SaveImageWithBytes(var6_20, function(arg0_24, arg1_24)
-			if arg0_24 then
+			YSNormalTool.MediaTool.SaveImageWithBytes(var6_20, function(arg0_24, arg1_24)
+				if arg0_24 then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("word_save_ok"))
+				end
+			end)
+
+			return
+		end
+
+		local var7_20 = arg4_16.x / var5_16.sizeDelta.x * Screen.width
+		local var8_20 = arg4_16.y / var5_16.sizeDelta.y * Screen.height
+		local var9_20 = var0_20 - var7_20
+		local var10_20 = var1_20 - var8_20
+		local var11_20 = var2_20:GetPixels(var9_20 / 2, var10_20 / 2, var7_20, var8_20)
+
+		arg3_16:SetPixels(var9_20 / 2, var10_20 / 2, var7_20, var8_20, var11_20)
+
+		local var12_20 = Tex2DExtension.EncodeToPNG(arg3_16)
+
+		YSNormalTool.MediaTool.SaveImageWithBytes(var12_20, function(arg0_25, arg1_25)
+			if arg0_25 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("word_save_ok"))
 			end
 		end)
@@ -297,10 +329,10 @@ function var0_0.TakePhoto(arg0_16, arg1_16, arg2_16)
 	})
 end
 
-function var0_0.TakeTexture(arg0_25, arg1_25, arg2_25)
-	local var0_25 = arg1_25:TakePhoto(arg2_25)
+function var0_0.TakeTexture(arg0_26, arg1_26, arg2_26)
+	local var0_26 = arg1_26:TakePhoto(arg2_26)
 
-	return (arg1_25:EncodeToJPG(var0_25))
+	return (arg1_26:EncodeToJPG(var0_26))
 end
 
 return var0_0

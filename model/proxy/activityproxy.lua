@@ -895,136 +895,90 @@ function var0_0.InitActivityBossData(arg0_78, arg1_78)
 	end
 end
 
-function var0_0.AddInstagramTimer(arg0_79, arg1_79)
-	arg0_79:RemoveInstagramTimer()
-
-	local var0_79, var1_79 = arg0_79.data[arg1_79]:GetNextPushTime()
-
-	if var0_79 then
-		local var2_79 = var0_79 - pg.TimeMgr.GetInstance():GetServerTime()
-
-		local function var3_79()
-			arg0_79:sendNotification(GAME.ACT_INSTAGRAM_OP, {
-				arg2 = 0,
-				activity_id = arg1_79,
-				cmd = ActivityConst.INSTAGRAM_OP_ACTIVE,
-				arg1 = var1_79
-			})
-		end
-
-		if var2_79 <= 0 then
-			var3_79()
-		else
-			arg0_79.instagramTimer = Timer.New(function()
-				var3_79()
-				arg0_79:RemoveInstagramTimer()
-			end, var2_79, 1)
-
-			arg0_79.instagramTimer:Start()
-		end
-	end
-end
-
-function var0_0.RemoveInstagramTimer(arg0_82)
-	if arg0_82.instagramTimer then
-		arg0_82.instagramTimer:Stop()
-
-		arg0_82.instagramTimer = nil
-	end
-end
-
-function var0_0.RegisterRequestTime(arg0_83, arg1_83, arg2_83)
-	if not arg1_83 or arg1_83 <= 0 then
+function var0_0.RegisterRequestTime(arg0_79, arg1_79, arg2_79)
+	if not arg1_79 or arg1_79 <= 0 then
 		return
 	end
 
-	arg0_83.requestTime[arg1_83] = arg2_83
+	arg0_79.requestTime[arg1_79] = arg2_79
 end
 
-function var0_0.remove(arg0_84)
-	arg0_84:RemoveInstagramTimer()
-end
+function var0_0.addActivityParameter(arg0_80, arg1_80)
+	local var0_80 = arg1_80:getConfig("config_data")
+	local var1_80 = arg1_80.stopTime
 
-function var0_0.addActivityParameter(arg0_85, arg1_85)
-	local var0_85 = arg1_85:getConfig("config_data")
-	local var1_85 = arg1_85.stopTime
-
-	for iter0_85, iter1_85 in ipairs(var0_85) do
-		arg0_85.params[iter1_85[1]] = {
-			iter1_85[2],
-			var1_85
+	for iter0_80, iter1_80 in ipairs(var0_80) do
+		arg0_80.params[iter1_80[1]] = {
+			iter1_80[2],
+			var1_80
 		}
 	end
 end
 
-function var0_0.getActivityParameter(arg0_86, arg1_86)
-	if arg0_86.params[arg1_86] then
-		local var0_86, var1_86 = unpack(arg0_86.params[arg1_86])
+function var0_0.getActivityParameter(arg0_81, arg1_81)
+	if arg0_81.params[arg1_81] then
+		local var0_81, var1_81 = unpack(arg0_81.params[arg1_81])
 
-		if not (var1_86 > 0) or not (var1_86 <= pg.TimeMgr.GetInstance():GetServerTime()) then
-			return var0_86
+		if not (var1_81 > 0) or not (var1_81 <= pg.TimeMgr.GetInstance():GetServerTime()) then
+			return var0_81
 		end
 	end
 end
 
-function var0_0.IsShowFreeBuildMark(arg0_87, arg1_87)
-	for iter0_87, iter1_87 in ipairs(arg0_87:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_BUILD_FREE)) do
-		if iter1_87 and not iter1_87:isEnd() and iter1_87.data1 > 0 and iter1_87.stopTime - pg.TimeMgr.GetInstance():GetServerTime() < 259200 and tobool(arg1_87) == (PlayerPrefs.GetString("Free_Build_Ticket_" .. iter1_87.id, "") == pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d")) then
-			return iter1_87
+function var0_0.IsShowFreeBuildMark(arg0_82, arg1_82)
+	for iter0_82, iter1_82 in ipairs(arg0_82:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_BUILD_FREE)) do
+		if iter1_82 and not iter1_82:isEnd() and iter1_82.data1 > 0 and iter1_82.stopTime - pg.TimeMgr.GetInstance():GetServerTime() < 259200 and tobool(arg1_82) == (PlayerPrefs.GetString("Free_Build_Ticket_" .. iter1_82.id, "") == pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d")) then
+			return iter1_82
 		end
 	end
 
 	return false
 end
 
-function var0_0.getBuildFreeActivityByBuildId(arg0_88, arg1_88)
-	for iter0_88, iter1_88 in ipairs(arg0_88:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_BUILD_FREE)) do
-		if underscore.any(iter1_88:getConfig("config_data"), function(arg0_89)
-			return arg0_89 == arg1_88
+function var0_0.getBuildFreeActivityByBuildId(arg0_83, arg1_83)
+	for iter0_83, iter1_83 in ipairs(arg0_83:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_BUILD_FREE)) do
+		if underscore.any(iter1_83:getConfig("config_data"), function(arg0_84)
+			return arg0_84 == arg1_83
 		end) then
-			return iter1_88
+			return iter1_83
 		end
 	end
 end
 
-function var0_0.getBuildPoolActivity(arg0_90, arg1_90)
-	if arg1_90:IsActivity() then
-		return arg0_90:getActivityById(arg1_90.activityId)
+function var0_0.getBuildPoolActivity(arg0_85, arg1_85)
+	if arg1_85:IsActivity() then
+		return arg0_85:getActivityById(arg1_85.activityId)
 	end
 end
 
-function var0_0.getEnterReadyActivity(arg0_91)
-	local var0_91 = {
-		[ActivityConst.ACTIVITY_TYPE_ZPROJECT] = false,
-		[ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2] = function(arg0_92)
-			return not arg0_92:checkBattleTimeInBossAct()
+function var0_0.getEnterReadyActivity(arg0_86)
+	local var0_86 = {
+		[ActivityConst.ACTIVITY_TYPE_ZPROJECT] = function(arg0_87)
+			return true
 		end,
-		[ActivityConst.ACTIVITY_TYPE_BOSSRUSH] = false,
-		[ActivityConst.ACTIVITY_TYPE_BOSSSINGLE] = false,
-		[ActivityConst.ACTIVITY_TYPE_BOSSSINGLE_VARIABLE] = false
+		[ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2] = function(arg0_88)
+			return arg0_88:checkBattleTimeInBossAct()
+		end,
+		[ActivityConst.ACTIVITY_TYPE_BOSSRUSH] = function(arg0_89)
+			return true
+		end,
+		[ActivityConst.ACTIVITY_TYPE_BOSSSINGLE] = function(arg0_90)
+			return true
+		end,
+		[ActivityConst.ACTIVITY_TYPE_BOSSSINGLE_VARIABLE] = function(arg0_91)
+			return true
+		end
 	}
-	local var1_91 = _.keys(var0_91)
-	local var2_91 = {}
 
-	for iter0_91, iter1_91 in ipairs(var1_91) do
-		var2_91[iter1_91] = 0
-	end
-
-	for iter2_91, iter3_91 in pairs(arg0_91.data) do
-		local var3_91 = iter3_91:getConfig("type")
-
-		if var2_91[var3_91] and not iter3_91:isEnd() and not existCall(var0_91[var3_91], iter3_91) then
-			var2_91[var3_91] = math.max(var2_91[var3_91], iter2_91)
+	for iter0_86, iter1_86 in pairs(arg0_86.data) do
+		if switch(iter1_86:getConfig("type"), var0_86, function(arg0_92)
+			return false
+		end) and not iter1_86:isEnd() and tobool(iter1_86:getConfig("config_client").entrance_bg) then
+			return iter1_86
 		end
 	end
 
-	table.sort(var1_91)
-
-	for iter4_91, iter5_91 in ipairs(var1_91) do
-		if var2_91[iter5_91] > 0 then
-			return arg0_91.data[var2_91[iter5_91]]
-		end
-	end
+	return nil
 end
 
 function var0_0.AtelierActivityAllSlotIsEmpty(arg0_93)

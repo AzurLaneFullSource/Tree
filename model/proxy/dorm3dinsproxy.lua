@@ -93,7 +93,7 @@ end
 function var0_0.AnyInstagramShouldTip(arg0_12, arg1_12)
 	local var0_12 = arg0_12:GetInstagramList(arg1_12)
 
-	return _.any(var0_12, function(arg0_13)
+	return _.any(var0_12 or {}, function(arg0_13)
 		return arg0_13:ShouldTip()
 	end)
 end
@@ -140,7 +140,7 @@ function var0_0.ExtendPhoneData(arg0_21, arg1_21, arg2_21)
 
 	for iter0_21, iter1_21 in ipairs(arg2_21) do
 		local var1_21 = _.detect(var0_21, function(arg0_22)
-			return arg0_22.id == arg2_21.id
+			return arg0_22.id == iter1_21.id
 		end)
 
 		if var1_21 then

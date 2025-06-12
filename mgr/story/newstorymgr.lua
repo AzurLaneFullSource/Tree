@@ -928,6 +928,10 @@ function var0_0.OnSceneExit(arg0_85, arg1_85)
 end
 
 function var0_0.IsReView(arg0_86)
+	if getProxy(ContextProxy) == nil then
+		return false
+	end
+
 	local var0_86 = getProxy(ContextProxy):GetPrevContext(1)
 
 	return arg0_86.scenes[WorldMediaCollectionScene.__cname] == true or var0_86 and var0_86.mediator == WorldMediaCollectionMediator

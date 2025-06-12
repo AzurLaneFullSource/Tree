@@ -3,6 +3,8 @@ local var0_0 = class("VoiceChat")
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.bgName = arg1_1.bgName
 	arg0_1.shipGroup = arg1_1.shipGroup
+	arg0_1.stopBgm = arg1_1.stopBgm or false
+	arg0_1.label = arg1_1.label
 	arg0_1.steps = {}
 
 	for iter0_1, iter1_1 in ipairs(arg1_1.scripts or {}) do
@@ -51,6 +53,18 @@ function var0_0.GetStepByIndex(arg0_7, arg1_7)
 	end
 
 	return var0_7
+end
+
+function var0_0.HasBg(arg0_8)
+	return arg0_8.bgName ~= nil and arg0_8.bgName ~= ""
+end
+
+function var0_0.ShouldStopBgm(arg0_9)
+	return arg0_9.stopBgm
+end
+
+function var0_0.GetLabel(arg0_10)
+	return arg0_10.label
 end
 
 return var0_0

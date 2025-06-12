@@ -15,10 +15,11 @@ function var0_0.execute(arg0_1, arg1_1)
 		ship_group = var1_1
 	}, 28006, function(arg0_2)
 		if arg0_2.result == 0 then
-			var4_1 = var3_1:getApartment(var1_1)
+			var3_1:ModifyApartment(var1_1, function(arg0_3)
+				arg0_3:addLevel()
+			end)
 
-			var4_1:addLevel()
-			var3_1:updateApartment(var4_1)
+			var4_1 = var3_1:getApartment(var1_1)
 
 			local var0_2 = PlayerConst.addTranDrop(arg0_2.drop_list)
 
@@ -29,18 +30,18 @@ function var0_0.execute(arg0_1, arg1_1)
 
 			local var1_2 = var4_1:getLevel()
 
-			_.each(pg.dorm3d_collection_template.all, function(arg0_3)
-				local var0_3 = pg.dorm3d_collection_template[arg0_3].unlock
+			_.each(pg.dorm3d_collection_template.all, function(arg0_4)
+				local var0_4 = pg.dorm3d_collection_template[arg0_4].unlock
 
-				if var0_3[1] ~= 1 then
+				if var0_4[1] ~= 1 then
 					return
 				end
 
-				if var0_3[2] ~= var1_2 then
+				if var0_4[2] ~= var1_2 then
 					return
 				end
 
-				pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCollectionItem(arg0_3, 1))
+				pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataCollectionItem(arg0_4, 1))
 			end)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)

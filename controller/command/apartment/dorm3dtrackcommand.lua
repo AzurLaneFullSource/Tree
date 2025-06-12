@@ -17,6 +17,9 @@ var0_0.TYPE_DORM_ACCOMPANY = 14
 var0_0.TYPE_DORM_MINIGAME = 15
 var0_0.TYPE_DORM_GUIDE = 16
 var0_0.TYPE_DORM_GRAPHICS = 17
+var0_0.TYPE_DORM_SKIN = 32
+var0_0.TYPE_DORM_DANCE = 33
+var0_0.TYPE_DORM_PHONE = 34
 
 function var0_0.execute(arg0_1, arg1_1)
 	local var0_1 = arg1_1.body
@@ -297,6 +300,39 @@ function var0_0.BuildDataGraphics(arg0_22)
 		strs = {
 			var0_22,
 			Count = 1
+		}
+	}
+end
+
+function var0_0.BuildDataChangeSkin(arg0_23)
+	return {
+		trackType = var0_0.TYPE_DORM_SKIN,
+		args = {
+			arg0_23,
+			Count = 1
+		}
+	}
+end
+
+function var0_0.BuildDataDance(arg0_24, arg1_24)
+	return {
+		trackType = var0_0.TYPE_DORM_DANCE,
+		args = {
+			arg0_24,
+			arg1_24,
+			Count = 2
+		}
+	}
+end
+
+function var0_0.BuildDataPhone(arg0_25, arg1_25, arg2_25)
+	return {
+		trackType = var0_0.TYPE_DORM_PHONE,
+		args = {
+			arg0_25,
+			arg1_25,
+			arg2_25,
+			Count = 3
 		}
 	}
 end

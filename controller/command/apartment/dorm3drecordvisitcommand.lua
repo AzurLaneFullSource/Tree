@@ -7,11 +7,9 @@ function var0_0.execute(arg0_1, arg1_1)
 		ship_id = var0_1
 	}, 28037, function(arg0_2)
 		if arg0_2.result == 0 then
-			local var0_2 = getProxy(ApartmentProxy):getApartment(var0_1)
-
-			var0_2.visitTime = pg.TimeMgr.GetInstance():GetServerTime()
-
-			getProxy(ApartmentProxy):updateApartment(var0_2)
+			getProxy(ApartmentProxy):ModifyApartment(var0_1, {
+				visitTime = pg.TimeMgr.GetInstance():GetServerTime()
+			})
 		else
 			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)
 		end

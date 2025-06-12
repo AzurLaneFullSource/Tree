@@ -209,7 +209,8 @@ function var0_0.listNotificationInterests(arg0_23)
 		NewMainMediator.ON_AWRADS,
 		NewMainMediator.FOLD_PANEL,
 		NewMainMediator.HIDE_PANEL,
-		MusicPlayer.NO_PLAY_MUSIC_NOTIFICATION
+		MusicPlayer.NO_PLAY_MUSIC_NOTIFICATION,
+		GAME.REQ_NEW_INSTAGRAM_DATA_DONE
 	}
 
 	for iter0_23, iter1_23 in pairs(pg.redDotHelper:GetNotifyType()) do

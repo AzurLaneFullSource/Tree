@@ -59,8 +59,25 @@ function var0_0.UpdateVoiceItem(arg0_7, arg1_7, arg2_7)
 			return
 		end
 
-		arg0_7.player:ExecuteAction("Play", var0_7:GetContent())
+		if var0_7:GetType() == 1 then
+			arg0_7:emit(Dorm3dInsPhoneMediator.ON_DORM, var0_7:GetVideoData())
+		elseif var0_7:GetType() == 2 then
+			arg0_7.player:ExecuteAction("Play", var0_7:GetContent())
+		end
+
+		if var0_7:ShouldTip() then
+			arg0_7:emit(Dorm3dInsPhoneMediator.MARK_READ, {
+				groupId = arg0_7.contextData.groupId,
+				id = var0_7.id
+			})
+		end
+
+		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataPhone(arg0_7.contextData.groupId, var0_7:GetType(), var0_7.id))
 	end)
+end
+
+function var0_0.willExit(arg0_9)
+	arg0_9.player:Destroy()
 end
 
 return var0_0

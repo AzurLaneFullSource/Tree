@@ -74,6 +74,7 @@ function var0_0.Ctor(arg0_2, arg1_2, arg2_2, arg3_2)
 	arg0_2.dynamicResDownaload = arg0_2._tf:Find("overlay/right/toggles/l2d_res_state/downloaded")
 	arg0_2.dynamicResUnDownaload = arg0_2._tf:Find("overlay/right/toggles/l2d_res_state/undownload")
 	arg0_2.paintingTF = arg0_2._tf:Find("painting/paint")
+	arg0_2.defaultPaintingPosition = arg0_2.paintingTF.anchoredPosition
 	arg0_2.live2dContainer = arg0_2._tf:Find("painting/paint/live2d")
 	arg0_2.spTF = arg0_2._tf:Find("painting/paint/spinePainting")
 	arg0_2.spBg = arg0_2._tf:Find("painting/paintBg/spinePainting")
@@ -94,9 +95,7 @@ end
 
 function var0_0.RegisterEvent(arg0_3)
 	arg0_3:bind(var0_0.EVT_SHOW_OR_HIDE_PURCHASE_VIEW, function(arg0_4, arg1_4)
-		setAnchoredPosition(arg0_3.paintingTF, {
-			x = arg1_4 and -440 or -120
-		})
+		arg0_3:AdjustPainting(arg1_4)
 		setActive(arg0_3.overlay, not arg1_4)
 	end)
 	arg0_3:bind(var0_0.EVT_ON_PURCHASE, function(arg0_5, arg1_5)
@@ -324,9 +323,19 @@ function var0_0.FlushPaintingToggle(arg0_23, arg1_23)
 
 		arg0_23.isToggleDynamic = false
 	elseif arg0_23.isToggleDynamic and not arg0_23.dynamicToggle:GetComponent(typeof(Toggle)).isOn then
-		triggerToggle(arg0_23.dynamicToggle, true)
+		if var0_23:IsLive2d() and Live2dConst.GetLive2DArm32MatchAble() then
+			arg0_23.isToggleDynamic = false
 
-		arg0_23.isToggleDynamic = true
+			local var3_23 = getProxy(PlayerProxy):getRawData().id
+
+			PlayerPrefs.SetInt("skinShop#l2dPreViewToggle" .. var3_23, 0)
+			PlayerPrefs.Save()
+			triggerToggle(arg0_23.dynamicToggle, false)
+		else
+			triggerToggle(arg0_23.dynamicToggle, true)
+
+			arg0_23.isToggleDynamic = true
+		end
 	end
 
 	if var1_23 then
@@ -340,6 +349,13 @@ function var0_0.FlushPaintingToggle(arg0_23, arg1_23)
 
 	if var0_23:IsSpine() or var0_23:IsLive2d() then
 		onToggle(arg0_23, arg0_23.dynamicToggle, function(arg0_25)
+			if arg0_25 and Live2dConst.GetLive2DArm32MatchAble() and var0_23:IsLive2d() then
+				Live2dConst.ShowLive2DArm32Tips()
+				triggerToggle(arg0_23.dynamicToggle, false)
+
+				return
+			end
+
 			arg0_23.isToggleDynamic = arg0_25
 
 			setActive(arg0_23.dynamicResToggle, arg0_25)
@@ -478,6 +494,8 @@ function var0_0.FlushPainting(arg0_34, arg1_34)
 		showBg = arg0_34.isToggleShowBg,
 		purchaseFlag = arg1_34.buyCount
 	}
+
+	arg0_34:AdjustPainting(false)
 end
 
 function var0_0.ClearPainting(arg0_35)
@@ -1243,55 +1261,74 @@ function var0_0.ClosePurchaseView(arg0_96)
 	end
 end
 
-function var0_0.Dispose(arg0_97)
-	arg0_97.exited = true
+function var0_0.AdjustPainting(arg0_97, arg1_97)
+	local var0_97 = arg0_97.paintingTF
+	local var1_97 = pg.ship_skin_newmainui_shift[arg0_97.skinId]
 
-	pg.DelegateInfo.Dispose(arg0_97)
-	arg0_97:ClearSwitchBgAnim()
-	pg.DynamicBgMgr.GetInstance():ClearBg(arg0_97:getUIName())
+	if var1_97 then
+		local var2_97 = var1_97.skin_shop_shift
 
-	if arg0_97.live2dChar then
-		arg0_97.live2dChar:Dispose()
+		if arg1_97 then
+			var0_97.anchoredPosition = Vector2(var2_97[1] - 440, var2_97[2] + arg0_97.defaultPaintingPosition.y)
+		else
+			var0_97.anchoredPosition = Vector2(var2_97[1] + arg0_97.defaultPaintingPosition.x, var2_97[2] + arg0_97.defaultPaintingPosition.y)
+		end
 
-		arg0_97.live2dChar = nil
+		local var3_97 = var2_97[4]
+
+		var0_97.localScale = Vector3(var3_97, var3_97, 1)
+	end
+end
+
+function var0_0.Dispose(arg0_98)
+	arg0_98.exited = true
+
+	pg.DelegateInfo.Dispose(arg0_98)
+	arg0_98:ClearSwitchBgAnim()
+	pg.DynamicBgMgr.GetInstance():ClearBg(arg0_98:getUIName())
+
+	if arg0_98.live2dChar then
+		arg0_98.live2dChar:Dispose()
+
+		arg0_98.live2dChar = nil
 	end
 
-	if arg0_97.voucherMsgBox then
-		arg0_97.voucherMsgBox:Destroy()
+	if arg0_98.voucherMsgBox then
+		arg0_98.voucherMsgBox:Destroy()
 
-		arg0_97.voucherMsgBox = nil
+		arg0_98.voucherMsgBox = nil
 	end
 
-	if arg0_97.purchaseView then
-		arg0_97.purchaseView:Destroy()
+	if arg0_98.purchaseView then
+		arg0_98.purchaseView:Destroy()
 
-		arg0_97.purchaseView = nil
+		arg0_98.purchaseView = nil
 	end
 
-	for iter0_97, iter1_97 in pairs(arg0_97.downloads) do
-		iter1_97:Dispose()
+	for iter0_98, iter1_98 in pairs(arg0_98.downloads) do
+		iter1_98:Dispose()
 	end
 
-	arg0_97.downloads = {}
+	arg0_98.downloads = {}
 
-	arg0_97:ClearPainting()
+	arg0_98:ClearPainting()
 
-	for iter2_97, iter3_97 in pairs(arg0_97.obtainBtnSprites) do
-		arg0_97.obtainBtnSprites[iter3_97] = nil
+	for iter2_98, iter3_98 in pairs(arg0_98.obtainBtnSprites) do
+		arg0_98.obtainBtnSprites[iter3_98] = nil
 	end
 
-	arg0_97.obtainBtnSprites = nil
+	arg0_98.obtainBtnSprites = nil
 
-	if arg0_97.interactionPreview then
-		arg0_97.interactionPreview:Dispose()
+	if arg0_98.interactionPreview then
+		arg0_98.interactionPreview:Dispose()
 
-		arg0_97.interactionPreview = nil
+		arg0_98.interactionPreview = nil
 	end
 
-	arg0_97:ClearSwitchTween()
-	arg0_97:disposeEvent()
-	arg0_97:ClearTimer()
-	arg0_97:ReturnChar()
+	arg0_98:ClearSwitchTween()
+	arg0_98:disposeEvent()
+	arg0_98:ClearTimer()
+	arg0_98:ReturnChar()
 end
 
 return var0_0

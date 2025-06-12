@@ -10,6 +10,7 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.slots = {
 		arg0_2:findTF("tpl")
 	}
+	arg0_2.defaultPaintingPosition = arg0_2:findTF("tpl/mask/painting").anchoredPosition
 end
 
 function var0_0.StaticGetFinalExpandPosition(arg0_3)
@@ -123,6 +124,7 @@ function var0_0.InitSubFleetShips(arg0_16, arg1_16)
 
 	for iter0_16 = 1, var1_16 do
 		if arg0_16.slots[iter0_16] then
+			arg0_16:RevertPainting(arg0_16.slots[iter0_16])
 			retPaintingPrefab(arg0_16.slots[iter0_16]:Find("mask/painting"), var0_16[iter0_16]:getPainting())
 		end
 	end
@@ -139,6 +141,7 @@ function var0_0.InitSubFleetShips(arg0_16, arg1_16)
 		var3_16.localPosition = arg0_16:GetExpandPosition(#var0_16, iter1_16)
 
 		table.insert(var2_16, function(arg0_17)
+			arg0_16:AdjustPainting(var3_16, var4_16)
 			setPaintingPrefabAsync(var3_16:Find("mask/painting"), var4_16:getPainting(), "biandui", arg0_17)
 		end)
 	end
@@ -334,6 +337,7 @@ function var0_0.InitMainFleetShips(arg0_37, arg1_37)
 				return
 			end
 
+			arg0_37:AdjustPainting(var6_37, var5_37)
 			setPaintingPrefabAsync(var6_37:Find("mask/painting"), var5_37:getPainting(), "biandui", arg0_38)
 		end)
 	end
@@ -341,26 +345,49 @@ function var0_0.InitMainFleetShips(arg0_37, arg1_37)
 	parallelAsync(var3_37, arg1_37)
 end
 
-function var0_0.OnDestroy(arg0_39)
-	arg0_39.exited = true
+function var0_0.AdjustPainting(arg0_39, arg1_39, arg2_39)
+	local var0_39 = arg0_39:findTF("mask/painting", arg1_39)
+	local var1_39 = pg.ship_skin_newmainui_shift[arg2_39:getSkinId()]
 
-	if arg0_39:isShowing() then
-		arg0_39:Hide()
+	if var1_39 then
+		local var2_39 = var1_39.battle_result_display_shift
+
+		var0_39.anchoredPosition = Vector2(var2_39[1] + arg0_39.defaultPaintingPosition.x, var2_39[2] + arg0_39.defaultPaintingPosition.y)
+
+		local var3_39 = var2_39[4]
+
+		var0_39.localScale = Vector3(var3_39, var3_39, 1)
+	end
+end
+
+function var0_0.RevertPainting(arg0_40, arg1_40)
+	local var0_40 = arg0_40:findTF("mask/painting", arg1_40)
+
+	var0_40.anchoredPosition = arg0_40.defaultPaintingPosition
+	var0_40.localScale = Vector3(1, 1, 1)
+end
+
+function var0_0.OnDestroy(arg0_41)
+	arg0_41.exited = true
+
+	if arg0_41:isShowing() then
+		arg0_41:Hide()
 	end
 
-	local var0_39 = arg0_39.displayShips or {}
+	local var0_41 = arg0_41.displayShips or {}
 
-	for iter0_39, iter1_39 in ipairs(arg0_39.slots or {}) do
-		if iter1_39 then
-			local var1_39 = iter1_39:Find("mask/painting")
+	for iter0_41, iter1_41 in ipairs(arg0_41.slots or {}) do
+		if iter1_41 then
+			local var1_41 = iter1_41:Find("mask/painting")
 
-			if var1_39 and var0_39[iter0_39] and var1_39:Find("fitter").childCount > 0 then
-				retPaintingPrefab(var1_39, var0_39[iter0_39]:getPainting())
+			if var1_41 and var0_41[iter0_41] and var1_41:Find("fitter").childCount > 0 then
+				arg0_41:RevertPainting(iter1_41)
+				retPaintingPrefab(var1_41, var0_41[iter0_41]:getPainting())
 			end
 		end
 
-		if iter1_39 and LeanTween.isTweening(iter1_39.gameObject) then
-			LeanTween.cancel(iter1_39.gameObject)
+		if iter1_41 and LeanTween.isTweening(iter1_41.gameObject) then
+			LeanTween.cancel(iter1_41.gameObject)
 		end
 	end
 end

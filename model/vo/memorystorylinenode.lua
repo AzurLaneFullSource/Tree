@@ -48,14 +48,18 @@ function var0_0.GetWorldID(arg0_12)
 	return arg0_12:getConfig("world_id")
 end
 
+function var0_0.IsMemoryBlock(arg0_13)
+	return arg0_13:getConfig("memory_lock") == 1
+end
+
 var0_0.MARK_NAME = {
 	"mark_blue",
 	"mark_red",
 	"mark_golden"
 }
 
-function var0_0.GetMark(arg0_13)
-	return var0_0.MARK_NAME[arg0_13:getConfig("sort")]
+function var0_0.GetMark(arg0_14)
+	return var0_0.MARK_NAME[arg0_14:getConfig("sort")]
 end
 
 return var0_0

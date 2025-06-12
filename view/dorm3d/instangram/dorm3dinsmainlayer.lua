@@ -73,7 +73,7 @@ end
 
 function var0_0.InitData(arg0_6)
 	arg0_6.roomDataDic = {}
-	arg0_6.roomDataList = getProxy(Dorm3dInsProxy):GetRoomList()
+	arg0_6.roomDataList = Clone(getProxy(Dorm3dInsProxy):GetRoomList())
 
 	for iter0_6, iter1_6 in ipairs(arg0_6.roomDataList) do
 		arg0_6.roomDataDic[iter1_6.id] = iter1_6
@@ -121,7 +121,18 @@ function var0_0.SortRoomList(arg0_13)
 		local var0_14 = arg0_13.roomDataDic[arg0_14]:IsCare() and 1 or 0
 		local var1_14 = arg0_13.roomDataDic[arg1_14]:IsCare() and 1 or 0
 
-		return var0_14 == var1_14 and arg0_14 < arg1_14 or var1_14 < var0_14
+		if var0_14 ~= var1_14 then
+			return var1_14 < var0_14
+		end
+
+		local var2_14 = arg0_13.roomDataDic[arg0_14]:GetType()
+		local var3_14 = arg0_13.roomDataDic[arg1_14]:GetType()
+
+		if var2_14 ~= var3_14 then
+			return var3_14 < var2_14
+		end
+
+		return arg0_14 < arg1_14
 	end)
 end
 
@@ -155,7 +166,6 @@ function var0_0.didEnter(arg0_20)
 	onButton(arg0_20, arg0_20._tf:Find("left/btn_select"), function()
 		arg0_20:OpenOrCloseSelectPanel()
 	end)
-	setActive(arg0_20._tf:Find("left/btn_select"), false)
 	onButton(arg0_20, arg0_20.selectPanel:Find("back"), function()
 		arg0_20:OpenOrCloseSelectPanel()
 	end)

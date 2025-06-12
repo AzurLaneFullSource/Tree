@@ -106,228 +106,254 @@ function var0_0.GetUpgradableSkillIds(arg0_21)
 	return arg0_21:getConfig("skill_upgrade")
 end
 
-function var0_0.GetNextUpgradeID(arg0_22)
-	return arg0_22:getConfig("next")
+function var0_0.GetUpgradableHiddenSkillIds(arg0_22)
+	return arg0_22:getConfig("hide_buff_upgrade")
 end
 
-function var0_0.GetPrevUpgradeID(arg0_23)
-	return arg0_23:getConfig("prev")
+function var0_0.GetNextUpgradeID(arg0_23)
+	return arg0_23:getConfig("next")
 end
 
-function var0_0.MigrateTo(arg0_24, arg1_24)
-	local var0_24 = Clone(arg0_24)
-
-	var0_24.id = arg1_24
-	var0_24.configId = arg1_24
-	var0_24.pt = 0
-
-	return var0_24
+function var0_0.GetPrevUpgradeID(arg0_24)
+	return arg0_24:getConfig("prev")
 end
 
-function var0_0.GetLabel(arg0_25)
-	return arg0_25:getConfig("label")
+function var0_0.MigrateTo(arg0_25, arg1_25)
+	local var0_25 = Clone(arg0_25)
+
+	var0_25.id = arg1_25
+	var0_25.configId = arg1_25
+	var0_25.pt = 0
+
+	return var0_25
 end
 
-function var0_0.SetShipId(arg0_26, arg1_26)
-	arg0_26.shipId = arg1_26
+function var0_0.GetLabel(arg0_26)
+	return arg0_26:getConfig("label")
 end
 
-function var0_0.GetShipId(arg0_27)
-	return arg0_27.shipId
+function var0_0.SetShipId(arg0_27, arg1_27)
+	arg0_27.shipId = arg1_27
 end
 
-function var0_0.GetSkill(arg0_28)
-	local var0_28 = arg0_28:GetEffect()
-
-	return var0_28 > 0 and getSkillConfig(var0_28) or nil
+function var0_0.GetShipId(arg0_28)
+	return arg0_28.shipId
 end
 
-function var0_0.GetSkillInfo(arg0_29)
-	local var0_29 = {
+function var0_0.GetSkill(arg0_29)
+	local var0_29 = arg0_29:GetEffect()
+
+	return var0_29 > 0 and getSkillConfig(var0_29) or nil
+end
+
+function var0_0.GetSkillInfo(arg0_30)
+	local var0_30 = {
 		lv = 1,
-		skillId = arg0_29:GetDisplayEffect()
+		skillId = arg0_30:GetDisplayEffect()
 	}
 
-	var0_29.unlock = var0_29.skillId == arg0_29:GetEffect()
+	var0_30.unlock = var0_30.skillId == arg0_30:GetEffect()
 
-	return var0_29
+	return var0_30
 end
 
-function var0_0.GetUpgradableSkillInfo(arg0_30)
-	local var0_30 = 0
-	local var1_30 = 1
-	local var2_30 = false
-	local var3_30 = arg0_30:GetShipId()
+function var0_0.GetUpgradableSkillInfo(arg0_31)
+	local var0_31 = arg0_31:GetShipId()
+	local var1_31 = {}
+	local var2_31
+	local var3_31
 
-	if var3_30 then
-		local var4_30 = getProxy(BayProxy):getShipById(var3_30)
-		local var5_30, var6_30 = arg0_30:GetActiveUpgradableSkill(var4_30)
+	if var0_31 then
+		var2_31 = getProxy(BayProxy):getShipById(var0_31)
+		var3_31 = arg0_31:GetActiveUpgradableSkillList(var2_31)
+	end
 
-		if var5_30 then
-			var0_30 = var5_30
+	for iter0_31, iter1_31 in ipairs(arg0_31:GetUpgradableSkillIds()) do
+		local var4_31 = iter1_31[2]
+		local var5_31 = 1
+		local var6_31 = false
 
-			local var7_30 = var4_30 and var4_30.skills[var6_30]
+		if var2_31 then
+			for iter2_31, iter3_31 in ipairs(var3_31) do
+				if iter3_31.mapSkillID == iter1_31[2] and iter3_31.originalSkillID == iter1_31[1] then
+					local var7_31 = var2_31.skills[iter3_31.originalSkillID]
 
-			var1_30 = var7_30 and var7_30.level or var1_30
-			var2_30 = true
+					var5_31 = var7_31 and var7_31.level or 1
+					var6_31 = true
+
+					break
+				end
+			end
+		else
+			var6_31 = var6_31 or iter1_31[1] ~= 0
+		end
+
+		table.insert(var1_31, {
+			skillId = var4_31,
+			lv = var5_31,
+			unlock = var6_31
+		})
+	end
+
+	return var1_31
+end
+
+function var0_0.GetActiveUpgradableSkillList(arg0_32, arg1_32)
+	local var0_32 = {}
+
+	for iter0_32, iter1_32 in ipairs(arg1_32:getSkillList()) do
+		local var1_32, var2_32 = arg0_32:RemapSkillId(iter1_32)
+
+		if var2_32 then
+			table.insert(var0_32, {
+				mapSkillID = var1_32,
+				originalSkillID = iter1_32
+			})
 		end
 	end
 
-	if var0_30 == 0 then
-		local var8_30 = arg0_30:GetUpgradableSkillIds()[1]
+	return var0_32
+end
 
-		if var8_30 and var8_30[2] then
-			var0_30 = var8_30[2]
-			var2_30 = var8_30[1] ~= 0
+function var0_0.RemapSkillId(arg0_33, arg1_33)
+	for iter0_33, iter1_33 in ipairs(arg0_33:GetUpgradableSkillIds()) do
+		if iter1_33[1] == arg1_33 then
+			return iter1_33[2], true
 		end
 	end
 
-	return {
-		skillId = var0_30,
-		lv = var1_30,
-		unlock = var2_30
-	}
+	return arg1_33, false
 end
 
-function var0_0.GetActiveUpgradableSkill(arg0_31, arg1_31)
-	for iter0_31, iter1_31 in ipairs(arg1_31:getSkillList()) do
-		local var0_31, var1_31 = arg0_31:RemapSkillId(iter1_31)
-
-		if var1_31 then
-			return var0_31, iter1_31
-		end
-	end
-end
-
-function var0_0.RemapSkillId(arg0_32, arg1_32)
-	for iter0_32, iter1_32 in ipairs(arg0_32:GetUpgradableSkillIds()) do
-		if iter1_32[1] == arg1_32 then
-			return iter1_32[2], true
+function var0_0.RemapHiddenSkillId(arg0_34, arg1_34)
+	for iter0_34, iter1_34 in ipairs(arg0_34:GetUpgradableHiddenSkillIds()) do
+		if iter1_34[1] == arg1_34 then
+			return iter1_34[2], true
 		end
 	end
 
-	return arg1_32, false
+	return arg1_34, false
 end
 
-function var0_0.GetSkillGroup(arg0_33)
+function var0_0.GetSkillGroup(arg0_35)
 	return {
-		arg0_33:GetSkillInfo(),
-		(arg0_33:GetUpgradableSkillInfo())
+		arg0_35:GetSkillInfo(),
+		(arg0_35:GetUpgradableSkillInfo())
 	}
 end
 
-function var0_0.GetConfigAttributes(arg0_34)
+function var0_0.GetConfigAttributes(arg0_36)
 	return {
-		arg0_34:getConfig("value_1"),
-		arg0_34:getConfig("value_2")
+		arg0_36:getConfig("value_1"),
+		arg0_36:getConfig("value_2")
 	}
 end
 
-function var0_0.GetAttributesRange(arg0_35)
+function var0_0.GetAttributesRange(arg0_37)
 	return {
-		arg0_35:getConfig("value_1_random"),
-		arg0_35:getConfig("value_2_random")
+		arg0_37:getConfig("value_1_random"),
+		arg0_37:getConfig("value_2_random")
 	}
 end
 
-function var0_0.GetAttributes(arg0_36)
-	local var0_36 = arg0_36:GetConfigAttributes()
+function var0_0.GetAttributes(arg0_38)
+	local var0_38 = arg0_38:GetConfigAttributes()
 
-	if arg0_36:IsReal() then
-		var0_36[1] = var0_36[1] + arg0_36.attr1
-		var0_36[2] = var0_36[2] + arg0_36.attr2
+	if arg0_38:IsReal() then
+		var0_38[1] = var0_38[1] + arg0_38.attr1
+		var0_38[2] = var0_38[2] + arg0_38.attr2
 	end
 
-	return var0_36
+	return var0_38
 end
 
-function var0_0.GetBaseAttributes(arg0_37)
+function var0_0.GetBaseAttributes(arg0_39)
 	return {
-		arg0_37.attr1 or 0,
-		arg0_37.attr2 or 0
+		arg0_39.attr1 or 0,
+		arg0_39.attr2 or 0
 	}
 end
 
-function var0_0.SetBaseAttributes(arg0_38, arg1_38)
-	arg0_38.attr1 = arg1_38[1]
-	arg0_38.attr2 = arg1_38[2]
+function var0_0.SetBaseAttributes(arg0_40, arg1_40)
+	arg0_40.attr1 = arg1_40[1]
+	arg0_40.attr2 = arg1_40[2]
 end
 
-function var0_0.GetAttributeOptions(arg0_39)
+function var0_0.GetAttributeOptions(arg0_41)
 	return {
-		arg0_39.attrTemp1 or 0,
-		arg0_39.attrTemp2 or 0
+		arg0_41.attrTemp1 or 0,
+		arg0_41.attrTemp2 or 0
 	}
 end
 
-function var0_0.SetAttributeOptions(arg0_40, arg1_40)
-	arg0_40.attrTemp1 = arg1_40[1]
-	arg0_40.attrTemp2 = arg1_40[2]
+function var0_0.SetAttributeOptions(arg0_42, arg1_42)
+	arg0_42.attrTemp1 = arg1_42[1]
+	arg0_42.attrTemp2 = arg1_42[2]
 end
 
-function var0_0.GetPropertiesInfo(arg0_41)
-	local var0_41 = {
+function var0_0.GetPropertiesInfo(arg0_43)
+	local var0_43 = {
 		attrs = {}
 	}
-	local var1_41 = arg0_41:GetAttributes()
+	local var1_43 = arg0_43:GetAttributes()
 
-	table.insert(var0_41.attrs, {
-		type = arg0_41:getConfig("attribute_1"),
-		value = var1_41[1]
+	table.insert(var0_43.attrs, {
+		type = arg0_43:getConfig("attribute_1"),
+		value = var1_43[1]
 	})
-	table.insert(var0_41.attrs, {
-		type = arg0_41:getConfig("attribute_2"),
-		value = var1_41[2]
+	table.insert(var0_43.attrs, {
+		type = arg0_43:getConfig("attribute_2"),
+		value = var1_43[2]
 	})
 
-	var0_41.weapon = {
+	var0_43.weapon = {
 		sub = {}
 	}
-	var0_41.equipInfo = {
+	var0_43.equipInfo = {
 		sub = {}
 	}
 
-	local var2_41 = arg0_41:GetWearableShipTypes()
+	local var2_43 = arg0_43:GetWearableShipTypes()
 
-	var0_41.part = {
-		var2_41,
-		var2_41
+	var0_43.part = {
+		var2_43,
+		var2_43
 	}
 
-	return var0_41
+	return var0_43
 end
 
-function var0_0.GetWearableShipTypes(arg0_42)
-	local var0_42 = arg0_42:getConfig("usability")
+function var0_0.GetWearableShipTypes(arg0_44)
+	local var0_44 = arg0_44:getConfig("usability")
 
-	if var0_42 and #var0_42 > 0 then
-		return var0_42
+	if var0_44 and #var0_44 > 0 then
+		return var0_44
 	end
 
-	return pg.spweapon_type[arg0_42:GetType()].ship_type
+	return pg.spweapon_type[arg0_44:GetType()].ship_type
 end
 
-function var0_0.IsCraftable(arg0_43)
-	return not arg0_43:IsUnCraftable() and arg0_43:GetUpgradeConfig().create_use_gold > 0
+function var0_0.IsCraftable(arg0_45)
+	return not arg0_45:IsUnCraftable() and arg0_45:GetUpgradeConfig().create_use_gold > 0
 end
 
-function var0_0.GetUpgradeConfig(arg0_44)
-	local var0_44 = arg0_44:getConfig("upgrade_id")
+function var0_0.GetUpgradeConfig(arg0_46)
+	local var0_46 = arg0_46:getConfig("upgrade_id")
 
-	return pg.spweapon_upgrade[var0_44]
+	return pg.spweapon_upgrade[var0_46]
 end
 
-function var0_0.IsUnCraftable(arg0_45)
-	return arg0_45:getConfig("uncraftable") == 1
+function var0_0.IsUnCraftable(arg0_47)
+	return arg0_47:getConfig("uncraftable") == 1
 end
 
-function var0_0.CalculateHistoryPt(arg0_46, arg1_46)
-	local var0_46 = _.reduce(arg0_46, 0, function(arg0_47, arg1_47)
-		return arg0_47 + Item.getConfigData(arg1_47.id).usage_arg[1] * arg1_47.count
+function var0_0.CalculateHistoryPt(arg0_48, arg1_48)
+	local var0_48 = _.reduce(arg0_48, 0, function(arg0_49, arg1_49)
+		return arg0_49 + Item.getConfigData(arg1_49.id).usage_arg[1] * arg1_49.count
 	end)
 
-	return (_.reduce(arg1_46, var0_46, function(arg0_48, arg1_48)
-		return arg0_48 + (0 + arg1_48:GetUpgradeConfig().upgrade_supply_pt)
+	return (_.reduce(arg1_48, var0_48, function(arg0_50, arg1_50)
+		return arg0_50 + (0 + arg1_50:GetUpgradeConfig().upgrade_supply_pt)
 	end))
 end
 

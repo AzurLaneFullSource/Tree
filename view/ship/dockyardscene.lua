@@ -268,7 +268,7 @@ function var0_0.SwitchContainerDisplay(arg0_27)
 	arg0_27:updateBarInfo()
 	setActive(arg0_27.helpPhantom, arg0_27.contextData.mode == var0_0.MODE_SHIP_PHANTOM)
 
-	if PlayerPrefs.GetInt("PHANTOM_HELP_FIRST", 0) == 0 then
+	if pg.SeriesGuideMgr.GetInstance():isEnd() and PlayerPrefs.GetInt("PHANTOM_HELP_FIRST", 0) == 0 then
 		PlayerPrefs.SetInt("PHANTOM_HELP_FIRST", 1)
 		triggerButton(arg0_27.helpPhantom)
 	end

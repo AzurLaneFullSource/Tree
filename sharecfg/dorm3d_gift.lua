@@ -1,14 +1,15 @@
 pg = pg or {}
 pg.dorm3d_gift = {
 	[1021001] = {
-		ship_group_id = 0,
+		name = "Bunny Plushie",
 		display = "A pink stuffed bunny with a scarf. It's made of soft materials that make you want to hug it all day.",
 		rarity = 2,
 		unlock_dialogue_id = 0,
+		shop_id = "",
+		ship_group_id = 0,
+		favor_trigger_id = 1009,
 		id = 1021001,
 		icon = "dorm3dicon/3Ddrom_everyone_CommonGift3",
-		name = "Bunny Plushie",
-		favor_trigger_id = 1009,
 		reply_dialogue_id = {
 			{
 				20220,
@@ -21,9 +22,12 @@ pg.dorm3d_gift = {
 			{
 				19903,
 				30301
+			},
+			{
+				10517,
+				110301
 			}
 		},
-		shop_id = {},
 		unlock_tips = {},
 		unlock_banners = {
 			{
@@ -42,6 +46,12 @@ pg.dorm3d_gift = {
 				19903,
 				{
 					"banner_ankeleiqigift"
+				}
+			},
+			{
+				10517,
+				{
+					"banner_xinzexigift"
 				}
 			}
 		}
@@ -67,6 +77,10 @@ pg.dorm3d_gift = {
 			{
 				19903,
 				30302
+			},
+			{
+				10517,
+				110302
 			}
 		},
 		shop_id = {
@@ -95,6 +109,12 @@ pg.dorm3d_gift = {
 				{
 					"banner_ankeleiqigift"
 				}
+			},
+			{
+				10517,
+				{
+					"banner_xinzexigift"
+				}
 			}
 		}
 	},
@@ -119,6 +139,10 @@ pg.dorm3d_gift = {
 			{
 				19903,
 				30303
+			},
+			{
+				10517,
+				110303
 			}
 		},
 		shop_id = {
@@ -143,6 +167,12 @@ pg.dorm3d_gift = {
 				19903,
 				{
 					"banner_ankeleiqigift"
+				}
+			},
+			{
+				10517,
+				{
+					"banner_xinzexigift"
 				}
 			}
 		}
@@ -297,6 +327,36 @@ pg.dorm3d_gift = {
 			}
 		}
 	},
+	[1051701] = {
+		ship_group_id = 10517,
+		display = "The transparent glass jar is full of shiny, colorful candy. When you open the lid, you smell the sweet scent of bliss.",
+		rarity = 4,
+		unlock_dialogue_id = 110541,
+		id = 1051701,
+		icon = "dorm3dicon/3Ddrom_xinzexi_CommonFurniture4",
+		name = "Crystal Candy",
+		favor_trigger_id = 1004,
+		reply_dialogue_id = {
+			{
+				10517,
+				110304
+			}
+		},
+		shop_id = {
+			260401
+		},
+		unlock_tips = {
+			4
+		},
+		unlock_banners = {
+			{
+				10517,
+				{
+					"banner_gift1051701"
+				}
+			}
+		}
+	},
 	get_id_list_by_ship_group_id = {
 		[0] = {
 			1021001,
@@ -313,6 +373,9 @@ pg.dorm3d_gift = {
 		},
 		[19903] = {
 			1990301
+		},
+		[10517] = {
+			1051701
 		}
 	},
 	all = {
@@ -323,6 +386,7 @@ pg.dorm3d_gift = {
 		2022002,
 		3022101,
 		3022102,
-		1990301
+		1990301,
+		1051701
 	}
 }

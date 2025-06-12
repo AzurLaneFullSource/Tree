@@ -250,6 +250,66 @@ pg.dorm3d_zone_template = {
 		},
 		special_action = {}
 	},
+	[11001] = {
+		is_global = 0,
+		name = "Bedroom",
+		type_prioritys = "",
+		special_action = "",
+		id = 11001,
+		room_id = 11,
+		watch_camera = "Bed",
+		touch_id = {
+			{
+				10517,
+				1051730
+			}
+		}
+	},
+	[11002] = {
+		is_global = 0,
+		name = "Dining Area",
+		type_prioritys = "",
+		special_action = "",
+		id = 11002,
+		room_id = 11,
+		watch_camera = "Table",
+		touch_id = {
+			{
+				10517,
+				1051710
+			}
+		}
+	},
+	[11003] = {
+		is_global = 0,
+		name = "Living Area",
+		type_prioritys = "",
+		special_action = "",
+		id = 11003,
+		room_id = 11,
+		watch_camera = "Chair",
+		touch_id = {
+			{
+				10517,
+				1051720
+			}
+		}
+	},
+	[16001] = {
+		is_global = 0,
+		name = "Stage",
+		type_prioritys = "",
+		special_action = "",
+		id = 16001,
+		room_id = 16,
+		watch_camera = "xinzexi",
+		touch_id = {
+			{
+				10517,
+				1051790
+			}
+		}
+	},
 	get_id_list_by_room_id = {
 		{
 			1000,
@@ -272,6 +332,14 @@ pg.dorm3d_zone_template = {
 			4002,
 			4003,
 			4004
+		},
+		[11] = {
+			11001,
+			11002,
+			11003
+		},
+		[16] = {
+			16001
 		}
 	},
 	all = {
@@ -288,6 +356,10 @@ pg.dorm3d_zone_template = {
 		4001,
 		4002,
 		4003,
-		4004
+		4004,
+		11001,
+		11002,
+		11003,
+		16001
 	}
 }

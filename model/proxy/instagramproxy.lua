@@ -3,8 +3,9 @@ local var1_0 = pg.activity_ins_language
 local var2_0 = pg.activity_ins_npc_template
 
 function var0_0.register(arg0_1)
-	arg0_1.caches = {}
 	arg0_1.messages = {}
+	arg0_1.isReqNewInstagramData = false
+	arg0_1.isReqOldInstagramData = false
 	arg0_1.allReply = {}
 
 	local function var0_1(arg0_2)
@@ -35,90 +36,161 @@ function var0_0.register(arg0_1)
 
 		arg0_1.allReply[iter1_1] = var1_1
 	end
+end
 
-	arg0_1:on(11700, function(arg0_3)
-		for iter0_3, iter1_3 in ipairs(arg0_3.ins_message_list) do
-			if pg.activity_ins_template[iter1_3.id].is_active == 1 then
-				local var0_3 = Instagram.New(iter1_3)
+function var0_0.IsReqOldInstagramData(arg0_3)
+	return arg0_3.isReqOldInstagramData
+end
 
-				arg0_1.messages[var0_3.id] = var0_3
-			else
-				table.insert(arg0_1.caches, iter1_3)
+function var0_0.MarkOldInstagramData(arg0_4)
+	arg0_4.isReqOldInstagramData = true
+end
+
+function var0_0.IsReqNewInstagramData(arg0_5)
+	return arg0_5.isReqNewInstagramData
+end
+
+function var0_0.MarkNewInstagramData(arg0_6)
+	arg0_6.isReqNewInstagramData = true
+
+	arg0_6:AddInstagramTimer()
+end
+
+function var0_0.AddInstagram(arg0_7, arg1_7)
+	arg0_7.messages[arg1_7.id] = arg1_7
+end
+
+function var0_0.GetAllReply(arg0_8)
+	return arg0_8.allReply
+end
+
+function var0_0.GetMessages(arg0_9)
+	local var0_9 = {}
+
+	for iter0_9, iter1_9 in pairs(arg0_9.messages) do
+		table.insert(var0_9, iter1_9)
+	end
+
+	return var0_9
+end
+
+function var0_0.ExistMessage(arg0_10)
+	return table.getCount(arg0_10.messages) > 0
+end
+
+function var0_0.GetData(arg0_11)
+	return arg0_11.messages
+end
+
+function var0_0.GetMessageById(arg0_12, arg1_12)
+	return arg0_12.messages[arg1_12]
+end
+
+function var0_0.AddMessage(arg0_13, arg1_13)
+	arg0_13.messages[arg1_13.id] = arg1_13
+end
+
+function var0_0.UpdateMessage(arg0_14, arg1_14)
+	if not arg0_14.messages[arg1_14.id] then
+		arg0_14:AddMessage(arg1_14)
+	else
+		arg0_14.messages[arg1_14.id] = arg1_14
+	end
+end
+
+function var0_0.ShouldShowTip(arg0_15)
+	local var0_15 = arg0_15:GetMessages()
+
+	return _.any(var0_15, function(arg0_16)
+		return arg0_16:ShouldShowTip()
+	end)
+end
+
+function var0_0.GetNewInstagramBeginIdAndEndId()
+	local var0_17 = Mathf.Infinity
+	local var1_17 = Mathf.NegativeInfinity
+
+	for iter0_17, iter1_17 in ipairs(pg.activity_ins_template.all) do
+		if pg.activity_ins_template[iter1_17].is_active == 1 then
+			if iter1_17 < var0_17 then
+				var0_17 = iter1_17
+			end
+
+			if var1_17 < iter1_17 then
+				var1_17 = iter1_17
 			end
 		end
-	end)
+	end
+
+	return var0_17, var1_17
 end
 
-function var0_0.GetAllReply(arg0_4)
-	return arg0_4.allReply
-end
+function var0_0.GetOldInstagramIds()
+	local var0_18 = {}
 
-function var0_0.InitLocalConfigs(arg0_5)
-	if #arg0_5.caches > 0 then
-		for iter0_5, iter1_5 in ipairs(arg0_5.caches) do
-			local var0_5 = Instagram.New(iter1_5)
-
-			arg0_5.messages[var0_5.id] = var0_5
+	for iter0_18, iter1_18 in ipairs(pg.activity_ins_template.all) do
+		if pg.activity_ins_template[iter1_18].is_active == 0 then
+			table.insert(var0_18, iter1_18)
 		end
 	end
 
-	arg0_5.caches = {}
+	return var0_18
 end
 
-function var0_0.GetMessages(arg0_6)
-	local var0_6 = {}
+function var0_0.GetNextPushTime(arg0_19)
+	local var0_19 = pg.activity_ins_template.all
 
-	for iter0_6, iter1_6 in pairs(arg0_6.messages) do
-		table.insert(var0_6, iter1_6)
-	end
-
-	return var0_6
-end
-
-function var0_0.ExistMessage(arg0_7)
-	return table.getCount(arg0_7.messages) > 0
-end
-
-function var0_0.GetData(arg0_8)
-	return arg0_8.messages
-end
-
-function var0_0.GetMessageById(arg0_9, arg1_9)
-	return arg0_9.messages[arg1_9]
-end
-
-function var0_0.AddMessage(arg0_10, arg1_10)
-	arg0_10.messages[arg1_10.id] = arg1_10
-end
-
-function var0_0.UpdateMessage(arg0_11, arg1_11)
-	if not arg0_11.messages[arg1_11.id] then
-		arg0_11:AddMessage(arg1_11)
-	else
-		arg0_11.messages[arg1_11.id] = arg1_11
-	end
-end
-
-function var0_0.ShouldShowTip(arg0_12)
-	local var0_12 = arg0_12:GetMessages()
-
-	return _.any(var0_12, function(arg0_13)
-		return arg0_13:ShouldShowTip()
-	end)
-end
-
-function var0_0.ExistMsg(arg0_14)
-	return arg0_14.messages and table.getCount(arg0_14.messages) > 0 or arg0_14.caches and #arg0_14.caches > 0
-end
-
-function var0_0.ExistGroup(arg0_15, arg1_15)
-	for iter0_15, iter1_15 in pairs(arg0_15.messages) do
-		if iter1_15:getConfig("group_id") == arg1_15 then
-			return true
+	for iter0_19, iter1_19 in ipairs(var0_19) do
+		if pg.activity_ins_template[iter1_19].is_active == 1 and arg0_19:GetMessageById(iter1_19) == nil then
+			return dueTime, iter1_19
 		end
 	end
+end
 
-	return false
+function var0_0.AddInstagramTimer(arg0_20, arg1_20)
+	arg0_20:RemoveInstagramTimer()
+
+	local var0_20, var1_20 = arg0_20:GetNextPushTime()
+
+	if not var0_20 then
+		return
+	end
+
+	local var2_20 = var0_20 - pg.TimeMgr.GetInstance():GetServerTime() + math.Random(1, 3)
+
+	local function var3_20()
+		pg.m02:sendNotification(GAME.ACT_INSTAGRAM_OP, {
+			cmd = ActivityConst.INSTAGRAM_OP_ACTIVE,
+			arg1 = var1_20
+		})
+	end
+
+	if var2_20 <= 0 then
+		var3_20()
+
+		return
+	end
+
+	arg0_20.timer = Timer.New(function()
+		arg0_20:RemoveInstagramTimer()
+		var3_20()
+	end, var2_20, 1)
+
+	arg0_20.timer:Start()
+end
+
+function var0_0.RemoveInstagramTimer(arg0_23)
+	if arg0_23.timer then
+		arg0_23.timer:Stop()
+
+		arg0_23.timer = nil
+	end
+end
+
+function var0_0.remove(arg0_24)
+	arg0_24.isReqNewInstagramData = false
+
+	arg0_24:RemoveInstagramTimer()
 end
 
 return var0_0

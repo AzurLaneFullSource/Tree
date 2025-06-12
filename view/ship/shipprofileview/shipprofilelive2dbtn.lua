@@ -13,6 +13,10 @@ function var0_0.Ctor(arg0_1, arg1_1)
 end
 
 function var0_0.Update(arg0_2, arg1_2, arg2_2)
+	if Live2dConst.GetLive2DArm32MatchAble() then
+		arg2_2 = false
+	end
+
 	arg0_2.paintingName = arg1_2
 	arg0_2.isOn = arg2_2
 
@@ -87,6 +91,10 @@ function var0_0.OnUpdated(arg0_9, arg1_9, arg2_9)
 	setActive(arg0_9.live2dOn, arg2_9)
 	setActive(arg0_9.live2dOff, not arg2_9)
 	onButton(arg0_9, arg0_9.live2dBtn, function()
+		if Live2dConst.GetLive2DArm32MatchAble() then
+			Live2dConst.ShowLive2DArm32Tips()
+		end
+
 		arg0_9:Update(arg0_9.paintingName, not arg0_9.isOn)
 	end, SFX_PANEL)
 

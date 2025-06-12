@@ -45,159 +45,165 @@ function var0_0.init(arg0_2)
 			arg0_2.isSpecial = pg.dorm3d_furniture_template[arg0_2.contextData.drop.configId].is_special == 1
 
 			setActive(arg0_2._tf:Find("Window/Title/furniture"), true)
+		end,
+		Dorm3dSkin = function()
+			arg0_2.unlockTips = pg.dorm3d_resource[arg0_2.contextData.drop.configId].unlock_tips or {}
+			arg0_2.unlockBanners = pg.dorm3d_resource[arg0_2.contextData.drop.configId].unlock_banners or {}
+
+			setActive(arg0_2._tf:Find("Window/Title/skin"), true)
 		end
 	})
 end
 
-function var0_0.didEnter(arg0_7)
-	onButton(arg0_7, arg0_7._tf:Find("Window/Confirm"), function()
-		local var0_8 = arg0_7.contextData.onYes
+function var0_0.didEnter(arg0_8)
+	onButton(arg0_8, arg0_8._tf:Find("Window/Confirm"), function()
+		local var0_9 = arg0_8.contextData.onYes
 
-		arg0_7:closeView()
-		existCall(var0_8)
-	end, SFX_PANEL)
-	onButton(arg0_7, arg0_7._tf:Find("Window/Cancel"), function()
-		local var0_9 = arg0_7.contextData.onNo
-
-		arg0_7:closeView()
+		arg0_8:closeView()
 		existCall(var0_9)
-	end, SFX_CANCEL)
-	onButton(arg0_7, arg0_7._tf:Find("Mask"), function()
-		local var0_10 = arg0_7.contextData.onClose
+	end, SFX_PANEL)
+	onButton(arg0_8, arg0_8._tf:Find("Window/Cancel"), function()
+		local var0_10 = arg0_8.contextData.onNo
 
-		arg0_7:closeView()
+		arg0_8:closeView()
 		existCall(var0_10)
+	end, SFX_CANCEL)
+	onButton(arg0_8, arg0_8._tf:Find("Mask"), function()
+		local var0_11 = arg0_8.contextData.onClose
+
+		arg0_8:closeView()
+		existCall(var0_11)
 	end)
-	arg0_7:InitUIList()
-	arg0_7:InitDropIcon()
-	arg0_7:InitBanner()
+	arg0_8:InitUIList()
+	arg0_8:InitDropIcon()
+	arg0_8:InitBanner()
 
-	local var0_7
+	local var0_8
 
-	if arg0_7.contextData.content.cost == 0 then
-		var0_7 = i18n("dorm3d_purchase_confirm_free", arg0_7.contextData.content.icon, "x" .. arg0_7.contextData.content.cost, arg0_7.contextData.content.name)
-	elseif arg0_7.contextData.content.off > 0 then
-		var0_7 = i18n("dorm3d_purchase_confirm_discount", arg0_7.contextData.content.icon, "x" .. arg0_7.contextData.content.cost, arg0_7.contextData.content.old, arg0_7.contextData.content.name)
+	if arg0_8.contextData.content.cost == 0 then
+		var0_8 = i18n("dorm3d_purchase_confirm_free", arg0_8.contextData.content.icon, "x" .. arg0_8.contextData.content.cost, arg0_8.contextData.content.name)
+	elseif arg0_8.contextData.content.off > 0 then
+		var0_8 = i18n("dorm3d_purchase_confirm_discount", arg0_8.contextData.content.icon, "x" .. arg0_8.contextData.content.cost, arg0_8.contextData.content.old, arg0_8.contextData.content.name)
 	else
-		var0_7 = i18n("dorm3d_purchase_confirm_original", arg0_7.contextData.content.icon, "x" .. arg0_7.contextData.content.cost, arg0_7.contextData.content.name)
+		var0_8 = i18n("dorm3d_purchase_confirm_original", arg0_8.contextData.content.icon, "x" .. arg0_8.contextData.content.cost, arg0_8.contextData.content.name)
 	end
 
-	switch(arg0_7.contextData.drop.__cname, {
+	switch(arg0_8.contextData.drop.__cname, {
 		Dorm3dGift = function()
-			local var0_11 = arg0_7.contextData.content.weekLimit
+			local var0_12 = arg0_8.contextData.content.weekLimit
 
-			if var0_11 then
-				var0_7 = var0_7 .. i18n("dorm3d_purchase_weekly_limit", var0_11[1], var0_11[2])
+			if var0_12 then
+				var0_8 = var0_8 .. i18n("dorm3d_purchase_weekly_limit", var0_12[1], var0_12[2])
 			end
 		end,
 		Dorm3dFurniture = function()
-			local var0_12 = arg0_7.contextData.endTime
+			local var0_13 = arg0_8.contextData.endTime
 
-			if var0_12 and var0_12 > 0 then
-				local function var1_12(arg0_13)
-					local var0_13 = pg.TimeMgr.GetInstance():GetServerTime()
-					local var1_13 = math.max(arg0_13 - var0_13, 0)
-					local var2_13 = math.floor(var1_13 / 86400)
+			if var0_13 and var0_13 > 0 then
+				local function var1_13(arg0_14)
+					local var0_14 = pg.TimeMgr.GetInstance():GetServerTime()
+					local var1_14 = math.max(arg0_14 - var0_14, 0)
+					local var2_14 = math.floor(var1_14 / 86400)
 
-					if var2_13 > 0 then
-						return var2_13 .. i18n("word_date")
+					if var2_14 > 0 then
+						return var2_14 .. i18n("word_date")
 					else
-						local var3_13 = math.floor(var1_13 / 3600)
+						local var3_14 = math.floor(var1_14 / 3600)
 
-						if var3_13 > 0 then
-							return var3_13 .. i18n("word_hour")
+						if var3_14 > 0 then
+							return var3_14 .. i18n("word_hour")
 						else
-							local var4_13 = math.floor(var1_13 / 60)
+							local var4_14 = math.floor(var1_14 / 60)
 
-							if var4_13 > 0 then
-								return var4_13 .. i18n("word_minute")
+							if var4_14 > 0 then
+								return var4_14 .. i18n("word_minute")
 							else
-								return var1_13 .. i18n("word_second")
+								return var1_14 .. i18n("word_second")
 							end
 						end
 					end
 				end
 
-				local var2_12 = var0_7
+				local var2_13 = var0_8
 
-				arg0_7.timerRefreshTime = Timer.New(function()
-					local var0_14 = var2_12 .. string.format("\n<size=28><color=#7c7e81>%s</color><color=#169fff>%s</color></size>", i18n("time_remaining_tip"), var1_12(var0_12))
+				arg0_8.timerRefreshTime = Timer.New(function()
+					local var0_15 = var2_13 .. string.format("\n<size=28><color=#7c7e81>%s</color><color=#169fff>%s</color></size>", i18n("time_remaining_tip"), var1_13(var0_13))
 
-					setText(arg0_7._tf:Find("Window/Content"), var0_14)
+					setText(arg0_8._tf:Find("Window/Content"), var0_15)
 				end, 1, -1)
 
-				arg0_7.timerRefreshTime:Start()
+				arg0_8.timerRefreshTime:Start()
 
-				var0_7 = var0_7 .. string.format("\n<size=28><color=#7c7e81>%s</color><color=#169fff>%s</color></size>", i18n("time_remaining_tip"), var1_12(var0_12))
+				var0_8 = var0_8 .. string.format("\n<size=28><color=#7c7e81>%s</color><color=#169fff>%s</color></size>", i18n("time_remaining_tip"), var1_13(var0_13))
 			end
 		end
 	})
-	setText(arg0_7._tf:Find("Window/Content"), var0_7)
-	setText(arg0_7._tf:Find("Window/Confirm/Text"), i18n("msgbox_text_confirm"))
-	setText(arg0_7._tf:Find("Window/Cancel/Text"), i18n("msgbox_text_cancel"))
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_7._tf, {
+	setText(arg0_8._tf:Find("Window/Content"), var0_8)
+	setText(arg0_8._tf:Find("Window/Confirm/Text"), i18n("msgbox_text_confirm"))
+	setText(arg0_8._tf:Find("Window/Cancel/Text"), i18n("msgbox_text_cancel"))
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_8._tf, {
 		weight = LayerWeightConst.THIRD_LAYER
 	})
 end
 
-function var0_0.InitBanner(arg0_15)
-	for iter0_15 = 1, #arg0_15.unlockBanners do
-		local var0_15 = arg0_15.scrollSnap:AddChild()
+function var0_0.InitBanner(arg0_16)
+	for iter0_16 = 1, #arg0_16.unlockBanners do
+		local var0_16 = arg0_16.scrollSnap:AddChild()
 
-		LoadImageSpriteAsync("dorm3dbanner/" .. arg0_15.unlockBanners[iter0_15], var0_15)
+		LoadImageSpriteAsync("dorm3dbanner/" .. arg0_16.unlockBanners[iter0_16], var0_16)
 	end
 
-	arg0_15.scrollSnap:SetUp()
+	arg0_16.scrollSnap:SetUp()
 end
 
-function var0_0.InitUIList(arg0_16)
-	arg0_16.bubbleList:make(function(arg0_17, arg1_17, arg2_17)
-		if arg0_17 == UIItemList.EventInit then
-			local var0_17 = arg1_17 + 1
-			local var1_17 = arg0_16.unlockTips[var0_17]
+function var0_0.InitUIList(arg0_17)
+	arg0_17.bubbleList:make(function(arg0_18, arg1_18, arg2_18)
+		if arg0_18 == UIItemList.EventInit then
+			local var0_18 = arg1_18 + 1
+			local var1_18 = arg0_17.unlockTips[var0_18]
 
-			LoadImageSpriteAtlasAsync("ui/shoptip_atlas", "icon_" .. var1_17, arg2_17:Find("icon/icon"), true)
-			setText(arg2_17:Find("bubble/Text"), i18n("dorm3d_shop_tag" .. var1_17))
-			setActive(arg2_17:Find("bubble"), false)
-			onToggle(arg0_16, arg2_17, function(arg0_18)
-				setActive(arg2_17:Find("icon/select"), arg0_18)
-				setActive(arg2_17:Find("icon/unselect"), not arg0_18)
-				setActive(arg2_17:Find("bubble"), arg0_18)
+			LoadImageSpriteAtlasAsync("ui/shoptip_atlas", "icon_" .. var1_18, arg2_18:Find("icon/icon"), true)
+			setText(arg2_18:Find("bubble/Text"), i18n("dorm3d_shop_tag" .. var1_18))
+			setActive(arg2_18:Find("bubble"), false)
+			onToggle(arg0_17, arg2_18, function(arg0_19)
+				setActive(arg2_18:Find("icon/select"), arg0_19)
+				setActive(arg2_18:Find("icon/unselect"), not arg0_19)
+				setActive(arg2_18:Find("bubble"), arg0_19)
 			end)
 		end
 	end)
-	arg0_16.bubbleList:align(#arg0_16.unlockTips)
+	arg0_17.bubbleList:align(#arg0_17.unlockTips)
 end
 
-function var0_0.InitDropIcon(arg0_19)
-	LoadImageSpriteAtlasAsync(arg0_19.contextData.drop:GetIcon(), "", arg0_19._tf:Find("Window/Item/Dorm3dIconTpl/icon"), true)
-	GetImageSpriteFromAtlasAsync("weaponframes", "dorm3d_" .. ItemRarity.Rarity2Print(arg0_19.contextData.drop:GetRarity()), arg0_19._tf:Find("Window/Item/Dorm3dIconTpl"))
-	setActive(arg0_19._tf:Find("Window/Item/sp"), arg0_19.isExclusive or arg0_19.isSpecial)
+function var0_0.InitDropIcon(arg0_20)
+	LoadImageSpriteAtlasAsync(arg0_20.contextData.drop:GetIcon(), "", arg0_20._tf:Find("Window/Item/Dorm3dIconTpl/icon"), true)
+	GetImageSpriteFromAtlasAsync("weaponframes", "dorm3d_" .. ItemRarity.Rarity2Print(arg0_20.contextData.drop:GetRarity()), arg0_20._tf:Find("Window/Item/Dorm3dIconTpl"))
+	setActive(arg0_20._tf:Find("Window/Item/sp"), arg0_20.isExclusive or arg0_20.isSpecial)
 
-	if arg0_19.isSpecial then
-		setText(arg0_19._tf:Find("Window/Item/sp/Text"), i18n("dorm3d_purchase_label_special"))
-	elseif arg0_19.isExclusive then
-		setText(arg0_19._tf:Find("Window/Item/sp/Text"), i18n("dorm3d_purchase_confirm_tip"))
+	if arg0_20.isSpecial then
+		setText(arg0_20._tf:Find("Window/Item/sp/Text"), i18n("dorm3d_purchase_label_special"))
+	elseif arg0_20.isExclusive then
+		setText(arg0_20._tf:Find("Window/Item/sp/Text"), i18n("dorm3d_purchase_confirm_tip"))
 	end
 
-	if arg0_19.addFavor then
-		setActive(arg0_19._tf:Find("Window/Item/gift"), true)
-		setText(arg0_19._tf:Find("Window/Item/gift/Text"), "+" .. arg0_19.addFavor)
+	if arg0_20.addFavor then
+		setActive(arg0_20._tf:Find("Window/Item/gift"), true)
+		setText(arg0_20._tf:Find("Window/Item/gift/Text"), "+" .. arg0_20.addFavor)
 	end
 end
 
-function var0_0.willExit(arg0_20)
-	if arg0_20.timerRefreshTime then
-		arg0_20.timerRefreshTime:Stop()
+function var0_0.willExit(arg0_21)
+	if arg0_21.timerRefreshTime then
+		arg0_21.timerRefreshTime:Stop()
 
-		arg0_20.timerRefreshTime = nil
+		arg0_21.timerRefreshTime = nil
 	end
 
-	arg0_20.scrollSnap:Dispose()
+	arg0_21.scrollSnap:Dispose()
 
-	arg0_20.scrollSnap = nil
+	arg0_21.scrollSnap = nil
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_20._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_21._tf)
 end
 
 return var0_0

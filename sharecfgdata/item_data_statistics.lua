@@ -10638,6 +10638,36 @@ _G.pg.base.item_data_statistics[15022] = {
 	limit = {},
 }
 
+_G.pg.base.item_data_statistics[15023] = {
+	compose_number = 0,
+	display = "Used to expand the café.",
+	display_effect = "",
+	icon = "Props/15022",
+	id = 15023,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Café Construction Ticket",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 3,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 100,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+
 _G.pg.base.item_data_statistics[16001] = {
 	compose_number = 6,
 	display = "Use to grant additional EXP when training a ship's offensive skills.\n*May use <color=#ffde38>6</color> to craft <color=#ffde38>1</color> <color=#966af6>T2 Offensive Skill Book</color>.",

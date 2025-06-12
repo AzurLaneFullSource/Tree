@@ -103,6 +103,47 @@ pg.dorm3d_collection_template = setmetatable({
 			126,
 			127,
 			128
+		},
+		[11] = {
+			1101,
+			1102,
+			1103,
+			1104,
+			1105,
+			1106,
+			1107,
+			1108,
+			1109,
+			1110,
+			1111,
+			1112,
+			1113,
+			1114,
+			1115,
+			1116,
+			1117,
+			1118,
+			1119,
+			1120,
+			1121,
+			1122,
+			1123,
+			1124,
+			1125,
+			1126,
+			1127,
+			1128
+		},
+		[16] = {
+			1601,
+			1602,
+			1603,
+			1604,
+			1605,
+			1606,
+			1607,
+			1608,
+			1609
 		}
 	},
 	all = {
@@ -199,7 +240,44 @@ pg.dorm3d_collection_template = setmetatable({
 		125,
 		126,
 		127,
-		128
+		128,
+		1101,
+		1102,
+		1103,
+		1104,
+		1105,
+		1106,
+		1107,
+		1108,
+		1109,
+		1110,
+		1111,
+		1112,
+		1113,
+		1114,
+		1115,
+		1116,
+		1117,
+		1118,
+		1119,
+		1120,
+		1121,
+		1122,
+		1123,
+		1124,
+		1125,
+		1126,
+		1127,
+		1128,
+		1601,
+		1602,
+		1603,
+		1604,
+		1605,
+		1606,
+		1607,
+		1608,
+		1609
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2176,6 +2254,783 @@ pg.base.dorm3d_collection_template = {
 		},
 		vfx_prefab = {
 			"fbx/litmap_02/night/pre_db_towel01_group01/vfx_wupintishi01"
+		}
+	},
+	[1101] = {
+		text = "dorm3d_xinzexi_table",
+		name = "Caramel Popcorn",
+		award = 0,
+		time = 0,
+		id = 1101,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item1",
+		desc = "Freshly microwaved popcorn covered in amber caramel coating.\nIt's a must-have for any movies watched in New Jersey's home.",
+		model = {
+			"fbx/litmap_01/pre_db_electrical18"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_electrical18/vfx_wupintishi01"
+		}
+	},
+	[1102] = {
+		text = "dorm3d_xinzexi_table",
+		name = "Bunny Apron",
+		award = 0,
+		time = 0,
+		id = 1102,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item2",
+		desc = "An apron hung up in the corner of the kitchen.\nIt has a simple yet cute rabbit graphic on the front.\nShe's always full of energy, even when cooking and cleaning.",
+		model = {
+			"fbx/litmap_01/pre_db_cloth05"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_cloth05/vfx_wupintishi01"
+		}
+	},
+	[1103] = {
+		text = "dorm3d_xinzexi_table",
+		name = "Juicer",
+		award = 0,
+		time = 0,
+		id = 1103,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item3",
+		desc = "One powerful juicer.\nEvery morning, she throws all kinds of fruits into it,\nand out comes a colorful and refreshing juice.",
+		model = {
+			"fbx/litmap_01/pre_db_electrical13"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_electrical13/vfx_wupintishi01"
+		}
+	},
+	[1104] = {
+		text = "dorm3d_xinzexi_table",
+		name = "Bowl of Strawberries",
+		award = 0,
+		time = 0,
+		id = 1104,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item4",
+		desc = "Fresh, plump strawberries fill the bowl,\neach one glistening with beads of water.\nHer fingers reach for one,\nand you find your heart skipping a beat as she places it in her mouth.",
+		model = {
+			"fbx/litmap_01/pre_db_fruit01"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_fruit01/vfx_wupintishi01"
+		}
+	},
+	[1105] = {
+		text = "dorm3d_xinzexi_table",
+		name = "Range Hood",
+		award = 0,
+		time = 0,
+		id = 1105,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item5",
+		desc = "Every kitchen needs a range hood.\nThat familiar humming is proof that\nthe Big J is showing off her cooking skills!",
+		model = {
+			"fbx/litmap_01/pre_db_newjerseyhostel01_cupboard01"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_newjerseyhostel01_cupboard01/vfx_wupintishi01"
+		}
+	},
+	[1106] = {
+		text = "dorm3d_xinzexi_table",
+		name = "Lemon Water",
+		award = 0,
+		time = 0,
+		id = 1106,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item6",
+		desc = "A pitcher full of cool, refreshing lemon water.\nIt's the perfect balance of sour and sweet,\nwith a few sugar cubes dissolved within.",
+		model = {
+			"no_bake_pay_prop/kitchen/pre_db_tableware28_group"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"no_bake_pay_prop/kitchen/pre_db_tableware28_group/vfx_wupintishi01"
+		}
+	},
+	[1107] = {
+		text = "dorm3d_xinzexi_table",
+		name = "White Jacket",
+		award = 0,
+		time = 0,
+		id = 1107,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item7",
+		desc = "New Jersey's everyday wear, a light but stylish jacket.\nShe took off the jacket and threw it onto a chair –\nthe very first thing she does when she gets home.",
+		model = {
+			"fbx/litmap_01/pre_db_cloth06"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_cloth06/vfx_wupintishi01"
+		}
+	},
+	[1108] = {
+		text = "dorm3d_xinzexi_table",
+		name = "Toaster",
+		award = 0,
+		time = 0,
+		id = 1108,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item8",
+		desc = "A toaster with an adorable design.\nPress down the lever, and crispy golden toast will pop out.\nAdd some jam, honey, or butter for the perfect breakfast!",
+		model = {
+			"fbx/litmap_01/pre_db_electrical10_01"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_electrical10_01/vfx_wupintishi01"
+		}
+	},
+	[1109] = {
+		text = "dorm3d_xinzexi_table",
+		name = "Jungle Vibes",
+		award = 0,
+		time = 0,
+		id = 1109,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item9",
+		desc = "A potted sansevieria plant growing steadily.\nIt quietly spreads its leaves in the corner of the room.\nWith every breath,\nyou can feel the fresh, revitalizing air it brings.",
+		model = {
+			"fbx/litmap_01/pre_db_bonsai13"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_bonsai13/vfx_wupintishi01"
+		}
+	},
+	[1110] = {
+		text = "dorm3d_xinzexi_table",
+		name = "Glazed Donut",
+		award = 0,
+		time = 0,
+		id = 1110,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item10",
+		desc = "New Jersey made this for afternoon tea.\n\"Gotta taste-test before I let you eat it, honey!\" she says,\nlicking the sugar off of her lips.",
+		model = {
+			"fbx/litmap_01/pre_db_food16_group"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_food16_group/vfx_wupintishi01"
+		}
+	},
+	[1111] = {
+		text = "dorm3d_xinzexi_chair",
+		name = "Robot Vacuum",
+		award = 0,
+		time = 0,
+		id = 1111,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item11",
+		desc = "A cute cleaning robot that leaves your room spick and span.\nIt dutifully gathers not just dust, but the traces of everyday life as well.",
+		model = {
+			"fbx/litmap_01/pre_db_electrical17"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_electrical17/vfx_wupintishi01"
+		}
+	},
+	[1112] = {
+		text = "dorm3d_xinzexi_chair",
+		name = "4K TV",
+		award = 0,
+		time = 0,
+		id = 1112,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item12",
+		desc = "When the 55-inch screen lights up,\nit becomes a door to worlds unknown.\nWhat will it be today?\nExplosive action? Or a kiss in the rain on Union streets?",
+		model = {
+			"fbx/litmap_01/pre_db_appliances06"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_appliances06/vfx_wupintishi01"
+		}
+	},
+	[1113] = {
+		text = "dorm3d_xinzexi_chair",
+		name = "Fashion Magazines",
+		award = 0,
+		time = 0,
+		id = 1113,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item13",
+		desc = "Magazines that have been read over and over are piled on the table.\nThis is her fashion supply station, an endless fount of inspiration.",
+		model = {
+			"no_bake_pay_prop/livingroom/pre_db_book05_group"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"no_bake_pay_prop/livingroom/pre_db_book05_group/vfx_wupintishi01"
+		}
+	},
+	[1114] = {
+		text = "dorm3d_xinzexi_chair",
+		name = "Handbag",
+		award = 0,
+		time = 0,
+		id = 1114,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item14",
+		desc = "A nice handbag left lazily on the floor.\nIt's filled with all sorts of useful little things.\nNo doubt she took it on countless adventures again today.",
+		model = {
+			"no_bake_pay_prop/livingroom/pre_db_bag05"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"no_bake_pay_prop/livingroom/pre_db_bag05/vfx_wupintishi01"
+		}
+	},
+	[1115] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "Sports Gear",
+		award = 0,
+		time = 0,
+		id = 1115,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item15",
+		desc = "A whole set of exercise clothes and items.\nThe ever-energetic New Jersey is always ready for a serious aerobic workout!",
+		model = {
+			"fbx/litmap_01/pre_db_bag03_group"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_bag03_group/vfx_wupintishi01"
+		}
+	},
+	[1116] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "Big J Nameplate",
+		award = 0,
+		time = 0,
+		id = 1116,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item16",
+		desc = "A dragon lurks within! No coming in without permission!\n\"...Hm? Honey, you're here?! Come in, come in!\"",
+		model = {
+			"fbx/litmap_01/pre_db_newjerseyhostel01_billboard01_1"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_newjerseyhostel01_billboard01_1/vfx_wupintishi01"
+		}
+	},
+	[1117] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "Clothes Rack",
+		award = 0,
+		time = 0,
+		id = 1117,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item17",
+		desc = "When she's picking out clothes for a date,\nall of them seem to scream, \"Pick me!\"\nThat supposedly simple \"What to wear?\" question?\nNot so simple when it really counts.",
+		model = {
+			"fbx/litmap_01/pre_db_cloth07_group"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_cloth07_group/vfx_wupintishi01"
+		}
+	},
+	[1118] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "Clear Tote",
+		award = 0,
+		time = 0,
+		id = 1118,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item18",
+		desc = "A tote filled with cosmetics and the like.\nThese are must-have items for daily commuting and travel,\nso she can redo her makeup any time!",
+		model = {
+			"fbx/litmap_01/pre_db_bag06"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_bag06/vfx_wupintishi01"
+		}
+	},
+	[1119] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "Bunny Ears",
+		award = 0,
+		time = 0,
+		id = 1119,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item19",
+		desc = "A quirky bunny hood with ears that move according to your mood.\nThis is one of Big J's favorite accessories.",
+		model = {
+			"fbx/litmap_01/pre_db_headgear01"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_headgear01/vfx_wupintishi01"
+		}
+	},
+	[1120] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "Air Conditioner",
+		award = 0,
+		time = 0,
+		id = 1120,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item21",
+		desc = "Among the greatest human inventions in history.\nIt adjusts the room temperature to exactly what you need,\ncreating a soothing space for ultimate relaxation.",
+		model = {
+			"fbx/litmap_01/pre_db_appliances01"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_appliances01/vfx_wupintishi01"
+		}
+	},
+	[1121] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "Air Purifier",
+		award = 0,
+		time = 0,
+		id = 1121,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item22",
+		desc = "A quiet air purifier stands in the corner.\nIts unceasing, reliable operation makes every breath a luxurious one.",
+		model = {
+			"fbx/litmap_01/pre_db_appliances03"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_appliances03/vfx_wupintishi01"
+		}
+	},
+	[1122] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "Frozen Drinks",
+		award = 0,
+		time = 0,
+		id = 1122,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item23",
+		desc = "Two frozen drinks radiating icy coolness.\nWhether you drink alone or with someone you love,\nevery sip is the very picture of bliss.",
+		model = {
+			"fbx/litmap_01/pre_db_food03_group"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_food03_group/vfx_wupintishi01"
+		}
+	},
+	[1123] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "Wireless Speaker",
+		award = 0,
+		time = 0,
+		id = 1123,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item24",
+		desc = "A portable, stylish speaker packed with melodies ranging from classical to rock.\nThe right tune always awaits you.",
+		model = {
+			"fbx/litmap_01/pre_db_electrical03"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_electrical03/vfx_wupintishi01"
+		}
+	},
+	[1124] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "Bunny Nightlight",
+		award = 0,
+		time = 2,
+		id = 1124,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item25",
+		desc = "An adorable nightlight that looks like a bunny.\nIt casts a soft blue glow, illuminating the way in the darkness.",
+		model = {
+			"fbx/litmap_01/night/pre_db_newjerseyhostel01_lamp01a_on"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/night/pre_db_newjerseyhostel01_lamp01a_on/vfx_wupintishi01"
+		}
+	},
+	[1125] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "Dumbbells",
+		award = 0,
+		time = 0,
+		id = 1125,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item26",
+		desc = "A pair of dumbbells, just the right weight,\nperfectly suited to New Jersey's workout needs.\nWith every drop of sweat,\nshe finds a better version of herself than the day before.",
+		model = {
+			"no_bake_pay_prop/livingroom/pre_db_sportinggoods06_group"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"no_bake_pay_prop/livingroom/pre_db_sportinggoods06_group/vfx_wupintishi01"
+		}
+	},
+	[1126] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "Curling Iron",
+		award = 0,
+		time = 0,
+		id = 1126,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item27",
+		desc = "A curling iron with a sleek design, the perfect helper for hair styling.\nBe sure to unplug it after use!",
+		model = {
+			"fbx/litmap_01/pre_db_electrical15"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_electrical15/vfx_wupintishi01"
+		}
+	},
+	[1127] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "Black Stockings",
+		award = 0,
+		time = 2,
+		id = 1127,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item28",
+		desc = "In her room, every stocking seems to have the travel bug.\nThat's seven and a half pairs vanished this month alone.",
+		model = {
+			"fbx/litmap_01/night/pre_db_sock01"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/night/pre_db_sock01/vfx_wupintishi01"
+		}
+	},
+	[1128] = {
+		text = "dorm3d_xinzexi_bed",
+		name = "Skincare Set",
+		award = 0,
+		time = 2,
+		id = 1128,
+		room_id = 11,
+		icon = "3Ddrom_xinzexi_item29",
+		desc = "A comprehensive set of skincare products, New Jersey's personal beauty lab.\nSometimes the oddest combinations yield the most surprising results.",
+		model = {
+			"fbx/litmap_01/night/pre_db_cosmetic17"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/night/pre_db_cosmetic17/vfx_wupintishi01"
+		}
+	},
+	[1601] = {
+		text = "dorm3d_collection_cafe",
+		name = "Menu",
+		award = 0,
+		time = 0,
+		id = 1601,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item1",
+		desc = "The variety of drinks on this menu helps you see what this café is all about at a glance.\nEach cup is full of creativity and care, satisfying even the most unique tastes.",
+		model = {
+			"fbx/litmap_03/pre_db_billboard16_2"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_billboard16_2/vfx_wupintishi01"
+		}
+	},
+	[1602] = {
+		text = "dorm3d_collection_cafe",
+		name = "Signs",
+		award = 0,
+		time = 0,
+		id = 1602,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item2",
+		desc = "Convenient signs guide you to the coziest corners of the café. First impressions matter!",
+		model = {
+			"fbx/litmap_03/pre_db_billboard13"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_billboard13/vfx_wupintishi01"
+		}
+	},
+	[1603] = {
+		text = "dorm3d_collection_cafe",
+		name = "Candle",
+		award = 0,
+		time = 0,
+		id = 1603,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item3",
+		desc = "Warm, gentle light cultivates a romantic and relaxing vibe.",
+		model = {
+			"fbx/litmap_03/pre_db_desklamp06_1"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_desklamp06_1/vfx_wupintishi01"
+		}
+	},
+	[1604] = {
+		text = "dorm3d_collection_cafe",
+		name = "Order Counter",
+		award = 0,
+		time = 0,
+		id = 1604,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item4",
+		desc = "The monitor is operated by touch screen, and its design is simple yet functional. Ordering and payment are quick and easy.",
+		model = {
+			"fbx/litmap_03/pre_db_electrical19"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_electrical19/vfx_wupintishi01"
+		}
+	},
+	[1605] = {
+		text = "dorm3d_collection_cafe",
+		name = "Bottle",
+		award = 0,
+		time = 0,
+		id = 1605,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item5",
+		desc = "The bottle is designed by an expert craftsman. Its appearance and practicality make your morning cup of coffee more refined and enjoyable.",
+		model = {
+			"fbx/litmap_03/pre_db_drink03_1"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_drink03_1/vfx_wupintishi01"
+		}
+	},
+	[1606] = {
+		text = "dorm3d_collection_cafe",
+		name = "Chocolate Donut",
+		award = 0,
+		time = 0,
+		id = 1606,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item6",
+		desc = "Crispy on the outside, tender on the inside. A classic, delicious dessert.\nEvery bite leaves a lasting impression of joy on your taste buds.",
+		model = {
+			"fbx/litmap_03/pre_db_food07"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_food07/vfx_wupintishi01"
+		}
+	},
+	[1607] = {
+		text = "dorm3d_collection_cafe",
+		name = "Cocktail Set",
+		award = 0,
+		time = 0,
+		id = 1607,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item7",
+		desc = "Cocktails mixed with professional tools make the night much more colorful.",
+		model = {
+			"fbx/litmap_03/pre_db_frame23_group"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_frame23_group/vfx_wupintishi01"
+		}
+	},
+	[1608] = {
+		text = "dorm3d_collection_cafe",
+		name = "Napkins",
+		award = 0,
+		time = 0,
+		id = 1608,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item8",
+		desc = "Soft, clean napkins lie ready to attend to any and all cleaning needs.",
+		model = {
+			"fbx/litmap_03/pre_db_tableware30_4"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_tableware30_4/vfx_wupintishi01"
+		}
+	},
+	[1609] = {
+		text = "dorm3d_collection_cafe",
+		name = "Carved Mascot",
+		award = 0,
+		time = 0,
+		id = 1609,
+		room_id = 16,
+		icon = "3Ddrom_cafe_item9",
+		desc = "A carving of the café's iconic mascot.",
+		model = {
+			"fbx/litmap_03/pre_db_publiccafe01_statue01"
+		},
+		unlock = {
+			1,
+			10517,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/pre_db_publiccafe01_statue01/vfx_wupintishi01"
 		}
 	}
 }

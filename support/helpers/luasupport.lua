@@ -119,19 +119,26 @@ end
 
 function PrintTable(arg0_13)
 	local var0_13 = {}
+	local var1_13 = {}
 
-	local function var1_13(arg0_14, arg1_14, arg2_14)
+	local function var2_13(arg0_14, arg1_14, arg2_14)
+		if var1_13[arg0_14] then
+			return
+		end
+
+		var1_13[arg0_14] = true
+
 		for iter0_14, iter1_14 in pairs(arg0_14) do
 			if type(iter1_14) == "table" then
 				table.insert(arg1_14, arg2_14 .. tostring(iter0_14) .. ":\n")
-				var1_13(iter1_14, arg1_14, arg2_14 .. " ")
+				var2_13(iter1_14, arg1_14, arg2_14 .. " ")
 			else
 				table.insert(arg1_14, arg2_14 .. tostring(iter0_14) .. ": " .. tostring(iter1_14) .. "\n")
 			end
 		end
 	end
 
-	var1_13(arg0_13, var0_13, "")
+	var2_13(arg0_13, var0_13, "")
 
 	return table.concat(var0_13, "")
 end

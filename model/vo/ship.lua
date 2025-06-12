@@ -2481,7 +2481,11 @@ function var0_0.RemapSkillId(arg0_189, arg1_189)
 	local var0_189 = arg0_189:GetSpWeapon()
 
 	if var0_189 then
-		return var0_189:RemapSkillId(arg1_189)
+		if table.contains(pg.ship_data_template[arg0_189.configId].hide_buff_list, arg1_189) then
+			return var0_189:RemapHiddenSkillId(arg1_189)
+		else
+			return var0_189:RemapSkillId(arg1_189)
+		end
 	end
 
 	return arg1_189

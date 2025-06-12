@@ -4,6 +4,7 @@ local var1_0 = pg.activity_holiday_site
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
+	arg0_1.icon = arg0_1:findTF("AD/icon")
 	arg0_1.taskTypeDic = setmetatable({
 		[var0_0.MINI_GAME] = function(arg0_2, arg1_2)
 			local var0_2 = arg1_2[1]
@@ -26,6 +27,18 @@ function var0_0.OnInit(arg0_1)
 	}, {
 		__index = arg0_1.taskTypeDic
 	})
+end
+
+function var0_0.OnFirstFlush(arg0_4)
+	var0_0.super.OnFirstFlush(arg0_4)
+	setActive(arg0_4._tasksTF, false)
+	setActive(arg0_4.icon, false)
+	setActive(arg0_4._btnHelp, false)
+end
+
+function var0_0.OnUpdateFlush(arg0_5)
+	var0_0.super.OnUpdateFlush(arg0_5)
+	setGray(arg0_5._btnExchange, true, true)
 end
 
 return var0_0

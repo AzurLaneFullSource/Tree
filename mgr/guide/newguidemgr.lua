@@ -86,6 +86,8 @@ function var0_0.Play(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8, arg5_8)
 
 	var8_0("play guide : " .. arg1_8)
 
+	arg0_8.currentGuideName = arg1_8
+
 	local var0_8 = var10_0(arg1_8)
 
 	arg0_8:PlayScript(var0_8, arg2_8, arg3_8, arg4_8, arg5_8)
@@ -155,6 +157,8 @@ function var0_0.OnStart(arg0_14)
 end
 
 function var0_0.OnEnd(arg0_16, arg1_16)
+	arg0_16.currentGuideName = nil
+
 	arg0_16.uiLongPress.onLongPressed:RemoveAllListeners()
 	pg.DelegateInfo.Dispose(arg0_16)
 
@@ -269,11 +273,15 @@ function var0_0.ExistScene(arg0_28, arg1_28)
 	return table.contains(arg0_28.sceneRecords, arg1_28)
 end
 
-function var0_0.Exit(arg0_29)
-	arg0_29:Clear()
-	arg0_29.uiFinder:Clear()
-	arg0_29.uiDuplicator:Clear()
-	arg0_29.uiLoader:Clear()
+function var0_0.GetCurrentGuideName(arg0_29)
+	return arg0_29.currentGuideName
+end
 
-	arg0_29.state = var7_0
+function var0_0.Exit(arg0_30)
+	arg0_30:Clear()
+	arg0_30.uiFinder:Clear()
+	arg0_30.uiDuplicator:Clear()
+	arg0_30.uiLoader:Clear()
+
+	arg0_30.state = var7_0
 end

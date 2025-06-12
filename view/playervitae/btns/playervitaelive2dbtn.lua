@@ -89,10 +89,26 @@ function var0_0.StartCheckUpdate(arg0_7, arg1_7)
 end
 
 function var0_0.GetDefaultValue(arg0_10)
+	local var0_10 = getProxy(SettingsProxy):getCharacterSetting(arg0_10.ship.id, SHIP_FLAG_L2D)
+
+	if Live2dConst.GetLive2DArm32MatchAble() then
+		if var0_10 then
+			arg0_10:OnSwitch(false)
+		end
+
+		return false
+	end
+
 	return getProxy(SettingsProxy):getCharacterSetting(arg0_10.ship.id, SHIP_FLAG_L2D)
 end
 
 function var0_0.OnSwitch(arg0_11, arg1_11)
+	if Live2dConst.GetLive2DArm32MatchAble() and arg1_11 then
+		Live2dConst.ShowLive2DArm32Tips()
+
+		return false
+	end
+
 	if ShipSkin.GetChangeSkinData(arg0_11.ship:getSkinId()) and true or false then
 		getProxy(SettingsProxy):setCharacterSetting(arg0_11.ship.id, SHIP_FLAG_SP, arg1_11)
 	end

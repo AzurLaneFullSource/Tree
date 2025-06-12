@@ -27,7 +27,7 @@ function var0_0.SetTopics(arg0_2, arg1_2)
 	arg0_2.topics = {}
 	arg0_2.allTopicIds = var2_0.get_id_list_by_ship_group[arg0_2.characterId]
 
-	for iter0_2, iter1_2 in ipairs(arg0_2.allTopicIds) do
+	for iter0_2, iter1_2 in ipairs(arg0_2.allTopicIds or {}) do
 		if var2_0[iter1_2].type == "1" then
 			local var0_2
 

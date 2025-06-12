@@ -941,7 +941,7 @@ function var0_0.offsetL2dPositonDelay(arg0_52, arg1_52, arg2_52, arg3_52)
 	end
 
 	arg0_52._l2dPosition = arg0_52._tf.position
-	arg0_52._tf.position = Vector3(arg0_52._l2dPosition.x + 100, 0, 0)
+	arg0_52._tf.position = Vector3(arg0_52._l2dPosition.x + 300, 0, 0)
 	arg0_52._animator.speed = arg2_52
 
 	LeanTween.delayedCall(go(arg0_52._tf), arg1_52, System.Action(function()

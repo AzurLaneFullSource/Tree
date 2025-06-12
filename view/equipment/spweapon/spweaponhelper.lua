@@ -102,16 +102,16 @@ function updateSpWeaponInfo(arg0_6, arg1_6, arg2_6)
 		})
 	end
 
-	if arg2_6[2].skillId > 0 then
-		local var3_6 = getSkillDesc(arg2_6[2].skillId, arg2_6[2].lv)
+	for iter0_6, iter1_6 in ipairs(arg2_6[2]) do
+		local var3_6 = getSkillDesc(iter1_6.skillId, iter1_6.lv)
 
-		if not arg2_6[2].unlock then
+		if not iter1_6.unlock then
 			var3_6 = setColorStr(i18n("spweapon_tip_skill_locked") .. var3_6, "#a2a2a2")
 		end
 
 		table.insert(var1_6, {
 			name = i18n("spweapon_attr_skillupgrade"),
-			value = setColorStr(getSkillName(arg2_6[2].skillId), arg2_6[2].unlock and "#FFDE00FF" or "#A2A2A2"),
+			value = setColorStr(getSkillName(iter1_6.skillId), iter1_6.unlock and "#FFDE00FF" or "#A2A2A2"),
 			desc = var3_6
 		})
 	end
@@ -143,12 +143,12 @@ function updateSpWeaponInfo(arg0_6, arg1_6, arg2_6)
 			end
 		})
 	else
-		for iter0_6, iter1_6 in ipairs(arg1_6.part[1]) do
-			var7_6[iter1_6] = true
+		for iter2_6, iter3_6 in ipairs(arg1_6.part[1]) do
+			var7_6[iter3_6] = true
 		end
 
-		for iter2_6, iter3_6 in ipairs(arg1_6.part[2]) do
-			var8_6[iter3_6] = true
+		for iter4_6, iter5_6 in ipairs(arg1_6.part[2]) do
+			var8_6[iter5_6] = true
 		end
 	end
 

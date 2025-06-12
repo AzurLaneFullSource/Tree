@@ -40,6 +40,7 @@ function var0_0.Play(arg0_2, arg1_2, arg2_2, arg3_2)
 			end
 
 			arg0_2:PlayVoice(var0_2)
+			arg0_2:DispatcherEvent(var0_2)
 			arg0_2:ReigsetEvent(var0_2, arg0_3)
 		end,
 		function(arg0_4)
@@ -109,7 +110,7 @@ function var0_0.PlayVoice(arg0_10, arg1_10)
 		local var0_11 = arg0_11:GetLength() * 0.001
 		local var1_11 = arg1_10:GetWaitForClickTime()
 
-		assert(var1_11 < var0_11, "chatShowTime must > wait time")
+		assert(var1_11 < var0_11, string.format("chatShowTime must > wait time voice:%s voiceLenth:%f wait:%f", var0_10, var0_11, var1_11))
 		arg0_10:AddTimeTriggerNextOne(var0_11)
 	end)
 end
@@ -161,51 +162,133 @@ function var0_0.InitOptionIfNeed(arg0_18, arg1_18, arg2_18, arg3_18)
 			arg2_19:Find("content/Text"):GetComponent(typeof(Text)).text = var0_19[1]
 
 			onButton(arg0_18, arg2_19, function()
-				arg1_18:SetBranchCode(var0_19[2])
-				arg3_18(var0_19[2])
-				setActive(arg0_18.closeBtn, true)
+				if optionBlockOther then
+					return
+				end
+
+				local var0_20 = arg2_19:Find("selectAni")
+				local var1_20 = var0_20:GetComponent(typeof(Animation))
+
+				setActive(var0_20, true)
+				var1_20:Play("anim_selectAni_loop")
+
+				arg0_18.optionBlockOther = true
+
+				var0_20:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+					arg0_18.optionBlockOther = false
+
+					setActive(var0_20, false)
+					arg1_18:SetBranchCode(var0_19[2])
+					arg3_18(var0_19[2])
+					setActive(arg0_18.closeBtn, true)
+				end)
 			end)
 		end
 	end)
 	arg0_18.optionUIList:align(#var0_18)
 end
 
-function var0_0.Clear(arg0_21, arg1_21, arg2_21)
-	arg0_21:ClearAnimation()
-	arg0_21:StopVoice()
-	setActive(arg0_21.optionPanel, false)
+function var0_0.DispatcherEvent(arg0_22, arg1_22)
+	if not arg1_22:ExistDispatcher() then
+		return
+	end
 
-	arg0_21.callback = nil
+	local var0_22 = arg1_22:GetDispatcher()
 
-	arg2_21()
+	pg.NewStoryMgr.GetInstance():ClearStoryEvent()
+	pg.m02:sendNotification(var0_22.name, {
+		data = var0_22.data,
+		callbackData = var0_22.callbackData
+	})
+
+	if arg1_22:ShouldHideUI() then
+		setActive(arg0_22._tf, false)
+	end
+
+	if arg1_22:IsRecallDispatcher() then
+		arg0_22:CheckDispatcher(arg1_22)
+	end
+
+	return var0_22.nextOne
 end
 
-function var0_0.OnPause(arg0_22)
-	return
+function var0_0.CheckDispatcher(arg0_23, arg1_23)
+	local var0_23 = arg1_23:GetDispatcherRecallName()
+
+	arg0_23:ClearCheckDispatcher()
+
+	arg0_23.checkTimer = Timer.New(function()
+		if pg.NewStoryMgr.GetInstance():CheckStoryEvent(var0_23) then
+			local var0_24 = pg.NewStoryMgr.GetInstance():GetStoryEventArg(var0_23)
+
+			if var0_24 then
+				existCall(var0_24.notifiCallback)
+			end
+
+			if var0_24 and var0_24.optionIndex then
+				arg0_23.skipOption = true
+			end
+
+			if arg1_23:ShouldHideUI() then
+				setActive(arg0_23._tf, true)
+			end
+
+			arg0_23:ClearCheckDispatcher()
+		end
+	end, 1, -1)
+
+	arg0_23.checkTimer:Start()
+	arg0_23.checkTimer.func()
 end
 
-function var0_0.OnResume(arg0_23)
-	return
-end
+function var0_0.ClearCheckDispatcher(arg0_25)
+	if arg0_25.checkTimer then
+		arg0_25.checkTimer:Stop()
 
-function var0_0.OnStop(arg0_24)
-	arg0_24:Reset()
-	arg0_24:ClearAnimation()
-	arg0_24:StopVoice()
-
-	if arg0_24.callback then
-		arg0_24.callback()
-
-		arg0_24.callback = nil
+		arg0_25.checkTimer = nil
 	end
 end
 
-function var0_0.OnStart(arg0_25, arg1_25)
-	pg.DelegateInfo.New(arg0_25)
+function var0_0.Clear(arg0_26, arg1_26, arg2_26)
+	arg0_26:ClearAnimation()
+	arg0_26:StopVoice()
+	arg0_26:ClearChatTimer()
+	arg0_26:ClearCheckDispatcher()
+	setActive(arg0_26.optionPanel, false)
+
+	arg0_26.callback = nil
+
+	existCall(arg2_26)
 end
 
-function var0_0.OnEnd(arg0_26, arg1_26)
-	pg.DelegateInfo.Dispose(arg0_26)
+function var0_0.OnPause(arg0_27)
+	return
+end
+
+function var0_0.OnResume(arg0_28)
+	return
+end
+
+function var0_0.OnStop(arg0_29)
+	arg0_29:Reset()
+	arg0_29:ClearAnimation()
+	arg0_29:StopVoice()
+
+	if arg0_29.callback then
+		arg0_29.callback()
+
+		arg0_29.callback = nil
+	end
+end
+
+function var0_0.OnStart(arg0_30, arg1_30)
+	pg.DelegateInfo.New(arg0_30)
+end
+
+function var0_0.OnEnd(arg0_31, arg1_31)
+	pg.DelegateInfo.Dispose(arg0_31)
+	arg0_31:ClearChatTimer()
+	arg0_31:ClearCheckDispatcher()
 end
 
 return var0_0

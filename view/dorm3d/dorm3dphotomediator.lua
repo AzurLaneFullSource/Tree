@@ -4,6 +4,7 @@ var0_0.SHARE_PANEL = "Dorm3dPhotoMediator:SHARE_PANEL"
 var0_0.CAMERA_LIFT_CHANGED = "CAMERA_LIFT_CHANGED"
 var0_0.CAMERA_STICK_MOVE = "CAMERA_STICK_MOVE"
 var0_0.GO_AR = "Dorm3dPhotoMediator:GO_AR"
+var0_0.OPEN_SKIN_SELECT_LAYER = "Dorm3dPhotoMediator:OPEN_SKIN_SELECT_LAYER"
 
 function var0_0.register(arg0_1)
 	local var0_1 = arg0_1.contextData.view
@@ -67,9 +68,21 @@ function var0_0.register(arg0_1)
 			end
 		})
 	end)
+	arg0_1:bind(var0_0.OPEN_SKIN_SELECT_LAYER, function(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
+		arg0_1:addSubLayers(Context.New({
+			viewComponent = Dorm3dSkinSelectLayer,
+			mediator = Dorm3dSkinSelectMediator,
+			data = {
+				groupId = arg1_8,
+				ladyEnv = arg2_8,
+				onSwitchSkin = arg3_8,
+				isPublicRoom = arg4_8
+			}
+		}))
+	end)
 end
 
-function var0_0.listNotificationInterests(arg0_8)
+function var0_0.listNotificationInterests(arg0_9)
 	return {
 		ApartmentProxy.UPDATE_APARTMENT,
 		var0_0.CAMERA_LIFT_CHANGED,
@@ -77,20 +90,20 @@ function var0_0.listNotificationInterests(arg0_8)
 	}
 end
 
-function var0_0.handleNotification(arg0_9, arg1_9)
-	local var0_9 = arg1_9:getName()
-	local var1_9 = arg1_9:getBody()
+function var0_0.handleNotification(arg0_10, arg1_10)
+	local var0_10 = arg1_10:getName()
+	local var1_10 = arg1_10:getBody()
 
-	if var0_9 == ApartmentProxy.UPDATE_APARTMENT then
+	if var0_10 == ApartmentProxy.UPDATE_APARTMENT then
 		-- block empty
-	elseif var0_9 == var0_0.CAMERA_LIFT_CHANGED then
-		arg0_9.viewComponent:SetPhotoCameraSliderValue(var1_9.value)
-	elseif var0_9 == var0_0.CAMERA_STICK_MOVE then
-		arg0_9.viewComponent:SetPhotoStickDelta(var1_9)
+	elseif var0_10 == var0_0.CAMERA_LIFT_CHANGED then
+		arg0_10.viewComponent:SetPhotoCameraSliderValue(var1_10.value)
+	elseif var0_10 == var0_0.CAMERA_STICK_MOVE then
+		arg0_10.viewComponent:SetPhotoStickDelta(var1_10)
 	end
 end
 
-function var0_0.remove(arg0_10)
+function var0_0.remove(arg0_11)
 	return
 end
 

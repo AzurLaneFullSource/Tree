@@ -6,6 +6,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.options = arg1_1.options
 	arg0_1.waitForClick = arg1_1.wait or 0
 	arg0_1.optionFlag = arg1_1.optionFlag
+	arg0_1.dispatcher = arg1_1.dispatcher
 end
 
 function var0_0.IsSameBranch(arg0_2, arg1_2)
@@ -36,8 +37,42 @@ function var0_0.GetOptions(arg0_6)
 	end)
 end
 
-function var0_0.GetWaitForClickTime(arg0_8)
-	return arg0_8.waitForClick
+function var0_0.ExistDispatcher(arg0_8)
+	return arg0_8.dispatcher ~= nil
+end
+
+function var0_0.GetDispatcher(arg0_9)
+	return arg0_9.dispatcher
+end
+
+function var0_0.IsRecallDispatcher(arg0_10)
+	if not arg0_10:ExistDispatcher() then
+		return false
+	end
+
+	local var0_10 = arg0_10:GetDispatcher()
+
+	return var0_10.callbackData ~= nil and var0_10.callbackData.name ~= nil
+end
+
+function var0_0.GetDispatcherRecallName(arg0_11)
+	if not arg0_11:IsRecallDispatcher() then
+		return nil
+	end
+
+	return arg0_11:GetDispatcher().callbackData.name
+end
+
+function var0_0.ShouldHideUI(arg0_12)
+	if not arg0_12:IsRecallDispatcher() then
+		return false
+	end
+
+	return arg0_12:GetDispatcher().callbackData.hideUI == true
+end
+
+function var0_0.GetWaitForClickTime(arg0_13)
+	return arg0_13.waitForClick
 end
 
 return var0_0

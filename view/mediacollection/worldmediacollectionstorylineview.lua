@@ -500,17 +500,20 @@ function var0_0.updateNodes(arg0_29)
 	for iter0_29, iter1_29 in pairs(arg0_29.nodeDataDict) do
 		local var0_29 = iter1_29.nodeTF
 		local var1_29 = iter1_29.VO:GetNations()
-		local var2_29 = false
 
-		for iter2_29, iter3_29 in pairs(arg0_29.filterDict) do
-			if table.contains(var1_29, iter2_29) then
-				var2_29 = true
+		if not iter1_29.VO:IsMemoryBlock() then
+			local var2_29 = false
 
-				break
+			for iter2_29, iter3_29 in pairs(arg0_29.filterDict) do
+				if table.contains(var1_29, iter2_29) then
+					var2_29 = true
+
+					break
+				end
 			end
-		end
 
-		setActive(var0_29:Find("info/selected_filter"), var2_29)
+			setActive(var0_29:Find("info/selected_filter"), var2_29)
+		end
 	end
 
 	if arg0_29.selectedID then
@@ -560,8 +563,20 @@ function var0_0.updateNodeTree(arg0_31)
 			local var4_31 = cloneTplTo(arg0_31.nodeTpl, arg0_31.nodeContainer)
 
 			setActive(var4_31, true)
-			LoadImageSpriteAsync("memorystoryline/" .. iter3_31:GetIcon(), var4_31:Find("info/icon"), true)
-			setText(var4_31:Find("info/name"), iter3_31:GetName())
+
+			if iter3_31:IsMemoryBlock() then
+				LoadImageSpriteAtlasAsync("ui/worldmediacollectionmemoryui_atlas", "node_tail", var4_31:Find("info/icon"))
+				setText(var4_31:Find("info/name"), iter3_31:GetName())
+				setActive(var4_31:Find("info/name"), false)
+				setActive(var4_31:Find("info/mark"), false)
+			else
+				LoadImageSpriteAsync("memorystoryline/" .. iter3_31:GetIcon(), var4_31:Find("info/icon"), true)
+				setText(var4_31:Find("info/name"), iter3_31:GetName())
+				LoadImageSpriteAtlasAsync("ui/worldmediacollectionmemoryui_atlas", iter3_31:GetMark(), var4_31:Find("info/mark"))
+				onButton(arg0_31, var4_31, function()
+					arg0_31:ShowNodeDetail(iter3_31:GetConfigID())
+				end)
+			end
 
 			var1_31 = var0_0.START_GAP + (iter0_31 - 1) * var0_0.HRZ_GAP
 
@@ -577,12 +592,6 @@ function var0_0.updateNodeTree(arg0_31)
 			var3_31.VO = iter3_31
 			arg0_31.nodeMap[iter0_31] = arg0_31.nodeMap[iter0_31] or {}
 			arg0_31.nodeMap[iter0_31][var5_31] = true
-
-			LoadImageSpriteAtlasAsync("ui/worldmediacollectionmemoryui_atlas", iter3_31:GetMark(), var4_31:Find("info/mark"))
-			onButton(arg0_31, var4_31, function()
-				arg0_31:ShowNodeDetail(iter3_31:GetConfigID())
-			end)
-
 			arg0_31.nodeDataDict[iter3_31:GetConfigID()] = var3_31
 		end
 	end

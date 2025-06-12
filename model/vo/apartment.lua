@@ -11,11 +11,23 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.setCallTimeStamp = pg.TimeMgr.GetInstance():GetServerTime()
 	arg0_1.visitTime = arg1_1.visit_time
 	arg0_1.skinList = {}
+	arg0_1.hiddenInfo = {}
 
 	table.insert(arg0_1.skinList, arg0_1:getConfig("skin_model"))
 
 	for iter0_1, iter1_1 in ipairs(arg1_1.skins or {}) do
 		table.insert(arg0_1.skinList, iter1_1)
+	end
+
+	for iter2_1, iter3_1 in ipairs(arg1_1.hidden_parts or {}) do
+		table.insert(arg0_1.hiddenInfo, {
+			skin_id = iter3_1.id,
+			hidden_parts = {}
+		})
+
+		for iter4_1, iter5_1 in ipairs(iter3_1.hidden_parts or {}) do
+			table.insert(arg0_1.hiddenInfo[#arg0_1.hiddenInfo].hidden_parts, iter5_1)
+		end
 	end
 
 	table.sort(arg0_1.skinList)
@@ -26,14 +38,14 @@ function var0_0.Ctor(arg0_1, arg1_1)
 		end
 	})
 
-	for iter2_1, iter3_1 in ipairs(arg1_1.regular_trigger or {}) do
-		arg0_1.triggerCountDic[iter3_1] = arg0_1.triggerCountDic[iter3_1] + 1
+	for iter6_1, iter7_1 in ipairs(arg1_1.regular_trigger or {}) do
+		arg0_1.triggerCountDic[iter7_1] = arg0_1.triggerCountDic[iter7_1] + 1
 	end
 
 	arg0_1.talkDic = {}
 
-	for iter4_1, iter5_1 in ipairs(arg1_1.dialogues or {}) do
-		arg0_1.talkDic[iter5_1] = true
+	for iter8_1, iter9_1 in ipairs(arg1_1.dialogues or {}) do
+		arg0_1.talkDic[iter9_1] = true
 	end
 end
 
@@ -95,7 +107,7 @@ function var0_0.addSkin(arg0_12, arg1_12)
 	table.sort(arg0_12.skinList)
 end
 
-function var0_0.getSkinId(arg0_13)
+function var0_0.GetCurSkinId(arg0_13)
 	if arg0_13.skinId == 0 then
 		return arg0_13:getConfig("skin_model")
 	else
@@ -127,143 +139,170 @@ function var0_0.GetSetCallCd(arg0_17)
 	return arg0_17.setCallCd - pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function var0_0.getTalkingList(arg0_18, arg1_18)
-	return underscore.filter(pg.dorm3d_dialogue_group.get_id_list_by_char_id[arg0_18.configId] or {}, function(arg0_19)
-		local var0_19 = pg.dorm3d_dialogue_group[arg0_19]
+function var0_0.GetHiddenParts(arg0_18, arg1_18)
+	local var0_18 = underscore.detect(arg0_18.hiddenInfo, function(arg0_19)
+		return arg0_19.skin_id == arg1_18
+	end)
 
-		return (not arg1_18.typeDic or tobool(arg1_18.typeDic[var0_19.type])) and (not arg1_18.roomId or var0_19.room_id == 0 or arg1_18.roomId == var0_19.room_id) and (not arg1_18.unplay or not arg0_18.talkDic[arg0_19]) and (not arg1_18.unlock or ApartmentProxy.CheckUnlockConfig(var0_19.unlock))
+	if not var0_18 then
+		return {}
+	end
+
+	return var0_18.hidden_parts or {}
+end
+
+function var0_0.SetHiddenParts(arg0_20, arg1_20, arg2_20)
+	local var0_20 = underscore.detect(arg0_20.hiddenInfo, function(arg0_21)
+		return arg0_21.skin_id == arg1_20
+	end)
+
+	if not var0_20 then
+		table.insert(arg0_20.hiddenInfo, {
+			skin_id = arg1_20,
+			hidden_parts = arg2_20
+		})
+	else
+		var0_20.hidden_parts = arg2_20
+	end
+end
+
+function var0_0.getTalkingList(arg0_22, arg1_22)
+	return underscore.filter(pg.dorm3d_dialogue_group.get_id_list_by_char_id[arg0_22.configId] or {}, function(arg0_23)
+		local var0_23 = pg.dorm3d_dialogue_group[arg0_23]
+
+		return (not arg1_22.typeDic or tobool(arg1_22.typeDic[var0_23.type])) and (not arg1_22.roomId or var0_23.room_id == 0 or arg1_22.roomId == var0_23.room_id) and (not arg1_22.unplay or not arg0_22.talkDic[arg0_23]) and (not arg1_22.unlock or ApartmentProxy.CheckUnlockConfig(var0_23.unlock))
 	end)
 end
 
-function var0_0.getForceEnterTalking(arg0_20, arg1_20)
-	return arg0_20:getTalkingList({
+function var0_0.getForceEnterTalking(arg0_24, arg1_24)
+	return arg0_24:getTalkingList({
 		unlock = true,
 		unplay = true,
 		typeDic = {
 			[100] = true
 		},
-		roomId = arg1_20
+		roomId = arg1_24
 	})
 end
 
 var0_0.ENTER_TALK_TYPE_DIC = {
-	[101] = function(arg0_21, arg1_21)
+	[101] = function(arg0_25, arg1_25)
 		return PlayerPrefs.GetString("DORM3D_DAILY_ENTER", "") ~= pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d")
 	end,
-	[102] = function(arg0_22, arg1_22)
-		return underscore.any(arg0_22, function(arg0_23)
-			return getProxy(ActivityProxy):IsActivityNotEnd(arg0_23)
+	[102] = function(arg0_26, arg1_26)
+		return underscore.any(arg0_26, function(arg0_27)
+			return getProxy(ActivityProxy):IsActivityNotEnd(arg0_27)
 		end)
 	end,
-	[103] = function(arg0_24, arg1_24)
-		return PlayerPrefs.GetInt("dorm3d_enter_count_" .. arg1_24, 0) > arg0_24[1]
+	[103] = function(arg0_28, arg1_28)
+		return PlayerPrefs.GetInt("dorm3d_enter_count_" .. arg1_28, 0) > arg0_28[1]
 	end,
-	[104] = function(arg0_25, arg1_25)
+	[104] = function(arg0_29, arg1_29)
 		return true
 	end
 }
 
-function var0_0.getEnterTalking(arg0_26, arg1_26)
-	local var0_26
+function var0_0.getEnterTalking(arg0_30, arg1_30)
+	local var0_30
 
-	for iter0_26, iter1_26 in ipairs(arg0_26:getTalkingList({
+	for iter0_30, iter1_30 in ipairs(arg0_30:getTalkingList({
 		unlock = true,
 		typeDic = var0_0.ENTER_TALK_TYPE_DIC,
-		roomId = arg1_26
+		roomId = arg1_30
 	})) do
-		local var1_26 = pg.dorm3d_dialogue_group[iter1_26]
+		local var1_30 = pg.dorm3d_dialogue_group[iter1_30]
 
-		if switch(var1_26.type, var0_0.ENTER_TALK_TYPE_DIC, function(arg0_27)
+		if switch(var1_30.type, var0_0.ENTER_TALK_TYPE_DIC, function(arg0_31)
 			return false
-		end, var1_26.trigger_config, arg0_26.configId) then
-			if not var0_26 or var1_26.type < pg.dorm3d_dialogue_group[var0_26[1]].type then
-				var0_26 = {
-					iter1_26
+		end, var1_30.trigger_config, arg0_30.configId) then
+			if not var0_30 or var1_30.type < pg.dorm3d_dialogue_group[var0_30[1]].type then
+				var0_30 = {
+					iter1_30
 				}
-			elseif var1_26.type == pg.dorm3d_dialogue_group[var0_26[1]].type then
-				table.insert(var0_26, iter1_26)
+			elseif var1_30.type == pg.dorm3d_dialogue_group[var0_30[1]].type then
+				table.insert(var0_30, iter1_30)
 			end
 		end
 	end
 
-	return var0_26 or {}
+	return var0_30 or {}
 end
 
-function var0_0.getFurnitureTalking(arg0_28, arg1_28, arg2_28)
-	return underscore.filter(arg0_28:getTalkingList({
+function var0_0.getFurnitureTalking(arg0_32, arg1_32, arg2_32)
+	return underscore.filter(arg0_32:getTalkingList({
 		unlock = true,
 		typeDic = {
 			[200] = true
 		},
-		roomId = arg1_28
-	}), function(arg0_29)
-		local var0_29 = pg.dorm3d_dialogue_group[arg0_29]
+		roomId = arg1_32
+	}), function(arg0_33)
+		local var0_33 = pg.dorm3d_dialogue_group[arg0_33]
 
-		return var0_29.trigger_config == "" or var0_29.trigger_config == arg2_28
+		return var0_33.trigger_config == "" or var0_33.trigger_config == arg2_32
 	end)
 end
 
-function var0_0.getZoneTalking(arg0_30, arg1_30, arg2_30)
-	return underscore.filter(arg0_30:getTalkingList({
+function var0_0.getZoneTalking(arg0_34, arg1_34, arg2_34)
+	return underscore.filter(arg0_34:getTalkingList({
 		unlock = true,
 		unplay = true,
 		typeDic = {
 			[300] = true
 		},
-		roomId = arg1_30
-	}), function(arg0_31)
-		return pg.dorm3d_dialogue_group[arg0_31].trigger_config == arg2_30
+		roomId = arg1_34
+	}), function(arg0_35)
+		return pg.dorm3d_dialogue_group[arg0_35].trigger_config == arg2_34
 	end)
 end
 
-function var0_0.getDistanceTalking(arg0_32, arg1_32, arg2_32)
-	return underscore.filter(arg0_32:getTalkingList({
+function var0_0.getDistanceTalking(arg0_36, arg1_36, arg2_36)
+	return underscore.filter(arg0_36:getTalkingList({
 		unlock = true,
 		unplay = true,
 		typeDic = {
 			[550] = true
 		},
-		roomId = arg1_32
-	}), function(arg0_33)
-		return pg.dorm3d_dialogue_group[arg0_33].trigger_config == arg2_32
+		roomId = arg1_36
+	}), function(arg0_37)
+		return pg.dorm3d_dialogue_group[arg0_37].trigger_config == arg2_36
 	end)
 end
 
-function var0_0.getSpecialTalking(arg0_34, arg1_34)
-	return arg0_34:getTalkingList({
+function var0_0.getSpecialTalking(arg0_38, arg1_38)
+	return arg0_38:getTalkingList({
 		unlock = true,
 		unplay = true,
 		typeDic = {
 			[700] = true
 		},
-		roomId = arg1_34
+		roomId = arg1_38
 	})
 end
 
-function var0_0.getGiftIds(arg0_35)
-	local var0_35 = pg.dorm3d_gift.get_id_list_by_ship_group_id
+function var0_0.getGiftIds(arg0_39)
+	local var0_39 = pg.dorm3d_gift.get_id_list_by_ship_group_id
 
-	return table.mergeArray(var0_35[0], var0_35[arg0_35.configId] or {})
+	return table.mergeArray(var0_39[0], var0_39[arg0_39.configId] or {})
 end
 
-function var0_0.needDownload(arg0_36)
+function var0_0.needDownload(arg0_40)
 	return #ApartmentRoom.New({
-		id = arg0_36:getConfig("bind_room")
+		id = arg0_40:getConfig("bind_room")
 	}):getDownloadNameList() > 0
 end
 
-function var0_0.filterUnlockTalkList(arg0_37, arg1_37)
-	return underscore.filter(arg1_37, function(arg0_38)
-		return ApartmentProxy.CheckUnlockConfig(pg.dorm3d_dialogue_group[arg0_38].unlock)
+function var0_0.filterUnlockTalkList(arg0_41, arg1_41)
+	return underscore.filter(arg1_41, function(arg0_42)
+		return ApartmentProxy.CheckUnlockConfig(pg.dorm3d_dialogue_group[arg0_42].unlock)
 	end)
 end
 
-function var0_0.getIconTip(arg0_39, arg1_39)
-	if #arg0_39:getForceEnterTalking(arg1_39) > 0 then
+function var0_0.getIconTip(arg0_43, arg1_43)
+	if #arg0_43:getForceEnterTalking(arg1_43) > 0 then
 		return "main"
-	elseif getProxy(ApartmentProxy):getApartmentGiftCount(arg0_39.configId) then
+	elseif getProxy(ApartmentProxy):getApartmentGiftCount(arg0_43.configId) then
 		return "gift"
-	elseif Dorm3dFurniture.IsTimelimitShopTip(arg1_39) then
+	elseif Dorm3dFurniture.IsTimelimitShopTip(arg1_43) then
 		return "furniture"
 	elseif false then
 		return "talk"
@@ -272,18 +311,22 @@ function var0_0.getIconTip(arg0_39, arg1_39)
 	end
 end
 
-function var0_0.getGroupConfig(arg0_40, arg1_40)
-	if not arg1_40 or arg1_40 == "" then
+function var0_0.getGroupConfig(arg0_44, arg1_44)
+	if not arg1_44 or arg1_44 == "" then
 		return nil
 	end
 
-	for iter0_40, iter1_40 in ipairs(arg1_40) do
-		if iter1_40[1] == arg0_40 then
-			return iter1_40[2]
+	for iter0_44, iter1_44 in ipairs(arg1_44) do
+		if iter1_44[1] == arg0_44 then
+			return iter1_44[2]
 		end
 	end
 
 	return nil
+end
+
+function var0_0.GetAllModelIds(arg0_45)
+	return pg.dorm3d_resource.get_id_list_by_ship_group[arg0_45.configId] or {}
 end
 
 return var0_0

@@ -638,7 +638,7 @@ function var0_0.LoadPainting(arg0_52, arg1_52, arg2_52, arg3_52)
 	local var0_52, var1_52, var2_52, var3_52 = arg0_52:GetSideTF(arg1_52:GetSide())
 	local var4_52, var5_52 = arg1_52:GetPaintingAndName()
 
-	if arg1_52:IsLive2dPainting() and checkABExist("live2d/" .. var5_52) then
+	if arg1_52:IsLive2dPainting() and checkABExist("live2d/" .. var5_52) and not Live2dConst.GetLive2DArm32MatchAble() then
 		arg0_52:UpdateLive2dPainting(arg1_52, var0_52, arg2_52, arg3_52)
 	elseif arg1_52:IsSpinePainting() and checkABExist("spinepainting/" .. var5_52) then
 		arg0_52:UpdateSpinePainting(arg1_52, var0_52, arg2_52, arg3_52)

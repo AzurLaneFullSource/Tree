@@ -702,6 +702,24 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>Chase the waves and dive into a joyous new quest.</color>\nReward for raising Anchorage's Intimacy in the Private Quarters.",
 		scene = {}
 	},
+	[1007] = {
+		time_limit_type = 0,
+		name = "Stars and Snow",
+		gain_by = "",
+		id = 1007,
+		time_second = 0,
+		desc = "<color=#ffffff>Under the stars and snow, two rabbits snuggle close to keep each other warm.</color>\nReward for raising New Jersey's Intimacy in the Private Quarters.",
+		scene = {}
+	},
+	[1008] = {
+		time_limit_type = 0,
+		name = "Dazzling Steps",
+		gain_by = "",
+		id = 1008,
+		time_second = 0,
+		desc = "<color=#ffffff>Who's the bunny dancing in the neon spotlight?</color>\nReward for raising New Jersey's Intimacy in the Private Quarters.",
+		scene = {}
+	},
 	[10001] = {
 		time_limit_type = 0,
 		name = "Extreme Challenge - Gemini",
@@ -889,6 +907,8 @@ pg.item_data_frame = {
 		1004,
 		1005,
 		1006,
+		1007,
+		1008,
 		10001,
 		10002,
 		10003,
