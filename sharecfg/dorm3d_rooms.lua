@@ -514,7 +514,7 @@ pg.dorm3d_rooms = {
 	},
 	[16] = {
 		type = 1,
-		room_des = "Elegance and refinement, luxury and delight. Amidst golden radiance, embark on this dreamlike encounter.",
+		room_des = "Elegant and delightful. Amidst golden radiance, embark on this dreamlike encounter.",
 		tag = "cafe",
 		resource_name = "Publiccafe",
 		assets_prefix = "Publiccafe",
