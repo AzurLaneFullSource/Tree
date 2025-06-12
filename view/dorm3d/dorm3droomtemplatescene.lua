@@ -465,10 +465,31 @@ function var0_0.initScene(arg0_39)
 
 	local var5_39 = arg0_39.cameras[var0_0.CAMERA.PHOTO_FREE]:GetComponent(typeof(CharacterController)).radius
 
-	arg0_39.restrictedHeightRange = {
-		arg0_39.restrictedBox:Find("Floor").position.y + var5_39,
-		arg0_39.restrictedBox:Find("Celling").position.y - var5_39
-	}
+	arg0_39.isMultiFloor = arg0_39.restrictedBox.childCount > 2
+
+	local var6_39 = "Floor"
+	local var7_39 = "Celling"
+
+	if arg0_39.isMultiFloor then
+		arg0_39.restrictedHeightRange = {}
+
+		for iter0_39 = 0, math.floor(arg0_39.restrictedBox.childCount / 2) - 1 do
+			local var8_39 = iter0_39 == 0 and var6_39 or var6_39 .. "_" .. iter0_39
+			local var9_39 = iter0_39 == 0 and var7_39 or var7_39 .. "_" .. iter0_39
+
+			warning(var8_39, var9_39)
+			table.insert(arg0_39.restrictedHeightRange, {
+				arg0_39.restrictedBox:Find(var8_39).position.y + var5_39,
+				arg0_39.restrictedBox:Find(var9_39).position.y - var5_39
+			})
+		end
+	else
+		arg0_39.restrictedHeightRange = {
+			arg0_39.restrictedBox:Find(var6_39).position.y + var5_39,
+			arg0_39.restrictedBox:Find(var7_39).position.y - var5_39
+		}
+	end
+
 	arg0_39.ladyInterest = GameObject.Find("InterestProxy").transform
 	arg0_39.daynightCtrlComp = GameObject.Find("[MainBlock]").transform:GetComponent("DayNightCtrl")
 
@@ -1017,9 +1038,10 @@ function var0_0.didEnter(arg0_88)
 			arg0_88:emit(Dorm3dPhotoMediator.CAMERA_STICK_MOVE, var3_91:Normalize())
 			onNextTick(function()
 				local var0_92 = arg0_88.cameras[var0_0.CAMERA.PHOTO_FREE]
-				local var1_92 = math.InverseLerp(arg0_88.restrictedHeightRange[1], arg0_88.restrictedHeightRange[2], var0_92.position.y)
+				local var1_92 = arg0_88:GetRestritedHeightRange()
+				local var2_92 = math.InverseLerp(var1_92[1], var1_92[2], var0_92.position.y)
 
-				arg0_88:emit(Dorm3dPhotoMediator.CAMERA_LIFT_CHANGED, var1_92)
+				arg0_88:emit(Dorm3dPhotoMediator.CAMERA_LIFT_CHANGED, var2_92)
 			end)
 		end
 	end, 1, -1)
@@ -1709,7 +1731,7 @@ function var0_0.ActiveCameraByName(arg0_152, arg1_152)
 	end)
 	setActive(var0_152, true)
 
-	arg0_152.cameras[var0_0.CAMERA.CUSTOM] = var0_152
+	arg0_152.cameras[var0_0.CAMERA.CUSTOM] = var0_152:GetComponent(typeof(Cinemachine.CinemachineVirtualCamera))
 end
 
 function var0_0.ShowBlackScreen(arg0_154, arg1_154, arg2_154)
@@ -2875,12 +2897,13 @@ function var0_0.SwitchPhotoCamera(arg0_270)
 		var1_270.m_VerticalAxis = var4_270
 
 		local var5_270 = arg0_270.mainCameraTF.position
-		local var6_270 = math.InverseLerp(arg0_270.restrictedHeightRange[1], arg0_270.restrictedHeightRange[2], var5_270.y)
+		local var6_270 = arg0_270:GetRestritedHeightRange()
+		local var7_270 = math.InverseLerp(var6_270[1], var6_270[2], var5_270.y)
 
-		var5_270.y = math.clamp(var5_270.y, arg0_270.restrictedHeightRange[1], arg0_270.restrictedHeightRange[2])
+		var5_270.y = math.clamp(var5_270.y, var6_270[1], var6_270[2])
 		var0_270.transform.position = var5_270
 
-		arg0_270:emit(Dorm3dPhotoMediator.CAMERA_LIFT_CHANGED, var6_270)
+		arg0_270:emit(Dorm3dPhotoMediator.CAMERA_LIFT_CHANGED, var7_270)
 		arg0_270:ActiveCamera(arg0_270.cameras[var0_0.CAMERA.PHOTO_FREE])
 	else
 		arg0_270:EnableJoystick(true)
@@ -2892,14 +2915,16 @@ function var0_0.SwitchPhotoCamera(arg0_270)
 end
 
 function var0_0.SetPhotoCameraHeight(arg0_271, arg1_271)
-	local var0_271 = math.lerp(arg0_271.restrictedHeightRange[1], arg0_271.restrictedHeightRange[2], arg1_271)
-	local var1_271 = arg0_271.cameras[var0_0.CAMERA.PHOTO_FREE]
+	local var0_271 = arg0_271.cameras[var0_0.CAMERA.PHOTO_FREE]
+	local var1_271 = arg0_271:GetRestritedHeightRange()
+	local var2_271 = math.lerp(var1_271[1], var1_271[2], arg1_271)
 
-	var1_271:GetComponent(typeof(UnityEngine.CharacterController)):Move(Vector3.New(0, var0_271 - var1_271.position.y, 0))
+	var0_271:GetComponent(typeof(UnityEngine.CharacterController)):Move(Vector3.New(0, var2_271 - var0_271.position.y, 0))
 	onNextTick(function()
-		local var0_272 = math.InverseLerp(arg0_271.restrictedHeightRange[1], arg0_271.restrictedHeightRange[2], var1_271.position.y)
+		local var0_272 = arg0_271:GetRestritedHeightRange()
+		local var1_272 = math.InverseLerp(var0_272[1], var0_272[2], var0_271.position.y)
 
-		arg0_271:emit(Dorm3dPhotoMediator.CAMERA_LIFT_CHANGED, var0_272)
+		arg0_271:emit(Dorm3dPhotoMediator.CAMERA_LIFT_CHANGED, var1_272)
 	end)
 end
 
@@ -3651,64 +3676,80 @@ function var0_0.IsPointInSector(arg0_358, arg1_358)
 	return Vector3.Angle(var1_358 * Vector3.forward, var0_358) <= arg0_358.Angle / 2
 end
 
-function var0_0.willExit(arg0_359)
-	arg0_359.joystickTimer:Stop()
-	arg0_359.moveStickTimer:Stop()
-	UpdateBeat:RemoveListener(arg0_359.updateHandler)
-	arg0_359:StopIKHandTimer()
+function var0_0.GetRestritedHeightRange(arg0_359)
+	if not arg0_359.isMultiFloor then
+		return arg0_359.restrictedHeightRange
+	else
+		for iter0_359 = #arg0_359.restrictedHeightRange, 1, -1 do
+			local var0_359 = arg0_359.restrictedHeightRange[iter0_359]
 
-	if arg0_359.moveTimer then
-		arg0_359.moveTimer:Stop()
+			if arg0_359.mainCameraTF.position.y >= var0_359[1] then
+				return var0_359
+			end
+		end
 
-		arg0_359.moveTimer = nil
+		return arg0_359.restrictedHeightRange[1]
+	end
+end
+
+function var0_0.willExit(arg0_360)
+	arg0_360.joystickTimer:Stop()
+	arg0_360.moveStickTimer:Stop()
+	UpdateBeat:RemoveListener(arg0_360.updateHandler)
+	arg0_360:StopIKHandTimer()
+
+	if arg0_360.moveTimer then
+		arg0_360.moveTimer:Stop()
+
+		arg0_360.moveTimer = nil
 	end
 
-	if arg0_359.moveWaitTimer then
-		arg0_359.moveWaitTimer:Stop()
+	if arg0_360.moveWaitTimer then
+		arg0_360.moveWaitTimer:Stop()
 
-		arg0_359.moveWaitTimer = nil
+		arg0_360.moveWaitTimer = nil
 	end
 
 	GlobalClickEventMgr.Inst:RemoveBeginPinchFunc()
 	GlobalClickEventMgr.Inst:RemovePinchFunc()
 	GlobalClickEventMgr.Inst:RemoveEndPinchFunc()
 
-	if not IsNil(arg0_359.furnitures) then
-		eachChild(arg0_359.furnitures, function(arg0_360)
-			local var0_360 = GetComponent(arg0_360, typeof(EventTriggerListener))
+	if not IsNil(arg0_360.furnitures) then
+		eachChild(arg0_360.furnitures, function(arg0_361)
+			local var0_361 = GetComponent(arg0_361, typeof(EventTriggerListener))
 
-			if not var0_360 then
+			if not var0_361 then
 				return
 			end
 
-			var0_360:ClearEvents()
+			var0_361:ClearEvents()
 		end)
 	end
 
 	pg.IKMgr.GetInstance():ResetActiveIKs()
 
-	for iter0_359, iter1_359 in pairs(arg0_359.ladyDict) do
-		GetComponent(iter1_359.lady, typeof(EventTriggerListener)):ClearEvents()
+	for iter0_360, iter1_360 in pairs(arg0_360.ladyDict) do
+		GetComponent(iter1_360.lady, typeof(EventTriggerListener)):ClearEvents()
 	end
 
-	arg0_359.camBrainEvenetHandler.OnBlendStarted = nil
-	arg0_359.camBrainEvenetHandler.OnBlendFinished = nil
+	arg0_360.camBrainEvenetHandler.OnBlendStarted = nil
+	arg0_360.camBrainEvenetHandler.OnBlendFinished = nil
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_359.blockLayer, arg0_359._tf)
-	table.Foreach(arg0_359.expressionDict, function(arg0_361)
-		arg0_359:RemoveExpression(arg0_361)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_360.blockLayer, arg0_360._tf)
+	table.Foreach(arg0_360.expressionDict, function(arg0_362)
+		arg0_360:RemoveExpression(arg0_362)
 	end)
-	arg0_359.loader:Clear()
+	arg0_360.loader:Clear()
 	pg.ClickEffectMgr:GetInstance():SetClickEffect("NORMAL")
 	pg.NodeCanvasMgr.GetInstance():Clear()
-	arg0_359.dormSceneMgr:Dispose()
+	arg0_360.dormSceneMgr:Dispose()
 
-	arg0_359.dormSceneMgr = nil
+	arg0_360.dormSceneMgr = nil
 
 	ReflectionHelp.RefSetProperty(typeof("UnityEngine.LightmapSettings"), "lightmaps", nil, nil)
 
-	if arg0_359.transformFilter then
-		arg0_359.transformFilter:Dispose()
+	if arg0_360.transformFilter then
+		arg0_360.transformFilter:Dispose()
 	end
 end
 

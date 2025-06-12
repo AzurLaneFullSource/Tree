@@ -168199,7 +168199,7 @@ _G.pg.base.item_virtual_data_statistics[65620] = {
 }
 
 _G.pg.base.item_virtual_data_statistics[65621] = {
-	display = "用于「热烈的告白练习」复刻活动提升角色好感，活动结束后将会消失",
+	display = "\"Passionate Confession Practice\" rerun event currency, used to raise Trust during the corresponding event. Will be removed when the event ends.",
 	drop_gold_max = 0,
 	drop_oil_max = 0,
 	icon = "Props/little_taihou_pt",
