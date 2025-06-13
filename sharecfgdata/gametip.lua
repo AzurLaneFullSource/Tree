@@ -27064,7 +27064,7 @@ _G.pg.base.gametip.dorm3d_accompany_locked = {
 }
 
 _G.pg.base.gametip.dorm3d_role_locked = {
-	tip = "You must unlock this character first.",
+	tip = "You must unlock related content first (including character and area)",
 }
 
 _G.pg.base.gametip.dorm3d_volleyball_button = {
