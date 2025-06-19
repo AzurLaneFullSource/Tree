@@ -69,9 +69,7 @@ function var0_0.InitTransformMapBtn(arg0_5, arg1_5, arg2_5, arg3_5)
 	end)
 end
 
-function var0_0.UpdateButtons(arg0_10)
-	var0_0.super.UpdateButtons(arg0_10)
-
+function var0_0.UpdateCustomButtons(arg0_10)
 	local var0_10 = arg0_10.contextData.map
 	local var1_10 = var0_10:getConfig("type") == Map.ACT_EXTRA
 

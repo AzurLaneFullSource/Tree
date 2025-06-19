@@ -235,7 +235,6 @@ function var0_0.loadShowPaint(arg0_14, arg1_14, arg2_14, arg3_14)
 	elseif var1_14 == MainPaintingView.STATE_L2D then
 		local var6_14 = Live2D.GenerateData({
 			ship = var0_14,
-			scale = Vector3(52, 52, 52),
 			position = Vector3(0, 0, -1),
 			parent = arg0_14.l2dContainner
 		})

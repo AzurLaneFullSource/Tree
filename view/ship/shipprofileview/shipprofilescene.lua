@@ -579,36 +579,41 @@ function var0_0.CreateLive2D(arg0_49)
 	local var1_49 = pg.ship_skin_template[arg0_49.skin.id].live2d_offset_profile
 	local var2_49
 
-	if var1_49 and type(var1_49) ~= "string" then
-		var2_49 = Vector3(0 + var1_49[1], -40 + var1_49[2], 100 + var1_49[3])
+	if var1_49 and #var1_49 >= 3 then
+		local var3_49 = var1_49
 	else
-		var2_49 = Vector3(0, -40, 100)
+		local var4_49 = {
+			0,
+			0,
+			0,
+			52
+		}
 	end
 
-	local var3_49 = Live2D.GenerateData({
+	local var5_49 = Live2D.GenerateData({
 		ship = Ship.New({
 			noChangeSkin = true,
 			configId = var0_49,
 			skin_id = arg0_49.skin.id,
 			propose = arg0_49.shipGroup.married
 		}),
-		scale = Vector3(52, 52, 52),
-		position = var2_49,
+		position = Vector3(0, 0, 0),
+		offset = var1_49,
 		parent = arg0_49.l2dRoot
 	})
 
-	arg0_49.l2dChar = Live2D.New(var3_49, function(arg0_50)
+	arg0_49.l2dChar = Live2D.New(var5_49, function(arg0_50)
 		arg0_50:setSortingLayer(LayerWeightConst.L2D_DEFAULT_LAYER)
 		arg0_49.live2DBtn:SetEnable(true)
 	end)
 
 	if isHalfBodyLive2D(arg0_49.skin.prefab) then
 		setAnchoredPosition(arg0_49.l2dRoot, {
-			y = -37 - (arg0_49.painting.rect.height - arg0_49.l2dRoot.rect.height * 1.5) / 2
+			y = -77 - (arg0_49.painting.rect.height - arg0_49.l2dRoot.rect.height * 1.5) / 2
 		})
 	else
 		setAnchoredPosition(arg0_49.l2dRoot, {
-			y = 0
+			y = -40
 		})
 	end
 
@@ -932,6 +937,7 @@ function var0_0.CreateSpinePainting(arg0_79)
 			}),
 			position = Vector3(0, 0, 0),
 			parent = arg0_79.spinePaintingRoot,
+			offset = pg.ship_skin_template[arg0_79.skin.id].spine_offset_profile,
 			effectParent = arg0_79.spinePaintingBgRoot
 		})
 

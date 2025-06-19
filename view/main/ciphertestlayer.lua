@@ -56,7 +56,6 @@ function var0_0.LoadL2dPainting(arg0_8, arg1_8)
 			configId = var1_8.id,
 			skin_id = arg1_8
 		}),
-		scale = Vector3(52, 52, 52),
 		position = Vector3(0, 0, -1),
 		parent = arg0_8.live2dContainer
 	})

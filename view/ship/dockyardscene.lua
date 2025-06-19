@@ -265,6 +265,7 @@ function var0_0.SwitchContainerDisplay(arg0_27)
 	setActive(arg0_27.sortBtn, not arg0_27.isRemouldOrUpgradeMode and not arg0_27.isPhantomMode)
 	setActive(arg0_27._tf:Find("main/ship_container"), not arg0_27.isPhantomMode)
 	setActive(arg0_27._tf:Find("main/phantom_container"), arg0_27.isPhantomMode)
+	setActive(arg0_27.preferenceBtn, not arg0_27.isPhantomMode)
 	arg0_27:updateBarInfo()
 	setActive(arg0_27.helpPhantom, arg0_27.contextData.mode == var0_0.MODE_SHIP_PHANTOM)
 
@@ -332,8 +333,6 @@ function var0_0.SwitchContainerDisplay(arg0_27)
 
 			arg0_27.scrollPhantoms = {}
 			arg0_27.phantomGroupDic = {}
-
-			setActive(arg0_27.preferenceBtn, false)
 
 			local var3_28 = 0
 
@@ -410,7 +409,6 @@ function var0_0.SwitchContainerDisplay(arg0_27)
 			end
 
 			arg0_27:updateIndexDatas()
-			setActive(arg0_27.preferenceBtn, true)
 			triggerToggle(arg0_27.preferenceBtn, arg0_27.commonTag == Ship.PREFERENCE_TAG_COMMON)
 			arg0_27:initIndexPanel()
 

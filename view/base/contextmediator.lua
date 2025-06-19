@@ -319,7 +319,8 @@ function var0_0.onRegister(arg0_5)
 		arg0_5:addSubLayers(Context.New({
 			mediator = SpWeaponInfoMediator,
 			viewComponent = SpWeaponInfoLayer,
-			data = arg1_36
+			data = arg1_36,
+			onRemoved = arg1_36 and arg1_36.onRemoved or nil
 		}))
 	end)
 	arg0_5:commonBind()
@@ -453,7 +454,8 @@ function var0_0.commonBind(arg0_37)
 			arg0_48:addSubLayers(Context.New({
 				mediator = EquipmentInfoMediator,
 				viewComponent = EquipmentInfoLayer,
-				data = arg2_48
+				data = arg2_48,
+				onRemoved = arg2_48 and arg2_48.onRemoved or nil
 			}))
 		end,
 		[BaseUI.ON_NEW_DROP] = function(arg0_49, arg1_49, arg2_49)

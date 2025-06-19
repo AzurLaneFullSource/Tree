@@ -34,7 +34,7 @@ function var0_0.OnLoad(arg0_3, arg1_3)
 			arg0_3._initTriggerEvent = nil
 		elseif getProxy(PlayerProxy):getFlag("login") then
 			getProxy(PlayerProxy):setFlag("login", nil)
-			arg0_3:PrepareTriggerAction("event_login")
+			arg0_3:TriggerEvent("event_login")
 		end
 
 		arg0_3:InitScalePart()

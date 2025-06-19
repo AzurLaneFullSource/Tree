@@ -21,9 +21,9 @@ function var0_0.Init(arg0_2, arg1_2)
 
 	local var1_2 = Live2D.GenerateData({
 		ship = var0_2,
-		scale = Vector3(52, 52, 52),
 		position = Vector3(0, 0, -100),
-		parent = arg0_2.live2dContainer
+		parent = arg0_2.live2dContainer,
+		offset = var0_2:GetSkinConfig().shop_offset
 	})
 
 	arg0_2.live2dChar = Live2D.New(var1_2, function(arg0_3)

@@ -141,8 +141,10 @@ function var0_0.GetNextPushTime(arg0_19)
 	local var0_19 = pg.activity_ins_template.all
 
 	for iter0_19, iter1_19 in ipairs(var0_19) do
-		if pg.activity_ins_template[iter1_19].is_active == 1 and arg0_19:GetMessageById(iter1_19) == nil then
-			return dueTime, iter1_19
+		local var1_19 = pg.activity_ins_template[iter1_19]
+
+		if var1_19.is_active == 1 and arg0_19:GetMessageById(iter1_19) == nil then
+			return pg.TimeMgr.GetInstance():parseTimeFromConfig(var1_19.time), iter1_19
 		end
 	end
 end

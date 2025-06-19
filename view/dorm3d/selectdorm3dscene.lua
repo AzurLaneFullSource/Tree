@@ -486,7 +486,7 @@ function var0_0.SetMapSwitch(arg0_59)
 
 	if pg.NewGuideMgr.GetInstance():GetCurrentGuideName() == "DORM3D_GUIDE_01" then
 		arg0_59.selectedFloorId = 1
-	else
+	elseif not DORM_LOCK_SELECT_NEW then
 		local var1_59 = pg.dorm3d_set.drom3d_new_room_remind.key_value_int
 
 		if PlayerPrefs.GetInt("DORM_SELECTED_NEW_ROOM_FLOOR" .. var0_59 .. var1_59, 0) == 0 then

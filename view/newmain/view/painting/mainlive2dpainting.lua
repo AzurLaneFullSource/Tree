@@ -30,7 +30,6 @@ function var0_0.OnLoad(arg0_4, arg1_4)
 	local var0_4 = Live2D.GenerateData({
 		loadPrefs = true,
 		ship = arg0_4.ship,
-		scale = Vector3(52, 52, 52),
 		position = Vector3(0, 0, 100),
 		parent = arg0_4.live2dContainer
 	})
