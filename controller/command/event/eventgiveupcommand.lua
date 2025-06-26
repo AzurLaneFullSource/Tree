@@ -3,7 +3,7 @@ local var0_0 = class("EventGiveUpCommand", pm.SimpleCommand)
 function var0_0.execute(arg0_1, arg1_1)
 	local var0_1 = arg1_1:getBody().id
 
-	if getProxy(EventProxy):findInfoById(var0_1):IsActivityType() then
+	if getProxy(EventProxy):getEventInfo(var0_1):IsActivityType() then
 		arg0_1:sendNotification(GAME.ACT_COLLECTION_EVENT_OP, {
 			arg2 = 0,
 			cmd = ActivityConst.COLLETION_EVENT_OP_GIVE_UP,
@@ -26,12 +26,15 @@ end
 function var0_0.OnCancel(arg0_3)
 	pg.TipsMgr.GetInstance():ShowTips(i18n("event_giveup_success"))
 
-	local var0_3, var1_3 = getProxy(EventProxy):findInfoById(arg0_3)
+	local var0_3 = getProxy(EventProxy)
+	local var1_3 = var0_3:getEventInfo(arg0_3)
 
-	var0_3.state = EventInfo.StateNone
+	var1_3.finishTime = 0
+	var1_3.shipIds = {}
 
-	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inEvent")
-	pg.m02:sendNotification(GAME.EVENT_LIST_UPDATE)
+	var0_3:updateInfoList({
+		var1_3
+	})
 end
 
 return var0_0

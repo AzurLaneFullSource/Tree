@@ -29,9 +29,17 @@ function var0_0.register(arg0_1)
 	end
 
 	arg0_1:bind(BaseMiniGameMediator.MINI_GAME_SUCCESS, function(arg0_2, ...)
+		if table.contains(getGameset("live_streaming26_data1")[2], arg0_1.miniGameId) then
+			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildFushunAdventure())
+		end
+
 		arg0_1:OnMiniGameSuccess(...)
 	end)
 	arg0_1:bind(BaseMiniGameMediator.MINI_GAME_FAILURE, function(arg0_3, ...)
+		if table.contains(getGameset("live_streaming26_data1")[2], arg0_1.miniGameId) then
+			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildFushunAdventure())
+		end
+
 		arg0_1:OnMiniGameFailure(...)
 	end)
 	arg0_1:bind(BaseMiniGameMediator.MINI_GAME_OPERATOR, function(arg0_4, ...)

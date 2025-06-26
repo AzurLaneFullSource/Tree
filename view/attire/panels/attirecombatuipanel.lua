@@ -1,16 +1,20 @@
 local var0_0 = class("AttireCombatUIPanel", import(".AttireFramePanel"))
 local var1_0 = setmetatable
 
-local function var2_0(arg0_1)
+local function var2_0(arg0_1, arg1_1)
 	local var0_1 = {}
 
+	var0_1.__cname = "UICARD"
+
 	local function var1_1(arg0_2)
+		pg.DelegateInfo.New(arg0_2)
+
 		arg0_2._go = arg0_1
 		arg0_2.info = findTF(arg0_2._go, "info")
 		arg0_2.empty = findTF(arg0_2._go, "empty")
 		arg0_2.icon = findTF(arg0_2._go, "info/icon")
 		arg0_2.selected = findTF(arg0_2._go, "info/selected")
-		arg0_2.nameTxt = findTF(arg0_2._go, "info/name")
+		arg0_2.nameTxt = findTF(arg0_2._go, "info/nameMask/name")
 		arg0_2.descTxt = findTF(arg0_2._go, "info/desc")
 		arg0_2.conditionTxt = findTF(arg0_2._go, "info/condition")
 		arg0_2.tags = {
@@ -18,50 +22,96 @@ local function var2_0(arg0_1)
 			findTF(arg0_2._go, "info/tags/e")
 		}
 		arg0_2.crossPrint = findTF(arg0_2._go, "prints/odd")
-		arg0_2.own = findTF(arg0_2._go, "info/own")
 		arg0_2.notOwn = findTF(arg0_2._go, "info/notOwn")
+		arg0_2.tipsGo = findTF(arg0_2._go, "info/tips")
+		arg0_2.tipsText = findTF(arg0_2._go, "info/tips/text")
+		arg0_2.toggleItem = findTF(arg0_2._go, "info/elementList/main_toggle")
+		arg0_2.toggleList = UIItemList.New(findTF(arg0_2._go, "info/elementList"), arg0_2.toggleItem)
 
-		setText(arg0_2.own, i18n("word_got"))
-		setText(arg0_2.notOwn, i18n("word_not_get"))
+		arg0_2.toggleList:make(function(arg0_3, arg1_3, arg2_3)
+			if arg0_3 == UIItemList.EventUpdate then
+				local var0_3 = arg0_2.uiStyle:getConfig("rare_display")
+				local var1_3 = var0_3[arg1_3 + 1]
+
+				arg1_1:GetSpriteQuiet("ui/combatskinrare", CombatSkinConst.TYPE_ICON_NAME[var1_3], findTF(arg2_3, "on"))
+				arg1_1:GetSpriteQuiet("ui/combatskinrare", string.format("%s_unselected", CombatSkinConst.TYPE_ICON_NAME[var1_3]), findTF(arg2_3, "off"))
+				onToggle(arg0_2, arg2_3, function(arg0_4)
+					setText(arg0_2.tipsText, i18n("battleui_display" .. var0_3[arg1_3 + 1]))
+
+					local var0_4 = findTF(arg0_2._go, "info"):InverseTransformPoint(arg2_3.transform.position)
+
+					setLocalPosition(arg0_2.tipsGo, var0_4 + Vector3(24, 46, 0))
+					arg0_2:ShowTips(arg0_4)
+				end)
+			end
+		end)
+
+		arg0_2.handle = UpdateBeat:CreateListener(arg0_2.UpdateClick, arg0_2)
+
+		UpdateBeat:AddListener(arg0_2.handle)
 	end
 
-	function var0_1.isEmpty(arg0_3)
-		return not arg0_3.uiStyle or arg0_3.uiStyle.id == -1
+	function var0_1.ShowTips(arg0_5, arg1_5)
+		setActive(arg0_5.tipsGo, arg1_5)
 	end
 
-	function var0_1.Update(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, arg5_4)
-		arg0_4.uiStyle = arg1_4
+	function var0_1.isEmpty(arg0_6)
+		return not arg0_6.uiStyle or arg0_6.uiStyle.id == -1
+	end
 
-		if arg0_4:isEmpty() then
-			setActive(arg0_4.info, false)
-			setActive(arg0_4.empty, true)
+	function var0_1.Update(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7, arg5_7)
+		arg0_7.uiStyle = arg1_7
+
+		if arg0_7:isEmpty() then
+			setActive(arg0_7.info, false)
+			setActive(arg0_7.empty, true)
 
 			return
 		else
-			setActive(arg0_4.info, true)
-			setActive(arg0_4.empty, false)
+			setActive(arg0_7.info, true)
+			setActive(arg0_7.empty, false)
 		end
 
-		LoadImageSpriteAsync("combatuistyle/" .. arg1_4:getConfig("icon"), arg0_4.icon, true)
-		setText(arg0_4.nameTxt, arg1_4:getConfig("name"))
-		setText(arg0_4.descTxt, arg1_4:getConfig("desc"))
-		setText(arg0_4.conditionTxt, arg1_4:getConfig("unlock"))
+		LoadImageSpriteAsync("combatuistyle/" .. arg1_7:getConfig("icon"), arg0_7.icon, true)
+		setScrollText(arg0_7.nameTxt, arg1_7:getConfig("name"))
+		setText(arg0_7.descTxt, arg1_7:getConfig("desc"))
+		setText(arg0_7.conditionTxt, arg1_7:getConfig("unlock"))
 
-		local var0_4 = arg2_4:getAttireByType(arg1_4:getType())
+		local var0_7 = arg2_7:getAttireByType(arg1_7:getType())
 
-		setActive(arg0_4.tags[2], arg1_4:isOwned() and var0_4 == arg1_4.id)
-		setActive(arg0_4.tags[1], arg1_4:isNew())
-		setActive(arg0_4.crossPrint, not arg3_4 and math.fmod(arg4_4 + 1, arg5_4) ~= 0)
-		setActive(arg0_4.own, arg1_4:isOwned())
-		setActive(arg0_4.notOwn, not arg1_4:isOwned())
+		setActive(arg0_7.tags[2], arg1_7:isOwned() and var0_7 == arg1_7.id)
+		setActive(arg0_7.tags[1], arg1_7:isNew())
+		setActive(arg0_7.crossPrint, not arg3_7 and math.fmod(arg4_7 + 1, arg5_7) ~= 0)
+		setActive(arg0_7.notOwn, not arg1_7:isOwned())
+
+		local var1_7 = arg1_7:getConfig("rare")
+
+		arg1_1:GetSpriteQuiet("ui/combatskinrare", string.format("rare_%s", var1_7), findTF(arg0_7._go, "info/rareImage"))
+
+		local var2_7 = arg1_7:getConfig("rare_display")
+
+		arg0_7.toggleList:align(#var2_7)
 	end
 
-	function var0_1.UpdateSelected(arg0_5, arg1_5)
-		setActive(arg0_5.selected, arg1_5)
+	function var0_1.UpdateClick(arg0_8)
+		if UnityEngine.Input.GetMouseButtonDown(0) then
+			arg0_8.toggleList:each(function(arg0_9, arg1_9)
+				GetComponent(arg1_9, typeof(Toggle)).isOn = false
+			end)
+		end
 	end
 
-	function var0_1.IsOwned(arg0_6)
-		return arg0_6.uiStyle:isOwned()
+	function var0_1.Dispose(arg0_10)
+		UpdateBeat:RemoveListener(arg0_10.handle)
+		pg.DelegateInfo.Dispose(arg0_10)
+	end
+
+	function var0_1.UpdateSelected(arg0_11, arg1_11)
+		setActive(arg0_11.selected, arg1_11)
+	end
+
+	function var0_1.IsOwned(arg0_12)
+		return arg0_12.uiStyle:isOwned()
 	end
 
 	var1_1(var0_1)
@@ -69,200 +119,168 @@ local function var2_0(arg0_1)
 	return var0_1
 end
 
-function var0_0.OnInit(arg0_7)
-	arg0_7.listPanel = arg0_7:findTF("list_panel")
-	arg0_7.scolrect = arg0_7:findTF("scrollrect", arg0_7.listPanel):GetComponent("LScrollRect")
-	arg0_7.confirmBtn = arg0_7:findTF("confirm", arg0_7.listPanel)
-	arg0_7.previewBtn = arg0_7:findTF("preview", arg0_7.listPanel)
-	arg0_7.lockBtn = arg0_7:findTF("lock", arg0_7.listPanel)
+function var0_0.OnInit(arg0_13)
+	arg0_13.listPanel = arg0_13:findTF("list_panel")
+	arg0_13.scolrect = arg0_13:findTF("scrollrect", arg0_13.listPanel):GetComponent("LScrollRect")
+	arg0_13.confirmBtn = arg0_13:findTF("confirm", arg0_13.listPanel)
+	arg0_13.previewBtn = arg0_13:findTF("preview", arg0_13.listPanel)
+	arg0_13.lockBtn = arg0_13:findTF("lock", arg0_13.listPanel)
 
-	function arg0_7.scolrect.onInitItem(arg0_8)
-		arg0_7:OnInitItem(arg0_8)
+	function arg0_13.scolrect.onInitItem(arg0_14)
+		arg0_13:OnInitItem(arg0_14)
 	end
 
-	function arg0_7.scolrect.onUpdateItem(arg0_9, arg1_9)
-		arg0_7:OnUpdateItem(arg0_9, arg1_9)
+	function arg0_13.scolrect.onUpdateItem(arg0_15, arg1_15)
+		arg0_13:OnUpdateItem(arg0_15, arg1_15)
 	end
 
-	arg0_7.cards = {}
-	arg0_7.totalCount = arg0_7:findTF("total_count/Text"):GetComponent(typeof(Text))
-	arg0_7.preview = arg0_7:findTF("preview")
-	arg0_7.sea = arg0_7:findTF("preview/sea")
-	arg0_7.rawImage = arg0_7.sea:GetComponent("RawImage")
-	arg0_7.uiLayer = arg0_7:findTF("preview/ui")
+	function arg0_13.scolrect.onReturnItem(arg0_16, arg1_16)
+		arg0_13:OnReturnItem(arg0_16, arg1_16)
+	end
 
-	setText(arg0_7.preview:Find("bg/title/Image"), i18n("word_preview"))
-	setText(arg0_7.confirmBtn:Find("Text"), i18n("attire_combatui_confirm"))
-	setText(arg0_7.previewBtn:Find("Text"), i18n("attire_combatui_preview"))
-	setText(arg0_7.lockBtn:Find("Text"), i18n("index_not_obtained"))
-	setActive(arg0_7.preview, false)
-	setActive(arg0_7.rawImage, false)
-	onButton(arg0_7, arg0_7.preview, function()
-		arg0_7:onBackPressed()
+	arg0_13.cards = {}
+	arg0_13.totalCount = arg0_13:findTF("total_count/Text"):GetComponent(typeof(Text))
+	arg0_13.preview = arg0_13:findTF("preview")
+	arg0_13.sea = arg0_13:findTF("preview/sea")
+	arg0_13.rawImage = arg0_13.sea:GetComponent("RawImage")
+	arg0_13.uiLayer = arg0_13:findTF("preview/ui")
+
+	setText(arg0_13.preview:Find("bg/title/Image"), i18n("word_preview"))
+	setText(arg0_13.confirmBtn:Find("Text"), i18n("attire_combatui_confirm"))
+	setText(arg0_13.previewBtn:Find("Text"), i18n("attire_combatui_preview"))
+	setText(arg0_13.lockBtn:Find("Text"), i18n("index_not_obtained"))
+	setActive(arg0_13.preview, false)
+	setActive(arg0_13.rawImage, false)
+	onButton(arg0_13, arg0_13.preview, function()
+		arg0_13:onBackPressed()
 	end)
+
+	arg0_13.loader = AutoLoader.New()
 end
 
-function var0_0.getUIName(arg0_11)
+function var0_0.getUIName(arg0_18)
 	return "AttireCombatUIUI"
 end
 
-function var0_0.GetData(arg0_12)
-	return arg0_12.rawAttireVOs.combatUIStyles
+function var0_0.GetData(arg0_19)
+	return arg0_19.rawAttireVOs.combatUIStyles
 end
 
-function var0_0.OnInitItem(arg0_13, arg1_13)
-	local var0_13 = var2_0(arg1_13)
+function var0_0.OnInitItem(arg0_20, arg1_20)
+	local var0_20 = var2_0(arg1_20, arg0_20.loader)
 
-	arg0_13.cards[arg1_13] = var0_13
+	arg0_20.cards[arg1_20] = var0_20
 
-	onButton(arg0_13, var0_13._go, function()
-		if not var0_13:isEmpty() then
-			if arg0_13.card then
-				arg0_13.card:UpdateSelected(false)
+	onButton(arg0_20, var0_20._go, function()
+		if not var0_20:isEmpty() then
+			if arg0_20.card then
+				arg0_20.card:UpdateSelected(false)
 			end
 
-			arg0_13.contextData.iconFrameId = var0_13.uiStyle.id
+			arg0_20.contextData.iconFrameId = var0_20.uiStyle.id
 
-			arg0_13:UpdateDesc(var0_13)
-			var0_13:UpdateSelected(true)
+			arg0_20:UpdateDesc(var0_20)
+			var0_20:UpdateSelected(true)
 
-			arg0_13.card = var0_13
+			arg0_20.card = var0_20
 
-			if var0_13:IsOwned() then
-				setActive(arg0_13.confirmBtn, true)
-				setActive(arg0_13.lockBtn, false)
+			if var0_20:IsOwned() then
+				setActive(arg0_20.confirmBtn, true)
+				setActive(arg0_20.lockBtn, false)
 			else
-				setActive(arg0_13.confirmBtn, false)
-				setActive(arg0_13.lockBtn, true)
+				setActive(arg0_20.confirmBtn, false)
+				setActive(arg0_20.lockBtn, true)
 			end
 		end
 	end, SFX_PANEL)
 end
 
-function var0_0.GetColumn(arg0_15)
+function var0_0.OnReturnItem(arg0_22, arg1_22, arg2_22)
+	local var0_22 = arg0_22.cards[arg2_22]
+
+	if var0_22 then
+		var0_22:Dispose()
+	end
+
+	arg0_22.cards[arg2_22] = nil
+end
+
+function var0_0.GetColumn(arg0_23)
 	return 2
 end
 
-function var0_0.OnUpdateItem(arg0_16, arg1_16, arg2_16)
-	var0_0.super.OnUpdateItem(arg0_16, arg1_16, arg2_16)
+function var0_0.OnUpdateItem(arg0_24, arg1_24, arg2_24)
+	var0_0.super.OnUpdateItem(arg0_24, arg1_24, arg2_24)
 
-	local var0_16 = arg0_16.playerVO:getAttireByType(AttireConst.TYPE_COMBAT_UI_STYLE)
-	local var1_16 = arg0_16.cards[arg2_16]
+	local var0_24 = arg0_24.playerVO:getAttireByType(AttireConst.TYPE_COMBAT_UI_STYLE)
+	local var1_24 = arg0_24.cards[arg2_24]
 
-	if var1_16.uiStyle.id == var0_16 then
-		triggerButton(var1_16._go)
+	if var1_24.uiStyle.id == var0_24 then
+		triggerButton(var1_24._go)
 	end
 end
 
-function var0_0.GetDisplayVOs(arg0_17)
-	local var0_17 = {}
-	local var1_17 = 0
+function var0_0.GetDisplayVOs(arg0_25)
+	local var0_25 = {}
+	local var1_25 = 0
 
-	for iter0_17, iter1_17 in pairs(arg0_17:GetData()) do
-		table.insert(var0_17, iter1_17)
+	for iter0_25, iter1_25 in pairs(arg0_25:GetData()) do
+		table.insert(var0_25, iter1_25)
 
-		if iter1_17:getState() == AttireFrame.STATE_UNLOCK and iter1_17.id >= 0 then
-			var1_17 = var1_17 + 1
+		if iter1_25:getState() == AttireFrame.STATE_UNLOCK and iter1_25.id >= 0 then
+			var1_25 = var1_25 + 1
 		end
 	end
 
-	return var0_17, var1_17
+	return var0_25, var1_25
 end
 
-function var0_0.UpdateDesc(arg0_18, arg1_18)
-	if arg1_18:isEmpty() then
+function var0_0.UpdateDesc(arg0_26, arg1_26)
+	if arg1_26:isEmpty() then
 		return
 	end
 
-	onButton(arg0_18, arg0_18.confirmBtn, function()
-		local var0_19 = arg1_18.uiStyle:getType()
+	onButton(arg0_26, arg0_26.confirmBtn, function()
+		local var0_27 = arg1_26.uiStyle:getType()
 
-		arg0_18:emit(AttireMediator.ON_APPLY, var0_19, arg1_18.uiStyle.id)
+		arg0_26:emit(AttireMediator.ON_APPLY, var0_27, arg1_26.uiStyle.id)
 	end, SFX_PANEL)
 
-	local var0_18 = Ship.New({
+	local var0_26 = Ship.New({
 		id = 100001,
 		configId = 100001,
 		skin_id = 100000
 	})
-	local var1_18 = Ship.New({
+	local var1_26 = Ship.New({
 		id = 100011,
 		configId = 100011,
 		skin_id = 100010
 	})
-	local var2_18 = arg1_18.uiStyle:getConfig("key")
+	local var2_26 = arg1_26.uiStyle:getConfig("key")
 
-	onButton(arg0_18, arg0_18.previewBtn, function()
-		local var0_20 = "CombatUI" .. var2_18
-		local var1_20 = "CombatHPBar" .. var2_18
-		local var2_20
-		local var3_20
-		local var4_20
+	onButton(arg0_26, arg0_26.previewBtn, function()
+		arg0_26.combatPreview = CombatPreviewLayer.New(pg.UIMgr.GetInstance().OverlayMain)
 
-		seriesAsync({
-			function(arg0_21)
-				PoolMgr.GetInstance():GetUI(var1_20, true, function(arg0_22)
-					var3_20 = arg0_22
+		arg0_26.combatPreview:ExecuteAction("Show", arg1_26.uiStyle:getConfig("id"), function()
+			arg0_26.combatPreview:Destroy()
 
-					arg0_21()
-				end)
-			end,
-			function(arg0_23)
-				PoolMgr.GetInstance():GetUI(var1_20, true, function(arg0_24)
-					var4_20 = arg0_24
-
-					arg0_23()
-				end)
-			end,
-			function(arg0_25)
-				PoolMgr.GetInstance():GetUI(var0_20, true, function(arg0_26)
-					var2_20 = arg0_26
-
-					arg0_25()
-				end)
-			end
-		}, function()
-			local var0_27 = pg.UIMgr.GetInstance().UIMain
-
-			var2_20.transform:SetParent(arg0_18.uiLayer, false)
-			var3_20.transform:SetParent(arg0_18.uiLayer, false)
-			var4_20.transform:SetParent(arg0_18.uiLayer, false)
-			setActive(arg0_18.preview, true)
-
-			local var1_27 = arg0_18.sea.rect.width
-			local var2_27 = arg0_18.sea.rect.height
-
-			var2_20.transform.localScale = Vector3(var1_27 / 1920, var2_27 / 1080, 1)
-			arg0_18.previewer = CombatUIPreviewer.New(arg0_18.rawImage)
-
-			arg0_18.previewer:setDisplayWeapon({
-				100
-			})
-			arg0_18.previewer:setCombatUI(var2_20, var3_20, var4_20, var2_18)
-			arg0_18.previewer:load(40000, var0_18, var1_18, {}, function()
-				return
-			end)
+			arg0_26.combatPreview = nil
 		end)
 	end, SFX_PANEL)
 end
 
-function var0_0.onBackPressed(arg0_29)
-	if arg0_29.previewer then
-		setActive(arg0_29.preview, false)
-		arg0_29.previewer:clear()
+function var0_0.onBackPressed(arg0_30)
+	if arg0_30.combatPreview then
+		arg0_30.combatPreview:Destroy()
 
-		arg0_29.previewer = nil
+		arg0_30.combatPreview = nil
 
 		return true
 	end
 end
 
-function var0_0.OnDestroy(arg0_30)
-	if arg0_30.previewer then
-		arg0_30.previewer:clear()
-
-		arg0_30.previewer = nil
-	end
+function var0_0.OnDestroy(arg0_31)
+	arg0_31.loader:Clear()
 end
 
 return var0_0

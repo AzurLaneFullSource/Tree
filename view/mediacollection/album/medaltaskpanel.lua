@@ -53,31 +53,33 @@ function var0_0.UpdateList(arg0_8, arg1_8)
 			local var0_9 = arg1_8[arg1_9 + 1]
 			local var1_9 = arg2_9:Find("frame/slider"):GetComponent(typeof(Slider))
 			local var2_9 = arg2_9:Find("frame/progress")
-			local var3_9 = arg2_9:Find("frame/awards")
-			local var4_9 = arg2_9:Find("frame/desc")
-			local var5_9 = arg2_9:Find("frame/get_btn")
-			local var6_9 = arg2_9:Find("frame/got_btn")
-			local var7_9 = arg2_9:Find("frame/go_btn")
+			local var3_9 = arg2_9:Find("frame/progress_1")
+			local var4_9 = arg2_9:Find("frame/awards")
+			local var5_9 = arg2_9:Find("frame/desc")
+			local var6_9 = arg2_9:Find("frame/get_btn")
+			local var7_9 = arg2_9:Find("frame/got_btn")
+			local var8_9 = arg2_9:Find("frame/go_btn")
 
-			setText(var4_9, var0_9:getConfig("desc"))
+			setText(var5_9, var0_9:getConfig("desc"))
 
-			local var8_9, var9_9 = arg0_8:getTaskProgress(var0_9)
-			local var10_9, var11_9 = arg0_8:getTaskTarget(var0_9)
+			local var9_9, var10_9 = arg0_8:getTaskProgress(var0_9)
+			local var11_9, var12_9 = arg0_8:getTaskTarget(var0_9)
 
-			var1_9.value = var8_9 / var10_9
+			var1_9.value = var9_9 / var11_9
 
-			setText(var2_9, var9_9 .. "/" .. var11_9)
+			setText(var2_9, var10_9)
+			setText(var3_9, "/" .. var12_9)
 
-			local var12_9 = var3_9:GetChild(0)
+			local var13_9 = var4_9:GetChild(0)
 
-			arg0_8:updateAwards(var0_9:getConfig("award_display"), var3_9, var12_9)
-			setActive(var6_9, var0_9:getTaskStatus() == 2)
-			setActive(var5_9, var0_9:getTaskStatus() == 1)
-			setActive(var7_9, var0_9:getTaskStatus() == 0)
-			onButton(arg0_8, var7_9, function()
+			arg0_8:updateAwards(var0_9:getConfig("award_display"), var4_9, var13_9)
+			setActive(var7_9, var0_9:getTaskStatus() == 2)
+			setActive(var6_9, var0_9:getTaskStatus() == 1)
+			setActive(var8_9, var0_9:getTaskStatus() == 0)
+			onButton(arg0_8, var8_9, function()
 				arg0_8._parent:emit(MedalAlbumTemplateMediator.ON_TASK_GO, var0_9)
 			end, SFX_PANEL)
-			onButton(arg0_8, var5_9, function()
+			onButton(arg0_8, var6_9, function()
 				arg0_8._parent:emit(MedalAlbumTemplateMediator.ON_TASK_SUBMIT, var0_9)
 			end, SFX_PANEL)
 		end

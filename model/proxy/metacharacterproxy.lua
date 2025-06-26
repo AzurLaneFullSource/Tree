@@ -154,7 +154,7 @@ function var0_0.getRedTag(arg0_8, arg1_8)
 	return var0_8[2] == false and var0_8[1] == true
 end
 
-function var0_0.isHaveVaildMetaProgressVO(arg0_9)
+function var0_0.isHaveValidMetaProgressVO(arg0_9)
 	local var0_9 = arg0_9:getMetaProgressVOList()
 
 	for iter0_9, iter1_9 in ipairs(var0_9) do

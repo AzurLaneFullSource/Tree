@@ -107,7 +107,7 @@ function var0_0.CheckFleetShipState(arg0_11)
 	local var2_11 = {}
 
 	for iter0_11, iter1_11 in ipairs(var1_11) do
-		if iter1_11:ExistInvailShips() or iter1_11:ExistInvaildCommanders() then
+		if iter1_11:ExistInvailShips() or iter1_11:ExistInvalidCommanders() then
 			table.insert(var2_11, iter1_11)
 		end
 	end

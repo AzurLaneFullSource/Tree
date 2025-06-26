@@ -621,6 +621,7 @@ local function var17_0(arg0_29, arg1_29)
 
 	arg0_29._tf.localScale = arg0_29.live2dData.scale
 	arg0_29._tf.localPosition = arg0_29.live2dData.position
+	arg0_29._l2dPosition = arg0_29._tf.position
 	arg0_29.liveCom = arg1_29:GetComponent(typeof(Live2dChar))
 	arg0_29._animator = arg1_29:GetComponent(typeof(Animator))
 	arg0_29.cubismModelCom = arg1_29:GetComponent("Live2D.Cubism.Core.CubismModel")
@@ -763,13 +764,17 @@ function var0_0.SetVisible(arg0_36, arg1_36)
 		end
 
 		arg0_36:setReactPos(false)
-		arg0_36:loadLive2dData()
 
 		arg0_36._animator.speed = 1
 
 		var15_0(arg0_36, true)
+
+		if Live2dConst.GetLive2dDirty(arg0_36.live2dData.ship:getSkinId(), arg0_36.live2dData.ship.id, true) then
+			arg0_36:resetL2dData()
+		end
 	else
 		arg0_36:saveLive2dData()
+		arg0_36:loadLive2dData()
 
 		if arg0_36._stopCallback then
 			arg0_36._stopCallback()
@@ -992,10 +997,9 @@ end
 
 function var0_0.offsetL2dPositonDelay(arg0_53, arg1_53, arg2_53, arg3_53)
 	if arg0_53._tf and LeanTween.isTweening(go(arg0_53._tf)) then
-		return
+		LeanTween.cancel(go(arg0_53._tf))
 	end
 
-	arg0_53._l2dPosition = arg0_53._tf.position
 	arg0_53._tf.position = Vector3(arg0_53._l2dPosition.x + 300, 0, 0)
 	arg0_53._animator.speed = arg2_53
 

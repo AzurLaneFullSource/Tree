@@ -9,7 +9,7 @@ return {
 			bgName = "star_level_bg_650",
 			hidePaintObj = true,
 			say = "Seemingly sensing TB's attempt to gather computing resources, the dense swarm of enemies charged frantically toward the team.",
-			bgm = "battle-ods-onstage",
+			bgm = "battle-DOS-onstage",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

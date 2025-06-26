@@ -118,10 +118,11 @@ end
 
 function var0_0.UpdatePlayerDisplay(arg0_15)
 	local var0_15 = arg0_15.musicPlayer:GetCurrentMusicId()
-	local var1_15 = pg.music_collect_config[var0_15]
-	local var2_15 = MusicCollectionConst.MUSIC_COVER_PATH_PREFIX .. var1_15.cover
+	local var1_15 = pg.music_collect_config[var0_15].album_id
+	local var2_15 = pg.music_album[var1_15].cover
+	local var3_15 = MusicCollectionConst.MUSIC_COVER_PATH_PREFIX .. var2_15
 
-	GetImageSpriteFromAtlasAsync(var2_15, "", arg0_15.rtContainer:Find("icon/face"), false)
+	GetImageSpriteFromAtlasAsync(var3_15, "", arg0_15.rtContainer:Find("icon/face"), false)
 	setActive(arg0_15.rtContainer:Find("LikeBtn/On"), arg0_15.isLike)
 end
 

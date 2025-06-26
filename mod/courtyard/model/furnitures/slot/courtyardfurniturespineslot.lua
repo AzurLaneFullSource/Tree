@@ -23,9 +23,9 @@ function var0_0.OnInit(arg0_1, arg1_1)
 	arg0_1.substituteActions = {}
 	arg0_1.actions = {}
 	arg0_1.loop = false
-	arg0_1.vaild = tobool(arg1_1[3]) and tobool(arg1_1[3][3])
+	arg0_1.valid = tobool(arg1_1[3]) and tobool(arg1_1[3][3])
 
-	if arg0_1.vaild then
+	if arg0_1.valid then
 		arg0_1.actions = arg1_1[3][2]
 
 		local var0_1 = arg1_1[3][3][2] or var1_0
@@ -121,7 +121,7 @@ function var0_0.GetOwnerSubstituteAction(arg0_11, arg1_11)
 end
 
 function var0_0.IsEmpty(arg0_12)
-	return var0_0.super.IsEmpty(arg0_12) and arg0_12.vaild
+	return var0_0.super.IsEmpty(arg0_12) and arg0_12.valid
 end
 
 function var0_0.GetScale(arg0_13)

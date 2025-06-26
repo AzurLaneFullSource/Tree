@@ -11,7 +11,7 @@ return {
 			actorName = "Purity",
 			side = 2,
 			say = "WHOA, WHOA, WHOA, WAIT!",
-			bgm = "battle-ods-onstage",
+			bgm = "battle-DOS-onstage",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

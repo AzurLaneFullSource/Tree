@@ -6,7 +6,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var2_1 = var0_1.callback
 	local var3_1 = var0_1.onConfirm
 	local var4_1 = getProxy(EventProxy)
-	local var5_1 = var4_1:findInfoById(var1_1)
+	local var5_1 = var4_1:getEventInfo(var1_1)
 	local var6_1, var7_1 = var4_1:CanFinishEvent(var5_1)
 
 	if not var6_1 then
@@ -35,7 +35,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			id = var1_1
 		}, 13006, function(arg0_2)
 			if arg0_2.result == 0 then
-				getProxy(EventProxy):findInfoById(var1_1):SavePrevFormation()
+				getProxy(EventProxy):getEventInfo(var1_1):SavePrevFormation()
 				var0_0.OnFinish(var1_1, arg0_2, var3_1)
 
 				if var2_1 then
@@ -61,7 +61,7 @@ function var0_0.OnFinish(arg0_3, arg1_3, arg2_3)
 
 	if arg1_3.exp > 0 then
 		local var3_3 = getProxy(BayProxy)
-		local var4_3 = var0_3:findInfoById(arg0_3).shipIds
+		local var4_3 = var0_3:getEventInfo(arg0_3).shipIds
 
 		for iter0_3, iter1_3 in ipairs(var4_3) do
 			local var5_3 = var3_3:getShipById(iter1_3)
@@ -106,14 +106,17 @@ function var0_0.OnFinish(arg0_3, arg1_3, arg2_3)
 
 	var11_3:updatePlayer(var12_3)
 
-	local var13_3, var14_3 = var0_3:findInfoById(arg0_3)
+	local var13_3 = var0_3:getEventInfo(arg0_3)
+	local var14_3 = {
+		{
+			id = arg0_3
+		}
+	}
 
-	table.remove(var0_3.eventList, var14_3)
 	_.each(arg1_3.new_collection, function(arg0_6)
-		table.insert(var0_3.eventList, EventInfo.New(arg0_6))
+		table.insert(var14_3, EventInfo.New(arg0_6))
 	end)
-	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inEvent")
-	pg.m02:sendNotification(GAME.EVENT_LIST_UPDATE)
+	var0_3:updateInfoList(var14_3)
 	pg.m02:sendNotification(GAME.EVENT_SHOW_AWARDS, {
 		eventId = arg0_3,
 		oldShips = var1_3,

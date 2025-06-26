@@ -135,6 +135,7 @@ function var0_0.didEnter(arg0_7)
 
 					arg0_7.scrollRect.enabled = true
 					arg0_7.selectedItem = nil
+					arg0_7.contextData.selectedEventId = nil
 				end
 
 				arg0_7.contextData.index = iter0_7
@@ -149,7 +150,7 @@ function var0_0.didEnter(arg0_7)
 	triggerToggle(arg0_7.toggles[var0_7], true)
 
 	local function var1_7()
-		if arg0_7.scrollItem.event.state == EventInfo.StateFinish then
+		if arg0_7.scrollItem.event:GetState() == EventInfo.StateFinish then
 			arg0_7.dispatch(EventConst.EVENT_FINISH, arg0_7.scrollItem.event)
 		else
 			arg0_7:easeOut()
@@ -170,471 +171,464 @@ function var0_0.onBackPressed(arg0_14)
 	triggerButton(arg0_14.btnBack)
 end
 
-function var0_0.updateAll(arg0_15, arg1_15, arg2_15, arg3_15)
-	arg0_15.eventProxy = arg1_15
-
-	if arg2_15 then
-		if arg0_15.selectedItem then
-			local var0_15 = arg0_15.selectedItem.event.id
-
-			if arg0_15.eventProxy:findInfoById(var0_15) then
-				arg0_15:updateOne(var0_15)
-			else
-				arg0_15:easeOut()
-			end
-
-			if not arg3_15 then
-				arg0_15.invalide = true
-			end
-		else
-			arg0_15:Flush()
-		end
-
-		arg0_15:updateBtnTip()
-	end
+function var0_0.setEventList(arg0_15, arg1_15)
+	arg0_15.eventList = arg1_15
 end
 
-function var0_0.updateOne(arg0_16, arg1_16)
-	arg0_16.labelShipNums.text = arg0_16.eventProxy.maxFleetNums - arg0_16.eventProxy.busyFleetNums .. "/" .. arg0_16.eventProxy.maxFleetNums
-
-	for iter0_16, iter1_16 in pairs(arg0_16.scrollItems) do
-		if iter1_16.event and iter1_16.event.id == arg1_16 then
-			iter1_16:Flush()
-
-			break
-		end
-	end
-
+function var0_0.updateAll(arg0_16)
 	if arg0_16.selectedItem then
-		if arg0_16.scrollItem.event and arg0_16.scrollItem.event.id == arg1_16 then
-			arg0_16.scrollItem:Flush()
-			arg0_16.scrollItem:UpdateTime()
+		local var0_16 = underscore.detect(arg0_16.eventList, function(arg0_17)
+			return arg0_17.id == arg0_16.selectedItem.event.id
+		end)
+
+		if var0_16 then
+			local var1_16 = getProxy(EventProxy)
+
+			arg0_16.labelShipNums.text = var1_16.maxFleetNums - var1_16:countBusyFleetNums() .. "/" .. var1_16.maxFleetNums
+
+			arg0_16.scrollItem:Update(arg0_16.selectedItem.index, var0_16)
+			arg0_16.detailPanel:Update(arg0_16.selectedItem.index, var0_16)
+		else
+			arg0_16:easeOut()
 		end
 
-		if arg0_16.detailPanel.event and arg0_16.detailPanel.event.id == arg1_16 then
-			arg0_16.detailPanel:Flush()
-		end
+		arg0_16.invalide = true
+	else
+		arg0_16:Flush()
 	end
 
 	arg0_16:updateBtnTip()
 end
 
-function var0_0.Flush(arg0_17, arg1_17)
-	arg1_17 = false
+function var0_0.Flush(arg0_18, arg1_18)
+	arg1_18 = false
 
-	if var2_0[arg0_17.contextData.index] == "urgency" and arg0_17.eventProxy:checkNightEvent() then
-		arg0_17.dispatch(EventConst.EVENT_FLUSH_NIGHT)
+	local var0_18 = getProxy(EventProxy)
+
+	if var0_18:checkZeroHourEvent() then
+		arg0_18.dispatch(EventConst.EVENT_FLUSH_ALL)
+
+		return
+	elseif var2_0[arg0_18.contextData.index] == "urgency" and var0_18:checkNightEvent() then
+		arg0_18.dispatch(EventConst.EVENT_FLUSH_ALL)
 
 		return
 	end
 
-	if not arg1_17 then
-		arg0_17.labelShipNums.text = arg0_17.eventProxy.maxFleetNums - arg0_17.eventProxy.busyFleetNums .. "/" .. arg0_17.eventProxy.maxFleetNums
+	if not arg1_18 then
+		arg0_18.labelShipNums.text = var0_18.maxFleetNums - var0_18:countBusyFleetNums() .. "/" .. var0_18.maxFleetNums
 
-		if arg0_17.eventProxy.selectedEvent then
-			local function var0_17()
-				local var0_18 = arg0_17.eventProxy.selectedEvent.id
-				local var1_18 = 1
-
-				for iter0_18, iter1_18 in ipairs(arg0_17.eventList) do
-					if iter1_18.id == var0_18 then
-						var1_18 = iter0_18
-
-						break
+		if arg0_18.contextData.selectedEventId then
+			pg.UIMgr.GetInstance():LoadingOn()
+			seriesAsync({
+				function(arg0_19)
+					if arg0_18.scrollRect.isStart then
+						arg0_19()
+					else
+						arg0_18.scrollRect.onStart = arg0_19
 					end
-				end
+				end,
+				function(arg0_20)
+					local var0_20 = arg0_18.contextData.selectedEventId
+					local var1_20 = 1
 
-				local var2_18 = arg0_17.scrollRect:HeadIndexToValue(var1_18 - 1)
+					for iter0_20, iter1_20 in ipairs(arg0_18.filterEventList) do
+						if iter1_20.id == var0_20 then
+							var1_20 = iter0_20
 
-				arg0_17.scrollRect:ScrollTo(var2_18)
-
-				for iter2_18, iter3_18 in pairs(arg0_17.scrollItems) do
-					if iter3_18.event and iter3_18.event.id == var0_18 then
-						arg0_17.selectedItem = iter3_18
-
-						arg0_17:showDetail()
-
-						break
+							break
+						end
 					end
+
+					local var2_20 = arg0_18.scrollRect:HeadIndexToValue(var1_20 - 1)
+
+					arg0_18.scrollRect:ScrollTo(var2_20)
+
+					for iter2_20, iter3_20 in pairs(arg0_18.scrollItems) do
+						if iter3_20.event and iter3_20.event.id == var0_20 then
+							arg0_18.selectedItem = iter3_20
+
+							arg0_18:showDetail()
+
+							break
+						end
+					end
+
+					arg0_20()
 				end
-
-				arg0_17.eventProxy.selectedEvent = nil
-
+			}, function()
 				pg.UIMgr.GetInstance():LoadingOff()
-			end
-
-			if arg0_17.scrollRect.isStart then
-				var0_17()
-			else
-				arg0_17.scrollRect.onStart = var0_17
-
-				pg.UIMgr.GetInstance():LoadingOn()
-			end
+			end)
 		end
 	end
 
-	arg0_17:filter()
-	arg0_17.scrollRect:SetTotalCount(#arg0_17.eventList, arg1_17 and 0 or arg0_17.scrollRect.value)
-	setActive(arg0_17.listEmptyTF, #arg0_17.eventList <= 0)
+	arg0_18:filter()
+	arg0_18.scrollRect:SetTotalCount(#arg0_18.filterEventList, arg1_18 and 0 or arg0_18.scrollRect.value)
+	setActive(arg0_18.listEmptyTF, #arg0_18.filterEventList <= 0)
 end
 
-function var0_0.filter(arg0_19)
-	arg0_19.eventList = {}
+function var0_0.filter(arg0_22)
+	arg0_22.filterEventList = {}
 
-	local var0_19 = var1_0[arg0_19.contextData.index]
+	local var0_22 = var1_0[arg0_22.contextData.index]
 
-	for iter0_19, iter1_19 in ipairs(arg0_19.eventProxy.eventList) do
-		for iter2_19, iter3_19 in ipairs(var0_19) do
-			if iter1_19.template.type == iter3_19 then
-				table.insert(arg0_19.eventList, iter1_19)
+	for iter0_22, iter1_22 in ipairs(arg0_22.eventList) do
+		for iter2_22, iter3_22 in ipairs(var0_22) do
+			if iter1_22.template.type == iter3_22 then
+				table.insert(arg0_22.filterEventList, iter1_22)
 
 				break
 			end
 		end
 	end
 
-	arg0_19.eventList = _.sort(arg0_19.eventList, function(arg0_20, arg1_20)
-		local var0_20 = arg0_20:IsActivityType() and 1 or 0
-		local var1_20 = arg1_20:IsActivityType() and 1 or 0
-
-		if var0_20 == var1_20 then
-			if arg0_20.state ~= arg1_20.state then
-				return arg0_20.state > arg1_20.state
-			end
-
-			if arg0_20.template.type == 3 and arg1_20.template.type ~= 3 then
-				return true
-			end
-
-			if arg0_20.template.type ~= 3 and arg1_20.template.type == 3 then
-				return false
-			end
-
-			return arg0_20.id < arg1_20.id
-		else
-			return var1_20 < var0_20
+	table.sort(arg0_22.filterEventList, CompareFuncs({
+		function(arg0_23)
+			return arg0_23:IsActivityType() and 0 or 1
+		end,
+		function(arg0_24)
+			return -arg0_24:GetState()
+		end,
+		function(arg0_25)
+			return arg0_25.template.type == 3 and 0 or 1
+		end,
+		function(arg0_26)
+			return arg0_26.overTime == 0 and 0 or 1
+		end,
+		function(arg0_27)
+			return arg0_27.id
 		end
-	end)
+	}))
 end
 
-function var0_0.onInitItem(arg0_21, arg1_21)
-	local var0_21 = EventListItem.New(arg1_21, arg0_21.dispatch)
+function var0_0.onInitItem(arg0_28, arg1_28)
+	local var0_28 = EventListItem.New(arg1_28, arg0_28.dispatch)
 
-	local function var1_21()
-		if var0_21.event.state == EventInfo.StateFinish then
-			arg0_21.dispatch(EventConst.EVENT_FINISH, var0_21.event)
+	local function var1_28()
+		if var0_28.event:GetState() == EventInfo.StateFinish then
+			arg0_28.dispatch(EventConst.EVENT_FINISH, var0_28.event)
 		else
-			arg0_21:easeIn(var0_21)
+			arg0_28:easeIn(var0_28)
 		end
 	end
 
-	onButton(arg0_21, var0_21.bgNormal, var1_21, SFX_PANEL)
-	onButton(arg0_21, var0_21.bgEmergence, var1_21, SFX_PANEL)
+	onButton(arg0_28, var0_28.bgNormal, var1_28, SFX_PANEL)
+	onButton(arg0_28, var0_28.bgEmergence, var1_28, SFX_PANEL)
 
-	arg0_21.scrollItems[arg1_21] = var0_21
+	arg0_28.scrollItems[arg1_28] = var0_28
 end
 
-function var0_0.onUpdateItem(arg0_23, arg1_23, arg2_23)
-	GetComponent(tf(arg2_23), "CanvasGroup").alpha = 1
+function var0_0.onUpdateItem(arg0_30, arg1_30, arg2_30)
+	GetComponent(tf(arg2_30), "CanvasGroup").alpha = 1
 
-	local var0_23 = arg0_23.scrollItems[arg2_23]
+	local var0_30 = arg0_30.scrollItems[arg2_30]
 
-	if not var0_23 then
-		arg0_23:onInitItem(arg2_23)
+	if not var0_30 then
+		arg0_30:onInitItem(arg2_30)
 
-		var0_23 = arg0_23.scrollItems[arg2_23]
+		var0_30 = arg0_30.scrollItems[arg2_30]
 	end
 
-	local var1_23 = arg0_23.eventList[arg1_23 + 1]
+	local var1_30 = arg0_30.filterEventList[arg1_30 + 1]
 
-	if var1_23 then
-		var0_23:Update(arg1_23, var1_23)
-		var0_23:UpdateTime()
-	end
-end
-
-function var0_0.onReturnItem(arg0_24, arg1_24, arg2_24)
-	if arg0_24.scrollItems and arg0_24.scrollItems[arg2_24] then
-		arg0_24.scrollItems[arg2_24]:Clear()
+	if var1_30 then
+		var0_30:Update(arg1_30, var1_30)
+		var0_30:UpdateTime()
 	end
 end
 
-function var0_0.easeIn(arg0_25, arg1_25)
-	if not arg0_25.easing then
-		arg0_25.easing = true
-		arg0_25.selectedItem = arg1_25
+function var0_0.onReturnItem(arg0_31, arg1_31, arg2_31)
+	if arg0_31.scrollItems and arg0_31.scrollItems[arg2_31] then
+		arg0_31.scrollItems[arg2_31]:Clear()
+	end
+end
 
-		arg0_25:setOpEnabled(false)
-		arg0_25:easeInDetail(function()
-			pg.UIMgr.GetInstance():BlurPanel(arg0_25.blurPanel)
+function var0_0.easeIn(arg0_32, arg1_32)
+	if not arg0_32.easing then
+		arg0_32.easing = true
+		arg0_32.selectedItem = arg1_32
 
-			arg0_25.easing = false
+		arg0_32:setOpEnabled(false)
+		arg0_32:easeInDetail(function()
+			pg.UIMgr.GetInstance():BlurPanel(arg0_32.blurPanel)
 
-			arg0_25:setOpEnabled(true)
+			arg0_32.easing = false
+
+			arg0_32:setOpEnabled(true)
 		end)
 	end
 end
 
-function var0_0.easeOut(arg0_27, arg1_27)
-	if not arg0_27.easing then
-		arg0_27.easing = true
+function var0_0.easeOut(arg0_34, arg1_34)
+	if not arg0_34.easing then
+		arg0_34.easing = true
 
-		arg0_27:setOpEnabled(false)
-		arg0_27:easeOutDetail(function()
-			pg.UIMgr.GetInstance():UnblurPanel(arg0_27.blurPanel, arg0_27._tf)
+		arg0_34:setOpEnabled(false)
+		arg0_34:easeOutDetail(function()
+			pg.UIMgr.GetInstance():UnblurPanel(arg0_34.blurPanel, arg0_34._tf)
 
-			arg0_27.easing = false
-			arg0_27.selectedItem = nil
+			arg0_34.easing = false
+			arg0_34.selectedItem = nil
+			arg0_34.contextData.selectedEventId = nil
 
-			arg0_27:setOpEnabled(true)
+			arg0_34:setOpEnabled(true)
 
-			if arg0_27.invalide then
-				arg0_27.invalide = false
+			if arg0_34.invalide then
+				arg0_34.invalide = false
 
-				arg0_27:Flush()
+				arg0_34:Flush()
 			end
 
-			if arg1_27 then
-				arg1_27()
+			if arg1_34 then
+				arg1_34()
 			end
 		end)
 	end
 end
 
-function var0_0.easeInDetail(arg0_29, arg1_29)
-	local var0_29 = 0.3
-	local var1_29 = 0.3
+function var0_0.easeInDetail(arg0_36, arg1_36)
+	local var0_36 = 0.3
+	local var1_36 = 0.3
 
-	arg0_29.mask.gameObject:SetActive(true)
+	arg0_36.mask.gameObject:SetActive(true)
 
-	arg0_29.scrollRect.enabled = false
+	arg0_36.scrollRect.enabled = false
 
-	local var2_29 = arg0_29.scrollRect.transform
-	local var3_29 = arg0_29.scrollRect.content
-	local var4_29 = var2_29.rect.yMax
-	local var5_29 = var0_29 * math.abs(var4_29 - var3_29.localPosition.y - arg0_29.selectedItem.tr.localPosition.y) / var2_29.rect.height
-	local var6_29 = arg0_29.scrollRect.value
-	local var7_29 = arg0_29.scrollRect:HeadIndexToValue(arg0_29.selectedItem.index)
+	local var2_36 = arg0_36.scrollRect.transform
+	local var3_36 = arg0_36.scrollRect.content
+	local var4_36 = var2_36.rect.yMax
+	local var5_36 = var0_36 * math.abs(var4_36 - var3_36.localPosition.y - arg0_36.selectedItem.tr.localPosition.y) / var2_36.rect.height
+	local var6_36 = arg0_36.scrollRect.value
+	local var7_36 = arg0_36.scrollRect:HeadIndexToValue(arg0_36.selectedItem.index)
 
-	LeanTween.value(var3_29.gameObject, var6_29, var7_29, var5_29):setEase(LeanTweenType.easeInOutCirc):setOnUpdate(System.Action_float(function(arg0_30)
-		arg0_29.scrollRect:SetNormalizedPosition(arg0_30, 1)
+	LeanTween.value(var3_36.gameObject, var6_36, var7_36, var5_36):setEase(LeanTweenType.easeInOutCirc):setOnUpdate(System.Action_float(function(arg0_37)
+		arg0_36.scrollRect:SetNormalizedPosition(arg0_37, 1)
 	end)):setOnComplete(System.Action(function()
-		local var0_31 = arg0_29.scrollItem.tr.localPosition
+		local var0_38 = arg0_36.scrollItem.tr.localPosition
 
-		var0_31.y = var4_29 + var2_29.localPosition.y
-		arg0_29.scrollItem.tr.localPosition = var0_31
+		var0_38.y = var4_36 + var2_36.localPosition.y
+		arg0_36.scrollItem.tr.localPosition = var0_38
 
-		arg0_29.scrollItem.go:SetActive(true)
-		arg0_29.scrollItem:Update(arg0_29.selectedItem.index, arg0_29.selectedItem.event)
-		arg0_29.scrollItem:UpdateTime()
+		arg0_36.scrollItem.go:SetActive(true)
+		arg0_36.scrollItem:Update(arg0_36.selectedItem.index, arg0_36.selectedItem.event)
+		arg0_36.scrollItem:UpdateTime()
 
-		local var1_31 = -347
-		local var2_31 = arg0_29.detailPanel.tr
+		local var1_38 = -347
+		local var2_38 = arg0_36.detailPanel.tr
 
-		var2_31:SetParent(arg0_29.scrollItem:findTF("maskDetail"), true)
+		var2_38:SetParent(arg0_36.scrollItem:findTF("maskDetail"), true)
 
-		var2_31.localPosition = Vector3.zero
+		var2_38.localPosition = Vector3.zero
 
-		arg0_29.detailPanel.go:SetActive(true)
-		arg0_29.detailPanel:Update(arg0_29.selectedItem.index, arg0_29.selectedItem.event)
-		shiftPanel(arg0_29.detailPanel.go, nil, -155, var1_29, 0, true):setEase(LeanTweenType.easeInOutCirc):setOnComplete(System.Action(arg1_29))
+		arg0_36.detailPanel.go:SetActive(true)
+		arg0_36.detailPanel:Update(arg0_36.selectedItem.index, arg0_36.selectedItem.event)
 
-		local var3_31 = var3_29.childCount
-		local var4_31 = 100000
-		local var5_31 = {}
+		arg0_36.contextData.selectedEventId = arg0_36.selectedItem.event.id
 
-		for iter0_31 = 0, var3_31 - 1 do
-			local var6_31 = var3_29:GetChild(iter0_31)
+		shiftPanel(arg0_36.detailPanel.go, nil, -155, var1_36, 0, true):setEase(LeanTweenType.easeInOutCirc):setOnComplete(System.Action(arg1_36))
 
-			if var6_31 == arg0_29.selectedItem.tr then
-				var4_31 = iter0_31
-			elseif var4_31 < iter0_31 then
-				table.insert(var5_31, var6_31)
+		local var3_38 = var3_36.childCount
+		local var4_38 = 100000
+		local var5_38 = {}
+
+		for iter0_38 = 0, var3_38 - 1 do
+			local var6_38 = var3_36:GetChild(iter0_38)
+
+			if var6_38 == arg0_36.selectedItem.tr then
+				var4_38 = iter0_38
+			elseif var4_38 < iter0_38 then
+				table.insert(var5_38, var6_38)
 			end
 		end
 
-		arg0_29.rawLayouts = {}
+		arg0_36.rawLayouts = {}
 
-		for iter1_31, iter2_31 in ipairs(var5_31) do
-			local var7_31 = iter2_31:GetComponent(typeof(LayoutElement))
+		for iter1_38, iter2_38 in ipairs(var5_38) do
+			local var7_38 = iter2_38:GetComponent(typeof(LayoutElement))
 
-			arg0_29.rawLayouts[iter2_31] = var7_31.ignoreLayout
-			var7_31.ignoreLayout = true
+			arg0_36.rawLayouts[iter2_38] = var7_38.ignoreLayout
+			var7_38.ignoreLayout = true
 
-			shiftPanel(iter2_31, nil, iter2_31.localPosition.y + var1_31, var1_29, 0, true):setEase(LeanTweenType.easeInOutCirc)
+			shiftPanel(iter2_38, nil, iter2_38.localPosition.y + var1_38, var1_36, 0, true):setEase(LeanTweenType.easeInOutCirc)
 		end
 	end))
 end
 
-function var0_0.easeOutDetail(arg0_32, arg1_32)
-	local var0_32 = 0.2
-	local var1_32 = 268
-	local var2_32 = arg0_32.scrollRect.content
-	local var3_32 = var2_32.childCount
-	local var4_32 = 100000
-	local var5_32 = {}
+function var0_0.easeOutDetail(arg0_39, arg1_39)
+	local var0_39 = 0.2
+	local var1_39 = 268
+	local var2_39 = arg0_39.scrollRect.content
+	local var3_39 = var2_39.childCount
+	local var4_39 = 100000
+	local var5_39 = {}
 
-	for iter0_32 = 0, var3_32 - 1 do
-		local var6_32 = var2_32:GetChild(iter0_32)
+	for iter0_39 = 0, var3_39 - 1 do
+		local var6_39 = var2_39:GetChild(iter0_39)
 
-		if var6_32 == arg0_32.selectedItem.tr then
-			var4_32 = iter0_32
-		elseif var4_32 < iter0_32 then
-			table.insert(var5_32, var6_32)
+		if var6_39 == arg0_39.selectedItem.tr then
+			var4_39 = iter0_39
+		elseif var4_39 < iter0_39 then
+			table.insert(var5_39, var6_39)
 		end
 	end
 
-	for iter1_32, iter2_32 in ipairs(var5_32) do
-		shiftPanel(iter2_32, nil, iter2_32.localPosition.y + var1_32, var0_32, 0, true):setEase(LeanTweenType.easeInOutCirc)
+	for iter1_39, iter2_39 in ipairs(var5_39) do
+		shiftPanel(iter2_39, nil, iter2_39.localPosition.y + var1_39, var0_39, 0, true):setEase(LeanTweenType.easeInOutCirc)
 	end
 
-	shiftPanel(arg0_32.detailPanel.go, nil, 129, var0_32, 0, true):setEase(LeanTweenType.easeInOutCirc):setOnComplete(System.Action(function()
-		for iter0_33, iter1_33 in ipairs(var5_32) do
-			iter1_33:GetComponent(typeof(LayoutElement)).ignoreLayout = arg0_32.rawLayouts[iter1_33] or false
+	shiftPanel(arg0_39.detailPanel.go, nil, 129, var0_39, 0, true):setEase(LeanTweenType.easeInOutCirc):setOnComplete(System.Action(function()
+		for iter0_40, iter1_40 in ipairs(var5_39) do
+			iter1_40:GetComponent(typeof(LayoutElement)).ignoreLayout = arg0_39.rawLayouts[iter1_40] or false
 		end
 
-		arg0_32.rawLayouts = {}
+		arg0_39.rawLayouts = {}
 
-		arg0_32.mask.gameObject:SetActive(false)
-		arg0_32.scrollItem.go:SetActive(false)
-		arg0_32.detailPanel.go:SetActive(false)
+		arg0_39.mask.gameObject:SetActive(false)
+		arg0_39.scrollItem.go:SetActive(false)
+		arg0_39.detailPanel.go:SetActive(false)
 
-		arg0_32.scrollRect.enabled = true
+		arg0_39.scrollRect.enabled = true
 
-		arg1_32()
+		arg1_39()
 	end))
 end
 
-function var0_0.showDetail(arg0_34)
-	arg0_34.scrollRect.enabled = false
+function var0_0.showDetail(arg0_41)
+	arg0_41.scrollRect.enabled = false
 
-	arg0_34.mask.gameObject:SetActive(true)
+	arg0_41.mask.gameObject:SetActive(true)
 
-	local var0_34 = arg0_34.scrollRect.transform
-	local var1_34 = arg0_34.scrollRect.content
-	local var2_34 = arg0_34.scrollItem.tr.localPosition
+	local var0_41 = arg0_41.scrollRect.transform
+	local var1_41 = arg0_41.scrollRect.content
+	local var2_41 = arg0_41.scrollItem.tr.localPosition
 
-	var2_34.y = var0_34.rect.yMax + var0_34.localPosition.y
-	arg0_34.scrollItem.tr.localPosition = var2_34
+	var2_41.y = var0_41.rect.yMax + var0_41.localPosition.y
+	arg0_41.scrollItem.tr.localPosition = var2_41
 
-	arg0_34.scrollItem.go:SetActive(true)
-	arg0_34.scrollItem:Update(arg0_34.selectedItem.index, arg0_34.selectedItem.event)
-	arg0_34.scrollItem:UpdateTime()
+	arg0_41.scrollItem.go:SetActive(true)
+	arg0_41.scrollItem:Update(arg0_41.selectedItem.index, arg0_41.selectedItem.event)
+	arg0_41.scrollItem:UpdateTime()
 
-	local var3_34 = -347
-	local var4_34 = arg0_34.detailPanel.tr
+	local var3_41 = -347
+	local var4_41 = arg0_41.detailPanel.tr
 
-	var4_34:SetParent(arg0_34.scrollItem:findTF("maskDetail"), true)
+	var4_41:SetParent(arg0_41.scrollItem:findTF("maskDetail"), true)
 
-	var4_34.anchoredPosition = Vector3.New(-1, -155, 0)
+	var4_41.anchoredPosition = Vector3.New(-1, -155, 0)
 
-	arg0_34.detailPanel.go:SetActive(true)
-	arg0_34.detailPanel:Update(arg0_34.selectedItem.index, arg0_34.selectedItem.event)
+	arg0_41.detailPanel.go:SetActive(true)
+	arg0_41.detailPanel:Update(arg0_41.selectedItem.index, arg0_41.selectedItem.event)
 
-	local var5_34 = var1_34.childCount
-	local var6_34 = 100000
+	arg0_41.contextData.selectedEventId = arg0_41.selectedItem.event.id
 
-	arg0_34.rawLayouts = {}
+	local var5_41 = var1_41.childCount
+	local var6_41 = 100000
 
-	for iter0_34 = 0, var5_34 - 1 do
-		local var7_34 = var1_34:GetChild(iter0_34)
-		local var8_34 = var7_34:GetComponent(typeof(LayoutElement))
+	arg0_41.rawLayouts = {}
 
-		if var8_34.ignoreLayout or not var7_34.gameObject.activeSelf then
-			arg0_34.rawLayouts[var7_34] = var8_34.ignoreLayout
-		elseif var7_34 == arg0_34.selectedItem.tr then
-			var6_34 = iter0_34
-		elseif var6_34 < iter0_34 then
-			arg0_34.rawLayouts[var7_34] = var8_34.ignoreLayout
-			var8_34.ignoreLayout = true
-			var7_34.localPosition = var7_34.localPosition + Vector3.New(-1, var3_34, 0)
+	for iter0_41 = 0, var5_41 - 1 do
+		local var7_41 = var1_41:GetChild(iter0_41)
+		local var8_41 = var7_41:GetComponent(typeof(LayoutElement))
+
+		if var8_41.ignoreLayout or not var7_41.gameObject.activeSelf then
+			arg0_41.rawLayouts[var7_41] = var8_41.ignoreLayout
+		elseif var7_41 == arg0_41.selectedItem.tr then
+			var6_41 = iter0_41
+		elseif var6_41 < iter0_41 then
+			arg0_41.rawLayouts[var7_41] = var8_41.ignoreLayout
+			var8_41.ignoreLayout = true
+			var7_41.localPosition = var7_41.localPosition + Vector3.New(-1, var3_41, 0)
 		end
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_34.blurPanel)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_41.blurPanel)
 end
 
-function var0_0.ctimer(arg0_35)
-	local var0_35 = 1
+function var0_0.ctimer(arg0_42)
+	local var0_42 = 1
 
-	arg0_35.timer = Timer.New(function()
-		if arg0_35.selectedItem then
-			arg0_35.scrollItem:UpdateTime()
+	arg0_42.timer = Timer.New(function()
+		if arg0_42.selectedItem then
+			arg0_42.scrollItem:UpdateTime()
 		end
 
-		local var0_36 = pg.TimeMgr.GetInstance():GetServerTime()
-		local var1_36 = false
+		local var0_43 = pg.TimeMgr.GetInstance()
+		local var1_43 = var0_43:GetServerTime()
 
-		for iter0_36, iter1_36 in pairs(arg0_35.scrollItems) do
-			if iter1_36.go.name ~= "-1" then
-				iter1_36:UpdateTime()
+		if var0_43:STimeDescS(var1_43, "%Y/%m/%d") ~= var0_43:STimeDescS(var1_43 - 1, "%Y/%m/%d") then
+			arg0_42.dispatch(EventConst.EVENT_FLUSH_ALL)
 
-				local var2_36 = iter1_36.event:GetCountDownTime()
+			return
+		end
 
-				if var2_36 and var2_36 < 0 then
-					local var3_36, var4_36 = arg0_35.eventProxy:findInfoById(iter1_36.event.id)
+		local var2_43 = false
 
-					table.remove(arg0_35.eventProxy.eventList, var4_36)
+		for iter0_43, iter1_43 in pairs(arg0_42.scrollItems) do
+			if iter1_43.go.name ~= "-1" then
+				iter1_43:UpdateTime()
 
-					var1_36 = true
+				local var3_43 = iter1_43.event:GetCountDownTime()
+
+				if var3_43 and var3_43 < 0 then
+					var2_43 = true
 				end
 			end
 		end
 
-		if var1_36 then
-			arg0_35.dispatch(EventConst.EVENT_LIST_UPDATE)
+		if var2_43 then
+			arg0_42.dispatch(EventConst.EVENT_LIST_UPDATE)
 		end
-	end, var0_35, -1, true)
+	end, var0_42, -1, true)
 
-	arg0_35.timer:Start()
+	arg0_42.timer:Start()
 end
 
-function var0_0.ktimer(arg0_37)
-	if arg0_37.timer then
-		arg0_37.timer:Stop()
+function var0_0.ktimer(arg0_44)
+	if arg0_44.timer then
+		arg0_44.timer:Stop()
 
-		arg0_37.timer = nil
+		arg0_44.timer = nil
 	end
 end
 
-function var0_0.setOpEnabled(arg0_38, arg1_38)
-	_.each(arg0_38.toggles, function(arg0_39)
-		setToggleEnabled(arg0_39, arg1_38)
+function var0_0.setOpEnabled(arg0_45, arg1_45)
+	_.each(arg0_45.toggles, function(arg0_46)
+		setToggleEnabled(arg0_46, arg1_45)
 	end)
-	setButtonEnabled(arg0_38.btnBack, arg1_38)
+	setButtonEnabled(arg0_45.btnBack, arg1_45)
 end
 
-function var0_0.updateBtnTip(arg0_40)
-	local var0_40 = {
+function var0_0.updateBtnTip(arg0_47)
+	local var0_47 = {
 		false,
-		arg0_40.eventProxy:checkNightEvent()
+		getProxy(EventProxy):checkNightEvent()
 	}
 
-	for iter0_40, iter1_40 in ipairs(arg0_40.eventProxy.eventList) do
-		if iter1_40.state == EventInfo.StateFinish then
-			var0_40[iter1_40.template.type] = true
+	for iter0_47, iter1_47 in ipairs(arg0_47.eventList) do
+		if iter1_47:GetState() == EventInfo.StateFinish then
+			var0_47[iter1_47.template.type] = true
 		end
 	end
 
-	for iter2_40, iter3_40 in ipairs(arg0_40.toggles) do
-		setActive(findTF(iter3_40, "tip"), var0_40[iter2_40])
+	for iter2_47, iter3_47 in ipairs(arg0_47.toggles) do
+		setActive(findTF(iter3_47, "tip"), var0_47[iter2_47])
 	end
 end
 
-function var0_0.willExit(arg0_41)
-	if arg0_41.tweens then
-		cancelTweens(arg0_41.tweens)
+function var0_0.willExit(arg0_48)
+	if arg0_48.tweens then
+		cancelTweens(arg0_48.tweens)
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_41.blurPanel, arg0_41._tf)
-	arg0_41:ktimer()
+	pg.UIMgr.GetInstance():UnblurPanel(arg0_48.blurPanel, arg0_48._tf)
+	arg0_48:ktimer()
 
-	for iter0_41, iter1_41 in pairs(arg0_41.scrollItems) do
-		iter1_41:Clear()
+	for iter0_48, iter1_48 in pairs(arg0_48.scrollItems) do
+		iter1_48:Clear()
 	end
 
-	arg0_41.scrollItem:Clear()
-	arg0_41.detailPanel:Clear()
+	arg0_48.scrollItem:Clear()
+	arg0_48.detailPanel:Clear()
 end
 
 return var0_0

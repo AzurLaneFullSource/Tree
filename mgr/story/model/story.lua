@@ -94,7 +94,7 @@ function var0_0.Ctor(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2, arg5_2, arg6_2)
 		local var4_2 = iter3_2.mode or arg0_2.mode
 		local var5_2 = var0_0.GetStoryStepCls(var4_2).New(iter3_2)
 
-		if var5_2:IsVaild(arg6_2) then
+		if var5_2:IsValid(arg6_2) then
 			if var5_2:IsDialogueMode() and arg0_2:IsDialogueStyle2() then
 				var5_2:SetDefaultSide()
 			end

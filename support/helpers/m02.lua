@@ -4312,7 +4312,10 @@ function quickCheckAndPlayAnimator(arg0_296, arg1_296)
 end
 
 function quickPlayAnimation(arg0_297, arg1_297)
-	arg0_297:GetComponent(typeof(Animation)):Play(arg1_297)
+	local var0_297 = arg0_297:GetComponent(typeof(Animation))
+
+	var0_297:Stop()
+	var0_297:Play(arg1_297)
 end
 
 function getSurveyUrl(arg0_298)

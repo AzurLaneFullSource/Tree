@@ -15,7 +15,7 @@ end
 function var0_0.Ctor(arg0_3, arg1_3)
 	arg0_3.configId = arg1_3
 
-	local var0_3 = arg0_3:getConfig("activity_medal_ids")
+	local var0_3 = arg0_3:GetMedalIds()
 
 	arg0_3.medalList = {}
 
@@ -28,33 +28,37 @@ function var0_0.Ctor(arg0_3, arg1_3)
 	end
 end
 
-function var0_0.IsMedalGroupCollectionGrey(arg0_4)
-	player = getProxy(PlayerProxy):getData()
-
-	return not player:getActivityMedalGroup()[arg0_4]
+function var0_0.GetMedalIds(arg0_4)
+	return pg.activity_medal_template.get_id_list_by_group[arg0_4.configId]
 end
 
-function var0_0.GetMedalGroupStateByID(arg0_5)
-	local var0_5 = pg.activity_medal_group[arg0_5]
-	local var1_5 = var0_5.is_out_of_print
+function var0_0.IsMedalGroupCollectionGrey(arg0_5)
+	player = getProxy(PlayerProxy):getData()
 
-	if var1_5 == 1 then
+	return not player:getActivityMedalGroup()[arg0_5]
+end
+
+function var0_0.GetMedalGroupStateByID(arg0_6)
+	local var0_6 = pg.activity_medal_group[arg0_6]
+	local var1_6 = var0_6.is_out_of_print
+
+	if var1_6 == 1 then
 		return var0_0.STATE_EXPIRE
-	elseif var1_5 == 0 then
-		local var2_5 = false
+	elseif var1_6 == 0 then
+		local var2_6 = false
 
-		for iter0_5, iter1_5 in ipairs(var0_5.activity_link) do
-			local var3_5 = iter1_5[2]
-			local var4_5 = getProxy(ActivityProxy):getActivityById(var3_5)
+		for iter0_6, iter1_6 in ipairs(var0_6.activity_link) do
+			local var3_6 = iter1_6[2]
+			local var4_6 = getProxy(ActivityProxy):getActivityById(var3_6)
 
-			if var4_5 and not var4_5:isEnd() then
-				var2_5 = true
+			if var4_6 and not var4_6:isEnd() then
+				var2_6 = true
 
 				break
 			end
 		end
 
-		if var2_5 then
+		if var2_6 then
 			return var0_0.STATE_ACTIVE
 		else
 			return var0_0.STATE_CLOSE
@@ -62,13 +66,13 @@ function var0_0.GetMedalGroupStateByID(arg0_5)
 	end
 end
 
-function var0_0.GetMedalGroupState(arg0_6)
-	local var0_6 = arg0_6:getConfig("is_out_of_print")
+function var0_0.GetMedalGroupState(arg0_7)
+	local var0_7 = arg0_7:getConfig("is_out_of_print")
 
-	if var0_6 == 1 then
+	if var0_7 == 1 then
 		return var0_0.STATE_EXPIRE
-	elseif var0_6 == 0 then
-		if arg0_6:GetMedalGroupActivityConfig() then
+	elseif var0_7 == 0 then
+		if arg0_7:GetMedalGroupActivityConfig() then
 			return var0_0.STATE_ACTIVE
 		else
 			return var0_0.STATE_CLOSE
@@ -76,31 +80,33 @@ function var0_0.GetMedalGroupState(arg0_6)
 	end
 end
 
-function var0_0.GetMedalGroupActivityConfig(arg0_7)
-	for iter0_7, iter1_7 in ipairs(arg0_7:getConfig("activity_link")) do
-		local var0_7 = iter1_7[2]
-		local var1_7 = getProxy(ActivityProxy):getActivityById(var0_7)
+function var0_0.GetMedalGroupActivityConfig(arg0_8)
+	for iter0_8, iter1_8 in ipairs(arg0_8:getConfig("activity_link")) do
+		local var0_8 = iter1_8[2]
+		local var1_8 = getProxy(ActivityProxy):getActivityById(var0_8)
 
-		if var1_7 and not var1_7:isEnd() then
-			return iter1_7
+		if var1_8 and not var1_8:isEnd() then
+			return iter1_8
 		end
 	end
 end
 
-function var0_0.GetMedalList(arg0_8)
-	return arg0_8.medalList
+function var0_0.GetMedalList(arg0_9)
+	return arg0_9.medalList
 end
 
-function var0_0.UpdateMedal(arg0_9, arg1_9, arg2_9)
-	arg0_9.medalList[arg1_9].timeStamp = arg2_9
+function var0_0.UpdateMedal(arg0_10, arg1_10, arg2_10)
+	arg0_10.medalList[arg1_10].timeStamp = arg2_10
 end
 
-function var0_0.GetGroupIDByMedalID(arg0_10)
-	for iter0_10, iter1_10 in pairs(pg.activity_medal_group.all) do
-		if table.contains(iter1_10.activity_medal_ids, arg0_10) then
-			return iter0_10.id
-		end
-	end
+function var0_0.GetAll(arg0_11)
+	return underscore.all(arg0_11:GetMedalIds(), function(arg0_12)
+		return arg0_11.medalList[arg0_12] and arg0_11.medalList[arg0_12].timeStamp and arg0_11.medalList[arg0_12].timeStamp ~= 0
+	end)
+end
+
+function var0_0.GetGroupIDByMedalID(arg0_13)
+	return pg.activity_medal_group[arg0_13].group
 end
 
 return var0_0

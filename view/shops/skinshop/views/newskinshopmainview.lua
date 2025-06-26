@@ -75,6 +75,7 @@ function var0_0.Ctor(arg0_2, arg1_2, arg2_2, arg3_2)
 	arg0_2.dynamicResUnDownaload = arg0_2._tf:Find("overlay/right/toggles/l2d_res_state/undownload")
 	arg0_2.paintingTF = arg0_2._tf:Find("painting/paint")
 	arg0_2.defaultPaintingPosition = arg0_2.paintingTF.anchoredPosition
+	arg0_2.defaultPaintingScale = arg0_2.paintingTF.localScale
 	arg0_2.live2dContainer = arg0_2._tf:Find("painting/paint/live2d")
 	arg0_2.spTF = arg0_2._tf:Find("painting/paint/spinePainting")
 	arg0_2.spBg = arg0_2._tf:Find("painting/paintBg/spinePainting")
@@ -1297,6 +1298,9 @@ function var0_0.AdjustPainting(arg0_98, arg1_98)
 		local var3_98 = var2_98[4]
 
 		var0_98.localScale = Vector3(var3_98, var3_98, 1)
+	else
+		var0_98.anchoredPosition = Vector2(arg0_98.defaultPaintingPosition.x, arg0_98.defaultPaintingPosition.y)
+		var0_98.localScale = arg0_98.defaultPaintingScale
 	end
 end
 

@@ -130,6 +130,7 @@ function var0_0.listNotificationInterests(arg0_21)
 		PlayerProxy.UPDATED,
 		GAME.HARVEST_RES_DONE,
 		GAME.EVENT_LIST_UPDATE,
+		GAME.EVENT_FINISH_UPDATE,
 		GAME.EVENT_SHOW_AWARDS,
 		GAME.CANCEL_LEARN_TACTICS_DONE,
 		GAME.FINISH_TECHNOLOGY_DONE,
@@ -153,7 +154,7 @@ function var0_0.handleNotification(arg0_22, arg1_22)
 		end
 
 		pg.TipsMgr.GetInstance():ShowTips(i18n("commission_get_award", var2_22, var1_22.outPut))
-	elseif var0_22 == GAME.EVENT_LIST_UPDATE then
+	elseif var0_22 == GAME.EVENT_LIST_UPDATE or var0_22 == GAME.EVENT_FINISH_UPDATE then
 		local var3_22 = getProxy(EventProxy)
 
 		arg0_22.viewComponent:OnUpdateEventInfo()

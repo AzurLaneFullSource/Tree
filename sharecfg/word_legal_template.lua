@@ -192,6 +192,9 @@ function temp()
 								}
 							}
 						}
+					},
+					["2"] = {
+						this = true
 					}
 				},
 				["2"] = {
@@ -5190,6 +5193,19 @@ function temp()
 											}
 										}
 									},
+									Z = {
+										e = {
+											n = {
+												k = {
+													e = {
+														r = {
+															this = true
+														}
+													}
+												}
+											}
+										}
+									},
 									N = {
 										a = {
 											k = {
@@ -10015,6 +10031,9 @@ function temp()
 			["1"] = {
 				this = true
 			},
+			["3"] = {
+				this = true
+			},
 			["6"] = {
 				this = true
 			},
@@ -10095,6 +10114,15 @@ function temp()
 			}
 		},
 		e = {
+			n = {
+				k = {
+					e = {
+						r = {
+							this = true
+						}
+					}
+				}
+			},
 			p = {
 				p = {
 					y = {

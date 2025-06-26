@@ -28,9 +28,11 @@ end
 
 function var0_0.GetList(arg0_4)
 	assert(arg0_4.list, "why ???")
-	table.sort(arg0_4.list, function(arg0_5, arg1_5)
-		return arg0_5.state > arg1_5.state
-	end)
+	table.sort(arg0_4.list, CompareFuncs({
+		function(arg0_5)
+			return -arg0_5:GetState()
+		end
+	}))
 
 	return arg0_4.list, 4
 end
@@ -107,7 +109,7 @@ function var0_0.UpdateListItem(arg0_10, arg1_10, arg2_10, arg3_10)
 end
 
 function var0_0.UpdateEventInfo(arg0_11, arg1_11, arg2_11)
-	local var0_11 = arg2_11 and arg2_11.state or EventInfo.StateNone
+	local var0_11 = arg2_11 and arg2_11:GetState() or EventInfo.StateNone
 
 	if var0_11 == EventInfo.StateNone then
 		setText(arg1_11:Find("unlock/name_bg/Text"), i18n("commission_idle"))
@@ -171,7 +173,7 @@ function var0_0.RemoveTimer(arg0_18, arg1_18)
 end
 
 function var0_0.UpdateStyle(arg0_19, arg1_19, arg2_19, arg3_19)
-	local var0_19 = arg3_19 and arg3_19.state or EventInfo.StateNone
+	local var0_19 = arg3_19 and arg3_19:GetState() or EventInfo.StateNone
 	local var1_19 = "icon_1"
 	local var2_19 = "icon_4"
 	local var3_19 = "icon_3"
@@ -227,7 +229,7 @@ function var0_0.OnFinishAll(arg0_22)
 	local var1_22 = 0
 
 	_.each(arg0_22.list, function(arg0_23)
-		if arg0_23.state == EventInfo.StateFinish then
+		if arg0_23:GetState() == EventInfo.StateFinish then
 			table.insert(var0_22, function(arg0_24)
 				arg0_22:emit(CommissionInfoMediator.FINISH_EVENT, arg0_23, var1_22, arg0_24)
 			end)
@@ -239,7 +241,7 @@ function var0_0.OnFinishAll(arg0_22)
 	if var2_22 and not var2_22:isEnd() then
 		local var3_22 = getProxy(EventProxy):GetEventByActivityId(var2_22.id)
 
-		if var3_22 and var3_22.state == EventInfo.StateFinish then
+		if var3_22 and var3_22:GetState() == EventInfo.StateFinish then
 			table.insert(var0_22, function(arg0_25)
 				arg0_22:emit(CommissionInfoMediator.FINISH_EVENT, var3_22, var1_22, arg0_25)
 			end)

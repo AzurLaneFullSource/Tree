@@ -23,7 +23,7 @@ return {
 			}
 		},
 		{
-			bgm = "battle-ods-onstage",
+			bgm = "battle-DOS-onstage",
 			side = 2,
 			bgName = "star_level_bg_650",
 			hidePaintObj = true,
@@ -725,7 +725,7 @@ return {
 			bgName = "star_level_bg_650",
 			hidePaintObj = true,
 			say = "With a sudden blast, a wall up ahead shattered. Amidst the dust, a girl in black rolled out from the breach.",
-			bgm = "battle-ods-onstage",
+			bgm = "battle-DOS-onstage",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

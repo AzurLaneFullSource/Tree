@@ -56,7 +56,6 @@ end
 function var0_0.OnInit(arg0_8)
 	arg0_8.unlockPhase = pg.gameset.battlepass_level.key_value
 	arg0_8.paintingList = {}
-	arg0_8.idx2Painting = {}
 end
 
 function var0_0.Flush(arg0_9, arg1_9)
@@ -106,18 +105,15 @@ function var0_0.UpdateSkinItem(arg0_10, arg1_10, arg2_10)
 	local var5_10 = arg2_10:Find("icon_mask/painting")
 	local var6_10 = var1_10:getConfig("painting")
 
-	if arg0_10.idx2Painting[arg1_10] ~= var6_10 then
-		retPaintingPrefab(var5_10, var6_10, "pifu")
-		setPaintingPrefabAsync(var5_10, var6_10, "pifu", function()
-			setLocalPosition(var5_10, {
-				x = 0,
-				y = 40
-			})
+	retPaintingPrefab(var5_10, var6_10, "pifu")
+	setPaintingPrefabAsync(var5_10, var6_10, "pifu", function()
+		setLocalPosition(var5_10, {
+			x = 0,
+			y = 40
+		})
 
-			arg0_10.paintingList[var6_10] = var5_10
-			arg0_10.idx2Painting[arg1_10] = var6_10
-		end)
-	end
+		arg0_10.paintingList[var6_10] = var5_10
+	end)
 
 	local var7_10 = var0_10:canPurchase()
 

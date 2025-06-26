@@ -209,7 +209,8 @@ pg.pay_data_display = setmetatable({
 		154,
 		155,
 		156,
-		157
+		157,
+		158
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -21160,6 +21161,125 @@ pg.base.pay_data_display = {
 			{
 				2,
 				81424,
+				1
+			}
+		}
+	},
+	[158] = {
+		descrip = "Contains a random character outfit and a large amount of supplies ",
+		name = "Office Cabinet Lucky Box",
+		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
+		type = 1,
+		limit_group = 0,
+		type_order = 2,
+		subject = "Office Cabinet Lucky Box",
+		tip = "",
+		tip_open = 0,
+		id = 158,
+		money = 2999,
+		name_display = "Office Cabinet Lucky Box",
+		tag = 2,
+		akashi_pick = 1,
+		gem = 0,
+		extra_service = 3,
+		show_group = "",
+		limit_type = 2,
+		package_tag_open = 0,
+		package_tag = "",
+		picture = "fudai96",
+		skin_inquire_relation = 86416,
+		id_str = "com.yostaren.azurlane.luckybag61",
+		first_pay_double = 0,
+		extra_gem = 0,
+		limit_arg = 1,
+		airijp_id = "com.yostaren.azurlane.luckybag61",
+		extra_service_item = {
+			{
+				2,
+				86416,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					6,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					7,
+					9
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86416,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81426,
 				1
 			}
 		}

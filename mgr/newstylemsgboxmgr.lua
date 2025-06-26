@@ -143,6 +143,14 @@ function var1_0.DoShow(arg0_7, arg1_7, arg2_7)
 end
 
 function var1_0.Hide(arg0_11, arg1_11)
+	if arg0_11.previewer then
+		arg0_11.previewer:Destroy()
+
+		arg0_11.previewer = nil
+
+		return
+	end
+
 	if not arg0_11._tf then
 		return
 	end
@@ -360,157 +368,187 @@ function var1_0.DisplaySetting(arg0_22, arg1_22, arg2_22)
 					})
 				end, SFX_PANEL)
 			end
+
+			local var12_29 = var0_29.type == DROP_TYPE_COMBAT_UI_STYLE
+			local var13_29 = var1_29:Find("extra_info/combat_skin")
+
+			setActive(var13_29, var12_29)
+			setActive(var1_29:Find("left/placeholder"), var12_29)
+
+			if var12_29 then
+				local var14_29 = var0_0.item_data_battleui[var0_29.id].rare_display
+				local var15_29 = UIItemList.New(var1_29:Find("extra_info/combat_skin/elementList"), var1_29:Find("extra_info/combat_skin/elementList/main"))
+
+				var15_29:make(function(arg0_32, arg1_32, arg2_32)
+					if arg0_32 == UIItemList.EventUpdate then
+						GetImageSpriteFromAtlasAsync("ui/combatskinrare", CombatSkinConst.TYPE_ICON_NAME[var14_29[arg1_32 + 1]], arg2_32:Find("icon"), true)
+						setScrollText(arg2_32:Find("TextMask/Text"), i18n("battleui_display" .. var14_29[arg1_32 + 1]))
+					end
+				end)
+				var15_29:align(#var14_29)
+				onButton(arg0_22, var13_29:Find("play"), function()
+					arg0_22.previewer = CombatPreviewLayer.New(var0_0.UIMgr.GetInstance().OverlayMain)
+
+					arg0_22.previewer:ExecuteAction("Show", var0_29.id, function()
+						arg0_22.previewer:Destroy()
+
+						arg0_22.previewer = nil
+					end)
+				end, SFX_PANEL)
+			end
 		end,
-		[var1_0.TYPE_COMMON_ITEMS] = function(arg0_32)
-			local var0_32 = arg0_22._tf:Find("window/middle")
+		[var1_0.TYPE_COMMON_ITEMS] = function(arg0_35)
+			local var0_35 = arg0_22._tf:Find("window/middle")
 
-			setActive(var0_32:Find("info/Text"), arg0_32.content)
-			setTextInNewStyleBox(var0_32:Find("info/Text"), arg0_32.content or "")
+			setActive(var0_35:Find("info/Text"), arg0_35.content)
+			setTextInNewStyleBox(var0_35:Find("info/Text"), arg0_35.content or "")
 
-			local var1_32 = arg0_32.items
-			local var2_32 = arg0_32.itemFunc
-			local var3_32 = var0_32:Find("scrollview/content")
+			local var1_35 = arg0_35.items
+			local var2_35 = arg0_35.itemFunc
+			local var3_35 = var0_35:Find("scrollview/content")
 
-			UIItemList.StaticAlign(var3_32, var3_32:Find("item"), #var1_32, function(arg0_33, arg1_33, arg2_33)
-				arg1_33 = arg1_33 + 1
+			UIItemList.StaticAlign(var3_35, var3_35:Find("item"), #var1_35, function(arg0_36, arg1_36, arg2_36)
+				arg1_36 = arg1_36 + 1
 
-				if arg0_33 == UIItemList.EventUpdate then
-					local var0_33 = var1_32[arg1_33]
+				if arg0_36 == UIItemList.EventUpdate then
+					local var0_36 = var1_35[arg1_36]
 
-					updateDrop(arg2_33:Find("IconTpl"), var0_33, {
-						anonymous = var0_33.anonymous,
-						hideName = var0_33.hideName
+					updateDrop(arg2_36:Find("IconTpl"), var0_36, {
+						anonymous = var0_36.anonymous,
+						hideName = var0_36.hideName
 					})
 
-					local var1_33 = arg2_33:Find("IconTpl/name")
+					local var1_36 = arg2_36:Find("IconTpl/name")
 
-					setText(var1_33, shortenString(getText(var1_33), 6))
-					setActive(arg2_33:Find("own"), arg0_32.showOwn)
+					setText(var1_36, shortenString(getText(var1_36), 6))
+					setActive(arg2_36:Find("own"), arg0_35.showOwn)
 
-					if arg0_32.showOwn then
-						setText(arg2_33:Find("own/Text"), i18n("equip_skin_detail_count") .. var0_33:getOwnedCount())
+					if arg0_35.showOwn then
+						setText(arg2_36:Find("own/Text"), i18n("equip_skin_detail_count") .. var0_36:getOwnedCount())
 					end
 
-					onButton(arg0_22, arg2_33, function()
-						if var0_33.anonymous then
+					onButton(arg0_22, arg2_36, function()
+						if var0_36.anonymous then
 							return
-						elseif var2_32 then
-							var2_32(var0_33)
+						elseif var2_35 then
+							var2_35(var0_36)
 						end
 					end, SFX_UI_CLICK)
 				end
 			end)
 		end,
-		[var1_0.TYPE_SHIP_PREVIEW] = function(arg0_35)
-			local var0_35 = arg0_22._tf:Find("left_panel")
-			local var1_35 = var0_35:Find("sea"):GetComponent("RawImage")
+		[var1_0.TYPE_SHIP_PREVIEW] = function(arg0_38)
+			local var0_38 = arg0_22._tf:Find("left_panel")
+			local var1_38 = var0_38:Find("sea"):GetComponent("RawImage")
 
-			setActive(var1_35, false)
+			setActive(var1_38, false)
 
-			local var2_35 = GameObject.Find("BarrageCamera"):GetComponent("Camera")
+			local var2_38 = GameObject.Find("BarrageCamera"):GetComponent("Camera")
 
-			var2_35.enabled = true
-			var2_35.targetTexture = var1_35.texture
+			var2_38.enabled = true
+			var2_38.targetTexture = var1_38.texture
 
-			local var3_35 = arg0_22._tf:Find("resources/heal")
+			local var3_38 = arg0_22._tf:Find("resources/heal")
 
-			var3_35.transform.localPosition = Vector3(-360, 50, 40)
+			var3_38.transform.localPosition = Vector3(-360, 50, 40)
 
-			setActive(var3_35, false)
-			var3_35:GetComponent("DftAniEvent"):SetEndEvent(function()
-				setActive(var3_35, false)
-				setText(var3_35:Find("text"), "")
+			setActive(var3_38, false)
+			var3_38:GetComponent("DftAniEvent"):SetEndEvent(function()
+				setActive(var3_38, false)
+				setText(var3_38:Find("text"), "")
 			end)
 
-			local var4_35 = var0_35:Find("bg/loading")
-			local var5_35
+			local var4_38 = var0_38:Find("bg/loading")
+			local var5_38
 
-			onButton(arg0_22, var4_35, function()
-				if not var5_35 then
-					var5_35 = WeaponPreviewer.New(var1_35)
+			onButton(arg0_22, var4_38, function()
+				if not var5_38 then
+					var5_38 = WeaponPreviewer.New(var1_38)
 
-					var5_35:configUI(var3_35)
-					var5_35:setDisplayWeapon(arg0_35.weaponIds, arg0_35.equipSkinId, true)
-					var5_35:load(40000, arg0_35.shipVO, arg0_35.weaponIds, function()
-						setActive(var4_35, false)
+					var5_38:configUI(var3_38)
+					var5_38:setDisplayWeapon(arg0_38.weaponIds, arg0_38.equipSkinId, true)
+					var5_38:load(40000, arg0_38.shipVO, arg0_38.weaponIds, function()
+						setActive(var4_38, false)
 					end)
 				end
 			end)
-			setActive(var4_35, true)
+			setActive(var4_38, true)
 			onButton(arg0_22, arg0_22._tf, function()
-				setActive(var4_35, false)
+				setActive(var4_38, false)
 
-				if var5_35 then
-					var5_35:clear()
+				if var5_38 then
+					var5_38:clear()
 
-					var5_35 = nil
+					var5_38 = nil
 				end
 
 				arg0_22:Hide()
 			end, SFX_PANEL)
 		end,
-		[var1_0.TYPE_COMMON_SHOPPING] = function(arg0_40)
-			local var0_40 = arg0_22._tf:Find("window/middle")
-			local var1_40 = arg0_40.drop
+		[var1_0.TYPE_COMMON_SHOPPING] = function(arg0_43)
+			local var0_43 = arg0_22._tf:Find("window/middle")
+			local var1_43 = arg0_43.drop
 
-			updateDrop(var0_40:Find("IconTpl"), var1_40)
-			setText(var0_40:Find("info/name/Text"), var1_40:getConfig("name"))
-			setText(var0_40:Find("IconTpl/own"), i18n("equip_skin_detail_count") .. var1_40:getOwnedCount())
+			updateDrop(var0_43:Find("IconTpl"), var1_43)
+			setText(var0_43:Find("info/name/Text"), var1_43:getConfig("name"))
+			setText(var0_43:Find("IconTpl/own"), i18n("equip_skin_detail_count") .. var1_43:getOwnedCount())
 
-			local var2_40 = var0_40:Find("info/desc/Text")
+			local var2_43 = var0_43:Find("info/desc/Text")
 
-			arg0_22:InitRichText(var2_40)
+			arg0_22:InitRichText(var2_43)
 
-			local var3_40 = arg0_22._tf:Find("window/bottom/button_container/btn_shopping/price/Text")
-			local var4_40 = arg0_22._tf:Find("window/bottom/count")
-			local var5_40 = PageUtil.New(var4_40:Find("reduce"), var4_40:Find("increase"), var4_40:Find("max"), var4_40:Find("Text"))
-			local var6_40 = arg0_40.price
-			local var7_40 = arg0_40.numUpdate
-			local var8_40 = arg0_40.addNum or 1
-			local var9_40 = arg0_40.maxNum or -1
-			local var10_40 = arg0_40.defaultNum or 1
+			local var3_43 = arg0_22._tf:Find("window/bottom/button_container/btn_shopping/price/Text")
+			local var4_43 = arg0_22._tf:Find("window/bottom/count")
+			local var5_43 = PageUtil.New(var4_43:Find("reduce"), var4_43:Find("increase"), var4_43:Find("max"), var4_43:Find("Text"))
+			local var6_43 = arg0_43.price
+			local var7_43 = arg0_43.numUpdate
+			local var8_43 = arg0_43.addNum or 1
+			local var9_43 = arg0_43.maxNum or -1
+			local var10_43 = arg0_43.defaultNum or 1
 
-			var5_40:setNumUpdate(function(arg0_41)
-				if var7_40 ~= nil then
-					var7_40(var2_40, arg0_41)
+			var5_43:setNumUpdate(function(arg0_44)
+				if var7_43 ~= nil then
+					var7_43(var2_43, arg0_44)
 				end
 
-				setText(var3_40, "x" .. arg0_41 * var6_40)
+				setText(var3_43, "x" .. arg0_44 * var6_43)
 			end)
-			var5_40:setAddNum(var8_40)
-			var5_40:setMaxNum(var9_40)
-			var5_40:setDefaultNum(var10_40)
+			var5_43:setAddNum(var8_43)
+			var5_43:setMaxNum(var9_43)
+			var5_43:setDefaultNum(var10_43)
 		end
 	}, nil, arg2_22)
 end
 
-function var1_0.InitRichText(arg0_42, arg1_42)
-	local var0_42 = arg1_42:GetComponent("RichText")
+function var1_0.InitRichText(arg0_45, arg1_45)
+	local var0_45 = arg1_45:GetComponent("RichText")
 
-	for iter0_42, iter1_42 in pairs(arg0_42.richTextSprites) do
-		var0_42:AddSprite(iter0_42, iter1_42)
+	for iter0_45, iter1_45 in pairs(arg0_45.richTextSprites) do
+		var0_45:AddSprite(iter0_45, iter1_45)
 	end
 end
 
-function var1_0.emit(arg0_43, arg1_43, ...)
-	if not arg0_43.analogyMediator then
-		arg0_43.analogyMediator = {
-			addSubLayers = function(arg0_44, arg1_44)
+function var1_0.emit(arg0_46, arg1_46, ...)
+	if not arg0_46.analogyMediator then
+		arg0_46.analogyMediator = {
+			addSubLayers = function(arg0_47, arg1_47)
 				var0_0.m02:sendNotification(GAME.LOAD_LAYERS, {
 					parentContext = getProxy(ContextProxy):getCurrentContext(),
-					context = arg1_44
+					context = arg1_47
 				})
 			end,
-			sendNotification = function(arg0_45, ...)
+			sendNotification = function(arg0_48, ...)
 				var0_0.m02:sendNotification(...)
 			end,
-			viewComponent = arg0_43
+			viewComponent = arg0_46
 		}
 	end
 
-	return ContextMediator.CommonBindDic[arg1_43](arg0_43.analogyMediator, arg1_43, ...)
+	return ContextMediator.CommonBindDic[arg1_46](arg0_46.analogyMediator, arg1_46, ...)
 end
 
-function var1_0.closeView(arg0_46)
-	arg0_46:hide()
+function var1_0.closeView(arg0_49)
+	arg0_49:hide()
 end
+
+return var1_0

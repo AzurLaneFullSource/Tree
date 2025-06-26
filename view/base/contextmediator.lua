@@ -370,6 +370,14 @@ function var0_0.commonBind(arg0_37)
 						id = arg2_38.cfg.id
 					}
 				}))
+			elseif arg2_38.type == DROP_TYPE_COMBAT_UI_STYLE and not arg2_38.notPlay then
+				arg0_38:addSubLayers(Context.New({
+					mediator = CombatSkinInfoMediator,
+					viewComponent = CombatSkinInfoLayer,
+					data = {
+						skinID = arg2_38:getConfig("id")
+					}
+				}))
 			else
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					type = MSGBOX_TYPE_SINGLE_ITEM,

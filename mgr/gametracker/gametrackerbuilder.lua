@@ -205,4 +205,14 @@ function var0_0.BuildPhantom(arg0_19)
 	}, {})
 end
 
+function var0_0.BuildFushunAdventure()
+	return var3_0(35, {}, {})
+end
+
+function var0_0.BuildAllCollection(arg0_21, arg1_21)
+	return var3_0(arg0_21, {
+		arg1_21
+	}, {})
+end
+
 return var0_0

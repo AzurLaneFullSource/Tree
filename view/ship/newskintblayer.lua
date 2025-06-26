@@ -105,16 +105,6 @@ function var0_0.didEnter(arg0_8)
 
 		arg0_8:showExitTip()
 	end, SFX_CANCEL)
-	onButton(arg0_8, arg0_8.selectPanel, function()
-		arg0_8:closeSelectPanel()
-	end, SFX_PANEL)
-
-	local var0_8 = getProxy(SettingsProxy):GetSetFlagShip()
-
-	onToggle(arg0_8, arg0_8.flagShipToggle, function(arg0_13)
-		arg0_8.flagShipMark = arg0_13
-	end, SFX_PANEL)
-	triggerToggle(arg0_8.flagShipToggle, var0_8)
 	onButton(arg0_8, arg0_8.changeSkinBtn, function()
 		if NewEducateHelper.IsUnlockDefaultShip(NewEducateHelper.GetSecIdBySkinId(arg0_8.contextData.skinId)) then
 			arg0_8.hideExitTip = true
@@ -132,27 +122,27 @@ function var0_0.didEnter(arg0_8)
 	end
 end
 
-function var0_0.willExit(arg0_16)
+function var0_0.willExit(arg0_14)
 	pg.CpkPlayMgr.GetInstance():DisposeCpkMovie()
 
-	if not arg0_16.hideExitTip then
-		local var0_16 = pg.ship_skin_template[arg0_16.contextData.skinId].name
-		local var1_16 = NewEducateHelper.GetShipNameBySecId(arg0_16.contextData.secId)
+	if not arg0_14.hideExitTip then
+		local var0_14 = pg.ship_skin_template[arg0_14.contextData.skinId].name
+		local var1_14 = NewEducateHelper.GetShipNameBySecId(arg0_14.contextData.secId)
 
-		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_newSkinLayer_get", var1_16, var0_16), COLOR_GREEN)
+		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_newSkinLayer_get", var1_14, var0_14), COLOR_GREEN)
 	end
 
-	arg0_16:recyclePainting()
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_16._tf)
-	arg0_16:stopVoice()
+	arg0_14:recyclePainting()
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_14._tf)
+	arg0_14:stopVoice()
 
-	if arg0_16.loadedCVBankName then
-		pg.CriMgr.UnloadCVBank(arg0_16.loadedCVBankName)
+	if arg0_14.loadedCVBankName then
+		pg.CriMgr.UnloadCVBank(arg0_14.loadedCVBankName)
 
-		arg0_16.loadedCVBankName = nil
+		arg0_14.loadedCVBankName = nil
 	end
 
-	arg0_16:closeSelectPanel()
+	arg0_14.selectShipPage:Destroy()
 	cameraPaintViewAdjust(false)
 end
 

@@ -1,26 +1,20 @@
 local var0_0 = class("ActivityBeUpdatedCommand", pm.SimpleCommand)
 
 function var0_0.execute(arg0_1, arg1_1)
-	local var0_1 = arg1_1:getBody()
-	local var1_1 = var0_1.activity
-	local var2_1 = var0_1.isInit
+	local var0_1 = arg1_1:getBody().activity
 
-	if not var2_1 and var1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_BUFF and arg0_1:IsLinkVoteAct(var1_1) then
-		local var3_1 = ActivityPtData.New(var1_1)
+	if var0_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_BUFF and arg0_1:IsLinkVoteAct(var0_1) then
+		local var1_1 = ActivityPtData.New(var0_1)
 
-		if var3_1:CanGetAward() then
-			local var4_1 = var3_1:GetCurrTarget()
+		if var1_1:CanGetAward() then
+			local var2_1 = var1_1:GetCurrTarget()
 
 			arg0_1:sendNotification(GAME.ACT_NEW_PT, {
 				cmd = 4,
-				activity_id = var3_1:GetId(),
-				arg1 = var4_1
+				activity_id = var1_1:GetId(),
+				arg1 = var2_1
 			})
 		end
-	elseif var2_1 and var1_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_COLLECTION_EVENT then
-		local var5_1 = var1_1:GetCollectionList()
-
-		getProxy(EventProxy):AddActivityEvents(var5_1, var1_1.id)
 	end
 end
 

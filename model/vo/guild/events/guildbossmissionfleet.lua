@@ -4,8 +4,8 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.id = arg1_1.fleet_id
 	arg0_1.userShips = {}
 	arg0_1.commanders = {}
-	arg0_1.invaildShips = {}
-	arg0_1.invaildCommanders = {}
+	arg0_1.invalidShips = {}
+	arg0_1.invalidCommanders = {}
 
 	if arg1_1.ships then
 		arg0_1:Flush(arg1_1)
@@ -14,7 +14,7 @@ end
 
 function var0_0.Flush(arg0_2, arg1_2)
 	arg0_2.userShips = {}
-	arg0_2.invaildShips = {}
+	arg0_2.invalidShips = {}
 
 	for iter0_2, iter1_2 in ipairs(arg1_2.ships) do
 		local var0_2 = {
@@ -22,10 +22,10 @@ function var0_0.Flush(arg0_2, arg1_2)
 			id = iter1_2.ship_id
 		}
 
-		if arg0_2:IsVaildShip(var0_2) then
+		if arg0_2:IsValidShip(var0_2) then
 			table.insert(arg0_2.userShips, var0_2)
 		else
-			table.insert(arg0_2.invaildShips, var0_2)
+			table.insert(arg0_2.invalidShips, var0_2)
 		end
 	end
 
@@ -38,7 +38,7 @@ function var0_0.Flush(arg0_2, arg1_2)
 		if var3_2 and iter3_2.pos then
 			var2_2[iter3_2.pos] = var3_2
 		else
-			table.insert(arg0_2.invaildCommanders, iter3_2.id)
+			table.insert(arg0_2.invalidCommanders, iter3_2.id)
 		end
 	end
 
@@ -59,7 +59,7 @@ function var0_0.ExistMember(arg0_4, arg1_4)
 	return var0_4 and var0_4:getMemberById(arg1_4)
 end
 
-function var0_0.IsVaildShip(arg0_5, arg1_5)
+function var0_0.IsValidShip(arg0_5, arg1_5)
 	local function var0_5(arg0_6)
 		local var0_6 = getProxy(GuildProxy):getRawData()
 
@@ -81,12 +81,12 @@ function var0_0.IsVaildShip(arg0_5, arg1_5)
 end
 
 function var0_0.ExistInvailShips(arg0_8)
-	if #arg0_8.invaildShips > 0 then
+	if #arg0_8.invalidShips > 0 then
 		return true
 	end
 
 	if _.any(arg0_8.userShips, function(arg0_9)
-		return not arg0_8:IsVaildShip(arg0_9)
+		return not arg0_8:IsValidShip(arg0_9)
 	end) then
 		return true
 	end
@@ -94,13 +94,13 @@ function var0_0.ExistInvailShips(arg0_8)
 	return false
 end
 
-function var0_0.ClearInvaildShip(arg0_10)
-	arg0_10.invaildShips = {}
+function var0_0.ClearInvalidShip(arg0_10)
+	arg0_10.invalidShips = {}
 
 	for iter0_10 = #arg0_10.userShips, 1, -1 do
 		local var0_10 = arg0_10.userShips[iter0_10]
 
-		if not arg0_10:IsVaildShip(var0_10) then
+		if not arg0_10:IsValidShip(var0_10) then
 			table.remove(arg0_10.userShips, iter0_10)
 		end
 	end
@@ -301,7 +301,7 @@ function var0_0.IsLegal(arg0_27)
 	end
 
 	if var1_27 > 3 or var2_27 > 3 or var3_27 > 3 then
-		return false, i18n("guild_boss_fleet_cnt_invaild")
+		return false, i18n("guild_boss_fleet_cnt_invalid")
 	end
 
 	local var9_27 = var5_27 > 0 and var4_27 > 0
@@ -511,8 +511,8 @@ function var0_0.ExistCommander(arg0_46, arg1_46)
 	return false
 end
 
-function var0_0.ExistInvaildCommanders(arg0_47)
-	if #arg0_47.invaildCommanders > 0 then
+function var0_0.ExistInvalidCommanders(arg0_47)
+	if #arg0_47.invalidCommanders > 0 then
 		return true
 	end
 
@@ -528,7 +528,7 @@ function var0_0.ExistInvaildCommanders(arg0_47)
 	return false
 end
 
-function var0_0.RemoveInvaildCommanders(arg0_48)
+function var0_0.RemoveInvalidCommanders(arg0_48)
 	local var0_48 = arg0_48:getCommanders()
 	local var1_48 = getProxy(CommanderProxy)
 
@@ -538,7 +538,7 @@ function var0_0.RemoveInvaildCommanders(arg0_48)
 		end
 	end
 
-	arg0_48.invaildCommanders = {}
+	arg0_48.invalidCommanders = {}
 end
 
 function var0_0.getCommandersAddition(arg0_49)

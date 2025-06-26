@@ -435,4 +435,20 @@ function var0_0.CheckDeviceRAMEnough()
 	return var0_55 == 0 or var1_55 < var0_55
 end
 
+function var0_0.CheckAllRoomInviteAll(arg0_56)
+	for iter0_56, iter1_56 in ipairs(pg.dorm3d_rooms.all) do
+		if iter1_56 ~= 5 then
+			if not arg0_56.roomData[iter1_56] then
+				return false
+			end
+
+			if not arg0_56.roomData[iter1_56]:isPersonalRoom() and not arg0_56.roomData[iter1_56]:unlockAllInvite() then
+				return false
+			end
+		end
+	end
+
+	return true
+end
+
 return var0_0

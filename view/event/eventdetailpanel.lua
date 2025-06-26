@@ -43,17 +43,24 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	onButton(arg0_1, arg0_1.recommentBtn, function()
 		local var0_5 = getProxy(BayProxy)
 		local var1_5 = var0_5:getDelegationRecommendShips(arg0_1.event)
-		local var2_5 = var0_5:getDelegationRecommendShipsLV1(arg0_1.event)
 
-		if #var1_5 == 0 and #var2_5 > 0 then
-			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("event_recommend_level1"),
-				onYes = function()
-					arg0_1.dispatch(EventConst.EVENT_RECOMMEND_LEVEL1, arg0_1.event)
-				end
-			})
+		if #var1_5 > 0 then
+			table.insertto(arg0_1.event.shipIds, var1_5)
+			arg0_1:Flush()
 		else
-			arg0_1.dispatch(EventConst.EVENT_RECOMMEND, arg0_1.event)
+			local var2_5 = var0_5:getDelegationRecommendShipsLV1(arg0_1.event)
+
+			if #var2_5 > 0 then
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					content = i18n("event_recommend_level1"),
+					onYes = function()
+						table.insertto(arg0_1.event.shipIds, var2_5)
+						arg0_1:Flush()
+					end
+				})
+			elseif not arg0_1.event:reachNum() then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("event_recommend_fail"))
+			end
 		end
 	end)
 	onButton(arg0_1, arg0_1.usePrevFormationBtn, function()
@@ -71,19 +78,47 @@ end
 function var0_0.UsePrevFormation(arg0_9)
 	if arg0_9.event and arg0_9.event:ExistPrevFormation() then
 		local var0_9 = arg0_9.event:GetPrevFormation()
+		local var1_9 = {}
+		local var2_9 = false
+		local var3_9 = false
 
-		arg0_9.dispatch(EventConst.EVEN_USE_PREV_FORMATION, arg0_9.event, var0_9)
+		for iter0_9, iter1_9 in ipairs(getProxy(BayProxy):getShipList(var0_9)) do
+			if iter1_9 then
+				local var4_9, var5_9 = ShipStatus.ShipStatusConflict("inEvent", iter1_9)
+
+				if var4_9 == ShipStatus.STATE_CHANGE_FAIL then
+					var2_9 = true
+				elseif var4_9 == ShipStatus.STATE_CHANGE_CHECK then
+					var3_9 = true
+				else
+					table.insert(var1_9, iter1_9.id)
+				end
+			end
+		end
+
+		if var2_9 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("collect_tip"))
+		end
+
+		if var3_9 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("collect_tip2"))
+		end
+
+		arg0_9.event:setShipIds(var1_9)
+		arg0_9:Flush()
 	end
 end
 
 function var0_0.Flush(arg0_10)
-	setActive(arg0_10.usePrevFormationBtn, arg0_10.event:ExistPrevFormation() and arg0_10.event.state == EventInfo.StateNone and arg0_10.event:CanRecordPrevFormation())
+	setActive(arg0_10.usePrevFormationBtn, arg0_10.event:ExistPrevFormation() and arg0_10.event:GetState() == EventInfo.StateNone and arg0_10.event:CanRecordPrevFormation())
 	eachChild(arg0_10.btn, function(arg0_11)
-		if arg0_10.event.state == EventInfo.StateNone and arg0_11.name == "start" then
+		local var0_11 = arg0_10.event:GetState()
+
+		if var0_11 == EventInfo.StateNone and arg0_11.name == "start" then
 			SetActive(arg0_11, true)
-		elseif arg0_10.event.state == EventInfo.StateActive and arg0_11.name == "giveup" then
+		elseif var0_11 == EventInfo.StateActive and arg0_11.name == "giveup" then
 			SetActive(arg0_11, true)
-		elseif arg0_10.event.state == EventInfo.StateFinish and arg0_11.name == "finish" then
+		elseif var0_11 == EventInfo.StateFinish and arg0_11.name == "finish" then
 			SetActive(arg0_11, true)
 		else
 			SetActive(arg0_11, false)
@@ -96,7 +131,7 @@ function var0_0.Flush(arg0_10)
 
 	SetActive(arg0_10.disabeleBtn, not var0_10 or not var1_10 or not var2_10)
 
-	local var3_10 = arg0_10.event.ships
+	local var3_10 = arg0_10.event:getShipList()
 	local var4_10 = arg0_10.event.template
 	local var5_10 = arg0_10:setConditionStr(i18n("event_condition_ship_level", var4_10.ship_lv), var0_10)
 
@@ -141,7 +176,7 @@ function var0_0.Flush(arg0_10)
 		end
 	end
 
-	if arg0_10.event.state == EventInfo.StateNone then
+	if arg0_10.event:GetState() == EventInfo.StateNone then
 		SetActive(arg0_10.recommentBtn, true)
 		SetActive(arg0_10.recommentDisable, false)
 	else
@@ -159,25 +194,26 @@ function var0_0.Clear(arg0_15)
 end
 
 function var0_0.onChangeClick(arg0_16)
-	if arg0_16.event.state == EventInfo.StateNone then
+	if arg0_16.event:GetState() == EventInfo.StateNone then
 		arg0_16.dispatch(EventConst.EVENT_OPEN_DOCK, arg0_16.event)
 	end
 end
 
 function var0_0.onRemoveClick(arg0_17, arg1_17)
-	if arg0_17.event.state == EventInfo.StateNone then
+	if arg0_17.event:GetState() == EventInfo.StateNone then
 		table.remove(arg0_17.event.shipIds, arg1_17)
-		table.remove(arg0_17.event.ships, arg1_17)
 		arg0_17:Flush()
 	end
 end
 
 function var0_0.onFuncClick(arg0_18)
-	if arg0_18.event.state == EventInfo.StateNone then
+	local var0_18 = arg0_18.event:GetState()
+
+	if var0_18 == EventInfo.StateNone then
 		arg0_18.dispatch(EventConst.EVENT_START, arg0_18.event)
-	elseif arg0_18.event.state == EventInfo.StateActive then
+	elseif var0_18 == EventInfo.StateActive then
 		arg0_18.dispatch(EventConst.EVENT_GIVEUP, arg0_18.event)
-	elseif arg0_18.event.state == EventInfo.StateFinish then
+	elseif var0_18 == EventInfo.StateFinish then
 		arg0_18.dispatch(EventConst.EVENT_FINISH, arg0_18.event)
 	end
 end

@@ -181,4 +181,22 @@ function var0_0.ShowLive2DArm32Tips()
 	pg.TipsMgr:GetInstance():ShowTips(i18n("l2d_32xbanned_warning"))
 end
 
+var0_0.l2d_dirty_data = {}
+
+function var0_0.SetLive2dDirty(arg0_18, arg1_18)
+	var0_0.l2d_dirty_data[arg0_18 .. "_" .. arg1_18] = true
+end
+
+function var0_0.GetLive2dDirty(arg0_19, arg1_19, arg2_19)
+	if var0_0.l2d_dirty_data[arg0_19 .. "_" .. arg1_19] then
+		if arg2_19 then
+			var0_0.l2d_dirty_data[arg0_19 .. "_" .. arg1_19] = false
+		end
+
+		return true
+	end
+
+	return false
+end
+
 return var0_0

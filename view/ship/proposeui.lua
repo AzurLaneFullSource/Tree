@@ -1185,13 +1185,11 @@ end
 
 function var0_0.createLive2D(arg0_108, arg1_108)
 	arg0_108.live2dRequestId = pg.Live2DMgr.GetInstance():GetLive2DModelAsync(arg1_108, function(arg0_109)
-		local var0_109 = arg0_108:findTF("live2d", arg0_108.targetActorTF)
+		local var0_109 = arg0_109.transform
+		local var1_109 = arg0_108:findTF("live2d", arg0_108.targetActorTF)
 
 		UIUtil.SetLayerRecursively(arg0_109, LayerMask.NameToLayer("UI"))
-
-		local var1_109 = arg0_109.transform
-
-		var1_109:SetParent(var0_109, true)
+		var0_109:SetParent(var1_109, true)
 
 		local var2_109
 
@@ -1205,8 +1203,8 @@ function var0_0.createLive2D(arg0_108, arg1_108)
 
 		Live2D.SetL2dSortingLayer(arg0_109, -999)
 
-		var1_109.localPosition = BuildVector3(pg.ship_skin_template[var2_109].live2d_offset) + Vector3(0, 0, 100)
-		var1_109.localScale = Vector3.Scale(Vector3(1, 1, 10), var1_109.localScale)
+		var0_109.localPosition = BuildVector3(pg.ship_skin_template[var2_109].live2d_offset) + Vector3(0, 0, 100)
+		var0_109.localScale = Vector3(65, 65, 520)
 		arg0_108.l2dChar = GetComponent(arg0_109, "Live2dChar")
 		arg0_108.l2dChar.name = arg1_108
 
@@ -1225,11 +1223,11 @@ function var0_0.createLive2D(arg0_108, arg1_108)
 		local var6_109 = var4_109.lip_smoothing
 
 		if var5_109 and var5_109 ~= 0 then
-			var0_109:GetChild(0):GetComponent("CubismCriSrcMouthInput").Gain = var5_109
+			var1_109:GetChild(0):GetComponent("CubismCriSrcMouthInput").Gain = var5_109
 		end
 
 		if var6_109 and var6_109 ~= 0 then
-			var0_109:GetChild(0):GetComponent("CubismCriSrcMouthInput").Smoothing = var6_109
+			var1_109:GetChild(0):GetComponent("CubismCriSrcMouthInput").Smoothing = var6_109
 		end
 	end)
 end

@@ -1,685 +1,117 @@
 pg = pg or {}
 pg.enemy_data_statistics_398 = {
-	[295233] = {
-		cannon = 270,
-		name = "Nagato META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 50,
-		base = 90983,
-		durability_growth = 0,
-		antiaircraft = 211,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 70,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 310000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		fog_fx = "",
-		antisub = 0,
-		id = 295233
-	},
-	[295234] = {
+	[295144] = {
 		cannon = 290,
-		name = "Nagato META",
+		name = "Queen Elizabeth META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
 		dodge = 53,
-		base = 90983,
+		base = 90748,
 		durability_growth = 0,
-		antiaircraft = 226,
+		antiaircraft = 265,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
+		speed = 30,
+		luck = 19,
 		hit = 75,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
 		torpedo = 0,
-		durability = 390000,
+		durability = 420000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		fog_fx = "",
 		antisub = 0,
-		id = 295234
+		fog_fx = "",
+		id = 295144,
+		buff_list = {
+			{
+				ID = 8830,
+				LV = 2
+			},
+			{
+				ID = 50510,
+				LV = 3
+			},
+			{
+				ID = 200380,
+				LV = 1
+			}
+		}
 	},
-	[295235] = {
-		cannon = 309,
-		name = "Nagato META",
+	[295145] = {
+		cannon = 310,
+		name = "Queen Elizabeth META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
 		dodge = 57,
-		base = 90983,
+		base = 90748,
 		durability_growth = 0,
-		antiaircraft = 241,
+		antiaircraft = 283,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
+		speed = 30,
+		luck = 20,
 		hit = 80,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
 		torpedo = 0,
-		durability = 480000,
+		durability = 520000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		fog_fx = "",
 		antisub = 0,
-		id = 295235
+		fog_fx = "",
+		id = 295145,
+		buff_list = {
+			{
+				ID = 8830,
+				LV = 2
+			},
+			{
+				ID = 50510,
+				LV = 4
+			},
+			{
+				ID = 200380,
+				LV = 1
+			}
+		}
 	},
-	[295236] = {
-		cannon = 328,
-		name = "Nagato META",
+	[295146] = {
+		cannon = 329,
+		name = "Queen Elizabeth META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
 		dodge = 60,
-		base = 90983,
-		durability_growth = 0,
-		antiaircraft = 256,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 85,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 600000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		fog_fx = "",
-		antisub = 0,
-		id = 295236
-	},
-	[295237] = {
-		cannon = 348,
-		name = "Nagato META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 64,
-		base = 90983,
-		durability_growth = 0,
-		antiaircraft = 271,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 90,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 760000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		fog_fx = "",
-		antisub = 0,
-		id = 295237
-	},
-	[295238] = {
-		cannon = 367,
-		name = "Nagato META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 67,
-		base = 90983,
-		durability_growth = 0,
-		antiaircraft = 286,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 95,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 950000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		fog_fx = "",
-		antisub = 0,
-		id = 295238
-	},
-	[295239] = {
-		cannon = 386,
-		name = "Nagato META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 71,
-		base = 90983,
+		base = 90748,
 		durability_growth = 0,
 		antiaircraft = 301,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 100,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 1170000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		fog_fx = "",
-		antisub = 0,
-		id = 295239
-	},
-	[295240] = {
-		cannon = 406,
-		name = "Nagato META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 75,
-		base = 90983,
-		durability_growth = 0,
-		antiaircraft = 317,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 110,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 1420000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		fog_fx = "",
-		antisub = 0,
-		id = 295240
-	},
-	[295241] = {
-		cannon = 80,
-		name = "Taihou META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 164,
-		hit_growth = 0,
-		dodge = 25,
-		base = 91025,
-		durability_growth = 0,
-		antiaircraft = 115,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 35,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 54000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295241,
-		buff_list = {
-			{
-				ID = 201171,
-				LV = 1
-			},
-			{
-				ID = 201175,
-				LV = 1
-			}
-		}
-	},
-	[295242] = {
-		cannon = 92,
-		name = "Taihou META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 187,
-		hit_growth = 0,
-		dodge = 28,
-		base = 91025,
-		durability_growth = 0,
-		antiaircraft = 131,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 40,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 58000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295242,
-		buff_list = {
-			{
-				ID = 201171,
-				LV = 2
-			},
-			{
-				ID = 201175,
-				LV = 1
-			}
-		}
-	},
-	[295243] = {
-		cannon = 103,
-		name = "Taihou META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 210,
-		hit_growth = 0,
-		dodge = 32,
-		base = 91025,
-		durability_growth = 0,
-		antiaircraft = 148,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 45,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 62000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295243,
-		buff_list = {
-			{
-				ID = 201171,
-				LV = 3
-			},
-			{
-				ID = 201175,
-				LV = 1
-			}
-		}
-	},
-	[295244] = {
-		cannon = 115,
-		name = "Taihou META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 234,
-		hit_growth = 0,
-		dodge = 35,
-		base = 91025,
-		durability_growth = 0,
-		antiaircraft = 164,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 50,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 75000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295244,
-		buff_list = {
-			{
-				ID = 201171,
-				LV = 4
-			},
-			{
-				ID = 201175,
-				LV = 1
-			}
-		}
-	},
-	[295245] = {
-		cannon = 126,
-		name = "Taihou META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 257,
-		hit_growth = 0,
-		dodge = 39,
-		base = 91025,
-		durability_growth = 0,
-		antiaircraft = 181,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 55,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 118000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295245,
-		buff_list = {
-			{
-				ID = 201171,
-				LV = 5
-			},
-			{
-				ID = 201175,
-				LV = 1
-			}
-		}
-	},
-	[295246] = {
-		cannon = 138,
-		name = "Taihou META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 281,
-		hit_growth = 0,
-		dodge = 42,
-		base = 91025,
-		durability_growth = 0,
-		antiaircraft = 197,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 60,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 162000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295246,
-		buff_list = {
-			{
-				ID = 201171,
-				LV = 6
-			},
-			{
-				ID = 201175,
-				LV = 1
-			}
-		}
-	},
-	[295247] = {
-		cannon = 149,
-		name = "Taihou META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 304,
-		hit_growth = 0,
-		dodge = 46,
-		base = 91025,
-		durability_growth = 0,
-		antiaircraft = 214,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 65,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 248000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295247,
-		buff_list = {
-			{
-				ID = 201171,
-				LV = 7
-			},
-			{
-				ID = 201175,
-				LV = 1
-			}
-		}
-	},
-	[295248] = {
-		cannon = 161,
-		name = "Taihou META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 328,
-		hit_growth = 0,
-		dodge = 50,
-		base = 91025,
-		durability_growth = 0,
-		antiaircraft = 230,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 70,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 335000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295248,
-		buff_list = {
-			{
-				ID = 201171,
-				LV = 8
-			},
-			{
-				ID = 201175,
-				LV = 1
-			}
-		}
-	},
-	[295249] = {
-		cannon = 172,
-		name = "Taihou META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 351,
-		hit_growth = 0,
-		dodge = 53,
-		base = 91025,
-		durability_growth = 0,
-		antiaircraft = 247,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 75,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 421000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295249,
-		buff_list = {
-			{
-				ID = 201171,
-				LV = 9
-			},
-			{
-				ID = 201175,
-				LV = 1
-			}
-		}
-	},
-	[295250] = {
-		cannon = 184,
-		name = "Taihou META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 374,
-		hit_growth = 0,
-		dodge = 57,
-		base = 91025,
-		durability_growth = 0,
-		antiaircraft = 263,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 80,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 518000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295250,
-		buff_list = {
-			{
-				ID = 201171,
-				LV = 10
-			},
-			{
-				ID = 201175,
-				LV = 1
-			}
-		}
-	},
-	[295251] = {
-		cannon = 195,
-		name = "Taihou META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 398,
-		hit_growth = 0,
-		dodge = 60,
-		base = 91025,
-		durability_growth = 0,
-		antiaircraft = 280,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
+		speed = 30,
+		luck = 21,
 		hit = 85,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
 		torpedo = 0,
-		durability = 648000,
+		durability = 650000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
@@ -687,40 +119,44 @@ pg.enemy_data_statistics_398 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295251,
+		id = 295146,
 		buff_list = {
 			{
-				ID = 201171,
-				LV = 11
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 201175,
+				ID = 50510,
+				LV = 4
+			},
+			{
+				ID = 200380,
 				LV = 1
 			}
 		}
 	},
-	[295252] = {
-		cannon = 207,
-		name = "Taihou META",
+	[295147] = {
+		cannon = 348,
+		name = "Queen Elizabeth META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 421,
+		air = 0,
 		hit_growth = 0,
 		dodge = 64,
-		base = 91025,
+		base = 90748,
 		durability_growth = 0,
-		antiaircraft = 296,
+		antiaircraft = 318,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
+		speed = 30,
+		luck = 22,
 		hit = 90,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
 		torpedo = 0,
-		durability = 843000,
+		durability = 840000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
@@ -728,40 +164,44 @@ pg.enemy_data_statistics_398 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295252,
+		id = 295147,
 		buff_list = {
 			{
-				ID = 201171,
-				LV = 12
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 201175,
+				ID = 50510,
+				LV = 4
+			},
+			{
+				ID = 200380,
 				LV = 1
 			}
 		}
 	},
-	[295253] = {
-		cannon = 218,
-		name = "Taihou META",
+	[295148] = {
+		cannon = 368,
+		name = "Queen Elizabeth META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 445,
+		air = 0,
 		hit_growth = 0,
 		dodge = 67,
-		base = 91025,
+		base = 90748,
 		durability_growth = 0,
-		antiaircraft = 313,
+		antiaircraft = 336,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
+		speed = 30,
+		luck = 23,
 		hit = 95,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
 		torpedo = 0,
-		durability = 1081000,
+		durability = 1080000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
@@ -769,34 +209,38 @@ pg.enemy_data_statistics_398 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295253,
+		id = 295148,
 		buff_list = {
 			{
-				ID = 201171,
-				LV = 13
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 201175,
+				ID = 50510,
+				LV = 5
+			},
+			{
+				ID = 200380,
 				LV = 1
 			}
 		}
 	},
-	[295254] = {
-		cannon = 230,
-		name = "Taihou META",
+	[295149] = {
+		cannon = 387,
+		name = "Queen Elizabeth META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 468,
+		air = 0,
 		hit_growth = 0,
 		dodge = 71,
-		base = 91025,
+		base = 90748,
 		durability_growth = 0,
-		antiaircraft = 329,
+		antiaircraft = 354,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
+		speed = 30,
+		luck = 24,
 		hit = 100,
 		antisub_growth = 0,
 		air_growth = 0,
@@ -810,34 +254,38 @@ pg.enemy_data_statistics_398 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295254,
+		id = 295149,
 		buff_list = {
 			{
-				ID = 201171,
-				LV = 14
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 201175,
+				ID = 50510,
+				LV = 5
+			},
+			{
+				ID = 200380,
 				LV = 1
 			}
 		}
 	},
-	[295255] = {
-		cannon = 242,
-		name = "Taihou META",
+	[295150] = {
+		cannon = 407,
+		name = "Queen Elizabeth META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 492,
+		air = 0,
 		hit_growth = 0,
 		dodge = 75,
-		base = 91025,
+		base = 90748,
 		durability_growth = 0,
-		antiaircraft = 346,
+		antiaircraft = 372,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
+		speed = 30,
+		luck = 25,
 		hit = 110,
 		antisub_growth = 0,
 		air_growth = 0,
@@ -851,233 +299,1055 @@ pg.enemy_data_statistics_398 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295255,
+		id = 295150,
 		buff_list = {
 			{
-				ID = 201171,
-				LV = 15
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 201175,
+				ID = 50510,
+				LV = 5
+			},
+			{
+				ID = 200380,
 				LV = 1
 			}
 		}
 	},
-	[295256] = {
-		cannon = 79,
-		name = "Hornet META",
+	[295151] = {
+		cannon = 112,
+		name = "Algérie META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 163,
+		air = 0,
 		hit_growth = 0,
 		dodge = 25,
-		base = 91063,
+		base = 90765,
 		durability_growth = 0,
-		antiaircraft = 116,
+		antiaircraft = 105,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
+		speed = 30,
 		luck = 50,
 		hit = 35,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 43000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		fog_fx = "",
-		antisub = 0,
-		id = 295256
-	},
-	[295257] = {
-		cannon = 90,
-		name = "Hornet META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 186,
-		hit_growth = 0,
-		dodge = 28,
-		base = 91063,
-		durability_growth = 0,
-		antiaircraft = 133,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 40,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 46000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		fog_fx = "",
-		antisub = 0,
-		id = 295257
-	},
-	[295258] = {
-		cannon = 102,
-		name = "Hornet META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 209,
-		hit_growth = 0,
-		dodge = 32,
-		base = 91063,
-		durability_growth = 0,
-		antiaircraft = 150,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 45,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
+		torpedo = 84,
 		durability = 50000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		fog_fx = "",
 		antisub = 0,
-		id = 295258
+		fog_fx = "",
+		id = 295151,
+		buff_list = {
+			{
+				ID = 200462,
+				LV = 1
+			},
+			{
+				ID = 200463,
+				LV = 1
+			},
+			{
+				ID = 200466,
+				LV = 1
+			}
+		}
 	},
-	[295259] = {
-		cannon = 113,
-		name = "Hornet META",
+	[295152] = {
+		cannon = 128,
+		name = "Algérie META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 232,
+		air = 0,
 		hit_growth = 0,
-		dodge = 35,
-		base = 91063,
+		dodge = 28,
+		base = 90765,
 		durability_growth = 0,
-		antiaircraft = 166,
+		antiaircraft = 120,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
+		speed = 30,
+		luck = 50,
+		hit = 40,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 96,
+		durability = 54000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295152,
+		buff_list = {
+			{
+				ID = 200462,
+				LV = 1
+			},
+			{
+				ID = 200463,
+				LV = 2
+			},
+			{
+				ID = 200466,
+				LV = 1
+			}
+		}
+	},
+	[295153] = {
+		cannon = 144,
+		name = "Algérie META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 32,
+		base = 90765,
+		durability_growth = 0,
+		antiaircraft = 135,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 50,
+		hit = 45,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 108,
+		durability = 58000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295153,
+		buff_list = {
+			{
+				ID = 200462,
+				LV = 2
+			},
+			{
+				ID = 200463,
+				LV = 3
+			},
+			{
+				ID = 200466,
+				LV = 1
+			}
+		}
+	},
+	[295154] = {
+		cannon = 160,
+		name = "Algérie META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 35,
+		base = 90765,
+		durability_growth = 0,
+		antiaircraft = 150,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
 		luck = 50,
 		hit = 50,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 60000,
+		torpedo = 120,
+		durability = 70000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		fog_fx = "",
 		antisub = 0,
-		id = 295259
+		fog_fx = "",
+		id = 295154,
+		buff_list = {
+			{
+				ID = 200462,
+				LV = 2
+			},
+			{
+				ID = 200463,
+				LV = 4
+			},
+			{
+				ID = 200466,
+				LV = 2
+			}
+		}
 	},
-	[295260] = {
-		cannon = 124,
-		name = "Hornet META",
+	[295155] = {
+		cannon = 176,
+		name = "Algérie META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 256,
+		air = 0,
 		hit_growth = 0,
 		dodge = 39,
-		base = 91063,
+		base = 90765,
 		durability_growth = 0,
-		antiaircraft = 183,
+		antiaircraft = 165,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
+		speed = 30,
 		luck = 50,
 		hit = 55,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 95000,
+		torpedo = 132,
+		durability = 111000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		fog_fx = "",
 		antisub = 0,
-		id = 295260
+		fog_fx = "",
+		id = 295155,
+		buff_list = {
+			{
+				ID = 200462,
+				LV = 3
+			},
+			{
+				ID = 200463,
+				LV = 5
+			},
+			{
+				ID = 200466,
+				LV = 2
+			}
+		}
 	},
-	[295261] = {
-		cannon = 136,
-		name = "Hornet META",
+	[295156] = {
+		cannon = 192,
+		name = "Algérie META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 279,
+		air = 0,
 		hit_growth = 0,
 		dodge = 42,
-		base = 91063,
+		base = 90765,
 		durability_growth = 0,
-		antiaircraft = 200,
+		antiaircraft = 180,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
+		speed = 30,
 		luck = 50,
 		hit = 60,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 129000,
+		torpedo = 144,
+		durability = 152000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		fog_fx = "",
 		antisub = 0,
-		id = 295261
+		fog_fx = "",
+		id = 295156,
+		buff_list = {
+			{
+				ID = 200462,
+				LV = 3
+			},
+			{
+				ID = 200463,
+				LV = 6
+			},
+			{
+				ID = 200466,
+				LV = 2
+			}
+		}
 	},
-	[295262] = {
-		cannon = 147,
-		name = "Hornet META",
+	[295157] = {
+		cannon = 208,
+		name = "Algérie META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 302,
+		air = 0,
 		hit_growth = 0,
 		dodge = 46,
-		base = 91063,
+		base = 90765,
 		durability_growth = 0,
-		antiaircraft = 216,
+		antiaircraft = 195,
 		reload_growth = 0,
 		dodge_growth = 0,
-		speed = 20,
+		speed = 30,
 		luck = 50,
 		hit = 65,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 198000,
+		torpedo = 156,
+		durability = 233000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		fog_fx = "",
 		antisub = 0,
-		id = 295262
+		fog_fx = "",
+		id = 295157,
+		buff_list = {
+			{
+				ID = 200462,
+				LV = 4
+			},
+			{
+				ID = 200463,
+				LV = 7
+			},
+			{
+				ID = 200466,
+				LV = 3
+			}
+		}
+	},
+	[295158] = {
+		cannon = 224,
+		name = "Algérie META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 50,
+		base = 90765,
+		durability_growth = 0,
+		antiaircraft = 210,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 50,
+		hit = 70,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 168,
+		durability = 314000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295158,
+		buff_list = {
+			{
+				ID = 200462,
+				LV = 4
+			},
+			{
+				ID = 200463,
+				LV = 8
+			},
+			{
+				ID = 200466,
+				LV = 3
+			}
+		}
+	},
+	[295159] = {
+		cannon = 240,
+		name = "Algérie META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 53,
+		base = 90765,
+		durability_growth = 0,
+		antiaircraft = 225,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 50,
+		hit = 75,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 180,
+		durability = 395000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295159,
+		buff_list = {
+			{
+				ID = 200462,
+				LV = 5
+			},
+			{
+				ID = 200463,
+				LV = 9
+			},
+			{
+				ID = 200466,
+				LV = 3
+			}
+		}
+	},
+	[295160] = {
+		cannon = 256,
+		name = "Algérie META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 57,
+		base = 90765,
+		durability_growth = 0,
+		antiaircraft = 240,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 50,
+		hit = 80,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 192,
+		durability = 486000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295160,
+		buff_list = {
+			{
+				ID = 200462,
+				LV = 5
+			},
+			{
+				ID = 200463,
+				LV = 10
+			},
+			{
+				ID = 200466,
+				LV = 4
+			}
+		}
+	},
+	[295161] = {
+		cannon = 272,
+		name = "Algérie META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 60,
+		base = 90765,
+		durability_growth = 0,
+		antiaircraft = 255,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 50,
+		hit = 85,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 204,
+		durability = 608000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295161,
+		buff_list = {
+			{
+				ID = 200462,
+				LV = 6
+			},
+			{
+				ID = 200463,
+				LV = 11
+			},
+			{
+				ID = 200466,
+				LV = 4
+			}
+		}
+	},
+	[295162] = {
+		cannon = 288,
+		name = "Algérie META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 64,
+		base = 90765,
+		durability_growth = 0,
+		antiaircraft = 270,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 50,
+		hit = 90,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 216,
+		durability = 790000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295162,
+		buff_list = {
+			{
+				ID = 200462,
+				LV = 6
+			},
+			{
+				ID = 200463,
+				LV = 12
+			},
+			{
+				ID = 200466,
+				LV = 4
+			}
+		}
+	},
+	[295163] = {
+		cannon = 304,
+		name = "Algérie META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 67,
+		base = 90765,
+		durability_growth = 0,
+		antiaircraft = 285,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 50,
+		hit = 95,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 228,
+		durability = 1013000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295163,
+		buff_list = {
+			{
+				ID = 200462,
+				LV = 7
+			},
+			{
+				ID = 200463,
+				LV = 13
+			},
+			{
+				ID = 200466,
+				LV = 5
+			}
+		}
+	},
+	[295164] = {
+		cannon = 320,
+		name = "Algérie META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 71,
+		base = 90765,
+		durability_growth = 0,
+		antiaircraft = 300,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 50,
+		hit = 100,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 240,
+		durability = 1256000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295164,
+		buff_list = {
+			{
+				ID = 200462,
+				LV = 7
+			},
+			{
+				ID = 200463,
+				LV = 14
+			},
+			{
+				ID = 200466,
+				LV = 5
+			}
+		}
+	},
+	[295165] = {
+		cannon = 336,
+		name = "Algérie META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 75,
+		base = 90765,
+		durability_growth = 0,
+		antiaircraft = 315,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 50,
+		hit = 110,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 252,
+		durability = 1500000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295165,
+		buff_list = {
+			{
+				ID = 200462,
+				LV = 8
+			},
+			{
+				ID = 200463,
+				LV = 15
+			},
+			{
+				ID = 200466,
+				LV = 5
+			}
+		}
+	},
+	[295166] = {
+		cannon = 109,
+		name = "Jintsuu META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 25,
+		base = 90805,
+		durability_growth = 0,
+		antiaircraft = 95,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 40,
+		hit = 35,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 117,
+		durability = 50000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295166,
+		buff_list = {
+			{
+				ID = 200575,
+				LV = 1
+			},
+			{
+				ID = 200577,
+				LV = 1
+			},
+			{
+				ID = 200579,
+				LV = 1
+			}
+		}
+	},
+	[295167] = {
+		cannon = 124,
+		name = "Jintsuu META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 28,
+		base = 90805,
+		durability_growth = 0,
+		antiaircraft = 110,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 40,
+		hit = 40,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 134,
+		durability = 54000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295167,
+		buff_list = {
+			{
+				ID = 200575,
+				LV = 1
+			},
+			{
+				ID = 200577,
+				LV = 1
+			},
+			{
+				ID = 200579,
+				LV = 1
+			}
+		}
+	},
+	[295168] = {
+		cannon = 140,
+		name = "Jintsuu META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 32,
+		base = 90805,
+		durability_growth = 0,
+		antiaircraft = 125,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 40,
+		hit = 45,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 150,
+		durability = 58000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295168,
+		buff_list = {
+			{
+				ID = 200575,
+				LV = 1
+			},
+			{
+				ID = 200577,
+				LV = 1
+			},
+			{
+				ID = 200579,
+				LV = 1
+			}
+		}
+	},
+	[295169] = {
+		cannon = 156,
+		name = "Jintsuu META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 35,
+		base = 90805,
+		durability_growth = 0,
+		antiaircraft = 140,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 40,
+		hit = 50,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 167,
+		durability = 70000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295169,
+		buff_list = {
+			{
+				ID = 200575,
+				LV = 1
+			},
+			{
+				ID = 200577,
+				LV = 1
+			},
+			{
+				ID = 200579,
+				LV = 1
+			}
+		}
+	},
+	[295170] = {
+		cannon = 171,
+		name = "Jintsuu META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 39,
+		base = 90805,
+		durability_growth = 0,
+		antiaircraft = 155,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 40,
+		hit = 55,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 184,
+		durability = 110000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295170,
+		buff_list = {
+			{
+				ID = 200575,
+				LV = 1
+			},
+			{
+				ID = 200577,
+				LV = 1
+			},
+			{
+				ID = 200579,
+				LV = 1
+			}
+		}
+	},
+	[295171] = {
+		cannon = 187,
+		name = "Jintsuu META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 42,
+		base = 90805,
+		durability_growth = 0,
+		antiaircraft = 170,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 40,
+		hit = 60,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 201,
+		durability = 150000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295171,
+		buff_list = {
+			{
+				ID = 200575,
+				LV = 1
+			},
+			{
+				ID = 200577,
+				LV = 1
+			},
+			{
+				ID = 200579,
+				LV = 1
+			}
+		}
+	},
+	[295172] = {
+		cannon = 203,
+		name = "Jintsuu META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 46,
+		base = 90805,
+		durability_growth = 0,
+		antiaircraft = 185,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 40,
+		hit = 65,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 217,
+		durability = 230000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295172,
+		buff_list = {
+			{
+				ID = 200575,
+				LV = 1
+			},
+			{
+				ID = 200577,
+				LV = 1
+			},
+			{
+				ID = 200579,
+				LV = 1
+			}
+		}
+	},
+	[295173] = {
+		cannon = 218,
+		name = "Jintsuu META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 50,
+		base = 90805,
+		durability_growth = 0,
+		antiaircraft = 200,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 40,
+		hit = 70,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 234,
+		durability = 310000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295173,
+		buff_list = {
+			{
+				ID = 200575,
+				LV = 1
+			},
+			{
+				ID = 200577,
+				LV = 1
+			},
+			{
+				ID = 200579,
+				LV = 1
+			}
+		}
 	}
 }

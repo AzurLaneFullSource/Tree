@@ -139,7 +139,7 @@ function var0_0.getComfortable(arg0_12, arg1_12)
 		end
 	end
 
-	local var6_12 = var0_12 + (arg0_12.level - 1) * 10
+	local var6_12 = var0_12 + arg0_12:getConfig("comfortable")
 
 	if arg0_12:isUnlockFloor(2) then
 		var6_12 = var6_12 + var0_0.DORM_2_FLOOR_COMFORTABLE_ADDITION
@@ -192,7 +192,7 @@ function var0_0.levelUp(arg0_22)
 	arg0_22.configId = arg0_22.configId + 1
 	arg0_22.id = arg0_22.configId
 	arg0_22.level = arg0_22.configId
-	arg0_22.comfortable = (arg0_22.level - 1) * 10
+	arg0_22.comfortable = arg0_22:getConfig("comfortable")
 end
 
 function var0_0.consumeFood(arg0_23, arg1_23)

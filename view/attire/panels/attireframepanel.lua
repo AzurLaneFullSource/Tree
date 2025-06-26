@@ -133,6 +133,10 @@ function var0_0.OnInit(arg0_15)
 		arg0_15:OnUpdateItem(arg0_17, arg1_17)
 	end
 
+	function arg0_15.scolrect.onReturnItem(arg0_18, arg1_18)
+		arg0_15:OnReturnItem(arg0_18, arg1_18)
+	end
+
 	arg0_15.cards = {}
 
 	local var0_15 = arg0_15:findTF("desc_panel")
@@ -141,122 +145,126 @@ function var0_0.OnInit(arg0_15)
 	arg0_15.totalCount = arg0_15:findTF("total_count/Text"):GetComponent(typeof(Text))
 end
 
-function var0_0.OnInitItem(arg0_18, arg1_18)
+function var0_0.OnInitItem(arg0_19, arg1_19)
 	assert(false)
 end
 
-function var0_0.OnUpdateItem(arg0_19, arg1_19, arg2_19)
-	local var0_19 = arg0_19.cards[arg2_19]
+function var0_0.OnUpdateItem(arg0_20, arg1_20, arg2_20)
+	local var0_20 = arg0_20.cards[arg2_20]
 
-	if not var0_19 then
-		arg0_19:OnInitItem(arg2_19)
+	if not var0_20 then
+		arg0_20:OnInitItem(arg2_20)
 
-		var0_19 = arg0_19.cards[arg2_19]
+		var0_20 = arg0_20.cards[arg2_20]
 	end
 
-	local var1_19 = arg0_19.displayVOs[arg1_19 + 1]
-	local var2_19 = arg0_19.scolrect.content:GetComponent(typeof(GridLayoutGroup))
-	local var3_19 = arg1_19 < var2_19.constraintCount
+	local var1_20 = arg0_20.displayVOs[arg1_20 + 1]
+	local var2_20 = arg0_20.scolrect.content:GetComponent(typeof(GridLayoutGroup))
+	local var3_20 = arg1_20 < var2_20.constraintCount
 
-	var0_19:Update(var1_19, arg0_19.playerVO, var3_19, arg1_19, var2_19.constraintCount)
+	var0_20:Update(var1_20, arg0_20.playerVO, var3_20, arg1_20, var2_20.constraintCount)
 end
 
-function var0_0.Update(arg0_20, arg1_20, arg2_20)
-	arg0_20.playerVO = arg2_20
-	arg0_20.rawAttireVOs = arg1_20
-
-	local var0_20, var1_20 = arg0_20:GetDisplayVOs()
-
-	arg0_20.displayVOs = var0_20
-
-	arg0_20:Filter()
-
-	arg0_20.totalCount.text = var1_20
+function var0_0.OnReturnItem(arg0_21, arg1_21, arg2_21)
+	return
 end
 
-function var0_0.GetDisplayVOs(arg0_21)
-	local var0_21 = {}
-	local var1_21 = 0
+function var0_0.Update(arg0_22, arg1_22, arg2_22)
+	arg0_22.playerVO = arg2_22
+	arg0_22.rawAttireVOs = arg1_22
 
-	for iter0_21, iter1_21 in pairs(arg0_21:GetData()) do
-		table.insert(var0_21, iter1_21)
+	local var0_22, var1_22 = arg0_22:GetDisplayVOs()
 
-		if iter1_21:getState() == AttireFrame.STATE_UNLOCK and iter1_21.id > 0 then
-			var1_21 = var1_21 + 1
+	arg0_22.displayVOs = var0_22
+
+	arg0_22:Filter()
+
+	arg0_22.totalCount.text = var1_22
+end
+
+function var0_0.GetDisplayVOs(arg0_23)
+	local var0_23 = {}
+	local var1_23 = 0
+
+	for iter0_23, iter1_23 in pairs(arg0_23:GetData()) do
+		table.insert(var0_23, iter1_23)
+
+		if iter1_23:getState() == AttireFrame.STATE_UNLOCK and iter1_23.id > 0 then
+			var1_23 = var1_23 + 1
 		end
 	end
 
-	return var0_21, var1_21
+	return var0_23, var1_23
 end
 
-function var0_0.Filter(arg0_22)
-	if #arg0_22.displayVOs == 0 then
+function var0_0.Filter(arg0_24)
+	if #arg0_24.displayVOs == 0 then
 		return
 	end
 
-	local var0_22 = arg0_22.playerVO:getAttireByType(arg0_22.displayVOs[1]:getType())
+	local var0_24 = arg0_24.playerVO:getAttireByType(arg0_24.displayVOs[1]:getType())
 
-	table.sort(arg0_22.displayVOs, function(arg0_23, arg1_23)
-		local var0_23 = var0_22 == arg0_23.id and 1 or 0
-		local var1_23 = var0_22 == arg1_23.id and 1 or 0
+	table.sort(arg0_24.displayVOs, function(arg0_25, arg1_25)
+		local var0_25 = var0_24 == arg0_25.id and 1 or 0
+		local var1_25 = var0_24 == arg1_25.id and 1 or 0
 
-		if var0_23 == 1 then
+		if var0_25 == 1 then
 			return true
-		elseif var1_23 == 1 then
+		elseif var1_25 == 1 then
 			return false
 		end
 
-		local var2_23 = arg0_23:getState()
-		local var3_23 = arg1_23:getState()
+		local var2_25 = arg0_25:getState()
+		local var3_25 = arg1_25:getState()
 
-		if var2_23 == var3_23 then
-			return arg0_23.id < arg1_23.id
+		if var2_25 == var3_25 then
+			return arg0_25.id < arg1_25.id
 		else
-			return var3_23 < var2_23
+			return var3_25 < var2_25
 		end
 	end)
 
-	local var1_22 = arg0_22.scolrect.content:GetComponent(typeof(GridLayoutGroup)).constraintCount
-	local var2_22 = var1_22 - #arg0_22.displayVOs % var1_22
+	local var1_24 = arg0_24.scolrect.content:GetComponent(typeof(GridLayoutGroup)).constraintCount
+	local var2_24 = var1_24 - #arg0_24.displayVOs % var1_24
 
-	if var2_22 == var1_22 then
-		var2_22 = 0
+	if var2_24 == var1_24 then
+		var2_24 = 0
 	end
 
-	local var3_22 = var1_22 * arg0_22:GetColumn()
+	local var3_24 = var1_24 * arg0_24:GetColumn()
 
-	if var3_22 > #arg0_22.displayVOs then
-		var2_22 = var3_22 - #arg0_22.displayVOs
+	if var3_24 > #arg0_24.displayVOs then
+		var2_24 = var3_24 - #arg0_24.displayVOs
 	end
 
-	for iter0_22 = 1, var2_22 do
-		table.insert(arg0_22.displayVOs, {
+	for iter0_24 = 1, var2_24 do
+		table.insert(arg0_24.displayVOs, {
 			id = -1
 		})
 	end
 
-	arg0_22.scolrect:SetTotalCount(#arg0_22.displayVOs, 0)
+	arg0_24.scolrect:SetTotalCount(#arg0_24.displayVOs, 0)
 end
 
-function var0_0.UpdateDesc(arg0_24, arg1_24)
-	if arg1_24:isEmpty() then
+function var0_0.UpdateDesc(arg0_26, arg1_26)
+	if arg1_26:isEmpty() then
 		return
 	end
 
-	if not arg0_24.descPanel then
-		arg0_24.descPanel = AttireDescPanel.New(arg0_24.descPanelTF)
+	if not arg0_26.descPanel then
+		arg0_26.descPanel = AttireDescPanel.New(arg0_26.descPanelTF)
 	end
 
-	arg0_24.descPanel:Update(arg1_24.attireFrame, arg0_24.playerVO)
-	onButton(arg0_24, arg0_24.descPanel.applyBtn, function()
-		local var0_25 = arg1_24.attireFrame:getType()
+	arg0_26.descPanel:Update(arg1_26.attireFrame, arg0_26.playerVO)
+	onButton(arg0_26, arg0_26.descPanel.applyBtn, function()
+		local var0_27 = arg1_26.attireFrame:getType()
 
-		arg0_24:emit(AttireMediator.ON_APPLY, var0_25, arg1_24.attireFrame.id)
+		arg0_26:emit(AttireMediator.ON_APPLY, var0_27, arg1_26.attireFrame.id)
 	end, SFX_PANEL)
 end
 
-function var0_0.OnDestroy(arg0_26)
-	arg0_26.descPanel:Dispose()
+function var0_0.OnDestroy(arg0_28)
+	arg0_28.descPanel:Dispose()
 end
 
 return var0_0
