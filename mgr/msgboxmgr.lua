@@ -313,24 +313,29 @@ local function var8_0(arg0_16, arg1_16)
 	SetActive(arg0_16._sigleItemPanel:Find("ship_group"), false)
 	SetActive(arg0_16._singleItemshipTypeTF, false)
 	SetActive(arg0_16._sigleItemPanel:Find("left/detail"), false)
+	setActive(arg0_16._sigleItemPanel:Find("combat_skin"), false)
 
-	local var0_16 = arg0_16.singleItemIntro
+	local var0_16 = arg0_16._sigleItemPanel:Find("display_panel"):GetComponent(typeof(RectTransform))
 
-	SetActive(var0_16, true)
-	setText(var0_16, arg1_16.content or "")
+	var0_16.sizeDelta = Vector2(var0_16.sizeDelta.x, -114.5)
 
-	local var1_16 = arg0_16._sigleItemPanel:Find("left/IconTpl")
+	local var1_16 = arg0_16.singleItemIntro
 
-	setText(var1_16:Find("icon_bg/count"), "")
-	SetActive(var1_16:Find("icon_bg/startpl"), false)
-	SetCompomentEnabled(var1_16:Find("icon_bg"), typeof(Image), not arg1_16.hideIconBG)
-	SetCompomentEnabled(var1_16:Find("icon_bg/frame"), typeof(Image), not arg1_16.hideIconBG)
+	SetActive(var1_16, true)
+	setText(var1_16, arg1_16.content or "")
 
-	local var2_16 = var1_16:Find("icon_bg/frame")
+	local var2_16 = arg0_16._sigleItemPanel:Find("left/IconTpl")
 
-	setFrame(var2_16, arg1_16.frame or 1)
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. (arg1_16.frame or 1), var1_16:Find("icon_bg"))
-	GetImageSpriteFromAtlasAsync(arg1_16.iconPath[1], arg1_16.iconPath[2] or "", var1_16:Find("icon_bg/icon"))
+	setText(var2_16:Find("icon_bg/count"), "")
+	SetActive(var2_16:Find("icon_bg/startpl"), false)
+	SetCompomentEnabled(var2_16:Find("icon_bg"), typeof(Image), not arg1_16.hideIconBG)
+	SetCompomentEnabled(var2_16:Find("icon_bg/frame"), typeof(Image), not arg1_16.hideIconBG)
+
+	local var3_16 = var2_16:Find("icon_bg/frame")
+
+	setFrame(var3_16, arg1_16.frame or 1)
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. (arg1_16.frame or 1), var2_16:Find("icon_bg"))
+	GetImageSpriteFromAtlasAsync(arg1_16.iconPath[1], arg1_16.iconPath[2] or "", var2_16:Find("icon_bg/icon"))
 	setText(arg0_16._sigleItemPanel:Find("display_panel/name_container/name/Text"), arg1_16.name or "")
 	arg0_16:Loaded(arg1_16)
 end
