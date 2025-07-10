@@ -265,6 +265,10 @@ function var9_0.SetHostData(arg0_21, arg1_21)
 
 		arg0_21.outOfFireRange = arg0_21.IsOutOfSquare
 		arg0_21.IsOutOfFireArea = arg0_21.IsOutOfSquare
+	elseif arg0_21._tmpData.search_type == var5_0.STRIKE then
+		arg0_21:cacheSquareData()
+
+		arg0_21.outOfFireRange = arg0_21.IsOutOfSquare
 	end
 
 	if arg0_21:GetDirection() == var1_0.UnitDir.RIGHT then
@@ -358,8 +362,14 @@ function var9_0.UpdateReload(arg0_35)
 end
 
 function var9_0.CheckPreCast(arg0_36)
-	for iter0_36, iter1_36 in pairs(arg0_36:GetFilteredList()) do
-		return true
+	if arg0_36._tmpData.search_type == var5_0.STRIKE then
+		local var0_36 = arg0_36._host:GetStrikePoint()
+
+		return not arg0_36:IsPointOutOfSquare(var0_36)
+	else
+		for iter0_36, iter1_36 in pairs(arg0_36:GetFilteredList()) do
+			return true
+		end
 	end
 
 	return false
@@ -391,6 +401,10 @@ var9_0.TrackingFunc = {
 }
 
 function var9_0.Tracking(arg0_39)
+	if arg0_39._tmpData.search_type == var5_0.STRIKE then
+		return nil
+	end
+
 	local var0_39 = var7_0.GetCurrentTargetSelect(arg0_39._host)
 	local var1_39
 	local var2_39 = arg0_39:GetFilteredList()
@@ -656,697 +670,704 @@ end
 
 function var9_0.IsOutOfSquare(arg0_58, arg1_58)
 	local var0_58 = arg1_58:GetPosition()
-	local var1_58 = false
-	local var2_58 = (var0_58.x - arg0_58._hostPos.x) * arg0_58:GetDirection()
 
-	if arg0_58._backRange < 0 then
-		if var2_58 > 0 and var2_58 <= arg0_58._frontRange and var2_58 >= math.abs(arg0_58._backRange) then
-			var1_58 = true
+	return arg0_58:IsPointOutOfSquare(var0_58)
+end
+
+function var9_0.IsPointOutOfSquare(arg0_59, arg1_59)
+	local var0_59 = false
+	local var1_59 = (arg1_59.x - arg0_59._hostPos.x) * arg0_59:GetDirection()
+
+	if arg0_59._backRange < 0 then
+		if var1_59 > 0 and var1_59 <= arg0_59._frontRange and var1_59 >= math.abs(arg0_59._backRange) then
+			var0_59 = true
 		end
-	elseif var2_58 > 0 and var2_58 <= arg0_58._frontRange or var2_58 < 0 and math.abs(var2_58) < arg0_58._backRange then
-		var1_58 = true
+	elseif var1_59 > 0 and var1_59 <= arg0_59._frontRange or var1_59 < 0 and math.abs(var1_59) < arg0_59._backRange then
+		var0_59 = true
 	end
 
-	if not var1_58 then
+	if not var0_59 then
 		return true
 	else
 		return false
 	end
 end
 
-function var9_0.PreCast(arg0_59)
-	arg0_59._currentState = arg0_59.STATE_PRECAST
+function var9_0.PreCast(arg0_60)
+	arg0_60._currentState = arg0_60.STATE_PRECAST
 
-	arg0_59:AddPreCastTimer()
+	arg0_60:AddPreCastTimer()
 
-	if arg0_59._preCastInfo.armor then
-		arg0_59._precastArmor = arg0_59._preCastInfo.armor
+	if arg0_60._preCastInfo.armor then
+		arg0_60._precastArmor = arg0_60._preCastInfo.armor
 	end
 
-	local var0_59 = arg0_59._preCastInfo
-	local var1_59 = var0_0.Event.New(var0_0.Battle.BattleUnitEvent.WEAPON_PRE_CAST, var0_59)
+	local var0_60 = arg0_60._preCastInfo
+	local var1_60 = var0_0.Event.New(var0_0.Battle.BattleUnitEvent.WEAPON_PRE_CAST, var0_60)
 
-	arg0_59._host:SetWeaponPreCastBound(arg0_59._preCastInfo.isBound)
-	arg0_59:DispatchEvent(var1_59)
+	arg0_60._host:SetWeaponPreCastBound(arg0_60._preCastInfo.isBound)
+	arg0_60:DispatchEvent(var1_60)
 end
 
-function var9_0.Fire(arg0_60, arg1_60)
-	if arg0_60._host:IsCease() then
+function var9_0.Fire(arg0_61, arg1_61)
+	if arg0_61._host:IsCease() then
 		return false
 	else
-		arg0_60:DispatchGCD()
+		arg0_61:DispatchGCD()
 
-		arg0_60._currentState = arg0_60.STATE_ATTACK
+		arg0_61._currentState = arg0_61.STATE_ATTACK
 
-		if arg0_60._tmpData.action_index == "" then
-			arg0_60:DoAttack(arg1_60)
+		if arg0_61._tmpData.action_index == "" then
+			arg0_61:DoAttack(arg1_61)
 		else
-			arg0_60:DispatchFireEvent(arg1_60, arg0_60._tmpData.action_index)
+			arg0_61:DispatchFireEvent(arg1_61, arg0_61._tmpData.action_index)
 		end
 	end
 
 	return true
 end
 
-function var9_0.DoAttack(arg0_61, arg1_61)
-	if arg1_61 == nil or not arg1_61:IsAlive() or arg0_61:outOfFireRange(arg1_61) then
-		arg1_61 = nil
+function var9_0.DoAttack(arg0_62, arg1_62)
+	if arg1_62 == nil or not arg1_62:IsAlive() or arg0_62:outOfFireRange(arg1_62) then
+		arg1_62 = nil
 	end
 
-	local var0_61 = arg0_61:GetDirection()
-	local var1_61 = arg0_61:GetAttackAngle()
+	local var0_62 = arg0_62:GetDirection()
+	local var1_62 = arg0_62:GetAttackAngle()
 
-	arg0_61:cacheBulletID()
-	arg0_61:TriggerBuffOnSteday()
+	arg0_62:cacheBulletID()
+	arg0_62:TriggerBuffOnSteday()
 
-	for iter0_61, iter1_61 in ipairs(arg0_61._majorEmitterList) do
-		iter1_61:Ready()
+	for iter0_62, iter1_62 in ipairs(arg0_62._majorEmitterList) do
+		iter1_62:Ready()
 	end
 
-	for iter2_61, iter3_61 in ipairs(arg0_61._majorEmitterList) do
-		iter3_61:Fire(arg1_61, var0_61, var1_61)
+	for iter2_62, iter3_62 in ipairs(arg0_62._majorEmitterList) do
+		iter3_62:Fire(arg1_62, var0_62, var1_62)
 	end
 
-	arg0_61._host:CloakExpose(arg0_61._tmpData.expose)
-	var0_0.Battle.PlayBattleSFX(arg0_61._tmpData.fire_sfx)
-	arg0_61:TriggerBuffOnFire()
-	arg0_61:CheckAndShake()
+	arg0_62._host:CloakExpose(arg0_62._tmpData.expose)
+	var0_0.Battle.PlayBattleSFX(arg0_62._tmpData.fire_sfx)
+	arg0_62:TriggerBuffOnFire()
+	arg0_62:CheckAndShake()
 end
 
-function var9_0.TriggerBuffOnSteday(arg0_62)
-	arg0_62._host:TriggerBuff(var1_0.BuffEffectType.ON_WEAPON_STEDAY, {
-		equipIndex = arg0_62._equipmentIndex
-	})
-end
-
-function var9_0.TriggerBuffOnFire(arg0_63)
-	arg0_63._host:TriggerBuff(var1_0.BuffEffectType.ON_FIRE, {
+function var9_0.TriggerBuffOnSteday(arg0_63)
+	arg0_63._host:TriggerBuff(var1_0.BuffEffectType.ON_WEAPON_STEDAY, {
 		equipIndex = arg0_63._equipmentIndex
 	})
 end
 
-function var9_0.TriggerBuffOnReady(arg0_64)
+function var9_0.TriggerBuffOnFire(arg0_64)
+	arg0_64._host:TriggerBuff(var1_0.BuffEffectType.ON_FIRE, {
+		equipIndex = arg0_64._equipmentIndex
+	})
+end
+
+function var9_0.TriggerBuffOnReady(arg0_65)
 	return
 end
 
-function var9_0.UpdateCombo(arg0_65, arg1_65)
-	if arg0_65._hostUnitType ~= var1_0.UnitType.PLAYER_UNIT or not arg0_65._host:IsAlive() then
+function var9_0.UpdateCombo(arg0_66, arg1_66)
+	if arg0_66._hostUnitType ~= var1_0.UnitType.PLAYER_UNIT or not arg0_66._host:IsAlive() then
 		return
 	end
 
-	if #arg1_65 > 0 then
-		local var0_65 = 0
+	if #arg1_66 > 0 then
+		local var0_66 = 0
 
-		for iter0_65, iter1_65 in ipairs(arg1_65) do
-			if table.contains(arg0_65._comboIDList, iter1_65) then
-				var0_65 = var0_65 + 1
+		for iter0_66, iter1_66 in ipairs(arg1_66) do
+			if table.contains(arg0_66._comboIDList, iter1_66) then
+				var0_66 = var0_66 + 1
 			end
 
-			arg0_65._host:TriggerBuff(var1_0.BuffEffectType.ON_COMBO, {
-				equipIndex = arg0_65._equipmentIndex,
-				matchUnitCount = var0_65
+			arg0_66._host:TriggerBuff(var1_0.BuffEffectType.ON_COMBO, {
+				equipIndex = arg0_66._equipmentIndex,
+				matchUnitCount = var0_66
 			})
 
 			break
 		end
 
-		arg0_65._comboIDList = arg1_65
+		arg0_66._comboIDList = arg1_66
 	end
 end
 
-function var9_0.SingleFire(arg0_66, arg1_66, arg2_66, arg3_66, arg4_66)
-	local var0_66 = {}
+function var9_0.SingleFire(arg0_67, arg1_67, arg2_67, arg3_67, arg4_67)
+	local var0_67 = {}
 
-	arg0_66._tempEmittersList[#arg0_66._tempEmittersList + 1] = var0_66
+	arg0_67._tempEmittersList[#arg0_67._tempEmittersList + 1] = var0_67
 
-	if arg1_66 and arg1_66:IsAlive() then
+	if arg1_67 and arg1_67:IsAlive() then
 		-- block empty
 	else
-		arg1_66 = nil
+		arg1_67 = nil
 	end
 
-	arg2_66 = arg2_66 or var9_0.EMITTER_NORMAL
+	arg2_67 = arg2_67 or var9_0.EMITTER_NORMAL
 
-	for iter0_66, iter1_66 in ipairs(arg0_66._barrageList) do
-		local function var1_66(arg0_67, arg1_67, arg2_67, arg3_67)
-			local var0_67 = (arg4_66 and arg0_66._tmpData.bullet_ID or arg0_66._bulletList)[iter0_66]
-			local var1_67 = arg0_66:Spawn(var0_67, arg1_66, var9_0.EXTERNAL)
+	for iter0_67, iter1_67 in ipairs(arg0_67._barrageList) do
+		local function var1_67(arg0_68, arg1_68, arg2_68, arg3_68)
+			local var0_68 = (arg4_67 and arg0_67._tmpData.bullet_ID or arg0_67._bulletList)[iter0_67]
+			local var1_68 = arg0_67:Spawn(var0_68, arg1_67, var9_0.EXTERNAL)
 
-			var1_67:SetOffsetPriority(arg3_67)
-			var1_67:SetShiftInfo(arg0_67, arg1_67)
+			var1_68:SetOffsetPriority(arg3_68)
+			var1_68:SetShiftInfo(arg0_68, arg1_68)
 
-			if arg1_66 ~= nil then
-				var1_67:SetRotateInfo(arg1_66:GetBeenAimedPosition(), arg0_66:GetBaseAngle(), arg2_67)
+			if arg1_67 ~= nil then
+				var1_68:SetRotateInfo(arg1_67:GetBeenAimedPosition(), arg0_67:GetBaseAngle(), arg2_68)
 			else
-				var1_67:SetRotateInfo(nil, arg0_66:GetBaseAngle(), arg2_67)
+				var1_68:SetRotateInfo(nil, arg0_67:GetBaseAngle(), arg2_68)
 			end
 
-			arg0_66:DispatchBulletEvent(var1_67)
+			arg0_67:DispatchBulletEvent(var1_68)
 		end
 
-		local function var2_66()
-			for iter0_68, iter1_68 in ipairs(var0_66) do
-				if iter1_68:GetState() ~= iter1_68.STATE_STOP then
+		local function var2_67()
+			for iter0_69, iter1_69 in ipairs(var0_67) do
+				if iter1_69:GetState() ~= iter1_69.STATE_STOP then
 					return
 				end
 			end
 
-			for iter2_68, iter3_68 in ipairs(var0_66) do
-				iter3_68:Destroy()
+			for iter2_69, iter3_69 in ipairs(var0_67) do
+				iter3_69:Destroy()
 			end
 
-			local var0_68
+			local var0_69
 
-			for iter4_68, iter5_68 in ipairs(arg0_66._tempEmittersList) do
-				if iter5_68 == var0_66 then
-					var0_68 = iter4_68
+			for iter4_69, iter5_69 in ipairs(arg0_67._tempEmittersList) do
+				if iter5_69 == var0_67 then
+					var0_69 = iter4_69
 				end
 			end
 
-			table.remove(arg0_66._tempEmittersList, var0_68)
+			table.remove(arg0_67._tempEmittersList, var0_69)
 
-			var0_66 = nil
-			arg0_66._fireFXFlag = arg0_66._tmpData.fire_fx_loop_type
+			var0_67 = nil
+			arg0_67._fireFXFlag = arg0_67._tmpData.fire_fx_loop_type
 
-			if arg3_66 then
-				arg3_66()
+			if arg3_67 then
+				arg3_67()
 			end
 		end
 
-		local var3_66 = var0_0.Battle[arg2_66].New(var1_66, var2_66, iter1_66)
+		local var3_67 = var0_0.Battle[arg2_67].New(var1_67, var2_67, iter1_67)
 
-		var0_66[#var0_66 + 1] = var3_66
+		var0_67[#var0_67 + 1] = var3_67
 	end
 
-	for iter2_66, iter3_66 in ipairs(var0_66) do
-		iter3_66:Ready()
-		iter3_66:Fire(arg1_66, arg0_66:GetDirection(), arg0_66:GetAttackAngle())
+	for iter2_67, iter3_67 in ipairs(var0_67) do
+		iter3_67:Ready()
+		iter3_67:Fire(arg1_67, arg0_67:GetDirection(), arg0_67:GetAttackAngle())
 	end
 
-	arg0_66._host:CloakExpose(arg0_66._tmpData.expose)
-	arg0_66:CheckAndShake()
+	arg0_67._host:CloakExpose(arg0_67._tmpData.expose)
+	arg0_67:CheckAndShake()
 end
 
-function var9_0.SetModifyInitialCD(arg0_69)
-	arg0_69._modInitCD = true
+function var9_0.SetModifyInitialCD(arg0_70)
+	arg0_70._modInitCD = true
 end
 
-function var9_0.GetModifyInitialCD(arg0_70)
-	return arg0_70._modInitCD
+function var9_0.GetModifyInitialCD(arg0_71)
+	return arg0_71._modInitCD
 end
 
-function var9_0.InitialCD(arg0_71)
-	if arg0_71._tmpData.initial_over_heat == 1 then
-		arg0_71:AddCDTimer(arg0_71:GetReloadTime())
+function var9_0.InitialCD(arg0_72)
+	if arg0_72._tmpData.initial_over_heat == 1 then
+		arg0_72:AddCDTimer(arg0_72:GetReloadTime())
 	end
 end
 
-function var9_0.EnterCoolDown(arg0_72)
-	arg0_72._fireFXFlag = arg0_72._tmpData.fire_fx_loop_type
+function var9_0.EnterCoolDown(arg0_73)
+	arg0_73._fireFXFlag = arg0_73._tmpData.fire_fx_loop_type
 
-	arg0_72:AddCDTimer(arg0_72:GetReloadTime())
+	arg0_73:AddCDTimer(arg0_73:GetReloadTime())
 end
 
-function var9_0.UpdatePrecastArmor(arg0_73, arg1_73)
-	if arg0_73._currentState ~= var9_0.STATE_PRECAST or not arg0_73._precastArmor then
+function var9_0.UpdatePrecastArmor(arg0_74, arg1_74)
+	if arg0_74._currentState ~= var9_0.STATE_PRECAST or not arg0_74._precastArmor then
 		return
 	end
 
-	arg0_73._precastArmor = arg0_73._precastArmor + arg1_73
+	arg0_74._precastArmor = arg0_74._precastArmor + arg1_74
 
-	if arg0_73._precastArmor <= 0 then
-		arg0_73:Interrupt()
+	if arg0_74._precastArmor <= 0 then
+		arg0_74:Interrupt()
 	end
 end
 
-function var9_0.Interrupt(arg0_74)
-	local var0_74 = arg0_74._preCastInfo
-	local var1_74 = var0_0.Event.New(var0_0.Battle.BattleUnitEvent.WEAPON_PRE_CAST_FINISH, var0_74)
+function var9_0.Interrupt(arg0_75)
+	local var0_75 = arg0_75._preCastInfo
+	local var1_75 = var0_0.Event.New(var0_0.Battle.BattleUnitEvent.WEAPON_PRE_CAST_FINISH, var0_75)
 
-	arg0_74:DispatchEvent(var1_74)
+	arg0_75:DispatchEvent(var1_75)
 
-	local var2_74 = var0_0.Event.New(var0_0.Battle.BattleUnitEvent.WEAPON_INTERRUPT, var0_74)
+	local var2_75 = var0_0.Event.New(var0_0.Battle.BattleUnitEvent.WEAPON_INTERRUPT, var0_75)
 
-	arg0_74:DispatchEvent(var2_74)
-	arg0_74:TriggerBuffWhenPrecastFinish(var1_0.BuffEffectType.ON_WEAPON_INTERRUPT)
-	arg0_74:RemovePrecastTimer()
-	arg0_74:EnterCoolDown()
+	arg0_75:DispatchEvent(var2_75)
+	arg0_75:TriggerBuffWhenPrecastFinish(var1_0.BuffEffectType.ON_WEAPON_INTERRUPT)
+	arg0_75:RemovePrecastTimer()
+	arg0_75:EnterCoolDown()
 end
 
-function var9_0.Cease(arg0_75)
-	if arg0_75._currentState == var9_0.STATE_ATTACK or arg0_75._currentState == var9_0.STATE_PRECAST or arg0_75._currentState == var9_0.STATE_PRECAST_FINISH then
-		arg0_75:interruptAllEmitter()
-		arg0_75:EnterCoolDown()
+function var9_0.Cease(arg0_76)
+	if arg0_76._currentState == var9_0.STATE_ATTACK or arg0_76._currentState == var9_0.STATE_PRECAST or arg0_76._currentState == var9_0.STATE_PRECAST_FINISH then
+		arg0_76:interruptAllEmitter()
+		arg0_76:EnterCoolDown()
 	end
 end
 
-function var9_0.AppendReloadBoost(arg0_76)
+function var9_0.AppendReloadBoost(arg0_77)
 	return
 end
 
-function var9_0.DispatchGCD(arg0_77)
-	if arg0_77._GCD > 0 then
-		arg0_77._host:EnterGCD(arg0_77._GCD, arg0_77._tmpData.queue)
+function var9_0.DispatchGCD(arg0_78)
+	if arg0_78._GCD > 0 then
+		arg0_78._host:EnterGCD(arg0_78._GCD, arg0_78._tmpData.queue)
 	end
 end
 
-function var9_0.Clear(arg0_78)
-	arg0_78:RemovePrecastTimer()
-
-	if arg0_78._majorEmitterList then
-		for iter0_78, iter1_78 in ipairs(arg0_78._majorEmitterList) do
-			iter1_78:Destroy()
-		end
-	end
-
-	for iter2_78, iter3_78 in ipairs(arg0_78._tempEmittersList) do
-		for iter4_78, iter5_78 in ipairs(iter3_78) do
-			iter5_78:Destroy()
-		end
-	end
-
-	for iter6_78, iter7_78 in ipairs(arg0_78._dumpedEmittersList) do
-		for iter8_78, iter9_78 in ipairs(iter7_78) do
-			iter9_78:Destroy()
-		end
-	end
-
-	if arg0_78._currentState ~= arg0_78.STATE_OVER_HEAT then
-		arg0_78._currentState = arg0_78.STATE_DISABLE
-	end
-end
-
-function var9_0.Dispose(arg0_79)
-	var0_0.EventDispatcher.DetachEventDispatcher(arg0_79)
+function var9_0.Clear(arg0_79)
 	arg0_79:RemovePrecastTimer()
 
-	arg0_79._dataProxy = nil
-end
-
-function var9_0.AddCDTimer(arg0_80, arg1_80)
-	arg0_80._currentState = arg0_80.STATE_OVER_HEAT
-	arg0_80._CDstartTime = pg.TimeMgr.GetInstance():GetCombatTime()
-	arg0_80._reloadRequire = arg1_80
-end
-
-function var9_0.GetCDStartTimeStamp(arg0_81)
-	return arg0_81._CDstartTime
-end
-
-function var9_0.handleCoolDown(arg0_82)
-	arg0_82._currentState = arg0_82.STATE_READY
-	arg0_82._CDstartTime = nil
-	arg0_82._jammingTime = 0
-end
-
-function var9_0.OverHeat(arg0_83)
-	arg0_83._currentState = arg0_83.STATE_OVER_HEAT
-end
-
-function var9_0.RemovePrecastTimer(arg0_84)
-	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_84._precastTimer)
-	arg0_84._host:SetWeaponPreCastBound(false)
-
-	arg0_84._precastArmor = nil
-	arg0_84._precastTimer = nil
-end
-
-function var9_0.AddPreCastTimer(arg0_85)
-	local function var0_85()
-		arg0_85._currentState = arg0_85.STATE_PRECAST_FINISH
-
-		arg0_85:RemovePrecastTimer()
-
-		local var0_86 = arg0_85._preCastInfo
-		local var1_86 = var0_0.Event.New(var0_0.Battle.BattleUnitEvent.WEAPON_PRE_CAST_FINISH, var0_86)
-
-		arg0_85:DispatchEvent(var1_86)
-		arg0_85:TriggerBuffWhenPrecastFinish(var1_0.BuffEffectType.ON_WEAPON_SUCCESS)
-		arg0_85:Tracking()
+	if arg0_79._majorEmitterList then
+		for iter0_79, iter1_79 in ipairs(arg0_79._majorEmitterList) do
+			iter1_79:Destroy()
+		end
 	end
 
-	arg0_85._precastTimer = pg.TimeMgr.GetInstance():AddBattleTimer("weaponPrecastTimer", 0, arg0_85._preCastInfo.time, var0_85, true)
+	for iter2_79, iter3_79 in ipairs(arg0_79._tempEmittersList) do
+		for iter4_79, iter5_79 in ipairs(iter3_79) do
+			iter5_79:Destroy()
+		end
+	end
+
+	for iter6_79, iter7_79 in ipairs(arg0_79._dumpedEmittersList) do
+		for iter8_79, iter9_79 in ipairs(iter7_79) do
+			iter9_79:Destroy()
+		end
+	end
+
+	if arg0_79._currentState ~= arg0_79.STATE_OVER_HEAT then
+		arg0_79._currentState = arg0_79.STATE_DISABLE
+	end
 end
 
-function var9_0.Spawn(arg0_87, arg1_87, arg2_87)
-	local var0_87
+function var9_0.Dispose(arg0_80)
+	var0_0.EventDispatcher.DetachEventDispatcher(arg0_80)
+	arg0_80:RemovePrecastTimer()
 
-	if arg2_87 == nil then
-		var0_87 = Vector3.zero
+	arg0_80._dataProxy = nil
+end
+
+function var9_0.AddCDTimer(arg0_81, arg1_81)
+	arg0_81._currentState = arg0_81.STATE_OVER_HEAT
+	arg0_81._CDstartTime = pg.TimeMgr.GetInstance():GetCombatTime()
+	arg0_81._reloadRequire = arg1_81
+end
+
+function var9_0.GetCDStartTimeStamp(arg0_82)
+	return arg0_82._CDstartTime
+end
+
+function var9_0.handleCoolDown(arg0_83)
+	arg0_83._currentState = arg0_83.STATE_READY
+	arg0_83._CDstartTime = nil
+	arg0_83._jammingTime = 0
+end
+
+function var9_0.OverHeat(arg0_84)
+	arg0_84._currentState = arg0_84.STATE_OVER_HEAT
+end
+
+function var9_0.RemovePrecastTimer(arg0_85)
+	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_85._precastTimer)
+	arg0_85._host:SetWeaponPreCastBound(false)
+
+	arg0_85._precastArmor = nil
+	arg0_85._precastTimer = nil
+end
+
+function var9_0.AddPreCastTimer(arg0_86)
+	local function var0_86()
+		arg0_86._currentState = arg0_86.STATE_PRECAST_FINISH
+
+		arg0_86:RemovePrecastTimer()
+
+		local var0_87 = arg0_86._preCastInfo
+		local var1_87 = var0_0.Event.New(var0_0.Battle.BattleUnitEvent.WEAPON_PRE_CAST_FINISH, var0_87)
+
+		arg0_86:DispatchEvent(var1_87)
+		arg0_86:TriggerBuffWhenPrecastFinish(var1_0.BuffEffectType.ON_WEAPON_SUCCESS)
+		arg0_86:Tracking()
+	end
+
+	arg0_86._precastTimer = pg.TimeMgr.GetInstance():AddBattleTimer("weaponPrecastTimer", 0, arg0_86._preCastInfo.time, var0_86, true)
+end
+
+function var9_0.Spawn(arg0_88, arg1_88, arg2_88)
+	local var0_88
+
+	if arg0_88._tmpData.search_type == var5_0.STRIKE then
+		var0_88 = arg0_88._host:GetStrikePoint()
+	elseif arg2_88 == nil then
+		var0_88 = Vector3.zero
 	else
-		var0_87 = arg2_87:GetBeenAimedPosition() or arg2_87:GetPosition()
+		var0_88 = arg2_88:GetBeenAimedPosition() or arg2_88:GetPosition()
 	end
 
-	local var1_87 = arg0_87._dataProxy:CreateBulletUnit(arg1_87, arg0_87._host, arg0_87, var0_87)
+	local var1_88 = arg0_88._dataProxy:CreateBulletUnit(arg1_88, arg0_88._host, arg0_88, var0_88)
 
-	arg0_87:setBulletSkin(var1_87, arg1_87)
-	arg0_87:setBulletOrb(var1_87)
-	arg0_87:TriggerBuffWhenSpawn(var1_87)
+	arg0_88:setBulletSkin(var1_88, arg1_88)
+	arg0_88:setBulletOrb(var1_88)
+	arg0_88:TriggerBuffWhenSpawn(var1_88)
 
-	return var1_87
+	return var1_88
 end
 
-function var9_0.FixAmmo(arg0_88, arg1_88)
-	arg0_88._fixedAmmo = arg1_88
+function var9_0.FixAmmo(arg0_89, arg1_89)
+	arg0_89._fixedAmmo = arg1_89
 end
 
-function var9_0.GetFixAmmo(arg0_89)
-	return arg0_89._fixedAmmo
+function var9_0.GetFixAmmo(arg0_90)
+	return arg0_90._fixedAmmo
 end
 
-function var9_0.ShiftBullet(arg0_90, arg1_90)
-	local var0_90 = {}
+function var9_0.ShiftBullet(arg0_91, arg1_91)
+	local var0_91 = {}
 
-	for iter0_90 = 1, #arg0_90._bulletList do
-		var0_90[iter0_90] = arg1_90
+	for iter0_91 = 1, #arg0_91._bulletList do
+		var0_91[iter0_91] = arg1_91
 	end
 
-	arg0_90._bulletList = var0_90
+	arg0_91._bulletList = var0_91
 end
 
-function var9_0.RevertBullet(arg0_91)
-	arg0_91._bulletList = arg0_91._tmpData.bullet_ID
+function var9_0.RevertBullet(arg0_92)
+	arg0_92._bulletList = arg0_92._tmpData.bullet_ID
 end
 
-function var9_0.cacheBulletID(arg0_92)
-	arg0_92._emitBulletIDList = arg0_92._bulletList
+function var9_0.cacheBulletID(arg0_93)
+	arg0_93._emitBulletIDList = arg0_93._bulletList
 end
 
-function var9_0.setBulletOrb(arg0_93, arg1_93)
-	if not arg0_93._orbID then
+function var9_0.setBulletOrb(arg0_94, arg1_94)
+	if not arg0_94._orbID then
 		return
 	end
 
-	local var0_93 = {
-		buff_id = arg0_93._orbID,
-		rant = arg0_93._orbRant,
-		level = arg0_93._orbLevel
+	local var0_94 = {
+		buff_id = arg0_94._orbID,
+		rant = arg0_94._orbRant,
+		level = arg0_94._orbLevel
 	}
 
-	arg1_93:AppendAttachBuff(var0_93)
+	arg1_94:AppendAttachBuff(var0_94)
 end
 
-function var9_0.SetBulletOrbData(arg0_94, arg1_94)
-	arg0_94._orbID = arg1_94.buffID
-	arg0_94._orbRant = arg1_94.rant
-	arg0_94._orbLevel = arg1_94.level
+function var9_0.SetBulletOrbData(arg0_95, arg1_95)
+	arg0_95._orbID = arg1_95.buffID
+	arg0_95._orbRant = arg1_95.rant
+	arg0_95._orbLevel = arg1_95.level
 end
 
-function var9_0.ShiftBarrage(arg0_95, arg1_95)
-	for iter0_95, iter1_95 in ipairs(arg0_95._majorEmitterList) do
-		table.insert(arg0_95._dumpedEmittersList, iter1_95)
+function var9_0.ShiftBarrage(arg0_96, arg1_96)
+	for iter0_96, iter1_96 in ipairs(arg0_96._majorEmitterList) do
+		table.insert(arg0_96._dumpedEmittersList, iter1_96)
 	end
 
-	arg0_95._majorEmitterList = {}
+	arg0_96._majorEmitterList = {}
 
-	if type(arg1_95) == "number" then
-		local var0_95 = {}
+	if type(arg1_96) == "number" then
+		local var0_96 = {}
 
-		for iter2_95 = 1, #arg0_95._barrageList do
-			var0_95[iter2_95] = arg1_95
+		for iter2_96 = 1, #arg0_96._barrageList do
+			var0_96[iter2_96] = arg1_96
 		end
 
-		arg0_95._barrageList = var0_95
-	elseif type(arg1_95) == "table" then
-		arg0_95._barrageList = arg1_95
+		arg0_96._barrageList = var0_96
+	elseif type(arg1_96) == "table" then
+		arg0_96._barrageList = arg1_96
 	end
 
-	for iter3_95, iter4_95 in ipairs(arg0_95._barrageList) do
-		arg0_95:createMajorEmitter(iter4_95, iter3_95)
+	for iter3_96, iter4_96 in ipairs(arg0_96._barrageList) do
+		arg0_96:createMajorEmitter(iter4_96, iter3_96)
 	end
 end
 
-function var9_0.RevertBarrage(arg0_96)
-	arg0_96:ShiftBarrage(arg0_96._tmpData.barrage_ID)
+function var9_0.RevertBarrage(arg0_97)
+	arg0_97:ShiftBarrage(arg0_97._tmpData.barrage_ID)
 end
 
-function var9_0.GetPrimalAmmoType(arg0_97)
-	return var6_0.GetBulletTmpDataFromID(arg0_97._tmpData.bullet_ID[1]).ammo_type
+function var9_0.GetPrimalAmmoType(arg0_98)
+	return var6_0.GetBulletTmpDataFromID(arg0_98._tmpData.bullet_ID[1]).ammo_type
 end
 
-function var9_0.TriggerBuffWhenSpawn(arg0_98, arg1_98, arg2_98)
-	local var0_98 = arg2_98 or var1_0.BuffEffectType.ON_BULLET_CREATE
-	local var1_98 = {
-		_bullet = arg1_98,
-		equipIndex = arg0_98._equipmentIndex,
-		bulletTag = arg1_98:GetExtraTag()
+function var9_0.TriggerBuffWhenSpawn(arg0_99, arg1_99, arg2_99)
+	local var0_99 = arg2_99 or var1_0.BuffEffectType.ON_BULLET_CREATE
+	local var1_99 = {
+		_bullet = arg1_99,
+		equipIndex = arg0_99._equipmentIndex,
+		bulletTag = arg1_99:GetExtraTag()
 	}
 
-	arg0_98._host:TriggerBuff(var0_98, var1_98)
+	arg0_99._host:TriggerBuff(var0_99, var1_99)
 end
 
-function var9_0.TriggerBuffWhenPrecastFinish(arg0_99, arg1_99)
-	if arg0_99._preCastInfo.armor then
-		local var0_99 = {
-			weaponID = arg0_99._tmpData.id
+function var9_0.TriggerBuffWhenPrecastFinish(arg0_100, arg1_100)
+	if arg0_100._preCastInfo.armor then
+		local var0_100 = {
+			weaponID = arg0_100._tmpData.id
 		}
 
-		arg0_99._host:TriggerBuff(arg1_99, var0_99)
+		arg0_100._host:TriggerBuff(arg1_100, var0_100)
 	end
 end
 
-function var9_0.DispatchBulletEvent(arg0_100, arg1_100, arg2_100)
-	local var0_100 = arg2_100
-	local var1_100 = arg0_100._tmpData
-	local var2_100
+function var9_0.DispatchBulletEvent(arg0_101, arg1_101, arg2_101)
+	local var0_101 = arg2_101
+	local var1_101 = arg0_101._tmpData
+	local var2_101
 
-	if arg0_100._fireFXFlag ~= 0 then
-		var2_100 = arg0_100._skinFireFX or var1_100.fire_fx
+	if arg0_101._fireFXFlag ~= 0 then
+		var2_101 = arg0_101._skinFireFX or var1_101.fire_fx
 
-		if arg0_100._fireFXFlag ~= -1 then
-			arg0_100._fireFXFlag = arg0_100._fireFXFlag - 1
+		if arg0_101._fireFXFlag ~= -1 then
+			arg0_101._fireFXFlag = arg0_101._fireFXFlag - 1
 		end
 	end
 
-	if type(var1_100.spawn_bound) == "table" and not var0_100 then
-		local var3_100 = arg0_100._dataProxy:GetStageInfo().mainUnitPosition
+	if type(var1_101.spawn_bound) == "table" and not var0_101 then
+		local var3_101 = arg0_101._dataProxy:GetStageInfo().mainUnitPosition
 
-		if var3_100 and var3_100[arg0_100._hostIFF] then
-			var0_100 = Clone(var3_100[arg0_100._hostIFF][var1_100.spawn_bound[1]])
+		if var3_101 and var3_101[arg0_101._hostIFF] then
+			var0_101 = Clone(var3_101[arg0_101._hostIFF][var1_101.spawn_bound[1]])
 		else
-			var0_100 = Clone(var2_0.MAIN_UNIT_POS[arg0_100._hostIFF][var1_100.spawn_bound[1]])
+			var0_101 = Clone(var2_0.MAIN_UNIT_POS[arg0_101._hostIFF][var1_101.spawn_bound[1]])
 		end
 	end
 
-	local var4_100 = {
-		spawnBound = var1_100.spawn_bound,
-		bullet = arg1_100,
-		fireFxID = var2_100,
-		position = var0_100
+	local var4_101 = {
+		spawnBound = var1_101.spawn_bound,
+		bullet = arg1_101,
+		fireFxID = var2_101,
+		position = var0_101
 	}
-	local var5_100 = var0_0.Event.New(var0_0.Battle.BattleUnitEvent.CREATE_BULLET, var4_100)
+	local var5_101 = var0_0.Event.New(var0_0.Battle.BattleUnitEvent.CREATE_BULLET, var4_101)
 
-	arg0_100:DispatchEvent(var5_100)
+	arg0_101:DispatchEvent(var5_101)
 end
 
-function var9_0.DispatchFireEvent(arg0_101, arg1_101, arg2_101)
-	local var0_101 = {
-		target = arg1_101,
-		actionIndex = arg2_101
+function var9_0.DispatchFireEvent(arg0_102, arg1_102, arg2_102)
+	local var0_102 = {
+		target = arg1_102,
+		actionIndex = arg2_102
 	}
-	local var1_101 = var0_0.Event.New(var0_0.Battle.BattleUnitEvent.FIRE, var0_101)
+	local var1_102 = var0_0.Event.New(var0_0.Battle.BattleUnitEvent.FIRE, var0_102)
 
-	arg0_101:DispatchEvent(var1_101)
+	arg0_102:DispatchEvent(var1_102)
 end
 
-function var9_0.CheckAndShake(arg0_102)
-	if arg0_102._tmpData.shakescreen ~= 0 then
-		var0_0.Battle.BattleCameraUtil.GetInstance():StartShake(pg.shake_template[arg0_102._tmpData.shakescreen])
+function var9_0.CheckAndShake(arg0_103)
+	if arg0_103._tmpData.shakescreen ~= 0 then
+		var0_0.Battle.BattleCameraUtil.GetInstance():StartShake(pg.shake_template[arg0_103._tmpData.shakescreen])
 	end
 end
 
-function var9_0.GetBaseAngle(arg0_103)
-	return arg0_103._baseAngle
+function var9_0.GetBaseAngle(arg0_104)
+	return arg0_104._baseAngle
 end
 
-function var9_0.GetHost(arg0_104)
-	return arg0_104._host
+function var9_0.GetHost(arg0_105)
+	return arg0_105._host
 end
 
-function var9_0.GetStandHost(arg0_105)
-	return arg0_105._standHost
+function var9_0.GetStandHost(arg0_106)
+	return arg0_106._standHost
 end
 
-function var9_0.GetPosition(arg0_106)
-	return arg0_106._hostPos
+function var9_0.GetPosition(arg0_107)
+	return arg0_107._hostPos
 end
 
-function var9_0.GetDirection(arg0_107)
-	return arg0_107._host:GetDirection()
+function var9_0.GetDirection(arg0_108)
+	return arg0_108._host:GetDirection()
 end
 
-function var9_0.GetCurrentState(arg0_108)
-	return arg0_108._currentState
+function var9_0.GetCurrentState(arg0_109)
+	return arg0_109._currentState
 end
 
-function var9_0.GetReloadTime(arg0_109)
-	local var0_109 = var7_0.GetCurrent(arg0_109._host, "loadSpeed")
-
-	if arg0_109._reloadMax ~= arg0_109._cacheReloadMax or var0_109 ~= arg0_109._cacheHostReload then
-		arg0_109._cacheReloadMax = arg0_109._reloadMax
-		arg0_109._cacheHostReload = var0_109
-		arg0_109._cacheReloadTime = var3_0.CalculateReloadTime(arg0_109._reloadMax, var7_0.GetCurrent(arg0_109._host, "loadSpeed"))
-	end
-
-	return arg0_109._cacheReloadTime
-end
-
-function var9_0.GetReloadTimeByRate(arg0_110, arg1_110)
+function var9_0.GetReloadTime(arg0_110)
 	local var0_110 = var7_0.GetCurrent(arg0_110._host, "loadSpeed")
-	local var1_110 = arg0_110._cacheReloadMax * arg1_110
 
-	return (var3_0.CalculateReloadTime(var1_110, var0_110))
-end
-
-function var9_0.GetReloadFinishTimeStamp(arg0_111)
-	local var0_111 = 0
-
-	for iter0_111, iter1_111 in ipairs(arg0_111._reloadBoostList) do
-		var0_111 = var0_111 + iter1_111
+	if arg0_110._reloadMax ~= arg0_110._cacheReloadMax or var0_110 ~= arg0_110._cacheHostReload then
+		arg0_110._cacheReloadMax = arg0_110._reloadMax
+		arg0_110._cacheHostReload = var0_110
+		arg0_110._cacheReloadTime = var3_0.CalculateReloadTime(arg0_110._reloadMax, var7_0.GetCurrent(arg0_110._host, "loadSpeed"))
 	end
 
-	return arg0_111._reloadRequire + arg0_111._CDstartTime + arg0_111._jammingTime + var0_111
+	return arg0_110._cacheReloadTime
 end
 
-function var9_0.AppendFactor(arg0_112, arg1_112)
+function var9_0.GetReloadTimeByRate(arg0_111, arg1_111)
+	local var0_111 = var7_0.GetCurrent(arg0_111._host, "loadSpeed")
+	local var1_111 = arg0_111._cacheReloadMax * arg1_111
+
+	return (var3_0.CalculateReloadTime(var1_111, var0_111))
+end
+
+function var9_0.GetReloadFinishTimeStamp(arg0_112)
+	local var0_112 = 0
+
+	for iter0_112, iter1_112 in ipairs(arg0_112._reloadBoostList) do
+		var0_112 = var0_112 + iter1_112
+	end
+
+	return arg0_112._reloadRequire + arg0_112._CDstartTime + arg0_112._jammingTime + var0_112
+end
+
+function var9_0.AppendFactor(arg0_113, arg1_113)
 	return
 end
 
-function var9_0.StartJamming(arg0_113)
-	if arg0_113._currentState ~= var9_0.STATE_READY then
-		arg0_113._jammingStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
+function var9_0.StartJamming(arg0_114)
+	if arg0_114._currentState ~= var9_0.STATE_READY then
+		arg0_114._jammingStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
 	end
 end
 
-function var9_0.JammingEliminate(arg0_114)
-	if not arg0_114._jammingStartTime then
+function var9_0.JammingEliminate(arg0_115)
+	if not arg0_115._jammingStartTime then
 		return
 	end
 
-	arg0_114._jammingTime = pg.TimeMgr.GetInstance():GetCombatTime() - arg0_114._jammingStartTime
-	arg0_114._jammingStartTime = nil
+	arg0_115._jammingTime = pg.TimeMgr.GetInstance():GetCombatTime() - arg0_115._jammingStartTime
+	arg0_115._jammingStartTime = nil
 end
 
-function var9_0.FlushReloadMax(arg0_115, arg1_115)
-	local var0_115 = arg0_115._tmpData.reload_max
+function var9_0.FlushReloadMax(arg0_116, arg1_116)
+	local var0_116 = arg0_116._tmpData.reload_max
 
-	arg1_115 = arg1_115 or 1
-	arg0_115._reloadMax = var0_115 * arg1_115
+	arg1_116 = arg1_116 or 1
+	arg0_116._reloadMax = var0_116 * arg1_116
 
-	if not arg0_115._CDstartTime or arg0_115._reloadRequire == 0 then
+	if not arg0_116._CDstartTime or arg0_116._reloadRequire == 0 then
 		return true
 	end
 
-	local var1_115 = var7_0.GetCurrent(arg0_115._host, "loadSpeed")
+	local var1_116 = var7_0.GetCurrent(arg0_116._host, "loadSpeed")
 
-	arg0_115._reloadRequire = var9_0.FlushRequireByInverse(arg0_115, var1_115)
+	arg0_116._reloadRequire = var9_0.FlushRequireByInverse(arg0_116, var1_116)
 end
 
-function var9_0.AppendReloadFactor(arg0_116, arg1_116, arg2_116)
-	arg0_116._reloadFacotrList[arg1_116] = arg2_116
+function var9_0.AppendReloadFactor(arg0_117, arg1_117, arg2_117)
+	arg0_117._reloadFacotrList[arg1_117] = arg2_117
 end
 
-function var9_0.RemoveReloadFactor(arg0_117, arg1_117)
-	if arg0_117._reloadFacotrList[arg1_117] then
-		arg0_117._reloadFacotrList[arg1_117] = nil
+function var9_0.RemoveReloadFactor(arg0_118, arg1_118)
+	if arg0_118._reloadFacotrList[arg1_118] then
+		arg0_118._reloadFacotrList[arg1_118] = nil
 	end
 end
 
-function var9_0.GetReloadFactorList(arg0_118)
-	return arg0_118._reloadFacotrList
+function var9_0.GetReloadFactorList(arg0_119)
+	return arg0_119._reloadFacotrList
 end
 
-function var9_0.FlushReloadRequire(arg0_119)
-	if not arg0_119._CDstartTime or arg0_119._reloadRequire == 0 then
+function var9_0.FlushReloadRequire(arg0_120)
+	if not arg0_120._CDstartTime or arg0_120._reloadRequire == 0 then
 		return true
 	end
 
-	local var0_119 = var3_0.CaclulateReloadAttr(arg0_119._reloadMax, arg0_119._reloadRequire)
+	local var0_120 = var3_0.CaclulateReloadAttr(arg0_120._reloadMax, arg0_120._reloadRequire)
 
-	arg0_119._reloadRequire = var9_0.FlushRequireByInverse(arg0_119, var0_119)
+	arg0_120._reloadRequire = var9_0.FlushRequireByInverse(arg0_120, var0_120)
 end
 
-function var9_0.GetMinimumRange(arg0_120)
-	return arg0_120._minRangeSqr
+function var9_0.GetMinimumRange(arg0_121)
+	return arg0_121._minRangeSqr
 end
 
-function var9_0.GetCorrectedDMG(arg0_121)
-	return arg0_121._correctedDMG
+function var9_0.GetCorrectedDMG(arg0_122)
+	return arg0_122._correctedDMG
 end
 
-function var9_0.GetConvertedAtkAttr(arg0_122)
-	return arg0_122._convertedAtkAttr
+function var9_0.GetConvertedAtkAttr(arg0_123)
+	return arg0_123._convertedAtkAttr
 end
 
-function var9_0.SetAtkAttrTrasnform(arg0_123, arg1_123, arg2_123, arg3_123)
-	arg0_123._atkAttrTrans = arg1_123
-	arg0_123._atkAttrTransA = arg2_123
-	arg0_123._atkAttrTransB = arg3_123
+function var9_0.SetAtkAttrTrasnform(arg0_124, arg1_124, arg2_124, arg3_124)
+	arg0_124._atkAttrTrans = arg1_124
+	arg0_124._atkAttrTransA = arg2_124
+	arg0_124._atkAttrTransB = arg3_124
 end
 
-function var9_0.GetAtkAttrTrasnform(arg0_124, arg1_124)
-	local var0_124
+function var9_0.GetAtkAttrTrasnform(arg0_125, arg1_125)
+	local var0_125
 
-	if arg0_124._atkAttrTrans then
-		local var1_124 = arg1_124[arg0_124._atkAttrTrans] or 0
+	if arg0_125._atkAttrTrans then
+		local var1_125 = arg1_125[arg0_125._atkAttrTrans] or 0
 
-		var0_124 = math.min(var1_124 / arg0_124._atkAttrTransA, arg0_124._atkAttrTransB)
+		var0_125 = math.min(var1_125 / arg0_125._atkAttrTransA, arg0_125._atkAttrTransB)
 	end
 
-	return var0_124
+	return var0_125
 end
 
-function var9_0.IsReady(arg0_125)
-	return arg0_125._currentState == arg0_125.STATE_READY
+function var9_0.IsReady(arg0_126)
+	return arg0_126._currentState == arg0_126.STATE_READY
 end
 
-function var9_0.FlushRequireByInverse(arg0_126, arg1_126)
-	local var0_126 = pg.TimeMgr.GetInstance():GetCombatTime() - arg0_126._CDstartTime
-	local var1_126 = var3_0.CaclulateReloaded(var0_126, arg1_126)
-	local var2_126 = arg0_126._reloadMax - var1_126
+function var9_0.FlushRequireByInverse(arg0_127, arg1_127)
+	local var0_127 = pg.TimeMgr.GetInstance():GetCombatTime() - arg0_127._CDstartTime
+	local var1_127 = var3_0.CaclulateReloaded(var0_127, arg1_127)
+	local var2_127 = arg0_127._reloadMax - var1_127
 
-	return var0_126 + var3_0.CalculateReloadTime(var2_126, var7_0.GetCurrent(arg0_126._host, "loadSpeed"))
+	return var0_127 + var3_0.CalculateReloadTime(var2_127, var7_0.GetCurrent(arg0_127._host, "loadSpeed"))
 end
 
-function var9_0.SetCardPuzzleDamageEnhance(arg0_127, arg1_127)
-	arg0_127._cardPuzzleEnhance = arg1_127
+function var9_0.SetCardPuzzleDamageEnhance(arg0_128, arg1_128)
+	arg0_128._cardPuzzleEnhance = arg1_128
 end
 
-function var9_0.GetCardPuzzleDamageEnhance(arg0_128)
-	return arg0_128._cardPuzzleEnhance or 1
+function var9_0.GetCardPuzzleDamageEnhance(arg0_129)
+	return arg0_129._cardPuzzleEnhance or 1
 end
 
-function var9_0.GetReloadRate(arg0_129)
-	if arg0_129._currentState == arg0_129.STATE_READY then
+function var9_0.GetReloadRate(arg0_130)
+	if arg0_130._currentState == arg0_130.STATE_READY then
 		return 0
-	elseif arg0_129._CDstartTime then
-		return (arg0_129:GetReloadFinishTimeStamp() - pg.TimeMgr.GetInstance():GetCombatTime()) / arg0_129._reloadRequire
+	elseif arg0_130._CDstartTime then
+		return (arg0_130:GetReloadFinishTimeStamp() - pg.TimeMgr.GetInstance():GetCombatTime()) / arg0_130._reloadRequire
 	else
 		return 1
 	end
 end
 
-function var9_0.WeaponStatistics(arg0_130, arg1_130, arg2_130, arg3_130)
-	arg0_130._CLDCount = arg0_130._CLDCount + 1
-	arg0_130._damageSum = arg1_130 + arg0_130._damageSum
+function var9_0.WeaponStatistics(arg0_131, arg1_131, arg2_131, arg3_131)
+	arg0_131._CLDCount = arg0_131._CLDCount + 1
+	arg0_131._damageSum = arg1_131 + arg0_131._damageSum
 
-	if arg2_130 then
-		arg0_130._CTSum = arg0_130._CTSum + 1
+	if arg2_131 then
+		arg0_131._CTSum = arg0_131._CTSum + 1
 	end
 
-	if not arg3_130 then
-		arg0_130._ACCSum = arg0_130._ACCSum + 1
+	if not arg3_131 then
+		arg0_131._ACCSum = arg0_131._ACCSum + 1
 	end
 end
 
-function var9_0.GetDamageSUM(arg0_131)
-	return arg0_131._damageSum
+function var9_0.GetDamageSUM(arg0_132)
+	return arg0_132._damageSum
 end
 
-function var9_0.GetCTRate(arg0_132)
-	return arg0_132._CTSum / arg0_132._CLDCount
+function var9_0.GetCTRate(arg0_133)
+	return arg0_133._CTSum / arg0_133._CLDCount
 end
 
-function var9_0.GetACCRate(arg0_133)
-	return arg0_133._ACCSum / arg0_133._CLDCount
+function var9_0.GetACCRate(arg0_134)
+	return arg0_134._ACCSum / arg0_134._CLDCount
 end

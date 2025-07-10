@@ -31,7 +31,7 @@ function var0_0.init(arg0_2)
 	SetActive(var1_2, var3_2 ~= 1)
 	SetActive(var2_2, var3_2 == 1)
 
-	local var5_2 = "loadingbg/bg_" .. math.random(1, BG_RANDOM_RANGE)
+	local var5_2 = (LOADING_HX and PlayerProxy.GetDeviceMaxPlayerLevel() <= pg.gameset.LOADING_HX_LV.key_value and "loadingbg_hx/bg_" or "loadingbg/bg_") .. math.random(1, BG_RANDOM_RANGE)
 
 	setImageSprite(var4_2, LoadSprite(var5_2))
 

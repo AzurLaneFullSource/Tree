@@ -8,6 +8,12 @@ local var2_0 = {
 	N = "N"
 }
 local var3_0 = {
+	N = "N",
+	SR = "SR",
+	R = "R",
+	SSR = "SSR"
+}
+local var4_0 = {
 	[var2_0.N] = {
 		1,
 		2
@@ -29,7 +35,7 @@ local var3_0 = {
 		5
 	}
 }
-local var4_0 = {
+local var5_0 = {
 	ALL = 3,
 	PART = 2,
 	GREY = 0,
@@ -151,19 +157,19 @@ function var0_0.didEnter(arg0_6)
 		onButton(arg0_6, arg0_17, function()
 			local var0_18 = arg0_17.name
 			local var1_18 = arg0_6.optionStatus[var0_18]
-			local var2_18 = var3_0[var0_18]
+			local var2_18 = var4_0[var0_18]
 
 			switch(var1_18, {
-				[var4_0.GREY] = function()
+				[var5_0.GREY] = function()
 					return
 				end,
-				[var4_0.NONE] = function()
+				[var5_0.NONE] = function()
 					arg0_6:selAllEquipsByRaritys(var2_18)
 				end,
-				[var4_0.PART] = function()
+				[var5_0.PART] = function()
 					arg0_6:unselAllEquipsByRaritys(var2_18)
 				end,
-				[var4_0.ALL] = function()
+				[var5_0.ALL] = function()
 					arg0_6:unselAllEquipsByRaritys(var2_18)
 				end
 			})
@@ -176,19 +182,19 @@ function var0_0.HideDestroyCondirm(arg0_23)
 end
 
 function var0_0.OnResolveEquipDone(arg0_24)
-	if arg0_24.optionStatus[var2_0.ALL] == var4_0.ALL then
+	for iter0_24, iter1_24 in pairs(var3_0) do
+		local var0_24 = arg0_24.optionStatus[iter1_24]
+
+		if var0_24 == var5_0.ALL then
+			arg0_24:SetLocalDataByOption(iter1_24, 1)
+		elseif var0_24 == var5_0.NONE then
+			arg0_24:SetLocalDataByOption(iter1_24, 0)
+		end
+	end
+
+	if arg0_24.optionStatus[var2_0.ALL] == var5_0.ALL then
 		arg0_24:emit(var0_0.ON_CLOSE)
 	else
-		for iter0_24, iter1_24 in pairs(var2_0) do
-			local var0_24 = arg0_24.optionStatus[iter1_24]
-
-			if var0_24 == var4_0.ALL then
-				arg0_24:SetLocalDataByOption(iter1_24, 1)
-			elseif var0_24 == var4_0.NONE then
-				arg0_24:SetLocalDataByOption(iter1_24, 0)
-			end
-		end
-
 		setActive(arg0_24.mainPanel, true)
 
 		local function var1_24(arg0_25)
@@ -232,9 +238,9 @@ end
 function var0_0.selectedLocalRecordEquipment(arg0_27)
 	arg0_27.selectedIds = {}
 
-	for iter0_27, iter1_27 in pairs(var2_0) do
+	for iter0_27, iter1_27 in pairs(var3_0) do
 		if arg0_27:GetLocalDataByOption(iter1_27) == 1 then
-			local var0_27 = var3_0[iter1_27]
+			local var0_27 = var4_0[iter1_27]
 
 			arg0_27:selAllEquipsByRaritys(var0_27)
 		end
@@ -532,33 +538,33 @@ function var0_0.updateOptionsStatus(arg0_50)
 
 		arg0_50.optionStatus[iter1_50] = var1_50
 
-		setGray(var0_50, var1_50 == var4_0.GREY, true)
+		setGray(var0_50, var1_50 == var5_0.GREY, true)
 
-		GetOrAddComponent(var0_50, "CanvasGroup").alpha = var1_50 == var4_0.GREY and 0.4 or 1
+		GetOrAddComponent(var0_50, "CanvasGroup").alpha = var1_50 == var5_0.GREY and 0.4 or 1
 
-		setActive(var0_50:Find("Background/Checkmark"), var1_50 == var4_0.ALL)
-		setActive(var0_50:Find("Background/Part"), var1_50 == var4_0.PART)
+		setActive(var0_50:Find("Background/Checkmark"), var1_50 == var5_0.ALL)
+		setActive(var0_50:Find("Background/Part"), var1_50 == var5_0.PART)
 	end
 end
 
 function var0_0.GetOptionStatus(arg0_51, arg1_51)
 	if arg1_51 == var2_0.ALL then
 		if #arg0_51.selectedIds == 0 then
-			return var4_0.NONE
+			return var5_0.NONE
 		elseif arg0_51:isSelectedAll() then
-			return var4_0.ALL
+			return var5_0.ALL
 		else
-			return var4_0.PART
+			return var5_0.PART
 		end
 	else
-		local var0_51 = var3_0[arg1_51]
+		local var0_51 = var4_0[arg1_51]
 
 		if not underscore.any(arg0_51.equipmentVOs, function(arg0_52)
 			local var0_52 = arg0_52:getConfig("rarity")
 
 			return table.contains(var0_51, var0_52)
 		end) then
-			return var4_0.GREY
+			return var5_0.GREY
 		end
 
 		local var1_51 = underscore.any(arg0_51.selectedIds, function(arg0_53)
@@ -567,7 +573,7 @@ function var0_0.GetOptionStatus(arg0_51, arg1_51)
 			return table.contains(var0_51, var0_53)
 		end)
 
-		return arg0_51:isSelectedAllRaritys(var0_51) and var4_0.ALL or var1_51 and var4_0.PART or var4_0.NONE
+		return arg0_51:isSelectedAllRaritys(var0_51) and var5_0.ALL or var1_51 and var5_0.PART or var5_0.NONE
 	end
 end
 

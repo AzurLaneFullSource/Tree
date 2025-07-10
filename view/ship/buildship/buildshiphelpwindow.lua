@@ -35,12 +35,16 @@ function var0_0.Show(arg0_7, arg1_7, arg2_7, arg3_7)
 
 	arg0_7.isSupport = arg2_7 == "support"
 
+	local var0_7 = arg0_7:findTF("window/rateList/title/Text")
+
 	if arg0_7.isSupport then
-		setText(arg0_7:findTF("window/rateList/title/Text"), i18n("support_rate_title"))
+		setText(var0_7, i18n("support_rate_title"))
 	else
-		setText(arg0_7:findTF("window/rateList/title/Text"), i18n("build_rate_title"))
+		setText(var0_7, i18n("build_rate_title"))
 	end
 
+	setActive(var0_7, false)
+	setActive(var0_7, true)
 	arg0_7:OnShow(arg1_7, arg3_7)
 	setActiveViaLayer(arg0_7._tf, true)
 	arg0_7:PlayOpenAnimation()

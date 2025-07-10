@@ -232,7 +232,14 @@ function var0_0.handleNotification(arg0_21, arg1_21)
 				canSkipBatch = var1_21.canSkipBatch
 			},
 			onRemoved = function()
-				pg.NewStoryMgr.GetInstance():Play("FANGAN2")
+				pg.NewStoryMgr.GetInstance():Play("FANGAN2", function()
+					if not pg.NewStoryMgr.GetInstance():IsPlayed("PHANTOM_HELP") then
+						pg.NewGuideMgr.GetInstance():Play("PHANTOM_HELP")
+						pg.m02:sendNotification(GAME.STORY_UPDATE, {
+							storyId = "PHANTOM_HELP"
+						})
+					end
+				end)
 			end
 		}))
 	elseif GAME.STOP_BLUEPRINT_DONE == var0_21 then

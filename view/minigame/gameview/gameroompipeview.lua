@@ -92,11 +92,7 @@ function var0_0.initEvent(arg0_6)
 		getProxy(MiniGameProxy):UpdataHighScore(var1_0.game_id, arg1_19)
 	end)
 	arg0_6:bind(PipeGameEvent.SUBMIT_GAME_SUCCESS, function(arg0_20, arg1_20, arg2_20)
-		if not arg0_6.sendSuccessFlag then
-			arg0_6.sendSuccessFlag = true
-
-			arg0_6:SendSuccess(var1_0.scoreNum)
-		end
+		arg0_6:SendSuccess(var1_0.scoreNum)
 	end)
 	arg0_6:bind(PipeGameEvent.ADD_SCORE, function(arg0_21, arg1_21, arg2_21)
 		arg0_6:addScore(arg1_21.num)

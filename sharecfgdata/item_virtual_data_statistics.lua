@@ -1921,6 +1921,136 @@ _G.pg.base.item_virtual_data_statistics[52082] = {
 	combination_display = {},
 }
 
+_G.pg.base.item_virtual_data_statistics[52091] = {
+	display = "You can acquire a number of the following Blueprints at random:",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "Props/52001",
+	id = 52091,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Random Blueprint",
+	order = 0,
+	rarity = 4,
+	replace_item = 0,
+	shop_id = -1,
+	time_limit = 0,
+	type = 99,
+	virtual_type = 0,
+	display_icon = {
+		{
+			2,
+			42072,
+			1,
+		},
+		{
+			2,
+			42075,
+			1,
+		},
+		{
+			2,
+			42071,
+			1,
+		},
+		{
+			2,
+			42073,
+			1,
+		},
+		{
+			2,
+			42074,
+			1,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
+_G.pg.base.item_virtual_data_statistics[52092] = {
+	display = "Chance to receive following designs",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "Props/55000",
+	id = 52092,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Random Gear Design",
+	order = 0,
+	rarity = 4,
+	replace_item = 0,
+	shop_id = -1,
+	time_limit = 0,
+	type = 99,
+	virtual_type = 0,
+	display_icon = {
+		{
+			2,
+			13049,
+			1,
+		},
+		{
+			2,
+			13050,
+			1,
+		},
+		{
+			2,
+			13051,
+			1,
+		},
+		{
+			2,
+			13052,
+			1,
+		},
+		{
+			2,
+			13053,
+			1,
+		},
+		{
+			2,
+			13054,
+			1,
+		},
+		{
+			2,
+			13024,
+			1,
+		},
+		{
+			2,
+			13007,
+			1,
+		},
+		{
+			2,
+			13010,
+			1,
+		},
+		{
+			2,
+			13009,
+			1,
+		},
+		{
+			2,
+			13011,
+			1,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
 _G.pg.base.item_virtual_data_statistics[53000] = {
 	display = "Chance to receive following gear and designs",
 	drop_gold_max = 0,

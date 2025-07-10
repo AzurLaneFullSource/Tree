@@ -749,11 +749,6 @@ function var0_0.SetVisible(arg0_36, arg1_36)
 		return
 	end
 
-	Input.gyro.enabled = PlayerPrefs.GetInt(GYRO_ENABLE, 1) == 1
-
-	arg0_36:setReactPos(true)
-	arg0_36:Reset()
-
 	if arg1_36 then
 		arg0_36._readlyToStop = false
 
@@ -772,6 +767,7 @@ function var0_0.SetVisible(arg0_36, arg1_36)
 			arg0_36:resetL2dData()
 		end
 	else
+		arg0_36:setReactPos(true)
 		arg0_36:saveLive2dData()
 		arg0_36:loadLive2dData()
 

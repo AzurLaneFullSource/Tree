@@ -277,6 +277,7 @@ function var0_0.didEnter(arg0_7)
 				end
 
 				setActive(arg0_7.selectview, true)
+				arg0_7:openCoinLayer(true)
 
 				GetOrAddComponent(arg0_7.selectview, "CanvasGroup").blocksRaycasts = true
 
@@ -338,6 +339,7 @@ function var0_0.didEnter(arg0_7)
 	end, SFX_UI_CLICK)
 	arg0_7:addRingDragListenter()
 	setActive(arg0_7.selectview, true)
+	arg0_7:openCoinLayer(true)
 
 	GetOrAddComponent(arg0_7.selectview, "CanvasGroup").blocksRaycasts = true
 end
@@ -1154,6 +1156,7 @@ function var0_0.showSelevtView(arg0_63)
 
 	arg0_63.selectview:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg0_65)
 		setActive(arg0_63.selectview, false)
+		arg0_63:openCoinLayer(false)
 	end)
 	onButton(arg0_63, var7_63, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
@@ -1818,6 +1821,7 @@ function var0_0.locadScoreView(arg0_93)
 
 		arg0_93:stopTimer()
 		setActive(arg0_93.selectview, true)
+		arg0_93:openCoinLayer(true)
 
 		GetOrAddComponent(arg0_93.selectview, "CanvasGroup").blocksRaycasts = true
 

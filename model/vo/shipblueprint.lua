@@ -454,6 +454,15 @@ end
 
 function var0_0.specialStrengthens(arg0_39)
 	local var0_39 = {}
+	local var1_39 = noEmptyStr(arg0_39:getConfig("normal_display"))
+
+	if var1_39 then
+		table.insert(var0_39, {
+			level = 0,
+			des = {},
+			extraDes = var1_39
+		})
+	end
 
 	for iter0_39, iter1_39 in ipairs(arg0_39.strengthenConfig) do
 		if iter1_39.special == 1 then

@@ -1783,5 +1783,25 @@ pg.voice_actor_CN = {
 	[462] = {
 		code = 462,
 		actor_name = "Rie Hikisaka"
+	},
+	[463] = {
+		code = 463,
+		actor_name = "Kikuko Inoue"
+	},
+	[464] = {
+		code = 464,
+		actor_name = "Mariya Ise"
+	},
+	[465] = {
+		code = 465,
+		actor_name = "Miyari Nemoto"
+	},
+	[466] = {
+		code = 466,
+		actor_name = "Risae Matsuda"
+	},
+	[467] = {
+		code = 467,
+		actor_name = "Non Harusaki"
 	}
 }

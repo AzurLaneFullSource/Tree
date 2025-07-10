@@ -15,6 +15,7 @@ var0_0.OPEN_INVITE_WINDOW = "Dorm3dRoomMediator.OPEN_INVITE_WINDOW"
 var0_0.OPEN_ACCOMPANY_WINDOW = "Dorm3dRoomMediator.OPEN_ACCOMPANY_WINDOW"
 var0_0.OPEN_MINIGAME_WINDOW = "Dorm3dRoomMediator.OPEN_MINIGAME_WINDOW"
 var0_0.OPEN_SKIN_SELECT_LAYER = "Dorm3dRoomMediator.OPEN_SKIN_SELECT_LAYER"
+var0_0.OPEN_SETTING_LAYER = "Dorm3dRoomMediator.OPEN_SETTING_LAYER"
 var0_0.ON_LEVEL_UP_FINISH = "Dorm3dRoomMediator.ON_LEVEL_UP_FINISH"
 var0_0.ON_CLICK_FURNITURE_SLOT = "Dorm3dRoomMediator.ON_CLICK_FURNITURE_SLOT"
 var0_0.OTHER_DO_TALK = "Dorm3dRoomMediator.OTHER_DO_TALK"
@@ -234,6 +235,12 @@ function var0_0.register(arg0_1)
 	arg0_1:bind(var0_0.ON_DROP_CLIENT, function(arg0_41, arg1_41)
 		pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_DROP_CLIENT, arg1_41)
 	end)
+	arg0_1:bind(var0_0.OPEN_SETTING_LAYER, function(arg0_42)
+		arg0_1:addSubLayers(Context.New({
+			viewComponent = Dorm3dSettingScene,
+			mediator = NewSettingsMediator
+		}))
+	end)
 	arg0_1.viewComponent:SetRoom(getProxy(ApartmentProxy):getRoom(arg0_1.contextData.roomId))
 
 	if arg0_1.viewComponent.room:isPersonalRoom() then
@@ -245,140 +252,140 @@ function var0_0.register(arg0_1)
 	Dorm3dFurniture.RecordLastTimelimitShopFurniture()
 end
 
-function var0_0.initNotificationHandleDic(arg0_42)
-	arg0_42.handleDic = {
-		[GAME.APARTMENT_TRIGGER_FAVOR_DONE] = function(arg0_43, arg1_43)
-			local var0_43 = arg1_43:getBody()
-
-			arg0_43.viewComponent:PopFavorTrigger(var0_43)
-		end,
-		[GAME.APARTMENT_LEVEL_UP_DONE] = function(arg0_44, arg1_44)
+function var0_0.initNotificationHandleDic(arg0_43)
+	arg0_43.handleDic = {
+		[GAME.APARTMENT_TRIGGER_FAVOR_DONE] = function(arg0_44, arg1_44)
 			local var0_44 = arg1_44:getBody()
 
+			arg0_44.viewComponent:PopFavorTrigger(var0_44)
+		end,
+		[GAME.APARTMENT_LEVEL_UP_DONE] = function(arg0_45, arg1_45)
+			local var0_45 = arg1_45:getBody()
+
 			seriesAsync({
-				function(arg0_45)
-					arg0_44.viewComponent:SetAllBlackbloardValue("inLockLayer", true)
-					arg0_44.viewComponent:PopFavorLevelUp(var0_44.apartment, var0_44.award, arg0_45)
+				function(arg0_46)
+					arg0_45.viewComponent:SetAllBlackbloardValue("inLockLayer", true)
+					arg0_45.viewComponent:PopFavorLevelUp(var0_45.apartment, var0_45.award, arg0_46)
 				end
 			}, function()
-				arg0_44.viewComponent:SetAllBlackbloardValue("inLockLayer", false)
-				arg0_44.viewComponent:CheckQueue()
-				arg0_44:sendNotification(var0_0.ON_LEVEL_UP_FINISH)
+				arg0_45.viewComponent:SetAllBlackbloardValue("inLockLayer", false)
+				arg0_45.viewComponent:CheckQueue()
+				arg0_45:sendNotification(var0_0.ON_LEVEL_UP_FINISH)
 			end)
 		end,
-		[STORY_EVENT.TEST] = function(arg0_47, arg1_47)
-			local var0_47 = arg1_47:getBody()
-
-			arg0_47.viewComponent:TalkingEventHandle(var0_47)
-		end,
-		[ApartmentProxy.UPDATE_APARTMENT] = function(arg0_48, arg1_48)
+		[STORY_EVENT.TEST] = function(arg0_48, arg1_48)
 			local var0_48 = arg1_48:getBody()
-			local var1_48 = arg0_48.viewComponent.apartment
 
-			if var1_48 and var1_48:GetConfigID() == var0_48:GetConfigID() then
-				arg0_48.viewComponent:SetApartment(var0_48)
+			arg0_48.viewComponent:TalkingEventHandle(var0_48)
+		end,
+		[ApartmentProxy.UPDATE_APARTMENT] = function(arg0_49, arg1_49)
+			local var0_49 = arg1_49:getBody()
+			local var1_49 = arg0_49.viewComponent.apartment
+
+			if var1_49 and var1_49:GetConfigID() == var0_49:GetConfigID() then
+				arg0_49.viewComponent:SetApartment(var0_49)
 			end
 		end,
-		[var0_0.OTHER_DO_TALK] = function(arg0_49, arg1_49)
-			local var0_49 = arg1_49:getBody()
+		[var0_0.OTHER_DO_TALK] = function(arg0_50, arg1_50)
+			local var0_50 = arg1_50:getBody()
 
-			arg0_49.viewComponent.inReplayTalk = true
+			arg0_50.viewComponent.inReplayTalk = true
 
-			arg0_49.viewComponent:DoTalk(var0_49.talkId, function()
-				arg0_49.viewComponent.inReplayTalk = false
+			arg0_50.viewComponent:DoTalk(var0_50.talkId, function()
+				arg0_50.viewComponent.inReplayTalk = false
 
-				existCall(var0_49.callback)
+				existCall(var0_50.callback)
 			end)
 		end,
-		[var0_0.OTHER_POP_UNLOCK] = function(arg0_51, arg1_51)
-			local var0_51 = arg1_51:getBody()
+		[var0_0.OTHER_POP_UNLOCK] = function(arg0_52, arg1_52)
+			local var0_52 = arg1_52:getBody()
 
-			arg0_51.viewComponent:AddUnlockDisplay(var0_51)
+			arg0_52.viewComponent:AddUnlockDisplay(var0_52)
 		end,
-		[GAME.APARTMENT_DO_TALK_DONE] = function(arg0_52, arg1_52)
-			arg0_52.viewComponent:UpdateBtnState()
+		[GAME.APARTMENT_DO_TALK_DONE] = function(arg0_53, arg1_53)
+			arg0_53.viewComponent:UpdateBtnState()
 		end,
-		[GAME.APARTMENT_COLLECTION_ITEM_DONE] = function(arg0_53, arg1_53)
-			local var0_53 = arg1_53:getBody()
+		[GAME.APARTMENT_COLLECTION_ITEM_DONE] = function(arg0_54, arg1_54)
+			local var0_54 = arg1_54:getBody()
 
-			arg0_53:addSubLayers(Context.New({
+			arg0_54:addSubLayers(Context.New({
 				viewComponent = Dorm3dCollectAwardLayer,
 				mediator = Dorm3dCollectAwardMediator,
 				data = {
-					itemId = var0_53.itemId,
-					isNew = var0_53.isNew
+					itemId = var0_54.itemId,
+					isNew = var0_54.isNew
 				}
 			}))
-			arg0_53.viewComponent:UpdateBtnState()
+			arg0_54.viewComponent:UpdateBtnState()
 		end,
-		[var0_0.CHAMGE_TIME_RELOAD_SCENE] = function(arg0_54, arg1_54)
-			local var0_54 = arg1_54:getBody()
+		[var0_0.CHAMGE_TIME_RELOAD_SCENE] = function(arg0_55, arg1_55)
+			local var0_55 = arg1_55:getBody()
 
-			arg0_54.contextData.timeIndex = var0_54.timeIndex
+			arg0_55.contextData.timeIndex = var0_55.timeIndex
 
-			arg0_54.viewComponent:SwitchDayNight(arg0_54.contextData.timeIndex)
+			arg0_55.viewComponent:SwitchDayNight(arg0_55.contextData.timeIndex)
 			onNextTick(function()
-				arg0_54.viewComponent:RefreshSlots()
+				arg0_55.viewComponent:RefreshSlots()
 			end)
-			arg0_54.viewComponent:UpdateContactState()
+			arg0_55.viewComponent:UpdateContactState()
 		end,
-		[GAME.APARTMENT_GIVE_GIFT_DONE] = function(arg0_56, arg1_56)
-			local var0_56 = arg1_56:getBody()
+		[GAME.APARTMENT_GIVE_GIFT_DONE] = function(arg0_57, arg1_57)
+			local var0_57 = arg1_57:getBody()
 
-			arg0_56.viewComponent:PlayHeartFX(var0_56.groupId)
-			arg0_56.viewComponent:UpdateBtnState()
+			arg0_57.viewComponent:PlayHeartFX(var0_57.groupId)
+			arg0_57.viewComponent:UpdateBtnState()
 			getProxy(Dorm3dChatProxy):TriggerEvent({
 				{
 					value = 1,
-					event_type = arg0_56.contextData.timeIndex == 1 and 113 or 118,
-					ship_id = var0_56.groupId
+					event_type = arg0_57.contextData.timeIndex == 1 and 113 or 118,
+					ship_id = var0_57.groupId
 				}
 			})
 		end,
-		[var0_0.GUIDE_CLICK_LADY] = function(arg0_57, arg1_57)
+		[var0_0.GUIDE_CLICK_LADY] = function(arg0_58, arg1_58)
 			warning("this.GUIDE_CLICK_LADY")
-			arg0_57.viewComponent:EnterWatchMode()
+			arg0_58.viewComponent:EnterWatchMode()
 		end,
-		[var0_0.GUIDE_CHECK_GUIDE] = function(arg0_58, arg1_58)
-			arg0_58.viewComponent:CheckGuide()
+		[var0_0.GUIDE_CHECK_GUIDE] = function(arg0_59, arg1_59)
+			arg0_59.viewComponent:CheckGuide()
 		end,
-		[var0_0.GUIDE_CHECK_LEVEL_UP] = function(arg0_59, arg1_59)
-			arg0_59.viewComponent:CheckLevelUp()
+		[var0_0.GUIDE_CHECK_LEVEL_UP] = function(arg0_60, arg1_60)
+			arg0_60.viewComponent:CheckLevelUp()
 		end,
-		[ApartmentProxy.UPDATE_ROOM] = function(arg0_60, arg1_60)
-			local var0_60 = arg1_60:getBody()
-
-			if var0_60:GetConfigID() == arg0_60.viewComponent.room:GetConfigID() then
-				arg0_60.viewComponent:SetRoom(var0_60)
-			end
-		end,
-		[Dorm3dInviteMediator.ON_DORM] = function(arg0_61, arg1_61)
+		[ApartmentProxy.UPDATE_ROOM] = function(arg0_61, arg1_61)
 			local var0_61 = arg1_61:getBody()
 
-			arg0_61:sendNotification(GAME.CHANGE_SCENE, SCENE.DORM3D_ROOM, var0_61)
+			if var0_61:GetConfigID() == arg0_61.viewComponent.room:GetConfigID() then
+				arg0_61.viewComponent:SetRoom(var0_61)
+			end
 		end,
-		[Dorm3dMiniGameMediator.OPERATION] = function(arg0_62, arg1_62)
+		[Dorm3dInviteMediator.ON_DORM] = function(arg0_62, arg1_62)
 			local var0_62 = arg1_62:getBody()
 
-			arg0_62.viewComponent:HandleGameNotification(Dorm3dMiniGameMediator.OPERATION, var0_62)
+			arg0_62:sendNotification(GAME.CHANGE_SCENE, SCENE.DORM3D_ROOM, var0_62)
 		end,
-		[ApartmentProxy.ZERO_HOUR_REFRESH] = function(arg0_63, arg1_63)
+		[Dorm3dMiniGameMediator.OPERATION] = function(arg0_63, arg1_63)
 			local var0_63 = arg1_63:getBody()
 
-			arg0_63.viewComponent:UpdateFavorDisplay()
+			arg0_63.viewComponent:HandleGameNotification(Dorm3dMiniGameMediator.OPERATION, var0_63)
 		end,
-		[var0_0.UPDATE_FAVOR_DISPLAY] = function(arg0_64, arg1_64)
+		[ApartmentProxy.ZERO_HOUR_REFRESH] = function(arg0_64, arg1_64)
+			local var0_64 = arg1_64:getBody()
+
 			arg0_64.viewComponent:UpdateFavorDisplay()
 		end,
-		[ApartmentProxy.UPDATE_ROOM_INVITE_LIST] = function(arg0_65, arg1_65)
-			local var0_65 = arg1_65:getBody()
+		[var0_0.UPDATE_FAVOR_DISPLAY] = function(arg0_65, arg1_65)
+			arg0_65.viewComponent:UpdateFavorDisplay()
+		end,
+		[ApartmentProxy.UPDATE_ROOM_INVITE_LIST] = function(arg0_66, arg1_66)
+			local var0_66 = arg1_66:getBody()
 
-			arg0_65.viewComponent:LoadCharacterAdditionally(var0_65.addIds, var0_65.callback)
+			arg0_66.viewComponent:LoadCharacterAdditionally(var0_66.addIds, var0_66.callback)
 		end
 	}
 end
 
-function var0_0.remove(arg0_66)
+function var0_0.remove(arg0_67)
 	return
 end
 

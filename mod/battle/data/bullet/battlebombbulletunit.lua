@@ -105,74 +105,83 @@ function var3_0.SetExplodePosition(arg0_8, arg1_8)
 	arg0_8._explodePos.y = var2_0.BombDetonateHeight
 end
 
-function var3_0.SetTemplateData(arg0_9, arg1_9)
-	var3_0.super.SetTemplateData(arg0_9, arg1_9)
+function var3_0.SetShiftInfo(arg0_9, arg1_9, arg2_9)
+	var3_0.super.SetShiftInfo(arg0_9, arg1_9, arg2_9)
 
-	local var0_9 = arg0_9:GetTemplate().extra_param
+	if arg0_9:GetTemplate().extra_param.currentdrop then
+		arg0_9._explodePos.x = arg0_9._explodePos.x + arg0_9._offsetX
+		arg0_9._explodePos.z = arg0_9._explodePos.z + arg0_9._offsetZ
+	end
+end
 
-	arg0_9._barragePriority = var0_9.barragePriority
-	arg0_9._barrageLowPriority = var0_9.barrageLowPriority
-	arg0_9._fixToRange = var0_9.fixToRange
+function var3_0.SetTemplateData(arg0_10, arg1_10)
+	var3_0.super.SetTemplateData(arg0_10, arg1_10)
 
-	if var0_9.barragePriority then
-		arg0_9._randomOffset = Vector3.zero
+	local var0_10 = arg0_10:GetTemplate().extra_param
+
+	arg0_10._barragePriority = var0_10.barragePriority
+	arg0_10._barrageLowPriority = var0_10.barrageLowPriority
+	arg0_10._fixToRange = var0_10.fixToRange
+
+	if var0_10.barragePriority then
+		arg0_10._randomOffset = Vector3.zero
 	else
-		local var1_9 = var0_9.accuracy
-		local var2_9 = 0
+		local var1_10 = var0_10.accuracy
+		local var2_10 = 0
 
-		if var1_9 then
-			var2_9 = arg0_9:GetAttrByName(var1_9)
+		if var1_10 then
+			var2_10 = arg0_10:GetAttrByName(var1_10)
 		end
 
-		local var3_9 = var0_9.randomOffsetX or 0
-		local var4_9 = var0_9.randomOffsetZ or 0
-		local var5_9 = math.max(0, var3_9 - var2_9)
-		local var6_9 = math.max(0, var4_9 - var2_9)
-		local var7_9 = var0_9.offsetX or 0
-		local var8_9 = var0_9.offsetZ or 0
+		local var3_10 = var0_10.randomOffsetX or 0
+		local var4_10 = var0_10.randomOffsetZ or 0
+		local var5_10 = math.max(0, var3_10 - var2_10)
+		local var6_10 = math.max(0, var4_10 - var2_10)
+		local var7_10 = var0_10.offsetX or 0
+		local var8_10 = var0_10.offsetZ or 0
 
-		if var5_9 ~= 0 then
-			var5_9 = var5_9 * (math.random() - 0.5) + var7_9
+		if var5_10 ~= 0 then
+			var5_10 = var5_10 * (math.random() - 0.5) + var7_10
 		end
 
-		if var6_9 ~= 0 then
-			var6_9 = var6_9 * (math.random() - 0.5) + var8_9
+		if var6_10 ~= 0 then
+			var6_10 = var6_10 * (math.random() - 0.5) + var8_10
 		end
 
-		local var9_9 = var0_9.targetOffsetX or 0
-		local var10_9 = var0_9.targetOffsetZ or 0
+		local var9_10 = var0_10.targetOffsetX or 0
+		local var10_10 = var0_10.targetOffsetZ or 0
 
-		arg0_9._randomOffset = Vector3(var5_9 + var9_9, 0, var6_9 + var10_9)
+		arg0_10._randomOffset = Vector3(var5_10 + var9_10, 0, var6_10 + var10_10)
 	end
 
-	if var0_9.timeToExplode then
-		arg0_9._explodeTime = pg.TimeMgr.GetInstance():GetCombatTime() + var0_9.timeToExplode
+	if var0_10.timeToExplode then
+		arg0_10._explodeTime = pg.TimeMgr.GetInstance():GetCombatTime() + var0_10.timeToExplode
 	end
 
-	arg0_9._gravity = var0_9.gravity or var0_0.Battle.BattleConfig.GRAVITY
-	arg0_9._hitInterval = arg1_9.hit_type.interval or 0.2
+	arg0_10._gravity = var0_10.gravity or var0_0.Battle.BattleConfig.GRAVITY
+	arg0_10._hitInterval = arg1_10.hit_type.interval or 0.2
 end
 
-function var3_0.DealDamage(arg0_10)
-	arg0_10._nextDamageTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg0_10._hitInterval
+function var3_0.DealDamage(arg0_11)
+	arg0_11._nextDamageTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg0_11._hitInterval
 end
 
-function var3_0.CanDealDamage(arg0_11)
-	if not arg0_11._nextDamageTime then
-		arg0_11._nextDamageTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg0_11._tempData.extra_param.alert_duration
+function var3_0.CanDealDamage(arg0_12)
+	if not arg0_12._nextDamageTime then
+		arg0_12._nextDamageTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg0_12._tempData.extra_param.alert_duration
 
 		return false
 	else
-		return arg0_11._nextDamageTime < pg.TimeMgr.GetInstance():GetCombatTime()
+		return arg0_12._nextDamageTime < pg.TimeMgr.GetInstance():GetCombatTime()
 	end
 end
 
-function var3_0.HideBullet(arg0_12)
-	arg0_12._position.x = 0
-	arg0_12._position.y = 100
-	arg0_12._position.z = 0
+function var3_0.HideBullet(arg0_13)
+	arg0_13._position.x = 0
+	arg0_13._position.y = 100
+	arg0_13._position.z = 0
 end
 
-function var3_0.GetExplodePostion(arg0_13)
-	return arg0_13._explodePos
+function var3_0.GetExplodePostion(arg0_14)
+	return arg0_14._explodePos
 end

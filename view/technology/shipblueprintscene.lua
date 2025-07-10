@@ -1219,20 +1219,9 @@ function var0_0.updateModPanel(arg0_98)
 	end, SFX_PANEL)
 	setActive(arg0_98.calcMaxBtn, not var4_98)
 
-	local var14_98 = false
+	local var14_98 = var0_98:canFateSimulation()
 
-	if not pg.NewStoryMgr.GetInstance():IsPlayed("PHANTOM_HELP") then
-		var14_98 = true
-
-		pg.NewGuideMgr.GetInstance():Play("PHANTOM_HELP")
-		pg.m02:sendNotification(GAME.STORY_UPDATE, {
-			storyId = "PHANTOM_HELP"
-		})
-	end
-
-	local var15_98 = var0_98:canFateSimulation()
-
-	if var15_98 then
+	if var14_98 then
 		onButton(arg0_98, arg0_98.fittingBtn, function()
 			if arg0_98.isSwitchAnim then
 				return
@@ -1262,7 +1251,7 @@ function var0_0.updateModPanel(arg0_98)
 		end, SFX_PANEL)
 		arg0_98:updateFittingPanel()
 
-		if not var14_98 then
+		if not inGuide then
 			pg.NewStoryMgr.GetInstance():Play(var0_98:getConfig("luck_story"), function(arg0_112)
 				if arg0_112 then
 					arg0_98:buildStartAni("fateStartWindow", function()
@@ -1273,8 +1262,8 @@ function var0_0.updateModPanel(arg0_98)
 		end
 	end
 
-	setActive(arg0_98.calcPanel, not var15_98)
-	setActive(arg0_98.fittingBtn, var15_98)
+	setActive(arg0_98.calcPanel, not var14_98)
+	setActive(arg0_98.fittingBtn, var14_98)
 	setActive(arg0_98.fittingBtnEffect, false)
 end
 

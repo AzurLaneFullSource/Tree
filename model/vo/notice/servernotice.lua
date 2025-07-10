@@ -11,6 +11,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.icon = arg1_1.icon
 	arg0_1.track = arg1_1.track
 	arg0_1.priority = arg1_1.priority
+	arg0_1.need_level = arg1_1.need_level
 
 	local var0_1 = string.split(arg0_1.title, "&")
 
@@ -49,8 +50,12 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.code = arg0_1:prefKey()
 end
 
-function var0_0.prefKey(arg0_2)
-	return "ServerNotice" .. arg0_2.id
+function var0_0.ShouldShow(arg0_2)
+	return getProxy(PlayerProxy):getRawData().level > arg0_2.need_level
+end
+
+function var0_0.prefKey(arg0_3)
+	return "ServerNotice" .. arg0_3.id
 end
 
 return var0_0

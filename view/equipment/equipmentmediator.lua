@@ -303,6 +303,12 @@ function var0_0.handleNotification(arg0_17, arg1_17)
 		arg0_17.canUpdate = true
 
 		arg0_17.viewComponent:setEquipmentUpdate()
+
+		if #var1_17 > 0 then
+			arg0_17.viewComponent:emit(BaseUI.ON_AWARD, {
+				items = var1_17
+			})
+		end
 	elseif var0_17 == BagProxy.ITEM_UPDATED then
 		if arg0_17.canUpdate then
 			local var2_17 = getProxy(BagProxy):getItemsByExclude()

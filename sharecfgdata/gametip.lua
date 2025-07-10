@@ -11553,6 +11553,26 @@ _G.pg.base.gametip.blueprint_simulation_confirm_79902 = {
 	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nPrototype Carrier-Based La-9\nPrototype Carrier-Based La-9\nPrototype VIT-2 (Mode Change)</color></size>",
 }
 
+_G.pg.base.gametip.blueprint_simulation_confirm_19906 = {
+	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nPrototype Triple 406mm/45 MK7 Main Gun Mount\nTwin 127mm Mk 12 Dual-Purpose Gun Mount\nQuadruple 40mm Bofors AA Gun Mount\n</color></size>",
+}
+
+_G.pg.base.gametip.blueprint_simulation_confirm_49910 = {
+	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nPrototype Quadruple 305mm SKC39 Main Gun Mount\nTwin 127mm KM40 Main Gun Mount\nPrototype 55mm Gerät 58 AA Gun Mount\n</color></size>",
+}
+
+_G.pg.base.gametip.blueprint_simulation_confirm_69903 = {
+	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\n135mm Twin Main Gun Mount Model 1938\nPrototype Quadruple 533mm Si 270 Torpedo Mount\nPrototype Sextuple 20mm Scotti Model 1941 Anti-Air Gun\n</color></size>",
+}
+
+_G.pg.base.gametip.blueprint_simulation_confirm_79903 = {
+	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nPrototype Triple 180mm B-1-P Model 1932 (Impr.) Main Gun Mount\n550mm Triple Torpedo Mount\nTwin 57mm/L60 Bofors Mle 1951 AA Gun Mount\n</color></size>",
+}
+
+_G.pg.base.gametip.blueprint_simulation_confirm_119901 = {
+	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nPrototype Triple 283mm/54.5 Main Gun Mount\nTwin 100mm Type 98 Kai High-Angle Gun Mount\nTwin 57mm/L60 Bofors Mle 1951 AA Gun Mount\n</color></size>",
+}
+
 _G.pg.base.gametip.electrotherapy_wanning = {
 	tip = "The electrified area is about to expand",
 }
@@ -29364,5 +29384,17 @@ _G.pg.base.gametip.battleui_display3 = {
 
 _G.pg.base.gametip.zengke_series_serverinfo = {
 	tip = "Server:",
+}
+
+_G.pg.base.gametip.grapihcs3d_setting_bloom = {
+	tip = "Visual Quality",
+}
+
+_G.pg.base.gametip.grapihcs3d_setting_bloom_optionname0 = {
+	tip = "High",
+}
+
+_G.pg.base.gametip.grapihcs3d_setting_bloom_optionname1 = {
+	tip = "Low",
 }
 

@@ -47,6 +47,7 @@ function var5_0.AddUnitEvent(arg0_3)
 	arg0_3._unitData:RegisterEventListener(arg0_3, var1_0.WILL_DIE, arg0_3.onWillDie)
 	arg0_3._unitData:RegisterEventListener(arg0_3, var1_0.INIT_COOL_DOWN, arg0_3.onInitWeaponCD)
 	arg0_3._unitData:RegisterEventListener(arg0_3, var1_0.WEAPON_SECTOR, arg0_3.onActiveWeaponSector)
+	arg0_3._unitData:RegisterEventListener(arg0_3, var1_0.CREATE_POINT_AIR_STRIKE, arg0_3.onCreatePointAirStrike)
 
 	if arg0_3._unitData:GetFleetRangeAAWeapon() then
 		arg0_3:RegisterWeaponListener(arg0_3._unitData:GetFleetRangeAAWeapon())
@@ -78,6 +79,7 @@ function var5_0.RemoveUnitEvent(arg0_4)
 
 	arg0_4._unitData:UnregisterEventListener(arg0_4, var1_0.WILL_DIE)
 	arg0_4._unitData:UnregisterEventListener(arg0_4, var1_0.INIT_COOL_DOWN)
+	arg0_4._unitData:UnregisterEventListener(arg0_4, var1_0.CREATE_POINT_AIR_STRIKE)
 	var5_0.super.RemoveUnitEvent(arg0_4)
 end
 
@@ -384,14 +386,20 @@ function var5_0.onActiveWeaponSector(arg0_36, arg1_36)
 	end
 end
 
-function var5_0.OnAnimatorTrigger(arg0_37)
-	arg0_37._unitData:CharacterActionTriggerCallback()
+function var5_0.onCreatePointAirStrike(arg0_37, arg1_37)
+	local var0_37 = arg1_37.Data.weapon
+
+	arg0_37:InitChargeWeapon(var0_37)
 end
 
-function var5_0.OnAnimatorEnd(arg0_38)
-	arg0_38._unitData:CharacterActionEndCallback()
+function var5_0.OnAnimatorTrigger(arg0_38)
+	arg0_38._unitData:CharacterActionTriggerCallback()
 end
 
-function var5_0.OnAnimatorStart(arg0_39)
-	arg0_39._unitData:CharacterActionStartCallback()
+function var5_0.OnAnimatorEnd(arg0_39)
+	arg0_39._unitData:CharacterActionEndCallback()
+end
+
+function var5_0.OnAnimatorStart(arg0_40)
+	arg0_40._unitData:CharacterActionStartCallback()
 end

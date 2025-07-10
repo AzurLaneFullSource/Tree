@@ -1440,6 +1440,7 @@ local var1_0 = {
 
 		getProxy(ApartmentProxy):RecordEnterTime()
 		getProxy(ApartmentProxy):InitGiftDaily()
+		GraphicSettingConst.SettingQuality()
 
 		local var3_236 = arg0_236.context.onRemoved
 

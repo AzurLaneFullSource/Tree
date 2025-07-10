@@ -16,6 +16,8 @@ end
 function var0_0.preload(arg0_3, arg1_3)
 	arg0_3.iconSpries = {}
 
+	local var0_3 = LOGIN_HX and PlayerProxy.GetDeviceMaxPlayerLevel() <= pg.gameset.LOGIN_HX_LV.key_value
+
 	seriesAsync({
 		function(arg0_4)
 			local var0_4 = {
@@ -43,7 +45,9 @@ function var0_0.preload(arg0_3, arg1_3)
 					arg0_6()
 				end)
 			else
-				LoadSpriteAsync("loadingbg/" .. arg0_3.bgPath, function(arg0_8)
+				local var0_6 = var0_3 and "loadingbg_hx/" or "loadingbg/"
+
+				LoadSpriteAsync(var0_6 .. arg0_3.bgPath, function(arg0_8)
 					arg0_3.staticBgSprite = arg0_8
 
 					arg0_6()

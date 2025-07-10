@@ -462,3 +462,11 @@ function cloneRawTableFormClass(arg0_39)
 
 	return var0_39
 end
+
+function noEmptyStr(arg0_40)
+	if arg0_40 and arg0_40 == "" then
+		return nil
+	else
+		return arg0_40
+	end
+end

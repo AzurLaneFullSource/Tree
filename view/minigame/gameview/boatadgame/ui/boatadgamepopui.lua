@@ -204,24 +204,31 @@ end
 function var0_0.updateSettlementUI(arg0_25)
 	GetComponent(findTF(arg0_25.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
-	local var0_25 = var1_0.GetMiniGameData():GetRuntimeData("elements")
-	local var1_25 = var1_0.scoreNum
-	local var2_25 = var0_25 and #var0_25 > 0 and var0_25[1] or 0
+	local var0_25 = var1_0.scoreNum
+	local var1_25
 
-	setActive(findTF(arg0_25.settlementUI, "ad/new"), var2_25 < var1_25)
+	if var1_0.GetMiniGameData():getConfig("game_room") > 0 then
+		var1_25 = getProxy(GameRoomProxy):getRoomScore(var1_0.GetMiniGameData():getConfig("game_room"))
+	else
+		local var2_25 = var1_0.GetMiniGameData():GetRuntimeData("elements")
 
-	if var2_25 < var1_25 then
-		var2_25 = var1_25
+		var1_25 = var2_25 and #var2_25 > 0 and var2_25[1] or 0
+	end
 
-		arg0_25._event:emit(SimpleMGEvent.STORE_SERVER, var2_25)
+	setActive(findTF(arg0_25.settlementUI, "ad/new"), var1_25 < var0_25)
+
+	if var1_25 < var0_25 then
+		var1_25 = var0_25
+
+		arg0_25._event:emit(SimpleMGEvent.STORE_SERVER, var1_25)
 	end
 
 	local var3_25 = findTF(arg0_25.settlementUI, "ad/highText")
 	local var4_25 = findTF(arg0_25.settlementUI, "ad/currentText")
 
-	setText(var3_25, var2_25)
-	setText(var4_25, var1_25)
-	arg0_25._event:emit(SimpleMGEvent.SUBMIT_GAME_SUCCESS)
+	setText(var3_25, var1_25)
+	setText(var4_25, var0_25)
+	arg0_25._event:emit(SimpleMGEvent.SUBMIT_GAME_SUCCESS, var0_25)
 end
 
 function var0_0.backPressed(arg0_26)

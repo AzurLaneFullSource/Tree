@@ -33,7 +33,9 @@ function var0_0.handleNotification(arg0_4, arg1_4)
 	if var0_4 == GAME.DESTROY_EQUIPMENTS_DONE then
 		arg0_4.viewComponent:HideDestroyCondirm()
 
-		if table.getCount(var1_4) ~= 0 then
+		local var2_4 = getProxy(ContextProxy):getCurrentContext()
+
+		if var2_4 and var2_4.mediator.__cname ~= "EquipmentMediator" and table.getCount(var1_4) ~= 0 then
 			arg0_4.viewComponent:emit(BaseUI.ON_AWARD, {
 				items = var1_4,
 				title = AwardInfoLayer.TITLE.ITEM,

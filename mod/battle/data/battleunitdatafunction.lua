@@ -339,6 +339,8 @@ function var33_0.CreateWeaponUnit(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 		var1_8 = var0_0.Battle.BattleBombWeaponUnit.New()
 	elseif var3_8 == var1_0.EquipmentType.POINT_HIT_AND_LOCK or var3_8 == var1_0.EquipmentType.MANUAL_MISSILE or var3_8 == var1_0.EquipmentType.MANUAL_METEOR then
 		var1_8 = var0_0.Battle.BattlePointHitWeaponUnit.New()
+	elseif var3_8 == var1_0.EquipmentType.POINT_AIR_STRIKE then
+		var1_8 = var0_0.Battle.BattlePointAirStrikeUnit.New()
 	elseif var3_8 == var1_0.EquipmentType.BEAM then
 		var1_8 = var0_0.Battle.BattleLaserUnit.New()
 	elseif var3_8 == var1_0.EquipmentType.DEPTH_CHARGE then

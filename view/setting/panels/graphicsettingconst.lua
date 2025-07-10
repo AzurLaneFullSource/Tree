@@ -200,73 +200,102 @@ var0_0.settings = {
 		isShow = 1
 	}
 }
+var0_0.volumeSettings = {
+	{
+		parentId = 11,
+		settingType = 2,
+		playerPrefsname = "volume_bloom_intensity",
+		settingName = "grapihcs3d_setting_bloom",
+		isShow = 1,
+		optionNames = {
+			"grapihcs3d_setting_bloom_optionname0",
+			"grapihcs3d_setting_bloom_optionname1"
+		},
+		options = {
+			0,
+			1
+		},
+		OnSetting = function()
+			tolua.loadassembly("Yongshi.BLHotUpdate.Runtime.Rendering")
+			ReflectionHelp.RefCallStaticMethod(typeof("BLHX.Rendering.HotUpdate.BloomIntensity"), "SetEnabled", {
+				typeof("System.Boolean")
+			}, {
+				PlayerPrefs.GetInt("volume_bloom_intensity", 0) == 1
+			})
+		end
+	}
+}
+var0_0.TYPE_GLOBAL_QUALITY = 1
+var0_0.TYPE_VOLUME = 2
 
 function var0_0.InitDefautQuality()
 	if PlayerPrefs.GetInt("dorm3d_graphics_settings_new", 0) == 0 then
-		local var0_1 = DevicePerformanceUtil.GetDevicePerformanceLevel()
+		local var0_2 = DevicePerformanceUtil.GetDevicePerformanceLevel()
 
 		if PLATFORM == PLATFORM_IPHONEPLAYER then
-			local var1_1 = SystemInfo.deviceModel or ""
+			local var1_2 = SystemInfo.deviceModel or ""
 
-			local function var2_1(arg0_2)
-				local var0_2 = string.match(arg0_2, "iPad(%d+)")
-				local var1_2 = tonumber(var0_2)
-
-				if var1_2 and var1_2 >= 8 then
-					return true
-				end
-
-				return false
-			end
-
-			local function var3_1(arg0_3)
-				local var0_3 = string.match(arg0_3, "iPhone(%d+)")
+			local function var2_2(arg0_3)
+				local var0_3 = string.match(arg0_3, "iPad(%d+)")
 				local var1_3 = tonumber(var0_3)
 
-				if var1_3 and var1_3 >= 13 then
+				if var1_3 and var1_3 >= 8 then
 					return true
 				end
 
 				return false
 			end
 
-			if var2_1(var1_1) or var3_1(var1_1) then
-				var0_1 = DevicePerformanceLevel.High
+			local function var3_2(arg0_4)
+				local var0_4 = string.match(arg0_4, "iPhone(%d+)")
+				local var1_4 = tonumber(var0_4)
+
+				if var1_4 and var1_4 >= 13 then
+					return true
+				end
+
+				return false
+			end
+
+			if var2_2(var1_2) or var3_2(var1_2) then
+				var0_2 = DevicePerformanceLevel.High
 			end
 		end
 
-		local var4_1 = var0_1 == DevicePerformanceLevel.High and 3 or var0_1 == DevicePerformanceLevel.Mid and 2 or 1
+		local var4_2 = var0_2 == DevicePerformanceLevel.High and 3 or var0_2 == DevicePerformanceLevel.Mid and 2 or 1
 
-		PlayerPrefs.SetInt("dorm3d_graphics_settings_new", var4_1)
+		PlayerPrefs.SetInt("dorm3d_graphics_settings_new", var4_2)
 
-		Dorm3dRoomTemplateScene.FirstDefaultSetting = var4_1
+		Dorm3dRoomTemplateScene.FirstDefaultSetting = var4_2
 	end
 end
 
 function var0_0.SettingQuality()
-	local var0_4 = PlayerPrefs.GetInt("dorm3d_graphics_settings_new", 4)
-	local var1_4 = var0_0.assetPath[var0_4]
-	local var2_4 = LoadAny("three3dquaitysettings/defaultsettings", var1_4)
+	local var0_5 = PlayerPrefs.GetInt("dorm3d_graphics_settings_new", 4)
+	local var1_5 = var0_0.assetPath[var0_5]
+	local var2_5 = LoadAny("three3dquaitysettings/defaultsettings", var1_5)
 
-	if var0_4 ~= 4 then
-		BLHX.Rendering.GlobalQualitySettings.SetOverrideQualitySettings(var2_4)
+	if var0_5 ~= 4 then
+		BLHX.Rendering.GlobalQualitySettings.SetOverrideQualitySettings(var2_5)
+	else
+		for iter0_5, iter1_5 in ipairs(var0_0.settings) do
+			local var3_5 = PlayerPrefs.GetInt(iter1_5.playerPrefsname, -1)
 
-		return
-	end
+			if var3_5 ~= -1 then
+				if iter1_5.settingType == var0_0.SettingType.toggle then
+					var3_5 = var3_5 == 1 and true or false
+				end
 
-	for iter0_4, iter1_4 in ipairs(var0_0.settings) do
-		local var3_4 = PlayerPrefs.GetInt(iter1_4.playerPrefsname, -1)
-
-		if var3_4 ~= -1 then
-			if iter1_4.settingType == var0_0.SettingType.toggle then
-				var3_4 = var3_4 == 1 and true or false
+				var2_5[iter1_5.Cname] = var3_5
 			end
-
-			var2_4[iter1_4.Cname] = var3_4
 		end
+
+		BLHX.Rendering.GlobalQualitySettings.SetOverrideQualitySettings(var2_5)
 	end
 
-	BLHX.Rendering.GlobalQualitySettings.SetOverrideQualitySettings(var2_4)
+	_.each(var0_0.volumeSettings, function(arg0_6)
+		arg0_6.OnSetting()
+	end)
 end
 
 function var0_0.ClearPlayerPrefs()
@@ -276,8 +305,8 @@ function var0_0.ClearPlayerPrefs()
 
 	PlayerPrefs.SetInt("dorm3d_graphics_settings_changeed", 1)
 
-	for iter0_5, iter1_5 in ipairs(var0_0.settings) do
-		PlayerPrefs.DeleteKey(iter1_5.playerPrefsname)
+	for iter0_7, iter1_7 in ipairs(var0_0.settings) do
+		PlayerPrefs.DeleteKey(iter1_7.playerPrefsname)
 	end
 end
 

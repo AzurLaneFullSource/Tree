@@ -286,60 +286,68 @@ function var3_0.GetResFromBuff(arg0_12, arg1_12, arg2_12, arg3_12)
 			var3_0.getWeaponResource(var13_12, var0_12)
 		end
 
-		local var14_12 = iter5_12.arg_list.skin_id
+		local var14_12 = iter5_12.arg_list.aircraft_id_list
 
 		if var14_12 then
-			local var15_12 = var0_0.Battle.BattleResourceManager.GetEquipSkinBulletRes(var14_12)
-
-			for iter18_12, iter19_12 in ipairs(var15_12) do
-				var0_12[#var0_12 + 1] = iter19_12
+			for iter18_12, iter19_12 in ipairs(var14_12) do
+				var3_0.getWeaponResource(iter19_12, var0_12)
 			end
 		end
 
-		local var16_12 = iter5_12.arg_list.ship_skin_id
+		local var15_12 = iter5_12.arg_list.skin_id
 
-		if var16_12 then
-			local var17_12 = var3_0.GetPlayerShipSkinDataFromID(var16_12)
+		if var15_12 then
+			local var16_12 = var0_0.Battle.BattleResourceManager.GetEquipSkinBulletRes(var15_12)
 
-			var0_12[#var0_12 + 1] = var0_0.Battle.BattleResourceManager.GetCharacterPath(var17_12.prefab)
+			for iter20_12, iter21_12 in ipairs(var16_12) do
+				var0_12[#var0_12 + 1] = iter21_12
+			end
 		end
 
-		local var18_12 = iter5_12.arg_list.buff_id
+		local var17_12 = iter5_12.arg_list.ship_skin_id
 
-		if var18_12 then
-			local var19_12 = var3_0.GetResFromBuff(var18_12, arg1_12, arg2_12, arg3_12)
+		if var17_12 then
+			local var18_12 = var3_0.GetPlayerShipSkinDataFromID(var17_12)
 
-			for iter20_12, iter21_12 in ipairs(var19_12) do
-				if type(iter21_12) == "string" then
-					var0_12[#var0_12 + 1] = iter21_12
-				elseif type(iter21_12) == "table" then
-					for iter22_12, iter23_12 in ipairs(iter21_12) do
-						var0_12[#var0_12 + 1] = iter23_12
+			var0_12[#var0_12 + 1] = var0_0.Battle.BattleResourceManager.GetCharacterPath(var18_12.prefab)
+		end
+
+		local var19_12 = iter5_12.arg_list.buff_id
+
+		if var19_12 then
+			local var20_12 = var3_0.GetResFromBuff(var19_12, arg1_12, arg2_12, arg3_12)
+
+			for iter22_12, iter23_12 in ipairs(var20_12) do
+				if type(iter23_12) == "string" then
+					var0_12[#var0_12 + 1] = iter23_12
+				elseif type(iter23_12) == "table" then
+					for iter24_12, iter25_12 in ipairs(iter23_12) do
+						var0_12[#var0_12 + 1] = iter25_12
 					end
 				end
 			end
 		end
 
-		local var20_12 = iter5_12.arg_list.buff_skin_id
+		local var21_12 = iter5_12.arg_list.buff_skin_id
 
-		if var20_12 then
-			local var21_12 = var3_0.GetResFromBuff(var20_12, arg1_12, arg2_12, arg3_12)
+		if var21_12 then
+			local var22_12 = var3_0.GetResFromBuff(var21_12, arg1_12, arg2_12, arg3_12)
 
-			for iter24_12, iter25_12 in ipairs(var21_12) do
-				if type(iter25_12) == "string" then
-					var0_12[#var0_12 + 1] = iter25_12
-				elseif type(iter25_12) == "table" then
-					for iter26_12, iter27_12 in ipairs(iter25_12) do
-						var0_12[#var0_12 + 1] = iter27_12
+			for iter26_12, iter27_12 in ipairs(var22_12) do
+				if type(iter27_12) == "string" then
+					var0_12[#var0_12 + 1] = iter27_12
+				elseif type(iter27_12) == "table" then
+					for iter28_12, iter29_12 in ipairs(iter27_12) do
+						var0_12[#var0_12 + 1] = iter29_12
 					end
 				end
 			end
 		end
 
-		local var22_12 = iter5_12.arg_list.effect
+		local var23_12 = iter5_12.arg_list.effect
 
-		if var22_12 then
-			var0_12[#var0_12 + 1] = var0_0.Battle.BattleResourceManager.GetFXPath(var22_12)
+		if var23_12 then
+			var0_12[#var0_12 + 1] = var0_0.Battle.BattleResourceManager.GetFXPath(var23_12)
 		end
 	end
 

@@ -50,39 +50,41 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	local var0_1 = findTF(arg0_1.menuUI, "tplBattleItem")
 	local var1_1 = var1_0.drop
 
-	for iter0_1 = 1, 7 do
-		local var2_1 = iter0_1
-		local var3_1 = tf(instantiate(var0_1))
+	if var1_1 and #var1_1 > 0 then
+		for iter0_1 = 1, 7 do
+			local var2_1 = iter0_1
+			local var3_1 = tf(instantiate(var0_1))
 
-		var3_1.name = "battleItem_" .. iter0_1
+			var3_1.name = "battleItem_" .. iter0_1
 
-		setParent(var3_1, findTF(arg0_1.menuUI, "battList/Viewport/Content"))
+			setParent(var3_1, findTF(arg0_1.menuUI, "battList/Viewport/Content"))
 
-		local var4_1 = iter0_1
+			local var4_1 = iter0_1
 
-		GetSpriteFromAtlasAsync(var1_0.ui_atlas, "battleDesc" .. var4_1, function(arg0_8)
-			if arg0_8 then
-				setImageSprite(findTF(var3_1, "state_open/desc"), arg0_8, true)
-				setImageSprite(findTF(var3_1, "state_clear/desc"), arg0_8, true)
-				setImageSprite(findTF(var3_1, "state_current/desc"), arg0_8, true)
-				setImageSprite(findTF(var3_1, "state_closed/desc"), arg0_8, true)
-			end
-		end)
+			GetSpriteFromAtlasAsync(var1_0.ui_atlas, "battleDesc" .. var4_1, function(arg0_8)
+				if arg0_8 then
+					setImageSprite(findTF(var3_1, "state_open/desc"), arg0_8, true)
+					setImageSprite(findTF(var3_1, "state_clear/desc"), arg0_8, true)
+					setImageSprite(findTF(var3_1, "state_current/desc"), arg0_8, true)
+					setImageSprite(findTF(var3_1, "state_closed/desc"), arg0_8, true)
+				end
+			end)
 
-		local var5_1 = findTF(var3_1, "icon")
-		local var6_1 = {
-			type = var1_1[iter0_1][1],
-			id = var1_1[iter0_1][2],
-			amount = var1_1[iter0_1][3]
-		}
+			local var5_1 = findTF(var3_1, "icon")
+			local var6_1 = {
+				type = var1_1[iter0_1][1],
+				id = var1_1[iter0_1][2],
+				amount = var1_1[iter0_1][3]
+			}
 
-		updateDrop(var5_1, var6_1)
-		onButton(arg0_1._event, var5_1, function()
-			arg0_1._event:emit(BaseUI.ON_DROP, var6_1)
-		end, SFX_PANEL)
-		table.insert(arg0_1.dropItems, var5_1)
-		setActive(var3_1, true)
-		table.insert(arg0_1.battleItems, var3_1)
+			updateDrop(var5_1, var6_1)
+			onButton(arg0_1._event, var5_1, function()
+				arg0_1._event:emit(BaseUI.ON_DROP, var6_1)
+			end, SFX_PANEL)
+			table.insert(arg0_1.dropItems, var5_1)
+			setActive(var3_1, true)
+			table.insert(arg0_1.battleItems, var3_1)
+		end
 	end
 end
 
@@ -95,10 +97,14 @@ function var0_0.update(arg0_11, arg1_11)
 
 	arg0_11.mgHubData = arg1_11
 
+	if #arg0_11.battleItems <= 0 then
+		return
+	end
+
 	local var0_11 = arg0_11:getGameUsedTimes(arg1_11)
 	local var1_11 = arg0_11:getGameTimes(arg1_11)
 
-	for iter0_11 = 1, 7 do
+	for iter0_11 = 1, #arg0_11.battleItems do
 		setActive(findTF(arg0_11.battleItems[iter0_11], "state_open"), false)
 		setActive(findTF(arg0_11.battleItems[iter0_11], "state_closed"), false)
 		setActive(findTF(arg0_11.battleItems[iter0_11], "state_clear"), false)

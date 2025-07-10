@@ -34,6 +34,8 @@ function var3_0.GetCurrentWeaponIconIndex(arg0_3)
 			return 10
 		elseif var1_3 == var2_0.MANUAL_METEOR then
 			return 11
+		elseif var1_3 == var2_0.POINT_AIR_STRIKE then
+			return 12
 		end
 	end
 end

@@ -145,6 +145,10 @@ function var3_0.SpwanAircraft(arg0_10, arg1_10)
 
 	arg0_10:TriggerBuffWhenSpawnAircraft(var0_10)
 
+	if arg0_10._strikePoint then
+		var0_10:SetStrikePoint(arg0_10._strikePoint)
+	end
+
 	return var0_10, var3_10
 end
 
@@ -158,29 +162,37 @@ function var3_0.TriggerBuffWhenSpawnAircraft(arg0_11, arg1_11)
 	arg0_11._host:TriggerBuff(var0_11, var1_11)
 end
 
-function var3_0.GetATKAircraftList(arg0_12)
-	arg0_12._debugRecordATKAircraft = arg0_12._debugRecordATKAircraft or {}
-
-	return arg0_12._debugRecordATKAircraft
+function var3_0.SetStrikePoint(arg0_12, arg1_12)
+	arg0_12._strikePoint = arg1_12
 end
 
-function var3_0.GetDEFAircraftList(arg0_13)
-	arg0_13._debugRecordDEFAircraft = arg0_13._debugRecordDEFAircraft or {}
-
-	return arg0_13._debugRecordDEFAircraft
+function var3_0.GetStrikePoint(arg0_13)
+	return arg0_13._strikePoint
 end
 
-function var3_0.GetDamageSUM(arg0_14)
-	local var0_14 = 0
-	local var1_14 = arg0_14:GetDEFAircraftList()
+function var3_0.GetATKAircraftList(arg0_14)
+	arg0_14._debugRecordATKAircraft = arg0_14._debugRecordATKAircraft or {}
 
-	for iter0_14, iter1_14 in ipairs(var1_14) do
-		local var2_14 = iter1_14:GetWeapon()
+	return arg0_14._debugRecordATKAircraft
+end
 
-		for iter2_14, iter3_14 in ipairs(var2_14) do
-			var0_14 = var0_14 + iter3_14:GetDamageSUM()
+function var3_0.GetDEFAircraftList(arg0_15)
+	arg0_15._debugRecordDEFAircraft = arg0_15._debugRecordDEFAircraft or {}
+
+	return arg0_15._debugRecordDEFAircraft
+end
+
+function var3_0.GetDamageSUM(arg0_16)
+	local var0_16 = 0
+	local var1_16 = arg0_16:GetDEFAircraftList()
+
+	for iter0_16, iter1_16 in ipairs(var1_16) do
+		local var2_16 = iter1_16:GetWeapon()
+
+		for iter2_16, iter3_16 in ipairs(var2_16) do
+			var0_16 = var0_16 + iter3_16:GetDamageSUM()
 		end
 	end
 
-	return var0_14
+	return var0_16
 end
