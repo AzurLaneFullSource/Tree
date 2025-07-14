@@ -2016,8 +2016,8 @@ function var0_0.updatePhantomQuest(arg0_145)
 
 			local var1_147 = string.format("%d", math.clamp(var0_147.unlocked and var0_147.config.target_num or var0_147.progress, 0, var0_147.config.target_num) * 100 / var0_147.config.target_num)
 
-			setText(arg2_147:Find("desc/info/Text/progress"), var1_147 .. "%")
-			setText(arg2_147:Find("desc/info/Text/progress/shadow"), var1_147 .. "%")
+			setText(arg2_147:Find("desc/info/progress"), var1_147 .. "%")
+			setText(arg2_147:Find("desc/info/progress/shadow"), var1_147 .. "%")
 
 			local var2_147 = ShipBluePrint.getPhantomQuestCostDrop(var0_147)
 
@@ -2077,7 +2077,7 @@ end
 function var0_0.createTask(arg0_152, arg1_152)
 	local var0_152 = {
 		title = arg0_152:findTF("title/name", arg1_152),
-		desc = arg0_152:findTF("desc/Text", arg1_152),
+		desc = arg0_152:findTF("desc/info/Text", arg1_152),
 		timerTF = arg0_152:findTF("title/timer", arg1_152),
 		timerTFTxt = arg0_152:findTF("title/timer/Text", arg1_152),
 		timerOpen = arg0_152:findTF("title/timer/open", arg1_152),
@@ -2095,8 +2095,8 @@ function var0_0.createTask(arg0_152, arg1_152)
 	var0_152.progessSlider = var0_152.progressTF:GetComponent(typeof(Slider))
 	var0_152.lockBtn = arg0_152:findTF("desc/commit_panel/lock_btn", arg1_152)
 	var0_152.itemCount = var0_152.itemTpl:Find("award/icon_bg/count")
-	var0_152.progres = arg0_152:findTF("desc/Text/progress", arg1_152)
-	var0_152.progreshadow = arg0_152:findTF("desc/Text/progress/shadow", arg1_152)
+	var0_152.progres = arg0_152:findTF("desc/info/progress", arg1_152)
+	var0_152.progreshadow = arg0_152:findTF("desc/info/progress/shadow", arg1_152)
 	var0_152.check = findTF(arg1_152, "title/complete")
 	var0_152.lock = findTF(arg1_152, "title/lock")
 	var0_152.working = findTF(arg1_152, "title/working")
