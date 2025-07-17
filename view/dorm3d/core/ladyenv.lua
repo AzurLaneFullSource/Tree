@@ -263,10 +263,7 @@ function var0_0.HideCharacterPart(arg0_20, arg1_20, arg2_20)
 end
 
 function var0_0.GetCurrentAnim(arg0_23)
-	local var0_23 = arg0_23
-	local var1_23 = var0_23.ladyAnimator:GetCurrentAnimatorStateInfo(var0_23.ladyAnimBaseLayerIndex).shortNameHash
-
-	return var0_23.animNameMap[var1_23]
+	return arg0_23.ladyAnimator:GetCurrentAnimatorStateInfo(arg0_23.ladyAnimBaseLayerIndex).shortNameHash
 end
 
 function var0_0.EnableCloth(arg0_24, arg1_24, arg2_24)
@@ -335,8 +332,6 @@ function var0_0.PlaySingleAction(arg0_28, arg1_28, arg2_28)
 	existCall(var0_28.animExtraItemCallback)
 
 	var0_28.animExtraItemCallback = nil
-	var0_28.animNameMap = var0_28.animNameMap or {}
-	var0_28.animNameMap[var0_28.ladyAnimator.StringToHash(arg1_28)] = arg1_28
 
 	local var4_28 = arg0_28:GetBlackboardValue("groupId")
 	local var5_28 = _.detect(pg.dorm3d_anim_extraitem.get_id_list_by_ship_id[var4_28] or {}, function(arg0_29)
@@ -427,8 +422,6 @@ function var0_0.SwitchAnim(arg0_36, arg1_36, arg2_36)
 	existCall(var0_36.animExtraItemCallback)
 
 	var0_36.animExtraItemCallback = nil
-	var0_36.animNameMap = var0_36.animNameMap or {}
-	var0_36.animNameMap[var0_36.ladyAnimator.StringToHash(arg1_36)] = arg1_36
 
 	local var2_36 = {}
 

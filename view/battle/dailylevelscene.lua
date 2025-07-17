@@ -4,7 +4,7 @@ local var2_0 = 4
 local var3_0 = 101
 
 function var0_0.getUIName(arg0_1)
-	return "dailylevelui"
+	return "DailyLevelUI"
 end
 
 function var0_0.ResUISettings(arg0_2)
@@ -52,609 +52,630 @@ function var0_0.setDailyCounts(arg0_5, arg1_5)
 	arg0_5.dailyCounts = arg1_5
 end
 
-function var0_0.setShips(arg0_6, arg1_6)
-	arg0_6.shipVOs = arg1_6
+function var0_0.setActivity(arg0_6, arg1_6)
+	arg0_6.bonusActivity = arg1_6
 end
 
-function var0_0.updateRes(arg0_7, arg1_7)
-	arg0_7.player = arg1_7
+function var0_0.setShips(arg0_7, arg1_7)
+	arg0_7.shipVOs = arg1_7
 end
 
-function var0_0.didEnter(arg0_8)
-	onButton(arg0_8, arg0_8:findTF("help_btn"), function()
+function var0_0.updateRes(arg0_8, arg1_8)
+	arg0_8.player = arg1_8
+end
+
+function var0_0.didEnter(arg0_9)
+	onButton(arg0_9, arg0_9:findTF("help_btn"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_daily_task.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0_8, arg0_8.backBtn, function()
-		if arg0_8.descMode then
-			if LeanTween.isTweening(go(arg0_8.stageContain)) or LeanTween.isTweening(go(arg0_8.selQuicklyTF)) then
+	onButton(arg0_9, arg0_9.backBtn, function()
+		if arg0_9.descMode then
+			if LeanTween.isTweening(go(arg0_9.stageContain)) or LeanTween.isTweening(go(arg0_9.selQuicklyTF)) then
 				return
 			end
 
-			arg0_8:enableDescMode(false)
+			arg0_9:enableDescMode(false)
 		else
-			arg0_8:emit(var0_0.ON_BACK)
+			arg0_9:emit(var0_0.ON_BACK)
 		end
 	end, SFX_CANCEL)
-	onButton(arg0_8, arg0_8.leftBtn, function()
-		arg0_8:flipToSpecificCard(arg0_8:getNextCardId(true))
+	onButton(arg0_9, arg0_9.leftBtn, function()
+		arg0_9:flipToSpecificCard(arg0_9:getNextCardId(true))
 	end)
-	onButton(arg0_8, arg0_8.rightBtn, function()
-		arg0_8:flipToSpecificCard(arg0_8:getNextCardId(false))
+	onButton(arg0_9, arg0_9.rightBtn, function()
+		arg0_9:flipToSpecificCard(arg0_9:getNextCardId(false))
 	end)
-	arg0_8:displayDailyLevels()
+	arg0_9:displayDailyLevels()
 
-	if arg0_8.contextData.dailyLevelId then
-		arg0_8:tryOpenDesc(arg0_8.contextData.dailyLevelId)
+	if arg0_9.contextData.dailyLevelId then
+		arg0_9:tryOpenDesc(arg0_9.contextData.dailyLevelId)
 	else
-		arg0_8:enableDescMode(false)
+		arg0_9:enableDescMode(false)
 	end
 
-	arg0_8:tryPlayGuide()
-	arg0_8:ShowGuildTaskTip()
+	arg0_9:tryPlayGuide()
+	arg0_9:ShowGuildTaskTip()
 end
 
-function var0_0.initItems(arg0_13)
-	local var0_13 = getProxy(DailyLevelProxy)
+function var0_0.initItems(arg0_14)
+	local var0_14 = getProxy(DailyLevelProxy)
 
-	var0_13:setDailyTip(false)
+	var0_14:setDailyTip(false)
 
-	arg0_13.dailyCounts = var0_13:getRawData()
+	arg0_14.dailyCounts = var0_14:getRawData()
 
-	local var1_13 = pg.expedition_daily_template
+	local var1_14 = pg.expedition_daily_template
 
-	arg0_13.dailyLevelTFs = {}
-	arg0_13.dailyList = _.reverse(Clone(var1_13.all))
+	arg0_14.dailyLevelTFs = {}
+	arg0_14.dailyList = _.reverse(Clone(var1_14.all))
 
-	for iter0_13 = #arg0_13.dailyList, 1, -1 do
-		local var2_13 = var1_13[arg0_13.dailyList[iter0_13]].limit_period
-		local var3_13 = var1_13[arg0_13.dailyList[iter0_13]].insert_daily
+	for iter0_14 = #arg0_14.dailyList, 1, -1 do
+		local var2_14 = var1_14[arg0_14.dailyList[iter0_14]].limit_period
+		local var3_14 = var1_14[arg0_14.dailyList[iter0_14]].insert_daily
 
-		if var2_13 and type(var2_13) == "table" then
-			if not pg.TimeMgr:GetInstance():inTime(var2_13) then
-				table.remove(arg0_13.dailyList, iter0_13)
+		if var2_14 and type(var2_14) == "table" then
+			if not pg.TimeMgr:GetInstance():inTime(var2_14) then
+				table.remove(arg0_14.dailyList, iter0_14)
 			end
-		elseif var3_13 == 1 then
-			table.remove(arg0_13.dailyList, iter0_13)
+		elseif var3_14 == 1 then
+			table.remove(arg0_14.dailyList, iter0_14)
 		end
 	end
 
-	arg0_13:sortDailyList()
-	arg0_13:updateShowCenter()
+	arg0_14:sortDailyList()
+	arg0_14:updateShowCenter()
 
-	if arg0_13.contextData.dailyLevelId then
-		local var4_13 = arg0_13.contextData.dailyLevelId
+	if arg0_14.contextData.dailyLevelId then
+		local var4_14 = arg0_14.contextData.dailyLevelId
 
-		table.removebyvalue(arg0_13.dailyList, var4_13)
-		table.insert(arg0_13.dailyList, math.ceil(#var1_13.all / 2), var4_13)
+		table.removebyvalue(arg0_14.dailyList, var4_14)
+		table.insert(arg0_14.dailyList, math.ceil(#var1_14.all / 2), var4_14)
 	end
 
-	for iter1_13, iter2_13 in pairs(arg0_13.dailyList) do
-		arg0_13.dailyLevelTFs[iter2_13] = cloneTplTo(arg0_13.dailylevelTpl, arg0_13.content, iter2_13)
+	for iter1_14, iter2_14 in pairs(arg0_14.dailyList) do
+		arg0_14.dailyLevelTFs[iter2_14] = cloneTplTo(arg0_14.dailylevelTpl, arg0_14.content, iter2_14)
 	end
 end
 
-function var0_0.sortDailyList(arg0_14)
-	if #arg0_14.dailyList % 2 ~= 1 then
-		table.insert(arg0_14.dailyList, var3_0)
+function var0_0.sortDailyList(arg0_15)
+	if #arg0_15.dailyList % 2 ~= 1 then
+		table.insert(arg0_15.dailyList, var3_0)
 	end
 
-	table.sort(arg0_14.dailyList, function(arg0_15, arg1_15)
-		return tonumber(pg.expedition_daily_template[arg0_15].sort) > tonumber(pg.expedition_daily_template[arg1_15].sort)
+	table.sort(arg0_15.dailyList, function(arg0_16, arg1_16)
+		return tonumber(pg.expedition_daily_template[arg0_16].sort) > tonumber(pg.expedition_daily_template[arg1_16].sort)
 	end)
 end
 
-function var0_0.updateShowCenter(arg0_16)
-	if not arg0_16.dailyList or #arg0_16.dailyList == 0 then
+function var0_0.updateShowCenter(arg0_17)
+	if not arg0_17.dailyList or #arg0_17.dailyList == 0 then
 		return
 	end
 
-	local var0_16 = #arg0_16.dailyList
-	local var1_16 = pg.expedition_daily_template
-	local var2_16 = math.ceil(var0_16 / 2)
-	local var3_16
+	local var0_17 = #arg0_17.dailyList
+	local var1_17 = pg.expedition_daily_template
+	local var2_17 = math.ceil(var0_17 / 2)
+	local var3_17
 
-	for iter0_16 = 1, var0_16 do
-		local var4_16 = var1_16[arg0_16.dailyList[iter0_16]]
+	for iter0_17 = 1, var0_17 do
+		local var4_17 = var1_17[arg0_17.dailyList[iter0_17]]
 
-		if var4_16.show_with_count and var4_16.show_with_count == 1 then
-			local var5_16 = var4_16.id
-			local var6_16 = arg0_16.dailyCounts and arg0_16.dailyCounts[var5_16] or 0
+		if var4_17.show_with_count and var4_17.show_with_count == 1 then
+			local var5_17 = var4_17.id
+			local var6_17 = arg0_17.dailyCounts and arg0_17.dailyCounts[var5_17] or 0
 
-			if var4_16.limit_time - var6_16 > 0 then
-				var3_16 = var3_16 or iter0_16
+			if var4_17.limit_time - var6_17 > 0 then
+				var3_17 = var3_17 or iter0_17
 			end
 		end
 	end
 
-	if var3_16 then
-		local var7_16 = var2_16 - var3_16 < 0 and true or false
-		local var8_16 = math.abs(var2_16 - var3_16)
+	if var3_17 then
+		local var7_17 = var2_17 - var3_17 < 0 and true or false
+		local var8_17 = math.abs(var2_17 - var3_17)
 
-		for iter1_16 = 1, var8_16 do
-			local var9_16
+		for iter1_17 = 1, var8_17 do
+			local var9_17
 
-			if var7_16 then
-				local var10_16 = table.remove(arg0_16.dailyList, 1)
+			if var7_17 then
+				local var10_17 = table.remove(arg0_17.dailyList, 1)
 
-				table.insert(arg0_16.dailyList, var10_16)
+				table.insert(arg0_17.dailyList, var10_17)
 			else
-				local var11_16 = table.remove(arg0_16.dailyList, #arg0_16.dailyList)
+				local var11_17 = table.remove(arg0_17.dailyList, #arg0_17.dailyList)
 
-				table.insert(arg0_16.dailyList, 1, var11_16)
+				table.insert(arg0_17.dailyList, 1, var11_17)
 			end
 		end
 	end
 end
 
-function var0_0.displayDailyLevels(arg0_17)
-	for iter0_17, iter1_17 in pairs(arg0_17.dailyLevelTFs) do
-		arg0_17:initDailyLevel(iter0_17)
+function var0_0.displayDailyLevels(arg0_18)
+	for iter0_18, iter1_18 in pairs(arg0_18.dailyLevelTFs) do
+		arg0_18:initDailyLevel(iter0_18)
 	end
 
-	arg0_17.content:GetComponent(typeof(EnhancelScrollView)).onCenterClick = function(arg0_18)
-		arg0_17:tryOpenDesc(tonumber(arg0_18.name))
+	arg0_18.content:GetComponent(typeof(EnhancelScrollView)).onCenterClick = function(arg0_19)
+		arg0_18:tryOpenDesc(tonumber(arg0_19.name))
 	end
-	arg0_17.centerAniItem = nil
-	arg0_17.centerCardId = nil
-	arg0_17.checkAniTimer = Timer.New(function()
-		if not arg0_17.descMode then
-			local var0_19
-			local var1_19
+	arg0_18.centerAniItem = nil
+	arg0_18.centerCardId = nil
+	arg0_18.checkAniTimer = Timer.New(function()
+		if not arg0_18.descMode then
+			local var0_20
+			local var1_20
 
-			for iter0_19, iter1_19 in pairs(arg0_17.dailyLevelTFs) do
-				GetComponent(iter1_19, typeof(CanvasGroup)).alpha = 1
+			for iter0_20, iter1_20 in pairs(arg0_18.dailyLevelTFs) do
+				GetComponent(iter1_20, typeof(CanvasGroup)).alpha = 1
 
-				if not var0_19 and not var1_19 then
-					var0_19 = iter1_19
-					var1_19 = iter1_19
-				elseif iter1_19.anchoredPosition.x < var0_19.anchoredPosition.x then
-					var0_19 = iter1_19
-				elseif iter1_19.anchoredPosition.x > var1_19.anchoredPosition.x then
-					var1_19 = iter1_19
+				if not var0_20 and not var1_20 then
+					var0_20 = iter1_20
+					var1_20 = iter1_20
+				elseif iter1_20.anchoredPosition.x < var0_20.anchoredPosition.x then
+					var0_20 = iter1_20
+				elseif iter1_20.anchoredPosition.x > var1_20.anchoredPosition.x then
+					var1_20 = iter1_20
 				end
 			end
 
-			GetComponent(var0_19, typeof(CanvasGroup)).alpha = 0.5
-			GetComponent(var1_19, typeof(CanvasGroup)).alpha = 0.5
+			GetComponent(var0_20, typeof(CanvasGroup)).alpha = 0.5
+			GetComponent(var1_20, typeof(CanvasGroup)).alpha = 0.5
 		end
 
-		for iter2_19, iter3_19 in pairs(arg0_17.dailyLevelTFs) do
-			local var2_19 = iter3_19.localScale.x >= 0.98
+		for iter2_20, iter3_20 in pairs(arg0_18.dailyLevelTFs) do
+			local var2_20 = iter3_20.localScale.x >= 0.98
 
-			if arg0_17.centerAniItem == iter3_19 and var2_19 then
+			if arg0_18.centerAniItem == iter3_20 and var2_20 then
 				return
 			else
-				if var2_19 then
-					arg0_17.centerAniItem = iter3_19
-					arg0_17.centerCardId = iter2_19
+				if var2_20 then
+					arg0_18.centerAniItem = iter3_20
+					arg0_18.centerCardId = iter2_20
 				end
 
-				local var3_19 = arg0_17:findTF("icon/card", iter3_19)
+				local var3_20 = arg0_18:findTF("icon/card", iter3_20)
 
-				if var3_19 then
-					local var4_19 = arg0_17:findTF("mask/char", var3_19):GetComponent(typeof(Animator))
-					local var5_19 = arg0_17:findTF("effect", var3_19)
+				if var3_20 then
+					local var4_20 = arg0_18:findTF("mask/char", var3_20):GetComponent(typeof(Animator))
+					local var5_20 = arg0_18:findTF("effect", var3_20)
 
-					setActive(var5_19, var2_19)
+					setActive(var5_20, var2_20)
 
-					if var4_19 then
-						var4_19.speed = var2_19 and 1 or 0
+					if var4_20 then
+						var4_20.speed = var2_20 and 1 or 0
 					end
 				end
 			end
 		end
 	end, 0.1, -1)
 
-	arg0_17.checkAniTimer:Start()
+	arg0_18.checkAniTimer:Start()
 end
 
-function var0_0.tryOpenDesc(arg0_20, arg1_20)
-	local var0_20 = arg0_20.dailyLevelTFs[arg1_20]
-	local var1_20 = pg.expedition_daily_template[arg1_20]
+function var0_0.tryOpenDesc(arg0_21, arg1_21)
+	local var0_21 = arg0_21.dailyLevelTFs[arg1_21]
+	local var1_21 = pg.expedition_daily_template[arg1_21]
 
-	if table.contains(var1_20.weekday, tonumber(arg0_20:getWeek())) then
-		arg0_20:openDailyDesc(arg1_20)
+	if table.contains(var1_21.weekday, tonumber(arg0_21:getWeek())) then
+		arg0_21:openDailyDesc(arg1_21)
 	else
-		pg.TipsMgr.GetInstance():ShowTips(var1_20.tips)
+		pg.TipsMgr.GetInstance():ShowTips(var1_21.tips)
 	end
 end
 
-function var0_0.CanOpenDailyLevel(arg0_21)
-	local var0_21 = pg.expedition_daily_template[arg0_21]
-	local var1_21 = false
+function var0_0.CanOpenDailyLevel(arg0_22)
+	local var0_22 = pg.expedition_daily_template[arg0_22]
+	local var1_22 = false
 
-	if table.contains(var0_21.weekday, tonumber(var0_0.getWeek())) then
-		var1_21 = true
+	if table.contains(var0_22.weekday, tonumber(var0_0.getWeek())) then
+		var1_22 = true
 	end
 
-	return var1_21, var0_21.tips
+	return var1_22, var0_22.tips
 end
 
-function var0_0.getNextCardId(arg0_22, arg1_22)
-	local var0_22 = table.indexof(arg0_22.dailyList, arg0_22.centerCardId)
+function var0_0.getNextCardId(arg0_23, arg1_23)
+	local var0_23 = table.indexof(arg0_23.dailyList, arg0_23.centerCardId)
 
-	if arg1_22 then
-		var0_22 = var0_22 - 1
+	if arg1_23 then
+		var0_23 = var0_23 - 1
 
-		if var0_22 <= 0 then
-			var0_22 = #arg0_22.dailyList or var0_22
+		if var0_23 <= 0 then
+			var0_23 = #arg0_23.dailyList or var0_23
 		end
 	else
-		var0_22 = var0_22 + 1
-		var0_22 = var0_22 > #arg0_22.dailyList and 1 or var0_22
+		var0_23 = var0_23 + 1
+		var0_23 = var0_23 > #arg0_23.dailyList and 1 or var0_23
 	end
 
-	return arg0_22.dailyList[var0_22]
+	return arg0_23.dailyList[var0_23]
 end
 
-function var0_0.initDailyLevel(arg0_23, arg1_23)
-	local var0_23 = pg.expedition_daily_template[arg1_23]
-	local var1_23 = arg0_23.dailyLevelTFs[arg1_23]
-	local var2_23 = table.contains(var0_23.weekday, tonumber(arg0_23:getWeek()))
+function var0_0.initDailyLevel(arg0_24, arg1_24)
+	local var0_24 = pg.expedition_daily_template[arg1_24]
+	local var1_24 = arg0_24.dailyLevelTFs[arg1_24]
+	local var2_24 = table.contains(var0_24.weekday, tonumber(arg0_24:getWeek()))
 
-	if var2_23 then
-		arg0_23.index = arg1_23
+	if var2_24 then
+		arg0_24.index = arg1_24
 	end
 
-	setActive(findTF(var1_23, "lock"), not var2_23 and not table.isEmpty(var0_23.weekday))
-	setText(findTF(var1_23, "name"), var0_23.title)
-	setActive(findTF(var1_23, "time"), false)
+	setActive(findTF(var1_24, "lock"), not var2_24 and not table.isEmpty(var0_24.weekday))
+	setText(findTF(var1_24, "name"), var0_24.title)
+	setActive(findTF(var1_24, "time"), false)
 
-	local var3_23 = findTF(var1_23, "icon")
+	if arg0_24.bonusActivity and not arg0_24.bonusActivity:isEnd() then
+		local var3_24 = checkExist(underscore.detect(arg0_24.bonusActivity:getConfig("config_data"), function(arg0_25)
+			return arg0_25[1] == arg1_24
+		end), {
+			2
+		})
 
-	PoolMgr.GetInstance():GetPrefab("dailyui/" .. var0_23.pic, "", true, function(arg0_24)
-		arg0_24 = tf(arg0_24)
+		setText(var1_24:Find("bonus/Text"), i18n("dailyLevel_bonus_activity"))
+		setActive(var1_24:Find("bonus"), tobool(var3_24))
 
-		arg0_24:SetParent(var3_23, false)
+		if var3_24 then
+			updateDrop(var1_24:Find("bonus/IconTpl"), Drop.Create(var3_24))
+		end
+	else
+		setActive(var1_24:Find("bonus"), false)
+	end
 
-		arg0_24.localPosition = Vector3.zero
-		arg0_24.name = "card"
+	local var4_24 = findTF(var1_24, "icon")
+
+	PoolMgr.GetInstance():GetPrefab("dailyui/" .. var0_24.pic, "", true, function(arg0_26)
+		arg0_26 = tf(arg0_26)
+
+		arg0_26:SetParent(var4_24, false)
+
+		arg0_26.localPosition = Vector3.zero
+		arg0_26.name = "card"
 	end)
-	setText(findTF(var1_23, "Text"), "")
-	setActive(findTF(var1_23, "lastTime"), false)
+	setText(findTF(var1_24, "Text"), "")
+	setActive(findTF(var1_24, "lastTime"), false)
 
-	local var4_23 = Clone(var0_23.limit_period)
-	local var5_23
+	local var5_24 = Clone(var0_24.limit_period)
+	local var6_24
 
-	if var4_23 and type(var4_23) == "table" and pg.TimeMgr:GetInstance():inTime(var4_23) then
-		local var6_23 = pg.TimeMgr:GetInstance():GetServerTime()
+	if var5_24 and type(var5_24) == "table" and pg.TimeMgr:GetInstance():inTime(var5_24) then
+		local var7_24 = pg.TimeMgr:GetInstance():GetServerTime()
 
-		var5_23 = pg.TimeMgr:GetInstance():Table2ServerTime({
-			year = var4_23[2][1][1],
-			month = var4_23[2][1][2],
-			day = var4_23[2][1][3],
-			hour = var4_23[2][2][1],
-			min = var4_23[2][2][2],
-			sec = var4_23[2][2][3]
-		}) - var6_23
+		var6_24 = pg.TimeMgr:GetInstance():Table2ServerTime({
+			year = var5_24[2][1][1],
+			month = var5_24[2][1][2],
+			day = var5_24[2][1][3],
+			hour = var5_24[2][2][1],
+			min = var5_24[2][2][2],
+			sec = var5_24[2][2][3]
+		}) - var7_24
 	end
 
-	if var5_23 then
-		local var7_23 = ""
-		local var8_23 = ""
+	if var6_24 then
+		local var8_24 = ""
+		local var9_24 = ""
 
-		if var5_23 > 86400 then
-			var7_23 = math.floor(tonumber(var5_23) / 86400)
-			var8_23 = i18n("word_date")
-		elseif var5_23 >= 3600 then
-			var7_23 = math.floor(tonumber(var5_23) / 3600)
-			var8_23 = i18n("word_hour")
-		elseif var5_23 > 0 then
-			var7_23 = math.floor(tonumber(var5_23) / 60)
-			var8_23 = i18n("word_minute")
+		if var6_24 > 86400 then
+			var8_24 = math.floor(tonumber(var6_24) / 86400)
+			var9_24 = i18n("word_date")
+		elseif var6_24 >= 3600 then
+			var8_24 = math.floor(tonumber(var6_24) / 3600)
+			var9_24 = i18n("word_hour")
+		elseif var6_24 > 0 then
+			var8_24 = math.floor(tonumber(var6_24) / 60)
+			var9_24 = i18n("word_minute")
 		end
 
-		setText(findTF(var1_23, "lastTime/content/text"), tostring(var7_23) .. " ")
-		setText(findTF(var1_23, "lastTime/content/word"), tostring(var8_23))
-		setActive(findTF(var1_23, "lastTime"), true)
+		setText(findTF(var1_24, "lastTime/content/text"), tostring(var8_24) .. " ")
+		setText(findTF(var1_24, "lastTime/content/word"), tostring(var9_24))
+		setActive(findTF(var1_24, "lastTime"), true)
 	end
 
-	arg0_23:UpdateDailyLevelCnt(arg1_23)
+	arg0_24:UpdateDailyLevelCnt(arg1_24)
 end
 
-function var0_0.UpdateDailyLevelCnt(arg0_25, arg1_25)
-	local var0_25 = pg.expedition_daily_template[arg1_25]
-	local var1_25 = arg0_25.dailyLevelTFs[arg1_25]
-	local var2_25 = findTF(var1_25, "count")
-	local var3_25 = arg0_25.dailyCounts[arg1_25] or 0
-
-	if var0_25.limit_time == 0 then
-		setText(var2_25, "N/A")
-	else
-		setText(var2_25, string.format("%d/%d", var0_25.limit_time - var3_25, var0_25.limit_time))
-	end
-
-	setActive(var2_25, var0_25.limit_time > 0)
-end
-
-function var0_0.openDailyDesc(arg0_26, arg1_26)
-	arg0_26.curId = arg1_26
-
-	arg0_26:enableDescMode(true)
-	arg0_26:displayStageList(arg1_26)
-end
-
-function var0_0.UpdateDailyLevelCntForDescPanel(arg0_27, arg1_27)
+function var0_0.UpdateDailyLevelCnt(arg0_27, arg1_27)
 	local var0_27 = pg.expedition_daily_template[arg1_27]
-	local var1_27 = arg0_27.dailyCounts[arg1_27] or 0
+	local var1_27 = arg0_27.dailyLevelTFs[arg1_27]
+	local var2_27 = findTF(var1_27, "count")
+	local var3_27 = arg0_27.dailyCounts[arg1_27] or 0
 
 	if var0_27.limit_time == 0 then
-		setText(arg0_27.descChallengeText, i18n("challenge_count_unlimit"))
+		setText(var2_27, "N/A")
 	else
-		setText(arg0_27.descChallengeText, string.format("%d/%d", var0_27.limit_time - var1_27, var0_27.limit_time))
+		setText(var2_27, string.format("%d/%d", var0_27.limit_time - var3_27, var0_27.limit_time))
+	end
+
+	setActive(var2_27, var0_27.limit_time > 0)
+end
+
+function var0_0.openDailyDesc(arg0_28, arg1_28)
+	arg0_28.curId = arg1_28
+
+	arg0_28:enableDescMode(true)
+	arg0_28:displayStageList(arg1_28)
+end
+
+function var0_0.UpdateDailyLevelCntForDescPanel(arg0_29, arg1_29)
+	local var0_29 = pg.expedition_daily_template[arg1_29]
+	local var1_29 = arg0_29.dailyCounts[arg1_29] or 0
+
+	if var0_29.limit_time == 0 then
+		setText(arg0_29.descChallengeText, i18n("challenge_count_unlimit"))
+	else
+		setText(arg0_29.descChallengeText, string.format("%d/%d", var0_29.limit_time - var1_29, var0_29.limit_time))
 	end
 end
 
-function var0_0.displayStageList(arg0_28, arg1_28)
-	arg0_28.dailyLevelId = arg1_28
-	arg0_28.contextData.dailyLevelId = arg0_28.dailyLevelId
+function var0_0.displayStageList(arg0_30, arg1_30)
+	arg0_30.dailyLevelId = arg1_30
+	arg0_30.contextData.dailyLevelId = arg0_30.dailyLevelId
 
-	local var0_28 = pg.expedition_daily_template[arg1_28]
+	local var0_30 = pg.expedition_daily_template[arg1_30]
 
-	arg0_28:UpdateDailyLevelCntForDescPanel(arg1_28)
-	setActive(arg0_28.challengeQuotaDaily, var0_28.limit_type == 1)
-	setActive(arg0_28.challengeQuotaWeekly, var0_28.limit_type == 2)
-	removeAllChildren(arg0_28.stageContain)
+	arg0_30:UpdateDailyLevelCntForDescPanel(arg1_30)
+	setActive(arg0_30.challengeQuotaDaily, var0_30.limit_type == 1)
+	setActive(arg0_30.challengeQuotaWeekly, var0_30.limit_type == 2)
+	removeAllChildren(arg0_30.stageContain)
 
-	arg0_28.stageTFs = {}
+	arg0_30.stageTFs = {}
 
-	local var1_28 = _.sort(var0_28.expedition_and_lv_limit_list, function(arg0_29, arg1_29)
-		local var0_29 = arg0_29[2] <= arg0_28.player.level and 1 or 0
-		local var1_29 = arg1_29[2] <= arg0_28.player.level and 1 or 0
+	local var1_30 = _.sort(var0_30.expedition_and_lv_limit_list, function(arg0_31, arg1_31)
+		local var0_31 = arg0_31[2] <= arg0_30.player.level and 1 or 0
+		local var1_31 = arg1_31[2] <= arg0_30.player.level and 1 or 0
 
-		if arg0_29[2] == arg1_29[2] then
-			return arg0_29[1] < arg1_29[1]
+		if arg0_31[2] == arg1_31[2] then
+			return arg0_31[1] < arg1_31[1]
 		end
 
-		if var0_29 == var1_29 then
-			if var0_29 == 1 then
-				return arg0_29[2] > arg1_29[2]
+		if var0_31 == var1_31 then
+			if var0_31 == 1 then
+				return arg0_31[2] > arg1_31[2]
 			else
-				return arg0_29[2] < arg1_29[2]
+				return arg0_31[2] < arg1_31[2]
 			end
 		else
-			return var1_29 < var0_29
+			return var1_31 < var0_31
 		end
 	end)
 
-	for iter0_28, iter1_28 in ipairs(var1_28) do
-		local var2_28 = iter1_28[1]
-		local var3_28 = iter1_28[2]
+	for iter0_30, iter1_30 in ipairs(var1_30) do
+		local var2_30 = iter1_30[1]
+		local var3_30 = iter1_30[2]
 
-		arg0_28.stageTFs[var2_28] = cloneTplTo(arg0_28.stageTpl, arg0_28.stageContain)
+		arg0_30.stageTFs[var2_30] = cloneTplTo(arg0_30.stageTpl, arg0_30.stageContain)
 
-		local var4_28 = {
-			id = var2_28,
-			level = var3_28
+		local var4_30 = {
+			id = var2_30,
+			level = var3_30
 		}
 
-		arg0_28:updateStage(var4_28)
+		arg0_30:updateStage(var4_30)
 	end
 end
 
-function var0_0.updateStageTF(arg0_30, arg1_30, arg2_30)
-	local var0_30 = pg.expedition_data_template[arg2_30.id]
+function var0_0.updateStageTF(arg0_32, arg1_32, arg2_32)
+	local var0_32 = pg.expedition_data_template[arg2_32.id]
 
-	setText(findTF(arg1_30, "left_panel/name"), var0_30.name)
-	setText(findTF(arg1_30, "left_panel/lv/Text"), "Lv." .. arg2_30.level)
+	setText(findTF(arg1_32, "left_panel/name"), var0_32.name)
+	setText(findTF(arg1_32, "left_panel/lv/Text"), "Lv." .. arg2_32.level)
 
-	local var1_30 = arg0_30:findTF("mask", arg1_30)
+	local var1_32 = arg0_32:findTF("mask", arg1_32)
 
-	setActive(var1_30, arg2_30.level > arg0_30.player.level)
+	setActive(var1_32, arg2_32.level > arg0_32.player.level)
 
-	if arg2_30.level > arg0_30.player.level then
-		setText(arg0_30:findTF("msg/msg_contain/Text", var1_30), "Lv." .. arg2_30.level .. " ")
+	if arg2_32.level > arg0_32.player.level then
+		setText(arg0_32:findTF("msg/msg_contain/Text", var1_32), "Lv." .. arg2_32.level .. " ")
 
 		if PLATFORM_CODE == PLATFORM_US then
-			arg0_30:findTF("msg/msg_contain/Text", var1_30):SetAsLastSibling()
+			arg0_32:findTF("msg/msg_contain/Text", var1_32):SetAsLastSibling()
 		end
 	end
 
-	local var2_30 = UIItemList.New(arg0_30:findTF("scrollView/right_panel", arg1_30), arg0_30.itemTpl)
+	local var2_32 = UIItemList.New(arg0_32:findTF("scrollView/right_panel", arg1_32), arg0_32.itemTpl)
 
-	var2_30:make(function(arg0_31, arg1_31, arg2_31)
-		if arg0_31 == UIItemList.EventUpdate then
-			local var0_31 = var0_30.award_display[arg1_31 + 1]
+	var2_32:make(function(arg0_33, arg1_33, arg2_33)
+		if arg0_33 == UIItemList.EventUpdate then
+			local var0_33 = var0_32.award_display[arg1_33 + 1]
 
-			updateDrop(arg2_31, {
-				type = var0_31[1],
-				id = var0_31[2],
-				count = var0_31[3]
+			updateDrop(arg2_33, {
+				type = var0_33[1],
+				id = var0_33[2],
+				count = var0_33[3]
 			})
-			setActive(arg2_31, arg1_31 <= 3)
+			setActive(arg2_33, arg1_33 <= 3)
 		end
 	end)
-	var2_30:align(#var0_30.award_display)
-	setImageSprite(arg1_30, getImageSprite(findTF(arg0_30.resource, "normal_bg")))
-	setActive(findTF(arg1_30, "score"), false)
-	onButton(arg0_30, var1_30, function()
+	var2_32:align(#var0_32.award_display)
+	setImageSprite(arg1_32, getImageSprite(findTF(arg0_32.resource, "normal_bg")))
+	setActive(findTF(arg1_32, "score"), false)
+	onButton(arg0_32, var1_32, function()
 		pg.TipsMgr.GetInstance():ShowTips(i18n("dailyLevel_unopened"))
 	end, SFX_PANEL)
 end
 
-function var0_0.updateStage(arg0_33, arg1_33)
-	local var0_33 = arg0_33.stageTFs[arg1_33.id]:Find("info")
+function var0_0.updateStage(arg0_35, arg1_35)
+	local var0_35 = arg0_35.stageTFs[arg1_35.id]:Find("info")
 
-	arg0_33:updateStageTF(var0_33, arg1_33)
-	onButton(arg0_33, var0_33, function()
-		if getProxy(DailyLevelProxy):CanQuickBattle(arg1_33.id) then
-			local var0_34 = pg.expedition_daily_template[arg0_33.dailyLevelId]
+	arg0_35:updateStageTF(var0_35, arg1_35)
+	onButton(arg0_35, var0_35, function()
+		if getProxy(DailyLevelProxy):CanQuickBattle(arg1_35.id) then
+			local var0_36 = pg.expedition_daily_template[arg0_35.dailyLevelId]
 
-			if (arg0_33.dailyCounts[arg0_33.dailyLevelId] or 0) >= var0_34.limit_time then
+			if (arg0_35.dailyCounts[arg0_35.dailyLevelId] or 0) >= var0_36.limit_time then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("dailyLevel_restCount_notEnough"))
 
 				return
 			end
 
-			if LeanTween.isTweening(go(arg0_33.descMain)) or LeanTween.isTweening(go(arg0_33.listPanel)) then
+			if LeanTween.isTweening(go(arg0_35.descMain)) or LeanTween.isTweening(go(arg0_35.listPanel)) then
 				return
 			end
 
-			arg0_33:OnSelectStage(arg1_33)
+			arg0_35:OnSelectStage(arg1_35)
 		else
-			arg0_33:OnOpenPreCombat(arg1_33)
+			arg0_35:OnOpenPreCombat(arg1_35)
 		end
 	end, SFX_PANEL)
 end
 
-function var0_0.OnOpenPreCombat(arg0_35, arg1_35)
-	local var0_35 = pg.expedition_daily_template[arg0_35.dailyLevelId]
+function var0_0.OnOpenPreCombat(arg0_37, arg1_37)
+	local var0_37 = pg.expedition_daily_template[arg0_37.dailyLevelId]
 
-	if (arg0_35.dailyCounts[arg0_35.dailyLevelId] or 0) >= var0_35.limit_time then
+	if (arg0_37.dailyCounts[arg0_37.dailyLevelId] or 0) >= var0_37.limit_time then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("dailyLevel_restCount_notEnough"))
 
 		return
 	end
 
-	setActive(arg0_35.blurPanel, false)
-	arg0_35:emit(DailyLevelMediator.ON_STAGE, arg1_35)
+	setActive(arg0_37.blurPanel, false)
+	arg0_37:emit(DailyLevelMediator.ON_STAGE, arg1_37)
 end
 
-function var0_0.OnSelectStage(arg0_36, arg1_36)
-	local var0_36 = arg0_36.selectedPanel:Find("stagetpl/info")
+function var0_0.OnSelectStage(arg0_38, arg1_38)
+	local var0_38 = arg0_38.selectedPanel:Find("stagetpl/info")
 
-	onButton(arg0_36, var0_36, function()
-		arg0_36:EnableOrDisable(arg1_36, false)
+	onButton(arg0_38, var0_38, function()
+		arg0_38:EnableOrDisable(arg1_38, false)
 	end, SFX_PANEL)
-	onButton(arg0_36, arg0_36.selectedPanel, function()
-		arg0_36:EnableOrDisable(arg1_36, false)
+	onButton(arg0_38, arg0_38.selectedPanel, function()
+		arg0_38:EnableOrDisable(arg1_38, false)
 	end, SFX_PANEL)
-	arg0_36:EnableOrDisable(arg1_36, true)
+	arg0_38:EnableOrDisable(arg1_38, true)
 end
 
-function var0_0.EnableOrDisable(arg0_39, arg1_39, arg2_39)
-	local var0_39 = arg0_39.stageTFs[arg1_39.id]:Find("quickly")
+function var0_0.EnableOrDisable(arg0_41, arg1_41, arg2_41)
+	local var0_41 = arg0_41.stageTFs[arg1_41.id]:Find("quickly")
 
-	if LeanTween.isTweening(go(arg0_39.stageContain)) or LeanTween.isTweening(go(arg0_39.selQuicklyTF)) then
+	if LeanTween.isTweening(go(arg0_41.stageContain)) or LeanTween.isTweening(go(arg0_41.selQuicklyTF)) then
 		return
 	end
 
-	local var1_39 = arg0_39.stageContain:GetComponent(typeof(VerticalLayoutGroup)).padding.top
-	local var2_39 = arg0_39.stageContain.parent:InverseTransformPoint(var0_39.parent.position)
-	local var3_39 = -1 * var1_39 - var2_39.y
+	local var1_41 = arg0_41.stageContain:GetComponent(typeof(VerticalLayoutGroup)).padding.top
+	local var2_41 = arg0_41.stageContain.parent:InverseTransformPoint(var0_41.parent.position)
+	local var3_41 = -1 * var1_41 - var2_41.y
 
-	if arg2_39 then
-		arg0_39:updateStageTF(arg0_39.selStageTF, arg1_39)
-		arg0_39:UpdateBattleBtn(arg1_39)
-		arg0_39:DoSelectedAnimation(var0_39, var3_39, function()
-			arg0_39.selectedStage = arg1_39
+	if arg2_41 then
+		arg0_41:updateStageTF(arg0_41.selStageTF, arg1_41)
+		arg0_41:UpdateBattleBtn(arg1_41)
+		arg0_41:DoSelectedAnimation(var0_41, var3_41, function()
+			arg0_41.selectedStage = arg1_41
 		end)
 	else
-		arg0_39:DoUnselectAnimtion(var0_39, function()
-			arg0_39.selectedStage = nil
+		arg0_41:DoUnselectAnimtion(var0_41, function()
+			arg0_41.selectedStage = nil
 		end)
 	end
 end
 
-function var0_0.DoSelectedAnimation(arg0_42, arg1_42, arg2_42, arg3_42)
-	local var0_42 = math.abs(arg2_42) / 2000
+function var0_0.DoSelectedAnimation(arg0_44, arg1_44, arg2_44, arg3_44)
+	local var0_44 = math.abs(arg2_44) / 2000
 
 	seriesAsync({
-		function(arg0_43)
-			arg0_42.stageScrollRect.enabled = false
+		function(arg0_45)
+			arg0_44.stageScrollRect.enabled = false
 
-			pg.UIMgr.GetInstance():BlurPanel(arg0_42.selectedPanel, false, {
+			pg.UIMgr.GetInstance():BlurPanel(arg0_44.selectedPanel, false, {
 				groupName = LayerWeightConst.GROUP_DAILY,
 				weight = LayerWeightConst.BASE_LAYER - 1
 			})
 
-			arg1_42.sizeDelta = Vector2(arg1_42.sizeDelta.x, 0)
+			arg1_44.sizeDelta = Vector2(arg1_44.sizeDelta.x, 0)
 
-			setActive(arg1_42, true)
+			setActive(arg1_44, true)
 
-			local var0_43 = arg0_42.stageContain.anchoredPosition
+			local var0_45 = arg0_44.stageContain.anchoredPosition
 
-			arg0_42.stageContainLposY = var0_43.y
-			arg0_42.offsetY = arg2_42
+			arg0_44.stageContainLposY = var0_45.y
+			arg0_44.offsetY = arg2_44
 
-			LeanTween.value(go(arg0_42.stageContain), var0_43.y, var0_43.y + arg2_42, var0_42):setOnUpdate(System.Action_float(function(arg0_44)
-				arg0_42.stageContain.anchoredPosition = Vector3(var0_43.x, arg0_44, 0)
+			LeanTween.value(go(arg0_44.stageContain), var0_45.y, var0_45.y + arg2_44, var0_44):setOnUpdate(System.Action_float(function(arg0_46)
+				arg0_44.stageContain.anchoredPosition = Vector3(var0_45.x, arg0_46, 0)
 
-				local var0_44 = arg0_42.selectedPanel:InverseTransformPoint(arg1_42.parent.position)
+				local var0_46 = arg0_44.selectedPanel:InverseTransformPoint(arg1_44.parent.position)
 
-				arg0_42.selStageTF.parent.localPosition = Vector3(var0_44.x, var0_44.y, 0)
-				arg0_42.selQuicklyTF.sizeDelta = Vector2(arg0_42.selQuicklyTF.sizeDelta.x, 0)
+				arg0_44.selStageTF.parent.localPosition = Vector3(var0_46.x, var0_46.y, 0)
+				arg0_44.selQuicklyTF.sizeDelta = Vector2(arg0_44.selQuicklyTF.sizeDelta.x, 0)
 
-				setActive(arg0_42.selectedPanel, true)
-			end)):setEase(LeanTweenType.easeInOutCirc):setOnComplete(System.Action(arg0_43))
-		end,
-		function(arg0_45)
-			local var0_45 = arg1_42:GetComponent(typeof(LayoutElement))
-
-			LeanTween.value(go(arg0_42.selQuicklyTF), 0, arg0_42.selQuicklyTFSizeDeltaY, 0.1):setOnUpdate(System.Action_float(function(arg0_46)
-				var0_45.preferredHeight = arg0_46
-				arg0_42.selQuicklyTF.sizeDelta = Vector2(arg0_42.selQuicklyTF.sizeDelta.x, arg0_46)
+				setActive(arg0_44.selectedPanel, true)
 			end)):setEase(LeanTweenType.easeInOutCirc):setOnComplete(System.Action(arg0_45))
+		end,
+		function(arg0_47)
+			local var0_47 = arg1_44:GetComponent(typeof(LayoutElement))
+
+			LeanTween.value(go(arg0_44.selQuicklyTF), 0, arg0_44.selQuicklyTFSizeDeltaY, 0.1):setOnUpdate(System.Action_float(function(arg0_48)
+				var0_47.preferredHeight = arg0_48
+				arg0_44.selQuicklyTF.sizeDelta = Vector2(arg0_44.selQuicklyTF.sizeDelta.x, arg0_48)
+			end)):setEase(LeanTweenType.easeInOutCirc):setOnComplete(System.Action(arg0_47))
 		end
-	}, arg3_42)
+	}, arg3_44)
 end
 
-function var0_0.DoUnselectAnimtion(arg0_47, arg1_47, arg2_47)
-	local var0_47 = arg0_47.stageContain.anchoredPosition
+function var0_0.DoUnselectAnimtion(arg0_49, arg1_49, arg2_49)
+	local var0_49 = arg0_49.stageContain.anchoredPosition
 
 	seriesAsync({
-		function(arg0_48)
-			pg.UIMgr.GetInstance():UnblurPanel(arg0_47.selectedPanel, arg0_47._tf)
-			setActive(arg0_47.selectedPanel, false)
-
-			local var0_48 = arg1_47:GetComponent(typeof(LayoutElement))
-
-			LeanTween.value(go(arg0_47.selQuicklyTF), arg0_47.selQuicklyTFSizeDeltaY, 0, 0.1):setOnUpdate(System.Action_float(function(arg0_49)
-				var0_48.preferredHeight = arg0_49
-				arg0_47.selQuicklyTF.sizeDelta = Vector2(arg0_47.selQuicklyTF.sizeDelta.x, arg0_49)
-			end)):setEase(LeanTweenType.easeInOutCirc):setOnComplete(System.Action(arg0_48))
-		end,
 		function(arg0_50)
-			local var0_50 = var0_47.y - arg0_47.offsetY
-			local var1_50 = var0_50 / 2000
+			pg.UIMgr.GetInstance():UnblurPanel(arg0_49.selectedPanel, arg0_49._tf)
+			setActive(arg0_49.selectedPanel, false)
 
-			LeanTween.value(go(arg0_47.stageContain), var0_47.y, var0_50, 0.15):setOnUpdate(System.Action_float(function(arg0_51)
-				arg0_47.stageContain.anchoredPosition = Vector3(var0_47.x, arg0_51, 0)
-			end)):setDelay(0.1):setEase(LeanTweenType.easeInOutCirc):setOnComplete(System.Action(arg0_50))
+			local var0_50 = arg1_49:GetComponent(typeof(LayoutElement))
+
+			LeanTween.value(go(arg0_49.selQuicklyTF), arg0_49.selQuicklyTFSizeDeltaY, 0, 0.1):setOnUpdate(System.Action_float(function(arg0_51)
+				var0_50.preferredHeight = arg0_51
+				arg0_49.selQuicklyTF.sizeDelta = Vector2(arg0_49.selQuicklyTF.sizeDelta.x, arg0_51)
+			end)):setEase(LeanTweenType.easeInOutCirc):setOnComplete(System.Action(arg0_50))
+		end,
+		function(arg0_52)
+			local var0_52 = var0_49.y - arg0_49.offsetY
+			local var1_52 = var0_52 / 2000
+
+			LeanTween.value(go(arg0_49.stageContain), var0_49.y, var0_52, 0.15):setOnUpdate(System.Action_float(function(arg0_53)
+				arg0_49.stageContain.anchoredPosition = Vector3(var0_49.x, arg0_53, 0)
+			end)):setDelay(0.1):setEase(LeanTweenType.easeInOutCirc):setOnComplete(System.Action(arg0_52))
 		end
 	}, function()
-		arg0_47.stageScrollRect.enabled = true
+		arg0_49.stageScrollRect.enabled = true
 
-		arg2_47()
+		arg2_49()
 	end)
 end
 
-function var0_0.UpdateBattleBtn(arg0_53, arg1_53)
-	local var0_53 = arg0_53.selectedPanel:Find("stagetpl/info").parent:Find("quickly/bg")
-	local var1_53 = pg.expedition_daily_template[arg0_53.dailyLevelId].limit_time - (arg0_53.dailyCounts[arg0_53.dailyLevelId] or 0)
-	local var2_53 = var0_53:Find("challenge")
+function var0_0.UpdateBattleBtn(arg0_55, arg1_55)
+	local var0_55 = arg0_55.selectedPanel:Find("stagetpl/info").parent:Find("quickly/bg")
+	local var1_55 = pg.expedition_daily_template[arg0_55.dailyLevelId].limit_time - (arg0_55.dailyCounts[arg0_55.dailyLevelId] or 0)
+	local var2_55 = var0_55:Find("challenge")
 
-	onButton(arg0_53, var2_53, function()
-		arg0_53:OnOpenPreCombat(arg1_53)
+	onButton(arg0_55, var2_55, function()
+		arg0_55:OnOpenPreCombat(arg1_55)
 	end, SFX_PANEL)
-	setText(var2_53:Find("Text"), i18n("daily_level_quick_battle_label2"))
+	setText(var2_55:Find("Text"), i18n("daily_level_quick_battle_label2"))
 
-	local var3_53 = var0_53:Find("mult")
+	local var3_55 = var0_55:Find("mult")
 
-	onButton(arg0_53, var3_53, function()
-		arg0_53:OnQuickBattle(arg1_53, var1_53)
+	onButton(arg0_55, var3_55, function()
+		arg0_55:OnQuickBattle(arg1_55, var1_55)
 	end, SFX_PANEL)
 
-	local var4_53 = var0_53:Find("once")
+	local var4_55 = var0_55:Find("once")
 
-	onButton(arg0_53, var4_53, function()
-		arg0_53:OnQuickBattle(arg1_53, 1)
+	onButton(arg0_55, var4_55, function()
+		arg0_55:OnQuickBattle(arg1_55, 1)
 	end, SFX_PANEL)
-	setText(var3_53:Find("label"), i18n("daily_level_quick_battle_label1", "   ", COLOR_WHITE))
-	setText(var3_53:Find("Text"), "<color=" .. COLOR_GREEN .. ">" .. math.max(1, var1_53) .. "</color>")
-	setText(var4_53:Find("label"), i18n("daily_level_quick_battle_label3"))
-	setText(var4_53:Find("Text"), "")
+	setText(var3_55:Find("label"), i18n("daily_level_quick_battle_label1", "   ", COLOR_WHITE))
+	setText(var3_55:Find("Text"), "<color=" .. COLOR_GREEN .. ">" .. math.max(1, var1_55) .. "</color>")
+	setText(var4_55:Find("label"), i18n("daily_level_quick_battle_label3"))
+	setText(var4_55:Find("Text"), "")
 
-	if var1_53 == 0 then
-		arg0_53:EnableOrDisable(arg1_53, false)
+	if var1_55 == 0 then
+		arg0_55:EnableOrDisable(arg1_55, false)
 	end
 end
 
-function var0_0.OnQuickBattle(arg0_57, arg1_57, arg2_57)
-	if arg2_57 <= 0 then
+function var0_0.OnQuickBattle(arg0_59, arg1_59, arg2_59)
+	if arg2_59 <= 0 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("dailyLevel_restCount_notEnough"))
 
 		return
@@ -664,148 +685,148 @@ function var0_0.OnQuickBattle(arg0_57, arg1_57, arg2_57)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("dailyLevel_quickfinish"),
 			onYes = function()
-				arg0_57:emit(DailyLevelMediator.ON_QUICK_BATTLE, arg0_57.dailyLevelId, arg1_57.id, arg2_57)
+				arg0_59:emit(DailyLevelMediator.ON_QUICK_BATTLE, arg0_59.dailyLevelId, arg1_59.id, arg2_59)
 			end
 		})
 		PlayerPrefs.SetInt("daily_level_quick_battle_tip", 1)
 		PlayerPrefs.Save()
 	else
-		arg0_57:emit(DailyLevelMediator.ON_QUICK_BATTLE, arg0_57.dailyLevelId, arg1_57.id, arg2_57)
+		arg0_59:emit(DailyLevelMediator.ON_QUICK_BATTLE, arg0_59.dailyLevelId, arg1_59.id, arg2_59)
 	end
 end
 
-function var0_0.enableDescMode(arg0_59, arg1_59, arg2_59)
-	arg0_59.descMode = arg1_59
+function var0_0.enableDescMode(arg0_61, arg1_61, arg2_61)
+	arg0_61.descMode = arg1_61
 
-	setActive(arg0_59:findTF("help_btn"), not arg1_59)
+	setActive(arg0_61:findTF("help_btn"), not arg1_61)
 
-	local function var0_59(arg0_60, arg1_60, arg2_60)
-		if LeanTween.isTweening(go(arg0_60)) then
-			LeanTween.cancel(go(arg0_60))
+	local function var0_61(arg0_62, arg1_62, arg2_62)
+		if LeanTween.isTweening(go(arg0_62)) then
+			LeanTween.cancel(go(arg0_62))
 		end
 
-		LeanTween.moveX(rtf(arg0_60), arg1_60, 0.3):setEase(LeanTweenType.linear):setOnComplete(System.Action(function()
-			if arg2_60 then
-				arg2_60()
+		LeanTween.moveX(rtf(arg0_62), arg1_62, 0.3):setEase(LeanTweenType.linear):setOnComplete(System.Action(function()
+			if arg2_62 then
+				arg2_62()
 			end
 		end))
 	end
 
-	local function var1_59()
-		for iter0_62, iter1_62 in pairs(arg0_59.dailyLevelTFs) do
-			setButtonEnabled(iter1_62, not arg1_59)
+	local function var1_61()
+		for iter0_64, iter1_64 in pairs(arg0_61.dailyLevelTFs) do
+			setButtonEnabled(iter1_64, not arg1_61)
 
-			if iter0_62 ~= arg0_59.curId then
-				if LeanTween.isTweening(go(iter1_62)) then
-					LeanTween.cancel(go(iter1_62))
+			if iter0_64 ~= arg0_61.curId then
+				if LeanTween.isTweening(go(iter1_64)) then
+					LeanTween.cancel(go(iter1_64))
 				end
 
-				local var0_62 = GetComponent(iter1_62, typeof(CanvasGroup))
+				local var0_64 = GetComponent(iter1_64, typeof(CanvasGroup))
 
-				if arg1_59 then
-					LeanTween.value(go(iter1_62), 1, 0, 0.3):setOnUpdate(System.Action_float(function(arg0_63)
-						var0_62.alpha = arg0_63
+				if arg1_61 then
+					LeanTween.value(go(iter1_64), 1, 0, 0.3):setOnUpdate(System.Action_float(function(arg0_65)
+						var0_64.alpha = arg0_65
 					end))
 				else
-					LeanTween.value(go(iter1_62), 0, 1, 0.3):setOnUpdate(System.Action_float(function(arg0_64)
-						var0_62.alpha = arg0_64
+					LeanTween.value(go(iter1_64), 0, 1, 0.3):setOnUpdate(System.Action_float(function(arg0_66)
+						var0_64.alpha = arg0_66
 					end))
 				end
 			end
 		end
 	end
 
-	local function var2_59()
-		setActive(arg0_59.listPanel, true)
-		setActive(arg0_59.content, true)
-		setActive(arg0_59.descPanel, arg1_59)
-		setActive(arg0_59.arrows, not arg1_59)
+	local function var2_61()
+		setActive(arg0_61.listPanel, true)
+		setActive(arg0_61.content, true)
+		setActive(arg0_61.descPanel, arg1_61)
+		setActive(arg0_61.arrows, not arg1_61)
 	end
 
-	if arg1_59 then
-		var2_59()
-		var1_59()
-		var0_59(arg0_59.listPanel, -622, function()
-			var0_59(arg0_59.descMain, 0, arg2_59)
+	if arg1_61 then
+		var2_61()
+		var1_61()
+		var0_61(arg0_61.listPanel, -622, function()
+			var0_61(arg0_61.descMain, 0, arg2_61)
 		end)
 	else
-		if arg0_59.selectedStage then
-			arg0_59:EnableOrDisable(arg0_59.selectedStage, false)
+		if arg0_61.selectedStage then
+			arg0_61:EnableOrDisable(arg0_61.selectedStage, false)
 		end
 
-		var2_59()
-		var1_59()
-		var0_59(arg0_59.listPanel, 0)
-		var0_59(arg0_59.descMain, -1342, arg2_59)
+		var2_61()
+		var1_61()
+		var0_61(arg0_61.listPanel, 0)
+		var0_61(arg0_61.descMain, -1342, arg2_61)
 	end
 end
 
-function var0_0.flipToSpecificCard(arg0_67, arg1_67)
-	local var0_67 = arg0_67.content:GetComponent(typeof(EnhancelScrollView))
+function var0_0.flipToSpecificCard(arg0_69, arg1_69)
+	local var0_69 = arg0_69.content:GetComponent(typeof(EnhancelScrollView))
 
-	for iter0_67, iter1_67 in pairs(arg0_67.dailyLevelTFs) do
-		if arg1_67 == iter0_67 then
-			local var1_67 = iter1_67:GetComponent(typeof(EnhanceItem))
+	for iter0_69, iter1_69 in pairs(arg0_69.dailyLevelTFs) do
+		if arg1_69 == iter0_69 then
+			local var1_69 = iter1_69:GetComponent(typeof(EnhanceItem))
 
-			var0_67:SetHorizontalTargetItemIndex(var1_67.scrollViewItemIndex)
+			var0_69:SetHorizontalTargetItemIndex(var1_69.scrollViewItemIndex)
 		end
 	end
 end
 
-function var0_0.tryPlayGuide(arg0_68)
+function var0_0.tryPlayGuide(arg0_70)
 	pg.SystemGuideMgr.GetInstance():PlayDailyLevel(function()
-		triggerButton(arg0_68:findTF("help_btn"))
+		triggerButton(arg0_70:findTF("help_btn"))
 	end)
 end
 
-function var0_0.ShowGuildTaskTip(arg0_70)
+function var0_0.ShowGuildTaskTip(arg0_72)
 	pg.GuildMsgBoxMgr.GetInstance():NotificationForDailyBattle()
 end
 
-function var0_0.clearTween(arg0_71)
-	if arg0_71.tweens then
-		cancelTweens(arg0_71.tweens)
+function var0_0.clearTween(arg0_73)
+	if arg0_73.tweens then
+		cancelTweens(arg0_73.tweens)
 	end
 
-	local function var0_71(arg0_72)
-		if LeanTween.isTweening(go(arg0_72)) then
-			LeanTween.cancel(go(arg0_72))
+	local function var0_73(arg0_74)
+		if LeanTween.isTweening(go(arg0_74)) then
+			LeanTween.cancel(go(arg0_74))
 		end
 	end
 
-	for iter0_71, iter1_71 in pairs(arg0_71.dailyLevelTFs) do
-		var0_71(iter1_71)
+	for iter0_73, iter1_73 in pairs(arg0_73.dailyLevelTFs) do
+		var0_73(iter1_73)
 	end
 
-	var0_71(arg0_71.listPanel)
-	var0_71(arg0_71.descMain)
+	var0_73(arg0_73.listPanel)
+	var0_73(arg0_73.descMain)
 end
 
-function var0_0.onBackPressed(arg0_73)
-	if arg0_73.descMode then
-		if LeanTween.isTweening(go(arg0_73.stageContain)) or LeanTween.isTweening(go(arg0_73.selQuicklyTF)) then
+function var0_0.onBackPressed(arg0_75)
+	if arg0_75.descMode then
+		if LeanTween.isTweening(go(arg0_75.stageContain)) or LeanTween.isTweening(go(arg0_75.selQuicklyTF)) then
 			return
 		end
 
-		arg0_73:enableDescMode(false)
+		arg0_75:enableDescMode(false)
 
 		return
 	end
 
-	var0_0.super.onBackPressed(arg0_73)
+	var0_0.super.onBackPressed(arg0_75)
 end
 
-function var0_0.willExit(arg0_74)
-	if arg0_74.selectedStage then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_74.selectedPanel, arg0_74._tf)
+function var0_0.willExit(arg0_76)
+	if arg0_76.selectedStage then
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_76.selectedPanel, arg0_76._tf)
 	end
 
-	arg0_74:clearTween()
+	arg0_76:clearTween()
 
-	if arg0_74.checkAniTimer then
-		arg0_74.checkAniTimer:Stop()
+	if arg0_76.checkAniTimer then
+		arg0_76.checkAniTimer:Stop()
 
-		arg0_74.checkAniTimer = nil
+		arg0_76.checkAniTimer = nil
 	end
 end
 

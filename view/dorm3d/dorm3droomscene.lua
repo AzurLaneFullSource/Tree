@@ -2887,6 +2887,10 @@ function var0_0.didEnterCheck(arg0_344)
 		arg0_344:DoTalk(var0_344, function()
 			arg0_344:closeView()
 		end)
+
+		if arg0_344.contextData.isVideoTalk then
+			arg0_344.contextData.hasEnterCheck = true
+		end
 	elseif not arg0_344.contextData.hasEnterCheck and arg0_344.apartment then
 		for iter0_344, iter1_344 in ipairs(arg0_344.apartment:getForceEnterTalking(arg0_344.room:GetConfigID())) do
 			var0_344 = iter1_344

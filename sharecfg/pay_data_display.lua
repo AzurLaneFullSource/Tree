@@ -73,6 +73,7 @@ pg.pay_data_display = setmetatable({
 		92,
 		93,
 		94,
+		95,
 		1000,
 		1001,
 		1002,
@@ -8096,6 +8097,110 @@ pg.base.pay_data_display = {
 			{
 				2,
 				81205,
+				1
+			}
+		}
+	},
+	[95] = {
+		descrip = "Contains 1 of the following skins you do not yet own, chosen at random (if you already own all the listed skins, you will receive Gems instead), as well as other items.",
+		name = "Bunny Girl Return Lucky Box",
+		descrip_extra = "* The Lucky Box will be sent to your ingame Mail.\n* If you already own all the listed skins, you will receive Gems x680 instead.",
+		type = 1,
+		limit_group = 0,
+		type_order = 2,
+		subject = "Bunny Girl Return Lucky Box",
+		tip = "",
+		tip_open = 0,
+		id = 95,
+		money = 699,
+		name_display = "Bunny Girl Return Lucky Box",
+		tag = 2,
+		akashi_pick = 1,
+		gem = 0,
+		extra_service = 3,
+		show_group = "",
+		limit_type = 2,
+		package_tag_open = 0,
+		package_tag = "",
+		picture = "fudai26",
+		skin_inquire_relation = 86215,
+		id_str = "com.yostaren.azurlane.luckybag62",
+		first_pay_double = 0,
+		extra_gem = 0,
+		limit_arg = 2,
+		airijp_id = "com.yostaren.azurlane.luckybag62",
+		extra_service_item = {
+			{
+				2,
+				86215,
+				1
+			},
+			{
+				1,
+				1,
+				2000
+			},
+			{
+				1,
+				2,
+				1000
+			},
+			{
+				2,
+				15008,
+				20
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					7,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					8,
+					13
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				86215,
+				1
+			},
+			{
+				1,
+				2,
+				1000
+			},
+			{
+				2,
+				15008,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81215,
 				1
 			}
 		}
