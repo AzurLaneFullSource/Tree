@@ -14,7 +14,7 @@ end
 
 function var3_0.Update(arg0_2)
 	var3_0.super.Update(arg0_2)
-	arg0_2:UpdateArrowBarPostition()
+	arg0_2:UpdateArrowBarPosition()
 end
 
 function var3_0.AddArrowBar(arg0_3, arg1_3)

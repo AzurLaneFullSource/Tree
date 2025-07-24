@@ -33,7 +33,7 @@ function var2_0.Update(arg0_4)
 	var2_0.super.Update(arg0_4)
 	arg0_4:UpdatePosition()
 	arg0_4:UpdateMatrix()
-	arg0_4:UpdateArrowBarPostition()
+	arg0_4:UpdateArrowBarPosition()
 	arg0_4:UpdateArrowBarRotation()
 
 	if arg0_4._vigilantBar then

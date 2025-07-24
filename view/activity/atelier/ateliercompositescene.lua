@@ -1520,6 +1520,10 @@ function var0_0.ShowCompositeResult(arg0_134, arg1_134)
 
 	local var0_134 = arg1_134[1]
 
+	if var0_134 == nil then
+		return
+	end
+
 	arg0_134:UpdateRyzaDrop(arg0_134.layerCompositeResult:Find("Window/Icon"), var0_134)
 	setScrollText(arg0_134.layerCompositeResult:Find("Window/NameBG/Rect/Name"), var0_134:getName())
 	setText(arg0_134.layerCompositeResult:Find("Window/CountBG/Text"), var0_134.count)

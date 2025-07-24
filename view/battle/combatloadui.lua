@@ -559,7 +559,9 @@ function var0_0.Preload(arg0_6)
 					local var115_6 = math.max(#iter83_6.equipment, #var114_6.default_equip_list)
 
 					for iter84_6 = 1, var115_6 do
-						var113_6.equipments[iter84_6] = iter83_6.equipment[iter84_6] or false
+						var113_6.equipments[iter84_6] = iter83_6.equipment[iter84_6] and {
+							configId = iter83_6.equipment[iter84_6]
+						} or false
 					end
 
 					function var113_6.getActiveEquipments(arg0_8)
@@ -582,7 +584,9 @@ function var0_0.Preload(arg0_6)
 					local var118_6 = math.max(#iter86_6.equipment, #var117_6.default_equip_list)
 
 					for iter87_6 = 1, var118_6 do
-						var116_6.equipments[iter87_6] = iter86_6.equipment[iter87_6] or false
+						var116_6.equipments[iter87_6] = iter86_6.equipment[iter87_6] and {
+							configId = iter86_6.equipment[iter87_6]
+						} or false
 					end
 
 					function var116_6.getActiveEquipments(arg0_9)
@@ -605,7 +609,9 @@ function var0_0.Preload(arg0_6)
 					local var121_6 = math.max(#iter89_6.equipment, #var120_6.default_equip_list)
 
 					for iter90_6 = 1, var121_6 do
-						var119_6.equipments[iter90_6] = iter89_6.equipment[iter90_6] or false
+						var119_6.equipments[iter90_6] = iter89_6.equipment[iter90_6] and {
+							configId = iter89_6.equipment[iter90_6]
+						} or false
 					end
 
 					function var119_6.getActiveEquipments(arg0_10)

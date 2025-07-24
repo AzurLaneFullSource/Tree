@@ -58,7 +58,7 @@ function var1_0.MakeArrowBar(arg0_6, arg1_6)
 	local var0_6 = arg0_6:GetArrowPool():GetArrow()
 
 	arg1_6:AddArrowBar(var0_6)
-	arg1_6:UpdateArrowBarPostition()
+	arg1_6:UpdateArrowBarPosition()
 end
 
 function var1_0.GetArrowPool(arg0_7)

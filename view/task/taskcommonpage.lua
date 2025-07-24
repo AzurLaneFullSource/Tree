@@ -161,7 +161,8 @@ function var0_0.Sort(arg0_10)
 				13,
 				5,
 				2,
-				1
+				1,
+				16
 			})
 		elseif arg0_15:getTaskStatus() == 1 then
 			return var0_10(arg0_15:GetRealType(), arg1_15:GetRealType(), {
@@ -173,7 +174,8 @@ function var0_0.Sort(arg0_10)
 				13,
 				2,
 				5,
-				3
+				3,
+				16
 			})
 		end
 	end

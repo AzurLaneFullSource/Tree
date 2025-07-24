@@ -100,44 +100,19 @@ local var1_0 = {
 		end
 	},
 	{
-		id = "NG0031",
+		id = "NG0032_1",
 		condition = function()
 			return pg.NewStoryMgr.GetInstance():IsPlayed("NG0030")
 		end,
 		args = function()
-			local var0_15 = PlayerPrefs.GetInt("ryza_task_help_" .. getProxy(PlayerProxy):getRawData().id, 0) == 0
+			local var0_15 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
-			warning(var0_15)
-
-			return var0_15 and {
+			return PlayerPrefs.GetInt(string.format("first_enter_ryza_atelier_%s_%s", getProxy(PlayerProxy):getRawData().id, var0_15.id), 0) == 0 and {
 				1,
 				2
 			} or {
 				1
 			}
-		end
-	},
-	{
-		id = "NG0032_1",
-		condition = function()
-			return pg.NewStoryMgr.GetInstance():IsPlayed("NG0031")
-		end,
-		args = function()
-			return PlayerPrefs.GetInt("first_enter_ryza_atelier_" .. getProxy(PlayerProxy):getRawData().id, 0) == 0 and {
-				1,
-				2
-			} or {
-				1
-			}
-		end,
-		nextOne = function()
-			local var0_18 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TASK_RYZA)
-
-			if var0_18 and not var0_18:isEnd() and table.contains(var0_18.data1_list, 56205) then
-				return "NG0032_2", {}
-			else
-				return nil
-			end
 		end
 	},
 	{
@@ -188,83 +163,98 @@ local var1_0 = {
 		args = function()
 			return {}
 		end
+	},
+	{
+		id = "Yumia_atelier",
+		condition = function()
+			local var0_26 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+
+			if not tobool(var0_26) then
+				return false
+			end
+
+			return AtelierTools.IsUnlockAtelier(var0_26, 2)
+		end,
+		args = function()
+			return {}
+		end
 	}
 }
 
-function var0_0.Execute(arg0_29, arg1_29)
+function var0_0.Execute(arg0_28, arg1_28)
 	if IsUnityEditor and not ENABLE_GUIDE then
-		if arg1_29 then
-			arg1_29()
+		if arg1_28 then
+			arg1_28()
 		end
 
 		return
 	end
 
-	local var0_29 = getProxy(ContextProxy):getCurrentContext()
+	local var0_28 = getProxy(ContextProxy):getCurrentContext()
 
-	if var0_29 and var0_29.mediator.__cname ~= "NewMainMediator" then
+	if var0_28 and var0_28.mediator.__cname ~= "NewMainMediator" then
 		return
 	end
 
-	local var1_29 = _.detect(var1_0, function(arg0_30)
-		local var0_30 = arg0_30.id
-		local var1_30 = arg0_30.condition
+	local var1_28 = _.detect(var1_0, function(arg0_29)
+		local var0_29 = arg0_29.id
+		local var1_29 = arg0_29.condition
 
-		return not pg.NewStoryMgr.GetInstance():IsPlayed(var0_30) and var1_30()
+		return not pg.NewStoryMgr.GetInstance():IsPlayed(var0_29) and var1_29()
 	end)
 
-	if not var1_29 then
-		arg1_29()
+	if not var1_28 then
+		arg1_28()
 
 		return
 	end
 
-	local var2_29 = var1_29.id
-	local var3_29 = var1_29.args()
+	local var2_28 = var1_28.id
+	local var3_28 = var1_28.args()
 
 	if pg.SeriesGuideMgr.GetInstance():isRunning() then
-		arg1_29()
+		arg1_28()
 
 		return
 	end
 
 	if not pg.NewGuideMgr.GetInstance():CanPlay() then
-		arg1_29()
+		arg1_28()
 
 		return
 	end
 
 	pg.m02:sendNotification(GAME.STORY_UPDATE, {
-		storyId = var2_29
+		storyId = var2_28
 	})
 
-	if var2_29 == "DORM3D_GUIDE_01" then
-		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(1, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var2_29)))
+	if var2_28 == "DORM3D_GUIDE_01" then
+		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(1, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var2_28)))
 	end
 
-	pg.NewGuideMgr.GetInstance():Play(var2_29, var3_29, function()
-		if var2_29 == "DORM3D_GUIDE_01" then
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(2, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var2_29)))
+	pg.NewGuideMgr.GetInstance():Play(var2_28, var3_28, function()
+		if var2_28 == "DORM3D_GUIDE_01" then
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(2, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var2_28)))
 		end
 
-		if var1_29.nextOne then
-			local var0_31, var1_31 = var1_29.nextOne()
+		if var1_28.nextOne then
+			local var0_30, var1_30 = var1_28.nextOne()
 
-			arg0_29:PlayNextOne(var0_31, var1_31)
+			arg0_28:PlayNextOne(var0_30, var1_30)
 		end
-	end, arg1_29)
+	end, arg1_28)
 end
 
-function var0_0.PlayNextOne(arg0_32, arg1_32, arg2_32)
-	if not arg1_32 then
+function var0_0.PlayNextOne(arg0_31, arg1_31, arg2_31)
+	if not arg1_31 then
 		return
 	end
 
-	pg.NewGuideMgr.GetInstance():Play(arg1_32, arg2_32, function()
+	pg.NewGuideMgr.GetInstance():Play(arg1_31, arg2_31, function()
 		return
 	end)
 	pg.m02:sendNotification(GAME.STORY_UPDATE, {
-		storyId = arg1_32
+		storyId = arg1_31
 	})
 end
 

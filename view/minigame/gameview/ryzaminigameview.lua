@@ -795,15 +795,16 @@ function var0_0.onTimer(arg0_67)
 	local var0_67 = arg0_67.responder:GetJoyStick()
 
 	if var0_67.x ~= 0 or var0_67.y ~= 0 then
-		local var1_67 = arg0_67.reactorUIs[arg0_67.responder.reactorRyza]:Find("dir")
+		local var1_67 = RyzaMiniGameConfig.ReSetDir(var0_67)
+		local var2_67 = arg0_67.reactorUIs[arg0_67.responder.reactorRyza]:Find("dir")
 
-		if var0_67.x == 0 then
-			setLocalEulerAngles(var1_67, {
-				z = var0_67.y > 0 and 270 or 90
+		if var1_67.x == 0 then
+			setLocalEulerAngles(var2_67, {
+				z = var1_67.y > 0 and 270 or 90
 			})
 		else
-			setLocalEulerAngles(var1_67, {
-				z = math.atan2(-var0_67.y, var0_67.x) / math.pi * 180
+			setLocalEulerAngles(var2_67, {
+				z = math.atan2(-var1_67.y, var1_67.x) / math.pi * 180
 			})
 		end
 	end
@@ -835,7 +836,7 @@ function var0_0.onBackPressed(arg0_69)
 			return
 		end
 	}, function()
-		assert(arg0_69.gameStartFlag)
+		assert(arg0_69.gameStartFlag, "game start false")
 		arg0_69:openUI("pause")
 	end)
 end

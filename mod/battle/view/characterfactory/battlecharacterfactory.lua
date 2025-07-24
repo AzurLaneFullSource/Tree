@@ -167,7 +167,7 @@ function var2_0.MakeArrowBar(arg0_22, arg1_22)
 	local var0_22 = arg0_22:GetSceneMediator()
 
 	arg1_22:AddArrowBar(var0_22:InstantiateCharacterComponent(arg0_22.ARROW_BAR_NAME))
-	arg1_22:UpdateArrowBarPostition()
+	arg1_22:UpdateArrowBarPosition()
 end
 
 function var2_0.MakeCastClock(arg0_23, arg1_23)

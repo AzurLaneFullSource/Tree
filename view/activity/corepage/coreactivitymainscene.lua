@@ -17,8 +17,6 @@ function var0_0.init(arg0_3)
 	arg0_3.btnSkin = arg0_3._tf:Find("adapt/btn_skin")
 	arg0_3.pageContainer = arg0_3._tf:Find("page_list")
 	arg0_3.tabs = arg0_3._tf:Find("adapt/tabs")
-	arg0_3.huanyingmituzhe_lan = arg0_3._tf:Find("adapt/mark/huanyingmituzhe_lan")
-	arg0_3.huanyingmituzhe_lv = arg0_3._tf:Find("adapt/mark/huanyingmituzhe_lv")
 	arg0_3.windowList = {}
 	arg0_3.awardWindow = AwardWindow.New(arg0_3._tf, arg0_3.event)
 	arg0_3.chargeTipWindow = ChargeTipWindow.New(arg0_3._tf, arg0_3.event)
@@ -29,6 +27,12 @@ function var0_0.init(arg0_3)
 			local var0_4 = underscore.detect(arg0_3.activities, function(arg0_5)
 				return tostring(arg0_5:getConfig("is_show")) == arg2_4.name
 			end)
+
+			if not var0_4 or not arg0_3.pageDic[var0_4.id] then
+				warning(arg2_4.name, var0_4.id)
+
+				return
+			end
 
 			if arg0_3.pageDic[var0_4.id] ~= nil then
 				local var1_4 = arg0_3:findTF("tip", arg2_4)
@@ -126,9 +130,6 @@ end
 
 function var0_0.selectActivity(arg0_21, arg1_21)
 	if arg1_21 and (not arg0_21.activity or arg0_21.activity.id ~= arg1_21.id) then
-		SetActive(arg0_21.huanyingmituzhe_lan, arg1_21.id ~= 5984)
-		SetActive(arg0_21.huanyingmituzhe_lv, arg1_21.id == 5984)
-
 		local var0_21 = arg0_21.pageDic[arg1_21.id]
 
 		assert(var0_21, "找不到id:" .. arg1_21.id .. "的活动页，请检查")

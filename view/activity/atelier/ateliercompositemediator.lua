@@ -11,23 +11,31 @@ function var0_0.register(arg0_1)
 		})
 	end)
 	arg0_1:bind(AtelierMaterialDetailMediator.SHOW_DETAIL, function(arg0_3, arg1_3)
+		local var0_3 = arg1_3:GetVersion()
+		local var1_3
+
+		if var0_3 == 1 then
+			var1_3 = AtelierMaterialDetailLayer
+		else
+			var1_3 = AtelierMaterialDetailYumiaLayer
+		end
+
 		arg0_1:addSubLayers(Context.New({
 			mediator = AtelierMaterialDetailMediator,
-			viewComponent = AtelierMaterialDetailLayer,
+			viewComponent = var1_3,
 			data = {
 				material = arg1_3
 			}
 		}))
 	end)
+	arg0_1.viewComponent:InitView()
 
-	local var0_1 = getProxy(ChapterProxy):getChapterById(1690005, true):isClear()
+	local var0_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+	local var1_1 = arg0_1.contextData.versionIndex or 1
+	local var2_1 = AtelierTools.IsUnlockAtelier(var0_1, var1_1)
 
-	arg0_1.viewComponent:SetEnabled(var0_1)
-
-	local var1_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
-
-	assert(var1_1 and not var1_1:isEnd())
-	arg0_1.viewComponent:SetActivity(var1_1)
+	arg0_1.viewComponent:SetEnabled(var2_1)
+	arg0_1.viewComponent:SetActivity(var0_1)
 end
 
 function var0_0.listNotificationInterests(arg0_4)

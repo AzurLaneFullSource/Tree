@@ -18,6 +18,7 @@ var0_0.BURIN = 98
 var0_0.SIRE = 99
 var0_0.LINK = 100
 var0_0.IDOL_LINK = 107
+var0_0.YUMIA = 113
 
 function var0_0.IsLinkType(arg0_1)
 	return arg0_1 > var0_0.LINK
@@ -43,21 +44,22 @@ function var0_0.Nation2Print(arg0_3)
 			"ff",
 			"nl",
 			[96] = "mot",
-			[97] = "meta",
+			[113] = "um",
 			[104] = "um",
 			[112] = "um",
+			[97] = "meta",
+			[111] = "um",
+			[102] = "bili",
+			[110] = "um",
+			[103] = "um",
+			[109] = "um",
 			[108] = "um",
 			[101] = "np",
 			[107] = "um",
-			[110] = "um",
-			[111] = "um",
-			[102] = "bili",
+			[98] = "cm",
 			[106] = "um",
-			[103] = "um",
-			[105] = "um",
 			[99] = "sr",
-			[109] = "um",
-			[98] = "cm"
+			[105] = "um"
 		}
 	end
 
@@ -93,7 +95,8 @@ function var0_0.Nation2Side(arg0_4)
 			[101] = "Jp",
 			[105] = "Jp",
 			[103] = "Jp",
-			[109] = "West"
+			[109] = "West",
+			[113] = "West"
 		}
 	end
 
@@ -129,7 +132,8 @@ function var0_0.Nation2BG(arg0_5)
 			[101] = "bg/bg_church",
 			[105] = "bg/bg_church",
 			[103] = "bg/bg_church",
-			[109] = "bg/bg_church"
+			[109] = "bg/bg_church",
+			[113] = "bg/bg_church"
 		}
 	end
 
@@ -165,7 +169,8 @@ function var0_0.Nation2Name(arg0_6)
 			[109] = i18n("word_shipNation_ryza"),
 			[110] = i18n("word_shipNation_senran"),
 			[111] = i18n("word_shipNation_tolove"),
-			[112] = i18n("word_shipNation_brs")
+			[112] = i18n("word_shipNation_brs"),
+			[113] = i18n("word_shipNation_yumia")
 		}
 	end
 
@@ -201,7 +206,8 @@ function var0_0.Nation2facionName(arg0_7)
 			[109] = i18n("guild_faction_unknown"),
 			[110] = i18n("guild_faction_unknown"),
 			[111] = i18n("guild_faction_unknown"),
-			[112] = i18n("guild_faction_unknown")
+			[112] = i18n("guild_faction_unknown"),
+			[113] = i18n("guild_faction_unknown")
 		}
 	end
 

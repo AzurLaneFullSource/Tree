@@ -12,7 +12,7 @@ return {
 			bgName = "bg_zhuiluo_2",
 			stopbgm = true,
 			say = "Mirror Sea - In the past",
-			bgm = "ryza-az-theme",
+			bgm = "ryza-11",
 			flashout = {
 				black = true,
 				dur = 1,
@@ -430,7 +430,7 @@ return {
 			nameColor = "#A9F548FF",
 			say = "Mirror Sea Ruins - Land of Beginnings",
 			bgmDelay = 2,
-			bgm = "ryza-az-theme",
+			bgm = "ryza-6",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -103,7 +103,7 @@ function var0_0.AddCard(arg0_9, arg1_9, arg2_9, arg3_9)
 				var4_9 = var4_9 + Ship.BACKYARD_2F_ENERGY_ADDITION
 			end
 
-			for iter0_9, iter1_9 in ipairs(getProxy(ActivityProxy):getBackyardEnergyActivityBuffs()) do
+			for iter0_9, iter1_9 in ipairs(BuffHelper.GetBackYardEnergyBuffs()) do
 				var5_9 = var5_9 + tonumber(iter1_9:getConfig("benefit_effect"))
 			end
 		end

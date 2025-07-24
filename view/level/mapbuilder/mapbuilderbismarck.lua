@@ -82,7 +82,7 @@ function var0_0.UpdateCustomButtons(arg0_10)
 		setActive(arg0_10.sceneParent.btnPrev, false)
 		setActive(arg0_10.sceneParent.btnNext, false)
 
-		local var2_10 = getProxy(ChapterProxy):getMapsByActivities()
+		local var2_10 = getProxy(ChapterProxy):getMapsByActivities(var0_10:getConfig("on_activity"))
 		local var3_10 = _.detect(var2_10, function(arg0_11)
 			return arg0_11.id == var0_10.id + 1
 		end)

@@ -11,13 +11,12 @@ function var0_0.register(arg0_1)
 	arg0_1:bind(var0_0.GO_RECIPE, function(arg0_3, arg1_3)
 		arg0_1.viewComponent:closeView()
 
-		if getProxy(ContextProxy):getCurrentContext():getContextByMediator(AtelierCompositeMediator) then
-			arg0_1:sendNotification(AtelierCompositeMediator.OPEN_FORMULA, arg1_3)
-		else
-			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.ATELIER_COMPOSITE, {
-				formulaId = arg1_3
-			})
-		end
+		local var0_3 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.ATELIER_COMPOSITE, {
+			formulaId = arg1_3,
+			activityID = var0_3.id
+		})
 	end)
 end
 

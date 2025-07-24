@@ -90,13 +90,19 @@ function var0_0.InitInteractable(arg0_6)
 		arg0_6:emit(ActivityMediator.BATTLE_OPERA)
 	end, SFX_PANEL)
 	onButton(arg0_6, arg0_6.shopBtn, function()
-		local var0_9 = _.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function(arg0_10)
-			return arg0_10:getConfig("config_client").pt_id == pg.gameset.activity_res_id.key_value
+		local var0_9 = configClinet.shopLinkActID and getProxy(ActivityProxy):getActivitiesById(configClinet.shopLinkActID) or underscore.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function(arg0_10)
+			return not arg0_10:isEnd()
 		end)
+
+		if not var0_9 or var0_9:isEnd() then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
+
+			return
+		end
 
 		arg0_6:emit(ActivityMediator.GO_SHOPS_LAYER, {
 			warp = NewShopsScene.TYPE_ACTIVITY,
-			actId = var0_9 and var0_9.id
+			actId = var0_9.id
 		})
 	end, SFX_PANEL)
 	onButton(arg0_6, arg0_6.buildBtn, function()

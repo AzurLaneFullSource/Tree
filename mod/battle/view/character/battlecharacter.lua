@@ -881,7 +881,7 @@ end
 local var9_0 = Vector3(-1, 1, 1)
 local var10_0 = Vector3(1, 1, 1)
 
-function var6_0.UpdateArrowBarPostition(arg0_77)
+function var6_0.UpdateArrowBarPosition(arg0_77)
 	local var0_77 = arg0_77._cameraUtil:GetCharacterArrowBarPosition(arg0_77._referenceVector, arg0_77._arrowVector)
 
 	if not var0_77 then

@@ -106,6 +106,10 @@ pg.ship_meta_breakout = setmetatable({
 		9704052,
 		9704053,
 		9704054,
+		9704061,
+		9704062,
+		9704063,
+		9704064,
 		9705011,
 		9705012,
 		9705013,
@@ -1854,6 +1858,71 @@ pg.base.ship_meta_breakout = {
 		id = 9704054,
 		item1 = 21038,
 		pre_id = 9704053,
+		weapon_ids = {}
+	},
+	[9704061] = {
+		breakout_view = "Unlock Cinders of Hope - Dunkerque/Main gun preload +1/Main gun efficiency +5%",
+		gold = 500,
+		breakout_id = 9704062,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9704061,
+		item1 = 21050,
+		pre_id = 0,
+		weapon_ids = {
+			90300
+		}
+	},
+	[9704062] = {
+		breakout_view = "Secondary Gun base +2/Main gun efficiency +10%",
+		gold = 1500,
+		breakout_id = 9704063,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9704062,
+		item1 = 21050,
+		pre_id = 9704061,
+		weapon_ids = {
+			101,
+			101,
+			101
+		}
+	},
+	[9704063] = {
+		breakout_view = "Improve Cinders of Hope - Dunkerque/Main gun base +1/Main gun efficiency +15%",
+		gold = 2500,
+		breakout_id = 9704064,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9704063,
+		item1 = 21050,
+		pre_id = 9704062,
+		weapon_ids = {
+			90300,
+			90300
+		}
+	},
+	[9704064] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9704064,
+		item1 = 21050,
+		pre_id = 9704063,
 		weapon_ids = {}
 	},
 	[9705011] = {

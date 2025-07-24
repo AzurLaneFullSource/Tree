@@ -5,6 +5,8 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 
 	arg0_1.mapEventTr = arg1_1:Find("right/1/act/act_battle")
 	arg0_1.mapBtn = MainActivityBtnMellowAdapt.New(MainActMapBtn.New(arg0_1.mapEventTr, arg0_1.event, true, true))
+	arg0_1.mapSubEventTr = arg1_1:Find("right/1/act/act_sub_battle")
+	arg0_1.mapSubBtn = MainActivityBtnMellowAdapt.New(MainActSubMapBtn.New(arg0_1.mapSubEventTr, arg0_1.event, true, true))
 end
 
 function var0_0.InitBtns(arg0_2)
@@ -68,6 +70,12 @@ function var0_0.Flush(arg0_7)
 	else
 		arg0_7.mapBtn:Clear()
 	end
+
+	if arg0_7.mapSubBtn:InShowTime() then
+		arg0_7.mapSubBtn:Init()
+	else
+		arg0_7.mapSubBtn:Clear()
+	end
 end
 
 function var0_0.GetDirection(arg0_8)
@@ -79,6 +87,10 @@ function var0_0.Dispose(arg0_9)
 	arg0_9.mapBtn:Dispose()
 
 	arg0_9.mapBtn = nil
+
+	arg0_9.mapSubBtn:Dispose()
+
+	arg0_9.mapSubBtn = nil
 end
 
 return var0_0

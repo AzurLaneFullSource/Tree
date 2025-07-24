@@ -34,7 +34,7 @@ function var0_0.register(arg0_1)
 			viewComponent = PtAwardLayer,
 			data = {
 				ptData = arg1_5,
-				ptId = pg.gameset.activity_res_id.key_value
+				ptId = arg1_5.resId
 			}
 		}))
 	end)
@@ -46,10 +46,11 @@ function var0_0.register(arg0_1)
 
 	arg0_1.viewComponent:SetActivity(var0_1)
 
-	local var1_1 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)
+	local var1_1 = var0_1:GetConfigClientSetting("PTID")
+	local var2_1 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)
 
-	for iter0_1, iter1_1 in ipairs(var1_1) do
-		if iter1_1:getDataConfig("pt") == pg.gameset.activity_res_id.key_value then
+	for iter0_1, iter1_1 in ipairs(var2_1) do
+		if iter1_1:getDataConfig("pt") == var1_1 then
 			arg0_1.viewComponent:SetPtActivity(iter1_1)
 
 			break
@@ -93,10 +94,10 @@ function var0_0.handleNotification(arg0_10, arg1_10)
 		local var3_10 = var1_10
 
 		if var3_10 then
-			if var3_10:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BOSSRUSH then
+			if var3_10.id == arg0_10.viewComponent.activity.id then
 				arg0_10.viewComponent:SetActivity(var3_10)
 				arg0_10.viewComponent:UpdateView()
-			elseif var3_10:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_BUFF and var3_10:getDataConfig("pt") == pg.gameset.activity_res_id.key_value then
+			elseif var3_10.id == arg0_10.viewComponent.ptActivity.id then
 				arg0_10.viewComponent:SetPtActivity(var3_10)
 				arg0_10.viewComponent:UpdateView()
 			end

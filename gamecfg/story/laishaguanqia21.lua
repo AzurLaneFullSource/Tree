@@ -12,7 +12,7 @@ return {
 			bgName = "bg_ryza_1",
 			stopbgm = true,
 			say = "Come evening, the girls had returned from their search at the bottom of the sea, bringing with them plenty of spoils.",
-			bgm = "ryza-az-theme",
+			bgm = "ryza-12",
 			flashout = {
 				black = true,
 				dur = 1,

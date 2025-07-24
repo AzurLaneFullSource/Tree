@@ -146,12 +146,12 @@ function var0_0.InitEvent(arg0_5)
 
 			arg0_5:emit(ShipMainMediator.ON_TAG, arg0_5:GetShipVO().id, var1_9)
 		end
-	end, SFX_CONFIGM)
+	end, SFX_CONFIRM)
 	onToggle(arg0_5, arg0_5.randomFlagToggle, function(arg0_10)
 		if arg0_5:GetShipVO():getRandomFlag() ~= arg0_10 then
 			arg0_5:emit(ShipMainMediator.CHANGE_RANDOM_FLAG, arg0_5:GetShipVO():GetShipPhantomMark(), arg0_10)
 		end
-	end, SFX_CONFIGM)
+	end, SFX_CONFIRM)
 	onButton(arg0_5, arg0_5.lockBtn, function()
 		arg0_5:emit(ShipMainMediator.ON_LOCK, {
 			arg0_5:GetShipVO().id

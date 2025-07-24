@@ -369,12 +369,14 @@ function var0_0.register(arg0_1)
 		var2_35:duplicateSupportFleet(var1_35)
 		arg0_1.viewComponent:RefreshFleetSelectView(var1_35)
 	end)
-	arg0_1:bind(var0_0.ON_ACTIVITY_MAP, function()
+	arg0_1:bind(var0_0.ON_ACTIVITY_MAP, function(arg0_36, arg1_36)
 		local var0_36 = getProxy(ChapterProxy)
-		local var1_36, var2_36 = var0_36:getLastMapForActivity()
+		local var1_36, var2_36 = var0_36:getLastMapForActivity(arg1_36)
 
 		if not var1_36 or not var0_36:getMapById(var1_36):isUnlock() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
+
+			return
 		end
 
 		arg0_1.viewComponent:ShowSelectedMap(var1_36, function()
@@ -395,34 +397,43 @@ function var0_0.register(arg0_1)
 		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.CLUE_MAP)
 	end)
 	arg0_1:bind(var0_0.GO_ACT_SHOP, function()
-		local var0_41 = pg.gameset.activity_res_id.key_value
-		local var1_41 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOTTERY)
+		local var0_41 = arg0_1.contextData.map and arg0_1.contextData.map:getConfig("on_activity") or nil
+		local var1_41 = var0_41 and var0_41 ~= 0 and getProxy(ActivityProxy):getActivityById(var0_41)
+		local var2_41 = var1_41 and not var1_41:isEnd() and var1_41:GetConfigClientSetting("PTID")
+		local var3_41 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOTTERY)
 
-		if var1_41 and var1_41:getConfig("config_client").resId == var0_41 and not var1_41:isEnd() then
+		if var3_41 and var3_41:getConfig("config_client").resId == var2_41 and not var3_41:isEnd() then
 			arg0_1:addSubLayers(Context.New({
 				mediator = LotteryMediator,
 				viewComponent = LotteryLayer,
 				data = {
-					activityId = var1_41.id
+					activityId = var3_41.id
 				}
 			}), false)
 		else
-			local var2_41 = _.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function(arg0_42)
-				return arg0_42:getConfig("config_client").pt_id == var0_41
+			local var4_41 = _.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function(arg0_42)
+				return arg0_42:getConfig("config_client").pt_id == var2_41
 			end)
-			local var3_41 = var2_41 and var2_41.id
+			local var5_41 = var4_41 and var4_41.id
 
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
 				warp = NewShopsScene.TYPE_ACTIVITY,
-				actId = var3_41
+				actId = var5_41
 			})
 		end
 	end)
-	arg0_1:bind(var0_0.SHOW_ATELIER_BUFF, function(arg0_43)
-		arg0_1:addSubLayers(Context.New({
-			mediator = AtelierBuffMediator,
-			viewComponent = AtelierBuffLayer
-		}))
+	arg0_1:bind(var0_0.SHOW_ATELIER_BUFF, function(arg0_43, arg1_43)
+		if arg1_43 then
+			arg0_1:addSubLayers(Context.New({
+				mediator = AterialYumiaCoreBuffMediator,
+				viewComponent = AterialYumiaCoreBuffLayer
+			}))
+		else
+			arg0_1:addSubLayers(Context.New({
+				mediator = AtelierBuffMediator,
+				viewComponent = AtelierBuffLayer
+			}))
+		end
 	end)
 	arg0_1:bind(var0_0.ON_SHIP_DETAIL, function(arg0_44, arg1_44)
 		arg0_1.contextData.selectedChapterVO = arg1_44.chapter
@@ -635,39 +646,31 @@ function var0_0.register(arg0_1)
 
 	arg0_1.viewComponent:setCommanderPrefabs(var5_1)
 
-	local var6_1 = var4_1:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK)
+	local var6_1 = getProxy(DailyLevelProxy)
 
-	for iter0_1, iter1_1 in ipairs(var6_1) do
-		if iter1_1:getConfig("config_id") == pg.gameset.activity_res_id.key_value then
-			arg0_1.viewComponent:updatePtActivity(iter1_1)
-
-			break
-		end
-	end
-
-	local var7_1 = getProxy(DailyLevelProxy)
-
-	arg0_1.viewComponent:setEliteQuota(var7_1.eliteCount, pg.gameset.elite_quota.key_value)
+	arg0_1.viewComponent:setEliteQuota(var6_1.eliteCount, pg.gameset.elite_quota.key_value)
 	getProxy(ChapterProxy):updateActiveChapterShips()
 
-	local var8_1 = getProxy(BagProxy):getItemsByType(Item.SPECIAL_OPERATION_TICKET)
+	local var7_1 = getProxy(BagProxy):getItemsByType(Item.SPECIAL_OPERATION_TICKET)
 
-	arg0_1.viewComponent:setSpecialOperationTickets(var8_1)
+	arg0_1.viewComponent:setSpecialOperationTickets(var7_1)
 end
 
 function var0_0.DidEnterLevelMainUI(arg0_73, arg1_73)
 	arg0_73.viewComponent:setMap(arg1_73)
 
 	if arg0_73.contextData.openChapterId then
-		arg0_73.viewComponent.mapBuilder:TryOpenChapter(arg0_73.contextData.openChapterId)
+		local var0_73 = arg0_73.contextData.openChapterId
+
+		arg0_73.viewComponent.mapBuilder:ActionInvoke("TryOpenChapter", var0_73)
 
 		arg0_73.contextData.openChapterId = nil
 	end
 
-	local var0_73 = arg0_73.contextData.chapterVO
+	local var1_73 = arg0_73.contextData.chapterVO
 
-	if var0_73 and var0_73.active then
-		arg0_73.viewComponent:switchToChapter(var0_73)
+	if var1_73 and var1_73.active then
+		arg0_73.viewComponent:switchToChapter(var1_73)
 	elseif arg0_73.contextData.map:isSkirmish() then
 		arg0_73.viewComponent:ShowCurtains(true)
 		arg0_73.viewComponent:doPlayAnim("TV01", function(arg0_74)
@@ -685,15 +688,15 @@ function var0_0.DidEnterLevelMainUI(arg0_73, arg1_73)
 	end
 
 	if arg0_73.contextData.StopAutoFightFlag then
-		local var1_73 = getProxy(ChapterProxy)
-		local var2_73 = var1_73:getActiveChapter()
+		local var2_73 = getProxy(ChapterProxy)
+		local var3_73 = var2_73:getActiveChapter()
 
-		if var2_73 then
-			var1_73:SetChapterAutoFlag(var2_73.id, false)
+		if var3_73 then
+			var2_73:SetChapterAutoFlag(var3_73.id, false)
 
-			local var3_73 = bit.bor(ChapterConst.DirtyAttachment, ChapterConst.DirtyStrategy)
+			local var4_73 = bit.bor(ChapterConst.DirtyAttachment, ChapterConst.DirtyStrategy)
 
-			arg0_73.viewComponent:updateChapterVO(var2_73, var3_73)
+			arg0_73.viewComponent:updateChapterVO(var3_73, var4_73)
 		end
 
 		arg0_73.contextData.StopAutoFightFlag = nil
@@ -1233,7 +1236,7 @@ function var0_0.handleNotification(arg0_82, arg1_82)
 	elseif var0_82 == ActivityProxy.ACTIVITY_OPERATION_DONE then
 		arg0_82.viewComponent.mapBuilder:UpdateMapItems()
 	elseif var0_82 == ActivityProxy.ACTIVITY_UPDATED then
-		if var1_82 and var1_82:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_RANK then
+		if var1_82 and arg0_82.viewComponent.ptActivity and var1_82.id == arg0_82.viewComponent.ptActivity.id then
 			arg0_82.viewComponent:updatePtActivity(var1_82)
 		end
 	elseif var0_82 == GAME.GET_REMASTER_TICKETS_DONE then

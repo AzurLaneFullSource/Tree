@@ -267,7 +267,7 @@ function var7_0.getBulletCldShipList(arg0_11, arg1_11, arg2_11)
 			local var9_11 = var5_11.x
 			local var10_11 = var9_11 * var3_11
 			local var11_11 = var9_11 * var4_11
-			local var12_11 = Vector3(var8_11.x - var10_11, 1, var8_11.z - var11_11)
+			local var12_11 = Vector3(var8_11.x + var10_11, 1, var8_11.z + var11_11)
 
 			var1_11 = arg2_11:GetCldListGradient(var2_11, var7_11, var6_11, var12_11)
 		else

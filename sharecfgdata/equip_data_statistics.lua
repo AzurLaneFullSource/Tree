@@ -165705,6 +165705,993 @@ _G.pg.base.equip_data_statistics[150671] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[150680] = {
+	ammo = 10,
+	attribute_1 = "antiaircraft",
+	descrip = "A large sword wrapped in rainbow light. It's imbued with every sort of power imaginable.",
+	icon = "150680",
+	id = 150680,
+	name = "Granshine",
+	nationality = 113,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "40",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			60860,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7,
+		10,
+	},
+	part_sub = {
+		6,
+		7,
+		10,
+	},
+	equip_parameters = {},
+	label = {
+		"DEV",
+		"GRANSHINE",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150681] = {
+	base = 150680,
+	id = 150681,
+	value_1 = "41",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150682] = {
+	base = 150680,
+	id = 150682,
+	value_1 = "42",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150683] = {
+	base = 150680,
+	id = 150683,
+	value_1 = "43",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150684] = {
+	base = 150680,
+	id = 150684,
+	value_1 = "44",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150685] = {
+	base = 150680,
+	id = 150685,
+	value_1 = "45",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150686] = {
+	base = 150680,
+	id = 150686,
+	value_1 = "46",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150687] = {
+	base = 150680,
+	id = 150687,
+	value_1 = "48",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150688] = {
+	base = 150680,
+	id = 150688,
+	value_1 = "50",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150689] = {
+	base = 150680,
+	id = 150689,
+	value_1 = "52",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150690] = {
+	base = 150680,
+	id = 150690,
+	value_1 = "55",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150691] = {
+	anti_siren = 100,
+	base = 150680,
+	id = 150691,
+	value_1 = "58",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150692] = {
+	anti_siren = 200,
+	base = 150680,
+	id = 150692,
+	value_1 = "60",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150693] = {
+	anti_siren = 300,
+	base = 150680,
+	id = 150693,
+	value_1 = "65",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150700] = {
+	ammo = 10,
+	attribute_1 = "air",
+	descrip = "A grimoire with immense wind power trapped within its pages. Opening it unleashes its full force.",
+	icon = "150700",
+	id = 150700,
+	name = "Superior Grimoire",
+	nationality = 113,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "40",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			60870,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7,
+		10,
+	},
+	part_sub = {
+		6,
+		7,
+		10,
+	},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150701] = {
+	base = 150700,
+	id = 150701,
+	value_1 = "46",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150702] = {
+	base = 150700,
+	id = 150702,
+	value_1 = "52",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150703] = {
+	base = 150700,
+	id = 150703,
+	value_1 = "58",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150704] = {
+	base = 150700,
+	id = 150704,
+	value_1 = "64",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150705] = {
+	base = 150700,
+	id = 150705,
+	value_1 = "70",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150706] = {
+	base = 150700,
+	id = 150706,
+	value_1 = "76",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150707] = {
+	base = 150700,
+	id = 150707,
+	value_1 = "82",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150708] = {
+	base = 150700,
+	id = 150708,
+	value_1 = "88",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150709] = {
+	base = 150700,
+	id = 150709,
+	value_1 = "94",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150710] = {
+	base = 150700,
+	id = 150710,
+	value_1 = "100",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150711] = {
+	anti_siren = 100,
+	base = 150700,
+	id = 150711,
+	value_1 = "106",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150712] = {
+	anti_siren = 200,
+	base = 150700,
+	id = 150712,
+	value_1 = "112",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150713] = {
+	anti_siren = 300,
+	base = 150700,
+	id = 150713,
+	value_1 = "118",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150720] = {
+	ammo = 10,
+	attribute_1 = "air",
+	attribute_2 = "dodge",
+	descrip = "Its double-ended blade flickers with the power of both fire and lightning. Those who master its use can wield both elemental powers readily.",
+	icon = "150720",
+	id = 150720,
+	name = "Endemeteo",
+	nationality = 113,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "18",
+	value_2 = 2,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			60880,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7,
+		10,
+	},
+	part_sub = {
+		6,
+		7,
+		10,
+	},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150721] = {
+	base = 150720,
+	id = 150721,
+	value_1 = "22",
+	value_2 = 2,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150722] = {
+	base = 150720,
+	id = 150722,
+	value_1 = "26",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150723] = {
+	base = 150720,
+	id = 150723,
+	value_1 = "30",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150724] = {
+	base = 150720,
+	id = 150724,
+	value_1 = "34",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150725] = {
+	base = 150720,
+	id = 150725,
+	value_1 = "39",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150726] = {
+	base = 150720,
+	id = 150726,
+	value_1 = "43",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150727] = {
+	base = 150720,
+	id = 150727,
+	value_1 = "47",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150728] = {
+	base = 150720,
+	id = 150728,
+	value_1 = "51",
+	value_2 = 5,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150729] = {
+	base = 150720,
+	id = 150729,
+	value_1 = "55",
+	value_2 = 5,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150730] = {
+	base = 150720,
+	id = 150730,
+	value_1 = "60",
+	value_2 = 6,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150731] = {
+	anti_siren = 100,
+	base = 150720,
+	id = 150731,
+	value_1 = "65",
+	value_2 = 6,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150732] = {
+	anti_siren = 200,
+	base = 150720,
+	id = 150732,
+	value_1 = "68",
+	value_2 = 6,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150733] = {
+	anti_siren = 300,
+	base = 150720,
+	id = 150733,
+	value_1 = "77",
+	value_2 = 7,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150740] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	attribute_2 = "speed",
+	descrip = "A crystal ball that projects an image of a field of flowers beneath a blue sky. It can heal all the beholder's wounds.",
+	icon = "150740",
+	id = 150740,
+	name = "Panacea Sphere",
+	nationality = 113,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "100",
+	value_2 = 1,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			60890,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150741] = {
+	base = 150740,
+	id = 150741,
+	value_1 = "130",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150742] = {
+	base = 150740,
+	id = 150742,
+	value_1 = "160",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150743] = {
+	base = 150740,
+	id = 150743,
+	value_1 = "190",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150744] = {
+	base = 150740,
+	id = 150744,
+	value_1 = "220",
+	value_2 = 2,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150745] = {
+	base = 150740,
+	id = 150745,
+	value_1 = "250",
+	value_2 = 2,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150746] = {
+	base = 150740,
+	id = 150746,
+	value_1 = "280",
+	value_2 = 2,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150747] = {
+	base = 150740,
+	id = 150747,
+	value_1 = "310",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150748] = {
+	base = 150740,
+	id = 150748,
+	value_1 = "340",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150749] = {
+	base = 150740,
+	id = 150749,
+	value_1 = "370",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150750] = {
+	base = 150740,
+	id = 150750,
+	value_1 = "400",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150751] = {
+	anti_siren = 100,
+	base = 150740,
+	id = 150751,
+	value_1 = "424",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150752] = {
+	anti_siren = 200,
+	base = 150740,
+	id = 150752,
+	value_1 = "448",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150753] = {
+	anti_siren = 300,
+	base = 150740,
+	id = 150753,
+	value_1 = "472",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150760] = {
+	ammo = 10,
+	attribute_1 = "hit",
+	attribute_2 = "dodge",
+	descrip = "A cube containing an ancient, horrifying monster. You'd be smart to not try to break the seal.",
+	icon = "150760",
+	id = 150760,
+	name = "Enfer Cube",
+	nationality = 113,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "14",
+	value_2 = 6,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			60900,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150761] = {
+	base = 150760,
+	id = 150761,
+	value_1 = "16",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150762] = {
+	base = 150760,
+	id = 150762,
+	value_1 = "18",
+	value_2 = 7,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150763] = {
+	base = 150760,
+	id = 150763,
+	value_1 = "20",
+	value_2 = 8,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150764] = {
+	base = 150760,
+	id = 150764,
+	value_1 = "22",
+	value_2 = 9,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150765] = {
+	base = 150760,
+	id = 150765,
+	value_1 = "24",
+	value_2 = 10,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150766] = {
+	base = 150760,
+	id = 150766,
+	value_1 = "26",
+	value_2 = 11,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150767] = {
+	base = 150760,
+	id = 150767,
+	value_1 = "28",
+	value_2 = 12,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150768] = {
+	base = 150760,
+	id = 150768,
+	value_1 = "30",
+	value_2 = 13,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150769] = {
+	base = 150760,
+	id = 150769,
+	value_1 = "32",
+	value_2 = 14,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150770] = {
+	base = 150760,
+	id = 150770,
+	value_1 = "35",
+	value_2 = 15,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150771] = {
+	anti_siren = 100,
+	base = 150760,
+	id = 150771,
+	value_1 = "38",
+	value_2 = 16,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150772] = {
+	anti_siren = 200,
+	base = 150760,
+	id = 150772,
+	value_1 = "41",
+	value_2 = 17,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150773] = {
+	anti_siren = 300,
+	base = 150760,
+	id = 150773,
+	value_1 = "44",
+	value_2 = 18,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150780] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	descrip = "An armillary sphere with the power of regeneration. Its healing power lies within the jewel in the center.",
+	icon = "150780",
+	id = 150780,
+	name = "Heavenly Armillary",
+	nationality = 113,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "250",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			60910,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150781] = {
+	base = 150780,
+	id = 150781,
+	value_1 = "280",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150782] = {
+	base = 150780,
+	id = 150782,
+	value_1 = "310",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150783] = {
+	base = 150780,
+	id = 150783,
+	value_1 = "340",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150784] = {
+	base = 150780,
+	id = 150784,
+	value_1 = "370",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150785] = {
+	base = 150780,
+	id = 150785,
+	value_1 = "400",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150786] = {
+	base = 150780,
+	id = 150786,
+	value_1 = "430",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150787] = {
+	base = 150780,
+	id = 150787,
+	value_1 = "460",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150788] = {
+	base = 150780,
+	id = 150788,
+	value_1 = "490",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150789] = {
+	base = 150780,
+	id = 150789,
+	value_1 = "520",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150790] = {
+	base = 150780,
+	id = 150790,
+	value_1 = "550",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150791] = {
+	anti_siren = 100,
+	base = 150780,
+	id = 150791,
+	value_1 = "580",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150792] = {
+	anti_siren = 200,
+	base = 150780,
+	id = 150792,
+	value_1 = "610",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150793] = {
+	anti_siren = 300,
+	base = 150780,
+	id = 150793,
+	value_1 = "640",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150800] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	descrip = "An odd device that assists with surveys. It's super-high-spec and brimming with features, according to itself.",
+	icon = "150800",
+	id = 150800,
+	name = "Flammi",
+	nationality = 113,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "250",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			60920,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150801] = {
+	base = 150800,
+	id = 150801,
+	value_1 = "280",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150802] = {
+	base = 150800,
+	id = 150802,
+	value_1 = "310",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150803] = {
+	base = 150800,
+	id = 150803,
+	value_1 = "340",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150804] = {
+	base = 150800,
+	id = 150804,
+	value_1 = "370",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150805] = {
+	base = 150800,
+	id = 150805,
+	value_1 = "400",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150806] = {
+	base = 150800,
+	id = 150806,
+	value_1 = "430",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150807] = {
+	base = 150800,
+	id = 150807,
+	value_1 = "460",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150808] = {
+	base = 150800,
+	id = 150808,
+	value_1 = "490",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150809] = {
+	base = 150800,
+	id = 150809,
+	value_1 = "520",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150810] = {
+	base = 150800,
+	id = 150810,
+	value_1 = "550",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150811] = {
+	anti_siren = 100,
+	base = 150800,
+	id = 150811,
+	value_1 = "580",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150812] = {
+	anti_siren = 200,
+	base = 150800,
+	id = 150812,
+	value_1 = "610",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150813] = {
+	anti_siren = 300,
+	base = 150800,
+	id = 150813,
+	value_1 = "640",
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[170001] = {
 	ammo = 10,
 	descrip = "Barrage",
@@ -170031,6 +171018,120 @@ _G.pg.base.equip_data_statistics[3279401] = {
 	},
 	equip_parameters = {},
 	label = {},
+}
+
+_G.pg.base.equip_data_statistics[3297001] = {
+	ammo = 5,
+	attribute_2 = "air",
+	descrip = "A Navy Air Squadron known for its \"Pirate Badge\"",
+	icon = "17260",
+	id = 3297001,
+	name = "【2025优米雅联动 剧情战】我方优米雅战斗机",
+	nationality = 1,
+	rarity = 5,
+	speciality = "<[AIR]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 7,
+	value_2 = 45,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {
+		{
+			6,
+			50473,
+		},
+		{
+			5,
+			52373,
+		},
+	},
+	equip_info = {
+		6,
+		7,
+		8,
+		9,
+	},
+	weapon_id = {
+		17273,
+		81273,
+	},
+	skill_id = {
+		{
+			6250,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7,
+	},
+	part_sub = {
+		6,
+		7,
+	},
+	equip_parameters = {},
+	label = {
+		"USS",
+		"CV",
+		"FT",
+	},
+}
+
+_G.pg.base.equip_data_statistics[3297002] = {
+	ammo = 5,
+	attribute_2 = "air",
+	descrip = "No description",
+	icon = "48040",
+	id = 3297002,
+	name = "【2025优米雅联动 剧情战】我方优米雅鱼雷机",
+	nationality = 4,
+	rarity = 5,
+	speciality = "<[TRP]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 8,
+	value_2 = 45,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {
+		{
+			6,
+			59340,
+		},
+		{
+			4,
+			59700,
+		},
+	},
+	equip_info = {
+		6,
+		7,
+		8,
+		9,
+	},
+	weapon_id = {
+		48053,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7,
+	},
+	part_sub = {
+		6,
+		7,
+	},
+	equip_parameters = {},
+	label = {
+		"KMS",
+		"CV",
+		"TB",
+	},
 }
 
 _G.pg.base.equip_data_statistics[800000] = {

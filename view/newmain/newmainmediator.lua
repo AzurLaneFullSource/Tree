@@ -67,9 +67,9 @@ function var0_0.register(arg0_1)
 			mapIdx = var1_6.id
 		})
 	end)
-	arg0_1:bind(var0_0.SKIP_ACTIVITY_MAP, function(arg0_7)
+	arg0_1:bind(var0_0.SKIP_ACTIVITY_MAP, function(arg0_7, arg1_7)
 		local var0_7 = getProxy(ChapterProxy)
-		local var1_7, var2_7 = var0_7:getLastMapForActivity()
+		local var1_7, var2_7 = var0_7:getLastMapForActivity(arg1_7)
 
 		if not var1_7 or not var0_7:getMapById(var1_7):isUnlock() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))

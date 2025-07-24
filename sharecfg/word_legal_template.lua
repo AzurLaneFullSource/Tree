@@ -6070,6 +6070,11 @@ function temp()
 			n = {
 				a = {
 					this = true
+				},
+				j = {
+					a = {
+						this = true
+					}
 				}
 			},
 			x = {
@@ -8099,6 +8104,23 @@ function temp()
 							}
 						}
 					}
+				},
+				a = {
+					[" "] = {
+						F = {
+							r = {
+								i = {
+									e = {
+										d = {
+											e = {
+												this = true
+											}
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -9172,6 +9194,33 @@ function temp()
 			},
 			e = {
 				this = true
+			},
+			l = {
+				a = {
+					[" "] = {
+						v = {
+							o = {
+								n = {
+									[" "] = {
+										D = {
+											u = {
+												e = {
+													r = {
+														e = {
+															r = {
+																this = true
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		},
 		["-"] = {
@@ -9952,6 +10001,34 @@ function temp()
 				}
 			},
 			m = {
+				i = {
+					this = true,
+					a = {
+						[" "] = {
+							L = {
+								i = {
+									e = {
+										s = {
+											s = {
+												f = {
+													e = {
+														l = {
+															d = {
+																t = {
+																	this = true
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
 				e = {
 					[" "] = {
 						M = {
@@ -9968,9 +10045,6 @@ function temp()
 							}
 						}
 					}
-				},
-				i = {
-					this = true
 				}
 			},
 			i = {
@@ -10367,6 +10441,63 @@ function temp()
 								[" "] = {
 									原 = {
 										皮 = {
+											） = {
+												this = true
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.抚 = {
+		顺 = {
+			["."] = {
+				改 = {
+					（ = {
+						后 = {
+							排 = {
+								） = {
+									this = true
+								}
+							}
+						},
+						前 = {
+							排 = {
+								） = {
+									this = true
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.朴 = {
+		茨 = {
+			茅 = {
+				斯 = {
+					冒 = {
+						险 = {
+							号 = {
+								（ = {
+									后 = {
+										排 = {
 											） = {
 												this = true
 											}

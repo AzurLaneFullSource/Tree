@@ -169,6 +169,9 @@ local function var1_0(arg0_13, arg1_13)
 	elseif string.find(arg1_13, "ryza_shop") then
 		var0_13 = "cv-1090002"
 		var1_13 = arg1_13
+	elseif string.find(arg1_13, "atelier_yumia_shop") then
+		var0_13 = "cv-1130002"
+		var1_13 = arg1_13
 	else
 		var0_13 = "cv-shop"
 		var1_13 = arg1_13

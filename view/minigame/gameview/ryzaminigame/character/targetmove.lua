@@ -56,14 +56,14 @@ function var0_0.GetSpeed(arg0_6)
 end
 
 var0_0.SpeedDistance = {
-	[0] = 1.5,
-	2,
-	2.5,
-	3,
-	3.5,
+	[0] = 3.5,
 	4,
 	4.5,
-	5
+	5,
+	5.5,
+	6,
+	6.3,
+	6.5
 }
 
 function var0_0.GetSpeedDis(arg0_7)

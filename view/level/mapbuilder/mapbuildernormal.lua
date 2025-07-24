@@ -302,55 +302,56 @@ function var0_0.UpdateMapItem(arg0_15, arg1_15, arg2_15)
 		setText(var18_15:Find("label"), i18n("levelScene_chapter_count_tip"))
 		setText(var18_15:Find("Text"), setColorStr(var20_15, var19_15 <= arg2_15:getTodayDefeatCount() and COLOR_RED or COLOR_GREEN))
 
-		local var21_15 = getProxy(ChapterProxy):IsActivitySPChapterActive() and SettingsProxy.IsShowActivityMapSPTip()
+		local var21_15 = pg.expedition_data_by_map[arg2_15:getConfig("map")].on_activity
+		local var22_15 = getProxy(ChapterProxy):IsActivitySPChapterActive(var21_15) and SettingsProxy.IsShowActivityMapSPTip()
 
-		setActive(var18_15:Find("TipRect"), var21_15)
+		setActive(var18_15:Find("TipRect"), var22_15)
 	end
 
-	local var22_15 = arg2_15:GetDailyBonusQuota()
-	local var23_15 = findTF(var1_15, "mark")
+	local var23_15 = arg2_15:GetDailyBonusQuota()
+	local var24_15 = findTF(var1_15, "mark")
 
-	setActive(var23_15:Find("bonus"), var22_15)
-	setActive(var23_15, var22_15)
+	setActive(var24_15:Find("bonus"), var23_15)
+	setActive(var24_15, var23_15)
 
-	if var22_15 then
-		local var24_15 = var23_15:GetComponent(typeof(CanvasGroup))
-		local var25_15 = arg0_15.contextData.map:getConfig("type") == Map.ACTIVITY_HARD and "bonus_us_hard" or "bonus_us"
+	if var23_15 then
+		local var25_15 = var24_15:GetComponent(typeof(CanvasGroup))
+		local var26_15 = arg0_15.contextData.map:getConfig("type") == Map.ACTIVITY_HARD and "bonus_us_hard" or "bonus_us"
 
-		arg0_15.sceneParent.loader:GetSprite("ui/levelmainscene_atlas", var25_15, var23_15:Find("bonus"))
-		LeanTween.cancel(go(var23_15), true)
+		arg0_15.sceneParent.loader:GetSprite("ui/levelmainscene_atlas", var26_15, var24_15:Find("bonus"))
+		LeanTween.cancel(go(var24_15), true)
 
-		local var26_15 = var23_15.anchoredPosition.y
+		local var27_15 = var24_15.anchoredPosition.y
 
-		var24_15.alpha = 0
+		var25_15.alpha = 0
 
-		LeanTween.value(go(var23_15), 0, 1, 0.2):setOnUpdate(System.Action_float(function(arg0_16)
-			var24_15.alpha = arg0_16
+		LeanTween.value(go(var24_15), 0, 1, 0.2):setOnUpdate(System.Action_float(function(arg0_16)
+			var25_15.alpha = arg0_16
 
-			local var0_16 = var23_15.anchoredPosition
+			local var0_16 = var24_15.anchoredPosition
 
-			var0_16.y = var26_15 * arg0_16
-			var23_15.anchoredPosition = var0_16
+			var0_16.y = var27_15 * arg0_16
+			var24_15.anchoredPosition = var0_16
 		end)):setOnComplete(System.Action(function()
-			var24_15.alpha = 1
+			var25_15.alpha = 1
 
-			local var0_17 = var23_15.anchoredPosition
+			local var0_17 = var24_15.anchoredPosition
 
-			var0_17.y = var26_15
-			var23_15.anchoredPosition = var0_17
+			var0_17.y = var27_15
+			var24_15.anchoredPosition = var0_17
 		end)):setEase(LeanTweenType.easeOutSine):setDelay(0.7)
 	end
 
-	local var27_15 = arg2_15.id
+	local var28_15 = arg2_15.id
 
 	onButton(arg0_15, var1_15, function()
-		if arg0_15.chaptersInBackAnimating[var27_15] then
+		if arg0_15.chaptersInBackAnimating[var28_15] then
 			return
 		end
 
 		local var0_18 = arg1_15.localPosition
 
-		arg0_15:TryOpenChapterInfo(var27_15, Vector3(var0_18.x - 10, var0_18.y + 150))
+		arg0_15:TryOpenChapterInfo(var28_15, Vector3(var0_18.x - 10, var0_18.y + 150))
 	end, SFX_UI_WEIGHANCHOR_SELECT)
 end
 

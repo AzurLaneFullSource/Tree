@@ -61,32 +61,37 @@ function var0_0.GetCircleList(arg0_13)
 	return arg0_13:getConfig("recipe_circle")
 end
 
-function var0_0.IsFormualCanComposite(arg0_14, arg1_14)
-	local var0_14 = {}
-	local var1_14 = arg1_14:GetItems()
+function var0_0.GetShapeID(arg0_14)
+	return arg0_14:getConfig("shape")
+end
 
-	local function var2_14(arg0_15)
-		local var0_15 = var0_14[arg0_15:GetConfigID()] or Clone(var1_14[arg0_15:GetConfigID()])
+function var0_0.IsFormualCanComposite(arg0_15, arg1_15, arg2_15)
+	local var0_15 = {}
+	local var1_15 = arg1_15:GetItems()
 
-		assert(var0_15, "Using Unexist material")
+	local function var2_15(arg0_16)
+		local var0_16 = var0_15[arg0_16:GetConfigID()] or Clone(var1_15[arg0_16:GetConfigID()])
 
-		var0_15.count = var0_15.count - 1
-		var0_14[arg0_15:GetConfigID()] = var0_15
+		assert(var0_16, "Using Unexist material")
+
+		var0_16.count = var0_16.count - 1
+		var0_15[arg0_16:GetConfigID()] = var0_16
 	end
 
-	local var3_14 = _.map(arg0_14:GetCircleList(), function(arg0_16)
+	local var3_15 = _.map(arg0_15:GetCircleList(), function(arg0_17)
 		return AtelierFormulaCircle.New({
-			configId = arg0_16
+			configId = arg0_17
 		})
 	end)
 
-	if _.any(var3_14, function(arg0_17)
-		if arg0_17:GetType() == AtelierFormulaCircle.TYPE.BASE or arg0_17:GetType() == AtelierFormulaCircle.TYPE.SAIREN then
-			local var0_17 = arg0_17:GetLimitItemID()
-			local var1_17 = var0_14[var0_17] or var1_14[var0_17]
+	if _.any(var3_15, function(arg0_18)
+		local var0_18 = arg0_18:GetLimitItemID()
 
-			if var1_17 and var1_17.count > 0 then
-				var2_14(var1_17)
+		if var0_18 ~= 0 then
+			local var1_18 = var0_15[var0_18] or var1_15[var0_18]
+
+			if var1_18 and var1_18.count > 0 then
+				var2_15(var1_18)
 			else
 				return true
 			end
@@ -95,14 +100,14 @@ function var0_0.IsFormualCanComposite(arg0_14, arg1_14)
 		return false
 	end
 
-	local var4_14 = AtelierMaterial.bindConfigTable()
+	local var4_15 = AtelierMaterial.bindConfigTable()
 
-	local function var5_14(arg0_18)
-		for iter0_18, iter1_18 in ipairs(var4_14.all) do
-			local var0_18 = var0_14[iter1_18] or var1_14[iter1_18]
+	local function var5_15(arg0_19)
+		for iter0_19, iter1_19 in ipairs(var4_15.all) do
+			local var0_19 = var0_15[iter1_19] or var1_15[iter1_19]
 
-			if var0_18 and var0_18.count > 0 and arg0_18:CanUseMaterial(var0_18, arg0_14) then
-				var2_14(var0_18)
+			if var0_19 and var0_19.count > 0 and arg0_19:CanUseMaterial(var0_19, arg0_15, arg2_15) then
+				var2_15(var0_19)
 
 				return
 			end
@@ -111,20 +116,27 @@ function var0_0.IsFormualCanComposite(arg0_14, arg1_14)
 		return true
 	end
 
-	if _.any(var3_14, function(arg0_19)
-		if arg0_19:GetType() == AtelierFormulaCircle.TYPE.NORMAL then
-			return var5_14(arg0_19)
-		end
-	end) then
-		return false
-	end
+	local var6_15 = {
+		AtelierFormulaCircle.TYPE.NORMAL,
+		AtelierFormulaCircle.TYPE.ANY,
+		AtelierFormulaCircle.TYPE.ELEMENT_CATEGORY,
+		AtelierFormulaCircle.TYPE.CATEGORY,
+		AtelierFormulaCircle.TYPE.ELEMENT,
+		AtelierFormulaCircle.TYPE.NONE
+	}
 
-	if _.any(var3_14, function(arg0_20)
-		if arg0_20:GetType() == AtelierFormulaCircle.TYPE.ANY then
-			return var5_14(arg0_20)
+	for iter0_15, iter1_15 in ipairs(var6_15) do
+		if _.any(var3_15, function(arg0_20)
+			if arg0_20:GetLimitItemID() == 0 then
+				if arg0_20:GetType() == iter1_15 then
+					return var5_15(arg0_20)
+				end
+			else
+				return false
+			end
+		end) then
+			return false
 		end
-	end) then
-		return false
 	end
 
 	return true

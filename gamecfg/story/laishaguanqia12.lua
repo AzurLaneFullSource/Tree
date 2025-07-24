@@ -12,7 +12,7 @@ return {
 			bgName = "bg_ryza_2",
 			stopbgm = true,
 			say = "Mirror Sea Ruins - Castle of Strife",
-			bgm = "ryza-az-theme",
+			bgm = "ryza-8",
 			flashout = {
 				black = true,
 				dur = 1,

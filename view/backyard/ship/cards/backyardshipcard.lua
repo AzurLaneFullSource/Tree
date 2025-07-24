@@ -59,7 +59,7 @@ function var0_0.OnFlush(arg0_4)
 	local var7_4 = 0
 	local var8_4 = 0
 
-	for iter0_4, iter1_4 in ipairs(getProxy(ActivityProxy):getBackyardEnergyActivityBuffs()) do
+	for iter0_4, iter1_4 in ipairs(BuffHelper.GetBackYardEnergyBuffs()) do
 		var8_4 = var8_4 + tonumber(iter1_4:getConfig("benefit_effect"))
 	end
 

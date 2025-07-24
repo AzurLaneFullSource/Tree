@@ -681,6 +681,7 @@ function var9_0.GetFleetByIFF(arg0_40, arg1_40)
 		var0_40:SetUnitBound(arg0_40._currentStageData.totalArea, arg0_40._currentStageData.playerArea)
 		var0_40:SetExposeLine(arg0_40._expeditionTmp.horizon_line[arg1_40], arg0_40._expeditionTmp.expose_line[arg1_40])
 		var0_40:CalcSubmarineBaseLine(arg0_40._battleInitData.battleType)
+		var0_40:SetChapterPlayType(arg0_40._battleInitData.ChapterType)
 
 		if arg0_40._battleInitData.battleType == SYSTEM_CARDPUZZLE then
 			local var1_40 = var0_40:AttachCardPuzzleComponent()

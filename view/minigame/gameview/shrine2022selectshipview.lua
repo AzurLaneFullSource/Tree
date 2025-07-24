@@ -114,6 +114,7 @@ function var0_0.initUI(arg0_5)
 			arg0_5.onConfirmFunc(arg0_5.curSelectIndex)
 		end
 
+		setActive(arg0_5.confirmBtn, false)
 		arg0_5:closeSelf()
 	end, SFX_PANEL)
 	arg0_5.cardUIItemList:make(function(arg0_10, arg1_10, arg2_10)

@@ -4,64 +4,54 @@ function var0_0.GetEventName(arg0_1)
 	return "event_core"
 end
 
-function var0_0.GetTipImage(arg0_2)
-	return "tip_1920"
-end
+function var0_0.OnInit(arg0_2)
+	arg0_2:PickPriortyActAsyn(function(arg0_3, arg1_3)
+		arg0_2.priority = arg0_3
 
-function var0_0.GetActivityID(arg0_3)
-	return nil
-end
-
-function var0_0.OnInit(arg0_4)
-	arg0_4:PickPriortyActAsyn(function(arg0_5, arg1_5)
-		arg0_4.priority = arg0_5
-
-		if arg1_5 > 0 then
-			arg0_4.tipTxt.text = arg1_5
+		if arg1_3 > 0 then
+			arg0_2.tipTxt.text = arg1_3
 		end
 
-		setActive(arg0_4.tipTr.gameObject, arg1_5 > 0)
+		setActive(arg0_2.tipTr.gameObject, arg1_3 > 0)
 	end)
 end
 
-function var0_0.PickPriortyActAsyn(arg0_6, arg1_6)
-	local var0_6 = {}
-	local var1_6 = 0
-	local var2_6
+function var0_0.PickPriortyActAsyn(arg0_4, arg1_4)
+	local var0_4 = {}
+	local var1_4 = 0
+	local var2_4
 
-	table.insert(var0_6, function(arg0_7)
-		local var0_7, var1_7 = arg0_6:CollectActivity()
+	table.insert(var0_4, function(arg0_5)
+		local var0_5, var1_5 = arg0_4:CollectActivity()
 
-		var2_6 = var1_7
-		var1_6 = var1_6 + var0_7
+		var2_4 = var1_5
+		var1_4 = var1_4 + var0_5
 
-		onNextTick(arg0_7)
+		onNextTick(arg0_5)
 	end)
-	seriesAsync(var0_6, function()
-		arg1_6(var2_6, var1_6)
+	seriesAsync(var0_4, function()
+		arg1_4(var2_4, var1_4)
 	end)
 end
 
-function var0_0.CollectActivity(arg0_9)
-	local var0_9 = 0
-	local var1_9
-	local var2_9 = arg0_9:InShowTime() and getProxy(ActivityProxy):getCorePanelActivity(arg0_9.config.param) or {}
+function var0_0.CollectActivity(arg0_7)
+	local var0_7 = arg0_7:GetLinkConfig().time[2]
+	local var1_7 = pg.activity_template[var0_7].page_core
+	local var2_7 = 0
+	local var3_7
+	local var4_7 = getProxy(ActivityProxy):getCorePanelActivity(var1_7)
 
-	for iter0_9, iter1_9 in pairs(var2_9) do
-		if iter1_9:readyToAchieve() then
-			var0_9 = var0_9 + 1
+	for iter0_7, iter1_7 in pairs(var4_7) do
+		if iter1_7:readyToAchieve() then
+			var2_7 = var2_7 + 1
 
-			if not var1_9 or var1_9 and var1_9.id > iter1_9.id then
-				var1_9 = iter1_9
+			if not var3_7 or var3_7 and var3_7.id > iter1_7.id then
+				var3_7 = iter1_7
 			end
 		end
 	end
 
-	return var0_9, var1_9
-end
-
-function var0_0.CustomOnClick(arg0_10)
-	return
+	return var2_7, var3_7
 end
 
 return var0_0

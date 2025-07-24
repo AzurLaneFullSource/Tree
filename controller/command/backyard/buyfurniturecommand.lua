@@ -63,7 +63,18 @@ function var0_0.execute(arg0_1, arg1_1)
 				end
 
 				var3_1:AddFurnitrues(var1_1)
-				arg0_1:UpdateLinkActivity(var1_1)
+
+				for iter0_3, iter1_3 in ipairs(var1_1) do
+					-- block empty
+				end
+
+				PlayerConst.UpdateLinkActivity(underscore.map(var1_1, function(arg0_4)
+					return Drop.New({
+						count = 1,
+						type = DROP_TYPE_FURNITURE,
+						id = arg0_4
+					})
+				end))
 				arg0_1:sendNotification(GAME.BUY_FURNITURE_DONE, var3_1:getData(), var1_1)
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_buy_success"))
 			else
@@ -98,31 +109,6 @@ function var0_0.execute(arg0_1, arg1_1)
 		end
 	else
 		var10_1()
-	end
-end
-
-function var0_0.UpdateLinkActivity(arg0_6, arg1_6)
-	local var0_6 = getProxy(ActivityProxy)
-	local var1_6 = var0_6:getActivityByType(ActivityConst.ACTIVITY_TYPE_LINK_COLLECT)
-
-	if var1_6 and not var1_6:isEnd() then
-		local var2_6 = pg.activity_limit_item_guide.get_id_list_by_activity[var1_6.id]
-
-		assert(var2_6, "activity_limit_item_guide not exist activity id: " .. var1_6.id)
-
-		for iter0_6, iter1_6 in ipairs(arg1_6) do
-			for iter2_6, iter3_6 in ipairs(var2_6) do
-				local var3_6 = pg.activity_limit_item_guide[iter3_6]
-
-				if var3_6.type == DROP_TYPE_FURNITURE and iter1_6 == var3_6.drop_id then
-					local var4_6 = var1_6:getKVPList(1, var3_6.id) + 1
-
-					var1_6:updateKVPList(1, var3_6.id, var4_6)
-				end
-			end
-		end
-
-		var0_6:updateActivity(var1_6)
 	end
 end
 
