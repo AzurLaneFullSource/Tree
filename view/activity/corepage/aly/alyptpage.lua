@@ -94,7 +94,7 @@ function var0_0.UpdateNextAward(arg0_10, arg1_10)
 
 			break
 		elseif iter0_10 == #arg0_10.importantPos then
-			-- block empty
+			arg0_10:UpdateAward(iter1_10.index - 1, arg0_10.spAward)
 		end
 	end
 end
