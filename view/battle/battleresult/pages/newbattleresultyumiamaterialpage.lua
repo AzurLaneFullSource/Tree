@@ -32,12 +32,10 @@ function var0_0.SetUp(arg0_4, arg1_4)
 	arg0_4:Show()
 	seriesAsync({
 		function(arg0_5)
-			arg0_4:playAnima("Anim_NewBattleResultYumiaRewardPages_In", arg0_5)
-		end,
-		function(arg0_6)
+			arg0_4:playAnima("Anim_NewBattleResultYumiaRewardPages_In")
 			arg0_4:UpdateItem()
 			arg0_4:UpdateLine()
-			arg0_4:RegisterEvent(arg0_6)
+			arg0_4:RegisterEvent(arg0_5)
 		end
 	}, function()
 		arg0_4:Clear()
@@ -46,121 +44,121 @@ function var0_0.SetUp(arg0_4, arg1_4)
 	end)
 end
 
-function var0_0.Show(arg0_8)
-	var0_0.super.Show(arg0_8)
+function var0_0.Show(arg0_7)
+	var0_0.super.Show(arg0_7)
 
-	arg0_8.parentTr:GetComponent(typeof(Image)).enabled = false
+	arg0_7.parentTr:GetComponent(typeof(Image)).enabled = false
 
-	SetActive(arg0_8.parentTr:Find("Effect"), false)
+	SetActive(arg0_7.parentTr:Find("Effect"), false)
 end
 
-function var0_0.dropFilter(arg0_9)
-	local var0_9 = {}
+function var0_0.dropFilter(arg0_8)
+	local var0_8 = {}
 
-	for iter0_9, iter1_9 in ipairs(arg0_9) do
-		if table.contains(var0_0.YUMIA_MATERIAL_DROP_TYPE_LIST, iter1_9.type) then
-			table.insert(var0_9, iter1_9)
+	for iter0_8, iter1_8 in ipairs(arg0_8) do
+		if table.contains(var0_0.YUMIA_MATERIAL_DROP_TYPE_LIST, iter1_8.type) then
+			table.insert(var0_8, iter1_8)
 		end
 	end
 
-	return var0_9
+	return var0_8
 end
 
-function var0_0.playAnima(arg0_10, arg1_10, arg2_10)
-	arg0_10._tf:GetComponent(typeof(Animation)):Play(arg1_10)
-	arg0_10._tf:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-		arg2_10()
+function var0_0.playAnima(arg0_9, arg1_9, arg2_9)
+	arg0_9._tf:GetComponent(typeof(Animation)):Play(arg1_9)
+	arg0_9._tf:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		arg2_9()
 	end)
 end
 
-function var0_0.UpdateItem(arg0_12, arg1_12)
-	local var0_12 = var0_0.dropFilter(arg0_12.contextData.drops or {})
-	local var1_12 = {}
+function var0_0.UpdateItem(arg0_11, arg1_11)
+	local var0_11 = var0_0.dropFilter(arg0_11.contextData.drops or {})
+	local var1_11 = {}
 
-	for iter0_12, iter1_12 in ipairs(var0_12) do
-		for iter2_12 = 1, iter1_12.count do
-			local var2_12 = Drop.New({
+	for iter0_11, iter1_11 in ipairs(var0_11) do
+		for iter2_11 = 1, iter1_11.count do
+			local var2_11 = Drop.New({
 				count = 1,
-				type = iter1_12.type,
-				id = iter1_12.id
+				type = iter1_11.type,
+				id = iter1_11.id
 			})
-			local var3_12 = cloneTplTo(arg0_12.itemTpl, arg0_12.itemContainer)
+			local var3_11 = cloneTplTo(arg0_11.itemTpl, arg0_11.itemContainer)
 
-			setActive(var3_12, false)
-			table.insert(var1_12, var3_12)
-			updateDrop(var3_12:Find("IconTpl"), var2_12)
+			setActive(var3_11, false)
+			table.insert(var1_11, var3_11)
+			updateDrop(var3_11:Find("IconTpl"), var2_11)
 		end
 	end
 
-	local var4_12 = 1
+	local var4_11 = 1
 
-	arg0_12.timer = Timer.New(function()
-		local var0_13 = var1_12[var4_12]
+	arg0_11.timer = Timer.New(function()
+		local var0_12 = var1_11[var4_11]
 
-		setActive(var0_13, true)
-		var0_13:GetComponent(typeof(Animation)):Play("Anim_NewBattleResultYumiaRewardPages_Tpl_In")
+		setActive(var0_12, true)
+		var0_12:GetComponent(typeof(Animation)):Play("Anim_NewBattleResultYumiaRewardPages_Tpl_In")
 
-		var4_12 = var4_12 + 1
-	end, 0.08, #var1_12)
+		var4_11 = var4_11 + 1
+	end, 0.08, #var1_11)
 
-	arg0_12.timer:Start()
+	arg0_11.timer:Start()
 end
 
-function var0_0.UpdateLine(arg0_14)
-	local var0_14 = var0_0.dropFilter(arg0_14.contextData.drops or {})
-	local var1_14 = math.random(#var0_14)
-	local var2_14 = AtelierMaterial.New({
-		configId = var0_14[var1_14].id
+function var0_0.UpdateLine(arg0_13)
+	local var0_13 = var0_0.dropFilter(arg0_13.contextData.drops or {})
+	local var1_13 = math.random(#var0_13)
+	local var2_13 = AtelierMaterial.New({
+		configId = var0_13[var1_13].id
 	}):GetVoices()
 
-	if var2_14 and #var2_14 > 0 then
-		local var3_14 = var2_14[math.random(#var2_14)]
-		local var4_14, var5_14, var6_14 = ShipWordHelper.GetWordAndCV(var3_14[1], var3_14[2], nil, PLATFORM_CODE ~= PLATFORM_US)
+	if var2_13 and #var2_13 > 0 then
+		local var3_13 = var2_13[math.random(#var2_13)]
+		local var4_13, var5_13, var6_13 = ShipWordHelper.GetWordAndCV(var3_13[1], var3_13[2], nil, PLATFORM_CODE ~= PLATFORM_US)
 
-		if var5_14 then
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var5_14)
+		if var5_13 then
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var5_13)
 		end
 
-		setText(arg0_14.lineTxt, var6_14)
+		setText(arg0_13.lineTxt, var6_13)
 	end
 end
 
-function var0_0.RegisterEvent(arg0_15, arg1_15)
-	if arg0_15.exited then
+function var0_0.RegisterEvent(arg0_14, arg1_14)
+	if arg0_14.exited then
 		return
 	end
 
-	local function var0_15()
-		arg0_15:playAnima("Anim_NewBattleResultYumiaRewardPages_Out", arg1_15)
+	local function var0_14()
+		arg0_14:playAnima("Anim_NewBattleResultYumiaRewardPages_Out", arg1_14)
 	end
 
-	onButton(arg0_15, arg0_15._tf, var0_15, SFX_PANEL)
-	onButton(arg0_15, arg0_15.confirmBtn, var0_15, SFX_PANEL)
+	onButton(arg0_14, arg0_14._tf, var0_14, SFX_PANEL)
+	onButton(arg0_14, arg0_14.confirmBtn, var0_14, SFX_PANEL)
 
-	if arg0_15.contextData.autoSkipFlag then
-		triggerButton(arg0_15._tf)
+	if arg0_14.contextData.autoSkipFlag then
+		triggerButton(arg0_14._tf)
 	end
 end
 
-function var0_0.Clear(arg0_17)
-	removeOnButton(arg0_17._tf)
-	removeOnButton(arg0_17.confirmBtn)
+function var0_0.Clear(arg0_16)
+	removeOnButton(arg0_16._tf)
+	removeOnButton(arg0_16.confirmBtn)
 end
 
-function var0_0.OnDestroy(arg0_18)
-	arg0_18.exited = true
+function var0_0.OnDestroy(arg0_17)
+	arg0_17.exited = true
 
-	if arg0_18:isShowing() then
-		arg0_18:Hide()
+	if arg0_17:isShowing() then
+		arg0_17:Hide()
 	end
 
-	if arg0_18.timer then
-		arg0_18.timer:Stop()
+	if arg0_17.timer then
+		arg0_17.timer:Stop()
 	end
 
-	arg0_18.parentTr:GetComponent(typeof(Image)).enabled = true
+	arg0_17.parentTr:GetComponent(typeof(Image)).enabled = true
 
-	SetActive(arg0_18.parentTr:Find("Effect"), true)
+	SetActive(arg0_17.parentTr:Find("Effect"), true)
 end
 
 return var0_0

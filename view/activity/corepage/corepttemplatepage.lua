@@ -23,6 +23,7 @@ end
 function var0_0.OnFirstFlush(arg0_3)
 	onButton(arg0_3, arg0_3.displayBtn, function()
 		arg0_3:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
+			blur = true,
 			type = arg0_3.ptData.type,
 			dropList = arg0_3.ptData.dropList,
 			targets = arg0_3.ptData.targets,
