@@ -29,7 +29,7 @@ local var22_0 = 5
 local var23_0 = 4
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.activityId = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TASK_RYZA).id
+	arg0_1.activityId = ActivityConst.RYZA_TASK
 	arg0_1.enterTaskId = arg0_1.contextData.task_id or nil
 	arg0_1.taskGroups = pg.activity_template[arg0_1.activityId].config_data
 	arg0_1.leanTweens = {}
@@ -663,6 +663,8 @@ function var0_0.willExit(arg0_30)
 			var0_30:changeNew()
 		end
 	end
+
+	ClearLScrollrect(arg0_30.scrollRect)
 end
 
 return var0_0
