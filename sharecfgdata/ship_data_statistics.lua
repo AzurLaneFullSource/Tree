@@ -233904,6 +233904,7 @@ _G.pg.base.ship_data_statistics[403011] = {
 	tag_list = {
 		"Admiral Hipper-Class",
 		"Admiral Hipper",
+		"Hipper Sister",
 	},
 }
 
@@ -234032,6 +234033,7 @@ _G.pg.base.ship_data_statistics[403012] = {
 	tag_list = {
 		"Admiral Hipper-Class",
 		"Admiral Hipper",
+		"Hipper Sister",
 	},
 }
 
@@ -234160,6 +234162,7 @@ _G.pg.base.ship_data_statistics[403013] = {
 	tag_list = {
 		"Admiral Hipper-Class",
 		"Admiral Hipper",
+		"Hipper Sister",
 	},
 }
 
@@ -234288,6 +234291,7 @@ _G.pg.base.ship_data_statistics[403014] = {
 	tag_list = {
 		"Admiral Hipper-Class",
 		"Admiral Hipper",
+		"Hipper Sister",
 	},
 }
 
@@ -234415,6 +234419,7 @@ _G.pg.base.ship_data_statistics[403021] = {
 	},
 	tag_list = {
 		"Admiral Hipper-Class",
+		"Hipper Sister",
 	},
 }
 
@@ -234542,6 +234547,7 @@ _G.pg.base.ship_data_statistics[403022] = {
 	},
 	tag_list = {
 		"Admiral Hipper-Class",
+		"Hipper Sister",
 	},
 }
 
@@ -234669,6 +234675,7 @@ _G.pg.base.ship_data_statistics[403023] = {
 	},
 	tag_list = {
 		"Admiral Hipper-Class",
+		"Hipper Sister",
 	},
 }
 
@@ -234796,6 +234803,7 @@ _G.pg.base.ship_data_statistics[403024] = {
 	},
 	tag_list = {
 		"Admiral Hipper-Class",
+		"Hipper Sister",
 	},
 }
 
@@ -234923,6 +234931,7 @@ _G.pg.base.ship_data_statistics[403031] = {
 	},
 	tag_list = {
 		"Admiral Hipper-Class",
+		"Hipper Sister",
 	},
 }
 
@@ -235050,6 +235059,7 @@ _G.pg.base.ship_data_statistics[403032] = {
 	},
 	tag_list = {
 		"Admiral Hipper-Class",
+		"Hipper Sister",
 	},
 }
 
@@ -235177,6 +235187,7 @@ _G.pg.base.ship_data_statistics[403033] = {
 	},
 	tag_list = {
 		"Admiral Hipper-Class",
+		"Hipper Sister",
 	},
 }
 
@@ -235304,6 +235315,7 @@ _G.pg.base.ship_data_statistics[403034] = {
 	},
 	tag_list = {
 		"Admiral Hipper-Class",
+		"Hipper Sister",
 	},
 }
 
@@ -236450,6 +236462,7 @@ _G.pg.base.ship_data_statistics[403071] = {
 		"Admiral Hipper",
 		"μ",
 		"special",
+		"Hipper Sister",
 	},
 }
 
@@ -236580,6 +236593,7 @@ _G.pg.base.ship_data_statistics[403072] = {
 		"Admiral Hipper",
 		"μ",
 		"special",
+		"Hipper Sister",
 	},
 }
 
@@ -236710,6 +236724,7 @@ _G.pg.base.ship_data_statistics[403073] = {
 		"Admiral Hipper",
 		"μ",
 		"special",
+		"Hipper Sister",
 	},
 }
 
@@ -236840,6 +236855,7 @@ _G.pg.base.ship_data_statistics[403074] = {
 		"Admiral Hipper",
 		"μ",
 		"special",
+		"Hipper Sister",
 	},
 }
 
@@ -239001,6 +239017,7 @@ _G.pg.base.ship_data_statistics[403121] = {
 		"Admiral Hipper-Class",
 		"special",
 		"Little-series",
+		"Hipper Sister",
 	},
 }
 
@@ -239130,6 +239147,7 @@ _G.pg.base.ship_data_statistics[403122] = {
 		"Admiral Hipper-Class",
 		"special",
 		"Little-series",
+		"Hipper Sister",
 	},
 }
 
@@ -239259,6 +239277,7 @@ _G.pg.base.ship_data_statistics[403123] = {
 		"Admiral Hipper-Class",
 		"special",
 		"Little-series",
+		"Hipper Sister",
 	},
 }
 
@@ -239388,6 +239407,7 @@ _G.pg.base.ship_data_statistics[403124] = {
 		"Admiral Hipper-Class",
 		"special",
 		"Little-series",
+		"Hipper Sister",
 	},
 }
 
@@ -240542,6 +240562,7 @@ _G.pg.base.ship_data_statistics[403151] = {
 		"μ",
 		"special",
 		"μPrinzEugen",
+		"Hipper Sister",
 	},
 }
 
@@ -240672,6 +240693,7 @@ _G.pg.base.ship_data_statistics[403152] = {
 		"μ",
 		"special",
 		"μPrinzEugen",
+		"Hipper Sister",
 	},
 }
 
@@ -240802,6 +240824,7 @@ _G.pg.base.ship_data_statistics[403153] = {
 		"μ",
 		"special",
 		"μPrinzEugen",
+		"Hipper Sister",
 	},
 }
 
@@ -240932,6 +240955,7 @@ _G.pg.base.ship_data_statistics[403154] = {
 		"μ",
 		"special",
 		"μPrinzEugen",
+		"Hipper Sister",
 	},
 }
 
@@ -305532,6 +305556,7 @@ _G.pg.base.ship_data_statistics[703011] = {
 	},
 	tag_list = {
 		"Northern Union-CA",
+		"Hipper Sister",
 	},
 }
 
@@ -305658,6 +305683,7 @@ _G.pg.base.ship_data_statistics[703012] = {
 	},
 	tag_list = {
 		"Northern Union-CA",
+		"Hipper Sister",
 	},
 }
 
@@ -305784,6 +305810,7 @@ _G.pg.base.ship_data_statistics[703013] = {
 	},
 	tag_list = {
 		"Northern Union-CA",
+		"Hipper Sister",
 	},
 }
 
@@ -305910,6 +305937,7 @@ _G.pg.base.ship_data_statistics[703014] = {
 	},
 	tag_list = {
 		"Northern Union-CA",
+		"Hipper Sister",
 	},
 }
 

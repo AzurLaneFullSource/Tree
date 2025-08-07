@@ -9,7 +9,7 @@ return {
 			bgName = "star_level_bg_650",
 			hidePaintObj = true,
 			say = "Beyond a long, narrow passage, the team was faced with an incomprehensible, towering structure.",
-			bgm = "yumia-43",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -147,7 +147,7 @@ return {
 			bgName = "star_level_bg_109",
 			hidePaintObj = true,
 			say = "Shortly after, at the \"safe and comfy rest area\"...",
-			bgm = "yumia-44",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

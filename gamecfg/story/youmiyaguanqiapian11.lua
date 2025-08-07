@@ -30,7 +30,7 @@ return {
 			bgName = "star_level_bg_307",
 			hidePaintObj = true,
 			say = "When the party took the elevator above the tower's entrance area, a gleaming blue lake came into view.",
-			bgm = "yumia-7",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

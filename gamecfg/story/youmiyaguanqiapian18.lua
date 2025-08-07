@@ -9,7 +9,7 @@ return {
 			bgName = "star_level_bg_650",
 			hidePaintObj = true,
 			say = "The girls sailed on, collecting materials from fallen monsters as they went. Eventually, they came upon another section of the tower that reached for the clouds.",
-			bgm = "yumia-43",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -71,7 +71,7 @@ return {
 			bgName = "star_level_bg_172",
 			hidePaintObj = true,
 			say = "Shortly after, at the \"safe and comfy rest area\"...",
-			bgm = "yumia-44",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

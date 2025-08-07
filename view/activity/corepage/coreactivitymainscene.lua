@@ -28,16 +28,15 @@ function var0_0.init(arg0_3)
 				return tostring(arg0_5:getConfig("is_show")) == arg2_4.name
 			end)
 
-			if not var0_4 or not arg0_3.pageDic[var0_4.id] then
-				warning(arg2_4.name, var0_4.id)
+			if not var0_4 then
+				setActive(arg2_4, false)
+			elseif not arg0_3.pageDic[var0_4.id] then
+				warning(string.format("without page in act:", var0_4.id))
+			else
+				local var1_4 = arg0_3.pageDic[var0_4.id]
+				local var2_4 = arg0_3:findTF("tip", arg2_4)
 
-				return
-			end
-
-			if arg0_3.pageDic[var0_4.id] ~= nil then
-				local var1_4 = arg0_3:findTF("tip", arg2_4)
-
-				setActive(var1_4, var0_4:readyToAchieve())
+				setActive(var2_4, var0_4:readyToAchieve())
 				onToggle(arg0_3, arg2_4, function(arg0_6)
 					if arg0_6 then
 						arg0_3:selectActivity(var0_4)
@@ -80,7 +79,7 @@ function var0_0.setActivities(arg0_13, arg1_13)
 
 	table.sort(arg0_13.activities, CompareFuncs({
 		function(arg0_14)
-			return -arg0_14:getShowPriority()
+			return arg0_14:getShowPriority()
 		end,
 		function(arg0_15)
 			return -arg0_15.id
@@ -125,7 +124,7 @@ function var0_0.updateEntrances(arg0_19)
 end
 
 function var0_0.flushTabs(arg0_20)
-	arg0_20.tabsList:align(#arg0_20.activities)
+	arg0_20.tabsList:align(arg0_20.tabs.childCount)
 end
 
 function var0_0.selectActivity(arg0_21, arg1_21)
@@ -147,17 +146,14 @@ function var0_0.selectActivity(arg0_21, arg1_21)
 end
 
 function var0_0.verifyTabs(arg0_22, arg1_22)
-	local var0_22 = underscore.detect(arg0_22.activities, function(arg0_23)
-		return arg0_23.id == arg1_22
-	end)
-	local var1_22 = var0_22 and var0_22:getConfig("is_show") or 1
-	local var2_22 = arg0_22.tabs:Find(tostring(var1_22))
+	local var0_22 = arg0_22.activities[arg0_22:getActivityIndex(arg1_22) or 1]:getConfig("is_show")
+	local var1_22 = arg0_22.tabs:Find(tostring(var0_22))
 
-	triggerToggle(var2_22, true)
+	triggerToggle(var1_22, true)
 end
 
-function var0_0.getActClass(arg0_24, arg1_24)
-	return _G[arg1_24]
+function var0_0.getActClass(arg0_23, arg1_23)
+	return _G[arg1_23]
 end
 
 return var0_0

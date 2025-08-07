@@ -65,10 +65,18 @@ function var0_0.UpdateItemDetail(arg0_10)
 		if var1_10.chapterid then
 			local var0_11 = getProxy(ChapterProxy):getChapterById(var1_10.chapterid)
 			local var1_11 = getProxy(ChapterProxy):getMapById(var0_11:getConfig("map"))
-			local var2_11, var3_11 = var1_11:isUnlock()
+			local var2_11 = getProxy(ActivityProxy):getActivityByType(var1_11:getConfig("on_activity"))
 
-			if not var2_11 then
-				pg.TipsMgr.GetInstance():ShowTips(var3_11)
+			if not var2_11 or var2_11:isEnd() then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
+
+				return
+			end
+
+			local var3_11, var4_11 = var1_11:isUnlock()
+
+			if not var3_11 then
+				pg.TipsMgr.GetInstance():ShowTips(var4_11)
 
 				return
 			end
@@ -85,23 +93,23 @@ function var0_0.UpdateItemDetail(arg0_10)
 				mapIdx = var1_11.id
 			})
 		elseif var1_10.recipeid then
-			local var4_11 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+			local var5_11 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
-			if not var4_11 or var4_11:isEnd() then
+			if not var5_11 or var5_11:isEnd() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 				return
 			end
 
-			local var5_11 = var4_11:GetFormulas()[var1_10.recipeid]
+			local var6_11 = var5_11:GetFormulas()[var1_10.recipeid]
 
-			if var5_11:GetType() ~= AtelierFormula.TYPE.TOOL and not var4_11:IsCompleteAllTools(var5_11:getConfig("version")) then
+			if var6_11:GetType() ~= AtelierFormula.TYPE.TOOL and not var5_11:IsCompleteAllTools(var6_11:getConfig("version")) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("ryza_tip_unlock_all_tools"))
 
 				return
 			end
 
-			if not var5_11:IsAvaliable() then
+			if not var6_11:IsAvaliable() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("ryza_tip_composite_invalid"))
 
 				return
@@ -109,13 +117,27 @@ function var0_0.UpdateItemDetail(arg0_10)
 
 			arg0_10:emit(AtelierMaterialDetailMediator.GO_RECIPE, var1_10.recipeid)
 		elseif var1_10.taskid then
+			if not getProxy(TaskProxy):getTaskVO(var1_10.taskid) then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
+
+				return
+			end
+
 			arg0_10:emit(GAME.GO_SCENE, SCENE.TASK, {
 				targetId = var1_10.taskid
 			})
 		elseif var1_10.strongholdid then
-			local var6_11 = getProxy(ContextProxy):getCurrentContext()
+			local var7_11 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_STRONGHOLD)
 
-			pg.m02:retrieveMediator(var6_11.mediator.__cname):addSubLayers(Context.New({
+			if not var7_11 or var7_11:isEnd() then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
+
+				return
+			end
+
+			local var8_11 = getProxy(ContextProxy):getCurrentContext()
+
+			pg.m02:retrieveMediator(var8_11.mediator.__cname):addSubLayers(Context.New({
 				mediator = YoumiyaStrongholdMediator,
 				viewComponent = YoumiyaStrongholdLayer
 			}))

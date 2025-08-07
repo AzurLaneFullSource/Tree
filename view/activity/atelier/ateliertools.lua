@@ -6,10 +6,9 @@ return {
 		local var3_1 = true
 
 		if var1_1 then
-			local var4_1 = getProxy(ChapterProxy)
-			local var5_1 = var4_1:getChapterById(var1_1, true)
+			local var4_1 = getProxy(ChapterProxy):getChapterById(var1_1, true)
 
-			var3_1 = var5_1 and var5_1:isClear() and var4_1:getMapById(var4_1:getLastMapForActivity())
+			var3_1 = var4_1 and var4_1:isClear()
 		end
 
 		if var2_1 then

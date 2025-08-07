@@ -713,7 +713,7 @@ function var0_0.showNextActivity(arg0_93)
 			arg0_93:showNextActivity()
 		end
 	elseif not arg0_93.viewComponent.activity then
-		local var4_93 = var0_93:getPanelActivities()
+		local var4_93 = arg0_93:getDisplayActivity()
 		local var5_93 = arg0_93.contextData.id or arg0_93.contextData.type and checkExist(_.detect(var4_93, function(arg0_94)
 			return arg0_94:getConfig("type") == arg0_93.contextData.type
 		end), {

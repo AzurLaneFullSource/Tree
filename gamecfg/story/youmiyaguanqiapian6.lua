@@ -9,7 +9,7 @@ return {
 			bgName = "star_level_bg_504",
 			hidePaintObj = true,
 			say = "Across the cliffs, the adventure team had endured many difficulties – fierce gales, raging waves, heavy fog, and communication cutoff.",
-			bgm = "yumia-49",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

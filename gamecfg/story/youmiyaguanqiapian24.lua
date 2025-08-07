@@ -9,7 +9,7 @@ return {
 			bgName = "star_level_bg_115",
 			hidePaintObj = true,
 			say = "As the three adventurers awoke, they found themselves in strange, new surroundings, prompting much confusion.",
-			bgm = "yumia-44",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

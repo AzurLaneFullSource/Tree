@@ -9,7 +9,7 @@ return {
 			bgName = "star_level_bg_596",
 			hidePaintObj = true,
 			say = "The girls boarded the destroyer and sailed onward, eventually finding a sign floating on the water.",
-			bgm = "yumia-49",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

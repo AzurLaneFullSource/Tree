@@ -9,7 +9,7 @@ return {
 			bgName = "star_level_bg_539",
 			hidePaintObj = true,
 			say = "The little squad of adventurers had made it to land after enduring numerous hardships. Now, they realized something – two vessels were on the horizon.",
-			bgm = "yumia-70",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

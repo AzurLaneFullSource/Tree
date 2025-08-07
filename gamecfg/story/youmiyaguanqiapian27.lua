@@ -11,7 +11,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			say = "\"This is the L3 area of the Skynexus Tower. It leads to the Skynexus Peak. Your last battle before the final showdown.\"",
-			bgm = "yumia-43",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

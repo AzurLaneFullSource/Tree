@@ -11,7 +11,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			say = "\"This here's the Desert of Death. It's dominated by ruthless winds and sand. Careful not to die here! Mwahahaha!\"",
-			bgm = "yumia-28",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

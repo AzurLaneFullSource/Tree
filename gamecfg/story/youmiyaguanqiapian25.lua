@@ -30,7 +30,7 @@ return {
 			bgName = "star_level_bg_582",
 			hidePaintObj = true,
 			say = "The group rode the reactivated elevator up and set foot inside a new area.",
-			bgm = "yumia-51",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

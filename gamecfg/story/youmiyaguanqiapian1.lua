@@ -25,7 +25,7 @@ return {
 			bgName = "star_level_bg_500",
 			hidePaintObj = true,
 			say = "It was a regular day, and the Aladiss Research Team was carrying out an important mission deep within a cave...",
-			bgm = "yumia-70",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

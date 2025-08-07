@@ -11,7 +11,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			say = "\"Here lies the Forest of Rot. There are loads of poisonous things here, and some monsters even swoop down from above. Terrible place to be.\"",
-			bgm = "yumia-49",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

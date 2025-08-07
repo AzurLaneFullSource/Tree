@@ -31,7 +31,7 @@ return {
 			nameColor = "#A9F548FF",
 			dir = 1,
 			say = "Ahh... Sea breeze, crashin' waves. A treasure hunter's only truly free if she's ridin' on the open seas!",
-			bgm = "yumia-53",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -30,7 +30,7 @@ return {
 			bgName = "star_level_bg_539",
 			hidePaintObj = true,
 			say = "A cerulean sky, white clouds, blue sea, and yellow sands, with great mountains towering toward the heavens.",
-			bgm = "yumia-1",
+			bgm = "yumia-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

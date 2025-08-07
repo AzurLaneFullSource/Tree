@@ -1244,7 +1244,7 @@ local var1_0 = {
 		local var0_210 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND)
 
 		if not var0_210 or var0_210:isEnd() then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 			return
 		end
@@ -1275,7 +1275,7 @@ local var1_0 = {
 			})
 			arg1_213()
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 		end
 	end,
 	HolidayVillaShopMediator = function(arg0_215, arg1_215)
@@ -1291,7 +1291,7 @@ local var1_0 = {
 			})
 			arg1_215()
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 		end
 	end,
 	AnniversaryIslandComposite2023Mediator = function(arg0_217, arg1_217)
@@ -1500,10 +1500,16 @@ local var1_0 = {
 		arg1_240()
 	end,
 	ActivityMediator = function(arg0_241, arg1_241)
-		local var0_241 = arg0_241.context
-		local var1_241 = var0_241.data.id and getProxy(ActivityProxy):getActivityById(var0_241.data.id)
+		local var0_241 = arg0_241.context.data.id
+		local var1_241 = var0_241 and getProxy(ActivityProxy):getActivityById(var0_241)
 
-		if var1_241 and not var1_241:isEnd() and noEmptyStr(var1_241:getConfig("page_core")) then
+		if var0_241 and var0_241 ~= 0 and (not var1_241 or var1_241:isEnd()) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
+
+			return
+		end
+
+		if var1_241 and noEmptyStr(var1_241:getConfig("page_core")) then
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CORE_ACTIVITY, {
 				coreName = var1_241:getConfig("page_core"),
 				id = var1_241.id
