@@ -489,13 +489,13 @@ pg.base.dorm3d_shop_template = {
 		}
 	},
 	{
-		name = "动感飞轮",
+		name = "Exercise Bike",
 		rarity = 4,
 		item_id = 1152,
 		type = 1,
 		id = 23,
 		room_id = 10517,
-		order = "20",
+		order = "7",
 		unlock = "",
 		panel = {
 			1,
@@ -511,13 +511,13 @@ pg.base.dorm3d_shop_template = {
 		}
 	},
 	{
-		name = "精致画框 ",
+		name = "Elegant Frame",
 		rarity = 4,
 		item_id = 1990302,
 		type = 2,
 		id = 24,
 		room_id = 19903,
-		order = "21",
+		order = "3",
 		unlock = "",
 		panel = {
 			2,

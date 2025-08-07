@@ -48931,7 +48931,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 3
 	},
 	[4916] = {
-		param = "<color=#583b28>ᝉᴠ≬᭩ūɥ〠όᙯ⽵†ᙬͯቴᕳ<color>",
+		param = "ᝉᴠ≬᭩ūɥ〠όᙯ⽵†ᙬͯቴᕳ",
 		ship_group = 90105,
 		type = 1,
 		option = "",
@@ -48939,7 +48939,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 3
 	},
 	[4917] = {
-		param = "Dang it! That didn't work either...",
+		param = "<color=#583b28>Dang it! That didn't work either...</color>",
 		ship_group = 90105,
 		type = 1,
 		option = "",
@@ -48947,7 +48947,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 3
 	},
 	[4918] = {
-		param = "Hey wait! The color of my message changed!",
+		param = "<color=#583b28>Hey wait! The color of my message changed!</color>",
 		ship_group = 90105,
 		type = 1,
 		option = "",
@@ -48955,7 +48955,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 3
 	},
 	[4919] = {
-		param = "That's basically a success, right? Let's call it that!",
+		param = "<color=#583b28>That's basically a success, right? Let's call it that!</color>",
 		ship_group = 90105,
 		flag = 3,
 		type = 1,
@@ -48968,7 +48968,7 @@ pg.base.activity_ins_chat_language = {
 		}
 	},
 	[4920] = {
-		param = "Congrats.",
+		param = "<color=#583b28>Congrats.</color>",
 		ship_group = 0,
 		type = 1,
 		option = "",
@@ -48976,7 +48976,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 4
 	},
 	[4921] = {
-		param = "Wait, you can do that too? Fine! I said I'd give you a present, and that's what I'm gonna do!",
+		param = "<color=#583b28>Wait, you can do that too? Fine! I said I'd give you a present, and that's what I'm gonna do!</color>",
 		ship_group = 90105,
 		type = 1,
 		option = "",
