@@ -255,13 +255,29 @@ function var0_0.OnUpdateShop(arg0_22, arg1_22, arg2_22)
 	if arg0_22.page == var0_22 then
 		arg0_22.page:UpdateShop(arg2_22)
 	end
+
+	for iter0_22, iter1_22 in ipairs(arg0_22.packageSortList) do
+		if iter1_22.shopData:IsSameKind(arg2_22) then
+			iter1_22.shopData = arg2_22
+
+			break
+		end
+	end
 end
 
 function var0_0.OnUpdateCommodity(arg0_23, arg1_23, arg2_23, arg3_23)
 	local var0_23 = arg0_23.pages[arg1_23]
 
-	if arg0_23.page == var0_23 then
-		arg0_23.page:UpdateCommodity(arg2_23, arg3_23)
+	for iter0_23, iter1_23 in ipairs(arg0_23.packageSortList) do
+		if iter1_23.shopData:IsSameKind(arg2_23) then
+			iter1_23.shopData = arg2_23
+
+			if arg0_23.page == var0_23 then
+				arg0_23.page:UpdateCommodity(arg2_23, arg3_23)
+			end
+
+			break
+		end
 	end
 end
 

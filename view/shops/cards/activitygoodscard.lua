@@ -9,7 +9,6 @@ var0_0.DefaultColor = {
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.Ctor(arg0_1, arg1_1)
-	setActive(arg0_1.limitCountLabelTF, true)
 
 	arg0_1.tagImg = arg0_1.tf:Find("mask/tag"):GetComponent(typeof(Image))
 	arg0_1.limitPassTag = arg0_1.tf:Find("mask/tag/pass_tag")
@@ -106,6 +105,8 @@ function var0_0.updateSingle(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
 
 		setText(arg0_3.limitCountLabelTF, i18n("activity_shop_exchange_count") .. math.max(var12_3, 0) .. "/" .. var11_3)
 	end
+
+	setActive(arg0_3.limitCountLabelTF, true)
 end
 
 function var0_0.updateSelectable(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)

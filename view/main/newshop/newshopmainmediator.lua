@@ -293,6 +293,7 @@ function var0_0.listNotificationInterests(arg0_32)
 		GAME.ON_GUILD_SHOP_PURCHASE_DONE,
 		GAME.ON_MEDAL_SHOP_PURCHASE_DONE,
 		ShopsProxy.GUILD_SHOP_UPDATED,
+		ShopsProxy.GUILD_SHOP_ADDED,
 		ShopsProxy.MEDAL_SHOP_UPDATED,
 		GAME.ON_META_SHOPPING_DONE,
 		ShopsProxy.META_SHOP_GOODS_UPDATED,
@@ -460,7 +461,7 @@ function var0_0.handleNotification(arg0_33, arg1_33)
 		arg0_33.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_33.awards)
 	elseif var0_33 == GAME.ON_MEDAL_SHOP_PURCHASE_DONE then
 		arg0_33.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_33.awards)
-	elseif var0_33 == ShopsProxy.GUILD_SHOP_UPDATED then
+	elseif var0_33 == ShopsProxy.GUILD_SHOP_UPDATED or var0_33 == ShopsProxy.GUILD_SHOP_ADDED then
 		arg0_33.viewComponent:OnUpdateShop(NewShopsScene.TYPE_GUILD, var1_33.shop)
 	elseif var0_33 == ShopsProxy.MEDAL_SHOP_UPDATED then
 		arg0_33.viewComponent:OnUpdateShop(NewShopsScene.TYPE_MEDAL, var1_33)

@@ -69,6 +69,7 @@ function var0_0.update(arg0_5, arg1_5)
 	local var6_5 = arg1_5:getConfig("goods_purchase_limit")
 
 	setText(arg0_5.limitCountLabelTF, i18n("activity_shop_exchange_count") .. var5_5 .. "/" .. var6_5)
+	setActive(arg0_5.limitCountLabelTF, true)
 	setActive(arg0_5.discountTF, false)
 	setText(arg0_5.countTF, math.ceil(var4_5))
 	GetSpriteFromAtlasAsync("ui/ShopsUI_atlas", "minigameRes", function(arg0_6)

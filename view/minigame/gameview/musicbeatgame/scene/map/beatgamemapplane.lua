@@ -77,7 +77,7 @@ function var0_0.createDymItem(arg0_8, arg1_8)
 	local var3_8 = arg0_8:createItemTf(var2_8.prefab)
 	local var4_8 = GetComponent(var3_8, typeof(Animator))
 
-	var4_8.speed = 0
+	var4_8.speed = 1
 
 	table.insert(arg0_8.dymItems, {
 		check = true,
@@ -234,14 +234,6 @@ function var0_0.onStep(arg0_24)
 			local var4_24 = var3_24 - var0_24
 
 			if var1_24.active then
-				if not var1_24.trigger then
-					local var5_24 = 1 - (var3_24 + var1_0 - var0_24) / (var1_24.data.distance_time + var1_0)
-
-					if var5_24 >= 0 and var5_24 <= 1 then
-						var1_24.anim:Play("item_fly", -1, var5_24)
-					end
-				end
-
 				if var3_24 <= var0_24 and var0_24 - var3_24 > var1_0 then
 					var1_24.active = false
 					var1_24.remove = true
@@ -262,24 +254,24 @@ function var0_0.onStep(arg0_24)
 				if var1_24.data.final then
 					arg0_24.finalEnd = true
 
-					local var6_24
-					local var7_24 = var1_24.typeMatch and "final_correct" or "final_wrong"
+					local var5_24
+					local var6_24 = var1_24.typeMatch and "final_correct" or "final_wrong"
 
-					arg0_24:setCharAnimation(arg0_24.leftSpine, var7_24, 0, function()
+					arg0_24:setCharAnimation(arg0_24.leftSpine, var6_24, 0, function()
 						arg0_24.leftSpine:Pause()
 					end)
-					arg0_24:setCharAnimation(arg0_24.rightSpine, var7_24, 0, function()
+					arg0_24:setCharAnimation(arg0_24.rightSpine, var6_24, 0, function()
 						arg0_24.rightSpine:Pause()
 					end)
 				end
 
-				local var8_24 = table.remove(arg0_24.dymItems, iter0_24)
+				local var7_24 = table.remove(arg0_24.dymItems, iter0_24)
 
-				Destroy(var8_24.tf)
+				Destroy(var7_24.tf)
 
-				var8_24.tf = nil
-				var8_24.anim = nil
-				var8_24.track = nil
+				var7_24.tf = nil
+				var7_24.anim = nil
+				var7_24.track = nil
 			elseif var4_24 > 0 and var4_24 <= var2_24 then
 				arg0_24:activeDymItem(var1_24)
 			elseif not var1_24.throw and var4_24 > 0 and var4_24 <= var2_24 + 100 then
@@ -295,86 +287,110 @@ function var0_0.onStep(arg0_24)
 	end
 end
 
-function var0_0.changeLife(arg0_28, arg1_28)
-	arg0_28.lifeCount = arg0_28.lifeCount + arg1_28
+function var0_0.onStop(arg0_28)
+	for iter0_28 = 1, #arg0_28.dymItems do
+		local var0_28 = arg0_28.dymItems[iter0_28].anim
 
-	if arg0_28.lifeCount <= 0 then
-		arg0_28._event:emit(MusicBeatGameEvent.GAME_OVER)
-	end
-
-	setText(findTF(arg0_28.beatCount, "text"), arg0_28.lifeCount)
-end
-
-function var0_0.setEmoji(arg0_29, arg1_29)
-	setActive(arg0_29.emojiTf, false)
-	arg0_29:setChildVisible(findTF(arg0_29.emojiTf, "ad"), false)
-
-	if arg1_29 then
-		setActive(arg0_29.emojiTf, true)
-		setActive(findTF(arg0_29.emojiTf, "ad/" .. arg1_29), true)
+		if var0_28 then
+			var0_28.speed = 0
+		end
 	end
 end
 
-function var0_0.setChildVisible(arg0_30, arg1_30, arg2_30)
-	for iter0_30 = 1, arg1_30.childCount do
-		local var0_30 = arg1_30:GetChild(iter0_30 - 1)
+function var0_0.onResume(arg0_29)
+	for iter0_29 = 1, #arg0_29.dymItems do
+		local var0_29 = arg0_29.dymItems[iter0_29].anim
 
-		setActive(var0_30, arg2_30)
+		if var0_29 then
+			var0_29.speed = 1
+		end
 	end
 end
 
-function var0_0.getCheckDymItem(arg0_31)
-	for iter0_31 = 1, #arg0_31.dymItems do
-		local var0_31 = arg0_31.dymItems[iter0_31]
+function var0_0.changeLife(arg0_30, arg1_30)
+	arg0_30.lifeCount = arg0_30.lifeCount + arg1_30
 
-		if var0_31.check and not var0_31.trigger then
-			return var0_31
+	if arg0_30.lifeCount <= 0 then
+		arg0_30._event:emit(MusicBeatGameEvent.GAME_OVER)
+	end
+
+	setText(findTF(arg0_30.beatCount, "text"), arg0_30.lifeCount)
+end
+
+function var0_0.setEmoji(arg0_31, arg1_31)
+	setActive(arg0_31.emojiTf, false)
+	arg0_31:setChildVisible(findTF(arg0_31.emojiTf, "ad"), false)
+
+	if arg1_31 then
+		setActive(arg0_31.emojiTf, true)
+		setActive(findTF(arg0_31.emojiTf, "ad/" .. arg1_31), true)
+	end
+end
+
+function var0_0.setChildVisible(arg0_32, arg1_32, arg2_32)
+	for iter0_32 = 1, arg1_32.childCount do
+		local var0_32 = arg1_32:GetChild(iter0_32 - 1)
+
+		setActive(var0_32, arg2_32)
+	end
+end
+
+function var0_0.getCheckDymItem(arg0_33)
+	for iter0_33 = 1, #arg0_33.dymItems do
+		local var0_33 = arg0_33.dymItems[iter0_33]
+
+		if var0_33.check and not var0_33.trigger then
+			return var0_33
 		end
 	end
 
 	return nil
 end
 
-function var0_0.activeDymItem(arg0_32, arg1_32)
-	setActive(arg1_32.tf, true)
+function var0_0.activeDymItem(arg0_34, arg1_34)
+	setActive(arg1_34.tf, true)
 
-	arg1_32.active = true
+	arg1_34.active = true
+
+	arg1_34.anim:Play("item_fly", -1, 0)
+
+	arg1_34.anim.speed = 1
 end
 
-function var0_0.setCharAnimation(arg0_33, arg1_33, arg2_33, arg3_33, arg4_33, arg5_33)
-	if arg1_33 then
-		arg1_33:SetActionCallBack(nil)
-		arg1_33:SetActionCallBack(function(arg0_34)
-			if arg0_34 == "finish" and arg4_33 then
-				arg1_33:SetActionCallBack(nil)
-				arg4_33()
-			elseif arg0_34 == "action" and arg5_33 then
-				arg5_33()
+function var0_0.setCharAnimation(arg0_35, arg1_35, arg2_35, arg3_35, arg4_35, arg5_35)
+	if arg1_35 then
+		arg1_35:SetActionCallBack(nil)
+		arg1_35:SetActionCallBack(function(arg0_36)
+			if arg0_36 == "finish" and arg4_35 then
+				arg1_35:SetActionCallBack(nil)
+				arg4_35()
+			elseif arg0_36 == "action" and arg5_35 then
+				arg5_35()
 			end
 		end)
 	end
 
-	if arg1_33 == arg0_33.leftSpine then
-		print("set action" .. arg2_33)
+	if arg1_35 == arg0_35.leftSpine then
+		print("set action" .. arg2_35)
 	end
 
-	arg1_33:SetAction(arg2_33, arg3_33)
+	arg1_35:SetAction(arg2_35, arg3_35)
 end
 
-function var0_0.onClear(arg0_35)
-	for iter0_35 = 1, #arg0_35.dymItems do
-		if arg0_35.dymItems[iter0_35].tf then
-			Destroy(arg0_35.dymItems[iter0_35].tf)
+function var0_0.onClear(arg0_37)
+	for iter0_37 = 1, #arg0_37.dymItems do
+		if arg0_37.dymItems[iter0_37].tf then
+			Destroy(arg0_37.dymItems[iter0_37].tf)
 
-			arg0_35.dymItems[iter0_35].tf = nil
-			arg0_35.dymItems[iter0_35].anim = nil
+			arg0_37.dymItems[iter0_37].tf = nil
+			arg0_37.dymItems[iter0_37].anim = nil
 		end
 	end
 
-	arg0_35.dymItems = {}
+	arg0_37.dymItems = {}
 end
 
-function var0_0.onDispose(arg0_36)
+function var0_0.onDispose(arg0_38)
 	return
 end
 

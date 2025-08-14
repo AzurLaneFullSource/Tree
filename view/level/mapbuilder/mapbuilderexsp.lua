@@ -179,29 +179,29 @@ function var0_0.UpdateStory(arg0_12)
 		return arg0_30:getConfig("id") < arg1_30:getConfig("id")
 	end)
 
-	local var15_12
+	local var15_12 = var4_12[#var4_12]
+	local var16_12
+	local var17_12 = #var4_12 - 1
 
-	if #var4_12 < 2 then
-		arg0_12.personalPage:SetBossRushNode(var4_12[1], var4_12[1])
-	else
-		local var16_12 = #var4_12 - 1
+	while var17_12 > 0 do
+		if #arg0_12.personalPage:GetActivitySingleEventOption(var4_12[var17_12]) > 0 then
+			var16_12 = var4_12[var17_12]
 
-		if var16_12 > 0 then
-			while var16_12 > 0 do
-				if #arg0_12.personalPage:GetActivitySingleEventOption(var4_12[var16_12]) > 0 then
-					var15_12 = true
-
-					arg0_12.personalPage:SetBossRushNode(var4_12[#var4_12], var4_12[var16_12])
-
-					break
-				end
-
-				var16_12 = var16_12 - 1
-			end
+			break
 		end
+
+		var17_12 = var17_12 - 1
 	end
 
-	setActive(arg0_12.personalBtn, var15_12)
+	if var15_12 and #arg0_12.personalPage:GetActivitySingleEventOption(var15_12) > 0 or var16_12 and #arg0_12.personalPage:GetActivitySingleEventOption(var16_12) > 0 then
+		setActive(arg0_12.personalBtn, true)
+	else
+		setActive(arg0_12.personalBtn, false)
+	end
+
+	var16_12 = var16_12 and var16_12 or var15_12
+
+	arg0_12.personalPage:SetBossRushNode(var15_12, var16_12)
 
 	if var2_12 == var3_12 then
 		arg0_12.personalPage:UnlockRandom()
@@ -213,10 +213,6 @@ function var0_0.UpdateStory(arg0_12)
 end
 
 function var0_0.CheckAutoShowPersonal(arg0_31)
-	if not arg0_31.personalPage:GetCurrentEvent() then
-		return
-	end
-
 	if #arg0_31.personalPage:GetActivitySingleEventOption(arg0_31.personalPage:GetCurrentEvent()) > 0 then
 		arg0_31.personalPage:SetUpgrade()
 		arg0_31.personalPage:ExecuteAction("Show")

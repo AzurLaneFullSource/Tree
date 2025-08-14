@@ -123,17 +123,45 @@ pg.shop_banner_template = {
 	[20] = {
 		order = 10,
 		name = "banner_middle",
-		time = "stop",
 		type = 2,
 		id = 20,
-		relation_param = "",
-		pic = "",
+		pic = "shopbanner/shop_pack_bg",
 		time_lable = 1,
+		time = {
+			{
+				{
+					2025,
+					8,
+					14
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					8,
+					27
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
 		param = {
 			"scene charge",
 			{
 				warp = 4
 			}
+		},
+		relation_param = {
+			1,
+			159
 		}
 	},
 	[21] = {

@@ -49,6 +49,7 @@ function var0_0.update(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2)
 	local var7_2 = arg1_2:GetPurchasableCnt()
 
 	setText(arg0_2.limitCountLabelTF, i18n("quota_shop_owned") .. var6_2 - var7_2 .. "/" .. var6_2)
+	setActive(arg0_2.limitCountLabelTF, true)
 end
 
 function var0_0.setAsLastSibling(arg0_4)

@@ -53,7 +53,7 @@ end
 
 function var0_0.resume(arg0_10)
 	for iter0_10 = 1, #arg0_10.mapScenes do
-		arg0_10.mapScenes[iter0_10]:step()
+		arg0_10.mapScenes[iter0_10]:resume()
 	end
 end
 
