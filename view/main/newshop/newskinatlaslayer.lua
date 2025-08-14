@@ -561,7 +561,7 @@ function var0_0.GetSkinClassify(arg0_40)
 
 	for iter0_40, iter1_40 in ipairs(arg0_40.classifyIds) do
 		if iter1_40 == var1_0 then
-			table.insert(arg0_40.classifyNames, "全部")
+			table.insert(arg0_40.classifyNames, i18n("index_all"))
 		else
 			table.insert(arg0_40.classifyNames, pg.skin_page_template[iter1_40].name)
 		end
