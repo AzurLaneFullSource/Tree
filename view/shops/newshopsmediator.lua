@@ -68,10 +68,9 @@ function var0_0.register(arg0_1)
 	arg0_1:bind(var0_0.GO_MALL, function(arg0_10, arg1_10)
 		local var0_10 = getProxy(ContextProxy)
 
-		if arg0_1.contextData.fromMediatorName == ChargeMediator.__cname then
-			var0_10:getContextByMediator(ChargeMediator):extendData({
-				wrap = arg1_10
-			})
+		if arg0_1.contextData.fromMediatorName == NewShopMainMediator.__cname then
+			local var1_10 = var0_10:getContextByMediator(NewShopMainMediator)
+
 			arg0_1.viewComponent:closeView()
 		else
 			pg.m02:sendNotification(GAME.CHANGE_SCENE, SCENE.CHARGE, {

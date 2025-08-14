@@ -327,6 +327,8 @@ pg.strategy_data_template = setmetatable({
 		201411,
 		201461,
 		201462,
+		201463,
+		201464,
 		205001,
 		205002,
 		205003,
@@ -3972,6 +3974,28 @@ pg.base.strategy_data_template = {
 		icon = "200908",
 		buff_type = 0,
 		desc = "Note: <color=#ffc038>Adds will continuously spawn</color> until the boss appears. While the boss will appear after a certain amount of time, sinking enemy BBs and CVs early <color=#92fc63>will make the boss appear sooner</color>. Your Main Fleet will not take DMG even if the enemy reaches their side of the screen.\n\n- Hard Mode Details -\nEnemies deal <color=#ffc038>significantly more DMG</color>. Their shells ignore shields and penetrate through targets.\n<color=#92fc63>Your Vanguard's hitbox is substantially smaller than usual, and only the frontmost ship in your Vanguard possesses a hitbox,</color> while the rest of them cannot be damaged.\nYour ships become briefly invulnerable after taking DMG.\n\n\n· The skills \"Operation Rainbow,\" \"Fiercer When Cornered,\" and \"Eleventh Hour\" are rendered ineffective.",
+		arg = {}
+	},
+	[201463] = {
+		buff_id = 0,
+		name = "Challenge Conditions",
+		iconSize = "",
+		type = 10,
+		id = 201463,
+		icon = "200908",
+		buff_type = 0,
+		desc = "The boss has <color=#92fc63>2 forms, Black and White,</color> each with its own health and fighting style. In the Black form, <color=#92fc63>her DMG taken is set to 1</color>.\nOnce the boss has performed all her attacks in the current form, and as long as the other form has health remaining, she changes forms. When the boss' HP reaches 0 in the current form, she changes to the other, and upon doing so, she gains the <color=#92fc63>Berserk</color> status, increasing her DMG dealt and taken by 100.0% (in the Black form, her DMG taken is set to 2).",
+		arg = {}
+	},
+	[201464] = {
+		buff_id = 0,
+		name = "Challenge Conditions",
+		iconSize = "",
+		type = 10,
+		id = 201464,
+		icon = "200908",
+		buff_type = 0,
+		desc = "The boss has <color=#92fc63>2 forms, Black and White,</color> each with its own health and fighting style. In the Black form, <color=#92fc63>her DMG taken is set to 1</color>.\nOnce the boss has performed all her attacks in the current form, and as long as the other form has health remaining, she changes forms. When the boss' HP reaches 0 in the current form, she changes to the other, and upon doing so, she gains the <color=#92fc63>Berserk</color> status, increasing her DMG dealt and taken by 100.0% (in the Black form, her DMG taken is set to 2).\n\n- Hard Mode Details -\nEnemies <color=#ffc038>deal significantly more DMG.</color> Their large shells cannot be negated by shields or launching an airstrike.\n<color=#92fc63>Your Vanguard's hitbox is substantially smaller than usual, and only the frontmost ship in your Vanguard possesses a hitbox,</color> while the rest of your Vanguard cannot be damaged.\nYour ships become briefly invulnerable after taking DMG.\n\n· The skills \"Operation Rainbow,\" \"Fiercer When Cornered,\" and \"Eleventh Hour\" are rendered ineffective.",
 		arg = {}
 	},
 	[205001] = {

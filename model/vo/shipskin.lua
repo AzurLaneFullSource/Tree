@@ -259,79 +259,103 @@ function var0_0.IsSpine(arg0_27)
 	return arg0_27.isSpine
 end
 
-function var0_0.CantUse(arg0_28)
-	local var0_28 = arg0_28:IsTransSkin()
-	local var1_28 = arg0_28:IsProposeSkin()
-	local var2_28 = arg0_28:getConfig("ship_group")
-	local var3_28 = getProxy(BayProxy):_ExistGroupShip(var2_28, var0_28, var1_28)
-	local var4_28 = getProxy(CollectionProxy).shipGroups[var2_28] == nil
+function var0_0.IsSpinePlus(arg0_28)
+	if not arg0_28.isSpinePlus then
+		arg0_28.isSpinePlus = table.contains(arg0_28:getConfig("tag"), var0_0.WITH_SPINE_PLUS)
+	end
 
-	return not var3_28 or var4_28
+	return arg0_28.isSpinePlus
 end
 
-function var0_0.OwnShip(arg0_29)
-	local var0_29 = arg0_29:IsTransSkin()
-	local var1_29 = arg0_29:IsProposeSkin()
-	local var2_29 = arg0_29:getConfig("ship_group")
+function var0_0.IsLive2dPlus(arg0_29)
+	if not arg0_29.isLive2dPlusTag then
+		arg0_29.isLive2dPlusTag = table.contains(arg0_29:getConfig("tag"), var0_0.WITH_LIVE2D_PLUS)
+	end
 
-	return (getProxy(BayProxy):_ExistGroupShip(var2_29, var0_29, var1_29))
+	return arg0_29.isLive2dPlusTag
 end
 
-function var0_0.WithoutUse(arg0_30)
-	local var0_30 = getProxy(BayProxy):CanUseShareSkinPhantoms(arg0_30.id)
+function var0_0.CantUse(arg0_30)
+	local var0_30 = arg0_30:IsTransSkin()
+	local var1_30 = arg0_30:IsProposeSkin()
+	local var2_30 = arg0_30:getConfig("ship_group")
+	local var3_30 = getProxy(BayProxy):_ExistGroupShip(var2_30, var0_30, var1_30)
+	local var4_30 = getProxy(CollectionProxy).shipGroups[var2_30] == nil
 
-	return #var0_30 > 0 and underscore.all(var0_30, function(arg0_31)
-		return arg0_31:getSkinId() ~= arg0_30.id and not var0_0.IsSameChangeSkinGroup(arg0_31:getSkinId(), arg0_30.id)
+	return not var3_30 or var4_30
+end
+
+function var0_0.OwnShip(arg0_31)
+	local var0_31 = arg0_31:IsTransSkin()
+	local var1_31 = arg0_31:IsProposeSkin()
+	local var2_31 = arg0_31:getConfig("ship_group")
+
+	return (getProxy(BayProxy):_ExistGroupShip(var2_31, var0_31, var1_31))
+end
+
+function var0_0.WithoutUse(arg0_32)
+	local var0_32 = getProxy(BayProxy):CanUseShareSkinPhantoms(arg0_32.id)
+
+	return #var0_32 > 0 and underscore.all(var0_32, function(arg0_33)
+		return arg0_33:getSkinId() ~= arg0_32.id and not var0_0.IsSameChangeSkinGroup(arg0_33:getSkinId(), arg0_32.id)
 	end)
 end
 
-function var0_0.ExistShip(arg0_32)
-	local var0_32 = arg0_32:getConfig("ship_group")
+function var0_0.NoUse(arg0_34)
+	local var0_34 = getProxy(BayProxy):CanUseShareSkinPhantoms(arg0_34.id)
 
-	return pg.ship_data_statistics[tonumber(var0_32 .. 1)] ~= nil
+	return #var0_34 == 0 or #var0_34 > 0 and underscore.all(var0_34, function(arg0_35)
+		return arg0_35:getSkinId() ~= arg0_34.id and not var0_0.IsSameChangeSkinGroup(arg0_35:getSkinId(), arg0_34.id)
+	end)
 end
 
-function var0_0.IsTransSkin(arg0_33)
-	return arg0_33:getConfig("skin_type") == var0_0.SKIN_TYPE_REMAKE
+function var0_0.ExistShip(arg0_36)
+	local var0_36 = arg0_36:getConfig("ship_group")
+
+	return pg.ship_data_statistics[tonumber(var0_36 .. 1)] ~= nil
 end
 
-function var0_0.IsProposeSkin(arg0_34)
-	return arg0_34:getConfig("skin_type") == var0_0.SKIN_TYPE_PROPOSE
+function var0_0.IsTransSkin(arg0_37)
+	return arg0_37:getConfig("skin_type") == var0_0.SKIN_TYPE_REMAKE
 end
 
-function var0_0.IsChangeSkinMainIndex(arg0_35)
-	if var0_0.IsChangeSkin(arg0_35.id) then
-		return arg0_35:getConfig("change_skin").index == 1
+function var0_0.IsProposeSkin(arg0_38)
+	return arg0_38:getConfig("skin_type") == var0_0.SKIN_TYPE_PROPOSE
+end
+
+function var0_0.IsChangeSkinMainIndex(arg0_39)
+	if var0_0.IsChangeSkin(arg0_39.id) then
+		return arg0_39:getConfig("change_skin").index == 1
 	end
 
 	return false
 end
 
-function var0_0.MatchChangeSkinMain(arg0_36)
-	if var0_0.IsChangeSkin(arg0_36.id) and not arg0_36:IsChangeSkinMainIndex() then
+function var0_0.MatchChangeSkinMain(arg0_40)
+	if var0_0.IsChangeSkin(arg0_40.id) and not arg0_40:IsChangeSkinMainIndex() then
 		return false
 	end
 
 	return true
 end
 
-function var0_0.CanShare(arg0_37)
-	local var0_37 = getProxy(ShipSkinProxy):hasSkin(arg0_37.configId)
+function var0_0.CanShare(arg0_41)
+	local var0_41 = getProxy(ShipSkinProxy):hasSkin(arg0_41.configId)
 
-	local function var1_37()
-		if var0_37 then
+	local function var1_41()
+		if var0_41 then
 			return true
 		end
 
-		return arg0_37:InShowTime()
+		return arg0_41:InShowTime()
 	end
 
-	local function var2_37()
-		local var0_39 = arg0_37:getConfig("ship_group")
-		local var1_39 = getProxy(BayProxy):getRawData()
+	local function var2_41()
+		local var0_43 = arg0_41:getConfig("ship_group")
+		local var1_43 = getProxy(BayProxy):getRawData()
 
-		for iter0_39, iter1_39 in pairs(var1_39) do
-			if iter1_39.groupId == var0_39 and iter1_39.propose then
+		for iter0_43, iter1_43 in pairs(var1_43) do
+			if iter1_43.groupId == var0_43 and iter1_43.propose then
 				return true
 			end
 		end
@@ -339,204 +363,208 @@ function var0_0.CanShare(arg0_37)
 		return false
 	end
 
-	local var3_37 = arg0_37:getConfig("skin_type")
+	local var3_41 = arg0_41:getConfig("skin_type")
 
-	return not (var3_37 == var0_0.SKIN_TYPE_DEFAULT or var3_37 == var0_0.SKIN_TYPE_REMAKE or var3_37 == var0_0.SKIN_TYPE_OLD or var3_37 == var0_0.SKIN_TYPE_NOT_HAVE_HIDE and not var0_37 or var3_37 == var0_0.SKIN_TYPE_SHOW_IN_TIME and not var1_37())
+	return not (var3_41 == var0_0.SKIN_TYPE_DEFAULT or var3_41 == var0_0.SKIN_TYPE_REMAKE or var3_41 == var0_0.SKIN_TYPE_OLD or var3_41 == var0_0.SKIN_TYPE_NOT_HAVE_HIDE and not var0_41 or var3_41 == var0_0.SKIN_TYPE_SHOW_IN_TIME and not var1_41())
 end
 
-function var0_0.IsShareSkin(arg0_40, arg1_40)
-	local var0_40 = pg.ship_skin_template[arg1_40]
-	local var1_40 = pg.ship_data_group
-	local var2_40 = var1_40[var1_40.get_id_list_by_group_type[arg0_40.groupId][1]].share_group_id
+function var0_0.IsShareSkin(arg0_44, arg1_44)
+	local var0_44 = pg.ship_skin_template[arg1_44]
+	local var1_44 = pg.ship_data_group
+	local var2_44 = var1_44[var1_44.get_id_list_by_group_type[arg0_44.groupId][1]].share_group_id
 
-	return table.contains(var2_40, var0_40.ship_group)
+	return table.contains(var2_44, var0_44.ship_group)
 end
 
-function var0_0.CanUseShareSkinForShip(arg0_41, arg1_41)
-	local var0_41 = var0_0.IsShareSkin(arg0_41, arg1_41)
-	local var1_41 = ShipSkin.New({
-		id = arg1_41
+function var0_0.CanUseShareSkinForShip(arg0_45, arg1_45)
+	local var0_45 = var0_0.IsShareSkin(arg0_45, arg1_45)
+	local var1_45 = ShipSkin.New({
+		id = arg1_45
 	})
-	local var2_41 = false
-	local var3_41 = var1_41:CanShare()
-	local var4_41 = var1_41:IsProposeSkin()
+	local var2_45 = false
+	local var3_45 = var1_45:CanShare()
+	local var4_45 = var1_45:IsProposeSkin()
 
-	if var3_41 and var4_41 and arg0_41.propose then
-		var2_41 = true
-	elseif var3_41 and not var4_41 then
-		var2_41 = math.floor(arg0_41:getIntimacy() / 100) >= arg0_41:GetNoProposeIntimacyMax()
+	if var3_45 and var4_45 and arg0_45.propose then
+		var2_45 = true
+	elseif var3_45 and not var4_45 then
+		var2_45 = math.floor(arg0_45:getIntimacy() / 100) >= arg0_45:GetNoProposeIntimacyMax()
 	end
 
-	return var0_41 and var2_41
+	return var0_45 and var2_45
 end
 
-function var0_0.ExistReward(arg0_42)
-	local var0_42 = pg.ship_skin_reward[arg0_42.configId]
+function var0_0.ExistReward(arg0_46)
+	local var0_46 = pg.ship_skin_reward[arg0_46.configId]
 
-	return var0_42 ~= nil and #var0_42.reward > 0
+	return var0_46 ~= nil and #var0_46.reward > 0
 end
 
-function var0_0.GetRewardList(arg0_43)
-	if not arg0_43:ExistReward() then
+function var0_0.GetRewardList(arg0_47)
+	if not arg0_47:ExistReward() then
 		return {}
 	end
 
-	local var0_43 = pg.ship_skin_reward[arg0_43.configId]
-	local var1_43 = {}
+	local var0_47 = pg.ship_skin_reward[arg0_47.configId]
+	local var1_47 = {}
 
-	for iter0_43, iter1_43 in pairs(var0_43.reward) do
-		table.insert(var1_43, {
-			type = iter1_43[1],
-			id = iter1_43[2],
-			count = iter1_43[3]
+	for iter0_47, iter1_47 in pairs(var0_47.reward) do
+		table.insert(var1_47, {
+			type = iter1_47[1],
+			id = iter1_47[2],
+			count = iter1_47[3]
 		})
-	end
-
-	return var1_43
-end
-
-function var0_0.GetRewardListDesc(arg0_44)
-	local var0_44 = arg0_44:GetRewardList()
-
-	if #var0_44 <= 0 then
-		return ""
-	end
-
-	local var1_44 = _.map(var0_44, function(arg0_45)
-		return {
-			arg0_45.type,
-			arg0_45.id,
-			arg0_45.count
-		}
-	end)
-
-	return getDropInfo(var1_44)
-end
-
-function var0_0.GetShareGroupIds(arg0_46)
-	local var0_46 = arg0_46:getConfig("ship_group")
-	local var1_46 = pg.ship_data_group.get_id_list_by_group_type[var0_46][1]
-	local var2_46 = pg.ship_data_group[var1_46]
-
-	return var0_46, underscore.to_array(var2_46.share_group_id)
-end
-
-function var0_0.GetAllChangeSkinIds(arg0_47)
-	if not var0_0.GetChangeSkinMainId(arg0_47) then
-		return {
-			arg0_47
-		}
-	end
-
-	local var0_47 = var0_0.GetChangeSkinMainId(arg0_47)
-	local var1_47 = {
-		var0_47
-	}
-	local var2_47 = arg0_47
-
-	for iter0_47 = 1, 10 do
-		local var3_47 = var0_0.GetChangeSkinNextId(var2_47)
-
-		if not table.contains(var1_47, var3_47) then
-			table.insert(var1_47, var3_47)
-		end
-
-		var2_47 = var3_47
-
-		if var0_0.GetChangeSkinIndex(var2_47) == 1 then
-			return var1_47
-		end
 	end
 
 	return var1_47
 end
 
-function var0_0.IsChangeSkin(arg0_48)
-	local var0_48 = pg.ship_skin_template[arg0_48]
+function var0_0.GetRewardListDesc(arg0_48)
+	local var0_48 = arg0_48:GetRewardList()
 
-	return table.contains(var0_48.tag, var0_0.WITH_CHANGE)
-end
-
-function var0_0.GetChangeSkinMainId(arg0_49)
-	if not var0_0.IsChangeSkin(arg0_49) then
-		return arg0_49
+	if #var0_48 <= 0 then
+		return ""
 	end
 
-	while var0_0.GetChangeSkinIndex(arg0_49) ~= 1 do
-		arg0_49 = var0_0.GetChangeSkinNextId(arg0_49)
-	end
+	local var1_48 = _.map(var0_48, function(arg0_49)
+		return {
+			arg0_49.type,
+			arg0_49.id,
+			arg0_49.count
+		}
+	end)
 
-	return arg0_49
+	return getDropInfo(var1_48)
 end
 
-function var0_0.GetChangeSkinData(arg0_50)
-	if not var0_0.IsChangeSkin(arg0_50) then
+function var0_0.GetShareGroupIds(arg0_50)
+	local var0_50 = arg0_50:getConfig("ship_group")
+	local var1_50 = pg.ship_data_group.get_id_list_by_group_type[var0_50][1]
+	local var2_50 = pg.ship_data_group[var1_50]
+
+	return var0_50, underscore.to_array(var2_50.share_group_id)
+end
+
+function var0_0.GetAllChangeSkinIds(arg0_51)
+	if not var0_0.GetChangeSkinMainId(arg0_51) then
+		return {
+			arg0_51
+		}
+	end
+
+	local var0_51 = var0_0.GetChangeSkinMainId(arg0_51)
+	local var1_51 = {
+		var0_51
+	}
+	local var2_51 = arg0_51
+
+	for iter0_51 = 1, 10 do
+		local var3_51 = var0_0.GetChangeSkinNextId(var2_51)
+
+		if not table.contains(var1_51, var3_51) then
+			table.insert(var1_51, var3_51)
+		end
+
+		var2_51 = var3_51
+
+		if var0_0.GetChangeSkinIndex(var2_51) == 1 then
+			return var1_51
+		end
+	end
+
+	return var1_51
+end
+
+function var0_0.IsChangeSkin(arg0_52)
+	local var0_52 = pg.ship_skin_template[arg0_52]
+
+	if not var0_52 then
+		warning("skin not exist " .. arg0_52)
+	end
+
+	return table.contains(var0_52.tag, var0_0.WITH_CHANGE)
+end
+
+function var0_0.GetChangeSkinMainId(arg0_53)
+	if not var0_0.IsChangeSkin(arg0_53) then
+		return arg0_53
+	end
+
+	while var0_0.GetChangeSkinIndex(arg0_53) ~= 1 do
+		arg0_53 = var0_0.GetChangeSkinNextId(arg0_53)
+	end
+
+	return arg0_53
+end
+
+function var0_0.GetChangeSkinData(arg0_54)
+	if not var0_0.IsChangeSkin(arg0_54) then
 		return nil
 	end
 
-	local var0_50 = pg.ship_skin_template[arg0_50]
+	local var0_54 = pg.ship_skin_template[arg0_54]
 
-	if var0_50 and var0_50.change_skin and var0_50.change_skin ~= "" then
-		return var0_50.change_skin
+	if var0_54 and var0_54.change_skin and var0_54.change_skin ~= "" then
+		return var0_54.change_skin
 	end
 
 	return nil
 end
 
-function var0_0.IsSameChangeSkinGroup(arg0_51, arg1_51)
-	if not var0_0.IsChangeSkin(arg0_51) or not var0_0.IsChangeSkin(arg1_51) then
+function var0_0.IsSameChangeSkinGroup(arg0_55, arg1_55)
+	if not var0_0.IsChangeSkin(arg0_55) or not var0_0.IsChangeSkin(arg1_55) then
 		return false
 	end
 
-	return var0_0.GetChangeSkinGroupId(arg0_51) == var0_0.GetChangeSkinGroupId(arg1_51)
+	return var0_0.GetChangeSkinGroupId(arg0_55) == var0_0.GetChangeSkinGroupId(arg1_55)
 end
 
-function var0_0.GetChangeSkinGroupId(arg0_52)
-	local var0_52 = var0_0.GetChangeSkinData(arg0_52)
-
-	return var0_52 and var0_52.group or nil
-end
-
-function var0_0.GetChangeSkinNextId(arg0_53)
-	local var0_53 = var0_0.GetChangeSkinData(arg0_53)
-
-	return var0_53 and var0_53.next or nil
-end
-
-function var0_0.GetChangeSkinIndex(arg0_54)
-	local var0_54 = var0_0.GetChangeSkinData(arg0_54)
-
-	return var0_54 and var0_54.index or nil
-end
-
-function var0_0.GetChangeSkinState(arg0_55)
-	local var0_55 = var0_0.GetChangeSkinData(arg0_55)
-
-	return var0_55 and var0_55.state or nil
-end
-
-function var0_0.GetChangeSkinAction(arg0_56)
+function var0_0.GetChangeSkinGroupId(arg0_56)
 	local var0_56 = var0_0.GetChangeSkinData(arg0_56)
 
-	return var0_56 and var0_56.action or nil
+	return var0_56 and var0_56.group or nil
 end
 
-function var0_0.GetStoreChangeSkinId(arg0_57)
-	local var0_57 = var0_0.GetStoreChangeSkinPrefsName(arg0_57)
-	local var1_57 = PlayerPrefs.GetInt(var0_57, 0)
+function var0_0.GetChangeSkinNextId(arg0_57)
+	local var0_57 = var0_0.GetChangeSkinData(arg0_57)
 
-	if var1_57 == 0 then
+	return var0_57 and var0_57.next or nil
+end
+
+function var0_0.GetChangeSkinIndex(arg0_58)
+	local var0_58 = var0_0.GetChangeSkinData(arg0_58)
+
+	return var0_58 and var0_58.index or nil
+end
+
+function var0_0.GetChangeSkinState(arg0_59)
+	local var0_59 = var0_0.GetChangeSkinData(arg0_59)
+
+	return var0_59 and var0_59.state or nil
+end
+
+function var0_0.GetChangeSkinAction(arg0_60)
+	local var0_60 = var0_0.GetChangeSkinData(arg0_60)
+
+	return var0_60 and var0_60.action or nil
+end
+
+function var0_0.GetStoreChangeSkinId(arg0_61)
+	local var0_61 = var0_0.GetStoreChangeSkinPrefsName(arg0_61)
+	local var1_61 = PlayerPrefs.GetInt(var0_61, 0)
+
+	if var1_61 == 0 then
 		return nil
 	else
-		return var1_57
+		return var1_61
 	end
 end
 
-function var0_0.SetStoreChangeSkinId(arg0_58)
-	local var0_58 = var0_0.GetChangeSkinGroupId(arg0_58)
-	local var1_58 = var0_0.GetStoreChangeSkinPrefsName(var0_58)
+function var0_0.SetStoreChangeSkinId(arg0_62)
+	local var0_62 = var0_0.GetChangeSkinGroupId(arg0_62)
+	local var1_62 = var0_0.GetStoreChangeSkinPrefsName(var0_62)
 
-	PlayerPrefs.SetInt(var1_58, arg0_58)
+	PlayerPrefs.SetInt(var1_62, arg0_62)
 end
 
 function var0_0.GetStoreChangeSkinPrefsName(...)

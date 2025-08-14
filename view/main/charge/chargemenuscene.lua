@@ -224,7 +224,7 @@ function var0_0.updatePanel(arg0_26)
 end
 
 function var0_0.tryAutoOpenShop(arg0_27)
-	local var0_27 = arg0_27.contextData.wrap
+	local var0_27 = arg0_27.contextData.warp
 
 	if var0_27 ~= nil then
 		if var0_27 == ChargeScene.TYPE_DIAMOND then

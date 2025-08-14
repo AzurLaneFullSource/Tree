@@ -886,6 +886,7 @@ function var0_0.showToolTip(arg0_45, arg1_45)
 			AttributeType.AntiAircraft,
 			AttributeType.Air,
 			AttributeType.Reload,
+			AttributeType.Hit,
 			AttributeType.Expend,
 			AttributeType.Dodge,
 			AttributeType.AntiSub

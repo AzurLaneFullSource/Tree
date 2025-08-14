@@ -112,14 +112,14 @@ function var0_0.confirm(arg0_11, arg1_11)
 				descExtra = arg1_11:getConfig("descrip_extra"),
 				onYes = function()
 					if ChargeConst.isNeedSetBirth() then
-						arg0_11:emit(ChargeMediator.OPEN_CHARGE_BIRTHDAY)
+						arg0_11:emit(NewShopMainMediator.OPEN_CHARGE_BIRTHDAY)
 					else
-						arg0_11:emit(ChargeMediator.CHARGE, arg1_11.id)
+						arg0_11:emit(NewShopMainMediator.CHARGE, arg1_11.id)
 					end
 				end
 			}
 
-			arg0_11:emit(ChargeMediator.OPEN_CHARGE_ITEM_PANEL, var7_11)
+			arg0_11:emit(NewShopMainMediator.OPEN_CHARGE_ITEM_PANEL, var7_11)
 		elseif arg1_11:isGem() then
 			local var8_11 = arg1_11:getConfig("money")
 			local var9_11 = arg1_11:getConfig("gem")
@@ -140,14 +140,14 @@ function var0_0.confirm(arg0_11, arg1_11)
 				normalTip = i18n("charge_start_tip", var8_11, var9_11),
 				onYes = function()
 					if ChargeConst.isNeedSetBirth() then
-						arg0_11:emit(ChargeMediator.OPEN_CHARGE_BIRTHDAY)
+						arg0_11:emit(NewShopMainMediator.OPEN_CHARGE_BIRTHDAY)
 					else
-						arg0_11:emit(ChargeMediator.CHARGE, arg1_11.id)
+						arg0_11:emit(NewShopMainMediator.CHARGE, arg1_11.id)
 					end
 				end
 			}
 
-			arg0_11:emit(ChargeMediator.OPEN_CHARGE_ITEM_BOX, var10_11)
+			arg0_11:emit(NewShopMainMediator.OPEN_CHARGE_ITEM_BOX, var10_11)
 		end
 	else
 		local var11_11 = {}
@@ -179,13 +179,13 @@ function var0_0.confirm(arg0_11, arg1_11)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("charge_scene_buy_confirm", arg1_11:getConfig("resource_num"), var13_11.name),
 					onYes = function()
-						arg0_11:emit(ChargeMediator.BUY_ITEM, arg1_11.id, 1)
+						arg0_11:emit(NewShopMainMediator.BUY_ITEM, arg1_11.id, 1)
 					end
 				})
 			end
 		}
 
-		arg0_11:emit(ChargeMediator.OPEN_CHARGE_ITEM_PANEL, var15_11)
+		arg0_11:emit(NewShopMainMediator.OPEN_CHARGE_ITEM_PANEL, var15_11)
 	end
 end
 
@@ -294,9 +294,17 @@ function var0_0.updateData(arg0_21)
 	arg0_21:sortDiamondGoodsVOList()
 end
 
-function var0_0.reUpdateAll(arg0_22)
-	arg0_22:updateData()
-	arg0_22:updateView()
+function var0_0.IsSupplyShop(arg0_22)
+	return false
+end
+
+function var0_0.reUpdateAll(arg0_23)
+	arg0_23:updateData()
+	arg0_23:updateView()
+end
+
+function var0_0.ShowPanel(arg0_24, arg1_24)
+	setActive(arg0_24._go, arg1_24)
 end
 
 return var0_0

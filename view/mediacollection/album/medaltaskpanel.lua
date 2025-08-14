@@ -13,162 +13,204 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.UIlist = UIItemList.New(findTF(arg0_1._tf, "panel/list"), findTF(arg0_1._tf, "panel/list/Tasktpl"))
 
 	onButton(arg0_1, arg0_1._mask, function()
-		arg0_1:SetActive(false)
+		if arg0_1._parent.TASK_CLOSE_ANIM and arg0_1._parent.TASK_CLOSE_ANIM_Time then
+			quickPlayAnimation(arg0_1._go, arg0_1._parent.TASK_CLOSE_ANIM)
+			onDelayTick(function()
+				arg0_1:SetActive(false)
+			end, arg0_1._parent.TASK_CLOSE_ANIM_Time)
+		else
+			arg0_1:SetActive(false)
+		end
 	end, SFX_CANCEL)
 	onButton(arg0_1, arg0_1._backBtn, function()
-		arg0_1:SetActive(false)
+		if arg0_1._parent.TASK_CLOSE_ANIM and arg0_1._parent.TASK_CLOSE_ANIM_Time then
+			quickPlayAnimation(arg0_1._go, arg0_1._parent.TASK_CLOSE_ANIM)
+			onDelayTick(function()
+				arg0_1:SetActive(false)
+			end, arg0_1._parent.TASK_CLOSE_ANIM_Time)
+		else
+			arg0_1:SetActive(false)
+		end
 	end, SFX_CANCEL)
 end
 
-function var0_0.SetMedalGroup(arg0_4, arg1_4)
-	arg0_4._medalGroup = arg1_4
-	arg0_4._taskList = {}
+function var0_0.SetMedalGroup(arg0_6, arg1_6)
+	arg0_6._medalGroup = arg1_6
+	arg0_6._taskList = {}
 
-	local var0_4 = arg0_4._medalGroup:GetMedalGroupActivityConfig()[3]
+	local var0_6 = arg0_6._medalGroup:GetMedalGroupActivityConfig()[3]
 
-	for iter0_4, iter1_4 in ipairs(var0_4) do
-		local var1_4 = getProxy(TaskProxy):getTaskById(iter1_4) or getProxy(TaskProxy):getFinishTaskById(iter1_4)
+	for iter0_6, iter1_6 in ipairs(var0_6) do
+		local var1_6 = getProxy(TaskProxy):getTaskById(iter1_6) or getProxy(TaskProxy):getFinishTaskById(iter1_6)
 
-		table.insert(arg0_4._taskList, var1_4)
+		table.insert(arg0_6._taskList, var1_6)
 	end
 end
 
-function var0_0.ShowMedalTask(arg0_5)
+function var0_0.ShowMedalTask(arg0_7)
 	Canvas.ForceUpdateCanvases()
-	arg0_5:sort(arg0_5._taskList)
-	arg0_5:UpdateList(arg0_5._taskList)
+	arg0_7:sort(arg0_7._taskList)
+	arg0_7:UpdateList(arg0_7._taskList)
 end
 
-function var0_0.getTaskProgress(arg0_6, arg1_6)
-	return arg1_6:getProgress(), tostring(arg1_6:getProgress())
+function var0_0.getTaskProgress(arg0_8, arg1_8)
+	return arg1_8:getProgress(), tostring(arg1_8:getProgress())
 end
 
-function var0_0.getTaskTarget(arg0_7, arg1_7)
-	return arg1_7:getConfig("target_num"), tostring(arg1_7:getConfig("target_num"))
+function var0_0.getTaskTarget(arg0_9, arg1_9)
+	return arg1_9:getConfig("target_num"), tostring(arg1_9:getConfig("target_num"))
 end
 
-function var0_0.UpdateList(arg0_8, arg1_8)
-	arg0_8.UIlist:make(function(arg0_9, arg1_9, arg2_9)
-		if arg0_9 == UIItemList.EventUpdate then
-			local var0_9 = arg1_8[arg1_9 + 1]
-			local var1_9 = arg2_9:Find("frame/slider"):GetComponent(typeof(Slider))
-			local var2_9 = arg2_9:Find("frame/progress")
-			local var3_9 = arg2_9:Find("frame/progress_1")
-			local var4_9 = arg2_9:Find("frame/awards")
-			local var5_9 = arg2_9:Find("frame/desc")
-			local var6_9 = arg2_9:Find("frame/get_btn")
-			local var7_9 = arg2_9:Find("frame/got_btn")
-			local var8_9 = arg2_9:Find("frame/go_btn")
+function var0_0.UpdateList(arg0_10, arg1_10)
+	arg0_10.UIlist:make(function(arg0_11, arg1_11, arg2_11)
+		if arg0_11 == UIItemList.EventUpdate then
+			local var0_11 = arg1_10[arg1_11 + 1]
+			local var1_11 = arg2_11:Find("frame/slider"):GetComponent(typeof(Slider))
+			local var2_11 = arg2_11:Find("frame/progress")
+			local var3_11 = arg2_11:Find("frame/progress_1")
+			local var4_11 = arg2_11:Find("frame/awards")
+			local var5_11 = arg2_11:Find("frame/desc")
+			local var6_11 = arg2_11:Find("frame/get_btn")
+			local var7_11 = arg2_11:Find("frame/got_btn")
+			local var8_11 = arg2_11:Find("frame/go_btn")
 
-			setText(var5_9, var0_9:getConfig("desc"))
+			setText(var5_11, var0_11:getConfig("desc"))
 
-			local var9_9, var10_9 = arg0_8:getTaskProgress(var0_9)
-			local var11_9, var12_9 = arg0_8:getTaskTarget(var0_9)
+			local var9_11, var10_11 = arg0_10:getTaskProgress(var0_11)
+			local var11_11, var12_11 = arg0_10:getTaskTarget(var0_11)
 
-			var1_9.value = var9_9 / var11_9
+			var1_11.value = var9_11 / var11_11
 
-			setText(var2_9, var10_9)
-			setText(var3_9, "/" .. var12_9)
+			setText(var2_11, var10_11)
+			setText(var3_11, "/" .. var12_11)
 
-			local var13_9 = var4_9:GetChild(0)
+			local var13_11 = var4_11:GetChild(0)
 
-			arg0_8:updateAwards(var0_9:getConfig("award_display"), var4_9, var13_9)
-			setActive(var7_9, var0_9:getTaskStatus() == 2)
-			setActive(var6_9, var0_9:getTaskStatus() == 1)
-			setActive(var8_9, var0_9:getTaskStatus() == 0)
-			onButton(arg0_8, var8_9, function()
-				arg0_8._parent:emit(MedalAlbumTemplateMediator.ON_TASK_GO, var0_9)
+			arg0_10:updateAwards(var0_11:getConfig("award_display"), var4_11, var13_11)
+			setActive(var7_11, var0_11:getTaskStatus() == 2)
+			setActive(var6_11, var0_11:getTaskStatus() == 1)
+			setActive(var8_11, var0_11:getTaskStatus() == 0)
+			onButton(arg0_10, var8_11, function()
+				arg0_10._parent:emit(MedalAlbumTemplateMediator.ON_TASK_GO, var0_11)
 			end, SFX_PANEL)
-			onButton(arg0_8, var6_9, function()
-				arg0_8._parent:emit(MedalAlbumTemplateMediator.ON_TASK_SUBMIT, var0_9)
+			onButton(arg0_10, var6_11, function()
+				arg0_10._parent:emit(MedalAlbumTemplateMediator.ON_TASK_SUBMIT, var0_11)
 			end, SFX_PANEL)
 		end
 	end)
-	arg0_8.UIlist:align(#arg1_8)
+	arg0_10.UIlist:align(#arg1_10)
+
+	if arg0_10._parent.TASK_ANIM and arg0_10._parent.TASK_ENTER_ANIM_Time and arg0_10._parent.TASK_Time then
+		local var0_10 = findTF(arg0_10._tf, "panel/list").transform.childCount
+
+		onDelayTick(function()
+			for iter0_14 = 0, var0_10 - 1 do
+				local var0_14 = findTF(arg0_10._tf, "panel/list"):GetChild(iter0_14)
+
+				onDelayTick(function()
+					if arg0_10._parent.exited then
+						return
+					end
+
+					quickPlayAnimation(var0_14, arg0_10._parent.TASK_ANIM)
+				end, arg0_10._parent.TASK_Time * (iter0_14 + 1))
+			end
+		end, arg0_10._parent.TASK_ENTER_ANIM_Time)
+	end
 end
 
-function var0_0.updateAwards(arg0_12, arg1_12, arg2_12, arg3_12)
-	local var0_12 = _.slice(arg1_12, 1, 3)
+function var0_0.updateAwards(arg0_16, arg1_16, arg2_16, arg3_16)
+	local var0_16 = _.slice(arg1_16, 1, 3)
 
-	for iter0_12 = arg2_12.childCount, #var0_12 - 1 do
-		cloneTplTo(arg3_12, arg2_12)
+	for iter0_16 = arg2_16.childCount, #var0_16 - 1 do
+		cloneTplTo(arg3_16, arg2_16)
 	end
 
-	local var1_12 = arg2_12.childCount
+	local var1_16 = arg2_16.childCount
 
-	for iter1_12 = 1, var1_12 do
-		local var2_12 = arg2_12:GetChild(iter1_12 - 1)
-		local var3_12 = iter1_12 <= #var0_12
+	for iter1_16 = 1, var1_16 do
+		local var2_16 = arg2_16:GetChild(iter1_16 - 1)
+		local var3_16 = iter1_16 <= #var0_16
 
-		setActive(var2_12, var3_12)
+		setActive(var2_16, var3_16)
 
-		if var3_12 then
-			local var4_12 = var0_12[iter1_12]
-			local var5_12 = {
-				type = var4_12[1],
-				id = var4_12[2],
-				count = var4_12[3]
+		if var3_16 then
+			local var4_16 = var0_16[iter1_16]
+			local var5_16 = {
+				type = var4_16[1],
+				id = var4_16[2],
+				count = var4_16[3]
 			}
 
-			updateDrop(findTF(var2_12, "mask"), var5_12)
+			updateDrop(findTF(var2_16, "mask"), var5_16)
 
-			if var5_12.type == DROP_TYPE_EQUIPMENT_SKIN then
-				setActive(findTF(var2_12, "specialFrame"), true)
+			if var5_16.type == DROP_TYPE_EQUIPMENT_SKIN then
+				setActive(findTF(var2_16, "specialFrame"), true)
 			else
-				setActive(findTF(var2_12, "specialFrame"), false)
+				setActive(findTF(var2_16, "specialFrame"), false)
 			end
 
-			onButton(arg0_12, var2_12, function()
-				arg0_12._parent:emit(BaseUI.ON_DROP, var5_12)
+			onButton(arg0_16, var2_16, function()
+				arg0_16._parent:emit(BaseUI.ON_DROP, var5_16)
 			end, SFX_PANEL)
 		end
 	end
 end
 
-function var0_0.sort(arg0_14, arg1_14)
-	local var0_14 = {}
+function var0_0.sort(arg0_18, arg1_18)
+	local var0_18 = {}
 
-	for iter0_14, iter1_14 in pairs(arg1_14) do
-		if iter1_14:getTaskStatus() == 1 then
-			table.insert(var0_14, iter1_14)
+	for iter0_18, iter1_18 in pairs(arg1_18) do
+		if iter1_18:getTaskStatus() == 1 then
+			table.insert(var0_18, iter1_18)
 		end
 	end
 
-	for iter2_14, iter3_14 in pairs(arg1_14) do
-		if iter3_14:getTaskStatus() == 0 then
-			table.insert(var0_14, iter3_14)
+	for iter2_18, iter3_18 in pairs(arg1_18) do
+		if iter3_18:getTaskStatus() == 0 then
+			table.insert(var0_18, iter3_18)
 		end
 	end
 
-	for iter4_14, iter5_14 in pairs(arg1_14) do
-		if iter5_14:getTaskStatus() == 2 then
-			table.insert(var0_14, iter5_14)
+	for iter4_18, iter5_18 in pairs(arg1_18) do
+		if iter5_18:getTaskStatus() == 2 then
+			table.insert(var0_18, iter5_18)
 		end
 	end
 
-	arg0_14._taskList = var0_14
+	arg0_18._taskList = var0_18
 end
 
-function var0_0.SetActive(arg0_15, arg1_15)
-	SetActive(arg0_15._go, arg1_15)
+function var0_0.SetActive(arg0_19, arg1_19)
+	SetActive(arg0_19._go, arg1_19)
 
-	arg0_15._active = arg1_15
+	arg0_19._active = arg1_19
 
-	if arg1_15 then
-		pg.UIMgr.GetInstance():BlurPanel(arg0_15._go, false, {
+	if arg1_19 then
+		pg.UIMgr.GetInstance():BlurPanel(arg0_19._go, false, {
 			weight = LayerWeightConst.SECOND_LAYER
 		})
 	else
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_15._go, arg0_15._parent._tf)
+		pg.UIMgr.GetInstance():UnblurPanel(arg0_19._go, arg0_19._parent._tf)
+
+		if arg0_19._parent.TASK_ANIM and arg0_19._parent.TASK_ENTER_ANIM_Time and arg0_19._parent.TASK_Time then
+			local var0_19 = findTF(arg0_19._tf, "panel/list").transform.childCount
+
+			for iter0_19 = 0, var0_19 - 1 do
+				local var1_19 = findTF(arg0_19._tf, "panel/list"):GetChild(iter0_19)
+
+				setCanvasGroupAlpha(var1_19, 0)
+			end
+		end
 	end
 end
 
-function var0_0.IsActive(arg0_16)
-	return arg0_16._active
+function var0_0.IsActive(arg0_20)
+	return arg0_20._active
 end
 
-function var0_0.Dispose(arg0_17)
-	pg.DelegateInfo.Dispose(arg0_17)
+function var0_0.Dispose(arg0_21)
+	pg.DelegateInfo.Dispose(arg0_21)
 end
 
 return var0_0

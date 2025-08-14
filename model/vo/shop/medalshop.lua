@@ -63,4 +63,10 @@ function var0_0.UpdateGoodsCnt(arg0_12, arg1_12, arg2_12)
 	arg0_12:getGoodsById(arg1_12):UpdateCnt(arg2_12)
 end
 
+function var0_0.GetResList(arg0_13)
+	return {
+		ITEM_ID_SILVER_HOOK
+	}
+end
+
 return var0_0

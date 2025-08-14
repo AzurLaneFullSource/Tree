@@ -375,7 +375,7 @@ function var0_0.UpdateMapItem(arg0_23, arg1_23, arg2_23)
 
 	if var31_23 then
 		local var33_23 = var32_23:GetComponent(typeof(CanvasGroup))
-		local var34_23 = arg0_23.contextData.map:getConfig("type") == Map.ACTIVITY_HARD and "bonus_us_hard" or "bonus_us"
+		local var34_23 = var6_23 == 3 and "bonus_us_hard" or "bonus_us"
 
 		arg0_23.sceneParent.loader:GetSprite("ui/levelmainscene_atlas", var34_23, var32_23:Find("bonus"))
 		LeanTween.cancel(go(var32_23), true)

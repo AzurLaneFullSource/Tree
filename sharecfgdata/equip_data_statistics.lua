@@ -126507,6 +126507,59 @@ _G.pg.base.equip_data_statistics[78032] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[78101] = {
+	ammo = 10,
+	descrip = "技能弹幕",
+	icon = "1",
+	id = 78101,
+	name = "全弹发射-迪盖·特鲁因级I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61771,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[78102] = {
+	base = 78101,
+	id = 78102,
+	name = "全弹发射-迪盖·特鲁因级II",
+	weapon_id = {
+		61772,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[78111] = {
 	ammo = 10,
 	descrip = "Barrage",
@@ -134301,6 +134354,59 @@ _G.pg.base.equip_data_statistics[80502] = {
 	name = "专属弹幕-迪米特里·顿斯科伊II",
 	weapon_id = {
 		170812,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[80511] = {
+	ammo = 10,
+	descrip = "技能弹幕",
+	icon = "1",
+	id = 80511,
+	name = "专属弹幕-大胆I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 2,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170831,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80512] = {
+	base = 80511,
+	id = 80512,
+	name = "专属弹幕-大胆II",
+	weapon_id = {
+		170832,
 	},
 	hidden_skill_id = {},
 }
@@ -168216,6 +168322,59 @@ _G.pg.base.equip_data_statistics[170792] = {
 	name = "专属弹幕-江风META",
 	weapon_id = {
 		170792,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[170801] = {
+	ammo = 10,
+	descrip = "技能弹幕",
+	icon = "1",
+	id = 170801,
+	name = "全弹发射-迪凯纳级I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170821,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[170802] = {
+	base = 170801,
+	id = 170802,
+	name = "全弹发射-迪凯纳级II",
+	weapon_id = {
+		170822,
 	},
 	hidden_skill_id = {},
 }

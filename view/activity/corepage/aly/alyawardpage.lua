@@ -237,12 +237,7 @@ function var0_0.updateBoxPanel(arg0_23, arg1_23)
 
 			setText(arg0_23:findTF("go", var4_24), i18n("brs_reward_tip_2"))
 			onButton(arg0_23, var4_24, function()
-				if var1_24 == Msgbox4LinkCollectGuide.SKIP_TYPE_SCENE then
-					pg.m02:sendNotification(GAME.GO_SCENE, var2_24[1], var2_24[2] or {})
-				elseif var1_24 == Msgbox4LinkCollectGuide.SKIP_TYPE_ACTIVITY then
-					arg0_23:emit(ActivityMediator.SELECT_ACTIVITY, var2_24)
-				end
-
+				arg0_23:DoSkip(var1_24, var2_24)
 				arg0_23:showBoxPanel(false)
 			end, SFX_PANEL)
 		end
@@ -250,9 +245,9 @@ function var0_0.updateBoxPanel(arg0_23, arg1_23)
 end
 
 function var0_0.DoSkip(arg0_26, arg1_26, arg2_26)
-	if arg1_26 == 2 then
+	if arg1_26 == Msgbox4LinkCollectGuide.SKIP_TYPE_SCENE then
 		pg.m02:sendNotification(GAME.GO_SCENE, arg2_26[1], arg2_26[2] or {})
-	elseif arg1_26 == 3 then
+	elseif arg1_26 == Msgbox4LinkCollectGuide.SKIP_TYPE_ACTIVITY then
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
 			id = arg2_26
 		})

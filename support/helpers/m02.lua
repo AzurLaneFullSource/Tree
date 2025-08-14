@@ -2044,7 +2044,7 @@ function gotoChargeScene(arg0_143, arg1_143)
 	local var0_143 = getProxy(ContextProxy)
 	local var1_143 = getProxy(ContextProxy):getCurrentContext()
 
-	if instanceof(var1_143.mediator, ChargeMediator) then
+	if instanceof(var1_143.mediator, NewShopMainMediator) then
 		var1_143.mediator:getViewComponent():switchSubViewByTogger(arg0_143)
 	else
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
@@ -4567,8 +4567,8 @@ function RegisterDetailButton(arg0_311, arg1_311, arg2_311)
 					pg.m02:sendNotification(GAME.LOAD_LAYERS, {
 						parentContext = getProxy(ContextProxy):getCurrentContext(),
 						context = Context.New({
-							viewComponent = SelectSkinLayer,
-							mediator = SkinAtlasMediator,
+							viewComponent = NewSelectSkinLayer,
+							mediator = NewSkinAtlasMediator,
 							data = {
 								mode = SelectSkinLayer.MODE_VIEW,
 								itemId = arg2_311.id,

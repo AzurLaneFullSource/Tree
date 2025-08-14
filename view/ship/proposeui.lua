@@ -1204,30 +1204,37 @@ function var0_0.createLive2D(arg0_108, arg1_108)
 		Live2D.SetL2dSortingLayer(arg0_109, LayerWeightConst.L2D_DEFAULT_LAYER)
 
 		var0_109.localPosition = BuildVector3(pg.ship_skin_template[var2_109].live2d_offset) + Vector3(0, 0, 100)
-		var0_109.localScale = Vector3(65, 65, 520)
+
+		local var3_109 = 52
+
+		if pg.ship_skin_template[var2_109].live2d_offset and #pg.ship_skin_template[var2_109].live2d_offset >= 4 then
+			var3_109 = pg.ship_skin_template[var2_109].live2d_offset[4]
+		end
+
+		var0_109.localScale = Vector3(var3_109, var3_109, var3_109)
 		arg0_108.l2dChar = GetComponent(arg0_109, "Live2dChar")
 		arg0_108.l2dChar.name = arg1_108
 
-		local var3_109 = pg.AssistantInfo.action2Id.idle
+		local var4_109 = pg.AssistantInfo.action2Id.idle
 
 		function arg0_108.l2dChar.FinishAction(arg0_110)
-			if var3_109 ~= arg0_110 then
-				arg0_108.l2dChar:SetAction(var3_109)
+			if var4_109 ~= arg0_110 then
+				arg0_108.l2dChar:SetAction(var4_109)
 			end
 		end
 
-		arg0_108.l2dChar:SetAction(var3_109)
+		arg0_108.l2dChar:SetAction(var4_109)
 
-		local var4_109 = pg.ship_skin_template[var2_109]
-		local var5_109 = var4_109.lip_sync_gain
-		local var6_109 = var4_109.lip_smoothing
-
-		if var5_109 and var5_109 ~= 0 then
-			var1_109:GetChild(0):GetComponent("CubismCriSrcMouthInput").Gain = var5_109
-		end
+		local var5_109 = pg.ship_skin_template[var2_109]
+		local var6_109 = var5_109.lip_sync_gain
+		local var7_109 = var5_109.lip_smoothing
 
 		if var6_109 and var6_109 ~= 0 then
-			var1_109:GetChild(0):GetComponent("CubismCriSrcMouthInput").Smoothing = var6_109
+			var1_109:GetChild(0):GetComponent("CubismCriSrcMouthInput").Gain = var6_109
+		end
+
+		if var7_109 and var7_109 ~= 0 then
+			var1_109:GetChild(0):GetComponent("CubismCriSrcMouthInput").Smoothing = var7_109
 		end
 	end)
 end

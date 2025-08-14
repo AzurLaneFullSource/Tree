@@ -314,6 +314,7 @@ local function var8_0(arg0_16, arg1_16)
 	SetActive(arg0_16._singleItemshipTypeTF, false)
 	SetActive(arg0_16._sigleItemPanel:Find("left/detail"), false)
 	setActive(arg0_16._sigleItemPanel:Find("combat_skin"), false)
+	setActive(arg0_16._sigleItemPanel:Find("source_panel"), false)
 
 	local var0_16 = arg0_16._sigleItemPanel:Find("display_panel"):GetComponent(typeof(RectTransform))
 
@@ -344,101 +345,137 @@ local function var9_0(arg0_17, arg1_17)
 	arg0_17:commonSetting(arg1_17)
 	SetActive(arg0_17._sigleItemPanel, true)
 
-	local var0_17 = arg0_17._sigleItemPanel:Find("left/IconTpl")
+	local var0_17 = arg1_17.drop
+	local var1_17 = arg0_17._sigleItemPanel:Find("left/IconTpl")
 
-	setActive(var0_17:Find("timelimit"), arg1_17.drop.type == DROP_TYPE_SKIN_TIMELIMIT)
-	updateDrop(var0_17, arg1_17.drop)
-	setActive(arg0_17._singleItemshipTypeTF, arg1_17.drop.type == DROP_TYPE_SHIP)
+	setActive(var1_17:Find("timelimit"), var0_17.type == DROP_TYPE_SKIN_TIMELIMIT)
+	updateDrop(var1_17, var0_17)
+	setActive(arg0_17._singleItemshipTypeTF, var0_17.type == DROP_TYPE_SHIP)
 	setActive(arg0_17._sigleItemPanel:Find("combat_skin"), false)
+	setActive(arg0_17._sigleItemPanel:Find("source_panel"), false)
 
-	local var1_17 = arg0_17._sigleItemPanel:Find("display_panel"):GetComponent(typeof(RectTransform))
+	local var2_17 = arg0_17._sigleItemPanel:Find("display_panel"):GetComponent(typeof(RectTransform))
 
-	var1_17.sizeDelta = Vector2(var1_17.sizeDelta.x, -114.5)
+	var2_17.sizeDelta = Vector2(var2_17.sizeDelta.x, -114.5)
 
-	if arg1_17.drop.type == DROP_TYPE_SHIP then
-		GetImageSpriteFromAtlasAsync("shiptype", shipType2print(arg1_17.drop:getConfig("type")), arg0_17._singleItemshipTypeTF, false)
-	elseif arg1_17.drop.type == DROP_TYPE_COMBAT_UI_STYLE then
-		var1_17.sizeDelta = Vector2(var1_17.sizeDelta.x, -170.5)
+	if var0_17.type == DROP_TYPE_SHIP then
+		GetImageSpriteFromAtlasAsync("shiptype", shipType2print(var0_17:getConfig("type")), arg0_17._singleItemshipTypeTF, false)
+	elseif var0_17.type == DROP_TYPE_ITEM then
+		local var3_17 = ItemTipPanel.GetDropLackConfig(var0_17)
+		local var4_17 = var3_17 and var3_17.description or {}
 
-		local var2_17 = var0_0.item_data_battleui[arg1_17.drop.id].rare_display
-		local var3_17 = UIItemList.New(arg0_17._sigleItemPanel:Find("combat_skin/elementList"), arg0_17._sigleItemPanel:Find("combat_skin/elementList/main"))
+		if #var4_17 > 0 then
+			var2_17.sizeDelta = Vector2(var2_17.sizeDelta.x, -170.5)
 
-		var3_17:make(function(arg0_18, arg1_18, arg2_18)
-			if arg0_18 == UIItemList.EventUpdate then
-				local var0_18 = var2_17[arg1_18 + 1]
+			UIItemList.StaticAlign(arg0_17._sigleItemPanel:Find("source_panel/Viewport/Content"), arg0_17._sigleItemPanel:Find("source_panel/Viewport/Content/sourceItem"), #var4_17, function(arg0_18, arg1_18, arg2_18)
+				if arg0_18 == UIItemList.EventUpdate then
+					local var0_18 = var4_17[arg1_18 + 1]
+					local var1_18, var2_18, var3_18 = unpack(var0_18)
 
-				GetImageSpriteFromAtlasAsync("ui/combatskinrare", CombatSkinConst.TYPE_ICON_NAME[var0_18], arg2_18:Find("icon"), true)
-				setScrollText(arg2_18:Find("TextMask/Text"), i18n("battleui_display" .. var0_18))
+					setText(arg2_18:Find("desc"), var1_18)
+					setText(arg2_18:Find("btn/Text"), i18n("feast_res_window_go_label"))
+
+					local var4_18, var5_18 = unpack(var2_18)
+					local var6_18 = #var4_18 > 0
+
+					if var3_18 and var3_18 ~= 0 then
+						var6_18 = var6_18 and getProxy(ActivityProxy):IsActivityNotEnd(var3_18)
+					end
+
+					setActive(arg2_18:Find("btn"), var6_18)
+					onButton(arg0_17, arg2_18:Find("btn"), function()
+						ItemTipPanel.ConfigGoScene(var4_18, var5_18, function()
+							arg0_17:hide()
+						end)
+					end, SFX_PANEL)
+				end
+			end)
+			setActive(arg0_17._sigleItemPanel:Find("source_panel"), true)
+		else
+			setActive(arg0_17._sigleItemPanel:Find("source_panel"), false)
+		end
+	elseif var0_17.type == DROP_TYPE_COMBAT_UI_STYLE then
+		var2_17.sizeDelta = Vector2(var2_17.sizeDelta.x, -170.5)
+
+		local var5_17 = var0_0.item_data_battleui[var0_17.id].rare_display
+		local var6_17 = UIItemList.New(arg0_17._sigleItemPanel:Find("combat_skin/elementList"), arg0_17._sigleItemPanel:Find("combat_skin/elementList/main"))
+
+		var6_17:make(function(arg0_21, arg1_21, arg2_21)
+			if arg0_21 == UIItemList.EventUpdate then
+				local var0_21 = var5_17[arg1_21 + 1]
+
+				GetImageSpriteFromAtlasAsync("ui/combatskinrare", CombatSkinConst.TYPE_ICON_NAME[var0_21], arg2_21:Find("icon"), true)
+				setScrollText(arg2_21:Find("TextMask/Text"), i18n("battleui_display" .. var0_21))
 			end
 		end)
-		var3_17:align(#var2_17)
+		var6_17:align(#var5_17)
 		setActive(arg0_17._sigleItemPanel:Find("combat_skin"), true)
 	end
 
-	local var4_17 = arg1_17.drop.type == DROP_TYPE_SHIP
-	local var5_17 = arg0_17._sigleItemPanel:Find("ship_group")
+	local var7_17 = var0_17.type == DROP_TYPE_SHIP
+	local var8_17 = arg0_17._sigleItemPanel:Find("ship_group")
 
-	SetActive(var5_17, var4_17)
+	SetActive(var8_17, var7_17)
 
-	if var4_17 then
-		local var6_17 = tobool(getProxy(CollectionProxy):getShipGroup(var0_0.ship_data_template[arg1_17.drop.id].group_type))
+	if var7_17 then
+		local var9_17 = tobool(getProxy(CollectionProxy):getShipGroup(var0_0.ship_data_template[var0_17.id].group_type))
 
-		SetActive(var5_17:Find("unlocked"), var6_17)
-		SetActive(var5_17:Find("locked"), not var6_17)
+		SetActive(var8_17:Find("unlocked"), var9_17)
+		SetActive(var8_17:Find("locked"), not var9_17)
 	end
 
 	if arg1_17.windowSize then
 		arg0_17._window.sizeDelta = Vector2(arg1_17.windowSize.x or arg0_17._defaultSize.x, arg1_17.windowSize.y or arg0_17._defaultSize.y)
 	end
 
-	local var7_17 = arg0_17.singleItemIntro
-	local var8_17 = arg0_17._singleItemSubIntroTF
-	local var9_17 = arg0_17.settings.numUpdate
+	local var10_17 = arg0_17.singleItemIntro
+	local var11_17 = arg0_17._singleItemSubIntroTF
+	local var12_17 = arg0_17.settings.numUpdate
 
-	setActive(arg0_17._countDescTxt, var9_17 ~= nil)
-	SetActive(var7_17, var9_17 == nil)
+	setActive(arg0_17._countDescTxt, var12_17 ~= nil)
+	SetActive(var10_17, var12_17 == nil)
 
-	local var10_17 = arg1_17.name or arg1_17.drop:getConfig("name") or ""
+	local var13_17 = arg1_17.name or var0_17:getConfig("name") or ""
 
-	setText(arg0_17._sigleItemPanel:Find("display_panel/name_container/name/Text"), var10_17)
-	UpdateOwnDisplay(arg0_17._sigleItemPanel:Find("left/own"), arg1_17.drop)
-	RegisterDetailButton(arg0_17, arg0_17._sigleItemPanel:Find("left/detail"), arg1_17.drop)
+	setText(arg0_17._sigleItemPanel:Find("display_panel/name_container/name/Text"), var13_17)
+	UpdateOwnDisplay(arg0_17._sigleItemPanel:Find("left/own"), var0_17)
+	RegisterDetailButton(arg0_17, arg0_17._sigleItemPanel:Find("left/detail"), var0_17)
 
 	if arg1_17.iconPreservedAspect then
-		local var11_17 = var0_17:Find("icon_bg/icon")
-		local var12_17 = var11_17:GetComponent(typeof(Image))
+		local var14_17 = var1_17:Find("icon_bg/icon")
+		local var15_17 = var14_17:GetComponent(typeof(Image))
 
-		var11_17.pivot = Vector2(0.5, 1)
+		var14_17.pivot = Vector2(0.5, 1)
 
-		local var13_17 = var11_17.rect.width
-		local var14_17 = var12_17.preferredHeight / var12_17.preferredWidth * var13_17
+		local var16_17 = var14_17.rect.width
+		local var17_17 = var15_17.preferredHeight / var15_17.preferredWidth * var16_17
 
-		var11_17.sizeDelta = Vector2(-4, var14_17 - var13_17 - 4)
-		var11_17.anchoredPosition = Vector2(0, -2)
+		var14_17.sizeDelta = Vector2(-4, var17_17 - var16_17 - 4)
+		var14_17.anchoredPosition = Vector2(0, -2)
 	end
 
 	if arg1_17.content and arg1_17.content ~= "" then
-		setText(var7_17, arg1_17.content)
-	elseif arg1_17.drop.type == DROP_TYPE_WORLD_COLLECTION then
-		arg1_17.drop:MsgboxIntroSet(arg1_17, var7_17, arg0_17._sigleItemPanel:Find("name_mode/name_mask/name"))
+		setText(var10_17, arg1_17.content)
+	elseif var0_17.type == DROP_TYPE_WORLD_COLLECTION then
+		var0_17:MsgboxIntroSet(arg1_17, var10_17, arg0_17._sigleItemPanel:Find("name_mode/name_mask/name"))
 	else
-		arg1_17.drop:MsgboxIntroSet(arg1_17, var7_17)
+		var0_17:MsgboxIntroSet(arg1_17, var10_17)
 	end
 
 	if arg1_17.intro then
-		setText(var7_17, arg1_17.intro)
+		setText(var10_17, arg1_17.intro)
 	end
 
-	setText(var8_17, arg1_17.subIntro or arg1_17.extendDesc or "")
+	setText(var11_17, arg1_17.subIntro or arg1_17.extendDesc or "")
 
 	if arg1_17.enabelYesBtn ~= nil then
-		local var15_17 = arg0_17._btnContainer:GetChild(1)
+		local var18_17 = arg0_17._btnContainer:GetChild(1)
 
-		setButtonEnabled(var15_17, arg1_17.enabelYesBtn)
-		eachChild(var15_17, function(arg0_19)
-			local var0_19 = arg1_17.enabelYesBtn and 1 or 0.3
+		setButtonEnabled(var18_17, arg1_17.enabelYesBtn)
+		eachChild(var18_17, function(arg0_22)
+			local var0_22 = arg1_17.enabelYesBtn and 1 or 0.3
 
-			GetOrAddComponent(arg0_19, typeof(CanvasGroup)).alpha = var0_19
+			GetOrAddComponent(arg0_22, typeof(CanvasGroup)).alpha = var0_22
 		end)
 	end
 
@@ -455,234 +492,234 @@ local function var9_0(arg0_17, arg1_17)
 	arg0_17:Loaded(arg1_17)
 end
 
-local function var10_0(arg0_20, arg1_20)
-	arg0_20:commonSetting(arg1_20)
-	setActive(findTF(arg0_20._helpPanel, "bg"), not arg1_20.helps.pageMode)
-	setActive(arg0_20._helpBgTF, arg1_20.helps.pageMode)
-	setActive(arg0_20._helpPanel:Find("btn_blueprint"), arg1_20.show_blueprint)
+local function var10_0(arg0_23, arg1_23)
+	arg0_23:commonSetting(arg1_23)
+	setActive(findTF(arg0_23._helpPanel, "bg"), not arg1_23.helps.pageMode)
+	setActive(arg0_23._helpBgTF, arg1_23.helps.pageMode)
+	setActive(arg0_23._helpPanel:Find("btn_blueprint"), arg1_23.show_blueprint)
 
-	if arg1_20.show_blueprint then
-		onButton(arg0_20, arg0_20._helpPanel:Find("btn_blueprint"), function()
-			arg0_20:hide()
+	if arg1_23.show_blueprint then
+		onButton(arg0_23, arg0_23._helpPanel:Find("btn_blueprint"), function()
+			arg0_23:hide()
 			var0_0.m02:sendNotification(GAME.GO_SCENE, SCENE.SHIPBLUEPRINT, {
-				shipGroupId = arg1_20.show_blueprint
+				shipGroupId = arg1_23.show_blueprint
 			})
 		end, SFX_PANEL)
 	end
 
-	if arg1_20.helps.helpSize then
-		arg0_20._helpPanel.sizeDelta = Vector2(arg1_20.helps.helpSize.x or arg0_20._defaultHelpSize.x, arg1_20.helps.helpSize.y or arg0_20._defaultHelpSize.y)
+	if arg1_23.helps.helpSize then
+		arg0_23._helpPanel.sizeDelta = Vector2(arg1_23.helps.helpSize.x or arg0_23._defaultHelpSize.x, arg1_23.helps.helpSize.y or arg0_23._defaultHelpSize.y)
 	end
 
-	if arg1_20.helps.helpPos then
-		setAnchoredPosition(arg0_20._helpPanel, {
-			x = arg1_20.helps.helpPos.x or arg0_20._defaultHelpPos.x,
-			y = arg1_20.helps.helpPos.y or arg0_20._defaultHelpPos.y
+	if arg1_23.helps.helpPos then
+		setAnchoredPosition(arg0_23._helpPanel, {
+			x = arg1_23.helps.helpPos.x or arg0_23._defaultHelpPos.x,
+			y = arg1_23.helps.helpPos.y or arg0_23._defaultHelpPos.y
 		})
 	end
 
-	if arg1_20.helps.windowSize then
-		arg0_20._window.sizeDelta = Vector2(arg1_20.helps.windowSize.x or arg0_20._defaultSize.x, arg1_20.helps.windowSize.y or arg0_20._defaultSize.y)
+	if arg1_23.helps.windowSize then
+		arg0_23._window.sizeDelta = Vector2(arg1_23.helps.windowSize.x or arg0_23._defaultSize.x, arg1_23.helps.windowSize.y or arg0_23._defaultSize.y)
 	end
 
-	if arg1_20.helps.windowPos then
-		arg0_20._window.sizeDelta = Vector2(arg1_20.helps.windowSize.x or arg0_20._defaultSize.x, arg1_20.helps.windowSize.y or arg0_20._defaultSize.y)
+	if arg1_23.helps.windowPos then
+		arg0_23._window.sizeDelta = Vector2(arg1_23.helps.windowSize.x or arg0_23._defaultSize.x, arg1_23.helps.windowSize.y or arg0_23._defaultSize.y)
 
-		setAnchoredPosition(arg0_20._window, {
-			x = arg1_20.helps.windowPos.x or 0,
-			y = arg1_20.helps.windowPos.y or 0
+		setAnchoredPosition(arg0_23._window, {
+			x = arg1_23.helps.windowPos.x or 0,
+			y = arg1_23.helps.windowPos.y or 0
 		})
 	else
-		setAnchoredPosition(arg0_20._window, {
+		setAnchoredPosition(arg0_23._window, {
 			x = 0,
 			y = 0
 		})
 	end
 
-	if arg1_20.helps.buttonsHeight then
-		setAnchoredPosition(arg0_20._btnContainer, {
-			y = arg1_20.helps.buttonsHeight
+	if arg1_23.helps.buttonsHeight then
+		setAnchoredPosition(arg0_23._btnContainer, {
+			y = arg1_23.helps.buttonsHeight
 		})
 	end
 
-	if arg1_20.helps.disableScroll then
-		local var0_20 = arg0_20._helpPanel:Find("list")
+	if arg1_23.helps.disableScroll then
+		local var0_23 = arg0_23._helpPanel:Find("list")
 
-		SetCompomentEnabled(arg0_20._helpPanel:Find("list"), typeof(ScrollRect), not arg1_20.helps.disableScroll)
-		setAnchoredPosition(var0_20, Vector2.zero)
-		setActive(findTF(arg0_20._helpPanel, "Scrollbar"), false)
+		SetCompomentEnabled(arg0_23._helpPanel:Find("list"), typeof(ScrollRect), not arg1_23.helps.disableScroll)
+		setAnchoredPosition(var0_23, Vector2.zero)
+		setActive(findTF(arg0_23._helpPanel, "Scrollbar"), false)
 	end
 
-	if arg1_20.helps.ImageMode then
-		setActive(arg0_20._top, false)
-		setActive(findTF(arg0_20._window, "bg"), false)
+	if arg1_23.helps.ImageMode then
+		setActive(arg0_23._top, false)
+		setActive(findTF(arg0_23._window, "bg"), false)
 	end
 
-	local var1_20 = arg0_20.settings.helps
+	local var1_23 = arg0_23.settings.helps
 
-	for iter0_20 = #var1_20, arg0_20._helpList.childCount - 1 do
-		Destroy(arg0_20._helpList:GetChild(iter0_20))
+	for iter0_23 = #var1_23, arg0_23._helpList.childCount - 1 do
+		Destroy(arg0_23._helpList:GetChild(iter0_23))
 	end
 
-	for iter1_20 = arg0_20._helpList.childCount, #var1_20 - 1 do
-		cloneTplTo(arg0_20._helpTpl, arg0_20._helpList)
+	for iter1_23 = arg0_23._helpList.childCount, #var1_23 - 1 do
+		cloneTplTo(arg0_23._helpTpl, arg0_23._helpList)
 	end
 
-	for iter2_20, iter3_20 in ipairs(var1_20) do
-		local var2_20 = arg0_20._helpList:GetChild(iter2_20 - 1)
+	for iter2_23, iter3_23 in ipairs(var1_23) do
+		local var2_23 = arg0_23._helpList:GetChild(iter2_23 - 1)
 
-		setActive(var2_20, true)
+		setActive(var2_23, true)
 
-		local var3_20 = var2_20:Find("icon")
+		local var3_23 = var2_23:Find("icon")
 
-		setActive(var3_20, iter3_20.icon)
-		setActive(findTF(var2_20, "line"), iter3_20.line)
+		setActive(var3_23, iter3_23.icon)
+		setActive(findTF(var2_23, "line"), iter3_23.line)
 
-		if iter3_20.icon then
-			local var4_20 = 1
+		if iter3_23.icon then
+			local var4_23 = 1
 
-			if arg1_20.helps.ImageMode then
-				var4_20 = 1.5
+			if arg1_23.helps.ImageMode then
+				var4_23 = 1.5
 			end
 
-			var3_20.transform.localScale = Vector2(iter3_20.icon.scale or var4_20, iter3_20.icon.scale or var4_20)
+			var3_23.transform.localScale = Vector2(iter3_23.icon.scale or var4_23, iter3_23.icon.scale or var4_23)
 
-			local var5_20 = iter3_20.icon.path
-			local var6_20 = iter3_20.icon.posX and iter3_20.icon.posX or -20
-			local var7_20 = iter3_20.icon.posY and iter3_20.icon.posY or 0
-			local var8_20 = LoadSprite(iter3_20.icon.atlas, iter3_20.icon.path)
+			local var5_23 = iter3_23.icon.path
+			local var6_23 = iter3_23.icon.posX and iter3_23.icon.posX or -20
+			local var7_23 = iter3_23.icon.posY and iter3_23.icon.posY or 0
+			local var8_23 = LoadSprite(iter3_23.icon.atlas, iter3_23.icon.path)
 
-			setImageSprite(var3_20:GetComponent(typeof(Image)), var8_20, true)
-			setAnchoredPosition(var3_20, {
-				x = var6_20,
-				y = var7_20
+			setImageSprite(var3_23:GetComponent(typeof(Image)), var8_23, true)
+			setAnchoredPosition(var3_23, {
+				x = var6_23,
+				y = var7_23
 			})
-			setActive(var3_20:Find("corner"), arg1_20.helps.pageMode)
+			setActive(var3_23:Find("corner"), arg1_23.helps.pageMode)
 		end
 
-		local var9_20 = var2_20:Find("richText"):GetComponent("RichText")
+		local var9_23 = var2_23:Find("richText"):GetComponent("RichText")
 
-		if iter3_20.rawIcon then
-			local var10_20 = iter3_20.rawIcon.name
+		if iter3_23.rawIcon then
+			local var10_23 = iter3_23.rawIcon.name
 
-			var9_20:AddSprite(var10_20, GetSpriteFromAtlas(iter3_20.rawIcon.atlas, var10_20))
+			var9_23:AddSprite(var10_23, GetSpriteFromAtlas(iter3_23.rawIcon.atlas, var10_23))
 
-			local var11_20 = HXSet.hxLan(iter3_20.info or "")
+			local var11_23 = HXSet.hxLan(iter3_23.info or "")
 
-			setText(var2_20, "")
+			setText(var2_23, "")
 
-			var9_20.text = string.format("<icon name=%s w=0.7 h=0.7/>%s", var10_20, var11_20)
+			var9_23.text = string.format("<icon name=%s w=0.7 h=0.7/>%s", var10_23, var11_23)
 		else
-			setText(var2_20, HXSet.hxLan(iter3_20.info and SwitchSpecialChar(iter3_20.info, true) or ""))
+			setText(var2_23, HXSet.hxLan(iter3_23.info and SwitchSpecialChar(iter3_23.info, true) or ""))
 		end
 
-		setActive(var9_20.gameObject, iter3_20.rawIcon)
+		setActive(var9_23.gameObject, iter3_23.rawIcon)
 	end
 
-	arg0_20.helpPage = arg1_20.helps.defaultpage or 1
+	arg0_23.helpPage = arg1_23.helps.defaultpage or 1
 
-	if arg1_20.helps.pageMode then
-		arg0_20:switchHelpPage(arg0_20.helpPage)
+	if arg1_23.helps.pageMode then
+		arg0_23:switchHelpPage(arg0_23.helpPage)
 	end
 
-	arg0_20:Loaded(arg1_20)
+	arg0_23:Loaded(arg1_23)
 end
 
-local function var11_0(arg0_22, arg1_22)
-	arg0_22:commonSetting(arg1_22)
-	setActive(arg0_22._otherPanel, true)
+local function var11_0(arg0_25, arg1_25)
+	arg0_25:commonSetting(arg1_25)
+	setActive(arg0_25._otherPanel, true)
 
-	local var0_22 = tf(arg1_22.secondaryUI)
+	local var0_25 = tf(arg1_25.secondaryUI)
 
-	arg0_22._window.sizeDelta = Vector2(960, arg0_22._defaultSize.y)
+	arg0_25._window.sizeDelta = Vector2(960, arg0_25._defaultSize.y)
 
-	setActive(var0_22, true)
+	setActive(var0_25, true)
 
-	local var1_22 = arg1_22.mode
-	local var2_22 = getProxy(SecondaryPWDProxy):getRawData()
-	local var3_22 = var0_22:Find("showresttime")
-	local var4_22 = var0_22:Find("settips")
+	local var1_25 = arg1_25.mode
+	local var2_25 = getProxy(SecondaryPWDProxy):getRawData()
+	local var3_25 = var0_25:Find("showresttime")
+	local var4_25 = var0_25:Find("settips")
 
-	if var1_22 == "showresttime" then
-		setActive(var3_22, true)
-		setActive(var4_22, false)
+	if var1_25 == "showresttime" then
+		setActive(var3_25, true)
+		setActive(var4_25, false)
 
-		local var5_22 = var3_22:Find("desc"):GetComponent(typeof(Text))
+		local var5_25 = var3_25:Find("desc"):GetComponent(typeof(Text))
 
-		if arg0_22.timers.secondaryUItimer then
-			arg0_22.timers.secondaryUItimer:Stop()
+		if arg0_25.timers.secondaryUItimer then
+			arg0_25.timers.secondaryUItimer:Stop()
 		end
 
-		local function var6_22()
-			local var0_23 = var0_0.TimeMgr.GetInstance():GetServerTime()
-			local var1_23 = var2_22.fail_cd and var2_22.fail_cd - var0_23 or 0
+		local function var6_25()
+			local var0_26 = var0_0.TimeMgr.GetInstance():GetServerTime()
+			local var1_26 = var2_25.fail_cd and var2_25.fail_cd - var0_26 or 0
 
-			var1_23 = var1_23 < 0 and 0 or var1_23
+			var1_26 = var1_26 < 0 and 0 or var1_26
 
-			local var2_23 = math.floor(var1_23 / 86400)
+			local var2_26 = math.floor(var1_26 / 86400)
 
-			if var2_23 > 0 then
-				var5_22.text = string.format(i18n("tips_fail_secondarypwd_much_times"), var2_23 .. i18n("word_date"))
+			if var2_26 > 0 then
+				var5_25.text = string.format(i18n("tips_fail_secondarypwd_much_times"), var2_26 .. i18n("word_date"))
 			else
-				local var3_23 = math.floor(var1_23 / 3600)
+				local var3_26 = math.floor(var1_26 / 3600)
 
-				if var3_23 > 0 then
-					var5_22.text = string.format(i18n("tips_fail_secondarypwd_much_times"), var3_23 .. i18n("word_hour"))
+				if var3_26 > 0 then
+					var5_25.text = string.format(i18n("tips_fail_secondarypwd_much_times"), var3_26 .. i18n("word_hour"))
 				else
-					local var4_23 = ""
-					local var5_23 = math.floor(var1_23 / 60)
+					local var4_26 = ""
+					local var5_26 = math.floor(var1_26 / 60)
 
-					if var5_23 > 0 then
-						var4_23 = var4_23 .. var5_23 .. i18n("word_minute")
+					if var5_26 > 0 then
+						var4_26 = var4_26 .. var5_26 .. i18n("word_minute")
 					end
 
-					local var6_23 = math.max(var1_23 - var5_23 * 60, 0)
+					local var6_26 = math.max(var1_26 - var5_26 * 60, 0)
 
-					var5_22.text = string.format(i18n("tips_fail_secondarypwd_much_times"), var4_23 .. var6_23 .. i18n("word_second"))
+					var5_25.text = string.format(i18n("tips_fail_secondarypwd_much_times"), var4_26 .. var6_26 .. i18n("word_second"))
 				end
 			end
 		end
 
-		var6_22()
+		var6_25()
 
-		local var7_22 = Timer.New(var6_22, 1, -1)
+		local var7_25 = Timer.New(var6_25, 1, -1)
 
-		var7_22:Start()
+		var7_25:Start()
 
-		arg0_22.timers.secondaryUItimer = var7_22
-	elseif var1_22 == "settips" then
-		setActive(var3_22, false)
-		setActive(var4_22, true)
+		arg0_25.timers.secondaryUItimer = var7_25
+	elseif var1_25 == "settips" then
+		setActive(var3_25, false)
+		setActive(var4_25, true)
 
-		local var8_22 = var4_22:Find("InputField"):GetComponent(typeof(InputField))
+		local var8_25 = var4_25:Find("InputField"):GetComponent(typeof(InputField))
 
-		arg1_22.references.inputfield = var8_22
-		var8_22.text = arg1_22.references.lasttext or ""
+		arg1_25.references.inputfield = var8_25
+		var8_25.text = arg1_25.references.lasttext or ""
 
-		local var9_22 = 20
+		local var9_25 = 20
 
-		var8_22.onValueChanged:AddListener(function()
-			local var0_24, var1_24 = utf8_to_unicode(var8_22.text)
+		var8_25.onValueChanged:AddListener(function()
+			local var0_27, var1_27 = utf8_to_unicode(var8_25.text)
 
-			if var1_24 > var9_22 then
-				var8_22.text = SecondaryPasswordMediator.ClipUnicodeStr(var8_22.text, var9_22)
+			if var1_27 > var9_25 then
+				var8_25.text = SecondaryPasswordMediator.ClipUnicodeStr(var8_25.text, var9_25)
 			end
 		end)
 
-		local function var10_22()
+		local function var10_25()
 			if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
 				return false
 			end
 
-			local var0_25 = var8_22.text
-			local var1_25, var2_25 = wordVer(var0_25, {
+			local var0_28 = var8_25.text
+			local var1_28, var2_28 = wordVer(var0_28, {
 				isReplace = true
 			})
 
-			if var1_25 > 0 or var2_25 ~= var0_25 then
+			if var1_28 > 0 or var2_28 ~= var0_28 then
 				var0_0.TipsMgr.GetInstance():ShowTips(i18n("secondarypassword_illegal_tip"))
 
-				var8_22.text = var2_25
+				var8_25.text = var2_28
 
 				return true
 			else
@@ -690,124 +727,124 @@ local function var11_0(arg0_22, arg1_22)
 			end
 		end
 
-		arg0_22:createBtn({
+		arg0_25:createBtn({
 			text = var1_0.TEXT_CONFIRM,
 			btnType = var1_0.BUTTON_BLUE,
-			onCallback = arg0_22.settings.onYes,
+			onCallback = arg0_25.settings.onYes,
 			sound = SFX_CONFIRM,
-			noQuit = var10_22
+			noQuit = var10_25
 		})
 	end
 
-	arg0_22:Loaded(arg1_22)
+	arg0_25:Loaded(arg1_25)
 end
 
-local function var12_0(arg0_26, arg1_26)
-	arg0_26:commonSetting(arg1_26)
-	setActive(arg0_26._worldResetPanel, true)
-	setActive(arg0_26._worldShopBtn, false)
-	setText(arg0_26._worldResetPanel:Find("content/Text"), arg1_26.tipWord)
+local function var12_0(arg0_29, arg1_29)
+	arg0_29:commonSetting(arg1_29)
+	setActive(arg0_29._worldResetPanel, true)
+	setActive(arg0_29._worldShopBtn, false)
+	setText(arg0_29._worldResetPanel:Find("content/Text"), arg1_29.tipWord)
 
-	local var0_26 = arg0_26._worldResetPanel:Find("IconTpl")
+	local var0_29 = arg0_29._worldResetPanel:Find("IconTpl")
 
-	setActive(var0_26, false)
+	setActive(var0_29, false)
 
-	local var1_26 = arg0_26._worldResetPanel:Find("content/item_list")
+	local var1_29 = arg0_29._worldResetPanel:Find("content/item_list")
 
-	removeAllChildren(var1_26)
+	removeAllChildren(var1_29)
 
-	for iter0_26, iter1_26 in ipairs(arg1_26.drops) do
-		local var2_26 = cloneTplTo(var0_26, var1_26)
+	for iter0_29, iter1_29 in ipairs(arg1_29.drops) do
+		local var2_29 = cloneTplTo(var0_29, var1_29)
 
-		updateDrop(var2_26, iter1_26)
+		updateDrop(var2_29, iter1_29)
 
-		local var3_26 = findTF(var2_26, "name")
+		local var3_29 = findTF(var2_29, "name")
 
-		changeToScrollText(var3_26, getText(var3_26))
+		changeToScrollText(var3_29, getText(var3_29))
 
-		if arg1_26.itemFunc then
-			onButton(arg0_26, var2_26, function()
-				arg1_26.itemFunc(iter1_26)
+		if arg1_29.itemFunc then
+			onButton(arg0_29, var2_29, function()
+				arg1_29.itemFunc(iter1_29)
 			end, SFX_PANEL)
 		end
 	end
 
-	onButton(arg0_26, arg0_26._worldShopBtn, function()
-		arg0_26:hide()
+	onButton(arg0_29, arg0_29._worldShopBtn, function()
+		arg0_29:hide()
 
-		return existCall(arg1_26.goShop)
+		return existCall(arg1_29.goShop)
 	end, SFX_MAIN)
-	arg0_26:Loaded(arg1_26)
+	arg0_29:Loaded(arg1_29)
 end
 
-local function var13_0(arg0_29, arg1_29)
-	arg0_29:commonSetting(arg1_29)
+local function var13_0(arg0_32, arg1_32)
+	arg0_32:commonSetting(arg1_32)
 
-	arg0_29._window.sizeDelta = Vector2(arg0_29._defaultSize.x, 520)
+	arg0_32._window.sizeDelta = Vector2(arg0_32._defaultSize.x, 520)
 
-	setActive(arg0_29._obtainPanel, true)
-	setActive(arg0_29._btnContainer, false)
+	setActive(arg0_32._obtainPanel, true)
+	setActive(arg0_32._btnContainer, false)
 
-	local var0_29 = {
+	local var0_32 = {
 		type = DROP_TYPE_SHIP,
-		id = arg1_29.shipId
+		id = arg1_32.shipId
 	}
 
-	updateDrop(arg0_29._obtainPanel, var0_29, arg1_29)
+	updateDrop(arg0_32._obtainPanel, var0_32, arg1_32)
 
-	local var1_29
-	local var4_29
+	local var1_32
+	local var4_32
 
-	if Ship.isMetaShipByConfigID(arg1_29.shipId) then
-		local var2_29 = MetaCharacterConst.GetMetaShipGroupIDByConfigID(arg1_29.shipId)
-		local var3_29 = getProxy(MetaCharacterProxy):getMetaProgressVOByID(var2_29)
+	if Ship.isMetaShipByConfigID(arg1_32.shipId) then
+		local var2_32 = MetaCharacterConst.GetMetaShipGroupIDByConfigID(arg1_32.shipId)
+		local var3_32 = getProxy(MetaCharacterProxy):getMetaProgressVOByID(var2_32)
 
-		if var3_29 and (var3_29:isInAct() or var3_29:isInArchive()) then
-			var4_29 = true
+		if var3_32 and (var3_32:isInAct() or var3_32:isInArchive()) then
+			var4_32 = true
 		else
-			var4_29 = false
+			var4_32 = false
 		end
 	else
-		var4_29 = true
+		var4_32 = true
 	end
 
-	arg0_29.obtainSkipList = arg0_29.obtainSkipList or UIItemList.New(arg0_29._obtainPanel:Find("skipable_list"), arg0_29._obtainPanel:Find("skipable_list/tpl"))
+	arg0_32.obtainSkipList = arg0_32.obtainSkipList or UIItemList.New(arg0_32._obtainPanel:Find("skipable_list"), arg0_32._obtainPanel:Find("skipable_list/tpl"))
 
-	arg0_29.obtainSkipList:make(function(arg0_30, arg1_30, arg2_30)
-		if arg0_30 == UIItemList.EventUpdate then
-			local var0_30 = arg1_29.list[arg1_30 + 1]
-			local var1_30 = var0_30[1]
-			local var2_30 = var0_30[2]
-			local var3_30 = var0_30[3]
-			local var4_30 = HXSet.hxLan(var1_30)
+	arg0_32.obtainSkipList:make(function(arg0_33, arg1_33, arg2_33)
+		if arg0_33 == UIItemList.EventUpdate then
+			local var0_33 = arg1_32.list[arg1_33 + 1]
+			local var1_33 = var0_33[1]
+			local var2_33 = var0_33[2]
+			local var3_33 = var0_33[3]
+			local var4_33 = HXSet.hxLan(var1_33)
 
-			arg2_30:Find("mask/title"):GetComponent("ScrollText"):SetText(var4_30)
-			setActive(arg2_30:Find("skip_btn"), var4_29 and var2_30[1] ~= "" and var2_30[1] ~= "COLLECTSHIP")
+			arg2_33:Find("mask/title"):GetComponent("ScrollText"):SetText(var4_33)
+			setActive(arg2_33:Find("skip_btn"), var4_32 and var2_33[1] ~= "" and var2_33[1] ~= "COLLECTSHIP")
 
-			if var2_30[1] ~= "" then
-				onButton(arg0_29, arg2_30:Find("skip_btn"), function()
-					if var3_30 and var3_30 ~= 0 then
-						local var0_31 = getProxy(ActivityProxy):getActivityById(var3_30)
+			if var2_33[1] ~= "" then
+				onButton(arg0_32, arg2_33:Find("skip_btn"), function()
+					if var3_33 and var3_33 ~= 0 then
+						local var0_34 = getProxy(ActivityProxy):getActivityById(var3_33)
 
-						if not var0_31 or var0_31:isEnd() then
+						if not var0_34 or var0_34:isEnd() then
 							var0_0.TipsMgr.GetInstance():ShowTips(i18n("collection_way_is_unopen"))
 
 							return
 						end
-					elseif var2_30[1] == "SHOP" and var2_30[2].warp == NewShopsScene.TYPE_MILITARY_SHOP and not var0_0.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getData().level, "MilitaryExerciseMediator") then
+					elseif var2_33[1] == "SHOP" and var2_33[2].warp == NewShopsScene.TYPE_MILITARY_SHOP and not var0_0.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getData().level, "MilitaryExerciseMediator") then
 						var0_0.TipsMgr.GetInstance():ShowTips(i18n("military_shop_no_open_tip"))
 
 						return
-					elseif var2_30[1] == "LEVEL" and var2_30[2] then
-						local var1_31 = var2_30[2].chapterid
-						local var2_31 = getProxy(ChapterProxy)
-						local var3_31 = var2_31:getChapterById(var1_31)
+					elseif var2_33[1] == "LEVEL" and var2_33[2] then
+						local var1_34 = var2_33[2].chapterid
+						local var2_34 = getProxy(ChapterProxy)
+						local var3_34 = var2_34:getChapterById(var1_34)
 
-						if var3_31:isUnlock() then
-							local var4_31 = var2_31:getActiveChapter()
+						if var3_34:isUnlock() then
+							local var4_34 = var2_34:getActiveChapter()
 
-							if var4_31 and var4_31.id ~= var1_31 then
-								arg0_29:ShowMsgBox({
+							if var4_34 and var4_34.id ~= var1_34 then
+								arg0_32:ShowMsgBox({
 									content = i18n("collect_chapter_is_activation"),
 									onYes = function()
 										var0_0.m02:sendNotification(GAME.CHAPTER_OP, {
@@ -818,636 +855,636 @@ local function var13_0(arg0_29, arg1_29)
 
 								return
 							else
-								local var5_31 = {
-									mapIdx = var3_31:getConfig("map")
+								local var5_34 = {
+									mapIdx = var3_34:getConfig("map")
 								}
 
-								if var3_31.active then
-									var5_31.chapterId = var3_31.id
+								if var3_34.active then
+									var5_34.chapterId = var3_34.id
 								else
-									var5_31.openChapterId = var1_31
+									var5_34.openChapterId = var1_34
 								end
 
-								var0_0.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var5_31)
+								var0_0.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var5_34)
 							end
 						else
 							var0_0.TipsMgr.GetInstance():ShowTips(i18n("acquisitionmode_is_not_open"))
 
 							return
 						end
-					elseif var2_30[1] == "COLLECTSHIP" then
-						if arg1_29.mediatorName == CollectionMediator.__cname then
+					elseif var2_33[1] == "COLLECTSHIP" then
+						if arg1_32.mediatorName == CollectionMediator.__cname then
 							var0_0.m02:sendNotification(CollectionMediator.EVENT_OBTAIN_SKIP, {
 								toggle = 2,
-								displayGroupId = var2_30[2].shipGroupId
+								displayGroupId = var2_33[2].shipGroupId
 							})
 						else
 							var0_0.m02:sendNotification(GAME.GO_SCENE, SCENE.COLLECTSHIP, {
 								toggle = 2,
-								displayGroupId = var2_30[2].shipGroupId
+								displayGroupId = var2_33[2].shipGroupId
 							})
 						end
-					elseif var2_30[1] == "SHOP" then
-						var0_0.m02:sendNotification(GAME.GO_SCENE, SCENE[var2_30[1]], var2_30[2])
+					elseif var2_33[1] == "SHOP" then
+						var0_0.m02:sendNotification(GAME.GO_SCENE, SCENE[var2_33[1]], var2_33[2])
 					else
-						var0_0.m02:sendNotification(GAME.GO_SCENE, SCENE[var2_30[1]], var2_30[2])
+						var0_0.m02:sendNotification(GAME.GO_SCENE, SCENE[var2_33[1]], var2_33[2])
 					end
 
-					arg0_29:hide()
+					arg0_32:hide()
 				end, SFX_PANEL)
 			end
 		end
 	end)
-	arg0_29.obtainSkipList:align(#arg1_29.list)
-	arg0_29:Loaded(arg1_29)
+	arg0_32.obtainSkipList:align(#arg1_32.list)
+	arg0_32:Loaded(arg1_32)
 end
 
-function var1_0.nextPage(arg0_33)
-	arg0_33.helpPage = arg0_33.helpPage + 1
+function var1_0.nextPage(arg0_36)
+	arg0_36.helpPage = arg0_36.helpPage + 1
 
-	if arg0_33.helpPage < 1 then
-		arg0_33.helpPage = 1
+	if arg0_36.helpPage < 1 then
+		arg0_36.helpPage = 1
 	end
 
-	if arg0_33.helpPage > arg0_33._helpList.childCount then
-		arg0_33.helpPage = 1
+	if arg0_36.helpPage > arg0_36._helpList.childCount then
+		arg0_36.helpPage = 1
 	end
 
-	arg0_33:switchHelpPage(arg0_33.helpPage)
+	arg0_36:switchHelpPage(arg0_36.helpPage)
 end
 
-function var1_0.prePage(arg0_34)
-	arg0_34.helpPage = arg0_34.helpPage - 1
+function var1_0.prePage(arg0_37)
+	arg0_37.helpPage = arg0_37.helpPage - 1
 
-	if arg0_34.helpPage < 1 then
-		arg0_34.helpPage = arg0_34._helpList.childCount
+	if arg0_37.helpPage < 1 then
+		arg0_37.helpPage = arg0_37._helpList.childCount
 	end
 
-	if arg0_34.helpPage > arg0_34._helpList.childCount then
-		arg0_34.helpPage = arg0_34._helpList.childCount
+	if arg0_37.helpPage > arg0_37._helpList.childCount then
+		arg0_37.helpPage = arg0_37._helpList.childCount
 	end
 
-	arg0_34:switchHelpPage(arg0_34.helpPage)
+	arg0_37:switchHelpPage(arg0_37.helpPage)
 end
 
-function var1_0.switchHelpPage(arg0_35, arg1_35)
-	for iter0_35 = 1, arg0_35._helpList.childCount do
-		local var0_35 = arg0_35._helpList:GetChild(iter0_35 - 1)
+function var1_0.switchHelpPage(arg0_38, arg1_38)
+	for iter0_38 = 1, arg0_38._helpList.childCount do
+		local var0_38 = arg0_38._helpList:GetChild(iter0_38 - 1)
 
-		setActive(var0_35, arg1_35 == iter0_35)
-		setText(var0_35:Find("icon/corner/Text"), iter0_35)
+		setActive(var0_38, arg1_38 == iter0_38)
+		setText(var0_38:Find("icon/corner/Text"), iter0_38)
 	end
 end
 
-function var1_0.commonSetting(arg0_36, arg1_36)
-	rtf(arg0_36._window).sizeDelta = arg0_36._defaultSize
-	rtf(arg0_36._helpPanel).sizeDelta = arg0_36._defaultHelpSize
-	arg0_36.enable = true
+function var1_0.commonSetting(arg0_39, arg1_39)
+	rtf(arg0_39._window).sizeDelta = arg0_39._defaultSize
+	rtf(arg0_39._helpPanel).sizeDelta = arg0_39._defaultHelpSize
+	arg0_39.enable = true
 
-	var0_0.DelegateInfo.New(arg0_36)
-	setActive(arg0_36._msgPanel, false)
-	setActive(arg0_36._exchangeShipPanel, false)
-	setActive(arg0_36._itemPanel, false)
-	setActive(arg0_36._eskinPanel, false)
-	setActive(arg0_36._sigleItemPanel, false)
-	setActive(arg0_36._inputPanel, false)
-	setActive(arg0_36._obtainPanel, false)
-	setActive(arg0_36._otherPanel, false)
-	setActive(arg0_36._worldResetPanel, false)
-	setActive(arg0_36._worldShopBtn, false)
-	setActive(arg0_36._helpBgTF, false)
-	setActive(arg0_36._helpPanel, arg1_36.helps)
+	var0_0.DelegateInfo.New(arg0_39)
+	setActive(arg0_39._msgPanel, false)
+	setActive(arg0_39._exchangeShipPanel, false)
+	setActive(arg0_39._itemPanel, false)
+	setActive(arg0_39._eskinPanel, false)
+	setActive(arg0_39._sigleItemPanel, false)
+	setActive(arg0_39._inputPanel, false)
+	setActive(arg0_39._obtainPanel, false)
+	setActive(arg0_39._otherPanel, false)
+	setActive(arg0_39._worldResetPanel, false)
+	setActive(arg0_39._worldShopBtn, false)
+	setActive(arg0_39._helpBgTF, false)
+	setActive(arg0_39._helpPanel, arg1_39.helps)
 
-	for iter0_36, iter1_36 in pairs(arg0_36.panelDict) do
-		iter1_36.buffer:Hide()
+	for iter0_39, iter1_39 in pairs(arg0_39.panelDict) do
+		iter1_39.buffer:Hide()
 	end
 
-	setActive(arg0_36._btnContainer, true)
+	setActive(arg0_39._btnContainer, true)
 
-	arg0_36.stopRemindToggle.isOn = arg1_36.toggleStatus or false
+	arg0_39.stopRemindToggle.isOn = arg1_39.toggleStatus or false
 
-	setActive(go(arg0_36.stopRemindToggle), arg1_36.showStopRemind)
+	setActive(go(arg0_39.stopRemindToggle), arg1_39.showStopRemind)
 
-	arg0_36.stopRemindText.text = arg1_36.stopRamindContent or i18n("dont_remind_today")
+	arg0_39.stopRemindText.text = arg1_39.stopRamindContent or i18n("dont_remind_today")
 
-	removeAllChildren(arg0_36._btnContainer)
+	removeAllChildren(arg0_39._btnContainer)
 
-	arg0_36.settings = arg1_36
+	arg0_39.settings = arg1_39
 
-	SetActive(arg0_36._go, true)
+	SetActive(arg0_39._go, true)
 
-	local var0_36 = arg0_36.settings.needCounter or false
+	local var0_39 = arg0_39.settings.needCounter or false
 
-	setActive(arg0_36._countSelect, var0_36)
+	setActive(arg0_39._countSelect, var0_39)
 
-	local var1_36 = arg0_36.settings.numUpdate
-	local var2_36 = arg0_36.settings.addNum or 1
-	local var3_36 = arg0_36.settings.maxNum or -1
-	local var4_36 = arg0_36.settings.defaultNum or 1
+	local var1_39 = arg0_39.settings.numUpdate
+	local var2_39 = arg0_39.settings.addNum or 1
+	local var3_39 = arg0_39.settings.maxNum or -1
+	local var4_39 = arg0_39.settings.defaultNum or 1
 
-	arg0_36._pageUtil:setNumUpdate(function(arg0_37)
-		if var1_36 ~= nil then
-			var1_36(arg0_36._countDescTxt, arg0_37)
+	arg0_39._pageUtil:setNumUpdate(function(arg0_40)
+		if var1_39 ~= nil then
+			var1_39(arg0_39._countDescTxt, arg0_40)
 		end
 	end)
-	arg0_36._pageUtil:setAddNum(var2_36)
-	arg0_36._pageUtil:setMaxNum(var3_36)
-	arg0_36._pageUtil:setDefaultNum(var4_36)
-	setActive(arg0_36._sliders, arg0_36.settings.discount)
+	arg0_39._pageUtil:setAddNum(var2_39)
+	arg0_39._pageUtil:setMaxNum(var3_39)
+	arg0_39._pageUtil:setDefaultNum(var4_39)
+	setActive(arg0_39._sliders, arg0_39.settings.discount)
 
-	if arg0_36.settings.discount then
-		arg0_36._discount:GetComponent(typeof(Text)).text = arg0_36.settings.discount.discount .. "%OFF"
-		arg0_36._discountDate:GetComponent(typeof(Text)).text = arg0_36.settings.discount.date
+	if arg0_39.settings.discount then
+		arg0_39._discount:GetComponent(typeof(Text)).text = arg0_39.settings.discount.discount .. "%OFF"
+		arg0_39._discountDate:GetComponent(typeof(Text)).text = arg0_39.settings.discount.date
 	end
 
-	setActive(arg0_36._remasterPanel, arg0_36.settings.remaster)
+	setActive(arg0_39._remasterPanel, arg0_39.settings.remaster)
 
-	if arg0_36.settings.remaster then
-		local var5_36 = arg0_36.settings.remaster
+	if arg0_39.settings.remaster then
+		local var5_39 = arg0_39.settings.remaster
 
-		setText(arg0_36._remasterPanel:Find("content/Text"), var5_36.word)
-		setText(arg0_36._remasterPanel:Find("content/count"), var5_36.number or "")
-		setText(arg0_36._remasterPanel:Find("btn/pic"), var5_36.btn_text)
-		onButton(arg0_36, arg0_36._remasterPanel:Find("btn"), function()
-			if var5_36.btn_call then
-				var5_36.btn_call()
+		setText(arg0_39._remasterPanel:Find("content/Text"), var5_39.word)
+		setText(arg0_39._remasterPanel:Find("content/count"), var5_39.number or "")
+		setText(arg0_39._remasterPanel:Find("btn/pic"), var5_39.btn_text)
+		onButton(arg0_39, arg0_39._remasterPanel:Find("btn"), function()
+			if var5_39.btn_call then
+				var5_39.btn_call()
 			end
 
-			arg0_36:hide()
+			arg0_39:hide()
 		end)
 	end
 
-	local var6_36 = arg0_36.settings.hideNo or false
-	local var7_36 = arg0_36.settings.hideYes or false
-	local var8_36 = arg0_36.settings.modal or false
-	local var9_36 = arg0_36.settings.onYes or function()
+	local var6_39 = arg0_39.settings.hideNo or false
+	local var7_39 = arg0_39.settings.hideYes or false
+	local var8_39 = arg0_39.settings.modal or false
+	local var9_39 = arg0_39.settings.onYes or function()
 		return
 	end
-	local var10_36 = arg0_36.settings.onNo or function()
+	local var10_39 = arg0_39.settings.onNo or function()
 		return
 	end
 
-	onButton(arg0_36, tf(arg0_36._go):Find("bg"), function()
-		if arg0_36.settings.onClose then
-			arg0_36.settings.onClose()
+	onButton(arg0_39, tf(arg0_39._go):Find("bg"), function()
+		if arg0_39.settings.onClose then
+			arg0_39.settings.onClose()
 		else
-			var10_36()
+			var10_39()
 		end
 
-		arg0_36:hide()
+		arg0_39:hide()
 	end, SFX_CANCEL)
-	SetCompomentEnabled(tf(arg0_36._go):Find("bg"), typeof(Button), not var8_36)
+	SetCompomentEnabled(tf(arg0_39._go):Find("bg"), typeof(Button), not var8_39)
 
-	local var11_36
-	local var12_36
+	local var11_39
+	local var12_39
 
-	if not var6_36 then
-		local var13_36 = arg0_36:createBtn({
-			text = arg0_36.settings.noText or var1_0.TEXT_CANCEL,
-			btnType = arg0_36.settings.noBtnType or var1_0.BUTTON_GRAY,
-			onCallback = var10_36,
-			sound = arg1_36.noSound or SFX_CANCEL
+	if not var6_39 then
+		local var13_39 = arg0_39:createBtn({
+			text = arg0_39.settings.noText or var1_0.TEXT_CANCEL,
+			btnType = arg0_39.settings.noBtnType or var1_0.BUTTON_GRAY,
+			onCallback = var10_39,
+			sound = arg1_39.noSound or SFX_CANCEL
 		})
 	end
 
-	if not var7_36 then
-		var12_36 = arg0_36:createBtn({
-			text = arg0_36.settings.yesText or var1_0.TEXT_CONFIRM,
-			btnType = arg0_36.settings.yesBtnType or var1_0.BUTTON_BLUE,
-			onCallback = var9_36,
-			sound = arg1_36.yesSound or SFX_CONFIRM,
-			alignment = arg0_36.settings.yesSize and TextAnchor.MiddleCenter,
-			gray = arg0_36.settings.yesGray,
-			delayButton = arg0_36.settings.delayConfirm
+	if not var7_39 then
+		var12_39 = arg0_39:createBtn({
+			text = arg0_39.settings.yesText or var1_0.TEXT_CONFIRM,
+			btnType = arg0_39.settings.yesBtnType or var1_0.BUTTON_BLUE,
+			onCallback = var9_39,
+			sound = arg1_39.yesSound or SFX_CONFIRM,
+			alignment = arg0_39.settings.yesSize and TextAnchor.MiddleCenter,
+			gray = arg0_39.settings.yesGray,
+			delayButton = arg0_39.settings.delayConfirm
 		})
 
-		if arg0_36.settings.yesSize then
-			var12_36.sizeDelta = arg0_36.settings.yesSize
+		if arg0_39.settings.yesSize then
+			var12_39.sizeDelta = arg0_39.settings.yesSize
 		end
 	end
 
-	if arg0_36.settings.yseBtnLetf then
-		var12_36:SetAsFirstSibling()
+	if arg0_39.settings.yseBtnLetf then
+		var12_39:SetAsFirstSibling()
 	end
 
-	local var14_36
+	local var14_39
 
-	if arg0_36.settings.type == MSGBOX_TYPE_HELP and arg0_36.settings.helps.pageMode and #arg0_36.settings.helps > 1 then
-		arg0_36:createBtn({
+	if arg0_39.settings.type == MSGBOX_TYPE_HELP and arg0_39.settings.helps.pageMode and #arg0_39.settings.helps > 1 then
+		arg0_39:createBtn({
 			noQuit = true,
 			btnType = var1_0.BUTTON_PREPAGE,
 			onCallback = function()
-				arg0_36:prePage()
+				arg0_39:prePage()
 			end,
 			sound = SFX_CANCEL
 		})
 
-		var14_36 = #arg0_36.settings.helps
+		var14_39 = #arg0_39.settings.helps
 	end
 
-	if arg0_36.settings.custom ~= nil then
-		for iter2_36, iter3_36 in ipairs(arg0_36.settings.custom) do
-			arg0_36:createBtn(iter3_36)
+	if arg0_39.settings.custom ~= nil then
+		for iter2_39, iter3_39 in ipairs(arg0_39.settings.custom) do
+			arg0_39:createBtn(iter3_39)
 		end
 	end
 
-	if not var14_36 then
+	if not var14_39 then
 		-- block empty
-	elseif var14_36 > 1 then
-		arg0_36:createBtn({
+	elseif var14_39 > 1 then
+		arg0_39:createBtn({
 			noQuit = true,
 			btnType = var1_0.BUTTON_NEXTPAGE,
 			onCallback = function()
-				arg0_36:nextPage()
+				arg0_39:nextPage()
 			end,
 			sound = SFX_CONFIRM
 		})
 	end
 
-	setActive(arg0_36._closeBtn, not arg1_36.hideClose)
-	onButton(arg0_36, arg0_36._closeBtn, function()
-		local var0_44 = arg0_36.settings.onClose
+	setActive(arg0_39._closeBtn, not arg1_39.hideClose)
+	onButton(arg0_39, arg0_39._closeBtn, function()
+		local var0_47 = arg0_39.settings.onClose
 
-		if arg0_36.settings and arg0_36.settings.hideClose and not var0_44 and arg0_36.settings.onYes then
-			arg0_36.settings.onYes()
+		if arg0_39.settings and arg0_39.settings.hideClose and not var0_47 and arg0_39.settings.onYes then
+			arg0_39.settings.onYes()
 		end
 
-		arg0_36:hide()
+		arg0_39:hide()
 
-		if var0_44 then
-			var0_44()
+		if var0_47 then
+			var0_47()
 		else
-			var10_36()
+			var10_39()
 		end
 	end, SFX_CANCEL)
 
-	local var15_36 = arg0_36.settings.title or var1_0.TITLE_INFORMATION
-	local var16_36 = 0
-	local var17_36 = arg0_36._titleList.transform.childCount
+	local var15_39 = arg0_39.settings.title or var1_0.TITLE_INFORMATION
+	local var16_39 = 0
+	local var17_39 = arg0_39._titleList.transform.childCount
 
-	while var16_36 < var17_36 do
-		local var18_36 = arg0_36._titleList.transform:GetChild(var16_36)
+	while var16_39 < var17_39 do
+		local var18_39 = arg0_39._titleList.transform:GetChild(var16_39)
 
-		SetActive(var18_36, var18_36.name == var15_36)
+		SetActive(var18_39, var18_39.name == var15_39)
 
-		var16_36 = var16_36 + 1
+		var16_39 = var16_39 + 1
 	end
 
-	local var19_36 = arg0_36._go.transform.localPosition
+	local var19_39 = arg0_39._go.transform.localPosition
 
-	arg0_36._go.transform.localPosition = Vector3(var19_36.x, var19_36.y, arg0_36.settings.zIndex or 0)
-	arg0_36.locked = arg0_36.settings.locked or false
+	arg0_39._go.transform.localPosition = Vector3(var19_39.x, var19_39.y, arg0_39.settings.zIndex or 0)
+	arg0_39.locked = arg0_39.settings.locked or false
 end
 
-function var1_0.createBtn(arg0_45, arg1_45)
-	local var0_45 = arg1_45.btnType or var1_0.BUTTON_BLUE
-	local var1_45 = arg1_45.noQuit
-	local var2_45 = arg0_45._go.transform:Find("custom_btn_list/custom_button_" .. var0_45)
-	local var3_45 = cloneTplTo(var2_45, arg0_45._btnContainer)
+function var1_0.createBtn(arg0_48, arg1_48)
+	local var0_48 = arg1_48.btnType or var1_0.BUTTON_BLUE
+	local var1_48 = arg1_48.noQuit
+	local var2_48 = arg0_48._go.transform:Find("custom_btn_list/custom_button_" .. var0_48)
+	local var3_48 = cloneTplTo(var2_48, arg0_48._btnContainer)
 
-	if arg1_45.label then
-		go(var3_45).name = arg1_45.label
+	if arg1_48.label then
+		go(var3_48).name = arg1_48.label
 	end
 
-	SetActive(var3_45, true)
+	SetActive(var3_48, true)
 
-	if arg1_45.scale then
-		local var4_45 = arg1_45.scale.x or 1
-		local var5_45 = arg1_45.scale.y or 1
+	if arg1_48.scale then
+		local var4_48 = arg1_48.scale.x or 1
+		local var5_48 = arg1_48.scale.y or 1
 
-		var3_45.localScale = Vector2(var4_45, var5_45)
+		var3_48.localScale = Vector2(var4_48, var5_48)
 	end
 
-	local var6_45
+	local var6_48
 
-	if var0_45 == var1_0.BUTTON_MEDAL then
-		setText(var3_45:Find("text"), arg1_45.text)
+	if var0_48 == var1_0.BUTTON_MEDAL then
+		setText(var3_48:Find("text"), arg1_48.text)
 
-		var6_45 = var3_45:Find("text")
-	elseif var0_45 ~= var1_0.BUTTON_RETREAT and var0_45 ~= var1_0.BUTTON_PREPAGE and var0_45 ~= var1_0.BUTTON_NEXTPAGE then
-		arg0_45:updateButton(var3_45, arg1_45.text, arg1_45.alignment)
+		var6_48 = var3_48:Find("text")
+	elseif var0_48 ~= var1_0.BUTTON_RETREAT and var0_48 ~= var1_0.BUTTON_PREPAGE and var0_48 ~= var1_0.BUTTON_NEXTPAGE then
+		arg0_48:updateButton(var3_48, arg1_48.text, arg1_48.alignment)
 
-		var6_45 = var3_45:Find("pic")
+		var6_48 = var3_48:Find("pic")
 	end
 
-	if var0_45 == var1_0.BUTTON_BLUE_WITH_ICON and arg1_45.iconName then
-		local var7_45 = var3_45:Find("ticket/icon")
+	if var0_48 == var1_0.BUTTON_BLUE_WITH_ICON and arg1_48.iconName then
+		local var7_48 = var3_48:Find("ticket/icon")
 
-		setImageSprite(var7_45, LoadSprite(arg1_45.iconName[1], arg1_45.iconName[2]))
+		setImageSprite(var7_48, LoadSprite(arg1_48.iconName[1], arg1_48.iconName[2]))
 	end
 
-	local var8_45
+	local var8_48
 
-	if arg1_45.delayButton then
-		local var9_45 = arg1_45.delayButton
-		local var10_45 = getText(var6_45)
+	if arg1_48.delayButton then
+		local var9_48 = arg1_48.delayButton
+		local var10_48 = getText(var6_48)
 
-		var8_45 = Timer.New(function()
-			var9_45 = var9_45 - 1
+		var8_48 = Timer.New(function()
+			var9_48 = var9_48 - 1
 
-			if var9_45 > 0 then
-				setText(var6_45, var10_45 .. string.format("(%d)", var9_45))
+			if var9_48 > 0 then
+				setText(var6_48, var10_48 .. string.format("(%d)", var9_48))
 			else
-				setText(var6_45, var10_45)
-				setGray(var3_45, arg1_45.gray, true)
+				setText(var6_48, var10_48)
+				setGray(var3_48, arg1_48.gray, true)
 
-				var8_45 = nil
+				var8_48 = nil
 			end
-		end, 1, var9_45)
-		arg0_45.timers[var3_45] = var8_45
+		end, 1, var9_48)
+		arg0_48.timers[var3_48] = var8_48
 
-		var8_45:Start()
-		setText(var6_45, var10_45 .. string.format("(%d)", var9_45))
-		setGray(var3_45, true, true)
+		var8_48:Start()
+		setText(var6_48, var10_48 .. string.format("(%d)", var9_48))
+		setGray(var3_48, true, true)
 	else
-		setGray(var3_45, arg1_45.gray, true)
+		setGray(var3_48, arg1_48.gray, true)
 	end
 
-	if not arg1_45.hideEvent then
-		onButton(arg0_45, var3_45, function()
-			if var8_45 then
+	if not arg1_48.hideEvent then
+		onButton(arg0_48, var3_48, function()
+			if var8_48 then
 				return
 			end
 
-			if type(var1_45) == "function" then
-				if var1_45() then
+			if type(var1_48) == "function" then
+				if var1_48() then
 					return
 				else
-					arg0_45:hide()
+					arg0_48:hide()
 				end
-			elseif not var1_45 then
-				arg0_45:hide()
+			elseif not var1_48 then
+				arg0_48:hide()
 			end
 
-			return existCall(arg1_45.onCallback)
-		end, arg1_45.sound or SFX_CONFIRM)
+			return existCall(arg1_48.onCallback)
+		end, arg1_48.sound or SFX_CONFIRM)
 	end
 
-	if arg1_45.sibling then
-		var3_45:SetSiblingIndex(arg1_45.sibling)
+	if arg1_48.sibling then
+		var3_48:SetSiblingIndex(arg1_48.sibling)
 	end
 
-	return var3_45
+	return var3_48
 end
 
-function var1_0.updateButton(arg0_48, arg1_48, arg2_48, arg3_48)
-	local var0_48 = var2_0[arg2_48]
-	local var1_48 = arg1_48:Find("pic")
+function var1_0.updateButton(arg0_51, arg1_51, arg2_51, arg3_51)
+	local var0_51 = var2_0[arg2_51]
+	local var1_51 = arg1_51:Find("pic")
 
-	if IsNil(var1_48) then
+	if IsNil(var1_51) then
 		return
 	end
 
-	if var0_48 then
-		setText(var1_48, i18n(var0_48))
+	if var0_51 then
+		setText(var1_51, i18n(var0_51))
 	else
-		if string.len(arg2_48) > 12 then
-			GetComponent(var1_48, typeof(Text)).resizeTextForBestFit = true
+		if string.len(arg2_51) > 12 then
+			GetComponent(var1_51, typeof(Text)).resizeTextForBestFit = true
 		end
 
-		setText(var1_48, arg2_48)
+		setText(var1_51, arg2_51)
 	end
 
-	if arg3_48 then
-		var1_48:GetComponent(typeof(Text)).alignment = arg3_48
+	if arg3_51 then
+		var1_51:GetComponent(typeof(Text)).alignment = arg3_51
 	end
 end
 
-function var1_0.Loaded(arg0_49, arg1_49)
-	var0_0.UIMgr.GetInstance():BlurPanel(arg0_49._tf, false, {
-		groupName = arg1_49.groupName,
-		weight = arg1_49.weight or LayerWeightConst.SECOND_LAYER,
-		blurLevelCamera = arg1_49.blurLevelCamera,
-		parent = arg1_49.parent
+function var1_0.Loaded(arg0_52, arg1_52)
+	var0_0.UIMgr.GetInstance():BlurPanel(arg0_52._tf, false, {
+		groupName = arg1_52.groupName,
+		weight = arg1_52.weight or LayerWeightConst.SECOND_LAYER,
+		blurLevelCamera = arg1_52.blurLevelCamera,
+		parent = arg1_52.parent
 	})
 	var0_0.m02:sendNotification(GAME.OPEN_MSGBOX_DONE)
 end
 
-function var1_0.Clear(arg0_50)
-	for iter0_50, iter1_50 in pairs(arg0_50.panelDict) do
-		iter1_50:Destroy()
+function var1_0.Clear(arg0_53)
+	for iter0_53, iter1_53 in pairs(arg0_53.panelDict) do
+		iter1_53:Destroy()
 	end
 
-	table.clear(arg0_50.panelDict)
+	table.clear(arg0_53.panelDict)
 
-	rtf(arg0_50._window).sizeDelta = arg0_50._defaultSize
-	rtf(arg0_50._helpPanel).sizeDelta = arg0_50._defaultHelpSize
+	rtf(arg0_53._window).sizeDelta = arg0_53._defaultSize
+	rtf(arg0_53._helpPanel).sizeDelta = arg0_53._defaultHelpSize
 
-	setAnchoredPosition(arg0_50._window, {
+	setAnchoredPosition(arg0_53._window, {
 		x = 0,
 		y = 0
 	})
-	setAnchoredPosition(arg0_50._btnContainer, {
+	setAnchoredPosition(arg0_53._btnContainer, {
 		y = 15
 	})
-	setAnchoredPosition(arg0_50._helpPanel, {
-		x = arg0_50._defaultHelpPos.x,
-		y = arg0_50._defaultHelpPos.y
+	setAnchoredPosition(arg0_53._helpPanel, {
+		x = arg0_53._defaultHelpPos.x,
+		y = arg0_53._defaultHelpPos.y
 	})
-	SetCompomentEnabled(arg0_50._helpPanel:Find("list"), typeof(ScrollRect), true)
-	setActive(arg0_50._top, true)
-	setActive(findTF(arg0_50._window, "bg"), true)
-	setActive(arg0_50._sigleItemPanel:Find("left/own"), false)
+	SetCompomentEnabled(arg0_53._helpPanel:Find("list"), typeof(ScrollRect), true)
+	setActive(arg0_53._top, true)
+	setActive(findTF(arg0_53._window, "bg"), true)
+	setActive(arg0_53._sigleItemPanel:Find("left/own"), false)
 
-	local var0_50 = arg0_50._sigleItemPanel:Find("left/IconTpl")
+	local var0_53 = arg0_53._sigleItemPanel:Find("left/IconTpl")
 
-	SetCompomentEnabled(var0_50:Find("icon_bg"), typeof(Image), true)
-	SetCompomentEnabled(var0_50:Find("icon_bg/frame"), typeof(Image), true)
-	setActive(var0_50:Find("icon_bg/slv"), false)
+	SetCompomentEnabled(var0_53:Find("icon_bg"), typeof(Image), true)
+	SetCompomentEnabled(var0_53:Find("icon_bg/frame"), typeof(Image), true)
+	setActive(var0_53:Find("icon_bg/slv"), false)
 
-	local var1_50 = findTF(var0_50, "icon_bg/icon")
+	local var1_53 = findTF(var0_53, "icon_bg/icon")
 
-	var1_50.pivot = Vector2(0.5, 0.5)
-	var1_50.sizeDelta = Vector2(-4, -4)
-	var1_50.anchoredPosition = Vector2(0, 0)
+	var1_53.pivot = Vector2(0.5, 0.5)
+	var1_53.sizeDelta = Vector2(-4, -4)
+	var1_53.anchoredPosition = Vector2(0, 0)
 
-	setActive(arg0_50.singleItemIntro, false)
-	setText(arg0_50._singleItemSubIntroTF, "")
+	setActive(arg0_53.singleItemIntro, false)
+	setText(arg0_53._singleItemSubIntroTF, "")
 
-	for iter2_50 = 0, arg0_50._helpList.childCount - 1 do
-		arg0_50._helpList:GetChild(iter2_50):Find("icon"):GetComponent(typeof(Image)).sprite = nil
+	for iter2_53 = 0, arg0_53._helpList.childCount - 1 do
+		arg0_53._helpList:GetChild(iter2_53):Find("icon"):GetComponent(typeof(Image)).sprite = nil
 	end
 
-	for iter3_50, iter4_50 in pairs(arg0_50.pools) do
-		if iter4_50 then
-			PoolMgr.GetInstance():ReturnUI(iter4_50.name, iter4_50)
+	for iter3_53, iter4_53 in pairs(arg0_53.pools) do
+		if iter4_53 then
+			PoolMgr.GetInstance():ReturnUI(iter4_53.name, iter4_53)
 		end
 	end
 
-	arg0_50.pools = {}
+	arg0_53.pools = {}
 
-	for iter5_50, iter6_50 in pairs(arg0_50.timers) do
-		iter6_50:Stop()
+	for iter5_53, iter6_53 in pairs(arg0_53.timers) do
+		iter6_53:Stop()
 	end
 
-	arg0_50.timers = {}
+	arg0_53.timers = {}
 
-	var0_0.DelegateInfo.Dispose(arg0_50)
-	removeAllChildren(arg0_50._btnContainer)
-	var0_0.UIMgr.GetInstance():UnblurPanel(arg0_50._tf, var0_0.UIMgr.GetInstance().OverlayMain)
-	arg0_50.contentText:RemoveAllListeners()
+	var0_0.DelegateInfo.Dispose(arg0_53)
+	removeAllChildren(arg0_53._btnContainer)
+	var0_0.UIMgr.GetInstance():UnblurPanel(arg0_53._tf, var0_0.UIMgr.GetInstance().OverlayMain)
+	arg0_53.contentText:RemoveAllListeners()
 
-	arg0_50.settings = nil
-	arg0_50.enable = false
-	arg0_50.locked = nil
+	arg0_53.settings = nil
+	arg0_53.enable = false
+	arg0_53.locked = nil
 end
 
-function var1_0.ShowMsgBox(arg0_51, arg1_51)
-	if arg0_51.locked then
+function var1_0.ShowMsgBox(arg0_54, arg1_54)
+	if arg0_54.locked then
 		return
 	end
 
-	local var0_51 = arg1_51.type or MSGBOX_TYPE_NORMAL
+	local var0_54 = arg1_54.type or MSGBOX_TYPE_NORMAL
 
-	switch(var0_51, {
+	switch(var0_54, {
 		[MSGBOX_TYPE_NORMAL] = function()
-			var3_0(arg0_51, arg1_51)
+			var3_0(arg0_54, arg1_54)
 		end,
 		[MSGBOX_TYPE_INPUT] = function()
-			var4_0(arg0_51, arg1_51)
+			var4_0(arg0_54, arg1_54)
 		end,
 		[MSGBOX_TYPE_SINGLE_ITEM] = function()
-			var9_0(arg0_51, arg1_51)
+			var9_0(arg0_54, arg1_54)
 		end,
 		[MSGBOX_TYPE_EXCHANGE] = function()
-			var5_0(arg0_51, arg1_51)
+			var5_0(arg0_54, arg1_54)
 		end,
 		[MSGBOX_TYPE_DROP_ITEM] = function()
-			var8_0(arg0_51, arg1_51)
+			var8_0(arg0_54, arg1_54)
 		end,
 		[MSGBOX_TYPE_ITEM_BOX] = function()
-			var6_0(arg0_51, arg1_51)
+			var6_0(arg0_54, arg1_54)
 		end,
 		[MSGBOX_TYPE_DROP_ITEM_ESKIN] = function()
-			var7_0(arg0_51, arg1_51)
+			var7_0(arg0_54, arg1_54)
 		end,
 		[MSGBOX_TYPE_HELP] = function()
-			arg1_51.hideNo = defaultValue(arg1_51.hideNo, true)
-			arg1_51.hideYes = defaultValue(arg1_51.hideYes, true)
+			arg1_54.hideNo = defaultValue(arg1_54.hideNo, true)
+			arg1_54.hideYes = defaultValue(arg1_54.hideYes, true)
 
-			var10_0(arg0_51, arg1_51)
+			var10_0(arg0_54, arg1_54)
 		end,
 		[MSGBOX_TYPE_SECONDPWD] = function()
-			PoolMgr.GetInstance():GetUI("Msgbox4SECPWD", true, function(arg0_61)
-				arg0_51.pools.SedondaryUI = arg0_61
+			PoolMgr.GetInstance():GetUI("Msgbox4SECPWD", true, function(arg0_64)
+				arg0_54.pools.SedondaryUI = arg0_64
 
-				if arg1_51.onPreShow then
-					arg1_51.onPreShow()
+				if arg1_54.onPreShow then
+					arg1_54.onPreShow()
 				end
 
-				arg1_51.secondaryUI = arg0_61
+				arg1_54.secondaryUI = arg0_64
 
-				SetParent(arg0_61, arg0_51._otherPanel, false)
-				var11_0(arg0_51, arg1_51)
+				SetParent(arg0_64, arg0_54._otherPanel, false)
+				var11_0(arg0_54, arg1_54)
 			end)
 		end,
 		[MSGBOX_TYPE_WORLD_RESET] = function()
-			var12_0(arg0_51, arg1_51)
+			var12_0(arg0_54, arg1_54)
 		end,
 		[MSGBOX_TYPE_OBTAIN] = function()
-			arg1_51.title = arg1_51.title or var1_0.TITLE_OBTAIN
+			arg1_54.title = arg1_54.title or var1_0.TITLE_OBTAIN
 
-			var13_0(arg0_51, arg1_51)
+			var13_0(arg0_54, arg1_54)
 		end,
 		[MSGBOX_TYPE_ITEMTIP] = function()
-			arg0_51:GetPanel(ItemTipPanel).buffer:UpdateView(arg1_51)
+			arg0_54:GetPanel(ItemTipPanel).buffer:UpdateView(arg1_54)
 		end,
 		[MSGBOX_TYPE_JUST_FOR_SHOW] = function()
-			arg0_51:GetPanel(ItemShowPanel).buffer:UpdateView(arg1_51)
+			arg0_54:GetPanel(ItemShowPanel).buffer:UpdateView(arg1_54)
 		end,
 		[MSGBOX_TYPE_MONTH_CARD_TIP] = function()
-			arg0_51:GetPanel(MonthCardOutDateTipPanel).buffer:UpdateView(arg1_51)
+			arg0_54:GetPanel(MonthCardOutDateTipPanel).buffer:UpdateView(arg1_54)
 		end,
 		[MSGBOX_TYPE_STORY_CANCEL_TIP] = function()
-			arg0_51:GetPanel(StoryCancelTipPanel).buffer:UpdateView(arg1_51)
+			arg0_54:GetPanel(StoryCancelTipPanel).buffer:UpdateView(arg1_54)
 		end,
 		[MSGBOX_TYPE_META_SKILL_UNLOCK] = function()
-			arg0_51:GetPanel(MetaSkillUnlockPanel).buffer:UpdateView(arg1_51)
+			arg0_54:GetPanel(MetaSkillUnlockPanel).buffer:UpdateView(arg1_54)
 		end,
 		[MSGBOX_TYPE_ACCOUNTDELETE] = function()
-			arg0_51:GetPanel(AccountDeletePanel).buffer:UpdateView(arg1_51)
+			arg0_54:GetPanel(AccountDeletePanel).buffer:UpdateView(arg1_54)
 		end,
 		[MSGBOX_TYPE_STRENGTHEN_BACK] = function()
-			arg0_51:GetPanel(StrengthenBackPanel).buffer:UpdateView(arg1_51)
+			arg0_54:GetPanel(StrengthenBackPanel).buffer:UpdateView(arg1_54)
 		end,
 		[MSGBOX_TYPE_CONTENT_ITEMS] = function()
-			arg0_51:GetPanel(Msgbox4ContentItems).buffer:UpdateView(arg1_51)
+			arg0_54:GetPanel(Msgbox4ContentItems).buffer:UpdateView(arg1_54)
 		end,
 		[MSGBOX_TYPE_BLUEPRINT_UNLOCK_ITEM] = function()
-			arg0_51:GetPanel(Msgbox4BlueprintUnlockItem).buffer:UpdateView(arg1_51)
+			arg0_54:GetPanel(Msgbox4BlueprintUnlockItem).buffer:UpdateView(arg1_54)
 		end,
 		[MSGBOX_TYPE_CONFIRM_DELETE] = function()
-			arg0_51:GetPanel(ConfirmEquipmentDeletePanel).buffer:UpdateView(arg1_51)
+			arg0_54:GetPanel(ConfirmEquipmentDeletePanel).buffer:UpdateView(arg1_54)
 		end,
 		[MSGBOX_TYPE_CONFIRM_REFORGE_SPWEAPON] = function()
-			arg0_51:GetPanel(Msgbox4SpweaponConfirm).buffer:UpdateView(arg1_51)
+			arg0_54:GetPanel(Msgbox4SpweaponConfirm).buffer:UpdateView(arg1_54)
 		end,
 		[MSGBOX_TYPE_SUBPATTERN] = function()
-			arg0_51:GetPanel(arg1_51.patternClass).buffer:UpdateView(arg1_51)
+			arg0_54:GetPanel(arg1_54.patternClass).buffer:UpdateView(arg1_54)
 		end,
 		[MSGBOX_TYPE_FILE_DOWNLOAD] = function()
-			arg0_51:GetPanel(FileDownloadPanel).buffer:UpdateView(arg1_51)
+			arg0_54:GetPanel(FileDownloadPanel).buffer:UpdateView(arg1_54)
 		end,
 		[MSGBOX_TYPE_LIKN_COLLECT_GUIDE] = function()
-			arg0_51:GetPanel(Msgbox4LinkCollectGuide).buffer:UpdateView(arg1_51)
+			arg0_54:GetPanel(Msgbox4LinkCollectGuide).buffer:UpdateView(arg1_54)
 		end
 	})
 end
 
-function var1_0.GetPanel(arg0_78, arg1_78)
-	if not arg0_78.panelDict[arg1_78] then
-		arg0_78.panelDict[arg1_78] = arg1_78.New(arg0_78)
+function var1_0.GetPanel(arg0_81, arg1_81)
+	if not arg0_81.panelDict[arg1_81] then
+		arg0_81.panelDict[arg1_81] = arg1_81.New(arg0_81)
 
-		arg0_78.panelDict[arg1_78]:Load()
-		arg0_78.panelDict[arg1_78].buffer:SetParent(arg0_78._window)
+		arg0_81.panelDict[arg1_81]:Load()
+		arg0_81.panelDict[arg1_81].buffer:SetParent(arg0_81._window)
 	end
 
-	return arg0_78.panelDict[arg1_78]
+	return arg0_81.panelDict[arg1_81]
 end
 
-function var1_0.CloseAndHide(arg0_79)
-	if not arg0_79.enable then
+function var1_0.CloseAndHide(arg0_82)
+	if not arg0_82.enable then
 		return
 	end
 
-	local var0_79 = arg0_79.settings
-	local var1_79 = var0_79.onClose or not var0_79.hideNo and var0_79.onNo or nil
+	local var0_82 = arg0_82.settings
+	local var1_82 = var0_82.onClose or not var0_82.hideNo and var0_82.onNo or nil
 
-	existCall(var1_79)
-	arg0_79:hide()
+	existCall(var1_82)
+	arg0_82:hide()
 end
 
-function var1_0.hide(arg0_80)
-	if not arg0_80.enable then
+function var1_0.hide(arg0_83)
+	if not arg0_83.enable then
 		return
 	end
 
-	arg0_80._go:SetActive(false)
-	arg0_80:Clear()
+	arg0_83._go:SetActive(false)
+	arg0_83:Clear()
 	var0_0.m02:sendNotification(GAME.CLOSE_MSGBOX_DONE)
 end
 
-function var1_0.emit(arg0_81, arg1_81, ...)
-	if not arg0_81.analogyMediator then
-		arg0_81.analogyMediator = {
-			addSubLayers = function(arg0_82, arg1_82)
+function var1_0.emit(arg0_84, arg1_84, ...)
+	if not arg0_84.analogyMediator then
+		arg0_84.analogyMediator = {
+			addSubLayers = function(arg0_85, arg1_85)
 				var0_0.m02:sendNotification(GAME.LOAD_LAYERS, {
 					parentContext = getProxy(ContextProxy):getCurrentContext(),
-					context = arg1_82
+					context = arg1_85
 				})
 			end,
-			sendNotification = function(arg0_83, ...)
+			sendNotification = function(arg0_86, ...)
 				var0_0.m02:sendNotification(...)
 			end,
-			viewComponent = arg0_81
+			viewComponent = arg0_84
 		}
 	end
 
-	return ContextMediator.CommonBindDic[arg1_81](arg0_81.analogyMediator, arg1_81, ...)
+	return ContextMediator.CommonBindDic[arg1_84](arg0_84.analogyMediator, arg1_84, ...)
 end
 
-function var1_0.closeView(arg0_84)
-	arg0_84:hide()
+function var1_0.closeView(arg0_87)
+	arg0_87:hide()
 end
 
 return var1_0

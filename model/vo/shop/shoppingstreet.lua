@@ -125,4 +125,20 @@ function var0_0.getGoodsById(arg0_18, arg1_18)
 	end
 end
 
+function var0_0.GetResList(arg0_19)
+	local var0_19 = {}
+
+	for iter0_19, iter1_19 in pairs(arg0_19.goods) do
+		var0_19[iter1_19:getConfig("resource_type")] = true
+	end
+
+	local var1_19 = {}
+
+	for iter2_19, iter3_19 in pairs(var0_19) do
+		table.insert(var1_19, iter2_19)
+	end
+
+	return var1_19
+end
+
 return var0_0

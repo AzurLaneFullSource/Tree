@@ -73,4 +73,20 @@ function var0_0.updateGoods(arg0_12, arg1_12)
 	arg0_12.goods[arg1_12.id] = arg1_12
 end
 
+function var0_0.GetResList(arg0_13)
+	local var0_13 = {}
+
+	for iter0_13, iter1_13 in pairs(arg0_13.goods) do
+		var0_13[iter1_13:getConfig("resource_type")] = true
+	end
+
+	local var1_13 = {}
+
+	for iter2_13, iter3_13 in pairs(var0_13) do
+		table.insert(var1_13, iter2_13)
+	end
+
+	return var1_13
+end
+
 return var0_0

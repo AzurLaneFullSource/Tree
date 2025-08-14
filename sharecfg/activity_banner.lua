@@ -1,16 +1,21 @@
 pg = pg or {}
 pg.activity_banner = {
 	{
-		param = "https://app.adjust.com/1r54aoy0?redirect=https%3A%2F%2Fwww.youtube.com%2Flive%2FiPQH2XObbBI",
 		id = 1,
-		pic = "temp2",
-		type = 1,
+		pic = "temp11",
+		type = 2,
+		param = {
+			"scene charge",
+			{
+				wrap = 2
+			}
+		},
 		time = {
 			{
 				{
 					2025,
 					8,
-					7
+					14
 				},
 				{
 					0,
@@ -22,40 +27,29 @@ pg.activity_banner = {
 				{
 					2025,
 					8,
-					9
+					27
 				},
 				{
-					20,
-					0,
-					0
+					23,
+					59,
+					59
 				}
 			}
 		}
 	},
 	{
 		id = 2,
-		pic = "temp3",
-		time = "stop",
+		pic = "temp12",
 		type = 2,
 		param = {
-			"scene get boat",
-			{
-				projectName = "new",
-				page = 1
-			}
-		}
-	},
-	{
-		param = "50069",
-		id = 3,
-		pic = "temp4",
-		type = 3,
+			"scene court yard"
+		},
 		time = {
 			{
 				{
 					2025,
 					8,
-					7
+					14
 				},
 				{
 					0,
@@ -67,7 +61,44 @@ pg.activity_banner = {
 				{
 					2025,
 					8,
-					13
+					27
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 3,
+		pic = "temp14",
+		type = 2,
+		param = {
+			"scene charge",
+			{
+				wrap = 1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					8,
+					14
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					8,
+					27
 				},
 				{
 					23,
@@ -79,29 +110,20 @@ pg.activity_banner = {
 	},
 	{
 		id = 4,
-		pic = "temp5",
-		time = "stop",
+		pic = "temp13",
 		type = 2,
 		param = {
-			"scene charge",
+			"scene get boat",
 			{
-				wrap = 2
+				goToPray = true
 			}
-		}
-	},
-	{
-		id = 5,
-		pic = "temp1",
-		type = 2,
-		param = {
-			"crusing"
 		},
 		time = {
 			{
 				{
 					2025,
 					8,
-					7
+					14
 				},
 				{
 					0,
@@ -113,7 +135,42 @@ pg.activity_banner = {
 				{
 					2025,
 					8,
-					13
+					27
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 5,
+		pic = "temp2",
+		type = 2,
+		param = {
+			"scene skinshop",
+			{}
+		},
+		time = {
+			{
+				{
+					2025,
+					8,
+					14
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					8,
+					27
 				},
 				{
 					23,
@@ -125,17 +182,21 @@ pg.activity_banner = {
 	},
 	{
 		id = 6,
-		pic = "temp7",
+		pic = "temp3",
 		type = 2,
 		param = {
-			"dorm 3d select"
+			"scene get boat",
+			{
+				projectName = "new",
+				page = 1
+			}
 		},
 		time = {
 			{
 				{
 					2025,
 					8,
-					7
+					14
 				},
 				{
 					0,
@@ -147,7 +208,7 @@ pg.activity_banner = {
 				{
 					2025,
 					8,
-					13
+					27
 				},
 				{
 					23,
@@ -158,8 +219,116 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "50070",
 		id = 7,
+		pic = "temp4",
+		type = 2,
+		param = {
+			"scene core activity",
+			{
+				coreName = "SecretsAbyssCoreActivityUI"
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					8,
+					14
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					8,
+					27
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[9] = {
+		id = 9,
+		pic = "temp1",
+		type = 2,
+		param = {
+			"scene shop",
+			{
+				warp = "shopstreet"
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					8,
+					14
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					8,
+					27
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[10] = {
+		id = 10,
+		pic = "temp7",
+		type = 2,
+		param = {
+			"scene court yard"
+		},
+		time = {
+			{
+				{
+					2025,
+					8,
+					14
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					8,
+					27
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[11] = {
+		param = "50083",
+		id = 11,
 		pic = "temp8",
 		type = 3,
 		time = {
@@ -167,7 +336,7 @@ pg.activity_banner = {
 				{
 					2025,
 					8,
-					7
+					14
 				},
 				{
 					0,
@@ -179,7 +348,7 @@ pg.activity_banner = {
 				{
 					2025,
 					8,
-					13
+					27
 				},
 				{
 					23,
@@ -189,23 +358,19 @@ pg.activity_banner = {
 			}
 		}
 	},
-	{
-		id = 8,
+	[12] = {
+		id = 12,
 		pic = "temp9",
 		type = 2,
 		param = {
-			"scene equip",
-			{
-				designPage = 2,
-				warp = "WARP_TO_DESIGN"
-			}
+			"seltechnology"
 		},
 		time = {
 			{
 				{
 					2025,
 					8,
-					7
+					14
 				},
 				{
 					0,
@@ -217,39 +382,7 @@ pg.activity_banner = {
 				{
 					2025,
 					8,
-					13
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		param = "50068",
-		id = 9,
-		pic = "temp6",
-		type = 3,
-		time = {
-			{
-				{
-					2025,
-					8,
-					7
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					8,
-					13
+					27
 				},
 				{
 					23,
@@ -261,10 +394,35 @@ pg.activity_banner = {
 	},
 	[90] = {
 		param = "",
-		time = "stop",
-		type = 9,
 		id = 90,
-		pic = "temp99"
+		pic = "temp99",
+		type = 9,
+		time = {
+			{
+				{
+					2025,
+					8,
+					14
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					8,
+					20
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
 	},
 	[91] = {
 		param = "",
@@ -282,10 +440,35 @@ pg.activity_banner = {
 	},
 	[99] = {
 		param = "",
-		time = "stop",
-		type = 12,
 		id = 99,
-		pic = "limit_skin"
+		pic = "limit_skin",
+		type = 12,
+		time = {
+			{
+				{
+					2025,
+					8,
+					14
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					8,
+					27
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
 	},
 	[100] = {
 		param = "Dumplings|A world-famous delight from the Dragon Empery! <color=#92fc63>(Increases EXP gained by 5% for 60 minutes.)</color>",
@@ -323,20 +506,20 @@ pg.activity_banner = {
 		pic = "winter"
 	},
 	get_id_list_by_type = {
-		{
-			1
-		},
-		{
+		[2] = {
+			1,
 			2,
+			3,
 			4,
 			5,
 			6,
-			8
-		},
-		{
-			3,
 			7,
-			9
+			9,
+			10,
+			12
+		},
+		[3] = {
+			11
 		},
 		[9] = {
 			90,
@@ -366,8 +549,10 @@ pg.activity_banner = {
 		5,
 		6,
 		7,
-		8,
 		9,
+		10,
+		11,
+		12,
 		90,
 		91,
 		95,

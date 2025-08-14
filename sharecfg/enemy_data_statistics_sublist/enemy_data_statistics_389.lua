@@ -1,386 +1,314 @@
 pg = pg or {}
 pg.enemy_data_statistics_389 = {
-	[295158] = {
-		cannon = 224,
-		name = "Algérie META",
+	[295053] = {
+		cannon = 165,
+		name = "Souryuu META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 0,
+		air = 386,
 		hit_growth = 0,
-		dodge = 50,
-		base = 90765,
+		dodge = 18,
+		base = 90536,
 		durability_growth = 0,
-		antiaircraft = 210,
+		antiaircraft = 288,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 50,
+		luck = 13,
+		hit = 65,
+		antisub_growth = 0,
+		air_growth = 0,
+		fog_fx = "",
+		torpedo = 0,
+		durability = 310000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		id = 295053,
+		buff_list = {
+			{
+				ID = 8830,
+				LV = 2
+			}
+		}
+	},
+	[295054] = {
+		cannon = 175,
+		name = "Souryuu META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 400,
+		hit_growth = 0,
+		dodge = 19,
+		base = 90536,
+		durability_growth = 0,
+		antiaircraft = 302,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 14,
 		hit = 70,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 168,
-		durability = 314000,
+		fog_fx = "",
+		torpedo = 0,
+		durability = 390000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295158,
+		id = 295054,
 		buff_list = {
 			{
-				ID = 200462,
-				LV = 4
-			},
-			{
-				ID = 200463,
-				LV = 8
-			},
-			{
-				ID = 200466,
-				LV = 3
+				ID = 8830,
+				LV = 2
 			}
 		}
 	},
-	[295159] = {
-		cannon = 240,
-		name = "Algérie META",
+	[295055] = {
+		cannon = 185,
+		name = "Souryuu META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 0,
+		air = 414,
 		hit_growth = 0,
-		dodge = 53,
-		base = 90765,
+		dodge = 20,
+		base = 90536,
 		durability_growth = 0,
-		antiaircraft = 225,
+		antiaircraft = 316,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 50,
+		luck = 15,
 		hit = 75,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 180,
-		durability = 395000,
+		fog_fx = "",
+		torpedo = 0,
+		durability = 480000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295159,
+		id = 295055,
 		buff_list = {
 			{
-				ID = 200462,
-				LV = 5
-			},
-			{
-				ID = 200463,
-				LV = 9
-			},
-			{
-				ID = 200466,
-				LV = 3
+				ID = 8830,
+				LV = 2
 			}
 		}
 	},
-	[295160] = {
-		cannon = 256,
-		name = "Algérie META",
+	[295056] = {
+		cannon = 195,
+		name = "Souryuu META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 0,
+		air = 428,
 		hit_growth = 0,
-		dodge = 57,
-		base = 90765,
+		dodge = 22,
+		base = 90536,
 		durability_growth = 0,
-		antiaircraft = 240,
+		antiaircraft = 330,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 50,
+		luck = 16,
 		hit = 80,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 192,
-		durability = 486000,
+		fog_fx = "",
+		torpedo = 0,
+		durability = 600000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295160,
+		id = 295056,
 		buff_list = {
 			{
-				ID = 200462,
-				LV = 5
-			},
-			{
-				ID = 200463,
-				LV = 10
-			},
-			{
-				ID = 200466,
-				LV = 4
+				ID = 8830,
+				LV = 2
 			}
 		}
 	},
-	[295161] = {
-		cannon = 272,
-		name = "Algérie META",
+	[295057] = {
+		cannon = 205,
+		name = "Souryuu META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 0,
+		air = 442,
 		hit_growth = 0,
-		dodge = 60,
-		base = 90765,
+		dodge = 24,
+		base = 90536,
 		durability_growth = 0,
-		antiaircraft = 255,
+		antiaircraft = 344,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 50,
+		luck = 17,
 		hit = 85,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 204,
-		durability = 608000,
+		fog_fx = "",
+		torpedo = 0,
+		durability = 750000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295161,
+		id = 295057,
 		buff_list = {
 			{
-				ID = 200462,
-				LV = 6
-			},
-			{
-				ID = 200463,
-				LV = 11
-			},
-			{
-				ID = 200466,
-				LV = 4
+				ID = 8830,
+				LV = 2
 			}
 		}
 	},
-	[295162] = {
-		cannon = 288,
-		name = "Algérie META",
+	[295058] = {
+		cannon = 215,
+		name = "Souryuu META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 0,
+		air = 456,
 		hit_growth = 0,
-		dodge = 64,
-		base = 90765,
+		dodge = 26,
+		base = 90536,
 		durability_growth = 0,
-		antiaircraft = 270,
+		antiaircraft = 358,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 50,
+		luck = 18,
 		hit = 90,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 216,
-		durability = 790000,
+		fog_fx = "",
+		torpedo = 0,
+		durability = 930000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295162,
+		id = 295058,
 		buff_list = {
 			{
-				ID = 200462,
-				LV = 6
-			},
-			{
-				ID = 200463,
-				LV = 12
-			},
-			{
-				ID = 200466,
-				LV = 4
+				ID = 8830,
+				LV = 2
 			}
 		}
 	},
-	[295163] = {
-		cannon = 304,
-		name = "Algérie META",
+	[295059] = {
+		cannon = 225,
+		name = "Souryuu META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 0,
+		air = 470,
 		hit_growth = 0,
-		dodge = 67,
-		base = 90765,
+		dodge = 28,
+		base = 90536,
 		durability_growth = 0,
-		antiaircraft = 285,
+		antiaircraft = 372,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 50,
+		luck = 19,
 		hit = 95,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 228,
-		durability = 1013000,
+		fog_fx = "",
+		torpedo = 0,
+		durability = 1140000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295163,
+		id = 295059,
 		buff_list = {
 			{
-				ID = 200462,
-				LV = 7
-			},
-			{
-				ID = 200463,
-				LV = 13
-			},
-			{
-				ID = 200466,
-				LV = 5
+				ID = 8830,
+				LV = 2
 			}
 		}
 	},
-	[295164] = {
-		cannon = 320,
-		name = "Algérie META",
+	[295060] = {
+		cannon = 235,
+		name = "Souryuu META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 0,
+		air = 484,
 		hit_growth = 0,
-		dodge = 71,
-		base = 90765,
+		dodge = 30,
+		base = 90536,
 		durability_growth = 0,
-		antiaircraft = 300,
+		antiaircraft = 386,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 50,
-		hit = 100,
+		luck = 20,
+		hit = 105,
 		antisub_growth = 0,
 		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 240,
-		durability = 1256000,
+		fog_fx = "",
+		torpedo = 0,
+		durability = 1380000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
 		antisub = 0,
-		fog_fx = "",
-		id = 295164,
+		id = 295060,
 		buff_list = {
 			{
-				ID = 200462,
-				LV = 7
-			},
-			{
-				ID = 200463,
-				LV = 14
-			},
-			{
-				ID = 200466,
-				LV = 5
+				ID = 8830,
+				LV = 2
 			}
 		}
 	},
-	[295165] = {
-		cannon = 336,
-		name = "Algérie META",
+	[295061] = {
+		cannon = 202,
+		name = "Gneisenau META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 75,
-		base = 90765,
+		dodge = 11,
+		base = 90600,
 		durability_growth = 0,
-		antiaircraft = 315,
+		antiaircraft = 176,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 50,
-		hit = 110,
+		luck = 10,
+		hit = 30,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 252,
-		durability = 1500000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295165,
-		buff_list = {
-			{
-				ID = 200462,
-				LV = 8
-			},
-			{
-				ID = 200463,
-				LV = 15
-			},
-			{
-				ID = 200466,
-				LV = 5
-			}
-		}
-	},
-	[295166] = {
-		cannon = 109,
-		name = "Jintsuu META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 25,
-		base = 90805,
-		durability_growth = 0,
-		antiaircraft = 95,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 30,
-		luck = 40,
-		hit = 35,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 117,
+		torpedo = 88,
 		durability = 50000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -389,43 +317,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295166,
+		id = 295061,
 		buff_list = {
 			{
-				ID = 200575,
-				LV = 1
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 200577,
-				LV = 1
-			},
-			{
-				ID = 200579,
+				ID = 50510,
 				LV = 1
 			}
 		}
 	},
-	[295167] = {
-		cannon = 124,
-		name = "Jintsuu META",
+	[295062] = {
+		cannon = 214,
+		name = "Gneisenau META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 28,
-		base = 90805,
+		dodge = 12,
+		base = 90600,
 		durability_growth = 0,
-		antiaircraft = 110,
+		antiaircraft = 190,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 40,
-		hit = 40,
+		luck = 10,
+		hit = 35,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 134,
+		torpedo = 97,
 		durability = 54000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -434,43 +358,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295167,
+		id = 295062,
 		buff_list = {
 			{
-				ID = 200575,
-				LV = 1
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 200577,
-				LV = 1
-			},
-			{
-				ID = 200579,
+				ID = 50510,
 				LV = 1
 			}
 		}
 	},
-	[295168] = {
-		cannon = 140,
-		name = "Jintsuu META",
+	[295063] = {
+		cannon = 227,
+		name = "Gneisenau META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 32,
-		base = 90805,
+		dodge = 13,
+		base = 90600,
 		durability_growth = 0,
-		antiaircraft = 125,
+		antiaircraft = 204,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 40,
-		hit = 45,
+		luck = 10,
+		hit = 40,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 150,
+		torpedo = 106,
 		durability = 58000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -479,43 +399,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295168,
+		id = 295063,
 		buff_list = {
 			{
-				ID = 200575,
-				LV = 1
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 200577,
-				LV = 1
-			},
-			{
-				ID = 200579,
+				ID = 50510,
 				LV = 1
 			}
 		}
 	},
-	[295169] = {
-		cannon = 156,
-		name = "Jintsuu META",
+	[295064] = {
+		cannon = 240,
+		name = "Gneisenau META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 35,
-		base = 90805,
+		dodge = 14,
+		base = 90600,
 		durability_growth = 0,
-		antiaircraft = 140,
+		antiaircraft = 218,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 40,
-		hit = 50,
+		luck = 10,
+		hit = 45,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 167,
+		torpedo = 115,
 		durability = 70000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -524,43 +440,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295169,
+		id = 295064,
 		buff_list = {
 			{
-				ID = 200575,
-				LV = 1
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 200577,
-				LV = 1
-			},
-			{
-				ID = 200579,
-				LV = 1
+				ID = 50510,
+				LV = 2
 			}
 		}
 	},
-	[295170] = {
-		cannon = 171,
-		name = "Jintsuu META",
+	[295065] = {
+		cannon = 254,
+		name = "Gneisenau META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 39,
-		base = 90805,
+		dodge = 15,
+		base = 90600,
 		durability_growth = 0,
-		antiaircraft = 155,
+		antiaircraft = 232,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 40,
-		hit = 55,
+		luck = 10,
+		hit = 50,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 184,
+		torpedo = 124,
 		durability = 110000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -569,43 +481,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295170,
+		id = 295065,
 		buff_list = {
 			{
-				ID = 200575,
-				LV = 1
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 200577,
-				LV = 1
-			},
-			{
-				ID = 200579,
-				LV = 1
+				ID = 50510,
+				LV = 2
 			}
 		}
 	},
-	[295171] = {
-		cannon = 187,
-		name = "Jintsuu META",
+	[295066] = {
+		cannon = 268,
+		name = "Gneisenau META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 42,
-		base = 90805,
+		dodge = 16,
+		base = 90600,
 		durability_growth = 0,
-		antiaircraft = 170,
+		antiaircraft = 246,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 40,
-		hit = 60,
+		luck = 11,
+		hit = 55,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 201,
+		torpedo = 133,
 		durability = 150000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -614,43 +522,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295171,
+		id = 295066,
 		buff_list = {
 			{
-				ID = 200575,
-				LV = 1
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 200577,
-				LV = 1
-			},
-			{
-				ID = 200579,
-				LV = 1
+				ID = 50510,
+				LV = 2
 			}
 		}
 	},
-	[295172] = {
-		cannon = 203,
-		name = "Jintsuu META",
+	[295067] = {
+		cannon = 283,
+		name = "Gneisenau META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 46,
-		base = 90805,
+		dodge = 17,
+		base = 90600,
 		durability_growth = 0,
-		antiaircraft = 185,
+		antiaircraft = 260,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 40,
-		hit = 65,
+		luck = 12,
+		hit = 60,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 217,
+		torpedo = 142,
 		durability = 230000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -659,43 +563,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295172,
+		id = 295067,
 		buff_list = {
 			{
-				ID = 200575,
-				LV = 1
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 200577,
-				LV = 1
-			},
-			{
-				ID = 200579,
-				LV = 1
+				ID = 50510,
+				LV = 3
 			}
 		}
 	},
-	[295173] = {
-		cannon = 218,
-		name = "Jintsuu META",
+	[295068] = {
+		cannon = 298,
+		name = "Gneisenau META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 50,
-		base = 90805,
+		dodge = 18,
+		base = 90600,
 		durability_growth = 0,
-		antiaircraft = 200,
+		antiaircraft = 274,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 40,
-		hit = 70,
+		luck = 13,
+		hit = 65,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 234,
+		torpedo = 151,
 		durability = 310000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -704,43 +604,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295173,
+		id = 295068,
 		buff_list = {
 			{
-				ID = 200575,
-				LV = 1
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 200577,
-				LV = 1
-			},
-			{
-				ID = 200579,
-				LV = 1
+				ID = 50510,
+				LV = 3
 			}
 		}
 	},
-	[295174] = {
-		cannon = 234,
-		name = "Jintsuu META",
+	[295069] = {
+		cannon = 314,
+		name = "Gneisenau META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 53,
-		base = 90805,
+		dodge = 19,
+		base = 90600,
 		durability_growth = 0,
-		antiaircraft = 215,
+		antiaircraft = 288,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 40,
-		hit = 75,
+		luck = 14,
+		hit = 70,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 251,
+		torpedo = 160,
 		durability = 390000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -749,43 +645,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295174,
+		id = 295069,
 		buff_list = {
 			{
-				ID = 200575,
-				LV = 1
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 200577,
-				LV = 1
-			},
-			{
-				ID = 200579,
-				LV = 1
+				ID = 50510,
+				LV = 3
 			}
 		}
 	},
-	[295175] = {
-		cannon = 249,
-		name = "Jintsuu META",
+	[295070] = {
+		cannon = 330,
+		name = "Gneisenau META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 57,
-		base = 90805,
+		dodge = 20,
+		base = 90600,
 		durability_growth = 0,
-		antiaircraft = 230,
+		antiaircraft = 302,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 40,
-		hit = 80,
+		luck = 15,
+		hit = 75,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 268,
+		torpedo = 169,
 		durability = 480000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -794,43 +686,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295175,
+		id = 295070,
 		buff_list = {
 			{
-				ID = 200575,
-				LV = 1
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 200577,
-				LV = 1
-			},
-			{
-				ID = 200579,
-				LV = 1
+				ID = 50510,
+				LV = 4
 			}
 		}
 	},
-	[295176] = {
-		cannon = 265,
-		name = "Jintsuu META",
+	[295071] = {
+		cannon = 347,
+		name = "Gneisenau META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 60,
-		base = 90805,
+		dodge = 21,
+		base = 90600,
 		durability_growth = 0,
-		antiaircraft = 245,
+		antiaircraft = 316,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 40,
-		hit = 85,
+		luck = 16,
+		hit = 80,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 284,
+		torpedo = 178,
 		durability = 600000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -839,44 +727,81 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295176,
+		id = 295071,
 		buff_list = {
 			{
-				ID = 200575,
-				LV = 1
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 200577,
-				LV = 1
-			},
-			{
-				ID = 200579,
-				LV = 1
+				ID = 50510,
+				LV = 4
 			}
 		}
 	},
-	[295177] = {
-		cannon = 281,
-		name = "Jintsuu META",
+	[295072] = {
+		cannon = 364,
+		name = "Gneisenau META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 64,
-		base = 90805,
+		dodge = 22,
+		base = 90600,
 		durability_growth = 0,
-		antiaircraft = 260,
+		antiaircraft = 330,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 40,
+		luck = 17,
+		hit = 85,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 187,
+		durability = 780000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295072,
+		buff_list = {
+			{
+				ID = 8830,
+				LV = 2
+			},
+			{
+				ID = 50510,
+				LV = 4
+			}
+		}
+	},
+	[295073] = {
+		cannon = 382,
+		name = "Gneisenau META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 23,
+		base = 90600,
+		durability_growth = 0,
+		antiaircraft = 344,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 18,
 		hit = 90,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 301,
-		durability = 760000,
+		torpedo = 196,
+		durability = 1000000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
@@ -884,44 +809,40 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295177,
+		id = 295073,
 		buff_list = {
 			{
-				ID = 200575,
-				LV = 1
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 200577,
-				LV = 1
-			},
-			{
-				ID = 200579,
-				LV = 1
+				ID = 50510,
+				LV = 5
 			}
 		}
 	},
-	[295178] = {
-		cannon = 296,
-		name = "Jintsuu META",
+	[295074] = {
+		cannon = 401,
+		name = "Gneisenau META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 67,
-		base = 90805,
+		dodge = 24,
+		base = 90600,
 		durability_growth = 0,
-		antiaircraft = 275,
+		antiaircraft = 358,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 40,
+		luck = 19,
 		hit = 95,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 318,
-		durability = 950000,
+		torpedo = 205,
+		durability = 1240000,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		luck_growth = 0,
@@ -929,133 +850,80 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295178,
+		id = 295074,
 		buff_list = {
 			{
-				ID = 200575,
-				LV = 1
+				ID = 8830,
+				LV = 2
 			},
 			{
-				ID = 200577,
-				LV = 1
-			},
-			{
-				ID = 200579,
-				LV = 1
+				ID = 50510,
+				LV = 5
 			}
 		}
 	},
-	[295179] = {
-		cannon = 312,
-		name = "Jintsuu META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 71,
-		base = 90805,
-		durability_growth = 0,
-		antiaircraft = 290,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 30,
-		luck = 40,
-		hit = 100,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 335,
-		durability = 1170000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295179,
-		buff_list = {
-			{
-				ID = 200575,
-				LV = 1
-			},
-			{
-				ID = 200577,
-				LV = 1
-			},
-			{
-				ID = 200579,
-				LV = 1
-			}
-		}
-	},
-	[295180] = {
-		cannon = 328,
-		name = "Jintsuu META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 75,
-		base = 90805,
-		durability_growth = 0,
-		antiaircraft = 305,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 30,
-		luck = 40,
-		hit = 110,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 352,
-		durability = 1420000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295180,
-		buff_list = {
-			{
-				ID = 200575,
-				LV = 1
-			},
-			{
-				ID = 200577,
-				LV = 1
-			},
-			{
-				ID = 200579,
-				LV = 1
-			}
-		}
-	},
-	[295181] = {
-		cannon = 110,
-		name = "Kirov META",
+	[295075] = {
+		cannon = 421,
+		name = "Gneisenau META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
 		dodge = 25,
-		base = 90871,
+		base = 90600,
 		durability_growth = 0,
-		antiaircraft = 115,
+		antiaircraft = 372,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 50,
+		luck = 20,
+		hit = 105,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 214,
+		durability = 1480000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295075,
+		buff_list = {
+			{
+				ID = 8830,
+				LV = 2
+			},
+			{
+				ID = 50510,
+				LV = 5
+			}
+		}
+	},
+	[295076] = {
+		cannon = 183,
+		name = "Scharnhorst META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 11,
+		base = 90623,
+		durability_growth = 0,
+		antiaircraft = 176,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 15,
 		hit = 35,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 107,
+		torpedo = 98,
 		durability = 50000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -1064,35 +932,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295181,
+		id = 295076,
 		buff_list = {
 			{
-				ID = 200701,
+				ID = 8830,
+				LV = 2
+			},
+			{
+				ID = 50510,
 				LV = 1
 			}
 		}
 	},
-	[295182] = {
-		cannon = 126,
-		name = "Kirov META",
+	[295077] = {
+		cannon = 195,
+		name = "Scharnhorst META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 28,
-		base = 90871,
+		dodge = 12,
+		base = 90623,
 		durability_growth = 0,
-		antiaircraft = 131,
+		antiaircraft = 190,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 50,
+		luck = 15,
 		hit = 40,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 122,
+		torpedo = 108,
 		durability = 54000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -1101,35 +973,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295182,
+		id = 295077,
 		buff_list = {
 			{
-				ID = 200701,
+				ID = 8830,
 				LV = 2
+			},
+			{
+				ID = 50510,
+				LV = 1
 			}
 		}
 	},
-	[295183] = {
-		cannon = 142,
-		name = "Kirov META",
+	[295078] = {
+		cannon = 207,
+		name = "Scharnhorst META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 32,
-		base = 90871,
+		dodge = 13,
+		base = 90623,
 		durability_growth = 0,
-		antiaircraft = 148,
+		antiaircraft = 204,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 50,
+		luck = 15,
 		hit = 45,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 137,
+		torpedo = 118,
 		durability = 58000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -1138,35 +1014,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295183,
+		id = 295078,
 		buff_list = {
 			{
-				ID = 200701,
-				LV = 3
+				ID = 8830,
+				LV = 2
+			},
+			{
+				ID = 50510,
+				LV = 1
 			}
 		}
 	},
-	[295184] = {
-		cannon = 158,
-		name = "Kirov META",
+	[295079] = {
+		cannon = 220,
+		name = "Scharnhorst META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 35,
-		base = 90871,
+		dodge = 14,
+		base = 90623,
 		durability_growth = 0,
-		antiaircraft = 164,
+		antiaircraft = 218,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 50,
+		luck = 15,
 		hit = 50,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 152,
+		torpedo = 128,
 		durability = 70000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -1175,35 +1055,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295184,
+		id = 295079,
 		buff_list = {
 			{
-				ID = 200701,
-				LV = 4
+				ID = 8830,
+				LV = 2
+			},
+			{
+				ID = 50510,
+				LV = 2
 			}
 		}
 	},
-	[295185] = {
-		cannon = 173,
-		name = "Kirov META",
+	[295080] = {
+		cannon = 233,
+		name = "Scharnhorst META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 39,
-		base = 90871,
+		dodge = 15,
+		base = 90623,
 		durability_growth = 0,
-		antiaircraft = 181,
+		antiaircraft = 232,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 50,
+		luck = 15,
 		hit = 55,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 168,
+		torpedo = 138,
 		durability = 110000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -1212,35 +1096,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295185,
+		id = 295080,
 		buff_list = {
 			{
-				ID = 200701,
-				LV = 5
+				ID = 8830,
+				LV = 2
+			},
+			{
+				ID = 50510,
+				LV = 2
 			}
 		}
 	},
-	[295186] = {
-		cannon = 189,
-		name = "Kirov META",
+	[295081] = {
+		cannon = 247,
+		name = "Scharnhorst META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 42,
-		base = 90871,
+		dodge = 16,
+		base = 90623,
 		durability_growth = 0,
-		antiaircraft = 197,
+		antiaircraft = 246,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 50,
+		luck = 16,
 		hit = 60,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 183,
+		torpedo = 148,
 		durability = 150000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -1249,35 +1137,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295186,
+		id = 295081,
 		buff_list = {
 			{
-				ID = 200701,
-				LV = 6
+				ID = 8830,
+				LV = 2
+			},
+			{
+				ID = 50510,
+				LV = 2
 			}
 		}
 	},
-	[295187] = {
-		cannon = 205,
-		name = "Kirov META",
+	[295082] = {
+		cannon = 261,
+		name = "Scharnhorst META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 46,
-		base = 90871,
+		dodge = 17,
+		base = 90623,
 		durability_growth = 0,
-		antiaircraft = 214,
+		antiaircraft = 260,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 50,
+		luck = 17,
 		hit = 65,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 198,
+		torpedo = 158,
 		durability = 230000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -1286,35 +1178,39 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295187,
+		id = 295082,
 		buff_list = {
 			{
-				ID = 200701,
-				LV = 7
+				ID = 8830,
+				LV = 2
+			},
+			{
+				ID = 50510,
+				LV = 3
 			}
 		}
 	},
-	[295188] = {
-		cannon = 221,
-		name = "Kirov META",
+	[295083] = {
+		cannon = 276,
+		name = "Scharnhorst META",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 50,
-		base = 90871,
+		dodge = 18,
+		base = 90623,
 		durability_growth = 0,
-		antiaircraft = 230,
+		antiaircraft = 274,
 		reload_growth = 0,
 		dodge_growth = 0,
 		speed = 30,
-		luck = 50,
+		luck = 18,
 		hit = 70,
 		antisub_growth = 0,
 		air_growth = 0,
 		battle_unit_type = 90,
-		torpedo = 214,
+		torpedo = 168,
 		durability = 310000,
 		armor_growth = 0,
 		torpedo_growth = 0,
@@ -1323,11 +1219,15 @@ pg.enemy_data_statistics_389 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295188,
+		id = 295083,
 		buff_list = {
 			{
-				ID = 200701,
-				LV = 8
+				ID = 8830,
+				LV = 2
+			},
+			{
+				ID = 50510,
+				LV = 3
 			}
 		}
 	}

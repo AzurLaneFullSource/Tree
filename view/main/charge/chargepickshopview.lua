@@ -10,6 +10,9 @@ end
 
 function var0_0.updateGiftGoodsVOList(arg0_3)
 	arg0_3.giftGoodsVOList = {}
+	arg0_3.packageSortList = {
+		0
+	}
 
 	local var0_3 = RefluxShopView.getAllRefluxPackID()
 	local var1_3 = pg.pay_data_display
@@ -25,6 +28,12 @@ function var0_0.updateGiftGoodsVOList(arg0_3)
 				}, Goods.TYPE_CHARGE)
 
 				if arg0_3:filterLimitTypeGoods(var4_3) then
+					local var5_3 = var2_3.package_sort_id
+
+					if not table.contains(arg0_3.packageSortList, var5_3) then
+						table.insert(arg0_3.packageSortList, var5_3)
+					end
+
 					table.insert(arg0_3.giftGoodsVOList, var4_3)
 				end
 			end
@@ -32,12 +41,19 @@ function var0_0.updateGiftGoodsVOList(arg0_3)
 	end
 
 	for iter2_3, iter3_3 in pairs(pg.shop_template.get_id_list_by_genre.gift_package) do
-		if pg.shop_template[iter3_3].akashi_pick == 1 and not table.contains(var0_3, iter3_3) then
-			local var5_3 = Goods.Create({
+		local var6_3 = pg.shop_template[iter3_3]
+
+		if var6_3.akashi_pick == 1 and not table.contains(var0_3, iter3_3) then
+			local var7_3 = Goods.Create({
 				shop_id = iter3_3
 			}, Goods.TYPE_GIFT_PACKAGE)
+			local var8_3 = var6_3.package_sort_id
 
-			table.insert(arg0_3.giftGoodsVOList, var5_3)
+			if not table.contains(arg0_3.packageSortList, var8_3) then
+				table.insert(arg0_3.packageSortList, var8_3)
+			end
+
+			table.insert(arg0_3.giftGoodsVOList, var7_3)
 		end
 	end
 end

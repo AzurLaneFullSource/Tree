@@ -21,6 +21,7 @@ var0_0.DRAG_CLICK_PARAMETER = 9
 var0_0.DRAG_ANIMATION_PLAY = 10
 var0_0.DRAG_CLICK_RANGE = 11
 var0_0.DRAG_EXTEND_ACTION_RULE = 12
+var0_0.DRAG_WITH_PARAMETER_MOVE = 13
 var0_0.ON_ACTION_PLAY = 1
 var0_0.ON_ACTION_DRAG_CLICK = 2
 var0_0.ON_ACTION_CHANGE_IDLE = 3
@@ -918,6 +919,10 @@ end
 
 function var0_0.inShopPreView(arg0_45, arg1_45)
 	arg0_45._shopPreView = arg1_45
+
+	if arg1_45 then
+		arg0_45:changeParamaterValue("shop_hx", 1)
+	end
 end
 
 function var0_0.getDragEnable(arg0_46, arg1_46)

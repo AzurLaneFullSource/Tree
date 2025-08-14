@@ -11,8 +11,8 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 	arg0_1.diamondCountText = arg0_1.tr:Find("Count/Text")
 	arg0_1.tipTF = arg0_1.tr:Find("Tip")
 	arg0_1.firstTipTag = arg0_1.tr:Find("Tip/Text/FirstTag")
-	arg0_1.exTipTag = arg0_1.tr:Find("Tip/Text/EXTag")
-	arg0_1.firstEXTip = arg0_1.tr:Find("Tip/Text/NumText")
+	arg0_1.exTipTag = arg0_1.tr:Find("Tip/Text")
+	arg0_1.firstEXTip = arg0_1.tr:Find("Tip/Text")
 	arg0_1.priceText = arg0_1.tr:Find("Price/Text")
 	arg0_1.priceIcon = arg0_1.tr:Find("Price/Icon")
 	arg0_1.monthTF = arg2_1
@@ -38,16 +38,14 @@ function var0_0.update(arg0_2, arg1_2, arg2_2, arg3_2)
 	if var0_2 then
 		local var2_2 = arg1_2:getConfig("gem")
 
-		setText(arg0_2.firstEXTip, var2_2)
-		setActive(arg0_2.firstTipTag, true)
+		setScrollText(arg0_2.firstEXTip, i18n("charge_double_gem_tip", var2_2))
 		setActive(arg0_2.exTipTag, false)
 		setActive(arg0_2.firstEXTip, true)
 		setActive(arg0_2.tipTF, true)
 	elseif arg1_2:hasExtraGem() then
 		local var3_2 = arg1_2:getConfig("extra_gem")
 
-		setText(arg0_2.firstEXTip, var3_2)
-		setActive(arg0_2.firstTipTag, false)
+		setScrollText(arg0_2.firstEXTip, i18n("charge_extra_gem_tip", var3_2))
 		setActive(arg0_2.exTipTag, true)
 		setActive(arg0_2.firstEXTip, true)
 		setActive(arg0_2.tipTF, true)
@@ -76,18 +74,20 @@ function var0_0.updateForMonthTF(arg0_4, arg1_4, arg2_4)
 	local var3_4 = arg0_4.monthTF:Find("ItemIconTpl")
 	local var4_4 = arg0_4.monthTF:Find("ItemIconList")
 	local var5_4 = arg0_4.monthTF:Find("Mask")
-	local var6_4 = arg0_4.monthTF:Find("Mask/LimitText")
-	local var7_4 = arg0_4.monthTF:Find("Price/Icon")
+	local var6_4 = arg0_4.monthTF:Find("Price/Icon")
+	local var7_4 = arg0_4.monthTF:Find("leftTimeText")
 
-	setText(arg0_4.monthTF:Find("Tip/Text"), i18n("monthly_card_tip"))
+	setScrollText(arg0_4.monthTF:Find("Tip/Text"), arg1_4:getConfig("first_text"))
+	setScrollText(arg0_4.monthTF:Find("Tip2/Text"), arg1_4:getConfig("second_text"))
+	setScrollText(arg0_4.monthTF:Find("title"), arg1_4:getConfig("name_display"))
 
 	local var8_4 = arg1_4:getConfig("gem") + arg1_4:getConfig("extra_gem")
 
-	setText(var1_4, "x" .. var8_4)
+	setText(var1_4, var8_4)
 	setText(var2_4, arg1_4:getConfig("money"))
 
 	if PLATFORM_CODE == PLATFORM_CHT then
-		setActive(var7_4, not arg1_4:IsLocalPrice())
+		setActive(var6_4, not arg1_4:IsLocalPrice())
 	end
 
 	local var9_4 = arg1_4:GetDropList()
@@ -97,7 +97,7 @@ function var0_0.updateForMonthTF(arg0_4, arg1_4, arg2_4)
 
 		var10_4:make(function(arg0_5, arg1_5, arg2_5)
 			if arg0_5 == UIItemList.EventUpdate then
-				updateDrop(arg2_5, var9_4[arg1_5 + 1])
+				updateDrop(arg2_5:Find("itemBg/item"), var9_4[arg1_5 + 1])
 			end
 		end)
 		var10_4:align(#var9_4)
@@ -111,17 +111,19 @@ function var0_0.updateForMonthTF(arg0_4, arg1_4, arg2_4)
 		local var14_4 = math.floor((var12_4 - var13_4) / 86400)
 		local var15_4 = arg1_4:getConfig("limit_arg") or 0
 
+		setScrollText(var7_4, i18n("charge_month_card_lefttime_tip", var14_4))
+		setActive(var7_4, true)
 		setActive(var5_4, var15_4 < var14_4)
-		setText(var6_4, i18n("charge_month_card_lefttime_tip", var14_4))
+		setActive(arg0_4.monthTF:Find("NewTag"), false)
+		setButtonEnabled(arg0_4.monthTF, var14_4 <= var15_4)
 	else
+		setActive(var7_4, false)
 		setActive(var5_4, false)
+		setActive(arg0_4.monthTF:Find("NewTag"), true)
+		setButtonEnabled(arg0_4.monthTF, true)
 	end
 
-	local var16_4 = MonthCardOutDateTipPanel.GetShowMonthCardTag()
-
-	setActive(arg0_4.monthTF:Find("monthcard_tag"), var16_4)
-	setActive(arg0_4.monthTF:Find("NewTag"), not var16_4)
-	onButton(arg0_4.parentContext, var0_4, function()
+	onButton(arg0_4.parentContext, arg0_4.monthTF, function()
 		triggerButton(arg0_4.tr)
 	end, SFX_PANEL)
 end

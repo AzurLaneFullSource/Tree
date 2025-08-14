@@ -22,7 +22,7 @@ function var0_0.willExit(arg0_4)
 end
 
 function var0_0.initData(arg0_5)
-	arg0_5.contentStr = arg0_5.contextData.contentStr
+	arg0_5.contentStr = arg0_5.contextData.contentStr and arg0_5.contextData.contentStr.content
 end
 
 function var0_0.initUIText(arg0_6)

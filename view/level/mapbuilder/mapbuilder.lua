@@ -13,6 +13,7 @@ var0_0.TYPESPFULL = 10
 var0_0.TYPESPSERIES = 11
 var0_0.TYPESPSERIESFULL = 12
 var0_0.TYPEATELIERYUMIA = 13
+var0_0.TYPEEXSP = 14
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	var0_0.super.Ctor(arg0_1, arg1_1, arg2_1.event, arg2_1.contextData)

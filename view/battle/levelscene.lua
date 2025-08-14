@@ -43,9 +43,19 @@ function var0_0.getBGM(arg0_4)
 				for iter2_6, iter3_6 in ipairs(var1_6) do
 					if string.find(iter3_6, "^bgm_") and iter1_6[1] == var3_0 then
 						local var2_6 = iter1_6[2][1]
-						local var3_6 = getProxy(ChapterProxy):GetChapterItemById(var2_6)
+						local var3_6 = false
 
-						if var3_6 and not var3_6:isClear() then
+						for iter4_6, iter5_6 in ipairs(var2_6) do
+							local var4_6 = chapterProxy:GetChapterItemById(iter5_6)
+
+							if var4_6 and var4_6:isClear() then
+								var3_6 = true
+
+								break
+							end
+						end
+
+						if not var3_6 then
 							return string.sub(iter3_6, 5)
 						end
 					end
@@ -818,6 +828,12 @@ function var0_0.onBackPressed(arg0_62)
 		return
 	end
 
+	if arg0_62.contextData.map and arg0_62.contextData.map:getConfig("ui_type") == MapBuilder.TYPEEXSP and arg0_62.mapBuilder.personalPage:IsActive() then
+		arg0_62.mapBuilder.personalPage:Hide()
+
+		return
+	end
+
 	if isActive(arg0_62.helpPage) then
 		setActive(arg0_62.helpPage, false)
 
@@ -1088,53 +1104,53 @@ function var0_0.updateCouldAnimator(arg0_76, arg1_76, arg2_76)
 		arg0_77.localScale = var0_77
 
 		if var0_76 and #var0_76 > 0 then
-			(function()
+			local var1_77 = getProxy(ChapterProxy)
+
+			;(function()
 				for iter0_78, iter1_78 in ipairs(var0_76) do
+					local var0_78 = false
+					local var1_78 = iter1_78[2][1]
+
+					for iter2_78, iter3_78 in ipairs(var1_78) do
+						local var2_78 = var1_77:GetChapterItemById(iter3_78)
+
+						if var2_78 and var2_78:isClear() then
+							var0_78 = true
+
+							break
+						end
+					end
+
 					if iter1_78[1] == var2_0 then
-						local var0_78 = iter1_78[2][1]
-						local var1_78 = _.rest(iter1_78[2], 2)
+						local var3_78 = _.rest(iter1_78[2], 2)
 
-						for iter2_78, iter3_78 in ipairs(var1_78) do
-							local var2_78 = arg0_77:Find(iter3_78)
+						for iter4_78, iter5_78 in ipairs(var3_78) do
+							local var4_78 = arg0_77:Find(iter5_78)
 
-							if not IsNil(var2_78) then
-								local var3_78 = getProxy(ChapterProxy):GetChapterItemById(var0_78)
-
-								if var3_78 and not var3_78:isClear() then
-									setActive(var2_78, false)
-								end
+							if not IsNil(var4_78) and not var0_78 then
+								setActive(var4_78, false)
 							end
 						end
 					elseif iter1_78[1] == var3_0 then
-						local var4_78 = iter1_78[2][1]
 						local var5_78 = _.rest(iter1_78[2], 2)
 
-						for iter4_78, iter5_78 in ipairs(var5_78) do
-							local var6_78 = arg0_77:Find(iter5_78)
+						for iter6_78, iter7_78 in ipairs(var5_78) do
+							local var6_78 = arg0_77:Find(iter7_78)
 
-							if not IsNil(var6_78) then
-								local var7_78 = getProxy(ChapterProxy):GetChapterItemById(var4_78)
+							if not IsNil(var6_78) and not var0_78 then
+								setActive(var6_78, true)
 
-								if var7_78 and not var7_78:isClear() then
-									setActive(var6_78, true)
-
-									return
-								end
+								return
 							end
 						end
 					elseif iter1_78[1] == var4_0 then
-						local var8_78 = iter1_78[2][1]
-						local var9_78 = _.rest(iter1_78[2], 2)
+						local var7_78 = _.rest(iter1_78[2], 2)
 
-						for iter6_78, iter7_78 in ipairs(var9_78) do
-							local var10_78 = arg0_77:Find(iter7_78)
+						for iter8_78, iter9_78 in ipairs(var7_78) do
+							local var8_78 = arg0_77:Find(iter9_78)
 
-							if not IsNil(var10_78) then
-								local var11_78 = getProxy(ChapterProxy):GetChapterItemById(var8_78)
-
-								if var11_78 and not var11_78:isClear() then
-									setActive(var10_78, true)
-								end
+							if not IsNil(var8_78) and not var0_78 then
+								setActive(var8_78, true)
 							end
 						end
 					end
@@ -1674,7 +1690,8 @@ local var6_0 = {
 	[var5_0.TYPESPFULL] = "MapBuilderSPFull",
 	[var5_0.TYPESPSERIES] = "MapBuilderSPSeries",
 	[var5_0.TYPESPSERIESFULL] = "MapBuilderSPSeriesFull",
-	[var5_0.TYPEATELIERYUMIA] = "MapBuilderAtelierYumia"
+	[var5_0.TYPEATELIERYUMIA] = "MapBuilderAtelierYumia",
+	[var5_0.TYPEEXSP] = "MapBuilderEXSP"
 }
 
 function var0_0.SwitchMapBuilder(arg0_123, arg1_123)
@@ -2588,15 +2605,27 @@ function var0_0.GetMapElement(arg0_208, arg1_208)
 
 	if var1_208 and #var1_208 > 0 then
 		(function()
+			local var0_209 = getProxy(ChapterProxy)
+
 			for iter0_209, iter1_209 in ipairs(var1_208) do
-				local var0_209 = _.rest(iter1_209[2], 2)
+				local var1_209 = _.rest(iter1_209[2], 2)
 
-				for iter2_209, iter3_209 in ipairs(var0_209) do
+				for iter2_209, iter3_209 in ipairs(var1_209) do
 					if string.find(iter3_209, "^map_") and iter1_209[1] == var3_0 then
-						local var1_209 = iter1_209[2][1]
-						local var2_209 = getProxy(ChapterProxy):GetChapterItemById(var1_209)
+						local var2_209 = iter1_209[2][1]
+						local var3_209 = false
 
-						if var2_209 and not var2_209:isClear() then
+						for iter4_209, iter5_209 in ipairs(var2_209) do
+							local var4_209 = var0_209:GetChapterItemById(iter5_209)
+
+							if var4_209 and var4_209:isClear() then
+								var3_209 = true
+
+								break
+							end
+						end
+
+						if not var3_209 then
 							var0_208 = iter3_209
 
 							return
@@ -2624,15 +2653,27 @@ function var0_0.GetMapAnimator(arg0_210, arg1_210)
 
 		if var1_210 and #var1_210 > 0 then
 			(function()
+				local var0_211 = getProxy(ChapterProxy)
+
 				for iter0_211, iter1_211 in ipairs(var1_210) do
-					local var0_211 = _.rest(iter1_211[2], 2)
+					local var1_211 = _.rest(iter1_211[2], 2)
 
-					for iter2_211, iter3_211 in ipairs(var0_211) do
+					for iter2_211, iter3_211 in ipairs(var1_211) do
 						if string.find(iter3_211, "^effect_") and iter1_211[1] == var3_0 then
-							local var1_211 = iter1_211[2][1]
-							local var2_211 = getProxy(ChapterProxy):GetChapterItemById(var1_211)
+							local var2_211 = iter1_211[2][1]
+							local var3_211 = false
 
-							if var2_211 and not var2_211:isClear() then
+							for iter4_211, iter5_211 in ipairs(var2_211) do
+								local var4_211 = var0_211:GetChapterItemById(iter5_211)
+
+								if var4_211 and var4_211:isClear() then
+									var3_211 = true
+
+									break
+								end
+							end
+
+							if not var3_211 then
 								var0_210 = "map_" .. string.sub(iter3_211, 8)
 
 								return

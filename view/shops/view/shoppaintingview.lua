@@ -14,11 +14,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 end
 
 function var0_0.InitChatPosition(arg0_2)
-	local var0_2 = arg0_2._painting.localPosition + arg0_2.chatTrOffset
-	local var1_2 = arg0_2._painting.parent:TransformPoint(var0_2)
-	local var2_2 = arg0_2.chat.parent:InverseTransformPoint(var1_2)
-
-	arg0_2.chat.localPosition = Vector3(var2_2.x, var2_2.y, 0)
+	return
 end
 
 function var0_0.Init(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
@@ -207,9 +203,18 @@ function var0_0.UnLoad(arg0_16)
 	end
 end
 
-function var0_0.Dispose(arg0_17)
-	arg0_17:UnLoad()
-	arg0_17:StopCV()
+function var0_0.Show(arg0_17, arg1_17)
+	if arg1_17 then
+		setActive(arg0_17._painting, true)
+	else
+		setActive(arg0_17._painting, false)
+		arg0_17:StopCV()
+	end
+end
+
+function var0_0.Dispose(arg0_18)
+	arg0_18:UnLoad()
+	arg0_18:StopCV()
 end
 
 return var0_0

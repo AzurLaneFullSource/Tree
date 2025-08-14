@@ -13,7 +13,7 @@ function var0_0.OnClick(arg0_2)
 end
 
 function var0_0.OpenMall(arg0_3)
-	arg0_3:emit(NewMainMediator.GO_SCENE, SCENE.CHARGE_MENU)
+	arg0_3:emit(NewMainMediator.GO_SCENE, SCENE.NEW_SHOP)
 
 	local var0_3 = isActive(arg0_3.sellTag) or isActive(arg0_3.skinTag) or isActive(arg0_3.mallTip)
 

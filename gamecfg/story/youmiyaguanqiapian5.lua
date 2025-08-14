@@ -196,12 +196,13 @@ return {
 			}
 		},
 		{
-			actor = 900519,
+			expression = 0,
 			side = 2,
 			bgName = "star_level_bg_539",
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
+			actor = 900519,
 			say = "Something like this wouldn't happen just by passing through a manabound area...",
 			typewriter = {
 				speed = 0.05,

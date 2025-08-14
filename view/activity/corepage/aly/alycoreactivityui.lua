@@ -27,7 +27,7 @@ function var0_0.init(arg0_2, ...)
 				return tostring(arg0_4:getConfig("is_show")) == arg2_3.name
 			end)
 
-			if not var0_3 then
+			if not var0_3 or var0_3:isEnd() then
 				setActive(arg2_3, false)
 			elseif not arg0_2.pageDic[var0_3.id] then
 				warning(string.format("without page in act:", var0_3.id))

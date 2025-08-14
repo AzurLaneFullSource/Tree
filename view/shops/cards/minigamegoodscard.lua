@@ -2,36 +2,11 @@ local var0_0 = class("MiniGameGoodsCard", import(".BaseGoodsCard"))
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.Ctor(arg0_1, arg1_1)
-
-	arg0_1.go = arg1_1
-	arg0_1.tr = tf(arg1_1)
-	arg0_1.mask = arg0_1.tr:Find("mask")
-	arg0_1.selloutTag = arg0_1.tr:Find("mask/tag/sellout_tag")
-
 	setActive(arg0_1.selloutTag, true)
-	setText(arg0_1.selloutTag, i18n("common_sale_out"))
-
-	arg0_1.levelTag = arg0_1.tr:Find("mask/tag/level_tag")
-
 	setText(arg0_1.levelTag, i18n("shop_charge_level_limit"))
 
-	arg0_1.levelTagText = arg0_1.tr:Find("mask/tag/level_tag/Text")
-	arg0_1.stars = arg0_1.tr:Find("item/icon_bg/stars")
-	arg0_1.itemTF = findTF(arg0_1.tr, "item")
-	arg0_1.nameTxt = findTF(arg0_1.tr, "item/name_mask/name")
-	arg0_1.discountTF = findTF(arg0_1.tr, "item/discount")
-	arg0_1.discountTextTF = findTF(arg0_1.discountTF, "Text"):GetComponent(typeof(Text))
-	arg0_1.countTF = findTF(arg0_1.tr, "item/consume/contain/Text"):GetComponent(typeof(Text))
-	arg0_1.resIconTF = findTF(arg0_1.tr, "item/consume/contain/icon"):GetComponent(typeof(Image))
-	arg0_1.itemIconTF = arg0_1.itemTF:Find("icon_bg/icon"):GetComponent(typeof(Image))
-	arg0_1.itemCountTF = arg0_1.itemTF:Find("icon_bg/count"):GetComponent(typeof(Text))
-	arg0_1.countContainTf = findTF(arg0_1.tr, "item/count_contain/count")
+	arg0_1.levelTagText = arg0_1.tf:Find("mask/tag/level_tag/Text")
 
-	setText(findTF(arg0_1.tr, "item/count_contain/label"), i18n("activity_shop_exchange_count"))
-
-	arg0_1.maskTip = i18n("buy_countLimit")
-
-	setText(arg0_1.tr:Find("mask/tag/sellout_tag"), i18n("word_sell_out"))
 	onButton(arg0_1, arg0_1.mask, function()
 		pg.TipsMgr.GetInstance():ShowTips(arg0_1.maskTip)
 	end, SFX_PANEL)
@@ -86,18 +61,16 @@ function var0_0.update(arg0_5, arg1_5)
 
 	local var2_5 = var1_5:getConfig("name") or ""
 
-	setText(arg0_5.nameTxt, shortenString(var2_5, 6))
+	setScrollText(arg0_5.nameTxt, var2_5)
 
 	local var3_5 = ""
 	local var4_5 = arg1_5:getConfig("price")
 	local var5_5 = arg1_5:GetMaxCnt()
 	local var6_5 = arg1_5:getConfig("goods_purchase_limit")
 
-	setText(arg0_5.countContainTf, var5_5 .. "/" .. var6_5)
+	setText(arg0_5.limitCountLabelTF, i18n("activity_shop_exchange_count") .. var5_5 .. "/" .. var6_5)
 	setActive(arg0_5.discountTF, false)
-
-	arg0_5.countTF.text = math.ceil(var4_5)
-
+	setText(arg0_5.countTF, math.ceil(var4_5))
 	GetSpriteFromAtlasAsync("ui/ShopsUI_atlas", "minigameRes", function(arg0_6)
 		arg0_5.resIconTF:GetComponent(typeof(Image)).sprite = arg0_6
 	end)

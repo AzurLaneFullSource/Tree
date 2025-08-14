@@ -43,4 +43,12 @@ function var0_0.GetLimit(arg0_10)
 	return arg0_10:getConfig("goods_purchase_limit")
 end
 
+function var0_0.GetDropInfo(arg0_11)
+	return Drop.New({
+		type = arg0_11:getConfig("type"),
+		id = arg0_11:getConfig("goods")[1],
+		count = arg0_11:getConfig("num")
+	})
+end
+
 return var0_0

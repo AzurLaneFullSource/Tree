@@ -5,7 +5,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnConfirm(arg0_2)
-	arg0_2:emit(NewShopsMediator.ON_MEDAL_SHOPPING, arg0_2.data.id, arg0_2.selectedList)
+	arg0_2:emit(NewShopMainMediator.ON_MEDAL_SHOPPING, arg0_2.data.id, arg0_2.selectedList)
 end
 
 return var0_0

@@ -62,9 +62,9 @@ function var0_0.GetMilitaryShop(arg0_13, arg1_13)
 	end
 
 	table.insert(var0_13, function(arg0_16, arg1_16)
-		arg0_13.shopList[NewShopsScene.TYPE_MILITARY_SHOP] = {}
+		arg0_13.shopList[ShopConst.TYPE_MILITARY_SHOP] = {}
 
-		table.insert(arg0_13.shopList[NewShopsScene.TYPE_MILITARY_SHOP], arg1_16)
+		table.insert(arg0_13.shopList[ShopConst.TYPE_MILITARY_SHOP], arg1_16)
 		arg0_16()
 	end)
 	seriesAsync(var0_13, arg1_13)
@@ -87,9 +87,9 @@ function var0_0.GetStressShop(arg0_17, arg1_17)
 	end
 
 	table.insert(var0_17, function(arg0_20, arg1_20)
-		arg0_17.shopList[NewShopsScene.TYPE_SHOP_STREET] = {}
+		arg0_17.shopList[ShopConst.TYPE_SHOP_STREET] = {}
 
-		table.insert(arg0_17.shopList[NewShopsScene.TYPE_SHOP_STREET], arg1_20)
+		table.insert(arg0_17.shopList[ShopConst.TYPE_SHOP_STREET], arg1_20)
 		arg0_20()
 	end)
 	seriesAsync(var0_17, arg1_17)
@@ -119,9 +119,9 @@ function var0_0.GetGuildShop(arg0_21, arg1_21)
 	end
 
 	table.insert(var0_21, function(arg0_24, arg1_24)
-		arg0_21.shopList[NewShopsScene.TYPE_GUILD] = {}
+		arg0_21.shopList[ShopConst.TYPE_GUILD] = {}
 
-		table.insert(arg0_21.shopList[NewShopsScene.TYPE_GUILD], arg1_24)
+		table.insert(arg0_21.shopList[ShopConst.TYPE_GUILD], arg1_24)
 		arg0_24()
 	end)
 	seriesAsync(var0_21, arg1_21)
@@ -133,9 +133,9 @@ function var0_0.GetShamShop(arg0_25, arg1_25)
 
 	if not LOCK_SHAM_CHAPTER and var1_25 and var1_25:isOpen() then
 		table.insert(var0_25, function(arg0_26)
-			arg0_25.shopList[NewShopsScene.TYPE_SHAM_SHOP] = {}
+			arg0_25.shopList[ShopConst.TYPE_SHAM_SHOP] = {}
 
-			table.insert(arg0_25.shopList[NewShopsScene.TYPE_SHAM_SHOP], var1_25)
+			table.insert(arg0_25.shopList[ShopConst.TYPE_SHAM_SHOP], var1_25)
 			arg0_26()
 		end)
 	end
@@ -149,9 +149,9 @@ function var0_0.GetFragmentShop(arg0_27, arg1_27)
 
 	if not LOCK_FRAGMENT_SHOP and var1_27 and var1_27:isOpen() then
 		table.insert(var0_27, function(arg0_28)
-			arg0_27.shopList[NewShopsScene.TYPE_FRAGMENT] = {}
+			arg0_27.shopList[ShopConst.TYPE_FRAGMENT] = {}
 
-			table.insert(arg0_27.shopList[NewShopsScene.TYPE_FRAGMENT], var1_27)
+			table.insert(arg0_27.shopList[ShopConst.TYPE_FRAGMENT], var1_27)
 			arg0_28()
 		end)
 	end
@@ -177,15 +177,15 @@ function var0_0.GetActivityShops(arg0_29, arg1_29)
 
 	table.insert(var0_29, function(arg0_32, arg1_32)
 		if arg1_32 and table.getCount(arg1_32) > 0 then
-			arg0_29.shopList[NewShopsScene.TYPE_ACTIVITY] = {}
+			arg0_29.shopList[ShopConst.TYPE_ACTIVITY] = {}
 
 			for iter0_32, iter1_32 in pairs(arg1_32) do
-				table.insert(arg0_29.shopList[NewShopsScene.TYPE_ACTIVITY], iter1_32)
+				table.insert(arg0_29.shopList[ShopConst.TYPE_ACTIVITY], iter1_32)
 			end
 
 			local var0_32 = getProxy(ActivityProxy):getRawData()
 
-			table.sort(arg0_29.shopList[NewShopsScene.TYPE_ACTIVITY], CompareFuncs({
+			table.sort(arg0_29.shopList[ShopConst.TYPE_ACTIVITY], CompareFuncs({
 				function(arg0_33)
 					return var0_32[arg0_33.activityId]:getStartTime()
 				end
@@ -225,9 +225,9 @@ function var0_0.GetMetaShops(arg0_34, arg1_34)
 
 	table.insert(var0_34, function(arg0_37, arg1_37)
 		if arg1_37 then
-			arg0_34.shopList[NewShopsScene.TYPE_META] = {}
+			arg0_34.shopList[ShopConst.TYPE_META] = {}
 
-			table.insert(arg0_34.shopList[NewShopsScene.TYPE_META], arg1_37)
+			table.insert(arg0_34.shopList[ShopConst.TYPE_META], arg1_37)
 		end
 
 		arg0_37()
@@ -253,9 +253,9 @@ function var0_0.GetMedalShops(arg0_38, arg1_38)
 
 	table.insert(var0_38, function(arg0_41, arg1_41)
 		if arg1_41 then
-			arg0_38.shopList[NewShopsScene.TYPE_MEDAL] = {}
+			arg0_38.shopList[ShopConst.TYPE_MEDAL] = {}
 
-			table.insert(arg0_38.shopList[NewShopsScene.TYPE_MEDAL], arg1_41)
+			table.insert(arg0_38.shopList[ShopConst.TYPE_MEDAL], arg1_41)
 		end
 
 		arg0_41()
@@ -294,9 +294,9 @@ function var0_0.GetMiniShops(arg0_42, arg1_42)
 	end
 
 	table.insert(var0_42, function(arg0_45, arg1_45)
-		arg0_42.shopList[NewShopsScene.TYPE_MINI_GAME] = {}
+		arg0_42.shopList[ShopConst.TYPE_MINI_GAME] = {}
 
-		table.insert(arg0_42.shopList[NewShopsScene.TYPE_MINI_GAME], arg1_45)
+		table.insert(arg0_42.shopList[ShopConst.TYPE_MINI_GAME], arg1_45)
 		arg0_45()
 	end)
 	seriesAsync(var0_42, arg1_42)
@@ -323,9 +323,9 @@ function var0_0.GetQuotaShop(arg0_46, arg1_46)
 	end
 
 	table.insert(var0_46, function(arg0_48)
-		arg0_46.shopList[NewShopsScene.TYPE_QUOTA] = {}
+		arg0_46.shopList[ShopConst.TYPE_QUOTA] = {}
 
-		table.insert(arg0_46.shopList[NewShopsScene.TYPE_QUOTA], var1_46)
+		table.insert(arg0_46.shopList[ShopConst.TYPE_QUOTA], var1_46)
 		arg0_48()
 	end)
 	seriesAsync(var0_46, arg1_46)

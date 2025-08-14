@@ -66,7 +66,7 @@ pg.ship_data_create_material = {
 		type = 2,
 		ship_icon = "1",
 		build_voice = "",
-		build_anim = "building_yumia",
+		build_anim = "building",
 		number_1 = 2,
 		id = 4,
 		icon = "build_4",
@@ -76,13 +76,13 @@ pg.ship_data_create_material = {
 			"<color=#d797ff>Elite</color>: 12%",
 			"<color=#3dc6ff>Rare</color>: 51%",
 			"Common: 30%",
-			"<color=#ffde38>Yumia Liessfeldt</color>: 2.0% <color=#92FC63>(up!)</color>",
+			"<color=#ffde38>Masséna</color>: 2.0% <color=#92FC63>(up!)</color>",
 			" ",
-			"<color=#ffde38>Nina Friede</color>: 2.0% <color=#92FC63>(up!)</color>",
+			"<color=#ffde38>Bois Belleau</color>: 2.0% <color=#92FC63>(up!)</color>",
 			" ",
-			"<color=#ffde38>Lenja</color>: 2.0% <color=#92FC63>(up!)</color>",
+			"<color=#ffde38>Le Hardi</color>: 0.5%",
 			" ",
-			"<color=#ffde38>Isla von Duerer</color>: 0.5%"
+			"<color=#d797ff>Duquesne</color>: 2.5% <color=#92FC63>(up!)</color>"
 		}
 	},
 	{
@@ -92,7 +92,7 @@ pg.ship_data_create_material = {
 		type = 2,
 		ship_icon = "1",
 		build_voice = "",
-		build_anim = "building_laisha",
+		build_anim = "building",
 		number_1 = 2,
 		id = 5,
 		icon = "build_5",

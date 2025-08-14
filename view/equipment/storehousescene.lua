@@ -1234,8 +1234,8 @@ function var0_0.updateItem(arg0_98, arg1_98, arg2_98)
 					end
 
 					arg0_98:emit(EquipmentMediator.ITEM_ADD_LAYER, Context.New({
-						viewComponent = SelectSkinLayer,
-						mediator = SkinAtlasMediator,
+						viewComponent = NewSelectSkinLayer,
+						mediator = NewSkinAtlasMediator,
 						data = {
 							mode = SelectSkinLayer.MODE_SELECT,
 							itemId = var1_98.id,

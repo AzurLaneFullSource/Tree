@@ -67,7 +67,7 @@ function var0_0.UpdateSkinView(arg0_10, arg1_10)
 
 	setScrollText(arg0_10:findTF("info/display_panel/equip_type/mask/Text", var0_10), table.concat(var2_10, ","))
 	onButton(arg0_10, arg0_10.playBtn, function()
-		arg0_10:emit(NewShopsMediator.ON_ESKIN_PREVIEW, arg1_10)
+		arg0_10:emit(NewShopMainMediator.ON_ESKIN_PREVIEW, arg1_10)
 	end, SFX_PANEL)
 	updateDrop(arg0_10:findTF("info/equip", var0_10), {
 		type = DROP_TYPE_EQUIPMENT_SKIN,

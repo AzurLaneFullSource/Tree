@@ -11,6 +11,8 @@ function var0_0.OnInit(arg0_2)
 end
 
 function var0_0.OnDestroy(arg0_3)
+	arg0_3:unBlurView()
+
 	for iter0_3, iter1_3 in ipairs(arg0_3.cardList) do
 		iter1_3:Dispose()
 	end
@@ -19,18 +21,27 @@ end
 function var0_0.initData(arg0_4)
 	arg0_4.itemGoodsVOList = {}
 	arg0_4.player = getProxy(PlayerProxy):getData()
+	arg0_4.packageSortList = {
+		0
+	}
+	arg0_4.selectedPackageType = nil
+	arg0_4.prevBtn = nil
 
 	arg0_4:updateData()
 end
 
 function var0_0.initUI(arg0_5)
-	arg0_5.contextTF = arg0_5:findTF("content")
+	arg0_5.contextTF = arg0_5:findTF("scroll")
 	arg0_5.lScrollRect = GetComponent(arg0_5.contextTF, "LScrollRect")
 	arg0_5.cardTable = {}
 	arg0_5.cardList = {}
 
 	arg0_5:initScrollRect()
+	arg0_5:initToggleList()
+	arg0_5:updateToggleList()
 	arg0_5:updateScrollRect()
+	triggerButton(arg0_5:findTF("toggleGroup"):GetChild(0))
+	arg0_5:blurView()
 end
 
 function var0_0.initScrollRect(arg0_6)
@@ -41,7 +52,7 @@ function var0_0.initScrollRect(arg0_6)
 		local var0_7 = ChargeGoodsCard.New(arg0_7)
 
 		table.insert(arg0_6.cardList, var0_7)
-		onButton(arg0_6, var0_7.tr, function()
+		onButton(arg0_6, var0_7.tf, function()
 			if var0_7.goodsVO:isLevelLimit(arg0_6.player.level) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("charge_level_limit"))
 
@@ -136,7 +147,7 @@ function var0_0.initScrollRect(arg0_6)
 						pg.MsgboxMgr.GetInstance():ShowMsgBox({
 							content = i18n("charge_scene_buy_confirm", var0_9, var1_9),
 							onYes = function()
-								arg0_6:emit(ChargeMediator.BUY_ITEM, var0_7.goodsVO.id, 1)
+								arg0_6:emit(NewShopMainMediator.BUY_ITEM, var0_7.goodsVO.id, 1)
 							end
 						})
 					end
@@ -156,7 +167,7 @@ function var0_0.initScrollRect(arg0_6)
 			var0_11 = arg0_6.cardTable[arg1_11]
 		end
 
-		local var1_11 = arg0_6.itemGoodsVOList[arg0_11 + 1]
+		local var1_11 = arg0_6.filterList[arg0_11 + 1]
 
 		var0_11:update(var1_11)
 		var0_11:setLevelMask(arg0_6.player.level)
@@ -171,108 +182,202 @@ function var0_0.initScrollRect(arg0_6)
 end
 
 function var0_0.updateScrollRect(arg0_12)
-	arg0_12.lScrollRect:SetTotalCount(#arg0_12.itemGoodsVOList, arg0_12.lScrollRect.value)
+	arg0_12.filterList = arg0_12:getFilterList()
+
+	arg0_12.lScrollRect:SetTotalCount(#arg0_12.filterList, arg0_12.lScrollRect.value)
 end
 
-function var0_0.updateItemGoodsVOList(arg0_13)
-	arg0_13.itemGoodsVOList = {}
-
-	local var0_13 = pg.shop_template
-
-	for iter0_13, iter1_13 in pairs(var0_13.all) do
-		local var1_13 = var0_13[iter1_13]
-
-		if var1_13.genre == "gem_shop" then
-			local var2_13, var3_13, var4_13 = ChargeConst.getGoodsLimitInfo(iter1_13)
-			local var5_13 = false
-			local var6_13 = var1_13.effect_args
-
-			if var6_13 == "ship_bag_size" and var3_13 and var4_13 then
-				local var7_13 = arg0_13.player:getMaxShipBagExcludeGuild()
-
-				if var3_13 <= var7_13 and var7_13 <= var4_13 then
-					var5_13 = true
-				end
-			elseif var6_13 == "equip_bag_max" and var3_13 and var4_13 then
-				local var8_13 = arg0_13.player:getMaxEquipmentBag()
-
-				if var3_13 <= var8_13 and var8_13 <= var4_13 then
-					var5_13 = true
-				end
-			elseif var6_13 == "commander_bag_size" and var3_13 and var4_13 then
-				local var9_13 = arg0_13.player.commanderBagMax
-
-				if var3_13 <= var9_13 and var9_13 <= var4_13 then
-					var5_13 = true
-				end
-			else
-				var5_13 = true
-			end
-
-			if var5_13 == true then
-				local var10_13 = Goods.Create({
-					count = 0,
-					shop_id = iter1_13
-				}, Goods.TYPE_MILITARY)
-
-				table.insert(arg0_13.itemGoodsVOList, var10_13)
-			end
-		end
-	end
-
-	for iter2_13 = #arg0_13.itemGoodsVOList, 1, -1 do
-		local var11_13 = arg0_13.itemGoodsVOList[iter2_13]
-		local var12_13 = ChargeConst.getGroupLimit(arg0_13.normalGroupList, var11_13:getConfig("group"))
-
-		if not var11_13:IsShowWhenGroupSale(var12_13) then
-			table.remove(arg0_13.itemGoodsVOList, iter2_13)
-		end
-	end
+function var0_0.updateToggleList(arg0_13)
+	arg0_13.uiToggleList:align(#arg0_13.packageSortList)
 end
 
-function var0_0.sortItemGoodsVOList(arg0_14)
-	table.sort(arg0_14.itemGoodsVOList, function(arg0_15, arg1_15)
-		local var0_15 = arg0_15:isLevelLimit(arg0_14.player.level) and 1 or 0
-		local var1_15 = arg1_15:isLevelLimit(arg0_14.player.level) and 1 or 0
-		local var2_15 = arg0_15:getConfig("order")
-		local var3_15 = arg1_15:getConfig("order")
+function var0_0.initToggleList(arg0_14)
+	arg0_14.uiToggleList = UIItemList.New(arg0_14:findTF("toggleGroup"), arg0_14:findTF("toggleGroup/Toggle"))
 
-		if var2_15 == var3_15 then
-			if var0_15 == var1_15 then
-				return arg0_15.id > arg1_15.id
-			end
+	arg0_14.uiToggleList:make(function(arg0_15, arg1_15, arg2_15)
+		if arg0_15 == UIItemList.EventInit then
+			local var0_15 = arg0_14.packageSortList[arg1_15 + 1]
 
-			return var0_15 < var1_15
-		else
-			return var2_15 < var3_15
+			setText(arg0_14:findTF("selected/Label", arg2_15), i18n(string.format("shop_package_sort_%s", var0_15)))
+			setText(arg0_14:findTF("selected/enText", arg2_15), i18n(string.format("shop_package_sort_en_%s", var0_15)))
+			setText(arg0_14:findTF("unselected/Label", arg2_15), i18n(string.format("shop_package_sort_%s", var0_15)))
+			setActive(arg2_15:Find("unselected"), true)
+			setActive(arg2_15:Find("selected"), false)
+		elseif arg0_15 == UIItemList.EventUpdate then
+			onButton(arg0_14, arg2_15, function()
+				local var0_16 = arg0_14.packageSortList[arg1_15 + 1]
+
+				if arg0_14.selectedPackageType == var0_16 then
+					return
+				end
+
+				setActive(arg2_15:Find("unselected"), false)
+				setActive(arg2_15:Find("selected"), true)
+
+				if arg0_14.prevBtn then
+					setActive(arg0_14.prevBtn:Find("unselected"), true)
+					setActive(arg0_14.prevBtn:Find("selected"), false)
+				end
+
+				arg0_14.prevBtn = arg2_15
+				arg0_14.selectedPackageType = var0_16
+
+				arg0_14:updateScrollRect()
+			end, SFX_PANEL)
 		end
 	end)
 end
 
-function var0_0.updateGoodsData(arg0_16)
-	arg0_16.firstChargeIds = arg0_16.contextData.firstChargeIds
-	arg0_16.chargedList = arg0_16.contextData.chargedList
-	arg0_16.normalList = arg0_16.contextData.normalList
-	arg0_16.normalGroupList = arg0_16.contextData.normalGroupList
+function var0_0.updateItemGoodsVOList(arg0_17)
+	arg0_17.itemGoodsVOList = {}
+	arg0_17.packageSortList = {
+		0
+	}
+
+	local var0_17 = pg.shop_template
+
+	for iter0_17, iter1_17 in pairs(var0_17.all) do
+		local var1_17 = var0_17[iter1_17]
+
+		if var1_17.genre == "gem_shop" then
+			local var2_17, var3_17, var4_17 = ChargeConst.getGoodsLimitInfo(iter1_17)
+			local var5_17 = false
+			local var6_17 = var1_17.effect_args
+
+			if var6_17 == "ship_bag_size" and var3_17 and var4_17 then
+				local var7_17 = arg0_17.player:getMaxShipBagExcludeGuild()
+
+				if var3_17 <= var7_17 and var7_17 <= var4_17 then
+					var5_17 = true
+				end
+			elseif var6_17 == "equip_bag_max" and var3_17 and var4_17 then
+				local var8_17 = arg0_17.player:getMaxEquipmentBag()
+
+				if var3_17 <= var8_17 and var8_17 <= var4_17 then
+					var5_17 = true
+				end
+			elseif var6_17 == "commander_bag_size" and var3_17 and var4_17 then
+				local var9_17 = arg0_17.player.commanderBagMax
+
+				if var3_17 <= var9_17 and var9_17 <= var4_17 then
+					var5_17 = true
+				end
+			else
+				var5_17 = true
+			end
+
+			if var5_17 == true then
+				local var10_17 = Goods.Create({
+					count = 0,
+					shop_id = iter1_17
+				}, Goods.TYPE_MILITARY)
+
+				table.insert(arg0_17.itemGoodsVOList, var10_17)
+			end
+		end
+	end
+
+	for iter2_17 = #arg0_17.itemGoodsVOList, 1, -1 do
+		local var11_17 = arg0_17.itemGoodsVOList[iter2_17]
+		local var12_17 = ChargeConst.getGroupLimit(arg0_17.normalGroupList, var11_17:getConfig("group"))
+
+		if not var11_17:IsShowWhenGroupSale(var12_17) then
+			table.remove(arg0_17.itemGoodsVOList, iter2_17)
+		end
+	end
+
+	for iter3_17, iter4_17 in ipairs(arg0_17.itemGoodsVOList) do
+		local var13_17 = var0_17[iter4_17.id].package_sort_id
+
+		if not table.contains(arg0_17.packageSortList, var13_17) then
+			table.insert(arg0_17.packageSortList, var13_17)
+		end
+	end
+
+	table.sort(arg0_17.packageSortList, function(arg0_18, arg1_18)
+		return arg0_18 < arg1_18
+	end)
 end
 
-function var0_0.setGoodData(arg0_17, arg1_17, arg2_17, arg3_17, arg4_17)
-	arg0_17.firstChargeIds = arg1_17
-	arg0_17.chargedList = arg2_17
-	arg0_17.normalList = arg3_17
-	arg0_17.normalGroupList = arg4_17
+function var0_0.sortItemGoodsVOList(arg0_19)
+	table.sort(arg0_19.itemGoodsVOList, function(arg0_20, arg1_20)
+		local var0_20 = arg0_20:isLevelLimit(arg0_19.player.level) and 1 or 0
+		local var1_20 = arg1_20:isLevelLimit(arg0_19.player.level) and 1 or 0
+		local var2_20 = arg0_20:getConfig("order")
+		local var3_20 = arg1_20:getConfig("order")
+
+		if var2_20 == var3_20 then
+			if var0_20 == var1_20 then
+				return arg0_20.id > arg1_20.id
+			end
+
+			return var0_20 < var1_20
+		else
+			return var2_20 < var3_20
+		end
+	end)
 end
 
-function var0_0.updateData(arg0_18)
-	arg0_18.player = getProxy(PlayerProxy):getData()
+function var0_0.getFilterList(arg0_21)
+	if arg0_21.selectedPackageType == 0 then
+		return arg0_21.itemGoodsVOList
+	end
 
-	arg0_18:updateItemGoodsVOList()
-	arg0_18:sortItemGoodsVOList()
+	local var0_21 = {}
+
+	for iter0_21, iter1_21 in ipairs(arg0_21.itemGoodsVOList) do
+		if iter1_21:getConfig("package_sort_id") == arg0_21.selectedPackageType then
+			table.insert(var0_21, iter1_21)
+		end
+	end
+
+	return var0_21
 end
 
-function var0_0.reUpdateAll(arg0_19)
-	arg0_19:updateData()
-	arg0_19:updateScrollRect()
+function var0_0.updateGoodsData(arg0_22)
+	arg0_22.firstChargeIds = arg0_22.contextData.firstChargeIds
+	arg0_22.chargedList = arg0_22.contextData.chargedList
+	arg0_22.normalList = arg0_22.contextData.normalList
+	arg0_22.normalGroupList = arg0_22.contextData.normalGroupList
+end
+
+function var0_0.setGoodData(arg0_23, arg1_23, arg2_23, arg3_23, arg4_23)
+	arg0_23.firstChargeIds = arg1_23
+	arg0_23.chargedList = arg2_23
+	arg0_23.normalList = arg3_23
+	arg0_23.normalGroupList = arg4_23
+end
+
+function var0_0.updateData(arg0_24)
+	arg0_24.player = getProxy(PlayerProxy):getData()
+
+	arg0_24:updateItemGoodsVOList()
+	arg0_24:sortItemGoodsVOList()
+end
+
+function var0_0.blurView(arg0_25)
+	pg.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_OVERLAY_FOREVER, arg0_25._tf, {
+		pbList = {
+			arg0_25:findTF("bg")
+		}
+	})
+end
+
+function var0_0.unBlurView(arg0_26)
+	pg.LayerWeightMgr.GetInstance():DelFromOverlay(arg0_26._tf, arg0_26._parentTf)
+end
+
+function var0_0.IsSupplyShop(arg0_27)
+	return false
+end
+
+function var0_0.reUpdateAll(arg0_28)
+	arg0_28:updateData()
+	arg0_28:updateScrollRect()
+end
+
+function var0_0.ShowPanel(arg0_29, arg1_29)
+	setActive(arg0_29._go, arg1_29)
 end
 
 return var0_0

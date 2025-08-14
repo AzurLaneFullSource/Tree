@@ -137,7 +137,7 @@ function var0_0.execute(arg0_1, arg1_1)
 		elseif var3_1.resource_type == 4 or var3_1.resource_type == 14 then
 			GoShoppingMsgBox(i18n("switch_to_shop_tip_3", i18n("word_gem")), ChargeScene.TYPE_DIAMOND)
 
-			if var3_1.id == NewShopsMediator.FAST_BUILD_ITEM_ID then
+			if var3_1.id == NewShopMainMediator.FAST_BUILD_ITEM_ID then
 				pg.TrackerMgr.GetInstance():Tracking(TRACKING_BUILD_OR_SKIN_FAILD)
 			end
 		elseif not ItemTipPanel.ShowItemTip(DROP_TYPE_RESOURCE, var3_1.resource_type) then

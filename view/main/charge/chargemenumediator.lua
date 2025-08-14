@@ -51,7 +51,7 @@ function var0_0.bindEvent(arg0_4)
 	end)
 	arg0_4:bind(var0_0.GO_CHARGE_SHOP, function(arg0_7, arg1_7)
 		arg0_4:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
-			wrap = arg1_7
+			warp = arg1_7
 		})
 	end)
 end

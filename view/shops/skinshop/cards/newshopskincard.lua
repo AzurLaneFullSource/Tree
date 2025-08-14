@@ -4,8 +4,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1._go = arg1_1
 	arg0_1._tf = tf(arg1_1)
 	arg0_1._content = arg0_1._tf:Find("frame/content")
-	arg0_1._mask = arg0_1._tf:Find("frame/mask")
-	arg0_1._icon = arg0_1._tf:Find("frame/content/main/bg/icon"):GetComponent(typeof(Image))
+	arg0_1._icon = arg0_1._tf:Find("frame/content/main/bg/mask/icon"):GetComponent(typeof(Image))
 	arg0_1._priceTF = arg0_1._tf:Find("frame/content/main/bg/price")
 
 	setActive(arg0_1._priceTF, false)
@@ -14,14 +13,12 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1._priceTxt = arg0_1._priceTF:Find("gem/Text"):GetComponent(typeof(Text))
 	arg0_1._opriceTxt = arg0_1._priceTF:Find("originalprice"):GetComponent(typeof(Text))
 	arg0_1.tagImg = arg0_1._tf:Find("frame/content/top/tag_activity"):GetComponent(typeof(Image))
-	arg0_1.tagEnImg = arg0_1.tagImg.gameObject.transform:Find("Image"):GetComponent(typeof(Image))
-	arg0_1.txt = arg0_1._tf:Find("frame/content/top/Text"):GetComponent(typeof(Text))
-	arg0_1.txt.text = ""
 	arg0_1.discountTag = arg0_1._tf:Find("frame/content/top/tag_discount")
 	arg0_1.discountTagOffTxt = arg0_1.discountTag:Find("Text"):GetComponent(typeof(Text))
-	arg0_1.timelimitTag = arg0_1._tf:Find("frame/content/top/tag_timelimit")
 	arg0_1.isSelected = false
-	arg0_1._icon.transform.localScale = Vector3.zero
+	arg0_1.probability = arg0_1._tf:Find("frame/content/top/tag_probability")
+
+	setActive(arg0_1.probability, false)
 end
 
 local var1_0 = 1
@@ -101,7 +98,7 @@ local function var12_0(arg0_2, arg1_2)
 	end
 end
 
-function var0_0.Update(arg0_3, arg1_3, arg2_3, arg3_3)
+function var0_0.Update(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
 	arg0_3.commodity = arg1_3
 	arg0_3.isReturn = arg3_3
 
@@ -113,12 +110,10 @@ function var0_0.Update(arg0_3, arg1_3, arg2_3, arg3_3)
 	local var2_3 = var1_3[var0_3].prefab
 
 	arg0_3._icon.sprite = nil
-	arg0_3._icon.transform.localScale = Vector3.zero
 
 	LoadSpriteAsync("shipYardIcon/" .. var2_3, function(arg0_4)
 		if not IsNil(arg0_3._icon) then
 			arg0_3._icon.sprite = arg0_4
-			arg0_3._icon.transform.localScale = Vector3.one
 		end
 	end)
 
@@ -156,8 +151,6 @@ function var0_0.Update(arg0_3, arg1_3, arg2_3, arg3_3)
 			arg0_3.discountTagOffTxt.text = string.format("%0.2f", var10_3) .. "%"
 		elseif var11_3 == var7_0 then
 			var4_3 = true
-
-			setActive(arg0_3.timelimitTag, true)
 		else
 			local var12_3 = var11_0[var11_3][1]
 			local var13_3 = var11_0[var11_3][2]
@@ -167,16 +160,9 @@ function var0_0.Update(arg0_3, arg1_3, arg2_3, arg3_3)
 			if arg0_3.tagImg.enabled then
 				arg0_3.tagImg.sprite = GetSpriteFromAtlas("ui/SkinShopUI_atlas", "tag_" .. var12_3)
 			end
-
-			arg0_3.tagEnImg.enabled = var13_3 and var13_3 ~= ""
-
-			if arg0_3.tagEnImg.enabled then
-				arg0_3.tagEnImg.sprite = GetSpriteFromAtlas("ui/SkinShopUI_atlas", "en_text_" .. var13_3 .. "_text")
-			end
 		end
 	end
 
-	setActive(arg0_3.timelimitTag, var5_3 and var4_3)
 	setActive(arg0_3.tagImg.gameObject, var5_3 and not var3_3 and not var4_3)
 	setActive(arg0_3.discountTag, var5_3 and var3_3)
 
@@ -186,27 +172,33 @@ function var0_0.Update(arg0_3, arg1_3, arg2_3, arg3_3)
 		y = var14_3
 	})
 	arg0_3:UpdateSelected(arg2_3)
+
+	if arg4_3 then
+		setActive(arg0_3.probability, true)
+
+		local var15_3 = arg4_3 or 0
+
+		setText(arg0_3.probability:Find("Text"), " " .. string.format("%0.1f", var15_3 / 100) .. "%")
+	end
 end
 
 function var0_0.UpdateSelected(arg0_6, arg1_6)
 	if arg0_6.isSelected ~= arg1_6 then
 		arg0_6.isSelected = arg1_6
 
-		local var0_6 = arg1_6 and -26 or -126
+		local var0_6 = arg1_6 and -7.8 or -61
 
 		arg0_6._content.localPosition = Vector3(0, var0_6, 0)
 
 		local var1_6 = arg0_6.commodity.type == Goods.TYPE_SKIN
 
 		setActive(arg0_6._priceTF, arg1_6 and var1_6)
-		setActive(arg0_6._mask, not arg1_6)
 	end
 end
 
 function var0_0.Dispose(arg0_7)
 	arg0_7:UpdateSelected(false)
 
-	arg0_7._icon.transform.localScale = Vector3.one
 	arg0_7._go = nil
 	arg0_7._tf = nil
 end
