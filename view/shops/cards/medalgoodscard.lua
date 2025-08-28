@@ -3,7 +3,6 @@ local var0_0 = class("MedalGoodsCard", import(".BaseGoodsCard"))
 function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0_1.groupMark = arg0_1.tf:Find("group_locked")
 	arg0_1.limitCountLabelTF = findTF(arg0_1.tf, "count_contain/label"):GetComponent(typeof(Text))
 end
 
@@ -36,19 +35,6 @@ function var0_0.Init(arg0_3)
 
 	local var2_3 = arg0_3.goods:getConfig("is_ship")
 	local var3_3 = arg0_3.goods:getConfig("goods")
-
-	if arg0_3.groupMark and var2_3 == 1 and #var3_3 == 1 then
-		local var4_3 = var3_3[1]
-		local var5_3 = pg.ship_data_template[var4_3].group_type
-
-		if var5_3 and var5_3 > 0 then
-			setActive(arg0_3.groupMark, not getProxy(CollectionProxy):getShipGroup(var5_3))
-		else
-			setActive(arg0_3.groupMark, false)
-		end
-	else
-		setActive(arg0_3.groupMark, false)
-	end
 end
 
 function var0_0.OnDispose(arg0_4)

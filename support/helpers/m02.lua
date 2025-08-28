@@ -388,7 +388,7 @@ function LoadPaintingPrefabAsync(arg0_37, arg1_37, arg2_37, arg3_37, arg4_37, ar
 		end
 
 		if arg4_37 then
-			arg4_37()
+			arg4_37(arg0_38)
 		end
 	end)
 	PaintingShiftTransform(var0_37, arg3_37, arg5_37)

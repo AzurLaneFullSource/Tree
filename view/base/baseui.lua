@@ -217,7 +217,8 @@ var0_0.optionsPath = {
 	"blur_container/adapt/top/option",
 	"ForNorth/top/option",
 	"top/top_chapter/option",
-	"Main/blur_panel/adapt/top/option"
+	"Main/blur_panel/adapt/top/option",
+	"adapt/blur_panel/adapt/top/option"
 }
 
 function var0_0.onUILoaded(arg0_28, arg1_28)

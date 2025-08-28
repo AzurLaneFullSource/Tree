@@ -551,8 +551,6 @@ function var0_0.LoadL2dPainting(arg0_37)
 		offset = var2_37:GetSkinConfig().shop_offset
 	})
 
-	var5_37.shopPreView = true
-
 	pg.UIMgr.GetInstance():LoadingOn()
 
 	arg0_37.live2dChar = Live2D.New(var5_37, function(arg0_38)
@@ -608,6 +606,7 @@ function var0_0.LoadSpinePainting(arg0_40)
 			arg0_40:ClearSpinePainting()
 		end
 
+		arg0_40:InitSpecialTouch(var2_40, arg0_40.spTF)
 		pg.UIMgr.GetInstance():LoadingOff()
 	end)
 end
@@ -619,133 +618,218 @@ function var0_0.ClearSpinePainting(arg0_42)
 		arg0_42.spinePainting:Dispose()
 
 		arg0_42.spinePainting = nil
+
+		if arg0_42.dragEvent then
+			ClearEventTrigger(arg0_42.dragEvent)
+		end
 	end
 end
 
-function var0_0.AdjustPainting(arg0_43, arg1_43)
-	local var0_43 = arg0_43.paintingTF
-	local var1_43 = pg.ship_skin_newmainui_shift[arg0_43.skinId]
+function var0_0.InitSpecialTouch(arg0_43, arg1_43, arg2_43)
+	local var0_43 = arg1_43:getPainting()
+	local var1_43 = findTF(arg2_43:GetChild(0), "hitArea")
 
-	if var1_43 then
-		local var2_43 = var1_43.skin_shop_shift
+	if not var1_43 then
+		return
+	end
 
-		if arg1_43 then
-			var0_43.anchoredPosition = Vector2(var2_43[1] - 440, var2_43[2] + arg0_43.defaultPaintingPosition.y)
+	eachChild(var1_43, function(arg0_44)
+		if arg0_43:getDragTouchAble(arg0_44.name, var0_43, false) then
+			arg0_43.dragEvent = GetOrAddComponent(arg0_44, typeof(EventTriggerListener))
+
+			arg0_43.dragEvent:AddPointDownFunc(function(arg0_45, arg1_45)
+				arg0_43.dragActive = true
+				arg0_43.dragStart = arg1_45.position
+			end)
+			arg0_43.dragEvent:AddPointUpFunc(function(arg0_46, arg1_46)
+				if arg0_43.dragActive then
+					arg0_43.dragActive = false
+					arg0_43.dragOffset = Vector2(arg0_43.dragStart.x - arg1_46.position.x, arg0_43.dragStart.y - arg1_46.position.y)
+
+					if math.abs(arg0_43.dragOffset.x) < 200 or math.abs(arg0_43.dragOffset.y) < 200 then
+						arg0_43.dragUp = arg1_46.position
+
+						if arg0_43.spinePainting:isInAction() then
+							return
+						end
+
+						local var0_46
+
+						if arg0_43:getDragTouchAble(arg0_44.name, var0_43, true) then
+							local var1_46 = arg0_43.spinePainting:readyDragAction(arg0_44.name)
+						end
+					end
+				end
+			end)
+			arg0_43.dragEvent:AddDragFunc(function(arg0_47, arg1_47)
+				if arg0_43.dragActive then
+					arg0_43.dragOffset = Vector2(arg0_43.dragStart.x - arg1_47.position.x, arg0_43.dragStart.y - arg1_47.position.y)
+
+					if math.abs(arg0_43.dragOffset.x) > 200 or math.abs(arg0_43.dragOffset.y) > 200 then
+						arg0_43.dragActive = false
+
+						arg0_43.spinePainting:readyDragAction(arg0_44.name)
+					end
+				end
+			end)
 		else
-			var0_43.anchoredPosition = Vector2(var2_43[1] + arg0_43.defaultPaintingPosition.x, var2_43[2] + arg0_43.defaultPaintingPosition.y)
-		end
-
-		local var3_43 = var2_43[4]
-
-		var0_43.localScale = Vector3(var3_43, var3_43, 1)
-	else
-		var0_43.anchoredPosition = Vector2(arg0_43.defaultPaintingPosition.x, arg0_43.defaultPaintingPosition.y)
-		var0_43.localScale = arg0_43.defaultPaintingScale
-	end
-end
-
-function var0_0.ReturnChar(arg0_44)
-	if not IsNil(arg0_44.spineChar) then
-		arg0_44.spineChar.gameObject:GetComponent("SpineAnimUI"):SetActionCallBack(nil)
-		PoolMgr.GetInstance():ReturnSpineChar(arg0_44.prefabName, arg0_44.spineChar.gameObject)
-
-		arg0_44.spineChar = nil
-		arg0_44.prefabName = nil
-	end
-end
-
-function var0_0.FlushTag(arg0_45)
-	local var0_45 = arg0_45.skinId
-	local var1_45 = pg.ship_skin_template[var0_45]
-	local var2_45 = Clone(var1_45.tag)
-	local var3_45 = false
-
-	for iter0_45 = #var2_45, 1, -1 do
-		local var4_45 = var2_45[iter0_45]
-
-		if var4_45 == 1 or var4_45 == 6 or var4_45 == 7 or var4_45 == 9 then
-			local var5_45 = true
-
-			table.remove(var2_45, iter0_45)
-		end
-	end
-
-	local var6_45 = checkABExist("painting/" .. arg0_45.shipSkin:getConfig("painting") .. "_n")
-
-	arg0_45.tagList:make(function(arg0_46, arg1_46, arg2_46)
-		if arg0_46 == UIItemList.EventUpdate then
-			local var0_46 = var2_45[arg1_46 + 1]
-
-			LoadSpriteAtlasAsync("SkinIcon", "type_" .. ShipSkin.Tag2Name(var2_45[arg1_46 + 1]), function(arg0_47)
-				if arg0_45.exited then
+			onButton(arg0_43, arg0_44, function()
+				if arg0_43.spinePainting:isInAction() then
 					return
 				end
 
-				arg2_46:GetComponent(typeof(Image)).sprite = arg0_47
+				local var0_48 = pg.AssistantInfo.getPaintingTouchEvents(arg0_44.name)
+
+				if arg0_43:getDragTouchAble(arg0_44.name, var0_43, true) then
+					arg0_43.spinePainting:readyDragAction(arg0_44.name)
+				end
 			end)
 		end
 	end)
-	arg0_45.tagList:align(#var2_45)
 end
 
-function var0_0.ClearPainting(arg0_48)
-	local var0_48 = arg0_48.paintingState
+function var0_0.getDragTouchAble(arg0_49, arg1_49, arg2_49, arg3_49)
+	local var0_49 = SpinePaintingConst.ship_drag_datas[arg2_49]
 
-	if not var0_48 then
+	if not var0_49 then
+		return false
+	end
+
+	if var0_49.drag_data and var0_49.click_trigger ~= arg3_49 then
+		return false
+	end
+
+	if var0_49.hit_area then
+		return table.contains(var0_49.hit_area, arg1_49)
+	end
+
+	return false
+end
+
+function var0_0.AdjustPainting(arg0_50, arg1_50)
+	local var0_50 = arg0_50.paintingTF
+	local var1_50 = pg.ship_skin_newmainui_shift[arg0_50.skinId]
+
+	if var1_50 then
+		local var2_50 = var1_50.skin_shop_shift
+
+		if arg1_50 then
+			var0_50.anchoredPosition = Vector2(var2_50[1] - 440, var2_50[2] + arg0_50.defaultPaintingPosition.y)
+		else
+			var0_50.anchoredPosition = Vector2(var2_50[1] + arg0_50.defaultPaintingPosition.x, var2_50[2] + arg0_50.defaultPaintingPosition.y)
+		end
+
+		local var3_50 = var2_50[4]
+
+		var0_50.localScale = Vector3(var3_50, var3_50, 1)
+	else
+		var0_50.anchoredPosition = Vector2(arg0_50.defaultPaintingPosition.x, arg0_50.defaultPaintingPosition.y)
+		var0_50.localScale = arg0_50.defaultPaintingScale
+	end
+end
+
+function var0_0.ReturnChar(arg0_51)
+	if not IsNil(arg0_51.spineChar) then
+		arg0_51.spineChar.gameObject:GetComponent("SpineAnimUI"):SetActionCallBack(nil)
+		PoolMgr.GetInstance():ReturnSpineChar(arg0_51.prefabName, arg0_51.spineChar.gameObject)
+
+		arg0_51.spineChar = nil
+		arg0_51.prefabName = nil
+	end
+end
+
+function var0_0.FlushTag(arg0_52)
+	local var0_52 = arg0_52.skinId
+	local var1_52 = pg.ship_skin_template[var0_52]
+	local var2_52 = Clone(var1_52.tag)
+	local var3_52 = false
+
+	for iter0_52 = #var2_52, 1, -1 do
+		local var4_52 = var2_52[iter0_52]
+
+		if var4_52 == 1 or var4_52 == 6 or var4_52 == 7 or var4_52 == 9 then
+			local var5_52 = true
+
+			table.remove(var2_52, iter0_52)
+		end
+	end
+
+	local var6_52 = checkABExist("painting/" .. arg0_52.shipSkin:getConfig("painting") .. "_n")
+
+	arg0_52.tagList:make(function(arg0_53, arg1_53, arg2_53)
+		if arg0_53 == UIItemList.EventUpdate then
+			local var0_53 = var2_52[arg1_53 + 1]
+
+			LoadSpriteAtlasAsync("SkinIcon", "type_" .. ShipSkin.Tag2Name(var2_52[arg1_53 + 1]), function(arg0_54)
+				if arg0_52.exited then
+					return
+				end
+
+				arg2_53:GetComponent(typeof(Image)).sprite = arg0_54
+			end)
+		end
+	end)
+	arg0_52.tagList:align(#var2_52)
+end
+
+function var0_0.ClearPainting(arg0_55)
+	local var0_55 = arg0_55.paintingState
+
+	if not var0_55 then
 		return
 	end
 
-	if var0_48.state == var1_0 then
-		arg0_48:ClearMeshPainting()
-	elseif var0_48.state == var2_0 then
-		arg0_48:ClearL2dPainting()
-	elseif var0_48.state == var3_0 then
-		arg0_48:ClearSpinePainting()
+	if var0_55.state == var1_0 then
+		arg0_55:ClearMeshPainting()
+	elseif var0_55.state == var2_0 then
+		arg0_55:ClearL2dPainting()
+	elseif var0_55.state == var3_0 then
+		arg0_55:ClearSpinePainting()
 	end
 
-	arg0_48.paintingState = nil
+	arg0_55.paintingState = nil
 end
 
-function var0_0.IsShowSelectShipView(arg0_49)
-	return arg0_49.selectShipPage and arg0_49.selectShipPage:GetLoaded() and arg0_49.selectShipPage:isShowing()
+function var0_0.IsShowSelectShipView(arg0_56)
+	return arg0_56.selectShipPage and arg0_56.selectShipPage:GetLoaded() and arg0_56.selectShipPage:isShowing()
 end
 
-function var0_0.CloseSelectShipView(arg0_50)
-	arg0_50.selectShipPage:Hide()
+function var0_0.CloseSelectShipView(arg0_57)
+	arg0_57.selectShipPage:Hide()
 end
 
-function var0_0.willExit(arg0_51)
-	pg.DynamicBgMgr.GetInstance():ClearBg(arg0_51:getUIName())
+function var0_0.willExit(arg0_58)
+	pg.DynamicBgMgr.GetInstance():ClearBg(arg0_58:getUIName())
 
-	if arg0_51.live2dChar then
-		arg0_51.live2dChar:Dispose()
+	if arg0_58.live2dChar then
+		arg0_58.live2dChar:Dispose()
 
-		arg0_51.live2dChar = nil
+		arg0_58.live2dChar = nil
 	end
 
-	for iter0_51, iter1_51 in pairs(arg0_51.downloads) do
-		iter1_51:Dispose()
+	for iter0_58, iter1_58 in pairs(arg0_58.downloads) do
+		iter1_58:Dispose()
 	end
 
-	arg0_51.downloads = {}
+	arg0_58.downloads = {}
 
-	arg0_51:ClearPainting()
-	arg0_51:ReturnChar()
-	arg0_51.selectShipPage:Destroy()
+	arg0_58:ClearPainting()
+	arg0_58:ReturnChar()
+	arg0_58.selectShipPage:Destroy()
 
-	arg0_51.selectShipPage = nil
+	arg0_58.selectShipPage = nil
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_51._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_58._tf)
 end
 
-function var0_0.onBackPressed(arg0_52)
-	if arg0_52:IsShowSelectShipView() then
-		arg0_52:CloseSelectShipView()
+function var0_0.onBackPressed(arg0_59)
+	if arg0_59:IsShowSelectShipView() then
+		arg0_59:CloseSelectShipView()
 
 		return
 	end
 
-	var0_0.super.onBackPressed(arg0_52)
+	var0_0.super.onBackPressed(arg0_59)
 end
 
 return var0_0

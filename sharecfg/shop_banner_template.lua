@@ -125,7 +125,7 @@ pg.shop_banner_template = {
 		name = "banner_middle",
 		type = 2,
 		id = 20,
-		pic = "",
+		pic = "shopbanner/shop_pack_bg",
 		time_lable = 1,
 		time = {
 			{

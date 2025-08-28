@@ -143,7 +143,7 @@ function var0_0.init(arg0_3)
 	setText(arg0_3.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/own/options/0/Text"), i18n("shop_new_all"))
 	setText(arg0_3.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/own/options/1/Text"), i18n("shop_new_owned"))
 	setText(arg0_3.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/own/options/2/Text"), i18n("shop_new_havent_own"))
-	setText(arg0_3.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/own/options/3/Text"), i18n("shop_new_unused"))
+	setScrollText(arg0_3.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/own/options/3/mask/Text"), i18n("shop_new_unused"))
 	setText(arg0_3.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/type/subTitleFrame/subTitle"), i18n("shop_new_type"))
 	setText(arg0_3.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/type/options/0/Text"), i18n("shop_new_all"))
 	setText(arg0_3.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/type/options/2/Text"), i18n("shop_new_static"))
@@ -246,6 +246,7 @@ function var0_0.didEnter(arg0_6)
 	onButton(arg0_6, arg0_6.showOwnBtn, function()
 		arg0_6:emit(LatestSkinShopMediator.OPEN_OWN_SKIN_LAYER)
 	end, SFX_PANEL)
+	getProxy(CommanderManualProxy):TaskProgressAdd(2021, 1)
 end
 
 function var0_0.SetResource(arg0_14)
@@ -1985,7 +1986,7 @@ function var0_0.SetOptionList(arg0_127, arg1_127, arg2_127, arg3_127)
 
 			arg2_128.name = arg1_128
 
-			setText(arg2_128:Find("Text"), var0_128)
+			setScrollText(arg2_128:Find("mask/Text"), var0_128)
 		end
 	end)
 	var0_127:align(#arg2_127)
@@ -2066,7 +2067,13 @@ end
 function var0_0.SetOptionSelect(arg0_133, arg1_133, arg2_133)
 	setActive(arg1_133:Find("selectedFrame"), arg2_133)
 
-	local var0_133 = arg1_133:Find("Text"):GetComponent(typeof(Text))
+	local var0_133
+
+	if IsNil(arg1_133:Find("Text")) then
+		var0_133 = arg1_133:Find("mask/Text"):GetComponent(typeof(Text))
+	else
+		var0_133 = arg1_133:Find("Text"):GetComponent(typeof(Text))
+	end
 
 	if arg2_133 then
 		var0_133.color = Color.New(1, 1, 1, 1)

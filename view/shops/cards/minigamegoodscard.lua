@@ -3,10 +3,6 @@ local var0_0 = class("MiniGameGoodsCard", import(".BaseGoodsCard"))
 function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.Ctor(arg0_1, arg1_1)
 	setActive(arg0_1.selloutTag, true)
-	setText(arg0_1.levelTag, i18n("shop_charge_level_limit"))
-
-	arg0_1.levelTagText = arg0_1.tf:Find("mask/tag/level_tag/Text")
-
 	onButton(arg0_1, arg0_1.mask, function()
 		pg.TipsMgr.GetInstance():ShowTips(arg0_1.maskTip)
 	end, SFX_PANEL)
@@ -39,7 +35,7 @@ function var0_0.setLevelMask(arg0_4, arg1_4)
 	setActive(arg0_4.mask, var1_4)
 
 	if var1_4 then
-		setText(arg0_4.levelTagText, tostring(var0_4))
+		setScrollText(arg0_4.levelTagText, tostring(var0_4))
 		setActive(arg0_4.levelTag, true)
 		setActive(arg0_4.selloutTag, false)
 

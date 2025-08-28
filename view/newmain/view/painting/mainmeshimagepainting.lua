@@ -47,7 +47,7 @@ function var0_0.OnLoad(arg0_4, arg1_4)
 	arg0_4:ClearScalePart()
 	LoadPaintingPrefabAsync(arg0_4.container, arg0_4.paintingName, var0_4, "mainNormal", function()
 		if arg0_4:IsExited() then
-			arg0_4:UnLoad()
+			arg0_4:Unload()
 
 			return
 		end

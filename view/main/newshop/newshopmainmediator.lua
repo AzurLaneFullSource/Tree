@@ -341,9 +341,7 @@ function var0_0.handleNotification(arg0_33, arg1_33)
 
 		if var1_33.awards and #var1_33.awards > 0 then
 			arg0_33.viewComponent:unBlurView()
-			arg0_33.viewComponent:emit(BaseUI.ON_AWARD, {
-				items = var1_33.awards
-			})
+			arg0_33.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_33.awards)
 		end
 
 		local var7_33 = var1_33.normalList

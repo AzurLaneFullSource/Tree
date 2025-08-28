@@ -21,4 +21,12 @@ function var0_0.GetSpineShift(arg0_4)
 	return arg0_4.spineShift, arg0_4.spineScale
 end
 
+function var0_0.IsLimitYPos(arg0_5)
+	return arg0_5 == "biaoqiang" or arg0_5 == "z23" or arg0_5 == "lafei" or arg0_5 == "lingbo" or arg0_5 == "mingshi" or arg0_5 == "xuefeng"
+end
+
+function var0_0.GetHalfBodyOffsetY(arg0_6, arg1_6)
+	return arg0_6.rect.height * -0.5 + 325 * arg1_6.localScale.y
+end
+
 return var0_0

@@ -10,7 +10,6 @@ var0_0.DefaultColor = {
 function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0_1.tagImg = arg0_1.tf:Find("mask/tag"):GetComponent(typeof(Image))
 	arg0_1.limitPassTag = arg0_1.tf:Find("mask/tag/pass_tag")
 end
 
@@ -44,12 +43,12 @@ function var0_0.updateSingle(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
 
 		if var4_3 == "pass" then
 			setActive(arg0_3.limitPassTag, true)
-			setText(findTF(arg0_3.limitPassTag, "Text"), i18n("eventshop_unlock_info", var5_3))
+			setScrollText(findTF(arg0_3.limitPassTag, "TextGo/Text"), i18n("eventshop_unlock_info", var5_3))
 			onButton(arg0_3, arg0_3.mask, function()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("eventshop_unlock_hint", var5_3))
 			end, SFX_PANEL)
 		else
-			setText(arg0_3.unexchangeTag, var5_3)
+			setText(arg0_3.unexchangeTag:Find("TextGo/Text"), var5_3)
 
 			var2_3 = true
 		end

@@ -118,6 +118,7 @@ function var0_0.init(arg0_4)
 			go = arg0_4:findTF("shop1List/specialShop/shop1Tg", var0_4)
 		}
 	}
+	GetComponent(arg0_4:findTF("shop1List/supplyShop/shop2List/supplyShop", var0_4), typeof(Toggle)).isOn = true
 	arg0_4.chargeTipWindow = ChargeTipWindow.New(arg0_4._tf, arg0_4.event)
 
 	arg0_4:LoadMingshi()
@@ -250,6 +251,13 @@ function var0_0.didEnter(arg0_19)
 			arg0_19.contextData.shop1 = nil
 			arg0_19.contextData.shop2 = nil
 
+			if arg0_19.shop1 == "recommendation" then
+				return
+			end
+
+			arg0_19.shop1 = "recommendation"
+			arg0_19.shop2 = nil
+
 			arg0_19:ShowChargeWarp(false)
 			pg.m02:sendNotification(var0_0.CLOSE_ALL_LAYER)
 			arg0_19:emit(NewShopMainMediator.OPEN_LAYER, NewRecommendationShopLayer, NewRecommendationShopMediator)
@@ -264,6 +272,12 @@ function var0_0.didEnter(arg0_19)
 		if arg0_26 then
 			arg0_19.contextData.shop2 = "newSkin"
 
+			if arg0_19.shop2 == "newSkin" then
+				return
+			end
+
+			arg0_19.shop2 = "newSkin"
+
 			arg0_19:ShowChargeWarp(false)
 			pg.m02:sendNotification(var0_0.CLOSE_ALL_LAYER)
 			arg0_19:emit(NewShopMainMediator.OPEN_LAYER, LatestSkinShopLayer, LatestSkinShopMediator, {
@@ -275,6 +289,12 @@ function var0_0.didEnter(arg0_19)
 	onToggle(arg0_19, arg0_19:findTF("shop1List/skinShop/shop2List/permanentSkin", arg0_19.buttonList), function(arg0_27)
 		if arg0_27 then
 			arg0_19.contextData.shop2 = "permanentSkin"
+
+			if arg0_19.shop2 == "permanentSkin" then
+				return
+			end
+
+			arg0_19.shop2 = "permanentSkin"
 
 			arg0_19:ShowChargeWarp(false)
 			pg.m02:sendNotification(var0_0.CLOSE_ALL_LAYER)
@@ -288,6 +308,12 @@ function var0_0.didEnter(arg0_19)
 		setActive(arg0_19:findTF("shop1List/skinShop/shop2List", arg0_19.buttonList), arg0_28)
 
 		if arg0_28 then
+			if arg0_19.shop1 == "skinShop" then
+				return
+			end
+
+			arg0_19.shop1 = "skinShop"
+
 			if arg0_19.contextData.shop1 and arg0_19.contextData.shop2 then
 				triggerToggle(arg0_19.buttonList:Find("shop1List/skinShop/shop2List/" .. arg0_19.contextData.shop2), true)
 			else
@@ -311,6 +337,8 @@ function var0_0.didEnter(arg0_19)
 
 				arg0_19.contextData.shop1 = nil
 				arg0_19.contextData.shop2 = nil
+				arg0_19.shop1 = nil
+				arg0_19.shop2 = nil
 
 				local var0_29 = arg0_19:GetShopID(arg0_19.contextData.type, arg0_19.contextData.warp)
 
@@ -353,6 +381,8 @@ function var0_0.didEnter(arg0_19)
 
 				arg0_19.contextData.shop1 = nil
 				arg0_19.contextData.shop2 = nil
+				arg0_19.shop1 = nil
+				arg0_19.shop2 = nil
 
 				local var0_31 = arg0_19:GetShopID(arg0_19.contextData.type, arg0_19.contextData.warp)
 
@@ -656,6 +686,9 @@ function var0_0.SwitchPainting(arg0_51, arg1_51)
 
 	if arg1_51 then
 		arg0_51:StopLive2dTimer()
+
+		arg0_51.chatFlag = nil
+
 		arg0_51:stopCV()
 		setActive(arg0_51.stamp, getProxy(TaskProxy):mingshiTouchFlagEnabled())
 

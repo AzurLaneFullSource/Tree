@@ -33,6 +33,23 @@ end
 function var0_0.initUI(arg0_5)
 	arg0_5.contextTF = arg0_5:findTF("scroll")
 	arg0_5.lScrollRect = GetComponent(arg0_5.contextTF, "LScrollRect")
+	arg0_5.scrollContent = arg0_5:findTF("scroll/content")
+	arg0_5.scrollRectTF = GetComponent(arg0_5.scrollContent, typeof(RectTransform))
+	arg0_5.layoutGroup = GetComponent(arg0_5.scrollContent, typeof(GridLayoutGroup))
+
+	local var0_5 = arg0_5.scrollRectTF.rect.width
+	local var1_5 = arg0_5.layoutGroup.cellSize.x
+	local var2_5 = math.floor(var0_5 / var1_5)
+	local var3_5 = var0_5 % var1_5 / var2_5
+
+	if var3_5 < 12 then
+		local var4_5 = var2_5 - 1
+
+		var3_5 = (var0_5 - var1_5 * var4_5) / var4_5
+	end
+
+	arg0_5.layoutGroup.spacing = Vector2(var3_5, var3_5)
+	arg0_5.layoutGroup.padding.left = var3_5 / 2
 	arg0_5.cardTable = {}
 	arg0_5.cardList = {}
 

@@ -21,8 +21,6 @@ end
 function var0_0.OnInitItem(arg0_4, arg1_4)
 	local var0_4 = ActivityGoodsCard.New(arg1_4)
 
-	var0_4.tagImg.raycastTarget = false
-
 	onButton(arg0_4, var0_4.tf, function()
 		if var0_4.goodsVO:Selectable() then
 			arg0_4.purchaseWindow:ExecuteAction("Show", {

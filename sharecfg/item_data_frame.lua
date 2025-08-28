@@ -57,7 +57,7 @@ pg.item_data_frame = {
 	[106] = {
 		time_limit_type = 0,
 		name = "Gunslinger's Glory",
-		gain_by = "3rd Anniversary Event",
+		gain_by = "",
 		id = 106,
 		time_second = 0,
 		desc = "Buckle up, Buckaroo! There's a new sheriff in town!",
@@ -291,7 +291,7 @@ pg.item_data_frame = {
 	[310] = {
 		time_limit_type = 0,
 		name = "Laffey's Gift",
-		gain_by = "2nd Anniversary Event",
+		gain_by = "",
 		id = 310,
 		time_second = 0,
 		desc = "<color=#ffffff>A special portrait frame designed with Laffey's motifs.</color>\nObtained from the 2nd Anniversary event.",
@@ -633,7 +633,7 @@ pg.item_data_frame = {
 	[607] = {
 		time_limit_type = 0,
 		name = "A Trip to the Prairie",
-		gain_by = "Wild West Vacation Log",
+		gain_by = "",
 		id = 607,
 		time_second = 0,
 		desc = "<color=#ffffff>No one can escape their own story. Not even a free-spirited rider.</color> Given to Commanders who participated in the Wild West Vacation Log event.",
@@ -642,7 +642,7 @@ pg.item_data_frame = {
 	[608] = {
 		time_limit_type = 0,
 		name = "Black Friday Frenzy",
-		gain_by = "Akashi's Fire Sale",
+		gain_by = "",
 		id = 608,
 		time_second = 0,
 		desc = "<color=#ffffff>\"Thank you for taking part in the Black Friday campaign, nya!\"</color> \nObtained from 2024 Black Friday Akashi's Fire Sale event.",
@@ -651,7 +651,7 @@ pg.item_data_frame = {
 	[610] = {
 		time_limit_type = 0,
 		name = "Resort Island Vacation",
-		gain_by = "The Villa Reconstruction",
+		gain_by = "",
 		id = 610,
 		time_second = 0,
 		desc = "<color=#ffffff>To a perfect vacation on the resort island!</color> Obtained by participating in the Midsummer Returns: The Villa Reconstruction event.",
@@ -660,7 +660,7 @@ pg.item_data_frame = {
 	[611] = {
 		time_limit_type = 0,
 		name = "Sylvan Breeze",
-		gain_by = "A Sylvan Retreat",
+		gain_by = "",
 		id = 611,
 		time_second = 0,
 		desc = "<color=#ffffff>Take in the atmosphere and feel the wind blow through the trees on this extraordinary vacation.</color> Obtained by participating in the A Sylvan Retreat event.",
@@ -669,7 +669,7 @@ pg.item_data_frame = {
 	[1001] = {
 		time_limit_type = 0,
 		name = "Sweet Rendezvous",
-		gain_by = "Private Quarters: Sirius",
+		gain_by = "",
 		id = 1001,
 		time_second = 0,
 		desc = "<color=#ffffff>In every bite, a sweet and delectable memory.</color>\nObtained by raising Intimacy Level with Sirius in Private Quarters.",
@@ -678,7 +678,7 @@ pg.item_data_frame = {
 	[1002] = {
 		time_limit_type = 0,
 		name = "Afternoon Tea",
-		gain_by = "Private Quarters: Sirius",
+		gain_by = "",
 		id = 1002,
 		time_second = 0,
 		desc = "<color=#ffffff>Whatever happens, there will always be a cup of warm tea quietly waiting for you.</color>\nObtained by raising Intimacy Level with Sirius in Private Quarters.",
@@ -687,7 +687,7 @@ pg.item_data_frame = {
 	[1003] = {
 		time_limit_type = 0,
 		name = "Style of the Golden Sakura",
-		gain_by = "Private Quarters: Noshiro",
+		gain_by = "",
 		id = 1003,
 		time_second = 0,
 		desc = "<color=#ffffff>The golden sakura in flight symbolizes a proud yet calm heart.</color>\nReward for raising Noshiro's Intimacy in the Private Quarters.",
@@ -696,7 +696,7 @@ pg.item_data_frame = {
 	[1004] = {
 		time_limit_type = 0,
 		name = "Floral Rain, Homecoming Bird, and You",
-		gain_by = "Private Quarters: Noshiro",
+		gain_by = "",
 		id = 1004,
 		time_second = 0,
 		desc = "<color=#ffffff>From underneath the Sakuran parasol, a pair of eyes gazes at you lovingly.</color>\nReward for raising Noshiro's Intimacy in the Private Quarters.",
@@ -705,7 +705,7 @@ pg.item_data_frame = {
 	[1005] = {
 		time_limit_type = 0,
 		name = "Angelic Light",
-		gain_by = "Private Quarters: Anchorage",
+		gain_by = "0",
 		id = 1005,
 		time_second = 0,
 		desc = "<color=#ffffff>The pure light of the stars makes an angel's halo shine.</color>\nReward for raising Anchorage's Intimacy in the Private Quarters.",
@@ -714,7 +714,7 @@ pg.item_data_frame = {
 	[1006] = {
 		time_limit_type = 0,
 		name = "Adventure on the Blue Seas",
-		gain_by = "Private Quarters: Anchorage",
+		gain_by = "0",
 		id = 1006,
 		time_second = 0,
 		desc = "<color=#ffffff>Chase the waves and dive into a joyous new quest.</color>\nReward for raising Anchorage's Intimacy in the Private Quarters.",
@@ -723,7 +723,7 @@ pg.item_data_frame = {
 	[1007] = {
 		time_limit_type = 0,
 		name = "Stars and Snow",
-		gain_by = "Private Quarters: New Jersey",
+		gain_by = "",
 		id = 1007,
 		time_second = 0,
 		desc = "<color=#ffffff>Under the stars and snow, two rabbits snuggle close to keep each other warm.</color>\nReward for raising New Jersey's Intimacy in the Private Quarters.",
@@ -732,7 +732,7 @@ pg.item_data_frame = {
 	[1008] = {
 		time_limit_type = 0,
 		name = "Dazzling Steps",
-		gain_by = "Private Quarters: New Jersey",
+		gain_by = "",
 		id = 1008,
 		time_second = 0,
 		desc = "<color=#ffffff>Who's the bunny dancing in the neon spotlight?</color>\nReward for raising New Jersey's Intimacy in the Private Quarters.",

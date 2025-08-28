@@ -27027,6 +27027,10 @@ _G.pg.base.gametip.cruise_title_2508 = {
 	tip = "Cruise Missions S24",
 }
 
+_G.pg.base.gametip.cruise_title_2406 = {
+	tip = "Cruise Missions - S17",
+}
+
 _G.pg.base.gametip.battlepass_main_time_title = {
 	tip = "Time Remaining:",
 }
@@ -30188,7 +30192,7 @@ _G.pg.base.gametip.shop_new_skin_new = {
 }
 
 _G.pg.base.gametip.shop_new_skin_permanent = {
-	tip = "Popular",
+	tip = "Hot",
 }
 
 _G.pg.base.gametip.shop_new_in_use = {

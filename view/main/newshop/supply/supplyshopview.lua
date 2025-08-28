@@ -38,7 +38,12 @@ function var0_0.OnDestroy(arg0_4)
 	arg0_4:unBlurView()
 
 	arg0_4.prevBtn = nil
-	arg0_4.page = nil
+
+	if arg0_4.page then
+		arg0_4.page:StopBGM()
+
+		arg0_4.page = nil
+	end
 
 	arg0_4:DestroyResItemList()
 
@@ -51,6 +56,29 @@ end
 
 function var0_0.initUI(arg0_5)
 	arg0_5.lScrollRect = GetComponent(arg0_5:findTF("scroll"), "LScrollRect")
+	arg0_5.scrollContent = arg0_5:findTF("scroll/content")
+	arg0_5.scrollRectTF = GetComponent(arg0_5.scrollContent, typeof(RectTransform))
+	arg0_5.layoutGroup = GetComponent(arg0_5.scrollContent, typeof(GridLayoutGroup))
+	arg0_5.scrollRectSpecial = arg0_5:findTF("scrollRectSpecial")
+
+	setActive(arg0_5.scrollRectSpecial, false)
+
+	local var0_5 = GetComponent(arg0_5:findTF("viewport/view/group/items", arg0_5.scrollRectSpecial), typeof(GridLayoutGroup))
+	local var1_5 = arg0_5.scrollRectTF.rect.width
+	local var2_5 = arg0_5.layoutGroup.cellSize.x
+	local var3_5 = math.floor(var1_5 / var2_5)
+	local var4_5 = var1_5 % var2_5 / var3_5
+
+	if var4_5 < 12 then
+		local var5_5 = var3_5 - 1
+
+		var4_5 = (var1_5 - var2_5 * var5_5) / var5_5
+	end
+
+	arg0_5.layoutGroup.spacing = Vector2(var4_5, var4_5)
+	arg0_5.layoutGroup.padding.left = var4_5 / 2
+	var0_5.spacing = Vector2(var4_5, var4_5)
+	var0_5.padding.left = var4_5 / 2
 end
 
 function var0_0.initData(arg0_6)
@@ -97,11 +125,11 @@ function var0_0.GetDefaultShopIndex(arg0_8)
 			end
 		end
 	else
-		for iter2_8, iter3_8 in ipairs(arg0_8.packageSortList) do
+		for iter2_8, iter3_8 in pairs(arg0_8.packageSortList) do
 			if iter3_8.type == arg0_8.contextData.shopID then
 				local var1_8 = arg0_8.packageSortList[arg0_8.supplyShopType].index
 				local var2_8 = arg0_8.packageSortList[arg0_8.supplyShopType].type
-				local var3_8 = arg0_8.allShopList[var2_8][var1_8]
+				local var3_8 = arg0_8.allShopList[var2_8][1]
 				local var4_8, var5_8 = arg0_8.pages[iter3_8.type]:CanOpen(var3_8, arg0_8.player)
 
 				if var4_8 then
@@ -112,11 +140,10 @@ function var0_0.GetDefaultShopIndex(arg0_8)
 	end
 
 	for iter4_8, iter5_8 in pairs(arg0_8.packageSortList) do
-		local var6_8 = iter5_8.index
-		local var7_8 = arg0_8.allShopList[iter5_8.type][var6_8]
-		local var8_8, var9_8 = arg0_8.pages[iter5_8.type]:CanOpen(var7_8, arg0_8.player)
+		local var6_8 = arg0_8.allShopList[iter5_8.type][1]
+		local var7_8, var8_8 = arg0_8.pages[iter5_8.type]:CanOpen(var6_8, arg0_8.player)
 
-		if var8_8 then
+		if var7_8 then
 			return iter5_8.index
 		end
 	end
@@ -143,7 +170,7 @@ function var0_0.initToggleList(arg0_10)
 			setText(arg0_10:findTF("unselected/Label", arg2_11), i18n(ShopConst.TYPE2NAME[var0_11]))
 
 			local var1_11 = arg0_10.packageSortList[arg1_11 + 1].index
-			local var2_11 = arg0_10.allShopList[var0_11][var1_11]
+			local var2_11 = arg0_10.allShopList[var0_11][1]
 			local var3_11, var4_11 = arg0_10.pages[var0_11]:CanOpen(var2_11, arg0_10.player)
 
 			if var3_11 == false then
@@ -163,7 +190,7 @@ function var0_0.initToggleList(arg0_10)
 				end
 
 				local var1_12 = arg0_10.packageSortList[arg1_11 + 1].type
-				local var2_12 = arg0_10.allShopList[var1_12][var0_12]
+				local var2_12 = arg0_10.allShopList[var1_12][1]
 				local var3_12, var4_12 = arg0_10.pages[var1_12]:CanOpen(var2_12, arg0_10.player)
 
 				if var3_12 == false then
@@ -182,6 +209,7 @@ function var0_0.initToggleList(arg0_10)
 
 				arg0_10.prevBtn = arg2_11
 				arg0_10.selectedPackageType = var0_12
+				arg0_10.contextData.shopID = var1_12
 
 				arg0_10:UpdateShop()
 			end, SFX_PANEL)

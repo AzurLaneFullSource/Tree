@@ -78,9 +78,13 @@ function var0_0.Show(arg0_10)
 
 	arg0_10.canvasGroup.alpha = 1
 	arg0_10.canvasGroup.blocksRaycasts = true
+
+	arg0_10:PlayBGM()
 end
 
 function var0_0.Hide(arg0_13)
+	arg0_13:StopBGM()
+
 	for iter0_13, iter1_13 in pairs(arg0_13.cards) do
 		iter1_13:Dispose()
 	end
@@ -116,12 +120,11 @@ function var0_0.SetPainting(arg0_17)
 			local var0_18, var1_18, var2_18 = arg0_17:GetPaintingEnterVoice()
 
 			arg0_17.contextData.paintingView:Chat(var0_18, var1_18, var2_18, true)
-		end)
-		onButton(arg0_17, arg0_17.contextData.paintingView.touch, function()
+		end, function()
 			local var0_19, var1_19, var2_19 = arg0_17:GetPaintingTouchVoice()
 
 			arg0_17.contextData.paintingView:Chat(var0_19, var1_19, var2_19, false)
-		end, SFX_PANEL)
+		end)
 	end
 end
 
@@ -306,32 +309,54 @@ function var0_0.OnSetUp(arg0_38)
 	return
 end
 
-function var0_0.OnUpdateAll(arg0_39)
+function var0_0.getBGM(arg0_39)
+	return nil
+end
+
+function var0_0.PlayBGM(arg0_40)
+	local var0_40 = arg0_40:getBGM()
+	local var1_40 = pg.voice_bgm[var0_40]
+
+	if var0_40 and var1_40 then
+		pg.BgmMgr.GetInstance():Push(var0_40, var1_40.bgm)
+	end
+end
+
+function var0_0.StopBGM(arg0_41)
+	local var0_41 = arg0_41:getBGM()
+	local var1_41 = pg.voice_bgm[var0_41]
+
+	if var0_41 and var1_41 then
+		pg.BgmMgr.GetInstance():Pop(var0_41)
+	end
+end
+
+function var0_0.OnUpdateAll(arg0_42)
 	return
 end
 
-function var0_0.OnUpdateCommodity(arg0_40, arg1_40)
+function var0_0.OnUpdateCommodity(arg0_43, arg1_43)
 	return
 end
 
-function var0_0.OnUpdatePlayer(arg0_41)
+function var0_0.OnUpdatePlayer(arg0_44)
 	return
 end
 
-function var0_0.OnUpdateItems(arg0_42)
+function var0_0.OnUpdateItems(arg0_45)
 	return
 end
 
-function var0_0.OnInitItem(arg0_43, arg1_43)
+function var0_0.OnInitItem(arg0_46, arg1_46)
 	return
 end
 
-function var0_0.OnUpdateItem(arg0_44, arg1_44, arg2_44)
+function var0_0.OnUpdateItem(arg0_47, arg1_47, arg2_47)
 	return
 end
 
-function var0_0.CanOpenPurchaseWindow(arg0_45, arg1_45)
-	return arg1_45:canPurchase()
+function var0_0.CanOpenPurchaseWindow(arg0_48, arg1_48)
+	return arg1_48:canPurchase()
 end
 
 return var0_0

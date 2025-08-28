@@ -27,6 +27,7 @@ pg.furniture_data_template = setmetatable({
 			27,
 			28,
 			31,
+			32,
 			102,
 			104,
 			105,
@@ -232,6 +233,7 @@ pg.furniture_data_template = setmetatable({
 			100064,
 			100065,
 			100066,
+			100067,
 			100073,
 			100074,
 			100075,
@@ -3576,6 +3578,7 @@ pg.furniture_data_template = setmetatable({
 			27,
 			28,
 			31,
+			32,
 			102,
 			104,
 			105,
@@ -3713,6 +3716,7 @@ pg.furniture_data_template = setmetatable({
 			100064,
 			100065,
 			100066,
+			100067,
 			100073,
 			100074,
 			100075,
@@ -6911,6 +6915,7 @@ pg.furniture_data_template = setmetatable({
 			27,
 			28,
 			31,
+			32,
 			102,
 			104,
 			105,
@@ -7075,6 +7080,7 @@ pg.furniture_data_template = setmetatable({
 			100061,
 			100062,
 			100065,
+			100067,
 			100074,
 			100075,
 			100076
@@ -10259,6 +10265,7 @@ pg.furniture_data_template = setmetatable({
 		27,
 		28,
 		31,
+		32,
 		102,
 		104,
 		105,
@@ -10466,6 +10473,7 @@ pg.furniture_data_template = setmetatable({
 		100064,
 		100065,
 		100066,
+		100067,
 		100073,
 		100074,
 		100075,
@@ -14436,6 +14444,43 @@ pg.base.furniture_data_template = {
 		size = {
 			1,
 			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[32] = {
+		effect = "",
+		name = "USS New Jersey Model",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 0,
+		is_get_time_note = 0,
+		picture = "chuanmo/xinzexi",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Special decoration: A 1:100 scale model of an Iowa class battleship",
+		tag = 6,
+		icon = "xinzexiicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 32,
+		can_rotate = 0,
+		size = {
+			2,
+			7
 		},
 		offset = {},
 		canputonGrid = {},
@@ -20584,7 +20629,7 @@ pg.base.furniture_data_template = {
 	[283] = {
 		effect = "",
 		name = "Mont-Saint-Michel Miniature",
-		gain_by = "Interlude of Illusions",
+		gain_by = "",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
@@ -20707,7 +20752,7 @@ pg.base.furniture_data_template = {
 	[286] = {
 		effect = "",
 		name = "Party for Pioneers",
-		gain_by = "Cursed Western Town",
+		gain_by = "",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
@@ -21245,7 +21290,7 @@ pg.base.furniture_data_template = {
 	[297] = {
 		effect = "",
 		name = "Logistics Center Miniature",
-		gain_by = "Letters from Valley Hospital",
+		gain_by = "",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
@@ -21282,7 +21327,7 @@ pg.base.furniture_data_template = {
 	[298] = {
 		effect = "",
 		name = "Recuperation Center Miniature",
-		gain_by = "Letters from Valley Hospital",
+		gain_by = "",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
@@ -21319,7 +21364,7 @@ pg.base.furniture_data_template = {
 	[299] = {
 		effect = "",
 		name = "Research Center Miniature",
-		gain_by = "Letters from Valley Hospital",
+		gain_by = "",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
@@ -21356,7 +21401,7 @@ pg.base.furniture_data_template = {
 	[300] = {
 		effect = "",
 		name = "Medical Center Miniature",
-		gain_by = "Letters from Valley Hospital",
+		gain_by = "",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
@@ -21393,7 +21438,7 @@ pg.base.furniture_data_template = {
 	[301] = {
 		effect = "",
 		name = "Inpatient Building Miniature",
-		gain_by = "Letters from Valley Hospital",
+		gain_by = "",
 		type = 7,
 		dir = 0,
 		dorm_id = 0,
@@ -26242,6 +26287,96 @@ pg.base.furniture_data_template = {
 		},
 		interAction_group = {}
 	},
+	[100067] = {
+		effect = "",
+		name = "Fully-Automatic Anti-Fall Treadmill",
+		gain_by = "",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Low speed, high speed, it doesn't matter – you won't fall under any circumstance!",
+		themeId = 0,
+		icon = "paobujiicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 6,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 100067,
+		can_rotate = 0,
+		size = {
+			4,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"paobujiB",
+				"normal"
+			},
+			{
+				"paobujiT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"tuozhuai2",
+						nil,
+						"tuozhuai2"
+					},
+					{
+						"walk2",
+						nil,
+						"walk"
+					}
+				},
+				{
+					nil,
+					1,
+					{
+						"walk1",
+						"walk",
+						false,
+						true
+					}
+				},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
 	[100073] = {
 		effect = "",
 		name = "Manjuu Surfboard",
@@ -26470,7 +26605,7 @@ pg.base.furniture_data_template = {
 		themeId = 0,
 		count = 1,
 		is_3d_obj = 0,
-		describe = "Watch out for when the bubble bursts!",
+		describe = "Blub-blub-blub... Pop! Blub-blub-blub...",
 		tag = 6,
 		icon = "chuipaofenweijiicon",
 		spine_extra = "",

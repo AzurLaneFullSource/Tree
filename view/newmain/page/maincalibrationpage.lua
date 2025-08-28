@@ -212,6 +212,10 @@ function var0_0.ResetPostion(arg0_22)
 
 	local var3_22, var4_22 = arg0_22.shift:GetL2dShift()
 
+	if MainPaintingShift.IsLimitYPos(arg0_22.flagShip:getPainting()) then
+		var3_22.y = MainPaintingShift.GetHalfBodyOffsetY(arg0_22.paintingTF.parent, arg0_22.l2dContainer)
+	end
+
 	arg0_22.l2dContainer.anchoredPosition = var3_22
 
 	local var5_22, var6_22 = arg0_22.shift:GetSpineShift()

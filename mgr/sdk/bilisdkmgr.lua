@@ -156,7 +156,7 @@ end
 
 function var0_0.OpenMiniProgram()
 	if LuaHelper.GetCHPackageType() == PACKAGE_TYPE_BILI and not IsUnityEditor then
-		var1_0:OpenMiniProgram("gh_c18eea57d6d7", "pages/schoolAuthentication/index")
+		var1_0:OpenMiniProgram("gh_dae6f3c76e13", "pages/home/index")
 	end
 end
 

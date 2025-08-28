@@ -27,7 +27,7 @@ function var0_0.init(arg0_2)
 	setText(arg0_2.filterUI:Find("panelMask/panel/title"), i18n("shop_new_sort"))
 	setText(arg0_2.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/own/subTitleFrame/subTitle"), i18n("shop_new_review"))
 	setText(arg0_2.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/own/options/0/Text"), i18n("shop_new_all"))
-	setText(arg0_2.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/own/options/1/Text"), i18n("shop_new_unused"))
+	setScrollText(arg0_2.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/own/options/1/mask/Text"), i18n("shop_new_unused"))
 	setText(arg0_2.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/type/subTitleFrame/subTitle"), i18n("shop_new_type"))
 	setText(arg0_2.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/type/options/0/Text"), i18n("shop_new_all"))
 	setText(arg0_2.filterUI:Find("panelMask/panel/filterScroll/Viewport/Content/type/options/2/Text"), i18n("shop_new_static"))
@@ -462,7 +462,7 @@ function var0_0.SetOptionList(arg0_33, arg1_33, arg2_33, arg3_33)
 
 			arg2_34.name = arg1_34
 
-			setText(arg2_34:Find("Text"), var0_34)
+			setScrollText(arg2_34:Find("mask/Text"), var0_34)
 		end
 	end)
 	var0_33:align(#arg2_33)
@@ -543,7 +543,13 @@ end
 function var0_0.SetOptionSelect(arg0_39, arg1_39, arg2_39)
 	setActive(arg1_39:Find("selectedFrame"), arg2_39)
 
-	local var0_39 = arg1_39:Find("Text"):GetComponent(typeof(Text))
+	local var0_39
+
+	if IsNil(arg1_39:Find("Text")) then
+		var0_39 = arg1_39:Find("mask/Text"):GetComponent(typeof(Text))
+	else
+		var0_39 = arg1_39:Find("Text"):GetComponent(typeof(Text))
+	end
 
 	if arg2_39 then
 		var0_39.color = Color.New(1, 1, 1, 1)

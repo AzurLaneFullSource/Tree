@@ -1,63 +1,57 @@
 local var0_0 = class("QuotaGoodsCard", import(".BaseGoodsCard"))
 
-function var0_0.Ctor(arg0_1, arg1_1)
-	var0_0.super.Ctor(arg0_1, arg1_1)
+function var0_0.update(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
+	arg0_1.goodsVO = arg1_1
 
-	arg0_1.limitTag = arg0_1.tf:Find("mask/tag/limit_tag")
-end
+	local var0_1 = arg0_1.goodsVO:canPurchase()
 
-function var0_0.update(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2)
-	arg0_2.goodsVO = arg1_2
-
-	local var0_2 = arg0_2.goodsVO:canPurchase()
-
-	setActive(arg0_2.mask, not var0_2)
-	setActive(arg0_2.limitTag, not var0_2)
-	onButton(arg0_2, arg0_2.mask, function()
+	setActive(arg0_1.mask, not var0_1)
+	setActive(arg0_1.limitTag, not var0_1)
+	onButton(arg0_1, arg0_1.mask, function()
 		pg.TipsMgr.GetInstance():ShowTips(i18n("quota_shop_limit_error"))
 	end, SFX_PANEL)
 
-	local var1_2 = arg1_2:getConfig("commodity_type")
-	local var2_2 = arg1_2:getConfig("commodity_id")
-	local var3_2 = Drop.New({
-		type = var1_2,
-		id = var2_2,
-		count = arg1_2:getConfig("num")
+	local var1_1 = arg1_1:getConfig("commodity_type")
+	local var2_1 = arg1_1:getConfig("commodity_id")
+	local var3_1 = Drop.New({
+		type = var1_1,
+		id = var2_1,
+		count = arg1_1:getConfig("num")
 	})
 
-	updateDrop(arg0_2.itemTF, var3_2)
+	updateDrop(arg0_1.itemTF, var3_1)
 
-	local var4_2 = ""
+	local var4_1 = ""
 
-	if var1_2 == DROP_TYPE_SKIN then
-		var4_2 = pg.ship_skin_template[var2_2].name or "??"
+	if var1_1 == DROP_TYPE_SKIN then
+		var4_1 = pg.ship_skin_template[var2_1].name or "??"
 	else
-		var4_2 = var3_2:getConfig("name") or "??"
+		var4_1 = var3_1:getConfig("name") or "??"
 	end
 
-	setScrollText(arg0_2.nameTxt, var4_2)
-	setText(arg0_2.countTF, arg1_2:getConfig("resource_num"))
+	setScrollText(arg0_1.nameTxt, var4_1)
+	setText(arg0_1.countTF, arg1_1:getConfig("resource_num"))
 
-	local var5_2 = Drop.New({
-		type = arg1_2:getConfig("resource_category"),
-		id = arg1_2:getConfig("resource_type")
+	local var5_1 = Drop.New({
+		type = arg1_1:getConfig("resource_category"),
+		id = arg1_1:getConfig("resource_type")
 	}):getIcon()
 
-	GetImageSpriteFromAtlasAsync(var5_2, "", arg0_2.resIconTF)
+	GetImageSpriteFromAtlasAsync(var5_1, "", arg0_1.resIconTF)
 
-	local var6_2 = arg1_2:GetLimitGoodCount()
-	local var7_2 = arg1_2:GetPurchasableCnt()
+	local var6_1 = arg1_1:GetLimitGoodCount()
+	local var7_1 = arg1_1:GetPurchasableCnt()
 
-	setText(arg0_2.limitCountLabelTF, i18n("quota_shop_owned") .. var6_2 - var7_2 .. "/" .. var6_2)
-	setActive(arg0_2.limitCountLabelTF, true)
+	setText(arg0_1.limitCountLabelTF, i18n("quota_shop_owned") .. var6_1 - var7_1 .. "/" .. var6_1)
+	setActive(arg0_1.limitCountLabelTF, true)
 end
 
-function var0_0.setAsLastSibling(arg0_4)
-	arg0_4.tf:SetAsLastSibling()
+function var0_0.setAsLastSibling(arg0_3)
+	arg0_3.tf:SetAsLastSibling()
 end
 
-function var0_0.OnDispose(arg0_5)
-	arg0_5.goodsVO = nil
+function var0_0.OnDispose(arg0_4)
+	arg0_4.goodsVO = nil
 end
 
 return var0_0
