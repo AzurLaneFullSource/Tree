@@ -10564,35 +10564,6 @@ end
 temp()
 
 function temp()
-	var1_0.抚 = {
-		顺 = {
-			["."] = {
-				改 = {
-					（ = {
-						后 = {
-							排 = {
-								） = {
-									this = true
-								}
-							}
-						},
-						前 = {
-							排 = {
-								） = {
-									this = true
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var1_0.朴 = {
 		茨 = {
 			茅 = {

@@ -48,7 +48,7 @@ function var0_0.updateSingle(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
 				pg.TipsMgr.GetInstance():ShowTips(i18n("eventshop_unlock_hint", var5_3))
 			end, SFX_PANEL)
 		else
-			setText(arg0_3.unexchangeTag:Find("TextGo/Text"), var5_3)
+			setScrollText(arg0_3.unexchangeTag:Find("TextGo/Text"), var5_3)
 
 			var2_3 = true
 		end
