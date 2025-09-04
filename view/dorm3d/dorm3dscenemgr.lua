@@ -192,7 +192,6 @@ function var0_0.ChangeArtScene(arg0_17, arg1_17, arg2_17)
 
 		table.insert(var0_17, function(arg0_24)
 			SceneOpMgr.Inst:UnloadSceneAsync(string.lower("dorm3d/scenesres/scenes/" .. var6_17 .. "/" .. var5_17 .. "_scene"), var5_17, function()
-				HotfixHelper.FixLightMapStorageByScene(arg0_17.originArtScene)
 				existCall(arg0_24)
 			end)
 		end)
@@ -202,7 +201,6 @@ function var0_0.ChangeArtScene(arg0_17, arg1_17, arg2_17)
 		arg0_26()
 
 		if var1_17 then
-			HotfixHelper.FixLightMapStorageByScene(arg0_17.originArtScene)
 			var2_17()
 		end
 	end)
