@@ -578,39 +578,26 @@ function var0_0.updateNodeTree(arg0_31)
 				end)
 			end
 
-			var1_31 = var0_0.START_GAP + (iter0_31 - 1) * var0_0.HRZ_GAP
+			local var5_31 = var0_0.START_GAP + (iter0_31 - 1) * var0_0.HRZ_GAP
+			local var6_31 = iter3_31:GetRow()
+			local var7_31 = -var6_31 * 254
 
-			local var5_31 = iter3_31:GetRow()
-			local var6_31 = -var5_31 * 254
-
-			var4_31.anchoredPosition = Vector2(var1_31, var6_31)
-			var0_31 = var1_31 + var0_0.END_GAP
+			var4_31.anchoredPosition = Vector2(var5_31, var7_31)
+			var0_31 = var5_31 + var0_0.END_GAP
 			var3_31.nodeTF = var4_31
-			var3_31.row = var5_31
+			var3_31.row = var6_31
 			var3_31.col = iter0_31
 			var3_31.linkData = {}
 			var3_31.VO = iter3_31
 			arg0_31.nodeMap[iter0_31] = arg0_31.nodeMap[iter0_31] or {}
-			arg0_31.nodeMap[iter0_31][var5_31] = true
+			arg0_31.nodeMap[iter0_31][var6_31] = true
 			arg0_31.nodeDataDict[iter3_31:GetConfigID()] = var3_31
 		end
 	end
 
 	arg0_31.nodeTail = arg0_31.tf:Find("Story/NodeTail")
 
-	arg0_31.nodeTail:SetParent(arg0_31.nodeContainer, true)
-
-	arg0_31.nodeTail.anchoredPosition = Vector2(var1_31 + var0_0.HRZ_GAP, 0)
-
-	setActive(arg0_31.nodeTail, true)
-
-	local var7_31 = tf(Instantiate(arg0_31.linkHrzTpl))
-
-	setActive(var7_31, true)
-	var7_31:SetParent(arg0_31.nodeTail, false)
-
-	var7_31.anchoredPosition = Vector2(-283.5, 0)
-
+	setActive(arg0_31.nodeTail, false)
 	arg0_31:sortLinkData()
 
 	local var8_31 = arg0_31.nodeContainer.sizeDelta

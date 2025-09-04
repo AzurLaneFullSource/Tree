@@ -1,5 +1,8 @@
 local var0_0 = class("IslandInventoryAgency", import(".IslandBaseAgency"))
 
+var0_0.ADD_ITEM = "IslandInventoryAgency.ADD_ITEM"
+var0_0.REMOVE_ITEM = "IslandInventoryAgency.REMOVE_ITEM"
+
 function var0_0.OnInit(arg0_1, arg1_1)
 	arg0_1.level = 1
 	arg0_1.configId = arg0_1.level
@@ -20,8 +23,8 @@ function var0_0.OnInit(arg0_1, arg1_1)
 	end
 end
 
-function var0_0.SetLevel(arg0_2, arg1_2)
-	arg0_2.level = arg1_2
+function var0_0.InitPrivateData(arg0_2, arg1_2)
+	arg0_2.level = arg1_2.storage_level
 end
 
 function var0_0.GetOverflowItemList(arg0_3)
@@ -113,11 +116,18 @@ function var0_0.AddItem(arg0_10, arg1_10)
 		return
 	end
 
+	local var1_10 = 0
+
 	if arg0_10:OwnItem(arg1_10.id) then
+		local var2_10 = arg0_10.itemList[arg1_10.id].count
+
 		arg0_10.itemList[arg1_10.id]:IncreaseCount(var0_10)
 	else
 		arg0_10.itemList[arg1_10.id] = arg1_10
 	end
+
+	arg0_10:DispatchEvent(var0_0.ADD_ITEM, arg1_10.id)
+	IslandTaskHelper.UpdateRuntimeTaskByTargetType(IslandTaskTargetType.RECYCLE)
 end
 
 function var0_0.SplitItemList4Add(arg0_11, arg1_11)
@@ -222,11 +232,16 @@ function var0_0.RemoveItem(arg0_17, arg1_17, arg2_17)
 		return
 	end
 
+	local var1_17 = var0_17.count
+
 	var0_17:ReduceCount(arg2_17)
 
 	if var0_17:IsNotOwned() then
 		arg0_17.itemList[arg1_17] = nil
 	end
+
+	arg0_17:DispatchEvent(var0_0.REMOVE_ITEM, arg1_17)
+	IslandTaskHelper.UpdateRuntimeTaskByTargetType(IslandTaskTargetType.RECYCLE)
 end
 
 function var0_0.GetItemById(arg0_18, arg1_18)
@@ -250,17 +265,20 @@ function var0_0.GetOwnCount(arg0_20, arg1_20)
 end
 
 function var0_0.GetCapacity(arg0_21)
-	return arg0_21:getConfig("capacity")
+	local var0_21 = arg0_21:GetHost():GetAblityAgency():GetInventoryMaxCntAddition()
+
+	return arg0_21:getConfig("capacity") + var0_21
 end
 
-function var0_0.StaticGetCapacity(arg0_22, arg1_22)
-	local var0_22 = pg.island_storage_level
+function var0_0.GetNextCapacity(arg0_22, arg1_22)
+	local var0_22 = arg0_22:GetHost():GetAblityAgency():GetInventoryMaxCntAddition()
+	local var1_22 = pg.island_storage_level
 
-	if not var0_22[arg1_22] then
+	if not var1_22[arg1_22] then
 		return 0
 	end
 
-	return var0_22[arg1_22].capacity
+	return var1_22[arg1_22].capacity + var0_22
 end
 
 function var0_0.StaticGetLength(arg0_23, arg1_23)
@@ -331,6 +349,39 @@ function var0_0.GetGifts(arg0_31)
 	end
 
 	return var0_31
+end
+
+function var0_0.GetShipExpBooks(arg0_32)
+	local var0_32 = {}
+	local var1_32 = pg.island_item_data_template.get_id_list_by_type[IslandItem.TYPE_SHIP_EXP_BOOK]
+
+	for iter0_32, iter1_32 in ipairs(var1_32) do
+		local var2_32 = arg0_32:GetItemById(iter1_32) or IslandItem.New({
+			num = 0,
+			id = iter1_32
+		})
+
+		if var2_32 then
+			table.insert(var0_32, var2_32)
+		end
+	end
+
+	return var0_32
+end
+
+function var0_0.OnSeasonReset(arg0_33)
+	local var0_33 = 0
+
+	arg0_33.overflowItemList = {}
+
+	for iter0_33, iter1_33 in pairs(arg0_33.itemList) do
+		if iter1_33:CanConvert() then
+			var0_33 = var0_33 + iter1_33:GetConvertPt() * iter1_33:GetCount()
+			arg0_33.itemList[iter0_33] = nil
+		end
+	end
+
+	return var0_33
 end
 
 return var0_0

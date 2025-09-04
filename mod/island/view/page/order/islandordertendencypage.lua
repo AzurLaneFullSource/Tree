@@ -13,9 +13,9 @@ function var0_0.OnLoaded(arg0_2)
 		[IslandOrderSlot.TENDENCY_TYPE_HARD] = arg0_2:findTF("toggle/2")
 	}
 
-	setText(arg0_2:findTF("toggle/0/Text"), i18n1("更易完成"))
-	setText(arg0_2:findTF("toggle/1/Text"), i18n1("标准"))
-	setText(arg0_2:findTF("toggle/2/Text"), i18n1("更具挑战"))
+	setText(arg0_2:findTF("toggle/0/Text"), i18n("island_order_difficulty_2"))
+	setText(arg0_2:findTF("toggle/1/Text"), i18n("island_order_difficulty_1"))
+	setText(arg0_2:findTF("toggle/2/Text"), i18n("island_order_difficulty_3"))
 end
 
 function var0_0.OnInit(arg0_3)
@@ -27,49 +27,40 @@ function var0_0.OnInit(arg0_3)
 
 		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3._tf, function()
-		arg0_3:Hide()
-	end, SFX_PANEL)
 end
 
-function var0_0.Show(arg0_6, arg1_6, arg2_6)
-	local var0_6 = {
-		onYes = arg2_6,
-		title = i18n1("订单倾向")
-	}
+function var0_0.OnShow(arg0_5)
+	var0_0.super.OnShow(arg0_5)
 
-	var0_0.super.Show(arg0_6, var0_6)
+	arg0_5.selectedIndex = arg0_5.settings.selected or IslandOrderSlot.TENDENCY_TYPE_COMMON
 
-	arg0_6.selectedIndex = arg1_6 or IslandOrderSlot.TENDENCY_TYPE_COMMON
-
-	arg0_6:FlushToggles()
+	arg0_5:FlushToggles()
 end
 
-function var0_0.Hide(arg0_7)
-	setActive(arg0_7._tf, false)
-	arg0_7:OnHide()
+function var0_0.OnHide(arg0_6)
+	var0_0.super.OnHide(arg0_6)
 
-	arg0_7.settings = nil
+	arg0_6.settings = nil
 end
 
-function var0_0.FlushToggles(arg0_8)
-	for iter0_8, iter1_8 in pairs(arg0_8.toggles) do
-		onToggle(arg0_8, iter1_8, function(arg0_9)
-			if arg0_9 then
-				arg0_8.selectedIndex = iter0_8
+function var0_0.FlushToggles(arg0_7)
+	for iter0_7, iter1_7 in pairs(arg0_7.toggles) do
+		onToggle(arg0_7, iter1_7, function(arg0_8)
+			if arg0_8 then
+				arg0_7.selectedIndex = iter0_7
 
-				arg0_8:UpdateContent()
+				arg0_7:UpdateContent()
 			end
 		end, SFX_PANEL)
 	end
 
-	triggerToggle(arg0_8.toggles[arg0_8.selectedIndex], true)
+	triggerToggle(arg0_7.toggles[arg0_7.selectedIndex], true)
 end
 
-function var0_0.UpdateContent(arg0_10)
-	local var0_10 = IslandOrderSlot.TENDENCY2TIP(arg0_10.selectedIndex)
+function var0_0.UpdateContent(arg0_9)
+	local var0_9 = IslandOrderSlot.TENDENCY2TIP(arg0_9.selectedIndex)
 
-	arg0_10.contentTxt.text = var0_10
+	arg0_9.contentTxt.text = var0_9
 end
 
 return var0_0

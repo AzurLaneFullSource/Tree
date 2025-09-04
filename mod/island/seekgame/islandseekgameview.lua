@@ -1,71 +1,112 @@
 local var0_0 = class("IslandSeekGameView", import("Mod.Island.Core.View.IslandView"))
 local var1_0 = 0
+local var2_0 = 1
+local var3_0 = 2
+local var4_0 = 3
 
 function var0_0.Init(arg0_1)
 	var0_0.super.Init(arg0_1)
 
-	local var0_1 = arg0_1:CreateResultView()
+	arg0_1.state = var1_0
 
-	var0_1:Init()
-	table.insert(arg0_1.views, var0_1)
-
-	local var1_1 = IslandSeekGameSystem.New(arg0_1, var1_0)
-
-	table.insert(arg0_1.systems, var1_1)
 	arg0_1:Op("NotifiyIsland", ISLAND_EX_EVT.SEEK_GAME_START)
 end
 
-function var0_0.CreateResultView(arg0_2)
-	return IslandSeekGameResultView.New(arg0_2)
+function var0_0.OnSceneInited(arg0_2)
+	arg0_2:InitFocusCamera()
+	arg0_2:DisableOp()
+
+	local var0_2 = arg0_2:GetSystemModule(IslandConst.SEEK_GAME_SYSTEM_ID)
+	local var1_2 = IslandSeekGameResultView.New(arg0_2, var0_2.data:GetResultUIName())
+
+	var1_2:Init()
+	table.insert(arg0_2.views, var1_2)
+	var0_2:OnSceneInitEnd()
+
+	arg0_2.isInit = true
+
+	arg0_2:OnGameStart()
 end
 
-function var0_0.OnSceneInited(arg0_3)
-	arg0_3:DisableOp()
-	arg0_3:GetSystem(var1_0):OnSceneInitEnd()
-
-	arg0_3.isInit = true
+function var0_0.AddListeners(arg0_3)
+	var0_0.super.AddListeners(arg0_3)
+	arg0_3:AddListener(ISLAND_EVT.SEEK_GAME_FAILED, arg0_3.OnGameFailed)
+	arg0_3:AddListener(ISLAND_EVT.SEEK_GAME_SUCCESS, arg0_3.OnGameSuccess)
 end
 
-function var0_0.AddListeners(arg0_4)
-	var0_0.super.AddListeners(arg0_4)
-	arg0_4:AddListener(ISLAND_EVT.SEEK_GAME_START, arg0_4.OnGameStart)
-	arg0_4:AddListener(ISLAND_EVT.SEEK_GAME_FAILED, arg0_4.OnGameFailed)
-	arg0_4:AddListener(ISLAND_EVT.SEEK_GAME_SUCCESS, arg0_4.OnGameSuccess)
+function var0_0.RemoveListeners(arg0_4)
+	var0_0.super.RemoveListeners(arg0_4)
+	arg0_4:RemoveListener(ISLAND_EVT.SEEK_GAME_FAILED, arg0_4.OnGameFailed)
+	arg0_4:RemoveListener(ISLAND_EVT.SEEK_GAME_SUCCESS, arg0_4.OnGameSuccess)
 end
 
-function var0_0.RemoveListeners(arg0_5)
-	var0_0.super.RemoveListeners(arg0_5)
-	arg0_5:RemoveListener(ISLAND_EVT.SEEK_GAME_START, arg0_5.OnGameStart)
-	arg0_5:RemoveListener(ISLAND_EVT.SEEK_GAME_FAILED, arg0_5.OnGameFailed)
-	arg0_5:RemoveListener(ISLAND_EVT.SEEK_GAME_SUCCESS, arg0_5.OnGameSuccess)
+function var0_0.OnGameStart(arg0_5)
+	if arg0_5.state ~= var1_0 then
+		return
+	end
+
+	arg0_5.state = var2_0
+
+	IslandCameraMgr.instance:LookAt(arg0_5.player._tf)
+	arg0_5:GetSystemModule(IslandConst.SEEK_GAME_SYSTEM_ID):StartGame()
+	arg0_5:EnableOp()
 end
 
-function var0_0.OnGameStart(arg0_6)
-	IslandCameraMgr.instance:LookAt(arg0_6.player._tf)
-	arg0_6:GetSystem(var1_0):StartGame()
-	arg0_6:EnableOp()
+function var0_0.OnGameFailed(arg0_6)
+	if arg0_6.state ~= var2_0 then
+		return
+	end
+
+	arg0_6.state = var3_0
+
+	arg0_6:GetSystemModule(IslandConst.SEEK_GAME_SYSTEM_ID):StopGame()
+	arg0_6:DisableOp()
+	arg0_6:GetSubView(IslandSeekGameResultView):Show()
 end
 
-function var0_0.OnGameFailed(arg0_7)
-	arg0_7:GetSystem(var1_0):StopGame()
-	arg0_7.player:StopMoveHandle()
-	arg0_7:DisableOp()
-	arg0_7:GetSubView(IslandSeekGameResultView):Show()
+function var0_0.OnGameSuccess(arg0_7)
+	if arg0_7.state ~= var2_0 then
+		return
+	end
+
+	arg0_7.state = var4_0
+
+	arg0_7:GetSystemModule(IslandConst.SEEK_GAME_SYSTEM_ID):StopGame()
 end
 
-function var0_0.OnGameSuccess(arg0_8)
-	arg0_8:GetSystem(var1_0):StopGame()
+function var0_0.RestartGame(arg0_8)
+	if arg0_8.state ~= var3_0 then
+		return
+	end
+
+	arg0_8.state = var2_0
+
+	arg0_8:GetSystemModule(IslandConst.SEEK_GAME_SYSTEM_ID):RestartGame()
+	arg0_8.player:ResetPosition()
+	arg0_8:EnableOp()
 end
 
-function var0_0.RestartGame(arg0_9)
-	arg0_9:GetSystem(var1_0):RestartGame()
-	arg0_9.player:ResetPosition()
-	arg0_9:EnableOp()
+function var0_0.OnEndPerformance(arg0_9)
+	var0_0.super.OnEndPerformance(arg0_9)
+	IslandGuideChecker.CheckGuide("ISLAND_GUIDE_24")
 end
 
-function var0_0.OnDispose(arg0_10)
-	var0_0.super.OnDispose(arg0_10)
-	arg0_10:Op("NotifiyIsland", ISLAND_EX_EVT.SEEK_GAME_END)
+function var0_0.DisableOp(arg0_10)
+	arg0_10.player:StopMoveHandle()
+	arg0_10:GetSubView(IslandOpView):TryDisablePlayerOp()
+	arg0_10:GetSubView(IslandOpView):DisableInteraction()
+	arg0_10:GetSubView(IslandOpView):Hide()
+end
+
+function var0_0.EnableOp(arg0_11)
+	arg0_11:GetSubView(IslandOpView):TryEnablePlayerOp()
+	arg0_11:GetSubView(IslandOpView):EnableInteraction()
+	arg0_11:GetSubView(IslandOpView):Show()
+end
+
+function var0_0.OnDispose(arg0_12)
+	arg0_12:Op("NotifiyIsland", ISLAND_EX_EVT.SEEK_GAME_END)
+	var0_0.super.OnDispose(arg0_12)
 end
 
 return var0_0

@@ -245,7 +245,7 @@ function var0_0.GetDownloadResourceDic()
 	return var2_17
 end
 
-function var0_0.DelDir(arg0_18)
+function var0_0.GetFilePathList(arg0_18)
 	local var0_18 = Application.persistentDataPath .. "/AssetBundles/"
 	local var1_18 = var0_18 .. arg0_18
 
@@ -278,22 +278,40 @@ function var0_0.DelDir(arg0_18)
 	originalPrint("filePathList first:", tostring(var2_18[1]))
 	originalPrint("filePathList last:", tostring(var2_18[#var2_18]))
 
-	local var7_18 = #var2_18
+	return var2_18
+end
 
-	if var7_18 > 0 then
-		local var8_18 = System.Array.CreateInstance(typeof(System.String), var7_18)
+function var0_0.DelDir(arg0_19)
+	local var0_19 = var0_0.GetFilePathList(arg0_19)
+	local var1_19 = #var0_19
 
-		for iter2_18 = 0, var7_18 - 1 do
-			var8_18[iter2_18] = var2_18[iter2_18 + 1]
+	if var1_19 > 0 then
+		local var2_19 = System.Array.CreateInstance(typeof(System.String), var1_19)
+
+		for iter0_19 = 0, var1_19 - 1 do
+			var2_19[iter0_19] = var0_19[iter0_19 + 1]
 		end
 
-		var0_0.GetDormMgr():DelFile(var8_18)
+		HotfixHelper.DeleteFileByShortPathArr(var0_0.DormGroupName, var2_19)
 	end
 end
 
-function var0_0.DelRoom(arg0_19, arg1_19)
-	for iter0_19, iter1_19 in ipairs(arg1_19) do
-		var0_0.DelDir(var1_0[iter1_19] .. arg0_19)
+function var0_0.GetDelRoomSize(arg0_20, arg1_20)
+	local var0_20 = 0
+
+	for iter0_20, iter1_20 in ipairs(arg1_20) do
+		local var1_20 = var1_0[iter1_20] .. arg0_20
+		local var2_20 = var0_0.GetFilePathList(var1_20)
+
+		var0_20 = var0_20 + var0_0.GetDormMgr():GetCacheFileSize(var2_20)
+	end
+
+	return HashUtil.BytesToString(var0_20)
+end
+
+function var0_0.DelRoom(arg0_21, arg1_21)
+	for iter0_21, iter1_21 in ipairs(arg1_21) do
+		var0_0.DelDir(var1_0[iter1_21] .. arg0_21)
 	end
 end
 

@@ -215,4 +215,328 @@ function var0_0.BuildAllCollection(arg0_21, arg1_21)
 	}, {})
 end
 
+function var0_0.BuildIslandVisit(arg0_22)
+	if getProxy(FriendProxy):getFriend(arg0_22) then
+		return var3_0(30046, {
+			arg0_22,
+			1
+		}, {})
+	end
+
+	local var0_22 = getProxy(GuildProxy):getRawData()
+
+	if var0_22 and var0_22:getMemberById(arg0_22) then
+		return var3_0(30046, {
+			arg0_22,
+			2
+		}, {})
+	end
+
+	return nil
+end
+
+function var0_0.BuildIslandVisitByCode()
+	return var3_0(30046, {
+		0,
+		3
+	}, {})
+end
+
+function var0_0.BuildIslandAgoraUpgrade(arg0_24)
+	return var3_0(30010, {
+		arg0_24
+	}, {})
+end
+
+function var0_0.BuildIslandFurnitureAdd(arg0_25, arg1_25)
+	return var3_0(30040, {
+		arg0_25
+	}, {
+		arg1_25
+	})
+end
+
+function var0_0.BuildIslandAgoraSave()
+	return var3_0(30041, {}, {})
+end
+
+function var0_0.BuildIslandSignIn()
+	return var3_0(30006, {}, {})
+end
+
+function var0_0.BuildIslandGetGift(arg0_28)
+	return var3_0(30007, {
+		arg0_28
+	}, {})
+end
+
+function var0_0.BuildIslandInvitation(arg0_29)
+	if #arg0_29 == 0 then
+		return var3_0(30008, {
+			0
+		}, {})
+	else
+		return var3_0(30008, {
+			2
+		}, {})
+	end
+end
+
+function var0_0.BuildIslandShareSignIn()
+	return var3_0(30008, {
+		1
+	}, {})
+end
+
+function var0_0.BuildIslandUnlockMap(arg0_31)
+	return var3_0(30004, {
+		arg0_31
+	}, {})
+end
+
+function var0_0.BuildMapExit(arg0_32, arg1_32)
+	return var3_0(30009, {
+		arg0_32,
+		arg1_32
+	}, {})
+end
+
+function var0_0.BuildIslandUnlockShip(arg0_33)
+	return var3_0(30013, {
+		arg0_33
+	}, {})
+end
+
+function var0_0.BuildIslandShipUpgrade(arg0_34, arg1_34)
+	return var3_0(30014, {
+		arg0_34,
+		arg1_34
+	}, {})
+end
+
+function var0_0.BuildIslandShipBreakout(arg0_35)
+	return var3_0(30015, {
+		arg0_35
+	}, {})
+end
+
+function var0_0.BuildIslandShipSkillUpgrade(arg0_36, arg1_36)
+	return var3_0(30016, {
+		arg0_36,
+		arg1_36
+	}, {})
+end
+
+function var0_0.BuildIslandShipAddBuff(arg0_37, arg1_37)
+	return var3_0(30019, {
+		arg0_37,
+		arg1_37
+	}, {})
+end
+
+function var0_0.BuildIslandShipGiveGift(arg0_38, arg1_38)
+	return var3_0(30020, {
+		arg0_38,
+		arg1_38
+	}, {})
+end
+
+function var0_0.BuildIslandShipAttrUpgrade(arg0_39, arg1_39)
+	local var0_39 = {}
+	local var1_39 = {}
+
+	for iter0_39, iter1_39 in pairs(arg1_39:GetAttrs()) do
+		local var2_39 = arg0_39:GetAttr(iter0_39)
+
+		table.insert(var0_39, string.format("{%s,%s}", iter0_39, iter1_39 - var2_39))
+		table.insert(var1_39, string.format("{%s,%s}", iter0_39, iter1_39))
+	end
+
+	local var3_39 = table.concat(var0_39, ",")
+	local var4_39 = table.concat(var1_39, ",")
+
+	return var3_0(30017, {
+		arg0_39.id
+	}, {
+		var3_39,
+		var4_39
+	})
+end
+
+function var0_0.BuildIslandShipAttrLimit(arg0_40, arg1_40)
+	local var0_40 = {}
+
+	for iter0_40, iter1_40 in pairs(arg1_40:GetAttrs()) do
+		local var1_40 = arg1_40:GetExtraAttrLimit(iter0_40)
+		local var2_40 = arg0_40:GetExtraAttrLimit(iter0_40)
+
+		table.insert(var0_40, string.format("{%s,%s,%s}", iter0_40, var2_40, var1_40))
+	end
+
+	local var3_40 = table.concat(var0_40, ",")
+
+	return var3_0(30018, {
+		arg0_40.id
+	}, {
+		var3_40
+	})
+end
+
+function var0_0.BuildIslandUpgrade(arg0_41)
+	return var3_0(30003, {
+		arg0_41
+	}, {})
+end
+
+function var0_0.BuildIslandInventoryUpgrade(arg0_42)
+	return var3_0(30011, {
+		arg0_42
+	}, {})
+end
+
+function var0_0.BuildIslandInventoryChange(arg0_43, arg1_43, arg2_43)
+	return var3_0(30012, {
+		arg0_43,
+		arg1_43,
+		arg2_43
+	}, {})
+end
+
+function var0_0.BuildIslandSubmitOrder(arg0_44, arg1_44)
+	return var3_0(30031, {
+		arg0_44,
+		arg1_44
+	}, {})
+end
+
+function var0_0.BuildIslandGuide(arg0_45, arg1_45, arg2_45)
+	return var3_0(30001, {
+		arg0_45,
+		arg1_45
+	}, {
+		arg2_45
+	})
+end
+
+function var0_0.BuildIslandRestUpgrade(arg0_46, arg1_46)
+	return var3_0(30050, {
+		arg0_46,
+		arg1_46
+	}, {})
+end
+
+function var0_0.BuildIslandDeviceBanner(arg0_47)
+	return var3_0(30005, {
+		arg0_47
+	}, {})
+end
+
+function var0_0.BuildIslandEnter(arg0_48, arg1_48)
+	return var3_0(30002, {
+		arg0_48,
+		arg1_48
+	}, {})
+end
+
+function var0_0.BuildIslandTechImmd(arg0_49)
+	return var3_0(30034, {
+		arg0_49
+	}, {})
+end
+
+function var0_0.BuildIslandTaskSubmit(arg0_50, arg1_50)
+	return var3_0(30028, {
+		arg0_50,
+		arg1_50
+	}, {})
+end
+
+function var0_0.BuildIslandWildGather(arg0_51)
+	return var3_0(30021, {
+		arg0_51
+	}, {})
+end
+
+function var0_0.BuildIslandWildCollect(arg0_52)
+	return var3_0(30042, {
+		arg0_52
+	}, {})
+end
+
+function var0_0.BuildIslandGetDress(arg0_53, arg1_53)
+	return var3_0(30037, {
+		arg0_53,
+		arg1_53
+	}, {})
+end
+
+function var0_0.BuildIslandBindDress(arg0_54, arg1_54)
+	return var3_0(30038, {
+		arg0_54,
+		arg1_54
+	}, {})
+end
+
+function var0_0.BuildIslandWearDress(arg0_55, arg1_55)
+	local var0_55 = "["
+
+	for iter0_55, iter1_55 in ipairs(arg1_55) do
+		var0_55 = var0_55 .. string.format("{\"type\":%d,\"id\":%d}", iter1_55.type, iter1_55.id)
+
+		if iter0_55 ~= #arg1_55 then
+			var0_55 = var0_55 .. ","
+		end
+	end
+
+	local var1_55 = var0_55 .. "]"
+
+	return var3_0(30039, {
+		arg0_55
+	}, {
+		var1_55
+	})
+end
+
+function var0_0.BuildIslandStartDelegation(arg0_56, arg1_56, arg2_56, arg3_56, arg4_56)
+	return var3_0(30022, {
+		arg0_56,
+		arg1_56,
+		arg2_56,
+		arg3_56,
+		arg4_56
+	}, {})
+end
+
+function var0_0.BuildIslandGetDelegationAward(arg0_57)
+	local var0_57 = "["
+
+	for iter0_57, iter1_57 in ipairs(arg0_57) do
+		var0_57 = var0_57 .. string.format("{\"type\":%d,\"id\":%d,\"num\":%d}", iter1_57.type, iter1_57.id, iter1_57.number)
+
+		if iter0_57 ~= #arg0_57 then
+			var0_57 = var0_57 .. ","
+		end
+	end
+
+	local var1_57 = var0_57 .. "]"
+
+	return var3_0(30023, {}, {
+		var1_57
+	})
+end
+
+function var0_0.BuildIslandShopBuy(arg0_58, arg1_58)
+	return var3_0(30035, {
+		arg0_58,
+		arg1_58
+	}, {})
+end
+
+function var0_0.BuildIslandUnlockColor(arg0_59, arg1_59)
+	return var3_0(30051, {
+		arg0_59,
+		arg1_59
+	}, {})
+end
+
 return var0_0

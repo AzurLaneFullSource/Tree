@@ -1,4 +1,4 @@
-local var0_0 = class("IslandPlayerBuilder", import(".IslandUnitBuilder"))
+local var0_0 = class("IslandPlayerBuilder", import(".IslandGenericBuilder"))
 
 function var0_0.GetModule(arg0_1, arg1_1, arg2_1)
 	return IslandPlayerUnit.New(arg1_1, arg2_1)
@@ -8,7 +8,9 @@ function var0_0.SetTag(arg0_2, arg1_2)
 	arg1_2.tag = IslandConst.TAG_PLAYER
 end
 
-function var0_0.AddComponents(arg0_3, arg1_3)
+function var0_0.AddComponents(arg0_3, arg1_3, arg2_3)
+	arg1_3:GetComponent(typeof(WorldObjectItem)).isPlayer = true
+
 	local var0_3 = GetOrAddComponent(arg1_3, typeof(CharacterController))
 
 	var0_3.slopeLimit = 50
@@ -20,6 +22,26 @@ function var0_0.AddComponents(arg0_3, arg1_3)
 	var0_3.center = Vector3(0, 0.96, 0)
 
 	GetOrAddComponent(arg1_3, typeof(CharacterHandleController))
+end
+
+function var0_0.LoadAsset(arg0_4, arg1_4, arg2_4)
+	local var0_4 = arg1_4.modelId
+
+	arg0_4:GetPoolMgr():GetCommanderModel({
+		model = arg1_4:GetAssetPath(),
+		animator = arg1_4:GetAnimator()
+	}, arg2_4)
+end
+
+function var0_0.LoadOtherPart(arg0_5, arg1_5, arg2_5, arg3_5, arg4_5)
+	ResourceMgr.Inst:getAssetAsync("island/jumpcurve/jumpcurve", "", typeof(JumpCurve), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_6)
+		arg2_5:InitJump(arg0_6.curve)
+		arg4_5()
+	end), true, true)
+end
+
+function var0_0.Recycle(arg0_7, arg1_7, arg2_7)
+	arg0_7:GetPoolMgr():ReturnCommanderModel(arg2_7)
 end
 
 return var0_0

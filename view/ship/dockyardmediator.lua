@@ -79,8 +79,8 @@ function var0_0.register(arg0_1)
 	end)
 	arg0_1:bind(var0_0.CHANGE_SKIN, function(arg0_6, arg1_6)
 		arg0_1:addSubLayers(Context.New({
-			mediator = SwichSkinMediator,
-			viewComponent = SwichSkinLayer,
+			mediator = SwitchSkinMediator,
+			viewComponent = SwitchSkinLayer,
 			data = {
 				shipVO = arg1_6
 			}
@@ -109,7 +109,8 @@ function var0_0.listNotificationInterests(arg0_8)
 		GAME.WORLD_SHIP_REPAIR_DONE,
 		GAME.UPDATE_LOCK_DONE,
 		GAME.WORLD_FLEET_REDEPLOY_DONE,
-		SetShipSkinCommand.SKIN_UPDATED
+		SetShipSkinCommand.SKIN_UPDATED,
+		GAME.CHANGE_SKIN_UPDATE
 	}
 end
 
@@ -227,6 +228,15 @@ function var0_0.handleNotification(arg0_9, arg1_9)
 		end
 
 		arg0_9.viewComponent:OnShipSkinChanged(var1_9.ship:GetShipPhantomMark())
+	elseif var0_9 == GAME.CHANGE_SKIN_UPDATE then
+		local var7_9 = var1_9
+		local var8_9, var9_9 = ShipPhantom.UnpackMark(var7_9)
+
+		if arg0_9.shipsById[var8_9] then
+			arg0_9.shipsById[var8_9] = getProxy(BayProxy):RawGetShipById(var8_9)
+		end
+
+		arg0_9.viewComponent:OnShipSkinChanged(var7_9)
 	end
 end
 

@@ -317,6 +317,11 @@ pg.task_meta_data_template = setmetatable({
 		100453,
 		100454,
 		100455,
+		100461,
+		100462,
+		100463,
+		100464,
+		100465,
 		200001,
 		200002,
 		200003,
@@ -460,7 +465,11 @@ pg.task_meta_data_template = setmetatable({
 		200361,
 		200362,
 		200363,
-		200364
+		200364,
+		200371,
+		200372,
+		200373,
+		200374
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2985,6 +2994,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100461] = {
+		target_id_2 = "970109",
+		sub_type = 180,
+		desc = "Win 1 battle with Yuudachi META in your fleet.",
+		id = 100461,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100462] = {
+		target_id_2 = "970109",
+		sub_type = 180,
+		desc = "Defeat a Lv. 30+ fleet with Yuudachi META in your fleet.",
+		id = 100462,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100463] = {
+		target_id_2 = "970109",
+		sub_type = 180,
+		desc = "Defeat a Lv. 55+ fleet with Yuudachi META in your fleet.",
+		id = 100463,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100464] = {
+		target_id_2 = "970109",
+		sub_type = 180,
+		desc = "Defeat a Lv. 80+ fleet with Yuudachi META in your fleet.",
+		id = 100464,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100465] = {
+		target_id_2 = "970109",
+		sub_type = 180,
+		desc = "Defeat a Lv. 100+ fleet with Yuudachi META in your fleet.",
+		id = 100465,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -4134,6 +4183,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Dunkerque META in your fleet.",
 		id = 200364,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200371] = {
+		target_id_2 = "970109",
+		sub_type = 302,
+		desc = "Win 1 Operation Siren battle with Yuudachi META in your fleet.",
+		id = 200371,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200372] = {
+		target_id_2 = "970109",
+		sub_type = 302,
+		desc = "Defeat a Lv. 70+ fleet in Operation Siren with Yuudachi META in your fleet.",
+		id = 200372,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200373] = {
+		target_id_2 = "970109",
+		sub_type = 302,
+		desc = "Defeat a Lv. 90+ fleet in Operation Siren with Yuudachi META in your fleet.",
+		id = 200373,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200374] = {
+		target_id_2 = "970109",
+		sub_type = 302,
+		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Yuudachi META in your fleet.",
+		id = 200374,
 		target_num = 1,
 		target_id = "100"
 	}

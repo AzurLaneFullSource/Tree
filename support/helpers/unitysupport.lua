@@ -769,249 +769,245 @@ function setCanvasGroupAlpha(arg0_95, arg1_95)
 end
 
 function setActiveViaLayer(arg0_96, arg1_96)
-	UIUtil.SetUIActiveViaLayer(go(arg0_96), arg1_96)
+	HotfixHelper.SetUIActiveViaLayer(go(arg0_96), arg1_96)
 end
 
-function setActiveViaCG(arg0_97, arg1_97)
-	UIUtil.SetUIActiveViaCG(go(arg0_97), arg1_97)
+function getTextColor(arg0_97)
+	return GetComponent(arg0_97, typeof(Text)).color
 end
 
-function getTextColor(arg0_98)
-	return GetComponent(arg0_98, typeof(Text)).color
+function setTextColor(arg0_98, arg1_98)
+	GetComponent(arg0_98, typeof(Text)).color = arg1_98
 end
 
-function setTextColor(arg0_99, arg1_99)
-	GetComponent(arg0_99, typeof(Text)).color = arg1_99
+function getTextAlpha(arg0_99)
+	return GetComponent(arg0_99, typeof(Text)).color.a
 end
 
-function getTextAlpha(arg0_100)
-	return GetComponent(arg0_100, typeof(Text)).color.a
+function setTextAlpha(arg0_100, arg1_100)
+	local var0_100 = GetComponent(arg0_100, typeof(Text))
+	local var1_100 = var0_100.color
+
+	var1_100.a = arg1_100
+	var0_100.color = var1_100
 end
 
-function setTextAlpha(arg0_101, arg1_101)
-	local var0_101 = GetComponent(arg0_101, typeof(Text))
-	local var1_101 = var0_101.color
+function setSizeDelta(arg0_101, arg1_101)
+	local var0_101 = GetComponent(arg0_101, typeof(RectTransform))
 
-	var1_101.a = arg1_101
-	var0_101.color = var1_101
-end
-
-function setSizeDelta(arg0_102, arg1_102)
-	local var0_102 = GetComponent(arg0_102, typeof(RectTransform))
-
-	if not var0_102 then
+	if not var0_101 then
 		return
 	end
 
-	local var1_102 = var0_102.sizeDelta
+	local var1_101 = var0_101.sizeDelta
 
-	var1_102.x = arg1_102.x
-	var1_102.y = arg1_102.y
-	var0_102.sizeDelta = var1_102
+	var1_101.x = arg1_101.x
+	var1_101.y = arg1_101.y
+	var0_101.sizeDelta = var1_101
 end
 
-function getOutlineColor(arg0_103)
-	return GetComponent(arg0_103, typeof(Outline)).effectColor
+function getOutlineColor(arg0_102)
+	return GetComponent(arg0_102, typeof(Outline)).effectColor
 end
 
-function setOutlineColor(arg0_104, arg1_104)
-	GetComponent(arg0_104, typeof(Outline)).effectColor = arg1_104
+function setOutlineColor(arg0_103, arg1_103)
+	GetComponent(arg0_103, typeof(Outline)).effectColor = arg1_103
 end
 
-function pressPersistTrigger(arg0_105, arg1_105, arg2_105, arg3_105, arg4_105, arg5_105, arg6_105, arg7_105)
-	arg6_105 = defaultValue(arg6_105, 0.25)
+function pressPersistTrigger(arg0_104, arg1_104, arg2_104, arg3_104, arg4_104, arg5_104, arg6_104, arg7_104)
+	arg6_104 = defaultValue(arg6_104, 0.25)
 
-	assert(arg6_105 > 0, "maxSpeed less than zero")
-	assert(arg0_105, "should exist objectOrTransform")
+	assert(arg6_104 > 0, "maxSpeed less than zero")
+	assert(arg0_104, "should exist objectOrTransform")
 
-	local var0_105 = GetOrAddComponent(arg0_105, typeof(EventTriggerListener))
+	local var0_104 = GetOrAddComponent(arg0_104, typeof(EventTriggerListener))
 
-	assert(arg2_105, "should exist callback")
+	assert(arg2_104, "should exist callback")
 
-	local var1_105
+	local var1_104
 
-	local function var2_105()
-		if var1_105 then
-			var1_105:Stop()
+	local function var2_104()
+		if var1_104 then
+			var1_104:Stop()
 
-			var1_105 = nil
+			var1_104 = nil
 
-			existCall(arg3_105)
+			existCall(arg3_104)
 		end
 	end
 
-	var0_105:AddPointDownFunc(function()
-		var1_105 = Timer.New(function()
-			if arg5_105 then
-				local var0_108 = math.max(var1_105.duration - arg1_105 / 10, arg6_105)
+	var0_104:AddPointDownFunc(function()
+		var1_104 = Timer.New(function()
+			if arg5_104 then
+				local var0_107 = math.max(var1_104.duration - arg1_104 / 10, arg6_104)
 
-				var1_105.duration = var0_108
+				var1_104.duration = var0_107
 			end
 
-			existCall(arg2_105, var2_105)
-		end, arg1_105, -1)
+			existCall(arg2_104, var2_104)
+		end, arg1_104, -1)
 
-		var1_105:Start()
+		var1_104:Start()
 
-		if arg4_105 then
-			var1_105.func()
+		if arg4_104 then
+			var1_104.func()
 		end
 
-		if arg7_105 and var1_0 then
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg7_105)
+		if arg7_104 and var1_0 then
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg7_104)
 		end
 	end)
-	var0_105:AddPointUpFunc(var2_105)
+	var0_104:AddPointUpFunc(var2_104)
 
-	return var0_105
+	return var0_104
 end
 
-function getSpritePivot(arg0_109)
-	local var0_109 = arg0_109.bounds
-	local var1_109 = -var0_109.center.x / var0_109.extents.x / 2 + 0.5
-	local var2_109 = -var0_109.center.y / var0_109.extents.y / 2 + 0.5
+function getSpritePivot(arg0_108)
+	local var0_108 = arg0_108.bounds
+	local var1_108 = -var0_108.center.x / var0_108.extents.x / 2 + 0.5
+	local var2_108 = -var0_108.center.y / var0_108.extents.y / 2 + 0.5
 
-	return Vector2(var1_109, var2_109)
+	return Vector2(var1_108, var2_108)
 end
 
-function resetAspectRatio(arg0_110)
-	local var0_110 = GetComponent(arg0_110, "Image")
+function resetAspectRatio(arg0_109)
+	local var0_109 = GetComponent(arg0_109, "Image")
 
-	GetComponent(arg0_110, "AspectRatioFitter").aspectRatio = var0_110.preferredWidth / var0_110.preferredHeight
+	GetComponent(arg0_109, "AspectRatioFitter").aspectRatio = var0_109.preferredWidth / var0_109.preferredHeight
 end
 
-function cloneTplTo(arg0_111, arg1_111, arg2_111)
-	local var0_111 = tf(Instantiate(arg0_111))
+function cloneTplTo(arg0_110, arg1_110, arg2_110)
+	local var0_110 = tf(Instantiate(arg0_110))
 
-	var0_111:SetParent(tf(arg1_111), false)
-	SetActive(var0_111, true)
+	var0_110:SetParent(tf(arg1_110), false)
+	SetActive(var0_110, true)
 
-	if arg2_111 then
-		var0_111.name = arg2_111
+	if arg2_110 then
+		var0_110.name = arg2_110
 	end
 
-	return var0_111
+	return var0_110
 end
 
-function setGray(arg0_112, arg1_112, arg2_112)
-	if arg1_112 then
-		local var0_112 = GetOrAddComponent(arg0_112, "UIGrayScale")
+function setGray(arg0_111, arg1_111, arg2_111)
+	if arg1_111 then
+		local var0_111 = GetOrAddComponent(arg0_111, "UIGrayScale")
 
-		var0_112.Recursive = defaultValue(arg2_112, true)
+		var0_111.Recursive = defaultValue(arg2_111, true)
+		var0_111.enabled = true
+	else
+		RemoveComponent(arg0_111, "UIGrayScale")
+	end
+end
+
+function setBlackMask(arg0_112, arg1_112, arg2_112)
+	if arg1_112 then
+		arg2_112 = arg2_112 or {}
+
+		local var0_112 = GetOrAddComponent(arg0_112, "UIMaterialAdjuster")
+
+		var0_112.Recursive = tobool(defaultValue(arg2_112.recursive, true))
+
+		local var1_112 = Material.New(pg.ShaderMgr.GetInstance():GetShader("M02/Unlit Colored_Alpha_UI"))
+
+		var1_112:SetColor("_Color", arg2_112.color or Color(0, 0, 0, 0.2))
+
+		var0_112.adjusterMaterial = var1_112
 		var0_112.enabled = true
 	else
-		RemoveComponent(arg0_112, "UIGrayScale")
+		RemoveComponent(arg0_112, "UIMaterialAdjuster")
 	end
 end
 
-function setBlackMask(arg0_113, arg1_113, arg2_113)
+function blockBlackMask(arg0_113, arg1_113, arg2_113)
 	if arg1_113 then
-		arg2_113 = arg2_113 or {}
-
 		local var0_113 = GetOrAddComponent(arg0_113, "UIMaterialAdjuster")
 
-		var0_113.Recursive = tobool(defaultValue(arg2_113.recursive, true))
-
-		local var1_113 = Material.New(pg.ShaderMgr.GetInstance():GetShader("M02/Unlit Colored_Alpha_UI"))
-
-		var1_113:SetColor("_Color", arg2_113.color or Color(0, 0, 0, 0.2))
-
-		var0_113.adjusterMaterial = var1_113
-		var0_113.enabled = true
+		var0_113.Recursive = tobool(defaultValue(arg2_113, true))
+		var0_113.enabled = false
 	else
 		RemoveComponent(arg0_113, "UIMaterialAdjuster")
 	end
 end
 
-function blockBlackMask(arg0_114, arg1_114, arg2_114)
-	if arg1_114 then
-		local var0_114 = GetOrAddComponent(arg0_114, "UIMaterialAdjuster")
+function long2int(arg0_114)
+	local var0_114, var1_114 = int64.tonum2(arg0_114)
 
-		var0_114.Recursive = tobool(defaultValue(arg2_114, true))
-		var0_114.enabled = false
-	else
-		RemoveComponent(arg0_114, "UIMaterialAdjuster")
-	end
+	return var0_114
 end
 
-function long2int(arg0_115)
-	local var0_115, var1_115 = int64.tonum2(arg0_115)
+function OnSliderWithButton(arg0_115, arg1_115, arg2_115)
+	local var0_115 = arg1_115:GetComponent("Slider")
 
-	return var0_115
-end
+	var0_115.onValueChanged:RemoveAllListeners()
+	pg.DelegateInfo.Add(arg0_115, var0_115.onValueChanged)
+	var0_115.onValueChanged:AddListener(arg2_115)
 
-function OnSliderWithButton(arg0_116, arg1_116, arg2_116)
-	local var0_116 = arg1_116:GetComponent("Slider")
+	local var1_115 = (var0_115.maxValue - var0_115.minValue) * 0.1
 
-	var0_116.onValueChanged:RemoveAllListeners()
-	pg.DelegateInfo.Add(arg0_116, var0_116.onValueChanged)
-	var0_116.onValueChanged:AddListener(arg2_116)
-
-	local var1_116 = (var0_116.maxValue - var0_116.minValue) * 0.1
-
-	onButton(arg0_116, arg1_116:Find("up"), function()
-		var0_116.value = math.clamp(var0_116.value + var1_116, var0_116.minValue, var0_116.maxValue)
+	onButton(arg0_115, arg1_115:Find("up"), function()
+		var0_115.value = math.clamp(var0_115.value + var1_115, var0_115.minValue, var0_115.maxValue)
 	end, SFX_PANEL)
-	onButton(arg0_116, arg1_116:Find("down"), function()
-		var0_116.value = math.clamp(var0_116.value - var1_116, var0_116.minValue, var0_116.maxValue)
+	onButton(arg0_115, arg1_115:Find("down"), function()
+		var0_115.value = math.clamp(var0_115.value - var1_115, var0_115.minValue, var0_115.maxValue)
 	end, SFX_PANEL)
 end
 
-function addSlip(arg0_119, arg1_119, arg2_119, arg3_119, arg4_119)
-	local var0_119 = GetOrAddComponent(arg1_119, "EventTriggerListener")
-	local var1_119
-	local var2_119 = 0
-	local var3_119 = 50
+function addSlip(arg0_118, arg1_118, arg2_118, arg3_118, arg4_118)
+	local var0_118 = GetOrAddComponent(arg1_118, "EventTriggerListener")
+	local var1_118
+	local var2_118 = 0
+	local var3_118 = 50
 
-	var0_119:AddPointDownFunc(function()
-		var2_119 = 0
-		var1_119 = nil
+	var0_118:AddPointDownFunc(function()
+		var2_118 = 0
+		var1_118 = nil
 	end)
-	var0_119:AddDragFunc(function(arg0_121, arg1_121)
-		local var0_121 = arg1_121.position
+	var0_118:AddDragFunc(function(arg0_120, arg1_120)
+		local var0_120 = arg1_120.position
 
-		if not var1_119 then
-			var1_119 = var0_121
+		if not var1_118 then
+			var1_118 = var0_120
 		end
 
-		if arg0_119 == SLIP_TYPE_HRZ then
-			var2_119 = var0_121.x - var1_119.x
-		elseif arg0_119 == SLIP_TYPE_VERT then
-			var2_119 = var0_121.y - var1_119.y
+		if arg0_118 == SLIP_TYPE_HRZ then
+			var2_118 = var0_120.x - var1_118.x
+		elseif arg0_118 == SLIP_TYPE_VERT then
+			var2_118 = var0_120.y - var1_118.y
 		end
 	end)
-	var0_119:AddPointUpFunc(function(arg0_122, arg1_122)
-		if var2_119 < -var3_119 then
-			if arg3_119 then
-				arg3_119()
+	var0_118:AddPointUpFunc(function(arg0_121, arg1_121)
+		if var2_118 < -var3_118 then
+			if arg3_118 then
+				arg3_118()
 			end
-		elseif var2_119 > var3_119 then
-			if arg2_119 then
-				arg2_119()
+		elseif var2_118 > var3_118 then
+			if arg2_118 then
+				arg2_118()
 			end
-		elseif arg4_119 then
-			arg4_119()
+		elseif arg4_118 then
+			arg4_118()
 		end
 	end)
 end
 
 function getSizeRate()
-	local var0_123 = pg.UIMgr.GetInstance().LevelMain.transform.rect
-	local var1_123 = UnityEngine.Screen
+	local var0_122 = pg.UIMgr.GetInstance().LevelMain.transform.rect
+	local var1_122 = UnityEngine.Screen
 
-	return Vector2.New(var0_123.width / var1_123.width, var0_123.height / var1_123.height), var0_123.width, var0_123.height
+	return Vector2.New(var0_122.width / var1_122.width, var0_122.height / var1_122.height), var0_122.width, var0_122.height
 end
 
 function IsUsingWifi()
 	return Application.internetReachability == UnityEngine.NetworkReachability.ReachableViaLocalAreaNetwork
 end
 
-function getSceneRootTFDic(arg0_125)
-	local var0_125 = {}
+function getSceneRootTFDic(arg0_124)
+	local var0_124 = {}
 
-	for iter0_125, iter1_125 in ipairs(arg0_125:GetRootGameObjects():ToTable()) do
-		var0_125[iter1_125.name] = iter1_125.transform
+	for iter0_124, iter1_124 in ipairs(arg0_124:GetRootGameObjects():ToTable()) do
+		var0_124[iter1_124.name] = iter1_124.transform
 	end
 
-	return var0_125
+	return var0_124
 end

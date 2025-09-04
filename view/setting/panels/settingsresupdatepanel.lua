@@ -5,66 +5,92 @@ function var0_0.GetUIName(arg0_1)
 end
 
 function var0_0.GetTitle(arg0_2)
-	return i18n("Settings_title_resUpdate")
+	return i18n("Settings_title_resManage")
 end
 
 function var0_0.GetTitleEn(arg0_3)
-	return "  / DOWNLOAD"
+	return "  / RESOURCES"
 end
 
 function var0_0.OnInit(arg0_4)
 	arg0_4.tpl = arg0_4._tf:Find("Tpl")
-	arg0_4.containerTF = arg0_4._tf:Find("options/list")
 	arg0_4.iconTF = arg0_4._tf:Find("Icon")
+	arg0_4.fullTF = arg0_4._tf:Find("options_full")
+	arg0_4.mainTF = arg0_4._tf:Find("options_main")
+	arg0_4.fullTitleText = arg0_4._tf:Find("options_full/Title/Text")
+	arg0_4.mainTitleText = arg0_4._tf:Find("options_main/Title/Text")
+	arg0_4.specialTitleText = arg0_4._tf:Find("options_special/Title/Text")
 
-	local var0_4 = arg0_4._tf:Find("options/MainGroup")
-	local var1_4 = not GroupMainHelper.IsVerSameWithServer()
+	setText(arg0_4.fullTitleText, i18n("Settings_title_resManage_All"))
+	setText(arg0_4.mainTitleText, i18n("Settings_title_resManage_Main"))
+	setText(arg0_4.specialTitleText, i18n("Settings_title_resManage_Sub"))
 
-	setActive(var0_4, var1_4)
+	arg0_4.fullGroupTF = arg0_4._tf:Find("options_full/MainGroup")
+	arg0_4.mainContainerTF = arg0_4._tf:Find("options_main/list")
+	arg0_4.specialContainerTF = arg0_4._tf:Find("options_special/list")
 
-	if var1_4 then
-		arg0_4.mainGroupBtn = SettingsMainGroupBtn.New(var0_4)
+	local var0_4 = not GroupMainHelper.IsVerSameWithServer()
+
+	setActive(arg0_4.fullTF, var0_4)
+
+	if var0_4 then
+		arg0_4.mainGroupBtn = SettingsMainGroupBtn.New(arg0_4.fullGroupTF)
+		GetComponent(arg0_4.mainTF, typeof(VerticalLayoutGroup)).padding.top = 0
+	else
+		local var1_4 = GetComponent(arg0_4.fullTF, typeof(VerticalLayoutGroup)).padding.top
+
+		GetComponent(arg0_4.mainTF, typeof(VerticalLayoutGroup)).padding.top = var1_4
 	end
 
+	arg0_4.galleryBtn = SettingsGalleryBtn.New({
+		isDel = true,
+		tpl = arg0_4.tpl,
+		container = arg0_4.specialContainerTF,
+		iconSP = getImageSprite(arg0_4.iconTF:Find("GALLERY_PIC"))
+	})
+	arg0_4.mangaBtn = SettingsMangaBtn.New({
+		isDel = true,
+		tpl = arg0_4.tpl,
+		container = arg0_4.specialContainerTF,
+		iconSP = getImageSprite(arg0_4.iconTF:Find("MANGA"))
+	})
+	arg0_4.dormBtn = SettingsDormBtn.New({
+		isDel = true,
+		tpl = arg0_4.tpl,
+		container = arg0_4.specialContainerTF,
+		iconSP = getImageSprite(arg0_4.iconTF:Find("DORM"))
+	})
+	arg0_4.mapBtn = SettingsMapBtn.New({
+		isDel = true,
+		tpl = arg0_4.tpl,
+		container = arg0_4.specialContainerTF,
+		iconSP = getImageSprite(arg0_4.iconTF:Find("MAP"))
+	})
+	arg0_4.repairBtn = SettingsResRepairBtn.New({
+		isDel = false,
+		tpl = arg0_4.tpl,
+		container = arg0_4.specialContainerTF,
+		iconSP = getImageSprite(arg0_4.iconTF:Find("REPAIR"))
+	})
 	arg0_4.soundBtn = SettingsSoundBtn.New({
 		tpl = arg0_4.tpl,
-		container = arg0_4.containerTF,
+		container = arg0_4.mainContainerTF,
 		iconSP = getImageSprite(arg0_4.iconTF:Find("CV"))
 	})
 	arg0_4.live2dBtn = SettingsLive2DBtn.New({
 		tpl = arg0_4.tpl,
-		container = arg0_4.containerTF,
+		container = arg0_4.mainContainerTF,
 		iconSP = getImageSprite(arg0_4.iconTF:Find("L2D"))
-	})
-	arg0_4.galleryBtn = SettingsGalleryBtn.New({
-		tpl = arg0_4.tpl,
-		container = arg0_4.containerTF,
-		iconSP = getImageSprite(arg0_4.iconTF:Find("GALLERY_PIC"))
 	})
 	arg0_4.musicBtn = SettingsMusicBtn.New({
 		tpl = arg0_4.tpl,
-		container = arg0_4.containerTF,
+		container = arg0_4.mainContainerTF,
 		iconSP = getImageSprite(arg0_4.iconTF:Find("GALLERY_BGM"))
 	})
-	arg0_4.mangaBtn = SettingsMangaBtn.New({
-		tpl = arg0_4.tpl,
-		container = arg0_4.containerTF,
-		iconSP = getImageSprite(arg0_4.iconTF:Find("MANGA"))
-	})
 
-	if not LOCK_3DDORM_RES_DOWNLOAD_BTN then
-		arg0_4.dormBtn = SettingsDormBtn.New({
-			tpl = arg0_4.tpl,
-			container = arg0_4.containerTF,
-			iconSP = getImageSprite(arg0_4.iconTF:Find("DORM"))
-		})
+	if LOCK_ISLAND_DISPLAY then
+		setActive(arg0_4.mapBtn._tf, false)
 	end
-
-	arg0_4.repairBtn = SettingsResRepairBtn.New({
-		tpl = arg0_4.tpl,
-		container = arg0_4.containerTF,
-		iconSP = getImageSprite(arg0_4.iconTF:Find("REPAIR"))
-	})
 end
 
 function var0_0.Dispose(arg0_5)
@@ -95,11 +121,13 @@ function var0_0.Dispose(arg0_5)
 
 		arg0_5.mangaBtn = nil
 
-		if arg0_5.dormBtn then
-			arg0_5.dormBtn:Dispose()
+		arg0_5.dormBtn:Dispose()
 
-			arg0_5.dormBtn = nil
-		end
+		arg0_5.dormBtn = nil
+
+		arg0_5.mapBtn:Dispose()
+
+		arg0_5.mapBtn = nil
 
 		if arg0_5.mainGroupBtn then
 			arg0_5.mainGroupBtn:Dispose()

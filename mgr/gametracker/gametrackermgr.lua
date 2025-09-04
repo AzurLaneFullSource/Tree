@@ -21,6 +21,10 @@ function var0_0.Init(arg0_1, arg1_1)
 end
 
 function var0_0.Record(arg0_2, arg1_2)
+	if not arg1_2 then
+		return
+	end
+
 	table.insert(arg0_2.readBuffer, arg1_2)
 	arg0_2:Cache()
 

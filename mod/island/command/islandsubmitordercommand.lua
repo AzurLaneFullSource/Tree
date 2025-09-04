@@ -5,7 +5,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var1_1 = getProxy(IslandProxy):GetIsland():GetOrderAgency():GetSlot(var0_1)
 
 	if not var1_1:CanSubmit() then
-		pg.TipsMgr.GetInstance():ShowTips(i18n1("资源不足"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 		return
 	end
@@ -37,6 +37,7 @@ function var0_0.HandleUrgencyOrder(arg0_2, arg1_2)
 				dropData = var0_3,
 				slotId = arg1_2.id
 			})
+			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandSubmitOrder(IslandOrder.TYPE_URGENCY, arg1_2.id))
 		else
 			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_3.result] .. arg0_3.result)
 		end
@@ -67,6 +68,7 @@ function var0_0.HandleCommonOrder(arg0_4, arg1_4)
 				dropData = var0_5,
 				slotId = arg1_4.id
 			})
+			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandSubmitOrder(IslandOrder.TYPE_NORMAL, arg1_4.id))
 		else
 			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_5.result] .. arg0_5.result)
 		end
@@ -90,6 +92,7 @@ function var0_0.HandleFirmOrder(arg0_6, arg1_6)
 				dropData = var0_7,
 				slotId = arg1_6.id
 			})
+			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandSubmitOrder(IslandOrder.TYPE_FORM, arg1_6.id))
 		else
 			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_7.result] .. arg0_7.result)
 		end
@@ -98,21 +101,10 @@ end
 
 function var0_0.HandleDrops(arg0_8, arg1_8)
 	local var0_8, var1_8 = arg1_8:GetOrder():GetAwardItemAndExp()
-	local var2_8 = IslandDropHelper.AddItems({
+
+	return (IslandDropHelper.AddItems({
 		drop_list = var0_8
-	})
-
-	getProxy(IslandProxy):GetIsland():AddExp(var1_8)
-
-	if var1_8 > 0 then
-		table.insert(var2_8.awards, {
-			id = 2,
-			type = DROP_TYPE_ISLAND_ITEM,
-			count = var1_8
-		})
-	end
-
-	return var2_8
+	}, var1_8))
 end
 
 function var0_0.HandleConsume(arg0_9, arg1_9)

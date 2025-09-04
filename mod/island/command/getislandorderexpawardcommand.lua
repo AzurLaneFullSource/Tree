@@ -7,7 +7,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var3_1 = getProxy(IslandProxy):GetIsland():GetOrderAgency()
 
 	if not var3_1:CanGetAward(var1_1) then
-		pg.TipsMgr.GetInstance():ShowTips(i18n1("不可领取"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("island_order_not_get_award"))
 
 		return
 	end

@@ -549,22 +549,24 @@ function var0_0.GetChangeSkinAction(arg0_60)
 	return var0_60 and var0_60.action or nil
 end
 
-function var0_0.GetStoreChangeSkinId(arg0_61)
-	local var0_61 = var0_0.GetStoreChangeSkinPrefsName(arg0_61)
-	local var1_61 = PlayerPrefs.GetInt(var0_61, 0)
+function var0_0.GetStoreChangeSkinId(arg0_61, arg1_61)
+	local var0_61, var1_61 = ShipPhantom.UnpackMark(arg1_61)
+	local var2_61 = var0_0.GetStoreChangeSkinPrefsName(arg0_61, arg1_61)
+	local var3_61 = PlayerPrefs.GetInt(var2_61, 0)
 
-	if var1_61 == 0 then
+	if var3_61 == 0 then
 		return nil
 	else
-		return var1_61
+		return var3_61
 	end
 end
 
-function var0_0.SetStoreChangeSkinId(arg0_62)
-	local var0_62 = var0_0.GetChangeSkinGroupId(arg0_62)
-	local var1_62 = var0_0.GetStoreChangeSkinPrefsName(var0_62)
+function var0_0.SetStoreChangeSkinId(arg0_62, arg1_62)
+	local var0_62, var1_62 = ShipPhantom.UnpackMark(arg1_62)
+	local var2_62 = var0_0.GetChangeSkinGroupId(arg0_62)
+	local var3_62 = var0_0.GetStoreChangeSkinPrefsName(var2_62, arg1_62)
 
-	PlayerPrefs.SetInt(var1_62, arg0_62)
+	PlayerPrefs.SetInt(var3_62, arg0_62)
 end
 
 function var0_0.GetStoreChangeSkinPrefsName(...)

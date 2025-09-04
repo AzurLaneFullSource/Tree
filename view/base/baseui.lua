@@ -57,11 +57,11 @@ function var0_0.forceGC(arg0_6)
 	return false
 end
 
-function var0_0.loadingQueue(arg0_7)
-	return false
+function var0_0.forceRatio(arg0_7)
+	return nil
 end
 
-function var0_0.lowerAdpter(arg0_8)
+function var0_0.loadingQueue(arg0_8)
 	return false
 end
 
@@ -114,10 +114,7 @@ function var0_0.load(arg0_14)
 		end
 	}, function()
 		originalPrint("load " .. var0_14.name .. " time cost: " .. Time.realtimeSinceStartup - var1_14)
-
-		local var0_18 = pg.UIMgr.GetInstance().UIMain
-
-		var0_14.transform:SetParent(var0_18.transform, false)
+		arg0_14:SetUIParent(var0_14)
 
 		if arg0_14:tempCache() then
 			PoolMgr.GetInstance():AddTempCache(var2_14)
@@ -127,74 +124,80 @@ function var0_0.load(arg0_14)
 	end)
 end
 
-function var0_0.LoadUIFromPool(arg0_19, arg1_19, arg2_19)
-	PoolMgr.GetInstance():GetUI(arg1_19, true, arg2_19)
+function var0_0.SetUIParent(arg0_19, arg1_19)
+	local var0_19 = pg.UIMgr.GetInstance().UIMain
+
+	arg1_19.transform:SetParent(var0_19.transform, false)
 end
 
-function var0_0.getBGM(arg0_20, arg1_20)
-	return getBgm(arg1_20 or arg0_20.__cname)
+function var0_0.LoadUIFromPool(arg0_20, arg1_20, arg2_20)
+	PoolMgr.GetInstance():GetUI(arg1_20, true, arg2_20)
 end
 
-function var0_0.PlayBGM(arg0_21)
-	local var0_21 = arg0_21:getBGM()
+function var0_0.getBGM(arg0_21, arg1_21)
+	return getBgm(arg1_21 or arg0_21.__cname)
+end
 
-	if var0_21 then
-		pg.BgmMgr.GetInstance():Push(arg0_21.__cname, var0_21)
+function var0_0.PlayBGM(arg0_22)
+	local var0_22 = arg0_22:getBGM()
+
+	if var0_22 then
+		pg.BgmMgr.GetInstance():Push(arg0_22.__cname, var0_22)
 	end
 end
 
-function var0_0.StopBgm(arg0_22)
-	if not arg0_22.contextData then
+function var0_0.StopBgm(arg0_23)
+	if not arg0_23.contextData then
 		return
 	end
 
-	if arg0_22.contextData.isLayer then
-		pg.BgmMgr.GetInstance():Pop(arg0_22.__cname)
+	if arg0_23.contextData.isLayer then
+		pg.BgmMgr.GetInstance():Pop(arg0_23.__cname)
 	else
 		pg.BgmMgr.GetInstance():Clear()
 	end
 end
 
-function var0_0.isLoaded(arg0_23)
-	return arg0_23._isLoaded
+function var0_0.isLoaded(arg0_24)
+	return arg0_24._isLoaded
 end
 
-function var0_0.getGroupNameFromData(arg0_24)
-	local var0_24
-
-	if arg0_24.contextData ~= nil and arg0_24.contextData.LayerWeightMgr_groupName then
-		var0_24 = arg0_24.contextData.LayerWeightMgr_groupName
-	else
-		var0_24 = arg0_24:getGroupName()
-	end
-
-	return var0_24
-end
-
-function var0_0.getWeightFromData(arg0_25)
+function var0_0.getGroupNameFromData(arg0_25)
 	local var0_25
 
-	if arg0_25.contextData ~= nil and arg0_25.contextData.LayerWeightMgr_weight then
-		var0_25 = arg0_25.contextData.LayerWeightMgr_weight
+	if arg0_25.contextData ~= nil and arg0_25.contextData.LayerWeightMgr_groupName then
+		var0_25 = arg0_25.contextData.LayerWeightMgr_groupName
 	else
-		var0_25 = arg0_25:getLayerWeight()
+		var0_25 = arg0_25:getGroupName()
 	end
 
 	return var0_25
 end
 
-function var0_0.isLayer(arg0_26)
-	return arg0_26.contextData ~= nil and arg0_26.contextData.isLayer
+function var0_0.getWeightFromData(arg0_26)
+	local var0_26
+
+	if arg0_26.contextData ~= nil and arg0_26.contextData.LayerWeightMgr_weight then
+		var0_26 = arg0_26.contextData.LayerWeightMgr_weight
+	else
+		var0_26 = arg0_26:getLayerWeight()
+	end
+
+	return var0_26
 end
 
-function var0_0.addToLayerMgr(arg0_27)
-	local var0_27 = arg0_27:getGroupNameFromData()
-	local var1_27 = arg0_27:getWeightFromData()
+function var0_0.isLayer(arg0_27)
+	return arg0_27.contextData ~= nil and arg0_27.contextData.isLayer
+end
 
-	pg.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_SYSTEM, arg0_27._tf, {
+function var0_0.addToLayerMgr(arg0_28)
+	local var0_28 = arg0_28:getGroupNameFromData()
+	local var1_28 = arg0_28:getWeightFromData()
+
+	pg.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_SYSTEM, arg0_28._tf, {
 		globalBlur = false,
-		groupName = var0_27,
-		weight = var1_27
+		groupName = var0_28,
+		weight = var1_28
 	})
 end
 
@@ -221,262 +224,262 @@ var0_0.optionsPath = {
 	"adapt/blur_panel/adapt/top/option"
 }
 
-function var0_0.onUILoaded(arg0_28, arg1_28)
-	arg0_28._go = arg1_28
-	arg0_28._tf = arg1_28 and arg1_28.transform
+function var0_0.onUILoaded(arg0_29, arg1_29)
+	arg0_29._go = arg1_29
+	arg0_29._tf = arg1_29 and arg1_29.transform
 
-	if arg0_28:isLayer() then
-		arg0_28:addToLayerMgr()
+	if arg0_29:isLayer() then
+		arg0_29:addToLayerMgr()
 	end
 
 	pg.SeriesGuideMgr.GetInstance():dispatch({
-		view = arg0_28.__cname
+		view = arg0_29.__cname
 	})
 	pg.NewStoryMgr.GetInstance():OnSceneEnter({
-		view = arg0_28.__cname
+		view = arg0_29.__cname
 	})
 
-	arg0_28._isLoaded = true
+	arg0_29._isLoaded = true
 
-	pg.DelegateInfo.New(arg0_28)
+	pg.DelegateInfo.New(arg0_29)
 
-	arg0_28.optionBtns = {}
+	arg0_29.optionBtns = {}
 
-	for iter0_28, iter1_28 in ipairs(arg0_28.optionsPath) do
-		table.insert(arg0_28.optionBtns, arg0_28:findTF(iter1_28))
+	for iter0_29, iter1_29 in ipairs(arg0_29.optionsPath) do
+		table.insert(arg0_29.optionBtns, arg0_29:findTF(iter1_29))
 	end
 
-	setActiveViaLayer(arg0_28._tf, true)
-	arg0_28:init()
-	arg0_28:emit(var0_0.LOADED)
+	setActiveViaLayer(arg0_29._tf, true)
+	arg0_29:init()
+	arg0_29:emit(var0_0.LOADED)
 end
 
-function var0_0.ResUISettings(arg0_29)
+function var0_0.ResUISettings(arg0_30)
 	return nil
 end
 
-function var0_0.ShowOrHideResUI(arg0_30, arg1_30)
-	local var0_30 = arg0_30:ResUISettings()
+function var0_0.ShowOrHideResUI(arg0_31, arg1_31)
+	local var0_31 = arg0_31:ResUISettings()
 
-	if not var0_30 then
+	if not var0_31 then
 		return
 	end
 
-	if var0_30 == true then
-		var0_30 = {
+	if var0_31 == true then
+		var0_31 = {
 			anim = true,
 			showType = PlayerResUI.TYPE_ALL
 		}
 	end
 
 	pg.playerResUI:SetActive(setmetatable({
-		active = arg1_30,
-		clear = not arg1_30 and not arg0_30:isLayer(),
-		weight = var0_30.weight or arg0_30:getWeightFromData(),
-		groupName = var0_30.groupName or arg0_30:getGroupNameFromData(),
-		canvasOrder = var0_30.order or false
+		active = arg1_31,
+		clear = not arg1_31 and not arg0_31:isLayer(),
+		weight = var0_31.weight or arg0_31:getWeightFromData(),
+		groupName = var0_31.groupName or arg0_31:getGroupNameFromData(),
+		canvasOrder = var0_31.order or false
 	}, {
-		__index = var0_30
+		__index = var0_31
 	}))
 end
 
-function var0_0.onUIAnimEnd(arg0_31, arg1_31)
-	arg1_31()
+function var0_0.onUIAnimEnd(arg0_32, arg1_32)
+	arg1_32()
 end
 
-function var0_0.init(arg0_32)
+function var0_0.init(arg0_33)
 	return
 end
 
-function var0_0.quickExitFunc(arg0_33)
-	arg0_33:emit(var0_0.ON_HOME)
+function var0_0.quickExitFunc(arg0_34)
+	arg0_34:emit(var0_0.ON_HOME)
 end
 
-function var0_0.quickExit(arg0_34)
-	for iter0_34, iter1_34 in ipairs(arg0_34.optionBtns) do
-		onButton(arg0_34, iter1_34, function()
-			arg0_34:quickExitFunc()
+function var0_0.quickExit(arg0_35)
+	for iter0_35, iter1_35 in ipairs(arg0_35.optionBtns) do
+		onButton(arg0_35, iter1_35, function()
+			arg0_35:quickExitFunc()
 		end, SFX_PANEL)
 	end
 end
 
-function var0_0.enter(arg0_36)
-	arg0_36:quickExit()
-	arg0_36:PlayBGM()
-	arg0_36:emit(var0_0.DID_ENTER)
+function var0_0.enter(arg0_37)
+	arg0_37:quickExit()
+	arg0_37:PlayBGM()
+	arg0_37:emit(var0_0.DID_ENTER)
 
-	if arg0_36:lowerAdpter() then
-		setActive(pg.CameraFixMgr.GetInstance().adpterTr, false)
+	if arg0_37:forceRatio() then
+		pg.CameraFixMgr.GetInstance():SetForceRatio(arg0_37:forceRatio())
 	end
 
-	if not arg0_36._isCachedView then
-		arg0_36:didEnter()
-		arg0_36:ShowOrHideResUI(true)
+	if not arg0_37._isCachedView then
+		arg0_37:didEnter()
+		arg0_37:ShowOrHideResUI(true)
 	end
 
-	if tobool(arg0_36:loadingQueue()) and arg0_36.contextData.resumeCallback then
-		local var0_36 = arg0_36.contextData.resumeCallback
+	if tobool(arg0_37:loadingQueue()) and arg0_37.contextData.resumeCallback then
+		local var0_37 = arg0_37.contextData.resumeCallback
 
-		arg0_36.contextData.resumeCallback = nil
+		arg0_37.contextData.resumeCallback = nil
 
-		var0_36()
+		var0_37()
 	end
 
-	arg0_36:emit(var0_0.AVALIBLE)
-	arg0_36:onUIAnimEnd(function()
+	arg0_37:emit(var0_0.AVALIBLE)
+	arg0_37:onUIAnimEnd(function()
 		pg.SeriesGuideMgr.GetInstance():start({
-			view = arg0_36.__cname,
+			view = arg0_37.__cname,
 			code = {
 				pg.SeriesGuideMgr.CODES.MAINUI
 			}
 		})
 		pg.NewGuideMgr.GetInstance():OnSceneEnter({
-			view = arg0_36.__cname
+			view = arg0_37.__cname
 		})
 	end)
 end
 
-function var0_0.closeView(arg0_38)
-	if arg0_38.contextData.isLayer then
-		arg0_38:emit(var0_0.ON_CLOSE)
+function var0_0.closeView(arg0_39)
+	if arg0_39.contextData.isLayer then
+		arg0_39:emit(var0_0.ON_CLOSE)
 	else
-		arg0_38:emit(var0_0.ON_BACK)
+		arg0_39:emit(var0_0.ON_BACK)
 	end
 end
 
-function var0_0.didEnter(arg0_39)
+function var0_0.didEnter(arg0_40)
 	return
 end
 
-function var0_0.willExit(arg0_40)
+function var0_0.willExit(arg0_41)
 	return
 end
 
-function var0_0.exit(arg0_41)
-	arg0_41.exited = true
+function var0_0.exit(arg0_42)
+	arg0_42.exited = true
 
-	arg0_41:StopBgm()
-	pg.DelegateInfo.Dispose(arg0_41)
-	arg0_41:willExit()
-	arg0_41:ShowOrHideResUI(false)
-	arg0_41:detach()
+	arg0_42:StopBgm()
+	pg.DelegateInfo.Dispose(arg0_42)
+	arg0_42:willExit()
+	arg0_42:ShowOrHideResUI(false)
+	arg0_42:detach()
 
-	if arg0_41:lowerAdpter() then
-		setActive(pg.CameraFixMgr.GetInstance().adpterTr, true)
+	if arg0_42:forceRatio() then
+		pg.CameraFixMgr.GetInstance():SetForceRatio(nil)
 	end
 
 	pg.NewGuideMgr.GetInstance():OnSceneExit({
-		view = arg0_41.__cname
+		view = arg0_42.__cname
 	})
 	pg.NewStoryMgr.GetInstance():OnSceneExit({
-		view = arg0_41.__cname
+		view = arg0_42.__cname
 	})
-	arg0_41:emit(var0_0.DID_EXIT)
+	arg0_42:emit(var0_0.DID_EXIT)
 end
 
-function var0_0.PlayUIAnimation(arg0_42, arg1_42, arg2_42, arg3_42)
-	local var0_42 = arg1_42:GetComponent(typeof(Animation))
-	local var1_42 = arg1_42:GetComponent(typeof(UIEventTrigger))
+function var0_0.PlayUIAnimation(arg0_43, arg1_43, arg2_43, arg3_43)
+	local var0_43 = arg1_43:GetComponent(typeof(Animation))
+	local var1_43 = arg1_43:GetComponent(typeof(UIEventTrigger))
 
-	var1_42.didExit:RemoveAllListeners()
-	var1_42.didExit:AddListener(function()
-		var1_42.didExit:RemoveAllListeners()
-		arg3_42()
+	var1_43.didExit:RemoveAllListeners()
+	var1_43.didExit:AddListener(function()
+		var1_43.didExit:RemoveAllListeners()
+		arg3_43()
 	end)
-	var0_42:Play(arg2_42)
+	var0_43:Play(arg2_43)
 end
 
-function var0_0.attach(arg0_44, arg1_44)
+function var0_0.attach(arg0_45, arg1_45)
 	return
 end
 
-function var0_0.ClearTweens(arg0_45, arg1_45)
-	arg0_45:cleanManagedTween(arg1_45)
+function var0_0.ClearTweens(arg0_46, arg1_46)
+	arg0_46:cleanManagedTween(arg1_46)
 end
 
-function var0_0.RemoveTempCache(arg0_46)
-	local var0_46 = arg0_46:getUIName()
+function var0_0.RemoveTempCache(arg0_47)
+	local var0_47 = arg0_47:getUIName()
 
-	PoolMgr.GetInstance():DelTempCache(var0_46)
+	PoolMgr.GetInstance():DelTempCache(var0_47)
 end
 
-function var0_0.detach(arg0_47, arg1_47)
-	arg0_47._isLoaded = false
+function var0_0.detach(arg0_48, arg1_48)
+	arg0_48._isLoaded = false
 
-	pg.LayerWeightMgr.GetInstance():DelFromOverlay(arg0_47._tf)
-	pg.DynamicBgMgr.GetInstance():ClearBg(arg0_47:getUIName())
-	arg0_47:disposeEvent()
-	arg0_47:ClearTweens(false)
+	pg.LayerWeightMgr.GetInstance():DelFromOverlay(arg0_48._tf)
+	pg.DynamicBgMgr.GetInstance():ClearBg(arg0_48:getUIName())
+	arg0_48:disposeEvent()
+	arg0_48:ClearTweens(false)
 
-	arg0_47._tf = nil
+	arg0_48._tf = nil
 
-	local var0_47 = PoolMgr.GetInstance()
-	local var1_47 = arg0_47:getUIName()
+	local var0_48 = PoolMgr.GetInstance()
+	local var1_48 = arg0_48:getUIName()
 
-	if arg0_47._go ~= nil and var1_47 then
-		var0_47:ReturnUI(var1_47, arg0_47._go)
+	if arg0_48._go ~= nil and var1_48 then
+		var0_48:ReturnUI(var1_48, arg0_48._go)
 
-		arg0_47._go = nil
+		arg0_48._go = nil
 	end
 end
 
-function var0_0.findGO(arg0_48, arg1_48, arg2_48)
-	assert(arg0_48._go, "game object should exist")
+function var0_0.findGO(arg0_49, arg1_49, arg2_49)
+	assert(arg0_49._go, "game object should exist")
 
-	return findGO(arg2_48 or arg0_48._go, arg1_48)
+	return findGO(arg2_49 or arg0_49._go, arg1_49)
 end
 
-function var0_0.findTF(arg0_49, arg1_49, arg2_49)
-	assert(arg0_49._tf, "transform should exist")
+function var0_0.findTF(arg0_50, arg1_50, arg2_50)
+	assert(arg0_50._tf, "transform should exist")
 
-	return findTF(arg2_49 or arg0_49._tf, arg1_49)
+	return findTF(arg2_50 or arg0_50._tf, arg1_50)
 end
 
-function var0_0.getTpl(arg0_50, arg1_50, arg2_50)
-	local var0_50 = arg0_50:findTF(arg1_50, arg2_50)
+function var0_0.getTpl(arg0_51, arg1_51, arg2_51)
+	local var0_51 = arg0_51:findTF(arg1_51, arg2_51)
 
-	var0_50:SetParent(arg0_50._tf, false)
-	SetActive(var0_50, false)
+	var0_51:SetParent(arg0_51._tf, false)
+	SetActive(var0_51, false)
 
-	return var0_50
+	return var0_51
 end
 
-function var0_0.setSpriteTo(arg0_51, arg1_51, arg2_51, arg3_51)
-	local var0_51 = arg2_51:GetComponent(typeof(Image))
+function var0_0.setSpriteTo(arg0_52, arg1_52, arg2_52, arg3_52)
+	local var0_52 = arg2_52:GetComponent(typeof(Image))
 
-	var0_51.sprite = arg0_51:findTF(arg1_51):GetComponent(typeof(Image)).sprite
+	var0_52.sprite = arg0_52:findTF(arg1_52):GetComponent(typeof(Image)).sprite
 
-	if arg3_51 then
-		var0_51:SetNativeSize()
+	if arg3_52 then
+		var0_52:SetNativeSize()
 	end
 end
 
-function var0_0.setImageAmount(arg0_52, arg1_52, arg2_52)
-	arg1_52:GetComponent(typeof(Image)).fillAmount = arg2_52
+function var0_0.setImageAmount(arg0_53, arg1_53, arg2_53)
+	arg1_53:GetComponent(typeof(Image)).fillAmount = arg2_53
 end
 
-function var0_0.setVisible(arg0_53, arg1_53)
-	arg0_53:ShowOrHideResUI(arg1_53)
+function var0_0.setVisible(arg0_54, arg1_54)
+	arg0_54:ShowOrHideResUI(arg1_54)
 
-	if arg1_53 then
-		arg0_53:OnVisible()
+	if arg1_54 then
+		arg0_54:OnVisible()
 	else
-		arg0_53:OnDisVisible()
+		arg0_54:OnDisVisible()
 	end
 
-	setActiveViaLayer(arg0_53._tf, arg1_53)
+	setActiveViaLayer(arg0_54._tf, arg1_54)
 end
 
-function var0_0.OnVisible(arg0_54)
+function var0_0.OnVisible(arg0_55)
 	return
 end
 
-function var0_0.OnDisVisible(arg0_55)
+function var0_0.OnDisVisible(arg0_56)
 	return
 end
 
-function var0_0.onBackPressed(arg0_56)
-	arg0_56:emit(var0_0.ON_BACK_PRESSED)
+function var0_0.onBackPressed(arg0_57)
+	arg0_57:emit(var0_0.ON_BACK_PRESSED)
 end
 
 return var0_0

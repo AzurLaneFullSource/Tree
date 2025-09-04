@@ -18,7 +18,7 @@ end
 
 function var0_0.OnUpdate(arg0_5)
 	local var0_5 = getProxy(SettingsProxy)
-	local var1_5 = Screen.width / Screen.height - 0.001
+	local var1_5 = math.clamp(Screen.width / Screen.height - 0.001, 1.33333333333333, 2.33333333333333)
 
 	setSlider(arg0_5.notchSlider, ADAPT_MIN, var1_5, var0_5:GetScreenRatio())
 	OnSliderWithButton(arg0_5, arg0_5.notchSlider, function(arg0_6)

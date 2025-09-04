@@ -15,7 +15,7 @@ function var0_0.Update(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2)
 	arg0_2.item = arg1_2
 	arg0_2.nameTxt.text = arg1_2:GetName()
 
-	updateDrop(arg0_2._tf, Drop.New({
+	updateCustomDrop(arg0_2._tf, Drop.New({
 		type = DROP_TYPE_ISLAND_ITEM,
 		id = arg1_2.id,
 		count = arg1_2:GetCount()
@@ -43,7 +43,7 @@ function var0_0.UpdateTip(arg0_3, arg1_3, arg2_3)
 
 	local var0_3 = getProxy(IslandProxy):GetIsland():GetInventoryAgency()
 
-	arg0_3.maskTxt.text = var0_3:OwnItem() and i18n1("超出x" .. arg1_3:GetCount()) or i18n1("容量不足")
+	arg0_3.maskTxt.text = var0_3:OwnItem() and i18n("island_item_overflow", arg1_3:GetCount()) or i18n("island_item_no_capacity")
 end
 
 function var0_0.UpdateValue(arg0_4, arg1_4)

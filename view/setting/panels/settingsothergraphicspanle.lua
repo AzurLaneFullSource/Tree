@@ -58,28 +58,26 @@ function var0_0.UpdateItem(arg0_7, arg1_7, arg2_7)
 	setActive(var3_7, var2_7)
 	setActive(var4_7, not var2_7)
 
-	local var5_7 = arg0_7.typeList[arg1_7]
-
 	if var2_7 then
-		local function var6_7(arg0_8)
+		local function var5_7(arg0_8)
 			local var0_8 = arg0_8 and 1 or 0
 
 			PlayerPrefs.SetInt(var0_7.playerPrefsname, var0_8)
 		end
 
-		local var7_7 = arg2_7:Find("toggle/off")
-		local var8_7 = arg2_7:Find("toggle/on")
-		local var9_7
+		local var6_7 = arg2_7:Find("toggle/off")
+		local var7_7 = arg2_7:Find("toggle/on")
+		local var8_7
 
-		local function var10_7(arg0_9)
-			var9_7 = arg0_9
+		local function var9_7(arg0_9)
+			var8_7 = arg0_9
 
-			SetActive(var7_7:Find("show"), not arg0_9)
-			SetActive(var8_7:Find("show"), arg0_9)
+			SetActive(var6_7:Find("show"), not arg0_9)
+			SetActive(var7_7:Find("show"), arg0_9)
 		end
 
-		onButton(arg0_7, var8_7, function()
-			if var9_7 == true then
+		onButton(arg0_7, var7_7, function()
+			if var8_7 == true then
 				return
 			end
 
@@ -99,13 +97,13 @@ function var0_0.UpdateItem(arg0_7, arg1_7, arg2_7)
 					})
 				end)
 				seriesAsync(var0_10, function()
-					var10_7(true)
-					var6_7(true)
+					var9_7(true)
+					var5_7(true)
 					arg0_7:JumpToCustomSetting(var0_7)
 				end)
 			else
-				var10_7(true)
-				var6_7(true)
+				var9_7(true)
+				var5_7(true)
 
 				if arg0_7.customSetting and var0_7.hasChild then
 					pg.m02:sendNotification(NewSettingsMediator.SelectCustomGraphicSetting)
@@ -116,13 +114,13 @@ function var0_0.UpdateItem(arg0_7, arg1_7, arg2_7)
 				arg0_7:JumpToCustomSetting(var0_7)
 			end
 		end, SFX_CANCEL)
-		onButton(arg0_7, var7_7, function()
-			if var9_7 == false then
+		onButton(arg0_7, var6_7, function()
+			if var8_7 == false then
 				return
 			end
 
-			var10_7(false)
-			var6_7(false)
+			var9_7(false)
+			var5_7(false)
 
 			if arg0_7.customSetting and var0_7.hasChild then
 				pg.m02:sendNotification(NewSettingsMediator.SelectCustomGraphicSetting)
@@ -133,47 +131,29 @@ function var0_0.UpdateItem(arg0_7, arg1_7, arg2_7)
 			arg0_7:JumpToCustomSetting(var0_7)
 		end, SFX_CANCEL)
 
-		local var11_7
+		local var10_7
+		local var11_7 = arg0_7.graphicLevel == var4_0.Custom and PlayerPrefs.GetInt(var0_7.playerPrefsname, -1) or nil
 
-		if var5_7 == GraphicSettingConst.TYPE_GLOBAL_QUALITY then
-			var11_7 = arg0_7.graphicLevel == var4_0.Custom and PlayerPrefs.GetInt(var0_7.playerPrefsname, -1) or nil
-
-			if not var11_7 or var11_7 == -1 then
-				var11_7 = arg0_7.qualitySettingAsset[var0_7.Cname]
-			end
-		elseif var5_7 == GraphicSettingConst.TYPE_VOLUME then
-			var11_7 = PlayerPrefs.GetInt(var0_7.playerPrefsname, 0)
+		if not var11_7 or var11_7 == -1 then
+			var11_7 = var0_7.defaultValues[arg0_7.graphicLevel]
 		end
 
-		var10_7(var11_7 == 1 or var11_7 == true)
+		var9_7(var11_7 == 1 or var11_7 == true)
 	else
 		local var12_7
+		local var13_7 = arg0_7.graphicLevel == var4_0.Custom and PlayerPrefs.GetInt(var0_7.playerPrefsname, -1) or nil
 
-		if var5_7 == GraphicSettingConst.TYPE_GLOBAL_QUALITY then
-			local var13_7 = arg0_7.graphicLevel == var4_0.Custom and PlayerPrefs.GetInt(var0_7.playerPrefsname, -1) or nil
+		if not var13_7 or var13_7 == -1 then
+			var13_7 = var0_7.defaultValues[arg0_7.graphicLevel]
+		end
 
-			if not var13_7 or var13_7 == -1 then
-				var13_7 = arg0_7.qualitySettingAsset[var0_7.Cname]
-			end
-
-			for iter0_7, iter1_7 in ipairs(var0_7.options) do
-				if iter1_7 == var13_7 then
-					var12_7 = iter0_7
-				end
-			end
-		elseif var5_7 == GraphicSettingConst.TYPE_VOLUME then
-			var12_7 = 1
-
-			local var14_7 = PlayerPrefs.GetInt(var0_7.playerPrefsname, 0)
-
-			for iter2_7, iter3_7 in ipairs(var0_7.options) do
-				if iter3_7 == var14_7 then
-					var12_7 = iter2_7
-				end
+		for iter0_7, iter1_7 in ipairs(var0_7.options) do
+			if iter1_7 == var13_7 then
+				var12_7 = iter0_7
 			end
 		end
 
-		local function var15_7()
+		local function var14_7()
 			local var0_16 = var12_7 == 1
 			local var1_16 = var12_7 == #var0_7.optionNames
 
@@ -182,18 +162,18 @@ function var0_0.UpdateItem(arg0_7, arg1_7, arg2_7)
 			setText(var4_7:Find("Text"), i18n(var0_7.optionNames[var12_7]))
 		end
 
-		var15_7()
+		var14_7()
 		onButton(arg0_7, var4_7:Find("leftbu"), function()
 			var12_7 = var12_7 - 1
 
-			var15_7()
+			var14_7()
 			PlayerPrefs.SetInt(var0_7.playerPrefsname, var0_7.options[var12_7])
 			arg0_7:JumpToCustomSetting(var0_7)
 		end)
 		onButton(arg0_7, var4_7:Find("rightbu"), function()
 			var12_7 = var12_7 + 1
 
-			var15_7()
+			var14_7()
 			PlayerPrefs.SetInt(var0_7.playerPrefsname, var0_7.options[var12_7])
 			arg0_7:JumpToCustomSetting(var0_7)
 		end)
@@ -206,24 +186,23 @@ function var0_0.SetPlayerPrefSetting(arg0_19, arg1_19)
 	end
 
 	for iter0_19, iter1_19 in ipairs(var3_0) do
-		if arg1_19.Cname ~= iter1_19.Cname then
-			local var0_19 = PlayerPrefs.SetInt(iter1_19.playerPrefsname, -1)
-			local var1_19 = arg0_19.qualitySettingAsset[iter1_19.Cname]
+		if arg1_19.playerPrefsname ~= iter1_19.playerPrefsname then
+			local var0_19 = iter1_19.defaultValues[arg0_19.graphicLevel]
 
 			if iter1_19.settingType == var1_0.toggle then
-				local var2_19 = var1_19 and 1 or 0
+				local var1_19 = var0_19 and 1 or 0
 
-				PlayerPrefs.SetInt(iter1_19.playerPrefsname, var2_19)
+				PlayerPrefs.SetInt(iter1_19.playerPrefsname, var1_19)
 			else
-				local var3_19
+				local var2_19
 
 				for iter2_19, iter3_19 in ipairs(iter1_19.options) do
-					if iter3_19 == var1_19 then
-						var3_19 = iter2_19
+					if iter3_19 == var0_19 then
+						var2_19 = iter2_19
 					end
 				end
 
-				PlayerPrefs.SetInt(iter1_19.playerPrefsname, iter1_19.options[var3_19])
+				PlayerPrefs.SetInt(iter1_19.playerPrefsname, iter1_19.options[var2_19])
 			end
 		end
 	end
@@ -240,8 +219,7 @@ function var0_0.OnUpdate(arg0_20)
 
 	local var0_20 = var2_0[arg0_20.graphicLevel]
 
-	arg0_20.qualitySettingAsset = LoadAny("three3dquaitysettings/defaultsettings", var0_20)
-	arg0_20.list, arg0_20.typeList = arg0_20:GetList()
+	arg0_20.list = arg0_20:GetList()
 
 	arg0_20.uilist:align(#arg0_20.list)
 end
@@ -252,9 +230,8 @@ end
 
 function var0_0.GetList(arg0_22)
 	local var0_22 = {}
-	local var1_22 = {}
 
-	local function var2_22(arg0_23)
+	local function var1_22(arg0_23)
 		local var0_23 = arg0_22:GetParentSetting(arg0_23.parentId)
 		local var1_23 = false
 
@@ -262,7 +239,7 @@ function var0_0.GetList(arg0_22)
 			local var2_23 = arg0_22.customSetting and PlayerPrefs.GetInt(var0_23.playerPrefsname, -1) or nil
 
 			if not var2_23 or var2_23 == -1 then
-				var2_23 = arg0_22.qualitySettingAsset[var0_23.Cname]
+				var2_23 = var0_23.defaultValues[arg0_22.graphicLevel]
 			end
 
 			var1_23 = var2_23 == 0
@@ -272,20 +249,12 @@ function var0_0.GetList(arg0_22)
 	end
 
 	for iter0_22, iter1_22 in ipairs(var3_0) do
-		if var2_22(iter1_22) then
+		if var1_22(iter1_22) then
 			table.insert(var0_22, iter1_22)
-			table.insert(var1_22, GraphicSettingConst.TYPE_GLOBAL_QUALITY)
 		end
 	end
 
-	for iter2_22, iter3_22 in ipairs(GraphicSettingConst.volumeSettings) do
-		if var2_22(iter3_22) then
-			table.insert(var0_22, iter3_22)
-			table.insert(var1_22, GraphicSettingConst.TYPE_VOLUME)
-		end
-	end
-
-	return var0_22, var1_22
+	return var0_22
 end
 
 function var0_0.GetParentSetting(arg0_24, arg1_24)

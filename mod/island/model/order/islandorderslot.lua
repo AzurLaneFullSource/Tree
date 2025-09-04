@@ -13,9 +13,9 @@ var0_0.TENDENCY_TYPE_HARD = 2
 function var0_0.TENDENCY2TIP(arg0_1)
 	if not var0_0.TENDENCY_2_TIP then
 		var0_0.TENDENCY_2_TIP = {
-			i18n1("标准订单"),
-			i18n1("相较标准订单更易完成,奖励也有所降低"),
-			i18n1("相较标准订单更具挑战,奖励也有所提升")
+			i18n("island_order_desc_1"),
+			i18n("island_order_desc_2"),
+			i18n("island_order_desc_3")
 		}
 	end
 
@@ -25,9 +25,9 @@ end
 function var0_0.TENDENCY2CN(arg0_2)
 	if not var0_0.TENDENCY_2_CN then
 		var0_0.TENDENCY_2_CN = {
-			i18n1("标准"),
-			i18n1("更易完成"),
-			i18n1("更具挑战")
+			i18n("island_order_difficulty_1"),
+			i18n("island_order_difficulty_2"),
+			i18n("island_order_difficulty_3")
 		}
 	end
 
@@ -50,14 +50,21 @@ function var0_0.GenOrder(arg0_5, arg1_5)
 	elseif arg1_5.type == IslandOrder.TYPE_URGENCY then
 		return IslandUrgencyOrder.New(arg1_5)
 	elseif arg1_5.type == IslandOrder.TYPE_FORM then
-		return IslandFirmOrder.New(arg1_5)
+		if pg.island_order[arg1_5.id].type == 2 then
+			return IslandFirmUrgencyOrder.New(arg1_5)
+		else
+			return IslandFirmOrder.New(arg1_5)
+		end
 	end
 
 	assert(false, "order should be exist" .. arg1_5.type)
 end
 
 function var0_0.GetPosition(arg0_6)
-	return pg.island_order_position[arg0_6.position] or pg.island_order_position[1]
+	local var0_6 = pg.island_order_position[arg0_6.position] and arg0_6.position or 1
+	local var1_6 = pg.island_order_position[var0_6].position
+
+	return Vector3(var1_6[1], var1_6[2], 0)
 end
 
 function var0_0.GetState(arg0_7)

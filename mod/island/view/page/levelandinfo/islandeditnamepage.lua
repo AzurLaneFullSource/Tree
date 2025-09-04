@@ -10,9 +10,13 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.confirmBtn = arg0_2:findTF("frame/confirm")
 	arg0_2.content = arg0_2:findTF("frame/Text")
 
-	setText(arg0_2:findTF("frame/title"), i18n1("岛屿名称修改"))
-	setText(arg0_2:findTF("frame/confirm/Text"), i18n1("确定"))
-	setText(arg0_2:findTF("frame/name/InputField/Placeholder"), i18n1("点击输入名称"))
+	setText(arg0_2:findTF("frame/title"), i18n("island_rename_title"))
+	setText(arg0_2:findTF("frame/confirm/Text"), i18n("word_ok"))
+	setText(arg0_2:findTF("frame/name/InputField/Placeholder"), i18n("island_rename_input_tip"))
+
+	arg0_2.animator = arg0_2._tf:GetComponent(typeof(Animation))
+	arg0_2.aniDft = arg0_2._tf:GetComponent(typeof(DftAniEvent))
+	arg0_2.isPlayingAnimation = false
 end
 
 function var0_0.AddListeners(arg0_3)
@@ -48,6 +52,7 @@ end
 function var0_0.Show(arg0_10, arg1_10)
 	var0_0.super.Show(arg0_10)
 
+	arg0_10.isPlayingAnimation = false
 	arg0_10.callback = arg1_10
 
 	arg0_10:UpdateContent()
@@ -57,29 +62,51 @@ function var0_0.Show(arg0_10, arg1_10)
 end
 
 function var0_0.Hide(arg0_11)
-	var0_0.super.Hide(arg0_11)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11._tf, arg0_11._parentTf)
+	if arg0_11.isPlayingAnimation then
+		return
+	end
+
+	arg0_11:PlayExitAniamtion(function()
+		arg0_11.isPlayingAnimation = false
+
+		arg0_11.aniDft:SetEndEvent(nil)
+		var0_0.super.Hide(arg0_11)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11._tf, arg0_11._parentTf)
+	end)
 end
 
-function var0_0.UpdateContent(arg0_12)
-	setInputText(arg0_12.input, "")
+function var0_0.PlayExitAniamtion(arg0_13, arg1_13)
+	arg0_13.isPlayingAnimation = true
 
-	local var0_12 = getProxy(IslandProxy):GetIsland():GetModifyNameConsume()
-	local var1_12 = Drop.New({
-		type = var0_12[1],
-		id = var0_12[2],
-		count = var0_12[3]
+	arg0_13.aniDft:SetEndEvent(function()
+		if arg1_13 then
+			arg1_13()
+		end
+	end)
+	arg0_13.animator:Play("anim_IslandEditNameUI_Out")
+end
+
+function var0_0.UpdateContent(arg0_15)
+	setInputText(arg0_15.input, "")
+
+	local var0_15 = getProxy(IslandProxy):GetIsland():GetModifyNameConsume()
+	local var1_15 = Drop.New({
+		type = var0_15[1],
+		id = var0_15[2],
+		count = var0_15[3]
 	})
-	local var2_12 = var1_12:getName()
-	local var3_12 = var1_12:getOwnedCount()
-	local var4_12 = var3_12 < var1_12.count and "#f36c6e" or "#39bfff"
-	local var5_12 = setColorStr(var3_12 .. "/" .. var1_12.count, var4_12)
+	local var2_15 = var1_15:getName()
+	local var3_15 = var1_15:getOwnedCount()
+	local var4_15 = var3_15 < var1_15.count and "#f36c6e" or "#39bfff"
+	local var5_15 = setColorStr(var3_15 .. "/" .. var1_15.count, var4_15)
 
-	setText(arg0_12.content, i18n1("名称最长为9个汉字，更名需要消耗") .. var2_12 .. var5_12)
+	setText(arg0_15.content, i18n("island_rename_consutme_tip", var2_15 .. var5_15))
 end
 
-function var0_0.OnDestroy(arg0_13)
-	arg0_13.callback = nil
+function var0_0.OnDestroy(arg0_16)
+	arg0_16.callback = nil
+
+	arg0_16.aniDft:SetEndEvent(nil)
 end
 
 return var0_0

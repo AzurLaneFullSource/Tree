@@ -75,7 +75,7 @@ function var0_0.FlushOptions(arg0_11)
 		if arg0_11.selectedBuilding:CanUnlock() then
 			arg0_11:emit(IslandMediator.ON_UNLOCK_BUILDING, arg0_11.selectedBuilding.id)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n1("岛屿等级达到" .. arg0_11.selectedBuilding:GetUnlockLv() .. "级解锁"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("island_level_to_unlock", arg0_11.selectedBuilding:GetUnlockLv()))
 		end
 	end, SFX_PANEL)
 

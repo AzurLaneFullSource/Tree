@@ -7,7 +7,9 @@ function var0_0.Ctor(arg0_1)
 	if PLATFORM_CODE == PLATFORM_CH then
 		arg0_1.instance = require("Mgr.Sdk.BiliSDKMgr")
 	elseif PLATFORM_CODE == PLATFORM_JP then
-		arg0_1.instance = require("Mgr.Sdk.YoStarJPMgr")
+		arg0_1.instance = require("Mgr.Sdk.YoStarMgr")
+
+		arg0_1.instance.InitJP()
 	elseif PLATFORM_CODE == PLATFORM_KR then
 		arg0_1.instance = require("Mgr.Sdk.TxwyKrSDKMgr")
 	elseif PLATFORM_CODE == PLATFORM_US then
@@ -471,20 +473,20 @@ function var0_0.QueryWithProduct(arg0_86)
 	arg0_86:Call("QueryWithProduct")
 end
 
-function var0_0.ShareImg(arg0_87, arg1_87, arg2_87)
-	arg0_87:Call("ShareImg", arg1_87, arg2_87)
+function var0_0.QueryPendingTransaction(arg0_87)
+	arg0_87:Call("QueryPendingTransaction")
 end
 
-function var0_0.SwitchAccount(arg0_88)
-	arg0_88:Call("SwitchAccount")
+function var0_0.ShareImg(arg0_88, arg1_88, arg2_88)
+	arg0_88:Call("ShareImg", arg1_88, arg2_88)
 end
 
-function var0_0.CompletedTutorial(arg0_89)
-	arg0_89:Call("CompletedTutorial")
+function var0_0.SwitchAccount(arg0_89)
+	arg0_89:Call("SwitchAccount")
 end
 
-function var0_0.UnlockAchievement(arg0_90)
-	arg0_90:Call("UnlockAchievement")
+function var0_0.EventTrack(arg0_90, arg1_90)
+	arg0_90:Call("EventTrack", arg1_90)
 end
 
 function var0_0.EventTrack(arg0_91, arg1_91)

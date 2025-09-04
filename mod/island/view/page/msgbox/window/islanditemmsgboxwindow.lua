@@ -23,7 +23,7 @@ function var0_0.FlushItems(arg0_4, arg1_4)
 		if arg0_5 == UIItemList.EventUpdate then
 			local var0_5 = var0_4[arg1_5 + 1]
 
-			updateDrop(arg2_5, var0_5)
+			updateCustomDrop(arg2_5, var0_5)
 		end
 	end)
 	arg0_4.uiItemList:align(#var0_4)

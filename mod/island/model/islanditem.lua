@@ -3,11 +3,12 @@ local var0_0 = class("IslandItem", import("model.vo.BaseVO"))
 var0_0.TYPE_MATERIAL = 1
 var0_0.TYPE_PROP = 2
 var0_0.TYPE_SPECIAL_PROP = 3
+var0_0.TYPE_SHIP_EXP_BOOK = 5
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.id = arg1_1.id
 	arg0_1.configId = arg0_1.id
-	arg0_1.count = arg1_1.num or 1
+	arg0_1.count = arg1_1.num or arg1_1.number or arg1_1.count or 1
 	arg0_1.time = arg1_1.time or 0
 end
 
@@ -86,7 +87,7 @@ function var0_0.IsMaterial(arg0_16)
 end
 
 function var0_0.IsProp(arg0_17)
-	return arg0_17:GetType() == var0_0.TYPE_PROP
+	return arg0_17:GetType() == var0_0.TYPE_PROP or arg0_17:GetType() == var0_0.TYPE_SHIP_EXP_BOOK
 end
 
 function var0_0.IsSpecialProp(arg0_18)
@@ -101,16 +102,12 @@ function var0_0.GetMaterialFacility(arg0_19)
 	return ""
 end
 
-function var0_0.CanSell(arg0_20)
-	return arg0_20:getConfig("price") > 0
+function var0_0.CanConvert(arg0_20)
+	return arg0_20:getConfig("convert") == 1
 end
 
-function var0_0.GetSellingPrice(arg0_21)
-	return Drop.New({
-		type = DROP_TYPE_RESOURCE,
-		id = arg0_21:getConfig("resource_type"),
-		count = arg0_21:getConfig("price")
-	})
+function var0_0.GetConvertPt(arg0_21)
+	return arg0_21:getConfig("pt_num")
 end
 
 function var0_0.StaticGetMapUsageList(arg0_22)
@@ -134,6 +131,10 @@ function var0_0.GetAcquiringWay(arg0_25)
 	end
 
 	return var0_25
+end
+
+function var0_0.GetUseArg(arg0_26)
+	return var0_0.StaticGetUsageArg(arg0_26.configId)
 end
 
 return var0_0

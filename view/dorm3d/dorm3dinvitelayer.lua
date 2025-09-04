@@ -25,6 +25,8 @@ function var0_0.init(arg0_2)
 	end, SFX_CANCEL)
 	setText(arg0_2.rtSelectPanel:Find("window/title/Text"), i18n("dorm3d_data_choose"))
 	setText(arg0_2.rtSelectPanel:Find("window/bottom/container/btn_confirm/Text"), i18n("text_confirm"))
+
+	arg0_2.selectCountTip = i18n("dorm3d_select_tip")
 end
 
 function var0_0.ShowInvitePanel(arg0_6)
@@ -149,7 +151,7 @@ function var0_0.ShowSelectPanel(arg0_14)
 						table.insert(var3_14, var0_15)
 					end
 
-					setText(arg0_14.rtSelectPanel:Find("window/bottom/title/Text"), i18n("dorm3d_select_tip") .. #var3_14 .. "/" .. var2_14)
+					setText(arg0_14.rtSelectPanel:Find("window/bottom/title/Text"), arg0_14.selectCountTip .. #var3_14 .. "/" .. var2_14)
 				end)
 				triggerToggle(arg2_15:Find("base"), table.contains(arg0_14.selectIds, var0_15))
 				setActive(arg2_15:Find("base/mask"), var4_14[var0_15])

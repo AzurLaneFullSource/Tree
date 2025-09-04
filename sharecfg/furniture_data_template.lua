@@ -21838,7 +21838,7 @@ pg.base.furniture_data_template = {
 	},
 	[315] = {
 		effect = "",
-		name = "甜品吧台",
+		name = "7th Anniversary Dessert Bar",
 		gain_by = "",
 		type = 7,
 		dir = 0,
@@ -21846,7 +21846,7 @@ pg.base.furniture_data_template = {
 		picture = "",
 		is_get_time_note = 0,
 		count = 1,
-		describe = "",
+		describe = "Recharge with a dash of sweetness for your adventure.",
 		is_3d_obj = 0,
 		advice = 0,
 		themeId = 0,

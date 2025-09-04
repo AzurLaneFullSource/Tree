@@ -126,7 +126,7 @@ function var0_0.UpdateGift(arg0_19, arg1_19, arg2_19, arg3_19)
 		count = arg0_19.proxy:getGiftCount(arg2_19)
 	})
 
-	updateDorm3dIcon(var0_19:Find("Dorm3dIconTpl"), var1_19)
+	updateCustomDrop(var0_19:Find("Dorm3dIconTpl"), var1_19)
 	setText(var0_19:Find("info/name"), var1_19:getName())
 
 	local var2_19 = var1_19:getConfig("ship_group_id") ~= 0
@@ -382,7 +382,7 @@ function var0_0.OpenInfoWindow(arg0_41, arg1_41)
 	local var0_41 = arg0_41.rtInfoWindow:Find("panel")
 
 	setText(var0_41:Find("title/Text"), i18n("words_information"))
-	updateDorm3dIcon(var0_41:Find("middle/Dorm3dIconTpl"), arg1_41)
+	updateCustomDrop(var0_41:Find("middle/Dorm3dIconTpl"), arg1_41)
 
 	local var1_41 = arg1_41:getConfig("ship_group_id") ~= 0
 
@@ -407,7 +407,7 @@ function var0_0.OpenLackWindow(arg0_44, arg1_44)
 	local var0_44 = arg0_44.rtLackWindow:Find("panel")
 
 	setText(var0_44:Find("title/Text"), i18n("child_msg_title_detail"))
-	updateDorm3dIcon(var0_44:Find("middle/Dorm3dIconTpl"), arg1_44)
+	updateCustomDrop(var0_44:Find("middle/Dorm3dIconTpl"), arg1_44)
 
 	local var1_44 = arg1_44:getConfig("ship_group_id") ~= 0
 

@@ -32,197 +32,239 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.signTr = arg1_1:Find("sign")
 	arg0_1.resImg = arg1_1:Find("state_lock/gold/content/icon")
 
-	setText(arg1_1:Find("loading_award/state/Text"), i18n1("运输中"))
-	setText(arg1_1:Find("normal_award/state/Text"), i18n1("等待运输"))
-	setText(arg0_1.getBtn:Find("Text"), i18n1("领取奖励"))
+	setText(arg1_1:Find("loading_award/state/Text"), i18n("island_order_get_label"))
+	setText(arg1_1:Find("normal_award/state/Text"), i18n("island_order_get_label"))
+	setText(arg0_1.getBtn:Find("Text"), i18n("island_order_get_label"))
+
+	arg0_1.animator = arg1_1:GetComponent(typeof(Animation))
+	arg0_1.aniDft = arg1_1:GetComponent(typeof(DftAniEvent))
 end
 
-function var0_0.Flush(arg0_2, arg1_2, arg2_2, arg3_2)
+function var0_0.Flush(arg0_2, arg1_2, arg2_2)
 	arg0_2.slot = arg1_2
 
-	arg0_2:SwitchMode(arg1_2, arg2_2)
-	arg0_2:UpdateRequest(arg1_2)
-	arg0_2:UpdateAward(arg1_2)
-	arg0_2:UpdateLockTip(arg1_2)
-	arg0_2:UpdateTitle(arg1_2)
+	arg0_2:FlushMain(arg1_2, arg2_2)
 	arg0_2:UpdateTimer(arg1_2)
 end
 
-function var0_0.PlaySignAnim(arg0_3, arg1_3)
-	arg0_3:RemoveSignTimer()
-	setActive(arg0_3.signTr, true)
-
-	arg0_3.signTimer = Timer.New(function()
-		arg0_3:RemoveSignTimer()
-		setActive(arg0_3.signTr, false)
-		arg1_3()
-	end, 2, 1)
-
-	arg0_3.signTimer:Start()
+function var0_0.FlushMain(arg0_3, arg1_3, arg2_3)
+	arg0_3:SwitchMode(arg1_3, arg2_3)
+	arg0_3:UpdateRequest(arg1_3)
+	arg0_3:UpdateAward(arg1_3)
+	arg0_3:UpdateLockTip(arg1_3)
+	arg0_3:UpdateTitle(arg1_3)
 end
 
-function var0_0.RemoveSignTimer(arg0_5)
-	if arg0_5.signTimer then
-		arg0_5.signTimer:Stop()
+function var0_0.PlayAniamtion(arg0_4, arg1_4, arg2_4, arg3_4)
+	local function var0_4()
+		arg0_4.aniDft:SetEndEvent(function()
+			arg0_4.aniDft:SetEndEvent(nil)
 
-		arg0_5.signTimer = nil
+			if arg3_4 then
+				arg3_4()
+			end
+		end)
+	end
+
+	if arg1_4 == IslandShipOrder.OP_TYPE_UNLOCK then
+		var0_4()
+		arg0_4.animator:Play("anim_island_shiporder_unlock")
+	elseif arg1_4 == IslandShipOrder.OP_TYPE_LOADUP and arg2_4 then
+		var0_4()
+		arg0_4.animator:Play("anim_island_shiporder_intransit")
+	elseif arg1_4 == IslandShipOrder.OP_TYPE_GET_AWARD then
+		var0_4()
+		arg0_4.animator:Play("anim_island_shiporder_next")
+	else
+		arg3_4()
 	end
 end
 
-function var0_0.SwitchMode(arg0_6, arg1_6, arg2_6)
-	arg0_6.mode = arg2_6
+function var0_0.PlayFinishAnimation(arg0_7, arg1_7, arg2_7)
+	if arg1_7 then
+		local var0_7 = Clone(arg0_7.slot)
 
-	arg0_6:UpdateStyle(arg1_6, arg2_6)
+		var0_7.endTime = pg.TimeMgr.GetInstance():GetServerTime() + 10
+
+		arg0_7:FlushMain(var0_7, arg0_7.mode)
+	end
+
+	arg0_7.aniDft:SetEndEvent(nil)
+	arg0_7.aniDft:SetEndEvent(function()
+		arg0_7.aniDft:SetEndEvent(nil)
+
+		if arg1_7 then
+			arg0_7:FlushMain(arg0_7.slot, arg0_7.mode)
+		end
+
+		if arg2_7 then
+			arg2_7()
+		end
+	end)
+	arg0_7.animator:Play("anim_island_shiporder_complete")
 end
 
-function var0_0.UpdateTimer(arg0_7, arg1_7)
-	arg0_7:RemoveTimer()
+function var0_0.SwitchMode(arg0_9, arg1_9, arg2_9)
+	arg0_9.mode = arg2_9
 
-	if arg1_7:IsSubmited() and not arg1_7:IsFinished() then
-		arg0_7:AddTimer(arg1_7)
+	arg0_9:UpdateStyle(arg1_9, arg2_9)
+end
+
+function var0_0.UpdateTimer(arg0_10, arg1_10)
+	arg0_10:RemoveTimer()
+
+	if arg1_10:IsSubmited() and not arg1_10:IsFinished() then
+		arg0_10:AddTimer(arg1_10)
+	elseif arg1_10:IsFinished() then
+		arg0_10:PlayFinishAnimation(true)
 	end
 end
 
-function var0_0.RemoveTimer(arg0_8)
-	if arg0_8.timer then
-		arg0_8.timer:Stop()
+function var0_0.RemoveTimer(arg0_11)
+	if arg0_11.timer then
+		arg0_11.timer:Stop()
 
-		arg0_8.timer = nil
+		arg0_11.timer = nil
 	end
 end
 
-function var0_0.AddTimer(arg0_9, arg1_9)
-	local var0_9 = arg1_9:GetEndTime()
+function var0_0.AddTimer(arg0_12, arg1_12)
+	local var0_12 = arg1_12:GetEndTime()
 
-	arg0_9.timer = Timer.New(function(arg0_10, arg1_10, arg2_10)
-		local var0_10 = pg.TimeMgr.GetInstance():GetServerTime()
-		local var1_10 = var0_9 - var0_10
+	arg0_12.timer = Timer.New(function(arg0_13, arg1_13, arg2_13)
+		local var0_13 = pg.TimeMgr.GetInstance():GetServerTime()
+		local var1_13 = var0_12 - var0_13
 
-		arg0_9.timeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var1_10)
+		arg0_12.timeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var1_13)
 
-		if var1_10 <= 0 then
-			arg0_9:RemoveTimer()
-			arg0_9:Flush(arg1_9, arg0_9.mode)
+		if var1_13 <= 0 then
+			arg0_12:RemoveTimer()
+			arg0_12:PlayFinishAnimation(function()
+				arg0_12:Flush(arg1_12, arg0_12.mode)
+			end)
 		end
 	end, 1, -1)
 
-	arg0_9.timer.func()
-	arg0_9.timer:Start()
+	arg0_12.timer.func()
+	arg0_12.timer:Start()
 end
 
-function var0_0.UpdateTitle(arg0_11, arg1_11)
-	if arg1_11:IsWaiting() then
-		local var0_11 = arg1_11:GetNeedTime()
+function var0_0.UpdateTitle(arg0_15, arg1_15)
+	if arg1_15:IsWaiting() then
+		local var0_15 = arg1_15:GetNeedTime()
 
-		arg0_11.titleTxt.text = i18n1("运输时间     " .. pg.TimeMgr.GetInstance():DescCDTime(var0_11))
-	elseif arg1_11:IsSubmited() and not arg1_11:IsFinished() then
-		arg0_11.titleTxt.text = i18n1("运输中...")
-	elseif arg1_11:IsFinished() then
-		arg0_11.titleTxt.text = i18n1("已完成...")
+		arg0_15.titleTxt.text = i18n("island_order_ship_worktime", pg.TimeMgr.GetInstance():DescCDTime(var0_15))
+	elseif arg1_15:IsSubmited() and not arg1_15:IsFinished() then
+		arg0_15.titleTxt.text = i18n("island_order_ship_working")
+	elseif arg1_15:IsFinished() then
+		arg0_15.titleTxt.text = i18n("island_order_ship_end_work")
 	end
 end
 
-function var0_0.UpdateLockTip(arg0_12, arg1_12)
-	local var0_12 = arg1_12:GetUnlockLevel()
-	local var1_12 = arg1_12:GetUnlockGold()
+function var0_0.UpdateLockTip(arg0_16, arg1_16)
+	local var0_16 = arg1_16:GetUnlockLevel()
+	local var1_16 = arg1_16:GetUnlockGold()
 
-	arg0_12.levelLockTxt.text = i18n1(string.format("下艘运输船舶将在%d级解锁", var0_12))
-	arg0_12.resLockTxt.text = i18n1("X" .. var1_12.count .. "解锁")
+	arg0_16.levelLockTxt.text = i18n("island_order_ship_unlock_tip")
+	arg0_16.resLockTxt.text = "X" .. var1_16.count .. i18n("island_order_ship_unlock_tip_2")
 
-	local var2_12 = pg.island_item_data_template[var1_12.id].icon
+	local var2_16 = pg.island_item_data_template[var1_16.id].icon
 
-	GetImageSpriteFromAtlasAsync(var2_12, "", arg0_12.resImg)
+	GetImageSpriteFromAtlasAsync("island/" .. var2_16, "", arg0_16.resImg)
 end
 
-function var0_0.UpdateAward(arg0_13, arg1_13)
-	local var0_13 = arg1_13:GetOrder():GetAwardList()
+function var0_0.UpdateAward(arg0_17, arg1_17)
+	local var0_17 = arg1_17:GetOrder():GetAwardList()
 
-	arg0_13.uiAwardList:make(function(arg0_14, arg1_14, arg2_14)
-		if arg0_14 == UIItemList.EventUpdate then
-			local var0_14 = var0_13[arg1_14 + 1]
+	arg0_17.uiAwardList:make(function(arg0_18, arg1_18, arg2_18)
+		if arg0_18 == UIItemList.EventUpdate then
+			local var0_18 = var0_17[arg1_18 + 1]
 
-			updateDrop(arg2_14, Drop.New(var0_14))
+			updateCustomDrop(arg2_18, Drop.New(var0_18))
 		end
 	end)
-	arg0_13.uiAwardList:align(#var0_13)
+	arg0_17.uiAwardList:align(#var0_17)
 end
 
-function var0_0.UpdateRequest(arg0_15, arg1_15)
-	local var0_15 = arg1_15:GetOrder():GetConsumeList()
+function var0_0.UpdateRequest(arg0_19, arg1_19)
+	local var0_19 = arg1_19:GetOrder():GetConsumeList()
 
-	arg0_15.uiRequestList:make(function(arg0_16, arg1_16, arg2_16)
-		if arg0_16 == UIItemList.EventUpdate then
-			local var0_16 = var0_15[arg1_16 + 1]
-			local var1_16 = Drop.New(var0_16)
-			local var2_16 = var1_16.icon or var1_16:getConfig("icon")
+	arg0_19.uiRequestList:make(function(arg0_20, arg1_20, arg2_20)
+		if arg0_20 == UIItemList.EventUpdate then
+			local var0_20 = var0_19[arg1_20 + 1]
+			local var1_20 = Drop.New(var0_20)
+			local var2_20 = var1_20.icon or var1_20:getConfig("icon")
 
-			GetImageSpriteFromAtlasAsync(var2_16, "", arg2_16:Find("icon"))
+			GetImageSpriteFromAtlasAsync("island/" .. var2_20, "", arg2_20:Find("icon"))
 
-			local var3_16 = var1_16.state == 1
+			local var3_20 = var1_20.state == 1
+			local var4_20 = var1_20:getOwnedCount()
 
-			setText(arg2_16:Find("cnt"), setColorStr("x" .. var1_16.count, (var1_16:getOwnedCount() >= var1_16.count or var3_16) and "#393a3c" or "#f36c6e"))
-			setActive(arg2_16:Find("loaded"), var3_16)
-			setActive(arg2_16:Find("loaded_1"), false)
+			setText(arg2_20:Find("cnt"), setColorStr(var4_20 .. "/" .. var1_20.count, (var4_20 >= var1_20.count or var3_20) and "#39beff" or "#f36c6e"))
+			setActive(arg2_20:Find("finish"), var3_20)
+			setActive(arg2_20:Find("loaded"), var3_20)
+			setActive(arg2_20:Find("loaded_1"), false)
+			setActive(arg2_20:Find("enough"), not var3_20 and var4_20 >= var1_20.count)
 		end
 	end)
-	arg0_15.uiRequestList:align(#var0_15)
+	arg0_19.uiRequestList:align(#var0_19)
 end
 
-function var0_0.UpdateStyle(arg0_17, arg1_17, arg2_17)
-	local var0_17 = arg1_17:IsLock()
-	local var1_17 = arg1_17:IsWaiting()
-	local var2_17 = arg1_17:IsFinished()
-	local var3_17 = arg1_17:IsSubmited() and not var2_17
-	local var4_17 = arg1_17:CanUnlock()
-	local var5_17 = arg2_17 == IslandShipOrderPage.MODE_REQUEST_VIEW
-	local var6_17 = arg2_17 == IslandShipOrderPage.MODE_AWARD_VIEW
+function var0_0.UpdateStyle(arg0_21, arg1_21, arg2_21)
+	local var0_21 = arg1_21:IsLock()
+	local var1_21 = arg1_21:IsWaiting()
+	local var2_21 = arg1_21:IsFinished()
+	local var3_21 = arg1_21:IsSubmited() and not var2_21
+	local var4_21 = arg1_21:CanUnlock()
+	local var5_21 = arg2_21 == IslandShipOrderPage.MODE_REQUEST_VIEW
+	local var6_21 = arg2_21 == IslandShipOrderPage.MODE_AWARD_VIEW
 
-	setActive(arg0_17.loadingTr, var3_17)
-	setActive(arg0_17.loadingRequest, var3_17 and var5_17)
-	setActive(arg0_17.loadingAward, var3_17 and var6_17)
-	setActive(arg0_17.finishTr, var2_17)
-	setActive(arg0_17.request, not var0_17 and var5_17 and not var2_17)
-	setActive(arg0_17.award, not var0_17 and var6_17 or var2_17)
-	setActive(arg0_17.lockTr, var0_17)
-	setActive(arg0_17.normalTr, var1_17 and var6_17)
-	setActive(arg0_17.levelLockTr, var0_17 and not var4_17)
-	setActive(arg0_17.resLockTr, var0_17 and var4_17)
-	setActive(arg0_17.titleTr, not var0_17)
+	setActive(arg0_21.loadingTr, var3_21)
+	setActive(arg0_21.loadingRequest, var3_21 and var5_21)
+	setActive(arg0_21.loadingAward, var3_21 and var6_21)
+	setActive(arg0_21.finishTr, var2_21)
+	setActive(arg0_21.request, not var0_21 and var5_21 and not var2_21)
+	setActive(arg0_21.award, not var0_21 and var6_21 or var2_21)
+	setActive(arg0_21.lockTr, var0_21)
+	setActive(arg0_21.normalTr, var1_21 and var6_21)
+	setActive(arg0_21.levelLockTr, var0_21 and not var4_21)
+	setActive(arg0_21.resLockTr, var0_21 and var4_21)
+	setActive(arg0_21.titleTr, not var0_21)
 
-	arg0_17.requestCG.alpha = var3_17 and 0.6 or 1
-	arg0_17.titleTr.sizeDelta = var1_17 and Vector2(280, 39) or Vector2(155, 39)
+	arg0_21.requestCG.alpha = var3_21 and 0.6 or 1
+	arg0_21.titleTr.sizeDelta = var1_21 and Vector2(360, 39) or Vector2(155, 39)
 
-	arg0_17:UpdateBgColor(arg1_17)
-	arg0_17:UpdateTitleColor(arg1_17)
+	arg0_21:UpdateBgColor(arg1_21)
+	arg0_21:UpdateTitleColor(arg1_21)
 end
 
-function var0_0.UpdateBgColor(arg0_18, arg1_18)
-	if arg1_18:IsSubmited() and not arg1_18:IsFinished() then
-		setActive(arg0_18.bgTr, false)
+function var0_0.UpdateBgColor(arg0_22, arg1_22)
+	if arg1_22:IsSubmited() and not arg1_22:IsFinished() then
+		setActive(arg0_22.bgTr, false)
 
 		return
 	end
 
-	setActive(arg0_18.bgTr, true)
+	setActive(arg0_22.bgTr, true)
 
-	arg0_18.bgImg.color = arg1_18:IsFinished() and var1_0 or var3_0
+	arg0_22.bgImg.color = arg1_22:IsFinished() and var1_0 or var3_0
 end
 
-function var0_0.UpdateTitleColor(arg0_19, arg1_19)
-	if arg1_19:IsFinished() then
-		arg0_19.titleLineImg.color = var1_0
-	elseif arg1_19:IsSubmited() and not arg1_19:IsFinished() then
-		arg0_19.titleLineImg.color = var4_0
-	elseif arg1_19:IsWaiting() then
-		arg0_19.titleLineImg.color = var2_0
+function var0_0.UpdateTitleColor(arg0_23, arg1_23)
+	if arg1_23:IsFinished() then
+		arg0_23.titleLineImg.color = var1_0
+	elseif arg1_23:IsSubmited() and not arg1_23:IsFinished() then
+		arg0_23.titleLineImg.color = var4_0
+	elseif arg1_23:IsWaiting() then
+		arg0_23.titleLineImg.color = var2_0
 	end
 
-	arg0_19.titleTxt.color = arg1_19:IsWaiting() and var2_0 or var5_0
+	arg0_23.titleTxt.color = arg1_23:IsWaiting() and var2_0 or var5_0
 end
 
-function var0_0.Dispose(arg0_20)
-	arg0_20:RemoveTimer()
-	arg0_20:RemoveSignTimer()
+function var0_0.Dispose(arg0_24)
+	arg0_24:RemoveTimer()
+	arg0_24.aniDft:SetEndEvent(nil)
 end
 
 return var0_0

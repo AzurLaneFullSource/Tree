@@ -26,7 +26,7 @@ function var0_0.Pack(arg0_2)
 end
 
 function var0_0.toString(arg0_3)
-	return string.format("id=%d,pos=[%s,%s,%s],dir=[%s,%s,%s,%s],status=%d", arg0_3.id, string.format("%.5f", arg0_3.pos.x), string.format("%.5f", arg0_3.pos.y), string.format("%.5f", arg0_3.pos.z), string.format("%.5f", arg0_3.dir.x), string.format("%.5f", arg0_3.dir.y), string.format("%.5f", arg0_3.dir.z), string.format("%.5f", arg0_3.dir.w), arg0_3.status)
+	return string.format("id=%d,pos=[%s,%s,%s],dir=[%s,%s,%s,%s],status=%s", arg0_3.id, string.format("%.5f", arg0_3.pos.x), string.format("%.5f", arg0_3.pos.y), string.format("%.5f", arg0_3.pos.z), string.format("%.5f", arg0_3.dir.x), string.format("%.5f", arg0_3.dir.y), string.format("%.5f", arg0_3.dir.z), string.format("%.5f", arg0_3.dir.w), PrintTable(arg0_3.status))
 end
 
 return var0_0

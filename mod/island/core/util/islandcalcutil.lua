@@ -45,11 +45,74 @@ end
 
 function var0_0.GetRandomPointOnCircle(arg0_5, arg1_5)
 	local var0_5 = UnityEngine.Random.insideUnitCircle.normalized
-	local var1_5 = arg0_5 + Vector3(var0_5.x, 0, var0_5.y) * arg1_5
 
-	print(var1_5)
+	return arg0_5 + Vector3(var0_5.x, 0, var0_5.y) * arg1_5
+end
 
-	return var1_5
+function var0_0.GetPointOffset(arg0_6, arg1_6, arg2_6)
+	if arg2_6 % 2 == 0 then
+		return arg0_6 + Vector3(arg1_6 * 2, 0, 0) * math.ceil(arg2_6 * 0.5)
+	else
+		return arg0_6 - Vector3(arg1_6 * 2, 0, 0) * math.ceil(arg2_6 * 0.5)
+	end
+end
+
+function var0_0.GetTypeAndIdByUniqueId(arg0_7)
+	local var0_7 = WorldObjectItem.GetTypeAndIdByUniqueId(arg0_7)
+
+	return var0_7[0], var0_7[1]
+end
+
+function var0_0.GetUnReHexPoints(arg0_8, arg1_8, arg2_8)
+	local var0_8 = arg0_8 * 0.5
+	local var1_8 = arg1_8 * 0.5
+	local var2_8 = {}
+	local var3_8 = arg2_8 * math.pi / 180
+	local var4_8 = arg0_8 * math.tan(var3_8) * 0.5
+
+	table.insert(var2_8, Vector2(0, var1_8))
+	table.insert(var2_8, Vector2(var0_8, var4_8))
+	table.insert(var2_8, Vector2(var0_8, -var4_8))
+	table.insert(var2_8, Vector2(0, -var1_8))
+	table.insert(var2_8, Vector2(-var0_8, -var4_8))
+	table.insert(var2_8, Vector2(-var0_8, var4_8))
+
+	return var2_8
+end
+
+function var0_0.Vetor3Table2Array(arg0_9)
+	local var0_9 = System.Array.CreateInstance(typeof(UnityEngine.Vector3), #arg0_9)
+
+	for iter0_9, iter1_9 in ipairs(arg0_9) do
+		var0_9[iter0_9 - 1] = iter1_9
+	end
+
+	return var0_9
+end
+
+function var0_0.ClampRect(arg0_10, arg1_10, arg2_10, arg3_10, arg4_10)
+	local var0_10 = arg0_10 * 0.5 - arg2_10 * 0.5
+	local var1_10 = arg1_10 * 0.5 - arg3_10 * 0.5
+
+	if var0_10 < arg4_10.x then
+		arg4_10.x = var0_10
+	elseif arg4_10.x < -var0_10 then
+		arg4_10.x = -var0_10
+	end
+
+	if var1_10 < arg4_10.y then
+		arg4_10.y = var1_10
+	elseif arg4_10.y < -var1_10 then
+		arg4_10.y = -var1_10
+	end
+
+	return arg4_10
+end
+
+function var0_0.IsBehindCamera(arg0_11)
+	local var0_11 = IslandCameraMgr.instance._mainCamera
+
+	return Vector3.Dot(var0_11.transform.forward, arg0_11 - var0_11.transform.position) < 0
 end
 
 return var0_0

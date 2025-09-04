@@ -235,6 +235,7 @@ pg.memory_group = setmetatable({
 		335,
 		336,
 		337,
+		338,
 		501,
 		502,
 		503,
@@ -5804,6 +5805,24 @@ pg.base.memory_group = {
 			4575,
 			4576,
 			4577
+		}
+	},
+	[338] = {
+		id = 338,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 50104,
+		title = "Summons From the Sakura Empire",
+		group_id = "",
+		memories = {
+			4591,
+			4592,
+			4593,
+			4594,
+			4595,
+			4596,
+			4597
 		}
 	},
 	[501] = {

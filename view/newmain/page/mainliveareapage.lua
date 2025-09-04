@@ -79,7 +79,12 @@ function var0_0.OnInit(arg0_7)
 		arg0_7:Hide()
 	end, SFX_MAIN)
 	onButton(arg0_7, arg0_7._islandBtn, function()
-		return
+		if LOCK_ISLAND_DISPLAY then
+			return
+		end
+
+		arg0_7:emit(NewMainMediator.GO_ISLAND, getProxy(PlayerProxy):getRawData().id)
+		arg0_7:Hide()
 	end, SFX_MAIN)
 	onButton(arg0_7, arg0_7._dormBtn, function()
 		arg0_7:emit(NewMainMediator.OPEN_DORM_SELECT_LAYER)

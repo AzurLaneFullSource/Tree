@@ -169,7 +169,7 @@ function var0_0.UpdateFloor(arg0_29)
 end
 
 function var0_0.SetActive(arg0_30, arg1_30, arg2_30)
-	setActiveViaCG(arg1_30, arg2_30)
+	setActiveViaLayer(arg1_30, arg2_30)
 end
 
 return var0_0

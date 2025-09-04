@@ -3,10 +3,10 @@ local var0_0 = class("TimelinePlayer")
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.comDirector = arg1_1:GetComponent(typeof(UnityEngine.Playables.PlayableDirector))
 
-	if GetComponent(arg1_1, "TimelineSpeed") then
+	if GetComponent(arg1_1, typeof(TimelineSpeed)) then
 		arg0_1:SetSpeed(1)
 	else
-		GetOrAddComponent(arg1_1, "TimelineSpeed")
+		GetOrAddComponent(arg1_1, typeof(TimelineSpeed))
 	end
 
 	arg0_1.signalReceiver = GetOrAddComponent(arg1_1, "DftCommonSignalReceiver")

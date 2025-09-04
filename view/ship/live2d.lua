@@ -617,7 +617,7 @@ local function var17_0(arg0_29, arg1_29)
 	arg0_29._go = arg1_29
 	arg0_29._tf = tf(arg1_29)
 
-	UIUtil.SetLayerRecursively(arg0_29._go, LayerMask.NameToLayer("UI"))
+	HotfixHelper.SetLayerRecursively(arg0_29._go, LayerMask.NameToLayer("UI"))
 	arg0_29._tf:SetParent(arg0_29.live2dData.parent, true)
 
 	arg0_29._tf.localScale = arg0_29.live2dData.scale

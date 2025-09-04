@@ -39,7 +39,7 @@ function var0_0.Register(arg0_8)
 	return
 end
 
-function var0_0.OnInit(arg0_9)
+function var0_0.OnInit(arg0_9, arg1_9)
 	return
 end
 

@@ -1,34 +1,45 @@
 local var0_0 = class("Island", import(".BaseIsland"))
 
+var0_0.EXP_ADD = "Island:EXP_ADD"
+
 function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.Ctor(arg0_1, arg1_1.public_data)
-	arg0_1:InitPrivateData(arg1_1.private_data)
 
-	local var0_1 = {}
+	arg0_1.inventoryAgency = IslandInventoryAgency.New(arg0_1, arg1_1.private_data)
+	arg0_1.orderAgency = IslandOrderAgency.New(arg0_1, arg1_1.private_data)
+	arg0_1.shopAgency = IslandShopAgency.New(arg0_1, arg1_1.private_data)
+	arg0_1.seasonAgency = IslandSeasonAgency.New(arg0_1, arg1_1.private_data)
+	arg0_1.dressUpAgency = IslandDressUpAgency.New(arg0_1, arg1_1.private_data)
+	arg0_1.achievementAgency = IslandAchievementAgency.New(arg0_1, arg1_1.private_data)
+	arg0_1.globalBuffAgency = IslandGlobalBuffAgency.New(arg0_1, arg1_1.private_data)
 
-	for iter0_1, iter1_1 in ipairs(arg1_1.private_data.furniture_list or {}) do
-		table.insert(var0_1, IslandFurniture.New(iter1_1))
-	end
-
-	arg0_1:GetAgoraAgency():SetFurnitures(var0_1)
-	arg0_1:GetInventoryAgency():SetLevel(arg1_1.public_data.storage_level)
+	arg0_1:GetAgoraAgency():InitPrivateData(arg1_1.private_data)
+	arg0_1:AddDefaultAgoraData()
+	arg0_1:GetInventoryAgency():InitPrivateData(arg1_1.public_data)
+	arg0_1:GetSignInAgency():InitPrivateData(arg1_1.private_data)
+	arg0_1:GetAccessAgency():InitPrivateData(arg1_1.private_data)
+	arg0_1:GetBuildingAgency():InitPrivateData(arg1_1.private_data)
 end
 
-function var0_0.InitPrivateData(arg0_2, arg1_2)
-	arg0_2.accessAgency = IslandAccessAgency.New(arg0_2, arg1_2)
-	arg0_2.inventoryAgency = IslandInventoryAgency.New(arg0_2, arg1_2)
-	arg0_2.orderAgency = IslandOrderAgency.New(arg0_2, arg1_2)
-	arg0_2.shopAgency = IslandShopAgency.New(arg0_2, arg1_2)
-	arg0_2.buildingAgency = IslandBuildingAgency.New(arg0_2, arg1_2)
-	arg0_2.taskAgency = IslandTaskAgency.New(arg0_2, arg1_2)
-end
-
-function var0_0.IsPrivate(arg0_3)
+function var0_0.IsPrivate(arg0_2)
 	return true
 end
 
-function var0_0.GetAccessAgency(arg0_4)
-	return arg0_4.accessAgency
+function var0_0.AddExp(arg0_3, arg1_3)
+	var0_0.super.AddExp(arg0_3, arg1_3)
+	arg0_3:DispatchEvent(var0_0.EXP_ADD)
+end
+
+function var0_0.AddDefaultAgoraData(arg0_4)
+	local var0_4 = pg.island_set.initial_furniture.key_value_varchar
+	local var1_4 = arg0_4:GetAgoraAgency()
+
+	for iter0_4, iter1_4 in ipairs(var0_4) do
+		var1_4:RawAddFurniture(IslandFurniture.New({
+			id = iter1_4[1],
+			count = iter1_4[2]
+		}))
+	end
 end
 
 function var0_0.GetInventoryAgency(arg0_5)
@@ -43,28 +54,31 @@ function var0_0.GetShopAgency(arg0_7)
 	return arg0_7.shopAgency
 end
 
-function var0_0.GetTaskAgency(arg0_8)
-	return arg0_8.taskAgency
+function var0_0.GetSeasonAgency(arg0_8)
+	return arg0_8.seasonAgency
 end
 
-function var0_0.GetBuildingAgency(arg0_9)
-	return arg0_9.buildingAgency
+function var0_0.GetDressUpAgency(arg0_9)
+	return arg0_9.dressUpAgency
 end
 
-function var0_0.UpdatePerDay(arg0_10)
-	var0_0.super.UpdatePerDay(arg0_10)
-	arg0_10:GetOrderAgency():UpdatePerDay()
-	arg0_10:GetTaskAgency():UpdatePerDay()
+function var0_0.GetAchievementAgency(arg0_10)
+	return arg0_10.achievementAgency
 end
 
-function var0_0.UpdatePerSecond(arg0_11)
-	var0_0.super.UpdatePerDay(arg0_11)
+function var0_0.GetGlobalBuffAgency(arg0_11)
+	return arg0_11.globalBuffAgency
+end
 
-	if arg0_11.buildingAgency then
-		arg0_11.buildingAgency:UpdatePerSecond()
-	end
+function var0_0.UpdatePerDay(arg0_12)
+	var0_0.super.UpdatePerDay(arg0_12)
+	arg0_12:GetOrderAgency():UpdatePerDay()
+	arg0_12:GetTaskAgency():UpdatePerDay()
+end
 
-	arg0_11:GetTaskAgency():UpdatePerSecond()
+function var0_0.UpdatePerSecond(arg0_13)
+	var0_0.super.UpdatePerSecond(arg0_13)
+	arg0_13:GetTaskAgency():UpdatePerSecond()
 end
 
 return var0_0

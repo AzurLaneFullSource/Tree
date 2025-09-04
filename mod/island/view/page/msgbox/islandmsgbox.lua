@@ -2,11 +2,24 @@ local var0_0 = class("IslandMsgBox", import("view.base.BaseSubView"))
 
 var0_0.TYPE_COMMON = 1
 var0_0.TYPE_ITEM = 2
-var0_0.TYPE_STATUS = 3
+var0_0.TYPE_SHIP_OWN_STATUS = 3
 var0_0.TYPE_COMMON_ITEM = 4
 var0_0.TYPE_ITEM_INFO = 5
 var0_0.TYPE_MATERIAL_INFO = 6
 var0_0.TYPE_REMIND = 7
+var0_0.TYPE_SHIP_SKILL = 8
+var0_0.TYPE_SHIP_STATUS_MSG = 9
+var0_0.TYPE_AGORA_PLACED_LIST = 10
+var0_0.TYPE_AGORA_UPGRADE = 11
+var0_0.TYPE_WHITOUT_BTN = 12
+var0_0.TYPE_SAVE_THEME = 13
+var0_0.TYPE_THEME = 14
+var0_0.TYPE_SEASON_TIP = 15
+var0_0.TYPE_SEASON_RESET = 16
+var0_0.TYPE_SYSTEM_THEME = 17
+var0_0.TYPE_ORDER_TENDENCY = 18
+var0_0.TYPE_SEND_DRESS = 19
+var0_0.TYPE_AOGRA_SAVE_CD = 20
 
 function var0_0.getUIName(arg0_1)
 	return "IslandMsgboxUI"
@@ -20,10 +33,23 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.PAGES = {
 		[var0_0.TYPE_COMMON] = IslandCommonMsgboxWindow,
 		[var0_0.TYPE_ITEM] = IslandItemMsgboxWindow,
-		[var0_0.TYPE_STATUS] = IslandMsgBoxForStatusWindow,
+		[var0_0.TYPE_SHIP_OWN_STATUS] = IslandMsgBoxForStatusWindow,
 		[var0_0.TYPE_ITEM_INFO] = IslandMsgBoxSingleItemWindow,
 		[var0_0.TYPE_MATERIAL_INFO] = IslandMsgBoxSingleMaterialWindow,
-		[var0_0.TYPE_REMIND] = IslandRemindMsgboxWindow
+		[var0_0.TYPE_REMIND] = IslandRemindMsgboxWindow,
+		[var0_0.TYPE_SHIP_SKILL] = IslandShipSkillMsgboxWindow,
+		[var0_0.TYPE_SHIP_STATUS_MSG] = IslandShipStatusMsgboxWindow,
+		[var0_0.TYPE_AGORA_PLACED_LIST] = IslandAgoraPlacedListMsgboxWindow,
+		[var0_0.TYPE_AGORA_UPGRADE] = IslandAgoraUpgradeMsgboxWindow,
+		[var0_0.TYPE_WHITOUT_BTN] = IslandwithoutBtnMsgboxWindow,
+		[var0_0.TYPE_SAVE_THEME] = IslandSaveThemeMsgboxWindow,
+		[var0_0.TYPE_THEME] = IslandThemeMsgboxWindow,
+		[var0_0.TYPE_SEASON_TIP] = IslandSeasonTipMsgBoxWindow,
+		[var0_0.TYPE_SEASON_RESET] = IslandSeasonResetMsgBoxWindow,
+		[var0_0.TYPE_SYSTEM_THEME] = IslandSystemThemeMsgboxWindow,
+		[var0_0.TYPE_ORDER_TENDENCY] = IslandOrderTendencyPage,
+		[var0_0.TYPE_SEND_DRESS] = IslandSendDressUpMsgboxWindow,
+		[var0_0.TYPE_AOGRA_SAVE_CD] = IslandAgoraSaveCdMsgboxWindow
 	}
 end
 
@@ -39,14 +65,16 @@ function var0_0.CheckType(arg0_5, arg1_5)
 	if var0_5 == var0_0.TYPE_COMMON_ITEM then
 		var0_5 = IslandItem.New({
 			id = arg1_5.itemId
-		}):IsMaterial() and var0_0.TYPE_MATERIAL_INFO or var0_0.TYPE_ITEM_INFO
+		}):CanConvert() and var0_0.TYPE_MATERIAL_INFO or var0_0.TYPE_ITEM_INFO
 	end
 
 	return var0_5
 end
 
-function var0_0.Show(arg0_6, arg1_6)
+function var0_0.Show(arg0_6, arg1_6, arg2_6)
 	var0_0.super.Show(arg0_6)
+
+	arg0_6.callback = arg2_6
 
 	local var0_6 = arg0_6:CheckType(arg1_6)
 	local var1_6 = arg0_6:CreateWindow(var0_6)
@@ -123,6 +151,12 @@ function var0_0.HideWindow(arg0_10, arg1_10)
 
 	if #arg0_10.stack == 0 then
 		arg0_10:Hide()
+
+		if arg0_10.callback then
+			arg0_10.callback()
+
+			arg0_10.callback = nil
+		end
 	end
 end
 

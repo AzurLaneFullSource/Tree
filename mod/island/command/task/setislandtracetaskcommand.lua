@@ -3,7 +3,6 @@ local var0_0 = class("SetIslandTraceTaskCommand", pm.SimpleCommand)
 function var0_0.execute(arg0_1, arg1_1)
 	local var0_1 = arg1_1:getBody().traceId
 
-	warning("TraceTask", var0_1)
 	pg.ConnectionMgr.GetInstance():Send(21034, {
 		task_id = var0_1
 	}, 21035, function(arg0_2)

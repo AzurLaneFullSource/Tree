@@ -3,101 +3,107 @@ local var1_0 = 1
 local var2_0 = 2
 
 function var0_0.getUIName(arg0_1)
-	return "IslandUpgradeDisplayUI"
+	return "IslandCommonUpgradeDisplayUI"
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.panels = {
-		[var1_0] = arg0_2:findTF("single"),
-		[var2_0] = arg0_2:findTF("multi")
-	}
+	arg0_2.onlnyLevelTr = arg0_2:findTF("small")
+	arg0_2.dropPanelTr = arg0_2:findTF("module")
+	arg0_2.unlockUIList = UIItemList.New(arg0_2.dropPanelTr:Find("Board/Content/award/content"), arg0_2.dropPanelTr:Find("Board/Content/award/content/tpl"))
+	arg0_2.canvasGroup = GetOrAddComponent(arg0_2._tf, typeof(CanvasGroup))
 end
 
 function var0_0.OnInit(arg0_3)
 	onButton(arg0_3, arg0_3._tf, function()
-		arg0_3:Hide()
+		arg0_3:PlayExitAnimation(function()
+			local var0_5 = arg0_3.callback
+
+			arg0_3:Hide()
+
+			if var0_5 then
+				var0_5()
+			end
+		end)
 	end, SFX_PANEL)
 end
 
-function var0_0.GetPanelType(arg0_5, arg1_5)
-	if #arg1_5:GetUnlockBuildingList() > 0 then
-		return var2_0
+function var0_0.PlayExitAnimation(arg0_6, arg1_6)
+	local var0_6 = arg0_6.targetTr:GetComponent(typeof(Animation))
+	local var1_6 = arg0_6.targetTr:GetComponent(typeof(DftAniEvent))
+
+	arg0_6.canvasGroup.blocksRaycasts = false
+
+	var1_6:SetEndEvent(function()
+		var1_6:SetEndEvent(nil)
+
+		arg0_6.canvasGroup.blocksRaycasts = true
+
+		arg1_6()
+	end)
+
+	if arg0_6.targetTr == arg0_6.onlnyLevelTr then
+		var0_6:Play("anim_Island_commonget_onlylv_out")
 	else
-		return var1_0
+		var0_6:Play("anim_Island_commonget_single_out")
 	end
 end
 
-function var0_0.Show(arg0_6, arg1_6)
-	var0_0.super.Show(arg0_6)
+function var0_0.Show(arg0_8, arg1_8, arg2_8)
+	var0_0.super.Show(arg0_8)
 
-	local var0_6 = getProxy(IslandProxy):GetIsland()
-	local var1_6 = arg0_6:GetPanelType(var0_6)
+	arg0_8.callback = arg2_8
 
-	arg0_6:InitPanel(var0_6, arg1_6, var1_6)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_6._tf, {
+	local var0_8 = arg0_8:GetIsland()
+	local var1_8 = arg1_8 and #arg1_8 > 0
+
+	if var1_8 then
+		arg0_8:CommonSettings(var0_8, arg0_8.dropPanelTr)
+		arg0_8:UpdateUnlockList(arg1_8)
+	else
+		arg0_8:CommonSettings(var0_8, arg0_8.onlnyLevelTr)
+	end
+
+	setActive(arg0_8.onlnyLevelTr, not var1_8)
+	setActive(arg0_8.dropPanelTr, var1_8)
+
+	arg0_8.targetTr = var1_8 and arg0_8.dropPanelTr or arg0_8.onlnyLevelTr
+
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_8._tf, {
 		weight = LayerWeightConst.TOP_LAYER
 	})
 end
 
-function var0_0.Hide(arg0_7)
-	var0_0.super.Hide(arg0_7)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7._tf, arg0_7._parentTf)
+function var0_0.Hide(arg0_9)
+	arg0_9.callback = nil
+
+	var0_0.super.Hide(arg0_9)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_9._tf, arg0_9._parentTf)
 end
 
-function var0_0.InitPanel(arg0_8, arg1_8, arg2_8, arg3_8)
-	local var0_8 = arg0_8.panels[arg3_8]
+function var0_0.CommonSettings(arg0_10, arg1_10, arg2_10)
+	local var0_10 = arg1_10:GetLevel()
 
-	for iter0_8, iter1_8 in pairs(arg0_8.panels) do
-		setActive(iter1_8, arg3_8 == iter0_8)
-	end
-
-	if var2_0 == arg3_8 then
-		arg0_8:UpdateMultiPanel(arg1_8, arg2_8, var0_8)
-	elseif var1_0 == arg3_8 then
-		arg0_8:UpdateSinglePanel(arg1_8, arg2_8, var0_8)
-	end
+	setText(arg2_10:Find("Board/Top/LV/prev/prev_1"), "<size=50>" .. var0_10 - 1 .. "</size>")
+	setText(arg2_10:Find("Board/Top/LV/next/next_1"), "<size=50>" .. var0_10 .. "</size>")
 end
 
-local function var3_0(arg0_9, arg1_9, arg2_9)
-	local var0_9 = arg0_9:GetLevel()
-
-	setText(arg2_9:Find("prev"), "Lv.<size=50>" .. var0_9 - 1 .. "</size>")
-	setText(arg2_9:Find("next"), "Lv.<size=50>" .. var0_9 .. "</size>")
-
-	local var1_9 = UIItemList.New(arg2_9:Find("award/content"), arg2_9:Find("award/content/tpl"))
-
-	var1_9:make(function(arg0_10, arg1_10, arg2_10)
-		if arg0_10 == UIItemList.EventUpdate then
-			local var0_10 = arg1_9[arg1_10 + 1]
-
-			updateDrop(arg2_10, var0_10)
-		end
-	end)
-	var1_9:align(#arg1_9)
-end
-
-function var0_0.UpdateMultiPanel(arg0_11, arg1_11, arg2_11, arg3_11)
-	var3_0(arg1_11, arg2_11, arg3_11)
-
-	local var0_11 = arg1_11:GetUnlockBuildingList()
-	local var1_11 = UIItemList.New(arg3_11:Find("unlock/content"), arg3_11:Find("award/content/tpl"))
-
-	var1_11:make(function(arg0_12, arg1_12, arg2_12)
+function var0_0.UpdateUnlockList(arg0_11, arg1_11)
+	arg0_11.unlockUIList:make(function(arg0_12, arg1_12, arg2_12)
 		if arg0_12 == UIItemList.EventUpdate then
-			local var0_12 = var0_11[arg1_12 + 1]
-			local var1_12 = Drop.Create(var0_12)
+			local var0_12 = arg1_11[arg1_12 + 1]
 
-			updateDrop(arg2_12, var1_12)
+			updateCustomDrop(arg2_12, var0_12)
+			setText(arg2_12:Find("icon_bg/name_bg/Text"), shortenString(var0_12:getConfigTable().unlock_text, 5))
+
+			local var1_12 = var0_12:getConfigTable().show_type
+
+			GetImageSpriteFromAtlasAsync("ui/islandupgradedisplayui_atlas", "ability_type" .. var1_12, arg2_12:Find("icon_bg/type"))
 		end
 	end)
-	var1_11:align(#var0_11)
+	arg0_11.unlockUIList:align(#arg1_11)
 end
 
-function var0_0.UpdateSinglePanel(arg0_13, arg1_13, arg2_13, arg3_13)
-	var3_0(arg1_13, arg2_13, arg3_13)
-end
-
-function var0_0.OnDestroy(arg0_14)
+function var0_0.OnDestroy(arg0_13)
 	return
 end
 

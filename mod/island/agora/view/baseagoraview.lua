@@ -25,6 +25,8 @@ function var0_0.AddAgoraListener(arg0_5, arg1_5, arg2_5)
 		arg2_5(arg0_5, ...)
 	end
 
+	assert(arg0_5.agora_callbacks[arg2_5] == nil, "This method has been monitored. Please use another one" .. arg1_5)
+
 	arg0_5.agora_callbacks[arg2_5] = var0_5
 
 	arg0_5.agora:AddListener(arg1_5, var0_5)

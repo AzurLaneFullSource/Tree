@@ -497,173 +497,186 @@ function var0_0.getSortMember(arg0_70)
 	return var0_70
 end
 
-function var0_0.getBgName(arg0_71)
-	if arg0_71.faction == GuildConst.FACTION_TYPE_BLHX then
+function var0_0.getSortMemberWithoutSelf(arg0_71)
+	local var0_71 = {}
+	local var1_71 = getProxy(PlayerProxy):getRawData().id
+
+	for iter0_71, iter1_71 in pairs(arg0_71.member) do
+		if iter1_71.id ~= var1_71 then
+			table.insert(var0_71, iter1_71)
+		end
+	end
+
+	return var0_71
+end
+
+function var0_0.getBgName(arg0_72)
+	if arg0_72.faction == GuildConst.FACTION_TYPE_BLHX then
 		return "bg/bg_guild_blue_n"
-	elseif arg0_71.faction == GuildConst.FACTION_TYPE_CSZZ then
+	elseif arg0_72.faction == GuildConst.FACTION_TYPE_CSZZ then
 		return "bg/bg_guild_red_n"
 	end
 end
 
-function var0_0.addLog(arg0_72, arg1_72)
-	table.insert(arg0_72.logInfo, 1, arg1_72)
+function var0_0.addLog(arg0_73, arg1_73)
+	table.insert(arg0_73.logInfo, 1, arg1_73)
 
-	if #arg0_72.logInfo > 100 then
-		table.remove(arg0_72.logInfo, #arg0_72.logInfo)
+	if #arg0_73.logInfo > 100 then
+		table.remove(arg0_73.logInfo, #arg0_73.logInfo)
 	end
 end
 
-function var0_0.getLogs(arg0_73)
-	return arg0_73.logInfo
+function var0_0.getLogs(arg0_74)
+	return arg0_74.logInfo
 end
 
-function var0_0.getMemberById(arg0_74, arg1_74)
-	return arg0_74.member[arg1_74]
+function var0_0.getMemberById(arg0_75, arg1_75)
+	return arg0_75.member[arg1_75]
 end
 
-function var0_0.updateMember(arg0_75, arg1_75)
-	arg0_75.member[arg1_75.id] = arg1_75
-end
-
-function var0_0.addMember(arg0_76, arg1_76)
+function var0_0.updateMember(arg0_76, arg1_76)
 	arg0_76.member[arg1_76.id] = arg1_76
 end
 
-function var0_0.deleteMember(arg0_77, arg1_77)
-	arg0_77.member[arg1_77] = nil
+function var0_0.addMember(arg0_77, arg1_77)
+	arg0_77.member[arg1_77.id] = arg1_77
 end
 
-function var0_0.getDutyByMemberId(arg0_78, arg1_78)
-	for iter0_78, iter1_78 in pairs(arg0_78.member) do
-		if iter1_78.id == arg1_78 then
-			return iter1_78.duty
+function var0_0.deleteMember(arg0_78, arg1_78)
+	arg0_78.member[arg1_78] = nil
+end
+
+function var0_0.getDutyByMemberId(arg0_79, arg1_79)
+	for iter0_79, iter1_79 in pairs(arg0_79.member) do
+		if iter1_79.id == arg1_79 then
+			return iter1_79.duty
 		end
 	end
 end
 
-function var0_0.setId(arg0_79, arg1_79)
-	arg0_79.id = arg1_79
+function var0_0.setId(arg0_80, arg1_80)
+	arg0_80.id = arg1_80
 end
 
-function var0_0.setName(arg0_80, arg1_80)
-	arg0_80.name = arg1_80
+function var0_0.setName(arg0_81, arg1_81)
+	arg0_81.name = arg1_81
 end
 
-function var0_0.getPolicyName(arg0_81)
-	return GuildConst.POLICY_NAME[arg0_81.policy]
+function var0_0.getPolicyName(arg0_82)
+	return GuildConst.POLICY_NAME[arg0_82.policy]
 end
 
-function var0_0.getFactionName(arg0_82)
-	return GuildConst.FACTION_NAME[arg0_82.faction]
+function var0_0.getFactionName(arg0_83)
+	return GuildConst.FACTION_NAME[arg0_83.faction]
 end
 
-function var0_0.getName(arg0_83)
-	return arg0_83.name
+function var0_0.getName(arg0_84)
+	return arg0_84.name
 end
 
-function var0_0.setPolicy(arg0_84, arg1_84)
-	arg0_84.policy = arg1_84
+function var0_0.setPolicy(arg0_85, arg1_85)
+	arg0_85.policy = arg1_85
 end
 
-function var0_0.getPolicy(arg0_85)
-	return arg0_85.policy
+function var0_0.getPolicy(arg0_86)
+	return arg0_86.policy
 end
 
-function var0_0.setFaction(arg0_86, arg1_86)
-	arg0_86.faction = arg1_86
+function var0_0.setFaction(arg0_87, arg1_87)
+	arg0_87.faction = arg1_87
 end
 
-function var0_0.getFaction(arg0_87)
-	return arg0_87.faction
+function var0_0.getFaction(arg0_88)
+	return arg0_88.faction
 end
 
-function var0_0.setManifesto(arg0_88, arg1_88)
-	arg0_88.manifesto = arg1_88
+function var0_0.setManifesto(arg0_89, arg1_89)
+	arg0_89.manifesto = arg1_89
 end
 
-function var0_0.getManifesto(arg0_89)
-	return arg0_89.manifesto or ""
+function var0_0.getManifesto(arg0_90)
+	return arg0_90.manifesto or ""
 end
 
 local var4_0 = 86400
 
-function var0_0.inChangefactionTime(arg0_90)
-	local var0_90 = arg0_90.changeFactionTime - pg.TimeMgr.GetInstance():GetServerTime()
+function var0_0.inChangefactionTime(arg0_91)
+	local var0_91 = arg0_91.changeFactionTime - pg.TimeMgr.GetInstance():GetServerTime()
 
-	if arg0_90.changeFactionTime ~= 0 and not (var0_90 < 0) then
+	if arg0_91.changeFactionTime ~= 0 and not (var0_91 < 0) then
 		return true
 	end
 end
 
-function var0_0.changeFactionLeftTime(arg0_91)
-	local var0_91 = arg0_91.changeFactionTime - pg.TimeMgr.GetInstance():GetServerTime()
+function var0_0.changeFactionLeftTime(arg0_92)
+	local var0_92 = arg0_92.changeFactionTime - pg.TimeMgr.GetInstance():GetServerTime()
 
-	return pg.TimeMgr.GetInstance():parseTimeFrom(var0_91)
+	return pg.TimeMgr.GetInstance():parseTimeFrom(var0_92)
 end
 
-function var0_0.getLevelMaxExp(arg0_92)
-	local var0_92 = pg.guild_data_level
+function var0_0.getLevelMaxExp(arg0_93)
+	local var0_93 = pg.guild_data_level
 
-	if not var0_92[arg0_92.level] then
-		return var0_92[var0_92.all[#var0_92.all]].exp
+	if not var0_93[arg0_93.level] then
+		return var0_93[var0_93.all[#var0_93.all]].exp
 	else
-		return var0_92[arg0_92.level].exp
+		return var0_93[arg0_93.level].exp
 	end
 end
 
-function var0_0.getMaxMember(arg0_93)
-	local var0_93 = pg.guild_data_level
-	local var1_93 = var0_93.all[#var0_93.all]
-	local var2_93 = var0_93[math.min(arg0_93.level, var1_93)].member_num
-	local var3_93 = arg0_93.maxMemberCntAddition or 0
+function var0_0.getMaxMember(arg0_94)
+	local var0_94 = pg.guild_data_level
+	local var1_94 = var0_94.all[#var0_94.all]
+	local var2_94 = var0_94[math.min(arg0_94.level, var1_94)].member_num
+	local var3_94 = arg0_94.maxMemberCntAddition or 0
 
-	return var2_93 + arg0_93:GetGuildMemberCntAddition() + var3_93
+	return var2_94 + arg0_94:GetGuildMemberCntAddition() + var3_94
 end
 
-function var0_0.updateExp(arg0_94, arg1_94)
-	arg0_94.exp = arg1_94
+function var0_0.updateExp(arg0_95, arg1_95)
+	arg0_95.exp = arg1_95
 end
 
-function var0_0.updateLevel(arg0_95, arg1_95)
-	arg0_95.level = arg1_95
+function var0_0.updateLevel(arg0_96, arg1_96)
+	arg0_96.level = arg1_96
 end
 
-function var0_0.getCommader(arg0_96)
-	for iter0_96, iter1_96 in pairs(arg0_96.member) do
-		if iter1_96.duty == GuildConst.DUTY_COMMANDER then
-			return iter1_96
+function var0_0.getCommader(arg0_97)
+	for iter0_97, iter1_97 in pairs(arg0_97.member) do
+		if iter1_97.duty == GuildConst.DUTY_COMMANDER then
+			return iter1_97
 		end
 	end
 end
 
-function var0_0.getCommaderName(arg0_97)
-	local var0_97 = arg0_97:getCommader()
+function var0_0.getCommaderName(arg0_98)
+	local var0_98 = arg0_98:getCommader()
 
-	if var0_97 then
-		return var0_97.name
+	if var0_98 then
+		return var0_98.name
 	else
 		return ""
 	end
 end
 
-function var0_0.setAnnounce(arg0_98, arg1_98)
-	arg0_98.announce = arg1_98
+function var0_0.setAnnounce(arg0_99, arg1_99)
+	arg0_99.announce = arg1_99
 end
 
-function var0_0.GetAnnounce(arg0_99)
-	return arg0_99.announce
+function var0_0.GetAnnounce(arg0_100)
+	return arg0_100.announce
 end
 
-function var0_0.getEnableDuty(arg0_100, arg1_100, arg2_100)
-	if arg2_100 == GuildConst.DUTY_RECRUIT then
+function var0_0.getEnableDuty(arg0_101, arg1_101, arg2_101)
+	if arg2_101 == GuildConst.DUTY_RECRUIT then
 		return {}
 	end
 
-	local var0_100 = {}
+	local var0_101 = {}
 
-	if arg1_100 == GuildConst.DUTY_COMMANDER then
-		if arg0_100:getAssistantMaxCount() == arg0_100:getAssistantCount() then
-			var0_100 = arg2_100 == GuildConst.DUTY_DEPUTY_COMMANDER and {
+	if arg1_101 == GuildConst.DUTY_COMMANDER then
+		if arg0_101:getAssistantMaxCount() == arg0_101:getAssistantCount() then
+			var0_101 = arg2_101 == GuildConst.DUTY_DEPUTY_COMMANDER and {
 				GuildConst.DUTY_COMMANDER,
 				GuildConst.DYTY_PICKED,
 				GuildConst.DUTY_ORDINARY
@@ -672,7 +685,7 @@ function var0_0.getEnableDuty(arg0_100, arg1_100, arg2_100)
 				GuildConst.DUTY_ORDINARY
 			}
 		else
-			var0_100 = arg2_100 == GuildConst.DUTY_DEPUTY_COMMANDER and {
+			var0_101 = arg2_101 == GuildConst.DUTY_DEPUTY_COMMANDER and {
 				GuildConst.DUTY_COMMANDER,
 				GuildConst.DUTY_DEPUTY_COMMANDER,
 				GuildConst.DYTY_PICKED,
@@ -683,100 +696,100 @@ function var0_0.getEnableDuty(arg0_100, arg1_100, arg2_100)
 				GuildConst.DUTY_ORDINARY
 			}
 		end
-	elseif arg1_100 == GuildConst.DUTY_DEPUTY_COMMANDER then
-		var0_100 = {
+	elseif arg1_101 == GuildConst.DUTY_DEPUTY_COMMANDER then
+		var0_101 = {
 			GuildConst.DYTY_PICKED,
 			GuildConst.DUTY_ORDINARY
 		}
 	end
 
-	for iter0_100, iter1_100 in ipairs(var0_100) do
-		if iter1_100 == arg2_100 then
-			table.remove(var0_100, iter0_100)
+	for iter0_101, iter1_101 in ipairs(var0_101) do
+		if iter1_101 == arg2_101 then
+			table.remove(var0_101, iter0_101)
 
 			break
 		end
 	end
 
-	return var0_100
+	return var0_101
 end
 
-function var0_0.warpChatInfo(arg0_101, arg1_101)
-	local var0_101, var1_101 = wordVer(arg1_101.content, {
+function var0_0.warpChatInfo(arg0_102, arg1_102)
+	local var0_102, var1_102 = wordVer(arg1_102.content, {
 		isReplace = true
 	})
-	local var2_101 = GuildMember.New(arg1_101.player)
+	local var2_102 = GuildMember.New(arg1_102.player)
 
-	if var2_101 then
-		local var3_101 = arg0_101:getDutyByMemberId(var2_101.id)
+	if var2_102 then
+		local var3_102 = arg0_102:getDutyByMemberId(var2_102.id)
 
-		assert(var3_101, "palyer duty has not been found" .. var2_101.id)
-		var2_101:setDuty(var3_101)
+		assert(var3_102, "palyer duty has not been found" .. var2_102.id)
+		var2_102:setDuty(var3_102)
 
-		local var4_101
+		local var4_102
 
-		string.gsub(var1_101, ChatConst.EmojiCodeMatch, function(arg0_102)
-			var4_101 = tonumber(arg0_102)
+		string.gsub(var1_102, ChatConst.EmojiCodeMatch, function(arg0_103)
+			var4_102 = tonumber(arg0_103)
 		end)
 
-		if var4_101 then
-			local var5_101 = pg.emoji_template[var4_101]
+		if var4_102 then
+			local var5_102 = pg.emoji_template[var4_102]
 
-			if var5_101 then
-				var1_101 = var5_101.desc
+			if var5_102 then
+				var1_102 = var5_102.desc
 			else
-				var4_101 = nil
+				var4_102 = nil
 			end
 		end
 
 		return (ChatMsg.New(ChatConst.ChannelGuild, {
-			player = var2_101,
-			content = var1_101,
-			emojiId = var4_101,
-			timestamp = arg1_101.time
+			player = var2_102,
+			content = var1_102,
+			emojiId = var4_102,
+			timestamp = arg1_102.time
 		}))
 	end
 end
 
-function var0_0.getSelfDuty(arg0_103)
-	local var0_103 = getProxy(PlayerProxy):getRawData()
+function var0_0.getSelfDuty(arg0_104)
+	local var0_104 = getProxy(PlayerProxy):getRawData()
 
-	return arg0_103:getDutyByMemberId(var0_103.id)
+	return arg0_104:getDutyByMemberId(var0_104.id)
 end
 
-function var0_0.GetOfficePainting(arg0_104)
-	local var0_104 = arg0_104:getFaction()
+function var0_0.GetOfficePainting(arg0_105)
+	local var0_105 = arg0_105:getFaction()
 
-	if var0_104 == GuildConst.FACTION_TYPE_BLHX then
+	if var0_105 == GuildConst.FACTION_TYPE_BLHX then
 		return "guild_office_blue"
-	elseif var0_104 == GuildConst.FACTION_TYPE_CSZZ then
+	elseif var0_105 == GuildConst.FACTION_TYPE_CSZZ then
 		return "guild_office_red"
 	end
 end
 
-function var0_0.ShouldShowDonateTip(arg0_105)
-	return arg0_105:getMaxDonateCnt() > arg0_105.donateCount
+function var0_0.ShouldShowDonateTip(arg0_106)
+	return arg0_106:getMaxDonateCnt() > arg0_106.donateCount
 end
 
-function var0_0.ShouldWeeklyTaskTip(arg0_106)
-	local var0_106 = arg0_106.weeklyTask:getState()
+function var0_0.ShouldWeeklyTaskTip(arg0_107)
+	local var0_107 = arg0_107.weeklyTask:getState()
 
-	return GuildTask.STATE_EMPTY == var0_106 and GuildMember.IsAdministrator(arg0_106:getSelfDuty())
+	return GuildTask.STATE_EMPTY == var0_107 and GuildMember.IsAdministrator(arg0_107:getSelfDuty())
 end
 
-function var0_0.ShouldShowOfficeTip(arg0_107)
-	return arg0_107:ShouldShowDonateTip() or arg0_107:ShouldWeeklyTaskTip() or arg0_107:ShouldShowSupplyTip()
+function var0_0.ShouldShowOfficeTip(arg0_108)
+	return arg0_108:ShouldShowDonateTip() or arg0_108:ShouldWeeklyTaskTip() or arg0_108:ShouldShowSupplyTip()
 end
 
-function var0_0.ShouldShowTechTip(arg0_108)
-	local var0_108 = arg0_108:getActiveTechnologyGroup()
+function var0_0.ShouldShowTechTip(arg0_109)
+	local var0_109 = arg0_109:getActiveTechnologyGroup()
 
-	return var0_108 and var0_108:isMaxLevel() and not arg0_108:IsFinishAllTechnologyGroup()
+	return var0_109 and var0_109:isMaxLevel() and not arg0_109:IsFinishAllTechnologyGroup()
 end
 
-function var0_0.IsFinishAllTechnologyGroup(arg0_109)
-	for iter0_109, iter1_109 in pairs(arg0_109.technologyGroups) do
-		if not iter1_109:isMaxLevel() then
+function var0_0.IsFinishAllTechnologyGroup(arg0_110)
+	for iter0_110, iter1_110 in pairs(arg0_110.technologyGroups) do
+		if not iter1_110:isMaxLevel() then
 			return false
 		end
 	end
@@ -784,174 +797,174 @@ function var0_0.IsFinishAllTechnologyGroup(arg0_109)
 	return true
 end
 
-function var0_0.ShouldShowSupplyTip(arg0_110)
-	local function var0_110()
-		local var0_111 = getProxy(PlayerProxy):getRawData().id
-		local var1_111 = arg0_110:getMemberById(var0_111)
+function var0_0.ShouldShowSupplyTip(arg0_111)
+	local function var0_111()
+		local var0_112 = getProxy(PlayerProxy):getRawData().id
+		local var1_112 = arg0_111:getMemberById(var0_112)
 
-		return not var1_111:IsRecruit() and not var1_111:isNewMember()
+		return not var1_112:IsRecruit() and not var1_112:isNewMember()
 	end
 
-	local var1_110 = arg0_110:getSupplyCnt()
+	local var1_111 = arg0_111:getSupplyCnt()
 
-	return arg0_110:isOpenedSupply() and var1_110 > 0 and var0_110()
+	return arg0_111:isOpenedSupply() and var1_111 > 0 and var0_111()
 end
 
-function var0_0.GetMembers(arg0_112)
-	return arg0_112.member
+function var0_0.GetMembers(arg0_113)
+	return arg0_113.member
 end
 
-function var0_0.GetAllAssaultShip(arg0_113)
-	local var0_113 = {}
-
-	for iter0_113, iter1_113 in pairs(arg0_113.member) do
-		local var1_113 = iter1_113:GetAssaultFleet():GetShipList()
-
-		for iter2_113, iter3_113 in ipairs(var1_113) do
-			table.insert(var0_113, iter3_113)
-		end
-	end
-
-	return var0_113
-end
-
-function var0_0.GetRecomForBossEvent(arg0_114, arg1_114, arg2_114, arg3_114)
+function var0_0.GetAllAssaultShip(arg0_114)
 	local var0_114 = {}
 
 	for iter0_114, iter1_114 in pairs(arg0_114.member) do
-		if not table.contains(arg3_114, iter1_114.id) then
-			local var1_114 = iter1_114:GetAssaultFleet():GetStrongestShip(arg1_114)
+		local var1_114 = iter1_114:GetAssaultFleet():GetShipList()
 
-			if var1_114 then
-				table.insert(var0_114, var1_114)
+		for iter2_114, iter3_114 in ipairs(var1_114) do
+			table.insert(var0_114, iter3_114)
+		end
+	end
+
+	return var0_114
+end
+
+function var0_0.GetRecomForBossEvent(arg0_115, arg1_115, arg2_115, arg3_115)
+	local var0_115 = {}
+
+	for iter0_115, iter1_115 in pairs(arg0_115.member) do
+		if not table.contains(arg3_115, iter1_115.id) then
+			local var1_115 = iter1_115:GetAssaultFleet():GetStrongestShip(arg1_115)
+
+			if var1_115 then
+				table.insert(var0_115, var1_115)
 			end
 		end
 	end
 
-	table.sort(var0_114, function(arg0_115, arg1_115)
-		return arg0_115.level > arg1_115.level
+	table.sort(var0_115, function(arg0_116, arg1_116)
+		return arg0_116.level > arg1_116.level
 	end)
 
-	return _.slice(var0_114, 1, math.min(arg2_114, #var0_114))
+	return _.slice(var0_115, 1, math.min(arg2_115, #var0_115))
 end
 
-function var0_0.GetMemberShips(arg0_116, arg1_116)
-	local var0_116 = {}
-	local var1_116 = {}
-	local var2_116 = getProxy(PlayerProxy):getRawData().id
+function var0_0.GetMemberShips(arg0_117, arg1_117)
+	local var0_117 = {}
+	local var1_117 = {}
+	local var2_117 = getProxy(PlayerProxy):getRawData().id
 
-	local function var3_116(arg0_117)
-		return var2_116 == arg0_117.id
+	local function var3_117(arg0_118)
+		return var2_117 == arg0_118.id
 	end
 
-	for iter0_116, iter1_116 in pairs(arg0_116.member) do
-		local var4_116 = iter1_116:GetShip()
-		local var5_116 = iter1_116:IsCommander()
+	for iter0_117, iter1_117 in pairs(arg0_117.member) do
+		local var4_117 = iter1_117:GetShip()
+		local var5_117 = iter1_117:IsCommander()
 
-		var4_116.isCommander = var5_116
+		var4_117.isCommander = var5_117
 
-		if var5_116 or var3_116(iter1_116) then
-			table.insert(var1_116, var4_116)
+		if var5_117 or var3_117(iter1_117) then
+			table.insert(var1_117, var4_117)
 		else
-			table.insert(var0_116, var4_116)
+			table.insert(var0_117, var4_117)
 		end
 	end
 
-	for iter2_116 = 1, arg1_116 do
-		if #var1_116 == arg1_116 then
+	for iter2_117 = 1, arg1_117 do
+		if #var1_117 == arg1_117 then
 			break
 		end
 
-		local var6_116 = var0_116[iter2_116]
+		local var6_117 = var0_117[iter2_117]
 
-		if var6_116 then
-			table.insert(var1_116, var6_116)
+		if var6_117 then
+			table.insert(var1_117, var6_117)
 		end
 	end
 
-	return var1_116
+	return var1_117
 end
 
-function var0_0.IsAdministrator(arg0_118)
-	return GuildMember.IsAdministrator(arg0_118:getSelfDuty())
+function var0_0.IsAdministrator(arg0_119)
+	return GuildMember.IsAdministrator(arg0_119:getSelfDuty())
 end
 
-function var0_0.GetMissionAndAssultFleetShips(arg0_119)
-	local var0_119 = {}
-	local var1_119 = arg0_119:GetActiveEvent()
-
-	if var1_119 and not var1_119:IsExpired() then
-		local var2_119 = var1_119:GetJoinShips()
-
-		for iter0_119, iter1_119 in ipairs(var2_119) do
-			table.insert(var0_119, iter1_119)
-		end
-	end
-
-	local var3_119 = getProxy(PlayerProxy):getRawData().id
-	local var4_119 = arg0_119.member[var3_119]
-	local var5_119 = var4_119:GetAssaultFleet()
-	local var6_119 = var4_119:GetExternalAssaultFleet()
-	local var7_119 = var5_119:GetShipList()
-
-	for iter2_119, iter3_119 in pairs(var7_119) do
-		local var8_119 = GuildAssaultFleet.GetRealId(iter3_119.id)
-
-		table.insert(var0_119, var8_119)
-	end
-
-	local var9_119 = var6_119:GetShipList()
-
-	for iter4_119, iter5_119 in pairs(var9_119) do
-		local var10_119 = GuildAssaultFleet.GetRealId(iter5_119.id)
-
-		table.insert(var0_119, var10_119)
-	end
-
-	return var0_119
-end
-
-function var0_0.GetBossMissionShips(arg0_120)
+function var0_0.GetMissionAndAssultFleetShips(arg0_120)
 	local var0_120 = {}
 	local var1_120 = arg0_120:GetActiveEvent()
 
 	if var1_120 and not var1_120:IsExpired() then
-		local var2_120 = var1_120:GetBossShipIds()
+		local var2_120 = var1_120:GetJoinShips()
 
 		for iter0_120, iter1_120 in ipairs(var2_120) do
 			table.insert(var0_120, iter1_120)
 		end
 	end
 
+	local var3_120 = getProxy(PlayerProxy):getRawData().id
+	local var4_120 = arg0_120.member[var3_120]
+	local var5_120 = var4_120:GetAssaultFleet()
+	local var6_120 = var4_120:GetExternalAssaultFleet()
+	local var7_120 = var5_120:GetShipList()
+
+	for iter2_120, iter3_120 in pairs(var7_120) do
+		local var8_120 = GuildAssaultFleet.GetRealId(iter3_120.id)
+
+		table.insert(var0_120, var8_120)
+	end
+
+	local var9_120 = var6_120:GetShipList()
+
+	for iter4_120, iter5_120 in pairs(var9_120) do
+		local var10_120 = GuildAssaultFleet.GetRealId(iter5_120.id)
+
+		table.insert(var0_120, var10_120)
+	end
+
 	return var0_120
 end
 
-function var0_0.ExistCommander(arg0_121, arg1_121)
-	local var0_121 = arg0_121:GetActiveEvent()
+function var0_0.GetBossMissionShips(arg0_121)
+	local var0_121 = {}
+	local var1_121 = arg0_121:GetActiveEvent()
 
-	if var0_121 then
-		local var1_121 = var0_121:GetBossMission()
+	if var1_121 and not var1_121:IsExpired() then
+		local var2_121 = var1_121:GetBossShipIds()
 
-		return var1_121:IsActive() and var1_121:ExistCommander(arg1_121)
+		for iter0_121, iter1_121 in ipairs(var2_121) do
+			table.insert(var0_121, iter1_121)
+		end
+	end
+
+	return var0_121
+end
+
+function var0_0.ExistCommander(arg0_122, arg1_122)
+	local var0_122 = arg0_122:GetActiveEvent()
+
+	if var0_122 then
+		local var1_122 = var0_122:GetBossMission()
+
+		return var1_122:IsActive() and var1_122:ExistCommander(arg1_122)
 	end
 
 	return false
 end
 
-function var0_0.IncActiveEventCnt(arg0_122)
-	arg0_122.activeEventCnt = arg0_122.activeEventCnt + 1
+function var0_0.IncActiveEventCnt(arg0_123)
+	arg0_123.activeEventCnt = arg0_123.activeEventCnt + 1
 end
 
-function var0_0.ResetActiveEventCnt(arg0_123)
-	arg0_123.activeEventCnt = 0
+function var0_0.ResetActiveEventCnt(arg0_124)
+	arg0_124.activeEventCnt = 0
 end
 
-function var0_0.ShouldTipActiveEvent(arg0_124)
-	return arg0_124.activeEventCnt + 1 <= arg0_124.tipActiveEventCnt
+function var0_0.ShouldTipActiveEvent(arg0_125)
+	return arg0_125.activeEventCnt + 1 <= arg0_125.tipActiveEventCnt
 end
 
-function var0_0.GetActiveEventCnt(arg0_125)
-	return arg0_125.activeEventCnt
+function var0_0.GetActiveEventCnt(arg0_126)
+	return arg0_126.activeEventCnt
 end
 
 return var0_0

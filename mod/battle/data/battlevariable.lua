@@ -69,7 +69,7 @@ local var8_0 = 0
 
 function var1_0.UpdateCameraPositionArgs()
 	local var0_3 = var1_0._cameraTF.position
-	local var1_3 = pg.CameraFixMgr.GetInstance():GetCameraOrthographicSize(var1_0._camera)
+	local var1_3 = CameraMgr.instance:GetCameraOrthographicSize(var1_0._camera)
 
 	if var1_0._lastCameraPos == var0_3 and var1_0._lastCameraSize == var1_3 then
 		return

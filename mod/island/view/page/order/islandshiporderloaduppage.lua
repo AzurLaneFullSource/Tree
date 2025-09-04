@@ -5,16 +5,22 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.itemTr = arg0_2:findTF("award")
-	arg0_2.cntTxt = arg0_2:findTF("count/Text"):GetComponent(typeof(Text))
-	arg0_2.uiAwardList = UIItemList.New(arg0_2:findTF("list"), arg0_2:findTF("list/tpl"))
-	arg0_2.submitBtn = arg0_2:findTF("btn")
+	arg0_2.mainTr = arg0_2:findTF("main")
+	arg0_2.cntTxt = arg0_2:findTF("main/name/count"):GetComponent(typeof(Text))
+	arg0_2.submitBtn = arg0_2:findTF("main/btn/btn_1")
+	arg0_2.noResBtn = arg0_2:findTF("main/btn/btn_2")
+	arg0_2.awardCntTxt = arg0_2:findTF("main/price/Text"):GetComponent(typeof(Text))
+	arg0_2.nameTxt = arg0_2:findTF("main/name"):GetComponent(typeof(Text))
 
-	setText(arg0_2:findTF("title/Text"), i18n1("装载奖励"))
-	setText(arg0_2:findTF("btn/Text"), i18n1("装载"))
+	setText(arg0_2:findTF("main/title/Text"), i18n("island_order_ship_loadup_award"))
+	setText(arg0_2:findTF("main/btn/btn_2/Text"), i18n("island_order_ship_loadup_nores"))
+	setText(arg0_2:findTF("main/btn/btn_1/Text"), i18n("island_order_ship_loadup"))
 end
 
 function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3._tf, function()
+		arg0_3:emit(IslandShipOrderPage.EVENT_CLOSE_LOAD_UP)
+	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3.submitBtn, function()
 		if not arg0_3.slot or not arg0_3.index then
 			return
@@ -24,38 +30,29 @@ function var0_0.OnInit(arg0_3)
 	end, SFX_PANEL)
 end
 
-function var0_0.Show(arg0_5, arg1_5, arg2_5, arg3_5)
-	var0_0.super.Show(arg0_5)
+function var0_0.Show(arg0_6, arg1_6, arg2_6, arg3_6)
+	var0_0.super.Show(arg0_6)
 
-	arg0_5.slot = arg2_5
-	arg0_5.index = arg3_5
-	arg0_5._tf.localPosition = arg1_5
+	arg0_6.slot = arg2_6
+	arg0_6.index = arg3_6
+	arg0_6.mainTr.localPosition = arg1_6
 
-	local var0_5 = arg2_5:GetOrder():GetComsume(arg3_5)
-	local var1_5 = Drop.New(var0_5)
+	local var0_6 = arg2_6:GetOrder():GetComsume(arg3_6)
+	local var1_6 = Drop.New(var0_6)
+	local var2_6 = var1_6:getOwnedCount()
+	local var3_6 = var1_6.count
+	local var4_6 = var3_6 <= var2_6
+	local var5_6 = var4_6 and "#39beff" or "#f36c6e"
 
-	updateDrop(arg0_5.itemTr, var1_5)
+	arg0_6.cntTxt.text = setColorStr(var2_6 .. "/" .. var3_6, var5_6)
+	arg0_6.nameTxt.text = var1_6:getName()
+	arg0_6.awardCntTxt.text = "X" .. arg2_6:GetOrder():GetConsumeAwards(arg3_6)[1].count
 
-	arg0_5.cntTxt.text = var1_5:getOwnedCount() .. "/" .. var1_5.count
-
-	arg0_5:UpdateAwards(arg2_5, arg3_5)
+	setActive(arg0_6.submitBtn, var4_6)
+	setActive(arg0_6.noResBtn, not var4_6)
 end
 
-function var0_0.UpdateAwards(arg0_6, arg1_6, arg2_6)
-	local var0_6 = arg1_6:GetOrder():GetConsumeAwards(arg2_6)
-
-	arg0_6.uiAwardList:make(function(arg0_7, arg1_7, arg2_7)
-		if arg0_7 == UIItemList.EventUpdate then
-			local var0_7 = Drop.New(var0_6[arg1_7 + 1])
-
-			GetImageSpriteFromAtlasAsync(var0_7.cfg.icon, "", arg2_7:Find("icon"))
-			setText(arg2_7:Find("Text"), "X" .. var0_7.count)
-		end
-	end)
-	arg0_6.uiAwardList:align(#var0_6)
-end
-
-function var0_0.OnDestroy(arg0_8)
+function var0_0.OnDestroy(arg0_7)
 	return
 end
 

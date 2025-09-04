@@ -1,63 +1,49 @@
 local var0_0 = class("EnterIslandCommand", pm.SimpleCommand)
 
 function var0_0.execute(arg0_1, arg1_1)
-	local var0_1 = arg1_1:getBody().id
+	local var0_1 = arg1_1:getBody()
+	local var1_1 = var0_1.id
+	local var2_1 = var0_1.code
 
-	pg.ConnectionMgr.GetInstance():Send(21202, {
-		island_id = var0_1
-	}, 21203, function(arg0_2)
-		if arg0_2.result == 0 then
-			arg0_1:GetIslandData(var0_1, arg0_2.player_list)
-		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)
-		end
-	end)
-end
-
-function var0_0.GetIslandData(arg0_3, arg1_3, arg2_3)
-	pg.ConnectionMgr.GetInstance():Send(21200, {
-		island_id = arg1_3
-	}, 21201, function(arg0_4)
-		local var0_4 = arg0_3:IsSelf(arg1_3)
-		local var1_4 = (var0_4 and Island or SharedIsland).New(arg0_4.island)
-		local var2_4 = {}
-
-		for iter0_4, iter1_4 in ipairs(arg2_3) do
-			var2_4[iter1_4.id] = IslandPlayer.New(iter1_4)
-		end
-
-		var1_4:GetVisitorAgency():SetPlayerList(var2_4)
-
-		if var0_4 then
-			getProxy(IslandProxy):SetIsland(var1_4)
-		else
-			getProxy(IslandProxy):SetSharedIsland(var1_4)
-		end
-
-		arg0_3:sendNotification(GAME.ISLAND_ENTER_MAP, {
-			islandId = arg1_3,
-			mapId = var1_4:GetMapId(),
-			callback = function()
-				arg0_3:GoScene(arg1_3)
-			end
-		})
-	end)
-end
-
-function var0_0.IsSelf(arg0_6, arg1_6)
-	return getProxy(PlayerProxy):getRawData().id == arg1_6
-end
-
-function var0_0.GoScene(arg0_7, arg1_7)
-	if arg0_7:IsSelf(arg1_7) then
-		arg0_7:sendNotification(GAME.GO_SCENE, SCENE.ISLAND, {
-			id = arg1_7
-		})
+	if var2_1 and var2_1 ~= "" then
+		arg0_1:Send(0, var2_1)
 	else
-		arg0_7:sendNotification(GAME.GO_SCENE, SCENE.SHARED_ISLAND, {
-			id = arg1_7
-		})
+		arg0_1:Send(var1_1, 0)
 	end
+end
+
+function var0_0.Send(arg0_2, arg1_2, arg2_2)
+	pg.ConnectionMgr.GetInstance():Send(21202, {
+		island_id = arg1_2,
+		code = tostring(arg2_2)
+	}, 21203, function(arg0_3)
+		if arg0_3.result == 0 then
+			arg0_2:sendNotification(GAME.ISLAND_GET_DATA, {
+				id = arg0_3.island_id,
+				list = arg0_3.player_list
+			})
+			getProxy(IslandProxy):EnterIsland(arg0_3.island_id)
+		elseif arg0_3.result == 6 then
+			arg0_2:sendNotification(GAME.ISLAND_QUEUE_UP, {
+				pos = arg0_3.pos,
+				id = arg0_3.island_id
+			})
+		elseif arg0_3.result == 19 then
+			local var0_3 = pg.TimeMgr.GetInstance():GetServerTime()
+			local var1_3 = arg0_3.cd - var0_3
+			local var2_3 = pg.TimeMgr.GetInstance():DescCDTime(var1_3)
+
+			pg.TipsMgr.GetInstance():ShowTips(i18n("island_visit_tip5", var2_3))
+		elseif arg0_3.result == 1 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("island_visit_tip1"))
+		elseif arg0_3.result == 20 or arg0_3.result == 40 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("island_visit_tip2"))
+		elseif arg0_3.result == 9 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("island_visit_tip3"))
+		else
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_3.result] .. arg0_3.result)
+		end
+	end)
 end
 
 return var0_0

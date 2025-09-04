@@ -7,6 +7,7 @@ function var0_0.OnInit(arg0_1, arg1_1)
 	local var0_1 = arg1_1.shop_list
 
 	arg0_1:SetShops(var0_1)
+	arg0_1:SetSeasonShops()
 end
 
 function var0_0.SetShops(arg0_2, arg1_2)
@@ -46,7 +47,7 @@ function var0_0.GetShopCommodity(arg0_5, arg1_5, arg2_5)
 end
 
 function var0_0.RefreshShopData(arg0_6, arg1_6)
-	arg0_6:sendNotification(GAME.ISLAND_SHOP_OP, {
+	pg.m02:sendNotification(GAME.ISLAND_SHOP_OP, {
 		operation = IslandConst.SHOP_GET_DATA,
 		shopId = arg1_6
 	})
@@ -59,8 +60,8 @@ function var0_0.UpdateShop(arg0_7, arg1_7, arg2_7)
 		if arg2_7 ~= nil then
 			var0_7:UpdateData(arg2_7)
 		else
-			table.remove(arg0_7.shops, var0_7)
-			table.remove(arg0_7.shopIds, arg1_7)
+			table.removebyvalue(arg0_7.shops, var0_7)
+			table.removebyvalue(arg0_7.shopIds, arg1_7)
 		end
 	elseif arg2_7 ~= nil then
 		local var1_7 = IslandShopp.New(arg2_7, arg0_7:GetHost())
@@ -114,13 +115,13 @@ function var0_0.ShouldShowSecondShop(arg0_12, arg1_12, arg2_12)
 	return false
 end
 
-function var0_0.GetFirstShopConfigs(arg0_13, arg1_13)
+function var0_0.GetFirstShopConfigs(arg0_13, arg1_13, arg2_13)
 	local var0_13 = {}
 
 	for iter0_13, iter1_13 in ipairs(var1_0.all) do
 		local var1_13 = var1_0[iter1_13]
 
-		if var1_13.tag_type == 1 and arg0_13:ShouldShowFirstShop(var1_13, arg1_13) then
+		if var1_13.tag_type == 1 and arg0_13:ShouldShowFirstShop(var1_13, arg1_13) and (not arg2_13 or table.contains(arg2_13, iter1_13)) then
 			table.insert(var0_13, var1_13)
 		end
 	end
@@ -164,9 +165,9 @@ function var0_0.GetThirdShopConfigs(arg0_15, arg1_15, arg2_15)
 	return arg0_15:GetSortedShopConfigs(var0_15)
 end
 
-function var0_0.GetInitShowingShop(arg0_16, arg1_16)
+function var0_0.GetInitShowingShop(arg0_16, arg1_16, arg2_16)
 	local var0_16
-	local var1_16 = arg0_16:GetFirstShopConfigs(arg1_16)[1]
+	local var1_16 = arg0_16:GetFirstShopConfigs(arg1_16, arg2_16)[1]
 
 	if var1_16.shop_type == 0 then
 		local var2_16 = arg0_16:GetSecondShopConfigs(arg1_16, var1_16.id)[1]
@@ -189,23 +190,55 @@ end
 
 function var0_0.GetNewOrOverdueShopIds(arg0_17)
 	local var0_17 = {}
+	local var1_17 = IslandSeasonAgency.GetCurrentSeason()
+	local var2_17 = pg.island_season[var1_17].shop_id
 
 	for iter0_17, iter1_17 in ipairs(var3_0.all) do
-		local var1_17 = var3_0[iter1_17]
-		local var2_17 = pg.TimeMgr.GetInstance():inTime(var1_17.exist_time)
+		local var3_17 = var3_0[iter1_17]
+		local var4_17 = pg.TimeMgr.GetInstance():inTime(var3_17.exist_time)
 
-		if arg0_17:IsShowShop(iter1_17) and not var2_17 or not arg0_17:IsShowShop(iter1_17) and var2_17 then
+		if not arg0_17:IsShowShop(iter1_17) and var4_17 or arg0_17:IsShowShop(iter1_17) and not var4_17 and not table.contains(var2_17, iter1_17) or table.contains(var2_17, iter1_17) and var4_17 then
 			table.insert(var0_17, iter1_17)
 		end
 	end
 
 	for iter2_17, iter3_17 in ipairs(arg0_17.shops) do
-		if not (pg.TimeMgr.GetInstance():GetServerTime() < iter3_17.existTime) then
+		if iter3_17:IsTemporaryShop() and not (pg.TimeMgr.GetInstance():GetServerTime() < iter3_17.existTime) then
 			table.insert(var0_17, iter3_17.id)
 		end
 	end
 
 	return var0_17
+end
+
+function var0_0.SetSeasonShops(arg0_18)
+	local var0_18 = IslandSeasonAgency.GetCurrentSeason()
+
+	for iter0_18, iter1_18 in ipairs(pg.island_season[var0_18].shop_id) do
+		if not arg0_18:GetShopById(iter1_18) then
+			local var1_18 = IslandShopp.New({
+				refresh_count = 0,
+				refresh_time = 0,
+				exist_time = 0,
+				id = iter1_18,
+				goods_list = {}
+			}, arg0_18:GetHost())
+
+			table.insert(arg0_18.shops, var1_18)
+			table.insert(arg0_18.shopIds, iter1_18)
+		end
+	end
+end
+
+function var0_0.GetSeasonShops(arg0_19)
+	local var0_19 = IslandSeasonAgency.GetCurrentSeason()
+	local var1_19 = {}
+
+	for iter0_19, iter1_19 in ipairs(pg.island_season[var0_19].shop_id) do
+		var1_19[iter1_19] = arg0_19:GetShopById(iter1_19)
+	end
+
+	return var1_19
 end
 
 return var0_0

@@ -5,17 +5,17 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	setText(arg0_2:findTF("frame/tags/ship/Text"), i18n1("角色信息"))
-	setText(arg0_2:findTF("frame/tags/building/Text"), i18n1("建筑信息"))
+	setText(arg0_2:findTF("frame/tags/ship/Text"), i18n("island_ship_title_info"))
+	setText(arg0_2:findTF("frame/tags/building/Text"), i18n("island_building_title_info"))
 
 	arg0_2.shipPage = arg0_2:findTF("frame/shipPanel")
 	arg0_2.shipUIList = UIItemList.New(arg0_2:findTF("list/content", arg0_2.shipPage), arg0_2:findTF("list/content/tpl", arg0_2.shipPage))
 
-	setText(arg0_2:findTF("skill/title", arg0_2.shipPage), i18n1("效果："))
+	setText(arg0_2:findTF("skill/title", arg0_2.shipPage), i18n("island_word_effect"))
 
 	arg0_2.skillUIList = UIItemList.New(arg0_2:findTF("skill/list/content", arg0_2.shipPage), arg0_2:findTF("skill/list/content/tpl", arg0_2.shipPage))
 
-	setText(arg0_2:findTF("ship_num/title", arg0_2.shipPage), i18n1("已派遣："))
+	setText(arg0_2:findTF("ship_num/title", arg0_2.shipPage), i18n("island_word_dispatch"))
 
 	arg0_2.shipNumTF = arg0_2:findTF("ship_num/num", arg0_2.shipPage)
 	arg0_2.buildingPage = arg0_2:findTF("frame/buildingPanel")
@@ -38,7 +38,7 @@ function var0_0.OnInit(arg0_3)
 
 			setText(arg0_3:findTF("energy_bar/Text", arg2_4), var2_4 .. "/" .. var3_4)
 			setSlider(arg0_3:findTF("energy_bar", arg2_4), 0, 1, var2_4 / var3_4)
-			setText(arg0_3:findTF("status", arg2_4), var2_4 > 0 and i18n1("工作中") or i18n1("生产暂停"))
+			setText(arg0_3:findTF("status", arg2_4), var2_4 > 0 and i18n("island_word_working") or i18n("island_word_stop_work"))
 
 			local var4_4 = var2_4 / 10
 
@@ -48,7 +48,7 @@ function var0_0.OnInit(arg0_3)
 	arg0_3.skillUIList:make(function(arg0_5, arg1_5, arg2_5)
 		if arg0_5 == UIItemList.EventUpdate then
 			local var0_5 = arg0_3.skillIdList[arg1_5 + 1]
-			local var1_5 = pg.island_ship_skill[var0_5].desc
+			local var1_5 = pg.island_chara_skill[var0_5].desc
 
 			setText(arg2_5, var1_5)
 		end
@@ -73,7 +73,7 @@ function var0_0.Show(arg0_6, arg1_6)
 		end
 
 		if iter1_6:GetStatus() == IslandProductionCommission.STATUS_WORKING then
-			local var1_6 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipByConfigId(iter1_6:GetShipId())
+			local var1_6 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipById(iter1_6:GetShipId())
 
 			table.insert(arg0_6.shipList, var1_6)
 			table.insert(arg0_6.skillIdList, var1_6:GetMainSkill())

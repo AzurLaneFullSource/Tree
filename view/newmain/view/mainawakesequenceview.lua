@@ -2,6 +2,7 @@ local var0_0 = class("MainAwakeSequenceView", import(".MainSequenceView"))
 
 function var0_0.Ctor(arg0_1)
 	arg0_1.sequence = {
+		MainPlayerTestSequence.New(),
 		MainCompatibleDataSequence.New(),
 		MainRandomFlagShipSequence.New(),
 		MainFixSettingDefaultValue.New()

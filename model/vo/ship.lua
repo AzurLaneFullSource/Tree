@@ -849,10 +849,10 @@ function var0_0.isBluePrintShip(arg0_57)
 end
 
 function var0_0.getSkinId(arg0_58, arg1_58)
-	local var0_58 = arg0_58:getPhandomSkin(arg1_58 or 0)
+	local var0_58 = arg0_58:getPhantomSkin(arg1_58 or 0)
 
-	if not arg0_58.noChangeSkin and ShipSkin.IsChangeSkin(var0_58) then
-		local var1_58 = ShipSkin.GetStoreChangeSkinId(ShipSkin.GetChangeSkinGroupId(var0_58))
+	if not arg0_58.noChangeSkin and tobool(arg0_58.id) and ShipSkin.IsChangeSkin(var0_58) then
+		local var1_58 = ShipSkin.GetStoreChangeSkinId(ShipSkin.GetChangeSkinGroupId(var0_58), arg0_58:GetShipPhantomMark())
 
 		if var1_58 then
 			return var1_58
@@ -862,7 +862,7 @@ function var0_0.getSkinId(arg0_58, arg1_58)
 	return var0_58
 end
 
-function var0_0.getPhandomSkin(arg0_59, arg1_59)
+function var0_0.getPhantomSkin(arg0_59, arg1_59)
 	if not arg1_59 or arg1_59 == 0 then
 		return arg0_59.skinId
 	else

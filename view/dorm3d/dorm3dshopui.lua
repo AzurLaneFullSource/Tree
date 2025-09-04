@@ -430,7 +430,7 @@ function var0_0.SetGiftCard(arg0_25)
 			id = var8_25.id
 		})
 
-		updateDorm3dIcon(arg0_25:findTF("Dorm3dIconTpl", var0_25), var9_25)
+		updateCustomDrop(arg0_25:findTF("Dorm3dIconTpl", var0_25), var9_25)
 
 		var2_25 = var1_25.shop_id[1]
 		var4_25 = var7_25 .. " " .. getProxy(ApartmentProxy):GetFurnitureShopCount(var1_25.item_id) .. "/1"
@@ -449,7 +449,7 @@ function var0_0.SetGiftCard(arg0_25)
 		})
 
 		setText(arg0_25:findTF("favor/number", var0_25), "+" .. pg.dorm3d_favor_trigger[var5_0[var1_25.item_id].favor_trigger_id].num)
-		updateDorm3dIcon(arg0_25:findTF("Dorm3dIconTpl", var0_25), var12_25)
+		updateCustomDrop(arg0_25:findTF("Dorm3dIconTpl", var0_25), var12_25)
 
 		var2_25 = var11_25:GetShopID()
 

@@ -48,7 +48,6 @@ function var7_0.Init(arg0_3)
 	arg0_3:InitFlagShipMark()
 	arg0_3:InitSkillAim()
 	pg.CameraFixMgr.GetInstance():Adapt()
-	pg.CameraFixMgr.GetInstance():SetMaskAsTopLayer(true)
 end
 
 function var7_0.InitCamera(arg0_4)
@@ -927,8 +926,6 @@ function var7_0.Clear(arg0_74)
 	var0_0.Battle.BattleArrowManager.GetInstance():Clear()
 
 	arg0_74._anitSubAreaTFList = nil
-
-	pg.CameraFixMgr.GetInstance():SetMaskAsTopLayer(false)
 end
 
 function var7_0.Dispose(arg0_75)

@@ -3,7 +3,7 @@ local var0_0 = class("IslandShipIndexLayer", import("view.common.CustomIndexLaye
 function var0_0.SortFunc(arg0_1)
 	return {
 		function(arg0_2)
-			local var0_2 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipByConfigId(arg0_2)
+			local var0_2 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipById(arg0_2)
 
 			if var0_2 then
 				return var0_2["Get" .. arg0_1](var0_2)
@@ -19,20 +19,12 @@ end
 
 var0_0.sort = {
 	{
-		sortFuncs = var0_0.SortFunc("Rarity"),
-		name = ShipIndexConst.SortNames[1]
-	},
-	{
 		sortFuncs = var0_0.SortFunc("Level"),
 		name = ShipIndexConst.SortNames[2]
 	},
 	{
 		sortFuncs = var0_0.SortFunc("Power"),
 		name = ShipIndexConst.SortNames[3]
-	},
-	{
-		sortFuncs = var0_0.SortFunc("CreateTime"),
-		name = ShipIndexConst.SortNames[4]
 	},
 	{
 		sortFuncs = var0_0.SortFunc("Energy"),
@@ -54,23 +46,17 @@ function var0_0.getSortFuncAndName(arg0_4, arg1_4)
 	end
 end
 
-var0_0.SortRarity = bit.lshift(1, 0)
-var0_0.SortLevel = bit.lshift(1, 1)
-var0_0.SortPower = bit.lshift(1, 2)
-var0_0.SortAchivedTime = bit.lshift(1, 3)
-var0_0.SortEnergy = bit.lshift(1, 4)
+var0_0.SortLevel = bit.lshift(1, 0)
+var0_0.SortPower = bit.lshift(1, 1)
+var0_0.SortEnergy = bit.lshift(1, 2)
 var0_0.SortIndexs = {
-	var0_0.SortRarity,
 	var0_0.SortLevel,
 	var0_0.SortPower,
-	var0_0.SortAchivedTime,
 	var0_0.SortEnergy
 }
 var0_0.SortNames = {
-	"word_rarity",
 	"word_lv",
 	"word_synthesize_power",
-	"word_achieved_item",
 	"sort_energy"
 }
 var0_0.ExtraPotency = bit.lshift(1, 0)
@@ -158,59 +144,51 @@ function var0_0.BlurPanel(arg0_14)
 	})
 end
 
-function var0_0.didEnter(arg0_15)
-	arg0_15.contextData = arg0_15:InitData()
+function var0_0.DoEnterAnimation(arg0_15)
+	return
+end
 
-	var0_0.super.didEnter(arg0_15)
+function var0_0.didEnter(arg0_16)
+	arg0_16.contextData = arg0_16:InitData()
 
-	arg0_15.titleTxt.text = i18n("child_filter_title")
+	var0_0.super.didEnter(arg0_16)
 
-	onButton(arg0_15, arg0_15.closeBtn, function()
-		arg0_15:emit(var0_0.ON_CLOSE)
+	arg0_16.titleTxt.text = i18n("child_filter_title")
+
+	onButton(arg0_16, arg0_16.closeBtn, function()
+		arg0_16:emit(var0_0.ON_CLOSE)
 	end, SFX_PANEL)
 end
 
-function var0_0.InitGroup(arg0_17)
-	var0_0.super.InitGroup(arg0_17)
+function var0_0.InitGroup(arg0_18)
+	var0_0.super.InitGroup(arg0_18)
 
-	local function var0_17(arg0_18)
-		setActive(arg0_18:Find("line"), false)
+	local function var0_18(arg0_19)
+		setActive(arg0_19:Find("line"), false)
 	end
 
-	for iter0_17 = 1, arg0_17.tplContainer.childCount do
-		local var1_17 = arg0_17.tplContainer:GetChild(iter0_17 - 1):Find("bg")
+	for iter0_18 = 1, arg0_18.tplContainer.childCount do
+		local var1_18 = arg0_18.tplContainer:GetChild(iter0_18 - 1):Find("bg")
 
-		if var1_17.childCount > 7 then
-			var0_17(var1_17:GetChild(6))
+		if var1_18.childCount > 7 then
+			var0_18(var1_18:GetChild(6))
 		end
 
-		if var1_17.childCount > 0 then
-			var0_17(var1_17:GetChild(var1_17.childCount - 1))
+		if var1_18.childCount > 0 then
+			var0_18(var1_18:GetChild(var1_18.childCount - 1))
 		end
 	end
 end
 
-function var0_0.InitData(arg0_19)
+function var0_0.InitData(arg0_20)
 	return {
-		indexDatas = Clone(arg0_19.indexDatas),
+		indexDatas = Clone(arg0_20.indexDatas),
 		customPanels = {
 			sortIndex = {
 				isSort = true,
 				mode = CustomIndexLayer.Mode.OR,
 				options = var0_0.SortIndexs,
 				names = var0_0.SortNames
-			},
-			campIndex = {
-				blueSeleted = true,
-				mode = CustomIndexLayer.Mode.AND,
-				options = ShipIndexConst.CampIndexs,
-				names = ShipIndexConst.CampNames
-			},
-			rarityIndex = {
-				blueSeleted = true,
-				mode = CustomIndexLayer.Mode.AND,
-				options = ShipIndexConst.RarityIndexs,
-				names = ShipIndexConst.RarityNames
 			},
 			extraIndex = {
 				blueSeleted = true,
@@ -230,22 +208,6 @@ function var0_0.InitData(arg0_19)
 			},
 			{
 				dropdown = false,
-				titleTxt = "indexsort_camp",
-				titleENTxt = "indexsort_campeng",
-				tags = {
-					"campIndex"
-				}
-			},
-			{
-				dropdown = false,
-				titleTxt = "indexsort_rarity",
-				titleENTxt = "indexsort_rarityeng",
-				tags = {
-					"rarityIndex"
-				}
-			},
-			{
-				dropdown = false,
 				titleTxt = "indexsort_extraindex",
 				titleENTxt = "indexsort_indexeng",
 				tags = {
@@ -253,19 +215,19 @@ function var0_0.InitData(arg0_19)
 				}
 			}
 		},
-		callback = function(arg0_20)
-			arg0_19.OnFilter(arg0_20)
+		callback = function(arg0_21)
+			arg0_20.OnFilter(arg0_21)
 		end
 	}
 end
 
-function var0_0.UpdateBtnStyle(arg0_21, arg1_21, arg2_21)
-	local var0_21 = arg2_21 ~= arg0_21.greySprite
+function var0_0.UpdateBtnStyle(arg0_22, arg1_22, arg2_22)
+	local var0_22 = arg2_22 ~= arg0_22.greySprite
 
-	arg1_21:GetComponent(typeof(Image)).color = var0_21 and Color.New(0, 0, 0, 1) or Color.New(1, 1, 1, 1)
-	arg1_21:Find("Image"):GetComponent(typeof(Text)).color = var0_21 and Color.New(1, 1, 1, 1) or Color.New(0.2235294, 0.227451, 0.2352941, 1)
+	arg1_22:GetComponent(typeof(Image)).color = var0_22 and Color.New(0, 0, 0, 1) or Color.New(1, 1, 1, 1)
+	arg1_22:Find("Image"):GetComponent(typeof(Text)).color = var0_22 and Color.New(1, 1, 1, 1) or Color.New(0.2235294, 0.227451, 0.2352941, 1)
 
-	setActive(arg1_21:Find("selected"), var0_21)
+	setActive(arg1_22:Find("selected"), var0_22)
 end
 
 return var0_0

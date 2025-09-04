@@ -25,5 +25,9 @@ function typeof(arg0_1)
 		error(debug.traceback("attemp to call typeof on type " .. var0_1))
 	end
 
+	if var1_1 == nil then
+		warning(var1_1)
+	end
+
 	return var1_1
 end

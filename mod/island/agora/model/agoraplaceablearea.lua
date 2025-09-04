@@ -1,181 +1,260 @@
 local var0_0 = class("AgoraPlaceableArea", import("...IslandDispatcher"))
 
-function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.Ctor(arg0_1)
 
 	arg0_1.size = arg1_1
-	arg0_1.placedlist = arg2_1
-	arg0_1.map = arg0_1:GenMap()
+	arg0_1.placedlist = {}
+	arg0_1.maps = {
+		[IslandConst.AGORA_MAP_TYPE_COMMON] = AgoraMap.New(arg1_1),
+		[IslandConst.AGORA_MAP_TYPE_NEWTILE] = AgoraMap.New(arg1_1),
+		[IslandConst.AGORA_MAP_TYPE_BUILDING] = AgoraBuildingMap.New()
+	}
+	arg0_1.floorLayer = arg0_1:GenLayer()
+	arg0_1.tileLayer = arg0_1:GenLayer()
 end
 
-function var0_0.GetSize(arg0_2)
-	return arg0_2.size
+function var0_0.GetFloorLayer(arg0_2)
+	return arg0_2.floorLayer
 end
 
-function var0_0.UpdateSize(arg0_3, arg1_3)
-	arg0_3.size = arg1_3
-
-	local var0_3 = arg0_3:GenMap()
-	local var1_3 = arg0_3.map
-
-	for iter0_3, iter1_3 in pairs(var0_3) do
-		for iter2_3, iter3_3 in pairs(iter1_3) do
-			if var1_3[iter0_3] ~= nil and var1_3[iter0_3][iter2_3] ~= nil then
-				var0_3[iter0_3][iter2_3] = var1_3[iter0_3][iter2_3]
-			end
-		end
-	end
-
-	arg0_3.map = var0_3
-
-	arg0_3:DispatchEvent(ISLAND_AGORA_EVT.MAP_SIZE_UPDATE, arg0_3.size)
+function var0_0.GetTileLayer(arg0_3)
+	return arg0_3.tileLayer
 end
 
-function var0_0.GetRangeCoord(arg0_4)
-	return (AgoraCalc.GetSizeCoord(arg0_4.size))
+function var0_0.GetFloorCell(arg0_4, arg1_4)
+	return arg0_4.floorLayer[arg1_4.x][arg1_4.y]
 end
 
-function var0_0.InRange(arg0_5, arg1_5, arg2_5)
-	local var0_5 = arg0_5:GetRangeCoord()
-
-	return arg1_5 >= var0_5.x and arg1_5 <= var0_5.z and arg2_5 <= var0_5.y and arg2_5 >= var0_5.w
+function var0_0.GetTileCell(arg0_5, arg1_5)
+	return arg0_5.tileLayer[arg1_5.x][arg1_5.y]
 end
 
-function var0_0.ClampRange(arg0_6, arg1_6, arg2_6, arg3_6)
-	local var0_6 = arg3_6:GetSizeWithRotation()
-	local var1_6 = AgoraCalc.GetSizeCoord(var0_6)
-	local var2_6 = arg0_6:GetRangeCoord()
-	local var3_6 = var2_6.x - var1_6.x
-	local var4_6 = var2_6.z - var1_6.z
-	local var5_6 = var2_6.w - var1_6.w
-	local var6_6 = var2_6.y - var1_6.y
+function var0_0.GenLayer(arg0_6)
+	local var0_6 = {}
+	local var1_6 = IslandConst.AGORA_LEVEL_2_SIZE[#IslandConst.AGORA_LEVEL_2_SIZE]
+	local var2_6 = AgoraCalc.GetArea(Vector2.zero, Vector2(var1_6, var1_6))
 
-	arg1_6 = Mathf.Clamp(arg1_6, var3_6, var4_6)
-	arg2_6 = Mathf.Clamp(arg2_6, var5_6, var6_6)
+	for iter0_6, iter1_6 in ipairs(var2_6) do
+		local var3_6 = iter1_6.x
+		local var4_6 = iter1_6.y
 
-	return Vector2(arg1_6, arg2_6)
-end
-
-function var0_0.GenMap(arg0_7)
-	local var0_7 = {}
-	local var1_7 = AgoraCalc.GetArea(Vector2.zero, arg0_7.size)
-
-	for iter0_7, iter1_7 in ipairs(var1_7) do
-		local var2_7 = iter1_7.x
-		local var3_7 = iter1_7.y
-
-		if not var0_7[var2_7] then
-			var0_7[var2_7] = {}
+		if not var0_6[var3_6] then
+			var0_6[var3_6] = {}
 		end
 
-		var0_7[var2_7][var3_7] = true
+		var0_6[var3_6][var4_6] = AgoraLayerCell.New(Vector2(var3_6, var4_6))
 	end
 
-	return var0_7
+	return var0_6
 end
 
-function var0_0.IsUsing(arg0_8, arg1_8)
-	return arg0_8.placedlist[arg1_8] ~= nil
-end
+function var0_0.FillFloorLayer(arg0_7, arg1_7, arg2_7, arg3_7)
+	local var0_7 = (arg0_7.floorLayer[arg3_7.x] or {})[arg3_7.y]
 
-function var0_0.GetPlacedlist(arg0_9)
-	return arg0_9.placedlist
-end
-
-function var0_0.AddItem(arg0_10, arg1_10)
-	local var0_10 = arg1_10:GetArea()
-
-	for iter0_10, iter1_10 in ipairs(var0_10) do
-		arg0_10:UpdateMapState(iter1_10.x, iter1_10.y, false)
+	if not var0_7 then
+		return
 	end
 
-	arg0_10.placedlist[arg1_10.id] = arg1_10
+	var0_7:Fill(arg1_7, arg2_7)
 end
 
-function var0_0.RemoveItem(arg0_11, arg1_11)
-	local var0_11 = arg1_11:GetArea()
+function var0_0.ClearFloorLayer(arg0_8, arg1_8)
+	local var0_8 = (arg0_8.floorLayer[arg1_8.x] or {})[arg1_8.y]
 
-	for iter0_11, iter1_11 in ipairs(var0_11) do
-		arg0_11:UpdateMapState(iter1_11.x, iter1_11.y, true)
+	if not var0_8 then
+		return
 	end
 
-	arg0_11.placedlist[arg1_11.id] = nil
+	var0_8:Clear()
 end
 
-function var0_0.GetPlacedItem(arg0_12, arg1_12)
-	return arg0_12.placedlist[arg1_12]
+function var0_0.FillTileLayer(arg0_9, arg1_9, arg2_9, arg3_9)
+	local var0_9 = (arg0_9.tileLayer[arg3_9.x] or {})[arg3_9.y]
+
+	if not var0_9 then
+		return
+	end
+
+	var0_9:Fill(arg1_9, arg2_9)
 end
 
-function var0_0.IsEmptyArea(arg0_13, arg1_13)
-	return _.all(arg1_13, function(arg0_14)
-		return arg0_13:InRange(arg0_14.x, arg0_14.y) and arg0_13.map[arg0_14.x][arg0_14.y] == true
+function var0_0.ClearTileLayer(arg0_10, arg1_10)
+	local var0_10 = (arg0_10.tileLayer[arg1_10.x] or {})[arg1_10.y]
+
+	if not var0_10 then
+		return
+	end
+
+	var0_10:Clear()
+end
+
+function var0_0.UpdateSize(arg0_11, arg1_11)
+	arg0_11.size = arg1_11
+
+	for iter0_11, iter1_11 in pairs(arg0_11.maps) do
+		iter1_11:UpdateSize(arg1_11)
+	end
+
+	arg0_11:DispatchEvent(ISLAND_AGORA_EVT.MAP_SIZE_UPDATE, arg0_11.size)
+end
+
+function var0_0.GetSize(arg0_12)
+	return arg0_12.size
+end
+
+function var0_0.GetRangeCoord(arg0_13)
+	return (AgoraCalc.GetSizeCoord(arg0_13.size))
+end
+
+function var0_0.InRange(arg0_14, arg1_14, arg2_14)
+	local var0_14 = arg0_14:GetRangeCoord()
+
+	return arg1_14 >= var0_14.x and arg1_14 <= var0_14.z and arg2_14 <= var0_14.y and arg2_14 >= var0_14.w
+end
+
+function var0_0._InRange(arg0_15, arg1_15, arg2_15, arg3_15)
+	return arg2_15 >= arg1_15.x and arg2_15 <= arg1_15.z and arg3_15 <= arg1_15.y and arg3_15 >= arg1_15.w
+end
+
+function var0_0.ClampRange(arg0_16, arg1_16, arg2_16, arg3_16)
+	local var0_16 = arg3_16:GetSizeWithRotation()
+	local var1_16 = AgoraCalc.GetSizeCoord(var0_16)
+	local var2_16 = arg0_16:GetRangeCoord()
+	local var3_16 = var2_16.x - var1_16.x
+	local var4_16 = var2_16.z - var1_16.z
+	local var5_16 = var2_16.w - var1_16.w
+	local var6_16 = var2_16.y - var1_16.y
+
+	arg1_16 = Mathf.Clamp(arg1_16, var3_16, var4_16)
+	arg2_16 = Mathf.Clamp(arg2_16, var5_16, var6_16)
+
+	return Vector2(arg1_16, arg2_16)
+end
+
+function var0_0._ClampRange(arg0_17, arg1_17, arg2_17)
+	if arg0_17:_InRange(arg1_17, arg2_17.x, arg2_17.y) then
+		return arg2_17
+	end
+
+	local var0_17 = Mathf.Clamp(arg2_17.x, arg1_17.x, arg1_17.z)
+	local var1_17 = Mathf.Clamp(arg2_17.y, arg1_17.y, arg1_17.w)
+
+	return Vector2(var0_17, var1_17)
+end
+
+function var0_0.IsUsing(arg0_18, arg1_18)
+	return arg0_18.placedlist[arg1_18] ~= nil
+end
+
+function var0_0.GetPlacedlist(arg0_19)
+	return arg0_19.placedlist
+end
+
+function var0_0.GetPlacedItem(arg0_20, arg1_20)
+	return arg0_20.placedlist[arg1_20]
+end
+
+function var0_0.GetMap(arg0_21, arg1_21)
+	return arg0_21.maps[arg1_21:GetMapType()]
+end
+
+function var0_0.AddItem(arg0_22, arg1_22)
+	local var0_22 = arg1_22:GetArea()
+	local var1_22 = arg0_22:GetMap(arg1_22)
+
+	for iter0_22, iter1_22 in ipairs(var0_22) do
+		var1_22:UpdateMapState(iter1_22.x, iter1_22.y, false)
+	end
+
+	arg0_22.placedlist[arg1_22.id] = arg1_22
+end
+
+function var0_0.RemoveItem(arg0_23, arg1_23)
+	local var0_23 = arg1_23:GetArea()
+	local var1_23 = arg0_23:GetMap(arg1_23)
+
+	for iter0_23, iter1_23 in ipairs(var0_23) do
+		var1_23:UpdateMapState(iter1_23.x, iter1_23.y, true)
+	end
+
+	arg0_23.placedlist[arg1_23.id] = nil
+end
+
+function var0_0.IsEmptyArea(arg0_24, arg1_24)
+	local var0_24 = arg1_24:GetArea()
+	local var1_24 = arg0_24:GetMap(arg1_24)
+	local var2_24 = arg0_24:GetRangeCoord()
+
+	return _.all(var0_24, function(arg0_25)
+		return arg0_24:_InRange(var2_24, arg0_25.x, arg0_25.y) and var1_24:GetMapState(arg0_25.x, arg0_25.y) == true
 	end)
 end
 
-function var0_0.GetItemInArea(arg0_15, arg1_15)
-	local var0_15 = _.detect(arg1_15, function(arg0_16)
-		return arg0_15.map[arg0_16.x][arg0_16.y] == false
+function var0_0.IsEmptyAreaInPoint(arg0_26, arg1_26, arg2_26)
+	local var0_26 = arg1_26:GenAreaByPosition(arg2_26)
+	local var1_26 = arg0_26:GetMap(arg1_26)
+	local var2_26 = arg0_26:GetRangeCoord()
+
+	return _.all(var0_26, function(arg0_27)
+		return arg0_26:_InRange(var2_26, arg0_27.x, arg0_27.y) and var1_26:GetMapState(arg0_27.x, arg0_27.y) == true
+	end)
+end
+
+function var0_0.IsEmptyPoint(arg0_28, arg1_28, arg2_28)
+	return arg0_28:GetMap(arg1_28):IsEmptyPoint(arg2_28)
+end
+
+function var0_0.GetItemInArea(arg0_29, arg1_29, arg2_29)
+	local var0_29 = arg0_29.maps[arg1_29]
+	local var1_29 = _.detect(arg2_29, function(arg0_30)
+		return var0_29:GetMapState(arg0_30.x, arg0_30.y) == false
 	end)
 
-	if var0_15 then
-		local var1_15 = arg0_15:GetItemInPosition(var0_15)
+	if var1_29 then
+		local var2_29 = arg0_29:GetItemInPosition(arg1_29, var1_29)
 
-		if var1_15 then
-			return var1_15
+		if var2_29 then
+			return var2_29
 		end
 	end
 
 	return nil
 end
 
-function var0_0.FindEmptyArea4Item(arg0_17, arg1_17, arg2_17)
-	local var0_17 = {}
-	local var1_17 = {}
+function var0_0.GetAnyMapItemInPosition(arg0_31, arg1_31)
+	for iter0_31, iter1_31 in pairs(arg0_31.maps) do
+		local var0_31 = arg0_31:GetItemInPosition(iter0_31, arg1_31)
 
-	table.insert(var0_17, arg1_17)
-
-	while #var0_17 > 0 do
-		local var2_17 = table.remove(var0_17, 1)
-		local var3_17 = arg2_17:GenAreaByPosition(var2_17)
-
-		if arg0_17:IsEmptyArea(var3_17) then
-			return var2_17
-		end
-
-		table.insert(var1_17, var2_17)
-
-		for iter0_17, iter1_17 in ipairs({
-			Vector2(var2_17.x, var2_17.y - 1),
-			Vector2(var2_17.x - 1, var2_17.y),
-			Vector2(var2_17.x + 1, var2_17.y),
-			Vector2(var2_17.x, var2_17.y + 1)
-		}) do
-			if not table.contains(var1_17, iter1_17) and arg0_17:InRange(iter1_17.x, iter1_17.y) then
-				table.insert(var0_17, iter1_17)
-			end
+		if var0_31 then
+			return var0_31
 		end
 	end
+
+	return nil
 end
 
-function var0_0.GetItemInPosition(arg0_18, arg1_18)
-	if not arg0_18:InRange(arg1_18.x, arg1_18.y) then
+function var0_0.GetItemInPosition(arg0_32, arg1_32, arg2_32)
+	if not arg0_32:InRange(arg2_32.x, arg2_32.y) then
 		return nil
 	end
 
-	if arg0_18.map[arg1_18.x][arg1_18.y] == false then
-		return arg0_18:FindItemInPosition(arg1_18)
+	if arg0_32.maps[arg1_32]:GetMapState(arg2_32.x, arg2_32.y) == false then
+		return arg0_32:FindItemInPosition(arg1_32, arg2_32)
 	end
 
 	return nil
 end
 
-function var0_0.FindItemInPosition(arg0_19, arg1_19)
-	for iter0_19, iter1_19 in pairs(arg0_19.placedlist) do
-		local var0_19 = iter1_19:GetArea()
+function var0_0.FindItemInPosition(arg0_33, arg1_33, arg2_33)
+	for iter0_33, iter1_33 in pairs(arg0_33.placedlist) do
+		if iter1_33:GetMapType() == arg1_33 then
+			local var0_33 = iter1_33:GetArea()
 
-		for iter2_19, iter3_19 in ipairs(var0_19) do
-			if iter3_19 == arg1_19 then
-				return iter1_19
+			for iter2_33, iter3_33 in ipairs(var0_33) do
+				if iter3_33 == arg2_33 then
+					return iter1_33
+				end
 			end
 		end
 	end
@@ -183,13 +262,136 @@ function var0_0.FindItemInPosition(arg0_19, arg1_19)
 	return nil
 end
 
-function var0_0.UpdateMapState(arg0_20, arg1_20, arg2_20, arg3_20)
-	arg0_20.map[arg1_20][arg2_20] = arg3_20
+function var0_0.FindEmptyArea4Item(arg0_34, arg1_34, arg2_34)
+	local var0_34 = arg0_34:GetRangeCoord()
 
-	arg0_20:DispatchEvent(ISLAND_AGORA_EVT.MAP_STATE_UPDATE, {
-		position = Vector2(arg1_20, arg2_20),
-		flag = arg3_20
-	})
+	arg1_34 = arg0_34:_ClampRange(var0_34, arg1_34)
+
+	local var1_34 = {}
+	local var2_34 = {}
+
+	local function var3_34(arg0_35)
+		if not var2_34[arg0_35.x] then
+			return false
+		end
+
+		if not var2_34[arg0_35.x][arg0_35.y] then
+			return false
+		end
+
+		return var2_34[arg0_35.x][arg0_35.y] == true
+	end
+
+	local function var4_34(arg0_36)
+		if not var2_34[arg0_36.x] then
+			var2_34[arg0_36.x] = {}
+		end
+
+		var2_34[arg0_36.x][arg0_36.y] = true
+	end
+
+	table.insert(var1_34, arg1_34)
+
+	while #var1_34 > 0 do
+		local var5_34
+		local var6_34 = table.remove(var1_34, 1)
+
+		if arg0_34:IsEmptyPoint(arg2_34, var6_34) or not arg0_34:_InRange(var0_34, var6_34.x, var6_34.y) then
+			if arg0_34:IsEmptyAreaInPoint(arg2_34, var6_34) then
+				return var6_34
+			end
+
+			var5_34 = {
+				Vector2(var6_34.x, var6_34.y + 1),
+				Vector2(var6_34.x + 1, var6_34.y),
+				Vector2(var6_34.x, var6_34.y - 1),
+				Vector2(var6_34.x - 1, var6_34.y)
+			}
+		else
+			local var7_34 = arg0_34:GetItemInPosition(arg2_34:GetMapType(), var6_34)
+			local var8_34 = var7_34:GetArea()
+
+			for iter0_34, iter1_34 in ipairs(var8_34) do
+				var4_34(iter1_34)
+			end
+
+			var5_34 = var7_34:GetNeighborPoints()
+		end
+
+		for iter2_34, iter3_34 in ipairs(var5_34) do
+			if not var3_34(iter3_34) and arg0_34:_InRange(var0_34, iter3_34.x, iter3_34.y) then
+				table.insert(var1_34, iter3_34)
+			else
+				var4_34(iter3_34)
+			end
+		end
+
+		var4_34(var6_34)
+	end
+end
+
+function var0_0.SerializePlacementData(arg0_37)
+	local var0_37 = {}
+
+	for iter0_37, iter1_37 in pairs(arg0_37:GetPlacedlist()) do
+		table.insert(var0_37, iter1_37:ToPlacementData())
+	end
+
+	local var1_37 = {}
+
+	for iter2_37, iter3_37 in pairs(arg0_37:GetFloorLayer()) do
+		for iter4_37, iter5_37 in pairs(iter3_37) do
+			if not iter5_37:IsEmpty() then
+				table.insert(var1_37, iter5_37:ToPlacementData())
+			end
+		end
+	end
+
+	local var2_37 = {}
+
+	for iter6_37, iter7_37 in pairs(arg0_37:GetTileLayer()) do
+		for iter8_37, iter9_37 in pairs(iter7_37) do
+			if not iter9_37:IsEmpty() then
+				table.insert(var2_37, iter9_37:ToPlacementData())
+			end
+		end
+	end
+
+	return var0_37, var1_37, var2_37
+end
+
+function var0_0.ToString(arg0_38)
+	local var0_38, var1_38, var2_38 = arg0_38:SerializePlacementData()
+	local var3_38 = AgoraCalc.EncodeLayer(var1_38)
+	local var4_38 = AgoraCalc.EncodeLayer(var2_38)
+	local var5_38 = _.map(var0_38, function(arg0_39)
+		return string.format("\t\t\t{id = %s,x = %s,y = %s,dir = %s,configId = %s},", arg0_39.id, arg0_39.x, arg0_39.y, arg0_39.dir, arg0_39.configId)
+	end)
+	local var6_38 = _.map(var3_38, function(arg0_40)
+		return "\t\t\t" .. tostring(arg0_40)
+	end)
+	local var7_38 = _.map(var4_38, function(arg0_41)
+		return "\t\t\t" .. tostring(arg0_41)
+	end)
+	local var8_38 = {}
+
+	table.insert(var8_38, "return {")
+	table.insert(var8_38, "\tid = 0,")
+	table.insert(var8_38, "\tname = '',")
+	table.insert(var8_38, "\tplaced_data = {")
+	table.insert(var8_38, "\t\tplaced_list = {")
+	table.insert(var8_38, table.concat(var5_38, "\n"))
+	table.insert(var8_38, "\t\t},")
+	table.insert(var8_38, "\t\tfloor_data = {")
+	table.insert(var8_38, table.concat(var6_38, ",\n"))
+	table.insert(var8_38, "\t\t},")
+	table.insert(var8_38, "\t\ttile_data = {")
+	table.insert(var8_38, table.concat(var7_38, ",\n"))
+	table.insert(var8_38, "\t\t},")
+	table.insert(var8_38, "\t}")
+	table.insert(var8_38, "}")
+
+	return table.concat(var8_38, "\n")
 end
 
 return var0_0

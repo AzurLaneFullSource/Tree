@@ -9,6 +9,7 @@ function var0_0.execute(arg0_1, arg1_1)
 		island_id = var1_1
 	}, 21205, function(arg0_2)
 		if arg0_2.result == 0 then
+			getProxy(IslandProxy):ExitIsland()
 			arg0_1:sendNotification(GAME.ISLAND_EXIT_DONE)
 
 			if var2_1 then

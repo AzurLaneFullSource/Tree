@@ -71,6 +71,7 @@ function var0_0.Init(arg0_5, arg1_5)
 	arg0_5.overlayCameraComp = arg0_5.overlayCamera:GetComponent("Camera")
 	arg0_5.overlayCameraComp.allowMSAA = false
 	arg0_5.uiCameraComp = arg0_5.uiCamera:GetComponent("Camera")
+	arg0_5.UICanvas = arg0_5.uiCamera:Find("Canvas")
 	arg0_5.UIMain = arg0_5.uiCamera:Find("Canvas/UIMain")
 	arg0_5.LevelMain = arg0_5.levelCamera:Find("Canvas/UIMain")
 	arg0_5.OverlayMain = arg0_5.overlayCamera:Find("Overlay/UIMain")
@@ -340,9 +341,9 @@ function var0_0.PartialBlurTfs(arg0_30, arg1_30)
 	arg0_30:UpdatePBEnable(true)
 end
 
-function var0_0.ShutdownPartialBlur(arg0_31)
+function var0_0.ShutdownPartialBlur(arg0_31, arg1_31)
 	var7_0 = false
-	var6_0 = {}
+	var6_0 = arg1_31 or {}
 
 	arg0_31:UpdatePBEnable(false)
 end

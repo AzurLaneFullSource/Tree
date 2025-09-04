@@ -23,23 +23,46 @@ function var0_0.execute(arg0_1, arg1_1)
 				var3_1:GetTechnologyAgency():AddFinishCntByFormulatId(var1_2)
 			end
 
-			var0_2:UpdateDeleationRoleDataBySlotId(var2_1, nil)
+			if arg0_2.return_num and arg0_2.return_num > 0 then
+				local var2_2 = var0_2:GetDelegationSlotData(var2_1):GetFormulaId()
+				local var3_2 = pg.island_formula[var2_2].commission_cost
+				local var4_2 = {}
 
-			if #arg0_2.award > 0 then
-				local var2_2 = arg0_2.award[1]
+				for iter0_2, iter1_2 in ipairs(var3_2) do
+					table.insert(var4_2, {
+						type = DROP_TYPE_ISLAND_ITEM,
+						id = iter1_2[1],
+						number = iter1_2[2] * arg0_2.return_num
+					})
+				end
 
-				var0_2:UpdateDeleationRewardDataBySlotId(var2_1, var2_2)
+				local var5_2 = IslandDropHelper.AddItems({
+					drop_list = var4_2
+				})
 			end
 
-			local var3_2 = var5_1:GetShipById(arg0_2.ship_id)
+			var0_2:UpdateDeleationRoleDataBySlotId(var2_1, nil)
 
-			var3_2:UpdateEnergy(arg0_2.cur_energy)
-			var3_2:UpdateEnergyBeginRecoverTime(arg0_2.recover_time)
-			var3_2:AddExp(arg0_2.add_exp)
+			local var6_2
+
+			if #arg0_2.award > 0 then
+				local var7_2 = arg0_2.award[1]
+
+				var6_2 = true
+
+				var0_2:UpdateDeleationRewardDataBySlotId(var2_1, var7_2)
+			end
+
+			local var8_2 = var5_1:GetShipById(arg0_2.ship_id)
+
+			var8_2:UpdateEnergy(arg0_2.cur_energy)
+			var8_2:UpdateEnergyBeginRecoverTime(arg0_2.recover_time)
+			var8_2:AddExp(arg0_2.add_exp)
 			var3_1:DispatchEvent(var0_0.END_DELEGATION, {
 				build_id = var1_1,
 				ship_id = arg0_2.ship_id,
-				area_id = var2_1
+				area_id = var2_1,
+				remainReward = var6_2
 			})
 			arg0_1:sendNotification(GAME.ISLAND_FINISH_DELEGATION_DONE)
 		else

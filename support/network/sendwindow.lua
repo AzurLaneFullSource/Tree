@@ -185,7 +185,10 @@ function var1_0.Send(arg0_9, arg1_9, arg2_9, arg3_9, arg4_9, arg5_9, arg6_9, arg
 		arg0_9:incPacketIdx()
 	else
 		var0_9:Send(var0_0.Packer.GetInstance():Pack(0, var3_9:GetId(), var5_9))
-		originalPrint("Network sent protocol: " .. arg1_9 .. " without idx")
+
+		if arg1_9 ~= 21211 then
+			originalPrint("Network sent protocol: " .. arg1_9 .. " without idx")
+		end
 	end
 
 	if not arg3_9 then

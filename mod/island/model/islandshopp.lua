@@ -63,155 +63,167 @@ function var0_0.IsTemporaryShop(arg0_14)
 	return arg0_14:getConfig("shop_type") == 2
 end
 
-function var0_0.GetExistTime(arg0_15)
-	if arg0_15:IsNormalShop() then
-		return var2_0[arg0_15.id].exist_time
+function var0_0.GetCommanderOrCharaType(arg0_15)
+	return arg0_15:getConfig("dress_type")
+end
+
+function var0_0.GetExistTime(arg0_16)
+	if arg0_16:IsNormalShop() then
+		return var2_0[arg0_16.id].exist_time
 	end
 
 	return nil
 end
 
-function var0_0.GetPlayerRefreshResource(arg0_16)
-	local var0_16 = var2_0[arg0_16.id].refresh_player
+function var0_0.GetPlayerRefreshResource(arg0_17)
+	local var0_17 = var2_0[arg0_17.id].refresh_player
 
-	if type(var0_16) == "table" then
-		return var0_16
+	if type(var0_17) == "table" then
+		return var0_17
 	end
 
 	return nil
 end
 
-function var0_0.GetMaxRefreshCount(arg0_17)
-	if arg0_17:IsNormalShop() then
-		return var2_0[arg0_17.id].refresh_set
+function var0_0.GetMaxRefreshCount(arg0_18)
+	if arg0_18:IsNormalShop() then
+		return var2_0[arg0_18.id].refresh_set
 	end
 
 	return 0
 end
 
-function var0_0.GetFirstRefreshFree(arg0_18)
-	return var2_0[arg0_18.id].refresh_free == 1
+function var0_0.GetFirstRefreshFree(arg0_19)
+	return var2_0[arg0_19.id].refresh_free == 1
 end
 
-function var0_0.UpdateData(arg0_19, arg1_19)
-	arg0_19.existTime = arg1_19.exist_time
-	arg0_19.refreshTime = arg1_19.refresh_time
-	arg0_19.refreshCount = arg1_19.refresh_count
+function var0_0.UpdateData(arg0_20, arg1_20)
+	arg0_20.existTime = arg1_20.exist_time
+	arg0_20.refreshTime = arg1_20.refresh_time
+	arg0_20.refreshCount = arg1_20.refresh_count
 
-	arg0_19:SetCommodities(arg1_19.goods_list)
-	arg0_19:SortCommodities()
+	arg0_20:SetCommodities(arg1_20.goods_list)
+	arg0_20:SortCommodities()
 end
 
-function var0_0.SetCommodities(arg0_20, arg1_20)
-	arg0_20.commodities = {}
-	arg0_20.commodityIds = {}
+function var0_0.SetCommodities(arg0_21, arg1_21)
+	arg0_21.commodities = {}
+	arg0_21.commodityIds = {}
 
-	if arg0_20:IsTemporaryShop() then
-		for iter0_20, iter1_20 in ipairs(arg1_20) do
-			local var0_20 = IslandCommodity.New(iter1_20)
+	if arg0_21:IsTemporaryShop() then
+		for iter0_21, iter1_21 in ipairs(arg1_21) do
+			local var0_21 = IslandCommodity.New(iter1_21, arg0_21.id)
 
-			table.insert(arg0_20.commodities, var0_20)
-			table.insert(arg0_20.commodityIds, iter1_20.id)
+			table.insert(arg0_21.commodities, var0_21)
+			table.insert(arg0_21.commodityIds, iter1_21.id)
 		end
 	else
-		for iter2_20, iter3_20 in ipairs(arg0_20:GetGoodIds()) do
-			if arg0_20:ShouldShowCommodity(iter3_20) then
-				local var1_20 = IslandCommodity.New({
+		for iter2_21, iter3_21 in ipairs(arg0_21:GetGoodIds()) do
+			if arg0_21:ShouldShowCommodity(iter3_21) then
+				local var1_21 = IslandCommodity.New({
 					num = 0,
-					id = iter3_20
-				})
+					id = iter3_21
+				}, arg0_21.id)
 
-				table.insert(arg0_20.commodities, var1_20)
-				table.insert(arg0_20.commodityIds, iter3_20)
+				table.insert(arg0_21.commodities, var1_21)
+				table.insert(arg0_21.commodityIds, iter3_21)
 			end
 		end
 
-		for iter4_20, iter5_20 in ipairs(arg1_20) do
-			local var2_20 = arg0_20:GetCommodityById(iter5_20.id)
+		for iter4_21, iter5_21 in ipairs(arg1_21) do
+			local var2_21 = arg0_21:GetCommodityById(iter5_21.id)
 
-			if var2_20 then
-				var2_20:UpdateNum(iter5_20.count)
+			if var2_21 then
+				var2_21:UpdateNum(iter5_21.num)
 
-				if var2_20:GetMaxNum() ~= 0 and var2_20.purchasedNum == var2_20:GetMaxNum() and not var2_20:IsShowSellOut() then
-					table.remove(arg0_20.commodities, var2_20)
-					table.remove(arg0_20.commodityIds, var2_20.id)
+				if var2_21:GetMaxNum() ~= 0 and var2_21.purchasedNum == var2_21:GetMaxNum() and not var2_21:IsShowSellOut() then
+					table.removebyvalue(arg0_21.commodities, var2_21)
+					table.removebyvalue(arg0_21.commodityIds, var2_21.id)
 				end
 			end
 		end
 	end
 end
 
-function var0_0.ShouldShowCommodity(arg0_21, arg1_21)
-	local var0_21 = arg0_21.island:GetAblityAgency()
-	local var1_21 = var3_0[arg1_21].unlock
-	local var2_21 = true
+function var0_0.ShouldShowCommodity(arg0_22, arg1_22)
+	local var0_22 = arg0_22.island:GetAblityAgency()
+	local var1_22 = var3_0[arg1_22].unlock
+	local var2_22 = true
 
-	if type(var1_21) == "table" and #var1_21 > 0 then
-		for iter0_21, iter1_21 in ipairs(var1_21) do
-			if not var0_21:HasAbility(iter1_21) then
-				var2_21 = false
+	if type(var1_22) == "table" and #var1_22 > 0 then
+		for iter0_22, iter1_22 in ipairs(var1_22) do
+			if not var0_22:HasAbility(iter1_22) then
+				var2_22 = false
 
 				break
 			end
 		end
 	end
 
-	local var3_21 = pg.TimeMgr.GetInstance():inTime(var3_0[arg1_21].time)
+	local var3_22 = pg.TimeMgr.GetInstance():inTime(var3_0[arg1_22].time)
 
-	return var2_21 and var3_21
+	return var2_22 and var3_22
 end
 
-function var0_0.SortCommodities(arg0_22)
-	local var0_22 = {}
+function var0_0.SortCommodities(arg0_23)
+	local var0_23 = {}
 
-	for iter0_22, iter1_22 in ipairs(arg0_22:GetGoodIds()) do
-		local var1_22 = arg0_22:GetCommodityById(iter1_22)
+	for iter0_23, iter1_23 in ipairs(arg0_23:GetGoodIds()) do
+		local var1_23 = arg0_23:GetCommodityById(iter1_23)
 
-		if var1_22 then
-			table.insert(var0_22, var1_22)
+		if var1_23 then
+			table.insert(var0_23, var1_23)
 		end
 	end
 
-	arg0_22.commodities = var0_22
+	arg0_23.commodities = var0_23
 end
 
-function var0_0.GetCommodities(arg0_23)
-	return arg0_23.commodities
+function var0_0.GetCommodities(arg0_24)
+	return arg0_24.commodities
 end
 
-function var0_0.GetCommodityById(arg0_24, arg1_24)
-	if not table.contains(arg0_24.commodityIds, arg1_24) then
+function var0_0.GetCommodityById(arg0_25, arg1_25)
+	if not table.contains(arg0_25.commodityIds, arg1_25) then
 		return nil
 	end
 
-	for iter0_24, iter1_24 in ipairs(arg0_24.commodities) do
-		if iter1_24.id == arg1_24 then
-			return iter1_24
+	for iter0_25, iter1_25 in ipairs(arg0_25.commodities) do
+		if iter1_25.id == arg1_25 then
+			return iter1_25
 		end
 	end
 end
 
-function var0_0.UpdateCommodity(arg0_25, arg1_25, arg2_25)
-	local var0_25 = arg0_25:GetCommodityById(arg1_25)
+function var0_0.UpdateCommodity(arg0_26, arg1_26, arg2_26)
+	local var0_26 = arg0_26:GetCommodityById(arg1_26)
 
-	if var0_25 then
-		var0_25:AddNum(arg2_25)
+	if var0_26 then
+		var0_26:AddNum(arg2_26)
 	end
 end
 
-function var0_0.GetBanners(arg0_26)
-	if arg0_26:GetShowType() ~= 1 then
+function var0_0.GetBanners(arg0_27)
+	if arg0_27:GetShowType() ~= 1 then
 		return nil
 	end
 
-	local var0_26 = {}
+	local var0_27 = {}
 
-	for iter0_26, iter1_26 in ipairs(var1_0.get_id_list_by_shop_page_id[arg0_26.id]) do
-		local var1_26 = var1_0[iter1_26]
+	for iter0_27, iter1_27 in ipairs(var1_0.get_id_list_by_shop_page_id[arg0_27.id]) do
+		local var1_27 = var1_0[iter1_27]
 
-		if pg.TimeMgr.GetInstance():inTime(var1_26.time) then
-			table.insert(var0_26, var1_26)
+		if pg.TimeMgr.GetInstance():inTime(var1_27.time) then
+			table.insert(var0_27, var1_27)
 		end
+	end
+end
+
+function var0_0.IsInTime(arg0_28)
+	if arg0_28:IsNormalShop() then
+		return pg.TimeMgr.GetInstance():inTime(arg0_28:GetExistTime())
+	elseif arg0_28:IsTemporaryShop() then
+		return pg.TimeMgr.GetInstance():GetServerTime() < arg0_28.existTime
 	end
 end
 

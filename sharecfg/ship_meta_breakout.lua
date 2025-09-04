@@ -34,6 +34,10 @@ pg.ship_meta_breakout = setmetatable({
 		9701082,
 		9701083,
 		9701084,
+		9701091,
+		9701092,
+		9701093,
+		9701094,
 		9702011,
 		9702012,
 		9702013,
@@ -708,6 +712,69 @@ pg.base.ship_meta_breakout = {
 		id = 9701084,
 		item1 = 21049,
 		pre_id = 9701083,
+		weapon_ids = {}
+	},
+	[9701091] = {
+		breakout_view = "Unlock Ashen Might – Yuudachi/Torpedo efficiency +5%",
+		gold = 1000,
+		breakout_id = 9701092,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9701091,
+		item1 = 21051,
+		pre_id = 0,
+		weapon_ids = {
+			80531
+		}
+	},
+	[9701092] = {
+		breakout_view = "Main gun base +1/Torpedo preload +1/Torpedo efficiency +10%",
+		gold = 3000,
+		breakout_id = 9701093,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9701092,
+		item1 = 21051,
+		pre_id = 9701091,
+		weapon_ids = {
+			100,
+			107
+		}
+	},
+	[9701093] = {
+		breakout_view = "Improve Ashen Might – Yuudachi/All weapons' efficiency +5%",
+		gold = 10000,
+		breakout_id = 9701094,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9701093,
+		item1 = 21051,
+		pre_id = 9701092,
+		weapon_ids = {
+			80532
+		}
+	},
+	[9701094] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9701094,
+		item1 = 21051,
+		pre_id = 9701093,
 		weapon_ids = {}
 	},
 	[9702011] = {

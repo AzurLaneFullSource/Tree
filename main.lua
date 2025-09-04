@@ -34,11 +34,6 @@ end
 
 QualitySettings.vSyncCount = 0
 QualitySettings.skinWeights = ReflectionHelp.RefGetField(typeof("UnityEngine.SkinWeights"), "Unlimited", nil)
-
-GraphicSettingConst.ClearPlayerPrefs()
-GraphicSettingConst.InitDefautQuality()
-ReflectionHelp.RefSetField(typeof("ResourceMgr"), "_asyncMax", ResourceMgr.Inst, 30)
-
 tf(GameObject.Find("EventSystem")):GetComponent(typeof(EventSystem)).sendNavigationEvents = false
 
 if IsUnityEditor then
@@ -236,149 +231,167 @@ function PressBack()
 end
 
 local function var0_0(arg0_8)
-	parallelAsync({
-		function(arg0_9)
-			pg.LayerWeightMgr.GetInstance():Init(arg0_9)
-		end,
-		function(arg0_10)
-			pg.UIMgr.GetInstance():Init(arg0_10)
-		end,
-		function(arg0_11)
-			pg.CriMgr.GetInstance():Init(arg0_11)
-		end
-	}, arg0_8)
+	require("HybridCLRConst")
+
+	local var0_8 = Application.streamingAssetsPath .. "/AssetBundles/hybridclr/patch/"
+	local var1_8 = HybridCLRConst.PatchDllList
+
+	Sandystar.HybridCLRTool.HybridCLRHelper.LoadPatchDLL(var0_8, var1_8)
+
+	local var2_8 = Application.persistentDataPath .. "/AssetBundles/hybridclr/hotfix/"
+	local var3_8 = HybridCLRConst.HotfixDllList
+
+	Sandystar.HybridCLRTool.HybridCLRHelper.LoadHotfixDLL(var2_8, var3_8)
+	Sandystar.HybridCLRTool.HybridCLRHelper.SetFinishCallback(function()
+		GraphicsInterface = BLHX.Rendering.GraphicsInterface
+
+		GraphicSettingConst.ClearPlayerPrefs()
+		GraphicSettingConst.InitDefautQuality()
+		arg0_8()
+	end)
 end
 
-local function var1_0(arg0_12)
+local function var1_0(arg0_10)
 	parallelAsync({
+		function(arg0_11)
+			pg.LayerWeightMgr.GetInstance():Init(arg0_11)
+		end,
+		function(arg0_12)
+			pg.UIMgr.GetInstance():Init(arg0_12)
+		end,
 		function(arg0_13)
-			pg.FontMgr.GetInstance():Init(arg0_13)
-		end,
-		function(arg0_14)
-			pg.ShaderMgr.GetInstance():Init(arg0_14)
-		end,
+			pg.CriMgr.GetInstance():Init(arg0_13)
+		end
+	}, arg0_10)
+end
+
+local function var2_0(arg0_14)
+	parallelAsync({
 		function(arg0_15)
-			pg.PoolMgr.GetInstance():Init(arg0_15)
+			pg.FontMgr.GetInstance():Init(arg0_15)
 		end,
 		function(arg0_16)
-			pg.TipsMgr.GetInstance():Init(arg0_16)
+			pg.ShaderMgr.GetInstance():Init(arg0_16)
 		end,
 		function(arg0_17)
-			pg.MsgboxMgr.GetInstance():Init(arg0_17)
+			pg.PoolMgr.GetInstance():Init(arg0_17)
 		end,
 		function(arg0_18)
-			pg.NewStyleMsgboxMgr.GetInstance():Init(arg0_18)
+			pg.TipsMgr.GetInstance():Init(arg0_18)
 		end,
 		function(arg0_19)
-			pg.SystemOpenMgr.GetInstance():Init(arg0_19)
+			pg.MsgboxMgr.GetInstance():Init(arg0_19)
 		end,
 		function(arg0_20)
-			pg.SystemGuideMgr.GetInstance():Init(arg0_20)
+			pg.NewStyleMsgboxMgr.GetInstance():Init(arg0_20)
 		end,
 		function(arg0_21)
-			pg.NewGuideMgr.GetInstance():Init(arg0_21)
+			pg.SystemOpenMgr.GetInstance():Init(arg0_21)
 		end,
 		function(arg0_22)
-			pg.ToastMgr.GetInstance():Init(arg0_22)
+			pg.SystemGuideMgr.GetInstance():Init(arg0_22)
 		end,
 		function(arg0_23)
-			pg.WorldToastMgr.GetInstance():Init(arg0_23)
+			pg.NewGuideMgr.GetInstance():Init(arg0_23)
 		end,
 		function(arg0_24)
-			pg.SecondaryPWDMgr.GetInstance():Init(arg0_24)
+			pg.ToastMgr.GetInstance():Init(arg0_24)
 		end,
 		function(arg0_25)
-			pg.ShipFlagMgr.GetInstance():Init(arg0_25)
+			pg.WorldToastMgr.GetInstance():Init(arg0_25)
 		end,
 		function(arg0_26)
-			pg.NewStoryMgr.GetInstance():Init(arg0_26)
+			pg.SecondaryPWDMgr.GetInstance():Init(arg0_26)
 		end,
 		function(arg0_27)
-			pg.RedDotMgr.GetInstance():Init(arg0_27)
+			pg.ShipFlagMgr.GetInstance():Init(arg0_27)
 		end,
 		function(arg0_28)
-			pg.UserAgreementMgr.GetInstance():Init(arg0_28)
+			pg.NewStoryMgr.GetInstance():Init(arg0_28)
 		end,
 		function(arg0_29)
-			pg.BrightnessMgr.GetInstance():Init(arg0_29)
+			pg.RedDotMgr.GetInstance():Init(arg0_29)
 		end,
 		function(arg0_30)
-			pg.ConfigTablePreloadMgr.GetInstance():Init(arg0_30)
+			pg.UserAgreementMgr.GetInstance():Init(arg0_30)
 		end,
 		function(arg0_31)
-			pg.CameraFixMgr.GetInstance():Init(arg0_31)
+			pg.BrightnessMgr.GetInstance():Init(arg0_31)
 		end,
 		function(arg0_32)
-			pg.BgmMgr.GetInstance():Init(arg0_32)
+			pg.ConfigTablePreloadMgr.GetInstance():Init(arg0_32)
 		end,
 		function(arg0_33)
-			pg.SettingsGroupMgr.GetInstance():Init()
-			pg.FileDownloadMgr.GetInstance():Init(arg0_33)
+			pg.CameraFixMgr.GetInstance():Init(arg0_33)
 		end,
 		function(arg0_34)
-			pg.RepairResMgr.GetInstance():Init(arg0_34)
+			pg.BgmMgr.GetInstance():Init(arg0_34)
 		end,
 		function(arg0_35)
-			pg.NodeCanvasMgr.GetInstance():Init(arg0_35)
+			pg.SettingsGroupMgr.GetInstance():Init()
+			pg.FileDownloadMgr.GetInstance():Init(arg0_35)
 		end,
 		function(arg0_36)
-			pg.SceneAnimMgr.GetInstance():Init(arg0_36)
+			pg.RepairResMgr.GetInstance():Init(arg0_36)
 		end,
 		function(arg0_37)
-			pg.PerformMgr.GetInstance():Init(arg0_37)
+			pg.NodeCanvasMgr.GetInstance():Init(arg0_37)
 		end,
 		function(arg0_38)
-			pg.ClickEffectMgr.GetInstance():Init(arg0_38)
+			pg.SceneAnimMgr.GetInstance():Init(arg0_38)
 		end,
 		function(arg0_39)
-			pg.CameraRTMgr.GetInstance():Init(arg0_39)
+			pg.PerformMgr.GetInstance():Init(arg0_39)
 		end,
 		function(arg0_40)
-			pg.GameTrackerMgr.GetInstance():Init(arg0_40)
+			pg.ClickEffectMgr.GetInstance():Init(arg0_40)
 		end,
 		function(arg0_41)
-			pg.GMTMgr.GetInstance():Init(arg0_41)
+			pg.CameraRTMgr.GetInstance():Init(arg0_41)
 		end,
 		function(arg0_42)
-			pg.ChangeSkinMgr.GetInstance():Init(arg0_42)
+			pg.GameTrackerMgr.GetInstance():Init(arg0_42)
+		end,
+		function(arg0_43)
+			pg.GMTMgr.GetInstance():Init(arg0_43)
+		end,
+		function(arg0_44)
+			pg.ChangeSkinMgr.GetInstance():Init(arg0_44)
+		end,
+		function(arg0_45)
+			if LOCK_ISLAND_DISPLAY then
+				arg0_45()
+			else
+				pg.IslandVisitorNotificationMgr.GetInstance():Init(arg0_45)
+			end
 		end
-	}, arg0_12)
+	}, arg0_14)
 end
 
-local var2_0 = os.clock()
+local var3_0 = os.clock()
 
 seriesAsync({
 	var0_0,
-	var1_0
-}, function(arg0_43)
-	require("HybridCLRConst")
-
-	local var0_43 = Application.streamingAssetsPath .. "/AssetBundles/hybridclr/patch/"
-	local var1_43 = HybridCLRConst.PatchDllList
-
-	Sandystar.HybridCLRTool.HybridCLRHelper.LoadPatchDLL(var0_43, var1_43)
-
-	local var2_43 = Application.persistentDataPath .. "/AssetBundles/hybridclr/hotfix/"
-	local var3_43 = HybridCLRConst.HotfixDllList
-
-	Sandystar.HybridCLRTool.HybridCLRHelper.LoadHotfixDLL(var2_43, var3_43)
+	var1_0,
+	var2_0
+}, function(arg0_46)
 	pg.SdkMgr.GetInstance():QueryWithProduct()
-	print("loading cost: " .. os.clock() - var2_0)
+	print("loading cost: " .. os.clock() - var3_0)
 	VersionMgr.Inst:DestroyUI()
 
-	local var4_43 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
+	local var0_46 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
 
-	if not IsNil(var4_43) then
-		Object.Destroy(var4_43)
+	if not IsNil(var0_46) then
+		Object.Destroy(var0_46)
 	end
 
 	Screen.sleepTimeout = SleepTimeout.SystemSetting
 
 	pg.UIMgr.GetInstance():displayLoadingBG(true)
 
-	if arg0_43 then
-		pg.UIMgr.GetInstance():Loading(arg0_43)
-		error(arg0_43)
+	if arg0_46 then
+		pg.UIMgr.GetInstance():Loading(arg0_46)
+		error(arg0_46)
 
 		return
 	end

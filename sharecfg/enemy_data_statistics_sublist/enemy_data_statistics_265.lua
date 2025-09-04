@@ -1,5 +1,47 @@
 pg = pg or {}
 pg.enemy_data_statistics_265 = {
+	[16503101] = {
+		cannon = 22,
+		reload = 150,
+		speed_growth = 0,
+		cannon_growth = 626,
+		battle_unit_type = 50,
+		air = 0,
+		base = 90248,
+		dodge = 22,
+		durability_growth = 21600,
+		antiaircraft = 72,
+		speed = 36,
+		reload_growth = 0,
+		dodge_growth = 360,
+		luck = 0,
+		antisub = 0,
+		hit = 25,
+		antisub_growth = 0,
+		air_growth = 0,
+		antiaircraft_growth = 3000,
+		torpedo = 94,
+		durability = 3060,
+		armor_growth = 0,
+		torpedo_growth = 5200,
+		luck_growth = 0,
+		hit_growth = 280,
+		armor = 0,
+		fog_fx = "",
+		id = 16503101,
+		specific_fx_scale = {
+			yuanchou_kandao = 0.04
+		},
+		appear_fx = {
+			"appearQ",
+			"yuanchou_kandao"
+		},
+		equipment_list = {
+			1000713,
+			1000718,
+			1000723
+		}
+	},
 	[16503102] = {
 		cannon = 38,
 		reload = 150,
@@ -1351,55 +1393,6 @@ pg.enemy_data_statistics_265 = {
 				ID = 50500,
 				LV = 5
 			}
-		}
-	},
-	[16504204] = {
-		cannon = 145,
-		name = "Le Mars Mechanicus Pawn - Moderator",
-		type = 7,
-		speed_growth = 0,
-		pilot_ai_template_id = 10001,
-		air = 325,
-		fog_fx = "",
-		dodge = 11,
-		speed = 20,
-		luck = 20,
-		antisub = 0,
-		reload_growth = 0,
-		dodge_growth = 156,
-		antiaircraft_growth = 3200,
-		reload = 150,
-		hit = 20,
-		antisub_growth = 0,
-		air_growth = 3500,
-		cannon_growth = 1800,
-		base = 90279,
-		icon_type = 7,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		antiaircraft = 260,
-		hit_growth = 210,
-		armor = 0,
-		durability = 18700,
-		torpedo = 0,
-		id = 16504204,
-		durability_growth = 312000,
-		luck_growth = 0,
-		battle_unit_type = 90,
-		specific_fx_scale = {
-			yuanchou_kandao = 0.04
-		},
-		appear_fx = {
-			"appearQ",
-			"yuanchou_kandao"
-		},
-		equipment_list = {
-			784318,
-			1101094,
-			1101079,
-			1101119,
-			1100929,
-			1100939
 		}
 	}
 }

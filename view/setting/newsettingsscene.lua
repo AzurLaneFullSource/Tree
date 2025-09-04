@@ -79,6 +79,9 @@ function var0_0.init(arg0_12)
 		arg0_12:findTF("blur_panel/adapt/left_length/battle_ui"),
 		arg0_12:findTF("blur_panel/adapt/left_length/resources")
 	}
+
+	setActive(arg0_12.toggles[5], false)
+
 	arg0_12.otherTip = arg0_12.toggles[1]:Find("tip")
 	arg0_12.logoutBtn = arg0_12:findTF("blur_panel/adapt/left_length/logout")
 	arg0_12.helpBtn = arg0_12:findTF("blur_panel/adapt/left_length/help_us")
@@ -89,7 +92,7 @@ end
 
 function var0_0.didEnter(arg0_13)
 	onButton(arg0_13, arg0_13.backBtn, function()
-		arg0_13:emit(var0_0.ON_BACK)
+		arg0_13:closeView()
 	end, SFX_CANCEL)
 	onButton(arg0_13, arg0_13.logoutBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({

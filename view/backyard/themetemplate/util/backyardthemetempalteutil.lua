@@ -136,14 +136,7 @@ function var0_0.TakeIcon(arg0_14, arg1_14)
 end
 
 function var0_0.TakePhoto(arg0_16, arg1_16)
-	tolua.loadassembly("Yongshi.BLHotUpdate.Runtime.Rendering")
-	ReflectionHelp.RefCallStaticMethodEx(typeof("BLHX.Rendering.HotUpdate.ScreenShooterPass"), "TakePhoto", {
-		typeof(Camera),
-		typeof("UnityEngine.Events.UnityAction`1[UnityEngine.Object]")
-	}, {
-		arg0_16,
-		UnityEngine.Events.UnityAction_UnityEngine_Object(arg1_16)
-	})
+	BLHX.Rendering.HotUpdate.ScreenShooterPass.TakePhoto(arg0_16, arg1_16)
 end
 
 function var0_0.SavePhoto(arg0_17, arg1_17, arg2_17, arg3_17)

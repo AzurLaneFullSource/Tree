@@ -24,6 +24,27 @@ function var0_0.Ctor(arg0_2, arg1_2)
 	arg0_2.Loading = arg0_2._tf:Find("loading")
 
 	setText(arg0_2._tf:Find("title"), i18n("repair_setting_label"))
+
+	local var0_2 = false
+	local var1_2 = arg0_2._tf:Find("BG")
+	local var2_2 = arg0_2._tf:Find("BGDel")
+
+	setActive(var1_2, not var0_2)
+	setActive(var2_2, var0_2)
+
+	local var3_2 = arg0_2._tf:Find("status")
+	local var4_2 = arg0_2._tf:Find("version")
+
+	setAnchoredPosition(var3_2, var0_2 and {
+		y = -106
+	} or {
+		y = -135
+	})
+	setAnchoredPosition(var4_2, var0_2 and {
+		y = -160
+	} or {
+		y = -198
+	})
 	arg0_2:Init()
 end
 
@@ -32,6 +53,7 @@ function var0_0.Init(arg0_3)
 	onButton(arg0_3, arg0_3._tf, function()
 		pg.RepairResMgr.GetInstance():Repair()
 	end, SFX_PANEL)
+	setActive(findTF(arg0_3._tf, "DelBtn"), false)
 end
 
 function var0_0.UpdateRepairStatus(arg0_5)

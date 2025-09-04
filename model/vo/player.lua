@@ -328,9 +328,9 @@ end
 function var0_0.getPainting(arg0_22)
 	local var0_22 = pg.ship_skin_template[arg0_22.skinId]
 
-	if ShipSkin.GetChangeSkinData(arg0_22.skinId) then
+	if tobool(arg0_22.character) and ShipSkin.GetChangeSkinData(arg0_22.skinId) then
 		local var1_22 = ShipSkin.GetChangeSkinGroupId(arg0_22.skinId)
-		local var2_22 = ShipSkin.GetStoreChangeSkinId(var1_22)
+		local var2_22 = ShipSkin.GetStoreChangeSkinId(var1_22, arg0_22:GetFlagShipPhantomMark())
 
 		if var2_22 then
 			var0_22 = pg.ship_skin_template[var2_22]

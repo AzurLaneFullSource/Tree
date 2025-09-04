@@ -14,10 +14,10 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.maxLevelTxt = arg0_2:findTF("frame/top/max_level"):GetComponent(typeof(Text))
 	arg0_2.closeBtn = arg0_2:findTF("frame/top/close")
 
-	setText(arg0_2:findTF("frame/top/title"), i18n1("仓库升级"))
-	setText(arg0_2:findTF("frame/bottom/Text"), i18n1("升级需求"))
-	setText(arg0_2:findTF("frame/bottom/bg/max_level"), i18n1("已经达到满级"))
-	setText(arg0_2:findTF("frame/bottom/capacity/label"), i18n1("仓库容量"))
+	setText(arg0_2:findTF("frame/top/title"), i18n("island_bag_upgrade_tip"))
+	setText(arg0_2:findTF("frame/bottom/Text"), i18n("island_bag_upgrade_req"))
+	setText(arg0_2:findTF("frame/bottom/bg/max_level"), i18n("island_bag_upgrade_max_level"))
+	setText(arg0_2:findTF("frame/bottom/capacity/label"), i18n("island_bag_upgrade_capacity"))
 end
 
 function var0_0.OnInit(arg0_3)
@@ -66,7 +66,7 @@ function var0_0.UpdateAddition(arg0_9, arg1_9)
 	local var0_9 = arg1_9:GetInventoryAgency()
 	local var1_9 = var0_9:GetCapacity()
 	local var2_9 = var0_9:GetLevel()
-	local var3_9 = var0_9:StaticGetCapacity(var2_9 + 1) - var1_9
+	local var3_9 = var0_9:GetNextCapacity(var2_9 + 1) - var1_9
 
 	arg0_9.capacityTxt.text = "<color=#393a3c>" .. var1_9 .. "</color><color=#39bfff> + " .. var3_9 .. "</color>"
 	arg0_9.levelTxt.text = "Lv." .. var2_9
@@ -81,7 +81,7 @@ function var0_0.UpdateConsume(arg0_10, arg1_10)
 			local var0_11 = var0_10[arg1_11 + 1]
 			local var1_11 = Drop.Create(var0_11)
 
-			updateDrop(arg2_11, var1_11)
+			updateCustomDrop(arg2_11, var1_11)
 
 			local var2_11 = var1_11:getOwnedCount()
 			local var3_11 = setColorStr(var2_11, var2_11 >= var1_11.count and COLOR_GREEN or COLOR_RED)

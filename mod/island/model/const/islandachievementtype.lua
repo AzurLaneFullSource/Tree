@@ -1,0 +1,82 @@
+local var0_0 = class("IslandAchievementType")
+
+var0_0.ISLAND_LV = 1
+var0_0.FINISH_TYPE_TASK = 2
+var0_0.FINISH_MAIN_TASK = 3
+var0_0.FINISH_ORDER = 4
+var0_0.SHIP_LV = 5
+var0_0.SHIP_SKILL_LV = 6
+var0_0.SHIP_ATTR_LV_1 = 7
+var0_0.SHIP_ATTR_LV_2 = 8
+var0_0.SHIP_ATTR_LV_3 = 9
+var0_0.SHIP_ATTR_LV_4 = 10
+var0_0.SHIP_ATTR_LV_5 = 11
+var0_0.SHIP_ATTR_LV_6 = 12
+var0_0.LOGIN_DAYS = 13
+var0_0.SHIP_SKIN = 14
+var0_0.SHIP_DRESS_TYPE = 15
+var0_0.COMMANDER_DRESS_TYPE = 16
+var0_0.SHOP_COST_ITEM = 17
+var0_0.SHOP_BUY_ITEM = 18
+var0_0.PRODUCE_ITEM = 19
+var0_0.BUILDING_DELEGATE = 20
+var0_0.BUILDING_HAND = 21
+var0_0.OBTAIN_ITEM = 22
+var0_0.GIVE_GIFT = 23
+var0_0.SHIP_DISPATCH = 24
+var0_0.SEASON_RANK = 25
+var0_0.SEASON_NUM = 26
+var0_0.FINISH_TECH = 27
+var0_0.FINISH_TYPE_TECH = 28
+var0_0.RESTAURANT_SELL = 29
+var0_0.RESTAURANT_SALES = 30
+var0_0.RESTAURANT_OPEN = 31
+var0_0.NPC_INTERACT = 32
+var0_0.FURNITURE = 33
+var0_0.BUILDING_DELEGATE_PLUS = 34
+var0_0.SHIP_DISPATCH_PLUS = 35
+var0_0.NPC_INTERACT_TYPE_TALK = 1
+var0_0.NPC_INTERACT_TYPE_HELLO = 2
+
+function var0_0.GetAttrTypes()
+	return {
+		var0_0.SHIP_ATTR_LV_1,
+		var0_0.SHIP_ATTR_LV_2,
+		var0_0.SHIP_ATTR_LV_3,
+		var0_0.SHIP_ATTR_LV_4,
+		var0_0.SHIP_ATTR_LV_5,
+		var0_0.SHIP_ATTR_LV_6
+	}
+end
+
+function var0_0.GetRuntimeTypes()
+	return {
+		var0_0.ISLAND_LV,
+		var0_0.FINISH_MAIN_TASK,
+		var0_0.SHIP_LV,
+		var0_0.SHIP_SKILL_LV,
+		var0_0.SHIP_ATTR_LV_1,
+		var0_0.SHIP_ATTR_LV_2,
+		var0_0.SHIP_ATTR_LV_3,
+		var0_0.SHIP_ATTR_LV_4,
+		var0_0.SHIP_ATTR_LV_5,
+		var0_0.SHIP_ATTR_LV_6,
+		var0_0.SHIP_SKIN,
+		var0_0.SHIP_DRESS_TYPE,
+		var0_0.COMMANDER_DRESS_TYPE,
+		var0_0.SEASON_RANK,
+		var0_0.SEASON_NUM,
+		var0_0.FINISH_TECH,
+		var0_0.FINISH_TYPE_TECH,
+		var0_0.RESTAURANT_SALES,
+		var0_0.FURNITURE
+	}
+end
+
+function var0_0.GetClientTypes()
+	return {
+		var0_0.NPC_INTERACT
+	}
+end
+
+return var0_0

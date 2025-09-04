@@ -39,6 +39,20 @@ function var0_0.register(arg0_1)
 			arg0_1:GetIsland():DispatchEvent(IslandSyncMgr.ISLAND_SYNC_OBJ_UPDATE, arg0_4.object_list)
 		end
 	end)
+	arg0_1:on(21304, function(arg0_6)
+		local var0_6 = arg0_1:GetIsland()
+		local var1_6 = getProxy(IslandProxy):GetIsland()
+
+		pg.m02:sendNotification(GAME.ISLAND_EXIT, {
+			id = var0_6.id,
+			callback = function()
+				pg.TipsMgr.GetInstance():ShowTips(i18n("island_visit_tip4"))
+				pg.m02:sendNotification(GAME.ISLAND_ENTER, {
+					id = var1_6.id
+				})
+			end
+		})
+	end)
 end
 
 return var0_0

@@ -352,6 +352,12 @@ function var0_0.execute(arg0_1, arg1_1)
 
 			Dorm3dRoomTemplateScene.FirstDefaultSetting = nil
 		end
+
+		pg.SdkMgr.GetInstance():QueryPendingTransaction()
+
+		if ISLAND_PLAYER_TESTING then
+			pg.WatermarkingMgr.GetInstance():Init(var0_2)
+		end
 	end, nil, 60)
 end
 

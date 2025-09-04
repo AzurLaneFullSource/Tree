@@ -134,19 +134,25 @@ var0_0.SDK_TRANS_URL = "https://migration.yostar.co.jp?pid=JP-AZURLANE"
 		end
 	end
 
+	function var0_0.SetBirthday()
+		if var0_0.GetIsPlatform() then
+			var1_0:SetBirthday()
+		end
+	end
+
 	function var0_0.ShowUserCenter()
 		if var0_0.GetIsPlatform() then
 			var1_0:ShowUserCenter()
 		end
 	end
 
-	function var0_0.Pay(arg0_24, arg1_24, arg2_24)
+	function var0_0.Pay(arg0_25, arg1_25, arg2_25)
 		if var0_0.GetIsPlatform() then
 			pg.UIMgr.GetInstance():LoadingOn()
 
 			var0_0.OnYoStarPaying = Time.realtimeSinceStartup
 
-			var1_0:Pay(arg0_24, arg1_24, arg2_24)
+			var1_0:Pay(arg0_25, arg1_25, arg2_25)
 		end
 	end
 
@@ -156,40 +162,40 @@ var0_0.SDK_TRANS_URL = "https://migration.yostar.co.jp?pid=JP-AZURLANE"
 		end
 	end
 
-	function var0_0.UserEventUpload(arg0_26)
+	function var0_0.UserEventUpload(arg0_27)
 		if var0_0.GetIsPlatform() then
-			var1_0:UserEventUpload(arg0_26)
+			var1_0:UserEventUpload(arg0_27)
 		end
 	end
 
 	function var0_0.RoleInfoUpload()
 		if var0_0.GetIsPlatform() then
-			local var0_27 = getProxy(PlayerProxy):getData()
-			local var1_27 = getProxy(UserProxy):getData()
-			local var2_27 = getProxy(ServerProxy):getLastServer(var1_27.uid)
-			local var3_27 = tostring(var2_27.id .. " - " .. var2_27.name)
-			local var4_27 = tostring(var0_27.id)
-			local var5_27 = var0_27.name
-			local var6_27 = {
-				(tostring(var0_27.rmb))
-			}
-			local var7_27 = YoStarRoleInfo.New(var3_27, var4_27, var5_27, var6_27)
-
-			var1_0:RoleInfoUpload(var7_27)
-		end
-	end
-
-	function var0_0.ShowSurvey(arg0_28, arg1_28)
-		if var0_0.GetIsPlatform() then
 			local var0_28 = getProxy(PlayerProxy):getData()
+			local var1_28 = getProxy(UserProxy):getData()
+			local var2_28 = getProxy(ServerProxy):getLastServer(var1_28.uid)
+			local var3_28 = tostring(var2_28.id .. " - " .. var2_28.name)
+			local var4_28 = tostring(var0_28.id)
+			local var5_28 = var0_28.name
+			local var6_28 = {
+				(tostring(var0_28.rmb))
+			}
+			local var7_28 = YoStarRoleInfo.New(var3_28, var4_28, var5_28, var6_28)
 
-			var1_0:ShowSurvey(arg0_28, tostring(var0_28.id), arg1_28)
+			var1_0:RoleInfoUpload(var7_28)
 		end
 	end
 
-	function var0_0.ShowAgreement(arg0_29)
+	function var0_0.ShowSurvey(arg0_29, arg1_29)
 		if var0_0.GetIsPlatform() then
-			var1_0:ShowSurvey(arg0_29)
+			local var0_29 = getProxy(PlayerProxy):getData()
+
+			var1_0:ShowSurvey(arg0_29, tostring(var0_29.id), arg1_29)
+		end
+	end
+
+	function var0_0.ShowAgreement(arg0_30)
+		if var0_0.GetIsPlatform() then
+			var1_0:ShowSurvey(arg0_30)
 		end
 	end
 
@@ -199,33 +205,33 @@ var0_0.SDK_TRANS_URL = "https://migration.yostar.co.jp?pid=JP-AZURLANE"
 		end
 	end
 
-	function var0_0.SystemShare(arg0_31, arg1_31)
+	function var0_0.SystemShare(arg0_32, arg1_32)
 		if var0_0.GetIsPlatform() then
-			var1_0:SystemShare(arg0_31, arg1_31)
+			var1_0:SystemShare(arg0_32, arg1_32)
 		end
 	end
 
-	function var0_0.ShareImage(arg0_32)
+	function var0_0.ShareImage(arg0_33)
 		if var0_0.GetIsPlatform() then
-			var1_0:ShareImage(arg0_32)
+			var1_0:ShareImage(arg0_33)
 		end
 	end
 
-	function var0_0.ShareUrl(arg0_33, arg1_33)
+	function var0_0.ShareUrl(arg0_34, arg1_34)
 		if var0_0.GetIsPlatform() then
-			var1_0:ShareUrl(arg0_33, arg1_33)
+			var1_0:ShareUrl(arg0_34, arg1_34)
 		end
 	end
 
-	function var0_0.ShowNetworkTest(arg0_34)
+	function var0_0.ShowNetworkTest(arg0_35)
 		if var0_0.GetIsPlatform() then
-			var1_0:ShowNetworkTest(arg0_34)
+			var1_0:ShowNetworkTest(arg0_35)
 		end
 	end
 
-	function var0_0.ShowWebView(arg0_35, arg1_35)
+	function var0_0.ShowWebView(arg0_36, arg1_36)
 		if var0_0.GetIsPlatform() then
-			var1_0:ShowWebView(arg0_35, arg1_35)
+			var1_0:ShowWebView(arg0_36, arg1_36)
 		end
 	end
 
@@ -235,21 +241,21 @@ var0_0.SDK_TRANS_URL = "https://migration.yostar.co.jp?pid=JP-AZURLANE"
 		end
 	end
 
-	function var0_0.QueryErrorMsg(arg0_37)
+	function var0_0.QueryErrorMsg(arg0_38)
 		if var0_0.GetIsPlatform() then
-			return var1_0:QueryErrorMsg(arg0_37)
+			return var1_0:QueryErrorMsg(arg0_38)
 		end
 	end
 
-	function var0_0.QuerySkuDetails(arg0_38)
+	function var0_0.QuerySkuDetails(arg0_39)
 		if var0_0.GetIsPlatform() then
 			var1_0:QuerySkuDetails()
 		end
 	end
 
-	function var0_0.QueryTextLegality(arg0_39)
+	function var0_0.QueryTextLegality(arg0_40)
 		if var0_0.GetIsPlatform() then
-			var1_0:QueryTextLegality(arg0_39)
+			var1_0:QueryTextLegality(arg0_40)
 		end
 	end
 
@@ -270,12 +276,24 @@ var0_0.SDK_TRANS_URL = "https://migration.yostar.co.jp?pid=JP-AZURLANE"
 			var1_0:CheckUserCacheExist()
 		end
 	end
+
+	function var0_0.BuildLocalNotification(arg0_44, arg1_44, arg2_44, arg3_44)
+		if var0_0.GetIsPlatform() then
+			var1_0:BuildLocalNotification(arg0_44, arg1_44, arg2_44, arg3_44)
+		end
+	end
+
+	function var0_0.DeleteLocalNotification(arg0_45)
+		if var0_0.GetIsPlatform() then
+			var1_0:DeleteLocalNotification(arg0_45)
+		end
+	end
 end)()
 ;(function()
-	function onInit_YoStar(arg0_44)
+	function onInit_YoStar(arg0_47)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		if var0_0.YoStarRetCodeHandler(arg0_44) then
+		if var0_0.YoStarRetCodeHandler(arg0_47) then
 			var0_0.YOSTAR_SDK_INITED = true
 
 			var0_0.FetchDeviceTrackingID()
@@ -283,57 +301,24 @@ end)()
 		end
 	end
 
-	function onLogin_YoStar(arg0_45)
+	function onLogin_YoStar(arg0_48)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		if var0_0.YoStarRetCodeHandler(arg0_45) then
-			local var0_45 = User.New({
+		if var0_0.YoStarRetCodeHandler(arg0_48) then
+			local var0_48 = User.New({
 				type = 1,
 				arg1 = var0_0.LoginPlatform,
-				arg2 = arg0_45.LOGIN_UID,
-				arg3 = arg0_45.LOGIN_TOKEN
+				arg2 = arg0_48.LOGIN_UID,
+				arg3 = arg0_48.LOGIN_TOKEN
 			})
 
 			pg.m02:sendNotification(GAME.PLATFORM_LOGIN_DONE, {
-				user = var0_45
+				user = var0_48
 			})
 		end
 	end
 
-	function onLogout_YoStar(arg0_46)
-		if var0_0.YoStarRetCodeHandler(arg0_46) then
-			pg.m02:sendNotification(GAME.LOGOUT, {
-				code = 0
-			})
-		end
-	end
-
-	function onPay_YoStar(arg0_47)
-		var0_0.OnYoStarPaying = -1
-
-		pg.UIMgr.GetInstance():LoadingOff()
-
-		if var0_0.YoStarRetCodeHandler(arg0_47) then
-			getProxy(ShopsProxy):removeWaitTimer()
-			pg.m02:sendNotification(GAME.CHARGE_CONFIRM, {
-				payId = arg0_47.EXTRA_DATA,
-				bsId = arg0_47.ORDER_ID
-			})
-		else
-			getProxy(ShopsProxy):removeWaitTimer()
-			pg.m02:sendNotification(GAME.CHARGE_FAILED, {
-				payId = arg0_47.EXTRA_DATA
-			})
-		end
-	end
-
-	function onSystemShare_YoStar(arg0_48)
-		if var0_0.YoStarRetCodeHandler(arg0_48) then
-			-- block empty
-		end
-	end
-
-	function onDeleteAccount_YoStar(arg0_49)
+	function onLogout_YoStar(arg0_49)
 		if var0_0.YoStarRetCodeHandler(arg0_49) then
 			pg.m02:sendNotification(GAME.LOGOUT, {
 				code = 0
@@ -341,71 +326,116 @@ end)()
 		end
 	end
 
-	function onClearSDKCache_YoStar(arg0_50)
+	function onPay_YoStar(arg0_50)
+		var0_0.OnYoStarPaying = -1
+
+		pg.UIMgr.GetInstance():LoadingOff()
+
 		if var0_0.YoStarRetCodeHandler(arg0_50) then
+			getProxy(ShopsProxy):removeWaitTimer()
+			pg.m02:sendNotification(GAME.CHARGE_CONFIRM, {
+				payId = arg0_50.EXTRA_DATA,
+				bsId = arg0_50.ORDER_ID
+			})
+		else
+			getProxy(ShopsProxy):removeWaitTimer()
+			pg.m02:sendNotification(GAME.CHARGE_FAILED, {
+				payId = arg0_50.EXTRA_DATA
+			})
+		end
+	end
+
+	function onSystemShare_YoStar(arg0_51)
+		if var0_0.YoStarRetCodeHandler(arg0_51) then
+			-- block empty
+		end
+	end
+
+	function onDeleteAccount_YoStar(arg0_52)
+		if var0_0.YoStarRetCodeHandler(arg0_52) then
 			pg.m02:sendNotification(GAME.LOGOUT, {
 				code = 0
 			})
 		end
 	end
 
-	function onQuerySkuDetails_YoStar(arg0_51)
-		if var0_0.YoStarRetCodeHandler(arg0_51) then
-			-- block empty
+	function onClearSDKCache_YoStar(arg0_53)
+		if var0_0.YoStarRetCodeHandler(arg0_53) then
+			pg.m02:sendNotification(GAME.LOGOUT, {
+				code = 0
+			})
 		end
 	end
 
-	function onUserSurvey_YoStar(arg0_52)
-		if var0_0.YoStarRetCodeHandler(arg0_52) then
-			-- block empty
-		end
-	end
-
-	function onSwitchServer_YoStar(arg0_53)
-		return
-	end
-
-	function onQueryTextLegality_YoStar(arg0_54)
+	function onQuerySkuDetails_YoStar(arg0_54)
 		if var0_0.YoStarRetCodeHandler(arg0_54) then
 			-- block empty
 		end
 	end
 
-	function onPushMsgReceive_YoStar(arg0_55)
+	function onUserSurvey_YoStar(arg0_55)
 		if var0_0.YoStarRetCodeHandler(arg0_55) then
 			-- block empty
 		end
 	end
 
-	function onUniversalLink_YoStar(arg0_56)
-		if var0_0.YoStarRetCodeHandler(arg0_56) then
+	function onSwitchServer_YoStar(arg0_56)
+		return
+	end
+
+	function onQueryTextLegality_YoStar(arg0_57)
+		if var0_0.YoStarRetCodeHandler(arg0_57) then
 			-- block empty
 		end
 	end
 
-	function onDeviceTrackingID_YoStar(arg0_57)
-		if var0_0.YoStarRetCodeHandler(arg0_57) then
-			var0_0.DeviceID = arg0_57.DATA
+	function onPushMsgReceive_YoStar(arg0_58)
+		if var0_0.YoStarRetCodeHandler(arg0_58) then
+			-- block empty
+		end
+	end
+
+	function onUniversalLink_YoStar(arg0_59)
+		if var0_0.YoStarRetCodeHandler(arg0_59) then
+			-- block empty
+		end
+	end
+
+	function onDeviceTrackingID_YoStar(arg0_60)
+		if var0_0.YoStarRetCodeHandler(arg0_60) then
+			var0_0.DeviceID = arg0_60.DATA
+		end
+	end
+
+	function onLocalNotification_YoStar(arg0_61)
+		if var0_0.YoStarRetCodeHandler(arg0_61) then
+			-- block empty
+		end
+	end
+
+	function onSetBirthday_YoStar(arg0_62)
+		if var0_0.YoStarRetCodeHandler(arg0_62) then
+			-- block empty
 		end
 	end
 end)()
 
-function var0_0.YoStarRetCodeHandler(arg0_58)
-	local var0_58 = arg0_58.R_CODE
+function var0_0.YoStarRetCodeHandler(arg0_63)
+	local var0_63 = arg0_63.R_CODE
 
-	if var0_58 == 0 then
+	if var0_63 == 0 then
 		return true
 	else
-		local var1_58 = "SDK Error Code:" .. var0_58
+		local var1_63 = "SDK Error Code:" .. var0_63
 
-		originalPrint(var1_58)
+		originalPrint(var1_63)
 
-		local var2_58 = var0_0.QueryErrorMsg(var0_58)
+		local var2_63 = var0_0.QueryErrorMsg(var0_63)
 
-		if var2_58 and string.len(var2_58) > 0 then
-			pg.TipsMgr.GetInstance():ShowTips(var2_58)
+		if var2_63 and string.len(var2_63) > 0 then
+			pg.TipsMgr.GetInstance():ShowTips(var2_63)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(var1_58)
+			pg.TipsMgr.GetInstance():ShowTips(var1_63)
 		end
 	end
 

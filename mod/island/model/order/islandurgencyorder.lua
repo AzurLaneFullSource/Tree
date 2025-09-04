@@ -5,7 +5,7 @@ function var0_0.IsUrgency(arg0_1)
 end
 
 function var0_0.GetTitle(arg0_2)
-	return i18n1("加急订单")
+	return i18n("island_order_type_2")
 end
 
 function var0_0.IsEmpty(arg0_3)

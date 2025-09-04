@@ -11,7 +11,7 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.confirmBtn = arg0_2:findTF("frame/button_list/confirm")
 
 	setText(arg0_2:findTF("frame/top/title"), i18n("child_filter_title"))
-	setText(arg0_2.cancelBtn:Find("Text"), i18n1("重置"))
+	setText(arg0_2.cancelBtn:Find("Text"), i18n("island_word_reset"))
 	setText(arg0_2.confirmBtn:Find("Text"), i18n("word_ok"))
 end
 

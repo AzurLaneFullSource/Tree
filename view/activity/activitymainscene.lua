@@ -42,14 +42,23 @@ end
 local var1_0
 
 function var0_0.init(arg0_5)
-	arg0_5.btnBack = arg0_5:findTF("blur_panel/adapt/top/back_btn")
-	arg0_5.pageContainer = arg0_5:findTF("pages")
-	arg0_5.permanentFinshMask = arg0_5:findTF("pages_finish")
-	arg0_5.tabs = arg0_5:findTF("scroll/viewport/content")
-	arg0_5.tab = arg0_5:findTF("tab", arg0_5.tabs)
-	arg0_5.entranceList = UIItemList.New(arg0_5:findTF("enter/viewport/content"), arg0_5:findTF("enter/viewport/content/btn"))
+	local var0_5 = arg0_5._tf:GetComponent(typeof(ItemList)).prefabItem:ToTable()
+
+	for iter0_5, iter1_5 in ipairs({
+		"btnBack",
+		"pageContainer",
+		"permanentFinshMask",
+		"tabs",
+		"tab",
+		"entranceContent",
+		"entranceTpl",
+		"lockAll"
+	}) do
+		arg0_5[iter1_5] = var0_5[iter0_5].transform
+	end
+
+	arg0_5.entranceList = UIItemList.New(arg0_5.entranceContent, arg0_5.entranceTpl)
 	arg0_5.windowList = {}
-	arg0_5.lockAll = arg0_5:findTF("blur_panel/lock_all")
 	arg0_5.awardWindow = AwardWindow.New(arg0_5._tf, arg0_5.event)
 	arg0_5.chargeTipWindow = ChargeTipWindow.New(arg0_5._tf, arg0_5.event)
 
@@ -114,6 +123,7 @@ function var0_0.didEnter(arg0_10)
 	end, SOUND_BACK)
 	arg0_10:updateEntrances()
 	arg0_10:emit(ActivityMediator.SHOW_NEXT_ACTIVITY)
+	pg.CameraFixMgr.GetInstance():Adapt()
 end
 
 function var0_0.setPlayer(arg0_16, arg1_16)

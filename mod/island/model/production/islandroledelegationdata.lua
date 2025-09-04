@@ -10,8 +10,22 @@ function var0_0.UpdateData(arg0_2, arg1_2)
 	arg0_2.get_times = arg1_2.get_times
 	arg0_2.formula_id = arg1_2.formula_id
 	arg0_2.start_time = arg1_2.start_time
-	arg0_2.end_time = arg1_2.end_time
-	arg0_2.once_cost_time = arg1_2.once_cost_time
+	arg0_2.cost_time_list = arg1_2.cost_time_list
+	arg0_2.end_time = arg0_2.start_time
+
+	for iter0_2, iter1_2 in ipairs(arg0_2.cost_time_list) do
+		arg0_2.end_time = arg0_2.end_time + iter1_2
+	end
+
+	arg0_2.cost_Alltime_list = {}
+
+	local var0_2 = 0
+
+	for iter2_2, iter3_2 in ipairs(arg0_2.cost_time_list) do
+		arg0_2.cost_Alltime_list[iter2_2] = iter3_2 + var0_2
+		var0_2 = var0_2 + iter3_2
+	end
+
 	arg0_2.once_cost_power = arg1_2.once_cost_power
 	arg0_2.item_times = arg1_2.item_times or 0
 	arg0_2.allTime = arg0_2.end_time - arg0_2.start_time
@@ -20,7 +34,7 @@ function var0_0.UpdateData(arg0_2, arg1_2)
 end
 
 function var0_0.ResetGetTimes(arg0_3, arg1_3)
-	arg0_3.get_times = arg1_3
+	arg0_3.get_times = arg0_3.get_times + arg1_3
 end
 
 function var0_0.ResetItem_times(arg0_4, arg1_4)
@@ -47,22 +61,31 @@ function var0_0.SetIsSend(arg0_9, arg1_9)
 	arg0_9.issend = arg1_9
 end
 
-function var0_0.InCurrentTimes(arg0_10)
-	local var0_10 = math.floor((pg.TimeMgr.GetInstance():GetServerTime() + arg0_10.item_times - arg0_10.start_time) / arg0_10.once_cost_time)
+function var0_0.InCurrentTime(arg0_10)
+	local var0_10 = pg.TimeMgr.GetInstance():GetServerTime() + arg0_10.item_times - arg0_10.start_time
 
-	return var0_10 < arg0_10.max_times and var0_10 or arg0_10.max_times
+	for iter0_10, iter1_10 in ipairs(arg0_10.cost_Alltime_list) do
+		if var0_10 <= iter1_10 then
+			return iter0_10
+		end
+	end
+
+	return #arg0_10.cost_Alltime_list
 end
 
-function var0_0.InCurrentTimeOver(arg0_11)
-	local var0_11 = arg0_11:InCurrentTimes()
+function var0_0.InCurrentTimeStart(arg0_11, arg1_11)
+	local var0_11 = 0
+	local var1_11 = arg1_11 - 1
 
-	return arg0_11.start_time + (var0_11 + 1) * arg0_11.once_cost_time
+	for iter0_11 = 1, var1_11 do
+		var0_11 = var0_11 + arg0_11.cost_time_list[iter0_11]
+	end
+
+	return var0_11 + arg0_11.start_time
 end
 
-function var0_0.InCurrentTimeStart(arg0_12)
-	local var0_12 = arg0_12:InCurrentTimes()
-
-	return arg0_12.start_time + var0_12 * arg0_12.once_cost_time
+function var0_0.CurrentTimeNeed(arg0_12, arg1_12)
+	return arg0_12.cost_time_list[arg1_12]
 end
 
 function var0_0.CheckDelegationIsEnd(arg0_13)
@@ -72,7 +95,7 @@ function var0_0.CheckDelegationIsEnd(arg0_13)
 end
 
 function var0_0.CanRewardTimes(arg0_14)
-	return arg0_14:InCurrentTimes() - arg0_14.get_times
+	return arg0_14:InCurrentTime() - 1 - arg0_14.get_times
 end
 
 return var0_0

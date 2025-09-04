@@ -6,9 +6,12 @@ end
 
 function var0_0.OnLoaded(arg0_2)
 	arg0_2.contentText = arg0_2._tf:Find("Text")
+
+	setText(arg0_2.contentText, "")
+
 	arg0_2.prevBtn = arg0_2._tf:Find("bottom/left_arr")
 	arg0_2.nextBtn = arg0_2._tf:Find("bottom/right_arr")
-	arg0_2.scrollrect = arg0_2._tf:Find("bottom/scroll"):GetComponent("LScrollRect")
+	arg0_2.scrollrect = arg0_2._tf:Find("bottom/scroll/content"):GetComponent("LScrollRect")
 	arg0_2.scrollrect.isNewLoadingMethod = true
 
 	function arg0_2.scrollrect.onInitItem(arg0_3)
@@ -35,213 +38,199 @@ function var0_0.OnInit(arg0_5)
 	end, SFX_PANEL)
 
 	arg0_5.cards = {}
-
-	arg0_5:Flush()
 end
 
-function var0_0.AddListeners(arg0_10)
-	arg0_10:AddListener(IslandCharacterAgency.ADD_SHIP, arg0_10.Flush)
+function var0_0.OnShow(arg0_10)
+	arg0_10.triggerFirstCard = true
+	arg0_10.selectedId = nil
+
+	arg0_10:Flush()
 end
 
-function var0_0.RemoveListeners(arg0_11)
-	arg0_11:RemoveListener(IslandCharacterAgency.ADD_SHIP, arg0_11.Flush)
-end
+function var0_0.Flush(arg0_11)
+	arg0_11.triggerFirstCard = true
+	arg0_11.displays = {}
 
-function var0_0.Flush(arg0_12)
-	arg0_12.triggerFirstCard = true
-	arg0_12.displays = {}
+	local var0_11 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetInviteList()
 
-	for iter0_12, iter1_12 in ipairs(pg.island_ship.all) do
-		if IslandShip.StaticCanUnlock(iter1_12) then
-			table.insert(arg0_12.displays, iter1_12)
-		end
+	for iter0_11, iter1_11 in ipairs(var0_11) do
+		local var1_11 = IslandInvitation.New(iter1_11)
+
+		table.insert(arg0_11.displays, var1_11)
 	end
 
-	arg0_12.scrollrect:SetTotalCount(#arg0_12.displays, 0)
+	arg0_11.scrollrect:SetTotalCount(#arg0_11.displays)
 end
 
-function var0_0.OnInitItem(arg0_13, arg1_13)
-	local var0_13 = IslandInviteShipCard.New(arg1_13)
+function var0_0.OnInitItem(arg0_12, arg1_12)
+	local var0_12 = IslandInviteShipCard.New(arg1_12)
 
-	onButton(arg0_13, var0_13.frameTF, function()
-		for iter0_14, iter1_14 in pairs(arg0_13.cards) do
-			iter1_14:UpdateSelected(nil)
+	onButton(arg0_12, var0_12.frameTF, function()
+		for iter0_13, iter1_13 in pairs(arg0_12.cards) do
+			iter1_13:UpdateSelected(nil)
 		end
 
-		arg0_13.selectedId = var0_13.configId
+		arg0_12.selectedId = var0_12.item.shipId
 
-		var0_13:UpdateSelected(arg0_13.selectedId)
-		setText(arg0_13.contentText, "目前选中的是:" .. pg.island_ship[arg0_13.selectedId].name)
+		var0_12:UpdateSelected(arg0_12.selectedId)
 	end, SFX_PANEL)
-	arg0_13:AddDrag(var0_13.frameTF, function()
-		local var0_15 = IslandShip.StaticGetUnlockItemId(var0_13.configId)
-
-		if not var0_15 then
-			return
-		end
-
-		local var1_15 = pg.island_item_data_template[var0_15].name
-		local var2_15 = pg.island_ship[var0_13.configId].name
-
-		arg0_13:ShowMsgBox({
-			content = i18n1("消耗" .. var1_15 .. "X1，邀请" .. var2_15 .. "\n加入队伍,是否确定？"),
-			onYes = function()
-				arg0_13:emit(IslandMediator.ON_USE_ITEM, var0_15, 1)
-			end
-		})
+	arg0_12:AddDrag(var0_12.frameTF, function()
+		arg0_12:emit(IslandMediator.INVITE_SHIP, var0_12.item.shipId)
 	end)
 
-	arg0_13.cards[arg1_13] = var0_13
+	arg0_12.cards[arg1_12] = var0_12
 end
 
-function var0_0.OnUpdateItem(arg0_17, arg1_17, arg2_17)
-	local var0_17 = arg0_17.cards[arg2_17]
+function var0_0.OnUpdateItem(arg0_15, arg1_15, arg2_15)
+	local var0_15 = arg0_15.cards[arg2_15]
 
-	if not var0_17 then
-		arg0_17:OnInitItem(arg2_17)
+	if not var0_15 then
+		arg0_15:OnInitItem(arg2_15)
 
-		var0_17 = arg0_17.cards[arg2_17]
+		var0_15 = arg0_15.cards[arg2_15]
 	end
 
-	local var1_17 = arg0_17.displays[arg1_17 + 1]
+	local var1_15 = arg0_15.displays[arg1_15 + 1]
 
-	var0_17:Update(var1_17, arg0_17.selectedId)
+	var0_15:Update(var1_15, arg0_15.selectedId)
 
-	if arg0_17.triggerFirstCard and arg1_17 == 0 then
-		arg0_17.triggerFirstCard = nil
+	arg2_15.name = var0_15.item.shipId
 
-		triggerButton(var0_17.frameTF)
+	if arg0_15.triggerFirstCard and arg1_15 == 0 then
+		arg0_15.triggerFirstCard = nil
+
+		triggerButton(var0_15.frameTF)
 	end
 end
 
-function var0_0.AddDrag(arg0_18, arg1_18, arg2_18, arg3_18)
-	local var0_18 = GetOrAddComponent(arg1_18, "EventTriggerListener")
-	local var1_18
-	local var2_18 = 0
-	local var3_18 = 50
-	local var4_18 = arg1_18.rect.height / 2
+function var0_0.AddDrag(arg0_16, arg1_16, arg2_16, arg3_16)
+	local var0_16 = GetOrAddComponent(arg1_16, "EventTriggerListener")
+	local var1_16
+	local var2_16 = 0
+	local var3_16 = 50
+	local var4_16 = arg1_16.rect.height / 2
 
-	var0_18:AddPointDownFunc(function()
-		var2_18 = 0
-		var1_18 = nil
+	var0_16:AddPointDownFunc(function()
+		var2_16 = 0
+		var1_16 = nil
 	end)
-	var0_18:AddDragFunc(function(arg0_20, arg1_20)
-		local var0_20 = arg1_20.position
+	var0_16:AddDragFunc(function(arg0_18, arg1_18)
+		local var0_18 = arg1_18.position
 
-		if not var1_18 then
-			var1_18 = var0_20
+		if not var1_16 then
+			var1_16 = var0_18
 		end
 
-		var2_18 = var0_20.y - var1_18.y
+		var2_16 = var0_18.y - var1_16.y
 
-		if var2_18 > 0 then
-			setLocalPosition(arg1_18, {
+		if var2_16 > 0 then
+			setLocalPosition(arg1_16, {
 				x = 0,
-				y = var2_18 - var4_18
+				y = var2_16 - var4_16
 			})
 		else
-			setLocalPosition(arg1_18, {
+			setLocalPosition(arg1_16, {
 				x = 0,
-				y = -var4_18
+				y = -var4_16
 			})
 		end
 	end)
-	var0_18:AddPointUpFunc(function(arg0_21, arg1_21)
-		setLocalPosition(arg1_18, {
+	var0_16:AddPointUpFunc(function(arg0_19, arg1_19)
+		setLocalPosition(arg1_16, {
 			x = 0,
-			y = -var4_18
+			y = -var4_16
 		})
 
-		if var2_18 > var3_18 then
-			existCall(arg2_18)
+		if var2_16 > var3_16 then
+			existCall(arg2_16)
 		else
-			existCall(arg3_18)
+			existCall(arg3_16)
 		end
 	end)
 end
 
-function var0_0.GetCommodityIndex(arg0_22, arg1_22)
-	for iter0_22, iter1_22 in ipairs(arg0_22.displays) do
-		if iter1_22 == arg1_22 then
-			return iter0_22
+function var0_0.GetCommodityIndex(arg0_20, arg1_20)
+	for iter0_20, iter1_20 in ipairs(arg0_20.displays) do
+		if iter1_20.shipId == arg1_20 then
+			return iter0_20
 		end
 	end
 end
 
-function var0_0.OnPrev(arg0_23)
-	if not arg0_23.selectedId then
+function var0_0.OnPrev(arg0_21)
+	if not arg0_21.selectedId then
 		return
 	end
 
-	local var0_23 = arg0_23:GetCommodityIndex(arg0_23.selectedId)
+	local var0_21 = arg0_21:GetCommodityIndex(arg0_21.selectedId)
 
-	if var0_23 - 1 > 0 then
-		arg0_23:TriggerCommodity(var0_23, -1)
+	if var0_21 - 1 > 0 then
+		arg0_21:TriggerCommodity(var0_21, -1)
 	end
 end
 
-function var0_0.OnNext(arg0_24)
-	if not arg0_24.selectedId then
+function var0_0.OnNext(arg0_22)
+	if not arg0_22.selectedId then
 		return
 	end
 
-	local var0_24 = arg0_24:GetCommodityIndex(arg0_24.selectedId)
+	local var0_22 = arg0_22:GetCommodityIndex(arg0_22.selectedId)
 
-	if var0_24 + 1 <= #arg0_24.displays then
-		arg0_24:TriggerCommodity(var0_24, 1)
+	if var0_22 + 1 <= #arg0_22.displays then
+		arg0_22:TriggerCommodity(var0_22, 1)
 	end
 end
 
-function var0_0.TriggerCommodity(arg0_25, arg1_25, arg2_25)
-	local var0_25 = arg0_25.displays[arg1_25]
-	local var1_25 = arg0_25.displays[arg1_25 + arg2_25]
-	local var2_25
-	local var3_25
+function var0_0.TriggerCommodity(arg0_23, arg1_23, arg2_23)
+	local var0_23 = arg0_23.displays[arg1_23].shipId
+	local var1_23 = arg0_23.displays[arg1_23 + arg2_23].shipId
+	local var2_23
+	local var3_23
 
-	for iter0_25, iter1_25 in pairs(arg0_25.cards) do
-		if iter1_25._tf.gameObject.name ~= "-1" then
-			if iter1_25.configId == var1_25 then
-				var2_25 = iter1_25
-			elseif iter1_25.configId == var0_25 then
-				var3_25 = iter1_25
+	for iter0_23, iter1_23 in pairs(arg0_23.cards) do
+		if iter1_23._tf.gameObject.name ~= "-1" then
+			if iter1_23.item.shipId == var1_23 then
+				var2_23 = iter1_23
+			elseif iter1_23.item.shipId == var0_23 then
+				var3_23 = iter1_23
 			end
 		end
 	end
 
-	if var2_25 then
-		triggerButton(var2_25.frameTF)
+	if var2_23 then
+		triggerButton(var2_23.frameTF)
 	end
 
-	if var2_25 and var3_25 then
-		arg0_25:CheckCardBound(var2_25, var3_25, arg2_25 > 0, arg1_25 + arg2_25)
+	if var2_23 and var3_23 then
+		arg0_23:CheckCardBound(var2_23, var3_23, arg2_23 > 0, arg1_23 + arg2_23)
 	end
 end
 
-function var0_0.CheckCardBound(arg0_26, arg1_26, arg2_26, arg3_26, arg4_26)
-	local var0_26 = getBounds(arg0_26.scrollrect.gameObject.transform)
+function var0_0.CheckCardBound(arg0_24, arg1_24, arg2_24, arg3_24, arg4_24)
+	local var0_24 = getBounds(arg0_24.scrollrect.gameObject.transform)
 
-	if arg3_26 then
-		local var1_26 = getBounds(arg2_26._tf)
-		local var2_26 = getBounds(arg1_26._tf)
+	if arg3_24 then
+		local var1_24 = getBounds(arg2_24._tf)
+		local var2_24 = getBounds(arg1_24._tf)
 
-		if math.ceil(var2_26:GetMax().x - var0_26:GetMax().x) > var1_26.size.x then
-			local var3_26 = arg0_26.scrollrect:HeadIndexToValue(arg4_26 - 1) - arg0_26.scrollrect:HeadIndexToValue(arg4_26)
-			local var4_26 = arg0_26.scrollrect.value - var3_26
+		if math.ceil(var2_24:GetMax().x - var0_24:GetMax().x) > var1_24.size.x then
+			local var3_24 = arg0_24.scrollrect:HeadIndexToValue(arg4_24 - 1) - arg0_24.scrollrect:HeadIndexToValue(arg4_24)
+			local var4_24 = arg0_24.scrollrect.value - var3_24
 
-			arg0_26.scrollrect:SetNormalizedPosition(var4_26, 0)
+			arg0_24.scrollrect:SetNormalizedPosition(var4_24, 0)
 		end
 	else
-		local var5_26 = getBounds(arg1_26._tf)
+		local var5_24 = getBounds(arg1_24._tf)
 
-		if getBounds(arg1_26._tf.parent):GetMin().x < var0_26:GetMin().x and var5_26:GetMin().x < var0_26:GetMin().x then
-			local var6_26 = arg0_26.scrollrect:HeadIndexToValue(arg4_26 - 1)
+		if getBounds(arg1_24._tf.parent):GetMin().x < var0_24:GetMin().x and var5_24:GetMin().x < var0_24:GetMin().x then
+			local var6_24 = arg0_24.scrollrect:HeadIndexToValue(arg4_24 - 1)
 
-			arg0_26.scrollrect:SetNormalizedPosition(var6_26, 0)
+			arg0_24.scrollrect:SetNormalizedPosition(var6_24, 0)
 		end
 	end
 end
 
-function var0_0.OnDestroy(arg0_27)
+function var0_0.OnDestroy(arg0_25)
 	return
 end
 

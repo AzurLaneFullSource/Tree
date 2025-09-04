@@ -24,6 +24,36 @@ function var0_0.Ctor(arg0_2, arg1_2)
 	arg0_2.loadLoading = findTF(arg0_2._tf, "loading")
 
 	setText(arg0_2._tf:Find("title"), arg0_2:GetTitle())
+
+	local var0_2 = arg1_2.isDel or false
+
+	arg0_2.delBtn = findTF(arg0_2._tf, "DelBtn")
+
+	setActive(arg0_2.delBtn, var0_2)
+
+	local var1_2 = arg0_2.delBtn:Find("Text")
+
+	setText(var1_2, i18n("resource_clear_generaltext"))
+
+	local var2_2 = arg0_2._tf:Find("BG")
+	local var3_2 = arg0_2._tf:Find("BGDel")
+
+	setActive(var2_2, not var0_2)
+	setActive(var3_2, var0_2)
+
+	local var4_2 = arg0_2._tf:Find("status")
+	local var5_2 = arg0_2._tf:Find("version")
+
+	setAnchoredPosition(var4_2, var0_2 and {
+		y = -106
+	} or {
+		y = -135
+	})
+	setAnchoredPosition(var5_2, var0_2 and {
+		y = -160
+	} or {
+		y = -198
+	})
 	arg0_2:Init()
 	arg0_2:InitPrefsBar()
 end
@@ -58,148 +88,186 @@ function var0_0.Init(arg0_3)
 			})
 		end
 	end, SFX_PANEL)
+
+	if isActive(arg0_3.delBtn) then
+		onButton(arg0_3, arg0_3.delBtn, function()
+			local var0_6 = arg0_3:GetDownloadGroup()
+			local var1_6 = GroupHelper.GetGroupMgrByName(var0_6)
+			local var2_6 = HashUtil.BytesToString(var1_6:GetAllCacheFileSize())
+			local var3_6 = arg0_3:getDelTipName()
+			local var4_6 = i18n(var3_6, var2_6)
+
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				type = MSGBOX_TYPE_CONFIRM,
+				content = var4_6,
+				onYes = function()
+					GroupHelper.SetGroupPrefsByName(var0_6, DMFileChecker.Prefs.Min)
+
+					local var0_7 = HotfixHelper.GetAllShortPathArrInGroup(var0_6)
+
+					if var0_7 and var0_7.Length > 0 then
+						HotfixHelper.DeleteFileByShortPathArr(var0_6, var0_7)
+					end
+				end
+			})
+		end, SFX_PANEL)
+	end
+
 	arg0_3:Check()
 end
 
-function var0_0.InitPrefsBar(arg0_6)
-	arg0_6.prefsBar = findTF(arg0_6._tf, "PrefsBar")
+function var0_0.InitPrefsBar(arg0_8)
+	arg0_8.prefsBar = findTF(arg0_8._tf, "PrefsBar")
 
-	setText(findTF(arg0_6.prefsBar, "Text"), i18n("setting_group_prefs_tip"))
-	setActive(arg0_6.prefsBar, true)
+	setText(findTF(arg0_8.prefsBar, "Text"), i18n("setting_group_prefs_tip"))
+	setActive(arg0_8.prefsBar, true)
 
-	local var0_6 = arg0_6:GetDownloadGroup()
+	local var0_8 = arg0_8:GetDownloadGroup()
 
-	arg0_6.hideTip = true
+	arg0_8.hideTip = true
 
-	onToggle(arg0_6, arg0_6.prefsBar, function(arg0_7)
+	onToggle(arg0_8, arg0_8.prefsBar, function(arg0_9)
 		if Live2dConst.GetLive2DArm32MatchAble() then
-			if arg0_7 then
+			if arg0_9 then
 				Live2dConst.ShowLive2DArm32Tips()
-				triggerToggle(arg0_6.prefsBar, false)
+				triggerToggle(arg0_8.prefsBar, false)
 			end
 
 			return
 		end
 
-		if arg0_7 == true then
-			GroupHelper.SetGroupPrefsByName(var0_6, DMFileChecker.Prefs.Max)
+		if arg0_9 == true then
+			GroupHelper.SetGroupPrefsByName(var0_8, DMFileChecker.Prefs.Max)
 		else
-			GroupHelper.SetGroupPrefsByName(var0_6, DMFileChecker.Prefs.Min)
+			GroupHelper.SetGroupPrefsByName(var0_8, DMFileChecker.Prefs.Min)
 		end
 
-		if not arg0_6.hideTip then
+		if not arg0_8.hideTip then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("group_prefs_switch_tip"))
 		end
 	end, SFX_PANEL)
-	triggerToggle(arg0_6.prefsBar, GroupHelper.GetGroupPrefsByName(var0_6) == DMFileChecker.Prefs.Max)
+	triggerToggle(arg0_8.prefsBar, GroupHelper.GetGroupPrefsByName(var0_8) == DMFileChecker.Prefs.Max)
 
-	arg0_6.hideTip = false
+	arg0_8.hideTip = false
 end
 
-function var0_0.Check(arg0_8)
-	arg0_8.timer = Timer.New(function()
-		arg0_8:UpdateDownLoadState()
+function var0_0.Check(arg0_10)
+	arg0_10.timer = Timer.New(function()
+		arg0_10:UpdateDownLoadState()
 	end, 0.5, -1)
 
-	arg0_8.timer:Start()
-	arg0_8:UpdateDownLoadState()
+	arg0_10.timer:Start()
+	arg0_10:UpdateDownLoadState()
 end
 
-function var0_0.UpdateDownLoadState(arg0_10)
-	local var0_10 = arg0_10:GetDownloadGroup()
-	local var1_10 = BundleWizard.Inst:GetGroupMgr(var0_10)
-	local var2_10
-	local var3_10
-	local var4_10
-	local var5_10
-	local var6_10
-	local var7_10 = false
-	local var8_10 = pg.SettingsGroupMgr:GetInstance():GetState(var0_10)
-	local var9_10
-	local var10_10
-	local var11_10
+function var0_0.UpdateDownLoadState(arg0_12)
+	local var0_12 = arg0_12:GetDownloadGroup()
+	local var1_12 = BundleWizard.Inst:GetGroupMgr(var0_12)
+	local var2_12
+	local var3_12
+	local var4_12
+	local var5_12
+	local var6_12
+	local var7_12 = false
+	local var8_12 = pg.SettingsGroupMgr:GetInstance():GetState(var0_12)
+	local var9_12
+	local var10_12
+	local var11_12
 
 	if IsUnityEditor then
-		var9_10 = 1
-		var11_10 = 1
+		var9_12 = 1
+		var11_12 = 1
 	else
-		var9_10 = tonumber(var1_10.localVersion.Build)
-		var11_10 = tonumber(var1_10.serverVersion.Build)
+		var9_12 = tonumber(var1_12.localVersion.Build)
+		var11_12 = tonumber(var1_12.serverVersion.Build)
 	end
 
-	if var8_10 == pg.SettingsGroupMgr.State.None then
-		if var9_10 < var11_10 then
-			var3_10 = i18n("word_maingroup_checktoupdate")
-			var4_10 = string.format("V.%d > V.%d", var9_10, var11_10)
-			var6_10 = true
+	if var8_12 == pg.SettingsGroupMgr.State.None then
+		if var9_12 < var11_12 then
+			var3_12 = i18n("word_maingroup_checktoupdate")
+			var4_12 = string.format("V.%d > V.%d", var9_12, var11_12)
+			var6_12 = true
 		else
-			var3_10 = i18n("word_maingroup_updatesuccess")
-			var4_10 = string.format("V.%d", var1_10.CurrentVersion.Build)
-			var6_10 = false
+			var3_12 = i18n("word_maingroup_updatesuccess")
+			var4_12 = string.format("V.%d", var1_12.CurrentVersion.Build)
+			var6_12 = false
 		end
 
-		var5_10 = 0
-		var7_10 = false
-	elseif var8_10 == pg.SettingsGroupMgr.State.Updating then
-		local var12_10, var13_10 = pg.SettingsGroupMgr:GetInstance():GetCountProgress(var0_10)
+		var5_12 = 0
+		var7_12 = false
+	elseif var8_12 == pg.SettingsGroupMgr.State.Updating then
+		local var12_12, var13_12 = pg.SettingsGroupMgr:GetInstance():GetCountProgress(var0_12)
 
-		var3_10 = i18n("word_maingroup_updating")
-		var4_10 = string.format("(%d/%d)", var12_10, var13_10)
-		var5_10 = var12_10 / math.max(var13_10, 1)
-		var6_10 = false
-		var7_10 = true
-	elseif var8_10 == pg.SettingsGroupMgr.State.Success then
-		var3_10 = i18n("word_maingroup_updatesuccess")
-		var4_10 = "V." .. var1_10.CurrentVersion.Build
-		var5_10 = 1
-		var6_10 = false
-		var7_10 = false
-	elseif var8_10 == pg.SettingsGroupMgr.State.Fail then
-		var3_10 = i18n("word_maingroup_updatefailure")
+		var3_12 = i18n("word_maingroup_updating")
+		var4_12 = string.format("(%d/%d)", var12_12, var13_12)
+		var5_12 = var12_12 / math.max(var13_12, 1)
+		var6_12 = false
+		var7_12 = true
+	elseif var8_12 == pg.SettingsGroupMgr.State.Success then
+		var3_12 = i18n("word_maingroup_updatesuccess")
+		var4_12 = "V." .. var1_12.CurrentVersion.Build
+		var5_12 = 1
+		var6_12 = false
+		var7_12 = false
+	elseif var8_12 == pg.SettingsGroupMgr.State.Fail then
+		var3_12 = i18n("word_maingroup_updatefailure")
 
-		if var9_10 < var11_10 then
-			var4_10 = string.format("V.%d > V.%d", var9_10, var11_10)
+		if var9_12 < var11_12 then
+			var4_12 = string.format("V.%d > V.%d", var9_12, var11_12)
 		else
-			var4_10 = string.format("V.%d", var1_10.CurrentVersion.Build)
+			var4_12 = string.format("V.%d", var1_12.CurrentVersion.Build)
 		end
 
-		var5_10 = 0
-		var6_10 = true
-		var7_10 = false
+		var5_12 = 0
+		var6_12 = true
+		var7_12 = false
 	end
 
-	setText(arg0_10.loadInfo1, var3_10)
-	setText(arg0_10.loadInfo2, var4_10)
-	setSlider(arg0_10.loadProgress, 0, 1, var5_10)
-	setActive(arg0_10.loadProgressHandle, var5_10 ~= 0 and var5_10 ~= 1)
-	setActive(arg0_10.loadDot, var6_10)
-	setActive(arg0_10.loadLoading, var7_10)
-	setActive(arg0_10.loadLabelNew, var9_10 < var11_10)
+	setText(arg0_12.loadInfo1, var3_12)
+	setText(arg0_12.loadInfo2, var4_12)
+	setSlider(arg0_12.loadProgress, 0, 1, var5_12)
+	setActive(arg0_12.loadProgressHandle, var5_12 ~= 0 and var5_12 ~= 1)
+	setActive(arg0_12.loadDot, var6_12)
+	setActive(arg0_12.loadLoading, var7_12)
+	setActive(arg0_12.loadLabelNew, var9_12 < var11_12)
 end
 
-function var0_0.Dispose(arg0_11)
-	pg.DelegateInfo.Dispose(arg0_11)
+function var0_0.Dispose(arg0_13)
+	pg.DelegateInfo.Dispose(arg0_13)
 
-	if arg0_11.timer then
-		arg0_11.timer:Stop()
+	if arg0_13.timer then
+		arg0_13.timer:Stop()
 
-		arg0_11.timer = nil
+		arg0_13.timer = nil
 	end
 end
 
-function var0_0.GetDownloadGroup(arg0_12)
+function var0_0.GetDownloadGroup(arg0_14)
 	assert(false, "overwrite me !!!")
 end
 
-function var0_0.GetTitle(arg0_13)
+function var0_0.GetTitle(arg0_15)
 	assert(false, "overwrite me !!!")
 end
 
-function var0_0.isNeedUpdate(arg0_14)
-	local var0_14 = arg0_14:GetDownloadGroup()
-	local var1_14 = BundleWizard.Inst:GetGroupMgr(var0_14)
+function var0_0.isNeedUpdate(arg0_16)
+	if IsUnityEditor then
+		return false
+	end
 
-	return tonumber(var1_14.localVersion.Build) < tonumber(var1_14.serverVersion.Build)
+	local var0_16 = arg0_16:GetDownloadGroup()
+	local var1_16 = BundleWizard.Inst:GetGroupMgr(var0_16)
+
+	return tonumber(var1_16.localVersion.Build) < tonumber(var1_16.serverVersion.Build)
+end
+
+function var0_0.getDelTipName(arg0_17)
+	return ({
+		DORM = "resource_clear_3ddorm",
+		GALLERY_PIC = "resource_clear_gallery",
+		MANGA = "resource_clear_manga",
+		MAP = "resource_clear_3disland"
+	})[arg0_17:GetDownloadGroup()]
 end
 
 return var0_0

@@ -391,7 +391,7 @@ function var0_0.GetAllSkinForShip(arg0_35, arg1_35)
 		local var8_35 = ShipSkin.GetChangeSkinGroupId(var7_35.id)
 
 		if var8_35 then
-			local var9_35 = ShipSkin.GetStoreChangeSkinId(var8_35)
+			local var9_35 = ShipSkin.GetStoreChangeSkinId(var8_35, arg1_35:GetShipPhantomMark())
 
 			if not var9_35 then
 				if var7_35.change_skin.index ~= 1 then

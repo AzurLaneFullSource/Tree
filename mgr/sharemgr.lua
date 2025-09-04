@@ -238,15 +238,8 @@ function var1_0.ShotAndSave(arg0_13, arg1_13, arg2_13, arg3_13, arg4_13)
 	local var2_13 = {}
 
 	table.insert(var2_13, function(arg0_14)
-		tolua.loadassembly("Yongshi.BLHotUpdate.Runtime.Rendering")
 		var0_0.UIMgr.GetInstance():LoadingOn(false)
-		ReflectionHelp.RefCallStaticMethodEx(typeof("BLHX.Rendering.HotUpdate.ScreenShooterPass"), "TakePhoto", {
-			typeof(Camera),
-			typeof("UnityEngine.Events.UnityAction`1[UnityEngine.Object]")
-		}, {
-			var1_13,
-			UnityEngine.Events.UnityAction_UnityEngine_Object(arg0_14)
-		})
+		BLHX.Rendering.HotUpdate.ScreenShooterPass.TakePhoto(var1_13, arg0_14)
 	end)
 	table.insert(var2_13, function(arg0_15, arg1_15)
 		var0_0.UIMgr.GetInstance():LoadingOff()

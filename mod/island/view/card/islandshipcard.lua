@@ -5,16 +5,13 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.tf = arg1_1.transform
 	arg0_1.addBtn = arg0_1.tf:Find("add")
 	arg0_1.iconTr = arg0_1.tf:Find("mask/icon")
-	arg0_1.selectGos = {
-		arg0_1.tf:Find("sel")
-	}
-	arg0_1.frameImg = arg0_1.tf:Find("frame"):GetComponent(typeof(Image))
+	arg0_1.selected = arg0_1.tf:Find("sel")
 	arg0_1.levelTxt = arg0_1.tf:Find("Text"):GetComponent(typeof(Text))
 end
 
 function var0_0.Update(arg0_2, arg1_2, arg2_2)
 	arg0_2.configId = arg1_2
-	arg0_2.ship = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipByConfigId(arg1_2)
+	arg0_2.ship = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipById(arg1_2)
 
 	setActive(arg0_2.addBtn, not arg0_2.ship)
 
@@ -22,9 +19,6 @@ function var0_0.Update(arg0_2, arg1_2, arg2_2)
 
 	GetImageSpriteFromAtlasAsync("ShipYardIcon/" .. var0_2, "", arg0_2.iconTr)
 
-	local var1_2 = IslandShip.StaticGetRarity(arg1_2)
-
-	arg0_2.frameImg.sprite = GetSpriteFromAtlas("ui/IslandShipUI_atlas", "ship_frame_" .. var1_2)
 	arg0_2.levelTxt.text = arg0_2.ship and "Lv." .. arg0_2.ship:GetLevel() or ""
 
 	arg0_2:UpdateSelected(arg2_2)

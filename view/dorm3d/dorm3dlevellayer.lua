@@ -158,9 +158,12 @@ function var0_0.InitItemList(arg0_13)
 
 							local var0_16 = Drop.Create(var4_14[arg0_15].data)
 
-							updateDorm3dIcon(var2_15, var0_16)
+							updateCustomDrop(var2_15, var0_16, {
+								style = "dorm"
+							})
 							onButton(arg0_13, var0_15, function()
 								arg0_13:emit(BaseUI.ON_NEW_DROP, {
+									style = "dorm",
 									drop = var0_16
 								})
 							end, SFX_PANEL)

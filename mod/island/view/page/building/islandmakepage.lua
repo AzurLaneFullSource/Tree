@@ -33,7 +33,7 @@ function var0_0.UpdateItem(arg0_6, arg1_6, arg2_6)
 	setActive(arg0_6:findTF("lock", arg2_6), not var1_6)
 
 	if not var1_6 then
-		setText(arg0_6:findTF("lock/Text", arg2_6), i18n1(arg0_6.building:GetName() .. var0_6:getConfig("unlock_place_level") .. "级解锁"))
+		setText(arg0_6:findTF("lock/Text", arg2_6), i18n("island_make_unlock_tip", arg0_6.building:GetName(), var0_6:getConfig("unlock_place_level")))
 	else
 		local var2_6 = var0_6:GetShipId()
 		local var3_6 = arg0_6:findTF("unlock/ship/icon", arg2_6)
@@ -44,7 +44,7 @@ function var0_0.UpdateItem(arg0_6, arg1_6, arg2_6)
 		setActive(arg0_6:findTF("unlock/energy_bar", arg2_6), var2_6)
 
 		if var2_6 then
-			local var4_6 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipByConfigId(var2_6)
+			local var4_6 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipById(var2_6)
 
 			setText(arg0_6:findTF("unlock/name", arg2_6), var4_6:GetName())
 

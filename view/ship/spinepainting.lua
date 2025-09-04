@@ -82,7 +82,7 @@ local function var2_0(arg0_7, arg1_7)
 	arg0_7._go = arg1_7
 	arg0_7._tf = tf(arg1_7)
 
-	UIUtil.SetLayerRecursively(arg0_7._go, LayerMask.NameToLayer("UI"))
+	HotfixHelper.SetLayerRecursively(arg0_7._go, LayerMask.NameToLayer("UI"))
 	arg0_7._tf:SetParent(arg0_7._spinePaintingData.parent, true)
 
 	arg0_7._tf.localScale = arg0_7._spinePaintingData.scale
@@ -140,7 +140,7 @@ local function var3_0(arg0_9, arg1_9)
 	arg0_9._bgEffectGo = arg1_9
 	arg0_9._bgEffectTf = tf(arg1_9)
 
-	UIUtil.SetLayerRecursively(arg0_9._bgEffectGo, LayerMask.NameToLayer("UI"))
+	HotfixHelper.SetLayerRecursively(arg0_9._bgEffectGo, LayerMask.NameToLayer("UI"))
 	arg0_9._bgEffectTf:SetParent(arg0_9._spinePaintingData.effectParent, true)
 
 	arg0_9._bgEffectTf.localScale = arg0_9._spinePaintingData.bgEffectScale

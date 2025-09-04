@@ -5,7 +5,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var1_1 = getProxy(IslandProxy):GetIsland():GetOrderAgency():GetSlot(var0_1)
 
 	if not var1_1:CanReplace() then
-		pg.TipsMgr.GetInstance():ShowTips(i18n1("当前不可替换"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("island_order_cant_replace"))
 
 		return
 	end

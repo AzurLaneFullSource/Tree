@@ -1,5 +1,7 @@
 local var0_0 = class("SettingsOtherPanel", import(".SettingsBasePanel"))
 
+var0_0.GRAPHI_API_SWITCH_OPTION_TYPE = 3
+
 function var0_0.GetUIName(arg0_1)
 	return "SettingsOther"
 end
@@ -71,6 +73,8 @@ function var0_0.OnItemSwitch(arg0_10, arg1_10, arg2_10)
 		arg0_10:OnCommonLocalItemSwitch(arg1_10, arg2_10)
 	elseif arg1_10.type == 1 then
 		arg0_10:OnCommonServerItemSwitch(arg1_10, arg2_10)
+	elseif arg1_10.type == var0_0.GRAPHI_API_SWITCH_OPTION_TYPE then
+		arg0_10:OnGraphApiItemSwitch(arg1_10, arg2_10)
 	end
 
 	if arg1_10.id == 19 then
@@ -185,59 +189,110 @@ function var0_0.OnCommonLocalItemSwitch(arg0_21, arg1_21, arg2_21)
 	PlayerPrefs.Save()
 end
 
-function var0_0.OnUpdateItem(arg0_22, arg1_22)
-	if arg1_22.id == 10 then
-		local var0_22 = arg0_22.uilist.container:GetChild(arg1_22.id - 1)
+function var0_0.OnGraphApiItemSwitch(arg0_22, arg1_22, arg2_22)
+	local function var0_22()
+		local var0_23 = arg0_22.uilist.container:GetChild(#arg0_22.list - 1)
 
-		var0_0.SetGrayOption(var0_22, arg0_22:GetDefaultValue(arg0_22.list[9]))
+		triggerToggle(var0_23:Find("off"), true)
+		GraphApiHelper.SetForceGraphApi(GraphApiHelper.Api.Force_OpenGLES)
+	end
+
+	local function var1_22()
+		local var0_24 = arg0_22.uilist.container:GetChild(#arg0_22.list - 1)
+
+		triggerToggle(var0_24:Find("on"), true)
+		GraphApiHelper.SetForceGraphApi(GraphApiHelper.Api.Force_Vulkan)
+	end
+
+	if arg2_22 == false and not GraphApiHelper.IsUsingVulkan() or arg2_22 == true and GraphApiHelper.IsUsingVulkan() then
+		return
+	end
+
+	if arg2_22 then
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			content = i18n("graphi_api_switch_vulkan"),
+			onYes = function()
+				var1_22()
+				Application.Quit()
+			end,
+			onNo = var0_22
+		})
+	else
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			content = i18n("graphi_api_switch_opengl"),
+			onYes = function()
+				var0_22()
+				Application.Quit()
+			end,
+			onNo = var1_22
+		})
 	end
 end
 
-function var0_0.OnUpdateItemWithTr(arg0_23, arg1_23, arg2_23)
-	local var0_23 = findTF(arg2_23, "mask/tip")
+function var0_0.OnUpdateItem(arg0_27, arg1_27)
+	if arg1_27.id == 10 then
+		local var0_27 = arg0_27.uilist.container:GetChild(arg1_27.id - 1)
 
-	setActive(var0_23, false)
+		var0_0.SetGrayOption(var0_27, arg0_27:GetDefaultValue(arg0_27.list[9]))
+	end
+end
 
-	if arg1_23.id == 18 then
-		onButton(arg0_23, var0_23, function()
-			pg.m02:sendNotification(NewSettingsMediator.SHOW_DESC, arg1_23)
+function var0_0.OnUpdateItemWithTr(arg0_28, arg1_28, arg2_28)
+	local var0_28 = findTF(arg2_28, "mask/tip")
+
+	setActive(var0_28, false)
+
+	if arg1_28.id == 18 then
+		onButton(arg0_28, var0_28, function()
+			pg.m02:sendNotification(NewSettingsMediator.SHOW_DESC, arg1_28)
 		end, SFX_PANEL)
-		setActive(var0_23, true)
+		setActive(var0_28, true)
 	end
 end
 
-function var0_0.GetDefaultValue(arg0_25, arg1_25)
-	if arg1_25.id == 1 then
+function var0_0.GetDefaultValue(arg0_30, arg1_30)
+	if arg1_30.id == 1 then
 		return pg.PushNotificationMgr.GetInstance():isEnableShipName()
-	elseif arg1_25.id == 17 then
+	elseif arg1_30.id == 17 then
 		return getProxy(SettingsProxy):IsDisplayResultPainting()
-	elseif arg1_25.type == 0 then
-		return PlayerPrefs.GetInt(_G[arg1_25.name], arg1_25.default or 0) > 0
-	elseif arg1_25.type == 1 then
-		local var0_25 = getProxy(PlayerProxy):getRawData():GetCommonFlag(_G[arg1_25.name])
+	elseif arg1_30.type == 0 then
+		return PlayerPrefs.GetInt(_G[arg1_30.name], arg1_30.default or 0) > 0
+	elseif arg1_30.type == 1 then
+		local var0_30 = getProxy(PlayerProxy):getRawData():GetCommonFlag(_G[arg1_30.name])
 
-		if arg1_25.default == 1 then
-			return not var0_25
+		if arg1_30.default == 1 then
+			return not var0_30
 		else
-			return var0_25
+			return var0_30
 		end
+	elseif arg1_30.type == var0_0.GRAPHI_API_SWITCH_OPTION_TYPE then
+		return GraphApiHelper.IsUsingVulkan()
 	end
 end
 
-function var0_0.GetList(arg0_26)
-	local var0_26 = {}
+function var0_0.GetList(arg0_31)
+	local var0_31 = {}
+	local var1_31
 
-	for iter0_26, iter1_26 in ipairs(pg.settings_other_template.all) do
-		if LOCK_BATTERY_SAVEMODE and (iter1_26 == 9 or iter1_26 == 10) then
+	for iter0_31, iter1_31 in ipairs(pg.settings_other_template.all) do
+		if LOCK_BATTERY_SAVEMODE and (iter1_31 == 9 or iter1_31 == 10) then
 			-- block empty
-		elseif LOCK_L2D_GYRO and iter1_26 == 15 then
+		elseif LOCK_L2D_GYRO and iter1_31 == 15 then
 			-- block empty
+		elseif pg.settings_other_template[iter1_31].type == var0_0.GRAPHI_API_SWITCH_OPTION_TYPE then
+			if PermissionHelper.IsAndroid() then
+				var1_31 = pg.settings_other_template[iter1_31]
+			end
 		else
-			table.insert(var0_26, pg.settings_other_template[iter1_26])
+			table.insert(var0_31, pg.settings_other_template[iter1_31])
 		end
 	end
 
-	return var0_26
+	if var1_31 then
+		table.insert(var0_31, var1_31)
+	end
+
+	return var0_31
 end
 
 return var0_0
