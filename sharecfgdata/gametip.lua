@@ -30524,7 +30524,7 @@ _G.pg.base.gametip.activity_ninjia_main_title_en = {
 }
 
 _G.pg.base.gametip.activity_ninjia_main_sheet1 = {
-	tip = "Turmoil in the Ninja Castle",
+	tip = "Ninja Castle",
 }
 
 _G.pg.base.gametip.activity_ninjia_main_sheet2 = {
