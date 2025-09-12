@@ -62,20 +62,20 @@ function var0_0.init(arg0_6)
 	arg0_6.blurPanel = arg0_6:findTF("blur_panel")
 	arg0_6.top = arg0_6:findTF("blur_panel/adapt/top")
 	arg0_6.btnBack = arg0_6:findTF("back", arg0_6.top)
-	arg0_6.bottomTF = arg0_6:findTF("bottom")
+	arg0_6.bottomTF = arg0_6:findTF("adapt/bottom")
 	arg0_6.labelHeart = arg0_6:findTF("adapt/detail_left_panel/heart/label", arg0_6.blurPanel)
 	arg0_6.btnLike = arg0_6:findTF("adapt/detail_left_panel/heart/btnLike", arg0_6.blurPanel)
 	arg0_6.btnChangeSkin = arg0_6:findTF("adapt/detail_left_panel/change_skin", arg0_6.blurPanel)
 	arg0_6.changeSkinToggle = ChangeSkinToggle.New(findTF(arg0_6.btnChangeSkin, "toggle_ui"))
 	arg0_6.btnLikeAct = arg0_6.btnLike:Find("like")
 	arg0_6.btnLikeDisact = arg0_6.btnLike:Find("unlike")
-	arg0_6.obtainBtn = arg0_6:findTF("bottom/others/obtain_btn")
-	arg0_6.evaBtn = arg0_6:findTF("bottom/others/eva_btn")
-	arg0_6.viewBtn = arg0_6:findTF("bottom/others/view_btn")
-	arg0_6.shareBtn = arg0_6:findTF("bottom/others/share_btn")
-	arg0_6.rotateBtn = arg0_6:findTF("bottom/others/rotate_btn")
-	arg0_6.cryptolaliaBtn = arg0_6:findTF("bottom/others/cryptolalia_btn")
-	arg0_6.equipCodeBtn = arg0_6:findTF("bottom/others/equip_code_btn")
+	arg0_6.obtainBtn = arg0_6:findTF("adapt/bottom/others/obtain_btn")
+	arg0_6.evaBtn = arg0_6:findTF("adapt/bottom/others/eva_btn")
+	arg0_6.viewBtn = arg0_6:findTF("adapt/bottom/others/view_btn")
+	arg0_6.shareBtn = arg0_6:findTF("adapt/bottom/others/share_btn")
+	arg0_6.rotateBtn = arg0_6:findTF("adapt/bottom/others/rotate_btn")
+	arg0_6.cryptolaliaBtn = arg0_6:findTF("adapt/bottom/others/cryptolalia_btn")
+	arg0_6.equipCodeBtn = arg0_6:findTF("adapt/bottom/others/equip_code_btn")
 	arg0_6.leftProfile = arg0_6:findTF("adapt/profile_left_panel", arg0_6.blurPanel)
 	arg0_6.modelContainer = arg0_6:findTF("model", arg0_6.leftProfile)
 	arg0_6.live2DBtn = ShipProfileLive2dBtn.New(arg0_6:findTF("L2D_btn", arg0_6.blurPanel))
@@ -92,11 +92,11 @@ function var0_0.init(arg0_6)
 
 	arg0_6.spinePaintingToggle = arg0_6.spinePaintingBtn:Find("toggle")
 	arg0_6.cvLoader = ShipProfileCVLoader.New()
-	arg0_6.pageTFs = arg0_6:findTF("pages")
+	arg0_6.pageTFs = arg0_6:findTF("adapt/pages")
 	arg0_6.paintingView = ShipProfilePaintingView.New(arg0_6._tf, arg0_6.painting)
 	arg0_6.toggles = {
-		arg0_6:findTF("bottom/detail"),
-		arg0_6:findTF("bottom/profile")
+		arg0_6:findTF("adapt/bottom/detail"),
+		arg0_6:findTF("adapt/bottom/profile")
 	}
 
 	local var0_6 = ShipProfileInformationPage.New(arg0_6.pageTFs, arg0_6.event)
@@ -162,6 +162,8 @@ function var0_0.didEnter(arg0_8)
 	arg0_8.live2DBtn:AddListener(function(arg0_17)
 		if arg0_17 then
 			arg0_8:CreateLive2D()
+		else
+			arg0_8:clearLive2dPainting()
 		end
 
 		arg0_8.l2dBtnOn = arg0_17
@@ -290,299 +292,303 @@ function var0_0.SetPainting(arg0_25, arg1_25, arg2_25)
 
 	local var0_25 = pg.ship_skin_template[arg1_25].painting
 
-	setPaintingPrefabAsync(arg0_25.painting, var0_25, "chuanwu")
+	setPaintingPrefabAsync(arg0_25.painting, var0_25, "chuanwu", function()
+		setActive(arg0_25.commonPainting, true)
+	end)
 
 	arg0_25.paintingName = var0_25
 
 	arg0_25:UpdateCryptolaliaBtn(arg1_25)
 end
 
-function var0_0.RecyclePainting(arg0_26)
-	if arg0_26.paintingName then
-		retPaintingPrefab(arg0_26.painting, arg0_26.paintingName)
+function var0_0.RecyclePainting(arg0_27)
+	if arg0_27.paintingName then
+		retPaintingPrefab(arg0_27.painting, arg0_27.paintingName)
 	end
 end
 
-function var0_0.FlushHearts(arg0_27)
-	local var0_27 = arg0_27.shipGroup.hearts
+function var0_0.FlushHearts(arg0_28)
+	local var0_28 = arg0_28.shipGroup.hearts
 
-	setText(arg0_27.labelHeart, var0_27 > 999 and "999+" or var0_27)
+	setText(arg0_28.labelHeart, var0_28 > 999 and "999+" or var0_28)
 
-	arg0_27.labelHeart:GetComponent("Text").color = arg0_27.shipGroup.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
+	arg0_28.labelHeart:GetComponent("Text").color = arg0_28.shipGroup.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
 
-	setActive(arg0_27.btnLikeDisact, not arg0_27.shipGroup.iheart)
-	setActive(arg0_27.btnLikeAct, arg0_27.shipGroup.iheart)
+	setActive(arg0_28.btnLikeDisact, not arg0_28.shipGroup.iheart)
+	setActive(arg0_28.btnLikeAct, arg0_28.shipGroup.iheart)
 end
 
-function var0_0.LoadSkinBg(arg0_28, arg1_28)
-	arg0_28.bluePintBg = arg0_28.isBluePrintGroup and arg0_28.shipGroup:rarity2bgPrintForGet(arg0_28.showTrans)
-	arg0_28.metaMainBg = arg0_28.isMetaGroup and arg0_28.shipGroup:rarity2bgPrintForGet(arg0_28.showTrans)
+function var0_0.LoadSkinBg(arg0_29, arg1_29)
+	arg0_29.bluePintBg = arg0_29.isBluePrintGroup and arg0_29.shipGroup:rarity2bgPrintForGet(arg0_29.showTrans)
+	arg0_29.metaMainBg = arg0_29.isMetaGroup and arg0_29.shipGroup:rarity2bgPrintForGet(arg0_29.showTrans)
 
-	if arg0_28.shipSkinBg ~= arg1_28 then
-		arg0_28.shipSkinBg = arg1_28
+	if arg0_29.shipSkinBg ~= arg1_29 then
+		arg0_29.shipSkinBg = arg1_29
 
-		local function var0_28(arg0_29)
-			rtf(arg0_29).localPosition = Vector3(0, 0, 200)
+		local function var0_29(arg0_30)
+			rtf(arg0_30).localPosition = Vector3(0, 0, 200)
 		end
 
-		local function var1_28()
-			PoolMgr.GetInstance():GetUI("raritydesign" .. arg0_28.shipGroup:getRarity(arg0_28.showTrans), true, function(arg0_31)
-				arg0_28.designBg = arg0_31
-				arg0_28.designName = "raritydesign" .. arg0_28.shipGroup:getRarity(arg0_28.showTrans)
+		local function var1_29()
+			PoolMgr.GetInstance():GetUI("raritydesign" .. arg0_29.shipGroup:getRarity(arg0_29.showTrans), true, function(arg0_32)
+				arg0_29.designBg = arg0_32
+				arg0_29.designName = "raritydesign" .. arg0_29.shipGroup:getRarity(arg0_29.showTrans)
 
-				arg0_31.transform:SetParent(arg0_28.staticBg, false)
+				arg0_32.transform:SetParent(arg0_29.staticBg, false)
 
-				arg0_31.transform.localPosition = Vector3(1, 1, 1)
-				arg0_31.transform.localScale = Vector3(1, 1, 1)
+				arg0_32.transform.localPosition = Vector3(1, 1, 1)
+				arg0_32.transform.localScale = Vector3(1, 1, 1)
 
-				arg0_31.transform:SetSiblingIndex(1)
+				arg0_32.transform:SetSiblingIndex(1)
 
-				local var0_31 = arg0_31:GetComponent("Canvas")
+				local var0_32 = arg0_32:GetComponent("Canvas")
 
-				if var0_31 then
-					var0_31.sortingOrder = LayerWeightConst.PAINTING_RARITY_DESIGN_LAYER
+				if var0_32 then
+					var0_32.sortingOrder = LayerWeightConst.PAINTING_RARITY_DESIGN_LAYER
 				end
 
-				setActive(arg0_31, true)
+				setActive(arg0_32, true)
 			end)
 		end
 
-		local function var2_28()
-			PoolMgr.GetInstance():GetUI("raritymeta" .. arg0_28.shipGroup:getRarity(arg0_28.showTrans), true, function(arg0_33)
-				arg0_28.metaBg = arg0_33
-				arg0_28.metaName = "raritymeta" .. arg0_28.shipGroup:getRarity(arg0_28.showTrans)
+		local function var2_29()
+			PoolMgr.GetInstance():GetUI("raritymeta" .. arg0_29.shipGroup:getRarity(arg0_29.showTrans), true, function(arg0_34)
+				arg0_29.metaBg = arg0_34
+				arg0_29.metaName = "raritymeta" .. arg0_29.shipGroup:getRarity(arg0_29.showTrans)
 
-				arg0_33.transform:SetParent(arg0_28.staticBg, false)
+				arg0_34.transform:SetParent(arg0_29.staticBg, false)
 
-				arg0_33.transform.localPosition = Vector3(1, 1, 1)
-				arg0_33.transform.localScale = Vector3(1, 1, 1)
+				arg0_34.transform.localPosition = Vector3(1, 1, 1)
+				arg0_34.transform.localScale = Vector3(1, 1, 1)
 
-				arg0_33.transform:SetSiblingIndex(1)
-				setActive(arg0_33, true)
+				arg0_34.transform:SetSiblingIndex(1)
+				setActive(arg0_34, true)
 			end)
 		end
 
-		local function var3_28(arg0_34)
-			if arg0_28.bluePintBg and arg1_28 == arg0_28.bluePintBg then
-				if arg0_28.metaBg then
-					setActive(arg0_28.metaBg, false)
+		local function var3_29(arg0_35)
+			if arg0_29.bluePintBg and arg1_29 == arg0_29.bluePintBg then
+				if arg0_29.metaBg then
+					setActive(arg0_29.metaBg, false)
 				end
 
-				if arg0_28.designBg and arg0_28.designName ~= "raritydesign" .. arg0_28.shipGroup:getRarity(arg0_28.showTrans) then
-					PoolMgr.GetInstance():ReturnUI(arg0_28.designName, arg0_28.designBg)
+				if arg0_29.designBg and arg0_29.designName ~= "raritydesign" .. arg0_29.shipGroup:getRarity(arg0_29.showTrans) then
+					PoolMgr.GetInstance():ReturnUI(arg0_29.designName, arg0_29.designBg)
 
-					arg0_28.designBg = nil
+					arg0_29.designBg = nil
 				end
 
-				if not arg0_28.designBg then
-					var1_28()
+				if not arg0_29.designBg then
+					var1_29()
 				else
-					setActive(arg0_28.designBg, true)
+					setActive(arg0_29.designBg, true)
 				end
-			elseif arg0_28.metaMainBg and arg1_28 == arg0_28.metaMainBg then
-				if arg0_28.designBg then
-					setActive(arg0_28.designBg, false)
-				end
-
-				if arg0_28.metaBg and arg0_28.metaName ~= "raritymeta" .. arg0_28.shipGroup:getRarity(arg0_28.showTrans) then
-					PoolMgr.GetInstance():ReturnUI(arg0_28.metaName, arg0_28.metaBg)
-
-					arg0_28.metaBg = nil
+			elseif arg0_29.metaMainBg and arg1_29 == arg0_29.metaMainBg then
+				if arg0_29.designBg then
+					setActive(arg0_29.designBg, false)
 				end
 
-				if not arg0_28.metaBg then
-					var2_28()
+				if arg0_29.metaBg and arg0_29.metaName ~= "raritymeta" .. arg0_29.shipGroup:getRarity(arg0_29.showTrans) then
+					PoolMgr.GetInstance():ReturnUI(arg0_29.metaName, arg0_29.metaBg)
+
+					arg0_29.metaBg = nil
+				end
+
+				if not arg0_29.metaBg then
+					var2_29()
 				else
-					setActive(arg0_28.metaBg, true)
+					setActive(arg0_29.metaBg, true)
 				end
 			else
-				if arg0_28.designBg then
-					setActive(arg0_28.designBg, false)
+				if arg0_29.designBg then
+					setActive(arg0_29.designBg, false)
 				end
 
-				if arg0_28.metaBg then
-					setActive(arg0_28.metaBg, false)
+				if arg0_29.metaBg then
+					setActive(arg0_29.metaBg, false)
 				end
 			end
 		end
 
-		pg.DynamicBgMgr.GetInstance():LoadBg(arg0_28, arg1_28, arg0_28.bg, arg0_28.staticBg, var0_28, var3_28)
+		pg.DynamicBgMgr.GetInstance():LoadBg(arg0_29, arg1_29, arg0_29.bg, arg0_29.staticBg, var0_29, var3_29)
 	end
 end
 
-function var0_0.SwitchPage(arg0_35, arg1_35)
-	if arg0_35.index ~= arg1_35 then
+function var0_0.SwitchPage(arg0_36, arg1_36)
+	if arg0_36.index ~= arg1_36 then
 		seriesAsync({
-			function(arg0_36)
-				pg.UIMgr.GetInstance():OverlayPanel(arg0_35.blurPanel, {
+			function(arg0_37)
+				pg.UIMgr.GetInstance():OverlayPanel(arg0_36.blurPanel, {
 					groupName = LayerWeightConst.GROUP_SHIP_PROFILE
 				})
-				arg0_36()
+				arg0_37()
 			end,
-			function(arg0_37)
-				local var0_37 = arg0_35.pages[arg1_35]
-				local var1_37 = arg1_35 == var0_0.INDEX_PROFILE and not var0_37:GetLoaded()
+			function(arg0_38)
+				local var0_38 = arg0_36.pages[arg1_36]
+				local var1_38 = arg1_36 == var0_0.INDEX_PROFILE and not var0_38:GetLoaded()
 
-				var0_37:ExecuteAction("Update", arg0_35.shipGroup, arg0_35.showTrans, function()
-					if var1_37 then
-						arg0_35:InitSkinList()
+				var0_38:ExecuteAction("Update", arg0_36.shipGroup, arg0_36.showTrans, function()
+					if var1_38 then
+						arg0_36:InitSkinList()
 					end
 
-					arg0_37()
+					arg0_38()
 				end)
 			end,
-			function(arg0_39)
-				if not arg0_35.index then
-					arg0_39()
+			function(arg0_40)
+				if not arg0_36.index then
+					arg0_40()
 
 					return
 				end
 
-				arg0_35.pages[arg0_35.index]:ExecuteAction("ExistAnim", var1_0)
-				arg0_39()
+				arg0_36.pages[arg0_36.index]:ExecuteAction("ExistAnim", var1_0)
+				arg0_40()
 			end,
-			function(arg0_40)
-				local var0_40 = arg0_35.pages[arg1_35]
+			function(arg0_41)
+				local var0_41 = arg0_36.pages[arg1_36]
 
-				SetParent(arg0_35.bottomTF, var0_40._tf)
-				setActive(arg0_35.bottomTF, true)
-				setAnchoredPosition(arg0_35.bottomTF, {
+				SetParent(arg0_36.bottomTF, var0_41._tf)
+				setActive(arg0_36.bottomTF, true)
+				setAnchoredPosition(arg0_36.bottomTF, {
 					z = 0,
 					x = -7,
 					y = 24
 				})
-				var0_40:ExecuteAction("EnterAnim", var1_0)
-				arg0_35:TweenPage(arg1_35)
-				arg0_40()
+				var0_41:ExecuteAction("EnterAnim", var1_0)
+				arg0_36:TweenPage(arg1_36)
+				arg0_41()
 			end,
-			function(arg0_41)
-				arg0_35.index = arg1_35
+			function(arg0_42)
+				arg0_36.index = arg1_36
 
-				local var0_41 = arg0_35.contextData.skinIndex or 1
+				local var0_42 = arg0_36.contextData.skinIndex or 1
 
-				if arg1_35 == var0_0.INDEX_PROFILE and var0_41 <= #arg0_35.skinBtns then
-					triggerButton(arg0_35.skinBtns[var0_41]._tf)
+				if arg1_36 == var0_0.INDEX_PROFILE and var0_42 <= #arg0_36.skinBtns then
+					triggerButton(arg0_36.skinBtns[var0_42]._tf)
 				end
 			end
 		})
 	end
 end
 
-function var0_0.TweenPage(arg0_42, arg1_42)
-	if arg1_42 == var0_0.INDEX_DETAIL then
-		LeanTween.moveX(rtf(arg0_42.leftProfile), -700, var1_0):setEase(LeanTweenType.easeInOutSine)
-		LeanTween.moveY(rtf(arg0_42.live2DBtn._tf), -70, var1_0):setEase(LeanTweenType.easeInOutSine)
-		LeanTween.moveY(rtf(arg0_42.spinePaintingBtn), -70, var1_0):setEase(LeanTweenType.easeInOutSine)
-		LeanTween.moveX(rtf(arg0_42.painting), arg0_42.paintingInitPos.x, var1_0):setEase(LeanTweenType.easeInOutSine)
-		LeanTween.moveX(rtf(arg0_42.name), arg0_42.nameInitPos.x, var1_0):setEase(LeanTweenType.easeInOutSine)
-	elseif arg1_42 == var0_0.INDEX_PROFILE then
-		LeanTween.moveX(rtf(arg0_42.leftProfile), 0, var1_0):setEase(LeanTweenType.easeInOutSine)
-		LeanTween.moveY(rtf(arg0_42.live2DBtn._tf), 60, var1_0):setEase(LeanTweenType.easeInOutSine)
-		LeanTween.moveY(rtf(arg0_42.spinePaintingBtn), 60, var1_0):setEase(LeanTweenType.easeInOutSine)
-		LeanTween.moveX(rtf(arg0_42.painting), arg0_42.paintingInitPos.x + 50, var1_0):setEase(LeanTweenType.easeInOutSine)
-		LeanTween.moveX(rtf(arg0_42.name), arg0_42.nameInitPos.x + 50, var1_0):setEase(LeanTweenType.easeInOutSine)
+function var0_0.TweenPage(arg0_43, arg1_43)
+	if arg1_43 == var0_0.INDEX_DETAIL then
+		LeanTween.moveX(rtf(arg0_43.leftProfile), -700, var1_0):setEase(LeanTweenType.easeInOutSine)
+		LeanTween.moveY(rtf(arg0_43.live2DBtn._tf), -70, var1_0):setEase(LeanTweenType.easeInOutSine)
+		LeanTween.moveY(rtf(arg0_43.spinePaintingBtn), -70, var1_0):setEase(LeanTweenType.easeInOutSine)
+		LeanTween.moveX(rtf(arg0_43.painting), arg0_43.paintingInitPos.x, var1_0):setEase(LeanTweenType.easeInOutSine)
+		LeanTween.moveX(rtf(arg0_43.name), arg0_43.nameInitPos.x, var1_0):setEase(LeanTweenType.easeInOutSine)
+	elseif arg1_43 == var0_0.INDEX_PROFILE then
+		LeanTween.moveX(rtf(arg0_43.leftProfile), 0, var1_0):setEase(LeanTweenType.easeInOutSine)
+		LeanTween.moveY(rtf(arg0_43.live2DBtn._tf), 60, var1_0):setEase(LeanTweenType.easeInOutSine)
+		LeanTween.moveY(rtf(arg0_43.spinePaintingBtn), 60, var1_0):setEase(LeanTweenType.easeInOutSine)
+		LeanTween.moveX(rtf(arg0_43.painting), arg0_43.paintingInitPos.x + 50, var1_0):setEase(LeanTweenType.easeInOutSine)
+		LeanTween.moveX(rtf(arg0_43.name), arg0_43.nameInitPos.x + 50, var1_0):setEase(LeanTweenType.easeInOutSine)
 	end
 end
 
-function var0_0.ShiftSkin(arg0_43, arg1_43)
-	if arg0_43.index ~= var0_0.INDEX_PROFILE or arg0_43.skin and arg1_43.id == arg0_43.skin.id then
+function var0_0.ShiftSkin(arg0_44, arg1_44)
+	if arg0_44.index ~= var0_0.INDEX_PROFILE or arg0_44.skin and arg1_44.id == arg0_44.skin.id then
 		return
 	end
 
-	arg0_43.skin = arg1_43
+	arg0_44.skin = arg1_44
 
-	arg0_43:LoadModel(arg1_43)
-	arg0_43:SetPainting(arg1_43.id, false)
-	arg0_43.live2DBtn:Disable()
-	arg0_43.live2DBtn:Update(arg0_43.paintingName, false)
+	arg0_44:SetPainting(arg1_44.id, false)
+	arg0_44:LoadModel(arg1_44)
+	arg0_44.live2DBtn:Disable()
+	arg0_44.live2DBtn:Update(arg0_44.paintingName, false)
 
-	local var0_43
-	local var1_43 = arg1_43 and arg1_43.spine_use_live2d == 1 and "spine_painting_bg" or "live2d_bg"
+	local var0_44
+	local var1_44 = arg1_44 and arg1_44.spine_use_live2d == 1 and "spine_painting_bg" or "live2d_bg"
 
-	LoadSpriteAtlasAsync("ui/share/btn_l2d_atlas", var1_43, function(arg0_44)
-		GetComponent(arg0_43:findTF("L2D_btn", arg0_43.blurPanel), typeof(Image)).sprite = arg0_44
-		GetComponent(arg0_43:findTF("L2D_btn/img", arg0_43.blurPanel), typeof(Image)).sprite = arg0_44
+	LoadSpriteAtlasAsync("ui/share/btn_l2d_atlas", var1_44, function(arg0_45)
+		GetComponent(arg0_44:findTF("L2D_btn", arg0_44.blurPanel), typeof(Image)).sprite = arg0_45
+		GetComponent(arg0_44:findTF("L2D_btn/img", arg0_44.blurPanel), typeof(Image)).sprite = arg0_45
 
-		GetComponent(arg0_43:findTF("L2D_btn", arg0_43.blurPanel), typeof(Image)):SetNativeSize()
-		GetComponent(arg0_43:findTF("L2D_btn/img", arg0_43.blurPanel), typeof(Image)):SetNativeSize()
+		GetComponent(arg0_44:findTF("L2D_btn", arg0_44.blurPanel), typeof(Image)):SetNativeSize()
+		GetComponent(arg0_44:findTF("L2D_btn/img", arg0_44.blurPanel), typeof(Image)):SetNativeSize()
 	end)
 
-	arg0_43.spinePaintingisOn = false
+	arg0_44.spinePaintingisOn = false
 
-	arg0_43:updateSpinePaintingState()
-	arg0_43:DestroySpinePainting()
-	arg0_43.pages[var0_0.INDEX_PROFILE]:ExecuteAction("Flush", arg1_43, false)
+	arg0_44:updateSpinePaintingState()
+	arg0_44:DestroySpinePainting()
+	arg0_44.pages[var0_0.INDEX_PROFILE]:ExecuteAction("Flush", arg1_44, false)
 
-	local var2_43
-	local var3_43 = PlayerPrefs.GetInt("paint_hide_other_obj_" .. arg0_43.skin.painting, 0) == 0
+	local var2_44
+	local var3_44 = PlayerPrefs.GetInt("paint_hide_other_obj_" .. arg0_44.skin.painting, 0) == 0
 
-	if arg0_43.skin.bg_sp and arg0_43.skin.bg_sp ~= "" and var3_43 then
-		var2_43 = arg0_43.skin.bg_sp
-	elseif arg0_43.skin.bg and arg0_43.skin.bg ~= "" then
-		var2_43 = arg0_43.skin.bg
+	if arg0_44.skin.bg_sp and arg0_44.skin.bg_sp ~= "" and var3_44 then
+		var2_44 = arg0_44.skin.bg_sp
+	elseif arg0_44.skin.bg and arg0_44.skin.bg ~= "" then
+		var2_44 = arg0_44.skin.bg
 	else
-		var2_43 = arg0_43.shipGroup:rarity2bgPrintForGet(arg0_43.showTrans, arg0_43.skin.id)
+		var2_44 = arg0_44.shipGroup:rarity2bgPrintForGet(arg0_44.showTrans, arg0_44.skin.id)
 	end
 
-	arg0_43:LoadSkinBg(var2_43)
+	arg0_44:LoadSkinBg(var2_44)
 
-	arg0_43.haveOp = checkABExist("ui/skinunlockanim/star_level_unlock_anim_" .. arg0_43.skin.id)
+	arg0_44.haveOp = checkABExist("ui/skinunlockanim/star_level_unlock_anim_" .. arg0_44.skin.id)
 end
 
-function var0_0.UpdateCryptolaliaBtn(arg0_45, arg1_45)
-	local var0_45 = ShipSkin.New({
-		id = arg1_45
+function var0_0.UpdateCryptolaliaBtn(arg0_46, arg1_46)
+	local var0_46 = ShipSkin.New({
+		id = arg1_46
 	}):getConfig("ship_group")
 
-	setActive(arg0_45.cryptolaliaBtn, getProxy(PlayerProxy):getRawData():ExistCryptolalia(var0_45))
+	setActive(arg0_46.cryptolaliaBtn, getProxy(PlayerProxy):getRawData():ExistCryptolalia(var0_46))
 end
 
-function var0_0.LoadModel(arg0_46, arg1_46)
-	if arg0_46.inLoading then
+function var0_0.LoadModel(arg0_47, arg1_47)
+	if arg0_47.inLoading then
 		return
 	end
 
-	arg0_46:ReturnModel()
+	arg0_47:ReturnModel()
 
-	local var0_46 = arg1_46.prefab
+	local var0_47 = arg1_47.prefab
 
-	arg0_46.inLoading = true
+	arg0_47.inLoading = true
 
-	PoolMgr.GetInstance():GetSpineChar(var0_46, true, function(arg0_47)
-		arg0_46.inLoading = false
-		arg0_47.name = var0_46
-		arg0_47.transform.localPosition = Vector3.zero
-		arg0_47.transform.localScale = Vector3(0.8, 0.8, 1)
+	PoolMgr.GetInstance():GetSpineChar(var0_47, true, function(arg0_48)
+		arg0_47.inLoading = false
+		arg0_48.name = var0_47
+		arg0_48.transform.localPosition = Vector3.zero
+		arg0_48.transform.localScale = Vector3(0.8, 0.8, 1)
 
-		arg0_47.transform:SetParent(arg0_46.modelContainer, false)
-		arg0_47:GetComponent(typeof(SpineAnimUI)):SetAction(arg1_46.show_skin or "stand", 0)
+		arg0_48.transform:SetParent(arg0_47.modelContainer, false)
+		arg0_48:GetComponent(typeof(SpineAnimUI)):SetAction(arg1_47.show_skin or "stand", 0)
 
-		arg0_46.characterModel = arg0_47
-		arg0_46.modelName = var0_46
+		arg0_47.characterModel = arg0_48
+		arg0_47.modelName = var0_47
 	end)
 end
 
-function var0_0.ReturnModel(arg0_48)
-	if not IsNil(arg0_48.characterModel) then
-		PoolMgr.GetInstance():ReturnSpineChar(arg0_48.modelName, arg0_48.characterModel)
+function var0_0.ReturnModel(arg0_49)
+	if not IsNil(arg0_49.characterModel) then
+		PoolMgr.GetInstance():ReturnSpineChar(arg0_49.modelName, arg0_49.characterModel)
 	end
 end
 
-function var0_0.CreateLive2D(arg0_49)
-	arg0_49.live2DBtn:SetEnable(false)
+function var0_0.CreateLive2D(arg0_50)
+	arg0_50.live2DBtn:SetEnable(false)
 
-	if arg0_49.l2dChar then
-		arg0_49.l2dChar:Dispose()
+	if arg0_50.l2dChar then
+		arg0_50.l2dChar:Dispose()
+
+		arg0_50.l2dChar = nil
 	end
 
-	local var0_49 = arg0_49.shipGroup:getShipConfigId()
-	local var1_49 = pg.ship_skin_template[arg0_49.skin.id].live2d_offset_profile
-	local var2_49
+	local var0_50 = arg0_50.shipGroup:getShipConfigId()
+	local var1_50 = pg.ship_skin_template[arg0_50.skin.id].live2d_offset_profile
+	local var2_50
 
-	if var1_49 and #var1_49 >= 3 then
-		local var3_49 = var1_49
+	if var1_50 and #var1_50 >= 3 then
+		local var3_50 = var1_50
 	else
-		local var4_49 = {
+		local var4_50 = {
 			0,
 			0,
 			0,
@@ -590,29 +596,29 @@ function var0_0.CreateLive2D(arg0_49)
 		}
 	end
 
-	local var5_49 = Live2D.GenerateData({
+	local var5_50 = Live2D.GenerateData({
 		ship = Ship.New({
 			noChangeSkin = true,
-			configId = var0_49,
-			skin_id = arg0_49.skin.id,
-			propose = arg0_49.shipGroup.married
+			configId = var0_50,
+			skin_id = arg0_50.skin.id,
+			propose = arg0_50.shipGroup.married
 		}),
 		position = Vector3(0, 0, 0),
-		offset = var1_49,
-		parent = arg0_49.l2dRoot
+		offset = var1_50,
+		parent = arg0_50.l2dRoot
 	})
 
-	arg0_49.l2dChar = Live2D.New(var5_49, function(arg0_50)
-		arg0_50:setSortingLayer(LayerWeightConst.L2D_DEFAULT_LAYER)
-		arg0_49.live2DBtn:SetEnable(true)
+	arg0_50.l2dChar = Live2D.New(var5_50, function(arg0_51)
+		arg0_51:setSortingLayer(LayerWeightConst.L2D_DEFAULT_LAYER)
+		arg0_50.live2DBtn:SetEnable(true)
 	end)
 
-	if isHalfBodyLive2D(arg0_49.skin.prefab) then
-		setAnchoredPosition(arg0_49.l2dRoot, {
-			y = -77 - (arg0_49.painting.rect.height - arg0_49.l2dRoot.rect.height * 1.5) / 2
+	if isHalfBodyLive2D(arg0_50.skin.prefab) then
+		setAnchoredPosition(arg0_50.l2dRoot, {
+			y = -77 - (arg0_50.painting.rect.height - arg0_50.l2dRoot.rect.height * 1.5) / 2
 		})
 	else
-		setAnchoredPosition(arg0_49.l2dRoot, {
+		setAnchoredPosition(arg0_50.l2dRoot, {
 			y = -40
 		})
 	end
@@ -622,356 +628,336 @@ function var0_0.CreateLive2D(arg0_49)
 	end
 end
 
-function var0_0.GetModelAction(arg0_51, arg1_51)
-	local var0_51
+function var0_0.GetModelAction(arg0_52, arg1_52)
+	local var0_52
 
-	if not arg1_51.spine_action or arg1_51.spine_action == "" then
+	if not arg1_52.spine_action or arg1_52.spine_action == "" then
 		return "stand"
 	else
-		return arg1_51.spine_action
+		return arg1_52.spine_action
 	end
 end
 
-function var0_0.OnCVBtnClick(arg0_52, arg1_52)
-	if arg0_52.l2dActioning then
+function var0_0.OnCVBtnClick(arg0_53, arg1_53)
+	if arg0_53.l2dActioning then
 		return
 	end
 
-	local var0_52 = arg1_52.voice
+	local var0_53 = arg1_53.voice
 
-	local function var1_52()
-		local var0_53
+	local function var1_53()
+		local var0_54
 
-		if arg1_52:isEx() then
-			local var1_53 = var0_52.l2d_action .. "_ex"
+		if arg1_53:isEx() then
+			local var1_54 = var0_53.l2d_action .. "_ex"
 
-			if arg0_52.l2dChar and arg0_52.l2dChar:checkActionExist(var1_53) then
-				var0_53 = var1_53
+			if arg0_53.l2dChar and arg0_53.l2dChar:checkActionExist(var1_54) then
+				var0_54 = var1_54
 			else
-				var0_53 = var0_52.l2d_action
+				var0_54 = var0_53.l2d_action
 			end
 		else
-			var0_53 = var0_52.l2d_action
+			var0_54 = var0_53.l2d_action
 		end
 
-		if arg0_52.l2dBtnOn and arg0_52.l2dChar and not arg0_52.l2dChar:enablePlayAction(var0_53) then
+		if arg0_53.l2dBtnOn and arg0_53.l2dChar and not arg0_53.l2dChar:enablePlayAction(var0_54) then
 			return
 		end
 
-		arg0_52:UpdatePaintingFace(arg1_52)
+		arg0_53:UpdatePaintingFace(arg1_53)
 
-		if arg0_52.characterModel then
-			local var2_53 = arg0_52:GetModelAction(var0_52)
+		if arg0_53.characterModel then
+			local var2_54 = arg0_53:GetModelAction(var0_53)
 
-			arg0_52.characterModel:GetComponent(typeof(SpineAnimUI)):SetAction(var2_53, 0)
+			arg0_53.characterModel:GetComponent(typeof(SpineAnimUI)):SetAction(var2_54, 0)
 		end
 
-		local var3_53 = {
+		local var3_54 = {
 			var0_0.CHAT_SHOW_TIME
 		}
 
-		if arg0_52.live2DBtn.isOn and arg0_52.l2dChar then
-			if arg0_52.l2dChar:IsLoaded() then
-				arg0_52.l2dActioning = true
+		if arg0_53.live2DBtn.isOn and arg0_53.l2dChar then
+			if arg0_53.l2dChar:IsLoaded() then
+				arg0_53.l2dActioning = true
 
-				if not arg1_52:L2dHasEvent() then
+				if not arg1_53:L2dHasEvent() then
 					parallelAsync({
-						function(arg0_54)
-							arg0_52:RemoveLive2DTimer()
-
-							arg0_52.l2dActioning = arg0_52.l2dChar:TriggerAction(var0_53, arg0_54)
-						end,
 						function(arg0_55)
-							arg0_52:PlayVoice(arg1_52, var3_53)
-							arg0_52:ShowDailogue(arg1_52, var3_53, arg0_55)
+							arg0_53:RemoveLive2DTimer()
+
+							arg0_53.l2dActioning = arg0_53.l2dChar:TriggerAction(var0_54, arg0_55)
+						end,
+						function(arg0_56)
+							arg0_53:PlayVoice(arg1_53, var3_54)
+							arg0_53:ShowDailogue(arg1_53, var3_54, arg0_56)
 						end
 					}, function()
-						arg0_52.l2dActioning = false
+						arg0_53.l2dActioning = false
 					end)
 				else
 					seriesAsync({
-						function(arg0_57)
-							arg0_52:RemoveLive2DTimer()
+						function(arg0_58)
+							arg0_53:RemoveLive2DTimer()
 
-							if arg0_52.l2dChar:checkActionExist(var0_53) then
-								arg0_52.l2dActioning = arg0_52.l2dChar:TriggerAction(var0_53, arg0_57, nil, function(arg0_58)
-									arg0_52:PlayVoice(arg1_52, var3_53)
-									arg0_52:ShowDailogue(arg1_52, var3_53, arg0_57)
+							if arg0_53.l2dChar:checkActionExist(var0_54) then
+								arg0_53.l2dActioning = arg0_53.l2dChar:TriggerAction(var0_54, arg0_58, nil, function(arg0_59)
+									arg0_53:PlayVoice(arg1_53, var3_54)
+									arg0_53:ShowDailogue(arg1_53, var3_54, arg0_58)
 								end)
 							else
-								arg0_52:PlayVoice(arg1_52, var3_53)
-								arg0_52:ShowDailogue(arg1_52, var3_53, arg0_57)
+								arg0_53:PlayVoice(arg1_53, var3_54)
+								arg0_53:ShowDailogue(arg1_53, var3_54, arg0_58)
 							end
 						end
 					}, function()
-						arg0_52.l2dActioning = false
+						arg0_53.l2dActioning = false
 					end)
 				end
 			end
 		else
-			arg0_52:PlayVoice(arg1_52, var3_53)
-			arg0_52:ShowDailogue(arg1_52, var3_53)
+			arg0_53:PlayVoice(arg1_53, var3_54)
+			arg0_53:ShowDailogue(arg1_53, var3_54)
 		end
 	end
 
-	if var0_52.key == "unlock" and arg0_52.haveOp then
-		arg0_52:playOpening(var1_52)
-	elseif arg1_52.voice.resource_key == "get" then
-		local var2_52 = arg1_52.skin.id
+	if var0_53.key == "unlock" and arg0_53.haveOp then
+		arg0_53:playOpening(var1_53)
+	elseif arg1_53.voice.resource_key == "get" then
+		local var2_53 = arg1_53.skin.id
 
-		if PaintingShowScene.GetSkinShowAble(var2_52) then
-			arg0_52:emit(ShipProfileMediator.OPEN_PAINTING_SHOW, var2_52, function()
+		if PaintingShowScene.GetSkinShowAble(var2_53) then
+			arg0_53:emit(ShipProfileMediator.OPEN_PAINTING_SHOW, var2_53, function()
 				onNextTick(function()
-					var1_52()
+					var1_53()
 				end)
 			end)
 		else
-			var1_52()
+			var1_53()
 		end
 	else
-		var1_52()
+		var1_53()
 	end
 end
 
-function var0_0.UpdatePaintingFace(arg0_62, arg1_62)
-	local var0_62 = arg1_62.wordData
-	local var1_62 = var0_62.mainIndex ~= nil
-	local var2_62 = arg1_62.voice.key
+function var0_0.UpdatePaintingFace(arg0_63, arg1_63)
+	local var0_63 = arg1_63.wordData
+	local var1_63 = var0_63.mainIndex ~= nil
+	local var2_63 = arg1_63.voice.key
 
-	if var1_62 then
-		var2_62 = "main_" .. var0_62.mainIndex
+	if var1_63 then
+		var2_63 = "main_" .. var0_63.mainIndex
 	end
 
-	if arg0_62.paintingFitter.childCount > 0 then
-		ShipExpressionHelper.SetExpression(arg0_62.paintingFitter:GetChild(0), arg0_62.paintingName, var2_62, var0_62.maxfavor, arg1_62.skin.id)
+	if arg0_63.paintingFitter.childCount > 0 then
+		ShipExpressionHelper.SetExpression(arg0_63.paintingFitter:GetChild(0), arg0_63.paintingName, var2_63, var0_63.maxfavor, arg1_63.skin.id)
 	end
 
-	if arg0_62.spinePainting then
-		local var3_62 = ShipExpressionHelper.GetExpression(arg0_62.paintingName, var2_62, var0_62.maxfavor, arg1_62.skin.id)
+	if arg0_63.spinePainting then
+		local var3_63 = ShipExpressionHelper.GetExpression(arg0_63.paintingName, var2_63, var0_63.maxfavor, arg1_63.skin.id)
 
-		if var3_62 ~= "" then
-			arg0_62.spinePainting:SetAction(var3_62, 1)
+		if var3_63 ~= "" then
+			arg0_63.spinePainting:SetAction(var3_63, 1)
 		else
-			arg0_62.spinePainting:SetEmptyAction(1)
+			arg0_63.spinePainting:SetEmptyAction(1)
 		end
 	end
 end
 
-function var0_0.PlayVoice(arg0_63, arg1_63, arg2_63)
-	local var0_63 = arg1_63.wordData
-	local var1_63 = arg1_63.skin
-	local var2_63 = arg1_63.words
+function var0_0.PlayVoice(arg0_64, arg1_64, arg2_64)
+	local var0_64 = arg1_64.wordData
+	local var1_64 = arg1_64.skin
+	local var2_64 = arg1_64.words
 
-	arg0_63:RemoveCvTimer()
+	arg0_64:RemoveCvTimer()
 
-	if not var0_63.cvPath or var0_63.cvPath == "" then
+	if not var0_64.cvPath or var0_64.cvPath == "" then
 		return
 	end
 
-	if var2_63.voice_key >= ShipWordHelper.CV_KEY_REPALCE or var2_63.voice_key_2 >= ShipWordHelper.CV_KEY_REPALCE or var2_63.voice_key == ShipWordHelper.CV_KEY_BAN_NEW then
-		local var3_63 = 0
+	if var2_64.voice_key >= ShipWordHelper.CV_KEY_REPALCE or var2_64.voice_key_2 >= ShipWordHelper.CV_KEY_REPALCE or var2_64.voice_key == ShipWordHelper.CV_KEY_BAN_NEW then
+		local var3_64 = 0
 
-		if arg1_63.isLive2d and arg0_63.l2dChar and var0_63.voiceCalibrate then
-			var3_63 = var0_63.voiceCalibrate
+		if arg1_64.isLive2d and arg0_64.l2dChar and var0_64.voiceCalibrate then
+			var3_64 = var0_64.voiceCalibrate
 		end
 
-		arg0_63.cvLoader:DelayPlaySound(var0_63.cvPath, var3_63, function(arg0_64)
-			if arg0_64 then
-				arg2_63[1] = long2int(arg0_64.length) * 0.001
+		arg0_64.cvLoader:DelayPlaySound(var0_64.cvPath, var3_64, function(arg0_65)
+			if arg0_65 then
+				arg2_64[1] = long2int(arg0_65.length) * 0.001
 			end
 		end)
 	end
 
-	local var4_63 = var0_63.se
+	local var4_64 = var0_64.se
 
-	if arg1_63.isLive2d and arg0_63.l2dChar and var4_63 then
-		arg0_63.cvLoader:RawPlaySound("event:/ui/" .. var4_63[1], var4_63[2])
+	if arg1_64.isLive2d and arg0_64.l2dChar and var4_64 then
+		arg0_64.cvLoader:RawPlaySound("event:/ui/" .. var4_64[1], var4_64[2])
 	end
 end
 
-function var0_0.RemoveCvSeTimer(arg0_65)
-	if arg0_65.cvSeTimer then
-		arg0_65.cvSeTimer:Stop()
+function var0_0.RemoveCvSeTimer(arg0_66)
+	if arg0_66.cvSeTimer then
+		arg0_66.cvSeTimer:Stop()
 
-		arg0_65.cvSeTimer = nil
+		arg0_66.cvSeTimer = nil
 	end
 end
 
-function var0_0.RemoveCvTimer(arg0_66)
-	if arg0_66.cvTimer then
-		arg0_66.cvTimer:Stop()
+function var0_0.RemoveCvTimer(arg0_67)
+	if arg0_67.cvTimer then
+		arg0_67.cvTimer:Stop()
 
-		arg0_66.cvTimer = nil
+		arg0_67.cvTimer = nil
 	end
 end
 
-function var0_0.RemoveLive2DTimer(arg0_67)
-	if arg0_67.Live2DTimer then
-		LeanTween.cancel(arg0_67.Live2DTimer)
+function var0_0.RemoveLive2DTimer(arg0_68)
+	if arg0_68.Live2DTimer then
+		LeanTween.cancel(arg0_68.Live2DTimer)
 
-		arg0_67.Live2DTimer = nil
+		arg0_68.Live2DTimer = nil
 	end
 end
 
-function var0_0.ShowDailogue(arg0_68, arg1_68, arg2_68, arg3_68)
-	arg0_68.dailogueCallback = arg3_68 or function()
+function var0_0.ShowDailogue(arg0_69, arg1_69, arg2_69, arg3_69)
+	arg0_69.dailogueCallback = arg3_69 or function()
 		return
 	end
 
-	local var0_68 = arg1_68.wordData.textContent
+	local var0_69 = arg1_69.wordData.textContent
 
-	if not var0_68 or var0_68 == "" or var0_68 == "nil" then
-		if arg0_68.dailogueCallback then
-			arg0_68.dailogueCallback()
+	if not var0_69 or var0_69 == "" or var0_69 == "nil" then
+		if arg0_69.dailogueCallback then
+			arg0_69.dailogueCallback()
 
-			arg0_68.dailogueCallback = nil
+			arg0_69.dailogueCallback = nil
 		end
 
 		return
 	end
 
-	local var1_68 = arg1_68.wordData.voiceCalibrate
-	local var2_68 = arg0_68.chatText:GetComponent(typeof(Text))
+	local var1_69 = arg1_69.wordData.voiceCalibrate
+	local var2_69 = arg0_69.chatText:GetComponent(typeof(Text))
 
-	setText(arg0_68.chatText, SwitchSpecialChar(var0_68))
+	setText(arg0_69.chatText, SwitchSpecialChar(var0_69))
 
-	var2_68.alignment = #var2_68.text > CHAT_POP_STR_LEN and TextAnchor.MiddleLeft or TextAnchor.MiddleCenter
+	var2_69.alignment = #var2_69.text > CHAT_POP_STR_LEN and TextAnchor.MiddleLeft or TextAnchor.MiddleCenter
 
-	local var3_68 = var2_68.preferredHeight + 120
+	local var3_69 = var2_69.preferredHeight + 120
 
-	arg0_68.chatBg.sizeDelta = var3_68 > arg0_68.initChatBgH and Vector2.New(arg0_68.chatBg.sizeDelta.x, var3_68) or Vector2.New(arg0_68.chatBg.sizeDelta.x, arg0_68.initChatBgH)
+	arg0_69.chatBg.sizeDelta = var3_69 > arg0_69.initChatBgH and Vector2.New(arg0_69.chatBg.sizeDelta.x, var3_69) or Vector2.New(arg0_69.chatBg.sizeDelta.x, arg0_69.initChatBgH)
 
-	arg0_68:StopDailogue()
-	setActive(arg0_68.chatTF, true)
-	LeanTween.scale(rtf(arg0_68.chatTF.gameObject), Vector3.New(1, 1, 1), var0_0.CHAT_ANIMATION_TIME):setEase(LeanTweenType.easeOutBack):setDelay(var1_68 and var1_68 or 0):setOnComplete(System.Action(function()
-		LeanTween.scale(rtf(arg0_68.chatTF.gameObject), Vector3.New(0, 0, 1), var0_0.CHAT_ANIMATION_TIME):setEase(LeanTweenType.easeInBack):setDelay(var0_0.CHAT_ANIMATION_TIME + arg2_68[1]):setOnComplete(System.Action(function()
-			if arg0_68.dailogueCallback then
-				arg0_68.dailogueCallback()
+	arg0_69:StopDailogue()
+	setActive(arg0_69.chatTF, true)
+	LeanTween.scale(rtf(arg0_69.chatTF.gameObject), Vector3.New(1, 1, 1), var0_0.CHAT_ANIMATION_TIME):setEase(LeanTweenType.easeOutBack):setDelay(var1_69 and var1_69 or 0):setOnComplete(System.Action(function()
+		LeanTween.scale(rtf(arg0_69.chatTF.gameObject), Vector3.New(0, 0, 1), var0_0.CHAT_ANIMATION_TIME):setEase(LeanTweenType.easeInBack):setDelay(var0_0.CHAT_ANIMATION_TIME + arg2_69[1]):setOnComplete(System.Action(function()
+			if arg0_69.dailogueCallback then
+				arg0_69.dailogueCallback()
 
-				arg0_68.dailogueCallback = nil
+				arg0_69.dailogueCallback = nil
 			end
 
-			if arg0_68.spinePainting then
-				arg0_68.spinePainting:SetEmptyAction(1)
+			if arg0_69.spinePainting then
+				arg0_69.spinePainting:SetEmptyAction(1)
 			end
 		end))
 	end))
 end
 
-function var0_0.StopDailogue(arg0_72)
-	LeanTween.cancel(arg0_72.chatTF.gameObject)
+function var0_0.StopDailogue(arg0_73)
+	LeanTween.cancel(arg0_73.chatTF.gameObject)
 
-	arg0_72.chatTF.localScale = Vector3(0, 0)
+	arg0_73.chatTF.localScale = Vector3(0, 0)
 end
 
-function var0_0.onBackPressed(arg0_73)
-	if arg0_73.paintingView.isPreview then
-		arg0_73.paintingView:Finish(true)
+function var0_0.onBackPressed(arg0_74)
+	if arg0_74.paintingView.isPreview then
+		arg0_74.paintingView:Finish(true)
 
 		return
 	end
 
-	triggerButton(arg0_73.btnBack)
+	triggerButton(arg0_74.btnBack)
 end
 
-function var0_0.playOpening(arg0_74, arg1_74)
-	local var0_74 = "star_level_unlock_anim_" .. arg0_74.skin.id
+function var0_0.playOpening(arg0_75, arg1_75)
+	local var0_75 = "star_level_unlock_anim_" .. arg0_75.skin.id
 
-	if checkABExist("ui/skinunlockanim/" .. var0_74) then
+	if checkABExist("ui/skinunlockanim/" .. var0_75) then
 		pg.CpkPlayMgr.GetInstance():PlayCpkMovie(function()
 			return
 		end, function()
-			if arg1_74 then
-				arg1_74()
+			if arg1_75 then
+				arg1_75()
 			end
-		end, "ui/skinunlockanim", var0_74, true, false, nil)
-	elseif arg1_74 then
-		arg1_74()
+		end, "ui/skinunlockanim", var0_75, true, false, nil)
+	elseif arg1_75 then
+		arg1_75()
 	end
 end
 
-function var0_0.updateSpinePaintingState(arg0_77)
-	local var0_77 = HXSet.autoHxShiftPath("spinepainting/" .. arg0_77.paintingName)
+function var0_0.updateSpinePaintingState(arg0_78)
+	local var0_78 = HXSet.autoHxShiftPath("spinepainting/" .. arg0_78.paintingName)
 
-	if checkABExist(var0_77) then
-		setActive(arg0_77.spinePaintingBtn, true)
-		setActive(arg0_77.spinePaintingToggle:Find("on"), arg0_77.spinePaintingisOn)
-		setActive(arg0_77.spinePaintingToggle:Find("off"), not arg0_77.spinePaintingisOn)
-		removeOnButton(arg0_77.spinePaintingBtn)
-		onButton(arg0_77, arg0_77.spinePaintingBtn, function()
-			arg0_77.spinePaintingisOn = not arg0_77.spinePaintingisOn
+	if checkABExist(var0_78) then
+		setActive(arg0_78.spinePaintingBtn, true)
+		setActive(arg0_78.spinePaintingToggle:Find("on"), arg0_78.spinePaintingisOn)
+		setActive(arg0_78.spinePaintingToggle:Find("off"), not arg0_78.spinePaintingisOn)
+		removeOnButton(arg0_78.spinePaintingBtn)
+		onButton(arg0_78, arg0_78.spinePaintingBtn, function()
+			arg0_78.spinePaintingisOn = not arg0_78.spinePaintingisOn
 
-			setActive(arg0_77.spinePaintingToggle:Find("on"), arg0_77.spinePaintingisOn)
-			setActive(arg0_77.spinePaintingToggle:Find("off"), not arg0_77.spinePaintingisOn)
+			setActive(arg0_78.spinePaintingToggle:Find("on"), arg0_78.spinePaintingisOn)
+			setActive(arg0_78.spinePaintingToggle:Find("off"), not arg0_78.spinePaintingisOn)
 
-			if arg0_77.spinePaintingisOn then
-				arg0_77:CreateSpinePainting()
+			if arg0_78.spinePaintingisOn then
+				arg0_78:CreateSpinePainting()
 			end
 
-			setActive(arg0_77.viewBtn, not arg0_77.spinePaintingisOn)
-			setActive(arg0_77.rotateBtn, not arg0_77.spinePaintingisOn)
-			setActive(arg0_77.commonPainting, not arg0_77.spinePaintingisOn)
-			setActive(arg0_77.spinePaintingRoot, arg0_77.spinePaintingisOn)
-			setActive(arg0_77.spinePaintingBgRoot, arg0_77.spinePaintingisOn)
-			arg0_77:StopDailogue()
+			setActive(arg0_78.viewBtn, not arg0_78.spinePaintingisOn)
+			setActive(arg0_78.rotateBtn, not arg0_78.spinePaintingisOn)
+			setActive(arg0_78.commonPainting, not arg0_78.spinePaintingisOn)
+			setActive(arg0_78.spinePaintingRoot, arg0_78.spinePaintingisOn)
+			setActive(arg0_78.spinePaintingBgRoot, arg0_78.spinePaintingisOn)
+			arg0_78:StopDailogue()
 
-			if arg0_77.skin then
-				arg0_77.pages[var0_0.INDEX_PROFILE]:ExecuteAction("Flush", arg0_77.skin, false)
+			if arg0_78.skin then
+				arg0_78.pages[var0_0.INDEX_PROFILE]:ExecuteAction("Flush", arg0_78.skin, false)
 			end
 		end, SFX_PANEL)
 	else
-		setActive(arg0_77.spinePaintingBtn, false)
+		setActive(arg0_78.spinePaintingBtn, false)
 	end
 end
 
-function var0_0.CreateSpinePainting(arg0_79)
-	if arg0_79.skin.id ~= arg0_79.preSkinId then
-		arg0_79:DestroySpinePainting()
+function var0_0.CreateSpinePainting(arg0_80)
+	if arg0_80.skin.id ~= arg0_80.preSkinId then
+		arg0_80:DestroySpinePainting()
 
-		local var0_79 = arg0_79.shipGroup:getShipConfigId()
-		local var1_79 = SpinePainting.GenerateData({
+		local var0_80 = arg0_80.shipGroup:getShipConfigId()
+		local var1_80 = SpinePainting.GenerateData({
 			ship = Ship.New({
 				noChangeSkin = true,
-				configId = var0_79,
-				skin_id = arg0_79.skin.id
+				configId = var0_80,
+				skin_id = arg0_80.skin.id
 			}),
 			position = Vector3(0, 0, 0),
-			parent = arg0_79.spinePaintingRoot,
-			offset = pg.ship_skin_template[arg0_79.skin.id].spine_offset_profile,
-			effectParent = arg0_79.spinePaintingBgRoot
+			parent = arg0_80.spinePaintingRoot,
+			offset = pg.ship_skin_template[arg0_80.skin.id].spine_offset_profile,
+			effectParent = arg0_80.spinePaintingBgRoot
 		})
 
-		arg0_79.spinePainting = SpinePainting.New(var1_79, function()
+		arg0_80.spinePainting = SpinePainting.New(var1_80, function()
 			return
 		end)
-		arg0_79.preSkinId = arg0_79.skin.id
+		arg0_80.preSkinId = arg0_80.skin.id
 	end
 
-	arg0_79:DisplaySpinePainting(true)
+	arg0_80:DisplaySpinePainting(true)
 end
 
-function var0_0.DestroySpinePainting(arg0_81)
-	if arg0_81.spinePainting then
-		arg0_81.spinePainting:Dispose()
-
-		arg0_81.spinePainting = nil
-	end
-
-	arg0_81.preSkinId = nil
-end
-
-function var0_0.onWeddingReview(arg0_82, arg1_82)
-	if not arg1_82 and arg0_82.exitLoadL2d then
-		arg0_82.exitLoadL2d = false
-
-		arg0_82.live2DBtn:Update(arg0_82.paintingName, true)
-	else
-		arg0_82.live2DBtn:Update(arg0_82.paintingName, false)
-	end
-
-	arg0_82.live2DBtn:SetEnable(not arg1_82)
-
-	if arg0_82.l2dChar and arg1_82 then
+function var0_0.clearLive2dPainting(arg0_82)
+	if arg0_82.l2dChar then
 		arg0_82.l2dChar:Dispose()
 
 		arg0_82.l2dChar = nil
@@ -980,45 +966,80 @@ function var0_0.onWeddingReview(arg0_82, arg1_82)
 
 		arg0_82:StopDailogue()
 		arg0_82.cvLoader:StopSound()
-
-		arg0_82.exitLoadL2d = true
-	end
-
-	if arg0_82.spinePaintingRoot.childCount > 0 then
-		setActive(arg0_82.commonPainting, not arg0_82.spinePaintingisOn)
 	end
 end
 
-function var0_0.DisplaySpinePainting(arg0_83, arg1_83)
-	setActive(arg0_83.spinePaintingRoot, arg1_83)
-	setActive(arg0_83.spinePaintingBgRoot, arg1_83)
-end
+function var0_0.DestroySpinePainting(arg0_83)
+	if arg0_83.spinePainting then
+		arg0_83.spinePainting:Dispose()
 
-function var0_0.willExit(arg0_84)
-	pg.CpkPlayMgr.GetInstance():DisposeCpkMovie()
-	SetParent(arg0_84.bottomTF, arg0_84._tf)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_84.blurPanel, arg0_84._tf)
-
-	for iter0_84, iter1_84 in ipairs(arg0_84.pages) do
-		iter1_84:Destroy()
+		arg0_83.spinePainting = nil
 	end
 
-	if arg0_84.l2dChar then
+	arg0_83.preSkinId = nil
+end
+
+function var0_0.onWeddingReview(arg0_84, arg1_84)
+	if not arg1_84 and arg0_84.exitLoadL2d then
+		arg0_84.exitLoadL2d = false
+
+		arg0_84.live2DBtn:Update(arg0_84.paintingName, true)
+	else
+		arg0_84.live2DBtn:Update(arg0_84.paintingName, false)
+	end
+
+	arg0_84.live2DBtn:SetEnable(not arg1_84)
+
+	if arg0_84.l2dChar and arg1_84 then
 		arg0_84.l2dChar:Dispose()
+
+		arg0_84.l2dChar = nil
+		arg0_84.l2dActioning = false
+		arg0_84.cvLoader.prevCvPath = nil
+
+		arg0_84:StopDailogue()
+		arg0_84.cvLoader:StopSound()
+
+		arg0_84.exitLoadL2d = true
 	end
 
-	arg0_84:DestroySpinePainting()
-	arg0_84.paintingView:Dispose()
-	arg0_84.live2DBtn:Dispose()
-	arg0_84.cvLoader:Dispose()
-	arg0_84:ReturnModel()
-	arg0_84:RecyclePainting()
-	_.each(arg0_84.skinBtns or {}, function(arg0_85)
-		arg0_85:Dispose()
+	if arg0_84.spinePaintingRoot.childCount > 0 then
+		setActive(arg0_84.commonPainting, not arg0_84.spinePaintingisOn)
+	end
+end
+
+function var0_0.DisplaySpinePainting(arg0_85, arg1_85)
+	setActive(arg0_85.spinePaintingRoot, arg1_85)
+	setActive(arg0_85.spinePaintingBgRoot, arg1_85)
+end
+
+function var0_0.willExit(arg0_86)
+	pg.CpkPlayMgr.GetInstance():DisposeCpkMovie()
+	SetParent(arg0_86.bottomTF, arg0_86._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_86.blurPanel, arg0_86._tf)
+
+	for iter0_86, iter1_86 in ipairs(arg0_86.pages) do
+		iter1_86:Destroy()
+	end
+
+	if arg0_86.l2dChar then
+		arg0_86.l2dChar:Dispose()
+
+		arg0_86.l2dChar = nil
+	end
+
+	arg0_86:DestroySpinePainting()
+	arg0_86.paintingView:Dispose()
+	arg0_86.live2DBtn:Dispose()
+	arg0_86.cvLoader:Dispose()
+	arg0_86:ReturnModel()
+	arg0_86:RecyclePainting()
+	_.each(arg0_86.skinBtns or {}, function(arg0_87)
+		arg0_87:Dispose()
 	end)
-	arg0_84:RemoveCvTimer()
-	arg0_84:RemoveCvSeTimer()
-	arg0_84:RemoveLive2DTimer()
+	arg0_86:RemoveCvTimer()
+	arg0_86:RemoveCvSeTimer()
+	arg0_86:RemoveLive2DTimer()
 end
 
 return var0_0

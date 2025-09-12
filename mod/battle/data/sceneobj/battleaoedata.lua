@@ -275,7 +275,7 @@ function var2_0.AppendComponent(arg0_49, arg1_49)
 end
 
 function var2_0.InitCldComponent(arg0_50)
-	if arg0_50._areaType == var1_0.AreaType.CUBE then
+	if arg0_50._areaType == var1_0.AreaType.CUBE or arg0_50._areaType == var1_0.AreaType.ELLIPSE then
 		arg0_50._cldComponent = var0_0.Battle.BattleCubeCldComponent.New(arg0_50._width, arg0_50._tickness, arg0_50._height, 0, 0)
 	elseif arg0_50._areaType == var1_0.AreaType.COLUMN then
 		arg0_50._cldComponent = var0_0.Battle.BattleColumnCldComponent.New(arg0_50._range, arg0_50._tickness)

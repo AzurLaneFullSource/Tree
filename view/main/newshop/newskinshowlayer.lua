@@ -42,17 +42,7 @@ function var0_0.init(arg0_2)
 	setActive(arg0_2.switchPreviewBtn, false)
 	setActive(arg0_2.limitTime, false)
 
-	arg0_2.changeSkinToggles = {}
-
-	for iter0_2 = 1, 2 do
-		local var0_2 = arg0_2.changeSkin:Find("toggle_ui/ad/toggle/" .. iter0_2)
-		local var1_2 = GetComponent(var0_2, typeof(Toggle))
-
-		var1_2.isOn = false
-
-		table.insert(arg0_2.changeSkinToggles, var1_2)
-	end
-
+	arg0_2.changeSkinToggle = ChangeSkinToggle.New(arg0_2.changeSkin:Find("toggle_ui"))
 	arg0_2.downloads = {}
 	arg0_2.isToggleDynamic = false
 	arg0_2.isToggleShowBg = true
@@ -151,9 +141,7 @@ function var0_0.FlushChangeSkin(arg0_14)
 
 	arg0_14._toggleIndex = ShipSkin.GetChangeSkinIndex(arg0_14.skinId)
 
-	for iter0_14 = 1, 2 do
-		arg0_14.changeSkinToggles[iter0_14].isOn = iter0_14 == arg0_14._toggleIndex and true or false
-	end
+	arg0_14.changeSkinToggle:setSkinData(arg0_14.skinId)
 end
 
 function var0_0.FlushName(arg0_15)

@@ -540,50 +540,57 @@ function var0_0.getNoticeBannerDisplays(arg0_53)
 	end)
 end
 
-function var0_0.findNextAutoActivity(arg0_55)
+function var0_0.findNextAutoActivity(arg0_55, arg1_55)
 	local var0_55
 	local var1_55 = pg.TimeMgr.GetInstance()
 	local var2_55 = var1_55:GetServerTime()
+	local var3_55 = arg1_55 and arg1_55 ~= "" and arg0_55:getCorePanelActivity(arg1_55) or arg0_55:getPanelActivities()
 
-	for iter0_55, iter1_55 in ipairs(arg0_55:getPanelActivities()) do
+	for iter0_55, iter1_55 in ipairs(var3_55) do
 		if not iter1_55.autoActionForbidden then
-			local var3_55 = iter1_55:getConfig("type")
+			local var4_55 = iter1_55:getConfig("type")
 
-			if var3_55 == ActivityConst.ACTIVITY_TYPE_7DAYSLOGIN then
-				local var4_55 = iter1_55:getConfig("config_id")
-				local var5_55 = pg.activity_7_day_sign[var4_55].front_drops
+			if var4_55 == ActivityConst.ACTIVITY_TYPE_7DAYSLOGIN then
+				local var5_55 = iter1_55:getConfig("config_client")
 
-				if iter1_55.data1 < #var5_55 and not var1_55:IsSameDay(var2_55, iter1_55.data2) and var2_55 > iter1_55.data2 then
+				if var5_55 and var5_55.manulSign == true then
+					-- block empty
+				else
+					local var6_55 = iter1_55:getConfig("config_id")
+					local var7_55 = pg.activity_7_day_sign[var6_55].front_drops
+
+					if iter1_55.data1 < #var7_55 and not var1_55:IsSameDay(var2_55, iter1_55.data2) and var2_55 > iter1_55.data2 then
+						var0_55 = iter1_55
+
+						break
+					end
+				end
+			elseif var4_55 == ActivityConst.ACTIVITY_TYPE_PROGRESSLOGIN then
+				local var8_55 = getProxy(ChapterProxy)
+
+				if iter1_55.data1 < 7 and not var1_55:IsSameDay(var2_55, iter1_55.data2) or iter1_55.data1 == 7 and not iter1_55.achieved and var8_55:isClear(204) then
 					var0_55 = iter1_55
 
 					break
 				end
-			elseif var3_55 == ActivityConst.ACTIVITY_TYPE_PROGRESSLOGIN then
-				local var6_55 = getProxy(ChapterProxy)
-
-				if iter1_55.data1 < 7 and not var1_55:IsSameDay(var2_55, iter1_55.data2) or iter1_55.data1 == 7 and not iter1_55.achieved and var6_55:isClear(204) then
-					var0_55 = iter1_55
-
-					break
-				end
-			elseif var3_55 == ActivityConst.ACTIVITY_TYPE_MONTHSIGN then
-				local var7_55 = pg.TimeMgr.GetInstance():STimeDescS(var2_55, "*t")
+			elseif var4_55 == ActivityConst.ACTIVITY_TYPE_MONTHSIGN then
+				local var9_55 = pg.TimeMgr.GetInstance():STimeDescS(var2_55, "*t")
 
 				iter1_55:setSpecialData("reMonthSignDay", nil)
 
-				if var7_55.year ~= iter1_55.data1 or var7_55.month ~= iter1_55.data2 then
-					iter1_55.data1 = var7_55.year
-					iter1_55.data2 = var7_55.month
+				if var9_55.year ~= iter1_55.data1 or var9_55.month ~= iter1_55.data2 then
+					iter1_55.data1 = var9_55.year
+					iter1_55.data2 = var9_55.month
 					iter1_55.data1_list = {}
 					var0_55 = iter1_55
 
 					break
-				elseif not table.contains(iter1_55.data1_list, var7_55.day) then
+				elseif not table.contains(iter1_55.data1_list, var9_55.day) then
 					var0_55 = iter1_55
 
 					break
-				elseif var7_55.day > #iter1_55.data1_list and pg.activity_month_sign[iter1_55.data2].resign_count > iter1_55.data3 then
-					for iter2_55 = var7_55.day, 1, -1 do
+				elseif var9_55.day > #iter1_55.data1_list and pg.activity_month_sign[iter1_55.data2].resign_count > iter1_55.data3 then
+					for iter2_55 = var9_55.day, 1, -1 do
 						if not table.contains(iter1_55.data1_list, iter2_55) then
 							iter1_55:setSpecialData("reMonthSignDay", iter2_55)
 
@@ -594,11 +601,11 @@ function var0_0.findNextAutoActivity(arg0_55)
 					var0_55 = iter1_55
 				end
 			elseif iter1_55.id == ActivityConst.SHADOW_PLAY_ID and iter1_55.clientData1 == 0 then
-				local var8_55 = iter1_55:getConfig("config_data")[1]
-				local var9_55 = getProxy(TaskProxy)
-				local var10_55 = var9_55:getTaskById(var8_55) or var9_55:getFinishTaskById(var8_55)
+				local var10_55 = iter1_55:getConfig("config_data")[1]
+				local var11_55 = getProxy(TaskProxy)
+				local var12_55 = var11_55:getTaskById(var10_55) or var11_55:getFinishTaskById(var10_55)
 
-				if var10_55 and not var10_55:isReceive() then
+				if var12_55 and not var12_55:isReceive() then
 					var0_55 = iter1_55
 
 					break
@@ -610,10 +617,10 @@ function var0_0.findNextAutoActivity(arg0_55)
 	if not var0_55 then
 		for iter3_55, iter4_55 in pairs(arg0_55.data) do
 			if not iter4_55:isShow() and iter4_55:getConfig("type") == ActivityConst.ACTIVITY_TYPE_7DAYSLOGIN then
-				local var11_55 = iter4_55:getConfig("config_id")
-				local var12_55 = pg.activity_7_day_sign[var11_55].front_drops
+				local var13_55 = iter4_55:getConfig("config_id")
+				local var14_55 = pg.activity_7_day_sign[var13_55].front_drops
 
-				if iter4_55.data1 < #var12_55 and not var1_55:IsSameDay(var2_55, iter4_55.data2) and var2_55 > iter4_55.data2 then
+				if iter4_55.data1 < #var14_55 and not var1_55:IsSameDay(var2_55, iter4_55.data2) and var2_55 > iter4_55.data2 then
 					var0_55 = iter4_55
 
 					break
@@ -842,6 +849,8 @@ end
 
 function var0_0.addVitemById(arg0_77, arg1_77, arg2_77)
 	local var0_77 = arg0_77:getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG) or arg0_77:getActivityByType(ActivityConst.ACTIVITY_TYPE_HOLIDAY_VILLA)
+
+	var0_77 = var0_77 or arg0_77:getActivityByType(ActivityConst.ACTIVITY_TYPE_CITY_REBUILD)
 
 	assert(var0_77, "vbagType invalid")
 

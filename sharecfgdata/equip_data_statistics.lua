@@ -94716,6 +94716,366 @@ _G.pg.base.equip_data_statistics[38253] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[38260] = {
+	ammo = 5,
+	attribute_2 = "air",
+	descrip = "An improved model of the Ryusei torpedo bomber.",
+	icon = "38260",
+	id = 38260,
+	name = "Ryusei Kai",
+	nationality = 3,
+	rarity = 5,
+	speciality = "<[TRP]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 8,
+	value_2 = 45,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {
+		{
+			6,
+			50540,
+		},
+		{
+			6,
+			50840,
+		},
+		{
+			4,
+			51660,
+		},
+	},
+	equip_info = {
+		6,
+		7,
+		8,
+		9,
+	},
+	weapon_id = {
+		38260,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7,
+	},
+	part_sub = {
+		6,
+		7,
+	},
+	equip_parameters = {},
+	label = {
+		"IJN",
+		"CV",
+		"TB",
+	},
+}
+
+_G.pg.base.equip_data_statistics[38261] = {
+	base = 38260,
+	id = 38261,
+	ammo_info = {
+		{
+			6,
+			50541,
+		},
+		{
+			6,
+			50841,
+		},
+		{
+			4,
+			51661,
+		},
+	},
+	weapon_id = {
+		38261,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[38262] = {
+	base = 38260,
+	id = 38262,
+	ammo_info = {
+		{
+			6,
+			50542,
+		},
+		{
+			6,
+			50842,
+		},
+		{
+			4,
+			51662,
+		},
+	},
+	weapon_id = {
+		38262,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[38263] = {
+	base = 38260,
+	id = 38263,
+	ammo_info = {
+		{
+			6,
+			50543,
+		},
+		{
+			6,
+			50843,
+		},
+		{
+			4,
+			51663,
+		},
+	},
+	weapon_id = {
+		38263,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[38264] = {
+	base = 38260,
+	id = 38264,
+	ammo_info = {
+		{
+			6,
+			50544,
+		},
+		{
+			6,
+			50844,
+		},
+		{
+			4,
+			51664,
+		},
+	},
+	weapon_id = {
+		38264,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[38265] = {
+	base = 38260,
+	id = 38265,
+	ammo_info = {
+		{
+			6,
+			50545,
+		},
+		{
+			6,
+			50845,
+		},
+		{
+			4,
+			51665,
+		},
+	},
+	weapon_id = {
+		38265,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[38266] = {
+	base = 38260,
+	id = 38266,
+	ammo_info = {
+		{
+			6,
+			50546,
+		},
+		{
+			6,
+			50846,
+		},
+		{
+			4,
+			51666,
+		},
+	},
+	weapon_id = {
+		38266,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[38267] = {
+	base = 38260,
+	id = 38267,
+	ammo_info = {
+		{
+			6,
+			50547,
+		},
+		{
+			6,
+			50847,
+		},
+		{
+			4,
+			51667,
+		},
+	},
+	weapon_id = {
+		38267,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[38268] = {
+	base = 38260,
+	id = 38268,
+	ammo_info = {
+		{
+			6,
+			50548,
+		},
+		{
+			6,
+			50848,
+		},
+		{
+			4,
+			51668,
+		},
+	},
+	weapon_id = {
+		38268,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[38269] = {
+	base = 38260,
+	id = 38269,
+	ammo_info = {
+		{
+			6,
+			50549,
+		},
+		{
+			6,
+			50849,
+		},
+		{
+			4,
+			51669,
+		},
+	},
+	weapon_id = {
+		38269,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[38270] = {
+	base = 38260,
+	id = 38270,
+	ammo_info = {
+		{
+			6,
+			50550,
+		},
+		{
+			6,
+			50850,
+		},
+		{
+			4,
+			51670,
+		},
+	},
+	weapon_id = {
+		38270,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[38271] = {
+	anti_siren = 100,
+	base = 38260,
+	id = 38271,
+	ammo_info = {
+		{
+			6,
+			50551,
+		},
+		{
+			6,
+			50851,
+		},
+		{
+			4,
+			51671,
+		},
+	},
+	weapon_id = {
+		38271,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[38272] = {
+	anti_siren = 200,
+	base = 38260,
+	id = 38272,
+	ammo_info = {
+		{
+			6,
+			50552,
+		},
+		{
+			6,
+			50852,
+		},
+		{
+			4,
+			51672,
+		},
+	},
+	weapon_id = {
+		38272,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[38273] = {
+	anti_siren = 300,
+	base = 38260,
+	id = 38273,
+	ammo_info = {
+		{
+			6,
+			50553,
+		},
+		{
+			6,
+			50853,
+		},
+		{
+			4,
+			51673,
+		},
+	},
+	weapon_id = {
+		38273,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[38300] = {
 	ammo = 5,
 	attribute_2 = "air",
@@ -119988,6 +120348,96 @@ _G.pg.base.equip_data_statistics[61123] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[61131] = {
+	ammo = 10,
+	descrip = "Aircraft Carrier Airstrike",
+	icon = "1",
+	id = 61131,
+	name = "航空攻击展示-白凤I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 99,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61131,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[61132] = {
+	base = 61131,
+	id = 61132,
+	name = "航空攻击展示-白凤II",
+	weapon_id = {
+		61132,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[61133] = {
+	base = 61131,
+	id = 61133,
+	name = "航空攻击展示-白凤III",
+	weapon_id = {
+		61133,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[61141] = {
+	ammo = 10,
+	descrip = "Aircraft Carrier Airstrike",
+	icon = "1",
+	id = 61141,
+	name = "航空攻击展示-i404I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 99,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61141,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[61142] = {
+	base = 61141,
+	id = 61142,
+	name = "航空攻击展示-i404II",
+	weapon_id = {
+		61142,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[61501] = {
 	ammo = 10,
 	descrip = "Used during airstrikes",
@@ -123944,6 +124394,59 @@ _G.pg.base.equip_data_statistics[72272] = {
 	name = "全弹发射-利根级II",
 	weapon_id = {
 		72272,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[72281] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 72281,
+	name = "全弹发射-伊吹级I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		72281,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[72282] = {
+	base = 72281,
+	id = 72282,
+	name = "全弹发射-伊吹级II",
+	weapon_id = {
+		72282,
 	},
 	hidden_skill_id = {},
 }
@@ -134407,6 +134910,59 @@ _G.pg.base.equip_data_statistics[80512] = {
 	name = "专属弹幕-大胆II",
 	weapon_id = {
 		170832,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[80521] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 80521,
+	name = "专属弹幕-伊404I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 2,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61781,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80522] = {
+	base = 80521,
+	id = 80522,
+	name = "专属弹幕-伊404II",
+	weapon_id = {
+		61782,
 	},
 	hidden_skill_id = {},
 }
@@ -171473,6 +172029,18 @@ _G.pg.base.equip_data_statistics[3297002] = {
 		"CV",
 		"TB",
 	},
+}
+
+_G.pg.base.equip_data_statistics[3317601] = {
+	anti_siren = 300,
+	base = 14500,
+	damage = "207 x 2",
+	id = 3317601,
+	name = "【2025白凤UR活动 剧情战】457主炮（非战列舰种使用的特殊版本）",
+	weapon_id = {
+		3317601,
+	},
+	hidden_skill_id = {},
 }
 
 _G.pg.base.equip_data_statistics[800000] = {

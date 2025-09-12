@@ -8,21 +8,21 @@ function var0_0.OnInit(arg0_2)
 	local var0_2 = arg0_2._tf:Find("operate")
 
 	arg0_2.ulist = UIItemList.New(var0_2:Find("got/bottom/list"), var0_2:Find("got/bottom/list/tpl"))
-	arg0_2.confirmBtn = var0_2:Find("action/confirm")
+	arg0_2.confirmBtn = var0_2:Find("actions/confirm")
 
-	setText(arg0_2.confirmBtn, i18n("text_confirm"))
+	setText(arg0_2.confirmBtn:Find("Image"), i18n("text_confirm"))
 
-	arg0_2.cancelBtn = var0_2:Find("action/cancel")
+	arg0_2.cancelBtn = var0_2:Find("actions/cancel")
 
-	setText(arg0_2.cancelBtn, i18n("text_cancel"))
+	setText(arg0_2.cancelBtn:Find("Image"), i18n("text_cancel"))
 
 	arg0_2.rightArr = var0_2:Find("calc/value_bg/add")
 	arg0_2.leftArr = var0_2:Find("calc/value_bg/mius")
 	arg0_2.maxBtn = var0_2:Find("calc/max")
 	arg0_2.valueText = var0_2:Find("calc/value_bg/Text")
-	arg0_2.itemTF = var0_2:Find("item/left/IconTpl")
-	arg0_2.nameTF = arg0_2:findTF("item/display_panel/name_container/name")
-	arg0_2.descTF = arg0_2:findTF("item/display_panel/desc/Text")
+	arg0_2.itemTF = var0_2:Find("item")
+	arg0_2.nameTF = var0_2:Find("item/display_panel/name_container/name/Text")
+	arg0_2.descTF = var0_2:Find("item/display_panel/desc/Text")
 
 	onButton(arg0_2, arg0_2._tf:Find("bg"), function()
 		arg0_2:Hide()
@@ -88,7 +88,7 @@ function var0_0.updateValue(arg0_11)
 			return
 		end
 
-		setText(arg1_12:Find("item/bg/icon_bg/count"), arg0_11.count)
+		setText(arg1_12:Find("item/icon_bg/count"), arg0_11.count)
 	end)
 end
 
@@ -109,9 +109,9 @@ function var0_0.update(arg0_13, arg1_13)
 		arg1_15 = arg1_15 + 1
 
 		if arg0_15 == UIItemList.EventUpdate then
-			updateDrop(arg2_15:Find("item/bg"), arg0_13.displayDrops[arg1_15])
+			updateDrop(arg2_15:Find("item"), arg0_13.displayDrops[arg1_15])
 
-			local var0_15 = arg2_15:Find("item/bg/icon_bg/count")
+			local var0_15 = arg2_15:Find("item/icon_bg/count")
 
 			onToggle(arg0_13, arg2_15, function(arg0_16)
 				if arg0_16 then
@@ -131,11 +131,11 @@ function var0_0.update(arg0_13, arg1_13)
 	triggerToggle(arg0_13.selectedItem, true)
 	arg0_13:updateValue()
 
-	local var0_13 = {
+	local var0_13 = Drop.New({
 		type = arg1_13.type,
 		id = arg1_13.id,
 		count = arg1_13.count
-	}
+	})
 
 	updateDrop(arg0_13.itemTF:Find("left/IconTpl"), setmetatable({
 		count = 0

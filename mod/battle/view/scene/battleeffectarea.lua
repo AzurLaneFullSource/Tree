@@ -22,7 +22,7 @@ function var3_0.Init(arg0_2)
 	arg0_2._tf = arg0_2._go.transform
 	arg0_2._areaType = arg0_2._aoeData:GetAreaType()
 
-	if arg0_2._areaType == var1_0.AreaType.CUBE then
+	if arg0_2._areaType == var1_0.AreaType.CUBE or arg0_2._areaType == var1_0.AreaType.ELLIPSE then
 		arg0_2.UpdateScale = arg0_2.updateCubeScale
 	elseif arg0_2._areaType == var1_0.AreaType.COLUMN then
 		arg0_2.UpdateScale = arg0_2.updateColumnScale

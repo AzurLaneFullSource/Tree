@@ -12,7 +12,7 @@ function var0_0.init(arg0_2, ...)
 	var0_0.super.init(arg0_2, ...)
 	quickPlayAnimation(arg0_2._tf:Find("adapt/TopPage/top"), "Anim_SecretsAbyssCoreActivityUI_top_In")
 	setText(arg0_2._tf:Find("adapt/TopPage/top/deco/Text"), i18n("masaina_main_title"))
-	setText(arg0_2._tf:Find("adapt/TopPage/top/deco/Text_1"), i18n("masaina_main_title_en"))
+	setText(arg0_2._tf:Find("adapt/TopPage/top/deco/Text/Text_1"), i18n("masaina_main_title_en"))
 
 	local var0_2
 

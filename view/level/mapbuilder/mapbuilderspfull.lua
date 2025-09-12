@@ -59,30 +59,32 @@ function var0_0.UpdateBattle(arg0_6)
 end
 
 function var0_0.UpdateSwitchMapButtons(arg0_8)
-	local var0_8 = arg0_8.contextData.map
-	local var1_8 = var0_8:isRemaster()
-	local var2_8
+	local var0_8 = arg0_8.contextData.displayMode == var0_0.DISPLAY.BATTLE
+	local var1_8, var2_8 = arg0_8.contextData.map:isActivity()
+	local var3_8 = arg0_8.contextData.map
+	local var4_8 = var3_8:isRemaster()
+	local var5_8
 
-	if var1_8 then
-		var2_8 = getProxy(ChapterProxy):getRemasterMaps(var0_8.remasterId)
+	if var4_8 then
+		var5_8 = getProxy(ChapterProxy):getRemasterMaps(var3_8.remasterId)
 	else
-		var2_8 = getProxy(ChapterProxy):getMapsByActivities(var0_8:getConfig("on_activity"))
+		var5_8 = getProxy(ChapterProxy):getMapsByActivities(var3_8:getConfig("on_activity"))
 	end
 
-	local var3_8 = _.select(var2_8, function(arg0_9)
+	local var6_8 = _.select(var5_8, function(arg0_9)
 		return arg0_9:getMapType() ~= Map.ACTIVITY_HARD
 	end)
 
-	UIItemList.StaticAlign(arg0_8.mapSwitchList, arg0_8.mapSwitchList:GetChild(0), #var3_8, function(arg0_10, arg1_10, arg2_10)
+	UIItemList.StaticAlign(arg0_8.mapSwitchList, arg0_8.mapSwitchList:GetChild(0), #var6_8, function(arg0_10, arg1_10, arg2_10)
 		if arg0_10 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		local var0_10 = var3_8[arg1_10 + 1]
+		local var0_10 = var6_8[arg1_10 + 1]
 		local var1_10 = var0_10:getMapType()
 
-		setActive(arg2_10:Find("Unselect"), var0_10.id ~= var0_8.id)
-		setActive(arg2_10:Find("Selected"), var0_10.id == var0_8.id)
+		setActive(arg2_10:Find("Unselect"), var0_10.id ~= var3_8.id)
+		setActive(arg2_10:Find("Selected"), var0_10.id == var3_8.id)
 
 		local var2_10
 		local var3_10 = var0_10:getConfig("map_name")
@@ -109,7 +111,7 @@ function var0_0.UpdateSwitchMapButtons(arg0_8)
 			if var5_10:IsSpChapter() then
 				local var6_10 = pg.expedition_data_by_map[var5_10:getConfig("map")].on_activity
 
-				setActive(arg2_10:Find("Tip"), var0_10.id ~= var0_8.id and getProxy(ChapterProxy):IsActivitySPChapterActive(var6_10) and SettingsProxy.IsShowActivityMapSPTip())
+				setActive(arg2_10:Find("Tip"), var0_10.id ~= var3_8.id and getProxy(ChapterProxy):IsActivitySPChapterActive(var6_10) and SettingsProxy.IsShowActivityMapSPTip())
 			end
 		end
 
@@ -126,7 +128,7 @@ function var0_0.UpdateSwitchMapButtons(arg0_8)
 
 		setActive(arg2_10:Find("Unselect/Lock"), not var7_10 or var10_10)
 		onButton(arg0_8, arg2_10, function()
-			if var0_10.id == var0_8.id then
+			if var0_10.id == var3_8.id then
 				return
 			end
 
@@ -138,16 +140,16 @@ function var0_0.UpdateSwitchMapButtons(arg0_8)
 		end, SFX_PANEL)
 	end)
 
-	local var4_8 = var0_8:getConfig("type")
+	local var7_8 = var3_8:getConfig("type")
 
-	setActive(arg0_8.sceneParent.actExtraRank, var4_8 == Map.ACT_EXTRA and _.any(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_EXTRA_CHAPTER_RANK), function(arg0_12)
+	setActive(arg0_8.sceneParent.actExtraRank, var7_8 == Map.ACT_EXTRA and _.any(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_EXTRA_CHAPTER_RANK), function(arg0_12)
 		if not arg0_12 or arg0_12:isEnd() then
 			return
 		end
 
 		local var0_12 = arg0_12:getConfig("config_data")[1]
 
-		return _.any(var0_8:getChapters(), function(arg0_13)
+		return _.any(var3_8:getChapters(), function(arg0_13)
 			if not arg0_13:IsEXChapter() then
 				return false
 			end
@@ -155,15 +157,15 @@ function var0_0.UpdateSwitchMapButtons(arg0_8)
 			return table.contains(arg0_13:getConfig("boss_expedition_id"), var0_12)
 		end)
 	end))
-	setActive(arg0_8.sceneParent.actExchangeShopBtn, not ActivityConst.HIDE_PT_PANELS and not var1_8 and arg0_8.sceneParent:IsActShopActive())
+	setActive(arg0_8.sceneParent.actExchangeShopBtn, not ActivityConst.HIDE_PT_PANELS and not var4_8 and arg0_8.sceneParent:IsActShopActive())
 
-	local var5_8 = arg0_8.contextData.map and getProxy(ActivityProxy):getActivityById(arg0_8.contextData.map:getConfig("on_activity")) or nil
-	local var6_8 = var5_8 and not var5_8:isEnd() and var5_8:GetConfigClientSetting("PTID")
+	local var8_8 = arg0_8.contextData.map and getProxy(ActivityProxy):getActivityById(arg0_8.contextData.map:getConfig("on_activity")) or nil
+	local var9_8 = var8_8 and not var8_8:isEnd() and var8_8:GetConfigClientSetting("PTID")
 
 	arg0_8.sceneParent:updatePtActivity(underscore.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK), function(arg0_14)
-		return arg0_14:getConfig("config_id") == var6_8
+		return arg0_14:getConfig("config_id") == var9_8
 	end))
-	setActive(arg0_8.sceneParent.ptTotal, not ActivityConst.HIDE_PT_PANELS and not var1_8 and isMutilMap and arg0_8.sceneParent.ptActivity and not arg0_8.sceneParent.ptActivity:isEnd() and isBattle)
+	setActive(arg0_8.sceneParent.ptTotal, not ActivityConst.HIDE_PT_PANELS and not var4_8 and var2_8 and arg0_8.sceneParent.ptActivity and not arg0_8.sceneParent.ptActivity:isEnd() and var0_8)
 	arg0_8.sceneParent:updateCountDown()
 end
 

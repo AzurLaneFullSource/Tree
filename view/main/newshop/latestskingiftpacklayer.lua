@@ -306,18 +306,19 @@ function var0_0.confirm(arg0_12, arg1_12)
 end
 
 function var0_0.StartTimer(arg0_17, arg1_17)
-	arg0_17.timer = Timer.New(function()
+	arg0_17.cardTimer = Timer.New(function()
 		arg1_17()
 	end, 1, -1)
 
-	arg0_17.timer:Start()
+	arg1_17()
+	arg0_17.cardTimer:Start()
 end
 
 function var0_0.RemoveAllTimer(arg0_19)
-	if arg0_19.timer then
-		arg0_19.timer:Stop()
+	if arg0_19.cardTimer then
+		arg0_19.cardTimer:Stop()
 
-		arg0_19.timer = nil
+		arg0_19.cardTimer = nil
 	end
 end
 

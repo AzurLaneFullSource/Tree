@@ -525,10 +525,10 @@ pg.item_data_frame = {
 	[336] = {
 		time_limit_type = 0,
 		name = "Phoenix's Call for Amahara",
-		gain_by = "",
+		gain_by = "A Dance for Amahara Above",
 		id = 336,
 		time_second = 0,
-		desc = "Obtained in a future event.",
+		desc = "<color=#ffffff>\"Upon my first arrival in the Sky Realm, I heard a phoenix's cry. Past me it flew, its voice echoing throughout Amahara.\"</color>\nGiven to Commanders who participated in the A Dance for Amahara Above event.",
 		scene = {}
 	},
 	[406] = {

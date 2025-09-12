@@ -5010,6 +5010,45 @@ pg.backyard_theme_template = {
 			328117
 		}
 	},
+	[129] = {
+		Cfg_1 = 5,
+		name = "Ninja Castle",
+		hot = 1,
+		is_view = 1,
+		id = 129,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "Enter the Ninja Castle and have yourself a sneaky adventure full of traps and thrills!",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "njthemeicon",
+		deblocking = 1,
+		order = 129,
+		ids = {
+			329001,
+			329002,
+			329101,
+			329102,
+			329103,
+			329104,
+			329105,
+			329106,
+			329107,
+			329108,
+			329109,
+			329110,
+			329111,
+			329112,
+			329113,
+			329114,
+			329115,
+			329116,
+			329117,
+			329118,
+			329119
+		}
+	},
 	all = {
 		1,
 		2,
@@ -5125,6 +5164,7 @@ pg.backyard_theme_template = {
 		124,
 		125,
 		126,
-		127
+		127,
+		129
 	}
 }

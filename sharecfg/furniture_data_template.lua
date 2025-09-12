@@ -172,6 +172,8 @@ pg.furniture_data_template = setmetatable({
 			313,
 			314,
 			315,
+			316,
+			317,
 			100002,
 			100003,
 			100004,
@@ -3550,6 +3552,30 @@ pg.furniture_data_template = setmetatable({
 			328116,
 			328117,
 			328118
+		},
+		[129] = {
+			329001,
+			329002,
+			329101,
+			329102,
+			329103,
+			329104,
+			329105,
+			329106,
+			329107,
+			329108,
+			329109,
+			329110,
+			329111,
+			329112,
+			329113,
+			329114,
+			329115,
+			329116,
+			329117,
+			329118,
+			329119,
+			329120
 		}
 	},
 	get_id_list_by_tag = {
@@ -3655,6 +3681,7 @@ pg.furniture_data_template = setmetatable({
 			308,
 			313,
 			315,
+			317,
 			100002,
 			100003,
 			100004,
@@ -3791,7 +3818,8 @@ pg.furniture_data_template = setmetatable({
 			304,
 			307,
 			311,
-			314
+			314,
+			316
 		},
 		[7] = {
 			211,
@@ -4000,7 +4028,8 @@ pg.furniture_data_template = setmetatable({
 			324118,
 			325110,
 			325126,
-			328118
+			328118,
+			329120
 		},
 		[4] = {
 			1001,
@@ -4116,7 +4145,8 @@ pg.furniture_data_template = setmetatable({
 			325001,
 			326001,
 			327001,
-			328001
+			328001,
+			329001
 		},
 		[3] = {
 			1002,
@@ -4233,7 +4263,8 @@ pg.furniture_data_template = setmetatable({
 			325002,
 			326002,
 			327002,
-			328002
+			328002,
+			329002
 		},
 		{
 			1101,
@@ -6347,7 +6378,26 @@ pg.furniture_data_template = setmetatable({
 			328114,
 			328115,
 			328116,
-			328117
+			328117,
+			329101,
+			329102,
+			329103,
+			329104,
+			329105,
+			329106,
+			329107,
+			329108,
+			329109,
+			329110,
+			329111,
+			329112,
+			329113,
+			329114,
+			329115,
+			329116,
+			329117,
+			329118,
+			329119
 		},
 		{
 			1108,
@@ -7035,6 +7085,8 @@ pg.furniture_data_template = setmetatable({
 			313,
 			314,
 			315,
+			316,
+			317,
 			100002,
 			100004,
 			100005,
@@ -9200,7 +9252,25 @@ pg.furniture_data_template = setmetatable({
 			328115,
 			328116,
 			328117,
-			328118
+			328118,
+			329101,
+			329102,
+			329104,
+			329105,
+			329106,
+			329107,
+			329109,
+			329110,
+			329111,
+			329112,
+			329113,
+			329114,
+			329115,
+			329116,
+			329117,
+			329118,
+			329119,
+			329120
 		},
 		[11] = {
 			131,
@@ -9395,7 +9465,8 @@ pg.furniture_data_template = setmetatable({
 			325001,
 			326001,
 			327001,
-			328001
+			328001,
+			329001
 		},
 		{
 			1002,
@@ -9512,7 +9583,8 @@ pg.furniture_data_template = setmetatable({
 			325002,
 			326002,
 			327002,
-			328002
+			328002,
+			329002
 		},
 		[5] = {
 			1101,
@@ -9667,7 +9739,9 @@ pg.furniture_data_template = setmetatable({
 			325105,
 			327104,
 			327116,
-			328104
+			328104,
+			329103,
+			329108
 		},
 		[3] = {
 			1108,
@@ -10412,6 +10486,8 @@ pg.furniture_data_template = setmetatable({
 		313,
 		314,
 		315,
+		316,
+		317,
 		100002,
 		100003,
 		100004,
@@ -13559,7 +13635,29 @@ pg.furniture_data_template = setmetatable({
 		328115,
 		328116,
 		328117,
-		328118
+		328118,
+		329001,
+		329002,
+		329101,
+		329102,
+		329103,
+		329104,
+		329105,
+		329106,
+		329107,
+		329108,
+		329109,
+		329110,
+		329111,
+		329112,
+		329113,
+		329114,
+		329115,
+		329116,
+		329117,
+		329118,
+		329119,
+		329120
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -21972,6 +22070,92 @@ pg.base.furniture_data_template = {
 			{
 				"char2",
 				-1
+			}
+		},
+		interAction_group = {}
+	},
+	[316] = {
+		effect = "",
+		name = "Amahara Central Palace Miniature",
+		gain_by = "A Dance for Amahara Above",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 1,
+		themeId = 0,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A miniature of the palace situated at the heart of Sky Realm Amahara. The tricolored ring of butterflies seems to simply be a light effect. Given to Commanders who participated in the A Dance for Amahara Above event.",
+		tag = 8,
+		icon = "baifengxunzhangicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 5,
+		deblocking = 1,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 316,
+		can_rotate = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"baifengxunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[317] = {
+		effect = "",
+		name = "The Secret Treasure of Ninja Castle",
+		gain_by = "Turmoil in the Ninja Castle",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 0,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A fantastical treasure kept a fantastical castle in a fantastical wonderland.",
+		tag = 6,
+		icon = "mofangjinheicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 317,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"mofangjinhe",
+				"normal"
 			}
 		},
 		interAction_group = {}
@@ -162406,6 +162590,979 @@ pg.base.furniture_data_template = {
 			{
 				-24.9,
 				-153.6
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[329001] = {
+		icon = "dibannjicon",
+		name = "Nina Castle Flooring",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		themeId = 129,
+		picture = "nj/dibannj",
+		is_3d_obj = 0,
+		count = 1,
+		tag = 4,
+		size = "",
+		spine_extra = "",
+		level = 1,
+		describe = "The ground produces a satisfying crunch as you walk on it. Not great if you're a ninja trying to catch your target off guard.",
+		rarity = 4,
+		advice = 0,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		id = 329001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329002] = {
+		icon = "qiangbinjicon",
+		name = "Nina Castle Wallpaper",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		themeId = 129,
+		is_3d_obj = 0,
+		count = 1,
+		tag = 3,
+		size = "",
+		spine_extra = "",
+		level = 5,
+		describe = "Almost a painting unto itself. Watch out for ninjas on kites!",
+		rarity = 4,
+		advice = 0,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		id = 329002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbinj",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[329101] = {
+		effect = "",
+		name = "Castle Long Bench",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Tired from all your training? Then sit down and take a load off.",
+		themeId = 129,
+		icon = "changyinjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329101,
+		can_rotate = 0,
+		size = {
+			3,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"changyinj",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[329102] = {
+		effect = "",
+		name = "Garden Pond",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nj/chitangnj",
+		is_get_time_note = 0,
+		themeId = 129,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "The water is clear as crystal, letting you easily see the fish swimming inside.",
+		tag = 1,
+		icon = "chitangnjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329102,
+		can_rotate = 0,
+		size = {
+			7,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"chitangnj",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[329103] = {
+		effect = "",
+		name = "Sand Garden",
+		gain_by = "",
+		type = 5,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 129,
+		is_get_time_note = 0,
+		picture = "nj/ditannj",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "The fine white sand is a pleasure to walk on, with a unique feel as it yields to every step.",
+		tag = 1,
+		icon = "ditannjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329103,
+		can_rotate = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329104] = {
+		effect = "",
+		name = "Breezeway",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 129,
+		is_get_time_note = 0,
+		picture = "nj/langdaonj",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A straight breezeway. You can see people as they pass through it.",
+		tag = 1,
+		icon = "langdaonjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329104,
+		can_rotate = 0,
+		size = {
+			2,
+			10
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329105] = {
+		effect = "",
+		name = "Stone Water Basin",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 129,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Listen to the clear sound of running water and let your heart be soothed.",
+		tag = 1,
+		icon = "liushuinjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329105,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"liushuinj",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[329106] = {
+		effect = "",
+		name = "Training Dummy",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 129,
+		is_get_time_note = 0,
+		picture = "nj/muzhuangnj",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "See that circle in the middle? Aim for that.",
+		tag = 1,
+		icon = "muzhuangnjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		deblocking = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329106,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329107] = {
+		effect = "",
+		name = "Ninja Flag",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 129,
+		is_get_time_note = 0,
+		picture = "nj/qizhinj",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A flag that represents the ninja. It looks majestic as it flutters in the wind.",
+		tag = 1,
+		icon = "qizhinjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		deblocking = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329107,
+		can_rotate = 0,
+		size = {
+			3,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329108] = {
+		effect = "",
+		name = "Shuriken Stone Path",
+		gain_by = "",
+		type = 5,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 129,
+		is_get_time_note = 0,
+		picture = "nj/shibanlunj",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A stone path that connects places. Doesn't get slippery even when it rains.",
+		tag = 1,
+		icon = "shibanlunjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329108,
+		can_rotate = 0,
+		size = {
+			2,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329109] = {
+		effect = "",
+		name = "Tanuki Ninja Statue",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 129,
+		is_get_time_note = 0,
+		picture = "nj/shibeinj",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "It strikes the standard pose for using ninjutsu. You can use it as a reference.",
+		tag = 1,
+		icon = "shibeinjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329109,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329110] = {
+		effect = "",
+		name = "Garden Stone Lantern",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 129,
+		count = 2,
+		is_3d_obj = 0,
+		describe = "A traditional stone lantern. Come nightfall, it illuminates its surroundings with a warm light.",
+		tag = 1,
+		icon = "shidengnjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		deblocking = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329110,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shidengnj",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[329111] = {
+		effect = "",
+		name = "Ninja Castle Walls",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 129,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "These sturdy walls are well maintained. They keep the castle safe from outsiders.",
+		tag = 1,
+		icon = "shiqiangnjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		deblocking = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329111,
+		can_rotate = 0,
+		size = {
+			24,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shiqiangnj",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[329112] = {
+		effect = "",
+		name = "Stone Arrangement 1",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 129,
+		is_get_time_note = 0,
+		picture = "nj/shitou1nj",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "It works in a beautiful harmony with the white sand, symbolizing mountains, rivers, and flowing streams.",
+		tag = 1,
+		icon = "shitou1njicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		deblocking = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329112,
+		can_rotate = 0,
+		size = {
+			2,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329113] = {
+		effect = "",
+		name = "Stone Arrangement 2",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 129,
+		is_get_time_note = 0,
+		picture = "nj/shitou2nj",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "It works in a beautiful harmony with the white sand, symbolizing mountains, rivers, and flowing streams.",
+		tag = 1,
+		icon = "shitou2njicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		deblocking = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329113,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329114] = {
+		effect = "",
+		name = "Castle Garden Tree",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 129,
+		is_get_time_note = 0,
+		picture = "nj/shumunj",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "A tree with lush leaves. Its shade is the perfect place to take a nap.",
+		tag = 1,
+		icon = "shumunjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329114,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329115] = {
+		effect = "",
+		name = "Garden Rest Spot",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "An excellent place to cool off in the summer. You can sometimes hear the rustling of bamboo leaves as the wind blows through them.",
+		themeId = 129,
+		icon = "tingtainjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329115,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"tingtainj",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[329116] = {
+		effect = "",
+		name = "Ninja Tool Rack",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 129,
+		is_get_time_note = 0,
+		picture = "nj/wuqijianj",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "It's lined with various ninja tools ready for use at a moment's notice.",
+		tag = 1,
+		icon = "wuqijianjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329116,
+		can_rotate = 0,
+		size = {
+			3,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329117] = {
+		effect = "",
+		name = "Castle Cherry Tree",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		themeId = 129,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Its blossoms scatter in the wind. How romantic!",
+		tag = 1,
+		icon = "yinghuashunjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		deblocking = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329117,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yinghuashunj",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[329118] = {
+		effect = "",
+		name = "Ninja Castle Fence",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 129,
+		is_get_time_note = 0,
+		picture = "nj/zhalannji",
+		count = 2,
+		is_3d_obj = 0,
+		describe = "A fence made of woven bamboo strips. Light yet very durable.",
+		tag = 1,
+		icon = "zhalannjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329118,
+		can_rotate = 0,
+		size = {
+			1,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329119] = {
+		effect = "",
+		name = "Ninja Paper Parasols",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		themeId = 129,
+		is_get_time_note = 0,
+		picture = "nj/zhisannj",
+		count = 1,
+		is_3d_obj = 0,
+		describe = "Parasols embellished with beautiful patterns. They are as practical as they are decorative.",
+		tag = 1,
+		icon = "zhisannjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		deblocking = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329119,
+		can_rotate = 0,
+		size = {
+			6,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[329120] = {
+		effect = "",
+		name = "Ninja House",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		deblocking = 1,
+		count = 1,
+		is_3d_obj = 0,
+		describe = "This house may look normal at a glance, but it's actually a building packed with all sorts of mechanisms. Watch out for traps and concealed weapons in the dark!",
+		themeId = 129,
+		icon = "fangwunjicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		canputon = 0,
+		id = 329120,
+		can_rotate = 0,
+		size = {
+			8,
+			9
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"fangwunjB",
+				"normal"
+			},
+			{
+				"fangwunjT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"walk"
+					},
+					{
+						"tuozhuai2"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{},
+			{
+				0,
+				0
 			},
 			{
 				1,

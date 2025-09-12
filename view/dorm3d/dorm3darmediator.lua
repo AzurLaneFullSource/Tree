@@ -11,7 +11,8 @@ function var0_0.register(arg0_1)
 			viewComponent = Dorm3dPhotoARLayer,
 			data = {
 				roomId = arg0_1.contextData.roomId,
-				groupId = arg0_1.contextData.groupId
+				groupId = arg0_1.contextData.groupId,
+				arCheckState = arg0_1.contextData.ARCheckState
 			}
 		}))
 	end)

@@ -16,12 +16,12 @@ function var0_0.init(arg0_2)
 		arg0_2:setItemList(arg0_2.inventoryProxy:GetItemList())
 	end
 
-	arg0_2.blurPanel = arg0_2:findTF("blur_panel")
+	arg0_2.blurPanel = arg0_2:findTF("adapt/blur_panel")
 	arg0_2.backBtn = arg0_2:findTF("adapt/top/back_btn", arg0_2.blurPanel)
-	arg0_2.topItems = arg0_2:findTF("topItems")
-	arg0_2.itemView = arg0_2:findTF("item_scrollview")
-	arg0_2.equipmentView = arg0_2:findTF("equipment_scrollview")
-	arg0_2.materialtView = arg0_2:findTF("material_scrollview")
+	arg0_2.topItems = arg0_2:findTF("adapt/topItems")
+	arg0_2.itemView = arg0_2:findTF("adapt/item_scrollview")
+	arg0_2.equipmentView = arg0_2:findTF("adapt/equipment_scrollview")
+	arg0_2.materialtView = arg0_2:findTF("adapt/material_scrollview")
 
 	local var0_2
 	local var1_2 = getProxy(SettingsProxy)
@@ -35,16 +35,16 @@ function var0_0.init(arg0_2)
 	arg0_2.itemView:Find("Viewport/item_grid"):GetComponent(typeof(GridLayoutGroup)).constraintCount = var0_2 and 8 or 7
 	arg0_2.equipmentView:Find("Viewport/moudle_grid"):GetComponent(typeof(GridLayoutGroup)).constraintCount = var0_2 and 8 or 7
 	arg0_2.materialtView:Find("Viewport/item_grid"):GetComponent(typeof(GridLayoutGroup)).constraintCount = var0_2 and 8 or 7
-	arg0_2.itemUsagePanel = ItemUsagePanel.New(arg0_2:findTF("item_usage_panel"), arg0_2._tf)
-	arg0_2.itemResetPanel = ItemResetPanel.New(arg0_2:findTF("reset_info_panel"), arg0_2._tf)
-	arg0_2.assignedItemView = WorldAssignedItemView.New(arg0_2._tf, arg0_2.event)
+	arg0_2.itemUsagePanel = ItemUsagePanel.New(arg0_2:findTF("adapt/item_usage_panel"), arg0_2:findTF("adapt"))
+	arg0_2.itemResetPanel = ItemResetPanel.New(arg0_2:findTF("adapt/reset_info_panel"), arg0_2:findTF("adapt"))
+	arg0_2.assignedItemView = WorldAssignedItemView.New(arg0_2:findTF("adapt"), arg0_2.event)
 	arg0_2.itemCards = {}
 	arg0_2.equipmetItems = {}
 	arg0_2.materialCards = {}
-	arg0_2._itemToggle = arg0_2:findTF("topItems/bottom_back/types/properties")
-	arg0_2._weaponToggle = arg0_2:findTF("topItems/bottom_back/types/siren_weapon")
-	arg0_2._materialToggle = arg0_2:findTF("topItems/bottom_back/types/material")
-	arg0_2.exchangeTips = arg0_2:findTF("topItems/bottom_back/reset_exchange")
+	arg0_2._itemToggle = arg0_2:findTF("bottom_back/types/properties", arg0_2.topItems)
+	arg0_2._weaponToggle = arg0_2:findTF("bottom_back/types/siren_weapon", arg0_2.topItems)
+	arg0_2._materialToggle = arg0_2:findTF("bottom_back/types/material", arg0_2.topItems)
+	arg0_2.exchangeTips = arg0_2:findTF("bottom_back/reset_exchange", arg0_2.topItems)
 	arg0_2.filterBusyToggle = arg0_2:findTF("adapt/left_length/frame/toggle_equip", arg0_2.blurPanel)
 	arg0_2.sortBtn = arg0_2:findTF("adapt/top/buttons/sort_button", arg0_2.blurPanel)
 	arg0_2.indexBtn = arg0_2:findTF("adapt/top/buttons/index_button", arg0_2.blurPanel)
@@ -58,6 +58,7 @@ function var0_0.init(arg0_2)
 	setActive(arg0_2.sortTpl, false)
 	arg0_2:initData()
 	arg0_2:addListener()
+	print(arg0_2:findTF("bg").rect.width)
 end
 
 function var0_0.didEnter(arg0_4)
@@ -100,6 +101,10 @@ function var0_0.OverlayPanel(arg0_6, arg1_6)
 
 	setParent(tf(arg1_6), arg0_6._tf.parent, false)
 	tf(arg1_6):SetSiblingIndex(arg0_6._tf:GetSiblingIndex() + arg0_6.overlayIndex)
+
+	if arg0_6:findTF("bg") then
+		print(arg0_6:findTF("bg").rect.width)
+	end
 end
 
 function var0_0.UnOverlayPanel(arg0_7, arg1_7, arg2_7)
@@ -108,9 +113,15 @@ function var0_0.UnOverlayPanel(arg0_7, arg1_7, arg2_7)
 	arg0_7.overlayIndex = arg0_7.overlayIndex or 0
 	arg0_7.overlayIndex = arg0_7.overlayIndex - 1
 	arg0_7.overlayIndex = math.max(arg0_7.overlayIndex, 0)
+
+	if arg0_7:findTF("bg") then
+		print(arg0_7:findTF("bg").rect.width)
+	end
 end
 
 function var0_0.onBackPressed(arg0_8)
+	print(arg0_8:findTF("bg").rect.width)
+
 	if isActive(arg0_8.itemResetPanel._go) then
 		arg0_8.itemResetPanel:Close()
 	elseif isActive(arg0_8.itemUsagePanel._go) then
@@ -139,6 +150,8 @@ function var0_0.initData(arg0_10)
 
 	arg0_10.contextData.indexDatas = arg0_10.contextData.indexDatas or {}
 	arg0_10.isEquipingOn = false
+
+	print(arg0_10:findTF("bg").rect.width)
 end
 
 function var0_0.GetShowBusyFlag(arg0_11)
@@ -151,6 +164,7 @@ end
 
 function var0_0.addListener(arg0_13)
 	onButton(arg0_13, arg0_13.backBtn, function()
+		print(arg0_13:findTF("bg").rect.width)
 		arg0_13:closeView()
 	end, SFX_CANCEL)
 	onButton(arg0_13, arg0_13.decBtn, function()
@@ -566,7 +580,7 @@ function var0_0.PlayOpenBox(arg0_53, arg1_53, arg2_53)
 
 		local var0_54 = tf(arg0_53[arg1_53])
 
-		var0_54:SetParent(arg0_53._tf, false)
+		var0_54:SetParent(arg0_53:findTF("adapt"), false)
 		var0_54:SetAsLastSibling()
 
 		local var1_54 = var0_54:GetComponent("DftAniEvent")

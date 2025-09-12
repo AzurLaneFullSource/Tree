@@ -34,6 +34,7 @@ function var0_0.didEnter(arg0_8)
 	arg0_8:initSelectSkinPanel()
 	triggerToggle(arg0_8.shareBtn, false)
 	setActive(arg0_8.shareBtn, #arg0_8.shareSkins > 0)
+	setText(findTF(arg0_8._tf, "select_skin/title/Text"), i18n("dorm3d_clothing_choose"))
 end
 
 function var0_0.initSelectSkinPanel(arg0_9)

@@ -35,7 +35,7 @@ function var0_0.init(arg0_4)
 	local var0_4 = arg0_4.contextData
 
 	arg0_4.topItems = arg0_4:findTF("topItems")
-	arg0_4.equipmentView = arg0_4:findTF("equipment_scrollview")
+	arg0_4.equipmentView = arg0_4:findTF("adapt/equipment_scrollview")
 	arg0_4.blurPanel = arg0_4:findTF("blur_panel")
 	arg0_4.topPanel = arg0_4:findTF("adapt/top", arg0_4.blurPanel)
 	arg0_4.indexBtn = arg0_4:findTF("buttons/index_button", arg0_4.topPanel)
@@ -49,7 +49,7 @@ function var0_0.init(arg0_4)
 	setActive(arg0_4.sortTpl, false)
 
 	arg0_4.equipSkinFilteBtn = arg0_4:findTF("buttons/EquipSkinFilteBtn", arg0_4.topPanel)
-	arg0_4.itemView = arg0_4:findTF("item_scrollview")
+	arg0_4.itemView = arg0_4:findTF("adapt/item_scrollview")
 
 	local var1_4
 	local var2_4 = getProxy(SettingsProxy)
@@ -117,7 +117,7 @@ function var0_0.init(arg0_4)
 
 	setActive(arg0_4.selectTransformPanel, false)
 
-	arg0_4.listEmptyTF = arg0_4:findTF("empty")
+	arg0_4.listEmptyTF = arg0_4:findTF("adapt/empty")
 
 	setActive(arg0_4.listEmptyTF, false)
 

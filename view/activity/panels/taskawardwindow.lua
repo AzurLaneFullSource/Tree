@@ -81,6 +81,7 @@ function var0_0.Show(arg0_5, arg1_5)
 	arg0_5.ptId = arg1_5.ptId
 	arg0_5.totalPt = arg1_5.totalPt
 	arg0_5.index = arg1_5.index or 1
+	arg0_5.blur = arg1_5.blur
 
 	arg0_5:updateResIcon(arg1_5.resId, arg1_5.resIcon, arg1_5.type)
 	var1_0(arg0_5)
@@ -89,6 +90,10 @@ function var0_0.Show(arg0_5, arg1_5)
 	arg0_5.totalTitleTxt.text = i18n("award_window_pt_title")
 
 	setActive(arg0_5._tf, true)
+
+	if arg0_5.blur then
+		pg.UIMgr.GetInstance():BlurPanel(arg0_5._tf)
+	end
 end
 
 return var0_0

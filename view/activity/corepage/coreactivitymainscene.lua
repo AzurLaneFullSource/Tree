@@ -60,10 +60,14 @@ function var0_0.didEnter(arg0_7)
 	onButton(arg0_7, arg0_7.btnBack, function()
 		arg0_7:emit(var0_0.ON_BACK)
 	end, SOUND_BACK)
-	onButton(arg0_7, arg0_7.btnSkin, function()
-		arg0_7:emit(ActivityMediator.GO_CHANGE_SHOP)
-	end, SFX_PANEL)
-	arg0_7:emit(ActivityMediator.SHOW_NEXT_ACTIVITY)
+
+	if arg0_7.btnSkin then
+		onButton(arg0_7, arg0_7.btnSkin, function()
+			arg0_7:emit(ActivityMediator.GO_CHANGE_SHOP)
+		end, SFX_PANEL)
+	end
+
+	arg0_7:emit(ActivityMediator.SHOW_NEXT_ACTIVITY, arg0_7.contextData.coreName)
 end
 
 function var0_0.setActivities(arg0_13, arg1_13)
@@ -115,6 +119,7 @@ function var0_0.updateActivity(arg0_17, arg1_17)
 			arg0_17.activity = arg1_17
 
 			arg0_17.pageDic[arg1_17.id]:ActionInvoke("Flush", arg1_17)
+			arg0_17:verifyTabs(arg0_17.activity.id)
 		end
 	end
 end
@@ -146,14 +151,40 @@ function var0_0.selectActivity(arg0_22, arg1_22)
 end
 
 function var0_0.verifyTabs(arg0_23, arg1_23)
-	local var0_23 = arg0_23.activities[arg0_23:getActivityIndex(arg1_23) or 1]:getConfig("is_show")
-	local var1_23 = arg0_23.tabs:Find(tostring(var0_23))
+	local var0_23 = arg0_23.activities[arg0_23:getActivityIndex(arg1_23) or arg0_23:getActivityIndex(arg0_23:GetActiveActivity()) or 1]
 
-	triggerToggle(var1_23, true)
+	if var0_23 == nil then
+		return
+	end
+
+	local var1_23 = var0_23:getConfig("is_show")
+	local var2_23 = arg0_23.tabs:Find(tostring(var1_23))
+
+	triggerToggle(var2_23, true)
 end
 
-function var0_0.getActClass(arg0_24, arg1_24)
-	return _G[arg1_24]
+function var0_0.GetActiveActivity(arg0_24)
+	for iter0_24, iter1_24 in ipairs(arg0_24.activities) do
+		if not iter1_24:isEnd() then
+			return iter1_24.id
+		end
+	end
+end
+
+function var0_0.onBackPressed(arg0_25)
+	local var0_25 = arg0_25.pageDic[arg0_25.activity.id]
+
+	if var0_25:IsShowingPopWindow() then
+		var0_25:ClosePopWindow()
+
+		return
+	end
+
+	var0_0.super.onBackPressed(arg0_25)
+end
+
+function var0_0.getActClass(arg0_26, arg1_26)
+	return _G[arg1_26]
 end
 
 return var0_0

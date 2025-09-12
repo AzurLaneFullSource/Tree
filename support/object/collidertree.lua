@@ -355,3 +355,102 @@ function var5_0.GetCldListGradient(arg0_15, arg1_15, arg2_15, arg3_15, arg4_15)
 
 	return var7_15
 end
+
+function var5_0.GetCldListEllipse(arg0_16, arg1_16, arg2_16, arg3_16)
+	local var0_16 = arg3_16.x
+	local var1_16 = arg3_16.z
+	local var2_16 = var2_0.CldNode.New()
+
+	var2_16:UpdateStaticBox(Vector3(var0_16 - arg1_16, 0, var1_16 - arg2_16), Vector3(var0_16 + arg1_16, 0, var1_16 + arg2_16))
+
+	local var3_16 = arg0_16:GetCldList(var2_16, nil)
+	local var4_16 = {}
+
+	for iter0_16, iter1_16 in ipairs(var3_16) do
+		if ellipseIntersectsRect(var0_16, var1_16, arg1_16, arg2_16, iter1_16.min, iter1_16.max) then
+			var4_0.insert(var4_16, iter1_16)
+		end
+	end
+
+	return var4_16
+end
+
+function var5_0.pointInEllipse(arg0_17, arg1_17, arg2_17, arg3_17, arg4_17, arg5_17)
+	local var0_17 = arg0_17 - arg2_17
+	local var1_17 = arg1_17 - arg3_17
+
+	return var0_17 * var0_17 / (arg4_17 * arg4_17) + var1_17 * var1_17 / (arg5_17 * arg5_17) <= 1
+end
+
+function var5_0.lineIntersectsEllipse(arg0_18, arg1_18, arg2_18, arg3_18, arg4_18, arg5_18, arg6_18, arg7_18)
+	arg0_18, arg1_18 = arg0_18 - arg4_18, arg1_18 - arg5_18
+	arg2_18, arg3_18 = arg2_18 - arg4_18, arg3_18 - arg5_18
+
+	local var0_18 = arg2_18 - arg0_18
+	local var1_18 = arg3_18 - arg1_18
+	local var2_18 = var0_18 * var0_18 / (arg6_18 * arg6_18) + var1_18 * var1_18 / (arg7_18 * arg7_18)
+	local var3_18 = 2 * (arg0_18 * var0_18 / (arg6_18 * arg6_18) + arg1_18 * var1_18 / (arg7_18 * arg7_18))
+	local var4_18 = arg0_18 * arg0_18 / (arg6_18 * arg6_18) + arg1_18 * arg1_18 / (arg7_18 * arg7_18) - 1
+	local var5_18 = var3_18 * var3_18 - 4 * var2_18 * var4_18
+
+	if var5_18 < 0 then
+		return false
+	end
+
+	local var6_18 = math.sqrt(var5_18)
+	local var7_18 = (-var3_18 - var6_18) / (2 * var2_18)
+	local var8_18 = (-var3_18 + var6_18) / (2 * var2_18)
+
+	return var7_18 >= 0 and var7_18 <= 1 or var8_18 >= 0 and var8_18 <= 1
+end
+
+function var5_0.ellipseIntersectsRect(arg0_19, arg1_19, arg2_19, arg3_19, arg4_19, arg5_19)
+	local var0_19 = arg0_19 - arg2_19
+	local var1_19 = arg0_19 + arg2_19
+	local var2_19 = arg1_19 - arg3_19
+	local var3_19 = arg1_19 + arg3_19
+
+	if var0_19 > arg5_19.x or var1_19 < arg4_19.x or var2_19 > arg5_19.z or var3_19 < arg4_19.z then
+		return false
+	end
+
+	local var4_19 = {
+		{
+			arg4_19.x,
+			arg4_19.z
+		},
+		{
+			arg5_19.x,
+			arg4_19.z
+		},
+		{
+			arg5_19.x,
+			arg5_19.z
+		},
+		{
+			arg4_19.x,
+			arg5_19.z
+		}
+	}
+
+	for iter0_19, iter1_19 in ipairs(var4_19) do
+		if var5_0.pointInEllipse(iter1_19[1], iter1_19[2], arg0_19, arg1_19, arg2_19, arg3_19) then
+			return true
+		end
+	end
+
+	if arg0_19 >= arg4_19.x and arg0_19 <= arg5_19.x and arg1_19 >= arg4_19.z and arg1_19 <= arg5_19.z then
+		return true
+	end
+
+	for iter2_19 = 1, 4 do
+		local var5_19 = var4_19[iter2_19]
+		local var6_19 = var4_19[iter2_19 % 4 + 1]
+
+		if var5_0.lineIntersectsEllipse(var5_19[1], var5_19[2], var6_19[1], var6_19[2], arg0_19, arg1_19, arg2_19, arg3_19) then
+			return true
+		end
+	end
+
+	return false
+end

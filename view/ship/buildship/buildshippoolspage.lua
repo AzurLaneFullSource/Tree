@@ -616,7 +616,7 @@ end
 function var0_0.UpdateRegularBuildPoolExchange(arg0_53, arg1_53)
 	local var0_53 = arg1_53:getConfig("exchange_count") > 0
 
-	setActive(arg0_53.rtRegularExchange, true)
+	setActive(arg0_53.rtRegularExchange, var0_53)
 
 	if var0_53 then
 		local var1_53 = getProxy(BuildShipProxy):getRegularExchangeCount()

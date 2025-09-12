@@ -44,6 +44,7 @@ function var0_0.OnInit(arg0_4)
 	arg0_4.unionCenterTpl = arg0_4._tf:Find("Story/UnionCenter")
 	arg0_4.unionUpTpl = arg0_4._tf:Find("Story/UnionUp")
 	arg0_4.unionDownTpl = arg0_4._tf:Find("Story/UnionDown")
+	arg0_4.unreleasedNodeTpl = arg0_4._tf:Find("Story/UnreleasedNode")
 
 	setActive(arg0_4.storyNodeTpl, false)
 	setActive(arg0_4.oneLineTpl, false)
@@ -55,6 +56,7 @@ function var0_0.OnInit(arg0_4)
 	setActive(arg0_4.unionCenterTpl, false)
 	setActive(arg0_4.unionUpTpl, false)
 	setActive(arg0_4.unionDownTpl, false)
+	setActive(arg0_4.unreleasedNodeTpl, false)
 
 	arg0_4.pools = {
 		[arg0_4.storyNodeTpl] = var1_0.New(go(arg0_4.storyNodeTpl), 0),
@@ -168,17 +170,24 @@ function var0_0.BuildStoryTree(arg0_17)
 	arg0_17.spStoryIDs = arg0_17.data:getConfig("story_id")
 	arg0_17.spStoryNodeDict = {}
 	arg0_17.spStoryNodes = {}
+	arg0_17.spStoryUnreleasedNode = nil
 
 	local var0_17 = {}
 
 	_.each(arg0_17.spStoryIDs, function(arg0_18)
-		arg0_17.spStoryNodeDict[arg0_18] = ActivitySpStoryNode.New({
+		local var0_18 = ActivitySpStoryNode.New({
 			configId = arg0_18
 		})
 
-		local var0_18 = arg0_17.spStoryNodeDict[arg0_18]
+		if var0_18:GetType() ~= ActivitySpStoryNode.NODE_TYPE.UNRELEASED then
+			arg0_17.spStoryNodeDict[arg0_18] = var0_18
 
-		var0_17[var0_18:GetPreEvent()] = arg0_18
+			local var1_18 = arg0_17.spStoryNodeDict[arg0_18]
+
+			var0_17[var1_18:GetPreEvent()] = arg0_18
+		else
+			arg0_17.spStoryUnreleasedNode = var0_18
+		end
 	end)
 
 	local var1_17 = 0
@@ -462,7 +471,7 @@ function var0_0.UpdateMapItem(arg0_28, arg1_28, arg2_28)
 
 	if var31_28 then
 		local var33_28 = var32_28:GetComponent(typeof(CanvasGroup))
-		local var34_28 = arg0_28.contextData.map:getConfig("type") == Map.ACTIVITY_HARD and "bonus_us_hard" or "bonus_us"
+		local var34_28 = var6_28 == 3 and "bonus_us_hard" or "bonus_us"
 
 		arg0_28.sceneParent.loader:GetSprite("ui/levelmainscene_atlas", var34_28, var32_28:Find("bonus"))
 		LeanTween.cancel(go(var32_28), true)
@@ -1005,52 +1014,70 @@ function var0_0.UpdateStory(arg0_39)
 		x = var2_39
 	})
 
-	local var16_39 = arg0_39.spStoryNodes
+	if arg0_39.spStoryUnreleasedNode then
+		local var16_39 = cloneTplTo(arg0_39.unreleasedNodeTpl, arg0_39.storyContainer)
 
-	for iter0_39 = 1, #var16_39 do
-		local var17_39 = var16_39[iter0_39]
-		local var18_39 = var17_39:GetConfigID()
-		local var19_39 = arg0_39.storyNodeStatus[var18_39].status
-		local var20_39 = arg0_39.storyNodeTFsById[var18_39].nodeTF
-		local var21_39 = var20_39:Find("info/bk/title_form/title")
+		setAnchoredPosition(var16_39, {
+			y = 0,
+			x = var2_39
+		})
+		setText(var16_39:Find("text"), arg0_39.spStoryUnreleasedNode:GetDisplayName())
+		ResourceMgr.Inst:getAssetAsync("ui/" .. arg0_39.spStoryUnreleasedNode:GetCleanAnimator(), "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_55)
+			local var0_55 = Instantiate(arg0_55)
+			local var1_55 = Vector3.New(-525, 0, 380)
 
-		if var19_39 == var2_0 then
-			setScrollText(var21_39, HXSet.hxLan(var17_39:GetUnlockDesc()))
-			setTextAlpha(var21_39, 0.5)
+			tf(var0_55).localPosition = var1_55
+
+			setParent(var0_55, var16_39)
+		end), true, true)
+	end
+
+	local var17_39 = arg0_39.spStoryNodes
+
+	for iter0_39 = 1, #var17_39 do
+		local var18_39 = var17_39[iter0_39]
+		local var19_39 = var18_39:GetConfigID()
+		local var20_39 = arg0_39.storyNodeStatus[var19_39].status
+		local var21_39 = arg0_39.storyNodeTFsById[var19_39].nodeTF
+		local var22_39 = var21_39:Find("info/bk/title_form/title")
+
+		if var20_39 == var2_0 then
+			setScrollText(var22_39, HXSet.hxLan(var18_39:GetUnlockDesc()))
+			setTextAlpha(var22_39, 0.5)
 		else
-			setScrollText(var21_39, HXSet.hxLan(var17_39:GetDisplayName()))
-			setTextAlpha(var21_39, 1)
+			setScrollText(var22_39, HXSet.hxLan(var18_39:GetDisplayName()))
+			setTextAlpha(var22_39, 1)
 		end
 
-		local var22_39 = var17_39:GetType()
+		local var23_39 = var18_39:GetType()
 
-		setActive(var20_39:Find("circle/lock"), var19_39 == var2_0)
+		setActive(var21_39:Find("circle/lock"), var20_39 == var2_0)
 
-		if var19_39 == var2_0 then
-			setActive(var20_39:Find("circle/Story"), false)
-			setActive(var20_39:Find("circle/Battle"), false)
-			setText(var20_39:Find(""))
-		elseif var22_39 == ActivitySpStoryNode.NODE_TYPE.STORY then
-			setActive(var20_39:Find("circle/Story"), var22_39 == ActivitySpStoryNode.NODE_TYPE.STORY)
-			setActive(var20_39:Find("circle/Battle"), var22_39 == ActivitySpStoryNode.NODE_TYPE.BATTLE)
-			setActive(var20_39:Find("circle/Story/Done"), var19_39 == var4_0)
-		elseif var22_39 == ActivitySpStoryNode.NODE_TYPE.BATTLE then
-			setActive(var20_39:Find("circle/Story"), var22_39 == ActivitySpStoryNode.NODE_TYPE.STORY)
-			setActive(var20_39:Find("circle/Battle"), var22_39 == ActivitySpStoryNode.NODE_TYPE.BATTLE)
-			setActive(var20_39:Find("circle/Battle/Done"), var19_39 == var4_0)
+		if var20_39 == var2_0 then
+			setActive(var21_39:Find("circle/Story"), false)
+			setActive(var21_39:Find("circle/Battle"), false)
+			setText(var21_39:Find(""))
+		elseif var23_39 == ActivitySpStoryNode.NODE_TYPE.STORY then
+			setActive(var21_39:Find("circle/Story"), var23_39 == ActivitySpStoryNode.NODE_TYPE.STORY)
+			setActive(var21_39:Find("circle/Battle"), var23_39 == ActivitySpStoryNode.NODE_TYPE.BATTLE)
+			setActive(var21_39:Find("circle/Story/Done"), var20_39 == var4_0)
+		elseif var23_39 == ActivitySpStoryNode.NODE_TYPE.BATTLE then
+			setActive(var21_39:Find("circle/Story"), var23_39 == ActivitySpStoryNode.NODE_TYPE.STORY)
+			setActive(var21_39:Find("circle/Battle"), var23_39 == ActivitySpStoryNode.NODE_TYPE.BATTLE)
+			setActive(var21_39:Find("circle/Battle/Done"), var20_39 == var4_0)
 		end
 
-		local var23_39 = var19_39 == var4_0
+		local var24_39 = var20_39 == var4_0
 
-		setActive(var20_39:Find("circle/progress"), var23_39)
-		onButton(arg0_39, var20_39, function()
-			if var19_39 == var2_0 then
+		setActive(var21_39:Find("circle/progress"), var24_39)
+		onButton(arg0_39, var21_39, function()
+			if var20_39 == var2_0 then
 				return
 			end
 
-			local var0_55 = var17_39:GetStoryName()
+			local var0_56 = var18_39:GetStoryName()
 
-			arg0_39:PlayStory(var0_55, function()
+			arg0_39:PlayStory(var0_56, function()
 				arg0_39:UpdateView()
 
 				arg0_39.needFocusStory = true
@@ -1060,175 +1087,175 @@ function var0_0.UpdateStory(arg0_39)
 		end)
 	end
 
-	local var24_39 = arg0_39.storyReadCount
-	local var25_39 = arg0_39.storyReadMax
+	local var25_39 = arg0_39.storyReadCount
+	local var26_39 = arg0_39.storyReadMax
 
-	setText(arg0_39.progressText, var24_39 .. "/" .. var25_39)
+	setText(arg0_39.progressText, var25_39 .. "/" .. var26_39)
 	setActive(arg0_39.storyAward, tobool(arg0_39.storyTask))
 
 	if arg0_39.storyTask then
-		local var26_39 = arg0_39.storyTask:getConfig("award_display")
-		local var27_39 = Drop.New({
-			type = var26_39[1][1],
-			id = var26_39[1][2],
-			count = var26_39[1][3]
+		local var27_39 = arg0_39.storyTask:getConfig("award_display")
+		local var28_39 = Drop.New({
+			type = var27_39[1][1],
+			id = var27_39[1][2],
+			count = var27_39[1][3]
 		})
 
-		updateDrop(arg0_39.storyAward:GetChild(0), var27_39)
+		updateDrop(arg0_39.storyAward:GetChild(0), var28_39)
 
-		local var28_39 = arg0_39.storyTask:getTaskStatus()
+		local var29_39 = arg0_39.storyTask:getTaskStatus()
 
-		setActive(arg0_39.storyAward:Find("get"), var28_39 == 1)
-		setActive(arg0_39.storyAward:Find("got"), var28_39 == 2)
+		setActive(arg0_39.storyAward:Find("get"), var29_39 == 1)
+		setActive(arg0_39.storyAward:Find("got"), var29_39 == 2)
 		onButton(arg0_39, arg0_39.storyAward, function()
-			arg0_39:emit(BaseUI.ON_DROP, var27_39)
+			arg0_39:emit(BaseUI.ON_DROP, var28_39)
 		end)
 	end
 end
 
-function var0_0.DequeItem(arg0_58, arg1_58)
-	local var0_58 = arg0_58.pools[arg1_58]:Dequeue()
+function var0_0.DequeItem(arg0_59, arg1_59)
+	local var0_59 = arg0_59.pools[arg1_59]:Dequeue()
 
-	table.insert(arg0_58.activeItems, {
-		template = arg1_58,
-		active = var0_58
+	table.insert(arg0_59.activeItems, {
+		template = arg1_59,
+		active = var0_59
 	})
-	setActive(var0_58, true)
-	setParent(var0_58, arg0_58.storyContainer)
+	setActive(var0_59, true)
+	setParent(var0_59, arg0_59.storyContainer)
 
-	return var0_58
+	return var0_59
 end
 
-function var0_0.Move2UnlockStory(arg0_59)
-	if not arg0_59.needFocusStory then
+function var0_0.Move2UnlockStory(arg0_60)
+	if not arg0_60.needFocusStory then
 		return
 	end
 
-	arg0_59.needFocusStory = nil
+	arg0_60.needFocusStory = nil
 
-	local var0_59 = arg0_59.spStoryNodes
-	local var1_59
+	local var0_60 = arg0_60.spStoryNodes
+	local var1_60
 
-	for iter0_59 = #var0_59, 1, -1 do
-		local var2_59 = var0_59[iter0_59]:GetConfigID()
+	for iter0_60 = #var0_60, 1, -1 do
+		local var2_60 = var0_60[iter0_60]:GetConfigID()
 
-		if arg0_59.storyNodeStatus[var2_59].status > var2_0 then
-			var1_59 = var2_59
+		if arg0_60.storyNodeStatus[var2_60].status > var2_0 then
+			var1_60 = var2_60
 
 			break
 		end
 	end
 
-	local var3_59 = arg0_59.storyNodeTFsById[var1_59].nodeTF
-	local var4_59 = arg0_59.storyNodeTpl.rect.width
-	local var5_59 = var3_59.anchoredPosition.x + var4_59 * 0.5 - arg0_59.storyContainer.parent.rect.width * 0.5
-	local var6_59 = math.clamp(var5_59, 0, math.max(0, arg0_59.storyContainer.rect.width - arg0_59.storyContainer.parent.rect.width))
+	local var3_60 = arg0_60.storyNodeTFsById[var1_60].nodeTF
+	local var4_60 = arg0_60.storyNodeTpl.rect.width
+	local var5_60 = var3_60.anchoredPosition.x + var4_60 * 0.5 - arg0_60.storyContainer.parent.rect.width * 0.5
+	local var6_60 = math.clamp(var5_60, 0, math.max(0, arg0_60.storyContainer.rect.width - arg0_60.storyContainer.parent.rect.width))
 
-	setAnchoredPosition(arg0_59.storyContainer, {
-		x = -var6_59
+	setAnchoredPosition(arg0_60.storyContainer, {
+		x = -var6_60
 	})
 end
 
-function var0_0.SwitchStoryMapAndBGM(arg0_60)
-	local var0_60 = arg0_60.data:getConfig("default_background")
-	local var1_60 = arg0_60.data:getConfig("default_bgm")
-	local var2_60
-	local var3_60 = arg0_60.spStoryNodes
+function var0_0.SwitchStoryMapAndBGM(arg0_61)
+	local var0_61 = arg0_61.data:getConfig("default_background")
+	local var1_61 = arg0_61.data:getConfig("default_bgm")
+	local var2_61
+	local var3_61 = arg0_61.spStoryNodes
 
-	for iter0_60 = 1, #var3_60 do
-		local var4_60 = var3_60[iter0_60]
-		local var5_60 = var4_60:GetConfigID()
+	for iter0_61 = 1, #var3_61 do
+		local var4_61 = var3_61[iter0_61]
+		local var5_61 = var4_61:GetConfigID()
 
-		if arg0_60.storyNodeStatus[var5_60].status == var4_0 then
-			var0_60, var1_60 = var4_60:GetCleanBG(), var4_60:GetCleanBGM()
-			var2_60 = var4_60:GetCleanAnimator()
+		if arg0_61.storyNodeStatus[var5_61].status == var4_0 then
+			var0_61, var1_61 = var4_61:GetCleanBG(), var4_61:GetCleanBGM()
+			var2_61 = var4_61:GetCleanAnimator()
 		else
 			break
 		end
 	end
 
-	arg0_60.sceneParent:SwitchBG({
+	arg0_61.sceneParent:SwitchBG({
 		{
 			bgPrefix = "bg",
-			BG = var0_60,
-			Animator = var2_60
+			BG = var0_61,
+			Animator = var2_61
 		}
 	})
-	pg.BgmMgr.GetInstance():Push(arg0_60.__cname, var1_60)
+	pg.BgmMgr.GetInstance():Push(arg0_61.__cname, var1_61)
 end
 
-function var0_0.TrySubmitTask(arg0_61)
-	local var0_61 = true
+function var0_0.TrySubmitTask(arg0_62)
+	local var0_62 = true
 
-	for iter0_61, iter1_61 in ipairs(arg0_61.spStoryNodes) do
-		local var1_61 = iter1_61:GetStoryName()
+	for iter0_62, iter1_62 in ipairs(arg0_62.spStoryNodes) do
+		local var1_62 = iter1_62:GetStoryName()
 
-		if var1_61 and var1_61 ~= "" then
-			var0_61 = var0_61 and pg.NewStoryMgr.GetInstance():IsPlayed(var1_61)
+		if var1_62 and var1_62 ~= "" then
+			var0_62 = var0_62 and pg.NewStoryMgr.GetInstance():IsPlayed(var1_62)
 		end
 
-		if not var0_61 then
+		if not var0_62 then
 			break
 		end
 	end
 
-	if var0_61 and arg0_61.storyTask and arg0_61.storyTask:getTaskStatus() == 1 then
-		arg0_61:emit(LevelMediator2.ON_SUBMIT_TASK, arg0_61.storyTask.id)
+	if var0_62 and arg0_62.storyTask and arg0_62.storyTask:getTaskStatus() == 1 then
+		arg0_62:emit(LevelMediator2.ON_SUBMIT_TASK, arg0_62.storyTask.id)
 
 		return
 	end
 end
 
-function var0_0.PlayStory(arg0_62, arg1_62, arg2_62, arg3_62)
-	if not arg1_62 then
-		return existCall(arg2_62)
+function var0_0.PlayStory(arg0_63, arg1_63, arg2_63, arg3_63)
+	if not arg1_63 then
+		return existCall(arg2_63)
 	end
 
-	local var0_62 = pg.NewStoryMgr.GetInstance()
-	local var1_62 = var0_62:IsPlayed(arg1_62)
+	local var0_63 = pg.NewStoryMgr.GetInstance()
+	local var1_63 = var0_63:IsPlayed(arg1_63)
 
 	seriesAsync({
-		function(arg0_63)
-			if var1_62 and not arg3_62 then
-				return arg0_63()
+		function(arg0_64)
+			if var1_63 and not arg3_63 then
+				return arg0_64()
 			end
 
-			local var0_63 = tonumber(arg1_62)
+			local var0_64 = tonumber(arg1_63)
 
-			if var0_63 and var0_63 > 0 then
-				arg0_62:emit(LevelMediator2.ON_PERFORM_COMBAT, var0_63, nil, var1_62)
+			if var0_64 and var0_64 > 0 then
+				arg0_63:emit(LevelMediator2.ON_PERFORM_COMBAT, var0_64, nil, var1_63)
 			else
-				var0_62:Play(arg1_62, arg0_63, arg3_62)
+				var0_63:Play(arg1_63, arg0_64, arg3_63)
 			end
 		end,
-		function(arg0_64, ...)
-			existCall(arg2_62, ...)
+		function(arg0_65, ...)
+			existCall(arg2_63, ...)
 		end
 	})
 end
 
-function var0_0.UpdateStoryTask(arg0_65)
-	local var0_65 = arg0_65.activity:getConfig("config_client").task_id
-	local var1_65 = getProxy(TaskProxy):getTaskVO(var0_65)
+function var0_0.UpdateStoryTask(arg0_66)
+	local var0_66 = arg0_66.activity:getConfig("config_client").task_id
+	local var1_66 = getProxy(TaskProxy):getTaskVO(var0_66)
 
-	if not var1_65 then
-		errorMsg("Missing Activity Task ID : " .. var0_65)
+	if not var1_66 then
+		errorMsg("Missing Activity Task ID : " .. var0_66)
 	end
 
-	arg0_65.storyTask = var1_65 or Task.New({
-		id = var0_65
+	arg0_66.storyTask = var1_66 or Task.New({
+		id = var0_66
 	})
 end
 
-function var0_0.OnSubmitTaskDone(arg0_66)
-	arg0_66:UpdateView()
+function var0_0.OnSubmitTaskDone(arg0_67)
+	arg0_67:UpdateView()
 end
 
-function var0_0.OnDestroy(arg0_67)
-	arg0_67:RecyclePools()
+function var0_0.OnDestroy(arg0_68)
+	arg0_68:RecyclePools()
 
-	for iter0_67, iter1_67 in pairs(arg0_67.pools) do
-		iter1_67:Clear()
+	for iter0_68, iter1_68 in pairs(arg0_68.pools) do
+		iter1_68:Clear()
 	end
 end
 

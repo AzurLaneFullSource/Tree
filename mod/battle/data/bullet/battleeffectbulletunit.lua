@@ -58,7 +58,13 @@ function var1_0.spawnArea(arg0_5, arg1_5)
 
 	time = var1_5.time
 
-	local var7_5 = arg0_5._battleProxy:SpawnLastingColumnArea(arg0_5:GetEffectField(), arg0_5:GetIFF(), pg.Tool.FilterY(arg0_5:GetPosition():Clone()), var1_5.range, time, var5_5, var6_5, var2_5.friendly, var2_5.effect_id)
+	local var7_5
+
+	if var0_5.extra_param.ellipse_range then
+		var7_5 = arg0_5._battleProxy:SpawnLastingEllipseArea(arg0_5:GetEffectField(), arg0_5:GetIFF(), pg.Tool.FilterY(arg0_5:GetPosition():Clone()), var1_5.range, var0_5.extra_param.ellipse_range, time, var5_5, var6_5, var2_5.friendly, var2_5.effect_id)
+	else
+		var7_5 = arg0_5._battleProxy:SpawnLastingColumnArea(arg0_5:GetEffectField(), arg0_5:GetIFF(), pg.Tool.FilterY(arg0_5:GetPosition():Clone()), var1_5.range, time, var5_5, var6_5, var2_5.friendly, var2_5.effect_id)
+	end
 
 	if arg1_5 then
 		arg0_5._flare = var7_5

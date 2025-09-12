@@ -52,6 +52,7 @@ function var0_0.Init(arg0_2)
 		arg0_2._event:emit(ActivityMediator.RETURN_AWARD_OP, {
 			cmd = ActivityConst.RETURN_AWARD_OP_SHOW_RETURNER_AWARD_OVERVIEW,
 			arg1 = {
+				blur = true,
 				tasklist = arg0_2.config.task_list,
 				ptId = pg.activity_template_headhunting[arg0_2.activity.id].pt,
 				totalPt = arg0_2.pt,
@@ -155,54 +156,58 @@ end
 
 local function var1_0(arg0_14, arg1_14, arg2_14)
 	local var0_14 = arg2_14:getConfig("award_display")[1]
-
-	updateDrop(arg1_14:Find("item"), {
+	local var1_14 = {
 		type = var0_14[1],
 		id = var0_14[2],
 		count = var0_14[3]
-	})
+	}
+
+	updateDrop(arg1_14:Find("item"), var1_14)
+	onButton(arg0_14, arg1_14:Find("item"), function()
+		arg0_14._event:emit(BaseUI.ON_DROP, var1_14)
+	end, SFX_PANEL)
 	setText(arg1_14:Find("desc"), arg2_14:getConfig("desc"))
 	setFillAmount(arg1_14:Find("slider"), arg2_14:getProgress() / arg2_14:getConfig("target_num"))
 
-	local var1_14 = arg1_14:Find("go")
-	local var2_14 = arg1_14:Find("get")
-	local var3_14 = arg1_14:Find("got")
+	local var2_14 = arg1_14:Find("go")
+	local var3_14 = arg1_14:Find("get")
+	local var4_14 = arg1_14:Find("got")
 
-	setActive(var1_14, not arg2_14:isFinish())
-	setActive(var2_14, arg2_14:isFinish() and not arg2_14:isReceive())
-	setActive(var3_14, arg2_14:isReceive())
-	onButton(arg0_14, var1_14, function()
+	setActive(var2_14, not arg2_14:isFinish())
+	setActive(var3_14, arg2_14:isFinish() and not arg2_14:isReceive())
+	setActive(var4_14, arg2_14:isReceive())
+	onButton(arg0_14, var2_14, function()
 		arg0_14._event:emit(ActivityMediator.ON_TASK_GO, arg2_14)
 	end, SFX_PANEL)
-	onButton(arg0_14, var2_14, function()
+	onButton(arg0_14, var3_14, function()
 		arg0_14._event:emit(ActivityMediator.ON_TASK_SUBMIT, arg2_14)
 	end, SFX_PANEL)
 end
 
-function var0_0.UpdateTasks(arg0_17)
-	local var0_17 = arg0_17.config.task_list
-	local var1_17 = var0_17[arg0_17.taskIndex] or {}
+function var0_0.UpdateTasks(arg0_18)
+	local var0_18 = arg0_18.config.task_list
+	local var1_18 = var0_18[arg0_18.taskIndex] or {}
 
-	arg0_17.taskUIlist:make(function(arg0_18, arg1_18, arg2_18)
-		if arg0_18 == UIItemList.EventUpdate then
-			local var0_18 = var1_17[arg1_18 + 1]
-			local var1_18 = getProxy(TaskProxy)
-			local var2_18 = var1_18:getTaskById(var0_18) or var1_18:getFinishTaskById(var0_18)
+	arg0_18.taskUIlist:make(function(arg0_19, arg1_19, arg2_19)
+		if arg0_19 == UIItemList.EventUpdate then
+			local var0_19 = var1_18[arg1_19 + 1]
+			local var1_19 = getProxy(TaskProxy)
+			local var2_19 = var1_19:getTaskById(var0_19) or var1_19:getFinishTaskById(var0_19)
 
-			assert(var2_18)
-			var1_0(arg0_17, arg2_18, var2_18)
+			assert(var2_19)
+			var1_0(arg0_18, arg2_19, var2_19)
 		end
 	end)
-	arg0_17.taskUIlist:align(#var1_17)
+	arg0_18.taskUIlist:align(#var1_18)
 
-	arg0_17.totalProgress.text = #var0_17
-	arg0_17.progress.text = arg0_17.taskIndex
+	arg0_18.totalProgress.text = #var0_18
+	arg0_18.progress.text = arg0_18.taskIndex
 end
 
-function var0_0.Dispose(arg0_19)
-	pg.DelegateInfo.Dispose(arg0_19)
+function var0_0.Dispose(arg0_20)
+	pg.DelegateInfo.Dispose(arg0_20)
 
-	arg0_19.bg.sprite = nil
+	arg0_20.bg.sprite = nil
 end
 
 return var0_0

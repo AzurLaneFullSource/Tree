@@ -509,7 +509,7 @@ function var0_0.loadAllCharacter(arg0_33, arg1_33)
 			table.insert(var1_33, function(arg0_36)
 				local var0_36 = SpineRole.New(iter1_35)
 
-				var0_36:Load(function()
+				var0_36:LoadLite(function()
 					var0_33(var0_36, iter1_35, arg0_35, iter0_35)
 					onNextTick(arg0_36)
 				end)

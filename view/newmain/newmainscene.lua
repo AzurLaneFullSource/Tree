@@ -254,6 +254,8 @@ function var0_0.FoldPanels(arg0_35, arg1_35)
 		return
 	end
 
+	arg0_35.foldFlag = arg1_35
+
 	arg0_35.theme:OnFoldPanels(arg1_35)
 	arg0_35.paintingView:Fold(arg1_35, 0.5)
 	pg.playerResUI:Fold(arg1_35, 0.5)
@@ -263,6 +265,12 @@ function var0_0.HidePanel(arg0_36, arg1_36)
 	if not arg0_36.theme then
 		return
 	end
+
+	if arg0_36.foldFlag == arg1_36 then
+		return
+	end
+
+	arg0_36.foldFlag = arg1_36
 
 	arg0_36.theme:OnFoldPanels(arg1_36)
 	pg.playerResUI:Fold(arg1_36, 0.5)
