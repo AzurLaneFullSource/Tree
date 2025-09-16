@@ -239,15 +239,24 @@ var0_0.taskTypeDic = {
 		end
 
 		local var1_27 = #arg1_27
-		local var2_27 = 0
+		local var2_27 = getProxy(TaskProxy)
 
-		for iter0_27, iter1_27 in ipairs(arg1_27) do
-			if var0_0.CheckSingleTask(iter1_27) == 2 then
-				var2_27 = var2_27 + 1
+		while var1_27 > 0 do
+			local var3_27 = arg1_27[var1_27]
+			local var4_27 = var2_27:getTaskById(var3_27) or var2_27:getFinishTaskById(var3_27)
+
+			if var4_27 then
+				if var4_27:getTaskStatus() ~= 2 then
+					var1_27 = var1_27 - 1
+				end
+
+				break
 			end
+
+			var1_27 = var1_27 - 1
 		end
 
-		return var2_27 .. "/" .. var1_27, var0_27
+		return var1_27 .. "/" .. #arg1_27, var0_27
 	end
 }
 

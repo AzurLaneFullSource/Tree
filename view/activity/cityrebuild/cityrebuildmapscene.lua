@@ -82,7 +82,7 @@ function var0_0.Refresh(arg0_12)
 
 	updateDrop(arg0_12.award:Find("IconTpl"), var2_12)
 
-	local var3_12 = var0_12:isFinish()
+	local var3_12 = var0_12:isReceive()
 
 	setActive(arg0_12.award:Find("got"), var3_12)
 	onButton(arg0_12, arg0_12.award, function()

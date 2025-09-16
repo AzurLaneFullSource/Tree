@@ -17,7 +17,7 @@ function var0_0.OnFirstFlush(arg0_3)
 	end, SFX_PANEL)
 	setText(findTF(arg0_3._tf, "AD/desc"), i18n("anniversary_eight_main_page_desc"))
 
-	if CityRebuildBookLayer.ShouldShowTip() and CityRebuildTasksLayer.ShouldShowTip() then
+	if CityRebuildBookLayer.ShouldShowTip() or CityRebuildTasksLayer.ShouldShowTip() then
 		setActive(findTF(arg0_3._tf, "AD/btn_act/red"), true)
 	else
 		setActive(findTF(arg0_3._tf, "AD/btn_act/red"), false)

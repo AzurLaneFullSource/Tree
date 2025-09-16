@@ -900,7 +900,7 @@ function var0_0.IsShowTipById(arg0_77)
 		[ActivityConst.GOASTSTORYACTIVITY_ID] = GhostSkinPageLayer.IsShowRed,
 		[ActivityConst.YUMIA_BASE_ACT_ID] = YoumiyaStrongholdLayer.ShouldShowTip,
 		[ActivityConst.NINJA_CITY_MAIN_ACTIVITY_ID] = function()
-			if CityRebuildBookLayer.ShouldShowTip() and CityRebuildTasksLayer.ShouldShowTip() then
+			if CityRebuildBookLayer.ShouldShowTip() or CityRebuildTasksLayer.ShouldShowTip() then
 				return true
 			end
 
