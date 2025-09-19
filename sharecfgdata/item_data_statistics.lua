@@ -102558,39 +102558,6 @@ _G.pg.base.item_data_statistics[60564] = {
 	limit = {},
 }
 
-_G.pg.base.item_data_statistics[69959] = {
-	compose_number = 0,
-	display = "Receive a random T5 Tech Pack",
-	display_effect = "OpenBox",
-	icon = "Props/30005",
-	id = 69959,
-	is_world = 0,
-	link_id = 0,
-	max_num = 0,
-	name = "Mystery T5 Tech Pack",
-	open_directly = 0,
-	order = 0,
-	other_item_cost = "[]",
-	other_resource_cost = "[]",
-	rarity = 5,
-	replace_item = 0,
-	target_id = 0,
-	time_limit = 0,
-	type = 5,
-	usage = "usage_drop",
-	usage_arg = "69959",
-	virtual_type = 0,
-	display_icon = {},
-	price = {
-		1,
-		100,
-	},
-	index = {},
-	shiptrans_id = {},
-	combination_display = {},
-	limit = {},
-}
-
 _G.pg.base.item_data_statistics[81200] = {
 	compose_number = 0,
 	display = "Contains 1x random skin (Resplendent Night I), 2x Special General Blueprints - Series 6, 2024x Gems, 50x Cognitive Chips, 20x Wisdom Cubes, 100x Decor Tokens, and 10x Quick Finishers.",
@@ -103805,6 +103772,72 @@ _G.pg.base.item_data_statistics[81217] = {
 		{
 			2,
 			86217,
+			1,
+		},
+		{
+			1,
+			14,
+			2025,
+		},
+		{
+			2,
+			42076,
+			2,
+		},
+		{
+			2,
+			15008,
+			50,
+		},
+		{
+			2,
+			20001,
+			20,
+		},
+		{
+			2,
+			15003,
+			10,
+		},
+		{
+			1,
+			6,
+			100,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
+_G.pg.base.item_data_statistics[81218] = {
+	compose_number = 0,
+	display = "Contains 1x random skin (Ninja Castle Lucky Box B), 2x Special General Blueprints - Series 8, 2025x Gems, 50x Cognitive Chips, 20x Wisdom Cubes, 100x Decor Tokens, and 10x Quick Finishers.",
+	display_effect = "",
+	icon = "Props/fudai28",
+	id = 81218,
+	is_world = 0,
+	limit = "[]",
+	link_id = 0,
+	max_num = 0,
+	name = "Ninja Castle Lucky Box B",
+	open_directly = 1,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 17,
+	usage = "usage_drop",
+	usage_arg = "998319",
+	virtual_type = 0,
+	display_icon = {
+		{
+			2,
+			86218,
 			1,
 		},
 		{

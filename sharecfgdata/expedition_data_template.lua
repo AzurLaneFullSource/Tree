@@ -985756,7 +985756,7 @@ _G.pg.base.expedition_data_template[1961001] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961001,
 	effect_prefab = "",
@@ -985779,7 +985779,11 @@ _G.pg.base.expedition_data_template[1961001] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -985834,7 +985838,7 @@ _G.pg.base.expedition_data_template[1961002] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961002,
 	effect_prefab = "",
@@ -985857,7 +985861,11 @@ _G.pg.base.expedition_data_template[1961002] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -985912,7 +985920,7 @@ _G.pg.base.expedition_data_template[1961003] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961003,
 	effect_prefab = "",
@@ -985935,7 +985943,11 @@ _G.pg.base.expedition_data_template[1961003] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -985990,7 +986002,7 @@ _G.pg.base.expedition_data_template[1961004] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961004,
 	effect_prefab = "",
@@ -986013,7 +986025,11 @@ _G.pg.base.expedition_data_template[1961004] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -986068,7 +986084,7 @@ _G.pg.base.expedition_data_template[1961005] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961005,
 	effect_prefab = "",
@@ -986091,7 +986107,11 @@ _G.pg.base.expedition_data_template[1961005] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -986146,7 +986166,7 @@ _G.pg.base.expedition_data_template[1961006] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961006,
 	effect_prefab = "",
@@ -986169,7 +986189,11 @@ _G.pg.base.expedition_data_template[1961006] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -986224,7 +986248,7 @@ _G.pg.base.expedition_data_template[1961007] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961007,
 	effect_prefab = "",
@@ -986247,7 +986271,11 @@ _G.pg.base.expedition_data_template[1961007] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -986302,7 +986330,7 @@ _G.pg.base.expedition_data_template[1961008] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961008,
 	effect_prefab = "",
@@ -986325,7 +986353,11 @@ _G.pg.base.expedition_data_template[1961008] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -986380,7 +986412,7 @@ _G.pg.base.expedition_data_template[1961009] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961009,
 	effect_prefab = "",
@@ -986403,7 +986435,11 @@ _G.pg.base.expedition_data_template[1961009] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -986481,7 +986517,11 @@ _G.pg.base.expedition_data_template[1961013] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -986532,7 +986572,7 @@ _G.pg.base.expedition_data_template[1961101] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961001,
 	effect_prefab = "",
@@ -986555,7 +986595,11 @@ _G.pg.base.expedition_data_template[1961101] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -986610,7 +986654,7 @@ _G.pg.base.expedition_data_template[1961102] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961002,
 	effect_prefab = "",
@@ -986633,7 +986677,11 @@ _G.pg.base.expedition_data_template[1961102] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -986688,7 +986736,7 @@ _G.pg.base.expedition_data_template[1961103] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961003,
 	effect_prefab = "",
@@ -986711,7 +986759,11 @@ _G.pg.base.expedition_data_template[1961103] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -986766,7 +986818,7 @@ _G.pg.base.expedition_data_template[1961104] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961004,
 	effect_prefab = "",
@@ -986789,7 +986841,11 @@ _G.pg.base.expedition_data_template[1961104] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -986844,7 +986900,7 @@ _G.pg.base.expedition_data_template[1961105] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961005,
 	effect_prefab = "",
@@ -986867,7 +986923,11 @@ _G.pg.base.expedition_data_template[1961105] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -986922,7 +986982,7 @@ _G.pg.base.expedition_data_template[1961106] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961006,
 	effect_prefab = "",
@@ -986945,7 +987005,11 @@ _G.pg.base.expedition_data_template[1961106] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -987000,7 +987064,7 @@ _G.pg.base.expedition_data_template[1961107] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961007,
 	effect_prefab = "",
@@ -987023,7 +987087,11 @@ _G.pg.base.expedition_data_template[1961107] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -987078,7 +987146,7 @@ _G.pg.base.expedition_data_template[1961108] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961008,
 	effect_prefab = "",
@@ -987101,7 +987169,11 @@ _G.pg.base.expedition_data_template[1961108] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -987156,7 +987228,7 @@ _G.pg.base.expedition_data_template[1961109] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961009,
 	effect_prefab = "",
@@ -987179,7 +987251,11 @@ _G.pg.base.expedition_data_template[1961109] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -987257,7 +987333,11 @@ _G.pg.base.expedition_data_template[1961113] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -987308,7 +987388,7 @@ _G.pg.base.expedition_data_template[1961201] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961001,
 	effect_prefab = "",
@@ -987331,7 +987411,11 @@ _G.pg.base.expedition_data_template[1961201] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -987386,7 +987470,7 @@ _G.pg.base.expedition_data_template[1961202] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961002,
 	effect_prefab = "",
@@ -987409,7 +987493,11 @@ _G.pg.base.expedition_data_template[1961202] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -987464,7 +987552,7 @@ _G.pg.base.expedition_data_template[1961203] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961003,
 	effect_prefab = "",
@@ -987487,7 +987575,11 @@ _G.pg.base.expedition_data_template[1961203] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -987542,7 +987634,7 @@ _G.pg.base.expedition_data_template[1961204] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961004,
 	effect_prefab = "",
@@ -987565,7 +987657,11 @@ _G.pg.base.expedition_data_template[1961204] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -987620,7 +987716,7 @@ _G.pg.base.expedition_data_template[1961205] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961005,
 	effect_prefab = "",
@@ -987643,7 +987739,11 @@ _G.pg.base.expedition_data_template[1961205] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -987698,7 +987798,7 @@ _G.pg.base.expedition_data_template[1961206] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961006,
 	effect_prefab = "",
@@ -987721,7 +987821,11 @@ _G.pg.base.expedition_data_template[1961206] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -987776,7 +987880,7 @@ _G.pg.base.expedition_data_template[1961207] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961007,
 	effect_prefab = "",
@@ -987799,7 +987903,11 @@ _G.pg.base.expedition_data_template[1961207] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -987854,7 +987962,7 @@ _G.pg.base.expedition_data_template[1961208] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961008,
 	effect_prefab = "",
@@ -987877,7 +987985,11 @@ _G.pg.base.expedition_data_template[1961208] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -987932,7 +988044,7 @@ _G.pg.base.expedition_data_template[1961209] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961009,
 	effect_prefab = "",
@@ -987955,7 +988067,11 @@ _G.pg.base.expedition_data_template[1961209] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -988033,7 +988149,11 @@ _G.pg.base.expedition_data_template[1961213] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -988084,7 +988204,7 @@ _G.pg.base.expedition_data_template[1961301] = {
 	add_icon = "",
 	ai = 3,
 	ai_mov = 2,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961301,
 	effect_prefab = "",
@@ -988107,7 +988227,11 @@ _G.pg.base.expedition_data_template[1961301] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -988162,7 +988286,7 @@ _G.pg.base.expedition_data_template[1961302] = {
 	add_icon = "",
 	ai = 3,
 	ai_mov = 2,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961302,
 	effect_prefab = "",
@@ -988185,7 +988309,11 @@ _G.pg.base.expedition_data_template[1961302] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -988240,7 +988368,7 @@ _G.pg.base.expedition_data_template[1961303] = {
 	add_icon = "",
 	ai = 3,
 	ai_mov = 2,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1961303,
 	effect_prefab = "",
@@ -988263,7 +988391,11 @@ _G.pg.base.expedition_data_template[1961303] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -991114,7 +991246,7 @@ _G.pg.base.expedition_data_template[1963001] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963001,
 	effect_prefab = "",
@@ -991137,7 +991269,11 @@ _G.pg.base.expedition_data_template[1963001] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -991192,7 +991328,7 @@ _G.pg.base.expedition_data_template[1963002] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963002,
 	effect_prefab = "",
@@ -991215,7 +991351,11 @@ _G.pg.base.expedition_data_template[1963002] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -991270,7 +991410,7 @@ _G.pg.base.expedition_data_template[1963003] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963003,
 	effect_prefab = "",
@@ -991293,7 +991433,11 @@ _G.pg.base.expedition_data_template[1963003] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -991348,7 +991492,7 @@ _G.pg.base.expedition_data_template[1963004] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963004,
 	effect_prefab = "",
@@ -991371,7 +991515,11 @@ _G.pg.base.expedition_data_template[1963004] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -991426,7 +991574,7 @@ _G.pg.base.expedition_data_template[1963005] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963005,
 	effect_prefab = "",
@@ -991449,7 +991597,11 @@ _G.pg.base.expedition_data_template[1963005] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -991504,7 +991656,7 @@ _G.pg.base.expedition_data_template[1963006] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963006,
 	effect_prefab = "",
@@ -991527,7 +991679,11 @@ _G.pg.base.expedition_data_template[1963006] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -991582,7 +991738,7 @@ _G.pg.base.expedition_data_template[1963007] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963007,
 	effect_prefab = "",
@@ -991605,7 +991761,11 @@ _G.pg.base.expedition_data_template[1963007] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -991660,7 +991820,7 @@ _G.pg.base.expedition_data_template[1963008] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963008,
 	effect_prefab = "",
@@ -991683,7 +991843,11 @@ _G.pg.base.expedition_data_template[1963008] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -991738,7 +991902,7 @@ _G.pg.base.expedition_data_template[1963009] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963009,
 	effect_prefab = "",
@@ -991761,7 +991925,11 @@ _G.pg.base.expedition_data_template[1963009] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -991839,7 +992007,11 @@ _G.pg.base.expedition_data_template[1963013] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -991890,7 +992062,7 @@ _G.pg.base.expedition_data_template[1963101] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963001,
 	effect_prefab = "",
@@ -991913,7 +992085,11 @@ _G.pg.base.expedition_data_template[1963101] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -991968,7 +992144,7 @@ _G.pg.base.expedition_data_template[1963102] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963002,
 	effect_prefab = "",
@@ -991991,7 +992167,11 @@ _G.pg.base.expedition_data_template[1963102] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -992046,7 +992226,7 @@ _G.pg.base.expedition_data_template[1963103] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963003,
 	effect_prefab = "",
@@ -992069,7 +992249,11 @@ _G.pg.base.expedition_data_template[1963103] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -992124,7 +992308,7 @@ _G.pg.base.expedition_data_template[1963104] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963004,
 	effect_prefab = "",
@@ -992147,7 +992331,11 @@ _G.pg.base.expedition_data_template[1963104] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -992202,7 +992390,7 @@ _G.pg.base.expedition_data_template[1963105] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963005,
 	effect_prefab = "",
@@ -992225,7 +992413,11 @@ _G.pg.base.expedition_data_template[1963105] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -992280,7 +992472,7 @@ _G.pg.base.expedition_data_template[1963106] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963006,
 	effect_prefab = "",
@@ -992303,7 +992495,11 @@ _G.pg.base.expedition_data_template[1963106] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -992358,7 +992554,7 @@ _G.pg.base.expedition_data_template[1963107] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963007,
 	effect_prefab = "",
@@ -992381,7 +992577,11 @@ _G.pg.base.expedition_data_template[1963107] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -992436,7 +992636,7 @@ _G.pg.base.expedition_data_template[1963108] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963008,
 	effect_prefab = "",
@@ -992459,7 +992659,11 @@ _G.pg.base.expedition_data_template[1963108] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -992514,7 +992718,7 @@ _G.pg.base.expedition_data_template[1963109] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963009,
 	effect_prefab = "",
@@ -992537,7 +992741,11 @@ _G.pg.base.expedition_data_template[1963109] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -992615,7 +992823,11 @@ _G.pg.base.expedition_data_template[1963113] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -992666,7 +992878,7 @@ _G.pg.base.expedition_data_template[1963201] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963001,
 	effect_prefab = "",
@@ -992689,7 +992901,11 @@ _G.pg.base.expedition_data_template[1963201] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -992744,7 +992960,7 @@ _G.pg.base.expedition_data_template[1963202] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963002,
 	effect_prefab = "",
@@ -992767,7 +992983,11 @@ _G.pg.base.expedition_data_template[1963202] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -992822,7 +993042,7 @@ _G.pg.base.expedition_data_template[1963203] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963003,
 	effect_prefab = "",
@@ -992845,7 +993065,11 @@ _G.pg.base.expedition_data_template[1963203] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -992900,7 +993124,7 @@ _G.pg.base.expedition_data_template[1963204] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963004,
 	effect_prefab = "",
@@ -992923,7 +993147,11 @@ _G.pg.base.expedition_data_template[1963204] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -992978,7 +993206,7 @@ _G.pg.base.expedition_data_template[1963205] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963005,
 	effect_prefab = "",
@@ -993001,7 +993229,11 @@ _G.pg.base.expedition_data_template[1963205] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -993056,7 +993288,7 @@ _G.pg.base.expedition_data_template[1963206] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963006,
 	effect_prefab = "",
@@ -993079,7 +993311,11 @@ _G.pg.base.expedition_data_template[1963206] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -993134,7 +993370,7 @@ _G.pg.base.expedition_data_template[1963207] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963007,
 	effect_prefab = "",
@@ -993157,7 +993393,11 @@ _G.pg.base.expedition_data_template[1963207] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -993212,7 +993452,7 @@ _G.pg.base.expedition_data_template[1963208] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963008,
 	effect_prefab = "",
@@ -993235,7 +993475,11 @@ _G.pg.base.expedition_data_template[1963208] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -993290,7 +993534,7 @@ _G.pg.base.expedition_data_template[1963209] = {
 	add_icon = "",
 	ai = 0,
 	ai_mov = 0,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963009,
 	effect_prefab = "",
@@ -993313,7 +993557,11 @@ _G.pg.base.expedition_data_template[1963209] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -993391,7 +993639,11 @@ _G.pg.base.expedition_data_template[1963213] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -993442,7 +993694,7 @@ _G.pg.base.expedition_data_template[1963301] = {
 	add_icon = "",
 	ai = 3,
 	ai_mov = 2,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963301,
 	effect_prefab = "",
@@ -993465,7 +993717,11 @@ _G.pg.base.expedition_data_template[1963301] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -993520,7 +993776,7 @@ _G.pg.base.expedition_data_template[1963302] = {
 	add_icon = "",
 	ai = 3,
 	ai_mov = 2,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963302,
 	effect_prefab = "",
@@ -993543,7 +993799,11 @@ _G.pg.base.expedition_data_template[1963302] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {
@@ -993598,7 +993858,7 @@ _G.pg.base.expedition_data_template[1963303] = {
 	add_icon = "",
 	ai = 3,
 	ai_mov = 2,
-	bgm = "story-amahara-stage1",
+	bgm = "story-worldα-brokenlight",
 	difficulty = 2,
 	dungeon_id = 1963303,
 	effect_prefab = "",
@@ -993621,7 +993881,11 @@ _G.pg.base.expedition_data_template[1963303] = {
 	map_id = {
 		{
 			50209,
-			1,
+			0.5,
+		},
+		{
+			50151,
+			0.5,
 		},
 	},
 	award_display = {

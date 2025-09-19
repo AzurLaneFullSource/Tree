@@ -533247,14 +533247,14 @@ _G.pg.base.chapter_template_loop[1960004] = {
 		{
 			7,
 			8,
-			"baifeng_2_1x1_2",
+			"guandao_2_1x1_3",
 			-5,
 			3,
 		},
 		{
 			6,
 			5,
-			"baifeng_2_1x2_2",
+			"guandao_2_1x2_2",
 			0,
 			-45,
 		},
@@ -533282,16 +533282,16 @@ _G.pg.base.chapter_template_loop[1960004] = {
 		{
 			2,
 			0,
-			"baifeng_2_2x2_2",
+			"guandao_2_2x2_2",
 			45,
 			-13,
 		},
 		{
 			0,
 			7,
-			"baifeng_2_1x1_3",
-			-2,
-			10,
+			"guandao_2_1x1_2",
+			0,
+			0,
 		},
 		{
 			0,
@@ -533952,7 +533952,7 @@ _G.pg.base.chapter_template_loop[1960005] = {
 		{
 			6,
 			4,
-			"baifeng_2_1x2_2",
+			"guandao_2_1x2_1",
 			0,
 			-41,
 		},
@@ -533966,9 +533966,9 @@ _G.pg.base.chapter_template_loop[1960005] = {
 		{
 			2,
 			8,
-			"baifeng_2_2x2_1",
+			"guandao_2_2x2_1",
 			54,
-			-41,
+			-30,
 		},
 		{
 			2,
@@ -533980,7 +533980,7 @@ _G.pg.base.chapter_template_loop[1960005] = {
 		{
 			1,
 			1,
-			"baifeng_2_1x1_1",
+			"guandao_2_1x1_2",
 			-6,
 			0,
 		},
@@ -533994,7 +533994,7 @@ _G.pg.base.chapter_template_loop[1960005] = {
 		{
 			0,
 			3,
-			"baifeng_2_1x1_3",
+			"guandao_2_1x1_1",
 			0,
 			8,
 		},
@@ -534778,9 +534778,9 @@ _G.pg.base.chapter_template_loop[1960006] = {
 		{
 			7,
 			5,
-			"baifeng_2_3x1_1",
+			"guandao_2_3x1_1",
 			110,
-			0,
+			12,
 		},
 		{
 			7,
@@ -534813,14 +534813,14 @@ _G.pg.base.chapter_template_loop[1960006] = {
 		{
 			5,
 			6,
-			"baifeng_2_1x1_1",
+			"guandao_2_1x1_2",
 			0,
 			0,
 		},
 		{
 			3,
 			6,
-			"baifeng_2_1x1_1",
+			"guandao_2_1x1_3",
 			0,
 			0,
 		},
@@ -534848,7 +534848,7 @@ _G.pg.base.chapter_template_loop[1960006] = {
 		{
 			1,
 			5,
-			"baifeng_2_3x1_1",
+			"guandao_2_3x1_2",
 			110,
 			0,
 		},
@@ -537668,14 +537668,14 @@ _G.pg.base.chapter_template_loop[1960024] = {
 		{
 			7,
 			8,
-			"baifeng_2_1x1_2",
+			"guandao_2_1x1_3",
 			-5,
 			3,
 		},
 		{
 			6,
 			5,
-			"baifeng_2_1x2_2",
+			"guandao_2_1x2_2",
 			0,
 			-45,
 		},
@@ -537703,16 +537703,16 @@ _G.pg.base.chapter_template_loop[1960024] = {
 		{
 			2,
 			0,
-			"baifeng_2_2x2_2",
+			"guandao_2_2x2_2",
 			45,
 			-13,
 		},
 		{
 			0,
 			7,
-			"baifeng_2_1x1_3",
-			-2,
-			10,
+			"guandao_2_1x1_2",
+			0,
+			0,
 		},
 		{
 			0,
@@ -538416,7 +538416,7 @@ _G.pg.base.chapter_template_loop[1960025] = {
 		{
 			6,
 			4,
-			"baifeng_2_1x2_2",
+			"guandao_2_1x2_1",
 			0,
 			-41,
 		},
@@ -538430,9 +538430,9 @@ _G.pg.base.chapter_template_loop[1960025] = {
 		{
 			2,
 			8,
-			"baifeng_2_2x2_1",
+			"guandao_2_2x2_1",
 			54,
-			-41,
+			-30,
 		},
 		{
 			2,
@@ -538444,7 +538444,7 @@ _G.pg.base.chapter_template_loop[1960025] = {
 		{
 			1,
 			1,
-			"baifeng_2_1x1_1",
+			"guandao_2_1x1_2",
 			-6,
 			0,
 		},
@@ -538458,7 +538458,7 @@ _G.pg.base.chapter_template_loop[1960025] = {
 		{
 			0,
 			3,
-			"baifeng_2_1x1_3",
+			"guandao_2_1x1_1",
 			0,
 			8,
 		},
@@ -539285,9 +539285,9 @@ _G.pg.base.chapter_template_loop[1960026] = {
 		{
 			7,
 			5,
-			"baifeng_2_3x1_1",
+			"guandao_2_3x1_1",
 			110,
-			0,
+			12,
 		},
 		{
 			7,
@@ -539320,14 +539320,14 @@ _G.pg.base.chapter_template_loop[1960026] = {
 		{
 			5,
 			6,
-			"baifeng_2_1x1_1",
+			"guandao_2_1x1_2",
 			0,
 			0,
 		},
 		{
 			3,
 			6,
-			"baifeng_2_1x1_1",
+			"guandao_2_1x1_3",
 			0,
 			0,
 		},
@@ -539355,7 +539355,7 @@ _G.pg.base.chapter_template_loop[1960026] = {
 		{
 			1,
 			5,
-			"baifeng_2_3x1_1",
+			"guandao_2_3x1_2",
 			110,
 			0,
 		},

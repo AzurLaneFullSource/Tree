@@ -35,7 +35,7 @@ function var3_0.onUpdate(arg0_3, arg1_3, arg2_3, arg3_3)
 	local var0_3 = arg3_3.timeStamp
 
 	if var0_3 >= arg0_3._nextEffectTime then
-		arg0_3:attachBuff(arg0_3._buff_id, arg0_3._level, arg1_3, arg2_3)
+		arg0_3:AddBuff(arg1_3, arg3_3, arg2_3)
 
 		arg0_3._nextEffectTime = var0_3 + arg0_3._time
 	end

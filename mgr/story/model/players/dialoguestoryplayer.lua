@@ -651,14 +651,12 @@ function var0_0.UpdateLive2dPainting(arg0_53, arg1_53, arg2_53, arg3_53, arg4_53
 	local function var0_53(arg0_54)
 		local var0_54 = arg1_53:GetVirtualShip()
 		local var1_54 = arg1_53:GetLive2dPos()
+
+		print(var0_54:GetSkinConfig().id)
+
 		local var2_54 = Live2D.GenerateData({
 			ship = var0_54,
-			offset = {
-				0,
-				0,
-				0,
-				70
-			},
+			offset = var0_54:GetSkinConfig().live2d_offset,
 			position = var1_54 or Vector3(0, 0, 0),
 			parent = arg2_53:Find("live2d")
 		})

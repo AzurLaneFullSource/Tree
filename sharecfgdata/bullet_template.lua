@@ -141446,7 +141446,6 @@ _G.pg.base.bullet_template[161016] = {
 }
 
 _G.pg.base.bullet_template[161017] = {
-	acceleration = "d",
 	alert_fx = "",
 	ammo_type = 1,
 	antisub_enhancement = 0,
@@ -141481,6 +141480,20 @@ _G.pg.base.bullet_template[161017] = {
 		{
 			1,
 			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = -0.035,
+			v = 0,
+		},
+		{
+			flip = true,
+			t = 1,
+			u = 0.06,
+			v = 0.02,
 		},
 	},
 	cld_box = {

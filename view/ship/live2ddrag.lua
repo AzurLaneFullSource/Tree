@@ -240,7 +240,7 @@ function var0_0.startDrag(arg0_5, arg1_5)
 		return
 	end
 
-	print(arg0_5.drawAbleName .. " 按下了")
+	print(arg0_5.drawAbleName .. " 按下了 id = " .. arg0_5.id)
 
 	if not arg0_5._active then
 		arg0_5._active = true
@@ -1280,7 +1280,7 @@ function var0_0.updateTrigger(arg0_52)
 		local var27_52 = arg0_52.actionTrigger.range
 
 		if arg0_52._active and arg0_52.actionTrigger.active == 1 then
-			if not arg0_52.dragMoveUp and arg0_52.parameterValue >= var27_52[1] and arg0_52.parameterValue < var27_52[2] then
+			if not arg0_52.dragMoveUp and arg0_52.parameterValue > var27_52[1] and arg0_52.parameterValue <= var27_52[2] then
 				arg0_52.dragMoveUp = true
 
 				arg0_52:onEventCallback(Live2D.EVENT_ACTION_APPLY, nil, function(arg0_66)
@@ -1288,7 +1288,6 @@ function var0_0.updateTrigger(arg0_52)
 				end)
 			end
 		elseif arg0_52.firstStop and arg0_52.actionTrigger.active == 0 then
-			print("停止激活")
 			arg0_52:onEventCallback(Live2D.EVENT_GET_PARAMETER, {
 				name = arg0_52.actionTrigger.parameter
 			}, function(arg0_67)

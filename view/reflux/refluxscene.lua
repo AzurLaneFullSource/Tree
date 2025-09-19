@@ -9,153 +9,167 @@ function var0_0.getUIName(arg0_1)
 	return "RefluxUI"
 end
 
-function var0_0.init(arg0_2)
-	arg0_2:findUI()
-	arg0_2:initData()
-	arg0_2:addListener()
+function var0_0.preload(arg0_2, arg1_2)
+	local function var0_2()
+		arg1_2()
+	end
+
+	if getProxy(ShopsProxy):ShouldRefreshChargeList() then
+		pg.m02:sendNotification(GAME.GET_CHARGE_LIST, {
+			callback = var0_2
+		})
+	else
+		var0_2()
+	end
 end
 
-function var0_0.didEnter(arg0_3)
-	arg0_3:updateRedPotList()
+function var0_0.init(arg0_4)
+	arg0_4:findUI()
+	arg0_4:initData()
+	arg0_4:addListener()
+end
+
+function var0_0.didEnter(arg0_5)
+	arg0_5:updateRedPotList()
 
 	if not getProxy(RefluxProxy):isInRefluxTime() then
-		arg0_3:closeView()
+		arg0_5:closeView()
 
 		return
 	end
 
-	if not arg0_3:tryOpenLetterView() then
-		arg0_3:tryAutoOpenLastView()
+	if not arg0_5:tryOpenLetterView() then
+		arg0_5:tryAutoOpenLastView()
 	end
 
-	arg0_3:updateDay()
+	arg0_5:updateDay()
 end
 
-function var0_0.willExit(arg0_4)
-	for iter0_4, iter1_4 in ipairs(arg0_4.viewList) do
-		if iter1_4 and iter1_4:GetLoaded() then
-			iter1_4:Destroy()
+function var0_0.willExit(arg0_6)
+	for iter0_6, iter1_6 in ipairs(arg0_6.viewList) do
+		if iter1_6 and iter1_6:GetLoaded() then
+			iter1_6:Destroy()
 		end
 	end
 
-	if arg0_4.signView and arg0_4.signView:GetLoaded() then
-		arg0_4.signView:Destroy()
+	if arg0_6.signView and arg0_6.signView:GetLoaded() then
+		arg0_6.signView:Destroy()
 	end
 
-	if arg0_4.taskView and arg0_4.taskView:GetLoaded() then
-		arg0_4.taskView:Destroy()
+	if arg0_6.taskView and arg0_6.taskView:GetLoaded() then
+		arg0_6.taskView:Destroy()
 	end
 
-	if arg0_4.ptView and arg0_4.ptView:GetLoaded() then
-		arg0_4.ptView:Destroy()
+	if arg0_6.ptView and arg0_6.ptView:GetLoaded() then
+		arg0_6.ptView:Destroy()
 	end
 
-	if arg0_4.shopView and arg0_4.shopView:GetLoaded() then
-		arg0_4.shopView:Destroy()
+	if arg0_6.shopView and arg0_6.shopView:GetLoaded() then
+		arg0_6.shopView:Destroy()
 	end
 end
 
-function var0_0.onBackPressed(arg0_5)
-	if arg0_5.letterView and arg0_5.letterView:isShowing() then
-		arg0_5.letterView:OnBackPress()
+function var0_0.onBackPressed(arg0_7)
+	if arg0_7.letterView and arg0_7.letterView:isShowing() then
+		arg0_7.letterView:OnBackPress()
 
 		return
 	end
 
-	arg0_5:closeView()
+	arg0_7:closeView()
 end
 
-function var0_0.findUI(arg0_6)
-	arg0_6.letterContainer = arg0_6:findTF("PanelLetter")
-	arg0_6.panelContainer = arg0_6:findTF("PanelContainer")
+function var0_0.findUI(arg0_8)
+	arg0_8.letterContainer = arg0_8:findTF("PanelLetter")
+	arg0_8.panelContainer = arg0_8:findTF("PanelContainer")
 
-	local var0_6 = arg0_6:findTF("left/left_bar")
+	local var0_8 = arg0_8:findTF("left/left_bar")
 
-	arg0_6.letterBtn = arg0_6:findTF("letter", var0_6)
-	arg0_6.signToggle = arg0_6:findTF("tabs/sign", var0_6)
-	arg0_6.taskToggle = arg0_6:findTF("tabs/task", var0_6)
-	arg0_6.ptToggle = arg0_6:findTF("tabs/pt", var0_6)
-	arg0_6.shopToggle = arg0_6:findTF("tabs/shop", var0_6)
-	arg0_6.toggleList = {
-		[var0_0.Sign] = arg0_6.signToggle,
-		[var0_0.Task] = arg0_6.taskToggle,
-		[var0_0.PT] = arg0_6.ptToggle,
-		[var0_0.Shop] = arg0_6.shopToggle
+	arg0_8.letterBtn = arg0_8:findTF("letter", var0_8)
+	arg0_8.signToggle = arg0_8:findTF("tabs/sign", var0_8)
+	arg0_8.taskToggle = arg0_8:findTF("tabs/task", var0_8)
+	arg0_8.ptToggle = arg0_8:findTF("tabs/pt", var0_8)
+	arg0_8.shopToggle = arg0_8:findTF("tabs/shop", var0_8)
+	arg0_8.toggleList = {
+		[var0_0.Sign] = arg0_8.signToggle,
+		[var0_0.Task] = arg0_8.taskToggle,
+		[var0_0.PT] = arg0_8.ptToggle,
+		[var0_0.Shop] = arg0_8.shopToggle
 	}
-	arg0_6.redPotList = {
-		[var0_0.Sign] = arg0_6:findTF("Red", arg0_6.signToggle),
-		[var0_0.Task] = arg0_6:findTF("Red", arg0_6.taskToggle),
-		[var0_0.PT] = arg0_6:findTF("Red", arg0_6.ptToggle),
-		[var0_0.Shop] = arg0_6:findTF("Red", arg0_6.shopToggle)
+	arg0_8.redPotList = {
+		[var0_0.Sign] = arg0_8:findTF("Red", arg0_8.signToggle),
+		[var0_0.Task] = arg0_8:findTF("Red", arg0_8.taskToggle),
+		[var0_0.PT] = arg0_8:findTF("Red", arg0_8.ptToggle),
+		[var0_0.Shop] = arg0_8:findTF("Red", arg0_8.shopToggle)
 	}
-	arg0_6.backBtn = arg0_6:findTF("back", var0_6)
-	arg0_6.dayText = arg0_6:findTF("time/text")
+	arg0_8.backBtn = arg0_8:findTF("back", var0_8)
+	arg0_8.dayText = arg0_8:findTF("time/text")
 
-	local var1_6 = arg0_6:findTF("time/icon")
+	local var1_8 = arg0_8:findTF("time/icon")
 
-	setText(var1_6, i18n("reflux_word_1"))
+	setText(var1_8, i18n("reflux_word_1"))
 
-	local var2_6 = arg0_6:findTF("time/icon1")
+	local var2_8 = arg0_8:findTF("time/icon1")
 
-	setText(var2_6, i18n("word_date"))
+	setText(var2_8, i18n("word_date"))
 end
 
-function var0_0.initData(arg0_7)
-	arg0_7.curViewIndex = 0
-	arg0_7.letterView = RefluxLetterView.New(arg0_7.letterContainer, arg0_7.event, arg0_7.contextData)
-	arg0_7.signView = RefluxSignView.New(arg0_7.panelContainer, arg0_7.event, arg0_7.contextData)
-	arg0_7.taskView = RefluxTaskView.New(arg0_7.panelContainer, arg0_7.event, arg0_7.contextData)
-	arg0_7.ptView = RefluxPTView.New(arg0_7.panelContainer, arg0_7.event, arg0_7.contextData)
-	arg0_7.shopView = RefluxShopView.New(arg0_7.panelContainer, arg0_7.event, arg0_7.contextData)
-	arg0_7.viewList = {
-		[var0_0.Sign] = arg0_7.signView,
-		[var0_0.Task] = arg0_7.taskView,
-		[var0_0.PT] = arg0_7.ptView,
-		[var0_0.Shop] = arg0_7.shopView
+function var0_0.initData(arg0_9)
+	arg0_9.curViewIndex = 0
+	arg0_9.letterView = RefluxLetterView.New(arg0_9.letterContainer, arg0_9.event, arg0_9.contextData)
+	arg0_9.signView = RefluxSignView.New(arg0_9.panelContainer, arg0_9.event, arg0_9.contextData)
+	arg0_9.taskView = RefluxTaskView.New(arg0_9.panelContainer, arg0_9.event, arg0_9.contextData)
+	arg0_9.ptView = RefluxPTView.New(arg0_9.panelContainer, arg0_9.event, arg0_9.contextData)
+	arg0_9.shopView = RefluxShopView.New(arg0_9.panelContainer, arg0_9.event, arg0_9.contextData)
+	arg0_9.viewList = {
+		[var0_0.Sign] = arg0_9.signView,
+		[var0_0.Task] = arg0_9.taskView,
+		[var0_0.PT] = arg0_9.ptView,
+		[var0_0.Shop] = arg0_9.shopView
 	}
 end
 
-function var0_0.addListener(arg0_8)
-	onButton(arg0_8, arg0_8.backBtn, function()
-		arg0_8:onBackPressed()
+function var0_0.addListener(arg0_10)
+	onButton(arg0_10, arg0_10.backBtn, function()
+		arg0_10:onBackPressed()
 	end, SFX_CANCEL)
-	onButton(arg0_8, arg0_8.letterBtn, function()
-		arg0_8:switchLetter()
+	onButton(arg0_10, arg0_10.letterBtn, function()
+		arg0_10:switchLetter()
 	end, SFX_PANEL)
-	onToggle(arg0_8, arg0_8.signToggle, function(arg0_11)
-		if arg0_11 == true then
-			arg0_8:switchPage(var0_0.Sign)
-		end
-	end, SFX_PANEL)
-	onToggle(arg0_8, arg0_8.taskToggle, function(arg0_12)
-		if arg0_12 == true then
-			arg0_8:switchPage(var0_0.Task)
-		end
-	end, SFX_PANEL)
-	onToggle(arg0_8, arg0_8.ptToggle, function(arg0_13)
+	onToggle(arg0_10, arg0_10.signToggle, function(arg0_13)
 		if arg0_13 == true then
-			arg0_8:switchPage(var0_0.PT)
+			arg0_10:switchPage(var0_0.Sign)
 		end
 	end, SFX_PANEL)
-	onToggle(arg0_8, arg0_8.shopToggle, function(arg0_14)
+	onToggle(arg0_10, arg0_10.taskToggle, function(arg0_14)
 		if arg0_14 == true then
-			arg0_8:switchPage(var0_0.Shop)
-			arg0_8:updateRedPotList()
+			arg0_10:switchPage(var0_0.Task)
+		end
+	end, SFX_PANEL)
+	onToggle(arg0_10, arg0_10.ptToggle, function(arg0_15)
+		if arg0_15 == true then
+			arg0_10:switchPage(var0_0.PT)
+		end
+	end, SFX_PANEL)
+	onToggle(arg0_10, arg0_10.shopToggle, function(arg0_16)
+		if arg0_16 == true then
+			arg0_10:switchPage(var0_0.Shop)
+			arg0_10:updateRedPotList()
 		end
 	end, SFX_PANEL)
 end
 
-function var0_0.tryOpenLetterView(arg0_15)
-	local var0_15 = getProxy(RefluxProxy).returnTimestamp
-	local var1_15 = getProxy(PlayerProxy):getRawData().id .. "_" .. var0_15
+function var0_0.tryOpenLetterView(arg0_17)
+	local var0_17 = getProxy(RefluxProxy).returnTimestamp
+	local var1_17 = getProxy(PlayerProxy):getRawData().id .. "_" .. var0_17
 
-	if PlayerPrefs.GetInt(var1_15, 0) ~= 1 then
-		PlayerPrefs.SetInt(var1_15, 1)
+	if PlayerPrefs.GetInt(var1_17, 0) ~= 1 then
+		PlayerPrefs.SetInt(var1_17, 1)
 		PlayerPrefs.Save()
-		arg0_15.letterView:ActionInvoke("setCloseFunc", function()
-			triggerToggle(arg0_15.toggleList[var0_0.Sign], true)
+		arg0_17.letterView:ActionInvoke("setCloseFunc", function()
+			triggerToggle(arg0_17.toggleList[var0_0.Sign], true)
 		end)
-		arg0_15:switchLetter()
+		arg0_17:switchLetter()
 
 		return true
 	else
@@ -163,54 +177,54 @@ function var0_0.tryOpenLetterView(arg0_15)
 	end
 end
 
-function var0_0.switchPage(arg0_17, arg1_17)
-	if arg0_17.curViewIndex ~= arg1_17 then
-		local var0_17 = arg0_17.viewList[arg1_17]
+function var0_0.switchPage(arg0_19, arg1_19)
+	if arg0_19.curViewIndex ~= arg1_19 then
+		local var0_19 = arg0_19.viewList[arg1_19]
 
-		var0_17:Load()
-		var0_17:ActionInvoke("Show")
-		var0_17:ActionInvoke("updateOutline")
+		var0_19:Load()
+		var0_19:ActionInvoke("Show")
+		var0_19:ActionInvoke("updateOutline")
 
-		if arg0_17.curViewIndex > 0 then
-			arg0_17.viewList[arg0_17.curViewIndex]:Hide()
+		if arg0_19.curViewIndex > 0 then
+			arg0_19.viewList[arg0_19.curViewIndex]:Hide()
 		end
 
-		arg0_17.curViewIndex = arg1_17
-		arg0_17.contextData.lastViewIndex = arg1_17
+		arg0_19.curViewIndex = arg1_19
+		arg0_19.contextData.lastViewIndex = arg1_19
 	end
 end
 
-function var0_0.tryAutoOpenLastView(arg0_18)
-	if arg0_18.contextData.lastViewIndex then
-		triggerToggle(arg0_18.toggleList[arg0_18.contextData.lastViewIndex], true)
+function var0_0.tryAutoOpenLastView(arg0_20)
+	if arg0_20.contextData.lastViewIndex then
+		triggerToggle(arg0_20.toggleList[arg0_20.contextData.lastViewIndex], true)
 	else
-		triggerToggle(arg0_18.toggleList[var0_0.Sign], true)
+		triggerToggle(arg0_20.toggleList[var0_0.Sign], true)
 	end
 end
 
-function var0_0.switchLetter(arg0_19)
-	arg0_19.letterView:Load()
-	arg0_19.letterView:ActionInvoke("Show")
+function var0_0.switchLetter(arg0_21)
+	arg0_21.letterView:Load()
+	arg0_21.letterView:ActionInvoke("Show")
 end
 
-function var0_0.updateRedPotList(arg0_20)
-	local var0_20 = RefluxTaskView.isAnyTaskCanGetAward()
-	local var1_20 = RefluxPTView.isAnyPTCanGetAward()
-	local var2_20 = RefluxShopView.isShowRedPot()
+function var0_0.updateRedPotList(arg0_22)
+	local var0_22 = RefluxTaskView.isAnyTaskCanGetAward()
+	local var1_22 = RefluxPTView.isAnyPTCanGetAward()
+	local var2_22 = RefluxShopView.isShowRedPot()
 
-	setActive(arg0_20.redPotList[var0_0.Sign], false)
-	setActive(arg0_20.redPotList[var0_0.Task], var0_20)
-	setActive(arg0_20.redPotList[var0_0.PT], var1_20)
-	setActive(arg0_20.redPotList[var0_0.Shop], var2_20)
+	setActive(arg0_22.redPotList[var0_0.Sign], false)
+	setActive(arg0_22.redPotList[var0_0.Task], var0_22)
+	setActive(arg0_22.redPotList[var0_0.PT], var1_22)
+	setActive(arg0_22.redPotList[var0_0.Shop], var2_22)
 end
 
-function var0_0.updateDay(arg0_21)
-	local var0_21 = getProxy(RefluxProxy)
-	local var1_21 = pg.TimeMgr.GetInstance()
-	local var2_21 = #pg.return_sign_template.all
-	local var3_21 = math.clamp(var1_21:DiffDay(var0_21.returnTimestamp, var1_21:GetServerTime()), 0, var2_21 - 1)
+function var0_0.updateDay(arg0_23)
+	local var0_23 = getProxy(RefluxProxy)
+	local var1_23 = pg.TimeMgr.GetInstance()
+	local var2_23 = #pg.return_sign_template.all
+	local var3_23 = math.clamp(var1_23:DiffDay(var0_23.returnTimestamp, var1_23:GetServerTime()), 0, var2_23 - 1)
 
-	setText(arg0_21.dayText, var2_21 - var3_21)
+	setText(arg0_23.dayText, var2_23 - var3_23)
 end
 
 return var0_0

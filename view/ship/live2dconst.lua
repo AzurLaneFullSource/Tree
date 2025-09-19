@@ -122,6 +122,10 @@ function var0_0.ClearLive2dSave(arg0_15, arg1_15)
 		return
 	end
 
+	if ChangeSkinLink.L2D_PARAMETER_DIC[arg1_15] then
+		ChangeSkinLink.L2D_PARAMETER_DIC[arg1_15] = {}
+	end
+
 	local var0_15 = pg.ship_skin_template[arg0_15].ship_l2d_id
 
 	if var0_15 and #var0_15 > 0 then
