@@ -37,7 +37,7 @@ function var0_0.ShouldShowTip()
 	local var3_7 = var2_7:getConfig("config_data")
 	local var4_7 = var2_7.data3
 
-	if var4_7 then
+	if var4_7 == 0 or var4_7 == nil then
 		return falses
 	end
 
