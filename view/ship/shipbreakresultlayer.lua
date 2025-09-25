@@ -12,9 +12,7 @@ function var0_0.init(arg0_2)
 	arg0_2.qCharaContain = arg0_2:findTF("right_panel/top/q_chara")
 	arg0_2._chat = arg0_2:findTF("chat", arg0_2.paintContain)
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, false, {
-		weight = LayerWeightConst.TOP_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
 
 	arg0_2._shake = arg0_2:findTF("shake_panel")
 	arg0_2._bg = arg0_2:findTF("bg", arg0_2._shake)
@@ -287,7 +285,7 @@ function var0_0.willExit(arg0_18)
 		arg0_18.loadedCVBankName = nil
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_18._tf, pg.UIMgr.GetInstance().UIMain)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_18._tf)
 end
 
 return var0_0

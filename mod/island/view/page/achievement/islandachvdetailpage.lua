@@ -6,95 +6,93 @@ end
 
 function var0_0.OnLoaded(arg0_2)
 	setText(arg0_2._tf:Find("top/title/Text"), i18n("island_achievement_title"))
-	setText(arg0_2._tf:Find("top/total/Text"), i18n("island_achv_total"))
+	setText(arg0_2._tf:Find("total/Text"), i18n("island_achv_total"))
 
-	arg0_2.totalTF = arg0_2._tf:Find("top/total/value")
+	arg0_2.totalTF = arg0_2._tf:Find("total/value")
 
 	local var0_2 = arg0_2._tf:Find("toggles/content")
 
 	arg0_2.typeUIList = UIItemList.New(var0_2, var0_2:Find("tpl"))
 
-	local var1_2 = arg0_2._tf:Find("view/content")
+	setActive(arg0_2._tf:Find("tpl"), false)
 
-	arg0_2.itemUIList = UIItemList.New(var1_2, var1_2:Find("tpl"))
+	arg0_2.scrollRect = arg0_2._tf:Find("view"):GetComponent("LScrollRect")
+
+	function arg0_2.scrollRect.onInitItem(arg0_3)
+		arg0_2:OnInitItem(arg0_3)
+	end
+
+	function arg0_2.scrollRect.onUpdateItem(arg0_4, arg1_4)
+		arg0_2:OnUpdateItem(arg0_4, arg1_4)
+	end
 end
 
-function var0_0.OnInit(arg0_3)
-	onButton(arg0_3, arg0_3._tf:Find("top/back"), function()
-		arg0_3:Hide()
+function var0_0.OnInit(arg0_5)
+	onButton(arg0_5, arg0_5._tf:Find("top/back"), function()
+		arg0_5:Hide()
 	end, SFX_PANEL)
-	arg0_3.typeUIList:make(function(arg0_5, arg1_5, arg2_5)
-		if arg0_5 == UIItemList.EventInit then
-			arg0_3:InitToggle(arg1_5, arg2_5)
-		elseif arg0_5 == UIItemList.EventUpdate then
-			arg0_3:UpdateToggle(arg1_5, arg2_5)
+	arg0_5.typeUIList:make(function(arg0_7, arg1_7, arg2_7)
+		if arg0_7 == UIItemList.EventInit then
+			arg0_5:InitToggle(arg1_7, arg2_7)
+		elseif arg0_7 == UIItemList.EventUpdate then
+			arg0_5:UpdateToggle(arg1_7, arg2_7)
 		end
 	end)
 
-	arg0_3.typeIds = pg.island_achievement_group.all
-
-	arg0_3.itemUIList:make(function(arg0_6, arg1_6, arg2_6)
-		if arg0_6 == UIItemList.EventUpdate then
-			arg0_3:UpdateItem(arg1_6, arg2_6)
-		end
-	end)
+	arg0_5.typeIds = pg.island_achievement_group.all
+	arg0_5.cards = {}
 end
 
-function var0_0.InitToggle(arg0_7, arg1_7, arg2_7)
-	local var0_7 = arg0_7.typeIds[arg1_7 + 1]
+function var0_0.InitToggle(arg0_8, arg1_8, arg2_8)
+	local var0_8 = arg0_8.typeIds[arg1_8 + 1]
 
-	arg2_7.name = var0_7
+	arg2_8.name = var0_8
 
-	local var1_7 = pg.island_achievement_group[var0_7]
+	local var1_8 = pg.island_achievement_group[var0_8]
 
-	LoadImageSpriteAtlasAsync("island/islandachievement", var1_7.icon, arg2_7:Find("icon"), true)
-	setText(arg2_7:Find("name"), var1_7.name)
-	onToggle(arg0_7, arg2_7, function(arg0_8)
-		if arg0_8 then
-			arg0_7.showType = var0_7
+	LoadImageSpriteAtlasAsync("islandachievement", var1_8.icon, arg2_8:Find("icon"), true)
+	setText(arg2_8:Find("name"), var1_8.name)
+	onToggle(arg0_8, arg2_8, function(arg0_9)
+		if arg0_9 then
+			arg2_8:GetComponent(typeof(Animation)):Play()
 
-			arg0_7:FlushDetail()
+			arg0_8.showType = var0_8
+
+			arg0_8:FlushDetail()
 		end
 	end, SFX_PANEL)
 end
 
-function var0_0.UpdateToggle(arg0_9, arg1_9, arg2_9)
-	local var0_9 = arg0_9.typeIds[arg1_9 + 1]
-	local var1_9 = pg.island_achievement_group[var0_9].achievement_list
-	local var2_9 = {}
+function var0_0.UpdateToggle(arg0_10, arg1_10, arg2_10)
+	local var0_10 = arg0_10.typeIds[arg1_10 + 1]
+	local var1_10 = pg.island_achievement_group[var0_10].achievement_list
+	local var2_10 = {}
 
-	for iter0_9, iter1_9 in ipairs(var1_9) do
-		local var3_9 = arg0_9.achvAgency:GetGroup(iter1_9)
+	for iter0_10, iter1_10 in ipairs(var1_10) do
+		local var3_10 = arg0_10.achvAgency:GetGroup(iter1_10)
 
-		for iter2_9, iter3_9 in ipairs(var3_9:GetSortAchvList()) do
-			table.insert(var2_9, iter3_9)
+		for iter2_10, iter3_10 in ipairs(var3_10:GetSortAchvList()) do
+			table.insert(var2_10, iter3_10)
 		end
 	end
 
-	local var4_9 = underscore.any(var2_9, function(arg0_10)
-		return arg0_10:GetStatus() == IslandAchievement.STATUS.GET
+	local var4_10 = underscore.any(var2_10, function(arg0_11)
+		return arg0_11:GetStatus() == IslandAchievement.STATUS.GET
 	end)
 
-	setActive(arg2_9:Find("name/tip"), var4_9)
-
-	local var5_9 = underscore.all(var2_9, function(arg0_11)
-		return arg0_11:GetStatus() == IslandAchievement.STATUS.GOT
-	end)
-
-	setActive(arg2_9:Find("bg"), not var5_9)
-	setActive(arg2_9:Find("bg_all"), var5_9)
+	setActive(arg2_10:Find("name/tip"), var4_10)
 end
 
 function var0_0.AddListeners(arg0_12)
-	arg0_12:AddListener(GAME.ISLAND_GET_ACHV_AWARD_DONE, arg0_12.Flush)
+	arg0_12:AddListener(GAME.ISLAND_GET_ACHV_AWARD_DONE, arg0_12.OnGetAchvAwardDone)
 end
 
 function var0_0.RemoveListeners(arg0_13)
-	arg0_13:RemoveListener(GAME.ISLAND_GET_ACHV_AWARD_DONE, arg0_13.Flush)
+	arg0_13:RemoveListener(GAME.ISLAND_GET_ACHV_AWARD_DONE, arg0_13.OnGetAchvAwardDone)
 end
 
 function var0_0.OnShow(arg0_14, arg1_14)
-	arg0_14.showType = arg1_14
+	arg0_14.showType = arg1_14 or pg.island_achievement_group.all[1]
 
 	arg0_14:Flush()
 end
@@ -131,80 +129,74 @@ function var0_0.FlushDetail(arg0_16)
 			return arg0_22.id
 		end
 	}))
-	arg0_16.itemUIList:align(#arg0_16.showAchvList)
+	arg0_16.scrollRect:SetTotalCount(#arg0_16.showAchvList, -1)
 end
 
-function var0_0.UpdateItem(arg0_23, arg1_23, arg2_23)
-	local var0_23 = arg0_23.showAchvList[arg1_23 + 1]
+function var0_0.OnInitItem(arg0_23, arg1_23)
+	local var0_23 = IslandAchievementCard.New(arg1_23)
 
-	arg2_23.name = var0_23.id
+	arg0_23.cards[arg1_23] = var0_23
 
-	setText(arg2_23:Find("name"), var0_23:getConfig("name"))
-	setText(arg2_23:Find("desc"), var0_23:getConfig("desc"))
+	onButton(arg0_23, var0_23.getBtn, function()
+		var0_23._tf:GetComponent(typeof(Animation)):Play()
+		arg0_23:emit(IslandMediator.GET_ACHIEVEMENT_AWARD, {
+			var0_23.achv.id
+		})
+	end, SFX_PANEL)
+end
 
-	local var1_23 = var0_23:GetAwards()
+function var0_0.OnUpdateItem(arg0_25, arg1_25, arg2_25)
+	local var0_25 = arg0_25.cards[arg2_25]
 
-	UIItemList.StaticAlign(arg2_23:Find("awards"), arg2_23:Find("awards/tpl"), #var1_23, function(arg0_24, arg1_24, arg2_24)
-		if arg0_24 == UIItemList.EventUpdate then
-			local var0_24 = var1_23[arg1_24 + 1]
-			local var1_24 = var0_24:getConfigTable().icon
+	if not var0_25 then
+		arg0_25:OnInitItem(arg2_25)
 
-			GetImageSpriteFromAtlasAsync("island/" .. var1_24, "", arg2_24:Find("icon"))
-			setText(arg2_24:Find("count"), var0_24.count)
-		end
-	end)
-
-	local var2_23 = var0_23:GetStatus()
-
-	setActive(arg2_23:Find("status/got"), var2_23 == IslandAchievement.STATUS.GOT)
-
-	local var3_23 = var2_23 == IslandAchievement.STATUS.GET
-
-	setActive(arg2_23:Find("status/get"), var3_23)
-
-	if var3_23 then
-		onButton(arg0_23, arg2_23:Find("status/get"), function()
-			arg0_23:emit(IslandMediator.GET_ACHIEVEMENT_AWARD, {
-				var0_23.id
-			})
-		end, SFX_PANEL)
-	else
-		removeOnButton(arg2_23:Find("status/get"))
+		var0_25 = arg0_25.cards[arg2_25]
 	end
 
-	local var4_23 = var2_23 == IslandAchievement.STATUS.NORMAL
+	local var1_25 = arg0_25.showAchvList[arg1_25 + 1]
 
-	setActive(arg2_23:Find("status/go"), var4_23)
+	if var1_25 then
+		var0_25:Update(var1_25)
+	end
+end
 
-	if var4_23 then
-		local var5_23 = arg0_23.achvAgency:GetCurProgress(var0_23)
+function var0_0.OnGetAchvAwardDone(arg0_26, arg1_26)
+	local var0_26 = arg1_26.id
 
-		setText(arg2_23:Find("status/go/Text"), var5_23 .. "/" .. var0_23:GetNum())
+	local function var1_26()
+		for iter0_27, iter1_27 in pairs(arg0_26.cards) do
+			if iter1_27.achv.id == var0_26 then
+				return iter1_27
+			end
+		end
 	end
 
-	local var6_23 = var0_23:getConfig("group")
-	local var7_23 = arg0_23.achvAgency:GetGroup(var6_23):GetSortAchvList()
-	local var8_23 = underscore.select(var7_23, function(arg0_26)
-		return not arg0_26:IsHideType() or arg0_26:GetStatus() == IslandAchievement.STATUS.GET
-	end)
+	seriesAsync({
+		function(arg0_28)
+			local var0_28 = var1_26()
 
-	UIItemList.StaticAlign(arg2_23:Find("stages"), arg2_23:Find("stages/tpl"), #var8_23, function(arg0_27, arg1_27, arg2_27)
-		if arg0_27 == UIItemList.EventUpdate then
-			local var0_27 = arg1_27 + 1
-
-			GetImageSpriteFromAtlasAsync("ui/islandachievementui_atlas", "stage_" .. var0_27, arg2_27:Find("icon"))
-
-			local var1_27 = var0_27 == #var8_23
-			local var2_27 = var8_23[var0_27]
-
-			setActive(arg2_27:Find("line"), not var1_27)
-
-			local var3_27 = var2_27:GetStatus() == IslandAchievement.STATUS.GOT
-
-			setActive(arg2_27:Find("line/got"), var3_27)
-			setActive(arg2_27:Find("circle/got"), var3_27)
+			if var0_28 then
+				var0_28:PlayStageAnim(var0_26, arg0_28)
+			else
+				arg0_28()
+			end
 		end
+	}, function()
+		arg0_26.achvAgency = getProxy(IslandProxy):GetIsland():GetAchievementAgency()
+
+		setText(arg0_26.totalTF, #arg0_26.achvAgency:GetGotList() .. "/" .. arg0_26.achvAgency:GetTotalCnt())
+		arg0_26.typeUIList:align(#arg0_26.typeIds)
+		arg0_26:FlushDetail()
 	end)
+end
+
+function var0_0.OnDestroy(arg0_30)
+	for iter0_30, iter1_30 in pairs(arg0_30.cards) do
+		iter1_30:Dispose()
+	end
+
+	arg0_30.cards = {}
 end
 
 return var0_0

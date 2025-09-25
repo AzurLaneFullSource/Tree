@@ -33,9 +33,7 @@ end
 
 function var0_0.Show(arg0_7, arg1_7)
 	var0_0.super.Show(arg0_7)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_7._tf, nil, {
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_7._tf)
 
 	arg0_7.contentTxt.text = arg1_7.content
 
@@ -55,7 +53,7 @@ function var0_0.Show(arg0_7, arg1_7)
 end
 
 function var0_0.Hide(arg0_9)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_9._tf, arg0_9._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_9._tf, arg0_9._parentTf)
 	var0_0.super.Hide(arg0_9)
 end
 

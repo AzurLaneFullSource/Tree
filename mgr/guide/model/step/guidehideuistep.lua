@@ -10,7 +10,8 @@ function var0_0.Ctor(arg0_1, arg1_1)
 			path = iter1_1.path,
 			delay = iter1_1.delay or 0,
 			pathIndex = iter1_1.pathIndex or -1,
-			hideFlag = iter1_1.ishide
+			hideFlag = iter1_1.ishide,
+			type = iter1_1.type
 		})
 	end
 end

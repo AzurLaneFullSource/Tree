@@ -155,8 +155,7 @@ function var0_0.ExtraDownload(arg0_9)
 				content = i18n("file_down_mgr_error", "", ""),
 				onYes = var0_12,
 				onNo = var1_12,
-				onClose = var1_12,
-				weight = LayerWeightConst.TOP_LAYER
+				onClose = var1_12
 			})
 		end
 	end

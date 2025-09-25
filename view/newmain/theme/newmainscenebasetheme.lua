@@ -47,9 +47,9 @@ function var0_0.init(arg0_4, arg1_4)
 	arg0_4.buffView:Init()
 	arg0_4.tagView:Init()
 	arg0_4.changeView:Init(arg1_4)
-	pg.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_OVERLAY_FOREVER, arg0_4._tf, {
-		pbList = arg0_4:GetPbList(),
-		weight = LayerWeightConst.BASE_LAYER + 1
+	arg0_4:OverlayPanel(arg0_4._tf, {
+		stopTop = true,
+		pbList = arg0_4:GetPbList()
 	})
 end
 
@@ -103,7 +103,7 @@ function var0_0.Refresh(arg0_9, arg1_9)
 	arg0_9.bannerView:Refresh()
 	arg0_9.tagView:Refresh()
 	arg0_9.changeView:Refresh(arg1_9)
-	pg.LayerWeightMgr.GetInstance():SetVisibleViaLayer(arg0_9._tf, true)
+	setActiveViaLayer(arg0_9._tf, true)
 end
 
 function var0_0.Disable(arg0_10)
@@ -118,7 +118,7 @@ function var0_0.Disable(arg0_10)
 	arg0_10.bannerView:Disable()
 	arg0_10.wordView:Disable()
 	arg0_10.changeView:Disable()
-	pg.LayerWeightMgr.GetInstance():SetVisibleViaLayer(arg0_10._tf, false)
+	setActiveViaLayer(arg0_10._tf, false)
 end
 
 function var0_0.SetEffectPanelVisible(arg0_11, arg1_11)
@@ -126,7 +126,7 @@ function var0_0.SetEffectPanelVisible(arg0_11, arg1_11)
 end
 
 function var0_0.OnDestroy(arg0_12)
-	pg.LayerWeightMgr.GetInstance():DelFromOverlay(arg0_12._tf, arg0_12._parentTf)
+	arg0_12:UnOverlayPanel(arg0_12._tf, arg0_12._parentTf)
 
 	for iter0_12, iter1_12 in ipairs(arg0_12.panels or {}) do
 		iter1_12:Dispose()

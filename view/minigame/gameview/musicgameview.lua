@@ -48,7 +48,6 @@ function var0_0.MyStoreDataToServer(arg0_3)
 end
 
 function var0_0.init(arg0_4)
-	arg0_4.UIMgr = pg.UIMgr.GetInstance()
 	arg0_4.useGetKey_flag = true
 	arg0_4.game_playingflag = false
 	arg0_4.countingfive_flag = false
@@ -200,7 +199,7 @@ function var0_0.didEnter(arg0_7)
 		setActive(arg0_7.bottonLeftBg, false)
 	end)
 	onButton(arg0_7, arg0_7.top:Find("pause"), function()
-		arg0_7.UIMgr:BlurPanel(arg0_7.pauseview)
+		pg.UIMgr.GetInstance():BlurPanel(arg0_7.pauseview)
 		setActive(arg0_7.pauseview, true)
 
 		arg0_7.game_playingflag = false
@@ -266,7 +265,7 @@ function var0_0.didEnter(arg0_7)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("reselect_music_game"),
 			onYes = function()
-				arg0_7.UIMgr:UnblurPanel(arg0_7.pauseview, arg0_7._tf)
+				pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7.pauseview, arg0_7._tf)
 				setActive(arg0_7.pauseview, false)
 				arg0_7:stopTimer()
 
@@ -294,7 +293,7 @@ function var0_0.didEnter(arg0_7)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("restart_music_game"),
 			onYes = function()
-				arg0_7.UIMgr:UnblurPanel(arg0_7.pauseview, arg0_7._tf)
+				pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7.pauseview, arg0_7._tf)
 				setActive(arg0_7.pauseview, false)
 				arg0_7:stopTimer()
 
@@ -311,7 +310,7 @@ function var0_0.didEnter(arg0_7)
 		})
 	end, SFX_UI_CLICK)
 	onButton(arg0_7, arg0_7.pauseview:Find("bottom/resume"), function()
-		arg0_7.UIMgr:UnblurPanel(arg0_7.pauseview, arg0_7._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7.pauseview, arg0_7._tf)
 		setActive(arg0_7.pauseview, false)
 		arg0_7:effect_play("prepare")
 

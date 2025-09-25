@@ -14,6 +14,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.rarityTr = arg0_1.tr:Find("rarity"):GetComponent(typeof(Image))
 	arg0_1.canInteractionTF = arg0_1.tr:Find("interaction")
 	arg0_1.usingText.text = i18n("island_agora_using")
+	arg0_1.newTr = arg0_1.tr:Find("new")
 	arg0_1.longPressTriggerEvent = GetOrAddComponent(arg0_1._go, "LongPressTrigger").onLongPressed
 	arg0_1.onReleasedEvent = GetOrAddComponent(arg0_1._go, "LongPressTrigger").onReleased
 	arg0_1.onClickEvent = GetOrAddComponent(arg0_1._go, "LongPressTrigger").onClick
@@ -38,12 +39,15 @@ function var0_0.Update(arg0_2, arg1_2, arg2_2)
 
 	arg0_2.rarityTr.sprite = var2_2
 
+	setActive(arg0_2.newTr, arg1_2:IsNew())
 	setActive(arg0_2.cntTr, not var0_2:IsOptionalShapeType())
 	setActive(arg0_2.canInteractionTF, var0_2:CanInteraction())
 	LoadSpriteAsync("island/IslandFurnitureIcon/" .. var0_2:GetIcon(), function(arg0_3)
-		arg0_2.icon.sprite = arg0_3
+		if not IsNil(arg0_2.icon) then
+			arg0_2.icon.sprite = arg0_3
 
-		arg0_2.icon:SetNativeSize()
+			arg0_2.icon:SetNativeSize()
+		end
 	end)
 end
 

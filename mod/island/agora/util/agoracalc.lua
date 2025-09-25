@@ -57,12 +57,12 @@ end
 function var0_0.GetCenterScreenPos()
 	local var0_4 = IslandCameraMgr.instance._mainCamera
 
-	return (var0_0.CameraPosToHitPoint(var0_4, IslandConst.LAYER_AGORA))
+	return (var0_0.CameraPosToHitPoint(var0_4, IslandConst.LAYER_GROUND))
 end
 
 function var0_0.ScreenPostion2MapPosition(arg0_5)
 	local var0_5 = IslandCameraMgr.instance._mainCamera
-	local var1_5 = var0_0.ScreenToHitPoint(var0_5, arg0_5, IslandConst.LAYER_AGORA)
+	local var1_5 = var0_0.ScreenToHitPoint(var0_5, arg0_5, IslandConst.LAYER_GROUND)
 
 	if var1_5 then
 		return var0_0.WorldPosition2MapPosition(var1_5)
@@ -72,7 +72,7 @@ function var0_0.ScreenPostion2MapPosition(arg0_5)
 end
 
 function var0_0.WorldPosition2MapPosition(arg0_6)
-	return Vector2(math.ceil(arg0_6.x), math.ceil(arg0_6.z))
+	return Vector2(math.floor(arg0_6.x + 0.5), math.floor(arg0_6.z + 0.5))
 end
 
 function var0_0.WorldPosition2ScreenPosition(arg0_7)
@@ -105,11 +105,10 @@ end
 function var0_0.CameraPosToHitPoint(arg0_11, arg1_11)
 	local var0_11 = arg0_11.transform.position
 	local var1_11 = arg0_11.transform.forward
-	local var2_11 = LuaHelper.NameToLayer(arg1_11)
-	local var3_11, var4_11 = Physics.Raycast(var0_11, var1_11, nil, math.huge, var2_11)
+	local var2_11 = IslandHelper.Raycast(var0_11, var1_11, arg1_11)
 
-	if var3_11 then
-		return var4_11.point
+	if var2_11.w == 1 then
+		return Vector3(var2_11.x, var2_11.y, var2_11.z)
 	else
 		return nil
 	end
@@ -120,11 +119,10 @@ function var0_0.ScreenToHitPoint(arg0_12, arg1_12, arg2_12)
 	local var1_12 = arg1_12
 	local var2_12 = var0_12:ScreenToViewportPoint(Vector3(var1_12.x, var1_12.y, 0))
 	local var3_12 = arg0_12:ViewportPointToRay(var2_12)
-	local var4_12 = LuaHelper.NameToLayer(arg2_12)
-	local var5_12, var6_12 = Physics.Raycast(var3_12, nil, math.huge, var4_12)
+	local var4_12 = IslandHelper.RaycastRay(var3_12, arg2_12)
 
-	if var5_12 then
-		return var6_12.point
+	if var4_12.w == 1 then
+		return Vector3(var4_12.x, var4_12.y, var4_12.z)
 	else
 		return nil
 	end
@@ -226,6 +224,10 @@ end
 
 function var0_0.BuildScreenShootSavePath(arg0_29)
 	return Application.persistentDataPath .. "/screen_scratch/island_theme" .. arg0_29 .. ".jpg"
+end
+
+function var0_0.GetVirtualInteractUnitId(arg0_30, arg1_30)
+	return arg0_30 * 10 + arg1_30 - 1
 end
 
 return var0_0

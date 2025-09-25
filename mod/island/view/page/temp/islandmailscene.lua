@@ -8,7 +8,6 @@ function var0_0.didEnter(arg0_1)
 end
 
 function var0_0.ExtraHandle(arg0_3)
-	setParent(arg0_3._tf, arg0_3.contextData.container)
 	setActive(arg0_3._tf:Find("adapt/top/res"), false)
 	setActive(arg0_3._tf:Find("adapt/top/option"), false)
 	setActive(arg0_3._tf:Find("adapt/left_length/frame/tagRoot/store"), false)

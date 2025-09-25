@@ -59,7 +59,7 @@ function var0_0.GetRandomPathId(arg0_5)
 		return -1
 	end
 
-	return var0_5[math.Random(1, #var0_5)]
+	return var0_5[math.random(1, #var0_5)]
 end
 
 function var0_0.Dispose(arg0_6)

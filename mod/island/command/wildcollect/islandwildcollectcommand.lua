@@ -12,6 +12,7 @@ function var0_0.execute(arg0_1, arg1_1)
 		fragment_id = var2_1
 	}, 21530, function(arg0_2)
 		if arg0_2.result == 0 then
+			var4_1:GetWildCollectAgency():AddCollectFragment(var2_1)
 			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandWildCollect(var2_1))
 			var4_1:DispatchEvent(IslandGatherCollectAgency.RemoveGatherUnit, {
 				unitId = var3_1

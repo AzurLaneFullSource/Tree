@@ -49,8 +49,7 @@ function var0_0.ShowTipMsg(arg0_5, arg1_5, arg2_5)
 		type = MSGBOX_TYPE_ITEM_BOX,
 		content = i18n("skin_discount_timelimit", var3_5, var4_5),
 		items = var2_5,
-		onYes = arg2_5,
-		weight = LayerWeightConst.TOP_LAYER
+		onYes = arg2_5
 	})
 end
 

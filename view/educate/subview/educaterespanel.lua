@@ -20,11 +20,10 @@ function var0_0.OnInit(arg0_2)
 	if arg0_2.contextData and arg0_2.contextData.showBg then
 		var0_2.enabled = true
 
-		pg.UIMgr.GetInstance():OverlayPanelPB(arg0_2._tf, {
+		arg0_2:OverlayPanel(arg0_2._tf, {
 			pbList = {
 				findTF(arg0_2._go, "res")
-			},
-			groupName = LayerWeightConst.GROUP_EDUCATE
+			}
 		})
 	else
 		var0_2.enabled = false
@@ -79,7 +78,7 @@ end
 
 function var0_0.OnDestroy(arg0_10)
 	if arg0_10.contextData and arg0_10.contextData.showBg then
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_10._tf)
+		arg0_10:UnOverlayPanel(arg0_10._tf)
 	end
 end
 

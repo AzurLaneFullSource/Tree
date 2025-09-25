@@ -3,8 +3,18 @@ local var1_0 = 1
 local var2_0 = 2
 local var3_0 = 3
 local var4_0 = 4
-local var5_0 = 1
-local var6_0 = 2
+local var5_0 = 5
+local var6_0 = 6
+local var7_0 = {
+	[var1_0] = "noti_1",
+	[var2_0] = "noti_2",
+	[var3_0] = "noti_1",
+	[var4_0] = "noti_1",
+	[var5_0] = "noti_1",
+	[var6_0] = "noti_1"
+}
+local var8_0 = 1
+local var9_0 = 2
 
 function var0_0.getUIName(arg0_1)
 	return "MainSilentViewUI"
@@ -31,7 +41,7 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.systemTimeUtil = LocalSystemTimeUtil.New()
 	arg0_2.musicPlayerView = MainMusicPlayerView.New(arg0_2._tf:Find("adapt"), arg0_2.event)
 
-	arg0_2.musicPlayerView:SetExtra(arg0_2._tf:Find("adapt/MusicPlayer"))
+	arg0_2.musicPlayerView:Load(arg0_2._tf:Find("adapt/MusicPlayer").gameObject)
 
 	arg0_2.playedList = {}
 end
@@ -45,7 +55,7 @@ function var0_0.OnInit(arg0_3)
 		arg0_3.changeSkinBtn:OnClick()
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3._tf, function()
-		arg0_3:Tracking(var5_0)
+		arg0_3:Tracking(var8_0)
 		arg0_3:Exit()
 	end, SFX_PANEL)
 	arg0_3:bind(GAME.ZERO_HOUR_OP_DONE, function()
@@ -195,7 +205,7 @@ function var0_0.FlushTips(arg0_25)
 	arg0_25.tips:make(function(arg0_26, arg1_26, arg2_26)
 		if UIItemList.EventUpdate == arg0_26 then
 			local var0_26 = var0_25[arg1_26 + 1]
-			local var1_26 = GetSpriteFromAtlas("ui/MainUI_atlas", "noti_" .. var0_26.type)
+			local var1_26 = GetSpriteFromAtlas("ui/MainUI_atlas", var7_0[var0_26.type])
 
 			arg2_26:Find("icon"):GetComponent(typeof(Image)).sprite = var1_26
 
@@ -254,7 +264,7 @@ function var0_0.InsertAnimation(arg0_32, arg1_32, arg2_32)
 end
 
 function var0_0.Skip(arg0_34, arg1_34)
-	arg0_34:Tracking(var6_0)
+	arg0_34:Tracking(var9_0)
 	arg0_34:Exit(function()
 		if arg1_34 == var1_0 then
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.EVENT)
@@ -275,6 +285,7 @@ function var0_0.CollectTips(arg0_36, arg1_36)
 	arg0_36:CollectBuildTips(arg1_36)
 	arg0_36:CollectTechTips(arg1_36)
 	arg0_36:CollectStudentTips(arg1_36)
+	arg0_36:CollectIslandTips(arg1_36)
 end
 
 function var0_0.CollectEventTips(arg0_37, arg1_37)
@@ -335,45 +346,67 @@ function var0_0.CollectStudentTips(arg0_40, arg1_40)
 	end
 end
 
-function var0_0.FlushBattery(arg0_41)
-	local var0_41 = SystemInfo.batteryLevel
-
-	if var0_41 < 0 then
-		var0_41 = 1
+function var0_0.CollectIslandTips(arg0_41, arg1_41)
+	if LOCK_ISLAND_DISPLAY then
+		return
 	end
 
-	local var1_41 = math.floor(var0_41 * 100)
+	local var0_41, var1_41 = getProxy(SystemTipProxy):GetIslandTipInfos()
 
-	arg0_41.batteryTxt.text = var1_41 .. "%"
+	if var0_41 > 0 then
+		table.insert(arg1_41, {
+			count = var0_41,
+			type = var5_0
+		})
+	end
 
-	local var2_41 = 1 / #arg0_41.electric
-
-	for iter0_41, iter1_41 in ipairs(arg0_41.electric) do
-		local var3_41 = var1_41 < (iter0_41 - 1) * var2_41
-
-		setActive(iter1_41, not var3_41)
+	if var1_41 > 0 then
+		table.insert(arg1_41, {
+			count = var1_41,
+			type = var6_0
+		})
 	end
 end
 
-function var0_0.FlushTime(arg0_42)
-	arg0_42.systemTimeUtil:SetUp(function(arg0_43, arg1_43, arg2_43)
+function var0_0.FlushBattery(arg0_42)
+	local var0_42 = SystemInfo.batteryLevel
+
+	if var0_42 < 0 then
+		var0_42 = 1
+	end
+
+	local var1_42 = math.floor(var0_42 * 100)
+
+	arg0_42.batteryTxt.text = var1_42 .. "%"
+
+	local var2_42 = 1 / #arg0_42.electric
+
+	for iter0_42, iter1_42 in ipairs(arg0_42.electric) do
+		local var3_42 = var1_42 < (iter0_42 - 1) * var2_42
+
+		setActive(iter1_42, not var3_42)
+	end
+end
+
+function var0_0.FlushTime(arg0_43)
+	arg0_43.systemTimeUtil:SetUp(function(arg0_44, arg1_44, arg2_44)
 		if SettingsMainScenePanel.IsEnable24HourSystem() then
-			arg0_42.timeEnTxt.color = Color.New(1, 1, 1, 0)
+			arg0_43.timeEnTxt.color = Color.New(1, 1, 1, 0)
 		else
-			arg0_42.timeEnTxt.color = Color.New(1, 1, 1, 1)
-			arg0_43 = arg0_43 > 12 and arg0_43 - 12 or arg0_43
+			arg0_43.timeEnTxt.color = Color.New(1, 1, 1, 1)
+			arg0_44 = arg0_44 > 12 and arg0_44 - 12 or arg0_44
 		end
 
-		if arg0_43 < 10 then
-			arg0_43 = "0" .. arg0_43
+		if arg0_44 < 10 then
+			arg0_44 = "0" .. arg0_44
 		end
 
-		arg0_42.timeTxt.text = arg0_43 .. ":" .. arg1_43
-		arg0_42.timeEnTxt.text = arg2_43
+		arg0_43.timeTxt.text = arg0_44 .. ":" .. arg1_44
+		arg0_43.timeEnTxt.text = arg2_44
 	end)
 end
 
-local var7_0 = {
+local var10_0 = {
 	"MONDAY",
 	"TUESDAY",
 	"WEDNESDAY",
@@ -382,7 +415,7 @@ local var7_0 = {
 	"SATURDAY",
 	"SUNDAY"
 }
-local var8_0 = {
+local var11_0 = {
 	"JAN",
 	"FEB",
 	"MAR",
@@ -397,53 +430,53 @@ local var8_0 = {
 	"DEC"
 }
 
-function var0_0.FlushDate(arg0_44)
-	local var0_44 = os.date("%Y/%m/%d")
-	local var1_44 = string.split(var0_44, "/")
-	local var2_44 = var1_44[1]
-	local var3_44 = tonumber(var1_44[2])
-	local var4_44 = var1_44[3]
-	local var5_44 = pg.TimeMgr.GetInstance():GetServerWeek()
-	local var6_44 = {
-		var7_0[var5_44],
-		var8_0[var3_44],
-		var4_44,
-		var2_44
+function var0_0.FlushDate(arg0_45)
+	local var0_45 = os.date("%Y/%m/%d")
+	local var1_45 = string.split(var0_45, "/")
+	local var2_45 = var1_45[1]
+	local var3_45 = tonumber(var1_45[2])
+	local var4_45 = var1_45[3]
+	local var5_45 = pg.TimeMgr.GetInstance():GetServerWeek()
+	local var6_45 = {
+		var10_0[var5_45],
+		var11_0[var3_45],
+		var4_45,
+		var2_45
 	}
 
-	arg0_44.dateTxt.text = table.concat(var6_44, " / ")
+	arg0_45.dateTxt.text = table.concat(var6_45, " / ")
 end
 
-function var0_0.FlushMusicPlayer(arg0_45)
-	local var0_45 = pg.BgmMgr.GetInstance():GetNow() == "MainMusicPlayer"
+function var0_0.FlushMusicPlayer(arg0_46)
+	local var0_46 = pg.BgmMgr.GetInstance():GetNow() == "MainMusicPlayer"
 
-	if tobool(arg0_45.musicPlayerView:isShowing()) ~= var0_45 then
-		if var0_45 then
-			arg0_45.musicPlayerView:ExecuteAction("Show", true)
+	if tobool(arg0_46.musicPlayerView:isShowing()) ~= var0_46 then
+		if var0_46 then
+			arg0_46.musicPlayerView:ExecuteAction("Show", true)
 		else
-			arg0_45.musicPlayerView:ExecuteAction("Hide")
+			arg0_46.musicPlayerView:ExecuteAction("Hide")
 		end
 	end
 end
 
-function var0_0.OnDestroy(arg0_46)
-	arg0_46:RemoveChatTimer()
+function var0_0.OnDestroy(arg0_47)
+	arg0_47:RemoveChatTimer()
 
-	arg0_46.exited = true
+	arg0_47.exited = true
 
-	arg0_46.dftAniEvent:SetEndEvent(nil)
-	arg0_46:RemoveTimer()
-	arg0_46.changeSkinBtn:Dispose()
+	arg0_47.dftAniEvent:SetEndEvent(nil)
+	arg0_47:RemoveTimer()
+	arg0_47.changeSkinBtn:Dispose()
 
-	arg0_46.changeSkinBtn = nil
+	arg0_47.changeSkinBtn = nil
 
-	arg0_46.systemTimeUtil:Dispose()
+	arg0_47.systemTimeUtil:Dispose()
 
-	arg0_46.systemTimeUtil = nil
+	arg0_47.systemTimeUtil = nil
 
-	arg0_46.musicPlayerView:Destroy()
+	arg0_47.musicPlayerView:Destroy()
 
-	arg0_46.musicPlayerView = nil
+	arg0_47.musicPlayerView = nil
 end
 
 return var0_0

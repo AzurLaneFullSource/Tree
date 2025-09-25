@@ -90,136 +90,108 @@ function var0_0.didEnter(arg0_4)
 			id = WorldConst.ResourceID
 		})
 	end, SFX_PANEL)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_4._tf, {
-		groupName = arg0_4:getGroupNameFromData()
-	})
+	arg0_4:OverlayPanel(arg0_4._tf)
 end
 
-function var0_0.OverlayPanel(arg0_6, arg1_6)
-	arg0_6.overlayIndex = arg0_6.overlayIndex or 0
-	arg0_6.overlayIndex = arg0_6.overlayIndex + 1
+function var0_0.onBackPressed(arg0_6)
+	print(arg0_6:findTF("bg").rect.width)
 
-	setParent(tf(arg1_6), arg0_6._tf.parent, false)
-	tf(arg1_6):SetSiblingIndex(arg0_6._tf:GetSiblingIndex() + arg0_6.overlayIndex)
-
-	if arg0_6:findTF("bg") then
-		print(arg0_6:findTF("bg").rect.width)
-	end
-end
-
-function var0_0.UnOverlayPanel(arg0_7, arg1_7, arg2_7)
-	setParent(tf(arg1_7), arg2_7, false)
-
-	arg0_7.overlayIndex = arg0_7.overlayIndex or 0
-	arg0_7.overlayIndex = arg0_7.overlayIndex - 1
-	arg0_7.overlayIndex = math.max(arg0_7.overlayIndex, 0)
-
-	if arg0_7:findTF("bg") then
-		print(arg0_7:findTF("bg").rect.width)
-	end
-end
-
-function var0_0.onBackPressed(arg0_8)
-	print(arg0_8:findTF("bg").rect.width)
-
-	if isActive(arg0_8.itemResetPanel._go) then
-		arg0_8.itemResetPanel:Close()
-	elseif isActive(arg0_8.itemUsagePanel._go) then
-		arg0_8.itemUsagePanel:Close()
-	elseif arg0_8.assignedItemView:isShowing() then
-		arg0_8.assignedItemView:Hide()
+	if isActive(arg0_6.itemResetPanel._go) then
+		arg0_6.itemResetPanel:Close()
+	elseif isActive(arg0_6.itemUsagePanel._go) then
+		arg0_6.itemUsagePanel:Close()
+	elseif arg0_6.assignedItemView:isShowing() then
+		arg0_6.assignedItemView:Hide()
 	else
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-		triggerButton(arg0_8.backBtn)
+		triggerButton(arg0_6.backBtn)
 	end
 end
 
-function var0_0.willExit(arg0_9)
-	arg0_9.assignedItemView:Destroy()
-	arg0_9.inventoryProxy:RemoveListener(WorldInventoryProxy.EventUpdateItem, arg0_9.itemUpdateListenerFunc)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_9._tf)
+function var0_0.willExit(arg0_7)
+	arg0_7.assignedItemView:Destroy()
+	arg0_7.inventoryProxy:RemoveListener(WorldInventoryProxy.EventUpdateItem, arg0_7.itemUpdateListenerFunc)
+	arg0_7:UnOverlayPanel(arg0_7._tf)
 end
 
-function var0_0.initData(arg0_10)
-	arg0_10.contextData.pageNum = arg0_10.contextData.pageNum or var0_0.PAGE.Property
-	arg0_10.contextData.asc = arg0_10.contextData.asc or false
+function var0_0.initData(arg0_8)
+	arg0_8.contextData.pageNum = arg0_8.contextData.pageNum or var0_0.PAGE.Property
+	arg0_8.contextData.asc = arg0_8.contextData.asc or false
 
-	if not arg0_10.contextData.sortData then
-		arg0_10.contextData.sortData = var1_0.sort[1]
+	if not arg0_8.contextData.sortData then
+		arg0_8.contextData.sortData = var1_0.sort[1]
 	end
 
-	arg0_10.contextData.indexDatas = arg0_10.contextData.indexDatas or {}
-	arg0_10.isEquipingOn = false
-
-	print(arg0_10:findTF("bg").rect.width)
+	arg0_8.contextData.indexDatas = arg0_8.contextData.indexDatas or {}
+	arg0_8.isEquipingOn = false
 end
 
-function var0_0.GetShowBusyFlag(arg0_11)
-	return arg0_11.isEquipingOn
+function var0_0.GetShowBusyFlag(arg0_9)
+	return arg0_9.isEquipingOn
 end
 
-function var0_0.SetShowBusyFlag(arg0_12, arg1_12)
-	arg0_12.isEquipingOn = arg1_12
+function var0_0.SetShowBusyFlag(arg0_10, arg1_10)
+	arg0_10.isEquipingOn = arg1_10
 end
 
-function var0_0.addListener(arg0_13)
-	onButton(arg0_13, arg0_13.backBtn, function()
-		print(arg0_13:findTF("bg").rect.width)
-		arg0_13:closeView()
+function var0_0.addListener(arg0_11)
+	onButton(arg0_11, arg0_11.backBtn, function()
+		print(arg0_11:findTF("bg").rect.width)
+		arg0_11:closeView()
 	end, SFX_CANCEL)
-	onButton(arg0_13, arg0_13.decBtn, function()
-		arg0_13.contextData.asc = not arg0_13.contextData.asc
+	onButton(arg0_11, arg0_11.decBtn, function()
+		arg0_11.contextData.asc = not arg0_11.contextData.asc
 
-		if arg0_13.contextData.pageNum == var0_0.PAGE.Equipment then
-			arg0_13:filterEquipment()
+		if arg0_11.contextData.pageNum == var0_0.PAGE.Equipment then
+			arg0_11:filterEquipment()
 		end
 	end, SFX_PANEL)
 
-	arg0_13.sortButtons = {}
+	arg0_11.sortButtons = {}
 
-	eachChild(arg0_13.sortContain, function(arg0_16)
-		setActive(arg0_16, false)
+	eachChild(arg0_11.sortContain, function(arg0_14)
+		setActive(arg0_14, false)
 	end)
 
-	for iter0_13, iter1_13 in ipairs(var1_0.sort) do
-		local var0_13 = iter0_13 <= arg0_13.sortContain.childCount and arg0_13.sortContain:GetChild(iter0_13 - 1) or cloneTplTo(arg0_13.sortTpl, arg0_13.sortContain)
+	for iter0_11, iter1_11 in ipairs(var1_0.sort) do
+		local var0_11 = iter0_11 <= arg0_11.sortContain.childCount and arg0_11.sortContain:GetChild(iter0_11 - 1) or cloneTplTo(arg0_11.sortTpl, arg0_11.sortContain)
 
-		setActive(var0_13, true)
-		setImageSprite(findTF(var0_13, "Image"), GetSpriteFromAtlas("ui/equipmentui_atlas", iter1_13.spr), true)
-		onToggle(arg0_13, var0_13, function(arg0_17)
-			if arg0_17 then
-				arg0_13.contextData.sortData = iter1_13
+		setActive(var0_11, true)
+		setImageSprite(findTF(var0_11, "Image"), GetSpriteFromAtlas("ui/equipmentui_atlas", iter1_11.spr), true)
+		onToggle(arg0_11, var0_11, function(arg0_15)
+			if arg0_15 then
+				arg0_11.contextData.sortData = iter1_11
 
-				arg0_13:filterEquipment()
-				triggerToggle(arg0_13.sortBtn, false)
+				arg0_11:filterEquipment()
+				triggerToggle(arg0_11.sortBtn, false)
 			end
 		end, SFX_PANEL)
 
-		arg0_13.sortButtons[iter0_13] = var0_13
+		arg0_11.sortButtons[iter0_11] = var0_11
 	end
 
-	onToggle(arg0_13, arg0_13.sortBtn, function(arg0_18)
-		if arg0_18 then
-			arg0_13:OverlayPanel(arg0_13.sortPanel)
-			setActive(arg0_13.sortPanel, true)
+	onToggle(arg0_11, arg0_11.sortBtn, function(arg0_16)
+		if arg0_16 then
+			arg0_11:OverlayPanel(arg0_11.sortPanel)
+			setActive(arg0_11.sortPanel, true)
 		else
-			arg0_13:UnOverlayPanel(arg0_13.sortPanel, arg0_13.topItems)
-			setActive(arg0_13.sortPanel, false)
+			arg0_11:UnOverlayPanel(arg0_11.sortPanel, arg0_11.topItems)
+			setActive(arg0_11.sortPanel, false)
 		end
 	end, SFX_PANEL)
-	onButton(arg0_13, arg0_13.sortPanel, function()
-		triggerToggle(arg0_13.sortBtn, false)
+	onButton(arg0_11, arg0_11.sortPanel, function()
+		triggerToggle(arg0_11.sortBtn, false)
 	end, SFX_PANEL)
-	onToggle(arg0_13, arg0_13.filterBusyToggle, function(arg0_20)
-		arg0_13:SetShowBusyFlag(arg0_20)
+	onToggle(arg0_11, arg0_11.filterBusyToggle, function(arg0_18)
+		arg0_11:SetShowBusyFlag(arg0_18)
 
-		if arg0_13.contextData.pageNum == var0_0.PAGE.Equipment then
-			arg0_13:filterEquipment()
+		if arg0_11.contextData.pageNum == var0_0.PAGE.Equipment then
+			arg0_11:filterEquipment()
 		end
 	end, SFX_PANEL)
-	onButton(arg0_13, arg0_13.indexBtn, function()
-		local var0_21 = {
-			indexDatas = Clone(arg0_13.contextData.indexDatas),
+	onButton(arg0_11, arg0_11.indexBtn, function()
+		local var0_19 = {
+			indexDatas = Clone(arg0_11.contextData.indexDatas),
 			customPanels = {
 				minHeight = 650,
 				typeIndex = {
@@ -347,531 +319,531 @@ function var0_0.addListener(arg0_13)
 					}
 				}
 			},
-			callback = function(arg0_22)
-				arg0_13.contextData.indexDatas.typeIndex = arg0_22.typeIndex
-				arg0_13.contextData.indexDatas.equipPropertyIndex = arg0_22.equipPropertyIndex
-				arg0_13.contextData.indexDatas.equipPropertyIndex2 = arg0_22.equipPropertyIndex2
-				arg0_13.contextData.indexDatas.equipAmmoIndex1 = arg0_22.equipAmmoIndex1
-				arg0_13.contextData.indexDatas.equipAmmoIndex2 = arg0_22.equipAmmoIndex2
-				arg0_13.contextData.indexDatas.equipCampIndex = arg0_22.equipCampIndex
-				arg0_13.contextData.indexDatas.rarityIndex = arg0_22.rarityIndex
-				arg0_13.contextData.indexDatas.extraIndex = arg0_22.extraIndex
+			callback = function(arg0_20)
+				arg0_11.contextData.indexDatas.typeIndex = arg0_20.typeIndex
+				arg0_11.contextData.indexDatas.equipPropertyIndex = arg0_20.equipPropertyIndex
+				arg0_11.contextData.indexDatas.equipPropertyIndex2 = arg0_20.equipPropertyIndex2
+				arg0_11.contextData.indexDatas.equipAmmoIndex1 = arg0_20.equipAmmoIndex1
+				arg0_11.contextData.indexDatas.equipAmmoIndex2 = arg0_20.equipAmmoIndex2
+				arg0_11.contextData.indexDatas.equipCampIndex = arg0_20.equipCampIndex
+				arg0_11.contextData.indexDatas.rarityIndex = arg0_20.rarityIndex
+				arg0_11.contextData.indexDatas.extraIndex = arg0_20.extraIndex
 
-				if arg0_13.filterBusyToggle:GetComponent(typeof(Toggle)) then
-					if bit.band(arg0_22.extraIndex, IndexConst.EquipmentExtraEquiping) > 0 then
-						arg0_13:SetShowBusyFlag(true)
+				if arg0_11.filterBusyToggle:GetComponent(typeof(Toggle)) then
+					if bit.band(arg0_20.extraIndex, IndexConst.EquipmentExtraEquiping) > 0 then
+						arg0_11:SetShowBusyFlag(true)
 					end
 
-					triggerToggle(arg0_13.filterBusyToggle, arg0_13:GetShowBusyFlag())
+					triggerToggle(arg0_11.filterBusyToggle, arg0_11:GetShowBusyFlag())
 				else
-					arg0_13:filterEquipment()
+					arg0_11:filterEquipment()
 				end
 			end
 		}
 
-		arg0_13:emit(WorldInventoryMediator.OPEN_EQUIPMENT_INDEX, var0_21)
+		arg0_11:emit(WorldInventoryMediator.OPEN_EQUIPMENT_INDEX, var0_19)
 	end, SFX_PANEL)
-	onToggle(arg0_13, arg0_13._itemToggle, function(arg0_23)
-		if arg0_23 and arg0_13.contextData.pageNum ~= var0_0.PAGE.Property then
-			arg0_13.contextData.pageNum = var0_0.PAGE.Property
+	onToggle(arg0_11, arg0_11._itemToggle, function(arg0_21)
+		if arg0_21 and arg0_11.contextData.pageNum ~= var0_0.PAGE.Property then
+			arg0_11.contextData.pageNum = var0_0.PAGE.Property
 
-			arg0_13:activeResetExchange(arg0_13.contextData.pageNum == var0_0.PAGE.Property)
-			arg0_13:sortItems()
+			arg0_11:activeResetExchange(arg0_11.contextData.pageNum == var0_0.PAGE.Property)
+			arg0_11:sortItems()
 		end
 	end, SFX_PANEL)
-	onToggle(arg0_13, arg0_13._weaponToggle, function(arg0_24)
-		if arg0_24 and arg0_13.contextData.pageNum ~= var0_0.PAGE.Equipment then
-			arg0_13.contextData.pageNum = var0_0.PAGE.Equipment
+	onToggle(arg0_11, arg0_11._weaponToggle, function(arg0_22)
+		if arg0_22 and arg0_11.contextData.pageNum ~= var0_0.PAGE.Equipment then
+			arg0_11.contextData.pageNum = var0_0.PAGE.Equipment
 
-			arg0_13:activeResetExchange(arg0_13.contextData.pageNum == var0_0.PAGE.Property)
-			arg0_13:filterEquipment()
+			arg0_11:activeResetExchange(arg0_11.contextData.pageNum == var0_0.PAGE.Property)
+			arg0_11:filterEquipment()
 		end
 	end, SFX_PANEL)
-	onToggle(arg0_13, arg0_13._materialToggle, function(arg0_25)
-		if arg0_25 and arg0_13.contextData.pageNum ~= var0_0.PAGE.Material then
-			arg0_13.contextData.pageNum = var0_0.PAGE.Material
+	onToggle(arg0_11, arg0_11._materialToggle, function(arg0_23)
+		if arg0_23 and arg0_11.contextData.pageNum ~= var0_0.PAGE.Material then
+			arg0_11.contextData.pageNum = var0_0.PAGE.Material
 
-			arg0_13:activeResetExchange(arg0_13.contextData.pageNum == var0_0.PAGE.Property)
-			arg0_13:SortMaterials()
+			arg0_11:activeResetExchange(arg0_11.contextData.pageNum == var0_0.PAGE.Property)
+			arg0_11:SortMaterials()
 		end
 	end, SFX_PANEL)
 end
 
-function var0_0.setWorldFleet(arg0_26, arg1_26)
-	arg0_26.worldFleetList = arg1_26
+function var0_0.setWorldFleet(arg0_24, arg1_24)
+	arg0_24.worldFleetList = arg1_24
 end
 
-function var0_0.setInventoryProxy(arg0_27, arg1_27)
-	arg0_27.inventoryProxy = arg1_27
+function var0_0.setInventoryProxy(arg0_25, arg1_25)
+	arg0_25.inventoryProxy = arg1_25
 
-	arg0_27.inventoryProxy:AddListener(WorldInventoryProxy.EventUpdateItem, arg0_27.itemUpdateListenerFunc)
-	arg0_27:setItemList(arg0_27.inventoryProxy:GetItemList())
+	arg0_25.inventoryProxy:AddListener(WorldInventoryProxy.EventUpdateItem, arg0_25.itemUpdateListenerFunc)
+	arg0_25:setItemList(arg0_25.inventoryProxy:GetItemList())
 end
 
-function var0_0.setItemList(arg0_28, arg1_28)
-	arg0_28.itemList = arg1_28
+function var0_0.setItemList(arg0_26, arg1_26)
+	arg0_26.itemList = arg1_26
 
-	if arg0_28.isInitItems then
-		arg0_28:sortItems()
+	if arg0_26.isInitItems then
+		arg0_26:sortItems()
 	end
 end
 
-function var0_0.initItems(arg0_29)
-	arg0_29.isInitItems = true
-	arg0_29.itemRect = arg0_29.itemView:GetComponent("LScrollRect")
+function var0_0.initItems(arg0_27)
+	arg0_27.isInitItems = true
+	arg0_27.itemRect = arg0_27.itemView:GetComponent("LScrollRect")
 
-	function arg0_29.itemRect.onInitItem(arg0_30)
-		arg0_29:initItem(arg0_30)
+	function arg0_27.itemRect.onInitItem(arg0_28)
+		arg0_27:initItem(arg0_28)
 	end
 
-	function arg0_29.itemRect.onUpdateItem(arg0_31, arg1_31)
-		arg0_29:updateItem(arg0_31, arg1_31)
+	function arg0_27.itemRect.onUpdateItem(arg0_29, arg1_29)
+		arg0_27:updateItem(arg0_29, arg1_29)
 	end
 
-	function arg0_29.itemRect.onReturnItem(arg0_32, arg1_32)
-		arg0_29:returnItem(arg0_32, arg1_32)
+	function arg0_27.itemRect.onReturnItem(arg0_30, arg1_30)
+		arg0_27:returnItem(arg0_30, arg1_30)
 	end
 end
 
-function var0_0.initItem(arg0_33, arg1_33)
-	local var0_33 = WSInventoryItem.New(arg1_33)
+function var0_0.initItem(arg0_31, arg1_31)
+	local var0_31 = WSInventoryItem.New(arg1_31)
 
-	onButton(arg0_33, var0_33.go, function()
-		local var0_34 = var0_33.itemVO:getWorldItemType()
+	onButton(arg0_31, var0_31.go, function()
+		local var0_32 = var0_31.itemVO:getWorldItemType()
 
-		if var0_34 == WorldItem.UsageBuff or var0_34 == WorldItem.UsageHPRegenerate or var0_34 == WorldItem.UsageHPRegenerateValue then
-			arg0_33:emit(WorldInventoryMediator.OnOpenAllocateLayer, {
-				itemVO = var0_33.itemVO,
-				fleetList = arg0_33.worldFleetList,
-				fleetIndex = arg0_33.contextData.currentFleetIndex,
-				confirmCallback = function(arg0_35, arg1_35)
-					arg0_33:emit(WorldInventoryMediator.OnUseItem, arg0_35, 1, arg1_35)
+		if var0_32 == WorldItem.UsageBuff or var0_32 == WorldItem.UsageHPRegenerate or var0_32 == WorldItem.UsageHPRegenerateValue then
+			arg0_31:emit(WorldInventoryMediator.OnOpenAllocateLayer, {
+				itemVO = var0_31.itemVO,
+				fleetList = arg0_31.worldFleetList,
+				fleetIndex = arg0_31.contextData.currentFleetIndex,
+				confirmCallback = function(arg0_33, arg1_33)
+					arg0_31:emit(WorldInventoryMediator.OnUseItem, arg0_33, 1, arg1_33)
 				end,
-				onResetInfo = function(arg0_36)
-					arg0_33.itemResetPanel:Open(arg0_36)
+				onResetInfo = function(arg0_34)
+					arg0_31.itemResetPanel:Open(arg0_34)
 				end
 			})
-		elseif var0_34 == WorldItem.UsageWorldMap then
-			arg0_33.itemUsagePanel:Open({
-				item = var0_33.itemVO,
+		elseif var0_32 == WorldItem.UsageWorldMap then
+			arg0_31.itemUsagePanel:Open({
+				item = var0_31.itemVO,
 				mode = ItemUsagePanel.SEE,
 				onUse = function()
-					arg0_33:PlayOpenBox(var0_33.itemVO:getWorldItemOpenDisplay(), function()
-						arg0_33:emit(WorldInventoryMediator.OnMap, var0_33.itemVO.id)
-						arg0_33:closeView()
+					arg0_31:PlayOpenBox(var0_31.itemVO:getWorldItemOpenDisplay(), function()
+						arg0_31:emit(WorldInventoryMediator.OnMap, var0_31.itemVO.id)
+						arg0_31:closeView()
 					end)
 				end,
-				onResetInfo = function(arg0_39)
-					arg0_33.itemResetPanel:Open(arg0_39)
+				onResetInfo = function(arg0_37)
+					arg0_31.itemResetPanel:Open(arg0_37)
 				end
 			})
-		elseif var0_34 == WorldItem.UsageDrop or var0_34 == WorldItem.UsageRecoverAp or var0_34 == WorldItem.UsageWorldItem or var0_34 == WorldItem.UsageWorldBuff then
-			arg0_33.itemUsagePanel:Open({
-				item = var0_33.itemVO,
+		elseif var0_32 == WorldItem.UsageDrop or var0_32 == WorldItem.UsageRecoverAp or var0_32 == WorldItem.UsageWorldItem or var0_32 == WorldItem.UsageWorldBuff then
+			arg0_31.itemUsagePanel:Open({
+				item = var0_31.itemVO,
 				mode = ItemUsagePanel.BATCH,
-				onUseBatch = function(arg0_40)
-					arg0_33:emit(WorldInventoryMediator.OnUseItem, var0_33.itemVO.id, arg0_40, {})
+				onUseBatch = function(arg0_38)
+					arg0_31:emit(WorldInventoryMediator.OnUseItem, var0_31.itemVO.id, arg0_38, {})
 				end,
 				onUseOne = function()
-					arg0_33:emit(WorldInventoryMediator.OnUseItem, var0_33.itemVO.id, 1, {})
+					arg0_31:emit(WorldInventoryMediator.OnUseItem, var0_31.itemVO.id, 1, {})
 				end,
-				onResetInfo = function(arg0_42)
-					arg0_33.itemResetPanel:Open(arg0_42)
+				onResetInfo = function(arg0_40)
+					arg0_31.itemResetPanel:Open(arg0_40)
 				end
 			})
-		elseif var0_34 == WorldItem.UsageLoot then
-			arg0_33.itemUsagePanel:Open({
-				item = var0_33.itemVO,
+		elseif var0_32 == WorldItem.UsageLoot then
+			arg0_31.itemUsagePanel:Open({
+				item = var0_31.itemVO,
 				mode = ItemUsagePanel.INFO,
-				onResetInfo = function(arg0_43)
-					arg0_33.itemResetPanel:Open(arg0_43)
+				onResetInfo = function(arg0_41)
+					arg0_31.itemResetPanel:Open(arg0_41)
 				end
 			})
-		elseif var0_34 == WorldItem.UsageWorldClean or var0_34 == WorldItem.UsageWorldFlag then
-			arg0_33.itemUsagePanel:Open({
-				item = var0_33.itemVO,
+		elseif var0_32 == WorldItem.UsageWorldClean or var0_32 == WorldItem.UsageWorldFlag then
+			arg0_31.itemUsagePanel:Open({
+				item = var0_31.itemVO,
 				onUse = function()
-					arg0_33:emit(WorldInventoryMediator.OnUseItem, var0_33.itemVO.id, 1, {})
+					arg0_31:emit(WorldInventoryMediator.OnUseItem, var0_31.itemVO.id, 1, {})
 				end,
-				onResetInfo = function(arg0_45)
-					arg0_33.itemResetPanel:Open(arg0_45)
+				onResetInfo = function(arg0_43)
+					arg0_31.itemResetPanel:Open(arg0_43)
 				end
 			})
-		elseif var0_34 == WorldItem.UsageDropAppointed then
-			arg0_33.assignedItemView:Load()
-			arg0_33.assignedItemView:ActionInvoke("update", var0_33.itemVO)
-			arg0_33.assignedItemView:ActionInvoke("Show")
+		elseif var0_32 == WorldItem.UsageDropAppointed then
+			arg0_31.assignedItemView:Load()
+			arg0_31.assignedItemView:ActionInvoke("update", var0_31.itemVO)
+			arg0_31.assignedItemView:ActionInvoke("Show")
 		end
 	end, SFX_PANEL)
 
-	arg0_33.itemCards[arg1_33] = var0_33
+	arg0_31.itemCards[arg1_31] = var0_31
 end
 
-function var0_0.updateItem(arg0_46, arg1_46, arg2_46)
-	local var0_46 = arg0_46.itemCards[arg2_46]
+function var0_0.updateItem(arg0_44, arg1_44, arg2_44)
+	local var0_44 = arg0_44.itemCards[arg2_44]
 
-	if not var0_46 then
-		arg0_46:initItem(arg2_46)
+	if not var0_44 then
+		arg0_44:initItem(arg2_44)
 
-		var0_46 = arg0_46.itemCards[arg2_46]
+		var0_44 = arg0_44.itemCards[arg2_44]
 	end
 
-	local var1_46 = arg0_46.itemList[arg1_46 + 1]
+	local var1_44 = arg0_44.itemList[arg1_44 + 1]
 
-	var0_46:update(var1_46)
+	var0_44:update(var1_44)
 end
 
-function var0_0.returnItem(arg0_47, arg1_47, arg2_47)
-	if arg0_47.exited then
+function var0_0.returnItem(arg0_45, arg1_45, arg2_45)
+	if arg0_45.exited then
 		return
 	end
 
-	local var0_47 = arg0_47.itemCards[arg2_47]
+	local var0_45 = arg0_45.itemCards[arg2_45]
 
-	if var0_47 then
-		var0_47:clear()
+	if var0_45 then
+		var0_45:clear()
 	end
 end
 
-function var0_0.sortItems(arg0_48)
-	table.sort(arg0_48.itemList, CompareFuncs({
-		function(arg0_49)
-			return -arg0_49:getConfig("sort_priority")
+function var0_0.sortItems(arg0_46)
+	table.sort(arg0_46.itemList, CompareFuncs({
+		function(arg0_47)
+			return -arg0_47:getConfig("sort_priority")
 		end,
-		function(arg0_50)
-			return arg0_50:getConfig("id")
+		function(arg0_48)
+			return arg0_48:getConfig("id")
 		end
 	}))
-	arg0_48.itemRect:SetTotalCount(#arg0_48.itemList, -1)
-	arg0_48:updateResetExchange()
+	arg0_46.itemRect:SetTotalCount(#arg0_46.itemList, -1)
+	arg0_46:updateResetExchange()
 end
 
-function var0_0.updateResetExchange(arg0_51)
-	local var0_51 = arg0_51.inventoryProxy:CalcResetExchangeResource()
+function var0_0.updateResetExchange(arg0_49)
+	local var0_49 = arg0_49.inventoryProxy:CalcResetExchangeResource()
 
-	setText(arg0_51.exchangeTips:Find("capcity/Text"), defaultValue(checkExist(var0_51, {
+	setText(arg0_49.exchangeTips:Find("capcity/Text"), defaultValue(checkExist(var0_49, {
 		DROP_TYPE_RESOURCE
 	}, {
 		WorldConst.ResourceID
 	}), 0))
 end
 
-function var0_0.activeResetExchange(arg0_52, arg1_52)
-	local var0_52 = nowWorld():IsSystemOpen(WorldConst.SystemResetExchange)
+function var0_0.activeResetExchange(arg0_50, arg1_50)
+	local var0_50 = nowWorld():IsSystemOpen(WorldConst.SystemResetExchange)
 
-	setActive(arg0_52.exchangeTips, var0_52 and arg1_52)
+	setActive(arg0_50.exchangeTips, var0_50 and arg1_50)
 end
 
-function var0_0.PlayOpenBox(arg0_53, arg1_53, arg2_53)
-	if not arg1_53 or arg1_53 == "" then
-		arg2_53()
+function var0_0.PlayOpenBox(arg0_51, arg1_51, arg2_51)
+	if not arg1_51 or arg1_51 == "" then
+		arg2_51()
 
 		return
 	end
 
-	local function var0_53()
-		if arg0_53.playing or not arg0_53[arg1_53] then
+	local function var0_51()
+		if arg0_51.playing or not arg0_51[arg1_51] then
 			return
 		end
 
-		arg0_53.playing = true
+		arg0_51.playing = true
 
-		arg0_53[arg1_53]:SetActive(true)
+		arg0_51[arg1_51]:SetActive(true)
 
-		local var0_54 = tf(arg0_53[arg1_53])
+		local var0_52 = tf(arg0_51[arg1_51])
 
-		var0_54:SetParent(arg0_53:findTF("adapt"), false)
-		var0_54:SetAsLastSibling()
+		var0_52:SetParent(arg0_51:findTF("adapt"), false)
+		var0_52:SetAsLastSibling()
 
-		local var1_54 = var0_54:GetComponent("DftAniEvent")
+		local var1_52 = var0_52:GetComponent("DftAniEvent")
 
-		var1_54:SetTriggerEvent(function(arg0_55)
-			arg2_53()
+		var1_52:SetTriggerEvent(function(arg0_53)
+			arg2_51()
 		end)
-		var1_54:SetEndEvent(function(arg0_56)
-			if arg0_53[arg1_53] then
-				SetActive(arg0_53[arg1_53], false)
+		var1_52:SetEndEvent(function(arg0_54)
+			if arg0_51[arg1_51] then
+				SetActive(arg0_51[arg1_51], false)
 
-				arg0_53.playing = false
+				arg0_51.playing = false
 			end
 		end)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_EQUIPMENT_OPEN)
 	end
 
-	local var1_53 = arg0_53:findTF(arg1_53 .. "(Clone)")
+	local var1_51 = arg0_51:findTF(arg1_51 .. "(Clone)")
 
-	if var1_53 then
-		arg0_53[arg1_53] = go(var1_53)
+	if var1_51 then
+		arg0_51[arg1_51] = go(var1_51)
 	end
 
-	if not arg0_53[arg1_53] then
-		PoolMgr.GetInstance():GetPrefab("ui/" .. string.lower(arg1_53), "", true, function(arg0_57)
-			arg0_57:SetActive(true)
+	if not arg0_51[arg1_51] then
+		PoolMgr.GetInstance():GetPrefab("ui/" .. string.lower(arg1_51), "", true, function(arg0_55)
+			arg0_55:SetActive(true)
 
-			arg0_53[arg1_53] = arg0_57
+			arg0_51[arg1_51] = arg0_55
 
-			var0_53()
+			var0_51()
 		end)
 	else
-		var0_53()
+		var0_51()
 	end
 end
 
-function var0_0.setEquipments(arg0_58, arg1_58)
-	arg0_58.equipmentVOs = arg1_58
+function var0_0.setEquipments(arg0_56, arg1_56)
+	arg0_56.equipmentVOs = arg1_56
 end
 
-function var0_0.setEquipment(arg0_59, arg1_59)
-	local var0_59 = #arg0_59.equipmentVOs + 1
+function var0_0.setEquipment(arg0_57, arg1_57)
+	local var0_57 = #arg0_57.equipmentVOs + 1
 
-	for iter0_59, iter1_59 in ipairs(arg0_59.equipmentVOs) do
-		if not iter1_59.shipId and iter1_59.id == arg1_59.id then
-			var0_59 = iter0_59
+	for iter0_57, iter1_57 in ipairs(arg0_57.equipmentVOs) do
+		if not iter1_57.shipId and iter1_57.id == arg1_57.id then
+			var0_57 = iter0_57
 
 			break
 		end
 	end
 
-	if arg1_59.count > 0 then
-		arg0_59.equipmentVOs[var0_59] = arg1_59
+	if arg1_57.count > 0 then
+		arg0_57.equipmentVOs[var0_57] = arg1_57
 	else
-		table.remove(arg0_59.equipmentVOs, var0_59)
+		table.remove(arg0_57.equipmentVOs, var0_57)
 	end
 
-	if arg0_59.contextData.pageNum == var0_0.PAGE.Equipment then
-		arg0_59:filterEquipment()
+	if arg0_57.contextData.pageNum == var0_0.PAGE.Equipment then
+		arg0_57:filterEquipment()
 	end
 end
 
-function var0_0.initEquipments(arg0_60)
-	arg0_60.isInitWeapons = true
-	arg0_60.equipmentRect = arg0_60.equipmentView:GetComponent("LScrollRect")
+function var0_0.initEquipments(arg0_58)
+	arg0_58.isInitWeapons = true
+	arg0_58.equipmentRect = arg0_58.equipmentView:GetComponent("LScrollRect")
 
-	function arg0_60.equipmentRect.onInitItem(arg0_61)
-		arg0_60:initEquipment(arg0_61)
+	function arg0_58.equipmentRect.onInitItem(arg0_59)
+		arg0_58:initEquipment(arg0_59)
 	end
 
-	function arg0_60.equipmentRect.onUpdateItem(arg0_62, arg1_62)
-		arg0_60:updateEquipment(arg0_62, arg1_62)
+	function arg0_58.equipmentRect.onUpdateItem(arg0_60, arg1_60)
+		arg0_58:updateEquipment(arg0_60, arg1_60)
 	end
 
-	function arg0_60.equipmentRect.onReturnItem(arg0_63, arg1_63)
-		arg0_60:returnEquipment(arg0_63, arg1_63)
+	function arg0_58.equipmentRect.onReturnItem(arg0_61, arg1_61)
+		arg0_58:returnEquipment(arg0_61, arg1_61)
 	end
 
-	arg0_60.equipmentRect.decelerationRate = 0.07
+	arg0_58.equipmentRect.decelerationRate = 0.07
 end
 
-function var0_0.initEquipment(arg0_64, arg1_64)
-	local var0_64 = EquipmentItem.New(arg1_64)
+function var0_0.initEquipment(arg0_62, arg1_62)
+	local var0_62 = EquipmentItem.New(arg1_62)
 
-	onButton(arg0_64, var0_64.go, function()
-		if arg0_64.equipmentRect.GetContentAnchoredPositionOriginal then
-			arg0_64.contextData.equipScrollPos = arg0_64.equipmentRect:GetContentAnchoredPositionOriginal()
+	onButton(arg0_62, var0_62.go, function()
+		if arg0_62.equipmentRect.GetContentAnchoredPositionOriginal then
+			arg0_62.contextData.equipScrollPos = arg0_62.equipmentRect:GetContentAnchoredPositionOriginal()
 		end
 
-		if var0_64.equipmentVO == nil or var0_64.equipmentVO.mask then
+		if var0_62.equipmentVO == nil or var0_62.equipmentVO.mask then
 			return
 		end
 
-		local var0_65 = arg0_64.shipVO and {
+		local var0_63 = arg0_62.shipVO and {
 			type = EquipmentInfoMediator.TYPE_REPLACE,
-			equipmentId = var0_64.equipmentVO.id,
-			shipId = arg0_64.contextData.shipId,
-			pos = arg0_64.contextData.pos,
-			oldShipId = var0_64.equipmentVO.shipId,
-			oldPos = var0_64.equipmentVO.shipPos
-		} or var0_64.equipmentVO.shipId and {
+			equipmentId = var0_62.equipmentVO.id,
+			shipId = arg0_62.contextData.shipId,
+			pos = arg0_62.contextData.pos,
+			oldShipId = var0_62.equipmentVO.shipId,
+			oldPos = var0_62.equipmentVO.shipPos
+		} or var0_62.equipmentVO.shipId and {
 			type = EquipmentInfoMediator.TYPE_DISPLAY,
-			equipmentId = var0_64.equipmentVO.id,
-			shipId = var0_64.equipmentVO.shipId,
-			pos = var0_64.equipmentVO.shipPos
+			equipmentId = var0_62.equipmentVO.id,
+			shipId = var0_62.equipmentVO.shipId,
+			pos = var0_62.equipmentVO.shipPos
 		} or {
 			destroy = true,
 			type = EquipmentInfoMediator.TYPE_DEFAULT,
-			equipmentId = var0_64.equipmentVO.id
+			equipmentId = var0_62.equipmentVO.id
 		}
 
-		arg0_64:emit(var0_0.ON_EQUIPMENT, var0_65)
+		arg0_62:emit(var0_0.ON_EQUIPMENT, var0_63)
 	end, SFX_PANEL)
 
-	arg0_64.equipmetItems[arg1_64] = var0_64
+	arg0_62.equipmetItems[arg1_62] = var0_62
 end
 
-function var0_0.updateEquipment(arg0_66, arg1_66, arg2_66)
-	local var0_66 = arg0_66.equipmetItems[arg2_66]
+function var0_0.updateEquipment(arg0_64, arg1_64, arg2_64)
+	local var0_64 = arg0_64.equipmetItems[arg2_64]
 
-	if not var0_66 then
-		arg0_66:initEquipment(arg2_66)
+	if not var0_64 then
+		arg0_64:initEquipment(arg2_64)
 
-		var0_66 = arg0_66.equipmetItems[arg2_66]
+		var0_64 = arg0_64.equipmetItems[arg2_64]
 	end
 
-	local var1_66 = arg0_66.loadEquipmentVOs[arg1_66 + 1]
+	local var1_64 = arg0_64.loadEquipmentVOs[arg1_64 + 1]
 
-	var0_66:update(var1_66)
+	var0_64:update(var1_64)
 end
 
-function var0_0.returnEquipment(arg0_67, arg1_67, arg2_67)
-	if arg0_67.exited then
+function var0_0.returnEquipment(arg0_65, arg1_65, arg2_65)
+	if arg0_65.exited then
 		return
 	end
 
-	local var0_67 = arg0_67.equipmetItems[arg2_67]
+	local var0_65 = arg0_65.equipmetItems[arg2_65]
 
-	if var0_67 then
-		var0_67:clear()
+	if var0_65 then
+		var0_65:clear()
 	end
 end
 
-function var0_0.filterEquipment(arg0_68)
-	local var0_68 = arg0_68.contextData.sortData
+function var0_0.filterEquipment(arg0_66)
+	local var0_66 = arg0_66.contextData.sortData
 
-	arg0_68.loadEquipmentVOs = arg0_68.loadEquipmentVOs or {}
+	arg0_66.loadEquipmentVOs = arg0_66.loadEquipmentVOs or {}
 
-	table.clean(arg0_68.loadEquipmentVOs)
+	table.clean(arg0_66.loadEquipmentVOs)
 
-	local var1_68 = arg0_68.loadEquipmentVOs
-	local var2_68 = {
-		arg0_68.contextData.indexDatas.equipPropertyIndex,
-		arg0_68.contextData.indexDatas.equipPropertyIndex2
+	local var1_66 = arg0_66.loadEquipmentVOs
+	local var2_66 = {
+		arg0_66.contextData.indexDatas.equipPropertyIndex,
+		arg0_66.contextData.indexDatas.equipPropertyIndex2
 	}
 
-	for iter0_68, iter1_68 in pairs(arg0_68.equipmentVOs) do
-		if (not iter1_68.shipId or arg0_68:GetShowBusyFlag()) and not iter1_68.isSkin and IndexConst.filterEquipByType(iter1_68, arg0_68.contextData.indexDatas.typeIndex) and IndexConst.filterEquipByProperty(iter1_68, var2_68) and IndexConst.filterEquipAmmo1(iter1_68, arg0_68.contextData.indexDatas.equipAmmoIndex1) and IndexConst.filterEquipAmmo2(iter1_68, arg0_68.contextData.indexDatas.equipAmmoIndex2) and IndexConst.filterEquipByCamp(iter1_68, arg0_68.contextData.indexDatas.equipCampIndex) and IndexConst.filterEquipByRarity(iter1_68, arg0_68.contextData.indexDatas.rarityIndex) and IndexConst.filterEquipByExtra(iter1_68, arg0_68.contextData.indexDatas.extraIndex) then
-			table.insert(arg0_68.loadEquipmentVOs, iter1_68)
+	for iter0_66, iter1_66 in pairs(arg0_66.equipmentVOs) do
+		if (not iter1_66.shipId or arg0_66:GetShowBusyFlag()) and not iter1_66.isSkin and IndexConst.filterEquipByType(iter1_66, arg0_66.contextData.indexDatas.typeIndex) and IndexConst.filterEquipByProperty(iter1_66, var2_66) and IndexConst.filterEquipAmmo1(iter1_66, arg0_66.contextData.indexDatas.equipAmmoIndex1) and IndexConst.filterEquipAmmo2(iter1_66, arg0_66.contextData.indexDatas.equipAmmoIndex2) and IndexConst.filterEquipByCamp(iter1_66, arg0_66.contextData.indexDatas.equipCampIndex) and IndexConst.filterEquipByRarity(iter1_66, arg0_66.contextData.indexDatas.rarityIndex) and IndexConst.filterEquipByExtra(iter1_66, arg0_66.contextData.indexDatas.extraIndex) then
+			table.insert(arg0_66.loadEquipmentVOs, iter1_66)
 		end
 	end
 
-	if var0_68 then
-		local var3_68 = arg0_68.contextData.asc
+	if var0_66 then
+		local var3_66 = arg0_66.contextData.asc
 
-		table.sort(var1_68, CompareFuncs(var1_0.sortFunc(var0_68, var3_68)))
+		table.sort(var1_66, CompareFuncs(var1_0.sortFunc(var0_66, var3_66)))
 	end
 
-	arg0_68:updateEquipmentCount()
-	setImageSprite(arg0_68:findTF("Image", arg0_68.sortBtn), GetSpriteFromAtlas("ui/equipmentui_atlas", var0_68.spr), true)
-	setActive(arg0_68.downOrderTF, not arg0_68.contextData.asc)
-	setActive(arg0_68.upOrderTF, arg0_68.contextData.asc)
+	arg0_66:updateEquipmentCount()
+	setImageSprite(arg0_66:findTF("Image", arg0_66.sortBtn), GetSpriteFromAtlas("ui/equipmentui_atlas", var0_66.spr), true)
+	setActive(arg0_66.downOrderTF, not arg0_66.contextData.asc)
+	setActive(arg0_66.upOrderTF, arg0_66.contextData.asc)
 end
 
-function var0_0.updateEquipmentCount(arg0_69, arg1_69)
-	arg0_69.equipmentRect:SetTotalCount(arg1_69 or #arg0_69.loadEquipmentVOs, -1)
+function var0_0.updateEquipmentCount(arg0_67, arg1_67)
+	arg0_67.equipmentRect:SetTotalCount(arg1_67 or #arg0_67.loadEquipmentVOs, -1)
 	Canvas.ForceUpdateCanvases()
 end
 
-function var0_0.Scroll2Equip(arg0_70, arg1_70)
-	if arg0_70.contextData.pageNum ~= var0_0.PAGE.Equipment then
+function var0_0.Scroll2Equip(arg0_68, arg1_68)
+	if arg0_68.contextData.pageNum ~= var0_0.PAGE.Equipment then
 		return
 	end
 
-	for iter0_70, iter1_70 in ipairs(arg0_70.loadEquipmentVOs) do
-		if EquipmentProxy.SameEquip(iter1_70, arg1_70) then
-			local var0_70 = arg0_70.equipmentView:Find("Viewport/moudle_grid"):GetComponent(typeof(GridLayoutGroup))
-			local var1_70 = (var0_70.cellSize.y + var0_70.spacing.y) * math.floor((iter0_70 - 1) / var0_70.constraintCount) + arg0_70.equipmentRect.paddingFront + arg0_70.equipmentView.rect.height * 0.5
+	for iter0_68, iter1_68 in ipairs(arg0_68.loadEquipmentVOs) do
+		if EquipmentProxy.SameEquip(iter1_68, arg1_68) then
+			local var0_68 = arg0_68.equipmentView:Find("Viewport/moudle_grid"):GetComponent(typeof(GridLayoutGroup))
+			local var1_68 = (var0_68.cellSize.y + var0_68.spacing.y) * math.floor((iter0_68 - 1) / var0_68.constraintCount) + arg0_68.equipmentRect.paddingFront + arg0_68.equipmentView.rect.height * 0.5
 
-			arg0_70:ScrollEquipPos(var1_70 - arg0_70.equipmentRect.paddingFront)
+			arg0_68:ScrollEquipPos(var1_68 - arg0_68.equipmentRect.paddingFront)
 
 			break
 		end
 	end
 end
 
-function var0_0.ScrollEquipPos(arg0_71, arg1_71)
-	local var0_71 = arg0_71.equipmentView:Find("Viewport/moudle_grid"):GetComponent(typeof(GridLayoutGroup))
-	local var1_71 = (var0_71.cellSize.y + var0_71.spacing.y) * math.ceil(#arg0_71.loadEquipmentVOs / var0_71.constraintCount) - var0_71.spacing.y + arg0_71.equipmentRect.paddingFront + arg0_71.equipmentRect.paddingEnd
-	local var2_71 = var1_71 - arg0_71.equipmentView.rect.height
+function var0_0.ScrollEquipPos(arg0_69, arg1_69)
+	local var0_69 = arg0_69.equipmentView:Find("Viewport/moudle_grid"):GetComponent(typeof(GridLayoutGroup))
+	local var1_69 = (var0_69.cellSize.y + var0_69.spacing.y) * math.ceil(#arg0_69.loadEquipmentVOs / var0_69.constraintCount) - var0_69.spacing.y + arg0_69.equipmentRect.paddingFront + arg0_69.equipmentRect.paddingEnd
+	local var2_69 = var1_69 - arg0_69.equipmentView.rect.height
 
-	var2_71 = var2_71 > 0 and var2_71 or var1_71
+	var2_69 = var2_69 > 0 and var2_69 or var1_69
 
-	local var3_71 = (arg1_71 - arg0_71.equipmentView.rect.height * 0.5) / var2_71
+	local var3_69 = (arg1_69 - arg0_69.equipmentView.rect.height * 0.5) / var2_69
 
-	arg0_71.equipmentRect:ScrollTo(var3_71)
+	arg0_69.equipmentRect:ScrollTo(var3_69)
 end
 
-function var0_0.SetMaterials(arg0_72, arg1_72)
-	arg0_72.materials = arg1_72
+function var0_0.SetMaterials(arg0_70, arg1_70)
+	arg0_70.materials = arg1_70
 
-	if arg0_72.isInitMaterials and arg0_72.contextData.pageNum == var0_0.PAGE.Material then
-		arg0_72:SortMaterials()
+	if arg0_70.isInitMaterials and arg0_70.contextData.pageNum == var0_0.PAGE.Material then
+		arg0_70:SortMaterials()
 	end
 end
 
-function var0_0.InitMaterials(arg0_73)
-	arg0_73.isInitMaterials = true
-	arg0_73.materialRect = arg0_73.materialtView:GetComponent("LScrollRect")
+function var0_0.InitMaterials(arg0_71)
+	arg0_71.isInitMaterials = true
+	arg0_71.materialRect = arg0_71.materialtView:GetComponent("LScrollRect")
 
-	function arg0_73.materialRect.onInitItem(arg0_74)
-		arg0_73:InitMaterial(arg0_74)
+	function arg0_71.materialRect.onInitItem(arg0_72)
+		arg0_71:InitMaterial(arg0_72)
 	end
 
-	function arg0_73.materialRect.onUpdateItem(arg0_75, arg1_75)
-		arg0_73:UpdateMaterial(arg0_75, arg1_75)
+	function arg0_71.materialRect.onUpdateItem(arg0_73, arg1_73)
+		arg0_71:UpdateMaterial(arg0_73, arg1_73)
 	end
 
-	function arg0_73.materialRect.onReturnItem(arg0_76, arg1_76)
-		arg0_73:ReturnMaterial(arg0_76, arg1_76)
+	function arg0_71.materialRect.onReturnItem(arg0_74, arg1_74)
+		arg0_71:ReturnMaterial(arg0_74, arg1_74)
 	end
 
-	arg0_73.materialRect.decelerationRate = 0.07
+	arg0_71.materialRect.decelerationRate = 0.07
 end
 
-function var0_0.SortMaterials(arg0_77)
-	table.sort(arg0_77.materials, CompareFuncs({
-		function(arg0_78)
-			return -arg0_78:getConfig("rarity")
+function var0_0.SortMaterials(arg0_75)
+	table.sort(arg0_75.materials, CompareFuncs({
+		function(arg0_76)
+			return -arg0_76:getConfig("rarity")
 		end,
-		function(arg0_79)
-			return arg0_79.id
+		function(arg0_77)
+			return arg0_77.id
 		end
 	}))
-	arg0_77.materialRect:SetTotalCount(#arg0_77.materials, -1)
+	arg0_75.materialRect:SetTotalCount(#arg0_75.materials, -1)
 	Canvas.ForceUpdateCanvases()
 end
 
-function var0_0.InitMaterial(arg0_80, arg1_80)
-	local var0_80 = ItemCard.New(arg1_80)
+function var0_0.InitMaterial(arg0_78, arg1_78)
+	local var0_78 = ItemCard.New(arg1_78)
 
-	onButton(arg0_80, var0_80.go, function()
-		if var0_80.itemVO == nil then
+	onButton(arg0_78, var0_78.go, function()
+		if var0_78.itemVO == nil then
 			return
 		end
 
-		if var0_80.itemVO:getConfig("type") == Item.INVITATION_TYPE then
-			arg0_80:emit(EquipmentMediator.ITEM_GO_SCENE, SCENE.INVITATION, {
-				itemVO = var0_80.itemVO
+		if var0_78.itemVO:getConfig("type") == Item.INVITATION_TYPE then
+			arg0_78:emit(EquipmentMediator.ITEM_GO_SCENE, SCENE.INVITATION, {
+				itemVO = var0_78.itemVO
 			})
 		else
-			arg0_80:emit(var0_0.ON_ITEM, var0_80.itemVO.id)
+			arg0_78:emit(var0_0.ON_ITEM, var0_78.itemVO.id)
 		end
 	end, SFX_PANEL)
 
-	arg0_80.materialCards[arg1_80] = var0_80
+	arg0_78.materialCards[arg1_78] = var0_78
 end
 
-function var0_0.UpdateMaterial(arg0_82, arg1_82, arg2_82)
-	local var0_82 = arg0_82.materialCards[arg2_82]
+function var0_0.UpdateMaterial(arg0_80, arg1_80, arg2_80)
+	local var0_80 = arg0_80.materialCards[arg2_80]
 
-	if not var0_82 then
-		arg0_82:initItem(arg2_82)
+	if not var0_80 then
+		arg0_80:initItem(arg2_80)
 
-		var0_82 = arg0_82.materialCards[arg2_82]
+		var0_80 = arg0_80.materialCards[arg2_80]
 	end
 
-	local var1_82 = arg0_82.materials[arg1_82 + 1]
+	local var1_80 = arg0_80.materials[arg1_80 + 1]
 
-	var0_82:update(var1_82)
+	var0_80:update(var1_80)
 end
 
-function var0_0.ReturnMaterial(arg0_83, arg1_83, arg2_83)
-	if arg0_83.exited then
+function var0_0.ReturnMaterial(arg0_81, arg1_81, arg2_81)
+	if arg0_81.exited then
 		return
 	end
 
-	local var0_83 = arg0_83.materialCards[arg2_83]
+	local var0_81 = arg0_81.materialCards[arg2_81]
 
-	if var0_83 then
-		var0_83:clear()
+	if var0_81 then
+		var0_81:clear()
 	end
 end
 

@@ -11,6 +11,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.offlineTxt = arg1_1.transform:Find("offline/Text"):GetComponent(typeof(Text))
 	arg0_1.visitBtn = arg1_1.transform:Find("visit")
 	arg0_1.moreBtn = arg1_1.transform:Find("more")
+	arg0_1.cardBtn = arg1_1.transform:Find("icon")
 
 	setText(arg0_1.visitBtn:Find("Text"), i18n("island_btn_label_visit"))
 	setText(arg0_1.moreBtn:Find("Text"), i18n("island_btn_label_more"))

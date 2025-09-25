@@ -72,9 +72,7 @@ function var0_0.didEnter(arg0_8)
 end
 
 function var0_0.BlurPanel(arg0_9)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_9._tf, false, {
-		weight = LayerWeightConst.TOP_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_9._tf)
 end
 
 function var0_0.InitData(arg0_10)

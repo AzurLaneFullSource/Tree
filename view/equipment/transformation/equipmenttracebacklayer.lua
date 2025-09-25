@@ -228,7 +228,9 @@ function var0_0.didEnter(arg0_10)
 		type = DROP_TYPE_EQUIP,
 		id = arg0_10.contextData.TargetEquipmentId
 	})
-	pg.UIMgr.GetInstance():BlurPanel(arg0_10._tf, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_10._tf, {
+		staticBlur = true
+	})
 end
 
 function var0_0.UpdateSourceList(arg0_18)
@@ -419,7 +421,7 @@ end
 
 function var0_0.willExit(arg0_29)
 	arg0_29.loader:Clear()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_29._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_29._tf)
 end
 
 return var0_0

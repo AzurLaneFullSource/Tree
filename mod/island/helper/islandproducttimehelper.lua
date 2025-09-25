@@ -2,149 +2,168 @@ local var0_0 = class("IslandProductTimeHelper")
 
 function var0_0.GetSpeedAddtionTypeByPlaceId(arg0_1)
 	return switch(arg0_1, {
-		[IslandProductSystemVO.FellingPlaceId] = function()
+		[IslandProductConst.FellingPlaceId] = function()
 			return IslandAblityAgency.TYPE_PRODUCT_FELLING
 		end,
-		[IslandProductSystemVO.MinePlaceId] = function()
+		[IslandProductConst.MinePlaceId] = function()
 			return IslandAblityAgency.TYPE_PRODUCT_MINING
+		end,
+		[IslandProductConst.FarmlandPlaceId] = function()
+			return IslandAblityAgency.TYPE_PRODUCT_FARM
+		end,
+		[IslandProductConst.OrchardPlaceId] = function()
+			return IslandAblityAgency.TYPE_PRODUCT_ORCHARD
+		end,
+		[IslandProductConst.GardenPlaceId] = function()
+			return IslandAblityAgency.TYPE_PRODUCT_GARDEN
 		end
 	}, function()
 		return nil
 	end)
 end
 
-function var0_0.CalculateTimeToProductFormula(arg0_5, arg1_5, arg2_5, arg3_5)
-	local var0_5 = getProxy(IslandProxy):GetIsland()
-	local var1_5 = var0_5:GetCharacterAgency():GetShipById(arg0_5)
-	local var2_5 = pg.island_set.base_efficiency.key_value_int
-	local var3_5 = pg.island_formula[arg1_5]
-	local var4_5 = var3_5.attribute
-	local var5_5 = 0
+function var0_0.CalculateTimeToProductFormula(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
+	local var0_8 = getProxy(IslandProxy):GetIsland()
+	local var1_8 = var0_8:GetCharacterAgency():GetShipById(arg0_8)
+	local var2_8 = pg.island_set.base_efficiency.key_value_int
+	local var3_8 = pg.island_formula[arg1_8]
+	local var4_8 = var3_8.attribute
+	local var5_8 = 0
 
-	for iter0_5, iter1_5 in ipairs(var1_5:GetSkill():GetUnlockShipEffectIds()) do
-		local var6_5 = pg.island_buff_template[iter1_5]
+	for iter0_8, iter1_8 in ipairs(var1_8:GetSkill():GetUnlockShipEffectIds()) do
+		local var6_8 = pg.island_buff_template[iter1_8]
 
-		if var6_5.buff_type == IslandBuffType.SHIP_PRODUCT_RATIO then
-			local var7_5 = var6_5.type_use
-			local var8_5 = var7_5[1]
+		if var6_8.buff_type == IslandBuffType.SHIP_PRODUCT_RATIO then
+			local var7_8 = var6_8.type_use
+			local var8_8 = var7_8[1]
 
-			if iter0_5.any(var8_5, function(arg0_6)
-				return arg0_6 == arg3_5
+			if underscore.any(var8_8, function(arg0_9)
+				return arg0_9 == arg3_8
 			end) then
-				var5_5 = var5_5 + var7_5[2]
+				var5_8 = var5_8 + var7_8[2]
 			end
 		end
 	end
 
-	local var9_5 = 0
-	local var10_5 = var0_0.GetSpeedAddtionTypeByPlaceId(arg3_5)
+	local var9_8 = 0
+	local var10_8 = var0_0.GetSpeedAddtionTypeByPlaceId(arg3_8)
 
-	if var10_5 then
-		var9_5 = var9_5 + var0_5:GetAblityAgency():GetProductAdditionSpeedByAblityType(var10_5)
+	if var10_8 then
+		var9_8 = var9_8 + var0_8:GetAblityAgency():GetProductAdditionSpeedByAblityType(var10_8)
 	end
 
-	local var11_5 = var1_5:GetAttr(IslandShipAttr.ATTRS[var4_5])
-	local var12_5 = var1_5:GetAttrGradeByValue(var11_5)
-	local var13_5 = pg.island_chara_att[var12_5].effect
-	local var14_5 = var2_5 * (1 + 0.01 * (var5_5 + var9_5))
-	local var15_5 = var1_5:GetVaildStatusByType(IslandBuffType.SHIP_ATTR)
+	local var11_8 = 0
 
-	table.sort(var15_5, function(arg0_7, arg1_7)
-		local var0_7 = arg0_7:GetEndTime()
-		local var1_7 = arg1_7:GetEndTime()
+	if arg3_8 == IslandProductConst.PasturePlaceId then
+		local var12_8 = var0_8:GetBuildingAgency():GetBuilding(arg3_8):GetDelegationSlotData(arg4_8):GetPartList()
 
-		if var0_7 ~= var1_7 then
-			return var0_7 < var1_7
+		for iter2_8, iter3_8 in ipairs(var12_8) do
+			var11_8 = var11_8 + pg.island_ranch_animal[iter3_8].efficiency_gains
+		end
+	end
+
+	local var13_8 = var1_8:GetAttr(IslandShipAttr.ATTRS[var4_8])
+	local var14_8 = var1_8:GetAttrGradeByValue(var13_8)
+	local var15_8 = pg.island_chara_att[var14_8].effect
+	local var16_8 = var2_8 * (1 + 0.01 * (var5_8 + var9_8 + var11_8))
+	local var17_8 = var1_8:GetVaildStatusByType(IslandBuffType.SHIP_ATTR)
+
+	table.sort(var17_8, function(arg0_10, arg1_10)
+		local var0_10 = arg0_10:GetEndTime()
+		local var1_10 = arg1_10:GetEndTime()
+
+		if var0_10 ~= var1_10 then
+			return var0_10 < var1_10
 		end
 
-		return arg0_7.id < arg1_7.id
+		return arg0_10.id < arg1_10.id
 	end)
 
-	local var16_5, var17_5 = pg.TimeMgr.GetInstance():GetServerTime(), {}
-	local var18_5 = #var15_5
+	local var18_8, var19_8 = pg.TimeMgr.GetInstance():GetServerTime(), {}
+	local var20_8 = #var17_8
 
-	for iter2_5, iter3_5 in ipairs(var15_5) do
-		local var19_5 = iter3_5:GetEndTime()
+	for iter4_8, iter5_8 in ipairs(var17_8) do
+		local var21_8 = iter5_8:GetEndTime()
 
-		if var16_5 ~= var19_5 then
-			local var20_5 = math.max(var19_5 - var16_5, 0)
+		if var18_8 ~= var21_8 then
+			local var22_8 = math.max(var21_8 - var18_8, 0)
 
-			var16_5 = var19_5
+			var18_8 = var21_8
 
-			table.insert(var17_5, {
-				timeLength = var20_5,
-				buffCount = var18_5
+			table.insert(var19_8, {
+				timeLength = var22_8,
+				buffCount = var20_8
 			})
 		end
 
-		var18_5 = var18_5 - 1
+		var20_8 = var20_8 - 1
 	end
 
-	local var21_5 = {}
+	local var23_8 = {}
 
-	for iter4_5, iter5_5 in ipairs(var17_5) do
-		local var22_5 = 0
-		local var23_5 = iter5_5.buffCount
-		local var24_5 = #var15_5
+	for iter6_8, iter7_8 in ipairs(var19_8) do
+		local var24_8 = 0
+		local var25_8 = iter7_8.buffCount
+		local var26_8 = #var17_8
 
-		for iter6_5 = var24_5, var24_5 - var23_5 + 1, -1 do
-			local var25_5 = var15_5[iter6_5]:GetBuffEffect()
+		for iter8_8 = var26_8, var26_8 - var25_8 + 1, -1 do
+			local var27_8 = var17_8[iter8_8]:GetBuffEffect()
 
-			for iter7_5, iter8_5 in ipairs(var25_5) do
-				if iter8_5[1] == var4_5 then
-					var22_5 = var22_5 + iter8_5[2]
+			for iter9_8, iter10_8 in ipairs(var27_8) do
+				if iter10_8[1] == var4_8 then
+					var24_8 = var24_8 + iter10_8[2]
 				end
 			end
 		end
 
-		local var26_5 = var11_5 * (1 + var22_5 * 0.01)
-		local var27_5 = var1_5:GetAttrGradeByValue(var26_5)
+		local var28_8 = var13_8 * (1 + var24_8 * 0.01)
+		local var29_8 = var1_8:GetAttrGradeByValue(var28_8)
 
-		if var27_5 == var12_5 then
+		if var29_8 == var14_8 then
 			break
 		end
 
-		local var28_5 = var14_5 * (1 + 0.01 * pg.island_chara_att[var27_5].effect)
+		local var30_8 = var16_8 * (1 + 0.01 * pg.island_chara_att[var29_8].effect)
 
-		table.insert(var21_5, {
-			buffSpeed = var28_5,
-			timeLength = iter5_5.timeLength
+		table.insert(var23_8, {
+			buffSpeed = var30_8,
+			timeLength = iter7_8.timeLength
 		})
 	end
 
-	local var29_5 = {}
-	local var30_5 = var3_5.workload
+	local var31_8 = {}
+	local var32_8 = var3_8.workload
 
-	for iter9_5 = 1, arg2_5 do
-		local var31_5 = var30_5
-		local var32_5 = 0
+	for iter11_8 = 1, arg2_8 do
+		local var33_8 = var32_8
+		local var34_8 = 0
 
-		for iter10_5, iter11_5 in ipairs(var21_5) do
-			local var33_5 = math.floor(var31_5 / iter11_5.buffSpeed)
+		for iter12_8, iter13_8 in ipairs(var23_8) do
+			local var35_8 = math.floor(var33_8 / iter13_8.buffSpeed)
 
-			if var33_5 <= iter11_5.timeLength then
-				iter11_5.timeLength = iter11_5.timeLength - var33_5
-				var32_5 = var32_5 + var33_5
-				var31_5 = 0
+			if var35_8 <= iter13_8.timeLength then
+				iter13_8.timeLength = iter13_8.timeLength - var35_8
+				var34_8 = var34_8 + var35_8
+				var33_8 = 0
 
 				break
 			else
-				var32_5 = var32_5 + iter11_5.timeLength
-				var31_5 = var31_5 - iter11_5.timeLength * iter11_5.buffSpeed
-				iter11_5.timeLength = 0
+				var34_8 = var34_8 + iter13_8.timeLength
+				var33_8 = var33_8 - iter13_8.timeLength * iter13_8.buffSpeed
+				iter13_8.timeLength = 0
 			end
 		end
 
-		if var31_5 > 0 then
-			local var34_5 = var14_5 * (1 + 0.01 * var13_5)
+		if var33_8 > 0 then
+			local var36_8 = var16_8 * (1 + 0.01 * var15_8)
 
-			var32_5 = var32_5 + math.floor(var31_5 / var34_5)
+			var34_8 = var34_8 + math.floor(var33_8 / var36_8)
 		end
 
-		table.insert(var29_5, var32_5)
+		table.insert(var31_8, var34_8)
 	end
 
-	return var29_5
+	return var31_8
 end
 
 return var0_0

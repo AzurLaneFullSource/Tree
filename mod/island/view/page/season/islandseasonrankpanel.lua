@@ -84,6 +84,8 @@ function var0_0.Show(arg0_9)
 	else
 		arg0_9.switchPanel:ExecuteAction("Show")
 	end
+
+	IslandGuideChecker.CheckGuide("ISLAND_GUIDE_17")
 end
 
 function var0_0.Flush(arg0_10, arg1_10)

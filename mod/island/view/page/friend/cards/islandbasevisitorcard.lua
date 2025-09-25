@@ -7,6 +7,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.levelTxt = arg1_1.transform:Find("level"):GetComponent(typeof(Text))
 	arg0_1.btn = arg1_1.transform:Find("btn")
 	arg0_1.btnTxt = arg1_1.transform:Find("btn/Text"):GetComponent(typeof(Text))
+	arg0_1.cardBtn = arg1_1.transform:Find("frame/icon")
 end
 
 function var0_0.Update(arg0_2, arg1_2)

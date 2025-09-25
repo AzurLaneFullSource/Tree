@@ -14,9 +14,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, false, {
-		weight = arg0_2:getWeightFromData()
-	})
+	arg0_2:BlurPanel(arg0_2._tf)
 
 	arg0_2.window = arg0_2:findTF("window")
 
@@ -686,7 +684,7 @@ function var0_0.willExit(arg0_54)
 		ClearEventTrigger(arg0_54.rightEventTrigger)
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_54._tf)
+	arg0_54:UnOverlayPanel(arg0_54._tf)
 
 	if arg0_54.recycleConfirmationPage then
 		arg0_54.recycleConfirmationPage:Destroy()

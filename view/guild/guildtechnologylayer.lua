@@ -27,7 +27,7 @@ end
 function var0_0.UpdatePainting(arg0_6)
 	local var0_6 = arg0_6.guildVO:GetOfficePainting()
 
-	pg.GuildPaintingMgr:GetInstance():Update(var0_6, Vector3(-737, -171, 0))
+	pg.GuildPaintingMgr.GetInstance():Update(var0_6, Vector3(-737, -171, 0))
 end
 
 function var0_0.UpdateUpgradeList(arg0_7)
@@ -64,8 +64,8 @@ end
 function var0_0.willExit(arg0_12)
 	arg0_12.technologyPage:Destroy()
 
-	if isActive(pg.MsgboxMgr:GetInstance()._go) then
-		triggerButton(pg.MsgboxMgr:GetInstance()._closeBtn)
+	if isActive(pg.MsgboxMgr.GetInstance()._go) then
+		triggerButton(pg.MsgboxMgr.GetInstance()._closeBtn)
 	end
 end
 

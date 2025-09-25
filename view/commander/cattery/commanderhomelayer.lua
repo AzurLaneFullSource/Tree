@@ -204,10 +204,7 @@ function var0_0.didEnter(arg0_16)
 		end
 	end)
 	arg0_16:UpdateMain()
-
-	arg0_16.UIMgr = pg.UIMgr.GetInstance()
-
-	arg0_16.UIMgr:BlurPanel(arg0_16._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_16._tf)
 end
 
 function var0_0.OnUpdateItem(arg0_26, arg1_26, arg2_26)
@@ -299,7 +296,7 @@ function var0_0.UpdateBubble(arg0_30)
 end
 
 function var0_0.willExit(arg0_31)
-	arg0_31.UIMgr:UnblurPanel(arg0_31._tf, arg0_31.UIMgr._normalUIMain)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_31._tf, pg.UIMgr.GetInstance()._normalUIMain)
 
 	if LeanTween.isTweening(arg0_31.bubbleTF.gameObject) then
 		LeanTween.cancel(arg0_31.bubbleTF.gameObject)

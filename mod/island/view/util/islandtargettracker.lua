@@ -123,64 +123,35 @@ function var0_0.CalcPosition(arg0_11, arg1_11)
 	end
 end
 
-function var0_0.DrawLine(arg0_12, arg1_12, arg2_12)
-	local var0_12 = IslandCalcUtil.GetNavPath(arg1_12, arg2_12)
-
-	local function var1_12(arg0_13, arg1_13)
-		local var0_13 = 1
-		local var1_13 = var0_12[arg1_13 + 1] or arg2_12
-		local var2_13 = var0_12[arg1_13]
-		local var3_13 = (var1_13 - var2_13).normalized
-		local var4_13 = Quaternion.FromToRotation(arg0_13.transform.right * -1, var3_13)
-		local var5_13 = Vector3.Distance(var1_13, var2_13)
-
-		return var4_13, var5_13
+function var0_0.ClearLine(arg0_12)
+	for iter0_12, iter1_12 in pairs(arg0_12.lines) do
+		Object.Destroy(iter1_12.gameObject)
 	end
 
-	for iter0_12, iter1_12 in ipairs(var0_12) do
-		local var2_12 = Object.Instantiate(arg0_12.lineTpl)
-		local var3_12, var4_12 = var1_12(var2_12, iter0_12)
-
-		var2_12.transform.rotation = var2_12.transform.rotation * var3_12
-		var2_12.transform.localScale = Vector3(var4_12, 1, 1)
-
-		local var5_12 = var2_12.transform.right * -1 * (var4_12 * 0.5)
-
-		var2_12.transform.position = iter1_12 + var5_12
-
-		table.insert(arg0_12.lines, var2_12)
-	end
+	arg0_12.lines = {}
 end
 
-function var0_0.ClearLine(arg0_14)
-	for iter0_14, iter1_14 in pairs(arg0_14.lines) do
-		Object.Destroy(iter1_14.gameObject)
+function var0_0.ShutDown(arg0_13)
+	if arg0_13.timer then
+		arg0_13.timer:Stop()
+
+		arg0_13.timer = nil
 	end
 
-	arg0_14.lines = {}
+	arg0_13.cg.alpha = 0
+	arg0_13.trackId = nil
+
+	arg0_13:ClearLine()
 end
 
-function var0_0.ShutDown(arg0_15)
-	if arg0_15.timer then
-		arg0_15.timer:Stop()
-
-		arg0_15.timer = nil
-	end
-
-	arg0_15.cg.alpha = 0
-	arg0_15.trackId = nil
-
-	arg0_15:ClearLine()
+function var0_0.Clear(arg0_14)
+	arg0_14:ShutDown()
 end
 
-function var0_0.Clear(arg0_16)
-	arg0_16:ShutDown()
-end
+function var0_0.Dispose(arg0_15)
+	arg0_15.showHudDic = nil
 
-function var0_0.Dispose(arg0_17)
-	arg0_17.showHudDic = nil
-
-	arg0_17:Clear()
+	arg0_15:Clear()
 end
 
 return var0_0

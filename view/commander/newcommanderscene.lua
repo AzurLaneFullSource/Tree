@@ -33,9 +33,7 @@ function var0_0.init(arg0_2)
 		arg0_2.skipAnim = false
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, false, {
-		weight = LayerWeightConst.SECOND_LAYER + 1
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
 	setText(arg0_2:findTF("main/info/content/abilitys/attrs/command/name/Text"), i18n("commander_command_ability"))
 	setText(arg0_2:findTF("main/info/content/abilitys/attrs/tactic/name/Text"), i18n("commander_tactical_ability"))
 	setText(arg0_2:findTF("main/info/content/abilitys/attrs/support/name/Text"), i18n("commander_logistics_ability"))
@@ -44,7 +42,7 @@ end
 
 function var0_0.openTreePanel(arg0_3, arg1_3)
 	local function var0_3()
-		arg0_3.treePanel:ActionInvoke("Show", arg1_3, LayerWeightConst.SECOND_LAYER + 2)
+		arg0_3.treePanel:ActionInvoke("Show", arg1_3)
 	end
 
 	if arg0_3.treePanel:GetLoaded() then
@@ -117,9 +115,7 @@ end
 function var0_0.didEnter(arg0_14)
 	arg0_14:updateInfo()
 	onButton(arg0_14, arg0_14.shareBtn, function()
-		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeCommander, pg.ShareMgr.PANEL_TYPE_PINK, {
-			weight = LayerWeightConst.TOP_LAYER
-		})
+		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeCommander, pg.ShareMgr.PANEL_TYPE_PINK)
 	end, SFX_PANEL)
 	onButton(arg0_14, arg0_14.skipBtn, function(arg0_16)
 		if arg0_14.isAnim then
@@ -163,7 +159,6 @@ function var0_0.DoExit(arg0_20)
 				arg0_20:emit(NewCommanderMediator.ON_LOCK, arg0_20.contextData.commander.id, 1)
 				arg0_20:emit(var0_0.ON_CLOSE)
 			end,
-			layer = LayerWeightConst.SECOND_LAYER + 2,
 			onNo = function()
 				arg0_20:emit(var0_0.ON_CLOSE)
 			end
@@ -252,7 +247,7 @@ function var0_0.onBackPressed(arg0_30)
 end
 
 function var0_0.willExit(arg0_31)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_31._tf, pg.UIMgr.GetInstance().UIMain)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_31._tf, pg.UIMgr.GetInstance().UIMain)
 	arg0_31.treePanel:Destroy()
 	arg0_31.msgbox:Destroy()
 	retCommanderPaintingPrefab(arg0_31.paintTF, arg0_31.painting:getPainting())

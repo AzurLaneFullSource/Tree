@@ -791,8 +791,7 @@ function var0_0.EnergyCheck(arg0_50, arg1_50, arg2_50, arg3_50, arg4_50)
 			end,
 			onNo = function()
 				arg2_50(false)
-			end,
-			weight = LayerWeightConst.TOP_LAYER
+			end
 		})
 	else
 		existCall(arg3_50, true)

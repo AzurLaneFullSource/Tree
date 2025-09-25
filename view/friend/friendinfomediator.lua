@@ -6,21 +6,31 @@ var0_0.OPEN_BACKYARD = "FriendInfoMediator:OPEN_BACKYARD"
 var0_0.TOGGLE_BLACK = "FriendInfoMediator:TOGGLE_BLACK"
 var0_0.INFORM = "FriendInfoMediator:INFORM"
 var0_0.INFORM_BACKYARD = "FriendInfoMediator:INFORM_BACKYARD"
+var0_0.OPEN_ISLAND_CARD = "FriendInfoMediator:OPEN_ISLAND_CARD"
 
 function var0_0.register(arg0_1)
 	local var0_1 = arg0_1.contextData.friend
 
 	assert(var0_1, "friend is nil")
 	arg0_1.viewComponent:setFriend(var0_1)
-	arg0_1:bind(var0_0.INFORM_BACKYARD, function(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2)
+	arg0_1:bind(var0_0.OPEN_ISLAND_CARD, function(arg0_2)
+		arg0_1:addSubLayers(Context.New({
+			mediator = IslandOtherCardMediator,
+			viewComponent = IslandOtherCardLayer,
+			data = {
+				userId = arg0_1.contextData.friend.id
+			}
+		}))
+	end)
+	arg0_1:bind(var0_0.INFORM_BACKYARD, function(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
 		arg0_1:sendNotification(GAME.INFORM_THEME_TEMPLATE, {
-			uid = arg1_2,
-			content = arg2_2,
-			tid = arg3_2,
-			playerName = arg4_2
+			uid = arg1_3,
+			content = arg2_3,
+			tid = arg3_3,
+			playerName = arg4_3
 		})
 	end)
-	arg0_1:bind(var0_0.OPEND_FRIEND, function(arg0_3)
+	arg0_1:bind(var0_0.OPEND_FRIEND, function(arg0_4)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
 			limit = 20,
@@ -28,34 +38,33 @@ function var0_0.register(arg0_1)
 			type = MSGBOX_TYPE_INPUT,
 			placeholder = i18n("friend_request_msg_placeholder"),
 			title = i18n("friend_request_msg_title"),
-			onYes = function(arg0_4)
+			onYes = function(arg0_5)
 				arg0_1:sendNotification(GAME.FRIEND_SEND_REQUEST, {
 					id = var0_1.id,
-					msg = arg0_4
+					msg = arg0_5
 				})
 			end
 		})
 	end)
-	arg0_1:bind(var0_0.OPEN_RESUME, function(arg0_5)
+	arg0_1:bind(var0_0.OPEN_RESUME, function(arg0_6)
 		arg0_1:addSubLayers(Context.New({
 			mediator = resumeMediator,
 			viewComponent = resumeLayer,
 			data = {
 				player = var0_1,
-				parent = arg0_1.contextData.parent,
-				LayerWeightMgr_groupName = LayerWeightConst.GROUP_NOTIFICATION
+				parent = arg0_1.contextData.parent
 			}
 		}))
 	end)
-	arg0_1:bind(var0_0.OPEN_BACKYARD, function(arg0_6)
+	arg0_1:bind(var0_0.OPEN_BACKYARD, function(arg0_7)
 		arg0_1:sendNotification(GAME.VISIT_BACKYARD, var0_1.id)
 	end)
-	arg0_1:bind(var0_0.TOGGLE_BLACK, function(arg0_7)
-		local var0_7 = getProxy(FriendProxy)
-		local var1_7 = var0_1.id
+	arg0_1:bind(var0_0.TOGGLE_BLACK, function(arg0_8)
+		local var0_8 = getProxy(FriendProxy)
+		local var1_8 = var0_1.id
 
-		if var0_7:getBlackPlayerById(var1_7) ~= nil then
-			arg0_1:sendNotification(GAME.FRIEND_RELIEVE_BLACKLIST, var1_7)
+		if var0_8:getBlackPlayerById(var1_8) ~= nil then
+			arg0_1:sendNotification(GAME.FRIEND_RELIEVE_BLACKLIST, var1_8)
 		else
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = false,
@@ -66,11 +75,11 @@ function var0_0.register(arg0_1)
 			})
 		end
 	end)
-	arg0_1:bind(var0_0.INFORM, function(arg0_9, arg1_9, arg2_9, arg3_9)
+	arg0_1:bind(var0_0.INFORM, function(arg0_10, arg1_10, arg2_10, arg3_10)
 		arg0_1:sendNotification(GAME.INFORM, {
-			playerId = arg1_9,
-			info = arg2_9,
-			content = arg3_9
+			playerId = arg1_10,
+			info = arg2_10,
+			content = arg3_10
 		})
 	end)
 
@@ -83,7 +92,7 @@ function var0_0.register(arg0_1)
 	arg0_1.viewComponent:setFriendProxy(var1_1)
 end
 
-function var0_0.listNotificationInterests(arg0_10)
+function var0_0.listNotificationInterests(arg0_11)
 	return {
 		GAME.VISIT_BACKYARD_DONE,
 		GAME.GET_BLACK_LIST_DONE,
@@ -95,28 +104,28 @@ function var0_0.listNotificationInterests(arg0_10)
 	}
 end
 
-function var0_0.handleNotification(arg0_11, arg1_11)
-	local var0_11 = arg1_11:getName()
-	local var1_11 = arg1_11:getBody()
+function var0_0.handleNotification(arg0_12, arg1_12)
+	local var0_12 = arg1_12:getName()
+	local var1_12 = arg1_12:getBody()
 
-	if var0_11 == GAME.VISIT_BACKYARD_DONE then
-		arg0_11.viewComponent:emit(BaseUI.ON_CLOSE)
-		arg0_11:sendNotification(GAME.GO_SCENE, SCENE.COURTYARD, {
-			player = var1_11.player,
-			dorm = var1_11.dorm,
+	if var0_12 == GAME.VISIT_BACKYARD_DONE then
+		arg0_12.viewComponent:emit(BaseUI.ON_CLOSE)
+		arg0_12:sendNotification(GAME.GO_SCENE, SCENE.COURTYARD, {
+			player = var1_12.player,
+			dorm = var1_12.dorm,
 			mode = CourtYardConst.SYSTEM_VISIT
 		})
-	elseif var0_11 == GAME.GET_BLACK_LIST_DONE or var0_11 == GAME.FRIEND_ADD_BLACKLIST_DONE or var0_11 == GAME.FRIEND_RELIEVE_BLACKLIST_DONE then
-		arg0_11.viewComponent:updateBlack()
-	elseif var0_11 == GAME.INFORM_DONE or var0_11 == GAME.INFORM_THEME_TEMPLATE_DONE then
-		arg0_11.viewComponent:closeInfromPanel()
+	elseif var0_12 == GAME.GET_BLACK_LIST_DONE or var0_12 == GAME.FRIEND_ADD_BLACKLIST_DONE or var0_12 == GAME.FRIEND_RELIEVE_BLACKLIST_DONE then
+		arg0_12.viewComponent:updateBlack()
+	elseif var0_12 == GAME.INFORM_DONE or var0_12 == GAME.INFORM_THEME_TEMPLATE_DONE then
+		arg0_12.viewComponent:closeInfromPanel()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
-			parent = arg0_11.contextData.parent,
+			parent = arg0_12.contextData.parent,
 			content = i18n("inform_sueecss_tip")
 		})
-	elseif var0_11 == GAME.FINISH_STAGE then
-		arg0_11.viewComponent:closeView()
+	elseif var0_12 == GAME.FINISH_STAGE then
+		arg0_12.viewComponent:closeView()
 	end
 end
 

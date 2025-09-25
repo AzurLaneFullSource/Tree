@@ -101,8 +101,7 @@ function var0_0.didEnter(arg0_8)
 				yesText = "text_buy",
 				content = i18n("word_diamond_tip", arg0_8.player:getFreeGem(), arg0_8.player:getChargeGem(), arg0_8.player:getTotalGem()),
 				onYes = var0_11,
-				alignment = TextAnchor.UpperLeft,
-				weight = LayerWeightConst.TOP_LAYER
+				alignment = TextAnchor.UpperLeft
 			})
 		else
 			var0_11()

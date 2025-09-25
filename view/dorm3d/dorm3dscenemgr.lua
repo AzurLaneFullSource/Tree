@@ -88,15 +88,9 @@ function var0_0.LoadTimelineScene(arg0_9, arg1_9, arg2_9)
 			SceneOpMgr.Inst:LoadSceneAsync(string.lower("dorm3d/character/" .. arg1_9.assetRootName .. "/timeline/" .. arg1_9.name .. "/" .. arg1_9.name .. "_scene"), arg1_9.name, LoadSceneMode.Additive, function(arg0_13, arg1_13)
 				existCall(arg1_9.loadSceneFunc, arg0_13, arg1_13)
 
-				local var0_13 = GameObject.Find("[sequence]").transform:GetComponent(typeof(UnityEngine.Playables.PlayableDirector))
+				local var0_13 = GameObject.Find("[camera]").transform:GetComponentInChildren(typeof(Camera))
 
-				var0_13:Stop()
-
-				local var1_13 = GameObject.Find("[camera]").transform:GetComponentInChildren(typeof(Camera))
-
-				setActive(var1_13, false)
-				TimelineSupport.InitTimeline(var0_13)
-				TimelineSupport.InitSubtitle(var0_13, arg1_9.callName)
+				setActive(var0_13, false)
 				arg0_12()
 			end)
 		end)

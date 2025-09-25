@@ -57,12 +57,12 @@ end
 function var0_0.Show(arg0_9)
 	arg0_9.super.Show(arg0_9)
 	arg0_9:Flush()
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_9._tf, {
+	arg0_9:OverlayPanel(arg0_9._tf, {
 		pbList = {
 			arg0_9.blurTF
-		},
-		groupName = LayerWeightConst.GROUP_ISLAND
+		}
 	})
+	IslandGuideChecker.CheckGuide("ISLAND_GUIDE_15")
 end
 
 function var0_0.Flush(arg0_10)
@@ -115,7 +115,7 @@ function var0_0.Hide(arg0_13)
 end
 
 function var0_0.OnHide(arg0_14)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_14._tf, arg0_14._parentTf)
+	arg0_14:UnOverlayPanel(arg0_14._tf, arg0_14._parentTf)
 end
 
 function var0_0.OnDestroy(arg0_15)

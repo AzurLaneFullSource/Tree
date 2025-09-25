@@ -59,7 +59,7 @@ function var0_0.register(arg0_1)
 			viewComponent = EquipmentDesignLayer,
 			mediator = EquipmentDesignMediator,
 			data = {
-				LayerWeightMgr_groupName = LayerWeightConst.GROUP_EQUIPMENTSCENE
+				groupName = arg0_1.viewComponent:getGroupName()
 			}
 		}))
 	end)
@@ -81,7 +81,7 @@ function var0_0.register(arg0_1)
 			viewComponent = SpWeaponDesignLayer,
 			mediator = SpWeaponDesignMediator,
 			data = {
-				LayerWeightMgr_groupName = LayerWeightConst.GROUP_EQUIPMENTSCENE
+				groupName = arg0_1.viewComponent:getGroupName()
 			}
 		}))
 	end)

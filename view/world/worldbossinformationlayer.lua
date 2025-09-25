@@ -125,10 +125,8 @@ function var0_0.didEnter(arg0_3)
 		})
 		arg0_3:UpdateHpbar()
 	end)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_3._tf, {
-		interactableAlways = true
-	})
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_3.layer, {
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_3._tf)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_3.layer, {
 		pbList = {
 			arg0_3.downBG,
 			arg0_3.attributes[1],
@@ -137,8 +135,7 @@ function var0_0.didEnter(arg0_3)
 			arg0_3.top,
 			arg0_3.AdditionBuffTF,
 			arg0_3.EquipmentBuffTF
-		},
-		groupName = LayerWeightConst.GROUP_BOSSINFORMATION
+		}
 	})
 end
 
@@ -566,7 +563,7 @@ end
 
 function var0_0.willExit(arg0_38)
 	arg0_38:DestroyAwardPanel()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_38.layer, arg0_38._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_38.layer, arg0_38._tf)
 	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_38._tf)
 
 	if arg0_38.resPanel then

@@ -25,9 +25,7 @@ function var0_0.init(arg0_4)
 
 	arg0_4.isBlock = true
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf, false, {
-		weight = LayerWeightConst.THIRD_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf)
 end
 
 function var0_0.onBackPressed(arg0_6)
@@ -60,7 +58,7 @@ function var0_0.didEnter(arg0_7)
 end
 
 function var0_0.willExit(arg0_9)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_9._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_9._tf)
 end
 
 return var0_0

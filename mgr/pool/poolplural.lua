@@ -19,7 +19,7 @@ end
 function var1_0.Enqueue(arg0_2, arg1_2, arg2_2)
 	arg0_2.balance = arg0_2.balance - 1
 
-	if arg2_2 or #arg0_2.items >= arg0_2.capacity then
+	if arg2_2 and not arg0_2.keep or #arg0_2.items >= arg0_2.capacity then
 		var0_0.Destroy(arg1_2)
 
 		return true
@@ -51,7 +51,7 @@ function var1_0.NewItem(arg0_4)
 end
 
 function var1_0.AllReturned(arg0_5)
-	return arg0_5.balance == 0
+	return arg0_5.balance == 0 and not arg0_5.keep
 end
 
 function var1_0.ClearPrefab(arg0_6)
@@ -70,9 +70,13 @@ function var1_0.ClearItems(arg0_7)
 	arg0_7.balance = 0
 end
 
-function var1_0.Clear(arg0_8)
-	arg0_8:ClearPrefab()
-	arg0_8:ClearItems()
+function var1_0.SetKeep(arg0_8, arg1_8)
+	arg0_8.keep = arg1_8
+end
+
+function var1_0.Clear(arg0_9)
+	arg0_9:ClearPrefab()
+	arg0_9:ClearItems()
 end
 
 return var1_0

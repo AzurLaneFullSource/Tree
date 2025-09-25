@@ -189,13 +189,13 @@ function var0_0.UpdateEvent(arg0_15, arg1_15, arg2_15)
 		end
 
 		if not arg2_15:IsUnlock(arg0_15.guildVO.level) then
-			pg.TipsMgr:GetInstance():ShowTips(i18n("guild_level_no_enough"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_level_no_enough"))
 
 			return
 		end
 
 		if var0_15 and var0_15.id ~= arg2_15.id then
-			pg.TipsMgr:GetInstance():ShowTips(i18n("guild_open_event_info_when_exist_active", var0_15:getConfig("name")))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_open_event_info_when_exist_active", var0_15:getConfig("name")))
 
 			return
 		end

@@ -34,9 +34,8 @@ function var0_0.Show(arg0_5, arg1_5)
 
 	arg0_5.callback = arg1_5
 
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_5._tf, {
-		groupName = LayerWeightConst.GROUP_EDUCATE,
-		weight = LayerWeightConst.BASE_LAYER + 1
+	arg0_5:OverlayPanel(arg0_5._tf, {
+		groupDelta = 1
 	})
 
 	local var0_5 = arg0_5.contextData.char:GetRoundData()
@@ -79,7 +78,7 @@ function var0_0.Show(arg0_5, arg1_5)
 end
 
 function var0_0.Hide(arg0_12)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_12._tf)
+	arg0_12:UnOverlayPanel(arg0_12._tf)
 	existCall(arg0_12.callback)
 
 	arg0_12.callback = nil

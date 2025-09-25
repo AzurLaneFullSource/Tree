@@ -170,11 +170,9 @@ end
 
 function var0_0.overLayMyself(arg0_16, arg1_16)
 	if arg1_16 == true then
-		pg.UIMgr.GetInstance():BlurPanel(arg0_16._tf, false, {
-			weight = LayerWeightConst.TOP_LAYER
-		})
+		pg.UIMgr.GetInstance():BlurPanel(arg0_16._tf)
 	else
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_16._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_16._tf)
 	end
 end
 

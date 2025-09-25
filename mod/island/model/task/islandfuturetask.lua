@@ -12,30 +12,25 @@ function var0_0.bindConfigTable(arg0_2)
 end
 
 function var0_0.InitTimeCfg(arg0_3)
-	local var0_3 = arg0_3:getConfig("unlock_condition")
+	local var0_3 = arg0_3:getConfig("unlock_time")
 
-	if var0_3 == "" or #var0_3 == 0 then
-		arg0_3.unlockTime = 0
-		arg0_3.endTime = 0
-	end
-
-	local var1_3 = underscore.detect(var0_3, function(arg0_4)
-		return arg0_4[1] == IslandTaskConditionType.IN_TIME
-	end)
-
-	if not var1_3 then
+	if var0_3 == "always" then
 		arg0_3.unlockTime = 0
 		arg0_3.endTime = 0
 	else
-		local var2_3 = pg.TimeMgr.GetInstance()
+		local var1_3 = pg.TimeMgr.GetInstance()
 
-		arg0_3.unlockTime = var2_3:parseTimeFromConfig(var1_3[2][1])
-		arg0_3.endTime = var2_3:parseTimeFromConfig(var1_3[2][2])
+		arg0_3.unlockTime = var1_3:parseTimeFromConfig(var0_3[1])
+		arg0_3.endTime = var1_3:parseTimeFromConfig(var0_3[2])
 	end
 end
 
-function var0_0.GetUnlockTime(arg0_5)
-	return arg0_5.unlockTime
+function var0_0.GetUnlockTime(arg0_4)
+	return arg0_4.unlockTime
+end
+
+function var0_0.IsMatchUnlockTime(arg0_5)
+	return pg.TimeMgr.GetInstance():GetServerTime() > arg0_5.unlockTime
 end
 
 function var0_0.InTime(arg0_6)
@@ -56,7 +51,7 @@ function var0_0.CheckAcceptOnApproach(arg0_8, arg1_8)
 	return arg0_8:getConfig("trigger_data") == arg1_8 and arg0_8:getConfig("trigger_type") == 2
 end
 
-function var0_0.IsUnlock(arg0_9)
+function var0_0.IsMatchUnlockConditions(arg0_9)
 	local var0_9 = arg0_9:getConfig("unlock_condition")
 
 	if var0_9 == "" or #var0_9 == 0 then
@@ -68,25 +63,22 @@ function var0_0.IsUnlock(arg0_9)
 	end)
 end
 
-function var0_0.IsUnlockWaitTime(arg0_11)
-	local var0_11 = arg0_11:getConfig("unlock_condition")
+function var0_0.IsUnlock(arg0_11)
+	return arg0_11:IsMatchUnlockTime() and arg0_11:IsMatchUnlockConditions()
+end
 
-	if var0_11 == "" or #var0_11 == 0 then
+function var0_0.IsUnlockWaitTime(arg0_12)
+	if arg0_12.unlockTime == 0 then
 		return false
 	end
 
-	for iter0_11, iter1_11 in ipairs(var0_11) do
-		local var1_11 = IslandTaskConditionType.IsMatch(iter1_11)
-		local var2_11 = iter1_11[1] == IslandTaskConditionType.IN_TIME
+	local var0_12 = arg0_12:getConfig("unlock_condition")
 
-		if var2_11 and var1_11 then
-			return false
-		elseif not var2_11 and not var1_11 then
-			return false
-		end
+	if var0_12 == "" or #var0_12 == 0 then
+		return false
 	end
 
-	return true
+	return arg0_12:IsMatchUnlockConditions() and not arg0_12:IsMatchUnlockTime()
 end
 
 return var0_0

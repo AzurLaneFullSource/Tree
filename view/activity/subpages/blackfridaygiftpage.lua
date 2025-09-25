@@ -198,6 +198,7 @@ function var0_0.OnCharge(arg0_16, arg1_16)
 		local var5_16
 		local var6_16 = {
 			isChargeType = true,
+			commodity = arg1_16,
 			infoTip = arg1_16:GetInfoTip(),
 			icon = "chargeicon/" .. arg1_16:getConfig("picture"),
 			name = arg1_16:getConfig("name_display"),
@@ -242,6 +243,7 @@ function var0_0.OnCharge(arg0_16, arg1_16)
 			isMonthCard = false,
 			isChargeType = false,
 			isLocalPrice = false,
+			commodity = arg1_16,
 			icon = var9_16.icon,
 			name = var9_16.name,
 			tipExtra = i18n("charge_title_getitem"),

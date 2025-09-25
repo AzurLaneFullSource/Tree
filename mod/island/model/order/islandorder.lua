@@ -14,6 +14,7 @@ function var0_0.Flush(arg0_2, arg1_2)
 	arg0_2.tendency = arg1_2.cur_select
 	arg0_2.startTime = arg1_2.start_time
 	arg0_2.submitTime = arg1_2.submit_time
+	arg0_2.reduceTime = 0
 	arg0_2.showFlag = arg1_2.view_flag
 	arg0_2.consumeList = {}
 
@@ -128,36 +129,48 @@ function var0_0.IsUrgency(arg0_16)
 	return false
 end
 
-function var0_0.IsFirm(arg0_17)
+function var0_0.IsActivity(arg0_17)
 	return false
 end
 
-function var0_0.GetTitle(arg0_18)
+function var0_0.IsFirm(arg0_18)
+	return false
+end
+
+function var0_0.GetTitle(arg0_19)
 	return i18n("island_order_type_1")
 end
 
-function var0_0.IsEmpty(arg0_19)
-	return arg0_19.showFlag == IslandOrderSlot.SHOW_FLAG_TOMORROW and arg0_19:IsLoading()
+function var0_0.IsEmpty(arg0_20)
+	return arg0_20.showFlag == IslandOrderSlot.SHOW_FLAG_TOMORROW and arg0_20:IsLoading()
 end
 
-function var0_0.IsLoading(arg0_20)
-	return pg.TimeMgr.GetInstance():GetServerTime() < arg0_20.submitTime
+function var0_0.IsLoading(arg0_21)
+	return pg.TimeMgr.GetInstance():GetServerTime() < arg0_21:GetCanSubmitTime()
 end
 
-function var0_0.CanReplace(arg0_21)
-	return not arg0_21:IsEmpty() and not arg0_21:IsLoading()
+function var0_0.CanReplace(arg0_22)
+	return not arg0_22:IsEmpty() and not arg0_22:IsLoading()
 end
 
-function var0_0.GetTotalTime(arg0_22)
-	return arg0_22.submitTime - arg0_22.startTime
+function var0_0.GetTotalTime(arg0_23)
+	return arg0_23.submitTime - arg0_23.startTime
 end
 
-function var0_0.GetDisappearTime(arg0_23)
+function var0_0.GetDisappearTime(arg0_24)
 	return -1
 end
 
-function var0_0.GetCanSubmitTime(arg0_24)
-	return arg0_24.submitTime
+function var0_0.GetCanSubmitTime(arg0_25)
+	return arg0_25.submitTime - arg0_25.reduceTime
+end
+
+function var0_0.SetReduceTime(arg0_26, arg1_26)
+	arg0_26.reduceTime = arg1_26
+end
+
+function var0_0.AddReduceTime(arg0_27, arg1_27)
+	arg0_27.reduceTime = arg0_27.reduceTime + arg1_27
 end
 
 return var0_0

@@ -17,12 +17,10 @@ function var0_0.OnInit(arg0_2)
 	arg0_2.favorUIList = UIItemList.New(arg0_2:findTF("panel/bg/view/content", arg0_2.favorPanelTF), arg0_2:findTF("panel/bg/view/content/tpl", arg0_2.favorPanelTF))
 	arg0_2.favorCurTF = arg0_2:findTF("panel/bg/cur", arg0_2.favorPanelTF)
 
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_2._tf, {
+	arg0_2:OverlayPanel(arg0_2._tf, {
 		pbList = {
 			arg0_2:findTF("panel/bg", arg0_2.favorPanelTF)
-		},
-		groupName = LayerWeightConst.GROUP_EDUCATE,
-		weight = LayerWeightConst.BASE_LAYER
+		}
 	})
 	arg0_2:addListener()
 	arg0_2:Flush()
@@ -123,7 +121,7 @@ end
 
 function var0_0.OnDestroy(arg0_14)
 	arg0_14.favorPanelAnimEvent:SetEndEvent(nil)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_14._tf)
+	arg0_14:UnOverlayPanel(arg0_14._tf)
 end
 
 return var0_0

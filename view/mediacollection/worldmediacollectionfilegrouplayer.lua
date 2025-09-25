@@ -69,12 +69,11 @@ function var0_0.UpdateGroupList(arg0_4)
 end
 
 function var0_0.BlurTip(arg0_7)
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_7.emptyTip, {
+	arg0_7:OverlayPanel(arg0_7.emptyTip, {
+		groupDelta = -1,
 		pbList = {
 			arg0_7.emptyTip:Find("EmptyTip")
-		},
-		groupName = LayerWeightConst.GROUP_COLLECTION,
-		weight = LayerWeightConst.BASE_LAYER - 1
+		}
 	})
 	arg0_7.emptyTip:SetSiblingIndex(0)
 
@@ -83,7 +82,7 @@ end
 
 function var0_0.UnBlurTip(arg0_8)
 	if arg0_8.blurFlag then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_8.emptyTip, arg0_8._tf)
+		arg0_8:UnOverlayPanel(arg0_8.emptyTip, arg0_8._tf)
 	end
 
 	arg0_8.blurFlag = nil

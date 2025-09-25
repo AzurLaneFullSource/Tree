@@ -15,12 +15,14 @@ function var0_0.register(arg0_1)
 
 	arg0_1.viewComponent:setInGuild(var1_1:getRawData() ~= nil)
 
-	local var2_1 = arg0_1:getAllMessages()
+	local var2_1 = getProxy(NotificationProxy):getAllMessages()
 
 	arg0_1.viewComponent:setMessages(var2_1)
 	arg0_1:bind(var0_0.ON_SEND_PUBLIC, function(arg0_2, arg1_2, arg2_2)
 		if arg2_2 == "$ rndsec refresh" and Application.isEditor then
 			MainRandomFlagShipSequence.ForceRandom()
+		elseif arg2_2 == "$ force gc" then
+			gcAll(true)
 		elseif arg2_2:match("$ rndskin print %d+") and Application.isEditor then
 			local var0_2 = string.gmatch(arg2_2, "%d+")
 
@@ -129,7 +131,7 @@ function var0_0.register(arg0_1)
 			data = {
 				callback = arg1_7,
 				pos = arg2_7,
-				LayerWeightMgr_groupName = LayerWeightConst.GROUP_NOTIFICATION,
+				groupName = arg0_1.viewComponent:getGroupName(),
 				emojiIconCallback = function(arg0_8)
 					arg0_1.viewComponent:insertEmojiToInputText(arg0_8)
 				end
@@ -194,7 +196,7 @@ function var0_0.handleNotification(arg0_10, arg1_10)
 					msg = arg0_10.contextData.msg,
 					form = arg0_10.contextData.form,
 					parent = arg0_10.contextData.chatViewParent,
-					LayerWeightMgr_groupName = LayerWeightConst.GROUP_NOTIFICATION
+					groupName = arg0_10.viewComponent:getGroupName()
 				}
 			}))
 
@@ -208,56 +210,27 @@ function var0_0.handleNotification(arg0_10, arg1_10)
 	end
 end
 
-function var0_0.getAllMessages(arg0_12)
-	local var0_12 = {}
-	local var1_12 = getProxy(ChatProxy)
-
-	_.each(var1_12:getRawData(), function(arg0_13)
-		table.insert(var0_12, arg0_13)
-	end)
-
-	local var2_12 = getProxy(GuildProxy)
-
-	if var2_12:getRawData() then
-		_.each(var2_12:getChatMsgs(), function(arg0_14)
-			table.insert(var0_12, arg0_14)
-		end)
+function var0_0.onChangeChatRoomDone(arg0_12, arg1_12)
+	if arg0_12.viewComponent.tempRoomSendBits then
+		NotificationLayer.ChannelBits.send = arg0_12.viewComponent.tempRoomSendBits
 	end
 
-	local var3_12 = getProxy(FriendProxy)
-
-	_.each(var3_12:getCacheMsgList(), function(arg0_15)
-		table.insert(var0_12, arg0_15)
-	end)
-
-	return _(var0_12):chain():filter(function(arg0_16)
-		return not var3_12:isInBlackList(arg0_16.playerId)
-	end):sort(function(arg0_17, arg1_17)
-		return arg0_17.timestamp < arg1_17.timestamp
-	end):value()
-end
-
-function var0_0.onChangeChatRoomDone(arg0_18, arg1_18)
-	if arg0_18.viewComponent.tempRoomSendBits then
-		NotificationLayer.ChannelBits.send = arg0_18.viewComponent.tempRoomSendBits
+	if arg0_12.viewComponent.tempRoomRecvBits then
+		NotificationLayer.ChannelBits.recv = arg0_12.viewComponent.tempRoomRecvBits
 	end
 
-	if arg0_18.viewComponent.tempRoomRecvBits then
-		NotificationLayer.ChannelBits.recv = arg0_18.viewComponent.tempRoomRecvBits
-	end
+	arg0_12.viewComponent:closeChangeRoomPanel()
 
-	arg0_18.viewComponent:closeChangeRoomPanel()
+	local var0_12 = getProxy(NotificationProxy):getAllMessages()
 
-	local var0_18 = arg0_18:getAllMessages()
+	arg0_12.viewComponent:setMessages(var0_12)
+	arg0_12.viewComponent:updateChatChannel()
+	arg0_12.viewComponent:updateFilter()
+	arg0_12.viewComponent:updateAll()
 
-	arg0_18.viewComponent:setMessages(var0_18)
-	arg0_18.viewComponent:updateChatChannel()
-	arg0_18.viewComponent:updateFilter()
-	arg0_18.viewComponent:updateAll()
-
-	if arg1_18 then
-		arg0_18.viewComponent:setPlayer(arg1_18)
-		arg0_18.viewComponent:updateRoom()
+	if arg1_12 then
+		arg0_12.viewComponent:setPlayer(arg1_12)
+		arg0_12.viewComponent:updateRoom()
 	end
 end
 

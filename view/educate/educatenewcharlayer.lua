@@ -47,12 +47,11 @@ function var0_0.addListener(arg0_5)
 end
 
 function var0_0.didEnter(arg0_7)
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_7.blurPanel, {
+	arg0_7:OverlayPanel(arg0_7.blurPanel, {
+		groupDelta = 1,
 		pbList = {
 			arg0_7.blurPanel
-		},
-		groupName = LayerWeightConst.GROUP_EDUCATE,
-		weight = arg0_7:getWeightFromData() + 1
+		}
 	})
 	setInputText(arg0_7.callInput, arg0_7.defaultName)
 end
@@ -68,7 +67,7 @@ function var0_0.willExit(arg0_9)
 		var0_9()
 	end
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_9.blurPanel, arg0_9._tf)
+	arg0_9:UnOverlayPanel(arg0_9.blurPanel, arg0_9._tf)
 end
 
 return var0_0

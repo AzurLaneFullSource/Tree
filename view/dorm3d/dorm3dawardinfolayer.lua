@@ -24,9 +24,7 @@ function var0_0.init(arg0_2)
 
 	arg0_2.itemContainer = arg0_2._tf:Find("panel/content")
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, false, {
-		weight = LayerWeightConst.THIRD_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
 end
 
 function var0_0.didEnter(arg0_5)
@@ -39,6 +37,7 @@ function var0_0.didEnter(arg0_5)
 			updateCustomDrop(arg2_6, var0_6)
 			onButton(arg0_5, arg2_6, function()
 				arg0_5:emit(BaseUI.ON_NEW_DROP, {
+					style = "dorm",
 					drop = var0_6
 				})
 			end, SFX_PANEL)
@@ -74,7 +73,7 @@ function var0_0.onBackPressed(arg0_13)
 end
 
 function var0_0.willExit(arg0_14)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_14._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_14._tf)
 end
 
 return var0_0

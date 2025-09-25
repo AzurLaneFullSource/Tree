@@ -22,86 +22,87 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	end, IslandConst.SYNC_TIME_INTERVAL, -1)
 end
 
-function var0_0.Init(arg0_5, arg1_5, arg2_5)
-	arg0_5:InitPlayer()
-	arg0_5:InitVisitor()
-	arg0_5:InitAgora(arg2_5 or {})
-	arg0_5:InitWorldObject(arg1_5)
-	arg0_5:InitSyncObj()
-	arg0_5.collectClientStateTimer:Start()
+function var0_0.Op(arg0_5, arg1_5, ...)
+	arg0_5.controller:Receive(arg1_5, ...)
 end
 
-function var0_0.Update(arg0_6)
+function var0_0.Init(arg0_6, arg1_6, arg2_6)
+	arg0_6:InitPlayer()
+	arg0_6:InitVisitor()
+	arg0_6:InitAgora(arg2_6 or {})
+	arg0_6:InitWorldObject(arg1_6)
+	arg0_6:InitSyncObj()
+	arg0_6.collectClientStateTimer:Start()
+end
+
+function var0_0.Update(arg0_7)
 	xpcall(function()
-		arg0_6.syncDataDelayedProcessor:Update()
-		arg0_6.syncObjDelayedProcessor:Update()
-		arg0_6:UpdateVisitorUnit()
+		arg0_7.syncDataDelayedProcessor:Update()
+		arg0_7.syncObjDelayedProcessor:Update()
 	end, function(...)
 		errorMsg(debug.traceback(...))
 	end)
 end
 
-function var0_0.InitPlayer(arg0_9)
-	arg0_9.player = SyncLocalPlayer.New(arg0_9.playerId, arg0_9.view.player)
+function var0_0.InitPlayer(arg0_10)
+	arg0_10.player = SyncLocalPlayer.New(arg0_10.playerId, arg0_10.view.player)
 end
 
-function var0_0.InitVisitor(arg0_10)
-	local var0_10 = arg0_10.island:GetVisitorAgency():GetMapVisitorList()
+function var0_0.InitVisitor(arg0_11)
+	local var0_11 = arg0_11.island:GetVisitorAgency():GetMapVisitorList()
 
-	for iter0_10, iter1_10 in pairs(var0_10) do
-		local var1_10 = arg0_10.view:GetUnitModule(iter1_10.id)
+	for iter0_11, iter1_11 in pairs(var0_11) do
+		local var1_11 = arg0_11.view:GetUnitModuleWithType(IslandConst.UNIT_LIST_PLAYER, iter1_11.id)
 
-		arg0_10.visitorDic[iter1_10.id] = SyncUnitVisitor.New(var1_10)
+		arg0_11.visitorDic[iter1_11.id] = SyncUnitVisitor.New(var1_11)
 	end
 end
 
-function var0_0.OnVisitorEnter(arg0_11, arg1_11, arg2_11)
-	arg0_11.visitorDic[arg1_11] = SyncUnitVisitor.New(arg2_11)
+function var0_0.OnVisitorEnter(arg0_12, arg1_12, arg2_12)
+	arg0_12.visitorDic[arg1_12] = SyncUnitVisitor.New(arg2_12)
 end
 
-function var0_0.OnVisitorExit(arg0_12, arg1_12)
-	local var0_12 = arg0_12.visitorDic[arg1_12]
+function var0_0.OnVisitorExit(arg0_13, arg1_13)
+	local var0_13 = arg0_13.visitorDic[arg1_13]
 
-	if var0_12 then
-		local var1_12 = var0_12:GetLastInteract()
+	if var0_13 then
+		local var1_13 = var0_13:GetLastInteract()
 
-		if var1_12 then
-			arg0_12:GetUnit(var1_12.type, var1_12.id):RemoveOwner(arg1_12)
+		if var1_13 then
+			arg0_13:GetUnit(var1_13.type, var1_13.id):RemoveOwner(arg1_13)
 
-			if var1_12.type == IslandConst.SYNC_TYPE_AGORA then
-				arg0_12.controller:InterActionEnd(var1_12.id, arg1_12, true)
-			elseif var1_12.type == IslandConst.SYNC_TYPE_UNIT_STATIC then
-				arg0_12.controller:WorldObjectInterActionEnd(var1_12.id, arg1_12, true)
+			if var1_13.type == IslandConst.SYNC_TYPE_AGORA then
+				arg0_13:Op("InterActionEndSync", var1_13.id, arg1_13)
+			elseif var1_13.type == IslandConst.SYNC_TYPE_UNIT_STATIC then
+				arg0_13:Op("WorldObjectInterActionEnd", var1_13.id, arg1_13, true)
 			end
 		end
 
-		arg0_12.syncDataDelayedProcessor:RemoveDataById(arg1_12)
-		var0_12:Dispose()
+		arg0_13.syncDataDelayedProcessor:RemoveDataById(arg1_13)
+		var0_13:Dispose()
 
-		arg0_12.visitorDic[arg1_12] = nil
+		arg0_13.visitorDic[arg1_13] = nil
 	end
 end
 
-function var0_0.UpdateLocalPlayer(arg0_13)
-	local var0_13 = {}
-
-	if arg0_13.player:IsLoaded() and not arg0_13.player:InTimeline() then
-		local var1_13 = arg0_13.player:CreateSyncData()
-
-		table.insert(var0_13, var1_13)
+function var0_0.UpdateLocalPlayer(arg0_14)
+	if table.getCount(arg0_14.visitorDic) <= 1 then
+		return
 	end
 
-	if #var0_13 > 0 then
+	local var0_14 = {}
+
+	if arg0_14.player:IsLoaded() and not arg0_14.player:InTimeline() then
+		local var1_14 = arg0_14.player:CreateSyncData()
+
+		table.insert(var0_14, var1_14)
+	end
+
+	if #var0_14 > 0 then
 		pg.m02:sendNotification(GAME.ISLAND_SYNC_DATA, {
-			data = var0_13,
-			islandId = arg0_13.island.id
+			data = var0_14,
+			islandId = arg0_14.island.id
 		})
-	end
-end
-
-function var0_0.UpdateVisitorUnit(arg0_14)
-	for iter0_14, iter1_14 in pairs(arg0_14.visitorDic) do
-		iter1_14:Update()
 	end
 end
 
@@ -115,13 +116,12 @@ end
 
 function var0_0.UpdateVisitorSyncData(arg0_17, arg1_17)
 	local var0_17 = arg1_17.id
-	local var1_17 = arg0_17.visitorDic[var0_17]
 
-	if not var1_17 then
+	if not arg0_17.visitorDic[var0_17] then
 		return
 	end
 
-	var1_17:UpdateSyncData(arg1_17)
+	arg0_17:Op("SetVisitorSyncData", var0_17, arg1_17)
 end
 
 function var0_0.SyncVisitorExist(arg0_18, arg1_18)
@@ -138,45 +138,83 @@ function var0_0.InitAgora(arg0_19, arg1_19)
 	arg0_19.unitDic[IslandConst.SYNC_TYPE_AGORA] = var0_19
 end
 
-function var0_0.OnClearAgora(arg0_20)
-	return
+function var0_0.CancelAgoraInteract(arg0_20)
+	local var0_20 = arg0_20.unitDic[IslandConst.SYNC_TYPE_AGORA]
+
+	if not var0_20 then
+		return
+	end
+
+	for iter0_20, iter1_20 in pairs(var0_20) do
+		if iter1_20:OwnerCount() > 0 then
+			for iter2_20, iter3_20 in pairs(iter1_20.owners) do
+				arg0_20:Op("InterActionEndSync", iter0_20, iter3_20)
+
+				if iter3_20 == arg0_20.playerId then
+					arg0_20.player:SetInTimeline(false)
+				end
+			end
+		end
+	end
 end
 
-function var0_0.InitWorldObject(arg0_21, arg1_21)
-	local var0_21 = {}
+function var0_0.ResumeAgoraInteract(arg0_21)
+	local var0_21 = arg0_21.unitDic[IslandConst.SYNC_TYPE_AGORA]
 
-	for iter0_21, iter1_21 in ipairs(arg1_21) do
-		if iter1_21.type == IslandConst.UNIT_TYPE_ITEM_INTERACT then
-			var0_21[iter1_21.id] = SyncUnitInteract.New(iter1_21.id, IslandConst.SYNC_TYPE_UNIT_STATIC)
+	if not var0_21 then
+		return
+	end
+
+	for iter0_21, iter1_21 in pairs(var0_21) do
+		if iter1_21:OwnerCount() > 0 then
+			for iter2_21, iter3_21 in pairs(iter1_21.owners) do
+				arg0_21:Op("InterActionSync", iter0_21, iter3_21, iter2_21)
+			end
+		end
+	end
+end
+
+function var0_0.ClearAgoraInteractData(arg0_22)
+	arg0_22.unitDic[IslandConst.SYNC_TYPE_AGORA] = {}
+end
+
+function var0_0.InitWorldObject(arg0_23, arg1_23)
+	local var0_23 = {}
+
+	for iter0_23, iter1_23 in ipairs(arg1_23) do
+		if iter1_23.type == IslandConst.UNIT_TYPE_ITEM_INTERACT then
+			var0_23[iter1_23.id] = SyncUnitInteract.New(iter1_23.id, IslandConst.SYNC_TYPE_UNIT_STATIC)
 		end
 	end
 
-	arg0_21.unitDic[IslandConst.SYNC_TYPE_UNIT_STATIC] = var0_21
+	arg0_23.unitDic[IslandConst.SYNC_TYPE_UNIT_STATIC] = var0_23
 end
 
-function var0_0.InitSyncObj(arg0_22)
-	local var0_22 = getProxy(IslandProxy):GetSyncObjInitData()
+function var0_0.InitSyncObj(arg0_24)
+	local var0_24 = getProxy(IslandProxy):GetSyncObjInitData()
 
-	for iter0_22, iter1_22 in ipairs(var0_22) do
-		local var1_22 = arg0_22:GetUnit(iter1_22.type, iter1_22.id)
+	for iter0_24, iter1_24 in ipairs(var0_24) do
+		local var1_24 = arg0_24:GetUnit(iter1_24.type, iter1_24.id)
 
-		if var1_22 then
-			var1_22:InitOwner(iter1_22.slots)
+		if var1_24 then
+			var1_24:InitOwner(iter1_24.slots)
 
-			if iter1_22.type == IslandConst.SYNC_TYPE_UNIT_STATIC then
-				if var1_22:OwnerCount() > 0 then
-					for iter2_22, iter3_22 in pairs(var1_22.owners) do
-						if iter3_22 ~= arg0_22.playerId then
-							arg0_22.controller:WorldObjectInterAction(iter1_22.tid, iter3_22, iter1_22.status, true)
+			if iter1_24.type == IslandConst.SYNC_TYPE_UNIT_STATIC then
+				if var1_24:OwnerCount() > 0 then
+					for iter2_24, iter3_24 in pairs(var1_24.owners) do
+						if iter3_24 ~= arg0_24.playerId then
+							arg0_24.visitorDic[iter3_24]:RecordLastInteract(iter1_24.id, iter1_24.type)
+							arg0_24:Op("WorldObjectInterAction", iter1_24.id, iter3_24, iter1_24.status, true)
 						end
 					end
-				elseif iter1_22.status > 0 then
-					arg0_22.controller:WorldObjectInitStatus(iter1_22.tid, iter1_22.status)
+				elseif iter1_24.status > 0 then
+					arg0_24:Op("WorldObjectInitStatus", iter1_24.id, iter1_24.status)
 				end
-			elseif iter1_22.type == IslandConst.SYNC_TYPE_AGORA and var1_22:OwnerCount() > 0 then
-				for iter4_22, iter5_22 in pairs(var1_22.owners) do
-					if iter5_22 ~= arg0_22.playerId then
-						arg0_22.controller:InterAction(iter1_22.tid, iter5_22, true)
+			elseif iter1_24.type == IslandConst.SYNC_TYPE_AGORA and var1_24:OwnerCount() > 0 then
+				for iter4_24, iter5_24 in pairs(var1_24.owners) do
+					if iter5_24 ~= arg0_24.playerId then
+						arg0_24.visitorDic[iter5_24]:RecordLastInteract(iter1_24.id, iter1_24.type)
+						arg0_24:Op("InterActionSync", iter1_24.id, iter5_24, iter4_24)
 					end
 				end
 			end
@@ -184,117 +222,117 @@ function var0_0.InitSyncObj(arg0_22)
 	end
 end
 
-function var0_0.GetUnit(arg0_23, arg1_23, arg2_23)
-	if not arg0_23.unitDic[arg1_23] then
+function var0_0.GetUnit(arg0_25, arg1_25, arg2_25)
+	if not arg0_25.unitDic[arg1_25] then
 		return nil
 	end
 
-	return arg0_23.unitDic[arg1_23][arg2_23]
+	return arg0_25.unitDic[arg1_25][arg2_25]
 end
 
-function var0_0.HandleSyncObj(arg0_24, arg1_24)
-	for iter0_24, iter1_24 in ipairs(arg1_24) do
-		arg0_24.syncObjDelayedProcessor:Add(iter1_24.id, iter1_24)
+function var0_0.HandleSyncObj(arg0_26, arg1_26)
+	for iter0_26, iter1_26 in ipairs(arg1_26) do
+		arg0_26.syncObjDelayedProcessor:Add(iter1_26.id, iter1_26)
 	end
 end
 
-function var0_0.UpdateSyncObj(arg0_25, arg1_25)
-	if arg1_25.type == IslandConst.SYNC_TYPE_AGORA then
-		arg0_25:OnVisitorInteract(arg1_25, function(arg0_26)
-			if not arg0_25:SyncVisitorExist(arg0_26) then
+function var0_0.UpdateSyncObj(arg0_27, arg1_27)
+	if arg1_27.type == IslandConst.SYNC_TYPE_AGORA then
+		arg0_27:OnVisitorInteract(arg1_27, function(arg0_28, arg1_28)
+			if not arg0_27:SyncVisitorExist(arg0_28) then
 				return
 			end
 
-			arg0_25.controller:InterAction(arg1_25.id, arg0_26, true)
-		end, function(arg0_27)
-			arg0_25.controller:InterActionEnd(arg1_25.id, arg0_27, true)
-		end)
-	elseif arg1_25.type == IslandConst.SYNC_TYPE_UNIT_STATIC then
-		arg0_25:OnVisitorInteract(arg1_25, function(arg0_28)
-			arg0_25:GetUnit(arg1_25.type, arg1_25.id):SetStatus(arg1_25.status)
-
-			if not arg0_25:SyncVisitorExist(arg0_28) then
-				return
-			end
-
-			arg0_25.controller:WorldObjectInterAction(arg1_25.id, arg0_28, arg1_25.status, true)
+			arg0_27:Op("InterActionSync", arg1_27.id, arg0_28, arg1_28)
 		end, function(arg0_29)
-			arg0_25.controller:WorldObjectInterActionEnd(arg1_25.id, arg0_29, true)
+			arg0_27:Op("InterActionEndSync", arg1_27.id, arg0_29)
+		end)
+	elseif arg1_27.type == IslandConst.SYNC_TYPE_UNIT_STATIC then
+		arg0_27:OnVisitorInteract(arg1_27, function(arg0_30)
+			arg0_27:GetUnit(arg1_27.type, arg1_27.id):SetStatus(arg1_27.status)
+
+			if not arg0_27:SyncVisitorExist(arg0_30) then
+				return
+			end
+
+			arg0_27:Op("WorldObjectInterAction", arg1_27.id, arg0_30, arg1_27.status, true)
+		end, function(arg0_31)
+			arg0_27:Op("WorldObjectInterActionEnd", arg1_27.id, arg0_31, true)
 		end)
 	end
 end
 
-function var0_0.OnVisitorInteract(arg0_30, arg1_30, arg2_30, arg3_30)
-	local var0_30, var1_30 = arg0_30:GetUnit(arg1_30.type, arg1_30.id):UpdateOwner(arg1_30.slots)
+function var0_0.OnVisitorInteract(arg0_32, arg1_32, arg2_32, arg3_32)
+	local var0_32, var1_32, var2_32 = arg0_32:GetUnit(arg1_32.type, arg1_32.id):UpdateOwner(arg1_32.slots)
 
-	if var1_30 == arg0_30.playerId then
+	if var1_32 == arg0_32.playerId then
 		return
 	end
 
-	local var2_30 = arg0_30.visitorDic[var1_30]
+	local var3_32 = arg0_32.visitorDic[var1_32]
 
-	if var0_30 then
-		var2_30:RecordLastInteract(arg1_30.id, arg1_30.type)
-		arg2_30(var1_30)
+	if var0_32 then
+		var3_32:RecordLastInteract(arg1_32.id, arg1_32.type)
+		arg2_32(var1_32, var2_32)
 	else
-		var2_30:ClearLastInteract()
-		arg3_30(var1_30)
+		var3_32:ClearLastInteract()
+		arg3_32(var1_32)
 	end
 end
 
-function var0_0.TryControlUnit(arg0_31, arg1_31, arg2_31, arg3_31, arg4_31, arg5_31)
-	local var0_31 = arg0_31:GetUnit(arg1_31, arg2_31)
-
-	arg0_31:ControlUnit(arg2_31, arg3_31, 1, arg4_31, arg1_31, function(arg0_32)
-		if arg0_32 then
-			arg0_31.player:SetInTimeline(true)
-			var0_31:SetStatus(arg4_31)
-		end
-
-		arg5_31(arg0_32)
-	end)
-end
-
-function var0_0.EndControlUnit(arg0_33, arg1_33, arg2_33, arg3_33, arg4_33)
+function var0_0.TryControlUnit(arg0_33, arg1_33, arg2_33, arg3_33, arg4_33, arg5_33)
 	local var0_33 = arg0_33:GetUnit(arg1_33, arg2_33)
 
-	arg0_33:ControlUnit(arg2_33, arg3_33, 0, var0_33:GetStatus(), arg1_33, function(arg0_34)
+	arg0_33:ControlUnit(arg2_33, arg3_33, 1, arg4_33, arg1_33, function(arg0_34)
 		if arg0_34 then
-			arg0_33.player:SetInTimeline(false)
+			arg0_33.player:SetInTimeline(true)
+			var0_33:SetStatus(arg4_33)
 		end
 
-		arg4_33(arg0_34)
+		arg5_33(arg0_34)
 	end)
 end
 
-function var0_0.ControlUnit(arg0_35, arg1_35, arg2_35, arg3_35, arg4_35, arg5_35, arg6_35)
-	if arg0_35.controlResultDic[arg1_35] then
-		arg6_35(false)
+function var0_0.EndControlUnit(arg0_35, arg1_35, arg2_35, arg3_35, arg4_35)
+	local var0_35 = arg0_35:GetUnit(arg1_35, arg2_35)
+
+	arg0_35:ControlUnit(arg2_35, arg3_35, 0, var0_35:GetStatus(), arg1_35, function(arg0_36)
+		if arg0_36 then
+			arg0_35.player:SetInTimeline(false)
+		end
+
+		arg4_35(arg0_36)
+	end)
+end
+
+function var0_0.ControlUnit(arg0_37, arg1_37, arg2_37, arg3_37, arg4_37, arg5_37, arg6_37)
+	if arg0_37.controlResultDic[arg1_37] then
+		arg6_37(false)
 
 		return
 	end
 
-	arg0_35.controlResultDic[arg1_35] = arg6_35
+	arg0_37.controlResultDic[arg1_37] = arg6_37
 
 	pg.m02:sendNotification(GAME.ISLAND_SYNC_CONTROL, {
-		islandId = arg0_35.island.id,
-		objId = arg1_35,
-		slotId = arg2_35,
-		op = arg3_35,
-		status = arg4_35,
-		type = arg5_35,
-		onResult = function(arg0_36)
-			local var0_36 = arg0_36 == 0
+		islandId = arg0_37.island.id,
+		objId = arg1_37,
+		slotId = arg2_37,
+		op = arg3_37,
+		status = arg4_37,
+		type = arg5_37,
+		onResult = function(arg0_38)
+			local var0_38 = arg0_38 == 0
 
-			existCall(arg0_35.controlResultDic[arg1_35], var0_36)
+			existCall(arg0_37.controlResultDic[arg1_37], var0_38)
 
-			arg0_35.controlResultDic[arg1_35] = nil
+			arg0_37.controlResultDic[arg1_37] = nil
 		end
 	})
 end
 
-function var0_0.Dispose(arg0_37)
-	arg0_37.collectClientStateTimer:Stop()
+function var0_0.Dispose(arg0_39)
+	arg0_39.collectClientStateTimer:Stop()
 end
 
 return var0_0

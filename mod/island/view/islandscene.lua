@@ -7,501 +7,538 @@ function var0_0.getUIName(arg0_1)
 	return "IslandUI"
 end
 
-function var0_0.GetIsland(arg0_2)
+function var0_0.loadingQueue(arg0_2)
+	return function(arg0_3)
+		pg.SceneAnimMgr.GetInstance():CommonSceneChange("Dorm3DLoading", function(arg0_4)
+			return arg0_3(arg0_4)
+		end)
+	end
+end
+
+function var0_0.GetIsland(arg0_5)
 	return getProxy(IslandProxy):GetIsland()
 end
 
-function var0_0.PlayBGM(arg0_3)
-	pg.BgmMgr.GetInstance():StopPlay()
+function var0_0.init(arg0_6)
+	arg0_6.visitorBtn = arg0_6:findTF("top/visitor")
+	arg0_6.levelPanel = IslandLevelPanel.New(arg0_6._tf, arg0_6.event)
+	arg0_6.taskTrackPanel = Island3dTaskTrackPanel.New(arg0_6._tf, arg0_6.event)
+	arg0_6.awardDisplayPanel = IslandAwardDisplayInMainPanel.New(arg0_6._tf, arg0_6.event)
+	arg0_6.btnContainer = IslandMainBtnContainer.New(arg0_6._tf:Find("top/btn_container"), arg0_6.event)
 end
 
-function var0_0.init(arg0_4)
-	arg0_4.visitorBtn = arg0_4:findTF("top/visitor")
-	arg0_4.levelPanel = IslandLevelPanel.New(arg0_4._tf, arg0_4.event)
-	arg0_4.taskTrackPanel = Island3dTaskTrackPanel.New(arg0_4._tf, arg0_4.event)
-	arg0_4.awardDisplayPanel = IslandAwardDisplayInMainPanel.New(arg0_4._tf, arg0_4.event)
-	arg0_4.btnContainer = IslandMainBtnContainer.New(arg0_4._tf:Find("top/btn_container"), arg0_4.event)
-end
-
-function var0_0.didEnter(arg0_5)
-	onButton(arg0_5, arg0_5.visitorBtn, function()
-		arg0_5:OpenPage(IslandVisitorPage)
+function var0_0.didEnter(arg0_7)
+	onButton(arg0_7, arg0_7.visitorBtn, function()
+		arg0_7:OpenPage(IslandVisitorPage)
 	end, SFX_PANEL)
-	arg0_5:SetUp()
+	arg0_7:SetUp()
+
+	local var0_7 = arg0_7.contextData.resumeCallback
+
+	arg0_7.contextData.resumeCallback = nil
+
+	existCall(var0_7)
 end
 
-function var0_0.SetUp(arg0_7)
+function var0_0.SetUp(arg0_9)
 	seriesAsync({
-		function(arg0_8)
-			arg0_7:SetDressUpIsEmpty(arg0_8)
+		function(arg0_10)
+			arg0_9:SetDressUpIsEmpty(arg0_10)
 		end
 	}, function()
-		arg0_7:StartCore()
+		arg0_9:StartCore()
 	end)
 end
 
-function var0_0.SetNameIfIsEmpty(arg0_10, arg1_10)
-	if not arg0_10:GetIsland():IsNew() then
-		arg1_10()
-
-		return
-	end
-
-	local var0_10 = IslandSetNamePage.New(arg0_10)
-
-	var0_10:ExecuteAction("Show", function()
-		var0_10:Destroy()
-		arg1_10()
-	end)
-end
-
-function var0_0.SetDressUpIsEmpty(arg0_12, arg1_12)
-	if not arg0_12:GetIsland():GetDressUpAgency():IsNew() then
+function var0_0.SetNameIfIsEmpty(arg0_12, arg1_12)
+	if not arg0_12:GetIsland():IsNew() then
 		arg1_12()
 
 		return
 	end
 
-	arg0_12:OpenPage(IslandShipFirstDressupPage, arg1_12)
+	local var0_12 = IslandSetNamePage.New(arg0_12)
+
+	var0_12:ExecuteAction("Show", function()
+		var0_12:Destroy()
+		arg1_12()
+	end)
 end
 
-function var0_0.AddListeners(arg0_13)
-	arg0_13:AddListener(GAME.ISLAND_UPGRADE_DONE, arg0_13.OnUpgrade)
-	arg0_13:AddListener(Island.EXP_ADD, arg0_13.OnExpChange)
-	arg0_13:AddListener(GAME.ISLAND_SET_NAME_DONE, arg0_13.OnModifyName)
-	arg0_13:AddListener(GAME.ISLAND_PROSPERITY_AWARD_DONE, arg0_13.OnGetProsperityAward)
-	arg0_13:AddListener(IslandTaskAgency.TASK_ADDED, arg0_13.OnAddedTask)
-	arg0_13:AddListener(IslandTaskAgency.TASK_UPDATED, arg0_13.OnUpdateTask)
-	arg0_13:AddListener(IslandTaskAgency.TASK_REMOVED, arg0_13.OnRemoveTask)
-	arg0_13:AddListener(IslandAchievementAgency.NEW_CAN_GET, arg0_13.OnNewAchievementCanGet)
-	arg0_13:AddListener(GAME.ISLAND_FINISH_DELEGATION_DONE, arg0_13.OnFinishDelegation)
-	arg0_13:AddListener(GAME.ISLAND_UNLOCK_TECH_DONE, arg0_13.OnUnlockTechnology)
-	arg0_13:AddListener(IslandCharacterAgency.ADD_SHIP, arg0_13.OnAddShip)
-	arg0_13:AddListener(IslandCharacterAgency.SHIP_LEVEL_UP, arg0_13.OnShipLevelUp)
-	arg0_13:AddListener(IslandCharacterAgency.SHIP_GET_STATE, arg0_13.OnShipGetState)
-	arg0_13:AddListener(IslandAblityAgency.UNLOCK_SYSTEM, arg0_13.OnUnlockSystem)
-	arg0_13:AddListener(IslandVisitorAgency.PLAYER_ADD, arg0_13.OnVisitorNumChange)
-	arg0_13:AddListener(IslandVisitorAgency.PLAYER_EXIT, arg0_13.OnVisitorNumChange)
-	arg0_13:AddListener(ISLAND_EX_EVT.ENTER_EDIT_AGORA, arg0_13.OnAgoraEnterEditMode)
-	arg0_13:AddListener(ISLAND_EX_EVT.EXIT_EDIT_AGORA, arg0_13.OnAgoraExitEditMode)
-	arg0_13:AddListener(ISLAND_EX_EVT.TRIGGER_TASK, arg0_13.OnTriggerTask)
-	arg0_13:AddListener(ISLAND_EX_EVT.SUBMIT_TASK, arg0_13.OnSubmitTask)
-	arg0_13:AddListener(ISLAND_EX_EVT.ADD_TASK_PROGRESS, arg0_13.OnAddTaskProgress)
-	arg0_13:AddListener(ISLAND_EX_EVT.PLAY_STORY, arg0_13.OnPlayStory)
-	arg0_13:AddListener(ISLAND_EX_EVT.SWITCH_MAP, arg0_13.OnSwitchMap)
-	arg0_13:AddListener(ISLAND_EX_EVT.SEEK_GAME_START, arg0_13.OnSeekGameStart)
-	arg0_13:AddListener(ISLAND_EX_EVT.SEEK_GAME_END, arg0_13.OnSeekGameEnd)
-	arg0_13:AddListener(ISLAND_EX_EVT.APPROACH_OBJECT, arg0_13.OnApproachObject)
-	arg0_13:AddListener(ISLAND_EX_EVT.PLAY_PERFORMANCE, arg0_13.OnPlayPerformance)
-	arg0_13:AddListener(ISLAND_EX_EVT.SHOW_INTERACTION, arg0_13.OnShowInteraction)
-	arg0_13:AddListener(ISLAND_EX_EVT.SWITCH_MAP_BY_POINT, arg0_13.OnSwitchMapByPoint)
-	arg0_13:AddListener(ISLAND_EX_EVT.NAV_PATH_DONE, arg0_13.OnNavPathDone)
-	arg0_13:AddListener(ISLAND_EX_EVT.OPEN_ANIMATION_OP, arg0_13.OnOpenAnimatonOpPage)
-	arg0_13:AddListener(ISLAND_EX_EVT.CLOSE_ANIMATION_OP, arg0_13.OnCloseAnimatonOpPage)
+function var0_0.SetDressUpIsEmpty(arg0_14, arg1_14)
+	if not arg0_14:GetIsland():GetDressUpAgency():IsNew() then
+		arg1_14()
+
+		return
+	end
+
+	arg0_14:OpenPage(IslandShipFirstDressupPage, arg1_14)
 end
 
-function var0_0.RemoveListeners(arg0_14)
-	arg0_14:RemoveListener(GAME.ISLAND_UPGRADE_DONE, arg0_14.OnUpgrade)
-	arg0_14:RemoveListener(Island.EXP_ADD, arg0_14.OnExpChange)
-	arg0_14:RemoveListener(GAME.ISLAND_SET_NAME_DONE, arg0_14.OnModifyName)
-	arg0_14:RemoveListener(GAME.ISLAND_PROSPERITY_AWARD_DONE, arg0_14.OnGetProsperityAward)
-	arg0_14:RemoveListener(IslandTaskAgency.TASK_ADDED, arg0_14.OnAddedTask)
-	arg0_14:RemoveListener(IslandTaskAgency.TASK_UPDATED, arg0_14.OnUpdateTask)
-	arg0_14:RemoveListener(IslandTaskAgency.TASK_REMOVED, arg0_14.OnRemoveTask)
-	arg0_14:RemoveListener(IslandAchievementAgency.NEW_CAN_GET, arg0_14.OnNewAchievementCanGet)
-	arg0_14:RemoveListener(GAME.ISLAND_FINISH_DELEGATION_DONE, arg0_14.OnFinishDelegation)
-	arg0_14:RemoveListener(GAME.ISLAND_UNLOCK_TECH_DONE, arg0_14.OnUnlockTechnology)
-	arg0_14:RemoveListener(IslandCharacterAgency.ADD_SHIP, arg0_14.OnAddShip)
-	arg0_14:RemoveListener(IslandCharacterAgency.SHIP_LEVEL_UP, arg0_14.OnShipLevelUp)
-	arg0_14:RemoveListener(IslandCharacterAgency.SHIP_GET_STATE, arg0_14.OnShipGetState)
-	arg0_14:RemoveListener(IslandAblityAgency.UNLOCK_SYSTEM, arg0_14.OnUnlockSystem)
-	arg0_14:RemoveListener(IslandVisitorAgency.PLAYER_ADD, arg0_14.OnVisitorNumChange)
-	arg0_14:RemoveListener(IslandVisitorAgency.PLAYER_EXIT, arg0_14.OnVisitorNumChange)
-	arg0_14:RemoveListener(ISLAND_EX_EVT.ENTER_EDIT_AGORA, arg0_14.OnAgoraEnterEditMode)
-	arg0_14:RemoveListener(ISLAND_EX_EVT.EXIT_EDIT_AGORA, arg0_14.OnAgoraExitEditMode)
-	arg0_14:RemoveListener(ISLAND_EX_EVT.TRIGGER_TASK, arg0_14.OnTriggerTask)
-	arg0_14:RemoveListener(ISLAND_EX_EVT.SUBMIT_TASK, arg0_14.OnSubmitTask)
-	arg0_14:RemoveListener(ISLAND_EX_EVT.ADD_TASK_PROGRESS, arg0_14.OnAddTaskProgress)
-	arg0_14:RemoveListener(ISLAND_EX_EVT.PLAY_STORY, arg0_14.OnPlayStory)
-	arg0_14:RemoveListener(ISLAND_EX_EVT.SWITCH_MAP, arg0_14.OnSwitchMap)
-	arg0_14:RemoveListener(ISLAND_EX_EVT.SEEK_GAME_START, arg0_14.OnSeekGameStart)
-	arg0_14:RemoveListener(ISLAND_EX_EVT.SEEK_GAME_END, arg0_14.OnSeekGameEnd)
-	arg0_14:RemoveListener(ISLAND_EX_EVT.APPROACH_OBJECT, arg0_14.OnApproachObject)
-	arg0_14:RemoveListener(ISLAND_EX_EVT.PLAY_PERFORMANCE, arg0_14.OnPlayPerformance)
-	arg0_14:RemoveListener(ISLAND_EX_EVT.SHOW_INTERACTION, arg0_14.OnShowInteraction)
-	arg0_14:RemoveListener(ISLAND_EX_EVT.SWITCH_MAP_BY_POINT, arg0_14.OnSwitchMapByPoint)
-	arg0_14:RemoveListener(ISLAND_EX_EVT.NAV_PATH_DONE, arg0_14.OnNavPathDone)
-	arg0_14:RemoveListener(ISLAND_EX_EVT.OPEN_ANIMATION_OP, arg0_14.OnOpenAnimatonOpPage)
-	arg0_14:RemoveListener(ISLAND_EX_EVT.CLOSE_ANIMATION_OP, arg0_14.OnCloseAnimatonOpPage)
+function var0_0.AddListeners(arg0_15)
+	arg0_15:AddListener(GAME.ISLAND_UPGRADE_DONE, arg0_15.OnUpgrade)
+	arg0_15:AddListener(Island.EXP_ADD, arg0_15.OnExpChange)
+	arg0_15:AddListener(GAME.ISLAND_SET_NAME_DONE, arg0_15.OnModifyName)
+	arg0_15:AddListener(GAME.ISLAND_PROSPERITY_AWARD_DONE, arg0_15.OnGetProsperityAward)
+	arg0_15:AddListener(IslandTaskAgency.TASK_ADDED, arg0_15.OnAddedTask)
+	arg0_15:AddListener(IslandTaskAgency.TASK_UPDATED, arg0_15.OnUpdateTask)
+	arg0_15:AddListener(IslandTaskAgency.TASK_REMOVED, arg0_15.OnRemoveTask)
+	arg0_15:AddListener(IslandAchievementAgency.NEW_CAN_GET, arg0_15.OnNewAchievementCanGet)
+	arg0_15:AddListener(GAME.ISLAND_FINISH_DELEGATION_DONE, arg0_15.OnFinishDelegation)
+	arg0_15:AddListener(GAME.ISLAND_UNLOCK_TECH_DONE, arg0_15.OnUnlockTechnology)
+	arg0_15:AddListener(IslandCharacterAgency.ADD_SHIP, arg0_15.OnAddShip)
+	arg0_15:AddListener(IslandCharacterAgency.SHIP_LEVEL_UP, arg0_15.OnShipLevelUp)
+	arg0_15:AddListener(IslandCharacterAgency.SHIP_GET_STATE, arg0_15.OnShipGetState)
+	arg0_15:AddListener(IslandAblityAgency.UNLOCK_SYSTEM, arg0_15.OnUnlockSystem)
+	arg0_15:AddListener(IslandVisitorAgency.PLAYER_ADD, arg0_15.OnVisitorNumChange)
+	arg0_15:AddListener(IslandVisitorAgency.PLAYER_EXIT, arg0_15.OnVisitorNumChange)
+	arg0_15:AddListener(ISLAND_EX_EVT.ENTER_EDIT_AGORA, arg0_15.OnAgoraEnterEditMode)
+	arg0_15:AddListener(ISLAND_EX_EVT.EXIT_EDIT_AGORA, arg0_15.OnAgoraExitEditMode)
+	arg0_15:AddListener(ISLAND_EX_EVT.TRIGGER_TASK, arg0_15.OnTriggerTask)
+	arg0_15:AddListener(ISLAND_EX_EVT.SUBMIT_TASK, arg0_15.OnSubmitTask)
+	arg0_15:AddListener(ISLAND_EX_EVT.ADD_TASK_PROGRESS, arg0_15.OnAddTaskProgress)
+	arg0_15:AddListener(ISLAND_EX_EVT.PLAY_STORY, arg0_15.OnPlayStory)
+	arg0_15:AddListener(ISLAND_EX_EVT.SWITCH_MAP, arg0_15.OnSwitchMap)
+	arg0_15:AddListener(ISLAND_EX_EVT.SEEK_GAME_START, arg0_15.OnSeekGameStart)
+	arg0_15:AddListener(ISLAND_EX_EVT.SEEK_GAME_END, arg0_15.OnSeekGameEnd)
+	arg0_15:AddListener(ISLAND_EX_EVT.APPROACH_OBJECT, arg0_15.OnApproachObject)
+	arg0_15:AddListener(ISLAND_EX_EVT.PLAY_PERFORMANCE, arg0_15.OnPlayPerformance)
+	arg0_15:AddListener(ISLAND_EX_EVT.SHOW_INTERACTION, arg0_15.OnShowInteraction)
+	arg0_15:AddListener(ISLAND_EX_EVT.SWITCH_MAP_BY_POINT, arg0_15.OnSwitchMapByPoint)
+	arg0_15:AddListener(ISLAND_EX_EVT.NAV_PATH, arg0_15.OnStartNavPath)
+	arg0_15:AddListener(ISLAND_EX_EVT.NAV_PATH_DONE, arg0_15.OnNavPathDone)
 end
 
-function var0_0.OnOpenAnimatonOpPage(arg0_15)
-	arg0_15.btnContainer:ActiveOrDisactive(false)
+function var0_0.RemoveListeners(arg0_16)
+	arg0_16:RemoveListener(GAME.ISLAND_UPGRADE_DONE, arg0_16.OnUpgrade)
+	arg0_16:RemoveListener(Island.EXP_ADD, arg0_16.OnExpChange)
+	arg0_16:RemoveListener(GAME.ISLAND_SET_NAME_DONE, arg0_16.OnModifyName)
+	arg0_16:RemoveListener(GAME.ISLAND_PROSPERITY_AWARD_DONE, arg0_16.OnGetProsperityAward)
+	arg0_16:RemoveListener(IslandTaskAgency.TASK_ADDED, arg0_16.OnAddedTask)
+	arg0_16:RemoveListener(IslandTaskAgency.TASK_UPDATED, arg0_16.OnUpdateTask)
+	arg0_16:RemoveListener(IslandTaskAgency.TASK_REMOVED, arg0_16.OnRemoveTask)
+	arg0_16:RemoveListener(IslandAchievementAgency.NEW_CAN_GET, arg0_16.OnNewAchievementCanGet)
+	arg0_16:RemoveListener(GAME.ISLAND_FINISH_DELEGATION_DONE, arg0_16.OnFinishDelegation)
+	arg0_16:RemoveListener(GAME.ISLAND_UNLOCK_TECH_DONE, arg0_16.OnUnlockTechnology)
+	arg0_16:RemoveListener(IslandCharacterAgency.ADD_SHIP, arg0_16.OnAddShip)
+	arg0_16:RemoveListener(IslandCharacterAgency.SHIP_LEVEL_UP, arg0_16.OnShipLevelUp)
+	arg0_16:RemoveListener(IslandCharacterAgency.SHIP_GET_STATE, arg0_16.OnShipGetState)
+	arg0_16:RemoveListener(IslandAblityAgency.UNLOCK_SYSTEM, arg0_16.OnUnlockSystem)
+	arg0_16:RemoveListener(IslandVisitorAgency.PLAYER_ADD, arg0_16.OnVisitorNumChange)
+	arg0_16:RemoveListener(IslandVisitorAgency.PLAYER_EXIT, arg0_16.OnVisitorNumChange)
+	arg0_16:RemoveListener(ISLAND_EX_EVT.ENTER_EDIT_AGORA, arg0_16.OnAgoraEnterEditMode)
+	arg0_16:RemoveListener(ISLAND_EX_EVT.EXIT_EDIT_AGORA, arg0_16.OnAgoraExitEditMode)
+	arg0_16:RemoveListener(ISLAND_EX_EVT.TRIGGER_TASK, arg0_16.OnTriggerTask)
+	arg0_16:RemoveListener(ISLAND_EX_EVT.SUBMIT_TASK, arg0_16.OnSubmitTask)
+	arg0_16:RemoveListener(ISLAND_EX_EVT.ADD_TASK_PROGRESS, arg0_16.OnAddTaskProgress)
+	arg0_16:RemoveListener(ISLAND_EX_EVT.PLAY_STORY, arg0_16.OnPlayStory)
+	arg0_16:RemoveListener(ISLAND_EX_EVT.SWITCH_MAP, arg0_16.OnSwitchMap)
+	arg0_16:RemoveListener(ISLAND_EX_EVT.SEEK_GAME_START, arg0_16.OnSeekGameStart)
+	arg0_16:RemoveListener(ISLAND_EX_EVT.SEEK_GAME_END, arg0_16.OnSeekGameEnd)
+	arg0_16:RemoveListener(ISLAND_EX_EVT.APPROACH_OBJECT, arg0_16.OnApproachObject)
+	arg0_16:RemoveListener(ISLAND_EX_EVT.PLAY_PERFORMANCE, arg0_16.OnPlayPerformance)
+	arg0_16:RemoveListener(ISLAND_EX_EVT.SHOW_INTERACTION, arg0_16.OnShowInteraction)
+	arg0_16:RemoveListener(ISLAND_EX_EVT.SWITCH_MAP_BY_POINT, arg0_16.OnSwitchMapByPoint)
+	arg0_16:RemoveListener(ISLAND_EX_EVT.NAV_PATH, arg0_16.OnStartNavPath)
+	arg0_16:RemoveListener(ISLAND_EX_EVT.NAV_PATH_DONE, arg0_16.OnNavPathDone)
 end
 
-function var0_0.OnCloseAnimatonOpPage(arg0_16)
-	arg0_16.btnContainer:ActiveOrDisactive(true)
+function var0_0.OnOpenAnimatonOpPage(arg0_17)
+	arg0_17.btnContainer:ActiveOrDisactive(false)
 end
 
-function var0_0.OnNavPathDone(arg0_17, arg1_17)
-	if arg1_17 then
+function var0_0.OnCloseAnimatonOpPage(arg0_18)
+	arg0_18.btnContainer:ActiveOrDisactive(true)
+end
+
+function var0_0.OnStartNavPath(arg0_19, arg1_19)
+	if arg1_19 then
 		pg.m02:sendNotification(GAME.STORY_UPDATE, {
-			storyId = arg1_17,
-			callback = function()
-				arg0_17:GetIsland():DispatchEvent(IslandProxy.END_PATHFINDER)
-			end
+			storyId = arg1_19
 		})
 	end
 end
 
-function var0_0.OnExpChange(arg0_19)
-	arg0_19.levelPanel:ExecuteAction("UpdateIslandInfo")
+function var0_0.OnNavPathDone(arg0_20, arg1_20)
+	if arg1_20 then
+		arg0_20:GetIsland():DispatchEvent(IslandProxy.END_PATHFINDER)
+	end
 end
 
-function var0_0.ShowExpAdd(arg0_20, arg1_20, arg2_20)
-	arg0_20.levelPanel:ExecuteAction("ShowExpAdd", arg1_20, arg2_20)
+function var0_0.OnExpChange(arg0_21)
+	arg0_21.levelPanel:ExecuteAction("UpdateIslandInfo")
 end
 
-function var0_0.OnSwitchMapByPoint(arg0_21, arg1_21)
-	local var0_21 = arg1_21.mapId
-
-	arg0_21:GetIsland():SetLastExitPosition(arg1_21.mapId, arg1_21.position, arg1_21.rotation)
-	arg0_21:emit(IslandBaseMediator.SWITCH_MAP, var0_21)
+function var0_0.ShowExpAdd(arg0_22, arg1_22, arg2_22)
+	arg0_22.levelPanel:ExecuteAction("ShowExpAdd", arg1_22, arg2_22)
 end
 
-function var0_0.OnShowInteraction(arg0_22, arg1_22)
-	IslandGuideChecker.CheckOnShowInteraction(arg1_22)
+function var0_0.OnSwitchMapByPoint(arg0_23, arg1_23)
+	local var0_23 = arg1_23.mapId
+
+	arg0_23:GetIsland():SetLastExitPosition(arg1_23.mapId, arg1_23.position, arg1_23.rotation)
+	arg0_23:emit(IslandBaseMediator.SWITCH_MAP, var0_23)
 end
 
-function var0_0.OnPlayPerformance(arg0_23, arg1_23)
-	arg0_23:PlayPerformance(arg1_23)
+function var0_0.OnShowInteraction(arg0_24, arg1_24)
+	IslandGuideChecker.CheckOnShowInteraction(arg1_24)
 end
 
-function var0_0.OnSeekGameStart(arg0_24)
-	arg0_24:TryDisVisible()
+function var0_0.OnPlayPerformance(arg0_25, arg1_25)
+	arg0_25:PlayPerformance(arg1_25)
 end
 
-function var0_0.OnSeekGameEnd(arg0_25)
-	arg0_25:TryVisible()
+function var0_0.OnSeekGameStart(arg0_26)
+	arg0_26:TryDisVisible()
 end
 
-function var0_0.OnSwitchMap(arg0_26, arg1_26)
-	local var0_26 = pg.island_world_objects[arg1_26].mapId
-
-	arg0_26:emit(IslandBaseMediator.SWITCH_MAP, var0_26, arg1_26)
+function var0_0.OnSeekGameEnd(arg0_27)
+	arg0_27:TryVisible()
 end
 
-function var0_0.OnPlayStory(arg0_27, arg1_27)
-	arg0_27:PlayStory(arg1_27)
+function var0_0.OnSwitchMap(arg0_28, arg1_28)
+	local var0_28 = pg.island_world_objects[arg1_28].mapId
+
+	arg0_28:emit(IslandBaseMediator.SWITCH_MAP, var0_28, arg1_28)
 end
 
-function var0_0.OnTriggerTask(arg0_28, arg1_28)
-	local var0_28 = arg0_28:GetIsland():GetTaskAgency():GetFutureTask(arg1_28)
+function var0_0.OnPlayStory(arg0_29, arg1_29)
+	arg0_29:PlayStory(arg1_29)
+end
 
-	if var0_28 and var0_28:IsUnlock() then
-		arg0_28:emit(IslandMediator.ON_ACCEPT_TASK, {
-			arg1_28
+function var0_0.OnTriggerTask(arg0_30, arg1_30)
+	local var0_30 = arg0_30:GetIsland():GetTaskAgency():GetFutureTask(arg1_30)
+
+	if var0_30 and var0_30:IsUnlock() then
+		arg0_30:emit(IslandMediator.ON_ACCEPT_TASK, {
+			arg1_30
 		})
 	end
 end
 
-function var0_0.OnSubmitTask(arg0_29, arg1_29)
-	local var0_29 = arg0_29:GetIsland():GetTaskAgency():GetTask(arg1_29)
+function var0_0.OnSubmitTask(arg0_31, arg1_31)
+	local var0_31 = arg0_31:GetIsland():GetTaskAgency():GetTask(arg1_31)
 
-	if var0_29 and var0_29:IsFinish() then
-		arg0_29:emit(IslandMediator.ON_SUBMIT_TASK, arg1_29)
+	if var0_31 and var0_31:IsFinish() then
+		arg0_31:emit(IslandMediator.ON_SUBMIT_TASK, arg1_31)
 	end
 end
 
-function var0_0.OnAddTaskProgress(arg0_30, arg1_30, arg2_30)
-	IslandTaskHelper.UpdateClientTaskProgress(arg1_30, arg2_30)
+function var0_0.OnAddTaskProgress(arg0_32, arg1_32, arg2_32)
+	IslandTaskHelper.UpdateClientTaskProgress(arg1_32, arg2_32)
 end
 
-function var0_0.OnApproachObject(arg0_31, arg1_31)
-	IslandTaskHelper.OnApproach(arg1_31)
+function var0_0.OnApproachObject(arg0_33, arg1_33)
+	IslandTaskHelper.OnApproach(arg1_33)
 end
 
-function var0_0.OnUpdateTrackTask(arg0_32, arg1_32)
-	arg0_32.traceTaskId = arg1_32
+function var0_0.OnUpdateTrackTask(arg0_34, arg1_34)
+	arg0_34.traceTaskId = arg1_34
 
-	if arg0_32.traceTaskId ~= 0 then
-		if not arg0_32.taskTrackPanel:isShowing() then
-			arg0_32.taskTrackPanel:ExecuteAction("Show")
+	if arg0_34.traceTaskId ~= 0 then
+		if not arg0_34.taskTrackPanel:isShowing() then
+			arg0_34.taskTrackPanel:ExecuteAction("Show")
 		else
-			arg0_32.taskTrackPanel:ExecuteAction("UpdateTask")
+			arg0_34.taskTrackPanel:ExecuteAction("UpdateTask")
 		end
 	end
 
-	arg0_32.btnContainer:OnTrackTaskChange()
-end
-
-function var0_0.OnAddedTask(arg0_33, arg1_33)
-	arg0_33.btnContainer:OnTrackTaskChange()
-end
-
-function var0_0.OnUpdateTask(arg0_34, arg1_34)
-	if arg0_34.traceTaskId and arg0_34.traceTaskId ~= arg1_34.id then
-		return
-	end
-
-	arg0_34.taskTrackPanel:ExecuteAction("UpdateProgress", arg1_34)
 	arg0_34.btnContainer:OnTrackTaskChange()
 end
 
-function var0_0.OnRemoveTask(arg0_35, arg1_35)
-	if arg0_35.traceTaskId and arg0_35.traceTaskId ~= arg1_35.id then
-		return
-	end
-
-	arg0_35.taskTrackPanel:ExecuteAction("RemoveTask")
+function var0_0.OnAddedTask(arg0_35, arg1_35)
 	arg0_35.btnContainer:OnTrackTaskChange()
 end
 
-function var0_0.UpdateTaskInfo(arg0_36)
-	local var0_36 = arg0_36:GetIsland():GetTaskAgency():GetTraceTask()
-
-	if var0_36 then
-		arg0_36.traceTaskId = var0_36.id
+function var0_0.OnUpdateTask(arg0_36, arg1_36)
+	if arg0_36.traceTaskId and arg0_36.traceTaskId ~= arg1_36.id then
+		return
 	end
 
-	if arg0_36.traceTaskId and arg0_36.traceTaskId ~= 0 then
-		arg0_36.taskTrackPanel:ExecuteAction("Show")
-	else
-		arg0_36.taskTrackPanel:ExecuteAction("Hide")
-	end
-
+	arg0_36.taskTrackPanel:ExecuteAction("UpdateProgress", arg1_36)
 	arg0_36.btnContainer:OnTrackTaskChange()
 end
 
-function var0_0.OnSetUpCore(arg0_37, arg1_37, arg2_37)
-	arg0_37.approachSpawnPointId = arg2_37
+function var0_0.OnRemoveTask(arg0_37, arg1_37)
+	if arg0_37.traceTaskId and arg0_37.traceTaskId ~= arg1_37.id then
+		return
+	end
+
+	arg0_37.taskTrackPanel:ExecuteAction("RemoveTask")
+	arg0_37.btnContainer:OnTrackTaskChange()
 end
 
-function var0_0.OnAgoraEnterEditMode(arg0_38)
-	setActive(arg0_38._tf, false)
+function var0_0.UpdateTaskInfo(arg0_38)
+	local var0_38 = arg0_38:GetIsland():GetTaskAgency():GetTraceTask()
+
+	if var0_38 then
+		arg0_38.traceTaskId = var0_38.id
+	end
+
+	if arg0_38.traceTaskId and arg0_38.traceTaskId ~= 0 then
+		arg0_38.taskTrackPanel:ExecuteAction("Show")
+	else
+		arg0_38.taskTrackPanel:ExecuteAction("Hide")
+	end
+
+	arg0_38.btnContainer:OnTrackTaskChange()
 end
 
-function var0_0.OnAgoraExitEditMode(arg0_39)
-	setActive(arg0_39._tf, true)
+function var0_0.OnSetUpCore(arg0_39, arg1_39, arg2_39)
+	arg0_39.approachSpawnPointId = arg2_39
 end
 
-function var0_0.OnShipGetState(arg0_40, arg1_40)
-	local var0_40 = arg1_40.ship
-	local var1_40 = arg1_40.status
-	local var2_40 = var0_40:GetName()
-
-	arg0_40:ShowToast({
-		type = IslandToast.TYPE_STATE,
-		content = i18n("island_toast_status", var1_40:GetName(), var2_40)
-	})
+function var0_0.OnAgoraEnterEditMode(arg0_40)
+	setActive(arg0_40._tf, false)
 end
 
-function var0_0.OnShipLevelUp(arg0_41, arg1_41)
-	local var0_41 = arg1_41:GetName()
-	local var1_41 = arg1_41:GetLevel()
-
-	arg0_41:ShowToast({
-		content = i18n("island_toast_level", var1_41, var0_41)
-	})
+function var0_0.OnAgoraExitEditMode(arg0_41)
+	setActive(arg0_41._tf, true)
 end
 
-function var0_0.OnAddShip(arg0_42, arg1_42)
-	local var0_42 = arg1_42:GetName()
-	local var1_42 = arg0_42:GetIsland():GetName()
+function var0_0.OnShipGetState(arg0_42, arg1_42)
+	local var0_42 = arg1_42.ship
+	local var1_42 = arg1_42.status
+	local var2_42 = var0_42:GetName()
 
 	arg0_42:ShowToast({
-		content = i18n("island_toast_ship", var1_42, var0_42)
+		type = IslandToast.TYPE_STATE,
+		content = i18n("island_toast_status", var1_42:GetName(), var2_42)
 	})
 end
 
-function var0_0.OnNewAchievementCanGet(arg0_43, arg1_43)
+function var0_0.OnShipLevelUp(arg0_43, arg1_43)
+	local var0_43 = arg1_43:GetName()
+	local var1_43 = arg1_43:GetLevel()
+
 	arg0_43:ShowToast({
-		content = i18n("island_achv_finish_tip", arg1_43:getConfig("name"))
+		content = i18n("island_toast_level", var1_43, var0_43)
 	})
 end
 
-function var0_0.OnFinishDelegation(arg0_44)
-	arg0_44.btnContainer:OnFinishDelegation()
+function var0_0.OnAddShip(arg0_44, arg1_44)
+	local var0_44 = arg1_44:GetName()
+	local var1_44 = arg0_44:GetIsland():GetName()
+
+	arg0_44:ShowToast({
+		content = i18n("island_toast_ship", var1_44, var0_44)
+	})
 end
 
-function var0_0.OnUnlockTechnology(arg0_45)
-	arg0_45.btnContainer:OnUnlockTechnology()
+function var0_0.OnNewAchievementCanGet(arg0_45, arg1_45)
+	if not IslandMainBtnTipHelper.IsUnlock("achievement") then
+		return
+	end
+
+	arg0_45:ShowToast({
+		content = i18n("island_achv_finish_tip", arg1_45:getConfig("name"))
+	})
 end
 
-function var0_0.OnUpgrade(arg0_46, arg1_46)
-	arg0_46.levelPanel:ExecuteAction("UpdateTip")
-	arg0_46.levelPanel:ExecuteAction("UpdateIslandInfo")
-	arg0_46:OpenPage(IslandUpgradeDisplayPage, arg1_46.dropData.abilitys, arg1_46.callback)
-	IslandGuideChecker.CheckGuide("ISLAND_GUIDE_5")
+function var0_0.OnFinishDelegation(arg0_46)
+	arg0_46.btnContainer:OnFinishDelegation()
 end
 
-function var0_0.OnModifyName(arg0_47)
-	arg0_47.levelPanel:ExecuteAction("UpdateIslandInfo")
+function var0_0.OnUnlockTechnology(arg0_47)
+	arg0_47.btnContainer:OnUnlockTechnology()
 end
 
-function var0_0.OnGetProsperityAward(arg0_48)
+function var0_0.OnUpgrade(arg0_48, arg1_48)
 	arg0_48.levelPanel:ExecuteAction("UpdateTip")
+	arg0_48.levelPanel:ExecuteAction("UpdateIslandInfo")
+	arg0_48:OpenPage(IslandUpgradeDisplayPage, arg1_48.dropData.abilitys, arg1_48.callback)
 end
 
-function var0_0.OnUnlockSystem(arg0_49, arg1_49)
-	arg0_49.btnContainer:OnUnlockSystem(arg1_49)
-	switch(arg1_49, {
+function var0_0.OnModifyName(arg0_49)
+	arg0_49.levelPanel:ExecuteAction("UpdateIslandInfo")
+end
+
+function var0_0.OnGetProsperityAward(arg0_50)
+	arg0_50.levelPanel:ExecuteAction("UpdateTip")
+end
+
+function var0_0.OnUnlockSystem(arg0_51, arg1_51)
+	arg0_51.btnContainer:OnUnlockSystem(arg1_51)
+	switch(arg1_51, {
 		[pg.island_set.main_page_function_unlock.key_value_varchar[1]] = function()
-			arg0_49.levelPanel:ExecuteAction("Show")
+			arg0_51.levelPanel:ExecuteAction("Show")
 		end,
 		[pg.island_set.main_page_function_unlock.key_value_varchar[2]] = function()
-			arg0_49.unlockTask = true
+			arg0_51.unlockTask = true
 
-			arg0_49.taskTrackPanel:ExecuteAction("SetUnlock")
-			arg0_49:UpdateTaskInfo()
+			arg0_51.taskTrackPanel:ExecuteAction("SetUnlock")
+			arg0_51:UpdateTaskInfo()
 		end,
 		[pg.island_set.main_page_function_unlock.key_value_varchar[3]] = function()
-			setActive(arg0_49.visitorBtn, true)
-			arg0_49:UpdateVisitorBtn()
+			setActive(arg0_51.visitorBtn, true)
+			arg0_51:UpdateVisitorBtn()
 		end
 	}, function()
 		return
 	end)
 end
 
-function var0_0.OnVisitorNumChange(arg0_54)
-	arg0_54:UpdateVisitorBtn()
+function var0_0.OnVisitorNumChange(arg0_56)
+	arg0_56:UpdateVisitorBtn()
 end
 
-function var0_0.OnSceneLoaded(arg0_55)
-	arg0_55:HandleAwardDisplay({})
-	var0_0.super.OnSceneLoaded(arg0_55)
+function var0_0.OnSceneLoaded(arg0_57)
+	arg0_57:HandleAwardDisplay({})
+	var0_0.super.OnSceneLoaded(arg0_57)
 
-	local var0_55 = arg0_55:GetIsland():GetAblityAgency()
+	local var0_57 = arg0_57:GetIsland():GetAblityAgency()
 
-	if var0_55:HasAbility(pg.island_set.main_page_function_unlock.key_value_varchar[1]) then
-		arg0_55.levelPanel:ExecuteAction("Show")
+	if var0_57:HasAbility(pg.island_set.main_page_function_unlock.key_value_varchar[1]) then
+		arg0_57.levelPanel:ExecuteAction("Show")
 	end
 
-	arg0_55.unlockTask = var0_55:HasAbility(pg.island_set.main_page_function_unlock.key_value_varchar[2])
+	arg0_57.unlockTask = var0_57:HasAbility(pg.island_set.main_page_function_unlock.key_value_varchar[2])
 
-	if arg0_55.unlockTask then
-		arg0_55:UpdateTaskInfo()
+	if arg0_57.unlockTask then
+		arg0_57:UpdateTaskInfo()
 	end
 
-	local var1_55 = var0_55:HasAbility(pg.island_set.main_page_function_unlock.key_value_varchar[3])
+	local var1_57 = var0_57:HasAbility(pg.island_set.main_page_function_unlock.key_value_varchar[3])
 
-	setActive(arg0_55.visitorBtn, var1_55)
+	setActive(arg0_57.visitorBtn, var1_57)
 
-	if var1_55 then
-		arg0_55:UpdateVisitorBtn()
+	if var1_57 then
+		arg0_57:UpdateVisitorBtn()
 	end
 
-	if arg0_55.approachSpawnPointId then
-		arg0_55:OnApproachObject(arg0_55.approachSpawnPointId)
+	if arg0_57.approachSpawnPointId then
+		arg0_57:OnApproachObject(arg0_57.approachSpawnPointId)
 
-		arg0_55.approachSpawnPointId = nil
+		arg0_57.approachSpawnPointId = nil
 	end
 
-	arg0_55:SequenceCheck()
+	arg0_57:SequenceCheck()
 end
 
-function var0_0.SequenceCheck(arg0_56)
+function var0_0.SequenceCheck(arg0_58)
 	seriesAsync({
-		function(arg0_57)
-			if pg.NewStoryMgr.GetInstance():IsPlayed("ISLAND1001000") then
-				arg0_57()
-			else
-				pg.NewStoryMgr.GetInstance():Play("ISLAND1001000", arg0_57)
-			end
-		end,
-		function(arg0_58)
-			if pg.NewStoryMgr.GetInstance():IsPlayed("ISLAND1001001_1") then
-				arg0_58()
-			else
-				arg0_56:PlayPerformance({
-					name = "ISLANDPERFORMANCE1",
-					callback = arg0_58
-				})
-			end
-		end,
 		function(arg0_59)
-			if arg0_56:GetIsland():GetSeasonAgency():NeedReset() then
-				arg0_56:emit(IslandMediator.ON_RESET_SEASON, arg0_59)
-			else
+			if pg.NewStoryMgr.GetInstance():IsPlayed("ISLAND1001001_1") then
 				arg0_59()
+			else
+				arg0_58:PlayPerformance({
+					name = "ISLANDPERFORMANCE1",
+					callback = arg0_59
+				})
 			end
 		end,
 		function(arg0_60)
-			local var0_60, var1_60, var2_60 = arg0_56:GetIsland():GetSeasonAgency():IsShowResetTip()
-
-			if var0_60 then
-				local var3_60 = var1_60 > 0 and i18n("island_season_window_end2", var1_60) or i18n("island_season_window_end")
-
-				arg0_56:ShowMsgbox({
-					hideNo = true,
-					type = IslandMsgBox.TYPE_SEASON_TIP,
-					tipTitle = var3_60,
-					content = i18n("island_season_window_rule"),
-					onHide = function()
-						arg0_56:GetIsland():GetSeasonAgency():SetResetTipFlag(var1_60)
-						arg0_60()
-					end
-				})
+			if arg0_58:GetIsland():GetSeasonAgency():NeedReset() then
+				arg0_58:emit(IslandMediator.ON_RESET_SEASON, arg0_60)
 			else
 				arg0_60()
 			end
 		end,
-		function(arg0_62)
-			arg0_56:GetIsland():GetTaskAgency():TrySubmitAutoTasks(arg0_62)
+		function(arg0_61)
+			local var0_61, var1_61, var2_61 = arg0_58:GetIsland():GetSeasonAgency():IsShowResetTip()
+
+			if var0_61 then
+				local var3_61 = var1_61 > 0 and i18n("island_season_window_end2", var1_61) or i18n("island_season_window_end")
+
+				arg0_58:ShowMsgbox({
+					hideNo = true,
+					type = IslandMsgBox.TYPE_SEASON_TIP,
+					tipTitle = var3_61,
+					content = i18n("island_season_window_rule"),
+					onHide = function()
+						arg0_58:GetIsland():GetSeasonAgency():SetResetTipFlag(var1_61)
+						arg0_61()
+					end
+				})
+			else
+				arg0_61()
+			end
 		end,
 		function(arg0_63)
-			arg0_56:GetIsland():GetTaskAgency():TryAcceptAutoTasks(arg0_63)
+			local var0_63 = arg0_58:GetIsland():GetTicketAgency():GetExpiredTickets()
+
+			if #var0_63 > 0 then
+				arg0_58:emit(IslandMediator.REMOVE_EXPIRED_TICKETS, var0_63, arg0_63)
+			else
+				arg0_63()
+			end
+		end,
+		function(arg0_64)
+			local var0_64 = arg0_58:GetIsland():GetTicketAgency():GetExpireRemindTickets()
+
+			if #var0_64 > 0 then
+				arg0_58:ShowMsgbox({
+					hideNo = true,
+					type = IslandMsgBox.TYPE_TICKET_EXPIRED,
+					body = {
+						type = IslandTicketExpiredMsgBoxWindow.TYPES.REMIND,
+						tickets = var0_64
+					},
+					onHide = function()
+						arg0_58:GetIsland():GetTicketAgency():SetRemindFlag()
+						arg0_64()
+					end
+				})
+			else
+				arg0_64()
+			end
+		end,
+		function(arg0_66)
+			arg0_58:GetIsland():GetTaskAgency():TrySubmitAutoTasks(arg0_66)
+		end,
+		function(arg0_67)
+			arg0_58:GetIsland():GetTaskAgency():TryAcceptAutoTasks(arg0_67)
 		end
 	}, function()
-		IslandGuideChecker.CheckOnLoaded(arg0_56:GetIsland():GetMapId())
+		IslandGuideChecker.CheckOnLoaded(arg0_58:GetIsland():GetMapId())
 	end)
 end
 
-function var0_0.UpdateVisitorBtn(arg0_65)
-	setText(arg0_65.visitorBtn:Find("num"), arg0_65:GetIsland():GetVisitorAgency():GetVisitorCnt())
+function var0_0.UpdateVisitorBtn(arg0_69)
+	setText(arg0_69.visitorBtn:Find("num"), arg0_69:GetIsland():GetVisitorAgency():GetVisitorCnt())
+	setText(arg0_69.visitorBtn:Find("Text"), i18n("island_visitor_button"))
 end
 
-function var0_0.UpdateMainAwardReward(arg0_66, arg1_66)
-	arg0_66.awardDisplayPanel:ExecuteAction("ShowAwards", arg1_66)
+function var0_0.UpdateMainAwardReward(arg0_70, arg1_70)
+	arg0_70.awardDisplayPanel:ExecuteAction("ShowAwards", arg1_70)
 end
 
-function var0_0.OnUnloadScene(arg0_67)
+function var0_0.OnUnloadScene(arg0_71)
 	return
 end
 
-function var0_0.OnVisible(arg0_68)
-	arg0_68:UpdateTaskInfo()
-	arg0_68.btnContainer:Flush()
+function var0_0.OnVisible(arg0_72)
+	arg0_72:UpdateTaskInfo()
+	arg0_72.btnContainer:Flush()
 
-	if not arg0_68:GetSubView(IslandStoryMgr):IsRunning() and not arg0_68.poppingQueue:AnyPlayerIsRunning() then
-		IslandGuideChecker.CheckOnLoaded(arg0_68:GetIsland():GetMapId())
+	if not arg0_72:GetSubView(IslandStoryMgr):IsRunning() and not arg0_72.poppingQueue:AnyPlayerIsRunning() then
+		IslandGuideChecker.CheckOnLoaded(arg0_72:GetIsland():GetMapId())
 	end
 end
 
-function var0_0.willExit(arg0_69)
-	if arg0_69.btnContainer then
-		arg0_69.btnContainer:Dispose()
+function var0_0.willExit(arg0_73)
+	if arg0_73.btnContainer then
+		arg0_73.btnContainer:Dispose()
 
-		arg0_69.btnContainer = nil
+		arg0_73.btnContainer = nil
 	end
 
-	if arg0_69.levelPanel then
-		arg0_69.levelPanel:Destroy()
+	if arg0_73.levelPanel then
+		arg0_73.levelPanel:Destroy()
 
-		arg0_69.levelPanel = nil
+		arg0_73.levelPanel = nil
 	end
 
-	if arg0_69.taskTrackPanel then
-		arg0_69.taskTrackPanel:Destroy()
+	if arg0_73.taskTrackPanel then
+		arg0_73.taskTrackPanel:Destroy()
 
-		arg0_69.taskTrackPanel = nil
+		arg0_73.taskTrackPanel = nil
 	end
 
-	if arg0_69.awardDisplayPanel then
-		arg0_69.awardDisplayPanel:Destroy()
+	if arg0_73.awardDisplayPanel then
+		arg0_73.awardDisplayPanel:Destroy()
 
-		arg0_69.awardDisplayPanel = nil
+		arg0_73.awardDisplayPanel = nil
 	end
 end
 

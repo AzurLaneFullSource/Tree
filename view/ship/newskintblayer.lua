@@ -94,9 +94,7 @@ function var0_0.didEnter(arg0_8)
 		setActive(arg0_8.clickTF, false)
 	end, SFX_PANEL)
 	onButton(arg0_8, arg0_8._shareBtn, function()
-		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeNewSkin, nil, {
-			weight = LayerWeightConst.TOP_LAYER
-		})
+		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeNewSkin)
 	end, SFX_PANEL)
 	onButton(arg0_8, arg0_8.clickTF, function()
 		if arg0_8.isInView or not arg0_8.isLoadBg then

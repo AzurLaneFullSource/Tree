@@ -38,7 +38,7 @@ function var0_0.register(arg0_1)
 			local var2_2 = var0_2[arg0_1.dailyList[iter6_2]].id
 			local var3_2 = var0_2[arg0_1.dailyList[iter6_2]].limit_time
 
-			if var1_2 and type(var1_2) == "table" and pg.TimeMgr:GetInstance():inTime(var1_2) and var3_2 > (arg0_1.data[var2_2] or 0) then
+			if var1_2 and type(var1_2) == "table" and pg.TimeMgr.GetInstance():inTime(var1_2) and var3_2 > (arg0_1.data[var2_2] or 0) then
 				arg0_1.dailyTip = true
 			end
 		end

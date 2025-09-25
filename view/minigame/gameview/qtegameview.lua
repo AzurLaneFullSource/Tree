@@ -120,7 +120,7 @@ function var0_0.init(arg0_2)
 	arg0_2.scoreTxt = arg0_2:findTF("score_bar/txt", arg0_2.content)
 	arg0_2.remainTxt = arg0_2:findTF("remain_time_bar/txt", arg0_2.content)
 
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_2.keyBar, {
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_2.keyBar, {
 		pbList = {
 			arg0_2.keyBar
 		}
@@ -150,8 +150,7 @@ function var0_0.didEnter(arg0_7)
 	onButton(arg0_7, arg0_7.ruleBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = pg.gametip.qte_game_help.tip,
-			weight = LayerWeightConst.THIRD_LAYER
+			helps = pg.gametip.qte_game_help.tip
 		})
 	end)
 	onButton(arg0_7, arg0_7.startBtn, function()
@@ -287,7 +286,7 @@ function var0_0.setGameState(arg0_27, arg1_27)
 		if isActive(arg0_27.endUI) then
 			pg.UIMgr.GetInstance():BlurPanel(arg0_27.endUI)
 		else
-			pg.UIMgr.GetInstance():UnblurPanel(arg0_27.endUI, arg0_27._tf)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_27.endUI, arg0_27._tf)
 		end
 	end
 
@@ -962,7 +961,7 @@ end
 
 function var0_0.willExit(arg0_86)
 	arg0_86:clearTimer()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_86.endUI, arg0_86._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_86.endUI, arg0_86._tf)
 	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_86.keyBar, arg0_86.content)
 
 	arg0_86.xgm = nil

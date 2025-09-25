@@ -15,6 +15,8 @@ function var0_0.OnLaterAttach(arg0_1, arg1_1)
 	arg0_1._velocity = Vector3.zero
 	arg0_1._extraVelocity = Vector3.zero
 	arg0_1._animator = arg0_1._tf:GetChild(0):GetComponent(typeof(Animator))
+	arg0_1.elapsedTime = 0
+	arg0_1.isNavigating = false
 
 	local var0_1 = pg.island_unit_character[arg0_1.modelId]
 
@@ -31,7 +33,7 @@ function var0_0.OnLaterAttach(arg0_1, arg1_1)
 
 		arg0_1.agent.radius = var0_1.CollisionParam[2]
 	else
-		arg0_1._characterController.enabled = falses
+		arg0_1._characterController.enabled = false
 
 		local var2_1 = GetOrAddComponent(arg0_1._go, typeof("UnityEngine.CapsuleCollider"))
 
@@ -44,11 +46,11 @@ function var0_0.OnLaterAttach(arg0_1, arg1_1)
 
 	arg0_1:SetNavAgentStopDistance(2.1)
 
-	arg0_1.lookingFor = false
+	arg0_1.isNavigating = false
 end
 
 function var0_0.SetDestination(arg0_2, arg1_2, arg2_2)
-	arg0_2.lookingFor = true
+	arg0_2.isNavigating = true
 
 	arg0_2:SetNavAgentDestination(arg1_2)
 
@@ -57,21 +59,31 @@ function var0_0.SetDestination(arg0_2, arg1_2, arg2_2)
 end
 
 function var0_0.StopMove(arg0_3)
-	arg0_3.lookingFor = false
+	arg0_3.isNavigating = false
 
 	arg0_3:StopNavAgent()
 
 	arg0_3._targetSpeed = 0
 	arg0_3._targetPosition = Vector3.zero
 
-	arg0_3._animator:SetFloat(IslandConst.SPEED_FLAG_HASH, 0)
+	if not arg0_3.isLoading then
+		arg0_3._animator:SetFloat(IslandConst.SPEED_FLAG_HASH, 0)
+	end
 end
 
-function var0_0.OnUpdate(arg0_4)
-	if arg0_4.lookingFor then
+function var0_0.Update(arg0_4)
+	if not arg0_4:IsLoaded() then
+		return
+	end
+
+	if not arg0_4.active then
+		return
+	end
+
+	if arg0_4.isNavigating then
 		arg0_4:NavUpdate()
 	else
-		arg0_4:OnNormalUpdate()
+		var0_0.super.Update(arg0_4)
 	end
 end
 
@@ -79,7 +91,10 @@ function var0_0.NavUpdate(arg0_5)
 	arg0_5._speed = Mathf.Lerp(arg0_5._speed, arg0_5._targetSpeed, arg0_5._speedDamping)
 
 	arg0_5:SetNavAgentSpeed(arg0_5._speed * 0.5)
-	arg0_5._animator:SetFloat(IslandConst.SPEED_FLAG_HASH, arg0_5._speed)
+
+	if not arg0_5.isLoading then
+		arg0_5._animator:SetFloat(IslandConst.SPEED_FLAG_HASH, arg0_5._speed)
+	end
 end
 
 function var0_0.SetNavAgentStopDistance(arg0_6, arg1_6)
@@ -127,12 +142,80 @@ function var0_0.StopNavAgent(arg0_15)
 	arg0_15.agent.isStopped = true
 end
 
-function var0_0.OnNormalUpdate(arg0_16, ...)
-	return
+function var0_0.GetAnimator(arg0_16)
+	return arg0_16._animator
 end
 
-function var0_0.GetAnimator(arg0_17)
-	return arg0_17._animator
+function var0_0.SetShipDressHelper(arg0_17, arg1_17)
+	arg0_17.shipDressHelper = arg1_17
+end
+
+function var0_0.OnDetach(arg0_18)
+	if arg0_18.shipDressHelper then
+		arg0_18.shipDressHelper:Destroy()
+	end
+end
+
+function var0_0.OnCharacterChangeDress(arg0_19, arg1_19, arg2_19, arg3_19)
+	if arg1_19 then
+		local var0_19 = {}
+
+		local function var1_19()
+			arg0_19._animator = arg0_19._tf:GetChild(0):GetComponent(typeof(Animator))
+
+			for iter0_20, iter1_20 in ipairs(var0_19) do
+				arg0_19._animator:Play(iter1_20.shortNameHash, iter0_20 - 1, iter1_20.normalizedTime)
+			end
+
+			arg0_19.isLoading = false
+
+			arg0_19._tf:GetComponent(typeof(NodeCanvas.BehaviourTrees.BehaviourTreeOwner)):StartBehaviour()
+		end
+
+		arg0_19.isLoading = true
+
+		arg0_19._tf:GetComponent(typeof(NodeCanvas.BehaviourTrees.BehaviourTreeOwner)):PauseBehaviour()
+
+		local var2_19 = 0
+
+		normalizedTime = arg0_19._animator:GetCurrentAnimatorStateInfo(var2_19).normalizedTime % 1
+
+		for iter0_19 = 1, arg0_19._animator.layerCount do
+			local var3_19 = iter0_19 - 1
+			local var4_19 = arg0_19._animator:GetCurrentAnimatorStateInfo(var3_19)
+
+			table.insert(var0_19, {
+				shortNameHash = var4_19.shortNameHash,
+				normalizedTime = var4_19.normalizedTime
+			})
+		end
+
+		arg0_19:DestroyInteractiveTools()
+
+		if #arg2_19 == 0 and #arg3_19 == 0 then
+			arg0_19.shipDressHelper:ChangeModelTransfromByUnitId(arg1_19, var1_19)
+		else
+			arg0_19.shipDressHelper:ChangeModelTransfromByUnitIdAndChangeDress(arg1_19, arg2_19, arg3_19, var1_19)
+		end
+	else
+		for iter1_19, iter2_19 in ipairs(arg2_19) do
+			local var5_19 = pg.island_dress_template[iter2_19].type
+
+			arg0_19.shipDressHelper:ChangeDressByType(var5_19, {
+				id = 0,
+				colorId = 0
+			})
+		end
+
+		for iter3_19, iter4_19 in ipairs(arg3_19) do
+			local var6_19 = pg.island_dress_template[iter4_19].type
+
+			arg0_19.shipDressHelper:ChangeDressByType(var6_19, {
+				colorId = 0,
+				id = iter4_19
+			})
+		end
+	end
 end
 
 return var0_0

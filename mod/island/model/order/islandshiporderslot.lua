@@ -14,6 +14,7 @@ function var0_0.Init(arg0_2, arg1_2, arg2_2)
 	arg0_2.state = arg1_2.state or var0_0.STATE_LOCK
 	arg0_2.totalTime = arg1_2.load_time or 0
 	arg0_2.endTime = arg1_2.get_time or 0
+	arg0_2.reduceTime = 0
 	arg0_2.order = IslandShipOrder.New(arg1_2)
 	arg0_2.config = pg.island_order_list[arg0_2.id]
 end
@@ -32,7 +33,7 @@ function var0_0.GetOrder(arg0_5)
 end
 
 function var0_0.GetEndTime(arg0_6)
-	return arg0_6.endTime
+	return arg0_6.endTime - arg0_6.reduceTime
 end
 
 function var0_0.GetNeedTime(arg0_7)
@@ -53,7 +54,7 @@ end
 
 function var0_0.IsFinished(arg0_11)
 	local function var0_11()
-		return pg.TimeMgr.GetInstance():GetServerTime() >= arg0_11.endTime
+		return pg.TimeMgr.GetInstance():GetServerTime() >= arg0_11:GetEndTime()
 	end
 
 	return arg0_11:IsSubmited() and var0_11()
@@ -91,6 +92,14 @@ function var0_0.CanUnlock(arg0_16)
 	end
 
 	return true
+end
+
+function var0_0.SetReduceTime(arg0_17, arg1_17)
+	arg0_17.reduceTime = arg1_17
+end
+
+function var0_0.AddReduceTime(arg0_18, arg1_18)
+	arg0_18.reduceTime = arg0_18.reduceTime + arg1_18
 end
 
 return var0_0

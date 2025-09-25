@@ -186,7 +186,7 @@ end
 
 function var0_0.Disable(arg0_25)
 	if arg0_25.painting then
-		arg0_25.painting:Puase()
+		arg0_25.painting:Pause()
 	end
 end
 
@@ -312,6 +312,10 @@ function var0_0.Fold(arg0_32, arg1_32, arg2_32)
 
 		LeanTween.moveLocal(arg0_32._tf.gameObject, var4_32, arg2_32):setEase(LeanTweenType.easeInOutExpo)
 		LeanTween.moveLocal(arg0_32._bgTf.gameObject, var4_32, arg2_32):setEase(LeanTweenType.easeInOutExpo):setOnComplete(System.Action(function()
+			if arg0_32.exited then
+				return
+			end
+
 			arg0_32.painting:Fold(arg1_32, arg2_32)
 		end))
 	end

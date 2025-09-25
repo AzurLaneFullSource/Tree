@@ -217,7 +217,7 @@ function var0_0.HideMaterialsPreview(arg0_25)
 		return
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_25._tf, arg0_25._parentClass._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_25._tf, arg0_25._parentClass._tf)
 	setActive(arg0_25._go, false)
 
 	return true

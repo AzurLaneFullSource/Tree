@@ -133,7 +133,7 @@ function var0_0.willExit(arg0_14)
 
 	arg0_14.closedFlag = true
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_14.ad, arg0_14._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_14.ad, arg0_14._tf)
 end
 
 function var0_0.onBackPressed(arg0_15)

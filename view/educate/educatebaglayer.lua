@@ -60,9 +60,8 @@ function var0_0.addListener(arg0_6)
 end
 
 function var0_0.didEnter(arg0_11)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_11._tf, {
-		groupName = arg0_11:getGroupNameFromData(),
-		weight = arg0_11:getWeightFromData() + 1
+	arg0_11:OverlayPanel(arg0_11._tf, {
+		groupDelta = 1
 	})
 	arg0_11:initItems()
 	triggerToggle(arg0_11:findTF("0", arg0_11.togglesTF), true)
@@ -137,7 +136,7 @@ end
 
 function var0_0.willExit(arg0_28)
 	arg0_28.animEvent:SetEndEvent(nil)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_28._tf)
+	arg0_28:UnOverlayPanel(arg0_28._tf)
 end
 
 return var0_0

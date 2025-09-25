@@ -31,14 +31,12 @@ function var0_0.init(arg0_4)
 
 	arg0_4.memoryView = Dorm3dMemorySubView.New(var1_4, arg0_4.event, arg0_4.contextData)
 
-	arg0_4.memoryView:SetExtra(var1_4:Find("memory"))
+	arg0_4.memoryView:Load(var1_4:Find("memory").gameObject)
 
 	arg0_4.collectItemView = Dorm3dCollectionItemSubView.New(var1_4, arg0_4.event, arg0_4.contextData)
 
-	arg0_4.collectItemView:SetExtra(var1_4:Find("item"))
-	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf, false, {
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+	arg0_4.collectItemView:Load(var1_4:Find("item").gameObject)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf)
 end
 
 function var0_0.SetPage(arg0_8, arg1_8)
@@ -70,7 +68,7 @@ end
 function var0_0.willExit(arg0_11)
 	arg0_11.memoryView:Destroy()
 	arg0_11.collectItemView:Destroy()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_11._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11._tf)
 end
 
 return var0_0

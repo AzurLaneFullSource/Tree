@@ -48,9 +48,7 @@ function var0_0.showCustomMsgBox(arg0_7, arg1_7)
 	arg0_7.settings = arg1_7
 
 	setActive(arg0_7.customMsgbox, true)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_7.customMsgbox, {
-		groupName = LayerWeightConst.GROUP_SHIPINFOUI
-	})
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_7.customMsgbox)
 
 	local var0_7 = arg1_7.items and #arg1_7.items > 0
 

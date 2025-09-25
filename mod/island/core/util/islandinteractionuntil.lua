@@ -20,6 +20,7 @@ var0_0.TYPE_EXTEND_AGORA = 19
 var0_0.TYPE_ECHANGE_AGORA_BASE = 20
 var0_0.TYPE_PERFORMANCE = 21
 var0_0.TYPE_NEXT_INTERACTION = 22
+var0_0.TYPE_FOLLOW_PLAYER = 23
 var0_0.SIGNIN_TIME_ID = 4002
 
 function var0_0.GetInteractionOptions(arg0_1, arg1_1, arg2_1)
@@ -39,7 +40,7 @@ function var0_0.GetInteractionOptions(arg0_1, arg1_1, arg2_1)
 end
 
 local function var1_0(arg0_5, arg1_5, arg2_5)
-	require("nodecanvas.Task.NcPlayStory").New(nil, {}):DoAction(arg0_5, function()
+	require("nodecanvas.Task.NcPlayStory").New(nil, {}):DoAction(arg0_5, true, function()
 		var0_0.AddInteractionTaskProgress(arg1_5, arg2_5)
 	end)
 end
@@ -188,62 +189,83 @@ local function var18_0(arg0_27, arg1_27)
 end
 
 local function var19_0(arg0_28, arg1_28)
-	arg0_28:ShowNextInteractionBtns(arg1_28)
+	arg0_28:GetView():GetSubView(IslandInteractionView):ShowNextInteractionBtns(arg1_28)
 end
 
-function var0_0.Response(arg0_29, arg1_29, arg2_29)
-	local var0_29 = pg.island_interaction[arg2_29]
+local function var20_0(arg0_29, arg1_29)
+	local var0_29 = pg.island_strollnpc[arg1_29]
+	local var1_29
 
-	if var0_29.type == var0_0.TYPE_STORY then
-		var1_0(var0_29.param, arg0_29, arg2_29)
-	elseif var0_29.type == var0_0.TYPE_BUBBLE then
-		var2_0(var0_29.param, arg0_29, arg2_29)
-	elseif var0_29.type == var0_0.TYPE_ACTION then
-		var3_0(var0_29.param[1], var0_29.param[2], arg0_29)
-	elseif var0_29.type == var0_0.TYPE_AGORA then
-		var4_0(arg1_29, arg0_29)
-	elseif var0_29.type == var0_0.TYPE_AGORA_CANCEL then
-		var5_0(arg1_29, arg0_29)
-	elseif var0_29.type == var0_0.TYPE_OPEN_PAGE then
-		var6_0(var0_29.param, arg0_29, arg1_29)
-	elseif var0_29.type == var0_0.TYPE_TRANSFER then
-		var7_0(var0_29.param, arg0_29)
-	elseif var0_29.type == var0_0.TYPE_BT_VALUE then
-		var8_0(var0_29.param, arg1_29, arg0_29)
-	elseif var0_29.type == var0_0.TYPE_ITEM_INTERACT then
-		var9_0(arg1_29, arg0_29, var0_29.param)
-	elseif var0_29.type == var0_0.TYPE_ITEM_INTERACT_CANCEL then
-		var10_0(arg1_29, arg0_29)
-	elseif var0_29.type == var0_0.TYPE_ACCEPT_TASK then
-		var11_0(var0_29.param, arg0_29)
-	elseif var0_29.type == var0_0.TYPE_SUBMIT_TASK then
-		var12_0(var0_29.param, arg0_29)
-	elseif var0_29.type == var0_0.TYPE_SIGNIN then
-		var13_0(arg0_29)
-	elseif var0_29.type == var0_0.TYPE_SELECT_GIFT then
-		var14_0(arg0_29)
-	elseif var0_29.type == var0_0.TYPE_NOTHING then
+	for iter0_29, iter1_29 in ipairs(pg.island_chara_template.all) do
+		if pg.island_chara_template[iter1_29].unit_id == var0_29.unit_id then
+			var1_29 = iter1_29
+
+			break
+		end
+	end
+
+	if var1_29 then
+		arg0_29:NotifiyMeditor(IslandMediator.ADD_FOLLOWER, var1_29)
+	end
+end
+
+function var0_0.Response(arg0_30, arg1_30, arg2_30)
+	local var0_30 = pg.island_interaction[arg2_30]
+
+	if var0_30.type == var0_0.TYPE_STORY then
+		var1_0(var0_30.param, arg0_30, arg2_30)
+	elseif var0_30.type == var0_0.TYPE_BUBBLE then
+		var2_0(var0_30.param, arg0_30, arg2_30)
+	elseif var0_30.type == var0_0.TYPE_ACTION then
+		var3_0(var0_30.param[1], var0_30.param[2], arg0_30)
+	elseif var0_30.type == var0_0.TYPE_AGORA then
+		var4_0(arg1_30, arg0_30)
+	elseif var0_30.type == var0_0.TYPE_AGORA_CANCEL then
+		var5_0(arg1_30, arg0_30)
+	elseif var0_30.type == var0_0.TYPE_OPEN_PAGE then
+		var6_0(var0_30.param, arg0_30, arg1_30)
+	elseif var0_30.type == var0_0.TYPE_TRANSFER then
+		var7_0(var0_30.param, arg0_30)
+	elseif var0_30.type == var0_0.TYPE_BT_VALUE then
+		var8_0(var0_30.param, arg1_30, arg0_30)
+	elseif var0_30.type == var0_0.TYPE_ITEM_INTERACT then
+		var9_0(arg1_30, arg0_30, var0_30.param)
+	elseif var0_30.type == var0_0.TYPE_ITEM_INTERACT_CANCEL then
+		var10_0(arg1_30, arg0_30)
+	elseif var0_30.type == var0_0.TYPE_ACCEPT_TASK then
+		var11_0(var0_30.param, arg0_30)
+	elseif var0_30.type == var0_0.TYPE_SUBMIT_TASK then
+		var12_0(var0_30.param, arg0_30)
+	elseif var0_30.type == var0_0.TYPE_SIGNIN then
+		var13_0(arg0_30)
+	elseif var0_30.type == var0_0.TYPE_SELECT_GIFT then
+		var14_0(arg0_30)
+	elseif var0_30.type == var0_0.TYPE_NOTHING then
 		-- block empty
-	elseif var0_29.type == var0_0.TYPE_DECORATION then
-		var16_0(arg0_29)
-	elseif var0_29.type == var0_0.TYPE_EXTEND_AGORA then
-		var17_0(arg0_29)
-	elseif var0_29.type == var0_0.TYPE_ECHANGE_AGORA_BASE then
+	elseif var0_30.type == var0_0.TYPE_DECORATION then
+		var16_0(arg0_30)
+	elseif var0_30.type == var0_0.TYPE_EXTEND_AGORA then
+		var17_0(arg0_30)
+	elseif var0_30.type == var0_0.TYPE_ECHANGE_AGORA_BASE then
 		-- block empty
-	elseif var0_29.type == var0_0.TYPE_PERFORMANCE then
-		var18_0(arg0_29, var0_29.param)
-	elseif var0_29.type == var0_0.TYPE_NEXT_INTERACTION then
-		var19_0(arg0_29, var0_29.param)
+	elseif var0_30.type == var0_0.TYPE_PERFORMANCE then
+		var18_0(arg0_30, var0_30.param)
+	elseif var0_30.type == var0_0.TYPE_NEXT_INTERACTION then
+		var19_0(arg0_30, var0_30.param)
+	elseif var0_30.type == var0_0.TYPE_FOLLOW_PLAYER then
+		var20_0(arg0_30, arg1_30)
 	else
-		assert(false, "未处理类型:" .. var0_29.type)
+		assert(false, "未处理类型:" .. var0_30.type)
 	end
 
-	if var0_29.type ~= var0_0.TYPE_STORY and var0_29.type ~= var0_0.TYPE_BUBBLE then
-		var0_0.AddInteractionTaskProgress(arg0_29, arg2_29)
+	if var0_30.type ~= var0_0.TYPE_STORY and var0_30.type ~= var0_0.TYPE_BUBBLE then
+		var0_0.AddInteractionTaskProgress(arg0_30, arg2_30)
 	end
 
-	if var0_29.type == var0_0.TYPE_STORY or var0_29.type == var0_0.TYPE_BUBBLE then
-		IslandAchievementHelper.OnNpcInteract(IslandAchievementType.NPC_INTERACT_TYPE_TALK)
+	if var0_30.type == var0_0.TYPE_STORY or var0_30.type == var0_0.TYPE_BUBBLE then
+		local var1_30 = pg.island_world_objects[arg1_30].unitId
+
+		IslandBookHelper.OnNpcInteract(var1_30)
 	end
 end
 

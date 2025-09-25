@@ -35,7 +35,6 @@ function var0_0.execute(arg0_1, arg1_1)
 					locked = true,
 					hideNo = true,
 					content = i18n("new_version_tip"),
-					weight = LayerWeightConst.TOP_LAYER,
 					onYes = function()
 						Application.Quit()
 					end,

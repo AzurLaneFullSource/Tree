@@ -2,7 +2,6 @@ local var0_0 = class("IslandSetRoleDressupReadCommand", pm.SimpleCommand)
 
 function var0_0.execute(arg0_1, arg1_1)
 	local var0_1 = arg1_1:getBody().dress_List
-	local var1_1 = getProxy(IslandProxy):GetIsland()
 
 	pg.ConnectionMgr.GetInstance():Send(21624, {
 		dress_id = var0_1
@@ -14,9 +13,7 @@ function var0_0.execute(arg0_1, arg1_1)
 				var0_2:SetDressHasRead(iter1_2)
 			end
 
-			arg0_1:sendNotification(GAME.ISLAND_SEND_ROLE_DRESS_READ_DONE, {
-				dress_id = dress_id
-			})
+			arg0_1:sendNotification(GAME.ISLAND_SEND_ROLE_DRESS_READ_DONE, var0_1)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)
 		end

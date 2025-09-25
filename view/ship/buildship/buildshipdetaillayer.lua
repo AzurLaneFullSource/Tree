@@ -37,7 +37,6 @@ function var0_0.setProjectList(arg0_5, arg1_5)
 end
 
 function var0_0.init(arg0_6)
-	arg0_6.UIMgr = pg.UIMgr.GetInstance()
 	arg0_6.multLineTF = arg0_6:findTF("list_mult_line")
 	arg0_6.multLineContain = arg0_6:findTF("list_mult_line/content")
 	arg0_6.multLineTpl = arg0_6:findTF("project_tpl", arg0_6.multLineContain)
@@ -349,9 +348,7 @@ function var0_0.playGetShipAnimate(arg0_31, arg1_31, arg2_31)
 		arg0_31.canvasgroup.blocksRaycasts = true
 
 		arg1_31()
-	end, "ui", var0_31.build_anim or "Building", true, false, {
-		weight = LayerWeightConst.SECOND_LAYER
-	}, 4.5, true)
+	end, "ui", var0_31.build_anim or "Building", true, false, 4.5, true)
 end
 
 function var0_0.willExit(arg0_34)

@@ -555,7 +555,7 @@ function var0_0.GoBack(arg0_35)
 end
 
 function var0_0.willExit(arg0_36)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_36._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_36._tf)
 
 	if arg0_36.camEventId then
 		pg.CameraFixMgr.GetInstance():disconnect(arg0_36.camEventId)

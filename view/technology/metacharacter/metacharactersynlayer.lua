@@ -274,17 +274,16 @@ function var0_0.enablePartialBlur(arg0_25)
 		local var0_25 = {}
 
 		table.insert(var0_25, arg0_25.taskPanel)
-		pg.UIMgr.GetInstance():OverlayPanelPB(arg0_25._tf, {
-			pbList = var0_25,
-			groupName = LayerWeightConst.GROUP_META,
-			weight = LayerWeightConst.BASE_LAYER - 1
+		arg0_25:OverlayPanel(arg0_25._tf, {
+			groupDelta = -1,
+			pbList = var0_25
 		})
 	end
 end
 
 function var0_0.disablePartialBlur(arg0_26)
 	if arg0_26._tf then
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_26._tf)
+		arg0_26:UnOverlayPanel(arg0_26._tf)
 	end
 end
 

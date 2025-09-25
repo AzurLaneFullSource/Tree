@@ -77,7 +77,7 @@ var0_0.NOTIFY_TYPE_TECH = 5
 function var0_0.init(arg0_11)
 	arg0_11._bg = arg0_11:findTF("bg")
 
-	pg.GuildPaintingMgr:GetInstance():Enter(arg0_11._bg:Find("painting"))
+	pg.GuildPaintingMgr.GetInstance():Enter(arg0_11._bg:Find("painting"))
 
 	arg0_11._playerResOb = arg0_11:findTF("blur_panel/adapt/top/res")
 	arg0_11.guildRes = GuildResPage.New(arg0_11._playerResOb, arg0_11.event)
@@ -144,7 +144,7 @@ function var0_0.didEnter(arg0_15)
 	arg0_15.guildRes:ExecuteAction("Update", arg0_15.playerVO, arg0_15.guildVO)
 	arg0_15:initToggles()
 	arg0_15:UpdateRes()
-	pg.GuildLayerMgr:GetInstance():BlurTopPanel(arg0_15.blurPanel)
+	pg.GuildLayerMgr.GetInstance():BlurTopPanel(arg0_15.blurPanel)
 
 	if arg0_15.guildVO:shouldRefreshCaptial() then
 		arg0_15:emit(GuildMainMediator.ON_FETCH_CAPITAL)
@@ -382,7 +382,7 @@ function var0_0.closePage(arg0_34, arg1_34)
 end
 
 function var0_0.BlurView(arg0_35, arg1_35)
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg1_35, {
+	pg.UIMgr.GetInstance():OverlayPanel(arg1_35, {
 		pbList = {
 			arg1_35:Find("Image1/Image1")
 		}
@@ -430,8 +430,8 @@ function var0_0.willExit(arg0_42)
 		arg0_42.themePage:Destroy()
 	end
 
-	pg.GuildLayerMgr:GetInstance():Clear()
-	pg.GuildPaintingMgr:GetInstance():Exit()
+	pg.GuildLayerMgr.GetInstance():Clear()
+	pg.GuildPaintingMgr.GetInstance():Exit()
 
 	if arg0_42.contextData.page then
 		arg0_42:closePage(arg0_42.contextData.page)

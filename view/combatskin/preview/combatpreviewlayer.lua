@@ -8,13 +8,10 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnInit(arg0_2)
-	arg0_2.UIMgr = pg.UIMgr.GetInstance()
-	arg0_2.OverlayMain = arg0_2.UIMgr.OverlayMain
+	arg0_2.OverlayMain = pg.UIMgr.GetInstance().OverlayMain
 
 	setParent(arg0_2._go, arg0_2.OverlayMain)
-	arg0_2.UIMgr:BlurPanel(arg0_2._tf, false, {
-		weight = LayerWeightConst.TOP_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
 
 	arg0_2.preview = arg0_2:findTF("preview")
 	arg0_2.uiLayer = arg0_2:findTF("preview/ui")
@@ -93,7 +90,7 @@ function var0_0.Show(arg0_4, arg1_4, arg2_4)
 end
 
 function var0_0.OnDestroy(arg0_13)
-	arg0_13.UIMgr:UnblurPanel(arg0_13._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_13._tf)
 
 	if arg0_13.previewer then
 		arg0_13.previewer:clear()

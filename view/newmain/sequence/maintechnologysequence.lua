@@ -32,7 +32,6 @@ function var0_0.Execute(arg0_1, arg1_1)
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("blueprint_task_update_tip", var5_1:getConfig("name")),
-			weight = LayerWeightConst.SECOND_LAYER,
 			onYes = function()
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SHIPBLUEPRINT)
 			end,

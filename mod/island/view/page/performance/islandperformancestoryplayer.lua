@@ -2,8 +2,10 @@ local var0_0 = class("IslandPerformanceStoryPlayer", import(".IslandBasePerforma
 
 function var0_0.Play(arg0_1, arg1_1, arg2_1)
 	local var0_1 = arg1_1.name
+	local var1_1 = require("nodecanvas.Task.NcPlayStory")
+	local var2_1 = arg1_1.refreshNpc
 
-	require("nodecanvas.Task.NcPlayStory").New(nil, {}):DoAction(var0_1, arg2_1)
+	var1_1.New(nil, {}):DoAction(var0_1, var2_1, arg2_1)
 end
 
 function var0_0.Update(arg0_2)

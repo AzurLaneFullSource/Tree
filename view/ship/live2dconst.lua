@@ -182,7 +182,7 @@ function var0_0.GetLive2DArm32MatchAble()
 end
 
 function var0_0.ShowLive2DArm32Tips()
-	pg.TipsMgr:GetInstance():ShowTips(i18n("l2d_32xbanned_warning"))
+	pg.TipsMgr.GetInstance():ShowTips(i18n("l2d_32xbanned_warning"))
 end
 
 var0_0.l2d_dirty_data = {}

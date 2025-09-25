@@ -24,8 +24,8 @@ function findTF(arg0_5, arg1_5)
 	return (tf(arg0_5):Find(arg1_5))
 end
 
-function Instantiate(arg0_6)
-	return Object.Instantiate(go(arg0_6))
+function Instantiate(arg0_6, ...)
+	return Object.Instantiate(go(arg0_6), ...)
 end
 
 instantiate = Instantiate
@@ -761,11 +761,11 @@ function setImageRaycastTarget(arg0_93, arg1_93)
 end
 
 function getCanvasGroupAlpha(arg0_94)
-	return GetComponent(arg0_94, typeof(CanvasGroup)).alpha
+	return GetOrAddComponent(arg0_94, typeof(CanvasGroup)).alpha
 end
 
 function setCanvasGroupAlpha(arg0_95, arg1_95)
-	GetComponent(arg0_95, typeof(CanvasGroup)).alpha = arg1_95
+	GetOrAddComponent(arg0_95, typeof(CanvasGroup)).alpha = arg1_95
 end
 
 function setActiveViaLayer(arg0_96, arg1_96)
@@ -1010,4 +1010,21 @@ function getSceneRootTFDic(arg0_124)
 	end
 
 	return var0_124
+end
+
+function bindComponent(arg0_125, arg1_125)
+	local var0_125 = GetComponent(arg1_125, "ComponentBinding")
+
+	if var0_125 == nil then
+		return
+	end
+
+	local var1_125 = var0_125.componentList
+	local var2_125 = var0_125:GetLuaNames()
+	local var3_125 = var0_125:GetComponentValues()
+	local var4_125 = var0_125.componentList
+
+	for iter0_125 = 0, var2_125.Length - 1 do
+		arg0_125[var2_125[iter0_125]] = var3_125[iter0_125]
+	end
 end

@@ -39,9 +39,7 @@ function var0_0.GetCurrentPage(arg0_4)
 end
 
 function var0_0.didEnter(arg0_5)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_5.top, {
-		groupName = LayerWeightConst.GROUP_COLLECTION
-	})
+	arg0_5:OverlayPanel(arg0_5.top)
 	onButton(arg0_5, arg0_5.top:Find("blur_panel/adapt/top/option"), function()
 		arg0_5:quickExitFunc()
 	end, SFX_PANEL)
@@ -71,6 +69,7 @@ function var0_0.EnterPage(arg0_8, arg1_8)
 		arg0_8.contextData[var2_8] = arg0_8.contextData[var2_8] or {}
 		var1_8 = var2_8.New(arg0_8, arg0_8.viewContainer, arg0_8.event, arg0_8.contextData)
 
+		var1_8:RegisterView(arg0_8)
 		var1_8:Load()
 	end
 
@@ -155,7 +154,7 @@ function var0_0.willExit(arg0_18)
 	end
 
 	table.clear(arg0_18.subViews)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_18.top, arg0_18._tf)
+	arg0_18:UnOverlayPanel(arg0_18.top, arg0_18._tf)
 end
 
 return var0_0

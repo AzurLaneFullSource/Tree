@@ -56,7 +56,7 @@ function var0_0.InitItem(arg0_10, arg1_10, arg2_10)
 
 	local var1_10 = pg.island_achievement_group[var0_10]
 
-	LoadImageSpriteAtlasAsync("island/islandachievement", var1_10.icon, arg2_10:Find("icon"), true)
+	LoadImageSpriteAtlasAsync("islandachievement", var1_10.icon, arg2_10:Find("icon"), true)
 	setText(arg2_10:Find("name"), var1_10.name)
 	onButton(arg0_10, arg2_10, function()
 		arg0_10:OpenPage(IslandAchvDetailPage, var0_10)

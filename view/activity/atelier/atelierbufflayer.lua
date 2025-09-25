@@ -108,9 +108,7 @@ function var0_0.didEnter(arg0_7)
 		end, SFX_PANEL)
 	end)
 	arg0_7:UpdateView()
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_7._tf, {
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_7._tf)
 
 	if PlayerPrefs.GetInt("first_enter_ryza_buff_" .. getProxy(PlayerProxy):getRawData().id, 0) == 0 then
 		triggerButton(arg0_7._tf:Find("Top/Help"))

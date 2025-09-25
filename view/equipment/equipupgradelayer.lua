@@ -11,9 +11,7 @@ function var0_0.setItems(arg0_2, arg1_2)
 end
 
 function var0_0.init(arg0_3)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf, false, {
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf)
 
 	arg0_3.mainPanel = arg0_3:findTF("main")
 	arg0_3.finishPanel = arg0_3:findTF("finish_panel")
@@ -372,7 +370,7 @@ function var0_0.upgradeFinish(arg0_21, arg1_21, arg2_21)
 end
 
 function var0_0.willExit(arg0_23)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_23._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_23._tf)
 end
 
 return var0_0

@@ -211,9 +211,7 @@ end
 
 function var0_0.Show(arg0_31)
 	var0_0.super.Show(arg0_31)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_31._tf, {
-		weight = LayerWeightConst.BASE_LAYER
-	})
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_31._tf)
 
 	if arg0_31.OnEnter then
 		arg0_31.OnEnter()

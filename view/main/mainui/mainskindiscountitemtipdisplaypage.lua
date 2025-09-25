@@ -60,9 +60,7 @@ end
 
 function var0_0.Show(arg0_11, arg1_11)
 	arg0_11:UpdateList(arg1_11)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_11._tf, false, {
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_11._tf)
 end
 
 function var0_0.UpdateList(arg0_12, arg1_12)
@@ -89,7 +87,7 @@ function var0_0.UpdateItem(arg0_14, arg1_14, arg2_14)
 end
 
 function var0_0.OnDestroy(arg0_16)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_16._tf, pg.UIMgr.GetInstance()._normalUIMain)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_16._tf, pg.UIMgr.GetInstance()._normalUIMain)
 end
 
 return var0_0

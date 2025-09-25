@@ -16,4 +16,8 @@ function var0_0.Recycle(arg0_2, arg1_2, arg2_2)
 	arg0_2:GetPoolMgr():ReturnSceneCharacter(var0_2, var1_2, var2_2, arg2_2)
 end
 
+function var0_0.AddComponents(arg0_3, arg1_3, arg2_3)
+	return
+end
+
 return var0_0

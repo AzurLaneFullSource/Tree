@@ -20,8 +20,7 @@ function var0_0.ShowItemTip(arg0_1, arg1_1, arg2_1, arg3_1)
 		}),
 		descriptions = var0_1.description,
 		msgTitle = arg2_1,
-		goSceneCallack = arg3_1,
-		weight = LayerWeightConst.SECOND_LAYER
+		goSceneCallack = arg3_1
 	})
 
 	return true
@@ -117,8 +116,7 @@ function var0_0.ShowOilBuyTip(arg0_7, arg1_7)
 				id = var1_7
 			})
 			pg.TrackerMgr.GetInstance():Tracking(TRACKING_PAY_OIL)
-		end,
-		weight = LayerWeightConst.TOP_LAYER
+		end
 	})
 
 	return true

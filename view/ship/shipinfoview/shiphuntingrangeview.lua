@@ -101,7 +101,7 @@ end
 
 function var0_0.HideHuntingRange(arg0_12)
 	setActive(arg0_12.huntingRange, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_12.huntingRange, arg0_12._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_12.huntingRange, arg0_12._tf)
 
 	arg0_12.onSelected = false
 end

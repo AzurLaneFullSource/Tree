@@ -69,6 +69,7 @@ function var0_0.PurchaseItem(arg0_9, arg1_9)
 		isMonthCard = false,
 		isChargeType = false,
 		isLocalPrice = false,
+		commodity = arg1_9,
 		icon = var1_9.icon,
 		name = var1_9.name,
 		tipExtra = i18n("charge_title_getitem"),
@@ -98,6 +99,7 @@ function var0_0.ChargeMonthCardAndGiftPack(arg0_11, arg1_11, arg2_11)
 	local var12_11 = not table.contains(arg1_11, arg2_11.id) and arg2_11:firstPayDouble() and 4 or arg2_11:getConfig("tag")
 	local var13_11 = {
 		isChargeType = true,
+		commodity = arg2_11,
 		infoTip = arg2_11:GetInfoTip(),
 		icon = var6_11,
 		name = var7_11,
@@ -138,6 +140,7 @@ function var0_0.ChargeGem(arg0_13, arg1_13, arg2_13)
 	local var8_13 = i18n("charge_start_tip", var0_13, var1_13)
 	local var9_13 = {
 		isChargeType = true,
+		commodity = arg2_13,
 		infoTip = arg2_13:GetInfoTip(),
 		icon = var4_13,
 		name = var5_13,

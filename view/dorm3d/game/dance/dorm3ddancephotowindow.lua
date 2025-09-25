@@ -15,10 +15,7 @@ function var0_0.Init(arg0_1)
 end
 
 function var0_0.Flush(arg0_4, arg1_4, arg2_4)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf, nil, {
-		groupName = "dorm3d",
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf)
 	arg0_4.contextData.onShowRealImage(arg1_4, arg0_4.imageTf, arg0_4.maskTf)
 	setActive(arg0_4._tf:Find("btn_save"), not arg2_4)
 
@@ -36,7 +33,7 @@ function var0_0.CloseWindow(arg0_6)
 		arg0_6.tId = nil
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_6._tf, arg0_6.parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_6._tf, arg0_6.parentTf)
 	arg0_6:Hide()
 	arg0_6.contextData.onHide()
 end

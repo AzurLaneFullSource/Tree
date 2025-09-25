@@ -29,9 +29,7 @@ function var0_0.didEnter(arg0_3)
 	arg0_3.animEvent:SetEndEvent(function()
 		arg0_3:closeView()
 	end)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf, false, {
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf)
 end
 
 function var0_0.Show(arg0_7)
@@ -186,7 +184,7 @@ function var0_0.UpdatePtData(arg0_15)
 end
 
 function var0_0.willExit(arg0_16)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_16._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_16._tf)
 end
 
 return var0_0

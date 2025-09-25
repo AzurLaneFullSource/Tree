@@ -134,9 +134,7 @@ function var0_0.didEnter(arg0_17)
 	onButton(arg0_17, arg0_17:findTF("bottom/buttons/award_btn"), function()
 		arg0_17.isOpenAwards = true
 
-		pg.UIMgr.GetInstance():BlurPanel(arg0_17.awardPanel, false, {
-			weight = LayerWeightConst.SECOND_LAYER
-		})
+		pg.UIMgr.GetInstance():BlurPanel(arg0_17.awardPanel)
 
 		if not arg0_17.isInitAward then
 			arg0_17:initAwards()
@@ -426,7 +424,7 @@ function var0_0.closeAwards(arg0_43)
 
 		arg0_43.isOpenAwards = false
 
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_43.awardPanel, arg0_43._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_43.awardPanel, arg0_43._tf)
 	end
 end
 

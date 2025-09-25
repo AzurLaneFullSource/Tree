@@ -13,15 +13,13 @@ function var0_0.init(arg0_2)
 end
 
 function var0_0.didEnter(arg0_3)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf, false, {
-		weight = LayerWeightConst.THIRD_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf)
 	arg0_3:updatePTInfo()
 	arg0_3:updateScrollList()
 end
 
 function var0_0.willExit(arg0_4)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_4._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_4._tf)
 end
 
 function var0_0.initUITextTips(arg0_5)

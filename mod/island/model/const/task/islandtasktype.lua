@@ -44,6 +44,13 @@ var0_0.ShowTypeFields = {
 	[var0_0.SHOW_WEEKLY] = "weekly",
 	[var0_0.SHOW_ACTIVITY] = "activity"
 }
+var0_0.ShowTypeUnlockId = {
+	[var0_0.SHOW_MAIN] = 0,
+	[var0_0.SHOW_BRANCH] = 42,
+	[var0_0.SHOW_DAILY] = 43,
+	[var0_0.SHOW_WEEKLY] = 44,
+	[var0_0.SHOW_ACTIVITY] = 45
+}
 var0_0.ShowTypeNames = {
 	[var0_0.SHOW_ALL] = i18n("island_task_type_1"),
 	[var0_0.SHOW_MAIN] = i18n("island_task_type_2"),

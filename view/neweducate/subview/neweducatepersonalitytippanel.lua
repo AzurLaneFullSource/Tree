@@ -11,12 +11,11 @@ function var0_0.OnLoaded(arg0_2)
 end
 
 function var0_0.OnInit(arg0_3)
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_3._tf, {
+	arg0_3:OverlayPanel(arg0_3._tf, {
+		groupDelta = 2,
 		pbList = {
 			arg0_3.resTF
-		},
-		groupName = LayerWeightConst.GROUP_EDUCATE,
-		weight = LayerWeightConst.BASE_LAYER + 2
+		}
 	})
 end
 
@@ -63,7 +62,7 @@ function var0_0.FlushPersonality(arg0_4, arg1_4, arg2_4)
 end
 
 function var0_0.OnDestroy(arg0_10)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_10._tf)
+	arg0_10:UnOverlayPanel(arg0_10._tf)
 end
 
 return var0_0

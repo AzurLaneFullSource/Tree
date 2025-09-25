@@ -260,7 +260,7 @@ function var0_0.handleNotification(arg0_29, arg1_29)
 
 		triggerToggle(var3_29, true)
 	elseif var0_29 == GAME.OPEN_MSGBOX_DONE then
-		pg.GuildLayerMgr:GetInstance():OnShowMsgBox()
+		pg.GuildLayerMgr.GetInstance():OnShowMsgBox()
 	elseif var0_29 == GuildProxy.TECHNOLOGY_START then
 		arg0_29.viewComponent:UpdateNotices(GuildMainScene.NOTIFY_TYPE_TECH)
 	elseif var0_29 == GAME.GUILD_START_TECH_DONE then
@@ -274,10 +274,10 @@ function var0_0.handleNotification(arg0_29, arg1_29)
 		arg0_29.viewComponent:TriggerOfficePage()
 	elseif var0_29 == GAME.LOAD_LAYERS then
 		if var1_29.context.mediator == AwardInfoMediator then
-			pg.GuildLayerMgr:GetInstance():UnBlurTopPanel()
+			pg.GuildLayerMgr.GetInstance():UnBlurTopPanel()
 		end
 	elseif var0_29 == GAME.REMOVE_LAYERS and var1_29.context.mediator == AwardInfoMediator then
-		pg.GuildLayerMgr:GetInstance():_BlurTopPanel()
+		pg.GuildLayerMgr.GetInstance():_BlurTopPanel()
 	end
 end
 

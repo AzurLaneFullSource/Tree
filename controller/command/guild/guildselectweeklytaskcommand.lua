@@ -7,19 +7,19 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var3_1 = getProxy(GuildProxy):getRawData()
 
 	if not var3_1 then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_no_exist"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_no_exist"))
 
 		return
 	end
 
 	if var3_1:getWeeklyTask():getState() ~= GuildTask.STATE_EMPTY then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_week_task_state_is_wrong"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_week_task_state_is_wrong"))
 
 		return
 	end
 
 	if not GuildMember.IsAdministrator(var3_1:getSelfDuty()) then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_commander_and_sub_op"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_commander_and_sub_op"))
 
 		return
 	end

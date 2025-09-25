@@ -265,7 +265,7 @@ function var0_0.HideDesc(arg0_35)
 
 	arg0_35.isShowDesc = false
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_35.descTr, arg0_35._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_35.descTr, arg0_35._tf)
 
 	if arg0_35.descNode then
 		Object.Destroy(arg0_35.descNode.gameObject)

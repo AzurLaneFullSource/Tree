@@ -221,8 +221,7 @@ function var0_0.bindEvent(arg0_2)
 					getProxy(ChapterProxy):StopAutoFight(ChapterConst.AUTOFIGHT_STOP_REASON.GOLD_MAX)
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
 						content = var0_28,
-						onYes = arg0_28,
-						weight = LayerWeightConst.SECOND_LAYER
+						onYes = arg0_28
 					})
 				else
 					arg0_28()

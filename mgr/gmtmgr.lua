@@ -39,7 +39,7 @@ function var0_0.initUI(arg0_3, arg1_3)
 end
 
 function var0_0.onTimer(arg0_5)
-	arg0_5._subTime = arg0_5._gmtTime - pg.TimeMgr:GetInstance():GetServerTime()
+	arg0_5._subTime = arg0_5._gmtTime - pg.TimeMgr.GetInstance():GetServerTime()
 
 	if arg0_5._go == nil then
 		arg0_5:initUI(function()

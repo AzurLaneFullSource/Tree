@@ -42,24 +42,29 @@ function var0_0.findUI(arg0_5)
 	arg0_5.siteUIList = UIItemList.New(arg0_5.mapContent, arg0_5.mapSiteTpl)
 	arg0_5.datePanel = EducateDatePanel.New(arg0_5:findTF("date", arg0_5.topTF), arg0_5.event)
 
+	arg0_5.datePanel:RegisterView(arg0_5)
 	arg0_5.datePanel:Load()
 
 	arg0_5.resPanel = EducateResPanel.New(arg0_5:findTF("res", arg0_5.topTF), arg0_5.event, {
 		showBg = true
 	})
 
+	arg0_5.resPanel:RegisterView(arg0_5)
 	arg0_5.resPanel:Load()
 
 	arg0_5.topPanel = EducateTopPanel.New(arg0_5:findTF("top_right", arg0_5.topTF), arg0_5.event)
 
+	arg0_5.topPanel:RegisterView(arg0_5)
 	arg0_5.topPanel:Load()
 
 	arg0_5.targetPanel = EducateTargetPanel.New(arg0_5:findTF("ui/target"), arg0_5.event)
 
+	arg0_5.targetPanel:RegisterView(arg0_5)
 	arg0_5.targetPanel:Load()
 
 	arg0_5.archivePanel = EducateArchivePanel.New(arg0_5:findTF("ui/archive_panel"), arg0_5.event)
 
+	arg0_5.archivePanel:RegisterView(arg0_5)
 	arg0_5.archivePanel:Load()
 
 	arg0_5.detailPanel = EducateSiteDetailPanel.New(arg0_5:findTF("ui/detail_panel"), arg0_5.event, {
@@ -71,6 +76,7 @@ function var0_0.findUI(arg0_5)
 		end
 	})
 
+	arg0_5.detailPanel:RegisterView(arg0_5)
 	arg0_5.detailPanel:Load()
 end
 
@@ -81,10 +87,7 @@ function var0_0.addListener(arg0_8)
 end
 
 function var0_0.didEnter(arg0_10)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_10.topTF, {
-		groupName = arg0_10:getGroupNameFromData(),
-		weight = arg0_10:getWeightFromData()
-	})
+	arg0_10:OverlayPanel(arg0_10.topTF)
 	arg0_10.siteUIList:make(function(arg0_11, arg1_11, arg2_11)
 		if arg0_11 == UIItemList.EventUpdate then
 			arg0_10:updateSiteItem(arg1_11, arg2_11)
@@ -215,7 +218,7 @@ function var0_0.onBackPressed(arg0_35)
 end
 
 function var0_0.willExit(arg0_36)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_36.topTF, arg0_36:findTF("ui"))
+	arg0_36:UnOverlayPanel(arg0_36.topTF, arg0_36:findTF("ui"))
 	arg0_36.datePanel:Destroy()
 
 	arg0_36.datePanel = nil

@@ -315,15 +315,13 @@ function var0_0.didEnter(arg0_15)
 	end, SFX_CANCEL)
 	onToggle(arg0_15, arg0_15.sortBtn, function(arg0_24)
 		if arg0_24 then
-			pg.UIMgr.GetInstance():OverlayPanel(arg0_15.sortPanel, {
-				groupName = LayerWeightConst.GROUP_EQUIPMENTSCENE
-			})
+			arg0_15:OverlayPanel(arg0_15.sortPanel)
 			setActive(arg0_15.sortPanel, true)
 			onNextTick(function()
 				arg0_15.sortPanelTG.allowSwitchOff = false
 			end)
 		else
-			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_15.sortPanel, arg0_15.topItems)
+			arg0_15:UnOverlayPanel(arg0_15.sortPanel, arg0_15.topItems)
 			setActive(arg0_15.sortPanel, false)
 
 			arg0_15.sortPanelTG.allowSwitchOff = true
@@ -537,13 +535,9 @@ function var0_0.didEnter(arg0_15)
 			end)
 		end)
 	end, SFX_CONFIRM)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_15.blurPanel, {
-		groupName = LayerWeightConst.GROUP_EQUIPMENTSCENE
-	})
+	arg0_15:OverlayPanel(arg0_15.blurPanel)
 	arg0_15:PlayUIAnimation(arg0_15.blurPanel, "enter")
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_15.topItems, {
-		groupName = LayerWeightConst.GROUP_EQUIPMENTSCENE
-	})
+	arg0_15:OverlayPanel(arg0_15.topItems)
 
 	local var0_15 = arg0_15.contextData.warp or StoreHouseConst.WARP_TO_MATERIAL
 	local var1_15 = arg0_15.contextData.mode or StoreHouseConst.OVERVIEW
@@ -1436,8 +1430,8 @@ function var0_0.SwitchToSpWeaponStoreHouse(arg0_127)
 end
 
 function var0_0.willExit(arg0_128)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_128.blurPanel, arg0_128._tf)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_128.topItems, arg0_128._tf)
+	arg0_128:UnOverlayPanel(arg0_128.blurPanel, arg0_128._tf)
+	arg0_128:UnOverlayPanel(arg0_128.topItems, arg0_128._tf)
 
 	if arg0_128.bulinTip then
 		arg0_128.bulinTip:Destroy()

@@ -62,8 +62,7 @@ function var0_0.Execute(arg0_1, arg1_1)
 							})
 						end,
 						yesText = i18n("msgbox_text_forward"),
-						onNo = arg0_3,
-						weight = LayerWeightConst.TOP_LAYER
+						onNo = arg0_3
 					})
 				end)
 			end

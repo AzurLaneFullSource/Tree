@@ -157,7 +157,10 @@ function var0_0.GetRedDots(arg0_23)
 		RedDotNode.New(arg0_23._tf:Find("frame/bottom/liveButton/tip"), {
 			pg.RedDotMgr.TYPES.COURTYARD,
 			pg.RedDotMgr.TYPES.SCHOOL,
-			pg.RedDotMgr.TYPES.COMMANDER
+			pg.RedDotMgr.TYPES.COMMANDER,
+			pg.RedDotMgr.TYPES.DORM3D_SHOP_TIMELIMIT,
+			pg.RedDotMgr.TYPES.EDUCATE_NEW_CHILD,
+			pg.RedDotMgr.TYPES.ISLAND_3D
 		})
 	}
 end

@@ -42,7 +42,7 @@ end
 function var0_0.Disable(arg0_7)
 	for iter0_7, iter1_7 in ipairs(arg0_7.nodes) do
 		if iter1_7.Puase then
-			iter1_7:Puase()
+			iter1_7:Pause()
 		end
 	end
 end

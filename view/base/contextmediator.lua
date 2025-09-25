@@ -72,7 +72,6 @@ function var0_0.onRegister(arg0_5)
 			})
 		end
 
-		pg.PoolMgr.GetInstance():ClearAllTempCache()
 		arg0_5:sendNotification(GAME.GO_SCENE, SCENE.MAINUI)
 	end)
 	arg0_5:bind(BaseUI.ON_CLOSE, function(arg0_12)
@@ -181,8 +180,7 @@ function var0_0.onRegister(arg0_5)
 						mediator = NewSkinMediator,
 						viewComponent = NewSkinLayer,
 						data = {
-							skinId = iter1_20.id,
-							LayerWeightMgr_weight = LayerWeightConst.SECOND_LAYER
+							skinId = iter1_20.id
 						},
 						onRemoved = arg0_21
 					}))
@@ -197,8 +195,7 @@ function var0_0.onRegister(arg0_5)
 							viewComponent = NewSkinLayer,
 							data = {
 								timeLimit = true,
-								skinId = iter1_20.id,
-								LayerWeightMgr_weight = LayerWeightConst.SECOND_LAYER
+								skinId = iter1_20.id
 							},
 							onRemoved = arg0_22
 						}))
@@ -337,8 +334,7 @@ function var0_0.commonBind(arg0_37)
 					data = {
 						equipmentId = arg2_38:getConfig("id"),
 						type = EquipmentInfoMediator.TYPE_DISPLAY,
-						onRemoved = arg3_38,
-						LayerWeightMgr_weight = LayerWeightConst.TOP_LAYER
+						onRemoved = arg3_38
 					}
 				}))
 			elseif arg2_38.type == DROP_TYPE_SPWEAPON then
@@ -348,8 +344,7 @@ function var0_0.commonBind(arg0_37)
 					data = {
 						spWeaponConfigId = arg2_38:getConfig("id"),
 						type = SpWeaponInfoLayer.TYPE_DISPLAY,
-						onRemoved = arg3_38,
-						LayerWeightMgr_weight = LayerWeightConst.TOP_LAYER
+						onRemoved = arg3_38
 					}
 				}))
 			elseif arg2_38.type == DROP_TYPE_EQUIPMENT_SKIN then
@@ -358,8 +353,7 @@ function var0_0.commonBind(arg0_37)
 					viewComponent = EquipmentSkinLayer,
 					data = {
 						skinId = arg2_38:getConfig("id"),
-						mode = EquipmentSkinLayer.DISPLAY,
-						weight = LayerWeightConst.TOP_LAYER
+						mode = EquipmentSkinLayer.DISPLAY
 					}
 				}))
 			elseif arg2_38.type == DROP_TYPE_EMOJI then
@@ -383,8 +377,7 @@ function var0_0.commonBind(arg0_37)
 					type = MSGBOX_TYPE_SINGLE_ITEM,
 					drop = arg2_38,
 					onNo = arg3_38,
-					onYes = arg3_38,
-					weight = LayerWeightConst.TOP_LAYER
+					onYes = arg3_38
 				})
 			end
 		end,
@@ -399,8 +392,7 @@ function var0_0.commonBind(arg0_37)
 					arg0_39.viewComponent:emit(BaseUI.ON_DROP, arg0_40, function()
 						arg0_39.viewComponent:emit(BaseUI.ON_DROP_LIST, arg2_39)
 					end)
-				end,
-				weight = LayerWeightConst.TOP_LAYER
+				end
 			})
 		end,
 		[BaseUI.ON_DROP_LIST_OWN] = function(arg0_42, arg1_42, arg2_42)
@@ -414,8 +406,7 @@ function var0_0.commonBind(arg0_37)
 					arg0_42.viewComponent:emit(BaseUI.ON_DROP, arg0_43, function()
 						arg0_42.viewComponent:emit(BaseUI.ON_DROP_LIST, arg2_42)
 					end)
-				end,
-				weight = LayerWeightConst.TOP_LAYER
+				end
 			})
 		end,
 		[BaseUI.ON_ITEM] = function(arg0_45, arg1_45, arg2_45, arg3_45)
@@ -467,23 +458,11 @@ function var0_0.commonBind(arg0_37)
 			}))
 		end,
 		[BaseUI.ON_NEW_DROP] = function(arg0_49, arg1_49, arg2_49)
-			pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_DROP, setmetatable(arg2_49, {
-				__index = {
-					blurParams = {
-						weight = LayerWeightConst.TOP_LAYER
-					}
-				}
-			}))
+			pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_DROP, arg2_49)
 		end,
 		[BaseUI.ON_NEW_STYLE_DROP] = function(arg0_50, arg1_50, arg2_50)
 			local var0_50 = pg.NewStyleMsgboxMgr.TYPE_COMMON_DROP
-			local var1_50 = setmetatable(arg2_50, {
-				__index = {
-					blurParams = {
-						weight = LayerWeightConst.TOP_LAYER
-					}
-				}
-			})
+			local var1_50 = arg2_50
 
 			if arg2_50.useDeepShow then
 				pg.NewStyleMsgboxMgr.GetInstance():DeepShow(var0_50, var1_50)
@@ -501,9 +480,6 @@ function var0_0.commonBind(arg0_37)
 							name = i18n("msgbox_text_confirm"),
 							sound = SFX_CONFIRM
 						}
-					},
-					blurParams = {
-						weight = LayerWeightConst.TOP_LAYER
 					},
 					items = arg2_51.itemList,
 					content = arg2_51.content,

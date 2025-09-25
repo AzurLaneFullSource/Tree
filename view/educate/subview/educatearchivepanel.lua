@@ -49,12 +49,11 @@ function var0_0.OnInit(arg0_2)
 
 	arg0_2:addListener()
 	arg0_2:initAttrsPanel()
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_2._tf, {
+	arg0_2:OverlayPanel(arg0_2._tf, {
+		groupDelta = -1,
 		pbList = {
 			arg0_2.blurBg
-		},
-		groupName = LayerWeightConst.GROUP_EDUCATE,
-		weight = LayerWeightConst.BASE_LAYER - 1
+		}
 	})
 	setActive(arg0_2.foldPanelTF, true)
 	setActive(arg0_2.showPanelTF, false)
@@ -213,7 +212,7 @@ function var0_0.Flush(arg0_20)
 end
 
 function var0_0.OnDestroy(arg0_21)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_21._tf)
+	arg0_21:UnOverlayPanel(arg0_21._tf)
 end
 
 return var0_0

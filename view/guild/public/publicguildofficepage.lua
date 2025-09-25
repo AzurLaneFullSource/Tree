@@ -30,7 +30,7 @@ function var0_0.Flush(arg0_6)
 	arg0_6.displays = arg0_6.guild:GetDonateTasks()
 
 	arg0_6.itemList:align(#arg0_6.displays)
-	pg.GuildPaintingMgr:GetInstance():Update("guild_office_blue", Vector3(-737, -171, 0))
+	pg.GuildPaintingMgr.GetInstance():Update("guild_office_blue", Vector3(-737, -171, 0))
 end
 
 function var0_0.UpdateDonateTask(arg0_7, arg1_7, arg2_7)
@@ -50,7 +50,7 @@ function var0_0.UpdateDonateTask(arg0_7, arg1_7, arg2_7)
 		local var3_8 = var1_7:GetResCntByAward(var1_8)
 		local var4_8 = var3_8 < var1_8[3] and "#FF5C5CFF" or "#92FC63FF"
 
-		pg.MsgboxMgr:GetInstance():ShowMsgBox({
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("guild_donate_tip", var2_8:getConfig("name"), var1_8[3], var3_8, var4_8),
 			onYes = function()
 				arg0_7:emit(PublicGuildMainMediator.ON_COMMIT, var0_8.id)

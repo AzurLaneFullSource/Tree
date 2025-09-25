@@ -17,9 +17,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, false, {
-		weight = LayerWeightConst.THIRD_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
 
 	arg0_2.anim = arg0_2:findTF("anim_root"):GetComponent(typeof(Animation))
 	arg0_2.animEvent = arg0_2:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
@@ -181,7 +179,7 @@ end
 
 function var0_0.willExit(arg0_22)
 	arg0_22.animEvent:SetEndEvent(nil)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_22._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_22._tf)
 
 	if arg0_22.contextData.onExit then
 		arg0_22.contextData.onExit()

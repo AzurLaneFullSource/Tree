@@ -265,8 +265,7 @@ function var1_0.onError(arg0_11)
 				onYes = function()
 					var0_0.ConnectionMgr.GetInstance():Reconnect(var1_11)
 				end,
-				onNo = var0_11,
-				weight = LayerWeightConst.TOP_LAYER
+				onNo = var0_11
 			})
 			var0_0.NewStoryMgr.GetInstance():Stop()
 			var0_0.NewGuideMgr.GetInstance():Pause()

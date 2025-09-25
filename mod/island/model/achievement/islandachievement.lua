@@ -55,4 +55,13 @@ function var0_0.GetAwards(arg0_10)
 	end)
 end
 
+function var0_0.GetIcon(arg0_12)
+	local var0_12 = pg.island_achievement[arg0_12].group
+	local var1_12 = pg.island_achievement_group
+
+	return var1_12[underscore.detect(var1_12.all, function(arg0_13)
+		return table.contains(var1_12[arg0_13].achievement_list, var0_12)
+	end)].icon
+end
+
 return var0_0

@@ -1,5 +1,9 @@
 local var0_0 = class("IslandFirmOrder", import(".IslandOrder"))
 
+var0_0.FIRM_ORDER_TYPE_COMMON = 1
+var0_0.FIRM_ORDER_TYPE_URGENCY = 2
+var0_0.FIRM_ORDER_TYPE_ACT = 3
+
 function var0_0.IsFirm(arg0_1)
 	return true
 end
@@ -18,8 +22,28 @@ end
 
 function var0_0.GetAwardItemAndExp(arg0_5)
 	local var0_5 = arg0_5:getConfig("award")
+	local var1_5, var2_5 = arg0_5:GenAwards(var0_5)
+	local var3_5 = arg0_5:GenPtAwards()
 
-	return arg0_5:GenAwards(var0_5)
+	if var3_5 then
+		table.insert(var1_5, var3_5)
+	end
+
+	return var1_5, var2_5
+end
+
+function var0_0.GenPtAwards(arg0_6)
+	local var0_6 = arg0_6:getConfig("season_pt_num")
+
+	if var0_6 > 0 then
+		return {
+			id = 0,
+			type = VIRTUAL_DROP_TYPE_ISLAND_SEASON_PT,
+			count = var0_6 or 0
+		}
+	end
+
+	return nil
 end
 
 return var0_0

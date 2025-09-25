@@ -5,9 +5,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, false, {
-		weight = arg0_2:getWeightFromData()
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
 
 	arg0_2.backBtn = arg0_2:findTF("panel/top/btnBack")
 	arg0_2.skillInfoName = arg0_2:findTF("panel/bg/skill_name")
@@ -135,7 +133,7 @@ function var0_0.close(arg0_14)
 end
 
 function var0_0.willExit(arg0_15)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_15._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_15._tf)
 
 	if arg0_15.contextData.onExit then
 		arg0_15.contextData.onExit()

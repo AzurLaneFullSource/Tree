@@ -88,9 +88,7 @@ function var0_0.display(arg0_6, arg1_6)
 	if arg0_6.contextData.parent then
 		setParent(arg0_6._tf, arg0_6.contextData.parent)
 	else
-		pg.UIMgr.GetInstance():BlurPanel(arg0_6._tf, false, {
-			weight = LayerWeightConst.SECOND_LAYER
-		})
+		pg.UIMgr.GetInstance():BlurPanel(arg0_6._tf)
 	end
 
 	local var0_6 = SeasonInfo.getMilitaryRank(arg1_6.score, arg1_6.rank)
@@ -187,7 +185,7 @@ function var0_0.willExit(arg0_9)
 	if arg0_9.contextData.parent then
 		-- block empty
 	else
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_9._tf, pg.UIMgr.GetInstance().UIMain)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_9._tf)
 	end
 
 	if arg0_9.circle.childCount > 0 then

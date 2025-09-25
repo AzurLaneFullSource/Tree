@@ -98,7 +98,7 @@ function var0_0.didEnter(arg0_13)
 end
 
 function var0_0.willExit(arg0_14)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_14._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_14._tf)
 end
 
 return var0_0

@@ -35,23 +35,33 @@ function var0_0.GetEmptySlot(arg0_3)
 	return nil
 end
 
-function var0_0.GetUsingSlot(arg0_4, arg1_4)
-	if arg1_4 then
-		for iter0_4, iter1_4 in ipairs(arg0_4.slots) do
-			if not iter1_4:IsEmpty() and iter1_4:IsUsing(arg1_4) then
-				return iter1_4
+function var0_0.GetSlotById(arg0_4, arg1_4)
+	for iter0_4, iter1_4 in ipairs(arg0_4.slots) do
+		if iter1_4.id == arg1_4 then
+			return iter1_4
+		end
+	end
+
+	return nil
+end
+
+function var0_0.GetUsingSlot(arg0_5, arg1_5)
+	if arg1_5 then
+		for iter0_5, iter1_5 in ipairs(arg0_5.slots) do
+			if not iter1_5:IsEmpty() and iter1_5:IsUsing(arg1_5) then
+				return iter1_5
 			end
 		end
 
 		return nil
 	else
-		return arg0_4.slots[1]
+		return arg0_5.slots[1]
 	end
 end
 
-function var0_0.AnySlotUsing(arg0_5)
-	for iter0_5, iter1_5 in ipairs(arg0_5.slots) do
-		if not iter1_5:IsEmpty() then
+function var0_0.AnySlotUsing(arg0_6)
+	for iter0_6, iter1_6 in ipairs(arg0_6.slots) do
+		if not iter1_6:IsEmpty() then
 			return true
 		end
 	end
@@ -59,20 +69,20 @@ function var0_0.AnySlotUsing(arg0_5)
 	return false
 end
 
-function var0_0.GetTimeline(arg0_6)
-	return arg0_6.timelineInfo
+function var0_0.GetTimeline(arg0_7)
+	return arg0_7.timelineInfo
 end
 
-function var0_0.HasTimeline(arg0_7)
-	return #arg0_7.timelineInfo > 0
+function var0_0.HasTimeline(arg0_8)
+	return #arg0_8.timelineInfo > 0
 end
 
-function var0_0.GetSlot(arg0_8)
-	return arg0_8.config.slotCnt
+function var0_0.GetSlot(arg0_9)
+	return arg0_9.config.slotCnt
 end
 
-function var0_0.GetBlackboardParam(arg0_9)
-	return arg0_9.config.param
+function var0_0.GetBlackboardParam(arg0_10)
+	return arg0_10.config.param
 end
 
 return var0_0

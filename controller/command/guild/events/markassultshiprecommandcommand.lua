@@ -8,13 +8,13 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var4_1 = var3_1:getRawData()
 
 	if not var4_1 then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_no_exist"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_no_exist"))
 
 		return
 	end
 
 	if not GuildMember.IsAdministrator(var4_1:getSelfDuty()) then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_commander_and_sub_op"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_commander_and_sub_op"))
 
 		return
 	end

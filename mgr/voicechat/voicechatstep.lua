@@ -1,12 +1,13 @@
 local var0_0 = class("VoiceChatStep")
 
-function var0_0.Ctor(arg0_1, arg1_1)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.say = arg1_1.say or ""
 	arg0_1.voice = arg1_1.voice
 	arg0_1.options = arg1_1.options
 	arg0_1.waitForClick = arg1_1.wait or 0
 	arg0_1.optionFlag = arg1_1.optionFlag
 	arg0_1.dispatcher = arg1_1.dispatcher
+	arg0_1.shipGroup = arg2_1
 end
 
 function var0_0.IsSameBranch(arg0_2, arg1_2)
@@ -14,7 +15,11 @@ function var0_0.IsSameBranch(arg0_2, arg1_2)
 end
 
 function var0_0.GetSay(arg0_3)
-	return arg0_3.say
+	local var0_3 = HXSet.hxLan(arg0_3.say)
+	local var1_3 = getProxy(ApartmentProxy):getApartment(arg0_3.shipGroup)
+	local var2_3 = var1_3 and var1_3:GetCallName() or arg0_3.shipGroup
+
+	return (string.gsub(var0_3, "{dorm3d}", var2_3))
 end
 
 function var0_0.GetVoice(arg0_4)

@@ -160,7 +160,7 @@ function var0_0.willExit(arg0_15)
 	arg0_15.taskPage:dispose()
 	arg0_15.historyPage:dispose()
 	arg0_15.buildPage:dispose()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_15._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_15._tf)
 end
 
 return var0_0

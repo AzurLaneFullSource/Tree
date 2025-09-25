@@ -508,6 +508,7 @@ function var0_0.openBuyPanel(arg0_42)
 	local var8_42 = i18n("battlepass_pay_tip")
 	local var9_42 = {
 		isChargeType = true,
+		commodity = var1_42,
 		infoTip = var1_42:GetInfoTip(),
 		icon = "chargeicon/" .. var1_42:getConfig("picture"),
 		name = var1_42:getConfig("name_display"),

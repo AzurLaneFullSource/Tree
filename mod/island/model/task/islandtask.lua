@@ -18,217 +18,226 @@ function var0_0.GetAcceptTime(arg0_3)
 end
 
 function var0_0.InitEndTime(arg0_4)
-	local var0_4 = arg0_4:getConfig("unlock_condition")
+	local var0_4 = arg0_4:getConfig("unlock_time")
 
-	if var0_4 == "" or #var0_4 == 0 then
-		arg0_4.endTime = 0
-	end
-
-	local var1_4 = underscore.detect(var0_4, function(arg0_5)
-		return arg0_5[1] == IslandTaskConditionType.IN_TIME
-	end)
-
-	if not var1_4 then
+	if var0_4 == "always" then
 		arg0_4.endTime = 0
 	else
-		arg0_4.endTime = pg.TimeMgr.GetInstance():parseTimeFromConfig(var1_4[2][2])
+		arg0_4.endTime = pg.TimeMgr.GetInstance():parseTimeFromConfig(var0_4[2])
 	end
 end
 
-function var0_0.SetEndTime(arg0_6, arg1_6)
-	arg0_6.endTime = arg1_6
+function var0_0.SetEndTime(arg0_5, arg1_5)
+	arg0_5.endTime = arg1_5
 end
 
-function var0_0.UpdateTargetData(arg0_7, arg1_7)
-	local var0_7 = {}
+function var0_0.UpdateTargetData(arg0_6, arg1_6)
+	local var0_6 = {}
 
-	for iter0_7, iter1_7 in ipairs(arg1_7) do
-		var0_7[iter1_7.target_id] = iter1_7
+	for iter0_6, iter1_6 in ipairs(arg1_6) do
+		var0_6[iter1_6.target_id] = iter1_6
 	end
 
-	arg0_7.targetList = {}
+	arg0_6.targetList = {}
 
-	for iter2_7, iter3_7 in ipairs(arg0_7:getConfig("target_id")) do
-		table.insert(arg0_7.targetList, IslandTaskTarget.New(var0_7[iter3_7] or {
-			target_id = iter3_7
+	for iter2_6, iter3_6 in ipairs(arg0_6:getConfig("target_id")) do
+		table.insert(arg0_6.targetList, IslandTaskTarget.New(var0_6[iter3_6] or {
+			target_id = iter3_6
 		}))
 	end
 end
 
-function var0_0.GetTargetList(arg0_8)
-	return arg0_8.targetList
+function var0_0.GetTargetList(arg0_7)
+	return arg0_7.targetList
 end
 
-function var0_0.GetTargetById(arg0_9, arg1_9)
-	return underscore.detect(arg0_9.targetList, function(arg0_10)
-		return arg0_10.id == arg1_9
+function var0_0.GetTargetById(arg0_8, arg1_8)
+	return underscore.detect(arg0_8.targetList, function(arg0_9)
+		return arg0_9.id == arg1_8
 	end)
 end
 
-function var0_0.GetRecycleItemInfos(arg0_11)
-	local var0_11 = {}
+function var0_0.GetRecycleItemInfos(arg0_10)
+	local var0_10 = {}
 
-	underscore.each(arg0_11.targetList, function(arg0_12)
-		if arg0_12:GetType() == IslandTaskTargetType.RECYCLE then
-			table.insert(var0_11, Drop.New({
+	underscore.each(arg0_10.targetList, function(arg0_11)
+		if arg0_11:GetType() == IslandTaskTargetType.RECYCLE then
+			table.insert(var0_10, Drop.New({
 				type = DROP_TYPE_ISLAND_ITEM,
-				id = arg0_12:GetTargetId(),
-				count = arg0_12:GetTargetNum()
+				id = arg0_11:GetTargetId(),
+				count = arg0_11:GetTargetNum()
 			}))
 		end
 	end)
 
-	return var0_11
+	return var0_10
 end
 
-function var0_0.ExistTargetType(arg0_13, arg1_13)
-	return underscore.any(arg0_13.targetList, function(arg0_14)
-		return arg0_14:GetType() == arg1_13
+function var0_0.ExistTargetType(arg0_12, arg1_12)
+	return underscore.any(arg0_12.targetList, function(arg0_13)
+		return arg0_13:GetType() == arg1_12
 	end)
 end
 
-function var0_0.GetTargetIdByTypeAndParam(arg0_15, arg1_15, arg2_15)
-	local var0_15 = {}
+function var0_0.GetTargetIdByTypeAndParam(arg0_14, arg1_14, arg2_14)
+	local var0_14 = {}
 
-	for iter0_15, iter1_15 in ipairs(arg0_15.targetList) do
-		if iter1_15:CheckTypeAndTargetId(arg1_15, arg2_15) and not table.contains(var0_15, iter1_15.id) then
-			table.insert(var0_15, iter1_15.id)
+	for iter0_14, iter1_14 in ipairs(arg0_14.targetList) do
+		if iter1_14:CheckTypeAndTargetId(arg1_14, arg2_14) and not table.contains(var0_14, iter1_14.id) then
+			table.insert(var0_14, iter1_14.id)
 		end
 	end
 
-	return var0_15
+	return var0_14
 end
 
-function var0_0.GetRemainTimeStr(arg0_16)
-	local var0_16 = arg0_16.endTime - pg.TimeMgr.GetInstance():GetServerTime()
-	local var1_16 = math.floor(var0_16 / 86400)
-	local var2_16 = math.floor(var0_16 % 86400 / 3600)
+function var0_0.GetRemainTimeStr(arg0_15)
+	local var0_15 = arg0_15.endTime - pg.TimeMgr.GetInstance():GetServerTime()
+	local var1_15 = math.floor(var0_15 / 86400)
+	local var2_15 = math.floor(var0_15 % 86400 / 3600)
 
-	return i18n("island_task_lefttime", var1_16, var2_16)
+	return i18n("island_task_lefttime", var1_15, var2_15)
 end
 
-function var0_0.IsFinish(arg0_17)
-	return underscore.all(arg0_17.targetList, function(arg0_18)
-		return arg0_18:IsFinish()
+function var0_0.IsFinish(arg0_16)
+	return underscore.all(arg0_16.targetList, function(arg0_17)
+		return arg0_17:IsFinish()
 	end)
 end
 
-function var0_0.IsSubmitOnUI(arg0_19)
-	return arg0_19:getConfig("complete_type") == 3
+function var0_0.IsSubmitOnUI(arg0_18)
+	return arg0_18:getConfig("complete_type") == 3
 end
 
-function var0_0.GetSubmitObjectId(arg0_20)
-	return arg0_20:getConfig("complete_data")
+function var0_0.GetSubmitObjectId(arg0_19)
+	return arg0_19:getConfig("complete_data")
 end
 
-function var0_0.IsSubmitImmediately(arg0_21)
-	return arg0_21:getConfig("complete_type") == 2 and arg0_21:GetSubmitObjectId() == 0
+function var0_0.IsSubmitImmediately(arg0_20)
+	return arg0_20:getConfig("complete_type") == 2 and arg0_20:GetSubmitObjectId() == 0
 end
 
-function var0_0.CheckSubmitOnApproach(arg0_22, arg1_22)
-	return arg0_22:GetSubmitObjectId() == arg1_22 and arg0_22:getConfig("complete_type") == 2
+function var0_0.CheckSubmitOnApproach(arg0_21, arg1_21)
+	return arg0_21:GetSubmitObjectId() == arg1_21 and arg0_21:getConfig("complete_type") == 2
 end
 
-function var0_0.GetFinishedDesc(arg0_23)
-	return arg0_23:getConfig("complete_tips")
+function var0_0.GetFinishedDesc(arg0_22)
+	return arg0_22:getConfig("complete_tips")
 end
 
-function var0_0.InTime(arg0_24)
-	if arg0_24.endTime == 0 then
+function var0_0.InTime(arg0_23)
+	if arg0_23.endTime == 0 then
 		return true
 	end
 
-	return pg.TimeMgr.GetInstance():GetServerTime() < arg0_24.endTime
+	return pg.TimeMgr.GetInstance():GetServerTime() < arg0_23.endTime
 end
 
-function var0_0.GetType(arg0_25)
-	return arg0_25:getConfig("type")
+function var0_0.GetType(arg0_24)
+	return arg0_24:getConfig("type")
 end
 
-function var0_0.GetShowType(arg0_26)
-	return IslandTaskType.Type2ShowType[arg0_26:getConfig("type")]
+function var0_0.GetShowType(arg0_25)
+	return IslandTaskType.Type2ShowType[arg0_25:getConfig("type")]
 end
 
-function var0_0.GetName(arg0_27)
-	return arg0_27:getConfig("name")
+function var0_0.GetName(arg0_26)
+	return arg0_26:getConfig("name")
 end
 
-function var0_0.GetDesc(arg0_28)
-	return arg0_28:getConfig("task_desc")
+function var0_0.GetDesc(arg0_27)
+	return arg0_27:getConfig("task_desc")
 end
 
-function var0_0.IsSeries(arg0_29)
-	return arg0_29:getConfig("series") ~= ""
+function var0_0.IsSeries(arg0_28)
+	return arg0_28:getConfig("series") ~= ""
 end
 
-function var0_0.GetSeriesTitle(arg0_30)
-	return arg0_30:getConfig("series") .. " " .. arg0_30:getConfig("series_name")
+function var0_0.GetSeriesTitle(arg0_29)
+	return arg0_29:getConfig("series") .. " " .. arg0_29:getConfig("series_name")
 end
 
-function var0_0.GetAddedStory(arg0_31)
-	return arg0_31:getConfig("rec_perform")
+function var0_0.GetAddedStory(arg0_30)
+	return arg0_30:getConfig("rec_perform")
 end
 
-function var0_0.GetSubmitStory(arg0_32)
-	return arg0_32:getConfig("com_perform")
+function var0_0.GetSubmitStory(arg0_31)
+	return arg0_31:getConfig("com_perform")
 end
 
-function var0_0.GetTraceId(arg0_33)
-	return arg0_33:getConfig("navigation")
-end
-
-function var0_0.GetTraceParam(arg0_34)
-	for iter0_34, iter1_34 in ipairs(arg0_34.targetList) do
-		if not iter1_34:IsFinish() then
-			return iter1_34:GetTrackParma(), iter0_34
+function var0_0.GetTraceParam(arg0_32)
+	for iter0_32, iter1_32 in ipairs(arg0_32.targetList) do
+		if not iter1_32:IsFinish() then
+			return iter1_32:GetTrackParma(), iter0_32
 		end
 	end
 
-	return arg0_34:GetSubmitObjectId() ~= 0 and arg0_34:GetSubmitObjectId() or ""
+	return arg0_32:GetSubmitObjectId() ~= 0 and arg0_32:GetSubmitObjectId() or ""
 end
 
-function var0_0.GetAwards(arg0_35)
-	local var0_35 = underscore.map(arg0_35:getConfig("reward_show"), function(arg0_36)
-		return Drop.Create(arg0_36)
-	end)
+function var0_0.GetAwards(arg0_33)
+	local var0_33 = arg0_33:getConfig("reward_show")
+	local var1_33 = {}
 
-	if arg0_35:GetExpAward() then
-		table.insert(var0_35, arg0_35:GetExpAward())
+	if type(var0_33) == "table" then
+		var1_33 = underscore.map(var0_33, function(arg0_34)
+			return Drop.Create(arg0_34)
+		end)
 	end
 
-	return var0_35
+	if arg0_33:GetExpAward() then
+		table.insert(var1_33, arg0_33:GetExpAward())
+	end
+
+	return var1_33
 end
 
-function var0_0.GetExp(arg0_37)
-	return arg0_37:getConfig("reward_exp")
+function var0_0.GetExp(arg0_35)
+	return arg0_35:getConfig("reward_exp")
 end
 
-function var0_0.GetExpAward(arg0_38)
-	if arg0_38:GetExp() ~= 0 then
+function var0_0.GetExpAward(arg0_36)
+	if arg0_36:GetExp() ~= 0 then
 		return {
 			id = 2,
 			type = DROP_TYPE_ISLAND_ITEM,
-			count = arg0_38:GetExp()
+			count = arg0_36:GetExp()
 		}
 	end
 
 	return nil
 end
 
-function var0_0.GetAwardsStatic(arg0_39)
-	return underscore.map(pg.island_task[arg0_39].reward_show, function(arg0_40)
-		return Drop.Create(arg0_40)
-	end)
+function var0_0.GetAwardsStatic(arg0_37)
+	local var0_37 = pg.island_task[arg0_37].reward_show
+	local var1_37 = pg.island_task[arg0_37].reward_exp
+	local var2_37 = {}
+
+	if type(var0_37) == "table" then
+		var2_37 = underscore.map(pg.island_task[arg0_37].reward_show, function(arg0_38)
+			return Drop.Create(arg0_38)
+		end)
+	end
+
+	if var1_37 ~= 0 then
+		table.insert(var2_37, {
+			id = 2,
+			type = DROP_TYPE_ISLAND_ITEM,
+			count = var1_37
+		})
+	end
+
+	return var2_37
 end
 
-function var0_0.GetSubmitPlayInfo(arg0_41)
-	local var0_41 = pg.island_task[arg0_41].com_perform
+function var0_0.GetSubmitPlayInfo(arg0_39)
+	local var0_39 = pg.island_task[arg0_39].com_perform
 
-	if var0_41 == "" or #var0_41 == 0 then
+	if var0_39 == "" or #var0_39 == 0 then
 		return nil
 	end
 
-	return var0_41[1], var0_41[2]
+	return var0_39[1], var0_39[2]
 end
 
 return var0_0

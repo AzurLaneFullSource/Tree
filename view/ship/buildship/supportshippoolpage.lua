@@ -73,11 +73,11 @@ function var0_0.UpdateBuildPoolPaiting(arg0_10)
 	local var0_10 = arg0_10.contextData.falgShip:getPainting()
 
 	if arg0_10.painting ~= var0_10 then
-		pg.UIMgr:GetInstance():LoadingOn()
+		pg.UIMgr.GetInstance():LoadingOn()
 		setPaintingPrefabAsync(arg0_10.patingTF, var0_10, "build", function()
 			arg0_10.painting = var0_10
 
-			pg.UIMgr:GetInstance():LoadingOff()
+			pg.UIMgr.GetInstance():LoadingOff()
 		end)
 	end
 end

@@ -183,7 +183,7 @@ function var0_0.init(arg0_12)
 	arg0_12.sceneGroupDic = {}
 	arg0_12.lastSceneRootDict = {}
 
-	pg.ClickEffectMgr:GetInstance():SetClickEffect("DORM3D")
+	pg.ClickEffectMgr.GetInstance():SetClickEffect("DORM3D")
 end
 
 function var0_0.BindEvent(arg0_14)
@@ -730,19 +730,22 @@ function var0_0.LoadSingleCharacter(arg0_63, arg1_63, arg2_63)
 	local var2_63 = getProxy(ApartmentProxy):getApartment(arg1_63)
 	local var3_63 = var2_63:getConfig("asset_name")
 	local var4_63 = var2_63:GetSkinModelID(arg0_63.room:getConfig("tag"))
-	local var5_63 = pg.dorm3d_resource[var4_63].model_id
+	local var5_63 = Dorm3dSkin.New({
+		configId = var4_63
+	})
+	local var6_63 = var5_63:GetModelName()
 
-	assert(var5_63)
+	assert(var6_63)
 
 	for iter0_63, iter1_63 in ipairs({
 		"common",
-		var5_63
+		var6_63
 	}) do
-		local var6_63 = string.format("dorm3d/character/%s/res/%s", var3_63, iter1_63)
+		local var7_63 = string.format("dorm3d/character/%s/res/%s", var3_63, iter1_63)
 
-		if checkABExist(var6_63) then
+		if checkABExist(var7_63) then
 			table.insert(var0_63, function(arg0_64)
-				arg0_63.loader:LoadBundle(var6_63, function(arg0_65)
+				arg0_63.loader:LoadBundle(var7_63, function(arg0_65)
 					for iter0_65, iter1_65 in ipairs(arg0_65:GetAllAssetNames()) do
 						local var0_65, var1_65, var2_65 = string.find(iter1_65, "material_hx[/\\](.*).mat")
 
@@ -766,13 +769,17 @@ function var0_0.LoadSingleCharacter(arg0_63, arg1_63, arg2_63)
 	}
 
 	table.insert(var0_63, function(arg0_66)
-		local var0_66 = string.format("dorm3d/character/%s/prefabs/%s", var3_63, var5_63)
+		local var0_66 = string.format("dorm3d/character/%s/prefabs/%s", var3_63, var6_63)
 
 		arg0_63.loader:GetPrefab(var0_66, "", function(arg0_67)
 			var1_63.ladyGameObject = arg0_67
 			arg0_63.skinDict[var4_63] = {
 				ladyGameObject = arg0_67
 			}
+
+			if var6_63 ~= var5_63:GetHXModel() then
+				arg0_63:HXCharacter(arg0_67.transform)
+			end
 
 			arg0_66()
 		end)
@@ -781,16 +788,25 @@ function var0_0.LoadSingleCharacter(arg0_63, arg1_63, arg2_63)
 	if arg0_63.room:isPersonalRoom() then
 		for iter2_63, iter3_63 in ipairs(var2_63:GetAllModelIds()) do
 			if not table.contains(var1_63.skinIdList, iter3_63) then
-				local var7_63 = pg.dorm3d_resource[iter3_63].model_id
-				local var8_63 = string.format("dorm3d/character/%s/prefabs/%s", var3_63, var7_63)
+				var5_63 = Dorm3dSkin.New({
+					configId = iter3_63
+				})
 
-				if checkABExist(var8_63) then
+				local var8_63 = var5_63:GetModelName()
+				local var9_63 = string.format("dorm3d/character/%s/prefabs/%s", var3_63, var8_63)
+
+				if checkABExist(var9_63) then
 					table.insert(var1_63.skinIdList, iter3_63)
 					table.insert(var0_63, function(arg0_68)
-						arg0_63.loader:GetPrefab(var8_63, "", function(arg0_69)
+						arg0_63.loader:GetPrefab(var9_63, "", function(arg0_69)
 							arg0_63.skinDict[iter3_63] = {
 								ladyGameObject = arg0_69
 							}
+
+							if var6_63 ~= var5_63:GetHXModel() then
+								arg0_63:HXCharacter(arg0_69.transform)
+							end
+
 							GetComponent(arg0_69, "GraphOwner").enabled = false
 
 							setActive(arg0_69, false)
@@ -803,11 +819,11 @@ function var0_0.LoadSingleCharacter(arg0_63, arg1_63, arg2_63)
 	end
 
 	if arg0_63.contextData.pendingDic[arg1_63] then
-		local var9_63 = pg.dorm3d_welcome[arg0_63.contextData.pendingDic[arg1_63]]
+		local var10_63 = pg.dorm3d_welcome[arg0_63.contextData.pendingDic[arg1_63]]
 
-		if var9_63.item_prefab ~= "" then
+		if var10_63.item_prefab ~= "" then
 			table.insert(var0_63, function(arg0_70)
-				local var0_70 = string.lower("dorm3d/furniture/item/" .. var9_63.item_prefab)
+				local var0_70 = string.lower("dorm3d/furniture/item/" .. var10_63.item_prefab)
 
 				arg0_63.loader:GetPrefab(var0_70, "", function(arg0_71)
 					var1_63.tfPendintItem = arg0_71.transform
@@ -1079,10 +1095,7 @@ function var0_0.didEnter(arg0_86)
 
 	arg0_86.expressionDict = {}
 
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_86.blockLayer, {
-		weight = LayerWeightConst.SECOND_LAYER,
-		groupName = LayerWeightConst.GROUP_DORM3D
-	})
+	arg0_86:OverlayPanel(arg0_86.blockLayer)
 	arg0_86:ActiveCamera(arg0_86.cameras[var0_0.CAMERA.POV])
 
 	local var4_86
@@ -3033,6 +3046,7 @@ function var0_0.PlayTimeline(arg0_282, arg1_282, arg2_282)
 
 		arg0_282.nowTimelinePlayer = TimelinePlayer.New(var4_286)
 
+		TimelineSupport.InitSubtitle(arg0_282.nowTimelinePlayer.comDirector, arg0_282.apartment:GetCallName())
 		arg0_282.nowTimelinePlayer:Register(arg1_282.time, function(arg0_289, arg1_289, arg2_289)
 			switch(arg1_289.stringParameter, {
 				TimelinePause = function()
@@ -3562,7 +3576,6 @@ function var0_0.LoadTimelineScene(arg0_349, arg1_349, arg2_349, arg3_349, arg4_3
 		assetRootName = arg0_349.apartment:getConfig("asset_name"),
 		isCache = arg2_349,
 		waitForTimeline = arg3_349,
-		callName = arg0_349.apartment:GetCallName(),
 		loadSceneFunc = function(arg0_350, arg1_350)
 			local var0_350 = GameObject.Find("[actor]").transform
 
@@ -3749,12 +3762,12 @@ function var0_0.willExit(arg0_369)
 	arg0_369.camBrainEvenetHandler.OnBlendStarted = nil
 	arg0_369.camBrainEvenetHandler.OnBlendFinished = nil
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_369.blockLayer, arg0_369._tf)
+	arg0_369:UnOverlayPanel(arg0_369.blockLayer, arg0_369._tf)
 	table.Foreach(arg0_369.expressionDict, function(arg0_371)
 		arg0_369:RemoveExpression(arg0_371)
 	end)
 	arg0_369.loader:Clear()
-	pg.ClickEffectMgr:GetInstance():SetClickEffect("NORMAL")
+	pg.ClickEffectMgr.GetInstance():SetClickEffect("NORMAL")
 	pg.NodeCanvasMgr.GetInstance():Clear()
 	arg0_369.dormSceneMgr:Dispose()
 

@@ -66,7 +66,7 @@ function var0_0.Refresh(arg0_7)
 end
 
 function var0_0.willExit(arg0_10)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_10._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_10._tf)
 end
 
 return var0_0

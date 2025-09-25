@@ -300,11 +300,11 @@ end
 
 function var0_0.hideAttrFrame(arg0_29)
 	SetActive(arg0_29._attrFrame, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_29._blurLayer, arg0_29._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_29._blurLayer, arg0_29._tf)
 end
 
 function var0_0.displayAttrFrame(arg0_30)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_30._blurLayer, false)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_30._blurLayer)
 	SetActive(arg0_30._attrFrame, true)
 	arg0_30:initAttrFrame()
 end
@@ -585,7 +585,7 @@ function var0_0.willExit(arg0_49)
 	end
 
 	if arg0_49._attrFrame.gameObject.activeSelf then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_49._blurLayer, arg0_49._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_49._blurLayer, arg0_49._tf)
 	end
 
 	pg.TimeMgr.GetInstance():RemoveTimer(arg0_49.ActiveToggletimer1)

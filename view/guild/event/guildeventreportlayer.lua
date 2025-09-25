@@ -30,7 +30,7 @@ function var0_0.init(arg0_4)
 end
 
 function var0_0.didEnter(arg0_5)
-	pg.UIMgr:GetInstance():BlurPanel(arg0_5._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_5._tf)
 	onButton(arg0_5, arg0_5.closeBtn, function()
 		arg0_5:emit(var0_0.ON_CLOSE)
 	end, SFX_PANEL)
@@ -130,7 +130,7 @@ function var0_0.OnInitItem(arg0_19, arg1_19)
 
 	onButton(arg0_19, var0_19.getBtn, function()
 		if var0_19.report:IsLock() then
-			pg.TipsMgr:GetInstance():ShowTips(i18n("guild_can_not_get_tip"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_can_not_get_tip"))
 
 			return
 		end
@@ -162,7 +162,7 @@ function var0_0.ShowReportRank(arg0_22, arg1_22)
 end
 
 function var0_0.willExit(arg0_23)
-	pg.UIMgr:GetInstance():UnblurPanel(arg0_23._tf, arg0_23._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_23._tf, arg0_23._parentTf)
 
 	if arg0_23.cards then
 		for iter0_23, iter1_23 in pairs(arg0_23.cards) do

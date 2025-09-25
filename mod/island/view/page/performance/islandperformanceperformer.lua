@@ -6,6 +6,7 @@ var0_0.TYPE_FINDPATH = 1
 var0_0.TYPE_TRANSFER = 2
 var0_0.TYPE_STORY = 3
 var0_0.TYPE_HIDE_UNIT = 4
+var0_0.TYPE_UPDATE_STORY = 5
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.Ctor(arg0_1, arg1_1)
@@ -29,6 +30,8 @@ function var0_0.GetPlayer(arg0_3, arg1_3)
 		return IslandPerformanceStoryPlayer.New(arg0_3)
 	elseif arg1_3 == var0_0.TYPE_HIDE_UNIT then
 		return IslandPerformanceActiveUnitPlayer.New(arg0_3)
+	elseif arg1_3 == var0_0.TYPE_UPDATE_STORY then
+		return IslandUpdateStoryPlayer.New(arg0_3)
 	end
 end
 

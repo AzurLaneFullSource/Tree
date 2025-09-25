@@ -12,427 +12,333 @@ var1_0.RECYCLE_ADAPT_TAG = "recycleAdapt"
 
 function var1_0.Init(arg0_1, arg1_1)
 	arg0_1.baseParent = tf(GameObject.Find("UICamera/Canvas"))
-
-	local var0_1 = tf(GameObject.Find("UICamera/Canvas/UIMain"))
-
-	arg0_1.uiOrigin = tf(instantiate(var0_1))
+	arg0_1.uiMain = arg0_1.baseParent:Find("UIMain")
+	arg0_1.uiOrigin = tf(instantiate(arg0_1.uiMain, arg0_1.baseParent, false))
 	arg0_1.uiOrigin.name = "UIOrigin"
 
-	arg0_1.uiOrigin:SetParent(arg0_1.baseParent, false)
+	local var0_1 = GetOrAddComponent(arg0_1.uiOrigin, typeof(Canvas))
 
-	arg0_1.originCanvas = GetOrAddComponent(arg0_1.uiOrigin, typeof(Canvas))
-	arg0_1.originCanvas.overrideSorting = true
-	arg0_1.originCanvas.sortingOrder = 200
-	arg0_1.originCast = GetOrAddComponent(arg0_1.uiOrigin, typeof(GraphicRaycaster))
-	arg0_1.lvCameraTf = tf(GameObject.Find("LevelCamera"))
-	arg0_1.lvParent = tf(GameObject.Find("LevelCamera/Canvas"))
-	arg0_1.lvCamera = GetOrAddComponent(arg0_1.lvCameraTf, typeof(Camera))
+	var0_1.overrideSorting = true
+	var0_1.sortingOrder = 200
+
+	GetOrAddComponent(arg0_1.uiOrigin, typeof(GraphicRaycaster))
+
+	arg0_1.lvCamera = GetOrAddComponent(GameObject.Find("LevelCamera"), typeof(Camera))
+	arg0_1.lvParent = tf(arg0_1.lvCamera):Find("Canvas")
+	arg0_1.lvOrigin = tf(instantiate(arg0_1.uiOrigin, arg0_1.lvParent, false))
+	arg0_1.lvOrigin.name = "LevelOrigin"
+	GetOrAddComponent(arg0_1.lvOrigin, typeof(Canvas)).sortingOrder = 5000
 	arg0_1.adaptPool = {}
-	arg0_1.UIMain = rtf(GameObject.Find("UICamera/Canvas/UIMain"))
-	arg0_1.OverlayMain = rtf(GameObject.Find("OverlayCamera/Overlay/UIMain"))
-	arg0_1.OverlayAdapt = rtf(GameObject.Find("OverlayCamera/Overlay/UIAdapt"))
-	arg0_1.OverlayTop = rtf(GameObject.Find("OverlayCamera/Overlay/UIOverlay"))
+
+	local var1_1 = rtf(GameObject.Find("OverlayCamera/Overlay"))
+
+	arg0_1.OverlayMain = var1_1:Find("UIMain")
+	arg0_1.OverlayAdapt = var1_1:Find("UIAdapt")
+	arg0_1.OverlayTop = var1_1:Find("UIOverlay")
+	arg0_1.groupWeightDic = setmetatable({}, {
+		__index = function(arg0_2, arg1_2)
+			if arg1_2 == LayerWeightConst.GROUP_TOP then
+				return arg0_2[arg0_1.groupStack[#arg0_1.groupStack]] + 1
+			else
+				return 0
+			end
+		end
+	})
+	arg0_1.groupStack = {}
 	arg0_1.storeUIs = {}
 
-	if arg1_1 ~= nil then
-		arg1_1()
-	end
+	existCall(arg1_1)
 end
 
-function var1_0.CreateRefreshHandler(arg0_2)
-	if not arg0_2.luHandle then
-		arg0_2.luHandle = LateUpdateBeat:CreateListener(arg0_2.Refresh, arg0_2)
-
-		LateUpdateBeat:AddListener(arg0_2.luHandle)
-	end
-end
-
-function var1_0.ClearRefreshHandler(arg0_3)
-	if arg0_3.luHandle then
-		LateUpdateBeat:RemoveListener(arg0_3.luHandle)
-
-		arg0_3.luHandle = nil
-	end
-end
-
-function var1_0.Refresh(arg0_4)
-	arg0_4:LayerSortHandler()
-	arg0_4:ClearRefreshHandler()
-end
-
-function var1_0.Add2Overlay(arg0_5, arg1_5, arg2_5, arg3_5)
-	arg3_5.type = arg1_5
-	arg3_5.ui = arg2_5
-	arg3_5.pbList = arg3_5.pbList or {}
-	arg3_5.weight = arg3_5.weight or LayerWeightConst.BASE_LAYER
-	arg3_5.overlayType = arg3_5.overlayType or LayerWeightConst.OVERLAY_UI_MAIN
-	arg3_5.visible = true
-
-	local var0_5
-
-	if arg0_5.lvCamera.enabled then
-		var0_5 = {
-			var0_0.UIMgr.CameraLevel
-		}
-	else
-		var0_5 = {
-			var0_0.UIMgr.CameraUI
-		}
+function var1_0.RegisterGroupWeight(arg0_3, arg1_3)
+	if arg0_3.groupWeightDic[arg1_3] > 0 then
+		return
 	end
 
-	arg3_5.blurCamList = arg3_5.blurCamList or var0_5
+	arg0_3.groupWeightDic[arg1_3] = arg0_3.groupWeightDic[LayerWeightConst.GROUP_TOP]
 
-	if arg1_5 == LayerWeightConst.UI_TYPE_SYSTEM and #arg0_5.storeUIs > 0 or arg1_5 == LayerWeightConst.UI_TYPE_SUB or arg1_5 == LayerWeightConst.UI_TYPE_OVERLAY_FOREVER then
-		arg0_5:Log("ui：" .. arg2_5.gameObject.name .. " 加入了ui层级管理, weight:" .. arg3_5.weight)
+	table.insert(arg0_3.groupStack, arg1_3)
+end
 
-		local var1_5 = arg0_5:DelList(arg2_5)
-
-		arg0_5:ClearBlurData(var1_5)
-		table.insert(arg0_5.storeUIs, arg3_5)
-		arg0_5:CreateRefreshHandler()
-
-		if arg3_5.force then
-			arg0_5:Refresh()
+function var1_0.RemoveGroupWeight(arg0_4, arg1_4)
+	for iter0_4, iter1_4 in ipairs(arg0_4.storeUIs) do
+		if iter1_4.groupName == arg1_4 then
+			return
 		end
 	end
+
+	arg0_4.groupWeightDic[arg1_4] = nil
+
+	table.removebyvalue(arg0_4.groupStack, arg1_4)
 end
 
-function var1_0.DelFromOverlay(arg0_6, arg1_6, arg2_6)
-	arg0_6:Log("ui：" .. arg1_6.gameObject.name .. " 去除了ui层级管理")
+function var1_0.CreateRefreshHandler(arg0_5)
+	if not arg0_5.luHandle then
+		arg0_5.luHandle = LateUpdateBeat:CreateListener(arg0_5.Refresh, arg0_5)
 
-	local var0_6 = arg0_6:DelList(arg1_6)
+		LateUpdateBeat:AddListener(arg0_5.luHandle)
+	end
+end
 
-	if var0_6 ~= nil then
-		local var1_6 = var0_6.ui
-		local var2_6 = arg0_6:GetAdaptObjFromUI(var1_6)
+function var1_0.ClearRefreshHandler(arg0_6)
+	if arg0_6.luHandle then
+		LateUpdateBeat:RemoveListener(arg0_6.luHandle)
 
-		if var2_6 == nil then
-			var2_6 = var1_6
+		arg0_6.luHandle = nil
+	end
+end
+
+function var1_0.Refresh(arg0_7)
+	arg0_7:LayerSortHandler()
+	arg0_7:ClearRefreshHandler()
+end
+
+function var1_0.Add2Overlay(arg0_8, arg1_8, arg2_8)
+	arg2_8.ui = arg1_8
+	arg2_8.type = arg2_8.type
+	arg2_8.pbList = arg2_8.pbList or {}
+	arg2_8.overlayType = arg2_8.overlayType or LayerWeightConst.OVERLAY_UI_MAIN
+	arg2_8.groupName = arg2_8.groupName or LayerWeightConst.GROUP_TOP
+	arg2_8.groupDelta = arg2_8.groupDelta or 0
+
+	local var0_8 = arg0_8.lvCamera.enabled and {
+		var0_0.UIMgr.CameraLevel
+	} or {
+		var0_0.UIMgr.CameraUI
+	}
+
+	arg2_8.blurCamList = arg2_8.blurCamList or var0_8
+
+	local var1_8 = arg2_8.type
+
+	assert(var1_8 and LayerWeightConst.TYPE_DIC[var1_8])
+	arg0_8:Log(string.format("ui:%s 加入了ui层级管理\n%s", arg1_8.name, PrintTable(arg2_8)))
+
+	local var2_8 = arg0_8:DelList(arg1_8)
+
+	arg0_8:ClearBlurData(var2_8)
+	table.insert(arg0_8.storeUIs, arg2_8)
+	arg0_8:CreateRefreshHandler()
+
+	if arg2_8.force then
+		arg0_8:Refresh()
+	end
+end
+
+function var1_0.DelFromOverlay(arg0_9, arg1_9, arg2_9)
+	arg0_9:Log(string.format("ui:%s 退出了ui层级管理", arg1_9.name))
+
+	local var0_9 = arg0_9:DelList(arg1_9)
+
+	if var0_9 ~= nil then
+		local var1_9 = var0_9.ui
+
+		if not arg0_9:GetAdaptObjFromUI(var1_9) then
+			local var2_9 = var1_9
 		end
 
-		local var3_6 = GetOrAddComponent(var2_6, typeof(CanvasGroup))
-
-		var3_6.interactable = true
-		var3_6.blocksRaycasts = true
-
-		arg0_6:CheckRecycleAdaptObj(var1_6, arg2_6)
-		arg0_6:ClearBlurData(var0_6)
+		arg0_9:CheckRecycleAdaptObj(var1_9, arg2_9)
+		arg0_9:ClearBlurData(var0_9)
 	end
 
-	arg0_6:CreateRefreshHandler()
+	arg0_9:CreateRefreshHandler()
 end
 
-function var1_0.DelList(arg0_7, arg1_7)
-	local var0_7
+function var1_0.DelList(arg0_10, arg1_10)
+	local var0_10
 
-	for iter0_7 = #arg0_7.storeUIs, 1, -1 do
-		if arg0_7.storeUIs[iter0_7].ui == arg1_7 then
-			var0_7 = arg0_7.storeUIs[iter0_7]
+	for iter0_10 = #arg0_10.storeUIs, 1, -1 do
+		if arg0_10.storeUIs[iter0_10].ui == arg1_10 then
+			var0_10 = arg0_10.storeUIs[iter0_10]
 
-			table.remove(arg0_7.storeUIs, iter0_7)
+			table.remove(arg0_10.storeUIs, iter0_10)
 
 			break
 		end
 	end
 
-	return var0_7
+	return var0_10
 end
 
-function var1_0.ClearBlurData(arg0_8, arg1_8)
-	if arg1_8 == nil then
+function var1_0.ClearBlurData(arg0_11, arg1_11)
+	if arg1_11 == nil then
 		return
 	end
 
-	if arg1_8.pbList ~= nil then
-		var0_0.UIMgr.GetInstance():RevertPBMaterial(arg1_8.pbList)
+	if arg1_11.pbList ~= nil then
+		var0_0.UIMgr.GetInstance():RevertPBMaterial(arg1_11.pbList)
 	end
 
-	local var0_8 = arg1_8.lockGlobalBlur
+	local var0_11 = arg1_11.lockGlobalBlur
 
-	if var0_8 then
-		local var1_8 = arg1_8.blurCamList
+	if var0_11 then
+		local var1_11 = arg1_11.blurCamList
 
-		for iter0_8, iter1_8 in ipairs({
+		for iter0_11, iter1_11 in ipairs({
 			var0_0.UIMgr.CameraUI,
 			var0_0.UIMgr.CameraLevel
 		}) do
-			if table.contains(var1_8, iter1_8) then
-				var0_0.UIMgr.GetInstance():UnblurCamera(iter1_8, var0_8)
+			if table.contains(var1_11, iter1_11) then
+				var0_0.UIMgr.GetInstance():UnblurCamera(iter1_11, var0_11)
 			end
 		end
 	end
 end
 
-function var1_0.LayerSortHandler(arg0_9)
-	arg0_9:switchOriginParent()
-	arg0_9:SortStoreUIs()
-
-	local var0_9 = false
-	local var1_9 = false
-	local var2_9 = {}
-	local var3_9
-	local var4_9 = false
-	local var5_9 = false
-	local var6_9 = false
-	local var7_9 = {}
-	local var8_9
-	local var9_9 = 0
-	local var10_9 = 0
-	local var11_9 = #arg0_9.storeUIs
-
-	for iter0_9 = #arg0_9.storeUIs, 1, -1 do
-		local var12_9 = arg0_9.storeUIs[iter0_9]
-		local var13_9 = var12_9.type
-		local var14_9 = var12_9.ui
-		local var15_9 = var12_9.pbList
-		local var16_9 = var12_9.globalBlur
-		local var17_9 = var12_9.lockGlobalBlur
-		local var18_9 = var12_9.groupName
-		local var19_9 = var12_9.overlayType
-		local var20_9 = var12_9.hideLowerLayer
-		local var21_9 = var12_9.staticBlur
-		local var22_9 = var12_9.blurCamList
-		local var23_9 = var12_9.visible
-		local var24_9 = var12_9.parent
-		local var25_9 = iter0_9 == var11_9
-
-		if var13_9 == LayerWeightConst.UI_TYPE_SYSTEM then
-			var0_9 = true
+function var1_0.SortStoreUIs(arg0_12)
+	arg0_12:Log("-----------------------------------------")
+	mergeSort(arg0_12.storeUIs, CompareFuncs({
+		function(arg0_13)
+			return arg0_12.groupWeightDic[arg0_13.groupName]
+		end,
+		function(arg0_14)
+			return arg0_14.groupDelta
 		end
+	}, true))
+	arg0_12:Log(PrintTable(arg0_12.storeUIs))
+	arg0_12:Log("-----------------------------------------")
+end
 
-		if var25_9 then
-			if var18_9 ~= nil then
-				var3_9 = var18_9
+function var1_0.LayerSortHandler(arg0_15)
+	arg0_15:SortStoreUIs()
+
+	local var0_15
+	local var1_15
+	local var2_15 = {}
+	local var3_15 = false
+	local var4_15 = false
+	local var5_15 = false
+	local var6_15 = {}
+
+	for iter0_15 = #arg0_15.storeUIs, 1, -1 do
+		local var7_15 = arg0_15.storeUIs[iter0_15]
+		local var8_15 = var7_15.ui
+		local var9_15 = var7_15.parent
+		local var10_15 = var7_15.type
+		local var11_15 = var7_15.overlayType
+		local var12_15 = var7_15.groupName
+		local var13_15 = var7_15.globalBlur
+		local var14_15 = var7_15.lockGlobalBlur
+		local var15_15 = var7_15.staticBlur
+		local var16_15 = var7_15.blurCamList
+		local var17_15 = var7_15.pbList
+		local var18_15 = var7_15.stopTop
+
+		var1_15 = var1_15 or var12_15
+
+		if not var0_15 then
+			if var12_15 ~= var1_15 then
+				var0_15 = iter0_15 + 1
+			elseif var13_15 or var18_15 or var1_15 == LayerWeightConst.GROUP_TOP then
+				var0_15 = iter0_15
 			end
-
-			var4_9 = var16_9
-			var5_9 = var17_9
-			var6_9 = var21_9
-			var7_9 = var22_9
-
-			local var26_9 = var12_9
 		end
 
-		local function var27_9()
-			arg0_9:ShowOrHideTF(var14_9, true)
+		local var19_15 = not var0_15 or var0_15 <= iter0_15
 
-			if var24_9 ~= nil then
-				arg0_9:SetSpecificParent(var14_9, var24_9)
-			elseif var19_9 == LayerWeightConst.OVERLAY_UI_TOP then
-				arg0_9:SetToOverlayParent(var14_9, var19_9)
+		if var19_15 then
+			var3_15 = var3_15 or var13_15
+			var4_15 = var4_15 or var14_15
+			var5_15 = var5_15 or var15_15
+
+			table.insertto(var6_15, var16_15)
+		end
+
+		if #var17_15 > 0 then
+			if var19_15 then
+				table.insertto(var2_15, var17_15)
 			else
-				arg0_9:SetToOverlayParent(var14_9, var19_9, var9_9)
-			end
-
-			if var23_9 and not var16_9 and #var15_9 > 0 then
-				table.insertto(var2_9, var15_9)
+				var0_0.UIMgr.GetInstance():RevertPBMaterial(var17_15)
 			end
 		end
 
-		local function var28_9()
-			arg0_9:SetToOrigin(var14_9, var19_9, var10_9, var12_9.interactableAlways)
+		local var20_15 = var8_15
 
-			if var0_9 or var1_9 then
-				arg0_9:ShowOrHideTF(var14_9, false)
-			else
-				arg0_9:ShowOrHideTF(var14_9, true)
+		if var11_15 == LayerWeightConst.OVERLAY_UI_ADAPT then
+			var20_15 = arg0_15:GetAdaptObjFromUI(var8_15) or arg0_15:GetAdaptObj(var8_15)
+		end
 
-				if #var15_9 > 0 then
-					var0_0.UIMgr.GetInstance():RevertPBMaterial(var15_9)
+		local var21_15 = switch(var10_15, {
+			[LayerWeightConst.UI_TYPE_SUB] = function()
+				if var19_15 then
+					if var9_15 then
+						arg0_15:SetSpecificParent(var20_15, var9_15)
+					else
+						return arg0_15.OverlayMain
+					end
+				else
+					return arg0_15.lvCamera.enabled and arg0_15.lvOrigin or arg0_15.uiOrigin
 				end
+			end,
+			[LayerWeightConst.UI_TYPE_SYSTEM] = function()
+				return arg0_15.uiMain
 			end
-		end
+		}, function()
+			assert(false)
+		end)
 
-		if var13_9 == LayerWeightConst.UI_TYPE_SUB then
-			if var25_9 then
-				var27_9()
-			elseif var3_9 ~= nil and var3_9 == var18_9 then
-				var27_9()
-			else
-				var28_9()
-			end
-		elseif var13_9 == LayerWeightConst.UI_TYPE_OVERLAY_FOREVER then
-			if var25_9 then
-				var11_9 = iter0_9 - 1
-
-				var27_9()
-			elseif var3_9 ~= nil and var3_9 == var18_9 then
-				var27_9()
-			else
-				var28_9()
-			end
-		end
-
-		if var20_9 then
-			var1_9 = true
+		if var21_15 then
+			arg0_15:SetSpecificParent(var20_15, var21_15, 0)
 		end
 	end
 
-	if #var2_9 > 0 then
-		var0_0.UIMgr.GetInstance():PartialBlurTfs(var2_9)
+	if not var3_15 and #var2_15 > 0 then
+		var0_0.UIMgr.GetInstance():PartialBlurTfs(var2_15)
 	else
 		var0_0.UIMgr.GetInstance():ShutdownPartialBlur()
 	end
 
-	if var4_9 then
-		for iter1_9, iter2_9 in ipairs({
+	if var3_15 then
+		for iter1_15, iter2_15 in ipairs({
 			var0_0.UIMgr.CameraUI,
 			var0_0.UIMgr.CameraLevel
 		}) do
-			if table.contains(var7_9, iter2_9) then
-				var0_0.UIMgr.GetInstance():BlurCamera(iter2_9, var6_9, var5_9)
+			if table.contains(var6_15, iter2_15) then
+				var0_0.UIMgr.GetInstance():BlurCamera(iter2_15, var5_15, var4_15)
 			else
-				var0_0.UIMgr.GetInstance():UnblurCamera(iter2_9)
+				var0_0.UIMgr.GetInstance():UnblurCamera(iter2_15)
 			end
 		end
 	else
-		for iter3_9, iter4_9 in ipairs({
+		for iter3_15, iter4_15 in ipairs({
 			var0_0.UIMgr.CameraUI,
 			var0_0.UIMgr.CameraLevel
 		}) do
-			var0_0.UIMgr.GetInstance():UnblurCamera(iter4_9)
+			var0_0.UIMgr.GetInstance():UnblurCamera(iter4_15)
 		end
 	end
 end
 
-function var1_0.SetSpecificParent(arg0_12, arg1_12, arg2_12)
-	SetParent(arg1_12, arg2_12, false)
+function var1_0.SetSpecificParent(arg0_19, arg1_19, arg2_19, arg3_19)
+	SetParent(arg1_19, arg2_19, false)
 
-	local var0_12 = GetOrAddComponent(arg1_12, typeof(CanvasGroup))
-
-	var0_12.interactable = true
-	var0_12.blocksRaycasts = true
-end
-
-function var1_0.SetToOverlayParent(arg0_13, arg1_13, arg2_13, arg3_13)
-	local var0_13
-
-	if arg2_13 == LayerWeightConst.OVERLAY_UI_ADAPT then
-		var0_13 = arg0_13:GetAdaptObjFromUI(arg1_13)
-
-		if var0_13 ~= nil then
-			var0_13 = arg1_13.parent
-
-			SetParent(var0_13, arg0_13.OverlayMain, false)
-		else
-			var0_13 = arg0_13:GetAdaptObj(arg0_13:GetAdatpObjName(arg1_13))
-
-			SetParent(arg1_13, var0_13, false)
-			SetParent(var0_13, arg0_13.OverlayMain, false)
-		end
-	elseif arg2_13 == LayerWeightConst.OVERLAY_UI_TOP then
-		var0_13 = arg1_13
-
-		SetParent(var0_13, arg0_13.OverlayTop, false)
-	else
-		var0_13 = arg1_13
-
-		SetParent(var0_13, arg0_13.OverlayMain, false)
-	end
-
-	if arg3_13 ~= nil then
-		var0_13:SetSiblingIndex(arg3_13)
-	end
-
-	local var1_13 = GetOrAddComponent(var0_13, typeof(CanvasGroup))
-
-	var1_13.interactable = true
-	var1_13.blocksRaycasts = true
-end
-
-function var1_0.SetToOrigin(arg0_14, arg1_14, arg2_14, arg3_14, arg4_14)
-	local var0_14
-
-	if arg2_14 == LayerWeightConst.OVERLAY_UI_ADAPT then
-		var0_14 = arg0_14:GetAdaptObjFromUI(arg1_14)
-
-		if var0_14 ~= nil then
-			var0_14 = arg1_14.parent
-		else
-			var0_14 = arg0_14:GetAdaptObj(arg0_14:GetAdatpObjName(arg1_14))
-
-			SetParent(arg1_14, var0_14, false)
-		end
-	else
-		var0_14 = arg1_14
-	end
-
-	SetParent(var0_14, arg0_14.uiOrigin, false)
-
-	if arg3_14 ~= nil then
-		var0_14:SetSiblingIndex(arg3_14)
-	end
-
-	local var1_14 = GetOrAddComponent(var0_14, typeof(CanvasGroup))
-
-	var1_14.interactable = arg4_14
-	var1_14.blocksRaycasts = arg4_14
-end
-
-function var1_0.SortStoreUIs(arg0_15)
-	arg0_15:Log("-----------------------------------------")
-	mergeSort(arg0_15.storeUIs, CompareFuncs({
-		function(arg0_16)
-			return arg0_16.weight
-		end
-	}, true))
-
-	for iter0_15, iter1_15 in ipairs(arg0_15.storeUIs) do
-		arg0_15:Log(iter1_15.ui.gameObject.name .. "   globalBlur:" .. tostring(iter1_15.globalBlur))
-	end
-
-	arg0_15:Log("-----------------------------------------")
-end
-
-function var1_0.ShowOrHideTF(arg0_17, arg1_17, arg2_17)
-	GetOrAddComponent(arg1_17, typeof(CanvasGroup)).alpha = arg2_17 and 1 or 0
-end
-
-function var1_0.SetVisibleViaLayer(arg0_18, arg1_18, arg2_18)
-	setActiveViaLayer(arg1_18, arg2_18)
-
-	for iter0_18, iter1_18 in pairs(arg0_18.storeUIs) do
-		if iter1_18.ui == arg1_18 then
-			iter1_18.visible = arg2_18
-
-			arg0_18:CreateRefreshHandler()
-		end
-	end
-end
-
-function var1_0.switchOriginParent(arg0_19)
-	if arg0_19.lvCamera.enabled then
-		arg0_19.uiOrigin:SetParent(arg0_19.lvParent, false)
-
-		arg0_19.originCanvas.sortingOrder = 5000
-	else
-		arg0_19.uiOrigin:SetParent(arg0_19.baseParent, false)
-
-		arg0_19.originCanvas.sortingOrder = 200
+	if arg3_19 then
+		arg1_19:SetSiblingIndex(arg3_19)
 	end
 end
 
 function var1_0.GetAdaptObj(arg0_20, arg1_20)
-	local var0_20
+	local var0_20 = arg0_20:GetAdatpObjName(arg1_20)
+	local var1_20
 
 	if #arg0_20.adaptPool > 0 then
-		var0_20 = table.remove(arg0_20.adaptPool, #arg0_20.adaptPool)
-		var0_20.name = arg1_20
+		var1_20 = table.remove(arg0_20.adaptPool, #arg0_20.adaptPool)
+		var1_20.name = var0_20
 	else
-		var0_20 = GameObject.New(arg1_20, typeof(RectTransform), typeof(NotchAdapt)).transform
+		var1_20 = GameObject.New(var0_20, typeof(RectTransform), typeof(NotchAdapt)).transform
 	end
 
-	var0_20.anchorMin = Vector2.zero
-	var0_20.anchorMax = Vector2.one
-	var0_20.pivot = Vector2(0.5, 0.5)
-	var0_20.offsetMax = Vector2.zero
-	var0_20.offsetMin = Vector2.zero
-	var0_20.localPosition = Vector3.zero
+	var1_20.anchorMin = Vector2.zero
+	var1_20.anchorMax = Vector2.one
+	var1_20.pivot = Vector2(0.5, 0.5)
+	var1_20.offsetMax = Vector2.zero
+	var1_20.offsetMin = Vector2.zero
+	var1_20.localPosition = Vector3.zero
 
-	SetActive(var0_20, true)
-	arg0_20:ShowOrHideTF(var0_20, true)
+	SetActive(var1_20, true)
+	SetParent(arg1_20, var1_20, false)
 
-	return var0_20
+	return var1_20
 end
 
 function var1_0.CheckRecycleAdaptObj(arg0_21, arg1_21, arg2_21)

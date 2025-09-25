@@ -40,11 +40,11 @@ function var0_0.didEnter(arg0_3)
 		setText(var1_6:Find("Text"), var0_6.discript)
 		setText(var1_6:Find("Title/EN"), var0_6.name_EN)
 	end)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf, nil, {})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf)
 end
 
 function var0_0.willExit(arg0_7)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_7._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7._tf)
 end
 
 return var0_0

@@ -332,7 +332,6 @@ function AiriLogin(arg0_41)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					modal = true,
 					content = i18n("box_account_reborn_content", var3_41),
-					weight = LayerWeightConst.TOP_LAYER,
 					onYes = function()
 						var0_0.AccountReborn()
 					end
@@ -439,7 +438,6 @@ function AccountDeleteResult(arg0_52, arg1_52, arg2_52, arg3_52, arg4_52)
 			modal = true,
 			hideNo = true,
 			content = i18n("box_account_del_success_content", var2_52),
-			weight = LayerWeightConst.TOP_LAYER,
 			onYes = function()
 				pg.m02:sendNotification(GAME.LOGOUT, {
 					code = 0

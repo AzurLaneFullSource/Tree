@@ -38,10 +38,7 @@ function var0_0.init(arg0_2)
 	arg0_2:initImpeachPanel()
 	setActive(arg0_2.mainPanel, true)
 	setActive(arg0_2.impackPanel, false)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, false, {
-		groupName = arg0_2:getGroupNameFromData(),
-		weight = arg0_2:getWeightFromData()
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
 end
 
 function var0_0.onBackPressed(arg0_3)
@@ -63,8 +60,7 @@ function var0_0.didEnter(arg0_4)
 	onButton(arg0_4, arg0_4.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = i18n("report_sent_help"),
-			weight = arg0_4:getWeightFromData()
+			helps = i18n("report_sent_help")
 		})
 	end, SFX_PANEL)
 	onButton(arg0_4, arg0_4.btnLike, function()
@@ -313,7 +309,7 @@ function var0_0.openImpeachPanel(arg0_28, arg1_28)
 end
 
 function var0_0.willExit(arg0_29)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_29._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_29._tf)
 end
 
 return var0_0

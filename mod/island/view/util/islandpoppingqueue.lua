@@ -44,7 +44,7 @@ end
 
 function var0_0.IsValid(arg0_5, arg1_5)
 	if arg1_5.type == var0_0.STORY and table.contains(arg0_5.ignoringStoryList, arg1_5.args.name) then
-		arg0_5:ExecuteStory(arg1_5.callback, arg1_5.args.name)
+		arg0_5:ExecuteStory(arg1_5.callback, arg1_5.args.name, arg1_5.args.refreshNpc)
 
 		return false
 	end
@@ -76,7 +76,7 @@ function var0_0.ProcessNextOne(arg0_6)
 	elseif var0_6.type == var0_0.MSGBOX then
 		arg0_6:ExecuteMsgbox(var1_6, var0_6.args)
 	elseif var0_6.type == var0_0.STORY then
-		arg0_6:ExecuteStory(var1_6, var0_6.args.name)
+		arg0_6:ExecuteStory(var1_6, var0_6.args.name, var0_6.args.refreshNpc)
 	elseif var0_6.type == var0_0.TASK_ACCEPT_PAGE then
 		arg0_6:ExecuteTaskAcceptWin(var1_6, var0_6.args.taskId)
 	else
@@ -84,9 +84,9 @@ function var0_0.ProcessNextOne(arg0_6)
 	end
 end
 
-function var0_0.ExecuteStory(arg0_8, arg1_8, arg2_8)
+function var0_0.ExecuteStory(arg0_8, arg1_8, arg2_8, arg3_8)
 	arg0_8:GetSceneView():TryDisVisible()
-	arg0_8:GetSceneView():GetSubView(IslandStoryMgr):ExecuteAction("Play", arg2_8, function()
+	arg0_8:GetSceneView():GetSubView(IslandStoryMgr):ExecuteAction("Play", arg2_8, arg3_8, function()
 		arg0_8:GetSceneView():TryVisible()
 		arg1_8()
 	end)

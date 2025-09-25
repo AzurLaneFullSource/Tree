@@ -15,14 +15,12 @@ end
 
 function var0_0.Show(arg0_3)
 	var0_0.super.Show(arg0_3)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf, false, {
-		weight = LayerWeightConst.BASE_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf)
 end
 
 function var0_0.Hide(arg0_4)
 	var0_0.super.Hide(arg0_4)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_4._tf, pg.UIMgr.GetInstance().UIMain)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_4._tf, pg.UIMgr.GetInstance().UIMain)
 end
 
 function var0_0.OnDestroy(arg0_5)
@@ -82,7 +80,7 @@ function var0_0.addListener(arg0_9)
 		})
 	end, SFX_PANEL)
 	onButton(arg0_9, arg0_9.unlockBtn, function()
-		pg.MsgboxMgr:GetInstance():ShowMsgBox({
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideYes = true,
 			hideNo = true,
 			type = MSGBOX_TYPE_META_SKILL_UNLOCK,

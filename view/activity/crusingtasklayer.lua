@@ -169,7 +169,7 @@ function var0_0.didEnter(arg0_5)
 end
 
 function var0_0.willExit(arg0_20)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_20._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_20._tf)
 end
 
 function var0_0.setActivity(arg0_21, arg1_21)

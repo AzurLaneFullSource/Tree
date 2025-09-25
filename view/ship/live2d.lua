@@ -1465,7 +1465,7 @@ end
 
 function var0_0.unloadCueSheet(arg0_78)
 	for iter0_78, iter1_78 in ipairs(arg0_78.loadSheets) do
-		pg.CriMgr:GetInstance():UnloadCueSheet(iter1_78)
+		pg.CriMgr.GetInstance():UnloadCueSheet(iter1_78)
 	end
 
 	arg0_78.loadSheets = {}
@@ -1486,7 +1486,7 @@ function var0_0.playL2dVoice(arg0_80, arg1_80, arg2_80, arg3_80)
 		table.insert(arg0_80.loadSheets, arg1_80)
 	end
 
-	pg.CriMgr:GetInstance():playCueSheetVoice(arg1_80, arg2_80, arg3_80, function(arg0_81)
+	pg.CriMgr.GetInstance():playCueSheetVoice(arg1_80, arg2_80, arg3_80, function(arg0_81)
 		if arg0_81 then
 			print("播放的语音长度为 = " .. arg0_81:GetLength())
 			table.insert(arg0_80.playingSheetInfo, arg0_81)

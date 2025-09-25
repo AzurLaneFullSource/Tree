@@ -84,9 +84,7 @@ function var0_0.Show(arg0_12, arg1_12)
 	var0_0.super.Show(arg0_12)
 	setActive(arg0_12._tf:Find("window"), true)
 	setActive(arg0_12._tf:Find("select_skin"), false)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_12._tf, false, {
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_12._tf)
 
 	arg0_12.selectIds = {}
 	arg0_12.skin = arg1_12
@@ -255,7 +253,7 @@ end
 
 function var0_0.Hide(arg0_31)
 	var0_0.super.Hide(arg0_31)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_31._tf, arg0_31._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_31._tf, arg0_31._parentTf)
 
 	arg0_31.selectIds = {}
 

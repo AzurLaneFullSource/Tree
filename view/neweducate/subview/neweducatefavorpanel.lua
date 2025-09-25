@@ -20,12 +20,10 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.favorUIList = UIItemList.New(var1_2, var1_2:Find("tpl"))
 	arg0_2.favorCurTF = var0_2:Find("bg/cur")
 
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_2._tf, {
+	arg0_2:OverlayPanel(arg0_2._tf, {
 		pbList = {
 			var0_2:Find("bg")
-		},
-		groupName = LayerWeightConst.GROUP_EDUCATE,
-		weight = LayerWeightConst.BASE_LAYER
+		}
 	})
 end
 
@@ -88,7 +86,7 @@ function var0_0.Hide(arg0_11)
 end
 
 function var0_0.OnDestroy(arg0_12)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_12._tf)
+	arg0_12:UnOverlayPanel(arg0_12._tf)
 end
 
 return var0_0

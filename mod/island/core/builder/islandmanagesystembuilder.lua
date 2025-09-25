@@ -6,7 +6,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.cls = arg2_1
 end
 
-function var0_0.Load(arg0_2, arg1_2, arg2_2)
+function var0_0.LoadAsset(arg0_2, arg1_2, arg2_2)
 	local var0_2 = GameObject.New()
 
 	arg2_2(var0_2)

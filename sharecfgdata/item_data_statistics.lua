@@ -15260,6 +15260,36 @@ _G.pg.base.item_data_statistics[21051] = {
 	limit = {},
 }
 
+_G.pg.base.item_data_statistics[21052] = {
+	compose_number = 0,
+	display = "An item that increases the potential of Dewey META. Used in the META Lab during Somatic Activation.",
+	display_effect = "",
+	icon = "Props/21052",
+	id = 21052,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "META Crystal – Dewey META",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 4,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+
 _G.pg.base.item_data_statistics[21101] = {
 	compose_number = 0,
 	display = "Rare equipment used to improve the firepower capabilities of META ships during Restoration.",
@@ -28483,6 +28513,57 @@ _G.pg.base.item_data_statistics[30430] = {
 		{
 			9,
 			2104,
+			1,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+
+_G.pg.base.item_data_statistics[30431] = {
+	compose_number = 0,
+	display = "Contains 1 random Cruise Mission gear skin.",
+	display_effect = "",
+	icon = "Props/appearanceboxshijiexunyou",
+	id = 30431,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Gear Skin Box (Cruise Missions)",
+	open_directly = 1,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 11,
+	usage = "usage_drop",
+	usage_arg = "111225",
+	virtual_type = 0,
+	display_icon = {
+		{
+			9,
+			2105,
+			1,
+		},
+		{
+			9,
+			2106,
+			1,
+		},
+		{
+			9,
+			2107,
+			1,
+		},
+		{
+			9,
+			2108,
 			1,
 		},
 	},
@@ -103159,7 +103240,6 @@ _G.pg.base.item_data_statistics[81209] = {
 	icon = "Props/fudai20",
 	id = 81209,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Game Night Lucky Bag B",
@@ -103216,6 +103296,7 @@ _G.pg.base.item_data_statistics[81209] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81210] = {
@@ -103225,7 +103306,6 @@ _G.pg.base.item_data_statistics[81210] = {
 	icon = "Props/fudai21",
 	id = 81210,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Lucky Bag 2025 A",
@@ -103282,6 +103362,7 @@ _G.pg.base.item_data_statistics[81210] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81211] = {
@@ -103291,7 +103372,6 @@ _G.pg.base.item_data_statistics[81211] = {
 	icon = "Props/fudai22",
 	id = 81211,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Spring Lucky Bag 2025 B",
@@ -103348,6 +103428,7 @@ _G.pg.base.item_data_statistics[81211] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81212] = {
@@ -103490,7 +103571,6 @@ _G.pg.base.item_data_statistics[81213] = {
 	icon = "Props/fudai24",
 	id = 81213,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Swimsuit Lucky Bag 2025 A",
@@ -103547,6 +103627,7 @@ _G.pg.base.item_data_statistics[81213] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81214] = {
@@ -103556,7 +103637,6 @@ _G.pg.base.item_data_statistics[81214] = {
 	icon = "Props/fudai25",
 	id = 81214,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Swimsuit Lucky Bag 2025 B",
@@ -103613,6 +103693,7 @@ _G.pg.base.item_data_statistics[81214] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81215] = {
@@ -103752,7 +103833,6 @@ _G.pg.base.item_data_statistics[81217] = {
 	icon = "Props/fudai27",
 	id = 81217,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Ninja Castle Lucky Box A",
@@ -103809,6 +103889,7 @@ _G.pg.base.item_data_statistics[81217] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81218] = {
@@ -103818,7 +103899,6 @@ _G.pg.base.item_data_statistics[81218] = {
 	icon = "Props/fudai28",
 	id = 81218,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Ninja Castle Lucky Box B",
@@ -103875,6 +103955,98 @@ _G.pg.base.item_data_statistics[81218] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
+}
+
+_G.pg.base.item_data_statistics[81219] = {
+	compose_number = 0,
+	display = "Purchase to obtain 1 random unowned skin among the listed options (if you already own all the skins, you will receive Gems x680 instead), Coins x2,000, Oil x1,000, and Cognitive Chips x20.",
+	display_effect = "",
+	icon = "Props/fudai29",
+	id = 81219,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Sports & Race Return Lucky Box",
+	open_directly = 1,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 17,
+	usage = "usage_drop_random_skin",
+	virtual_type = 0,
+	display_icon = {
+		{
+			2,
+			86219,
+			1,
+		},
+		{
+			1,
+			1,
+			2000,
+		},
+		{
+			1,
+			2,
+			1000,
+		},
+		{
+			2,
+			15008,
+			20,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		998320,
+		680,
+		{
+			236032,
+			801033,
+			803011,
+			106551,
+			805021,
+			807021,
+			902021,
+			401161,
+			401242,
+			702043,
+			403021,
+			404051,
+			107073,
+			408092,
+			101352,
+			201105,
+			102271,
+			102261,
+			103132,
+			103162,
+			103241,
+			105112,
+			107111,
+			108041,
+			301581,
+			101255,
+			403034,
+			107066,
+			303115,
+			303124,
+			205064,
+			205073,
+			307052,
+			307062,
+			307073,
+		},
+	},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81400] = {
@@ -104986,7 +105158,6 @@ _G.pg.base.item_data_statistics[81422] = {
 	icon = "Props/fudai93",
 	id = 81422,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Nile Colors Lucky Box",
@@ -105043,6 +105214,7 @@ _G.pg.base.item_data_statistics[81422] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81423] = {
@@ -105052,7 +105224,6 @@ _G.pg.base.item_data_statistics[81423] = {
 	icon = "Props/fudai94",
 	id = 81423,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Hospital Adventure Lucky Bag",
@@ -105109,6 +105280,7 @@ _G.pg.base.item_data_statistics[81423] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81424] = {
@@ -105118,7 +105290,6 @@ _G.pg.base.item_data_statistics[81424] = {
 	icon = "Props/fudai95",
 	id = 81424,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Pajama Party Lucky Bag",
@@ -105175,6 +105346,7 @@ _G.pg.base.item_data_statistics[81424] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81425] = {
@@ -105184,7 +105356,6 @@ _G.pg.base.item_data_statistics[81425] = {
 	icon = "SquareIcon/guanghui_8",
 	id = 81425,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "辉光下的甜蜜",
@@ -105211,6 +105382,7 @@ _G.pg.base.item_data_statistics[81425] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81426] = {
@@ -105220,7 +105392,6 @@ _G.pg.base.item_data_statistics[81426] = {
 	icon = "Props/fudai96",
 	id = 81426,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "Office Cabinet Lucky Box",
@@ -105277,6 +105448,7 @@ _G.pg.base.item_data_statistics[81426] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[81427] = {
@@ -105286,7 +105458,6 @@ _G.pg.base.item_data_statistics[81427] = {
 	icon = "Props/fudai97",
 	id = 81427,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "7th Anniversary Lucky bag",
@@ -105343,6 +105514,7 @@ _G.pg.base.item_data_statistics[81427] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99958] = {
@@ -105382,7 +105554,6 @@ _G.pg.base.item_data_statistics[99959] = {
 	icon = "Props/tianpinbataiicon",
 	id = 99959,
 	is_world = 0,
-	limit = "[]",
 	link_id = 0,
 	max_num = 0,
 	name = "7th Anniversary Dessert Bar",
@@ -105409,6 +105580,7 @@ _G.pg.base.item_data_statistics[99959] = {
 	index = {},
 	shiptrans_id = {},
 	combination_display = {},
+	limit = {},
 }
 
 _G.pg.base.item_data_statistics[99960] = {

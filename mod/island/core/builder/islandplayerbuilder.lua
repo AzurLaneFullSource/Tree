@@ -34,14 +34,28 @@ function var0_0.LoadAsset(arg0_4, arg1_4, arg2_4)
 end
 
 function var0_0.LoadOtherPart(arg0_5, arg1_5, arg2_5, arg3_5, arg4_5)
-	ResourceMgr.Inst:getAssetAsync("island/jumpcurve/jumpcurve", "", typeof(JumpCurve), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_6)
-		arg2_5:InitJump(arg0_6.curve)
-		arg4_5()
-	end), true, true)
+	seriesAsync({
+		function(arg0_6)
+			local var0_6 = IslandAssetLoadDispatcher.Instance:Enqueue("island/jumpcurve/jumpcurve", "", typeof(JumpCurve), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_7)
+				arg2_5:InitJump(arg0_7.curve)
+				arg0_6()
+			end), true, true)
+
+			arg0_5:AddLoadingID(var0_6)
+		end,
+		function(arg0_8)
+			local var0_8 = IslandShipDressHelperNew.New()
+
+			arg2_5:SetShipDressHelper(var0_8)
+			var0_8:PreLoadShipDressupItem(arg1_5, 0, arg0_8)
+		end
+	}, function()
+		existCall(arg4_5)
+	end)
 end
 
-function var0_0.Recycle(arg0_7, arg1_7, arg2_7)
-	arg0_7:GetPoolMgr():ReturnCommanderModel(arg2_7)
+function var0_0.Recycle(arg0_10, arg1_10, arg2_10)
+	arg0_10:GetPoolMgr():ReturnCommanderModel(arg2_10)
 end
 
 return var0_0

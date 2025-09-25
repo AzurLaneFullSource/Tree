@@ -67,7 +67,7 @@ function var0_0.Flush(arg0_12)
 end
 
 function var0_0.GetSmoothRotateObject(arg0_13)
-	return GetOrAddComponent(arg0_13:findTF("adapt/char"), typeof(SmoothRotateObject))
+	return arg0_13:findTF("adapt/char")
 end
 
 function var0_0.OnCharLoaded(arg0_14)
@@ -90,10 +90,11 @@ end
 
 function var0_0.SetObjInitRotaion(arg0_17, arg1_17)
 	local var0_17 = arg0_17:GetSmoothRotateObject()
+	local var1_17 = GetOrAddComponent(var0_17, typeof(SmoothRotateObject))
 
-	var0_17.rotationSpeed = 5
+	var1_17.rotationSpeed = 5
 
-	ReflectionHelp.RefSetProperty(typeof(SmoothRotateObject), "targetRotation", var0_17, arg1_17)
+	ReflectionHelp.RefSetProperty(typeof(SmoothRotateObject), "targetRotation", var1_17, arg1_17)
 
 	if arg0_17.timer then
 		arg0_17.timer:Stop()
@@ -102,7 +103,7 @@ function var0_0.SetObjInitRotaion(arg0_17, arg1_17)
 	arg0_17.timer = Timer.New(function()
 		local var0_18 = pg.island_set.character_detail_camera_speed.key_value_int
 
-		var0_17.rotationSpeed = var0_18
+		var1_17.rotationSpeed = var0_18
 	end, 0.5, 1)
 
 	arg0_17.timer:Start()

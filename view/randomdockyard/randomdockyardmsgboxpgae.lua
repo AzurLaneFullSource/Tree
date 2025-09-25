@@ -106,7 +106,7 @@ function var0_0.Hide(arg0_17)
 	arg0_17.cards = {}
 
 	var0_0.super.Hide(arg0_17)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_17._tf, arg0_17._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_17._tf, arg0_17._parentTf)
 end
 
 function var0_0.OnDestroy(arg0_18)

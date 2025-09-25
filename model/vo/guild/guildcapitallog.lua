@@ -16,7 +16,7 @@ end
 
 function var0_0.buildText(arg0_2)
 	local var0_2 = ""
-	local var1_2 = pg.TimeMgr:GetInstance():STimeDescC(arg0_2.time)
+	local var1_2 = pg.TimeMgr.GetInstance():STimeDescC(arg0_2.time)
 	local var2_2 = arg0_2.eventTarget[1]
 
 	if arg0_2.eventType == GuildConst.TYPE_DONATE then

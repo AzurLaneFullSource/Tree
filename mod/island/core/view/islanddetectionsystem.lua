@@ -9,8 +9,8 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1:Init()
 end
 
-function var0_0.Emit(arg0_2, arg1_2, ...)
-	arg0_2.view:Emit(arg1_2, ...)
+function var0_0.NotifiyCore(arg0_2, arg1_2, ...)
+	arg0_2.view:NotifiyCore(arg1_2, ...)
 end
 
 function var0_0.Init(arg0_3)

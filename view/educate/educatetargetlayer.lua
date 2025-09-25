@@ -95,9 +95,8 @@ function var0_0.addListener(arg0_6)
 end
 
 function var0_0.didEnter(arg0_10)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_10._tf, {
-		groupName = arg0_10:getGroupNameFromData(),
-		weight = arg0_10:getWeightFromData() + 1
+	arg0_10:OverlayPanel(arg0_10._tf, {
+		groupDelta = 1
 	})
 	arg0_10:initLeft()
 	arg0_10.mainTaskUIList:make(function(arg0_11, arg1_11, arg2_11)
@@ -273,7 +272,7 @@ end
 
 function var0_0.willExit(arg0_29)
 	arg0_29.animEvent:SetEndEvent(nil)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_29._tf)
+	arg0_29:UnOverlayPanel(arg0_29._tf)
 
 	if arg0_29.onExit then
 		arg0_29.onExit()

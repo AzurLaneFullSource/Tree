@@ -43,7 +43,7 @@ function var0_0.register(arg0_1)
 			data = {
 				callback = arg2_5,
 				pos = arg1_5,
-				LayerWeightMgr_groupName = LayerWeightConst.GROUP_CHATROOM,
+				groupName = arg0_1.viewComponent:getGroupName(),
 				emojiIconCallback = function(arg0_6)
 					arg0_1.viewComponent:insertEmojiToInputText(arg0_6)
 				end

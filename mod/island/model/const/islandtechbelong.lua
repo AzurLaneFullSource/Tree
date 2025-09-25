@@ -16,11 +16,11 @@ var0_0.Fields = {
 }
 var0_0.Names = {
 	[var0_0.CENTRE] = i18n("island_tech_type_1"),
-	[var0_0.GATHER] = i18n("island_ship_attrName_4"),
-	[var0_0.COOK] = i18n("island_ship_attrName_6"),
+	[var0_0.GATHER] = i18n("island_ship_attrName_2"),
+	[var0_0.COOK] = i18n("island_ship_attrName_4"),
 	[var0_0.FEED] = i18n("island_ship_attrName_3"),
-	[var0_0.PLANT] = i18n("island_ship_attrName_2"),
-	[var0_0.MECHINE] = i18n("island_ship_attrName_5")
+	[var0_0.PLANT] = i18n("island_ship_attrName_1"),
+	[var0_0.MECHINE] = i18n("island_ship_attrName_6")
 }
 var0_0.SPECIAL_SHOW_TYPE = var0_0.CENTRE
 var0_0.COMMON_SHOW_TYPES = {

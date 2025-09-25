@@ -149,8 +149,7 @@ function var0_0.didEnter(arg0_7)
 	onButton(arg0_7, arg0_7.ruleBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = arg0_7.gameHelpTip,
-			weight = LayerWeightConst.THIRD_LAYER
+			helps = arg0_7.gameHelpTip
 		})
 	end)
 	onButton(arg0_7, arg0_7.startBtn, function()
@@ -283,7 +282,7 @@ function var0_0.setGameState(arg0_27, arg1_27)
 		if isActive(arg0_27.endUI) then
 			pg.UIMgr.GetInstance():BlurPanel(arg0_27.endUI)
 		else
-			pg.UIMgr.GetInstance():UnblurPanel(arg0_27.endUI, arg0_27._tf)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_27.endUI, arg0_27._tf)
 		end
 	end
 
@@ -962,7 +961,7 @@ end
 
 function var0_0.willExit(arg0_86)
 	arg0_86:clearTimer()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_86.endUI, arg0_86._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_86.endUI, arg0_86._tf)
 
 	arg0_86.xgm = nil
 	arg0_86.xgmSpine = nil

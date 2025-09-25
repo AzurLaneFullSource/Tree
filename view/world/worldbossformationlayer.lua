@@ -503,7 +503,7 @@ function var0_0.willExit(arg0_50)
 		cancelTweens(arg0_50.tweens)
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_50._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_50._tf)
 end
 
 return var0_0

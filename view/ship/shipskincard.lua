@@ -163,19 +163,25 @@ function var0_0.updateData(arg0_6, arg1_6, arg2_6, arg3_6)
 		end)
 		arg0_6:flushSkin()
 
-		local var5_6 = getProxy(ShipSkinProxy):getSkinById(arg0_6.skin.id)
-		local var6_6 = var5_6 and var5_6:isExpireType() and not var5_6:isExpired()
+		local var5_6 = arg0_6.skin.id
 
-		setActive(arg0_6.timelimitTag, var6_6)
-		setActive(arg0_6.timelimitTimeTxt, var6_6)
+		if ShipSkin.IsChangeSkin(arg0_6.skin.id) then
+			var5_6 = ShipSkin.GetChangeSkinMainId(arg0_6.skin.id)
+		end
+
+		local var6_6 = getProxy(ShipSkinProxy):getSkinById(var5_6)
+		local var7_6 = var6_6 and var6_6:isExpireType() and not var6_6:isExpired()
+
+		setActive(arg0_6.timelimitTag, var7_6)
+		setActive(arg0_6.timelimitTimeTxt, var7_6)
 
 		if arg0_6.skinTimer then
 			arg0_6.skinTimer:Stop()
 		end
 
-		if var6_6 then
+		if var7_6 then
 			arg0_6.skinTimer = Timer.New(function()
-				local var0_10 = skinTimeStamp(var5_6:getRemainTime())
+				local var0_10 = skinTimeStamp(var6_6:getRemainTime())
 
 				setText(arg0_6.timelimitTimeTxt:Find("Text"), var0_10)
 			end, 1, -1)

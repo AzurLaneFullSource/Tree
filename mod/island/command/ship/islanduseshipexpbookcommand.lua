@@ -31,6 +31,7 @@ function var0_0.execute(arg0_1, arg1_1)
 
 			if var0_2 < var1_2 then
 				IslandAchievementHelper.OnShipUpgrade(var0_2, var1_2)
+				IslandBookHelper.OnShipUpgradeOrBreakOut(var1_1)
 				pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandShipUpgrade(var2_1.id, var1_2))
 			end
 

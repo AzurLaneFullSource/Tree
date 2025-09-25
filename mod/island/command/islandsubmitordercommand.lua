@@ -87,7 +87,13 @@ function var0_0.HandleFirmOrder(arg0_6, arg1_6)
 			arg0_6:HandleConsume(arg1_6)
 			var0_6:RemoveSlot(arg1_6.id)
 			var0_6:RecordNextCanSubmitTime()
-			var0_6:AddExp(arg1_6:GetOrder():GetExpValue())
+
+			local var1_7 = arg1_6:GetOrder()
+
+			if not isa(var1_7, IslandFirmActivityOrder) then
+				var0_6:AddExp(var1_7:GetExpValue())
+			end
+
 			arg0_6:sendNotification(GAME.ISLAND_SUBMIT_ORDER_DONE, {
 				dropData = var0_7,
 				slotId = arg1_6.id

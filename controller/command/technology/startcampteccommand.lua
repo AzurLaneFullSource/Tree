@@ -47,8 +47,7 @@ function var0_0.execute(arg0_1, arg1_1)
 					pg.TipsMgr.GetInstance():ShowTips(errorTip("coloring_cell", arg0_3.result))
 				end
 			end)
-		end,
-		weight = LayerWeightConst.TOP_LAYER
+		end
 	})
 end
 

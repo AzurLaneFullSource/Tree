@@ -19,65 +19,76 @@ function var0_0.Start(arg0_2, arg1_2, arg2_2)
 
 	local var4_2 = arg0_2:FindUnit(var1_2, var3_2)
 
+	if not var4_2 then
+		onNextTick(arg2_2)
+
+		return
+	end
+
 	var4_2:Enable()
+	var4_2:WarpAgent()
 	assert(var4_2, "unit is nil" .. var1_2)
 
 	arg0_2.unit = var4_2
 	arg0_2.callback = arg2_2
 
-	var4_2:SetNavAgentStopDistance(0.001)
-	var4_2:SetDestination(var0_2, var2_2)
+	var4_2:SetNavAgentStopDistance(0.26)
+	var4_2:SetDestination(var0_2, var2_2, arg1_2.radius, arg1_2.charaRadius)
 
 	arg0_2.starting = true
 end
 
-function var0_0.FindUnit(arg0_3, arg1_3, arg2_3)
-	if arg1_3 == 0 then
-		for iter0_3, iter1_3 in ipairs(arg0_3.unitList) do
-			if isa(iter1_3, IslandPlayerUnit) then
-				return iter1_3
-			end
-		end
+function var0_0.IsSameUnit(arg0_3, arg1_3)
+	if not arg0_3.unit then
+		return false
 	end
 
-	for iter2_3, iter3_3 in ipairs(arg0_3.unitList) do
-		if iter3_3:GetUnitType() == arg2_3 and iter3_3.id == arg1_3 then
-			return iter3_3
+	return arg1_3.id == arg0_3.unit.id and arg1_3.unitType == arg0_3.unit.unitType
+end
+
+function var0_0.FindUnit(arg0_4, arg1_4, arg2_4)
+	if arg1_4 == 0 then
+		return arg0_4:GetView().player
+	end
+
+	for iter0_4, iter1_4 in ipairs(arg0_4.unitList) do
+		if iter1_4:GetUnitType() == arg2_4 and iter1_4.id == arg1_4 then
+			return iter1_4
 		end
 	end
 
 	return nil
 end
 
-function var0_0.OnUpdate(arg0_4)
-	if not arg0_4.starting then
+function var0_0.OnUpdate(arg0_5)
+	if not arg0_5.starting then
 		return
 	end
 
-	local var0_4 = arg0_4.unit.agent
+	local var0_5 = arg0_5.unit.agent
 
-	if not var0_4.pathPending and var0_4.remainingDistance <= var0_4.stoppingDistance then
-		arg0_4:EndAction()
+	if not var0_5.pathPending and var0_5.remainingDistance <= var0_5.stoppingDistance then
+		arg0_5:EndAction()
 	end
 end
 
-function var0_0.EndAction(arg0_5)
-	arg0_5.unit:SetNavAgentStopDistance(2)
-	arg0_5.unit:StopMove()
+function var0_0.EndAction(arg0_6)
+	arg0_6.unit:SetNavAgentStopDistance(2)
+	arg0_6.unit:StopMove()
 
-	if arg0_5.hideFlag then
-		arg0_5.unit:Disable()
+	if arg0_6.hideFlag then
+		arg0_6.unit:Disable()
 	end
 
-	arg0_5.callback()
+	arg0_6.callback()
 
-	arg0_5.starting = false
+	arg0_6.starting = false
 end
 
-function var0_0.OnDispose(arg0_6)
-	arg0_6.starting = nil
-	arg0_6.callback = nil
-	arg0_6.unitList = nil
+function var0_0.OnDispose(arg0_7)
+	arg0_7.starting = nil
+	arg0_7.callback = nil
+	arg0_7.unitList = nil
 end
 
 return var0_0

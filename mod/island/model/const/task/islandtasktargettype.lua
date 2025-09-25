@@ -25,7 +25,7 @@ var0_0.TASK = 22
 var0_0.TASK_TYPE = 23
 var0_0.HAND_PROD_PLUS = 24
 var0_0.GIVE_GIFT = 25
-var0_0.PRDO_ITEM = 26
+var0_0.PROD_ITEM = 26
 var0_0.RESTAURANT_SHELVE = 27
 var0_0.RESTAURANT_SELL = 28
 var0_0.RESTAURANT_SALES = 29
@@ -34,11 +34,25 @@ var0_0.RESTAURANT_OPEN = 31
 var0_0.SHIP_EXP_BOOK = 32
 var0_0.SHIP_SKILL_UPGRADE = 33
 var0_0.STORY = 34
+var0_0.ACTION = 35
+var0_0.ACTION_END = 36
+var0_0.ACTION_HELLO = 37
+var0_0.FOLLOW = 38
+var0_0.ACTIVITY_ORDER = 39
+var0_0.ACTIVIEY_GATHER = 40
+var0_0.ACTIVIEY_FORMULA = 41
+var0_0.START_DELEGATE = 42
+var0_0.TAKE_PHOTO = 43
+var0_0.COMMANDER_DRESS_ID = 44
+var0_0.SHIP_DRESS_ID = 45
 
 function var0_0.GetRuntimeTypes()
 	return {
 		var0_0.RECYCLE,
+		var0_0.TECHNOLOGY,
 		var0_0.ISLAND_LV,
+		var0_0.FRAGMENT,
+		var0_0.UNLOCK_SHIP,
 		var0_0.FURNITURE,
 		var0_0.COMMANDER_DRESS,
 		var0_0.SHIP_DRESS,
@@ -48,20 +62,24 @@ function var0_0.GetRuntimeTypes()
 		var0_0.ACHIEVEMENT,
 		var0_0.TASK,
 		var0_0.RESTAURANT_RANK,
-		var0_0.STORY
+		var0_0.STORY,
+		var0_0.ACTION,
+		var0_0.COMMANDER_DRESS_ID,
+		var0_0.SHIP_DRESS_ID
 	}
 end
 
 function var0_0.GetClientTypes()
 	return {
 		var0_0.INTERACTION,
-		var0_0.APPROACH
+		var0_0.APPROACH,
+		var0_0.ACTION_END,
+		var0_0.TAKE_PHOTO
 	}
 end
 
 function var0_0.GetObjectLinkTypes()
 	return {
-		var0_0.INTERACTION,
 		var0_0.APPROACH
 	}
 end

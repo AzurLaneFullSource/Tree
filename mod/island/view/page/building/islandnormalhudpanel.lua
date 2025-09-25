@@ -26,90 +26,115 @@ function var0_0.OnInit(arg0_3)
 	setText(arg0_3.hudTitle, var0_3.title)
 	setText(arg0_3.hudName, var0_3.name)
 
-	arg0_3.playerTF = arg0_3:GetPlayer().transform
-	arg0_3.isNear = arg0_3:CheckIsNear()
+	arg0_3.playerTF = arg0_3:GetPlayer()
 
-	setActive(arg0_3.hudTitle, arg0_3.isNear)
-	setActive(arg0_3.hudName, arg0_3.isNear)
-	arg0_3:UpdateTaskDisplay()
+	arg0_3:CheckPlayer()
 end
 
-function var0_0.OnDispose(arg0_4)
-	var0_0.super.OnDispose(arg0_4)
+function var0_0.CheckPlayer(arg0_4)
+	arg0_4.isNear = arg0_4:CheckIsNear()
+
+	setActive(arg0_4.hudTitle, arg0_4.isNear)
+	setActive(arg0_4.hudName, arg0_4.isNear)
+	arg0_4:UpdateTaskDisplay()
 end
 
-function var0_0.GetPlayer(arg0_5)
-	local var0_5 = GameObject.Find("Root"):GetComponentsInChildren(typeof("WorldObjectItem")):ToTable()
+function var0_0.OnDispose(arg0_5)
+	var0_0.super.OnDispose(arg0_5)
+end
 
-	for iter0_5, iter1_5 in ipairs(var0_5) do
-		if iter1_5.isPlayer then
-			return iter1_5.gameObject
+function var0_0.GetPlayer(arg0_6)
+	local var0_6 = GameObject.Find("Root"):GetComponentsInChildren(typeof(WorldObjectItem)):ToTable()
+
+	for iter0_6, iter1_6 in ipairs(var0_6) do
+		if iter1_6.isPlayer then
+			arg0_6.hasPlayer = true
+
+			return iter1_6.gameObject.transform
 		end
 	end
 
 	return nil
 end
 
-function var0_0.CheckIsNear(arg0_6)
-	local var0_6 = arg0_6.view:GetUnitModuleWithType(arg0_6.unitType, arg0_6.unitId)
-	local var1_6 = var0_6 and var0_6._go or nil
+function var0_0.CheckIsNear(arg0_7)
+	local var0_7 = arg0_7.view:GetUnitModuleWithType(arg0_7.unitType, arg0_7.unitId)
+	local var1_7 = var0_7 and var0_7._go or nil
 
-	if not var0_6 or IsNil(var1_6) then
+	if not var0_7 or IsNil(var1_7) or not var1_7.transform then
 		return false
 	end
 
-	if (arg0_6.playerTF.position - var1_6.transform.position).magnitude < arg0_6.hud_name_range then
+	if not arg0_7.playerTF then
+		return false
+	end
+
+	if arg0_7.playerTF == nil then
+		warning("self.playerTF is nil ")
+	end
+
+	if var1_7.transform == nil then
+		warning("role.transform is nil")
+	end
+
+	if (arg0_7.playerTF.position - var1_7.transform.position).magnitude < arg0_7.hud_name_range then
 		return true
 	end
 
 	return false
 end
 
-function var0_0.OnUpdate(arg0_7)
-	local var0_7 = arg0_7:CheckIsNear()
+function var0_0.OnUpdate(arg0_8)
+	if not arg0_8.hasPlayer then
+		arg0_8.playerTF = arg0_8:GetPlayer()
 
-	if var0_7 == arg0_7.isNear then
-		return
+		arg0_8:CheckPlayer()
+	else
+		local var0_8 = arg0_8:CheckIsNear()
+
+		if var0_8 == arg0_8.isNear then
+			return
+		end
+
+		arg0_8.isNear = var0_8
+
+		setActive(arg0_8.hudTitle, arg0_8.isNear)
+		setActive(arg0_8.hudName, arg0_8.isNear)
 	end
-
-	arg0_7.isNear = var0_7
-
-	setActive(arg0_7.hudTitle, arg0_7.isNear)
-	setActive(arg0_7.hudName, arg0_7.isNear)
 end
 
-function var0_0.RefreshHud(arg0_8)
-	arg0_8:UpdateTaskDisplay()
+function var0_0.RefreshHud(arg0_9)
+	arg0_9:UpdateTaskDisplay()
 end
 
-function var0_0.UpdateTaskDisplay(arg0_9)
-	local var0_9, var1_9 = IslandObjectTaskHudHelper.GetObjectTaskHud(arg0_9.unitId)
+function var0_0.UpdateTaskDisplay(arg0_10)
+	local var0_10, var1_10 = IslandObjectTaskHudHelper.GetObjectTaskHud(arg0_10.unitId)
 
-	if arg0_9.currentTaskId ~= var1_9 then
-		arg0_9.currentTaskId = var1_9
+	if arg0_10.currentTaskId ~= var1_10 then
+		arg0_10.currentTaskId = var1_10
 
-		if var1_9 then
-			local var2_9, var3_9 = IslandObjectTaskHudHelper.GetHudDislayInfoByTaskId(var1_9)
+		if var1_10 then
+			local var2_10, var3_10 = IslandObjectTaskHudHelper.GetHudDislayInfoByTaskId(var1_10)
 
-			setActive(arg0_9.hudImageBg, true)
-			GetImageSpriteFromAtlasAsync("island/IslandHudIcon", var2_9, arg0_9.hudImageBg)
-			setImageColor(arg0_9.hudImageTF, Color.NewHex(var3_9))
+			setActive(arg0_10.hudImageBg, true)
+			GetImageSpriteFromAtlasAsync("island/IslandHudIcon", var2_10, arg0_10.hudImageBg)
+			setImageColor(arg0_10.hudImageTF, Color.NewHex(var3_10))
 		else
-			setActive(arg0_9.hudImageBg, arg0_9.hudImageIcon ~= "")
-			GetImageSpriteFromAtlasAsync("island/IslandHudIcon", "hud_main", arg0_9.hudImageBg)
-			setImageColor(arg0_9.hudImageTF, Color.NewHex("78787a"))
+			setActive(arg0_10.hudImageBg, arg0_10.hudImageIcon ~= "")
+			GetImageSpriteFromAtlasAsync("island/IslandHudIcon", "hud_main", arg0_10.hudImageBg)
+			setImageColor(arg0_10.hudImageTF, Color.NewHex("78787a"))
 		end
 	end
 
-	if var0_9 ~= arg0_9.currentTaskType then
-		arg0_9.currentTaskType = var0_9
+	if var0_10 ~= arg0_10.currentTaskType then
+		arg0_10.currentTaskType = var0_10
 
-		local var4_9 = IslandObjectTaskHudHelper.TaskProcessToHudIcon[var0_9] or arg0_9.hudImageIcon
+		local var4_10 = IslandObjectTaskHudHelper.TaskProcessToHudIcon[var0_10] or arg0_10.hudImageIcon
 
-		setActive(arg0_9.hudImageBg, var4_9 ~= "")
+		setActive(arg0_10.hudImageBg, var4_10 ~= "")
 
-		if var4_9 ~= "" then
-			GetImageSpriteFromAtlasAsync("island/IslandHudIcon", var4_9, arg0_9.hudImageTF)
+		if var4_10 ~= "" then
+			GetImageSpriteFromAtlasAsync("island/IslandHudIcon", var4_10, arg0_10.hudImageTF)
 		end
 	end
 end

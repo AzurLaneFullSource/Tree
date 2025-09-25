@@ -1,4 +1,4 @@
-local var0_0 = class("AgoraDecorationView", import("Mod.Island.Core.View.IslandBaseSubView"))
+local var0_0 = class("AgoraDecorationView", import("Mod.Island.Core.View.IslandASynLoadSubView"))
 
 function var0_0.GetUIName(arg0_1)
 	return "IslandAgoraDecorationUI"
@@ -57,143 +57,147 @@ function var0_0.OnInit(arg0_2, arg1_2)
 	arg0_2:InitTags()
 end
 
-function var0_0.PlayExitAnim(arg0_3, arg1_3)
-	if arg0_3.isAniming then
-		return
-	end
-
-	arg0_3.isAniming = true
-
-	arg0_3.dftAniEvent:SetEndEvent(function()
-		arg0_3.isAniming = false
-
-		arg1_3()
-		var0_0.super.Hide(arg0_3)
-	end)
-	arg0_3.anim:Play("anim_IslandAgoraDecorationUI_Out")
+function var0_0.OnShow(arg0_3)
+	IslandGuideChecker.CheckGuide("ISLAND_GUIDE_27")
 end
 
-function var0_0.OnSelectedItem(arg0_5, arg1_5, arg2_5, arg3_5)
-	local var0_5 = arg0_5.selectedId
-
-	arg0_5.selectedId = arg1_5
-
-	for iter0_5, iter1_5 in pairs(arg0_5.cards) do
-		iter1_5:UpdateSelected(arg0_5.selectedId)
+function var0_0.PlayExitAnim(arg0_4, arg1_4)
+	if arg0_4.isAniming then
+		return
 	end
 
-	if not arg2_5 then
-		arg0_5:TriggerTag(arg1_5)
+	arg0_4.isAniming = true
+
+	arg0_4.dftAniEvent:SetEndEvent(function()
+		arg0_4.isAniming = false
+
+		var0_0.super.Hide(arg0_4)
+		arg1_4()
+	end)
+	arg0_4.anim:Play("anim_IslandAgoraDecorationUI_Out")
+end
+
+function var0_0.OnSelectedItem(arg0_6, arg1_6, arg2_6, arg3_6)
+	local var0_6 = arg0_6.selectedId
+
+	arg0_6.selectedId = arg1_6
+
+	for iter0_6, iter1_6 in pairs(arg0_6.cards) do
+		iter1_6:UpdateSelected(arg0_6.selectedId)
+	end
+
+	if not arg2_6 then
+		arg0_6:TriggerTag(arg1_6)
 
 		return
 	end
 
-	if arg0_5.selectedId > 0 and not arg0_5.isHideState then
-		triggerButton(arg0_5.hideBtn)
-		arg0_5:FoldBtnsAndTop()
-	elseif arg3_5 then
-		local var1_5 = _.detect(arg0_5.displays, function(arg0_6)
-			return arg0_6:Contains(arg3_5)
+	if arg0_6.selectedId > 0 and not arg0_6.isHideState then
+		triggerButton(arg0_6.hideBtn)
+		arg0_6:FoldBtnsAndTop()
+	elseif arg3_6 then
+		local var1_6 = _.detect(arg0_6.displays, function(arg0_7)
+			return arg0_7:Contains(arg3_6)
 		end)
 
-		if var1_5 and var1_5:GetAvailableCnt() > 0 then
+		if var1_6 and var1_6:GetAvailableCnt() > 0 then
 			return
 		end
 
-		if arg1_5 < 0 then
-			triggerButton(arg0_5.showBtn)
+		if arg1_6 < 0 then
+			triggerButton(arg0_6.showBtn)
 		end
-	elseif arg1_5 < 0 then
-		triggerButton(arg0_5.showBtn)
+	elseif arg1_6 < 0 then
+		triggerButton(arg0_6.showBtn)
 	end
 end
 
-function var0_0.TriggerTag(arg0_7, arg1_7)
-	if arg1_7 <= 0 then
+function var0_0.TriggerTag(arg0_8, arg1_8)
+	if arg1_8 <= 0 then
 		return
 	end
 
-	local var0_7 = arg0_7:GetView().agora:GetPlaceableItem(arg1_7)
+	local var0_8 = arg0_8:GetView().agora:GetPlaceableItem(arg1_8)
 
-	if not var0_7 then
+	if not var0_8 then
 		return
 	end
 
-	local var1_7 = table.indexof(AgoraFurnitureType.PLACEMENT_TYPE, var0_7:GetType())
+	local var1_8 = table.indexof(AgoraFurnitureType.PLACEMENT_TYPE, var0_8:GetType())
 
-	if var1_7 > 0 then
-		triggerToggle(arg0_7.toggles[var1_7], true)
+	if var1_8 > 0 then
+		triggerToggle(arg0_8.toggles[var1_8], true)
 	end
 end
 
-function var0_0.OnCreateSameItem(arg0_8, arg1_8)
-	local var0_8 = _.detect(arg0_8.displays, function(arg0_9)
-		return arg0_9:Contains(arg1_8)
+function var0_0.OnCreateSameItem(arg0_9, arg1_9)
+	local var0_9 = _.detect(arg0_9.displays, function(arg0_10)
+		return arg0_10:Contains(arg1_9)
 	end)
 
-	if var0_8 and var0_8:GetAvailableCnt() > 0 then
-		local var1_8 = var0_8:GetAvailableItem()
+	if var0_9 and var0_9:GetAvailableCnt() > 0 then
+		local var1_9 = var0_9:GetAvailableItem()
 
-		arg0_8:Op("PlaceItemRandonPosition", var1_8.id)
+		arg0_9:Op("PlaceItemRandonPosition", var1_9.id)
 	end
 end
 
-function var0_0.RegisterEvent(arg0_10)
-	function arg0_10.scrollRect.onInitItem(arg0_11)
-		arg0_10:OnInitItem(arg0_11)
+function var0_0.RegisterEvent(arg0_11)
+	function arg0_11.scrollRect.onInitItem(arg0_12)
+		arg0_11:OnInitItem(arg0_12)
 	end
 
-	function arg0_10.scrollRect.onUpdateItem(arg0_12, arg1_12)
-		arg0_10:OnUpdateItem(arg0_12, arg1_12)
+	function arg0_11.scrollRect.onUpdateItem(arg0_13, arg1_13)
+		arg0_11:OnUpdateItem(arg0_13, arg1_13)
 	end
 
-	function arg0_10.scrollRect4Theme.onInitItem(arg0_13)
-		arg0_10:OnInitItem4Theme(arg0_13)
+	function arg0_11.scrollRect4Theme.onInitItem(arg0_14)
+		arg0_11:OnInitItem4Theme(arg0_14)
 	end
 
-	function arg0_10.scrollRect4Theme.onUpdateItem(arg0_14, arg1_14)
-		arg0_10:OnUpdateItem4Theme(arg0_14, arg1_14)
+	function arg0_11.scrollRect4Theme.onUpdateItem(arg0_15, arg1_15)
+		arg0_11:OnUpdateItem4Theme(arg0_15, arg1_15)
 	end
 
-	onButton(arg0_10, arg0_10.agoraSaveBtn, function()
-		if arg0_10:TrySave() then
-			arg0_10:Op("Save")
+	onButton(arg0_11, arg0_11.agoraSaveBtn, function()
+		if arg0_11:TrySave() then
+			arg0_11:Op("Save")
 		end
 	end, SFX_PANEL)
-	onButton(arg0_10, arg0_10.agoraClearBtn, function()
-		arg0_10:ShowMsgbox({
+	onButton(arg0_11, arg0_11.agoraClearBtn, function()
+		arg0_11:ShowMsgbox({
 			content = i18n("island_agora_clear_tip"),
 			onYes = function()
-				arg0_10:Op("ClearAll")
+				arg0_11:Op("ClearAll")
 			end
 		})
 	end, SFX_PANEL)
-	onButton(arg0_10, arg0_10.agoraRevertBtn, function()
-		arg0_10:ShowMsgbox({
+	onButton(arg0_11, arg0_11.agoraRevertBtn, function()
+		arg0_11:ShowMsgbox({
 			content = i18n("island_agora_revert_tip"),
 			onYes = function()
-				arg0_10:Op("Revert")
+				arg0_11:Op("Revert")
 			end
 		})
 	end, SFX_PANEL)
-	onButton(arg0_10, arg0_10.capacityBtn, function()
-		local var0_20 = arg0_10:GetView()
-		local var1_20 = var0_20.agora:GetPlacedInfoList()
-		local var2_20 = var0_20.agora:GetMaxCapacity()
+	onButton(arg0_11, arg0_11.capacityBtn, function()
+		local var0_21 = arg0_11:GetView()
+		local var1_21 = var0_21.agora:GetPlacedInfoList()
+		local var2_21 = var0_21.agora:GetMaxCapacity()
 
-		arg0_10:ShowMsgbox({
+		arg0_11:ShowMsgbox({
 			type = IslandMsgBox.TYPE_AGORA_PLACED_LIST,
-			list = var1_20,
-			totalCnt = var2_20
+			list = var1_21,
+			totalCnt = var2_21
 		})
 	end, SFX_PANEL)
-	onButton(arg0_10, arg0_10.agoraShopBtn, function()
-		if arg0_10:GetView():GetController():CheckChange() then
-			arg0_10:Save()
+	onButton(arg0_11, arg0_11.agoraShopBtn, function()
+		if arg0_11:GetView():GetController():CheckChange() then
+			arg0_11:Save()
 		else
-			arg0_10:PlayExitAnim(function()
-				arg0_10:Op("ExitEditMode")
-				arg0_10:NotifiyIsland(ISLAND_EX_EVT.OPEN_PAGE, IslandShopPage, {
+			arg0_11:PlayExitAnim(function()
+				arg0_11:Op("ExitEditMode")
+				arg0_11:NotifiyIsland(ISLAND_EX_EVT.OPEN_PAGE, IslandShopPage, {
 					1,
 					2,
 					3,
@@ -208,536 +212,555 @@ function var0_0.RegisterEvent(arg0_10)
 			end)
 		end
 	end, SFX_PANEL)
-	onButton(arg0_10, arg0_10.backBtn, function()
-		if arg0_10:GetView():GetController():CheckChange() then
-			arg0_10:Save()
+	onButton(arg0_11, arg0_11.backBtn, function()
+		if arg0_11:GetView():GetController():CheckChange() then
+			arg0_11:Save()
 		else
-			arg0_10:PlayExitAnim(function()
-				arg0_10:Op("ExitEditMode")
+			arg0_11:PlayExitAnim(function()
+				arg0_11:Op("ExitEditMode")
 			end)
 		end
 	end, SFX_PANEL)
-	onInputChanged(arg0_10, arg0_10.searchInput, function()
-		local var0_25 = getInputText(arg0_10.searchInput)
+	onInputChanged(arg0_11, arg0_11.searchInput, function()
+		local var0_26 = getInputText(arg0_11.searchInput)
 
-		setActive(arg0_10.searchClearBtn, var0_25 ~= "")
-		arg0_10:OnSearch(var0_25)
+		setActive(arg0_11.searchClearBtn, var0_26 ~= "")
+		arg0_11:OnSearch(var0_26)
 	end)
-	onButton(arg0_10, arg0_10.searchClearBtn, function()
-		setInputText(arg0_10.searchInput, "")
+	onButton(arg0_11, arg0_11.searchClearBtn, function()
+		setInputText(arg0_11.searchInput, "")
 
-		arg0_10.indexData.searchKey = ""
+		arg0_11.indexData.searchKey = ""
 	end, SFX_PANEL)
-	onButton(arg0_10, arg0_10.sortBtn, function()
-		arg0_10.sortPage:ExecuteAction("Show", arg0_10.indexData, function(arg0_28)
-			arg0_10:OnSort(arg0_28)
+	onButton(arg0_11, arg0_11.sortBtn, function()
+		arg0_11.sortPage:ExecuteAction("Show", arg0_11.indexData, function(arg0_29)
+			arg0_11:OnSort(arg0_29)
 		end)
 	end, SFX_PANEL)
-	onButton(arg0_10, arg0_10.orderBtn, function()
-		local var0_29 = 1 - arg0_10.indexData.order
+	onButton(arg0_11, arg0_11.orderBtn, function()
+		local var0_30 = 1 - arg0_11.indexData.order
 
-		arg0_10:OnOrder(var0_29)
+		arg0_11:OnOrder(var0_30)
 	end, SFX_PANEL)
 
-	arg0_10.isHideState = false
-	arg0_10.isHideBtnAndTop = false
+	arg0_11.isHideState = false
+	arg0_11.isHideBtnAndTop = false
 
-	onButton(arg0_10, arg0_10.hideBtn, function()
-		arg0_10.isHideState = true
+	onButton(arg0_11, arg0_11.hideBtn, function()
+		arg0_11.isHideState = true
 
-		arg0_10.panelAnim:Play("fold")
+		arg0_11.panelAnim:Play("fold")
 	end, SFX_PANEL)
-	onButton(arg0_10, arg0_10.showBtn, function()
-		arg0_10.isHideState = false
+	onButton(arg0_11, arg0_11.showBtn, function()
+		arg0_11.isHideState = false
 
-		arg0_10.panelAnim:Play("unfold")
+		arg0_11.panelAnim:Play("unfold")
 
-		if arg0_10.isHideBtnAndTop then
-			arg0_10:UnFoldBtnsAndTop()
+		if arg0_11.isHideBtnAndTop then
+			arg0_11:UnFoldBtnsAndTop()
 		end
 	end, SFX_PANEL)
 end
 
-function var0_0.TrySave(arg0_32)
-	local var0_32 = arg0_32:GetView():GetController():CanEnterEditMode()
+function var0_0.TrySave(arg0_33)
+	local var0_33 = arg0_33:GetView():GetController():CanEnterEditMode()
 
-	if not var0_32 then
-		arg0_32:ShowMsgbox({
+	if not var0_33 then
+		arg0_33:ShowMsgbox({
 			type = IslandMsgBox.TYPE_AOGRA_SAVE_CD,
-			duetime = arg0_32:GetView():GetController().editCdTime,
+			duetime = arg0_33:GetView():GetController().editCdTime,
 			onNo = function()
-				arg0_32:Op("RevertAndExit")
+				arg0_33:Op("RevertAndExit")
 			end
 		})
 	end
 
-	return var0_32
+	return var0_33
 end
 
-function var0_0.Save(arg0_34)
-	if arg0_34:TrySave() then
-		arg0_34:ShowMsgbox({
+function var0_0.Save(arg0_35)
+	if arg0_35:TrySave() then
+		arg0_35:ShowMsgbox({
 			content = i18n("island_agora_save_or_exit_tip"),
 			noText = i18n("island_agora_exit_and_unsave"),
 			yesText = i18n("island_agora_exit_and_save"),
 			onYes = function()
-				arg0_34:Op("SaveAndExit")
+				arg0_35:Op("SaveAndExit")
 			end,
 			onNo = function()
-				arg0_34:Op("RevertAndExit")
+				arg0_35:Op("RevertAndExit")
 			end
 		})
 	end
 end
 
-function var0_0.FoldBtnsAndTop(arg0_37)
-	setActive(arg0_37.agoraSaveBtn, false)
-	setActive(arg0_37.agoraClearBtn, false)
-	setActive(arg0_37.agoraRevertBtn, false)
-	setActive(arg0_37.topPanel, false)
+function var0_0.FoldBtnsAndTop(arg0_38)
+	setActive(arg0_38.agoraSaveBtn, false)
+	setActive(arg0_38.agoraClearBtn, false)
+	setActive(arg0_38.agoraRevertBtn, false)
+	setActive(arg0_38.topPanel, false)
 
-	arg0_37.isHideBtnAndTop = true
+	arg0_38.isHideBtnAndTop = true
 end
 
-function var0_0.UnFoldBtnsAndTop(arg0_38)
-	setActive(arg0_38.agoraSaveBtn, true)
-	setActive(arg0_38.agoraClearBtn, true)
-	setActive(arg0_38.agoraRevertBtn, true)
-	setActive(arg0_38.topPanel, true)
+function var0_0.UnFoldBtnsAndTop(arg0_39)
+	setActive(arg0_39.agoraSaveBtn, true)
+	setActive(arg0_39.agoraClearBtn, true)
+	setActive(arg0_39.agoraRevertBtn, true)
+	setActive(arg0_39.topPanel, true)
 
-	arg0_38.isHideBtnAndTop = false
+	arg0_39.isHideBtnAndTop = false
 end
 
-function var0_0.InitTags(arg0_39)
-	arg0_39.toggles = {}
+function var0_0.InitTags(arg0_40)
+	arg0_40.toggles = {}
 
-	arg0_39.tagUIItemList:make(function(arg0_40, arg1_40, arg2_40)
-		if arg0_40 == UIItemList.EventUpdate then
-			local var0_40 = AgoraFurnitureType.PLACEMENT_TYPE[arg1_40 + 1]
+	arg0_40.tagUIItemList:make(function(arg0_41, arg1_41, arg2_41)
+		if arg0_41 == UIItemList.EventUpdate then
+			local var0_41 = AgoraFurnitureType.PLACEMENT_TYPE[arg1_41 + 1]
 
-			onToggle(arg0_39, arg2_40, function(arg0_41)
-				if arg0_41 then
-					arg0_39.selectedTagIndex = arg1_40 + 1
+			onToggle(arg0_40, arg2_41, function(arg0_42)
+				if arg0_42 then
+					arg0_40.selectedTagIndex = arg1_41 + 1
 
-					arg0_39:GetView():OnTagChange(var0_40)
-					arg0_39:OnFliter(var0_40)
+					arg0_40:Op("NotifiyAgora", ISLAND_AGORA_EVT.TAG_CHANGE, var0_41)
+					arg0_40:OnFliter(var0_41)
 				end
 			end, SFX_PANEL)
-			setText(arg2_40:Find("sel/Text"), AgoraFurnitureType.Type2CN(var0_40))
-			table.insert(arg0_39.toggles, arg2_40)
+			setText(arg2_41:Find("sel/Text"), AgoraFurnitureType.Type2CN(var0_41))
+			table.insert(arg0_40.toggles, arg2_41)
 		end
 	end)
-	arg0_39.tagUIItemList:align(#AgoraFurnitureType.PLACEMENT_TYPE)
-	onToggle(arg0_39, arg0_39.themeBtn, function(arg0_42)
-		if arg0_42 then
-			arg0_39.selectedTagIndex = nil
+	arg0_40.tagUIItemList:align(#AgoraFurnitureType.PLACEMENT_TYPE)
+	onToggle(arg0_40, arg0_40.themeBtn, function(arg0_43)
+		if arg0_43 then
+			arg0_40.selectedTagIndex = nil
 
-			arg0_39:FlushThemeList()
+			arg0_40:FlushThemeList()
 		end
 	end, SFX_PANEL)
 end
 
-function var0_0.OnInitItem4Theme(arg0_43, arg1_43)
-	local var0_43 = AgoraDecorationThemeCard.New(arg1_43)
+function var0_0.OnInitItem4Theme(arg0_44, arg1_44)
+	local var0_44 = AgoraDecorationThemeCard.New(arg1_44)
 
-	onButton(arg0_43, var0_43.mainTr, function()
-		local var0_44 = isa(var0_43.theme, AgoraSystemTheme)
-		local var1_44 = var0_44 and IslandMsgBox.TYPE_SYSTEM_THEME or IslandMsgBox.TYPE_THEME
+	onButton(arg0_44, var0_44.mainTr, function()
+		local var0_45 = isa(var0_44.theme, AgoraSystemTheme)
+		local var1_45 = var0_45 and IslandMsgBox.TYPE_SYSTEM_THEME or IslandMsgBox.TYPE_THEME
 
-		arg0_43:ShowMsgbox({
-			type = var1_44,
-			theme = var0_43.theme,
+		arg0_44:ShowMsgbox({
+			type = var1_45,
+			theme = var0_44.theme,
 			onYes = function()
-				arg0_43:Op("ApplyTheme", var0_43.theme.id, var0_44)
+				arg0_44:Op("ApplyTheme", var0_44.theme.id, var0_45)
 			end,
 			onDel = function()
-				arg0_43:Op("DeleteTheme", var0_43.theme.id)
+				arg0_44:Op("DeleteTheme", var0_44.theme.id)
 			end
 		})
 	end, SFX_PANEL)
-	onButton(arg0_43, var0_43.addTr, function()
-		local var0_47 = arg0_43:GetView().agora:GetUseableThemeId()
+	onButton(arg0_44, var0_44.addTr, function()
+		local var0_48 = arg0_44:GetView().agora:GetUseableThemeId()
 
-		if not var0_47 then
+		if not var0_48 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("island_agora_no_pos_place"))
 
 			return
 		end
 
 		seriesAsync({
-			function(arg0_48)
-				arg0_43:PrepareToTakeScreenshot()
-				arg0_43:ShootScreen(var0_47, arg0_48)
+			function(arg0_49)
+				arg0_44:PrepareToTakeScreenshot()
+				arg0_44:ShootScreen(var0_48, arg0_49)
 			end,
 			function()
-				arg0_43:RevertTakeScreenshot()
-				arg0_43:ShowMsgbox({
+				arg0_44:RevertTakeScreenshot()
+				arg0_44:ShowMsgbox({
 					type = IslandMsgBox.TYPE_SAVE_THEME,
-					id = var0_47,
-					onYes = function(arg0_50)
-						arg0_43:Op("SaveTheme", var0_47, arg0_50)
+					id = var0_48,
+					onYes = function(arg0_51)
+						arg0_44:Op("SaveTheme", var0_48, arg0_51)
 					end
 				})
 			end
 		})
 	end, SFX_PANEL)
 
-	arg0_43.themeCards[arg1_43] = var0_43
+	arg0_44.themeCards[arg1_44] = var0_44
 end
 
-function var0_0.PrepareToTakeScreenshot(arg0_51)
+function var0_0.PrepareToTakeScreenshot(arg0_52)
 	IslandCameraMgr.instance:ActiveVirtualCamera(IslandConst.AGORA_CAMERA_SHOOTSCREEN_NAME)
-	arg0_51:GetView():ShowOrHideContainer(false)
+	arg0_52:GetView():ShowOrHideContainer(false)
 end
 
-function var0_0.ShootScreen(arg0_52, arg1_52, arg2_52)
-	local var0_52 = IslandCameraMgr.instance._mainCamera
-	local var1_52 = 426
-	local var2_52 = 320
+function var0_0.ShootScreen(arg0_53, arg1_53, arg2_53)
+	local var0_53 = IslandCameraMgr.instance._mainCamera
+	local var1_53 = 426
+	local var2_53 = 320
 
-	BLHX.Rendering.HotUpdate.ScreenShooterPass.TakePhoto(var0_52, function(arg0_53)
-		local var0_53
+	BLHX.Rendering.HotUpdate.ScreenShooterPass.TakePhoto(var0_53, function(arg0_54)
+		local var0_54
 
-		if arg0_53.width < var1_52 or arg0_53.height < var2_52 then
-			var0_53 = arg0_53
+		if arg0_54.width < var1_53 or arg0_54.height < var2_53 then
+			var0_54 = arg0_54
 		else
-			local var1_53 = arg0_53.width * 0.5 - var1_52 * 0.5
-			local var2_53 = arg0_53.height * 0.5 - var2_52 * 0.5
-			local var3_53 = arg0_53:GetPixels(var1_53, var2_53, var1_52, var2_52)
+			local var1_54 = arg0_54.width * 0.5 - var1_53 * 0.5
+			local var2_54 = arg0_54.height * 0.5 - var2_53 * 0.5
+			local var3_54 = arg0_54:GetPixels(var1_54, var2_54, var1_53, var2_53)
 
-			var0_53 = UnityEngine.Texture2D.New(var1_52, var2_52)
+			var0_54 = UnityEngine.Texture2D.New(var1_53, var2_53)
 
-			var0_53:SetPixels(var3_53)
-			var0_53:Apply()
+			var0_54:SetPixels(var3_54)
+			var0_54:Apply()
 		end
 
-		local var4_53 = Tex2DExtension.EncodeToJPG(var0_53)
-		local var5_53 = AgoraCalc.BuildScreenShootSavePath(arg1_52)
+		local var4_54 = Tex2DExtension.EncodeToJPG(var0_54)
+		local var5_54 = AgoraCalc.BuildScreenShootSavePath(arg1_53)
 
-		if PathMgr.FileExists(var5_53) then
-			System.IO.File.Delete(var5_53)
+		if PathMgr.FileExists(var5_54) then
+			System.IO.File.Delete(var5_54)
 		end
 
-		System.IO.File.WriteAllBytes(var5_53, var4_53)
-		arg2_52()
+		System.IO.File.WriteAllBytes(var5_54, var4_54)
+		arg2_53()
 	end)
 end
 
-function var0_0.RevertTakeScreenshot(arg0_54)
+function var0_0.RevertTakeScreenshot(arg0_55)
 	IslandCameraMgr.instance:ActiveVirtualCamera(IslandConst.AGORA_CAMERA_NAME)
-	arg0_54:GetView():ShowOrHideContainer(true)
+	arg0_55:GetView():ShowOrHideContainer(true)
 end
 
-function var0_0.OnUpdateItem4Theme(arg0_55, arg1_55, arg2_55)
-	local var0_55 = arg0_55.themeCards[arg2_55]
+function var0_0.OnUpdateItem4Theme(arg0_56, arg1_56, arg2_56)
+	local var0_56 = arg0_56.themeCards[arg2_56]
 
-	if not var0_55 then
-		arg0_55:OnInitItem4Theme(arg2_55)
+	if not var0_56 then
+		arg0_56:OnInitItem4Theme(arg2_56)
 
-		var0_55 = arg0_55.themeCards[arg2_55]
+		var0_56 = arg0_56.themeCards[arg2_56]
 	end
 
-	local var1_55 = arg0_55.displayThemes[arg1_55 + 1]
+	local var1_56 = arg0_56.displayThemes[arg1_56 + 1]
 
-	var0_55:Update(var1_55)
+	var0_56:Update(var1_56)
 end
 
-function var0_0.GetDisplayThemes(arg0_56)
-	local var0_56 = arg0_56:GetView()
-	local var1_56 = var0_56.agora:GetThemes()
-	local var2_56 = {}
+function var0_0.GetDisplayThemes(arg0_57)
+	local var0_57 = arg0_57:GetView()
+	local var1_57 = var0_57.agora:GetThemes()
+	local var2_57 = {}
 
-	for iter0_56, iter1_56 in ipairs(var1_56) do
-		table.insert(var2_56, iter1_56)
+	for iter0_57, iter1_57 in ipairs(var1_57) do
+		table.insert(var2_57, iter1_57)
 	end
 
-	if var0_56.agora:GetMaxCustomThemeCnt() > #var1_56 then
-		table.insert(var2_56, 1, {
+	if var0_57.agora:GetMaxCustomThemeCnt() > #var1_57 then
+		table.insert(var2_57, 1, {
 			id = -1
 		})
 	end
 
-	local var3_56 = var0_56.agora:GetSystemThemes()
-
-	for iter2_56, iter3_56 in ipairs(var3_56) do
-		if iter3_56:Owned(var0_56.agora:GetPlaceableList()) then
-			table.insert(var2_56, iter3_56)
-		end
-	end
-
-	return var2_56
+	return var2_57
 end
 
-function var0_0.OnInitItem(arg0_57, arg1_57)
-	local var0_57 = AgoraDecorationCard.New(arg1_57)
-	local var1_57 = false
+function var0_0.OnInitItem(arg0_58, arg1_58)
+	local var0_58 = AgoraDecorationCard.New(arg1_58)
+	local var1_58 = false
 
-	local function var2_57()
-		if var1_57 then
-			arg0_57.descPage:ExecuteAction("Hide")
+	local function var2_58()
+		if var1_58 then
+			arg0_58.descPage:ExecuteAction("Hide")
 
-			var1_57 = false
+			var1_58 = false
 		end
 	end
 
-	var0_57.onClickEvent:RemoveAllListeners()
-	var0_57.onClickEvent:AddListener(function()
-		if var1_57 then
-			var2_57()
+	var0_58.onClickEvent:RemoveAllListeners()
+	var0_58.onClickEvent:AddListener(function()
+		if var1_58 then
+			var2_58()
 
 			return
 		end
 
-		local var0_59 = var0_57.valueObject:GetAvailableItem()
+		local var0_60 = var0_58.valueObject:GetAvailableItem()
 
-		if var0_57.valueObject:IsOptionalShapeType() then
-			arg0_57.shapeSelectPanel:Show(var0_57, function(arg0_60)
-				arg0_57:GetView():EnterPaveTileMode(var0_59, arg0_60)
+		if var0_60 then
+			arg0_58:Op("ClearNew", var0_60.id)
+		end
+
+		if var0_58.valueObject:IsOptionalShapeType() then
+			arg0_58.shapeSelectPanel:Show(var0_58, function(arg0_61)
+				arg0_58:GetView():EnterPaveTileMode(var0_60, arg0_61)
 			end)
-		elseif var0_57.valueObject:IsBuilding() then
-			if var0_59 then
-				arg0_57:Op("ReplaceBuilding", var0_59.id)
+		elseif var0_58.valueObject:IsBuilding() then
+			if var0_60 then
+				arg0_58:Op("ReplaceBuilding", var0_60.id)
 			end
-		elseif var0_57.valueObject:IsFoundation() then
-			if var0_59 then
-				arg0_57:Op("ReplaceFoundation", var0_59.id)
+		elseif var0_58.valueObject:IsFoundation() then
+			if var0_60 then
+				arg0_58:Op("ReplaceFoundation", var0_60.id)
 			end
 		else
-			if var0_57.valueObject:IsUsing() then
-				local var1_59 = var0_57.valueObject:GetFirstItem()
+			if var0_58.valueObject:IsUsing() then
+				local var1_60 = var0_58.valueObject:GetFirstItem()
 
-				arg0_57:Op("TrySelectItemById", var1_59.id)
+				arg0_58:Op("TrySelectItemById", var1_60.id)
 
 				return
 			end
 
-			if var0_59 then
-				arg0_57:Op("PlaceItemRandonPosition", var0_59.id)
+			if var0_60 then
+				arg0_58:Op("PlaceItemRandonPosition", var0_60.id)
 			end
 		end
 	end)
-	var0_57.longPressTriggerEvent:RemoveAllListeners()
-	var0_57.longPressTriggerEvent:AddListener(function()
-		var1_57 = true
+	var0_58.longPressTriggerEvent:RemoveAllListeners()
+	var0_58.longPressTriggerEvent:AddListener(function()
+		var1_58 = true
 
-		arg0_57.descPage:ExecuteAction("Show", var0_57.valueObject, var0_57._go.transform.position)
+		arg0_58.descPage:ExecuteAction("Show", var0_58.valueObject, var0_58._go.transform.position)
 	end)
-	var0_57.onReleasedEvent:RemoveAllListeners()
-	var0_57.onReleasedEvent:AddListener(var2_57)
+	var0_58.onReleasedEvent:RemoveAllListeners()
+	var0_58.onReleasedEvent:AddListener(var2_58)
 
-	arg0_57.cards[arg1_57] = var0_57
+	arg0_58.cards[arg1_58] = var0_58
 end
 
-function var0_0.OnUpdateItem(arg0_62, arg1_62, arg2_62)
-	local var0_62 = arg0_62.cards[arg2_62]
+function var0_0.OnUpdateItem(arg0_63, arg1_63, arg2_63)
+	local var0_63 = arg0_63.cards[arg2_63]
 
-	if not var0_62 then
-		arg0_62:OnInitItem(arg2_62)
+	if not var0_63 then
+		arg0_63:OnInitItem(arg2_63)
 
-		var0_62 = arg0_62.cards[arg2_62]
+		var0_63 = arg0_63.cards[arg2_63]
 	end
 
-	local var1_62 = arg0_62.displays[arg1_62 + 1]
+	local var1_63 = arg0_63.displays[arg1_63 + 1]
 
-	var0_62:Update(var1_62, arg0_62.selectedId)
+	var0_63:Update(var1_63, arg0_63.selectedId)
 end
 
-function var0_0.OnFliter(arg0_63, arg1_63)
-	arg0_63.indexData.tag = arg1_63
+function var0_0.OnFliter(arg0_64, arg1_64)
+	arg0_64.indexData.tag = arg1_64
 
-	arg0_63.shapeSelectPanel:Hide()
-	arg0_63:FlushList()
-end
-
-function var0_0.OnSort(arg0_64, arg1_64)
-	arg0_64.indexData.sortKey = arg1_64
-
-	arg0_64:UpdateOrderTxt()
+	arg0_64.shapeSelectPanel:Hide()
 	arg0_64:FlushList()
 end
 
-function var0_0.OnSearch(arg0_65, arg1_65)
-	arg0_65.indexData.searchKey = arg1_65
+function var0_0.OnSort(arg0_65, arg1_65)
+	arg0_65.indexData.sortKey = arg1_65
 
+	arg0_65:UpdateOrderTxt()
 	arg0_65:FlushList()
 end
 
-function var0_0.OnOrder(arg0_66, arg1_66)
-	arg0_66.indexData.order = arg1_66
-	arg0_66.orderBtn.localScale = Vector3(1, arg1_66 == 1 and 1 or -1, 1)
+function var0_0.OnSearch(arg0_66, arg1_66)
+	arg0_66.indexData.searchKey = arg1_66
 
 	arg0_66:FlushList()
 end
 
-function var0_0.UpdateOrderTxt(arg0_67)
-	arg0_67.orderTxt.text = AgoraFurnitureType.Sort2CN(arg0_67.indexData.sortKey)
+function var0_0.OnOrder(arg0_67, arg1_67)
+	arg0_67.indexData.order = arg1_67
+	arg0_67.orderBtn.localScale = Vector3(1, arg1_67 == 1 and 1 or -1, 1)
+
+	arg0_67:FlushList()
 end
 
-function var0_0.GetDisplays(arg0_68)
-	local var0_68 = arg0_68:GetView()
-	local var1_68 = var0_68.agora:GetPlaceableList()
-	local var2_68 = {}
+function var0_0.UpdateOrderTxt(arg0_68)
+	arg0_68.orderTxt.text = AgoraFurnitureType.Sort2CN(arg0_68.indexData.sortKey)
+end
 
-	for iter0_68, iter1_68 in pairs(var1_68) do
-		if not var2_68[iter1_68.configId] then
-			var2_68[iter1_68.configId] = AgoraDecorationVO.New(iter1_68.configId, var0_68)
+function var0_0.GetDisplays(arg0_69)
+	local var0_69 = arg0_69:GetView()
+	local var1_69 = var0_69.agora:GetPlaceableList()
+	local var2_69 = {}
+
+	for iter0_69, iter1_69 in pairs(var1_69) do
+		if not var2_69[iter1_69.configId] then
+			var2_69[iter1_69.configId] = AgoraDecorationVO.New(iter1_69.configId, var0_69)
 		end
 
-		var2_68[iter1_68.configId]:AddItem(iter1_68)
+		var2_69[iter1_69.configId]:AddItem(iter1_69)
 	end
 
-	local var3_68 = {}
+	local var3_69 = {}
 
-	for iter2_68, iter3_68 in pairs(var2_68) do
-		if iter3_68:IsType(arg0_68.indexData.tag) and iter3_68:IsMatchSearch(arg0_68.indexData.searchKey) then
-			table.insert(var3_68, iter3_68)
+	for iter2_69, iter3_69 in pairs(var2_69) do
+		if iter3_69:IsType(arg0_69.indexData.tag) and iter3_69:IsMatchSearch(arg0_69.indexData.searchKey) then
+			table.insert(var3_69, iter3_69)
 		end
 	end
 
-	local var4_68
+	local var4_69
 
-	if arg0_68.indexData.sortKey == AgoraFurnitureType.SORT_DEFAULT then
-		var4_68 = {
-			function(arg0_69)
-				return arg0_69:IsUsing() and 0 or 1
-			end,
+	if arg0_69.indexData.sortKey == AgoraFurnitureType.SORT_DEFAULT then
+		var4_69 = {
 			function(arg0_70)
-				return arg0_70.id
+				return arg0_70:IsUsing() and 0 or 1
+			end,
+			function(arg0_71)
+				return arg0_71:IsNew() and 0 or 1
+			end,
+			function(arg0_72)
+				return -1 * arg0_72:GetRarity()
+			end,
+			function(arg0_73)
+				return -1 * arg0_73.id
 			end
 		}
 	else
-		var4_68 = {
-			function(arg0_71)
-				return arg0_71:IsUsing() and 0 or 1
+		var4_69 = {
+			function(arg0_74)
+				return arg0_74:IsUsing() and 0 or 1
 			end,
-			function(arg0_72)
-				return arg0_72:GetSortValue(arg0_68.indexData.sortKey, arg0_68.indexData.order)
+			function(arg0_75)
+				return arg0_75:IsNew() and 0 or 1
+			end,
+			function(arg0_76)
+				return -1 * arg0_76:GetSortValue(arg0_69.indexData.sortKey, arg0_69.indexData.order)
+			end,
+			function(arg0_77)
+				return -1 * arg0_77.id
 			end
 		}
 	end
 
-	table.sort(var3_68, CompareFuncs(var4_68))
+	table.sort(var3_69, CompareFuncs(var4_69))
 
-	return var3_68
+	return var3_69
 end
 
-function var0_0.Flush(arg0_73)
-	local var0_73 = arg0_73.selectedTagIndex or 1
+function var0_0.Flush(arg0_78)
+	local var0_78 = arg0_78.selectedTagIndex or 1
 
-	triggerToggle(arg0_73.toggles[var0_73], true)
-	arg0_73:FlushCapacity()
-	arg0_73:FlushSaveBtn()
+	triggerToggle(arg0_78.toggles[var0_78], true)
+	arg0_78:FlushCapacity()
+	arg0_78:FlushSaveBtn()
+	arg0_78.anim:Play("anim_IslandAgoraDecorationUI_In")
 end
 
-function var0_0.FlushList(arg0_74)
-	if not isActive(arg0_74.scrollRect) then
+function var0_0.FlushCard(arg0_79, arg1_79)
+	for iter0_79, iter1_79 in pairs(arg0_79.cards or {}) do
+		if iter1_79.valueObject:Contains(arg1_79) then
+			iter1_79:Update(iter1_79.valueObject, arg0_79.selectedId)
+
+			break
+		end
+	end
+end
+
+function var0_0.FlushList(arg0_80)
+	if not isActive(arg0_80.scrollRect) then
 		return
 	end
 
-	arg0_74.displays = arg0_74:GetDisplays()
+	arg0_80.displays = arg0_80:GetDisplays()
 
-	arg0_74.scrollRect:SetTotalCount(#arg0_74.displays)
-	setActive(arg0_74.emptyTr, #arg0_74.displays == 0)
+	arg0_80.scrollRect:SetTotalCount(#arg0_80.displays)
+	setActive(arg0_80.emptyTr, #arg0_80.displays == 0)
 end
 
-function var0_0.FlushThemeList(arg0_75)
-	if not isActive(arg0_75.scrollRect4Theme) then
+function var0_0.FlushThemeList(arg0_81)
+	if not isActive(arg0_81.scrollRect4Theme) then
 		return
 	end
 
-	arg0_75.displayThemes = arg0_75:GetDisplayThemes()
+	arg0_81.displayThemes = arg0_81:GetDisplayThemes()
 
-	arg0_75.scrollRect4Theme:SetTotalCount(#arg0_75.displayThemes)
-	setActive(arg0_75.emptyTr, false)
+	arg0_81.scrollRect4Theme:SetTotalCount(#arg0_81.displayThemes)
+	setActive(arg0_81.emptyTr, false)
 end
 
-function var0_0.FlushCapacity(arg0_76)
-	local var0_76 = arg0_76:GetView().agora:GetCapacity()
-	local var1_76 = arg0_76:GetView().agora:GetMaxCapacity()
+function var0_0.FlushCapacity(arg0_82)
+	local var0_82 = arg0_82:GetView().agora:GetCapacity()
+	local var1_82 = arg0_82:GetView().agora:GetMaxCapacity()
 
-	arg0_76.capacityTxt.text = i18n("island_agora_label_capacity") .. ":<color=#a0ff9d>" .. var0_76 .. "</color>/" .. var1_76
+	arg0_82.capacityTxt.text = i18n("island_agora_capacity") .. ":<color=#a0ff9d>" .. var0_82 .. "</color>/" .. var1_82
 end
 
-function var0_0.FlushSaveBtn(arg0_77)
-	local var0_77 = arg0_77:GetView():GetController()
+function var0_0.FlushSaveBtn(arg0_83)
+	local var0_83 = arg0_83:GetView():GetController()
 
-	arg0_77:AddSaveCdTimer(var0_77.editCdTime)
+	arg0_83:AddSaveCdTimer(var0_83.editCdTime)
 end
 
-function var0_0.AddSaveCdTimer(arg0_78, arg1_78)
-	arg0_78:RemoveSaveCdTimer()
+function var0_0.AddSaveCdTimer(arg0_84, arg1_84)
+	arg0_84:RemoveSaveCdTimer()
 
-	if arg1_78 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
-		arg0_78.agoraSaveCdTxt.text = ""
+	if arg1_84 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
+		arg0_84.agoraSaveCdTxt.text = ""
 
-		setActive(arg0_78.agoraSaveBtn, true)
-		setActive(arg0_78.agoraSaveCdBtn, false)
+		setActive(arg0_84.agoraSaveBtn, true)
+		setActive(arg0_84.agoraSaveCdBtn, false)
 
 		return
 	end
 
-	setActive(arg0_78.agoraSaveBtn, false)
-	setActive(arg0_78.agoraSaveCdBtn, true)
+	setActive(arg0_84.agoraSaveBtn, false)
+	setActive(arg0_84.agoraSaveCdBtn, true)
 
-	arg0_78.saveCdTimer = Timer.New(function()
-		local var0_79 = pg.TimeMgr.GetInstance():GetServerTime()
+	arg0_84.saveCdTimer = Timer.New(function()
+		local var0_85 = pg.TimeMgr.GetInstance():GetServerTime()
 
-		if arg1_78 - var0_79 <= 0 then
-			arg0_78:RemoveSaveCdTimer()
-			arg0_78:FlushSaveBtn()
+		if arg1_84 - var0_85 <= 0 then
+			arg0_84:RemoveSaveCdTimer()
+			arg0_84:FlushSaveBtn()
 		else
-			arg0_78.agoraSaveCdTxt.text = pg.TimeMgr.GetInstance():DescCDTimeForMinute(arg1_78 - var0_79)
+			arg0_84.agoraSaveCdTxt.text = pg.TimeMgr.GetInstance():DescCDTimeForMinute(arg1_84 - var0_85)
 		end
 	end, 1, -1)
 
-	arg0_78.saveCdTimer:Start()
-	arg0_78.saveCdTimer.func()
+	arg0_84.saveCdTimer:Start()
+	arg0_84.saveCdTimer.func()
 end
 
-function var0_0.RemoveSaveCdTimer(arg0_80)
-	if arg0_80.saveCdTimer then
-		arg0_80.saveCdTimer:Stop()
+function var0_0.RemoveSaveCdTimer(arg0_86)
+	if arg0_86.saveCdTimer then
+		arg0_86.saveCdTimer:Stop()
 
-		arg0_80.saveCdTimer = nil
+		arg0_86.saveCdTimer = nil
 	end
 end
 
-function var0_0.OnDestroy(arg0_81)
-	if arg0_81.dftAniEvent then
-		arg0_81.dftAniEvent:SetEndEvent(nil)
+function var0_0.OnDestroy(arg0_87)
+	if arg0_87.dftAniEvent then
+		arg0_87.dftAniEvent:SetEndEvent(nil)
 	end
 
-	arg0_81:RemoveSaveCdTimer()
+	arg0_87:RemoveSaveCdTimer()
 
-	if arg0_81.sortPage then
-		arg0_81.sortPage:Destroy()
+	if arg0_87.sortPage then
+		arg0_87.sortPage:Destroy()
 
-		arg0_81.sortPage = nil
+		arg0_87.sortPage = nil
 	end
 
-	if arg0_81.descPage then
-		arg0_81.descPage:Destroy()
+	if arg0_87.descPage then
+		arg0_87.descPage:Destroy()
 
-		arg0_81.descPage = nil
+		arg0_87.descPage = nil
 	end
 
-	if arg0_81.shapeSelectPanel then
-		arg0_81.shapeSelectPanel:Destroy()
+	if arg0_87.shapeSelectPanel then
+		arg0_87.shapeSelectPanel:Destroy()
 
-		arg0_81.shapeSelectPanel = nil
+		arg0_87.shapeSelectPanel = nil
 	end
 
-	for iter0_81, iter1_81 in pairs(arg0_81.cards or {}) do
-		iter1_81:Dispose()
+	for iter0_87, iter1_87 in pairs(arg0_87.cards or {}) do
+		iter1_87:Dispose()
 	end
 
-	arg0_81.cards = nil
+	arg0_87.cards = nil
 
-	for iter2_81, iter3_81 in pairs(arg0_81.themeCards or {}) do
-		iter3_81:Dispose()
+	for iter2_87, iter3_87 in pairs(arg0_87.themeCards or {}) do
+		iter3_87:Dispose()
 	end
 
-	arg0_81.themeCards = nil
+	arg0_87.themeCards = nil
 end
 
 return var0_0

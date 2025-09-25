@@ -332,15 +332,13 @@ function var0_0.didEnter(arg0_29)
 	arg0_29:initSelectPlans()
 	arg0_29:initResultPanel()
 	arg0_29:checkTips()
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_29.mainTF, {
+	arg0_29:OverlayPanel(arg0_29.mainTF, {
 		pbList = {
 			arg0_29:findTF("bg", arg0_29.mainTF)
-		},
-		groupName = LayerWeightConst.GROUP_EDUCATE
+		}
 	})
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_29.topTF, {
-		groupName = LayerWeightConst.GROUP_EDUCATE,
-		weight = LayerWeightConst.BASE_LAYER + 1
+	arg0_29:OverlayPanel(arg0_29.topTF, {
+		groupDelta = 1
 	})
 end
 
@@ -932,8 +930,8 @@ function var0_0.willExit(arg0_73)
 
 	arg0_73.resPanel = nil
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_73.mainTF, arg0_73:findTF("anim_root"))
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_73.topTF, arg0_73:findTF("anim_root"))
+	arg0_73:UnOverlayPanel(arg0_73.mainTF, arg0_73:findTF("anim_root"))
+	arg0_73:UnOverlayPanel(arg0_73.topTF, arg0_73:findTF("anim_root"))
 
 	for iter0_73, iter1_73 in pairs(arg0_73.planCards) do
 		iter1_73:dispose()

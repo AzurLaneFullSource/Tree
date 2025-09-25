@@ -38,7 +38,7 @@ function var0_0.init(arg0_3)
 	arg0_3.rtUpgrade:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
 		arg0_3.inAnim = false
 
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_3.rtUpgrade, arg0_3._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_3.rtUpgrade, arg0_3._tf)
 		setActive(arg0_3.rtUpgrade, false)
 	end)
 	arg0_3._tf:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
@@ -197,7 +197,7 @@ end
 
 function var0_0.willExit(arg0_21)
 	if isActive(arg0_21.rtUpgrade) then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_21.rtUpgrade, arg0_21._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_21.rtUpgrade, arg0_21._tf)
 		setActive(arg0_21.rtUpgrade, false)
 	end
 end

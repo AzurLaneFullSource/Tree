@@ -40,8 +40,7 @@ function var0_0.Execute(arg0_1, arg1_1)
 					autoOpenShipConfigID = var4_1[1].metaShipVO.configId
 				})
 			end,
-			onClose = arg1_1,
-			weight = LayerWeightConst.TOP_LAYER
+			onClose = arg1_1
 		})
 	else
 		arg1_1()

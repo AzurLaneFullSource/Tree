@@ -58,7 +58,7 @@ function var0_0.showConformMsgBox(arg0_6, arg1_6)
 			local var0_8 = getInputText(arg0_6._confireInput)
 
 			if arg0_6.key ~= tonumber(var0_8) then
-				pg.TipsMgr:GetInstance():ShowTips(i18n("mail_input_erro"))
+				pg.TipsMgr.GetInstance():ShowTips(i18n("mail_input_erro"))
 
 				return
 			end
@@ -94,7 +94,7 @@ function var0_0.Show(arg0_10, arg1_10)
 end
 
 function var0_0.Hide(arg0_11)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_11._tf, arg0_11._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11._tf, arg0_11._parentTf)
 	var0_0.super.Hide(arg0_11)
 	setInputText(arg0_11._confireInput, "")
 end

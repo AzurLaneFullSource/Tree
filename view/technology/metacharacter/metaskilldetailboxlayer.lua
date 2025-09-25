@@ -12,13 +12,13 @@ function var0_0.init(arg0_2)
 end
 
 function var0_0.didEnter(arg0_3)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf, false)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf)
 	arg0_3:updateShipDetail()
 	arg0_3:updateSkillList()
 end
 
 function var0_0.willExit(arg0_4)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_4._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_4._tf)
 end
 
 function var0_0.initUITextTips(arg0_5)
@@ -111,11 +111,10 @@ function var0_0.updateSkillTF(arg0_11, arg1_11, arg2_11)
 	onToggle(arg0_11, arg1_11, function(arg0_12)
 		if arg0_12 then
 			if not var16_11 then
-				pg.MsgboxMgr:GetInstance():ShowMsgBox({
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					hideYes = true,
 					hideNo = true,
 					type = MSGBOX_TYPE_META_SKILL_UNLOCK,
-					weight = LayerWeightConst.TOP_LAYER,
 					metaShipVO = var11_11,
 					skillID = arg2_11
 				})
@@ -127,8 +126,7 @@ function var0_0.updateSkillTF(arg0_11, arg1_11, arg2_11)
 							shipID = arg0_11.metaShipID,
 							skillID = arg2_11
 						})
-					end,
-					weight = LayerWeightConst.TOP_LAYER
+					end
 				})
 			elseif var17_11 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("meta_skill_maxtip2"))

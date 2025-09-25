@@ -8,7 +8,6 @@ function var0_0.Ctor(arg0_2, arg1_2, arg2_2)
 	arg0_2._go = arg1_2
 	arg0_2._tf = arg1_2.transform
 	arg0_2._parent = arg2_2
-	arg0_2.UIMgr = pg.UIMgr.GetInstance()
 
 	pg.DelegateInfo.New(arg0_2)
 
@@ -122,11 +121,9 @@ function var0_0.SetActive(arg0_12, arg1_12)
 	arg0_12._active = arg1_12
 
 	if arg1_12 then
-		pg.UIMgr.GetInstance():BlurPanel(arg0_12._go, false, {
-			weight = LayerWeightConst.SECOND_LAYER
-		})
+		pg.UIMgr.GetInstance():BlurPanel(arg0_12._go)
 	else
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_12._go, arg0_12._parent._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_12._go, arg0_12._parent._tf)
 	end
 end
 

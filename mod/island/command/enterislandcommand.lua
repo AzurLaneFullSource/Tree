@@ -4,15 +4,16 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var0_1 = arg1_1:getBody()
 	local var1_1 = var0_1.id
 	local var2_1 = var0_1.code
+	local var3_1 = var0_1.reconnect
 
 	if var2_1 and var2_1 ~= "" then
-		arg0_1:Send(0, var2_1)
+		arg0_1:Send(0, var2_1, var3_1)
 	else
-		arg0_1:Send(var1_1, 0)
+		arg0_1:Send(var1_1, 0, var3_1)
 	end
 end
 
-function var0_0.Send(arg0_2, arg1_2, arg2_2)
+function var0_0.Send(arg0_2, arg1_2, arg2_2, arg3_2)
 	pg.ConnectionMgr.GetInstance():Send(21202, {
 		island_id = arg1_2,
 		code = tostring(arg2_2)
@@ -20,7 +21,8 @@ function var0_0.Send(arg0_2, arg1_2, arg2_2)
 		if arg0_3.result == 0 then
 			arg0_2:sendNotification(GAME.ISLAND_GET_DATA, {
 				id = arg0_3.island_id,
-				list = arg0_3.player_list
+				list = arg0_3.player_list,
+				reconnect = arg3_2
 			})
 			getProxy(IslandProxy):EnterIsland(arg0_3.island_id)
 		elseif arg0_3.result == 6 then

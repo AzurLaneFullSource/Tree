@@ -13,9 +13,7 @@ function var0_0.setPlayer(arg0_3, arg1_3)
 end
 
 function var0_0.init(arg0_4)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_4._tf, {
-		weight = LayerWeightConst.LOWER_LAYER
-	})
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_4._tf)
 
 	arg0_4.bg = arg0_4:findTF("frame/bg")
 	arg0_4.bluePrintBtn = arg0_4:findTF("blueprint_btn", arg0_4.bg)
@@ -76,8 +74,7 @@ function var0_0.didEnter(arg0_5)
 		if pg.gametip[var0_12] then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_HELP,
-				helps = pg.gametip[var0_12].tip,
-				weight = LayerWeightConst.SECOND_LAYER
+				helps = pg.gametip[var0_12].tip
 			})
 		end
 	end, SFX_PANEL)

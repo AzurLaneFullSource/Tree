@@ -1,10 +1,11 @@
 local var0_0 = class("IslandBuildingAgency", import(".IslandBaseAgency"))
 
-var0_0.SlOT_UNIT_INIT = "IslandBuildingAgency:SlOT_UNIT_INIT"
-var0_0.SLOT_UNIT_REMOVE = "IslandBuildingAgency:SLOT_UNIT_REMOVE"
+var0_0.COLLECT_SlOT_UNIT_INIT = "IslandBuildingAgency:COLLECT_SlOT_UNIT_INIT"
+var0_0.COLLECT_SLOT_UNIT_REMOVE = "IslandBuildingAgency:COLLECT_SLOT_UNIT_REMOVE"
 var0_0.SLOT_HANDPLABT_SLOT_UNIT_CHANGE = "IslandBuildingAgency:SLOT_HANDPLABT_SLOT_UNIT_CHANGE"
 var0_0.SLOT_RESET_DELEGATION_STATE_DONE = "IslandBuildingAgency:SLOT_RESET_DELEGATION_STATE_DONE"
 var0_0.GEN_ANIMAL_INT = "IslandBuildingAgency:GEN_ANIMAL_INT"
+var0_0.CHANGE_PRODUCT_MODEL = "IslandBuildingAgency:CHANGE_PRODUCT_MODEL"
 
 function var0_0.OnInit(arg0_1, arg1_1)
 	arg0_1.buildings = {}
@@ -90,27 +91,31 @@ function var0_0.InitBuildData(arg0_10, arg1_10)
 
 	arg0_10.buildings[arg1_10.id] = var0_10
 
-	for iter0_10, iter1_10 in ipairs(arg1_10.collect_list or {}) do
-		var0_10:GetCollectSlotData(iter1_10.id):SetNeedLoadModel()
+	local var1_10 = getProxy(IslandProxy):GetIsland()
+
+	for iter0_10, iter1_10 in ipairs(arg1_10.build_collect.collect_list or {}) do
+		var1_10:DispatchEvent(IslandBuildingAgency.COLLECT_SlOT_UNIT_INIT, {
+			slotId = iter1_10.id
+		})
 	end
 
 	for iter2_10, iter3_10 in ipairs(arg1_10.hand_list or {}) do
-		getProxy(IslandProxy):GetIsland():DispatchEvent(IslandBuildingAgency.SLOT_HANDPLABT_SLOT_UNIT_CHANGE, {
+		var1_10:DispatchEvent(IslandBuildingAgency.SLOT_HANDPLABT_SLOT_UNIT_CHANGE, {
 			build_id = arg1_10.id,
 			slotId = iter3_10.id
 		})
 	end
 
 	for iter4_10, iter5_10 in ipairs(arg1_10.appoint_list or {}) do
-		local var1_10 = {}
+		local var2_10 = {}
 
 		for iter6_10, iter7_10 in ipairs(iter5_10.part_list) do
-			table.insert(var1_10, iter7_10)
+			table.insert(var2_10, iter7_10)
 		end
 
-		if #var1_10 > 0 then
-			getProxy(IslandProxy):GetIsland():DispatchEvent(IslandBuildingAgency.GEN_ANIMAL_INT, {
-				aniList = var1_10,
+		if #var2_10 > 0 then
+			var1_10:DispatchEvent(IslandBuildingAgency.GEN_ANIMAL_INT, {
+				aniList = var2_10,
 				slotId = iter5_10.id
 			})
 		end
@@ -186,37 +191,72 @@ function var0_0.GetDelegationSlotDataByTechId(arg0_14, arg1_14)
 	return var0_14:GetDelegationSlotDataByFormulaId(var1_14)
 end
 
-function var0_0.GetBuildingListByMap(arg0_15, arg1_15)
-	local var0_15 = pg.island_production_place.get_id_list_by_map_id[arg1_15] or {}
-	local var1_15 = {}
+function var0_0.GetDelegationSlotDataBySlotId(arg0_15, arg1_15)
+	local var0_15 = pg.island_production_slot[arg1_15].place
+	local var1_15 = arg0_15.buildings[var0_15]
 
-	for iter0_15, iter1_15 in ipairs(var0_15) do
-		local var2_15 = arg0_15.buildings[iter1_15]
-
-		table.insert(var1_15, var2_15)
-	end
-
-	return var1_15
+	return var1_15 and var1_15:GetDelegationSlotData(arg1_15)
 end
 
-function var0_0.OnSeasonReset(arg0_16)
+function var0_0.GetBuildingListByMap(arg0_16, arg1_16)
+	local var0_16 = pg.island_production_place.get_id_list_by_map_id[arg1_16] or {}
+	local var1_16 = {}
+
+	for iter0_16, iter1_16 in ipairs(var0_16) do
+		local var2_16 = arg0_16.buildings[iter1_16]
+
+		table.insert(var1_16, var2_16)
+	end
+
+	return var1_16
+end
+
+function var0_0.OnSeasonReset(arg0_17)
 	return
 end
 
-function var0_0.GetFormulaNums(arg0_17)
-	return arg0_17.formulaNums
+function var0_0.GetFormulaNums(arg0_18)
+	return arg0_18.formulaNums
 end
 
-function var0_0.AddFormulaNum(arg0_18, arg1_18, arg2_18)
-	if pg.island_formula[arg1_18].is_condition ~= 1 then
+function var0_0.AddFormulaNum(arg0_19, arg1_19, arg2_19)
+	if pg.island_formula[arg1_19].is_condition ~= 1 then
 		return
 	end
 
-	if arg0_18.formulaNums[arg1_18] then
-		arg0_18.formulaNums[arg1_18] = arg0_18.formulaNums[arg1_18] + arg2_18
+	if arg0_19.formulaNums[arg1_19] then
+		arg0_19.formulaNums[arg1_19] = arg0_19.formulaNums[arg1_19] + arg2_19
 	else
-		arg0_18.formulaNums[arg1_18] = arg2_18
+		arg0_19.formulaNums[arg1_19] = arg2_19
 	end
+end
+
+function var0_0.GetTipInfos(arg0_20)
+	local var0_20 = 0
+	local var1_20 = 0
+	local var2_20 = {}
+
+	for iter0_20, iter1_20 in ipairs(pg.island_set.post_manage_produce.key_value_varchar) do
+		local var3_20 = arg0_20.buildings[iter1_20]
+
+		if var3_20 then
+			for iter2_20, iter3_20 in pairs(var3_20:GetDelegationSlotDatas()) do
+				if iter3_20:GetSlotRewardData() then
+					var0_20 = var0_20 + 1
+				elseif iter3_20:CanStartDelegation() then
+					var1_20 = var1_20 + 1
+				elseif iter3_20:GetSlotRoleData() then
+					table.insert(var2_20, iter3_20:GetSlotRoleData():GetFinishTime())
+				end
+			end
+		end
+	end
+
+	return {
+		awardCnt = var0_20,
+		emptyCnt = var1_20,
+		timestamps = var2_20
+	}
 end
 
 return var0_0

@@ -13,7 +13,8 @@ function var0_0.execute(arg0_1, arg1_1)
 			local var0_2 = IslandDropHelper.AddItems(arg0_2)
 
 			arg0_1:sendNotification(GAME.ISLAND_GET_ACHV_AWARD_DONE, {
-				dropData = var0_2
+				dropData = var0_2,
+				id = var0_1[1]
 			})
 		else
 			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)

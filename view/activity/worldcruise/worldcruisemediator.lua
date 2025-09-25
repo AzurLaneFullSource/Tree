@@ -110,6 +110,7 @@ function var0_0.handleNotification(arg0_11, arg1_11)
 		arg0_11.viewComponent:UpdateView()
 	elseif var0_11 == GAME.SHOPPING_DONE then
 		arg0_11.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_11.awards)
+		arg0_11.viewComponent:UpdateShopPage()
 	elseif var0_11 == ShopsProxy.CRUISE_SHOP_UPDATED then
 		arg0_11.viewComponent:setShop(var1_11.shop)
 		arg0_11.viewComponent:UpdateShopPage()

@@ -275,6 +275,10 @@ function var0_0.execute(arg0_1, arg1_1)
 			true
 		},
 		{
+			SystemTipProxy,
+			true
+		},
+		{
 			CommanderManualProxy,
 			true
 		},

@@ -120,7 +120,6 @@ function var0_0.init(arg0_9)
 	arg0_9.blurPanel = arg0_9:findTF("blur_panel")
 	arg0_9.top = arg0_9:findTF("blur_panel/adapt/top")
 	arg0_9.leftPanel = arg0_9:findTF("blur_panel/adapt/left_length")
-	arg0_9.UIMgr = pg.UIMgr.GetInstance()
 	arg0_9.backBtn = findTF(arg0_9.top, "back_btn")
 	arg0_9.contextData.toggle = arg0_9.contextData.toggle or 2
 	arg0_9.toggles = {
@@ -244,14 +243,12 @@ function var0_0.didEnter(arg0_17)
 		if arg0_17.contextData.toggle == var0_0.MUSIC_INDEX then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_HELP,
-				helps = pg.gametip.NewMusic_help.tip,
-				weight = LayerWeightConst.THIRD_LAYER
+				helps = pg.gametip.NewMusic_help.tip
 			})
 		else
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_HELP,
-				helps = pg.gametip.collection_help.tip,
-				weight = LayerWeightConst.THIRD_LAYER
+				helps = pg.gametip.collection_help.tip
 			})
 		end
 	end, SFX_PANEL)
@@ -381,9 +378,7 @@ function var0_0.didEnter(arg0_17)
 	end
 
 	arg0_17:calFavoriteRate()
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_17.blurPanel, {
-		groupName = LayerWeightConst.GROUP_COLLECTION
-	})
+	arg0_17:OverlayPanel(arg0_17.blurPanel)
 	onButton(arg0_17, arg0_17.bonusPanel, function()
 		arg0_17:closeBonus()
 	end, SFX_PANEL)
@@ -761,7 +756,7 @@ function var0_0.openBonus(arg0_53, arg1_53)
 end
 
 function var0_0.closeBonus(arg0_55)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_55.bonusPanel, arg0_55._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_55.bonusPanel, arg0_55._tf)
 	setActive(arg0_55.bonusPanel, false)
 end
 
@@ -959,7 +954,7 @@ function var0_0.willExit(arg0_70)
 		cancelTweens(arg0_70.tweens)
 	end
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_70.blurPanel, arg0_70._tf)
+	arg0_70:UnOverlayPanel(arg0_70.blurPanel, arg0_70._tf)
 
 	if arg0_70.bonusPanel.gameObject.activeSelf then
 		arg0_70:closeBonus()
@@ -1002,6 +997,7 @@ function var0_0.initGalleryPanel(arg0_71)
 	if not arg0_71.galleryView then
 		arg0_71.galleryView = GalleryView.New(arg0_71.galleryPanelContainer, arg0_71.event, arg0_71.contextData)
 
+		arg0_71.galleryView:RegisterView(arg0_71)
 		arg0_71.galleryView:Reset()
 		arg0_71.galleryView:Load()
 	end

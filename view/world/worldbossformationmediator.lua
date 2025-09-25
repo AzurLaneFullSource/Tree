@@ -69,7 +69,7 @@ function var0_0.register(arg0_1)
 		local var0_7, var1_7 = var1_1:GetFleet(arg0_1.contextData.bossId):isLegalToFight()
 
 		if var0_7 ~= true then
-			pg.TipsMgr:GetInstance():ShowTips(i18n("elite_disable_no_fleet"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("elite_disable_no_fleet"))
 
 			return
 		end
@@ -83,7 +83,7 @@ function var0_0.register(arg0_1)
 		end
 
 		if arg0_1.contextData.isOther and var1_1:GetPt() <= 0 and WorldBossConst._IsCurrBoss(var2_7) then
-			pg.TipsMgr:GetInstance():ShowTips(i18n("world_joint_count_no_enough"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_count_no_enough"))
 
 			return
 		end

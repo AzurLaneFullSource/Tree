@@ -460,8 +460,7 @@ function var0_0.updateTaskPanel(arg0_38, arg1_38)
 							shipID = var0_38.id,
 							skillID = arg1_38
 						})
-					end,
-					weight = LayerWeightConst.TOP_LAYER
+					end
 				})
 			end
 		end, SFX_PANEL)
@@ -578,9 +577,7 @@ function var0_0.openUnlockSkillPanel(arg0_45, arg1_45)
 	end)
 	arg0_45.materialUIItemList:align(#var6_45)
 	setActive(arg0_45.skillUnlockPanel, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_45.skillUnlockPanel, false, {
-		weight = LayerWeightConst.TOP_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_45.skillUnlockPanel)
 end
 
 function var0_0.closeUnlockSkillPanel(arg0_47)
@@ -589,7 +586,7 @@ function var0_0.closeUnlockSkillPanel(arg0_47)
 	arg0_47.curUnlockMaterialNeedCount = nil
 
 	setActive(arg0_47.skillUnlockPanel, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_47.skillUnlockPanel, arg0_47._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_47.skillUnlockPanel, arg0_47._tf)
 end
 
 function var0_0.enablePartialBlur(arg0_48)
@@ -598,17 +595,16 @@ function var0_0.enablePartialBlur(arg0_48)
 
 		table.insert(var0_48, arg0_48.taskPanel)
 		table.insert(var0_48, arg0_48.skillPanel)
-		pg.UIMgr.GetInstance():OverlayPanelPB(arg0_48._tf, {
-			pbList = var0_48,
-			groupName = LayerWeightConst.GROUP_META,
-			weight = LayerWeightConst.BASE_LAYER - 1
+		arg0_48:OverlayPanel(arg0_48._tf, {
+			groupDelta = -1,
+			pbList = var0_48
 		})
 	end
 end
 
 function var0_0.disablePartialBlur(arg0_49)
 	if arg0_49._tf then
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_49._tf)
+		arg0_49:UnOverlayPanel(arg0_49._tf)
 	end
 end
 

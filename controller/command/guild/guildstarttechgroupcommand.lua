@@ -5,13 +5,13 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var1_1 = getProxy(GuildProxy):getData()
 
 	if not var1_1 then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_no_exist"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_no_exist"))
 
 		return
 	end
 
 	if not var1_1:CanCancelTech() then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_cancel_only_once_pre_day"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_cancel_only_once_pre_day"))
 
 		return
 	end
@@ -19,13 +19,13 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var2_1 = var1_1:getTechnologyGroupById(var0_1)
 
 	if not var2_1 then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_not_exist_tech"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_not_exist_tech"))
 
 		return
 	end
 
 	if var2_1:isMaxLevel() then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_tech_is_max_level"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_tech_is_max_level"))
 
 		return
 	end

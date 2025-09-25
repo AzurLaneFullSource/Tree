@@ -169117,6 +169117,59 @@ _G.pg.base.equip_data_statistics[170802] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[170861] = {
+	ammo = 10,
+	descrip = "技能弹幕",
+	icon = "1",
+	id = 170861,
+	name = "专属弹幕-杜威META",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170861,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[170862] = {
+	base = 170861,
+	id = 170862,
+	name = "专属弹幕-杜威META",
+	weapon_id = {
+		170862,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[180000] = {
 	ammo = 3,
 	descrip = "默认装备",

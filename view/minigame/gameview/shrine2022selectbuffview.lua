@@ -13,7 +13,7 @@ function var0_0.OnInit(arg0_2)
 end
 
 function var0_0.OnDestroy(arg0_3)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_3._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_3._tf)
 	arg0_3:cleanManagedTween()
 end
 

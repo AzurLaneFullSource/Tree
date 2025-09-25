@@ -407,8 +407,7 @@ function var0_0.BlurView(arg0_48)
 	pg.UIMgr.GetInstance():OverlayPanel(arg0_48.adpter, {
 		pbList = {
 			arg0_48:findTF("adpter/descript")
-		},
-		weight = LayerWeightConst.SECOND_LAYER
+		}
 	})
 end
 

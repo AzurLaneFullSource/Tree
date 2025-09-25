@@ -695,20 +695,20 @@ function var0_0.initPauseWindow(arg0_35)
 				var1_38:Play("msgbox_out")
 				arg0_35.pauseWindow:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg0_39)
 					setActive(arg0_35.pauseWindow, false)
-					pg.UIMgr.GetInstance():UnblurPanel(arg0_35.pauseWindow, arg0_35._tf)
+					pg.UIMgr.GetInstance():UnOverlayPanel(arg0_35.pauseWindow, arg0_35._tf)
 					var1_35:Resume()
 				end)
 			end
 		else
 			setActive(arg0_35.pauseWindow, false)
-			pg.UIMgr.GetInstance():UnblurPanel(arg0_35.pauseWindow, arg0_35._tf)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_35.pauseWindow, arg0_35._tf)
 			var1_35:Resume()
 		end
 	end)
 	onButton(arg0_35, arg0_35:findTF("help", arg0_35.pauseWindow), function()
 		if BATTLE_DEBUG and PLATFORM == 7 then
 			setActive(arg0_35.pauseWindow, false)
-			pg.UIMgr.GetInstance():UnblurPanel(arg0_35.pauseWindow, arg0_35._tf)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_35.pauseWindow, arg0_35._tf)
 			var1_35:Resume()
 			var1_35:OpenConsole()
 		else
@@ -742,9 +742,7 @@ function var0_0.updatePauseWindow(arg0_44)
 	end
 
 	setActive(arg0_44.pauseWindow, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_44.pauseWindow, nil, {
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_44.pauseWindow)
 
 	local var0_44 = ys.Battle.BattleState.GetInstance():GetProxyByName(ys.Battle.BattleDataProxy.__name)
 	local var1_44 = var0_44:GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE)
@@ -832,7 +830,7 @@ function var0_0.willExit(arg0_49)
 	arg0_49._skillFloatPool:Dispose()
 	arg0_49._skillFloatCMDPool:Dispose()
 	ys.Battle.BattleState.GetInstance():ExitBattle()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_49.pauseWindow, arg0_49._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_49.pauseWindow, arg0_49._tf)
 	ys.Battle.BattleCameraUtil.GetInstance().ActiveMainCamera(false)
 	pg.CameraFixMgr.GetInstance():disconnect(arg0_49.camEventId)
 end

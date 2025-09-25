@@ -192837,6 +192837,129 @@ _G.pg.base.bullet_template[170852] = {
 	},
 }
 
+_G.pg.base.bullet_template[170861] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "Clhit",
+	hit_sfx = "",
+	id = 170861,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "yingguangzidan01",
+	out_bound = 0,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 25,
+	range_offset = 0,
+	type = 5,
+	velocity = 18,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.5,
+		shrapnel = {
+			{
+				barrage_ID = 81111,
+				bullet_ID = 170862,
+				emitterType = "BattleBulletEmitter",
+				reaim = {
+					"TargetHarmRandom",
+				},
+			},
+			FXID = "",
+		},
+	},
+}
+
+_G.pg.base.bullet_template[170862] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "Clhit",
+	hit_sfx = "battle/hit",
+	id = 170862,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "yingguangzidan01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 0,
+	type = 1,
+	velocity = 18,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreShield = true,
+	},
+}
+
 _G.pg.base.bullet_template[233333] = {
 	alert_fx = "",
 	ammo_type = 1,

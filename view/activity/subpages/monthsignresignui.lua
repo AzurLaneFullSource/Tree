@@ -41,7 +41,7 @@ function var0_0.OnDestroy(arg0_7)
 
 	arg0_7.awards = nil
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_7._tf, arg0_7._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7._tf, arg0_7._parentTf)
 end
 
 function var0_0.displayAwards(arg0_8)

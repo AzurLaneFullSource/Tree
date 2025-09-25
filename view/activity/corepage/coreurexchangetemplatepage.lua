@@ -333,7 +333,7 @@ end
 function var0_0.closeMsgBox(arg0_40)
 	arg0_40.isMsgBoxShow = false
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_40._msgBox)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_40._msgBox)
 	setActive(arg0_40._msgBox, false)
 end
 

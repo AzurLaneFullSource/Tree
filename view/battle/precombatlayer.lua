@@ -487,8 +487,7 @@ function var0_0.didEnter(arg0_36)
 					onNo = function()
 						arg0_36:emit(PreCombatMediator.ON_ABORT_EDIT)
 						arg0_38()
-					end,
-					weight = LayerWeightConst.TOP_LAYER
+					end
 				})
 			end)
 		end
@@ -623,7 +622,7 @@ function var0_0.onBackPressed(arg0_58)
 end
 
 function var0_0.willExit(arg0_59)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_59._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_59._tf)
 	arg0_59._formationLogic:Destroy()
 
 	arg0_59._formationLogic = nil

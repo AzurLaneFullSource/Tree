@@ -18,7 +18,7 @@ function var0_0.didEnter(arg0_3)
 end
 
 function var0_0.willExit(arg0_4)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_4._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_4._tf)
 	arg0_4.resLoader:Clear()
 
 	if arg0_4.contextData.mangaContext then

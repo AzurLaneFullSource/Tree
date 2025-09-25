@@ -369,7 +369,7 @@ end
 
 function var0_0.willExit(arg0_26)
 	arg0_26.loader:Clear()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_26._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_26._tf)
 end
 
 return var0_0

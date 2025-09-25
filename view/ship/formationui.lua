@@ -663,25 +663,25 @@ function var0_0.DisplayRenamePanel(arg0_56, arg1_56)
 	SetActive(arg0_56._renamePanel, arg1_56)
 
 	if arg1_56 then
-		pg.UIMgr.GetInstance():BlurPanel(arg0_56._renamePanel, false)
+		pg.UIMgr.GetInstance():BlurPanel(arg0_56._renamePanel)
 
 		local var0_56 = getText(arg0_56._fleetNameText)
 
 		setInputText(findTF(arg0_56._renamePanel, "frame/name_field"), var0_56)
 	else
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_56._renamePanel, arg0_56._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_56._renamePanel, arg0_56._tf)
 	end
 end
 
 function var0_0.hideAttrFrame(arg0_57)
 	SetActive(arg0_57._attrFrame, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_57._blurLayer, arg0_57._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_57._blurLayer, arg0_57._tf)
 
 	arg0_57._blurLayer:GetComponent(typeof(AspectRatioFitter)).enabled = false
 end
 
 function var0_0.displayAttrFrame(arg0_58)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_58._blurLayer, false)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_58._blurLayer)
 
 	local var0_58 = arg0_58._blurLayer:GetComponent(typeof(AspectRatioFitter))
 
@@ -1019,7 +1019,7 @@ function var0_0.willExit(arg0_82)
 	arg0_82.commanderFormationPanel:Destroy()
 
 	if arg0_82._attrFrame.gameObject.activeSelf then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_82._blurLayer, arg0_82._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_82._blurLayer, arg0_82._tf)
 	end
 
 	arg0_82._formationLogic:Destroy()

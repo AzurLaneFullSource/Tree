@@ -311,7 +311,7 @@ function var0_0.MsgBox(arg0_14)
 			arg0_27.verify = nil
 
 			setActive(var0_14._go, false)
-			pg.UIMgr.GetInstance():UnblurPanel(arg0_27._tf, arg0_27.buildUI)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_27._tf, arg0_27.buildUI)
 		end
 	end
 

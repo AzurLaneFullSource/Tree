@@ -52,9 +52,7 @@ function var0_0.init(arg0_3)
 	arg0_3.isTimeLimit = arg0_3.contextData.timeLimit
 
 	setActive(arg0_3.timelimit, arg0_3.isTimeLimit)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_3._tf, {
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_3._tf)
 
 	arg0_3.isLoadBg = false
 	arg0_3.selectShipPage = ChangeShipSkinPage.New(arg0_3._parentTf, arg0_3.event)
@@ -203,9 +201,7 @@ function var0_0.didEnter(arg0_17)
 		setActive(arg0_17.clickTF, false)
 	end, SFX_PANEL)
 	onButton(arg0_17, arg0_17._shareBtn, function()
-		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeNewSkin, nil, {
-			weight = LayerWeightConst.TOP_LAYER
-		})
+		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeNewSkin)
 	end, SFX_PANEL)
 	onButton(arg0_17, arg0_17.clickTF, function()
 		if arg0_17.isInView or not arg0_17.isLoadBg then
@@ -410,9 +406,7 @@ function var0_0.playOpening(arg0_40, arg1_40, arg2_40)
 		if arg1_40 then
 			arg1_40()
 		end
-	end, "ui/skinunlockanim", arg2_40, false, false, {
-		weight = LayerWeightConst.THIRD_LAYER
-	})
+	end, "ui/skinunlockanim", arg2_40, false, false)
 end
 
 function var0_0.willExit(arg0_43)

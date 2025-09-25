@@ -348,7 +348,7 @@ function var0_0.GetOffset(arg0_31)
 	return arg0_31.spTF.localPosition.x
 end
 
-function var0_0.OnPuase(arg0_32)
+function var0_0.OnPause(arg0_32)
 	if arg0_32.spinePainting then
 		arg0_32.spinePainting:SetVisible(false)
 	end

@@ -8,7 +8,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.steps = {}
 
 	for iter0_1, iter1_1 in ipairs(arg1_1.scripts or {}) do
-		local var0_1 = VoiceChatStep.New(iter1_1)
+		local var0_1 = VoiceChatStep.New(iter1_1, arg0_1.shipGroup)
 
 		table.insert(arg0_1.steps, var0_1)
 	end

@@ -20,6 +20,12 @@ var0_0.TYPE_SYSTEM_THEME = 17
 var0_0.TYPE_ORDER_TENDENCY = 18
 var0_0.TYPE_SEND_DRESS = 19
 var0_0.TYPE_AOGRA_SAVE_CD = 20
+var0_0.TYPE_CHAT_SETTINGS = 21
+var0_0.TYPE_DRAW_AWARD_COUNT = 22
+var0_0.TYPE_DRAW_AWARD_LIST = 23
+var0_0.TYPE_DRAW_AWARD_ALL = 24
+var0_0.TYPE_TICKET_EXPIRED = 25
+var0_0.TYPE_DRESS_WEAR_CONFIRE = 26
 
 function var0_0.getUIName(arg0_1)
 	return "IslandMsgboxUI"
@@ -31,7 +37,7 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.tempWindows = {}
 	arg0_2.residentWindows = {}
 	arg0_2.PAGES = {
-		[var0_0.TYPE_COMMON] = IslandCommonMsgboxWindow,
+		[var0_0.TYPE_COMMON] = IslandCommonMsgboxEXWindow,
 		[var0_0.TYPE_ITEM] = IslandItemMsgboxWindow,
 		[var0_0.TYPE_SHIP_OWN_STATUS] = IslandMsgBoxForStatusWindow,
 		[var0_0.TYPE_ITEM_INFO] = IslandMsgBoxSingleItemWindow,
@@ -49,12 +55,27 @@ function var0_0.OnLoaded(arg0_2)
 		[var0_0.TYPE_SYSTEM_THEME] = IslandSystemThemeMsgboxWindow,
 		[var0_0.TYPE_ORDER_TENDENCY] = IslandOrderTendencyPage,
 		[var0_0.TYPE_SEND_DRESS] = IslandSendDressUpMsgboxWindow,
-		[var0_0.TYPE_AOGRA_SAVE_CD] = IslandAgoraSaveCdMsgboxWindow
+		[var0_0.TYPE_AOGRA_SAVE_CD] = IslandAgoraSaveCdMsgboxWindow,
+		[var0_0.TYPE_CHAT_SETTINGS] = IslandChatSettingsMsgboxWindow,
+		[var0_0.TYPE_DRAW_AWARD_COUNT] = IslandDrawAwardCountWindow,
+		[var0_0.TYPE_DRAW_AWARD_LIST] = IslandDrawAwardListWindow,
+		[var0_0.TYPE_DRAW_AWARD_ALL] = IslandDrawAwardAllWindow,
+		[var0_0.TYPE_TICKET_EXPIRED] = IslandTicketExpiredMsgBoxWindow,
+		[var0_0.TYPE_DRESS_WEAR_CONFIRE] = IslandDressWearMsgboxWindow
 	}
 end
 
 function var0_0.OnInit(arg0_3)
-	onButton(arg0_3, arg0_3._tf, function()
+	local var0_3 = arg0_3._tf:GetComponent(typeof(ItemList)).prefabItem:ToTable()
+
+	for iter0_3, iter1_3 in ipairs({
+		"rtBg",
+		"rtPages"
+	}) do
+		arg0_3[iter1_3] = var0_3[iter0_3].transform
+	end
+
+	onButton(arg0_3, arg0_3.rtBg, function()
 		arg0_3:HideWindow()
 	end, SFX_PANEL)
 end
@@ -116,7 +137,7 @@ function var0_0.FindOrCreateWindow(arg0_8, arg1_8, arg2_8)
 
 		assert(var2_8, arg1_8)
 
-		var1_8 = var2_8.New(arg0_8, arg0_8._tf)
+		var1_8 = var2_8.New(arg0_8, arg0_8.rtPages)
 	end
 
 	return var1_8
@@ -152,10 +173,12 @@ function var0_0.HideWindow(arg0_10, arg1_10)
 	if #arg0_10.stack == 0 then
 		arg0_10:Hide()
 
-		if arg0_10.callback then
-			arg0_10.callback()
+		local var1_10 = arg0_10.callback
 
-			arg0_10.callback = nil
+		arg0_10.callback = nil
+
+		if var1_10 then
+			var1_10()
 		end
 	end
 end

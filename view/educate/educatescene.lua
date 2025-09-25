@@ -76,17 +76,37 @@ function var0_0.findUI(arg0_7)
 	setText(arg0_7:findTF("unlock/Text", arg0_7.bagBtn), i18n("child_btn_bag"))
 
 	arg0_7.datePanel = EducateDatePanel.New(arg0_7:findTF("date", arg0_7.topTF), arg0_7.event)
+
+	arg0_7.datePanel:RegisterView(arg0_7)
+
 	arg0_7.favorPanel = EducateFavorPanel.New(arg0_7:findTF("favor_panel", arg0_7.topTF), arg0_7.event)
+
+	arg0_7.favorPanel:RegisterView(arg0_7)
+
 	arg0_7.resPanel = EducateResPanel.New(arg0_7:findTF("res", arg0_7.topTF), arg0_7.event)
+
+	arg0_7.resPanel:RegisterView(arg0_7)
+
 	arg0_7.topPanel = EducateTopPanel.New(arg0_7:findTF("top_right", arg0_7.topTF), arg0_7.event)
+
+	arg0_7.topPanel:RegisterView(arg0_7)
+
 	arg0_7.targetPanel = EducateTargetPanel.New(arg0_7:findTF("target", arg0_7.topTF), arg0_7.event)
+
+	arg0_7.targetPanel:RegisterView(arg0_7)
+
 	arg0_7.bottomPanel = EducateBottomPanel.New(arg0_7:findTF("right", arg0_7.bottomTF), arg0_7.event, {
 		isMainEnter = arg0_7.contextData.isMainEnter
 	})
+
+	arg0_7.bottomPanel:RegisterView(arg0_7)
+
 	arg0_7.archivePanel = EducateArchivePanel.New(arg0_7:findTF("archive_panel", arg0_7.mainTF), arg0_7.event, {
 		isShow = true,
 		isMainEnter = arg0_7.contextData.isMainEnter
 	})
+
+	arg0_7.archivePanel:RegisterView(arg0_7)
 end
 
 function var0_0._loadSubViews(arg0_9)
@@ -97,11 +117,10 @@ function var0_0._loadSubViews(arg0_9)
 	arg0_9.targetPanel:Load()
 	arg0_9.bottomPanel:Load()
 	arg0_9.archivePanel:Load()
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_9.blurPanel, {
+	arg0_9:OverlayPanel(arg0_9.blurPanel, {
 		pbList = {
 			arg0_9:findTF("bottom/left", arg0_9.blurPanel)
-		},
-		groupName = arg0_9:getGroupNameFromData()
+		}
 	})
 
 	local var0_9 = arg0_9.contextData.isMainEnter and "anim_educate_educateUI_bg_in" or "anim_educate_educateUI_bg_show"
@@ -564,7 +583,7 @@ function var0_0.willExit(arg0_75)
 		LeanTween.cancel(arg0_75.dialogueTF)
 	end
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_75.blurPanel, arg0_75._tf)
+	arg0_75:UnOverlayPanel(arg0_75.blurPanel, arg0_75._tf)
 end
 
 return var0_0

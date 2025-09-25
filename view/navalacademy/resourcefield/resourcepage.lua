@@ -197,7 +197,7 @@ function var0_0.Hide(arg0_20)
 		arg0_20.isOpen = false
 
 		var0_0.super.Hide(arg0_20)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_20._tf, arg0_20._parentTf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_20._tf, arg0_20._parentTf)
 	end
 end
 

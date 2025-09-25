@@ -97,7 +97,7 @@ function var0_0.didEnter(arg0_8)
 		arg0_8.pages[iter0_8]:SetCallBack(function(arg0_12)
 			arg0_8.buttonsPanel.localPosition = arg0_12
 
-			setParent(arg0_8.buttonsPanel, pg.UIMgr:GetInstance().OverlayMain)
+			setParent(arg0_8.buttonsPanel, pg.UIMgr.GetInstance().OverlayMain)
 		end, function()
 			var0_8()
 			setParent(arg0_8.buttonsPanel, arg0_8._tf)
@@ -141,14 +141,14 @@ function var0_0.LoadPainting(arg0_15, arg1_15)
 	if HXSet.isHxPropose() then
 		local var4_15 = arg0_15.guildVO:GetOfficePainting()
 
-		pg.GuildPaintingMgr:GetInstance():Update(var4_15, Vector3(-643, -160, 0))
+		pg.GuildPaintingMgr.GetInstance():Update(var4_15, Vector3(-643, -160, 0))
 	else
 		local var5_15 = Ship.New({
 			configId = arg1_15.icon,
 			skin_id = arg1_15.skinId
 		}):getPainting()
 
-		pg.GuildPaintingMgr:GetInstance():Update(var5_15, Vector3(-484, 0, 0), true)
+		pg.GuildPaintingMgr.GetInstance():Update(var5_15, Vector3(-484, 0, 0), true)
 	end
 
 	setActive(arg0_15.btns[4], var1_15 == GuildConst.DUTY_DEPUTY_COMMANDER and var0_15 == GuildConst.DUTY_COMMANDER and arg1_15:isLongOffLine())
@@ -212,8 +212,8 @@ function var0_0.willExit(arg0_21)
 		iter1_21:Destroy()
 	end
 
-	if isActive(pg.MsgboxMgr:GetInstance()._go) then
-		triggerButton(pg.MsgboxMgr:GetInstance()._closeBtn)
+	if isActive(pg.MsgboxMgr.GetInstance()._go) then
+		triggerButton(pg.MsgboxMgr.GetInstance()._closeBtn)
 	end
 end
 

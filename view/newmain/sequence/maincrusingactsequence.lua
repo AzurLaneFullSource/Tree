@@ -59,8 +59,7 @@ function var0_0.ShowMsg(arg0_6, arg1_6, arg2_6, arg3_6)
 			yesText = i18n("msgbox_text_forward"),
 			onNo = function()
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CRUSING)
-			end,
-			weight = LayerWeightConst.TOP_LAYER
+			end
 		})
 	else
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
@@ -71,8 +70,7 @@ function var0_0.ShowMsg(arg0_6, arg1_6, arg2_6, arg3_6)
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CRUSING)
 			end,
 			yesText = i18n("msgbox_text_forward"),
-			onNo = arg3_6,
-			weight = LayerWeightConst.TOP_LAYER
+			onNo = arg3_6
 		})
 	end
 end

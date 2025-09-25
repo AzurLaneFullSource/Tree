@@ -98,6 +98,8 @@ function var0_0.CommonInit(arg0_4)
 	arg0_4:SetStageID(arg0_4.contextData.stageId)
 
 	arg0_4.commanderFormationPanel = LimitChallengeCommanderFormationPage.New(arg0_4._tf, arg0_4.event, arg0_4.contextData)
+
+	arg0_4.commanderFormationPanel:RegisterView(arg0_4)
 end
 
 function var0_0.Register(arg0_5)
@@ -460,9 +462,7 @@ function var0_0.didEnter(arg0_35)
 		arg0_35:uiStartAnimating()
 	end)
 	arg0_35:SetFleetStepper()
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_35._tf, {
-		groupName = LayerWeightConst.GROUP_FORMATION_PAGE
-	})
+	arg0_35:OverlayPanel(arg0_35._tf)
 end
 
 function var0_0.UpdateSubToggle(arg0_47)
@@ -540,7 +540,7 @@ function var0_0.onBackPressed(arg0_53)
 end
 
 function var0_0.willExit(arg0_54)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_54._tf)
+	arg0_54:UnOverlayPanel(arg0_54._tf)
 	arg0_54.commanderFormationPanel:Destroy()
 	arg0_54._formationLogic:Destroy()
 

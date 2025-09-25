@@ -80,7 +80,7 @@ function var0_0.init(arg0_5)
 	arg0_5.okBtn = arg0_5:findTF("main/ok_btn")
 
 	setText(arg0_5.okBtn:Find("Image"), i18n("text_confirm"))
-	pg.UIMgr.GetInstance():BlurPanel(arg0_5._tf, false, {})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_5._tf)
 
 	arg0_5.selectedIds = {}
 	arg0_5.selectOptions = arg0_5:findTF("main/options")
@@ -144,7 +144,7 @@ function var0_0.didEnter(arg0_6)
 	onButton(arg0_6, findTF(arg0_6.destroyConfirm, "actions/cancel_button"), function()
 		setActive(arg0_6.destroyConfirm, false)
 		setActive(arg0_6.mainPanel, true)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_6.destroyConfirm, arg0_6._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_6.destroyConfirm, arg0_6._tf)
 	end, SFX_CANCEL)
 	onButton(arg0_6, findTF(arg0_6.destroyConfirm, "actions/destroy_button"), function()
 		local var0_15 = {}
@@ -639,7 +639,7 @@ end
 
 function var0_0.willExit(arg0_58)
 	arg0_58.equipDestroyConfirmWindow:Destroy()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_58._tf, pg.UIMgr.GetInstance().UIMain)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_58._tf, pg.UIMgr.GetInstance().UIMain)
 end
 
 return var0_0

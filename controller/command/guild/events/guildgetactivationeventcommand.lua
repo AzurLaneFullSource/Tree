@@ -30,8 +30,8 @@ function var0_0.execute(arg0_1, arg1_1)
 			var3_1:AddFetchActivationEventCDTime()
 			var3_1:updateGuild(var1_2)
 			arg0_1:sendNotification(GAME.GUILD_GET_ACTIVATION_EVENT_DONE)
-			pg.ShipFlagMgr:GetInstance():UpdateFlagShips("inGuildEvent")
-			pg.ShipFlagMgr:GetInstance():UpdateFlagShips("inGuildBossEvent")
+			pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inGuildEvent")
+			pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inGuildBossEvent")
 
 			if var2_1 then
 				var2_1()

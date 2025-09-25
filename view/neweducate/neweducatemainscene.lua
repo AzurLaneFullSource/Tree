@@ -43,12 +43,32 @@ function var0_0.init(arg0_3)
 	}, {
 		__index = arg0_3.contextData
 	}))
+
+	arg0_3.topPanel:RegisterView(arg0_3)
+
 	arg0_3.infoPanel = NewEducateInfoPanel.New(arg0_3.adaptTF, arg0_3.event, arg0_3.contextData)
+
+	arg0_3.infoPanel:RegisterView(arg0_3)
+
 	arg0_3.roundTipPanel = NewEducateRoundTipPanel.New(arg0_3.adaptTF, arg0_3.event, arg0_3.contextData)
+
+	arg0_3.roundTipPanel:RegisterView(arg0_3)
+
 	arg0_3.assessPanel = NewEducateAssessPanel.New(arg0_3.adaptTF, arg0_3.event, arg0_3.contextData)
+
+	arg0_3.assessPanel:RegisterView(arg0_3)
+
 	arg0_3.favorPanel = NewEducateFavorPanel.New(arg0_3.adaptTF, arg0_3.event, arg0_3.contextData)
+
+	arg0_3.favorPanel:RegisterView(arg0_3)
+
 	arg0_3.personalityTipPanel = NewEducatePersonalityTipPanel.New(arg0_3.adaptTF, arg0_3.event, arg0_3.contextData)
+
+	arg0_3.personalityTipPanel:RegisterView(arg0_3)
+
 	arg0_3.nodePanel = NewEducateNodePanel.New(arg0_3.adaptTF, arg0_3.event, arg0_3.contextData)
+
+	arg0_3.nodePanel:RegisterView(arg0_3)
 end
 
 function var0_0.didEnter(arg0_4)

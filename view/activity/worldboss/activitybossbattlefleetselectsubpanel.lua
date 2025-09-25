@@ -349,16 +349,14 @@ function var0_0.clearFleet(arg0_30, arg1_30)
 end
 
 function var0_0.OnShow(arg0_31)
-	local var0_31 = #getProxy(ContextProxy):getCurrentContext().children > 0 and LayerWeightConst.LOWER_LAYER or nil
-
-	pg.UIMgr.GetInstance():BlurPanel(arg0_31._tf, nil, {
-		groupName = LayerWeightConst.GROUP_FORMATION_PAGE,
-		weight = var0_31
+	pg.UIMgr.GetInstance():BlurPanel(arg0_31._tf, {
+		groupDelta = -1,
+		groupName = "ActivityBossSceneTemplate"
 	})
 end
 
 function var0_0.OnHide(arg0_32)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_32._tf, arg0_32.viewParent._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_32._tf, arg0_32.viewParent._tf)
 	triggerToggle(arg0_32.commanderToggle, false)
 end
 

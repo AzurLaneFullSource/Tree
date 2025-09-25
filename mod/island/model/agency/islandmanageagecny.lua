@@ -1,7 +1,8 @@
 local var0_0 = class("IslandManageAgecny", import(".IslandBaseAgency"))
 
 var0_0.UPDATE_RESTAURANT = "IslandManageAgecny.UPDATE_RESTAURANT"
-var0_0.ADD_RESTAURANT = "IslandManageAgecny.UPDATE_RESTAURANT"
+var0_0.ADD_RESTAURANT = "IslandManageAgecny.ADD_RESTAURANT"
+var0_0.ADD_ASSISTANT = "IslandManageAgecny.ADD_ASSISTANT"
 var0_0.ON_DAILY_REFRESH = "IslandManageAgecny.ON_DAILY_REFRESH"
 
 function var0_0.OnInit(arg0_1, arg1_1)
@@ -84,6 +85,9 @@ function var0_0.UnlockNewRestaurant(arg0_9, arg1_9)
 		id = arg1_9
 	})
 
+	var0_9:InitEventData(0, {})
+	var0_9:InitRemainCnt(0)
+
 	arg0_9.restaurants[var0_9.id] = var0_9
 
 	arg0_9:DispatchEvent(var0_0.ADD_RESTAURANT)
@@ -94,6 +98,7 @@ function var0_0.UnlockNewAssistant(arg0_10, arg1_10)
 
 	assert(arg0_10.restaurants[var0_10], string.format("未解锁%d餐厅,提前解锁了%d餐厅岗位", var0_10, arg1_10))
 	arg0_10.restaurants[var0_10]:UnlockNewAssistant(arg1_10)
+	arg0_10:DispatchEvent(var0_0.ADD_ASSISTANT)
 end
 
 function var0_0.DailyRefresh(arg0_11, arg1_11)
@@ -104,6 +109,34 @@ end
 
 function var0_0.UnlockDailyEvent(arg0_12, arg1_12)
 	arg0_12:InitEventData(arg1_12)
+end
+
+function var0_0.GetTipInfos(arg0_13)
+	local var0_13 = 0
+	local var1_13 = 0
+	local var2_13 = {}
+
+	for iter0_13, iter1_13 in ipairs(pg.island_set.post_manage_operate.key_value_varchar) do
+		local var3_13 = arg0_13.restaurants[iter1_13]
+
+		if var3_13 then
+			local var4_13 = var3_13:GetStatus()
+
+			if var4_13 == IslandRestaurant.STATUS.CLOSE then
+				var0_13 = var0_13 + 1
+			elseif var4_13 == IslandRestaurant.STATUS.PREPARE then
+				var1_13 = var1_13 + #var3_13:GetAssistants()
+			elseif var4_13 == IslandRestaurant.STATUS.OPENING then
+				table.insert(var2_13, var3_13:GetEndTime())
+			end
+		end
+	end
+
+	return {
+		awardCnt = var0_13,
+		emptyCnt = var1_13,
+		timestamps = var2_13
+	}
 end
 
 return var0_0

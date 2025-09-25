@@ -111,54 +111,57 @@ function var0_0.CheckTarget(arg0_7)
 
 			return var0_8 and not var0_8:GetTargetById(arg0_8[2]):IsFinish()
 		end)
+		local var3_7 = underscore.map(var2_7, function(arg0_9)
+			return arg0_9[1]
+		end)
 
-		return var0_0.GetFirstPriorityId(var2_7)
+		return var0_0.GetFirstPriorityId(var3_7)
 	end
 
 	return nil
 end
 
-function var0_0.GetFirstPriorityId(arg0_9)
-	table.sort(arg0_9, CompareFuncs({
-		function(arg0_10)
-			local var0_10 = IslandTaskType.Type2ShowType[pg.island_task[arg0_10].type]
-
-			return IslandTaskType.GetHudPriority(var0_10)
-		end,
+function var0_0.GetFirstPriorityId(arg0_10)
+	table.sort(arg0_10, CompareFuncs({
 		function(arg0_11)
-			return arg0_11
+			local var0_11 = IslandTaskType.Type2ShowType[pg.island_task[arg0_11].type]
+
+			return IslandTaskType.GetHudPriority(var0_11)
+		end,
+		function(arg0_12)
+			return arg0_12
 		end
 	}))
 
-	return arg0_9[1]
+	return arg0_10[1]
 end
 
-function var0_0.GetObjectTaskHud(arg0_12)
-	local var0_12 = var0_0.CheckSubmit(arg0_12)
+function var0_0.GetObjectTaskHud(arg0_13)
+	local var0_13 = var0_0.CheckSubmit(arg0_13)
 
-	if var0_12 then
-		return var0_0.TYPE_SUBMIT, var0_12
+	if var0_13 then
+		return var0_0.TYPE_SUBMIT, var0_13
 	end
 
-	local var1_12 = var0_0.CheckAccept(arg0_12)
+	local var1_13 = var0_0.CheckAccept(arg0_13)
 
-	if var1_12 then
-		return var0_0.TYPE_ACCEPT, var1_12
+	if var1_13 then
+		return var0_0.TYPE_ACCEPT, var1_13
 	end
 
-	local var2_12 = var0_0.CheckTarget(arg0_12)
+	local var2_13 = var0_0.CheckTarget(arg0_13)
 
-	if var2_12 then
-		return var0_0.TYPE_TARGET, var2_12
+	if var2_13 then
+		return var0_0.TYPE_TARGET, var2_13
 	end
 
 	return var0_0.TYPE_NORMAL, nil
 end
 
-function var0_0.GetHudDislayInfoByTaskId(arg0_13)
-	local var0_13 = IslandTaskType.Type2ShowType[pg.island_task[arg0_13].type]
+function var0_0.GetHudDislayInfoByTaskId(arg0_14)
+	local var0_14 = IslandTaskType.Type2ShowType[pg.island_task[arg0_14].type]
 
-	return switch(var0_13, {
+	return switch(var0_14, {
 		[IslandTaskType.SHOW_MAIN] = function()
 			return "hud_main", "39befe"
 		end,
@@ -175,7 +178,7 @@ function var0_0.GetHudDislayInfoByTaskId(arg0_13)
 			return "hud_activity", "eed073"
 		end
 	}, function()
-		assert(false, "not exist task showType: " .. var0_13)
+		assert(false, "not exist task showType: " .. var0_14)
 	end)
 end
 

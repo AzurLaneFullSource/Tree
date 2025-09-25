@@ -40,7 +40,11 @@ function var0_0.didEnter(arg0_4)
 		arg0_4:emit(Dorm3dSkinSelectMediator.CHANGE_SKIN, arg0_4.contextData.groupId, arg0_4.selectedSkinId, arg0_4.hiddenList)
 
 		if not arg0_4.contextData.onSwitchSkin then
-			arg0_4.contextData.ladyEnv:PlaySingleAction(pg.dorm3d_resource[arg0_4.selectedSkinId].wear_anim)
+			local var0_7 = pg.dorm3d_resource[arg0_4.selectedSkinId].wear_anim
+
+			if var0_7 and var0_7 ~= "" then
+				arg0_4.contextData.ladyEnv:PlaySingleAction(var0_7)
+			end
 		end
 
 		arg0_4.sortSkinId = arg0_4.selectedSkinId
@@ -171,7 +175,12 @@ function var0_0.OnclickSkin(arg0_16, arg1_16, arg2_16)
 		else
 			var0_16:SwitchCharacterSkin(var1_16, arg0_16.selectedSkinId, function()
 				var0_16:HideCharacterPart(arg0_16.selectedSkinId, arg0_16.hiddenList)
-				var0_16:PlaySingleAction(arg0_16.skinDic[arg0_16.selectedSkinId]:GetSwitchAnim())
+
+				local var0_17 = arg0_16.skinDic[arg0_16.selectedSkinId]:GetSwitchAnim()
+
+				if var0_17 and var0_17 ~= "" then
+					var0_16:PlaySingleAction(var0_17)
+				end
 			end)
 		end
 	end

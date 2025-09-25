@@ -1,4 +1,4 @@
-local var0_0 = class("SettingsAdjustScreenPanle", import(".SettingsBasePanel"))
+local var0_0 = class("IslandSettingsAdjustScreenPanle", import(".SettingsBasePanel"))
 
 function var0_0.GetUIName(arg0_1)
 	return "SettingsAdjustScreen"

@@ -63,7 +63,7 @@ function var0_0.prepareWindow(arg0_4, arg1_4)
 end
 
 function var0_0.willExit(arg0_6)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_6._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_6._tf)
 end
 
 return var0_0

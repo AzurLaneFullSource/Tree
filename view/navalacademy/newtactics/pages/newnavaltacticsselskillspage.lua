@@ -77,7 +77,7 @@ end
 
 function var0_0.Hide(arg0_10)
 	var0_0.super.Hide(arg0_10)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_10._tf, pg.UIMgr.GetInstance().UIMain)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_10._tf, pg.UIMgr.GetInstance().UIMain)
 
 	if arg0_10.onHideCallback then
 		arg0_10.onHideCallback()

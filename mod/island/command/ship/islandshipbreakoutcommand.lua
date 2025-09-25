@@ -37,6 +37,7 @@ function var0_0.execute(arg0_1, arg1_1)
 				oldShip = var2_2,
 				isUnlockSkill = var5_2
 			})
+			IslandBookHelper.OnShipUpgradeOrBreakOut(var0_1)
 			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandShipBreakout(var0_1))
 		else
 			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)

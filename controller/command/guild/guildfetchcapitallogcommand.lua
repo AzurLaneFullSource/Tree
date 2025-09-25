@@ -5,7 +5,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var1_1 = getProxy(GuildProxy)
 
 	if not var1_1:getData() then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_no_exist"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_no_exist"))
 
 		return
 	end

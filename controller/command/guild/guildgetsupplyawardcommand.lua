@@ -10,13 +10,13 @@ function var0_0.execute(arg0_1, arg1_1)
 	end
 
 	if not var2_1:isOpenedSupply() then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_supply_no_open"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_supply_no_open"))
 
 		return
 	end
 
 	if var2_1:getSupplyCnt() <= 0 then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_supply_award_got"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_supply_award_got"))
 
 		return
 	end
@@ -25,13 +25,13 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var4_1 = var2_1:getMemberById(var3_1.id)
 
 	if not var4_1 or var4_1:isNewMember() then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_new_member_get_award_tip"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_new_member_get_award_tip"))
 
 		return
 	end
 
 	if var4_1:IsRecruit() then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_duty_is_too_low"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_duty_is_too_low"))
 
 		return
 	end

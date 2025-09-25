@@ -101,7 +101,7 @@ function var0_0.DoUprade(arg0_4, arg1_4)
 		local var0_5 = arg1_4:getConfig("name")
 		local var1_5, var2_5 = arg1_4:GetConsume()
 
-		pg.MsgboxMgr:GetInstance():ShowMsgBox({
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("guild_tech_consume_tip", var1_5, var2_5, var0_5),
 			onYes = function()
 				arg0_4.view:emit(GuildTechnologyMediator.ON_UPGRADE, arg1_4.group.id)
@@ -120,7 +120,7 @@ function var0_0.DoUprade(arg0_4, arg1_4)
 				var3_7 = i18n("guild_tech_livness_no_enough", var4_7)
 			end
 
-			pg.MsgboxMgr:GetInstance():ShowMsgBox({
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = var3_7,
 				onYes = arg0_7
 			})

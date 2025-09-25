@@ -184,68 +184,73 @@ function var0_0.OnInitItem(arg0_20, arg1_20)
 	onButton(arg0_20, var0_20.btn, function()
 		arg0_20:emit(IslandMediator.ON_KICK_PLAYER, IslandConst.ACCESS_OP_KICK, var0_20.player.id)
 	end, SFX_PANEL)
+	onButton(arg0_20, var0_20.cardBtn, function()
+		arg0_20:emit(IslandMediator.OPEN_PAGE, "IslandOtherCardPage", {
+			var0_20.player.id
+		})
+	end, SFX_PANEL)
 
 	arg0_20.cardList[arg0_20.pageIndex][arg1_20] = var0_20
 end
 
-function var0_0.OnUpdateItem(arg0_22, arg1_22, arg2_22)
-	local var0_22 = arg0_22.cardList[arg0_22.pageIndex][arg2_22]
+function var0_0.OnUpdateItem(arg0_23, arg1_23, arg2_23)
+	local var0_23 = arg0_23.cardList[arg0_23.pageIndex][arg2_23]
 
-	if not var0_22 then
-		arg0_22:OnInitItem(arg2_22)
+	if not var0_23 then
+		arg0_23:OnInitItem(arg2_23)
 
-		var0_22 = arg0_22.cardList[arg0_22.pageIndex][arg2_22]
+		var0_23 = arg0_23.cardList[arg0_23.pageIndex][arg2_23]
 	end
 
-	local var1_22 = arg0_22.displays[arg1_22 + 1]
+	local var1_23 = arg0_23.displays[arg1_23 + 1]
 
-	var0_22:Update(var1_22)
+	var0_23:Update(var1_23)
 end
 
-function var0_0.OnInitItem4Log(arg0_23, arg1_23)
-	local var0_23 = IslandVisitorLogCard.New(arg1_23)
+function var0_0.OnInitItem4Log(arg0_24, arg1_24)
+	local var0_24 = IslandVisitorLogCard.New(arg1_24)
 
-	arg0_23.cardList[arg0_23.pageIndex][arg1_23] = var0_23
+	arg0_24.cardList[arg0_24.pageIndex][arg1_24] = var0_24
 end
 
-function var0_0.OnUpdateItem4Log(arg0_24, arg1_24, arg2_24)
-	local var0_24 = arg0_24.cardList[arg0_24.pageIndex][arg2_24]
+function var0_0.OnUpdateItem4Log(arg0_25, arg1_25, arg2_25)
+	local var0_25 = arg0_25.cardList[arg0_25.pageIndex][arg2_25]
 
-	if not var0_24 then
-		arg0_24:OnInitItem(arg2_24)
+	if not var0_25 then
+		arg0_25:OnInitItem(arg2_25)
 
-		var0_24 = arg0_24.cardList[arg0_24.pageIndex][arg2_24]
+		var0_25 = arg0_25.cardList[arg0_25.pageIndex][arg2_25]
 	end
 
-	local var1_24 = arg0_24.displays[arg1_24 + 1]
+	local var1_25 = arg0_25.displays[arg1_25 + 1]
 
-	var0_24:Update(var1_24)
+	var0_25:Update(var1_25)
 end
 
-function var0_0.Show(arg0_25)
-	var0_0.super.Show(arg0_25)
-	triggerToggle(arg0_25.toggles[var1_0], true)
+function var0_0.Show(arg0_26)
+	var0_0.super.Show(arg0_26)
+	triggerToggle(arg0_26.toggles[var1_0], true)
 end
 
-function var0_0.FlushList(arg0_26)
-	arg0_26.displays = arg0_26:GetDisplayData(arg0_26.pageIndex)
+function var0_0.FlushList(arg0_27)
+	arg0_27.displays = arg0_27:GetDisplayData(arg0_27.pageIndex)
 
-	arg0_26.scrollrects[arg0_26.pageIndex]:SetTotalCount(#arg0_26.displays)
-	arg0_26:FlushPeopleCnt()
+	arg0_27.scrollrects[arg0_27.pageIndex]:SetTotalCount(#arg0_27.displays)
+	arg0_27:FlushPeopleCnt()
 end
 
-function var0_0.FlushPeopleCnt(arg0_27)
-	arg0_27.peopleCntTxt.text = #arg0_27.displays .. "/10"
+function var0_0.FlushPeopleCnt(arg0_28)
+	arg0_28.peopleCntTxt.text = #arg0_28.displays .. "/10"
 end
 
-function var0_0.OnDestroy(arg0_28)
-	for iter0_28, iter1_28 in pairs(arg0_28.cardList) do
-		for iter2_28, iter3_28 in pairs(iter1_28) do
-			iter3_28:Dispose()
+function var0_0.OnDestroy(arg0_29)
+	for iter0_29, iter1_29 in pairs(arg0_29.cardList) do
+		for iter2_29, iter3_29 in pairs(iter1_29) do
+			iter3_29:Dispose()
 		end
 	end
 
-	arg0_28.cardList = nil
+	arg0_29.cardList = nil
 end
 
 return var0_0

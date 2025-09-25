@@ -12,13 +12,21 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.dressUpAgency = IslandDressUpAgency.New(arg0_1, arg1_1.private_data)
 	arg0_1.achievementAgency = IslandAchievementAgency.New(arg0_1, arg1_1.private_data)
 	arg0_1.globalBuffAgency = IslandGlobalBuffAgency.New(arg0_1, arg1_1.private_data)
+	arg0_1.actionAgency = IslandActionAgency.New(arg0_1, arg1_1.private_data)
+	arg0_1.npcFeedbackAgency = IslandNpcFeedbackAgency.New(arg0_1, arg1_1.private_data)
+	arg0_1.settingsAgency = IslandSettingsAgency.New(arg0_1, arg1_1.private_data)
+	arg0_1.bookAgency = IslandBookAgency.New(arg0_1, arg1_1.private_data)
+	arg0_1.cardDiyAgency = IslandCardDiyAgency.New(arg0_1, arg1_1.private_data)
+	arg0_1.ticketAgency = IslandTicketAgency.New(arg0_1, arg1_1.private_data)
 
 	arg0_1:GetAgoraAgency():InitPrivateData(arg1_1.private_data)
 	arg0_1:AddDefaultAgoraData()
+	arg0_1:GetFollowerAgency():InitPrivateData(arg1_1.private_data)
 	arg0_1:GetInventoryAgency():InitPrivateData(arg1_1.public_data)
 	arg0_1:GetSignInAgency():InitPrivateData(arg1_1.private_data)
 	arg0_1:GetAccessAgency():InitPrivateData(arg1_1.private_data)
 	arg0_1:GetBuildingAgency():InitPrivateData(arg1_1.private_data)
+	arg0_1:GetWildCollectAgency():InitPrivateData(arg1_1.private_data)
 end
 
 function var0_0.IsPrivate(arg0_2)
@@ -50,35 +58,81 @@ function var0_0.GetOrderAgency(arg0_6)
 	return arg0_6.orderAgency
 end
 
-function var0_0.GetShopAgency(arg0_7)
-	return arg0_7.shopAgency
+function var0_0.GetActionAgency(arg0_7)
+	return arg0_7.actionAgency
 end
 
-function var0_0.GetSeasonAgency(arg0_8)
-	return arg0_8.seasonAgency
+function var0_0.GetNpcFeedbackAgency(arg0_8)
+	return arg0_8.npcFeedbackAgency
 end
 
-function var0_0.GetDressUpAgency(arg0_9)
-	return arg0_9.dressUpAgency
+function var0_0.GetShopAgency(arg0_9)
+	return arg0_9.shopAgency
 end
 
-function var0_0.GetAchievementAgency(arg0_10)
-	return arg0_10.achievementAgency
+function var0_0.GetSeasonAgency(arg0_10)
+	return arg0_10.seasonAgency
 end
 
-function var0_0.GetGlobalBuffAgency(arg0_11)
-	return arg0_11.globalBuffAgency
+function var0_0.GetDressUpAgency(arg0_11)
+	return arg0_11.dressUpAgency
 end
 
-function var0_0.UpdatePerDay(arg0_12)
-	var0_0.super.UpdatePerDay(arg0_12)
-	arg0_12:GetOrderAgency():UpdatePerDay()
-	arg0_12:GetTaskAgency():UpdatePerDay()
+function var0_0.GetAchievementAgency(arg0_12)
+	return arg0_12.achievementAgency
 end
 
-function var0_0.UpdatePerSecond(arg0_13)
-	var0_0.super.UpdatePerSecond(arg0_13)
-	arg0_13:GetTaskAgency():UpdatePerSecond()
+function var0_0.GetGlobalBuffAgency(arg0_13)
+	return arg0_13.globalBuffAgency
+end
+
+function var0_0.GetSettingsAgency(arg0_14)
+	return arg0_14.settingsAgency
+end
+
+function var0_0.GetBookAgency(arg0_15)
+	return arg0_15.bookAgency
+end
+
+function var0_0.GetCardDiyAgency(arg0_16)
+	return arg0_16.cardDiyAgency
+end
+
+function var0_0.GetTicketAgency(arg0_17)
+	return arg0_17.ticketAgency
+end
+
+function var0_0.GetSystemTipInfos(arg0_18)
+	if not arg0_18:GetAblityAgency():IsUnlockPostManage() then
+		return {
+			awardCnt = 0,
+			emptyCnt = 0,
+			postFlag = 0,
+			timestamps = {}
+		}
+	else
+		local var0_18 = arg0_18:GetBuildingAgency():GetTipInfos()
+		local var1_18 = arg0_18:GetManageAgency():GetTipInfos()
+
+		return {
+			postFlag = 1,
+			awardCnt = var0_18.awardCnt + var1_18.awardCnt,
+			emptyCnt = var0_18.emptyCnt + var1_18.emptyCnt,
+			timestamps = table.mergeArray(var0_18.timestamps, var1_18.timestamps)
+		}
+	end
+end
+
+function var0_0.UpdatePerDay(arg0_19)
+	var0_0.super.UpdatePerDay(arg0_19)
+	arg0_19:GetOrderAgency():UpdatePerDay()
+	arg0_19:GetTaskAgency():UpdatePerDay()
+	arg0_19:GetNpcFeedbackAgency():UpdatePerDay()
+end
+
+function var0_0.UpdatePerSecond(arg0_20)
+	var0_0.super.UpdatePerSecond(arg0_20)
+	arg0_20:GetTaskAgency():UpdatePerSecond()
 end
 
 return var0_0

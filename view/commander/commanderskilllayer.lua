@@ -80,7 +80,7 @@ function var0_0.GetColor(arg0_11, arg1_11)
 end
 
 function var0_0.willExit(arg0_12)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_12._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_12._tf)
 end
 
 function var0_0.onBackPressed(arg0_13)

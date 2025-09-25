@@ -56,7 +56,7 @@ function var0_0.Confirm(arg0_9)
 		local var0_9 = getInputText(arg0_9.urInput)
 
 		if arg0_9.key ~= tonumber(var0_9) then
-			pg.TipsMgr:GetInstance():ShowTips(i18n("destory_ship_input_erro"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("destory_ship_input_erro"))
 
 			return
 		end
@@ -262,7 +262,7 @@ end
 
 function var0_0.Hide(arg0_29)
 	var0_0.super.Hide(arg0_29)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_29._tf, arg0_29._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_29._tf, arg0_29._parentTf)
 
 	arg0_29.key = nil
 	arg0_29.callback = nil

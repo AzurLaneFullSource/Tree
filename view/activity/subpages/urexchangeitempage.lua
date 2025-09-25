@@ -28,7 +28,7 @@ function var0_0.OnInit(arg0_1)
 		local var1_4, var2_4 = pg.SystemOpenMgr.GetInstance():isOpenSystem(var0_4.level, "FragmentShop")
 
 		if not var1_4 then
-			pg.TipsMgr:GetInstance():ShowTips(var2_4)
+			pg.TipsMgr.GetInstance():ShowTips(var2_4)
 
 			return
 		end

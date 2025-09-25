@@ -111,7 +111,7 @@ function var0_0.didEnter(arg0_7)
 				arg0_7.toggleIndex = iter0_7
 
 				if arg0_7.selectedItem then
-					pg.UIMgr.GetInstance():UnblurPanel(arg0_7.blurPanel, arg0_7._tf)
+					pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7.blurPanel, arg0_7._tf)
 
 					local var1_11 = arg0_7.scrollRect.content
 					local var2_11 = var1_11.childCount
@@ -365,7 +365,7 @@ function var0_0.easeOut(arg0_34, arg1_34)
 
 		arg0_34:setOpEnabled(false)
 		arg0_34:easeOutDetail(function()
-			pg.UIMgr.GetInstance():UnblurPanel(arg0_34.blurPanel, arg0_34._tf)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_34.blurPanel, arg0_34._tf)
 
 			arg0_34.easing = false
 			arg0_34.selectedItem = nil
@@ -620,7 +620,7 @@ function var0_0.willExit(arg0_48)
 		cancelTweens(arg0_48.tweens)
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_48.blurPanel, arg0_48._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_48.blurPanel, arg0_48._tf)
 	arg0_48:ktimer()
 
 	for iter0_48, iter1_48 in pairs(arg0_48.scrollItems) do

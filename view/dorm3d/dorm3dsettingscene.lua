@@ -24,9 +24,7 @@ function var0_0.didEnter(arg0_3)
 		arg0_3:closeView()
 	end, SFX_CANCEL)
 	arg0_3:SwitchPage(1)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf, nil, {
-		interactableAlways = true
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf)
 end
 
 function var0_0.onBackPressed(arg0_5)
@@ -34,7 +32,7 @@ function var0_0.onBackPressed(arg0_5)
 end
 
 function var0_0.willExit(arg0_6)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_6._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_6._tf)
 	var0_0.super.willExit(arg0_6)
 end
 

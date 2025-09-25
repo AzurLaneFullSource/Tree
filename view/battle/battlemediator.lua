@@ -197,8 +197,6 @@ function var0_0.register(arg0_1)
 			if not getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossSingleContinuousOperationMediator) then
 				local var2_1 = CreateShell(arg0_1.contextData)
 
-				var2_1.LayerWeightMgr_weight = LayerWeightConst.BASE_LAYER
-
 				arg0_1:addSubLayers(Context.New({
 					mediator = BossSingleContinuousOperationMediator,
 					viewComponent = BossSingleContinuousOperationPanel,
@@ -207,8 +205,6 @@ function var0_0.register(arg0_1)
 			end
 		elseif not getProxy(ContextProxy):getCurrentContext():getContextByMediator(ContinuousOperationMediator) then
 			local var3_1 = CreateShell(arg0_1.contextData)
-
-			var3_1.LayerWeightMgr_weight = LayerWeightConst.BASE_LAYER
 
 			arg0_1:addSubLayers(Context.New({
 				mediator = ContinuousOperationMediator,

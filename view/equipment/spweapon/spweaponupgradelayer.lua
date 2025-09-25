@@ -254,7 +254,7 @@ function var0_0.didEnter(arg0_8)
 			end
 		end
 	end)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_8._tf, false, {})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_8._tf)
 
 	arg0_8.contextData.indexDatas = arg0_8.contextData.indexDatas or Clone(var7_0)
 
@@ -295,7 +295,6 @@ function var0_0.UpdateEquipItem(arg0_21, arg1_21, arg2_21)
 					modal = true,
 					type = MSGBOX_TYPE_CONFIRM_DELETE,
 					title = pg.MsgboxMgr.TITLE_INFORMATION,
-					weight = LayerWeightConst.TOP_LAYER,
 					onYes = arg0_23,
 					data = {
 						name = arg1_21:GetName()
@@ -1038,7 +1037,7 @@ function var0_0.ClearSelectMaterials(arg0_59)
 end
 
 function var0_0.willExit(arg0_60)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_60._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_60._tf)
 	ClearLScrollrect(arg0_60.leftPanelEquipScrollComp)
 	arg0_60.loader:Clear()
 end

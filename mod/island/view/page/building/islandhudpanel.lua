@@ -123,9 +123,7 @@ function var0_0.UpdateTime(arg0_11, arg1_11)
 	if arg1_11.stateEndTime then
 		local var0_11 = arg1_11.stateEndTime - arg0_11.timeMgr:GetServerTime()
 
-		if var0_11 < 0 then
-			setText(arg0_11.timeTF, arg1_11.stateEndText)
-		else
+		if var0_11 > 0 then
 			setText(arg0_11.timeTF, arg0_11.timeMgr:DescCDTime(var0_11))
 		end
 	end

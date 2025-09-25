@@ -55,7 +55,7 @@ function var0_0.Close(arg0_6)
 	arg0_6.itemVO = nil
 
 	setActive(arg0_6._tf, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_6._tf, arg0_6._parent)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_6._tf, arg0_6._parent)
 end
 
 function var0_0.Update(arg0_7, arg1_7)

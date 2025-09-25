@@ -17,112 +17,105 @@ var0_0.SKIP_INS = "NewMainMediator:SKIP_INS"
 var0_0.SKIP_LOTTERY = "NewMainMediator:SKIP_LOTTERY"
 var0_0.GO_SINGLE_ACTIVITY = "NewMainMediator:GO_SINGLE_ACTIVITY"
 var0_0.REFRESH_VIEW = "NewMainMediator:REFRESH_VIEW"
-var0_0.OPEN_DORM_SELECT_LAYER = "NewMainMediator.OPEN_DORM_SELECT_LAYER"
 var0_0.OPEN_KINK_BUTTON_LAYER = "NewMainMediator.OPEN_KINK_BUTTON_LAYER"
 var0_0.OPEN_Compensate = "NewMainMediator:OPEN_Compensate"
 var0_0.ON_DROP = "NewMainMediator:ON_DROP"
 var0_0.ON_AWRADS = "NewMainMediator:ON_AWRADS"
 var0_0.CHANGE_SKIN_TOGGLE = "NewMainMediator:CHANGE_SKIN_TOGGLE"
-var0_0.GO_ISLAND = "NewMainMediator:GO_ISLAND"
 var0_0.FOLD_PANEL = "NewMainMediator:FOLD_PANEL"
 var0_0.HIDE_PANEL = "NewMainMediator:HIDE_PANEL"
 
 function var0_0.register(arg0_1)
-	arg0_1:bind(var0_0.GO_ISLAND, function(arg0_2, arg1_2)
-		arg0_1:sendNotification(GAME.ISLAND_ENTER, {
-			id = arg1_2
-		})
-	end)
-	arg0_1:bind(var0_0.GO_SINGLE_ACTIVITY, function(arg0_3, arg1_3)
+	arg0_1:bind(var0_0.GO_SINGLE_ACTIVITY, function(arg0_2, arg1_2)
 		arg0_1:addSubLayers(Context.New({
 			mediator = ActivitySingleMediator,
 			viewComponent = ActivitySingleScene,
 			data = {
-				id = arg1_3
+				id = arg1_2
 			}
 		}))
 	end)
-	arg0_1:bind(var0_0.SKIP_LOTTERY, function(arg0_4, arg1_4)
+	arg0_1:bind(var0_0.SKIP_LOTTERY, function(arg0_3, arg1_3)
 		arg0_1:addSubLayers(Context.New({
 			viewComponent = LotteryLayer,
 			mediator = LotteryMediator,
 			data = {
-				activityId = arg1_4
+				activityId = arg1_3
 			}
 		}))
 	end)
-	arg0_1:bind(var0_0.SKIP_INS, function(arg0_5)
+	arg0_1:bind(var0_0.SKIP_INS, function(arg0_4)
 		arg0_1:addSubLayers(Context.New({
 			viewComponent = InstagramMainUI,
 			mediator = InstagramMainMediator
 		}))
 	end)
-	arg0_1:bind(var0_0.SKIP_ESCORT, function(arg0_6)
-		local var0_6 = getProxy(ChapterProxy)
-		local var1_6 = var0_6:getMapsByType(Map.ESCORT)[1]
-		local var2_6 = var0_6:getActiveChapter()
+	arg0_1:bind(var0_0.SKIP_ESCORT, function(arg0_5)
+		local var0_5 = getProxy(ChapterProxy)
+		local var1_5 = var0_5:getMapsByType(Map.ESCORT)[1]
+		local var2_5 = var0_5:getActiveChapter()
 
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
-			chapterId = var2_6 and var2_6:getConfig("map") == var1_6.id and var2_6.id or nil,
-			mapIdx = var1_6.id
+			chapterId = var2_5 and var2_5:getConfig("map") == var1_5.id and var2_5.id or nil,
+			mapIdx = var1_5.id
 		})
 	end)
-	arg0_1:bind(var0_0.SKIP_ACTIVITY_MAP, function(arg0_7, arg1_7)
-		local var0_7 = getProxy(ChapterProxy)
-		local var1_7, var2_7 = var0_7:getLastMapForActivity(arg1_7)
+	arg0_1:bind(var0_0.SKIP_ACTIVITY_MAP, function(arg0_6, arg1_6)
+		local var0_6 = getProxy(ChapterProxy)
+		local var1_6, var2_6 = var0_6:getLastMapForActivity(arg1_6)
 
-		if not var1_7 or not var0_7:getMapById(var1_7):isUnlock() then
+		if not var1_6 or not var0_6:getMapById(var1_6):isUnlock() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 		else
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
-				chapterId = var2_7,
-				mapIdx = var1_7
+				chapterId = var2_6,
+				mapIdx = var1_6
 			})
 		end
 	end)
-	arg0_1:bind(var0_0.SKIP_SHOP, function(arg0_8, arg1_8)
+	arg0_1:bind(var0_0.SKIP_SHOP, function(arg0_7, arg1_7)
 		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
-			warp = arg1_8 or NewShopsScene.TYPE_ACTIVITY
+			warp = arg1_7 or NewShopsScene.TYPE_ACTIVITY
 		})
 	end)
-	arg0_1:bind(var0_0.SKIP_ACTIVITY, function(arg0_9, arg1_9)
+	arg0_1:bind(var0_0.SKIP_ACTIVITY, function(arg0_8, arg1_8)
 		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
-			id = arg1_9
+			id = arg1_8
 		})
 	end)
-	arg0_1:bind(var0_0.SKIP_CORE_ACTIVITY, function(arg0_10, arg1_10)
+	arg0_1:bind(var0_0.SKIP_CORE_ACTIVITY, function(arg0_9, arg1_9)
 		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.CORE_ACTIVITY, {
-			coreName = arg1_10
+			coreName = arg1_9
 		})
 	end)
-	arg0_1:bind(var0_0.SKIP_SCENE, function(arg0_11, arg1_11)
-		arg0_1:sendNotification(GAME.GO_SCENE, arg1_11[1], arg1_11[2])
+	arg0_1:bind(var0_0.SKIP_SCENE, function(arg0_10, arg1_10)
+		arg0_1:sendNotification(GAME.GO_SCENE, arg1_10[1], arg1_10[2])
 	end)
-	arg0_1:bind(var0_0.GO_MINI_GAME, function(arg0_12, arg1_12)
-		arg0_1:sendNotification(GAME.GO_MINI_GAME, arg1_12)
+	arg0_1:bind(var0_0.GO_MINI_GAME, function(arg0_11, arg1_11)
+		arg0_1:sendNotification(GAME.GO_MINI_GAME, arg1_11)
 	end)
-	arg0_1:bind(var0_0.GO_SCENE, function(arg0_13, arg1_13, arg2_13)
-		arg0_1:sendNotification(GAME.GO_SCENE, arg1_13, arg2_13)
+	arg0_1:bind(var0_0.GO_SCENE, function(arg0_12, arg1_12, arg2_12)
+		arg0_1:sendNotification(GAME.GO_SCENE, arg1_12, arg2_12)
 	end)
-	arg0_1:bind(var0_0.GO_SNAPSHOT, function(arg0_14)
-		local var0_14 = arg0_1.viewComponent.bgView.ship
-		local var1_14 = var0_14:getSkinId()
-		local var2_14 = arg0_1.viewComponent.paintingView:IsLive2DState()
-		local var3_14
+	arg0_1:bind(var0_0.GO_SNAPSHOT, function(arg0_13)
+		local var0_13 = arg0_1.viewComponent.bgView.ship
+		local var1_13 = var0_13:getSkinId()
+		local var2_13 = arg0_1.viewComponent.paintingView:IsLive2DState()
+		local var3_13
 
-		if isa(var0_14, VirtualEducateCharShip) then
-			var3_14 = var0_14.educateCharId
-			var2_14 = false
+		if isa(var0_13, VirtualEducateCharShip) then
+			var3_13 = var0_13.educateCharId
+			var2_13 = false
 		end
 
 		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.SNAPSHOT, {
-			skinId = var1_14,
-			live2d = var2_14,
-			tbId = var3_14,
-			propose = var0_14.propose
+			skinId = var1_13,
+			live2d = var2_13,
+			tbId = var3_13,
+			propose = var0_13.propose
 		})
 	end)
-	arg0_1:bind(var0_0.OPEN_MAIL, function(arg0_15)
+	arg0_1:bind(var0_0.OPEN_MAIL, function(arg0_14)
 		if BATTLE_DEBUG then
 			arg0_1:sendNotification(GAME.BEGIN_STAGE, {
 				system = SYSTEM_DEBUG
@@ -131,22 +124,22 @@ function var0_0.register(arg0_1)
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE.MAIL)
 		end
 	end)
-	arg0_1:bind(var0_0.OPEN_Compensate, function(arg0_16)
+	arg0_1:bind(var0_0.OPEN_Compensate, function(arg0_15)
 		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.Compensate)
 	end)
-	arg0_1:bind(var0_0.OPEN_NOTICE, function(arg0_17)
+	arg0_1:bind(var0_0.OPEN_NOTICE, function(arg0_16)
 		arg0_1:addSubLayers(Context.New({
 			mediator = NewBulletinBoardMediator,
 			viewComponent = NewBulletinBoardLayer
 		}))
 	end)
-	arg0_1:bind(var0_0.OPEN_COMMISION, function(arg0_18)
+	arg0_1:bind(var0_0.OPEN_COMMISION, function(arg0_17)
 		arg0_1:addSubLayers(Context.New({
 			viewComponent = CommissionInfoLayer,
 			mediator = CommissionInfoMediator
 		}))
 	end)
-	arg0_1:bind(var0_0.OPEN_CHATVIEW, function(arg0_19)
+	arg0_1:bind(var0_0.OPEN_CHATVIEW, function(arg0_18)
 		arg0_1:addSubLayers(Context.New({
 			mediator = NotificationMediator,
 			viewComponent = NotificationLayer,
@@ -155,19 +148,16 @@ function var0_0.register(arg0_1)
 			}
 		}))
 	end)
-	arg0_1:bind(var0_0.OPEN_DORM_SELECT_LAYER, function(arg0_20)
-		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.DORM3DSELECT)
+	arg0_1:bind(var0_0.OPEN_KINK_BUTTON_LAYER, function(arg0_19, arg1_19)
+		arg0_1:addSubLayers(arg1_19)
 	end)
-	arg0_1:bind(var0_0.OPEN_KINK_BUTTON_LAYER, function(arg0_21, arg1_21)
-		arg0_1:addSubLayers(arg1_21)
-	end)
-	arg0_1:bind(var0_0.CHANGE_SKIN_TOGGLE, function(arg0_22, arg1_22)
-		arg0_1:sendNotification(GAME.CHANGE_SKIN_AB, arg1_22)
+	arg0_1:bind(var0_0.CHANGE_SKIN_TOGGLE, function(arg0_20, arg1_20)
+		arg0_1:sendNotification(GAME.CHANGE_SKIN_AB, arg1_20)
 	end)
 end
 
-function var0_0.listNotificationInterests(arg0_23)
-	local var0_23 = {
+function var0_0.listNotificationInterests(arg0_21)
+	local var0_21 = {
 		GAME.REMOVE_LAYERS,
 		GAME.GET_GUILD_INFO_DONE,
 		GAME.GET_GUILD_CHAT_LIST_DONE,
@@ -213,89 +203,89 @@ function var0_0.listNotificationInterests(arg0_23)
 		GAME.REQ_NEW_INSTAGRAM_DATA_DONE
 	}
 
-	for iter0_23, iter1_23 in pairs(pg.redDotHelper:GetNotifyType()) do
-		for iter2_23, iter3_23 in pairs(iter1_23) do
-			if not table.contains(var0_23, iter3_23) then
-				table.insert(var0_23, iter3_23)
+	for iter0_21, iter1_21 in pairs(pg.redDotHelper:GetNotifyType()) do
+		for iter2_21, iter3_21 in pairs(iter1_21) do
+			if not table.contains(var0_21, iter3_21) then
+				table.insert(var0_21, iter3_21)
 			end
 		end
 	end
 
-	return var0_23
+	return var0_21
 end
 
-function var0_0.handleNotification(arg0_24, arg1_24)
-	local var0_24 = arg1_24:getName()
-	local var1_24 = arg1_24:getBody()
+function var0_0.handleNotification(arg0_22, arg1_22)
+	local var0_22 = arg1_22:getName()
+	local var1_22 = arg1_22:getBody()
 
-	pg.redDotHelper:Notify(var0_24)
+	pg.redDotHelper:Notify(var0_22)
 
-	if var0_24 == GAME.ON_OPEN_INS_LAYER then
-		arg0_24.viewComponent:emit(var0_0.SKIP_INS)
-	elseif var0_24 == NotificationProxy.FRIEND_REQUEST_ADDED or var0_24 == NotificationProxy.FRIEND_REQUEST_REMOVED or var0_24 == FriendProxy.FRIEND_NEW_MSG or var0_24 == FriendProxy.FRIEND_UPDATED or var0_24 == ChatProxy.NEW_MSG or var0_24 == GuildProxy.NEW_MSG_ADDED or var0_24 == GAME.GET_GUILD_INFO_DONE or var0_24 == GAME.GET_GUILD_CHAT_LIST_DONE then
-		arg0_24.viewComponent:emit(GAME.ANY_CHAT_MSG_UPDATE)
-	elseif var0_24 == GAME.BEGIN_STAGE_DONE then
-		arg0_24:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1_24)
-	elseif var0_24 == ChapterProxy.CHAPTER_TIMESUP then
+	if var0_22 == GAME.ON_OPEN_INS_LAYER then
+		arg0_22.viewComponent:emit(var0_0.SKIP_INS)
+	elseif var0_22 == NotificationProxy.FRIEND_REQUEST_ADDED or var0_22 == NotificationProxy.FRIEND_REQUEST_REMOVED or var0_22 == FriendProxy.FRIEND_NEW_MSG or var0_22 == FriendProxy.FRIEND_UPDATED or var0_22 == ChatProxy.NEW_MSG or var0_22 == GuildProxy.NEW_MSG_ADDED or var0_22 == GAME.GET_GUILD_INFO_DONE or var0_22 == GAME.GET_GUILD_CHAT_LIST_DONE then
+		arg0_22.viewComponent:emit(GAME.ANY_CHAT_MSG_UPDATE)
+	elseif var0_22 == GAME.BEGIN_STAGE_DONE then
+		arg0_22:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1_22)
+	elseif var0_22 == ChapterProxy.CHAPTER_TIMESUP then
 		MainChapterTimeUpSequence.New():Execute()
-	elseif var0_24 == TechnologyConst.UPDATE_REDPOINT_ON_TOP then
+	elseif var0_22 == TechnologyConst.UPDATE_REDPOINT_ON_TOP then
 		MainTechnologySequence.New():Execute(function()
 			return
 		end)
-	elseif var0_24 == GAME.FETCH_NPC_SHIP_DONE then
-		arg0_24.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_24.items, var1_24.callback)
-	elseif var0_24 == var0_0.REFRESH_VIEW then
-		arg0_24.viewComponent:setVisible(false)
-		arg0_24.viewComponent:setVisible(true)
-	elseif var0_24 == GAME.CONFIRM_GET_SHIP then
-		arg0_24:addSubLayers(Context.New({
+	elseif var0_22 == GAME.FETCH_NPC_SHIP_DONE then
+		arg0_22.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_22.items, var1_22.callback)
+	elseif var0_22 == var0_0.REFRESH_VIEW then
+		arg0_22.viewComponent:setVisible(false)
+		arg0_22.viewComponent:setVisible(true)
+	elseif var0_22 == GAME.CONFIRM_GET_SHIP then
+		arg0_22:addSubLayers(Context.New({
 			mediator = BuildShipRemindMediator,
 			viewComponent = BuildShipRemindLayer,
 			data = {
-				ships = var1_24.ships
+				ships = var1_22.ships
 			},
-			onRemoved = var1_24.callback
+			onRemoved = var1_22.callback
 		}))
-	elseif var0_24 == GAME.CHANGE_LIVINGAREA_COVER_DONE then
-		arg0_24.viewComponent:emit(NewMainScene.UPDATE_COVER)
-	elseif var0_24 == GAME.ACT_INSTAGRAM_CHAT_DONE and var1_24.operation == ActivityConst.INSTAGRAM_CHAT_ACTIVATE_TOPIC then
-		local var2_24 = arg0_24.viewComponent:GetFlagShip()
+	elseif var0_22 == GAME.CHANGE_LIVINGAREA_COVER_DONE then
+		arg0_22.viewComponent:emit(NewMainScene.UPDATE_COVER)
+	elseif var0_22 == GAME.ACT_INSTAGRAM_CHAT_DONE and var1_22.operation == ActivityConst.INSTAGRAM_CHAT_ACTIVATE_TOPIC then
+		local var2_22 = arg0_22.viewComponent:GetFlagShip()
 
-		if arg0_24.viewComponent.theme then
-			arg0_24.viewComponent.theme:Refresh(var2_24)
+		if arg0_22.viewComponent.theme then
+			arg0_22.viewComponent.theme:Refresh(var2_22)
 		end
-	elseif var0_24 == NewMainMediator.ON_DROP then
-		arg0_24.viewComponent:emit(BaseUI.ON_DROP, var1_24)
-	elseif var0_24 == NewMainMediator.ON_AWRADS then
-		arg0_24.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_24.items, var1_24.callback)
-	elseif var0_24 == GAME.PLAY_CHANGE_SKIN_OUT then
-		arg0_24.viewComponent:HidePanel(true)
-		arg0_24.viewComponent:SetEffectPanelVisible(false)
-		arg0_24.viewComponent:PlayChangeSkinActionOut(var1_24)
-	elseif var0_24 == GAME.PLAY_CHANGE_SKIN_IN then
-		arg0_24.viewComponent:PlayChangeSkinActionIn(var1_24)
-	elseif var0_24 == GAME.PLAY_CHANGE_SKIN_FINISH then
-		arg0_24.viewComponent:SetEffectPanelVisible(true)
-		arg0_24.viewComponent:HidePanel(false)
-	elseif var0_24 == GAME.CHANGE_SKIN_EXCHANGE then
-		local var3_24 = arg0_24.viewComponent:GetFlagShip()
+	elseif var0_22 == NewMainMediator.ON_DROP then
+		arg0_22.viewComponent:emit(BaseUI.ON_DROP, var1_22)
+	elseif var0_22 == NewMainMediator.ON_AWRADS then
+		arg0_22.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_22.items, var1_22.callback)
+	elseif var0_22 == GAME.PLAY_CHANGE_SKIN_OUT then
+		arg0_22.viewComponent:HidePanel(true)
+		arg0_22.viewComponent:SetEffectPanelVisible(false)
+		arg0_22.viewComponent:PlayChangeSkinActionOut(var1_22)
+	elseif var0_22 == GAME.PLAY_CHANGE_SKIN_IN then
+		arg0_22.viewComponent:PlayChangeSkinActionIn(var1_22)
+	elseif var0_22 == GAME.PLAY_CHANGE_SKIN_FINISH then
+		arg0_22.viewComponent:SetEffectPanelVisible(true)
+		arg0_22.viewComponent:HidePanel(false)
+	elseif var0_22 == GAME.CHANGE_SKIN_EXCHANGE then
+		local var3_22 = arg0_22.viewComponent:GetFlagShip()
 
-		if arg0_24.viewComponent then
-			arg0_24.viewComponent:UpdateFlagShip(var3_24, var1_24)
+		if arg0_22.viewComponent then
+			arg0_22.viewComponent:UpdateFlagShip(var3_22, var1_22)
 		end
-	elseif var0_24 == MusicPlayer.NO_PLAY_MUSIC_NOTIFICATION then
-		arg0_24.viewComponent:CheckAndReplayBgm()
-	elseif var0_24 == NewMainMediator.FOLD_PANEL then
-		arg0_24.viewComponent:FoldPanels(var1_24)
-	elseif var0_24 == NewMainMediator.HIDE_PANEL then
-		arg0_24.viewComponent:HidePanel(var1_24)
-	elseif var0_24 == GAME.SERIES_GUIDE_END then
+	elseif var0_22 == MusicPlayer.NO_PLAY_MUSIC_NOTIFICATION then
+		arg0_22.viewComponent:CheckAndReplayBgm()
+	elseif var0_22 == NewMainMediator.FOLD_PANEL then
+		arg0_22.viewComponent:FoldPanels(var1_22)
+	elseif var0_22 == NewMainMediator.HIDE_PANEL then
+		arg0_22.viewComponent:HidePanel(var1_22)
+	elseif var0_22 == GAME.SERIES_GUIDE_END then
 		MainAwakeGuideSequence.New():Execute(function()
 			return
 		end)
 	end
 
-	arg0_24.viewComponent:emit(var0_24, var1_24)
+	arg0_22.viewComponent:emit(var0_22, var1_22)
 end
 
 return var0_0

@@ -70,7 +70,7 @@ function var0_0.Flush(arg0_11)
 end
 
 function var0_0.GetSmoothRotateObject(arg0_12)
-	return GetOrAddComponent(arg0_12:findTF("adapt/char"), typeof(SmoothRotateObject))
+	return arg0_12:findTF("adapt/char")
 end
 
 function var0_0.OnCharLoaded(arg0_13)

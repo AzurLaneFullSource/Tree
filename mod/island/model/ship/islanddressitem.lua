@@ -3,7 +3,10 @@ local var0_0 = class("IslandDressItem", import("model.vo.BaseVO"))
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.id = arg1_1.id
 	arg0_1.configId = arg0_1.id
-	arg0_1.hasSend = arg1_1.hasSend
+	arg0_1.ownCount = arg1_1.ownCount
+	arg0_1.holdedShipId = arg1_1.holdedShipId
+	arg0_1.needRedDot = arg1_1.needRedDot
+	arg0_1.quality = arg1_1.quality
 end
 
 function var0_0.bindConfigTable(arg0_2)
@@ -16,7 +19,7 @@ function var0_0.GetSortValue(arg0_3, arg1_3, arg2_3)
 	if arg1_3 == IslandShipDressUpPageNew.SORT_RARITY then
 		var0_3 = arg0_3:GetRarity()
 	elseif arg1_3 == IslandShipDressUpPageNew.SORT_CANSEND then
-		var0_3 = arg0_3.hasSend and 1 or 0
+		var0_3 = arg0_3.ownCount and 1 or 0
 	else
 		var0_3 = arg0_3.id
 	end

@@ -335,7 +335,7 @@ function var0_0.bindDetailTF(arg0_26, arg1_26)
 end
 
 function var0_0.revertDetailBlur(arg0_27)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_27.blurPanel, arg0_27._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_27.blurPanel, arg0_27._tf)
 end
 
 function var0_0.willExit(arg0_28)

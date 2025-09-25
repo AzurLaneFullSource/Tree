@@ -125,7 +125,7 @@ end
 
 function var0_0.willExit(arg0_12)
 	arg0_12._pageUtil:Dispose()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_12._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_12._tf)
 end
 
 return var0_0

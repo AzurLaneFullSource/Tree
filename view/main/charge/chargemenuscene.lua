@@ -150,7 +150,7 @@ function var0_0.InitBanner(arg0_15)
 				return
 			end
 
-			arg0_15.bannerRect:Puase()
+			arg0_15.bannerRect:Pause()
 
 			arg0_15.lookUpIndex = iter0_15
 

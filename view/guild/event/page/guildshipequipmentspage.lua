@@ -47,7 +47,7 @@ function var0_0.Show(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 	end
 
 	arg0_8:Flush(arg1_8, arg2_8)
-	pg.UIMgr:GetInstance():BlurPanel(arg0_8._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_8._tf)
 	setActive(arg0_8.nextBtn, arg0_8.onNext ~= nil)
 	SetActive(arg0_8.prevBtn, arg0_8.onPrev ~= nil)
 end
@@ -112,7 +112,7 @@ end
 
 function var0_0.Hide(arg0_15)
 	var0_0.super.Hide(arg0_15)
-	pg.UIMgr:GetInstance():UnblurPanel(arg0_15._tf, arg0_15._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_15._tf, arg0_15._parentTf)
 
 	if arg0_15.OnHide then
 		arg0_15.OnHide()

@@ -63,7 +63,7 @@ end
 
 function var0_0.Hide(arg0_10)
 	var0_0.super.Hide(arg0_10)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_10._tf, arg0_10._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_10._tf, arg0_10._parentTf)
 end
 
 function var0_0.Enter(arg0_11, arg1_11)
@@ -96,7 +96,7 @@ function var0_0.Enter(arg0_11, arg1_11)
 end
 
 function var0_0.OnDestroy(arg0_12)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_12._tf, arg0_12._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_12._tf, arg0_12._parentTf)
 end
 
 return var0_0

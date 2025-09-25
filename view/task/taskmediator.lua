@@ -42,8 +42,7 @@ function var0_0.register(arg0_1)
 				data = {
 					equipmentId = arg1_6:getConfig("id"),
 					type = EquipmentInfoMediator.TYPE_DISPLAY,
-					onRemoved = arg2_6,
-					LayerWeightMgr_weight = LayerWeightConst.THIRD_LAYER
+					onRemoved = arg2_6
 				}
 			}))
 		elseif arg1_6.type == DROP_TYPE_SPWEAPON then
@@ -53,8 +52,7 @@ function var0_0.register(arg0_1)
 				data = {
 					spWeaponConfigId = arg1_6:getConfig("id"),
 					type = SpWeaponInfoLayer.TYPE_DISPLAY,
-					onRemoved = arg2_6,
-					LayerWeightMgr_weight = LayerWeightConst.THIRD_LAYER
+					onRemoved = arg2_6
 				}
 			}))
 		else
@@ -62,8 +60,7 @@ function var0_0.register(arg0_1)
 				type = MSGBOX_TYPE_SINGLE_ITEM,
 				drop = arg1_6,
 				onNo = arg2_6,
-				onYes = arg2_6,
-				weight = LayerWeightConst.THIRD_LAYER
+				onYes = arg2_6
 			})
 		end
 	end)

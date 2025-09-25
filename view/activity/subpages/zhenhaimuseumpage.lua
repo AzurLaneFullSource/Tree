@@ -203,7 +203,9 @@ function var0_0.displayWindow(arg0_19, arg1_19)
 	if arg1_19 then
 		setActive(arg0_19.skinTf, true)
 		arg0_19.skinTf:GetComponent(typeof(Animation)):Play("anim_zhenhaimuseum_in")
-		pg.UIMgr.GetInstance():BlurPanel(arg0_19.skinTf, true)
+		pg.UIMgr.GetInstance():BlurPanel(arg0_19.skinTf, {
+			staticBlur = true
+		})
 
 		local var0_19 = arg0_19.taskGroup[arg0_19.nday][1]
 		local var1_19 = (arg0_19.taskProxy:getTaskById(var0_19) or arg0_19.taskProxy:getFinishTaskById(var0_19)):getTaskStatus()
@@ -226,7 +228,7 @@ function var0_0.displayWindow(arg0_19, arg1_19)
 			findTF(arg0_19.skinTf, "skins/skin" .. arg0_19.skinIndex):GetComponent(typeof(Animation)):Play("anim_zhenhaimuseum_skin_right")
 		end
 	else
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_19.skinTf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_19.skinTf)
 		arg0_19.skinTf:GetComponent(typeof(Animation)):Play("anim_zhenhaimuseum_out")
 		arg0_19:StartTimer(function()
 			setActive(arg0_19.skinTf, false)

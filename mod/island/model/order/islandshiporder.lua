@@ -30,7 +30,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	table.insert(arg0_1.awardList, {
 		id = 0,
 		type = VIRTUAL_DROP_TYPE_ISLAND_SEASON_PT,
-		count = arg1_1.add_pt
+		count = arg1_1.add_pt or 0
 	})
 end
 

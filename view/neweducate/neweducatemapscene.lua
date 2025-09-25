@@ -37,17 +37,25 @@ function var0_0.init(arg0_3)
 
 	arg0_3.shipUIList = UIItemList.New(var1_3, var1_3:Find("tpl"))
 	arg0_3.personalityTipPanel = NewEducatePersonalityTipPanel.New(arg0_3.adaptTF, arg0_3.event, arg0_3.contextData)
+
+	arg0_3.personalityTipPanel:RegisterView(arg0_3)
+
 	arg0_3.topPanel = NewEducateTopPanel.New(arg0_3.uiTF, arg0_3.event, setmetatable({
 		showBack = true
 	}, {
 		__index = arg0_3.contextData
 	}))
+
+	arg0_3.topPanel:RegisterView(arg0_3)
+
 	arg0_3.infoPanel = NewEducateInfoPanel.New(arg0_3.uiTF, arg0_3.event, setmetatable({
-		hide = true,
-		weight = LayerWeightConst.BASE_LAYER + 3
+		hide = true
 	}, {
 		__index = arg0_3.contextData
 	}))
+
+	arg0_3.infoPanel:RegisterView(arg0_3)
+
 	arg0_3.detailPanel = NewEducateSiteDetailPanel.New(arg0_3.uiTF, arg0_3.event, setmetatable({
 		onHide = function()
 			arg0_3:OnDetailHide()
@@ -55,6 +63,9 @@ function var0_0.init(arg0_3)
 	}, {
 		__index = arg0_3.contextData
 	}))
+
+	arg0_3.detailPanel:RegisterView(arg0_3)
+
 	arg0_3.nodePanel = NewEducateNodePanel.New(arg0_3.adaptTF, arg0_3.event, setmetatable({
 		onHide = function()
 			arg0_3:OnDetailHide()
@@ -70,6 +81,9 @@ function var0_0.init(arg0_3)
 	}, {
 		__index = arg0_3.contextData
 	}))
+
+	arg0_3.nodePanel:RegisterView(arg0_3)
+
 	arg0_3.extendLimit = Vector2(arg0_3.mapTF.rect.width - arg0_3._tf.rect.width, arg0_3.mapTF.rect.height - arg0_3._tf.rect.height) / 2
 	arg0_3.duration = 0.5
 	arg0_3.curSiteId = 0

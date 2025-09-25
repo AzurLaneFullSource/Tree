@@ -639,6 +639,11 @@ function var0_0.initSubView(arg0_48)
 		[ShopConst.SHOP_ID.SUPPLY] = var5_48,
 		[ShopConst.SHOP_ID.ACTIVITY] = var6_48
 	}
+
+	for iter0_48, iter1_48 in pairs(arg0_48.subViewList) do
+		iter1_48:RegisterView(arg0_48)
+	end
+
 	arg0_48.contextData.singleWindow = ShopSingleWindow.New(arg0_48._tf, arg0_48.event)
 	arg0_48.contextData.multiWindow = ShopMultiWindow.New(arg0_48._tf, arg0_48.event)
 	arg0_48.contextData.singleWindowForESkin = EquipmentSkinInfoUIForShopWindow.New(arg0_48._tf, arg0_48.event)
@@ -932,8 +937,7 @@ function var0_0.stopCV(arg0_66)
 end
 
 function var0_0.blurView(arg0_67)
-	pg.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_SUB, arg0_67.buttonList, {
-		groupName = "shop",
+	arg0_67:OverlayPanel(arg0_67.buttonList, {
 		pbList = {
 			arg0_67:findTF("leftBg", arg0_67.buttonList)
 		}
@@ -941,7 +945,7 @@ function var0_0.blurView(arg0_67)
 end
 
 function var0_0.unBlurView(arg0_68)
-	pg.LayerWeightMgr.GetInstance():DelFromOverlay(arg0_68.buttonList, arg0_68._tf)
+	arg0_68:UnOverlayPanel(arg0_68.buttonList, arg0_68._tf)
 end
 
 function var0_0.jpUIInit(arg0_69)

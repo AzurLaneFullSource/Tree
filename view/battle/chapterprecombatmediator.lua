@@ -53,8 +53,7 @@ function var0_0.register(arg0_1)
 
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
 						content = var0_9,
-						onYes = arg0_9,
-						weight = LayerWeightConst.SECOND_LAYER
+						onYes = arg0_9
 					})
 				else
 					arg0_9()
@@ -124,8 +123,7 @@ function var0_0.handleNotification(arg0_15, arg1_15)
 				content = i18n("battle_preCombatMediator_timeout"),
 				onYes = function()
 					arg0_15.viewComponent:emit(BaseUI.ON_CLOSE)
-				end,
-				weight = LayerWeightConst.SECOND_LAYER
+				end
 			})
 		end
 	elseif var0_15 == GAME.CHAPTER_OP_DONE and (var1_15.type == ChapterConst.OpStrategy or var1_15.type == ChapterConst.OpRepair or var1_15.type == ChapterConst.OpRequest) then

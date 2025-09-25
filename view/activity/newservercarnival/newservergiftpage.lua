@@ -91,6 +91,7 @@ function var0_0.confirm(arg0_9, arg1_9)
 		isMonthCard = false,
 		isChargeType = false,
 		isLocalPrice = false,
+		commodity = arg1_9,
 		icon = var2_9.icon,
 		name = var2_9.name,
 		tipExtra = i18n("charge_title_getitem"),

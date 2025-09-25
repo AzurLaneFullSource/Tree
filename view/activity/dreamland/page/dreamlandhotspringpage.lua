@@ -111,7 +111,7 @@ end
 
 function var0_0.Hide(arg0_14)
 	var0_0.super.Hide(arg0_14)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_14._tf, arg0_14._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_14._tf, arg0_14._parentTf)
 end
 
 function var0_0.OnDestroy(arg0_15)

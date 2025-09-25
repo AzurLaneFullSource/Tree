@@ -52,7 +52,7 @@ pg.shop_banner_template = {
 				{
 					2025,
 					9,
-					12
+					25
 				},
 				{
 					0,
@@ -64,7 +64,7 @@ pg.shop_banner_template = {
 				{
 					2025,
 					10,
-					2
+					22
 				},
 				{
 					23,
@@ -121,7 +121,7 @@ pg.shop_banner_template = {
 		}
 	},
 	[20] = {
-		order = 8,
+		order = 7,
 		name = "banner_middle",
 		type = 2,
 		id = 20,
@@ -165,7 +165,7 @@ pg.shop_banner_template = {
 		}
 	},
 	[21] = {
-		order = 7,
+		order = 6,
 		name = "banner_middle",
 		type = 2,
 		id = 21,
@@ -225,7 +225,7 @@ pg.shop_banner_template = {
 		}
 	},
 	[23] = {
-		order = 10,
+		order = 9,
 		name = "banner_middle",
 		type = 2,
 		id = 23,
@@ -269,7 +269,7 @@ pg.shop_banner_template = {
 		}
 	},
 	[24] = {
-		order = 9,
+		order = 8,
 		name = "banner_middle",
 		type = 2,
 		id = 24,
@@ -310,6 +310,50 @@ pg.shop_banner_template = {
 		relation_param = {
 			1,
 			99
+		}
+	},
+	[25] = {
+		order = 10,
+		name = "banner_middle",
+		type = 2,
+		id = 25,
+		pic = "shopbanner/shop_pack_bg",
+		time_lable = 1,
+		time = {
+			{
+				{
+					2025,
+					9,
+					25
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					10,
+					22
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		param = {
+			"scene charge",
+			{
+				warp = 4
+			}
+		},
+		relation_param = {
+			1,
+			9001
 		}
 	},
 	[30] = {
@@ -444,7 +488,8 @@ pg.shop_banner_template = {
 			21,
 			22,
 			23,
-			24
+			24,
+			25
 		},
 		banner_small1 = {
 			30,
@@ -470,6 +515,7 @@ pg.shop_banner_template = {
 		22,
 		23,
 		24,
+		25,
 		30,
 		31,
 		40,

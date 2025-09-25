@@ -460,7 +460,7 @@ end
 
 function var0_0.OnDestroy(arg0_46)
 	if arg0_46.isBlur then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_46.blurPanel, arg0_46.blurPanelParent)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_46.blurPanel, arg0_46.blurPanelParent)
 	end
 
 	if arg0_46.renamePanel then
@@ -478,7 +478,7 @@ function var0_0.Blur(arg0_47)
 	else
 		arg0_47.isBlur = false
 
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_47.blurPanel, arg0_47.blurPanelParent)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_47.blurPanel, arg0_47.blurPanelParent)
 	end
 end
 

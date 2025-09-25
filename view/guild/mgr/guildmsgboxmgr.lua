@@ -86,8 +86,7 @@ function var0_0.RefreshView(arg0_5, arg1_5)
 
 		arg0_5:Hide()
 	end, SFX_PANEL)
-	pg.UIMgr:GetInstance():BlurPanel(arg0_5._tf, false, {
-		weight = LayerWeightConst.TOP_LAYER,
+	pg.UIMgr.GetInstance():BlurPanel(arg0_5._tf, {
 		blurCamList = arg1_5.blurCamList
 	})
 	arg0_5._tf:SetAsLastSibling()
@@ -97,7 +96,7 @@ function var0_0.Close(arg0_10)
 	if arg0_10._tf and isActive(arg0_10._tf) then
 		arg0_10.settings = nil
 
-		pg.UIMgr:GetInstance():UnblurPanel(arg0_10._tf, arg0_10.UIOverlay)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_10._tf, arg0_10.UIOverlay)
 		setActive(arg0_10._tf, false)
 	end
 end

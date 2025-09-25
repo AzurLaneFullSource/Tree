@@ -75,8 +75,7 @@ function var0_0.didEnter(arg0_6)
 	onButton(arg0_6, arg0_6._tf:Find("Help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = pg.gametip.fighterplane_help.tip,
-			weight = LayerWeightConst.SECOND_LAYER
+			helps = pg.gametip.fighterplane_help.tip
 		})
 	end, SFX_PANEL)
 	onButton(arg0_6, arg0_6._tf:Find("Battle"), function()
@@ -97,8 +96,7 @@ function var0_0.didEnter(arg0_6)
 		if var1_9 >= arg0_6.activity:GetPerLevelProgress() then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("fighterplane_complete_tip"),
-				onYes = var2_9,
-				weight = LayerWeightConst.SECOND_LAYER
+				onYes = var2_9
 			})
 		else
 			var2_9()

@@ -68,8 +68,7 @@ function var0_0.CheckShipExpItemOverflow(arg0_6, arg1_6, arg2_6)
 	end) then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("player_expResource_mail_fullBag"),
-			onYes = arg2_6,
-			weight = LayerWeightConst.THIRD_LAYER
+			onYes = arg2_6
 		})
 	else
 		arg2_6()

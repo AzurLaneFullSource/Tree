@@ -234,11 +234,10 @@ function var0_0.onAdded(arg0_34)
 			end
 
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				noText = "text_iknow",
 				yesText = "text_forward",
+				noText = "text_iknow",
 				content = i18n("tip_add_task", arg0_34:getConfig("name")),
-				onYes = var1_35,
-				weight = LayerWeightConst.TOP_LAYER
+				onYes = var1_35
 			})
 		end
 

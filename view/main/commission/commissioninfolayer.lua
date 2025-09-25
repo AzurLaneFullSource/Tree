@@ -47,13 +47,11 @@ function var0_0.init(arg0_2)
 end
 
 function var0_0.BlurPanel(arg0_3)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf, false, {
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf)
 end
 
 function var0_0.UnBlurPanel(arg0_4)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_4._tf, arg0_4.parentTr)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_4._tf, arg0_4.parentTr)
 end
 
 function var0_0.UpdataClassUnlock(arg0_5)

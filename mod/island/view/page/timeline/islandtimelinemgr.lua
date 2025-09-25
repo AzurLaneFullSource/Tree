@@ -92,6 +92,7 @@ function var0_0.PlaySceneTimeline(arg0_10, arg1_10, arg2_10, arg3_10)
 			arg0_10:UnloadCharacter()
 			arg0_10:RevertReplace()
 			var1_10:UnLoad()
+			_IslandCore:GetView().weatherSystem:Play()
 			gcAll(false)
 			SceneOpMgr.Inst:SetActiveSceneByIndex(1)
 			arg0_16()
@@ -273,21 +274,19 @@ function var0_0.ReplaceTracks(arg0_27, arg1_27, arg2_27, arg3_27)
 
 	for iter2_27, iter3_27 in pairs(var0_27) do
 		local var4_27 = GameObject.Find(iter2_27):GetComponent(typeof(UnityEngine.Playables.PlayableDirector))
-		local var5_27 = TimelineHelper.GetTimelineTracks(var4_27)
+		local var5_27 = TimelineHelper.GetTimelineTracks(var4_27):ToTable()
 		local var6_27 = {}
 
-		for iter4_27 = 0, var5_27.Length - 1 do
-			local var7_27 = var5_27[iter4_27]
-
-			var6_27[var7_27.name] = var7_27
+		for iter4_27, iter5_27 in ipairs(var5_27) do
+			var6_27[iter5_27.name] = iter5_27
 		end
 
-		for iter5_27, iter6_27 in ipairs(iter3_27) do
-			local var8_27 = tonumber(iter6_27[1])
-			local var9_27 = var8_27 and var5_27[var8_27] or var6_27[iter6_27[1]]
+		for iter6_27, iter7_27 in ipairs(iter3_27) do
+			local var7_27 = tonumber(iter7_27[1])
+			local var8_27 = var7_27 and var5_27[var7_27 + 1] or var6_27[iter7_27[1]]
 
-			if var9_27 then
-				TimelineHelper.SetSceneBinding(var4_27, var9_27, var4_0(arg1_27, iter6_27[2]))
+			if var8_27 then
+				TimelineHelper.SetSceneBinding(var4_27, var8_27, var4_0(arg1_27, iter7_27[2]))
 			end
 		end
 	end
@@ -302,17 +301,14 @@ function var0_0.ReplcaeCamTracks(arg0_28, arg1_28)
 		return
 	end
 
-	local var1_28 = var0_28.transform:GetComponentsInChildren(typeof(UnityEngine.Playables.PlayableDirector), true)
+	local var1_28 = var0_28.transform:GetComponentsInChildren(typeof(UnityEngine.Playables.PlayableDirector), true):ToTable()
 
-	for iter0_28 = 1, var1_28.Length do
-		local var2_28 = var1_28[iter0_28 - 1]
-		local var3_28 = TimelineHelper.GetTimelineTracks(var2_28)
+	for iter0_28, iter1_28 in ipairs(var1_28) do
+		local var2_28 = TimelineHelper.GetTimelineTracks(iter1_28):ToTable()
 
-		for iter1_28 = 0, var3_28.Length - 1 do
-			local var4_28 = var3_28[iter1_28]
-
-			if var4_28:GetType():ToString() == "CinemachineTrack" then
-				TimelineHelper.SetSceneBinding(var2_28, var4_28, IslandCameraMgr.instance.cinemachineBrain)
+		for iter2_28, iter3_28 in ipairs(var2_28) do
+			if iter3_28:GetType():ToString() == "CinemachineTrack" then
+				TimelineHelper.SetSceneBinding(iter1_28, iter3_28, IslandCameraMgr.instance.cinemachineBrain)
 			end
 		end
 	end

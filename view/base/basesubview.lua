@@ -20,218 +20,232 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 	arg0_1._funcQueue = {}
 end
 
-function var0_0.SetExtra(arg0_2, arg1_2)
-	arg0_2.extraGameObject = go(arg1_2)
+var0_0.InheritFuncs = {
+	"getGroupName",
+	"Add2Overlay",
+	"DelFromOverlay",
+	"OverlayPanel",
+	"UnOverlayPanel",
+	"BlurPanel",
+	"TempOverlayPanelPB",
+	"TempUnOverlayPanelPB"
+}
+
+function var0_0.RegisterView(arg0_2, arg1_2)
+	arg0_2.viewComponent = arg1_2
+
+	for iter0_2, iter1_2 in ipairs(var0_0.InheritFuncs) do
+		arg0_2[iter1_2] = arg0_2[iter1_2] or function(arg0_3, ...)
+			return arg0_3.viewComponent[iter1_2](arg0_3.viewComponent, ...)
+		end
+	end
 end
 
-function var0_0.Load(arg0_3)
-	if arg0_3._state ~= var0_0.STATES.NONE then
+function var0_0.Load(arg0_4, arg1_4)
+	if arg0_4._state ~= var0_0.STATES.NONE then
 		return
 	end
 
-	arg0_3._state = var0_0.STATES.LOADING
+	arg0_4._state = var0_0.STATES.LOADING
 
 	pg.UIMgr.GetInstance():LoadingOn()
 
-	local var0_3 = PoolMgr.GetInstance()
+	local var0_4 = PoolMgr.GetInstance()
 
 	seriesAsync({
-		function(arg0_4)
-			if arg0_3.extraGameObject then
-				arg0_4(arg0_3.extraGameObject)
+		function(arg0_5)
+			if arg1_4 then
+				arg0_4.noReturnPrefab = true
+
+				arg0_5(arg1_4)
 			else
-				var0_3:GetUI(arg0_3:getUIName(), true, arg0_4)
+				var0_4:GetUI(arg0_4:getUIName(), true, arg0_5)
 			end
 		end
-	}, function(arg0_5)
-		if arg0_3._state == var0_0.STATES.DESTROY and not arg0_3.extraGameObject then
+	}, function(arg0_6)
+		if arg0_4._state == var0_0.STATES.DESTROY and not arg0_4.noReturnPrefab then
 			pg.UIMgr.GetInstance():LoadingOff()
-			var0_3:ReturnUI(arg0_3:getUIName(), arg0_5)
+			var0_4:ReturnUI(arg0_4:getUIName(), arg0_6)
 		else
-			arg0_3:Loaded(arg0_5)
-			arg0_3:Init()
+			arg0_4:Loaded(arg0_6)
+			arg0_4:Init()
 		end
 	end)
 end
 
-function var0_0.Loaded(arg0_6, arg1_6)
+function var0_0.Loaded(arg0_7, arg1_7)
 	pg.UIMgr.GetInstance():LoadingOff()
 
-	if arg0_6._state ~= var0_0.STATES.LOADING then
+	if arg0_7._state ~= var0_0.STATES.LOADING then
 		return
 	end
 
-	arg0_6._state = var0_0.STATES.LOADED
-	arg0_6._go = arg1_6
-	arg0_6._tf = tf(arg1_6)
+	arg0_7._state = var0_0.STATES.LOADED
+	arg0_7._go = arg1_7
+	arg0_7._tf = tf(arg1_7)
 
-	setActiveViaLayer(arg0_6._tf, true)
-	pg.DelegateInfo.New(arg0_6)
+	setActiveViaLayer(arg0_7._tf, true)
+	pg.DelegateInfo.New(arg0_7)
 
-	if arg0_6._tf.parent ~= arg0_6._parentTf then
-		SetParent(arg0_6._tf, arg0_6._parentTf, false)
+	if arg0_7._tf.parent ~= arg0_7._parentTf then
+		SetParent(arg0_7._tf, arg0_7._parentTf, false)
 	end
 
-	arg0_6:OnLoaded()
+	arg0_7:OnLoaded()
 end
 
-function var0_0.Init(arg0_7)
-	if arg0_7._state ~= var0_0.STATES.LOADED then
+function var0_0.Init(arg0_8)
+	if arg0_8._state ~= var0_0.STATES.LOADED then
 		return
 	end
 
-	arg0_7._state = var0_0.STATES.INITED
+	arg0_8._state = var0_0.STATES.INITED
 
-	arg0_7:OnInit()
-	arg0_7:HandleFuncQueue()
+	bindComponent(arg0_8, arg0_8._go)
+	arg0_8:OnInit()
+	arg0_8:HandleFuncQueue()
 end
 
-function var0_0.Destroy(arg0_8)
-	if arg0_8._state == var0_0.STATES.DESTROY then
+function var0_0.Destroy(arg0_9)
+	if arg0_9._state == var0_0.STATES.DESTROY then
 		return
 	end
 
-	if not arg0_8:GetLoaded() then
-		arg0_8._state = var0_0.STATES.DESTROY
+	if not arg0_9:GetLoaded() then
+		arg0_9._state = var0_0.STATES.DESTROY
 
 		return
 	end
 
-	arg0_8._state = var0_0.STATES.DESTROY
+	arg0_9._state = var0_0.STATES.DESTROY
 
-	pg.DelegateInfo.Dispose(arg0_8)
-	arg0_8:OnDestroy()
-	arg0_8:disposeEvent()
-	arg0_8:cleanManagedTween()
+	pg.DelegateInfo.Dispose(arg0_9)
+	arg0_9:OnDestroy()
+	arg0_9:disposeEvent()
+	arg0_9:cleanManagedTween()
 
-	arg0_8._tf = nil
+	arg0_9._tf = nil
 
-	if arg0_8._go ~= nil and not arg0_8.extraGameObject then
-		PoolMgr.GetInstance():ReturnUI(arg0_8:getUIName(), arg0_8._go)
+	if arg0_9._go ~= nil and not arg0_9.noReturnPrefab then
+		PoolMgr.GetInstance():ReturnUI(arg0_9:getUIName(), arg0_9._go)
 
-		arg0_8._go = nil
+		arg0_9._go = nil
 	end
 
-	arg0_8.extraGameObject = nil
+	arg0_9.noReturnPrefab = nil
 end
 
-function var0_0.HandleFuncQueue(arg0_9)
-	if arg0_9._state == var0_0.STATES.INITED then
-		while #arg0_9._funcQueue > 0 do
-			local var0_9 = table.remove(arg0_9._funcQueue, 1)
+function var0_0.HandleFuncQueue(arg0_10)
+	if arg0_10._state == var0_0.STATES.INITED then
+		while #arg0_10._funcQueue > 0 do
+			local var0_10 = table.remove(arg0_10._funcQueue, 1)
 
-			var0_9.func(unpackEx(var0_9.params))
+			var0_10.func(unpackEx(var0_10.params))
 		end
 	end
 end
 
-function var0_0.Reset(arg0_10)
-	arg0_10._state = var0_0.STATES.NONE
+function var0_0.Reset(arg0_11)
+	arg0_11._state = var0_0.STATES.NONE
 end
 
-function var0_0.ActionInvoke(arg0_11, arg1_11, ...)
-	assert(arg0_11[arg1_11], "func not exist >>>" .. arg1_11)
+function var0_0.ActionInvoke(arg0_12, arg1_12, ...)
+	assert(arg0_12[arg1_12], "func not exist >>>" .. arg1_12)
 
-	arg0_11._funcQueue[#arg0_11._funcQueue + 1] = {
-		funcName = arg1_11,
-		func = arg0_11[arg1_11],
-		params = packEx(arg0_11, ...)
+	arg0_12._funcQueue[#arg0_12._funcQueue + 1] = {
+		funcName = arg1_12,
+		func = arg0_12[arg1_12],
+		params = packEx(arg0_12, ...)
 	}
 
-	arg0_11:HandleFuncQueue()
+	arg0_12:HandleFuncQueue()
 end
 
-function var0_0.ActionInvokeExclusive(arg0_12, arg1_12, ...)
-	local var0_12 = #arg0_12._funcQueue
+function var0_0.ActionInvokeExclusive(arg0_13, arg1_13, ...)
+	local var0_13 = #arg0_13._funcQueue
 
-	while var0_12 > 0 do
-		if arg0_12._funcQueue[var0_12].funcName == arg1_12 then
-			table.remove(arg0_12._funcQueue, var0_12)
+	while var0_13 > 0 do
+		if arg0_13._funcQueue[var0_13].funcName == arg1_13 then
+			table.remove(arg0_13._funcQueue, var0_13)
 		end
 
-		var0_12 = var0_12 - 1
+		var0_13 = var0_13 - 1
 	end
 
-	arg0_12:ActionInvoke(arg1_12, ...)
+	arg0_13:ActionInvoke(arg1_13, ...)
 end
 
-function var0_0.CallbackInvoke(arg0_13, arg1_13, ...)
-	arg0_13._funcQueue[#arg0_13._funcQueue + 1] = {
-		func = arg1_13,
+function var0_0.CallbackInvoke(arg0_14, arg1_14, ...)
+	arg0_14._funcQueue[#arg0_14._funcQueue + 1] = {
+		func = arg1_14,
 		params = packEx(...)
 	}
 
-	arg0_13:HandleFuncQueue()
+	arg0_14:HandleFuncQueue()
 end
 
-function var0_0.ExecuteAction(arg0_14, arg1_14, ...)
-	arg0_14:Load()
-	arg0_14:ActionInvoke(arg1_14, ...)
+function var0_0.ExecuteAction(arg0_15, arg1_15, ...)
+	arg0_15:Load()
+	arg0_15:ActionInvoke(arg1_15, ...)
 end
 
-function var0_0.GetLoaded(arg0_15)
-	return arg0_15._state >= var0_0.STATES.LOADED
+function var0_0.GetLoaded(arg0_16)
+	return arg0_16._state >= var0_0.STATES.LOADED
 end
 
-function var0_0.CheckState(arg0_16, arg1_16)
-	return arg0_16._state == arg1_16
+function var0_0.CheckState(arg0_17, arg1_17)
+	return arg0_17._state == arg1_17
 end
 
-function var0_0.Show(arg0_17)
-	setActive(arg0_17._tf, true)
-	arg0_17:ShowOrHideResUI(true)
-	arg0_17:PlayBGM()
+function var0_0.Show(arg0_18)
+	setActive(arg0_18._tf, true)
+	arg0_18:ShowOrHideResUI(true)
+	arg0_18:PlayBGM()
 end
 
-function var0_0.Hide(arg0_18)
-	setActive(arg0_18._tf, false)
-	arg0_18:ShowOrHideResUI(false)
-	arg0_18:StopBgm()
+function var0_0.Hide(arg0_19)
+	setActive(arg0_19._tf, false)
+	arg0_19:ShowOrHideResUI(false)
+	arg0_19:StopBgm()
 end
 
-function var0_0.isShowing(arg0_19)
-	return arg0_19._tf and isActive(arg0_19._tf)
+function var0_0.isShowing(arg0_20)
+	return arg0_20._tf and isActive(arg0_20._tf)
 end
 
-function var0_0.getBGM(arg0_20, arg1_20)
-	return getBgm(arg1_20 or arg0_20.__cname)
+function var0_0.getBGM(arg0_21, arg1_21)
+	return getBgm(arg1_21 or arg0_21.__cname)
 end
 
-function var0_0.PlayBGM(arg0_21)
-	local var0_21 = arg0_21:getBGM()
+function var0_0.PlayBGM(arg0_22)
+	local var0_22 = arg0_22:getBGM()
 
-	if var0_21 then
-		pg.BgmMgr.GetInstance():Push(arg0_21.__cname, var0_21)
+	if var0_22 then
+		pg.BgmMgr.GetInstance():Push(arg0_22.__cname, var0_22)
 	end
 end
 
-function var0_0.StopBgm(arg0_22)
-	pg.BgmMgr.GetInstance():Pop(arg0_22.__cname)
+function var0_0.StopBgm(arg0_23)
+	pg.BgmMgr.GetInstance():Pop(arg0_23.__cname)
 end
 
-function var0_0.findTF(arg0_23, arg1_23, arg2_23)
-	assert(arg0_23._tf, "transform should exist")
+function var0_0.findTF(arg0_24, arg1_24, arg2_24)
+	assert(arg0_24._tf, "transform should exist")
 
-	return findTF(arg2_23 or arg0_23._tf, arg1_23)
+	return findTF(arg2_24 or arg0_24._tf, arg1_24)
 end
 
-function var0_0.getTpl(arg0_24, arg1_24, arg2_24)
-	local var0_24 = arg0_24:findTF(arg1_24, arg2_24)
+function var0_0.getTpl(arg0_25, arg1_25, arg2_25)
+	local var0_25 = arg0_25:findTF(arg1_25, arg2_25)
 
-	var0_24:SetParent(arg0_24._tf, false)
-	SetActive(var0_24, false)
+	var0_25:SetParent(arg0_25._tf, false)
+	SetActive(var0_25, false)
 
-	return var0_24
+	return var0_25
 end
 
-function var0_0.getUIName(arg0_25)
+function var0_0.getUIName(arg0_26)
 	return nil
-end
-
-function var0_0.preloadUIList(arg0_26)
-	return {
-		arg0_26:getUIName()
-	}
 end
 
 function var0_0.OnLoaded(arg0_27)
@@ -264,14 +278,21 @@ function var0_0.ShowOrHideResUI(arg0_31, arg1_31)
 		}
 	end
 
-	pg.playerResUI:SetActive(setmetatable({
-		active = arg1_31,
-		weight = var0_31.weight,
-		groupName = var0_31.groupName,
-		canvasOrder = var0_31.order or false
-	}, {
-		__index = var0_31
-	}))
+	local var1_31 = arg0_31:getGroupName()
+
+	if arg1_31 then
+		pg.playerResUI:SetSettings(var1_31, setmetatable({
+			groupName = var1_31
+		}, {
+			__index = var0_31
+		}))
+	else
+		pg.playerResUI:RemoveSettings(var1_31)
+	end
+end
+
+function var0_0.getGroupName(arg0_32)
+	return arg0_32.contextData.groupName or arg0_32.__cname
 end
 
 return var0_0

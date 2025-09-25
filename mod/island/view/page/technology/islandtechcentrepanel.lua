@@ -5,131 +5,152 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	local var0_2 = arg0_2._tf:Find("view/content")
+	arg0_2.viewTF = arg0_2._tf:Find("view")
+	arg0_2.scrollRect = arg0_2.viewTF:GetComponent("LScrollRect")
 
-	arg0_2.uiList = UIItemList.New(var0_2, var0_2:Find("tpl"))
-end
-
-function var0_0.OnInit(arg0_3)
-	arg0_3.uiList:make(function(arg0_4, arg1_4, arg2_4)
-		if arg0_4 == UIItemList.EventInit then
-			arg0_3:InitVerticalItem(arg1_4, arg2_4)
-		elseif arg0_4 == UIItemList.EventUpdate then
-			arg0_3:UpdateVerticalItem(arg1_4, arg2_4)
-		end
-	end)
-	arg0_3:InifConfigData()
-end
-
-function var0_0.InifConfigData(arg0_5)
-	arg0_5.config = pg.island_technology_template
-	arg0_5.level2Ids = {}
-	arg0_5.levels = {}
-
-	for iter0_5, iter1_5 in ipairs(arg0_5.config.get_id_list_by_tech_belong[IslandTechBelong.CENTRE]) do
-		local var0_5 = arg0_5.config[iter1_5].island_level
-
-		if not arg0_5.level2Ids[var0_5] then
-			arg0_5.level2Ids[var0_5] = {}
-
-			table.insert(arg0_5.levels, var0_5)
-		end
-
-		table.insert(arg0_5.level2Ids[var0_5], iter1_5)
+	function arg0_2.scrollRect.onInitItem(arg0_3)
+		arg0_2:OnInitItem(arg0_3)
 	end
 
-	table.sort(arg0_5.levels)
-
-	arg0_5.level2UIList = {}
+	function arg0_2.scrollRect.onUpdateItem(arg0_4, arg1_4)
+		arg0_2:OnUpdateItem(arg0_4, arg1_4)
+	end
 end
 
-function var0_0.InitVerticalItem(arg0_6, arg1_6, arg2_6)
-	local var0_6 = arg0_6.levels[arg1_6 + 1]
+function var0_0.OnInit(arg0_5)
+	arg0_5:InifConfigData()
 
-	setText(arg2_6:Find("level/lv"), "LV." .. var0_6)
-	setActive(arg2_6:Find("line"), arg1_6 + 1 ~= #arg0_6.levels)
+	arg0_5.cards = {}
+end
 
-	local var1_6 = arg0_6.level2Ids[var0_6]
-	local var2_6 = arg2_6:Find("items_view/content")
-	local var3_6 = UIItemList.New(var2_6, var2_6:Find("tpl"))
+function var0_0.InifConfigData(arg0_6)
+	arg0_6.config = pg.island_technology_template
+	arg0_6.level2Ids = {}
+	arg0_6.levels = {}
+	arg0_6.allIds = arg0_6.config.get_id_list_by_tech_belong[IslandTechBelong.CENTRE]
 
-	var3_6:make(function(arg0_7, arg1_7, arg2_7)
-		if arg0_7 == UIItemList.EventInit then
-			arg2_6.name = var0_6
+	for iter0_6, iter1_6 in ipairs(arg0_6.allIds) do
+		local var0_6 = arg0_6.config[iter1_6].island_level
 
-			arg0_6:InitItem(arg1_7, arg2_7, var0_6)
-		elseif arg0_7 == UIItemList.EventUpdate then
-			arg0_6:UpdateItem(arg1_7, arg2_7, var0_6)
+		if not arg0_6.level2Ids[var0_6] then
+			arg0_6.level2Ids[var0_6] = {}
+
+			table.insert(arg0_6.levels, var0_6)
 		end
+
+		table.insert(arg0_6.level2Ids[var0_6], iter1_6)
+	end
+
+	for iter2_6, iter3_6 in pairs(arg0_6.level2Ids) do
+		table.sort(iter3_6, CompareFuncs({
+			function(arg0_7)
+				return arg0_6.config[arg0_7].axis[2]
+			end,
+			function(arg0_8)
+				return arg0_8
+			end
+		}))
+	end
+
+	table.sort(arg0_6.levels)
+
+	arg0_6.level2UIList = {}
+end
+
+function var0_0.OnInitItem(arg0_9, arg1_9)
+	local var0_9 = IslandTechCentreCard.New(arg1_9)
+
+	arg0_9.cards[arg1_9] = var0_9
+end
+
+function var0_0.OnUpdateItem(arg0_10, arg1_10, arg2_10)
+	local var0_10 = arg0_10.cards[arg2_10]
+
+	if not var0_10 then
+		arg0_10:OnInitItem(arg1_10, arg2_10)
+
+		var0_10 = arg0_10.cards[arg2_10]
+	end
+
+	local var1_10 = arg1_10 + 1
+	local var2_10 = arg0_10.levels[var1_10]
+	local var3_10 = arg0_10.level2Ids[var2_10]
+	local var4_10 = arg0_10.levels[arg1_10]
+	local var5_10 = var4_10 and arg0_10.level2Ids[var4_10] or {}
+	local var6_10 = var2_10 > arg0_10.islandLevel or arg0_10:IsAnyUnFinish(var5_10)
+	local var7_10 = var1_10 == #arg0_10.levels
+
+	var0_10:Update(var2_10, var3_10, var7_10, var6_10, arg0_10.contextData.onItemClick)
+end
+
+function var0_0.IsAnyUnFinish(arg0_11, arg1_11)
+	return underscore.any(arg1_11, function(arg0_12)
+		return not arg0_11.techAgency:IsFinishedTech(arg0_12)
 	end)
-
-	arg0_6.level2UIList[var0_6] = var3_6
 end
 
-function var0_0.UpdateVerticalItem(arg0_8, arg1_8, arg2_8)
-	local var0_8 = arg0_8.levels[arg1_8 + 1]
-	local var1_8 = arg0_8.level2Ids[var0_8]
-
-	arg0_8.level2UIList[var0_8]:align(#var1_8)
-
-	local var2_8 = arg0_8.levels[arg1_8]
-	local var3_8 = var2_8 and arg0_8.level2Ids[var2_8] or {}
-
-	setActive(arg2_8:Find("lock"), var0_8 > arg0_8.islandLevel or arg0_8:IsAnyUnFinish(var3_8))
+function var0_0.Show(arg0_13)
+	arg0_13.super.Show(arg0_13)
+	arg0_13:Flush()
+	arg0_13:AutoFocus()
 end
 
-function var0_0.IsAnyUnFinish(arg0_9, arg1_9)
-	return underscore.any(arg1_9, function(arg0_10)
-		return not arg0_9.techAgency:IsFinishedTech(arg0_10)
-	end)
+function var0_0.Flush(arg0_14)
+	local var0_14 = getProxy(IslandProxy):GetIsland()
+
+	arg0_14.islandLevel = var0_14:GetLevel()
+	arg0_14.techAgency = var0_14:GetTechnologyAgency()
+
+	arg0_14.scrollRect:SetTotalCount(#arg0_14.levels, -1)
 end
 
-function var0_0.InitItem(arg0_11, arg1_11, arg2_11, arg3_11)
-	local var0_11 = arg0_11.level2Ids[arg3_11]
-	local var1_11 = var0_11[arg1_11 + 1]
+function var0_0.AutoFocus(arg0_15)
+	local var0_15 = arg0_15:GetFocusTechId()
+	local var1_15 = arg0_15.config[var0_15].island_level
+	local var2_15 = table.indexof(arg0_15.levels, var1_15)
 
-	arg2_11.name = var1_11
-
-	local var2_11 = arg0_11.techAgency:GetTechnology(var0_11[arg1_11 + 1])
-
-	setText(arg2_11:Find("corner/Text"), arg0_11.config[var1_11].tech_level)
-	LoadImageSpriteAsync("island/IslandTechnology/" .. arg0_11.config[var1_11].tech_icon, arg2_11:Find("icon"), true)
-	setActive(arg2_11:Find("line"), arg1_11 + 1 ~= #var0_11)
+	arg0_15.scrollRect:ScrollTo(math.max(var2_15 - 4, 0) / (#arg0_15.levels - 7))
 end
 
-function var0_0.UpdateItem(arg0_12, arg1_12, arg2_12, arg3_12)
-	local var0_12 = arg0_12.level2Ids[arg3_12]
-	local var1_12 = var0_12[arg1_12 + 1]
-	local var2_12 = arg0_12.techAgency:GetTechnology(var0_12[arg1_12 + 1])
-	local var3_12 = var2_12:GetStatus()
+function var0_0.GetFocusTechId(arg0_16)
+	local var0_16 = {}
 
-	setActive(arg2_12:Find("receive"), var3_12 == IslandTechnology.STATUS.RECEIVE)
-	setActive(arg2_12:Find("studying"), var3_12 == IslandTechnology.STATUS.STUDYING)
+	for iter0_16, iter1_16 in ipairs(arg0_16.allIds) do
+		local var1_16 = arg0_16.techAgency:GetTechnology(iter1_16):GetStatus()
 
-	local var4_12 = var3_12 == IslandTechnology.STATUS.STUDYING or var3_12 == IslandTechnology.STATUS.NORMAL and var2_12:GetFinishedCnt() == 0
+		if not var0_16[var1_16] then
+			var0_16[var1_16] = {}
+		end
 
-	setImageAlpha(arg2_12:Find("icon"), var4_12 and 0.5 or 1)
-	onButton(arg0_12, arg2_12, function()
-		existCall(arg0_12.contextData.onItemClick, var2_12.id)
-	end, SFX_PANEL)
+		table.insert(var0_16[var1_16], iter1_16)
+	end
+
+	for iter2_16, iter3_16 in ipairs(IslandTechTreePanel.FocusPriorities) do
+		local var2_16 = var0_16[iter3_16]
+
+		if var2_16 and #var2_16 > 0 then
+			table.sort(var2_16, CompareFuncs({
+				function(arg0_17)
+					return arg0_16.config[arg0_17].island_level
+				end,
+				function(arg0_18)
+					return arg0_18
+				end
+			}))
+
+			return var2_16[1]
+		end
+	end
+
+	return arg0_16.allIds[1]
 end
 
-function var0_0.Show(arg0_14)
-	arg0_14.super.Show(arg0_14)
-	arg0_14:Flush()
-end
+function var0_0.OnDestroy(arg0_19)
+	for iter0_19, iter1_19 in pairs(arg0_19.cards) do
+		iter1_19:Dispose()
+	end
 
-function var0_0.Flush(arg0_15)
-	local var0_15 = getProxy(IslandProxy):GetIsland()
-
-	arg0_15.islandLevel = var0_15:GetLevel()
-	arg0_15.techAgency = var0_15:GetTechnologyAgency()
-
-	arg0_15.uiList:align(#arg0_15.levels)
-end
-
-function var0_0.OnDestroy(arg0_16)
-	return
+	arg0_19.cards = {}
 end
 
 return var0_0

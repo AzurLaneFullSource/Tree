@@ -68,7 +68,7 @@ function var0_0.Show(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 	arg0_8.callback = arg4_8
 
 	arg0_8:UpdateList()
-	pg.LayerWeightMgr.GetInstance():Add2Overlay(LayerWeightConst.UI_TYPE_SUB, arg0_8._tf, {})
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_8._tf)
 	arg0_8.anim:Play("anim_monopolycar_pick_in")
 	arg0_8:CheckAuto(arg3_8)
 end
@@ -102,7 +102,7 @@ function var0_0.Hide(arg0_10)
 
 	arg0_10.selectedId = 0
 
-	pg.LayerWeightMgr.GetInstance():DelFromOverlay(arg0_10._tf, arg0_10._parentTf)
+	pg.UIMgr.GetInstagramList():UnOverlayPanel(arg0_10._tf, arg0_10._parentTf)
 end
 
 function var0_0.OnDestroy(arg0_11)

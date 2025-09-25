@@ -80,10 +80,8 @@ function var0_0.init(arg0_2)
 end
 
 function var0_0.didEnter(arg0_9)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_9._tf, {
-		groupName = arg0_9:getGroupNameFromData()
-	})
-	pg.UIMgr.GetInstance():BlurPanel(arg0_9.rtBlurPanel, false, {
+	arg0_9:BlurPanel(arg0_9._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_9.rtBlurPanel, {
 		blurLevelCamera = true
 	})
 	onButton(arg0_9, arg0_9.btnBack, function()
@@ -102,8 +100,8 @@ function var0_0.onBackPressed(arg0_13)
 end
 
 function var0_0.willExit(arg0_14)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_14.rtBlurPanel, arg0_14._tf)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_14._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_14.rtBlurPanel, arg0_14._tf)
+	arg0_14:UnOverlayPanel(arg0_14._tf)
 	arg0_14:DisposeTasks()
 	arg0_14.taskProxy:RemoveListener(WorldTaskProxy.EventUpdateDailyTaskIds, arg0_14.onUpdateTasks)
 
@@ -194,12 +192,12 @@ function var0_0.showTaskWindow(arg0_20, arg1_20)
 	end, SFX_PANEL)
 	setButtonEnabled(var2_20:Find("btn_go"), arg1_20:GetFollowingAreaId() or arg1_20:GetFollowingEntrance())
 	setActive(arg0_20.rtTaskWindow, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_20.rtTaskWindow, arg0_20._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_20.rtTaskWindow)
 end
 
 function var0_0.hideTaskWindow(arg0_25)
 	setActive(arg0_25.rtTaskWindow, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_25.rtTaskWindow, arg0_25._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_25.rtTaskWindow, arg0_25._tf)
 end
 
 return var0_0

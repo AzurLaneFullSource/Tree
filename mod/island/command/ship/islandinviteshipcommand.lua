@@ -16,6 +16,8 @@ function var0_0.execute(arg0_1, arg1_1)
 			arg0_1:sendNotification(GAME.ISLAND_INVITE_SHIP_DONE, {
 				ship = var0_2
 			})
+			IslandBookHelper.OnAddNewShip(var0_2.id)
+			IslandTaskHelper.UpdateRuntimeTaskByTargetType(IslandTaskTargetType.UNLOCK_SHIP)
 			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandUnlockShip(var0_1))
 		else
 			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)

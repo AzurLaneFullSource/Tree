@@ -166,7 +166,7 @@ function var0_0.didEnter(arg0_5)
 	end, SFX_PANEL)
 	onButton(arg0_5, arg0_5.selectBackBtn, function()
 		setActive(arg0_5.selectUI, false)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_5.selectUI, arg0_5._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_5.selectUI, arg0_5._tf)
 	end, SFX_PANEL)
 
 	arg0_5.canStartGame = false
@@ -178,7 +178,7 @@ function var0_0.didEnter(arg0_5)
 
 		setActive(arg0_5.mainUI, false)
 		setActive(arg0_5.selectUI, false)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_5.selectUI, arg0_5._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_5.selectUI, arg0_5._tf)
 		setActive(arg0_5.gameUI, true)
 		arg0_5:resetGameData()
 
@@ -258,7 +258,7 @@ function var0_0.didEnter(arg0_5)
 		setActive(arg0_5.gameUI, false)
 		setActive(arg0_5.endUI, false)
 		arg0_5:clearSpineChars()
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_5.endUI, arg0_5._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_5.endUI, arg0_5._tf)
 	end, SFX_PANEL)
 	arg0_5:initMainUI()
 end
@@ -507,7 +507,7 @@ function var0_0.firstShow(arg0_40, arg1_40)
 
 		PlayerPrefs.SetInt("volleyballgame_first_" .. var0_41, 1)
 		setActive(arg0_40.helpUI, false)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_40.helpUI, arg0_40._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_40.helpUI, arg0_40._tf)
 
 		if arg1_40 then
 			arg1_40()
@@ -530,7 +530,7 @@ function var0_0.startCountTimer(arg0_42)
 
 		if arg0_42.countTime <= 0 then
 			setActive(arg0_42.countTimeUI, false)
-			pg.UIMgr.GetInstance():UnblurPanel(arg0_42.countTimeUI, arg0_42._tf)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_42.countTimeUI, arg0_42._tf)
 			arg0_42:resetGameAni()
 			arg0_42:startGame()
 		else
@@ -1538,9 +1538,9 @@ end
 
 function var0_0.willExit(arg0_165)
 	arg0_165:clearSpineChars()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_165.selectUI, arg0_165._tf)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_165.endUI, arg0_165._tf)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_165.countTimeUI, arg0_165._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_165.selectUI, arg0_165._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_165.endUI, arg0_165._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_165.countTimeUI, arg0_165._tf)
 end
 
 function var0_0.onBackPressed(arg0_166)

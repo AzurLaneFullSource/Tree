@@ -6,7 +6,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var2_1 = var1_1:getData()
 
 	if not var2_1 then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_no_exist"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_no_exist"))
 
 		return
 	end
@@ -14,19 +14,19 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var3_1 = var2_1:getDonateTaskById(var0_1)
 
 	if not var3_1 then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_not_exist_donate_task"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_not_exist_donate_task"))
 
 		return
 	end
 
 	if not var3_1:canCommit() then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("common_no_resource"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 		return
 	end
 
 	if not var2_1:canDonate() then
-		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_donate_times_not enough"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_donate_times_not enough"))
 
 		return
 	end
@@ -83,7 +83,7 @@ function var0_0.execute(arg0_1, arg1_1)
 				techPoint = var10_2
 			})
 		else
-			pg.TipsMgr:GetInstance():ShowTips(errorTip("guild_dissolve_erro", arg0_2.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("guild_dissolve_erro", arg0_2.result))
 		end
 	end)
 end

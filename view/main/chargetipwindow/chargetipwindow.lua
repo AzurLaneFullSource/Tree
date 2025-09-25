@@ -57,9 +57,7 @@ function var0_0.Show(arg0_5, arg1_5)
 	}, function()
 		arg0_5:RegisterEvent()
 	end)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_5._tf, false, {
-		weight = LayerWeightConst.TOP_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_5._tf)
 end
 
 function var0_0.LoadWindow(arg0_9, arg1_9, arg2_9)
@@ -185,7 +183,7 @@ function var0_0.Hide(arg0_22)
 		end
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_22._tf, arg0_22._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_22._tf, arg0_22._parentTf)
 end
 
 function var0_0.OnDestroy(arg0_23)

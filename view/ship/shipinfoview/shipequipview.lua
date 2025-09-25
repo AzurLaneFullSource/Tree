@@ -94,47 +94,39 @@ function var0_0.InitEvent(arg0_7)
 end
 
 function var0_0.OnSelected(arg0_9, arg1_9)
-	local var0_9 = pg.UIMgr.GetInstance()
-
 	if arg1_9 then
+		local var0_9 = {}
 		local var1_9 = {}
 		local var2_9 = {}
-		local var3_9 = {}
 
-		local function var4_9(arg0_10, arg1_10)
+		local function var3_9(arg0_10, arg1_10)
 			eachChild(arg0_10, function(arg0_11)
 				table.insert(arg1_10, arg0_11)
 			end)
 		end
 
-		var4_9(arg0_9.equipmentR:Find("skin"), var2_9)
-		var4_9(arg0_9.equipmentR:Find("equipment"), var2_9)
-		var4_9(arg0_9.equipmentL:Find("skin"), var1_9)
-		var4_9(arg0_9.equipmentL:Find("equipment"), var1_9)
-		var4_9(arg0_9.equipmentB, var3_9)
-		table.insert(var1_9, arg0_9.equipmentL:Find("equipment/equipment_l1"))
-		var0_9:OverlayPanelPB(arg0_9.equipRCon, {
-			pbList = var2_9,
-			groupName = LayerWeightConst.GROUP_SHIPINFOUI,
-			overlayType = LayerWeightConst.OVERLAY_UI_ADAPT,
-			weight = LayerWeightConst.LOWER_LAYER
+		var3_9(arg0_9.equipmentR:Find("skin"), var1_9)
+		var3_9(arg0_9.equipmentR:Find("equipment"), var1_9)
+		var3_9(arg0_9.equipmentL:Find("skin"), var0_9)
+		var3_9(arg0_9.equipmentL:Find("equipment"), var0_9)
+		var3_9(arg0_9.equipmentB, var2_9)
+		table.insert(var0_9, arg0_9.equipmentL:Find("equipment/equipment_l1"))
+		arg0_9:OverlayPanel(arg0_9.equipRCon, {
+			groupDelta = -1,
+			pbList = var1_9
 		})
-		var0_9:OverlayPanelPB(arg0_9.equipLCon, {
-			pbList = var1_9,
-			groupName = LayerWeightConst.GROUP_SHIPINFOUI,
-			overlayType = LayerWeightConst.OVERLAY_UI_ADAPT,
-			weight = LayerWeightConst.LOWER_LAYER
+		arg0_9:OverlayPanel(arg0_9.equipLCon, {
+			groupDelta = -1,
+			pbList = var0_9
 		})
-		var0_9:OverlayPanelPB(arg0_9.equipBCon, {
-			pbList = var3_9,
-			groupName = LayerWeightConst.GROUP_SHIPINFOUI,
-			overlayType = LayerWeightConst.OVERLAY_UI_ADAPT,
-			weight = LayerWeightConst.LOWER_LAYER
+		arg0_9:OverlayPanel(arg0_9.equipBCon, {
+			groupDelta = -1,
+			pbList = var2_9
 		})
 	else
-		var0_9:UnOverlayPanel(arg0_9.equipRCon, arg0_9._parentTf)
-		var0_9:UnOverlayPanel(arg0_9.equipLCon, arg0_9._parentTf)
-		var0_9:UnOverlayPanel(arg0_9.equipBCon, arg0_9._parentTf)
+		arg0_9:UnOverlayPanel(arg0_9.equipRCon, arg0_9._parentTf)
+		arg0_9:UnOverlayPanel(arg0_9.equipLCon, arg0_9._parentTf)
+		arg0_9:UnOverlayPanel(arg0_9.equipBCon, arg0_9._parentTf)
 	end
 
 	arg0_9.onSelected = arg1_9
@@ -362,7 +354,6 @@ function var0_0.UpdateEquipmentPanel(arg0_13, arg1_13, arg2_13, arg3_13)
 				type = EquipmentInfoMediator.TYPE_SHIP,
 				shipId = var4_13.id,
 				pos = arg1_13,
-				LayerWeightMgr_weight = LayerWeightConst.SECOND_LAYER,
 				onRemoved = function()
 					arg0_13:setEquipDescVisible(true)
 				end

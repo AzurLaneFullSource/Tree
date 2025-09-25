@@ -62,7 +62,8 @@ function var0_0.execute(arg0_1, arg1_1)
 		end
 	}, function()
 		arg0_1:sendNotification(GAME.ISLAND_ACCESS_OP_DONE, {
-			op = var1_1
+			op = var1_1,
+			clientOp = var0_1.op
 		})
 	end)
 end

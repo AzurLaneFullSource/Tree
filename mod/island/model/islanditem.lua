@@ -4,6 +4,7 @@ var0_0.TYPE_MATERIAL = 1
 var0_0.TYPE_PROP = 2
 var0_0.TYPE_SPECIAL_PROP = 3
 var0_0.TYPE_SHIP_EXP_BOOK = 5
+var0_0.GOLD_ID = 1
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.id = arg1_1.id

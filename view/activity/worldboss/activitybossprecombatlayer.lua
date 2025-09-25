@@ -392,8 +392,7 @@ function var0_0.didEnter(arg0_35)
 					onNo = function()
 						arg0_35:emit(ActivityBossPreCombatMediator.ON_ABORT_EDIT)
 						arg0_37()
-					end,
-					weight = LayerWeightConst.TOP_LAYER
+					end
 				})
 			end)
 		end
@@ -591,8 +590,7 @@ function var0_0.displayFleetInfo(arg0_54)
 		onButton(arg0_54, arg0_54._costTip, function()
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = true,
-				content = i18n("use_oil_limit_help", var12_54, var11_54),
-				weight = LayerWeightConst.SECOND_LAYER
+				content = i18n("use_oil_limit_help", var12_54, var11_54)
 			})
 		end)
 	end
@@ -611,7 +609,7 @@ function var0_0.onBackPressed(arg0_58)
 end
 
 function var0_0.willExit(arg0_59)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_59._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_59._tf)
 	arg0_59._formationLogic:Destroy()
 
 	arg0_59._formationLogic = nil

@@ -42,15 +42,12 @@ function var0_0.Show(arg0_6, arg1_6)
 	arg0_6:SetPainting()
 	arg0_6:UpdateCommanders()
 	arg0_6:UpdateDialogue()
-
-	arg0_6.UIMgr = pg.UIMgr.GetInstance()
-
-	arg0_6.UIMgr:BlurPanel(arg0_6._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_6._tf)
 end
 
 function var0_0.Hide(arg0_7)
 	var0_0.super.Hide(arg0_7)
-	arg0_7.UIMgr:UnblurPanel(arg0_7._tf, arg0_7.UIMgr._normalUIMain)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7._tf, pg.UIMgr.GetInstance()._normalUIMain)
 end
 
 function var0_0.GetCurrentFlagship(arg0_8)

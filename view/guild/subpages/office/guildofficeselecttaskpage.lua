@@ -37,7 +37,7 @@ function var0_0.Update(arg0_7)
 			local var1_8 = var0_7[arg1_8 + 1]
 
 			onButton(arg0_7, var0_8.acceptBtn, function()
-				pg.MsgboxMgr:GetInstance():ShowMsgBox({
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("guild_task_selecte_tip", var1_8:getConfig("name")),
 					onYes = function()
 						arg0_7:emit(GuildOfficeMediator.ON_SELECT_TASK, var0_8.task.id)
@@ -52,7 +52,7 @@ function var0_0.Update(arg0_7)
 end
 
 function var0_0.Close(arg0_11)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_11._tf, arg0_11._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11._tf, arg0_11._parentTf)
 	setActive(arg0_11._tf, false)
 end
 

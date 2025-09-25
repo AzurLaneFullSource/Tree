@@ -195,9 +195,7 @@ function var0_0.GetAllItemIDs(arg0_18)
 end
 
 function var0_0.Show(arg0_19, arg1_19)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_19._tf, false, {
-		weight = LayerWeightConst.BASE_LAYER + 2
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_19._tf)
 	var0_0.super.Show(arg0_19)
 	arg0_19:Flush(arg1_19)
 end
@@ -211,7 +209,7 @@ function var0_0.Flush(arg0_20, arg1_20)
 end
 
 function var0_0.Hide(arg0_21)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_21._tf, arg0_21._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_21._tf, arg0_21._parentTf)
 	var0_0.super.Hide(arg0_21)
 end
 

@@ -100,9 +100,7 @@ function var0_0.didEnter(arg0_4)
 	setText(arg0_4._tf:Find("Window/Content"), var6_4)
 	setText(arg0_4._tf:Find("Window/Confirm/Text"), i18n("msgbox_text_confirm"))
 	setText(arg0_4._tf:Find("Window/Cancel/Text"), i18n("msgbox_text_cancel"))
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_4._tf, {
-		weight = LayerWeightConst.THIRD_LAYER
-	})
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_4._tf)
 
 	local var9_4 = var0_4:GetShopID()
 

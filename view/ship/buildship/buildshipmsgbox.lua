@@ -129,7 +129,7 @@ function var0_0.Hide(arg0_17)
 		setActiveViaLayer(arg0_17._go, false)
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_17._tf, arg0_17._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_17._tf, arg0_17._parentTf)
 end
 
 function var0_0.isShowing(arg0_18)

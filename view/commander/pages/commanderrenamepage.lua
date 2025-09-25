@@ -37,16 +37,14 @@ function var0_0.Show(arg0_6, arg1_6)
 		arg0_6:emit(CommanderCatMediator.RENAME, arg1_6.id, var0_7)
 		arg0_6:Hide()
 	end, SFX_PANEL)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_6._tf, false, {
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_6._tf)
 end
 
 function var0_0.Hide(arg0_8)
 	arg0_8.isShowMsgBox = nil
 
 	setActive(arg0_8._tf, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_8._tf, arg0_8._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_8._tf, arg0_8._parentTf)
 end
 
 function var0_0.OnDestroy(arg0_9)

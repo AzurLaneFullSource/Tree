@@ -39,7 +39,7 @@ function var0_0.CollectActivity(arg0_7)
 	local var1_7 = pg.activity_template[var0_7].page_core
 	local var2_7 = 0
 	local var3_7
-	local var4_7 = getProxy(ActivityProxy):getCorePanelActivity(var1_7)
+	local var4_7 = getProxy(ActivityProxy):getCorePanelActivities(var1_7)
 
 	for iter0_7, iter1_7 in pairs(var4_7) do
 		if iter1_7:readyToAchieve() then

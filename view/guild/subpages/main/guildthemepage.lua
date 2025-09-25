@@ -437,17 +437,16 @@ function var0_0.ShowOrHideChatWindow(arg0_39, arg1_39)
 
 	local function var4_39()
 		if arg1_39 then
-			setParent(arg0_39.chatPanel, pg.UIMgr:GetInstance().OverlayMain, true)
+			setParent(arg0_39.chatPanel, pg.UIMgr.GetInstance().OverlayMain, true)
 
 			local var0_40 = arg0_39.chatPanel.localPosition
 
 			arg0_39.chatPanel.localPosition = Vector3(var0_40.x, var0_40.y, 0)
 
-			pg.UIMgr.GetInstance():OverlayPanelPB(arg0_39.chatPanel, {
+			pg.UIMgr.GetInstance():OverlayPanel(arg0_39.chatPanel, {
 				pbList = {
 					arg0_39.chatPanel
-				},
-				weight = LayerWeightConst.TOP_LAYER
+				}
 			})
 
 			arg0_39.chatPanelAnchoredPositionX = arg0_39.chatPanel.anchoredPosition.x

@@ -10,15 +10,13 @@ function var0_0.init(arg0_2)
 end
 
 function var0_0.didEnter(arg0_3)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf, false, {
-		weight = arg0_3:getWeightFromData()
-	})
+	arg0_3:BlurPanel(arg0_3._tf)
 	arg0_3:addListener()
 	arg0_3:updateDetail()
 end
 
 function var0_0.willExit(arg0_4)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_4._tf)
+	arg0_4:UnOverlayPanel(arg0_4._tf)
 end
 
 function var0_0.initData(arg0_5)

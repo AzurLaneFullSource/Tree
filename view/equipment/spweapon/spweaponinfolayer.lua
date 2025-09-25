@@ -111,9 +111,7 @@ function var0_0.didEnter(arg0_8)
 		arg0_8:updateOperation4()
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_8._tf, false, {
-		weight = arg0_8:getWeightFromData()
-	})
+	arg0_8:BlurPanel(arg0_8._tf)
 end
 
 local var1_0 = {
@@ -329,7 +327,7 @@ function var0_0.cloneSampleTo(arg0_27, arg1_27, arg2_27, arg3_27, arg4_27)
 end
 
 function var0_0.willExit(arg0_28)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_28._tf)
+	arg0_28:UnOverlayPanel(arg0_28._tf)
 end
 
 function var0_0.onBackPressed(arg0_29)

@@ -165841,6 +165841,30 @@ _G.pg.base.item_virtual_data_statistics[65105] = {
 	combination_display = {},
 }
 
+_G.pg.base.item_virtual_data_statistics[65106] = {
+	display = "A currency earned from completing Cruise Missions during the seasonal campaign, used to obtain milestone rewards. Will disappear after the campaign season ends.",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "props/battlepass_pt",
+	id = 65106,
+	is_world = 0,
+	link_id = 7025,
+	max_num = 0,
+	name = "Progress Pts",
+	order = 0,
+	rarity = 2,
+	replace_item = 0,
+	shop_id = -1,
+	time_limit = 0,
+	type = 0,
+	virtual_type = 21,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
 _G.pg.base.item_virtual_data_statistics[65500] = {
 	display = "A commemorative medal issued by the Iron Blood Resistance celebrating your triumph over the Star Beast.\n—Our world shall not perish. Not today, not ever.",
 	drop_gold_max = 0,
@@ -167143,6 +167167,30 @@ _G.pg.base.item_virtual_data_statistics[65551] = {
 	link_id = 50034,
 	max_num = 0,
 	name = "Skin Coupon (Bunny Girl)",
+	order = 0,
+	rarity = 4,
+	replace_item = 0,
+	shop_id = 1,
+	time_limit = 0,
+	type = 0,
+	virtual_type = 13,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
+_G.pg.base.item_virtual_data_statistics[65552] = {
+	display = "During the campaign, this coupon can used to gain a discount of 300 Gems when buying a Sports Time or Race Queen series skin in the Shop.\nValid until 2025.10.22 23:59:59 (UTC-7).",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "Props/skin_300_school",
+	id = 65552,
+	is_world = 0,
+	link_id = 50142,
+	max_num = 0,
+	name = "Skin Coupon (Sports & Race)",
 	order = 0,
 	rarity = 4,
 	replace_item = 0,
@@ -178280,6 +178328,30 @@ _G.pg.base.item_virtual_data_statistics[86218] = {
 			1820,
 		},
 	},
+}
+
+_G.pg.base.item_virtual_data_statistics[86219] = {
+	display = "Purchasing this item will give you 1 random, unowned skin from the following list (if you already own all applicable skins, you will instead receive 680 Gems). All skins share the same acquisition probability:\n\nUnicorn - Champion of Unicorn;\nLe Téméraire - Cheering Star;\nSuffren - Impulsive Incident;\nWest Virginia - Scenic Rhapsody;\nLyon - Paired Exercise;\nPainlevé - Team Stretching;\nMarseillaise - Fighting Angel's Regimen;\nZ16 - Guaranteed Grand Slam!;\nZ24 - The Devil on the Court;\nKirov - High Jump Star;\nBlücher - High-Altitude Head Over Heels;\nBrünhilde - Grain-Seizing Grani;\nHornet - Cheering Justice!;\nU-96 - How Heavy Are Those Barbells?;\nBache - Gorgeous Speed-star;\nCygnet - Royal Fanfare;\nMarblehead - Boxing Girl!;\nReno - Biggest Little Cheerleader;\nMinneapolis - eXtreme Games;\nBaltimore - Black Ace;\nBremerton - Scorching-Hot Training;\nCasablanca - Cheer Squad on Break;\nIntrepid - One Intrepid Pitch;\nBluegill - Up-And-Coming Infielder;\nYoizuki - Sports Festival Preparations;\nHammann - Blushing Fellow;\nPrinz Eugen - Final Lap;\nEnterprise - Wind Catcher;\nTakao - Full Throttle Charmer;\nAtago - Stunning Speedster;\nPrince of Wales - The Laureate's Victory Lap;\nDuke of York - Prestige of the Glorious Formula;\nShoukaku - Sororal Wings;\nZuikaku - Zoom Like the Wind;\nTaihou - Enraptured Companion;",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "Props/clothIcon",
+	id = 86219,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Random Skin",
+	order = 0,
+	rarity = 4,
+	replace_item = 0,
+	shop_id = -1,
+	time_limit = 0,
+	type = 98,
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
 }
 
 _G.pg.base.item_virtual_data_statistics[86400] = {

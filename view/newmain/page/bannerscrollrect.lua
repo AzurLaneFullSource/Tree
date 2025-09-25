@@ -115,6 +115,8 @@ function var0_0.ScrollTo(arg0_10, arg1_10)
 		arg0_10.animating = false
 	end))
 
+	arg0_10.index = arg1_10
+
 	local var2_10 = arg0_10.dots[var0_10]
 
 	arg0_10:TriggerDot(var2_10, false)
@@ -122,8 +124,6 @@ function var0_0.ScrollTo(arg0_10, arg1_10)
 	local var3_10 = arg0_10.dots[arg1_10]
 
 	arg0_10:TriggerDot(var3_10, true)
-
-	arg0_10.index = arg1_10
 end
 
 function var0_0.TriggerDot(arg0_12, arg1_12, arg2_12)
@@ -141,7 +141,7 @@ function var0_0.AddDrag(arg0_13)
 			return
 		end
 
-		arg0_13:Puase()
+		arg0_13:Pause()
 
 		var0_13 = arg1_14.position.x
 		var1_13 = arg0_13.container.localPosition
@@ -193,7 +193,7 @@ function var0_0.Disable(arg0_18)
 	end
 end
 
-function var0_0.Puase(arg0_19)
+function var0_0.Pause(arg0_19)
 	arg0_19:RemoveTimer()
 end
 

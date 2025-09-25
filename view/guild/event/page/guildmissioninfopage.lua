@@ -80,7 +80,7 @@ function var0_0.OnInit(arg0_5)
 	end, SFX_PANEL)
 	onButton(arg0_5, arg0_5.formationBtn, function()
 		if arg0_5.mission:IsFinish() then
-			pg.TipsMgr:GetInstance():ShowTips(i18n("guild_event_is_finish"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_event_is_finish"))
 
 			return
 		end

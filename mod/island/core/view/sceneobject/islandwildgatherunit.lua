@@ -10,9 +10,15 @@ function var0_0.GetHudInfo(arg0_2)
 	var0_2.needShowHud = true
 
 	if arg0_2.data.gatherType == IslandConst.UNIT_TYPE_ITEM_GATHER_ITEM then
-		var0_2.name = "采集物"
+		local var1_2 = pg.island_wild_gather[arg0_2.data.gatherData.configId]
+
+		var0_2.name = var1_2.name
+		var0_2.itemIcon = "island/" .. var1_2.icon
 	else
-		var0_2.name = "收集物"
+		local var2_2 = pg.island_collect_fragment[arg0_2.data.gatherData.configId]
+
+		var0_2.name = var2_2.name
+		var0_2.itemIcon = "island/" .. var2_2.icon
 	end
 
 	return var0_2

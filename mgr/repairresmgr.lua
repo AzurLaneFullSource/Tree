@@ -136,5 +136,5 @@ end
 function var0_0.Hide(arg0_17)
 	pg.DelegateInfo.Dispose(arg0_17)
 	arg0_17._go:SetActive(false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_17._tf, arg0_17.parentTr)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_17._tf, arg0_17.parentTr)
 end

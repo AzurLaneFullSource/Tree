@@ -5,6 +5,8 @@ function var0_0.GetModule(arg0_1, arg1_1, arg2_1)
 end
 
 function var0_0.AddComponents(arg0_2, arg1_2, arg2_2)
+	var0_0.super.AddComponents(arg0_2, arg1_2, arg2_2)
+
 	local var0_2 = GetOrAddComponent(arg1_2, typeof(CharacterController))
 
 	var0_2.slopeLimit = 50

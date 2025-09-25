@@ -110,7 +110,7 @@ function var0_0.willExit(arg0_14)
 		arg0_14:hideMsgbox()
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_14._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_14._tf)
 
 	if arg0_14.ltId then
 		LeanTween.cancel(arg0_14.ltId)
@@ -159,7 +159,7 @@ end
 
 function var0_0.hideMsgbox(arg0_20)
 	setActive(arg0_20.rtMsgbox, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_20.rtMsgbox)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_20.rtMsgbox)
 end
 
 return var0_0

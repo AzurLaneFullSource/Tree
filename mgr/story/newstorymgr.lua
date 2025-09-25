@@ -331,7 +331,7 @@ function var0_0.Play(arg0_28, arg1_28, arg2_28, arg3_28, arg4_28, arg5_28, arg6_
 	end
 end
 
-function var0_0.Puase(arg0_31)
+function var0_0.Pause(arg0_31)
 	if arg0_31.state ~= var3_0 then
 		var11_0("state is not 'running'")
 
@@ -578,11 +578,11 @@ function var0_0.RegistSkipBtn(arg0_58)
 			return
 		end
 
-		arg0_58:Puase()
+		arg0_58:Pause()
 
 		arg0_58.isOpenMsgbox = true
 
-		pg.MsgboxMgr:GetInstance():ShowMsgBox({
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			parent = rtf(arg0_58._tf:Find("front")),
 			content = i18n("story_skip_confirm"),
 			onYes = function()
@@ -593,8 +593,7 @@ function var0_0.RegistSkipBtn(arg0_58)
 				arg0_58.isOpenMsgbox = false
 
 				arg0_58:Resume()
-			end,
-			weight = LayerWeightConst.TOP_LAYER
+			end
 		})
 	end, SFX_PANEL)
 end
@@ -865,7 +864,7 @@ function var0_0.Clear(arg0_82)
 	arg0_82:SendNotification(GAME.STORY_END)
 
 	if arg0_82.isOpenMsgbox then
-		pg.MsgboxMgr:GetInstance():hide()
+		pg.MsgboxMgr.GetInstance():hide()
 	end
 
 	arg0_82:RevertBgmVolumeValue()

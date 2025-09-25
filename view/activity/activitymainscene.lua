@@ -36,6 +36,12 @@ function var0_0.onBackPressed(arg0_4)
 		return
 	end
 
+	for iter2_4, iter3_4 in pairs(arg0_4.pageDic) do
+		if iter3_4.onBackPressed and iter3_4:onBackPressed() then
+			return
+		end
+	end
+
 	arg0_4:emit(var0_0.ON_BACK_PRESSED)
 end
 
@@ -76,28 +82,36 @@ function var0_0.init(arg0_5)
 		if arg0_7 == UIItemList.EventUpdate then
 			local var0_7 = arg0_5.activities[arg1_7 + 1]
 
-			if arg0_5.pageDic[var0_7.id] ~= nil then
-				local var1_7 = var0_7:getConfig("title_res_tag")
+			arg2_7.name = var0_7.id
 
-				if var1_7 then
-					local var2_7 = arg0_5:findTF("red", arg2_7)
-					local var3_7 = GetSpriteFromAtlas("activityuitable/" .. var1_7 .. "_text", "") or GetSpriteFromAtlas("activityuitable/activity_text", "")
-					local var4_7 = GetSpriteFromAtlas("activityuitable/" .. var1_7 .. "_text_selected", "") or GetSpriteFromAtlas("activityuitable/activity_text_selected", "")
+			local var1_7 = var0_7:getConfig("title_res_tag")
 
-					setImageSprite(arg0_5:findTF("off/text", arg2_7), var3_7, true)
-					setImageSprite(arg0_5:findTF("on/text", arg2_7), var4_7, true)
-					setActive(var2_7, var0_7:readyToAchieve())
-					onToggle(arg0_5, arg2_7, function(arg0_8)
-						if arg0_8 then
-							arg0_5:selectActivity(var0_7)
-						end
-					end, SFX_PANEL)
-				else
-					onToggle(arg0_5, arg2_7, function(arg0_9)
-						arg0_5:loadActivityPanel(arg0_9, var0_7)
-					end, SFX_PANEL)
-				end
+			if var1_7 then
+				local var2_7 = arg0_5:findTF("red", arg2_7)
+				local var3_7 = GetSpriteFromAtlas("activityuitable/" .. var1_7 .. "_text", "") or GetSpriteFromAtlas("activityuitable/activity_text", "")
+				local var4_7 = GetSpriteFromAtlas("activityuitable/" .. var1_7 .. "_text_selected", "") or GetSpriteFromAtlas("activityuitable/activity_text_selected", "")
+
+				setImageSprite(arg0_5:findTF("off/text", arg2_7), var3_7, true)
+				setImageSprite(arg0_5:findTF("on/text", arg2_7), var4_7, true)
+				setActive(var2_7, var0_7:readyToAchieve())
+				onToggle(arg0_5, arg2_7, function(arg0_8)
+					if arg0_8 then
+						arg0_5:selectActivity(var0_7)
+					end
+				end, SFX_PANEL)
 			end
+
+			local var5_7 = arg0_5.pageDic[var0_7.id]
+
+			onToggle(arg0_5, arg2_7, function(arg0_9)
+				if var5_7 then
+					if arg0_9 then
+						arg0_5:selectActivity(var0_7)
+					end
+				else
+					arg0_5:loadActivityPanel(arg0_9, var0_7)
+				end
+			end, SFX_PANEL)
 		end
 	end)
 end

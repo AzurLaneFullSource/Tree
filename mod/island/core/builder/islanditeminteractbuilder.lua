@@ -18,56 +18,51 @@ function var0_0.Load(arg0_2, arg1_2, arg2_2)
 	table.insert(var0_2, function(arg0_5)
 		arg0_2:SetupBT(var1_2, arg1_2, arg0_5)
 	end)
-	table.insert(var0_2, function(arg0_6)
-		arg0_2:SetupSubBT(var1_2, arg1_2, arg0_6)
-	end)
 	seriesAsync(var0_2, function()
 		arg2_2(var1_2)
 	end)
 end
 
-function var0_0.AddComponents(arg0_8, arg1_8, arg2_8)
-	GetOrAddComponent(arg1_8, "DftCommonSignalReceiver")
+function var0_0.AddComponents(arg0_7, arg1_7, arg2_7)
+	GetOrAddComponent(arg1_7, "DftCommonSignalReceiver")
 end
 
-function var0_0.SetupSubBT(arg0_9, arg1_9, arg2_9, arg3_9)
-	arg3_9()
-end
-
-function var0_0.LoadTimeline(arg0_10, arg1_10, arg2_10, arg3_10, arg4_10)
-	if not arg3_10:HasTimeline() then
-		arg4_10()
+function var0_0.LoadTimeline(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
+	if not arg3_8:HasTimeline() then
+		arg4_8()
 
 		return
 	end
 
-	local var0_10 = arg3_10:GetTimeline()
-	local var1_10 = {}
-	local var2_10 = {}
+	local var0_8 = arg3_8:GetTimeline()
+	local var1_8 = {}
+	local var2_8 = {}
 
-	for iter0_10, iter1_10 in ipairs(var0_10) do
-		table.insert(var1_10, function(arg0_11)
-			ResourceMgr.Inst:getAssetAsync(iter1_10.name, "", typeof(UnityEngine.Playables.PlayableAsset), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_12)
-				local var0_12 = Object.Instantiate(arg0_12)
+	for iter0_8, iter1_8 in ipairs(var0_8) do
+		table.insert(var1_8, function(arg0_9)
+			local var0_9 = IslandAssetLoadDispatcher.Instance:Enqueue(iter1_8.name, "", typeof(UnityEngine.Playables.PlayableAsset), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_10)
+				local var0_10 = Object.Instantiate(arg0_10)
 
-				var2_10[iter0_10] = var0_12
+				var2_8[iter0_8] = var0_10
 
-				arg0_11()
+				arg0_9()
 			end), true, true)
+
+			arg0_8:AddLoadingID(var0_9)
 		end)
 	end
 
-	parallelAsync(var1_10, function()
-		local var0_13 = GetOrAddComponent(arg1_10, typeof(UnityEngine.Playables.PlayableDirector))
+	parallelAsync(var1_8, function()
+		local var0_11 = GetOrAddComponent(arg1_8, typeof(UnityEngine.Playables.PlayableDirector))
 
-		var0_13.playableAsset = var2_10[1]
+		var0_11.playableAsset = var2_8[1]
 
-		var0_13:Stop()
+		var0_11:Stop()
 
-		var0_13.playOnAwake = false
+		var0_11.playOnAwake = false
 
-		arg2_10:SetTimelineDic(var2_10)
-		arg4_10()
+		arg2_8:SetTimelineDic(var2_8)
+		arg4_8()
 	end)
 end
 

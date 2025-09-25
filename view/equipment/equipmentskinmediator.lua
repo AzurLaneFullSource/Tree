@@ -81,15 +81,13 @@ function var0_0.register(arg0_1)
 			var2_6 = {
 				equipSkinId = 0,
 				shipVO = var1_6,
-				weaponIds = {},
-				weight = arg0_1.contextData.weight and arg0_1.contextData.weight + 1
+				weaponIds = {}
 			}
 		else
 			var2_6 = {
 				shipVO = var1_6,
 				weaponIds = Clone(var0_6.weapon_ids),
-				equipSkinId = arg1_6,
-				weight = arg0_1.contextData.weight and arg0_1.contextData.weight + 1
+				equipSkinId = arg1_6
 			}
 		end
 

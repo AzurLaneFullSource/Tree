@@ -27,8 +27,6 @@ function var0_0.Show(arg0_4, arg1_4)
 		setText(arg0_4.text, setColorStr(arg1_4.content, "#847D7B"))
 	end
 
-	arg0_4.layer = arg1_4.layer
-
 	onButton(arg0_4, arg0_4.cancelBtn, function()
 		arg0_4:Hide()
 
@@ -56,9 +54,7 @@ function var0_0.Show(arg0_4, arg1_4)
 	end
 
 	arg0_4._tf:SetAsLastSibling()
-	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf, false, {
-		weight = arg0_4.layer or LayerWeightConst.SECOND_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf)
 end
 
 function var0_0.Hide(arg0_8)
@@ -66,7 +62,7 @@ function var0_0.Hide(arg0_8)
 	setText(arg0_8.text, "")
 	setText(arg0_8.text1, "")
 	setText(arg0_8.text2, "")
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_8._tf, arg0_8._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_8._tf, arg0_8._parentTf)
 end
 
 function var0_0.OnDestroy(arg0_9)

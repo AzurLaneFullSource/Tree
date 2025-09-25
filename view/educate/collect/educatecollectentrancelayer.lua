@@ -92,7 +92,7 @@ function var0_0.didEnter(arg0_12)
 
 	setActive(arg0_12:findTF("unlock", arg0_12.endingBtn), var4_12)
 	setActive(arg0_12:findTF("lock", arg0_12.endingBtn), not var4_12)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_12._tf)
+	arg0_12:BlurPanel(arg0_12._tf)
 	EducateGuideSequence.CheckGuide(arg0_12.__cname, function()
 		return
 	end)
@@ -116,7 +116,7 @@ end
 
 function var0_0.willExit(arg0_18)
 	arg0_18.animEvent:SetEndEvent(nil)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_18._tf)
+	arg0_18:UnOverlayPanel(arg0_18._tf)
 end
 
 return var0_0

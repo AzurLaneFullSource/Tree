@@ -314,9 +314,7 @@ function var0_0.BlurPanel(arg0_34)
 		end
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_34._tf, false, {
-		weight = LayerWeightConst.TOP_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_34._tf)
 end
 
 function var0_0.UnblurPanel(arg0_35)
@@ -330,7 +328,7 @@ function var0_0.UnblurPanel(arg0_35)
 
 	arg0_35.hideNodes = {}
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_35._tf, arg0_35.parentTF)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_35._tf, arg0_35.parentTF)
 end
 
 function var0_0.Clear(arg0_36)

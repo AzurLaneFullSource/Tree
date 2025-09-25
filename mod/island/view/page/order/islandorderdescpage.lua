@@ -41,7 +41,7 @@ function var0_0.OnInit(arg0_3)
 		arg0_3:emit(IslandMediator.ON_SUBMIT_ORDER, arg0_3.slot.id)
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3.speedUpBtn, function()
-		return
+		arg0_3:OpenPage(IslandTicketUsePage, IslandUseTicketCommand.TYPES.ORDER_CD, arg0_3.slot.id)
 	end, SFX_PANEL)
 end
 
@@ -50,13 +50,15 @@ function var0_0.AddListeners(arg0_7)
 	arg0_7:AddListener(GAME.ISLAND_REPLACE_ORDER_DONE, arg0_7.OnReplaceOrder)
 	arg0_7:AddListener(IslandOrderAgency.GEN_NEW_ORDER, arg0_7.OnGenNewOrder)
 	arg0_7:AddListener(IslandOrderAgency.UDPATE_ORDER, arg0_7.OnFlushOrder)
+	arg0_7:AddListener(GAME.ISLAND_USE_TICKET_DONE, arg0_7.OnUseTicketDone)
 end
 
-function var0_0.RemoveListener(arg0_8)
+function var0_0.RemoveListeners(arg0_8)
 	arg0_8:RemoveListener(GAME.ISLAND_SUBMIT_ORDER_DONE, arg0_8.OnSubmitOrder)
 	arg0_8:RemoveListener(GAME.ISLAND_REPLACE_ORDER_DONE, arg0_8.OnReplaceOrder)
 	arg0_8:RemoveListener(IslandOrderAgency.GEN_NEW_ORDER, arg0_8.OnGenNewOrder)
 	arg0_8:RemoveListener(IslandOrderAgency.UDPATE_ORDER, arg0_8.OnFlushOrder)
+	arg0_8:RemoveListener(GAME.ISLAND_USE_TICKET_DONE, arg0_8.OnUseTicketDone)
 end
 
 function var0_0.OnSubmitOrder(arg0_9, arg1_9)
@@ -75,229 +77,235 @@ function var0_0.OnFlushOrder(arg0_11, arg1_11)
 	arg0_11:TryFlushOrderInfo(arg1_11.slotId)
 end
 
-function var0_0.OnGenNewOrder(arg0_12, arg1_12)
-	arg0_12:TryFlushOrderInfo(arg1_12.slotId)
+function var0_0.OnUseTicketDone(arg0_12, arg1_12)
+	if arg1_12.type == IslandUseTicketCommand.TYPES.ORDER_CD then
+		arg0_12:TryFlushOrderInfo(arg1_12.id)
+	end
 end
 
-function var0_0.TryFlushOrderInfo(arg0_13, arg1_13)
-	local var0_13 = getProxy(IslandProxy):GetIsland():GetOrderAgency():GetSlot(arg1_13)
+function var0_0.OnGenNewOrder(arg0_13, arg1_13)
+	arg0_13:TryFlushOrderInfo(arg1_13.slotId)
+end
 
-	if not arg0_13.slot then
+function var0_0.TryFlushOrderInfo(arg0_14, arg1_14)
+	local var0_14 = getProxy(IslandProxy):GetIsland():GetOrderAgency():GetSlot(arg1_14)
+
+	if not arg0_14.slot then
 		return
 	end
 
-	if arg0_13.slot.id ~= var0_13.id then
+	if arg0_14.slot.id ~= var0_14.id then
 		return
 	end
 
-	arg0_13:Flush(var0_13)
+	arg0_14:Flush(var0_14)
 end
 
-function var0_0.Show(arg0_14, arg1_14)
-	var0_0.super.Show(arg0_14)
-	arg0_14:Flush(arg1_14)
+function var0_0.Show(arg0_15, arg1_15)
+	var0_0.super.Show(arg0_15)
+	arg0_15:Flush(arg1_15)
 end
 
-function var0_0.Flush(arg0_15, arg1_15)
-	arg0_15.slot = arg1_15
+function var0_0.Flush(arg0_16, arg1_16)
+	arg0_16.slot = arg1_16
 
-	if not arg1_15 or arg1_15:IsEmpty() then
-		arg0_15:Hide()
-
-		return
-	end
-
-	local var0_15 = arg1_15:IsLoading()
-
-	setActive(arg0_15.infoPanel, not var0_15)
-	setActive(arg0_15.loadingPanel, var0_15)
-	arg0_15:RemoveSubmitCdTimer()
-	arg0_15:RemoveLoadingTimer()
-	arg0_15:RemoveDisappearTimer()
-
-	if var0_15 then
-		arg0_15:FlushLoadingPanel(arg1_15)
-	else
-		arg0_15:FlusInfoPanel(arg1_15)
-	end
-
-	if arg1_15:GetOrder():IsUrgency() then
-		arg0_15:AddDisappearTimer(arg1_15)
-	end
-end
-
-function var0_0.AddDisappearTimer(arg0_16, arg1_16)
-	arg0_16:RemoveDisappearTimer()
-
-	local var0_16 = arg1_16:GetDisappearTime()
-
-	if var0_16 <= pg.TimeMgr.GetInstance():GetServerTime() then
+	if not arg1_16 or arg1_16:IsEmpty() then
 		arg0_16:Hide()
 
 		return
 	end
 
-	arg0_16.disappearTimer = Timer.New(function()
-		local var0_17 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var0_16 = arg1_16:IsLoading()
 
-		if var0_16 - var0_17 < 0 then
-			arg0_16:Hide()
-		end
-	end, 1, -1)
+	setActive(arg0_16.infoPanel, not var0_16)
+	setActive(arg0_16.loadingPanel, var0_16)
+	arg0_16:RemoveSubmitCdTimer()
+	arg0_16:RemoveLoadingTimer()
+	arg0_16:RemoveDisappearTimer()
 
-	arg0_16.disappearTimer.func()
-	arg0_16.disappearTimer:Start()
-end
+	if var0_16 then
+		arg0_16:FlushLoadingPanel(arg1_16)
+	else
+		arg0_16:FlusInfoPanel(arg1_16)
+	end
 
-function var0_0.RemoveDisappearTimer(arg0_18)
-	if arg0_18.disappearTimer then
-		arg0_18.disappearTimer:Stop()
-
-		arg0_18.disappearTimer = nil
+	if arg1_16:GetOrder():IsUrgency() then
+		arg0_16:AddDisappearTimer(arg1_16)
 	end
 end
 
-function var0_0.FlushLoadingPanel(arg0_19, arg1_19)
-	local function var0_19()
-		arg0_19.loadingTimeTxt.text = ""
+function var0_0.AddDisappearTimer(arg0_17, arg1_17)
+	arg0_17:RemoveDisappearTimer()
 
-		arg0_19:Flush(arg1_19)
-	end
+	local var0_17 = arg1_17:GetDisappearTime()
 
-	local var1_19 = arg1_19:GetCanSubmitTime()
-
-	if var1_19 <= pg.TimeMgr.GetInstance():GetServerTime() then
-		var0_19()
+	if var0_17 <= pg.TimeMgr.GetInstance():GetServerTime() then
+		arg0_17:Hide()
 
 		return
 	end
 
-	arg0_19.loadingTimer = Timer.New(function()
-		local var0_21 = pg.TimeMgr.GetInstance():GetServerTime()
-		local var1_21 = var1_19 - var0_21
+	arg0_17.disappearTimer = Timer.New(function()
+		local var0_18 = pg.TimeMgr.GetInstance():GetServerTime()
 
-		arg0_19.loadingTimeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var1_21)
-
-		if var1_21 < 0 then
-			arg0_19:RemoveLoadingTimer()
-			var0_19()
+		if var0_17 - var0_18 < 0 then
+			arg0_17:Hide()
 		end
 	end, 1, -1)
 
-	arg0_19.loadingTimer:Start()
-	arg0_19.loadingTimer.func()
+	arg0_17.disappearTimer.func()
+	arg0_17.disappearTimer:Start()
 end
 
-function var0_0.RemoveLoadingTimer(arg0_22)
-	if arg0_22.loadingTimer then
-		arg0_22.loadingTimer:Stop()
+function var0_0.RemoveDisappearTimer(arg0_19)
+	if arg0_19.disappearTimer then
+		arg0_19.disappearTimer:Stop()
 
-		arg0_22.loadingTimer = nil
+		arg0_19.disappearTimer = nil
 	end
 end
 
-function var0_0.FlusInfoPanel(arg0_23, arg1_23)
-	local var0_23 = arg1_23:GetOrder()
+function var0_0.FlushLoadingPanel(arg0_20, arg1_20)
+	local function var0_20()
+		arg0_20.loadingTimeTxt.text = ""
 
-	arg0_23:FlushAwards(var0_23)
-	arg0_23:FlushConsume(var0_23)
-	setActive(arg0_23.replaceBtn, not var0_23:IsUrgency())
+		arg0_20:Flush(arg1_20)
+	end
 
-	arg0_23.nameTxt.text = var0_23:GetRoleName()
+	local var1_20 = arg1_20:GetCanSubmitTime()
 
-	local var1_23, var2_23 = getProxy(IslandProxy):GetIsland():GetOrderAgency():CanSubmitOrder()
-
-	setActive(arg0_23.submitBtnMark, not var0_23:CanFinish())
-
-	if var1_23 then
-		arg0_23:SetMaskFillAmount(arg0_23.submitBtnMark, 1)
+	if var1_20 <= pg.TimeMgr.GetInstance():GetServerTime() then
+		var0_20()
 
 		return
 	end
 
-	local var3_23 = pg.island_set.order_complete_refresh_time.key_value_int
+	arg0_20.loadingTimer = Timer.New(function()
+		local var0_22 = pg.TimeMgr.GetInstance():GetServerTime()
+		local var1_22 = var1_20 - var0_22
 
-	arg0_23.submitTimer = Timer.New(function()
-		local var0_24 = pg.TimeMgr.GetInstance():GetServerTime()
-		local var1_24 = (var2_23 - var0_24) / var3_23
+		arg0_20.loadingTimeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var1_22)
 
-		arg0_23:SetMaskFillAmount(arg0_23.submitBtnMark, 1 - var1_24)
-
-		if var1_24 <= 0 then
-			arg0_23:RemoveSubmitCdTimer()
+		if var1_22 < 0 then
+			arg0_20:RemoveLoadingTimer()
+			var0_20()
 		end
 	end, 1, -1)
 
-	arg0_23.submitTimer:Start()
-	arg0_23.submitTimer.func()
+	arg0_20.loadingTimer:Start()
+	arg0_20.loadingTimer.func()
 end
 
-function var0_0.SetMaskFillAmount(arg0_25, arg1_25, arg2_25)
-	local var0_25 = arg1_25:GetComponent(typeof(RectMask2D))
-	local var1_25 = arg1_25.sizeDelta.x * arg2_25
+function var0_0.RemoveLoadingTimer(arg0_23)
+	if arg0_23.loadingTimer then
+		arg0_23.loadingTimer:Stop()
 
-	var0_25.padding = Vector4(var1_25, 0, 0, 0)
+		arg0_23.loadingTimer = nil
+	end
 end
 
-function var0_0.FlushAwards(arg0_26, arg1_26)
-	local var0_26 = arg1_26:GetDisplayAwards()
+function var0_0.FlusInfoPanel(arg0_24, arg1_24)
+	local var0_24 = arg1_24:GetOrder()
 
-	arg0_26.awardUIList:make(function(arg0_27, arg1_27, arg2_27)
-		if arg0_27 == UIItemList.EventUpdate then
-			local var0_27 = var0_26[arg1_27 + 1]
+	arg0_24:FlushAwards(var0_24)
+	arg0_24:FlushConsume(var0_24)
+	setActive(arg0_24.replaceBtn, not var0_24:IsUrgency())
 
-			updateCustomDrop(arg2_27, var0_27)
+	arg0_24.nameTxt.text = var0_24:GetRoleName()
+
+	local var1_24, var2_24 = getProxy(IslandProxy):GetIsland():GetOrderAgency():CanSubmitOrder()
+
+	setActive(arg0_24.submitBtnMark, not var0_24:CanFinish())
+
+	if var1_24 then
+		arg0_24:SetMaskFillAmount(arg0_24.submitBtnMark, 1)
+
+		return
+	end
+
+	local var3_24 = pg.island_set.order_complete_refresh_time.key_value_int
+
+	arg0_24.submitTimer = Timer.New(function()
+		local var0_25 = pg.TimeMgr.GetInstance():GetServerTime()
+		local var1_25 = (var2_24 - var0_25) / var3_24
+
+		arg0_24:SetMaskFillAmount(arg0_24.submitBtnMark, 1 - var1_25)
+
+		if var1_25 <= 0 then
+			arg0_24:RemoveSubmitCdTimer()
+		end
+	end, 1, -1)
+
+	arg0_24.submitTimer:Start()
+	arg0_24.submitTimer.func()
+end
+
+function var0_0.SetMaskFillAmount(arg0_26, arg1_26, arg2_26)
+	local var0_26 = arg1_26:GetComponent(typeof(RectMask2D))
+	local var1_26 = arg1_26.sizeDelta.x * arg2_26
+
+	var0_26.padding = Vector4(var1_26, 0, 0, 0)
+end
+
+function var0_0.FlushAwards(arg0_27, arg1_27)
+	local var0_27 = arg1_27:GetDisplayAwards()
+
+	arg0_27.awardUIList:make(function(arg0_28, arg1_28, arg2_28)
+		if arg0_28 == UIItemList.EventUpdate then
+			local var0_28 = var0_27[arg1_28 + 1]
+
+			updateCustomDrop(arg2_28, var0_28)
 		end
 	end)
-	arg0_26.awardUIList:align(#var0_26)
+	arg0_27.awardUIList:align(#var0_27)
 end
 
-function var0_0.FlushConsume(arg0_28, arg1_28)
-	local var0_28 = arg1_28:GetConsume()
+function var0_0.FlushConsume(arg0_29, arg1_29)
+	local var0_29 = arg1_29:GetConsume()
 
-	arg0_28.consumeUIList:make(function(arg0_29, arg1_29, arg2_29)
-		if arg0_29 == UIItemList.EventUpdate then
-			local var0_29 = var0_28[arg1_29 + 1]
-			local var1_29 = {
+	arg0_29.consumeUIList:make(function(arg0_30, arg1_30, arg2_30)
+		if arg0_30 == UIItemList.EventUpdate then
+			local var0_30 = var0_29[arg1_30 + 1]
+			local var1_30 = {
 				count = 0,
-				type = var0_29.type,
-				id = var0_29.id
+				type = var0_30.type,
+				id = var0_30.id
 			}
 
-			updateCustomDrop(arg2_29:Find("tpl"), var1_29)
-			setText(arg2_29:Find("Text"), var1_29.cfg.name)
+			updateCustomDrop(arg2_30:Find("tpl"), var1_30)
+			setText(arg2_30:Find("Text"), var1_30.cfg.name)
 
-			local var2_29 = Drop.New({
-				type = var1_29.type,
-				id = var1_29.id
+			local var2_30 = Drop.New({
+				type = var1_30.type,
+				id = var1_30.id
 			}):getOwnedCount()
-			local var3_29 = var2_29 >= var0_29.count
+			local var3_30 = var2_30 >= var0_30.count
 
-			if var3_29 then
-				setText(arg2_29:Find("count"), var2_29 .. "/" .. var0_29.count)
+			if var3_30 then
+				setText(arg2_30:Find("count"), var2_30 .. "/" .. var0_30.count)
 			else
-				setText(arg2_29:Find("count"), setColorStr(var2_29, COLOR_RED) .. "/" .. var0_29.count)
+				setText(arg2_30:Find("count"), setColorStr(var2_30, COLOR_RED) .. "/" .. var0_30.count)
 			end
 
-			setActive(arg2_29:Find("finish"), var3_29)
-			setActive(arg2_29:Find("line"), arg1_29 + 1 ~= #var0_28)
+			setActive(arg2_30:Find("finish"), var3_30)
+			setActive(arg2_30:Find("line"), arg1_30 + 1 ~= #var0_29)
 		end
 	end)
-	arg0_28.consumeUIList:align(#var0_28)
+	arg0_29.consumeUIList:align(#var0_29)
 end
 
-function var0_0.RemoveSubmitCdTimer(arg0_30)
-	if arg0_30.submitTimer then
-		arg0_30.submitTimer:Stop()
+function var0_0.RemoveSubmitCdTimer(arg0_31)
+	if arg0_31.submitTimer then
+		arg0_31.submitTimer:Stop()
 
-		arg0_30.submitTimer = nil
+		arg0_31.submitTimer = nil
 	end
 end
 
-function var0_0.OnDestroy(arg0_31)
-	arg0_31:RemoveSubmitCdTimer()
-	arg0_31:RemoveLoadingTimer()
-	arg0_31:RemoveDisappearTimer()
+function var0_0.OnDestroy(arg0_32)
+	arg0_32:RemoveSubmitCdTimer()
+	arg0_32:RemoveLoadingTimer()
+	arg0_32:RemoveDisappearTimer()
 end
 
 return var0_0

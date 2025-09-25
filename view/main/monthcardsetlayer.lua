@@ -59,7 +59,7 @@ function var0_0.updateRatioView(arg0_11)
 end
 
 function var0_0.willExit(arg0_12)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_12._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_12._tf)
 end
 
 return var0_0

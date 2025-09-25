@@ -13,14 +13,6 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.uiAnim = arg0_2._tf:GetComponent(typeof(Animation))
-	arg0_2.uiAnimEvent = arg0_2._tf:GetComponent(typeof(DftAniEvent))
-
-	arg0_2.uiAnimEvent:SetEndEvent(function()
-		arg0_2.playingHideAnim = false
-
-		var0_0.super.Hide(arg0_2)
-	end)
 	setText(arg0_2._tf:Find("top/title/Text"), i18n("island_manage_title"))
 
 	arg0_2.rankTF = arg0_2._tf:Find("rank")
@@ -50,6 +42,9 @@ function var0_0.OnLoaded(arg0_2)
 
 	arg0_2.commoditiesTF = var0_2:Find("right/commodities")
 	arg0_2.commoditiesEmptyTF = var0_2:Find("right/commodities_empty")
+
+	setText(arg0_2.commoditiesEmptyTF, i18n("island_manage_stock_out"))
+
 	arg0_2.scrollRect = arg0_2.commoditiesTF:GetComponent("LScrollRect")
 	arg0_2.detailPanel = var0_2:Find("right/detail")
 	arg0_2.detailNameTF = arg0_2.detailPanel:Find("dot/name")
@@ -57,6 +52,9 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.detailDescTF = arg0_2.detailPanel:Find("desc")
 	arg0_2.detailEffectTF = arg0_2.detailPanel:Find("effect/Text")
 	arg0_2.shelfsTF = var0_2:Find("right/shelfs")
+
+	setText(arg0_2.shelfsTF:Find("infos/tip"), i18n("island_manage_item_select"))
+
 	arg0_2.extraCapacityTF = arg0_2.shelfsTF:Find("infos/capacity")
 
 	setText(arg0_2.extraCapacityTF:Find("name"), i18n("island_manage_capacity"))
@@ -89,81 +87,86 @@ function var0_0.OnLoaded(arg0_2)
 	setText(arg0_2.btnsTF:Find("opening/Text"), i18n("island_manage_working"))
 	setText(arg0_2.btnsTF:Find("close/Text"), i18n("island_manage_result"))
 	setText(arg0_2.btnsTF:Find("end/Text"), i18n("island_manage_end_daily_work"))
+
+	arg0_2.ticketBtn = arg0_2.btnsTF:Find("opening/ticket")
 end
 
-function var0_0.OnInit(arg0_4)
-	onButton(arg0_4, arg0_4._tf:Find("top/back"), function()
-		arg0_4:Hide()
+function var0_0.OnInit(arg0_3)
+	onButton(arg0_3, arg0_3._tf:Find("top/back"), function()
+		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0_4, arg0_4.rankTF, function()
-		arg0_4:OpenPage(IslandRestaurantRankPage, arg0_4.restId)
+	onButton(arg0_3, arg0_3.rankTF, function()
+		arg0_3:OpenPage(IslandRestaurantRankPage, arg0_3.restId)
 	end, SFX_PANEL)
-	onButton(arg0_4, arg0_4.btnsTF:Find("prepare/auto"), function()
-		if not arg0_4.isOperable then
+	onButton(arg0_3, arg0_3.btnsTF:Find("prepare/auto"), function()
+		if not arg0_3.isOperable then
 			return
 		end
 
-		arg0_4:OnAutoSelect()
+		arg0_3:OnAutoSelect()
 	end, SFX_PANEL)
-	onButton(arg0_4, arg0_4.openBtn, function()
-		local var0_8 = {}
+	onButton(arg0_3, arg0_3.openBtn, function()
+		local var0_7 = {}
 
-		for iter0_8, iter1_8 in ipairs(arg0_4.assistantsData) do
-			var0_8[iter1_8.id] = arg0_4.selectedShipIds[iter0_8]
+		for iter0_7, iter1_7 in ipairs(arg0_3.assistantsData) do
+			var0_7[iter1_7.id] = arg0_3.selectedShipIds[iter0_7]
 		end
 
-		arg0_4:emit(IslandMediator.OPEN_RESTAURANT, {
-			restId = arg0_4.restId,
-			ships = var0_8,
-			commodities = arg0_4.selectedDic
+		arg0_3:emit(IslandMediator.OPEN_RESTAURANT, {
+			restId = arg0_3.restId,
+			ships = var0_7,
+			commodities = arg0_3.selectedDic
 		})
 	end, SFX_PANEL)
-	onButton(arg0_4, arg0_4.btnsTF:Find("close"), function()
-		arg0_4:emit(IslandMediator.CLOSE_RESTAURANT, arg0_4.restId)
+	onButton(arg0_3, arg0_3.btnsTF:Find("close"), function()
+		arg0_3:emit(IslandMediator.CLOSE_RESTAURANT, arg0_3.restId, arg0_3.isPost)
 	end, SFX_PANEL)
-	onButton(arg0_4, arg0_4.buffInfoBtn, function()
-		if isActive(arg0_4.buffInfoPanel) then
-			setActive(arg0_4.buffInfoPanel, false)
+	onButton(arg0_3, arg0_3.buffInfoBtn, function()
+		if isActive(arg0_3.buffInfoPanel) then
+			setActive(arg0_3.buffInfoPanel, false)
 		else
-			setActive(arg0_4.buffInfoPanel, true)
-			arg0_4.buffInfoUIList:align(#arg0_4.buffInfos)
-			setActive(arg0_4.buffInfoEmptyTF, #arg0_4.buffInfos == 0)
+			setActive(arg0_3.buffInfoPanel, true)
+			arg0_3.buffInfoUIList:align(#arg0_3.buffInfos)
+			setActive(arg0_3.buffInfoEmptyTF, #arg0_3.buffInfos == 0)
 		end
 	end, SFX_PANEL)
-	arg0_4.shipUIList:make(function(arg0_11, arg1_11, arg2_11)
+	onButton(arg0_3, arg0_3.ticketBtn, function()
+		arg0_3:OpenPage(IslandTicketUsePage, IslandUseTicketCommand.TYPES.MANAGE, arg0_3.restId)
+	end, SFX_PANEL)
+	arg0_3.shipUIList:make(function(arg0_11, arg1_11, arg2_11)
 		if arg0_11 == UIItemList.EventUpdate then
-			arg0_4:UpdateShipItem(arg1_11, arg2_11)
+			arg0_3:UpdateShipItem(arg1_11, arg2_11)
 		end
 	end)
 
-	function arg0_4.scrollRect.onInitItem(arg0_12)
-		arg0_4:OnInitItem(arg0_12)
+	function arg0_3.scrollRect.onInitItem(arg0_12)
+		arg0_3:OnInitItem(arg0_12)
 	end
 
-	function arg0_4.scrollRect.onUpdateItem(arg0_13, arg1_13)
-		arg0_4:OnUpdateItem(arg0_13, arg1_13)
+	function arg0_3.scrollRect.onUpdateItem(arg0_13, arg1_13)
+		arg0_3:OnUpdateItem(arg0_13, arg1_13)
 	end
 
-	arg0_4.shelfUIList:make(function(arg0_14, arg1_14, arg2_14)
+	arg0_3.shelfUIList:make(function(arg0_14, arg1_14, arg2_14)
 		if arg0_14 == UIItemList.EventUpdate then
-			arg0_4:UpdateShelfItem(arg1_14, arg2_14)
+			arg0_3:UpdateShelfItem(arg1_14, arg2_14)
 		end
 	end)
-	arg0_4.buffInfoUIList:make(function(arg0_15, arg1_15, arg2_15)
+	arg0_3.buffInfoUIList:make(function(arg0_15, arg1_15, arg2_15)
 		if arg0_15 == UIItemList.EventUpdate then
-			local var0_15 = arg0_4.buffInfos[arg1_15 + 1]
+			local var0_15 = arg0_3.buffInfos[arg1_15 + 1]
 
 			setText(arg2_15:Find("bg/name"), var0_15.name)
 			setText(arg2_15:Find("bg/effect"), var0_15.effect)
 		end
 	end)
 
-	arg0_4.priceFactor = var3_0.island_manage_price_coefficient.key_value_int / 100
-	arg0_4.argA = var3_0.island_manage_sale_coefficient_a.key_value_int / 100
-	arg0_4.argB = var3_0.island_manage_sale_coefficient_b.key_value_int / 100
-	arg0_4.argC = var3_0.island_manage_sale_coefficient_b.key_value_int / 100
-	arg0_4.saleConst = var3_0.island_manage_sale_constant.key_value_int / 100
-	arg0_4.maxAttrEffect = pg.island_chara_att[1].manage_effect / 10000
+	arg0_3.priceFactor = var3_0.island_manage_price_coefficient.key_value_int / 100
+	arg0_3.argA = var3_0.island_manage_sale_coefficient_a.key_value_int / 100
+	arg0_3.argB = var3_0.island_manage_sale_coefficient_b.key_value_int / 100
+	arg0_3.argC = var3_0.island_manage_sale_coefficient_b.key_value_int / 100
+	arg0_3.saleConst = var3_0.island_manage_sale_constant.key_value_int / 100
+	arg0_3.maxAttrEffect = pg.island_chara_att[1].manage_effect / 10000
 end
 
 function var0_0.AddListeners(arg0_16)
@@ -259,11 +262,12 @@ function var0_0.UpdateCardWithItemId(arg0_24, arg1_24)
 	end
 end
 
-function var0_0.OnShow(arg0_25, arg1_25)
+function var0_0.OnShow(arg0_25, arg1_25, arg2_25)
 	arg0_25:BlurPanel()
 	setActive(arg0_25.buffInfoPanel, false)
 
 	arg0_25.restId = arg1_25
+	arg0_25.isPost = arg2_25
 	arg0_25.cards = {}
 
 	arg0_25:Flush()
@@ -312,7 +316,7 @@ function var0_0.FlushRank(arg0_30)
 	local var1_30 = arg0_30.rest:GetCanUpgradeExp()
 
 	setText(arg0_30.rankText, var0_30 .. "/" .. var1_30)
-	setSlider(arg0_30.rankSlider, 0, 1, var0_30 / var1_30)
+	setSlider(arg0_30.rankSlider, 0, 1, var1_30 == 0 and 0 or var0_30 / var1_30)
 end
 
 function var0_0.FlushEvent(arg0_31)
@@ -422,10 +426,13 @@ function var0_0.UpdateShipItem(arg0_35, arg1_35, arg2_35)
 			return
 		end
 
-		arg0_35:OpenPage(IslandShipSelectPage, #arg0_35.assistantsData, Clone(arg0_35.selectedShipIds), nil, function(arg0_37)
-			arg0_35:OnSelectedShipsDone(arg0_37)
-		end, nil, {
+		arg0_35:OpenPage(IslandShipSelectPage, {
 			showBenefits = true,
+			selectNum = #arg0_35.assistantsData,
+			selectedIds = Clone(arg0_35.selectedShipIds),
+			confirmFunc = function(arg0_37)
+				arg0_35:OnSelectedShipsDone(arg0_37)
+			end,
 			emptyInfoTitle = arg0_35.rest:getConfig("name")
 		})
 	end, SFX_PANEL)
@@ -565,8 +572,10 @@ end
 
 function var0_0.GetAttrsFactorsRatio(arg0_47, arg1_47)
 	local var0_47 = var2_0[arg1_47].sub_attribute[2] / 100
+	local var1_47 = arg0_47:GetMainAttrFactors(arg1_47) + arg0_47:GetSubAttrFactors(arg1_47) * var0_47
+	local var2_47 = #arg0_47.assistantsData * (arg0_47.maxAttrEffect + arg0_47.maxAttrEffect * var0_47)
 
-	return (arg0_47:GetMainAttrFactors(arg1_47) + arg0_47:GetSubAttrFactors(arg1_47) * var0_47) / (#arg0_47.assistantsData * (arg0_47.maxAttrEffect + arg0_47.maxAttrEffect * var0_47))
+	return var2_47 == 0 and 0 or var1_47 / var2_47
 end
 
 function var0_0.FlushShelfs(arg0_48)
@@ -754,6 +763,10 @@ function var0_0.GetAutoShipIds(arg0_57)
 		end
 	end
 
+	if #var1_57 == 0 and #arg0_57.assistantsData > 0 then
+		table.insert(var1_57, IslandCharacterAgency.NPC_CONFIG_ID)
+	end
+
 	return var1_57
 end
 
@@ -801,40 +814,29 @@ function var0_0.StopTimer(arg0_70)
 	end
 end
 
-function var0_0.Hide(arg0_71)
-	if arg0_71.playingHideAnim then
-		return
-	end
-
-	arg0_71.uiAnim:Play("anim_IslandRestaurantUI_Out")
-
-	arg0_71.playingHideAnim = true
+function var0_0.OnHide(arg0_71)
+	arg0_71:StopTimer()
+	arg0_71:UnBlurPanel()
 end
 
-function var0_0.OnHide(arg0_72)
-	arg0_72:StopTimer()
-	arg0_72:UnBlurPanel()
+function var0_0.OnDisable(arg0_72)
+	arg0_72:OnHide()
 end
 
-function var0_0.OnDisable(arg0_73)
+function var0_0.OnDestroy(arg0_73)
 	arg0_73:OnHide()
 end
 
-function var0_0.OnDestroy(arg0_74)
-	arg0_74:OnHide()
-	arg0_74.uiAnimEvent:SetEndEvent(nil)
-end
+function var0_0.CaclShipAttrFactors(arg0_74, arg1_74)
+	local var0_74 = 0
 
-function var0_0.CaclShipAttrFactors(arg0_75, arg1_75)
-	local var0_75 = 0
+	for iter0_74, iter1_74 in ipairs(arg0_74) do
+		local var1_74 = iter1_74:GetAttrGrade(IslandShipAttr.GetAtrrName(arg1_74))
 
-	for iter0_75, iter1_75 in ipairs(arg0_75) do
-		local var1_75 = iter1_75:GetAttrGrade(IslandShipAttr.GetAtrrName(arg1_75))
-
-		var0_75 = var0_75 + pg.island_chara_att[var1_75].manage_effect / 10000
+		var0_74 = var0_74 + pg.island_chara_att[var1_74].manage_effect / 10000
 	end
 
-	return var0_75
+	return var0_74
 end
 
 return var0_0

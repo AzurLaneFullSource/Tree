@@ -36,7 +36,7 @@ end
 
 function var0_0.willExit(arg0_7)
 	arg0_7.taskPage:dispose()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_7._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7._tf)
 end
 
 return var0_0

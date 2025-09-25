@@ -157,7 +157,6 @@ function var0_0.OnInit(arg0_2)
 								hideNo = true,
 								type = MSGBOX_TYPE_SINGLE_ITEM,
 								drop = var17_5,
-								weight = LayerWeightConst.TOP_LAYER,
 								remaster = {
 									word = i18n("level_remaster_tip4", pg.chapter_template[var12_5].chapter_name),
 									number = var16_5.count .. "/" .. var15_5,
@@ -193,7 +192,6 @@ function var0_0.OnInit(arg0_2)
 								hideNo = true,
 								type = MSGBOX_TYPE_SINGLE_ITEM,
 								drop = var18_5,
-								weight = LayerWeightConst.TOP_LAYER,
 								remaster = {
 									word = i18n("level_remaster_tip1") .. iter5_5[2],
 									btn_text = i18n("text_confirm")
@@ -236,14 +234,12 @@ end
 
 function var0_0.Show(arg0_17)
 	var0_0.super.Show(arg0_17)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_17._tf, false, {
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_17._tf)
 end
 
 function var0_0.Hide(arg0_18)
 	var0_0.super.Hide(arg0_18)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_18._tf, arg0_18._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_18._tf, arg0_18._parentTf)
 end
 
 function var0_0.set(arg0_19, arg1_19, arg2_19)

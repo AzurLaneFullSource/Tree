@@ -14,8 +14,8 @@ function var0_0.IsSelfIsland(arg0_2)
 	return arg0_2.view:IsSelfIsland()
 end
 
-function var0_0.Emit(arg0_3, arg1_3, ...)
-	arg0_3.view:Emit(arg1_3, ...)
+function var0_0.NotifiyCore(arg0_3, arg1_3, ...)
+	arg0_3.view:NotifiyCore(arg1_3, ...)
 end
 
 function var0_0.Op(arg0_4, ...)
@@ -56,59 +56,71 @@ function var0_0.GetPoolMgr(arg0_11)
 	return arg0_11.view:GetPoolMgr()
 end
 
-function var0_0.Dispose(arg0_12)
+function var0_0.Reset(arg0_12)
 	if arg0_12:IsLoaded() then
 		arg0_12:OnDispose()
 	end
 
-	arg0_12.__state = var3_0
-
 	arg0_12:OnDestroy()
 
-	arg0_12.view = nil
+	arg0_12.__state = var1_0
 end
 
-function var0_0.Update(arg0_13)
-	if not arg0_13:IsLoaded() then
-		return
+function var0_0.Dispose(arg0_13)
+	pg.DelegateInfo.Dispose(arg0_13)
+
+	if arg0_13:IsLoaded() then
+		arg0_13:OnDispose()
 	end
 
-	arg0_13:OnUpdate()
+	arg0_13.__state = var3_0
+
+	arg0_13:OnDestroy()
+
+	arg0_13.view = nil
 end
 
-function var0_0.LateUpdate(arg0_14)
+function var0_0.Update(arg0_14)
 	if not arg0_14:IsLoaded() then
 		return
 	end
 
-	arg0_14:OnLateUpdate()
+	arg0_14:OnUpdate()
 end
 
-function var0_0.OnInit(arg0_15, ...)
+function var0_0.LateUpdate(arg0_15)
+	if not arg0_15:IsLoaded() then
+		return
+	end
+
+	arg0_15:OnLateUpdate()
+end
+
+function var0_0.OnInit(arg0_16, ...)
 	return
 end
 
-function var0_0.OnAnomalyInit(arg0_16, ...)
+function var0_0.OnAnomalyInit(arg0_17, ...)
 	return
 end
 
-function var0_0.Start(arg0_17)
+function var0_0.Start(arg0_18)
 	return
 end
 
-function var0_0.OnUpdate(arg0_18)
+function var0_0.OnUpdate(arg0_19)
 	return
 end
 
-function var0_0.OnLateUpdate(arg0_19)
+function var0_0.OnLateUpdate(arg0_20)
 	return
 end
 
-function var0_0.OnDispose(arg0_20)
+function var0_0.OnDispose(arg0_21)
 	return
 end
 
-function var0_0.OnDestroy(arg0_21)
+function var0_0.OnDestroy(arg0_22)
 	return
 end
 

@@ -30,11 +30,6 @@ function var0_0.init(arg0_2)
 	arg0_2.noMessage = arg0_2:findTF("noMessage", arg0_2.rightPanel)
 
 	setText(arg0_2:findTF("Text", arg0_2.noMessage), i18n("dorm3d_ins_no_topics"))
-
-	if arg0_2.contextData.tf then
-		setParent(arg0_2._tf, arg0_2.contextData.tf)
-	end
-
 	SetActive(arg0_2.topicUI, false)
 	SetActive(arg0_2.backgroundUI, false)
 	SetActive(arg0_2.redPacketUI, false)
@@ -53,6 +48,7 @@ function var0_0.init(arg0_2)
 	onButton(arg0_2, arg0_2:findTF("closeBtn", arg0_2.rightPanel), function()
 		arg0_2:closeView()
 	end, SFX_PANEL)
+	arg0_2:OverlayPanel(arg0_2._tf)
 end
 
 function var0_0.didEnter(arg0_4)
@@ -704,9 +700,7 @@ function var0_0.SetTopicPanel(arg0_45, arg1_45)
 	SetActive(arg0_45:findTF("tip", arg0_45.topicBtn), arg1_45:GetCharacterEndFlagExceptCurrent() == 0)
 	onButton(arg0_45, arg0_45.topicBtn, function()
 		SetActive(arg0_45.topicUI, true)
-		pg.UIMgr.GetInstance():BlurPanel(arg0_45.topicUI, false, {
-			weight = LayerWeightConst.SECOND_LAYER
-		})
+		pg.UIMgr.GetInstance():BlurPanel(arg0_45.topicUI)
 
 		arg0_45.currentTopic = nil
 
@@ -769,7 +763,7 @@ function var0_0.SetTopicPanel(arg0_45, arg1_45)
 end
 
 function var0_0.CloseTopicPanel(arg0_53)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_53.topicUI, arg0_53:findTF("subPages"))
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_53.topicUI, arg0_53:findTF("subPages"))
 	SetActive(arg0_53.topicUI, false)
 end
 
@@ -778,9 +772,7 @@ function var0_0.SetBackgroundPanel(arg0_54, arg1_54)
 
 	onButton(arg0_54, arg0_54.backgroundBtn, function()
 		SetActive(arg0_54.backgroundUI, true)
-		pg.UIMgr.GetInstance():BlurPanel(arg0_54.backgroundUI, false, {
-			weight = LayerWeightConst.SECOND_LAYER
-		})
+		pg.UIMgr.GetInstance():BlurPanel(arg0_54.backgroundUI)
 
 		arg0_54.currentBgId = nil
 
@@ -844,16 +836,14 @@ function var0_0.SetBackgroundPanel(arg0_54, arg1_54)
 end
 
 function var0_0.CloseBackgroundPanel(arg0_61)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_61.backgroundUI, arg0_61:findTF("subPages"))
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_61.backgroundUI, arg0_61:findTF("subPages"))
 	SetActive(arg0_61.backgroundUI, false)
 end
 
 function var0_0.SetRedPacketPanel(arg0_62, arg1_62, arg2_62, arg3_62, arg4_62, arg5_62, arg6_62, arg7_62)
 	onButton(arg0_62, arg1_62, function()
 		SetActive(arg0_62.redPacketUI, true)
-		pg.UIMgr.GetInstance():BlurPanel(arg0_62.redPacketUI, false, {
-			weight = LayerWeightConst.SECOND_LAYER
-		})
+		pg.UIMgr.GetInstance():BlurPanel(arg0_62.redPacketUI)
 		setImageSprite(arg0_62:findTF("panel/charaBg/chara", arg0_62.redPacketUI), LoadSprite("qicon/" .. arg4_62), false)
 
 		if not arg3_62 then
@@ -908,16 +898,14 @@ function var0_0.UpdateRedPacketUI(arg0_66, arg1_66)
 end
 
 function var0_0.CloseRedPacketPanel(arg0_68)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_68.redPacketUI, arg0_68:findTF("subPages"))
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_68.redPacketUI, arg0_68:findTF("subPages"))
 	SetActive(arg0_68.redPacketUI, false)
 end
 
 function var0_0.SetPicturePanel(arg0_69, arg1_69, arg2_69)
 	onButton(arg0_69, arg1_69, function()
 		setActive(arg0_69.pictureUI, true)
-		pg.UIMgr.GetInstance():BlurPanel(arg0_69.pictureUI, false, {
-			weight = LayerWeightConst.SECOND_LAYER
-		})
+		pg.UIMgr.GetInstance():BlurPanel(arg0_69.pictureUI)
 		setImageSprite(arg0_69:findTF("picture", arg0_69.pictureUI), LoadSprite("dorm3dprivatechat/" .. arg2_69), true)
 	end, SFX_PANEL)
 	onButton(arg0_69, arg0_69:findTF("bg", arg0_69.pictureUI), function()
@@ -929,7 +917,7 @@ function var0_0.SetPicturePanel(arg0_69, arg1_69, arg2_69)
 end
 
 function var0_0.ClosePicturePanel(arg0_73)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_73.pictureUI, arg0_73:findTF("subPages"))
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_73.pictureUI, arg0_73:findTF("subPages"))
 	SetActive(arg0_73.pictureUI, false)
 end
 

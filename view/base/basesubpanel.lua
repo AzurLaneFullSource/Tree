@@ -23,6 +23,7 @@ function var0_0.Init(arg0_2)
 
 	arg0_2._state = var0_0.STATES.INITED
 
+	bindComponent(arg0_2, arg0_2._go)
 	arg0_2:OnInit()
 	arg0_2:Show()
 	arg0_2:HandleFuncQueue()

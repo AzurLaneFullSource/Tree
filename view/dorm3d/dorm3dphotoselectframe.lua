@@ -24,8 +24,8 @@ function var0_0.init(arg0_2)
 		end)
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, true, {
-		weight = LayerWeightConst.TOP_LAYER
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, {
+		staticBlur = true
 	})
 
 	arg0_2.frameDic = {}
@@ -284,7 +284,7 @@ function var0_0.SelectFrame(arg0_18)
 end
 
 function var0_0.willExit(arg0_19)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_19._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_19._tf)
 
 	for iter0_19, iter1_19 in pairs(arg0_19.lateFuncDic) do
 		LateUpdateBeat:RemoveListener(iter1_19)

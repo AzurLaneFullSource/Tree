@@ -506,7 +506,7 @@ end
 function var0_0.HideResult(arg0_30)
 	if isActive(arg0_30.result) then
 		setActive(arg0_30.result, false)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_30.result, arg0_30._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_30.result, arg0_30._tf)
 	end
 end
 

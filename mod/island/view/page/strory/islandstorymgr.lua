@@ -35,19 +35,20 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.state = var1_0
 end
 
-function var0_0.Play(arg0_4, arg1_4, arg2_4)
+function var0_0.Play(arg0_4, arg1_4, arg2_4, arg3_4)
 	if not _IslandCore then
 		return
 	end
 
 	if arg0_4:IsRunning() then
-		arg2_4()
+		arg3_4()
 
 		return
 	end
 
-	local var0_4 = _IslandCore:GetView():GetUnitListByKey(IslandConst.UNIT_LIST_OBJ)
+	local var0_4 = _IslandCore:GetView():GetAllUnits()
 
+	arg0_4.refreshNpc = defaultValue(arg2_4, true)
 	arg0_4.state = var2_0
 
 	local var1_4 = pg.NewStoryMgr.GetInstance():GetScript(arg1_4)
@@ -84,8 +85,12 @@ function var0_0.Play(arg0_4, arg1_4, arg2_4)
 	seriesAsync(var3_4, function()
 		arg0_4:EndScript(var2_4)
 
-		if arg2_4 then
-			arg2_4()
+		if arg3_4 then
+			arg3_4()
+		end
+
+		if arg1_4 == IslandGuideChecker.SIGNIN_STORY_NAME then
+			IslandGuideChecker.CheckGuide("ISLAND_GUIDE_26")
 		end
 	end)
 end
@@ -206,7 +211,12 @@ function var0_0.EndScript(arg0_22, arg1_22)
 	arg0_22.script = nil
 
 	arg0_22.player:OnEnd(arg1_22)
-	arg0_22:emit(IslandBaseScene.LINK_CORE_EVENT, IslandProxy.STORY_END)
+
+	local var0_22 = arg0_22.refreshNpc
+
+	arg0_22:emit(IslandBaseScene.LINK_CORE_EVENT, IslandProxy.STORY_END, var0_22)
+
+	arg0_22.refreshNpc = nil
 end
 
 function var0_0.IsRunning(arg0_23)

@@ -26,9 +26,7 @@ function var0_0.register(arg0_1)
 		arg0_1:addSubLayers(Context.New({
 			mediator = AllBuffDetailMediator,
 			viewComponent = AllBuffDetailLayer,
-			data = {
-				LayerWeightMgr_weight = LayerWeightConst.TOP_LAYER
-			}
+			data = {}
 		}))
 	end)
 end

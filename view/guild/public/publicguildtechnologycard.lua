@@ -37,7 +37,7 @@ function var0_0.Update(arg0_1, arg1_1)
 				return
 			end
 
-			pg.MsgboxMgr:GetInstance():ShowMsgBox({
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("guild_tech_consume_tip", var6_1, var7_1, var2_1),
 				onYes = function()
 					arg0_1.view:emit(PublicGuildMainMediator.UPGRADE_TECH, var0_1)

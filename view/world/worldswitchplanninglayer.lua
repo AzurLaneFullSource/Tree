@@ -325,7 +325,7 @@ function var0_0.didEnter(arg0_25)
 end
 
 function var0_0.willExit(arg0_26)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_26._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_26._tf)
 end
 
 function var0_0.initToggle(arg0_27, arg1_27)

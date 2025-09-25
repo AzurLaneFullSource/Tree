@@ -25,7 +25,7 @@ end
 function var0_0.didEnter(arg0_5)
 	local var0_5 = arg0_5.guild:GetOfficePainting()
 
-	pg.GuildPaintingMgr:GetInstance():Update(var0_5, Vector3(-737, -171, 0))
+	pg.GuildPaintingMgr.GetInstance():Update(var0_5, Vector3(-737, -171, 0))
 	arg0_5.taskPage:ExecuteAction("Update", arg0_5.guild, arg0_5.isAdmin)
 	onButton(arg0_5, arg0_5.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
@@ -61,8 +61,8 @@ end
 function var0_0.willExit(arg0_11)
 	arg0_11.taskPage:Destroy()
 
-	if isActive(pg.MsgboxMgr:GetInstance()._go) then
-		triggerButton(pg.MsgboxMgr:GetInstance()._closeBtn)
+	if isActive(pg.MsgboxMgr.GetInstance()._go) then
+		triggerButton(pg.MsgboxMgr.GetInstance()._closeBtn)
 	end
 end
 

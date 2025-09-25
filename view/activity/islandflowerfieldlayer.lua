@@ -152,7 +152,7 @@ function var0_0.DoCharAction(arg0_13)
 end
 
 function var0_0.willExit(arg0_18)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_18._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_18._tf)
 
 	if arg0_18.timer then
 		arg0_18.timer:Stop()

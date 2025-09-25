@@ -42,7 +42,7 @@ function var0_0.didEnter(arg0_4)
 		arg0_4:GetAllAward()
 	end)
 	setText(arg0_4.getall:Find("Text"), i18n("other_world_task_get_all"))
-	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf, false)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf)
 end
 
 function var0_0.UpdateView(arg0_8)

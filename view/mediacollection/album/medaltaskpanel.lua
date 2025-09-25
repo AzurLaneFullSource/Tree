@@ -4,7 +4,6 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1._go = arg1_1
 	arg0_1._tf = arg1_1.transform
 	arg0_1._parent = arg2_1
-	arg0_1.UIMgr = pg.UIMgr.GetInstance()
 
 	pg.DelegateInfo.New(arg0_1)
 
@@ -187,11 +186,9 @@ function var0_0.SetActive(arg0_19, arg1_19)
 	arg0_19._active = arg1_19
 
 	if arg1_19 then
-		pg.UIMgr.GetInstance():BlurPanel(arg0_19._go, false, {
-			weight = LayerWeightConst.SECOND_LAYER
-		})
+		pg.UIMgr.GetInstance():BlurPanel(arg0_19._go)
 	else
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_19._go, arg0_19._parent._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_19._go, arg0_19._parent._tf)
 
 		if arg0_19._parent.TASK_ANIM and arg0_19._parent.TASK_ENTER_ANIM_Time and arg0_19._parent.TASK_Time then
 			local var0_19 = findTF(arg0_19._tf, "panel/list").transform.childCount

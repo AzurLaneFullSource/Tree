@@ -57,10 +57,8 @@ function var0_0.init(arg0_4)
 		arg0_4:Op(...)
 	end)
 
-	local var0_4 = pg.UIMgr.GetInstance()
-
-	arg0_4.camera = var0_4.levelCamera:GetComponent(typeof(Camera))
-	arg0_4.rtUIMain = var0_4.LevelMain
+	arg0_4.camera = pg.UIMgr.GetInstance().levelCamera:GetComponent(typeof(Camera))
+	arg0_4.rtUIMain = pg.UIMgr.GetInstance().LevelMain
 
 	setActive(arg0_4.rtUIMain, false)
 
@@ -254,7 +252,7 @@ function var0_0.InitSubView(arg0_11)
 end
 
 function var0_0.didEnter(arg0_22)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_22.rtTop)
+	arg0_22:OverlayPanel(arg0_22.rtTop)
 
 	arg0_22.warningSairen = not arg0_22.contextData.inSave
 
@@ -366,7 +364,7 @@ end
 function var0_0.willExit(arg0_37)
 	arg0_37:SaveState()
 	arg0_37:RemoveWorldListener()
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_37.rtTop, arg0_37._tf)
+	arg0_37:UnOverlayPanel(arg0_37.rtTop, arg0_37._tf)
 	arg0_37.svOrderPanel:Destroy()
 	arg0_37.svScannerPanel:Destroy()
 	arg0_37.svAchievement:Destroy()
@@ -1907,13 +1905,13 @@ function var0_0.BuildCutInAnim(arg0_240, arg1_240, arg2_240)
 			if not IsNil(arg0_240.tfAnim) then
 				arg0_240.inCutIn = false
 
-				pg.UIMgr.GetInstance():UnOverlayPanel(arg0_240.tfAnim, arg0_240.rtPanelList)
+				arg0_240:UnOverlayPanel(arg0_240.tfAnim, arg0_240.rtPanelList)
 				setActive(arg0_240.tfAnim, false)
 
 				return arg0_243()
 			end
 		end)
-		pg.UIMgr.GetInstance():OverlayPanel(arg0_240.tfAnim)
+		arg0_240:OverlayPanel(arg0_240.tfAnim)
 		setActive(arg0_240.tfAnim, true)
 	end)
 	seriesAsync(var0_240, function()
@@ -1936,7 +1934,7 @@ function var0_0.PlaySound(arg0_246, arg1_246, arg2_246)
 end
 
 function var0_0.ChangeTopRaycasts(arg0_248, arg1_248)
-	GetComponent(arg0_248.rtTop, typeof(CanvasGroup)).blocksRaycasts = tobool(arg1_248)
+	GetOrAddComponent(arg0_248.rtTop, typeof(CanvasGroup)).blocksRaycasts = tobool(arg1_248)
 end
 
 function var0_0.DoTopBlock(arg0_249, arg1_249)

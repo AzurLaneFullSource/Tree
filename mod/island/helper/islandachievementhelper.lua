@@ -20,7 +20,7 @@ function var0_0.GetRuntimeData(arg0_1, arg1_1)
 			return underscore.reduce(var1_1:GetShips(), 0, function(arg0_7, arg1_7)
 				local var0_7 = arg1_7:GetSkill()
 
-				return arg0_7 + (var0_7:IsUnlock() and var0_7:GetLevel() <= arg1_1 and 1 or 0)
+				return arg0_7 + (var0_7:IsUnlock() and var0_7:GetLevel() >= arg1_1 and 1 or 0)
 			end)
 		end,
 		[IslandAchievementType.SHIP_ATTR_LV_1] = function()
@@ -81,55 +81,58 @@ function var0_0.GetRuntimeData(arg0_1, arg1_1)
 		end,
 		[IslandAchievementType.FURNITURE] = function()
 			return arg1_1 == 0 and #var0_1:GetAgoraAgency():GetFurnitures() or #var0_1:GetAgoraAgency():GetFurnituresByType(arg1_1)
+		end,
+		[IslandAchievementType.ACTION] = function()
+			return #var0_1:GetActionAgency():GetActionList()
 		end
 	}, function()
 		assert(false, "not exist runtime achv type: " .. arg0_1)
 	end)
 end
 
-function var0_0.UpdateRecord(arg0_30, arg1_30, arg2_30)
-	local var0_30 = getProxy(IslandProxy):GetIsland():GetAchievementAgency()
-
-	if var0_30:CheckRecordExist(arg0_30, arg1_30) then
-		var0_30:UpdateRecord(arg0_30, arg1_30, arg2_30)
-	end
-end
-
-function var0_0.UpdateRecordWithAdd(arg0_31, arg1_31, arg2_31)
+function var0_0.UpdateRecord(arg0_31, arg1_31, arg2_31)
 	local var0_31 = getProxy(IslandProxy):GetIsland():GetAchievementAgency()
 
 	if var0_31:CheckRecordExist(arg0_31, arg1_31) then
-		var0_31:UpdateRecordWithAdd(arg0_31, arg1_31, arg2_31)
+		var0_31:UpdateRecord(arg0_31, arg1_31, arg2_31)
 	end
 end
 
-function var0_0.OnShipUpgrade(arg0_32, arg1_32)
-	local var0_32 = IslandAchievementType.SHIP_LV
-	local var1_32 = getProxy(IslandProxy):GetIsland():GetAchievementAgency()
-	local var2_32 = var1_32:GetRecordsByType(var0_32)
+function var0_0.UpdateRecordWithAdd(arg0_32, arg1_32, arg2_32)
+	local var0_32 = getProxy(IslandProxy):GetIsland():GetAchievementAgency()
 
-	for iter0_32, iter1_32 in pairs(var2_32) do
-		if arg0_32 < iter0_32 and iter0_32 <= arg1_32 then
-			var1_32:UpdateRecord(var0_32, iter0_32, iter1_32 + 1)
-		end
+	if var0_32:CheckRecordExist(arg0_32, arg1_32) then
+		var0_32:UpdateRecordWithAdd(arg0_32, arg1_32, arg2_32)
 	end
 end
 
-function var0_0.OnShipSkillUpgrade(arg0_33)
-	local var0_33 = IslandAchievementType.SHIP_SKILL_LV
+function var0_0.OnShipUpgrade(arg0_33, arg1_33)
+	local var0_33 = IslandAchievementType.SHIP_LV
 	local var1_33 = getProxy(IslandProxy):GetIsland():GetAchievementAgency()
 	local var2_33 = var1_33:GetRecordsByType(var0_33)
 
 	for iter0_33, iter1_33 in pairs(var2_33) do
-		if iter0_33 <= arg0_33 then
+		if arg0_33 < iter0_33 and iter0_33 <= arg1_33 then
 			var1_33:UpdateRecord(var0_33, iter0_33, iter1_33 + 1)
 		end
 	end
 end
 
-function var0_0.CheckAttrUpgrade(arg0_34, arg1_34)
-	for iter0_34, iter1_34 in pairs(arg1_34:GetAttrs()) do
-		if arg1_34:GetAttrGrade(iter0_34) ~= arg0_34:GetAttrGrade(iter0_34) then
+function var0_0.OnShipSkillUpgrade(arg0_34)
+	local var0_34 = IslandAchievementType.SHIP_SKILL_LV
+	local var1_34 = getProxy(IslandProxy):GetIsland():GetAchievementAgency()
+	local var2_34 = var1_34:GetRecordsByType(var0_34)
+
+	for iter0_34, iter1_34 in pairs(var2_34) do
+		if iter0_34 <= arg0_34 then
+			var1_34:UpdateRecord(var0_34, iter0_34, iter1_34 + 1)
+		end
+	end
+end
+
+function var0_0.CheckAttrUpgrade(arg0_35, arg1_35)
+	for iter0_35, iter1_35 in pairs(arg1_35:GetAttrs()) do
+		if arg1_35:GetAttrGrade(iter0_35) ~= arg0_35:GetAttrGrade(iter0_35) then
 			return true
 		end
 	end
@@ -137,52 +140,52 @@ function var0_0.CheckAttrUpgrade(arg0_34, arg1_34)
 	return false
 end
 
-function var0_0.OnShipAttrUpgrade(arg0_35, arg1_35)
-	local var0_35 = getProxy(IslandProxy):GetIsland():GetAchievementAgency()
+function var0_0.OnShipAttrUpgrade(arg0_36, arg1_36)
+	local var0_36 = getProxy(IslandProxy):GetIsland():GetAchievementAgency()
 
-	if var0_0.CheckAttrUpgrade(arg0_35, arg1_35) then
-		for iter0_35, iter1_35 in ipairs(IslandAchievementType.GetAttrTypes()) do
-			local var1_35 = var0_35:GetRecordsByType(iter1_35)
+	if var0_0.CheckAttrUpgrade(arg0_36, arg1_36) then
+		for iter0_36, iter1_36 in ipairs(IslandAchievementType.GetAttrTypes()) do
+			local var1_36 = var0_36:GetRecordsByType(iter1_36)
 
-			for iter2_35, iter3_35 in pairs(var1_35) do
-				var0_35:UpdateRecord(iter1_35, iter2_35, var0_0.GetRuntimeData(iter1_35, iter2_35))
+			for iter2_36, iter3_36 in pairs(var1_36) do
+				var0_36:UpdateRecord(iter1_36, iter2_36, var0_0.GetRuntimeData(iter1_36, iter2_36))
 			end
 		end
 	end
 end
 
-function var0_0.OnSeasonReset(arg0_36)
-	local var0_36 = IslandAchievementType.SEASON_RANK
-	local var1_36 = getProxy(IslandProxy):GetIsland():GetAchievementAgency()
-	local var2_36 = var1_36:GetRecordsByType(var0_36)
+function var0_0.OnSeasonReset(arg0_37)
+	local var0_37 = IslandAchievementType.SEASON_RANK
+	local var1_37 = getProxy(IslandProxy):GetIsland():GetAchievementAgency()
+	local var2_37 = var1_37:GetRecordsByType(var0_37)
 
-	for iter0_36, iter1_36 in pairs(var2_36) do
-		if arg0_36 <= iter0_36 then
-			var1_36:UpdateRecord(var0_36, iter0_36, 1)
+	for iter0_37, iter1_37 in pairs(var2_37) do
+		if arg0_37 <= iter0_37 then
+			var1_37:UpdateRecord(var0_37, iter0_37, 1)
 		end
 	end
 end
 
-function var0_0.OnFinishTechnolog(arg0_37)
-	local var0_37 = getProxy(IslandProxy):GetIsland():GetAchievementAgency()
+function var0_0.OnFinishTechnolog(arg0_38)
+	local var0_38 = getProxy(IslandProxy):GetIsland():GetAchievementAgency()
 
-	var0_37:UpdateRecordWithAdd(IslandAchievementType.FINISH_TECH, 0, 1)
+	var0_38:UpdateRecordWithAdd(IslandAchievementType.FINISH_TECH, 0, 1)
 
-	local var1_37 = pg.island_technology_template[arg0_37].tech_belong
+	local var1_38 = pg.island_technology_template[arg0_38].tech_belong
 
-	var0_37:UpdateRecordWithAdd(IslandAchievementType.FINISH_TYPE_TECH, var1_37, 1)
+	var0_38:UpdateRecordWithAdd(IslandAchievementType.FINISH_TYPE_TECH, var1_38, 1)
 end
 
-function var0_0.OnNpcInteract(arg0_38)
-	local var0_38 = IslandAchievementType.NPC_INTERACT
+function var0_0.OnTakePhoto(arg0_39)
+	local var0_39 = IslandAchievementType.TAKE_PHOTO
 
-	if getProxy(IslandProxy):GetIsland():GetAchievementAgency():CheckRecordExist(var0_38, arg0_38) then
+	if getProxy(IslandProxy):GetIsland():GetAchievementAgency():CheckRecordExist(var0_39, arg0_39) then
 		pg.m02:sendNotification(GAME.ISLAND_UPDATE_ACHV, {
 			records = {
 				{
 					value = 1,
-					event_type = var0_38,
-					event_arg = arg0_38
+					event_type = var0_39,
+					event_arg = arg0_39
 				}
 			}
 		})

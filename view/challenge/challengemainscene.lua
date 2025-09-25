@@ -900,7 +900,7 @@ end
 function var0_0.hideFleetEdit(arg0_75)
 	setActive(arg0_75.fleetSelect, false)
 	arg0_75:closeCommanderPanel()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_75.fleetSelect, arg0_75._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_75.fleetSelect, arg0_75._tf)
 	setParent(arg0_75.fleetSelect, arg0_75._tf, false)
 end
 

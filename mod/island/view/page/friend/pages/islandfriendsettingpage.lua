@@ -91,7 +91,7 @@ function var0_0.InitToggles(arg0_10)
 		end
 
 		arg0_10:Send()
-	end, SFX_PANEl)
+	end, SFX_PANEL)
 	onToggle(arg0_10, arg0_10.guildToggle, function(arg0_13)
 		if arg0_13 then
 			table.removebyvalue(arg0_10.openFlags, IslandConst.OPEN_GUILD)
@@ -100,7 +100,7 @@ function var0_0.InitToggles(arg0_10)
 		end
 
 		arg0_10:Send()
-	end, SFX_PANEl)
+	end, SFX_PANEL)
 	onToggle(arg0_10, arg0_10.codeToggle, function(arg0_14)
 		if arg0_14 then
 			table.insert(arg0_10.openFlags, IslandConst.OPEN_CODE)
@@ -114,7 +114,7 @@ function var0_0.InitToggles(arg0_10)
 
 		arg0_10:InitCodePanenl(arg0_14)
 		arg0_10:Send()
-	end, SFX_PANEl)
+	end, SFX_PANEL)
 	arg0_10:UpdateRefreshBtn()
 end
 

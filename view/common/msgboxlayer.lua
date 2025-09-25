@@ -537,9 +537,8 @@ function var0_0.updateButton(arg0_22, arg1_22, arg2_22, arg3_22)
 end
 
 function var0_0.Loaded(arg0_23, arg1_23)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_23._tf, false, {
+	pg.UIMgr.GetInstance():BlurPanel(arg0_23._tf, {
 		groupName = arg1_23.groupName,
-		weight = arg1_23.weight or LayerWeightConst.SECOND_LAYER,
 		blurLevelCamera = arg1_23.blurLevelCamera,
 		parent = arg1_23.parent
 	})

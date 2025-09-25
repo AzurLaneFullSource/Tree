@@ -55,7 +55,7 @@ function var2_0.Active(arg0_6)
 	LeanTween.scale(arg0_6._blocker, Vector3(1, 1, 0), var0_6)
 end
 
-function var2_0.Puase(arg0_7)
+function var2_0.Pause(arg0_7)
 	LeanTween.cancel(go(arg0_7._blocker))
 end
 

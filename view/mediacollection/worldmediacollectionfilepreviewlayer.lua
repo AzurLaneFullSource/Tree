@@ -97,7 +97,7 @@ function var0_0.didEnter(arg0_4)
 end
 
 function var0_0.willExit(arg0_9)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_9._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_9._tf)
 	arg0_9.loader:Clear()
 
 	local var0_9 = arg0_9.contextData.callback

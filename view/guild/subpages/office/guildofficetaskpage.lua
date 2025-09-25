@@ -38,16 +38,15 @@ function var0_0.OnLoaded(arg0_2)
 end
 
 function var0_0.OnInit(arg0_3)
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg0_3.taskTF, {
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_3.taskTF, {
 		pbList = {
 			arg0_3.taskTF
-		},
-		overlayType = LayerWeightConst.OVERLAY_UI_ADAPT
+		}
 	})
 	onButton(arg0_3, arg0_3.supplyUnOpenAdminTF, function()
 		local var0_4 = arg0_3.guild:getSupplyConsume()
 
-		pg.MsgboxMgr:GetInstance():ShowMsgBox({
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("guild_start_supply_consume_tip", var0_4),
 			onYes = function()
 				arg0_3:emit(GuildOfficeMediator.ON_PURCHASE_SUPPLY)
@@ -139,7 +138,7 @@ function var0_0.UpdatePrivateTask(arg0_16, arg1_16)
 	arg0_16.privateTaskResTxt.text = arg1_16:GetPrivateAward()
 
 	onButton(arg0_16, arg0_16.privateTaskAcceptBtn, function()
-		pg.MsgboxMgr:GetInstance():ShowMsgBox({
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("guild_task_accept", arg1_16:getConfig("name"), var3_16:getConfig("name"), var3_16:getConfig("name")),
 			onYes = function()
 				arg0_16:emit(GuildOfficeMediator.ON_ACCEPT_TASK, var1_16)
@@ -201,7 +200,7 @@ function var0_0.UpdateContributionPanel(arg0_21)
 				local var2_23 = var1_22:GetResCntByAward(var0_23)
 				local var3_23 = var2_23 < var0_23[3] and "#FF5C5CFF" or "#92FC63FF"
 
-				pg.MsgboxMgr:GetInstance():ShowMsgBox({
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("guild_donate_tip", var1_23:getConfig("name"), var0_23[3], var2_23, var3_23),
 					onYes = function()
 						arg0_21:emit(GuildOfficeMediator.ON_COMMIT, var0_22.id)

@@ -111,8 +111,7 @@ function var1_0.error(arg0_15, arg1_15, arg2_15)
 		content = i18n("file_down_mgr_error", arg1_15, arg2_15),
 		onYes = var0_15,
 		onNo = var1_15,
-		onClose = var1_15,
-		weight = LayerWeightConst.TOP_LAYER
+		onClose = var1_15
 	})
 end
 

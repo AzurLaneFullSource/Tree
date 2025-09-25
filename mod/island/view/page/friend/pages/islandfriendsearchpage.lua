@@ -11,6 +11,7 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.idTxt = arg0_2:findTF("top/id/Text"):GetComponent(typeof(Text))
 	arg0_2.copyBtn = arg0_2:findTF("top/id/copy")
 	arg0_2.saerchBtn = arg0_2:findTF("top/search/copy")
+	arg0_2.refreshBtn = arg0_2:findTF("top/refresh")
 	arg0_2.searchBar = arg0_2:findTF("top/search/input")
 	arg0_2.displays = {}
 
@@ -18,9 +19,16 @@ function var0_0.OnLoaded(arg0_2)
 	setText(arg0_2:findTF("top/search/copy/Text"), i18n("island_search"))
 	setText(arg0_2:findTF("top/search/input/Text"), i18n("island_input_my_id"))
 	setText(arg0_2:findTF("top/id/label"), i18n("island_my_id"))
+	setText(arg0_2:findTF("top/refresh/Text"), i18n("island_visit_set_refresh"))
+
+	arg0_2.requestFriendBox = IslandRequestFriendBox.New(arg0_2._tf, arg0_2.event)
 end
 
 function var0_0.OnSearch(arg0_3, arg1_3)
+	if not arg1_3.list then
+		return
+	end
+
 	arg0_3.displays = arg1_3.list
 
 	arg0_3:InitList()
@@ -36,7 +44,7 @@ function var0_0.OnInitItem(arg0_5, arg1_5)
 	local var0_5 = arg0_5.cards[arg1_5]
 
 	onButton(arg0_5, var0_5.addBtn, function()
-		arg0_5:emit(IslandMediator.ADD_FRIEND, var0_5.player.id, "")
+		arg0_5.requestFriendBox:ExecuteAction("Show", var0_5.player.id)
 	end, SFX_PANEL)
 end
 
@@ -82,8 +90,36 @@ function var0_0.OnInit(arg0_11)
 			return
 		end
 
-		arg0_11:emit(IslandMediator.SEARCH_FRIEND, 3, var1_13)
+		arg0_11:emit(IslandMediator.SEARCH_FRIEND, SearchFriendCommand.SEARCH_TYPE_FRIEND, var1_13)
 	end, SFX_PANEL)
+	onButton(arg0_11, arg0_11.refreshBtn, function()
+		local var0_14 = pg.TimeMgr.GetInstance():GetServerTime()
+
+		if arg0_11.waitTimer and arg0_11.waitTimer - var0_14 > 0 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("friend_searchFriend_wait_time", arg0_11.waitTimer - var0_14))
+
+			return
+		end
+
+		arg0_11.waitTimer = var0_14 + var1_0
+
+		arg0_11:emit(IslandMediator.SEARCH_FRIEND, SearchFriendCommand.SEARCH_TYPE_LIST, "")
+	end, SFX_PANEL)
+	arg0_11:emit(IslandMediator.SEARCH_FRIEND, SearchFriendCommand.SEARCH_TYPE_LIST, "")
+end
+
+function var0_0.HideRequestBox(arg0_15)
+	arg0_15.requestFriendBox:ExecuteAction("Hide")
+end
+
+function var0_0.OnDestroy(arg0_16)
+	var0_0.super.OnDestroy(arg0_16)
+
+	if arg0_16.requestFriendBox then
+		arg0_16.requestFriendBox:Destroy()
+
+		arg0_16.requestFriendBox = nil
+	end
 end
 
 return var0_0

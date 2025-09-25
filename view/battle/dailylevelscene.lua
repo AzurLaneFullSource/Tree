@@ -117,7 +117,7 @@ function var0_0.initItems(arg0_14)
 		local var3_14 = var1_14[arg0_14.dailyList[iter0_14]].insert_daily
 
 		if var2_14 and type(var2_14) == "table" then
-			if not pg.TimeMgr:GetInstance():inTime(var2_14) then
+			if not pg.TimeMgr.GetInstance():inTime(var2_14) then
 				table.remove(arg0_14.dailyList, iter0_14)
 			end
 		elseif var3_14 == 1 then
@@ -340,10 +340,10 @@ function var0_0.initDailyLevel(arg0_24, arg1_24)
 	local var5_24 = Clone(var0_24.limit_period)
 	local var6_24
 
-	if var5_24 and type(var5_24) == "table" and pg.TimeMgr:GetInstance():inTime(var5_24) then
-		local var7_24 = pg.TimeMgr:GetInstance():GetServerTime()
+	if var5_24 and type(var5_24) == "table" and pg.TimeMgr.GetInstance():inTime(var5_24) then
+		local var7_24 = pg.TimeMgr.GetInstance():GetServerTime()
 
-		var6_24 = pg.TimeMgr:GetInstance():Table2ServerTime({
+		var6_24 = pg.TimeMgr.GetInstance():Table2ServerTime({
 			year = var5_24[2][1][1],
 			month = var5_24[2][1][2],
 			day = var5_24[2][1][3],
@@ -577,10 +577,7 @@ function var0_0.DoSelectedAnimation(arg0_44, arg1_44, arg2_44, arg3_44)
 		function(arg0_45)
 			arg0_44.stageScrollRect.enabled = false
 
-			pg.UIMgr.GetInstance():BlurPanel(arg0_44.selectedPanel, false, {
-				groupName = LayerWeightConst.GROUP_DAILY,
-				weight = LayerWeightConst.BASE_LAYER - 1
-			})
+			pg.UIMgr.GetInstance():BlurPanel(arg0_44.selectedPanel)
 
 			arg1_44.sizeDelta = Vector2(arg1_44.sizeDelta.x, 0)
 
@@ -618,7 +615,7 @@ function var0_0.DoUnselectAnimtion(arg0_49, arg1_49, arg2_49)
 
 	seriesAsync({
 		function(arg0_50)
-			pg.UIMgr.GetInstance():UnblurPanel(arg0_49.selectedPanel, arg0_49._tf)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_49.selectedPanel, arg0_49._tf)
 			setActive(arg0_49.selectedPanel, false)
 
 			local var0_50 = arg1_49:GetComponent(typeof(LayoutElement))
@@ -818,7 +815,7 @@ end
 
 function var0_0.willExit(arg0_76)
 	if arg0_76.selectedStage then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_76.selectedPanel, arg0_76._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_76.selectedPanel, arg0_76._tf)
 	end
 
 	arg0_76:clearTween()

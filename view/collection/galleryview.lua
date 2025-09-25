@@ -527,9 +527,7 @@ function var0_0.switchPicImg(arg0_38, arg1_38)
 end
 
 function var0_0.openPicPanel(arg0_41)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_41.picPanel, false, {
-		groupName = LayerWeightConst.GROUP_COLLECTION
-	})
+	arg0_41:BlurPanel(arg0_41.picPanel)
 
 	arg0_41.picPanel.offsetMax = arg0_41._tf.parent.offsetMax
 	arg0_41.picPanel.offsetMin = arg0_41._tf.parent.offsetMin
@@ -550,7 +548,7 @@ end
 
 function var0_0.closePicPanel(arg0_44, arg1_44)
 	if arg1_44 == true then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_44.picPanel, arg0_44._tf)
+		arg0_44:UnOverlayPanel(arg0_44.picPanel, arg0_44._tf)
 		setActive(arg0_44.picPanel, false)
 
 		return
@@ -567,7 +565,7 @@ function var0_0.closePicPanel(arg0_44, arg1_44)
 				x = 0,
 				y = 0
 			})
-			pg.UIMgr.GetInstance():UnblurPanel(arg0_44.picPanel, arg0_44._tf)
+			arg0_44:UnOverlayPanel(arg0_44.picPanel, arg0_44._tf)
 			setActive(arg0_44.picPanel, false)
 		end))
 	end

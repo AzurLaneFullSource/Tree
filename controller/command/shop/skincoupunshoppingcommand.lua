@@ -48,7 +48,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			arg_list = {}
 		}, 11203, function(arg0_4)
 			if arg0_4.result == 0 then
-				SkinCouponActivity.UseSkinCoupon()
+				SkinCouponActivity.UseSkinCoupon(var1_1)
 				var8_1:addSkin(var9_1)
 
 				local var0_4 = getProxy(PlayerProxy):getData()
@@ -71,7 +71,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	SkinCouponMsgBox.New(pg.UIMgr.GetInstance().OverlayMain):ExecuteAction("Show", {
 		skinName = var9_1.skinName,
 		price = var5_1,
-		drop = SkinCouponActivity.StaticGetItemDrop(),
+		drop = SkinCouponActivity.StaticGetItemDrop(var1_1),
 		onYes = var10_1
 	})
 end

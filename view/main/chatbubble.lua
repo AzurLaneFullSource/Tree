@@ -65,35 +65,27 @@ function var0_0.update(arg0_3, arg1_3)
 	arg0_3.timeTF.text = var7_3
 
 	if arg0_3.dutyTF then
-		setActive(arg0_3.dutyTF, var1_3.duty)
-
-		if var1_3.duty then
-			local var8_3 = GetSpriteFromAtlas("dutyicon", var1_3.duty)
-
-			setImageSprite(arg0_3.dutyTF, var8_3, true)
-		end
+		arg0_3:UpdateDuty(var1_3)
 	end
 
-	local var9_3 = Ship.New({
+	local var8_3 = Ship.New({
 		configId = var2_3.id
 	})
-	local var10_3 = arg0_3.stars.childCount
-	local var11_3 = var9_3:getStar()
+	local var9_3 = arg0_3.stars.childCount
+	local var10_3 = var8_3:getStar()
 
-	for iter0_3 = var10_3, var11_3 - 1 do
+	for iter0_3 = var9_3, var10_3 - 1 do
 		cloneTplTo(arg0_3.star, arg0_3.stars)
 	end
 
-	local var12_3 = arg0_3.stars.childCount
+	local var11_3 = arg0_3.stars.childCount
 
-	for iter1_3 = 0, var12_3 - 1 do
+	for iter1_3 = 0, var11_3 - 1 do
 		arg0_3.stars:GetChild(iter1_3).gameObject:SetActive(iter1_3 < var2_3.star)
 	end
 
 	if arg0_3.channel then
-		local var13_3 = GetSpriteFromAtlas("channel", ChatConst.GetChannelSprite(arg1_3.type) .. "_1920")
-
-		setImageSprite(arg0_3.channel, var13_3, true)
+		arg0_3:UpdateChannel(arg1_3)
 	end
 
 	arg0_3.headTF.color = Color.New(1, 1, 1, 0)
@@ -105,33 +97,33 @@ function var0_0.update(arg0_3, arg1_3)
 		end
 	end)
 
-	local var14_3 = AttireFrame.attireFrameRes(var1_3, var0_3, AttireConst.TYPE_ICON_FRAME, var3_3)
+	local var12_3 = AttireFrame.attireFrameRes(var1_3, var0_3, AttireConst.TYPE_ICON_FRAME, var3_3)
 
-	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var14_3, var14_3, true, function(arg0_5)
+	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var12_3, var12_3, true, function(arg0_5)
 		if IsNil(arg0_3.tf) then
 			return
 		end
 
 		if arg0_3.circle and arg0_3.data then
-			arg0_5.name = var14_3
+			arg0_5.name = var12_3
 			findTF(arg0_5.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
 
 			setParent(arg0_5, arg0_3.circle, false)
 		else
-			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var14_3, var14_3, arg0_5)
+			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var12_3, var12_3, arg0_5)
 		end
 	end)
 
 	if arg1_3.emojiId then
-		local var15_3 = pg.emoji_template[arg1_3.emojiId]
+		local var13_3 = pg.emoji_template[arg1_3.emojiId]
 
-		PoolMgr.GetInstance():GetPrefab("emoji/" .. var15_3.pic, var15_3.pic, true, function(arg0_6)
+		PoolMgr.GetInstance():GetPrefab("emoji/" .. var13_3.pic, var13_3.pic, true, function(arg0_6)
 			if IsNil(arg0_3.tf) then
 				return
 			end
 
 			if arg0_3.face and arg0_3.data then
-				arg0_6.name = var15_3.pic
+				arg0_6.name = var13_3.pic
 
 				local var0_6 = arg0_6:GetComponent("Animator")
 
@@ -144,13 +136,13 @@ function var0_0.update(arg0_3, arg1_3)
 				rtf(arg0_6).sizeDelta = Vector2.New(180, 180)
 				rtf(arg0_6).localPosition = var0_3 and Vector3(-50, 0, 0) or Vector3(50, 0, 0)
 			else
-				PoolMgr.GetInstance():ReturnPrefab("emoji/" .. var15_3.pic, var15_3.pic, arg0_6)
+				PoolMgr.GetInstance():ReturnPrefab("emoji/" .. var13_3.pic, var13_3.pic, arg0_6)
 			end
 		end)
 	else
-		local var16_3 = AttireFrame.attireFrameRes(var1_3, var0_3, AttireConst.TYPE_CHAT_FRAME, var3_3)
+		local var14_3 = arg0_3:GetAttireFrameRes(var1_3, var0_3, var3_3)
 
-		PoolMgr.GetInstance():GetPrefab("ChatFrame/" .. var16_3, var16_3, true, function(arg0_7)
+		PoolMgr.GetInstance():GetPrefab("ChatFrame/" .. var14_3, var14_3, true, function(arg0_7)
 			if IsNil(arg0_3.tf) then
 				return
 			end
@@ -203,14 +195,14 @@ function var0_0.update(arg0_3, arg1_3)
 				end)
 				arg0_3.isLoadChatBg = true
 				arg0_7:GetComponent(typeof(LayoutElement)).preferredWidth = arg0_3.chatBgWidth
-				arg0_7.name = var16_3
+				arg0_7.name = var14_3
 
 				setParent(arg0_7, arg0_3.chatFrameTr, false)
 				tf(arg0_7):SetAsFirstSibling()
 				Canvas.ForceUpdateCanvases()
 				arg0_3:OnChatFrameLoaded(arg0_7)
 			else
-				PoolMgr.GetInstance():ReturnPrefab("ChatFrame/" .. var16_3, var16_3, arg0_7)
+				PoolMgr.GetInstance():ReturnPrefab("ChatFrame/" .. var14_3, var14_3, arg0_7)
 			end
 		end)
 	end
@@ -218,31 +210,51 @@ function var0_0.update(arg0_3, arg1_3)
 	setActive(arg0_3.face.parent, arg1_3.emojiId)
 end
 
-function var0_0.dispose(arg0_11)
-	if arg0_11.face.childCount > 0 then
-		local var0_11 = arg0_11.face:GetChild(0).gameObject
-
-		PoolMgr.GetInstance():ReturnPrefab("emoji/" .. var0_11.name, var0_11.name, var0_11)
-	end
-
-	if arg0_11.circle.childCount > 0 then
-		local var1_11 = arg0_11.circle:GetChild(0).gameObject
-
-		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var1_11.name, var1_11.name, var1_11)
-	end
-
-	if arg0_11.isLoadChatBg then
-		local var2_11 = arg0_11.chatFrameTr:GetChild(0).gameObject
-
-		PoolMgr.GetInstance():ReturnPrefab("ChatFrame/" .. var2_11.name, var2_11.name, var2_11)
-
-		arg0_11.isLoadChatBg = false
-	end
-
-	arg0_11.data = nil
+function var0_0.GetAttireFrameRes(arg0_11, arg1_11, arg2_11, arg3_11)
+	return (AttireFrame.attireFrameRes(arg1_11, arg2_11, AttireConst.TYPE_CHAT_FRAME, arg3_11))
 end
 
-function var0_0.OnChatFrameLoaded(arg0_12, arg1_12)
+function var0_0.UpdateDuty(arg0_12, arg1_12)
+	setActive(arg0_12.dutyTF, arg1_12.duty)
+
+	if arg1_12.duty then
+		local var0_12 = GetSpriteFromAtlas("dutyicon", arg1_12.duty)
+
+		setImageSprite(arg0_12.dutyTF, var0_12, true)
+	end
+end
+
+function var0_0.UpdateChannel(arg0_13, arg1_13)
+	local var0_13 = GetSpriteFromAtlas("channel", ChatConst.GetChannelSprite(arg1_13.type) .. "_1920")
+
+	setImageSprite(arg0_13.channel, var0_13, true)
+end
+
+function var0_0.dispose(arg0_14)
+	if arg0_14.face.childCount > 0 then
+		local var0_14 = arg0_14.face:GetChild(0).gameObject
+
+		PoolMgr.GetInstance():ReturnPrefab("emoji/" .. var0_14.name, var0_14.name, var0_14)
+	end
+
+	if arg0_14.circle.childCount > 0 then
+		local var1_14 = arg0_14.circle:GetChild(0).gameObject
+
+		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var1_14.name, var1_14.name, var1_14)
+	end
+
+	if arg0_14.isLoadChatBg then
+		local var2_14 = arg0_14.chatFrameTr:GetChild(0).gameObject
+
+		PoolMgr.GetInstance():ReturnPrefab("ChatFrame/" .. var2_14.name, var2_14.name, var2_14)
+
+		arg0_14.isLoadChatBg = false
+	end
+
+	arg0_14.data = nil
+end
+
+function var0_0.OnChatFrameLoaded(arg0_15, arg1_15)
 	return
 end
 

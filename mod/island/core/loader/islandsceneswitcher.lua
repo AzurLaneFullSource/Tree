@@ -1,24 +1,24 @@
 local var0_0 = class("IslandSceneSwitcher", import(".IslandSceneLoader"))
 
-function var0_0.LoadProgressUI(arg0_1, arg1_1)
+function var0_0.LoadProgressUI(arg0_1, arg1_1, arg2_1)
 	seriesAsync({
 		function(arg0_2)
-			arg0_1:LoadProgressUI(arg0_2)
+			arg0_1.progressLoadingId = IslandAssetLoadDispatcher.Instance:Enqueue("ui/IslandSceneLoader", "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_3)
+				arg0_1.loadingInstID = FrameAsyncInstantiateManager.Instance:EnqueueInstantiate(arg0_3, function(arg0_4)
+					setParent(arg0_4, pg.UIMgr.GetInstance().UIMain)
+
+					arg0_1.progressUI = arg0_4
+					arg0_1.curtain = arg0_1.progressUI.transform:Find("curtain")
+
+					setActive(arg0_1.progressUI, true)
+					arg0_2()
+				end)
+			end), true, true)
 		end,
-		function(arg0_3)
-			arg0_1:PlayFadeIn(arg0_3)
+		function(arg0_5)
+			arg0_1:PlayFadeIn(arg0_5)
 		end
-	}, arg1_1)
-end
-
-function var0_0.LoadProgressUI(arg0_4, arg1_4)
-	ResourceMgr.Inst:getAssetAsync("ui/IslandSceneLoader", "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_5)
-		arg0_4.progressUI = Object.Instantiate(arg0_5, pg.UIMgr.GetInstance().UIMain)
-		arg0_4.curtain = arg0_4.progressUI.transform:Find("curtain")
-
-		setActive(arg0_4.progressUI, true)
-		arg1_4()
-	end), true, true)
+	}, arg2_1)
 end
 
 function var0_0.PlayFadeIn(arg0_6, arg1_6)
@@ -95,6 +95,18 @@ function var0_0.Clear(arg0_18)
 	end
 
 	arg0_18:UnloadProgressUI()
+
+	if arg0_18.loadingInstID then
+		FrameAsyncInstantiateManager.Instance:Cancel(arg0_18.loadingInstID)
+
+		arg0_18.loadingInstID = nil
+	end
+
+	if arg0_18.progressLoadingId then
+		IslandAssetLoadDispatcher.Instance:Cancel(arg0_18.progressLoadingId)
+
+		arg0_18.progressLoadingId = nil
+	end
 end
 
 return var0_0

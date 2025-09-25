@@ -48,7 +48,7 @@ function var0_0.HideCompositeResult(arg0_8)
 		return
 	end
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_8._tf, arg0_8._parentClass._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_8._tf, arg0_8._parentClass._tf)
 	setActive(arg0_8._go, false)
 	arg0_8:PlayGuide()
 

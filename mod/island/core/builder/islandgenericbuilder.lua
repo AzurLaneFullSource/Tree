@@ -20,33 +20,39 @@ function var0_0.Load(arg0_1, arg1_1, arg2_1)
 end
 
 function var0_0.LoadAsset(arg0_6, arg1_6, arg2_6)
-	ResourceMgr.Inst:getAssetAsync(arg1_6:GetAssetPath(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_7)
-		local var0_7 = Object.Instantiate(arg0_7)
+	local var0_6 = IslandAssetLoadDispatcher.Instance:Enqueue(arg1_6:GetAssetPath(), "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_7)
+		local var0_7 = FrameAsyncInstantiateManager.Instance:EnqueueInstantiate(arg0_7, function(arg0_8)
+			arg2_6(arg0_8)
+		end)
 
-		arg2_6(var0_7)
+		table.insert(arg0_6.insIdList, var0_7)
 	end), true, true)
+
+	arg0_6:AddLoadingID(var0_6)
 end
 
-function var0_0.SetupBT(arg0_8, arg1_8, arg2_8, arg3_8)
-	local var0_8 = arg2_8:GetBehaviourTree()
+function var0_0.SetupBT(arg0_9, arg1_9, arg2_9, arg3_9)
+	local var0_9 = arg2_9:GetBehaviourTree()
 
-	if not var0_8 or var0_8 == "" then
-		arg3_8()
+	if not var0_9 or var0_9 == "" then
+		arg3_9()
 
 		return
 	end
 
-	ResourceMgr.Inst:getAssetAsync(var0_8, "", typeof(NodeCanvas.BehaviourTrees.BehaviourTree), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_9)
-		assert(arg0_9, var0_8)
+	local var1_9 = IslandAssetLoadDispatcher.Instance:Enqueue(var0_9, "", typeof(NodeCanvas.BehaviourTrees.BehaviourTree), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_10)
+		assert(arg0_10, var0_9)
 
-		GetOrAddComponent(arg1_8, typeof(NodeCanvas.BehaviourTrees.BehaviourTreeOwner)).graph = Object.Instantiate(arg0_9)
+		GetOrAddComponent(arg1_9, typeof(NodeCanvas.BehaviourTrees.BehaviourTreeOwner)).graph = Object.Instantiate(arg0_10)
 
-		arg3_8()
+		arg3_9()
 	end), true, true)
+
+	arg0_9:AddLoadingID(var1_9)
 end
 
-function var0_0.Recycle(arg0_10, arg1_10, arg2_10)
-	Object.Destroy(arg2_10)
+function var0_0.Recycle(arg0_11, arg1_11, arg2_11)
+	Object.Destroy(arg2_11)
 end
 
 return var0_0

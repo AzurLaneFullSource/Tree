@@ -16,9 +16,7 @@ function var0_0.init(arg0_2)
 	arg0_2.animEvent:SetEndEvent(function()
 		arg0_2:emit(var0_0.ON_CLOSE)
 	end)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, false, {
-		weight = LayerWeightConst.THIRD_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
 
 	arg0_2._tipTF = arg0_2._tf:Find("anim_root/tip")
 	arg0_2.contentTF = arg0_2._tipTF:Find("tip_bg/layout/title/name")
@@ -78,7 +76,7 @@ end
 
 function var0_0.willExit(arg0_15)
 	arg0_15:saveTipRecord()
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_15._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_15._tf)
 
 	if arg0_15.contextData.onExit then
 		arg0_15.contextData.onExit()

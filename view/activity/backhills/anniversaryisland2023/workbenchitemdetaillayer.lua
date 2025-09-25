@@ -16,9 +16,7 @@ function var0_0.didEnter(arg0_3)
 		arg0_3:onBackPressed()
 	end, SFX_CANCEL)
 	arg0_3:UpdateItemDetail()
-	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf, nil, {
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf)
 end
 
 function var0_0.UpdateItemDetail(arg0_6)
@@ -51,7 +49,7 @@ function var0_0.UpdateItem(arg0_8, arg1_8, arg2_8)
 end
 
 function var0_0.willExit(arg0_9)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_9._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_9._tf)
 	arg0_9.loader:Clear()
 end
 

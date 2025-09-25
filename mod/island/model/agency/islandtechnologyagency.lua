@@ -70,6 +70,10 @@ function var0_0.IsUnlockTech(arg0_8, arg1_8)
 end
 
 function var0_0.IsFinishedTech(arg0_9, arg1_9)
+	if not arg0_9.techData[arg1_9] then
+		return false
+	end
+
 	return arg0_9.techData[arg1_9]:GetFinishedCnt() > 0
 end
 

@@ -145,10 +145,7 @@ function var0_0.didEnter(arg0_7)
 			setActive(arg0_7._autoSubToggle, false)
 		end
 	end, SFX_PANEL, SFX_PANEL)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_7._tf, {
-		weight = LayerWeightConst.SECOND_LAYER,
-		groupName = LayerWeightConst.GROUP_LEVELUI
-	})
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_7._tf)
 	onNextTick(function()
 		if arg0_7.exited then
 			return
@@ -165,8 +162,7 @@ function var0_0.didEnter(arg0_7)
 	onButton(arg0_7, arg0_7:findTF("middle/gear_score/vanguard/SonarTip"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = pg.gametip.fleet_antisub_range_tip.tip,
-			weight = LayerWeightConst.SECOND_LAYER
+			helps = pg.gametip.fleet_antisub_range_tip.tip
 		})
 	end, SFX_PANEL)
 	onButton(arg0_7, arg0_7._costTip, function()
@@ -176,8 +172,7 @@ function var0_0.didEnter(arg0_7)
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
-			content = i18n("use_oil_limit_help", var4_16, var3_16),
-			weight = LayerWeightConst.SECOND_LAYER
+			content = i18n("use_oil_limit_help", var4_16, var3_16)
 		})
 	end)
 end
@@ -509,8 +504,7 @@ function var0_0.displayFleetInfo(arg0_35)
 						type = DROP_TYPE_ITEM,
 						id = var0_38
 					},
-					intro = var1_38.desc,
-					weight = LayerWeightConst.TOP_LAYER
+					intro = var1_38.desc
 				})
 			end)
 		end
@@ -592,9 +586,7 @@ function var0_0.displayStrategyInfo(arg0_44, arg1_44)
 
 	arg0_44.strategyPanel:attach(arg0_44)
 	arg0_44.strategyPanel:set(arg1_44)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_44.strategyPanel._tf, false, {
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_44.strategyPanel._tf)
 
 	function arg0_44.strategyPanel.onConfirm()
 		local var0_45 = arg0_44.chapter.fleet
@@ -621,7 +613,7 @@ end
 
 function var0_0.hideStrategyInfo(arg0_47)
 	if arg0_47.strategyPanel then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_47.strategyPanel._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_47.strategyPanel._tf)
 		arg0_47.strategyPanel:detach()
 	end
 end

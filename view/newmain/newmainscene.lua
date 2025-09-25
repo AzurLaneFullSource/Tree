@@ -85,8 +85,7 @@ end
 function var0_0.ResUISettings(arg0_12)
 	return {
 		showType = PlayerResUI.TYPE_ALL,
-		anim = not arg0_12.resAnimFlag,
-		weight = LayerWeightConst.BASE_LAYER + 1
+		anim = not arg0_12.resAnimFlag
 	}
 end
 
@@ -122,6 +121,10 @@ function var0_0.init(arg0_14)
 		[var0_0.THEME_CLASSIC] = NewMainClassicTheme.New(arg0_14._tf, arg0_14.event, arg0_14.contextData),
 		[var0_0.THEME_MELLOW] = NewMainMellowTheme.New(arg0_14._tf, arg0_14.event, arg0_14.contextData)
 	}
+
+	for iter0_14, iter1_14 in pairs(arg0_14.themes) do
+		iter1_14:RegisterView(arg0_14)
+	end
 end
 
 function var0_0.didEnter(arg0_15)
@@ -461,6 +464,8 @@ function var0_0.willExit(arg0_55)
 
 	arg0_55.bgView = nil
 
+	arg0_55:UnloadTheme()
+
 	if arg0_55.calibrationPage then
 		arg0_55.calibrationPage:Destroy()
 
@@ -509,7 +514,6 @@ function var0_0.willExit(arg0_55)
 
 	arg0_55.skinExperienceDisplayPage = nil
 
-	arg0_55:UnloadTheme()
 	arg0_55:RevertSleepTimeout()
 end
 

@@ -363,7 +363,7 @@ function var0_0.init(arg0_4)
 			arg0_4.isLock = false
 
 			setActive(arg0_4.rtLevelUpWindow, false)
-			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_4.rtLevelUpWindow, arg0_4._tf)
+			arg0_4:UnOverlayPanel(arg0_4.rtLevelUpWindow, arg0_4._tf)
 			existCall(arg0_4.levelUpCallback)
 		end))
 	end, SFX_PANEL)
@@ -593,10 +593,10 @@ function var0_0.init(arg0_4)
 			end
 
 			local var1_77 = arg1_77.position
-			local var2_77 = CameraMgr.instance:Raycast(var0_77.IKSettings.CameraRaycaster, var1_77)
+			local var2_77 = CameraMgr.instance:Raycast(var0_77.IKSettings.CameraRaycaster, var1_77):ToTable()
 
-			if var2_77.Length ~= 0 then
-				local var3_77 = var2_77[0].gameObject.transform
+			if #var2_77 > 0 then
+				local var3_77 = var2_77[1].gameObject.transform
 				local var4_77 = table.keyof(var0_77.IKSettings.Colliders, var3_77)
 
 				warning(var3_77, var4_77)
@@ -2703,6 +2703,7 @@ function var0_0.PopFavorLevelUp(arg0_318, arg1_318, arg2_318, arg3_318)
 					updateDorm3dIcon(arg2_320, arg0_318.serverAward[var0_320])
 					onButton(arg0_318, arg2_320, function()
 						arg0_318:emit(BaseUI.ON_NEW_DROP, {
+							style = "dorm",
 							drop = arg0_318.serverAward[var0_320]
 						})
 					end, SFX_PANEL)
@@ -2721,10 +2722,7 @@ function var0_0.PopFavorLevelUp(arg0_318, arg1_318, arg2_318, arg3_318)
 	arg0_318.levelItemList:align(#arg0_318.serverAward + #arg0_318.clientAward)
 	setActive(arg0_318.rtLevelUpWindow, true)
 	pg.CriMgr.GetInstance():PlaySE_V3("ui-dorm_upgrade")
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_318.rtLevelUpWindow, {
-		weight = LayerWeightConst.SECOND_LAYER,
-		groupName = LayerWeightConst.GROUP_DORM3D
-	})
+	arg0_318:OverlayPanel(arg0_318.rtLevelUpWindow)
 
 	function arg0_318.levelUpCallback()
 		arg0_318.levelUpCallback = nil

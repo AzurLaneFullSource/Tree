@@ -23,6 +23,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			for iter0_3, iter1_3 in ipairs(arg0_3.list) do
 				local var0_3 = PowerRank.New(iter1_3, var1_1)
 
+				var0_3:setArenaRank(iter1_3.arena_rank)
 				table.insert(var3_1, var0_3)
 			end
 
@@ -39,7 +40,8 @@ function var0_0.execute(arg0_1, arg1_1)
 		}, 18204, function(arg0_5)
 			local var0_5 = getProxy(PlayerProxy):getData()
 			local var1_5 = getProxy(BayProxy):getShipById(var0_5.character)
-			local var2_5 = {
+			local var2_5 = getProxy(IslandProxy):GetIsland():GetLevel()
+			local var3_5 = {
 				user_id = var0_5.id,
 				point = arg0_5.point,
 				name = var0_5.name,
@@ -51,9 +53,10 @@ function var0_0.execute(arg0_1, arg1_1)
 				remoulded = var1_5:isRemoulded() and 1 or 0
 			}
 
-			var5_1 = PowerRank.New(var2_5, var1_1)
+			var5_1 = PowerRank.New(var3_5, var1_1)
 
 			var5_1:setRank(arg0_5.rank)
+			var5_1:setArenaRank(var2_5)
 			arg0_4()
 		end)
 	end

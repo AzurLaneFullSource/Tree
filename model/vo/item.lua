@@ -27,6 +27,7 @@ var0_0.LOVE_LETTER_TYPE = 23
 var0_0.SPWEAPON_MATERIAL_TYPE = 24
 var0_0.METALESSON_TYPE = 25
 var0_0.SKIN_ASSIGNED_TYPE = 26
+var0_0.SHIP_GIFT = 50
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	assert(not arg1_1.type or arg1_1.type == DROP_TYPE_VITEM or arg1_1.type == DROP_TYPE_ITEM)

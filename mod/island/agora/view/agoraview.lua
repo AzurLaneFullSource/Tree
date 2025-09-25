@@ -11,7 +11,7 @@ function var0_0.Init(arg0_1)
 
 	local var0_1 = GameObject.Find("AgoraMainStage")
 
-	arg0_1.agoraLookAtObj = var0_1.transform:Find("lookat"):GetComponent("AgoraLookAtObj")
+	arg0_1.agoraLookAtObj = GetOrAddComponent(var0_1.transform:Find("lookat"), "AgoraLookAtObj")
 	arg0_1.lookatBuilding = var0_1.transform:Find("lookat_building")
 	arg0_1.furnitureRoot = var0_1.transform:Find("furniture")
 
@@ -21,27 +21,21 @@ function var0_0.Init(arg0_1)
 
 	if var1_0 then
 		arg0_1.debugMap = AgoraDebugMap.New(arg0_1)
-
-		arg0_1.debugMap:Init()
 	end
 
 	arg0_1.mode = var0_0.MODE_OVERVIEW
 	arg0_1.decorationView = arg0_1:CreateDecorationView()
 	arg0_1.paveTileView = AgoraPaveTileView.New(arg0_1)
 	arg0_1.reloadingView = AgoraReloadingView.New(arg0_1)
-	arg0_1.gridTr = GameObject.Find("[MainBlock]/[Model]/nobake/grid")
+	arg0_1.gridTr = GameObject.Find("/[MainBlock]/[Model]/nobake/pre_grid")
 	arg0_1.trees = {
-		[4356] = GameObject.Find("[MainBlock]/[Model]/fbx/lightmap04_jhs_autumn/tree_level_2"),
-		[6084] = GameObject.Find("[MainBlock]/[Model]/fbx/lightmap04_jhs_autumn/tree_level_3")
-	}
-	arg0_1.stones = {
-		[4356] = GameObject.Find("[MainBlock]/[Model]/fbx/lightmap04_jhs_autumn/shanti_Level_2"),
-		[6084] = GameObject.Find("[MainBlock]/[Model]/fbx/lightmap04_jhs_autumn/shanti_Level_3")
+		[4356] = GameObject.Find("/[MainBlock]/[Model]/nobake/level2"),
+		[6084] = GameObject.Find("/[MainBlock]/[Model]/nobake/level3")
 	}
 	arg0_1.grids = {
-		[2916] = GameObject.Find("[MainBlock]/[Model]/nobake/grid/level1_54x54"),
-		[4356] = GameObject.Find("[MainBlock]/[Model]/nobake/grid/level2_66x66"),
-		[6084] = GameObject.Find("[MainBlock]/[Model]/nobake/grid/level3_78x78")
+		[1600] = GameObject.Find("/[MainBlock]/[Model]/nobake/pre_grid/level1"),
+		[4356] = GameObject.Find("/[MainBlock]/[Model]/nobake/pre_grid/level2"),
+		[6084] = GameObject.Find("/[MainBlock]/[Model]/nobake/pre_grid/level3")
 	}
 
 	for iter0_1, iter1_1 in pairs(arg0_1.grids) do
@@ -74,7 +68,9 @@ function var0_0.AddAgoraListeners(arg0_4)
 	arg0_4:AddAgoraListener(ISLAND_AGORA_EVT.SELECTED_ITEM, arg0_4.OnSelectedItem)
 	arg0_4:AddAgoraListener(ISLAND_AGORA_EVT.UNSELECTED_ITEM, arg0_4.OnUnSelectedItem)
 	arg0_4:AddAgoraListener(ISLAND_AGORA_EVT.CONFIRM_SELECTED_ITEM, arg0_4.OnConfirmItem)
+	arg0_4:AddAgoraListener(ISLAND_AGORA_EVT.DRAG_ITEM_BEGIN, arg0_4.OnBeginDragItem)
 	arg0_4:AddAgoraListener(ISLAND_AGORA_EVT.DRAG_ITEM, arg0_4.OnDragItem)
+	arg0_4:AddAgoraListener(ISLAND_AGORA_EVT.DRAG_ITEM_END, arg0_4.OnEndDragItem)
 	arg0_4:AddAgoraListener(ISLAND_AGORA_EVT.MAP_SIZE_UPDATE, arg0_4.OnBoardUpdate)
 	arg0_4:AddAgoraListener(ISLAND_AGORA_EVT.START_INTERACTION, arg0_4.OnStartInteraction)
 	arg0_4:AddAgoraListener(ISLAND_AGORA_EVT.END_INTERACTION, arg0_4.OnEndInteraction)
@@ -91,6 +87,11 @@ function var0_0.AddAgoraListeners(arg0_4)
 	arg0_4:AddAgoraListener(ISLAND_AGORA_EVT.START_LOAD_ITEMS, arg0_4.OnStartLoadItems)
 	arg0_4:AddAgoraListener(ISLAND_AGORA_EVT.END_LOAD_ITEMS, arg0_4.OnEndLoadItems)
 	arg0_4:AddAgoraListener(ISLAND_AGORA_EVT.SAVE, arg0_4.OnSave)
+	arg0_4:AddAgoraListener(ISLAND_AGORA_EVT.TAG_CHANGE, arg0_4.OnTagChange)
+	arg0_4:AddAgoraListener(ISLAND_EVT.GEN_UNIT, arg0_4.OnGenUnit)
+	arg0_4:AddAgoraListener(ISLAND_EVT.RMOVE_UNIT, arg0_4.OnRemoveUnit)
+	arg0_4:AddAgoraListener(ISLAND_EVT.RESET_UNIT_POS, arg0_4.OnResetUnitPos)
+	arg0_4:AddAgoraListener(ISLAND_EVT.RESET_UNIT_ROT, arg0_4.OnResetUnitRotation)
 end
 
 function var0_0.RemoveAgoraListeners(arg0_5)
@@ -108,7 +109,9 @@ function var0_0.RemoveAgoraListeners(arg0_5)
 	arg0_5:RemoveAgoraListener(ISLAND_AGORA_EVT.SELECTED_ITEM, arg0_5.OnSelectedItem)
 	arg0_5:RemoveAgoraListener(ISLAND_AGORA_EVT.UNSELECTED_ITEM, arg0_5.OnUnSelectedItem)
 	arg0_5:RemoveAgoraListener(ISLAND_AGORA_EVT.CONFIRM_SELECTED_ITEM, arg0_5.OnConfirmItem)
+	arg0_5:RemoveAgoraListener(ISLAND_AGORA_EVT.DRAG_ITEM_BEGIN, arg0_5.OnBeginDragItem)
 	arg0_5:RemoveAgoraListener(ISLAND_AGORA_EVT.DRAG_ITEM, arg0_5.OnDragItem)
+	arg0_5:RemoveAgoraListener(ISLAND_AGORA_EVT.DRAG_ITEM_END, arg0_5.OnEndDragItem)
 	arg0_5:RemoveAgoraListener(ISLAND_AGORA_EVT.MAP_SIZE_UPDATE, arg0_5.OnBoardUpdate)
 	arg0_5:RemoveAgoraListener(ISLAND_AGORA_EVT.START_INTERACTION, arg0_5.OnStartInteraction)
 	arg0_5:RemoveAgoraListener(ISLAND_AGORA_EVT.END_INTERACTION, arg0_5.OnEndInteraction)
@@ -125,6 +128,11 @@ function var0_0.RemoveAgoraListeners(arg0_5)
 	arg0_5:RemoveAgoraListener(ISLAND_AGORA_EVT.START_LOAD_ITEMS, arg0_5.OnStartLoadItems)
 	arg0_5:RemoveAgoraListener(ISLAND_AGORA_EVT.END_LOAD_ITEMS, arg0_5.OnEndLoadItems)
 	arg0_5:RemoveAgoraListener(ISLAND_AGORA_EVT.SAVE, arg0_5.OnSave)
+	arg0_5:RemoveAgoraListener(ISLAND_AGORA_EVT.TAG_CHANGE, arg0_5.OnTagChange)
+	arg0_5:RemoveAgoraListener(ISLAND_EVT.GEN_UNIT, arg0_5.OnGenUnit)
+	arg0_5:RemoveAgoraListener(ISLAND_EVT.RMOVE_UNIT, arg0_5.OnRemoveUnit)
+	arg0_5:RemoveAgoraListener(ISLAND_EVT.RESET_UNIT_POS, arg0_5.OnResetUnitPos)
+	arg0_5:RemoveAgoraListener(ISLAND_EVT.RESET_UNIT_ROT, arg0_5.OnResetUnitRotation)
 end
 
 function var0_0.OnSave(arg0_6)
@@ -140,9 +148,11 @@ end
 function var0_0.OnEndLoadItems(arg0_8, arg1_8)
 	arg0_8.startLoadItemsFlag = false
 
-	local var0_8 = AgoraCalc.MapPosition2WorldPosition(arg1_8)
+	if arg1_8 then
+		local var0_8 = AgoraCalc.MapPosition2WorldPosition(arg1_8)
 
-	arg0_8.lookatBuilding.position = var0_8
+		arg0_8.lookatBuilding.position = var0_8
+	end
 end
 
 function var0_0.OnReload(arg0_9)
@@ -183,7 +193,7 @@ function var0_0.OnClearSelectedUnit(arg0_17)
 	var0_0.super.OnClearSelectedUnit(arg0_17)
 
 	if arg0_17.selectedUnitId then
-		arg0_17:GetSubView(AgoraOpView):HideInterActionPanel()
+		arg0_17:GetSubView(IslandInteractionView):HideInterActionPanel()
 
 		local var0_17 = arg0_17:GetUnitModule(arg0_17.selectedUnitId)
 
@@ -207,7 +217,7 @@ function var0_0.OnSelectedUnit(arg0_18, arg1_18)
 
 		arg0_18.selectedUnitId = arg1_18.id
 
-		arg0_18:GetSubView(AgoraOpView):ShowInterActionPanel({
+		arg0_18:GetSubView(IslandInteractionView):ShowInterActionPanel({
 			type = 41
 		})
 	end
@@ -217,23 +227,28 @@ function var0_0.OnSignCntUpdate(arg0_19, arg1_19)
 	arg0_19:GetSubView(AgoraOpView):UpdateSignInTip()
 end
 
-function var0_0.OnGenItem(arg0_20, arg1_20)
-	local var0_20 = arg0_20.mouldBuilder:Build(arg1_20)
+function var0_0.OnGenItem(arg0_20, arg1_20, arg2_20)
+	local var0_20 = arg0_20.mouldBuilder:Build(arg1_20, arg2_20)
 
 	arg0_20:AddUnit(var0_20)
 
 	if arg0_20.mode == var0_0.MODE_EDIT then
-		arg0_20.decorationView:Execute("FlushList")
+		arg0_20.decorationView:Execute("FlushCard", arg1_20.id)
 		arg0_20.decorationView:Execute("FlushCapacity")
 
 		if not arg0_20.startLoadItemsFlag then
 			arg0_20:LookAtItem(var0_20)
 		end
 	end
+
+	arg0_20:GetSystemModule(IslandConst.AGORA_GRASSLAND):SetVisible(arg1_20, false)
 end
 
 function var0_0.OnTagChange(arg0_21, arg1_21)
-	arg0_21:SwitchLookat(arg1_21 == AgoraFurnitureType.BUILDING)
+	local var0_21 = arg1_21 == AgoraFurnitureType.BUILDING
+
+	arg0_21:SwitchLookat(var0_21)
+	arg0_21:GetSubView(AgoraOpView):ShowMoveBtn(not var0_21)
 end
 
 function var0_0.SwitchLookat(arg0_22, arg1_22)
@@ -269,9 +284,11 @@ function var0_0.OnRemoveItem(arg0_24, arg1_24)
 	arg0_24:RemoveUnit(var0_24)
 
 	if arg0_24.mode == var0_0.MODE_EDIT then
-		arg0_24.decorationView:Execute("FlushList")
+		arg0_24.decorationView:Execute("FlushCard", arg1_24.id)
 		arg0_24.decorationView:Execute("FlushCapacity")
 	end
+
+	arg0_24:GetSystemModule(IslandConst.AGORA_GRASSLAND):SetVisible(arg1_24, true)
 end
 
 function var0_0.OnBoardUpdate(arg0_25, arg1_25)
@@ -281,13 +298,9 @@ function var0_0.OnBoardUpdate(arg0_25, arg1_25)
 		setActive(iter1_25, var0_25 < iter0_25)
 	end
 
-	for iter2_25, iter3_25 in pairs(arg0_25.stones) do
-		setActive(iter3_25, var0_25 < iter2_25)
-	end
-
 	if arg0_25.mode ~= var0_0.MODE_OVERVIEW then
-		for iter4_25, iter5_25 in pairs(arg0_25.grids) do
-			setActive(iter5_25, iter4_25 <= var0_25)
+		for iter2_25, iter3_25 in pairs(arg0_25.grids) do
+			setActive(iter3_25, iter2_25 <= var0_25)
 		end
 	end
 
@@ -328,176 +341,186 @@ function var0_0.OnUnplaceItem(arg0_29)
 	arg0_29.decorationView:Execute("OnSelectedItem", -1, true)
 end
 
-function var0_0.OnDragItem(arg0_30, arg1_30, arg2_30)
-	arg0_30:GetAgoraMould(arg1_30):ShowOrHideArea(not arg2_30, true)
+function var0_0.OnBeginDragItem(arg0_30, arg1_30)
+	print("OnBeginDragItem")
+	arg0_30:GetSystemModule(IslandConst.AGORA_GRASSLAND):SetVisible(arg1_30, true)
 end
 
-function var0_0.OnPositionOccupied(arg0_31, arg1_31)
-	arg0_31:GetAgoraMould(arg1_31):ShowOrHideArea(true, true)
+function var0_0.OnDragItem(arg0_31, arg1_31, arg2_31)
+	arg0_31:GetAgoraMould(arg1_31):ShowOrHideArea(not arg2_31, true)
 end
 
-function var0_0.OnClearPositionOccupied(arg0_32, arg1_32)
-	for iter0_32, iter1_32 in pairs(arg0_32:GetUnitListByKey(IslandConst.UNIT_LIST_AGORA)) do
-		if iter0_32 ~= arg1_32 then
-			iter1_32:ShowOrHideArea(false, false)
+function var0_0.OnEndDragItem(arg0_32, arg1_32)
+	print("OnEndDragItem")
+	arg0_32:GetSystemModule(IslandConst.AGORA_GRASSLAND):SetVisible(arg1_32, false)
+end
+
+function var0_0.OnPositionOccupied(arg0_33, arg1_33)
+	arg0_33:GetAgoraMould(arg1_33):ShowOrHideArea(true, true)
+end
+
+function var0_0.OnClearPositionOccupied(arg0_34, arg1_34)
+	for iter0_34, iter1_34 in pairs(arg0_34:GetUnitListByKey(IslandConst.UNIT_LIST_AGORA)) do
+		if iter1_34.id ~= arg1_34 then
+			iter1_34:ShowOrHideArea(false, false)
 		end
 	end
 end
 
-function var0_0.OnStartInteraction(arg0_33, arg1_33, arg2_33, arg3_33)
-	local var0_33 = arg2_33:GetHostId()
-	local var1_33 = arg2_33:GetUserId()
+function var0_0.OnStartInteraction(arg0_35, arg1_35, arg2_35, arg3_35)
+	local var0_35 = arg2_35:GetHostId()
+	local var1_35 = arg2_35:GetUserId()
 
-	warning("start", var0_33, var1_33, arg3_33, arg2_33.id)
+	warning("start", var0_35, var1_35, arg3_35, arg2_35.id)
 
-	local var2_33 = arg0_33:GetAgoraMould(var0_33)
-	local var3_33 = arg0_33:GetUnitModule(var1_33)
-	local var4_33 = arg0_33.player == var3_33
+	local var2_35 = arg0_35:GetUnitModule(var0_35)
+	local var3_35 = arg0_35:GetPlayerUnitModule(var1_35)
+	local var4_35 = arg0_35.player == var3_35
 
-	if var4_33 then
-		arg0_33:GetSubView(AgoraOpView):StartInteraction()
+	if var4_35 then
+		arg0_35:GetSubView(AgoraOpView):StartInteraction()
 	end
 
-	local var5_33 = arg1_33:GetTimeline()[arg3_33]
+	local var5_35 = arg1_35:GetTimeline()[arg3_35]
 
-	var2_33:StartInteract(var3_33, arg2_33.id, arg3_33, var5_33, nil, arg1_33:AnySlotUsing(), var4_33)
+	var2_35:StartInteract(var3_35, arg2_35.id, arg3_35, var5_35, nil, arg1_35:AnySlotUsing(), var4_35)
 end
 
-function var0_0.OnEndInteraction(arg0_34, arg1_34, arg2_34)
-	local var0_34 = arg2_34:GetHostId()
-	local var1_34 = arg2_34:GetUserId()
+function var0_0.OnEndInteraction(arg0_36, arg1_36, arg2_36)
+	local var0_36 = arg2_36:GetHostId()
+	local var1_36 = arg2_36:GetUserId()
 
-	warning("end", var0_34, var1_34)
+	warning("end", var0_36, var1_36, arg2_36.id)
 
-	local var2_34 = arg0_34:GetAgoraMould(var0_34)
-	local var3_34 = arg0_34:GetUnitModule(var1_34)
-	local var4_34 = arg0_34.player == var3_34
+	local var2_36 = arg0_36:GetUnitModule(var0_36)
+	local var3_36 = arg0_36:GetPlayerUnitModule(var1_36)
+	local var4_36 = arg0_36.player == var3_36
 
-	if var4_34 then
-		arg0_34:GetSubView(AgoraOpView):EndInteraction()
+	if var4_36 then
+		arg0_36:GetSubView(AgoraOpView):EndInteraction()
 	end
 
-	var2_34:EndInteract(var3_34, arg2_34.id, not arg1_34:AnySlotUsing(), var4_34)
+	var2_36:EndInteract(var3_36, arg2_36.id, not arg1_36:AnySlotUsing(), var4_36)
 end
 
-function var0_0.OnMapStateUpdate(arg0_35, arg1_35)
-	if arg0_35.debugMap then
-		arg0_35.debugMap:UpdateItem(arg1_35.position, arg1_35.flag)
+function var0_0.OnMapStateUpdate(arg0_37, arg1_37)
+	if arg0_37.debugMap then
+		arg0_37.debugMap:UpdateItem(arg1_37.position, arg1_37.flag)
 	end
 end
 
-function var0_0.OnEnterEditMode(arg0_36)
-	arg0_36:EnterMode(var0_0.MODE_EDIT)
-	arg0_36:SwitchLookat(false)
+function var0_0.OnEnterEditMode(arg0_38)
+	arg0_38:EnterMode(var0_0.MODE_EDIT)
+	arg0_38:SwitchLookat(false)
 	IslandCameraMgr.instance:ActiveVirtualCamera(IslandConst.AGORA_CAMERA_NAME)
-	arg0_36.decorationView:Execute("Show")
+	arg0_38.decorationView:Execute("Show")
 
-	for iter0_36, iter1_36 in ipairs(arg0_36:GetAllUnits()) do
-		iter1_36:Disable()
+	for iter0_38, iter1_38 in ipairs(arg0_38:GetAllUnits()) do
+		iter1_38:Disable()
 	end
 
-	for iter2_36, iter3_36 in pairs(arg0_36:GetUnitListByKey(IslandConst.UNIT_LIST_AGORA)) do
-		iter3_36:Disable()
+	for iter2_38, iter3_38 in pairs(arg0_38:GetUnitListByKey(IslandConst.UNIT_LIST_AGORA)) do
+		iter3_38:Disable()
 	end
 
-	local var0_36 = arg0_36.agora:GetSize()
-	local var1_36 = var0_36.x * var0_36.y
+	local var0_38 = arg0_38.agora:GetSize()
+	local var1_38 = var0_38.x * var0_38.y
 
-	for iter4_36, iter5_36 in pairs(arg0_36.grids) do
-		setActive(iter5_36, iter4_36 <= var1_36)
+	for iter4_38, iter5_38 in pairs(arg0_38.grids) do
+		setActive(iter5_38, iter4_38 <= var1_38)
 	end
 
-	arg0_36:RestLookAtPosition()
+	arg0_38:RestLookAtPosition()
 end
 
-function var0_0.OnExitEditMode(arg0_37)
-	arg0_37:EnterMode(var0_0.MODE_OVERVIEW)
-	arg0_37:SwitchLookat(false)
+function var0_0.OnExitEditMode(arg0_39)
+	arg0_39:EnterMode(var0_0.MODE_OVERVIEW)
+	arg0_39:SwitchLookat(false)
 	IslandCameraMgr.instance:ActiveVirtualCamera(IslandConst.FOLLOW_CAMERA_NAME)
-	arg0_37.decorationView:Execute("Hide")
-	arg0_37:GetSubView(AgoraOpView):InActiveDragBtn()
+	arg0_39.decorationView:Execute("Reset")
+	arg0_39:GetSubView(AgoraOpView):InActiveDragBtn()
 
-	for iter0_37, iter1_37 in ipairs(arg0_37:GetAllUnits()) do
-		iter1_37:Enable()
+	for iter0_39, iter1_39 in ipairs(arg0_39:GetAllUnits()) do
+		iter1_39:Enable()
 	end
 
-	for iter2_37, iter3_37 in pairs(arg0_37:GetUnitListByKey(IslandConst.UNIT_LIST_AGORA)) do
-		iter3_37:Enable()
+	for iter2_39, iter3_39 in pairs(arg0_39:GetUnitListByKey(IslandConst.UNIT_LIST_AGORA)) do
+		iter3_39:Enable()
 	end
 
-	for iter4_37, iter5_37 in pairs(arg0_37.grids) do
-		setActive(iter5_37, false)
+	for iter4_39, iter5_39 in pairs(arg0_39.grids) do
+		setActive(iter5_39, false)
 	end
 end
 
-function var0_0.EnterPaveTileMode(arg0_38, arg1_38, arg2_38)
-	arg0_38:EnterMode(var0_0.MODE_PAVE_TILE)
-	arg0_38:Op("SelectedPaveItem", arg1_38.id, arg2_38)
-	arg0_38.decorationView:Execute("Hide")
-	arg0_38.paveTileView:Execute("Show", arg1_38, arg2_38)
-	arg0_38:RestLookAtPosition(1)
+function var0_0.EnterPaveTileMode(arg0_40, arg1_40, arg2_40)
+	arg0_40:EnterMode(var0_0.MODE_PAVE_TILE)
+	arg0_40:Op("SelectedPaveItem", arg1_40.id, arg2_40)
+	arg0_40.decorationView:Execute("Hide")
+	arg0_40.paveTileView:Execute("Show", arg1_40, arg2_40)
+	arg0_40:RestLookAtPosition(1)
 end
 
-function var0_0.ExitPaveTileMode(arg0_39)
-	arg0_39:EnterMode(var0_0.MODE_EDIT)
-	arg0_39:Op("UnSelectedPaveItem")
-	arg0_39.decorationView:Execute("Show")
-	arg0_39.paveTileView:Execute("Hide")
+function var0_0.ExitPaveTileMode(arg0_41)
+	arg0_41:EnterMode(var0_0.MODE_EDIT)
+	arg0_41:Op("UnSelectedPaveItem")
+	arg0_41.decorationView:Execute("Show")
+	arg0_41.paveTileView:Execute("Hide")
 end
 
-function var0_0.EnterMode(arg0_40, arg1_40)
-	arg0_40.mode = arg1_40
+function var0_0.EnterMode(arg0_42, arg1_42)
+	arg0_42.mode = arg1_42
 
-	arg0_40:GetSubView(AgoraOpView):EnterMode(arg1_40)
+	arg0_42:GetSubView(AgoraOpView):EnterMode(arg1_42)
 end
 
-function var0_0.RestLookAtPosition(arg0_41, arg1_41)
-	local var0_41 = IslandCameraMgr.instance:GetVirtualCamera(IslandConst.AGORA_CAMERA_NAME)
+function var0_0.RestLookAtPosition(arg0_43, arg1_43)
+	local var0_43 = IslandCameraMgr.instance:GetVirtualCamera(IslandConst.AGORA_CAMERA_NAME)
 
-	LuaHelper.SetCinemachineFreeLookXAndY(var0_41, 0, arg1_41 or 0.5)
+	LuaHelper.SetCinemachineFreeLookXAndY(var0_43, 0, arg1_43 or 0.5)
 
-	local var1_41 = AgoraCalc.MapPosition2WorldPosition(Vector2(0, 0))
+	local var1_43 = AgoraCalc.MapPosition2WorldPosition(Vector2(0, 0))
 
-	arg0_41.agoraLookAtObj:SetTargetPosition(var1_41)
+	arg0_43.agoraLookAtObj:SetTargetPosition(var1_43)
 end
 
-function var0_0.GetAgoraMould(arg0_42, arg1_42)
-	return arg0_42:GetUnitModuleWithType(IslandConst.UNIT_LIST_AGORA, arg1_42)
+function var0_0.GetAgoraMould(arg0_44, arg1_44)
+	return arg0_44:GetUnitModuleWithType(IslandConst.UNIT_LIST_AGORA, arg1_44)
 end
 
-function var0_0.OnDispose(arg0_43)
-	if arg0_43.selectedUnitId then
-		arg0_43:OnClearSelectedUnit()
+function var0_0.OnDispose(arg0_45)
+	if arg0_45.selectedUnitId then
+		arg0_45:OnClearSelectedUnit()
 
-		arg0_43.selectedUnitId = nil
+		arg0_45.selectedUnitId = nil
 	end
 
-	var0_0.super.OnDispose(arg0_43)
+	var0_0.super.OnDispose(arg0_45)
 
-	if arg0_43.decorationView then
-		arg0_43.decorationView:Dispose()
+	if arg0_45.decorationView then
+		arg0_45.decorationView:Dispose()
 
-		arg0_43.decorationView = nil
+		arg0_45.decorationView = nil
 	end
 
-	if arg0_43.paveTileView then
-		arg0_43.paveTileView:Dispose()
+	if arg0_45.paveTileView then
+		arg0_45.paveTileView:Dispose()
 
-		arg0_43.paveTileView = nil
+		arg0_45.paveTileView = nil
 	end
 
-	if arg0_43.reloadingView then
-		arg0_43.reloadingView:Dispose()
+	if arg0_45.reloadingView then
+		arg0_45.reloadingView:Dispose()
 
-		arg0_43.reloadingView = nil
+		arg0_45.reloadingView = nil
 	end
 
-	arg0_43:GetPoolMgr():ClearAograPools()
+	arg0_45:GetPoolMgr():ClearAograPools()
 
-	if var1_0 and arg0_43.debugMap then
-		arg0_43.debugMap:Dispose()
+	if var1_0 and arg0_45.debugMap then
+		arg0_45.debugMap:Dispose()
 
-		arg0_43.debugMap = nil
+		arg0_45.debugMap = nil
 	end
 end
 

@@ -33,7 +33,7 @@ function var0_0.execute(arg0_1, arg1_1)
 
 				var0_3:updateGuild(var1_3)
 				arg0_1:sendNotification(GAME.GUILD_UPDATE_BOSS_FORMATION_DONE)
-				pg.ShipFlagMgr:GetInstance():UpdateFlagShips("inGuildBossEvent")
+				pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inGuildBossEvent")
 
 				if var2_1 then
 					var2_1()

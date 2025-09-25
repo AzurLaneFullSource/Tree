@@ -113,7 +113,7 @@ end
 
 function var0_0.hide(arg0_13)
 	setActive(arg0_13._tf, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_13._tf, arg0_13._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_13._tf, arg0_13._parentTf)
 end
 
 function var0_0.openDetailView(arg0_14)
@@ -424,7 +424,7 @@ function var0_0.updateAwards(arg0_26, arg1_26, arg2_26, arg3_26)
 end
 
 function var0_0.willExit(arg0_28)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_28._tf, arg0_28._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_28._tf, arg0_28._parentTf)
 end
 
 function var0_0.onBackPressed(arg0_29)

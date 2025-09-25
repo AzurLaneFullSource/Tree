@@ -29,9 +29,7 @@ function var0_0.OnInit(arg0_3)
 end
 
 function var0_0.Show(arg0_7, arg1_7, arg2_7, arg3_7)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_7._tf, false, {
-		weight = LayerWeightConst.TOP_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_7._tf)
 
 	arg0_7.isSupport = arg2_7 == "support"
 
@@ -107,7 +105,7 @@ function var0_0.Hide(arg0_9)
 	arg0_9.showing = false
 
 	setActiveViaLayer(arg0_9._tf, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_9._tf, arg0_9._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_9._tf, arg0_9._tf)
 end
 
 function var0_0.isShowing(arg0_10)

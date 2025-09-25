@@ -315,12 +315,7 @@ function var0_0.PlayOptionExitAnimation(arg0_28, arg1_28)
 			arg1_29:GetComponent(typeof(Animation)):Play("anim_IslandStoryUI_Tpl_Out")
 		end)
 	end)
-
-	arg0_28.canvasGroup.blocksRaycasts = false
-
 	parallelAsync(var0_28, function()
-		arg0_28.canvasGroup.blocksRaycasts = true
-
 		arg0_28.uiOptionList:each(function(arg0_33, arg1_33)
 			arg1_33:GetComponent(typeof(DftAniEvent)):SetEndEvent(nil)
 		end)

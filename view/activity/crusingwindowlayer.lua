@@ -45,9 +45,7 @@ function var0_0.init(arg0_4)
 end
 
 function var0_0.didEnter(arg0_7)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_7._tf, false, {
-		weight = LayerWeightConst.TOP_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_7._tf)
 	onButton(arg0_7, arg0_7.rtBg, function()
 		arg0_7:closeView()
 	end, SFX_CANCEL)
@@ -60,7 +58,7 @@ function var0_0.didEnter(arg0_7)
 end
 
 function var0_0.willExit(arg0_11)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_11._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11._tf)
 end
 
 return var0_0

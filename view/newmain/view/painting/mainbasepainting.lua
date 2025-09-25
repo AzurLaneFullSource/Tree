@@ -504,9 +504,9 @@ function var0_0._Pause(arg0_65)
 	arg0_65.cvLoader:Stop()
 end
 
-function var0_0.Puase(arg0_66)
+function var0_0.Pause(arg0_66)
 	arg0_66:_Pause()
-	arg0_66:OnPuase()
+	arg0_66:OnPause()
 end
 
 function var0_0.ResumeForSilent(arg0_67)
@@ -751,7 +751,7 @@ function var0_0.OnEnableOrDisableDragAndZoom(arg0_93, arg1_93)
 	return
 end
 
-function var0_0.OnPuase(arg0_94)
+function var0_0.OnPause(arg0_94)
 	return
 end
 

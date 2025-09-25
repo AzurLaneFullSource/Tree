@@ -27,7 +27,7 @@ function var0_0.didEnter(arg0_3)
 		arg0_3:GetAllAward()
 	end)
 	setText(arg0_3.getall:Find("Text"), i18n("other_world_task_get_all"))
-	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf, false)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf)
 end
 
 function var0_0.ShouldShowTip()
@@ -38,7 +38,7 @@ function var0_0.ShouldShowTip()
 	local var4_7 = var2_7.data3
 
 	if var4_7 == 0 or var4_7 == nil then
-		return falses
+		return false
 	end
 
 	for iter0_7 = 1, #var3_7[var4_7] do

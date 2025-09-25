@@ -111,9 +111,7 @@ function var0_0.init(arg0_2)
 end
 
 function var0_0.didEnter(arg0_4)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf, false, {
-		groupName = arg0_4:getGroupNameFromData()
-	})
+	arg0_4:BlurPanel(arg0_4._tf)
 	onButton(arg0_4, arg0_4.btnBack, function()
 		if arg0_4.isTweening then
 			return
@@ -160,7 +158,7 @@ function var0_0.onBackPressed(arg0_10)
 end
 
 function var0_0.willExit(arg0_11)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_11._tf)
+	arg0_11:UnOverlayPanel(arg0_11._tf)
 	arg0_11:RecyclePainting(arg0_11.rtPainting)
 	arg0_11.singleWindow:Destroy()
 	arg0_11.multiWindow:Destroy()
@@ -168,7 +166,7 @@ function var0_0.willExit(arg0_11)
 	arg0_11.contextData.isEnter = true
 
 	if var0_0.BlurPages[arg0_11.page] then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_11.rtBlurPanel, arg0_11._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11.rtBlurPanel, arg0_11._tf)
 	end
 
 	arg0_11:CancelUITween()
@@ -502,9 +500,9 @@ function var0_0.SetPage(arg0_40, arg1_40)
 	if arg0_40.page ~= arg1_40 then
 		if var0_0.BlurPages[arg0_40.page or 0] ~= var0_0.BlurPages[arg1_40] then
 			if var0_0.BlurPages[arg1_40] then
-				pg.UIMgr.GetInstance():BlurPanel(arg0_40.rtBlurPanel, false)
+				pg.UIMgr.GetInstance():BlurPanel(arg0_40.rtBlurPanel)
 			else
-				pg.UIMgr.GetInstance():UnblurPanel(arg0_40.rtBlurPanel, arg0_40._tf)
+				pg.UIMgr.GetInstance():UnOverlayPanel(arg0_40.rtBlurPanel, arg0_40._tf)
 			end
 		end
 
@@ -835,12 +833,12 @@ function var0_0.showTaskWindow(arg0_73, arg1_73)
 	end, SFX_PANEL)
 	setButtonEnabled(var2_73:Find("btn_go"), arg1_73:GetFollowingAreaId() or arg1_73:GetFollowingEntrance())
 	setActive(arg0_73.rtTaskWindow, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_73.rtTaskWindow, arg0_73._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_73.rtTaskWindow)
 end
 
 function var0_0.hideTaskWindow(arg0_78)
 	setActive(arg0_78.rtTaskWindow, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_78.rtTaskWindow, arg0_78._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_78.rtTaskWindow, arg0_78._tf)
 end
 
 return var0_0

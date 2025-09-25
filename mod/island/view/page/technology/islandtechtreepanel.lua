@@ -11,6 +11,15 @@ var0_0.LINE_TYPE = {
 	C1 = 2
 }
 var0_0.DEFAULT_MAX_Y = 10
+var0_0.EDGE_X = 2
+var0_0.EDGE_Y = 1
+var0_0.FocusPriorities = {
+	IslandTechnology.STATUS.RECEIVE,
+	IslandTechnology.STATUS.STUDYING,
+	IslandTechnology.STATUS.NORMAL,
+	IslandTechnology.STATUS.LOCK,
+	IslandTechnology.STATUS.FINISHED
+}
 
 function var0_0.getUIName(arg0_1)
 	return "IslandTechTreePanel"
@@ -47,10 +56,8 @@ function var0_0.OnInit(arg0_3)
 		arg0_3.maxY = math.max(arg0_3.maxY, var0_3[2])
 	end
 
-	arg0_3.maxX = arg0_3.maxX + 1
-	arg0_3.maxY = math.max(var0_0.DEFAULT_MAX_Y, arg0_3.maxY + 1)
-
-	arg0_3:InitTreeCS(arg0_3.maxX, arg0_3.maxY)
+	arg0_3.maxX = arg0_3.maxX + var0_0.EDGE_X
+	arg0_3.maxY = math.max(var0_0.DEFAULT_MAX_Y, arg0_3.maxY + var0_0.EDGE_Y)
 end
 
 function var0_0.UpdateItem(arg0_5, arg1_5, arg2_5)
@@ -62,12 +69,13 @@ function var0_0.UpdateItem(arg0_5, arg1_5, arg2_5)
 
 	setAnchoredPosition(arg2_5, arg0_5:GetPositionById(var1_5.id))
 	setActive(arg2_5:Find("selected"), false)
-	setText(arg2_5:Find("name"), var1_5:getConfig("tech_name"))
+	var0_0.SetTechName(arg2_5:Find("name"), var1_5:getConfig("tech_name"))
 
 	local var2_5 = var1_5:GetStatus()
 	local var3_5 = var2_5 == IslandTechnology.STATUS.FINISHED
 
-	setTextColor(arg2_5:Find("name"), Color.NewHex(var3_5 and "1b3650" or "ffffff"))
+	setTextColor(arg2_5:Find("name/Text"), Color.NewHex(var3_5 and "1b3650" or "ffffff"))
+	setTextColor(arg2_5:Find("name/ScrollText"), Color.NewHex(var3_5 and "1b3650" or "ffffff"))
 	LoadImageSpriteAsync("island/IslandTechnology/" .. var1_5:getConfig("tech_icon"), arg2_5:Find("icon"), true)
 	setImageColor(arg2_5:Find("icon"), Color.NewHex(var3_5 and "455a81" or "ffffff"))
 	setActive(arg2_5:Find("icon"), var2_5 ~= IslandTechnology.STATUS.STUDYING and var2_5 ~= IslandTechnology.STATUS.RECEIVE)
@@ -88,10 +96,15 @@ end
 function var0_0.Show(arg0_9)
 	arg0_9.super.Show(arg0_9)
 	arg0_9:Flush()
+	arg0_9:AutoFocus()
 end
 
 function var0_0.Flush(arg0_10)
 	arg0_10.techAgency = getProxy(IslandProxy):GetIsland():GetTechnologyAgency()
+
+	if not arg0_10.idx2pos then
+		arg0_10:InitTreeCS(arg0_10.maxX, arg0_10.maxY)
+	end
 
 	arg0_10.itemUIList:align(#arg0_10.displays)
 end
@@ -109,26 +122,9 @@ function var0_0.InitTreeCS(arg0_11, arg1_11, arg2_11)
 
 	arg0_11.idx2pos = {}
 
-	for iter0_11 = 0, arg1_11 do
-		for iter1_11 = 0, arg2_11 do
-			local var0_11 = iter0_11 .. "_" .. iter1_11
-
-			arg0_11.idx2pos[var0_11] = {
-				x = arg0_11.gridSize.x * iter0_11,
-				y = -arg0_11.gridSize.y * iter1_11
-			}
-
-			local var1_11 = cloneTplTo(arg0_11.debugContainer:Find("tpl"), arg0_11.debugContainer)
-
-			var1_11.name = var0_11
-
-			setLocalPosition(var1_11, arg0_11.idx2pos[var0_11])
-		end
-	end
-
-	for iter2_11, iter3_11 in pairs(arg0_11:GetTechTreeLineData()) do
-		for iter4_11, iter5_11 in ipairs(iter3_11) do
-			arg0_11:UpdateLineTpl(iter2_11, iter5_11)
+	for iter0_11, iter1_11 in pairs(arg0_11:GetTechTreeLineData()) do
+		for iter2_11, iter3_11 in ipairs(iter1_11) do
+			arg0_11:UpdateLineTpl(iter0_11, iter3_11)
 		end
 	end
 end
@@ -192,41 +188,89 @@ function var0_0.GetTechTreeLineData(arg0_16)
 
 	for iter0_16, iter1_16 in ipairs(var0_16.get_id_list_by_tech_belong[arg0_16.contextData.type]) do
 		local var2_16 = var0_16[iter1_16]
+		local var3_16 = {}
 
-		for iter2_16, iter3_16 in ipairs(var2_16.ex_tech) do
-			assert(var0_16[iter3_16], "配置了不存在的ex_tech: " .. iter3_16)
-
-			if not var1_16[iter3_16] then
-				var1_16[iter3_16] = {}
-			end
-
-			if not table.contains(var1_16[iter3_16], iter1_16) then
-				table.insert(var1_16[iter3_16], iter1_16)
+		for iter2_16, iter3_16 in ipairs(var2_16.sys_unlock) do
+			if iter3_16[1] == IslandTechnology.UNLOCK_TYPE.FINISH_TECHNOLOGY then
+				table.insert(var3_16, iter3_16[2])
 			end
 		end
 
-		if not var1_16[iter1_16] then
-			var1_16[iter1_16] = {}
-		end
+		for iter4_16, iter5_16 in ipairs(var3_16) do
+			assert(var0_16[iter5_16], iter1_16 .. "科研配置了不存在的前置科研id: " .. iter5_16)
 
-		var1_16[iter1_16] = table.mergeArray(var1_16[iter1_16], var2_16.next_tech, true)
+			if var0_16[iter5_16].tech_belong == arg0_16.contextData.type then
+				if not var1_16[iter5_16] then
+					var1_16[iter5_16] = {}
+				end
 
-		local var3_16 = var2_16.axis[1]
-
-		for iter4_16, iter5_16 in ipairs(var1_16[iter1_16]) do
-			assert(var0_16[iter5_16], "配置了不存在的next_tech: " .. iter5_16)
-
-			local var4_16 = var0_16[iter5_16].axis[1]
-
-			assert(var4_16 - var3_16 > 2, string.format("岛屿科技树框体点位间隔过近,请检查配置: %d->%d", iter1_16, iter5_16))
+				if not table.contains(var1_16[iter5_16], iter1_16) then
+					table.insert(var1_16[iter5_16], iter1_16)
+				end
+			end
 		end
 	end
 
 	return var1_16
 end
 
-function var0_0.OnDestroy(arg0_17)
+function var0_0.AutoFocus(arg0_17)
+	local var0_17 = arg0_17:GetFocusTechId()
+	local var1_17 = math.max(arg0_17:GetPositionById(var0_17).x - var0_0.ELEMENT_SIZE.x / 2, 0)
+
+	scrollTo(arg0_17.treeView, var1_17 / arg0_17.showContent.rect.width, 0)
+end
+
+function var0_0.GetFocusTechId(arg0_18)
+	local var0_18 = {}
+
+	for iter0_18, iter1_18 in ipairs(arg0_18.displays) do
+		local var1_18 = arg0_18.techAgency:GetTechnology(iter1_18):GetStatus()
+
+		if not var0_18[var1_18] then
+			var0_18[var1_18] = {}
+		end
+
+		table.insert(var0_18[var1_18], iter1_18)
+	end
+
+	for iter2_18, iter3_18 in ipairs(var0_0.FocusPriorities) do
+		local var2_18 = var0_18[iter3_18]
+
+		if var2_18 and #var2_18 > 0 then
+			table.sort(var2_18, CompareFuncs({
+				function(arg0_19)
+					return arg0_18:GetPositionById(arg0_19).x
+				end,
+				function(arg0_20)
+					return arg0_20
+				end
+			}))
+
+			return var2_18[1]
+		end
+	end
+
+	return arg0_18.displays[1]
+end
+
+function var0_0.OnDestroy(arg0_21)
 	return
+end
+
+function var0_0.SetTechName(arg0_22, arg1_22)
+	local var0_22 = GetPerceptualSize(arg1_22)
+
+	GetComponent(arg0_22:Find("Text"), typeof(Text)).fontSize = var0_22 > 8 and 28 or 32
+
+	setActive(arg0_22:Find("Text"), var0_22 <= 10)
+	setActive(arg0_22:Find("ScrollText"), var0_22 > 10)
+
+	if var0_22 > 10 then
+		setScrollText(arg0_22:Find("ScrollText"), arg1_22)
+	else
+		setText(arg0_22:Find("Text"), arg1_22)
+	end
 end
 
 return var0_0

@@ -14,8 +14,7 @@ end
 
 function var0_0.ResUISettings(arg0_3)
 	return {
-		showType = PlayerResUI.TYPE_ALL,
-		groupName = LayerWeightConst.GROUP_LEVELUI
+		showType = PlayerResUI.TYPE_ALL
 	}
 end
 
@@ -1384,7 +1383,6 @@ function var0_0.updateRemasterInfo(arg0_93)
 					type = var5_93,
 					id = var6_93
 				},
-				weight = LayerWeightConst.TOP_LAYER,
 				remaster = {
 					word = i18n("level_remaster_tip4", pg.chapter_template[var4_93].chapter_name),
 					number = var8_93.count .. "/" .. var7_93,
@@ -1858,9 +1856,7 @@ function var0_0.DisplaySPAnim(arg0_134, arg1_134, arg2_134, arg3_134)
 
 		local var0_135 = tf(var0_134)
 
-		pg.UIMgr.GetInstance():OverlayPanel(var0_135, {
-			groupName = LayerWeightConst.GROUP_LEVELUI
-		})
+		pg.UIMgr.GetInstance():OverlayPanel(var0_135)
 
 		if arg3_134 then
 			arg3_134(var0_134)
@@ -2182,17 +2178,12 @@ function var0_0.switchToChapter(arg0_172, arg1_172)
 			function(arg0_175)
 				setActive(arg0_172.clouds, false)
 				arg0_172.mapBuilder:HideFloat()
-				pg.UIMgr.GetInstance():BlurPanel(arg0_172.topPanel, false, {
+				arg0_172:BlurPanel(arg0_172.topPanel, {
 					blurCamList = {
 						pg.UIMgr.CameraUI
-					},
-					groupName = LayerWeightConst.GROUP_LEVELUI
+					}
 				})
-				pg.playerResUI:SetActive({
-					active = true,
-					groupName = LayerWeightConst.GROUP_LEVELUI,
-					showType = PlayerResUI.TYPE_ALL
-				})
+				arg0_172:ShowOrHideResUI(true)
 				arg0_172.levelStageView:updateStageInfo()
 				arg0_172.levelStageView:updateAmbushRate(arg1_172.fleet.line, true)
 				arg0_172.levelStageView:updateStageAchieve()
@@ -2398,10 +2389,8 @@ function var0_0.switchToMap(arg0_190, arg1_190)
 			arg0_190.mapBuilder:UpdateMapItems()
 		end
 	})
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_190.topPanel, arg0_190._tf)
-	pg.playerResUI:SetActive({
-		active = false
-	})
+	arg0_190:UnOverlayPanel(arg0_190.topPanel, arg0_190._tf)
+	arg0_190:ShowOrHideResUI(false)
 
 	arg0_190.canvasGroup.blocksRaycasts = arg0_190.frozenCount == 0
 	arg0_190.canvasGroup.interactable = true
@@ -2700,9 +2689,7 @@ function var0_0.PlayMapTransition(arg0_212, arg1_212, arg2_212, arg3_212, arg4_2
 
 		local var0_213 = tf(var0_212)
 
-		pg.UIMgr.GetInstance():OverlayPanel(var0_213, {
-			groupName = LayerWeightConst.GROUP_LEVELUI
-		})
+		pg.UIMgr.GetInstance():OverlayPanel(var0_213)
 		var0_212:GetComponent(typeof(Animator)):Play(arg2_212 and "Sequence" or "Inverted", -1, 0)
 		var0_213:GetComponent("DftAniEvent"):SetEndEvent(function(arg0_214)
 			pg.UIMgr.GetInstance():UnOverlayPanel(var0_213, arg0_212._tf)
@@ -3056,9 +3043,7 @@ function var0_0.doPlayAnim(arg0_250, arg1_250, arg2_250, arg3_250)
 
 		local var0_251 = tf(var0_250)
 
-		pg.UIMgr.GetInstance():OverlayPanel(var0_251, {
-			groupName = LayerWeightConst.GROUP_LEVELUI
-		})
+		pg.UIMgr.GetInstance():OverlayPanel(var0_251)
 
 		if arg3_250 then
 			arg3_250(var0_250)
@@ -3564,7 +3549,7 @@ function var0_0.enableLevelCamera(arg0_301)
 	if arg0_301.levelCamIndices == 0 then
 		arg0_301.levelCam.enabled = true
 
-		pg.LayerWeightMgr.GetInstance():switchOriginParent()
+		pg.LayerWeightMgr.GetInstance():CreateRefreshHandler()
 	end
 end
 
@@ -3574,7 +3559,7 @@ function var0_0.disableLevelCamera(arg0_302)
 	if arg0_302.levelCamIndices > 0 then
 		arg0_302.levelCam.enabled = false
 
-		pg.LayerWeightMgr.GetInstance():switchOriginParent()
+		pg.LayerWeightMgr.GetInstance():CreateRefreshHandler()
 	end
 end
 
@@ -3744,10 +3729,8 @@ function var0_0.willExit(arg0_318)
 	arg0_318.loader:Clear()
 
 	if arg0_318.contextData.chapterVO then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_318.topPanel, arg0_318._tf)
-		pg.playerResUI:SetActive({
-			active = false
-		})
+		arg0_318:UnOverlayPanel(arg0_318.topPanel, arg0_318._tf)
+		arg0_318:ShowOrHideResUI(false)
 	end
 
 	if arg0_318.levelFleetView and arg0_318.levelFleetView.selectIds then

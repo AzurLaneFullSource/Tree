@@ -78,7 +78,7 @@ end
 function var0_0.willExit(arg0_11)
 	arg0_11.icons = nil
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_11._tf, arg0_11.parent)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11._tf, arg0_11.parent)
 end
 
 return var0_0

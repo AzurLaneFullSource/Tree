@@ -41,9 +41,8 @@ function var0_0.init(arg0_3)
 
 	arg0_3.effectTF = arg0_3.rootTF:Find("window/effect")
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf, nil, {
-		groupName = arg0_3:getGroupNameFromData(),
-		weight = arg0_3:getWeightFromData() + 1
+	arg0_3:BlurPanel(arg0_3._tf, {
+		groupDelta = 1
 	})
 end
 
@@ -185,7 +184,7 @@ function var0_0.onBackPressed(arg0_16)
 end
 
 function var0_0.willExit(arg0_17)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_17._tf)
+	arg0_17:UnOverlayPanel(arg0_17._tf)
 	existCall(arg0_17.contextData.onExit)
 end
 

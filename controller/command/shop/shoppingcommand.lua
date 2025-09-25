@@ -198,41 +198,26 @@ function var0_0.execute(arg0_1, arg1_1)
 			number = var2_1
 		}, 16002, function(arg0_11)
 			if arg0_11.result == 0 then
-				local var0_11 = {}
+				local var0_11 = var4_1:getData()
 
-				if var3_1.type == 0 then
-					arg0_1:sendNotification(GAME.EXTEND, {
-						id = var1_1,
-						count = var2_1
-					})
-				else
-					var0_11 = PlayerConst.addTranDrop(arg0_11.drop_list)
-
-					if not var0_1.silentTip then
-						pg.TipsMgr.GetInstance():ShowTips(i18n("common_buy_success"))
-					end
-				end
-
-				local var1_11 = var4_1:getData()
-
-				var1_11:consume({
+				var0_11:consume({
 					[id2res(var3_1.resource_type)] = var12_1
 				})
 
-				local var2_11
+				local var1_11
 
 				if var11_1 then
-					local var3_11 = var9_1:getShopStreet()
-					local var4_11 = var3_11:getGoodsById(var1_1)
+					local var2_11 = var9_1:getShopStreet()
+					local var3_11 = var2_11:getGoodsById(var1_1)
 
-					var2_11 = var3_11.type
+					var1_11 = var2_11.type
 
-					var4_11:reduceBuyCount()
-					var9_1:UpdateShopStreet(var3_11)
+					var3_11:reduceBuyCount()
+					var9_1:UpdateShopStreet(var2_11)
 				else
 					switch(var3_1.genre, {
 						[ShopArgs.BuyOil] = function()
-							var1_11:increaseBuyOilCount()
+							var0_11:increaseBuyOilCount()
 						end,
 						[ShopArgs.ArenaShopLimit] = function()
 							local var0_13 = getProxy(ShopsProxy)
@@ -242,7 +227,7 @@ function var0_0.execute(arg0_1, arg1_1)
 							var2_13:increaseBuyCount()
 							var1_13:updateGoods(var2_13)
 
-							var2_11 = var1_13.type
+							var1_11 = var1_13.type
 
 							var0_13:updateMeritorousShop(var1_13)
 						end,
@@ -289,7 +274,7 @@ function var0_0.execute(arg0_1, arg1_1)
 					})
 				end
 
-				var4_1:updatePlayer(var1_11)
+				var4_1:updatePlayer(var0_11)
 
 				if var3_1.group > 0 then
 					var9_1:updateNormalGroupList(var3_1.group, var3_1.group_buy_count)
@@ -342,13 +327,28 @@ function var0_0.execute(arg0_1, arg1_1)
 					end
 				end
 
+				local var4_11 = {}
+
+				if var3_1.type == 0 then
+					arg0_1:sendNotification(GAME.EXTEND, {
+						id = var1_1,
+						count = var2_1
+					})
+				else
+					var4_11 = PlayerConst.addTranDrop(arg0_11.drop_list)
+
+					if not var0_1.silentTip then
+						pg.TipsMgr.GetInstance():ShowTips(i18n("common_buy_success"))
+					end
+				end
+
 				if not var0_1.isQuickShopping then
 					arg0_1:sendNotification(GAME.SHOPPING_DONE, {
 						id = var1_1,
-						shopType = var2_11,
+						shopType = var1_11,
 						normalList = var9_1:GetNormalList(),
 						normalGroupList = var9_1:GetNormalGroupList(),
-						awards = var0_11
+						awards = var4_11
 					})
 				end
 			else

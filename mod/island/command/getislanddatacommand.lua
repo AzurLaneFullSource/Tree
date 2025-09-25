@@ -4,11 +4,14 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var0_1 = arg1_1:getBody()
 	local var1_1 = var0_1.id
 	local var2_1 = var0_1.list
+	local var3_1 = var0_1.isCardRequest
+	local var4_1 = var0_1.callback
+	local var5_1 = var0_1.reconnect
 
-	arg0_1:GetIslandData(var1_1, var2_1)
+	arg0_1:GetIslandData(var1_1, var2_1, var3_1, var4_1, var5_1)
 end
 
-function var0_0.GetIslandData(arg0_2, arg1_2, arg2_2)
+function var0_0.GetIslandData(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2, arg5_2)
 	if LOCK_ISLAND_DISPLAY then
 		return
 	end
@@ -28,20 +31,37 @@ function var0_0.GetIslandData(arg0_2, arg1_2, arg2_2)
 			var1_3:SetLastExitPosition(var2_3, var3_3, var4_3)
 		end
 
-		local var5_3 = {}
+		if arg5_2 then
+			local var5_3 = getProxy(IslandProxy):GetTempPlayerPosition()
 
-		for iter0_3, iter1_3 in ipairs(arg2_2) do
-			local var6_3 = IslandPlayer.New(iter1_3)
+			if var5_3 then
+				local var6_3, var7_3, var8_3 = unpack(var5_3)
 
-			var5_3[iter1_3.id] = var6_3
+				var1_3:SetMapId(var6_3)
+				var1_3:SetLastExitPosition(var6_3, var7_3, var8_3)
+			end
 		end
 
-		var1_3:GetVisitorAgency():SetPlayerList(var5_3)
+		local var9_3 = {}
+
+		for iter0_3, iter1_3 in ipairs(arg2_2) do
+			local var10_3 = IslandPlayer.New(iter1_3)
+
+			var9_3[iter1_3.id] = var10_3
+		end
+
+		var1_3:GetVisitorAgency():SetPlayerList(var9_3)
 
 		if var0_3 then
 			getProxy(IslandProxy):SetIsland(var1_3)
 		else
 			getProxy(IslandProxy):SetSharedIsland(var1_3)
+		end
+
+		if arg3_2 then
+			existCall(arg4_2)
+
+			return
 		end
 
 		arg0_2:AfterIslandInit()
@@ -77,6 +97,7 @@ function var0_0.AfterIslandInit(arg0_7)
 	var0_7:GetAchievementAgency():InitRuntimeRecords()
 	var0_7:GetTechnologyAgency():InitLockData()
 	var0_7:GetGlobalBuffAgency():InitShipSkillGlobalBuff()
+	var0_7:GetBookAgency():InitShipTypeData()
 end
 
 return var0_0

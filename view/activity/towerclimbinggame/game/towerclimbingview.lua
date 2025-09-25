@@ -275,7 +275,7 @@ function var0_0.ActivePanel(arg0_37, arg1_37, arg2_37)
 	if arg2_37 then
 		pg.UIMgr.GetInstance():BlurPanel(arg1_37)
 	else
-		pg.UIMgr.GetInstance():UnblurPanel(arg1_37, arg0_37._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg1_37, arg0_37._tf)
 	end
 
 	setActive(arg1_37, arg2_37)

@@ -5,7 +5,7 @@ var0_0.PROGRESS_ERROR = -100
 
 function var0_0.Ctor(arg0_1)
 	arg0_1.callbacks = {}
-	arg0_1.mgr = pg.CipherGroupMgr:GetInstance()
+	arg0_1.mgr = pg.CipherGroupMgr.GetInstance()
 
 	local var0_1 = {
 		progressCB = function(arg0_2, arg1_2)

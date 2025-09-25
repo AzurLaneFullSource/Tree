@@ -130,7 +130,7 @@ function var0_0.PlayAnimation(arg0_18)
 end
 
 function var0_0.GetSmoothRotateObject(arg0_19)
-	return GetOrAddComponent(arg0_19:findTF("main/event"), typeof(SmoothRotateObject))
+	return arg0_19:findTF("main/event")
 end
 
 function var0_0.UpdateChat(arg0_20, arg1_20)

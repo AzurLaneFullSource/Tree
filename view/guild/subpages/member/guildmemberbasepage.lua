@@ -8,7 +8,7 @@ end
 function var0_0.OnLoaded(arg0_2)
 	arg0_2.buttonContainer = arg0_2:findTF("frame/opera")
 
-	local var0_2 = pg.UIMgr:GetInstance().OverlayMain.transform:InverseTransformPoint(arg0_2.buttonContainer.position)
+	local var0_2 = pg.UIMgr.GetInstance().OverlayMain.transform:InverseTransformPoint(arg0_2.buttonContainer.position)
 
 	arg0_2.buttonPos = Vector3(var0_2.x, var0_2.y, 0)
 end
@@ -35,7 +35,7 @@ end
 
 function var0_0.Hide(arg0_4)
 	if arg0_4:isShowing() then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_4._tf, arg0_4._parentTf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_4._tf, arg0_4._parentTf)
 	end
 
 	if arg0_4.circle.childCount > 0 then

@@ -194,7 +194,7 @@ function var0_0.CloseBook(arg0_19)
 end
 
 function var0_0.willExit(arg0_20)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_20._tf, arg0_20.parent)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_20._tf, arg0_20.parent)
 end
 
 return var0_0

@@ -51,7 +51,7 @@ function var0_0.didEnter(arg0_3)
 end
 
 function var0_0.willExit(arg0_10)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_10._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_10._tf)
 
 	if arg0_10.unloadEffect then
 		arg0_10.unloadEffect()

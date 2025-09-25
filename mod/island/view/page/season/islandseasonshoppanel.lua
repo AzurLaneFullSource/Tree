@@ -47,6 +47,7 @@ function var0_0.Show(arg0_7)
 	arg0_7.showPhase = 1
 
 	triggerToggle(arg0_7.togglesUIList.container:GetChild(0), true)
+	IslandGuideChecker.CheckGuide("ISLAND_GUIDE_18")
 end
 
 function var0_0.UpdateGood(arg0_8, arg1_8, arg2_8)

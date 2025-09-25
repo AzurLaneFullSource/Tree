@@ -6,7 +6,7 @@ end
 
 function var0_0.OnLoaded(arg0_2)
 	arg0_2.titleTxt = arg0_2:findTF("title"):GetComponent(typeof(Text))
-	arg0_2.contentTxt = arg0_2:findTF("content/Text"):GetComponent(typeof(Text))
+	arg0_2.contentTxt = arg0_2:findTF("content/Text"):GetComponent("RichText")
 	arg0_2.closeBtn = arg0_2:findTF("close")
 	arg0_2.cancelBtn = arg0_2:findTF("cancel")
 	arg0_2.confirmBtn = arg0_2:findTF("confirm")
@@ -16,26 +16,30 @@ end
 
 function var0_0.OnInit(arg0_3)
 	onButton(arg0_3, arg0_3.cancelBtn, function()
-		if arg0_3.onNo then
-			arg0_3.onNo()
-		end
+		local var0_4 = arg0_3.onNo
 
 		arg0_3:Hide()
+		existCall(var0_4)
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3.closeBtn, function()
 		arg0_3:Hide()
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3.confirmBtn, function()
-		if arg0_3.onYes then
-			arg0_3.onYes()
-		end
+		local var0_6 = arg0_3.onYes
 
 		arg0_3:Hide()
+		existCall(var0_6)
 	end, SFX_PANEL)
 end
 
 function var0_0.OnShow(arg0_7)
 	local var0_7 = arg0_7.settings
+
+	if var0_7.rawIconDic then
+		for iter0_7, iter1_7 in pairs(var0_7.rawIconDic) do
+			arg0_7.contentTxt:AddSprite(iter0_7, iter1_7)
+		end
+	end
 
 	arg0_7.titleTxt.text = var0_7.title or i18n("island_msg_info")
 	arg0_7.contentTxt.text = var0_7.content or ""

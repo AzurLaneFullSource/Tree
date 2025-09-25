@@ -33,9 +33,7 @@ end
 
 function var0_0.Show(arg0_7, arg1_7, arg2_7)
 	var0_0.super.Show(arg0_7)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_7._tf, false, {
-		weight = LayerWeightConst.TOP_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_7._tf)
 
 	arg0_7.contentTxt.text = i18n("cryptolalia_delete_res_tip", arg1_7:GetResSize(arg2_7))
 	arg0_7.name.text = arg1_7:GetName()
@@ -80,7 +78,7 @@ end
 
 function var0_0.Hide(arg0_11)
 	var0_0.super.Hide(arg0_11)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_11._tf, arg0_11._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11._tf, arg0_11._parentTf)
 end
 
 function var0_0.OnDestroy(arg0_12)

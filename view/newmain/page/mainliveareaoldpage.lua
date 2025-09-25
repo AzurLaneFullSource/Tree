@@ -43,8 +43,8 @@ end
 
 function var0_0.Show(arg0_8)
 	var0_0.super.Show(arg0_8)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_8._tf, true, {
-		weight = LayerWeightConst.SECOND_LAYER
+	pg.UIMgr.GetInstance():BlurPanel(arg0_8._tf, {
+		staticBlur = true
 	})
 
 	local var0_8 = getProxy(PlayerProxy):getRawData()
@@ -65,7 +65,7 @@ end
 function var0_0.Hide(arg0_9)
 	if arg0_9:isShowing() then
 		var0_0.super.Hide(arg0_9)
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_9._tf, arg0_9._parentTf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_9._tf, arg0_9._parentTf)
 	end
 end
 

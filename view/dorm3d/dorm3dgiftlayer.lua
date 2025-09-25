@@ -72,12 +72,11 @@ function var0_0.init(arg0_2)
 	onButton(arg0_2, arg0_2.rtLackWindow:Find("panel/title/btn_close"), function()
 		arg0_2:HideLackWindow()
 	end, SFX_CANCEL)
-	pg.UIMgr.GetInstance():TempOverlayPanelPB(arg0_2.rtGiftPanel, {
+	arg0_2:TempOverlayPanelPB(arg0_2.rtGiftPanel, {
 		pbList = {
 			arg0_2.rtGiftPanel
 		},
-		baseCamera = arg0_2.contextData.baseCamera,
-		groupName = LayerWeightConst.GROUP_DORM3D
+		baseCamera = arg0_2.contextData.baseCamera
 	})
 end
 
@@ -392,15 +391,12 @@ function var0_0.OpenInfoWindow(arg0_41, arg1_41)
 		pg.TipsMgr.GetInstance():ShowTips("without shop config")
 	end, SFX_CONFIRM)
 	setActive(arg0_41.rtInfoWindow, true)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_41.rtInfoWindow, {
-		weight = LayerWeightConst.SECOND_LAYER,
-		groupName = LayerWeightConst.GROUP_DORM3D
-	})
+	arg0_41:OverlayPanel(arg0_41.rtInfoWindow)
 end
 
 function var0_0.HideInfoWindow(arg0_43)
 	setActive(arg0_43.rtInfoWindow, false)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_43.rtInfoWindow, arg0_43._tf)
+	arg0_43:UnOverlayPanel(arg0_43.rtInfoWindow, arg0_43._tf)
 end
 
 function var0_0.OpenLackWindow(arg0_44, arg1_44)
@@ -448,15 +444,12 @@ function var0_0.OpenLackWindow(arg0_44, arg1_44)
 		end
 	end)
 	setActive(arg0_44.rtLackWindow, true)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_44.rtLackWindow, {
-		weight = LayerWeightConst.SECOND_LAYER,
-		groupName = LayerWeightConst.GROUP_DORM3D
-	})
+	arg0_44:OverlayPanel(arg0_44.rtLackWindow)
 end
 
 function var0_0.HideLackWindow(arg0_48)
 	setActive(arg0_48.rtLackWindow, false)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_48.rtLackWindow, arg0_48._tf)
+	arg0_48:UnOverlayPanel(arg0_48.rtLackWindow, arg0_48._tf)
 end
 
 function var0_0.onBackPressed(arg0_49)
@@ -484,7 +477,7 @@ function var0_0.willExit(arg0_50)
 		arg0_50:HideLackWindow()
 	end
 
-	pg.UIMgr.GetInstance():TempUnblurPanel(arg0_50.rtGiftPanel, arg0_50._tf)
+	arg0_50:TempUnOverlayPanelPB(arg0_50.rtGiftPanel, arg0_50._tf)
 end
 
 return var0_0

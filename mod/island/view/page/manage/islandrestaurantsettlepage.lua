@@ -109,7 +109,7 @@ function var0_0.OnShow(arg0_9, arg1_9, arg2_9)
 	local var2_9 = var1_9:GetSales()
 	local var3_9 = var1_9:GetCanUpgradeExp()
 
-	setSlider(arg0_9.expSliderTF, 0, 1, var2_9 / var3_9)
+	setSlider(arg0_9.expSliderTF, 0, 1, var3_9 == 0 and 0 or var2_9 / var3_9)
 	setText(arg0_9.expProgressTF, var2_9 .. "/" .. var3_9)
 	triggerToggle(arg0_9.switchToggle, false)
 end
@@ -135,8 +135,10 @@ end
 function var0_0.GetAttrsFactorsRatio(arg0_12, arg1_12)
 	local var0_12 = pg.island_item_data_template[arg1_12].sub_attribute
 	local var1_12 = var0_12[2] / 100
+	local var2_12 = IslandRestaurantPage.CaclShipAttrFactors(arg0_12.ships, IslandShipAttr.MANAGE_KEY) + IslandRestaurantPage.CaclShipAttrFactors(arg0_12.ships, var0_12[1]) * var1_12
+	local var3_12 = arg0_12.shipCnt * (arg0_12.maxAttrEffect + arg0_12.maxAttrEffect * var1_12)
 
-	return (IslandRestaurantPage.CaclShipAttrFactors(arg0_12.ships, IslandShipAttr.MANAGE_KEY) + IslandRestaurantPage.CaclShipAttrFactors(arg0_12.ships, var0_12[1]) * var1_12) / (arg0_12.shipCnt * (arg0_12.maxAttrEffect + arg0_12.maxAttrEffect * var1_12))
+	return var3_12 == 0 and 0 or var2_12 / var3_12
 end
 
 return var0_0

@@ -1221,7 +1221,6 @@ function var0_0.OpTriggerEvent(arg0_121, arg1_121, arg2_121)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					type = MSGBOX_TYPE_HELP,
 					helps = var0_139,
-					weight = LayerWeightConst.SECOND_LAYER,
 					onClose = arg0_139
 				})
 			end)

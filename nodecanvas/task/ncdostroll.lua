@@ -4,7 +4,7 @@ function var0_0.Ctor(arg0_1)
 	var0_0.super.Ctor(arg0_1)
 
 	arg0_1.index = 1
-	arg0_1.speed = 3
+	arg0_1.speed = 2
 	arg0_1.rotationSpeed = 10
 	arg0_1.isStopping = false
 end
@@ -43,8 +43,12 @@ function var0_0.OnExecute(arg0_2)
 		return
 	end
 
+	arg0_2.delayInit = false
+
 	if var1_2 then
 		arg0_2:ResumeMove()
+	elseif not arg0_2.navAgent.isOnNavMesh then
+		arg0_2.delayInit = true
 	else
 		arg0_2:NextOne()
 	end
@@ -55,6 +59,20 @@ function var0_0.IsLegalPath(arg0_4)
 end
 
 function var0_0.OnUpdate(arg0_5)
+	if arg0_5.delayInit and arg0_5.navAgent.isOnNavMesh then
+		arg0_5:NextOne()
+
+		arg0_5.delayInit = false
+	end
+
+	if not arg0_5.navAgent.enabled then
+		return
+	end
+
+	if not arg0_5.navAgent.isOnNavMesh then
+		return
+	end
+
 	if not arg0_5:IsLegalPath() then
 		return
 	end
@@ -106,7 +124,7 @@ function var0_0.NextOne(arg0_7)
 
 	local var0_7 = arg0_7.waypoints[arg0_7.index].position
 
-	_IslandMoveUnit(arg0_7.unitType, arg0_7.unitId, var0_7, arg0_7.speed)
+	_IslandMoveUnit(arg0_7.unitType, arg0_7.unitId, var0_7, arg0_7.speed, 0.5)
 	arg0_7:OnProcess()
 end
 
@@ -219,7 +237,7 @@ function var0_0.EndArriveAction(arg0_16)
 end
 
 function var0_0.DisappearUnit(arg0_17)
-	setActive(arg0_17.agent, false)
+	_IslandGetUnit(arg0_17.unitType, arg0_17.unitId):Disable()
 end
 
 function var0_0.DoRatation(arg0_18)

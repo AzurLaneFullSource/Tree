@@ -93,7 +93,7 @@ end
 function var0_0.willExit(arg0_10)
 	arg0_10.contextData.scrollY = GetComponent(arg0_10.rtContent, typeof(ScrollRect)).normalizedPosition.y
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_10.rtPanel, arg0_10._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_10.rtPanel, arg0_10._tf)
 	arg0_10:destroyCommanderPanel()
 end
 

@@ -72,7 +72,7 @@ function var0_0.OnShow(arg0_6)
 end
 
 function var0_0.OnHide(arg0_7)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_7._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7._tf)
 end
 
 function var0_0.Reset(arg0_8)

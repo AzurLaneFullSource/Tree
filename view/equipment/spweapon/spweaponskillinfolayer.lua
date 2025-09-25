@@ -98,7 +98,7 @@ function var0_0.showInfo(arg0_12, arg1_12)
 end
 
 function var0_0.willExit(arg0_13)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_13._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_13._tf)
 
 	if arg0_13.contextData.onExit then
 		arg0_13.contextData.onExit()

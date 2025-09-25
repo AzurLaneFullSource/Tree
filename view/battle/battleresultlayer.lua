@@ -26,1165 +26,1165 @@ function var0_0.getUIName(arg0_1)
 	return "BattleResultUI"
 end
 
-function var0_0.setRivalVO(arg0_2, arg1_2)
-	arg0_2.rivalVO = arg1_2
+function var0_0.getGroupName(arg0_2)
+	return "BattleScene"
 end
 
-function var0_0.setRank(arg0_3, arg1_3, arg2_3)
-	arg0_3.player = arg1_3
-	arg0_3.season = arg2_3
-
-	setText(arg0_3._playerName, "<color=#FFFFFF>" .. arg0_3.player.name .. "</color><size=32> / C O M M A N D E R</size>")
-
-	local var0_3 = SeasonInfo.getMilitaryRank(arg2_3.score, arg2_3.rank)
-	local var1_3, var2_3 = SeasonInfo.getNextMilitaryRank(arg2_3.score, arg2_3.rank)
-
-	setText(arg0_3._playerLv, var0_3.name)
-	setText(arg0_3._playerExpLabel, i18n("word_rankScore"))
-
-	arg0_3._playerExpProgress:GetComponent(typeof(Image)).fillAmount = arg2_3.score / var2_3
-
-	setText(arg0_3._playerBonusExp, "+0")
-
-	arg0_3.calcPlayerProgress = arg0_3.calcPlayerRank
+function var0_0.setRivalVO(arg0_3, arg1_3)
+	arg0_3.rivalVO = arg1_3
 end
 
-function var0_0.setShips(arg0_4, arg1_4)
-	arg0_4.shipVOs = arg1_4
+function var0_0.setRank(arg0_4, arg1_4, arg2_4)
+	arg0_4.player = arg1_4
+	arg0_4.season = arg2_4
+
+	setText(arg0_4._playerName, "<color=#FFFFFF>" .. arg0_4.player.name .. "</color><size=32> / C O M M A N D E R</size>")
+
+	local var0_4 = SeasonInfo.getMilitaryRank(arg2_4.score, arg2_4.rank)
+	local var1_4, var2_4 = SeasonInfo.getNextMilitaryRank(arg2_4.score, arg2_4.rank)
+
+	setText(arg0_4._playerLv, var0_4.name)
+	setText(arg0_4._playerExpLabel, i18n("word_rankScore"))
+
+	arg0_4._playerExpProgress:GetComponent(typeof(Image)).fillAmount = arg2_4.score / var2_4
+
+	setText(arg0_4._playerBonusExp, "+0")
+
+	arg0_4.calcPlayerProgress = arg0_4.calcPlayerRank
 end
 
-function var0_0.setPlayer(arg0_5, arg1_5)
-	arg0_5.player = arg1_5
+function var0_0.setShips(arg0_5, arg1_5)
+	arg0_5.shipVOs = arg1_5
+end
 
-	setText(arg0_5._playerName, "<color=#FFFFFF>" .. arg0_5.player.name .. "</color><size=32> / C O M M A N D E R</size>")
-	setText(arg0_5._playerLv, "Lv." .. arg0_5.player.level)
+function var0_0.setPlayer(arg0_6, arg1_6)
+	arg0_6.player = arg1_6
 
-	local var0_5 = getConfigFromLevel1(pg.user_level, arg0_5.player.level)
+	setText(arg0_6._playerName, "<color=#FFFFFF>" .. arg0_6.player.name .. "</color><size=32> / C O M M A N D E R</size>")
+	setText(arg0_6._playerLv, "Lv." .. arg0_6.player.level)
 
-	arg0_5._playerExpProgress:GetComponent(typeof(Image)).fillAmount = arg0_5.player.exp / var0_5.exp_interval
+	local var0_6 = getConfigFromLevel1(pg.user_level, arg0_6.player.level)
 
-	if arg0_5.player.level == pg.user_level[#pg.user_level].level then
-		arg0_5._playerExpProgress:GetComponent(typeof(Image)).fillAmount = 1
+	arg0_6._playerExpProgress:GetComponent(typeof(Image)).fillAmount = arg0_6.player.exp / var0_6.exp_interval
+
+	if arg0_6.player.level == pg.user_level[#pg.user_level].level then
+		arg0_6._playerExpProgress:GetComponent(typeof(Image)).fillAmount = 1
 	end
 
-	setText(arg0_5._playerBonusExp, "+0")
+	setText(arg0_6._playerBonusExp, "+0")
 
-	arg0_5.calcPlayerProgress = arg0_5.calcPlayerExp
+	arg0_6.calcPlayerProgress = arg0_6.calcPlayerExp
 
-	local var1_5 = arg0_5.contextData.extraBuffList
+	local var1_6 = arg0_6.contextData.extraBuffList
 
-	for iter0_5, iter1_5 in ipairs(var1_5) do
-		if pg.benefit_buff_template[iter1_5].benefit_type == Chapter.OPERATION_BUFF_TYPE_EXP then
-			setActive(arg0_5._playerExpExtra, true)
+	for iter0_6, iter1_6 in ipairs(var1_6) do
+		if pg.benefit_buff_template[iter1_6].benefit_type == Chapter.OPERATION_BUFF_TYPE_EXP then
+			setActive(arg0_6._playerExpExtra, true)
 		end
 	end
 end
 
-function var0_0.setExpBuff(arg0_6, arg1_6, arg2_6)
-	arg0_6.expBuff = arg1_6
-	arg0_6.shipBuff = arg2_6
+function var0_0.setExpBuff(arg0_7, arg1_7, arg2_7)
+	arg0_7.expBuff = arg1_7
+	arg0_7.shipBuff = arg2_7
 end
 
-function var0_0.init(arg0_7)
-	arg0_7._grade = arg0_7:findTF("grade")
-	arg0_7._levelText = arg0_7:findTF("chapterName/Text22", arg0_7._grade)
-	arg0_7.clearFX = arg0_7:findTF("clear")
-	arg0_7._main = arg0_7:findTF("main")
-	arg0_7._blurConatiner = arg0_7:findTF("blur_container")
-	arg0_7._bg = arg0_7:findTF("main/jiesuanbeijing")
-	arg0_7._painting = arg0_7:findTF("painting", arg0_7._blurConatiner)
-	arg0_7._failPainting = arg0_7:findTF("fail", arg0_7._painting)
-	arg0_7._chat = arg0_7:findTF("chat", arg0_7._painting)
-	arg0_7._leftPanel = arg0_7:findTF("leftPanel", arg0_7._main)
-	arg0_7._expResult = arg0_7:findTF("expResult", arg0_7._leftPanel)
-	arg0_7._expContainer = arg0_7:findTF("expContainer", arg0_7._expResult)
-	arg0_7._extpl = arg0_7:getTpl("ShipCardTpl", arg0_7._expContainer)
-	arg0_7._playerExp = arg0_7:findTF("playerExp", arg0_7._leftPanel)
-	arg0_7._playerName = arg0_7:findTF("name_text", arg0_7._playerExp)
-	arg0_7._playerLv = arg0_7:findTF("lv_text", arg0_7._playerExp)
-	arg0_7._playerExpLabel = arg0_7:findTF("exp_label", arg0_7._playerExp)
-	arg0_7._playerExpProgress = arg0_7:findTF("exp_progress", arg0_7._playerExp)
-	arg0_7._playerBonusExp = arg0_7:findTF("exp_text", arg0_7._playerExp)
-	arg0_7._playerExpExtra = arg0_7:findTF("operation_bonus", arg0_7._playerExp)
-	arg0_7._atkBG = arg0_7:findTF("atkPanel", arg0_7._blurConatiner)
-	arg0_7._atkPanel = arg0_7:findTF("atkResult", arg0_7._atkBG)
-	arg0_7._atkResult = arg0_7:findTF("atkResult/result", arg0_7._atkBG)
-	arg0_7._atkContainer = arg0_7:findTF("Grid", arg0_7._atkResult)
-	arg0_7._atkContainerNext = arg0_7:findTF("Grid_next", arg0_7._atkResult)
-	arg0_7._atkToggle = arg0_7:findTF("switchAtk", arg0_7._atkPanel)
-	arg0_7._atkTpl = arg0_7:getTpl("resulttpl", arg0_7._atkResult)
-	arg0_7._mvpFX = arg0_7:findTF("mvpFX", arg0_7._atkPanel)
-	arg0_7._rightBottomPanel = arg0_7:findTF("rightBottomPanel", arg0_7._blurConatiner)
-	arg0_7._confirmBtn = arg0_7:findTF("confirmBtn", arg0_7._rightBottomPanel)
+function var0_0.init(arg0_8)
+	arg0_8._grade = arg0_8:findTF("grade")
+	arg0_8._levelText = arg0_8:findTF("chapterName/Text22", arg0_8._grade)
+	arg0_8.clearFX = arg0_8:findTF("clear")
+	arg0_8._main = arg0_8:findTF("main")
+	arg0_8._blurConatiner = arg0_8:findTF("blur_container")
+	arg0_8._bg = arg0_8:findTF("main/jiesuanbeijing")
+	arg0_8._painting = arg0_8:findTF("painting", arg0_8._blurConatiner)
+	arg0_8._failPainting = arg0_8:findTF("fail", arg0_8._painting)
+	arg0_8._chat = arg0_8:findTF("chat", arg0_8._painting)
+	arg0_8._leftPanel = arg0_8:findTF("leftPanel", arg0_8._main)
+	arg0_8._expResult = arg0_8:findTF("expResult", arg0_8._leftPanel)
+	arg0_8._expContainer = arg0_8:findTF("expContainer", arg0_8._expResult)
+	arg0_8._extpl = arg0_8:getTpl("ShipCardTpl", arg0_8._expContainer)
+	arg0_8._playerExp = arg0_8:findTF("playerExp", arg0_8._leftPanel)
+	arg0_8._playerName = arg0_8:findTF("name_text", arg0_8._playerExp)
+	arg0_8._playerLv = arg0_8:findTF("lv_text", arg0_8._playerExp)
+	arg0_8._playerExpLabel = arg0_8:findTF("exp_label", arg0_8._playerExp)
+	arg0_8._playerExpProgress = arg0_8:findTF("exp_progress", arg0_8._playerExp)
+	arg0_8._playerBonusExp = arg0_8:findTF("exp_text", arg0_8._playerExp)
+	arg0_8._playerExpExtra = arg0_8:findTF("operation_bonus", arg0_8._playerExp)
+	arg0_8._atkBG = arg0_8:findTF("atkPanel", arg0_8._blurConatiner)
+	arg0_8._atkPanel = arg0_8:findTF("atkResult", arg0_8._atkBG)
+	arg0_8._atkResult = arg0_8:findTF("atkResult/result", arg0_8._atkBG)
+	arg0_8._atkContainer = arg0_8:findTF("Grid", arg0_8._atkResult)
+	arg0_8._atkContainerNext = arg0_8:findTF("Grid_next", arg0_8._atkResult)
+	arg0_8._atkToggle = arg0_8:findTF("switchAtk", arg0_8._atkPanel)
+	arg0_8._atkTpl = arg0_8:getTpl("resulttpl", arg0_8._atkResult)
+	arg0_8._mvpFX = arg0_8:findTF("mvpFX", arg0_8._atkPanel)
+	arg0_8._rightBottomPanel = arg0_8:findTF("rightBottomPanel", arg0_8._blurConatiner)
+	arg0_8._confirmBtn = arg0_8:findTF("confirmBtn", arg0_8._rightBottomPanel)
 
-	setText(arg0_7._confirmBtn:Find("Text"), i18n("text_confirm"))
+	setText(arg0_8._confirmBtn:Find("Text"), i18n("text_confirm"))
 
-	arg0_7._statisticsBtn = arg0_7:findTF("statisticsBtn", arg0_7._rightBottomPanel)
-	arg0_7._subExpResult = arg0_7:findTF("subExpResult", arg0_7._leftPanel)
-	arg0_7._subExpContainer = arg0_7:findTF("expContainer", arg0_7._subExpResult)
-	arg0_7._subToggle = arg0_7:findTF("switchFleet", arg0_7._leftPanel)
+	arg0_8._statisticsBtn = arg0_8:findTF("statisticsBtn", arg0_8._rightBottomPanel)
+	arg0_8._subExpResult = arg0_8:findTF("subExpResult", arg0_8._leftPanel)
+	arg0_8._subExpContainer = arg0_8:findTF("expContainer", arg0_8._subExpResult)
+	arg0_8._subToggle = arg0_8:findTF("switchFleet", arg0_8._leftPanel)
 
-	setActive(arg0_7._subToggle, false)
+	setActive(arg0_8._subToggle, false)
 
-	arg0_7._skipBtn = arg0_7:findTF("skipLayer", arg0_7._tf)
-	arg0_7.UIMain = pg.UIMgr.GetInstance().UIMain
-	arg0_7.overlay = pg.UIMgr.GetInstance().OverlayMain
-	arg0_7._conditions = arg0_7:findTF("main/conditions")
-	arg0_7._conditionContainer = arg0_7:findTF("bg16/list", arg0_7._conditions)
-	arg0_7._conditionTpl = arg0_7:findTF("bg16/conditionTpl", arg0_7._conditions)
-	arg0_7._conditionSubTpl = arg0_7:findTF("bg16/conditionSubTpl", arg0_7._conditions)
-	arg0_7._conditionContributeTpl = arg0_7:findTF("bg16/conditionContributeTpl", arg0_7._conditions)
-	arg0_7._conditionBGNormal = arg0_7:findTF("bg16/bg_normal", arg0_7._conditions)
-	arg0_7._conditionBGContribute = arg0_7:findTF("bg16/bg_contribute", arg0_7._conditions)
-	arg0_7._cmdExp = arg0_7:findTF("commanderExp", arg0_7._leftPanel)
-	arg0_7._cmdContainer = arg0_7:findTF("commander_container", arg0_7._cmdExp)
-	arg0_7._cmdTpl = arg0_7:findTF("commander_tpl", arg0_7._cmdExp)
+	arg0_8._skipBtn = arg0_8:findTF("skipLayer", arg0_8._tf)
+	arg0_8.UIMain = pg.UIMgr.GetInstance().UIMain
+	arg0_8.overlay = pg.UIMgr.GetInstance().OverlayMain
+	arg0_8._conditions = arg0_8:findTF("main/conditions")
+	arg0_8._conditionContainer = arg0_8:findTF("bg16/list", arg0_8._conditions)
+	arg0_8._conditionTpl = arg0_8:findTF("bg16/conditionTpl", arg0_8._conditions)
+	arg0_8._conditionSubTpl = arg0_8:findTF("bg16/conditionSubTpl", arg0_8._conditions)
+	arg0_8._conditionContributeTpl = arg0_8:findTF("bg16/conditionContributeTpl", arg0_8._conditions)
+	arg0_8._conditionBGNormal = arg0_8:findTF("bg16/bg_normal", arg0_8._conditions)
+	arg0_8._conditionBGContribute = arg0_8:findTF("bg16/bg_contribute", arg0_8._conditions)
+	arg0_8._cmdExp = arg0_8:findTF("commanderExp", arg0_8._leftPanel)
+	arg0_8._cmdContainer = arg0_8:findTF("commander_container", arg0_8._cmdExp)
+	arg0_8._cmdTpl = arg0_8:findTF("commander_tpl", arg0_8._cmdExp)
 
-	arg0_7:setGradeLabel()
-	SetActive(arg0_7._levelText, false)
+	arg0_8:setGradeLabel()
+	SetActive(arg0_8._levelText, false)
 
-	arg0_7._delayLeanList = {}
-	arg0_7._ratioFitter = GetComponent(arg0_7._tf, typeof(AspectRatioFitter))
-	arg0_7._ratioFitter.enabled = true
-	arg0_7._ratioFitter.aspectRatio = pg.CameraFixMgr.GetInstance().targetRatio
-	arg0_7.camEventId = pg.CameraFixMgr.GetInstance():bind(pg.CameraFixMgr.ASPECT_RATIO_UPDATE, function(arg0_8, arg1_8)
-		arg0_7._ratioFitter.aspectRatio = arg1_8
+	arg0_8._delayLeanList = {}
+	arg0_8._ratioFitter = GetComponent(arg0_8._tf, typeof(AspectRatioFitter))
+	arg0_8._ratioFitter.enabled = true
+	arg0_8._ratioFitter.aspectRatio = pg.CameraFixMgr.GetInstance().targetRatio
+	arg0_8.camEventId = pg.CameraFixMgr.GetInstance():bind(pg.CameraFixMgr.ASPECT_RATIO_UPDATE, function(arg0_9, arg1_9)
+		arg0_8._ratioFitter.aspectRatio = arg1_9
 	end)
 end
 
-function var0_0.customsLang(arg0_9)
-	setText(findTF(arg0_9._confirmBtn, "Text"), i18n("battle_result_confirm"))
-	setText(findTF(arg0_9._bg, "jieuan01/tips/dianjijixu/bg20"), i18n("battle_result_continue"))
-	setText(findTF(arg0_9._atkTpl, "result/dmg_count_label"), i18n("battle_result_dmg"))
-	setText(findTF(arg0_9._atkTpl, "result/kill_count_label"), i18n("battle_result_kill_count"))
-	setText(findTF(arg0_9._subToggle, "on"), i18n("battle_result_toggle_on"))
-	setText(findTF(arg0_9._subToggle, "off"), i18n("battle_result_toggle_off"))
-	setText(findTF(arg0_9._conditions, "bg17"), i18n("battle_result_targets"))
+function var0_0.customsLang(arg0_10)
+	setText(findTF(arg0_10._confirmBtn, "Text"), i18n("battle_result_confirm"))
+	setText(findTF(arg0_10._bg, "jieuan01/tips/dianjijixu/bg20"), i18n("battle_result_continue"))
+	setText(findTF(arg0_10._atkTpl, "result/dmg_count_label"), i18n("battle_result_dmg"))
+	setText(findTF(arg0_10._atkTpl, "result/kill_count_label"), i18n("battle_result_kill_count"))
+	setText(findTF(arg0_10._subToggle, "on"), i18n("battle_result_toggle_on"))
+	setText(findTF(arg0_10._subToggle, "off"), i18n("battle_result_toggle_off"))
+	setText(findTF(arg0_10._conditions, "bg17"), i18n("battle_result_targets"))
 end
 
-function var0_0.setGradeLabel(arg0_10)
-	local var0_10 = {
+function var0_0.setGradeLabel(arg0_11)
+	local var0_11 = {
 		"d",
 		"c",
 		"b",
 		"a",
 		"s"
 	}
-	local var1_10 = arg0_10:findTF("grade/Xyz/bg13")
-	local var2_10 = arg0_10:findTF("grade/Xyz/bg14")
-	local var3_10
-	local var4_10
-	local var5_10
-	local var6_10 = arg0_10.contextData.score
-	local var7_10
-	local var8_10 = var6_10 > 0
+	local var1_11 = arg0_11:findTF("grade/Xyz/bg13")
+	local var2_11 = arg0_11:findTF("grade/Xyz/bg14")
+	local var3_11
+	local var4_11
+	local var5_11
+	local var6_11 = arg0_11.contextData.score
+	local var7_11
+	local var8_11 = var6_11 > 0
 
-	setActive(arg0_10:findTF("jieuan01/BG/bg_victory", arg0_10._bg), var8_10)
-	setActive(arg0_10:findTF("jieuan01/BG/bg_fail", arg0_10._bg), not var8_10)
+	setActive(arg0_11:findTF("jieuan01/BG/bg_victory", arg0_11._bg), var8_11)
+	setActive(arg0_11:findTF("jieuan01/BG/bg_fail", arg0_11._bg), not var8_11)
 
-	if var8_10 then
-		var5_10 = var0_10[var6_10 + 1]
-		var3_10 = "battlescore/battle_score_" .. var5_10 .. "/letter_" .. var5_10
-		var4_10 = "battlescore/battle_score_" .. var5_10 .. "/label_" .. var5_10
+	if var8_11 then
+		var5_11 = var0_11[var6_11 + 1]
+		var3_11 = "battlescore/battle_score_" .. var5_11 .. "/letter_" .. var5_11
+		var4_11 = "battlescore/battle_score_" .. var5_11 .. "/label_" .. var5_11
 	else
-		if arg0_10.contextData.statistics._scoreMark == ys.Battle.BattleConst.DEAD_FLAG then
-			var5_10 = var0_10[2]
-			var7_10 = "flag_destroy"
+		if arg0_11.contextData.statistics._scoreMark == ys.Battle.BattleConst.DEAD_FLAG then
+			var5_11 = var0_11[2]
+			var7_11 = "flag_destroy"
 		else
-			var5_10 = var0_10[1]
+			var5_11 = var0_11[1]
 		end
 
-		var3_10 = "battlescore/battle_score_" .. var5_10 .. "/letter_" .. var5_10
-		var4_10 = "battlescore/battle_score_" .. var5_10 .. "/label_" .. (var7_10 or var5_10)
+		var3_11 = "battlescore/battle_score_" .. var5_11 .. "/letter_" .. var5_11
+		var4_11 = "battlescore/battle_score_" .. var5_11 .. "/label_" .. (var7_11 or var5_11)
 	end
 
-	LoadImageSpriteAsync(var3_10, var1_10, false)
-	LoadImageSpriteAsync(var4_10, var2_10, false)
+	LoadImageSpriteAsync(var3_11, var1_11, false)
+	LoadImageSpriteAsync(var4_11, var2_11, false)
 
-	local var9_10 = arg0_10.contextData.system
+	local var9_11 = arg0_11.contextData.system
 
-	if (var9_10 == SYSTEM_SCENARIO or var9_10 == SYSTEM_ROUTINE or var9_10 == SYSTEM_SUB_ROUTINE or var9_10 == SYSTEM_DUEL) and (var5_10 == var0_10[1] or var5_10 == var0_10[2]) then
-		arg0_10.failTag = true
+	if (var9_11 == SYSTEM_SCENARIO or var9_11 == SYSTEM_ROUTINE or var9_11 == SYSTEM_SUB_ROUTINE or var9_11 == SYSTEM_DUEL) and (var5_11 == var0_11[1] or var5_11 == var0_11[2]) then
+		arg0_11.failTag = true
 	end
 end
 
-function var0_0.displayerCommanders(arg0_11, arg1_11)
-	arg0_11.commanderExps = arg0_11.contextData.commanderExps or {}
+function var0_0.displayerCommanders(arg0_12, arg1_12)
+	arg0_12.commanderExps = arg0_12.contextData.commanderExps or {}
 
-	local var0_11 = getProxy(CommanderProxy)
+	local var0_12 = getProxy(CommanderProxy)
 
-	removeAllChildren(arg0_11._cmdContainer)
+	removeAllChildren(arg0_12._cmdContainer)
 
-	local var1_11
+	local var1_12
 
-	if arg1_11 then
-		var1_11 = arg0_11.commanderExps.submarineCMD or {}
+	if arg1_12 then
+		var1_12 = arg0_12.commanderExps.submarineCMD or {}
 	else
-		var1_11 = arg0_11.commanderExps.surfaceCMD or {}
+		var1_12 = arg0_12.commanderExps.surfaceCMD or {}
 	end
 
-	setActive(arg0_11._cmdExp, true)
+	setActive(arg0_12._cmdExp, true)
 
-	for iter0_11, iter1_11 in ipairs(var1_11) do
-		local var2_11 = var0_11:getCommanderById(iter1_11.commander_id)
-		local var3_11 = cloneTplTo(arg0_11._cmdTpl, arg0_11._cmdContainer)
+	for iter0_12, iter1_12 in ipairs(var1_12) do
+		local var2_12 = var0_12:getCommanderById(iter1_12.commander_id)
+		local var3_12 = cloneTplTo(arg0_12._cmdTpl, arg0_12._cmdContainer)
 
-		GetImageSpriteFromAtlasAsync("commandericon/" .. var2_11:getPainting(), "", var3_11:Find("icon/mask/pic"))
-		setText(var3_11:Find("exp/name_text"), var2_11:getName())
-		setText(var3_11:Find("exp/lv_text"), "Lv." .. var2_11.level)
-		setText(var3_11:Find("exp/exp_text"), "+" .. iter1_11.exp)
+		GetImageSpriteFromAtlasAsync("commandericon/" .. var2_12:getPainting(), "", var3_12:Find("icon/mask/pic"))
+		setText(var3_12:Find("exp/name_text"), var2_12:getName())
+		setText(var3_12:Find("exp/lv_text"), "Lv." .. var2_12.level)
+		setText(var3_12:Find("exp/exp_text"), "+" .. iter1_12.exp)
 
-		local var4_11
-		local var5_11 = var2_11:isMaxLevel() and 1 or iter1_11.curExp / var2_11:getNextLevelExp()
+		local var4_12
+		local var5_12 = var2_12:isMaxLevel() and 1 or iter1_12.curExp / var2_12:getNextLevelExp()
 
-		var3_11:Find("exp/exp_progress"):GetComponent(typeof(Image)).fillAmount = var5_11
+		var3_12:Find("exp/exp_progress"):GetComponent(typeof(Image)).fillAmount = var5_12
 	end
 end
 
-function var0_0.didEnter(arg0_12)
-	arg0_12:setStageName()
-	arg0_12:customsLang()
+function var0_0.didEnter(arg0_13)
+	arg0_13:setStageName()
+	arg0_13:customsLang()
 
-	arg0_12._shipResultCardList, arg0_12._subShipResultCardList = {}, {}
+	arg0_13._shipResultCardList, arg0_13._subShipResultCardList = {}, {}
 
-	local var0_12 = rtf(arg0_12._grade)
+	local var0_13 = rtf(arg0_13._grade)
 
-	arg0_12._gradeUpperLeftPos = var0_12.localPosition
-	var0_12.localPosition = Vector3(0, 25, 0)
+	arg0_13._gradeUpperLeftPos = var0_13.localPosition
+	var0_13.localPosition = Vector3(0, 25, 0)
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_12._tf, true, {
-		lockGlobalBlur = true,
-		groupName = LayerWeightConst.GROUP_COMBAT
+	arg0_13:BlurPanel(arg0_13._tf, {
+		staticBlur = true,
+		lockGlobalBlur = true
 	})
 
-	if arg0_12.contextData.system ~= SYSTEM_BOSS_RUSH and arg0_12.contextData.system ~= SYSTEM_BOSS_RUSH_EX and arg0_12.contextData.system ~= SYSTEM_ACT_BOSS and arg0_12.contextData.system ~= SYSTEM_BOSS_SINGLE and arg0_12.contextData.system ~= SYSTEM_BOSS_SINGLE_VARIABLE then
+	if arg0_13.contextData.system ~= SYSTEM_BOSS_RUSH and arg0_13.contextData.system ~= SYSTEM_BOSS_RUSH_EX and arg0_13.contextData.system ~= SYSTEM_ACT_BOSS and arg0_13.contextData.system ~= SYSTEM_BOSS_SINGLE and arg0_13.contextData.system ~= SYSTEM_BOSS_SINGLE_VARIABLE then
 		ys.Battle.BattleCameraUtil.GetInstance().ActiveMainCamera(false)
 	end
 
-	arg0_12._grade.transform.localScale = Vector3(1.5, 1.5, 0)
+	arg0_13._grade.transform.localScale = Vector3(1.5, 1.5, 0)
 
-	LeanTween.scale(arg0_12._grade, Vector3(0.88, 0.88, 1), var0_0.DURATION_WIN_SCALE):setOnComplete(System.Action(function()
-		SetActive(arg0_12._levelText, true)
-		arg0_12:rankAnimaFinish()
+	LeanTween.scale(arg0_13._grade, Vector3(0.88, 0.88, 1), var0_0.DURATION_WIN_SCALE):setOnComplete(System.Action(function()
+		SetActive(arg0_13._levelText, true)
+		arg0_13:rankAnimaFinish()
 	end))
 
-	arg0_12._tf:GetComponent(typeof(Image)).color = Color.New(0, 0, 0, 0.5)
+	arg0_13._tf:GetComponent(typeof(Image)).color = Color.New(0, 0, 0, 0.5)
 
-	SetActive(arg0_12._atkBG, false)
-	onToggle(arg0_12, arg0_12._subToggle, function(arg0_14)
-		SetActive(arg0_12._subExpResult, not arg0_14)
-		SetActive(arg0_12._expResult, arg0_14)
-		setActive(arg0_12:findTF("off", arg0_12._subToggle), not arg0_14)
-		arg0_12:displayerCommanders(not arg0_14)
+	SetActive(arg0_13._atkBG, false)
+	onToggle(arg0_13, arg0_13._subToggle, function(arg0_15)
+		SetActive(arg0_13._subExpResult, not arg0_15)
+		SetActive(arg0_13._expResult, arg0_15)
+		setActive(arg0_13:findTF("off", arg0_13._subToggle), not arg0_15)
+		arg0_13:displayerCommanders(not arg0_15)
 	end, SFX_PANEL)
 
-	arg0_12._stateFlag = var0_0.STATE_RANK_ANIMA
+	arg0_13._stateFlag = var0_0.STATE_RANK_ANIMA
 
-	onButton(arg0_12, arg0_12._skipBtn, function()
-		arg0_12:skip()
+	onButton(arg0_13, arg0_13._skipBtn, function()
+		arg0_13:skip()
 	end, SFX_CONFIRM)
 end
 
-function var0_0.setStageName(arg0_16)
-	if arg0_16.contextData.system and arg0_16.contextData.system == SYSTEM_DUEL then
-		if arg0_16.rivalVO then
-			setText(arg0_16._levelText, arg0_16.rivalVO.name)
+function var0_0.setStageName(arg0_17)
+	if arg0_17.contextData.system and arg0_17.contextData.system == SYSTEM_DUEL then
+		if arg0_17.rivalVO then
+			setText(arg0_17._levelText, arg0_17.rivalVO.name)
 		else
-			setText(arg0_16._levelText, "")
+			setText(arg0_17._levelText, "")
 		end
 	else
-		local var0_16 = arg0_16.contextData.stageId
-		local var1_16 = pg.expedition_data_template[var0_16]
+		local var0_17 = arg0_17.contextData.stageId
+		local var1_17 = pg.expedition_data_template[var0_17]
 
-		setText(arg0_16._levelText, var1_16.name)
+		setText(arg0_17._levelText, var1_17.name)
 	end
 end
 
-function var0_0.rankAnimaFinish(arg0_17)
-	local var0_17 = arg0_17:findTF("main/conditions")
+function var0_0.rankAnimaFinish(arg0_18)
+	local var0_18 = arg0_18:findTF("main/conditions")
 
-	SetActive(var0_17, true)
+	SetActive(var0_18, true)
 
-	local var1_17 = arg0_17.contextData.stageId
-	local var2_17 = pg.expedition_data_template[var1_17]
+	local var1_18 = arg0_18.contextData.stageId
+	local var2_18 = pg.expedition_data_template[var1_18]
 
-	local function var3_17(arg0_18)
-		if type(arg0_18) == "table" then
-			local var0_18 = i18n(var0_0.ObjectiveList[arg0_18[1]], arg0_18[2])
+	local function var3_18(arg0_19)
+		if type(arg0_19) == "table" then
+			local var0_19 = i18n(var0_0.ObjectiveList[arg0_19[1]], arg0_19[2])
 
-			arg0_17:setCondition(var0_18, var0_0.objectiveCheck(arg0_18[1], arg0_17.contextData))
+			arg0_18:setCondition(var0_19, var0_0.objectiveCheck(arg0_19[1], arg0_18.contextData))
 		end
 	end
 
-	var3_17(var2_17.objective_1)
-	var3_17(var2_17.objective_2)
-	var3_17(var2_17.objective_3)
+	var3_18(var2_18.objective_1)
+	var3_18(var2_18.objective_2)
+	var3_18(var2_18.objective_3)
 
-	local var4_17 = LeanTween.delayedCall(1, System.Action(function()
-		arg0_17._stateFlag = var0_0.STATE_REPORTED
+	local var4_18 = LeanTween.delayedCall(1, System.Action(function()
+		arg0_18._stateFlag = var0_0.STATE_REPORTED
 
-		SetActive(arg0_17:findTF("jieuan01/tips", arg0_17._bg), true)
+		SetActive(arg0_18:findTF("jieuan01/tips", arg0_18._bg), true)
 
-		if arg0_17.skipFlag then
-			arg0_17:skip()
+		if arg0_18.skipFlag then
+			arg0_18:skip()
 		end
 	end))
 
-	table.insert(arg0_17._delayLeanList, var4_17.id)
+	table.insert(arg0_18._delayLeanList, var4_18.id)
 
-	arg0_17._stateFlag = var0_0.STATE_REPORT
+	arg0_18._stateFlag = var0_0.STATE_REPORT
 end
 
-function var0_0.objectiveCheck(arg0_20, arg1_20)
-	if arg0_20 == 1 or arg0_20 == 4 or arg0_20 == 8 then
-		return arg1_20.score > 1
-	elseif arg0_20 == 2 or arg0_20 == 3 then
-		return not arg1_20.statistics._deadUnit
-	elseif arg0_20 == 6 then
-		return arg1_20.statistics._boss_destruct < 1
-	elseif arg0_20 == 5 then
-		return not arg1_20.statistics._badTime
-	elseif arg0_20 == 7 then
+function var0_0.objectiveCheck(arg0_21, arg1_21)
+	if arg0_21 == 1 or arg0_21 == 4 or arg0_21 == 8 then
+		return arg1_21.score > 1
+	elseif arg0_21 == 2 or arg0_21 == 3 then
+		return not arg1_21.statistics._deadUnit
+	elseif arg0_21 == 6 then
+		return arg1_21.statistics._boss_destruct < 1
+	elseif arg0_21 == 5 then
+		return not arg1_21.statistics._badTime
+	elseif arg0_21 == 7 then
 		return true
 	end
 end
 
-function var0_0.setCondition(arg0_21, arg1_21, arg2_21)
-	local var0_21 = cloneTplTo(arg0_21._conditionTpl, arg0_21._conditionContainer)
+function var0_0.setCondition(arg0_22, arg1_22, arg2_22)
+	local var0_22 = cloneTplTo(arg0_22._conditionTpl, arg0_22._conditionContainer)
 
-	setActive(var0_21, false)
+	setActive(var0_22, false)
 
-	local var1_21
-	local var2_21 = var0_21:Find("text"):GetComponent(typeof(Text))
+	local var1_22
+	local var2_22 = var0_22:Find("text"):GetComponent(typeof(Text))
 
-	if arg2_21 == nil then
-		var1_21 = "resources/condition_check"
-		var2_21.text = setColorStr(arg1_21, "#FFFFFFFF")
-	elseif arg2_21 == true then
-		var1_21 = "resources/condition_done"
-		var2_21.text = setColorStr(arg1_21, "#FFFFFFFF")
+	if arg2_22 == nil then
+		var1_22 = "resources/condition_check"
+		var2_22.text = setColorStr(arg1_22, "#FFFFFFFF")
+	elseif arg2_22 == true then
+		var1_22 = "resources/condition_done"
+		var2_22.text = setColorStr(arg1_22, "#FFFFFFFF")
 	else
-		var1_21 = "resources/condition_fail"
-		var2_21.text = setColorStr(arg1_21, "#FFFFFF80")
+		var1_22 = "resources/condition_fail"
+		var2_22.text = setColorStr(arg1_22, "#FFFFFF80")
 	end
 
-	arg0_21:setSpriteTo(var1_21, var0_21:Find("checkBox"), true)
+	arg0_22:setSpriteTo(var1_22, var0_22:Find("checkBox"), true)
 
-	local var3_21 = arg0_21._conditionContainer.childCount - 1
+	local var3_22 = arg0_22._conditionContainer.childCount - 1
 
-	if var3_21 > 0 then
-		local var4_21 = LeanTween.delayedCall(var0_0.CONDITIONS_FREQUENCE * var3_21, System.Action(function()
-			setActive(var0_21, true)
+	if var3_22 > 0 then
+		local var4_22 = LeanTween.delayedCall(var0_0.CONDITIONS_FREQUENCE * var3_22, System.Action(function()
+			setActive(var0_22, true)
 		end))
 
-		table.insert(arg0_21._delayLeanList, var4_21.id)
+		table.insert(arg0_22._delayLeanList, var4_22.id)
 	else
-		setActive(var0_21, true)
+		setActive(var0_22, true)
 	end
 end
 
-function var0_0.showRewardInfo(arg0_23)
-	arg0_23._stateFlag = var0_0.STATE_REWARD
+function var0_0.showRewardInfo(arg0_24)
+	arg0_24._stateFlag = var0_0.STATE_REWARD
 
-	if arg0_23.contextData.system == SYSTEM_BOSS_RUSH or arg0_23.contextData.system == SYSTEM_BOSS_RUSH_EX then
-		arg0_23:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE)
+	if arg0_24.contextData.system == SYSTEM_BOSS_RUSH or arg0_24.contextData.system == SYSTEM_BOSS_RUSH_EX then
+		arg0_24:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE)
 
 		return
 	end
 
-	SetActive(arg0_23:findTF("jieuan01/tips", arg0_23._bg), false)
-	setParent(arg0_23._tf, arg0_23.UIMain)
+	SetActive(arg0_24:findTF("jieuan01/tips", arg0_24._bg), false)
+	setParent(arg0_24._tf, arg0_24.UIMain)
 
-	local var0_23
+	local var0_24
 
-	local function var1_23()
-		if var0_23 and coroutine.status(var0_23) == "suspended" then
-			local var0_24, var1_24 = coroutine.resume(var0_23)
+	local function var1_24()
+		if var0_24 and coroutine.status(var0_24) == "suspended" then
+			local var0_25, var1_25 = coroutine.resume(var0_24)
 
-			assert(var0_24, var1_24)
+			assert(var0_25, var1_25)
 		end
 	end
 
-	var0_23 = coroutine.create(function()
-		local var0_25 = arg0_23.contextData.drops
-		local var1_25 = getProxy(ActivityProxy)
-		local var2_25 = var1_25:getActivityById(ActivityConst.UTAWARERU_ACTIVITY_PT_ID)
+	var0_24 = coroutine.create(function()
+		local var0_26 = arg0_24.contextData.drops
+		local var1_26 = getProxy(ActivityProxy)
+		local var2_26 = var1_26:getActivityById(ActivityConst.UTAWARERU_ACTIVITY_PT_ID)
 
-		if var2_25 and not var2_25:isEnd() then
-			local var3_25 = var2_25:getConfig("config_client").pt_id
-			local var4_25 = _.detect(var1_25:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK), function(arg0_26)
-				return arg0_26:getConfig("config_id") == var3_25
+		if var2_26 and not var2_26:isEnd() then
+			local var3_26 = var2_26:getConfig("config_client").pt_id
+			local var4_26 = _.detect(var1_26:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK), function(arg0_27)
+				return arg0_27:getConfig("config_id") == var3_26
 			end):getData1()
 
-			if var4_25 >= 1500 then
-				local var5_25 = var4_25 - 1500
-				local var6_25 = _.detect(var0_25, function(arg0_27)
-					return arg0_27.type == DROP_TYPE_RESOURCE and arg0_27.id == var3_25
+			if var4_26 >= 1500 then
+				local var5_26 = var4_26 - 1500
+				local var6_26 = _.detect(var0_26, function(arg0_28)
+					return arg0_28.type == DROP_TYPE_RESOURCE and arg0_28.id == var3_26
 				end)
 
-				var0_25 = _.filter(var0_25, function(arg0_28)
-					return arg0_28.type ~= DROP_TYPE_RESOURCE or arg0_28.id ~= var3_25
+				var0_26 = _.filter(var0_26, function(arg0_29)
+					return arg0_29.type ~= DROP_TYPE_RESOURCE or arg0_29.id ~= var3_26
 				end)
 
-				if var6_25 and var5_25 < var6_25.count then
-					var6_25.count = var6_25.count - var5_25
+				if var6_26 and var5_26 < var6_26.count then
+					var6_26.count = var6_26.count - var5_26
 
-					table.insert(var0_25, var6_25)
+					table.insert(var0_26, var6_26)
 				end
 			end
 		end
 
-		local var7_25 = {}
+		local var7_26 = {}
 
-		for iter0_25, iter1_25 in ipairs(arg0_23.contextData.drops) do
-			table.insert(var7_25, iter1_25)
+		for iter0_26, iter1_26 in ipairs(arg0_24.contextData.drops) do
+			table.insert(var7_26, iter1_26)
 		end
 
-		for iter2_25, iter3_25 in ipairs(arg0_23.contextData.extraDrops) do
-			iter3_25.riraty = true
+		for iter2_26, iter3_26 in ipairs(arg0_24.contextData.extraDrops) do
+			iter3_26.riraty = true
 
-			table.insert(var7_25, iter3_25)
+			table.insert(var7_26, iter3_26)
 		end
 
-		local var8_25 = false
-		local var9_25 = arg0_23.contextData.extraBuffList
+		local var8_26 = false
+		local var9_26 = arg0_24.contextData.extraBuffList
 
-		for iter4_25, iter5_25 in ipairs(var9_25) do
-			if pg.benefit_buff_template[iter5_25].benefit_type == Chapter.OPERATION_BUFF_TYPE_REWARD then
-				var8_25 = true
+		for iter4_26, iter5_26 in ipairs(var9_26) do
+			if pg.benefit_buff_template[iter5_26].benefit_type == Chapter.OPERATION_BUFF_TYPE_REWARD then
+				var8_26 = true
 
 				break
 			end
 		end
 
-		if table.getCount(var0_25) > 0 then
-			local var10_25 = arg0_23.skipFlag
-			local var11_25 = false
+		if table.getCount(var0_26) > 0 then
+			local var10_26 = arg0_24.skipFlag
+			local var11_26 = false
 
-			if arg0_23.contextData.system == SYSTEM_SCENARIO then
-				local var12_25 = getProxy(ChapterProxy):getActiveChapter(true)
+			if arg0_24.contextData.system == SYSTEM_SCENARIO then
+				local var12_26 = getProxy(ChapterProxy):getActiveChapter(true)
 
-				if var12_25 then
-					if var12_25:isLoop() then
-						getProxy(ChapterProxy):AddExtendChapterDataArray(var12_25.id, "TotalDrops", var7_25)
+				if var12_26 then
+					if var12_26:isLoop() then
+						getProxy(ChapterProxy):AddExtendChapterDataArray(var12_26.id, "TotalDrops", var7_26)
 
-						var11_25 = getProxy(ChapterProxy):GetChapterAutoFlag(var12_25.id) == 1
+						var11_26 = getProxy(ChapterProxy):GetChapterAutoFlag(var12_26.id) == 1
 					end
 
-					var12_25:writeDrops(var7_25)
+					var12_26:writeDrops(var7_26)
 				end
-			elseif arg0_23.contextData.system == SYSTEM_ACT_BOSS then
+			elseif arg0_24.contextData.system == SYSTEM_ACT_BOSS then
 				if getProxy(ContextProxy):getCurrentContext():getContextByMediator(ContinuousOperationMediator) then
-					getProxy(ChapterProxy):AddActBossRewards(var7_25)
+					getProxy(ChapterProxy):AddActBossRewards(var7_26)
 				end
-			elseif arg0_23.contextData.system == SYSTEM_BOSS_SINGLE then
+			elseif arg0_24.contextData.system == SYSTEM_BOSS_SINGLE then
 				if getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossSingleContinuousOperationMediator) then
-					getProxy(ChapterProxy):AddBossSingleRewards(var7_25)
+					getProxy(ChapterProxy):AddBossSingleRewards(var7_26)
 				end
-			elseif arg0_23.contextData.system == SYSTEM_BOSS_SINGLE_VARIABLE then
+			elseif arg0_24.contextData.system == SYSTEM_BOSS_SINGLE_VARIABLE then
 				-- block empty
 			end
 
-			arg0_23:emit(BaseUI.ON_AWARD, {
-				items = var7_25,
-				extraBonus = var8_25,
-				removeFunc = var1_23,
-				closeOnCompleted = var10_25
+			arg0_24:emit(BaseUI.ON_AWARD, {
+				items = var7_26,
+				extraBonus = var8_26,
+				removeFunc = var1_24,
+				closeOnCompleted = var10_26
 			})
 			coroutine.yield()
 
-			local var13_25 = #_.filter(var7_25, function(arg0_29)
-				return arg0_29.type == DROP_TYPE_SHIP
+			local var13_26 = #_.filter(var7_26, function(arg0_30)
+				return arg0_30.type == DROP_TYPE_SHIP
 			end)
-			local var14_25 = getProxy(BayProxy):getNewShip(true)
+			local var14_26 = getProxy(BayProxy):getNewShip(true)
 
-			for iter6_25 = math.max(1, #var14_25 - var13_25 + 1), #var14_25 do
-				local var15_25 = var14_25[iter6_25]
+			for iter6_26 = math.max(1, #var14_26 - var13_26 + 1), #var14_26 do
+				local var15_26 = var14_26[iter6_26]
 
-				if PlayerPrefs.GetInt(DISPLAY_SHIP_GET_EFFECT) == 1 or var15_25.virgin or var15_25:getRarity() >= ShipRarity.Purple then
-					local var16_25 = var11_25 and not var15_25.virgin and 3 or nil
+				if PlayerPrefs.GetInt(DISPLAY_SHIP_GET_EFFECT) == 1 or var15_26.virgin or var15_26:getRarity() >= ShipRarity.Purple then
+					local var16_26 = var11_26 and not var15_26.virgin and 3 or nil
 
-					arg0_23:emit(BattleResultMediator.GET_NEW_SHIP, var15_25, var1_23, var16_25)
+					arg0_24:emit(BattleResultMediator.GET_NEW_SHIP, var15_26, var1_24, var16_26)
 					coroutine.yield()
 				end
 			end
 		end
 
-		setParent(arg0_23._tf, arg0_23.overlay)
-		arg0_23:displayBG()
+		setParent(arg0_24._tf, arg0_24.overlay)
+		arg0_24:displayBG()
 	end)
 
-	var1_23()
+	var1_24()
 end
 
-function var0_0.displayBG(arg0_30)
-	local function var0_30()
-		arg0_30:displayShips()
-		arg0_30:displayPlayerInfo()
-		arg0_30:displayerCommanders()
-		arg0_30:initMetaBtn()
+function var0_0.displayBG(arg0_31)
+	local function var0_31()
+		arg0_31:displayShips()
+		arg0_31:displayPlayerInfo()
+		arg0_31:displayerCommanders()
+		arg0_31:initMetaBtn()
 
-		arg0_30._stateFlag = var0_0.STATE_DISPLAY
+		arg0_31._stateFlag = var0_0.STATE_DISPLAY
 
-		if arg0_30.skipFlag then
-			arg0_30:skip()
+		if arg0_31.skipFlag then
+			arg0_31:skip()
 		end
 	end
 
-	local var1_30 = rtf(arg0_30._grade)
+	local var1_31 = rtf(arg0_31._grade)
 
-	LeanTween.moveX(rtf(arg0_30._conditions), 1300, var0_0.DURATION_MOVE)
-	LeanTween.scale(arg0_30._grade, Vector3(0.6, 0.6, 0), var0_0.DURATION_MOVE)
-	LeanTween.moveLocal(go(var1_30), arg0_30._gradeUpperLeftPos, var0_0.DURATION_MOVE)
-	setActive(arg0_30:findTF("jieuan01/Bomb", arg0_30._bg), false)
+	LeanTween.moveX(rtf(arg0_31._conditions), 1300, var0_0.DURATION_MOVE)
+	LeanTween.scale(arg0_31._grade, Vector3(0.6, 0.6, 0), var0_0.DURATION_MOVE)
+	LeanTween.moveLocal(go(var1_31), arg0_31._gradeUpperLeftPos, var0_0.DURATION_MOVE)
+	setActive(arg0_31:findTF("jieuan01/Bomb", arg0_31._bg), false)
 	onDelayTick(function()
-		setLocalScale(arg0_30._grade, Vector3(0.6, 0.6, 0))
-		setAnchoredPosition(arg0_30._grade, arg0_30._gradeUpperLeftPos)
-		var0_30()
+		setLocalScale(arg0_31._grade, Vector3(0.6, 0.6, 0))
+		setAnchoredPosition(arg0_31._grade, arg0_31._gradeUpperLeftPos)
+		var0_31()
 	end, var0_0.DURATION_MOVE)
 end
 
-function var0_0.displayPlayerInfo(arg0_33)
-	local var0_33 = arg0_33:calcPlayerProgress()
+function var0_0.displayPlayerInfo(arg0_34)
+	local var0_34 = arg0_34:calcPlayerProgress()
 
-	SetActive(arg0_33._leftPanel, true)
-	SetActive(arg0_33._playerExp, true)
+	SetActive(arg0_34._leftPanel, true)
+	SetActive(arg0_34._playerExp, true)
 
-	arg0_33._main:GetComponent("Animator").enabled = true
+	arg0_34._main:GetComponent("Animator").enabled = true
 
-	local var1_33 = LeanTween.moveX(rtf(arg0_33._leftPanel), 0, 0.5):setOnComplete(System.Action(function()
-		local var0_34 = LeanTween.value(go(arg0_33._tf), 0, var0_33, 1):setOnUpdate(System.Action_float(function(arg0_35)
-			setText(arg0_33._playerBonusExp, "+" .. math.floor(arg0_35))
+	local var1_34 = LeanTween.moveX(rtf(arg0_34._leftPanel), 0, 0.5):setOnComplete(System.Action(function()
+		local var0_35 = LeanTween.value(go(arg0_34._tf), 0, var0_34, 1):setOnUpdate(System.Action_float(function(arg0_36)
+			setText(arg0_34._playerBonusExp, "+" .. math.floor(arg0_36))
 		end))
 
-		table.insert(arg0_33._delayLeanList, var0_34.id)
+		table.insert(arg0_34._delayLeanList, var0_35.id)
 	end))
 
-	table.insert(arg0_33._delayLeanList, var1_33.id)
+	table.insert(arg0_34._delayLeanList, var1_34.id)
 end
 
-function var0_0.calcPlayerExp(arg0_36)
-	local var0_36 = arg0_36.contextData.oldPlayer
-	local var1_36 = var0_36.level
-	local var2_36 = arg0_36.player.level
-	local var3_36 = arg0_36.player.exp - var0_36.exp
+function var0_0.calcPlayerExp(arg0_37)
+	local var0_37 = arg0_37.contextData.oldPlayer
+	local var1_37 = var0_37.level
+	local var2_37 = arg0_37.player.level
+	local var3_37 = arg0_37.player.exp - var0_37.exp
 
-	while var1_36 < var2_36 do
-		var3_36 = var3_36 + pg.user_level[var1_36].exp
-		var1_36 = var1_36 + 1
+	while var1_37 < var2_37 do
+		var3_37 = var3_37 + pg.user_level[var1_37].exp
+		var1_37 = var1_37 + 1
 	end
 
-	if var1_36 == pg.user_level[#pg.user_level].level then
-		var3_36 = 0
+	if var1_37 == pg.user_level[#pg.user_level].level then
+		var3_37 = 0
 	end
 
-	return var3_36
+	return var3_37
 end
 
-function var0_0.calcPlayerRank(arg0_37)
-	local var0_37 = arg0_37.contextData.oldRank
-	local var1_37 = var0_37.score
+function var0_0.calcPlayerRank(arg0_38)
+	local var0_38 = arg0_38.contextData.oldRank
+	local var1_38 = var0_38.score
 
-	return arg0_37.season.score - var0_37.score
+	return arg0_38.season.score - var0_38.score
 end
 
-function var0_0.displayShips(arg0_38)
-	local var0_38 = {}
-	local var1_38 = arg0_38.shipVOs
+function var0_0.displayShips(arg0_39)
+	local var0_39 = {}
+	local var1_39 = arg0_39.shipVOs
 
-	for iter0_38, iter1_38 in ipairs(var1_38) do
-		var0_38[iter1_38.id] = iter1_38
+	for iter0_39, iter1_39 in ipairs(var1_39) do
+		var0_39[iter1_39.id] = iter1_39
 	end
 
-	local var2_38 = arg0_38.contextData.statistics
+	local var2_39 = arg0_39.contextData.statistics
 
-	for iter2_38, iter3_38 in ipairs(var1_38) do
-		if var2_38[iter3_38.id] then
-			var2_38[iter3_38.id].vo = iter3_38
+	for iter2_39, iter3_39 in ipairs(var1_39) do
+		if var2_39[iter3_39.id] then
+			var2_39[iter3_39.id].vo = iter3_39
 		end
 	end
 
-	local var3_38
-	local var4_38
+	local var3_39
+	local var4_39
 
-	if var2_38.mvpShipID == -1 then
-		var4_38 = 0
+	if var2_39.mvpShipID == -1 then
+		var4_39 = 0
 
-		for iter4_38, iter5_38 in ipairs(arg0_38.contextData.oldMainShips) do
-			var4_38 = math.max(var2_38[iter5_38.id].output, var4_38)
+		for iter4_39, iter5_39 in ipairs(arg0_39.contextData.oldMainShips) do
+			var4_39 = math.max(var2_39[iter5_39.id].output, var4_39)
 		end
-	elseif var2_38.mvpShipID and var2_38.mvpShipID ~= 0 then
-		var3_38 = var2_38[var2_38.mvpShipID]
-		var4_38 = var3_38.output
+	elseif var2_39.mvpShipID and var2_39.mvpShipID ~= 0 then
+		var3_39 = var2_39[var2_39.mvpShipID]
+		var4_39 = var3_39.output
 	else
-		var4_38 = 0
+		var4_39 = 0
 	end
 
-	local var5_38 = arg0_38.contextData.oldMainShips
+	local var5_39 = arg0_39.contextData.oldMainShips
 
-	arg0_38._atkFuncs = {}
+	arg0_39._atkFuncs = {}
 
-	local var6_38
-	local var7_38
+	local var6_39
+	local var7_39
 
-	SetActive(arg0_38._atkToggle, #var5_38 > 6)
+	SetActive(arg0_39._atkToggle, #var5_39 > 6)
 
-	if #var5_38 > 6 then
-		onToggle(arg0_38, arg0_38._atkToggle, function(arg0_39)
-			SetActive(arg0_38._atkContainer, arg0_39)
-			SetActive(arg0_38._atkContainerNext, not arg0_39)
+	if #var5_39 > 6 then
+		onToggle(arg0_39, arg0_39._atkToggle, function(arg0_40)
+			SetActive(arg0_39._atkContainer, arg0_40)
+			SetActive(arg0_39._atkContainerNext, not arg0_40)
 
-			if arg0_39 then
-				arg0_38:skipAtkAnima(arg0_38._atkContainerNext)
+			if arg0_40 then
+				arg0_39:skipAtkAnima(arg0_39._atkContainerNext)
 			else
-				arg0_38:skipAtkAnima(arg0_38._atkContainer)
+				arg0_39:skipAtkAnima(arg0_39._atkContainer)
 			end
 		end, SFX_PANEL)
 	end
 
-	local var8_38 = {}
-	local var9_38 = {}
+	local var8_39 = {}
+	local var9_39 = {}
 
-	for iter6_38, iter7_38 in ipairs(var5_38) do
-		local var10_38 = var0_38[iter7_38.id]
+	for iter6_39, iter7_39 in ipairs(var5_39) do
+		local var10_39 = var0_39[iter7_39.id]
 
-		if var2_38[iter7_38.id] then
-			local var11_38 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter7_38.configId).type
-			local var12_38 = table.contains(TeamType.SubShipType, var11_38)
-			local var13_38
-			local var14_38
-			local var15_38 = 0
-			local var16_38
+		if var2_39[iter7_39.id] then
+			local var11_39 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter7_39.configId).type
+			local var12_39 = table.contains(TeamType.SubShipType, var11_39)
+			local var13_39
+			local var14_39
+			local var15_39 = 0
+			local var16_39
 
-			if iter6_38 > 6 then
-				var14_38 = arg0_38._atkContainerNext
-				var16_38 = 7
+			if iter6_39 > 6 then
+				var14_39 = arg0_39._atkContainerNext
+				var16_39 = 7
 			else
-				var14_38 = arg0_38._atkContainer
-				var16_38 = 1
+				var14_39 = arg0_39._atkContainer
+				var16_39 = 1
 			end
 
-			local var17_38 = cloneTplTo(arg0_38._atkTpl, var14_38)
-			local var18_38 = var17_38.localPosition
+			local var17_39 = cloneTplTo(arg0_39._atkTpl, var14_39)
+			local var18_39 = var17_39.localPosition
 
-			var18_38.x = var18_38.x + (iter6_38 - var16_38) * 74
-			var18_38.y = var18_38.y + (iter6_38 - var16_38) * -124
-			var17_38.localPosition = var18_38
+			var18_39.x = var18_39.x + (iter6_39 - var16_39) * 74
+			var18_39.y = var18_39.y + (iter6_39 - var16_39) * -124
+			var17_39.localPosition = var18_39
 
-			local var19_38 = findTF(var17_38, "result/stars")
-			local var20_38 = findTF(var17_38, "result/stars/star_tpl")
-			local var21_38 = iter7_38:getStar()
-			local var22_38 = iter7_38:getMaxStar()
+			local var19_39 = findTF(var17_39, "result/stars")
+			local var20_39 = findTF(var17_39, "result/stars/star_tpl")
+			local var21_39 = iter7_39:getStar()
+			local var22_39 = iter7_39:getMaxStar()
 
-			while var22_38 > 0 do
-				local var23_38 = cloneTplTo(var20_38, var19_38)
+			while var22_39 > 0 do
+				local var23_39 = cloneTplTo(var20_39, var19_39)
 
-				SetActive(var23_38:Find("empty"), var21_38 < var22_38)
-				SetActive(var23_38:Find("star"), var22_38 <= var21_38)
+				SetActive(var23_39:Find("empty"), var21_39 < var22_39)
+				SetActive(var23_39:Find("star"), var22_39 <= var21_39)
 
-				var22_38 = var22_38 - 1
+				var22_39 = var22_39 - 1
 			end
 
-			local var24_38 = arg0_38:findTF("result/mask/icon", var17_38)
-			local var25_38 = arg0_38:findTF("result/type", var17_38)
+			local var24_39 = arg0_39:findTF("result/mask/icon", var17_39)
+			local var25_39 = arg0_39:findTF("result/type", var17_39)
 
-			var24_38:GetComponent(typeof(Image)).sprite = LoadSprite("herohrzicon/" .. iter7_38:getPainting())
+			var24_39:GetComponent(typeof(Image)).sprite = LoadSprite("herohrzicon/" .. iter7_39:getPainting())
 
-			local var26_38 = var2_38[iter7_38.id].output / var4_38
-			local var27_38 = GetSpriteFromAtlas("shiptype", shipType2print(iter7_38:getShipType()))
+			local var26_39 = var2_39[iter7_39.id].output / var4_39
+			local var27_39 = GetSpriteFromAtlas("shiptype", shipType2print(iter7_39:getShipType()))
 
-			setImageSprite(var25_38, var27_38, true)
-			arg0_38:setAtkAnima(var17_38, var14_38, var26_38, var4_38, var3_38 and iter7_38.id == var3_38.id, var2_38[iter7_38.id].output, var2_38[iter7_38.id].kill_count)
+			setImageSprite(var25_39, var27_39, true)
+			arg0_39:setAtkAnima(var17_39, var14_39, var26_39, var4_39, var3_39 and iter7_39.id == var3_39.id, var2_39[iter7_39.id].output, var2_39[iter7_39.id].kill_count)
 
-			local var28_38
-			local var29_38 = false
+			local var28_39
+			local var29_39 = false
 
-			if var3_38 and iter7_38.id == var3_38.id then
-				var29_38 = true
-				arg0_38.mvpShipVO = iter7_38
+			if var3_39 and iter7_39.id == var3_39.id then
+				var29_39 = true
+				arg0_39.mvpShipVO = iter7_39
 
-				local var30_38
-				local var31_38
-				local var32_38
+				local var30_39
+				local var31_39
+				local var32_39
 
-				if arg0_38.contextData.score > 1 then
-					local var33_38, var34_38
+				if arg0_39.contextData.score > 1 then
+					local var33_39, var34_39
 
-					var33_38, var32_38, var34_38 = ShipWordHelper.GetWordAndCV(arg0_38.mvpShipVO.skinId, ShipWordHelper.WORD_TYPE_MVP, nil, nil, arg0_38.mvpShipVO:getCVIntimacy())
+					var33_39, var32_39, var34_39 = ShipWordHelper.GetWordAndCV(arg0_39.mvpShipVO.skinId, ShipWordHelper.WORD_TYPE_MVP, nil, nil, arg0_39.mvpShipVO:getCVIntimacy())
 				else
-					local var35_38, var36_38
+					local var35_39, var36_39
 
-					var35_38, var32_38, var36_38 = ShipWordHelper.GetWordAndCV(arg0_38.mvpShipVO.skinId, ShipWordHelper.WORD_TYPE_LOSE)
+					var35_39, var32_39, var36_39 = ShipWordHelper.GetWordAndCV(arg0_39.mvpShipVO.skinId, ShipWordHelper.WORD_TYPE_LOSE)
 				end
 
-				if var32_38 then
-					arg0_38:stopVoice()
-					pg.CriMgr.GetInstance():PlaySoundEffect_V3(var32_38, function(arg0_40)
-						arg0_38._currentVoice = arg0_40
+				if var32_39 then
+					arg0_39:stopVoice()
+					pg.CriMgr.GetInstance():PlaySoundEffect_V3(var32_39, function(arg0_41)
+						arg0_39._currentVoice = arg0_41
 					end)
 				end
 			end
 
-			if iter7_38.id == var2_38._flagShipID then
-				arg0_38.flagShipVO = iter7_38
+			if iter7_39.id == var2_39._flagShipID then
+				arg0_39.flagShipVO = iter7_39
 			end
 
-			local var37_38
-			local var38_38 = arg0_38.shipBuff and arg0_38.shipBuff[iter7_38:getGroupId()]
+			local var37_39
+			local var38_39 = arg0_39.shipBuff and arg0_39.shipBuff[iter7_39:getGroupId()]
 
-			if arg0_38.expBuff or var38_38 then
-				var37_38 = arg0_38.expBuff and arg0_38.expBuff:getConfig("name") or var38_38 and i18n("Word_Ship_Exp_Buff")
+			if arg0_39.expBuff or var38_39 then
+				var37_39 = arg0_39.expBuff and arg0_39.expBuff:getConfig("name") or var38_39 and i18n("Word_Ship_Exp_Buff")
 			end
 
-			local var39_38
+			local var39_39
 
-			if not var12_38 then
-				local var40_38 = cloneTplTo(arg0_38._extpl, arg0_38._expContainer)
+			if not var12_39 then
+				local var40_39 = cloneTplTo(arg0_39._extpl, arg0_39._expContainer)
 
-				var39_38 = BattleResultShipCard.New(var40_38)
+				var39_39 = BattleResultShipCard.New(var40_39)
 
-				table.insert(arg0_38._shipResultCardList, var39_38)
+				table.insert(arg0_39._shipResultCardList, var39_39)
 
-				if var7_38 then
-					var7_38:ConfigCallback(function()
-						var39_38:Play()
+				if var7_39 then
+					var7_39:ConfigCallback(function()
+						var39_39:Play()
 					end)
 				else
-					var39_38:Play()
+					var39_39:Play()
 				end
 
-				var7_38 = var39_38
+				var7_39 = var39_39
 			else
-				local var41_38 = cloneTplTo(arg0_38._extpl, arg0_38._subExpContainer)
+				local var41_39 = cloneTplTo(arg0_39._extpl, arg0_39._subExpContainer)
 
-				var39_38 = BattleResultShipCard.New(var41_38)
+				var39_39 = BattleResultShipCard.New(var41_39)
 
-				table.insert(arg0_38._subShipResultCardList, var39_38)
+				table.insert(arg0_39._subShipResultCardList, var39_39)
 
-				if not var6_38 then
-					arg0_38._subFirstExpCard = var39_38
+				if not var6_39 then
+					arg0_39._subFirstExpCard = var39_39
 				else
-					var6_38:ConfigCallback(function()
-						var39_38:Play()
+					var6_39:ConfigCallback(function()
+						var39_39:Play()
 					end)
 				end
 
-				var6_38 = var39_38
+				var6_39 = var39_39
 			end
 
-			var39_38:SetShipVO(iter7_38, var10_38, var29_38, var37_38)
+			var39_39:SetShipVO(iter7_39, var10_39, var29_39, var37_39)
 		end
 	end
 
-	if var7_38 then
-		var7_38:ConfigCallback(function()
-			arg0_38._stateFlag = var0_0.STATE_DISPLAYED
+	if var7_39 then
+		var7_39:ConfigCallback(function()
+			arg0_39._stateFlag = var0_0.STATE_DISPLAYED
 
-			if not arg0_38._subFirstExpCard then
-				arg0_38:skip()
+			if not arg0_39._subFirstExpCard then
+				arg0_39:skip()
 			end
 		end)
 	end
 
-	if var6_38 then
-		var6_38:ConfigCallback(function()
-			arg0_38._stateFlag = var0_0.STATE_SUB_DISPLAYED
+	if var6_39 then
+		var6_39:ConfigCallback(function()
+			arg0_39._stateFlag = var0_0.STATE_SUB_DISPLAYED
 
-			arg0_38:skip()
+			arg0_39:skip()
 		end)
 	end
 end
 
-function var0_0.stopVoice(arg0_45)
-	if arg0_45._currentVoice then
-		arg0_45._currentVoice:PlaybackStop()
+function var0_0.stopVoice(arg0_46)
+	if arg0_46._currentVoice then
+		arg0_46._currentVoice:PlaybackStop()
 
-		arg0_45._currentVoice = nil
+		arg0_46._currentVoice = nil
 	end
 end
 
-function var0_0.setAtkAnima(arg0_46, arg1_46, arg2_46, arg3_46, arg4_46, arg5_46, arg6_46, arg7_46)
-	local var0_46 = arg0_46:findTF("result", arg1_46)
-	local var1_46 = arg0_46:findTF("result/atk", arg1_46)
-	local var2_46 = arg0_46:findTF("result/dmg_progress/progress_bar", arg1_46)
-	local var3_46 = arg0_46:findTF("result/killCount", arg1_46)
-	local var4_46 = var0_46:GetComponent(typeof(DftAniEvent))
+function var0_0.setAtkAnima(arg0_47, arg1_47, arg2_47, arg3_47, arg4_47, arg5_47, arg6_47, arg7_47)
+	local var0_47 = arg0_47:findTF("result", arg1_47)
+	local var1_47 = arg0_47:findTF("result/atk", arg1_47)
+	local var2_47 = arg0_47:findTF("result/dmg_progress/progress_bar", arg1_47)
+	local var3_47 = arg0_47:findTF("result/killCount", arg1_47)
+	local var4_47 = var0_47:GetComponent(typeof(DftAniEvent))
 
-	setText(var1_46, 0)
-	setText(var3_46, 0)
+	setText(var1_47, 0)
+	setText(var3_47, 0)
 
-	var2_46:GetComponent(typeof(Image)).fillAmount = 0
+	var2_47:GetComponent(typeof(Image)).fillAmount = 0
 
-	if arg5_46 then
-		local var5_46 = arg0_46:findTF("result/mvpBG", arg1_46)
+	if arg5_47 then
+		local var5_47 = arg0_47:findTF("result/mvpBG", arg1_47)
 
-		setParent(arg0_46._mvpFX, var5_46)
+		setParent(arg0_47._mvpFX, var5_47)
 
-		arg0_46._mvpFX.localPosition = Vector3(-368.5, 0, 0)
+		arg0_47._mvpFX.localPosition = Vector3(-368.5, 0, 0)
 
-		setActive(var5_46, true)
-		setActive(arg0_46:findTF("result/bg", arg1_46), false)
+		setActive(var5_47, true)
+		setActive(arg0_47:findTF("result/bg", arg1_47), false)
 	end
 
-	var4_46:SetEndEvent(function(arg0_47)
-		if arg5_46 then
-			setActive(arg0_46._mvpFX, true)
+	var4_47:SetEndEvent(function(arg0_48)
+		if arg5_47 then
+			setActive(arg0_47._mvpFX, true)
 		end
 
-		LeanTween.value(go(var0_46), 0, arg3_46, arg3_46):setOnUpdate(System.Action_float(function(arg0_48)
-			var2_46:GetComponent(typeof(Image)).fillAmount = arg0_48
+		LeanTween.value(go(var0_47), 0, arg3_47, arg3_47):setOnUpdate(System.Action_float(function(arg0_49)
+			var2_47:GetComponent(typeof(Image)).fillAmount = arg0_49
 		end))
 
-		if arg4_46 ~= 0 then
-			LeanTween.value(go(var0_46), 0, arg6_46, arg3_46):setOnUpdate(System.Action_float(function(arg0_49)
-				setText(var1_46, math.floor(arg0_49))
+		if arg4_47 ~= 0 then
+			LeanTween.value(go(var0_47), 0, arg6_47, arg3_47):setOnUpdate(System.Action_float(function(arg0_50)
+				setText(var1_47, math.floor(arg0_50))
 			end))
-			LeanTween.value(go(var0_46), 0, arg7_46, arg3_46):setOnUpdate(System.Action_float(function(arg0_50)
-				setText(var3_46, math.floor(arg0_50))
+			LeanTween.value(go(var0_47), 0, arg7_47, arg3_47):setOnUpdate(System.Action_float(function(arg0_51)
+				setText(var3_47, math.floor(arg0_51))
 			end))
 		end
 	end)
 
-	if arg2_46.childCount > 1 then
-		arg0_46:findTF("result", arg2_46:GetChild(arg2_46.childCount - 2)):GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function(arg0_51)
-			setActive(var0_46, true)
+	if arg2_47.childCount > 1 then
+		arg0_47:findTF("result", arg2_47:GetChild(arg2_47.childCount - 2)):GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function(arg0_52)
+			setActive(var0_47, true)
 		end)
 	else
-		setActive(var0_46, true)
+		setActive(var0_47, true)
 	end
 
-	local function var6_46()
-		var2_46:GetComponent(typeof(Image)).fillAmount = arg3_46
+	local function var6_47()
+		var2_47:GetComponent(typeof(Image)).fillAmount = arg3_47
 
-		setText(var1_46, arg6_46)
-		setText(var3_46, arg7_46)
+		setText(var1_47, arg6_47)
+		setText(var3_47, arg7_47)
 
-		var0_46.localPosition = Vector3(280, 46, 0)
-		var0_46:GetComponent(typeof(Animator)).enabled = false
+		var0_47.localPosition = Vector3(280, 46, 0)
+		var0_47:GetComponent(typeof(Animator)).enabled = false
 
-		setActive(var0_46, true)
-		setActive(arg0_46._mvpFX, true)
+		setActive(var0_47, true)
+		setActive(arg0_47._mvpFX, true)
 	end
 
-	if arg0_46._atkFuncs[arg2_46] == nil then
-		arg0_46._atkFuncs[arg2_46] = {}
+	if arg0_47._atkFuncs[arg2_47] == nil then
+		arg0_47._atkFuncs[arg2_47] = {}
 	end
 
-	table.insert(arg0_46._atkFuncs[arg2_46], var6_46)
+	table.insert(arg0_47._atkFuncs[arg2_47], var6_47)
 end
 
-function var0_0.skipAtkAnima(arg0_53, arg1_53)
-	if arg0_53._atkFuncs[arg1_53] then
-		for iter0_53, iter1_53 in ipairs(arg0_53._atkFuncs[arg1_53]) do
-			iter1_53()
+function var0_0.skipAtkAnima(arg0_54, arg1_54)
+	if arg0_54._atkFuncs[arg1_54] then
+		for iter0_54, iter1_54 in ipairs(arg0_54._atkFuncs[arg1_54]) do
+			iter1_54()
 		end
 
-		arg0_53._atkFuncs[arg1_53] = nil
+		arg0_54._atkFuncs[arg1_54] = nil
 	end
 end
 
-function var0_0.showPainting(arg0_54)
-	local var0_54
-	local var1_54
-	local var2_54
+function var0_0.showPainting(arg0_55)
+	local var0_55
+	local var1_55
+	local var2_55
 
-	SetActive(arg0_54._painting, true)
+	SetActive(arg0_55._painting, true)
 
-	if arg0_54.contextData.score > 1 then
-		local var3_54 = arg0_54.mvpShipVO or arg0_54.flagShipVO
+	if arg0_55.contextData.score > 1 then
+		local var3_55 = arg0_55.mvpShipVO or arg0_55.flagShipVO
 
-		arg0_54.paintingName = var3_54:getPainting()
+		arg0_55.paintingName = var3_55:getPainting()
 
-		local var4_54 = var3_54:getCVIntimacy()
+		local var4_55 = var3_55:getCVIntimacy()
 
-		setPaintingPrefabAsync(arg0_54._painting, arg0_54.paintingName, "jiesuan", function()
-			if findTF(arg0_54._painting, "fitter").childCount > 0 then
-				ShipExpressionHelper.SetExpression(findTF(arg0_54._painting, "fitter"):GetChild(0), arg0_54.paintingName, "win_mvp", var4_54)
+		setPaintingPrefabAsync(arg0_55._painting, arg0_55.paintingName, "jiesuan", function()
+			if findTF(arg0_55._painting, "fitter").childCount > 0 then
+				ShipExpressionHelper.SetExpression(findTF(arg0_55._painting, "fitter"):GetChild(0), arg0_55.paintingName, "win_mvp", var4_55)
 			end
 		end)
 
-		local var5_54, var6_54
+		local var5_55, var6_55
 
-		var5_54, var6_54, var1_54 = ShipWordHelper.GetWordAndCV(var3_54.skinId, ShipWordHelper.WORD_TYPE_MVP, nil, nil, var4_54)
+		var5_55, var6_55, var1_55 = ShipWordHelper.GetWordAndCV(var3_55.skinId, ShipWordHelper.WORD_TYPE_MVP, nil, nil, var4_55)
 
-		SetActive(arg0_54._failPainting, false)
+		SetActive(arg0_55._failPainting, false)
 	else
-		local var7_54 = arg0_54.contextData.oldMainShips
-		local var8_54 = var7_54[math.random(#var7_54)]
-		local var9_54, var10_54
+		local var7_55 = arg0_55.contextData.oldMainShips
+		local var8_55 = var7_55[math.random(#var7_55)]
+		local var9_55, var10_55
 
-		var9_54, var10_54, var1_54 = ShipWordHelper.GetWordAndCV(var8_54.skinId, ShipWordHelper.WORD_TYPE_LOSE)
+		var9_55, var10_55, var1_55 = ShipWordHelper.GetWordAndCV(var8_55.skinId, ShipWordHelper.WORD_TYPE_LOSE)
 	end
 
-	setText(arg0_54._chat:Find("Text"), var1_54)
+	setText(arg0_55._chat:Find("Text"), var1_55)
 
-	local var11_54 = arg0_54._chat:Find("Text"):GetComponent(typeof(Text))
+	local var11_55 = arg0_55._chat:Find("Text"):GetComponent(typeof(Text))
 
-	if #var11_54.text > CHAT_POP_STR_LEN then
-		var11_54.alignment = TextAnchor.MiddleLeft
+	if #var11_55.text > CHAT_POP_STR_LEN then
+		var11_55.alignment = TextAnchor.MiddleLeft
 	else
-		var11_54.alignment = TextAnchor.MiddleCenter
+		var11_55.alignment = TextAnchor.MiddleCenter
 	end
 
-	SetActive(arg0_54._chat, true)
+	SetActive(arg0_55._chat, true)
 
-	arg0_54._chat.transform.localScale = Vector3.New(0, 0, 0)
+	arg0_55._chat.transform.localScale = Vector3.New(0, 0, 0)
 
-	LeanTween.cancel(go(arg0_54._painting))
-	LeanTween.moveX(rtf(arg0_54._painting), 50, 0.25):setOnComplete(System.Action(function()
-		LeanTween.scale(rtf(arg0_54._chat.gameObject), Vector3.New(1, 1, 1), 0.3):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
-			arg0_54._statisticsBtn:GetComponent("Button").enabled = true
-			arg0_54._confirmBtn:GetComponent("Button").enabled = true
-			arg0_54._atkBG:GetComponent("Button").enabled = true
+	LeanTween.cancel(go(arg0_55._painting))
+	LeanTween.moveX(rtf(arg0_55._painting), 50, 0.25):setOnComplete(System.Action(function()
+		LeanTween.scale(rtf(arg0_55._chat.gameObject), Vector3.New(1, 1, 1), 0.3):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
+			arg0_55._statisticsBtn:GetComponent("Button").enabled = true
+			arg0_55._confirmBtn:GetComponent("Button").enabled = true
+			arg0_55._atkBG:GetComponent("Button").enabled = true
 		end))
 	end))
 end
 
-function var0_0.hidePainting(arg0_58)
-	SetActive(arg0_58._chat, false)
+function var0_0.hidePainting(arg0_59)
+	SetActive(arg0_59._chat, false)
 
-	arg0_58._chat.transform.localScale = Vector3.New(0, 0, 0)
+	arg0_59._chat.transform.localScale = Vector3.New(0, 0, 0)
 
-	LeanTween.cancel(go(arg0_58._painting))
-	LeanTween.scale(rtf(arg0_58._chat.gameObject), Vector3.New(0, 0, 0), 0.1):setEase(LeanTweenType.easeOutBack)
-	LeanTween.moveX(rtf(arg0_58._painting), 720, 0.2):setOnComplete(System.Action(function()
-		SetActive(arg0_58._painting, false)
+	LeanTween.cancel(go(arg0_59._painting))
+	LeanTween.scale(rtf(arg0_59._chat.gameObject), Vector3.New(0, 0, 0), 0.1):setEase(LeanTweenType.easeOutBack)
+	LeanTween.moveX(rtf(arg0_59._painting), 720, 0.2):setOnComplete(System.Action(function()
+		SetActive(arg0_59._painting, false)
 	end))
 end
 
-function var0_0.skip(arg0_60)
-	for iter0_60, iter1_60 in ipairs(arg0_60._delayLeanList) do
-		LeanTween.cancel(iter1_60)
+function var0_0.skip(arg0_61)
+	for iter0_61, iter1_61 in ipairs(arg0_61._delayLeanList) do
+		LeanTween.cancel(iter1_61)
 	end
 
-	if arg0_60._stateFlag == var0_0.STATE_RANK_ANIMA then
+	if arg0_61._stateFlag == var0_0.STATE_RANK_ANIMA then
 		-- block empty
-	elseif arg0_60._stateFlag == var0_0.STATE_REPORT then
-		local var0_60 = arg0_60._conditionContainer.childCount
+	elseif arg0_61._stateFlag == var0_0.STATE_REPORT then
+		local var0_61 = arg0_61._conditionContainer.childCount
 
-		while var0_60 > 0 do
-			SetActive(arg0_60._conditionContainer:GetChild(var0_60 - 1), true)
+		while var0_61 > 0 do
+			SetActive(arg0_61._conditionContainer:GetChild(var0_61 - 1), true)
 
-			var0_60 = var0_60 - 1
+			var0_61 = var0_61 - 1
 		end
 
-		SetActive(arg0_60:findTF("jieuan01/tips", arg0_60._bg), true)
+		SetActive(arg0_61:findTF("jieuan01/tips", arg0_61._bg), true)
 
-		arg0_60._stateFlag = var0_0.STATE_REPORTED
+		arg0_61._stateFlag = var0_0.STATE_REPORTED
 
-		arg0_60:skip()
-	elseif arg0_60._stateFlag == var0_0.STATE_REPORTED then
-		arg0_60:showRewardInfo()
-	elseif arg0_60._stateFlag == var0_0.STATE_REWARD then
+		arg0_61:skip()
+	elseif arg0_61._stateFlag == var0_0.STATE_REPORTED then
+		arg0_61:showRewardInfo()
+	elseif arg0_61._stateFlag == var0_0.STATE_REWARD then
 		-- block empty
-	elseif arg0_60._stateFlag == var0_0.STATE_DISPLAY then
-		for iter2_60, iter3_60 in ipairs(arg0_60._shipResultCardList) do
-			iter3_60:SkipAnimation()
+	elseif arg0_61._stateFlag == var0_0.STATE_DISPLAY then
+		for iter2_61, iter3_61 in ipairs(arg0_61._shipResultCardList) do
+			iter3_61:SkipAnimation()
 		end
 
-		arg0_60._stateFlag = var0_0.STATE_DISPLAYED
+		arg0_61._stateFlag = var0_0.STATE_DISPLAYED
 
-		setText(arg0_60._playerBonusExp, "+" .. arg0_60:calcPlayerProgress())
+		setText(arg0_61._playerBonusExp, "+" .. arg0_61:calcPlayerProgress())
 
-		if not arg0_60._subFirstExpCard then
-			arg0_60:playSubExEnter()
-		elseif arg0_60.skipFlag then
-			arg0_60:skip()
+		if not arg0_61._subFirstExpCard then
+			arg0_61:playSubExEnter()
+		elseif arg0_61.skipFlag then
+			arg0_61:skip()
 		end
-	elseif arg0_60._stateFlag == var0_0.STATE_DISPLAYED then
-		setText(arg0_60._playerBonusExp, "+" .. arg0_60:calcPlayerProgress())
-		arg0_60:playSubExEnter()
-	elseif arg0_60._stateFlag == var0_0.STATE_SUB_DISPLAY then
-		for iter4_60, iter5_60 in ipairs(arg0_60._subShipResultCardList) do
-			iter5_60:SkipAnimation()
+	elseif arg0_61._stateFlag == var0_0.STATE_DISPLAYED then
+		setText(arg0_61._playerBonusExp, "+" .. arg0_61:calcPlayerProgress())
+		arg0_61:playSubExEnter()
+	elseif arg0_61._stateFlag == var0_0.STATE_SUB_DISPLAY then
+		for iter4_61, iter5_61 in ipairs(arg0_61._subShipResultCardList) do
+			iter5_61:SkipAnimation()
 		end
 
-		arg0_60._stateFlag = var0_0.STATE_SUB_DISPLAYED
+		arg0_61._stateFlag = var0_0.STATE_SUB_DISPLAYED
 
-		if arg0_60.skipFlag then
-			arg0_60:skip()
+		if arg0_61.skipFlag then
+			arg0_61:skip()
 		end
-	elseif arg0_60._stateFlag == var0_0.STATE_SUB_DISPLAYED then
-		arg0_60:showRightBottomPanel()
-	end
-end
-
-function var0_0.playSubExEnter(arg0_61)
-	arg0_61._stateFlag = var0_0.STATE_SUB_DISPLAY
-
-	if arg0_61._subFirstExpCard then
-		triggerToggle(arg0_61._subToggle, false)
-		arg0_61._subFirstExpCard:Play()
-	else
+	elseif arg0_61._stateFlag == var0_0.STATE_SUB_DISPLAYED then
 		arg0_61:showRightBottomPanel()
 	end
-
-	if arg0_61.skipFlag then
-		arg0_61:skip()
-	end
 end
 
-function var0_0.showRightBottomPanel(arg0_62)
-	SetActive(arg0_62._skipBtn, false)
-	SetActive(arg0_62._rightBottomPanel, true)
-	SetActive(arg0_62._subToggle, arg0_62._subFirstExpCard ~= nil)
-	onButton(arg0_62, arg0_62._statisticsBtn, function()
-		if arg0_62._atkBG.gameObject.activeSelf then
-			arg0_62:closeStatistics()
-		else
-			arg0_62:showStatistics()
-		end
-	end, SFX_PANEL)
-	onButton(arg0_62, arg0_62._confirmBtn, function()
-		if arg0_62.failTag == true then
-			arg0_62:emit(BattleResultMediator.PRE_BATTLE_FAIL_EXIT)
-			arg0_62:emit(BattleResultMediator.OPEN_FAIL_TIP_LAYER)
-		else
-			arg0_62:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE)
-		end
-	end, SFX_CONFIRM)
-	onButton(arg0_62, arg0_62._atkBG, function()
-		arg0_62:closeStatistics()
-	end, SFX_CANCEL)
+function var0_0.playSubExEnter(arg0_62)
+	arg0_62._stateFlag = var0_0.STATE_SUB_DISPLAY
 
-	arg0_62._stateFlag = nil
-	arg0_62._subFirstExpCard = nil
+	if arg0_62._subFirstExpCard then
+		triggerToggle(arg0_62._subToggle, false)
+		arg0_62._subFirstExpCard:Play()
+	else
+		arg0_62:showRightBottomPanel()
+	end
 
 	if arg0_62.skipFlag then
-		triggerButton(arg0_62._confirmBtn)
+		arg0_62:skip()
 	end
 end
 
-function var0_0.showStatistics(arg0_66)
-	setActive(arg0_66._leftPanel, false)
-	arg0_66:enabledStatisticsGizmos(false)
-	SetActive(arg0_66._atkBG, true)
+function var0_0.showRightBottomPanel(arg0_63)
+	SetActive(arg0_63._skipBtn, false)
+	SetActive(arg0_63._rightBottomPanel, true)
+	SetActive(arg0_63._subToggle, arg0_63._subFirstExpCard ~= nil)
+	onButton(arg0_63, arg0_63._statisticsBtn, function()
+		if arg0_63._atkBG.gameObject.activeSelf then
+			arg0_63:closeStatistics()
+		else
+			arg0_63:showStatistics()
+		end
+	end, SFX_PANEL)
+	onButton(arg0_63, arg0_63._confirmBtn, function()
+		if arg0_63.failTag == true then
+			arg0_63:emit(BattleResultMediator.PRE_BATTLE_FAIL_EXIT)
+			arg0_63:emit(BattleResultMediator.OPEN_FAIL_TIP_LAYER)
+		else
+			arg0_63:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE)
+		end
+	end, SFX_CONFIRM)
+	onButton(arg0_63, arg0_63._atkBG, function()
+		arg0_63:closeStatistics()
+	end, SFX_CANCEL)
 
-	arg0_66._atkBG:GetComponent("Button").enabled = false
-	arg0_66._confirmBtn:GetComponent("Button").enabled = false
-	arg0_66._statisticsBtn:GetComponent("Button").enabled = false
+	arg0_63._stateFlag = nil
+	arg0_63._subFirstExpCard = nil
 
-	arg0_66:showPainting()
-	LeanTween.moveX(rtf(arg0_66._atkPanel), 0, 0.25):setOnComplete(System.Action(function()
-		SetActive(arg0_66._atkContainer, true)
+	if arg0_63.skipFlag then
+		triggerButton(arg0_63._confirmBtn)
+	end
+end
+
+function var0_0.showStatistics(arg0_67)
+	setActive(arg0_67._leftPanel, false)
+	arg0_67:enabledStatisticsGizmos(false)
+	SetActive(arg0_67._atkBG, true)
+
+	arg0_67._atkBG:GetComponent("Button").enabled = false
+	arg0_67._confirmBtn:GetComponent("Button").enabled = false
+	arg0_67._statisticsBtn:GetComponent("Button").enabled = false
+
+	arg0_67:showPainting()
+	LeanTween.moveX(rtf(arg0_67._atkPanel), 0, 0.25):setOnComplete(System.Action(function()
+		SetActive(arg0_67._atkContainer, true)
 	end))
 end
 
-function var0_0.closeStatistics(arg0_68)
-	setActive(arg0_68._leftPanel, true)
-	arg0_68:skipAtkAnima(arg0_68._atkContainerNext)
-	arg0_68:skipAtkAnima(arg0_68._atkContainer)
-	arg0_68:enabledStatisticsGizmos(true)
-	arg0_68:hidePainting()
+function var0_0.closeStatistics(arg0_69)
+	setActive(arg0_69._leftPanel, true)
+	arg0_69:skipAtkAnima(arg0_69._atkContainerNext)
+	arg0_69:skipAtkAnima(arg0_69._atkContainer)
+	arg0_69:enabledStatisticsGizmos(true)
+	arg0_69:hidePainting()
 
-	arg0_68._atkBG:GetComponent("Button").enabled = false
+	arg0_69._atkBG:GetComponent("Button").enabled = false
 
-	LeanTween.cancel(arg0_68._atkPanel.gameObject)
-	LeanTween.moveX(rtf(arg0_68._atkPanel), -700, 0.2):setOnComplete(System.Action(function()
-		SetActive(arg0_68._atkBG, false)
+	LeanTween.cancel(arg0_69._atkPanel.gameObject)
+	LeanTween.moveX(rtf(arg0_69._atkPanel), -700, 0.2):setOnComplete(System.Action(function()
+		SetActive(arg0_69._atkBG, false)
 	end))
 end
 
-function var0_0.enabledStatisticsGizmos(arg0_70, arg1_70)
-	setActive(arg0_70:findTF("gizmos/xuxian_down", arg0_70._main), arg1_70)
-	setActive(arg0_70:findTF("gizmos/xuxian_middle", arg0_70._main), arg1_70)
+function var0_0.enabledStatisticsGizmos(arg0_71, arg1_71)
+	setActive(arg0_71:findTF("gizmos/xuxian_down", arg0_71._main), arg1_71)
+	setActive(arg0_71:findTF("gizmos/xuxian_middle", arg0_71._main), arg1_71)
 end
 
-function var0_0.PlayAnimation(arg0_71, arg1_71, arg2_71, arg3_71, arg4_71, arg5_71, arg6_71)
-	LeanTween.value(arg1_71.gameObject, arg2_71, arg3_71, arg4_71):setDelay(arg5_71):setOnUpdate(System.Action_float(function(arg0_72)
-		arg6_71(arg0_72)
+function var0_0.PlayAnimation(arg0_72, arg1_72, arg2_72, arg3_72, arg4_72, arg5_72, arg6_72)
+	LeanTween.value(arg1_72.gameObject, arg2_72, arg3_72, arg4_72):setDelay(arg5_72):setOnUpdate(System.Action_float(function(arg0_73)
+		arg6_72(arg0_73)
 	end))
 end
 
-function var0_0.SetSkipFlag(arg0_73, arg1_73)
-	arg0_73.skipFlag = arg1_73
+function var0_0.SetSkipFlag(arg0_74, arg1_74)
+	arg0_74.skipFlag = arg1_74
 end
 
-function var0_0.initMetaBtn(arg0_74)
-	arg0_74.metaBtn = arg0_74:findTF("MetaBtn", arg0_74._main)
+function var0_0.initMetaBtn(arg0_75)
+	arg0_75.metaBtn = arg0_75:findTF("MetaBtn", arg0_75._main)
 
-	local var0_74 = getProxy(MetaCharacterProxy):getLastMetaSkillExpInfoList()
+	local var0_75 = getProxy(MetaCharacterProxy):getLastMetaSkillExpInfoList()
 
-	setActive(arg0_74.metaBtn, var0_74 and #var0_74 > 0 or false)
-	onButton(arg0_74, arg0_74.metaBtn, function()
-		setActive(arg0_74.metaBtn, false)
+	setActive(arg0_75.metaBtn, var0_75 and #var0_75 > 0 or false)
+	onButton(arg0_75, arg0_75.metaBtn, function()
+		setActive(arg0_75.metaBtn, false)
 
-		if not arg0_74.metaExpView then
-			arg0_74.metaExpView = BattleResultMetaExpView.New(arg0_74._blurConatiner, arg0_74.event, arg0_74.contextData)
+		if not arg0_75.metaExpView then
+			arg0_75.metaExpView = BattleResultMetaExpView.New(arg0_75._blurConatiner, arg0_75.event, arg0_75.contextData)
 
-			arg0_74.metaExpView:setData(var0_74, function()
-				if arg0_74.metaBtn then
-					setActive(arg0_74.metaBtn, true)
+			arg0_75.metaExpView:setData(var0_75, function()
+				if arg0_75.metaBtn then
+					setActive(arg0_75.metaBtn, true)
 				end
 
-				arg0_74.metaExpView = nil
+				arg0_75.metaExpView = nil
 			end)
-			arg0_74.metaExpView:Reset()
-			arg0_74.metaExpView:Load()
-			arg0_74.metaExpView:ActionInvoke("Show")
-			arg0_74.metaExpView:ActionInvoke("openPanel")
+			arg0_75.metaExpView:Reset()
+			arg0_75.metaExpView:Load()
+			arg0_75.metaExpView:ActionInvoke("Show")
+			arg0_75.metaExpView:ActionInvoke("openPanel")
 		end
 	end, SFX_PANEL)
 end
 
-function var0_0.onBackPressed(arg0_77)
-	if arg0_77.metaExpView then
-		arg0_77.metaExpView:closePanel()
+function var0_0.onBackPressed(arg0_78)
+	if arg0_78.metaExpView then
+		arg0_78.metaExpView:closePanel()
 
-		arg0_77.metaExpView = nil
+		arg0_78.metaExpView = nil
 
 		return
 	end
 
-	if arg0_77._stateFlag == var0_0.STATE_RANK_ANIMA then
+	if arg0_78._stateFlag == var0_0.STATE_RANK_ANIMA then
 		-- block empty
-	elseif arg0_77._stateFlag == var0_0.STATE_REPORT then
-		triggerButton(arg0_77._bg)
-	elseif arg0_77._stateFlag == var0_0.STATE_REPORTED then
-		triggerButton(arg0_77._skipBtn)
-	elseif arg0_77._stateFlag == var0_0.STATE_DISPLAY then
-		triggerButton(arg0_77._skipBtn)
+	elseif arg0_78._stateFlag == var0_0.STATE_REPORT then
+		triggerButton(arg0_78._bg)
+	elseif arg0_78._stateFlag == var0_0.STATE_REPORTED then
+		triggerButton(arg0_78._skipBtn)
+	elseif arg0_78._stateFlag == var0_0.STATE_DISPLAY then
+		triggerButton(arg0_78._skipBtn)
 	else
-		triggerButton(arg0_77._confirmBtn)
+		triggerButton(arg0_78._confirmBtn)
 	end
 end
 
-function var0_0.willExit(arg0_78)
-	for iter0_78, iter1_78 in ipairs(arg0_78._shipResultCardList) do
-		iter1_78:Dispose()
+function var0_0.willExit(arg0_79)
+	for iter0_79, iter1_79 in ipairs(arg0_79._shipResultCardList) do
+		iter1_79:Dispose()
 	end
 
-	for iter2_78, iter3_78 in ipairs(arg0_78._subShipResultCardList) do
-		iter3_78:Dispose()
+	for iter2_79, iter3_79 in ipairs(arg0_79._subShipResultCardList) do
+		iter3_79:Dispose()
 	end
 
-	arg0_78._atkFuncs = nil
+	arg0_79._atkFuncs = nil
 
-	LeanTween.cancel(go(arg0_78._tf))
+	LeanTween.cancel(go(arg0_79._tf))
 
-	if arg0_78._atkBG.gameObject.activeSelf then
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_78._blurConatiner, arg0_78._tf)
+	if arg0_79.paintingName then
+		retPaintingPrefab(arg0_79._painting, arg0_79.paintingName)
 	end
 
-	if arg0_78.paintingName then
-		retPaintingPrefab(arg0_78._painting, arg0_78.paintingName)
+	if arg0_79._rightTimer then
+		arg0_79._rightTimer:Stop()
 	end
 
-	if arg0_78._rightTimer then
-		arg0_78._rightTimer:Stop()
-	end
-
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_78._tf)
-	arg0_78:stopVoice()
+	arg0_79:UnOverlayPanel(arg0_79._tf)
+	arg0_79:stopVoice()
 	getProxy(MetaCharacterProxy):clearLastMetaSkillExpInfoList()
 
-	if arg0_78.metaExpView then
-		arg0_78.metaExpView:Destroy()
+	if arg0_79.metaExpView then
+		arg0_79.metaExpView:Destroy()
 
-		arg0_78.metaExpView = nil
+		arg0_79.metaExpView = nil
 	end
 
-	pg.CameraFixMgr.GetInstance():disconnect(arg0_78.camEventId)
+	pg.CameraFixMgr.GetInstance():disconnect(arg0_79.camEventId)
 end
 
 return var0_0

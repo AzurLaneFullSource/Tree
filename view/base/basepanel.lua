@@ -10,6 +10,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 		assert(false, "can not emit event beforce attach to a parent ui.")
 	end
 
+	bindComponent(arg0_1, arg0_1._go)
 	arg0_1:init()
 end
 

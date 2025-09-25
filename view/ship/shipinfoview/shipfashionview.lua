@@ -77,19 +77,15 @@ function var0_0.UpdateUI(arg0_9)
 end
 
 function var0_0.OnSelected(arg0_10, arg1_10)
-	local var0_10 = pg.UIMgr.GetInstance()
-
 	if arg1_10 then
-		var0_10:OverlayPanelPB(arg0_10._parentTf, {
+		arg0_10:OverlayPanel(arg0_10._parentTf, {
 			pbList = {
 				arg0_10.stylePanel:Find("style_desc"),
 				arg0_10.stylePanel:Find("frame")
-			},
-			groupName = LayerWeightConst.GROUP_SHIPINFOUI,
-			overlayType = LayerWeightConst.OVERLAY_UI_ADAPT
+			}
 		})
 	else
-		var0_10:UnOverlayPanel(arg0_10._parentTf, arg0_10.mainPanel)
+		arg0_10:UnOverlayPanel(arg0_10._parentTf, arg0_10.mainPanel)
 	end
 
 	arg0_10.onSelected = arg1_10

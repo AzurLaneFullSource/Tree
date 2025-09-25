@@ -25,9 +25,7 @@ function var0_0.didEnter(arg0_3)
 	onButton(arg0_3, arg0_3.startBtn, function()
 		arg0_3:emit(RivalInfoMediator.START_BATTLE)
 	end, SFX_CONFIRM)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf, false, {
-		weight = LayerWeightConst.SECOND_LAYER
-	})
+	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf)
 	arg0_3:initRivalInfo()
 
 	arg0_3.isRealName = false
@@ -138,7 +136,7 @@ function var0_0.initRivalInfo(arg0_8)
 end
 
 function var0_0.willExit(arg0_16)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_16._tf, pg.UIMgr.GetInstance().UIMain)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_16._tf, pg.UIMgr.GetInstance().UIMain)
 end
 
 return var0_0

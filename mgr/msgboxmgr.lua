@@ -1251,9 +1251,8 @@ function var1_0.updateButton(arg0_51, arg1_51, arg2_51, arg3_51)
 end
 
 function var1_0.Loaded(arg0_52, arg1_52)
-	var0_0.UIMgr.GetInstance():BlurPanel(arg0_52._tf, false, {
+	var0_0.UIMgr.GetInstance():BlurPanel(arg0_52._tf, {
 		groupName = arg1_52.groupName,
-		weight = arg1_52.weight or LayerWeightConst.SECOND_LAYER,
 		blurLevelCamera = arg1_52.blurLevelCamera,
 		parent = arg1_52.parent
 	})
@@ -1321,7 +1320,7 @@ function var1_0.Clear(arg0_53)
 
 	var0_0.DelegateInfo.Dispose(arg0_53)
 	removeAllChildren(arg0_53._btnContainer)
-	var0_0.UIMgr.GetInstance():UnblurPanel(arg0_53._tf, var0_0.UIMgr.GetInstance().OverlayMain)
+	var0_0.UIMgr.GetInstance():UnOverlayPanel(arg0_53._tf, var0_0.UIMgr.GetInstance().OverlayMain)
 	arg0_53.contentText:RemoveAllListeners()
 
 	arg0_53.settings = nil

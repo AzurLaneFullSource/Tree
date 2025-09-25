@@ -398,7 +398,7 @@ function var0_0.OnShow(arg0_32)
 end
 
 function var0_0.OnHide(arg0_33)
-	pg.UIMgr.GetInstance():UnblurPanel(arg0_33._tf, arg0_33.viewParent._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_33._tf, arg0_33.viewParent._tf)
 	triggerToggle(arg0_33.commanderToggle, false)
 end
 

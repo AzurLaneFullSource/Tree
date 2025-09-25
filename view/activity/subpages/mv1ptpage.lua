@@ -318,11 +318,13 @@ function var0_0.displayWindow(arg0_25, arg1_25)
 		local var1_25 = Screen.height
 
 		setSizeDelta(findTF(arg0_25.mvTf, "bottom"), Vector2(Screen.width, Screen.height))
-		pg.UIMgr.GetInstance():BlurPanel(arg0_25.mvTf, true)
+		pg.UIMgr.GetInstance():BlurPanel(arg0_25.mvTf, {
+			staticBlur = true
+		})
 		arg0_25:updateMvUI()
 		arg0_25:loadMv()
 	else
-		pg.UIMgr.GetInstance():UnblurPanel(arg0_25.mvTf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_25.mvTf)
 		setActive(arg0_25.mvTf, false)
 	end
 
