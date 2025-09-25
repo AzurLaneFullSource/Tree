@@ -195,7 +195,6 @@ function var0_0.handleNotification(arg0_10, arg1_10)
 					pos = arg0_10.contextData.pos,
 					msg = arg0_10.contextData.msg,
 					form = arg0_10.contextData.form,
-					parent = arg0_10.contextData.chatViewParent,
 					groupName = arg0_10.viewComponent:getGroupName()
 				}
 			}))

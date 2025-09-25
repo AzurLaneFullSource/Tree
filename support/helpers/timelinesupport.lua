@@ -58,6 +58,8 @@ function var0_0.InitSubtitle(arg0_12, arg1_12)
 	local var0_12 = GameObject.Find("[subtitle]")
 
 	if var0_12 then
+		pg.ViewUtils.SetLayer(var0_12.transform, Layer.UI)
+
 		var0_12:GetComponent(typeof(Canvas)).worldCamera = pg.UIMgr.GetInstance().overlayCameraComp
 	end
 
