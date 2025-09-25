@@ -21,7 +21,7 @@ function var0_0.init(arg0_4)
 	arg0_4.shipContainer = arg0_4:findTF("bg/add_ship_panel/ships", arg0_4.mainPanel)
 	arg0_4.attrsPanel = arg0_4:findTF("bg/property_panel/attrs", arg0_4.mainPanel)
 
-	setText(arg0_4:findTF("bg/add_ship_panel/title/tip", arg0_4.mainPanel), i18n("ship_mod_exp_ShipFashionView:90:to_attr_tip"))
+	setText(arg0_4:findTF("bg/add_ship_panel/title/tip", arg0_4.mainPanel), i18n("ship_mod_exp_to_attr_tip"))
 end
 
 function var0_0.didEnter(arg0_5)
