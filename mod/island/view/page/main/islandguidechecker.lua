@@ -14,6 +14,7 @@ var0_0.PASTIRE_ABILITY_ID = 2002
 var0_0.COMBP_ABILITY_ID = 29001
 var0_0.DAILY_TASK_ABILITY_ID = 30001
 var0_0.SIGNIN_STORY_NAME = "ISLAND1001032_1"
+var0_0.TECH_FIRST_ID = 100001
 var0_0.FINISH_TYPE = {
 	ON_GUIDE = 2,
 	ON_BEGIN = 1,
@@ -68,7 +69,11 @@ var0_0.pageConfig = {
 		id = "ISLAND_GUIDE_8",
 		page = "IslandTechnologyPage",
 		condition = function()
-			return getProxy(IslandProxy):GetIsland():GetTaskAgency():GetTask(var0_0.TECH_TASK_ID)
+			local var0_6 = getProxy(IslandProxy):GetIsland()
+			local var1_6 = var0_6:GetTaskAgency():GetTask(var0_0.TECH_TASK_ID)
+			local var2_6 = var0_6:GetTechnologyAgency():GetTechnology(var0_0.TECH_FIRST_ID):GetStatus()
+
+			return var1_6 and (var2_6 == IslandTechnology.STATUS.LOCK or var2_6 == IslandTechnology.STATUS.UNLOCK or var2_6 == IslandTechnology.STATUS.NORMAL)
 		end,
 		type = var0_0.FINISH_TYPE.ON_GUIDE
 	},

@@ -611,7 +611,7 @@ function var0_0.CreateLive2D(arg0_50)
 	})
 
 	arg0_50.l2dChar = Live2D.New(var5_50, function(arg0_51)
-		arg0_51:setSortingLayer(LayerWeightConst.L2D_DEFAULT_LAYER)
+		arg0_51:setSortingModeFrontZ()
 		arg0_50.live2DBtn:SetEnable(true)
 	end)
 

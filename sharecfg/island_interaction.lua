@@ -3593,7 +3593,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[4001] = {
-		text = "Daily Resupply",
+		text = "Daily Supply",
 		id = 4001,
 		only_self = 0,
 		type = 13,

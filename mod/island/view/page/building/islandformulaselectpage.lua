@@ -659,33 +659,37 @@ function var0_0.OnHide(arg0_43)
 	end
 end
 
-function var0_0.OnDestroy(arg0_44)
+function var0_0.OnDisable(arg0_44)
+	arg0_44:OnHide()
+end
+
+function var0_0.OnDestroy(arg0_45)
 	return
 end
 
-function var0_0.Show(arg0_45, ...)
-	arg0_45:AddListeners()
-	arg0_45.islandUIController:Show(true)
-	arg0_45:OnShow(...)
+function var0_0.Show(arg0_46, ...)
+	arg0_46:AddListeners()
+	arg0_46.islandUIController:Show(true)
+	arg0_46:OnShow(...)
 end
 
-function var0_0.Hide(arg0_46, arg1_46, arg2_46)
-	local var0_46 = defaultValue(arg1_46, true)
+function var0_0.Hide(arg0_47, arg1_47, arg2_47)
+	local var0_47 = defaultValue(arg1_47, true)
 
-	local function var1_46()
-		arg0_46:ClosePage(arg0_46)
-		arg0_46:RemoveListeners()
-		arg0_46:OnHide()
+	local function var1_47()
+		arg0_47:ClosePage(arg0_47)
+		arg0_47:RemoveListeners()
+		arg0_47:OnHide()
 
-		if not arg2_46 then
-			arg0_46:OnExit()
+		if not arg2_47 then
+			arg0_47:OnExit()
 		end
 	end
 
-	if var0_46 then
-		arg0_46.islandUIController:Hide(true, var1_46)
+	if var0_47 then
+		arg0_47.islandUIController:Hide(true, var1_47)
 	else
-		var1_46()
+		var1_47()
 	end
 end
 

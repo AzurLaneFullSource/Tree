@@ -502,7 +502,7 @@ pg.island_dress_template = {
 		face_clip = ""
 	},
 	[1050001] = {
-		name = "Calm",
+		name = "Daydreaming",
 		related_dress = 0,
 		exclusive_default_skin = "",
 		type = 5,
@@ -521,7 +521,7 @@ pg.island_dress_template = {
 		face_clip = "face_3"
 	},
 	[1050002] = {
-		name = "Sharp",
+		name = "Grit Teeth",
 		related_dress = 0,
 		exclusive_default_skin = "",
 		type = 5,
@@ -540,7 +540,7 @@ pg.island_dress_template = {
 		face_clip = "face_2"
 	},
 	[1050003] = {
-		name = "Gentle",
+		name = "Cat's Smile",
 		related_dress = 0,
 		exclusive_default_skin = "",
 		type = 5,
@@ -559,7 +559,7 @@ pg.island_dress_template = {
 		face_clip = "face_1"
 	},
 	[1050004] = {
-		name = "Cat's Smile",
+		name = "Gentle",
 		related_dress = 0,
 		exclusive_default_skin = "",
 		type = 5,
@@ -578,7 +578,7 @@ pg.island_dress_template = {
 		face_clip = ""
 	},
 	[1050005] = {
-		name = "Grit Teeth",
+		name = "Sharp",
 		related_dress = 0,
 		exclusive_default_skin = "",
 		type = 5,
@@ -597,7 +597,7 @@ pg.island_dress_template = {
 		face_clip = ""
 	},
 	[1050006] = {
-		name = "Daydreaming",
+		name = "Calm",
 		related_dress = 0,
 		exclusive_default_skin = "",
 		type = 5,

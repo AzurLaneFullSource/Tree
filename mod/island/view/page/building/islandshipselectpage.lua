@@ -481,4 +481,8 @@ function var0_0.OnHide(arg0_41)
 	arg0_41:UnBlurPanel()
 end
 
+function var0_0.OnDisable(arg0_42)
+	arg0_42:OnHide()
+end
+
 return var0_0

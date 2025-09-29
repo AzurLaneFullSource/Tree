@@ -1,7 +1,7 @@
 pg = pg or {}
 pg.island_buff_template = {
 	{
-		buff_desc = "Increases the Management stat by 6% for 8 hours.",
+		buff_desc = "Boosts all stats by 3% for 8 hours.",
 		name = "Management Stat Boost",
 		buff_type = 1,
 		buff_level = 1,
@@ -39,7 +39,7 @@ pg.island_buff_template = {
 		buff_duel = {}
 	},
 	{
-		buff_desc = "Increases the Farming stat by 6% for 8 hours.",
+		buff_desc = "For 8 hours, when producing basic resources, decreases the time needed for production by 5%.",
 		name = "Farming Stat Boost",
 		buff_type = 102,
 		buff_level = 1,
@@ -62,7 +62,7 @@ pg.island_buff_template = {
 		buff_duel = {}
 	},
 	{
-		buff_desc = "Increases the Production stat by 6% for 8 hours.",
+		buff_desc = "For 8 hours, when manufacturing items at the Base Factory, decreases the time needed for manufacturing by 5%.",
 		name = "Manuf. Efficiency Boost",
 		buff_type = 102,
 		buff_level = 1,
@@ -83,7 +83,7 @@ pg.island_buff_template = {
 		buff_duel = {}
 	},
 	{
-		buff_desc = "Increases the Gathering stat by 6% for 8 hours.",
+		buff_desc = "For 8 hours, when cooking food, decreases the time needed for production by 5%.",
 		name = "Gathering Stat Boost",
 		buff_type = 102,
 		buff_level = 1,

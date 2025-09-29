@@ -116,21 +116,31 @@ function var0_0.RemoveLockId(arg0_16, arg1_16)
 end
 
 function var0_0.TryAutoUnlock(arg0_17, arg1_17)
+	if arg0_17.isInPlan then
+		return
+	end
+
 	local var0_17 = {}
 
 	for iter0_17, iter1_17 in ipairs(arg0_17.lockIds) do
-		if arg0_17.techData[iter1_17]:CanUnlock() then
-			table.insert(var0_17, function(arg0_18)
+		table.insert(var0_17, function(arg0_18)
+			if not arg0_17.techData[iter1_17]:IsUnlock() and arg0_17.techData[iter1_17]:CanUnlock() then
 				pg.m02:sendNotification(GAME.ISLAND_UNLOCK_TECH, {
 					techId = iter1_17,
 					callback = arg0_18
 				})
-			end)
-		end
+			else
+				arg0_18()
+			end
+		end)
 	end
+
+	arg0_17.isInPlan = true
 
 	seriesAsync(var0_17, function()
 		existCall(arg1_17)
+
+		arg0_17.isInPlan = false
 	end)
 end
 

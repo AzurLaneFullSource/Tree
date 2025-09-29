@@ -2,6 +2,7 @@ local var0_0 = class("Dialogue3DPlayer", import("Mgr.Story.model.animation.Story
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.Ctor(arg0_1)
+	pg.DelegateInfo.New(arg0_1)
 
 	arg0_1.view = arg1_1
 	arg0_1._tf = arg1_1._tf
@@ -57,7 +58,7 @@ function var0_0.CancelAuto(arg0_3)
 end
 
 function var0_0.OnStart(arg0_4, arg1_4)
-	pg.DelegateInfo.New(arg0_4)
+	return
 end
 
 function var0_0.OnStartAction(arg0_5, arg1_5, arg2_5)
@@ -683,13 +684,14 @@ end
 function var0_0.OnEnd(arg0_72)
 	arg0_72:DisactiveDefaultCamera()
 	arg0_72:ClearCustomCameraBlend()
-	pg.DelegateInfo.Dispose(arg0_72)
 end
 
 function var0_0.Dispose(arg0_73)
 	arg0_73.asidePlayer:Dispose()
 
 	arg0_73.asidePlayer = nil
+
+	pg.DelegateInfo.Dispose(arg0_73)
 end
 
 return var0_0

@@ -146,7 +146,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[103001] = {
-		desc = "Feed for the Oinky Oinky Pig. Made by processing wheat.",
+		desc = "Feed for the Oinky Oinky Pig. Made by processing corn.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -187,7 +187,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[103002] = {
-		desc = "Feed for the Moo Moo Cow. Made by processing wheat.",
+		desc = "Feed for the Moo Moo Cow. Made by processing grass.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -228,7 +228,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[103003] = {
-		desc = "Feed for the Baa Baa Sheep. Made by processing wheat.",
+		desc = "Feed for the Baa Baa Sheep. Made by processing grass.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1089,7 +1089,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10019] = {
-		desc = "A hardcover book that smells of ink and sports a classic vibe. It's worthy of going on your table and being reread time and time again. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "A hardcover book that smells of ink and sports a classic vibe. It's worthy of going on your table and being reread time and time again.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1130,7 +1130,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10020] = {
-		desc = "A gorgeous, fresh bouquet. Its flowers are brimming with color and life, and they promise joy for the days to come. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "A gorgeous, fresh bouquet. Its flowers are brimming with color and life, and they promise joy for the days to come.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1171,7 +1171,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10021] = {
-		desc = "This ceremonial sword with a flowing silhouette gives off the cold brilliance of steel. It silently speaks of order and majesty. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "This ceremonial sword with a flowing silhouette gives off the cold brilliance of steel. It silently speaks of order and majesty.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1212,7 +1212,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10022] = {
-		desc = "An adorable stuffed animal that's soft to the touch. Give it a hug, and its fluffy warmth and innocent smile will soften your heart. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "An adorable stuffed animal that's soft to the touch. Give it a hug, and its fluffy warmth and innocent smile will soften your heart.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1253,7 +1253,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10023] = {
-		desc = "The sands of time have poured over this ornament, turning it into an elegant antique. Quietly, it lends an air of tranquility to a room. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "The sands of time have poured over this ornament, turning it into an elegant antique. Quietly, it lends an air of tranquility to a room.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1294,7 +1294,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10024] = {
-		desc = "An accessory that, although understated, glimmers with exceptional craftsmanship. It adds just a little light to every moment of one's life. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "An accessory that, although understated, glimmers with exceptional craftsmanship. It adds just a little light to every moment of one's life.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1335,7 +1335,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10025] = {
-		desc = "A wonderfully pure aroma hides inside this modest flask. Just one spray of this fragrance brings out tones of refined class. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "A wonderfully pure aroma hides inside this modest flask. Just one spray of this fragrance brings out tones of refined class.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1376,7 +1376,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10026] = {
-		desc = "An entertainment system that will fill up every moment of your spare time. This thoughtful gift contains just about all the content you need for a fun play session. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "An entertainment system that will fill up every moment of your spare time. This thoughtful gift contains just about all the content you need for a fun play session.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1745,7 +1745,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10035] = {
-		desc = "A hardcover book that smells of ink and sports a classic vibe. It's worthy of going on your table and being reread time and time again. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "A hardcover book that smells of ink and sports a classic vibe. It's worthy of going on your table and being reread time and time again.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1786,7 +1786,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10036] = {
-		desc = "A gorgeous, fresh bouquet. Its flowers are brimming with color and life, and they promise joy for the days to come. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "A gorgeous, fresh bouquet. Its flowers are brimming with color and life, and they promise joy for the days to come.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1827,7 +1827,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10037] = {
-		desc = "This ceremonial sword with a flowing silhouette gives off the cold brilliance of steel. It silently speaks of order and majesty. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "This ceremonial sword with a flowing silhouette gives off the cold brilliance of steel. It silently speaks of order and majesty.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1868,7 +1868,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10038] = {
-		desc = "An adorable stuffed animal that's soft to the touch. Give it a hug, and its fluffy warmth and innocent smile will soften your heart. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "An adorable stuffed animal that's soft to the touch. Give it a hug, and its fluffy warmth and innocent smile will soften your heart.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1909,7 +1909,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10039] = {
-		desc = "The sands of time have poured over this ornament, turning it into an elegant antique. Quietly, it lends an air of tranquility to a room. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "The sands of time have poured over this ornament, turning it into an elegant antique. Quietly, it lends an air of tranquility to a room.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1950,7 +1950,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10040] = {
-		desc = "An accessory that, although understated, glimmers with exceptional craftsmanship. It adds just a little light to every moment of one's life. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "An accessory that, although understated, glimmers with exceptional craftsmanship. It adds just a little light to every moment of one's life.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1991,7 +1991,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10041] = {
-		desc = "A wonderfully pure aroma hides inside this modest flask. Just one spray of this fragrance brings out tones of refined class. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "A wonderfully pure aroma hides inside this modest flask. Just one spray of this fragrance brings out tones of refined class.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2032,7 +2032,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10042] = {
-		desc = "An entertainment system that will fill up every moment of your spare time. This thoughtful gift contains just about all the content you need for a fun play session. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "An entertainment system that will fill up every moment of your spare time. This thoughtful gift contains just about all the content you need for a fun play session.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2401,7 +2401,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10051] = {
-		desc = "A hardcover book that smells of ink and sports a classic vibe. It's worthy of going on your table and being reread time and time again. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "A hardcover book that smells of ink and sports a classic vibe. It's worthy of going on your table and being reread time and time again.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2442,7 +2442,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10052] = {
-		desc = "A gorgeous, fresh bouquet. Its flowers are brimming with color and life, and they promise joy for the days to come. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "A gorgeous, fresh bouquet. Its flowers are brimming with color and life, and they promise joy for the days to come.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2483,7 +2483,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10053] = {
-		desc = "This ceremonial sword with a flowing silhouette gives off the cold brilliance of steel. It silently speaks of order and majesty. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "This ceremonial sword with a flowing silhouette gives off the cold brilliance of steel. It silently speaks of order and majesty.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2524,7 +2524,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10054] = {
-		desc = "An adorable stuffed animal that's soft to the touch. Give it a hug, and its fluffy warmth and innocent smile will soften your heart. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "An adorable stuffed animal that's soft to the touch. Give it a hug, and its fluffy warmth and innocent smile will soften your heart.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2565,7 +2565,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10055] = {
-		desc = "The sands of time have poured over this ornament, turning it into an elegant antique. Quietly, it lends an air of tranquility to a room. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "The sands of time have poured over this ornament, turning it into an elegant antique. Quietly, it lends an air of tranquility to a room.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2606,7 +2606,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10056] = {
-		desc = "An accessory that, although understated, glimmers with exceptional craftsmanship. It adds just a little light to every moment of one's life. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "An accessory that, although understated, glimmers with exceptional craftsmanship. It adds just a little light to every moment of one's life.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2647,7 +2647,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10057] = {
-		desc = "A wonderfully pure aroma hides inside this modest flask. Just one spray of this fragrance brings out tones of refined class. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "A wonderfully pure aroma hides inside this modest flask. Just one spray of this fragrance brings out tones of refined class.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2688,7 +2688,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10058] = {
-		desc = "An entertainment system that will fill up every moment of your spare time. This thoughtful gift contains just about all the content you need for a fun play session. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
+		desc = "An entertainment system that will fill up every moment of your spare time. This thoughtful gift contains just about all the content you need for a fun play session.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2901,7 +2901,7 @@ pg.base.island_shop_goods = {
 		limited_num = 1,
 		limited_show = 0,
 		unlock = "",
-		goods_name = "Night of the Empty Bell ",
+		goods_name = "Night of the Empty Bell",
 		icon = "IslandGoodsIcon/skin_3120101",
 		goods_detail_type = 4,
 		time = "always",

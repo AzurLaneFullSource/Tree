@@ -18502,7 +18502,7 @@ _G.pg.base.gametip.setting_resdownload_title_main_group = {
 }
 
 _G.pg.base.gametip.setting_resdownload_title_map = {
-	tip = "岛屿资源更新",
+	tip = "Update Island Assets",
 }
 
 _G.pg.base.gametip.settings_battle_title = {
@@ -32758,7 +32758,7 @@ _G.pg.base.gametip.island_tech_dev_cost = {
 }
 
 _G.pg.base.gametip.island_tech_detail_desctitle = {
-	tip = "科技成果",
+	tip = "Tech Gain",
 }
 
 _G.pg.base.gametip.island_tech_detail_unlocktitle = {

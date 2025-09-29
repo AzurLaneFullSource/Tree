@@ -5692,7 +5692,7 @@ pg.island_formula = {
 	},
 	[7100308] = {
 		hitpoint = 0,
-		name = "Warehouse Capacity+ VII",
+		name = "Warehouse Capacity+ VIII",
 		unitid = "",
 		attribute = 6,
 		harvest_vfx = 0,

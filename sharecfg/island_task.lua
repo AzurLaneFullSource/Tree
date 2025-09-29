@@ -2978,7 +2978,7 @@ pg.base.island_task = {
 		}
 	},
 	[10002290] = {
-		name = "Daily Resupply",
+		name = "Daily Supply",
 		trigger_tips = 0,
 		reward_exp = 300,
 		type = 1,
@@ -5494,7 +5494,7 @@ pg.base.island_task = {
 		complete_data = 0,
 		map_complete_tips = 0,
 		rec_perform = "",
-		task_desc = "Supply wheat to Island Storage to bolster food stores.\nDeliver 500 Wheat.",
+		task_desc = "Supply wheat to Island Warehouse to bolster food stores.\nDeliver 500 Wheat.",
 		series_name = "",
 		id = 80001001,
 		unlock_condition = {},
@@ -11796,7 +11796,7 @@ pg.base.island_task = {
 		}
 	},
 	[30601001] = {
-		name = "Daily Resupply",
+		name = "Daily Supply",
 		trigger_tips = 0,
 		reward_exp = 50,
 		type = 3,

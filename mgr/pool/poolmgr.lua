@@ -412,6 +412,7 @@ function var0_0.ReturnLive2D(arg0_35, arg1_35, arg2_35)
 		arg2_35:SetActive(false)
 		arg2_35.transform:SetParent(arg0_35.root, false)
 		arg0_35.pools_plural[var3_35]:Enqueue(arg2_35)
+		arg0_35.pools_plural[var3_35]:ClearItems()
 		arg0_35:ExcessDymPainting()
 	else
 		var4_0.Destroy(arg2_35)
