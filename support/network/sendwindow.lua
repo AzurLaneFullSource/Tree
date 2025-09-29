@@ -211,7 +211,9 @@ function var1_0.stopTimer(arg0_14)
 end
 
 function var1_0.onData(arg0_15)
-	originalPrint("Network Receive idx: " .. arg0_15.idx .. " cmd: " .. arg0_15.cmd)
+	if arg0_15.cmd ~= 21212 then
+		originalPrint("Network Receive idx: " .. arg0_15.idx .. " cmd: " .. arg0_15.cmd)
+	end
 
 	local var0_15 = var0_0.Packer.GetInstance():Unpack(arg0_15.cmd, arg0_15:getLuaStringBuffer())
 	local var1_15 = arg0_15.cmd .. "_" .. arg0_15.idx

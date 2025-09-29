@@ -61,20 +61,12 @@ function var0_0.CheckIsNear(arg0_7)
 	local var0_7 = arg0_7.view:GetUnitModuleWithType(arg0_7.unitType, arg0_7.unitId)
 	local var1_7 = var0_7 and var0_7._go or nil
 
-	if not var0_7 or IsNil(var1_7) or not var1_7.transform then
+	if not var0_7 or IsNil(var1_7) or IsNil(var1_7.transform) then
 		return false
 	end
 
-	if not arg0_7.playerTF then
+	if IsNil(arg0_7.playerTF) then
 		return false
-	end
-
-	if arg0_7.playerTF == nil then
-		warning("self.playerTF is nil ")
-	end
-
-	if var1_7.transform == nil then
-		warning("role.transform is nil")
 	end
 
 	if (arg0_7.playerTF.position - var1_7.transform.position).magnitude < arg0_7.hud_name_range then
@@ -108,6 +100,10 @@ function var0_0.RefreshHud(arg0_9)
 end
 
 function var0_0.UpdateTaskDisplay(arg0_10)
+	if IsNil(arg0_10.hudImageBg) then
+		return
+	end
+
 	local var0_10, var1_10 = IslandObjectTaskHudHelper.GetObjectTaskHud(arg0_10.unitId)
 
 	if arg0_10.currentTaskId ~= var1_10 then

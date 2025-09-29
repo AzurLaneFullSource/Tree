@@ -1253,7 +1253,6 @@ end
 function var1_0.Loaded(arg0_52, arg1_52)
 	var0_0.UIMgr.GetInstance():BlurPanel(arg0_52._tf, {
 		groupName = arg1_52.groupName,
-		blurLevelCamera = arg1_52.blurLevelCamera,
 		parent = arg1_52.parent
 	})
 	var0_0.m02:sendNotification(GAME.OPEN_MSGBOX_DONE)

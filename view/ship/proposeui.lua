@@ -471,9 +471,11 @@ function var0_0.willExit(arg0_32)
 		arg0_32.l2dChar = nil
 	end
 
-	pg.Live2DMgr.GetInstance():StopLoadingLive2d(arg0_32.live2dRequestId)
+	if arg0_32.live2dRequestId then
+		pg.Live2DMgr.GetInstance():StopLoadingLive2d(arg0_32.live2dRequestId)
 
-	arg0_32.live2dRequestId = nil
+		arg0_32.live2dRequestId = nil
+	end
 
 	if arg0_32._delayVoiceTweenID then
 		LeanTween.cancel(arg0_32._delayVoiceTweenID)

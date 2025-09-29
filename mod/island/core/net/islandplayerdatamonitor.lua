@@ -287,6 +287,13 @@ function var0_0.HandleSignInNotify(arg0_42, arg1_42)
 			time = pg.TimeMgr.GetInstance():GetServerTime()
 		})
 
+		if arg0_42:IsSelf(arg1_42.island_id) then
+			local var3_42 = arg0_42:GetIsland():GetSignInAgency()
+			local var4_42 = getProxy(PlayerProxy):getRawData().id
+
+			var3_42:AddInviter(var4_42)
+		end
+
 		pg.IslandVisitorNotificationMgr.GetInstance():Enqueue(var2_42)
 	end
 end

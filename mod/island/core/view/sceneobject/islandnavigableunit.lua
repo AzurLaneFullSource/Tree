@@ -102,6 +102,10 @@ function var0_0.GetElapsedTime(arg0_6)
 end
 
 function var0_0.NavUpdate(arg0_7)
+	if not arg0_7.agent then
+		return
+	end
+
 	if not arg0_7.agent.pathPending and arg0_7.agent.remainingDistance <= arg0_7.agent.stoppingDistance then
 		if not arg0_7.agent.hasPath or arg0_7.agent.velocity.sqrMagnitude < 0.01 then
 			arg0_7.reached = true

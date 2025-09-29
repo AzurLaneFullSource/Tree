@@ -66,7 +66,7 @@ function var0_0.GetActorName(arg0_7)
 		return ""
 	end
 
-	return var0_7.name
+	return (HXSet.hxLan(var0_7.name))
 end
 
 function var0_0.GetUnitData(arg0_8)

@@ -113,15 +113,18 @@ function var0_0.OnSelected(arg0_9, arg1_9)
 		table.insert(var0_9, arg0_9.equipmentL:Find("equipment/equipment_l1"))
 		arg0_9:OverlayPanel(arg0_9.equipRCon, {
 			groupDelta = -1,
-			pbList = var1_9
+			pbList = var1_9,
+			overlayType = LayerWeightConst.OVERLAY_UI_ADAPT
 		})
 		arg0_9:OverlayPanel(arg0_9.equipLCon, {
 			groupDelta = -1,
-			pbList = var0_9
+			pbList = var0_9,
+			overlayType = LayerWeightConst.OVERLAY_UI_ADAPT
 		})
 		arg0_9:OverlayPanel(arg0_9.equipBCon, {
 			groupDelta = -1,
-			pbList = var2_9
+			pbList = var2_9,
+			overlayType = LayerWeightConst.OVERLAY_UI_ADAPT
 		})
 	else
 		arg0_9:UnOverlayPanel(arg0_9.equipRCon, arg0_9._parentTf)

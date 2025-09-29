@@ -72,6 +72,7 @@ function var0_0.OnLoaded(arg0_3)
 	arg0_3.skinRect = arg0_3.skinTF:Find("dress_container/dress"):GetComponent("LScrollRect")
 	arg0_3.skinRectTF = arg0_3.skinTF:Find("dress_container")
 	arg0_3.skinEmpty = arg0_3.skinTF:Find("skinEmpty")
+	arg0_3.skinEmptyTips = arg0_3.skinEmpty:Find("layout/empty_tips")
 
 	function arg0_3.skinRect.onInitItem(arg0_6)
 		arg0_3:OnSkinInitItem(arg0_6)
@@ -658,6 +659,7 @@ function var0_0.UpdateSkinList(arg0_47)
 	setActive(arg0_47.skinRectTF, var0_47 ~= 0)
 	setActive(arg0_47.skinEmpty, var0_47 == 0)
 	arg0_47.skinRect:SetTotalCount(var0_47)
+	setText(arg0_47.skinEmptyTips, i18n("island_dress_no_item"))
 end
 
 function var0_0.UpdateDressUpList(arg0_48)
@@ -1220,7 +1222,7 @@ function var0_0.UpdateColorUnlockState(arg0_72)
 
 					return true
 				end)(var0_72.cost) then
-					pg.TipsMgr.GetInstance():ShowTips(i18n("ShowTips"))
+					pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 					return
 				end
@@ -1354,8 +1356,11 @@ function var0_0.OnHide(arg0_84)
 end
 
 function var0_0.OnDestroy(arg0_85)
+	ClearLScrollrect(arg0_85.dressRect)
+	ClearLScrollrect(arg0_85.skinRect)
+
 	for iter0_85, iter1_85 in pairs(arg0_85.dressCards or {}) do
-		-- block empty
+		iter1_85:Dispose()
 	end
 
 	arg0_85.dressCards = nil

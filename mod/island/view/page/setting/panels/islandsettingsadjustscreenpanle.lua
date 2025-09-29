@@ -31,6 +31,8 @@ function var0_0.OnUpdate(arg0_6)
 		NotchAdapt.CheckNotchRatio = arg0_7
 
 		NotchAdapt.AdjustUI()
+
+		NewNotchAdapt.CheckNotchRatio = arg0_7
 	end)
 end
 

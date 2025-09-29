@@ -82,7 +82,7 @@ function var0_0.emit(arg0_14, arg1_14, ...)
 			return
 		end
 
-		arg0_14:ExitProcess(arg1_14, ...)
+		arg0_14:ExitProcess(arg1_14, nil, ...)
 	else
 		var0_0.super.emit(arg0_14, arg1_14, ...)
 	end
@@ -96,7 +96,7 @@ function var0_0.emitCore(arg0_16, arg1_16, ...)
 	arg0_16:emit(var0_0.LINK_CORE_EVENT, IslandProxy.LINK_CORE, arg1_16, ...)
 end
 
-function var0_0.ExitProcess(arg0_17, arg1_17, ...)
+function var0_0.ExitProcess(arg0_17, arg1_17, arg2_17, ...)
 	local var0_17 = packEx(...)
 	local var1_17 = arg0_17:GetIsland()
 
@@ -110,6 +110,10 @@ function var0_0.ExitProcess(arg0_17, arg1_17, ...)
 		end
 	}, function()
 		var0_0.super.emit(arg0_17, arg1_17, unpackEx(var0_17))
+
+		if arg2_17 then
+			arg2_17()
+		end
 	end)
 end
 

@@ -121,7 +121,9 @@ function var0_0.listNotificationInterests(arg0_11)
 		GAME.CHANGE_CHAT_ROOM_DONE,
 		GAME.FRIEND_SEARCH_DONE,
 		GAME.ON_APPLICATION_PAUSE,
-		GAME.ISLAND_ON_HOME
+		GAME.ISLAND_ON_HOME,
+		GAME.ISLAND_ON_RECONNECT,
+		GAME.ISLAND_SELECT_GIFT_DONE
 	}
 	local var1_11 = arg0_11:_listNotificationInterests()
 
@@ -167,63 +169,69 @@ function var0_0.handleNotification(arg0_12, arg1_12)
 		end
 	elseif var0_12 == GAME.ISLAND_ON_HOME then
 		arg0_12.viewComponent:emit(BaseUI.ON_HOME)
+	elseif var0_12 == GAME.ISLAND_ON_RECONNECT then
+		arg0_12.viewComponent:ExitProcess(BaseUI.ON_HOME, function()
+			pg.m02:sendNotification(GAME.ISLAND_ENTER, var1_12)
+		end)
+	elseif var0_12 == GAME.ISLAND_SELECT_GIFT_DONE then
+		arg0_12.viewComponent:HandleAwardDisplay(var1_12.dropData, var1_12.callback, IslandAwardDisplayPage.TYPE_SIGN_GIFT)
 	end
 
 	arg0_12:_handleNotification(arg1_12)
 	arg0_12.viewComponent:emit(var0_12, var1_12)
 end
 
-function var0_0.SetUp(arg0_13)
-	local var0_13 = arg0_13.viewComponent:GetIsland()
-	local var1_13 = var0_13.mapID
-	local var2_13 = var0_13.spawnPointId
+function var0_0.SetUp(arg0_14)
+	local var0_14 = arg0_14.viewComponent:GetIsland()
+	local var1_14 = var0_14.mapID
+	local var2_14 = var0_14.spawnPointId
 
-	_IslandCore = IslandCore.New(arg0_13.viewComponent:GetPoolMgr(), var0_13, arg0_13.viewComponent._container)
+	_IslandCore = IslandCore.New(arg0_14.viewComponent:GetPoolMgr(), var0_14, arg0_14.viewComponent._container)
 
-	arg0_13.viewComponent:OnSetUpCore(var1_13, var2_13)
+	arg0_14.viewComponent:OnSetUpCore(var1_14, var2_14)
 end
 
-function var0_0.SwitchScene(arg0_14, arg1_14, arg2_14)
-	local var0_14 = arg0_14.viewComponent:GetIsland()
+function var0_0.SwitchScene(arg0_15, arg1_15, arg2_15)
+	local var0_15 = arg0_15.viewComponent:GetIsland()
 
-	var0_14:SetMapId(arg1_14)
+	var0_15:SetMapId(arg1_15)
 
-	if arg2_14 then
-		var0_14:SetSpawnPointId(arg2_14)
+	if arg2_15 then
+		var0_15:SetSpawnPointId(arg2_15)
 	end
 
-	arg0_14:UnloadScene()
-	arg0_14:SetUp()
+	arg0_15:UnloadScene()
+	arg0_15:SetUp()
 end
 
-function var0_0.UnloadScene(arg0_15, arg1_15)
-	arg0_15.viewComponent:OnUnloadScene()
+function var0_0.UnloadScene(arg0_16, arg1_16)
+	arg0_16.viewComponent:OnUnloadScene()
 
 	if _IslandCore then
-		_IslandCore:Dispose(arg1_15)
+		_IslandCore:Dispose(arg1_16)
 
 		_IslandCore = nil
 	end
 end
 
-function var0_0.remove(arg0_16)
-	arg0_16:UnloadScene(true)
-	arg0_16:_remove()
+function var0_0.remove(arg0_17)
+	arg0_17:UnloadScene(true)
+	arg0_17:_remove()
 end
 
-function var0_0._register(arg0_17)
+function var0_0._register(arg0_18)
 	return
 end
 
-function var0_0._listNotificationInterests(arg0_18)
+function var0_0._listNotificationInterests(arg0_19)
 	return {}
 end
 
-function var0_0._handleNotification(arg0_19, arg1_19)
+function var0_0._handleNotification(arg0_20, arg1_20)
 	return
 end
 
-function var0_0._remove(arg0_20)
+function var0_0._remove(arg0_21)
 	return
 end
 

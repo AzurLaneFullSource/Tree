@@ -493,6 +493,8 @@ function var0_0.CollectCommonInventoryItems(arg0_53, arg1_53)
 end
 
 function var0_0.OnDestroy(arg0_54)
+	ClearLScrollrect(arg0_54.scrollRect)
+
 	for iter0_54, iter1_54 in pairs(arg0_54.cards) do
 		iter1_54:Dispose()
 	end

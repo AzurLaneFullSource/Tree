@@ -139,7 +139,7 @@ function var0_0.SetTendency(arg0_17, arg1_17)
 end
 
 function var0_0.ExpSystemIsOpen(arg0_18)
-	return arg0_18:GetHost():GetAblityAgency():HasAbility(IslandAblityAgency.ORDER_EXP_ID)
+	return arg0_18:GetHost():GetAblityAgency():IsUnlockOrderExp()
 end
 
 function var0_0.AddExp(arg0_19, arg1_19)

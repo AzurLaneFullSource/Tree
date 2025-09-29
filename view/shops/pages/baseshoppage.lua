@@ -56,6 +56,7 @@ end
 
 function var0_0.InitCommodities(arg0_8)
 	arg0_8.displays, arg0_8.cards = arg0_8.shop:GetCommodities(), {}
+	arg0_8.lScrollrect.enabled = true
 
 	arg0_8.lScrollrect:SetTotalCount(#arg0_8.displays, 0)
 end

@@ -63,11 +63,13 @@ end
 function var0_0.GetDisplayAwards(arg0_10)
 	local var0_10, var1_10 = arg0_10:GetAwardItemAndExp()
 
-	table.insert(var0_10, {
-		id = 2,
-		type = DROP_TYPE_ISLAND_ITEM,
-		count = var1_10
-	})
+	if var1_10 > 0 then
+		table.insert(var0_10, {
+			id = 2,
+			type = DROP_TYPE_ISLAND_ITEM,
+			count = var1_10
+		})
+	end
 
 	return var0_10
 end

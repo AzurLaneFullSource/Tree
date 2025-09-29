@@ -11,6 +11,7 @@ local var7_0 = 2
 local var8_0 = 1
 
 function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
+	arg0_1.data = arg1_1
 	arg0_1.live2dData = arg2_1
 	arg0_1.commonData = arg3_1
 	arg0_1.frameRate = Application.targetFrameRate or 60
@@ -1593,7 +1594,9 @@ function var0_0.dispose(arg0_88)
 	arg0_88.parameterTargetValue = 0
 	arg0_88.parameterSmooth = 0
 	arg0_88.mouseInputDown = Vector2(0, 0)
+	arg0_88.data = nil
 	arg0_88.live2dData = nil
+	arg0_88.commonData = nil
 end
 
 return var0_0

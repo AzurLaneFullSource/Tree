@@ -42,6 +42,7 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.musicPlayerView = MainMusicPlayerView.New(arg0_2._tf:Find("adapt"), arg0_2.event)
 
 	arg0_2.musicPlayerView:Load(arg0_2._tf:Find("adapt/MusicPlayer").gameObject)
+	arg0_2.musicPlayerView:ActionInvoke("Hide")
 
 	arg0_2.playedList = {}
 end

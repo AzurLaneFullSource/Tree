@@ -114,7 +114,7 @@ function var0_0.GetShowTasks(arg0_11)
 				return arg0_11:IsFinishTask(arg0_12)
 			end)
 
-			if var1_11 == IslandTaskType.SEASON then
+			if var1_11 == IslandTaskType.HIDE then
 				if #var2_11 > 0 and var3_11 then
 					table.insert(var0_11, iter1_11)
 				end

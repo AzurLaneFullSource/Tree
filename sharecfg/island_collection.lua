@@ -1,8 +1,8 @@
 pg = pg or {}
 pg.island_collection = {
 	{
-		desc = "飞行器-港口",
-		name = "飞行器",
+		desc = "Aircraft – Harbor",
+		name = "Aircraft",
 		type = 1,
 		id = 1,
 		icon = "IslandProps/gold",
@@ -28,8 +28,8 @@ pg.island_collection = {
 		award = {}
 	},
 	{
-		desc = "飞行器-野外",
-		name = "飞行器",
+		desc = "Aircraft – Wilderness",
+		name = "Aircraft",
 		type = 1,
 		id = 2,
 		icon = "IslandProps/gold",
@@ -56,8 +56,8 @@ pg.island_collection = {
 		award = {}
 	},
 	{
-		desc = "飞行器-农场",
-		name = "飞行器",
+		desc = "Aircraft – Farm",
+		name = "Aircraft",
 		type = 1,
 		id = 3,
 		icon = "IslandProps/gold",

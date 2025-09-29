@@ -4,6 +4,8 @@ var0_0.FarmlandPlaceId = 101
 var0_0.PasturePlaceId = 102
 var0_0.MilkTeaPlaceId = 601
 var0_0.MealPlaceId = 602
+var0_0.SimpeleMealPlaceId = 603
+var0_0.kebabPlaceId = 604
 var0_0.MinePlaceId = 401
 var0_0.FellingPlaceId = 402
 var0_0.TechnologyPlaceId = 702
@@ -24,7 +26,11 @@ var0_0.haveModelPlaces = {
 	var0_0.WoodProcessingPlaceId,
 	var0_0.MachinePlaceId,
 	var0_0.ElectronicPlaceId,
-	var0_0.HandworkWorkbench
+	var0_0.HandworkWorkbench,
+	var0_0.MilkTeaPlaceId,
+	var0_0.MealPlaceId,
+	var0_0.SimpeleMealPlaceId,
+	var0_0.kebabPlaceId
 }
 var0_0.PlantPlaceIdLists = {
 	var0_0.FarmlandPlaceId,

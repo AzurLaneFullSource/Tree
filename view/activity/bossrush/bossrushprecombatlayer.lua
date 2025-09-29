@@ -444,6 +444,9 @@ function var0_0.didEnter(arg0_37)
 	end, SFX_PANEL)
 	arg0_37:UpdateFleetView(true)
 	pg.UIMgr.GetInstance():BlurPanel(arg0_37._tf)
+
+	GetOrAddComponent(arg0_37._tf, typeof(CanvasGroup)).interactable = true
+
 	setActive(arg0_37._autoToggle, true)
 	onToggle(arg0_37, arg0_37._autoToggle, function(arg0_44)
 		arg0_37:emit(BossRushPreCombatMediator.ON_AUTO, {

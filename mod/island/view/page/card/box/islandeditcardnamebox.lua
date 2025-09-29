@@ -71,22 +71,11 @@ end
 
 function var0_0.UpdateContent(arg0_12)
 	setInputText(arg0_12.input, "")
-
-	local var0_12 = getProxy(IslandProxy):GetIsland():GetModifyNameConsume()
-	local var1_12 = Drop.New({
-		type = var0_12[1],
-		id = var0_12[2],
-		count = var0_12[3]
-	})
-	local var2_12 = var1_12:getName()
-	local var3_12 = var1_12:getOwnedCount()
-	local var4_12 = var3_12 < var1_12.count and "#f36c6e" or "#39bfff"
-	local var5_12 = setColorStr(var3_12 .. "/" .. var1_12.count, var4_12)
-
-	setText(arg0_12.content, i18n("island_rename_consutme_tip", var2_12 .. var5_12))
+	setText(arg0_12.content, i18n("island_rename_consutme_tip"))
 end
 
 function var0_0.OnDestroy(arg0_13)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_13._tf, arg0_13._parentTf)
 	arg0_13.aniDft:SetEndEvent(nil)
 end
 

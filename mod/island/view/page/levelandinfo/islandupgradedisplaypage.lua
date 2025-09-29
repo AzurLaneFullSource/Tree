@@ -11,6 +11,13 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.dropPanelTr = arg0_2:findTF("module")
 	arg0_2.unlockUIList = UIItemList.New(arg0_2.dropPanelTr:Find("Board/Content/award/content"), arg0_2.dropPanelTr:Find("Board/Content/award/content/tpl"))
 	arg0_2.canvasGroup = GetOrAddComponent(arg0_2._tf, typeof(CanvasGroup))
+
+	setText(arg0_2._tf:Find("module/tip"), i18n("island_3Dshop_close"))
+	setText(arg0_2._tf:Find("small/tip"), i18n("island_3Dshop_close"))
+	GetComponent(arg0_2._tf:Find("module/bg/Top/title"), "Image"):SetNativeSize()
+	GetComponent(arg0_2._tf:Find("module/bg/Top/title/title_item"), "Image"):SetNativeSize()
+	GetComponent(arg0_2._tf:Find("module/bg/Top/star"), "Image"):SetNativeSize()
+	GetComponent(arg0_2._tf:Find("module/bg/Top/star/title_item"), "Image"):SetNativeSize()
 end
 
 function var0_0.OnInit(arg0_3)

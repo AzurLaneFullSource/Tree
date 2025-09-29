@@ -97,6 +97,8 @@ function var0_0.Hide(arg0_13)
 end
 
 function var0_0.OnDestroy(arg0_14)
+	ClearLScrollrect(arg0_14.scrollRect)
+
 	if arg0_14.selectPanel then
 		arg0_14.selectPanel:Destroy()
 

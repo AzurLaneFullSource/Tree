@@ -229,9 +229,6 @@ function var0_0.updateProject(arg0_22, arg1_22, arg2_22)
 				arg0_23.transform.localScale = Vector3(1, 1, 1)
 
 				arg0_23.transform:SetAsFirstSibling()
-
-				arg0_23.name = "shipModelBuliding" .. var5_22
-
 				setActive(arg0_23, true)
 			end)
 		else

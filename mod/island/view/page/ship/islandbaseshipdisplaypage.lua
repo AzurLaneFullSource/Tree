@@ -85,12 +85,22 @@ function var0_0.OnHome(arg0_12)
 end
 
 function var0_0.LoadCharacter(arg0_14, arg1_14, arg2_14)
-	arg0_14:UnloadCharacter()
+	arg0_14:UnloadCharacter(arg0_14.loadData)
 
-	arg0_14.isCommander = arg2_14
-	arg0_14.modelData = arg1_14
+	local var0_14 = {
+		isCommander = arg2_14,
+		modelData = arg1_14
+	}
 
-	local function var0_14(arg0_15)
+	arg0_14.loadData = var0_14
+
+	local function var1_14(arg0_15, arg1_15)
+		if var0_14.modelData.model ~= arg0_14.loadData.modelData.model then
+			arg0_14:UnloadCharacter(var0_14)
+
+			return
+		end
+
 		arg0_14.role = arg0_15
 
 		pg.ViewUtils.SetLayer(arg0_14.role.transform, Layer.Character3D)
@@ -114,85 +124,97 @@ function var0_0.LoadCharacter(arg0_14, arg1_14, arg2_14)
 
 		var3_15.rotationSpeed = pg.island_set.character_detail_camera_speed.key_value_int
 
-		local var4_15 = arg0_14.modelData.personal_ani
+		if arg1_15 and arg1_15 ~= "" then
+			local var4_15 = GetOrAddComponent(arg0_14.role.transform:GetChild(0), typeof(Animator))
 
-		if var4_15 and var4_15 ~= "" then
-			local var5_15 = GetOrAddComponent(arg0_14.role.transform:GetChild(0), typeof(Animator))
-
-			for iter0_15 = 1, var5_15.layerCount do
-				var5_15:CrossFadeInFixedTime(var4_15, 0, iter0_15 - 1)
+			for iter0_15 = 1, var4_15.layerCount do
+				var4_15:CrossFadeInFixedTime(arg1_15, 0, iter0_15 - 1)
 			end
 		end
 
-		arg0_14:OnCharLoaded()
+		arg0_14:OnCharLoaded(var0_14.modelData)
 	end
 
-	if arg0_14.isCommander then
-		arg0_14:GetPoolMgr():GetCommanderModel(arg1_14, function(arg0_16)
-			var0_14(arg0_16)
+	arg0_14:_LoadModel(var0_14, var1_14)
+end
+
+function var0_0._LoadModel(arg0_16, arg1_16, arg2_16)
+	pg.UIMgr.GetInstance():LoadingOn()
+
+	local var0_16 = arg1_16.modelData
+
+	if arg1_16.isCommander then
+		arg0_16:GetPoolMgr():GetCommanderModel(var0_16, function(arg0_17)
+			arg2_16(arg0_17, var0_16.personal_ani)
+			pg.UIMgr.GetInstance():LoadingOff()
 		end)
 	else
-		arg0_14:GetPoolMgr():GetCharacter(arg1_14.model, arg1_14.animator, function(arg0_17)
-			var0_14(arg0_17)
+		arg0_16:GetPoolMgr():GetCharacter(var0_16.model, var0_16.animator, function(arg0_18)
+			arg2_16(arg0_18, var0_16.personal_ani)
+			pg.UIMgr.GetInstance():LoadingOff()
 		end)
 	end
 end
 
-function var0_0.UnloadCharacter(arg0_18)
-	local var0_18 = arg0_18:GetSmoothRotateObject():GetComponent(typeof(SmoothRotateObject))
-
-	if var0_18 then
-		Object.Destroy(var0_18)
-
-		local var1_18
+function var0_0.UnloadCharacter(arg0_19, arg1_19)
+	if not arg1_19 then
+		return
 	end
 
-	if arg0_18.role then
-		pg.ViewUtils.SetLayer(arg0_18.role.transform, Layer.Default)
+	local var0_19 = arg1_19.modelData
+	local var1_19 = arg1_19.isCommander
+	local var2_19 = arg0_19:GetSmoothRotateObject():GetComponent(typeof(SmoothRotateObject))
 
-		if arg0_18.isCommander then
-			arg0_18:GetPoolMgr():ReturnCommanderModel(arg0_18.role)
-		elseif arg0_18.modelData then
-			arg0_18:GetPoolMgr():ReturnCharacter(arg0_18.modelData.model, arg0_18.modelData.animator, arg0_18.role)
+	if var2_19 then
+		Object.Destroy(var2_19)
 
-			arg0_18.modelData = nil
+		local var3_19
+	end
+
+	if arg0_19.role then
+		pg.ViewUtils.SetLayer(arg0_19.role.transform, Layer.Default)
+
+		if arg0_19.isCommander then
+			arg0_19:GetPoolMgr():ReturnCommanderModel(arg0_19.role)
+		else
+			arg0_19:GetPoolMgr():ReturnCharacter(var0_19.model, var0_19.animator, arg0_19.role)
 		end
 
-		arg0_18.role = nil
-	end
-
-	arg0_18.modelData = nil
-end
-
-function var0_0.ClearCharacterContainer(arg0_19)
-	arg0_19:UnloadCharacter()
-
-	if not IsNil(arg0_19.roleContainer) then
-		Object.Destroy(arg0_19.roleContainer.gameObject)
-
-		arg0_19.roleContainer = nil
+		arg0_19.role = nil
 	end
 end
 
-function var0_0.UnLoadCharacterScene(arg0_20, arg1_20)
-	local var0_20 = "island/scenesres/scenes/character/map_shipmainui_scene"
+function var0_0.ClearCharacterContainer(arg0_20)
+	arg0_20:UnloadCharacter(arg0_20.loadData)
 
-	SceneOpMgr.Inst:UnloadSceneAsync(var0_20, "map_shipmainui", function()
-		if arg1_20 then
-			arg1_20()
+	arg0_20.loadData = nil
+
+	if not IsNil(arg0_20.roleContainer) then
+		Object.Destroy(arg0_20.roleContainer.gameObject)
+
+		arg0_20.roleContainer = nil
+	end
+end
+
+function var0_0.UnLoadCharacterScene(arg0_21, arg1_21)
+	local var0_21 = "island/scenesres/scenes/character/map_shipmainui_scene"
+
+	SceneOpMgr.Inst:UnloadSceneAsync(var0_21, "map_shipmainui", function()
+		if arg1_21 then
+			arg1_21()
 		end
 	end)
 end
 
-function var0_0.ResetCameraMask(arg0_22)
-	if arg0_22.defaultCullingMask and IslandCameraMgr.instance then
-		local var0_22 = IslandCameraMgr.instance._mainCamera
+function var0_0.ResetCameraMask(arg0_23)
+	if arg0_23.defaultCullingMask and IslandCameraMgr.instance then
+		local var0_23 = IslandCameraMgr.instance._mainCamera
 
-		LuaHelper.ResetCamCullingMask(var0_22, arg0_22.defaultCullingMask)
+		LuaHelper.ResetCamCullingMask(var0_23, arg0_23.defaultCullingMask)
 	end
 end
 
-function var0_0.ActivityPlayerCamera(arg0_23)
+function var0_0.ActivityPlayerCamera(arg0_24)
 	if not IslandCameraMgr.instance then
 		return
 	end
@@ -200,34 +222,34 @@ function var0_0.ActivityPlayerCamera(arg0_23)
 	IslandCameraMgr.instance:ActiveVirtualCamera(IslandConst.FOLLOW_CAMERA_NAME)
 end
 
-function var0_0.Hide(arg0_24)
-	var0_0.super.Hide(arg0_24)
-	arg0_24:ClearCharacterScene()
-end
-
-function var0_0.OnDisable(arg0_25)
+function var0_0.Hide(arg0_25)
+	var0_0.super.Hide(arg0_25)
 	arg0_25:ClearCharacterScene()
 end
 
-function var0_0.OnDestroy(arg0_26)
+function var0_0.OnDisable(arg0_26)
 	arg0_26:ClearCharacterScene()
-
-	for iter0_26, iter1_26 in pairs(arg0_26.cards or {}) do
-		iter1_26:Dispose()
-	end
-
-	arg0_26.cards = nil
 end
 
-function var0_0.GetActiveCamName(arg0_27)
+function var0_0.OnDestroy(arg0_27)
+	arg0_27:ClearCharacterScene()
+
+	for iter0_27, iter1_27 in pairs(arg0_27.cards or {}) do
+		iter1_27:Dispose()
+	end
+
+	arg0_27.cards = nil
+end
+
+function var0_0.GetActiveCamName(arg0_28)
 	return IslandConst.CHARA_CAMERA_NAME
 end
 
-function var0_0.GetSmoothRotateObject(arg0_28)
+function var0_0.GetSmoothRotateObject(arg0_29)
 	assert(false, "Write me")
 end
 
-function var0_0.OnCharLoaded(arg0_29)
+function var0_0.OnCharLoaded(arg0_30)
 	return
 end
 

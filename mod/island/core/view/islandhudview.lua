@@ -80,7 +80,7 @@ function var0_0.LateUpdate(arg0_7)
 	end
 end
 
-function var0_0.OnDispose(arg0_8)
+function var0_0.Dispose(arg0_8)
 	for iter0_8, iter1_8 in pairs(arg0_8.hudPanelDic) do
 		for iter2_8, iter3_8 in pairs(iter1_8) do
 			iter3_8:Dispose()

@@ -20,6 +20,7 @@ function var0_0.OnInit(arg0_2)
 	arg0_2:InitEvent()
 	setParent(arg0_2.randomFlagToggle, arg0_2._tf.parent)
 	setActive(arg0_2.randomFlagToggle, true)
+	triggerToggle(arg0_2.showQuickBtn, false)
 end
 
 function var0_0.InitDetail(arg0_3)
@@ -440,7 +441,8 @@ function var0_0.OnSelected(arg0_38, arg1_38)
 				arg0_38.detailPanel:Find("attrs"),
 				arg0_38.detailPanel:Find("equipments"),
 				arg0_38.detailPanel:Find("quick_panel")
-			}
+			},
+			overlayType = LayerWeightConst.OVERLAY_UI_ADAPT
 		})
 	else
 		arg0_38:UnOverlayPanel(arg0_38._parentTf, arg0_38.mainPanel)

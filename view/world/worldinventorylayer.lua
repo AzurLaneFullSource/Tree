@@ -45,6 +45,9 @@ function var0_0.init(arg0_2)
 	arg0_2._weaponToggle = arg0_2:findTF("bottom_back/types/siren_weapon", arg0_2.topItems)
 	arg0_2._materialToggle = arg0_2:findTF("bottom_back/types/material", arg0_2.topItems)
 	arg0_2.exchangeTips = arg0_2:findTF("bottom_back/reset_exchange", arg0_2.topItems)
+
+	setText(arg0_2:findTF("bottom_back/reset_exchange/Text", arg0_2.topItems), i18n("world_inventory_tip"))
+
 	arg0_2.filterBusyToggle = arg0_2:findTF("adapt/left_length/frame/toggle_equip", arg0_2.blurPanel)
 	arg0_2.sortBtn = arg0_2:findTF("adapt/top/buttons/sort_button", arg0_2.blurPanel)
 	arg0_2.indexBtn = arg0_2:findTF("adapt/top/buttons/index_button", arg0_2.blurPanel)

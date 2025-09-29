@@ -28,6 +28,8 @@ end
 
 function var0_0.init(arg0_7)
 	arg0_7.shareBtn = arg0_7:findTF("select_skin/share_btn")
+
+	arg0_7:BlurPanel(arg0_7._tf)
 end
 
 function var0_0.didEnter(arg0_8)
@@ -169,6 +171,8 @@ function var0_0.willExit(arg0_20)
 	for iter0_20, iter1_20 in pairs(arg0_20.skinCardMap) do
 		iter1_20:clear()
 	end
+
+	arg0_20:UnOverlayPanel(arg0_20._tf)
 end
 
 return var0_0

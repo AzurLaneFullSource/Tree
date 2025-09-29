@@ -1,6 +1,6 @@
 local var0_0 = class("IslandHearBeatMgr")
 
-var0_0.SERVER_HEART_BEAT_INTERVAL = 30
+var0_0.SERVER_HEART_BEAT_INTERVAL = 10
 
 function var0_0.Ctor(arg0_1)
 	arg0_1.heartBeatTimer = Timer.New(function()

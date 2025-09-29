@@ -354,7 +354,9 @@ function var0_0.OnBackPressed(arg0_34)
 	for iter1_34 = #arg0_34.pages, 1, -1 do
 		local var1_34 = arg0_34.pages[iter1_34]
 
-		arg0_34:ClosePage(var1_34.class)
+		if var1_34:CanEsc() then
+			arg0_34:ClosePage(var1_34.class)
+		end
 
 		return true
 	end
@@ -372,12 +374,14 @@ function var0_0.Dispose(arg0_36)
 	for iter0_36 = #arg0_36.pages, 1, -1 do
 		local var0_36 = arg0_36.pages[iter0_36]
 
+		var0_36:ActiveOrDisactive(false)
 		arg0_36:DestroyPage(var0_36)
 	end
 
 	for iter1_36 = #arg0_36.noStatePages, 1, -1 do
 		local var1_36 = arg0_36.noStatePages[iter1_36]
 
+		var1_36:ActiveOrDisactive(false)
 		arg0_36:DestroyPage(var1_36)
 	end
 

@@ -5,6 +5,8 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
+	setText(arg0_2._tf:Find("top/title/Text"), i18n("island_technology_title"))
+
 	arg0_2.centreToggleTF = arg0_2._tf:Find("adapt/types/1")
 	arg0_2.centreTipTF = arg0_2.centreToggleTF:Find("tip")
 

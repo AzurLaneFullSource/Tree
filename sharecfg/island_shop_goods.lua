@@ -105,7 +105,7 @@ pg.island_shop_goods = setmetatable({
 pg.base = pg.base or {}
 pg.base.island_shop_goods = {
 	[103000] = {
-		desc = "用小麦加工而成的咯咯鸡饲料",
+		desc = "Feed for the Clucky Clucky Bird. Made by processing wheat.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -113,7 +113,7 @@ pg.base.island_shop_goods = {
 		limited_num = 0,
 		limited_show = 0,
 		unlock = "",
-		goods_name = "咯咯鸡饲料",
+		goods_name = "Clucky Clucky Bird Feed",
 		icon = "IslandProps/item_3000",
 		goods_detail_type = 1,
 		time = "always",
@@ -146,7 +146,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[103001] = {
-		desc = "用玉米加工而成的哼哼猪饲料",
+		desc = "Feed for the Oinky Oinky Pig. Made by processing wheat.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -154,7 +154,7 @@ pg.base.island_shop_goods = {
 		limited_num = 0,
 		limited_show = 0,
 		unlock = "",
-		goods_name = "哼哼猪饲料",
+		goods_name = "Oinky Oinky Pig Feed",
 		icon = "IslandProps/item_3001",
 		goods_detail_type = 1,
 		time = "always",
@@ -187,7 +187,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[103002] = {
-		desc = "用牧草加工而成的哞哞牛饲料",
+		desc = "Feed for the Moo Moo Cow. Made by processing wheat.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -195,7 +195,7 @@ pg.base.island_shop_goods = {
 		limited_num = 0,
 		limited_show = 0,
 		unlock = "",
-		goods_name = "哞哞牛饲料",
+		goods_name = "Moo Moo Cow Feed",
 		icon = "IslandProps/item_3002",
 		goods_detail_type = 1,
 		time = "always",
@@ -228,7 +228,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[103003] = {
-		desc = "用牧草加工而成的咩咩羊饲料",
+		desc = "Feed for the Baa Baa Sheep. Made by processing wheat.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -236,7 +236,7 @@ pg.base.island_shop_goods = {
 		limited_num = 0,
 		limited_show = 0,
 		unlock = "",
-		goods_name = "咩咩羊饲料",
+		goods_name = "Baa Baa Sheep Feed",
 		icon = "IslandProps/item_3003",
 		goods_detail_type = 1,
 		time = "always",
@@ -269,7 +269,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[103004] = {
-		desc = "用小麦加工而成的面粉",
+		desc = "Flour made from ground wheat.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -277,7 +277,7 @@ pg.base.island_shop_goods = {
 		limited_num = 0,
 		limited_show = 0,
 		unlock = "",
-		goods_name = "面粉",
+		goods_name = "Flour",
 		icon = "IslandProps/item_3004",
 		goods_detail_type = 1,
 		time = "always",
@@ -310,15 +310,15 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10000] = {
-		desc = "购买可获得指挥官“浮游炮”漂浮物装扮",
+		desc = "Purchase to receive Floating Gun, a floating Commander outfit.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
-		have_show = 1,
+		have_show = 0,
 		limited_num = 1,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "浮游炮",
+		goods_name = "Floating Gun",
 		icon = "IslandDressIcon/dress_1020001",
 		goods_detail_type = 2,
 		time = "always",
@@ -351,7 +351,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10001] = {
-		desc = "一次友好的握手，是信任与合作的开始。",
+		desc = "Cooperation and trust begins with a friendly handshake.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -359,7 +359,7 @@ pg.base.island_shop_goods = {
 		limited_num = 1,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "握手",
+		goods_name = "Shake Hands",
 		icon = "IslandActionIcon/handshake",
 		goods_detail_type = 1,
 		time = "always",
@@ -392,7 +392,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10002] = {
-		desc = "激昂的起跳，是为胜利献上的最高欢呼。",
+		desc = "Nothing screams \"victory\" like an excited jump.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -400,7 +400,7 @@ pg.base.island_shop_goods = {
 		limited_num = 1,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "胜利起跳",
+		goods_name = "Excited Jump",
 		icon = "IslandActionIcon/vjump",
 		goods_detail_type = 1,
 		time = "always",
@@ -433,7 +433,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10003] = {
-		desc = "以汗水浇铸的成就，值得向每一个人展示。",
+		desc = "You've worked hard for these gains. They deserve to be showed to the whole world.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -441,7 +441,7 @@ pg.base.island_shop_goods = {
 		limited_num = 1,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "展示肌肉",
+		goods_name = "Flaunt Muscles",
 		icon = "IslandActionIcon/muscle",
 		goods_detail_type = 1,
 		time = "always",
@@ -474,7 +474,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10004] = {
-		desc = "闪烁着星辉的抽奖券。使用后，可在星彩奖中抽取各种珍贵奖励。 ",
+		desc = "Tickets that glitter like the stars. Can be used to draw prizes in the Stellar Prize Draw. When the current run of the Stellar Prize Draw ends, any Stellar Tickets left over will be automatically used to draw prizes or be converted to Gems.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -482,7 +482,7 @@ pg.base.island_shop_goods = {
 		limited_num = 10,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "星彩券",
+		goods_name = "Stellar Tickets",
 		icon = "IslandGoodsIcon/170000",
 		goods_detail_type = 1,
 		time = "always",
@@ -515,7 +515,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10005] = {
-		desc = "刚收获不久的新鲜小麦，制作面粉的重要原料。",
+		desc = "Fresh wheat straight from the fields. The base ingredient needed to make flour.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -523,7 +523,7 @@ pg.base.island_shop_goods = {
 		limited_num = 5,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "小麦",
+		goods_name = "Wheat",
 		icon = "IslandProps/item_2000",
 		goods_detail_type = 1,
 		time = "always",
@@ -556,7 +556,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10006] = {
-		desc = "金黄饱满的玉米，散发着田野的清甜气息。",
+		desc = "Ripe, golden corn. It lends a sweet smell to the fields.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -564,7 +564,7 @@ pg.base.island_shop_goods = {
 		limited_num = 5,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "玉米",
+		goods_name = "Corn",
 		icon = "IslandProps/item_2001",
 		goods_detail_type = 1,
 		time = "always",
@@ -597,7 +597,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10007] = {
-		desc = "高品质牧草，让牧场充满生机！",
+		desc = "High-quality grass. Provides life in abundance to the farm!",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -605,7 +605,7 @@ pg.base.island_shop_goods = {
 		limited_num = 5,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "牧草",
+		goods_name = "Grass",
 		icon = "IslandProps/item_2008",
 		goods_detail_type = 1,
 		time = "always",
@@ -638,7 +638,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10008] = {
-		desc = "清白色的优质大米，含有丰富的淀粉和谷物蛋白。",
+		desc = "White, high-quality rice. Contains plentiful starch and granular protein.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -646,7 +646,7 @@ pg.base.island_shop_goods = {
 		limited_num = 5,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "大米",
+		goods_name = "Rice",
 		icon = "IslandProps/item_2002",
 		goods_detail_type = 1,
 		time = "always",
@@ -679,7 +679,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10009] = {
-		desc = "清脆可口的白菜，新鲜直采！",
+		desc = "Crisp and delicious napa cabbage. It's straight from the farm!",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -687,7 +687,7 @@ pg.base.island_shop_goods = {
 		limited_num = 5,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "白菜",
+		goods_name = "Napa Cabbage",
 		icon = "IslandProps/item_2003",
 		goods_detail_type = 1,
 		time = "always",
@@ -720,7 +720,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10010] = {
-		desc = "圆润饱满，富含蛋白质，除了制作美食之外，也有丰富的工业用途。",
+		desc = "Round, fluffy, and filled with protein. Has all sorts of uses, not just in cooking, but in manufacturing as well.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -728,7 +728,7 @@ pg.base.island_shop_goods = {
 		limited_num = 5,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "大豆",
+		goods_name = "Soy Beans",
 		icon = "IslandProps/item_2006",
 		goods_detail_type = 1,
 		time = "always",
@@ -761,7 +761,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10011] = {
-		desc = "蔬菜中的淀粉代表，可以被做成千变万化的形态。",
+		desc = "The king of starch in the vegetable world. Can be prepared in all kinds of ways.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -769,7 +769,7 @@ pg.base.island_shop_goods = {
 		limited_num = 5,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "土豆",
+		goods_name = "Potato",
 		icon = "IslandProps/item_2005",
 		goods_detail_type = 1,
 		time = "always",
@@ -802,7 +802,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10012] = {
-		desc = "一本内容基础的开发区生活指南。使用后，能少量增加角色的开发区生活经验。",
+		desc = "A book containing fundamental knowledge on island living. Used to slightly increase a character's Island EXP.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -810,7 +810,7 @@ pg.base.island_shop_goods = {
 		limited_num = 25,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生活经验指南T1",
+		goods_name = "Island EXP Textbook T1",
 		icon = "IslandProps/item_100001",
 		goods_detail_type = 1,
 		time = "always",
@@ -843,7 +843,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10013] = {
-		desc = "一本内容详细的开发区生活指南。使用后，能中幅增加角色的开发区生活经验。",
+		desc = "A book containing detailed knowledge on island living. Used to moderately increase a character's Island EXP.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -851,7 +851,7 @@ pg.base.island_shop_goods = {
 		limited_num = 5,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生活经验指南T2",
+		goods_name = "Island EXP Textbook T2",
 		icon = "IslandProps/item_100002",
 		goods_detail_type = 1,
 		time = "always",
@@ -884,7 +884,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10014] = {
-		desc = "一本内容丰富的开发区生活指南。使用后，能大幅增加角色的开发区生活经验。",
+		desc = "A book containing abundant knowledge on island living. Used to greatly increase a character's Island EXP.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -892,7 +892,7 @@ pg.base.island_shop_goods = {
 		limited_num = 5,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生活经验指南T3",
+		goods_name = "Island EXP Textbook T3",
 		icon = "IslandProps/item_100003",
 		goods_detail_type = 1,
 		time = "always",
@@ -925,7 +925,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10015] = {
-		desc = "一本内容基础的生产技能指南。用于提升角色的开发区生产技能等级。",
+		desc = "A book containing fundamental knowledge on production techniques. Used to slightly increase a character's Production stats.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -933,7 +933,7 @@ pg.base.island_shop_goods = {
 		limited_num = 5,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生产技能指南T1",
+		goods_name = "Production Textbook T1",
 		icon = "IslandProps/item_100101",
 		goods_detail_type = 1,
 		time = "always",
@@ -966,7 +966,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10016] = {
-		desc = "一本内容详细的生产技能指南。用于提升角色的开发区生产技能等级。",
+		desc = "A book containing detailed knowledge on production techniques. Used to moderately increase a character's Production stats.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -974,7 +974,7 @@ pg.base.island_shop_goods = {
 		limited_num = 5,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生产技能指南T2",
+		goods_name = "Production Textbook T2",
 		icon = "IslandProps/item_100102",
 		goods_detail_type = 1,
 		time = "always",
@@ -1007,7 +1007,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10017] = {
-		desc = "一本内容丰富的生产技能指南。用于提升角色的开发区生产技能等级。",
+		desc = "A book containing abundant knowledge on production techniques. Used to greatly increase a character's Production stats.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1015,7 +1015,7 @@ pg.base.island_shop_goods = {
 		limited_num = 6,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生产技能指南T3",
+		goods_name = "Production Textbook T3",
 		icon = "IslandProps/item_100103",
 		goods_detail_type = 1,
 		time = "always",
@@ -1048,7 +1048,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10018] = {
-		desc = "岛屿开发经验的结晶。角色突破所需的必要材料。",
+		desc = "A crystal of island development experience. Required to Limit Break characters.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1056,7 +1056,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "岛屿开发结晶",
+		goods_name = "Island Development Gem",
 		icon = "IslandProps/item_100201",
 		goods_detail_type = 1,
 		time = "always",
@@ -1089,7 +1089,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10019] = {
-		desc = "散发着油墨与时光的沉稳香气，一套值得置于案头反复品读的雅致礼物。",
+		desc = "A hardcover book that smells of ink and sports a classic vibe. It's worthy of going on your table and being reread time and time again. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1097,7 +1097,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "精装书",
+		goods_name = "Hardcover Book",
 		icon = "IslandGoodsIcon/gift02",
 		goods_detail_type = 1,
 		time = "always",
@@ -1130,7 +1130,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10020] = {
-		desc = "一束新鲜采摘的缤纷花礼，洋溢着的自然生机能带去一整日的美好。",
+		desc = "A gorgeous, fresh bouquet. Its flowers are brimming with color and life, and they promise joy for the days to come. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1138,7 +1138,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "鲜花束",
+		goods_name = "Bouquet",
 		icon = "IslandGoodsIcon/gift03",
 		goods_detail_type = 1,
 		time = "always",
@@ -1171,7 +1171,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10021] = {
-		desc = "利落的线条流转着金属的冷辉，这柄礼仪佩剑无声地诉说着秩序与庄严。",
+		desc = "This ceremonial sword with a flowing silhouette gives off the cold brilliance of steel. It silently speaks of order and majesty. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1179,7 +1179,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "仪式剑",
+		goods_name = "Ceremonial Sword",
 		icon = "IslandGoodsIcon/gift04",
 		goods_detail_type = 1,
 		time = "always",
@@ -1212,7 +1212,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10022] = {
-		desc = "一个蓬松柔软的可爱玩偶。拥抱它，就能收获一份毛茸茸的温暖。",
+		desc = "An adorable stuffed animal that's soft to the touch. Give it a hug, and its fluffy warmth and innocent smile will soften your heart. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1220,7 +1220,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "绒绒玩偶",
+		goods_name = "Fluffy Stuffed Animal",
 		icon = "IslandGoodsIcon/gift05",
 		goods_detail_type = 1,
 		time = "always",
@@ -1253,7 +1253,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10023] = {
-		desc = "时光在此沉淀，化作一件雅致的摆设，无声地为空间增添一抹宁静隽永的韵味。",
+		desc = "The sands of time have poured over this ornament, turning it into an elegant antique. Quietly, it lends an air of tranquility to a room. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1261,7 +1261,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "古董摆件",
+		goods_name = "Antique Ornament",
 		icon = "IslandGoodsIcon/gift06",
 		goods_detail_type = 1,
 		time = "always",
@@ -1294,7 +1294,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10024] = {
-		desc = "闪耀却不张扬，以细腻工艺承载心意，点亮日常的每一个微小瞬间。",
+		desc = "An accessory that, although understated, glimmers with exceptional craftsmanship. It adds just a little light to every moment of one's life. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1302,7 +1302,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "精致首饰",
+		goods_name = "Exquisite Accessory",
 		icon = "IslandGoodsIcon/gift07",
 		goods_detail_type = 1,
 		time = "always",
@@ -1335,7 +1335,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10025] = {
-		desc = "简约瓶身内蕴藏着清新怡人的气息，别致的香氛是品味与格调的优雅注解。",
+		desc = "A wonderfully pure aroma hides inside this modest flask. Just one spray of this fragrance brings out tones of refined class. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1343,7 +1343,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "高档香水",
+		goods_name = "Premium Perfume",
 		icon = "IslandGoodsIcon/gift08",
 		goods_detail_type = 1,
 		time = "always",
@@ -1376,7 +1376,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10026] = {
-		desc = "一套完备的休闲娱乐组合。包含了享受简单乐趣所需的大部分内容，是一份体贴的闲暇赠礼。",
+		desc = "An entertainment system that will fill up every moment of your spare time. This thoughtful gift contains just about all the content you need for a fun play session. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1384,7 +1384,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "游戏机套组",
+		goods_name = "Game Console Set",
 		icon = "IslandGoodsIcon/gift09",
 		goods_detail_type = 1,
 		time = "always",
@@ -1417,7 +1417,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10027] = {
-		desc = "闪烁着星辉的抽奖券。使用后，可在星彩奖中抽取各种珍贵奖励。 ",
+		desc = "Tickets that glitter like the stars. Can be used to draw prizes in the Stellar Prize Draw. When the current run of the Stellar Prize Draw ends, any Stellar Tickets left over will be automatically used to draw prizes or be converted to Gems.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1425,7 +1425,7 @@ pg.base.island_shop_goods = {
 		limited_num = 10,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "星彩券",
+		goods_name = "Stellar Tickets",
 		icon = "IslandGoodsIcon/170000",
 		goods_detail_type = 1,
 		time = "always",
@@ -1458,7 +1458,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10028] = {
-		desc = "一本内容基础的开发区生活指南。使用后，能少量增加角色的开发区生活经验。",
+		desc = "A book containing fundamental knowledge on island living. Used to slightly increase a character's Island EXP.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1466,7 +1466,7 @@ pg.base.island_shop_goods = {
 		limited_num = 25,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生活经验指南T1",
+		goods_name = "Island EXP Textbook T1",
 		icon = "IslandProps/item_100001",
 		goods_detail_type = 1,
 		time = "always",
@@ -1499,7 +1499,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10029] = {
-		desc = "一本内容详细的开发区生活指南。使用后，能中幅增加角色的开发区生活经验。",
+		desc = "A book containing detailed knowledge on island living. Used to moderately increase a character's Island EXP.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1507,7 +1507,7 @@ pg.base.island_shop_goods = {
 		limited_num = 10,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生活经验指南T2",
+		goods_name = "Island EXP Textbook T2",
 		icon = "IslandProps/item_100002",
 		goods_detail_type = 1,
 		time = "always",
@@ -1540,7 +1540,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10030] = {
-		desc = "一本内容丰富的开发区生活指南。使用后，能大幅增加角色的开发区生活经验。",
+		desc = "A book containing abundant knowledge on island living. Used to greatly increase a character's Island EXP.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1548,7 +1548,7 @@ pg.base.island_shop_goods = {
 		limited_num = 5,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生活经验指南T3",
+		goods_name = "Island EXP Textbook T3",
 		icon = "IslandProps/item_100003",
 		goods_detail_type = 1,
 		time = "always",
@@ -1581,7 +1581,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10031] = {
-		desc = "一本内容基础的生产技能指南。用于提升角色的开发区生产技能等级。",
+		desc = "A book containing fundamental knowledge on production techniques. Used to slightly increase a character's Production stats.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1589,7 +1589,7 @@ pg.base.island_shop_goods = {
 		limited_num = 5,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生产技能指南T1",
+		goods_name = "Production Textbook T1",
 		icon = "IslandProps/item_100101",
 		goods_detail_type = 1,
 		time = "always",
@@ -1622,7 +1622,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10032] = {
-		desc = "一本内容详细的生产技能指南。用于提升角色的开发区生产技能等级。",
+		desc = "A book containing detailed knowledge on production techniques. Used to moderately increase a character's Production stats.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1630,7 +1630,7 @@ pg.base.island_shop_goods = {
 		limited_num = 5,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生产技能指南T2",
+		goods_name = "Production Textbook T2",
 		icon = "IslandProps/item_100102",
 		goods_detail_type = 1,
 		time = "always",
@@ -1663,7 +1663,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10033] = {
-		desc = "一本内容丰富的生产技能指南。用于提升角色的开发区生产技能等级。",
+		desc = "A book containing abundant knowledge on production techniques. Used to greatly increase a character's Production stats.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1671,7 +1671,7 @@ pg.base.island_shop_goods = {
 		limited_num = 8,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生产技能指南T3",
+		goods_name = "Production Textbook T3",
 		icon = "IslandProps/item_100103",
 		goods_detail_type = 1,
 		time = "always",
@@ -1704,7 +1704,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10034] = {
-		desc = "岛屿开发经验的结晶。角色突破所需的必要材料。",
+		desc = "A crystal of island development experience. Required to Limit Break characters.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1712,7 +1712,7 @@ pg.base.island_shop_goods = {
 		limited_num = 3,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "岛屿开发结晶",
+		goods_name = "Island Development Gem",
 		icon = "IslandProps/item_100201",
 		goods_detail_type = 1,
 		time = "always",
@@ -1745,7 +1745,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10035] = {
-		desc = "散发着油墨与时光的沉稳香气，一套值得置于案头反复品读的雅致礼物。",
+		desc = "A hardcover book that smells of ink and sports a classic vibe. It's worthy of going on your table and being reread time and time again. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1753,7 +1753,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "精装书",
+		goods_name = "Hardcover Book",
 		icon = "IslandGoodsIcon/gift02",
 		goods_detail_type = 1,
 		time = "always",
@@ -1786,7 +1786,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10036] = {
-		desc = "一束新鲜采摘的缤纷花礼，洋溢着的自然生机能带去一整日的美好。",
+		desc = "A gorgeous, fresh bouquet. Its flowers are brimming with color and life, and they promise joy for the days to come. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1794,7 +1794,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "鲜花束",
+		goods_name = "Bouquet",
 		icon = "IslandGoodsIcon/gift03",
 		goods_detail_type = 1,
 		time = "always",
@@ -1827,7 +1827,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10037] = {
-		desc = "利落的线条流转着金属的冷辉，这柄礼仪佩剑无声地诉说着秩序与庄严。",
+		desc = "This ceremonial sword with a flowing silhouette gives off the cold brilliance of steel. It silently speaks of order and majesty. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1835,7 +1835,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "仪式剑",
+		goods_name = "Ceremonial Sword",
 		icon = "IslandGoodsIcon/gift04",
 		goods_detail_type = 1,
 		time = "always",
@@ -1868,7 +1868,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10038] = {
-		desc = "一个蓬松柔软的可爱玩偶。拥抱它，就能收获一份毛茸茸的温暖。",
+		desc = "An adorable stuffed animal that's soft to the touch. Give it a hug, and its fluffy warmth and innocent smile will soften your heart. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1876,7 +1876,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "绒绒玩偶",
+		goods_name = "Fluffy Stuffed Animal",
 		icon = "IslandGoodsIcon/gift05",
 		goods_detail_type = 1,
 		time = "always",
@@ -1909,7 +1909,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10039] = {
-		desc = "时光在此沉淀，化作一件雅致的摆设，无声地为空间增添一抹宁静隽永的韵味。",
+		desc = "The sands of time have poured over this ornament, turning it into an elegant antique. Quietly, it lends an air of tranquility to a room. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1917,7 +1917,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "古董摆件",
+		goods_name = "Antique Ornament",
 		icon = "IslandGoodsIcon/gift06",
 		goods_detail_type = 1,
 		time = "always",
@@ -1950,7 +1950,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10040] = {
-		desc = "闪耀却不张扬，以细腻工艺承载心意，点亮日常的每一个微小瞬间。",
+		desc = "An accessory that, although understated, glimmers with exceptional craftsmanship. It adds just a little light to every moment of one's life. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1958,7 +1958,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "精致首饰",
+		goods_name = "Exquisite Accessory",
 		icon = "IslandGoodsIcon/gift07",
 		goods_detail_type = 1,
 		time = "always",
@@ -1991,7 +1991,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10041] = {
-		desc = "简约瓶身内蕴藏着清新怡人的气息，别致的香氛是品味与格调的优雅注解。",
+		desc = "A wonderfully pure aroma hides inside this modest flask. Just one spray of this fragrance brings out tones of refined class. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -1999,7 +1999,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "高档香水",
+		goods_name = "Premium Perfume",
 		icon = "IslandGoodsIcon/gift08",
 		goods_detail_type = 1,
 		time = "always",
@@ -2032,7 +2032,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10042] = {
-		desc = "一套完备的休闲娱乐组合。包含了享受简单乐趣所需的大部分内容，是一份体贴的闲暇赠礼。",
+		desc = "An entertainment system that will fill up every moment of your spare time. This thoughtful gift contains just about all the content you need for a fun play session. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2040,7 +2040,7 @@ pg.base.island_shop_goods = {
 		limited_num = 2,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "游戏机套组",
+		goods_name = "Game Console Set",
 		icon = "IslandGoodsIcon/gift09",
 		goods_detail_type = 1,
 		time = "always",
@@ -2073,7 +2073,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10043] = {
-		desc = "闪烁着星辉的抽奖券。使用后，可在星彩奖中抽取各种珍贵奖励。 ",
+		desc = "Tickets that glitter like the stars. Can be used to draw prizes in the Stellar Prize Draw. When the current run of the Stellar Prize Draw ends, any Stellar Tickets left over will be automatically used to draw prizes or be converted to Gems.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2081,7 +2081,7 @@ pg.base.island_shop_goods = {
 		limited_num = 10,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "星彩券",
+		goods_name = "Stellar Tickets",
 		icon = "IslandGoodsIcon/170000",
 		goods_detail_type = 1,
 		time = "always",
@@ -2114,7 +2114,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10044] = {
-		desc = "一本内容基础的开发区生活指南。使用后，能少量增加角色的开发区生活经验。",
+		desc = "A book containing fundamental knowledge on island living. Used to slightly increase a character's Island EXP.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2122,7 +2122,7 @@ pg.base.island_shop_goods = {
 		limited_num = 50,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生活经验指南T1",
+		goods_name = "Island EXP Textbook T1",
 		icon = "IslandProps/item_100001",
 		goods_detail_type = 1,
 		time = "always",
@@ -2155,7 +2155,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10045] = {
-		desc = "一本内容详细的开发区生活指南。使用后，能中幅增加角色的开发区生活经验。",
+		desc = "A book containing detailed knowledge on island living. Used to moderately increase a character's Island EXP.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2163,7 +2163,7 @@ pg.base.island_shop_goods = {
 		limited_num = 15,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生活经验指南T2",
+		goods_name = "Island EXP Textbook T2",
 		icon = "IslandProps/item_100002",
 		goods_detail_type = 1,
 		time = "always",
@@ -2196,7 +2196,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10046] = {
-		desc = "一本内容丰富的开发区生活指南。使用后，能大幅增加角色的开发区生活经验。",
+		desc = "A book containing abundant knowledge on island living. Used to greatly increase a character's Island EXP.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2204,7 +2204,7 @@ pg.base.island_shop_goods = {
 		limited_num = 10,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生活经验指南T3",
+		goods_name = "Island EXP Textbook T3",
 		icon = "IslandProps/item_100003",
 		goods_detail_type = 1,
 		time = "always",
@@ -2237,7 +2237,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10047] = {
-		desc = "一本内容基础的生产技能指南。用于提升角色的开发区生产技能等级。",
+		desc = "A book containing fundamental knowledge on production techniques. Used to slightly increase a character's Production stats.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2245,7 +2245,7 @@ pg.base.island_shop_goods = {
 		limited_num = 10,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生产技能指南T1",
+		goods_name = "Production Textbook T1",
 		icon = "IslandProps/item_100101",
 		goods_detail_type = 1,
 		time = "always",
@@ -2278,7 +2278,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10048] = {
-		desc = "一本内容详细的生产技能指南。用于提升角色的开发区生产技能等级。",
+		desc = "A book containing detailed knowledge on production techniques. Used to moderately increase a character's Production stats.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2286,7 +2286,7 @@ pg.base.island_shop_goods = {
 		limited_num = 10,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生产技能指南T2",
+		goods_name = "Production Textbook T2",
 		icon = "IslandProps/item_100102",
 		goods_detail_type = 1,
 		time = "always",
@@ -2319,7 +2319,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10049] = {
-		desc = "一本内容丰富的生产技能指南。用于提升角色的开发区生产技能等级。",
+		desc = "A book containing abundant knowledge on production techniques. Used to greatly increase a character's Production stats.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2327,7 +2327,7 @@ pg.base.island_shop_goods = {
 		limited_num = 10,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "生产技能指南T3",
+		goods_name = "Production Textbook T3",
 		icon = "IslandProps/item_100103",
 		goods_detail_type = 1,
 		time = "always",
@@ -2360,7 +2360,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10050] = {
-		desc = "岛屿开发经验的结晶。角色突破所需的必要材料。",
+		desc = "A crystal of island development experience. Required to Limit Break characters.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2368,7 +2368,7 @@ pg.base.island_shop_goods = {
 		limited_num = 5,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "岛屿开发结晶",
+		goods_name = "Island Development Gem",
 		icon = "IslandProps/item_100201",
 		goods_detail_type = 1,
 		time = "always",
@@ -2401,7 +2401,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10051] = {
-		desc = "散发着油墨与时光的沉稳香气，一套值得置于案头反复品读的雅致礼物。",
+		desc = "A hardcover book that smells of ink and sports a classic vibe. It's worthy of going on your table and being reread time and time again. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2409,7 +2409,7 @@ pg.base.island_shop_goods = {
 		limited_num = 4,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "精装书",
+		goods_name = "Hardcover Book",
 		icon = "IslandGoodsIcon/gift02",
 		goods_detail_type = 1,
 		time = "always",
@@ -2442,7 +2442,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10052] = {
-		desc = "一束新鲜采摘的缤纷花礼，洋溢着的自然生机能带去一整日的美好。",
+		desc = "A gorgeous, fresh bouquet. Its flowers are brimming with color and life, and they promise joy for the days to come. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2450,7 +2450,7 @@ pg.base.island_shop_goods = {
 		limited_num = 4,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "鲜花束",
+		goods_name = "Bouquet",
 		icon = "IslandGoodsIcon/gift03",
 		goods_detail_type = 1,
 		time = "always",
@@ -2483,7 +2483,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10053] = {
-		desc = "利落的线条流转着金属的冷辉，这柄礼仪佩剑无声地诉说着秩序与庄严。",
+		desc = "This ceremonial sword with a flowing silhouette gives off the cold brilliance of steel. It silently speaks of order and majesty. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2491,7 +2491,7 @@ pg.base.island_shop_goods = {
 		limited_num = 4,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "仪式剑",
+		goods_name = "Ceremonial Sword",
 		icon = "IslandGoodsIcon/gift04",
 		goods_detail_type = 1,
 		time = "always",
@@ -2524,7 +2524,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10054] = {
-		desc = "一个蓬松柔软的可爱玩偶。拥抱它，就能收获一份毛茸茸的温暖。",
+		desc = "An adorable stuffed animal that's soft to the touch. Give it a hug, and its fluffy warmth and innocent smile will soften your heart. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2532,7 +2532,7 @@ pg.base.island_shop_goods = {
 		limited_num = 4,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "绒绒玩偶",
+		goods_name = "Fluffy Stuffed Animal",
 		icon = "IslandGoodsIcon/gift05",
 		goods_detail_type = 1,
 		time = "always",
@@ -2565,7 +2565,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10055] = {
-		desc = "时光在此沉淀，化作一件雅致的摆设，无声地为空间增添一抹宁静隽永的韵味。",
+		desc = "The sands of time have poured over this ornament, turning it into an elegant antique. Quietly, it lends an air of tranquility to a room. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2573,7 +2573,7 @@ pg.base.island_shop_goods = {
 		limited_num = 4,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "古董摆件",
+		goods_name = "Antique Ornament",
 		icon = "IslandGoodsIcon/gift06",
 		goods_detail_type = 1,
 		time = "always",
@@ -2606,7 +2606,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10056] = {
-		desc = "闪耀却不张扬，以细腻工艺承载心意，点亮日常的每一个微小瞬间。",
+		desc = "An accessory that, although understated, glimmers with exceptional craftsmanship. It adds just a little light to every moment of one's life. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2614,7 +2614,7 @@ pg.base.island_shop_goods = {
 		limited_num = 4,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "精致首饰",
+		goods_name = "Exquisite Accessory",
 		icon = "IslandGoodsIcon/gift07",
 		goods_detail_type = 1,
 		time = "always",
@@ -2647,7 +2647,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10057] = {
-		desc = "简约瓶身内蕴藏着清新怡人的气息，别致的香氛是品味与格调的优雅注解。",
+		desc = "A wonderfully pure aroma hides inside this modest flask. Just one spray of this fragrance brings out tones of refined class. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2655,7 +2655,7 @@ pg.base.island_shop_goods = {
 		limited_num = 4,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "高档香水",
+		goods_name = "Premium Perfume",
 		icon = "IslandGoodsIcon/gift08",
 		goods_detail_type = 1,
 		time = "always",
@@ -2688,7 +2688,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[10058] = {
-		desc = "一套完备的休闲娱乐组合。包含了享受简单乐趣所需的大部分内容，是一份体贴的闲暇赠礼。",
+		desc = "An entertainment system that will fill up every moment of your spare time. This thoughtful gift contains just about all the content you need for a fun play session. Can be given to raise Affinity by 1 with shipgirls who like this gift.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2696,7 +2696,7 @@ pg.base.island_shop_goods = {
 		limited_num = 4,
 		limited_show = 1,
 		unlock = "",
-		goods_name = "游戏机套组",
+		goods_name = "Game Console Set",
 		icon = "IslandGoodsIcon/gift09",
 		goods_detail_type = 1,
 		time = "always",
@@ -2729,15 +2729,15 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[4600001] = {
-		desc = "购买可获得角色“棉花糖云”漂浮物装扮",
+		desc = "Purchase to receive Cotton Candy Clouds, a floating character outfit.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
-		have_show = 1,
+		have_show = 0,
 		limited_num = 1,
 		limited_show = 0,
 		unlock = "",
-		goods_name = "棉花糖云",
+		goods_name = "Cotton Candy Clouds",
 		icon = "IslandDressIcon/dress_2020001",
 		goods_detail_type = 2,
 		time = "always",
@@ -2759,7 +2759,7 @@ pg.base.island_shop_goods = {
 		resource_consume = {
 			1,
 			14,
-			300
+			200
 		},
 		items = {
 			{
@@ -2770,15 +2770,15 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[4600002] = {
-		desc = "购买可获得角色“风见落樱”脚印装扮",
+		desc = "Purchase to receive Trail of Dancing Cherry Blossoms, a character outfit that goes in the trail slot.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
-		have_show = 1,
+		have_show = 0,
 		limited_num = 1,
 		limited_show = 0,
 		unlock = "",
-		goods_name = "风见落樱",
+		goods_name = "Trail of Dancing Cherry Blossoms",
 		icon = "IslandDressIcon/dress_2030004",
 		goods_detail_type = 2,
 		time = "always",
@@ -2800,7 +2800,7 @@ pg.base.island_shop_goods = {
 		resource_consume = {
 			1,
 			14,
-			300
+			200
 		},
 		items = {
 			{
@@ -2811,15 +2811,15 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[4600003] = {
-		desc = "购买可获得角色“火箭造型包”背饰装扮",
+		desc = "Purchase to receive Rocket Pack, a character outfit that goes on the back.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
-		have_show = 1,
+		have_show = 0,
 		limited_num = 1,
 		limited_show = 0,
 		unlock = "",
-		goods_name = "火箭造型包",
+		goods_name = "Rocket Pack",
 		icon = "IslandDressIcon/dress_2010001",
 		goods_detail_type = 2,
 		time = "always",
@@ -2841,7 +2841,7 @@ pg.base.island_shop_goods = {
 		resource_consume = {
 			1,
 			14,
-			300
+			200
 		},
 		items = {
 			{
@@ -2852,7 +2852,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[471070301] = {
-		desc = "购买可获得萨拉托加“纯真游学日”皮肤装扮",
+		desc = "Purchase to receive Canvas Day, an island costume for Saratoga.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2860,7 +2860,7 @@ pg.base.island_shop_goods = {
 		limited_num = 1,
 		limited_show = 0,
 		unlock = "",
-		goods_name = "纯真游学日",
+		goods_name = "Canvas Day",
 		icon = "IslandGoodsIcon/skin_1070301",
 		goods_detail_type = 4,
 		time = "always",
@@ -2893,7 +2893,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[473120101] = {
-		desc = "购买可获得茗“空铃夜褶”皮肤装扮",
+		desc = "Purchase to receive Night of the Empty Bell, an island costume for Akashi.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2901,7 +2901,7 @@ pg.base.island_shop_goods = {
 		limited_num = 1,
 		limited_show = 0,
 		unlock = "",
-		goods_name = "空铃夜褶",
+		goods_name = "Night of the Empty Bell ",
 		icon = "IslandGoodsIcon/skin_3120101",
 		goods_detail_type = 4,
 		time = "always",
@@ -2934,7 +2934,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[471051701] = {
-		desc = "购买可获得花园“轻跃日常”皮肤装扮",
+		desc = "Purchase to receive Daily Steps, an island costume for New Jersey.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2942,7 +2942,7 @@ pg.base.island_shop_goods = {
 		limited_num = 1,
 		limited_show = 0,
 		unlock = "",
-		goods_name = "轻跃日常",
+		goods_name = "Daily Steps",
 		icon = "IslandGoodsIcon/skin_1051701",
 		goods_detail_type = 4,
 		time = "always",
@@ -2975,7 +2975,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[411000] = {
-		desc = "购买可获得小麦种子",
+		desc = "Purchase to receive Wheat Seeds.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -2983,7 +2983,7 @@ pg.base.island_shop_goods = {
 		limited_num = 0,
 		limited_show = 0,
 		unlock = "",
-		goods_name = "小麦种子",
+		goods_name = "Wheat Seeds",
 		icon = "IslandProps/item_1000",
 		goods_detail_type = 1,
 		time = "always",
@@ -3022,8 +3022,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得玉米种子",
-		goods_name = "玉米种子",
+		desc = "Purchase to receive Corn Seeds.",
+		goods_name = "Corn Seeds",
 		icon = "IslandProps/item_1001",
 		goods_detail_type = 1,
 		time = "always",
@@ -3065,8 +3065,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得旱稻种子",
-		goods_name = "旱稻种子",
+		desc = "Purchase to receive Upland Rice Seeds",
+		goods_name = "Upland Rice Seeds",
 		icon = "IslandProps/item_1002",
 		goods_detail_type = 1,
 		time = "always",
@@ -3108,8 +3108,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得白菜种子",
-		goods_name = "白菜种子",
+		desc = "Purchase to receive Napa Cabbage Seeds.",
+		goods_name = "Napa Cabbage Seeds",
 		icon = "IslandProps/item_1003",
 		goods_detail_type = 1,
 		time = "always",
@@ -3151,8 +3151,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得胡萝卜种子",
-		goods_name = "胡萝卜种子",
+		desc = "Purchase to receive Carrot Seeds.",
+		goods_name = "Carrot Seeds",
 		icon = "IslandProps/item_1004",
 		goods_detail_type = 1,
 		time = "always",
@@ -3194,8 +3194,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得土豆种子",
-		goods_name = "土豆种子",
+		desc = "Purchase to receive Potato Seeds.",
+		goods_name = "Potato Seeds",
 		icon = "IslandProps/item_1005",
 		goods_detail_type = 1,
 		time = "always",
@@ -3237,8 +3237,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得大豆种子",
-		goods_name = "大豆种子",
+		desc = "Purchase to receive Soy Bean Seeds.",
+		goods_name = "Soy Bean Seeds",
 		icon = "IslandProps/item_1006",
 		goods_detail_type = 1,
 		time = "always",
@@ -3280,8 +3280,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得洋葱种子",
-		goods_name = "洋葱种子",
+		desc = "Purchase to receive Onion Seeds.",
+		goods_name = "Onion Seeds",
 		icon = "IslandProps/item_1007",
 		goods_detail_type = 1,
 		time = "always",
@@ -3323,8 +3323,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得牧草种子",
-		goods_name = "牧草种子",
+		desc = "Purchase to receive Grass Seeds.",
+		goods_name = "Grass Seeds",
 		icon = "IslandProps/item_1008",
 		goods_detail_type = 1,
 		time = "always",
@@ -3366,8 +3366,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得咖啡树种",
-		goods_name = "咖啡树种",
+		desc = "Purchase to receive Coffee Tree Seeds.",
+		goods_name = "Coffee Tree Seeds",
 		icon = "IslandProps/item_1009",
 		goods_detail_type = 1,
 		time = "always",
@@ -3403,14 +3403,15 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[411010] = {
-		pay_id = 0,
+		desc = "Purchase to receive Flax Seeds.",
 		goods_have = 0,
 		items_model = "",
+		pay_id = 0,
 		have_show = 0,
-		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得亚麻种子",
-		goods_name = "亚麻种子",
+		limited_show = 0,
+		unlock = "",
+		goods_name = "Flax Seeds",
 		icon = "IslandProps/item_1010",
 		goods_detail_type = 1,
 		time = "always",
@@ -3440,9 +3441,6 @@ pg.base.island_shop_goods = {
 				1010,
 				1
 			}
-		},
-		unlock = {
-			3502001
 		}
 	},
 	[411011] = {
@@ -3452,8 +3450,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得草莓种子",
-		goods_name = "草莓种子",
+		desc = "Purchase to receive Strawberry Seeds.",
+		goods_name = "Strawberry Seeds",
 		icon = "IslandProps/item_1011",
 		goods_detail_type = 1,
 		time = "always",
@@ -3495,8 +3493,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得棉花种子",
-		goods_name = "棉花种子",
+		desc = "Purchase to receive Cotton Seeds.",
+		goods_name = "Cotton Seeds",
 		icon = "IslandProps/item_1012",
 		goods_detail_type = 1,
 		time = "always",
@@ -3538,8 +3536,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得茶树种子",
-		goods_name = "茶树种子",
+		desc = "Purchase to receive Tea Tree Seeds.",
+		goods_name = "Tea Tree Seeds",
 		icon = "IslandProps/item_1014",
 		goods_detail_type = 1,
 		time = "always",
@@ -3581,8 +3579,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得薰衣草种子",
-		goods_name = "薰衣草种子",
+		desc = "Purchase to receive Lavender Seeds.",
+		goods_name = "Lavender Seeds",
 		icon = "IslandProps/item_1015",
 		goods_detail_type = 1,
 		time = "always",
@@ -3624,8 +3622,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得苹果树种",
-		goods_name = "苹果树种",
+		desc = "Purchase to receive Apple Tree Seeds.",
+		goods_name = "Apple Tree Seeds",
 		icon = "IslandProps/item_1016",
 		goods_detail_type = 1,
 		time = "always",
@@ -3667,8 +3665,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得柑橘树种",
-		goods_name = "柑橘树种",
+		desc = "Purchase to receive Citrus Fruit Tree Seeds.",
+		goods_name = "Citrus Fruit Tree Seeds",
 		icon = "IslandProps/item_1017",
 		goods_detail_type = 1,
 		time = "always",
@@ -3710,8 +3708,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得香蕉树种",
-		goods_name = "香蕉树种",
+		desc = "Purchase to receive Banana Tree Seeds.",
+		goods_name = "Banana Tree Seed",
 		icon = "IslandProps/item_1018",
 		goods_detail_type = 1,
 		time = "always",
@@ -3753,8 +3751,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得芒果树种",
-		goods_name = "芒果树种",
+		desc = "Purchase to receive Mango tree Seeds.",
+		goods_name = "Mango Tree Seeds",
 		icon = "IslandProps/item_1019",
 		goods_detail_type = 1,
 		time = "always",
@@ -3796,8 +3794,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得柠檬树种",
-		goods_name = "柠檬树种",
+		desc = "Purchase to receive Lemon Tree Seeds.",
+		goods_name = "Lemon Tree Seed",
 		icon = "IslandProps/item_1020",
 		goods_detail_type = 1,
 		time = "always",
@@ -3839,8 +3837,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得牛油果树种",
-		goods_name = "牛油果树种",
+		desc = "Purchase to receive Avocado Tree Seeds.",
+		goods_name = "Avocado Tree Seeds",
 		icon = "IslandProps/item_1021",
 		goods_detail_type = 1,
 		time = "always",
@@ -3882,8 +3880,8 @@ pg.base.island_shop_goods = {
 		have_show = 0,
 		limited_show = 0,
 		limited_num = 0,
-		desc = "购买可获得橡胶树种",
-		goods_name = "橡胶树种",
+		desc = "Purchase to receive Rubber Tree Seeds.",
+		goods_name = "Rubber Tree Seeds",
 		icon = "IslandProps/item_1022",
 		goods_detail_type = 1,
 		time = "always",
@@ -3919,7 +3917,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[411023] = {
-		desc = "购买可获得秋月梨树种",
+		desc = "Purchase to receive Yoizuki Pear Seeds.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -3927,7 +3925,7 @@ pg.base.island_shop_goods = {
 		limited_num = 0,
 		limited_show = 0,
 		unlock = "",
-		goods_name = "秋月梨树种",
+		goods_name = "Yoizuki Pear Seeds",
 		icon = "IslandProps/item_4006",
 		goods_detail_type = 1,
 		remian_show = 0,
@@ -3985,7 +3983,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[411024] = {
-		desc = "购买可获得柿子树种",
+		desc = "Purchase to receive Kaki Persimmon Seeds.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -3993,7 +3991,7 @@ pg.base.island_shop_goods = {
 		limited_num = 0,
 		limited_show = 0,
 		unlock = "",
-		goods_name = "柿子树种",
+		goods_name = "Kaki Persimmon Seeds",
 		icon = "IslandProps/item_4008",
 		goods_detail_type = 1,
 		remian_show = 0,
@@ -4051,7 +4049,7 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[412000] = {
-		desc = "购买可获得装扮染色盘",
+		desc = "Purchase to receive Outfit Colors.",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
@@ -4059,7 +4057,7 @@ pg.base.island_shop_goods = {
 		limited_num = 0,
 		limited_show = 0,
 		unlock = "",
-		goods_name = "装扮染色盘",
+		goods_name = "Outfit Colors",
 		icon = "IslandGoodsIcon/3",
 		goods_detail_type = 1,
 		time = "always",
@@ -4092,18 +4090,18 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[5010001] = {
-		desc = "使用后，能加速1分钟的时间，让发展快人一步。",
+		desc = "Can be used to shorten an active task by 1 minute. Make tomorrow's developments into today's!",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
 		have_show = 0,
 		limited_num = 100,
-		limited_show = 0,
+		limited_show = 1,
 		unlock = "",
-		goods_name = "1分钟加速券（赛季）",
+		goods_name = "1 Min. Express Ticket (Seasonal)",
 		icon = "IslandGoodsIcon/item_speedup_ticket1",
 		goods_detail_type = 1,
-		remian_show = 0,
+		remian_show = 1,
 		pt_award = 0,
 		discount = 0,
 		groups_detail_type = "",
@@ -4158,18 +4156,18 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[5020001] = {
-		desc = "使用后，能加速10分钟的时间，让发展快人一步。",
+		desc = "Can be used to shorten an active task by 10 minutes. Make tomorrow's developments into today's!",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
 		have_show = 0,
 		limited_num = 30,
-		limited_show = 0,
+		limited_show = 1,
 		unlock = "",
-		goods_name = "10分钟加速券（赛季）",
+		goods_name = "10 Min. Express Ticket (Seasonal)",
 		icon = "IslandGoodsIcon/item_speedup_ticket2",
 		goods_detail_type = 1,
-		remian_show = 0,
+		remian_show = 1,
 		pt_award = 0,
 		discount = 0,
 		groups_detail_type = "",
@@ -4224,18 +4222,18 @@ pg.base.island_shop_goods = {
 		}
 	},
 	[5030001] = {
-		desc = "使用后，能加速60分钟的时间，让发展快人一步。",
+		desc = "Can be used to shorten an active task by 60 minutes. Make tomorrow's developments into today's!",
 		goods_have = 0,
 		items_model = "",
 		pay_id = 0,
 		have_show = 0,
 		limited_num = 10,
-		limited_show = 0,
+		limited_show = 1,
 		unlock = "",
-		goods_name = "60分钟加速券（赛季）",
+		goods_name = "60 Min. Express Ticket (Seasonal)",
 		icon = "IslandGoodsIcon/item_speedup_ticket3",
 		goods_detail_type = 1,
-		remian_show = 0,
+		remian_show = 1,
 		pt_award = 0,
 		discount = 0,
 		groups_detail_type = "",

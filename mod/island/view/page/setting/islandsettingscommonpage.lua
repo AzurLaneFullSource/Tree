@@ -25,7 +25,8 @@ end
 
 function var0_0.GetPanels(arg0_3)
 	return {
-		IslandSettingsCardShowPanel
+		IslandSettingsCardShowPanel,
+		IslandSettingsEscapePanel
 	}
 end
 

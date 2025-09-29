@@ -120,7 +120,7 @@ function var0_0.addTranDrop(arg0_8, arg1_8)
 	for iter4_8, iter5_8 in ipairs(arg0_8) do
 		local var3_8, var4_8 = iter5_8:DropTrans(var1_8, arg1_8)
 
-		if var3_8 then
+		if var3_8 and var3_8.type ~= DROP_TYPE_TIMESTAMP then
 			table.insert(var2_8, var3_8)
 			pg.m02:sendNotification(GAME.ADD_ITEM, var3_8)
 		end

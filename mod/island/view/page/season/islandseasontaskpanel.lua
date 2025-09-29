@@ -45,7 +45,9 @@ function var0_0.UpdateTask(arg0_6, arg1_6, arg2_6)
 
 	UIItemList.StaticAlign(arg2_6:Find("awards"), arg2_6:Find("awards/tpl"), #var3_6, function(arg0_7, arg1_7, arg2_7)
 		if arg0_7 == UIItemList.EventUpdate then
-			updateCustomDrop(arg2_7, var3_6[arg1_7 + 1])
+			updateCustomDrop(arg2_7, var3_6[arg1_7 + 1], {
+				style = "island"
+			})
 		end
 	end)
 
@@ -99,6 +101,10 @@ function var0_0.Flush(arg0_10)
 	end)
 
 	setActive(arg0_10.getAllBtn, #arg0_10.canSubmitIds > 0)
+end
+
+function var0_0.OnDestroy(arg0_15)
+	ClearLScrollrect(arg0_15.scrollCom)
 end
 
 return var0_0

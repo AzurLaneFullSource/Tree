@@ -81,9 +81,7 @@ end
 
 function var0_0.didEnter(arg0_9)
 	arg0_9:BlurPanel(arg0_9._tf)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_9.rtBlurPanel, {
-		blurLevelCamera = true
-	})
+	arg0_9:BlurPanel(arg0_9.rtBlurPanel)
 	onButton(arg0_9, arg0_9.btnBack, function()
 		arg0_9:closeView()
 	end, SFX_CANCEL)
@@ -100,7 +98,7 @@ function var0_0.onBackPressed(arg0_13)
 end
 
 function var0_0.willExit(arg0_14)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_14.rtBlurPanel, arg0_14._tf)
+	arg0_14:UnOverlayPanel(arg0_14.rtBlurPanel, arg0_14._tf)
 	arg0_14:UnOverlayPanel(arg0_14._tf)
 	arg0_14:DisposeTasks()
 	arg0_14.taskProxy:RemoveListener(WorldTaskProxy.EventUpdateDailyTaskIds, arg0_14.onUpdateTasks)

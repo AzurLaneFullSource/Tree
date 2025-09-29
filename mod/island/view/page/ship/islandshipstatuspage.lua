@@ -41,7 +41,6 @@ function var0_0.OnInit(arg0_5)
 		end
 
 		seriesAsync(var0_6, function()
-			print("??????????????")
 			arg0_5:emit(IslandMediator.ON_GIVE_GIFT, arg0_5.selectedId, 1, arg0_5.shipId)
 		end)
 	end, SFX_PANEL)

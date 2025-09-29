@@ -26,38 +26,41 @@ function var0_0.execute(arg0_1, arg1_1)
 				var6_1:GetTechnologyAgency():AddFinishCntByFormulatId(var1_2)
 			end
 
+			local var2_2 = var0_2:GetShipAddExpData(var3_1)
+
 			var0_2:UpdateDeleationRewardDataBySlotId(var3_1, nil)
 
 			if var4_1 == 1 then
-				local var2_2 = var0_2:GetDelegationSlotData(var3_1):GetSlotRoleData()
+				local var3_2 = var0_2:GetDelegationSlotData(var3_1):GetSlotRoleData()
 
-				if var2_2 then
-					var2_2:ResetGetTimes(arg0_2.get_times)
+				if var3_2 then
+					var3_2:ResetGetTimes(arg0_2.get_times)
 				end
 			end
 
 			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandGetDelegationAward(var9_1 and 1 or 0, arg0_2.drop_list))
 
-			local var3_2 = {}
+			local var4_2 = {}
 
 			for iter0_2, iter1_2 in ipairs(arg0_2.drop_list) do
-				table.insert(var3_2, iter1_2)
+				table.insert(var4_2, iter1_2)
 			end
 
-			table.insert(var3_2, {
+			table.insert(var4_2, {
 				id = 0,
 				type = VIRTUAL_DROP_TYPE_ISLAND_SEASON_PT,
 				count = arg0_2.pt_award or 0
 			})
 
-			local var4_2 = IslandDropHelper.AddItems({
-				drop_list = var3_2
+			local var5_2 = IslandDropHelper.AddItems({
+				drop_list = var4_2
 			})
 
 			arg0_1:sendNotification(GAME.ISLAND_GET_DELEGATION_AWARD_DONE, {
 				slotId = var3_1,
-				dropData = var4_2,
-				callback = var5_1
+				dropData = var5_2,
+				callback = var5_1,
+				addShipExpData = var2_2
 			})
 
 			if var4_1 == 2 then

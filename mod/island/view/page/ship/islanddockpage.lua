@@ -20,6 +20,8 @@ function var0_0.OnLoaded(arg0_2)
 	function arg0_2.shipRect.onUpdateItem(arg0_4, arg1_4)
 		arg0_2:OnUpdateItem(arg0_4, arg1_4)
 	end
+
+	setText(arg0_2._tf:Find("frame/title/Text"), i18n("island_chara_list"))
 end
 
 function var0_0.AddListeners(arg0_5)

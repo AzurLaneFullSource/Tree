@@ -74,6 +74,8 @@ end
 
 function var1_0.CreateRefreshHandler(arg0_5)
 	if not arg0_5.luHandle then
+		arg0_5:Log("CreateRefreshHandler")
+
 		arg0_5.luHandle = LateUpdateBeat:CreateListener(arg0_5.Refresh, arg0_5)
 
 		LateUpdateBeat:AddListener(arg0_5.luHandle)
@@ -101,22 +103,24 @@ function var1_0.Add2Overlay(arg0_8, arg1_8, arg2_8)
 	arg2_8.groupName = arg2_8.groupName or LayerWeightConst.GROUP_TOP
 	arg2_8.groupDelta = arg2_8.groupDelta or 0
 
-	local var0_8 = arg0_8.lvCamera.enabled and {
-		var0_0.UIMgr.CameraLevel
-	} or {
-		var0_0.UIMgr.CameraUI
-	}
+	if not arg2_8.blurCamList then
+		if arg2_8.globalBlur or #arg2_8.pbList > 0 then
+			arg2_8.blurCamList = {
+				var0_0.UIMgr.CameraLevel,
+				var0_0.UIMgr.CameraUI
+			}
+		else
+			arg2_8.blurCamList = {}
+		end
+	end
 
-	arg2_8.blurCamList = arg2_8.blurCamList or var0_8
+	local var0_8 = arg2_8.type
 
-	local var1_8 = arg2_8.type
-
-	assert(var1_8 and LayerWeightConst.TYPE_DIC[var1_8])
+	assert(var0_8 and LayerWeightConst.TYPE_DIC[var0_8])
 	arg0_8:Log(string.format("ui:%s 加入了ui层级管理\n%s", arg1_8.name, PrintTable(arg2_8)))
 
-	local var2_8 = arg0_8:DelList(arg1_8)
+	local var1_8 = arg0_8:DelList(arg1_8)
 
-	arg0_8:ClearBlurData(var2_8)
 	table.insert(arg0_8.storeUIs, arg2_8)
 	arg0_8:CreateRefreshHandler()
 
@@ -138,7 +142,6 @@ function var1_0.DelFromOverlay(arg0_9, arg1_9, arg2_9)
 		end
 
 		arg0_9:CheckRecycleAdaptObj(var1_9, arg2_9)
-		arg0_9:ClearBlurData(var0_9)
 	end
 
 	arg0_9:CreateRefreshHandler()
@@ -160,224 +163,195 @@ function var1_0.DelList(arg0_10, arg1_10)
 	return var0_10
 end
 
-function var1_0.ClearBlurData(arg0_11, arg1_11)
-	if arg1_11 == nil then
-		return
-	end
-
-	if arg1_11.pbList ~= nil then
-		var0_0.UIMgr.GetInstance():RevertPBMaterial(arg1_11.pbList)
-	end
-
-	local var0_11 = arg1_11.lockGlobalBlur
-
-	if var0_11 then
-		local var1_11 = arg1_11.blurCamList
-
-		for iter0_11, iter1_11 in ipairs({
-			var0_0.UIMgr.CameraUI,
-			var0_0.UIMgr.CameraLevel
-		}) do
-			if table.contains(var1_11, iter1_11) then
-				var0_0.UIMgr.GetInstance():UnblurCamera(iter1_11, var0_11)
-			end
-		end
-	end
-end
-
-function var1_0.SortStoreUIs(arg0_12)
-	arg0_12:Log("-----------------------------------------")
-	mergeSort(arg0_12.storeUIs, CompareFuncs({
-		function(arg0_13)
-			return arg0_12.groupWeightDic[arg0_13.groupName]
+function var1_0.SortStoreUIs(arg0_11)
+	arg0_11:Log("-----------------------------------------")
+	mergeSort(arg0_11.storeUIs, CompareFuncs({
+		function(arg0_12)
+			return arg0_11.groupWeightDic[arg0_12.groupName]
 		end,
-		function(arg0_14)
-			return arg0_14.groupDelta
+		function(arg0_13)
+			return arg0_13.groupDelta
 		end
 	}, true))
-	arg0_12:Log(PrintTable(arg0_12.storeUIs))
-	arg0_12:Log("-----------------------------------------")
+	arg0_11:Log(PrintTable(arg0_11.storeUIs))
+	arg0_11:Log("-----------------------------------------")
 end
 
-function var1_0.LayerSortHandler(arg0_15)
-	arg0_15:SortStoreUIs()
+function var1_0.LayerSortHandler(arg0_14)
+	arg0_14:SortStoreUIs()
 
-	local var0_15
-	local var1_15
-	local var2_15 = {}
-	local var3_15 = false
-	local var4_15 = false
-	local var5_15 = false
-	local var6_15 = {}
+	local var0_14
+	local var1_14
+	local var2_14 = {}
+	local var3_14 = false
+	local var4_14 = false
+	local var5_14 = false
+	local var6_14 = {}
 
-	for iter0_15 = #arg0_15.storeUIs, 1, -1 do
-		local var7_15 = arg0_15.storeUIs[iter0_15]
-		local var8_15 = var7_15.ui
-		local var9_15 = var7_15.parent
-		local var10_15 = var7_15.type
-		local var11_15 = var7_15.overlayType
-		local var12_15 = var7_15.groupName
-		local var13_15 = var7_15.globalBlur
-		local var14_15 = var7_15.lockGlobalBlur
-		local var15_15 = var7_15.staticBlur
-		local var16_15 = var7_15.blurCamList
-		local var17_15 = var7_15.pbList
-		local var18_15 = var7_15.stopTop
+	for iter0_14 = #arg0_14.storeUIs, 1, -1 do
+		local var7_14 = arg0_14.storeUIs[iter0_14]
+		local var8_14 = var7_14.ui
+		local var9_14 = var7_14.parent
+		local var10_14 = var7_14.type
+		local var11_14 = var7_14.overlayType
+		local var12_14 = var7_14.groupName
+		local var13_14 = var7_14.globalBlur
+		local var14_14 = var7_14.lockGlobalBlur
+		local var15_14 = var7_14.staticBlur
+		local var16_14 = var7_14.blurCamList
+		local var17_14 = var7_14.pbList
+		local var18_14 = var7_14.stopTop
 
-		var1_15 = var1_15 or var12_15
+		var1_14 = var1_14 or var12_14
 
-		if not var0_15 then
-			if var12_15 ~= var1_15 then
-				var0_15 = iter0_15 + 1
-			elseif var13_15 or var18_15 or var1_15 == LayerWeightConst.GROUP_TOP then
-				var0_15 = iter0_15
+		if not var0_14 then
+			if var12_14 ~= var1_14 then
+				var0_14 = iter0_14 + 1
+			elseif var13_14 or var18_14 or var1_14 == LayerWeightConst.GROUP_TOP then
+				var0_14 = iter0_14
 			end
 		end
 
-		local var19_15 = not var0_15 or var0_15 <= iter0_15
+		local var19_14 = not var0_14 or var0_14 <= iter0_14
 
-		if var19_15 then
-			var3_15 = var3_15 or var13_15
-			var4_15 = var4_15 or var14_15
-			var5_15 = var5_15 or var15_15
+		var4_14 = var4_14 or var14_14
 
-			table.insertto(var6_15, var16_15)
-		end
+		if var19_14 then
+			var3_14 = var3_14 or var13_14
+			var5_14 = var5_14 or var15_14
 
-		if #var17_15 > 0 then
-			if var19_15 then
-				table.insertto(var2_15, var17_15)
-			else
-				var0_0.UIMgr.GetInstance():RevertPBMaterial(var17_15)
+			table.insertto(var6_14, var16_14)
+
+			if #var17_14 > 0 then
+				table.insertto(var2_14, var17_14)
 			end
 		end
 
-		local var20_15 = var8_15
+		local var20_14 = var8_14
 
-		if var11_15 == LayerWeightConst.OVERLAY_UI_ADAPT then
-			var20_15 = arg0_15:GetAdaptObjFromUI(var8_15) or arg0_15:GetAdaptObj(var8_15)
+		if var11_14 == LayerWeightConst.OVERLAY_UI_ADAPT then
+			var20_14 = arg0_14:GetAdaptObjFromUI(var8_14) or arg0_14:GetAdaptObj(var8_14)
 		end
 
-		local var21_15 = switch(var10_15, {
+		local var21_14 = switch(var10_14, {
 			[LayerWeightConst.UI_TYPE_SUB] = function()
-				if var19_15 then
-					if var9_15 then
-						arg0_15:SetSpecificParent(var20_15, var9_15)
+				if var19_14 then
+					if var9_14 then
+						arg0_14:SetSpecificParent(var20_14, var9_14)
 					else
-						return arg0_15.OverlayMain
+						return arg0_14.OverlayMain
 					end
 				else
-					return arg0_15.lvCamera.enabled and arg0_15.lvOrigin or arg0_15.uiOrigin
+					return arg0_14.lvCamera.enabled and arg0_14.lvOrigin or arg0_14.uiOrigin
 				end
 			end,
 			[LayerWeightConst.UI_TYPE_SYSTEM] = function()
-				return arg0_15.uiMain
+				return arg0_14.uiMain
 			end
 		}, function()
 			assert(false)
 		end)
 
-		if var21_15 then
-			arg0_15:SetSpecificParent(var20_15, var21_15, 0)
+		if var21_14 then
+			arg0_14:SetSpecificParent(var20_14, var21_14, 0)
 		end
 	end
 
-	if not var3_15 and #var2_15 > 0 then
-		var0_0.UIMgr.GetInstance():PartialBlurTfs(var2_15)
+	if not var4_14 then
+		var0_0.UIMgr.GetInstance():SetCameraBlurLock(var4_14)
+	end
+
+	if not var3_14 and #var2_14 > 0 then
+		var0_0.UIMgr.GetInstance():PartialBlurTfs(var2_14)
 	else
 		var0_0.UIMgr.GetInstance():ShutdownPartialBlur()
 	end
 
-	if var3_15 then
-		for iter1_15, iter2_15 in ipairs({
-			var0_0.UIMgr.CameraUI,
-			var0_0.UIMgr.CameraLevel
-		}) do
-			if table.contains(var6_15, iter2_15) then
-				var0_0.UIMgr.GetInstance():BlurCamera(iter2_15, var5_15, var4_15)
-			else
-				var0_0.UIMgr.GetInstance():UnblurCamera(iter2_15)
-			end
-		end
-	else
-		for iter3_15, iter4_15 in ipairs({
-			var0_0.UIMgr.CameraUI,
-			var0_0.UIMgr.CameraLevel
-		}) do
-			var0_0.UIMgr.GetInstance():UnblurCamera(iter4_15)
-		end
-	end
-end
-
-function var1_0.SetSpecificParent(arg0_19, arg1_19, arg2_19, arg3_19)
-	SetParent(arg1_19, arg2_19, false)
-
-	if arg3_19 then
-		arg1_19:SetSiblingIndex(arg3_19)
-	end
-end
-
-function var1_0.GetAdaptObj(arg0_20, arg1_20)
-	local var0_20 = arg0_20:GetAdatpObjName(arg1_20)
-	local var1_20
-
-	if #arg0_20.adaptPool > 0 then
-		var1_20 = table.remove(arg0_20.adaptPool, #arg0_20.adaptPool)
-		var1_20.name = var0_20
-	else
-		var1_20 = GameObject.New(var0_20, typeof(RectTransform), typeof(NotchAdapt)).transform
-	end
-
-	var1_20.anchorMin = Vector2.zero
-	var1_20.anchorMax = Vector2.one
-	var1_20.pivot = Vector2(0.5, 0.5)
-	var1_20.offsetMax = Vector2.zero
-	var1_20.offsetMin = Vector2.zero
-	var1_20.localPosition = Vector3.zero
-
-	SetActive(var1_20, true)
-	SetParent(arg1_20, var1_20, false)
-
-	return var1_20
-end
-
-function var1_0.CheckRecycleAdaptObj(arg0_21, arg1_21, arg2_21)
-	local var0_21 = arg0_21:GetAdaptObjFromUI(arg1_21)
-
-	if arg2_21 ~= nil then
-		SetParent(arg1_21, arg2_21, false)
-	end
-
-	if var0_21 ~= nil then
-		if #arg0_21.adaptPool < 4 then
-			table.insert(arg0_21.adaptPool, var0_21)
-			SetParent(var0_21, arg0_21.OverlayAdapt, false)
-
-			var0_21.name = var1_0.RECYCLE_ADAPT_TAG
-
-			SetActive(var0_21, false)
+	for iter1_14, iter2_14 in ipairs({
+		var0_0.UIMgr.CameraUI,
+		var0_0.UIMgr.CameraLevel
+	}) do
+		if var3_14 and table.contains(var6_14, iter2_14) then
+			var0_0.UIMgr.GetInstance():BlurCamera(iter2_14, var5_14)
 		else
-			Destroy(var0_21)
+			var0_0.UIMgr.GetInstance():UnblurCamera(iter2_14)
+		end
+	end
+
+	if var4_14 then
+		var0_0.UIMgr.GetInstance():SetCameraBlurLock(var4_14)
+	end
+end
+
+function var1_0.SetSpecificParent(arg0_18, arg1_18, arg2_18, arg3_18)
+	SetParent(arg1_18, arg2_18, false)
+
+	if arg3_18 then
+		arg1_18:SetSiblingIndex(arg3_18)
+	end
+end
+
+function var1_0.GetAdaptObj(arg0_19, arg1_19)
+	local var0_19 = arg0_19:GetAdatpObjName(arg1_19)
+	local var1_19
+
+	if #arg0_19.adaptPool > 0 then
+		var1_19 = table.remove(arg0_19.adaptPool, #arg0_19.adaptPool)
+		var1_19.name = var0_19
+	else
+		var1_19 = GameObject.New(var0_19, typeof(RectTransform), typeof(NotchAdapt)).transform
+	end
+
+	var1_19.anchorMin = Vector2.zero
+	var1_19.anchorMax = Vector2.one
+	var1_19.pivot = Vector2(0.5, 0.5)
+	var1_19.offsetMax = Vector2.zero
+	var1_19.offsetMin = Vector2.zero
+	var1_19.localPosition = Vector3.zero
+
+	SetActive(var1_19, true)
+	SetParent(arg1_19, var1_19, false)
+
+	return var1_19
+end
+
+function var1_0.CheckRecycleAdaptObj(arg0_20, arg1_20, arg2_20)
+	local var0_20 = arg0_20:GetAdaptObjFromUI(arg1_20)
+
+	if arg2_20 ~= nil then
+		SetParent(arg1_20, arg2_20, false)
+	end
+
+	if var0_20 ~= nil then
+		if #arg0_20.adaptPool < 4 then
+			table.insert(arg0_20.adaptPool, var0_20)
+			SetParent(var0_20, arg0_20.OverlayAdapt, false)
+
+			var0_20.name = var1_0.RECYCLE_ADAPT_TAG
+
+			SetActive(var0_20, false)
+		else
+			Destroy(var0_20)
 		end
 	end
 end
 
-function var1_0.GetAdaptObjFromUI(arg0_22, arg1_22)
-	if arg1_22.parent ~= nil and arg1_22.parent.name == arg0_22:GetAdatpObjName(arg1_22) then
-		return arg1_22.parent
+function var1_0.GetAdaptObjFromUI(arg0_21, arg1_21)
+	if arg1_21.parent ~= nil and arg1_21.parent.name == arg0_21:GetAdatpObjName(arg1_21) then
+		return arg1_21.parent
 	end
 
 	return nil
 end
 
-function var1_0.GetAdatpObjName(arg0_23, arg1_23)
-	return arg1_23.name .. var1_0.ADAPT_TAG
+function var1_0.GetAdatpObjName(arg0_22, arg1_22)
+	return arg1_22.name .. var1_0.ADAPT_TAG
 end
 
-function var1_0.Log(arg0_24, arg1_24)
+function var1_0.Log(arg0_23, arg1_23)
 	if not var1_0.DEBUG then
 		return
 	end
 
-	originalPrint(arg1_24)
+	originalPrint(arg1_23)
 end

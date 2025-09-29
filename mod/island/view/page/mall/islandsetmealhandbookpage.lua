@@ -15,7 +15,7 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.conditionList = UIItemList.New(arg0_2.detail:Find("conditionList"), arg0_2.detail:Find("conditionList/condition"))
 
 	setActive(arg0_2.detail, false)
-	setText(arg0_2._tf:Find("top/title/Text"), i18n1("套餐图鉴"))
+	setText(arg0_2._tf:Find("top/title/Text"), i18n("island_setmeal_title"))
 	setText(arg0_2._tf:Find("top/title/Text/en"), i18n1("HANDBOOK"))
 end
 
@@ -153,15 +153,18 @@ function var0_0.SetDetail(arg0_11, arg1_11)
 			local var1_12 = arg1_11.unlock_condition[arg1_12 + 1][2]
 			local var2_12 = pg.island_formula[var0_12]
 
-			setText(arg2_12:Find("name"), "制作" .. var2_12.name)
+			setText(arg2_12:Find("name"), i18n("island_combo_produced") .. var2_12.name)
 
 			local var3_12 = arg0_11.formulaNums[var0_12] or 0
+
+			setActive(arg2_12:Find("notComplete"), var3_12 < var1_12)
+			setActive(arg2_12:Find("complete"), var1_12 <= var3_12)
 
 			if var1_12 < var3_12 then
 				formulaNum = var1_12
 			end
 
-			setText(arg2_12:Find("count"), "" .. var3_12 .. "/" .. var1_12 .. "次")
+			setText(arg2_12:Find("count"), i18n("island_combo_produced_times", "" .. var3_12 .. "/" .. var1_12))
 
 			if var3_12 < var1_12 then
 				var4_11 = false
@@ -171,7 +174,7 @@ function var0_0.SetDetail(arg0_11, arg1_11)
 	arg0_11.conditionList:align(#arg1_11.unlock_condition)
 
 	if var4_11 == true then
-		setText(arg0_11.detailDesc, i18n1("已解锁套餐制作"))
+		setText(arg0_11.detailDesc, i18n("island_combo_unlock"))
 	else
 		setText(arg0_11.detailDesc, arg1_11.desc or "")
 	end

@@ -66,6 +66,8 @@ function var0_0.OnLoaded(arg0_2)
 
 	setText(arg0_2.shipDetailsPanel:Find("title"), i18n("island_production_character_info"))
 	setText(arg0_2.getBtn:Find("Text"), i18n("island_production_collect"))
+	setText(arg0_2.addBtn:Find("num"), i18n("island_additional_production_tip1"))
+	setText(arg0_2.currentFormula:Find("tips"), i18n("island_production_count"))
 	arg0_2:ApplyDiff()
 
 	arg0_2.extraProductList = UIItemList.New(arg0_2.extraProduct:Find("process"), arg0_2.extraProduct:Find("process/item"))

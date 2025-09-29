@@ -29,7 +29,7 @@ function var0_0.Update(arg0_2, arg1_2, arg2_2)
 
 	arg0_2.configType = var0_2.type
 
-	setText(arg0_2.tf:Find("Text"), var0_2.name)
+	setScrollText(arg0_2.tf:Find("textMask/Text"), var0_2.name)
 
 	if var0_2.icon ~= "" then
 		GetImageSpriteFromAtlasAsync(string.format("island/IslandDressIcon/%s", var0_2.icon), "", arg0_2.tf:Find("icon"))

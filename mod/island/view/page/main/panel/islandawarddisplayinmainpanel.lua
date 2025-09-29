@@ -8,6 +8,9 @@ end
 
 function var0_0.OnLoaded(arg0_2)
 	arg0_2.nameTf = arg0_2._tf:Find("title/name")
+
+	setText(arg0_2.nameTf, i18n("word_get"))
+
 	arg0_2.container = arg0_2:findTF("content")
 	arg0_2.item = arg0_2:findTF("tpl")
 	arg0_2.poolContainer = arg0_2:findTF("pool")
@@ -19,7 +22,6 @@ function var0_0.OnInit(arg0_3)
 	arg0_3.timers = {}
 	arg0_3.showCount = 0
 
-	setText(arg0_3.nameTf, "获得")
 	setActive(arg0_3.item, false)
 end
 
@@ -35,81 +37,104 @@ function var0_0.Hide(arg0_5)
 	arg0_5.isShow = false
 end
 
-function var0_0.ShowAwards(arg0_6, arg1_6)
-	local var0_6 = arg1_6.awards
-
-	for iter0_6, iter1_6 in ipairs(var0_6) do
-		local var1_6 = arg0_6:CreateItem()
-		local var2_6 = iter1_6:getIcon()
-		local var3_6 = iter1_6:getName()
-
-		setText(findTF(var1_6, "name"), string.format(var3_6))
-		GetImageSpriteFromAtlasAsync(var2_6, "", findTF(var1_6, "icon"))
-		setText(findTF(var1_6, "name/count"), iter1_6:getCount())
+function var0_0.OnHide(arg0_6)
+	for iter0_6, iter1_6 in pairs(arg0_6.timers) do
+		if iter1_6 then
+			iter1_6:Stop()
+		end
 	end
 end
 
-function var0_0.CreateItem(arg0_7)
-	arg0_7.showCount = arg0_7.showCount + 1
+function var0_0.ShowAwards(arg0_7, arg1_7)
+	setActive(arg0_7.nameTf, not arg1_7.shipExp)
 
-	if arg0_7.showCount > 0 and not arg0_7.isShow then
-		arg0_7:Show()
-	end
+	if not arg1_7.shipExp then
+		local var0_7 = arg1_7.awards
 
-	local var0_7
+		for iter0_7, iter1_7 in ipairs(var0_7) do
+			local var1_7 = arg0_7:CreateItem()
 
-	if arg0_7.showCount > var2_0 then
-		var0_7 = arg0_7.showItemQueue[1]
+			setActive(findTF(var1_7, "name"), true)
+			setActive(findTF(var1_7, "exp"), false)
 
-		table.remove(arg0_7.showItemQueue, 1)
+			local var2_7 = iter1_7:getIcon()
+			local var3_7 = iter1_7:getName()
 
-		arg0_7.showCount = arg0_7.showCount - 1
-	elseif #arg0_7.poolList > 0 then
-		var0_7 = arg0_7.poolList[1]
-
-		table.remove(arg0_7.poolList, 1)
-		var0_7:SetParent(arg0_7.container, false)
-
-		GetOrAddComponent(var0_7, typeof(CanvasGroup)).alpha = 1
+			setText(findTF(var1_7, "name"), string.format(var3_7))
+			GetImageSpriteFromAtlasAsync(var2_7, "", findTF(var1_7, "icon"))
+			setText(findTF(var1_7, "name/count"), iter1_7:getCount())
+		end
 	else
-		var0_7 = cloneTplTo(arg0_7.item, arg0_7.container)
+		local var4_7 = arg0_7:CreateItem()
+
+		setActive(findTF(var4_7, "name"), false)
+		setActive(findTF(var4_7, "exp"), true)
+		GetImageSpriteFromAtlasAsync(arg1_7.icon, "", findTF(var4_7, "icon"))
+		setText(findTF(var4_7, "exp/count"), arg1_7.num)
+	end
+end
+
+function var0_0.CreateItem(arg0_8)
+	arg0_8.showCount = arg0_8.showCount + 1
+
+	if arg0_8.showCount > 0 and not arg0_8.isShow then
+		arg0_8:Show()
 	end
 
-	local var1_7 = arg0_7.showCount - 1
+	local var0_8
 
-	var0_7.transform:SetSiblingIndex(var1_7)
-	table.insert(arg0_7.showItemQueue, var0_7)
+	if arg0_8.showCount > var2_0 then
+		var0_8 = arg0_8.showItemQueue[1]
 
-	if arg0_7.timers[var0_7] then
-		arg0_7.timers[var0_7]:Stop()
+		table.remove(arg0_8.showItemQueue, 1)
+
+		arg0_8.showCount = arg0_8.showCount - 1
+	elseif #arg0_8.poolList > 0 then
+		var0_8 = arg0_8.poolList[1]
+
+		table.remove(arg0_8.poolList, 1)
+		var0_8:SetParent(arg0_8.container, false)
+
+		GetOrAddComponent(var0_8, typeof(CanvasGroup)).alpha = 1
+	else
+		var0_8 = cloneTplTo(arg0_8.item, arg0_8.container)
 	end
 
-	arg0_7.timers[var0_7] = Timer.New(function()
-		arg0_7:DeleteItem(var0_7)
+	local var1_8 = arg0_8.showCount - 1
+
+	var0_8.transform:SetSiblingIndex(var1_8)
+	table.insert(arg0_8.showItemQueue, var0_8)
+
+	if arg0_8.timers[var0_8] then
+		arg0_8.timers[var0_8]:Stop()
+	end
+
+	arg0_8.timers[var0_8] = Timer.New(function()
+		arg0_8:DeleteItem(var0_8)
 	end, var1_0, 1)
 
-	arg0_7.timers[var0_7]:Start()
+	arg0_8.timers[var0_8]:Start()
 
-	return var0_7
+	return var0_8
 end
 
-function var0_0.DeleteItem(arg0_9, arg1_9)
-	arg0_9.showCount = arg0_9.showCount - 1
+function var0_0.DeleteItem(arg0_10, arg1_10)
+	arg0_10.showCount = arg0_10.showCount - 1
 
-	if arg0_9.showCount <= 0 and arg0_9.isShow then
-		arg0_9:Hide()
+	if arg0_10.showCount <= 0 and arg0_10.isShow then
+		arg0_10:Hide()
 	end
 
-	GetOrAddComponent(arg1_9, typeof(CanvasGroup)).alpha = 0
+	GetOrAddComponent(arg1_10, typeof(CanvasGroup)).alpha = 0
 
-	table.insert(arg0_9.poolList, arg1_9)
-	arg1_9:SetParent(arg0_9.poolContainer, false)
+	table.insert(arg0_10.poolList, arg1_10)
+	arg1_10:SetParent(arg0_10.poolContainer, false)
 end
 
-function var0_0.OnDestroy(arg0_10)
-	for iter0_10, iter1_10 in pairs(arg0_10.timers) do
-		if iter1_10 then
-			iter1_10:Stop()
+function var0_0.OnDestroy(arg0_11)
+	for iter0_11, iter1_11 in pairs(arg0_11.timers) do
+		if iter1_11 then
+			iter1_11:Stop()
 		end
 	end
 end

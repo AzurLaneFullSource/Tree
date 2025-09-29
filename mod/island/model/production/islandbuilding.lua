@@ -141,97 +141,111 @@ function var0_0.UpdateDeleationRewardDataBySlotId(arg0_12, arg1_12, arg2_12)
 	var0_12:UpdateSlotRewardData(arg2_12)
 end
 
-function var0_0.UpdateCollectDataBySlotId(arg0_13, arg1_13, arg2_13)
-	if arg0_13.collectPlaceSystem then
-		arg0_13.collectPlaceSystem:UpdateCollectDataBySlotId(arg1_13, arg2_13)
+function var0_0.GetShipAddExpData(arg0_13, arg1_13)
+	local var0_13
+	local var1_13 = arg0_13:GetDelegationSlotData(arg1_13):GetSlotRewardData()
+
+	if var1_13 then
+		var0_13 = {
+			addShipId = var1_13.ship_id,
+			addExp = var1_13.exp
+		}
+	end
+
+	return var0_13
+end
+
+function var0_0.UpdateCollectDataBySlotId(arg0_14, arg1_14, arg2_14)
+	if arg0_14.collectPlaceSystem then
+		arg0_14.collectPlaceSystem:UpdateCollectDataBySlotId(arg1_14, arg2_14)
 	end
 end
 
-function var0_0.UpdateHandPlantDataBySlotId(arg0_14, arg1_14)
-	local var0_14 = arg0_14:GetHandPlantSlotData(arg1_14.id)
+function var0_0.UpdateHandPlantDataBySlotId(arg0_15, arg1_15)
+	local var0_15 = arg0_15:GetHandPlantSlotData(arg1_15.id)
 
-	if not var0_14 then
-		warning("下发数据有问题,下发的槽位id不是当前区域能委派的槽位,下发的槽位id为" .. arg1_14.id)
+	if not var0_15 then
+		warning("下发数据有问题,下发的槽位id不是当前区域能委派的槽位,下发的槽位id为" .. arg1_15.id)
 
 		return
 	end
 
-	var0_14:UpdateData(arg1_14)
+	var0_15:UpdateData(arg1_15)
 end
 
-function var0_0.GetFormulaList(arg0_15)
-	local var0_15 = {}
+function var0_0.GetFormulaList(arg0_16)
+	local var0_16 = {}
 
-	for iter0_15, iter1_15 in pairs(arg0_15.formulaData) do
-		table.insert(var0_15, iter1_15)
+	for iter0_16, iter1_16 in pairs(arg0_16.formulaData) do
+		table.insert(var0_16, iter1_16)
 	end
 
-	return var0_15
+	return var0_16
 end
 
-function var0_0.GetLevel(arg0_16)
-	return arg0_16.level
+function var0_0.GetLevel(arg0_17)
+	return arg0_17.level
 end
 
-function var0_0.IsMaxLevel(arg0_17)
-	return arg0_17:GetUpgradeCost() == ""
+function var0_0.IsMaxLevel(arg0_18)
+	return arg0_18:GetUpgradeCost() == ""
 end
 
-function var0_0.GetName(arg0_18)
-	return arg0_18:getConfig("name")
+function var0_0.GetName(arg0_19)
+	return arg0_19:getConfig("name")
 end
 
-function var0_0.UpdatePerSecond(arg0_19)
-	for iter0_19, iter1_19 in pairs(arg0_19.delegationSlotData) do
-		iter1_19:UpdatePerSecond(arg0_19.isSelf)
+function var0_0.UpdatePerSecond(arg0_20)
+	for iter0_20, iter1_20 in pairs(arg0_20.delegationSlotData) do
+		iter1_20:UpdatePerSecond(arg0_20.isSelf)
 	end
 end
 
-function var0_0.GetSlotUnitDataByModelData(arg0_20)
-	local var0_20 = {}
+function var0_0.GetSlotUnitDataByModelData(arg0_21)
+	local var0_21 = {}
 
-	for iter0_20, iter1_20 in pairs(arg0_20.collectionSlotData) do
-		local var1_20 = iter1_20:GetUnitData()
+	for iter0_21, iter1_21 in pairs(arg0_21.collectionSlotData) do
+		local var1_21 = iter1_21:GetUnitData()
 
-		if var1_20 then
-			table.insert(var0_20, var1_20)
+		if var1_21 then
+			table.insert(var0_21, var1_21)
 		end
 	end
 
-	return var0_20
+	return var0_21
 end
 
-function var0_0.GetMinRoleDeleGationTime(arg0_21)
-	local var0_21
-
-	for iter0_21, iter1_21 in pairs(arg0_21.delegationSlotData) do
-		local var1_21 = iter1_21:GetRoleDelegateFinishTime()
-
-		if var1_21 ~= -1 then
-			var0_21 = var0_21 and math.min(var1_21, var0_21) or var1_21
-		end
-	end
-
-	return var0_21 and var0_21 or -1
-end
-
-function var0_0.GetShipIdAndAreaIdList(arg0_22)
-	local var0_22 = {}
+function var0_0.GetMinRoleDeleGationTime(arg0_22)
+	local var0_22
 
 	for iter0_22, iter1_22 in pairs(arg0_22.delegationSlotData) do
-		local var1_22 = iter1_22:GetRoleShipData()
+		local var1_22 = iter1_22:GetRoleDelegateFinishTime()
 
-		if var1_22 then
-			table.insert(var0_22, var1_22)
+		if var1_22 ~= -1 then
+			var0_22 = var0_22 and math.min(var1_22, var0_22) or var1_22
 		end
 	end
 
-	return var0_22
+	return var0_22 and var0_22 or -1
 end
 
-function var0_0.IsPostTip(arg0_23)
+function var0_0.GetShipIdAndAreaIdList(arg0_23)
+	local var0_23 = {}
+
 	for iter0_23, iter1_23 in pairs(arg0_23.delegationSlotData) do
-		if iter1_23:CanStartDelegation() or iter1_23:GetSlotRewardData() then
+		local var1_23 = iter1_23:GetRoleShipData()
+
+		if var1_23 then
+			table.insert(var0_23, var1_23)
+		end
+	end
+
+	return var0_23
+end
+
+function var0_0.IsPostTip(arg0_24)
+	for iter0_24, iter1_24 in pairs(arg0_24.delegationSlotData) do
+		if iter1_24:CanStartDelegation() or iter1_24:GetSlotRewardData() then
 			return true
 		end
 	end
@@ -239,9 +253,9 @@ function var0_0.IsPostTip(arg0_23)
 	return false
 end
 
-function var0_0.GetCollectSlotData(arg0_24, arg1_24)
-	if arg0_24.collectPlaceSystem then
-		return arg0_24.collectPlaceSystem:GetCollectSlotData(arg1_24)
+function var0_0.GetCollectSlotData(arg0_25, arg1_25)
+	if arg0_25.collectPlaceSystem then
+		return arg0_25.collectPlaceSystem:GetCollectSlotData(arg1_25)
 	end
 end
 

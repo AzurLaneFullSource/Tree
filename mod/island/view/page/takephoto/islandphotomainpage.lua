@@ -373,14 +373,24 @@ function var0_0.OnShow(arg0_40)
 	arg0_40:RightSelectBtnHandle()
 end
 
-function var0_0.OnHide(arg0_41)
-	arg0_41.takePhotoModel = nil
-
-	arg0_41:emitCore(ISLAND_EVT.Change_TakePhoto_Model, IslandConst.TakePhotoModel.None)
+function var0_0.OnDisable(arg0_41)
+	arg0_41:OnHide()
 end
 
-function var0_0.SetMute(arg0_42)
-	if arg0_42 then
+function var0_0.OnHide(arg0_42)
+	if arg0_42.recordState then
+		triggerButton(arg0_42.btnFilm)
+
+		return
+	end
+
+	arg0_42.takePhotoModel = nil
+
+	arg0_42:emitCore(ISLAND_EVT.Change_TakePhoto_Model, IslandConst.TakePhotoModel.None)
+end
+
+function var0_0.SetMute(arg0_43)
+	if arg0_43 then
 		CriWare.CriAtom.SetCategoryVolume("Category_CV", 0)
 		CriWare.CriAtom.SetCategoryVolume("Category_BGM", 0)
 		CriWare.CriAtom.SetCategoryVolume("Category_SE", 0)
@@ -391,7 +401,7 @@ function var0_0.SetMute(arg0_42)
 	end
 end
 
-function var0_0.OnDestroy(arg0_43)
+function var0_0.OnDestroy(arg0_44)
 	return
 end
 

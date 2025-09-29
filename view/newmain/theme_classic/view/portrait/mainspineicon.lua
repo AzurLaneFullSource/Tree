@@ -1,7 +1,7 @@
 local var0_0 = class("MainSpineIcon", import(".MainBaseIcon"))
 
 function var0_0.Resume(arg0_1)
-	if arg0_1.spineAnim then
+	if arg0_1.spineAnim and not IsNil(arg0_1.spineAnim) then
 		arg0_1.spineAnim:Resume()
 	end
 end
@@ -15,8 +15,14 @@ end
 function var0_0.Load(arg0_3, arg1_3)
 	arg0_3.loading = true
 
+	assert(not arg0_3.shipModel)
+
+	arg0_3.name = arg1_3
+
 	PoolMgr.GetInstance():GetSpineChar(arg1_3, true, function(arg0_4)
-		if arg0_3.exited then
+		if arg0_3.name ~= arg1_3 then
+			PoolMgr.GetInstance():ReturnSpineChar(arg1_3, arg0_4)
+
 			return
 		end
 
@@ -41,23 +47,23 @@ function var0_0.Load(arg0_3, arg1_3)
 		arg0_3.spineAnim = var3_4
 
 		onNextTick(function()
-			if arg0_3.spineAnim then
-				arg0_3.spineAnim:Resume()
+			if arg0_3.name ~= arg1_3 then
+				return
 			end
+
+			var3_4:Resume()
 		end)
 	end)
-
-	arg0_3.name = arg1_3
 end
 
 function var0_0.Unload(arg0_6)
 	if arg0_6.name and arg0_6.shipModel then
-		arg0_6.spineAnim:Resume()
 		PoolMgr.GetInstance():ReturnSpineChar(arg0_6.name, arg0_6.shipModel)
-
-		arg0_6.spineAnim = nil
-		arg0_6.name = nil
 	end
+
+	arg0_6.name = nil
+	arg0_6.shipModel = nil
+	arg0_6.spineAnim = nil
 end
 
 return var0_0

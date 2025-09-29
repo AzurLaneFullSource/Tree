@@ -164,7 +164,7 @@ function var0_0.OnInit(arg0_3)
 	arg0_3.priceFactor = var3_0.island_manage_price_coefficient.key_value_int / 100
 	arg0_3.argA = var3_0.island_manage_sale_coefficient_a.key_value_int / 100
 	arg0_3.argB = var3_0.island_manage_sale_coefficient_b.key_value_int / 100
-	arg0_3.argC = var3_0.island_manage_sale_coefficient_b.key_value_int / 100
+	arg0_3.argC = var3_0.island_manage_sale_coefficient_c.key_value_int / 100
 	arg0_3.saleConst = var3_0.island_manage_sale_constant.key_value_int / 100
 	arg0_3.maxAttrEffect = pg.island_chara_att[1].manage_effect / 10000
 end
@@ -824,6 +824,7 @@ function var0_0.OnDisable(arg0_72)
 end
 
 function var0_0.OnDestroy(arg0_73)
+	ClearLScrollrect(arg0_73.scrollRect)
 	arg0_73:OnHide()
 end
 

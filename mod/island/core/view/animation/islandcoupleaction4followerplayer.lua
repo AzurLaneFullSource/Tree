@@ -16,8 +16,6 @@ function var0_0.EnableOrDisableUnitSyn(arg0_1, arg1_1, arg2_1, arg3_1)
 	if isa(arg2_1, IslandFollowNpcUnit) then
 		var0_1(arg2_1, arg3_1)
 	end
-
-	arg0_1:EnableOrDisableNavMeshObstacle(arg2_1, arg3_1)
 end
 
 function var0_0.EnableOrDisableNavMeshObstacle(arg0_3, arg1_3, arg2_3)

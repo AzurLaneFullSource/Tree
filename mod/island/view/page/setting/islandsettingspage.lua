@@ -140,13 +140,19 @@ function var0_0.OnHide(arg0_17)
 	end
 end
 
-function var0_0.OnDestroy(arg0_18)
-	for iter0_18, iter1_18 in pairs(arg0_18.pages) do
-		iter1_18:Destroy()
+function var0_0.OnDisable(arg0_18)
+	arg0_18:OnHide()
+end
+
+function var0_0.OnDestroy(arg0_19)
+	arg0_19:OnHide()
+
+	for iter0_19, iter1_19 in pairs(arg0_19.pages) do
+		iter1_19:Destroy()
 	end
 
-	arg0_18.page = nil
-	arg0_18.pages = nil
+	arg0_19.page = nil
+	arg0_19.pages = nil
 end
 
 return var0_0

@@ -27,671 +27,686 @@ var0_0.ComponentType = {
 	Headware = 4
 }
 
-function var0_0.GetInitDressByType(arg0_1)
-	local function var0_1(arg0_2)
-		local var0_2 = pg.island_set.default_dress.key_value_varchar
+function var0_0.Ctor(arg0_1, arg1_1)
+	if arg1_1 then
+		arg0_1.curIsland = arg1_1
+		arg0_1.isOtherIsland = getProxy(PlayerProxy):getRawData().id ~= arg0_1.curIsland.id
+	end
+end
 
-		for iter0_2, iter1_2 in ipairs(var0_2) do
-			if pg.island_dress_template[iter1_2].type == arg0_2 then
-				return iter1_2
+function var0_0.GetInitDressByType(arg0_2)
+	local function var0_2(arg0_3)
+		local var0_3 = pg.island_set.default_dress.key_value_varchar
+
+		for iter0_3, iter1_3 in ipairs(var0_3) do
+			if pg.island_dress_template[iter1_3].type == arg0_3 then
+				return iter1_3
 			end
 		end
 
 		return 0
 	end
 
-	if arg0_1 == var0_0.DressType.Hat then
-		local var1_1 = var0_1(var0_0.DressType.Body)
+	if arg0_2 == var0_0.DressType.Hat then
+		local var1_2 = var0_2(var0_0.DressType.Body)
 
-		return pg.island_dress_template.get_id_list_by_related_dress[var1_1][1]
+		return pg.island_dress_template.get_id_list_by_related_dress[var1_2][1]
 	end
 
-	return var0_1(arg0_1)
+	return var0_2(arg0_2)
 end
 
-function var0_0.PreLoadVisterDressupItem(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
-	arg0_3.roleTF = arg1_3.transform
-	arg0_3.isScene = true
-	arg0_3.shipId = 0
-	arg0_3.playerId = arg2_3
-	arg0_3.hasTF = true
-	arg0_3.currentDressDataDic = {}
-	arg0_3.pageDressTFDic = {}
+function var0_0.PreLoadVisterDressupItem(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4)
+	arg0_4.roleTF = arg1_4.transform
+	arg0_4.isScene = true
+	arg0_4.shipId = 0
+	arg0_4.playerId = arg2_4
+	arg0_4.hasTF = true
+	arg0_4.currentDressDataDic = {}
+	arg0_4.pageDressTFDic = {}
 
-	local var0_3 = {
+	local var0_4 = {
 		var0_0.DressType.BackDecorate,
 		var0_0.DressType.Flotage,
 		var0_0.DressType.Footprint
 	}
-	local var1_3 = arg3_3 and getProxy(IslandProxy):GetIsland() or getProxy(IslandProxy):GetSharedIsland()
-	local var2_3 = var1_3:GetVisitorAgency():GetPlayer(arg0_3.playerId)
-	local var3_3 = 0
+	local var1_4 = arg3_4 and getProxy(IslandProxy):GetIsland() or getProxy(IslandProxy):GetSharedIsland()
+	local var2_4 = var1_4:GetVisitorAgency():GetPlayer(arg0_4.playerId)
+	local var3_4 = 0
 
-	for iter0_3, iter1_3 in ipairs(var0_3) do
-		local var4_3 = var2_3:GetDressByType(iter1_3)
+	for iter0_4, iter1_4 in ipairs(var0_4) do
+		local var4_4 = var2_4:GetDressByType(iter1_4)
 
-		if var4_3 and var4_3 ~= 0 then
-			local var5_3 = {
-				id = var4_3
+		if var4_4 and var4_4 ~= 0 then
+			local var5_4 = {
+				id = var4_4
 			}
 
-			var5_3.colorId = 0
-			arg0_3.currentDressDataDic[iter1_3] = var5_3
-			var3_3 = var3_3 + 1
+			var5_4.colorId = 0
+			arg0_4.currentDressDataDic[iter1_4] = var5_4
+			var3_4 = var3_4 + 1
 		end
 	end
 
-	arg0_3:InitVisterCustomDressData(arg2_3, var1_3)
+	arg0_4:InitVisterCustomDressData(arg2_4, var1_4)
 
-	if var3_3 == 0 then
-		arg4_3()
+	if var3_4 == 0 then
+		arg4_4()
 
 		return
 	end
 
-	local var6_3 = 0
+	local var6_4 = 0
 
-	for iter2_3, iter3_3 in pairs(arg0_3.currentDressDataDic) do
-		arg0_3:LoadDressObjectItem(iter2_3, iter3_3.id, function()
-			var6_3 = var6_3 + 1
+	for iter2_4, iter3_4 in pairs(arg0_4.currentDressDataDic) do
+		arg0_4:LoadDressObjectItem(iter2_4, iter3_4.id, function()
+			var6_4 = var6_4 + 1
 
-			if var6_3 == var3_3 then
-				arg4_3()
+			if var6_4 == var3_4 then
+				arg4_4()
 			end
 		end)
 	end
 end
 
-function var0_0.InitVisterCustomDressData(arg0_5, arg1_5, arg2_5)
-	arg0_5.commanderDressDic = {}
+function var0_0.InitVisterCustomDressData(arg0_6, arg1_6, arg2_6)
+	arg0_6.commanderDressDic = {}
 
-	local var0_5 = arg2_5:GetVisitorAgency():GetPlayer(arg0_5.playerId)
+	local var0_6 = arg2_6:GetVisitorAgency():GetPlayer(arg0_6.playerId)
 
-	for iter0_5, iter1_5 in pairs(var0_0.CommanderCustom) do
-		local var1_5 = var0_5:GetDressByType(iter1_5)
+	for iter0_6, iter1_6 in pairs(var0_0.CommanderCustom) do
+		local var1_6 = var0_6:GetDressByType(iter1_6)
 
-		if var1_5 then
-			arg0_5.commanderDressDic[iter1_5] = var1_5
+		if var1_6 then
+			arg0_6.commanderDressDic[iter1_6] = var1_6
 		end
 	end
 end
 
-function var0_0.PreLoadShipDressupItem(arg0_6, arg1_6, arg2_6, arg3_6)
-	arg0_6.roleTF = arg1_6.transform
-	arg0_6.isScene = true
-	arg0_6.shipId = arg2_6
-	arg0_6.hasTF = true
-	arg0_6.currentDressDataDic = {}
-	arg0_6.pageDressTFDic = {}
+function var0_0.PreLoadShipDressupItem(arg0_7, arg1_7, arg2_7, arg3_7)
+	arg0_7.roleTF = arg1_7.transform
+	arg0_7.isScene = true
+	arg0_7.shipId = arg2_7
+	arg0_7.hasTF = true
+	arg0_7.currentDressDataDic = {}
+	arg0_7.pageDressTFDic = {}
 
-	local var0_6 = {
+	local var0_7 = {
 		var0_0.DressType.BackDecorate,
 		var0_0.DressType.Flotage,
 		var0_0.DressType.Footprint
 	}
-	local var1_6 = getProxy(IslandProxy):GetIsland()
+	local var1_7 = getProxy(IslandProxy):GetIsland()
 
-	if arg0_6.shipId == 0 then
-		local var2_6 = var1_6:GetDressUpAgency()
-		local var3_6 = 0
+	if arg0_7.shipId == 0 then
+		local var2_7 = var1_7:GetDressUpAgency()
+		local var3_7 = 0
 
-		for iter0_6, iter1_6 in ipairs(var0_6) do
-			local var4_6 = var2_6:GetDressByType(iter1_6)
+		for iter0_7, iter1_7 in ipairs(var0_7) do
+			local var4_7 = var2_7:GetDressByType(iter1_7)
 
-			if var4_6 and var4_6 ~= 0 then
-				local var5_6 = {
-					id = var4_6
+			if var4_7 and var4_7 ~= 0 then
+				local var5_7 = {
+					id = var4_7
 				}
 
-				var5_6.colorId = 0
-				arg0_6.currentDressDataDic[iter1_6] = var5_6
-				var3_6 = var3_6 + 1
+				var5_7.colorId = 0
+				arg0_7.currentDressDataDic[iter1_7] = var5_7
+				var3_7 = var3_7 + 1
 			end
 		end
 
-		arg0_6:InitCommanderCustomDressData()
+		arg0_7:InitCommanderCustomDressData()
 
-		if var3_6 == 0 then
-			arg3_6()
+		if var3_7 == 0 then
+			arg3_7()
 
 			return
 		end
 
-		local var6_6 = 0
+		local var6_7 = 0
 
-		for iter2_6, iter3_6 in pairs(arg0_6.currentDressDataDic) do
-			arg0_6:LoadDressObjectItem(iter2_6, iter3_6.id, function()
-				var6_6 = var6_6 + 1
+		for iter2_7, iter3_7 in pairs(arg0_7.currentDressDataDic) do
+			arg0_7:LoadDressObjectItem(iter2_7, iter3_7.id, function()
+				var6_7 = var6_7 + 1
 
-				if var6_6 == var3_6 then
-					arg3_6()
+				if var6_7 == var3_7 then
+					arg3_7()
 				end
 			end)
 		end
 	else
-		local var7_6 = var1_6:GetCharacterAgency()
-
-		arg0_6.modelData = var7_6:GetShipById(arg0_6.shipId):GetModel()
-
-		local var8_6 = 0
-
-		for iter4_6, iter5_6 in pairs(var0_6) do
-			local var9_6 = var7_6:GetCurDressIdByShipId(arg0_6.shipId, iter5_6)
-
-			if var9_6 and dressId ~= 0 then
-				local var10_6 = {
-					id = var9_6.dress_id
-				}
-
-				var10_6.colorId = 0
-				arg0_6.currentDressDataDic[iter5_6] = var10_6
-				var8_6 = var8_6 + 1
-			end
-		end
-
-		if var8_6 == 0 then
-			arg3_6()
+		if arg0_7.isOtherIsland then
+			arg3_7()
 
 			return
 		end
 
-		local var11_6 = 0
+		local var7_7 = var1_7:GetCharacterAgency()
 
-		for iter6_6, iter7_6 in pairs(arg0_6.currentDressDataDic) do
-			arg0_6:LoadDressObjectItem(iter6_6, iter7_6.id, function()
-				var11_6 = var11_6 + 1
+		arg0_7.modelData = var7_7:GetShipById(arg0_7.shipId):GetModel()
 
-				if var11_6 == var8_6 then
-					arg3_6()
+		local var8_7 = 0
+
+		for iter4_7, iter5_7 in pairs(var0_7) do
+			local var9_7 = var7_7:GetCurDressIdByShipId(arg0_7.shipId, iter5_7)
+
+			if var9_7 then
+				local var10_7 = {
+					id = var9_7.dress_id
+				}
+
+				var10_7.colorId = 0
+				arg0_7.currentDressDataDic[iter5_7] = var10_7
+				var8_7 = var8_7 + 1
+			end
+		end
+
+		if var8_7 == 0 then
+			arg3_7()
+
+			return
+		end
+
+		local var11_7 = 0
+
+		for iter6_7, iter7_7 in pairs(arg0_7.currentDressDataDic) do
+			arg0_7:LoadDressObjectItem(iter6_7, iter7_7.id, function()
+				var11_7 = var11_7 + 1
+
+				if var11_7 == var8_7 then
+					arg3_7()
 				end
 			end)
 		end
 	end
 end
 
-function var0_0.SetShipId(arg0_9, arg1_9)
-	arg0_9.shipId = arg1_9
-	arg0_9.hasTF = false
-	arg0_9.currentDressDataDic = {}
-	arg0_9.dataAfterRoleInit = {}
+function var0_0.SetShipId(arg0_10, arg1_10)
+	arg0_10.shipId = arg1_10
+	arg0_10.hasTF = false
+	arg0_10.currentDressDataDic = {}
+	arg0_10.dataAfterRoleInit = {}
 
-	arg0_9:RemoveDressTF()
-	arg0_9:InitDressData()
+	arg0_10:RemoveDressTF()
+	arg0_10:InitDressData()
 end
 
-function var0_0.InitCommanderCustomDressData(arg0_10)
-	arg0_10.commanderDressDic = {}
+function var0_0.InitCommanderCustomDressData(arg0_11)
+	arg0_11.commanderDressDic = {}
 
-	local var0_10 = getProxy(IslandProxy):GetIsland():GetDressUpAgency()
+	local var0_11 = getProxy(IslandProxy):GetIsland():GetDressUpAgency()
 
-	for iter0_10, iter1_10 in pairs(var0_0.CommanderCustom) do
-		local var1_10 = var0_10:GetDressByType(iter1_10)
+	for iter0_11, iter1_11 in pairs(var0_0.CommanderCustom) do
+		local var1_11 = var0_11:GetDressByType(iter1_11)
 
-		if var1_10 then
-			arg0_10.commanderDressDic[iter1_10] = var1_10
+		if var1_11 then
+			arg0_11.commanderDressDic[iter1_11] = var1_11
 		end
 	end
 end
 
-function var0_0.InitDressData(arg0_11)
-	local var0_11 = {
+function var0_0.InitDressData(arg0_12)
+	local var0_12 = {
 		var0_0.DressType.BackDecorate,
 		var0_0.DressType.Flotage,
 		var0_0.DressType.Footprint
 	}
-	local var1_11 = getProxy(IslandProxy):GetIsland()
+	local var1_12 = getProxy(IslandProxy):GetIsland()
 
-	if arg0_11.shipId == 0 then
-		local var2_11 = var1_11:GetDressUpAgency()
+	if arg0_12.shipId == 0 then
+		local var2_12 = var1_12:GetDressUpAgency()
 
-		for iter0_11, iter1_11 in pairs(var0_11) do
-			local var3_11 = var2_11:GetDressByType(iter1_11)
+		for iter0_12, iter1_12 in pairs(var0_12) do
+			local var3_12 = var2_12:GetDressByType(iter1_12)
 
-			if var3_11 then
-				local var4_11 = {
-					id = var3_11
+			if var3_12 then
+				local var4_12 = {
+					id = var3_12
 				}
 
-				var4_11.colorId = 0
-				arg0_11.dataAfterRoleInit[iter1_11] = var4_11
+				var4_12.colorId = 0
+				arg0_12.dataAfterRoleInit[iter1_12] = var4_12
 			end
 		end
 
-		arg0_11:InitCommanderCustomDressData()
+		arg0_12:InitCommanderCustomDressData()
 	else
-		local var5_11 = var1_11:GetCharacterAgency()
+		local var5_12 = var1_12:GetCharacterAgency()
 
-		for iter2_11, iter3_11 in pairs(var0_11) do
-			local var6_11 = var5_11:GetCurDressIdByShipId(arg0_11.shipId, iter3_11)
+		for iter2_12, iter3_12 in pairs(var0_12) do
+			local var6_12 = var5_12:GetCurDressIdByShipId(arg0_12.shipId, iter3_12)
 
-			if var6_11 then
-				local var7_11 = {
-					id = var6_11.dress_id
+			if var6_12 then
+				local var7_12 = {
+					id = var6_12.dress_id
 				}
 
-				var7_11.colorId = 0
-				arg0_11.dataAfterRoleInit[iter3_11] = var7_11
+				var7_12.colorId = 0
+				arg0_12.dataAfterRoleInit[iter3_12] = var7_12
 			end
 		end
 	end
 end
 
-function var0_0.InitDressTF(arg0_12)
-	for iter0_12, iter1_12 in pairs(arg0_12.dataAfterRoleInit) do
-		arg0_12:ChangeDressByType(iter0_12, iter1_12)
+function var0_0.InitDressTF(arg0_13)
+	for iter0_13, iter1_13 in pairs(arg0_13.dataAfterRoleInit) do
+		arg0_13:ChangeDressByType(iter0_13, iter1_13)
 	end
 
-	arg0_12.dataAfterRoleInit = {}
+	arg0_13.dataAfterRoleInit = {}
 end
 
-function var0_0.OnRoleLoaded(arg0_13, arg1_13, arg2_13)
-	arg0_13.modelData = arg2_13
-	arg0_13.roleTF = arg1_13
-	arg0_13.hasTF = true
+function var0_0.OnRoleLoaded(arg0_14, arg1_14, arg2_14)
+	arg0_14.modelData = arg2_14
+	arg0_14.roleTF = arg1_14
+	arg0_14.hasTF = true
 
-	arg0_13:InitDressTF()
+	arg0_14:InitDressTF()
 end
 
-function var0_0.RemoveDressTF(arg0_14)
-	for iter0_14, iter1_14 in pairs(arg0_14.pageDressTFDic or {}) do
-		Object.Destroy(iter1_14.gameObject)
+function var0_0.RemoveDressTF(arg0_15)
+	for iter0_15, iter1_15 in pairs(arg0_15.pageDressTFDic or {}) do
+		Object.Destroy(iter1_15.gameObject)
 	end
 
-	arg0_14.pageDressTFDic = {}
+	arg0_15.pageDressTFDic = {}
 end
 
-function var0_0.ChangeCommanderPartColor(arg0_15, arg1_15, arg2_15)
-	if arg2_15 == 0 then
-		GraphicsInterface.Instance:ResetCharacterComponentMaterialData(arg0_15.roleTF:GetChild(0).gameObject, var0_0.ComponentType.Hair)
+function var0_0.ChangeCommanderPartColor(arg0_16, arg1_16, arg2_16)
+	if arg2_16 == 0 then
+		GraphicsInterface.Instance:ResetCharacterComponentMaterialData(arg0_16.roleTF:GetChild(0).gameObject, var0_0.ComponentType.Hair)
 	else
-		local var0_15 = pg.island_dress_colordiff_template[arg2_15].model
+		local var0_16 = pg.island_dress_colordiff_template[arg2_16].model
 
-		GraphicsInterface.Instance:SetCharacterComponentMaterialData(arg0_15.roleTF:GetChild(0).gameObject, var0_15)
+		GraphicsInterface.Instance:SetCharacterComponentMaterialData(arg0_16.roleTF:GetChild(0).gameObject, var0_16)
 	end
 end
 
-function var0_0.ChangeCommanderPart(arg0_16, arg1_16, arg2_16)
-	local var0_16 = arg2_16.id
-	local var1_16 = arg2_16.colorId
+function var0_0.ChangeCommanderPart(arg0_17, arg1_17, arg2_17)
+	local var0_17 = arg2_17.id
+	local var1_17 = arg2_17.colorId
 
-	arg0_16.commanderDressDic[arg1_16] = arg2_16.id
+	arg0_17.commanderDressDic[arg1_17] = arg2_17.id
 
-	local function var2_16()
-		local var0_17 = arg0_16.commanderDressDic[var0_0.DressType.Hat] or 0
+	local function var2_17()
+		local var0_18 = arg0_17.commanderDressDic[var0_0.DressType.Hat] or 0
 
-		if var0_17 == 0 then
-			GraphicsInterface.Instance:SetCharacterBlendShape(arg0_16.roleTF:GetChild(0).gameObject, var0_0.ComponentType.Hair, 0, 0)
-			GraphicsInterface.Instance:SetCharacterBlendShape(arg0_16.roleTF:GetChild(0).gameObject, var0_0.ComponentType.Hair, 1, 0)
+		if var0_18 == 0 then
+			GraphicsInterface.Instance:SetCharacterBlendShape(arg0_17.roleTF:GetChild(0).gameObject, var0_0.ComponentType.Hair, 0, 0)
+			GraphicsInterface.Instance:SetCharacterBlendShape(arg0_17.roleTF:GetChild(0).gameObject, var0_0.ComponentType.Hair, 1, 0)
 		else
-			local var1_17 = pg.island_dress_template[var0_17].sub_type - 1
+			local var1_18 = pg.island_dress_template[var0_18].sub_type - 1
 
-			GraphicsInterface.Instance:SetCharacterBlendShape(arg0_16.roleTF:GetChild(0).gameObject, var0_0.ComponentType.Hair, var1_17, 100)
-			GraphicsInterface.Instance:SetCharacterBlendShape(arg0_16.roleTF:GetChild(0).gameObject, var0_0.ComponentType.Hair, 1 - var1_17, 0)
+			GraphicsInterface.Instance:SetCharacterBlendShape(arg0_17.roleTF:GetChild(0).gameObject, var0_0.ComponentType.Hair, var1_18, 100)
+			GraphicsInterface.Instance:SetCharacterBlendShape(arg0_17.roleTF:GetChild(0).gameObject, var0_0.ComponentType.Hair, 1 - var1_18, 0)
 		end
 	end
 
-	local function var3_16()
-		if arg1_16 == var0_0.DressType.Hat then
-			arg0_16:ChangeCommanderPartShow(arg1_16, true)
-			var2_16()
-		elseif arg1_16 == var0_0.DressType.Hair then
-			var2_16()
-		elseif arg1_16 == var0_0.DressType.Face then
-			local var0_18 = pg.island_dress_template[var0_16]
-			local var1_18 = var0_18.face_clip == "" and "idle" or var0_18.face_clip
+	local function var3_17()
+		if arg1_17 == var0_0.DressType.Hat then
+			arg0_17:ChangeCommanderPartShow(arg1_17, true)
+			var2_17()
+		elseif arg1_17 == var0_0.DressType.Hair then
+			var2_17()
+		elseif arg1_17 == var0_0.DressType.Face then
+			local var0_19 = pg.island_dress_template[var0_17]
+			local var1_19 = var0_19.face_clip == "" and "idle" or var0_19.face_clip
 
-			arg0_16.roleTF:GetChild(0).gameObject:GetComponent(typeof(Animator)):Play(var1_18, 4)
+			arg0_17.roleTF:GetChild(0).gameObject:GetComponent(typeof(Animator)):Play(var1_19, 4)
 		end
 	end
 
-	if var0_16 ~= 0 then
-		local var4_16 = pg.island_dress_template[var0_16].model
+	if var0_17 ~= 0 then
+		local var4_17 = pg.island_dress_template[var0_17].model
 
-		if var1_16 == 0 or var1_16 == nil then
-			GraphicsInterface.Instance:LoadCharacterComponent(arg0_16.roleTF:GetChild(0).gameObject, var4_16, var3_16)
+		if var1_17 == 0 or var1_17 == nil then
+			GraphicsInterface.Instance:LoadCharacterComponent(arg0_17.roleTF:GetChild(0).gameObject, var4_17, var3_17)
 		else
-			local var5_16 = pg.island_dress_colordiff_template[var1_16].model
+			local var5_17 = pg.island_dress_colordiff_template[var1_17].model
 
-			GraphicsInterface.Instance:LoadCharacterComponentAndMaterial(arg0_16.roleTF:GetChild(0).gameObject, var4_16, var5_16, var3_16)
+			GraphicsInterface.Instance:LoadCharacterComponentAndMaterial(arg0_17.roleTF:GetChild(0).gameObject, var4_17, var5_17, var3_17)
 		end
 	end
 
-	if arg1_16 == var0_0.DressType.Hat and var0_16 == 0 then
-		arg0_16:ChangeCommanderPartShow(arg1_16, false)
-		var2_16()
+	if arg1_17 == var0_0.DressType.Hat and var0_17 == 0 then
+		arg0_17:ChangeCommanderPartShow(arg1_17, false)
+		var2_17()
 	end
 end
 
-function var0_0.LoadDressObjectItem(arg0_19, arg1_19, arg2_19, arg3_19)
-	local var0_19 = pg.island_dress_template[arg2_19]
-	local var1_19 = var0_19.model
-	local var2_19 = arg0_19.shipId
-	local var3_19 = IslandAssetLoadDispatcher.Instance:Enqueue(var1_19, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_20)
-		if var2_19 ~= arg0_19.shipId then
+function var0_0.LoadDressObjectItem(arg0_20, arg1_20, arg2_20, arg3_20)
+	local var0_20 = pg.island_dress_template[arg2_20]
+	local var1_20 = var0_20.model
+	local var2_20 = arg0_20.shipId
+	local var3_20 = IslandAssetLoadDispatcher.Instance:Enqueue(var1_20, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_21)
+		if var2_20 ~= arg0_20.shipId then
 			return
 		end
 
-		if arg0_19.currentDressDataDic[arg1_19].id ~= arg2_19 then
+		if arg0_20.currentDressDataDic[arg1_20].id ~= arg2_20 then
 			return
 		end
 
-		local var0_20 = Object.Instantiate(arg0_20)
-		local var1_20 = arg0_19.isScene and Layer.Default or Layer.Character3D
+		local var0_21 = Object.Instantiate(arg0_21)
+		local var1_21 = arg0_20.isScene and Layer.Default or Layer.Character3D
 
-		pg.ViewUtils.SetLayer(var0_20.transform, var1_20)
-		switch(arg1_19, {
+		pg.ViewUtils.SetLayer(var0_21.transform, var1_21)
+		switch(arg1_20, {
 			[var0_0.DressType.BackDecorate] = function()
-				local var0_21 = arg0_19.roleTF.transform
+				local var0_22 = arg0_20.roleTF.transform
 
-				if var0_19.attachmentPoint ~= "" then
-					local var1_21 = var0_19.attachmentPoint
+				if var0_20.attachmentPoint ~= "" then
+					local var1_22 = var0_20.attachmentPoint
 
-					local function var2_21(arg0_22)
-						for iter0_22 = 0, arg0_22.childCount - 1 do
-							local var0_22 = arg0_22:GetChild(iter0_22)
+					local function var2_22(arg0_23)
+						for iter0_23 = 0, arg0_23.childCount - 1 do
+							local var0_23 = arg0_23:GetChild(iter0_23)
 
-							if var0_22.name == var1_21 then
-								return var0_22
+							if var0_23.name == var1_22 then
+								return var0_23
 							end
 
-							local var1_22 = var2_21(var0_22, var1_21)
+							local var1_23 = var2_22(var0_23, var1_22)
 
-							if var1_22 then
-								return var1_22
+							if var1_23 then
+								return var1_23
 							end
 						end
 
 						return nil
 					end
 
-					var0_21 = var2_21(var0_21)
+					var0_22 = var2_22(var0_22)
 				end
 
-				if var0_19.offset ~= "" then
-					local var3_21 = Vector3(var0_19.offset[1], var0_19.offset[2], var0_19.offset[3])
+				if var0_20.offset ~= "" then
+					local var3_22 = Vector3(var0_20.offset[1], var0_20.offset[2], var0_20.offset[3])
 
-					var0_20.transform.localPosition = var3_21
+					var0_21.transform.localPosition = var3_22
 				end
 
-				if var0_19.rotation ~= "" then
-					local var4_21 = Quaternion.Euler(var0_19.rotation[1], var0_19.rotation[2], var0_19.rotation[3])
+				if var0_20.rotation ~= "" then
+					local var4_22 = Quaternion.Euler(var0_20.rotation[1], var0_20.rotation[2], var0_20.rotation[3])
 
-					var0_20.transform.rotation = var4_21
+					var0_21.transform.rotation = var4_22
 				end
 
-				if var0_19.scale ~= "" then
-					local var5_21 = Vector3(var0_19.scale[1], var0_19.scale[1], var0_19.scale[1])
+				if var0_20.scale ~= "" then
+					local var5_22 = Vector3(var0_20.scale[1], var0_20.scale[1], var0_20.scale[1])
 
-					var0_20.transform.localScale = var5_21
+					var0_21.transform.localScale = var5_22
 				end
 
-				setParent(var0_20, var0_21)
+				setParent(var0_21, var0_22)
 			end,
 			[var0_0.DressType.Flotage] = function()
-				local var0_23
+				local var0_24
 
-				if var0_19.offset ~= "" then
-					var0_23 = Vector3(var0_19.offset[1], var0_19.offset[2], var0_19.offset[3])
+				if var0_20.offset ~= "" then
+					var0_24 = Vector3(var0_20.offset[1], var0_20.offset[2], var0_20.offset[3])
 
-					local var1_23 = var0_20.name
-					local var2_23 = GameObject.New(var1_23)
+					local var1_24 = var0_21.name
+					local var2_24 = GameObject.New(var1_24)
 
-					setParent(var0_20.transform, var2_23.transform, false)
+					setParent(var0_21.transform, var2_24.transform, false)
 
-					var0_20 = var2_23
-					var0_20.transform.position = arg0_19.roleTF:GetChild(0).transform:TransformPoint(var0_23)
+					var0_21 = var2_24
+					var0_21.transform.position = arg0_20.roleTF:GetChild(0).transform:TransformPoint(var0_24)
 				end
 
-				if var0_19.scale ~= "" then
-					local var3_23 = Vector3(var0_19.scale[1], var0_19.scale[1], var0_19.scale[1])
+				if var0_20.scale ~= "" then
+					local var3_24 = Vector3(var0_20.scale[1], var0_20.scale[1], var0_20.scale[1])
 
-					var0_20.transform.localScale = var3_23
+					var0_21.transform.localScale = var3_24
 				end
 
-				local var4_23 = Vector3(0, 0, 0)
+				local var4_24 = Vector3(0, 0, 0)
 
-				if var0_19.rotation ~= "" then
-					var4_23 = Vector3(var0_19.rotation[1], var0_19.rotation[2], var0_19.rotation[3])
+				if var0_20.rotation ~= "" then
+					var4_24 = Vector3(var0_20.rotation[1], var0_20.rotation[2], var0_20.rotation[3])
 				end
 
-				var0_20.transform.rotation = var4_23
+				var0_21.transform.rotation = var4_24
 
-				local var5_23 = GetOrAddComponent(var0_20, typeof(DressFlow))
-				local var6_23 = pg.island_set.island_dress_follow_param.key_value_varchar
+				local var5_24 = GetOrAddComponent(var0_21, typeof(DressFlow))
+				local var6_24 = pg.island_set.island_dress_follow_param.key_value_varchar
 
-				var5_23.target = arg0_19.roleTF
-				var5_23.offset = var0_23
-				var5_23.delayTime = var6_23[1]
-				var5_23.lerpSpeed = var6_23[2]
-				var5_23.recordInterval = var6_23[3]
-				var5_23.rotationOffest = var4_23
+				var5_24.target = arg0_20.roleTF
+				var5_24.offset = var0_24
+				var5_24.delayTime = var6_24[1]
+				var5_24.lerpSpeed = var6_24[2]
+				var5_24.recordInterval = var6_24[3]
+				var5_24.rotationOffest = var4_24
 			end,
 			[var0_0.DressType.Footprint] = function()
-				local var0_24 = Vector3(0, 0, 0)
+				local var0_25 = Vector3(0, 0, 0)
 
-				if var0_19.offset ~= "" then
-					var0_24 = Vector3(var0_19.offset[1], var0_19.offset[2], var0_19.offset[3])
+				if var0_20.offset ~= "" then
+					var0_25 = Vector3(var0_20.offset[1], var0_20.offset[2], var0_20.offset[3])
 				end
 
-				setParent(var0_20, arg0_19.roleTF)
+				setParent(var0_21, arg0_20.roleTF)
 
-				var0_20.transform.localPosition = var0_24
+				var0_21.transform.localPosition = var0_25
 			end
 		})
 
-		arg0_19.pageDressTFDic[arg2_19] = var0_20
+		arg0_20.pageDressTFDic[arg2_20] = var0_21
 
-		existCall(arg3_19)
+		existCall(arg3_20)
 	end), true, true)
 
-	table.insert(arg0_19.loadingIdList or {}, var3_19)
+	table.insert(arg0_20.loadingIdList or {}, var3_20)
 end
 
-function var0_0.ChangeDressObject(arg0_25, arg1_25, arg2_25)
-	local var0_25 = arg2_25.id
-	local var1_25 = arg0_25.currentDressDataDic[arg1_25] and arg0_25.currentDressDataDic[arg1_25].id or 0
+function var0_0.ChangeDressObject(arg0_26, arg1_26, arg2_26)
+	local var0_26 = arg2_26.id
+	local var1_26 = arg0_26.currentDressDataDic[arg1_26] and arg0_26.currentDressDataDic[arg1_26].id or 0
 
-	if var1_25 then
-		if var1_25 == var0_25 then
+	if var1_26 then
+		if var1_26 == var0_26 then
 			return
 		end
 
-		if var1_25 ~= 0 then
-			local var2_25 = arg0_25.pageDressTFDic[var1_25]
+		if var1_26 ~= 0 then
+			local var2_26 = arg0_26.pageDressTFDic[var1_26]
 
-			if var2_25 then
-				Object.Destroy(var2_25)
+			if var2_26 then
+				Object.Destroy(var2_26)
 
-				arg0_25.pageDressTFDic[var1_25] = nil
+				arg0_26.pageDressTFDic[var1_26] = nil
 			end
 
-			arg0_25.currentDressDataDic[arg1_25] = nil
+			arg0_26.currentDressDataDic[arg1_26] = nil
 		end
 	end
 
-	if var0_25 == 0 then
+	if var0_26 == 0 then
 		return
 	end
 
-	arg0_25.currentDressDataDic[arg1_25] = arg2_25
+	arg0_26.currentDressDataDic[arg1_26] = arg2_26
 
-	arg0_25:LoadDressObjectItem(arg1_25, var0_25)
+	arg0_26:LoadDressObjectItem(arg1_26, var0_26)
 end
 
-function var0_0.ChangeDressByType(arg0_26, arg1_26, arg2_26)
-	if not arg0_26.hasTF then
-		arg0_26.dataAfterRoleInit[arg1_26] = arg2_26
-
-		return
-	end
-
-	if table.contains(var0_0.CommanderCustom, arg1_26) then
-		arg0_26:ChangeCommanderPart(arg1_26, arg2_26)
-	else
-		arg0_26:ChangeDressObject(arg1_26, arg2_26)
-	end
-end
-
-function var0_0.ChangeCommanderPartShow(arg0_27, arg1_27, arg2_27)
+function var0_0.ChangeDressByType(arg0_27, arg1_27, arg2_27)
 	if not arg0_27.hasTF then
+		arg0_27.dataAfterRoleInit[arg1_27] = arg2_27
+
 		return
 	end
 
-	GraphicsInterface.Instance:SetCharacterComponentShow(arg0_27.roleTF:GetChild(0).gameObject, var0_0.ComponentType.Headware, arg2_27)
+	if table.contains(var0_0.CommanderCustom, arg1_27) then
+		arg0_27:ChangeCommanderPart(arg1_27, arg2_27)
+	else
+		arg0_27:ChangeDressObject(arg1_27, arg2_27)
+	end
 end
 
-function var0_0.ChangeModelTransfromByUnitId(arg0_28, arg1_28, arg2_28, arg3_28)
-	local var0_28 = pg.island_unit_character[arg1_28]
+function var0_0.ChangeCommanderPartShow(arg0_28, arg1_28, arg2_28)
+	if not arg0_28.hasTF then
+		return
+	end
 
-	arg0_28.hasTF = false
+	GraphicsInterface.Instance:SetCharacterComponentShow(arg0_28.roleTF:GetChild(0).gameObject, var0_0.ComponentType.Headware, arg2_28)
+end
 
-	arg0_28:RemoveDressTF()
+function var0_0.ChangeModelTransfromByUnitId(arg0_29, arg1_29, arg2_29, arg3_29)
+	local var0_29 = pg.island_unit_character[arg1_29]
 
-	arg0_28.dataAfterRoleInit = arg0_28.currentDressDataDic
-	arg0_28.currentDressDataDic = {}
+	arg0_29.hasTF = false
 
-	local var1_28 = arg0_28.roleTF:GetChild(0).gameObject
+	arg0_29:RemoveDressTF()
 
-	_IslandCore:GetPoolMgr():ReturnCharacterModel(arg0_28.modelData.model, arg0_28.modelData.animator, var1_28, true)
+	arg0_29.dataAfterRoleInit = arg0_29.currentDressDataDic
+	arg0_29.currentDressDataDic = {}
 
-	arg0_28.modelData = {
-		model = var0_28.model,
-		animator = var0_28.animator,
-		personal_ani = var0_28.personal_ani
+	local var1_29 = arg0_29.roleTF:GetChild(0).gameObject
+
+	_IslandCore:GetPoolMgr():ReturnCharacterModel(arg0_29.modelData.model, arg0_29.modelData.animator, var1_29, true)
+
+	arg0_29.modelData = {
+		model = var0_29.model,
+		animator = var0_29.animator,
+		personal_ani = var0_29.personal_ani
 	}
 
-	_IslandCore:GetPoolMgr():GetCharacterModel(arg0_28.modelData.model, arg0_28.modelData.animator, function(arg0_29)
-		arg0_28.hasTF = true
+	_IslandCore:GetPoolMgr():GetCharacterModel(arg0_29.modelData.model, arg0_29.modelData.animator, function(arg0_30)
+		arg0_29.hasTF = true
 
-		local var0_29 = arg0_28.isScene and Layer.Default or Layer.Character3D
+		local var0_30 = arg0_29.isScene and Layer.Default or Layer.Character3D
 
-		pg.ViewUtils.SetLayer(arg0_29.transform, var0_29)
-		setParent(arg0_29.transform, arg0_28.roleTF, false)
-		arg0_28:InitDressTF()
+		pg.ViewUtils.SetLayer(arg0_30.transform, var0_30)
+		setParent(arg0_30.transform, arg0_29.roleTF, false)
+		arg0_29:InitDressTF()
 
-		if arg3_28 then
-			local var1_29 = arg0_28.modelData.personal_ani
+		if arg3_29 then
+			local var1_30 = arg0_29.modelData.personal_ani
 
-			if var1_29 and var1_29 ~= "" then
-				local var2_29 = GetOrAddComponent(arg0_28.roleTF.transform:GetChild(0), typeof(Animator))
+			if var1_30 and var1_30 ~= "" then
+				local var2_30 = GetOrAddComponent(arg0_29.roleTF.transform:GetChild(0), typeof(Animator))
 
-				for iter0_29 = 1, var2_29.layerCount do
-					var2_29:CrossFadeInFixedTime(var1_29, 0, iter0_29 - 1)
+				for iter0_30 = 1, var2_30.layerCount do
+					var2_30:CrossFadeInFixedTime(var1_30, 0, iter0_30 - 1)
 				end
 			end
 		end
 
-		existCall(arg2_28, arg0_28.roleTF)
+		existCall(arg2_29, arg0_29.roleTF)
 	end, true)
 end
 
-function var0_0.ChangeModelTransfromByUnitIdAndChangeDress(arg0_30, arg1_30, arg2_30, arg3_30, arg4_30, arg5_30)
-	local var0_30 = pg.island_unit_character[arg1_30]
+function var0_0.ChangeModelTransfromByUnitIdAndChangeDress(arg0_31, arg1_31, arg2_31, arg3_31, arg4_31, arg5_31)
+	local var0_31 = pg.island_unit_character[arg1_31]
 
-	arg0_30.hasTF = false
+	arg0_31.hasTF = false
 
-	arg0_30:RemoveDressTF()
+	arg0_31:RemoveDressTF()
 
-	arg0_30.dataAfterRoleInit = arg0_30.currentDressDataDic
+	arg0_31.dataAfterRoleInit = arg0_31.currentDressDataDic
 
-	for iter0_30, iter1_30 in ipairs(arg2_30 or {}) do
-		local var1_30 = pg.island_dress_template[iter1_30].type
+	for iter0_31, iter1_31 in ipairs(arg2_31 or {}) do
+		local var1_31 = pg.island_dress_template[iter1_31].type
 
-		if arg0_30.dataAfterRoleInit[var1_30].id == iter1_30 then
-			arg0_30.dataAfterRoleInit[var1_30] = nil
+		if arg0_31.dataAfterRoleInit[var1_31].id == iter1_31 then
+			arg0_31.dataAfterRoleInit[var1_31] = nil
 		end
 	end
 
-	for iter2_30, iter3_30 in ipairs(arg3_30 or {}) do
-		local var2_30 = pg.island_dress_template[iter3_30].type
+	for iter2_31, iter3_31 in ipairs(arg3_31 or {}) do
+		local var2_31 = pg.island_dress_template[iter3_31].type
 
-		arg0_30.dataAfterRoleInit[var2_30] = {
+		arg0_31.dataAfterRoleInit[var2_31] = {
 			colorId = 0,
-			id = iter3_30
+			id = iter3_31
 		}
 	end
 
-	arg0_30.currentDressDataDic = {}
+	arg0_31.currentDressDataDic = {}
 
-	local var3_30 = arg0_30.roleTF:GetChild(0).gameObject
+	local var3_31 = arg0_31.roleTF:GetChild(0).gameObject
 
-	_IslandCore:GetPoolMgr():ReturnCharacterModel(arg0_30.modelData.model, arg0_30.modelData.animator, var3_30, true)
+	_IslandCore:GetPoolMgr():ReturnCharacterModel(arg0_31.modelData.model, arg0_31.modelData.animator, var3_31, true)
 
-	arg0_30.modelData = {
-		model = var0_30.model,
-		animator = var0_30.animator,
-		personal_ani = var0_30.personal_ani
+	arg0_31.modelData = {
+		model = var0_31.model,
+		animator = var0_31.animator,
+		personal_ani = var0_31.personal_ani
 	}
 
-	_IslandCore:GetPoolMgr():GetCharacterModel(arg0_30.modelData.model, arg0_30.modelData.animator, function(arg0_31)
-		arg0_30.hasTF = true
+	_IslandCore:GetPoolMgr():GetCharacterModel(arg0_31.modelData.model, arg0_31.modelData.animator, function(arg0_32)
+		arg0_31.hasTF = true
 
-		local var0_31 = arg0_30.isScene and Layer.Default or Layer.Character3D
+		local var0_32 = arg0_31.isScene and Layer.Default or Layer.Character3D
 
-		pg.ViewUtils.SetLayer(arg0_31.transform, var0_31)
-		setParent(arg0_31.transform, arg0_30.roleTF, false)
-		arg0_30:InitDressTF()
+		pg.ViewUtils.SetLayer(arg0_32.transform, var0_32)
+		setParent(arg0_32.transform, arg0_31.roleTF, false)
+		arg0_31:InitDressTF()
 
-		if arg5_30 then
-			local var1_31 = arg0_30.modelData.personal_ani
+		if arg5_31 then
+			local var1_32 = arg0_31.modelData.personal_ani
 
-			if var1_31 and var1_31 ~= "" then
-				local var2_31 = GetOrAddComponent(arg0_30.roleTF.transform:GetChild(0), typeof(Animator))
+			if var1_32 and var1_32 ~= "" then
+				local var2_32 = GetOrAddComponent(arg0_31.roleTF.transform:GetChild(0), typeof(Animator))
 
-				for iter0_31 = 1, var2_31.layerCount do
-					var2_31:CrossFadeInFixedTime(var1_31, 0, iter0_31 - 1)
+				for iter0_32 = 1, var2_32.layerCount do
+					var2_32:CrossFadeInFixedTime(var1_32, 0, iter0_32 - 1)
 				end
 			end
 		end
 
-		existCall(arg4_30, arg0_30.roleTF)
+		existCall(arg4_31, arg0_31.roleTF)
 	end, true)
 end
 
-function var0_0.Destroy(arg0_32)
-	arg0_32:RemoveDressTF()
+function var0_0.Destroy(arg0_33)
+	arg0_33.curIsland = nil
 
-	for iter0_32, iter1_32 in ipairs(arg0_32.loadingIdList or {}) do
-		IslandAssetLoadDispatcher.Instance:Cancel(iter1_32)
+	arg0_33:RemoveDressTF()
+
+	for iter0_33, iter1_33 in ipairs(arg0_33.loadingIdList or {}) do
+		IslandAssetLoadDispatcher.Instance:Cancel(iter1_33)
 	end
 
-	arg0_32.loadingIdList = nil
+	arg0_33.loadingIdList = nil
 end
 
-function var0_0.ResetDressUp(arg0_33)
-	local var0_33 = getProxy(IslandProxy):GetIsland()
+function var0_0.ResetDressUp(arg0_34)
+	local var0_34 = getProxy(IslandProxy):GetIsland()
 
-	if arg0_33.shipId == 0 then
-		local var1_33 = {
+	if arg0_34.shipId == 0 then
+		local var1_34 = {
 			var0_0.DressType.BackDecorate,
 			var0_0.DressType.Flotage,
 			var0_0.DressType.Footprint
 		}
-		local var2_33 = var0_33:GetDressUpAgency()
+		local var2_34 = var0_34:GetDressUpAgency()
 
-		for iter0_33, iter1_33 in ipairs(var1_33) do
-			local var3_33 = var2_33:GetDressByType(iter1_33) or 0
-			local var4_33 = 0
+		for iter0_34, iter1_34 in ipairs(var1_34) do
+			local var3_34 = var2_34:GetDressByType(iter1_34) or 0
+			local var4_34 = 0
 
-			arg0_33:ChangeDressByType(iter1_33, {
-				id = var3_33,
-				colorId = var4_33
+			arg0_34:ChangeDressByType(iter1_34, {
+				id = var3_34,
+				colorId = var4_34
 			})
 		end
 	else
-		local var5_33 = var0_33:GetCharacterAgency()
-		local var6_33 = {
+		local var5_34 = var0_34:GetCharacterAgency()
+		local var6_34 = {
 			var0_0.DressType.BackDecorate,
 			var0_0.DressType.Flotage,
 			var0_0.DressType.Footprint
 		}
 
-		for iter2_33, iter3_33 in ipairs(var6_33) do
-			local var7_33 = var5_33:GetCurDressIdByShipId(arg0_33.shipId, iter3_33) or {}
+		for iter2_34, iter3_34 in ipairs(var6_34) do
+			local var7_34 = var5_34:GetCurDressIdByShipId(arg0_34.shipId, iter3_34) or {}
 
-			arg0_33:ChangeDressByType(iter3_33, {
+			arg0_34:ChangeDressByType(iter3_34, {
 				colorId = 0,
-				id = var7_33.dress_id or 0
+				id = var7_34.dress_id or 0
 			})
 		end
 	end

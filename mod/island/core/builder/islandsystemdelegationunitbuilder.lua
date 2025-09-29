@@ -40,10 +40,11 @@ function var0_0.LoadOtherPart(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4)
 
 	seriesAsync({
 		function(arg0_5)
-			local var0_5 = IslandShipDressHelperNew.New()
+			local var0_5 = arg0_4.view:GetIsland()
+			local var1_5 = IslandShipDressHelperNew.New(var0_5)
 
-			arg2_4:SetShipDressHelper(var0_5)
-			var0_5:PreLoadShipDressupItem(arg1_4, var0_4, arg0_5)
+			arg2_4:SetShipDressHelper(var1_5)
+			var1_5:PreLoadShipDressupItem(arg1_4, var0_4, arg0_5)
 		end
 	}, function()
 		existCall(arg4_4)

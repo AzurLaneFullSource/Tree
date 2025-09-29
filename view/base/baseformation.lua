@@ -644,6 +644,8 @@ function var0_0.Destroy(arg0_61)
 
 		arg0_61._eventTriggers = nil
 	end
+
+	pg.DelegateInfo.Dispose(arg0_61)
 end
 
 return var0_0

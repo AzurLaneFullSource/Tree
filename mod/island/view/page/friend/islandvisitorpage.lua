@@ -244,6 +244,9 @@ function var0_0.FlushPeopleCnt(arg0_28)
 end
 
 function var0_0.OnDestroy(arg0_29)
+	ClearLScrollrect(arg0_29._scrollrect)
+	ClearLScrollrect(arg0_29._scrollrectLog)
+
 	for iter0_29, iter1_29 in pairs(arg0_29.cardList) do
 		for iter2_29, iter3_29 in pairs(iter1_29) do
 			iter3_29:Dispose()

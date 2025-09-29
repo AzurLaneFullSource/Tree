@@ -223,6 +223,8 @@ function var0_0.OnHide(arg0_23)
 end
 
 function var0_0.OnDestroy(arg0_24)
+	arg0_24:UnBlurPanel()
+
 	for iter0_24, iter1_24 in ipairs(arg0_24.pages) do
 		iter1_24:Destroy()
 	end

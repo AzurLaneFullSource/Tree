@@ -96,4 +96,9 @@ function var0_0.UpdateList(arg0_13, arg1_13)
 	arg0_13.scrollRect:SetTotalCount(#arg1_13)
 end
 
+function var0_0.OnDestroy(arg0_14)
+	var0_0.super.OnDestroy(arg0_14)
+	ClearLScrollrect(arg0_14.scrollRect)
+end
+
 return var0_0

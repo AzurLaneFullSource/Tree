@@ -37,7 +37,8 @@ function var0_0.OnInit(arg0_3)
 	pg.UIMgr.GetInstance():OverlayPanel(arg0_3.frame, {
 		pbList = {
 			arg0_3.frame
-		}
+		},
+		overlayType = LayerWeightConst.OVERLAY_UI_ADAPT
 	})
 	setActive(arg0_3._tf, true)
 	onToggle(arg0_3, arg0_3.toggle, function(arg0_4)

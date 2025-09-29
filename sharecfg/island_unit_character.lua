@@ -310,7 +310,7 @@ pg.base.island_unit_character = {
 		describe_illustrated_guid = "",
 		IslandShipIcon = "101500",
 		english_name = "",
-		name = "珂汀 ",
+		name = "Canteen",
 		group = 1015,
 		animator = "island/animator/ani_role_all_01_01",
 		rendering = "101500",
@@ -340,7 +340,7 @@ pg.base.island_unit_character = {
 		describe_illustrated_guid = "",
 		IslandShipIcon = "gongzuojiu",
 		english_name = "",
-		name = "Infinite Stamina",
+		name = "Workerjuu",
 		group = 3002,
 		animator = "island/animator/ani_role_3002_01_01",
 		rendering = "300200",
@@ -355,7 +355,7 @@ pg.base.island_unit_character = {
 		describe_illustrated_guid = "",
 		IslandShipIcon = "",
 		english_name = "",
-		name = "直升鸡",
+		name = "Pilotjuu",
 		group = 3003,
 		animator = "island/animator/ani_role_3003_01_01",
 		rendering = "300300",
@@ -370,7 +370,7 @@ pg.base.island_unit_character = {
 		describe_illustrated_guid = "",
 		IslandShipIcon = "",
 		english_name = "",
-		name = "路障鸡",
+		name = "Roadblockjuu",
 		group = 3004,
 		animator = "island/animator/ani_role_3004_01_01",
 		rendering = "300400",
@@ -385,7 +385,7 @@ pg.base.island_unit_character = {
 		describe_illustrated_guid = "",
 		IslandShipIcon = "",
 		english_name = "",
-		name = "粉鸡",
+		name = "Pinkjuu",
 		group = 3005,
 		animator = "island/animator/ani_role_3005_01_01",
 		rendering = "300500",
@@ -400,7 +400,7 @@ pg.base.island_unit_character = {
 		describe_illustrated_guid = "",
 		IslandShipIcon = "",
 		english_name = "",
-		name = "礼帽鸡",
+		name = "Hatjuu",
 		group = 3006,
 		animator = "island/animator/ani_role_all_01_01",
 		rendering = "300600",
@@ -415,7 +415,7 @@ pg.base.island_unit_character = {
 		describe_illustrated_guid = "",
 		IslandShipIcon = "",
 		english_name = "",
-		name = "麻雀",
+		name = "Sparrow",
 		group = 3007,
 		animator = "island/animator/ani_role_3007_01_01",
 		rendering = "300700",
@@ -430,7 +430,7 @@ pg.base.island_unit_character = {
 		describe_illustrated_guid = "",
 		IslandShipIcon = "",
 		english_name = "",
-		name = "海鸥",
+		name = "Seagull",
 		group = 3008,
 		animator = "island/animator/ani_role_3008_01_01",
 		rendering = "300800",
@@ -455,7 +455,7 @@ pg.base.island_unit_character = {
 		personal_ani = "",
 		shipId = 0,
 		CollisionParam = {
-			0.2,
+			0.4,
 			0.2,
 			0.25
 		}
@@ -474,7 +474,7 @@ pg.base.island_unit_character = {
 		personal_ani = "",
 		shipId = 0,
 		CollisionParam = {
-			0.2,
+			0.4,
 			0.2,
 			0.25
 		}
@@ -493,7 +493,7 @@ pg.base.island_unit_character = {
 		personal_ani = "",
 		shipId = 0,
 		CollisionParam = {
-			0.2,
+			0.4,
 			0.2,
 			0.25
 		}
@@ -512,7 +512,7 @@ pg.base.island_unit_character = {
 		personal_ani = "",
 		shipId = 0,
 		CollisionParam = {
-			0.2,
+			0.4,
 			0.2,
 			0.25
 		}
@@ -540,7 +540,7 @@ pg.base.island_unit_character = {
 		describe_illustrated_guid = "",
 		IslandShipIcon = "",
 		english_name = "",
-		name = "奶牛(牧场)",
+		name = "Cow (Ranch)",
 		group = 3011,
 		animator = "island/animator/ani_role_3011_01_01",
 		rendering = "301100",
@@ -559,7 +559,7 @@ pg.base.island_unit_character = {
 		describe_illustrated_guid = "",
 		IslandShipIcon = "",
 		english_name = "",
-		name = "黄牛(牧场)",
+		name = "Ox (Ranch)",
 		group = 3012,
 		animator = "island/animator/ani_role_3011_01_01",
 		rendering = "301200",
@@ -578,7 +578,7 @@ pg.base.island_unit_character = {
 		describe_illustrated_guid = "",
 		IslandShipIcon = "",
 		english_name = "",
-		name = "羊(牧场)",
+		name = "Sheep (Ranch)",
 		group = 3013,
 		animator = "island/animator/ani_role_3013_01_01",
 		rendering = "301300",

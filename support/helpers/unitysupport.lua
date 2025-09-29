@@ -434,6 +434,10 @@ function ClearEventTrigger(arg0_52)
 end
 
 function ClearLScrollrect(arg0_53)
+	if not arg0_53 then
+		return
+	end
+
 	arg0_53.onStart = nil
 	arg0_53.onInitItem = nil
 	arg0_53.onUpdateItem = nil
@@ -801,8 +805,8 @@ function setSizeDelta(arg0_101, arg1_101)
 
 	local var1_101 = var0_101.sizeDelta
 
-	var1_101.x = arg1_101.x
-	var1_101.y = arg1_101.y
+	var1_101.x = arg1_101.x or var1_101.x
+	var1_101.y = arg1_101.y or var1_101.y
 	var0_101.sizeDelta = var1_101
 end
 

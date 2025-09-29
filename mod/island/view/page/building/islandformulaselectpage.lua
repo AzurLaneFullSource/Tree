@@ -47,6 +47,8 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.enoughSureBg = arg0_2.sureBtn:Find("okBg")
 	arg0_2.notenoughSureBg = arg0_2.sureBtn:Find("notBg")
 	arg0_2.animationPlayer = arg0_2.rightInfo:GetComponent(typeof(Animation))
+	arg0_2.addExpTF = arg0_2.selectShipTf:Find("exp")
+	arg0_2.addExp = arg0_2.selectShipTf:Find("exp/addExp")
 end
 
 function var0_0.AddListeners(arg0_3)
@@ -322,28 +324,40 @@ function var0_0.RefreshCanStart(arg0_24)
 		setActive(arg0_24.enoughSureBg, true)
 		setActive(arg0_24.notenoughSureBg, false)
 		onButton(arg0_24, arg0_24.sureBtn, function()
-			local var0_28 = arg0_24.formulaToActivityDic[arg0_24.selectFormulaId]
+			if arg0_24.addDelegateFormula then
+				arg0_24.placeId = pg.island_production_slot[arg0_24.slotId].place
 
-			if var0_28 then
-				local var1_28 = getProxy(ActivityProxy):getActivityById(var0_28)
+				local var0_28 = getProxy(IslandProxy):GetIsland():GetBuildingAgency():GetBuilding(arg0_24.placeId):GetDelegationSlotData(arg0_24.slotId)
 
-				if not var1_28 or var1_28:isEnd() then
+				if var0_28 and not var0_28:GetSlotRoleData() then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("island_additional_production_tip2"))
+
+					return
+				end
+			end
+
+			local var1_28 = arg0_24.formulaToActivityDic[arg0_24.selectFormulaId]
+
+			if var1_28 then
+				local var2_28 = getProxy(ActivityProxy):getActivityById(var1_28)
+
+				if not var2_28 or var2_28:isEnd() then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("island_activity_expired"))
 
 					return
 				end
 			end
 
-			local var2_28, var3_28 = var2_24()
+			local var3_28, var4_28 = var2_24()
 
-			if var2_28 then
+			if var3_28 then
 				arg0_24:ShowMsgBox({
 					type = IslandMsgBox.TYPE_COMMON,
 					content = i18n("island_production_manually_cancel"),
 					onYes = function()
 						pg.m02:sendNotification(GAME.ISLAND_STOP_HANDLE_PLANT_HALFWAY, {
 							build_id = arg0_24.placeId,
-							slot_list = var3_28
+							slot_list = var4_28
 						})
 					end,
 					onNo = function()
@@ -357,9 +371,9 @@ function var0_0.RefreshCanStart(arg0_24)
 			existCall(arg0_24.unLoadCharacterFunc)
 
 			if arg0_24.addDelegateFormula then
-				local var4_28 = arg0_24.curSelectCount - arg0_24.addDelegateFormulaTimes
+				local var5_28 = arg0_24.curSelectCount - arg0_24.addDelegateFormulaTimes
 
-				arg0_24:emit(IslandMediator.ADD_DELEGATION, arg0_24.placeId, arg0_24.slotId, var4_28)
+				arg0_24:emit(IslandMediator.ADD_DELEGATION, arg0_24.placeId, arg0_24.slotId, var5_28)
 			else
 				arg0_24:emit(IslandMediator.START_DELEGATION, arg0_24.placeId, arg0_24.slotId, arg0_24.selectedShipId, arg0_24.selectFormulaId, arg0_24.curSelectCount)
 			end
@@ -388,6 +402,8 @@ function var0_0.OnShow(arg0_32, arg1_32)
 	arg0_32.addDelegateFormulaTimes = arg1_32.addDelegateFormulaTimes
 	arg0_32.canRewardTime = arg1_32.canRewardTime
 
+	setActive(arg0_32.addExpTF, arg0_32.selectedShipId ~= 1)
+
 	if arg0_32.addDelegateFormulaTimes then
 		setActive(arg0_32.barLimit, true)
 
@@ -401,7 +417,7 @@ function var0_0.OnShow(arg0_32, arg1_32)
 		setActive(arg0_32.addCountTips, false)
 	end
 
-	local var1_32 = arg0_32.addDelegateFormulaTimes and i18n1("追加生产") or i18n("island_production_start")
+	local var1_32 = arg0_32.addDelegateFormulaTimes and i18n("island_additional_production_tip1") or i18n("island_production_start")
 
 	setText(arg0_32.sureBtn:Find("adapt/time/Text"), var1_32)
 
@@ -451,6 +467,8 @@ function var0_0.RefreshShipEnergy(arg0_34)
 	else
 		arg0_34.animationPlayer:Play("anim_IslandFormulaSelectNewUI_bar_Loop")
 	end
+
+	setText(arg0_34.addExp, "EXP+" .. arg0_34.formulaCfg.ship_exp * var0_34)
 
 	if arg0_34.eneryTimer then
 		arg0_34.eneryTimer:Stop()

@@ -63,7 +63,7 @@ pg.island_buff_template = {
 	},
 	{
 		buff_desc = "Increases the Production stat by 6% for 8 hours.",
-		name = "Production Stat Boost",
+		name = "Manuf. Efficiency Boost",
 		buff_type = 102,
 		buff_level = 1,
 		buff_color = 2,
@@ -106,7 +106,7 @@ pg.island_buff_template = {
 	},
 	[10000] = {
 		buff_desc = "无需本地化，角色技能读skill表",
-		name = "Production Expertise",
+		name = "Manufacturing Expertise",
 		buff_type = 102,
 		buff_level = 1,
 		buff_color = 0,
@@ -126,7 +126,7 @@ pg.island_buff_template = {
 	},
 	[10001] = {
 		buff_desc = "无需本地化，角色技能读skill表",
-		name = "Production Expertise",
+		name = "Manufacturing Expertise",
 		buff_type = 102,
 		buff_level = 2,
 		buff_color = 0,
@@ -146,7 +146,7 @@ pg.island_buff_template = {
 	},
 	[10002] = {
 		buff_desc = "无需本地化，角色技能读skill表",
-		name = "Production Expertise",
+		name = "Manufacturing Expertise",
 		buff_type = 102,
 		buff_level = 3,
 		buff_color = 0,
@@ -166,7 +166,7 @@ pg.island_buff_template = {
 	},
 	[10003] = {
 		buff_desc = "无需本地化，角色技能读skill表",
-		name = "Production Expertise",
+		name = "Manufacturing Expertise",
 		buff_type = 102,
 		buff_level = 4,
 		buff_color = 0,
@@ -186,7 +186,7 @@ pg.island_buff_template = {
 	},
 	[10004] = {
 		buff_desc = "无需本地化，角色技能读skill表",
-		name = "Production Expertise",
+		name = "Manufacturing Expertise",
 		buff_type = 102,
 		buff_level = 5,
 		buff_color = 0,
@@ -206,7 +206,7 @@ pg.island_buff_template = {
 	},
 	[10005] = {
 		buff_desc = "无需本地化，角色技能读skill表",
-		name = "Production Expertise",
+		name = "Manufacturing Expertise",
 		buff_type = 102,
 		buff_level = 6,
 		buff_color = 0,
@@ -226,7 +226,7 @@ pg.island_buff_template = {
 	},
 	[10006] = {
 		buff_desc = "无需本地化，角色技能读skill表",
-		name = "Production Expertise",
+		name = "Manufacturing Expertise",
 		buff_type = 102,
 		buff_level = 7,
 		buff_color = 0,
@@ -246,7 +246,7 @@ pg.island_buff_template = {
 	},
 	[10007] = {
 		buff_desc = "无需本地化，角色技能读skill表",
-		name = "Production Expertise",
+		name = "Manufacturing Expertise",
 		buff_type = 102,
 		buff_level = 8,
 		buff_color = 0,
@@ -266,7 +266,7 @@ pg.island_buff_template = {
 	},
 	[10008] = {
 		buff_desc = "无需本地化，角色技能读skill表",
-		name = "Production Expertise",
+		name = "Manufacturing Expertise",
 		buff_type = 102,
 		buff_level = 9,
 		buff_color = 0,
@@ -286,7 +286,7 @@ pg.island_buff_template = {
 	},
 	[10009] = {
 		buff_desc = "无需本地化，角色技能读skill表",
-		name = "Production Expertise",
+		name = "Manufacturing Expertise",
 		buff_type = 102,
 		buff_level = 10,
 		buff_color = 0,

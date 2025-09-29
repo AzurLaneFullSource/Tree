@@ -52,6 +52,16 @@ function var0_0.execute(arg0_1, arg1_1)
 			var7_2:UpdateEnergy(arg0_2.cur_energy)
 			var7_2:UpdateEnergyBeginRecoverTime(arg0_2.recover_time)
 			var7_2:AddExp(arg0_2.add_exp)
+
+			local var8_2
+
+			if #arg0_2.award == 0 and arg0_2.add_exp > 0 then
+				var8_2 = {
+					addShipId = arg0_2.ship_id,
+					addExp = arg0_2.add_exp
+				}
+			end
+
 			var3_1:DispatchEvent(var0_0.END_DELEGATION, {
 				build_id = var1_1,
 				ship_id = arg0_2.ship_id,
@@ -59,7 +69,8 @@ function var0_0.execute(arg0_1, arg1_1)
 				remainReward = var5_2
 			})
 			arg0_1:sendNotification(GAME.ISLAND_FINISH_DELEGATION_DONE, {
-				slotId = var2_1
+				slotId = var2_1,
+				addShipExpData = var8_2
 			})
 		else
 			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)

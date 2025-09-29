@@ -22,6 +22,10 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.buyBtn = arg0_2:findTF("buyBtn", arg0_2.panel)
 	arg0_2.consumeIcon = arg0_2:findTF("consume/icon", arg0_2.buyBtn)
 	arg0_2.consumeCount = arg0_2:findTF("consume/count", arg0_2.buyBtn)
+
+	setText(arg0_2._tf:Find("panel/title"), i18n("island_3Dshop_buy_confirm"))
+	setText(arg0_2._tf:Find("panel/buyBtn/text"), i18n("island_3Dshop_buy"))
+	setText(arg0_2._tf:Find("panel/getDesc"), i18n("island_3Dshop_buy_tip0"))
 end
 
 function var0_0.OnInit(arg0_3)
@@ -134,7 +138,9 @@ function var0_0.SetUp(arg0_6, arg1_6, arg2_6)
 				count = var0_13[3]
 			}
 
-			updateCustomDrop(arg2_13, var1_13)
+			updateCustomDrop(arg2_13, var1_13, {
+				style = "island"
+			})
 			table.insert(arg0_6.itemsCountTFs, arg2_13:Find("icon_bg/count_bg/count"))
 		end
 	end)

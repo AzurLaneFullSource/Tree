@@ -69,11 +69,15 @@ function var0_0.Hide(arg0_10)
 end
 
 function var0_0.OnDestroy(arg0_11)
+	ClearLScrollrect(arg0_11.scrollRect)
+
 	for iter0_11, iter1_11 in pairs(arg0_11.cards) do
 		iter1_11:Dispose()
 	end
 
 	arg0_11.cards = {}
+
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11._tf, arg0_11._parentTf)
 end
 
 return var0_0

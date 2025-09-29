@@ -138,17 +138,16 @@ end
 
 function var0_0.CheckCanStartColloct(arg0_17)
 	if not (arg0_17.slotData:GetCanCollectTimeStamps() == 0) then
-		local var0_17 = arg0_17.slotData:GetCanCollectTimeStamps()
-		local var1_17 = var0_17 - pg.TimeMgr.GetInstance():GetServerTime()
-		local var2_17
+		local var0_17 = arg0_17.slotData:GetCanCollectTimeStamps() - pg.TimeMgr.GetInstance():GetServerTime()
+		local var1_17 = (function(arg0_18)
+			local var0_18 = math.floor(arg0_18 / 3600)
+			local var1_18 = math.floor(arg0_18 % 3600 / 60)
+			local var2_18 = arg0_18 % 60
 
-		if var1_17 > 86400 then
-			var2_17 = pg.TimeMgr.GetInstance():STimeDescC(var0_17 or 0)
-		else
-			var2_17 = os.date("%H:%M:%S", var0_17 or 0)
-		end
+			return string.format("%02d:%02d:%02d", var0_18, var1_18, var2_18)
+		end)(var0_17)
 
-		pg.TipsMgr.GetInstance():ShowTips(i18n("island_production_log_recover", var2_17))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("island_production_log_recover", var1_17))
 
 		return false
 	end
@@ -156,80 +155,80 @@ function var0_0.CheckCanStartColloct(arg0_17)
 	return true
 end
 
-function var0_0.GetHudInfo(arg0_18)
-	local var0_18 = {}
+function var0_0.GetHudInfo(arg0_19)
+	local var0_19 = {}
 
-	if not arg0_18.slotData then
-		var0_18.needShowHud = false
+	if not arg0_19.slotData then
+		var0_19.needShowHud = false
 
-		return var0_18
+		return var0_19
 	end
 
-	var0_18.needShowHud = true
+	var0_19.needShowHud = true
 
-	local var1_18 = pg.island_formula[arg0_18.formulaId]
+	local var1_19 = pg.island_formula[arg0_19.formulaId]
 
-	var0_18.name = var1_18.name
+	var0_19.name = var1_19.name
 
-	local var2_18 = arg0_18.slotData:GetCanCollectTimeStamps() == 0 and 1 or 0
+	local var2_19 = arg0_19.slotData:GetCanCollectTimeStamps() == 0 and 1 or 0
 
-	var0_18.numProcess = string.format("%d/%d", var2_18, 1)
-	var0_18.itemIcon = "island/" .. pg.island_item_data_template[var1_18.item_id].icon
+	var0_19.numProcess = string.format("%d/%d", var2_19, 1)
+	var0_19.itemIcon = "island/" .. pg.island_item_data_template[var1_19.item_id].icon
 
-	if var2_18 == 0 then
-		var0_18.process = 0
-	elseif arg0_18.maxHp ~= 0 then
-		var0_18.process = arg0_18.currentHp / arg0_18.maxHp
+	if var2_19 == 0 then
+		var0_19.process = 0
+	elseif arg0_19.maxHp ~= 0 then
+		var0_19.process = arg0_19.currentHp / arg0_19.maxHp
 	end
 
-	return var0_18
+	return var0_19
 end
 
-function var0_0.TakeAttack(arg0_19)
-	local var0_19 = pg.island_formula[arg0_19.formulaId]
-	local var1_19 = var0_19.affected_vfx[1]
+function var0_0.TakeAttack(arg0_20)
+	local var0_20 = pg.island_formula[arg0_20.formulaId]
+	local var1_20 = var0_20.affected_vfx[1]
 
-	arg0_19:NotifiyIsland(IslandProxy.GEN_RECYCLEITEM, {
-		id = arg0_19.id,
-		unitId = var1_19,
-		position = arg0_19.position,
-		rotation = arg0_19.rotation,
+	arg0_20:NotifiyIsland(IslandProxy.GEN_RECYCLEITEM, {
+		id = arg0_20.id,
+		unitId = var1_20,
+		position = arg0_20.position,
+		rotation = arg0_20.rotation,
 		recycleAssetType = IslandDelayRecycleUnitBuilder.RecycleType.ProductEffect,
-		delayRecycleTime = var0_19.affected_vfx[2],
+		delayRecycleTime = var0_20.affected_vfx[2],
 		behaviourTree = {}
 	})
 
-	if arg0_19.maxHp ~= 0 then
-		local var2_19 = arg0_19:GetToolId()
-		local var3_19 = pg.island_animation_attachments[var2_19].attack
+	if arg0_20.maxHp ~= 0 then
+		local var2_20 = arg0_20:GetToolId()
+		local var3_20 = pg.island_animation_attachments[var2_20].attack
 
-		arg0_19:TakeDamage(var3_19)
-		arg0_19:NotifiyCore(ISLAND_EVT.UPDATE_HUD, tonumber(arg0_19.id))
+		arg0_20:TakeDamage(var3_20)
+		arg0_20:NotifiyCore(ISLAND_EVT.UPDATE_HUD, tonumber(arg0_20.id))
 
-		if arg0_19.currentHp < 0 then
-			arg0_19.slotData:StartColloct()
+		if arg0_20.currentHp < 0 then
+			arg0_20.slotData:StartColloct()
 		end
 	else
-		arg0_19.slotData:StartColloct()
+		arg0_20.slotData:StartColloct()
 	end
 end
 
-function var0_0.OnDispose(arg0_20)
-	var0_0.super.OnDispose(arg0_20)
+function var0_0.OnDispose(arg0_21)
+	var0_0.super.OnDispose(arg0_21)
 
-	if arg0_20.effectGo then
-		arg0_20:UnLoadSceneItemRes(arg0_20.effectPath, arg0_20.effectGo)
+	if arg0_21.effectGo then
+		arg0_21:UnLoadSceneItemRes(arg0_21.effectPath, arg0_21.effectGo)
 	end
 
-	arg0_20:StopUpdateInfoTimer()
-	arg0_20:StopEffectTimer()
+	arg0_21:StopUpdateInfoTimer()
+	arg0_21:StopEffectTimer()
 
-	arg0_20.hasEffect = false
+	arg0_21.hasEffect = false
 
-	if arg0_20.modelDelayTimer then
-		arg0_20.modelDelayTimer:Stop()
+	if arg0_21.modelDelayTimer then
+		arg0_21.modelDelayTimer:Stop()
 
-		arg0_20.modelDelayTimer = nil
+		arg0_21.modelDelayTimer = nil
 	end
 end
 

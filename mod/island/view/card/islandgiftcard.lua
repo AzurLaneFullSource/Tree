@@ -6,6 +6,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.itemTr = findTF(arg0_1._tf, "IslandItemTpl")
 	arg0_1.countTr = arg0_1.itemTr:Find("icon_bg/count_bg")
 	arg0_1.countTxt = arg0_1.itemTr:Find("icon_bg/count_bg/count"):GetComponent(typeof(Text))
+	arg0_1.nameTF = findTF(arg0_1._tf, "name/Text")
 	arg0_1.nameTxt = findTF(arg0_1._tf, "name/Text"):GetComponent(typeof(Text))
 	arg0_1.selected = findTF(arg0_1._tf, "selected")
 	arg0_1.heart = findTF(arg0_1._tf, "heart")
@@ -25,8 +26,8 @@ function var0_0.Update(arg0_2, arg1_2, arg2_2, arg3_2)
 
 	updateCustomDrop(arg0_2.itemTr, var1_2)
 	setActive(arg0_2.countTr, true)
+	setScrollText(arg0_2.nameTF, arg2_2:GetName())
 
-	arg0_2.nameTxt.text = arg2_2:GetName()
 	arg0_2.countTxt.text = "X" .. arg2_2:GetCount()
 
 	arg0_2:UpdateSelected(arg3_2)

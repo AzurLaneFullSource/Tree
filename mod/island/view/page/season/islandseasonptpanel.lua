@@ -119,6 +119,7 @@ function var0_0.OnHide(arg0_14)
 end
 
 function var0_0.OnDestroy(arg0_15)
+	ClearLScrollrect(arg0_15.scrollCom)
 	arg0_15:OnHide()
 end
 

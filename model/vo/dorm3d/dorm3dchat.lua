@@ -134,63 +134,69 @@ function var0_0.SetBackgrounds(arg0_11)
 	end
 end
 
-function var0_0.GetPainting(arg0_12)
-	local var0_12 = ShipGroup.getDefaultShipConfig(arg0_12.characterId).skin_id
-	local var1_12 = pg.ship_skin_template[var0_12]
+function var0_0.GetSkins(arg0_12)
+	arg0_12:SetBackgrounds()
 
-	assert(var1_12, "ship_skin_template not exist: " .. var0_12)
-
-	return var1_12.painting
+	return arg0_12.skins
 end
 
-function var0_0.GetPaintingId(arg0_13)
-	return ShipGroup.getDefaultShipConfig(arg0_13.characterId).skin_id
+function var0_0.GetPainting(arg0_13)
+	local var0_13 = ShipGroup.getDefaultShipConfig(arg0_13.characterId).skin_id
+	local var1_13 = pg.ship_skin_template[var0_13]
+
+	assert(var1_13, "ship_skin_template not exist: " .. var0_13)
+
+	return var1_13.painting
 end
 
-function var0_0.getDisplayableSkinList(arg0_14)
-	local var0_14 = {}
+function var0_0.GetPaintingId(arg0_14)
+	return ShipGroup.getDefaultShipConfig(arg0_14.characterId).skin_id
+end
 
-	local function var1_14(arg0_15)
-		return arg0_15.skin_type == ShipSkin.SKIN_TYPE_OLD or arg0_15.skin_type == ShipSkin.SKIN_TYPE_NOT_HAVE_HIDE and not getProxy(ShipSkinProxy):hasSkin(arg0_15.id)
+function var0_0.getDisplayableSkinList(arg0_15)
+	local var0_15 = {}
+
+	local function var1_15(arg0_16)
+		return arg0_16.skin_type == ShipSkin.SKIN_TYPE_OLD or arg0_16.skin_type == ShipSkin.SKIN_TYPE_NOT_HAVE_HIDE and not getProxy(ShipSkinProxy):hasSkin(arg0_16.id)
 	end
 
-	local function var2_14(arg0_16)
-		return getProxy(ShipSkinProxy):InShowTime(arg0_16)
+	local function var2_15(arg0_17)
+		return getProxy(ShipSkinProxy):InShowTime(arg0_17)
 	end
 
-	for iter0_14, iter1_14 in ipairs(pg.ship_skin_template.all) do
-		local var3_14 = pg.ship_skin_template[iter1_14]
+	for iter0_15, iter1_15 in ipairs(pg.ship_skin_template.all) do
+		local var3_15 = pg.ship_skin_template[iter1_15]
 
-		if var3_14.ship_group == arg0_14.characterId and var3_14.no_showing ~= "1" and not var1_14(var3_14) and var2_14(var3_14.id) then
-			table.insert(var0_14, var3_14)
+		if var3_15.ship_group == arg0_15.characterId and var3_15.no_showing ~= "1" and not var1_15(var3_15) and var2_15(var3_15.id) then
+			table.insert(var0_15, var3_15)
 		end
 	end
 
-	return var0_14
+	return var0_15
 end
 
-function var0_0.GetTopicsSortByActivateTime(arg0_17)
-	local var0_17 = Clone(arg0_17.topics)
+function var0_0.GetTopicsSortByActivateTime(arg0_18)
+	local var0_18 = Clone(arg0_18.topics)
 
-	table.sort(var0_17, function(arg0_18, arg1_18)
-		local var0_18 = arg0_18.active and 1 or 0
-		local var1_18 = arg1_18.active and 1 or 0
+	table.sort(var0_18, function(arg0_19, arg1_19)
+		local var0_19 = arg0_19.active and 1 or 0
+		local var1_19 = arg1_19.active and 1 or 0
 
-		if var0_18 ~= var1_18 then
-			return var1_18 < var0_18
+		if var0_19 ~= var1_19 then
+			return var1_19 < var0_19
 		end
 
-		local var2_18 = arg0_18.operationTime
-		local var3_18 = arg1_18.operationTime
+		local var2_19 = arg0_19.operationTime
+		local var3_19 = arg1_19.operationTime
 
-		if var2_18 ~= var3_18 then
-			return var3_18 < var2_18
+		if var2_19 ~= var3_19 then
+			return var3_19 < var2_19
 		end
 
-		return arg0_18.topicId > arg1_18.topicId
+		return arg0_19.topicId > arg1_19.topicId
 	end)
 
-	return var0_17
+	return var0_18
 end
 
 return var0_0

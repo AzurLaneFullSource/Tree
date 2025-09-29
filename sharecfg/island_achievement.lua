@@ -152,12 +152,12 @@ pg.island_achievement = {
 	},
 	[21] = {
 		target_type = 27,
-		name = "Model Islander",
+		name = "Face the Future",
 		stage = 1,
 		target_value1 = 0,
 		group = 2,
 		show_type = 1,
-		desc = "Complete Daily Plans <color=#cd7900><b>$2</b></color> Time(s)",
+		desc = "Research <color=#cd7900><b>$2</b></color> Island Technologies",
 		id = 21,
 		target_num = 60,
 		award = {
@@ -177,12 +177,12 @@ pg.island_achievement = {
 	},
 	[22] = {
 		target_type = 27,
-		name = "Model Islander",
+		name = "Face the Future",
 		stage = 2,
 		target_value1 = 0,
 		group = 2,
 		show_type = 1,
-		desc = "Complete Daily Plans <color=#cd7900><b>$2</b></color> Time(s)",
+		desc = "Research <color=#cd7900><b>$2</b></color> Island Technologies",
 		id = 22,
 		target_num = 80,
 		award = {
@@ -202,12 +202,12 @@ pg.island_achievement = {
 	},
 	[23] = {
 		target_type = 27,
-		name = "Model Islander",
+		name = "Face the Future",
 		stage = 3,
 		target_value1 = 0,
 		group = 2,
 		show_type = 1,
-		desc = "Complete Daily Plans <color=#cd7900><b>$2</b></color> Time(s)",
+		desc = "Research <color=#cd7900><b>$2</b></color> Island Technologies",
 		id = 23,
 		target_num = 100,
 		award = {
@@ -227,12 +227,12 @@ pg.island_achievement = {
 	},
 	[24] = {
 		target_type = 27,
-		name = "Model Islander",
+		name = "Face the Future",
 		stage = 4,
 		target_value1 = 0,
 		group = 2,
 		show_type = 1,
-		desc = "Complete Daily Plans <color=#cd7900><b>$2</b></color> Time(s)",
+		desc = "Research <color=#cd7900><b>$2</b></color> Island Technologies",
 		id = 24,
 		target_num = 120,
 		award = {
@@ -252,12 +252,12 @@ pg.island_achievement = {
 	},
 	[25] = {
 		target_type = 27,
-		name = "Model Islander",
+		name = "Face the Future",
 		stage = 5,
 		target_value1 = 0,
 		group = 2,
 		show_type = 1,
-		desc = "Complete Daily Plans <color=#cd7900><b>$2</b></color> Time(s)",
+		desc = "Research <color=#cd7900><b>$2</b></color> Island Technologies",
 		id = 25,
 		target_num = 150,
 		award = {
@@ -277,12 +277,12 @@ pg.island_achievement = {
 	},
 	[26] = {
 		target_type = 27,
-		name = "Model Islander",
+		name = "Face the Future",
 		stage = 6,
 		target_value1 = 0,
 		group = 2,
 		show_type = 1,
-		desc = "Complete Daily Plans <color=#cd7900><b>$2</b></color> Time(s)",
+		desc = "Research <color=#cd7900><b>$2</b></color> Island Technologies",
 		id = 26,
 		target_num = 180,
 		award = {
@@ -302,12 +302,12 @@ pg.island_achievement = {
 	},
 	[31] = {
 		target_type = 2,
-		name = "Reasonable Development Area",
+		name = "Model Islander",
 		stage = 1,
 		target_value1 = 3,
 		group = 3,
 		show_type = 1,
-		desc = "Amass <color=#cd7900><b>$2</b></color> Development Funds",
+		desc = "Complete Daily Plans <color=#cd7900><b>$2</b></color> Time(s)",
 		id = 31,
 		target_num = 50,
 		award = {
@@ -327,12 +327,12 @@ pg.island_achievement = {
 	},
 	[32] = {
 		target_type = 2,
-		name = "Reasonable Development Area",
+		name = "Model Islander",
 		stage = 2,
 		target_value1 = 3,
 		group = 3,
 		show_type = 1,
-		desc = "Amass <color=#cd7900><b>$2</b></color> Development Funds",
+		desc = "Complete Daily Plans <color=#cd7900><b>$2</b></color> Time(s)",
 		id = 32,
 		target_num = 150,
 		award = {
@@ -352,12 +352,12 @@ pg.island_achievement = {
 	},
 	[33] = {
 		target_type = 2,
-		name = "Reasonable Development Area",
+		name = "Model Islander",
 		stage = 3,
 		target_value1 = 3,
 		group = 3,
 		show_type = 1,
-		desc = "Amass <color=#cd7900><b>$2</b></color> Development Funds",
+		desc = "Complete Daily Plans <color=#cd7900><b>$2</b></color> Time(s)",
 		id = 33,
 		target_num = 300,
 		award = {
@@ -377,12 +377,12 @@ pg.island_achievement = {
 	},
 	[34] = {
 		target_type = 2,
-		name = "Reasonable Development Area",
+		name = "Model Islander",
 		stage = 4,
 		target_value1 = 3,
 		group = 3,
 		show_type = 1,
-		desc = "Amass <color=#cd7900><b>$2</b></color> Development Funds",
+		desc = "Complete Daily Plans <color=#cd7900><b>$2</b></color> Time(s)",
 		id = 34,
 		target_num = 500,
 		award = {
@@ -402,12 +402,12 @@ pg.island_achievement = {
 	},
 	[35] = {
 		target_type = 2,
-		name = "Reasonable Development Area",
+		name = "Model Islander",
 		stage = 5,
 		target_value1 = 3,
 		group = 3,
 		show_type = 1,
-		desc = "Amass <color=#cd7900><b>$2</b></color> Development Funds",
+		desc = "Complete Daily Plans <color=#cd7900><b>$2</b></color> Time(s)",
 		id = 35,
 		target_num = 1000,
 		award = {
@@ -427,12 +427,12 @@ pg.island_achievement = {
 	},
 	[36] = {
 		target_type = 2,
-		name = "Reasonable Development Area",
+		name = "Model Islander",
 		stage = 6,
 		target_value1 = 3,
 		group = 3,
 		show_type = 1,
-		desc = "Amass <color=#cd7900><b>$2</b></color> Development Funds",
+		desc = "Complete Daily Plans <color=#cd7900><b>$2</b></color> Time(s)",
 		id = 36,
 		target_num = 2000,
 		award = {
@@ -452,12 +452,12 @@ pg.island_achievement = {
 	},
 	[41] = {
 		target_type = 22,
-		name = "Face the Future",
+		name = "Reasonable Development Area",
 		stage = 1,
 		target_value1 = 1,
 		group = 4,
 		show_type = 1,
-		desc = "Research <color=#cd7900><b>$2</b></color> Island Technologies",
+		desc = "Amass <color=#cd7900><b>$2</b></color> Development Funds",
 		id = 41,
 		target_num = 100000,
 		award = {
@@ -477,12 +477,12 @@ pg.island_achievement = {
 	},
 	[42] = {
 		target_type = 22,
-		name = "Face the Future",
+		name = "Reasonable Development Area",
 		stage = 2,
 		target_value1 = 1,
 		group = 4,
 		show_type = 1,
-		desc = "Research <color=#cd7900><b>$2</b></color> Island Technologies",
+		desc = "Amass <color=#cd7900><b>$2</b></color> Development Funds",
 		id = 42,
 		target_num = 1000000,
 		award = {
@@ -502,12 +502,12 @@ pg.island_achievement = {
 	},
 	[43] = {
 		target_type = 22,
-		name = "Face the Future",
+		name = "Reasonable Development Area",
 		stage = 3,
 		target_value1 = 1,
 		group = 4,
 		show_type = 1,
-		desc = "Research <color=#cd7900><b>$2</b></color> Island Technologies",
+		desc = "Amass <color=#cd7900><b>$2</b></color> Development Funds",
 		id = 43,
 		target_num = 5000000,
 		award = {
@@ -527,12 +527,12 @@ pg.island_achievement = {
 	},
 	[44] = {
 		target_type = 22,
-		name = "Face the Future",
+		name = "Reasonable Development Area",
 		stage = 4,
 		target_value1 = 1,
 		group = 4,
 		show_type = 1,
-		desc = "Research <color=#cd7900><b>$2</b></color> Island Technologies",
+		desc = "Amass <color=#cd7900><b>$2</b></color> Development Funds",
 		id = 44,
 		target_num = 10000000,
 		award = {
@@ -552,12 +552,12 @@ pg.island_achievement = {
 	},
 	[45] = {
 		target_type = 22,
-		name = "Face the Future",
+		name = "Reasonable Development Area",
 		stage = 5,
 		target_value1 = 1,
 		group = 4,
 		show_type = 1,
-		desc = "Research <color=#cd7900><b>$2</b></color> Island Technologies",
+		desc = "Amass <color=#cd7900><b>$2</b></color> Development Funds",
 		id = 45,
 		target_num = 20000000,
 		award = {
@@ -577,12 +577,12 @@ pg.island_achievement = {
 	},
 	[46] = {
 		target_type = 22,
-		name = "Face the Future",
+		name = "Reasonable Development Area",
 		stage = 6,
 		target_value1 = 1,
 		group = 4,
 		show_type = 1,
-		desc = "Research <color=#cd7900><b>$2</b></color> Island Technologies",
+		desc = "Amass <color=#cd7900><b>$2</b></color> Development Funds",
 		id = 46,
 		target_num = 50000000,
 		award = {
@@ -609,7 +609,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Costume",
 		id = 51,
-		target_num = 5,
+		target_num = 3,
 		award = {
 			{
 				45,
@@ -634,7 +634,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Costume",
 		id = 52,
-		target_num = 10,
+		target_num = 4,
 		award = {
 			{
 				41,
@@ -659,7 +659,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Costume",
 		id = 53,
-		target_num = 15,
+		target_num = 6,
 		award = {
 			{
 				41,
@@ -684,7 +684,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Costume",
 		id = 54,
-		target_num = 20,
+		target_num = 8,
 		award = {
 			{
 				1,
@@ -709,7 +709,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Costume",
 		id = 55,
-		target_num = 25,
+		target_num = 10,
 		award = {
 			{
 				41,
@@ -734,7 +734,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Costume",
 		id = 56,
-		target_num = 30,
+		target_num = 16,
 		award = {
 			{
 				1,
@@ -759,7 +759,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Back",
 		id = 61,
-		target_num = 5,
+		target_num = 3,
 		award = {
 			{
 				45,
@@ -784,7 +784,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Back",
 		id = 62,
-		target_num = 10,
+		target_num = 4,
 		award = {
 			{
 				41,
@@ -809,7 +809,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Back",
 		id = 63,
-		target_num = 15,
+		target_num = 6,
 		award = {
 			{
 				41,
@@ -834,7 +834,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Back",
 		id = 64,
-		target_num = 20,
+		target_num = 8,
 		award = {
 			{
 				1,
@@ -859,7 +859,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Back",
 		id = 65,
-		target_num = 25,
+		target_num = 10,
 		award = {
 			{
 				41,
@@ -884,7 +884,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Back",
 		id = 66,
-		target_num = 30,
+		target_num = 16,
 		award = {
 			{
 				1,
@@ -907,9 +907,9 @@ pg.island_achievement = {
 		target_value1 = 3,
 		group = 7,
 		show_type = 1,
-		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Feet",
+		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Trail",
 		id = 71,
-		target_num = 5,
+		target_num = 3,
 		award = {
 			{
 				45,
@@ -932,9 +932,9 @@ pg.island_achievement = {
 		target_value1 = 3,
 		group = 7,
 		show_type = 1,
-		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Feet",
+		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Trail",
 		id = 72,
-		target_num = 10,
+		target_num = 4,
 		award = {
 			{
 				41,
@@ -957,9 +957,9 @@ pg.island_achievement = {
 		target_value1 = 3,
 		group = 7,
 		show_type = 1,
-		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Feet",
+		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Trail",
 		id = 73,
-		target_num = 15,
+		target_num = 6,
 		award = {
 			{
 				41,
@@ -982,9 +982,9 @@ pg.island_achievement = {
 		target_value1 = 3,
 		group = 7,
 		show_type = 1,
-		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Feet",
+		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Trail",
 		id = 74,
-		target_num = 20,
+		target_num = 8,
 		award = {
 			{
 				1,
@@ -1007,9 +1007,9 @@ pg.island_achievement = {
 		target_value1 = 3,
 		group = 7,
 		show_type = 1,
-		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Feet",
+		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Trail",
 		id = 75,
-		target_num = 25,
+		target_num = 10,
 		award = {
 			{
 				41,
@@ -1032,9 +1032,9 @@ pg.island_achievement = {
 		target_value1 = 3,
 		group = 7,
 		show_type = 1,
-		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Feet",
+		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Trail",
 		id = 76,
-		target_num = 30,
+		target_num = 16,
 		award = {
 			{
 				1,
@@ -1059,7 +1059,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Floating",
 		id = 81,
-		target_num = 5,
+		target_num = 3,
 		award = {
 			{
 				45,
@@ -1084,7 +1084,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Floating",
 		id = 82,
-		target_num = 10,
+		target_num = 4,
 		award = {
 			{
 				41,
@@ -1109,7 +1109,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Floating",
 		id = 83,
-		target_num = 15,
+		target_num = 6,
 		award = {
 			{
 				41,
@@ -1134,7 +1134,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Floating",
 		id = 84,
-		target_num = 20,
+		target_num = 8,
 		award = {
 			{
 				1,
@@ -1159,7 +1159,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Floating",
 		id = 85,
-		target_num = 25,
+		target_num = 10,
 		award = {
 			{
 				41,
@@ -1184,7 +1184,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Outfit(s) - Floating",
 		id = 86,
-		target_num = 30,
+		target_num = 16,
 		award = {
 			{
 				1,
@@ -1209,7 +1209,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Interactive Action(s)",
 		id = 91,
-		target_num = 5,
+		target_num = 10,
 		award = {
 			{
 				45,
@@ -1234,7 +1234,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Interactive Action(s)",
 		id = 92,
-		target_num = 10,
+		target_num = 12,
 		award = {
 			{
 				41,
@@ -1334,7 +1334,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Commander Interactive Action(s)",
 		id = 96,
-		target_num = 30,
+		target_num = 35,
 		award = {
 			{
 				1,
@@ -3159,7 +3159,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Play the Stellar Prize Draw <color=#cd7900><b>$2</b></color> Time(s)",
 		id = 2051,
-		target_num = 150,
+		target_num = 30,
 		award = {
 			{
 				45,
@@ -3184,7 +3184,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Play the Stellar Prize Draw <color=#cd7900><b>$2</b></color> Time(s)",
 		id = 2052,
-		target_num = 300,
+		target_num = 80,
 		award = {
 			{
 				41,
@@ -3209,7 +3209,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Play the Stellar Prize Draw <color=#cd7900><b>$2</b></color> Time(s)",
 		id = 2053,
-		target_num = 600,
+		target_num = 150,
 		award = {
 			{
 				41,
@@ -3234,7 +3234,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Play the Stellar Prize Draw <color=#cd7900><b>$2</b></color> Time(s)",
 		id = 2054,
-		target_num = 1200,
+		target_num = 300,
 		award = {
 			{
 				1,
@@ -3259,7 +3259,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Play the Stellar Prize Draw <color=#cd7900><b>$2</b></color> Time(s)",
 		id = 2055,
-		target_num = 1800,
+		target_num = 600,
 		award = {
 			{
 				41,
@@ -3284,7 +3284,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Play the Stellar Prize Draw <color=#cd7900><b>$2</b></color> Time(s)",
 		id = 2056,
-		target_num = 2500,
+		target_num = 900,
 		award = {
 			{
 				1,
@@ -3909,7 +3909,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Costume",
 		id = 3051,
-		target_num = 5,
+		target_num = 1,
 		award = {
 			{
 				45,
@@ -3934,7 +3934,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Costume",
 		id = 3052,
-		target_num = 7,
+		target_num = 3,
 		award = {
 			{
 				41,
@@ -3959,7 +3959,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Costume",
 		id = 3053,
-		target_num = 9,
+		target_num = 5,
 		award = {
 			{
 				41,
@@ -3984,7 +3984,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Costume",
 		id = 3054,
-		target_num = 11,
+		target_num = 10,
 		award = {
 			{
 				1,
@@ -4009,7 +4009,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Costume",
 		id = 3055,
-		target_num = 13,
+		target_num = 15,
 		award = {
 			{
 				41,
@@ -4034,7 +4034,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Costume",
 		id = 3056,
-		target_num = 15,
+		target_num = 25,
 		award = {
 			{
 				1,
@@ -4059,7 +4059,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Back",
 		id = 3061,
-		target_num = 5,
+		target_num = 1,
 		award = {
 			{
 				45,
@@ -4084,7 +4084,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Back",
 		id = 3062,
-		target_num = 10,
+		target_num = 2,
 		award = {
 			{
 				41,
@@ -4109,7 +4109,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Back",
 		id = 3063,
-		target_num = 15,
+		target_num = 4,
 		award = {
 			{
 				41,
@@ -4134,7 +4134,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Back",
 		id = 3064,
-		target_num = 20,
+		target_num = 8,
 		award = {
 			{
 				1,
@@ -4159,7 +4159,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Back",
 		id = 3065,
-		target_num = 25,
+		target_num = 10,
 		award = {
 			{
 				41,
@@ -4184,7 +4184,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Back",
 		id = 3066,
-		target_num = 30,
+		target_num = 15,
 		award = {
 			{
 				1,
@@ -4209,7 +4209,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Floating",
 		id = 3071,
-		target_num = 5,
+		target_num = 1,
 		award = {
 			{
 				45,
@@ -4234,7 +4234,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Floating",
 		id = 3072,
-		target_num = 10,
+		target_num = 2,
 		award = {
 			{
 				41,
@@ -4259,7 +4259,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Floating",
 		id = 3073,
-		target_num = 15,
+		target_num = 4,
 		award = {
 			{
 				41,
@@ -4284,7 +4284,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Floating",
 		id = 3074,
-		target_num = 20,
+		target_num = 8,
 		award = {
 			{
 				1,
@@ -4309,7 +4309,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Floating",
 		id = 3075,
-		target_num = 25,
+		target_num = 10,
 		award = {
 			{
 				41,
@@ -4334,7 +4334,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Floating",
 		id = 3076,
-		target_num = 30,
+		target_num = 15,
 		award = {
 			{
 				1,
@@ -4357,9 +4357,9 @@ pg.island_achievement = {
 		target_value1 = 3,
 		group = 308,
 		show_type = 1,
-		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Feet",
+		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Trail",
 		id = 3081,
-		target_num = 5,
+		target_num = 1,
 		award = {
 			{
 				45,
@@ -4382,9 +4382,9 @@ pg.island_achievement = {
 		target_value1 = 3,
 		group = 308,
 		show_type = 1,
-		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Feet",
+		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Trail",
 		id = 3082,
-		target_num = 10,
+		target_num = 2,
 		award = {
 			{
 				41,
@@ -4407,9 +4407,9 @@ pg.island_achievement = {
 		target_value1 = 3,
 		group = 308,
 		show_type = 1,
-		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Feet",
+		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Trail",
 		id = 3083,
-		target_num = 15,
+		target_num = 4,
 		award = {
 			{
 				41,
@@ -4432,9 +4432,9 @@ pg.island_achievement = {
 		target_value1 = 3,
 		group = 308,
 		show_type = 1,
-		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Feet",
+		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Trail",
 		id = 3084,
-		target_num = 20,
+		target_num = 8,
 		award = {
 			{
 				1,
@@ -4457,9 +4457,9 @@ pg.island_achievement = {
 		target_value1 = 3,
 		group = 308,
 		show_type = 1,
-		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Feet",
+		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Trail",
 		id = 3085,
-		target_num = 25,
+		target_num = 10,
 		award = {
 			{
 				41,
@@ -4482,9 +4482,9 @@ pg.island_achievement = {
 		target_value1 = 3,
 		group = 308,
 		show_type = 1,
-		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Feet",
+		desc = "Acquire <color=#cd7900><b>$2</b></color> Character Outfit(s) - Trail",
 		id = 3086,
-		target_num = 30,
+		target_num = 15,
 		award = {
 			{
 				1,

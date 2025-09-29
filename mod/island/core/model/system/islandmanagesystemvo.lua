@@ -65,7 +65,7 @@ function var0_0.GetUnits(arg0_4, arg1_4)
 	end
 
 	local var6_4 = arg0_4.restaurant:getConfig("customer_slot")
-	local var7_4 = pg.island_set.island_manage_customer_list.key_value_varchar
+	local var7_4 = Clone(pg.island_set.island_manage_customer_list.key_value_varchar)
 
 	for iter2_4, iter3_4 in ipairs(var6_4) do
 		local var8_4 = iter3_4[1]
@@ -73,6 +73,9 @@ function var0_0.GetUnits(arg0_4, arg1_4)
 		local var10_4 = pg.island_world_objects[var8_4]
 		local var11_4 = pg.island_world_objects[var9_4]
 		local var12_4 = var7_4[math.random(#var7_4)]
+
+		table.removebyvalue(var7_4, var12_4)
+
 		local var13_4 = IslandUnitVO.New({
 			behaviourTree = "island/nodecanvas/system/system_manage_customer",
 			id = var8_4,

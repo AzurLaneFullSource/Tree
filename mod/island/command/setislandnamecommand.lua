@@ -44,19 +44,7 @@ function var0_0.Send(arg0_4, arg1_4, arg2_4)
 			local var0_5 = getProxy(IslandProxy):GetIsland()
 
 			if not var0_5:IsNew() then
-				local var1_5 = var0_5:GetModifyNameConsume()
-
-				for iter0_5, iter1_5 in ipairs({
-					var1_5
-				}) do
-					local var2_5 = Drop.New({
-						type = iter1_5[1],
-						id = iter1_5[2],
-						count = iter1_5[3]
-					})
-
-					arg0_4:sendNotification(GAME.CONSUME_ITEM, var2_5)
-				end
+				-- block empty
 			end
 
 			var0_5:SetName(arg1_4)

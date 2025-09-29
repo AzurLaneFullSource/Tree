@@ -70,7 +70,11 @@ function var0_0.GetNextRecoverTimes(arg0_7, arg1_7)
 end
 
 function var0_0.GetRecoverCD(arg0_8)
-	return arg0_8.cd
+	local var0_8 = getProxy(IslandProxy):GetIsland():GetAblityAgency()
+	local var1_8 = arg0_8.placeId == IslandProductConst.MinePlaceId and IslandAblityAgency.TYPE_RECOVER_ORE or IslandAblityAgency.TYPE_RECOVER_CAMP
+	local var2_8 = var0_8:GetAdditionEffectByAblityType(var1_8)
+
+	return arg0_8.cd - var2_8
 end
 
 function var0_0.UpdateCollectRefreshtTime(arg0_9, arg1_9, arg2_9)

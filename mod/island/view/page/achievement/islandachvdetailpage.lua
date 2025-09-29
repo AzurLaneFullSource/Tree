@@ -192,6 +192,8 @@ function var0_0.OnGetAchvAwardDone(arg0_26, arg1_26)
 end
 
 function var0_0.OnDestroy(arg0_30)
+	ClearLScrollrect(arg0_30.scrollRect)
+
 	for iter0_30, iter1_30 in pairs(arg0_30.cards) do
 		iter1_30:Dispose()
 	end

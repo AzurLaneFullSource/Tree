@@ -372,9 +372,11 @@ function var0_0.clearSkin(arg0_41)
 		arg0_41.live2dCom = nil
 	end
 
-	pg.Live2DMgr.GetInstance():StopLoadingLive2d(arg0_41.live2dRequestId)
+	if arg0_41.live2dRequestId then
+		pg.Live2DMgr.GetInstance():StopLoadingLive2d(arg0_41.live2dRequestId)
 
-	arg0_41.live2dRequestId = nil
+		arg0_41.live2dRequestId = nil
+	end
 end
 
 function var0_0.checkSkin(arg0_42, arg1_42)

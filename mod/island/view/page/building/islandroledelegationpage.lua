@@ -51,6 +51,7 @@ function var0_0.OnLoaded(arg0_4)
 		isPermanent = true,
 		alignRight = true
 	})
+	arg0_4.awardDisplayPanel = IslandAwardDisplayInMainPanel.New(arg0_4._tf, arg0_4.event)
 end
 
 function var0_0.OnInit(arg0_7)
@@ -234,6 +235,10 @@ function var0_0.OnHide(arg0_22)
 	arg0_22:StopTimer()
 	arg0_22:emitCore(ISLAND_EVT.RECYCLE_ALL_SLOTDELEEFFECT)
 	arg0_22:UnloadPreconcenCharacter()
+
+	if arg0_22.awardDisplayPanel then
+		arg0_22.awardDisplayPanel:Hide()
+	end
 end
 
 function var0_0.OnExit(arg0_23)
@@ -268,13 +273,47 @@ function var0_0.OnDestroy(arg0_27)
 
 		arg0_27.selectPanel = nil
 	end
+
+	if arg0_27.awardDisplayPanel then
+		arg0_27.awardDisplayPanel:Destroy()
+
+		arg0_27.awardDisplayPanel = nil
+	end
 end
 
-function var0_0.OnGetDelegationAwardDone(arg0_28)
+function var0_0.OnGetDelegationAwardDone(arg0_28, arg1_28)
+	if arg1_28.addShipExpData then
+		local var0_28 = {}
+		local var1_28 = arg1_28.addShipExpData.addShipId
+		local var2_28 = arg1_28.addShipExpData.addExp
+		local var3_28 = IslandShip.StaticGetPrefab(var1_28)
+		local var4_28 = "island/IslandShipIcon/" .. var3_28
+
+		arg0_28:UpdateMainAwardReward({
+			shipExp = true,
+			icon = var4_28,
+			num = var2_28
+		})
+	end
+
 	arg0_28.delegationTabList:align(#arg0_28.placeCommissionList)
 end
 
-function var0_0.OnFinishDelegationDone(arg0_29)
+function var0_0.OnFinishDelegationDone(arg0_29, arg1_29)
+	if arg1_29.addShipExpData then
+		local var0_29 = {}
+		local var1_29 = arg1_29.addShipExpData.addShipId
+		local var2_29 = arg1_29.addShipExpData.addExp
+		local var3_29 = IslandShip.StaticGetPrefab(var1_29)
+		local var4_29 = "island/IslandShipIcon/" .. var3_29
+
+		arg0_29:UpdateMainAwardReward({
+			shipExp = true,
+			icon = var4_29,
+			num = var2_29
+		})
+	end
+
 	arg0_29.delegationTabList:align(#arg0_29.placeCommissionList)
 end
 
@@ -300,6 +339,10 @@ end
 
 function var0_0.UnloadPreconcenCharacter(arg0_33)
 	arg0_33:emitCore(ISLAND_EVT.UN_LOAD_DELEGATE_PREVIEW_ROLE)
+end
+
+function var0_0.UpdateMainAwardReward(arg0_34, arg1_34)
+	arg0_34.awardDisplayPanel:ExecuteAction("ShowAwards", arg1_34)
 end
 
 return var0_0

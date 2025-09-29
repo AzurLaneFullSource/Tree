@@ -65,7 +65,7 @@ pg.island_main_btns = {
 		open_page = "IslandDevicePage",
 		id = 5,
 		icon = "device",
-		ability_id = 0,
+		ability_id = 2,
 		btn_name = "device",
 		page_param = {}
 	},
@@ -203,7 +203,7 @@ pg.island_main_btns = {
 	},
 	{
 		main_type = 2,
-		name = "Art Collection",
+		name = "Collection",
 		order = 12,
 		open_page = "IslandBookPage",
 		id = 18,
@@ -214,7 +214,7 @@ pg.island_main_btns = {
 	},
 	{
 		main_type = 2,
-		name = "Photos",
+		name = "Photo",
 		order = 13,
 		open_page = "IslandPhotoMainPage",
 		id = 19,

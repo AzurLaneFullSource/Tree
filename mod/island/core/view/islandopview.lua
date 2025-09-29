@@ -189,8 +189,8 @@ function var0_0.UpdateOperationButtonDisplay(arg0_17)
 		setActive(arg0_17.opBtn, false)
 		setActive(arg0_17.areaChangeBtn, false)
 		setActive(arg0_17.seedBtn, false)
-		setActive(arg0_17.seed_detals, false)
 		arg0_17:GetView():GetSubView(IslandSeedOpView):ActiveSeedSelect(false)
+		arg0_17:GetView():GetSubView(IslandSeedOpView):ActiveSeedDetals(false)
 
 		return
 	end
@@ -207,8 +207,8 @@ function var0_0.UpdateOperationButtonDisplay(arg0_17)
 		setActive(arg0_17.opBtn, false)
 		setActive(arg0_17.areaChangeBtn, false)
 		setActive(arg0_17.seedBtn, false)
-		setActive(arg0_17.seed_detals, false)
 		arg0_17:GetView():GetSubView(IslandSeedOpView):ActiveSeedSelect(false)
+		arg0_17:GetView():GetSubView(IslandSeedOpView):ActiveSeedDetals(false)
 
 		return
 	end
@@ -408,6 +408,8 @@ end
 function var0_0.ResetShowBalance(arg0_36)
 	if arg0_36.showBalance ~= 1 then
 		arg0_36.showBalance = 1
+
+		arg0_36:EnablePlayerOp()
 	end
 end
 
@@ -427,15 +429,23 @@ function var0_0.EnablePlayerOp(arg0_38)
 	arg0_38.playerInputManager:EnableInput()
 	arg0_38:GetView():GetSubView(IslandDistanceView):TryEnable()
 	arg0_38:GetView().player:ActiveOrDisactive(true)
+
+	if arg0_38.inInteraction then
+		arg0_38:StartInteraction()
+	end
 end
 
 function var0_0.StartInteraction(arg0_39)
+	arg0_39.inInteraction = true
+
 	arg0_39:ShowOrHideGameObject(arg0_39.moveBtn, false)
 	arg0_39:ShowOrHideGameObject(arg0_39.opPanel, false)
 	arg0_39.playerInputManager:DisablePlayerHandle()
 end
 
 function var0_0.EndInteraction(arg0_40)
+	arg0_40.inInteraction = false
+
 	arg0_40:ShowOrHideGameObject(arg0_40.moveBtn, true)
 	arg0_40:ShowOrHideGameObject(arg0_40.opPanel, true)
 	arg0_40.playerInputManager:EnablePlayerHandle()

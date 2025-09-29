@@ -100,6 +100,7 @@ end
 function var0_0.SetShopList(arg0_10)
 	arg0_10.currentShop1TgIndex = nil
 	arg0_10.currentShop2TgIndex = nil
+	arg0_10.currentShop3TgIndex = nil
 
 	arg0_10.shop1List:make(function(arg0_11, arg1_11, arg2_11)
 		arg1_11 = arg1_11 + 1
@@ -172,6 +173,10 @@ function var0_0.SetShopList(arg0_10)
 														setActive(arg2_15:Find("selected/lock"), not var1_15)
 														onToggle(arg0_10, arg2_15, function(arg0_16)
 															if arg0_16 then
+																if arg0_10.currentShop1TgIndex == arg1_11 and arg0_10.currentShop2TgIndex == arg1_13 + 1 and arg0_10.currentShop3TgIndex == arg1_15 + 1 then
+																	return
+																end
+
 																for iter0_16 = 0, arg0_10.shop3.childCount - 1 do
 																	setActive(arg0_10.shop3:GetChild(iter0_16):Find("selected"), false)
 																end
@@ -182,6 +187,8 @@ function var0_0.SetShopList(arg0_10)
 																arg0_10.showingShop = arg0_10.shopAgency:GetShopById(var0_15.id)
 
 																arg0_10:DoUpdateShowingShop()
+
+																arg0_10.currentShop3TgIndex = arg1_15 + 1
 															end
 														end, SFX_PANEL)
 
@@ -222,6 +229,10 @@ function var0_0.SetShopList(arg0_10)
 														setActive(arg2_17:Find("selected/lock"), not var1_17)
 														onToggle(arg0_10, arg2_17, function(arg0_18)
 															if arg0_18 then
+																if arg0_10.currentShop1TgIndex == arg1_11 and arg0_10.currentShop2TgIndex == arg1_13 + 1 and arg0_10.currentShop3TgIndex == arg1_17 + 1 then
+																	return
+																end
+
 																for iter0_18 = 0, arg0_10.shop32.childCount - 1 do
 																	setActive(arg0_10.shop32:GetChild(iter0_18):Find("selected"), false)
 																end
@@ -231,6 +242,8 @@ function var0_0.SetShopList(arg0_10)
 																arg0_10.showingShop = arg0_10.shopAgency:GetShopById(var0_17.id)
 
 																arg0_10:DoUpdateShowingShop()
+
+																arg0_10.currentShop3TgIndex = arg1_17 + 1
 															end
 														end, SFX_PANEL)
 
@@ -556,81 +569,22 @@ function var0_0.SetCloseAndRefresh(arg0_31, arg1_31)
 end
 
 function var0_0.SetCommodity(arg0_35, arg1_35, arg2_35)
-	local var0_35 = arg2_35:GetMaxNum() - arg2_35.purchasedNum
+	var0_0.StaticUpdateCommodityTpl(arg1_35, arg2_35)
+	setActive(arg1_35:Find("notInTime"), not arg0_35.showingShop:IsInTime())
+	setText(arg1_35:Find("sellOut/Text"), i18n("common_sale_out"))
+	setText(arg1_35:Find("hold/Text"), i18n("common_already owned"))
 
-	setText(arg1_35:Find("name"), arg2_35:GetName())
-
-	if #arg2_35:GetItems() == 1 and arg2_35:GetItems()[1][1] ~= DROP_TYPE_ISLAND_FURNITURE and arg2_35:GetItems()[1][1] ~= DROP_TYPE_ISLAND_DRESS and arg2_35:GetItems()[1][1] ~= DROP_TYPE_ISLAND_SKIN then
-		local var1_35 = arg2_35:GetItems()[1]
-		local var2_35 = {
-			type = var1_35[1],
-			id = var1_35[2],
-			count = var1_35[3]
-		}
-
-		updateCustomDrop(arg1_35:Find("IslandItemTpl"), var2_35)
-	else
-		GetImageSpriteFromAtlasAsync(arg2_35:GetIcon(), "", arg1_35:Find("IslandItemTpl/icon_bg/icon"))
-	end
-
-	setActive(arg1_35:Find("IslandItemTpl/icon_bg/count_bg"), arg2_35:IsShowPurchaseLimit())
-	setText(arg1_35:Find("IslandItemTpl/icon_bg/count_bg/count"), var0_35 .. "/" .. arg2_35:GetMaxNum())
-
-	local var3_35 = arg2_35:GetResourceConsume()
-
-	GetImageSpriteFromAtlasAsync(Drop.New({
-		type = var3_35[1],
-		id = var3_35[2]
-	}):getIcon(), "", arg1_35:Find("cost/icon"))
-	setText(arg1_35:Find("cost/num"), math.ceil((100 - arg2_35:GetDiscount()) / 100 * var3_35[3]))
-	setActive(arg1_35:Find("sellOut"), arg2_35:GetMaxNum() ~= 0 and var0_35 == 0)
-	setActive(arg1_35:Find("timeLimit"), arg2_35:IsTimeLimitCommodity())
-	setActive(arg1_35:Find("discount"), arg2_35:GetDiscount() ~= 0)
-	setText(arg1_35:Find("discount/Text"), "-" .. arg2_35:GetDiscount() .. "%")
-
-	local var4_35 = false
+	local var0_35 = false
 
 	for iter0_35, iter1_35 in ipairs(arg0_35.shoppingCartCommodities) do
 		if iter1_35.id == arg2_35.id then
-			var4_35 = true
+			var0_35 = true
 
 			break
 		end
 	end
 
-	setActive(arg1_35:Find("select"), var4_35)
-
-	local var5_35 = arg2_35:GetItems()[1][1]
-	local var6_35 = arg2_35:GetItems()[1][2]
-	local var7_35 = 0
-
-	if var5_35 == DROP_TYPE_ISLAND_ITEM then
-		var7_35 = arg0_35.inventoryAgency:GetOwnCount(var6_35)
-	elseif var5_35 == DROP_TYPE_ISLAND_FURNITURE then
-		local var8_35 = getProxy(IslandProxy):GetIsland():GetAgoraAgency():GetFurnitures()
-
-		for iter2_35, iter3_35 in ipairs(var8_35) do
-			if iter3_35.id == var6_35 then
-				var7_35 = iter3_35.count
-
-				break
-			end
-		end
-	elseif var5_35 == DROP_TYPE_ISLAND_DRESS then
-		if pg.island_dress_template[var6_35].belongto == 1 then
-			var7_35 = getProxy(IslandProxy):GetIsland():GetDressUpAgency():CheckOwnDress(var6_35) and 1 or 0
-		elseif pg.island_dress_template[var6_35].belongto == 2 then
-			var7_35 = arg0_35.characterAgency:GetOwnDressCountByDressId(var6_35)
-		end
-	elseif var5_35 == DROP_TYPE_ISLAND_SKIN then
-		var7_35 = arg0_35.characterAgency:CheckSkinIsOwned(var6_35) and 1 or 0
-	end
-
-	setActive(arg1_35:Find("have"), arg2_35:IsShowHave())
-	setText(arg1_35:Find("have"), i18n("island_3Dshop_have") .. var7_35)
-	setActive(arg1_35:Find("hold"), arg2_35:IsShowHold() and (var7_35 > 0 or arg2_35:IsCharacterInviteItemHold()))
-	setActive(arg1_35:Find("cost"), not isActive(arg1_35:Find("sellOut")) and not isActive(arg1_35:Find("hold")))
-	setActive(arg1_35:Find("notInTime"), not arg0_35.showingShop:IsInTime())
+	setActive(arg1_35:Find("select"), var0_35)
 
 	if isActive(arg1_35:Find("sellOut")) or isActive(arg1_35:Find("hold")) or isActive(arg1_35:Find("notInTime")) then
 		removeOnButton(arg1_35)
@@ -863,6 +817,7 @@ function var0_0.SetCommodityList(arg0_48)
 	})
 	local var2_48 = arg0_48.showingShop:GetCommodities()
 
+	var0_0.SortShopCommodities(var2_48)
 	var1_48:make(function(arg0_53, arg1_53, arg2_53)
 		if arg0_53 == UIItemList.EventUpdate then
 			local var0_53 = var2_48[arg1_53 + 1]
@@ -1166,15 +1121,17 @@ function var0_0.UpdateView(arg0_70, arg1_70)
 					type = IslandMsgBox.TYPE_COMMON,
 					content = i18n("island_3Dshop_clothes_jump"),
 					onYes = function()
-						local var0_72 = arg0_70.showingShop:GetCommanderOrCharaType()
+						arg0_70:ClearCharacterScene(function()
+							arg0_70:Hide()
 
-						if var0_72 == 0 then
-							arg0_70:OpenScenePage(IslandShipIslandCommanderMainPage)
-						elseif var0_72 == 1 or var0_72 == 2 then
-							arg0_70:OpenScenePage(IslandShipMainPage, 3)
-						end
+							local var0_73 = arg0_70.showingShop:GetCommanderOrCharaType()
 
-						arg0_70:Hide()
+							if var0_73 == 0 then
+								arg0_70:OpenScenePage(IslandShipIslandCommanderMainPage)
+							elseif var0_73 == 1 or var0_73 == 2 then
+								arg0_70:OpenScenePage(IslandShipMainPage, 3)
+							end
+						end)
 					end
 				})
 			end
@@ -1188,185 +1145,267 @@ function var0_0.UpdateView(arg0_70, arg1_70)
 	end
 end
 
-function var0_0.OnSwitchMapByPoint(arg0_73)
-	setActive(arg0_73._tf, true)
-	arg0_73:PrepareCharacterScene()
+function var0_0.OnSwitchMapByPoint(arg0_74)
+	setActive(arg0_74._tf, true)
+	arg0_74:PrepareCharacterScene()
 end
 
-function var0_0.UpdateActivity(arg0_74, arg1_74)
-	if arg1_74:getConfig("type") == ActivityConst.ACTIVITY_TYPE_ISLAND_DRAW_AWARD then
-		arg0_74.drawAwardActivity = arg1_74
+function var0_0.UpdateActivity(arg0_75, arg1_75)
+	if arg1_75:getConfig("type") == ActivityConst.ACTIVITY_TYPE_ISLAND_DRAW_AWARD then
+		arg0_75.drawAwardActivity = arg1_75
 
-		arg0_74.drawAwardPage:ActionInvoke("UpdateActivity", arg0_74.drawAwardActivity)
-		arg0_74:SetResources()
+		arg0_75.drawAwardPage:ActionInvoke("UpdateActivity", arg0_75.drawAwardActivity)
+		arg0_75:SetResources()
 	end
 end
 
-function var0_0.DrawOperation(arg0_75, arg1_75)
-	arg0_75.drawAwardPage:ActionInvoke("DrawOperation", arg1_75)
+function var0_0.DrawOperation(arg0_76, arg1_76)
+	arg0_76.drawAwardPage:ActionInvoke("DrawOperation", arg1_76)
 end
 
-function var0_0.Preload(arg0_76, arg1_76)
-	arg1_76()
+function var0_0.Preload(arg0_77, arg1_77)
+	arg1_77()
 end
 
-function var0_0.GetSmoothRotateObject(arg0_77)
-	return arg0_77._tf:Find("adapt/model")
+function var0_0.GetSmoothRotateObject(arg0_78)
+	return arg0_78._tf:Find("adapt/model")
 end
 
-function var0_0.LoadFurniture(arg0_78, arg1_78, arg2_78)
-	arg0_78:UnloadCharacter()
+function var0_0.LoadFurniture(arg0_79, arg1_79, arg2_79)
+	arg0_79:UnloadCharacter()
 
-	if arg0_78.isLoadingModel then
+	if arg0_79.isLoadingModel then
 		return
 	end
 
-	arg0_78.isLoadingModel = true
+	arg0_79.isLoadingModel = true
 
-	local var0_78 = IslandAssetLoadDispatcher.Instance:Enqueue(arg1_78, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_79)
-		arg0_78.role = Object.Instantiate(arg0_79)
+	local var0_79 = IslandAssetLoadDispatcher.Instance:Enqueue(arg1_79, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_80)
+		arg0_79.role = Object.Instantiate(arg0_80)
 
-		local var0_79 = arg0_78.role.name
-		local var1_79 = GameObject.New(var0_79)
+		local var0_80 = arg0_79.role.name
+		local var1_80 = GameObject.New(var0_80)
 
-		setParent(arg0_78.role, var1_79.transform, false)
+		setParent(arg0_79.role, var1_80.transform, false)
 
-		arg0_78.role = var1_79
-		arg0_78.isLoadingModel = false
+		arg0_79.role = var1_80
+		arg0_79.isLoadingModel = false
 
-		pg.ViewUtils.SetLayer(arg0_78.role.transform, Layer.Character3D)
-		setParent(arg0_78.role, arg0_78.roleContainer)
+		pg.ViewUtils.SetLayer(arg0_79.role.transform, Layer.Character3D)
+		setParent(arg0_79.role, arg0_79.roleContainer)
 
-		arg0_78.role.transform.localPosition = Vector3(arg2_78[1][1], arg2_78[1][2], 0)
-		arg0_78.role.transform.localEulerAngles = Vector3(0, arg2_78[2], 0)
-		arg0_78.role.transform.localScale = Vector3(arg2_78[3], arg2_78[3], arg2_78[3])
+		arg0_79.role.transform.localPosition = Vector3(arg2_79[1][1], arg2_79[1][2], 0)
+		arg0_79.role.transform.localEulerAngles = Vector3(0, arg2_79[2], 0)
+		arg0_79.role.transform.localScale = Vector3(arg2_79[3], arg2_79[3], arg2_79[3])
 
-		local var2_79 = arg0_78:GetSmoothRotateObject()
-		local var3_79 = GetOrAddComponent(var2_79, typeof(SmoothRotateObject))
+		local var2_80 = arg0_79:GetSmoothRotateObject()
+		local var3_80 = GetOrAddComponent(var2_80, typeof(SmoothRotateObject))
 
-		var3_79:SetUp(arg0_78.role.transform)
+		var3_80:SetUp(arg0_79.role.transform)
 
-		var3_79.rotationSpeed = pg.island_set.character_detail_camera_speed.key_value_int
+		var3_80.rotationSpeed = pg.island_set.character_detail_camera_speed.key_value_int
 	end), true, true)
 
-	table.insert(arg0_78.loadingIdList or {}, var0_78)
+	table.insert(arg0_79.loadingIdList or {}, var0_79)
 end
 
-function var0_0.LoadCharacter(arg0_80, arg1_80, arg2_80)
-	arg0_80:UnloadCharacter()
+function var0_0.LoadCharacter(arg0_81, arg1_81, arg2_81)
+	arg0_81:UnloadCharacter()
 
-	if arg0_80.isLoadingModel then
+	if arg0_81.isLoadingModel then
 		return
 	end
 
-	arg0_80.isLoadingModel = true
+	arg0_81.isLoadingModel = true
 
-	arg0_80.islandShipDressHelper:SetShipId(arg0_80.showingShipId)
+	arg0_81.islandShipDressHelper:SetShipId(arg0_81.showingShipId)
 
-	arg0_80.isCommander = arg2_80
-	arg0_80.modelData = arg1_80
+	arg0_81.isCommander = arg2_81
+	arg0_81.modelData = arg1_81
 
-	local function var0_80(arg0_81)
-		arg0_80.role = arg0_81
-		arg0_80.isLoadingModel = false
+	local function var0_81(arg0_82)
+		arg0_81.role = arg0_82
+		arg0_81.isLoadingModel = false
 
-		pg.ViewUtils.SetLayer(arg0_80.role.transform, Layer.Character3D)
-		setParent(arg0_80.role, arg0_80.roleContainer)
+		pg.ViewUtils.SetLayer(arg0_81.role.transform, Layer.Character3D)
+		setParent(arg0_81.role, arg0_81.roleContainer)
 
-		local var0_81 = 2.7
-		local var1_81 = arg0_80._tf.rect.width / arg0_80._tf.rect.height
+		local var0_82 = 2.7
+		local var1_82 = arg0_81._tf.rect.width / arg0_81._tf.rect.height
 
-		if var1_81 < 1.77777777777778 then
-			var0_81 = 2.7 - 0.5 * (1.77777777777778 - var1_81) / 0.444444444444444
+		if var1_82 < 1.77777777777778 then
+			var0_82 = 2.7 - 0.5 * (1.77777777777778 - var1_82) / 0.444444444444444
 		end
 
-		arg0_80.role.transform.localPosition = Vector3(var0_81, 0, 0)
-		arg0_80.role.transform.localEulerAngles = Vector3(0, -155, 0)
+		arg0_81.role.transform.localPosition = Vector3(var0_82, 0, 0)
+		arg0_81.role.transform.localEulerAngles = Vector3(0, -155, 0)
 
-		local var2_81 = arg0_80:GetSmoothRotateObject()
-		local var3_81 = GetOrAddComponent(var2_81, typeof(SmoothRotateObject))
+		local var2_82 = arg0_81:GetSmoothRotateObject()
+		local var3_82 = GetOrAddComponent(var2_82, typeof(SmoothRotateObject))
 
-		var3_81:SetUp(arg0_80.role.transform)
+		var3_82:SetUp(arg0_81.role.transform)
 
-		var3_81.rotationSpeed = pg.island_set.character_detail_camera_speed.key_value_int
+		var3_82.rotationSpeed = pg.island_set.character_detail_camera_speed.key_value_int
 
-		local var4_81 = arg0_80.modelData and arg0_80.modelData.personal_ani
+		local var4_82 = arg0_81.modelData and arg0_81.modelData.personal_ani
 
-		if var4_81 and var4_81 ~= "" then
-			local var5_81 = GetOrAddComponent(arg0_80.role.transform:GetChild(0), typeof(Animator))
+		if var4_82 and var4_82 ~= "" then
+			local var5_82 = GetOrAddComponent(arg0_81.role.transform:GetChild(0), typeof(Animator))
 
-			for iter0_81 = 1, var5_81.layerCount do
-				var5_81:CrossFadeInFixedTime(var4_81, 0, iter0_81 - 1)
+			for iter0_82 = 1, var5_82.layerCount do
+				var5_82:CrossFadeInFixedTime(var4_82, 0, iter0_82 - 1)
 			end
 		end
 
-		arg0_80.islandShipDressHelper:OnRoleLoaded(arg0_80.role.transform)
+		arg0_81.islandShipDressHelper:OnRoleLoaded(arg0_81.role.transform)
 	end
 
-	if arg0_80.isCommander then
-		arg0_80:GetPoolMgr():GetCommanderModel(arg1_80, function(arg0_82)
-			var0_80(arg0_82)
+	if arg0_81.isCommander then
+		arg0_81:GetPoolMgr():GetCommanderModel(arg1_81, function(arg0_83)
+			var0_81(arg0_83)
 		end)
 	else
-		arg0_80:GetPoolMgr():GetCharacter(arg1_80.model, arg1_80.animator, function(arg0_83)
-			var0_80(arg0_83)
+		arg0_81:GetPoolMgr():GetCharacter(arg1_81.model, arg1_81.animator, function(arg0_84)
+			var0_81(arg0_84)
 		end)
 	end
 end
 
-function var0_0.UnloadCharacter(arg0_84)
-	arg0_84.islandShipDressHelper:Destroy()
+function var0_0.UnloadCharacter(arg0_85)
+	arg0_85.islandShipDressHelper:Destroy()
 
-	if arg0_84.role then
-		pg.ViewUtils.SetLayer(arg0_84.role.transform, Layer.Default)
+	if arg0_85.role then
+		pg.ViewUtils.SetLayer(arg0_85.role.transform, Layer.Default)
 
-		if arg0_84.isCommander then
-			arg0_84:GetPoolMgr():ReturnCommanderModel(arg0_84.role)
-		elseif arg0_84.modelData then
-			arg0_84:GetPoolMgr():ReturnCharacter(arg0_84.modelData.model, arg0_84.modelData.animator, arg0_84.role)
+		if arg0_85.isCommander then
+			arg0_85:GetPoolMgr():ReturnCommanderModel(arg0_85.role)
+		elseif arg0_85.modelData then
+			arg0_85:GetPoolMgr():ReturnCharacter(arg0_85.modelData.model, arg0_85.modelData.animator, arg0_85.role)
 
-			arg0_84.modelData = nil
+			arg0_85.modelData = nil
 		end
 
-		arg0_84.role = nil
+		arg0_85.role = nil
 	end
 
-	arg0_84.modelData = nil
+	arg0_85.modelData = nil
 end
 
-function var0_0.OnShow(arg0_85, arg1_85, arg2_85, arg3_85)
-	arg0_85:OverlayPanel(arg0_85._tf)
+function var0_0.OnShow(arg0_86, arg1_86, arg2_86, arg3_86)
+	arg0_86:OverlayPanel(arg0_86._tf)
 
-	arg0_85.showTypes = arg1_85
-	arg0_85.firstShopIds = arg2_85
-	arg0_85.showDrawAward = arg3_85 == 1
+	arg0_86.showTypes = arg1_86
+	arg0_86.firstShopIds = arg2_86
+	arg0_86.showDrawAward = arg3_86 == 1
 
-	arg0_85:DoUpdateShops()
-	arg0_85:UpdateData()
-	arg0_85:SetShopList()
+	arg0_86:DoUpdateShops()
+	arg0_86:UpdateData()
+	arg0_86:SetShopList()
 end
 
-function var0_0.OnHide(arg0_86)
-	arg0_86:UnOverlayPanel(arg0_86._tf)
+function var0_0.OnHide(arg0_87)
+	arg0_87:UnOverlayPanel(arg0_87._tf)
 
-	if arg0_86.timer then
-		arg0_86.timer:Stop()
+	if arg0_87.timer then
+		arg0_87.timer:Stop()
 
-		arg0_86.timer = nil
+		arg0_87.timer = nil
 	end
 
-	arg0_86.shoppingCartCommodities = {}
+	arg0_87.shoppingCartCommodities = {}
 
-	arg0_86.islandShipDressHelper:Destroy()
-	arg0_86:UnloadCharacter()
-	arg0_86.drawAwardPage:Destroy()
-	arg0_86.drawAwardPage:Reset()
+	arg0_87.islandShipDressHelper:Destroy()
+	arg0_87:UnloadCharacter()
+	arg0_87.drawAwardPage:Destroy()
+	arg0_87.drawAwardPage:Reset()
 
-	for iter0_86, iter1_86 in ipairs(arg0_86.loadingIdList or {}) do
-		IslandAssetLoadDispatcher.Instance:Cancel(iter1_86)
+	for iter0_87, iter1_87 in ipairs(arg0_87.loadingIdList or {}) do
+		IslandAssetLoadDispatcher.Instance:Cancel(iter1_87)
 	end
 
-	arg0_86.loadingIdList = {}
+	arg0_87.loadingIdList = {}
+end
+
+function var0_0.StaticUpdateCommodityTpl(arg0_88, arg1_88)
+	local var0_88 = arg1_88:GetMaxNum() - arg1_88.purchasedNum
+
+	setText(arg0_88:Find("name"), arg1_88:GetName())
+
+	if #arg1_88:GetItems() == 1 and arg1_88:GetItems()[1][1] ~= DROP_TYPE_ISLAND_FURNITURE and arg1_88:GetItems()[1][1] ~= DROP_TYPE_ISLAND_DRESS and arg1_88:GetItems()[1][1] ~= DROP_TYPE_ISLAND_SKIN then
+		local var1_88 = arg1_88:GetItems()[1]
+		local var2_88 = {
+			type = var1_88[1],
+			id = var1_88[2],
+			count = var1_88[3]
+		}
+
+		updateCustomDrop(arg0_88:Find("IslandItemTpl"), var2_88, {
+			style = "island"
+		})
+	else
+		GetImageSpriteFromAtlasAsync(arg1_88:GetIcon(), "", arg0_88:Find("IslandItemTpl/icon_bg/icon"))
+	end
+
+	setActive(arg0_88:Find("IslandItemTpl/icon_bg/count_bg"), arg1_88:IsShowPurchaseLimit())
+	setText(arg0_88:Find("IslandItemTpl/icon_bg/count_bg/count"), var0_88 .. "/" .. arg1_88:GetMaxNum())
+
+	local var3_88 = arg1_88:GetResourceConsume()
+
+	GetImageSpriteFromAtlasAsync(Drop.New({
+		type = var3_88[1],
+		id = var3_88[2]
+	}):getIcon(), "", arg0_88:Find("cost/icon"))
+	setText(arg0_88:Find("cost/num"), math.ceil((100 - arg1_88:GetDiscount()) / 100 * var3_88[3]))
+	setActive(arg0_88:Find("timeLimit"), arg1_88:IsTimeLimitCommodity())
+	setActive(arg0_88:Find("discount"), arg1_88:GetDiscount() ~= 0)
+	setText(arg0_88:Find("discount/Text"), "-" .. arg1_88:GetDiscount() .. "%")
+
+	local var4_88 = arg1_88:GetItems()[1][1]
+	local var5_88 = arg1_88:GetItems()[1][2]
+	local var6_88 = Drop.New({
+		count = 1,
+		type = var4_88,
+		id = var5_88
+	}):getOwnedCount()
+
+	setActive(arg0_88:Find("have"), arg1_88:IsShowHave())
+	setText(arg0_88:Find("have"), i18n("island_3Dshop_have") .. var6_88)
+	setActive(arg0_88:Find("hold"), arg1_88:IsShowHold() and (var6_88 > 0 or arg1_88:IsCharacterInviteItemHold()))
+	setActive(arg0_88:Find("sellOut"), arg1_88:GetMaxNum() ~= 0 and var0_88 == 0 and not isActive(arg0_88:Find("hold")))
+	setActive(arg0_88:Find("cost"), not isActive(arg0_88:Find("sellOut")) and not isActive(arg0_88:Find("hold")))
+	setActive(arg0_88:Find("select"), false)
+end
+
+function var0_0.SortShopCommodities(arg0_89)
+	table.sort(arg0_89, CompareFuncs({
+		function(arg0_90)
+			local var0_90 = arg0_90:GetMaxNum() - arg0_90.purchasedNum
+
+			if arg0_90:GetMaxNum() ~= 0 and var0_90 == 0 then
+				return 3
+			end
+
+			if arg0_90:IsShowHold() then
+				if arg0_90:IsCharacterInviteItemHold() then
+					return 2
+				else
+					local var1_90 = arg0_90:GetItems()[1][1]
+					local var2_90 = arg0_90:GetItems()[1][2]
+
+					return Drop.New({
+						count = 1,
+						type = var1_90,
+						id = var2_90
+					}):getOwnedCount() > 0 and 2 or 1
+				end
+			else
+				return 1
+			end
+		end,
+		function(arg0_91)
+			return arg0_91.id
+		end
+	}))
 end
 
 return var0_0

@@ -25,6 +25,7 @@ function var0_0.OnUpdate(arg0_5)
 		var0_5:SetScreenRatio(arg0_6)
 
 		NotchAdapt.CheckNotchRatio = arg0_6
+		NewNotchAdapt.CheckNotchRatio = arg0_6
 
 		NotchAdapt.AdjustUI()
 	end)

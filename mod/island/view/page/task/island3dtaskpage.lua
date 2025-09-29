@@ -24,10 +24,10 @@ function var0_0.OnLoaded(arg0_2)
 
 	setText(arg0_2.targetTF:Find("Text"), i18n("island_task_target"))
 
-	arg0_2.finishedTargetTF = arg0_2.targetTF:Find("finished")
+	arg0_2.finishedTargetTF = arg0_2.targetTF:Find("content/finished")
 	arg0_2.finishedTargetTextTF = arg0_2.finishedTargetTF:Find("Text")
 	arg0_2.finishedTargetLocTF = arg0_2.finishedTargetTF:Find("location")
-	arg0_2.targetContent = arg0_2.targetTF:Find("content")
+	arg0_2.targetContent = arg0_2.targetTF:Find("content/list")
 	arg0_2.targetUIList = UIItemList.New(arg0_2.targetContent, arg0_2.targetContent:Find("tpl"))
 	arg0_2.awardsTF = arg0_2.detailTF:Find("awards")
 
@@ -176,10 +176,12 @@ function var0_0.UpdateTaskItem(arg0_15, arg1_15, arg2_15)
 		setActive(arg1_15:Find("main/selected"), arg0_16 and not var1_15)
 		setActive(arg1_15:Find("sub/selected"), arg0_16 and var1_15)
 
-		if arg0_16 and (not arg0_15.selectedTaskId or arg0_15.selectedTaskId ~= arg2_15.id) then
+		if arg0_16 and (not arg0_15.selectedTaskId or arg0_15.selectedTaskId ~= arg2_15.id or arg0_15.isOpen) then
 			arg0_15.selectedTaskId = arg2_15.id
 
 			arg0_15:FlushDetail()
+
+			arg0_15.isOpen = false
 		end
 	end, SFX_PANEL)
 end
@@ -340,14 +342,12 @@ function var0_0.FlushDetail(arg0_27)
 
 		local var2_27 = not arg0_27.showVO:IsSubmitImmediately() and arg0_27.showVO:IsFinish()
 
+		arg0_27.targetUIList:align(#arg0_27.showTargets)
 		setActive(arg0_27.finishedTargetTF, var2_27)
-		setActive(arg0_27.targetContent, not var2_27)
 
 		if var2_27 then
 			setText(arg0_27.finishedTargetTextTF, arg0_27.showVO:GetFinishedDesc())
 			arg0_27:UpdateLocation(arg0_27.finishedTargetLocTF, arg0_27.showVO)
-		else
-			arg0_27.targetUIList:align(#arg0_27.showTargets)
 		end
 
 		arg0_27.showAwards = arg0_27.showVO:GetAwards()
@@ -365,6 +365,7 @@ function var0_0.FlushDetail(arg0_27)
 end
 
 function var0_0.OnShow(arg0_30, arg1_30, arg2_30)
+	arg0_30.isOpen = true
 	arg0_30.toggleList = arg0_30:GetShowTypeList()
 
 	table.insert(arg0_30.toggleList, 1, IslandTaskType.SHOW_ALL)
@@ -412,7 +413,7 @@ function var0_0.OnDisable(arg0_34)
 end
 
 function var0_0.OnDestroy(arg0_35)
-	return
+	arg0_35:OnHide()
 end
 
 return var0_0

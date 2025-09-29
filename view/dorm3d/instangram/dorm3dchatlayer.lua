@@ -776,11 +776,12 @@ function var0_0.SetBackgroundPanel(arg0_54, arg1_54)
 
 		arg0_54.currentBgId = nil
 
-		local var0_55 = UIItemList.New(arg0_54:findTF("panel/backgroundScroll/Viewport/Content", arg0_54.backgroundUI), arg0_54:findTF("panel/backgroundScroll/Viewport/Content/background", arg0_54.backgroundUI))
+		local var0_55 = arg1_54:GetSkins()
+		local var1_55 = UIItemList.New(arg0_54:findTF("panel/backgroundScroll/Viewport/Content", arg0_54.backgroundUI), arg0_54:findTF("panel/backgroundScroll/Viewport/Content/background", arg0_54.backgroundUI))
 
-		var0_55:make(function(arg0_56, arg1_56, arg2_56)
+		var1_55:make(function(arg0_56, arg1_56, arg2_56)
 			if arg0_56 == UIItemList.EventUpdate then
-				local var0_56 = arg1_54.skins[arg1_56 + 1]
+				local var0_56 = var0_55[arg1_56 + 1]
 				local var1_56 = 0
 
 				if var0_56.id ~= var0_54 then
@@ -806,7 +807,7 @@ function var0_0.SetBackgroundPanel(arg0_54, arg1_54)
 					if var3_56 then
 						SetActive(arg2_56:Find("selectedFrame"), true)
 
-						for iter0_57 = 1, #arg1_54.skins do
+						for iter0_57 = 1, #var0_55 do
 							if iter0_57 ~= arg1_56 + 1 then
 								local var0_57 = arg0_54:findTF("panel/backgroundScroll/Viewport/Content", arg0_54.backgroundUI):GetChild(iter0_57 - 1)
 
@@ -821,7 +822,7 @@ function var0_0.SetBackgroundPanel(arg0_54, arg1_54)
 				end, SFX_PANEL)
 			end
 		end)
-		var0_55:align(#arg1_54.skins)
+		var1_55:align(#var0_55)
 	end, SFX_PANEL)
 	onButton(arg0_54, arg0_54:findTF("bg", arg0_54.backgroundUI), function()
 		arg0_54:CloseBackgroundPanel()

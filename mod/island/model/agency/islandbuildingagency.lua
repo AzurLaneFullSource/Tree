@@ -93,6 +93,12 @@ function var0_0.InitBuildData(arg0_10, arg1_10)
 
 	local var1_10 = getProxy(IslandProxy):GetIsland()
 
+	if table.contains(IslandProductConst.haveModelPlaces, arg1_10.id) then
+		var1_10:DispatchEvent(IslandBuildingAgency.CHANGE_PRODUCT_MODEL, {
+			build_id = arg1_10.id
+		})
+	end
+
 	for iter0_10, iter1_10 in ipairs(arg1_10.build_collect.collect_list or {}) do
 		var1_10:DispatchEvent(IslandBuildingAgency.COLLECT_SlOT_UNIT_INIT, {
 			slotId = iter1_10.id

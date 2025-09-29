@@ -73,6 +73,8 @@ function var0_0.FlushInfo(arg0_9)
 end
 
 function var0_0.OnDestroy(arg0_10)
+	ClearLScrollrect(arg0_10.scrollRect)
+
 	if arg0_10.cards then
 		for iter0_10, iter1_10 in pairs(arg0_10.cards) do
 			iter1_10:Dispose()

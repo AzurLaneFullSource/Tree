@@ -2991,7 +2991,7 @@ pg.base.dorm3d_collection_template = {
 		}
 	},
 	[1205] = {
-		text = "dorm3d_dafeng_chair",
+		text = "dorm3d_dafeng_bed",
 		name = "Small Bonsai",
 		award = 0,
 		time = 0,

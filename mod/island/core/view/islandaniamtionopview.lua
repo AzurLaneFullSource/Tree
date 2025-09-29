@@ -25,6 +25,7 @@ function var0_0.FirstFlush(arg0_5)
 	arg0_5.opPanel = arg0_5._tf:Find("adapt/opPanel")
 	arg0_5.lookParent = arg0_5.opPanel.parent
 	arg0_5.moveBtn = arg0_5.opPanel:Find("move")
+	arg0_5.lookBtn = arg0_5.opPanel:Find("look")
 	arg0_5.moveBtnCg = GetOrAddComponent(arg0_5.moveBtn, typeof(CanvasGroup))
 
 	function arg0_5.scrollrect.onInitItem(arg0_6)
@@ -71,10 +72,16 @@ function var0_0.SwitchPage(arg0_13, arg1_13)
 
 	if arg1_13 == var1_0 then
 		arg0_13:InitList()
+
+		arg0_13.lookBtn.offsetMax = Vector2(-594, arg0_13.lookBtn.offsetMax.y)
 	elseif arg1_13 == var2_0 then
 		arg0_13:InitList()
+
+		arg0_13.lookBtn.offsetMax = Vector2(-594, arg0_13.lookBtn.offsetMax.y)
 	elseif arg1_13 == var3_0 then
 		arg0_13.chatView:Execute("Show", true)
+
+		arg0_13.lookBtn.offsetMax = Vector2(-985, arg0_13.lookBtn.offsetMax.y)
 	end
 end
 
@@ -414,6 +421,7 @@ end
 
 function var0_0.OnDispose(arg0_42)
 	var0_0.super.OnDispose(arg0_42)
+	ClearLScrollrect(arg0_42.scrollrect)
 	arg0_42.chatView:Dispose()
 
 	arg0_42.chatView = nil

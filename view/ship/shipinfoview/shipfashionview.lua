@@ -82,7 +82,8 @@ function var0_0.OnSelected(arg0_10, arg1_10)
 			pbList = {
 				arg0_10.stylePanel:Find("style_desc"),
 				arg0_10.stylePanel:Find("frame")
-			}
+			},
+			overlayType = LayerWeightConst.OVERLAY_UI_ADAPT
 		})
 	else
 		arg0_10:UnOverlayPanel(arg0_10._parentTf, arg0_10.mainPanel)

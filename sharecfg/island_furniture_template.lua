@@ -593,8 +593,8 @@ pg.island_furniture_template = {
 		id = 10305,
 		icon = "furniture_10305",
 		size = {
-			2,
-			1
+			4,
+			2
 		}
 	},
 	[10306] = {

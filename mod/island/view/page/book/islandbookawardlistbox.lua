@@ -56,6 +56,7 @@ function var0_0.OnUpdateItem(arg0_10, arg1_10, arg2_10)
 
 	local var3_10 = table.contains(arg0_10.gotIds, var0_10)
 
+	setActive(var1_10:Find("drop/got"), var3_10)
 	setGray(var1_10, not var3_10, true)
 end
 
@@ -71,6 +72,10 @@ end
 function var0_0.Hide(arg0_12)
 	var0_0.super.Hide(arg0_12)
 	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_12._tf, arg0_12._parentTf)
+end
+
+function var0_0.OnDestroy(arg0_13)
+	ClearLScrollrect(arg0_13.scrollRect)
 end
 
 return var0_0
