@@ -1326,84 +1326,94 @@ function var0_0.OnHide(arg0_87)
 	arg0_87.loadingIdList = {}
 end
 
-function var0_0.StaticUpdateCommodityTpl(arg0_88, arg1_88)
-	local var0_88 = arg1_88:GetMaxNum() - arg1_88.purchasedNum
+function var0_0.OnDisable(arg0_88)
+	arg0_88:OnHide()
+	var0_0.super.OnDisable(arg0_88)
+end
 
-	setText(arg0_88:Find("name"), arg1_88:GetName())
+function var0_0.OnDestroy(arg0_89)
+	arg0_89:OnHide()
+	var0_0.super.OnDestroy(arg0_89)
+end
 
-	if #arg1_88:GetItems() == 1 and arg1_88:GetItems()[1][1] ~= DROP_TYPE_ISLAND_FURNITURE and arg1_88:GetItems()[1][1] ~= DROP_TYPE_ISLAND_DRESS and arg1_88:GetItems()[1][1] ~= DROP_TYPE_ISLAND_SKIN then
-		local var1_88 = arg1_88:GetItems()[1]
-		local var2_88 = {
-			type = var1_88[1],
-			id = var1_88[2],
-			count = var1_88[3]
+function var0_0.StaticUpdateCommodityTpl(arg0_90, arg1_90)
+	local var0_90 = arg1_90:GetMaxNum() - arg1_90.purchasedNum
+
+	setText(arg0_90:Find("name"), arg1_90:GetName())
+
+	if #arg1_90:GetItems() == 1 and arg1_90:GetItems()[1][1] ~= DROP_TYPE_ISLAND_FURNITURE and arg1_90:GetItems()[1][1] ~= DROP_TYPE_ISLAND_DRESS and arg1_90:GetItems()[1][1] ~= DROP_TYPE_ISLAND_SKIN then
+		local var1_90 = arg1_90:GetItems()[1]
+		local var2_90 = {
+			type = var1_90[1],
+			id = var1_90[2],
+			count = var1_90[3]
 		}
 
-		updateCustomDrop(arg0_88:Find("IslandItemTpl"), var2_88, {
+		updateCustomDrop(arg0_90:Find("IslandItemTpl"), var2_90, {
 			style = "island"
 		})
 	else
-		GetImageSpriteFromAtlasAsync(arg1_88:GetIcon(), "", arg0_88:Find("IslandItemTpl/icon_bg/icon"))
+		GetImageSpriteFromAtlasAsync(arg1_90:GetIcon(), "", arg0_90:Find("IslandItemTpl/icon_bg/icon"))
 	end
 
-	setActive(arg0_88:Find("IslandItemTpl/icon_bg/count_bg"), arg1_88:IsShowPurchaseLimit())
-	setText(arg0_88:Find("IslandItemTpl/icon_bg/count_bg/count"), var0_88 .. "/" .. arg1_88:GetMaxNum())
+	setActive(arg0_90:Find("IslandItemTpl/icon_bg/count_bg"), arg1_90:IsShowPurchaseLimit())
+	setText(arg0_90:Find("IslandItemTpl/icon_bg/count_bg/count"), var0_90 .. "/" .. arg1_90:GetMaxNum())
 
-	local var3_88 = arg1_88:GetResourceConsume()
+	local var3_90 = arg1_90:GetResourceConsume()
 
 	GetImageSpriteFromAtlasAsync(Drop.New({
-		type = var3_88[1],
-		id = var3_88[2]
-	}):getIcon(), "", arg0_88:Find("cost/icon"))
-	setText(arg0_88:Find("cost/num"), math.ceil((100 - arg1_88:GetDiscount()) / 100 * var3_88[3]))
-	setActive(arg0_88:Find("timeLimit"), arg1_88:IsTimeLimitCommodity())
-	setActive(arg0_88:Find("discount"), arg1_88:GetDiscount() ~= 0)
-	setText(arg0_88:Find("discount/Text"), "-" .. arg1_88:GetDiscount() .. "%")
+		type = var3_90[1],
+		id = var3_90[2]
+	}):getIcon(), "", arg0_90:Find("cost/icon"))
+	setText(arg0_90:Find("cost/num"), math.ceil((100 - arg1_90:GetDiscount()) / 100 * var3_90[3]))
+	setActive(arg0_90:Find("timeLimit"), arg1_90:IsTimeLimitCommodity())
+	setActive(arg0_90:Find("discount"), arg1_90:GetDiscount() ~= 0)
+	setText(arg0_90:Find("discount/Text"), "-" .. arg1_90:GetDiscount() .. "%")
 
-	local var4_88 = arg1_88:GetItems()[1][1]
-	local var5_88 = arg1_88:GetItems()[1][2]
-	local var6_88 = Drop.New({
+	local var4_90 = arg1_90:GetItems()[1][1]
+	local var5_90 = arg1_90:GetItems()[1][2]
+	local var6_90 = Drop.New({
 		count = 1,
-		type = var4_88,
-		id = var5_88
+		type = var4_90,
+		id = var5_90
 	}):getOwnedCount()
 
-	setActive(arg0_88:Find("have"), arg1_88:IsShowHave())
-	setText(arg0_88:Find("have"), i18n("island_3Dshop_have") .. var6_88)
-	setActive(arg0_88:Find("hold"), arg1_88:IsShowHold() and (var6_88 > 0 or arg1_88:IsCharacterInviteItemHold()))
-	setActive(arg0_88:Find("sellOut"), arg1_88:GetMaxNum() ~= 0 and var0_88 == 0 and not isActive(arg0_88:Find("hold")))
-	setActive(arg0_88:Find("cost"), not isActive(arg0_88:Find("sellOut")) and not isActive(arg0_88:Find("hold")))
-	setActive(arg0_88:Find("select"), false)
+	setActive(arg0_90:Find("have"), arg1_90:IsShowHave())
+	setText(arg0_90:Find("have"), i18n("island_3Dshop_have") .. var6_90)
+	setActive(arg0_90:Find("hold"), arg1_90:IsShowHold() and (var6_90 > 0 or arg1_90:IsCharacterInviteItemHold()))
+	setActive(arg0_90:Find("sellOut"), arg1_90:GetMaxNum() ~= 0 and var0_90 == 0 and not isActive(arg0_90:Find("hold")))
+	setActive(arg0_90:Find("cost"), not isActive(arg0_90:Find("sellOut")) and not isActive(arg0_90:Find("hold")))
+	setActive(arg0_90:Find("select"), false)
 end
 
-function var0_0.SortShopCommodities(arg0_89)
-	table.sort(arg0_89, CompareFuncs({
-		function(arg0_90)
-			local var0_90 = arg0_90:GetMaxNum() - arg0_90.purchasedNum
+function var0_0.SortShopCommodities(arg0_91)
+	table.sort(arg0_91, CompareFuncs({
+		function(arg0_92)
+			local var0_92 = arg0_92:GetMaxNum() - arg0_92.purchasedNum
 
-			if arg0_90:GetMaxNum() ~= 0 and var0_90 == 0 then
+			if arg0_92:GetMaxNum() ~= 0 and var0_92 == 0 then
 				return 3
 			end
 
-			if arg0_90:IsShowHold() then
-				if arg0_90:IsCharacterInviteItemHold() then
+			if arg0_92:IsShowHold() then
+				if arg0_92:IsCharacterInviteItemHold() then
 					return 2
 				else
-					local var1_90 = arg0_90:GetItems()[1][1]
-					local var2_90 = arg0_90:GetItems()[1][2]
+					local var1_92 = arg0_92:GetItems()[1][1]
+					local var2_92 = arg0_92:GetItems()[1][2]
 
 					return Drop.New({
 						count = 1,
-						type = var1_90,
-						id = var2_90
+						type = var1_92,
+						id = var2_92
 					}):getOwnedCount() > 0 and 2 or 1
 				end
 			else
 				return 1
 			end
 		end,
-		function(arg0_91)
-			return arg0_91.id
+		function(arg0_93)
+			return arg0_93.id
 		end
 	}))
 end

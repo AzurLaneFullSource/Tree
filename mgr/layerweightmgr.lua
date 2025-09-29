@@ -75,6 +75,7 @@ end
 function var1_0.CreateRefreshHandler(arg0_5)
 	if not arg0_5.luHandle then
 		arg0_5:Log("CreateRefreshHandler")
+		NotchAdapt.AdjustUI()
 
 		arg0_5.luHandle = LateUpdateBeat:CreateListener(arg0_5.Refresh, arg0_5)
 

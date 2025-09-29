@@ -62,7 +62,7 @@ function var0_0.MoveHandle(arg0_7)
 end
 
 function var0_0.AnimHandle(arg0_8)
-	if arg0_8.speed < 7.5 and arg0_8.speed > 5 then
+	if arg0_8.speed > 0 then
 		arg0_8.speed = 5
 	end
 

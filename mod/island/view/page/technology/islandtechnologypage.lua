@@ -5,7 +5,9 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	setText(arg0_2._tf:Find("top/title/Text"), i18n("island_technology_title"))
+	arg0_2.rtTop = arg0_2._tf:Find("adapt/top")
+
+	setText(arg0_2.rtTop:Find("title/Text"), i18n("island_technology_title"))
 
 	arg0_2.centreToggleTF = arg0_2._tf:Find("adapt/types/1")
 	arg0_2.centreTipTF = arg0_2.centreToggleTF:Find("tip")
@@ -73,10 +75,10 @@ function var0_0.OnLoaded(arg0_2)
 end
 
 function var0_0.OnInit(arg0_11)
-	onButton(arg0_11, arg0_11._tf:Find("top/back"), function()
+	onButton(arg0_11, arg0_11.rtTop:Find("back"), function()
 		arg0_11:Hide()
 	end, SFX_PANEL)
-	onButton(arg0_11, arg0_11._tf:Find("top/home"), function()
+	onButton(arg0_11, arg0_11.rtTop:Find("home"), function()
 		arg0_11:emit(BaseUI.ON_HOME)
 	end, SFX_PANEL)
 	onToggle(arg0_11, arg0_11.centreToggleTF, function(arg0_14)

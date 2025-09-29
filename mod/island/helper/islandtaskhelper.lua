@@ -151,4 +151,122 @@ function var0_0.OnActionEnd(arg0_28)
 	var0_0.UpdateClientTaskProgress(IslandTaskTargetType.ACTION_END, 0)
 end
 
+function var0_0._GetTaskAcceptStoryId(arg0_29)
+	local var0_29 = pg.island_task[arg0_29].rec_perform
+
+	return pg.NewStoryMgr.GetInstance():StoryName2StoryId(var0_29)
+end
+
+function var0_0._GetTaskTargetLinkStoryIds(arg0_30)
+	if pg.island_task_target[arg0_30].type ~= IslandTaskTargetType.INTERACTION then
+		return nil
+	end
+
+	local var0_30 = pg.island_task_target[arg0_30].target_param[1]
+	local var1_30 = pg.island_interaction[var0_30]
+
+	if var1_30.type == IslandInteractionUntil.TYPE_STORY then
+		local var2_30 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(var1_30.param)
+
+		return var2_30 and {
+			var2_30
+		} or nil
+	elseif var1_30.type == IslandInteractionUntil.TYPE_PERFORMANCE then
+		return IslandPerformancePerformer.GetStoryNameList(var1_30.param)
+	end
+
+	return nil
+end
+
+function var0_0._GetTaskSubmitStoryIds(arg0_31)
+	local var0_31 = pg.island_task[arg0_31].com_perform
+	local var1_31 = var0_31[1]
+
+	if not var1_31 then
+		return nil
+	end
+
+	local var2_31 = var0_31[2]
+
+	if var1_31 == 1 then
+		local var3_31 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(var2_31)
+
+		return var3_31 and {
+			var3_31
+		} or nil
+	elseif var1_31 == 2 then
+		return IslandPerformancePerformer.GetStoryNameList(var2_31)
+	end
+
+	return nil
+end
+
+function var0_0._GetTaskLinkStoryIds(arg0_32)
+	local var0_32 = {}
+	local var1_32 = var0_0._GetTaskAcceptStoryId(arg0_32.id)
+
+	if var1_32 then
+		table.insert(var0_32, var1_32)
+	end
+
+	for iter0_32, iter1_32 in ipairs(arg0_32:GetTargetList()) do
+		if iter1_32:IsFinish() then
+			local var2_32 = var0_0._GetTaskTargetLinkStoryIds(iter1_32.id)
+
+			if var2_32 then
+				table.insertto(var0_32, var2_32)
+			end
+		end
+	end
+
+	return var0_32
+end
+
+function var0_0._GetFinishTaskLinkStoryIds(arg0_33)
+	local var0_33 = {}
+	local var1_33 = var0_0._GetTaskAcceptStoryId(arg0_33)
+
+	if var1_33 then
+		table.insert(var0_33, var1_33)
+	end
+
+	for iter0_33, iter1_33 in ipairs(pg.island_task[arg0_33].target_id) do
+		local var2_33 = var0_0._GetTaskTargetLinkStoryIds(iter1_33)
+
+		if var2_33 then
+			table.insertto(var0_33, var2_33)
+		end
+	end
+
+	local var3_33 = var0_0._GetTaskSubmitStoryIds(arg0_33)
+
+	if var3_33 then
+		table.insertto(var0_33, var3_33)
+	end
+
+	return var0_33
+end
+
+function var0_0.FixTaskLinksStory(arg0_34)
+	local var0_34 = getProxy(IslandProxy):GetIsland():GetTaskAgency()
+	local var1_34 = {}
+
+	for iter0_34, iter1_34 in pairs(var0_34:GetTasks()) do
+		table.insertto(var1_34, var0_0._GetTaskLinkStoryIds(iter1_34))
+	end
+
+	for iter2_34, iter3_34 in ipairs(var0_34:GetFinishedIds()) do
+		table.insertto(var1_34, var0_0._GetFinishTaskLinkStoryIds(iter3_34))
+	end
+
+	if #var1_34 > 0 then
+		pg.m02:sendNotification(GAME.STORY_UPDATE_LIST, {
+			storyIds = var1_34,
+			callback = arg0_34
+		})
+	else
+		arg0_34()
+	end
+end
+
 return var0_0

@@ -90,154 +90,158 @@ function var0_0.CheckMutex(arg0_6, arg1_6)
 	end)
 end
 
-function var0_0.IsFinishTask(arg0_8, arg1_8)
-	return table.contains(arg0_8.finishedIds, arg1_8)
+function var0_0.GetFinishedIds(arg0_8)
+	return arg0_8.finishedIds
 end
 
-function var0_0.IsPassId(arg0_9, arg1_9)
-	return table.contains(arg0_9.mutexIds, arg1_9)
+function var0_0.IsFinishTask(arg0_9, arg1_9)
+	return table.contains(arg0_9.finishedIds, arg1_9)
 end
 
-function var0_0.GetTasks(arg0_10)
-	return arg0_10.tasks
+function var0_0.IsPassId(arg0_10, arg1_10)
+	return table.contains(arg0_10.mutexIds, arg1_10)
 end
 
-function var0_0.GetShowTasks(arg0_11)
-	local var0_11 = {}
+function var0_0.GetTasks(arg0_11)
+	return arg0_11.tasks
+end
 
-	for iter0_11, iter1_11 in pairs(arg0_11.tasks) do
-		local var1_11 = iter1_11:getConfig("type")
+function var0_0.GetShowTasks(arg0_12)
+	local var0_12 = {}
 
-		if var1_11 ~= IslandTaskType.SEASON then
-			local var2_11 = iter1_11:getConfig("link_task")
-			local var3_11 = underscore.all(var2_11, function(arg0_12)
-				return arg0_11:IsFinishTask(arg0_12)
+	for iter0_12, iter1_12 in pairs(arg0_12.tasks) do
+		local var1_12 = iter1_12:getConfig("type")
+
+		if var1_12 ~= IslandTaskType.SEASON then
+			local var2_12 = iter1_12:getConfig("link_task")
+			local var3_12 = underscore.all(var2_12, function(arg0_13)
+				return arg0_12:IsFinishTask(arg0_13)
 			end)
 
-			if var1_11 == IslandTaskType.HIDE then
-				if #var2_11 > 0 and var3_11 then
-					table.insert(var0_11, iter1_11)
+			if var1_12 == IslandTaskType.HIDE then
+				if #var2_12 > 0 and var3_12 then
+					table.insert(var0_12, iter1_12)
 				end
-			elseif var3_11 then
-				table.insert(var0_11, iter1_11)
+			elseif var3_12 then
+				table.insert(var0_12, iter1_12)
 			end
 		end
 	end
 
-	return var0_11
+	return var0_12
 end
 
-function var0_0.GetTask(arg0_13, arg1_13)
-	return arg0_13.tasks[arg1_13]
+function var0_0.GetTask(arg0_14, arg1_14)
+	return arg0_14.tasks[arg1_14]
 end
 
-function var0_0.GetFutureTask(arg0_14, arg1_14)
-	return arg0_14.futureTasks[arg1_14]
+function var0_0.GetFutureTask(arg0_15, arg1_15)
+	return arg0_15.futureTasks[arg1_15]
 end
 
-function var0_0.SetTraceId(arg0_15, arg1_15)
-	arg0_15.traceId = arg1_15
+function var0_0.SetTraceId(arg0_16, arg1_16)
+	arg0_16.traceId = arg1_16
 end
 
-function var0_0.GetTraceId(arg0_16)
-	return arg0_16.traceId
+function var0_0.GetTraceId(arg0_17)
+	return arg0_17.traceId
 end
 
-function var0_0.GetTraceTask(arg0_17)
-	if arg0_17.traceId == 0 then
+function var0_0.GetTraceTask(arg0_18)
+	if arg0_18.traceId == 0 then
 		return nil
 	end
 
-	return arg0_17.tasks[arg0_17.traceId]
+	return arg0_18.tasks[arg0_18.traceId]
 end
 
-function var0_0.GetPriorityTraceTaskId(arg0_18)
-	local var0_18 = {}
+function var0_0.GetPriorityTraceTaskId(arg0_19)
+	local var0_19 = {}
 
-	for iter0_18, iter1_18 in pairs(arg0_18.tasks) do
-		if not table.contains(IslandTaskType.EXCLUED_TRACK_TYPES, iter1_18:GetType()) then
-			table.insert(var0_18, iter1_18)
+	for iter0_19, iter1_19 in pairs(arg0_19.tasks) do
+		if not table.contains(IslandTaskType.EXCLUED_TRACK_TYPES, iter1_19:GetType()) then
+			table.insert(var0_19, iter1_19)
 		end
 	end
 
-	table.sort(var0_18, CompareFuncs({
-		function(arg0_19)
-			return -arg0_19:GetAcceptTime()
-		end,
+	table.sort(var0_19, CompareFuncs({
 		function(arg0_20)
-			return IslandTaskType.GetTrackPriority(arg0_20:GetType())
+			return -arg0_20:GetAcceptTime()
 		end,
 		function(arg0_21)
-			return arg0_21.id
+			return IslandTaskType.GetTrackPriority(arg0_21:GetType())
+		end,
+		function(arg0_22)
+			return arg0_22.id
 		end
 	}))
 
-	return var0_18[1] and var0_18[1].id
+	return var0_19[1] and var0_19[1].id
 end
 
-function var0_0.AddTask(arg0_22, arg1_22)
-	arg0_22.tasks[arg1_22.id] = arg1_22
-
-	if arg0_22.randomTaskTimes[arg1_22.id] then
-		arg0_22.tasks[arg1_22.id]:SetEndTime(arg0_22.randomTaskTimes[arg1_22.id])
-	end
-
-	arg0_22.futureTasks[arg1_22.id] = nil
-
-	table.insert(arg0_22.mutexIds, arg1_22.id)
-
-	for iter0_22, iter1_22 in pairs(arg0_22.futureTasks) do
-		if arg0_22:CheckMutex(iter1_22.id) then
-			arg0_22:RemoveFutureTask(iter1_22.id)
-		end
-	end
-
-	arg0_22:DispatchEvent(var0_0.TASK_ADDED, arg1_22)
-end
-
-function var0_0.UpdateTask(arg0_23, arg1_23)
+function var0_0.AddTask(arg0_23, arg1_23)
 	arg0_23.tasks[arg1_23.id] = arg1_23
 
 	if arg0_23.randomTaskTimes[arg1_23.id] then
 		arg0_23.tasks[arg1_23.id]:SetEndTime(arg0_23.randomTaskTimes[arg1_23.id])
 	end
 
-	arg0_23:DispatchEvent(var0_0.TASK_UPDATED, arg1_23)
+	arg0_23.futureTasks[arg1_23.id] = nil
 
-	if arg1_23:IsFinish() and arg1_23:IsSubmitImmediately() then
+	table.insert(arg0_23.mutexIds, arg1_23.id)
+
+	for iter0_23, iter1_23 in pairs(arg0_23.futureTasks) do
+		if arg0_23:CheckMutex(iter1_23.id) then
+			arg0_23:RemoveFutureTask(iter1_23.id)
+		end
+	end
+
+	arg0_23:DispatchEvent(var0_0.TASK_ADDED, arg1_23)
+end
+
+function var0_0.UpdateTask(arg0_24, arg1_24)
+	arg0_24.tasks[arg1_24.id] = arg1_24
+
+	if arg0_24.randomTaskTimes[arg1_24.id] then
+		arg0_24.tasks[arg1_24.id]:SetEndTime(arg0_24.randomTaskTimes[arg1_24.id])
+	end
+
+	arg0_24:DispatchEvent(var0_0.TASK_UPDATED, arg1_24)
+
+	if arg1_24:IsFinish() and arg1_24:IsSubmitImmediately() then
 		pg.m02:sendNotification(GAME.ISLAND_SUBMIT_TASK, {
-			taskId = arg1_23.id
+			taskId = arg1_24.id
 		})
 	end
 end
 
-function var0_0.GetDiffTargetIdsByTypeAndParam(arg0_24, arg1_24, arg2_24)
-	local var0_24 = {}
-
-	for iter0_24, iter1_24 in pairs(arg0_24.tasks) do
-		local var1_24 = iter1_24:GetTargetIdByTypeAndParam(arg1_24, arg2_24)
-
-		var0_24 = table.mergeArray(var0_24, var1_24, true)
-	end
-
-	return var0_24
-end
-
-function var0_0.GetTasksByTypeAndParam(arg0_25, arg1_25, arg2_25)
+function var0_0.GetDiffTargetIdsByTypeAndParam(arg0_25, arg1_25, arg2_25)
 	local var0_25 = {}
 
 	for iter0_25, iter1_25 in pairs(arg0_25.tasks) do
-		if iter1_25:ExistTargetType(arg1_25, arg2_25) then
-			table.insert(var0_25, iter1_25)
+		local var1_25 = iter1_25:GetTargetIdByTypeAndParam(arg1_25, arg2_25)
+
+		var0_25 = table.mergeArray(var0_25, var1_25, true)
+	end
+
+	return var0_25
+end
+
+function var0_0.GetTasksByTypeAndParam(arg0_26, arg1_26, arg2_26)
+	local var0_26 = {}
+
+	for iter0_26, iter1_26 in pairs(arg0_26.tasks) do
+		if iter1_26:ExistTargetType(arg1_26, arg2_26) then
+			table.insert(var0_26, iter1_26)
 		end
 	end
 
 	return task
 end
 
-function var0_0.ExistDailyTask(arg0_26)
-	for iter0_26, iter1_26 in pairs(arg0_26.tasks) do
-		if iter1_26:GetShowType() == IslandTaskType.DAILY then
+function var0_0.ExistDailyTask(arg0_27)
+	for iter0_27, iter1_27 in pairs(arg0_27.tasks) do
+		if iter1_27:GetShowType() == IslandTaskType.DAILY then
 			return true
 		end
 	end
@@ -245,136 +249,124 @@ function var0_0.ExistDailyTask(arg0_26)
 	return false
 end
 
-function var0_0.AddFinishId(arg0_27, arg1_27)
-	table.insert(arg0_27.finishedIds, arg1_27)
-	arg0_27:DispatchEvent(var0_0.TASK_FINISH)
+function var0_0.AddFinishId(arg0_28, arg1_28)
+	table.insert(arg0_28.finishedIds, arg1_28)
+	arg0_28:DispatchEvent(var0_0.TASK_FINISH)
 end
 
-function var0_0.RemoveTask(arg0_28, arg1_28)
-	local var0_28 = arg0_28.tasks[arg1_28]
+function var0_0.RemoveTask(arg0_29, arg1_29)
+	local var0_29 = arg0_29.tasks[arg1_29]
 
-	arg0_28.tasks[arg1_28] = nil
+	arg0_29.tasks[arg1_29] = nil
 
-	arg0_28:DispatchEvent(var0_0.TASK_REMOVED, var0_28)
+	arg0_29:DispatchEvent(var0_0.TASK_REMOVED, var0_29)
 end
 
-function var0_0.RemoveFutureTask(arg0_29, arg1_29)
-	local var0_29 = arg0_29.futureTasks[arg1_29]
+function var0_0.RemoveFutureTask(arg0_30, arg1_30)
+	local var0_30 = arg0_30.futureTasks[arg1_30]
 
-	arg0_29.futureTasks[arg1_29] = nil
+	arg0_30.futureTasks[arg1_30] = nil
 
-	arg0_29:DispatchEvent(var0_0.FUTURE_TASK_REMOVED, var0_29)
+	arg0_30:DispatchEvent(var0_0.FUTURE_TASK_REMOVED, var0_30)
 end
 
-function var0_0.UpdatePerDay(arg0_30)
+function var0_0.UpdatePerDay(arg0_31)
 	pg.m02:sendNotification(GAME.ISLAND_GET_RANDOM_REFRESH_TASK)
 end
 
-function var0_0.UpdateRandomRefreshTask(arg0_31, arg1_31)
-	for iter0_31, iter1_31 in ipairs(arg1_31.remove_task_list or {}) do
-		arg0_31.tasks[iter1_31] = nil
+function var0_0.UpdateRandomRefreshTask(arg0_32, arg1_32)
+	for iter0_32, iter1_32 in ipairs(arg1_32.remove_task_list or {}) do
+		arg0_32.tasks[iter1_32] = nil
 	end
 
-	for iter2_31, iter3_31 in ipairs(arg1_31.remove_task_finish or {}) do
-		table.removebyvalue(arg0_31.finishedIds, iter3_31)
+	for iter2_32, iter3_32 in ipairs(arg1_32.remove_task_finish or {}) do
+		table.removebyvalue(arg0_32.finishedIds, iter3_32)
 	end
 
-	arg0_31:InitFutureTasks(arg1_31.task_list_random or {})
+	arg0_32:InitFutureTasks(arg1_32.task_list_random or {})
 end
 
-function var0_0.UpdatePerSecond(arg0_32)
-	for iter0_32, iter1_32 in pairs(arg0_32.tasks) do
-		if not iter1_32:InTime() then
-			arg0_32:RemoveTask(iter1_32.id)
+function var0_0.UpdatePerSecond(arg0_33)
+	for iter0_33, iter1_33 in pairs(arg0_33.tasks) do
+		if not iter1_33:InTime() then
+			arg0_33:RemoveTask(iter1_33.id)
 		end
 	end
 
-	local var0_32 = {}
-
-	for iter2_32, iter3_32 in pairs(arg0_32.futureTasks) do
-		if not iter3_32:InTime() then
-			arg0_32:RemoveFutureTask(iter3_32.id)
-		end
-	end
-
-	local var1_32 = pg.TimeMgr.GetInstance():GetServerTime()
-
-	if arg0_32.acceptCheckTimestampTags[var1_32] then
-		arg0_32.acceptCheckTimestampTags[var1_32] = nil
-
-		arg0_32:TryAcceptAutoTasks()
-	end
-end
-
-function var0_0.TryAcceptAutoTasks(arg0_33, arg1_33)
 	local var0_33 = {}
 
-	arg0_33.acceptCheckTimestampTags = {}
-
-	for iter0_33, iter1_33 in pairs(arg0_33.futureTasks) do
-		if iter1_33:IsAcceptImmediately() and iter1_33:IsUnlock() then
-			table.insert(var0_33, iter1_33.id)
-		elseif iter1_33:IsUnlockWaitTime() then
-			arg0_33.acceptCheckTimestampTags[iter1_33:GetUnlockTime()] = true
+	for iter2_33, iter3_33 in pairs(arg0_33.futureTasks) do
+		if not iter3_33:InTime() then
+			arg0_33:RemoveFutureTask(iter3_33.id)
 		end
 	end
 
-	if #var0_33 > 0 then
-		pg.m02:sendNotification(GAME.ISLAND_ACCEPT_TASK, {
-			taskIds = var0_33,
-			callback = arg1_33
-		})
-	else
-		existCall(arg1_33)
+	local var1_33 = pg.TimeMgr.GetInstance():GetServerTime()
+
+	if arg0_33.acceptCheckTimestampTags[var1_33] then
+		arg0_33.acceptCheckTimestampTags[var1_33] = nil
+
+		arg0_33:TryAcceptAutoTasks()
 	end
 end
 
-function var0_0.TrySubmitAutoTasks(arg0_34, arg1_34)
+function var0_0.TryAcceptAutoTasks(arg0_34, arg1_34)
 	local var0_34 = {}
 
-	for iter0_34, iter1_34 in pairs(arg0_34.tasks) do
-		if iter1_34:IsFinish() and iter1_34:IsSubmitImmediately() then
-			table.insert(var0_34, function(arg0_35)
+	arg0_34.acceptCheckTimestampTags = {}
+
+	for iter0_34, iter1_34 in pairs(arg0_34.futureTasks) do
+		if iter1_34:IsAcceptImmediately() and iter1_34:IsUnlock() then
+			table.insert(var0_34, iter1_34.id)
+		elseif iter1_34:IsUnlockWaitTime() then
+			arg0_34.acceptCheckTimestampTags[iter1_34:GetUnlockTime()] = true
+		end
+	end
+
+	if #var0_34 > 0 then
+		pg.m02:sendNotification(GAME.ISLAND_ACCEPT_TASK, {
+			taskIds = var0_34,
+			callback = arg1_34
+		})
+	else
+		existCall(arg1_34)
+	end
+end
+
+function var0_0.TrySubmitAutoTasks(arg0_35, arg1_35)
+	local var0_35 = {}
+
+	for iter0_35, iter1_35 in pairs(arg0_35.tasks) do
+		if iter1_35:IsFinish() and iter1_35:IsSubmitImmediately() then
+			table.insert(var0_35, function(arg0_36)
 				pg.m02:sendNotification(GAME.ISLAND_SUBMIT_TASK, {
-					taskId = iter1_34.id,
-					callback = arg0_35
+					taskId = iter1_35.id,
+					callback = arg0_36
 				})
 			end)
 		end
 	end
 
-	seriesAsync(var0_34, function()
-		existCall(arg1_34)
+	seriesAsync(var0_35, function()
+		existCall(arg1_35)
 	end)
 end
 
-function var0_0.TryAutoTrackTask(arg0_37)
-	local var0_37 = arg0_37:GetPriorityTraceTaskId()
+function var0_0.TryAutoTrackTask(arg0_38)
+	local var0_38 = arg0_38:GetPriorityTraceTaskId()
 
-	if var0_37 then
+	if var0_38 then
 		pg.m02:sendNotification(GAME.ISLAND_SET_TRACE_TASK, {
-			traceId = var0_37
+			traceId = var0_38
 		})
 	end
 end
 
-function var0_0.GetCanAcceptTasks(arg0_38)
-	local var0_38 = {}
-
-	for iter0_38, iter1_38 in pairs(arg0_38.futureTasks) do
-		if iter1_38:IsUnlock() then
-			table.insert(var0_38, iter1_38)
-		end
-	end
-
-	return var0_38
-end
-
-function var0_0.GetCanSubmitTasks(arg0_39)
+function var0_0.GetCanAcceptTasks(arg0_39)
 	local var0_39 = {}
 
-	for iter0_39, iter1_39 in pairs(arg0_39.tasks) do
-		if iter1_39:IsFinish() then
+	for iter0_39, iter1_39 in pairs(arg0_39.futureTasks) do
+		if iter1_39:IsUnlock() then
 			table.insert(var0_39, iter1_39)
 		end
 	end
@@ -382,11 +374,11 @@ function var0_0.GetCanSubmitTasks(arg0_39)
 	return var0_39
 end
 
-function var0_0.GetCanAcceptTasksByMapId(arg0_40, arg1_40)
+function var0_0.GetCanSubmitTasks(arg0_40)
 	local var0_40 = {}
 
-	for iter0_40, iter1_40 in pairs(arg0_40.futureTasks) do
-		if iter1_40:getConfig("map_trigger_tips") == arg1_40 and iter1_40:IsUnlock() then
+	for iter0_40, iter1_40 in pairs(arg0_40.tasks) do
+		if iter1_40:IsFinish() then
 			table.insert(var0_40, iter1_40)
 		end
 	end
@@ -394,11 +386,11 @@ function var0_0.GetCanAcceptTasksByMapId(arg0_40, arg1_40)
 	return var0_40
 end
 
-function var0_0.GetCanSubmitTasksByMapId(arg0_41, arg1_41)
+function var0_0.GetCanAcceptTasksByMapId(arg0_41, arg1_41)
 	local var0_41 = {}
 
-	for iter0_41, iter1_41 in pairs(arg0_41.tasks) do
-		if iter1_41:getConfig("map_complete_tips") == arg1_41 and iter1_41:IsFinish() then
+	for iter0_41, iter1_41 in pairs(arg0_41.futureTasks) do
+		if iter1_41:getConfig("map_trigger_tips") == arg1_41 and iter1_41:IsUnlock() then
 			table.insert(var0_41, iter1_41)
 		end
 	end
@@ -406,8 +398,20 @@ function var0_0.GetCanSubmitTasksByMapId(arg0_41, arg1_41)
 	return var0_41
 end
 
-function var0_0.IsServerAcceptType(arg0_42)
-	return pg.island_task[arg0_42].trigger_type == 3
+function var0_0.GetCanSubmitTasksByMapId(arg0_42, arg1_42)
+	local var0_42 = {}
+
+	for iter0_42, iter1_42 in pairs(arg0_42.tasks) do
+		if iter1_42:getConfig("map_complete_tips") == arg1_42 and iter1_42:IsFinish() then
+			table.insert(var0_42, iter1_42)
+		end
+	end
+
+	return var0_42
+end
+
+function var0_0.IsServerAcceptType(arg0_43)
+	return pg.island_task[arg0_43].trigger_type == 3
 end
 
 return var0_0
