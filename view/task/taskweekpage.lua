@@ -14,7 +14,7 @@ end
 function var0_0.OnLoaded(arg0_3)
 	var0_0.super.OnLoaded(arg0_3)
 
-	local var0_3 = arg0_3:findTF("right_panel/task_progress")
+	local var0_3 = arg0_3:findTF("task_progress")
 
 	setActive(var0_3, true)
 	setText(var0_3:Find("title"), i18n("week_task_title_label"))
@@ -37,218 +37,200 @@ function var0_0.OnLoaded(arg0_3)
 
 		arg0_3.contextData.ptAwardWindow:ExecuteAction("Display", var0_4:GetAllPhaseDrops())
 	end, SFX_PANEL)
-
-	arg0_3.topTF = arg0_3._scrllPanel.parent
-	arg0_3.topPosy = arg0_3._scrllPanel.localPosition.y + arg0_3._scrllPanel.rect.height * 0.5
-
-	arg0_3._scrollView.onValueChanged:AddListener(function(arg0_5)
-		arg0_3:UpdateCardTip()
-	end)
 end
 
-function var0_0.UpdateCardTip(arg0_6)
-	for iter0_6, iter1_6 in pairs(arg0_6.taskCards) do
-		local var0_6 = arg0_6.topTF:InverseTransformPoint(iter1_6._tf.position).y + iter1_6.height * 0.5
+function var0_0.onUpdateTask(arg0_5, arg1_5, arg2_5)
+	var0_0.super.onUpdateTask(arg0_5, arg1_5, arg2_5)
 
-		iter1_6.tip.anchoredPosition3D = math.abs(var0_6 - arg0_6.topPosy) < iter1_6.tip.rect.height * 0.5 and Vector3(-5, -25) or Vector3(-5, 0)
-	end
+	arg2_5.name = arg0_5.taskCards[arg2_5].taskVO.id
 end
 
-function var0_0.onUpdateTask(arg0_7, arg1_7, arg2_7)
-	var0_0.super.onUpdateTask(arg0_7, arg1_7, arg2_7)
-
-	local var0_7 = arg0_7.taskCards[arg2_7]
-
-	arg2_7.name = var0_7.taskVO.id
-
-	if arg1_7 == 0 then
-		var0_7.tip.anchoredPosition3D = Vector3(-5, -25)
-	end
-end
-
-function var0_0.Update(arg0_8, arg1_8, arg2_8, arg3_8)
-	if arg0_8.contextData.weekTaskProgressInfo:ReachMaxPt() and arg0_8:isShowing() then
+function var0_0.Update(arg0_6, arg1_6, arg2_6, arg3_6)
+	if arg0_6.contextData.weekTaskProgressInfo:ReachMaxPt() and arg0_6:isShowing() then
 		pg.UIMgr.GetInstance():LoadingOn(false)
-		arg0_8:DoDisablePtTaskAnim(function()
+		arg0_6:DoDisablePtTaskAnim(function()
 			pg.UIMgr.GetInstance():LoadingOff()
-			arg0_8:Flush(arg2_8)
+			arg0_6:Flush(arg2_6)
 
-			if arg3_8 then
-				arg3_8(arg0_8.taskVOs or {})
+			if arg3_6 then
+				arg3_6(arg0_6.taskVOs or {})
 			end
 		end)
 	elseif TaskScene.IsPassScenario() then
-		arg0_8:Flush(arg2_8)
+		arg0_6:Flush(arg2_6)
 
-		if arg3_8 then
-			arg3_8(arg0_8.taskVOs or {})
+		if arg3_6 then
+			arg3_6(arg0_6.taskVOs or {})
 		end
 	else
-		setActive(arg0_8._tf, false)
+		setActive(arg0_6._tf, false)
 
-		if arg3_8 then
-			arg3_8({})
+		if arg3_6 then
+			arg3_6({})
 		end
 	end
 end
 
-function var0_0.DoDisablePtTaskAnim(arg0_10, arg1_10)
-	local function var0_10(arg0_11, arg1_11)
-		arg0_11:DoSubmitAnim(function()
-			setActive(arg0_11._go, false)
-			arg1_11()
+function var0_0.DoDisablePtTaskAnim(arg0_8, arg1_8)
+	local function var0_8(arg0_9, arg1_9)
+		arg0_9:DoSubmitAnim(function()
+			setActive(arg0_9._go, false)
+			arg1_9()
 		end)
 	end
 
-	arg0_10._scrollView.enabled = false
+	arg0_8._scrollView.enabled = false
 
-	local var1_10 = {}
+	local var1_8 = {}
 
-	for iter0_10, iter1_10 in ipairs(arg0_10.taskVOs or {}) do
-		if iter1_10.isWeekTask then
-			local var2_10 = arg0_10:GetCard(iter1_10.id)
+	for iter0_8, iter1_8 in ipairs(arg0_8.taskVOs or {}) do
+		if iter1_8.isWeekTask then
+			local var2_8 = arg0_8:GetCard(iter1_8.id)
 
-			if var2_10 then
-				table.insert(var1_10, function(arg0_13)
-					var0_10(var2_10, arg0_13)
+			if var2_8 then
+				table.insert(var1_8, function(arg0_11)
+					var0_8(var2_8, arg0_11)
 				end)
 			end
 		end
 	end
 
-	seriesAsync(var1_10, function()
-		arg0_10._scrollView.enabled = true
+	seriesAsync(var1_8, function()
+		arg0_8._scrollView.enabled = true
 
-		arg1_10()
+		arg1_8()
 	end)
 end
 
-function var0_0.GetCard(arg0_15, arg1_15)
-	for iter0_15, iter1_15 in pairs(arg0_15.taskCards) do
-		if iter1_15.taskVO.id == arg1_15 then
-			return iter1_15
+function var0_0.GetCard(arg0_13, arg1_13)
+	for iter0_13, iter1_13 in pairs(arg0_13.taskCards) do
+		if iter1_13.taskVO.id == arg1_13 then
+			return iter1_13
 		end
 	end
 
 	return nil
 end
 
-function var0_0.Flush(arg0_16, arg1_16)
-	arg0_16.taskVOs = {}
+function var0_0.Flush(arg0_14, arg1_14)
+	arg0_14.taskVOs = {}
 
-	local var0_16 = arg0_16.contextData.weekTaskProgressInfo
+	local var0_14 = arg0_14.contextData.weekTaskProgressInfo
 
-	arg0_16:UpdateWeekProgress(var0_16)
+	arg0_14:UpdateWeekProgress(var0_14)
 
-	if not var0_16:ReachMaxPt() then
-		local var1_16 = var0_16:GetSubTasks()
+	if not var0_14:ReachMaxPt() then
+		local var1_14 = var0_14:GetSubTasks()
 
-		for iter0_16, iter1_16 in pairs(var1_16) do
-			table.insert(arg0_16.taskVOs, iter1_16)
+		for iter0_14, iter1_14 in pairs(var1_14) do
+			table.insert(arg0_14.taskVOs, iter1_14)
 		end
 	end
 
-	local var2_16 = arg0_16.contextData.taskVOsById
+	local var2_14 = arg0_14.contextData.taskVOsById
 
-	for iter2_16, iter3_16 in pairs(var2_16) do
-		if iter3_16:ShowOnTaskScene() and arg1_16[iter3_16:GetRealType()] then
-			table.insert(arg0_16.taskVOs, iter3_16)
+	for iter2_14, iter3_14 in pairs(var2_14) do
+		if iter3_14:ShowOnTaskScene() and arg1_14[iter3_14:GetRealType()] then
+			table.insert(arg0_14.taskVOs, iter3_14)
 		end
 	end
 
-	table.sort(arg0_16.taskVOs, CompareFuncs({
+	table.sort(arg0_14.taskVOs, CompareFuncs({
+		function(arg0_15)
+			return -arg0_15:getTaskStatus(arg0_15)
+		end,
+		function(arg0_16)
+			return pg.NewGuideMgr.GetInstance():IsBusy() and arg0_16.id == getDorm3dGameset("drom3d_weekly_task")[1] and 0 or 1
+		end,
 		function(arg0_17)
-			return -arg0_17:getTaskStatus(arg0_17)
+			return arg0_17.isWeekTask and 1 or 0
 		end,
 		function(arg0_18)
-			return pg.NewGuideMgr.GetInstance():IsBusy() and arg0_18.id == getDorm3dGameset("drom3d_weekly_task")[1] and 0 or 1
-		end,
-		function(arg0_19)
-			return arg0_19.isWeekTask and 1 or 0
-		end,
-		function(arg0_20)
-			return arg0_20.id
+			return arg0_18.id
 		end
 	}))
-	arg0_16:Show()
-	arg0_16._scrollView:SetTotalCount(#arg0_16.taskVOs, -1)
+	arg0_14:Show()
+
+	arg0_14._scrollView.enabled = true
+
+	arg0_14._scrollView:SetTotalCount(#arg0_14.taskVOs, -1)
 end
 
-function var0_0.UpdateWeekProgress(arg0_21, arg1_21)
-	arg0_21:UpdateWeekProgressGetBtn(arg1_21)
+function var0_0.UpdateWeekProgress(arg0_19, arg1_19)
+	arg0_19:UpdateWeekProgressGetBtn(arg1_19)
 
-	arg0_21.phaseTxt.text = arg1_21:GetPhase() .. "/" .. arg1_21:GetTotalPhase()
+	arg0_19.phaseTxt.text = arg1_19:GetPhase() .. "/" .. arg1_19:GetTotalPhase()
 
-	local var0_21 = arg1_21:GetProgress()
-	local var1_21 = arg1_21:GetTarget()
+	local var0_19 = arg1_19:GetProgress()
+	local var1_19 = arg1_19:GetTarget()
 
-	arg0_21.progressSlider.value = var0_21 / var1_21
-	arg0_21.progressTxt.text = var0_21 .. "/" .. var1_21
+	arg0_19.progressSlider.value = var0_19 / var1_19
+	arg0_19.progressTxt.text = var0_19 .. "/" .. var1_19
 
-	local var2_21 = arg1_21:GetDropList()
+	local var2_19 = arg1_19:GetDropList()
 
-	arg0_21.awardList:make(function(arg0_22, arg1_22, arg2_22)
-		if arg0_22 == UIItemList.EventUpdate then
-			local var0_22 = var2_21[arg1_22 + 1]
-			local var1_22 = {
-				type = var0_22[1],
-				id = var0_22[2],
-				count = var0_22[3]
+	arg0_19.awardList:make(function(arg0_20, arg1_20, arg2_20)
+		if arg0_20 == UIItemList.EventUpdate then
+			local var0_20 = var2_19[arg1_20 + 1]
+			local var1_20 = {
+				type = var0_20[1],
+				id = var0_20[2],
+				count = var0_20[3]
 			}
 
-			updateDrop(arg2_22, var1_22)
-			onButton(arg0_21, arg2_22, function()
-				arg0_21:emit(TaskMediator.ON_DROP, var1_22)
+			updateDrop(arg2_20, var1_20)
+			onButton(arg0_19, arg2_20, function()
+				arg0_19:emit(TaskMediator.ON_DROP, var1_20)
 			end, SFX_PANEL)
 		end
 	end)
-	arg0_21.awardList:align(#var2_21)
+	arg0_19.awardList:align(#var2_19)
 end
 
-function var0_0.UpdateWeekProgressGetBtn(arg0_24, arg1_24)
-	local var0_24 = arg1_24:CanUpgrade()
+function var0_0.UpdateWeekProgressGetBtn(arg0_22, arg1_22)
+	local var0_22 = arg1_22:CanUpgrade()
 
-	setGray(arg0_24.getBtn, not var0_24, false)
-	setActive(arg0_24.getBtnEnableTF, var0_24)
-	setActive(arg0_24.getBtnDisableTF, not var0_24)
-	setActive(arg0_24.tip, var0_24)
-	onButton(arg0_24, arg0_24.getBtn, function()
-		if var0_24 then
-			arg0_24:JudgeOverflow(arg1_24, function()
-				arg0_24:emit(TaskMediator.ON_SUBMIT_WEEK_PROGREE)
+	setGray(arg0_22.getBtn, not var0_22, false)
+	setActive(arg0_22.getBtnEnableTF, var0_22)
+	setActive(arg0_22.getBtnDisableTF, not var0_22)
+	setActive(arg0_22.tip, var0_22)
+	onButton(arg0_22, arg0_22.getBtn, function()
+		if var0_22 then
+			arg0_22:JudgeOverflow(arg1_22, function()
+				arg0_22:emit(TaskMediator.ON_SUBMIT_WEEK_PROGREE)
 			end)
 		end
 	end, SFX_PANEL)
 end
 
-function var0_0.JudgeOverflow(arg0_27, arg1_27, arg2_27)
-	local var0_27 = getProxy(PlayerProxy):getRawData()
-	local var1_27 = pg.gameset.urpt_chapter_max.description[1]
-	local var2_27 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var1_27)
-	local var3_27 = arg1_27:GetDropList()
-	local var4_27, var5_27 = Task.StaticJudgeOverflow(var0_27.gold, var0_27.oil, var2_27, true, true, var3_27)
+function var0_0.JudgeOverflow(arg0_25, arg1_25, arg2_25)
+	local var0_25 = getProxy(PlayerProxy):getRawData()
+	local var1_25 = pg.gameset.urpt_chapter_max.description[1]
+	local var2_25 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var1_25)
+	local var3_25 = arg1_25:GetDropList()
+	local var4_25, var5_25 = Task.StaticJudgeOverflow(var0_25.gold, var0_25.oil, var2_25, true, true, var3_25)
 
-	if var4_27 then
+	if var4_25 then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_ITEM_BOX,
 			content = i18n("award_max_warning"),
-			items = var5_27,
-			onYes = arg2_27
+			items = var5_25,
+			onYes = arg2_25
 		})
 	else
-		arg2_27()
+		arg2_25()
 	end
 end
 
-function var0_0.OnDestroy(arg0_28)
-	arg0_28._scrollView.onValueChanged:RemoveAllListeners()
+function var0_0.OnDestroy(arg0_26)
+	arg0_26._scrollView.onValueChanged:RemoveAllListeners()
 end
 
-function var0_0.RefreshWeekTaskPageBefore(arg0_29, arg1_29)
-	local var0_29 = arg0_29:GetCard(arg1_29)
+function var0_0.RefreshWeekTaskPageBefore(arg0_27, arg1_27)
+	local var0_27 = arg0_27:GetCard(arg1_27)
 
-	if var0_29 then
-		setActive(var0_29._go, false)
+	if var0_27 then
+		setActive(var0_27._go, false)
 	end
 end
 

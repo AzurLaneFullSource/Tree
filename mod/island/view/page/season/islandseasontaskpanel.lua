@@ -14,8 +14,6 @@ function var0_0.OnLoaded(arg0_2)
 	local var1_2 = var0_2:Find("tpl")
 
 	setActive(var1_2, false)
-	setText(var1_2:Find("get/Text"), i18n("island_season_task_collect"))
-	setText(var1_2:Find("got/Text"), i18n("island_season_task_collected"))
 
 	arg0_2.scrollCom = var0_2:Find("view"):GetComponent("LScrollRect")
 end
@@ -34,6 +32,9 @@ function var0_0.UpdateTask(arg0_6, arg1_6, arg2_6)
 	local var0_6 = arg0_6.taskIds[arg1_6 + 1]
 
 	arg2_6.name = var0_6
+
+	setText(arg2_6:Find("get/Text"), i18n("island_season_task_collect"))
+	setText(arg2_6:Find("got/Text"), i18n("island_season_task_collected"))
 
 	local var1_6 = arg0_6.taskVODic[var0_6]
 	local var2_6 = pg.island_task[var0_6]
@@ -58,6 +59,8 @@ function var0_0.UpdateTask(arg0_6, arg1_6, arg2_6)
 	setActive(arg2_6:Find("get_bg"), var1_6 and var1_6:IsFinish())
 	setActive(arg2_6:Find("get"), var1_6 and var1_6:IsSubmitOnUI() and var1_6:IsFinish())
 	setActive(arg2_6:Find("got"), not var1_6)
+	setText(arg2_6:Find("get/Text"), i18n("island_season_task_collect"))
+	setText(arg2_6:Find("got/Text"), i18n("island_season_task_collected"))
 	onButton(arg0_6, arg2_6:Find("get"), function()
 		arg0_6:emit(IslandMediator.ON_SUBMIT_TASK, var1_6.id)
 	end, SFX_PANEL)

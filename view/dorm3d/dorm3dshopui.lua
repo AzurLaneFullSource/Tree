@@ -1131,10 +1131,10 @@ function var0_0.ShouldShowCommodtyTip(arg0_46)
 	end
 
 	if arg0_46.type == 1 then
-		return Dorm3dFurniture.GetViewedFlag(arg0_46.item_id) == 0
+		return Dorm3dFurniture.NeedViewTipByFurnitureId(arg0_46.item_id)
 	elseif arg0_46.type == 2 then
 		local var2_46 = getProxy(PlayerProxy):getRawData().id
-		local var3_46 = Dorm3dGift.GetViewedFlag(arg0_46.item_id) == 0
+		local var3_46 = Dorm3dGift.NeedViewTipByGiftId(arg0_46.item_id)
 		local var4_46 = var3_0[arg0_46.shop_id[1]].group ~= 0 and PlayerPrefs.GetInt(var2_46 .. "_dorm3dGiftWeekViewed_" .. arg0_46.item_id, 0) == 0
 
 		return var3_46 or var4_46

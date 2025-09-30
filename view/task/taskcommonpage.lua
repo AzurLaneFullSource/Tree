@@ -5,7 +5,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2._scrllPanel = arg0_2:findTF("right_panel")
+	arg0_2._scrllPanel = arg0_2:findTF("right_panel/content")
 	arg0_2._scrollView = arg0_2._scrllPanel:GetComponent("LScrollRect")
 end
 
@@ -81,6 +81,9 @@ function var0_0.Update(arg0_8, arg1_8, arg2_8, arg3_8)
 	end
 
 	arg0_8:Sort()
+
+	arg0_8._scrollView.enabled = true
+
 	arg0_8._scrollView:SetTotalCount(#arg0_8.taskVOs, -1)
 
 	local var5_8 = arg0_8:GetSliderValue()

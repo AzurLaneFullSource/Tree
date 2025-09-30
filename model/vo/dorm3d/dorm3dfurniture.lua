@@ -133,94 +133,105 @@ function var0_0.NeedViewTip(arg0_18)
 	end)
 end
 
-function var0_0.GetViewedFlag(arg0_21)
-	local var0_21 = getProxy(PlayerProxy):getRawData().id
+function var0_0.NeedViewTipByFurnitureId(arg0_21)
+	local function var0_21(arg0_22)
+		local var0_22 = pg.dorm3d_furniture_template[arg0_22].room_id
+		local var1_22 = getProxy(ApartmentProxy):getRoom(var0_22)
 
-	return PlayerPrefs.GetInt(var0_21 .. "_dorm3dFurnitureViewed_" .. arg0_21, 0)
+		return var1_22 and var1_22:HasFurniture(arg0_22)
+	end
+
+	return Dorm3dFurniture.GetViewedFlag(arg0_21) == 0 and not var0_21(arg0_21)
 end
 
-function var0_0.SetViewedFlag(arg0_22)
-	if var0_0.GetViewedFlag(arg0_22) > 0 then
+function var0_0.GetViewedFlag(arg0_23)
+	local var0_23 = getProxy(PlayerProxy):getRawData().id
+
+	return PlayerPrefs.GetInt(var0_23 .. "_dorm3dFurnitureViewed_" .. arg0_23, 0)
+end
+
+function var0_0.SetViewedFlag(arg0_24)
+	if var0_0.GetViewedFlag(arg0_24) > 0 then
 		return
 	end
 
-	local var0_22 = getProxy(PlayerProxy):getRawData().id
+	local var0_24 = getProxy(PlayerProxy):getRawData().id
 
-	PlayerPrefs.SetInt(var0_22 .. "_dorm3dFurnitureViewed_" .. arg0_22, 1)
+	PlayerPrefs.SetInt(var0_24 .. "_dorm3dFurnitureViewed_" .. arg0_24, 1)
 	PlayerPrefs.Save()
 
 	return true
 end
 
-function var0_0.IsTimelimitShopTip(arg0_23)
-	local var0_23 = arg0_23 and {
-		getProxy(ApartmentProxy):getRoom(arg0_23)
+function var0_0.IsTimelimitShopTip(arg0_25)
+	local var0_25 = arg0_25 and {
+		getProxy(ApartmentProxy):getRoom(arg0_25)
 	} or underscore.values(getProxy(ApartmentProxy).roomData)
 
-	return underscore.any(var0_23, function(arg0_24)
-		local var0_24 = arg0_24:GetFurnitures()
-		local var1_24 = pg.dorm3d_furniture_template.get_id_list_by_room_id[arg0_24:GetConfigID()] or {}
+	return underscore.any(var0_25, function(arg0_26)
+		local var0_26 = arg0_26:GetFurnitures()
+		local var1_26 = pg.dorm3d_furniture_template.get_id_list_by_room_id[arg0_26:GetConfigID()] or {}
 
-		return _.any(var1_24, function(arg0_25)
-			local var0_25 = Dorm3dFurniture.New({
-				configId = arg0_25
+		return _.any(var1_26, function(arg0_27)
+			local var0_27 = Dorm3dFurniture.New({
+				configId = arg0_27
 			})
 
-			return var0_25:GetEndTime() > 0 and var0_25:InShopTime() and not _.detect(var0_24, function(arg0_26)
-				return arg0_26:GetConfigID() == arg0_25
+			return var0_27:GetEndTime() > 0 and var0_27:InShopTime() and not _.detect(var0_26, function(arg0_28)
+				return arg0_28:GetConfigID() == arg0_27
 			end)
 		end)
 	end)
 end
 
 function var0_0.RecordLastTimelimitShopFurniture()
-	local var0_27 = getProxy(PlayerProxy):getRawData().id
-	local var1_27 = PlayerPrefs.GetInt(var0_27 .. "_dorm3dTimelimitFurniture", 0)
-	local var2_27 = var1_27
-	local var3_27 = underscore.values(getProxy(ApartmentProxy).roomData)
+	local var0_29 = getProxy(PlayerProxy):getRawData().id
+	local var1_29 = PlayerPrefs.GetInt(var0_29 .. "_dorm3dTimelimitFurniture", 0)
+	local var2_29 = var1_29
+	local var3_29 = underscore.values(getProxy(ApartmentProxy).roomData)
 
-	underscore.each(var3_27, function(arg0_28)
-		local var0_28 = pg.dorm3d_furniture_template.get_id_list_by_room_id[arg0_28:GetConfigID()] or {}
+	underscore.each(var3_29, function(arg0_30)
+		local var0_30 = pg.dorm3d_furniture_template.get_id_list_by_room_id[arg0_30:GetConfigID()] or {}
 
-		_.each(var0_28, function(arg0_29)
-			local var0_29 = Dorm3dFurniture.New({
-				configId = arg0_29
+		_.each(var0_30, function(arg0_31)
+			local var0_31 = Dorm3dFurniture.New({
+				configId = arg0_31
 			})
 
-			if var0_29:GetEndTime() > 0 and var0_29:InShopTime() then
-				var2_27 = math.max(var2_27, arg0_29)
+			if var0_31:GetEndTime() > 0 and var0_31:InShopTime() then
+				var2_29 = math.max(var2_29, arg0_31)
 			end
 		end)
 	end)
 
-	if var2_27 <= var1_27 then
+	if var2_29 <= var1_29 then
 		return
 	end
 
-	PlayerPrefs.SetInt(var0_27 .. "_dorm3dTimelimitFurniture", var2_27)
+	PlayerPrefs.SetInt(var0_29 .. "_dorm3dTimelimitFurniture", var2_29)
 	PlayerPrefs.Save()
 end
 
 function var0_0.IsOnceTimelimitShopTip()
-	local var0_30 = getProxy(PlayerProxy):getRawData().id
-	local var1_30 = PlayerPrefs.GetInt(var0_30 .. "_dorm3dTimelimitFurniture", 0)
-	local var2_30 = underscore.values(getProxy(ApartmentProxy).roomData)
+	local var0_32 = getProxy(PlayerProxy):getRawData().id
+	local var1_32 = PlayerPrefs.GetInt(var0_32 .. "_dorm3dTimelimitFurniture", 0)
+	local var2_32 = underscore.values(getProxy(ApartmentProxy).roomData)
 
-	return underscore.any(var2_30, function(arg0_31)
-		local var0_31 = arg0_31:GetFurnitures()
-		local var1_31 = pg.dorm3d_furniture_template.get_id_list_by_room_id[arg0_31:GetConfigID()] or {}
+	return underscore.any(var2_32, function(arg0_33)
+		local var0_33 = arg0_33:GetFurnitures()
+		local var1_33 = pg.dorm3d_furniture_template.get_id_list_by_room_id[arg0_33:GetConfigID()] or {}
 
-		return _.any(var1_31, function(arg0_32)
-			if arg0_32 <= var1_30 then
+		return _.any(var1_33, function(arg0_34)
+			if arg0_34 <= var1_32 then
 				return
 			end
 
-			local var0_32 = Dorm3dFurniture.New({
-				configId = arg0_32
+			local var0_34 = Dorm3dFurniture.New({
+				configId = arg0_34
 			})
 
-			return var0_32:GetEndTime() > 0 and var0_32:InShopTime() and not _.detect(var0_31, function(arg0_33)
-				return arg0_33:GetConfigID() == arg0_32
+			return var0_34:GetEndTime() > 0 and var0_34:InShopTime() and not _.detect(var0_33, function(arg0_35)
+				return arg0_35:GetConfigID() == arg0_34
 			end)
 		end)
 	end)

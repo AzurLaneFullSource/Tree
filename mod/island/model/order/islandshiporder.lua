@@ -91,7 +91,9 @@ function var0_0.GetConsumeAwards(arg0_10, arg1_10)
 end
 
 function var0_0.GetAwardList(arg0_11)
-	return arg0_11.awardList
+	return _.select(arg0_11.awardList, function(arg0_12)
+		return arg0_12.count > 0
+	end)
 end
 
 return var0_0

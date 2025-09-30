@@ -101,6 +101,8 @@ function var0_0.OnLoaded(arg0_3)
 	arg0_3.color_cost_item_count = arg0_3.color_bg_locked:Find("cost_num")
 
 	setActive(arg0_3.sortBtn, false)
+	setText(arg0_3.color_bg_locked:Find("tips"), i18n("island_dresscolorunlock_tips"))
+	setText(arg0_3.color_lockedBtn:Find("Text"), i18n("island_dresscolorunlock"))
 
 	arg0_3.colorItemUIList = UIItemList.New(arg0_3.colorList, arg0_3.colorItem)
 	arg0_3.hatTF = arg0_3:findTF("adapt/hat")

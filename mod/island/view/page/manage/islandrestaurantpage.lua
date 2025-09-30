@@ -167,6 +167,7 @@ function var0_0.OnInit(arg0_3)
 	arg0_3.argC = var3_0.island_manage_sale_coefficient_c.key_value_int / 100
 	arg0_3.saleConst = var3_0.island_manage_sale_constant.key_value_int / 100
 	arg0_3.maxAttrEffect = pg.island_chara_att[1].manage_effect / 10000
+	arg0_3.minSaleCnt = var3_0.island_manage_sale_limit.key_value_int
 end
 
 function var0_0.AddListeners(arg0_16)
@@ -663,8 +664,8 @@ function var0_0.FlushEstimate(arg0_52)
 
 	for iter0_52, iter1_52 in pairs(arg0_52.selectedDic) do
 		local var6_52 = arg0_52:CaclBaseSaleCnt(iter0_52)
-		local var7_52 = math.max(0, math.min(iter1_52, var6_52 + var0_52))
-		local var8_52 = math.max(0, math.min(iter1_52, var6_52 + var1_52))
+		local var7_52 = math.min(iter1_52, math.max(arg0_52.minSaleCnt, var6_52 + var0_52))
+		local var8_52 = math.min(iter1_52, math.max(arg0_52.minSaleCnt, var6_52 + var1_52))
 
 		var4_52 = var4_52 + arg0_52:CaclGroupPrice(iter0_52, var7_52)
 		var5_52 = var5_52 + arg0_52:CaclGroupPrice(iter0_52, var8_52)

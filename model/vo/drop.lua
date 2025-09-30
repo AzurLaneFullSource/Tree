@@ -89,7 +89,7 @@ function var0_0.getIcon(arg0_7)
 			return "island/IslandActionIcon/" .. arg0_7:getConfig("resource")
 		end,
 		[DROP_TYPE_ISLAND_SKIN] = function()
-			return "island/IslandDressIcon/" .. arg0_7:getConfig("icon")
+			return arg0_7:getConfig("icon_normal")
 		end
 	}, function()
 		return arg0_7:getConfig("icon")
@@ -653,10 +653,16 @@ function var0_0.InitSwitch()
 			return 0
 		end,
 		[DROP_TYPE_ISLAND_SKIN] = function(arg0_112)
-			local var0_112 = getProxy(IslandProxy):GetIsland()
+			local var0_112 = getProxy(IslandProxy)
 
-			if var0_112 then
-				return var0_112:GetCharacterAgency():CheckSkinIsOwned(arg0_112.id) and 1 or 0
+			if not var0_112 then
+				return 0
+			end
+
+			local var1_112 = var0_112:GetIsland()
+
+			if var1_112 then
+				return var1_112:GetCharacterAgency():CheckSkinIsOwned(arg0_112.id) and 1 or 0
 			end
 
 			return 0
@@ -1747,16 +1753,19 @@ function var0_0.InitSwitch()
 			updateItem(arg1_287, Item.New({
 				id = arg0_287.id
 			}), arg2_287)
+		end,
+		[DROP_TYPE_ISLAND_SKIN] = function(arg0_288, arg1_288, arg2_288)
+			updateIslandSkin(arg1_288, arg0_288, arg2_288)
 		end
 	}
 
-	function var0_0.UpdateCustomDropDefault(arg0_288, arg1_288, arg2_288)
-		if arg2_288.style == "dorm" then
-			updateDorm3dIcon(arg1_288, arg0_288, arg2_288)
-		elseif arg2_288.style == "island" then
-			updateIslandDefaultIconTpl(arg1_288, arg0_288, arg2_288)
+	function var0_0.UpdateCustomDropDefault(arg0_289, arg1_289, arg2_289)
+		if arg2_289.style == "dorm" then
+			updateDorm3dIcon(arg1_289, arg0_289, arg2_289)
+		elseif arg2_289.style == "island" then
+			updateIslandDefaultIconTpl(arg1_289, arg0_289, arg2_289)
 		else
-			warning(string.format("without dropType %d in updateCustomDrop", arg0_288.type))
+			warning(string.format("without dropType %d in updateCustomDrop", arg0_289.type))
 		end
 	end
 end
