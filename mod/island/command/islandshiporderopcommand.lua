@@ -96,7 +96,7 @@ function var0_0.HandleLoadUpAll(arg0_6, arg1_6)
 		local var6_6 = Drop.New(var5_6)
 		local var7_6 = var0_6:GetConsumeAwards(iter0_6)
 
-		if var6_6:getOwnedCount() >= var6_6.count then
+		if not var0_6:ItemIsSubmited(iter0_6) and var6_6:getOwnedCount() >= var6_6.count then
 			var1_6 = var1_6 + var7_6[2].count
 
 			table.insert(var2_6, var5_6.id)
@@ -109,10 +109,6 @@ function var0_0.HandleLoadUpAll(arg0_6, arg1_6)
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 		return
-	end
-
-	for iter2_6, iter3_6 in ipairs(var2_6) do
-		print(iter3_6)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(21416, {

@@ -403,6 +403,8 @@ function var0_0.SetBannnerCard(arg0_22)
 			end, SFX_PANEL)
 		else
 			onButton(arg0_22, var2_22, function()
+				var0_0.UpdateCommodtyTip(iter1_22)
+				setActive(arg0_22:findTF("tip", var2_22), false)
 				pg.TipsMgr.GetInstance():ShowTips(i18n("word_sell_out"))
 			end, SFX_PANEL)
 		end
@@ -545,6 +547,8 @@ function var0_0.SetGiftCard(arg0_25)
 		end, SFX_PANEL)
 	else
 		onButton(arg0_25, var0_25, function()
+			var0_0.UpdateCommodtyTip(var1_25)
+			setActive(arg0_25:findTF("tip", var0_25), false)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("word_sell_out"))
 		end, SFX_PANEL)
 	end
@@ -680,6 +684,8 @@ function var0_0.SetNormalCard(arg0_28)
 		else
 			onButton(arg0_28, var0_28, function()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("word_sell_out"))
+				var0_0.UpdateCommodtyTip(var1_28)
+				setActive(arg0_28:findTF("tip", var0_28), false)
 			end, SFX_PANEL)
 		end
 
@@ -830,6 +836,8 @@ function var0_0.SetCharaCard(arg0_31)
 				end, SFX_PANEL)
 			else
 				onButton(arg0_31, arg2_32, function()
+					var0_0.UpdateCommodtyTip(var0_32)
+					setActive(arg0_31:findTF("tip", arg2_32), false)
 					pg.TipsMgr.GetInstance():ShowTips(i18n("word_sell_out"))
 				end, SFX_PANEL)
 			end
