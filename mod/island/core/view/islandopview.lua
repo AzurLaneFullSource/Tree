@@ -19,7 +19,7 @@ function var0_0.OnInit(arg0_2, arg1_2)
 
 	setParent(arg0_2.opUI, arg1_2)
 
-	arg0_2.showBalance = 1
+	arg0_2.showBalance = arg0_2:GetView():GetCacheOpCount() or 1
 	arg0_2.inputController = IslandCameraMgr.instance.gameObject:GetComponent(typeof(InputController))
 	arg0_2._go = arg1_2
 	arg0_2._tf = arg1_2.transform

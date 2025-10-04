@@ -181,12 +181,12 @@ function var0_0.handleNotification(arg0_12, arg1_12)
 	arg0_12.viewComponent:emit(var0_12, var1_12)
 end
 
-function var0_0.SetUp(arg0_14)
+function var0_0.SetUp(arg0_14, arg1_14)
 	local var0_14 = arg0_14.viewComponent:GetIsland()
 	local var1_14 = var0_14.mapID
 	local var2_14 = var0_14.spawnPointId
 
-	_IslandCore = IslandCore.New(arg0_14.viewComponent:GetPoolMgr(), var0_14, arg0_14.viewComponent._container)
+	_IslandCore = IslandCore.New(arg0_14.viewComponent:GetPoolMgr(), var0_14, arg0_14.viewComponent._container, arg1_14)
 
 	arg0_14.viewComponent:OnSetUpCore(var1_14, var2_14)
 end
@@ -200,18 +200,26 @@ function var0_0.SwitchScene(arg0_15, arg1_15, arg2_15)
 		var0_15:SetSpawnPointId(arg2_15)
 	end
 
-	arg0_15:UnloadScene()
-	arg0_15:SetUp()
+	local var1_15 = arg0_15:UnloadScene()
+
+	arg0_15:SetUp(var1_15)
 end
 
 function var0_0.UnloadScene(arg0_16, arg1_16)
 	arg0_16.viewComponent:OnUnloadScene()
 
 	if _IslandCore then
+		local var0_16 = _IslandCore:GetView():GetSubView(IslandOpView)
+		local var1_16 = var0_16 and var0_16.showBalance or 1
+
 		_IslandCore:Dispose(arg1_16)
 
 		_IslandCore = nil
+
+		return var1_16
 	end
+
+	return 1
 end
 
 function var0_0.remove(arg0_17)
