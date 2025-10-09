@@ -12,6 +12,9 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.id = arg2_1.id
 	arg0_1.configId = arg2_1.configId or arg0_1.id
 	arg0_1.config = pg.furniture_data_template[arg0_1.configId]
+
+	var0_0.super.Ctor(arg0_1, arg1_1, arg0_1.id, arg0_1.config.size[1], arg0_1.config.size[2])
+
 	arg0_1.date = arg2_1.date or 0
 	arg0_1.selectedFlag = false
 	arg0_1.slots = {}
@@ -24,13 +27,11 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1:InitMusicData()
 
 	arg0_1.state = var0_0.STATE_IDLE
-
-	var0_0.super.Ctor(arg0_1, arg1_1, arg0_1.id, arg0_1.config.size[1], arg0_1.config.size[2])
 end
 
 function var0_0.InitSlots(arg0_2)
 	if arg0_2:IsSpine() then
-		table.insert(arg0_2.slots, CourtYardFurnitureSpineSlot.New(1, arg0_2.config.spine))
+		table.insert(arg0_2.slots, CourtYardFurnitureSpineSlot.New(1, arg0_2.config.spine, arg0_2.config.spine_combine_action_replace, arg0_2.host))
 
 		if type(arg0_2.config.spine_extra) == "table" then
 			for iter0_2, iter1_2 in ipairs(arg0_2.config.spine_extra) do
@@ -42,7 +43,7 @@ function var0_0.InitSlots(arg0_2)
 					[6] = iter1_2[3]
 				}
 
-				table.insert(arg0_2.slots, CourtYardFurnitureSpineSlot.New(iter0_2 + 1, var0_2))
+				table.insert(arg0_2.slots, CourtYardFurnitureSpineSlot.New(iter0_2 + 1, var0_2, arg0_2.config.spine_combine_action_replace, arg0_2.host))
 			end
 		end
 
@@ -71,7 +72,7 @@ function var0_0.InitSlots(arg0_2)
 		end
 	elseif type(arg0_2.config.interAction) == "table" then
 		for iter8_2, iter9_2 in ipairs(arg0_2.config.interAction) do
-			table.insert(arg0_2.slots, CourtYardFurnitureSlot.New(iter8_2, iter9_2))
+			table.insert(arg0_2.slots, CourtYardFurnitureSlot.New(iter8_2, iter9_2, arg0_2.config.spine_combine_action_replace, arg0_2.host))
 		end
 	end
 end
@@ -529,61 +530,75 @@ function var0_0.ClearInteraction(arg0_67, arg1_67)
 	end)
 end
 
-function var0_0.GetUsingSlots(arg0_70)
-	local var0_70 = {}
+function var0_0.RefreshState(arg0_70)
+	local var0_70 = _.select(arg0_70.slots, function(arg0_71)
+		return arg0_71:IsUsing()
+	end)
 
-	for iter0_70, iter1_70 in ipairs(arg0_70.slots) do
-		if iter1_70:IsUsing() then
-			table.insert(var0_70, iter1_70)
+	if #var0_70 <= 0 then
+		arg0_70:_ChangeState(var0_0.STATE_IDLE)
+	else
+		for iter0_70, iter1_70 in ipairs(var0_70) do
+			iter1_70:OnStart()
+		end
+	end
+end
+
+function var0_0.GetUsingSlots(arg0_72)
+	local var0_72 = {}
+
+	for iter0_72, iter1_72 in ipairs(arg0_72.slots) do
+		if iter1_72:IsUsing() then
+			table.insert(var0_72, iter1_72)
 		end
 	end
 
-	return var0_70
+	return var0_72
 end
 
-function var0_0.GetSlotCnt(arg0_71)
-	return #arg0_71.slots
+function var0_0.GetSlotCnt(arg0_73)
+	return #arg0_73.slots
 end
 
-function var0_0.GetMusicData(arg0_72)
-	return arg0_72.musicData
+function var0_0.GetMusicData(arg0_74)
+	return arg0_74.musicData
 end
 
-function var0_0.GetInterActionBgm(arg0_73)
-	local var0_73 = type(arg0_73.config.interaction_bgm)
+function var0_0.GetInterActionBgm(arg0_75)
+	local var0_75 = type(arg0_75.config.interaction_bgm)
 
-	if var0_73 == "string" then
-		return arg0_73.config.interaction_bgm, 0
-	elseif var0_73 == "table" then
-		return arg0_73.config.interaction_bgm[2], arg0_73.config.interaction_bgm[1]
+	if var0_75 == "string" then
+		return arg0_75.config.interaction_bgm, 0
+	elseif var0_75 == "table" then
+		return arg0_75.config.interaction_bgm[2], arg0_75.config.interaction_bgm[1]
 	else
 		return nil
 	end
 end
 
-function var0_0.CanClickWhenExitEditMode(arg0_74)
-	return arg0_74:HasDescription() or arg0_74:CanTouch()
+function var0_0.CanClickWhenExitEditMode(arg0_76)
+	return arg0_76:HasDescription() or arg0_76:CanTouch()
 end
 
-function var0_0.Dispose(arg0_75)
-	var0_0.super.Dispose(arg0_75)
+function var0_0.Dispose(arg0_77)
+	var0_0.super.Dispose(arg0_77)
 
-	for iter0_75, iter1_75 in ipairs(arg0_75:GetUsingSlots()) do
-		iter1_75:Stop()
+	for iter0_77, iter1_77 in ipairs(arg0_77:GetUsingSlots()) do
+		iter1_77:Stop()
 	end
 end
 
-function var0_0.ToTable(arg0_76)
-	local var0_76 = arg0_76:GetPosition()
+function var0_0.ToTable(arg0_78)
+	local var0_78 = arg0_78:GetPosition()
 
 	return {
-		id = arg0_76.id,
-		configId = arg0_76.configId,
-		dir = arg0_76.dir,
-		position = var0_76,
-		x = var0_76.x,
-		y = var0_76.y,
-		parent = arg0_76.parent and arg0_76.parent.id or 0,
+		id = arg0_78.id,
+		configId = arg0_78.configId,
+		dir = arg0_78.dir,
+		position = var0_78,
+		x = var0_78.x,
+		y = var0_78.y,
+		parent = arg0_78.parent and arg0_78.parent.id or 0,
 		child = {}
 	}
 end

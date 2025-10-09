@@ -223,6 +223,7 @@ function var0_0.getOrCreateItem(arg0_11, arg1_11)
 			local var1_11 = tf(instantiate(findTF(arg0_11._itemTpls, arg1_11)))
 
 			var1_11.localScale = Fushun3GameConst.game_scale_v3
+			findTF(var1_11, "collider").gameObject.layer = LayerMask.NameToLayer("Collider")
 
 			local var2_11 = GetComponent(findTF(var1_11, "collider"), typeof(BoxCollider2D))
 

@@ -93,6 +93,9 @@ function var0_0.getOrCreateMonster(arg0_7, arg1_7)
 
 		local var6_7 = GetComponent(findTF(var3_7, "collider"), typeof(BoxCollider2D))
 
+		findTF(var3_7, "collider").gameObject.layer = LayerMask.NameToLayer("Character")
+		findTF(var3_7, "collider3D").gameObject.layer = LayerMask.NameToLayer("Character")
+		var3_7.gameObject.layer = LayerMask.NameToLayer("Character")
 		var0_7 = {
 			tf = var3_7,
 			data = var1_7,

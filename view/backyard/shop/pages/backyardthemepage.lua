@@ -15,7 +15,7 @@ function var0_0.LoadList(arg0_3)
 	arg0_3._parentTF = arg0_3._tf.parent
 	arg0_3.adpter = arg0_3:findTF("adpter")
 	arg0_3.themeContainer = arg0_3:findTF("list/frame")
-	arg0_3.scrollRect = arg0_3:findTF("list/frame/mask"):GetComponent("LScrollRect")
+	arg0_3.scrollRect = arg0_3:findTF("list/frame/mask/content"):GetComponent("LScrollRect")
 	arg0_3.scrollRectWidth = arg0_3:findTF("list/frame/mask").rect.width
 	arg0_3.searchInput = arg0_3:findTF("adpter/search")
 	arg0_3.searchClear = arg0_3.searchInput:Find("clear")
@@ -160,6 +160,8 @@ function var0_0.InitThemeList(arg0_23)
 	arg0_23.disPlays = arg0_23:GetData()
 
 	onNextTick(function()
+		arg0_23.scrollRect.enabled = true
+
 		arg0_23.scrollRect:SetTotalCount(#arg0_23.disPlays)
 	end)
 end

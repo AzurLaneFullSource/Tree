@@ -58,7 +58,6 @@ function var0_0.InitData(arg0_6)
 	arg0_6.ships = arg0_6.characterAgency:GetShips()
 	arg0_6.defaultShipId = PlayerPrefs.GetInt("island_dressShop_defaultShipId_" .. arg0_6.player.id, 10703)
 	arg0_6.islandShipDressHelper = IslandShipDressHelperNew.New()
-	arg0_6.drawAwardActivity = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND_DRAW_AWARD)
 end
 
 function var0_0.DoUpdateShops(arg0_7)
@@ -1297,6 +1296,7 @@ function var0_0.OnShow(arg0_86, arg1_86, arg2_86, arg3_86)
 	arg0_86.showTypes = arg1_86
 	arg0_86.firstShopIds = arg2_86
 	arg0_86.showDrawAward = arg3_86 == 1
+	arg0_86.drawAwardActivity = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND_DRAW_AWARD)
 
 	arg0_86:DoUpdateShops()
 	arg0_86:UpdateData()

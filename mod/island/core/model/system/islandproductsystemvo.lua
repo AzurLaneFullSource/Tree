@@ -119,7 +119,7 @@ function var0_0.GetCommissionSlotId(arg0_11, arg1_11)
 end
 
 function var0_0.GenHandCollectSlot(arg0_12, arg1_12)
-	if not arg0_12.building then
+	if not arg0_12.building or not arg0_12.isSelf then
 		return
 	end
 

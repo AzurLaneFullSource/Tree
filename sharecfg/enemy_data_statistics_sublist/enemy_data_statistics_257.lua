@@ -1,5 +1,51 @@
 pg = pg or {}
 pg.enemy_data_statistics_257 = {
+	[16400209] = {
+		cannon = 20,
+		battle_unit_type = 90,
+		fog_fx = "",
+		speed_growth = 0,
+		rarity = 2,
+		air = 75,
+		speed = 20,
+		dodge = 11,
+		id = 16400209,
+		cannon_growth = 0,
+		reload = 150,
+		reload_growth = 0,
+		dodge_growth = 156,
+		luck = 0,
+		star = 2,
+		hit = 14,
+		antisub_growth = 0,
+		air_growth = 3500,
+		torpedo = 0,
+		base = 90725,
+		durability = 2330,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		hit_growth = 210,
+		armor = 0,
+		durability_growth = 144000,
+		antiaircraft = 100,
+		antisub = 0,
+		antiaircraft_growth = 3200,
+		scale = 242,
+		equipment_list = {
+			1006015,
+			1006200,
+			1006105,
+			1006235,
+			1006240
+		},
+		buff_list = {
+			{
+				ID = 200236,
+				LV = 1
+			}
+		}
+	},
 	[16400301] = {
 		cannon = 130,
 		name = "Mass-Produced OFS Heavy Destroyer (Training Mod)",
@@ -1315,56 +1361,6 @@ pg.enemy_data_statistics_257 = {
 			{
 				ID = 200236,
 				LV = 1
-			}
-		}
-	},
-	[16401205] = {
-		cannon = 100,
-		battle_unit_type = 90,
-		fog_fx = "",
-		speed_growth = 0,
-		rarity = 2,
-		air = 0,
-		speed = 20,
-		dodge = 11,
-		id = 16401205,
-		cannon_growth = 2500,
-		reload = 150,
-		reload_growth = 0,
-		dodge_growth = 156,
-		luck = 4,
-		star = 2,
-		hit = 14,
-		antisub_growth = 0,
-		air_growth = 0,
-		torpedo = 30,
-		base = 90723,
-		durability = 3200,
-		armor_growth = 0,
-		torpedo_growth = 1500,
-		luck_growth = 0,
-		hit_growth = 210,
-		armor = 0,
-		durability_growth = 160000,
-		antiaircraft = 110,
-		antisub = 0,
-		antiaircraft_growth = 3600,
-		scale = 275,
-		equipment_list = {
-			1006081,
-			1006086,
-			1006221,
-			1006226,
-			1006231
-		},
-		buff_list = {
-			{
-				ID = 200236,
-				LV = 1
-			},
-			{
-				ID = 50500,
-				LV = 2
 			}
 		}
 	}

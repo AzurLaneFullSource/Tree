@@ -169811,6 +169811,30 @@ _G.pg.base.item_virtual_data_statistics[65694] = {
 	combination_display = {},
 }
 
+_G.pg.base.item_virtual_data_statistics[65711] = {
+	display = "Trust used in the Eternal Sacred Flame event. Removed after the event ends.",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "Props/65711",
+	id = 65711,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Trust - Hestia",
+	order = 0,
+	rarity = 2,
+	replace_item = 0,
+	shop_id = -1,
+	time_limit = 0,
+	type = 98,
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
 _G.pg.base.item_virtual_data_statistics[66001] = {
 	display = "A material used for villa reconstruction.",
 	drop_gold_max = 0,

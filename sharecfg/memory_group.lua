@@ -238,6 +238,8 @@ pg.memory_group = setmetatable({
 		338,
 		339,
 		340,
+		341,
+		342,
 		501,
 		502,
 		503,
@@ -5907,6 +5909,45 @@ pg.base.memory_group = {
 			4658,
 			4659,
 			4660
+		}
+	},
+	[341] = {
+		id = 341,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 50156,
+		title = "An Encounter Beneath Clear Skies",
+		group_id = "",
+		memories = {
+			4671,
+			4672,
+			4673,
+			4674,
+			4675,
+			4676,
+			4677,
+			4678,
+			4679,
+			4680,
+			4681,
+			4682,
+			4683,
+			4684,
+			4685
+		}
+	},
+	[342] = {
+		id = 342,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 50156,
+		title = "An Encounter Beneath Clear Skies - Daily Stories",
+		group_id = "",
+		memories = {
+			4691,
+			4692
 		}
 	},
 	[501] = {

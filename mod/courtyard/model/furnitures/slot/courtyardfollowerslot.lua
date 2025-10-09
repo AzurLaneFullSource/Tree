@@ -7,71 +7,86 @@ function var0_0.OnInit(arg0_1, arg1_1)
 	arg0_1.aciton = arg1_1[3][2]
 end
 
-function var0_0.GetSpineDefaultAction(arg0_2)
-	return arg0_2.defaultAction
+function var0_0.OnInitCombine(arg0_2, arg1_2)
+	arg0_2.combineData = arg1_2
 end
 
-function var0_0.Occupy(arg0_3, arg1_3, arg2_3, arg3_3)
-	if arg0_3:IsEmpty() then
-		arg0_3.owner = arg2_3
-		arg0_3.user = arg1_3
-		arg0_3.observer = arg3_3
+function var0_0.GetSpineDefaultAction(arg0_3)
+	local var0_3 = arg0_3:GetCombineFurnitureAnimator()
 
-		arg0_3:Use()
-		arg0_3:OnAwake()
-		arg3_3:StartInteraction(arg0_3)
-		arg1_3:StartInteraction(arg0_3)
-		arg2_3:StartInteraction(arg0_3, true)
-		arg0_3:OnStart()
+	if var0_3 then
+		return var0_3[2] or arg0_3.defaultAction
+	end
+
+	return arg0_3.defaultAction
+end
+
+function var0_0.Occupy(arg0_4, arg1_4, arg2_4, arg3_4)
+	if arg0_4:IsEmpty() then
+		arg0_4.owner = arg2_4
+		arg0_4.user = arg1_4
+		arg0_4.observer = arg3_4
+
+		arg0_4:Use()
+		arg0_4:OnAwake()
+		arg3_4:StartInteraction(arg0_4)
+		arg1_4:StartInteraction(arg0_4)
+		arg2_4:StartInteraction(arg0_4, true)
+		arg0_4:OnStart()
 	end
 end
 
-function var0_0.OnAwake(arg0_4)
-	arg0_4:ClearTimer()
+function var0_0.OnAwake(arg0_5)
+	arg0_5:ClearTimer()
 end
 
-function var0_0.Clear(arg0_5, arg1_5)
-	if arg0_5:IsUsing() then
-		arg0_5:Empty()
-		arg0_5.observer:WillClearInteraction(arg0_5, arg1_5)
-		arg0_5.user:ClearInteraction(arg0_5, arg1_5)
-		arg0_5.owner:ClearInteraction(arg0_5, arg1_5, true)
-		arg0_5.observer:ClearInteraction(arg0_5, arg1_5)
+function var0_0.Clear(arg0_6, arg1_6)
+	if arg0_6:IsUsing() then
+		arg0_6:Empty()
+		arg0_6.observer:WillClearInteraction(arg0_6, arg1_6)
+		arg0_6.user:ClearInteraction(arg0_6, arg1_6)
+		arg0_6.owner:ClearInteraction(arg0_6, arg1_6, true)
+		arg0_6.observer:ClearInteraction(arg0_6, arg1_6)
 
-		arg0_5.user = nil
-		arg0_5.owner = nil
-		arg0_5.observer = nil
+		arg0_6.user = nil
+		arg0_6.owner = nil
+		arg0_6.observer = nil
 	end
 end
 
-function var0_0.OnStart(arg0_6)
-	arg0_6.user:UpdateInteraction({
-		action = arg0_6.aciton,
-		slot = arg0_6
+function var0_0.OnStart(arg0_7)
+	local var0_7 = arg0_7:GetCombineFurnitureAnimator()
+	local var1_7 = arg0_7.aciton
+
+	var1_7 = var0_7 and var0_7[3] or var1_7
+
+	arg0_7.user:UpdateInteraction({
+		action = var1_7,
+		slot = arg0_7
 	})
 end
 
-function var0_0.ClearTimer(arg0_7)
+function var0_0.ClearTimer(arg0_8)
 	return
 end
 
-function var0_0.OnStop(arg0_8)
-	arg0_8:ClearTimer()
-end
-
-function var0_0.OnEnd(arg0_9)
+function var0_0.OnStop(arg0_9)
 	arg0_9:ClearTimer()
 end
 
-function var0_0.GetBodyMask(arg0_10)
+function var0_0.OnEnd(arg0_10)
+	arg0_10:ClearTimer()
+end
+
+function var0_0.GetBodyMask(arg0_11)
 	return false
 end
 
-function var0_0.GetUsingAnimator(arg0_11)
+function var0_0.GetUsingAnimator(arg0_12)
 	return false
 end
 
-function var0_0.GetFollower(arg0_12)
+function var0_0.GetFollower(arg0_13)
 	return nil
 end
 

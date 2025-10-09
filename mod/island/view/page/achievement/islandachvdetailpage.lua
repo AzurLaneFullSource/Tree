@@ -129,7 +129,10 @@ function var0_0.FlushDetail(arg0_16)
 			return arg0_22.id
 		end
 	}))
-	arg0_16.scrollRect:SetTotalCount(#arg0_16.showAchvList, -1)
+
+	arg0_16.scrollRect.enabled = true
+
+	arg0_16.scrollRect:SetTotalCount(#arg0_16.showAchvList, 0)
 end
 
 function var0_0.OnInitItem(arg0_23, arg1_23)
@@ -155,6 +158,8 @@ function var0_0.OnUpdateItem(arg0_25, arg1_25, arg2_25)
 	end
 
 	local var1_25 = arg0_25.showAchvList[arg1_25 + 1]
+
+	warning(arg1_25 + 1)
 
 	if var1_25 then
 		var0_25:Update(var1_25)

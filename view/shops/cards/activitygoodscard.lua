@@ -106,6 +106,7 @@ function var0_0.updateSingle(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
 	end
 
 	setActive(arg0_3.limitCountLabelTF, true)
+	setActive(arg0_3.groupLocked, arg0_3.itemTF:Find("group_locked").gameObject.activeSelf)
 end
 
 function var0_0.updateSelectable(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
@@ -147,6 +148,8 @@ function var0_0.updateSelectable(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
 
 		setText(arg0_7.limitCountLabelTF, i18n("activity_shop_exchange_count") .. math.max(var3_7, 0) .. "/" .. var2_7)
 	end
+
+	setActive(arg0_7.groupLocked, arg0_7.itemTF:Find("group_locked").gameObject.activeSelf)
 end
 
 function var0_0.setAsLastSibling(arg0_9)
@@ -207,6 +210,8 @@ function var0_0.StaticUpdate(arg0_10, arg1_10, arg2_10, arg3_10)
 	if arg1_10:getConfig("num_limit") >= 99 then
 		setText(var8_10, i18n("shop_label_unlimt_cnt"))
 	end
+
+	setActive(findTF(var0_10, "group_locked"), var1_10:Find("group_locked").gameObject.activeSelf)
 end
 
 function var0_0.OnDispose(arg0_11)

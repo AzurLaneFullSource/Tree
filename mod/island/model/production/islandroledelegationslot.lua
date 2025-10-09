@@ -76,67 +76,90 @@ function var0_0.CanStartDelegation(arg0_11)
 	return arg0_11.islandRoleDelegationData == nil and arg0_11.islandRoleDelegationReward == nil
 end
 
-function var0_0.Clear(arg0_12)
+function var0_0.CanStartDelegationTip(arg0_12)
+	return arg0_12.islandRoleDelegationData == nil and arg0_12.islandRoleDelegationReward == nil and not arg0_12:CheckChildSlotIsInWork()
+end
+
+function var0_0.CheckChildSlotIsInWork(arg0_13)
+	local var0_13 = getProxy(IslandProxy):GetIsland():GetBuildingAgency():GetBuilding(arg0_13.buildId)
+
+	if var0_13 then
+		local var1_13 = pg.island_production_slot[arg0_13.id]
+		local var2_13 = var1_13.exclusion_slot == "" and {} or var1_13.exclusion_slot
+
+		for iter0_13, iter1_13 in ipairs(var2_13) do
+			local var3_13 = var0_13:GetHandPlantSlotData(iter1_13)
+
+			if var3_13 and var3_13.state == 1 then
+				return true
+			end
+		end
+	end
+
+	return false
+end
+
+function var0_0.Clear(arg0_14)
 	return
 end
 
-function var0_0.UpdatePerSecond(arg0_13)
-	if not arg0_13.islandRoleDelegationData then
+function var0_0.UpdatePerSecond(arg0_15)
+	if not arg0_15.islandRoleDelegationData then
 		return
 	end
 
-	if arg0_13.islandRoleDelegationData:CheckDelegationIsEnd() then
-		if arg0_13.isSelf then
+	if arg0_15.islandRoleDelegationData:CheckDelegationIsEnd() then
+		if arg0_15.isSelf then
 			pg.m02:sendNotification(GAME.ISLAND_FINISH_DELEGATION, {
-				build_id = arg0_13.buildId,
-				area_id = arg0_13.id
+				build_id = arg0_15.buildId,
+				area_id = arg0_15.id
 			})
-			arg0_13.islandRoleDelegationData:SetIsSend(true)
+			arg0_15.islandRoleDelegationData:SetIsSend(true)
 		else
-			local var0_13 = getProxy(IslandProxy):GetSharedIsland()
-			local var1_13 = var0_13:GetBuildingAgency():GetBuilding(arg0_13.buildId)
-			local var2_13 = arg0_13.islandRoleDelegationData.formula_id
-			local var3_13 = arg0_13.islandRoleDelegationData.ship_id
+			local var0_15 = getProxy(IslandProxy):GetSharedIsland()
+			local var1_15 = var0_15:GetBuildingAgency():GetBuilding(arg0_15.buildId)
+			local var2_15 = arg0_15.islandRoleDelegationData.formula_id
+			local var3_15 = arg0_15.islandRoleDelegationData.ship_id
 
-			var1_13:UpdateDeleationRewardDataBySlotId(arg0_13.id, {
-				formula_id = var2_13
+			var1_15:UpdateDeleationRewardDataBySlotId(arg0_15.id, {
+				formula_id = var2_15
 			})
-			var1_13:UpdateDeleationRoleDataBySlotId(arg0_13.id, nil)
-			var0_13:DispatchEvent(IslandFinishDelegationCommand.END_DELEGATION, {
+			var1_15:UpdateDeleationRoleDataBySlotId(arg0_15.id, nil)
+			var0_15:DispatchEvent(IslandFinishDelegationCommand.END_DELEGATION, {
 				remainReward = true,
-				build_id = arg0_13.buildId,
-				ship_id = var3_13,
-				area_id = arg0_13.id
+				build_id = arg0_15.buildId,
+				ship_id = var3_15,
+				area_id = arg0_15.id
 			})
 		end
 	end
 end
 
-function var0_0.GetRoleDelegateFinishTime(arg0_14)
-	if arg0_14.islandRoleDelegationReward then
+function var0_0.GetRoleDelegateFinishTime(arg0_16)
+	if arg0_16.islandRoleDelegationReward then
 		return 0
 	end
 
-	if arg0_14.islandRoleDelegationData then
-		return arg0_14.islandRoleDelegationData:GetFinishTime()
+	if arg0_16.islandRoleDelegationData then
+		return arg0_16.islandRoleDelegationData:GetFinishTime()
 	end
 
 	return -1
 end
 
-function var0_0.GetRoleShipData(arg0_15)
-	if arg0_15.islandRoleDelegationData then
+function var0_0.GetRoleShipData(arg0_17)
+	if arg0_17.islandRoleDelegationData then
 		return {
-			ship_id = arg0_15.islandRoleDelegationData.ship_id,
-			area_id = arg0_15.id
+			ship_id = arg0_17.islandRoleDelegationData.ship_id,
+			area_id = arg0_17.id
 		}
 	end
 
 	return nil
 end
 
-function var0_0.GetPartList(arg0_16)
-	return arg0_16.part_list or {}
+function var0_0.GetPartList(arg0_18)
+	return arg0_18.part_list or {}
 end
 
 return var0_0

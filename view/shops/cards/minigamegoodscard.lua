@@ -71,6 +71,7 @@ function var0_0.update(arg0_5, arg1_5)
 	GetSpriteFromAtlasAsync("ui/ShopsUI_atlas", "minigameRes", function(arg0_6)
 		arg0_5.resIconTF:GetComponent(typeof(Image)).sprite = arg0_6
 	end)
+	setActive(arg0_5.groupLocked, arg0_5.itemTF:Find("group_locked").gameObject.activeSelf)
 end
 
 function var0_0.OnDispose(arg0_7)

@@ -28,7 +28,11 @@ function var0_0.Ctor(arg0_1, arg1_1)
 
 	setActive(arg0_1.discountTF, false)
 	setActive(arg0_1.itemTF:Find("group_locked"), false)
-	setText(arg0_1.itemTF:Find("group_locked/Text"), i18n("shop_item_unobtained"))
+
+	arg0_1.groupLocked = findTF(arg0_1.tf, "group_locked")
+
+	setActive(arg0_1.groupLocked, false)
+	setText(findTF(arg0_1.tf, "group_locked/Text"), i18n("shop_item_unobtained"))
 	setActive(arg0_1.tf:Find("limit_time_sell"), false)
 	setActive(arg0_1.tf:Find("itemBg/item/icon_bg/slv"), false)
 	eachChild(arg0_1.tf:Find("mask/tag"), function(arg0_2)

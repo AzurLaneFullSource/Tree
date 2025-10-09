@@ -76,6 +76,7 @@ function var0_0.update(arg0_5, arg1_5, arg2_5)
 		type = DROP_TYPE_RESOURCE,
 		id = arg1_5:getConfig("resource_type")
 	}):getIcon(), "", tf(arg0_5.resIconTF))
+	setActive(arg0_5.groupLocked, arg0_5.itemTF:Find("group_locked").gameObject.activeSelf)
 end
 
 function var0_0.OnDispose(arg0_6)

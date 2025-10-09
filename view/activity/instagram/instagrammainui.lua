@@ -12,6 +12,7 @@ function var0_0.init(arg0_2)
 	arg0_2.musicPlayerView = MainMusicPlayerView.New(arg0_2._tf, arg0_2.event)
 
 	arg0_2.musicPlayerView:Load(arg0_2._tf:Find("MusicPlayer").gameObject)
+	arg0_2.musicPlayerView:ActionInvoke("Hide")
 	arg0_2:ChangeChatTip()
 	arg0_2:ChangeJuusTip()
 	arg0_2:BlurPanel(arg0_2._tf)

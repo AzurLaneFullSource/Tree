@@ -245,7 +245,7 @@ end
 
 function var0_0.IsPostTip(arg0_24)
 	for iter0_24, iter1_24 in pairs(arg0_24.delegationSlotData) do
-		if iter1_24:CanStartDelegation() or iter1_24:GetSlotRewardData() then
+		if iter1_24:CanStartDelegationTip() or iter1_24:GetSlotRewardData() then
 			return true
 		end
 	end

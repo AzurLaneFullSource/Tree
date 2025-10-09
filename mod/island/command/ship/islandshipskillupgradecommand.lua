@@ -18,14 +18,14 @@ function var0_0.execute(arg0_1, arg1_1)
 	}, 21612, function(arg0_2)
 		if arg0_2.result == 0 then
 			local var0_2 = var2_1:GetSkill()
+			local var1_2 = var0_2:GetUpgradeMaterial()
 
 			var0_2:Upgrade()
 
-			local var1_2 = getProxy(IslandProxy):GetIsland():GetInventoryAgency()
-			local var2_2 = var0_2:GetUpgradeMaterial()
+			local var2_2 = getProxy(IslandProxy):GetIsland():GetInventoryAgency()
 
-			for iter0_2, iter1_2 in ipairs(var2_2) do
-				var1_2:RemoveItem(iter1_2.id, iter1_2.count)
+			for iter0_2, iter1_2 in ipairs(var1_2) do
+				var2_2:RemoveItem(iter1_2.id, iter1_2.count)
 			end
 
 			IslandAchievementHelper.OnShipSkillUpgrade(var0_2:GetLevel())

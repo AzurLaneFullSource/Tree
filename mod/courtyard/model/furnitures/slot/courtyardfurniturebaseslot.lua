@@ -7,7 +7,8 @@ var0_0.TYPE_COMMOM = 1
 var0_0.TYPE_MAIN_SPINE = 2
 var0_0.TYPE_SPINE_EXTRA = 3
 
-function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
+	arg0_1.controller = arg4_1
 	arg0_1.id = arg1_1
 	arg0_1.mask = nil
 	arg0_1.scale = Vector3.one
@@ -25,6 +26,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 		arg0_1.state = var1_0
 
 		arg0_1:OnInit(arg2_1)
+		arg0_1:OnInitCombine(arg3_1)
 	end
 end
 
@@ -140,27 +142,65 @@ function var0_0.GetSkew(arg0_23)
 	return arg0_23.skewValue
 end
 
-function var0_0.OnInit(arg0_24, arg1_24)
+function var0_0.GetCombineFurnitureAnimator(arg0_24)
+	if type(arg0_24.combineData) ~= "table" then
+		return
+	end
+
+	for iter0_24, iter1_24 in ipairs(arg0_24.combineData) do
+		if arg0_24:HasFurnitureList(iter1_24[1]) then
+			return iter1_24
+		end
+	end
+
+	return nil
+end
+
+function var0_0.HasFurnitureList(arg0_25, arg1_25)
+	for iter0_25, iter1_25 in ipairs(arg1_25) do
+		if arg0_25:HasFurniture(iter1_25) == false then
+			return false
+		end
+	end
+
+	return true
+end
+
+function var0_0.HasFurniture(arg0_26, arg1_26)
+	for iter0_26, iter1_26 in pairs(arg0_26.controller:GetStorey():GetFurnitures()) do
+		if iter1_26.configId == arg1_26 then
+			return true
+		end
+	end
+
+	return false
+end
+
+function var0_0.OnInit(arg0_27, arg1_27)
 	return
 end
 
-function var0_0.OnAwake(arg0_25)
+function var0_0.OnInitCombine(arg0_28, arg1_28)
 	return
 end
 
-function var0_0.OnStart(arg0_26)
+function var0_0.OnAwake(arg0_29)
 	return
 end
 
-function var0_0.OnStop(arg0_27)
+function var0_0.OnStart(arg0_30)
 	return
 end
 
-function var0_0.OnEnd(arg0_28)
+function var0_0.OnStop(arg0_31)
 	return
 end
 
-function var0_0.OnContinue(arg0_29, arg1_29)
+function var0_0.OnEnd(arg0_32)
+	return
+end
+
+function var0_0.OnContinue(arg0_33, arg1_33)
 	return
 end
 

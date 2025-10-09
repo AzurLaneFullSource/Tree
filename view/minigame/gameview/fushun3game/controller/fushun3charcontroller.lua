@@ -12,6 +12,8 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1, arg5_1)
 	arg0_1._effectFrPos = findTF(arg0_1._charTf, "effectFrPos")
 	arg0_1._effectBkPos = findTF(arg0_1._charTf, "effectBkPos")
 	arg0_1._powerSlider = arg4_1
+	arg0_1._collider = findTF(arg0_1._charTf, "collider")
+	arg0_1._collider.gameObject.layer = LayerMask.NameToLayer("Character")
 
 	arg0_1._dftEvent:SetTriggerEvent(function()
 		local var0_2

@@ -5677,6 +5677,10 @@ _G.pg.base.gametip.word_shipNation_yumia = {
 	tip = "Atelier Yumia",
 }
 
+_G.pg.base.gametip.word_shipNation_danmachi = {
+	tip = "Danmachi",
+}
+
 _G.pg.base.gametip.word_reset = {
 	tip = "Reset",
 }
@@ -30568,7 +30572,7 @@ _G.pg.base.gametip.island_index_status = {
 }
 
 _G.pg.base.gametip.island_confirm = {
-	tip = "Confirm",
+	tip = "Confirm ",
 }
 
 _G.pg.base.gametip.island_cancel = {
@@ -32398,7 +32402,7 @@ _G.pg.base.gametip.island_manage_help_tip = {
 }
 
 _G.pg.base.gametip.island_word_go = {
-	tip = "Confirm",
+	tip = "Confirm ",
 }
 
 _G.pg.base.gametip.island_map_title = {
@@ -33322,7 +33326,7 @@ _G.pg.base.gametip.island_ticket_completed_quantity = {
 }
 
 _G.pg.base.gametip.island_ticket_nearing_expiration = {
-	tip = "Tickets Near Expiration: $1",
+	tip = "Expiring: $1",
 }
 
 _G.pg.base.gametip.island_ticket_expiration_tip1 = {
@@ -33941,7 +33945,7 @@ _G.pg.base.gametip.island_draw_help = {
 }
 
 _G.pg.base.gametip.island_dress_initial_makesure = {
-	tip = "Confirm",
+	tip = "Confirm ",
 }
 
 _G.pg.base.gametip.island_shop_lock_tip = {
@@ -34001,14 +34005,70 @@ _G.pg.base.gametip.island_setmeal_title = {
 }
 
 _G.pg.base.gametip.island_shipselect_confirm = {
-	tip = "Confirm",
+	tip = "Confirm ",
 }
 
 _G.pg.base.gametip.island_dresscolorunlock_tips = {
-	tip = "解锁消耗",
+	tip = "Unlock Consumes",
 }
 
 _G.pg.base.gametip.island_dresscolorunlock = {
-	tip = "解锁",
+	tip = "Unlock",
+}
+
+_G.pg.base.gametip.danmachi_main_sheet1 = {
+	tip = "Main Event",
+}
+
+_G.pg.base.gametip.danmachi_main_sheet2 = {
+	tip = "Hestia",
+}
+
+_G.pg.base.gametip.danmachi_main_sheet3 = {
+	tip = "Ryu Lion",
+}
+
+_G.pg.base.gametip.danmachi_main_sheet4 = {
+	tip = "Story",
+}
+
+_G.pg.base.gametip.danmachi_main_sheet5 = {
+	tip = "Reward List",
+}
+
+_G.pg.base.gametip.danmachi_main_time = {
+	tip = "$1 hour(s) left",
+}
+
+_G.pg.base.gametip.danmachi_award_1 = {
+	tip = "Shipgirl",
+}
+
+_G.pg.base.gametip.danmachi_award_2 = {
+	tip = "Furniture",
+}
+
+_G.pg.base.gametip.danmachi_award_3 = {
+	tip = "Gear Skins",
+}
+
+_G.pg.base.gametip.danmachi_award_4 = {
+	tip = "Augments",
+}
+
+_G.pg.base.gametip.danmachi_award_name1 = {
+	tip = "Hestia",
+}
+
+_G.pg.base.gametip.danmachi_award_name2 = {
+	tip = "Ryu Lion",
+}
+
+_G.pg.base.gametip.danmachi_award_get = {
+	tip = "Obtained",
+}
+
+_G.pg.base.gametip.danmachi_award_unget = {
+	tip = "Unobtained",
 }
 

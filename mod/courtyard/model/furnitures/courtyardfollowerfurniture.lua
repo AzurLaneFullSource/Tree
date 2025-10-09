@@ -3,7 +3,7 @@ local var0_0 = class("CourtYardFollowerFurniture", import(".CourtYardFurniture")
 function var0_0.InitSlots(arg0_1)
 	arg0_1.ratios = {}
 
-	table.insert(arg0_1.slots, CourtYardFollowerSlot.New(1, arg0_1.config.spine))
+	table.insert(arg0_1.slots, CourtYardFollowerSlot.New(1, arg0_1.config.spine, arg0_1.config.spine_combine_action_replace, arg0_1.host))
 end
 
 function var0_0.GetInterActionTime(arg0_2)

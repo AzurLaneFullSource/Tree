@@ -111,7 +111,7 @@ function var0_0.didEnter(arg0_8)
 		arg0_8:updateOperation4()
 	end
 
-	arg0_8:BlurPanel(arg0_8._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_8._tf)
 end
 
 local var1_0 = {
@@ -327,7 +327,7 @@ function var0_0.cloneSampleTo(arg0_27, arg1_27, arg2_27, arg3_27, arg4_27)
 end
 
 function var0_0.willExit(arg0_28)
-	arg0_28:UnOverlayPanel(arg0_28._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_28._tf)
 end
 
 function var0_0.onBackPressed(arg0_29)

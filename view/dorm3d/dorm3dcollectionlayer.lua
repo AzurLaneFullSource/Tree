@@ -29,13 +29,9 @@ function var0_0.init(arg0_4)
 
 	local var1_4 = var0_4:Find("content")
 
-	arg0_4.memoryView = Dorm3dMemorySubView.New(var1_4, arg0_4.event, arg0_4.contextData)
+	arg0_4.memoryView = Dorm3dMemorySubView.New(var1_4:Find("memory"), arg0_4.event, arg0_4.contextData)
+	arg0_4.collectItemView = Dorm3dCollectionItemSubView.New(var1_4:Find("item"), arg0_4.event, arg0_4.contextData)
 
-	arg0_4.memoryView:Load(var1_4:Find("memory").gameObject)
-
-	arg0_4.collectItemView = Dorm3dCollectionItemSubView.New(var1_4, arg0_4.event, arg0_4.contextData)
-
-	arg0_4.collectItemView:Load(var1_4:Find("item").gameObject)
 	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf)
 end
 
@@ -45,8 +41,8 @@ function var0_0.SetPage(arg0_8, arg1_8)
 		item = arg0_8.collectItemView
 	}) do
 		if iter0_8 == arg1_8 then
-			iter1_8:ExecuteAction("Show")
-		elseif iter1_8:isShowing() then
+			iter1_8:Show()
+		else
 			iter1_8:Hide()
 		end
 	end
@@ -66,8 +62,8 @@ function var0_0.onBackPressed(arg0_10)
 end
 
 function var0_0.willExit(arg0_11)
-	arg0_11.memoryView:Destroy()
-	arg0_11.collectItemView:Destroy()
+	arg0_11.memoryView:Dispose()
+	arg0_11.collectItemView:Dispose()
 	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11._tf)
 end
 

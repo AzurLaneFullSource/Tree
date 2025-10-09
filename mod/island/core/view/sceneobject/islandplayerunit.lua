@@ -207,7 +207,7 @@ function var3_0.CalcGrounded(arg0_14)
 		local var2_14 = arg0_14._tf.position.y + arg0_14.characterController.skinWidth - var1_14.point.y
 
 		if var1_14.collider.isTrigger then
-			return false
+			return true, 0
 		end
 
 		return true, var2_14

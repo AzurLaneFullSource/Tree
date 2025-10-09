@@ -22,15 +22,19 @@ function var0_0.execute(arg0_1, arg1_1)
 
 			var1_2:AddCostList(arg0_2.cost_time_list)
 
-			local var2_2 = var4_1:GetCharacterAgency():GetShipById(var1_2.ship_id)
-			local var3_2 = var0_2:GetFormulaId()
-			local var4_2 = pg.island_formula[var3_2].commission_cost
+			local var2_2 = var0_2:GetFormulaId()
+			local var3_2 = pg.island_formula[var2_2]
+			local var4_2 = var3_2.commission_cost
 
 			for iter0_2, iter1_2 in ipairs(var4_2) do
 				var5_1:RemoveItem(iter1_2[1], iter1_2[2] * var3_1)
 			end
 
-			var2_2:UpdateEnergyBeginRecoverTime(var1_2:GetFinishTime())
+			local var5_2 = var4_1:GetCharacterAgency():GetShipById(var1_2.ship_id)
+			local var6_2 = var5_2:GetCurrentEnergy() - var3_2.stamina_cost * var3_1
+
+			var5_2:UpdateEnergy(var6_2)
+			var5_2:UpdateEnergyBeginRecoverTime(var1_2:GetFinishTime())
 			arg0_1:sendNotification(GAME.ISLAND_FINISH_DELEGATION_DONE, {
 				slotId = var2_1
 			})

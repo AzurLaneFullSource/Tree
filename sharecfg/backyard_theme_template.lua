@@ -5049,6 +5049,27 @@ pg.backyard_theme_template = {
 			329119
 		}
 	},
+	[130] = {
+		Cfg_1 = 5,
+		name = "Labyrinth City",
+		hot = 1,
+		is_view = 1,
+		id = 130,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "Enter the Labyrinth City and stand on the stage where heroes embark on adventures.",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "dxthemeicon",
+		deblocking = 1,
+		order = 130,
+		ids = {
+			330001,
+			330002,
+			330101
+		}
+	},
 	all = {
 		1,
 		2,
@@ -5165,6 +5186,7 @@ pg.backyard_theme_template = {
 		125,
 		126,
 		127,
-		129
+		129,
+		130
 	}
 }

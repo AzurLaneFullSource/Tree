@@ -1,5 +1,42 @@
 pg = pg or {}
 pg.enemy_data_statistics_163 = {
+	[13300456] = {
+		cannon = 45,
+		reload = 150,
+		speed_growth = 0,
+		cannon_growth = 640,
+		rarity = 4,
+		air = 0,
+		torpedo = 135,
+		dodge = 28,
+		durability_growth = 23600,
+		antiaircraft = 125,
+		luck = 0,
+		reload_growth = 0,
+		dodge_growth = 450,
+		hit_growth = 350,
+		star = 4,
+		hit = 30,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 50,
+		base = 90423,
+		durability = 4340,
+		armor_growth = 0,
+		torpedo_growth = 5200,
+		luck_growth = 0,
+		speed = 36,
+		armor = 0,
+		id = 13300456,
+		antiaircraft_growth = 3000,
+		antisub = 0,
+		fog_fx = "",
+		equipment_list = {
+			1002104,
+			1002109,
+			1002114
+		}
+	},
 	[13300457] = {
 		cannon = 74,
 		reload = 150,
@@ -1291,49 +1328,5 @@ pg.enemy_data_statistics_163 = {
 			"appearQ"
 		},
 		equipment_list = {}
-	},
-	[13400006] = {
-		cannon = 2333333,
-		name = "Iron Claw Mechadrake",
-		hit_growth = 0,
-		speed_growth = 0,
-		pilot_ai_template_id = 20006,
-		air = 0,
-		speed = 25,
-		dodge = 0,
-		antisub = 0,
-		cannon_growth = 0,
-		fog_fx = "",
-		reload_growth = 0,
-		dodge_growth = 0,
-		icon = "sipeibojue_younv",
-		luck = 99,
-		hit = 9999,
-		antisub_growth = 0,
-		air_growth = 0,
-		reload = 150,
-		base = 50021,
-		durability = 23333333,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		torpedo = 2333333,
-		durability_growth = 0,
-		id = 13400006,
-		antiaircraft = 500,
-		scale = 400,
-		battle_unit_type = 95,
-		appear_fx = {
-			"bossguangxiao",
-			"appearQ"
-		},
-		equipment_list = {
-			630075,
-			630076,
-			630077,
-			630078
-		}
 	}
 }

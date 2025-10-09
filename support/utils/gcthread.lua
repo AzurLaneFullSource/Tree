@@ -43,6 +43,7 @@ function var0_0.GCFinal(arg0_4)
 	if arg0_4.needUnityGC then
 		arg0_4.needUnityGC = false
 
+		Canvas.ForceUpdateCanvases()
 		PoolMgr.GetInstance():DestroyAllSprite()
 		ResourceMgr.Inst:ResUnloadAsync()
 		LuaHelper.UnityGC()

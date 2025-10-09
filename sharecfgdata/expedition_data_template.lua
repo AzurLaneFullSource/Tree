@@ -995038,6 +995038,63 @@ _G.pg.base.expedition_data_template[1966001] = {
 	},
 }
 
+_G.pg.base.expedition_data_template[1967001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "danmachi-2",
+	difficulty = 2,
+	dungeon_id = 1967001,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1967001,
+	level = 120,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 300,
+	type = 99,
+	map_id = {
+		{
+			8000,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
 _G.pg.base.expedition_data_template[5000020] = {
 	SLG_destroy_FX = "",
 	add_icon = "",

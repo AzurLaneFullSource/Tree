@@ -1219,6 +1219,8 @@ function var0_0.updateActivityBtns(arg0_82)
 	local var7_82 = setmetatable({}, MainActMapBtn)
 	local var8_82 = var7_82:InShowTime() and not var1_82 and not var4_82 and not var5_82
 
+	arg0_82.activityBtnLinkAct = var7_82:GetActivity()
+
 	if var8_82 then
 		var7_82.image = arg0_82.activityBtn:Find("Image"):GetComponent(typeof(Image))
 		var7_82.subImage = arg0_82.activityBtn:Find("sub_Image"):GetComponent(typeof(Image))
@@ -1470,6 +1472,12 @@ function var0_0.registerActBtn(arg0_99)
 	end, SFX_PANEL)
 	onButton(arg0_99, arg0_99.activityBtn, function()
 		if arg0_99:isfrozen() then
+			return
+		end
+
+		if arg0_99.activityBtnLinkAct and arg0_99.activityBtnLinkAct:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BOSSRUSH then
+			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.BOSSRUSH_MAIN)
+
 			return
 		end
 

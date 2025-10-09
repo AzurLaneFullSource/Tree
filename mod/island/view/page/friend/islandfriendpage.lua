@@ -158,78 +158,84 @@ function var0_0.OnShowMsg(arg0_14, arg1_14)
 end
 
 function var0_0.OnInit(arg0_15)
+	onButton(arg0_15, arg0_15._tf:Find("top/title/help"), function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.island_help_friends.tip
+		})
+	end, SFX_PANEL)
 	onButton(arg0_15, arg0_15.backBtn, function()
 		arg0_15:Hide()
 	end, SFX_PANEL)
 
 	arg0_15.toggles = {}
 
-	arg0_15.uiToggleList:make(function(arg0_17, arg1_17, arg2_17)
-		if arg0_17 == UIItemList.EventUpdate then
-			onToggle(arg0_15, arg2_17, function(arg0_18)
-				if arg0_18 then
-					arg0_15:SwitchPage(arg1_17 + 1)
+	arg0_15.uiToggleList:make(function(arg0_18, arg1_18, arg2_18)
+		if arg0_18 == UIItemList.EventUpdate then
+			onToggle(arg0_15, arg2_18, function(arg0_19)
+				if arg0_19 then
+					arg0_15:SwitchPage(arg1_18 + 1)
 				end
 			end, SF_PANEL)
-			setText(arg2_17:Find("unsel"), var9_0(arg1_17 + 1))
-			setText(arg2_17:Find("sel/content/Text"), var9_0(arg1_17 + 1))
+			setText(arg2_18:Find("unsel"), var9_0(arg1_18 + 1))
+			setText(arg2_18:Find("sel/content/Text"), var9_0(arg1_18 + 1))
 
-			local var0_17 = GetSpriteFromAtlas("ui/IslandFriendUI_atlas", var10_0(arg1_17 + 1))
+			local var0_18 = GetSpriteFromAtlas("ui/IslandFriendUI_atlas", var10_0(arg1_18 + 1))
 
-			setImageSprite(arg2_17:Find("sel/content/Image"), var0_17, true)
-			table.insert(arg0_15.toggles, arg2_17)
+			setImageSprite(arg2_18:Find("sel/content/Image"), var0_18, true)
+			table.insert(arg0_15.toggles, arg2_18)
 		end
 	end)
 	arg0_15.uiToggleList:align(#arg0_15.pages)
 	arg0_15:UpdateTip()
 end
 
-function var0_0.UpdateTip(arg0_19)
-	local var0_19 = arg0_19.toggles[var5_0]
+function var0_0.UpdateTip(arg0_20)
+	local var0_20 = arg0_20.toggles[var5_0]
 
-	setActive(var0_19:Find("tip"), getProxy(NotificationProxy):getRequestCount() > 0)
+	setActive(var0_20:Find("tip"), getProxy(NotificationProxy):getRequestCount() > 0)
 end
 
-function var0_0.SwitchPage(arg0_20, arg1_20)
-	if arg0_20.page then
-		arg0_20.page:ExecuteAction("Hide")
+function var0_0.SwitchPage(arg0_21, arg1_21)
+	if arg0_21.page then
+		arg0_21.page:ExecuteAction("Hide")
 
-		arg0_20.page = nil
+		arg0_21.page = nil
 	end
 
-	local var0_20 = arg0_20.pages[arg1_20]
+	local var0_21 = arg0_21.pages[arg1_21]
 
-	var0_20:ExecuteAction("Show")
+	var0_21:ExecuteAction("Show")
 
-	arg0_20.page = var0_20
+	arg0_21.page = var0_21
 end
 
-function var0_0.OnShow(arg0_21)
-	arg0_21:UpdateGiftTxt()
-	triggerToggle(arg0_21.toggles[var1_0], true)
-	arg0_21:BlurPanel()
+function var0_0.OnShow(arg0_22)
+	arg0_22:UpdateGiftTxt()
+	triggerToggle(arg0_22.toggles[var1_0], true)
+	arg0_22:BlurPanel()
 end
 
-function var0_0.UpdateGiftTxt(arg0_22)
-	local var0_22 = getProxy(IslandProxy):GetIsland():GetSignInAgency()
-	local var1_22 = var0_22:GetLeftOtherFetchCnt()
-	local var2_22 = var0_22:GetMaxOtheFetchcnt()
+function var0_0.UpdateGiftTxt(arg0_23)
+	local var0_23 = getProxy(IslandProxy):GetIsland():GetSignInAgency()
+	local var1_23 = var0_23:GetLeftOtherFetchCnt()
+	local var2_23 = var0_23:GetMaxOtheFetchcnt()
 
-	arg0_22.giftTipTxt.text = i18n("island_git_cnt_tip") .. var1_22 .. "/" .. var2_22
+	arg0_23.giftTipTxt.text = i18n("island_git_cnt_tip") .. var1_23 .. "/" .. var2_23
 end
 
-function var0_0.OnHide(arg0_23)
-	arg0_23:UnBlurPanel()
-end
-
-function var0_0.OnDestroy(arg0_24)
+function var0_0.OnHide(arg0_24)
 	arg0_24:UnBlurPanel()
+end
 
-	for iter0_24, iter1_24 in ipairs(arg0_24.pages) do
-		iter1_24:Destroy()
+function var0_0.OnDestroy(arg0_25)
+	arg0_25:UnBlurPanel()
+
+	for iter0_25, iter1_25 in ipairs(arg0_25.pages) do
+		iter1_25:Destroy()
 	end
 
-	arg0_24.pages = nil
+	arg0_25.pages = nil
 end
 
 return var0_0
