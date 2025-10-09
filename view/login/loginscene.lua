@@ -359,20 +359,26 @@ end
 function var0_0.setBg(arg0_25)
 	arg0_25.bgImg = arg0_25:findTF("background/bg"):GetComponent(typeof(Image))
 
+	local var0_25 = arg0_25:findTF("background/bg"):GetComponent("AspectRatioFitter")
+
+	if var0_25 then
+		var0_25.aspectMode = AspectMode.FitInParent
+	end
+
 	if not arg0_25.isCriBg then
 		setImageSprite(arg0_25.bgImg, arg0_25.staticBgSprite)
 	else
 		arg0_25.bgImg.enabled = false
 
-		local var0_25 = arg0_25.criBgGo.transform
+		local var1_25 = arg0_25.criBgGo.transform
 
-		var0_25:SetParent(arg0_25.bgImg.transform, false)
-		var0_25:SetAsFirstSibling()
+		var1_25:SetParent(arg0_25.bgImg.transform, false)
+		var1_25:SetAsFirstSibling()
 
-		local var1_25 = arg0_25.criBgGo:GetComponent("AspectRatioFitter")
+		local var2_25 = arg0_25.criBgGo:GetComponent("AspectRatioFitter")
 
-		if var1_25 then
-			var1_25.enabled = true
+		if var2_25 then
+			var2_25.enabled = true
 		end
 	end
 end
