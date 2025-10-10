@@ -107,6 +107,10 @@ local var1_0 = {
 		args = function()
 			local var0_15 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
+			if not tobool(var0_15) then
+				return false
+			end
+
 			return PlayerPrefs.GetInt(string.format("first_enter_ryza_atelier_%s_%s", getProxy(PlayerProxy):getRawData().id, var0_15.id), 0) == 0 and {
 				1,
 				2

@@ -128,7 +128,7 @@ function var0_0.loadScene(arg0_5, arg1_5, arg2_5, arg3_5, arg4_5)
 			seriesAsync(var0_12, arg0_12)
 		end,
 		function(arg0_20)
-			if arg1_5.cleanStack then
+			if arg1_5.cleanCacheUI then
 				var1_5:clearCacheUI()
 			end
 

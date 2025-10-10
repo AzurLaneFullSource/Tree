@@ -27,6 +27,8 @@ function var0_0.OnShowFlush(arg0_4)
 	var0_0.super.OnShowFlush(arg0_4)
 
 	if arg0_4.coreActivityUI.contextData.activeScenario then
+		arg0_4.scenario.needFocusStory = true
+
 		triggerButton(arg0_4.goBtn)
 	end
 end

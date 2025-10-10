@@ -92705,7 +92705,7 @@ _G.pg.base.ship_skin_words[11300041] = {
 
 _G.pg.base.ship_skin_words[11400010] = {
 	battle = "Come on, let's go!",
-	detail = "In my world, we gods had familas who'd conquer dungeons. I guess in this world... you'd conquer the sea, huh?",
+	detail = "In my world, we gods had familias who'd conquer dungeons. I guess in this world... you'd conquer the sea, huh?",
 	drop_descrip = "Repair ship – Hestia.",
 	expedition = "Your familia who went on an errand are back. Huh? They're not familia, they're your friends? I see – you insist on that.",
 	feeling1 = "Need something? Uh, can it wait? I'm so sleepy right now.",

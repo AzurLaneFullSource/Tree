@@ -71,14 +71,12 @@ function var0_0.execute(arg0_1, arg1_1)
 		var2_1:SetLoginedFlag(false)
 	end
 
+	local var4_1 = Context.New()
+
+	var4_1:extendData(var0_1)
+	SCENE.SetSceneInfo(var4_1, SCENE.LOGIN)
 	arg0_1:sendNotification(GAME.LOAD_SCENE, {
-		context = Context.New({
-			cleanStack = true,
-			scene = SCENE.LOGIN,
-			mediator = LoginMediator,
-			viewComponent = LoginScene,
-			data = var0_1
-		}),
+		context = var4_1,
 		callback = function()
 			if pg.proxyRegister then
 				pg.proxyRegister:Stop()
