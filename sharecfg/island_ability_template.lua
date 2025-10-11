@@ -857,7 +857,7 @@ pg.island_ability_template = {
 		show_type = 1
 	},
 	[17002] = {
-		unlock_text = "啾咖啡经营",
+		unlock_text = "Café Manjuu management",
 		effect = 901,
 		cmd_icon = "IslandProps/gold",
 		type = 17,

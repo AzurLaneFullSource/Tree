@@ -15,6 +15,8 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.typeUIList = UIItemList.New(var0_2, var0_2:Find("tpl"))
 
 	setActive(arg0_2._tf:Find("tpl"), false)
+	setText(arg0_2._tf:Find("tpl/status/get/Text"), i18n("handbook_claim"))
+	setText(arg0_2._tf:Find("tpl/status/got/Text"), i18n("handbook_finished"))
 
 	arg0_2.scrollRect = arg0_2._tf:Find("view"):GetComponent("LScrollRect")
 

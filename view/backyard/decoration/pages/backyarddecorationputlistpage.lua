@@ -183,6 +183,9 @@ function var0_0.OnDisplayList(arg0_19)
 		return arg0_20:getConfig("type") < arg1_20:getConfig("type")
 	end)
 	setActive(arg0_19.emptyTF, #arg0_19.displays == 0)
+
+	arg0_19.scrollRect.enabled = true
+
 	arg0_19.scrollRect:SetTotalCount(#arg0_19.displays)
 end
 

@@ -178,6 +178,8 @@ function var0_0.SetTotalCount(arg0_17)
 		end
 	end
 
+	arg0_17.scrollRect.enabled = true
+
 	arg0_17.scrollRect:SetTotalCount(#arg0_17.lastDiaplys)
 end
 

@@ -8,7 +8,7 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.closeBtn = arg0_2._tf:Find("top/back")
 	arg0_2.setMealList = UIItemList.New(arg0_2._tf:Find("setMealList/Viewport/Content"), arg0_2._tf:Find("setMealList/Viewport/Content/setMealTpl"))
 	arg0_2.detail = arg0_2._tf:Find("detail")
-	arg0_2.detailName = arg0_2.detail:Find("name")
+	arg0_2.detailName = arg0_2.detail:Find("name/text")
 	arg0_2.formulaList1 = arg0_2.detail:Find("formulaList1")
 	arg0_2.formulaList2 = arg0_2.detail:Find("formulaList2")
 	arg0_2.detailDesc = arg0_2.detail:Find("desc")
@@ -17,6 +17,8 @@ function var0_0.OnLoaded(arg0_2)
 	setActive(arg0_2.detail, false)
 	setText(arg0_2._tf:Find("top/title/Text"), i18n("island_setmeal_title"))
 	setText(arg0_2._tf:Find("top/title/Text/en"), i18n1("HANDBOOK"))
+	setText(arg0_2._tf:Find("detail/condition"), i18n("island_tech_detail_unlocktitle"))
+	setText(arg0_2._tf:Find("detail/decoration2/text"), i18n("island_setmeal_benifit_title"))
 end
 
 function var0_0.OnInit(arg0_3)
@@ -102,7 +104,7 @@ function var0_0.SetFormulaList(arg0_9)
 			setActive(arg2_10:Find("lock"), not var6_10)
 
 			if var6_10 then
-				setText(arg2_10:Find("name"), var0_10.name)
+				setScrollText(arg2_10:Find("name/text"), var0_10.name)
 
 				local var7_10 = {
 					count = 0,
@@ -131,7 +133,7 @@ end
 
 function var0_0.SetDetail(arg0_12, arg1_12)
 	setActive(arg0_12.detail, true)
-	setText(arg0_12.detailName, arg1_12.name)
+	setScrollText(arg0_12.detailName, arg1_12.name)
 	setActive(arg0_12.formulaList1, #arg1_12.unlock_condition == 2)
 	setActive(arg0_12.formulaList2, #arg1_12.unlock_condition == 3)
 
@@ -159,7 +161,7 @@ function var0_0.SetDetail(arg0_12, arg1_12)
 			local var1_13 = arg1_12.unlock_condition[arg1_13 + 1][2]
 			local var2_13 = pg.island_formula[var0_13]
 
-			setText(arg2_13:Find("name"), i18n("island_combo_produced") .. var2_13.name)
+			setScrollText(arg2_13:Find("name/text"), i18n("island_combo_produced") .. var2_13.name)
 
 			local var3_13 = arg0_12.formulaNums[var0_13] or 0
 
