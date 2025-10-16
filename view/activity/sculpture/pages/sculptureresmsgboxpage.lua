@@ -5,12 +5,12 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.closeBtn = arg0_2:findTF("frame/close")
-	arg0_2.icon = arg0_2:findTF("frame/icon/Image"):GetComponent(typeof(Image))
-	arg0_2.name = arg0_2:findTF("frame/name"):GetComponent(typeof(Text))
-	arg0_2.desc = arg0_2:findTF("frame/scrollrect/desc"):GetComponent(typeof(Text))
-	arg0_2.outPut = arg0_2:findTF("frame/output/Text"):GetComponent(typeof(Text))
-	arg0_2.goBtn = arg0_2:findTF("frame/output/btn")
+	arg0_2.closeBtn = arg0_2._tf:Find("frame/close")
+	arg0_2.icon = arg0_2._tf:Find("frame/icon/Image"):GetComponent(typeof(Image))
+	arg0_2.name = arg0_2._tf:Find("frame/name"):GetComponent(typeof(Text))
+	arg0_2.desc = arg0_2._tf:Find("frame/scrollrect/desc"):GetComponent(typeof(Text))
+	arg0_2.outPut = arg0_2._tf:Find("frame/output/Text"):GetComponent(typeof(Text))
+	arg0_2.goBtn = arg0_2._tf:Find("frame/output/btn")
 end
 
 function var0_0.OnInit(arg0_3)

@@ -23,10 +23,10 @@ function var0_0.willExit(arg0_4)
 end
 
 function var0_0.initUITextTips(arg0_5)
-	local var0_5 = arg0_5:findTF("Panel/AwardTpl/PointLight/PointTipText")
-	local var1_5 = arg0_5:findTF("Panel/AwardTpl/PointGray/PointTipText")
-	local var2_5 = arg0_5:findTF("Panel/AwardTpl/GetText")
-	local var3_5 = arg0_5:findTF("Panel/AwardTpl/GotText")
+	local var0_5 = arg0_5._tf:Find("Panel/AwardTpl/PointLight/PointTipText")
+	local var1_5 = arg0_5._tf:Find("Panel/AwardTpl/PointGray/PointTipText")
+	local var2_5 = arg0_5._tf:Find("Panel/AwardTpl/GetText")
+	local var3_5 = arg0_5._tf:Find("Panel/AwardTpl/GotText")
 
 	setText(var0_5, i18n("meta_pt_point"))
 	setText(var1_5, i18n("meta_pt_point"))
@@ -41,21 +41,21 @@ function var0_0.initData(arg0_6)
 end
 
 function var0_0.findUI(arg0_7)
-	arg0_7.bg = arg0_7:findTF("BG")
+	arg0_7.bg = arg0_7._tf:Find("BG")
 
-	local var0_7 = arg0_7:findTF("Panel")
-	local var1_7 = arg0_7:findTF("PT", var0_7)
+	local var0_7 = arg0_7._tf:Find("Panel")
+	local var1_7 = var0_7:Find("PT")
 
-	arg0_7.ptNumText = arg0_7:findTF("NumText", var1_7)
-	arg0_7.ptIcon = arg0_7:findTF("PTIcon", var1_7)
-	arg0_7.scrollViewTF = arg0_7:findTF("ScrollView", var0_7)
-	arg0_7.awardContainerTF = arg0_7:findTF("ScrollView/Viewport/Content", var0_7)
-	arg0_7.awardTpl = arg0_7:findTF("AwardTpl", var0_7)
+	arg0_7.ptNumText = var1_7:Find("NumText")
+	arg0_7.ptIcon = var1_7:Find("PTIcon")
+	arg0_7.scrollViewTF = var0_7:Find("ScrollView")
+	arg0_7.awardContainerTF = var0_7:Find("ScrollView/Viewport/Content")
+	arg0_7.awardTpl = var0_7:Find("AwardTpl")
 
-	local var2_7 = arg0_7:findTF("NotchAdapt")
+	local var2_7 = arg0_7._tf:Find("NotchAdapt")
 
-	arg0_7.nextArrow = arg0_7:findTF("NextBtn", var2_7)
-	arg0_7.preArrow = arg0_7:findTF("PreBtn", var2_7)
+	arg0_7.nextArrow = var2_7:Find("NextBtn")
+	arg0_7.preArrow = var2_7:Find("PreBtn")
 	arg0_7.sizeW = GetComponent(arg0_7.awardTpl, "LayoutElement").preferredWidth
 	arg0_7.spaceW = GetComponent(arg0_7.awardContainerTF, "HorizontalLayoutGroup").spacing
 	arg0_7.leftW = GetComponent(arg0_7.awardContainerTF, "HorizontalLayoutGroup").padding.left
@@ -101,20 +101,20 @@ function var0_0.updateScrollList(arg0_13)
 end
 
 function var0_0.updateAwardTpl(arg0_14, arg1_14, arg2_14)
-	local var0_14 = arg0_14:findTF("Item", arg1_14)
-	local var1_14 = arg0_14:findTF("mask", var0_14)
-	local var2_14 = arg0_14:findTF("Got", var1_14)
-	local var3_14 = arg0_14:findTF("Lock", var1_14)
-	local var4_14 = arg0_14:findTF("PointLight", arg1_14)
-	local var5_14 = arg0_14:findTF("NumText", var4_14)
-	local var6_14 = arg0_14:findTF("PointGray", arg1_14)
-	local var7_14 = arg0_14:findTF("NumText", var6_14)
-	local var8_14 = arg0_14:findTF("GetText", arg1_14)
-	local var9_14 = arg0_14:findTF("GotText", arg1_14)
-	local var10_14 = arg0_14:findTF("LockText", arg1_14)
-	local var11_14 = arg0_14:findTF("LineTpl", arg1_14)
-	local var12_14 = arg0_14:findTF("LineTpl/Light", arg1_14)
-	local var13_14 = arg0_14:findTF("LineTpl/Dark", arg1_14)
+	local var0_14 = arg1_14:Find("Item")
+	local var1_14 = var0_14:Find("mask")
+	local var2_14 = var1_14:Find("Got")
+	local var3_14 = var1_14:Find("Lock")
+	local var4_14 = arg1_14:Find("PointLight")
+	local var5_14 = var4_14:Find("NumText")
+	local var6_14 = arg1_14:Find("PointGray")
+	local var7_14 = var6_14:Find("NumText")
+	local var8_14 = arg1_14:Find("GetText")
+	local var9_14 = arg1_14:Find("GotText")
+	local var10_14 = arg1_14:Find("LockText")
+	local var11_14 = arg1_14:Find("LineTpl")
+	local var12_14 = arg1_14:Find("LineTpl/Light")
+	local var13_14 = arg1_14:Find("LineTpl/Dark")
 	local var14_14 = arg0_14.ptData.dropList[arg2_14]
 	local var15_14 = arg0_14.ptData.targets[arg2_14]
 	local var16_14 = {

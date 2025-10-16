@@ -5,17 +5,17 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.resetFrame = arg0_2:findTF("frame/point/reset_frame")
-	arg0_2.resetTimeTF = arg0_2:findTF("frame/point/reset_frame/reset_time")
-	arg0_2.resetTimeTxt = arg0_2:findTF("frame/point/reset_frame/reset_time/Text"):GetComponent(typeof(Text))
-	arg0_2.resetTimeBtn = arg0_2:findTF("frame/point/reset_frame/reset_btn")
-	arg0_2.pointTxt = arg0_2:findTF("frame/point/usage_frame/point/Text"):GetComponent(typeof(Text))
-	arg0_2.useBtn = arg0_2:findTF("frame/point/usage_frame/use_btn")
-	arg0_2.uilist = UIItemList.New(arg0_2:findTF("frame/talents/content"), arg0_2:findTF("frame/talents/content/talent_tpl"))
+	arg0_2.resetFrame = arg0_2._tf:Find("frame/point/reset_frame")
+	arg0_2.resetTimeTF = arg0_2._tf:Find("frame/point/reset_frame/reset_time")
+	arg0_2.resetTimeTxt = arg0_2._tf:Find("frame/point/reset_frame/reset_time/Text"):GetComponent(typeof(Text))
+	arg0_2.resetTimeBtn = arg0_2._tf:Find("frame/point/reset_frame/reset_btn")
+	arg0_2.pointTxt = arg0_2._tf:Find("frame/point/usage_frame/point/Text"):GetComponent(typeof(Text))
+	arg0_2.useBtn = arg0_2._tf:Find("frame/point/usage_frame/use_btn")
+	arg0_2.uilist = UIItemList.New(arg0_2._tf:Find("frame/talents/content"), arg0_2._tf:Find("frame/talents/content/talent_tpl"))
 	arg0_2.resetPanel = CommanderResetTalentPage.New(arg0_2._parentTf, arg0_2.event, arg0_2.contextData)
 	arg0_2.usagePanel = CommanderUsageTalentPage.New(arg0_2._parentTf, arg0_2.event, arg0_2.contextData)
 
-	setText(arg0_2:findTF("frame/point/Text"), i18n("commander_level_up_tip"))
+	setText(arg0_2._tf:Find("frame/point/Text"), i18n("commander_level_up_tip"))
 end
 
 function var0_0.OnInit(arg0_3)

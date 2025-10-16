@@ -21,13 +21,13 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.bg = arg0_2:findTF("bg")
+	arg0_2.bg = arg0_2._tf:Find("bg")
 	arg0_2.mainTf = arg0_2._tf:Find("main")
 	arg0_2.mainPages = {
 		[var8_0] = Dorm3dInsPublicPage.New(arg0_2._tf:Find("main/public_page"), arg0_2.event),
 		[var7_0] = Dorm3dInsCharPage.New(arg0_2._tf:Find("main/char_page"), arg0_2.event)
 	}
-	arg0_2.roomListContainer = arg0_2:findTF("left/scroll/mask/list")
+	arg0_2.roomListContainer = arg0_2._tf:Find("left/scroll/mask/list")
 	arg0_2.roomItemList = UIItemList.New(arg0_2.roomListContainer, arg0_2.roomListContainer:Find("tpl"))
 
 	arg0_2.roomItemList:make(function(arg0_3, arg1_3, arg2_3)
@@ -36,8 +36,8 @@ function var0_0.init(arg0_2)
 		end
 	end)
 
-	arg0_2.expandPanel = arg0_2:findTF("expand_panel")
-	arg0_2.expandListContainer = arg0_2:findTF("expand_panel/scroll/mask/list")
+	arg0_2.expandPanel = arg0_2._tf:Find("expand_panel")
+	arg0_2.expandListContainer = arg0_2._tf:Find("expand_panel/scroll/mask/list")
 	arg0_2.expandItemList = UIItemList.New(arg0_2.expandListContainer, arg0_2.expandListContainer:Find("tpl"))
 
 	arg0_2.expandItemList:make(function(arg0_4, arg1_4, arg2_4)
@@ -46,8 +46,8 @@ function var0_0.init(arg0_2)
 		end
 	end)
 
-	arg0_2.selectPanel = arg0_2:findTF("select_panel")
-	arg0_2.selectListContainer = arg0_2:findTF("select_panel/list")
+	arg0_2.selectPanel = arg0_2._tf:Find("select_panel")
+	arg0_2.selectListContainer = arg0_2._tf:Find("select_panel/list")
 	arg0_2.selectItemList = UIItemList.New(arg0_2.selectListContainer, arg0_2.selectListContainer:Find("tpl"))
 
 	arg0_2.selectItemList:make(function(arg0_5, arg1_5, arg2_5)
@@ -57,7 +57,7 @@ function var0_0.init(arg0_2)
 	end)
 
 	arg0_2.selectOpen = false
-	arg0_2.downloadTf = arg0_2:findTF("main/download")
+	arg0_2.downloadTf = arg0_2._tf:Find("main/download")
 	arg0_2.download = arg0_2.downloadTf:Find("btns/download")
 	arg0_2.downloading = arg0_2.downloadTf:Find("btns/downloading")
 	arg0_2.delete = arg0_2.downloadTf:Find("btns/delete")

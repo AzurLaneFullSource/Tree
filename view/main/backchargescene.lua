@@ -10,8 +10,8 @@ end
 
 function var0_0.didEnter(arg0_3)
 	arg0_3.diamondPanel = findTF(arg0_3._tf, "frame/viewContainer/diamondPanel")
-	arg0_3.blurPanel = arg0_3:findTF("blur_panel")
-	arg0_3.detail = arg0_3:findTF("detail", arg0_3.blurPanel)
+	arg0_3.blurPanel = arg0_3._tf:Find("blur_panel")
+	arg0_3.detail = arg0_3.blurPanel:Find("detail")
 	arg0_3.damondItems = {}
 
 	setText(findTF(arg0_3._tf, "frame/viewContainer/leftPanel/desc"), i18n("Supplement_pay2"))
@@ -58,8 +58,8 @@ function var0_0.confirm(arg0_9, arg1_9)
 end
 
 function var0_0.initDiamondList(arg0_10, arg1_10)
-	local var0_10 = arg0_10:findTF("content", arg1_10)
-	local var1_10 = arg0_10:findTF("ItemTpl", arg1_10)
+	local var0_10 = arg1_10:Find("content")
+	local var1_10 = arg1_10:Find("ItemTpl")
 
 	local function var2_10(arg0_11)
 		local var0_11 = BackChargeDiamondCard.New(arg0_11, arg0_10)
@@ -189,9 +189,9 @@ function var0_0.showItemDetail(arg0_19, arg1_19)
 	local var9_19 = arg1_19.tagType
 	local var10_19 = arg1_19.normalTip
 
-	setActive(arg0_19:findTF("window2", arg0_19.detail), var10_19)
-	setActive(arg0_19:findTF("window", arg0_19.detail), not var10_19)
-	arg0_19:bindDetailTF(var10_19 and arg0_19:findTF("window2", arg0_19.detail) or arg0_19:findTF("window", arg0_19.detail))
+	setActive(arg0_19.detail:Find("window2"), var10_19)
+	setActive(arg0_19.detail:Find("window"), not var10_19)
+	arg0_19:bindDetailTF(var10_19 and arg0_19.detail:Find("window2") or arg0_19.detail:Find("window"))
 
 	if arg0_19.detailNormalTip then
 		setActive(arg0_19.detailNormalTip, var10_19)
@@ -285,15 +285,15 @@ function var0_0.showItemDetail(arg0_19, arg1_19)
 		end
 	end
 
-	onButton(arg0_19, arg0_19:findTF("back_sign", arg0_19.detail), function()
+	onButton(arg0_19, arg0_19.detail:Find("back_sign"), function()
 		SetActive(arg0_19.detail, false)
 		arg0_19:revertDetailBlur()
 	end, SFX_PANEL)
-	onButton(arg0_19, arg0_19:findTF("button_container/button_cancel", arg0_19.detailWindow), function()
+	onButton(arg0_19, arg0_19.detailWindow:Find("button_container/button_cancel"), function()
 		SetActive(arg0_19.detail, false)
 		arg0_19:revertDetailBlur()
 	end, SFX_PANEL)
-	onButton(arg0_19, arg0_19:findTF("button_container/button_ok", arg0_19.detailWindow), arg1_19.onYes or function()
+	onButton(arg0_19, arg0_19.detailWindow:Find("button_container/button_ok"), arg1_19.onYes or function()
 		return
 	end, SFX_PANEL)
 	setActive(arg0_19.detail, true)
@@ -302,36 +302,36 @@ end
 
 function var0_0.bindDetailTF(arg0_26, arg1_26)
 	arg0_26.detailWindow = arg1_26
-	arg0_26.detailName = arg0_26:findTF("goods/name", arg0_26.detailWindow)
-	arg0_26.detailIcon = arg0_26:findTF("goods/icon", arg0_26.detailWindow)
+	arg0_26.detailName = arg0_26.detailWindow:Find("goods/name")
+	arg0_26.detailIcon = arg0_26.detailWindow:Find("goods/icon")
 	arg0_26.detailIconTF = arg0_26.detailIcon:GetComponent(typeof(Image))
-	arg0_26.detailRmb = arg0_26:findTF("prince_bg/contain/icon_rmb", arg0_26.detailWindow)
-	arg0_26.detailGem = arg0_26:findTF("prince_bg/contain/icon_gem", arg0_26.detailWindow)
-	arg0_26.detailPrice = arg0_26:findTF("prince_bg/contain/Text", arg0_26.detailWindow)
-	arg0_26.detailTag = arg0_26:findTF("goods/tag", arg0_26.detailWindow)
+	arg0_26.detailRmb = arg0_26.detailWindow:Find("prince_bg/contain/icon_rmb")
+	arg0_26.detailGem = arg0_26.detailWindow:Find("prince_bg/contain/icon_gem")
+	arg0_26.detailPrice = arg0_26.detailWindow:Find("prince_bg/contain/Text")
+	arg0_26.detailTag = arg0_26.detailWindow:Find("goods/tag")
 	arg0_26.detailTags = {}
 
-	table.insert(arg0_26.detailTags, arg0_26:findTF("hot", arg0_26.detailTag))
-	table.insert(arg0_26.detailTags, arg0_26:findTF("new", arg0_26.detailTag))
-	table.insert(arg0_26.detailTags, arg0_26:findTF("advice", arg0_26.detailTag))
-	table.insert(arg0_26.detailTags, arg0_26:findTF("double", arg0_26.detailTag))
-	table.insert(arg0_26.detailTags, arg0_26:findTF("discount", arg0_26.detailTag))
+	table.insert(arg0_26.detailTags, arg0_26.detailTag:Find("hot"))
+	table.insert(arg0_26.detailTags, arg0_26.detailTag:Find("new"))
+	table.insert(arg0_26.detailTags, arg0_26.detailTag:Find("advice"))
+	table.insert(arg0_26.detailTags, arg0_26.detailTag:Find("double"))
+	table.insert(arg0_26.detailTags, arg0_26.detailTag:Find("discount"))
 
-	arg0_26.detailTagDoubleTF = arg0_26:findTF("double", arg0_26.detailTag)
-	arg0_26.detailTagAdviceTF = arg0_26:findTF("advice", arg0_26.detailTag)
-	arg0_26.detailContain = arg0_26:findTF("container", arg0_26.detailWindow)
+	arg0_26.detailTagDoubleTF = arg0_26.detailTag:Find("double")
+	arg0_26.detailTagAdviceTF = arg0_26.detailTag:Find("advice")
+	arg0_26.detailContain = arg0_26.detailWindow:Find("container")
 
 	if arg0_26.detailContain then
-		arg0_26.extra = arg0_26:findTF("container/items", arg0_26.detailWindow)
-		arg0_26.detailTip2 = arg0_26:findTF("Text", arg0_26.extra)
-		arg0_26.detailItemList = arg0_26:findTF("scrollview/list", arg0_26.extra)
-		arg0_26.normal = arg0_26:findTF("container/normal_items", arg0_26.detailWindow)
-		arg0_26.detailTip = arg0_26:findTF("Text", arg0_26.normal)
-		arg0_26.detailItem = arg0_26:findTF("item_tpl", arg0_26.normal)
-		arg0_26.detailDescExtra = arg0_26:findTF("container/Text", arg0_26.detailWindow)
+		arg0_26.extra = arg0_26.detailWindow:Find("container/items")
+		arg0_26.detailTip2 = arg0_26.extra:Find("Text")
+		arg0_26.detailItemList = arg0_26.extra:Find("scrollview/list")
+		arg0_26.normal = arg0_26.detailWindow:Find("container/normal_items")
+		arg0_26.detailTip = arg0_26.normal:Find("Text")
+		arg0_26.detailItem = arg0_26.normal:Find("item_tpl")
+		arg0_26.detailDescExtra = arg0_26.detailWindow:Find("container/Text")
 	end
 
-	arg0_26.detailNormalTip = arg0_26:findTF("NormalTips", arg0_26.detailWindow)
+	arg0_26.detailNormalTip = arg0_26.detailWindow:Find("NormalTips")
 end
 
 function var0_0.revertDetailBlur(arg0_27)

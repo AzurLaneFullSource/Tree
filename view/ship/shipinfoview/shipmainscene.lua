@@ -193,22 +193,22 @@ function var0_0.init(arg0_24)
 	arg0_24:initEvents()
 
 	arg0_24.mainCanvasGroup = arg0_24._tf:GetComponent(typeof(CanvasGroup))
-	arg0_24.commonCanvasGroup = arg0_24:findTF("blur_panel/adapt"):GetComponent(typeof(CanvasGroup))
+	arg0_24.commonCanvasGroup = arg0_24._tf:Find("blur_panel/adapt"):GetComponent(typeof(CanvasGroup))
 	Input.multiTouchEnabled = false
 end
 
 function var0_0.initShip(arg0_25)
-	arg0_25.shipInfo = arg0_25:findTF("main/character")
+	arg0_25.shipInfo = arg0_25._tf:Find("main/character")
 
 	setActive(arg0_25.shipInfo, true)
 
 	arg0_25.tablePainting = {
-		arg0_25:findTF("painting", arg0_25.shipInfo),
-		arg0_25:findTF("painting2", arg0_25.shipInfo)
+		arg0_25.shipInfo:Find("painting"),
+		arg0_25.shipInfo:Find("painting2")
 	}
 	arg0_25.nowPainting = nil
 	arg0_25.isRight = true
-	arg0_25.blurPanel = arg0_25:findTF("blur_panel")
+	arg0_25.blurPanel = arg0_25._tf:Find("blur_panel")
 	arg0_25.common = arg0_25.blurPanel:Find("adapt")
 	arg0_25.npcFlagTF = arg0_25.common:Find("name/npc")
 	arg0_25.shipName = arg0_25.common:Find("name")
@@ -225,10 +225,10 @@ function var0_0.initShip(arg0_25)
 
 	setActive(arg0_25.energyDescTF, false)
 
-	arg0_25.character = arg0_25:findTF("main/character")
-	arg0_25.chat = arg0_25:findTF("main/character/chat")
-	arg0_25.chatBg = arg0_25:findTF("main/character/chat/chatbgtop")
-	arg0_25.chatText = arg0_25:findTF("Text", arg0_25.chat)
+	arg0_25.character = arg0_25._tf:Find("main/character")
+	arg0_25.chat = arg0_25._tf:Find("main/character/chat")
+	arg0_25.chatBg = arg0_25._tf:Find("main/character/chat/chatbgtop")
+	arg0_25.chatText = arg0_25.chat:Find("Text")
 	rtf(arg0_25.chat).localScale = Vector3.New(0, 0, 1)
 	arg0_25.initChatBgH = arg0_25.chatBg.sizeDelta.y
 	arg0_25.initChatTextH = arg0_25.chatText.sizeDelta.y
@@ -237,13 +237,13 @@ end
 
 function var0_0.initPages(arg0_26)
 	ShipViewConst.currentPage = nil
-	arg0_26.background = arg0_26:findTF("background")
+	arg0_26.background = arg0_26._tf:Find("background")
 
 	setActive(arg0_26.background, true)
 
-	arg0_26.main = arg0_26:findTF("main")
+	arg0_26.main = arg0_26._tf:Find("main")
 	arg0_26.mainMask = arg0_26.main:GetComponent(typeof(RectMask2D))
-	arg0_26.toggles = arg0_26:findTF("left_length/frame/root", arg0_26.common)
+	arg0_26.toggles = arg0_26.common:Find("left_length/frame/root")
 	arg0_26.detailToggle = arg0_26.toggles:Find("detail_toggle")
 	arg0_26.equipmentToggle = arg0_26.toggles:Find("equpiment_toggle")
 	arg0_26.intensifyToggle = arg0_26.toggles:Find("intensify_toggle")
@@ -381,7 +381,7 @@ end
 
 function var0_0.didEnter(arg0_39)
 	arg0_39:addRingDragListenter()
-	onButton(arg0_39, arg0_39:findTF("top/back_btn", arg0_39.common), function()
+	onButton(arg0_39, arg0_39.common:Find("top/back_btn"), function()
 		GetOrAddComponent(arg0_39._tf, typeof(CanvasGroup)).interactable = false
 
 		if not arg0_39.everTriggerBack then
@@ -399,7 +399,7 @@ function var0_0.didEnter(arg0_39)
 		})
 	end, SFX_PANEL)
 
-	arg0_39.helpBtn = arg0_39:findTF("help_btn", arg0_39.common)
+	arg0_39.helpBtn = arg0_39.common:Find("help_btn")
 
 	onButton(arg0_39, arg0_39.helpBtn, function()
 		arg0_39:openHelpPage(ShipViewConst.currentPage)
@@ -507,7 +507,7 @@ function var0_0.showAwakenCompleteAni(arg0_51, arg1_51)
 		local var0_52 = tf(arg0_51.awakenAni)
 
 		pg.UIMgr.GetInstance():BlurPanel(var0_52)
-		setText(arg0_51:findTF("window/desc", arg0_51.awakenAni), arg1_51)
+		setText(var0_52:Find("window/desc"), arg1_51)
 		var0_52:GetComponent("DftAniEvent"):SetEndEvent(function(arg0_54)
 			arg0_51.awakenAni:GetComponent("Animator"):SetBool("endFlag", false)
 			pg.UIMgr.GetInstance():UnOverlayPanel(var0_52, arg0_51.common)
@@ -517,7 +517,7 @@ function var0_0.showAwakenCompleteAni(arg0_51, arg1_51)
 		end)
 	end
 
-	local var1_51 = arg0_51:findTF("AwakenCompleteWindows(Clone)")
+	local var1_51 = arg0_51._tf:Find("AwakenCompleteWindows(Clone)")
 
 	if var1_51 then
 		arg0_51.awakenAni = go(var1_51)
@@ -541,7 +541,7 @@ function var0_0.updatePreference(arg0_56, arg1_56)
 	local var1_56 = arg0_56.shipVO:getName()
 
 	setScrollText(arg0_56.shipName:Find("nameRect/name_mask/Text"), var1_56)
-	setText(arg0_56:findTF("english_name", arg0_56.shipName), var0_56.english_name)
+	setText(arg0_56.shipName:Find("english_name"), var0_56.english_name)
 	setActive(arg0_56.nameEditFlag, arg1_56.propose and not arg1_56:IsXIdol())
 
 	local var2_56 = GetSpriteFromAtlas("energy", arg1_56:getEnergyPrint())
@@ -553,7 +553,7 @@ function var0_0.updatePreference(arg0_56, arg1_56)
 	setImageSprite(arg0_56.energyTF, var2_56, true)
 	setActive(arg0_56.energyTF, true)
 
-	local var3_56 = arg0_56:findTF("stars", arg0_56.shipName)
+	local var3_56 = arg0_56.shipName:Find("stars")
 
 	removeAllChildren(var3_56)
 
@@ -578,7 +578,7 @@ function var0_0.updatePreference(arg0_56, arg1_56)
 		warning("找不到船形, shipConfigId: " .. arg1_56.configId)
 	end
 
-	setImageSprite(arg0_56:findTF("type", arg0_56.shipName), var7_56, true)
+	setImageSprite(arg0_56.shipName:Find("type"), var7_56, true)
 end
 
 function var0_0.doUpgradeMaxLeveAnim(arg0_57, arg1_57, arg2_57, arg3_57)
@@ -1406,7 +1406,7 @@ function var0_0.onBackPressed(arg0_107)
 	end
 
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-	triggerButton(arg0_107:findTF("top/back_btn", arg0_107.common))
+	triggerButton(arg0_107.common:Find("top/back_btn"))
 end
 
 function var0_0.willExit(arg0_108)

@@ -122,7 +122,7 @@ function var0_0.UpdateTask(arg0_11, arg1_11, arg2_11)
 	local var0_11 = arg1_11 + 1
 	local var1_11 = arg0_11.taskGroup[arg0_11.nday][var0_11]
 	local var2_11 = arg0_11.taskProxy:getTaskById(var1_11) or arg0_11.taskProxy:getFinishTaskById(var1_11)
-	local var3_11 = arg0_11:findTF("get_btn", arg2_11)
+	local var3_11 = arg2_11:Find("get_btn")
 
 	onButton(arg0_11, var3_11, function()
 		if arg0_11.nday <= arg0_11.itmeNum then
@@ -144,13 +144,13 @@ function var0_0.UpdateTask(arg0_11, arg1_11, arg2_11)
 		end
 	end, SFX_PANEL)
 
-	local var4_11 = arg0_11:findTF("got_btn", arg2_11)
+	local var4_11 = arg2_11:Find("got_btn")
 
 	onButton(arg0_11, var4_11, function()
 		arg0_11:displayWindow(true)
 	end, SFX_PANEL)
 
-	local var5_11 = arg0_11:findTF("review_btn", arg0_11.bg)
+	local var5_11 = arg0_11.bg:Find("review_btn")
 
 	onButton(arg0_11, var5_11, function()
 		arg0_11:displayWindow(true)

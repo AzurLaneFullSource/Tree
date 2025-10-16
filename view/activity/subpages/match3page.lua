@@ -1,10 +1,10 @@
 local var0_0 = class("Match3Page", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.item = arg0_1:findTF("item", arg0_1.bg)
-	arg0_1.items = arg0_1:findTF("items", arg0_1.bg)
-	arg0_1.goBtn = arg0_1:findTF("go", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.item = arg0_1.bg:Find("item")
+	arg0_1.items = arg0_1.bg:Find("items")
+	arg0_1.goBtn = arg0_1.bg:Find("go")
 	arg0_1.itemList = UIItemList.New(arg0_1.items, arg0_1.item)
 end
 
@@ -22,7 +22,7 @@ function var0_0.OnFirstFlush(arg0_3)
 	setActive(arg0_3.item, false)
 	arg0_3.itemList:make(function(arg0_4, arg1_4, arg2_4)
 		if arg0_4 == UIItemList.EventInit then
-			local var0_4 = arg0_3:findTF("item", arg2_4)
+			local var0_4 = arg2_4:Find("item")
 			local var1_4 = arg0_3.drop[arg1_4 + 1]
 			local var2_4 = {
 				type = var1_4[1],
@@ -35,8 +35,8 @@ function var0_0.OnFirstFlush(arg0_3)
 				arg0_3:emit(BaseUI.ON_DROP, var2_4)
 			end, SFX_PANEL)
 		elseif arg0_4 == UIItemList.EventUpdate then
-			local var3_4 = arg0_3:findTF("got", arg2_4)
-			local var4_4 = arg0_3:findTF("mask", arg2_4)
+			local var3_4 = arg2_4:Find("got")
+			local var4_4 = arg2_4:Find("mask")
 
 			setActive(var3_4, arg1_4 < var0_3.usedtime)
 			setActive(var4_4, arg1_4 >= var0_3.usedtime + var0_3.count)

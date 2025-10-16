@@ -18,12 +18,12 @@ local function var1_0(arg0_2)
 end
 
 function var0_0.OnLoaded(arg0_4)
-	arg0_4.scrollrect = arg0_4:findTF("frame/scrollrect"):GetComponent("LScrollRect")
-	arg0_4.closeBtn = arg0_4:findTF("frame/close")
+	arg0_4.scrollrect = arg0_4._tf:Find("frame/scrollrect"):GetComponent("LScrollRect")
+	arg0_4.closeBtn = arg0_4._tf:Find("frame/close")
 
-	setText(arg0_4:findTF("frame/titles/num"), i18n("guild_damage_ranking"))
-	setText(arg0_4:findTF("frame/titles/member"), i18n("guild_word_member"))
-	setText(arg0_4:findTF("frame/titles/damage"), i18n("guild_total_damage"))
+	setText(arg0_4._tf:Find("frame/titles/num"), i18n("guild_damage_ranking"))
+	setText(arg0_4._tf:Find("frame/titles/member"), i18n("guild_word_member"))
+	setText(arg0_4._tf:Find("frame/titles/damage"), i18n("guild_total_damage"))
 end
 
 function var0_0.OnInit(arg0_5)

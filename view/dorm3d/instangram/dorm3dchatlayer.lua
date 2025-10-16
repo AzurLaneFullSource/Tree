@@ -8,28 +8,28 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.rightPanel = arg0_2:findTF("main/rightPanel")
-	arg0_2.characterName = arg0_2:findTF("rightTop/name", arg0_2.rightPanel)
-	arg0_2.careBtn = arg0_2:findTF("rightTop/careBtn", arg0_2.rightPanel)
-	arg0_2.topicBtn = arg0_2:findTF("rightTop/topicBtn", arg0_2.rightPanel)
-	arg0_2.backgroundBtn = arg0_2:findTF("rightTop/backgroundBtn", arg0_2.rightPanel)
-	arg0_2.messageList = UIItemList.New(arg0_2:findTF("messageScroll/Viewport/Content", arg0_2.rightPanel), arg0_2:findTF("messageScroll/Viewport/Content/messageCard", arg0_2.rightPanel))
-	arg0_2.optionPanel = arg0_2:findTF("optionPanel", arg0_2.rightPanel)
-	arg0_2.optionList = UIItemList.New(arg0_2.optionPanel, arg0_2:findTF("option", arg0_2.optionPanel))
-	arg0_2.topicUI = arg0_2:findTF("subPages/InstagramTopicUI")
-	arg0_2.backgroundUI = arg0_2:findTF("subPages/InstagramBackgroundUI")
-	arg0_2.redPacketUI = arg0_2:findTF("subPages/InstagramRedPacketUI")
-	arg0_2.pictureUI = arg0_2:findTF("subPages/PictureUI")
+	arg0_2.rightPanel = arg0_2._tf:Find("main/rightPanel")
+	arg0_2.characterName = arg0_2.rightPanel:Find("rightTop/name")
+	arg0_2.careBtn = arg0_2.rightPanel:Find("rightTop/careBtn")
+	arg0_2.topicBtn = arg0_2.rightPanel:Find("rightTop/topicBtn")
+	arg0_2.backgroundBtn = arg0_2.rightPanel:Find("rightTop/backgroundBtn")
+	arg0_2.messageList = UIItemList.New(arg0_2.rightPanel:Find("messageScroll/Viewport/Content"), arg0_2.rightPanel:Find("messageScroll/Viewport/Content/messageCard"))
+	arg0_2.optionPanel = arg0_2.rightPanel:Find("optionPanel")
+	arg0_2.optionList = UIItemList.New(arg0_2.optionPanel, arg0_2.optionPanel:Find("option"))
+	arg0_2.topicUI = arg0_2._tf:Find("subPages/InstagramTopicUI")
+	arg0_2.backgroundUI = arg0_2._tf:Find("subPages/InstagramBackgroundUI")
+	arg0_2.redPacketUI = arg0_2._tf:Find("subPages/InstagramRedPacketUI")
+	arg0_2.pictureUI = arg0_2._tf:Find("subPages/PictureUI")
 
-	setText(arg0_2:findTF("panel/topicScroll/Viewport/Content/topic/waiting", arg0_2.topicUI), i18n("juuschat_chattip3"))
-	setText(arg0_2:findTF("panel/topicScroll/Viewport/Content/topic/selected/Text", arg0_2.topicUI), i18n("juuschat_label2"))
-	setText(arg0_2:findTF("panel/backgroundScroll/Viewport/Content/background/selected/Text", arg0_2.backgroundUI), i18n("juuschat_label1"))
-	setText(arg0_2:findTF("panel/backgroundScroll/Viewport/Content/background/lockFrame/Text", arg0_2.backgroundUI), i18n("juuschat_background_tip1"))
+	setText(arg0_2.topicUI:Find("panel/topicScroll/Viewport/Content/topic/waiting"), i18n("juuschat_chattip3"))
+	setText(arg0_2.topicUI:Find("panel/topicScroll/Viewport/Content/topic/selected/Text"), i18n("juuschat_label2"))
+	setText(arg0_2.backgroundUI:Find("panel/backgroundScroll/Viewport/Content/background/selected/Text"), i18n("juuschat_label1"))
+	setText(arg0_2.backgroundUI:Find("panel/backgroundScroll/Viewport/Content/background/lockFrame/Text"), i18n("juuschat_background_tip1"))
 
-	arg0_2.redPacketGot = arg0_2:findTF("panel/got", arg0_2.redPacketUI)
-	arg0_2.noMessage = arg0_2:findTF("noMessage", arg0_2.rightPanel)
+	arg0_2.redPacketGot = arg0_2.redPacketUI:Find("panel/got")
+	arg0_2.noMessage = arg0_2.rightPanel:Find("noMessage")
 
-	setText(arg0_2:findTF("Text", arg0_2.noMessage), i18n("dorm3d_ins_no_topics"))
+	setText(arg0_2.noMessage:Find("Text"), i18n("dorm3d_ins_no_topics"))
 	SetActive(arg0_2.topicUI, false)
 	SetActive(arg0_2.backgroundUI, false)
 	SetActive(arg0_2.redPacketUI, false)
@@ -38,14 +38,14 @@ function var0_0.init(arg0_2)
 	arg0_2.timerList = {}
 	arg0_2.canFresh = false
 
-	local var0_2 = arg0_2:findTF("messageScroll/Scrollbar Vertical", arg0_2.rightPanel):GetComponent(typeof(RectTransform))
+	local var0_2 = arg0_2.rightPanel:Find("messageScroll/Scrollbar Vertical"):GetComponent(typeof(RectTransform))
 
 	arg0_2.messageScrollWidth = var0_2.rect.width
 	arg0_2.messageScrollHeight = var0_2.rect.height
 
-	arg0_2:findTF("panel/title", arg0_2.topicUI):GetComponent(typeof(Image)):SetNativeSize()
-	arg0_2:findTF("panel/title", arg0_2.backgroundUI):GetComponent(typeof(Image)):SetNativeSize()
-	onButton(arg0_2, arg0_2:findTF("closeBtn", arg0_2.rightPanel), function()
+	arg0_2.topicUI:Find("panel/title"):GetComponent(typeof(Image)):SetNativeSize()
+	arg0_2.backgroundUI:Find("panel/title"):GetComponent(typeof(Image)):SetNativeSize()
+	onButton(arg0_2, arg0_2.rightPanel:Find("closeBtn"), function()
 		arg0_2:closeView()
 	end, SFX_PANEL)
 	arg0_2:OverlayPanel(arg0_2._tf)
@@ -74,7 +74,7 @@ function var0_0.UpdateChatContent(arg0_6, arg1_6, arg2_6)
 	SetActive(arg0_6.rightPanel, true)
 	setText(arg0_6.characterName, arg0_6.currentChat.name)
 
-	local var0_6 = arg0_6:findTF("care", arg0_6.careBtn)
+	local var0_6 = arg0_6.careBtn:Find("care")
 
 	SetActive(var0_6, arg0_6.currentChat.care == 1)
 	onButton(arg0_6, arg0_6.careBtn, function()
@@ -83,9 +83,9 @@ function var0_0.UpdateChatContent(arg0_6, arg1_6, arg2_6)
 		arg0_6:emit(Dorm3dChatMediator.CHANGE_CARE, arg0_6.currentChat.characterId, var0_7)
 	end, SFX_PANEL)
 
-	local var1_6 = arg0_6:findTF("paintingMask", arg0_6.rightPanel)
-	local var2_6 = arg0_6:findTF("painting", var1_6)
-	local var3_6 = arg0_6:findTF("groupBackground", arg0_6.rightPanel)
+	local var1_6 = arg0_6.rightPanel:Find("paintingMask")
+	local var2_6 = var1_6:Find("painting")
+	local var3_6 = arg0_6.rightPanel:Find("groupBackground")
 
 	if not arg0_6.currentChat.groupBackground or arg0_6.currentChat.groupBackground == "" then
 		SetActive(var1_6, true)
@@ -126,7 +126,7 @@ function var0_0.UpdateChatContent(arg0_6, arg1_6, arg2_6)
 		setImageSprite(var3_6, LoadSprite("ui/" .. arg0_6.currentChat.groupBackground), true)
 	end
 
-	setActive(arg0_6:findTF("messageScroll", arg0_6.rightPanel), arg0_6.currentChat.currentTopic)
+	setActive(arg0_6.rightPanel:Find("messageScroll"), arg0_6.currentChat.currentTopic)
 	setActive(var1_6, arg0_6.currentChat.currentTopic)
 	setActive(arg0_6.noMessage, not arg0_6.currentChat.currentTopic)
 
@@ -178,12 +178,12 @@ function var0_0.UpdateMessageList(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 	end
 
 	if arg3_8 then
-		onButton(arg0_8, arg0_8:findTF("messageScroll", arg0_8.rightPanel), function()
+		onButton(arg0_8, arg0_8.rightPanel:Find("messageScroll"), function()
 			arg0_8:SpeedUpMessage()
 		end, SFX_PANEL)
 	end
 
-	local var2_8 = GetComponent(arg0_8:findTF("messageScroll", arg0_8.rightPanel), typeof(ScrollRect))
+	local var2_8 = GetComponent(arg0_8.rightPanel:Find("messageScroll"), typeof(ScrollRect))
 
 	local function var3_8(arg0_10)
 		local var0_10 = Vector2(0, arg0_10)
@@ -249,7 +249,7 @@ function var0_0.UpdateMessageList(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 							SetActive(arg2_11:Find("charaMessageCard/waiting"), true)
 							SetActive(arg2_11:Find("charaMessageCard/msgBox"), false)
 							Canvas.ForceUpdateCanvases()
-							LeanTween.value(go(arg0_8:findTF("messageScroll", arg0_8.rightPanel)), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
+							LeanTween.value(go(arg0_8.rightPanel:Find("messageScroll")), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
 							arg0_8:StartTimer(function()
 								SetActive(arg2_11:Find("charaMessageCard/waiting"), false)
 								SetActive(arg2_11:Find("charaMessageCard/msgBox"), true)
@@ -262,7 +262,7 @@ function var0_0.UpdateMessageList(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 								end
 
 								Canvas.ForceUpdateCanvases()
-								LeanTween.value(go(arg0_8:findTF("messageScroll", arg0_8.rightPanel)), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
+								LeanTween.value(go(arg0_8.rightPanel:Find("messageScroll")), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
 								arg0_8:SetEndAniEvent(arg2_11:Find("charaMessageCard/msgBox"), function()
 									if arg0_8.shouldShowOption and arg1_11 + 1 == #arg2_8 then
 										arg0_8:SetOptionPanelActive(true)
@@ -314,7 +314,7 @@ function var0_0.UpdateMessageList(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 							SetActive(arg2_11:Find("charaMessageCard/voiceBox"), false)
 							SetActive(arg2_11:Find("charaMessageCard/voiceMsgBox"), false)
 							Canvas.ForceUpdateCanvases()
-							LeanTween.value(go(arg0_8:findTF("messageScroll", arg0_8.rightPanel)), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
+							LeanTween.value(go(arg0_8.rightPanel:Find("messageScroll")), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
 							arg0_8:StartTimer(function()
 								SetActive(arg2_11:Find("charaMessageCard/waiting"), false)
 								SetActive(arg2_11:Find("charaMessageCard/voiceBox"), true)
@@ -329,7 +329,7 @@ function var0_0.UpdateMessageList(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 								end
 
 								Canvas.ForceUpdateCanvases()
-								LeanTween.value(go(arg0_8:findTF("messageScroll", arg0_8.rightPanel)), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
+								LeanTween.value(go(arg0_8.rightPanel:Find("messageScroll")), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
 								arg0_8:SetEndAniEvent(arg2_11:Find("charaMessageCard/voiceBox"), function()
 									if arg0_8.shouldShowOption and arg1_11 + 1 == #arg2_8 then
 										arg0_8:SetOptionPanelActive(true)
@@ -360,7 +360,7 @@ function var0_0.UpdateMessageList(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 							SetActive(arg2_11:Find("charaMessageCard/waiting"), true)
 							SetActive(arg2_11:Find("charaMessageCard/redPacket"), false)
 							Canvas.ForceUpdateCanvases()
-							LeanTween.value(go(arg0_8:findTF("messageScroll", arg0_8.rightPanel)), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
+							LeanTween.value(go(arg0_8.rightPanel:Find("messageScroll")), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
 							arg0_8:StartTimer(function()
 								SetActive(arg2_11:Find("charaMessageCard/waiting"), false)
 								SetActive(arg2_11:Find("charaMessageCard/redPacket"), true)
@@ -373,7 +373,7 @@ function var0_0.UpdateMessageList(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 								end
 
 								Canvas.ForceUpdateCanvases()
-								LeanTween.value(go(arg0_8:findTF("messageScroll", arg0_8.rightPanel)), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
+								LeanTween.value(go(arg0_8.rightPanel:Find("messageScroll")), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
 								arg0_8:SetEndAniEvent(arg2_11:Find("charaMessageCard/redPacket"), function()
 									if arg0_8.shouldShowOption and arg1_11 + 1 == #arg2_8 then
 										arg0_8:SetOptionPanelActive(true)
@@ -397,7 +397,7 @@ function var0_0.UpdateMessageList(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 							SetActive(arg2_11:Find("charaMessageCard/waiting"), true)
 							SetActive(arg2_11:Find("charaMessageCard/emoji"), false)
 							Canvas.ForceUpdateCanvases()
-							LeanTween.value(go(arg0_8:findTF("messageScroll", arg0_8.rightPanel)), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
+							LeanTween.value(go(arg0_8.rightPanel:Find("messageScroll")), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
 							arg0_8:StartTimer(function()
 								SetActive(arg2_11:Find("charaMessageCard/waiting"), false)
 								SetActive(arg2_11:Find("charaMessageCard/emoji"), true)
@@ -410,7 +410,7 @@ function var0_0.UpdateMessageList(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 								end
 
 								Canvas.ForceUpdateCanvases()
-								LeanTween.value(go(arg0_8:findTF("messageScroll", arg0_8.rightPanel)), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
+								LeanTween.value(go(arg0_8.rightPanel:Find("messageScroll")), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
 								arg0_8:SetEndAniEvent(arg2_11:Find("charaMessageCard/emoji"), function()
 									if arg0_8.shouldShowOption and arg1_11 + 1 == #arg2_8 then
 										arg0_8:SetOptionPanelActive(true)
@@ -447,7 +447,7 @@ function var0_0.UpdateMessageList(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 							end
 
 							Canvas.ForceUpdateCanvases()
-							LeanTween.value(go(arg0_8:findTF("messageScroll", arg0_8.rightPanel)), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
+							LeanTween.value(go(arg0_8.rightPanel:Find("messageScroll")), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
 							arg0_8:SetEndAniEvent(arg2_11:Find("charaMessageCard/systemTip"), function()
 								if arg0_8.shouldShowOption and arg1_11 + 1 == #arg2_8 then
 									arg0_8:SetOptionPanelActive(true)
@@ -470,7 +470,7 @@ function var0_0.UpdateMessageList(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 							SetActive(arg2_11:Find("charaMessageCard/waiting"), true)
 							SetActive(arg2_11:Find("charaMessageCard/picture"), false)
 							Canvas.ForceUpdateCanvases()
-							LeanTween.value(go(arg0_8:findTF("messageScroll", arg0_8.rightPanel)), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
+							LeanTween.value(go(arg0_8.rightPanel:Find("messageScroll")), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
 							arg0_8:StartTimer(function()
 								SetActive(arg2_11:Find("charaMessageCard/waiting"), false)
 								SetActive(arg2_11:Find("charaMessageCard/picture"), true)
@@ -483,7 +483,7 @@ function var0_0.UpdateMessageList(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 								end
 
 								Canvas.ForceUpdateCanvases()
-								LeanTween.value(go(arg0_8:findTF("messageScroll", arg0_8.rightPanel)), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
+								LeanTween.value(go(arg0_8.rightPanel:Find("messageScroll")), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
 								arg0_8:SetEndAniEvent(arg2_11:Find("charaMessageCard/picture"), function()
 									if arg0_8.shouldShowOption and arg1_11 + 1 == #arg2_8 then
 										arg0_8:SetOptionPanelActive(true)
@@ -542,7 +542,7 @@ function var0_0.UpdateMessageList(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 							end
 
 							Canvas.ForceUpdateCanvases()
-							LeanTween.value(go(arg0_8:findTF("messageScroll", arg0_8.rightPanel)), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
+							LeanTween.value(go(arg0_8.rightPanel:Find("messageScroll")), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
 						end, (#var1_8 - table.indexof(var1_8, arg1_11 + 1)) * var6_8)
 					else
 						if var0_11.type == 1 then
@@ -585,9 +585,9 @@ function var0_0.UpdateMessageList(arg0_8, arg1_8, arg2_8, arg3_8, arg4_8)
 
 	if arg3_8 then
 		Canvas.ForceUpdateCanvases()
-		LeanTween.value(go(arg0_8:findTF("messageScroll", arg0_8.rightPanel)), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
+		LeanTween.value(go(arg0_8.rightPanel:Find("messageScroll")), var2_8.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var3_8)):setEase(LeanTweenType.easeInOutCubic)
 	else
-		scrollToBottom(arg0_8:findTF("messageScroll", arg0_8.rightPanel))
+		scrollToBottom(arg0_8.rightPanel:Find("messageScroll"))
 	end
 end
 
@@ -674,14 +674,14 @@ end
 function var0_0.SetOptionPanelActive(arg0_44, arg1_44)
 	SetActive(arg0_44.optionPanel, arg1_44)
 
-	local var0_44 = arg0_44:findTF("messageScroll/Viewport/Content", arg0_44.rightPanel):GetComponent(typeof(VerticalLayoutGroup))
+	local var0_44 = arg0_44.rightPanel:Find("messageScroll/Viewport/Content"):GetComponent(typeof(VerticalLayoutGroup))
 	local var1_44 = UnityEngine.RectOffset.New()
 
 	var1_44.left = 0
 	var1_44.right = 0
 	var1_44.top = 0
 
-	local var2_44 = arg0_44:findTF("messageScroll/Scrollbar Vertical", arg0_44.rightPanel):GetComponent(typeof(RectTransform))
+	local var2_44 = arg0_44.rightPanel:Find("messageScroll/Scrollbar Vertical"):GetComponent(typeof(RectTransform))
 
 	if arg1_44 then
 		var1_44.bottom = 42 + 88 * arg0_44.optionCount
@@ -693,18 +693,18 @@ function var0_0.SetOptionPanelActive(arg0_44, arg1_44)
 
 	var0_44.padding = var1_44
 
-	scrollToBottom(arg0_44:findTF("messageScroll", arg0_44.rightPanel))
+	scrollToBottom(arg0_44.rightPanel:Find("messageScroll"))
 end
 
 function var0_0.SetTopicPanel(arg0_45, arg1_45)
-	SetActive(arg0_45:findTF("tip", arg0_45.topicBtn), arg1_45:GetCharacterEndFlagExceptCurrent() == 0)
+	SetActive(arg0_45.topicBtn:Find("tip"), arg1_45:GetCharacterEndFlagExceptCurrent() == 0)
 	onButton(arg0_45, arg0_45.topicBtn, function()
 		SetActive(arg0_45.topicUI, true)
 		pg.UIMgr.GetInstance():BlurPanel(arg0_45.topicUI)
 
 		arg0_45.currentTopic = nil
 
-		local var0_46 = UIItemList.New(arg0_45:findTF("panel/topicScroll/Viewport/Content", arg0_45.topicUI), arg0_45:findTF("panel/topicScroll/Viewport/Content/topic", arg0_45.topicUI))
+		local var0_46 = UIItemList.New(arg0_45.topicUI:Find("panel/topicScroll/Viewport/Content"), arg0_45.topicUI:Find("panel/topicScroll/Viewport/Content/topic"))
 
 		var0_46:make(function(arg0_47, arg1_47, arg2_47)
 			if arg0_47 == UIItemList.EventUpdate then
@@ -730,7 +730,7 @@ function var0_0.SetTopicPanel(arg0_45, arg1_45)
 
 						for iter0_48 = 1, #arg1_45.topics do
 							if iter0_48 ~= arg1_47 + 1 then
-								SetActive(arg0_45:findTF("selectedFrame", arg0_45:findTF("panel/topicScroll/Viewport/Content", arg0_45.topicUI):GetChild(iter0_48 - 1)), false)
+								SetActive(arg0_45.topicUI:Find("panel/topicScroll/Viewport/Content"):GetChild(iter0_48 - 1):Find("selectedFrame"), false)
 							end
 						end
 
@@ -745,13 +745,13 @@ function var0_0.SetTopicPanel(arg0_45, arg1_45)
 		end)
 		var0_46:align(#arg1_45.topics)
 	end, SFX_PANEL)
-	onButton(arg0_45, arg0_45:findTF("bg", arg0_45.topicUI), function()
+	onButton(arg0_45, arg0_45.topicUI:Find("bg"), function()
 		arg0_45:CloseTopicPanel()
 	end, SFX_PANEL)
-	onButton(arg0_45, arg0_45:findTF("panel/bottom/close", arg0_45.topicUI), function()
+	onButton(arg0_45, arg0_45.topicUI:Find("panel/bottom/close"), function()
 		arg0_45:CloseTopicPanel()
 	end, SFX_PANEL)
-	onButton(arg0_45, arg0_45:findTF("panel/bottom/ok", arg0_45.topicUI), function()
+	onButton(arg0_45, arg0_45.topicUI:Find("panel/bottom/ok"), function()
 		arg0_45:emit(Dorm3dChatMediator.SET_CURRENT_TOPIC, arg0_45.currentTopic.characterId, arg0_45.currentTopic.topicId)
 		arg0_45:CloseTopicPanel()
 
@@ -763,7 +763,7 @@ function var0_0.SetTopicPanel(arg0_45, arg1_45)
 end
 
 function var0_0.CloseTopicPanel(arg0_53)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_53.topicUI, arg0_53:findTF("subPages"))
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_53.topicUI, arg0_53._tf:Find("subPages"))
 	SetActive(arg0_53.topicUI, false)
 end
 
@@ -777,7 +777,7 @@ function var0_0.SetBackgroundPanel(arg0_54, arg1_54)
 		arg0_54.currentBgId = nil
 
 		local var0_55 = arg1_54:GetSkins()
-		local var1_55 = UIItemList.New(arg0_54:findTF("panel/backgroundScroll/Viewport/Content", arg0_54.backgroundUI), arg0_54:findTF("panel/backgroundScroll/Viewport/Content/background", arg0_54.backgroundUI))
+		local var1_55 = UIItemList.New(arg0_54.backgroundUI:Find("panel/backgroundScroll/Viewport/Content"), arg0_54.backgroundUI:Find("panel/backgroundScroll/Viewport/Content/background"))
 
 		var1_55:make(function(arg0_56, arg1_56, arg2_56)
 			if arg0_56 == UIItemList.EventUpdate then
@@ -809,9 +809,9 @@ function var0_0.SetBackgroundPanel(arg0_54, arg1_54)
 
 						for iter0_57 = 1, #var0_55 do
 							if iter0_57 ~= arg1_56 + 1 then
-								local var0_57 = arg0_54:findTF("panel/backgroundScroll/Viewport/Content", arg0_54.backgroundUI):GetChild(iter0_57 - 1)
+								local var0_57 = arg0_54.backgroundUI:Find("panel/backgroundScroll/Viewport/Content"):GetChild(iter0_57 - 1)
 
-								SetActive(arg0_54:findTF("selectedFrame", var0_57), false)
+								SetActive(var0_57:Find("selectedFrame"), false)
 							end
 						end
 
@@ -824,20 +824,20 @@ function var0_0.SetBackgroundPanel(arg0_54, arg1_54)
 		end)
 		var1_55:align(#var0_55)
 	end, SFX_PANEL)
-	onButton(arg0_54, arg0_54:findTF("bg", arg0_54.backgroundUI), function()
+	onButton(arg0_54, arg0_54.backgroundUI:Find("bg"), function()
 		arg0_54:CloseBackgroundPanel()
 	end, SFX_PANEL)
-	onButton(arg0_54, arg0_54:findTF("panel/bottom/close", arg0_54.backgroundUI), function()
+	onButton(arg0_54, arg0_54.backgroundUI:Find("panel/bottom/close"), function()
 		arg0_54:CloseBackgroundPanel()
 	end, SFX_PANEL)
-	onButton(arg0_54, arg0_54:findTF("panel/bottom/ok", arg0_54.backgroundUI), function()
+	onButton(arg0_54, arg0_54.backgroundUI:Find("panel/bottom/ok"), function()
 		arg0_54:emit(Dorm3dChatMediator.SET_CURRENT_BACKGROUND, arg1_54.characterId, arg0_54.currentBgId)
 		arg0_54:CloseBackgroundPanel()
 	end, SFX_PANEL)
 end
 
 function var0_0.CloseBackgroundPanel(arg0_61)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_61.backgroundUI, arg0_61:findTF("subPages"))
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_61.backgroundUI, arg0_61._tf:Find("subPages"))
 	SetActive(arg0_61.backgroundUI, false)
 end
 
@@ -845,21 +845,21 @@ function var0_0.SetRedPacketPanel(arg0_62, arg1_62, arg2_62, arg3_62, arg4_62, a
 	onButton(arg0_62, arg1_62, function()
 		SetActive(arg0_62.redPacketUI, true)
 		pg.UIMgr.GetInstance():BlurPanel(arg0_62.redPacketUI)
-		setImageSprite(arg0_62:findTF("panel/charaBg/chara", arg0_62.redPacketUI), LoadSprite("qicon/" .. arg4_62), false)
+		setImageSprite(arg0_62.redPacketUI:Find("panel/charaBg/chara"), LoadSprite("qicon/" .. arg4_62), false)
 
 		if not arg3_62 then
-			SetActive(arg0_62:findTF("panel/get", arg0_62.redPacketUI), true)
-			SetActive(arg0_62:findTF("panel/got", arg0_62.redPacketUI), false)
-			SetActive(arg0_62:findTF("panel/detail", arg0_62.redPacketUI), false)
-			setText(arg0_62:findTF("panel/get/titleBg/title", arg0_62.redPacketUI), arg2_62.desc)
-			onButton(arg0_62, arg0_62:findTF("panel/get/getBtn", arg0_62.redPacketUI), function()
+			SetActive(arg0_62.redPacketUI:Find("panel/get"), true)
+			SetActive(arg0_62.redPacketUI:Find("panel/got"), false)
+			SetActive(arg0_62.redPacketUI:Find("panel/detail"), false)
+			setText(arg0_62.redPacketUI:Find("panel/get/titleBg/title"), arg2_62.desc)
+			onButton(arg0_62, arg0_62.redPacketUI:Find("panel/get/getBtn"), function()
 				arg0_62:emit(Dorm3dChatMediator.GET_REDPACKET, arg5_62, arg6_62, arg7_62, arg2_62.id)
 			end, SFX_PANEL)
 		else
 			arg0_62:UpdateRedPacketUI(arg2_62.id)
 		end
 	end, SFX_PANEL)
-	onButton(arg0_62, arg0_62:findTF("bg", arg0_62.redPacketUI), function()
+	onButton(arg0_62, arg0_62.redPacketUI:Find("bg"), function()
 		arg0_62:CloseRedPacketPanel()
 
 		if arg0_62.canFresh then
@@ -879,27 +879,27 @@ end
 function var0_0.UpdateRedPacketUI(arg0_66, arg1_66)
 	local var0_66 = var2_0[arg1_66]
 
-	SetActive(arg0_66:findTF("panel/get", arg0_66.redPacketUI), false)
-	SetActive(arg0_66:findTF("panel/got", arg0_66.redPacketUI), true)
-	SetActive(arg0_66:findTF("panel/detail", arg0_66.redPacketUI), false)
+	SetActive(arg0_66.redPacketUI:Find("panel/get"), false)
+	SetActive(arg0_66.redPacketUI:Find("panel/got"), true)
+	SetActive(arg0_66.redPacketUI:Find("panel/detail"), false)
 
 	local var1_66 = Drop.Create(var0_66.content)
 
 	var1_66.count = 0
 
-	updateDrop(arg0_66:findTF("panel/got/item", arg0_66.redPacketUI), var1_66)
-	onButton(arg0_66, arg0_66:findTF("panel/got/item", arg0_66.redPacketUI), function()
+	updateDrop(arg0_66.redPacketUI:Find("panel/got/item"), var1_66)
+	onButton(arg0_66, arg0_66.redPacketUI:Find("panel/got/item"), function()
 		arg0_66:emit(BaseUI.ON_DROP, var1_66)
 	end, SFX_PANEL)
 
-	arg0_66:findTF("panel/got/item/icon_bg", arg0_66.redPacketUI):GetComponent(typeof(Image)).enabled = false
-	arg0_66:findTF("panel/got/item/icon_bg/frame", arg0_66.redPacketUI):GetComponent(typeof(Image)).enabled = false
+	arg0_66.redPacketUI:Find("panel/got/item/icon_bg"):GetComponent(typeof(Image)).enabled = false
+	arg0_66.redPacketUI:Find("panel/got/item/icon_bg/frame"):GetComponent(typeof(Image)).enabled = false
 
-	setText(arg0_66:findTF("panel/got/awardCount", arg0_66.redPacketUI), var0_66.content[3])
+	setText(arg0_66.redPacketUI:Find("panel/got/awardCount"), var0_66.content[3])
 end
 
 function var0_0.CloseRedPacketPanel(arg0_68)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_68.redPacketUI, arg0_68:findTF("subPages"))
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_68.redPacketUI, arg0_68._tf:Find("subPages"))
 	SetActive(arg0_68.redPacketUI, false)
 end
 
@@ -907,18 +907,18 @@ function var0_0.SetPicturePanel(arg0_69, arg1_69, arg2_69)
 	onButton(arg0_69, arg1_69, function()
 		setActive(arg0_69.pictureUI, true)
 		pg.UIMgr.GetInstance():BlurPanel(arg0_69.pictureUI)
-		setImageSprite(arg0_69:findTF("picture", arg0_69.pictureUI), LoadSprite("dorm3dprivatechat/" .. arg2_69), true)
+		setImageSprite(arg0_69.pictureUI:Find("picture"), LoadSprite("dorm3dprivatechat/" .. arg2_69), true)
 	end, SFX_PANEL)
-	onButton(arg0_69, arg0_69:findTF("bg", arg0_69.pictureUI), function()
+	onButton(arg0_69, arg0_69.pictureUI:Find("bg"), function()
 		arg0_69:ClosePicturePanel()
 	end, SFX_PANEL)
-	onButton(arg0_69, arg0_69:findTF("closeBtn", arg0_69.pictureUI), function()
+	onButton(arg0_69, arg0_69.pictureUI:Find("closeBtn"), function()
 		arg0_69:ClosePicturePanel()
 	end, SFX_PANEL)
 end
 
 function var0_0.ClosePicturePanel(arg0_73)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_73.pictureUI, arg0_73:findTF("subPages"))
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_73.pictureUI, arg0_73._tf:Find("subPages"))
 	SetActive(arg0_73.pictureUI, false)
 end
 
@@ -929,7 +929,7 @@ function var0_0.SetData(arg0_74)
 end
 
 function var0_0.willExit(arg0_75)
-	local var0_75 = arg0_75:findTF("paintingMask/painting", arg0_75.rightPanel)
+	local var0_75 = arg0_75.rightPanel:Find("paintingMask/painting")
 
 	if arg0_75.paintingName then
 		retPaintingPrefab(var0_75, arg0_75.paintingName)

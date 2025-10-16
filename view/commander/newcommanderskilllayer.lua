@@ -9,7 +9,7 @@ function var0_0.didEnter(arg0_2)
 
 	arg0_2.commonFlag = defaultValue(arg0_2.contextData.commonFlag, true)
 
-	local var0_2 = arg0_2:findTF("panel/bg/tags")
+	local var0_2 = arg0_2._tf:Find("panel/bg/tags")
 
 	onToggle(arg0_2, var0_2, function(arg0_3)
 		arg0_2.commonFlag = arg0_3

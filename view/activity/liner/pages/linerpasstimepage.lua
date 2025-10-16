@@ -8,16 +8,16 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.rotateTF = arg0_2:findTF("progress/Image")
-	arg0_2.dayTF = arg0_2:findTF("time/day")
+	arg0_2.rotateTF = arg0_2._tf:Find("progress/Image")
+	arg0_2.dayTF = arg0_2._tf:Find("time/day")
 
 	setText(arg0_2.dayTF, "DAY")
 
-	arg0_2.beforeDay = arg0_2:findTF("time/day_1")
-	arg0_2.afterDay = arg0_2:findTF("time/day_2")
-	arg0_2.pointTF = arg0_2:findTF("time/point")
-	arg0_2.pointAfterTF = arg0_2:findTF("time/point_after")
-	arg0_2.timeAnim = arg0_2:findTF("time"):GetComponent(typeof(Animation))
+	arg0_2.beforeDay = arg0_2._tf:Find("time/day_1")
+	arg0_2.afterDay = arg0_2._tf:Find("time/day_2")
+	arg0_2.pointTF = arg0_2._tf:Find("time/point")
+	arg0_2.pointAfterTF = arg0_2._tf:Find("time/point_after")
+	arg0_2.timeAnim = arg0_2._tf:Find("time"):GetComponent(typeof(Animation))
 	arg0_2.anim = arg0_2._tf:GetComponent(typeof(Animation))
 	arg0_2.animEvent = arg0_2._tf:GetComponent(typeof(DftAniEvent))
 

@@ -11,13 +11,13 @@ function var0_0.OnLoaded(arg0_2)
 		arg0_2:Selected(arg1_3)
 	end)
 
-	arg0_2._bg = arg0_2:findTF("frame")
-	arg0_2.scrollRect = arg0_2:findTF("frame/frame/scrollrect"):GetComponent("LScrollRect")
-	arg0_2.scrollRectTF = arg0_2:findTF("frame/frame/scrollrect")
-	arg0_2.emptyTF = arg0_2:findTF("frame/frame/empty")
-	arg0_2.arr = arg0_2:findTF("frame/frame/arr")
+	arg0_2._bg = arg0_2._tf:Find("frame")
+	arg0_2.scrollRect = arg0_2._tf:Find("frame/frame/scrollrect"):GetComponent("LScrollRect")
+	arg0_2.scrollRectTF = arg0_2._tf:Find("frame/frame/scrollrect")
+	arg0_2.emptyTF = arg0_2._tf:Find("frame/frame/empty")
+	arg0_2.arr = arg0_2._tf:Find("frame/frame/arr")
 
-	setText(arg0_2:findTF("frame/title/Text"), i18n("courtyard_label_putlist_title"))
+	setText(arg0_2._tf:Find("frame/title/Text"), i18n("courtyard_label_putlist_title"))
 end
 
 function var0_0.OnInit(arg0_4)

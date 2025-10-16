@@ -8,31 +8,31 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.paintingTr = arg0_2:findTF("paint")
-	arg0_2.live2dContainer = arg0_2:findTF("paint/live2d")
-	arg0_2.mainImg = arg0_2:findTF("main"):GetComponent(typeof(UnityEngine.UI.Graphic))
-	arg0_2.backBtn = arg0_2:findTF("main/left/back")
-	arg0_2.nameTxt = arg0_2:findTF("main/left/name_bg/skin_name"):GetComponent(typeof(Text))
-	arg0_2.shipnameTxt = arg0_2:findTF("main/left/name_bg/name"):GetComponent(typeof(Text))
-	arg0_2.charParent = arg0_2:findTF("main/right/char")
-	arg0_2.viewBtn = arg0_2:findTF("main/right/view_btn")
-	arg0_2.changeBtn = arg0_2:findTF("main/right/change_btn")
+	arg0_2.paintingTr = arg0_2._tf:Find("paint")
+	arg0_2.live2dContainer = arg0_2._tf:Find("paint/live2d")
+	arg0_2.mainImg = arg0_2._tf:Find("main"):GetComponent(typeof(UnityEngine.UI.Graphic))
+	arg0_2.backBtn = arg0_2._tf:Find("main/left/back")
+	arg0_2.nameTxt = arg0_2._tf:Find("main/left/name_bg/skin_name"):GetComponent(typeof(Text))
+	arg0_2.shipnameTxt = arg0_2._tf:Find("main/left/name_bg/name"):GetComponent(typeof(Text))
+	arg0_2.charParent = arg0_2._tf:Find("main/right/char")
+	arg0_2.viewBtn = arg0_2._tf:Find("main/right/view_btn")
+	arg0_2.changeBtn = arg0_2._tf:Find("main/right/change_btn")
 	arg0_2.changeBtnDis = arg0_2.changeBtn:Find("dis")
 	arg0_2.changeBtnEn = arg0_2.changeBtn:Find("en")
-	arg0_2.obtainBtn = arg0_2:findTF("main/right/obtain_btn")
+	arg0_2.obtainBtn = arg0_2._tf:Find("main/right/obtain_btn")
 	arg0_2.bgFlag = true
 	arg0_2.l2dFlag = false
 
-	local var0_2 = arg0_2:findTF("main/left/tpl")
+	local var0_2 = arg0_2._tf:Find("main/left/tpl")
 
 	arg0_2.btns = {
 		ShipAtlasBgBtn.New(var0_2, PlayerVitaeBaseBtn.HRZ_TYPE, arg0_2.event, arg0_2.bgFlag),
 		ShipAtlasLive2dBtn.New(var0_2, PlayerVitaeBaseBtn.HRZ_TYPE, arg0_2.event, arg0_2.l2dFlag)
 	}
-	arg0_2.changeSkinUI = arg0_2:findTF("main/bottom/changeSkin")
+	arg0_2.changeSkinUI = arg0_2._tf:Find("main/bottom/changeSkin")
 	arg0_2.changeSkinToggle = ChangeSkinToggle.New(findTF(arg0_2.changeSkinUI, "ChangeSkinToggleUI"))
-	arg0_2.bgView = SkinAtlasBgView.New(arg0_2:findTF("bg/bg"))
-	arg0_2.paintingView = SkinAtlasPaintingView.New(arg0_2:findTF("paint"))
+	arg0_2.bgView = SkinAtlasBgView.New(arg0_2._tf:Find("bg/bg"))
+	arg0_2.paintingView = SkinAtlasPaintingView.New(arg0_2._tf:Find("paint"))
 	arg0_2.selectShipPage = ChangeShipSkinPage.New(arg0_2._parentTf, arg0_2.event)
 end
 
@@ -107,7 +107,7 @@ function var0_0.OnInit(arg0_3)
 
 		arg0_3:UpdatePainting(arg0_3.ship)
 	end)
-	addSlip(SLIP_TYPE_HRZ, arg0_3:findTF("main"), function()
+	addSlip(SLIP_TYPE_HRZ, arg0_3._tf:Find("main"), function()
 		arg0_3:OnPrev()
 	end, function()
 		arg0_3:OnNext()

@@ -1,10 +1,10 @@
 local var0_0 = class("UrExchangeTaskPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.uilist = UIItemList.New(arg0_1:findTF("AD/task_list/content"), arg0_1:findTF("AD/task_list/content/tpl"))
-	arg0_1.getBtn = arg0_1:findTF("AD/get_btn")
-	arg0_1.gotBtn = arg0_1:findTF("AD/got_btn")
-	arg0_1.unfinishBtn = arg0_1:findTF("AD/unfinish_btn")
+	arg0_1.uilist = UIItemList.New(arg0_1._tf:Find("AD/task_list/content"), arg0_1._tf:Find("AD/task_list/content/tpl"))
+	arg0_1.getBtn = arg0_1._tf:Find("AD/get_btn")
+	arg0_1.gotBtn = arg0_1._tf:Find("AD/got_btn")
+	arg0_1.unfinishBtn = arg0_1._tf:Find("AD/unfinish_btn")
 end
 
 function var0_0.OnDataSetting(arg0_2)

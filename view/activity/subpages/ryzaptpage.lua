@@ -4,12 +4,12 @@ local var1_0 = 9
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.kalaSpine = arg0_1:findTF("shadow/kala", arg0_1.bg)
+	arg0_1.kalaSpine = arg0_1.bg:Find("shadow/kala")
 	arg0_1.kalaAnim = arg0_1.kalaSpine:GetComponent("SpineAnimUI")
-	arg0_1.puniSpine = arg0_1:findTF("puni", arg0_1.bg)
+	arg0_1.puniSpine = arg0_1.bg:Find("puni")
 	arg0_1.puniAnim = arg0_1.puniSpine:GetComponent("SpineAnimUI")
-	arg0_1.feedBtn = arg0_1:findTF("feed_btn", arg0_1.bg)
-	arg0_1.clickMask = arg0_1:findTF("click_mask", arg0_1.bg)
+	arg0_1.feedBtn = arg0_1.bg:Find("feed_btn")
+	arg0_1.clickMask = arg0_1.bg:Find("click_mask")
 end
 
 function var0_0.OnFirstFlush(arg0_2)

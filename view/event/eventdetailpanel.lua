@@ -8,7 +8,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.go = arg1_1
 	arg0_1.tr = arg1_1.transform
 	arg0_1.dispatch = arg2_1
-	arg0_1.btn = arg0_1:findTF("btn").gameObject
+	arg0_1.btn = arg0_1.tr:Find("btn").gameObject
 
 	setText(findTF(arg0_1.tr, "btn_recommend/text"), pg.gametip.event_ui_recommend.tip)
 	setText(findTF(arg0_1.tr, "btn_recommend_disable/text"), pg.gametip.event_ui_recommend.tip)
@@ -22,13 +22,13 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.condition1 = findTF(arg0_1.conditions, "condition_1/mask/Text")
 	arg0_1.condition2 = findTF(arg0_1.conditions, "condition_2/mask/Text")
 	arg0_1.condition3 = findTF(arg0_1.conditions, "condition_3/mask/Text")
-	arg0_1.consume = arg0_1:findTF("consume/Text")
-	arg0_1.leftShips = arg0_1:findTF("frame/ship_contain_left")
-	arg0_1.rightShips = arg0_1:findTF("frame/ship_contain_right")
-	arg0_1.disabeleBtn = arg0_1:findTF("btn_disable").gameObject
-	arg0_1.recommentBtn = arg0_1:findTF("btn_recommend")
-	arg0_1.recommentDisable = arg0_1:findTF("btn_recommend_disable")
-	arg0_1.usePrevFormationBtn = arg0_1:findTF("use_prev_formation")
+	arg0_1.consume = arg0_1.tr:Find("consume/Text")
+	arg0_1.leftShips = arg0_1.tr:Find("frame/ship_contain_left")
+	arg0_1.rightShips = arg0_1.tr:Find("frame/ship_contain_right")
+	arg0_1.disabeleBtn = arg0_1.tr:Find("btn_disable").gameObject
+	arg0_1.recommentBtn = arg0_1.tr:Find("btn_recommend")
+	arg0_1.recommentDisable = arg0_1.tr:Find("btn_recommend_disable")
+	arg0_1.usePrevFormationBtn = arg0_1.tr:Find("use_prev_formation")
 	arg0_1.shipItems = {}
 
 	eachChild(arg0_1.leftShips, function(arg0_2)
@@ -216,10 +216,6 @@ function var0_0.onFuncClick(arg0_18)
 	elseif var0_18 == EventInfo.StateFinish then
 		arg0_18.dispatch(EventConst.EVENT_FINISH, arg0_18.event)
 	end
-end
-
-function var0_0.findTF(arg0_19, arg1_19)
-	return findTF(arg0_19.tr, arg1_19)
 end
 
 return var0_0

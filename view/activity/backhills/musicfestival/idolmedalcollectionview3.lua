@@ -18,8 +18,8 @@ end
 function var0_0.didEnter(arg0_4)
 	local var0_4 = math.random()
 
-	setActive(arg0_4:findTF("1", arg0_4.bg), var0_4 >= 0.5)
-	setActive(arg0_4:findTF("2", arg0_4.bg), var0_4 < 0.5)
+	setActive(arg0_4.bg:Find("1"), var0_4 >= 0.5)
+	setActive(arg0_4.bg:Find("2"), var0_4 < 0.5)
 	var0_0.super.didEnter(arg0_4)
 	onButton(arg0_4, arg0_4.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({

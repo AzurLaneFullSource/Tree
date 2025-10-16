@@ -5,9 +5,9 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.requestPanel = arg0_2:findTF("request_panel")
-	arg0_2.requestTopTF = arg0_2:findTF("request_view_top")
-	arg0_2.refuseAllBtn = arg0_2:findTF("refuse_all_btn", arg0_2.requestTopTF)
+	arg0_2.requestPanel = arg0_2._tf:Find("request_panel")
+	arg0_2.requestTopTF = arg0_2._tf:Find("request_view_top")
+	arg0_2.refuseAllBtn = arg0_2.requestTopTF:Find("refuse_all_btn")
 end
 
 function var0_0.OnInit(arg0_3)

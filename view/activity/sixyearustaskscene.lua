@@ -16,11 +16,11 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.bg = arg0_2:findTF("bg")
-	arg0_2.scrollPanel = arg0_2:findTF("window/panel")
-	arg0_2.UIlist = UIItemList.New(arg0_2:findTF("window/panel/list"), arg0_2:findTF("window/panel/list/Tasktpl"))
-	arg0_2.closeBtn = arg0_2:findTF("window/top/btnBack")
-	arg0_2.getBtn = arg0_2:findTF("window/btn_get")
+	arg0_2.bg = arg0_2._tf:Find("bg")
+	arg0_2.scrollPanel = arg0_2._tf:Find("window/panel")
+	arg0_2.UIlist = UIItemList.New(arg0_2._tf:Find("window/panel/list"), arg0_2._tf:Find("window/panel/list/Tasktpl"))
+	arg0_2.closeBtn = arg0_2._tf:Find("window/top/btnBack")
+	arg0_2.getBtn = arg0_2._tf:Find("window/btn_get")
 end
 
 function var0_0.didEnter(arg0_3)
@@ -244,12 +244,12 @@ function var0_0.updateAwards(arg0_18, arg1_18, arg2_18, arg3_18)
 				count = var4_18[3]
 			}
 
-			updateDrop(arg0_18:findTF("mask", var2_18), var5_18)
+			updateDrop(var2_18:Find("mask"), var5_18)
 
 			if var5_18.type == DROP_TYPE_EQUIPMENT_SKIN then
-				setActive(arg0_18:findTF("specialFrame", var2_18), true)
+				setActive(var2_18:Find("specialFrame"), true)
 			else
-				setActive(arg0_18:findTF("specialFrame", var2_18), false)
+				setActive(var2_18:Find("specialFrame"), false)
 			end
 
 			onButton(arg0_18, var2_18, function()

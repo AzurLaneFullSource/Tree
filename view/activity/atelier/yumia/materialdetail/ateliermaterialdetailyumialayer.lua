@@ -9,15 +9,15 @@ function var0_0.init(arg0_2)
 end
 
 function var0_0.InitCustom(arg0_3)
-	setText(arg0_3:findTF("Window/Text"), i18n("yumia_atelier_tip13"))
-	setText(arg0_3:findTF("Window/titleBg/Name"), i18n("yumia_atelier_tip14"))
+	setText(arg0_3._tf:Find("Window/Text"), i18n("yumia_atelier_tip13"))
+	setText(arg0_3._tf:Find("Window/titleBg/Name"), i18n("yumia_atelier_tip14"))
 end
 
 function var0_0.didEnter(arg0_4)
-	onButton(arg0_4, arg0_4:findTF("BG"), function()
+	onButton(arg0_4, arg0_4._tf:Find("BG"), function()
 		arg0_4:PlayCloseAni()
 	end, SFX_CANCEL)
-	onButton(arg0_4, arg0_4:findTF("Window/titleBg/closeBtn"), function()
+	onButton(arg0_4, arg0_4._tf:Find("Window/titleBg/closeBtn"), function()
 		arg0_4:PlayCloseAni()
 	end, SFX_CANCEL)
 	arg0_4:UpdateItemDetail()
@@ -52,14 +52,14 @@ end
 function var0_0.UpdateItemDetail(arg0_10)
 	local var0_10 = arg0_10.contextData.material
 
-	arg0_10:UpdateRyzaItem(arg0_10:findTF("Window/AtelierCommonYumiaItem"), var0_10)
-	setText(arg0_10:findTF("Window/nameBg/Name"), var0_10:GetName())
-	setText(arg0_10:findTF("Window/Description/Text"), var0_10:GetDesc())
+	arg0_10:UpdateRyzaItem(arg0_10._tf:Find("Window/AtelierCommonYumiaItem"), var0_10)
+	setText(arg0_10._tf:Find("Window/nameBg/Name"), var0_10:GetName())
+	setText(arg0_10._tf:Find("Window/Description/Text"), var0_10:GetDesc())
 
 	local var1_10 = var0_10:GetSource()
 
-	setScrollText(arg0_10:findTF("Window/sourceBg/mask/sourceText"), var1_10[1])
-	onButton(arg0_10, arg0_10:findTF("Window/Go"), function()
+	setScrollText(arg0_10._tf:Find("Window/sourceBg/mask/sourceText"), var1_10[1])
+	onButton(arg0_10, arg0_10._tf:Find("Window/Go"), function()
 		if var1_10.chapterid then
 			local var0_11 = getProxy(ChapterProxy):getChapterById(var1_10.chapterid)
 			local var1_11 = getProxy(ChapterProxy):getMapById(var0_11:getConfig("map"))

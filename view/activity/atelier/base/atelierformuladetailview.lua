@@ -12,7 +12,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1:Init()
 	arg0_1:InitStr()
 
-	arg0_1.layerFormulaDescriptionPanel = arg0_1:findTF("Overlay/Description")
+	arg0_1.layerFormulaDescriptionPanel = arg0_1._tf:Find("Overlay/Description")
 
 	arg0_1:InitCustom()
 end
@@ -22,7 +22,7 @@ function var0_0.InitCustom(arg0_2)
 end
 
 function var0_0.Init(arg0_3)
-	arg0_3.viewContent = arg0_3:findTF("Content", arg0_3._parentClass.scrollView)
+	arg0_3.viewContent = arg0_3._parentClass.scrollView:Find("Content")
 
 	setActive(arg0_3._go, false)
 end
@@ -40,10 +40,10 @@ function var0_0.SetActivity(arg0_5, arg1_5)
 end
 
 function var0_0.didEnter(arg0_6)
-	onButton(arg0_6, arg0_6:findTF("Composite"), function()
+	onButton(arg0_6, arg0_6._tf:Find("Composite"), function()
 		arg0_6:OnClickComposite()
 	end, SFX_PANEL)
-	onButton(arg0_6, arg0_6:findTF("AutoFill"), function()
+	onButton(arg0_6, arg0_6._tf:Find("AutoFill"), function()
 		arg0_6:OnClickAutoFill()
 	end, SFX_PANEL)
 	arg0_6.atelierFormulaOverlayView:didEnter()
@@ -57,10 +57,10 @@ function var0_0.Show(arg0_9, arg1_9)
 
 	if not arg0_9.nodePools then
 		arg0_9.nodePools = {
-			circle = var1_0.New(arg0_9:findTF("CircleNode").gameObject, 100),
-			hexagon = var1_0.New(arg0_9:findTF("HexagonNode").gameObject, 100),
-			anyHexagon = var1_0.New(arg0_9:findTF("AnyHexagonNode").gameObject, 100),
-			doubleHexagon = var1_0.New(arg0_9:findTF("DoubleHexagonNode").gameObject, 100)
+			circle = var1_0.New(arg0_9._tf:Find("CircleNode").gameObject, 100),
+			hexagon = var1_0.New(arg0_9._tf:Find("HexagonNode").gameObject, 100),
+			anyHexagon = var1_0.New(arg0_9._tf:Find("AnyHexagonNode").gameObject, 100),
+			doubleHexagon = var1_0.New(arg0_9._tf:Find("DoubleHexagonNode").gameObject, 100)
 		}
 
 		table.Foreach(arg0_9.nodePools, function(arg0_10, arg1_10)
@@ -75,8 +75,8 @@ function var0_0.Show(arg0_9, arg1_9)
 		local var0_11 = arg0_9.nodePools[arg0_9.poolNames[arg0_11.Data:GetType()]]
 		local var1_11 = tf(arg0_11.GO)
 
-		SetComponentEnabled(arg0_9:findTF("Item", var1_11), typeof(Image), false)
-		arg0_9._parentClass.loader:ClearRequest(arg0_9:findTF("Ring", var1_11))
+		SetComponentEnabled(var1_11:Find("Item"), typeof(Image), false)
+		arg0_9._parentClass.loader:ClearRequest(var1_11:Find("Ring"))
 		arg0_9:CleanNodeLinks(arg0_11)
 		arg0_9._parentClass.loader:ClearRequest(var1_11)
 
@@ -447,9 +447,9 @@ function var0_0.RefreshBtn(arg0_50)
 		return arg0_51.Instance ~= nil
 	end)
 
-	setText(arg0_50:findTF("Bar/Text"), i18n("ryza_tip_put_materials", var1_50, var0_50))
-	setGray(arg0_50:findTF("AutoFill"), not arg0_50.activity:GetFormulas()[arg0_50.contextData.formulaId]:IsAvaliable())
-	setActive(arg0_50:findTF("Composite/Disabled"), var1_50 < var0_50)
+	setText(arg0_50._tf:Find("Bar/Text"), i18n("ryza_tip_put_materials", var1_50, var0_50))
+	setGray(arg0_50._tf:Find("AutoFill"), not arg0_50.activity:GetFormulas()[arg0_50.contextData.formulaId]:IsAvaliable())
+	setActive(arg0_50._tf:Find("Composite/Disabled"), var1_50 < var0_50)
 end
 
 function var0_0.UpdateNodeView(arg0_52, arg1_52)
@@ -460,31 +460,31 @@ function var0_0.UpdateNodeView(arg0_52, arg1_52)
 	local var2_52 = var1_52:GetElementName()
 	local var3_52 = arg0_52:IsLockNode(arg1_52)
 
-	setActive(arg0_52:findTF("Lock", var0_52), var3_52)
+	setActive(var0_52:Find("Lock"), var3_52)
 
 	if var3_52 then
 		if var1_52:GetType() ~= AtelierFormulaCircle.TYPE.ANY then
-			arg0_52._parentClass.loader:GetSpriteQuiet(arg0_52.commonBundleName, "element_" .. var2_52, arg0_52:findTF("Lock/Require/Icon", var0_52))
+			arg0_52._parentClass.loader:GetSpriteQuiet(arg0_52.commonBundleName, "element_" .. var2_52, var0_52:Find("Lock/Require/Icon"))
 		end
 
-		setText(arg0_52:findTF("Lock/Require/Text", var0_52), "X" .. var1_52:GetLevel())
+		setText(var0_52:Find("Lock/Require/Text"), "X" .. var1_52:GetLevel())
 	end
 
 	for iter0_52 = 3, var1_52:GetLevel() + 1, -1 do
-		local var4_52 = arg0_52:findTF("Slots", var0_52):GetChild(iter0_52 - 1)
+		local var4_52 = var0_52:Find("Slots"):GetChild(iter0_52 - 1)
 
-		arg0_52._parentClass.loader:GetSpriteQuiet(arg0_52.bundleName, "slot_BLOCKED", arg0_52:findTF("Image", var4_52))
+		arg0_52._parentClass.loader:GetSpriteQuiet(arg0_52.bundleName, "slot_BLOCKED", var4_52:Find("Image"))
 	end
 
 	local var5_52 = arg1_52.Instance
-	local var6_52 = arg0_52:findTF("Item", var0_52)
+	local var6_52 = var0_52:Find("Item")
 
 	if not var5_52 then
 		if var1_52:GetType() == AtelierFormulaCircle.TYPE.ANY then
-			setActive(arg0_52:findTF("All", var0_52), true)
+			setActive(var0_52:Find("All"), true)
 		else
-			setActive(arg0_52:findTF("Icon", var0_52), true)
-			arg0_52._parentClass.loader:GetSpriteQuiet(arg0_52.bundleName, "icon_" .. var2_52, arg0_52:findTF("Icon", var0_52), true)
+			setActive(var0_52:Find("Icon"), true)
+			arg0_52._parentClass.loader:GetSpriteQuiet(arg0_52.bundleName, "icon_" .. var2_52, var0_52:Find("Icon"), true)
 		end
 
 		setActive(var6_52, false)
@@ -494,25 +494,25 @@ function var0_0.UpdateNodeView(arg0_52, arg1_52)
 				configId = var1_52:GetLimitItemID()
 			})
 
-			setActive(arg0_52:findTF("Name", var0_52), true)
-			setScrollText(arg0_52:findTF("Name/Rect/Text", var0_52), var7_52:GetName())
+			setActive(var0_52:Find("Name"), true)
+			setScrollText(var0_52:Find("Name/Rect/Text"), var7_52:GetName())
 		else
-			setActive(arg0_52:findTF("Name", var0_52), false)
+			setActive(var0_52:Find("Name"), false)
 		end
 
 		for iter1_52 = 1, var1_52:GetLevel() do
-			local var8_52 = arg0_52:findTF("Slots", var0_52):GetChild(iter1_52 - 1)
+			local var8_52 = var0_52:Find("Slots"):GetChild(iter1_52 - 1)
 
-			arg0_52._parentClass.loader:GetSpriteQuiet(arg0_52.bundleName, "slot_NULL", arg0_52:findTF("Image", var8_52))
+			arg0_52._parentClass.loader:GetSpriteQuiet(arg0_52.bundleName, "slot_NULL", var8_52:Find("Image"))
 		end
 	else
 		local var9_52 = var1_52:GetRingElement(var5_52)
 		local var10_52 = AtelierFormulaCircle.ELEMENT_NAME[var9_52]
 
 		if var1_52:GetType() == AtelierFormulaCircle.TYPE.ANY then
-			setActive(arg0_52:findTF("All", var0_52), false)
+			setActive(var0_52:Find("All"), false)
 		else
-			setActive(arg0_52:findTF("Icon", var0_52), false)
+			setActive(var0_52:Find("Icon"), false)
 		end
 
 		setActive(var6_52, true)
@@ -528,17 +528,17 @@ function var0_0.UpdateNodeView(arg0_52, arg1_52)
 		setLocalScale(var6_52, Vector3.New(unpack(var11_52, 1, 3)))
 		setAnchoredPosition(var6_52, Vector2.New(unpack(var11_52, 4, 5)))
 		arg0_52._parentClass.loader:GetSpriteQuiet(var5_52:GetIconPath(), "", var6_52, true)
-		setActive(arg0_52:findTF("Name", var0_52), true)
-		setScrollText(arg0_52:findTF("Name/Rect/Text", var0_52), var5_52:GetName())
+		setActive(var0_52:Find("Name"), true)
+		setScrollText(var0_52:Find("Name/Rect/Text"), var5_52:GetName())
 
 		for iter2_52 = 1, var1_52:GetLevel() do
-			local var12_52 = arg0_52:findTF("Slots", var0_52):GetChild(iter2_52 - 1)
+			local var12_52 = var0_52:Find("Slots"):GetChild(iter2_52 - 1)
 
-			arg0_52._parentClass.loader:GetSpriteQuiet(arg0_52.bundleName, "slot_" .. var10_52, arg0_52:findTF("Image", var12_52))
+			arg0_52._parentClass.loader:GetSpriteQuiet(arg0_52.bundleName, "slot_" .. var10_52, var12_52:Find("Image"))
 		end
 	end
 
-	local var13_52 = arg0_52:findTF("Ring", var0_52)
+	local var13_52 = var0_52:Find("Ring")
 
 	setImageColor(var13_52, var1_52:GetElementRingColor(var5_52))
 
@@ -753,13 +753,13 @@ function var0_0.RefreshNodeLinks(arg0_65, arg1_65)
 	local var1_65 = arg1_65.Data
 
 	_.each(var1_65:GetNeighbors(), function(arg0_66)
-		setActive(arg0_65:findTF("Links", var0_65):GetChild(arg0_66[1] - 1), true)
+		setActive(var0_65:Find("Links"):GetChild(arg0_66[1] - 1), true)
 	end)
 end
 
 function var0_0.RefreshNodeLinkEffects(arg0_67, arg1_67, arg2_67, arg3_67)
 	table.Foreach(arg2_67.links, function(arg0_68, arg1_68)
-		local var0_68 = arg0_67:findTF("Links/" .. arg0_68, arg1_67)
+		local var0_68 = arg1_67:Find("Links/" .. arg0_68)
 		local var1_68 = arg0_67.lineEffect[3]
 
 		if arg1_68.Lock and arg3_67 then
@@ -769,7 +769,7 @@ function var0_0.RefreshNodeLinkEffects(arg0_67, arg1_67, arg2_67, arg3_67)
 		end
 
 		arg0_67._parentClass.loader:GetPrefab("ui/" .. var1_68, "", function(arg0_69)
-			setParent(arg0_69, arg0_67:findTF("Link", var0_68))
+			setParent(arg0_69, var0_68:Find("Link"))
 			setAnchoredPosition(arg0_69, Vector2.New(0, -15))
 		end, var0_68)
 	end)
@@ -777,7 +777,7 @@ end
 
 function var0_0.CleanNodeLinks(arg0_70, arg1_70)
 	table.Foreach(arg1_70.links, function(arg0_71)
-		local var0_71 = arg0_70:findTF("Links/" .. arg0_71, nodeTF)
+		local var0_71 = nodeTF:Find("Links/" .. arg0_71)
 
 		arg0_70._parentClass.loader:ClearRequest(var0_71)
 	end)

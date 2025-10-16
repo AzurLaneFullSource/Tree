@@ -5,9 +5,9 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2._academyBtn = arg0_2:findTF("school_btn")
-	arg0_2._haremBtn = arg0_2:findTF("backyard_btn")
-	arg0_2._commanderBtn = arg0_2:findTF("commander_btn")
+	arg0_2._academyBtn = arg0_2._tf:Find("school_btn")
+	arg0_2._haremBtn = arg0_2._tf:Find("backyard_btn")
+	arg0_2._commanderBtn = arg0_2._tf:Find("commander_btn")
 
 	pg.redDotHelper:AddNode(RedDotNode.New(arg0_2._haremBtn:Find("tip"), {
 		pg.RedDotMgr.TYPES.COURTYARD

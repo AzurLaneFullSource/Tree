@@ -7,7 +7,7 @@ end
 function var0_0.OnLoaded(arg0_2)
 	var0_0.super.OnLoaded(arg0_2)
 
-	arg0_2.buffDesc = arg0_2:findTF("Text"):GetComponent(typeof(Text))
+	arg0_2.buffDesc = arg0_2._tf:Find("Text"):GetComponent(typeof(Text))
 end
 
 function var0_0.OnShow(arg0_3)

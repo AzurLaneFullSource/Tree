@@ -77,37 +77,37 @@ function var0_0.ResUISettings(arg0_10)
 end
 
 function var0_0.init(arg0_11)
-	arg0_11.blurPanel = arg0_11:findTF("blur_panel")
-	arg0_11.top = arg0_11:findTF("adapt/top", arg0_11.blurPanel)
-	arg0_11.frame = arg0_11:findTF("frame")
-	arg0_11.viewContainer = arg0_11:findTF("viewContainer")
-	arg0_11.bg = arg0_11:findTF("viewContainer/bg")
-	arg0_11.painting = arg0_11:findTF("frame/painting")
-	arg0_11.chat = arg0_11:findTF("viewContainer/chat")
-	arg0_11.chatText = arg0_11:findTF("Text", arg0_11.chat)
-	arg0_11.switchBtn = arg0_11:findTF("blur_panel/adapt/switch_btn")
-	arg0_11.skinShopBtn = arg0_11:findTF("blur_panel/adapt/skin_btn")
+	arg0_11.blurPanel = arg0_11._tf:Find("blur_panel")
+	arg0_11.top = arg0_11.blurPanel:Find("adapt/top")
+	arg0_11.frame = arg0_11._tf:Find("frame")
+	arg0_11.viewContainer = arg0_11._tf:Find("viewContainer")
+	arg0_11.bg = arg0_11._tf:Find("viewContainer/bg")
+	arg0_11.painting = arg0_11._tf:Find("frame/painting")
+	arg0_11.chat = arg0_11._tf:Find("viewContainer/chat")
+	arg0_11.chatText = arg0_11.chat:Find("Text")
+	arg0_11.switchBtn = arg0_11._tf:Find("blur_panel/adapt/switch_btn")
+	arg0_11.skinShopBtn = arg0_11._tf:Find("blur_panel/adapt/skin_btn")
 
 	local var0_11 = LOCK_SKIN_SHOP_ENTER and getProxy(PlayerProxy):getData().level < LOCK_SKIN_SHOP_ENTER_LEVEL
 
 	setActive(arg0_11.skinShopBtn, not var0_11)
 
-	arg0_11.itemToggle = arg0_11:findTF("toggle_list/item_toggle", arg0_11.viewContainer)
-	arg0_11.giftToggle = arg0_11:findTF("toggle_list/gift_toggle", arg0_11.viewContainer)
-	arg0_11.diamondToggle = arg0_11:findTF("toggle_list/diamond_toggle", arg0_11.viewContainer)
-	arg0_11.giftTip = arg0_11:findTF("tip", arg0_11.giftToggle)
-	arg0_11.pickToggle = arg0_11:findTF("toggle_list/pick_toggle", arg0_11.viewContainer)
-	arg0_11.pickTip = arg0_11:findTF("tip", arg0_11.pickToggle)
+	arg0_11.itemToggle = arg0_11.viewContainer:Find("toggle_list/item_toggle")
+	arg0_11.giftToggle = arg0_11.viewContainer:Find("toggle_list/gift_toggle")
+	arg0_11.diamondToggle = arg0_11.viewContainer:Find("toggle_list/diamond_toggle")
+	arg0_11.giftTip = arg0_11.giftToggle:Find("tip")
+	arg0_11.pickToggle = arg0_11.viewContainer:Find("toggle_list/pick_toggle")
+	arg0_11.pickTip = arg0_11.pickToggle:Find("tip")
 	arg0_11.chargeTipWindow = ChargeTipWindow.New(arg0_11._tf, arg0_11.event)
 
-	local var1_11 = arg0_11:findTF("light/title", arg0_11.diamondToggle)
-	local var2_11 = arg0_11:findTF("dark/title", arg0_11.diamondToggle)
-	local var3_11 = arg0_11:findTF("light/title", arg0_11.giftToggle)
-	local var4_11 = arg0_11:findTF("dark/title", arg0_11.giftToggle)
-	local var5_11 = arg0_11:findTF("light/title", arg0_11.itemToggle)
-	local var6_11 = arg0_11:findTF("dark/title", arg0_11.itemToggle)
-	local var7_11 = arg0_11:findTF("light/title", arg0_11.pickToggle)
-	local var8_11 = arg0_11:findTF("dark/title", arg0_11.pickToggle)
+	local var1_11 = arg0_11.diamondToggle:Find("light/title")
+	local var2_11 = arg0_11.diamondToggle:Find("dark/title")
+	local var3_11 = arg0_11.giftToggle:Find("light/title")
+	local var4_11 = arg0_11.giftToggle:Find("dark/title")
+	local var5_11 = arg0_11.itemToggle:Find("light/title")
+	local var6_11 = arg0_11.itemToggle:Find("dark/title")
+	local var7_11 = arg0_11.pickToggle:Find("light/title")
+	local var8_11 = arg0_11.pickToggle:Find("dark/title")
 
 	setText(var1_11, i18n("shop_diamond_title"))
 	setText(var2_11, i18n("shop_diamond_title"))
@@ -119,10 +119,10 @@ function var0_0.init(arg0_11)
 	setText(var8_11, i18n("shop_akashi_pick_title"))
 
 	arg0_11.linkTitle = {
-		arg0_11:findTF("title/title_diamond", arg0_11.top),
-		arg0_11:findTF("title/title_gift", arg0_11.top),
-		arg0_11:findTF("title/title_item", arg0_11.top),
-		arg0_11:findTF("title/title_pick", arg0_11.top)
+		arg0_11.top:Find("title/title_diamond"),
+		arg0_11.top:Find("title/title_gift"),
+		arg0_11.top:Find("title/title_item"),
+		arg0_11.top:Find("title/title_pick")
 	}
 	arg0_11.toggleList = {
 		arg0_11.diamondToggle,
@@ -160,7 +160,7 @@ end
 
 function var0_0.didEnter(arg0_14)
 	setActive(arg0_14.chat, false)
-	onButton(arg0_14, arg0_14:findTF("back_button", arg0_14.top), function()
+	onButton(arg0_14, arg0_14.top:Find("back_button"), function()
 		arg0_14:closeView()
 	end, SFX_CANCEL)
 	onButton(arg0_14, arg0_14.painting, function()
@@ -172,7 +172,7 @@ function var0_0.didEnter(arg0_14)
 		local var0_14 = arg0_14.toggleList[iter0_14]
 
 		onToggle(arg0_14, var0_14, function(arg0_17)
-			local var0_17 = arg0_14:findTF("dark", var0_14)
+			local var0_17 = var0_14:Find("dark")
 
 			setActive(var0_17, not arg0_17)
 
@@ -241,7 +241,7 @@ function var0_0.willExit(arg0_21)
 end
 
 function var0_0.initSubView(arg0_22)
-	arg0_22.subViewContainer = arg0_22:findTF("SubView", arg0_22.viewContainer)
+	arg0_22.subViewContainer = arg0_22.viewContainer:Find("SubView")
 	arg0_22.diamondShopView = ChargeDiamondShopView.New(arg0_22.subViewContainer, arg0_22.event, arg0_22.contextData)
 	arg0_22.giftShopView = ChargeGiftShopView.New(arg0_22.subViewContainer, arg0_22.event, arg0_22.contextData)
 	arg0_22.itemShopView = ChargeItemShopView.New(arg0_22.subViewContainer, arg0_22.event, arg0_22.contextData)
@@ -443,7 +443,7 @@ function var0_0.createLive2D(arg0_34)
 			75
 		},
 		position = Vector3(0, 0, 0),
-		parent = arg0_34:findTF("frame/painting/live2d")
+		parent = arg0_34._tf:Find("frame/painting/live2d")
 	})
 
 	arg0_34.live2dChar = Live2D.New(var0_34, function(arg0_35)
@@ -519,7 +519,7 @@ end
 function var0_0.blurView(arg0_39)
 	pg.UIMgr.GetInstance():OverlayPanel(arg0_39.viewContainer, {
 		pbList = {
-			arg0_39:findTF("blurBg", arg0_39.viewContainer)
+			arg0_39.viewContainer:Find("blurBg")
 		}
 	})
 end
@@ -533,8 +533,8 @@ function var0_0.jpUIInit(arg0_41)
 		return
 	end
 
-	arg0_41.userAgreeBtn3 = arg0_41:findTF("frame/raw1Btn")
-	arg0_41.userAgreeBtn4 = arg0_41:findTF("frame/raw2Btn")
+	arg0_41.userAgreeBtn3 = arg0_41._tf:Find("frame/raw1Btn")
+	arg0_41.userAgreeBtn4 = arg0_41._tf:Find("frame/raw2Btn")
 end
 
 function var0_0.jpUIEnter(arg0_42)

@@ -9,7 +9,7 @@ function var0_0.OnTechGroupUpdate(arg0_2, arg1_2)
 end
 
 function var0_0.OnLoaded(arg0_3)
-	arg0_3.upgradeList = UIItemList.New(arg0_3:findTF("frame/upgrade/content"), arg0_3:findTF("frame/upgrade/content/tpl"))
+	arg0_3.upgradeList = UIItemList.New(arg0_3._tf:Find("frame/upgrade/content"), arg0_3._tf:Find("frame/upgrade/content/tpl"))
 end
 
 function var0_0.OnInit(arg0_4)

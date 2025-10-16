@@ -25,6 +25,8 @@ function var0_0.init(arg0_3)
 	arg0_3.top = arg0_3._tf:Find("Top")
 	arg0_3.viewContainer = arg0_3._tf:Find("Main")
 	arg0_3.subViews = {}
+
+	arg0_3:OverlayPanel(arg0_3.top)
 end
 
 local var1_0 = {
@@ -39,7 +41,6 @@ function var0_0.GetCurrentPage(arg0_4)
 end
 
 function var0_0.didEnter(arg0_5)
-	arg0_5:OverlayPanel(arg0_5.top)
 	onButton(arg0_5, arg0_5.top:Find("blur_panel/adapt/top/option"), function()
 		arg0_5:quickExitFunc()
 	end, SFX_PANEL)
@@ -114,47 +115,39 @@ function var0_0.onBackPressed(arg0_12)
 	arg0_12:Backward()
 end
 
-function var0_0.Add2LayerContainer(arg0_13, arg1_13)
-	setParent(arg1_13, arg0_13.viewContainer)
-end
-
-function var0_0.Add2TopContainer(arg0_14, arg1_14)
-	setParent(arg1_14, arg0_14.top)
-end
-
 function var0_0.WorldRecordLock()
-	local function var0_15()
-		local var0_16 = getProxy(PlayerProxy):getRawData().level
+	local function var0_13()
+		local var0_14 = getProxy(PlayerProxy):getRawData().level
 
-		return pg.SystemOpenMgr.GetInstance():isOpenSystem(var0_16, "WorldMediaCollectionRecordMediator")
+		return pg.SystemOpenMgr.GetInstance():isOpenSystem(var0_14, "WorldMediaCollectionRecordMediator")
 	end
 
-	return LOCK_WORLD_COLLECTION or not var0_15()
+	return LOCK_WORLD_COLLECTION or not var0_13()
 end
 
-function var0_0.UpdateView(arg0_17)
-	local var0_17 = arg0_17.subViews[arg0_17.contextData.page]
+function var0_0.UpdateView(arg0_15)
+	local var0_15 = arg0_15.subViews[arg0_15.contextData.page]
 
-	if not var0_17 then
+	if not var0_15 then
 		return
 	end
 
-	var0_17.buffer:UpdateView()
+	var0_15.buffer:UpdateView()
 end
 
-function var0_0.willExit(arg0_18)
-	local var0_18 = arg0_18:GetCurrentPage()
+function var0_0.willExit(arg0_16)
+	local var0_16 = arg0_16:GetCurrentPage()
 
-	if var0_18 then
-		var0_18.buffer:Hide()
+	if var0_16 then
+		var0_16.buffer:Hide()
 	end
 
-	for iter0_18, iter1_18 in pairs(arg0_18.subViews) do
-		iter1_18:Destroy()
+	for iter0_16, iter1_16 in pairs(arg0_16.subViews) do
+		iter1_16:Destroy()
 	end
 
-	table.clear(arg0_18.subViews)
-	arg0_18:UnOverlayPanel(arg0_18.top, arg0_18._tf)
+	table.clear(arg0_16.subViews)
+	arg0_16:UnOverlayPanel(arg0_16.top, arg0_16._tf)
 end
 
 return var0_0

@@ -15,9 +15,9 @@ end
 function var0_0.OnLoaded(arg0_4)
 	var0_0.super.OnLoaded(arg0_4)
 
-	arg0_4.switchBtn = arg0_4:findTF("detail_btn")
-	arg0_4.currentChallengeBtn = arg0_4:findTF("current_list_btn")
-	arg0_4.tipTr = arg0_4:findTF("tip")
+	arg0_4.switchBtn = arg0_4._tf:Find("detail_btn")
+	arg0_4.currentChallengeBtn = arg0_4._tf:Find("current_list_btn")
+	arg0_4.tipTr = arg0_4._tf:Find("tip")
 
 	setText(arg0_4.tipTr, i18n("world_boss_archives_boss_tip"))
 end
@@ -36,7 +36,7 @@ function var0_0.OnInit(arg0_5)
 	onButton(arg0_5, arg0_5.currentChallengeBtn, function()
 		arg0_5:emit(WorldBossScene.ON_SWITCH, WorldBossScene.PAGE_CHALLENGE)
 	end, SFX_PANEL)
-	onButton(arg0_5, arg0_5:findTF("help"), function()
+	onButton(arg0_5, arg0_5._tf:Find("help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.world_archives_boss_help.tip
@@ -45,7 +45,7 @@ function var0_0.OnInit(arg0_5)
 end
 
 function var0_0.UpdateEmptyCard(arg0_9)
-	local var0_9 = arg0_9:findTF("list_panel/mask/tpl"):Find("empty"):GetComponent(typeof(Image))
+	local var0_9 = arg0_9._tf:Find("list_panel/mask/tpl"):Find("empty"):GetComponent(typeof(Image))
 
 	if WorldBossConst.GetAchieveState() == WorldBossConst.ACHIEVE_STATE_STARTING then
 		local var1_9 = WorldBossConst.GetArchivesId()

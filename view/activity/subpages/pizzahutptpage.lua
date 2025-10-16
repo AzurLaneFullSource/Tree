@@ -64,59 +64,59 @@ function var0_0.OnDestroy(arg0_5)
 end
 
 function var0_0.findUI(arg0_6)
-	arg0_6.shareBtn = arg0_6:findTF("share_btn", arg0_6.bg)
-	arg0_6.empty = arg0_6:findTF("empty", arg0_6.bg)
-	arg0_6.pizzaTF = arg0_6:findTF("Pizza", arg0_6.bg)
-	arg0_6.openBtn = arg0_6:findTF("open_btn", arg0_6.bg)
-	arg0_6.helpBtn = arg0_6:findTF("help_btn", arg0_6.bg)
-	arg0_6.specialTF = arg0_6:findTF("Special")
-	arg0_6.backBG = arg0_6:findTF("BG", arg0_6.specialTF)
-	arg0_6.closeBtn = arg0_6:findTF("CloseBtn", arg0_6.specialTF)
-	arg0_6.menuTF = arg0_6:findTF("Menu", arg0_6.specialTF)
-	arg0_6.mainPanel = arg0_6:findTF("MainPanel", arg0_6.menuTF)
+	arg0_6.shareBtn = arg0_6.bg:Find("share_btn")
+	arg0_6.empty = arg0_6.bg:Find("empty")
+	arg0_6.pizzaTF = arg0_6.bg:Find("Pizza")
+	arg0_6.openBtn = arg0_6.bg:Find("open_btn")
+	arg0_6.helpBtn = arg0_6.bg:Find("help_btn")
+	arg0_6.specialTF = arg0_6._tf:Find("Special")
+	arg0_6.backBG = arg0_6.specialTF:Find("BG")
+	arg0_6.closeBtn = arg0_6.specialTF:Find("CloseBtn")
+	arg0_6.menuTF = arg0_6.specialTF:Find("Menu")
+	arg0_6.mainPanel = arg0_6.menuTF:Find("MainPanel")
 	arg0_6.mainToggleTFList = {}
 
 	for iter0_6 = 1, 6 do
 		arg0_6.mainToggleTFList[iter0_6] = arg0_6.mainPanel:GetChild(iter0_6 - 1)
 	end
 
-	arg0_6.secondPanel = arg0_6:findTF("SecondList", arg0_6.menuTF)
-	arg0_6.selectBtn = arg0_6:findTF("SelectBtn", arg0_6.menuTF)
+	arg0_6.secondPanel = arg0_6.menuTF:Find("SecondList")
+	arg0_6.selectBtn = arg0_6.menuTF:Find("SelectBtn")
 	arg0_6.mainPanelCG = GetComponent(arg0_6.mainPanel, "CanvasGroup")
 	arg0_6.secondPanelCG = GetComponent(arg0_6.secondPanel, "CanvasGroup")
 	arg0_6.selectBtnImg = GetComponent(arg0_6.selectBtn, "Image")
-	arg0_6.resTF = arg0_6:findTF("Res")
+	arg0_6.resTF = arg0_6._tf:Find("Res")
 
-	local var0_6 = arg0_6:findTF("1/1", arg0_6.resTF)
-	local var1_6 = arg0_6:findTF("1/2", arg0_6.resTF)
-	local var2_6 = arg0_6:findTF("1/3", arg0_6.resTF)
-	local var3_6 = arg0_6:findTF("2/1/1", arg0_6.resTF)
-	local var4_6 = arg0_6:findTF("2/1/2", arg0_6.resTF)
-	local var5_6 = arg0_6:findTF("2/1/3", arg0_6.resTF)
-	local var6_6 = arg0_6:findTF("2/2/1", arg0_6.resTF)
-	local var7_6 = arg0_6:findTF("2/2/2", arg0_6.resTF)
-	local var8_6 = arg0_6:findTF("2/2/3", arg0_6.resTF)
-	local var9_6 = arg0_6:findTF("2/3/1", arg0_6.resTF)
-	local var10_6 = arg0_6:findTF("2/3/2", arg0_6.resTF)
-	local var11_6 = arg0_6:findTF("2/3/3", arg0_6.resTF)
-	local var12_6 = arg0_6:findTF("3/1/1", arg0_6.resTF)
-	local var13_6 = arg0_6:findTF("3/1/2", arg0_6.resTF)
-	local var14_6 = arg0_6:findTF("3/1/3", arg0_6.resTF)
-	local var15_6 = arg0_6:findTF("3/2/1", arg0_6.resTF)
-	local var16_6 = arg0_6:findTF("3/2/2", arg0_6.resTF)
-	local var17_6 = arg0_6:findTF("3/2/3", arg0_6.resTF)
-	local var18_6 = arg0_6:findTF("3/3/1", arg0_6.resTF)
-	local var19_6 = arg0_6:findTF("3/3/2", arg0_6.resTF)
-	local var20_6 = arg0_6:findTF("3/3/3", arg0_6.resTF)
-	local var21_6 = arg0_6:findTF("4/1", arg0_6.resTF)
-	local var22_6 = arg0_6:findTF("4/2", arg0_6.resTF)
-	local var23_6 = arg0_6:findTF("4/3", arg0_6.resTF)
-	local var24_6 = arg0_6:findTF("5/1", arg0_6.resTF)
-	local var25_6 = arg0_6:findTF("5/2", arg0_6.resTF)
-	local var26_6 = arg0_6:findTF("5/3", arg0_6.resTF)
-	local var27_6 = arg0_6:findTF("6/1", arg0_6.resTF)
-	local var28_6 = arg0_6:findTF("6/2", arg0_6.resTF)
-	local var29_6 = arg0_6:findTF("6/3", arg0_6.resTF)
+	local var0_6 = arg0_6.resTF:Find("1/1")
+	local var1_6 = arg0_6.resTF:Find("1/2")
+	local var2_6 = arg0_6.resTF:Find("1/3")
+	local var3_6 = arg0_6.resTF:Find("2/1/1")
+	local var4_6 = arg0_6.resTF:Find("2/1/2")
+	local var5_6 = arg0_6.resTF:Find("2/1/3")
+	local var6_6 = arg0_6.resTF:Find("2/2/1")
+	local var7_6 = arg0_6.resTF:Find("2/2/2")
+	local var8_6 = arg0_6.resTF:Find("2/2/3")
+	local var9_6 = arg0_6.resTF:Find("2/3/1")
+	local var10_6 = arg0_6.resTF:Find("2/3/2")
+	local var11_6 = arg0_6.resTF:Find("2/3/3")
+	local var12_6 = arg0_6.resTF:Find("3/1/1")
+	local var13_6 = arg0_6.resTF:Find("3/1/2")
+	local var14_6 = arg0_6.resTF:Find("3/1/3")
+	local var15_6 = arg0_6.resTF:Find("3/2/1")
+	local var16_6 = arg0_6.resTF:Find("3/2/2")
+	local var17_6 = arg0_6.resTF:Find("3/2/3")
+	local var18_6 = arg0_6.resTF:Find("3/3/1")
+	local var19_6 = arg0_6.resTF:Find("3/3/2")
+	local var20_6 = arg0_6.resTF:Find("3/3/3")
+	local var21_6 = arg0_6.resTF:Find("4/1")
+	local var22_6 = arg0_6.resTF:Find("4/2")
+	local var23_6 = arg0_6.resTF:Find("4/3")
+	local var24_6 = arg0_6.resTF:Find("5/1")
+	local var25_6 = arg0_6.resTF:Find("5/2")
+	local var26_6 = arg0_6.resTF:Find("5/3")
+	local var27_6 = arg0_6.resTF:Find("6/1")
+	local var28_6 = arg0_6.resTF:Find("6/2")
+	local var29_6 = arg0_6.resTF:Find("6/3")
 
 	arg0_6.iconTable = {
 		["1"] = {
@@ -182,14 +182,14 @@ function var0_0.findUI(arg0_6)
 			var29_6
 		}
 	}
-	arg0_6.pizzaResTF = arg0_6:findTF("Pizza")
+	arg0_6.pizzaResTF = arg0_6._tf:Find("Pizza")
 	arg0_6.mainToggleSelectedTF = {}
 
 	for iter1_6, iter2_6 in ipairs(arg0_6.mainToggleTFList) do
 		arg0_6.mainToggleSelectedTF[iter1_6] = iter2_6:GetChild(0)
 	end
 
-	arg0_6.selectedIconResTF = arg0_6:findTF("SelectedIcon")
+	arg0_6.selectedIconResTF = arg0_6._tf:Find("SelectedIcon")
 end
 
 function var0_0.addListener(arg0_7)
@@ -289,7 +289,7 @@ function var0_0.initMainPanel(arg0_14)
 
 					local var5_16 = getImageSprite(var1_16[1])
 
-					setImageSprite(arg0_14:findTF("icon", var4_16[1]), var5_16, true)
+					setImageSprite(var4_16[1]:Find("icon"), var5_16, true)
 					onToggle(arg0_14, var4_16[1], function(arg0_17)
 						if arg0_17 == true then
 							arg0_14:openSelectBtn()
@@ -305,7 +305,7 @@ function var0_0.initMainPanel(arg0_14)
 					for iter1_16 = 1, 3 do
 						local var6_16 = getImageSprite(var1_16[iter1_16])
 
-						setImageSprite(arg0_14:findTF("icon", var4_16[iter1_16]), var6_16, true)
+						setImageSprite(var4_16[iter1_16]:Find("icon"), var6_16, true)
 						onToggle(arg0_14, var4_16[iter1_16], function(arg0_18)
 							if arg0_18 == true then
 								arg0_14:openSelectBtn()
@@ -498,12 +498,12 @@ function var0_0.updatePizza(arg0_52)
 	setActive(arg0_52.empty, arg0_52.selectedList[1] == 0)
 	setActive(arg0_52.pizzaTF, arg0_52.selectedList[1] > 0)
 
-	local var0_52 = arg0_52:findTF("PizzaPan", arg0_52.pizzaTF)
-	local var1_52 = arg0_52:findTF("PizzaSauce", arg0_52.pizzaTF)
-	local var2_52 = arg0_52:findTF("PizzaCheese", arg0_52.pizzaTF)
-	local var3_52 = arg0_52:findTF("EX1", arg0_52.pizzaTF)
-	local var4_52 = arg0_52:findTF("EX2", arg0_52.pizzaTF)
-	local var5_52 = arg0_52:findTF("EX3", arg0_52.pizzaTF)
+	local var0_52 = arg0_52.pizzaTF:Find("PizzaPan")
+	local var1_52 = arg0_52.pizzaTF:Find("PizzaSauce")
+	local var2_52 = arg0_52.pizzaTF:Find("PizzaCheese")
+	local var3_52 = arg0_52.pizzaTF:Find("EX1")
+	local var4_52 = arg0_52.pizzaTF:Find("EX2")
+	local var5_52 = arg0_52.pizzaTF:Find("EX3")
 
 	setActive(var0_52, arg0_52.selectedList[1] and arg0_52.selectedList[1] > 0)
 	setActive(var1_52, arg0_52.selectedList[2] and arg0_52.selectedList[2] > 0)
@@ -513,42 +513,42 @@ function var0_0.updatePizza(arg0_52)
 	setActive(var5_52, arg0_52.selectedList[6] and arg0_52.selectedList[6] > 0)
 
 	if arg0_52.selectedList[1] and arg0_52.selectedList[1] > 0 then
-		local var6_52 = getImageSprite(arg0_52:findTF(tostring(arg0_52.selectedList[1]), arg0_52.pizzaResTF))
+		local var6_52 = getImageSprite(arg0_52._tf:Find(tostring(arg0_52.selectedList[1]), arg0_52.pizzaResTF))
 
 		setImageSprite(var0_52, var6_52, true)
 	end
 
 	if arg0_52.selectedList[2] and arg0_52.selectedList[2] > 0 then
 		local var7_52 = arg0_52.selectedList[1] .. arg0_52.selectedList[2]
-		local var8_52 = getImageSprite(arg0_52:findTF(var7_52, arg0_52.pizzaResTF))
+		local var8_52 = getImageSprite(arg0_52.pizzaResTF:Find(var7_52))
 
 		setImageSprite(var1_52, var8_52, true)
 	end
 
 	if arg0_52.selectedList[3] and arg0_52.selectedList[3] > 0 then
 		local var9_52 = arg0_52.selectedList[1] .. arg0_52.selectedList[2] .. arg0_52.selectedList[3]
-		local var10_52 = getImageSprite(arg0_52:findTF(var9_52, arg0_52.pizzaResTF))
+		local var10_52 = getImageSprite(arg0_52.pizzaResTF:Find(var9_52))
 
 		setImageSprite(var2_52, var10_52, true)
 	end
 
 	if arg0_52.selectedList[4] and arg0_52.selectedList[4] > 0 then
 		local var11_52 = 4 .. arg0_52.selectedList[4]
-		local var12_52 = getImageSprite(arg0_52:findTF(var11_52, arg0_52.pizzaResTF))
+		local var12_52 = getImageSprite(arg0_52.pizzaResTF:Find(var11_52))
 
 		setImageSprite(var3_52, var12_52, true)
 	end
 
 	if arg0_52.selectedList[5] and arg0_52.selectedList[5] > 0 then
 		local var13_52 = 5 .. arg0_52.selectedList[5]
-		local var14_52 = getImageSprite(arg0_52:findTF(var13_52, arg0_52.pizzaResTF))
+		local var14_52 = getImageSprite(arg0_52.pizzaResTF:Find(var13_52))
 
 		setImageSprite(var4_52, var14_52, true)
 	end
 
 	if arg0_52.selectedList[6] and arg0_52.selectedList[6] > 0 then
 		local var15_52 = 6 .. arg0_52.selectedList[6]
-		local var16_52 = getImageSprite(arg0_52:findTF(var15_52, arg0_52.pizzaResTF))
+		local var16_52 = getImageSprite(arg0_52.pizzaResTF:Find(var15_52))
 
 		setImageSprite(var5_52, var16_52, true)
 	end
@@ -556,7 +556,7 @@ end
 
 function var0_0.updateMainSelectPanel(arg0_53)
 	if arg0_53.selectedList[1] and arg0_53.selectedList[1] > 0 then
-		local var0_53 = getImageSprite(arg0_53:findTF(tostring(arg0_53.selectedList[1]), arg0_53.selectedIconResTF))
+		local var0_53 = getImageSprite(arg0_53._tf:Find(tostring(arg0_53.selectedList[1]), arg0_53.selectedIconResTF))
 
 		setImageSprite(arg0_53.mainToggleSelectedTF[1], var0_53, true)
 		setActive(arg0_53.mainToggleSelectedTF[1], true)
@@ -564,7 +564,7 @@ function var0_0.updateMainSelectPanel(arg0_53)
 
 	if arg0_53.selectedList[2] and arg0_53.selectedList[2] > 0 then
 		local var1_53 = arg0_53.selectedList[1] .. arg0_53.selectedList[2]
-		local var2_53 = getImageSprite(arg0_53:findTF(var1_53, arg0_53.selectedIconResTF))
+		local var2_53 = getImageSprite(arg0_53.selectedIconResTF:Find(var1_53))
 
 		setImageSprite(arg0_53.mainToggleSelectedTF[2], var2_53, true)
 		setActive(arg0_53.mainToggleSelectedTF[2], true)
@@ -572,7 +572,7 @@ function var0_0.updateMainSelectPanel(arg0_53)
 
 	if arg0_53.selectedList[3] and arg0_53.selectedList[3] > 0 then
 		local var3_53 = arg0_53.selectedList[1] .. arg0_53.selectedList[2] .. arg0_53.selectedList[3]
-		local var4_53 = getImageSprite(arg0_53:findTF(var3_53, arg0_53.selectedIconResTF))
+		local var4_53 = getImageSprite(arg0_53.selectedIconResTF:Find(var3_53))
 
 		setImageSprite(arg0_53.mainToggleSelectedTF[3], var4_53, true)
 		setActive(arg0_53.mainToggleSelectedTF[3], true)
@@ -580,7 +580,7 @@ function var0_0.updateMainSelectPanel(arg0_53)
 
 	if arg0_53.selectedList[4] and arg0_53.selectedList[4] > 0 then
 		local var5_53 = 4 .. arg0_53.selectedList[4]
-		local var6_53 = getImageSprite(arg0_53:findTF(var5_53, arg0_53.selectedIconResTF))
+		local var6_53 = getImageSprite(arg0_53.selectedIconResTF:Find(var5_53))
 
 		setImageSprite(arg0_53.mainToggleSelectedTF[4], var6_53, true)
 		setActive(arg0_53.mainToggleSelectedTF[4], true)
@@ -588,7 +588,7 @@ function var0_0.updateMainSelectPanel(arg0_53)
 
 	if arg0_53.selectedList[5] and arg0_53.selectedList[5] > 0 then
 		local var7_53 = 5 .. arg0_53.selectedList[5]
-		local var8_53 = getImageSprite(arg0_53:findTF(var7_53, arg0_53.selectedIconResTF))
+		local var8_53 = getImageSprite(arg0_53.selectedIconResTF:Find(var7_53))
 
 		setImageSprite(arg0_53.mainToggleSelectedTF[5], var8_53, true)
 		setActive(arg0_53.mainToggleSelectedTF[5], true)
@@ -596,7 +596,7 @@ function var0_0.updateMainSelectPanel(arg0_53)
 
 	if arg0_53.selectedList[6] and arg0_53.selectedList[6] > 0 then
 		local var9_53 = 6 .. arg0_53.selectedList[6]
-		local var10_53 = getImageSprite(arg0_53:findTF(var9_53, arg0_53.selectedIconResTF))
+		local var10_53 = getImageSprite(arg0_53.selectedIconResTF:Find(var9_53))
 
 		setImageSprite(arg0_53.mainToggleSelectedTF[6], var10_53, true)
 		setActive(arg0_53.mainToggleSelectedTF[6], true)
@@ -662,8 +662,8 @@ function var0_0.share(arg0_58)
 
 		arg0_58.shareGo = arg0_59
 
-		local var1_59 = arg0_58:findTF("PlayerName", arg0_59)
-		local var2_59 = arg0_58:findTF("PizzaContainer", arg0_59)
+		local var1_59 = arg0_59:Find("PlayerName")
+		local var2_59 = arg0_59:Find("PizzaContainer")
 		local var3_59 = getProxy(PlayerProxy):getData().name
 
 		setText(var1_59, var3_59)
@@ -673,7 +673,7 @@ function var0_0.share(arg0_58)
 		local var6_59 = getProxy(ServerProxy):getRawData()[var5_59 and var5_59.server or 0]
 		local var7_59 = var4_59 and var4_59.name or ""
 		local var8_59 = var6_59 and var6_59.name or ""
-		local var9_59 = arg0_58:findTF("deck", arg0_59)
+		local var9_59 = arg0_59:Find("deck")
 
 		setText(var9_59:Find("name/value"), var7_59)
 		setText(var9_59:Find("server/value"), var8_59)
@@ -700,7 +700,7 @@ function var0_0.share(arg0_58)
 end
 
 function var0_0.initSD(arg0_60)
-	arg0_60.sdContainer = arg0_60:findTF("sdcontainer", arg0_60.bg)
+	arg0_60.sdContainer = arg0_60.bg:Find("sdcontainer")
 	arg0_60.spine = nil
 	arg0_60.spineLRQ = GetSpineRequestPackage.New("chuixue_6", function(arg0_61)
 		SetParent(arg0_61, arg0_60.sdContainer)

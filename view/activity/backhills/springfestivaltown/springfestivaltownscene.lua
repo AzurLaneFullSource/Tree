@@ -16,11 +16,11 @@ var0_0.edge2area = {
 }
 
 function var0_0.init(arg0_3)
-	arg0_3.top = arg0_3:findTF("top")
-	arg0_3._closeBtn = arg0_3:findTF("top/return_btn")
-	arg0_3._homeBtn = arg0_3:findTF("top/return_main_btn")
-	arg0_3._helpBtn = arg0_3:findTF("top/help_btn")
-	arg0_3._map = arg0_3:findTF("map")
+	arg0_3.top = arg0_3._tf:Find("top")
+	arg0_3._closeBtn = arg0_3._tf:Find("top/return_btn")
+	arg0_3._homeBtn = arg0_3._tf:Find("top/return_main_btn")
+	arg0_3._helpBtn = arg0_3._tf:Find("top/help_btn")
+	arg0_3._map = arg0_3._tf:Find("map")
 
 	for iter0_3 = 0, arg0_3._map.childCount - 1 do
 		local var0_3 = arg0_3._map:GetChild(iter0_3)
@@ -39,7 +39,7 @@ function var0_0.init(arg0_3)
 	}
 	arg0_3._shipTpl = arg0_3._map:Find("ship")
 	arg0_3.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.SpringFestivalTownGraph"))
-	arg0_3._upper = arg0_3:findTF("upper")
+	arg0_3._upper = arg0_3._tf:Find("upper")
 	arg0_3.usableTxt = arg0_3.top:Find("usable_count/Text"):GetComponent(typeof(Text))
 	arg0_3.diedieleTF = arg0_3.top:Find("diediele_count")
 	arg0_3.diedieleTxt = arg0_3.diedieleTF:Find("Text"):GetComponent(typeof(Text))

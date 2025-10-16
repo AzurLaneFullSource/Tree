@@ -7,9 +7,9 @@ end
 function var0_0.init(arg0_2)
 	var0_0.super.init(arg0_2)
 
-	arg0_2.scrollrect = arg0_2:findTF("layer/select_panel")
-	arg0_2.rightBtn = arg0_2:findTF("layer/right")
-	arg0_2.leftBtn = arg0_2:findTF("layer/left")
+	arg0_2.scrollrect = arg0_2._tf:Find("layer/select_panel")
+	arg0_2.rightBtn = arg0_2._tf:Find("layer/right")
+	arg0_2.leftBtn = arg0_2._tf:Find("layer/left")
 end
 
 function var0_0.didEnter(arg0_3)

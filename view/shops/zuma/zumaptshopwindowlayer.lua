@@ -46,33 +46,33 @@ function var0_0.initData(arg0_6)
 end
 
 function var0_0.findUI(arg0_7)
-	arg0_7.bg = arg0_7:findTF("BG")
+	arg0_7.bg = arg0_7._tf:Find("BG")
 
-	local var0_7 = arg0_7:findTF("Panel")
-	local var1_7 = arg0_7:findTF("Info", var0_7)
+	local var0_7 = arg0_7._tf:Find("Panel")
+	local var1_7 = var0_7:Find("Info")
 
-	arg0_7.nameText = arg0_7:findTF("Name/Text", var1_7)
-	arg0_7.descText = arg0_7:findTF("Desc", var1_7)
-	arg0_7.itemTF = arg0_7:findTF("CommonItemTemplate", var1_7)
-	arg0_7.countTF = arg0_7:findTF("Count", var1_7)
-	arg0_7.countText = arg0_7:findTF("Count/Num", var1_7)
+	arg0_7.nameText = var1_7:Find("Name/Text")
+	arg0_7.descText = var1_7:Find("Desc")
+	arg0_7.itemTF = var1_7:Find("CommonItemTemplate")
+	arg0_7.countTF = var1_7:Find("Count")
+	arg0_7.countText = var1_7:Find("Count/Num")
 
-	local var2_7 = arg0_7:findTF("Count/Tip", var1_7)
+	local var2_7 = var1_7:Find("Count/Tip")
 
 	setText(var2_7, i18n("word_own1"))
 
-	arg0_7.titleTF = arg0_7:findTF("Title", var0_7)
+	arg0_7.titleTF = var0_7:Find("Title")
 
-	local var3_7 = arg0_7:findTF("Buy", var0_7)
+	local var3_7 = var0_7:Find("Buy")
 
-	arg0_7.minusBtn = arg0_7:findTF("Minus", var3_7)
-	arg0_7.addBtn = arg0_7:findTF("Add", var3_7)
-	arg0_7.maxBtn = arg0_7:findTF("Max", var3_7)
-	arg0_7.buyNumText = arg0_7:findTF("Num", var3_7)
-	arg0_7.butCountText = arg0_7:findTF("BuyCount/Num", var0_7)
-	arg0_7.costNumText = arg0_7:findTF("Cost/Num", var0_7)
-	arg0_7.confirmBtn = arg0_7:findTF("ConfirmBtn", var0_7)
-	arg0_7.cancelBtn = arg0_7:findTF("CancelBtn", var0_7)
+	arg0_7.minusBtn = var3_7:Find("Minus")
+	arg0_7.addBtn = var3_7:Find("Add")
+	arg0_7.maxBtn = var3_7:Find("Max")
+	arg0_7.buyNumText = var3_7:Find("Num")
+	arg0_7.butCountText = var0_7:Find("BuyCount/Num")
+	arg0_7.costNumText = var0_7:Find("Cost/Num")
+	arg0_7.confirmBtn = var0_7:Find("ConfirmBtn")
+	arg0_7.cancelBtn = var0_7:Find("CancelBtn")
 end
 
 function var0_0.addListener(arg0_8)

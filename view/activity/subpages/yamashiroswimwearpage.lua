@@ -1,10 +1,10 @@
 local var0_0 = class("YamaShiroSwimwearPage", import(".TemplatePage.SkinTemplatePage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.goBtn = arg0_1:findTF("GoBtn")
-	arg0_1.gotBtn = arg0_1:findTF("GotBtn")
-	arg0_1.stepText = arg0_1:findTF("Step")
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.goBtn = arg0_1._tf:Find("GoBtn")
+	arg0_1.gotBtn = arg0_1._tf:Find("GotBtn")
+	arg0_1.stepText = arg0_1._tf:Find("Step")
 end
 
 function var0_0.OnDataSetting(arg0_2)

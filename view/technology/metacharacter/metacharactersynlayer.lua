@@ -35,11 +35,11 @@ function var0_0.willExit(arg0_4)
 end
 
 function var0_0.initUITextTips(arg0_5)
-	local var0_5 = arg0_5:findTF("PTPanel/TipText")
+	local var0_5 = arg0_5._tf:Find("PTPanel/TipText")
 
 	setText(var0_5, i18n("meta_cur_pt"))
 
-	local var1_5 = arg0_5:findTF("TaskPanel/ActTimePanel/Tip")
+	local var1_5 = arg0_5._tf:Find("TaskPanel/ActTimePanel/Tip")
 
 	setText(var1_5, i18n("meta_acttime_limit"))
 end
@@ -60,25 +60,25 @@ function var0_0.updateData(arg0_7)
 end
 
 function var0_0.findUI(arg0_8)
-	arg0_8.shipImg = arg0_8:findTF("ShipImg")
-	arg0_8.ptPanel = arg0_8:findTF("PTPanel")
-	arg0_8.ptSynRateText = arg0_8:findTF("ProgressText", arg0_8.ptPanel)
-	arg0_8.ptNumText = arg0_8:findTF("Count/NumText", arg0_8.ptPanel)
-	arg0_8.ptIconLeft = arg0_8:findTF("Icon", arg0_8.ptPanel)
-	arg0_8.showWayBtn = arg0_8:findTF("ShowWayBtn", arg0_8.ptPanel)
-	arg0_8.taskPanel = arg0_8:findTF("TaskPanel")
-	arg0_8.taskTplContainer = arg0_8:findTF("Scroll/Viewport/Content", arg0_8.taskPanel)
-	arg0_8.taskTpl = arg0_8:findTF("TaskTpl", arg0_8.taskPanel)
-	arg0_8.getAllBtn = arg0_8:findTF("BtnGetAll", arg0_8.taskPanel)
-	arg0_8.getAllBtnDisable = arg0_8:findTF("BtnGetAllDisable", arg0_8.taskPanel)
-	arg0_8.getNextBtn = arg0_8:findTF("BtnGetMore", arg0_8.taskPanel)
+	arg0_8.shipImg = arg0_8._tf:Find("ShipImg")
+	arg0_8.ptPanel = arg0_8._tf:Find("PTPanel")
+	arg0_8.ptSynRateText = arg0_8.ptPanel:Find("ProgressText")
+	arg0_8.ptNumText = arg0_8.ptPanel:Find("Count/NumText")
+	arg0_8.ptIconLeft = arg0_8.ptPanel:Find("Icon")
+	arg0_8.showWayBtn = arg0_8.ptPanel:Find("ShowWayBtn")
+	arg0_8.taskPanel = arg0_8._tf:Find("TaskPanel")
+	arg0_8.taskTplContainer = arg0_8.taskPanel:Find("Scroll/Viewport/Content")
+	arg0_8.taskTpl = arg0_8.taskPanel:Find("TaskTpl")
+	arg0_8.getAllBtn = arg0_8.taskPanel:Find("BtnGetAll")
+	arg0_8.getAllBtnDisable = arg0_8.taskPanel:Find("BtnGetAllDisable")
+	arg0_8.getNextBtn = arg0_8.taskPanel:Find("BtnGetMore")
 	arg0_8.taskUIItemList = UIItemList.New(arg0_8.taskTplContainer, arg0_8.taskTpl)
 	arg0_8.sizeH = GetComponent(arg0_8.taskTpl, "LayoutElement").preferredHeight
 	arg0_8.spaceH = GetComponent(arg0_8.taskTplContainer, "VerticalLayoutGroup").spacing
 	arg0_8.topH = GetComponent(arg0_8.taskTplContainer, "VerticalLayoutGroup").padding.top
-	arg0_8.scrollSC = GetComponent(arg0_8:findTF("Scroll", arg0_8.taskPanel), "ScrollRect")
-	arg0_8.actTimePanel = arg0_8:findTF("TaskPanel/ActTimePanel")
-	arg0_8.actTimeText = arg0_8:findTF("TaskPanel/ActTimePanel/Text")
+	arg0_8.scrollSC = GetComponent(arg0_8.taskPanel:Find("Scroll"), "ScrollRect")
+	arg0_8.actTimePanel = arg0_8._tf:Find("TaskPanel/ActTimePanel")
+	arg0_8.actTimeText = arg0_8._tf:Find("TaskPanel/ActTimePanel/Text")
 end
 
 function var0_0.addListener(arg0_9)
@@ -179,15 +179,15 @@ function var0_0.updateTaskList(arg0_18)
 end
 
 function var0_0.updateTaskTpl(arg0_20, arg1_20, arg2_20)
-	local var0_20 = arg0_20:findTF("Target/IndexText", arg1_20)
-	local var1_20 = arg0_20:findTF("PT/Count/NumText", arg1_20)
-	local var2_20 = arg0_20:findTF("PT/Icon", arg1_20)
-	local var3_20 = arg0_20:findTF("Info/AwardInfo/NameMask/NameText", arg1_20)
-	local var4_20 = arg0_20:findTF("Info/AwardInfo/SynProgressText", arg1_20)
-	local var5_20 = arg0_20:findTF("Info/AwardInfo/Award/Item", arg1_20)
-	local var6_20 = arg0_20:findTF("Info/AwardInfo/Award/Tag/Get", arg1_20)
-	local var7_20 = arg0_20:findTF("Info/AwardInfo/Award/Tag/Got", arg1_20)
-	local var8_20 = arg0_20:findTF("GotMask", arg1_20)
+	local var0_20 = arg1_20:Find("Target/IndexText")
+	local var1_20 = arg1_20:Find("PT/Count/NumText")
+	local var2_20 = arg1_20:Find("PT/Icon")
+	local var3_20 = arg1_20:Find("Info/AwardInfo/NameMask/NameText")
+	local var4_20 = arg1_20:Find("Info/AwardInfo/SynProgressText")
+	local var5_20 = arg1_20:Find("Info/AwardInfo/Award/Item")
+	local var6_20 = arg1_20:Find("Info/AwardInfo/Award/Tag/Get")
+	local var7_20 = arg1_20:Find("Info/AwardInfo/Award/Tag/Got")
+	local var8_20 = arg1_20:Find("GotMask")
 
 	setText(var0_20, arg2_20)
 
@@ -201,7 +201,7 @@ function var0_0.updateTaskTpl(arg0_20, arg1_20, arg2_20)
 	updateDrop(var5_20, var10_20, {
 		hideName = true
 	})
-	onButton(arg0_20, arg0_20:findTF("Info/AwardInfo/Award", arg1_20), function()
+	onButton(arg0_20, arg1_20:Find("Info/AwardInfo/Award"), function()
 		arg0_20:emit(BaseUI.ON_DROP, var10_20)
 	end, SFX_PANEL)
 	setText(var3_20, shortenString(var10_20:getConfig("name"), 6))

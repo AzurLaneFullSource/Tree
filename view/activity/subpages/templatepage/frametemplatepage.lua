@@ -1,18 +1,18 @@
 local var0_0 = class("FrameTemplatePage", import("view.base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.battleBtn = arg0_1:findTF("battle_btn", arg0_1.bg)
-	arg0_1.getBtn = arg0_1:findTF("get_btn", arg0_1.bg)
-	arg0_1.gotBtn = arg0_1:findTF("got_btn", arg0_1.bg)
-	arg0_1.switchBtn = arg0_1:findTF("AD/switch_btn")
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.battleBtn = arg0_1.bg:Find("battle_btn")
+	arg0_1.getBtn = arg0_1.bg:Find("get_btn")
+	arg0_1.gotBtn = arg0_1.bg:Find("got_btn")
+	arg0_1.switchBtn = arg0_1._tf:Find("AD/switch_btn")
 	arg0_1.phases = {
-		arg0_1:findTF("AD/switcher/phase1"),
-		arg0_1:findTF("AD/switcher/phase2")
+		arg0_1._tf:Find("AD/switcher/phase1"),
+		arg0_1._tf:Find("AD/switcher/phase2")
 	}
-	arg0_1.bar = arg0_1:findTF("AD/switcher/phase2/Image/barContent/bar")
-	arg0_1.step = arg0_1:findTF("AD/switcher/phase2/Image/step")
-	arg0_1.progress = arg0_1:findTF("AD/switcher/phase2/Image/progress")
+	arg0_1.bar = arg0_1._tf:Find("AD/switcher/phase2/Image/barContent/bar")
+	arg0_1.step = arg0_1._tf:Find("AD/switcher/phase2/Image/step")
+	arg0_1.progress = arg0_1._tf:Find("AD/switcher/phase2/Image/progress")
 end
 
 function var0_0.OnDataSetting(arg0_2)
@@ -121,7 +121,7 @@ function var0_0.Switch(arg0_10, arg1_10)
 end
 
 function var0_0.UpdateAwardGot(arg0_15)
-	local var0_15 = arg0_15:findTF("switcher/phase2/got", arg0_15.bg)
+	local var0_15 = arg0_15.bg:Find("switcher/phase2/got")
 	local var1_15 = not arg0_15.ptData:CanGetNextAward() and arg0_15.inPhase2
 
 	setActive(var0_15, var1_15)

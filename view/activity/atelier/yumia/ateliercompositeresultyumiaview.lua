@@ -11,13 +11,13 @@ function var0_0.ShowCompositeResult(arg0_1, arg1_1)
 		return
 	end
 
-	local var1_1 = arg0_1:findTF("Window/itemContant")
-	local var2_1 = arg0_1:findTF("Window/AtelierCommonYumiaItem")
+	local var1_1 = arg0_1._tf:Find("Window/itemContant")
+	local var2_1 = arg0_1._tf:Find("Window/AtelierCommonYumiaItem")
 
 	if var0_1.type ~= DROP_TYPE_RYZA_DROP then
 		setActive(var2_1, false)
 		setActive(var1_1, true)
-		UIItemList.StaticAlign(var1_1, arg0_1:findTF("Window/itemContant/Icon"), #arg1_1, function(arg0_2, arg1_2, arg2_2)
+		UIItemList.StaticAlign(var1_1, arg0_1._tf:Find("Window/itemContant/Icon"), #arg1_1, function(arg0_2, arg1_2, arg2_2)
 			if arg0_2 == UIItemList.EventUpdate then
 				local var0_2 = arg1_1[arg1_2 + 1]
 
@@ -32,7 +32,7 @@ function var0_0.ShowCompositeResult(arg0_1, arg1_1)
 			var3_1 = iter1_1:getCount() + var3_1
 		end
 
-		setText(arg0_1:findTF("Window/CountBG/Text"), var3_1)
+		setText(arg0_1._tf:Find("Window/CountBG/Text"), var3_1)
 	else
 		local var4_1 = AtelierMaterial.New({
 			configId = var0_1.id
@@ -43,7 +43,7 @@ function var0_0.ShowCompositeResult(arg0_1, arg1_1)
 		arg0_1._parentClass:UpdateRyzaItem(var2_1, var4_1)
 		setActive(var2_1, true)
 		setActive(var1_1, false)
-		setText(arg0_1:findTF("Window/CountBG/Text"), var0_1:getCount())
+		setText(arg0_1._tf:Find("Window/CountBG/Text"), var0_1:getCount())
 	end
 end
 

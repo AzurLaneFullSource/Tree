@@ -10,10 +10,10 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 end
 
 function var0_0.Init(arg0_2)
-	arg0_2.BG = arg0_2:findTF("BG")
-	arg0_2.candicatesRect = GetComponent(arg0_2:findTF("Frame/List"), "LScrollRect")
+	arg0_2.BG = arg0_2._tf:Find("BG")
+	arg0_2.candicatesRect = GetComponent(arg0_2._tf:Find("Frame/List"), "LScrollRect")
 
-	local var0_2 = arg0_2:findTF("Frame/Item")
+	local var0_2 = arg0_2._tf:Find("Frame/Item")
 
 	setActive(var0_2, false)
 
@@ -26,9 +26,9 @@ function var0_0.Init(arg0_2)
 end
 
 function var0_0.InitCustom(arg0_4)
-	local var0_4 = arg0_4:findTF("Frame/Item")
+	local var0_4 = arg0_4._tf:Find("Frame/Item")
 
-	setText(arg0_4:findTF("IconBG/Lack/Text", var0_4), i18n("ryza_ui_show_acess"))
+	setText(var0_4:Find("IconBG/Lack/Text"), i18n("ryza_ui_show_acess"))
 end
 
 function var0_0.SetContextData(arg0_5, arg1_5)
@@ -49,11 +49,11 @@ function var0_0.UpdateCandicateItem(arg0_9, arg1_9, arg2_9)
 	local var0_9 = tf(arg2_9)
 	local var1_9 = arg0_9.candicates[arg1_9]
 
-	arg0_9._parentClass:UpdateRyzaItem(arg0_9:findTF("IconBG", var0_9), var1_9, true)
+	arg0_9._parentClass:UpdateRyzaItem(var0_9:Find("IconBG"), var1_9, true)
 
 	local var2_9 = var1_9.count <= 0
 
-	setActive(arg0_9:findTF("IconBG/Lack", var0_9), var2_9)
+	setActive(var0_9:Find("IconBG/Lack"), var2_9)
 	onButton(arg0_9, var0_9, function()
 		if var2_9 then
 			var1_9 = CreateShell(var1_9)
@@ -68,18 +68,18 @@ function var0_0.UpdateCandicateItem(arg0_9, arg1_9, arg2_9)
 end
 
 function var0_0.ShowCandicatePanel(arg0_11, arg1_11, arg2_11, arg3_11)
-	local var0_11 = arg0_11:findTF("Target")
+	local var0_11 = arg0_11._tf:Find("Target")
 	local var1_11 = tf(Instantiate(arg1_11))
 
 	SetComponentEnabled(var1_11, typeof(Button), false)
-	removeAllChildren(arg0_11:findTF("Target"))
+	removeAllChildren(arg0_11._tf:Find("Target"))
 	setParent(var1_11, var0_11)
 	setAnchoredPosition(var1_11, Vector2.zero)
 	arg0_11:HideNodeLinks(var1_11)
 
 	local var2_11 = arg0_11._parentClass.layerFormulaDetailPanel
 	local var3_11 = var0_11.anchoredPosition
-	local var4_11 = arg0_11:findTF("Content", arg0_11._parentClass.scrollView)
+	local var4_11 = arg0_11._parentClass.scrollView:Find("Content")
 	local var5_11 = arg1_11.anchoredPosition + arg0_11._parentClass.scrollView.anchoredPosition
 
 	setAnchoredPosition(var4_11, var3_11 - var5_11)
@@ -107,7 +107,7 @@ function var0_0.HideCandicatePanel(arg0_14)
 	pg.UIMgr.GetInstance():OverlayPanel(arg0_14._parentClass.top)
 	arg0_14._parentClass.painting:SetSiblingIndex(1)
 	setActive(arg0_14._go, false)
-	removeAllChildren(arg0_14:findTF("Target"))
+	removeAllChildren(arg0_14._tf:Find("Target"))
 	SetComponentEnabled(arg0_14._parentClass.scrollView, typeof(ScrollRect), true)
 
 	arg0_14.candicateTarget = nil
@@ -165,12 +165,12 @@ end
 
 function var0_0.HideNodeLinks(arg0_21, arg1_21)
 	for iter0_21 = 1, 6 do
-		setActive(arg0_21:findTF("Links", arg1_21):GetChild(iter0_21 - 1), false)
+		setActive(arg1_21:Find("Links"):GetChild(iter0_21 - 1), false)
 	end
 end
 
 function var0_0.PlayBgAnimation(arg0_22)
-	local var0_22 = arg0_22:findTF("TargetBG")
+	local var0_22 = arg0_22._tf:Find("TargetBG")
 
 	var0_22.localRotation = Quaternion.identity
 
@@ -186,14 +186,14 @@ end
 function var0_0.StopBgAnimation(arg0_23, arg1_23)
 	arg0_23._parentClass:LoadingOn()
 
-	local var0_23 = GetComponent(arg0_23:findTF("TargetBG"), typeof(DftAniEvent))
+	local var0_23 = GetComponent(arg0_23._tf:Find("TargetBG"), typeof(DftAniEvent))
 
 	var0_23:SetEndEvent(function()
 		arg0_23._parentClass:LoadingOff()
 		arg1_23()
 		var0_23:SetEndEvent(nil)
 	end)
-	GetComponent(arg0_23:findTF("TargetBG"), typeof(Animator)):SetBool("Selecting", false)
+	GetComponent(arg0_23._tf:Find("TargetBG"), typeof(Animator)):SetBool("Selecting", false)
 end
 
 return var0_0

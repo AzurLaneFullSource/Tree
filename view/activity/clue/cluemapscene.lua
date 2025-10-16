@@ -7,32 +7,32 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.ui = arg0_2:findTF("ui")
-	arg0_2.closeBtn = arg0_2:findTF("ui/top/back_button")
-	arg0_2.homeBtn = arg0_2:findTF("ui/top/home_button")
+	arg0_2.ui = arg0_2._tf:Find("ui")
+	arg0_2.closeBtn = arg0_2._tf:Find("ui/top/back_button")
+	arg0_2.homeBtn = arg0_2._tf:Find("ui/top/home_button")
 	arg0_2.bgs = {
-		arg0_2:findTF("bgs/bg1"),
-		arg0_2:findTF("bgs/bg2"),
-		arg0_2:findTF("bgs/bg3")
+		arg0_2._tf:Find("bgs/bg1"),
+		arg0_2._tf:Find("bgs/bg2"),
+		arg0_2._tf:Find("bgs/bg3")
 	}
 	arg0_2.mapsSwitch = {
-		arg0_2:findTF("ui/mapsSwitch/map1"),
-		arg0_2:findTF("ui/mapsSwitch/map2"),
-		arg0_2:findTF("ui/mapsSwitch/map3")
+		arg0_2._tf:Find("ui/mapsSwitch/map1"),
+		arg0_2._tf:Find("ui/mapsSwitch/map2"),
+		arg0_2._tf:Find("ui/mapsSwitch/map3")
 	}
 	arg0_2.chapters = {
-		arg0_2:findTF("ui/chapters/t1"),
-		arg0_2:findTF("ui/chapters/t2"),
-		arg0_2:findTF("ui/chapters/t3"),
-		arg0_2:findTF("ui/chapters/t4")
+		arg0_2._tf:Find("ui/chapters/t1"),
+		arg0_2._tf:Find("ui/chapters/t2"),
+		arg0_2._tf:Find("ui/chapters/t3"),
+		arg0_2._tf:Find("ui/chapters/t4")
 	}
-	arg0_2.chapterSp = arg0_2:findTF("ui/chapterSp")
-	arg0_2.pt = arg0_2:findTF("ui/pt")
-	arg0_2.explore = arg0_2:findTF("ui/exploreTarget")
-	arg0_2.taskBtn = arg0_2:findTF("ui/taskBtn")
-	arg0_2.bookBtn = arg0_2:findTF("ui/bookBtn")
+	arg0_2.chapterSp = arg0_2._tf:Find("ui/chapterSp")
+	arg0_2.pt = arg0_2._tf:Find("ui/pt")
+	arg0_2.explore = arg0_2._tf:Find("ui/exploreTarget")
+	arg0_2.taskBtn = arg0_2._tf:Find("ui/taskBtn")
+	arg0_2.bookBtn = arg0_2._tf:Find("ui/bookBtn")
 
-	setText(arg0_2:findTF("total", arg0_2.pt), i18n("clue_pt_tip"))
+	setText(arg0_2.pt:Find("total"), i18n("clue_pt_tip"))
 end
 
 function var0_0.didEnter(arg0_3)
@@ -40,7 +40,7 @@ function var0_0.didEnter(arg0_3)
 	arg0_3:ShowResUI()
 	arg0_3:InitMapsSwitch()
 	arg0_3:UpdateCluePanel()
-	setText(arg0_3:findTF("Text", arg0_3.pt), arg0_3.ptData.count)
+	setText(arg0_3.pt:Find("Text"), arg0_3.ptData.count)
 	onButton(arg0_3, arg0_3.closeBtn, function()
 		arg0_3:StopBgm()
 		arg0_3:closeView()
@@ -48,38 +48,38 @@ function var0_0.didEnter(arg0_3)
 	onButton(arg0_3, arg0_3.homeBtn, function()
 		arg0_3:emit(var0_0.ON_HOME)
 	end, SFX_CANCEL)
-	setActive(arg0_3:findTF("tip", arg0_3.taskBtn), ClueTasksLayer.ShouldShowTip())
+	setActive(arg0_3.taskBtn:Find("tip"), ClueTasksLayer.ShouldShowTip())
 	onButton(arg0_3, arg0_3.taskBtn, function()
 		arg0_3:emit(ClueMapMediator.OPEN_CLUE_TASk, function()
 			if arg0_3._tf then
-				setActive(arg0_3:findTF("tip", arg0_3.taskBtn), ClueTasksLayer.ShouldShowTip())
+				setActive(arg0_3.taskBtn:Find("tip"), ClueTasksLayer.ShouldShowTip())
 
 				arg0_3.ptActivity = getProxy(ActivityProxy):getActivityById(ActivityConst.Valleyhospital_PT_ACT_ID)
 				arg0_3.ptData = ActivityPtData.New(arg0_3.ptActivity)
 
-				setText(arg0_3:findTF("Text", arg0_3.pt), arg0_3.ptData.count)
+				setText(arg0_3.pt:Find("Text"), arg0_3.ptData.count)
 
 				arg0_3.activity = getProxy(ActivityProxy):getActivityById(ActivityConst.Valleyhospital_ACT_ID)
 
-				setText(arg0_3:findTF("ticket/count", arg0_3.chapterSp), "X " .. arg0_3.activity.data1)
+				setText(arg0_3.chapterSp:Find("ticket/count"), "X " .. arg0_3.activity.data1)
 			end
 		end)
 	end, SFX_PANEL)
-	setActive(arg0_3:findTF("tip", arg0_3.bookBtn), ClueBookLayer.ShouldShowTip())
+	setActive(arg0_3.bookBtn:Find("tip"), ClueBookLayer.ShouldShowTip())
 	onButton(arg0_3, arg0_3.bookBtn, function()
 		arg0_3:emit(ClueMapMediator.OPEN_CLUE_BOOK, function()
 			if arg0_3._tf then
 				arg0_3:UpdateCluePanel()
-				setActive(arg0_3:findTF("tip", arg0_3.bookBtn), ClueBookLayer.ShouldShowTip())
+				setActive(arg0_3.bookBtn:Find("tip"), ClueBookLayer.ShouldShowTip())
 
 				arg0_3.ptActivity = getProxy(ActivityProxy):getActivityById(ActivityConst.Valleyhospital_PT_ACT_ID)
 				arg0_3.ptData = ActivityPtData.New(arg0_3.ptActivity)
 
-				setText(arg0_3:findTF("Text", arg0_3.pt), arg0_3.ptData.count)
+				setText(arg0_3.pt:Find("Text"), arg0_3.ptData.count)
 
 				arg0_3.activity = getProxy(ActivityProxy):getActivityById(ActivityConst.Valleyhospital_ACT_ID)
 
-				setText(arg0_3:findTF("ticket/count", arg0_3.chapterSp), "X " .. arg0_3.activity.data1)
+				setText(arg0_3.chapterSp:Find("ticket/count"), "X " .. arg0_3.activity.data1)
 			end
 		end)
 	end, SFX_PANEL)
@@ -156,11 +156,11 @@ function var0_0.RefreshPtAndTicket(arg0_11)
 	arg0_11.ptActivity = getProxy(ActivityProxy):getActivityById(ActivityConst.Valleyhospital_PT_ACT_ID)
 	arg0_11.ptData = ActivityPtData.New(arg0_11.ptActivity)
 
-	setText(arg0_11:findTF("Text", arg0_11.pt), arg0_11.ptData.count)
+	setText(arg0_11.pt:Find("Text"), arg0_11.ptData.count)
 
 	arg0_11.activity = getProxy(ActivityProxy):getActivityById(ActivityConst.Valleyhospital_ACT_ID)
 
-	setText(arg0_11:findTF("ticket/count", arg0_11.chapterSp), "X " .. arg0_11.activity.data1)
+	setText(arg0_11.chapterSp:Find("ticket/count"), "X " .. arg0_11.activity.data1)
 end
 
 function var0_0.ShowResUI(arg0_12)
@@ -212,9 +212,9 @@ function var0_0.UpdateCluePanel(arg0_16)
 	end
 
 	if var3_16 then
-		setText(arg0_16:findTF("target/Text", arg0_16.explore), i18n("clue_unselect_tip"))
+		setText(arg0_16.explore:Find("target/Text"), i18n("clue_unselect_tip"))
 	else
-		setText(arg0_16:findTF("target/Text", arg0_16.explore), var4_16[1].unlock_desc .. var4_16[1].unlock_num .. "/" .. var4_16[2].unlock_num .. "/" .. var4_16[3].unlock_num .. i18n("clue_task_tip", var5_16))
+		setText(arg0_16.explore:Find("target/Text"), var4_16[1].unlock_desc .. var4_16[1].unlock_num .. "/" .. var4_16[2].unlock_num .. "/" .. var4_16[3].unlock_num .. i18n("clue_task_tip", var5_16))
 	end
 end
 
@@ -232,43 +232,43 @@ function var0_0.InitMapsSwitch(arg0_17)
 
 				if iter0_17 == 1 then
 					for iter1_18, iter2_18 in ipairs(arg0_17.chapters) do
-						setActive(arg0_17:findTF("dusk", iter2_18), iter0_17 == 2)
-						setActive(arg0_17:findTF("night", iter2_18), iter0_17 == 3)
-						setActive(arg0_17:findTF("title", iter2_18), true)
-						setActive(arg0_17:findTF("title2", iter2_18), false)
+						setActive(iter2_18:Find("dusk"), iter0_17 == 2)
+						setActive(iter2_18:Find("night"), iter0_17 == 3)
+						setActive(iter2_18:Find("title"), true)
+						setActive(iter2_18:Find("title2"), false)
 						onButton(arg0_17, iter2_18, function()
 							arg0_17:OpenChapterLayer(arg0_17.easyChapters[iter1_18].id)
 						end, SFX_PANEL)
 					end
 				elseif iter0_17 == 2 then
 					for iter3_18, iter4_18 in ipairs(arg0_17.chapters) do
-						setActive(arg0_17:findTF("dusk", iter4_18), iter0_17 == 2)
-						setActive(arg0_17:findTF("night", iter4_18), iter0_17 == 3)
-						setActive(arg0_17:findTF("title", iter4_18), true)
-						setActive(arg0_17:findTF("title2", iter4_18), false)
+						setActive(iter4_18:Find("dusk"), iter0_17 == 2)
+						setActive(iter4_18:Find("night"), iter0_17 == 3)
+						setActive(iter4_18:Find("title"), true)
+						setActive(iter4_18:Find("title2"), false)
 						onButton(arg0_17, iter4_18, function()
 							arg0_17:OpenChapterLayer(arg0_17.normalChapters[iter3_18].id)
 						end, SFX_PANEL)
 					end
 				else
 					for iter5_18, iter6_18 in ipairs(arg0_17.chapters) do
-						setActive(arg0_17:findTF("dusk", iter6_18), iter0_17 == 2)
-						setActive(arg0_17:findTF("night", iter6_18), iter0_17 == 3)
-						setActive(arg0_17:findTF("title", iter6_18), false)
-						setActive(arg0_17:findTF("title2", iter6_18), true)
+						setActive(iter6_18:Find("dusk"), iter0_17 == 2)
+						setActive(iter6_18:Find("night"), iter0_17 == 3)
+						setActive(iter6_18:Find("title"), false)
+						setActive(iter6_18:Find("title2"), true)
 						onButton(arg0_17, iter6_18, function()
 							arg0_17:OpenChapterLayer(arg0_17.hardChapters[iter5_18].id)
 						end, SFX_PANEL)
 					end
 				end
 
-				setActive(arg0_17:findTF("dusk", arg0_17.chapterSp), iter0_17 == 2)
-				setActive(arg0_17:findTF("night", arg0_17.chapterSp), iter0_17 == 3)
-				GetImageSpriteFromAtlasAsync(pg.item_virtual_data_statistics[arg0_17.spChapter.enter_cost].icon, "", arg0_17:findTF("ticket/icon", arg0_17.chapterSp), false)
+				setActive(arg0_17.chapterSp:Find("dusk"), iter0_17 == 2)
+				setActive(arg0_17.chapterSp:Find("night"), iter0_17 == 3)
+				GetImageSpriteFromAtlasAsync(pg.item_virtual_data_statistics[arg0_17.spChapter.enter_cost].icon, "", arg0_17.chapterSp:Find("ticket/icon"), false)
 
 				arg0_17.activity = getProxy(ActivityProxy):getActivityById(ActivityConst.Valleyhospital_ACT_ID)
 
-				setText(arg0_17:findTF("ticket/count", arg0_17.chapterSp), "X " .. arg0_17.activity.data1)
+				setText(arg0_17.chapterSp:Find("ticket/count"), "X " .. arg0_17.activity.data1)
 				onButton(arg0_17, arg0_17.chapterSp, function()
 					arg0_17:OpenChapterLayer(arg0_17.spChapter.id)
 				end, SFX_PANEL)
@@ -305,7 +305,7 @@ function var0_0.OpenSingleClueGroupPanel(arg0_26)
 	arg0_26:emit(ClueMapMediator.OPEN_SINGLE_CLUE_GROUP, arg0_26.showClueGroupId, arg0_26.submitClueIds[arg0_26.showClueGroupId], function()
 		arg0_26:SubmitClueTask()
 		arg0_26:UpdateCluePanel()
-		setActive(arg0_26:findTF("tip", arg0_26.bookBtn), ClueBookLayer.ShouldShowTip())
+		setActive(arg0_26.bookBtn:Find("tip"), ClueBookLayer.ShouldShowTip())
 	end)
 end
 

@@ -149,19 +149,23 @@ end
 function var0_0.InitMaxEnergy(arg0_17, arg1_17)
 	local var0_17 = arg0_17.maxEnerey
 	local var1_17, var2_17 = arg0_17:GetBreakLevel(), arg0_17:getConfig("upgrade_power")
+	local var3_17 = arg0_17:getConfig("power")
+	local var4_17 = 0
 
 	for iter0_17 = 1, var1_17 do
-		arg0_17.maxEnerey = arg0_17.maxEnerey + (var2_17[iter0_17] or 0)
+		var4_17 = var4_17 + (var2_17[iter0_17] or 0)
 	end
+
+	arg0_17.maxEnerey = var3_17 + var4_17
 
 	if not arg1_17 then
 		return
 	end
 
 	if arg0_17.maxEnerey - var0_17 > 0 then
-		local var3_17 = var0_17 - arg0_17.energy
+		local var5_17 = var0_17 - arg0_17.energy
 
-		arg0_17.energy = arg0_17.maxEnerey - var3_17
+		arg0_17.energy = arg0_17.maxEnerey - var5_17
 	end
 end
 
@@ -485,6 +489,10 @@ function var0_0.InitAttrs(arg0_55)
 
 	for iter5_55, iter6_55 in pairs(arg0_55.extraAttrs) do
 		arg0_55.attrs[iter5_55] = arg0_55.attrs[iter5_55] + iter6_55
+	end
+
+	for iter7_55, iter8_55 in pairs(arg0_55.attrs) do
+		arg0_55.attrs[iter7_55] = math.floor(iter8_55)
 	end
 end
 

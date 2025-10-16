@@ -83,7 +83,7 @@ function var0_0.OnUpdateFlush(arg0_6)
 	onButton(arg0_6, arg0_6.awardTF, function()
 		arg0_6:emit(BaseUI.ON_DROP, var10_6)
 	end, SFX_PANEL)
-	setText(arg0_6:findTF("description", arg0_6.bg), i18n("activity_victory"))
+	setText(arg0_6.bg:Find("description"), i18n("activity_victory"))
 
 	if not var8_6 and var6_6 >= 1 and not var7_6 then
 		arg0_6.level = arg0_6.level + 1

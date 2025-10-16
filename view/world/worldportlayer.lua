@@ -36,10 +36,10 @@ function var0_0.init(arg0_2)
 		end
 	end
 
-	arg0_2.rtBg = arg0_2:findTF("bg")
+	arg0_2.rtBg = arg0_2._tf:Find("bg")
 	arg0_2.rtEnterIcon = arg0_2.rtBg:Find("enter_icon")
 	arg0_2.rtBgNShop = arg0_2._tf:Find("bg_2")
-	arg0_2.rtBlurPanel = arg0_2:findTF("blur_panel")
+	arg0_2.rtBlurPanel = arg0_2._tf:Find("blur_panel")
 	arg0_2.rtTasks = arg0_2.rtBlurPanel:Find("adapt/tasks")
 	arg0_2.rtShop = arg0_2.rtBlurPanel:Find("adapt/shop")
 	arg0_2.rtPainting = arg0_2.rtShop:Find("paint")
@@ -94,7 +94,7 @@ function var0_0.init(arg0_2)
 
 	arg0_2.resPanel._tf:SetParent(arg0_2.rtTop:Find("title/resources"), false)
 
-	arg0_2.rtTaskWindow = arg0_2:findTF("task_window")
+	arg0_2.rtTaskWindow = arg0_2._tf:Find("task_window")
 	arg0_2.wsTasks = {}
 	arg0_2.wsGoods = {}
 	arg0_2.page = -1
@@ -105,7 +105,7 @@ function var0_0.init(arg0_2)
 
 	setActive(arg0_2.refreshBtn, false)
 
-	arg0_2.glitchArtMaterial = arg0_2:findTF("resource/material1"):GetComponent(typeof(Image)).material
+	arg0_2.glitchArtMaterial = arg0_2._tf:Find("resource/material1"):GetComponent(typeof(Image)).material
 	arg0_2.singleWindow = OriginShopSingleWindow.New(arg0_2._tf, arg0_2.event)
 	arg0_2.multiWindow = OriginShopMultiWindow.New(arg0_2._tf, arg0_2.event)
 end

@@ -1,18 +1,18 @@
 local var0_0 = class("AtelierMaterialSelectYumiaView", import("view.activity.Atelier.base.AtelierMaterialSelectView"))
 
 function var0_0.InitCustom(arg0_1)
-	arg0_1.item = arg0_1:findTF("left/Icon")
-	arg0_1.itemName = arg0_1:findTF("left/titleBg/Name")
-	arg0_1.itemCnt = arg0_1:findTF("left/titleBg/cntText")
-	arg0_1.itemDescription = arg0_1:findTF("left/Description/Text")
+	arg0_1.item = arg0_1._tf:Find("left/Icon")
+	arg0_1.itemName = arg0_1._tf:Find("left/titleBg/Name")
+	arg0_1.itemCnt = arg0_1._tf:Find("left/titleBg/cntText")
+	arg0_1.itemDescription = arg0_1._tf:Find("left/Description/Text")
 
-	setText(arg0_1:findTF("Frame/closeBtn/Text"), i18n("yumia_atelier_tip10"))
-	setText(arg0_1:findTF("left/titleBg/Text_1"), i18n("yumia_atelier_tip8"))
+	setText(arg0_1._tf:Find("Frame/closeBtn/Text"), i18n("yumia_atelier_tip10"))
+	setText(arg0_1._tf:Find("left/titleBg/Text_1"), i18n("yumia_atelier_tip8"))
 end
 
 function var0_0.didEnter(arg0_2)
 	var0_0.super.didEnter(arg0_2)
-	onButton(arg0_2, arg0_2:findTF("Frame/closeBtn"), function()
+	onButton(arg0_2, arg0_2._tf:Find("Frame/closeBtn"), function()
 		arg0_2:CloseCandicatePanel()
 	end, SFX_PANEL)
 end
@@ -81,7 +81,7 @@ function var0_0.UpdateCandicatePanel(arg0_6, arg1_6)
 end
 
 function var0_0.ShowCandicatePanel(arg0_11, arg1_11, arg2_11, arg3_11)
-	local var0_11 = arg0_11:findTF("Target")
+	local var0_11 = arg0_11._tf:Find("Target")
 
 	setActive(arg0_11._go, true)
 	SetComponentEnabled(arg0_11._parentClass.scrollView, typeof(ScrollRect), false)
@@ -96,7 +96,7 @@ function var0_0.ShowCandicatePanel(arg0_11, arg1_11, arg2_11, arg3_11)
 	arg0_11:UpdateCandicatePanel(arg3_11)
 	arg0_11:RefreshFormula()
 	tf(arg2_11.GO):SetAsLastSibling()
-	setActive(arg0_11:findTF("select", arg2_11.GO), true)
+	setActive(arg2_11.GO:Find("select"), true)
 end
 
 function var0_0.RefreshFormula(arg0_12)
@@ -130,7 +130,7 @@ function var0_0.HideCandicatePanel(arg0_15)
 		return
 	end
 
-	setActive(arg0_15:findTF("select", arg0_15.nodeTarget.GO), false)
+	setActive(arg0_15.nodeTarget.GO:Find("select"), false)
 	setActive(arg0_15._go, false)
 
 	GetComponent(arg0_15._parentClass.scrollView, typeof(CanvasGroup)).blocksRaycasts = true

@@ -13,26 +13,26 @@ end
 function var0_0.init(arg0_3)
 	pg.UIMgr.GetInstance():BlurPanel(arg0_3._tf)
 
-	arg0_3.mainPanel = arg0_3:findTF("main")
-	arg0_3.finishPanel = arg0_3:findTF("finish_panel")
+	arg0_3.mainPanel = arg0_3._tf:Find("main")
+	arg0_3.finishPanel = arg0_3._tf:Find("finish_panel")
 
 	setActive(arg0_3.mainPanel, true)
 	setActive(arg0_3.finishPanel, false)
 
-	arg0_3.equipmentList = arg0_3:findTF("panel/equipment_list", arg0_3.mainPanel)
-	arg0_3.equipmentContain = arg0_3:findTF("equipments", arg0_3.equipmentList)
+	arg0_3.equipmentList = arg0_3.mainPanel:Find("panel/equipment_list")
+	arg0_3.equipmentContain = arg0_3.equipmentList:Find("equipments")
 	arg0_3.equipmentTpl = arg0_3:getTpl("equiptpl", arg0_3.equipmentContain)
 
 	setActive(arg0_3.equipmentList, false)
 
-	arg0_3.equipmentPanel = arg0_3:findTF("panel/equipment_panel", arg0_3.mainPanel)
-	arg0_3.materialPanel = arg0_3:findTF("panel/material_panel", arg0_3.mainPanel)
-	arg0_3.startBtn = arg0_3:findTF("start_btn", arg0_3.materialPanel)
-	arg0_3.overLimit = arg0_3:findTF("materials/limit", arg0_3.materialPanel)
+	arg0_3.equipmentPanel = arg0_3.mainPanel:Find("panel/equipment_panel")
+	arg0_3.materialPanel = arg0_3.mainPanel:Find("panel/material_panel")
+	arg0_3.startBtn = arg0_3.materialPanel:Find("start_btn")
+	arg0_3.overLimit = arg0_3.materialPanel:Find("materials/limit")
 
-	setText(arg0_3:findTF("text", arg0_3.overLimit), i18n("equipment_upgrade_overlimit"))
+	setText(arg0_3.overLimit:Find("text"), i18n("equipment_upgrade_overlimit"))
 
-	arg0_3.materialsContain = arg0_3:findTF("materials/materials", arg0_3.materialPanel)
+	arg0_3.materialsContain = arg0_3.materialPanel:Find("materials/materials")
 	arg0_3.uiMain = pg.UIMgr.GetInstance().UIMain
 	arg0_3.Overlay = pg.UIMgr.GetInstance().OverlayMain
 end
@@ -144,7 +144,7 @@ function var0_0.updateEquipment(arg0_11)
 	changeToScrollText(arg0_11.equipmentPanel:Find("name_container"), var0_11:getConfig("name"))
 	setActive(findTF(arg0_11.equipmentPanel, "unique"), var0_11:isUnique())
 
-	local var2_11 = arg0_11:findTF("equiptpl", arg0_11.equipmentPanel)
+	local var2_11 = arg0_11.equipmentPanel:Find("equiptpl")
 
 	updateEquipment(var2_11, var0_11)
 end
@@ -313,7 +313,7 @@ function var0_0.updateMaterials(arg0_17)
 		end
 	end
 
-	setText(arg0_17:findTF("cost/consume", arg0_17.materialPanel), var3_17)
+	setText(arg0_17.materialPanel:Find("cost/consume"), var3_17)
 	setActive(arg0_17.startBtn, var4_17)
 
 	local var13_17 = Equipment.canUpgrade(var1_17.configId)
@@ -363,10 +363,10 @@ function var0_0.upgradeFinish(arg0_21, arg1_21, arg2_21)
 	changeToScrollText(arg0_21.finishPanel:Find("frame/equipment_panel/name_container"), arg2_21:getConfig("name"))
 	setActive(findTF(arg0_21.finishPanel, "frame/equipment_panel/unique"), arg2_21:isUnique())
 
-	local var0_21 = arg0_21:findTF("frame/equipment_panel/equiptpl", arg0_21.finishPanel)
+	local var0_21 = arg0_21.finishPanel:Find("frame/equipment_panel/equiptpl")
 
 	updateEquipment(var0_21, arg2_21)
-	arg0_21:updateAttrs(arg0_21:findTF("frame/equipment_panel/view/content", arg0_21.finishPanel), arg1_21, arg2_21)
+	arg0_21:updateAttrs(arg0_21.finishPanel:Find("frame/equipment_panel/view/content"), arg1_21, arg2_21)
 end
 
 function var0_0.willExit(arg0_23)

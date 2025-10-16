@@ -26,48 +26,48 @@ function var0_0.initData(arg0_4)
 end
 
 function var0_0.findUI(arg0_5)
-	arg0_5.topTF = arg0_5:findTF("ui/top")
-	arg0_5.homeBtn = arg0_5:findTF("ui/home_btn/home_btn")
+	arg0_5.topTF = arg0_5._tf:Find("ui/top")
+	arg0_5.homeBtn = arg0_5._tf:Find("ui/home_btn/home_btn")
 
-	setText(arg0_5:findTF("Text", arg0_5.homeBtn), i18n("child_btn_home"))
+	setText(arg0_5.homeBtn:Find("Text"), i18n("child_btn_home"))
 	setActive(arg0_5.homeBtn, false)
 
-	arg0_5.mapTF = arg0_5:findTF("map")
-	arg0_5.mapContent = arg0_5:findTF("content", arg0_5.mapTF)
-	arg0_5.mapSiteTpl = arg0_5:findTF("site_tpl", arg0_5.mapTF)
+	arg0_5.mapTF = arg0_5._tf:Find("map")
+	arg0_5.mapContent = arg0_5.mapTF:Find("content")
+	arg0_5.mapSiteTpl = arg0_5.mapTF:Find("site_tpl")
 
-	setText(arg0_5:findTF("limit/Text", arg0_5.mapSiteTpl), i18n("child_option_limit"))
+	setText(arg0_5.mapSiteTpl:Find("limit/Text"), i18n("child_option_limit"))
 	setActive(arg0_5.mapSiteTpl, false)
 
 	arg0_5.siteUIList = UIItemList.New(arg0_5.mapContent, arg0_5.mapSiteTpl)
-	arg0_5.datePanel = EducateDatePanel.New(arg0_5:findTF("date", arg0_5.topTF), arg0_5.event)
+	arg0_5.datePanel = EducateDatePanel.New(arg0_5.topTF:Find("date"), arg0_5.event)
 
 	arg0_5.datePanel:RegisterView(arg0_5)
 	arg0_5.datePanel:Load()
 
-	arg0_5.resPanel = EducateResPanel.New(arg0_5:findTF("res", arg0_5.topTF), arg0_5.event, {
+	arg0_5.resPanel = EducateResPanel.New(arg0_5.topTF:Find("res"), arg0_5.event, {
 		showBg = true
 	})
 
 	arg0_5.resPanel:RegisterView(arg0_5)
 	arg0_5.resPanel:Load()
 
-	arg0_5.topPanel = EducateTopPanel.New(arg0_5:findTF("top_right", arg0_5.topTF), arg0_5.event)
+	arg0_5.topPanel = EducateTopPanel.New(arg0_5.topTF:Find("top_right"), arg0_5.event)
 
 	arg0_5.topPanel:RegisterView(arg0_5)
 	arg0_5.topPanel:Load()
 
-	arg0_5.targetPanel = EducateTargetPanel.New(arg0_5:findTF("ui/target"), arg0_5.event)
+	arg0_5.targetPanel = EducateTargetPanel.New(arg0_5._tf:Find("ui/target"), arg0_5.event)
 
 	arg0_5.targetPanel:RegisterView(arg0_5)
 	arg0_5.targetPanel:Load()
 
-	arg0_5.archivePanel = EducateArchivePanel.New(arg0_5:findTF("ui/archive_panel"), arg0_5.event)
+	arg0_5.archivePanel = EducateArchivePanel.New(arg0_5._tf:Find("ui/archive_panel"), arg0_5.event)
 
 	arg0_5.archivePanel:RegisterView(arg0_5)
 	arg0_5.archivePanel:Load()
 
-	arg0_5.detailPanel = EducateSiteDetailPanel.New(arg0_5:findTF("ui/detail_panel"), arg0_5.event, {
+	arg0_5.detailPanel = EducateSiteDetailPanel.New(arg0_5._tf:Find("ui/detail_panel"), arg0_5.event, {
 		onEnter = function()
 			arg0_5:MoveTargetPanelLeft()
 		end,
@@ -145,16 +145,16 @@ function var0_0.updateSiteItem(arg0_21, arg1_21, arg2_21)
 
 	arg2_21.name = var0_21.id
 
-	LoadImageSpriteAsync("educatesite/" .. var0_21.icon, arg0_21:findTF("icon", arg2_21), true)
-	LoadImageSpriteAsync("educatesite/" .. var0_21.name_pic, arg0_21:findTF("name", arg2_21), true)
+	LoadImageSpriteAsync("educatesite/" .. var0_21.icon, arg2_21:Find("icon"), true)
+	LoadImageSpriteAsync("educatesite/" .. var0_21.name_pic, arg2_21:Find("name"), true)
 
 	local var1_21 = getProxy(EducateProxy):GetOptionsBySiteId(var0_21.id)
 	local var2_21 = underscore.any(var1_21, function(arg0_22)
 		return arg0_22:IsShowLimit()
 	end)
 
-	setActive(arg0_21:findTF("limit", arg2_21), var2_21)
-	setActive(arg0_21:findTF("new", arg2_21), EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_SITE, var0_21.id))
+	setActive(arg2_21:Find("limit"), var2_21)
+	setActive(arg2_21:Find("new"), EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_SITE, var0_21.id))
 	setAnchoredPosition(arg2_21, {
 		x = var0_21.coordinate[1],
 		y = var0_21.coordinate[2]
@@ -167,7 +167,7 @@ end
 function var0_0.clearNewTip(arg0_24, arg1_24)
 	eachChild(arg0_24.mapContent, function(arg0_25)
 		if tonumber(arg0_25.name) == arg1_24 then
-			setActive(arg0_24:findTF("new", arg0_25), false)
+			setActive(arg0_25:Find("new"), false)
 		end
 	end)
 end
@@ -218,7 +218,7 @@ function var0_0.onBackPressed(arg0_35)
 end
 
 function var0_0.willExit(arg0_36)
-	arg0_36:UnOverlayPanel(arg0_36.topTF, arg0_36:findTF("ui"))
+	arg0_36:UnOverlayPanel(arg0_36.topTF, arg0_36._tf:Find("ui"))
 	arg0_36.datePanel:Destroy()
 
 	arg0_36.datePanel = nil

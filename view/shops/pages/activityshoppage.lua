@@ -61,8 +61,8 @@ end
 function var0_0.init(arg0_9)
 	var0_0.super.init(arg0_9)
 
-	arg0_9.scrollRectSpecial = arg0_9:findTF("scrollRectSpecial")
-	arg0_9.groupList = UIItemList.New(arg0_9:findTF("viewport/view", arg0_9.scrollRectSpecial), arg0_9:findTF("viewport/view/group", arg0_9.scrollRectSpecial))
+	arg0_9.scrollRectSpecial = arg0_9._tf:Find("scrollRectSpecial")
+	arg0_9.groupList = UIItemList.New(arg0_9.scrollRectSpecial:Find("viewport/view"), arg0_9.scrollRectSpecial:Find("viewport/view/group"))
 end
 
 function var0_0.OnInit(arg0_10)

@@ -43,12 +43,12 @@ function var0_0.OnLoaded(arg0_8)
 	setActive(arg0_8.chatTr, false)
 
 	arg0_8.radarTxts = {
-		arg0_8:findTF("main/rader/1/Text"):GetComponent(typeof(Text)),
-		arg0_8:findTF("main/rader/2/Text"):GetComponent(typeof(Text)),
-		arg0_8:findTF("main/rader/3/Text"):GetComponent(typeof(Text)),
-		arg0_8:findTF("main/rader/4/Text"):GetComponent(typeof(Text)),
-		arg0_8:findTF("main/rader/5/Text"):GetComponent(typeof(Text)),
-		arg0_8:findTF("main/rader/6/Text"):GetComponent(typeof(Text))
+		arg0_8._tf:Find("main/rader/1/Text"):GetComponent(typeof(Text)),
+		arg0_8._tf:Find("main/rader/2/Text"):GetComponent(typeof(Text)),
+		arg0_8._tf:Find("main/rader/3/Text"):GetComponent(typeof(Text)),
+		arg0_8._tf:Find("main/rader/4/Text"):GetComponent(typeof(Text)),
+		arg0_8._tf:Find("main/rader/5/Text"):GetComponent(typeof(Text)),
+		arg0_8._tf:Find("main/rader/6/Text"):GetComponent(typeof(Text))
 	}
 end
 
@@ -130,7 +130,7 @@ function var0_0.PlayAnimation(arg0_18)
 end
 
 function var0_0.GetSmoothRotateObject(arg0_19)
-	return arg0_19:findTF("main/event")
+	return arg0_19._tf:Find("main/event")
 end
 
 function var0_0.UpdateChat(arg0_20, arg1_20)

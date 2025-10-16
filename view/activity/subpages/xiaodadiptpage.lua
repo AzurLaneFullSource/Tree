@@ -3,7 +3,7 @@ local var0_0 = class("XiaoDaDiPtPage", import(".TemplatePage.PtTemplatePage"))
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.hearts = UIItemList.New(arg0_1:findTF("AD/heart"), arg0_1:findTF("AD/heart/mark"))
+	arg0_1.hearts = UIItemList.New(arg0_1._tf:Find("AD/heart"), arg0_1._tf:Find("AD/heart/mark"))
 end
 
 function var0_0.OnFirstFlush(arg0_2)

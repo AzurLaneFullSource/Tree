@@ -9,7 +9,7 @@ function var0_0.initConfig(arg0_2)
 end
 
 function var0_0.didEnter(arg0_3)
-	setText(arg0_3:findTF("review_btn/Text", arg0_3.performTF), i18n("child_btn_review"))
+	setText(arg0_3.performTF:Find("review_btn/Text"), i18n("child_btn_review"))
 
 	arg0_3.memories = getProxy(EducateProxy):GetMemories()
 
@@ -21,33 +21,33 @@ end
 function var0_0.updateItem(arg0_4, arg1_4, arg2_4)
 	local var0_4 = table.contains(arg0_4.memories, arg1_4.id)
 
-	setActive(arg0_4:findTF("lock", arg2_4), not var0_4)
-	setActive(arg0_4:findTF("unlock", arg2_4), var0_4)
-	setActive(arg0_4:findTF("unlock/new", arg2_4), EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_MEMORY, arg1_4.id))
+	setActive(arg2_4:Find("lock"), not var0_4)
+	setActive(arg2_4:Find("unlock"), var0_4)
+	setActive(arg2_4:Find("unlock/new"), EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_MEMORY, arg1_4.id))
 
 	if var0_4 then
-		LoadImageSpriteAsync("bg/" .. arg1_4.pic, arg0_4:findTF("unlock/mask/Image", arg2_4))
-		setText(arg0_4:findTF("unlock/name", arg2_4), arg1_4.desc)
+		LoadImageSpriteAsync("bg/" .. arg1_4.pic, arg2_4:Find("unlock/mask/Image"))
+		setText(arg2_4:Find("unlock/name"), arg1_4.desc)
 		onButton(arg0_4, arg2_4, function()
 			arg0_4:showPerformWindow(arg1_4)
 		end, SFX_PANEL)
 	else
 		removeOnButton(arg2_4)
-		setText(arg0_4:findTF("lock/Text", arg2_4), i18n("child_collect_lock"))
+		setText(arg2_4:Find("lock/Text"), i18n("child_collect_lock"))
 	end
 end
 
 function var0_0.showPerformWindow(arg0_6, arg1_6)
 	EducateTipHelper.ClearNewTip(EducateTipHelper.NEW_MEMORY, arg1_6.id)
 
-	local var0_6 = arg0_6:findTF("Image", arg0_6.performTF)
+	local var0_6 = arg0_6.performTF:Find("Image")
 
 	LoadImageSpriteAsync("bg/" .. arg1_6.pic, var0_6)
 	setActive(arg0_6.performTF, true)
 	onButton(arg0_6, var0_6, function()
 		setActive(arg0_6.performTF, false)
 	end, SFX_PANEL)
-	onButton(arg0_6, arg0_6:findTF("review_btn", arg0_6.performTF), function()
+	onButton(arg0_6, arg0_6.performTF:Find("review_btn"), function()
 		pg.PerformMgr.GetInstance():PlayOne(arg1_6.performance)
 	end, SFX_PANEL)
 end

@@ -26,12 +26,12 @@ function var0_0.initData(arg0_4)
 end
 
 function var0_0.initUI(arg0_5)
-	arg0_5.itemTpl = arg0_5:findTF("ItemTpl")
+	arg0_5.itemTpl = arg0_5._tf:Find("ItemTpl")
 
-	local var0_5 = arg0_5:findTF("content")
+	local var0_5 = arg0_5._tf:Find("content")
 
-	arg0_5.monthCardTF = arg0_5:findTF("ItemMonth", var0_5)
-	arg0_5.itemContainerTF = arg0_5:findTF("ItemList", var0_5)
+	arg0_5.monthCardTF = var0_5:Find("ItemMonth")
+	arg0_5.itemContainerTF = var0_5:Find("ItemList")
 	arg0_5.uiItemList = arg0_5:initUIItemList()
 
 	arg0_5:updateView()

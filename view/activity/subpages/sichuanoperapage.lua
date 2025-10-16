@@ -3,8 +3,8 @@ local var0_0 = class("SiChuanOperaPage", import(".TemplatePage.LoginTemplatePage
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.dayText = arg0_1:findTF("AD/DayText")
-	arg0_1.url = arg0_1:findTF("AD/url")
+	arg0_1.dayText = arg0_1._tf:Find("AD/DayText")
+	arg0_1.url = arg0_1._tf:Find("AD/url")
 end
 
 function var0_0.OnFirstFlush(arg0_2)

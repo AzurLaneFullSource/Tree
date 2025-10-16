@@ -5,15 +5,15 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.closeBtn = arg0_2:findTF("window/top/btnBack")
-	arg0_2.cancelBtn = arg0_2:findTF("window/btn_cancel")
-	arg0_2.goBtn = arg0_2:findTF("window/btn_go")
-	arg0_2.helpBtn = arg0_2:findTF("window/btn_help")
-	arg0_2.remindBtn = arg0_2:findTF("window/stopRemind")
-	arg0_2.uiItemList = UIItemList.New(arg0_2:findTF("window/item_panel/scrollview/list"), arg0_2:findTF("window/item_panel/scrollview/list/tpl"))
+	arg0_2.closeBtn = arg0_2._tf:Find("window/top/btnBack")
+	arg0_2.cancelBtn = arg0_2._tf:Find("window/btn_cancel")
+	arg0_2.goBtn = arg0_2._tf:Find("window/btn_go")
+	arg0_2.helpBtn = arg0_2._tf:Find("window/btn_help")
+	arg0_2.remindBtn = arg0_2._tf:Find("window/stopRemind")
+	arg0_2.uiItemList = UIItemList.New(arg0_2._tf:Find("window/item_panel/scrollview/list"), arg0_2._tf:Find("window/item_panel/scrollview/list/tpl"))
 
-	setText(arg0_2:findTF("window/item_panel/label/Text"), i18n("skin_discount_item_expired_tip"))
-	setText(arg0_2:findTF("window/stopRemind/Label"), i18n("skin_discount_item_repeat_remind_label"))
+	setText(arg0_2._tf:Find("window/item_panel/label/Text"), i18n("skin_discount_item_expired_tip"))
+	setText(arg0_2._tf:Find("window/stopRemind/Label"), i18n("skin_discount_item_repeat_remind_label"))
 end
 
 function var0_0.OnInit(arg0_3)

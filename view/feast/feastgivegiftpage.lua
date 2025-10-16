@@ -5,17 +5,17 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.mask = arg0_2:findTF("mask")
-	arg0_2.back = arg0_2:findTF("back")
-	arg0_2.charContainer = arg0_2:findTF("char")
-	arg0_2.charRect = arg0_2:findTF("char/rect")
-	arg0_2.nameTxt = arg0_2:findTF("dialogue/name/Text"):GetComponent(typeof(Text))
-	arg0_2.dialogueTxt = arg0_2:findTF("dialogue/Text"):GetComponent(typeof(Text))
-	arg0_2.typer = arg0_2:findTF("dialogue/Text"):GetComponent(typeof(Typewriter))
-	arg0_2.giftTr = arg0_2:findTF("dialogue/item/icon")
-	arg0_2.effectTr = arg0_2:findTF("char/effect")
+	arg0_2.mask = arg0_2._tf:Find("mask")
+	arg0_2.back = arg0_2._tf:Find("back")
+	arg0_2.charContainer = arg0_2._tf:Find("char")
+	arg0_2.charRect = arg0_2._tf:Find("char/rect")
+	arg0_2.nameTxt = arg0_2._tf:Find("dialogue/name/Text"):GetComponent(typeof(Text))
+	arg0_2.dialogueTxt = arg0_2._tf:Find("dialogue/Text"):GetComponent(typeof(Text))
+	arg0_2.typer = arg0_2._tf:Find("dialogue/Text"):GetComponent(typeof(Typewriter))
+	arg0_2.giftTr = arg0_2._tf:Find("dialogue/item/icon")
+	arg0_2.effectTr = arg0_2._tf:Find("char/effect")
 	arg0_2.giftTrPos = arg0_2.giftTr.localPosition
-	arg0_2.tipTr = arg0_2:findTF("dialogue/tip"):GetComponent(typeof(Text))
+	arg0_2.tipTr = arg0_2._tf:Find("dialogue/tip"):GetComponent(typeof(Text))
 end
 
 function var0_0.BindEvents(arg0_3)

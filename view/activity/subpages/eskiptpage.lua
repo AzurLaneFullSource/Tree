@@ -3,10 +3,10 @@ local var0_0 = class("EskiPtPage", import(".TemplatePage.PtTemplatePage"))
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.progresses = arg0_1:findTF("progresses", arg0_1.bg)
-	arg0_1.progress_r = arg0_1:findTF("progress_r", arg0_1.progresses)
-	arg0_1.progress_l = arg0_1:findTF("progress_l", arg0_1.progresses)
-	arg0_1.buildBtn = arg0_1:findTF("build_btn", arg0_1.bg)
+	arg0_1.progresses = arg0_1.bg:Find("progresses")
+	arg0_1.progress_r = arg0_1.progresses:Find("progress_r")
+	arg0_1.progress_l = arg0_1.progresses:Find("progress_l")
+	arg0_1.buildBtn = arg0_1.bg:Find("build_btn")
 end
 
 function var0_0.OnUpdateFlush(arg0_2)

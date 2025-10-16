@@ -1,8 +1,9 @@
 local var0_0 = class("IslandAchievementCard")
 
-function var0_0.Ctor(arg0_1, arg1_1)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1._go = arg1_1
 	arg0_1._tf = arg1_1.transform
+	arg0_1.parent = arg2_1
 	arg0_1.nameTF = arg0_1._tf:Find("name")
 	arg0_1.descTF = arg0_1._tf:Find("desc")
 	arg0_1.goTF = arg0_1._tf:Find("status/go")
@@ -56,64 +57,71 @@ function var0_0.UpdateAwardItem(arg0_5, arg1_5, arg2_5)
 
 	GetImageSpriteFromAtlasAsync(var0_5:getIcon(), "", arg2_5:Find("icon"))
 	setText(arg2_5:Find("count"), var0_5.count)
+	onButton(arg0_5.parent, arg2_5, function()
+		arg0_5.parent:ShowMsgBox({
+			title = i18n("island_word_desc"),
+			type = IslandMsgBox.TYPE_COMMON_DROP_DESCRIBE,
+			dropData = var0_5
+		})
+	end)
 end
 
-function var0_0.UpdataData(arg0_6)
-	setText(arg0_6.nameTF, arg0_6.achv:getConfig("name"))
+function var0_0.UpdataData(arg0_7)
+	setText(arg0_7.nameTF, arg0_7.achv:getConfig("name"))
 
-	local var0_6 = arg0_6.achvAgency:GetCurProgress(arg0_6.achv)
-	local var1_6 = arg0_6.achv:GetNum()
-	local var2_6 = string.gsub(arg0_6.achv:getConfig("desc"), "$1", var0_6)
-	local var3_6 = string.gsub(var2_6, "$2", var1_6)
+	local var0_7 = arg0_7.achvAgency:GetCurProgress(arg0_7.achv)
+	local var1_7 = arg0_7.achv:GetNum()
+	local var2_7 = string.gsub(arg0_7.achv:getConfig("desc"), "$1", var0_7)
+	local var3_7 = string.gsub(var2_7, "$2", var1_7)
 
-	setText(arg0_6.descTF, var3_6)
+	setText(arg0_7.descTF, var3_7)
 
-	local var4_6 = arg0_6.achv:GetStatus()
+	local var4_7 = arg0_7.achv:GetStatus()
 
-	setActive(arg0_6.gotTF, var4_6 == IslandAchievement.STATUS.GOT)
-	setActive(arg0_6.getBtn, var4_6 == IslandAchievement.STATUS.GET)
+	setActive(arg0_7.gotTF, var4_7 == IslandAchievement.STATUS.GOT)
+	setActive(arg0_7.getBtn, var4_7 == IslandAchievement.STATUS.GET)
 
-	local var5_6 = var4_6 == IslandAchievement.STATUS.NORMAL
+	local var5_7 = var4_7 == IslandAchievement.STATUS.NORMAL
 
-	setActive(arg0_6.goTF, var5_6)
+	setActive(arg0_7.goTF, var5_7)
 
-	if var5_6 then
-		setText(arg0_6.goTF:Find("Text"), var0_6 .. "/" .. var1_6)
+	if var5_7 then
+		setText(arg0_7.goTF:Find("Text"), var0_7 .. "/" .. var1_7)
 	end
 
-	arg0_6.awards = arg0_6.achv:GetAwards()
+	arg0_7.awards = arg0_7.achv:GetAwards()
 
-	arg0_6.awardUIList:align(#arg0_6.awards)
+	arg0_7.awardUIList:align(#arg0_7.awards)
 end
 
-function var0_0.Update(arg0_7, arg1_7)
-	arg0_7.achv = arg1_7
-	arg0_7.achvAgency = getProxy(IslandProxy):GetIsland():GetAchievementAgency()
+function var0_0.Update(arg0_8, arg1_8)
+	arg0_8.achv = arg1_8
+	arg0_8.achvAgency = getProxy(IslandProxy):GetIsland():GetAchievementAgency()
 
-	arg0_7:UpdataData()
+	arg0_8:UpdataData()
 
-	local var0_7 = arg0_7.achv:getConfig("group")
-	local var1_7 = arg0_7.achvAgency:GetGroup(var0_7)
+	local var0_8 = arg0_8.achv:getConfig("group")
+	local var1_8 = arg0_8.achvAgency:GetGroup(var0_8)
 
-	arg0_7.stageAchvs = underscore.select(var1_7:GetSortAchvList(), function(arg0_8)
-		return not arg0_8:IsHideType() or arg0_8:GetStatus() == IslandAchievement.STATUS.GET
+	arg0_8.stageAchvs = underscore.select(var1_8:GetSortAchvList(), function(arg0_9)
+		return not arg0_9:IsHideType() or arg0_9:GetStatus() == IslandAchievement.STATUS.GET
 	end)
 
-	arg0_7.stageUIList:align(#arg0_7.stageAchvs)
+	arg0_8.stageUIList:align(#arg0_8.stageAchvs)
 end
 
-function var0_0.PlayStageAnim(arg0_9, arg1_9, arg2_9)
-	local var0_9 = arg0_9.stageUIList.container:Find(tostring(arg1_9))
-	local var1_9 = var0_9:GetComponent(typeof(DftAniEvent))
+function var0_0.PlayStageAnim(arg0_10, arg1_10, arg2_10)
+	local var0_10 = arg0_10.stageUIList.container:Find(tostring(arg1_10))
+	local var1_10 = var0_10:GetComponent(typeof(DftAniEvent))
 
-	var1_9:SetEndEvent(function()
-		existCall(arg2_9)
-		var1_9:SetEndEvent(nil)
+	var1_10:SetEndEvent(function()
+		existCall(arg2_10)
+		var1_10:SetEndEvent(nil)
 	end)
-	var0_9:GetComponent(typeof(Animation)):Play()
+	var0_10:GetComponent(typeof(Animation)):Play()
 end
 
-function var0_0.Dispose(arg0_11)
+function var0_0.Dispose(arg0_12)
 	return
 end
 

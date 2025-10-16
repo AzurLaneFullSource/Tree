@@ -11,9 +11,9 @@ var0_0.edge2area = {
 function var0_0.init(arg0_2)
 	var0_0.super.init(arg0_2)
 
-	arg0_2.top = arg0_2:findTF("top")
-	arg0_2._bg = arg0_2:findTF("BG")
-	arg0_2._map = arg0_2:findTF("map")
+	arg0_2.top = arg0_2._tf:Find("top")
+	arg0_2._bg = arg0_2._tf:Find("BG")
+	arg0_2._map = arg0_2._tf:Find("map")
 
 	for iter0_2 = 0, arg0_2._map.childCount - 1 do
 		local var0_2 = arg0_2._map:GetChild(iter0_2)
@@ -22,7 +22,7 @@ function var0_0.init(arg0_2)
 		arg0_2["map_" .. var1_2] = var0_2
 	end
 
-	arg0_2._upper = arg0_2:findTF("upper")
+	arg0_2._upper = arg0_2._tf:Find("upper")
 
 	for iter1_2 = 0, arg0_2._upper.childCount - 1 do
 		local var2_2 = arg0_2._upper:GetChild(iter1_2)
@@ -37,31 +37,31 @@ function var0_0.init(arg0_2)
 	}
 	arg0_2._shipTpl = arg0_2._map:Find("ship")
 	arg0_2.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.OtherworldBackHillSceneGraph"))
-	arg0_2.ptIconTF = arg0_2:findTF("top/Res/icon")
-	arg0_2.ptValueTF = arg0_2:findTF("top/Res/Text")
+	arg0_2.ptIconTF = arg0_2._tf:Find("top/Res/icon")
+	arg0_2.ptValueTF = arg0_2._tf:Find("top/Res/Text")
 end
 
 function var0_0.didEnter(arg0_3)
 	arg0_3:SetNativeSizes()
-	onButton(arg0_3, arg0_3:findTF("top/Back"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/Back"), function()
 		arg0_3:onBackPressed()
 	end, SFX_CANCEL)
-	onButton(arg0_3, arg0_3:findTF("top/Home"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/Home"), function()
 		arg0_3:quickExitFunc()
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("top/Help"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/Help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.otherworld_backhill_help.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("top/Terminal"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/Terminal"), function()
 		arg0_3:emit(OtherworldBackHilllMediator.GO_SUBLAYER, Context.New({
 			mediator = OtherworldTerminalMediator,
 			viewComponent = OtherworldTerminalLayer
 		}))
 	end, SFX_CANCEL)
-	onButton(arg0_3, arg0_3:findTF("top/OtherWorld"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/OtherWorld"), function()
 		pg.SceneAnimMgr.GetInstance():OtherWorldCoverGoScene(SCENE.OTHERWORLD_MAP, {
 			mode = OtherworldMapScene.MODE_BATTLE
 		})
@@ -133,7 +133,7 @@ end
 function var0_0.UpdateView(arg0_17)
 	setActive(arg0_17.upper_maoxianzgonghui:Find("Tip"), var0_0.GongHuiTip())
 	setActive(arg0_17.upper_jiujiushendian:Find("Tip"), var0_0.ShenDianTip())
-	setActive(arg0_17:findTF("top/Terminal/Tip"), var0_0.TerminalTip())
+	setActive(arg0_17._tf:Find("top/Terminal/Tip"), var0_0.TerminalTip())
 end
 
 function var0_0.UpdateActivity(arg0_18)

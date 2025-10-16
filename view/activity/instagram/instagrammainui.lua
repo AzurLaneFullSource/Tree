@@ -5,10 +5,10 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.bg = arg0_2:findTF("bg")
-	arg0_2.helpBtn = arg0_2:findTF("mainPanel/helpBtn")
-	arg0_2.chatBtn = arg0_2:findTF("mainPanel/left/chatBtn")
-	arg0_2.juusBtn = arg0_2:findTF("mainPanel/left/juusBtn")
+	arg0_2.bg = arg0_2._tf:Find("bg")
+	arg0_2.helpBtn = arg0_2._tf:Find("mainPanel/helpBtn")
+	arg0_2.chatBtn = arg0_2._tf:Find("mainPanel/left/chatBtn")
+	arg0_2.juusBtn = arg0_2._tf:Find("mainPanel/left/juusBtn")
 	arg0_2.musicPlayerView = MainMusicPlayerView.New(arg0_2._tf, arg0_2.event)
 
 	arg0_2.musicPlayerView:Load(arg0_2._tf:Find("MusicPlayer").gameObject)
@@ -23,8 +23,8 @@ function var0_0.didEnter(arg0_3)
 	arg0_3:FlushMusicPlayer()
 
 	if arg0_3.contextData.current then
-		SetActive(arg0_3:findTF("choose", arg0_3.chatBtn), arg0_3.contextData.current == "chat")
-		SetActive(arg0_3:findTF("choose", arg0_3.juusBtn), arg0_3.contextData.current == "juus")
+		SetActive(arg0_3.chatBtn:Find("choose"), arg0_3.contextData.current == "chat")
+		SetActive(arg0_3.juusBtn:Find("choose"), arg0_3.contextData.current == "juus")
 	else
 		triggerButton(arg0_3.chatBtn)
 	end
@@ -55,27 +55,27 @@ function var0_0.SetUp(arg0_5)
 	onButton(arg0_5, arg0_5.chatBtn, function()
 		arg0_5.contextData.current = "chat"
 
-		if isActive(arg0_5:findTF("choose", arg0_5.juusBtn)) then
+		if isActive(arg0_5.juusBtn:Find("choose")) then
 			arg0_5:emit(InstagramMainMediator.CLOSE_JUUS_DETAIL)
 		end
 
-		SetActive(arg0_5:findTF("choose", arg0_5.chatBtn), arg0_5.contextData.current == "chat")
-		SetActive(arg0_5:findTF("choose", arg0_5.juusBtn), arg0_5.contextData.current == "juus")
+		SetActive(arg0_5.chatBtn:Find("choose"), arg0_5.contextData.current == "chat")
+		SetActive(arg0_5.juusBtn:Find("choose"), arg0_5.contextData.current == "juus")
 		arg0_5:emit(InstagramMainMediator.OPEN_CHAT)
 		arg0_5:emit(InstagramMainMediator.CLOSE_JUUS)
 	end, SFX_PANEL)
 	onButton(arg0_5, arg0_5.juusBtn, function()
 		arg0_5.contextData.current = "juus"
 
-		SetActive(arg0_5:findTF("choose", arg0_5.chatBtn), arg0_5.contextData.current == "chat")
-		SetActive(arg0_5:findTF("choose", arg0_5.juusBtn), arg0_5.contextData.current == "juus")
+		SetActive(arg0_5.chatBtn:Find("choose"), arg0_5.contextData.current == "chat")
+		SetActive(arg0_5.juusBtn:Find("choose"), arg0_5.contextData.current == "juus")
 		arg0_5:emit(InstagramMainMediator.OPEN_JUUS)
 		arg0_5:emit(InstagramMainMediator.CLOSE_CHAT)
 	end, SFX_PANEL)
 end
 
 function var0_0.OnClose(arg0_10)
-	if isActive(arg0_10:findTF("choose", arg0_10.juusBtn)) then
+	if isActive(arg0_10.juusBtn:Find("choose")) then
 		arg0_10:emit(InstagramMainMediator.JUUS_BACK_PRESSED)
 	else
 		arg0_10:closeView()
@@ -85,13 +85,13 @@ end
 function var0_0.ChangeJuusTip(arg0_11)
 	local var0_11 = getProxy(InstagramProxy)
 
-	SetActive(arg0_11:findTF("tip", arg0_11.juusBtn), var0_11:ShouldShowTip())
+	SetActive(arg0_11.juusBtn:Find("tip"), var0_11:ShouldShowTip())
 end
 
 function var0_0.ChangeChatTip(arg0_12)
 	local var0_12 = getProxy(InstagramChatProxy)
 
-	SetActive(arg0_12:findTF("tip", arg0_12.chatBtn), var0_12:ShouldShowTip())
+	SetActive(arg0_12.chatBtn:Find("tip"), var0_12:ShouldShowTip())
 end
 
 function var0_0.willExit(arg0_13)

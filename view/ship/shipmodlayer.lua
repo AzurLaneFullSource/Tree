@@ -16,16 +16,16 @@ function var0_0.setShipVOs(arg0_3, arg1_3)
 end
 
 function var0_0.init(arg0_4)
-	arg0_4.blurPanelTF = arg0_4:findTF("blur_panel")
-	arg0_4.mainPanel = arg0_4:findTF("blur_panel/main")
-	arg0_4.shipContainer = arg0_4:findTF("bg/add_ship_panel/ships", arg0_4.mainPanel)
-	arg0_4.attrsPanel = arg0_4:findTF("bg/property_panel/attrs", arg0_4.mainPanel)
+	arg0_4.blurPanelTF = arg0_4._tf:Find("blur_panel")
+	arg0_4.mainPanel = arg0_4._tf:Find("blur_panel/main")
+	arg0_4.shipContainer = arg0_4.mainPanel:Find("bg/add_ship_panel/ships")
+	arg0_4.attrsPanel = arg0_4.mainPanel:Find("bg/property_panel/attrs")
 
-	setText(arg0_4:findTF("bg/add_ship_panel/title/tip", arg0_4.mainPanel), i18n("ship_mod_exp_to_attr_tip"))
+	setText(arg0_4.mainPanel:Find("bg/add_ship_panel/title/tip"), i18n("ship_mod_exp_to_attr_tip"))
 end
 
 function var0_0.didEnter(arg0_5)
-	onButton(arg0_5, arg0_5:findTF("ok_btn", arg0_5.mainPanel), function()
+	onButton(arg0_5, arg0_5.mainPanel:Find("ok_btn"), function()
 		local function var0_6()
 			local var0_7, var1_7 = ShipStatus.ShipStatusCheck("onModify", arg0_5.shipVO)
 
@@ -53,7 +53,7 @@ function var0_0.didEnter(arg0_5)
 			var0_6()
 		end
 	end, SFX_CONFIRM)
-	onButton(arg0_5, arg0_5:findTF("cancel_btn", arg0_5.mainPanel), function()
+	onButton(arg0_5, arg0_5.mainPanel:Find("cancel_btn"), function()
 		local var0_8 = arg0_5.contextData.materialShipIds
 
 		if not var0_8 or table.getCount(var0_8) == 0 then
@@ -62,7 +62,7 @@ function var0_0.didEnter(arg0_5)
 
 		arg0_5:clearAllShip()
 	end, SFX_CANCEL)
-	onButton(arg0_5, arg0_5:findTF("select_btn", arg0_5.mainPanel), function()
+	onButton(arg0_5, arg0_5.mainPanel:Find("select_btn"), function()
 		arg0_5:emit(ShipModMediator.ON_AUTO_SELECT_SHIP)
 	end, SFX_CANCEL)
 	arg0_5:initAttrs()
@@ -162,7 +162,7 @@ function var0_0.updateShip(arg0_18, arg1_18, arg2_18)
 			end
 		end
 	end, SFX_PANEL)
-	updateShip(arg0_18:findTF("IconTpl", arg1_18), var0_18, {
+	updateShip(arg1_18:Find("IconTpl"), var0_18, {
 		initStar = true
 	})
 	setText(arg1_18:Find("IconTpl/icon_bg/lv/Text"), var0_18.level)
@@ -192,7 +192,7 @@ end
 
 function var0_0.updateAttr(arg0_23, arg1_23)
 	local var0_23 = arg0_23.attrTFs[arg1_23]
-	local var1_23 = arg0_23:findTF("info", var0_23)
+	local var1_23 = var0_23:Find("info")
 	local var2_23 = var0_23:GetComponent(typeof(CanvasGroup))
 	local var3_23 = ShipModAttr.ID_TO_ATTR[arg1_23]
 	local var4_23 = arg0_23.shipVO:getModAttrTopLimit(var3_23)
@@ -210,14 +210,14 @@ function var0_0.updateAttr(arg0_23, arg1_23)
 	local var11_23 = arg0_23.getRemainExp(arg0_23.shipVO, var3_23)
 	local var12_23 = math.max(math.min(math.floor((var11_23 + var7_23) / var9_23), var10_23 - var5_23[var3_23]), 0)
 
-	setText(arg0_23:findTF("info_container/addition", var1_23), "+" .. var12_23)
-	setText(arg0_23:findTF("info_container/name", var1_23), AttributeType.Type2Name(var3_23))
-	setText(arg0_23:findTF("max_container/Text", var1_23), var10_23)
-	setText(arg0_23:findTF("info_container/value", var1_23), var5_23[var3_23])
+	setText(var1_23:Find("info_container/addition"), "+" .. var12_23)
+	setText(var1_23:Find("info_container/name"), AttributeType.Type2Name(var3_23))
+	setText(var1_23:Find("max_container/Text"), var10_23)
+	setText(var1_23:Find("info_container/value"), var5_23[var3_23])
 
 	var2_23.alpha = var5_23[var3_23] == 0 and 0.3 or 1
 
-	local var13_23 = arg0_23:findTF("prev_slider", var1_23):GetComponent(typeof(Slider))
+	local var13_23 = var1_23:Find("prev_slider"):GetComponent(typeof(Slider))
 
 	arg0_23:setSliderValue(var13_23, (var7_23 + var11_23) / var9_23)
 
@@ -229,10 +229,10 @@ function var0_0.updateAttr(arg0_23, arg1_23)
 		var15_23 = "MAX"
 	end
 
-	local var16_23 = arg0_23:findTF("cur_slider", var1_23):GetComponent(typeof(Slider))
+	local var16_23 = var1_23:Find("cur_slider"):GetComponent(typeof(Slider))
 
 	arg0_23:setSliderValue(var16_23, var14_23)
-	setText(arg0_23:findTF("exp_container/Text", var0_23), var15_23)
+	setText(var0_23:Find("exp_container/Text"), var15_23)
 end
 
 function var0_0.modAttrAnim(arg0_24, arg1_24, arg2_24, arg3_24)
@@ -251,20 +251,20 @@ function var0_0.modAttrAnim(arg0_24, arg1_24, arg2_24, arg3_24)
 			arg0_24:updateAttr(iter0_24)
 		else
 			local var6_24 = arg0_24.attrTFs[iter0_24]
-			local var7_24 = arg0_24:findTF("info", var6_24)
-			local var8_24 = arg0_24:findTF("info_container/value", var7_24)
+			local var7_24 = var6_24:Find("info")
+			local var8_24 = var7_24:Find("info_container/value")
 			local var9_24 = var1_24[var3_24] - var2_24[var3_24]
 			local var10_24 = math.max(arg1_24:getModExpRatio(var3_24), 1)
-			local var11_24 = arg0_24:findTF("cur_slider", var7_24)
-			local var12_24 = arg0_24:findTF("prev_slider", var7_24)
+			local var11_24 = var7_24:Find("cur_slider")
+			local var12_24 = var7_24:Find("prev_slider")
 			local var13_24 = var11_24:GetComponent(typeof(Slider))
 			local var14_24 = var12_24:GetComponent(typeof(Slider))
 			local var15_24 = arg0_24.getRemainExp(arg1_24, var3_24)
-			local var16_24 = arg0_24:findTF("info_container/addition", var7_24)
-			local var17_24 = arg0_24:findTF("exp_container/Text", var6_24)
+			local var16_24 = var7_24:Find("info_container/addition")
+			local var17_24 = var6_24:Find("exp_container/Text")
 
 			arg0_24:setSliderValue(var14_24, 0)
-			setText(arg0_24:findTF("exp_container/Text", var6_24), var15_24 .. "/" .. var10_24)
+			setText(var6_24:Find("exp_container/Text"), var15_24 .. "/" .. var10_24)
 
 			local function var18_24(arg0_25, arg1_25)
 				setText(var8_24, arg0_25)

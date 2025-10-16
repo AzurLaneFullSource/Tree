@@ -47,10 +47,10 @@ function var0_0.onUILoaded(arg0_9, arg1_9)
 end
 
 function var0_0.init(arg0_10)
-	arg0_10.backBtn = arg0_10:findTF("blur_container/adapt/top/title/back")
-	arg0_10._blurLayer = arg0_10:findTF("blur_container")
+	arg0_10.backBtn = arg0_10._tf:Find("blur_container/adapt/top/title/back")
+	arg0_10._blurLayer = arg0_10._tf:Find("blur_container")
 	arg0_10._topPanel = arg0_10._blurLayer:Find("adapt/top")
-	arg0_10.bg = arg0_10:findTF("academyMap/map")
+	arg0_10.bg = arg0_10._tf:Find("academyMap/map")
 	arg0_10.buildings = {
 		ShopBuiding.New(arg0_10),
 		CanteenBuiding.New(arg0_10),

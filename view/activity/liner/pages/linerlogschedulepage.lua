@@ -36,14 +36,14 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.togglesTF = arg0_2:findTF("toggles")
-	arg0_2.contentTF = arg0_2:findTF("content")
+	arg0_2.togglesTF = arg0_2._tf:Find("toggles")
+	arg0_2.contentTF = arg0_2._tf:Find("content")
 	arg0_2.anim = arg0_2.contentTF:GetComponent(typeof(Animation))
-	arg0_2.awardTF = arg0_2:findTF("award/mask/IconTpl")
-	arg0_2.awardDesc = arg0_2:findTF("award/Text")
-	arg0_2.goBtn = arg0_2:findTF("award/go")
-	arg0_2.getBtn = arg0_2:findTF("award/get")
-	arg0_2.gotTF = arg0_2:findTF("award/got")
+	arg0_2.awardTF = arg0_2._tf:Find("award/mask/IconTpl")
+	arg0_2.awardDesc = arg0_2._tf:Find("award/Text")
+	arg0_2.goBtn = arg0_2._tf:Find("award/go")
+	arg0_2.getBtn = arg0_2._tf:Find("award/get")
+	arg0_2.gotTF = arg0_2._tf:Find("award/got")
 end
 
 function var0_0.OnInit(arg0_3)
@@ -62,7 +62,7 @@ function var0_0.OnInit(arg0_3)
 		arg0_3.groups[iter0_3] = LinerTimeGroup.New(iter1_3)
 	end
 
-	arg0_3.itemUIList = UIItemList.New(arg0_3.contentTF, arg0_3:findTF("tpl", arg0_3.contentTF))
+	arg0_3.itemUIList = UIItemList.New(arg0_3.contentTF, arg0_3.contentTF:Find("tpl"))
 
 	arg0_3.itemUIList:make(function(arg0_6, arg1_6, arg2_6)
 		if arg0_6 == UIItemList.EventUpdate then
@@ -70,7 +70,7 @@ function var0_0.OnInit(arg0_3)
 		end
 	end)
 
-	arg0_3.toggleUIList = UIItemList.New(arg0_3.togglesTF, arg0_3:findTF("tpl", arg0_3.togglesTF))
+	arg0_3.toggleUIList = UIItemList.New(arg0_3.togglesTF, arg0_3.togglesTF:Find("tpl"))
 
 	arg0_3.toggleUIList:make(function(arg0_7, arg1_7, arg2_7)
 		if arg0_7 == UIItemList.EventInit then
@@ -108,7 +108,7 @@ function var0_0.OnInit(arg0_3)
 		end
 	end)
 	arg0_3.toggleUIList:align(#arg0_3.groupIds)
-	triggerToggle(arg0_3:findTF(tostring(arg0_3.curDay), arg0_3.toggleUIList.container), true)
+	triggerToggle(arg0_3._tf:Find(tostring(arg0_3.curDay), arg0_3.toggleUIList.container), true)
 end
 
 function var0_0.UpdateActivity(arg0_9, arg1_9)
@@ -165,11 +165,11 @@ function var0_0.UpdateItem(arg0_12, arg1_12, arg2_12)
 	local var0_12 = arg1_12 + 1
 	local var1_12 = var0_0.SHOW_TIME_LIST[var0_12]
 
-	setText(arg0_12:findTF("time/Text", arg2_12), arg0_12:_getLogDesc(var1_12))
+	setText(arg2_12:Find("time/Text"), arg0_12:_getLogDesc(var1_12))
 
 	local var2_12 = arg0_12:_getReallyTime(var1_12)
 	local var3_12 = table.contains(arg0_12.finishTimeIds, var2_12.id)
-	local var4_12 = arg0_12:findTF("desc", arg2_12)
+	local var4_12 = arg2_12:Find("desc")
 	local var5_12 = var3_12 and var2_12:GetAfterDesc(var0_12) or var2_12:GetBeforDesc(var0_12)
 
 	if var3_12 and var2_12:GetType() == LinerTime.TYPE.EXPLORE then
@@ -181,7 +181,7 @@ function var0_0.UpdateItem(arg0_12, arg1_12, arg2_12)
 	end
 
 	setText(var4_12, var5_12)
-	setActive(arg0_12:findTF("time/finish", arg2_12), var3_12)
+	setActive(arg2_12:Find("time/finish"), var3_12)
 	setActive(var4_12, arg0_12.curIdx <= arg0_12.curDay)
 end
 
@@ -211,7 +211,7 @@ function var0_0.FlushPage(arg0_14)
 
 	setActive(arg0_14.goBtn, not var1_14 and not var3_14)
 	setActive(arg0_14.gotTF, var1_14)
-	setActive(arg0_14:findTF("mask", arg0_14.awardTF), var1_14)
+	setActive(arg0_14.awardTF:Find("mask"), var1_14)
 
 	local var4_14 = var1_14 and i18n("liner_schedule_award_tip2", arg0_14.curIdx) or i18n("liner_schedule_award_tip1")
 

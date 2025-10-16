@@ -58,18 +58,18 @@ function var0_0.initData(arg0_5)
 end
 
 function var0_0.findUI(arg0_6)
-	local var0_6 = arg0_6:findTF("Adapt")
+	local var0_6 = arg0_6._tf:Find("Adapt")
 
-	arg0_6.backBtn = arg0_6:findTF("BackBtn", var0_6)
-	arg0_6.homeBtn = arg0_6:findTF("HomeBtn", var0_6)
-	arg0_6.helpBtn = arg0_6:findTF("HelpBtn", var0_6)
+	arg0_6.backBtn = var0_6:Find("BackBtn")
+	arg0_6.homeBtn = var0_6:Find("HomeBtn")
+	arg0_6.helpBtn = var0_6:Find("HelpBtn")
 
-	local var1_6 = arg0_6:findTF("PacketPanel")
+	local var1_6 = arg0_6._tf:Find("PacketPanel")
 
-	arg0_6.countText = arg0_6:findTF("Count/CountText", var1_6)
+	arg0_6.countText = var1_6:Find("Count/CountText")
 	arg0_6.packetTFList = {}
 
-	local var2_6 = arg0_6:findTF("ContainerBehide", var1_6)
+	local var2_6 = var1_6:Find("ContainerBehide")
 
 	for iter0_6 = 1, 5 do
 		local var3_6 = var2_6:GetChild(iter0_6 - 1)
@@ -77,7 +77,7 @@ function var0_0.findUI(arg0_6)
 		table.insert(arg0_6.packetTFList, var3_6)
 	end
 
-	local var4_6 = arg0_6:findTF("ContainerFront", var1_6)
+	local var4_6 = var1_6:Find("ContainerFront")
 
 	for iter1_6 = 1, 5 do
 		local var5_6 = var4_6:GetChild(iter1_6 - 1)
@@ -85,16 +85,16 @@ function var0_0.findUI(arg0_6)
 		table.insert(arg0_6.packetTFList, var5_6)
 	end
 
-	local var6_6 = arg0_6:findTF("AwardPanel")
+	local var6_6 = arg0_6._tf:Find("AwardPanel")
 
-	arg0_6.awardTpl = arg0_6:findTF("AwardTpl", var6_6)
+	arg0_6.awardTpl = var6_6:Find("AwardTpl")
 	arg0_6.iconTpl = Instantiate(arg0_6._tf:GetComponent(typeof(ItemList)).prefabItem[0])
 
 	setLocalScale(arg0_6.iconTpl, {
 		x = 0.4,
 		y = 0.4
 	})
-	setParent(arg0_6.iconTpl, arg0_6:findTF("Icon", arg0_6.awardTpl))
+	setParent(arg0_6.iconTpl, arg0_6.awardTpl:Find("Icon"))
 
 	arg0_6.awardTFList = {}
 
@@ -109,13 +109,13 @@ function var0_0.findUI(arg0_6)
 		end
 	end
 
-	var7_6(1, arg0_6.awardTpl, arg0_6:findTF("Container_1", var6_6))
-	var7_6(2, arg0_6.awardTpl, arg0_6:findTF("Container_2", var6_6))
-	var7_6(3, arg0_6.awardTpl, arg0_6:findTF("Container_3", var6_6))
-	var7_6(4, arg0_6.awardTpl, arg0_6:findTF("Container_4", var6_6))
+	var7_6(1, arg0_6.awardTpl, var6_6:Find("Container_1"))
+	var7_6(2, arg0_6.awardTpl, var6_6:Find("Container_2"))
+	var7_6(3, arg0_6.awardTpl, var6_6:Find("Container_3"))
+	var7_6(4, arg0_6.awardTpl, var6_6:Find("Container_4"))
 
-	arg0_6.aniPanel = arg0_6:findTF("AniPanel")
-	arg0_6.aniTF = arg0_6:findTF("Ani", arg0_6.aniPanel)
+	arg0_6.aniPanel = arg0_6._tf:Find("AniPanel")
+	arg0_6.aniTF = arg0_6.aniPanel:Find("Ani")
 	arg0_6.aniSC = GetComponent(arg0_6.aniTF, "SpineAnimUI")
 end
 
@@ -160,9 +160,9 @@ function var0_0.updateActData(arg0_12)
 end
 
 function var0_0.updatePacketTpl(arg0_13, arg1_13, arg2_13)
-	local var0_13 = arg0_13:findTF("Normal", arg2_13)
-	local var1_13 = arg0_13:findTF("Got", arg2_13)
-	local var2_13 = arg0_13:findTF("Selected", arg2_13)
+	local var0_13 = arg2_13:Find("Normal")
+	local var1_13 = arg2_13:Find("Got")
+	local var2_13 = arg2_13:Find("Selected")
 	local var3_13 = arg0_13:isPacketIndexGot(arg1_13)
 
 	setActive(var1_13, var3_13)
@@ -185,8 +185,8 @@ function var0_0.updatePacketList(arg0_15)
 end
 
 function var0_0.updateAwardTpl(arg0_16, arg1_16, arg2_16)
-	local var0_16 = arg0_16:findTF("Icon/IconTpl(Clone)", arg2_16)
-	local var1_16 = arg0_16:findTF("Got", arg2_16)
+	local var0_16 = arg0_16._tf:Find("Icon/IconTpl(Clone)", arg2_16)
+	local var1_16 = arg2_16:Find("Got")
 	local var2_16 = arg0_16.awardList[arg1_16]
 
 	updateDrop(var0_16, var2_16)

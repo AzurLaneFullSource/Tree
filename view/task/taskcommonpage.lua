@@ -5,7 +5,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2._scrllPanel = arg0_2:findTF("right_panel/content")
+	arg0_2._scrllPanel = arg0_2._tf:Find("right_panel/content")
 	arg0_2._scrollView = arg0_2._scrllPanel:GetComponent("LScrollRect")
 end
 

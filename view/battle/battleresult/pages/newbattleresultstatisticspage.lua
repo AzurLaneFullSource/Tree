@@ -9,40 +9,40 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.mask = arg0_2:findTF("mask")
-	arg0_2.paintingTr = arg0_2:findTF("painting")
-	arg0_2.resultPaintingTr = arg0_2:findTF("result")
-	arg0_2.topPanel = arg0_2:findTF("top")
-	arg0_2.gradeIcon = arg0_2:findTF("top/grade/icon"):GetComponent(typeof(Image))
-	arg0_2.gradeTxt = arg0_2:findTF("top/grade/Text"):GetComponent(typeof(Image))
-	arg0_2.chapterName = arg0_2:findTF("top/grade/chapterName"):GetComponent(typeof(Text))
-	arg0_2.opBonus = arg0_2:findTF("top/grade/operation_bonus")
-	arg0_2.playerName = arg0_2:findTF("top/exp/name"):GetComponent(typeof(Text))
-	arg0_2.playerLv = arg0_2:findTF("top/exp/lv"):GetComponent(typeof(Text))
-	arg0_2.playerExp = arg0_2:findTF("top/exp/Text"):GetComponent(typeof(Text))
-	arg0_2.playerExpLabel = arg0_2:findTF("top/exp/Text/exp_label"):GetComponent(typeof(Text))
-	arg0_2.playerExpBar = arg0_2:findTF("top/exp/exp_bar/progress"):GetComponent(typeof(Image))
-	arg0_2.commmanderContainer = arg0_2:findTF("top/exp/commanders")
-	arg0_2.shipContainer = arg0_2:findTF("left")
+	arg0_2.mask = arg0_2._tf:Find("mask")
+	arg0_2.paintingTr = arg0_2._tf:Find("painting")
+	arg0_2.resultPaintingTr = arg0_2._tf:Find("result")
+	arg0_2.topPanel = arg0_2._tf:Find("top")
+	arg0_2.gradeIcon = arg0_2._tf:Find("top/grade/icon"):GetComponent(typeof(Image))
+	arg0_2.gradeTxt = arg0_2._tf:Find("top/grade/Text"):GetComponent(typeof(Image))
+	arg0_2.chapterName = arg0_2._tf:Find("top/grade/chapterName"):GetComponent(typeof(Text))
+	arg0_2.opBonus = arg0_2._tf:Find("top/grade/operation_bonus")
+	arg0_2.playerName = arg0_2._tf:Find("top/exp/name"):GetComponent(typeof(Text))
+	arg0_2.playerLv = arg0_2._tf:Find("top/exp/lv"):GetComponent(typeof(Text))
+	arg0_2.playerExp = arg0_2._tf:Find("top/exp/Text"):GetComponent(typeof(Text))
+	arg0_2.playerExpLabel = arg0_2._tf:Find("top/exp/Text/exp_label"):GetComponent(typeof(Text))
+	arg0_2.playerExpBar = arg0_2._tf:Find("top/exp/exp_bar/progress"):GetComponent(typeof(Image))
+	arg0_2.commmanderContainer = arg0_2._tf:Find("top/exp/commanders")
+	arg0_2.shipContainer = arg0_2._tf:Find("left")
 	arg0_2.rawImage = arg0_2._tf:Find("bg"):GetComponent(typeof(RawImage))
 
 	setActive(arg0_2.rawImage, false)
 
 	arg0_2.blackBg = arg0_2._tf:Find("black")
-	arg0_2.bottomPanel = arg0_2:findTF("bottom")
-	arg0_2.confrimBtn = arg0_2:findTF("bottom/confirmBtn")
-	arg0_2.statisticsBtn = arg0_2:findTF("bottom/statisticsBtn")
-	arg0_2.mainFleetBtn = arg0_2:findTF("bottom/mainFleetBtn")
-	arg0_2.subFleetBtn = arg0_2:findTF("bottom/subFleetBtn")
-	arg0_2.chatText = arg0_2:findTF("chat/Text"):GetComponent(typeof(Text))
+	arg0_2.bottomPanel = arg0_2._tf:Find("bottom")
+	arg0_2.confrimBtn = arg0_2._tf:Find("bottom/confirmBtn")
+	arg0_2.statisticsBtn = arg0_2._tf:Find("bottom/statisticsBtn")
+	arg0_2.mainFleetBtn = arg0_2._tf:Find("bottom/mainFleetBtn")
+	arg0_2.subFleetBtn = arg0_2._tf:Find("bottom/subFleetBtn")
+	arg0_2.chatText = arg0_2._tf:Find("chat/Text"):GetComponent(typeof(Text))
 
 	setText(arg0_2.confrimBtn:Find("Text"), i18n("msgbox_text_confirm"))
 
 	arg0_2.cg = GetOrAddComponent(arg0_2._tf, typeof(CanvasGroup))
 	arg0_2.commaderTpls = {}
 	arg0_2.emptyTpls = {
-		arg0_2:findTF("top/exp/emptycomanders/1"),
-		arg0_2:findTF("top/exp/emptycomanders/2")
+		arg0_2._tf:Find("top/exp/emptycomanders/1"),
+		arg0_2._tf:Find("top/exp/emptycomanders/2")
 	}
 
 	setText(arg0_2.emptyTpls[1]:Find("Text"), i18n("series_enemy_empty_commander_main"))

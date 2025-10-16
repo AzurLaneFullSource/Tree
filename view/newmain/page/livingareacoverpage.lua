@@ -5,29 +5,29 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.tpl = arg0_2:findTF("bg/tpl")
+	arg0_2.tpl = arg0_2._tf:Find("bg/tpl")
 
 	setActive(arg0_2.tpl, false)
 
-	arg0_2.frameTF = arg0_2:findTF("bg/frame")
-	arg0_2.contentTF = arg0_2:findTF("view/content", arg0_2.frameTF)
-	arg0_2.unlockTF = arg0_2:findTF("unlock", arg0_2.contentTF)
+	arg0_2.frameTF = arg0_2._tf:Find("bg/frame")
+	arg0_2.contentTF = arg0_2.frameTF:Find("view/content")
+	arg0_2.unlockTF = arg0_2.contentTF:Find("unlock")
 
-	setText(arg0_2:findTF("title/Text", arg0_2.unlockTF), i18n("word_unlock"))
+	setText(arg0_2.unlockTF:Find("title/Text"), i18n("word_unlock"))
 
-	arg0_2.unlockUIList = UIItemList.New(arg0_2:findTF("list", arg0_2.unlockTF), arg0_2.tpl)
-	arg0_2.lockTF = arg0_2:findTF("lock", arg0_2.contentTF)
+	arg0_2.unlockUIList = UIItemList.New(arg0_2.unlockTF:Find("list"), arg0_2.tpl)
+	arg0_2.lockTF = arg0_2.contentTF:Find("lock")
 
-	setText(arg0_2:findTF("title/Text", arg0_2.lockTF), i18n("word_lock"))
+	setText(arg0_2.lockTF:Find("title/Text"), i18n("word_lock"))
 
-	arg0_2.lockUIList = UIItemList.New(arg0_2:findTF("list", arg0_2.lockTF), arg0_2.tpl)
+	arg0_2.lockUIList = UIItemList.New(arg0_2.lockTF:Find("list"), arg0_2.tpl)
 end
 
 function var0_0.OnInit(arg0_3)
 	onButton(arg0_3, arg0_3._tf, function()
 		arg0_3:CheckSet()
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("close", arg0_3.frameTF), function()
+	onButton(arg0_3, arg0_3.frameTF:Find("close"), function()
 		arg0_3:CheckSet()
 	end, SFX_PANEL)
 	arg0_3.unlockUIList:make(function(arg0_6, arg1_6, arg2_6)
@@ -47,10 +47,10 @@ function var0_0.updateItem(arg0_8, arg1_8, arg2_8, arg3_8)
 	local var1_8 = arg3_8 == "unlock"
 	local var2_8 = var1_8 and arg0_8.unlockList[var0_8] or arg0_8.lockList[var0_8]
 
-	LoadImageSpriteAsync(var2_8:GetIcon(), arg0_8:findTF("icon", arg2_8), true)
-	setText(arg0_8:findTF("lock/Image/Text", arg2_8), var2_8:GetUnlockText())
-	setActive(arg0_8:findTF("lock", arg2_8), not var1_8)
-	setActive(arg0_8:findTF("selected", arg2_8), var1_8)
+	LoadImageSpriteAsync(var2_8:GetIcon(), arg2_8:Find("icon"), true)
+	setText(arg2_8:Find("lock/Image/Text"), var2_8:GetUnlockText())
+	setActive(arg2_8:Find("lock"), not var1_8)
+	setActive(arg2_8:Find("selected"), var1_8)
 	onButton(arg0_8, arg2_8, function()
 		if not var1_8 then
 			return
@@ -71,8 +71,8 @@ function var0_0.updateItem(arg0_8, arg1_8, arg2_8, arg3_8)
 			end
 		end
 	end, SFX_CONFIRM)
-	setActive(arg0_8:findTF("new", arg2_8), var2_8:IsNew())
-	setActive(arg0_8:findTF("selected", arg2_8), var1_8 and arg0_8.selectedIdx == var0_8)
+	setActive(arg2_8:Find("new"), var2_8:IsNew())
+	setActive(arg2_8:Find("selected"), var1_8 and arg0_8.selectedIdx == var0_8)
 end
 
 function var0_0.Show(arg0_10)

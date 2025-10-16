@@ -1,11 +1,11 @@
 local var0_0 = class("NewOrleansMapPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.item = arg0_1:findTF("item", arg0_1.bg)
-	arg0_1.itemMask = arg0_1:findTF("icon_mask", arg0_1.item)
-	arg0_1.gotaskBtn = arg0_1:findTF("gotask", arg0_1.bg)
-	arg0_1.gobattleBtn = arg0_1:findTF("gobattle", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.item = arg0_1.bg:Find("item")
+	arg0_1.itemMask = arg0_1.item:Find("icon_mask")
+	arg0_1.gotaskBtn = arg0_1.bg:Find("gotask")
+	arg0_1.gobattleBtn = arg0_1.bg:Find("gobattle")
 end
 
 function var0_0.OnDataSetting(arg0_2)

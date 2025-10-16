@@ -45,38 +45,38 @@ function var0_0.InitData(arg0_5)
 end
 
 function var0_0.InitUI(arg0_6)
-	arg0_6.bg = arg0_6:findTF("BG")
-	arg0_6.titleText = arg0_6:findTF("mainPanel/topBar/left/nameMask/name")
-	arg0_6.tipText = arg0_6:findTF("mainPanel/topBar/left/tipText")
-	arg0_6.middleText = arg0_6:findTF("mainPanel/topBar/middle/Text")
-	arg0_6.closeBtn = arg0_6:findTF("mainPanel/topBar/right")
-	arg0_6.startShowBtn = arg0_6:findTF("mainPanel/main/showWindow")
-	arg0_6.normalWindow = arg0_6:findTF("mainPanel/main/normalWindow")
-	arg0_6.specialWindow = arg0_6:findTF("mainPanel/main/specialWindow")
-	arg0_6.normalText = arg0_6:findTF("title", arg0_6.normalWindow)
-	arg0_6.specialText = arg0_6:findTF("title", arg0_6.specialWindow)
-	arg0_6.buyNormalBtn = arg0_6:findTF("buyNormalButton", arg0_6.normalWindow)
-	arg0_6.buySpecialBtn = arg0_6:findTF("buySpecialButton", arg0_6.specialWindow)
+	arg0_6.bg = arg0_6._tf:Find("BG")
+	arg0_6.titleText = arg0_6._tf:Find("mainPanel/topBar/left/nameMask/name")
+	arg0_6.tipText = arg0_6._tf:Find("mainPanel/topBar/left/tipText")
+	arg0_6.middleText = arg0_6._tf:Find("mainPanel/topBar/middle/Text")
+	arg0_6.closeBtn = arg0_6._tf:Find("mainPanel/topBar/right")
+	arg0_6.startShowBtn = arg0_6._tf:Find("mainPanel/main/showWindow")
+	arg0_6.normalWindow = arg0_6._tf:Find("mainPanel/main/normalWindow")
+	arg0_6.specialWindow = arg0_6._tf:Find("mainPanel/main/specialWindow")
+	arg0_6.normalText = arg0_6.normalWindow:Find("title")
+	arg0_6.specialText = arg0_6.specialWindow:Find("title")
+	arg0_6.buyNormalBtn = arg0_6.normalWindow:Find("buyNormalButton")
+	arg0_6.buySpecialBtn = arg0_6.specialWindow:Find("buySpecialButton")
 
 	local var0_6 = GetComponent(arg0_6._tf, "ItemList").prefabItem[0]
 	local var1_6 = Instantiate(var0_6)
 
-	arg0_6.itemTpl = arg0_6:findTF("itemTpl")
+	arg0_6.itemTpl = arg0_6._tf:Find("itemTpl")
 
-	local var2_6 = arg0_6:findTF("Container", arg0_6.itemTpl)
+	local var2_6 = arg0_6.itemTpl:Find("Container")
 
 	setParent(var1_6, var2_6, false)
 
-	arg0_6.normalList = UIItemList.New(arg0_6:findTF("list", arg0_6.normalWindow), arg0_6.itemTpl)
-	arg0_6.specialList = UIItemList.New(arg0_6:findTF("list", arg0_6.specialWindow), arg0_6.itemTpl)
+	arg0_6.normalList = UIItemList.New(arg0_6.normalWindow:Find("list"), arg0_6.itemTpl)
+	arg0_6.specialList = UIItemList.New(arg0_6.specialWindow:Find("list"), arg0_6.itemTpl)
 
 	setScrollText(arg0_6.titleText, "")
 	setText(arg0_6.tipText, i18n("ui_pack_tip1"))
 	setText(arg0_6.normalText, i18n("ui_pack_tip2"))
 	setText(arg0_6.specialText, i18n("ui_pack_tip3"))
 
-	arg0_6.preview = arg0_6:findTF("mainPanel/main/preview")
-	arg0_6.sea = arg0_6:findTF("sea", arg0_6.preview)
+	arg0_6.preview = arg0_6._tf:Find("mainPanel/main/preview")
+	arg0_6.sea = arg0_6.preview:Find("sea")
 	arg0_6.rawImage = arg0_6.sea:GetComponent("RawImage")
 
 	setActive(arg0_6.preview, false)
@@ -90,9 +90,9 @@ function var0_0.InitUI(arg0_6)
 		arg0_6:closeView()
 	end, SFX_PANEL)
 
-	arg0_6.tipsGo = arg0_6:findTF("mainPanel/topBar/left/tips")
-	arg0_6.tipsText = arg0_6:findTF("mainPanel/topBar/left/tips/text")
-	arg0_6.toggleList = UIItemList.New(arg0_6:findTF("mainPanel/topBar/left/elementList"), arg0_6:findTF("mainPanel/topBar/left/elementList/main_toggle"))
+	arg0_6.tipsGo = arg0_6._tf:Find("mainPanel/topBar/left/tips")
+	arg0_6.tipsText = arg0_6._tf:Find("mainPanel/topBar/left/tips/text")
+	arg0_6.toggleList = UIItemList.New(arg0_6._tf:Find("mainPanel/topBar/left/elementList"), arg0_6._tf:Find("mainPanel/topBar/left/elementList/main_toggle"))
 	arg0_6.handle = UpdateBeat:CreateListener(arg0_6.UpdateClick, arg0_6)
 
 	UpdateBeat:AddListener(arg0_6.handle)
@@ -138,8 +138,8 @@ function var0_0.updateGiftWindow(arg0_12)
 
 	arg0_12.normalList:make(function(arg0_15, arg1_15, arg2_15)
 		if arg0_15 == UIItemList.EventUpdate then
-			local var0_15 = arg0_12:findTF("Container", arg2_15):GetChild(0)
-			local var1_15 = arg0_12:findTF("TextMask/Text", arg2_15)
+			local var0_15 = arg2_15:Find("Container"):GetChild(0)
+			local var1_15 = arg2_15:Find("TextMask/Text")
 			local var2_15 = var0_12[arg1_15 + 1]
 
 			var2_15.notPlay = true
@@ -165,8 +165,8 @@ function var0_0.updateGiftWindow(arg0_12)
 
 	arg0_12.specialList:make(function(arg0_17, arg1_17, arg2_17)
 		if arg0_17 == UIItemList.EventUpdate then
-			local var0_17 = arg0_12:findTF("Container", arg2_17):GetChild(0)
-			local var1_17 = arg0_12:findTF("TextMask/Text", arg2_17)
+			local var0_17 = arg2_17:Find("Container"):GetChild(0)
+			local var1_17 = arg2_17:Find("TextMask/Text")
 			local var2_17 = var0_12[arg1_17 + 1]
 
 			updateDrop(var0_17, var2_17)
@@ -260,7 +260,7 @@ function var0_0.InitTitle(arg0_29, arg1_29)
 			local var1_29 = pg.item_data_battleui[var0_29]
 			local var2_29 = var1_29.rare
 
-			arg0_29.loader:GetSpriteQuiet("ui/combatskinrare", string.format("rare_%s", var2_29), arg0_29:findTF("mainPanel/topBar/left/rareImage"))
+			arg0_29.loader:GetSpriteQuiet("ui/combatskinrare", string.format("rare_%s", var2_29), arg0_29._tf:Find("mainPanel/topBar/left/rareImage"))
 			arg0_29.toggleList:make(function(arg0_30, arg1_30, arg2_30)
 				if arg0_30 == UIItemList.EventUpdate then
 					local var0_30 = var1_29.rare_display[arg1_30 + 1]
@@ -270,7 +270,7 @@ function var0_0.InitTitle(arg0_29, arg1_29)
 					onToggle(arg0_29, arg2_30, function(arg0_31)
 						setText(arg0_29.tipsText, i18n("battleui_display" .. var0_30))
 
-						local var0_31 = arg0_29:findTF("mainPanel/topBar/left"):InverseTransformPoint(arg2_30.transform.position)
+						local var0_31 = arg0_29._tf:Find("mainPanel/topBar/left"):InverseTransformPoint(arg2_30.transform.position)
 
 						setLocalPosition(arg0_29.tipsGo, var0_31 + Vector3(-20, 46, 0))
 						arg0_29:ShowTips(arg0_31)

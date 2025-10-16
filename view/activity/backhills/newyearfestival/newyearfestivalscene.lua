@@ -7,15 +7,15 @@ end
 var0_0.HUB_ID = 4
 
 function var0_0.init(arg0_2)
-	arg0_2.top = arg0_2:findTF("top")
-	arg0_2._closeBtn = arg0_2:findTF("top/back")
-	arg0_2._homeBtn = arg0_2:findTF("top/home")
-	arg0_2._helpBtn = arg0_2:findTF("top/help")
+	arg0_2.top = arg0_2._tf:Find("top")
+	arg0_2._closeBtn = arg0_2._tf:Find("top/back")
+	arg0_2._homeBtn = arg0_2._tf:Find("top/home")
+	arg0_2._helpBtn = arg0_2._tf:Find("top/help")
 	arg0_2.ticketTimes = arg0_2.top:Find("ticket/text")
 	arg0_2.yinhuace = arg0_2.top:Find("sign")
 	arg0_2.yinhuaceTimes = arg0_2.yinhuace:Find("get")
 	arg0_2.yinhuaceTips = arg0_2.yinhuace:Find("tip")
-	arg0_2.shouce = arg0_2.top:Find("yinhuashouceye")
+	arg0_2.shouce = arg0_2._tf:Find("yinhuashouceye")
 	arg0_2.shouce_bg = arg0_2.shouce:Find("bg")
 	arg0_2.layout_shouce = arg0_2.shouce:Find("yinhuace/layout")
 	arg0_2.group_get = CustomIndexLayer.Clone2Full(arg0_2.layout_shouce, 7)
@@ -25,7 +25,7 @@ function var0_0.init(arg0_2)
 
 	setActive(arg0_2.shouce, false)
 
-	arg0_2._map = arg0_2:findTF("map")
+	arg0_2._map = arg0_2._tf:Find("map")
 	arg0_2.shrine = arg0_2._map:Find("shrine")
 	arg0_2.snack_street = arg0_2._map:Find("snack")
 	arg0_2.divination = arg0_2._map:Find("divination")
@@ -71,9 +71,11 @@ function var0_0.didEnter(arg0_4)
 		})
 	end)
 	onButton(arg0_4, arg0_4.yinhuace, function()
+		pg.UIMgr.GetInstance():OverlayPanel(arg0_4.shouce)
 		setActive(arg0_4.shouce, true)
 	end)
 	onButton(arg0_4, arg0_4.shouce_bg, function()
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_4.shouce, arg0_4._tf)
 		setActive(arg0_4.shouce, false)
 	end)
 	onButton(arg0_4, arg0_4.btn_shouce_help, function()
@@ -192,6 +194,12 @@ end
 function var0_0.willExit(arg0_19)
 	arg0_19.effectReq:Stop()
 	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_19.top, arg0_19._tf)
+
+	if isActive(arg0_19.shouce) then
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_19.shouce, arg0_19._tf)
+		setActive(arg0_19.shouce, false)
+	end
+
 	arg0_19:clearStudents()
 end
 

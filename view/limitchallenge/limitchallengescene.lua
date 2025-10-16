@@ -44,50 +44,50 @@ function var0_0.initData(arg0_6)
 end
 
 function var0_0.findUI(arg0_7)
-	arg0_7.blurPanel = arg0_7:findTF("blur_panel")
-	arg0_7.homeBtn = arg0_7:findTF("adapt/top/option", arg0_7.blurPanel)
-	arg0_7.backBtn = arg0_7:findTF("adapt/top/back_button", arg0_7.blurPanel)
-	arg0_7.helpBtn = arg0_7:findTF("adapt/top/HelpBtn", arg0_7.blurPanel)
-	arg0_7.shareBtn = arg0_7:findTF("adapt/top/ShareBtn", arg0_7.blurPanel)
-	arg0_7.levelPanel = arg0_7:findTF("Adapt/LevelPanel")
+	arg0_7.blurPanel = arg0_7._tf:Find("blur_panel")
+	arg0_7.homeBtn = arg0_7.blurPanel:Find("adapt/top/option")
+	arg0_7.backBtn = arg0_7.blurPanel:Find("adapt/top/back_button")
+	arg0_7.helpBtn = arg0_7.blurPanel:Find("adapt/top/HelpBtn")
+	arg0_7.shareBtn = arg0_7.blurPanel:Find("adapt/top/ShareBtn")
+	arg0_7.levelPanel = arg0_7._tf:Find("Adapt/LevelPanel")
 	arg0_7.levelToggleList = {}
 	arg0_7.levelToggleLockList = {}
 
 	for iter0_7, iter1_7 in ipairs(arg0_7.levelList) do
 		local var0_7 = "Level_" .. iter1_7
-		local var1_7 = arg0_7:findTF(var0_7, arg0_7.levelPanel)
-		local var2_7 = arg0_7:findTF("Toggle", var1_7)
-		local var3_7 = arg0_7:findTF("Lock", var1_7)
+		local var1_7 = arg0_7.levelPanel:Find(var0_7)
+		local var2_7 = var1_7:Find("Toggle")
+		local var3_7 = var1_7:Find("Lock")
 
 		arg0_7.levelToggleList[iter1_7] = var2_7
 		arg0_7.levelToggleLockList[iter1_7] = var3_7
 	end
 
-	arg0_7.timePanel = arg0_7:findTF("Adapt/TimePanel")
+	arg0_7.timePanel = arg0_7._tf:Find("Adapt/TimePanel")
 
-	local var4_7 = arg0_7:findTF("Left/LeftTime", arg0_7.timePanel)
+	local var4_7 = arg0_7.timePanel:Find("Left/LeftTime")
 
-	arg0_7.leftTipText = arg0_7:findTF("LeftTip", var4_7)
-	arg0_7.leftDayTipText = arg0_7:findTF("DayTip", var4_7)
-	arg0_7.leftDayValueText = arg0_7:findTF("DayValue", var4_7)
-	arg0_7.leftTimeValueText = arg0_7:findTF("TimeValue", var4_7)
-	arg0_7.passTimeValueText = arg0_7:findTF("Challenge/Value", arg0_7.timePanel)
+	arg0_7.leftTipText = var4_7:Find("LeftTip")
+	arg0_7.leftDayTipText = var4_7:Find("DayTip")
+	arg0_7.leftDayValueText = var4_7:Find("DayValue")
+	arg0_7.leftTimeValueText = var4_7:Find("TimeValue")
+	arg0_7.passTimeValueText = arg0_7.timePanel:Find("Challenge/Value")
 
 	setText(arg0_7.leftTipText, i18n("time_remaining_tip"))
 	setText(arg0_7.leftDayTipText, i18n("word_date"))
 
-	arg0_7.iconContainer = arg0_7:findTF("Adapt/DescPanel/ScrollView/Viewport/Container")
-	arg0_7.iconTpl = arg0_7:findTF("Adapt/DescPanel/IconTpl")
+	arg0_7.iconContainer = arg0_7._tf:Find("Adapt/DescPanel/ScrollView/Viewport/Container")
+	arg0_7.iconTpl = arg0_7._tf:Find("Adapt/DescPanel/IconTpl")
 
-	local var5_7 = arg0_7:findTF("Adapt/Award")
+	local var5_7 = arg0_7._tf:Find("Adapt/Award")
 
-	arg0_7.awardIconTF = arg0_7:findTF("IconTpl", var5_7)
-	arg0_7.awardGotTF = arg0_7:findTF("Got", var5_7)
-	arg0_7.startBtn = arg0_7:findTF("Adapt/StartBtn")
-	arg0_7.bgImg = arg0_7:findTF("BG")
-	arg0_7.nameImg = arg0_7:findTF("Left", arg0_7.timePanel)
-	arg0_7.debugPanel = arg0_7:findTF("Adapt/Debug")
-	arg0_7.debugText = arg0_7:findTF("Text", arg0_7.debugPanel)
+	arg0_7.awardIconTF = var5_7:Find("IconTpl")
+	arg0_7.awardGotTF = var5_7:Find("Got")
+	arg0_7.startBtn = arg0_7._tf:Find("Adapt/StartBtn")
+	arg0_7.bgImg = arg0_7._tf:Find("BG")
+	arg0_7.nameImg = arg0_7.timePanel:Find("Left")
+	arg0_7.debugPanel = arg0_7._tf:Find("Adapt/Debug")
+	arg0_7.debugText = arg0_7.debugPanel:Find("Text")
 end
 
 function var0_0.addListener(arg0_8)
@@ -132,7 +132,7 @@ function var0_0.addListener(arg0_8)
 
 	arg0_8.iconUIItemList:make(function(arg0_15, arg1_15, arg2_15)
 		if arg0_15 == UIItemList.EventUpdate then
-			local var0_15 = arg0_8:findTF("Icon", arg2_15)
+			local var0_15 = arg2_15:Find("Icon")
 
 			arg1_15 = arg1_15 + 1
 
@@ -271,7 +271,7 @@ function var0_0.updateBossImg(arg0_21)
 	for iter0_21, iter1_21 in ipairs(arg0_21.levelList) do
 		local var9_21 = string.format(var8_21, var1_21.button_style, iter1_21)
 		local var10_21 = "limitchallenge/btn/" .. var9_21
-		local var11_21 = arg0_21:findTF("Selected", arg0_21.levelToggleList[iter1_21])
+		local var11_21 = arg0_21.levelToggleList[iter1_21]:Find("Selected")
 
 		setImageSprite(var11_21, LoadSprite(var10_21, var9_21), true)
 	end

@@ -17,11 +17,11 @@ function var0_0.initData(arg0_3)
 end
 
 function var0_0.findUI(arg0_4)
-	arg0_4.windowTF = arg0_4:findTF("window")
-	arg0_4.attrUIList = UIItemList.New(arg0_4:findTF("content", arg0_4.windowTF), arg0_4:findTF("content/tpl", arg0_4.windowTF))
-	arg0_4.avatarTF = arg0_4:findTF("avatar", arg0_4.windowTF)
-	arg0_4.curPersonalText = arg0_4:findTF("Text", arg0_4.avatarTF)
-	arg0_4.sureBtn = arg0_4:findTF("sure_btn", arg0_4.windowTF)
+	arg0_4.windowTF = arg0_4._tf:Find("window")
+	arg0_4.attrUIList = UIItemList.New(arg0_4.windowTF:Find("content"), arg0_4.windowTF:Find("content/tpl"))
+	arg0_4.avatarTF = arg0_4.windowTF:Find("avatar")
+	arg0_4.curPersonalText = arg0_4.avatarTF:Find("Text")
+	arg0_4.sureBtn = arg0_4.windowTF:Find("sure_btn")
 end
 
 function var0_0.addListener(arg0_5)
@@ -50,8 +50,8 @@ function var0_0.didEnter(arg0_8)
 		if arg0_9 == UIItemList.EventInit then
 			local var0_9 = pg.child_attr[arg0_8.attrList[arg1_9 + 1]]
 
-			LoadImageSpriteAsync("educateprops/" .. var0_9.icon, arg0_8:findTF("icon", arg2_9), true)
-			setText(arg0_8:findTF("name", arg2_9), var0_9.name)
+			LoadImageSpriteAsync("educateprops/" .. var0_9.icon, arg2_9:Find("icon"), true)
+			setText(arg2_9:Find("name"), var0_9.name)
 			onButton(arg0_8, arg2_9, function()
 				if arg0_8.selectedIndex == arg1_9 + 1 then
 					return
@@ -62,7 +62,7 @@ function var0_0.didEnter(arg0_8)
 				arg0_8:updateView()
 			end, SFX_PANEL)
 		elseif arg0_9 == UIItemList.EventUpdate then
-			setActive(arg0_8:findTF("selected", arg2_9), arg0_8.selectedIndex == arg1_9 + 1)
+			setActive(arg2_9:Find("selected"), arg0_8.selectedIndex == arg1_9 + 1)
 		end
 	end)
 	arg0_8:updateView()

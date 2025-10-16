@@ -3,14 +3,14 @@ local var0_0 = class("JiqilifuSkinPage", import(".DachaolifuSkinPage"))
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.step_txt = arg0_1:findTF("step_text", arg0_1.bg)
+	arg0_1.step_txt = arg0_1.bg:Find("step_text")
 end
 
 function var0_0.OnFirstFlush(arg0_2)
 	arg0_2.uilist:make(function(arg0_3, arg1_3, arg2_3)
 		if arg0_3 == UIItemList.EventUpdate then
 			local var0_3 = arg1_3 + 1
-			local var1_3 = arg0_2:findTF("item", arg2_3)
+			local var1_3 = arg2_3:Find("item")
 			local var2_3 = arg0_2.taskGroup[arg0_2.nday][var0_3]
 			local var3_3 = arg0_2.taskProxy:getTaskById(var2_3) or arg0_2.taskProxy:getFinishTaskById(var2_3)
 
@@ -31,13 +31,13 @@ function var0_0.OnFirstFlush(arg0_2)
 			local var6_3 = var3_3:getProgress()
 			local var7_3 = var3_3:getConfig("target_num")
 
-			setText(arg0_2:findTF("description", arg2_3), var3_3:getConfig("desc"))
-			setText(arg0_2:findTF("progressText", arg2_3), var6_3 .. "/" .. var7_3)
-			setSlider(arg0_2:findTF("progress", arg2_3), 0, var7_3, var6_3)
+			setText(arg2_3:Find("description"), var3_3:getConfig("desc"))
+			setText(arg2_3:Find("progressText"), var6_3 .. "/" .. var7_3)
+			setSlider(arg2_3:Find("progress"), 0, var7_3, var6_3)
 
-			local var8_3 = arg0_2:findTF("go_btn", arg2_3)
-			local var9_3 = arg0_2:findTF("get_btn", arg2_3)
-			local var10_3 = arg0_2:findTF("got_btn", arg2_3)
+			local var8_3 = arg2_3:Find("go_btn")
+			local var9_3 = arg2_3:Find("get_btn")
+			local var10_3 = arg2_3:Find("got_btn")
 			local var11_3 = var3_3:getTaskStatus()
 
 			setActive(var8_3, var11_3 == 0)

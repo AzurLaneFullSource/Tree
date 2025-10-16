@@ -5,13 +5,13 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.bg = arg0_2:findTF("bg")
-	arg0_2.scrollPanel = arg0_2:findTF("window/panel")
-	arg0_2.UIlist = UIItemList.New(arg0_2:findTF("window/panel/list"), arg0_2:findTF("window/panel/list/item"))
-	arg0_2.ptTF = arg0_2:findTF("window/top/pt")
-	arg0_2.totalTxt = arg0_2:findTF("window/top/pt/Text"):GetComponent(typeof(Text))
-	arg0_2.closeBtn = arg0_2:findTF("window/top/btnBack")
-	arg0_2.getBtn = arg0_2:findTF("window/btn_get")
+	arg0_2.bg = arg0_2._tf:Find("bg")
+	arg0_2.scrollPanel = arg0_2._tf:Find("window/panel")
+	arg0_2.UIlist = UIItemList.New(arg0_2._tf:Find("window/panel/list"), arg0_2._tf:Find("window/panel/list/item"))
+	arg0_2.ptTF = arg0_2._tf:Find("window/top/pt")
+	arg0_2.totalTxt = arg0_2._tf:Find("window/top/pt/Text"):GetComponent(typeof(Text))
+	arg0_2.closeBtn = arg0_2._tf:Find("window/top/btnBack")
+	arg0_2.getBtn = arg0_2._tf:Find("window/btn_get")
 end
 
 function var0_0.didEnter(arg0_3)

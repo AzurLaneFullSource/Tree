@@ -15,9 +15,9 @@ function var0_0.getGroupName(arg0_2)
 end
 
 function var0_0.init(arg0_3)
-	arg0_3.container = arg0_3:findTF("main/bg/container")
-	arg0_3.gridContainer = arg0_3:findTF("grids", arg0_3.container)
-	arg0_3.gridTF = arg0_3:findTF("grid_tpl", arg0_3.gridContainer)
+	arg0_3.container = arg0_3._tf:Find("main/bg/container")
+	arg0_3.gridContainer = arg0_3.container:Find("grids")
+	arg0_3.gridTF = arg0_3.gridContainer:Find("grid_tpl")
 	arg0_3.height = arg0_3.gridTF.sizeDelta.y + var5_0
 	arg0_3.width = arg0_3.gridTF.sizeDelta.x + var4_0
 	arg0_3.startPos = Vector2(-1 * ((var2_0 / 2 - 0.5) * arg0_3.width) + var6_0.x, (var1_0 / 2 - 0.5) * arg0_3.height + var6_0.y)
@@ -27,28 +27,28 @@ function var0_0.init(arg0_3)
 
 	setActive(arg0_3.gridTF, false)
 
-	arg0_3.infoPanel = arg0_3:findTF("main/info_panel")
-	arg0_3.itemContainer = arg0_3:findTF("usages/items", arg0_3.infoPanel)
-	arg0_3.itemTF = arg0_3:findTF("itemTF", arg0_3.itemContainer)
-	arg0_3.infoName = arg0_3:findTF("name_container/Text", arg0_3.infoPanel):GetComponent(typeof(Text))
-	arg0_3.attrContainer = arg0_3:findTF("align/attrs", arg0_3.infoPanel)
+	arg0_3.infoPanel = arg0_3._tf:Find("main/info_panel")
+	arg0_3.itemContainer = arg0_3.infoPanel:Find("usages/items")
+	arg0_3.itemTF = arg0_3.itemContainer:Find("itemTF")
+	arg0_3.infoName = arg0_3.infoPanel:Find("name_container/Text"):GetComponent(typeof(Text))
+	arg0_3.attrContainer = arg0_3.infoPanel:Find("align/attrs")
 	arg0_3.attrTpl = arg0_3:getTpl("attr", arg0_3.attrContainer)
 	arg0_3.attrTplD = arg0_3:getTpl("attrd", arg0_3.attrContainer)
-	arg0_3.confirmBtn = arg0_3:findTF("confirm_btn/activity", arg0_3.infoPanel)
-	arg0_3.inactiveBtn = arg0_3:findTF("confirm_btn/inactivity", arg0_3.infoPanel)
-	arg0_3.completedteBtn = arg0_3:findTF("confirm_btn/complete", arg0_3.infoPanel)
-	arg0_3.shipTF = arg0_3:findTF("main/info_panel/usages/shipTF")
-	arg0_3.skillDesc = arg0_3:findTF("align/skill_desc/text", arg0_3.infoPanel)
-	arg0_3.shipContainer = arg0_3:findTF("char_container", arg0_3.infoPanel)
-	arg0_3.lineTpl = arg0_3:findTF("resources/line")
-	arg0_3.lineContainer = arg0_3:findTF("grids/lines", arg0_3.container)
+	arg0_3.confirmBtn = arg0_3.infoPanel:Find("confirm_btn/activity")
+	arg0_3.inactiveBtn = arg0_3.infoPanel:Find("confirm_btn/inactivity")
+	arg0_3.completedteBtn = arg0_3.infoPanel:Find("confirm_btn/complete")
+	arg0_3.shipTF = arg0_3._tf:Find("main/info_panel/usages/shipTF")
+	arg0_3.skillDesc = arg0_3.infoPanel:Find("align/skill_desc/text")
+	arg0_3.shipContainer = arg0_3.infoPanel:Find("char_container")
+	arg0_3.lineTpl = arg0_3._tf:Find("resources/line")
+	arg0_3.lineContainer = arg0_3.container:Find("grids/lines")
 	arg0_3.helpBtn = GameObject.Find("/OverlayCamera/Overlay/UIMain/common/help_btn")
 
 	if not IsNil(arg0_3.helpBtn) then
 		setActive(arg0_3.helpBtn, false)
 	end
 
-	arg0_3.tooltip = arg0_3:findTF("tooltip")
+	arg0_3.tooltip = arg0_3._tf:Find("tooltip")
 
 	setActive(arg0_3.tooltip, false)
 end
@@ -395,7 +395,7 @@ function var0_0.updateFinished(arg0_23, arg1_23)
 		setActive(var4_23, iter2_23 <= #var2_23)
 
 		if iter2_23 <= #var2_23 then
-			updateDrop(arg0_23:findTF("IconTpl", var4_23), var2_23[iter2_23])
+			updateDrop(var4_23:Find("IconTpl"), var2_23[iter2_23])
 			RemoveComponent(var4_23, typeof(Button))
 		end
 	end
@@ -405,7 +405,7 @@ function var0_0.updateFinished(arg0_23, arg1_23)
 	if var1_23.use_ship > 0 then
 		setActive(arg0_23.shipTF:Find("addTF"), false)
 		setActive(arg0_23.shipTF:Find("IconTpl"), true)
-		updateDrop(arg0_23:findTF("IconTpl", arg0_23.shipTF), {
+		updateDrop(arg0_23.shipTF:Find("IconTpl"), {
 			type = DROP_TYPE_SHIP,
 			id = arg0_23.shipVO.configId
 		})
@@ -533,7 +533,7 @@ function var0_0.updateProgress(arg0_29, arg1_29)
 		setActive(arg0_29.shipTF:Find("addTF"), not var7_29)
 
 		if var7_29 then
-			updateDrop(arg0_29:findTF("IconTpl", arg0_29.shipTF), {
+			updateDrop(arg0_29.shipTF:Find("IconTpl"), {
 				id = getProxy(BayProxy):getShipById(var6_29[1]).configId,
 				type = DROP_TYPE_SHIP
 			})
@@ -604,7 +604,7 @@ function var0_0.updateProgress(arg0_29, arg1_29)
 				end
 			end
 
-			updateDrop(arg0_29:findTF("IconTpl", var10_29), {
+			updateDrop(var10_29:Find("IconTpl"), {
 				id = var11_29[1],
 				type = DROP_TYPE_ITEM,
 				count = var12_29

@@ -49,6 +49,13 @@ function var0_0.UpdateTask(arg0_6, arg1_6, arg2_6)
 			updateCustomDrop(arg2_7, var3_6[arg1_7 + 1], {
 				style = "island"
 			})
+			onButton(arg0_6, arg2_7, function()
+				arg0_6.contextData:ShowMsgBox({
+					title = i18n("island_word_desc"),
+					type = IslandMsgBox.TYPE_COMMON_DROP_DESCRIBE,
+					dropData = var3_6[arg1_7 + 1]
+				})
+			end)
 		end
 	end)
 
@@ -66,48 +73,48 @@ function var0_0.UpdateTask(arg0_6, arg1_6, arg2_6)
 	end, SFX_PANEL)
 end
 
-function var0_0.Show(arg0_9)
-	arg0_9.super.Show(arg0_9)
-	arg0_9:Flush()
+function var0_0.Show(arg0_10)
+	arg0_10.super.Show(arg0_10)
+	arg0_10:Flush()
 	IslandGuideChecker.CheckGuide("ISLAND_GUIDE_16")
 end
 
-function var0_0.Flush(arg0_10)
-	arg0_10.taskIds = arg0_10.contextData.season:GetTaskIds()
-	arg0_10.taskVODic = {}
+function var0_0.Flush(arg0_11)
+	arg0_11.taskIds = arg0_11.contextData.season:GetTaskIds()
+	arg0_11.taskVODic = {}
 
-	local var0_10 = getProxy(IslandProxy):GetIsland():GetTaskAgency()
+	local var0_11 = getProxy(IslandProxy):GetIsland():GetTaskAgency()
 
-	for iter0_10, iter1_10 in ipairs(arg0_10.contextData.season:GetTaskIds()) do
-		local var1_10 = var0_10:GetTask(iter1_10)
+	for iter0_11, iter1_11 in ipairs(arg0_11.contextData.season:GetTaskIds()) do
+		local var1_11 = var0_11:GetTask(iter1_11)
 
-		if var1_10 then
-			arg0_10.taskVODic[iter1_10] = var1_10
+		if var1_11 then
+			arg0_11.taskVODic[iter1_11] = var1_11
 		end
 	end
 
-	table.sort(arg0_10.taskIds, CompareFuncs({
-		function(arg0_11)
-			return arg0_10.taskVODic[arg0_11] and arg0_10.taskVODic[arg0_11]:IsFinish() and 0 or 1
-		end,
+	table.sort(arg0_11.taskIds, CompareFuncs({
 		function(arg0_12)
-			return arg0_10.taskVODic[arg0_12] and 0 or 1
+			return arg0_11.taskVODic[arg0_12] and arg0_11.taskVODic[arg0_12]:IsFinish() and 0 or 1
 		end,
 		function(arg0_13)
-			return arg0_13
+			return arg0_11.taskVODic[arg0_13] and 0 or 1
+		end,
+		function(arg0_14)
+			return arg0_14
 		end
 	}))
-	arg0_10.scrollCom:SetTotalCount(#arg0_10.taskIds, -1)
+	arg0_11.scrollCom:SetTotalCount(#arg0_11.taskIds, -1)
 
-	arg0_10.canSubmitIds = underscore.select(arg0_10.taskIds, function(arg0_14)
-		return arg0_10.taskVODic[arg0_14] and arg0_10.taskVODic[arg0_14]:IsSubmitOnUI() and arg0_10.taskVODic[arg0_14]:IsFinish()
+	arg0_11.canSubmitIds = underscore.select(arg0_11.taskIds, function(arg0_15)
+		return arg0_11.taskVODic[arg0_15] and arg0_11.taskVODic[arg0_15]:IsSubmitOnUI() and arg0_11.taskVODic[arg0_15]:IsFinish()
 	end)
 
-	setActive(arg0_10.getAllBtn, #arg0_10.canSubmitIds > 0)
+	setActive(arg0_11.getAllBtn, #arg0_11.canSubmitIds > 0)
 end
 
-function var0_0.OnDestroy(arg0_15)
-	ClearLScrollrect(arg0_15.scrollCom)
+function var0_0.OnDestroy(arg0_16)
+	ClearLScrollrect(arg0_16.scrollCom)
 end
 
 return var0_0

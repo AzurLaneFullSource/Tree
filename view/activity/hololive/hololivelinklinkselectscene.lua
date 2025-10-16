@@ -33,17 +33,17 @@ function var0_0.initData(arg0_5)
 end
 
 function var0_0.findUI(arg0_6)
-	arg0_6.forNotchPanel = arg0_6:findTF("ForNotchPanel")
-	arg0_6.backBtn = arg0_6:findTF("BackBtn", arg0_6.forNotchPanel)
-	arg0_6.helpBtn = arg0_6:findTF("HelpBtn", arg0_6.forNotchPanel)
-	arg0_6.awardMask = arg0_6:findTF("AwardImg/Mask", arg0_6.forNotchPanel)
-	arg0_6.progressText = arg0_6:findTF("AwardImg/ProgressText", arg0_6.forNotchPanel)
-	arg0_6.getAwardBtn = arg0_6:findTF("AwardImg/GetBtn", arg0_6.forNotchPanel)
-	arg0_6.gotAwardBtn = arg0_6:findTF("AwardImg/GotBtn", arg0_6.forNotchPanel)
-	arg0_6.progressPanel = arg0_6:findTF("Progress", arg0_6.forNotchPanel)
-	arg0_6.lightPointContainer = arg0_6:findTF("Light", arg0_6.progressPanel)
-	arg0_6.lightLineContainer = arg0_6:findTF("LightLine", arg0_6.progressPanel)
-	arg0_6.entranceContainer = arg0_6:findTF("EntranceContainer")
+	arg0_6.forNotchPanel = arg0_6._tf:Find("ForNotchPanel")
+	arg0_6.backBtn = arg0_6.forNotchPanel:Find("BackBtn")
+	arg0_6.helpBtn = arg0_6.forNotchPanel:Find("HelpBtn")
+	arg0_6.awardMask = arg0_6.forNotchPanel:Find("AwardImg/Mask")
+	arg0_6.progressText = arg0_6.forNotchPanel:Find("AwardImg/ProgressText")
+	arg0_6.getAwardBtn = arg0_6.forNotchPanel:Find("AwardImg/GetBtn")
+	arg0_6.gotAwardBtn = arg0_6.forNotchPanel:Find("AwardImg/GotBtn")
+	arg0_6.progressPanel = arg0_6.forNotchPanel:Find("Progress")
+	arg0_6.lightPointContainer = arg0_6.progressPanel:Find("Light")
+	arg0_6.lightLineContainer = arg0_6.progressPanel:Find("LightLine")
+	arg0_6.entranceContainer = arg0_6._tf:Find("EntranceContainer")
 end
 
 function var0_0.initUI(arg0_7)
@@ -52,7 +52,7 @@ function var0_0.initUI(arg0_7)
 	eachChild(arg0_7.lightPointContainer, function(arg0_8)
 		table.insert(arg0_7.lightPointTFList, 1, arg0_8)
 
-		local var0_8 = arg0_7:findTF("Point", arg0_8)
+		local var0_8 = arg0_8:Find("Point")
 
 		setActive(arg0_8, false)
 		setActive(var0_8, false)
@@ -67,9 +67,9 @@ function var0_0.initUI(arg0_7)
 
 		table.insert(arg0_7.entranceTFList, var0_7)
 
-		local var1_7 = arg0_7:findTF("Mask", var0_7)
-		local var2_7 = arg0_7:findTF("GotImg", var0_7)
-		local var3_7 = arg0_7:findTF("LockText", var0_7)
+		local var1_7 = var0_7:Find("Mask")
+		local var2_7 = var0_7:Find("GotImg")
+		local var3_7 = var0_7:Find("LockText")
 
 		setActive(var1_7, true)
 		setActive(var2_7, false)
@@ -89,7 +89,7 @@ function var0_0.addListener(arg0_10)
 	end, SFX_PANEL)
 
 	for iter0_10, iter1_10 in ipairs(arg0_10.entranceTFList) do
-		local var0_10 = arg0_10:findTF("EntranceBtn", iter1_10)
+		local var0_10 = iter1_10:Find("EntranceBtn")
 
 		onButton(arg0_10, var0_10, function()
 			arg0_10.linkGameData:SetRuntimeData("curLinkGameID", iter0_10)
@@ -109,19 +109,18 @@ function var0_0.updateProgressBar(arg0_14)
 			setActive(var2_14, true)
 		end
 
-		local var3_14 = arg0_14.lightPointTFList[var1_14]
-		local var4_14 = arg0_14:findTF("Point", var3_14)
+		local var3_14 = arg0_14.lightPointTFList[var1_14]:Find("Point")
 
-		setActive(var4_14, true)
+		setActive(var3_14, true)
 	end
 
 	if var1_14 > 1 then
-		local var5_14 = var1_14 - 1
+		local var4_14 = var1_14 - 1
 
-		for iter1_14 = 1, var5_14 do
-			local var6_14 = arg0_14.lightLineTFList[iter1_14]
+		for iter1_14 = 1, var4_14 do
+			local var5_14 = arg0_14.lightLineTFList[iter1_14]
 
-			setActive(var6_14, true)
+			setActive(var5_14, true)
 		end
 	end
 end
@@ -158,9 +157,9 @@ function var0_0.updateEntranceList(arg0_17)
 
 	for iter0_17 = 1, 8 do
 		local var1_17 = arg0_17.entranceTFList[iter0_17]
-		local var2_17 = arg0_17:findTF("Mask", var1_17)
-		local var3_17 = arg0_17:findTF("GotImg", var1_17)
-		local var4_17 = arg0_17:findTF("LockText", var1_17)
+		local var2_17 = var1_17:Find("Mask")
+		local var3_17 = var1_17:Find("GotImg")
+		local var4_17 = var1_17:Find("LockText")
 		local var5_17 = arg0_17.linkGameData:GetConfigCsvLine(iter0_17).unlock_txt
 
 		setText(var4_17, var5_17)

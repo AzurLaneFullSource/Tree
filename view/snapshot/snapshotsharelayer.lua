@@ -5,16 +5,16 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.photoImgTrans = arg0_2:findTF("PhotoImg")
+	arg0_2.photoImgTrans = arg0_2._tf:Find("PhotoImg")
 	arg0_2.rawImage = arg0_2.photoImgTrans:GetComponent("RawImage")
-	arg0_2.shareBtnTrans = arg0_2:findTF("BtnPanel/ShareBtn")
-	arg0_2.confirmBtnTrans = arg0_2:findTF("BtnPanel/ConfirmBtn")
-	arg0_2.cancelBtnTrans = arg0_2:findTF("BtnPanel/CancelBtn")
-	arg0_2.userAgreenTF = arg0_2:findTF("UserAgreement")
-	arg0_2.userAgreenMainTF = arg0_2:findTF("window", arg0_2.userAgreenTF)
-	arg0_2.closeUserAgreenTF = arg0_2:findTF("close_btn", arg0_2.userAgreenMainTF)
-	arg0_2.userRefuseConfirmTF = arg0_2:findTF("refuse_btn", arg0_2.userAgreenMainTF)
-	arg0_2.userAgreenConfirmTF = arg0_2:findTF("accept_btn", arg0_2.userAgreenMainTF)
+	arg0_2.shareBtnTrans = arg0_2._tf:Find("BtnPanel/ShareBtn")
+	arg0_2.confirmBtnTrans = arg0_2._tf:Find("BtnPanel/ConfirmBtn")
+	arg0_2.cancelBtnTrans = arg0_2._tf:Find("BtnPanel/CancelBtn")
+	arg0_2.userAgreenTF = arg0_2._tf:Find("UserAgreement")
+	arg0_2.userAgreenMainTF = arg0_2.userAgreenTF:Find("window")
+	arg0_2.closeUserAgreenTF = arg0_2.userAgreenMainTF:Find("close_btn")
+	arg0_2.userRefuseConfirmTF = arg0_2.userAgreenMainTF:Find("refuse_btn")
+	arg0_2.userAgreenConfirmTF = arg0_2.userAgreenMainTF:Find("accept_btn")
 
 	setActive(arg0_2.userAgreenTF, false)
 
@@ -58,7 +58,7 @@ function var0_0.showUserAgreement(arg0_10, arg1_10)
 
 	local var0_10
 
-	arg0_10.userAgreenTitleTF = arg0_10:findTF("UserAgreement/window/title")
+	arg0_10.userAgreenTitleTF = arg0_10._tf:Find("UserAgreement/window/title")
 	arg0_10.userAgreenTitleTF:GetComponent("Text").text = i18n("word_snapshot_share_title")
 
 	setActive(arg0_10.userAgreenTF, true)

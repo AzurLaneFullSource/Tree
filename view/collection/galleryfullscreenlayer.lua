@@ -26,8 +26,8 @@ function var0_0.onBackPressed(arg0_5)
 end
 
 function var0_0.findUI(arg0_6)
-	arg0_6.bg = arg0_6:findTF("BG")
-	arg0_6.picImg = arg0_6:findTF("Pic")
+	arg0_6.bg = arg0_6._tf:Find("BG")
+	arg0_6.picImg = arg0_6._tf:Find("Pic")
 end
 
 function var0_0.initData(arg0_7)

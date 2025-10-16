@@ -14,9 +14,9 @@ var0_0.SpineActionByStep = {
 function var0_0.OnFirstFlush(arg0_1)
 	var0_0.super.OnFirstFlush(arg0_1)
 
-	arg0_1.shop = arg0_1:findTF("shop", arg0_1.bg)
+	arg0_1.shop = arg0_1.bg:Find("shop")
 	arg0_1.shopAnim = GetComponent(arg0_1.shop, "SpineAnimUI")
-	arg0_1.sdContainer = arg0_1:findTF("sdcontainer", arg0_1.bg)
+	arg0_1.sdContainer = arg0_1.bg:Find("sdcontainer")
 	arg0_1.spine = nil
 	arg0_1.spineLRQ = GetSpineRequestPackage.New("mingshi_5", function(arg0_2)
 		SetParent(arg0_2, arg0_1.sdContainer)
@@ -33,14 +33,14 @@ function var0_0.OnFirstFlush(arg0_1)
 		arg0_1.spineLRQ = nil
 	end):Start()
 
-	onButton(arg0_1, arg0_1:findTF("sdBtn", arg0_1.bg), function()
+	onButton(arg0_1, arg0_1.bg:Find("sdBtn"), function()
 		arg0_1:showBubble()
 	end, SFX_PANEL)
 
-	arg0_1.levelBtn = arg0_1:findTF("level_btn", arg0_1.bg)
-	arg0_1.ptBtn = arg0_1:findTF("pt_btn", arg0_1.bg)
-	arg0_1.bubble = arg0_1:findTF("bubble", arg0_1.bg)
-	arg0_1.bubbleText = arg0_1:findTF("Text", arg0_1.bubble)
+	arg0_1.levelBtn = arg0_1.bg:Find("level_btn")
+	arg0_1.ptBtn = arg0_1.bg:Find("pt_btn")
+	arg0_1.bubble = arg0_1.bg:Find("bubble")
+	arg0_1.bubbleText = arg0_1.bubble:Find("Text")
 	arg0_1.bubbleCG = GetComponent(arg0_1.bubble, "CanvasGroup")
 	arg0_1.showBubbleTag = false
 

@@ -6,12 +6,12 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.bg = arg0_2:findTF("bg")
-	arg0_2.closeBtn = arg0_2:findTF("closeBtn")
-	arg0_2.res = arg0_2:findTF("res")
-	arg0_2.wharfResCount = arg0_2:findTF("frame/resNum")
-	arg0_2.transportList = arg0_2:findTF("frame/transportList")
-	arg0_2.transportCompletePage = arg0_2:findTF("transportCompletePage")
+	arg0_2.bg = arg0_2._tf:Find("bg")
+	arg0_2.closeBtn = arg0_2._tf:Find("closeBtn")
+	arg0_2.res = arg0_2._tf:Find("res")
+	arg0_2.wharfResCount = arg0_2._tf:Find("frame/resNum")
+	arg0_2.transportList = arg0_2._tf:Find("frame/transportList")
+	arg0_2.transportCompletePage = arg0_2._tf:Find("transportCompletePage")
 
 	setText(arg0_2._tf:Find("frame/nameBg/name"), i18n("holiday_tip_trans_tip"))
 	setText(arg0_2._tf:Find("frame/resDesc"), i18n("holiday_tip_trans_get"))
@@ -150,7 +150,7 @@ function var0_0.SetRes(arg0_12, arg1_12, arg2_12)
 
 			if var2_12.name == tostring(var0_12) then
 				setActive(var2_12, true)
-				setText(arg0_12:findTF("Text", var2_12), var1_12)
+				setText(var2_12:Find("Text"), var1_12)
 			end
 		end
 	end
@@ -160,19 +160,19 @@ function var0_0.ShowCompletePage(arg0_13)
 	setActive(arg0_13.transportCompletePage, true)
 	pg.UIMgr.GetInstance():BlurPanel(arg0_13.transportCompletePage)
 	SetAction(arg0_13.transportCompletePage:Find("ani"), "normal" .. arg0_13.doingTransCfg.id, false)
-	setText(arg0_13:findTF("desc/Text", arg0_13.transportCompletePage), arg0_13.doingTransCfg.result_desc)
-	setActive(arg0_13:findTF("desc/triangle", arg0_13.transportCompletePage), false)
+	setText(arg0_13.transportCompletePage:Find("desc/Text"), arg0_13.doingTransCfg.result_desc)
+	setActive(arg0_13.transportCompletePage:Find("desc/triangle"), false)
 
-	local var0_13 = GetOrAddComponent(arg0_13:findTF("desc/Text", arg0_13.transportCompletePage), typeof(Typewriter))
+	local var0_13 = GetOrAddComponent(arg0_13.transportCompletePage:Find("desc/Text"), typeof(Typewriter))
 
 	var0_13:setSpeed(0.05)
 
 	function var0_13.endFunc()
-		setActive(arg0_13:findTF("desc/triangle", arg0_13.transportCompletePage), true)
+		setActive(arg0_13.transportCompletePage:Find("desc/triangle"), true)
 	end
 
 	var0_13:Play()
-	onButton(arg0_13, arg0_13:findTF("bg", arg0_13.transportCompletePage), function()
+	onButton(arg0_13, arg0_13.transportCompletePage:Find("bg"), function()
 		setActive(arg0_13.transportCompletePage, false)
 		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_13.transportCompletePage, arg0_13._tf)
 
@@ -182,7 +182,7 @@ function var0_0.ShowCompletePage(arg0_13)
 			arg0_13:emit(BaseUI.ON_ACHIEVE, arg0_13.awards)
 		end
 	end, SFX_CANCEL)
-	onButton(arg0_13, arg0_13:findTF("desc", arg0_13.transportCompletePage), function()
+	onButton(arg0_13, arg0_13.transportCompletePage:Find("desc"), function()
 		setActive(arg0_13.transportCompletePage, false)
 		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_13.transportCompletePage, arg0_13._tf)
 

@@ -42,33 +42,33 @@ function var0_0.initData(arg0_3)
 end
 
 function var0_0.findUI(arg0_4)
-	arg0_4.anim = arg0_4:findTF("anim_root"):GetComponent(typeof(Animation))
-	arg0_4.animEvent = arg0_4:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+	arg0_4.anim = arg0_4._tf:Find("anim_root"):GetComponent(typeof(Animation))
+	arg0_4.animEvent = arg0_4._tf:Find("anim_root"):GetComponent(typeof(DftAniEvent))
 
 	arg0_4.animEvent:SetEndEvent(function()
 		arg0_4:emit(var0_0.ON_CLOSE)
 	end)
 
-	arg0_4.windowTF = arg0_4:findTF("anim_root/window")
-	arg0_4.tplTF = arg0_4:findTF("tpl", arg0_4.windowTF)
+	arg0_4.windowTF = arg0_4._tf:Find("anim_root/window")
+	arg0_4.tplTF = arg0_4.windowTF:Find("tpl")
 
 	setActive(arg0_4.tplTF, false)
 
-	arg0_4.importTF = arg0_4:findTF("scrollview/view/content/import_news", arg0_4.windowTF)
-	arg0_4.importUIList = UIItemList.New(arg0_4:findTF("list", arg0_4.importTF), arg0_4.tplTF)
+	arg0_4.importTF = arg0_4.windowTF:Find("scrollview/view/content/import_news")
+	arg0_4.importUIList = UIItemList.New(arg0_4.importTF:Find("list"), arg0_4.tplTF)
 
-	setText(arg0_4:findTF("title/Text", arg0_4.importTF), i18n("child_news_import_title"))
-	setText(arg0_4:findTF("empty/Text", arg0_4.importTF), i18n("child_news_import_empty"))
+	setText(arg0_4.importTF:Find("title/Text"), i18n("child_news_import_title"))
+	setText(arg0_4.importTF:Find("empty/Text"), i18n("child_news_import_empty"))
 
-	arg0_4.otherTF = arg0_4:findTF("scrollview/view/content/other_news", arg0_4.windowTF)
-	arg0_4.otherUIList = UIItemList.New(arg0_4:findTF("list", arg0_4.otherTF), arg0_4.tplTF)
+	arg0_4.otherTF = arg0_4.windowTF:Find("scrollview/view/content/other_news")
+	arg0_4.otherUIList = UIItemList.New(arg0_4.otherTF:Find("list"), arg0_4.tplTF)
 
-	setText(arg0_4:findTF("title/Text", arg0_4.otherTF), i18n("child_news_other_title"))
-	setText(arg0_4:findTF("empty/Text", arg0_4.otherTF), i18n("child_news_other_empty"))
+	setText(arg0_4.otherTF:Find("title/Text"), i18n("child_news_other_title"))
+	setText(arg0_4.otherTF:Find("empty/Text"), i18n("child_news_other_empty"))
 end
 
 function var0_0.addListener(arg0_6)
-	onButton(arg0_6, arg0_6:findTF("anim_root/bg"), function()
+	onButton(arg0_6, arg0_6._tf:Find("anim_root/bg"), function()
 		arg0_6:_close()
 	end, SFX_PANEL)
 end
@@ -99,13 +99,13 @@ function var0_0.updateEventItem(arg0_12, arg1_12, arg2_12, arg3_12)
 	local var1_12 = var0_12:GetTag(arg0_12.finishEvents, arg0_12.curTime.week)
 	local var2_12 = EducateSpecialEvent.TAG2NAME[var1_12]
 
-	setImageColor(arg0_12:findTF("block", arg2_12), Color.NewHex(var1_0[var1_12]))
-	setText(arg0_12:findTF("name", arg2_12), var0_12:getConfig("main_desc"))
-	setTextColor(arg0_12:findTF("name", arg2_12), Color.NewHex(var2_0[var1_12]))
-	eachChild(arg0_12:findTF("name/tags", arg2_12), function(arg0_13)
+	setImageColor(arg2_12:Find("block"), Color.NewHex(var1_0[var1_12]))
+	setText(arg2_12:Find("name"), var0_12:getConfig("main_desc"))
+	setTextColor(arg2_12:Find("name"), Color.NewHex(var2_0[var1_12]))
+	eachChild(arg2_12:Find("name/tags"), function(arg0_13)
 		setActive(arg0_13, arg0_13.name == var2_12)
 	end)
-	setText(arg0_12:findTF("time/Text", arg2_12), var0_12:GetTimeDesc())
+	setText(arg2_12:Find("time/Text"), var0_12:GetTimeDesc())
 end
 
 function var0_0.updateNewsList(arg0_14)
@@ -120,8 +120,8 @@ function var0_0.updateNewsList(arg0_14)
 
 	table.sort(arg0_14.importEvents, var0_14)
 	table.sort(arg0_14.otherEvents, var0_14)
-	setActive(arg0_14:findTF("empty", arg0_14.importTF), #arg0_14.importEvents <= 0)
-	setActive(arg0_14:findTF("empty", arg0_14.otherTF), #arg0_14.otherEvents <= 0)
+	setActive(arg0_14.importTF:Find("empty"), #arg0_14.importEvents <= 0)
+	setActive(arg0_14.otherTF:Find("empty"), #arg0_14.otherEvents <= 0)
 	arg0_14.importUIList:align(#arg0_14.importEvents)
 	arg0_14.otherUIList:align(#arg0_14.otherEvents)
 end

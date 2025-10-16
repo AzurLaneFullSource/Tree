@@ -10,7 +10,7 @@ end
 
 function var0_0.InitView(arg0_2)
 	arg0_2.animations = {}
-	arg0_2.puzzle = arg0_2:findTF("Puzzle", arg0_2.bg)
+	arg0_2.puzzle = arg0_2.bg:Find("Puzzle")
 	arg0_2.linkActId = arg0_2:GetLinkId()
 	arg0_2.activityProxy = getProxy(ActivityProxy)
 	arg0_2.chargeIDList = Clone(arg0_2.activityProxy:getActivityById(arg0_2.linkActId).data1_list)
@@ -20,7 +20,7 @@ function var0_0.InitView(arg0_2)
 end
 
 function var0_0.RegisterEvent(arg0_3)
-	arg0_3.helpBtn = arg0_3:findTF("HelpBtn", arg0_3.bg)
+	arg0_3.helpBtn = arg0_3.bg:Find("HelpBtn")
 
 	onButton(arg0_3, arg0_3.helpBtn, function()
 		if pg.gametip.comic_help then

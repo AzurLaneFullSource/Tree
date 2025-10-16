@@ -22,8 +22,8 @@ function var0_0.OnLoaded(arg0_2)
 		arg0_2._tf:Find("frame/bg/content/list/3/icon/iconImg"):GetComponent(typeof(Image)).sprite
 	}
 
-	setText(arg0_2:findTF("frame/bg/content/Text"), i18n("commander_use_box_tip"))
-	setText(arg0_2:findTF("frame/bg/content/queue/title/Text"), i18n("commander_use_box_queue"))
+	setText(arg0_2._tf:Find("frame/bg/content/Text"), i18n("commander_use_box_tip"))
+	setText(arg0_2._tf:Find("frame/bg/content/queue/title/Text"), i18n("commander_use_box_queue"))
 end
 
 function var0_0.OnInit(arg0_3)

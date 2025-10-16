@@ -45,13 +45,13 @@ function var0_0.init(arg0_2)
 	arg0_2.toggles = {}
 
 	for iter0_2, iter1_2 in ipairs(var0_2) do
-		arg0_2[iter1_2 .. "Panel"] = arg0_2:findTF(iter1_2)
-		arg0_2.toggles[iter1_2 .. "Panel"] = arg0_2:findTF("toggle_controll/" .. iter1_2)
+		arg0_2[iter1_2 .. "Panel"] = arg0_2._tf:Find(iter1_2)
+		arg0_2.toggles[iter1_2 .. "Panel"] = arg0_2._tf:Find("toggle_controll/" .. iter1_2)
 	end
 
 	Canvas.ForceUpdateCanvases()
 
-	arg0_2.sample = arg0_2:findTF("sample")
+	arg0_2.sample = arg0_2._tf:Find("sample")
 
 	setActive(arg0_2.sample, false)
 
@@ -135,10 +135,10 @@ local var1_0 = {
 
 function var0_0.initAndSetBtn(arg0_10, arg1_10)
 	if arg1_10 == var0_0.TYPE_DEFAULT or arg1_10 == var0_0.TYPE_SHIP then
-		arg0_10.defaultEquipTF = arg0_10:findTF("equipment", arg0_10.defaultPanel) or arg0_10:cloneSampleTo(arg0_10.defaultPanel, var0_0.Middle, "equipment")
+		arg0_10.defaultEquipTF = arg0_10.defaultPanel:Find("equipment") or arg0_10:cloneSampleTo(arg0_10.defaultPanel, var0_0.Middle, "equipment")
 
 		table.Foreach(var1_0, function(arg0_11, arg1_11)
-			local var0_11 = arg0_10:findTF("actions/action_button_" .. arg0_11, arg0_10.defaultPanel)
+			local var0_11 = arg0_10.defaultPanel:Find("actions/action_button_" .. arg0_11)
 
 			arg0_10["default" .. arg1_11[1] .. "Btn"] = var0_11
 
@@ -157,10 +157,10 @@ function var0_0.initAndSetBtn(arg0_10, arg1_10)
 			arg0_10:emit(SpWeaponInfoMediator.ON_MODIFY)
 		end, SFX_PANEL)
 	elseif arg1_10 == var0_0.TYPE_REPLACE then
-		arg0_10.replaceSrcEquipTF = arg0_10:findTF("equipment", arg0_10.replacePanel) or arg0_10:cloneSampleTo(arg0_10.replacePanel, var0_0.Left, "equipment")
-		arg0_10.replaceDstEquipTF = arg0_10:findTF("equipment_on_ship", arg0_10.replacePanel) or arg0_10:cloneSampleTo(arg0_10.replacePanel, var0_0.Right, "equipment_on_ship")
-		arg0_10.replaceCancelBtn = arg0_10:findTF("actions/cancel_button", arg0_10.replacePanel)
-		arg0_10.replaceConfirmBtn = arg0_10:findTF("actions/action_button_2", arg0_10.replacePanel)
+		arg0_10.replaceSrcEquipTF = arg0_10.replacePanel:Find("equipment") or arg0_10:cloneSampleTo(arg0_10.replacePanel, var0_0.Left, "equipment")
+		arg0_10.replaceDstEquipTF = arg0_10.replacePanel:Find("equipment_on_ship") or arg0_10:cloneSampleTo(arg0_10.replacePanel, var0_0.Right, "equipment_on_ship")
+		arg0_10.replaceCancelBtn = arg0_10.replacePanel:Find("actions/cancel_button")
+		arg0_10.replaceConfirmBtn = arg0_10.replacePanel:Find("actions/action_button_2")
 
 		setText(arg0_10.replaceConfirmBtn:Find("label"), i18n("msgbox_text_confirm"))
 		setText(arg0_10.replaceCancelBtn:Find("label"), i18n("msgbox_text_cancel"))
@@ -176,8 +176,8 @@ function var0_0.initAndSetBtn(arg0_10, arg1_10)
 			end
 		end, SFX_UI_DOCKYARD_EQUIPADD)
 	elseif arg1_10 == var0_0.TYPE_DISPLAY then
-		arg0_10.displayEquipTF = arg0_10:findTF("equipment", arg0_10.displayPanel) or arg0_10:cloneSampleTo(arg0_10.displayPanel, var0_0.Middle, "equipment")
-		arg0_10.displayMoveBtn = arg0_10:findTF("actions/move_button", arg0_10.displayPanel)
+		arg0_10.displayEquipTF = arg0_10.displayPanel:Find("equipment") or arg0_10:cloneSampleTo(arg0_10.displayPanel, var0_0.Middle, "equipment")
+		arg0_10.displayMoveBtn = arg0_10.displayPanel:Find("actions/move_button")
 
 		setText(arg0_10.displayMoveBtn:Find("label"), i18n("msgbox_text_equipdetail"))
 		onButton(arg0_10, arg0_10.displayMoveBtn, function()
@@ -206,7 +206,7 @@ function var0_0.updateOperation2(arg0_20)
 	setActive(arg0_20.defaultUnloadBtn, true)
 	setActive(arg0_20.defaultModifyBtn, true)
 
-	local var1_20 = arg0_20:findTF("head", arg0_20.defaultEquipTF)
+	local var1_20 = arg0_20.defaultEquipTF:Find("head")
 
 	setActive(var1_20, arg0_20.shipVO)
 
@@ -230,7 +230,7 @@ function var0_0.updateOperation3(arg0_21)
 		arg0_21:updateEquipmentPanel(arg0_21.replaceDstEquipTF, arg0_21.oldEquipmentVO, SpWeaponHelper.TransformNormalInfo(arg0_21.oldEquipmentVO))
 	end
 
-	local var3_21 = arg0_21:findTF("head", arg0_21.replaceDstEquipTF)
+	local var3_21 = arg0_21.replaceDstEquipTF:Find("head")
 
 	setActive(var3_21, arg0_21.oldShipVO)
 
@@ -244,7 +244,7 @@ function var0_0.updateOperation4(arg0_22)
 	arg0_22:updateEquipmentPanel(arg0_22.displayEquipTF, arg0_22.equipmentVO, SpWeaponHelper.TransformNormalInfo(arg0_22.equipmentVO))
 	setActive(arg0_22.displayMoveBtn, arg0_22.shipVO)
 
-	local var0_22 = arg0_22:findTF("head", arg0_22.displayEquipTF)
+	local var0_22 = arg0_22.displayEquipTF:Find("head")
 
 	setActive(var0_22, arg0_22.shipVO)
 
@@ -277,8 +277,8 @@ function var0_0.updateOperationAward(arg0_23, arg1_23, arg2_23, arg3_23)
 end
 
 function var0_0.updateEquipmentPanel(arg0_25, arg1_25, arg2_25, arg3_25)
-	local var0_25 = arg0_25:findTF("info", arg1_25)
-	local var1_25 = arg0_25:findTF("empty", arg1_25)
+	local var0_25 = arg1_25:Find("info")
+	local var1_25 = arg1_25:Find("empty")
 
 	setActive(var0_25, arg2_25)
 	setActive(var1_25, not arg2_25)
@@ -302,7 +302,7 @@ function var0_0.updateEquipmentPanel(arg0_25, arg1_25, arg2_25, arg3_25)
 	setActive(findTF(var3_25, "slv/next"), false)
 	setText(findTF(var3_25, "slv/next/Text"), arg2_25:GetLevel() - 1)
 
-	local var4_25 = arg0_25:findTF("tier", var3_25)
+	local var4_25 = var3_25:Find("tier")
 
 	setActive(var4_25, arg2_25)
 

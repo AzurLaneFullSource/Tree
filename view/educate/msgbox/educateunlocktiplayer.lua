@@ -10,8 +10,8 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.anim = arg0_2:findTF("anim_root"):GetComponent(typeof(Animation))
-	arg0_2.animEvent = arg0_2:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+	arg0_2.anim = arg0_2._tf:Find("anim_root"):GetComponent(typeof(Animation))
+	arg0_2.animEvent = arg0_2._tf:Find("anim_root"):GetComponent(typeof(DftAniEvent))
 
 	arg0_2.animEvent:SetEndEvent(function()
 		arg0_2:emit(var0_0.ON_CLOSE)

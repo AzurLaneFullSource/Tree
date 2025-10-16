@@ -21,25 +21,25 @@ function var0_0.initData(arg0_3)
 end
 
 function var0_0.initUI(arg0_4)
-	arg0_4.content = arg0_4:findTF("scrollrect/content")
-	arg0_4.soldOutTF = arg0_4:findTF("sold_out")
+	arg0_4.content = arg0_4._tf:Find("scrollrect/content")
+	arg0_4.soldOutTF = arg0_4._tf:Find("sold_out")
 
-	setText(arg0_4:findTF("Text", arg0_4.soldOutTF), i18n("newserver_soldout"))
+	setText(arg0_4.soldOutTF:Find("Text"), i18n("newserver_soldout"))
 	setActive(arg0_4.soldOutTF, #arg0_4.giftGoodsVOList == 0)
 
 	arg0_4.pagefooters = {
-		arg0_4:findTF("pagefooter/dailyPacks"),
-		arg0_4:findTF("pagefooter/specialPacks")
+		arg0_4._tf:Find("pagefooter/dailyPacks"),
+		arg0_4._tf:Find("pagefooter/specialPacks")
 	}
 
-	setText(arg0_4:findTF("pagefooter/dailyPacks/Text"), i18n("blackfriday_dailypack"))
-	setText(arg0_4:findTF("pagefooter/dailyPacks/mark"), i18n("blackfriday_dailypack"))
-	setText(arg0_4:findTF("pagefooter/specialPacks/Text"), i18n("blackfriday_specialpack"))
-	setText(arg0_4:findTF("pagefooter/specialPacks/mark"), i18n("blackfriday_specialpack"))
+	setText(arg0_4._tf:Find("pagefooter/dailyPacks/Text"), i18n("blackfriday_dailypack"))
+	setText(arg0_4._tf:Find("pagefooter/dailyPacks/mark"), i18n("blackfriday_dailypack"))
+	setText(arg0_4._tf:Find("pagefooter/specialPacks/Text"), i18n("blackfriday_specialpack"))
+	setText(arg0_4._tf:Find("pagefooter/specialPacks/mark"), i18n("blackfriday_specialpack"))
 
 	arg0_4.pagefooterWid = arg0_4.pagefooters[1].rect.width
 	arg0_4.pagefooterStartPosX = arg0_4.pagefooters[1].anchoredPosition.x
-	arg0_4.giftItemList = UIItemList.New(arg0_4.content, arg0_4:findTF("gift_tpl"))
+	arg0_4.giftItemList = UIItemList.New(arg0_4.content, arg0_4._tf:Find("gift_tpl"))
 	arg0_4.chargeCardTable = {}
 
 	arg0_4.giftItemList:make(function(arg0_5, arg1_5, arg2_5)

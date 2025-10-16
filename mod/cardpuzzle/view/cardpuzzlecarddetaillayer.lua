@@ -5,8 +5,8 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.cardView = CardPuzzleCardView.New(arg0_2:findTF("CardTowerCard"))
-	arg0_2.keywordList = arg0_2:findTF("KeywordList")
+	arg0_2.cardView = CardPuzzleCardView.New(arg0_2._tf:Find("CardTowerCard"))
+	arg0_2.keywordList = arg0_2._tf:Find("KeywordList")
 end
 
 local var1_0 = {
@@ -15,7 +15,7 @@ local var1_0 = {
 }
 
 function var0_0.didEnter(arg0_3)
-	onButton(arg0_3, arg0_3:findTF("BG"), function()
+	onButton(arg0_3, arg0_3._tf:Find("BG"), function()
 		arg0_3:closeView()
 	end, SFX_CANCEL)
 	arg0_3.cardView:SetData(arg0_3.contextData.cardData)

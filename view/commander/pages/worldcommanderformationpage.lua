@@ -5,7 +5,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnInit(arg0_2)
-	arg0_2.samllTF = arg0_2:findTF("small")
+	arg0_2.samllTF = arg0_2.rtAdapt:Find("small")
 
 	setActive(arg0_2.samllTF, true)
 
@@ -15,28 +15,28 @@ function var0_0.OnInit(arg0_2)
 
 	setText(arg0_2.smallSalvageMask:Find("text_bg/Text"), i18n("world_catsearch_help_4"))
 
-	arg0_2.descPanel = arg0_2:findTF("desc")
+	arg0_2.descPanel = arg0_2.rtAdapt:Find("desc")
 
 	setActive(arg0_2.descPanel, false)
 
-	arg0_2.descFrameTF = arg0_2:findTF("desc/frame")
+	arg0_2.descFrameTF = arg0_2.rtAdapt:Find("desc/frame")
 	arg0_2.descSalvageMask = arg0_2.descFrameTF:Find("salvage_mask")
 
 	setText(arg0_2.descSalvageMask:Find("text_bg/Text"), i18n("world_catsearch_help_5"))
 
-	arg0_2.descPos1 = arg0_2:findTF("commander1/frame/info", arg0_2.descFrameTF)
-	arg0_2.descPos2 = arg0_2:findTF("commander2/frame/info", arg0_2.descFrameTF)
-	arg0_2.skillTFPos1 = arg0_2:findTF("commander1/skill_info", arg0_2.descFrameTF)
-	arg0_2.skillTFPos2 = arg0_2:findTF("commander2/skill_info", arg0_2.descFrameTF)
-	arg0_2.abilitysTF = UIItemList.New(arg0_2:findTF("atttr_panel/abilitys/mask/content", arg0_2.descFrameTF), arg0_2:findTF("atttr_panel/abilitys/mask/content/attr", arg0_2.descFrameTF))
-	arg0_2.talentsTF = UIItemList.New(arg0_2:findTF("atttr_panel/talents/mask/content", arg0_2.descFrameTF), arg0_2:findTF("atttr_panel/talents/mask/content/attr", arg0_2.descFrameTF))
-	arg0_2.abilityArr = arg0_2:findTF("desc/frame/atttr_panel/abilitys/arr")
-	arg0_2.talentsArr = arg0_2:findTF("desc/frame/atttr_panel/talents/arr")
-	arg0_2.restAllBtn = arg0_2:findTF("rest_all", arg0_2.descFrameTF)
+	arg0_2.descPos1 = arg0_2.descFrameTF:Find("commander1/frame/info")
+	arg0_2.descPos2 = arg0_2.descFrameTF:Find("commander2/frame/info")
+	arg0_2.skillTFPos1 = arg0_2.descFrameTF:Find("commander1/skill_info")
+	arg0_2.skillTFPos2 = arg0_2.descFrameTF:Find("commander2/skill_info")
+	arg0_2.abilitysTF = UIItemList.New(arg0_2.descFrameTF:Find("atttr_panel/abilitys/mask/content"), arg0_2.descFrameTF:Find("atttr_panel/abilitys/mask/content/attr"))
+	arg0_2.talentsTF = UIItemList.New(arg0_2.descFrameTF:Find("atttr_panel/talents/mask/content"), arg0_2.descFrameTF:Find("atttr_panel/talents/mask/content/attr"))
+	arg0_2.abilityArr = arg0_2.rtAdapt:Find("desc/frame/atttr_panel/abilitys/arr")
+	arg0_2.talentsArr = arg0_2.rtAdapt:Find("desc/frame/atttr_panel/talents/arr")
+	arg0_2.restAllBtn = arg0_2.descFrameTF:Find("rest_all")
 
 	setActive(arg0_2.restAllBtn, false)
 
-	arg0_2.quickBtn = arg0_2:findTF("quick_btn", arg0_2.descFrameTF)
+	arg0_2.quickBtn = arg0_2.descFrameTF:Find("quick_btn")
 
 	setActive(arg0_2.quickBtn, false)
 	onButton(arg0_2, arg0_2.samllTF, function()
@@ -45,8 +45,8 @@ function var0_0.OnInit(arg0_2)
 	onButton(arg0_2, arg0_2.descPanel, function()
 		arg0_2:closeDescPanel()
 	end, SFX_PANEL)
-	setText(arg0_2:findTF("desc/frame/atttr_panel/abilitys/title/Text"), i18n("commander_subtile_ablity"))
-	setText(arg0_2:findTF("desc/frame/atttr_panel/talents/title/Text"), i18n("commander_subtile_talent"))
+	setText(arg0_2.rtAdapt:Find("desc/frame/atttr_panel/abilitys/title/Text"), i18n("commander_subtile_ablity"))
+	setText(arg0_2.rtAdapt:Find("desc/frame/atttr_panel/talents/title/Text"), i18n("commander_subtile_talent"))
 end
 
 function var0_0.Update(arg0_5, arg1_5)

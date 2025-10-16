@@ -3,7 +3,7 @@ local var0_0 = class("RoyalFortunePage", import(".TemplatePage.SkinTemplatePage"
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.painting = arg0_1:findTF("painting", arg0_1.bg)
+	arg0_1.painting = arg0_1.bg:Find("painting")
 end
 
 function var0_0.OnUpdateFlush(arg0_2)

@@ -17,14 +17,14 @@ function var0_0.OnDestroy(arg0_3)
 end
 
 function var0_0.InitUI(arg0_4)
-	arg0_4.skillContainer = arg0_4:findTF("bg/skill_panel/frame/skill_list/viewport")
+	arg0_4.skillContainer = arg0_4._tf:Find("bg/skill_panel/frame/skill_list/viewport")
 	arg0_4.skillTpl = arg0_4:getTpl("bg/skill_panel/frame/skilltpl", arg0_4._tf)
 	arg0_4.emptyTpl = arg0_4:getTpl("bg/skill_panel/frame/emptytpl", arg0_4._tf)
 	arg0_4.addTpl = arg0_4:getTpl("bg/skill_panel/frame/addtpl", arg0_4._tf)
 end
 
 function var0_0.AddListener(arg0_5)
-	onButton(arg0_5, arg0_5:findTF("qr_btn"), function()
+	onButton(arg0_5, arg0_5._tf:Find("qr_btn"), function()
 		arg0_5.confirmFunc()
 	end, SFX_CONFIRM)
 end
@@ -48,7 +48,7 @@ function var0_0.initSkills(arg0_7)
 		else
 			var5_7 = cloneTplTo(arg0_7.emptyTpl, arg0_7.skillContainer)
 
-			setActive(arg0_7:findTF("mask", var5_7), true)
+			setActive(var5_7:Find("mask"), true)
 			onButton(arg0_7, var5_7, function()
 				arg0_7:emit(NewShipMediator.ON_SKILLINFO, var3_7.id)
 			end, SFX_PANEL)
@@ -65,13 +65,13 @@ function var0_0.initSkills(arg0_7)
 end
 
 function var0_0.UpdatePropertyPanel(arg0_10)
-	arg0_10.propertyPanel = PropertyPanel.New(arg0_10:findTF("bg/property_panel/frame"))
+	arg0_10.propertyPanel = PropertyPanel.New(arg0_10._tf:Find("bg/property_panel/frame"))
 
 	arg0_10.propertyPanel:initProperty(arg0_10._shipVO.configId)
 end
 
 function var0_0.getTpl(arg0_11, arg1_11, arg2_11)
-	local var0_11 = arg0_11:findTF(arg1_11, arg2_11)
+	local var0_11 = arg2_11:Find(arg1_11)
 
 	var0_11:SetParent(arg0_11._tf, false)
 	SetActive(var0_11, false)

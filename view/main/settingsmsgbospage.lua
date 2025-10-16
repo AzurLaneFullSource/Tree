@@ -8,10 +8,10 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.closeBtn = arg0_2:findTF("window/top/btnBack")
-	arg0_2.textTr = arg0_2:findTF("window/view/content/Text")
+	arg0_2.closeBtn = arg0_2._tf:Find("window/top/btnBack")
+	arg0_2.textTr = arg0_2._tf:Find("window/view/content/Text")
 	arg0_2.text = arg0_2.textTr:GetComponent(typeof(Text))
-	arg0_2.scrollrect = arg0_2:findTF("window/view/content")
+	arg0_2.scrollrect = arg0_2._tf:Find("window/view/content")
 end
 
 function var0_0.OnInit(arg0_3)

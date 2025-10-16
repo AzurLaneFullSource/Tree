@@ -5,12 +5,12 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.closeBtn = arg0_2:findTF("window/top/btnBack")
-	arg0_2.cancelBtn = arg0_2:findTF("window/button_container/cancel")
-	arg0_2.confirmBtn = arg0_2:findTF("window/button_container/confirm")
-	arg0_2.contentTxt = arg0_2:findTF("window/frame/content"):GetComponent(typeof(Text))
-	arg0_2.leftItemTr = arg0_2:findTF("window/frame/left")
-	arg0_2.rightItemTr = arg0_2:findTF("window/frame/right")
+	arg0_2.closeBtn = arg0_2._tf:Find("window/top/btnBack")
+	arg0_2.cancelBtn = arg0_2._tf:Find("window/button_container/cancel")
+	arg0_2.confirmBtn = arg0_2._tf:Find("window/button_container/confirm")
+	arg0_2.contentTxt = arg0_2._tf:Find("window/frame/content"):GetComponent(typeof(Text))
+	arg0_2.leftItemTr = arg0_2._tf:Find("window/frame/left")
+	arg0_2.rightItemTr = arg0_2._tf:Find("window/frame/right")
 	arg0_2.leftNameTxt = arg0_2.leftItemTr:Find("name_bg/Text"):GetComponent(typeof(Text))
 	arg0_2.rightNameTxt = arg0_2.rightItemTr:Find("name_bg/Text"):GetComponent(typeof(Text))
 

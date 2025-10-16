@@ -7,22 +7,22 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.shareBtn = arg0_2:findTF("frame/public")
-	arg0_2.onkeyBtn = arg0_2:findTF("frame/onkey")
-	arg0_2.closeBtn = arg0_2:findTF("frame/close")
+	arg0_2.shareBtn = arg0_2._tf:Find("frame/public")
+	arg0_2.onkeyBtn = arg0_2._tf:Find("frame/onkey")
+	arg0_2.closeBtn = arg0_2._tf:Find("frame/close")
 	arg0_2.toggles = {
-		[var1_0] = arg0_2:findTF("frame/toggles/1"),
-		[var2_0] = arg0_2:findTF("frame/toggles/2")
+		[var1_0] = arg0_2._tf:Find("frame/toggles/1"),
+		[var2_0] = arg0_2._tf:Find("frame/toggles/2")
 	}
 	arg0_2.texts = {
-		[var1_0] = arg0_2:findTF("frame/toggles/1/Text"):GetComponent(typeof(Text)),
-		[var2_0] = arg0_2:findTF("frame/toggles/2/Text"):GetComponent(typeof(Text))
+		[var1_0] = arg0_2._tf:Find("frame/toggles/1/Text"):GetComponent(typeof(Text)),
+		[var2_0] = arg0_2._tf:Find("frame/toggles/2/Text"):GetComponent(typeof(Text))
 	}
 	arg0_2.names = {
 		i18n("island_friend"),
 		i18n("island_guild")
 	}
-	arg0_2._scrollrect = arg0_2:findTF("frame/scrollrect"):GetComponent("LScrollRect")
+	arg0_2._scrollrect = arg0_2._tf:Find("frame/scrollrect"):GetComponent("LScrollRect")
 
 	function arg0_2._scrollrect.onInitItem(arg0_3)
 		arg0_2:OnInitItem(arg0_3)
@@ -32,8 +32,8 @@ function var0_0.OnLoaded(arg0_2)
 		arg0_2:OnUpdateItem(arg0_4, arg1_4)
 	end
 
-	setText(arg0_2:findTF("frame/public/Text"), i18n("island_public_invitation"))
-	setText(arg0_2:findTF("frame/onkey/Text"), i18n("island_onekey_invitation"))
+	setText(arg0_2._tf:Find("frame/public/Text"), i18n("island_public_invitation"))
+	setText(arg0_2._tf:Find("frame/onkey/Text"), i18n("island_onekey_invitation"))
 end
 
 function var0_0.OnInit(arg0_5)

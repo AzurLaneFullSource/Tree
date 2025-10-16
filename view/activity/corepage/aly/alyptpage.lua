@@ -3,7 +3,7 @@ local var0_0 = class("ALYPtPage", import("..CorePageNewPtTemplatePage"))
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.anim = arg0_1:findTF("bg/Image_back"):GetComponent(typeof(Animation))
+	arg0_1.anim = arg0_1._tf:Find("bg/Image_back"):GetComponent(typeof(Animation))
 
 	arg0_1.anim:Play("anim_AlyptPage_BackImage")
 
@@ -17,8 +17,8 @@ function var0_0.OnInit(arg0_1)
 	arg0_1._tfanimEvent = arg0_1._tfanim:GetComponent(typeof(DftAniEvent))
 
 	arg0_1._tfanimEvent:SetEndEvent(function()
-		setActive(arg0_1:findTF("bg/Image_back_Loop"), true)
-		setActive(arg0_1:findTF("bg/VX"), true)
+		setActive(arg0_1._tf:Find("bg/Image_back_Loop"), true)
+		setActive(arg0_1._tf:Find("bg/VX"), true)
 	end)
 
 	arg0_1.itemAlpha = 0
@@ -79,10 +79,10 @@ end
 
 function var0_0.OnFirstFlush(arg0_9)
 	var0_0.super.OnFirstFlush(arg0_9)
-	setText(arg0_9:findTF("Text (Legacy)", arg0_9.shopBtn), i18n("yumia_pt_3"))
-	setText(arg0_9:findTF("Text (Legacy)", arg0_9.getBtn), i18n("yumia_pt_2"))
-	setText(arg0_9:findTF("rule_bg/rule_text", arg0_9.bg), i18n("yumia_pt_1"))
-	setText(arg0_9:findTF("pt_bg/Text (Legacy)", arg0_9.bg), i18n("yumia_pt_tip"))
+	setText(arg0_9._tf:Find("Text (Legacy)", arg0_9.shopBtn), i18n("yumia_pt_3"))
+	setText(arg0_9._tf:Find("Text (Legacy)", arg0_9.getBtn), i18n("yumia_pt_2"))
+	setText(arg0_9.bg:Find("rule_bg/rule_text"), i18n("yumia_pt_1"))
+	setText(arg0_9._tf:Find("pt_bg/Text (Legacy)", arg0_9.bg), i18n("yumia_pt_tip"))
 end
 
 function var0_0.UpdateNextAward(arg0_10, arg1_10)

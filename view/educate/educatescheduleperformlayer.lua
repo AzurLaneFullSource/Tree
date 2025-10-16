@@ -52,14 +52,14 @@ function var0_0.initData(arg0_3)
 end
 
 function var0_0.findUI(arg0_6)
-	arg0_6.windowsTF = arg0_6:findTF("anim_root/window")
-	arg0_6.leftTF = arg0_6:findTF("left", arg0_6.windowsTF)
+	arg0_6.windowsTF = arg0_6._tf:Find("anim_root/window")
+	arg0_6.leftTF = arg0_6.windowsTF:Find("left")
 
-	setText(arg0_6:findTF("title/Text", arg0_6.leftTF), i18n("child_plan_perform_title"))
+	setText(arg0_6.leftTF:Find("title/Text"), i18n("child_plan_perform_title"))
 
-	arg0_6.dayUIList = UIItemList.New(arg0_6:findTF("content", arg0_6.leftTF), arg0_6:findTF("content/day_tpl", arg0_6.leftTF))
-	arg0_6.rightTF = arg0_6:findTF("right", arg0_6.windowsTF)
-	arg0_6.planNameTF = arg0_6:findTF("name", arg0_6.rightTF)
+	arg0_6.dayUIList = UIItemList.New(arg0_6.leftTF:Find("content"), arg0_6.leftTF:Find("content/day_tpl"))
+	arg0_6.rightTF = arg0_6.windowsTF:Find("right")
+	arg0_6.planNameTF = arg0_6.rightTF:Find("name")
 end
 
 function var0_0.didEnter(arg0_7)
@@ -80,19 +80,19 @@ function var0_0.initDayList(arg0_9)
 
 			arg2_10.name = var0_10
 
-			setText(arg0_9:findTF("Text", arg2_10), EducateHelper.GetWeekStrByNumber(var0_10))
+			setText(arg2_10:Find("Text"), EducateHelper.GetWeekStrByNumber(var0_10))
 
 			for iter0_10 = 1, 3 do
-				local var1_10 = arg0_9:findTF("phase" .. iter0_10, arg2_10)
+				local var1_10 = arg2_10:Find("phase" .. iter0_10)
 
 				setActive(var1_10, iter0_10 == arg0_9.planCnt)
 			end
 		elseif arg0_10 == UIItemList.EventUpdate then
 			local var2_10 = arg1_10 + 1
 
-			setActive(arg0_9:findTF("selected", arg2_10), arg0_9.curDay == var2_10)
+			setActive(arg2_10:Find("selected"), arg0_9.curDay == var2_10)
 
-			local var3_10 = arg0_9:findTF("Text", arg2_10)
+			local var3_10 = arg2_10:Find("Text")
 			local var4_10 = "FFFFFF"
 			local var5_10 = "FFFFFF"
 
@@ -109,7 +109,7 @@ function var0_0.initDayList(arg0_9)
 
 			setTextColor(var3_10, Color.NewHex(var4_10))
 
-			local var6_10 = arg0_9:findTF("phase" .. arg0_9.planCnt, arg2_10)
+			local var6_10 = arg2_10:Find("phase" .. arg0_9.planCnt)
 
 			for iter1_10 = 1, var6_10.childCount do
 				local var7_10 = var5_10

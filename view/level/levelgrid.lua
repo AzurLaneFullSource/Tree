@@ -496,7 +496,7 @@ function var0_0.initPlane(arg0_23)
 end
 
 function var0_0.updatePoisonArea(arg0_26)
-	local var0_26 = arg0_26:findTF("plane/display/mask")
+	local var0_26 = arg0_26._tf:Find("plane/display/mask")
 	local var1_26 = GetOrAddComponent(var0_26, "RawImage")
 
 	if not var1_26.enabled then
@@ -508,7 +508,7 @@ end
 
 function var0_0.getPoisonTex(arg0_27)
 	local var0_27 = arg0_27.contextData.chapterVO
-	local var1_27 = arg0_27:findTF("plane/display")
+	local var1_27 = arg0_27._tf:Find("plane/display")
 	local var2_27 = var1_27.sizeDelta.x / var1_27.sizeDelta.y
 	local var3_27 = 256
 	local var4_27 = math.floor(var3_27 / var2_27)

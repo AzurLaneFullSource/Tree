@@ -5,16 +5,16 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.contentTxt = arg0_2:findTF("frame/Text"):GetComponent(typeof(Text))
-	arg0_2.nextBtn = arg0_2:findTF("frame/btn")
-	arg0_2.confirmBtn = arg0_2:findTF("frame/btn_confrim")
-	arg0_2.consumeTr = arg0_2:findTF("frame/consume")
-	arg0_2.consumeTxt = arg0_2:findTF("frame/consume/Text"):GetComponent(typeof(Text))
-	arg0_2.consumeIcon = arg0_2:findTF("frame/consume/icon"):GetComponent(typeof(Image))
-	arg0_2.role = arg0_2:findTF("frame/role"):GetComponent(typeof(Image))
-	arg0_2.title = arg0_2:findTF("frame/title/Text"):GetComponent(typeof(Image))
+	arg0_2.contentTxt = arg0_2._tf:Find("frame/Text"):GetComponent(typeof(Text))
+	arg0_2.nextBtn = arg0_2._tf:Find("frame/btn")
+	arg0_2.confirmBtn = arg0_2._tf:Find("frame/btn_confrim")
+	arg0_2.consumeTr = arg0_2._tf:Find("frame/consume")
+	arg0_2.consumeTxt = arg0_2._tf:Find("frame/consume/Text"):GetComponent(typeof(Text))
+	arg0_2.consumeIcon = arg0_2._tf:Find("frame/consume/icon"):GetComponent(typeof(Image))
+	arg0_2.role = arg0_2._tf:Find("frame/role"):GetComponent(typeof(Image))
+	arg0_2.title = arg0_2._tf:Find("frame/title/Text"):GetComponent(typeof(Image))
 
-	setText(arg0_2:findTF("frame/tip"), i18n("sculpture_close_tip"))
+	setText(arg0_2._tf:Find("frame/tip"), i18n("sculpture_close_tip"))
 end
 
 function var0_0.OnInit(arg0_3)

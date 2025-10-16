@@ -36,67 +36,67 @@ function var0_0.setOwnedSkinList(arg0_5, arg1_5)
 end
 
 function var0_0.init(arg0_6)
-	arg0_6.bg = arg0_6:findTF("bg")
+	arg0_6.bg = arg0_6._tf:Find("bg")
 	arg0_6.staticBg = arg0_6.bg:Find("static_bg")
-	arg0_6.painting = arg0_6:findTF("paint")
+	arg0_6.painting = arg0_6._tf:Find("paint")
 	arg0_6.paintingFitter = findTF(arg0_6.painting, "fitter")
 	arg0_6.paintingInitPos = arg0_6.painting.transform.localPosition
-	arg0_6.chatTF = arg0_6:findTF("paint/chat")
+	arg0_6.chatTF = arg0_6._tf:Find("paint/chat")
 
 	setActive(arg0_6.chatTF, false)
 
 	arg0_6.commonPainting = arg0_6.painting:Find("fitter")
-	arg0_6.l2dRoot = arg0_6:findTF("live2d", arg0_6.painting)
-	arg0_6.spinePaintingRoot = arg0_6:findTF("spinePainting", arg0_6.painting)
-	arg0_6.spinePaintingBgRoot = arg0_6:findTF("paintBg/spinePainting")
-	arg0_6.chatBg = arg0_6:findTF("chatbgtop", arg0_6.chatTF)
+	arg0_6.l2dRoot = arg0_6.painting:Find("live2d")
+	arg0_6.spinePaintingRoot = arg0_6.painting:Find("spinePainting")
+	arg0_6.spinePaintingBgRoot = arg0_6._tf:Find("paintBg/spinePainting")
+	arg0_6.chatBg = arg0_6.chatTF:Find("chatbgtop")
 	arg0_6.initChatBgH = arg0_6.chatBg.sizeDelta.y
-	arg0_6.chatText = arg0_6:findTF("Text", arg0_6.chatBg)
-	arg0_6.name = arg0_6:findTF("name")
+	arg0_6.chatText = arg0_6.chatBg:Find("Text")
+	arg0_6.name = arg0_6._tf:Find("name")
 	arg0_6.nameInitPos = arg0_6.name.transform.localPosition
-	arg0_6.shipType = arg0_6:findTF("type", arg0_6.name)
-	arg0_6.labelName = arg0_6:findTF("name_mask/Text", arg0_6.name):GetComponent(typeof(Text))
-	arg0_6.labelEnName = arg0_6:findTF("english_name", arg0_6.name):GetComponent(typeof(Text))
-	arg0_6.stars = arg0_6:findTF("stars", arg0_6.name)
+	arg0_6.shipType = arg0_6.name:Find("type")
+	arg0_6.labelName = arg0_6.name:Find("name_mask/Text"):GetComponent(typeof(Text))
+	arg0_6.labelEnName = arg0_6.name:Find("english_name"):GetComponent(typeof(Text))
+	arg0_6.stars = arg0_6.name:Find("stars")
 	arg0_6.star = arg0_6:getTpl("star_tpl", arg0_6.stars)
-	arg0_6.blurPanel = arg0_6:findTF("blur_panel")
-	arg0_6.top = arg0_6:findTF("blur_panel/adapt/top")
-	arg0_6.btnBack = arg0_6:findTF("back", arg0_6.top)
-	arg0_6.bottomTF = arg0_6:findTF("adapt/bottom")
-	arg0_6.labelHeart = arg0_6:findTF("adapt/detail_left_panel/heart/label", arg0_6.blurPanel)
-	arg0_6.btnLike = arg0_6:findTF("adapt/detail_left_panel/heart/btnLike", arg0_6.blurPanel)
-	arg0_6.btnChangeSkin = arg0_6:findTF("adapt/detail_left_panel/change_skin", arg0_6.blurPanel)
+	arg0_6.blurPanel = arg0_6._tf:Find("blur_panel")
+	arg0_6.top = arg0_6._tf:Find("blur_panel/adapt/top")
+	arg0_6.btnBack = arg0_6.top:Find("back")
+	arg0_6.bottomTF = arg0_6._tf:Find("adapt/bottom")
+	arg0_6.labelHeart = arg0_6.blurPanel:Find("adapt/detail_left_panel/heart/label")
+	arg0_6.btnLike = arg0_6.blurPanel:Find("adapt/detail_left_panel/heart/btnLike")
+	arg0_6.btnChangeSkin = arg0_6.blurPanel:Find("adapt/detail_left_panel/change_skin")
 	arg0_6.changeSkinToggle = ChangeSkinToggle.New(findTF(arg0_6.btnChangeSkin, "toggle_ui"))
 	arg0_6.btnLikeAct = arg0_6.btnLike:Find("like")
 	arg0_6.btnLikeDisact = arg0_6.btnLike:Find("unlike")
-	arg0_6.obtainBtn = arg0_6:findTF("adapt/bottom/others/obtain_btn")
-	arg0_6.evaBtn = arg0_6:findTF("adapt/bottom/others/eva_btn")
-	arg0_6.viewBtn = arg0_6:findTF("adapt/bottom/others/view_btn")
-	arg0_6.shareBtn = arg0_6:findTF("adapt/bottom/others/share_btn")
-	arg0_6.rotateBtn = arg0_6:findTF("adapt/bottom/others/rotate_btn")
-	arg0_6.cryptolaliaBtn = arg0_6:findTF("adapt/bottom/others/cryptolalia_btn")
-	arg0_6.equipCodeBtn = arg0_6:findTF("adapt/bottom/others/equip_code_btn")
-	arg0_6.leftProfile = arg0_6:findTF("adapt/profile_left_panel", arg0_6.blurPanel)
-	arg0_6.modelContainer = arg0_6:findTF("model", arg0_6.leftProfile)
-	arg0_6.live2DBtn = ShipProfileLive2dBtn.New(arg0_6:findTF("L2D_btn", arg0_6.blurPanel))
+	arg0_6.obtainBtn = arg0_6._tf:Find("adapt/bottom/others/obtain_btn")
+	arg0_6.evaBtn = arg0_6._tf:Find("adapt/bottom/others/eva_btn")
+	arg0_6.viewBtn = arg0_6._tf:Find("adapt/bottom/others/view_btn")
+	arg0_6.shareBtn = arg0_6._tf:Find("adapt/bottom/others/share_btn")
+	arg0_6.rotateBtn = arg0_6._tf:Find("adapt/bottom/others/rotate_btn")
+	arg0_6.cryptolaliaBtn = arg0_6._tf:Find("adapt/bottom/others/cryptolalia_btn")
+	arg0_6.equipCodeBtn = arg0_6._tf:Find("adapt/bottom/others/equip_code_btn")
+	arg0_6.leftProfile = arg0_6.blurPanel:Find("adapt/profile_left_panel")
+	arg0_6.modelContainer = arg0_6.leftProfile:Find("model")
+	arg0_6.live2DBtn = ShipProfileLive2dBtn.New(arg0_6.blurPanel:Find("L2D_btn"))
 	arg0_6.l2dBtnOn = false
 
-	GetComponent(arg0_6:findTF("L2D_btn", arg0_6.blurPanel), typeof(Image)):SetNativeSize()
-	GetComponent(arg0_6:findTF("L2D_btn/img", arg0_6.blurPanel), typeof(Image)):SetNativeSize()
+	GetComponent(arg0_6.blurPanel:Find("L2D_btn"), typeof(Image)):SetNativeSize()
+	GetComponent(arg0_6.blurPanel:Find("L2D_btn/img"), typeof(Image)):SetNativeSize()
 
-	arg0_6.spinePaintingBtn = arg0_6:findTF("SP_btn", arg0_6.blurPanel)
+	arg0_6.spinePaintingBtn = arg0_6.blurPanel:Find("SP_btn")
 
 	GetComponent(arg0_6.spinePaintingBtn, typeof(Image)):SetNativeSize()
-	GetComponent(arg0_6:findTF("SP_btn/img", arg0_6.blurPanel), typeof(Image)):SetNativeSize()
-	GetComponent(arg0_6:findTF("adapt/top/title", arg0_6.blurPanel), typeof(Image)):SetNativeSize()
+	GetComponent(arg0_6.blurPanel:Find("SP_btn/img"), typeof(Image)):SetNativeSize()
+	GetComponent(arg0_6.blurPanel:Find("adapt/top/title"), typeof(Image)):SetNativeSize()
 
 	arg0_6.spinePaintingToggle = arg0_6.spinePaintingBtn:Find("toggle")
 	arg0_6.cvLoader = ShipProfileCVLoader.New()
-	arg0_6.pageTFs = arg0_6:findTF("adapt/pages")
+	arg0_6.pageTFs = arg0_6._tf:Find("adapt/pages")
 	arg0_6.paintingView = ShipProfilePaintingView.New(arg0_6._tf, arg0_6.painting)
 	arg0_6.toggles = {
-		arg0_6:findTF("adapt/bottom/detail"),
-		arg0_6:findTF("adapt/bottom/profile")
+		arg0_6._tf:Find("adapt/bottom/detail"),
+		arg0_6._tf:Find("adapt/bottom/profile")
 	}
 
 	local var0_6 = ShipProfileInformationPage.New(arg0_6.pageTFs, arg0_6.event)
@@ -506,11 +506,11 @@ function var0_0.ShiftSkin(arg0_44, arg1_44)
 	local var1_44 = arg1_44 and arg1_44.spine_use_live2d == 1 and "spine_painting_bg" or "live2d_bg"
 
 	LoadSpriteAtlasAsync("ui/share/btn_l2d_atlas", var1_44, function(arg0_45)
-		GetComponent(arg0_44:findTF("L2D_btn", arg0_44.blurPanel), typeof(Image)).sprite = arg0_45
-		GetComponent(arg0_44:findTF("L2D_btn/img", arg0_44.blurPanel), typeof(Image)).sprite = arg0_45
+		GetComponent(arg0_44.blurPanel:Find("L2D_btn"), typeof(Image)).sprite = arg0_45
+		GetComponent(arg0_44.blurPanel:Find("L2D_btn/img"), typeof(Image)).sprite = arg0_45
 
-		GetComponent(arg0_44:findTF("L2D_btn", arg0_44.blurPanel), typeof(Image)):SetNativeSize()
-		GetComponent(arg0_44:findTF("L2D_btn/img", arg0_44.blurPanel), typeof(Image)):SetNativeSize()
+		GetComponent(arg0_44.blurPanel:Find("L2D_btn"), typeof(Image)):SetNativeSize()
+		GetComponent(arg0_44.blurPanel:Find("L2D_btn/img"), typeof(Image)):SetNativeSize()
 	end)
 
 	arg0_44.spinePaintingisOn = false

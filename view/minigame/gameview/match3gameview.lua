@@ -37,50 +37,50 @@ function var0_0.getBGM(arg0_2)
 end
 
 function var0_0.init(arg0_3)
-	arg0_3.matchEffect = arg0_3:findTF("effects/sanxiaoxiaoshi")
-	arg0_3.goodEffect = arg0_3:findTF("effects/sanxiaoGood")
-	arg0_3.greatEffect = arg0_3:findTF("effects/sanxiaoGreat")
-	arg0_3.perfectEffect = arg0_3:findTF("effects/sanxiaoPerfect")
-	arg0_3.hintEffect = arg0_3:findTF("effects/hint")
-	arg0_3.selectedEffect = arg0_3:findTF("effects/selected")
-	arg0_3.whitenMat = arg0_3:findTF("effects/whiten"):GetComponent("Image").material
-	arg0_3.backBtn = arg0_3:findTF("button/back")
-	arg0_3.mainPage = arg0_3:findTF("main")
-	arg0_3.startBtn = arg0_3:findTF("main/start")
-	arg0_3.helpBtn = arg0_3:findTF("main/rule")
-	arg0_3.countdownPage = arg0_3:findTF("countdown")
-	arg0_3.countdownAnim = arg0_3:findTF("countdown")
-	arg0_3.gamePage = arg0_3:findTF("game")
-	arg0_3.gameMask = arg0_3:findTF("game/mask")
-	arg0_3.warning = arg0_3:findTF("game/warning")
-	arg0_3.countdownTf = arg0_3:findTF("game/countdown")
-	arg0_3.countdownText = arg0_3:findTF("game/countdown/Text")
-	arg0_3.inf = arg0_3:findTF("game/countdown/inf")
-	arg0_3.scoreText = arg0_3:findTF("game/score/Text")
-	arg0_3.floatText = arg0_3:findTF("game/floatText")
+	arg0_3.matchEffect = arg0_3._tf:Find("effects/sanxiaoxiaoshi")
+	arg0_3.goodEffect = arg0_3._tf:Find("effects/sanxiaoGood")
+	arg0_3.greatEffect = arg0_3._tf:Find("effects/sanxiaoGreat")
+	arg0_3.perfectEffect = arg0_3._tf:Find("effects/sanxiaoPerfect")
+	arg0_3.hintEffect = arg0_3._tf:Find("effects/hint")
+	arg0_3.selectedEffect = arg0_3._tf:Find("effects/selected")
+	arg0_3.whitenMat = arg0_3._tf:Find("effects/whiten"):GetComponent("Image").material
+	arg0_3.backBtn = arg0_3._tf:Find("button/back")
+	arg0_3.mainPage = arg0_3._tf:Find("main")
+	arg0_3.startBtn = arg0_3._tf:Find("main/start")
+	arg0_3.helpBtn = arg0_3._tf:Find("main/rule")
+	arg0_3.countdownPage = arg0_3._tf:Find("countdown")
+	arg0_3.countdownAnim = arg0_3._tf:Find("countdown")
+	arg0_3.gamePage = arg0_3._tf:Find("game")
+	arg0_3.gameMask = arg0_3._tf:Find("game/mask")
+	arg0_3.warning = arg0_3._tf:Find("game/warning")
+	arg0_3.countdownTf = arg0_3._tf:Find("game/countdown")
+	arg0_3.countdownText = arg0_3._tf:Find("game/countdown/Text")
+	arg0_3.inf = arg0_3._tf:Find("game/countdown/inf")
+	arg0_3.scoreText = arg0_3._tf:Find("game/score/Text")
+	arg0_3.floatText = arg0_3._tf:Find("game/floatText")
 	arg0_3.floatChar = {}
-	arg0_3.pausePage = arg0_3:findTF("game/pause")
-	arg0_3.pauseYes = arg0_3:findTF("game/pause/yes")
-	arg0_3.pauseNo = arg0_3:findTF("game/pause/no")
+	arg0_3.pausePage = arg0_3._tf:Find("game/pause")
+	arg0_3.pauseYes = arg0_3._tf:Find("game/pause/yes")
+	arg0_3.pauseNo = arg0_3._tf:Find("game/pause/no")
 
 	for iter0_3 = 0, 9 do
-		arg0_3.floatChar[iter0_3] = arg0_3:findTF("game/floatText/" .. iter0_3)
+		arg0_3.floatChar[iter0_3] = arg0_3._tf:Find("game/floatText/" .. iter0_3)
 	end
 
-	arg0_3.tilesRoot = arg0_3:findTF("game/tiles")
+	arg0_3.tilesRoot = arg0_3._tf:Find("game/tiles")
 	arg0_3.gameListener = arg0_3.tilesRoot:GetComponent("EventTriggerListener")
 	arg0_3.longPressListener = arg0_3.tilesRoot:GetComponent("UILongPressTrigger")
-	arg0_3.endPage = arg0_3:findTF("end")
-	arg0_3.endBtn = arg0_3:findTF("end/end_btn")
-	arg0_3.endScore = arg0_3:findTF("end/score/Text")
-	arg0_3.newSign = arg0_3:findTF("end/score/Text/new")
-	arg0_3.bestScore = arg0_3:findTF("end/highest/Text")
+	arg0_3.endPage = arg0_3._tf:Find("end")
+	arg0_3.endBtn = arg0_3._tf:Find("end/end_btn")
+	arg0_3.endScore = arg0_3._tf:Find("end/score/Text")
+	arg0_3.newSign = arg0_3._tf:Find("end/score/Text/new")
+	arg0_3.bestScore = arg0_3._tf:Find("end/highest/Text")
 	arg0_3.tiles = {
-		arg0_3:findTF("tiles/Akashi"),
-		arg0_3:findTF("tiles/Ayanami"),
-		arg0_3:findTF("tiles/Javelin"),
-		arg0_3:findTF("tiles/Laffey"),
-		arg0_3:findTF("tiles/Z23")
+		arg0_3._tf:Find("tiles/Akashi"),
+		arg0_3._tf:Find("tiles/Ayanami"),
+		arg0_3._tf:Find("tiles/Javelin"),
+		arg0_3._tf:Find("tiles/Laffey"),
+		arg0_3._tf:Find("tiles/Z23")
 	}
 end
 

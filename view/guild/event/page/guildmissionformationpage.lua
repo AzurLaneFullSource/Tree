@@ -48,35 +48,35 @@ function var0_0.OnFormationDone(arg0_3)
 end
 
 function var0_0.OnLoaded(arg0_7)
-	arg0_7.closeBtn = arg0_7:findTF("frame/close")
-	arg0_7.titleTxt = arg0_7:findTF("frame/title"):GetComponent(typeof(Text))
-	arg0_7.recomBtn = arg0_7:findTF("frame/recom")
-	arg0_7.clearBtn = arg0_7:findTF("frame/clear")
-	arg0_7.goBtn = arg0_7:findTF("frame/bottom/go")
-	arg0_7.inProgressBtn = arg0_7:findTF("frame/bottom/doingBtn")
-	arg0_7.battleAreaTxt = arg0_7:findTF("frame/bottom/desc/area/Text"):GetComponent(typeof(Text))
-	arg0_7.battleTypeTxt = arg0_7:findTF("frame/bottom/desc/type/Text"):GetComponent(typeof(Text))
-	arg0_7.awardList = UIItemList.New(arg0_7:findTF("frame/bottom/award/list"), arg0_7:findTF("frame/bottom/award/list/item"))
-	arg0_7.target1Text = arg0_7:findTF("frame/bottom/desc/target/content/Text"):GetComponent(typeof(Text))
-	arg0_7.target2Text = arg0_7:findTF("frame/bottom/desc/target/content/Text2"):GetComponent(typeof(Text))
-	arg0_7.target1Text4Effect = arg0_7:findTF("frame/bottom/desc/target/content1/Text"):GetComponent(typeof(Text))
-	arg0_7.target2Text4Effect = arg0_7:findTF("frame/bottom/desc/target/content1/Text2"):GetComponent(typeof(Text))
-	arg0_7.scoreAdditionTxt = arg0_7:findTF("frame/bottom/score_addition/Text"):GetComponent(typeof(Text))
-	arg0_7.effectAdditionTxt = arg0_7:findTF("frame/bottom/effect_addition/Text"):GetComponent(typeof(Text))
-	arg0_7.effectTxt = arg0_7:findTF("frame/bottom/effect/Text"):GetComponent(typeof(Text))
-	arg0_7.bg = arg0_7:findTF("frame/bottom/bg"):GetComponent(typeof(Image))
+	arg0_7.closeBtn = arg0_7._tf:Find("frame/close")
+	arg0_7.titleTxt = arg0_7._tf:Find("frame/title"):GetComponent(typeof(Text))
+	arg0_7.recomBtn = arg0_7._tf:Find("frame/recom")
+	arg0_7.clearBtn = arg0_7._tf:Find("frame/clear")
+	arg0_7.goBtn = arg0_7._tf:Find("frame/bottom/go")
+	arg0_7.inProgressBtn = arg0_7._tf:Find("frame/bottom/doingBtn")
+	arg0_7.battleAreaTxt = arg0_7._tf:Find("frame/bottom/desc/area/Text"):GetComponent(typeof(Text))
+	arg0_7.battleTypeTxt = arg0_7._tf:Find("frame/bottom/desc/type/Text"):GetComponent(typeof(Text))
+	arg0_7.awardList = UIItemList.New(arg0_7._tf:Find("frame/bottom/award/list"), arg0_7._tf:Find("frame/bottom/award/list/item"))
+	arg0_7.target1Text = arg0_7._tf:Find("frame/bottom/desc/target/content/Text"):GetComponent(typeof(Text))
+	arg0_7.target2Text = arg0_7._tf:Find("frame/bottom/desc/target/content/Text2"):GetComponent(typeof(Text))
+	arg0_7.target1Text4Effect = arg0_7._tf:Find("frame/bottom/desc/target/content1/Text"):GetComponent(typeof(Text))
+	arg0_7.target2Text4Effect = arg0_7._tf:Find("frame/bottom/desc/target/content1/Text2"):GetComponent(typeof(Text))
+	arg0_7.scoreAdditionTxt = arg0_7._tf:Find("frame/bottom/score_addition/Text"):GetComponent(typeof(Text))
+	arg0_7.effectAdditionTxt = arg0_7._tf:Find("frame/bottom/effect_addition/Text"):GetComponent(typeof(Text))
+	arg0_7.effectTxt = arg0_7._tf:Find("frame/bottom/effect/Text"):GetComponent(typeof(Text))
+	arg0_7.bg = arg0_7._tf:Find("frame/bottom/bg"):GetComponent(typeof(Image))
 	arg0_7.pageFooter = {
-		arg0_7:findTF("frame/single/dot/1"),
-		arg0_7:findTF("frame/single/dot/2"),
-		arg0_7:findTF("frame/single/dot/3"),
-		arg0_7:findTF("frame/single/dot/4")
+		arg0_7._tf:Find("frame/single/dot/1"),
+		arg0_7._tf:Find("frame/single/dot/2"),
+		arg0_7._tf:Find("frame/single/dot/3"),
+		arg0_7._tf:Find("frame/single/dot/4")
 	}
-	arg0_7.pageFooterAdd = arg0_7:findTF("frame/single/dot/add")
-	arg0_7.nextBtn = arg0_7:findTF("frame/single/next")
-	arg0_7.prevBtn = arg0_7:findTF("frame/single/prev")
+	arg0_7.pageFooterAdd = arg0_7._tf:Find("frame/single/dot/add")
+	arg0_7.nextBtn = arg0_7._tf:Find("frame/single/next")
+	arg0_7.prevBtn = arg0_7._tf:Find("frame/single/prev")
 
-	setText(arg0_7:findTF("frame/bottom/desc/area"), i18n("guild_word_battle_area"))
-	setText(arg0_7:findTF("frame/bottom/desc/type"), i18n("guild_word_battle_type"))
+	setText(arg0_7._tf:Find("frame/bottom/desc/area"), i18n("guild_word_battle_area"))
+	setText(arg0_7._tf:Find("frame/bottom/desc/type"), i18n("guild_word_battle_type"))
 end
 
 function var0_0.OnInit(arg0_8)
@@ -98,7 +98,7 @@ function var0_0.OnInit(arg0_8)
 		end
 	end
 
-	addSlip(SLIP_TYPE_HRZ, arg0_8:findTF("frame"), var0_8, var1_8)
+	addSlip(SLIP_TYPE_HRZ, arg0_8._tf:Find("frame"), var0_8, var1_8)
 	onButton(arg0_8, arg0_8.nextBtn, var1_8, SFX_PANEL)
 	onButton(arg0_8, arg0_8.prevBtn, var0_8, SFX_PANEL)
 	onButton(arg0_8, arg0_8.closeBtn, function()
@@ -259,7 +259,7 @@ end
 function var0_0.UpdateLayout(arg0_26)
 	arg0_26.bg.sprite = GetSpriteFromAtlas("ui/GuildFormationUI_atlas", "bg3")
 
-	local var0_26 = arg0_26:findTF("frame/single")
+	local var0_26 = arg0_26._tf:Find("frame/single")
 
 	arg0_26.shipContainer = var0_26
 	arg0_26.bg.gameObject.transform.sizeDelta = Vector2(arg0_26.bg.gameObject.transform.sizeDelta.x, 212)
@@ -367,9 +367,9 @@ function var0_0.UpdateFleet(arg0_30, arg1_30)
 	arg0_30.contextData.index = arg1_30
 
 	if arg0_30.target2Text.text ~= "" and arg0_30.target1Text.text ~= "" then
-		setText(arg0_30:findTF("frame/bottom/desc/target/content/title"), i18n("guild_wrod_battle_target"))
+		setText(arg0_30._tf:Find("frame/bottom/desc/target/content/title"), i18n("guild_wrod_battle_target"))
 	else
-		setText(arg0_30:findTF("frame/bottom/desc/target/content/title"), "")
+		setText(arg0_30._tf:Find("frame/bottom/desc/target/content/title"), "")
 	end
 end
 

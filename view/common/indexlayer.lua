@@ -28,16 +28,16 @@ var0_0.panelNames = {
 }
 
 function var0_0.init(arg0_2)
-	arg0_2.panel = arg0_2:findTF("index_panel")
+	arg0_2.panel = arg0_2._tf:Find("index_panel")
 	arg0_2.displayTFs = {
-		arg0_2:findTF("layout/sort", arg0_2.panel),
-		arg0_2:findTF("layout/index", arg0_2.panel),
-		arg0_2:findTF("layout/camp", arg0_2.panel),
-		arg0_2:findTF("layout/rarity", arg0_2.panel),
-		arg0_2:findTF("layout/extra", arg0_2.panel),
-		arg0_2:findTF("layout/EquipSkinSort", arg0_2.panel),
-		arg0_2:findTF("layout/EquipSkinIndex", arg0_2.panel),
-		arg0_2:findTF("layout/EquipSkinTheme", arg0_2.panel)
+		arg0_2.panel:Find("layout/sort"),
+		arg0_2.panel:Find("layout/index"),
+		arg0_2.panel:Find("layout/camp"),
+		arg0_2.panel:Find("layout/rarity"),
+		arg0_2.panel:Find("layout/extra"),
+		arg0_2.panel:Find("layout/EquipSkinSort"),
+		arg0_2.panel:Find("layout/EquipSkinIndex"),
+		arg0_2.panel:Find("layout/EquipSkinTheme")
 	}
 
 	_.each(arg0_2.displayTFs, function(arg0_3)
@@ -51,11 +51,11 @@ function var0_0.init(arg0_2)
 
 	arg0_2.displayList = {}
 	arg0_2.typeList = {}
-	arg0_2.btnConfirm = arg0_2:findTF("layout/btns/ok", arg0_2.panel)
-	arg0_2.btnCancel = arg0_2:findTF("layout/btns/cancel", arg0_2.panel)
-	arg0_2.greySprite = arg0_2:findTF("resource/grey", arg0_2.panel):GetComponent(typeof(Image)).sprite
-	arg0_2.blueSprite = arg0_2:findTF("resource/blue", arg0_2.panel):GetComponent(typeof(Image)).sprite
-	arg0_2.yellowSprite = arg0_2:findTF("resource/yellow", arg0_2.panel):GetComponent(typeof(Image)).sprite
+	arg0_2.btnConfirm = arg0_2.panel:Find("layout/btns/ok")
+	arg0_2.btnCancel = arg0_2.panel:Find("layout/btns/cancel")
+	arg0_2.greySprite = arg0_2.panel:Find("resource/grey"):GetComponent(typeof(Image)).sprite
+	arg0_2.blueSprite = arg0_2.panel:Find("resource/blue"):GetComponent(typeof(Image)).sprite
+	arg0_2.yellowSprite = arg0_2.panel:Find("resource/yellow"):GetComponent(typeof(Image)).sprite
 end
 
 function var0_0.didEnter(arg0_4)
@@ -80,7 +80,7 @@ function var0_0.didEnter(arg0_4)
 	onButton(arg0_4, arg0_4.btnCancel, function()
 		arg0_4:emit(var0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(arg0_4, arg0_4:findTF("btn", arg0_4.panel), function()
+	onButton(arg0_4, arg0_4.panel:Find("btn"), function()
 		arg0_4:emit(var0_0.ON_CLOSE)
 	end, SFX_CANCEL)
 
@@ -137,7 +137,7 @@ function var0_0.initEquipSkinSort(arg0_9)
 	arg0_9.typeList[IndexConst.DisplayEquipSkinSort] = var0_9
 
 	local var1_9 = arg0_9.displayTFs[IndexConst.DisplayEquipSkinSort]
-	local var2_9 = UIItemList.New(arg0_9:findTF("panel", var1_9), arg0_9:findTF("panel/tpl", var1_9))
+	local var2_9 = UIItemList.New(var1_9:Find("panel"), var1_9:Find("panel/tpl"))
 
 	var2_9:make(function(arg0_11, arg1_11, arg2_11)
 		if arg0_11 == UIItemList.EventUpdate then
@@ -187,7 +187,7 @@ function var0_0.initEquipSkinIndex(arg0_15)
 	arg0_15.typeList[IndexConst.DisplayEquipSkinIndex] = var0_15
 
 	local var1_15 = arg0_15.displayTFs[IndexConst.DisplayEquipSkinIndex]
-	local var2_15 = UIItemList.New(arg0_15:findTF("panel", var1_15), arg0_15:findTF("panel/tpl", var1_15))
+	local var2_15 = UIItemList.New(var1_15:Find("panel"), var1_15:Find("panel/tpl"))
 
 	var2_15:make(function(arg0_17, arg1_17, arg2_17)
 		if arg0_17 == UIItemList.EventUpdate then
@@ -238,7 +238,7 @@ function var0_0.initEquipSkinTheme(arg0_21)
 	arg0_21.typeList[IndexConst.DisplayEquipSkinTheme] = var0_21
 
 	local var1_21 = arg0_21.displayTFs[IndexConst.DisplayEquipSkinTheme]
-	local var2_21 = UIItemList.New(arg0_21:findTF("bg/panel", var1_21), arg0_21:findTF("bg/panel/tpl", var1_21))
+	local var2_21 = UIItemList.New(var1_21:Find("bg/panel"), var1_21:Find("bg/panel/tpl"))
 
 	var2_21:make(function(arg0_23, arg1_23, arg2_23)
 		if arg0_23 == UIItemList.EventUpdate then

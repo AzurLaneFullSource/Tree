@@ -1,9 +1,9 @@
 local var0_0 = class("AprilFoolDiscoveryPage", import("view.base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.bg = arg0_1._tf:Find("AD")
 	arg0_1.bgName = nil
-	arg0_1.itemList = arg0_1:findTF("AD/list")
+	arg0_1.itemList = arg0_1._tf:Find("AD/list")
 	arg0_1.items = CustomIndexLayer.Clone2Full(arg0_1.itemList, 9)
 	arg0_1.selectIndex = 0
 	arg0_1.btnHelp = arg0_1.bg:Find("help_btn")

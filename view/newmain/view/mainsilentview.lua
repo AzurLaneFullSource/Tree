@@ -24,18 +24,18 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.cg = arg0_2._tf:GetComponent(typeof(CanvasGroup))
 	arg0_2.animationPlayer = arg0_2._tf:GetComponent(typeof(Animation))
 	arg0_2.dftAniEvent = arg0_2._tf:GetComponent(typeof(DftAniEvent))
-	arg0_2.timeTxt = arg0_2:findTF("adapt/en/time"):GetComponent(typeof(Text))
-	arg0_2.timeEnTxt = arg0_2:findTF("adapt/en"):GetComponent(typeof(Text))
-	arg0_2.batteryTxt = arg0_2:findTF("adapt/battery/Text"):GetComponent(typeof(Text))
+	arg0_2.timeTxt = arg0_2._tf:Find("adapt/en/time"):GetComponent(typeof(Text))
+	arg0_2.timeEnTxt = arg0_2._tf:Find("adapt/en"):GetComponent(typeof(Text))
+	arg0_2.batteryTxt = arg0_2._tf:Find("adapt/battery/Text"):GetComponent(typeof(Text))
 	arg0_2.electric = {
-		arg0_2:findTF("adapt/battery/kwh/1"),
-		arg0_2:findTF("adapt/battery/kwh/2"),
-		arg0_2:findTF("adapt/battery/kwh/3")
+		arg0_2._tf:Find("adapt/battery/kwh/1"),
+		arg0_2._tf:Find("adapt/battery/kwh/2"),
+		arg0_2._tf:Find("adapt/battery/kwh/3")
 	}
-	arg0_2.dateTxt = arg0_2:findTF("adapt/date"):GetComponent(typeof(Text))
-	arg0_2.changeBtn = arg0_2:findTF("change")
-	arg0_2.tips = UIItemList.New(arg0_2:findTF("tips"), arg0_2:findTF("tips/tpl"))
-	arg0_2.chatTr = arg0_2:findTF("chat")
+	arg0_2.dateTxt = arg0_2._tf:Find("adapt/date"):GetComponent(typeof(Text))
+	arg0_2.changeBtn = arg0_2._tf:Find("change")
+	arg0_2.tips = UIItemList.New(arg0_2._tf:Find("tips"), arg0_2._tf:Find("tips/tpl"))
+	arg0_2.chatTr = arg0_2._tf:Find("chat")
 	arg0_2.chatTxt = arg0_2.chatTr:GetComponent(typeof(Text))
 	arg0_2.changeSkinBtn = MainChangeSkinBtn.New(arg0_2.changeBtn, arg0_2.event)
 	arg0_2.systemTimeUtil = LocalSystemTimeUtil.New()

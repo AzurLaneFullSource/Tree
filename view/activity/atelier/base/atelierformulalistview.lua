@@ -12,11 +12,11 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 end
 
 function var0_0.Init(arg0_2)
-	local var0_2 = arg0_2:findTF("Frame/Item")
+	local var0_2 = arg0_2._tf:Find("Frame/Item")
 
 	setActive(var0_2, false)
 
-	arg0_2.formulaRect = GetComponent(arg0_2:findTF("Frame/ScrollView"), "LScrollRect")
+	arg0_2.formulaRect = GetComponent(arg0_2._tf:Find("Frame/ScrollView"), "LScrollRect")
 
 	function arg0_2.formulaRect.onUpdateItem(arg0_3, arg1_3)
 		arg0_2:UpdateFormulaItem(arg0_3 + 1, arg1_3)
@@ -32,13 +32,13 @@ function var0_0.InitCustom(arg0_4)
 		2,
 		3
 	}, function(arg0_5)
-		return arg0_4:findTF("Frame/Tabs"):GetChild(arg0_5 - 1)
+		return arg0_4._tf:Find("Frame/Tabs"):GetChild(arg0_5 - 1)
 	end)
 
-	setText(arg0_4:findTF("Frame/Empty"), i18n("ryza_tip_no_recipe"))
-	setText(arg0_4:findTF("Frame/Filter/Text"), i18n("ryza_toggle_only_composite"))
-	setText(arg0_4:findTF("Frame/Item/Lock/Text"), i18n("ryza_tip_unlock_all_tools"))
-	setText(arg0_4:findTF("Bar/Text"), i18n("ryza_tip_select_recipe"))
+	setText(arg0_4._tf:Find("Frame/Empty"), i18n("ryza_tip_no_recipe"))
+	setText(arg0_4._tf:Find("Frame/Filter/Text"), i18n("ryza_toggle_only_composite"))
+	setText(arg0_4._tf:Find("Frame/Item/Lock/Text"), i18n("ryza_tip_unlock_all_tools"))
+	setText(arg0_4._tf:Find("Bar/Text"), i18n("ryza_tip_select_recipe"))
 end
 
 function var0_0.SetContextData(arg0_6, arg1_6)
@@ -70,7 +70,7 @@ function var0_0.didEnter(arg0_8)
 		end, SFX_PANEL)
 	end
 
-	onToggle(arg0_8, arg0_8:findTF("Frame/Filter/Toggle"), function(arg0_10)
+	onToggle(arg0_8, arg0_8._tf:Find("Frame/Filter/Toggle"), function(arg0_10)
 		arg0_8.showOnlyComposite = arg0_10
 
 		arg0_8:FilterFormulas()
@@ -93,7 +93,7 @@ function var0_0.UpdateFilterButtons(arg0_12)
 
 		var0_12 = var0_12 and bit.band(arg0_12.contextData.filterType, bit.lshift(1, iter0_12 - 1)) > 0
 
-		setActive(arg0_12:findTF("Selected", iter1_12), var0_12)
+		setActive(iter1_12:Find("Selected"), var0_12)
 	end
 end
 
@@ -109,7 +109,7 @@ function var0_0.UpdateFormulaItem(arg0_13, arg1_13, arg2_13)
 	local var1_13 = arg0_13.filterFormulas[arg1_13]
 	local var2_13 = var1_13:GetProduction()
 
-	arg0_13._parentClass:UpdateRyzaDrop(arg0_13:findTF("BG/Icon", var0_13), {
+	arg0_13._parentClass:UpdateRyzaDrop(var0_13:Find("BG/Icon"), {
 		type = var2_13[1],
 		id = var2_13[2]
 	}, true)
@@ -117,10 +117,10 @@ function var0_0.UpdateFormulaItem(arg0_13, arg1_13, arg2_13)
 	local var3_13 = var1_0[var1_13:GetType()]
 	local var4_13 = var1_13:GetType() ~= AtelierFormula.TYPE.TOOL and not arg0_13.activity:IsCompleteAllTools(var1_13:getConfig("version"))
 
-	setActive(arg0_13:findTF("Lock", var0_13), var4_13)
-	setActive(arg0_13:findTF("BG", var0_13), not var4_13)
-	setText(arg0_13:findTF("BG/Type", var0_13), i18n(var3_13))
-	setScrollText(arg0_13:findTF("BG/Name/Text", var0_13), var1_13:GetName())
+	setActive(var0_13:Find("Lock"), var4_13)
+	setActive(var0_13:Find("BG"), not var4_13)
+	setText(var0_13:Find("BG/Type"), i18n(var3_13))
+	setScrollText(var0_13:Find("BG/Name/Text"), var1_13:GetName())
 
 	local var5_13
 
@@ -132,8 +132,8 @@ function var0_0.UpdateFormulaItem(arg0_13, arg1_13, arg2_13)
 
 	local var6_13 = var1_13:IsAvaliable()
 
-	setActive(arg0_13:findTF("BG/Count", var0_13), var6_13)
-	setActive(arg0_13:findTF("Completed", var0_13), not var6_13)
+	setActive(var0_13:Find("BG/Count"), var6_13)
+	setActive(var0_13:Find("Completed"), not var6_13)
 
 	if var6_13 then
 		local var7_13 = AtelierFormula.IsFormualCanComposite(var1_13, arg0_13.activity, arg0_13.contextData.versionIndex)
@@ -146,10 +146,10 @@ function var0_0.UpdateFormulaItem(arg0_13, arg1_13, arg2_13)
 			var9_13 = SummerFeastScene.TransformColor(var7_13 and "4fb3a3" or "d55a54")
 		end
 
-		setTextColor(arg0_13:findTF("BG/Count", var0_13), var9_13)
+		setTextColor(var0_13:Find("BG/Count"), var9_13)
 	end
 
-	setText(arg0_13:findTF("BG/Count", var0_13), var5_13)
+	setText(var0_13:Find("BG/Count"), var5_13)
 	onButton(arg0_13, var0_13, function()
 		if not var6_13 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ryza_tip_composite_invalid"))
@@ -235,8 +235,8 @@ function var0_0.UpdateFormulaList(arg0_25)
 	local var0_25 = #arg0_25.filterFormulas
 	local var1_25 = var0_25 == 0
 
-	setActive(arg0_25:findTF("Frame/Empty"), var1_25)
-	setActive(arg0_25:findTF("Frame/ScrollView"), not var1_25)
+	setActive(arg0_25._tf:Find("Frame/Empty"), var1_25)
+	setActive(arg0_25._tf:Find("Frame/ScrollView"), not var1_25)
 	arg0_25.formulaRect:SetTotalCount(var0_25)
 end
 

@@ -3,8 +3,8 @@ local var0_0 = class("XiaoQiYePtPage", import(".TemplatePage.PtTemplatePage"))
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.hearts = UIItemList.New(arg0_1:findTF("AD/heart"), arg0_1:findTF("AD/heart/mark"))
-	arg0_1.helpBtn = arg0_1:findTF("AD/help_btn")
+	arg0_1.hearts = UIItemList.New(arg0_1._tf:Find("AD/heart"), arg0_1._tf:Find("AD/heart/mark"))
+	arg0_1.helpBtn = arg0_1._tf:Find("AD/help_btn")
 
 	onButton(arg0_1, arg0_1.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({

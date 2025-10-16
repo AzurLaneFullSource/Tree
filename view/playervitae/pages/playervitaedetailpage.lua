@@ -10,35 +10,35 @@ function var0_0.OnPlayerNameChange(arg0_2, arg1_2)
 end
 
 function var0_0.OnLoaded(arg0_3)
-	arg0_3.medalTpl = arg0_3:findTF("medalList/tpl")
-	arg0_3.emblemIcon = arg0_3:findTF("power/medal"):GetComponent(typeof(Image))
-	arg0_3.emblemTxt = arg0_3:findTF("power/medal_text"):GetComponent(typeof(Image))
-	arg0_3.highestEmblem = arg0_3:findTF("power/rank"):GetComponent(typeof(Text))
-	arg0_3.powerTxt = arg0_3:findTF("power/power"):GetComponent(typeof(Text))
-	arg0_3.collectionTxt = arg0_3:findTF("power/collection"):GetComponent(typeof(Text))
-	arg0_3.modityNameBtn = arg0_3:findTF("info/name")
-	arg0_3.nameTxt = arg0_3:findTF("info/name/Text"):GetComponent(typeof(Text))
-	arg0_3.idTxt = arg0_3:findTF("info/uid"):GetComponent(typeof(Text))
-	arg0_3.levelTxt = arg0_3:findTF("info/level"):GetComponent(typeof(Text))
-	arg0_3.expTxt = arg0_3:findTF("info/exp"):GetComponent(typeof(Text))
-	arg0_3.statisticTpl = arg0_3:findTF("statistics/tpl")
-	arg0_3.shareBtn = arg0_3:findTF("btn_share")
-	arg0_3.attireBtn = arg0_3:findTF("btn_attire")
+	arg0_3.medalTpl = arg0_3._tf:Find("medalList/tpl")
+	arg0_3.emblemIcon = arg0_3._tf:Find("power/medal"):GetComponent(typeof(Image))
+	arg0_3.emblemTxt = arg0_3._tf:Find("power/medal_text"):GetComponent(typeof(Image))
+	arg0_3.highestEmblem = arg0_3._tf:Find("power/rank"):GetComponent(typeof(Text))
+	arg0_3.powerTxt = arg0_3._tf:Find("power/power"):GetComponent(typeof(Text))
+	arg0_3.collectionTxt = arg0_3._tf:Find("power/collection"):GetComponent(typeof(Text))
+	arg0_3.modityNameBtn = arg0_3._tf:Find("info/name")
+	arg0_3.nameTxt = arg0_3._tf:Find("info/name/Text"):GetComponent(typeof(Text))
+	arg0_3.idTxt = arg0_3._tf:Find("info/uid"):GetComponent(typeof(Text))
+	arg0_3.levelTxt = arg0_3._tf:Find("info/level"):GetComponent(typeof(Text))
+	arg0_3.expTxt = arg0_3._tf:Find("info/exp"):GetComponent(typeof(Text))
+	arg0_3.statisticTpl = arg0_3._tf:Find("statistics/tpl")
+	arg0_3.shareBtn = arg0_3._tf:Find("btn_share")
+	arg0_3.attireBtn = arg0_3._tf:Find("btn_attire")
 	arg0_3.attireBtnTip = arg0_3.attireBtn:Find("tip")
-	arg0_3.inputField = arg0_3:findTF("greet/InputField")
-	arg0_3.writeBtn = arg0_3:findTF("greet/write_btn")
+	arg0_3.inputField = arg0_3._tf:Find("greet/InputField")
+	arg0_3.writeBtn = arg0_3._tf:Find("greet/write_btn")
 	arg0_3.animPanels = {
-		arg0_3:findTF("info"),
-		arg0_3:findTF("power"),
-		arg0_3:findTF("statistics"),
-		arg0_3:findTF("greet")
+		arg0_3._tf:Find("info"),
+		arg0_3._tf:Find("power"),
+		arg0_3._tf:Find("statistics"),
+		arg0_3._tf:Find("greet")
 	}
 
-	setText(arg0_3:findTF("power/collection_label"), i18n("friend_resume_collection_rate"))
-	setText(arg0_3:findTF("power/power_label"), i18n("friend_resume_fleet_gs"))
-	setText(arg0_3:findTF("info/title_name"), i18n("friend_resume_title"))
-	setText(arg0_3:findTF("statistics/title_name"), i18n("friend_resume_data_title"))
-	setText(arg0_3:findTF("greet/InputField/Placeholder"), i18n("player_manifesto_placeholder"))
+	setText(arg0_3._tf:Find("power/collection_label"), i18n("friend_resume_collection_rate"))
+	setText(arg0_3._tf:Find("power/power_label"), i18n("friend_resume_fleet_gs"))
+	setText(arg0_3._tf:Find("info/title_name"), i18n("friend_resume_title"))
+	setText(arg0_3._tf:Find("statistics/title_name"), i18n("friend_resume_data_title"))
+	setText(arg0_3._tf:Find("greet/InputField/Placeholder"), i18n("player_manifesto_placeholder"))
 	arg0_3:MatchResolution()
 end
 

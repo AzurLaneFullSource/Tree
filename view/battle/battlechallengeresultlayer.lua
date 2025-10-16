@@ -34,17 +34,17 @@ end
 function var0_0.init(arg0_6)
 	var0_0.super.init(arg0_6)
 
-	arg0_6._challengeBottomPanel = arg0_6:findTF("challenge_confirm", arg0_6._blurConatiner)
+	arg0_6._challengeBottomPanel = arg0_6._blurConatiner:Find("challenge_confirm")
 
 	setText(findTF(arg0_6._challengeBottomPanel, "continue_btn/text"), i18n("battle_result_continue_battle"))
 	setText(findTF(arg0_6._challengeBottomPanel, "quit_btn/text"), i18n("battle_result_quit_battle"))
 	setText(findTF(arg0_6._challengeBottomPanel, "share_btn/text"), i18n("battle_result_share_battle"))
 
-	arg0_6._shareBtn = arg0_6:findTF("share_btn", arg0_6._challengeBottomPanel)
-	arg0_6._continueBtn = arg0_6:findTF("continue_btn", arg0_6._challengeBottomPanel)
-	arg0_6._quitBtn = arg0_6:findTF("quit_btn", arg0_6._challengeBottomPanel)
-	arg0_6._expire = arg0_6:findTF("challenge_expire", arg0_6._main)
-	arg0_6._expireTxt = arg0_6:findTF("text", arg0_6._expire)
+	arg0_6._shareBtn = arg0_6._challengeBottomPanel:Find("share_btn")
+	arg0_6._continueBtn = arg0_6._challengeBottomPanel:Find("continue_btn")
+	arg0_6._quitBtn = arg0_6._challengeBottomPanel:Find("quit_btn")
+	arg0_6._expire = arg0_6._main:Find("challenge_expire")
+	arg0_6._expireTxt = arg0_6._expire:Find("text")
 end
 
 function var0_0.didEnter(arg0_7)
@@ -73,7 +73,7 @@ function var0_0.setStageName(arg0_9)
 end
 
 function var0_0.rankAnimaFinish(arg0_10)
-	local var0_10 = arg0_10:findTF("main/conditions")
+	local var0_10 = arg0_10._tf:Find("main/conditions")
 
 	if arg0_10.challenge:getMode() == ChallengeProxy.MODE_INFINITE then
 		SetActive(var0_10, false)
@@ -87,7 +87,7 @@ function var0_0.rankAnimaFinish(arg0_10)
 		local var1_10 = LeanTween.delayedCall(1, System.Action(function()
 			arg0_10._stateFlag = var0_0.STATE_REPORTED
 
-			SetActive(arg0_10:findTF("jieuan01/tips", arg0_10._bg), true)
+			SetActive(arg0_10._bg:Find("jieuan01/tips"), true)
 		end))
 
 		table.insert(arg0_10._delayLeanList, var1_10.id)
@@ -118,7 +118,7 @@ function var0_0.showRightBottomPanel(arg0_14)
 	SetActive(arg0_14._skipBtn, false)
 
 	if not arg0_14:isTotalClear() then
-		SetActive(arg0_14:findTF("jieuan01/tips", arg0_14._bg), false)
+		SetActive(arg0_14._bg:Find("jieuan01/tips"), false)
 	end
 
 	SetActive(arg0_14._challengeBottomPanel, true)
@@ -174,7 +174,7 @@ function var0_0.skip(arg0_20)
 			var0_20 = var0_20 - 1
 		end
 
-		SetActive(arg0_20:findTF("jieuan01/tips", arg0_20._bg), true)
+		SetActive(arg0_20._bg:Find("jieuan01/tips"), true)
 
 		arg0_20._stateFlag = var0_0.STATE_REPORTED
 	elseif arg0_20._stateFlag == var0_0.STATE_REPORTED then

@@ -1,7 +1,7 @@
 local var0_0 = class("BRSStagePage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("panel")
+	arg0_1.bg = arg0_1._tf:Find("panel")
 
 	setText(arg0_1.bg:Find("hint"), i18n("brs_expedition_tip"))
 

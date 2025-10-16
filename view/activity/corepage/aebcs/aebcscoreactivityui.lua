@@ -40,7 +40,7 @@ function var0_0.init(arg0_2, ...)
 				local var1_3 = arg0_2.pageDic[var0_3.id]
 
 				if var1_3 ~= nil then
-					local var2_3 = arg0_2:findTF("tip", arg2_3)
+					local var2_3 = arg2_3:Find("tip")
 					local var3_3 = var1_3:IsShowReminder()
 
 					if var3_3 == nil then
@@ -92,8 +92,8 @@ function var0_0.UpdateAdapt(arg0_7)
 end
 
 function var0_0.ONToggleName(arg0_8, arg1_8, arg2_8)
-	setText(arg0_8:findTF("off/name", arg1_8), i18n("danmachi_main_sheet" .. arg2_8:getConfig("is_show")))
-	setText(arg0_8:findTF("on/name", arg1_8), i18n("danmachi_main_sheet" .. arg2_8:getConfig("is_show")))
+	setText(arg1_8:Find("off/name"), i18n("danmachi_main_sheet" .. arg2_8:getConfig("is_show")))
+	setText(arg1_8:Find("on/name"), i18n("danmachi_main_sheet" .. arg2_8:getConfig("is_show")))
 end
 
 function var0_0.didEnter(arg0_9)
@@ -122,21 +122,7 @@ function var0_0.skinCommdityTimeStamp(arg0_11, arg1_11)
 	if var2_11 > 0 then
 		return i18n("limit_skin_time_day", var2_11)
 	else
-		local var3_11 = math.floor(var1_11 / 3600)
-
-		if var3_11 > 0 then
-			local var4_11 = math.floor(var1_11 / 60)
-
-			return i18n("limit_skin_time_day_min", var3_11, var4_11 - var3_11 * 60)
-		else
-			local var5_11 = math.floor(var1_11 / 60)
-
-			if var5_11 > 0 then
-				return i18n("limit_skin_time_min", var5_11)
-			else
-				return i18n("limit_skin_time_overtime")
-			end
-		end
+		return i18n("masaina_main_other_tag")
 	end
 end
 

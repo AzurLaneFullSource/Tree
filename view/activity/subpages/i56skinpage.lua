@@ -4,7 +4,7 @@ function var0_0.OnFirstFlush(arg0_1)
 	arg0_1.uilist:make(function(arg0_2, arg1_2, arg2_2)
 		if arg0_2 == UIItemList.EventUpdate then
 			local var0_2 = arg1_2 + 1
-			local var1_2 = arg0_1:findTF("item", arg2_2)
+			local var1_2 = arg2_2:Find("item")
 			local var2_2 = arg0_1.taskGroup[arg0_1.nday][var0_2]
 			local var3_2 = arg0_1.taskProxy:getTaskById(var2_2) or arg0_1.taskProxy:getFinishTaskById(var2_2)
 
@@ -27,12 +27,12 @@ function var0_0.OnFirstFlush(arg0_1)
 			local var8_2 = var3_2:getConfig("desc")
 			local var9_2 = "(" .. var6_2 .. "/" .. var7_2 .. ")"
 
-			setText(arg0_1:findTF("description", arg2_2), var8_2 .. " " .. var9_2)
-			setSlider(arg0_1:findTF("progress", arg2_2), 0, var7_2, var6_2)
+			setText(arg2_2:Find("description"), var8_2 .. " " .. var9_2)
+			setSlider(arg2_2:Find("progress"), 0, var7_2, var6_2)
 
-			local var10_2 = arg0_1:findTF("go_btn", arg2_2)
-			local var11_2 = arg0_1:findTF("get_btn", arg2_2)
-			local var12_2 = arg0_1:findTF("got_btn", arg2_2)
+			local var10_2 = arg2_2:Find("go_btn")
+			local var11_2 = arg2_2:Find("get_btn")
+			local var12_2 = arg2_2:Find("got_btn")
 			local var13_2 = var3_2:getTaskStatus()
 
 			setActive(var10_2, var13_2 == 0)
@@ -52,8 +52,8 @@ function var0_0.OnUpdateFlush(arg0_6)
 	var0_0.super.OnUpdateFlush(arg0_6)
 	setText(arg0_6.dayTF, arg0_6.nday .. " " .. #arg0_6.taskGroup)
 	eachChild(arg0_6.items, function(arg0_7)
-		local var0_7 = arg0_6:findTF("get_btn", arg0_7)
-		local var1_7 = arg0_6:findTF("got_btn", arg0_7)
+		local var0_7 = arg0_7:Find("get_btn")
+		local var1_7 = arg0_7:Find("got_btn")
 		local var2_7 = isActive(var1_7)
 
 		setButtonEnabled(var1_7, false)

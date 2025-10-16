@@ -40,9 +40,9 @@ end
 function var0_0.didEnter(arg0_5)
 	var0_0.super.didEnter(arg0_5)
 	setActive(arg0_5.atlasBtn, false)
-	setActive(arg0_5:findTF("overlay/left/mask"), false)
+	setActive(arg0_5._tf:Find("overlay/left/mask"), false)
 
-	local var0_5 = arg0_5:findTF("overlay/bottom")
+	local var0_5 = arg0_5._tf:Find("overlay/bottom")
 	local var1_5 = var0_5.sizeDelta.x - 160
 	local var2_5 = rtf(arg0_5.scrollrect.gameObject)
 
@@ -54,7 +54,7 @@ function var0_0.didEnter(arg0_5)
 	setAnchoredPosition(arg0_5.prevBtn, {
 		x = 32
 	})
-	setActive(arg0_5:findTF("overlay/right/price"), false)
+	setActive(arg0_5._tf:Find("overlay/right/price"), false)
 	setActive(arg0_5.live2dFilter, false)
 	setActive(arg0_5.changeBtn, false)
 end

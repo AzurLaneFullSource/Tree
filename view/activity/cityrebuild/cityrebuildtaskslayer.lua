@@ -166,7 +166,7 @@ end
 
 function var0_0.UpdateList(arg0_13, arg1_13, arg2_13, arg3_13)
 	local var0_13 = arg1_13 + 1
-	local var1_13 = arg0_13:findTF("frame", arg2_13)
+	local var1_13 = arg2_13:Find("frame")
 	local var2_13 = arg0_13.taskProxy:getTaskVO(arg3_13[var0_13])
 	local var3_13 = arg2_13:Find("desc")
 
@@ -183,9 +183,9 @@ function var0_0.UpdateList(arg0_13, arg1_13, arg2_13, arg3_13)
 
 	arg0_13:updateAwards(var2_13:getConfig("award_display"), var7_13, var6_13)
 
-	local var8_13 = arg0_13:findTF("go_btn", arg2_13)
-	local var9_13 = arg0_13:findTF("get_btn", arg2_13)
-	local var10_13 = arg0_13:findTF("got_btn", arg2_13)
+	local var8_13 = arg2_13:Find("go_btn")
+	local var9_13 = arg2_13:Find("get_btn")
+	local var10_13 = arg2_13:Find("got_btn")
 	local var11_13 = var2_13:getTaskStatus()
 
 	setActive(var8_13, var11_13 == 0)

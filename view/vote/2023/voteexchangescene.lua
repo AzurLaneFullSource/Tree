@@ -5,23 +5,23 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.closeBtn = arg0_2:findTF("blur_panel/adapt/top/back_btn")
-	arg0_2.dailyTask = arg0_2:findTF("left/task/slider/bar")
-	arg0_2.dailyTaskTxt = arg0_2:findTF("left/task/Text"):GetComponent(typeof(Text))
-	arg0_2.timeTxt = arg0_2:findTF("right/title/Text/Text"):GetComponent(typeof(Text))
-	arg0_2.dailyTaskGoBtn = arg0_2:findTF("left/go")
-	arg0_2.totalCntTxt = arg0_2:findTF("right/total/Text"):GetComponent(typeof(Text))
-	arg0_2.uiItemList = UIItemList.New(arg0_2:findTF("right/view/content"), arg0_2:findTF("right/view/content/tpl"))
-	arg0_2.taskContainer = arg0_2:findTF("right/view")
-	arg0_2.emptyTr = arg0_2:findTF("right/empty")
+	arg0_2.closeBtn = arg0_2._tf:Find("blur_panel/adapt/top/back_btn")
+	arg0_2.dailyTask = arg0_2._tf:Find("left/task/slider/bar")
+	arg0_2.dailyTaskTxt = arg0_2._tf:Find("left/task/Text"):GetComponent(typeof(Text))
+	arg0_2.timeTxt = arg0_2._tf:Find("right/title/Text/Text"):GetComponent(typeof(Text))
+	arg0_2.dailyTaskGoBtn = arg0_2._tf:Find("left/go")
+	arg0_2.totalCntTxt = arg0_2._tf:Find("right/total/Text"):GetComponent(typeof(Text))
+	arg0_2.uiItemList = UIItemList.New(arg0_2._tf:Find("right/view/content"), arg0_2._tf:Find("right/view/content/tpl"))
+	arg0_2.taskContainer = arg0_2._tf:Find("right/view")
+	arg0_2.emptyTr = arg0_2._tf:Find("right/empty")
 
-	setText(arg0_2:findTF("left/bg/Text"), i18n("vote_lable_daily_task_title"))
+	setText(arg0_2._tf:Find("left/bg/Text"), i18n("vote_lable_daily_task_title"))
 
 	local var0_2 = string.split(i18n("vote_lable_daily_task_tip"), "$1")
 
-	setText(arg0_2:findTF("left/task/desc/label1"), var0_2[1])
-	setText(arg0_2:findTF("left/task/desc/labe2"), var0_2[2])
-	setText(arg0_2:findTF("right/title/Text"), i18n("vote_lable_task_title"))
+	setText(arg0_2._tf:Find("left/task/desc/label1"), var0_2[1])
+	setText(arg0_2._tf:Find("left/task/desc/labe2"), var0_2[2])
+	setText(arg0_2._tf:Find("right/title/Text"), i18n("vote_lable_task_title"))
 	setText(arg0_2.emptyTr:Find("Image/Text"), i18n("vote_lable_task_list_is_empty"))
 end
 

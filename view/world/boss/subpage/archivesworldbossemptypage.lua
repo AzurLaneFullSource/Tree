@@ -12,7 +12,7 @@ function var0_0.OnInit(arg0_2)
 			helps = pg.gametip.world_archives_boss_help.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0_2, arg0_2:findTF("list_btn"), function()
+	onButton(arg0_2, arg0_2._tf:Find("list_btn"), function()
 		arg0_2:emit(WorldBossScene.ON_SWITCH, WorldBossScene.PAGE_ARCHIVES_CHALLENGE)
 	end, SFX_PANEL)
 	onButton(arg0_2, arg0_2.activeBtn, function()
@@ -49,7 +49,7 @@ function var0_0.OnInit(arg0_2)
 end
 
 function var0_0.OnUpdate(arg0_7)
-	arg0_7.archivesWorldbossBtn = arg0_7.archivesWorldbossBtn or ArchivesWorldbossBtn.New(arg0_7:findTF("archives_btn"), arg0_7.event)
+	arg0_7.archivesWorldbossBtn = arg0_7.archivesWorldbossBtn or ArchivesWorldbossBtn.New(arg0_7._tf:Find("archives_btn"), arg0_7.event)
 
 	local var0_7 = WorldBossConst.GetAchieveState()
 	local var1_7

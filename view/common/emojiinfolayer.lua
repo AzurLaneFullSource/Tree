@@ -5,11 +5,11 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.nameTxt = arg0_2:findTF("frame/name"):GetComponent(typeof(Text))
-	arg0_2.descTxt = arg0_2:findTF("frame/desc"):GetComponent(typeof(Text))
-	arg0_2.emojiContainer = arg0_2:findTF("frame/icon_bg")
+	arg0_2.nameTxt = arg0_2._tf:Find("frame/name"):GetComponent(typeof(Text))
+	arg0_2.descTxt = arg0_2._tf:Find("frame/desc"):GetComponent(typeof(Text))
+	arg0_2.emojiContainer = arg0_2._tf:Find("frame/icon_bg")
 
-	setText(arg0_2:findTF("frame/tip"), i18n("word_click_to_close"))
+	setText(arg0_2._tf:Find("frame/tip"), i18n("word_click_to_close"))
 end
 
 function var0_0.didEnter(arg0_3)

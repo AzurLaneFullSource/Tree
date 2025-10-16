@@ -5,18 +5,20 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.list = UIItemList.New(arg0_2:findTF("got/bottom/scroll/list"), arg0_2:findTF("got/bottom/scroll/list/tpl"))
-	arg0_2.confirmBtn = arg0_2:findTF("confirm")
-	arg0_2.descTxt = arg0_2:findTF("got/top/desc"):GetComponent(typeof(Text))
-	arg0_2.exchagneCnt = arg0_2:findTF("got/top/exchange/Text"):GetComponent(typeof(Text))
-	arg0_2.consumeCnt = arg0_2:findTF("confirm/consume/Text"):GetComponent(typeof(Text))
-	arg0_2.title = arg0_2:findTF("got/top/title")
+	arg0_2.list = UIItemList.New(arg0_2._tf:Find("got/bottom/scroll/list"), arg0_2._tf:Find("got/bottom/scroll/list/tpl"))
+	arg0_2.confirmBtn = arg0_2._tf:Find("confirm")
+	arg0_2.descTxt = arg0_2._tf:Find("got/top/desc"):GetComponent(typeof(Text))
+	arg0_2.exchagneCnt = arg0_2._tf:Find("got/top/exchange/Text"):GetComponent(typeof(Text))
+	arg0_2.consumeCnt = arg0_2._tf:Find("confirm/consume/Text"):GetComponent(typeof(Text))
+	arg0_2.title = arg0_2._tf:Find("got/top/title")
 
-	setText(arg0_2:findTF("got/top/exchange/label"), i18n("guild_shop_label_2"))
-	setText(arg0_2:findTF("confirm/Text"), i18n("guild_shop_label_3"))
-	setText(arg0_2:findTF("confirm/consume/label"), i18n("guild_shop_label_4"))
+	setText(arg0_2._tf:Find("got/top/exchange/label"), i18n("guild_shop_label_2"))
+	setText(arg0_2._tf:Find("confirm/Text"), i18n("guild_shop_label_3"))
+	setText(arg0_2._tf:Find("confirm/consume/label"), i18n("guild_shop_label_4"))
 
-	arg0_2.resIcon = arg0_2:findTF("confirm/consume/icon")
+	arg0_2.resIcon = arg0_2._tf:Find("confirm/consume/icon")
+
+	arg0_2:Hide()
 end
 
 function var0_0.OnInit(arg0_3)
@@ -65,7 +67,7 @@ function var0_0.UpdateValue(arg0_8)
 
 	arg0_8.exchagneCnt.text = var1_8 .. arg0_8.maxCnt
 
-	setActive(arg0_8:findTF("got/top/exchange"), arg0_8.maxCnt ~= 0)
+	setActive(arg0_8._tf:Find("got/top/exchange"), arg0_8.maxCnt ~= 0)
 
 	arg0_8.consumeCnt.text = arg0_8.data.price * #arg0_8.selectedList
 end

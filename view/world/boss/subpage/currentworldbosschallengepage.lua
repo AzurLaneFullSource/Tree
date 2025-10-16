@@ -44,9 +44,9 @@ function var0_0.OnLoaded(arg0_8)
 	var0_0.super.OnLoaded(arg0_8)
 
 	arg0_8.awardPage = WorldBossAwardPage.New(arg0_8._tf.parent.parent, arg0_8.event)
-	arg0_8.switchBtn = arg0_8:findTF("detail_btn")
-	arg0_8.archivesChallengeBtn = arg0_8:findTF("archives_list_btn")
-	arg0_8.awardBtn = arg0_8:findTF("main/award_btn")
+	arg0_8.switchBtn = arg0_8._tf:Find("detail_btn")
+	arg0_8.archivesChallengeBtn = arg0_8._tf:Find("archives_list_btn")
+	arg0_8.awardBtn = arg0_8._tf:Find("main/award_btn")
 
 	setActive(arg0_8.archivesChallengeBtn, not LOCK_WORLDBOSS_ARCHIVES)
 end
@@ -65,20 +65,20 @@ function var0_0.OnInit(arg0_9)
 	onButton(arg0_9, arg0_9.archivesChallengeBtn, function()
 		arg0_9:emit(WorldBossScene.ON_SWITCH, WorldBossScene.PAGE_ARCHIVES_CHALLENGE)
 	end, SFX_PANEL)
-	onToggle(arg0_9, arg0_9:findTF("list_panel/frame/filter/toggles/world"), function(arg0_12)
+	onToggle(arg0_9, arg0_9._tf:Find("list_panel/frame/filter/toggles/world"), function(arg0_12)
 		arg0_9.filterFlags[1] = arg0_12 and WorldBoss.BOSS_TYPE_WORLD or -1
 
 		arg0_9:CheckToggle()
 		arg0_9:UpdateNonProcessList()
 	end, SFX_PANEL)
-	onButton(arg0_9, arg0_9:findTF("point/help"), function()
+	onButton(arg0_9, arg0_9._tf:Find("point/help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.world_boss_help_meta.tip
 		})
 	end, SFX_PANEL)
 
-	arg0_9.ptBtn = WorldbossPtBtn.New(arg0_9:findTF("point"))
+	arg0_9.ptBtn = WorldbossPtBtn.New(arg0_9._tf:Find("point"))
 end
 
 function var0_0.CheckToggle(arg0_14)
@@ -87,7 +87,7 @@ function var0_0.CheckToggle(arg0_14)
 	if _.all(arg0_14.filterFlags, function(arg0_15)
 		return arg0_15 == -1
 	end) then
-		triggerToggle(arg0_14:findTF("list_panel/frame/filter/toggles/world"), true)
+		triggerToggle(arg0_14._tf:Find("list_panel/frame/filter/toggles/world"), true)
 	end
 end
 

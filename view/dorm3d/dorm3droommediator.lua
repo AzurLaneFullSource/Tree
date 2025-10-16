@@ -411,7 +411,8 @@ end
 function var0_0.listNotificationInterests(arg0_69)
 	local var0_69 = underscore.keys(arg0_69.handleDic or {})
 	local var1_69 = {
-		SlideExtraSystem
+		SlideExtraSystem,
+		Dorm3dStockingMgr
 	}
 
 	for iter0_69, iter1_69 in pairs(var1_69) do

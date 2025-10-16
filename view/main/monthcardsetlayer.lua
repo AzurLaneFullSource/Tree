@@ -15,14 +15,14 @@ function var0_0.setRatio(arg0_3, arg1_3)
 end
 
 function var0_0.init(arg0_4)
-	arg0_4.name = arg0_4:findTF("window/bg/name")
-	arg0_4.desc = arg0_4:findTF("window/bg/desc")
-	arg0_4.oil = arg0_4:findTF("window/black/oil/icon_bg/count")
-	arg0_4.gold = arg0_4:findTF("window/black/gold/icon_bg/count")
-	arg0_4.slider = arg0_4:findTF("window/black/slider")
-	arg0_4.rate = arg0_4:findTF("window/black/misc/rate")
-	arg0_4.confirm = arg0_4:findTF("window/confirm")
-	arg0_4.cancel = arg0_4:findTF("window/cancel")
+	arg0_4.name = arg0_4._tf:Find("window/bg/name")
+	arg0_4.desc = arg0_4._tf:Find("window/bg/desc")
+	arg0_4.oil = arg0_4._tf:Find("window/black/oil/icon_bg/count")
+	arg0_4.gold = arg0_4._tf:Find("window/black/gold/icon_bg/count")
+	arg0_4.slider = arg0_4._tf:Find("window/black/slider")
+	arg0_4.rate = arg0_4._tf:Find("window/black/misc/rate")
+	arg0_4.confirm = arg0_4._tf:Find("window/confirm")
+	arg0_4.cancel = arg0_4._tf:Find("window/cancel")
 end
 
 function var0_0.didEnter(arg0_5)

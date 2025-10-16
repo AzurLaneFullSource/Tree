@@ -28,13 +28,13 @@ function var0_0.initUIText(arg0_6)
 end
 
 function var0_0.findUI(arg0_7)
-	arg0_7.bg = arg0_7:findTF("bg")
-	arg0_7.window = arg0_7:findTF("window")
-	arg0_7.inputField = arg0_7:findTF("birthday_input_panel/InputField", arg0_7.window)
+	arg0_7.bg = arg0_7._tf:Find("bg")
+	arg0_7.window = arg0_7._tf:Find("window")
+	arg0_7.inputField = arg0_7.window:Find("birthday_input_panel/InputField")
 	arg0_7.inputSC = GetComponent(arg0_7.inputField, typeof(InputField))
-	arg0_7.cancelBtn = arg0_7:findTF("birthday_input_panel/btns/cancel_btn", arg0_7.window)
-	arg0_7.confirmBtn = arg0_7:findTF("birthday_input_panel/btns/confirm_btn", arg0_7.window)
-	arg0_7.closeBtn = arg0_7:findTF("top/btnBack", arg0_7.window)
+	arg0_7.cancelBtn = arg0_7.window:Find("birthday_input_panel/btns/cancel_btn")
+	arg0_7.confirmBtn = arg0_7.window:Find("birthday_input_panel/btns/confirm_btn")
+	arg0_7.closeBtn = arg0_7.window:Find("top/btnBack")
 end
 
 function var0_0.addListener(arg0_8)

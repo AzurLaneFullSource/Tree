@@ -6,10 +6,10 @@ function var0_0.OnInit(arg0_1)
 end
 
 function var0_0.findUI(arg0_2)
-	arg0_2.paintBackTF = arg0_2:findTF("Paints/PaintBack")
-	arg0_2.paintFrontTF = arg0_2:findTF("Paints/PaintFront")
-	arg0_2.skinShopBtn = arg0_2:findTF("BtnShop")
-	arg0_2.goBtn = arg0_2:findTF("BtnGO")
+	arg0_2.paintBackTF = arg0_2._tf:Find("Paints/PaintBack")
+	arg0_2.paintFrontTF = arg0_2._tf:Find("Paints/PaintFront")
+	arg0_2.skinShopBtn = arg0_2._tf:Find("BtnShop")
+	arg0_2.goBtn = arg0_2._tf:Find("BtnGO")
 
 	onButton(arg0_2, arg0_2.skinShopBtn, function()
 		arg0_2:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)

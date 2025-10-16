@@ -1,9 +1,9 @@
 local var0_0 = class("LinkDunHuangPage", import(".JavelinComicSkinPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.item = arg0_1:findTF("items/item", arg0_1.bg)
-	arg0_1.items = arg0_1:findTF("items", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.item = arg0_1.bg:Find("items/item")
+	arg0_1.items = arg0_1.bg:Find("items")
 	arg0_1.uilist = UIItemList.New(arg0_1.items, arg0_1.item)
 	arg0_1.bgImg = arg0_1.bg:GetComponent(typeof(Image))
 	arg0_1.isReplaceBG = false

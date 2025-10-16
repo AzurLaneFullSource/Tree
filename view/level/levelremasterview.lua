@@ -5,17 +5,17 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnInit(arg0_2)
-	arg0_2.content = arg0_2:findTF("list/content")
+	arg0_2.content = arg0_2._tf:Find("list/content")
 	arg0_2.item = arg0_2.content:Find("item")
-	arg0_2.numsTxt = arg0_2:findTF("nums/text")
-	arg0_2.helpBtn = arg0_2:findTF("help")
+	arg0_2.numsTxt = arg0_2._tf:Find("nums/text")
+	arg0_2.helpBtn = arg0_2._tf:Find("help")
 
 	setActive(arg0_2.item, false)
 
-	arg0_2.getRemasterTF = arg0_2:findTF("getBtn/state_before")
-	arg0_2.gotRemasterTF = arg0_2:findTF("getBtn/state_after")
-	arg0_2.exToggle = arg0_2:findTF("toggles/EX")
-	arg0_2.spToggle = arg0_2:findTF("toggles/SP")
+	arg0_2.getRemasterTF = arg0_2._tf:Find("getBtn/state_before")
+	arg0_2.gotRemasterTF = arg0_2._tf:Find("getBtn/state_after")
+	arg0_2.exToggle = arg0_2._tf:Find("toggles/EX")
+	arg0_2.spToggle = arg0_2._tf:Find("toggles/SP")
 
 	arg0_2:bind(LevelUIConst.FLUSH_REMASTER_INFO, function(arg0_3)
 		if not arg0_2:isShowing() then

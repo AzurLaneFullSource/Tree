@@ -53,7 +53,7 @@ function var0_0.InitDetail(arg0_3)
 	arg0_3.commonTagToggle = arg0_3.detailPanel:Find("common_toggle")
 	arg0_3.spWeaponSlot = arg0_3.equipments:Find("SpSlot")
 	arg0_3.propertyIcons = arg0_3.detailPanel:Find("attrs/attrs/property/icons")
-	arg0_3.intimacyTF = arg0_3:findTF("intimacy")
+	arg0_3.intimacyTF = arg0_3._tf:Find("intimacy")
 	arg0_3.updateItemTick = 0
 	arg0_3.quickPanel = arg0_3.detailPanel:Find("quick_panel")
 	arg0_3.equiping = arg0_3.quickPanel:Find("equiping")
@@ -309,7 +309,7 @@ function var0_0.InitEvent(arg0_5)
 			end
 
 			setActive(findTF(tf(arg1_28), "IconTpl/icon_bg/icon"), true)
-			updateEquipment(arg0_5:findTF("IconTpl", tf(arg1_28)), var1_28)
+			updateEquipment(findTF(tf(arg1_28), "IconTpl"), var1_28)
 
 			if var1_28.shipId then
 				local var2_28 = getProxy(BayProxy):getShipById(var1_28.shipId)
@@ -526,7 +526,7 @@ function var0_0.UpdateEquipments(arg0_44, arg1_44)
 			}
 
 			table.insert(arg0_44.equipItems, var4_44)
-			updateEquipment(arg0_44:findTF("IconTpl", var2_44), iter1_44)
+			updateEquipment(var2_44:Find("IconTpl"), iter1_44)
 			onButton(arg0_44, var2_44, function()
 				if arg0_44.isShowQuick then
 					arg0_44:selectedEquipItem(var3_44)
@@ -856,7 +856,7 @@ function var0_0.UpdateRecordEquipments(arg0_70, arg1_70)
 			local var9_70 = not (var8_70 and var8_70.id == var2_70 or false) and (not var7_70 or not (var7_70.count > 0))
 
 			setActive(var6_70:Find("tip"), var9_70)
-			updateEquipment(arg0_70:findTF("IconTpl", var6_70), Equipment.New({
+			updateEquipment(var6_70:Find("IconTpl"), Equipment.New({
 				id = var2_70
 			}))
 

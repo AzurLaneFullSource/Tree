@@ -2,7 +2,7 @@ local var0_0 = class("TaiyuanAlterItemPage", import(".TemplatePage.SkinTemplateP
 
 function var0_0.UpdateTask(arg0_1, arg1_1, arg2_1)
 	local var0_1 = arg1_1 + 1
-	local var1_1 = arg0_1:findTF("item", arg2_1)
+	local var1_1 = arg2_1:Find("item")
 	local var2_1 = arg0_1.taskGroup[arg0_1.nday][var0_1]
 	local var3_1 = arg0_1.taskProxy:getTaskById(var2_1) or arg0_1.taskProxy:getFinishTaskById(var2_1)
 
@@ -18,7 +18,7 @@ function var0_0.UpdateTask(arg0_1, arg1_1, arg2_1)
 	local var5_1 = var3_1:getProgress()
 	local var6_1 = var3_1:getConfig("target_num")
 
-	setText(arg0_1:findTF("description", arg2_1), var3_1:getConfig("desc"))
+	setText(arg2_1:Find("description"), var3_1:getConfig("desc"))
 
 	local var7_1, var8_1 = arg0_1:GetProgressColor()
 	local var9_1
@@ -29,12 +29,12 @@ function var0_0.UpdateTask(arg0_1, arg1_1, arg2_1)
 
 	var10_1 = var8_1 and setColorStr("/" .. var6_1, var8_1) or "/" .. var6_1
 
-	setText(arg0_1:findTF("progressText", arg2_1), "<color=#E95545>" .. var9_1 .. "</color><color=#6D8189>" .. var10_1 .. "</color>")
-	setSlider(arg0_1:findTF("progress", arg2_1), 0, var6_1, var5_1)
+	setText(arg2_1:Find("progressText"), "<color=#E95545>" .. var9_1 .. "</color><color=#6D8189>" .. var10_1 .. "</color>")
+	setSlider(arg2_1:Find("progress"), 0, var6_1, var5_1)
 
-	local var11_1 = arg0_1:findTF("go_btn", arg2_1)
-	local var12_1 = arg0_1:findTF("get_btn", arg2_1)
-	local var13_1 = arg0_1:findTF("got_btn", arg2_1)
+	local var11_1 = arg2_1:Find("go_btn")
+	local var12_1 = arg2_1:Find("get_btn")
+	local var13_1 = arg2_1:Find("got_btn")
 	local var14_1 = var3_1:getTaskStatus()
 
 	setActive(var11_1, var14_1 == 0)

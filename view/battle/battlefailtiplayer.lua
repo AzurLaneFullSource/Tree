@@ -22,12 +22,12 @@ function var0_0.initData(arg0_3)
 end
 
 function var0_0.findUI(arg0_4)
-	arg0_4.powerUpTipPanel = arg0_4:findTF("Main")
-	arg0_4.shipLevelUpBtn = arg0_4:findTF("ShipLevelUpBtn", arg0_4.powerUpTipPanel)
-	arg0_4.equipLevelUpBtn = arg0_4:findTF("EquipLevelUpBtn", arg0_4.powerUpTipPanel)
-	arg0_4.skillLevelUpBtn = arg0_4:findTF("SkillLevelUpBtn", arg0_4.powerUpTipPanel)
-	arg0_4.shipBreakUpBtn = arg0_4:findTF("ShipBreakUpBtn", arg0_4.powerUpTipPanel)
-	arg0_4.closeBtn = arg0_4:findTF("CloseBtn", arg0_4.powerUpTipPanel)
+	arg0_4.powerUpTipPanel = arg0_4._tf:Find("Main")
+	arg0_4.shipLevelUpBtn = arg0_4.powerUpTipPanel:Find("ShipLevelUpBtn")
+	arg0_4.equipLevelUpBtn = arg0_4.powerUpTipPanel:Find("EquipLevelUpBtn")
+	arg0_4.skillLevelUpBtn = arg0_4.powerUpTipPanel:Find("SkillLevelUpBtn")
+	arg0_4.shipBreakUpBtn = arg0_4.powerUpTipPanel:Find("ShipBreakUpBtn")
+	arg0_4.closeBtn = arg0_4.powerUpTipPanel:Find("CloseBtn")
 end
 
 function var0_0.addListener(arg0_5)

@@ -13,22 +13,22 @@ function var0_0.initConfig(arg0_3)
 end
 
 function var0_0.init(arg0_4)
-	arg0_4.anim = arg0_4:findTF("anim_root"):GetComponent(typeof(Animation))
-	arg0_4.animEvent = arg0_4:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+	arg0_4.anim = arg0_4._tf:Find("anim_root"):GetComponent(typeof(Animation))
+	arg0_4.animEvent = arg0_4._tf:Find("anim_root"):GetComponent(typeof(DftAniEvent))
 
 	arg0_4.animEvent:SetEndEvent(function()
 		arg0_4:emit(var0_0.ON_CLOSE)
 	end)
 
-	arg0_4.closeBtn = arg0_4:findTF("anim_root/bg")
-	arg0_4.windowTF = arg0_4:findTF("anim_root/window")
-	arg0_4.curCntTF = arg0_4:findTF("collect/cur", arg0_4.windowTF)
-	arg0_4.allCntTF = arg0_4:findTF("collect/all", arg0_4.windowTF)
-	arg0_4.pageTF = arg0_4:findTF("page", arg0_4.windowTF)
-	arg0_4.nextBtn = arg0_4:findTF("next_btn", arg0_4.windowTF)
-	arg0_4.lastBtn = arg0_4:findTF("last_btn", arg0_4.windowTF)
-	arg0_4.paginationTF = arg0_4:findTF("pagination", arg0_4.windowTF)
-	arg0_4.performTF = arg0_4:findTF("anim_root/perform")
+	arg0_4.closeBtn = arg0_4._tf:Find("anim_root/bg")
+	arg0_4.windowTF = arg0_4._tf:Find("anim_root/window")
+	arg0_4.curCntTF = arg0_4.windowTF:Find("collect/cur")
+	arg0_4.allCntTF = arg0_4.windowTF:Find("collect/all")
+	arg0_4.pageTF = arg0_4.windowTF:Find("page")
+	arg0_4.nextBtn = arg0_4.windowTF:Find("next_btn")
+	arg0_4.lastBtn = arg0_4.windowTF:Find("last_btn")
+	arg0_4.paginationTF = arg0_4.windowTF:Find("pagination")
+	arg0_4.performTF = arg0_4._tf:Find("anim_root/perform")
 
 	setActive(arg0_4.performTF, false)
 	onButton(arg0_4, arg0_4.closeBtn, function()
@@ -69,7 +69,7 @@ function var0_0.UpdatePage(arg0_10)
 	local var0_10 = (arg0_10.curPageIndex - 1) * arg0_10.onePageCnt
 
 	for iter0_10 = 1, arg0_10.onePageCnt do
-		local var1_10 = arg0_10:findTF("frame_" .. iter0_10, arg0_10.pageTF)
+		local var1_10 = arg0_10.pageTF:Find("frame_" .. iter0_10)
 		local var2_10 = arg0_10.allIds[var0_10 + iter0_10]
 
 		if var2_10 then

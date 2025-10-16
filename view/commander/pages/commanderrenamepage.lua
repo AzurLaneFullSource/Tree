@@ -18,7 +18,7 @@ function var0_0.OnInit(arg0_2)
 	arg0_2.input = findTF(arg0_2._tf, "frame/bg/content/input")
 	arg0_2.confirmBtn = arg0_2._tf:Find("frame/confirm_btn")
 
-	setText(arg0_2:findTF("frame/bg/content/label"), i18n("commander_rename_tip"))
+	setText(arg0_2._tf:Find("frame/bg/content/label"), i18n("commander_rename_tip"))
 end
 
 function var0_0.Show(arg0_6, arg1_6)

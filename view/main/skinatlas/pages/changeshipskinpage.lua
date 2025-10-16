@@ -5,17 +5,17 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.cancelBtn = arg0_2:findTF("window/cancel_btn")
-	arg0_2.confirmBtn = arg0_2:findTF("window/exchange_btn")
-	arg0_2.closeBtn = arg0_2:findTF("window/top/btnBack")
-	arg0_2.shipContent = arg0_2:findTF("window/sliders/scroll_rect/content")
+	arg0_2.cancelBtn = arg0_2._tf:Find("window/cancel_btn")
+	arg0_2.confirmBtn = arg0_2._tf:Find("window/exchange_btn")
+	arg0_2.closeBtn = arg0_2._tf:Find("window/top/btnBack")
+	arg0_2.shipContent = arg0_2._tf:Find("window/sliders/scroll_rect/content")
 	arg0_2.shipCardTpl = arg0_2.shipContent:GetChild(0)
-	arg0_2.flagShipToggle = arg0_2:findTF("window/flag_bg/flag_ship")
-	arg0_2.flagRandomToggle = arg0_2:findTF("window/flag_bg/flag_random")
+	arg0_2.flagShipToggle = arg0_2._tf:Find("window/flag_bg/flag_ship")
+	arg0_2.flagRandomToggle = arg0_2._tf:Find("window/flag_bg/flag_random")
 
-	setText(arg0_2:findTF("window/top/title_list/infomation/title"), i18n("chang_ship_skin_window_title"))
-	setText(arg0_2:findTF("window/sliders/please/Text"), i18n("choose_ship_to_wear_this_skin"))
-	setText(arg0_2:findTF("window/exchange_btn/Image"), i18n("change"))
+	setText(arg0_2._tf:Find("window/top/title_list/infomation/title"), i18n("chang_ship_skin_window_title"))
+	setText(arg0_2._tf:Find("window/sliders/please/Text"), i18n("choose_ship_to_wear_this_skin"))
+	setText(arg0_2._tf:Find("window/exchange_btn/Image"), i18n("change"))
 	setText(arg0_2._tf:Find("window/cancel_btn/Image"), i18n("word_cancel"))
 end
 

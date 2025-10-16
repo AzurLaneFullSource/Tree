@@ -67,16 +67,16 @@ end
 
 function var0_0.init(arg0_11)
 	Input.multiTouchEnabled = false
-	arg0_11.blurPanel = arg0_11:findTF("blur_panel")
-	arg0_11.topPanel = arg0_11:findTF("adapt/top", arg0_11.blurPanel)
-	arg0_11.backBtn = arg0_11:findTF("back_btn", arg0_11.topPanel)
+	arg0_11.blurPanel = arg0_11._tf:Find("blur_panel")
+	arg0_11.topPanel = arg0_11.blurPanel:Find("adapt/top")
+	arg0_11.backBtn = arg0_11.topPanel:Find("back_btn")
 	arg0_11.toggles = {
-		arg0_11:findTF("adapt/left_length/frame/tagRoot/build_btn", arg0_11.blurPanel),
-		arg0_11:findTF("adapt/left_length/frame/tagRoot/queue_btn", arg0_11.blurPanel),
-		arg0_11:findTF("adapt/left_length/frame/tagRoot/support_btn", arg0_11.blurPanel),
-		arg0_11:findTF("adapt/left_length/frame/tagRoot/unseam_btn", arg0_11.blurPanel),
-		arg0_11:findTF("adapt/left_length/frame/tagRoot/pray_btn", arg0_11.blurPanel),
-		arg0_11:findTF("adapt/left_length/frame/tagRoot/other_build_btn", arg0_11.blurPanel)
+		arg0_11.blurPanel:Find("adapt/left_length/frame/tagRoot/build_btn"),
+		arg0_11.blurPanel:Find("adapt/left_length/frame/tagRoot/queue_btn"),
+		arg0_11.blurPanel:Find("adapt/left_length/frame/tagRoot/support_btn"),
+		arg0_11.blurPanel:Find("adapt/left_length/frame/tagRoot/unseam_btn"),
+		arg0_11.blurPanel:Find("adapt/left_length/frame/tagRoot/pray_btn"),
+		arg0_11.blurPanel:Find("adapt/left_length/frame/tagRoot/other_build_btn")
 	}
 	arg0_11.tip = arg0_11.toggles[2]:Find("tip")
 	arg0_11.contextData.msgbox = BuildShipMsgBox.New(arg0_11._tf, arg0_11.event)
@@ -91,7 +91,7 @@ function var0_0.didEnter(arg0_12)
 		arg0_12:emit(var0_0.ON_BACK)
 	end, SFX_CANCEL)
 
-	local var0_12 = arg0_12:findTF("adapt/left_length/stamp", arg0_12.blurPanel)
+	local var0_12 = arg0_12.blurPanel:Find("adapt/left_length/stamp")
 
 	setActive(var0_12, getProxy(TaskProxy):mingshiTouchFlagEnabled())
 	onButton(arg0_12, var0_12, function()

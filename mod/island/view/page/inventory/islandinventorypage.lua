@@ -13,16 +13,16 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.closeBtn = arg0_2:findTF("window/close_btn")
-	arg0_2.filterBtn = arg0_2:findTF("window/sort_panel/index")
-	arg0_2.orderBtn = arg0_2:findTF("window/sort_panel/sort")
-	arg0_2.orderTxt = arg0_2:findTF("window/sort_panel/sort/Text"):GetComponent(typeof(Text))
-	arg0_2.orderArr = arg0_2:findTF("window/sort_panel/sort/arr")
+	arg0_2.closeBtn = arg0_2._tf:Find("window/close_btn")
+	arg0_2.filterBtn = arg0_2._tf:Find("window/sort_panel/index")
+	arg0_2.orderBtn = arg0_2._tf:Find("window/sort_panel/sort")
+	arg0_2.orderTxt = arg0_2._tf:Find("window/sort_panel/sort/Text"):GetComponent(typeof(Text))
+	arg0_2.orderArr = arg0_2._tf:Find("window/sort_panel/sort/arr")
 	arg0_2.toggles = {
-		[var0_0.INVENTORY_TYPE_OVERFLOW] = arg0_2:findTF("window/toggles/0"),
-		[IslandItem.TYPE_MATERIAL] = arg0_2:findTF("window/toggles/1"),
-		[IslandItem.TYPE_PROP] = arg0_2:findTF("window/toggles/2"),
-		[IslandItem.TYPE_SPECIAL_PROP] = arg0_2:findTF("window/toggles/3")
+		[var0_0.INVENTORY_TYPE_OVERFLOW] = arg0_2._tf:Find("window/toggles/0"),
+		[IslandItem.TYPE_MATERIAL] = arg0_2._tf:Find("window/toggles/1"),
+		[IslandItem.TYPE_PROP] = arg0_2._tf:Find("window/toggles/2"),
+		[IslandItem.TYPE_SPECIAL_PROP] = arg0_2._tf:Find("window/toggles/3")
 	}
 	arg0_2.indexDatas = {
 		[var0_0.INVENTORY_TYPE_OVERFLOW] = IslandInventoryIndexData.New(var1_0),
@@ -30,28 +30,28 @@ function var0_0.OnLoaded(arg0_2)
 		[IslandItem.TYPE_PROP] = IslandInventoryIndexData.New(var2_0),
 		[IslandItem.TYPE_SPECIAL_PROP] = IslandInventoryIndexData.New(var3_0)
 	}
-	arg0_2.capacityTxt = arg0_2:findTF("window/upgrade/Text"):GetComponent(typeof(Text))
-	arg0_2.upgradeBtn = arg0_2:findTF("window/upgrade")
-	arg0_2.upgradeProg = arg0_2:findTF("window/upgrade/bar")
-	arg0_2.batchSellBtn = arg0_2:findTF("window/batch_sell")
-	arg0_2.sellPanel = arg0_2:findTF("window/sell_panel")
-	arg0_2.sortPaenl = arg0_2:findTF("window/sort_panel")
-	arg0_2.sellBtn = arg0_2:findTF("window/sell_panel/batch_sell_1")
-	arg0_2.sellCancelBtn = arg0_2:findTF("window/sell_panel/cancel")
-	arg0_2.sellPriceTxt = arg0_2:findTF("window/sell_panel/price/Text"):GetComponent(typeof(Text))
+	arg0_2.capacityTxt = arg0_2._tf:Find("window/upgrade/Text"):GetComponent(typeof(Text))
+	arg0_2.upgradeBtn = arg0_2._tf:Find("window/upgrade")
+	arg0_2.upgradeProg = arg0_2._tf:Find("window/upgrade/bar")
+	arg0_2.batchSellBtn = arg0_2._tf:Find("window/batch_sell")
+	arg0_2.sellPanel = arg0_2._tf:Find("window/sell_panel")
+	arg0_2.sortPaenl = arg0_2._tf:Find("window/sort_panel")
+	arg0_2.sellBtn = arg0_2._tf:Find("window/sell_panel/batch_sell_1")
+	arg0_2.sellCancelBtn = arg0_2._tf:Find("window/sell_panel/cancel")
+	arg0_2.sellPriceTxt = arg0_2._tf:Find("window/sell_panel/price/Text"):GetComponent(typeof(Text))
 
-	LoadImageSpriteAsync("island/" .. getIslandSeasonPtInfo().icon, arg0_2:findTF("window/sell_panel/price/Text/icon"))
+	LoadImageSpriteAsync("island/" .. getIslandSeasonPtInfo().icon, arg0_2._tf:Find("window/sell_panel/price/Text/icon"))
 
-	arg0_2.oneKeyPanel = arg0_2:findTF("window/one_key_panel")
-	arg0_2.onekeyBtn = arg0_2:findTF("window/one_key_panel/fetch_btn")
-	arg0_2.scrollRect = arg0_2:findTF("window/item_scrollview"):GetComponent("LScrollRect")
+	arg0_2.oneKeyPanel = arg0_2._tf:Find("window/one_key_panel")
+	arg0_2.onekeyBtn = arg0_2._tf:Find("window/one_key_panel/fetch_btn")
+	arg0_2.scrollRect = arg0_2._tf:Find("window/item_scrollview"):GetComponent("LScrollRect")
 
-	setText(arg0_2:findTF("window/title/Text"), i18n("island_bag_title"))
-	setText(arg0_2:findTF("window/batch_sell/Text"), i18n("island_batch_covert"))
-	setText(arg0_2:findTF("window/sell_panel/price/label"), i18n("island_total_price"))
-	setText(arg0_2:findTF("window/sell_panel/cancel/Text"), i18n("word_cancel"))
-	setText(arg0_2:findTF("window/sell_panel/batch_sell_1/Text"), i18n("island_batch_covert"))
-	setText(arg0_2:findTF("window/one_key_panel/fetch_btn/Text"), i18n("mail_get_oneclick"))
+	setText(arg0_2._tf:Find("window/title/Text"), i18n("island_bag_title"))
+	setText(arg0_2._tf:Find("window/batch_sell/Text"), i18n("island_batch_covert"))
+	setText(arg0_2._tf:Find("window/sell_panel/price/label"), i18n("island_total_price"))
+	setText(arg0_2._tf:Find("window/sell_panel/cancel/Text"), i18n("word_cancel"))
+	setText(arg0_2._tf:Find("window/sell_panel/batch_sell_1/Text"), i18n("island_batch_covert"))
+	setText(arg0_2._tf:Find("window/one_key_panel/fetch_btn/Text"), i18n("mail_get_oneclick"))
 end
 
 function var0_0.OnInit(arg0_3)

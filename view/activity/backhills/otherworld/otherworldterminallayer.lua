@@ -21,15 +21,15 @@ function var0_0.initData(arg0_3)
 end
 
 function var0_0.findUI(arg0_4)
-	arg0_4.windowTF = arg0_4:findTF("window")
-	arg0_4.togglesTF = arg0_4:findTF("toggles", arg0_4.windowTF)
-	arg0_4.adventureTipTF = arg0_4:findTF("2/tip", arg0_4.togglesTF)
+	arg0_4.windowTF = arg0_4._tf:Find("window")
+	arg0_4.togglesTF = arg0_4.windowTF:Find("toggles")
+	arg0_4.adventureTipTF = arg0_4.togglesTF:Find("2/tip")
 
-	setText(arg0_4:findTF(var0_0.PAGE_PERSONAL .. "/Text", arg0_4.togglesTF), i18n("terminal_personal_title"))
-	setText(arg0_4:findTF(var0_0.PAGE_ADVENTURE .. "/Text", arg0_4.togglesTF), i18n("terminal_adventure_title"))
-	setText(arg0_4:findTF(var0_0.PAGE_GUARDIAN .. "/Text", arg0_4.togglesTF), i18n("terminal_guardian_title"))
+	setText(arg0_4.togglesTF:Find(var0_0.PAGE_PERSONAL .. "/Text"), i18n("terminal_personal_title"))
+	setText(arg0_4.togglesTF:Find(var0_0.PAGE_ADVENTURE .. "/Text"), i18n("terminal_adventure_title"))
+	setText(arg0_4.togglesTF:Find(var0_0.PAGE_GUARDIAN .. "/Text"), i18n("terminal_guardian_title"))
 
-	local var0_4 = arg0_4:findTF("pages", arg0_4.windowTF)
+	local var0_4 = arg0_4.windowTF:Find("pages")
 	local var1_4 = getProxy(ActivityProxy):getActivityById(ActivityConst.OTHER_WORLD_TERMINAL_EVENT_ID)
 
 	if var1_4 and not var1_4:isEnd() then
@@ -50,13 +50,13 @@ function var0_0.findUI(arg0_4)
 end
 
 function var0_0.addListener(arg0_5)
-	onButton(arg0_5, arg0_5:findTF("close_btn", arg0_5.windowTF), function()
+	onButton(arg0_5, arg0_5.windowTF:Find("close_btn"), function()
 		arg0_5:onBackPressed()
 	end, SFX_PANEL)
-	onButton(arg0_5, arg0_5:findTF("mask"), function()
+	onButton(arg0_5, arg0_5._tf:Find("mask"), function()
 		arg0_5:onBackPressed()
 	end, SFX_PANEL)
-	onButton(arg0_5, arg0_5:findTF("help_btn", arg0_5.windowTF), function()
+	onButton(arg0_5, arg0_5.windowTF:Find("help_btn"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.otherworld_terminal_help.tip
@@ -92,7 +92,7 @@ function var0_0.didEnter(arg0_11)
 		var0_11 = var0_0.PAGE_ADVENTURE
 	end
 
-	triggerToggle(arg0_11:findTF(tostring(var0_11), arg0_11.togglesTF), true)
+	triggerToggle(arg0_11._tf:Find(tostring(var0_11), arg0_11.togglesTF), true)
 	arg0_11:UpdateAdventureTip()
 end
 

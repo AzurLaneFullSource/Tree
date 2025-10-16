@@ -16,7 +16,7 @@ function var0_0.init(arg0_2)
 		end
 	end
 
-	arg0_2.rtLeftPanel = arg0_2:findTF("adapt/left_panel")
+	arg0_2.rtLeftPanel = arg0_2._tf:Find("adapt/left_panel")
 
 	setText(arg0_2.rtLeftPanel:Find("title/Text"), i18n("world_map_title_tips"))
 	setText(arg0_2.rtLeftPanel:Find("title/Text_en"), i18n("world_map_title_tips_en"))
@@ -29,7 +29,7 @@ function var0_0.init(arg0_2)
 	setText(arg0_2.wsWorldInfo.transform:Find("explore/mileage/Text"), i18n("world_mileage"))
 	setText(arg0_2.wsWorldInfo.transform:Find("explore/pressing/Text"), i18n("world_pressing"))
 
-	arg0_2.rtRightPanel = arg0_2:findTF("adapt/right_panel")
+	arg0_2.rtRightPanel = arg0_2._tf:Find("adapt/right_panel")
 	arg0_2.rtNothingTip = arg0_2.rtRightPanel:Find("nothing_tip")
 	arg0_2.btnClose = arg0_2.rtRightPanel:Find("title/close_btn")
 	arg0_2.toggleAll = arg0_2.rtRightPanel:Find("title/task_all")
@@ -50,7 +50,7 @@ function var0_0.didEnter(arg0_5)
 	onButton(arg0_5, arg0_5.btnClose, function()
 		arg0_5:closeView()
 	end, SFX_CANCEL)
-	onButton(arg0_5, arg0_5:findTF("bg"), function()
+	onButton(arg0_5, arg0_5._tf:Find("bg"), function()
 		triggerButton(arg0_5.btnClose)
 	end, SFX_CANCEL)
 	onToggle(arg0_5, arg0_5.toggleAll, function(arg0_8)

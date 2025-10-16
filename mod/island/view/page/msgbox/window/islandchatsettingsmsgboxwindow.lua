@@ -7,14 +7,14 @@ end
 function var0_0.OnLoaded(arg0_2)
 	var0_0.super.OnLoaded(arg0_2)
 
-	arg0_2.uiSendChanncelList = UIItemList.New(arg0_2:findTF("send_channel/list"), arg0_2:findTF("send_channel/list/tpl"))
-	arg0_2.uiChanncelList = UIItemList.New(arg0_2:findTF("channels/list"), arg0_2:findTF("send_channel/list/tpl"))
-	arg0_2.roomInput = arg0_2:findTF("room/room")
+	arg0_2.uiSendChanncelList = UIItemList.New(arg0_2._tf:Find("send_channel/list"), arg0_2._tf:Find("send_channel/list/tpl"))
+	arg0_2.uiChanncelList = UIItemList.New(arg0_2._tf:Find("channels/list"), arg0_2._tf:Find("send_channel/list/tpl"))
+	arg0_2.roomInput = arg0_2._tf:Find("room/room")
 
-	setText(arg0_2:findTF("send_channel/Text"), i18n("notice_label_send"))
-	setText(arg0_2:findTF("channels/Text"), i18n("notice_label_recv"))
-	setText(arg0_2:findTF("room/Text"), i18n("notice_label_room"))
-	setText(arg0_2:findTF("room/tip"), i18n("notice_label_tip"))
+	setText(arg0_2._tf:Find("send_channel/Text"), i18n("notice_label_send"))
+	setText(arg0_2._tf:Find("channels/Text"), i18n("notice_label_recv"))
+	setText(arg0_2._tf:Find("room/Text"), i18n("notice_label_room"))
+	setText(arg0_2._tf:Find("room/tip"), i18n("notice_label_tip"))
 	arg0_2:InitSendChannel()
 	arg0_2:InitChannels()
 end

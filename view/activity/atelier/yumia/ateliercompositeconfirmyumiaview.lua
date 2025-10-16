@@ -1,12 +1,12 @@
 local var0_0 = class("AtelierCompositeConfirmYumiaView", import("view.activity.Atelier.base.AtelierCompositeConfirmView"))
 
 function var0_0.InitCustom(arg0_1)
-	setText(arg0_1:findTF("Window/titleBg/Name"), i18n("yumia_atelier_tip14"))
+	setText(arg0_1._tf:Find("Window/titleBg/Name"), i18n("yumia_atelier_tip14"))
 end
 
 function var0_0.didEnter(arg0_2)
 	var0_0.super.didEnter(arg0_2)
-	onButton(arg0_2, arg0_2:findTF("Window/titleBg/closeBtn"), function()
+	onButton(arg0_2, arg0_2._tf:Find("Window/titleBg/closeBtn"), function()
 		arg0_2:HideCompositeConfirmWindow()
 	end, SFX_CANCEL)
 end
@@ -61,7 +61,7 @@ function var0_0.ShowCompositeConfirmWindow(arg0_7, arg1_7)
 
 		var2_7[var0_8] = (var2_7[var0_8] or 0) + 1
 	end)
-	onButton(arg0_7, arg0_7:findTF("Window/Confirm"), function()
+	onButton(arg0_7, arg0_7._tf:Find("Window/Confirm"), function()
 		arg0_7._parentClass:emit(GAME.COMPOSITE_ATELIER_RECIPE, var1_7, var0_7)
 		arg0_7._parentClass:PlaySoundEffect(arg0_7._parentClass.soundStr.compositeConfirm)
 	end, SFX_PANEL)
@@ -86,8 +86,8 @@ function var0_0.ShowCompositeConfirmWindow(arg0_7, arg1_7)
 		type = var3_7:GetProduction()[1],
 		id = var3_7:GetProduction()[2]
 	})
-	local var11_7 = arg0_7:findTF("Window/Icon")
-	local var12_7 = arg0_7:findTF("Window/AtelierCommonYumiaItem")
+	local var11_7 = arg0_7._tf:Find("Window/Icon")
+	local var12_7 = arg0_7._tf:Find("Window/AtelierCommonYumiaItem")
 
 	if var10_7.type ~= DROP_TYPE_RYZA_DROP then
 		arg0_7._parentClass:UpdateRyzaDrop(var11_7, var10_7)
@@ -106,20 +106,20 @@ function var0_0.ShowCompositeConfirmWindow(arg0_7, arg1_7)
 		setActive(var12_7, true)
 	end
 
-	local var15_7 = arg0_7:findTF("Window/Counters")
+	local var15_7 = arg0_7._tf:Find("Window/Counters")
 	local var16_7 = var10_7:getConfig("name")
 
 	setActive(var15_7, var4_7)
 
 	if var4_7 then
 		local function var17_7()
-			setText(arg0_7:findTF("Number", var15_7), var0_7)
-			setText(arg0_7:findTF("Window/Text"), i18n("yumia_atelier_tip20", var16_7, var0_7))
-			setText(arg0_7:findTF("cntText", var12_7), var0_7)
+			setText(var15_7:Find("Number"), var0_7)
+			setText(arg0_7._tf:Find("Window/Text"), i18n("yumia_atelier_tip20", var16_7, var0_7))
+			setText(var12_7:Find("cntText"), var0_7)
 		end
 
 		var17_7()
-		onButton(arg0_7, arg0_7:findTF("Plus", var15_7), function()
+		onButton(arg0_7, var15_7:Find("Plus"), function()
 			local var0_11 = var0_7
 
 			var0_7 = var0_7 + 1
@@ -133,13 +133,13 @@ function var0_0.ShowCompositeConfirmWindow(arg0_7, arg1_7)
 
 			var17_7()
 		end)
-		onButton(arg0_7, arg0_7:findTF("Minus", var15_7), function()
+		onButton(arg0_7, var15_7:Find("Minus"), function()
 			var0_7 = var0_7 - 1
 			var0_7 = math.clamp(var0_7, var9_7[1], var9_7[2])
 
 			var17_7()
 		end)
-		onButton(arg0_7, arg0_7:findTF("Plus10", var15_7), function()
+		onButton(arg0_7, var15_7:Find("Plus10"), function()
 			local var0_13 = var0_7
 
 			var0_7 = var0_7 + 10
@@ -153,14 +153,14 @@ function var0_0.ShowCompositeConfirmWindow(arg0_7, arg1_7)
 
 			var17_7()
 		end)
-		onButton(arg0_7, arg0_7:findTF("Minus10", var15_7), function()
+		onButton(arg0_7, var15_7:Find("Minus10"), function()
 			var0_7 = var0_7 - 10
 			var0_7 = math.clamp(var0_7, var9_7[1], var9_7[2])
 
 			var17_7()
 		end)
 	else
-		setText(arg0_7:findTF("Window/Text"), i18n("yumia_atelier_tip19", var16_7, var0_7))
+		setText(arg0_7._tf:Find("Window/Text"), i18n("yumia_atelier_tip19", var16_7, var0_7))
 	end
 end
 

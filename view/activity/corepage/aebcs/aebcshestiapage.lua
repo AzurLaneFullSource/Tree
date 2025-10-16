@@ -2,8 +2,8 @@ local var0_0 = class("AEBCSHestiaPage", import("view.activity.CorePage.BRS.HeiYa
 
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
-	setText(arg0_1:findTF("Text", arg0_1.displayBtn), i18n("other_world_temple_award"))
-	setText(arg0_1:findTF("schedule", arg0_1.task_bg), i18n("Outpost_20250904_Progress"))
+	setText(arg0_1.displayBtn:Find("Text"), i18n("other_world_temple_award"))
+	setText(arg0_1.task_bg:Find("schedule"), i18n("Outpost_20250904_Progress"))
 end
 
 function var0_0.OnUpdateFlush(arg0_2)

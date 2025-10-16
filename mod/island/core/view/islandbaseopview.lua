@@ -17,7 +17,7 @@ function var0_0.DoInit(arg0_2, arg1_2, arg2_2)
 end
 
 function var0_0.SetUIParent(arg0_3, arg1_3)
-	setParent(arg1_3, arg0_3:GetView().opContainer)
+	return arg0_3:GetView().opContainer
 end
 
 function var0_0.TryDisable(arg0_4, arg1_4)

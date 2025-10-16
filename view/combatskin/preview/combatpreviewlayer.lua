@@ -13,9 +13,9 @@ function var0_0.OnInit(arg0_2)
 	setParent(arg0_2._go, arg0_2.OverlayMain)
 	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
 
-	arg0_2.preview = arg0_2:findTF("preview")
-	arg0_2.uiLayer = arg0_2:findTF("preview/ui")
-	arg0_2.sea = arg0_2:findTF("preview/sea")
+	arg0_2.preview = arg0_2._tf:Find("preview")
+	arg0_2.uiLayer = arg0_2._tf:Find("preview/ui")
+	arg0_2.sea = arg0_2._tf:Find("preview/sea")
 	arg0_2.rawImage = arg0_2.sea:GetComponent("RawImage")
 
 	setText(arg0_2.preview:Find("bg/title/Image"), i18n("word_preview"))

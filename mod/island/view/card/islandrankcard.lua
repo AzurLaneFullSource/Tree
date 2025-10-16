@@ -3,10 +3,11 @@ local var0_0 = class("IslandRankCard")
 var0_0.TYPE_SELF = 1
 var0_0.TYPE_OTHER = 2
 
-function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 	arg0_1._go = arg1_1
 	arg0_1._tf = arg1_1.transform
 	arg0_1._type = arg2_1
+	arg0_1.parent = arg3_1
 	arg0_1.bgTF = arg0_1._tf:Find("bg")
 	arg0_1.rankText = arg0_1._tf:Find("rank"):GetComponent(typeof(Text))
 	arg0_1.notOnTF = arg0_1._tf:Find("not_on")
@@ -45,11 +46,18 @@ function var0_0.Update(arg0_2, arg1_2, arg2_2)
 	UIItemList.StaticAlign(arg0_2.awardsTF, arg0_2.awardsTF:Find("tpl"), #var3_2, function(arg0_3, arg1_3, arg2_3)
 		if arg0_3 == UIItemList.EventUpdate then
 			updateCustomDrop(arg2_3, var3_2[arg1_3 + 1])
+			onButton(arg0_2.parent, arg2_3, function()
+				arg0_2.parent.contextData:ShowMsgBox({
+					title = i18n("island_word_desc"),
+					type = IslandMsgBox.TYPE_COMMON_DROP_DESCRIBE,
+					dropData = var3_2[arg1_3 + 1]
+				})
+			end)
 		end
 	end)
 end
 
-function var0_0.Dispose(arg0_4)
+function var0_0.Dispose(arg0_5)
 	return
 end
 

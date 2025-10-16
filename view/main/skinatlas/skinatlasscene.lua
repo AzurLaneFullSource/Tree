@@ -10,25 +10,25 @@ end
 
 function var0_0.init(arg0_2)
 	arg0_2.canvasGroup = arg0_2._tf:GetComponent(typeof(CanvasGroup))
-	arg0_2.backBtn = arg0_2:findTF("adapt/top_panel/back_btn")
-	arg0_2.homeBtn = arg0_2:findTF("adapt/top_panel/option")
-	arg0_2.indexBtn = arg0_2:findTF("adapt/top_panel/index_btn")
+	arg0_2.backBtn = arg0_2._tf:Find("adapt/top_panel/back_btn")
+	arg0_2.homeBtn = arg0_2._tf:Find("adapt/top_panel/option")
+	arg0_2.indexBtn = arg0_2._tf:Find("adapt/top_panel/index_btn")
 	arg0_2.indexBtnSel = arg0_2.indexBtn:Find("sel")
-	arg0_2.inptuTr = arg0_2:findTF("adapt/top_panel/search")
-	arg0_2.emptyTr = arg0_2:findTF("adapt/main_panel/empty")
+	arg0_2.inptuTr = arg0_2._tf:Find("adapt/top_panel/search")
+	arg0_2.emptyTr = arg0_2._tf:Find("adapt/main_panel/empty")
 
-	local var0_2 = arg0_2:findTF("adapt/left_panel/mask/content/0")
-	local var1_2 = arg0_2:findTF("adapt/left_panel")
+	local var0_2 = arg0_2._tf:Find("adapt/left_panel/mask/content/0")
+	local var1_2 = arg0_2._tf:Find("adapt/left_panel")
 
 	arg0_2.rollingCircleRect = RollingCircleRect.New(var0_2, var1_2)
 
 	arg0_2.rollingCircleRect:SetCallback(arg0_2, var0_0.OnSelectSkinPage, var0_0.OnConfirmSkinPage)
 
-	arg0_2.scrollrect = arg0_2:findTF("adapt/main_panel/scrollrect"):GetComponent("LScrollRect")
+	arg0_2.scrollrect = arg0_2._tf:Find("adapt/main_panel/scrollrect"):GetComponent("LScrollRect")
 	arg0_2.previewPage = SkinAtlasPreviewPage.New(arg0_2._tf, arg0_2.event)
 
-	setText(arg0_2:findTF("adapt/main_panel/empty/Text1"), i18n("skinatlas_search_result_is_empty"))
-	setText(arg0_2:findTF("adapt/top_panel/search/holder"), i18n("skinatlas_search_holder"))
+	setText(arg0_2._tf:Find("adapt/main_panel/empty/Text1"), i18n("skinatlas_search_result_is_empty"))
+	setText(arg0_2._tf:Find("adapt/top_panel/search/holder"), i18n("skinatlas_search_holder"))
 
 	arg0_2.defaultIndex = {
 		typeIndex = ShipIndexConst.TypeAll,

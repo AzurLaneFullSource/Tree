@@ -98,27 +98,27 @@ function var0_0.willExit(arg0_9)
 end
 
 function var0_0.findUI(arg0_10)
-	local var0_10 = arg0_10:findTF("ForNotch")
+	local var0_10 = arg0_10._tf:Find("ForNotch")
 
-	arg0_10.backBtn = arg0_10:findTF("BackBtn", var0_10)
-	arg0_10.helpBtn = arg0_10:findTF("HelpBtn", var0_10)
-	arg0_10.countText = arg0_10:findTF("Count/CountText", var0_10)
+	arg0_10.backBtn = var0_10:Find("BackBtn")
+	arg0_10.helpBtn = var0_10:Find("HelpBtn")
+	arg0_10.countText = var0_10:Find("Count/CountText")
 
-	local var1_10 = arg0_10:findTF("GameContent")
+	local var1_10 = arg0_10._tf:Find("GameContent")
 
-	arg0_10.startBtn = arg0_10:findTF("StartBtn", var1_10)
-	arg0_10.ruleBtn = arg0_10:findTF("RuleBtn", var1_10)
+	arg0_10.startBtn = var1_10:Find("StartBtn")
+	arg0_10.ruleBtn = var1_10:Find("RuleBtn")
 
-	local var2_10 = arg0_10:findTF("Tip", var1_10)
+	local var2_10 = var1_10:Find("Tip")
 
-	arg0_10.considerTipTF = arg0_10:findTF("ConsiderTip", var2_10)
-	arg0_10.considerTimeText = arg0_10:findTF("TimeText", arg0_10.considerTipTF)
-	arg0_10.selectTipTF = arg0_10:findTF("SelectTip", var2_10)
-	arg0_10.selectTimeText = arg0_10:findTF("TimeText", arg0_10.selectTipTF)
-	arg0_10.selectedContainer = arg0_10:findTF("SelectedContainer", var1_10)
-	arg0_10.selectedTpl = arg0_10:findTF("SelectedTpl", var1_10)
+	arg0_10.considerTipTF = var2_10:Find("ConsiderTip")
+	arg0_10.considerTimeText = arg0_10.considerTipTF:Find("TimeText")
+	arg0_10.selectTipTF = var2_10:Find("SelectTip")
+	arg0_10.selectTimeText = arg0_10.selectTipTF:Find("TimeText")
+	arg0_10.selectedContainer = var1_10:Find("SelectedContainer")
+	arg0_10.selectedTpl = var1_10:Find("SelectedTpl")
 	arg0_10.selectedContainerCG = GetComponent(arg0_10.selectedContainer, "CanvasGroup")
-	arg0_10.snackContainer = arg0_10:findTF("SnackContainer", var1_10)
+	arg0_10.snackContainer = var1_10:Find("SnackContainer")
 	arg0_10.animtor = GetComponent(arg0_10.snackContainer, "Animator")
 	arg0_10.dftAniEvent = GetComponent(arg0_10.snackContainer, "DftAniEvent")
 
@@ -126,7 +126,7 @@ function var0_0.findUI(arg0_10)
 		arg0_10:setState(var0_0.States_Select)
 	end)
 
-	arg0_10.spineCharContainer = arg0_10:findTF("SpineChar", var1_10)
+	arg0_10.spineCharContainer = var1_10:Find("SpineChar")
 end
 
 function var0_0.initData(arg0_12)
@@ -194,7 +194,7 @@ function var0_0.addListener(arg0_16)
 
 		onButton(arg0_16, var0_16, function()
 			local var0_20 = arg0_16.snackIDList[iter0_16]
-			local var1_20 = arg0_16:findTF("SelectedTag", var0_16)
+			local var1_20 = var0_16:Find("SelectedTag")
 
 			if isActive(var1_20) == true then
 				table.removebyvalue(arg0_16.selectedIDList, var0_20)
@@ -244,9 +244,9 @@ function var0_0.updateSelectedList(arg0_23, arg1_23)
 
 	for iter0_23 = 1, var0_0.Order_Num do
 		local var0_23 = arg0_23.selectedContainer:GetChild(iter0_23 - 1)
-		local var1_23 = arg0_23:findTF("Empty", var0_23)
-		local var2_23 = arg0_23:findTF("Full", var0_23)
-		local var3_23 = arg0_23:findTF("SnackImg", var2_23)
+		local var1_23 = var0_23:Find("Empty")
+		local var2_23 = var0_23:Find("Full")
+		local var3_23 = var2_23:Find("SnackImg")
 
 		arg0_23.selectedTFList[iter0_23] = var0_23
 
@@ -264,12 +264,12 @@ end
 function var0_0.updateSnackList(arg0_24, arg1_24)
 	for iter0_24 = 1, var0_0.Snack_Num do
 		local var0_24 = arg0_24.snackContainer:GetChild(iter0_24 - 1)
-		local var1_24 = arg0_24:findTF("SnackImg", var0_24)
+		local var1_24 = var0_24:Find("SnackImg")
 		local var2_24 = arg1_24[iter0_24]
 
 		setImageSprite(var1_24, GetSpriteFromAtlas("ui/snackui_atlas", "snack_" .. var2_24))
 
-		local var3_24 = arg0_24:findTF("SelectedTag", var0_24)
+		local var3_24 = var0_24:Find("SelectedTag")
 
 		setActive(var3_24, false)
 
@@ -284,7 +284,7 @@ end
 
 function var0_0.updateSelectedOrderTag(arg0_26, arg1_26)
 	for iter0_26, iter1_26 in pairs(arg0_26.selectedSnackTFList) do
-		local var0_26 = arg0_26:findTF("SelectedTag", iter1_26)
+		local var0_26 = iter1_26:Find("SelectedTag")
 
 		if arg1_26 then
 			setActive(var0_26, false)

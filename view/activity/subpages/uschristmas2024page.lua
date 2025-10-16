@@ -1,12 +1,12 @@
 local var0_0 = class("USChristmas2024Page", import("view.base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.item = arg0_1:findTF("item", arg0_1.bg)
-	arg0_1.items = arg0_1:findTF("items", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.item = arg0_1.bg:Find("item")
+	arg0_1.items = arg0_1.bg:Find("items")
 	arg0_1.uilist = UIItemList.New(arg0_1.items, arg0_1.item)
-	arg0_1.awardNum = arg0_1:findTF("awardNum", arg0_1.bg)
-	arg0_1.linkBtn = arg0_1:findTF("linkBtn", arg0_1.bg)
+	arg0_1.awardNum = arg0_1.bg:Find("awardNum")
+	arg0_1.linkBtn = arg0_1.bg:Find("linkBtn")
 
 	setActive(arg0_1.item, false)
 end
@@ -27,7 +27,7 @@ end
 
 function var0_0.UpdateTask(arg0_5, arg1_5, arg2_5)
 	local var0_5 = arg1_5 + 1
-	local var1_5 = arg0_5:findTF("item", arg2_5)
+	local var1_5 = arg2_5:Find("item")
 	local var2_5 = arg0_5.taskGroup[arg0_5.nday][var0_5]
 	local var3_5
 	local var4_5 = arg0_5.activityTaskProxy:getTaskById(arg0_5.activity.id)
@@ -65,7 +65,7 @@ function var0_0.UpdateTask(arg0_5, arg1_5, arg2_5)
 	local var8_5 = var3_5:getProgress()
 	local var9_5 = var3_5:getConfig("target_num")
 
-	setText(arg0_5:findTF("description", arg2_5), var3_5:getConfig("desc"))
+	setText(arg2_5:Find("description"), var3_5:getConfig("desc"))
 
 	local var10_5, var11_5 = arg0_5:GetProgressColor()
 	local var12_5
@@ -76,12 +76,12 @@ function var0_0.UpdateTask(arg0_5, arg1_5, arg2_5)
 
 	var13_5 = var11_5 and setColorStr("/" .. var9_5, var11_5) or "/" .. var9_5
 
-	setText(arg0_5:findTF("progressText", arg2_5), var12_5 .. var13_5)
-	setSlider(arg0_5:findTF("progress", arg2_5), 0, var9_5, var8_5)
+	setText(arg2_5:Find("progressText"), var12_5 .. var13_5)
+	setSlider(arg2_5:Find("progress"), 0, var9_5, var8_5)
 
-	local var14_5 = arg0_5:findTF("go_btn", arg2_5)
-	local var15_5 = arg0_5:findTF("get_btn", arg2_5)
-	local var16_5 = arg0_5:findTF("got_btn", arg2_5)
+	local var14_5 = arg2_5:Find("go_btn")
+	local var15_5 = arg2_5:Find("get_btn")
+	local var16_5 = arg2_5:Find("got_btn")
 	local var17_5 = var3_5:getTaskStatus()
 
 	setActive(var14_5, not var6_5 and var17_5 == 0)

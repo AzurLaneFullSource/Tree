@@ -9,20 +9,20 @@ function var0_0.setPlayerVO(arg0_2, arg1_2)
 end
 
 function var0_0.init(arg0_3)
-	arg0_3.frame = arg0_3:findTF("frame")
-	arg0_3.resumeIcon = arg0_3:findTF("frame/window/info/circle/head")
-	arg0_3.resumeStars = arg0_3:findTF("frame/window/info/circle/head/stars")
-	arg0_3.resumeStarTpl = arg0_3:findTF("frame/window/info/circle/head/star")
-	arg0_3.resumeLv = arg0_3:findTF("frame/window/info/player_info/level_bg/level"):GetComponent(typeof(Text))
-	arg0_3.resumeName = arg0_3:findTF("frame/window/info/player_info/name_bg/name"):GetComponent(typeof(Text))
-	arg0_3.resumeInfo = arg0_3:findTF("frame/window/summary/content")
-	arg0_3.resumeEmblem = arg0_3:findTF("frame/window/info/rank_bg/rank/Image")
-	arg0_3.resumeEmblemLabel = arg0_3:findTF("frame/window/info/rank_bg/rank/label")
-	arg0_3.resumeMedalList = arg0_3:findTF("frame/window/medalList/container")
-	arg0_3.resumeMedalTpl = arg0_3:findTF("frame/window/medal_tpl")
-	arg0_3.closeBtn = arg0_3:findTF("frame/window/title_bg/close_btn")
-	arg0_3.circle = arg0_3:findTF("frame/window/info/circle/head/frame")
-	arg0_3.titleText = arg0_3:findTF("frame/title/label_cn/text")
+	arg0_3.frame = arg0_3._tf:Find("frame")
+	arg0_3.resumeIcon = arg0_3._tf:Find("frame/window/info/circle/head")
+	arg0_3.resumeStars = arg0_3._tf:Find("frame/window/info/circle/head/stars")
+	arg0_3.resumeStarTpl = arg0_3._tf:Find("frame/window/info/circle/head/star")
+	arg0_3.resumeLv = arg0_3._tf:Find("frame/window/info/player_info/level_bg/level"):GetComponent(typeof(Text))
+	arg0_3.resumeName = arg0_3._tf:Find("frame/window/info/player_info/name_bg/name"):GetComponent(typeof(Text))
+	arg0_3.resumeInfo = arg0_3._tf:Find("frame/window/summary/content")
+	arg0_3.resumeEmblem = arg0_3._tf:Find("frame/window/info/rank_bg/rank/Image")
+	arg0_3.resumeEmblemLabel = arg0_3._tf:Find("frame/window/info/rank_bg/rank/label")
+	arg0_3.resumeMedalList = arg0_3._tf:Find("frame/window/medalList/container")
+	arg0_3.resumeMedalTpl = arg0_3._tf:Find("frame/window/medal_tpl")
+	arg0_3.closeBtn = arg0_3._tf:Find("frame/window/title_bg/close_btn")
+	arg0_3.circle = arg0_3._tf:Find("frame/window/info/circle/head/frame")
+	arg0_3.titleText = arg0_3._tf:Find("frame/title/label_cn/text")
 
 	local var0_3 = i18n("friend_resume_title_detail")
 
@@ -148,14 +148,14 @@ function var0_0.display(arg0_6, arg1_6)
 	for iter2_6 = 1, 5 do
 		local var8_6 = cloneTplTo(arg0_6.resumeMedalTpl, arg0_6.resumeMedalList)
 
-		setActive(arg0_6:findTF("empty", var8_6), iter2_6 > #arg1_6.displayTrophyList)
+		setActive(var8_6:Find("empty"), iter2_6 > #arg1_6.displayTrophyList)
 
 		if iter2_6 <= #arg1_6.displayTrophyList then
-			setActive(arg0_6:findTF("icon", var8_6), true)
+			setActive(var8_6:Find("icon"), true)
 
 			local var9_6 = pg.medal_template[arg1_6.displayTrophyList[iter2_6]]
 
-			LoadImageSpriteAsync("medal/" .. var9_6.icon, arg0_6:findTF("icon", var8_6), true)
+			LoadImageSpriteAsync("medal/" .. var9_6.icon, var8_6:Find("icon"), true)
 		end
 	end
 

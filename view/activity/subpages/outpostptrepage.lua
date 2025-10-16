@@ -9,11 +9,11 @@ local var1_0 = {
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.switchBtn = arg0_1:findTF("AD/switcher/switch_btn")
-	arg0_1.bar = arg0_1:findTF("AD/switcher/phase2/Image/bar")
-	arg0_1.displayBtn = arg0_1:findTF("AD/display_btn")
-	arg0_1.gotTag = arg0_1:findTF("AD/switcher/phase2/Image/got")
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.switchBtn = arg0_1._tf:Find("AD/switcher/switch_btn")
+	arg0_1.bar = arg0_1._tf:Find("AD/switcher/phase2/Image/bar")
+	arg0_1.displayBtn = arg0_1._tf:Find("AD/display_btn")
+	arg0_1.gotTag = arg0_1._tf:Find("AD/switcher/phase2/Image/got")
 
 	local var0_1 = arg0_1.displayBtn:Find("Image1")
 	local var1_1 = arg0_1.displayBtn:Find("Image2")

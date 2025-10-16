@@ -23,8 +23,8 @@ function var0_0.InitUI(arg0_4)
 	local var0_4 = arg0_4._tf:Find("Panel")
 
 	arg0_4.tfFleets = {
-		[FleetType.Normal] = arg0_4:findTF("Panel/Fleet/Normal"),
-		[FleetType.Submarine] = arg0_4:findTF("Panel/Fleet/Submarine")
+		[FleetType.Normal] = arg0_4._tf:Find("Panel/Fleet/Normal"),
+		[FleetType.Submarine] = arg0_4._tf:Find("Panel/Fleet/Submarine")
 	}
 	arg0_4.btnRecommend = var0_4:Find("Fleet/BtnRecommend")
 	arg0_4.btnClear = var0_4:Find("Fleet/BtnClear")
@@ -426,14 +426,14 @@ function var0_0.updateEliteFleets(arg0_41)
 	if not var3_41 then
 		local var8_41 = arg0_41.tfFleets[FleetType.Normal]
 
-		setText(arg0_41:findTF("bg/name", var8_41), Fleet.DEFAULT_NAME[var1_41])
+		setText(var8_41:Find("bg/name"), Fleet.DEFAULT_NAME[var1_41])
 		arg0_41:initAddButton(var8_41, TeamType.Main, var1_41)
 		arg0_41:initAddButton(var8_41, TeamType.Vanguard, var1_41)
 	else
 		local var9_41 = arg0_41.tfFleets[FleetType.Submarine]
 		local var10_41 = #arg0_41.contextData.fleets
 
-		setText(arg0_41:findTF("bg/name", var9_41), Fleet.DEFAULT_NAME[Fleet.SUBMARINE_FLEET_ID])
+		setText(var9_41:Find("bg/name"), Fleet.DEFAULT_NAME[Fleet.SUBMARINE_FLEET_ID])
 		arg0_41:initAddButton(var9_41, TeamType.Submarine, var10_41)
 	end
 

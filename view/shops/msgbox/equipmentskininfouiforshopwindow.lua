@@ -5,16 +5,16 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.displayPanel = arg0_2:findTF("display")
+	arg0_2.displayPanel = arg0_2._tf:Find("display")
 	arg0_2.displayActions = arg0_2.displayPanel:Find("actions")
-	arg0_2.displayNameTxt = arg0_2:findTF("info/display_panel/name_container/name", arg0_2.displayPanel):GetComponent(typeof(Text))
-	arg0_2.displayDescTxt = arg0_2:findTF("info/display_panel/desc", arg0_2.displayPanel):GetComponent(typeof(Text))
-	arg0_2.playBtn = arg0_2:findTF("info/play_btn", arg0_2.displayPanel)
+	arg0_2.displayNameTxt = arg0_2.displayPanel:Find("info/display_panel/name_container/name"):GetComponent(typeof(Text))
+	arg0_2.displayDescTxt = arg0_2.displayPanel:Find("info/display_panel/desc"):GetComponent(typeof(Text))
+	arg0_2.playBtn = arg0_2.displayPanel:Find("info/play_btn")
 	arg0_2.confirmBtn = arg0_2._tf:Find("display/actions/confirm")
 
-	setText(arg0_2:findTF("display/top/bg/infomation/title"), i18n("words_information"))
-	setText(arg0_2:findTF("display/actions/cancel/upgrade"), i18n("msgbox_text_cancel"))
-	setText(arg0_2:findTF("display/actions/confirm/change"), i18n("shop_word_exchange"))
+	setText(arg0_2._tf:Find("display/top/bg/infomation/title"), i18n("words_information"))
+	setText(arg0_2._tf:Find("display/actions/cancel/upgrade"), i18n("msgbox_text_cancel"))
+	setText(arg0_2._tf:Find("display/actions/confirm/change"), i18n("shop_word_exchange"))
 end
 
 function var0_0.OnInit(arg0_3)
@@ -65,11 +65,11 @@ function var0_0.UpdateSkinView(arg0_10, arg1_10)
 		return EquipType.Type2Name2(arg0_11)
 	end)
 
-	setScrollText(arg0_10:findTF("info/display_panel/equip_type/mask/Text", var0_10), table.concat(var2_10, ","))
+	setScrollText(var0_10:Find("info/display_panel/equip_type/mask/Text"), table.concat(var2_10, ","))
 	onButton(arg0_10, arg0_10.playBtn, function()
 		arg0_10:emit(NewShopMainMediator.ON_ESKIN_PREVIEW, arg1_10)
 	end, SFX_PANEL)
-	updateDrop(arg0_10:findTF("info/equip", var0_10), {
+	updateDrop(var0_10:Find("info/equip"), {
 		type = DROP_TYPE_EQUIPMENT_SKIN,
 		id = arg1_10
 	})

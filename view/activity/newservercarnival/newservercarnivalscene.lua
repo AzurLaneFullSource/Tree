@@ -54,23 +54,23 @@ function var0_0.setData(arg0_6)
 end
 
 function var0_0.init(arg0_7)
-	arg0_7.blurPanel = arg0_7:findTF("blur_panel")
-	arg0_7.top = arg0_7:findTF("adapt/top", arg0_7.blurPanel)
-	arg0_7.resPanel = arg0_7:findTF("res", arg0_7.top)
-	arg0_7.backBtn = arg0_7:findTF("back_btn", arg0_7.top)
-	arg0_7.helpBtn = arg0_7:findTF("help_btn", arg0_7.top)
-	arg0_7.leftPanel = arg0_7:findTF("left")
-	arg0_7.timeTF = arg0_7:findTF("time", arg0_7.leftPanel)
+	arg0_7.blurPanel = arg0_7._tf:Find("blur_panel")
+	arg0_7.top = arg0_7.blurPanel:Find("adapt/top")
+	arg0_7.resPanel = arg0_7.top:Find("res")
+	arg0_7.backBtn = arg0_7.top:Find("back_btn")
+	arg0_7.helpBtn = arg0_7.top:Find("help_btn")
+	arg0_7.leftPanel = arg0_7._tf:Find("left")
+	arg0_7.timeTF = arg0_7.leftPanel:Find("time")
 	arg0_7.toggles = {
-		arg0_7:findTF("frame/toggle_group/task", arg0_7.leftPanel),
-		arg0_7:findTF("frame/toggle_group/shop", arg0_7.leftPanel),
-		arg0_7:findTF("frame/toggle_group/gift", arg0_7.leftPanel)
+		arg0_7.leftPanel:Find("frame/toggle_group/task"),
+		arg0_7.leftPanel:Find("frame/toggle_group/shop"),
+		arg0_7.leftPanel:Find("frame/toggle_group/gift")
 	}
-	arg0_7.main = arg0_7:findTF("main")
+	arg0_7.main = arg0_7._tf:Find("main")
 	arg0_7.pages = {
-		arg0_7:findTF("task_container", arg0_7.main),
-		arg0_7:findTF("shop_container", arg0_7.main),
-		arg0_7:findTF("gift_container", arg0_7.main)
+		arg0_7.main:Find("task_container"),
+		arg0_7.main:Find("shop_container"),
+		arg0_7.main:Find("gift_container")
 	}
 	arg0_7.newServerTaskPage = NewServerTaskPage.New(arg0_7.pages[var0_0.TASK_PAGE], arg0_7.event, arg0_7.contextData)
 	arg0_7.newServerShopPage = NewServerShopPage.New(arg0_7.pages[var0_0.SHOP_PAGE], arg0_7.event, arg0_7.contextData)
@@ -95,7 +95,7 @@ function var0_0.didEnter(arg0_8)
 			helps = pg.gametip.newserver_activity_tip.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0_8, arg0_8:findTF("gem/add_btn", arg0_8.resPanel), function()
+	onButton(arg0_8, arg0_8.resPanel:Find("gem/add_btn"), function()
 		local function var0_11()
 			if not pg.m02:hasMediator(NewShopMainMediator.__cname) then
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
@@ -119,7 +119,7 @@ function var0_0.didEnter(arg0_8)
 		end
 	end, SFX_PANEL)
 	arg0_8:updateTime()
-	setText(arg0_8:findTF("gem/gem_value", arg0_8.resPanel), arg0_8.player:getTotalGem())
+	setText(arg0_8.resPanel:Find("gem/gem_value"), arg0_8.player:getTotalGem())
 
 	for iter0_8, iter1_8 in ipairs(arg0_8.toggles) do
 		onToggle(arg0_8, iter1_8, function(arg0_13)
@@ -139,7 +139,7 @@ function var0_0.didEnter(arg0_8)
 end
 
 function var0_0.updateShopDedDot(arg0_14)
-	setActive(arg0_14:findTF("tip", arg0_14.toggles[var0_0.SHOP_PAGE]), arg0_14.newServerShopPage:isTip())
+	setActive(arg0_14.toggles[var0_0.SHOP_PAGE]:Find("tip"), arg0_14.newServerShopPage:isTip())
 end
 
 function var0_0.updatePages(arg0_15, arg1_15, arg2_15)
@@ -158,15 +158,15 @@ end
 
 function var0_0.updateTips(arg0_16)
 	if arg0_16.taskActivity then
-		setActive(arg0_16:findTF("tip", arg0_16.toggles[var0_0.TASK_PAGE]), arg0_16.newServerTaskPage:isTip())
+		setActive(arg0_16.toggles[var0_0.TASK_PAGE]:Find("tip"), arg0_16.newServerTaskPage:isTip())
 	end
 
 	if arg0_16.shopActivity then
-		setActive(arg0_16:findTF("tip", arg0_16.toggles[var0_0.SHOP_PAGE]), arg0_16.newServerShopPage:isTip())
+		setActive(arg0_16.toggles[var0_0.SHOP_PAGE]:Find("tip"), arg0_16.newServerShopPage:isTip())
 	end
 
 	if arg0_16.giftActivity then
-		setActive(arg0_16:findTF("tip", arg0_16.toggles[var0_0.GIFT_PAGE]), arg0_16.newServerGiftPage:isTip())
+		setActive(arg0_16.toggles[var0_0.GIFT_PAGE]:Find("tip"), arg0_16.newServerGiftPage:isTip())
 	end
 end
 
@@ -187,8 +187,8 @@ function var0_0.updateTime(arg0_18)
 	local var3_18 = math.floor((var1_18 - var2_18 * 86400) / 3600)
 
 	setText(arg0_18.timeTF, i18n("newserver_time", var2_18, var3_18))
-	setActive(arg0_18:findTF("title_activity", arg0_18.timeTF), arg0_18.taskActivity)
-	setActive(arg0_18:findTF("title_shop", arg0_18.timeTF), not arg0_18.taskActivity)
+	setActive(arg0_18.timeTF:Find("title_activity"), arg0_18.taskActivity)
+	setActive(arg0_18.timeTF:Find("title_shop"), not arg0_18.taskActivity)
 end
 
 function var0_0.onUpdateTask(arg0_19)
@@ -200,7 +200,7 @@ end
 function var0_0.onUpdatePlayer(arg0_20, arg1_20)
 	arg0_20.player = arg1_20
 
-	setText(arg0_20:findTF("gem/gem_value", arg0_20.resPanel), arg0_20.player:getTotalGem())
+	setText(arg0_20.resPanel:Find("gem/gem_value"), arg0_20.player:getTotalGem())
 	arg0_20.newServerGiftPage:onUpdatePlayer(arg1_20)
 end
 

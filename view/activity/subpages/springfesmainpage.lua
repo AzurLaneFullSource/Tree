@@ -1,11 +1,11 @@
 local var0_0 = class("SpringFesMainPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.go1 = arg0_1:findTF("1", arg0_1.bg)
-	arg0_1.go2 = arg0_1:findTF("2", arg0_1.bg)
-	arg0_1.go3 = arg0_1:findTF("3", arg0_1.bg)
-	arg0_1.go4 = arg0_1:findTF("4", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.go1 = arg0_1.bg:Find("1")
+	arg0_1.go2 = arg0_1.bg:Find("2")
+	arg0_1.go3 = arg0_1.bg:Find("3")
+	arg0_1.go4 = arg0_1.bg:Find("4")
 end
 
 function var0_0.OnFirstFlush(arg0_2)

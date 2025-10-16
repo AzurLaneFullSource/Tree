@@ -1,7 +1,7 @@
 local var0_0 = class("BattleSubmarineRoutineResultLayer", import(".BattleResultLayer"))
 
 function var0_0.rankAnimaFinish(arg0_1)
-	local var0_1 = arg0_1:findTF("main/conditions")
+	local var0_1 = arg0_1._tf:Find("main/conditions")
 
 	SetActive(var0_1, true)
 	SetActive(var0_1:Find("bg16/bg_extra"), true)
@@ -16,7 +16,7 @@ function var0_0.rankAnimaFinish(arg0_1)
 	local var2_1 = LeanTween.delayedCall(1, System.Action(function()
 		arg0_1._stateFlag = var0_0.STATE_REPORTED
 
-		SetActive(arg0_1:findTF("jieuan01/tips", arg0_1._bg), true)
+		SetActive(arg0_1._bg:Find("jieuan01/tips"), true)
 	end))
 
 	table.insert(arg0_1._delayLeanList, var2_1.id)
@@ -65,7 +65,7 @@ function var0_0.displayBG(arg0_5)
 		arg0_5:displayPlayerInfo()
 		arg0_5:playSubExEnter()
 	end))
-	setActive(arg0_5:findTF("jieuan01/Bomb", arg0_5._bg), false)
+	setActive(arg0_5._bg:Find("jieuan01/Bomb"), false)
 end
 
 function var0_0.showRightBottomPanel(arg0_7)

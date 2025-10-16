@@ -1,13 +1,13 @@
 local var0_0 = class("SandiegoReformPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.progress = arg0_1:findTF("progress/left", arg0_1.bg)
-	arg0_1.gameBtn = arg0_1:findTF("start", arg0_1.bg)
-	arg0_1.helpBtn = arg0_1:findTF("mic", arg0_1.bg)
-	arg0_1.getSign = arg0_1:findTF("get", arg0_1.bg)
-	arg0_1.days = arg0_1:findTF("days", arg0_1.bg)
-	arg0_1.nums = arg0_1:findTF("count", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.progress = arg0_1.bg:Find("progress/left")
+	arg0_1.gameBtn = arg0_1.bg:Find("start")
+	arg0_1.helpBtn = arg0_1.bg:Find("mic")
+	arg0_1.getSign = arg0_1.bg:Find("get")
+	arg0_1.days = arg0_1.bg:Find("days")
+	arg0_1.nums = arg0_1.bg:Find("count")
 end
 
 function var0_0.OnDataSetting(arg0_2)

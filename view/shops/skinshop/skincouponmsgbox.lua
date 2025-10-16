@@ -5,16 +5,16 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.closeBtn = arg0_2:findTF("window/top/btnBack")
-	arg0_2.cancelBtn = arg0_2:findTF("window/button_container/cancel")
-	arg0_2.confirmBtn = arg0_2:findTF("window/button_container/confirm")
-	arg0_2.label1 = arg0_2:findTF("window/frame/Text"):GetComponent(typeof(Text))
-	arg0_2.leftItemTr = arg0_2:findTF("window/frame/left")
+	arg0_2.closeBtn = arg0_2._tf:Find("window/top/btnBack")
+	arg0_2.cancelBtn = arg0_2._tf:Find("window/button_container/cancel")
+	arg0_2.confirmBtn = arg0_2._tf:Find("window/button_container/confirm")
+	arg0_2.label1 = arg0_2._tf:Find("window/frame/Text"):GetComponent(typeof(Text))
+	arg0_2.leftItemTr = arg0_2._tf:Find("window/frame/left")
 	arg0_2.nameTxt = arg0_2.leftItemTr:Find("name_bg/Text"):GetComponent(typeof(Text))
 
 	setText(arg0_2.cancelBtn:Find("pic"), i18n("msgbox_text_cancel"))
 	setText(arg0_2.confirmBtn:Find("pic"), i18n("msgbox_text_confirm"))
-	setText(arg0_2:findTF("window/top/bg/infomation/title"), i18n("words_information"))
+	setText(arg0_2._tf:Find("window/top/bg/infomation/title"), i18n("words_information"))
 end
 
 function var0_0.OnInit(arg0_3)

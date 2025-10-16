@@ -4,7 +4,7 @@ function var0_0.OnFirstFlush(arg0_1)
 	arg0_1.uilist:make(function(arg0_2, arg1_2, arg2_2)
 		if arg0_2 == UIItemList.EventUpdate then
 			local var0_2 = arg1_2 + 1
-			local var1_2 = arg0_1:findTF("item", arg2_2)
+			local var1_2 = arg2_2:Find("item")
 			local var2_2 = arg0_1.taskGroup[arg0_1.nday][var0_2]
 			local var3_2 = arg0_1.taskProxy:getTaskById(var2_2) or arg0_1.taskProxy:getFinishTaskById(var2_2)
 
@@ -25,13 +25,13 @@ function var0_0.OnFirstFlush(arg0_1)
 			local var6_2 = var3_2:getProgress()
 			local var7_2 = var3_2:getConfig("target_num")
 
-			setText(arg0_1:findTF("description", arg2_2), var3_2:getConfig("desc"))
-			setText(arg0_1:findTF("progressText", arg2_2), setColorStr(var6_2, "#36AF41FF") .. "/" .. var7_2)
-			setSlider(arg0_1:findTF("progress", arg2_2), 0, var7_2, var6_2)
+			setText(arg2_2:Find("description"), var3_2:getConfig("desc"))
+			setText(arg2_2:Find("progressText"), setColorStr(var6_2, "#36AF41FF") .. "/" .. var7_2)
+			setSlider(arg2_2:Find("progress"), 0, var7_2, var6_2)
 
-			local var8_2 = arg0_1:findTF("go_btn", arg2_2)
-			local var9_2 = arg0_1:findTF("get_btn", arg2_2)
-			local var10_2 = arg0_1:findTF("got_btn", arg2_2)
+			local var8_2 = arg2_2:Find("go_btn")
+			local var9_2 = arg2_2:Find("get_btn")
+			local var10_2 = arg2_2:Find("got_btn")
 			local var11_2 = var3_2:getTaskStatus()
 
 			setActive(var8_2, var11_2 == 0)

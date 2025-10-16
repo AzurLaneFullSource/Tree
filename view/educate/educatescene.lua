@@ -29,79 +29,79 @@ function var0_0.initData(arg0_6)
 end
 
 function var0_0.findUI(arg0_7)
-	arg0_7.mainAnim = arg0_7:findTF("anim_root"):GetComponent(typeof(Animation))
-	arg0_7.bgTF = arg0_7:findTF("anim_root/bg")
-	arg0_7.blurPanel = arg0_7:findTF("anim_root/blur_panel")
+	arg0_7.mainAnim = arg0_7._tf:Find("anim_root"):GetComponent(typeof(Animation))
+	arg0_7.bgTF = arg0_7._tf:Find("anim_root/bg")
+	arg0_7.blurPanel = arg0_7._tf:Find("anim_root/blur_panel")
 	arg0_7.blurPanelAnim = arg0_7.blurPanel:GetComponent(typeof(Animation))
-	arg0_7.topTF = arg0_7:findTF("top", arg0_7.blurPanel)
-	arg0_7.favorBtn = arg0_7:findTF("favor", arg0_7.topTF)
-	arg0_7.favorLvTF = arg0_7:findTF("anim_root/Text", arg0_7.favorBtn)
-	arg0_7.favorMaxTF = arg0_7:findTF("anim_root/max", arg0_7.favorBtn)
-	arg0_7.favorBtnAnim = arg0_7:findTF("anim_root", arg0_7.favorBtn):GetComponent(typeof(Animation))
-	arg0_7.favorBtnAnimEvent = arg0_7:findTF("anim_root", arg0_7.favorBtn):GetComponent(typeof(DftAniEvent))
+	arg0_7.topTF = arg0_7.blurPanel:Find("top")
+	arg0_7.favorBtn = arg0_7.topTF:Find("favor")
+	arg0_7.favorLvTF = arg0_7.favorBtn:Find("anim_root/Text")
+	arg0_7.favorMaxTF = arg0_7.favorBtn:Find("anim_root/max")
+	arg0_7.favorBtnAnim = arg0_7.favorBtn:Find("anim_root"):GetComponent(typeof(Animation))
+	arg0_7.favorBtnAnimEvent = arg0_7.favorBtn:Find("anim_root"):GetComponent(typeof(DftAniEvent))
 
 	arg0_7.favorBtnAnimEvent:SetTriggerEvent(function()
 		arg0_7:updateFavorBtn()
 	end)
 
-	arg0_7.mainTF = arg0_7:findTF("anim_root/main")
-	arg0_7.paintTF = arg0_7:findTF("painting", arg0_7.mainTF)
-	arg0_7.dialogueTF = arg0_7:findTF("dialogue", arg0_7.blurPanel)
-	arg0_7.dialogueContent = arg0_7:findTF("content", arg0_7.dialogueTF)
+	arg0_7.mainTF = arg0_7._tf:Find("anim_root/main")
+	arg0_7.paintTF = arg0_7.mainTF:Find("painting")
+	arg0_7.dialogueTF = arg0_7.blurPanel:Find("dialogue")
+	arg0_7.dialogueContent = arg0_7.dialogueTF:Find("content")
 
 	setActive(arg0_7.dialogueTF, false)
 
-	arg0_7.bubbleTF = arg0_7:findTF("anim_root/blur_panel/bubble")
+	arg0_7.bubbleTF = arg0_7._tf:Find("anim_root/blur_panel/bubble")
 
 	setActive(arg0_7.bubbleTF, false)
 
-	arg0_7.bubbleBtn = arg0_7:findTF("bubble", arg0_7.bubbleTF)
-	arg0_7.optionsTF = arg0_7:findTF("options", arg0_7.mainTF)
-	arg0_7.chatBtn = arg0_7:findTF("options/chat", arg0_7.optionsTF)
-	arg0_7.giftBtn = arg0_7:findTF("options/gift", arg0_7.optionsTF)
+	arg0_7.bubbleBtn = arg0_7.bubbleTF:Find("bubble")
+	arg0_7.optionsTF = arg0_7.mainTF:Find("options")
+	arg0_7.chatBtn = arg0_7.optionsTF:Find("options/chat")
+	arg0_7.giftBtn = arg0_7.optionsTF:Find("options/gift")
 
 	setActive(arg0_7.optionsTF, false)
 
-	arg0_7.bottomTF = arg0_7:findTF("bottom", arg0_7.blurPanel)
-	arg0_7.bookBtn = arg0_7:findTF("left/btns/book", arg0_7.bottomTF)
+	arg0_7.bottomTF = arg0_7.blurPanel:Find("bottom")
+	arg0_7.bookBtn = arg0_7.bottomTF:Find("left/btns/book")
 
-	setText(arg0_7:findTF("unlock/Text", arg0_7.bookBtn), i18n("child_btn_collect"))
+	setText(arg0_7.bookBtn:Find("unlock/Text"), i18n("child_btn_collect"))
 
-	arg0_7.mindBtn = arg0_7:findTF("left/btns/mind", arg0_7.bottomTF)
+	arg0_7.mindBtn = arg0_7.bottomTF:Find("left/btns/mind")
 
-	setText(arg0_7:findTF("unlock/Text", arg0_7.mindBtn), i18n("child_btn_mind"))
+	setText(arg0_7.mindBtn:Find("unlock/Text"), i18n("child_btn_mind"))
 
-	arg0_7.bagBtn = arg0_7:findTF("left/btns/bag", arg0_7.bottomTF)
+	arg0_7.bagBtn = arg0_7.bottomTF:Find("left/btns/bag")
 
-	setText(arg0_7:findTF("unlock/Text", arg0_7.bagBtn), i18n("child_btn_bag"))
+	setText(arg0_7.bagBtn:Find("unlock/Text"), i18n("child_btn_bag"))
 
-	arg0_7.datePanel = EducateDatePanel.New(arg0_7:findTF("date", arg0_7.topTF), arg0_7.event)
+	arg0_7.datePanel = EducateDatePanel.New(arg0_7.topTF:Find("date"), arg0_7.event)
 
 	arg0_7.datePanel:RegisterView(arg0_7)
 
-	arg0_7.favorPanel = EducateFavorPanel.New(arg0_7:findTF("favor_panel", arg0_7.topTF), arg0_7.event)
+	arg0_7.favorPanel = EducateFavorPanel.New(arg0_7.topTF:Find("favor_panel"), arg0_7.event)
 
 	arg0_7.favorPanel:RegisterView(arg0_7)
 
-	arg0_7.resPanel = EducateResPanel.New(arg0_7:findTF("res", arg0_7.topTF), arg0_7.event)
+	arg0_7.resPanel = EducateResPanel.New(arg0_7.topTF:Find("res"), arg0_7.event)
 
 	arg0_7.resPanel:RegisterView(arg0_7)
 
-	arg0_7.topPanel = EducateTopPanel.New(arg0_7:findTF("top_right", arg0_7.topTF), arg0_7.event)
+	arg0_7.topPanel = EducateTopPanel.New(arg0_7.topTF:Find("top_right"), arg0_7.event)
 
 	arg0_7.topPanel:RegisterView(arg0_7)
 
-	arg0_7.targetPanel = EducateTargetPanel.New(arg0_7:findTF("target", arg0_7.topTF), arg0_7.event)
+	arg0_7.targetPanel = EducateTargetPanel.New(arg0_7.topTF:Find("target"), arg0_7.event)
 
 	arg0_7.targetPanel:RegisterView(arg0_7)
 
-	arg0_7.bottomPanel = EducateBottomPanel.New(arg0_7:findTF("right", arg0_7.bottomTF), arg0_7.event, {
+	arg0_7.bottomPanel = EducateBottomPanel.New(arg0_7.bottomTF:Find("right"), arg0_7.event, {
 		isMainEnter = arg0_7.contextData.isMainEnter
 	})
 
 	arg0_7.bottomPanel:RegisterView(arg0_7)
 
-	arg0_7.archivePanel = EducateArchivePanel.New(arg0_7:findTF("archive_panel", arg0_7.mainTF), arg0_7.event, {
+	arg0_7.archivePanel = EducateArchivePanel.New(arg0_7.mainTF:Find("archive_panel"), arg0_7.event, {
 		isShow = true,
 		isMainEnter = arg0_7.contextData.isMainEnter
 	})
@@ -119,7 +119,7 @@ function var0_0._loadSubViews(arg0_9)
 	arg0_9.archivePanel:Load()
 	arg0_9:OverlayPanel(arg0_9.blurPanel, {
 		pbList = {
-			arg0_9:findTF("bottom/left", arg0_9.blurPanel)
+			arg0_9.blurPanel:Find("bottom/left")
 		}
 	})
 
@@ -149,7 +149,7 @@ function var0_0.addListener(arg0_10)
 		}))
 	end, SFX_PANEL)
 	onButton(arg0_10, arg0_10.mindBtn, function()
-		if isActive(arg0_10:findTF("lock", arg0_10.mindBtn)) then
+		if isActive(arg0_10.mindBtn:Find("lock")) then
 			return
 		end
 
@@ -164,7 +164,7 @@ function var0_0.addListener(arg0_10)
 		}))
 	end, SFX_PANEL)
 	onButton(arg0_10, arg0_10.bagBtn, function()
-		if isActive(arg0_10:findTF("lock", arg0_10.bagBtn)) then
+		if isActive(arg0_10.bagBtn:Find("lock")) then
 			return
 		end
 
@@ -173,7 +173,7 @@ function var0_0.addListener(arg0_10)
 			viewComponent = EducateBagLayer
 		}))
 	end, SFX_PANEL)
-	onButton(arg0_10, arg0_10:findTF("fitter", arg0_10.paintTF), function()
+	onButton(arg0_10, arg0_10.paintTF:Find("fitter"), function()
 		arg0_10:ShowDialogue()
 	end, SFX_PANEL)
 end
@@ -368,8 +368,8 @@ function var0_0.checkBubbleShow(arg0_48)
 	local var1_48 = getProxy(EducateProxy):GetCharData()
 
 	if #var0_48 > 0 then
-		setActive(arg0_48:findTF("Text", arg0_48.bubbleBtn), true)
-		setActive(arg0_48:findTF("Image", arg0_48.bubbleBtn), false)
+		setActive(arg0_48.bubbleBtn:Find("Text"), true)
+		setActive(arg0_48.bubbleBtn:Find("Image"), false)
 		arg0_48:showBubble(function()
 			arg0_48:emit(EducateMediator.ON_SPECIAL_EVENT_TRIGGER, {
 				id = var0_48[1].id,
@@ -382,8 +382,8 @@ function var0_0.checkBubbleShow(arg0_48)
 			})
 		end)
 	elseif var1_48:CheckFavor() then
-		setActive(arg0_48:findTF("Text", arg0_48.bubbleBtn), false)
-		setActive(arg0_48:findTF("Image", arg0_48.bubbleBtn), true)
+		setActive(arg0_48.bubbleBtn:Find("Text"), false)
+		setActive(arg0_48.bubbleBtn:Find("Image"), true)
 		arg0_48:showBubble(function()
 			arg0_48:emit(EducateMediator.ON_UPGRADE_FAVOR, function()
 				arg0_48:checkBubbleShow()
@@ -418,23 +418,23 @@ end
 function var0_0.updateUnlockBtns(arg0_59)
 	local var0_59 = EducateHelper.IsSystemUnlock(EducateConst.SYSTEM_MEMORY)
 
-	setActive(arg0_59:findTF("lock", arg0_59.bookBtn), not var0_59)
-	setActive(arg0_59:findTF("unlock", arg0_59.bookBtn), var0_59)
+	setActive(arg0_59.bookBtn:Find("lock"), not var0_59)
+	setActive(arg0_59.bookBtn:Find("unlock"), var0_59)
 
 	local var1_59 = EducateHelper.IsSystemUnlock(EducateConst.SYSTEM_BAG)
 
-	setActive(arg0_59:findTF("lock", arg0_59.bagBtn), not var1_59)
-	setActive(arg0_59:findTF("unlock", arg0_59.bagBtn), var1_59)
+	setActive(arg0_59.bagBtn:Find("lock"), not var1_59)
+	setActive(arg0_59.bagBtn:Find("unlock"), var1_59)
 
 	local var2_59 = EducateHelper.IsSystemUnlock(EducateConst.SYSTEM_FAVOR_AND_MIND)
 
-	setActive(arg0_59:findTF("lock", arg0_59.mindBtn), not var2_59)
-	setActive(arg0_59:findTF("unlock", arg0_59.mindBtn), var2_59)
+	setActive(arg0_59.mindBtn:Find("lock"), not var2_59)
+	setActive(arg0_59.mindBtn:Find("unlock"), var2_59)
 	setActive(arg0_59.favorBtn, var2_59)
 end
 
 function var0_0.updateMindTip(arg0_60)
-	setActive(arg0_60:findTF("unlock/tip", arg0_60.mindBtn), getProxy(EducateProxy):GetTaskProxy():IsShowMindTasksTip())
+	setActive(arg0_60.mindBtn:Find("unlock/tip"), getProxy(EducateProxy):GetTaskProxy():IsShowMindTasksTip())
 end
 
 function var0_0.updateWeekDay(arg0_61, arg1_61)
@@ -490,7 +490,7 @@ function var0_0.ShowDialogue(arg0_66)
 	setText(arg0_66.dialogueContent, var2_66)
 
 	local var3_66 = GetSpriteFromAtlas("paintingface/" .. arg0_66.paintingName, arg0_66.faceList[var0_66])
-	local var4_66 = arg0_66:findTF("fitter", arg0_66.paintTF):GetChild(0):Find("face")
+	local var4_66 = arg0_66.paintTF:Find("fitter"):GetChild(0):Find("face")
 
 	if var4_66 and var3_66 then
 		setImageSprite(var4_66, var3_66)
@@ -522,11 +522,11 @@ function var0_0.updateBookNewTip(arg0_70)
 	end)
 	local var1_70 = EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_POLAROID)
 
-	setActive(arg0_70:findTF("unlock/new", arg0_70.bookBtn), var0_70 or var1_70)
+	setActive(arg0_70.bookBtn:Find("unlock/new"), var0_70 or var1_70)
 end
 
 function var0_0.updateMindNewTip(arg0_72)
-	setActive(arg0_72:findTF("unlock/new", arg0_72.mindBtn), EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_MIND_TASK))
+	setActive(arg0_72.mindBtn:Find("unlock/new"), EducateTipHelper.IsShowNewTip(EducateTipHelper.NEW_MIND_TASK))
 end
 
 function var0_0.FlushView(arg0_73)

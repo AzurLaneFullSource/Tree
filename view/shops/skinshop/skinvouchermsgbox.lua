@@ -10,22 +10,22 @@ function var0_0.OnLoaded(arg0_2)
 	var0_0.super.OnLoaded(arg0_2)
 	setActive(arg0_2.confirmBtn, false)
 
-	arg0_2.realPriceBtn = arg0_2:findTF("window/button_container/real_price")
-	arg0_2.discountPriceBtn = arg0_2:findTF("window/button_container/discount_price")
+	arg0_2.realPriceBtn = arg0_2._tf:Find("window/button_container/real_price")
+	arg0_2.discountPriceBtn = arg0_2._tf:Find("window/button_container/discount_price")
 
 	setText(arg0_2._tf:Find("window/top/bg/infomation/title"), i18n("title_info"))
 
-	arg0_2.nonUseBtn = arg0_2:findTF("window/frame/option/nonuse")
-	arg0_2.useBtn = arg0_2:findTF("window/frame/option/use")
-	arg0_2.scrollrect = arg0_2:findTF("window/frame/scrollrect")
-	arg0_2.optionTr = arg0_2:findTF("window/frame/option")
-	arg0_2.switchBtn = arg0_2:findTF("window/frame/option/use/link")
-	arg0_2.tipBar = arg0_2:findTF("window/frame/tipBar")
-	arg0_2.tipText = arg0_2:findTF("Text", arg0_2.tipBar)
-	arg0_2.linkText = arg0_2:findTF("window/frame/option/use/link/Text"):GetComponent(typeof(Text))
+	arg0_2.nonUseBtn = arg0_2._tf:Find("window/frame/option/nonuse")
+	arg0_2.useBtn = arg0_2._tf:Find("window/frame/option/use")
+	arg0_2.scrollrect = arg0_2._tf:Find("window/frame/scrollrect")
+	arg0_2.optionTr = arg0_2._tf:Find("window/frame/option")
+	arg0_2.switchBtn = arg0_2._tf:Find("window/frame/option/use/link")
+	arg0_2.tipBar = arg0_2._tf:Find("window/frame/tipBar")
+	arg0_2.tipText = arg0_2.tipBar:Find("Text")
+	arg0_2.linkText = arg0_2._tf:Find("window/frame/option/use/link/Text"):GetComponent(typeof(Text))
 
-	setText(arg0_2:findTF("window/frame/option/nonuse/Text"), i18n("skin_shop_nonuse_label"))
-	setText(arg0_2:findTF("window/frame/option/use/Text"), i18n("skin_shop_use_label"))
+	setText(arg0_2._tf:Find("window/frame/option/nonuse/Text"), i18n("skin_shop_nonuse_label"))
+	setText(arg0_2._tf:Find("window/frame/option/use/Text"), i18n("skin_shop_use_label"))
 end
 
 function var0_0.RegisterBtn(arg0_3, arg1_3)
@@ -141,7 +141,7 @@ function var0_0.UpdateItem(arg0_17, arg1_17)
 
 	local var0_17 = arg1_17.itemList
 
-	UIItemList.StaticAlign(arg0_17:findTF("window/frame/scrollrect/list"), arg0_17:findTF("window/frame/left"), #var0_17, function(arg0_18, arg1_18, arg2_18)
+	UIItemList.StaticAlign(arg0_17._tf:Find("window/frame/scrollrect/list"), arg0_17._tf:Find("window/frame/left"), #var0_17, function(arg0_18, arg1_18, arg2_18)
 		if arg0_18 == UIItemList.EventUpdate then
 			arg0_17:FlushItem(var0_17[arg1_18 + 1], arg2_18)
 		end

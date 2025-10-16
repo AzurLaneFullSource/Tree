@@ -1,12 +1,12 @@
 local var0_0 = class("StoryAwardPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("bg")
-	arg0_1.itemTpl = arg0_1:findTF("Item")
-	arg0_1.taskItemTpl = arg0_1:findTF("TaskItem")
-	arg0_1.scrollTF = arg0_1:findTF("Mask/ScrollView")
-	arg0_1.container = arg0_1:findTF("Mask/ScrollView/Content")
-	arg0_1.arrow = arg0_1:findTF("Mask/Arrow")
+	arg0_1.bg = arg0_1._tf:Find("bg")
+	arg0_1.itemTpl = arg0_1._tf:Find("Item")
+	arg0_1.taskItemTpl = arg0_1._tf:Find("TaskItem")
+	arg0_1.scrollTF = arg0_1._tf:Find("Mask/ScrollView")
+	arg0_1.container = arg0_1._tf:Find("Mask/ScrollView/Content")
+	arg0_1.arrow = arg0_1._tf:Find("Mask/Arrow")
 end
 
 function var0_0.OnDataSetting(arg0_2)
@@ -19,10 +19,10 @@ function var0_0.OnFirstFlush(arg0_3)
 		local var0_3 = arg0_3.chapterIDList[iter0_3]
 		local var1_3 = pg.chapter_template[var0_3].chapter_name
 		local var2_3 = cloneTplTo(arg0_3.taskItemTpl, arg0_3.container, "TaskItem" .. tostring(iter0_3))
-		local var3_3 = arg0_3:findTF("TaskTitle/LevelBum", var2_3)
-		local var4_3 = arg0_3:findTF("ItemListContainer", var2_3)
-		local var5_3 = arg0_3:findTF("GotTag", var2_3)
-		local var6_3 = arg0_3:findTF("GetBtn", var2_3)
+		local var3_3 = var2_3:Find("TaskTitle/LevelBum")
+		local var4_3 = var2_3:Find("ItemListContainer")
+		local var5_3 = var2_3:Find("GotTag")
+		local var6_3 = var2_3:Find("GetBtn")
 
 		setText(var3_3, var1_3)
 
@@ -58,17 +58,17 @@ end
 function var0_0.OnUpdateFlush(arg0_7)
 	for iter0_7 = 1, #arg0_7.chapterIDList do
 		local var0_7 = arg0_7.chapterIDList[iter0_7]
-		local var1_7 = arg0_7:findTF("TaskItem" .. tostring(iter0_7), arg0_7.container)
-		local var2_7 = arg0_7:findTF("GotTag", var1_7)
-		local var3_7 = arg0_7:findTF("GetBtn", var1_7)
+		local var1_7 = arg0_7.container:Find("TaskItem" .. tostring(iter0_7))
+		local var2_7 = var1_7:Find("GotTag")
+		local var3_7 = var1_7:Find("GetBtn")
 		local var4_7 = _.include(arg0_7.activity.data1_list, var0_7)
 
 		if var4_7 then
 			var1_7.transform:SetAsLastSibling()
 		end
 
-		local var5_7 = arg0_7:findTF("TaskTitle", var1_7)
-		local var6_7 = arg0_7:findTF("ItemListContainer", var1_7)
+		local var5_7 = var1_7:Find("TaskTitle")
+		local var6_7 = var1_7:Find("ItemListContainer")
 
 		setGray(var5_7, var4_7)
 		setGray(var6_7, var4_7)

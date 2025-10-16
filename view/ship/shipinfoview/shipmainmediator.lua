@@ -474,6 +474,10 @@ function var0_0.nextPage(arg0_48, arg1_48, arg2_48)
 			-- block empty
 		end
 
+		if arg0_48.viewComponent:checkToggleActive(var6_48) == false then
+			var6_48 = ShipViewConst.PAGE.DETAIL
+		end
+
 		arg0_48.viewComponent:gotoPage(var6_48)
 		arg0_48.viewComponent:switchToPage(var6_48, true)
 	end

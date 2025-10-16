@@ -14,10 +14,10 @@ end
 
 function var0_0.OnInit(arg0_4)
 	arg0_4.loginPanel = arg0_4._tf
-	arg0_4.loginUsername = arg0_4:findTF("account/username", arg0_4.loginPanel)
-	arg0_4.loginPassword = arg0_4:findTF("password/password", arg0_4.loginPanel)
-	arg0_4.loginButton = arg0_4:findTF("login_button", arg0_4.loginPanel)
-	arg0_4.registerButton = arg0_4:findTF("register_button", arg0_4.loginPanel)
+	arg0_4.loginUsername = arg0_4.loginPanel:Find("account/username")
+	arg0_4.loginPassword = arg0_4.loginPanel:Find("password/password")
+	arg0_4.loginButton = arg0_4.loginPanel:Find("login_button")
+	arg0_4.registerButton = arg0_4.loginPanel:Find("register_button")
 
 	arg0_4:InitEvent()
 end

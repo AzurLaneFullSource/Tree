@@ -5,12 +5,12 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.recallBtn = arg0_2:findTF("Main/recall")
-	arg0_2.cryptolaliaBtn = arg0_2:findTF("Main/cryptolalia")
-	arg0_2.archiveBtn = arg0_2:findTF("Main/archive")
+	arg0_2.recallBtn = arg0_2._tf:Find("Main/recall")
+	arg0_2.cryptolaliaBtn = arg0_2._tf:Find("Main/cryptolalia")
+	arg0_2.archiveBtn = arg0_2._tf:Find("Main/archive")
 	arg0_2.archiveLockTF = arg0_2.archiveBtn:Find("lock")
-	arg0_2.recordBtn = arg0_2:findTF("Main/record")
-	arg0_2.albumBtn = arg0_2:findTF("Main/album")
+	arg0_2.recordBtn = arg0_2._tf:Find("Main/record")
+	arg0_2.albumBtn = arg0_2._tf:Find("Main/album")
 
 	setActive(arg0_2.albumBtn, not LOCK_ALBUM)
 
@@ -20,11 +20,11 @@ function var0_0.init(arg0_2)
 	setActive(var0_2:Find("Image"), not LOCK_ALBUM)
 	setActive(var0_2:Find("Image1"), LOCK_ALBUM)
 
-	arg0_2.optionBtn = arg0_2:findTF("Top/blur_panel/adapt/top/option")
-	arg0_2.backBtn = arg0_2:findTF("Top/blur_panel/adapt/top/back_btn")
+	arg0_2.optionBtn = arg0_2._tf:Find("Top/blur_panel/adapt/top/option")
+	arg0_2.backBtn = arg0_2._tf:Find("Top/blur_panel/adapt/top/back_btn")
 
-	setText(arg0_2:findTF("Main/empty/label"), i18n("cryptolalia_unopen"))
-	setText(arg0_2:findTF("Main/empty1/label"), i18n("cryptolalia_unopen"))
+	setText(arg0_2._tf:Find("Main/empty/label"), i18n("cryptolalia_unopen"))
+	setText(arg0_2._tf:Find("Main/empty1/label"), i18n("cryptolalia_unopen"))
 end
 
 function var0_0.didEnter(arg0_3)

@@ -5,12 +5,12 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.closeBtn = arg0_2:findTF("frame/close")
-	arg0_2.uiItemList = UIItemList.New(arg0_2:findTF("frame/list/content"), arg0_2:findTF("frame/list/content/tpl"))
-	arg0_2.totalExp = arg0_2:findTF("frame/subtitle/Text"):GetComponent(typeof(Text))
+	arg0_2.closeBtn = arg0_2._tf:Find("frame/close")
+	arg0_2.uiItemList = UIItemList.New(arg0_2._tf:Find("frame/list/content"), arg0_2._tf:Find("frame/list/content/tpl"))
+	arg0_2.totalExp = arg0_2._tf:Find("frame/subtitle/Text"):GetComponent(typeof(Text))
 
-	setText(arg0_2:findTF("frame/title"), i18n("courtyard_label_exp_addition"))
-	setText(arg0_2:findTF("frame/subtitle"), i18n("courtyard_label_total_exp_addition"))
+	setText(arg0_2._tf:Find("frame/title"), i18n("courtyard_label_exp_addition"))
+	setText(arg0_2._tf:Find("frame/subtitle"), i18n("courtyard_label_total_exp_addition"))
 
 	arg0_2.timers = {}
 end

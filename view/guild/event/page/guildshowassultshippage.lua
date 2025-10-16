@@ -5,9 +5,9 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.scrollrect = arg0_2:findTF("frame/scrollrect"):GetComponent("LScrollRect")
-	arg0_2.closeBtn = arg0_2:findTF("frame/close")
-	arg0_2.progress = arg0_2:findTF("frame/progress"):GetComponent(typeof(Text))
+	arg0_2.scrollrect = arg0_2._tf:Find("frame/scrollrect"):GetComponent("LScrollRect")
+	arg0_2.closeBtn = arg0_2._tf:Find("frame/close")
+	arg0_2.progress = arg0_2._tf:Find("frame/progress"):GetComponent(typeof(Text))
 end
 
 function var0_0.OnAssultShipBeRecommanded(arg0_3, arg1_3)

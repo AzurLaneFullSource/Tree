@@ -17,27 +17,27 @@ function var0_0.setCapacity(arg0_4, arg1_4)
 end
 
 function var0_0.init(arg0_5)
-	arg0_5.designScrollView = arg0_5:findTF("equipment_scrollview")
-	arg0_5.equipmentTpl = arg0_5:findTF("equipment_tpl")
-	arg0_5.equipmentContainer = arg0_5:findTF("equipment_grid", arg0_5.designScrollView)
-	arg0_5.msgBoxTF = arg0_5:findTF("msg_panel")
+	arg0_5.designScrollView = arg0_5._tf:Find("equipment_scrollview")
+	arg0_5.equipmentTpl = arg0_5._tf:Find("equipment_tpl")
+	arg0_5.equipmentContainer = arg0_5.designScrollView:Find("equipment_grid")
+	arg0_5.msgBoxTF = arg0_5._tf:Find("msg_panel")
 
 	setActive(arg0_5.msgBoxTF, false)
 
-	arg0_5.top = arg0_5:findTF("top")
-	arg0_5.sortBtn = arg0_5:findTF("sort_button", arg0_5.top)
-	arg0_5.indexBtn = arg0_5:findTF("index_button", arg0_5.top)
-	arg0_5.decBtn = arg0_5:findTF("dec_btn", arg0_5.sortBtn)
-	arg0_5.sortImgAsc = arg0_5:findTF("asc", arg0_5.decBtn)
-	arg0_5.sortImgDec = arg0_5:findTF("desc", arg0_5.decBtn)
-	arg0_5.indexPanel = arg0_5:findTF("index")
-	arg0_5.tagContainer = arg0_5:findTF("adapt/mask/panel", arg0_5.indexPanel)
-	arg0_5.tagTpl = arg0_5:findTF("tpl", arg0_5.tagContainer)
-	arg0_5.listEmptyTF = arg0_5:findTF("empty")
+	arg0_5.top = arg0_5._tf:Find("top")
+	arg0_5.sortBtn = arg0_5.top:Find("sort_button")
+	arg0_5.indexBtn = arg0_5.top:Find("index_button")
+	arg0_5.decBtn = arg0_5.sortBtn:Find("dec_btn")
+	arg0_5.sortImgAsc = arg0_5.decBtn:Find("asc")
+	arg0_5.sortImgDec = arg0_5.decBtn:Find("desc")
+	arg0_5.indexPanel = arg0_5._tf:Find("index")
+	arg0_5.tagContainer = arg0_5.indexPanel:Find("adapt/mask/panel")
+	arg0_5.tagTpl = arg0_5.tagContainer:Find("tpl")
+	arg0_5.listEmptyTF = arg0_5._tf:Find("empty")
 
 	setActive(arg0_5.listEmptyTF, false)
 
-	arg0_5.listEmptyTxt = arg0_5:findTF("Text", arg0_5.listEmptyTF)
+	arg0_5.listEmptyTxt = arg0_5.listEmptyTF:Find("Text")
 
 	setText(arg0_5.listEmptyTxt, i18n("list_empty_tip_equipmentdesignui"))
 	arg0_5:OverlayPanel(arg0_5.indexPanel)
@@ -45,7 +45,7 @@ end
 
 function var0_0.SetParentTF(arg0_6, arg1_6)
 	arg0_6.parentTF = arg1_6
-	arg0_6.equipmentView = arg0_6:findTF("adapt/equipment_scrollview", arg0_6.parentTF)
+	arg0_6.equipmentView = arg0_6.parentTF:Find("adapt/equipment_scrollview")
 
 	setActive(arg0_6.equipmentView, false)
 end
@@ -331,9 +331,11 @@ local function var2_0(arg0_22, arg1_22)
 end
 
 function var0_0.createDesign(arg0_25, arg1_25)
+	arg1_25 = tf(arg1_25)
+
 	local var0_25 = findTF(arg1_25, "info/count")
 	local var1_25 = findTF(arg1_25, "mask")
-	local var2_25 = arg0_25:findTF("name_bg/mask/name", arg1_25)
+	local var2_25 = arg1_25:Find("name_bg/mask/name")
 	local var3_25 = {
 		go = arg1_25,
 		nameTxt = var2_25
@@ -587,7 +589,7 @@ function var0_0.filter(arg0_37, arg1_37, arg2_37)
 
 	local var8_37 = GetSpriteFromAtlas("ui/equipmentdesignui_atlas", var1_0[arg1_37])
 
-	setImageSprite(arg0_37:findTF("Image", arg0_37.sortBtn), var8_37)
+	setImageSprite(arg0_37.sortBtn:Find("Image"), var8_37)
 	setActive(arg0_37.sortImgAsc, arg0_37.asc)
 	setActive(arg0_37.sortImgDec, not arg0_37.asc)
 end
@@ -642,9 +644,9 @@ function var0_0.showDesignDesc(arg0_46, arg1_46)
 	local var9_46 = arg0_46:getItemById(var1_46.material_id)
 	local var10_46 = math.floor(var9_46.count / var1_46.material_num)
 	local var11_46 = 1
-	local var12_46 = arg0_46:findTF("bg/calc/values/Text", var0_46)
+	local var12_46 = var0_46:Find("bg/calc/values/Text")
 	local var13_46 = var1_46.gold_num
-	local var14_46 = arg0_46:findTF("bg/calc/gold/Text", var0_46)
+	local var14_46 = var0_46:Find("bg/calc/gold/Text")
 
 	local function var15_46(arg0_47)
 		setText(var12_46, arg0_47)

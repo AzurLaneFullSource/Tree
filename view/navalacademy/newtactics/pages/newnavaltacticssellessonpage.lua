@@ -5,24 +5,24 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.skillPanel = arg0_2:findTF("skill")
-	arg0_2.cancelBtn = arg0_2:findTF("cancel_btn")
-	arg0_2.confirmBtn = arg0_2:findTF("confirm_btn")
-	arg0_2.toggleGroup = arg0_2:findTF("items"):GetComponent(typeof(ToggleGroup))
-	arg0_2.lessonNameTxt = arg0_2:findTF("introl/name"):GetComponent(typeof(Text))
-	arg0_2.lessonDescTxt = arg0_2:findTF("introl/desc"):GetComponent(typeof(Text))
-	arg0_2.lessonExpTxt = arg0_2:findTF("introl/exp_Text"):GetComponent(typeof(Text))
-	arg0_2.lessonTimeTxt = arg0_2:findTF("introl/timer_Text"):GetComponent(typeof(Text))
-	arg0_2.skillCard = NewNavalTacticsAdditionSkillCard.New(arg0_2:findTF("skill/info"))
+	arg0_2.skillPanel = arg0_2._tf:Find("skill")
+	arg0_2.cancelBtn = arg0_2._tf:Find("cancel_btn")
+	arg0_2.confirmBtn = arg0_2._tf:Find("confirm_btn")
+	arg0_2.toggleGroup = arg0_2._tf:Find("items"):GetComponent(typeof(ToggleGroup))
+	arg0_2.lessonNameTxt = arg0_2._tf:Find("introl/name"):GetComponent(typeof(Text))
+	arg0_2.lessonDescTxt = arg0_2._tf:Find("introl/desc"):GetComponent(typeof(Text))
+	arg0_2.lessonExpTxt = arg0_2._tf:Find("introl/exp_Text"):GetComponent(typeof(Text))
+	arg0_2.lessonTimeTxt = arg0_2._tf:Find("introl/timer_Text"):GetComponent(typeof(Text))
+	arg0_2.skillCard = NewNavalTacticsAdditionSkillCard.New(arg0_2._tf:Find("skill/info"))
 	arg0_2.itemTpls = {
-		arg0_2:findTF("items/scorll/content/item")
+		arg0_2._tf:Find("items/scorll/content/item")
 	}
 	arg0_2.startPos = arg0_2.itemTpls[1].anchoredPosition
 	arg0_2.space = Vector2(60, 30)
 	arg0_2.cloumnCnt = 6
 
-	setText(arg0_2:findTF("introl/exp_label"), i18n("tactics_class_get_exp"))
-	setText(arg0_2:findTF("introl/timer_label"), i18n("tactics_class_spend_time"))
+	setText(arg0_2._tf:Find("introl/exp_label"), i18n("tactics_class_get_exp"))
+	setText(arg0_2._tf:Find("introl/timer_label"), i18n("tactics_class_spend_time"))
 	setText(arg0_2.confirmBtn:Find("Image"), i18n("tactics_class_start"))
 	setText(arg0_2.cancelBtn:Find("Image"), i18n("tactics_class_cancel"))
 end

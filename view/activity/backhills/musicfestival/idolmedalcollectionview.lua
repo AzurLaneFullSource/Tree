@@ -45,27 +45,27 @@ function var0_0.initData(arg0_5)
 end
 
 function var0_0.findUI(arg0_6)
-	arg0_6.bg = arg0_6:findTF("BG")
+	arg0_6.bg = arg0_6._tf:Find("BG")
 
-	local var0_6 = arg0_6:findTF("NotchAdapt")
+	local var0_6 = arg0_6._tf:Find("NotchAdapt")
 
-	arg0_6.backBtn = arg0_6:findTF("BackBtn", var0_6)
-	arg0_6.progressText = arg0_6:findTF("ProgressImg/ProgressText", var0_6)
-	arg0_6.helpBtn = arg0_6:findTF("HelpBtn", var0_6)
+	arg0_6.backBtn = var0_6:Find("BackBtn")
+	arg0_6.progressText = var0_6:Find("ProgressImg/ProgressText")
+	arg0_6.helpBtn = var0_6:Find("HelpBtn")
 
-	local var1_6 = arg0_6:findTF("MedalContainer")
+	local var1_6 = arg0_6._tf:Find("MedalContainer")
 
 	arg0_6.medalItemList = {}
-	arg0_6.medalItemList[1] = arg0_6:findTF("Medal1", var1_6)
-	arg0_6.medalItemList[2] = arg0_6:findTF("Medal2", var1_6)
-	arg0_6.medalItemList[3] = arg0_6:findTF("Medal3", var1_6)
+	arg0_6.medalItemList[1] = var1_6:Find("Medal1")
+	arg0_6.medalItemList[2] = var1_6:Find("Medal2")
+	arg0_6.medalItemList[3] = var1_6:Find("Medal3")
 
-	local var2_6 = arg0_6:findTF("SwitchBtnList", var0_6)
+	local var2_6 = var0_6:Find("SwitchBtnList")
 
 	arg0_6.switchBtnList = {}
 
 	for iter0_6 = 1, 5 do
-		arg0_6.switchBtnList[iter0_6] = arg0_6:findTF("Button" .. iter0_6, var2_6)
+		arg0_6.switchBtnList[iter0_6] = var2_6:Find("Button" .. iter0_6)
 	end
 end
 
@@ -120,9 +120,9 @@ function var0_0.updateMedalView(arg0_14, arg1_14, arg2_14)
 	local var2_14 = table.contains(arg0_14.activatableIDList, arg2_14) and not var1_14
 	local var3_14 = not var1_14 and not var2_14
 	local var4_14 = arg0_14.medalItemList[var0_14]
-	local var5_14 = arg0_14:findTF("Active", var4_14)
-	local var6_14 = arg0_14:findTF("Activable", var4_14)
-	local var7_14 = arg0_14:findTF("DisActive", var4_14)
+	local var5_14 = var4_14:Find("Active")
+	local var6_14 = var4_14:Find("Activable")
+	local var7_14 = var4_14:Find("DisActive")
 
 	setActive(var5_14, var1_14)
 	setActive(var6_14, var2_14)
@@ -151,8 +151,8 @@ end
 
 function var0_0.updateSwitchBtnTF(arg0_16)
 	for iter0_16, iter1_16 in ipairs(arg0_16.switchBtnList) do
-		local var0_16 = arg0_16:findTF("Tip", iter1_16)
-		local var1_16 = arg0_16:findTF("Text", var0_16)
+		local var0_16 = iter1_16:Find("Tip")
+		local var1_16 = var0_16:Find("Text")
 		local var2_16 = arg0_16:caculateActivatable(iter0_16)
 
 		if var2_16 == 0 or iter0_16 == arg0_16.curPage then

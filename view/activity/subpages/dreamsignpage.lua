@@ -2,16 +2,16 @@ local var0_0 = class("DreamSignPage", import("view.base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.lockNamed = PLATFORM_CODE == PLATFORM_CH and LOCK_NAMED
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.signTF = arg0_1:findTF("sign", arg0_1.bg)
-	arg0_1.items = arg0_1:findTF("items", arg0_1.signTF)
-	arg0_1.uilist = UIItemList.New(arg0_1.items, arg0_1:findTF("tpl", arg0_1.items))
-	arg0_1.signBtn = arg0_1:findTF("get", arg0_1.signTF)
-	arg0_1.goBtn = arg0_1:findTF("go", arg0_1.signTF)
-	arg0_1.lock = arg0_1:findTF("lock", arg0_1.signTF)
-	arg0_1.countText = arg0_1:findTF("count", arg0_1.signBtn)
-	arg0_1.signRed = arg0_1:findTF("tip", arg0_1.signBtn)
-	arg0_1.dreamRed = arg0_1:findTF("tip", arg0_1.goBtn)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.signTF = arg0_1.bg:Find("sign")
+	arg0_1.items = arg0_1.signTF:Find("items")
+	arg0_1.uilist = UIItemList.New(arg0_1.items, arg0_1.items:Find("tpl"))
+	arg0_1.signBtn = arg0_1.signTF:Find("get")
+	arg0_1.goBtn = arg0_1.signTF:Find("go")
+	arg0_1.lock = arg0_1.signTF:Find("lock")
+	arg0_1.countText = arg0_1.signBtn:Find("count")
+	arg0_1.signRed = arg0_1.signBtn:Find("tip")
+	arg0_1.dreamRed = arg0_1.goBtn:Find("tip")
 end
 
 function var0_0.OnDataSetting(arg0_2)
@@ -28,7 +28,7 @@ function var0_0.OnFirstFlush(arg0_3)
 		if arg0_4 == UIItemList.EventInit then
 			local var0_4 = arg1_4 + 1
 			local var1_4 = arg0_3.taskGroup[var0_4]
-			local var2_4 = arg0_3:findTF("item_mask/item", arg2_4)
+			local var2_4 = arg2_4:Find("item_mask/item")
 			local var3_4 = Drop.Create(arg0_3.taskConfig[var1_4].award_display[1])
 
 			updateDrop(var2_4, var3_4)
@@ -40,7 +40,7 @@ function var0_0.OnFirstFlush(arg0_3)
 			local var5_4 = arg0_3.taskGroup[var4_4]
 			local var6_4 = arg0_3.taskProxy:getTaskById(var5_4) or arg0_3.taskProxy:getFinishTaskById(var5_4)
 
-			setActive(arg0_3:findTF("got", arg2_4), var4_4 < arg0_3.nday or var6_4 and var6_4:getTaskStatus() == 2)
+			setActive(arg2_4:Find("got"), var4_4 < arg0_3.nday or var6_4 and var6_4:getTaskStatus() == 2)
 		end
 	end)
 	onButton(arg0_3, arg0_3.signBtn, function()

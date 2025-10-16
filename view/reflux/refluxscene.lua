@@ -80,16 +80,16 @@ function var0_0.onBackPressed(arg0_7)
 end
 
 function var0_0.findUI(arg0_8)
-	arg0_8.letterContainer = arg0_8:findTF("PanelLetter")
-	arg0_8.panelContainer = arg0_8:findTF("PanelContainer")
+	arg0_8.letterContainer = arg0_8._tf:Find("PanelLetter")
+	arg0_8.panelContainer = arg0_8._tf:Find("PanelContainer")
 
-	local var0_8 = arg0_8:findTF("left/left_bar")
+	local var0_8 = arg0_8._tf:Find("left/left_bar")
 
-	arg0_8.letterBtn = arg0_8:findTF("letter", var0_8)
-	arg0_8.signToggle = arg0_8:findTF("tabs/sign", var0_8)
-	arg0_8.taskToggle = arg0_8:findTF("tabs/task", var0_8)
-	arg0_8.ptToggle = arg0_8:findTF("tabs/pt", var0_8)
-	arg0_8.shopToggle = arg0_8:findTF("tabs/shop", var0_8)
+	arg0_8.letterBtn = var0_8:Find("letter")
+	arg0_8.signToggle = var0_8:Find("tabs/sign")
+	arg0_8.taskToggle = var0_8:Find("tabs/task")
+	arg0_8.ptToggle = var0_8:Find("tabs/pt")
+	arg0_8.shopToggle = var0_8:Find("tabs/shop")
 	arg0_8.toggleList = {
 		[var0_0.Sign] = arg0_8.signToggle,
 		[var0_0.Task] = arg0_8.taskToggle,
@@ -97,19 +97,19 @@ function var0_0.findUI(arg0_8)
 		[var0_0.Shop] = arg0_8.shopToggle
 	}
 	arg0_8.redPotList = {
-		[var0_0.Sign] = arg0_8:findTF("Red", arg0_8.signToggle),
-		[var0_0.Task] = arg0_8:findTF("Red", arg0_8.taskToggle),
-		[var0_0.PT] = arg0_8:findTF("Red", arg0_8.ptToggle),
-		[var0_0.Shop] = arg0_8:findTF("Red", arg0_8.shopToggle)
+		[var0_0.Sign] = arg0_8.signToggle:Find("Red"),
+		[var0_0.Task] = arg0_8.taskToggle:Find("Red"),
+		[var0_0.PT] = arg0_8.ptToggle:Find("Red"),
+		[var0_0.Shop] = arg0_8.shopToggle:Find("Red")
 	}
-	arg0_8.backBtn = arg0_8:findTF("back", var0_8)
-	arg0_8.dayText = arg0_8:findTF("time/text")
+	arg0_8.backBtn = var0_8:Find("back")
+	arg0_8.dayText = arg0_8._tf:Find("time/text")
 
-	local var1_8 = arg0_8:findTF("time/icon")
+	local var1_8 = arg0_8._tf:Find("time/icon")
 
 	setText(var1_8, i18n("reflux_word_1"))
 
-	local var2_8 = arg0_8:findTF("time/icon1")
+	local var2_8 = arg0_8._tf:Find("time/icon1")
 
 	setText(var2_8, i18n("word_date"))
 end

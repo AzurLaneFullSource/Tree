@@ -9,34 +9,34 @@ end
 
 function var0_0.OnLoaded(arg0_2)
 	arg0_2._tf.name = tostring(OtherworldTerminalLayer.PAGE_ADVENTURE)
-	arg0_2.levelTF = arg0_2:findTF("frame/level")
+	arg0_2.levelTF = arg0_2._tf:Find("frame/level")
 
-	setText(arg0_2:findTF("title/content/Text", arg0_2.levelTF), i18n("adventure_award_title"))
-	setText(arg0_2:findTF("progress/title", arg0_2.levelTF), i18n("adventure_progress_title"))
-	setText(arg0_2:findTF("lv", arg0_2.levelTF), i18n("adventure_lv_title"))
+	setText(arg0_2.levelTF:Find("title/content/Text"), i18n("adventure_award_title"))
+	setText(arg0_2.levelTF:Find("progress/title"), i18n("adventure_progress_title"))
+	setText(arg0_2.levelTF:Find("lv"), i18n("adventure_lv_title"))
 
-	arg0_2.ptIconTF = arg0_2:findTF("progress/Image", arg0_2.levelTF)
-	arg0_2.ptValueTF = arg0_2:findTF("progress/value", arg0_2.levelTF)
-	arg0_2.ptLvTF = arg0_2:findTF("lv/Text", arg0_2.levelTF)
-	arg0_2.awardView = arg0_2:findTF("awards/view", arg0_2.levelTF)
-	arg0_2.awardUIList = UIItemList.New(arg0_2:findTF("content", arg0_2.awardView), arg0_2:findTF("content/tpl", arg0_2.awardView))
-	arg0_2.recordTF = arg0_2:findTF("frame/record")
+	arg0_2.ptIconTF = arg0_2.levelTF:Find("progress/Image")
+	arg0_2.ptValueTF = arg0_2.levelTF:Find("progress/value")
+	arg0_2.ptLvTF = arg0_2.levelTF:Find("lv/Text")
+	arg0_2.awardView = arg0_2.levelTF:Find("awards/view")
+	arg0_2.awardUIList = UIItemList.New(arg0_2.awardView:Find("content"), arg0_2.awardView:Find("content/tpl"))
+	arg0_2.recordTF = arg0_2._tf:Find("frame/record")
 
-	setText(arg0_2:findTF("title/content/Text", arg0_2.recordTF), i18n("adventure_record_title"))
-	setText(arg0_2:findTF("grade", arg0_2.recordTF), i18n("adventure_record_grade_title"))
+	setText(arg0_2.recordTF:Find("title/content/Text"), i18n("adventure_record_title"))
+	setText(arg0_2.recordTF:Find("grade"), i18n("adventure_record_grade_title"))
 
-	arg0_2.recordGradeTF = arg0_2:findTF("grade/Text", arg0_2.recordTF)
-	arg0_2.taskUIList = UIItemList.New(arg0_2:findTF("form", arg0_2.recordTF), arg0_2:findTF("form/tpl", arg0_2.recordTF))
+	arg0_2.recordGradeTF = arg0_2.recordTF:Find("grade/Text")
+	arg0_2.taskUIList = UIItemList.New(arg0_2.recordTF:Find("form"), arg0_2.recordTF:Find("form/tpl"))
 
-	setText(arg0_2:findTF("frame/tip"), i18n("adventure_award_end_tip"))
+	setText(arg0_2._tf:Find("frame/tip"), i18n("adventure_award_end_tip"))
 
-	arg0_2.getBtn = arg0_2:findTF("frame/get_all_btn")
+	arg0_2.getBtn = arg0_2._tf:Find("frame/get_all_btn")
 
-	setText(arg0_2:findTF("Text", arg0_2.getBtn), i18n("adventure_get_all"))
+	setText(arg0_2.getBtn:Find("Text"), i18n("adventure_get_all"))
 
-	arg0_2.getGreyBtn = arg0_2:findTF("frame/get_all_btn_grey")
+	arg0_2.getGreyBtn = arg0_2._tf:Find("frame/get_all_btn_grey")
 
-	setText(arg0_2:findTF("Text", arg0_2.getGreyBtn), i18n("adventure_get_all"))
+	setText(arg0_2.getGreyBtn:Find("Text"), i18n("adventure_get_all"))
 end
 
 function var0_0.OnInit(arg0_3)
@@ -135,8 +135,8 @@ function var0_0.InitTaskUI(arg0_10)
 			local var0_11 = arg0_10.taskIds[arg1_11 + 1]
 			local var1_11 = getProxy(TaskProxy):getTaskById(var0_11)
 
-			setText(arg0_10:findTF("name", arg2_11), var1_11:getConfig("desc"))
-			setText(arg0_10:findTF("value", arg2_11), var1_11:getProgress())
+			setText(arg2_11:Find("name"), var1_11:getConfig("desc"))
+			setText(arg2_11:Find("value"), var1_11:getProgress())
 		end
 	end)
 end

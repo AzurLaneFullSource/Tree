@@ -35,14 +35,14 @@ function var0_0.onBackPressed(arg0_5)
 end
 
 function var0_0.findUI(arg0_6)
-	arg0_6.bg = arg0_6:findTF("BG")
-	arg0_6.picImg = arg0_6:findTF("Manga/Pic")
-	arg0_6.indexText = arg0_6:findTF("Manga/Index")
-	arg0_6.preBtn = arg0_6:findTF("LeftBtn")
-	arg0_6.rightBtn = arg0_6:findTF("RightBtn")
-	arg0_6.tipText = arg0_6:findTF("Tip")
-	arg0_6.likeOnBtn = arg0_6:findTF("Manga/LikeOn")
-	arg0_6.likeOffBtn = arg0_6:findTF("Manga/LikeOff")
+	arg0_6.bg = arg0_6._tf:Find("BG")
+	arg0_6.picImg = arg0_6._tf:Find("Manga/Pic")
+	arg0_6.indexText = arg0_6._tf:Find("Manga/Index")
+	arg0_6.preBtn = arg0_6._tf:Find("LeftBtn")
+	arg0_6.rightBtn = arg0_6._tf:Find("RightBtn")
+	arg0_6.tipText = arg0_6._tf:Find("Tip")
+	arg0_6.likeOnBtn = arg0_6._tf:Find("Manga/LikeOn")
+	arg0_6.likeOffBtn = arg0_6._tf:Find("Manga/LikeOff")
 
 	setText(arg0_6.tipText, i18n("world_collection_back"))
 end

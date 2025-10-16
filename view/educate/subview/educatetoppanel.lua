@@ -5,14 +5,14 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnInit(arg0_2)
-	arg0_2.helpBtn = arg0_2:findTF("content/btns/help")
-	arg0_2.homeBtn = arg0_2:findTF("content/btns/home")
+	arg0_2.helpBtn = arg0_2._tf:Find("content/btns/help")
+	arg0_2.homeBtn = arg0_2._tf:Find("content/btns/home")
 
 	local var0_2 = arg0_2.contextData and arg0_2.contextData.hideBack
 
 	setActive(arg0_2.homeBtn, not var0_2)
 
-	arg0_2.refresh = arg0_2:findTF("content/btns/refresh")
+	arg0_2.refresh = arg0_2._tf:Find("content/btns/refresh")
 
 	arg0_2:addListener()
 end

@@ -29,7 +29,7 @@ function var0_0.didEnter(arg0_3)
 	arg0_3:initRivalInfo()
 
 	arg0_3.isRealName = false
-	arg0_3.realNameToggle = arg0_3:findTF("info/real_name")
+	arg0_3.realNameToggle = arg0_3._tf:Find("info/real_name")
 
 	onToggle(arg0_3, arg0_3.realNameToggle, function(arg0_6)
 		arg0_3.isRealName = arg0_6
@@ -91,8 +91,8 @@ function var0_0.initRivalInfo(arg0_8)
 
 		var0_12.localScale = Vector3(1.1, 1.1, 1)
 
-		setActive(arg0_8:findTF("content", var0_12), arg3_12 ~= nil)
-		setActive(arg0_8:findTF("empty", var0_12), arg3_12 == nil)
+		setActive(var0_12:Find("content"), arg3_12 ~= nil)
+		setActive(var0_12:Find("empty"), arg3_12 == nil)
 
 		if arg3_12 then
 			var4_8(var0_12, arg3_12)
@@ -103,24 +103,24 @@ function var0_0.initRivalInfo(arg0_8)
 		end
 	end
 
-	local var6_8 = arg0_8:findTF("ships_container/ships/main", arg0_8._tf)
+	local var6_8 = arg0_8._tf:Find("ships_container/ships/main")
 	local var7_8 = #arg0_8.rivalVO.mainShips
 
 	for iter0_8 = 1, 3 do
 		var5_8(var7_8, iter0_8, var6_8, arg0_8.rivalVO.mainShips[iter0_8])
 	end
 
-	local var8_8 = arg0_8:findTF("ships_container/ships/vanguard", arg0_8._tf)
+	local var8_8 = arg0_8._tf:Find("ships_container/ships/vanguard")
 	local var9_8 = #arg0_8.rivalVO.vanguardShips
 
 	for iter1_8 = 1, 3 do
 		var5_8(var9_8, iter1_8, var8_8, arg0_8.rivalVO.vanguardShips[iter1_8])
 	end
 
-	local var10_8 = arg0_8:findTF("ships_container/main_comprehensive", arg0_8._tf)
-	local var11_8 = arg0_8:findTF("ships_container/vanguard_comprehensive", arg0_8._tf)
-	local var12_8 = arg0_8:findTF("ships_container/main_comprehensive/Text", arg0_8._tf)
-	local var13_8 = arg0_8:findTF("ships_container/vanguard_comprehensive/Text", arg0_8._tf)
+	local var10_8 = arg0_8._tf:Find("ships_container/main_comprehensive")
+	local var11_8 = arg0_8._tf:Find("ships_container/vanguard_comprehensive")
+	local var12_8 = arg0_8._tf:Find("ships_container/main_comprehensive/Text")
+	local var13_8 = arg0_8._tf:Find("ships_container/vanguard_comprehensive/Text")
 	local var14_8 = arg0_8.rivalVO:GetGearScoreSum(TeamType.Main)
 	local var15_8 = arg0_8.rivalVO:GetGearScoreSum(TeamType.Vanguard)
 

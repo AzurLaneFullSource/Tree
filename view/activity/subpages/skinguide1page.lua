@@ -9,18 +9,18 @@ local var2_0 = {
 }
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD/mask")
-	arg0_1.countTF = arg0_1:findTF("rightPanel/count", arg0_1.bg)
-	arg0_1.itemTpl = arg0_1:findTF("itemTpl", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD/mask")
+	arg0_1.countTF = arg0_1.bg:Find("rightPanel/count")
+	arg0_1.itemTpl = arg0_1.bg:Find("itemTpl")
 
 	setActive(arg0_1.itemTpl, false)
 
-	arg0_1.items = arg0_1:findTF("rightPanel/items", arg0_1.bg)
-	arg0_1.countImg = arg0_1:findTF("countImg", arg0_1.bg)
-	arg0_1.paintings = arg0_1:findTF("paintings", arg0_1.bg)
-	arg0_1.paintingsSelected = arg0_1:findTF("paintingsSelected", arg0_1.bg)
-	arg0_1.descTf = arg0_1:findTF("rightPanel/desc", arg0_1.bg)
-	arg0_1.rightPanel = arg0_1:findTF("rightPanel", arg0_1.bg)
+	arg0_1.items = arg0_1.bg:Find("rightPanel/items")
+	arg0_1.countImg = arg0_1.bg:Find("countImg")
+	arg0_1.paintings = arg0_1.bg:Find("paintings")
+	arg0_1.paintingsSelected = arg0_1.bg:Find("paintingsSelected")
+	arg0_1.descTf = arg0_1.bg:Find("rightPanel/desc")
+	arg0_1.rightPanel = arg0_1.bg:Find("rightPanel")
 	arg0_1.itemTfs = {}
 	arg0_1.selectedIndex = 1
 	arg0_1.paintingTfs = {}
@@ -66,7 +66,7 @@ function var0_0.OnFirstFlush(arg0_3)
 		end, SFX_PANEL)
 		table.insert(arg0_3.itemTfs, var2_3)
 
-		local var7_3 = arg0_3:findTF("get", var2_3)
+		local var7_3 = var2_3:Find("get")
 
 		onButton(arg0_3, var7_3, function()
 			arg0_3:emit(ActivityMediator.ON_TASK_SUBMIT, var4_3)
@@ -167,10 +167,10 @@ function var0_0.updateUI(arg0_9)
 	for iter0_9 = 1, #arg0_9.itemTfs do
 		local var0_9 = arg0_9.taskList[iter0_9]
 		local var1_9 = arg0_9.taskProxy:getTaskById(var0_9) or arg0_9.taskProxy:getFinishTaskById(var0_9)
-		local var2_9 = arg0_9:findTF("item", arg0_9.itemTfs[iter0_9])
+		local var2_9 = arg0_9.itemTfs[iter0_9]:Find("item")
 		local var3_9 = var1_9:getTaskStatus()
-		local var4_9 = arg0_9:findTF("got", arg0_9.itemTfs[iter0_9])
-		local var5_9 = arg0_9:findTF("get", arg0_9.itemTfs[iter0_9])
+		local var4_9 = arg0_9.itemTfs[iter0_9]:Find("got")
+		local var5_9 = arg0_9.itemTfs[iter0_9]:Find("get")
 		local var6_9 = var3_9 == 1 and arg0_9.remainCnt > 0
 		local var7_9 = var3_9 == 2
 

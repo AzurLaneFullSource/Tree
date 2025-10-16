@@ -9,10 +9,10 @@ end
 
 function var0_0.OnLoaded(arg0_2)
 	arg0_2.maps = {}
-	arg0_2.bg = arg0_2:findTF("bg")
+	arg0_2.bg = arg0_2._tf:Find("bg")
 
 	arg0_2:InitMaps()
-	setText(arg0_2:findTF("adapt/title/Text"), i18n("island_map_title"))
+	setText(arg0_2._tf:Find("adapt/title/Text"), i18n("island_map_title"))
 end
 
 function var0_0.InitMaps(arg0_3)

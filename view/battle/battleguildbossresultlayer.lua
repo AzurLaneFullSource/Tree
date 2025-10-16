@@ -23,8 +23,8 @@ function var0_0.didEnter(arg0_4)
 end
 
 function var0_0.setGradeLabel(arg0_5)
-	local var0_5 = arg0_5:findTF("grade/Xyz/bg13")
-	local var1_5 = arg0_5:findTF("grade/Xyz/bg14")
+	local var0_5 = arg0_5._tf:Find("grade/Xyz/bg13")
+	local var1_5 = arg0_5._tf:Find("grade/Xyz/bg14")
 
 	setActive(var0_5, false)
 
@@ -42,7 +42,7 @@ function var0_0.rankAnimaFinish(arg0_6)
 	local var0_6 = LeanTween.delayedCall(1, System.Action(function()
 		arg0_6._stateFlag = var0_0.STATE_REPORTED
 
-		SetActive(arg0_6:findTF("jieuan01/tips", arg0_6._bg), true)
+		SetActive(arg0_6._bg:Find("jieuan01/tips"), true)
 	end))
 
 	table.insert(arg0_6._delayLeanList, var0_6.id)
@@ -80,7 +80,7 @@ end
 function var0_0.showRewardInfo(arg0_11)
 	arg0_11._stateFlag = var0_0.STATE_REWARD
 
-	SetActive(arg0_11:findTF("jieuan01/tips", arg0_11._bg), false)
+	SetActive(arg0_11._bg:Find("jieuan01/tips"), false)
 	arg0_11:displayBG()
 end
 
@@ -95,7 +95,7 @@ function var0_0.setPoint(arg0_12)
 		end
 	end
 
-	setActive(arg0_12:findTF("blur_container/activitybossConfirmPanel/playAgain"), false)
+	setActive(arg0_12._tf:Find("blur_container/activitybossConfirmPanel/playAgain"), false)
 end
 
 function var0_0.displayShips(arg0_13)
@@ -189,8 +189,8 @@ function var0_0.displayShips(arg0_13)
 				var22_13 = var22_13 - 1
 			end
 
-			local var24_13 = arg0_13:findTF("result/mask/icon", var17_13)
-			local var25_13 = arg0_13:findTF("result/type", var17_13)
+			local var24_13 = var17_13:Find("result/mask/icon")
+			local var25_13 = var17_13:Find("result/type")
 
 			var24_13:GetComponent(typeof(Image)).sprite = LoadSprite("herohrzicon/" .. iter5_13:getPainting())
 

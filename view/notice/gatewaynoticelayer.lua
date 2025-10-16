@@ -5,10 +5,10 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.trFrame = arg0_2:findTF("frame")
-	arg0_2.txtTitle = arg0_2:findTF("frame/title"):GetComponent("Text")
-	arg0_2.txtContent = arg0_2:findTF("frame/content"):GetComponent("RichText")
-	arg0_2.btnBack = arg0_2:findTF("frame/title_pop/btnBack")
+	arg0_2.trFrame = arg0_2._tf:Find("frame")
+	arg0_2.txtTitle = arg0_2._tf:Find("frame/title"):GetComponent("Text")
+	arg0_2.txtContent = arg0_2._tf:Find("frame/content"):GetComponent("RichText")
+	arg0_2.btnBack = arg0_2._tf:Find("frame/title_pop/btnBack")
 end
 
 function var0_0.didEnter(arg0_3)

@@ -56,16 +56,16 @@ function var0_0.Setup(arg0_1, arg1_1)
 end
 
 function var0_0.OnLoaded(arg0_3)
-	arg0_3.supportBtn = arg0_3:findTF("btns/help_btn")
-	arg0_3.startBtn = arg0_3:findTF("btns/start_btn")
-	arg0_3.awardBtn = arg0_3:findTF("btns/award_btn")
-	arg0_3.timeTF = arg0_3:findTF("btns/time")
-	arg0_3.leftTime = arg0_3:findTF("btns/time/label/Text"):GetComponent(typeof(Text))
-	arg0_3.awardList = UIItemList.New(arg0_3:findTF("award_panel/list"), arg0_3:findTF("award_panel/list/tpl"))
-	arg0_3.levelTxt = arg0_3:findTF("hp/level/Text"):GetComponent(typeof(Text))
-	arg0_3.hpTxt = arg0_3:findTF("hp/Text"):GetComponent(typeof(Text))
-	arg0_3.hpSlider = arg0_3:findTF("hp/slider"):GetComponent(typeof(Slider))
-	arg0_3.painting = arg0_3:findTF("paint")
+	arg0_3.supportBtn = arg0_3._tf:Find("btns/help_btn")
+	arg0_3.startBtn = arg0_3._tf:Find("btns/start_btn")
+	arg0_3.awardBtn = arg0_3._tf:Find("btns/award_btn")
+	arg0_3.timeTF = arg0_3._tf:Find("btns/time")
+	arg0_3.leftTime = arg0_3._tf:Find("btns/time/label/Text"):GetComponent(typeof(Text))
+	arg0_3.awardList = UIItemList.New(arg0_3._tf:Find("award_panel/list"), arg0_3._tf:Find("award_panel/list/tpl"))
+	arg0_3.levelTxt = arg0_3._tf:Find("hp/level/Text"):GetComponent(typeof(Text))
+	arg0_3.hpTxt = arg0_3._tf:Find("hp/Text"):GetComponent(typeof(Text))
+	arg0_3.hpSlider = arg0_3._tf:Find("hp/slider"):GetComponent(typeof(Slider))
+	arg0_3.painting = arg0_3._tf:Find("paint")
 	arg0_3.infoAndRankPanel = WorldBossInfoAndRankPanel.New(arg0_3._tf, arg0_3.event)
 
 	arg0_3.infoAndRankPanel:SetCallback(function(arg0_4)
@@ -86,7 +86,7 @@ function var0_0.OnLoaded(arg0_3)
 			end
 		end, SFX_PANEL)
 	end)
-	setText(arg0_3:findTF("btns/time/label"), i18n("time_remaining_tip"))
+	setText(arg0_3._tf:Find("btns/time/label"), i18n("time_remaining_tip"))
 end
 
 function var0_0.OnInit(arg0_7)
@@ -162,7 +162,7 @@ function var0_0.UpdatePainting(arg0_17, arg1_17)
 	if arg0_17.groupId ~= arg1_17 then
 		arg0_17.groupId = arg1_17
 
-		local var0_17 = arg0_17:findTF("label"):GetComponent(typeof(Image))
+		local var0_17 = arg0_17._tf:Find("label"):GetComponent(typeof(Image))
 
 		var0_17.sprite = GetSpriteFromAtlas("MetaWorldboss/" .. arg0_17.groupId, "title" .. arg0_17:GetResSuffix())
 

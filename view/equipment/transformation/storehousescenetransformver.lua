@@ -9,22 +9,22 @@ end
 function var0_0.init(arg0_2)
 	local var0_2 = arg0_2.contextData
 
-	arg0_2.topItems = arg0_2:findTF("topItems")
-	arg0_2.equipmentView = arg0_2:findTF("adapt/equipment_scrollview")
-	arg0_2.blurPanel = arg0_2:findTF("blur_panel")
-	arg0_2.topPanel = arg0_2:findTF("adapt/top", arg0_2.blurPanel)
+	arg0_2.topItems = arg0_2._tf:Find("topItems")
+	arg0_2.equipmentView = arg0_2._tf:Find("adapt/equipment_scrollview")
+	arg0_2.blurPanel = arg0_2._tf:Find("blur_panel")
+	arg0_2.topPanel = arg0_2.blurPanel:Find("adapt/top")
 
-	setActive(arg0_2:findTF("buttons", arg0_2.topPanel), true)
+	setActive(arg0_2.topPanel:Find("buttons"), true)
 
-	arg0_2.indexBtn = arg0_2:findTF("buttons/index_button", arg0_2.topPanel)
-	arg0_2.sortBtn = arg0_2:findTF("buttons/sort_button", arg0_2.topPanel)
-	arg0_2.sortPanel = arg0_2:findTF("sort", arg0_2.topItems)
-	arg0_2.sortContain = arg0_2:findTF("adapt/mask/panel", arg0_2.sortPanel)
-	arg0_2.sortTpl = arg0_2:findTF("tpl", arg0_2.sortContain)
+	arg0_2.indexBtn = arg0_2.topPanel:Find("buttons/index_button")
+	arg0_2.sortBtn = arg0_2.topPanel:Find("buttons/sort_button")
+	arg0_2.sortPanel = arg0_2.topItems:Find("sort")
+	arg0_2.sortContain = arg0_2.sortPanel:Find("adapt/mask/panel")
+	arg0_2.sortTpl = arg0_2.sortContain:Find("tpl")
 
 	setActive(arg0_2.sortTpl, false)
 
-	arg0_2.equipSkinFilteBtn = arg0_2:findTF("buttons/EquipSkinFilteBtn", arg0_2.topPanel)
+	arg0_2.equipSkinFilteBtn = arg0_2.topPanel:Find("buttons/EquipSkinFilteBtn")
 
 	local var1_2
 	local var2_2 = getProxy(SettingsProxy)
@@ -39,34 +39,34 @@ function var0_0.init(arg0_2)
 	arg0_2.decBtn = findTF(arg0_2.topPanel, "buttons/dec_btn")
 	arg0_2.sortImgAsc = findTF(arg0_2.decBtn, "asc")
 	arg0_2.sortImgDec = findTF(arg0_2.decBtn, "desc")
-	arg0_2.equipmentBtn = arg0_2:findTF("blur_panel/adapt/left_length/frame/toggle_root/equipment")
-	arg0_2.equipmentSkinBtn = arg0_2:findTF("blur_panel/adapt/left_length/frame/toggle_root/skin")
+	arg0_2.equipmentBtn = arg0_2._tf:Find("blur_panel/adapt/left_length/frame/toggle_root/equipment")
+	arg0_2.equipmentSkinBtn = arg0_2._tf:Find("blur_panel/adapt/left_length/frame/toggle_root/skin")
 
 	setActive(arg0_2.equipmentBtn.parent, false)
 
-	arg0_2.filterBusyToggle = arg0_2:findTF("blur_panel/adapt/left_length/frame/toggle_equip")
+	arg0_2.filterBusyToggle = arg0_2._tf:Find("blur_panel/adapt/left_length/frame/toggle_equip")
 
 	setActive(arg0_2.filterBusyToggle, false)
 
-	arg0_2.bottomBack = arg0_2:findTF("adapt/bottom_back", arg0_2.topItems)
-	arg0_2.bottomPanel = arg0_2:findTF("types", arg0_2.bottomBack)
+	arg0_2.bottomBack = arg0_2.topItems:Find("adapt/bottom_back")
+	arg0_2.bottomPanel = arg0_2.bottomBack:Find("types")
 	arg0_2.materialToggle = arg0_2.bottomPanel:Find("material")
 	arg0_2.weaponToggle = arg0_2.bottomPanel:Find("weapon")
 	arg0_2.designToggle = arg0_2.bottomPanel:Find("design")
-	arg0_2.capacityTF = arg0_2:findTF("bottom_left/tip/capcity/Text", arg0_2.bottomBack)
+	arg0_2.capacityTF = arg0_2.bottomBack:Find("bottom_left/tip/capcity/Text")
 
 	setActive(arg0_2.capacityTF.parent, false)
 
-	arg0_2.tipTF = arg0_2:findTF("bottom_left/tip", arg0_2.bottomBack)
+	arg0_2.tipTF = arg0_2.bottomBack:Find("bottom_left/tip")
 	arg0_2.tip = arg0_2.tipTF:Find("label")
 
 	setActive(arg0_2.tip, false)
 
-	arg0_2.helpBtn = arg0_2:findTF("adapt/help_btn", arg0_2.topItems)
+	arg0_2.helpBtn = arg0_2.topItems:Find("adapt/help_btn")
 
 	setActive(arg0_2.helpBtn, true)
 
-	arg0_2.backBtn = arg0_2:findTF("blur_panel/adapt/top/back_btn")
+	arg0_2.backBtn = arg0_2._tf:Find("blur_panel/adapt/top/back_btn")
 	arg0_2.selectedMin = defaultValue(var0_2.selectedMin, 1)
 	arg0_2.selectedMax = defaultValue(var0_2.selectedMax, pg.gameset.equip_select_limit.key_value or 0)
 	arg0_2.selectedIds = Clone(var0_2.selectedIds or {})
@@ -77,15 +77,15 @@ function var0_0.init(arg0_2)
 		warning("not implemented.")
 	end
 
-	setActive(arg0_2:findTF("dispos", arg0_2.bottomBack), false)
-	setActive(arg0_2:findTF("adapt/select_panel", arg0_2.topItems), false)
+	setActive(arg0_2.bottomBack:Find("dispos"), false)
+	setActive(arg0_2.topItems:Find("adapt/select_panel"), false)
 
-	arg0_2.selectTransformPanel = arg0_2:findTF("adapt/select_transform_panel", arg0_2.topItems)
-	arg0_2.listEmptyTF = arg0_2:findTF("adapt/empty")
+	arg0_2.selectTransformPanel = arg0_2.topItems:Find("adapt/select_transform_panel")
+	arg0_2.listEmptyTF = arg0_2._tf:Find("adapt/empty")
 
 	setActive(arg0_2.listEmptyTF, false)
 
-	arg0_2.listEmptyTxt = arg0_2:findTF("Text", arg0_2.listEmptyTF)
+	arg0_2.listEmptyTxt = arg0_2.listEmptyTF:Find("Text")
 
 	setActive(arg0_2.bottomBack, false)
 	setActive(arg0_2.selectTransformPanel, true)

@@ -5,11 +5,11 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.closeBtn = arg0_2:findTF("close")
-	arg0_2.nameTxt = arg0_2:findTF("name"):GetComponent(typeof(Text))
-	arg0_2.levelTxt = arg0_2:findTF("level"):GetComponent(typeof(Text))
-	arg0_2.descTxt = arg0_2:findTF("content/Text"):GetComponent(typeof(Text))
-	arg0_2.iconTr = arg0_2:findTF("icon")
+	arg0_2.closeBtn = arg0_2._tf:Find("close")
+	arg0_2.nameTxt = arg0_2._tf:Find("name"):GetComponent(typeof(Text))
+	arg0_2.levelTxt = arg0_2._tf:Find("level"):GetComponent(typeof(Text))
+	arg0_2.descTxt = arg0_2._tf:Find("content/Text"):GetComponent(typeof(Text))
+	arg0_2.iconTr = arg0_2._tf:Find("icon")
 
 	setText(arg0_2._tf:Find("title"), i18n("island_skill_desc"))
 end

@@ -27,30 +27,30 @@ function var0_0.UpdateVirtualBtn(arg0_3)
 end
 
 function var0_0.OnInit(arg0_4)
-	arg0_4.btnTpl = arg0_4:findTF("resource/tpl")
+	arg0_4.btnTpl = arg0_4._tf:Find("resource/tpl")
 	arg0_4.btnList = {}
-	arg0_4.greySprite = arg0_4:findTF("resource/grey"):GetComponent(typeof(Image)).sprite
-	arg0_4.yellowSprite = arg0_4:findTF("resource/yellow"):GetComponent(typeof(Image)).sprite
+	arg0_4.greySprite = arg0_4._tf:Find("resource/grey"):GetComponent(typeof(Image)).sprite
+	arg0_4.yellowSprite = arg0_4._tf:Find("resource/yellow"):GetComponent(typeof(Image)).sprite
 	arg0_4.mainBtn = tf(instantiate(arg0_4.btnTpl))
-	arg0_4.mainTitle = arg0_4:findTF("Image", arg0_4.mainBtn)
+	arg0_4.mainTitle = arg0_4.mainBtn:Find("Image")
 
 	setImageSprite(arg0_4.mainBtn, arg0_4.yellowSprite)
 	setParent(arg0_4.mainBtn, arg0_4._tf)
 	setActive(arg0_4.mainBtn, true)
 
-	arg0_4:findTF("dropdown", arg0_4.mainBtn).localEulerAngles = Vector3.New(0, 0, 0)
+	arg0_4.mainBtn:Find("dropdown").localEulerAngles = Vector3.New(0, 0, 0)
 
 	onButton(arg0_4, arg0_4.mainBtn, function()
 		arg0_4:Hide()
 	end)
 
-	local var0_4 = arg0_4:findTF("mask", arg0_4._tf)
+	local var0_4 = arg0_4._tf:Find("mask")
 
 	onButton(arg0_4, var0_4, function()
 		arg0_4:Hide()
 	end)
 
-	arg0_4.attrs = arg0_4:findTF("Attrs", arg0_4._tf)
+	arg0_4.attrs = arg0_4._tf:Find("Attrs")
 
 	local var1_4 = GetComponent(arg0_4.attrs, typeof(GridLayoutGroup))
 
@@ -67,12 +67,12 @@ function var0_0.OnInit(arg0_4)
 			-- block empty
 		else
 			local var3_4 = tf(instantiate(arg0_4.btnTpl))
-			local var4_4 = arg0_4:findTF("Image", var3_4)
+			local var4_4 = var3_4:Find("Image")
 
 			go(var3_4).name = i18n(arg0_4.names[iter0_4])
 
 			setActive(var3_4, true)
-			setActive(arg0_4:findTF("dropdown", var3_4), false)
+			setActive(var3_4:Find("dropdown"), false)
 			setText(var4_4, i18n(arg0_4.names[iter0_4]))
 			setParent(var3_4, arg0_4.attrs)
 			onButton(arg0_4, var3_4, function()

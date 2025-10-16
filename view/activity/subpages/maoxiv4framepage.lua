@@ -6,8 +6,8 @@ function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
 	arg0_1.switchBtns = {
-		arg0_1:findTF("switch_btn_1", arg0_1.switchBtn),
-		arg0_1:findTF("switch_btn_2", arg0_1.switchBtn)
+		arg0_1.switchBtn:Find("switch_btn_1"),
+		arg0_1.switchBtn:Find("switch_btn_2")
 	}
 end
 

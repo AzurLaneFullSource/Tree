@@ -11,7 +11,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 end
 
 function var0_0.Init(arg0_2)
-	setText(arg0_2:findTF("Window/CountBG/Tip"), i18n("ryza_composite_count"))
+	setText(arg0_2._tf:Find("Window/CountBG/Tip"), i18n("ryza_composite_count"))
 end
 
 function var0_0.SetContextData(arg0_3, arg1_3)
@@ -23,7 +23,7 @@ function var0_0.SetActivity(arg0_4, arg1_4)
 end
 
 function var0_0.didEnter(arg0_5)
-	onButton(arg0_5, arg0_5:findTF("BG"), function()
+	onButton(arg0_5, arg0_5._tf:Find("BG"), function()
 		arg0_5:HideCompositeResult()
 	end, SFX_CANCEL)
 end
@@ -38,9 +38,9 @@ function var0_0.ShowCompositeResult(arg0_7, arg1_7)
 		return
 	end
 
-	arg0_7._parentClass:UpdateRyzaDrop(arg0_7:findTF("Window/Icon"), var0_7)
-	setScrollText(arg0_7:findTF("Window/NameBG/Rect/Name"), var0_7:getName())
-	setText(arg0_7:findTF("Window/CountBG/Text"), var0_7.count)
+	arg0_7._parentClass:UpdateRyzaDrop(arg0_7._tf:Find("Window/Icon"), var0_7)
+	setScrollText(arg0_7._tf:Find("Window/NameBG/Rect/Name"), var0_7:getName())
+	setText(arg0_7._tf:Find("Window/CountBG/Text"), var0_7.count)
 end
 
 function var0_0.HideCompositeResult(arg0_8)

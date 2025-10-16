@@ -5,10 +5,10 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.backBtn = arg0_2:findTF("adapt/left_panel/back")
-	arg0_2.homeBtn = arg0_2:findTF("adapt/home")
+	arg0_2.backBtn = arg0_2._tf:Find("adapt/left_panel/back")
+	arg0_2.homeBtn = arg0_2._tf:Find("adapt/home")
 
-	setText(arg0_2:findTF("adapt/left_panel/title/Text"), i18n("island_dressup_titile"))
+	setText(arg0_2._tf:Find("adapt/left_panel/title/Text"), i18n("island_dressup_titile"))
 	setActive(arg0_2.homeBtn, false)
 end
 
@@ -67,7 +67,7 @@ function var0_0.Flush(arg0_12)
 end
 
 function var0_0.GetSmoothRotateObject(arg0_13)
-	return arg0_13:findTF("adapt/char")
+	return arg0_13._tf:Find("adapt/char")
 end
 
 function var0_0.OnCharLoaded(arg0_14)

@@ -12,21 +12,21 @@ end
 function var0_0.SetUI(arg0_2, arg1_2)
 	arg0_2._go = arg1_2
 	arg0_2._tf = tf(arg1_2)
-	arg0_2.monsterNian = arg0_2:findTF("AD/monster")
-	arg0_2.fushun = arg0_2:findTF("AD/fushun")
-	arg0_2.hpTF = arg0_2:findTF("AD/hp"):GetComponent(typeof(Slider))
-	arg0_2.attackCntTF = arg0_2:findTF("AD/attack_count/Text"):GetComponent(typeof(Text))
-	arg0_2.actions = arg0_2:findTF("AD/actions")
+	arg0_2.monsterNian = arg0_2._tf:Find("AD/monster")
+	arg0_2.fushun = arg0_2._tf:Find("AD/fushun")
+	arg0_2.hpTF = arg0_2._tf:Find("AD/hp"):GetComponent(typeof(Slider))
+	arg0_2.attackCntTF = arg0_2._tf:Find("AD/attack_count/Text"):GetComponent(typeof(Text))
+	arg0_2.actions = arg0_2._tf:Find("AD/actions")
 	arg0_2.actionKeys = {
 		arg0_2.actions:Find("content/1"),
 		arg0_2.actions:Find("content/2"),
 		arg0_2.actions:Find("content/3")
 	}
-	arg0_2.curtainTF = arg0_2:findTF("AD/curtain")
+	arg0_2.curtainTF = arg0_2._tf:Find("AD/curtain")
 	arg0_2.startLabel = arg0_2.curtainTF:Find("start_label")
-	arg0_2.ABtn = arg0_2:findTF("AD/A_btn")
-	arg0_2.BBtn = arg0_2:findTF("AD/B_btn")
-	arg0_2.joyStick = arg0_2:findTF("AD/joyStick")
+	arg0_2.ABtn = arg0_2._tf:Find("AD/A_btn")
+	arg0_2.BBtn = arg0_2._tf:Find("AD/B_btn")
+	arg0_2.joyStick = arg0_2._tf:Find("AD/joyStick")
 end
 
 function var0_0.DoCurtainUp(arg0_3, arg1_3)
@@ -232,12 +232,6 @@ function var0_0.OnJoyStickTrigger(arg0_30, arg1_30, arg2_30, arg3_30)
 		setActive(var1_30, false)
 		setActive(var2_30, false)
 	end)
-end
-
-function var0_0.findTF(arg0_34, arg1_34, arg2_34)
-	assert(arg0_34._tf, "transform should exist")
-
-	return findTF(arg2_34 or arg0_34._tf, arg1_34)
 end
 
 return var0_0

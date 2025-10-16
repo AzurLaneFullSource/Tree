@@ -131,8 +131,8 @@ function var0_0.init(arg0_15)
 		end
 	end
 
-	arg0_15.backBtn = arg0_15:findTF("back_btn")
-	arg0_15.pagesTF = arg0_15:findTF("pages")
+	arg0_15.backBtn = arg0_15._tf:Find("back_btn")
+	arg0_15.pagesTF = arg0_15._tf:Find("pages")
 
 	arg0_15:AddListeners()
 end

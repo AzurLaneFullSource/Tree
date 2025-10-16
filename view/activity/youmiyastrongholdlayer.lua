@@ -229,7 +229,7 @@ function var0_0.SetRes(arg0_13, arg1_13)
 
 			if var4_13.name == tostring(var2_13) then
 				setActive(var4_13, true)
-				setText(arg0_13:findTF("Text", var4_13), var3_13)
+				setText(var4_13:Find("Text"), var3_13)
 
 				break
 			end

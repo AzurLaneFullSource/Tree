@@ -1,20 +1,20 @@
 local var0_0 = class("NewOrleansLoginPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.showItemTpl = arg0_1:findTF("ShowItem", arg0_1.bg)
-	arg0_1.showItemContainer = arg0_1:findTF("ItemShowList", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.showItemTpl = arg0_1.bg:Find("ShowItem")
+	arg0_1.showItemContainer = arg0_1.bg:Find("ItemShowList")
 	arg0_1.itemList = UIItemList.New(arg0_1.showItemContainer, arg0_1.showItemTpl)
 
 	setActive(arg0_1.showItemTpl, false)
 
-	arg0_1.item = arg0_1:findTF("item", arg0_1.bg)
-	arg0_1.items = arg0_1:findTF("items", arg0_1.bg)
+	arg0_1.item = arg0_1.bg:Find("item")
+	arg0_1.items = arg0_1.bg:Find("items")
 	arg0_1.uilist = UIItemList.New(arg0_1.items, arg0_1.item)
 
 	setActive(arg0_1.item, false)
 
-	arg0_1.stepText = arg0_1:findTF("step_text", arg0_1.bg)
+	arg0_1.stepText = arg0_1.bg:Find("step_text")
 end
 
 function var0_0.OnDataSetting(arg0_2)
@@ -35,7 +35,7 @@ function var0_0.OnFirstFlush(arg0_3)
 	arg0_3.uilist:make(function(arg0_4, arg1_4, arg2_4)
 		if arg0_4 == UIItemList.EventUpdate then
 			local var0_4 = arg1_4 + 1
-			local var1_4 = arg0_3:findTF("item", arg2_4)
+			local var1_4 = arg2_4:Find("item")
 			local var2_4 = arg0_3.taskGroup[arg0_3.nday][var0_4]
 			local var3_4 = arg0_3.taskProxy:getTaskById(var2_4) or arg0_3.taskProxy:getFinishTaskById(var2_4)
 
@@ -56,13 +56,13 @@ function var0_0.OnFirstFlush(arg0_3)
 			local var6_4 = var3_4:getProgress()
 			local var7_4 = var3_4:getConfig("target_num")
 
-			setText(arg0_3:findTF("description", arg2_4), var3_4:getConfig("desc"))
-			setText(arg0_3:findTF("progressText", arg2_4), var6_4 .. "/" .. var7_4)
-			setSlider(arg0_3:findTF("progress", arg2_4), 0, var7_4, var6_4)
+			setText(arg2_4:Find("description"), var3_4:getConfig("desc"))
+			setText(arg2_4:Find("progressText"), var6_4 .. "/" .. var7_4)
+			setSlider(arg2_4:Find("progress"), 0, var7_4, var6_4)
 
-			local var8_4 = arg0_3:findTF("go_btn", arg2_4)
-			local var9_4 = arg0_3:findTF("get_btn", arg2_4)
-			local var10_4 = arg0_3:findTF("got_btn", arg2_4)
+			local var8_4 = arg2_4:Find("go_btn")
+			local var9_4 = arg2_4:Find("get_btn")
+			local var10_4 = arg2_4:Find("got_btn")
 			local var11_4 = var3_4:getTaskStatus()
 
 			setActive(var8_4, var11_4 == 0)
@@ -90,7 +90,7 @@ function var0_0.OnFirstFlush(arg0_3)
 				arg0_3:emit(BaseUI.ON_DROP, var1_8)
 			end, SFX_PANEL)
 		elseif arg0_8 == UIItemList.EventUpdate then
-			local var2_8 = arg0_3:findTF("icon_mask", arg2_8)
+			local var2_8 = arg2_8:Find("icon_mask")
 
 			setActive(var2_8, arg1_8 < arg0_3.curDay)
 		end

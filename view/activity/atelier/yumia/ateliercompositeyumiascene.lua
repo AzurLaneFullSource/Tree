@@ -5,13 +5,13 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.InitCustom(arg0_2)
-	arg0_2.layerEmpty = arg0_2:findTF("bg/Empty")
+	arg0_2.layerEmpty = arg0_2._tf:Find("bg/Empty")
 
-	setText(arg0_2:findTF("bg/Empty/bg/Text"), i18n(arg0_2.unlockText))
+	setText(arg0_2._tf:Find("bg/Empty/bg/Text"), i18n(arg0_2.unlockText))
 
-	arg0_2.painting = arg0_2:findTF("bg/painting")
-	arg0_2.topBar = arg0_2:findTF("Top/TopBar")
-	arg0_2.chat = arg0_2:findTF("bg/Chat")
+	arg0_2.painting = arg0_2._tf:Find("bg/painting")
+	arg0_2.topBar = arg0_2._tf:Find("Top/TopBar")
+	arg0_2.chat = arg0_2._tf:Find("bg/Chat")
 
 	setActive(arg0_2.chat, false)
 end
@@ -144,10 +144,10 @@ end
 
 function var0_0.UpdateRyzaDrop(arg0_15, arg1_15, arg2_15, arg3_15)
 	updateDrop(arg1_15, arg2_15)
-	SetCompomentEnabled(arg0_15:findTF("icon_bg", arg1_15), typeof(Image), false)
-	setActive(arg0_15:findTF("bg", arg1_15), false)
-	setActive(arg0_15:findTF("icon_bg/frame", arg1_15), false)
-	setActive(arg0_15:findTF("icon_bg/stars", arg1_15), false)
+	SetCompomentEnabled(arg1_15:Find("icon_bg"), typeof(Image), false)
+	setActive(arg1_15:Find("bg"), false)
+	setActive(arg1_15:Find("icon_bg/frame"), false)
+	setActive(arg1_15:Find("icon_bg/stars"), false)
 
 	local var0_15 = arg2_15:getConfig("rarity")
 
@@ -157,7 +157,7 @@ function var0_0.UpdateRyzaDrop(arg0_15, arg1_15, arg2_15, arg3_15)
 
 	local var1_15 = ItemRarity.Rarity2Print(var0_15)
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var1_15, arg0_15:findTF("icon_bg", arg1_15))
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var1_15, arg1_15:Find("icon_bg"))
 
 	if arg2_15.type ~= DROP_TYPE_RYZA_DROP then
 		onButton(arg0_15, arg1_15, function()

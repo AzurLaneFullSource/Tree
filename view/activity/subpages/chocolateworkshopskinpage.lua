@@ -7,12 +7,12 @@ var0_0.FADE_OUT_TIME = 0.5
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.finishContainer = arg0_1:findTF("FinishContainer", arg0_1.bg)
-	arg0_1.bubbleTF = arg0_1:findTF("Bubble", arg0_1.bg)
-	arg0_1.bubbleText = arg0_1:findTF("Text", arg0_1.bubbleTF)
+	arg0_1.finishContainer = arg0_1.bg:Find("FinishContainer")
+	arg0_1.bubbleTF = arg0_1.bg:Find("Bubble")
+	arg0_1.bubbleText = arg0_1.bubbleTF:Find("Text")
 	arg0_1.bubbleCG = GetComponent(arg0_1.bubbleTF, "CanvasGroup")
-	arg0_1.sdContainer = arg0_1:findTF("SDcontainer", arg0_1.bg)
-	arg0_1.sdBtn = arg0_1:findTF("SDBtn", arg0_1.bg)
+	arg0_1.sdContainer = arg0_1.bg:Find("SDcontainer")
+	arg0_1.sdBtn = arg0_1.bg:Find("SDBtn")
 
 	onButton(arg0_1, arg0_1.sdBtn, function()
 		local var0_2 = {
@@ -47,14 +47,14 @@ function var0_0.OnInit(arg0_1)
 		end
 	end, SFX_PANEL)
 
-	arg0_1.boxTF = arg0_1:findTF("Box")
-	arg0_1.boxBG = arg0_1:findTF("BG", arg0_1.boxTF)
-	arg0_1.boxText = arg0_1:findTF("Content/Text", arg0_1.boxTF)
+	arg0_1.boxTF = arg0_1._tf:Find("Box")
+	arg0_1.boxBG = arg0_1.boxTF:Find("BG")
+	arg0_1.boxText = arg0_1.boxTF:Find("Content/Text")
 
 	setText(arg0_1.boxText, i18n("valentinesday__shop_tip"))
 
-	arg0_1.confirmBtn = arg0_1:findTF("Content/Confirm", arg0_1.boxTF)
-	arg0_1.cancelBtn = arg0_1:findTF("Content/Cancel", arg0_1.boxTF)
+	arg0_1.confirmBtn = arg0_1.boxTF:Find("Content/Confirm")
+	arg0_1.cancelBtn = arg0_1.boxTF:Find("Content/Cancel")
 
 	onButton(arg0_1, arg0_1.boxBG, function()
 		setActive(arg0_1.boxTF, false)
@@ -83,7 +83,7 @@ function var0_0.OnInit(arg0_1)
 			"valentinesday__txt6_tip"
 		}
 	}
-	arg0_1.aniContainerTF = arg0_1:findTF("AniContainer", arg0_1.bg)
+	arg0_1.aniContainerTF = arg0_1.bg:Find("AniContainer")
 	arg0_1.tplList = GetComponent(arg0_1._tf, "ItemList").prefabItem:ToTable()
 	arg0_1.sdName = arg0_1.sdNameList[math.random(#arg0_1.sdNameList)]
 	arg0_1.spine = nil
@@ -107,7 +107,7 @@ function var0_0.OnFirstFlush(arg0_7)
 	arg0_7.uilist:make(function(arg0_8, arg1_8, arg2_8)
 		if arg0_8 == UIItemList.EventUpdate then
 			local var0_8 = arg1_8 + 1
-			local var1_8 = arg0_7:findTF("item", arg2_8)
+			local var1_8 = arg2_8:Find("item")
 			local var2_8 = arg0_7.taskGroup[arg0_7.nday][var0_8]
 			local var3_8 = arg0_7.taskProxy:getTaskById(var2_8) or arg0_7.taskProxy:getFinishTaskById(var2_8)
 
@@ -128,13 +128,13 @@ function var0_0.OnFirstFlush(arg0_7)
 			local var6_8 = var3_8:getProgress()
 			local var7_8 = var3_8:getConfig("target_num")
 
-			setText(arg0_7:findTF("description", arg2_8), var3_8:getConfig("desc"))
-			setText(arg0_7:findTF("progressText", arg2_8), setColorStr(var6_8, "#BBCF2EFF") .. "/" .. var7_8)
-			setSlider(arg0_7:findTF("progress", arg2_8), 0, var7_8, var6_8)
+			setText(arg2_8:Find("description"), var3_8:getConfig("desc"))
+			setText(arg2_8:Find("progressText"), setColorStr(var6_8, "#BBCF2EFF") .. "/" .. var7_8)
+			setSlider(arg2_8:Find("progress"), 0, var7_8, var6_8)
 
-			local var8_8 = arg0_7:findTF("go_btn", arg2_8)
-			local var9_8 = arg0_7:findTF("get_btn", arg2_8)
-			local var10_8 = arg0_7:findTF("got_btn", arg2_8)
+			local var8_8 = arg2_8:Find("go_btn")
+			local var9_8 = arg2_8:Find("get_btn")
+			local var10_8 = arg2_8:Find("got_btn")
 			local var11_8 = var3_8:getTaskStatus()
 
 			setActive(var8_8, var11_8 == 0)

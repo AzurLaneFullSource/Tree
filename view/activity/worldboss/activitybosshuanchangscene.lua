@@ -5,22 +5,22 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.mainTF = arg0_2:findTF("adapt")
-	arg0_2.bg = arg0_2:findTF("bg")
-	arg0_2.bottom = arg0_2:findTF("bottom", arg0_2.mainTF)
-	arg0_2.hpBar = arg0_2:findTF("progress", arg0_2.bottom)
+	arg0_2.mainTF = arg0_2._tf:Find("adapt")
+	arg0_2.bg = arg0_2._tf:Find("bg")
+	arg0_2.bottom = arg0_2.mainTF:Find("bottom")
+	arg0_2.hpBar = arg0_2.bottom:Find("progress")
 	arg0_2.barList = {}
 
 	for iter0_2 = 1, 4 do
-		arg0_2.barList[iter0_2] = arg0_2:findTF(iter0_2, arg0_2.hpBar)
+		arg0_2.barList[iter0_2] = arg0_2.hpBar:Find(iter0_2)
 	end
 
-	arg0_2.progressDigit = arg0_2:findTF("digit", arg0_2.bottom)
+	arg0_2.progressDigit = arg0_2.bottom:Find("digit")
 	arg0_2.digitbig = arg0_2.progressDigit:Find("big")
 	arg0_2.digitsmall = arg0_2.progressDigit:Find("small")
-	arg0_2.left = arg0_2:findTF("left", arg0_2.mainTF)
-	arg0_2.right = arg0_2:findTF("right", arg0_2.mainTF)
-	arg0_2.rankTF = arg0_2:findTF("rank", arg0_2.right)
+	arg0_2.left = arg0_2.mainTF:Find("left")
+	arg0_2.right = arg0_2.mainTF:Find("right")
+	arg0_2.rankTF = arg0_2.right:Find("rank")
 	arg0_2.rankList = CustomIndexLayer.Clone2Full(arg0_2.rankTF:Find("layout"), 3)
 
 	for iter1_2, iter2_2 in ipairs(arg0_2.rankList) do
@@ -30,21 +30,21 @@ function var0_0.init(arg0_2)
 	arg0_2.stageList = {}
 
 	for iter3_2 = 1, 4 do
-		arg0_2.stageList[iter3_2] = arg0_2:findTF(iter3_2, arg0_2.right)
+		arg0_2.stageList[iter3_2] = arg0_2.right:Find(iter3_2)
 	end
 
-	arg0_2.stageSP = arg0_2:findTF("6", arg0_2.right)
+	arg0_2.stageSP = arg0_2.right:Find("6")
 
 	if not IsNil(arg0_2.stageSP) then
 		setActive(arg0_2.stageSP, false)
 	end
 
-	arg0_2.awardFlash = arg0_2:findTF("ptaward/flash", arg0_2.right)
-	arg0_2.awardBtn = arg0_2:findTF("ptaward/button", arg0_2.right)
-	arg0_2.ptScoreTxt = arg0_2:findTF("ptaward/Text", arg0_2.right)
-	arg0_2.top = arg0_2:findTF("top", arg0_2.mainTF)
-	arg0_2.ticketNum = arg0_2:findTF("ticket/Text", arg0_2.top)
-	arg0_2.helpBtn = arg0_2:findTF("help", arg0_2.top)
+	arg0_2.awardFlash = arg0_2.right:Find("ptaward/flash")
+	arg0_2.awardBtn = arg0_2.right:Find("ptaward/button")
+	arg0_2.ptScoreTxt = arg0_2.right:Find("ptaward/Text")
+	arg0_2.top = arg0_2.mainTF:Find("top")
+	arg0_2.ticketNum = arg0_2.top:Find("ticket/Text")
+	arg0_2.helpBtn = arg0_2.top:Find("help")
 
 	onButton(arg0_2, arg0_2.top:Find("back_btn"), function()
 		arg0_2:emit(var0_0.ON_BACK)
@@ -70,7 +70,7 @@ end
 
 function var0_0.UpdateDropItems(arg0_4)
 	for iter0_4, iter1_4 in ipairs(arg0_4.contextData.DisplayItems or {}) do
-		local var0_4 = arg0_4:findTF("milestone/item", arg0_4.barList[iter0_4])
+		local var0_4 = arg0_4.barList[iter0_4]:Find("milestone/item")
 		local var1_4 = {
 			type = arg0_4.contextData.DisplayItems[5 - iter0_4][1],
 			id = arg0_4.contextData.DisplayItems[5 - iter0_4][2],
@@ -95,17 +95,17 @@ function var0_0.UpdatePage(arg0_6)
 	for iter0_6 = 1, 4 do
 		local var2_6 = arg0_6.barList[iter0_6]
 
-		setSlider(arg0_6:findTF("Slider", var2_6), 0, 2500, math.min(math.max(var0_6 - (iter0_6 - 1) * 2500, 0), 2500))
+		setSlider(var2_6:Find("Slider"), 0, 2500, math.min(math.max(var0_6 - (iter0_6 - 1) * 2500, 0), 2500))
 
 		local var3_6 = arg0_6.contextData.mileStones[5 - iter0_6]
 
-		setActive(arg0_6:findTF("milestone/item", var2_6), not var3_6)
-		setActive(arg0_6:findTF("milestone/time", var2_6), var3_6)
+		setActive(var2_6:Find("milestone/item"), not var3_6)
+		setActive(var2_6:Find("milestone/time"), var3_6)
 
 		if var3_6 then
 			local var4_6 = var1_6:STimeDescC(arg0_6.contextData.mileStones[5 - iter0_6], "%m/%d/%H:%M")
 
-			setText(arg0_6:findTF("milestone/time/Text", var2_6), var4_6)
+			setText(var2_6:Find("milestone/time/Text"), var4_6)
 		end
 	end
 

@@ -21,15 +21,15 @@ function var0_0.setCacheMsgs(arg0_5, arg1_5)
 end
 
 function var0_0.init(arg0_6)
-	arg0_6.frame = arg0_6:findTF("frame")
-	arg0_6.friendView = arg0_6:findTF("left_length/scrollView", arg0_6.frame)
-	arg0_6.chatPanel = arg0_6:findTF("notification_panel", arg0_6.frame)
-	arg0_6.chatPanelTitle = arg0_6:findTF("notification_panel/frame/top/name", arg0_6.frame)
-	arg0_6.sendBtn = arg0_6:findTF("frame/bottom/send", arg0_6.chatPanel)
-	arg0_6.inputTF = arg0_6:findTF("frame/bottom/input", arg0_6.chatPanel)
-	arg0_6.chatsRect = arg0_6:findTF("frame/list", arg0_6.chatPanel)
-	arg0_6.chatsContainer = arg0_6:findTF("frame/list/content", arg0_6.chatPanel)
-	arg0_6.closeBtn = arg0_6:findTF("frame/notification_panel/frame/top/close_btn")
+	arg0_6.frame = arg0_6._tf:Find("frame")
+	arg0_6.friendView = arg0_6.frame:Find("left_length/scrollView")
+	arg0_6.chatPanel = arg0_6.frame:Find("notification_panel")
+	arg0_6.chatPanelTitle = arg0_6.frame:Find("notification_panel/frame/top/name")
+	arg0_6.sendBtn = arg0_6.chatPanel:Find("frame/bottom/send")
+	arg0_6.inputTF = arg0_6.chatPanel:Find("frame/bottom/input")
+	arg0_6.chatsRect = arg0_6.chatPanel:Find("frame/list")
+	arg0_6.chatsContainer = arg0_6.chatPanel:Find("frame/list/content")
+	arg0_6.closeBtn = arg0_6._tf:Find("frame/notification_panel/frame/top/close_btn")
 	arg0_6.otherPopTpl = arg0_6:getTpl("frame/list/popo_other", arg0_6.chatPanel)
 	arg0_6.selfPopTpl = arg0_6:getTpl("frame/list/popo_self", arg0_6.chatPanel)
 
@@ -37,7 +37,7 @@ function var0_0.init(arg0_6)
 end
 
 function var0_0.didEnter(arg0_7)
-	local var0_7 = arg0_7:findTF("frame/bottom/emoji", arg0_7.chatPanel)
+	local var0_7 = arg0_7.chatPanel:Find("frame/bottom/emoji")
 
 	onButton(arg0_7, var0_7, function()
 		local var0_8 = var0_7.position
@@ -290,7 +290,7 @@ end
 function var0_0.willExit(arg0_33)
 	arg0_33:UnOverlayPanel(arg0_33.frame, arg0_33._tf)
 	eachChild(arg0_33.chatsContainer, function(arg0_34)
-		local var0_34 = arg0_33:findTF("face", arg0_34)
+		local var0_34 = arg0_34:Find("face")
 
 		if var0_34.childCount > 0 then
 			local var1_34 = var0_34:GetChild(0).gameObject

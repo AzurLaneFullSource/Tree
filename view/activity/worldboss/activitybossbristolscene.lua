@@ -6,12 +6,12 @@ end
 
 function var0_0.init(arg0_2)
 	var0_0.super.init(arg0_2)
-	setText(arg0_2:findTF("ticket/Desc", arg0_2.top), i18n("word_special_challenge_ticket"))
+	setText(arg0_2.top:Find("ticket/Desc"), i18n("word_special_challenge_ticket"))
 end
 
 function var0_0.UpdateDropItems(arg0_3)
 	for iter0_3, iter1_3 in ipairs(arg0_3.contextData.DisplayItems or {}) do
-		local var0_3 = arg0_3:findTF("milestone/item/IconTpl", arg0_3.barList[iter0_3])
+		local var0_3 = arg0_3.barList[iter0_3]:Find("milestone/item/IconTpl")
 		local var1_3 = {
 			type = arg0_3.contextData.DisplayItems[5 - iter0_3][1],
 			id = arg0_3.contextData.DisplayItems[5 - iter0_3][2],

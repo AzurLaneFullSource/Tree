@@ -43,15 +43,15 @@ function var0_0.getTaskById(arg0_4, arg1_4)
 end
 
 function var0_0.init(arg0_5)
-	arg0_5.backBtn = arg0_5:findTF("bg/top/back")
-	arg0_5.mainPanel = arg0_5:findTF("bg/main")
-	arg0_5.scrollRect = arg0_5:findTF("scroll_rect", arg0_5.mainPanel)
-	arg0_5.taskGorupContainer = arg0_5:findTF("scroll_rect/content", arg0_5.mainPanel)
+	arg0_5.backBtn = arg0_5._tf:Find("bg/top/back")
+	arg0_5.mainPanel = arg0_5._tf:Find("bg/main")
+	arg0_5.scrollRect = arg0_5.mainPanel:Find("scroll_rect")
+	arg0_5.taskGorupContainer = arg0_5.mainPanel:Find("scroll_rect/content")
 	arg0_5.taskGorupTpl = arg0_5:getTpl("taskGroup", arg0_5.taskGorupContainer)
 	arg0_5.offset = Vector2(arg0_5.taskGorupTpl.rect.width / 2 + 30, arg0_5.taskGorupTpl.rect.height / 2 + 30)
-	arg0_5.taskGroupDesc = arg0_5:findTF("taskGroup_desc", arg0_5.taskGorupContainer)
-	arg0_5.bottomPanel = arg0_5:findTF("bg/bottom")
-	arg0_5.bottomTaskGroups = arg0_5:findTF("taskGroups", arg0_5.bottomPanel)
+	arg0_5.taskGroupDesc = arg0_5.taskGorupContainer:Find("taskGroup_desc")
+	arg0_5.bottomPanel = arg0_5._tf:Find("bg/bottom")
+	arg0_5.bottomTaskGroups = arg0_5.bottomPanel:Find("taskGroups")
 	arg0_5.bottomBTpl = arg0_5:getTpl("bottom_task_tpl", arg0_5.bottomTaskGroups)
 	arg0_5.startPosition = arg0_5.taskGorupContainer.localPosition
 	arg0_5.titles = {}
@@ -190,7 +190,7 @@ end
 
 function var0_0.updateTaskGroupDesc(arg0_18, arg1_18)
 	local var0_18 = arg0_18.configData[arg1_18]
-	local var1_18 = arg0_18:findTF("main/desc", arg0_18.taskGroupDesc)
+	local var1_18 = arg0_18.taskGroupDesc:Find("main/desc")
 	local var2_18 = var1_18:Find("Image"):GetComponent(typeof(Image))
 	local var3_18
 
@@ -202,7 +202,7 @@ function var0_0.updateTaskGroupDesc(arg0_18, arg1_18)
 
 	var2_18.sprite = var3_18
 
-	local var4_18 = arg0_18:findTF("main/task_list", arg0_18.taskGroupDesc)
+	local var4_18 = arg0_18.taskGroupDesc:Find("main/task_list")
 	local var5_18 = var4_18:Find("task_tpl")
 
 	setText(var1_18, i18n("anniversary_task_title_" .. arg1_18))
@@ -227,7 +227,7 @@ function var0_0.updateTaskGroupDesc(arg0_18, arg1_18)
 		setActive(arg0_19:Find("confirm_btn/finished"), var0_19:isReceive())
 		setActive(arg0_19:Find("confirm_btn/get"), var0_19:isFinish() and not var0_19:isReceive())
 
-		local var1_19 = arg0_18:findTF("icon", arg0_19)
+		local var1_19 = arg0_19:Find("icon")
 		local var2_19 = var0_19:getConfig("award_display")[1]
 
 		updateDrop(var1_19, {
@@ -249,9 +249,9 @@ function var0_0.updateTaskGroupDesc(arg0_18, arg1_18)
 			end
 		end, SFX_PANEL)
 
-		arg0_18:findTF("slider", arg0_19):GetComponent(typeof(Slider)).value = var0_19:getProgress() / var0_19:getConfig("target_num")
+		arg0_19:Find("slider"):GetComponent(typeof(Slider)).value = var0_19:getProgress() / var0_19:getConfig("target_num")
 
-		setText(arg0_18:findTF("slider/Text", arg0_19), var0_19:getProgress() .. "/" .. var0_19:getConfig("target_num"))
+		setText(arg0_19:Find("slider/Text"), var0_19:getProgress() .. "/" .. var0_19:getConfig("target_num"))
 	end
 
 	arg0_18.ulist = UIItemList.New(var4_18, var5_18)

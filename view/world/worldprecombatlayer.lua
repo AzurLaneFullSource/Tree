@@ -10,17 +10,17 @@ end
 
 function var0_0.init(arg0_2)
 	arg0_2.eventTriggers = {}
-	arg0_2.middle = arg0_2:findTF("middle")
-	arg0_2.right = arg0_2:findTF("right")
-	arg0_2.top = arg0_2:findTF("top")
-	arg0_2.moveLayer = arg0_2:findTF("moveLayer")
+	arg0_2.middle = arg0_2._tf:Find("adapt/middle")
+	arg0_2.right = arg0_2._tf:Find("adapt/right")
+	arg0_2.top = arg0_2._tf:Find("adapt/top")
+	arg0_2.moveLayer = arg0_2._tf:Find("adapt/moveLayer")
 	arg0_2.backBtn = arg0_2.top:Find("back_btn")
 	arg0_2.playerResOb = arg0_2.top:Find("playerRes")
 	arg0_2.resPanel = WorldResource.New()
 
 	tf(arg0_2.resPanel._go):SetParent(tf(arg0_2.playerResOb), false)
 
-	arg0_2.strategyInfo = arg0_2:findTF("strategy_info", arg0_2.top)
+	arg0_2.strategyInfo = arg0_2.top:Find("strategy_info")
 
 	setActive(arg0_2.strategyInfo, false)
 
@@ -46,7 +46,7 @@ function var0_0.init(arg0_2)
 
 	setActive(arg0_2.strategy, false)
 
-	arg0_2.fleet = arg0_2:findTF("middle/fleet")
+	arg0_2.fleet = arg0_2.middle:Find("fleet")
 	arg0_2.ship_tpl = findTF(arg0_2.fleet, "shiptpl")
 	arg0_2.empty_tpl = findTF(arg0_2.fleet, "emptytpl")
 
@@ -59,8 +59,8 @@ function var0_0.init(arg0_2)
 	arg0_2.infoBtn = arg0_2.right:Find("information")
 	arg0_2.heroInfo = arg0_2:getTpl("heroInfo")
 	arg0_2.starTpl = arg0_2:getTpl("star_tpl")
-	arg0_2.energyDescTF = arg0_2:findTF("energy_desc")
-	arg0_2.energyDescTextTF = arg0_2:findTF("energy_desc/Text")
+	arg0_2.energyDescTF = arg0_2._tf:Find("energy_desc")
+	arg0_2.energyDescTextTF = arg0_2._tf:Find("energy_desc/Text")
 	arg0_2.normaltab = arg0_2.right:Find("normal")
 	arg0_2.informationtab = arg0_2.right:Find("infomation")
 	arg0_2.buffInfo = arg0_2.normaltab:Find("buff")
@@ -139,7 +139,7 @@ function var0_0.didEnter(arg0_5)
 			setActive(arg0_5.autoSubToggle, false)
 		end
 	end, SFX_PANEL, SFX_PANEL)
-	pg.UIMgr.GetInstance():OverlayPanel(arg0_5._tf)
+	arg0_5:OverlayPanel(arg0_5._tf)
 	arg0_5:updateCharacters()
 	arg0_5:updateStageView()
 	triggerToggle(arg0_5.autoToggle, ys.Battle.BattleState.IsAutoBotActive(SYSTEM_WORLD))
@@ -808,7 +808,7 @@ function var0_0.recycleCharacterList(arg0_59, arg1_59, arg2_59)
 end
 
 function var0_0.willExit(arg0_60)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_60._tf)
+	arg0_60:UnOverlayPanel(arg0_60._tf)
 
 	if arg0_60.resPanel then
 		arg0_60.resPanel:exit()

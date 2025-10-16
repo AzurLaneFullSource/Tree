@@ -26,21 +26,21 @@ function var0_0.OnCatteryStyleUpdate(arg0_3, arg1_3)
 end
 
 function var0_0.OnLoaded(arg0_4)
-	arg0_4.closeBtn = arg0_4:findTF("right/close_btn")
-	arg0_4.styleIcon = arg0_4:findTF("left/bg/mask/icon"):GetComponent(typeof(Image))
-	arg0_4.char = arg0_4:findTF("left/bg/char")
-	arg0_4.commanderEmpty = arg0_4:findTF("left/bg/info/empty")
+	arg0_4.closeBtn = arg0_4._tf:Find("right/close_btn")
+	arg0_4.styleIcon = arg0_4._tf:Find("left/bg/mask/icon"):GetComponent(typeof(Image))
+	arg0_4.char = arg0_4._tf:Find("left/bg/char")
+	arg0_4.commanderEmpty = arg0_4._tf:Find("left/bg/info/empty")
 	arg0_4.styleInfo = arg0_4.commanderEmpty
-	arg0_4.commanderExp = arg0_4:findTF("left/bg/info/commander_exp")
+	arg0_4.commanderExp = arg0_4._tf:Find("left/bg/info/commander_exp")
 	arg0_4.commanderLevelTxt = arg0_4.commanderExp:Find("level/Text"):GetComponent(typeof(Text))
 	arg0_4.commanderExpTxt = arg0_4.commanderExp:Find("value_bg/Text"):GetComponent(typeof(Text))
 	arg0_4.commanderExpImg = arg0_4.commanderExp:Find("exp/Image")
 	arg0_4.pageContainer = arg0_4._tf:Find("")
-	arg0_4.toggleGroup = arg0_4:findTF("left/tags"):GetComponent(typeof(ToggleGroup))
-	arg0_4.pagesTF = arg0_4:findTF("right/pages")
+	arg0_4.toggleGroup = arg0_4._tf:Find("left/tags"):GetComponent(typeof(ToggleGroup))
+	arg0_4.pagesTF = arg0_4._tf:Find("right/pages")
 	arg0_4.tags = {
-		arg0_4:findTF("left/tags/commander"),
-		arg0_4:findTF("left/tags/home")
+		arg0_4._tf:Find("left/tags/commander"),
+		arg0_4._tf:Find("left/tags/home")
 	}
 	arg0_4.pages = {
 		CommanderHomeSelCommanderPage.New(arg0_4.pagesTF, arg0_4.event),

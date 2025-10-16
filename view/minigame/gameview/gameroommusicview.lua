@@ -96,15 +96,15 @@ function var0_0.init(arg0_4)
 
 	arg0_4.game_speed = PlayerPrefs.GetInt("musicgame_idol_speed") > 0 and PlayerPrefs.GetInt("musicgame_idol_speed") or 1
 	arg0_4.game_dgree = 1
-	arg0_4.countContent = arg0_4:findTF("countContent")
+	arg0_4.countContent = arg0_4._tf:Find("countContent")
 	arg0_4.countTf = nil
-	arg0_4.top = arg0_4:findTF("top")
+	arg0_4.top = arg0_4._tf:Find("top")
 	arg0_4.btn_pause = arg0_4.top:Find("pause")
 	arg0_4.score = arg0_4.top:Find("score")
-	arg0_4.game_content = arg0_4:findTF("GameContent")
+	arg0_4.game_content = arg0_4._tf:Find("GameContent")
 	arg0_4.noteTpl = arg0_4.game_content:Find("noteTpl")
-	arg0_4.pauseview = arg0_4:findTF("Pauseview")
-	arg0_4.selectview = arg0_4:findTF("Selectview")
+	arg0_4.pauseview = arg0_4._tf:Find("Pauseview")
+	arg0_4.selectview = arg0_4._tf:Find("Selectview")
 
 	local var2_4 = findTF(arg0_4.selectview, "bg")
 
@@ -114,8 +114,8 @@ function var0_0.init(arg0_4)
 		setActive(var2_4, true)
 	end)
 
-	arg0_4.firstview = arg0_4:findTF("firstview")
-	arg0_4.scoreview = arg0_4:findTF("ScoreView")
+	arg0_4.firstview = arg0_4._tf:Find("firstview")
+	arg0_4.scoreview = arg0_4._tf:Find("ScoreView")
 
 	setActive(arg0_4.scoreview, false)
 

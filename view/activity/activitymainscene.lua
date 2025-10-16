@@ -87,12 +87,12 @@ function var0_0.init(arg0_5)
 			local var1_7 = var0_7:getConfig("title_res_tag")
 
 			if var1_7 then
-				local var2_7 = arg0_5:findTF("red", arg2_7)
+				local var2_7 = arg2_7:Find("red")
 				local var3_7 = GetSpriteFromAtlas("activityuitable/" .. var1_7 .. "_text", "") or GetSpriteFromAtlas("activityuitable/activity_text", "")
 				local var4_7 = GetSpriteFromAtlas("activityuitable/" .. var1_7 .. "_text_selected", "") or GetSpriteFromAtlas("activityuitable/activity_text_selected", "")
 
-				setImageSprite(arg0_5:findTF("off/text", arg2_7), var3_7, true)
-				setImageSprite(arg0_5:findTF("on/text", arg2_7), var4_7, true)
+				setImageSprite(arg2_7:Find("off/text"), var3_7, true)
+				setImageSprite(arg2_7:Find("on/text"), var4_7, true)
 				setActive(var2_7, var0_7:readyToAchieve())
 				onToggle(arg0_5, arg2_7, function(arg0_8)
 					if arg0_8 then
@@ -372,7 +372,7 @@ function var0_0.loadActivityPanel(arg0_40, arg1_40, arg2_40)
 end
 
 function var0_0.getBonusWindow(arg0_41, arg1_41, arg2_41)
-	local var0_41 = arg0_41:findTF(arg1_41)
+	local var0_41 = arg0_41._tf:Find(arg1_41)
 
 	if not var0_41 then
 		PoolMgr.GetInstance():GetUI("ActivitybonusWindow", true, function(arg0_42)

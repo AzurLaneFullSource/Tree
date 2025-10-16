@@ -5,26 +5,26 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnInit(arg0_2)
-	arg0_2.timeTF = arg0_2:findTF("content/top/time")
-	arg0_2.weekTF = arg0_2:findTF("week", arg0_2.timeTF)
-	arg0_2.dayTF = arg0_2:findTF("day", arg0_2.timeTF)
-	arg0_2.homeTF = arg0_2:findTF("content/top/home")
+	arg0_2.timeTF = arg0_2._tf:Find("content/top/time")
+	arg0_2.weekTF = arg0_2.timeTF:Find("week")
+	arg0_2.dayTF = arg0_2.timeTF:Find("day")
+	arg0_2.homeTF = arg0_2._tf:Find("content/top/home")
 
-	setText(arg0_2:findTF("Text", arg0_2.homeTF), i18n("child_date_text1"))
+	setText(arg0_2.homeTF:Find("Text"), i18n("child_date_text1"))
 
-	arg0_2.schoolTF = arg0_2:findTF("content/top/school")
+	arg0_2.schoolTF = arg0_2._tf:Find("content/top/school")
 
-	setText(arg0_2:findTF("Text", arg0_2.schoolTF), i18n("child_date_text2"))
+	setText(arg0_2.schoolTF:Find("Text"), i18n("child_date_text2"))
 
-	arg0_2.upgradeTF = arg0_2:findTF("content/top/upgrade")
+	arg0_2.upgradeTF = arg0_2._tf:Find("content/top/upgrade")
 
-	setText(arg0_2:findTF("Text", arg0_2.upgradeTF), i18n("child_date_text3"))
+	setText(arg0_2.upgradeTF:Find("Text"), i18n("child_date_text3"))
 
-	arg0_2.dataTF = arg0_2:findTF("content/top/data")
+	arg0_2.dataTF = arg0_2._tf:Find("content/top/data")
 
-	setText(arg0_2:findTF("Text", arg0_2.dataTF), i18n("child_date_text4"))
+	setText(arg0_2.dataTF:Find("Text"), i18n("child_date_text4"))
 
-	arg0_2.newsBtn = arg0_2:findTF("content/bottom")
+	arg0_2.newsBtn = arg0_2._tf:Find("content/bottom")
 
 	onButton(arg0_2, arg0_2.newsBtn, function()
 		arg0_2:emit(EducateBaseUI.EDUCATE_GO_SUBLAYER, Context.New({

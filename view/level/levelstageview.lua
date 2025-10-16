@@ -66,17 +66,17 @@ end
 local var1_0 = -300
 
 function var0_0.InitUI(arg0_8)
-	arg0_8.topStage = arg0_8:findTF("top_stage", arg0_8._tf)
+	arg0_8.topStage = arg0_8._tf:Find("top_stage")
 
 	setActive(arg0_8.topStage, true)
 
-	arg0_8.bottomStage = arg0_8:findTF("bottom_stage", arg0_8._tf)
+	arg0_8.bottomStage = arg0_8._tf:Find("bottom_stage")
 	arg0_8.normalRole = findTF(arg0_8.bottomStage, "Normal")
-	arg0_8.funcBtn = arg0_8:findTF("func_button", arg0_8.normalRole)
-	arg0_8.retreatBtn = arg0_8:findTF("retreat_button", arg0_8.normalRole)
-	arg0_8.switchBtn = arg0_8:findTF("switch_button", arg0_8.normalRole)
-	arg0_8.helpBtn = arg0_8:findTF("help_button", arg0_8.normalRole)
-	arg0_8.shengfuBtn = arg0_8:findTF("shengfu/shengfu_button", arg0_8.normalRole)
+	arg0_8.funcBtn = arg0_8.normalRole:Find("func_button")
+	arg0_8.retreatBtn = arg0_8.normalRole:Find("retreat_button")
+	arg0_8.switchBtn = arg0_8.normalRole:Find("switch_button")
+	arg0_8.helpBtn = arg0_8.normalRole:Find("help_button")
+	arg0_8.shengfuBtn = arg0_8.normalRole:Find("shengfu/shengfu_button")
 	arg0_8.actionRole = findTF(arg0_8.bottomStage, "Action")
 	arg0_8.missileStrikeRole = findTF(arg0_8.actionRole, "MissileStrike")
 	arg0_8.airExpelRole = findTF(arg0_8.actionRole, "AirExpel")
@@ -96,21 +96,21 @@ function var0_0.InitUI(arg0_8)
 		setActive(arg0_9, false)
 	end)
 
-	arg0_8.leftStage = arg0_8:findTF("left_stage", arg0_8._tf)
+	arg0_8.leftStage = arg0_8._tf:Find("left_stage")
 
 	setActive(arg0_8.leftStage, true)
 
-	arg0_8.rightStage = arg0_8:findTF("right_stage", arg0_8._tf)
+	arg0_8.rightStage = arg0_8._tf:Find("right_stage")
 	arg0_8.bombPanel = arg0_8.rightStage:Find("bomb_panel")
-	arg0_8.panelBarrier = arg0_8:findTF("panel_barrier", arg0_8.rightStage)
-	arg0_8.strategyPanelAnimator = arg0_8:findTF("event", arg0_8.rightStage):GetComponent(typeof(Animator))
-	arg0_8.autoBattleBtn = arg0_8:findTF("event/collapse/lock_fleet", arg0_8.rightStage)
-	arg0_8.showDetailBtn = arg0_8:findTF("event/detail/show_detail", arg0_8.rightStage)
+	arg0_8.panelBarrier = arg0_8.rightStage:Find("panel_barrier")
+	arg0_8.strategyPanelAnimator = arg0_8.rightStage:Find("event"):GetComponent(typeof(Animator))
+	arg0_8.autoBattleBtn = arg0_8.rightStage:Find("event/collapse/lock_fleet")
+	arg0_8.showDetailBtn = arg0_8.rightStage:Find("event/detail/show_detail")
 
 	setActive(arg0_8.panelBarrier, false)
 	setActive(arg0_8.rightStage, true)
 
-	arg0_8.airSupremacy = arg0_8:findTF("msg_panel/air_supremacy", arg0_8.topStage)
+	arg0_8.airSupremacy = arg0_8.topStage:Find("msg_panel/air_supremacy")
 
 	setAnchoredPosition(arg0_8.topStage, {
 		y = arg0_8.topStage.rect.height
@@ -142,10 +142,10 @@ function var0_0.AddListener(arg0_10)
 	arg0_10:bind(LevelUIConst.ON_CLICK_GRID_QUAD, function(arg0_13, arg1_13)
 		arg0_10:ClickGridCellNormal(arg1_13)
 	end)
-	onButton(arg0_10, arg0_10:findTF("option", arg0_10.topStage), function()
+	onButton(arg0_10, arg0_10.topStage:Find("option"), function()
 		arg0_10:emit(BaseUI.ON_HOME)
 	end, SFX_CANCEL)
-	onButton(arg0_10, arg0_10:findTF("back_button", arg0_10.topStage), function()
+	onButton(arg0_10, arg0_10.topStage:Find("back_button"), function()
 		arg0_10:emit(LevelUIConst.SWITCH_TO_MAP)
 	end, SFX_CANCEL)
 	onButton(arg0_10, arg0_10.retreatBtn, function()
@@ -1249,7 +1249,7 @@ function var0_0.updateStageFleet(arg0_82)
 	local var0_82 = arg0_82.contextData.chapterVO
 	local var1_82 = findTF(arg0_82.leftStage, "fleet")
 	local var2_82 = findTF(var1_82, "shiptpl")
-	local var3_82 = arg0_82:findTF("msg_panel/fleet_info/number", arg0_82.topStage)
+	local var3_82 = arg0_82.topStage:Find("msg_panel/fleet_info/number")
 
 	setActive(var2_82, false)
 	setText(var3_82, var0_82.fleet.id)
@@ -1418,7 +1418,7 @@ function var0_0.SwitchSubTeleportBottomStage(arg0_98)
 	setActive(arg0_98.missileStrikeRole, true)
 	setText(findTF(arg0_98.missileStrikeRole, "confirm_button/Text"), i18n("levelscene_deploy_submarine"))
 	setText(findTF(arg0_98.missileStrikeRole, "cancel_button/Text"), i18n("levelscene_deploy_submarine_cancel"))
-	onButton(arg0_98, arg0_98:findTF("confirm_button", arg0_98.missileStrikeRole), function()
+	onButton(arg0_98, arg0_98.missileStrikeRole:Find("confirm_button"), function()
 		local var0_99 = arg0_98.contextData.chapterVO
 		local var1_99 = var0_99:GetSubmarineFleet()
 		local var2_99 = var1_99.startPos
@@ -1445,7 +1445,7 @@ function var0_0.SwitchSubTeleportBottomStage(arg0_98)
 			end
 		})
 	end, SFX_UI_CLICK)
-	onButton(arg0_98, arg0_98:findTF("cancel_button", arg0_98.missileStrikeRole), function()
+	onButton(arg0_98, arg0_98.missileStrikeRole:Find("cancel_button"), function()
 		arg0_98:SwitchBottomStagePanel(false)
 		arg0_98.grid:TurnOffSubTeleport()
 		arg0_98.grid:updateQuadCells(ChapterConst.QuadStateNormal)
@@ -1456,7 +1456,7 @@ function var0_0.SwitchMissileBottomStagePanel(arg0_102)
 	setActive(arg0_102.missileStrikeRole, true)
 	setText(findTF(arg0_102.missileStrikeRole, "confirm_button/Text"), i18n("missile_attack_area_confirm"))
 	setText(findTF(arg0_102.missileStrikeRole, "cancel_button/Text"), i18n("missile_attack_area_cancel"))
-	onButton(arg0_102, arg0_102:findTF("confirm_button", arg0_102.missileStrikeRole), function()
+	onButton(arg0_102, arg0_102.missileStrikeRole:Find("confirm_button"), function()
 		local var0_103 = arg0_102.grid.missileStrikeTargetLine
 
 		if not var0_103 then
@@ -1475,7 +1475,7 @@ function var0_0.SwitchMissileBottomStagePanel(arg0_102)
 			})
 		end)()
 	end, SFX_UI_CLICK)
-	onButton(arg0_102, arg0_102:findTF("cancel_button", arg0_102.missileStrikeRole), function()
+	onButton(arg0_102, arg0_102.missileStrikeRole:Find("cancel_button"), function()
 		arg0_102:SwitchBottomStagePanel(false)
 		arg0_102.grid:HideMissileAimingMark()
 		arg0_102.grid:updateQuadCells(ChapterConst.QuadStateNormal)
@@ -1486,7 +1486,7 @@ function var0_0.SwitchAirSupportBottomStagePanel(arg0_106)
 	setActive(arg0_106.missileStrikeRole, true)
 	setText(findTF(arg0_106.missileStrikeRole, "confirm_button/Text"), i18n("missile_attack_area_confirm"))
 	setText(findTF(arg0_106.missileStrikeRole, "cancel_button/Text"), i18n("missile_attack_area_cancel"))
-	onButton(arg0_106, arg0_106:findTF("confirm_button", arg0_106.missileStrikeRole), function()
+	onButton(arg0_106, arg0_106.missileStrikeRole:Find("confirm_button"), function()
 		local var0_107 = arg0_106.grid.missileStrikeTargetLine
 
 		if not var0_107 then
@@ -1505,7 +1505,7 @@ function var0_0.SwitchAirSupportBottomStagePanel(arg0_106)
 			})
 		end)()
 	end, SFX_UI_CLICK)
-	onButton(arg0_106, arg0_106:findTF("cancel_button", arg0_106.missileStrikeRole), function()
+	onButton(arg0_106, arg0_106.missileStrikeRole:Find("cancel_button"), function()
 		arg0_106:SwitchBottomStagePanel(false)
 		arg0_106.grid:HideAirSupportAimingMark()
 		arg0_106.grid:updateQuadCells(ChapterConst.QuadStateNormal)
@@ -1515,7 +1515,7 @@ end
 function var0_0.SwitchAirExpelBottomStagePanel(arg0_110)
 	setActive(arg0_110.airExpelRole, true)
 	setText(findTF(arg0_110.airExpelRole, "cancel_button/Text"), i18n("levelscene_airexpel_cancel"))
-	onButton(arg0_110, arg0_110:findTF("cancel_button", arg0_110.airExpelRole), function()
+	onButton(arg0_110, arg0_110.airExpelRole:Find("cancel_button"), function()
 		arg0_110:SwitchBottomStagePanel(false)
 		arg0_110.grid:HideAirExpelAimingMark()
 		arg0_110.grid:CleanAirSupport()
@@ -2354,7 +2354,7 @@ function var0_0.TryAutoFight(arg0_165)
 end
 
 function var0_0.popStageStrategy(arg0_172)
-	local var0_172 = arg0_172:findTF("event/collapse", arg0_172.rightStage)
+	local var0_172 = arg0_172.rightStage:Find("event/collapse")
 
 	if var0_172.anchoredPosition.x <= 1 then
 		triggerButton(var0_172)

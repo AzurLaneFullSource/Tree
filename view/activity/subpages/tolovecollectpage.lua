@@ -13,20 +13,20 @@ function var0_0.OnFirstFlush(arg0_2)
 end
 
 function var0_0.findUI(arg0_3)
-	setImageRaycastTarget(arg0_3:findTF("tpl/Frame", arg0_3.content), false)
+	setImageRaycastTarget(arg0_3.content:Find("tpl/Frame"), false)
 
-	arg0_3.boxTF = arg0_3:findTF("Box")
-	arg0_3.boxBG = arg0_3:findTF("BG", arg0_3.boxTF)
-	arg0_3.panel = arg0_3:findTF("Panel", arg0_3.boxTF)
-	arg0_3.infoTF = arg0_3:findTF("Info", arg0_3.panel)
-	arg0_3.boxCloseBtn = arg0_3:findTF("CloseBtn", arg0_3.infoTF)
-	arg0_3.boxIconTF = arg0_3:findTF("Icon/Mask/IconTpl", arg0_3.infoTF)
-	arg0_3.boxNameText = arg0_3:findTF("NameText", arg0_3.infoTF)
-	arg0_3.boxNumTF = arg0_3:findTF("Num", arg0_3.infoTF)
-	arg0_3.boxNumTip = arg0_3:findTF("Text", arg0_3.boxNumTF)
-	arg0_3.boxNumText = arg0_3:findTF("NumText", arg0_3.boxNumTF)
-	arg0_3.boxDescText = arg0_3:findTF("DescText", arg0_3.infoTF)
-	arg0_3.boxSrcText = arg0_3:findTF("SrcText", arg0_3.infoTF)
+	arg0_3.boxTF = arg0_3._tf:Find("Box")
+	arg0_3.boxBG = arg0_3.boxTF:Find("BG")
+	arg0_3.panel = arg0_3.boxTF:Find("Panel")
+	arg0_3.infoTF = arg0_3.panel:Find("Info")
+	arg0_3.boxCloseBtn = arg0_3.infoTF:Find("CloseBtn")
+	arg0_3.boxIconTF = arg0_3.infoTF:Find("Icon/Mask/IconTpl")
+	arg0_3.boxNameText = arg0_3.infoTF:Find("NameText")
+	arg0_3.boxNumTF = arg0_3.infoTF:Find("Num")
+	arg0_3.boxNumTip = arg0_3.boxNumTF:Find("Text")
+	arg0_3.boxNumText = arg0_3.boxNumTF:Find("NumText")
+	arg0_3.boxDescText = arg0_3.infoTF:Find("DescText")
+	arg0_3.boxSrcText = arg0_3.infoTF:Find("SrcText")
 
 	onButton(arg0_3, arg0_3.boxBG, function()
 		arg0_3:showBoxPanel(false)
@@ -35,12 +35,12 @@ function var0_0.findUI(arg0_3)
 		arg0_3:showBoxPanel(false)
 	end, SFX_PANEL)
 
-	arg0_3.boxSrcContent = arg0_3:findTF("Content", arg0_3.panel)
-	arg0_3.boxSrcTpl = arg0_3:findTF("SrcTpl", arg0_3.boxSrcContent)
+	arg0_3.boxSrcContent = arg0_3.panel:Find("Content")
+	arg0_3.boxSrcTpl = arg0_3.boxSrcContent:Find("SrcTpl")
 
-	GetComponent(arg0_3:findTF("furniture_theme/Title", arg0_3.btnList), "Image"):SetNativeSize()
-	GetComponent(arg0_3:findTF("equip_skin_box/Title", arg0_3.btnList), "Image"):SetNativeSize()
-	GetComponent(arg0_3:findTF("medal/Title", arg0_3.btnList), "Image"):SetNativeSize()
+	GetComponent(arg0_3.btnList:Find("furniture_theme/Title"), "Image"):SetNativeSize()
+	GetComponent(arg0_3.btnList:Find("equip_skin_box/Title"), "Image"):SetNativeSize()
+	GetComponent(arg0_3.btnList:Find("medal/Title"), "Image"):SetNativeSize()
 end
 
 function var0_0.rewriteEquipSkinBtn(arg0_6)
@@ -91,9 +91,9 @@ function var0_0.updateBoxPanel(arg0_8, arg1_8)
 			local var2_9 = var0_9[2]
 			local var3_9 = var0_9[3]
 
-			changeToScrollText(arg0_8:findTF("SrcText", arg2_9), var3_9)
+			changeToScrollText(arg2_9:Find("SrcText"), var3_9)
 
-			local var4_9 = arg0_8:findTF("GoBtn", arg2_9)
+			local var4_9 = arg2_9:Find("GoBtn")
 
 			onButton(arg0_8, var4_9, function()
 				if var1_9 == Msgbox4LinkCollectGuide.SKIP_TYPE_SCENE then
@@ -119,7 +119,7 @@ end
 
 function var0_0.OnUpdateItem(arg0_12, arg1_12, arg2_12)
 	local var0_12 = arg0_12.showDataList[arg1_12 + 1]
-	local var1_12 = arg0_12:findTF("icon_mask/icon", arg2_12)
+	local var1_12 = arg2_12:Find("icon_mask/icon")
 	local var2_12 = {
 		type = var0_12.config.type,
 		id = var0_12.config.drop_id
@@ -140,16 +140,16 @@ function var0_0.OnUpdateItem(arg0_12, arg1_12, arg2_12)
 		arg0_12:updateBoxPanel(var0_13)
 		arg0_12:showBoxPanel(true)
 	end, SFX_PANEL)
-	changeToScrollText(arg0_12:findTF("name_mask/name", arg2_12), Drop.New({
+	changeToScrollText(arg2_12:Find("name_mask/name"), Drop.New({
 		type = var0_12.config.type,
 		id = var0_12.config.drop_id
 	}):getName())
-	setText(arg0_12:findTF("owner/number", arg2_12), var0_12.count .. "/" .. var0_12.config.count)
+	setText(arg2_12:Find("owner/number"), var0_12.count .. "/" .. var0_12.config.count)
 
-	GetOrAddComponent(arg0_12:findTF("owner", arg2_12), typeof(CanvasGroup)).alpha = var0_12.count == var0_12.config.count and 0.5 or 1
+	GetOrAddComponent(arg2_12:Find("owner"), typeof(CanvasGroup)).alpha = var0_12.count == var0_12.config.count and 0.5 or 1
 
-	setActive(arg0_12:findTF("got", arg2_12), var0_12.count == var0_12.config.count)
-	setActive(arg0_12:findTF("new", arg2_12), var0_12.config.is_new == "1")
+	setActive(arg2_12:Find("got"), var0_12.count == var0_12.config.count)
+	setActive(arg2_12:Find("new"), var0_12.config.is_new == "1")
 end
 
 return var0_0

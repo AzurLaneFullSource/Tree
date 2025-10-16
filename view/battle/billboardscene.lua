@@ -37,37 +37,37 @@ function var0_0.updateRankList(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2)
 end
 
 function var0_0.init(arg0_3)
-	arg0_3.blurPanel = arg0_3:findTF("blur_panel")
-	arg0_3.rankRect = arg0_3:findTF("main/frame/ranks"):GetComponent("LScrollRect")
-	arg0_3.playerRankTF = arg0_3:findTF("main/frame/player_rank")
+	arg0_3.blurPanel = arg0_3._tf:Find("blur_panel")
+	arg0_3.rankRect = arg0_3._tf:Find("main/frame/ranks"):GetComponent("LScrollRect")
+	arg0_3.playerRankTF = arg0_3._tf:Find("main/frame/player_rank")
 
 	setActive(arg0_3.playerRankTF, false)
 
-	arg0_3.topPanel = arg0_3:findTF("adapt/top", arg0_3.blurPanel)
-	arg0_3.leftPanel = arg0_3:findTF("adapt/left_length", arg0_3.blurPanel)
-	arg0_3.mainPanel = arg0_3:findTF("main")
-	arg0_3.extraChapterBg = arg0_3:findTF("extra_chapter_bg")
-	arg0_3.toggleScrollRect = arg0_3:findTF("frame/scroll_rect", arg0_3.leftPanel)
-	arg0_3.toggleContainer = arg0_3:findTF("frame/scroll_rect/tagRoot", arg0_3.leftPanel)
-	arg0_3.listEmptyTF = arg0_3:findTF("main/frame/empty")
+	arg0_3.topPanel = arg0_3.blurPanel:Find("adapt/top")
+	arg0_3.leftPanel = arg0_3.blurPanel:Find("adapt/left_length")
+	arg0_3.mainPanel = arg0_3._tf:Find("main")
+	arg0_3.extraChapterBg = arg0_3._tf:Find("extra_chapter_bg")
+	arg0_3.toggleScrollRect = arg0_3.leftPanel:Find("frame/scroll_rect")
+	arg0_3.toggleContainer = arg0_3.leftPanel:Find("frame/scroll_rect/tagRoot")
+	arg0_3.listEmptyTF = arg0_3._tf:Find("main/frame/empty")
 
 	setActive(arg0_3.listEmptyTF, false)
 
-	arg0_3.listEmptyTxt = arg0_3:findTF("Text", arg0_3.listEmptyTF)
+	arg0_3.listEmptyTxt = arg0_3.listEmptyTF:Find("Text")
 
 	setText(arg0_3.listEmptyTxt, i18n("list_empty_tip_billboardui"))
 
 	arg0_3.toggles = {
-		arg0_3:findTF("frame/scroll_rect/tagRoot/power", arg0_3.leftPanel),
-		arg0_3:findTF("frame/scroll_rect/tagRoot/collection", arg0_3.leftPanel),
-		arg0_3:findTF("frame/scroll_rect/tagRoot/pt", arg0_3.leftPanel),
-		arg0_3:findTF("frame/scroll_rect/tagRoot/pledge", arg0_3.leftPanel),
-		arg0_3:findTF("frame/scroll_rect/tagRoot/chanllenge", arg0_3.leftPanel),
-		arg0_3:findTF("frame/scroll_rect/tagRoot/extra_chapter", arg0_3.leftPanel),
-		arg0_3:findTF("frame/scroll_rect/tagRoot/boss_battle", arg0_3.leftPanel),
-		arg0_3:findTF("frame/scroll_rect/tagRoot/guild", arg0_3.leftPanel),
-		arg0_3:findTF("frame/scroll_rect/tagRoot/military", arg0_3.leftPanel),
-		arg0_3:findTF("frame/scroll_rect/tagRoot/bossrush", arg0_3.leftPanel)
+		arg0_3.leftPanel:Find("frame/scroll_rect/tagRoot/power"),
+		arg0_3.leftPanel:Find("frame/scroll_rect/tagRoot/collection"),
+		arg0_3.leftPanel:Find("frame/scroll_rect/tagRoot/pt"),
+		arg0_3.leftPanel:Find("frame/scroll_rect/tagRoot/pledge"),
+		arg0_3.leftPanel:Find("frame/scroll_rect/tagRoot/chanllenge"),
+		arg0_3.leftPanel:Find("frame/scroll_rect/tagRoot/extra_chapter"),
+		arg0_3.leftPanel:Find("frame/scroll_rect/tagRoot/boss_battle"),
+		arg0_3.leftPanel:Find("frame/scroll_rect/tagRoot/guild"),
+		arg0_3.leftPanel:Find("frame/scroll_rect/tagRoot/military"),
+		arg0_3.leftPanel:Find("frame/scroll_rect/tagRoot/bossrush")
 	}
 	arg0_3.ptToggles = {}
 
@@ -133,7 +133,7 @@ function var0_0.updateToggles(arg0_5)
 end
 
 function var0_0.didEnter(arg0_6)
-	onButton(arg0_6, arg0_6:findTF("back_btn", arg0_6.topPanel), function()
+	onButton(arg0_6, arg0_6.topPanel:Find("back_btn"), function()
 		arg0_6:emit(var0_0.ON_BACK)
 	end, SFX_CANCEL)
 
@@ -290,12 +290,12 @@ function var0_0.switchPage(arg0_18, arg1_18, arg2_18)
 		arg0_18:filter(arg0_18.page, arg2_18)
 	end
 
-	setActive(arg0_18:findTF("tip", arg0_18.topPanel), not table.contains(BillboardProxy.NONTIMER, arg0_18.page))
+	setActive(arg0_18.topPanel:Find("tip"), not table.contains(BillboardProxy.NONTIMER, arg0_18.page))
 	arg0_18:updateScoreTitle(arg0_18.page, arg2_18)
 end
 
 function var0_0.updateScoreTitle(arg0_19, arg1_19, arg2_19)
-	local var0_19 = arg0_19:findTF("main/frame/title")
+	local var0_19 = arg0_19._tf:Find("main/frame/title")
 	local var1_19 = PowerRank:getTitleWord(arg1_19, arg2_19)
 
 	for iter0_19 = 1, 4 do

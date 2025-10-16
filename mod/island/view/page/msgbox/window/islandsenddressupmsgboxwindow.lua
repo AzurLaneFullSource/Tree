@@ -14,9 +14,9 @@ local var1_0 = {
 function var0_0.OnLoaded(arg0_2)
 	var0_0.super.OnLoaded(arg0_2)
 
-	arg0_2.itemFrameTF = arg0_2:findTF("item/icon_bg/frame")
-	arg0_2.itemIconTF = arg0_2:findTF("item/icon_bg/icon")
-	arg0_2.ownNum = arg0_2:findTF("own/ownCount")
+	arg0_2.itemFrameTF = arg0_2._tf:Find("item/icon_bg/frame")
+	arg0_2.itemIconTF = arg0_2._tf:Find("item/icon_bg/icon")
+	arg0_2.ownNum = arg0_2._tf:Find("own/ownCount")
 end
 
 function var0_0.OnShow(arg0_3)

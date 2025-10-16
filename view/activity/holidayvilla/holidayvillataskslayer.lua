@@ -5,8 +5,8 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.white_closebtn = arg0_2:findTF("white_close")
-	arg0_2.bg = arg0_2:findTF("BG")
+	arg0_2.white_closebtn = arg0_2._tf:Find("white_close")
+	arg0_2.bg = arg0_2._tf:Find("BG")
 	arg0_2.Close = arg0_2.bg:Find("close")
 	arg0_2.list = arg0_2.bg:Find("panel/list")
 	arg0_2.frame = arg0_2.bg:Find("frame")
@@ -149,7 +149,7 @@ end
 
 function var0_0.UpdateList(arg0_14, arg1_14, arg2_14, arg3_14)
 	local var0_14 = arg1_14 + 1
-	local var1_14 = arg0_14:findTF("frame", arg2_14)
+	local var1_14 = arg2_14:Find("frame")
 	local var2_14 = arg0_14.taskProxy:getTaskVO(arg3_14[var0_14])
 	local var3_14 = arg2_14:Find("desc")
 
@@ -166,13 +166,13 @@ function var0_0.UpdateList(arg0_14, arg1_14, arg2_14, arg3_14)
 
 	arg0_14:updateAwards(var2_14:getConfig("award_display"), var7_14, var6_14)
 
-	local var8_14 = arg0_14:findTF("go_btn", arg2_14)
-	local var9_14 = arg0_14:findTF("get_btn", arg2_14)
-	local var10_14 = arg0_14:findTF("got_btn", arg2_14)
+	local var8_14 = arg2_14:Find("go_btn")
+	local var9_14 = arg2_14:Find("get_btn")
+	local var10_14 = arg2_14:Find("got_btn")
 
-	setText(arg0_14:findTF("go_btn/text", arg2_14), i18n("other_world_task_go"))
-	setText(arg0_14:findTF("get_btn/text", arg2_14), i18n("other_world_task_get"))
-	setText(arg0_14:findTF("got_btn/text", arg2_14), i18n("other_world_task_got"))
+	setText(arg2_14:Find("go_btn/text"), i18n("other_world_task_go"))
+	setText(arg2_14:Find("get_btn/text"), i18n("other_world_task_get"))
+	setText(arg2_14:Find("got_btn/text"), i18n("other_world_task_got"))
 
 	local var11_14 = var2_14:getTaskStatus()
 

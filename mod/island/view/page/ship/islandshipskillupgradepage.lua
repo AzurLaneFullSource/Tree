@@ -5,16 +5,16 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.upgradeBtn = arg0_2:findTF("btn_confirm")
-	arg0_2.closeBtn = arg0_2:findTF("frame_1/close")
-	arg0_2.titleTxt = arg0_2:findTF("frame_1/title"):GetComponent(typeof(Text))
-	arg0_2.levelTxt = arg0_2:findTF("frame_1/level"):GetComponent(typeof(Text))
-	arg0_2.nextLevelTxt = arg0_2:findTF("frame_1/next_level"):GetComponent(typeof(Text))
-	arg0_2.descTxt = arg0_2:findTF("frame_2/desc_bg/Text"):GetComponent(typeof(Text))
-	arg0_2.nextDescTxt = arg0_2:findTF("frame_2/desc_bg_1/Text"):GetComponent(typeof(Text))
-	arg0_2.uiItemList = UIItemList.New(arg0_2:findTF("frame_2/item_bg/items"), arg0_2:findTF("frame_2/item_bg/items/tpl"))
+	arg0_2.upgradeBtn = arg0_2._tf:Find("btn_confirm")
+	arg0_2.closeBtn = arg0_2._tf:Find("frame_1/close")
+	arg0_2.titleTxt = arg0_2._tf:Find("frame_1/title"):GetComponent(typeof(Text))
+	arg0_2.levelTxt = arg0_2._tf:Find("frame_1/level"):GetComponent(typeof(Text))
+	arg0_2.nextLevelTxt = arg0_2._tf:Find("frame_1/next_level"):GetComponent(typeof(Text))
+	arg0_2.descTxt = arg0_2._tf:Find("frame_2/desc_bg/Text"):GetComponent(typeof(Text))
+	arg0_2.nextDescTxt = arg0_2._tf:Find("frame_2/desc_bg_1/Text"):GetComponent(typeof(Text))
+	arg0_2.uiItemList = UIItemList.New(arg0_2._tf:Find("frame_2/item_bg/items"), arg0_2._tf:Find("frame_2/item_bg/items/tpl"))
 
-	setText(arg0_2:findTF("frame_2/sub_title/Text"), i18n("island_skill_consume_title"))
+	setText(arg0_2._tf:Find("frame_2/sub_title/Text"), i18n("island_skill_consume_title"))
 	setText(arg0_2.upgradeBtn:Find("Text"), i18n("island_chara_up_button"))
 end
 

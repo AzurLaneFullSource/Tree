@@ -3,7 +3,7 @@ local var0_0 = class("NewYearGreetingPtPage", import(".TemplatePage.PtTemplatePa
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.awardGotTag = arg0_1:findTF("award_got", arg0_1.bg)
+	arg0_1.awardGotTag = arg0_1.bg:Find("award_got")
 end
 
 function var0_0.OnFirstFlush(arg0_2)

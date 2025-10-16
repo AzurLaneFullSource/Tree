@@ -75,30 +75,30 @@ var0_0.NOTIFY_TYPE_BATTLE = 4
 var0_0.NOTIFY_TYPE_TECH = 5
 
 function var0_0.init(arg0_11)
-	arg0_11._bg = arg0_11:findTF("bg")
+	arg0_11._bg = arg0_11._tf:Find("bg")
 
 	pg.GuildPaintingMgr.GetInstance():Enter(arg0_11._bg:Find("painting"))
 
-	arg0_11._playerResOb = arg0_11:findTF("blur_panel/adapt/top/res")
+	arg0_11._playerResOb = arg0_11._tf:Find("blur_panel/adapt/top/res")
 	arg0_11.guildRes = GuildResPage.New(arg0_11._playerResOb, arg0_11.event)
-	arg0_11.toggleRoot = arg0_11:findTF("blur_panel/adapt/left_length/frame/scroll_rect/tagRoot")
-	arg0_11.mainTip = arg0_11:findTF("main/tip", arg0_11.toggleRoot)
-	arg0_11.applyTip = arg0_11:findTF("apply/tip", arg0_11.toggleRoot)
-	arg0_11.officeTip = arg0_11:findTF("office/tip", arg0_11.toggleRoot)
-	arg0_11.techTip = arg0_11:findTF("technology/tip", arg0_11.toggleRoot)
-	arg0_11.battleTip = arg0_11:findTF("battle/tip", arg0_11.toggleRoot)
-	arg0_11.back = arg0_11:findTF("blur_panel/adapt/top/back")
-	arg0_11.blurPanel = arg0_11:findTF("blur_panel")
-	arg0_11.mainTF = arg0_11:findTF("main")
-	arg0_11.eyeTF = arg0_11:findTF("blur_panel/adapt/eye")
+	arg0_11.toggleRoot = arg0_11._tf:Find("blur_panel/adapt/left_length/frame/scroll_rect/tagRoot")
+	arg0_11.mainTip = arg0_11.toggleRoot:Find("main/tip")
+	arg0_11.applyTip = arg0_11.toggleRoot:Find("apply/tip")
+	arg0_11.officeTip = arg0_11.toggleRoot:Find("office/tip")
+	arg0_11.techTip = arg0_11.toggleRoot:Find("technology/tip")
+	arg0_11.battleTip = arg0_11.toggleRoot:Find("battle/tip")
+	arg0_11.back = arg0_11._tf:Find("blur_panel/adapt/top/back")
+	arg0_11.blurPanel = arg0_11._tf:Find("blur_panel")
+	arg0_11.mainTF = arg0_11._tf:Find("main")
+	arg0_11.eyeTF = arg0_11._tf:Find("blur_panel/adapt/eye")
 	arg0_11._leftLength = findTF(arg0_11.blurPanel, "adapt/left_length")
 	arg0_11._topPanel = findTF(arg0_11.blurPanel, "adapt/top")
-	arg0_11.topBg = arg0_11:findTF("blur_panel/top_bg")
+	arg0_11.topBg = arg0_11._tf:Find("blur_panel/top_bg")
 	arg0_11.topBgWidth = arg0_11.topBg.rect.height
 	arg0_11.topWidth = arg0_11._topPanel.rect.height
 	arg0_11.letfWidth = -1 * (arg0_11._leftLength.rect.width + 300)
 	arg0_11.logPage = GuildOfficeLogPage.New(arg0_11._tf, arg0_11.event)
-	arg0_11.dynamicBg = GuildDynamicBG.New(arg0_11:findTF("dynamic_bg"))
+	arg0_11.dynamicBg = GuildDynamicBG.New(arg0_11._tf:Find("dynamic_bg"))
 	Input.multiTouchEnabled = false
 end
 

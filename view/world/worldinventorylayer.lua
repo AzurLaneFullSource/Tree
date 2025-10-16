@@ -16,12 +16,12 @@ function var0_0.init(arg0_2)
 		arg0_2:setItemList(arg0_2.inventoryProxy:GetItemList())
 	end
 
-	arg0_2.blurPanel = arg0_2:findTF("adapt/blur_panel")
-	arg0_2.backBtn = arg0_2:findTF("adapt/top/back_btn", arg0_2.blurPanel)
-	arg0_2.topItems = arg0_2:findTF("adapt/topItems")
-	arg0_2.itemView = arg0_2:findTF("adapt/item_scrollview")
-	arg0_2.equipmentView = arg0_2:findTF("adapt/equipment_scrollview")
-	arg0_2.materialtView = arg0_2:findTF("adapt/material_scrollview")
+	arg0_2.blurPanel = arg0_2._tf:Find("adapt/blur_panel")
+	arg0_2.backBtn = arg0_2.blurPanel:Find("adapt/top/back_btn")
+	arg0_2.topItems = arg0_2._tf:Find("adapt/topItems")
+	arg0_2.itemView = arg0_2._tf:Find("adapt/item_scrollview")
+	arg0_2.equipmentView = arg0_2._tf:Find("adapt/equipment_scrollview")
+	arg0_2.materialtView = arg0_2._tf:Find("adapt/material_scrollview")
 
 	local var0_2
 	local var1_2 = getProxy(SettingsProxy)
@@ -35,33 +35,33 @@ function var0_0.init(arg0_2)
 	arg0_2.itemView:Find("Viewport/item_grid"):GetComponent(typeof(GridLayoutGroup)).constraintCount = var0_2 and 8 or 7
 	arg0_2.equipmentView:Find("Viewport/moudle_grid"):GetComponent(typeof(GridLayoutGroup)).constraintCount = var0_2 and 8 or 7
 	arg0_2.materialtView:Find("Viewport/item_grid"):GetComponent(typeof(GridLayoutGroup)).constraintCount = var0_2 and 8 or 7
-	arg0_2.itemUsagePanel = ItemUsagePanel.New(arg0_2:findTF("adapt/item_usage_panel"), arg0_2:findTF("adapt"))
-	arg0_2.itemResetPanel = ItemResetPanel.New(arg0_2:findTF("adapt/reset_info_panel"), arg0_2:findTF("adapt"))
-	arg0_2.assignedItemView = WorldAssignedItemView.New(arg0_2:findTF("adapt"), arg0_2.event)
+	arg0_2.itemUsagePanel = ItemUsagePanel.New(arg0_2._tf:Find("adapt/item_usage_panel"), arg0_2._tf:Find("adapt"))
+	arg0_2.itemResetPanel = ItemResetPanel.New(arg0_2._tf:Find("adapt/reset_info_panel"), arg0_2._tf:Find("adapt"))
+	arg0_2.assignedItemView = WorldAssignedItemView.New(arg0_2._tf:Find("adapt"), arg0_2.event)
 	arg0_2.itemCards = {}
 	arg0_2.equipmetItems = {}
 	arg0_2.materialCards = {}
-	arg0_2._itemToggle = arg0_2:findTF("bottom_back/types/properties", arg0_2.topItems)
-	arg0_2._weaponToggle = arg0_2:findTF("bottom_back/types/siren_weapon", arg0_2.topItems)
-	arg0_2._materialToggle = arg0_2:findTF("bottom_back/types/material", arg0_2.topItems)
-	arg0_2.exchangeTips = arg0_2:findTF("bottom_back/reset_exchange", arg0_2.topItems)
+	arg0_2._itemToggle = arg0_2.topItems:Find("bottom_back/types/properties")
+	arg0_2._weaponToggle = arg0_2.topItems:Find("bottom_back/types/siren_weapon")
+	arg0_2._materialToggle = arg0_2.topItems:Find("bottom_back/types/material")
+	arg0_2.exchangeTips = arg0_2.topItems:Find("bottom_back/reset_exchange")
 
-	setText(arg0_2:findTF("bottom_back/reset_exchange/Text", arg0_2.topItems), i18n("world_inventory_tip"))
+	setText(arg0_2.topItems:Find("bottom_back/reset_exchange/Text"), i18n("world_inventory_tip"))
 
-	arg0_2.filterBusyToggle = arg0_2:findTF("adapt/left_length/frame/toggle_equip", arg0_2.blurPanel)
-	arg0_2.sortBtn = arg0_2:findTF("adapt/top/buttons/sort_button", arg0_2.blurPanel)
-	arg0_2.indexBtn = arg0_2:findTF("adapt/top/buttons/index_button", arg0_2.blurPanel)
-	arg0_2.decBtn = arg0_2:findTF("adapt/top/buttons/dec_btn", arg0_2.blurPanel)
-	arg0_2.upOrderTF = arg0_2:findTF("asc", arg0_2.decBtn)
-	arg0_2.downOrderTF = arg0_2:findTF("desc", arg0_2.decBtn)
-	arg0_2.sortPanel = arg0_2:findTF("sort", arg0_2.topItems)
-	arg0_2.sortContain = arg0_2:findTF("adapt/mask/panel", arg0_2.sortPanel)
-	arg0_2.sortTpl = arg0_2:findTF("tpl", arg0_2.sortContain)
+	arg0_2.filterBusyToggle = arg0_2.blurPanel:Find("adapt/left_length/frame/toggle_equip")
+	arg0_2.sortBtn = arg0_2.blurPanel:Find("adapt/top/buttons/sort_button")
+	arg0_2.indexBtn = arg0_2.blurPanel:Find("adapt/top/buttons/index_button")
+	arg0_2.decBtn = arg0_2.blurPanel:Find("adapt/top/buttons/dec_btn")
+	arg0_2.upOrderTF = arg0_2.decBtn:Find("asc")
+	arg0_2.downOrderTF = arg0_2.decBtn:Find("desc")
+	arg0_2.sortPanel = arg0_2.topItems:Find("sort")
+	arg0_2.sortContain = arg0_2.sortPanel:Find("adapt/mask/panel")
+	arg0_2.sortTpl = arg0_2.sortContain:Find("tpl")
 
 	setActive(arg0_2.sortTpl, false)
 	arg0_2:initData()
 	arg0_2:addListener()
-	print(arg0_2:findTF("bg").rect.width)
+	print(arg0_2._tf:Find("bg").rect.width)
 end
 
 function var0_0.didEnter(arg0_4)
@@ -97,7 +97,7 @@ function var0_0.didEnter(arg0_4)
 end
 
 function var0_0.onBackPressed(arg0_6)
-	print(arg0_6:findTF("bg").rect.width)
+	print(arg0_6._tf:Find("bg").rect.width)
 
 	if isActive(arg0_6.itemResetPanel._go) then
 		arg0_6.itemResetPanel:Close()
@@ -139,7 +139,7 @@ end
 
 function var0_0.addListener(arg0_11)
 	onButton(arg0_11, arg0_11.backBtn, function()
-		print(arg0_11:findTF("bg").rect.width)
+		print(arg0_11._tf:Find("bg").rect.width)
 		arg0_11:closeView()
 	end, SFX_CANCEL)
 	onButton(arg0_11, arg0_11.decBtn, function()
@@ -555,7 +555,7 @@ function var0_0.PlayOpenBox(arg0_51, arg1_51, arg2_51)
 
 		local var0_52 = tf(arg0_51[arg1_51])
 
-		var0_52:SetParent(arg0_51:findTF("adapt"), false)
+		var0_52:SetParent(arg0_51._tf:Find("adapt"), false)
 		var0_52:SetAsLastSibling()
 
 		local var1_52 = var0_52:GetComponent("DftAniEvent")
@@ -573,7 +573,7 @@ function var0_0.PlayOpenBox(arg0_51, arg1_51, arg2_51)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_EQUIPMENT_OPEN)
 	end
 
-	local var1_51 = arg0_51:findTF(arg1_51 .. "(Clone)")
+	local var1_51 = arg0_51._tf:Find(arg1_51 .. "(Clone)")
 
 	if var1_51 then
 		arg0_51[arg1_51] = go(var1_51)
@@ -725,7 +725,7 @@ function var0_0.filterEquipment(arg0_66)
 	end
 
 	arg0_66:updateEquipmentCount()
-	setImageSprite(arg0_66:findTF("Image", arg0_66.sortBtn), GetSpriteFromAtlas("ui/equipmentui_atlas", var0_66.spr), true)
+	setImageSprite(arg0_66.sortBtn:Find("Image"), GetSpriteFromAtlas("ui/equipmentui_atlas", var0_66.spr), true)
 	setActive(arg0_66.downOrderTF, not arg0_66.contextData.asc)
 	setActive(arg0_66.upOrderTF, arg0_66.contextData.asc)
 end

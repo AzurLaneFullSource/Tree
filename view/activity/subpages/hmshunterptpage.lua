@@ -3,7 +3,7 @@ local var0_0 = class("HMSHunterPTPage", import(".TemplatePage.PtTemplatePage"))
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.helpBtn = arg0_1:findTF("help", arg0_1.bg)
+	arg0_1.helpBtn = arg0_1.bg:Find("help")
 
 	onButton(arg0_1, arg0_1.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({

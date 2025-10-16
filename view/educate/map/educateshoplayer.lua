@@ -17,54 +17,54 @@ function var0_0.initData(arg0_3)
 end
 
 function var0_0.findUI(arg0_4)
-	arg0_4.anim = arg0_4:findTF("anim_root"):GetComponent(typeof(Animation))
-	arg0_4.animEvent = arg0_4:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+	arg0_4.anim = arg0_4._tf:Find("anim_root"):GetComponent(typeof(Animation))
+	arg0_4.animEvent = arg0_4._tf:Find("anim_root"):GetComponent(typeof(DftAniEvent))
 
 	arg0_4.animEvent:SetEndEvent(function()
 		arg0_4:emit(var0_0.ON_CLOSE)
 	end)
 
-	arg0_4.windowTF = arg0_4:findTF("anim_root/window")
-	arg0_4.titleTF = arg0_4:findTF("title", arg0_4.windowTF)
+	arg0_4.windowTF = arg0_4._tf:Find("anim_root/window")
+	arg0_4.titleTF = arg0_4.windowTF:Find("title")
 
-	setText(arg0_4:findTF("Text", arg0_4.titleTF), i18n("word_shop"))
+	setText(arg0_4.titleTF:Find("Text"), i18n("word_shop"))
 
-	arg0_4.closeBtn = arg0_4:findTF("close_btn", arg0_4.titleTF)
-	arg0_4.discountTF = arg0_4:findTF("Text/discount", arg0_4.titleTF)
-	arg0_4.discountValueTF = arg0_4:findTF("Text", arg0_4.discountTF)
-	arg0_4.goodContent = arg0_4:findTF("view/content", arg0_4.windowTF)
-	arg0_4.goodUIList = UIItemList.New(arg0_4.goodContent, arg0_4:findTF("tpl", arg0_4.goodContent))
+	arg0_4.closeBtn = arg0_4.titleTF:Find("close_btn")
+	arg0_4.discountTF = arg0_4.titleTF:Find("Text/discount")
+	arg0_4.discountValueTF = arg0_4.discountTF:Find("Text")
+	arg0_4.goodContent = arg0_4.windowTF:Find("view/content")
+	arg0_4.goodUIList = UIItemList.New(arg0_4.goodContent, arg0_4.goodContent:Find("tpl"))
 
-	setText(arg0_4:findTF("tpl/sellout/Text", arg0_4.goodContent), i18n("word_sell_out"))
+	setText(arg0_4.goodContent:Find("tpl/sellout/Text"), i18n("word_sell_out"))
 
-	arg0_4.tipTF = arg0_4:findTF("tip", arg0_4.windowTF)
-	arg0_4.detailPanelTF = arg0_4:findTF("detail/content", arg0_4.windowTF)
-	arg0_4.detailEmptyTF = arg0_4:findTF("detail/empty", arg0_4.windowTF)
+	arg0_4.tipTF = arg0_4.windowTF:Find("tip")
+	arg0_4.detailPanelTF = arg0_4.windowTF:Find("detail/content")
+	arg0_4.detailEmptyTF = arg0_4.windowTF:Find("detail/empty")
 
-	setText(arg0_4:findTF("Text", arg0_4.detailEmptyTF), i18n("child_shop_empty_tip"))
+	setText(arg0_4.detailEmptyTF:Find("Text"), i18n("child_shop_empty_tip"))
 
-	arg0_4.detailName = arg0_4:findTF("title/Text", arg0_4.detailPanelTF)
-	arg0_4.detailDesc = arg0_4:findTF("desc", arg0_4.detailPanelTF)
-	arg0_4.detailIcon = arg0_4:findTF("icon", arg0_4.detailPanelTF)
-	arg0_4.detailAttrsTF = arg0_4:findTF("attrs", arg0_4.detailPanelTF)
+	arg0_4.detailName = arg0_4.detailPanelTF:Find("title/Text")
+	arg0_4.detailDesc = arg0_4.detailPanelTF:Find("desc")
+	arg0_4.detailIcon = arg0_4.detailPanelTF:Find("icon")
+	arg0_4.detailAttrsTF = arg0_4.detailPanelTF:Find("attrs")
 
-	setActive(arg0_4:findTF("count", arg0_4.detailPanelTF), false)
+	setActive(arg0_4.detailPanelTF:Find("count"), false)
 
-	arg0_4.countValueTF = arg0_4:findTF("count/bg/Text", arg0_4.detailPanelTF)
-	arg0_4.addCountBtn = arg0_4:findTF("count/add", arg0_4.detailPanelTF)
-	arg0_4.reduceCountBtn = arg0_4:findTF("count/reduce", arg0_4.detailPanelTF)
-	arg0_4.maxCountBtn = arg0_4:findTF("count/max", arg0_4.detailPanelTF)
-	arg0_4.priceValue = arg0_4:findTF("price/value/Text", arg0_4.detailPanelTF)
+	arg0_4.countValueTF = arg0_4.detailPanelTF:Find("count/bg/Text")
+	arg0_4.addCountBtn = arg0_4.detailPanelTF:Find("count/add")
+	arg0_4.reduceCountBtn = arg0_4.detailPanelTF:Find("count/reduce")
+	arg0_4.maxCountBtn = arg0_4.detailPanelTF:Find("count/max")
+	arg0_4.priceValue = arg0_4.detailPanelTF:Find("price/value/Text")
 
-	setText(arg0_4:findTF("price/title", arg0_4.detailPanelTF), i18n("child_shop_price_title"))
+	setText(arg0_4.detailPanelTF:Find("price/title"), i18n("child_shop_price_title"))
 
-	arg0_4.purchaseBtn = arg0_4:findTF("purchase_btn", arg0_4.detailPanelTF)
+	arg0_4.purchaseBtn = arg0_4.detailPanelTF:Find("purchase_btn")
 
-	setText(arg0_4:findTF("Text", arg0_4.purchaseBtn), i18n("word_buy"))
+	setText(arg0_4.purchaseBtn:Find("Text"), i18n("word_buy"))
 end
 
 function var0_0.addListener(arg0_6)
-	onButton(arg0_6, arg0_6:findTF("anim_root/bg"), function()
+	onButton(arg0_6, arg0_6._tf:Find("anim_root/bg"), function()
 		arg0_6:_close()
 	end, SFX_PANEL)
 	onButton(arg0_6, arg0_6.closeBtn, function()
@@ -138,21 +138,21 @@ function var0_0.updateGoodItem(arg0_15, arg1_15, arg2_15)
 	local var0_15 = arg1_15 + 1
 	local var1_15 = arg0_15.goods[var0_15]
 
-	setActive(arg0_15:findTF("discount", arg2_15), arg0_15.isDiscount)
-	setText(arg0_15:findTF("discount/Text", arg2_15), "-" .. arg0_15.discountValue)
+	setActive(arg2_15:Find("discount"), arg0_15.isDiscount)
+	setText(arg2_15:Find("discount/Text"), "-" .. arg0_15.discountValue)
 
 	local var2_15 = var1_15:GetPrice()
 	local var3_15 = arg0_15.isDiscount and var1_15:GetPrice(arg0_15.discountRatio) or var2_15
 
-	setActive(arg0_15:findTF("bottom/price/price_original", arg2_15), arg0_15.isDiscount)
-	setText(arg0_15:findTF("bottom/price/price_original", arg2_15), var2_15)
-	setText(arg0_15:findTF("bottom/price/price_final", arg2_15), var3_15)
+	setActive(arg2_15:Find("bottom/price/price_original"), arg0_15.isDiscount)
+	setText(arg2_15:Find("bottom/price/price_original"), var2_15)
+	setText(arg2_15:Find("bottom/price/price_final"), var3_15)
 
 	local var4_15 = var1_15:GetShowInfo()
 
-	EducateHelper.UpdateDropShow(arg0_15:findTF("item", arg2_15), var4_15)
-	setActive(arg0_15:findTF("sellout", arg2_15), not var1_15:CanBuy())
-	setActive(arg0_15:findTF("selected", arg2_15), var0_15 == arg0_15.selectedIndex)
+	EducateHelper.UpdateDropShow(arg2_15:Find("item"), var4_15)
+	setActive(arg2_15:Find("sellout"), not var1_15:CanBuy())
+	setActive(arg2_15:Find("selected"), var0_15 == arg0_15.selectedIndex)
 	onButton(arg0_15, arg2_15, function()
 		if var0_15 == arg0_15.selectedIndex then
 			return
@@ -163,7 +163,7 @@ function var0_0.updateGoodItem(arg0_15, arg1_15, arg2_15)
 		for iter0_16 = 0, arg0_15.goodContent.childCount - 1 do
 			local var0_16 = arg0_15.goodContent:GetChild(iter0_16)
 
-			setActive(arg0_15:findTF("selected", var0_16), iter0_16 + 1 == arg0_15.selectedIndex)
+			setActive(var0_16:Find("selected"), iter0_16 + 1 == arg0_15.selectedIndex)
 		end
 
 		arg0_15:updateDetail()

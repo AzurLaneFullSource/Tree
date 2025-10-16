@@ -8,8 +8,8 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.container = arg0_2:findTF("content")
-	arg0_2.tpl = arg0_2:findTF("new")
+	arg0_2.container = arg0_2._tf:Find("content")
+	arg0_2.tpl = arg0_2._tf:Find("new")
 	arg0_2.hideTime = 3
 end
 

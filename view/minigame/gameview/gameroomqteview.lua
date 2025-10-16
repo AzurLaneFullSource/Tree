@@ -20,35 +20,35 @@ function var0_0.init(arg0_2)
 	arg0_2.ITEM_ID_1 = 1
 	arg0_2.ITEM_ID_2 = 2
 	arg0_2.ITEM_ID_3 = 3
-	arg0_2.startUI = arg0_2:findTF("start_ui")
-	arg0_2.startBtn = arg0_2:findTF("start_btn", arg0_2.startUI)
-	arg0_2.ruleBtn = arg0_2:findTF("rule_btn", arg0_2.startUI)
-	arg0_2.qBtn = arg0_2:findTF("q_btn", arg0_2.startUI)
-	arg0_2.countUI = arg0_2:findTF("count_ui")
-	arg0_2.countNumTxt = arg0_2:findTF("num", arg0_2.countUI)
-	arg0_2.endUI = arg0_2:findTF("end_ui")
-	arg0_2.endExitBtn = arg0_2:findTF("exit_btn", arg0_2.endUI)
-	arg0_2.endBestTxt = arg0_2:findTF("rope/paper/best_txt", arg0_2.endUI)
-	arg0_2.endScoreTxt = arg0_2:findTF("rope/paper/score_txt", arg0_2.endUI)
-	arg0_2.endComboTxt = arg0_2:findTF("rope/paper/combo_txt", arg0_2.endUI)
-	arg0_2.endMissTxt = arg0_2:findTF("rope/paper/miss_txt", arg0_2.endUI)
-	arg0_2.endHitTxt = arg0_2:findTF("rope/paper/hit_txt", arg0_2.endUI)
-	arg0_2.endUIEvent = arg0_2:findTF("rope", arg0_2.endUI):GetComponent("DftAniEvent")
-	arg0_2.content = arg0_2:findTF("content")
-	arg0_2.res = arg0_2:findTF("res")
-	arg0_2.gameBg = arg0_2:findTF("game_bg", arg0_2.content)
-	arg0_2.xgmPos = arg0_2:findTF("xiongguimao_pos", arg0_2.content)
-	arg0_2.guinuPos = arg0_2:findTF("guinu_pos", arg0_2.content)
-	arg0_2.bucketA = arg0_2:findTF("content/bucket_A")
+	arg0_2.startUI = arg0_2._tf:Find("start_ui")
+	arg0_2.startBtn = arg0_2.startUI:Find("start_btn")
+	arg0_2.ruleBtn = arg0_2.startUI:Find("rule_btn")
+	arg0_2.qBtn = arg0_2.startUI:Find("q_btn")
+	arg0_2.countUI = arg0_2._tf:Find("count_ui")
+	arg0_2.countNumTxt = arg0_2.countUI:Find("num")
+	arg0_2.endUI = arg0_2._tf:Find("end_ui")
+	arg0_2.endExitBtn = arg0_2.endUI:Find("exit_btn")
+	arg0_2.endBestTxt = arg0_2.endUI:Find("rope/paper/best_txt")
+	arg0_2.endScoreTxt = arg0_2.endUI:Find("rope/paper/score_txt")
+	arg0_2.endComboTxt = arg0_2.endUI:Find("rope/paper/combo_txt")
+	arg0_2.endMissTxt = arg0_2.endUI:Find("rope/paper/miss_txt")
+	arg0_2.endHitTxt = arg0_2.endUI:Find("rope/paper/hit_txt")
+	arg0_2.endUIEvent = arg0_2.endUI:Find("rope"):GetComponent("DftAniEvent")
+	arg0_2.content = arg0_2._tf:Find("content")
+	arg0_2.res = arg0_2._tf:Find("res")
+	arg0_2.gameBg = arg0_2.content:Find("game_bg")
+	arg0_2.xgmPos = arg0_2.content:Find("xiongguimao_pos")
+	arg0_2.guinuPos = arg0_2.content:Find("guinu_pos")
+	arg0_2.bucketA = arg0_2._tf:Find("content/bucket_A")
 	arg0_2.bucketASpine = arg0_2.bucketA:GetComponent("SpineAnimUI")
 	arg0_2.bucketAGraphic = arg0_2.bucketA:GetComponent("SkeletonGraphic")
-	arg0_2.bucketB = arg0_2:findTF("content/bucket_B")
+	arg0_2.bucketB = arg0_2._tf:Find("content/bucket_B")
 	arg0_2.bucketBSpine = arg0_2.bucketB:GetComponent("SpineAnimUI")
 	arg0_2.bucketBGraphic = arg0_2.bucketB:GetComponent("SkeletonGraphic")
-	arg0_2.bucketC = arg0_2:findTF("content/bucket_C")
-	arg0_2.msHand = arg0_2:findTF("ani", arg0_2.bucketC)
+	arg0_2.bucketC = arg0_2._tf:Find("content/bucket_C")
+	arg0_2.msHand = arg0_2.bucketC:Find("ani")
 	arg0_2.msHandAnimator = arg0_2.msHand:GetComponent("Animator")
-	arg0_2.msHandSlot = arg0_2:findTF("slot", arg0_2.msHand)
+	arg0_2.msHandSlot = arg0_2.msHand:Find("slot")
 	arg0_2.msHandEvent = arg0_2.msHand:GetComponent("DftAniEvent")
 	arg0_2.msBlockList = {}
 
@@ -89,9 +89,9 @@ function var0_0.init(arg0_2)
 		idle = 1,
 		attack = 0.6
 	}
-	arg0_2.cut1 = arg0_2:findTF("cut_1", arg0_2.bucketB)
-	arg0_2.cut2 = arg0_2:findTF("cut_2", arg0_2.bucketB)
-	arg0_2.cut3 = arg0_2:findTF("cut_3", arg0_2.bucketB)
+	arg0_2.cut1 = arg0_2.bucketB:Find("cut_1")
+	arg0_2.cut2 = arg0_2.bucketB:Find("cut_2")
+	arg0_2.cut3 = arg0_2.bucketB:Find("cut_3")
 	arg0_2.cut1Animator = arg0_2.cut1:GetComponent("Animator")
 	arg0_2.cut2Animator = arg0_2.cut2:GetComponent("Animator")
 	arg0_2.cut3Animator = arg0_2.cut3:GetComponent("Animator")
@@ -109,24 +109,24 @@ function var0_0.init(arg0_2)
 		setActive(arg0_2.cut3, false)
 	end)
 
-	arg0_2.keyUI = arg0_2:findTF("key_ui", arg0_2.content)
-	arg0_2.keyBar = arg0_2:findTF("key_bar", arg0_2.keyUI)
-	arg0_2.aBtn = arg0_2:findTF("A_btn", arg0_2.keyUI)
-	arg0_2.bBtn = arg0_2:findTF("B_btn", arg0_2.keyUI)
-	arg0_2.cBtn = arg0_2:findTF("C_btn", arg0_2.keyUI)
-	arg0_2.comboAni = arg0_2:findTF("combo_bar/center", arg0_2.content):GetComponent("Animator")
-	arg0_2.comboTxt = arg0_2:findTF("combo_bar/center/combo_txt", arg0_2.content)
+	arg0_2.keyUI = arg0_2.content:Find("key_ui")
+	arg0_2.keyBar = arg0_2.keyUI:Find("key_bar")
+	arg0_2.aBtn = arg0_2.keyUI:Find("A_btn")
+	arg0_2.bBtn = arg0_2.keyUI:Find("B_btn")
+	arg0_2.cBtn = arg0_2.keyUI:Find("C_btn")
+	arg0_2.comboAni = arg0_2.content:Find("combo_bar/center"):GetComponent("Animator")
+	arg0_2.comboTxt = arg0_2.content:Find("combo_bar/center/combo_txt")
 	arg0_2.comboAni.enabled = false
-	arg0_2.scoreTxt = arg0_2:findTF("score_bar/txt", arg0_2.content)
-	arg0_2.remainTxt = arg0_2:findTF("remain_time_bar/txt", arg0_2.content)
-	arg0_2.roundTxt = arg0_2:findTF("round_time_bar/txt", arg0_2.keyUI)
-	arg0_2.firePos = arg0_2:findTF("content/pos/fire_pos").anchoredPosition
-	arg0_2.hitPos = arg0_2:findTF("content/pos/hit_pos").anchoredPosition
-	arg0_2.aPos = arg0_2:findTF("content/pos/a_pos").anchoredPosition
-	arg0_2.bPos = arg0_2:findTF("content/pos/b_pos").anchoredPosition
-	arg0_2.cPos = arg0_2:findTF("content/pos/c_pos").anchoredPosition
-	arg0_2.missPos = arg0_2:findTF("content/pos/miss_pos").anchoredPosition
-	arg0_2.backBtn = arg0_2:findTF("back_btn", arg0_2.content)
+	arg0_2.scoreTxt = arg0_2.content:Find("score_bar/txt")
+	arg0_2.remainTxt = arg0_2.content:Find("remain_time_bar/txt")
+	arg0_2.roundTxt = arg0_2.keyUI:Find("round_time_bar/txt")
+	arg0_2.firePos = arg0_2._tf:Find("content/pos/fire_pos").anchoredPosition
+	arg0_2.hitPos = arg0_2._tf:Find("content/pos/hit_pos").anchoredPosition
+	arg0_2.aPos = arg0_2._tf:Find("content/pos/a_pos").anchoredPosition
+	arg0_2.bPos = arg0_2._tf:Find("content/pos/b_pos").anchoredPosition
+	arg0_2.cPos = arg0_2._tf:Find("content/pos/c_pos").anchoredPosition
+	arg0_2.missPos = arg0_2._tf:Find("content/pos/miss_pos").anchoredPosition
+	arg0_2.backBtn = arg0_2.content:Find("back_btn")
 	arg0_2.autoLoader = AutoLoader.New()
 
 	arg0_2.autoLoader:LoadSprite("ui/minigameui/qtegameuiasync_atlas", "background", arg0_2.gameBg, false)
@@ -747,7 +747,7 @@ function var0_0.getBlock(arg0_67, arg1_67, arg2_67)
 		for iter0_67 = 1, 3 do
 			for iter1_67 = 1, 3 do
 				local var1_67 = iter0_67 .. "-" .. iter1_67
-				local var2_67 = arg0_67:findTF("res/item" .. var1_67)
+				local var2_67 = arg0_67._tf:Find("res/item" .. var1_67)
 
 				arg0_67.blockPool[var1_67] = {}
 				arg0_67.blockPool[var1_67][#arg0_67.blockPool[var1_67] + 1] = var2_67
@@ -835,10 +835,10 @@ function var0_0.getShowBlock(arg0_74, arg1_74, arg2_74)
 			type = arg1_74,
 			id = arg2_74,
 			goName = var1_74,
-			tf = arg0_74:findTF(var1_74, arg0_74.keyBar)
+			tf = arg0_74.keyBar:Find(var1_74)
 		}
-		var2_74.wrongTag = arg0_74:findTF("wrong", var2_74.tf)
-		var2_74.rightTag = arg0_74:findTF("right", var2_74.tf)
+		var2_74.wrongTag = var2_74.tf:Find("wrong")
+		var2_74.rightTag = var2_74.tf:Find("right")
 		var2_74.nextBlock = nil
 		var2_74.userChoose = nil
 

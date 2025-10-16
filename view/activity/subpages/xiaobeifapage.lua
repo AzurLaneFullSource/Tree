@@ -1,14 +1,14 @@
 local var0_0 = class("XiaobeiFaPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.layer = arg0_1:findTF("layer")
-	arg0_1.btn = arg0_1:findTF("btn", arg0_1.layer)
-	arg0_1.bonusList = arg0_1:findTF("bonus_list", arg0_1.layer)
-	arg0_1.progress = arg0_1:findTF("progress", arg0_1.layer)
-	arg0_1.progressTxt = arg0_1:findTF("progressText", arg0_1.layer)
-	arg0_1.phaseTxt = arg0_1:findTF("phase/Text", arg0_1.layer)
-	arg0_1.award = arg0_1:findTF("award", arg0_1.layer)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.layer = arg0_1._tf:Find("layer")
+	arg0_1.btn = arg0_1.layer:Find("btn")
+	arg0_1.bonusList = arg0_1.layer:Find("bonus_list")
+	arg0_1.progress = arg0_1.layer:Find("progress")
+	arg0_1.progressTxt = arg0_1.layer:Find("progressText")
+	arg0_1.phaseTxt = arg0_1.layer:Find("phase/Text")
+	arg0_1.award = arg0_1.layer:Find("award")
 end
 
 function var0_0.OnFirstFlush(arg0_2)
@@ -40,7 +40,7 @@ function var0_0.flush_task_list_pt_xiaobeifa(arg0_5)
 	if var0_5:getConfig("config_client").main_task then
 		local var4_5 = var3_5 and var1_5 or var1_5 - 1
 
-		arg0_5:setImportantProgress(var0_5, arg0_5:findTF("progress_important"), var4_5, var0_5:getConfig("config_client").main_task, var0_5:getConfig("config_data"))
+		arg0_5:setImportantProgress(var0_5, arg0_5._tf:Find("progress_important"), var4_5, var0_5:getConfig("config_client").main_task, var0_5:getConfig("config_data"))
 	end
 end
 
@@ -170,7 +170,7 @@ function var0_0.setImportantProgress(arg0_11, arg1_11, arg2_11, arg3_11, arg4_11
 
 				local var9_11 = pg.task_data_template[iter1_11]
 				local var10_11 = var9_11.award_display[1]
-				local var11_11 = arg0_11:findTF("award", var8_11)
+				local var11_11 = var8_11:Find("award")
 				local var12_11 = {
 					type = var10_11[1],
 					id = var10_11[2],
@@ -181,9 +181,9 @@ function var0_0.setImportantProgress(arg0_11, arg1_11, arg2_11, arg3_11, arg4_11
 				onButton(arg0_11, var11_11, function()
 					arg0_11:emit(BaseUI.ON_DROP, var12_11)
 				end, SFX_PANEL)
-				setText(arg0_11:findTF("Text", var8_11), var9_11.target_num)
+				setText(var8_11:Find("Text"), var9_11.target_num)
 
-				local var13_11 = arg0_11:findTF("mask", var11_11)
+				local var13_11 = var11_11:Find("mask")
 
 				setActive(var13_11, iter2_11 <= arg3_11)
 

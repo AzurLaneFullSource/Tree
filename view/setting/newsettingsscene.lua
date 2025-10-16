@@ -63,9 +63,9 @@ function var0_0.GetPage(arg0_11, arg1_11)
 end
 
 function var0_0.init(arg0_12)
-	arg0_12.backBtn = arg0_12:findTF("blur_panel/adapt/top/back_btn")
+	arg0_12.backBtn = arg0_12._tf:Find("blur_panel/adapt/top/back_btn")
 
-	local var0_12 = arg0_12:findTF("pages")
+	local var0_12 = arg0_12._tf:Find("pages")
 
 	arg0_12.pages = {
 		SettingsOtherPage.New(var0_12, arg0_12.event, arg0_12.contextData),
@@ -74,20 +74,20 @@ function var0_0.init(arg0_12)
 		SettingsResPage.New(var0_12, arg0_12.event, arg0_12.contextData)
 	}
 	arg0_12.toggles = {
-		arg0_12:findTF("blur_panel/adapt/left_length/other"),
-		arg0_12:findTF("blur_panel/adapt/left_length/options"),
-		arg0_12:findTF("blur_panel/adapt/left_length/battle_ui"),
-		arg0_12:findTF("blur_panel/adapt/left_length/resources")
+		arg0_12._tf:Find("blur_panel/adapt/left_length/other"),
+		arg0_12._tf:Find("blur_panel/adapt/left_length/options"),
+		arg0_12._tf:Find("blur_panel/adapt/left_length/battle_ui"),
+		arg0_12._tf:Find("blur_panel/adapt/left_length/resources")
 	}
 
 	setActive(arg0_12.toggles[5], false)
 
 	arg0_12.otherTip = arg0_12.toggles[1]:Find("tip")
-	arg0_12.logoutBtn = arg0_12:findTF("blur_panel/adapt/left_length/logout")
-	arg0_12.helpBtn = arg0_12:findTF("blur_panel/adapt/left_length/help_us")
+	arg0_12.logoutBtn = arg0_12._tf:Find("blur_panel/adapt/left_length/logout")
+	arg0_12.helpBtn = arg0_12._tf:Find("blur_panel/adapt/left_length/help_us")
 	arg0_12.descWindow = SettingsMsgBosPage.New(arg0_12._tf, arg0_12.event)
 
-	setActive(arg0_12:findTF("blur_panel/adapt/left_length/threeD"), false)
+	setActive(arg0_12._tf:Find("blur_panel/adapt/left_length/threeD"), false)
 end
 
 function var0_0.didEnter(arg0_13)

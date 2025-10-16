@@ -41,9 +41,9 @@ var0_0.edge2area = {
 function var0_0.init(arg0_2)
 	var0_0.super.init(arg0_2)
 
-	arg0_2.top = arg0_2:findTF("top")
-	arg0_2._bg = arg0_2:findTF("BG")
-	arg0_2._map = arg0_2:findTF("map")
+	arg0_2.top = arg0_2._tf:Find("top")
+	arg0_2._bg = arg0_2._tf:Find("BG")
+	arg0_2._map = arg0_2._tf:Find("map")
 
 	for iter0_2 = 0, arg0_2._map.childCount - 1 do
 		local var0_2 = arg0_2._map:GetChild(iter0_2)
@@ -52,7 +52,7 @@ function var0_0.init(arg0_2)
 		arg0_2["map_" .. var1_2] = var0_2
 	end
 
-	arg0_2._upper = arg0_2:findTF("upper")
+	arg0_2._upper = arg0_2._tf:Find("upper")
 	arg0_2.upper_yanhuiyaoyue = nil
 	arg0_2.upper_xintiaochengbao = nil
 
@@ -69,7 +69,7 @@ function var0_0.init(arg0_2)
 	}
 	arg0_2._shipTpl = arg0_2._map:Find("ship")
 	arg0_2.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.USCastle2023Graph"))
-	arg0_2.fireworksTF = arg0_2:findTF("play_fireworks")
+	arg0_2.fireworksTF = arg0_2._tf:Find("play_fireworks")
 	arg0_2.fireworksList = {
 		1,
 		2,
@@ -83,13 +83,13 @@ function var0_0.init(arg0_2)
 end
 
 function var0_0.didEnter(arg0_3)
-	onButton(arg0_3, arg0_3:findTF("top/Back"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/Back"), function()
 		arg0_3:onBackPressed()
 	end, SFX_CANCEL)
-	onButton(arg0_3, arg0_3:findTF("top/Home"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/Home"), function()
 		arg0_3:quickExitFunc()
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("top/Help"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/Help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.uscastle2023_help.tip

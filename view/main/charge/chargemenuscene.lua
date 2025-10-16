@@ -71,26 +71,26 @@ function var0_0.initUIText(arg0_9)
 end
 
 function var0_0.findUI(arg0_10)
-	arg0_10.blurTF = arg0_10:findTF("blur_panel")
-	arg0_10.topTF = arg0_10:findTF("adapt/top", arg0_10.blurTF)
-	arg0_10.resTF = arg0_10:findTF("res", arg0_10.topTF)
-	arg0_10.backBtn = arg0_10:findTF("back_button", arg0_10.topTF)
-	arg0_10.menuTF = arg0_10:findTF("menu_screen")
-	arg0_10.skinShopBtn = arg0_10:findTF("skin_shop", arg0_10.menuTF)
-	arg0_10.skinLockIcon = arg0_10:findTF("skin_lock", arg0_10.menuTF)
+	arg0_10.blurTF = arg0_10._tf:Find("blur_panel")
+	arg0_10.topTF = arg0_10.blurTF:Find("adapt/top")
+	arg0_10.resTF = arg0_10.topTF:Find("res")
+	arg0_10.backBtn = arg0_10.topTF:Find("back_button")
+	arg0_10.menuTF = arg0_10._tf:Find("menu_screen")
+	arg0_10.skinShopBtn = arg0_10.menuTF:Find("skin_shop")
+	arg0_10.skinLockIcon = arg0_10.menuTF:Find("skin_lock")
 
 	local var0_10 = LOCK_SKIN_SHOP_ENTER and getProxy(PlayerProxy):getData().level < LOCK_SKIN_SHOP_ENTER_LEVEL
 
 	setActive(arg0_10.skinShopBtn, not var0_10)
 	setActive(arg0_10.skinLockIcon, var0_10)
 
-	arg0_10.diamondShopBtn = arg0_10:findTF("dimond_shop", arg0_10.menuTF)
-	arg0_10.itemShopBtn = arg0_10:findTF("props", arg0_10.menuTF)
-	arg0_10.giftShopBtn = arg0_10:findTF("gift_shop", arg0_10.menuTF)
-	arg0_10.supplyShopBtn = arg0_10:findTF("supply", arg0_10.menuTF)
-	arg0_10.monthCardTag = arg0_10:findTF("monthcard_tag", arg0_10.diamondShopBtn)
-	arg0_10.giftTag = arg0_10:findTF("tip", arg0_10.giftShopBtn)
-	arg0_10.bannerRect = BannerScrollRect.New(arg0_10:findTF("menu_screen/banner/mask/content"), arg0_10:findTF("menu_screen/banner/dots"))
+	arg0_10.diamondShopBtn = arg0_10.menuTF:Find("dimond_shop")
+	arg0_10.itemShopBtn = arg0_10.menuTF:Find("props")
+	arg0_10.giftShopBtn = arg0_10.menuTF:Find("gift_shop")
+	arg0_10.supplyShopBtn = arg0_10.menuTF:Find("supply")
+	arg0_10.monthCardTag = arg0_10.diamondShopBtn:Find("monthcard_tag")
+	arg0_10.giftTag = arg0_10.giftShopBtn:Find("tip")
+	arg0_10.bannerRect = BannerScrollRect.New(arg0_10._tf:Find("menu_screen/banner/mask/content"), arg0_10._tf:Find("menu_screen/banner/dots"))
 	arg0_10.chargeOrPurchaseHandler = ChargeOrPurchaseHandler.New()
 	arg0_10.chargeTipWindow = ChargeTipWindow.New(arg0_10._tf, arg0_10.event)
 end
@@ -209,7 +209,7 @@ function var0_0.updatePanel(arg0_26)
 	local var2_26 = var0_26:getActiveBannerByType(GAMEUI_BANNER_11)
 
 	if var2_26 ~= nil then
-		LoadImageSpriteAsync("activitybanner/" .. var2_26.pic, arg0_26:findTF("BG", arg0_26.giftShopBtn))
+		LoadImageSpriteAsync("activitybanner/" .. var2_26.pic, arg0_26.giftShopBtn:Find("BG"))
 	end
 
 	local var3_26 = MonthCardOutDateTipPanel.GetShowMonthCardTag()

@@ -5,14 +5,14 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.input = arg0_2:findTF("frame/name/InputField")
-	arg0_2.closeBtn = arg0_2:findTF("frame/close")
-	arg0_2.confirmBtn = arg0_2:findTF("frame/confirm")
-	arg0_2.content = arg0_2:findTF("frame/Text")
+	arg0_2.input = arg0_2._tf:Find("frame/name/InputField")
+	arg0_2.closeBtn = arg0_2._tf:Find("frame/close")
+	arg0_2.confirmBtn = arg0_2._tf:Find("frame/confirm")
+	arg0_2.content = arg0_2._tf:Find("frame/Text")
 
-	setText(arg0_2:findTF("frame/title"), i18n("island_rename_title"))
-	setText(arg0_2:findTF("frame/confirm/Text"), i18n("word_ok"))
-	setText(arg0_2:findTF("frame/name/InputField/Placeholder"), i18n("island_rename_input_tip"))
+	setText(arg0_2._tf:Find("frame/title"), i18n("island_rename_title"))
+	setText(arg0_2._tf:Find("frame/confirm/Text"), i18n("word_ok"))
+	setText(arg0_2._tf:Find("frame/name/InputField/Placeholder"), i18n("island_rename_input_tip"))
 
 	arg0_2.animator = arg0_2._tf:GetComponent(typeof(Animation))
 	arg0_2.aniDft = arg0_2._tf:GetComponent(typeof(DftAniEvent))

@@ -13,17 +13,17 @@ function var0_0.setPlayer(arg0_3, arg1_3)
 end
 
 function var0_0.init(arg0_4)
-	arg0_4.createPanel = arg0_4:findTF("create_panel")
-	arg0_4.factionPanel = arg0_4:findTF("faction_panel")
-	arg0_4.createBtn = arg0_4:findTF("create_panel/frame/create_btn")
-	arg0_4.joinBtn = arg0_4:findTF("create_panel/frame/join_btn")
-	arg0_4.topPanel = arg0_4:findTF("blur_panel/adapt/top")
-	arg0_4.publicGuildBtn = arg0_4:findTF("create_panel/frame/public_btn")
-	arg0_4.backBtn = arg0_4:findTF("back", arg0_4.topPanel)
+	arg0_4.createPanel = arg0_4._tf:Find("create_panel")
+	arg0_4.factionPanel = arg0_4._tf:Find("faction_panel")
+	arg0_4.createBtn = arg0_4._tf:Find("create_panel/frame/create_btn")
+	arg0_4.joinBtn = arg0_4._tf:Find("create_panel/frame/join_btn")
+	arg0_4.topPanel = arg0_4._tf:Find("blur_panel/adapt/top")
+	arg0_4.publicGuildBtn = arg0_4._tf:Find("create_panel/frame/public_btn")
+	arg0_4.backBtn = arg0_4.topPanel:Find("back")
 
 	setActive(arg0_4.factionPanel, false)
 
-	arg0_4.mask = arg0_4:findTF("mask")
+	arg0_4.mask = arg0_4._tf:Find("mask")
 
 	SetActive(arg0_4.mask, false)
 

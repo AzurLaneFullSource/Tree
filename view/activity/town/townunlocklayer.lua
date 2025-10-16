@@ -10,7 +10,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.uiList = UIItemList.New(arg0_2:findTF("frame/content"), arg0_2:findTF("frame/content/tpl"))
+	arg0_2.uiList = UIItemList.New(arg0_2._tf:Find("frame/content"), arg0_2._tf:Find("frame/content/tpl"))
 
 	arg0_2.uiList:make(function(arg0_3, arg1_3, arg2_3)
 		if arg0_3 == UIItemList.EventUpdate then
@@ -18,12 +18,12 @@ function var0_0.init(arg0_2)
 			local var1_3 = arg0_2.unlockInfos[arg1_3 + 1].id
 			local var2_3 = pg.activity_town_work_level[var1_3].pic
 
-			setImageSprite(arg0_2:findTF("icon", arg2_3), GetSpriteFromAtlas("ui/townui_atlas", var2_3), true)
-			setActive(arg0_2:findTF("new", arg2_3), var0_3 == var0_0.TYPE.NEW)
+			setImageSprite(arg2_3:Find("icon"), GetSpriteFromAtlas("ui/townui_atlas", var2_3), true)
+			setActive(arg2_3:Find("new"), var0_3 == var0_0.TYPE.NEW)
 
 			local var3_3 = var0_3 == var0_0.TYPE.NEW and i18n("town_unlcok_new") or i18n("town_unlcok_level")
 
-			setText(arg0_2:findTF("tip/Text", arg2_3), var3_3)
+			setText(arg2_3:Find("tip/Text"), var3_3)
 		end
 	end)
 end

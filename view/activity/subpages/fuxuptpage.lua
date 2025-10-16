@@ -2,7 +2,7 @@ local var0_0 = class("FuxuPtPage", import(".TemplatePage.PtTemplatePage"))
 
 function var0_0.OnFirstFlush(arg0_1)
 	var0_0.super.OnFirstFlush(arg0_1)
-	onButton(arg0_1, arg0_1:findTF("build_btn", arg0_1.bg), function()
+	onButton(arg0_1, arg0_1.bg:Find("build_btn"), function()
 		arg0_1:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
 			projectName = BuildShipScene.PROJECTS.HEAVY
 		})
@@ -31,7 +31,7 @@ function var0_0.OnUpdateFlush(arg0_3)
 
 	if var6_3 and not var7_3 or var7_3 and var7_3:isEnd() then
 		setActive(arg0_3.battleBtn, false)
-		setActive(arg0_3:findTF("build_btn", arg0_3.bg), false)
+		setActive(arg0_3.bg:Find("build_btn"), false)
 	end
 end
 

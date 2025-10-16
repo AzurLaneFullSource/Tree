@@ -30,31 +30,31 @@ function var0_0.OnUpdateResField(arg0_5, arg1_5)
 end
 
 function var0_0.init(arg0_6)
-	arg0_6.backBtn = arg0_6:findTF("blur_panel/adapt/top/back")
-	arg0_6.lessonTxt = arg0_6:findTF("blur_panel/adapt/bottom/lesson/mask/Text"):GetComponent("ScrollText")
-	arg0_6.tranSpeedTxt = arg0_6:findTF("blur_panel/adapt/bottom/progress/proficiency/value"):GetComponent(typeof(Text))
-	arg0_6.proficiencyProgressTxt = arg0_6:findTF("blur_panel/adapt/bottom/progress/proficiency/Text"):GetComponent(typeof(Text))
-	arg0_6.proficiencyProgress = arg0_6:findTF("blur_panel/adapt/bottom/progress/proficiency/slider/Image")
-	arg0_6.tranProgressTxt = arg0_6:findTF("blur_panel/adapt/bottom/progress/book/Text/value"):GetComponent(typeof(Text))
-	arg0_6.tranProgress = arg0_6:findTF("blur_panel/adapt/bottom/progress/book/slider/Image")
-	arg0_6.exp2ProficiencyRatioTxt = arg0_6:findTF("blur_panel/adapt/top/proficiency/Text"):GetComponent(typeof(Text))
-	arg0_6.exp2ProficiencyRatio = arg0_6:findTF("blur_panel/adapt/top/proficiency")
-	arg0_6.chatProficiency = arg0_6:findTF("blur_panel/adapt/top/proficiency/chat")
+	arg0_6.backBtn = arg0_6._tf:Find("blur_panel/adapt/top/back")
+	arg0_6.lessonTxt = arg0_6._tf:Find("blur_panel/adapt/bottom/lesson/mask/Text"):GetComponent("ScrollText")
+	arg0_6.tranSpeedTxt = arg0_6._tf:Find("blur_panel/adapt/bottom/progress/proficiency/value"):GetComponent(typeof(Text))
+	arg0_6.proficiencyProgressTxt = arg0_6._tf:Find("blur_panel/adapt/bottom/progress/proficiency/Text"):GetComponent(typeof(Text))
+	arg0_6.proficiencyProgress = arg0_6._tf:Find("blur_panel/adapt/bottom/progress/proficiency/slider/Image")
+	arg0_6.tranProgressTxt = arg0_6._tf:Find("blur_panel/adapt/bottom/progress/book/Text/value"):GetComponent(typeof(Text))
+	arg0_6.tranProgress = arg0_6._tf:Find("blur_panel/adapt/bottom/progress/book/slider/Image")
+	arg0_6.exp2ProficiencyRatioTxt = arg0_6._tf:Find("blur_panel/adapt/top/proficiency/Text"):GetComponent(typeof(Text))
+	arg0_6.exp2ProficiencyRatio = arg0_6._tf:Find("blur_panel/adapt/top/proficiency")
+	arg0_6.chatProficiency = arg0_6._tf:Find("blur_panel/adapt/top/proficiency/chat")
 	arg0_6.chatProficiencyTxt = arg0_6.chatProficiency:Find("Text"):GetComponent(typeof(Text))
-	arg0_6.helpBtn = arg0_6:findTF("blur_panel/adapt/top/btn_help")
-	arg0_6.upgradeBtn = arg0_6:findTF("blur_panel/adapt/bottom/upgarde")
-	arg0_6.teacherSeat = arg0_6:findTF("scene/desk0")
+	arg0_6.helpBtn = arg0_6._tf:Find("blur_panel/adapt/top/btn_help")
+	arg0_6.upgradeBtn = arg0_6._tf:Find("blur_panel/adapt/bottom/upgarde")
+	arg0_6.teacherSeat = arg0_6._tf:Find("scene/desk0")
 	arg0_6.studentSeats = {
-		arg0_6:findTF("scene/desk1"),
-		arg0_6:findTF("scene/desk2"),
-		arg0_6:findTF("scene/desk3"),
-		arg0_6:findTF("scene/desk4"),
-		arg0_6:findTF("scene/desk5")
+		arg0_6._tf:Find("scene/desk1"),
+		arg0_6._tf:Find("scene/desk2"),
+		arg0_6._tf:Find("scene/desk3"),
+		arg0_6._tf:Find("scene/desk4"),
+		arg0_6._tf:Find("scene/desk5")
 	}
 
-	setText(arg0_6:findTF("blur_panel/adapt/bottom/progress/book/Text/label"), i18n("class_label_gen"))
-	setText(arg0_6:findTF("blur_panel/adapt/bottom/progress/proficiency/label"), i18n("class_label_tran"))
-	setText(arg0_6:findTF("blur_panel/adapt/bottom/upgarde/Text"), i18n("word_levelup"))
+	setText(arg0_6._tf:Find("blur_panel/adapt/bottom/progress/book/Text/label"), i18n("class_label_gen"))
+	setText(arg0_6._tf:Find("blur_panel/adapt/bottom/progress/proficiency/label"), i18n("class_label_tran"))
+	setText(arg0_6._tf:Find("blur_panel/adapt/bottom/upgarde/Text"), i18n("word_levelup"))
 
 	arg0_6.chars = {}
 	arg0_6.resFieldPage = ClassResourcePage.New(arg0_6._tf, arg0_6.event)

@@ -37,45 +37,45 @@ end
 
 function var0_0.initUI(arg0_6)
 	arg0_6.shipTF = {
-		arg0_6:findTF("Ship1"),
-		(arg0_6:findTF("Ship2"))
+		arg0_6._tf:Find("Ship1"),
+		(arg0_6._tf:Find("Ship2"))
 	}
 	arg0_6.shipRarityTF = {
-		arg0_6:findTF("Rarity1"),
-		(arg0_6:findTF("Rarity2"))
+		arg0_6._tf:Find("Rarity1"),
+		(arg0_6._tf:Find("Rarity2"))
 	}
-	arg0_6.boxTF = arg0_6:findTF("build_msg")
+	arg0_6.boxTF = arg0_6._tf:Find("build_msg")
 	arg0_6.buildMsgBox = var0_0.MsgBox(arg0_6.boxTF)
-	arg0_6.buildBtn = arg0_6:findTF("BuildBtn")
-	arg0_6.buildCubeNumText = arg0_6:findTF("BuildInfo/CubeNum")
-	arg0_6.buildGoldNumText = arg0_6:findTF("BuildInfo/GoldNum")
-	arg0_6.curCubeNumText = arg0_6:findTF("CubeImg/NumText")
-	arg0_6.material1 = arg0_6:findTF("material1")
-	arg0_6.material2 = arg0_6:findTF("material2")
+	arg0_6.buildBtn = arg0_6._tf:Find("BuildBtn")
+	arg0_6.buildCubeNumText = arg0_6._tf:Find("BuildInfo/CubeNum")
+	arg0_6.buildGoldNumText = arg0_6._tf:Find("BuildInfo/GoldNum")
+	arg0_6.curCubeNumText = arg0_6._tf:Find("CubeImg/NumText")
+	arg0_6.material1 = arg0_6._tf:Find("material1")
+	arg0_6.material2 = arg0_6._tf:Find("material2")
 	arg0_6.ratioSpriteMap = {}
 
-	local var0_6 = arg0_6:findTF("Ratio")
+	local var0_6 = arg0_6._tf:Find("Ratio")
 
 	for iter0_6 = 2, 6 do
-		local var1_6 = getImageSprite(arg0_6:findTF(tostring(iter0_6), var0_6))
+		local var1_6 = getImageSprite(arg0_6._tf:Find(tostring(iter0_6), var0_6))
 
 		arg0_6.ratioSpriteMap[iter0_6] = var1_6
 	end
 
 	arg0_6.raritySpriteMap = {
 		Normal = {
-			Light1 = getImageSprite(arg0_6:findTF("Light/Normal/Light1")),
-			Light2 = getImageSprite(arg0_6:findTF("Light/Normal/Light2")),
-			Light2_2 = getImageSprite(arg0_6:findTF("Light/Normal/Light2_2")),
-			Light3 = getImageSprite(arg0_6:findTF("Light/Normal/Light3")),
-			RarityBG = getImageSprite(arg0_6:findTF("RarityBG/Normal"))
+			Light1 = getImageSprite(arg0_6._tf:Find("Light/Normal/Light1")),
+			Light2 = getImageSprite(arg0_6._tf:Find("Light/Normal/Light2")),
+			Light2_2 = getImageSprite(arg0_6._tf:Find("Light/Normal/Light2_2")),
+			Light3 = getImageSprite(arg0_6._tf:Find("Light/Normal/Light3")),
+			RarityBG = getImageSprite(arg0_6._tf:Find("RarityBG/Normal"))
 		},
 		UR = {
-			Light1 = getImageSprite(arg0_6:findTF("Light/UR/Light1")),
-			Light2 = getImageSprite(arg0_6:findTF("Light/UR/Light2")),
-			Light2_2 = getImageSprite(arg0_6:findTF("Light/UR/Light2_2")),
-			Light3 = getImageSprite(arg0_6:findTF("Light/UR/Light3")),
-			RarityBG = getImageSprite(arg0_6:findTF("RarityBG/UR"))
+			Light1 = getImageSprite(arg0_6._tf:Find("Light/UR/Light1")),
+			Light2 = getImageSprite(arg0_6._tf:Find("Light/UR/Light2")),
+			Light2_2 = getImageSprite(arg0_6._tf:Find("Light/UR/Light2_2")),
+			Light3 = getImageSprite(arg0_6._tf:Find("Light/UR/Light3")),
+			RarityBG = getImageSprite(arg0_6._tf:Find("RarityBG/UR"))
 		}
 	}
 
@@ -138,10 +138,10 @@ function var0_0.updatePaint(arg0_12, arg1_12)
 		local var3_12 = pg.ship_data_statistics[var0_12].rarity
 		local var4_12 = var3_12 == ShipRarity.SSR
 		local var5_12 = arg0_12.shipTF[iter0_12]
-		local var6_12 = arg0_12:findTF("Mask/Paint", var5_12)
+		local var6_12 = var5_12:Find("Mask/Paint")
 
 		local function var7_12()
-			local var0_13 = arg0_12:findTF("fitter", var6_12):GetChild(0)
+			local var0_13 = var6_12:Find("fitter"):GetChild(0)
 			local var1_13 = GetComponent(var0_13, "MeshImage")
 			local var2_13 = (iter0_12 == 2 and arg0_12.material2 or arg0_12.material1):GetComponent(typeof(Image)).material
 
@@ -153,10 +153,10 @@ function var0_0.updatePaint(arg0_12, arg1_12)
 
 		setPaintingPrefabAsync(var6_12, Ship.getPaintingName(var0_12), "build", var7_12)
 
-		local var8_12 = arg0_12:findTF("Light1", var5_12)
-		local var9_12 = arg0_12:findTF("Light2", var5_12)
-		local var10_12 = arg0_12:findTF("Light2_2", var9_12)
-		local var11_12 = arg0_12:findTF("Light3", var5_12)
+		local var8_12 = var5_12:Find("Light1")
+		local var9_12 = var5_12:Find("Light2")
+		local var10_12 = var9_12:Find("Light2_2")
+		local var11_12 = var5_12:Find("Light3")
 
 		if not var4_12 then
 			setImageSprite(var8_12, arg0_12.raritySpriteMap.Normal.Light1)
@@ -179,15 +179,15 @@ function var0_0.updatePaint(arg0_12, arg1_12)
 
 		setImageSprite(var12_12, var13_12)
 
-		local var14_12 = arg0_12:findTF("NameText", var5_12)
+		local var14_12 = var5_12:Find("NameText")
 
 		setText(var14_12, var1_12)
 
-		local var15_12 = arg0_12:findTF("NameEngText", var5_12)
+		local var15_12 = var5_12:Find("NameEngText")
 
 		setText(var15_12, var2_12)
 
-		local var16_12 = arg0_12:findTF("NumImg", var12_12)
+		local var16_12 = var12_12:Find("NumImg")
 
 		setImageSprite(var16_12, arg0_12.ratioSpriteMap[var3_12], true)
 	end

@@ -34,11 +34,11 @@ function var0_0.OnUpdateRankList(arg0_4, arg1_4, arg2_4)
 end
 
 function var0_0.OnLoaded(arg0_5)
-	arg0_5.tabContainer = arg0_5:findTF("frame/bg/tab")
-	arg0_5.ranTypeTF = arg0_5:findTF("frame/bg/week")
-	arg0_5.closeBtn = arg0_5:findTF("frame/close")
-	arg0_5.rankLabel = arg0_5:findTF("frame/bg/title/Text"):GetComponent(typeof(Text))
-	arg0_5.scrollrect = arg0_5:findTF("frame/bg/scrollrect"):GetComponent("LScrollRect")
+	arg0_5.tabContainer = arg0_5._tf:Find("frame/bg/tab")
+	arg0_5.ranTypeTF = arg0_5._tf:Find("frame/bg/week")
+	arg0_5.closeBtn = arg0_5._tf:Find("frame/close")
+	arg0_5.rankLabel = arg0_5._tf:Find("frame/bg/title/Text"):GetComponent(typeof(Text))
+	arg0_5.scrollrect = arg0_5._tf:Find("frame/bg/scrollrect"):GetComponent("LScrollRect")
 
 	function arg0_5.scrollrect.onUpdateItem(arg0_6, arg1_6)
 		arg0_5:OnUpdateItem(arg0_6, arg1_6)

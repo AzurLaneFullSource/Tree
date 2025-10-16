@@ -16,10 +16,10 @@ local var2_0 = {
 }
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.countTF = arg0_1:findTF("count", arg0_1.bg)
-	arg0_1.item = arg0_1:findTF("item", arg0_1.bg)
-	arg0_1.items = arg0_1:findTF("items", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.countTF = arg0_1.bg:Find("count")
+	arg0_1.item = arg0_1.bg:Find("item")
+	arg0_1.items = arg0_1.bg:Find("items")
 	arg0_1.itemList = UIItemList.New(arg0_1.items, arg0_1.item)
 end
 
@@ -45,7 +45,7 @@ function var0_0.OnFirstFlush(arg0_3)
 		assert(var1_4, "without this task by id: " .. var0_4)
 
 		if arg0_4 == UIItemList.EventInit then
-			local var2_4 = arg0_3:findTF("item", arg2_4)
+			local var2_4 = arg2_4:Find("item")
 
 			arg2_4.anchoredPosition = Vector2(var2_0[arg1_4][1], var2_0[arg1_4][2])
 
@@ -62,8 +62,8 @@ function var0_0.OnFirstFlush(arg0_3)
 			end, SFX_PANEL)
 		elseif arg0_4 == UIItemList.EventUpdate then
 			local var5_4 = var1_4:getTaskStatus()
-			local var6_4 = arg0_3:findTF("got", arg2_4)
-			local var7_4 = arg0_3:findTF("get", arg2_4)
+			local var6_4 = arg2_4:Find("got")
+			local var7_4 = arg2_4:Find("get")
 
 			setActive(var7_4, var5_4 == 1 and arg0_3.remainCnt > 0)
 			setActive(var6_4, var5_4 == 2)

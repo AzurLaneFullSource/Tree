@@ -3,7 +3,7 @@ local var0_0 = class("NavalAcademyShipsView")
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.parent = arg1_1
 	arg0_1.academyStudents = {}
-	arg0_1._map = arg1_1:findTF("academyMap/map")
+	arg0_1._map = arg1_1._tf:Find("academyMap/map")
 	arg0_1._shipTpl = arg0_1._map:Find("ship")
 	arg0_1._fountain = arg0_1._map:Find("fountain")
 	arg0_1.academyGraphPath = GraphPath.New(AcademyGraph)

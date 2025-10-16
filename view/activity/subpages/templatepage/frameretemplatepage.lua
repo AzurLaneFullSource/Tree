@@ -1,14 +1,14 @@
 local var0_0 = class("FrameReTemplatePage", import("view.base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.battleBtn = arg0_1:findTF("battle_btn", arg0_1.bg)
-	arg0_1.getBtn = arg0_1:findTF("get_btn", arg0_1.bg)
-	arg0_1.gotBtn = arg0_1:findTF("got_btn", arg0_1.bg)
-	arg0_1.bar = arg0_1:findTF("frame/bar", arg0_1.bg)
-	arg0_1.step = arg0_1:findTF("frame/step", arg0_1.bg)
-	arg0_1.progress = arg0_1:findTF("frame/progress", arg0_1.bg)
-	arg0_1.frameGot = arg0_1:findTF("frame/got", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.battleBtn = arg0_1.bg:Find("battle_btn")
+	arg0_1.getBtn = arg0_1.bg:Find("get_btn")
+	arg0_1.gotBtn = arg0_1.bg:Find("got_btn")
+	arg0_1.bar = arg0_1.bg:Find("frame/bar")
+	arg0_1.step = arg0_1.bg:Find("frame/step")
+	arg0_1.progress = arg0_1.bg:Find("frame/progress")
+	arg0_1.frameGot = arg0_1.bg:Find("frame/got")
 end
 
 function var0_0.OnDataSetting(arg0_2)

@@ -24,13 +24,13 @@ function var0_0.Show(arg0_6)
 	var0_0.super.Show(arg0_6)
 
 	if arg0_6._top then
-		arg0_6.viewParent:Add2TopContainer(arg0_6._top)
+		arg0_6:OverlayPanel(arg0_6._top)
 	end
 end
 
 function var0_0.Hide(arg0_7)
 	if arg0_7._top then
-		setParent(arg0_7._top, arg0_7._tf)
+		arg0_7:UnOverlayPanel(arg0_7._top, arg0_7._tf)
 	end
 
 	var0_0.super.Hide(arg0_7)
@@ -52,23 +52,15 @@ function var0_0.OnBackward(arg0_11)
 	return
 end
 
-function var0_0.Add2LayerContainer(arg0_12, arg1_12)
-	setParent(arg1_12, arg0_12._tf)
-end
-
-function var0_0.Add2TopContainer(arg0_13, arg1_13)
-	setParent(arg1_13, arg0_13._top)
-end
-
-function var0_0.SetActive(arg0_14, arg1_14)
-	if arg1_14 then
-		arg0_14:Show()
+function var0_0.SetActive(arg0_12, arg1_12)
+	if arg1_12 then
+		arg0_12:Show()
 	else
-		arg0_14:Hide()
+		arg0_12:Hide()
 	end
 end
 
-function var0_0.UpdateView(arg0_15)
+function var0_0.UpdateView(arg0_13)
 	return
 end
 

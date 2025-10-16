@@ -18,13 +18,13 @@ function var0_0.initData(arg0_3)
 end
 
 function var0_0.initUI(arg0_4)
-	arg0_4.content = arg0_4:findTF("scrollrect/content")
-	arg0_4.soldOutTF = arg0_4:findTF("sold_out")
+	arg0_4.content = arg0_4._tf:Find("scrollrect/content")
+	arg0_4.soldOutTF = arg0_4._tf:Find("sold_out")
 
-	setText(arg0_4:findTF("Text", arg0_4.soldOutTF), i18n("newserver_soldout"))
+	setText(arg0_4.soldOutTF:Find("Text"), i18n("newserver_soldout"))
 	setActive(arg0_4.soldOutTF, #arg0_4.giftGoodsVOList == 0)
 
-	arg0_4.giftItemList = UIItemList.New(arg0_4.content, arg0_4:findTF("gift_tpl"))
+	arg0_4.giftItemList = UIItemList.New(arg0_4.content, arg0_4._tf:Find("gift_tpl"))
 	arg0_4.chargeCardTable = {}
 
 	arg0_4.giftItemList:make(function(arg0_5, arg1_5, arg2_5)

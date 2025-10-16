@@ -23,7 +23,7 @@ function var0_0.setData(arg0_4, arg1_4, arg2_4)
 end
 
 function var0_0.initUITip(arg0_5)
-	local var0_5 = arg0_5:findTF("Notch/Panel/Title/Text")
+	local var0_5 = arg0_5._tf:Find("Notch/Panel/Title/Text")
 
 	setText(var0_5, i18n("battle_end_subtitle2"))
 end
@@ -33,12 +33,12 @@ function var0_0.initData(arg0_6)
 end
 
 function var0_0.initUI(arg0_7)
-	arg0_7.bg = arg0_7:findTF("BG")
-	arg0_7.iconTpl = arg0_7:findTF("IconTpl")
-	arg0_7.panelTF = arg0_7:findTF("Notch/Panel")
-	arg0_7.iconContainer = arg0_7:findTF("ScrollView/Content", arg0_7.panelTF)
+	arg0_7.bg = arg0_7._tf:Find("BG")
+	arg0_7.iconTpl = arg0_7._tf:Find("IconTpl")
+	arg0_7.panelTF = arg0_7._tf:Find("Notch/Panel")
+	arg0_7.iconContainer = arg0_7.panelTF:Find("ScrollView/Content")
 	arg0_7.gridLayoutGroupSC = GetComponent(arg0_7.iconContainer, typeof(GridLayoutGroup))
-	arg0_7.closeBtn = arg0_7:findTF("Button", arg0_7.panelTF)
+	arg0_7.closeBtn = arg0_7.panelTF:Find("Button")
 	arg0_7.iconUIItemList = UIItemList.New(arg0_7.iconContainer, arg0_7.iconTpl)
 end
 
@@ -62,12 +62,12 @@ function var0_0.updateIconList(arg0_11)
 		arg1_12 = arg1_12 + 1
 
 		if arg0_12 == UIItemList.EventUpdate then
-			local var0_12 = arg0_11:findTF("Light", arg2_12)
-			local var1_12 = arg0_11:findTF("Icon", arg2_12)
-			local var2_12 = arg0_11:findTF("AddExpText", arg2_12)
-			local var3_12 = arg0_11:findTF("LevelMaxText", arg2_12)
-			local var4_12 = arg0_11:findTF("ExpMaxText", arg2_12)
-			local var5_12 = arg0_11:findTF("Slider", arg2_12)
+			local var0_12 = arg2_12:Find("Light")
+			local var1_12 = arg2_12:Find("Icon")
+			local var2_12 = arg2_12:Find("AddExpText")
+			local var3_12 = arg2_12:Find("LevelMaxText")
+			local var4_12 = arg2_12:Find("ExpMaxText")
+			local var5_12 = arg2_12:Find("Slider")
 			local var6_12 = var1_11[arg1_12]
 			local var7_12 = var6_12.shipID
 			local var8_12 = var6_12.addDayExp

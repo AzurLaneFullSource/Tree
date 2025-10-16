@@ -5,26 +5,26 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2._grade = arg0_2:findTF("grade")
-	arg0_2._levelText = arg0_2:findTF("chapterName/Text22", arg0_2._grade)
-	arg0_2._main = arg0_2:findTF("main")
-	arg0_2._blurConatiner = arg0_2:findTF("blur_container")
-	arg0_2._bg = arg0_2:findTF("main/jiesuanbeijing")
-	arg0_2._painting = arg0_2:findTF("painting", arg0_2._blurConatiner)
-	arg0_2._chat = arg0_2:findTF("chat", arg0_2._painting)
-	arg0_2._rightBottomPanel = arg0_2:findTF("rightBottomPanel", arg0_2._blurConatiner)
-	arg0_2._confirmBtn = arg0_2:findTF("confirmBtn", arg0_2._rightBottomPanel)
+	arg0_2._grade = arg0_2._tf:Find("grade")
+	arg0_2._levelText = arg0_2._grade:Find("chapterName/Text22")
+	arg0_2._main = arg0_2._tf:Find("main")
+	arg0_2._blurConatiner = arg0_2._tf:Find("blur_container")
+	arg0_2._bg = arg0_2._tf:Find("main/jiesuanbeijing")
+	arg0_2._painting = arg0_2._blurConatiner:Find("painting")
+	arg0_2._chat = arg0_2._painting:Find("chat")
+	arg0_2._rightBottomPanel = arg0_2._blurConatiner:Find("rightBottomPanel")
+	arg0_2._confirmBtn = arg0_2._rightBottomPanel:Find("confirmBtn")
 
 	setText(arg0_2._confirmBtn:Find("Text"), i18n("text_confirm"))
 
-	arg0_2._statisticsBtn = arg0_2:findTF("statisticsBtn", arg0_2._rightBottomPanel)
-	arg0_2._skipBtn = arg0_2:findTF("skipLayer", arg0_2._tf)
-	arg0_2._conditions = arg0_2:findTF("main/conditions")
-	arg0_2._conditionContainer = arg0_2:findTF("bg16/list", arg0_2._conditions)
-	arg0_2._conditionTpl = arg0_2:findTF("bg16/conditionTpl", arg0_2._conditions)
-	arg0_2._conditionSubTpl = arg0_2:findTF("bg16/conditionSubTpl", arg0_2._conditions)
-	arg0_2._conditionContributeTpl = arg0_2:findTF("bg16/conditionContributeTpl", arg0_2._conditions)
-	arg0_2._conditionBGContribute = arg0_2:findTF("bg16/bg_contribute", arg0_2._conditions)
+	arg0_2._statisticsBtn = arg0_2._rightBottomPanel:Find("statisticsBtn")
+	arg0_2._skipBtn = arg0_2._tf:Find("skipLayer")
+	arg0_2._conditions = arg0_2._tf:Find("main/conditions")
+	arg0_2._conditionContainer = arg0_2._conditions:Find("bg16/list")
+	arg0_2._conditionTpl = arg0_2._conditions:Find("bg16/conditionTpl")
+	arg0_2._conditionSubTpl = arg0_2._conditions:Find("bg16/conditionSubTpl")
+	arg0_2._conditionContributeTpl = arg0_2._conditions:Find("bg16/conditionContributeTpl")
+	arg0_2._conditionBGContribute = arg0_2._conditions:Find("bg16/bg_contribute")
 
 	arg0_2:setGradeLabel()
 	SetActive(arg0_2._levelText, false)
@@ -44,16 +44,16 @@ function var0_0.setGradeLabel(arg0_4)
 		"a",
 		"s"
 	}
-	local var1_4 = arg0_4:findTF("grade/Xyz/bg13")
-	local var2_4 = arg0_4:findTF("grade/Xyz/bg14")
+	local var1_4 = arg0_4._tf:Find("grade/Xyz/bg13")
+	local var2_4 = arg0_4._tf:Find("grade/Xyz/bg14")
 	local var3_4
 	local var4_4
 	local var5_4
 	local var6_4 = arg0_4.contextData.score
 	local var7_4 = var6_4 > ys.Battle.BattleConst.BattleScore.C
 
-	setActive(arg0_4:findTF("jieuan01/BG/bg_victory", arg0_4._bg), var7_4)
-	setActive(arg0_4:findTF("jieuan01/BG/bg_fail", arg0_4._bg), not var7_4)
+	setActive(arg0_4._bg:Find("jieuan01/BG/bg_victory"), var7_4)
+	setActive(arg0_4._bg:Find("jieuan01/BG/bg_fail"), not var7_4)
 
 	local var8_4 = var0_4[var6_4 + 1]
 	local var9_4 = "battlescore/battle_score_" .. var8_4 .. "/letter_" .. var8_4
@@ -89,7 +89,7 @@ function var0_0.didEnter(arg0_5)
 end
 
 function var0_0.rankAnimaFinish(arg0_8)
-	local var0_8 = arg0_8:findTF("main/conditions")
+	local var0_8 = arg0_8._tf:Find("main/conditions")
 
 	SetActive(var0_8, true)
 
@@ -102,7 +102,7 @@ function var0_0.rankAnimaFinish(arg0_8)
 	local var2_8 = LeanTween.delayedCall(1, System.Action(function()
 		arg0_8._stateFlag = var0_0.STATE_REPORTED
 
-		SetActive(arg0_8:findTF("jieuan01/tips", arg0_8._bg), true)
+		SetActive(arg0_8._bg:Find("jieuan01/tips"), true)
 	end))
 
 	table.insert(arg0_8._delayLeanList, var2_8.id)
@@ -145,7 +145,7 @@ function var0_0.displayBG(arg0_12)
 
 		arg0_12._stateFlag = var0_0.STATE_DISPLAYED
 	end))
-	setActive(arg0_12:findTF("jieuan01/Bomb", arg0_12._bg), false)
+	setActive(arg0_12._bg:Find("jieuan01/Bomb"), false)
 end
 
 function var0_0.showPainting(arg0_14)

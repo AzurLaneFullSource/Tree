@@ -42,26 +42,26 @@ function var0_0.initData(arg0_6)
 end
 
 function var0_0.initUITips(arg0_7)
-	local var0_7 = arg0_7:findTF("Adapt/Content/ResetBtn/Text")
-	local var1_7 = arg0_7:findTF("Adapt/Content/SaveBtn/Text")
+	local var0_7 = arg0_7._tf:Find("Adapt/Content/ResetBtn/Text")
+	local var1_7 = arg0_7._tf:Find("Adapt/Content/SaveBtn/Text")
 
 	setText(var0_7, i18n("attrset_reset"))
 	setText(var1_7, i18n("attrset_save"))
 end
 
 function var0_0.findUI(arg0_8)
-	arg0_8.typeTpl = arg0_8:findTF("TypeTpl")
-	arg0_8.attrTpl = arg0_8:findTF("AttrTpl")
-	arg0_8.backBGTF = arg0_8:findTF("Adapt/BackBG")
+	arg0_8.typeTpl = arg0_8._tf:Find("TypeTpl")
+	arg0_8.attrTpl = arg0_8._tf:Find("AttrTpl")
+	arg0_8.backBGTF = arg0_8._tf:Find("Adapt/BackBG")
 
-	local var0_8 = arg0_8:findTF("Adapt/Content")
+	local var0_8 = arg0_8._tf:Find("Adapt/Content")
 
-	arg0_8.closeBtn = arg0_8:findTF("CloseBtn", var0_8)
-	arg0_8.arrowTF = arg0_8:findTF("Arrow", var0_8)
-	arg0_8.typeContainer = arg0_8:findTF("TypeScrollView/Content", var0_8)
-	arg0_8.attrContainer = arg0_8:findTF("AttrPanel", var0_8)
-	arg0_8.resetBtn = arg0_8:findTF("ResetBtn", var0_8)
-	arg0_8.saveBtn = arg0_8:findTF("SaveBtn", var0_8)
+	arg0_8.closeBtn = var0_8:Find("CloseBtn")
+	arg0_8.arrowTF = var0_8:Find("Arrow")
+	arg0_8.typeContainer = var0_8:Find("TypeScrollView/Content")
+	arg0_8.attrContainer = var0_8:Find("AttrPanel")
+	arg0_8.resetBtn = var0_8:Find("ResetBtn")
+	arg0_8.saveBtn = var0_8:Find("SaveBtn")
 	arg0_8.typeUIItemList = UIItemList.New(arg0_8.typeContainer, arg0_8.typeTpl)
 	arg0_8.attrUIItemList = UIItemList.New(arg0_8.attrContainer, arg0_8.attrTpl)
 end
@@ -145,9 +145,9 @@ function var0_0.addListener(arg0_9)
 end
 
 function var0_0.updateTypeTF(arg0_25, arg1_25, arg2_25)
-	local var0_25 = arg0_25:findTF("TypeNameUnSelect", arg2_25)
-	local var1_25 = arg0_25:findTF("TypeNameSelected", arg2_25)
-	local var2_25 = arg0_25:findTF("TypeImg", arg2_25)
+	local var0_25 = arg2_25:Find("TypeNameUnSelect")
+	local var1_25 = arg2_25:Find("TypeNameSelected")
+	local var2_25 = arg2_25:Find("TypeImg")
 	local var3_25 = arg0_25.typeOrderList[arg1_25]
 	local var4_25 = ShipType.Type2Name(var3_25)
 
@@ -199,14 +199,14 @@ function var0_0.updateTypeList(arg0_31)
 end
 
 function var0_0.updateAttrTF(arg0_32, arg1_32, arg2_32)
-	local var0_32 = arg0_32:findTF("AttrName", arg2_32)
-	local var1_32 = arg0_32:findTF("Attr/Value/CurValue", arg2_32)
-	local var2_32 = arg0_32:findTF("Attr/Value/MaxValue", arg2_32)
-	local var3_32 = arg0_32:findTF("Attr/InputField", arg2_32)
-	local var4_32 = arg0_32:findTF("Buttons/MinusBtn", arg2_32)
-	local var5_32 = arg0_32:findTF("Buttons/MaxBtn", arg2_32)
-	local var6_32 = arg0_32:findTF("Buttons/AddBtn", arg2_32)
-	local var7_32 = arg0_32:findTF("Attr/InputField", arg2_32)
+	local var0_32 = arg2_32:Find("AttrName")
+	local var1_32 = arg2_32:Find("Attr/Value/CurValue")
+	local var2_32 = arg2_32:Find("Attr/Value/MaxValue")
+	local var3_32 = arg2_32:Find("Attr/InputField")
+	local var4_32 = arg2_32:Find("Buttons/MinusBtn")
+	local var5_32 = arg2_32:Find("Buttons/MaxBtn")
+	local var6_32 = arg2_32:Find("Buttons/AddBtn")
+	local var7_32 = arg2_32:Find("Attr/InputField")
 	local var8_32 = arg0_32.typeAttrOrderListTable[arg0_32.curType][arg1_32]
 	local var9_32 = AttributeType.Type2Name(pg.attribute_info_by_type[var8_32].name)
 	local var10_32 = arg0_32.maxAdditionMap[arg0_32.curType][var8_32]
@@ -282,7 +282,7 @@ function var0_0.updateAttrList(arg0_37, arg1_37)
 end
 
 function var0_0.setAttrTFValue(arg0_38, arg1_38, arg2_38)
-	local var0_38 = arg0_38:findTF("Attr/Value/CurValue", arg1_38)
+	local var0_38 = arg1_38:Find("Attr/Value/CurValue")
 
 	setText(var0_38, arg2_38)
 end

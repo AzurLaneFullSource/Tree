@@ -6,28 +6,28 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.go = arg1_1
 	arg0_1.tr = arg1_1.transform
 	arg0_1.dispatch = arg2_1
-	arg0_1.bgNormal = arg0_1:findTF("bgNormal$").gameObject
-	arg0_1.bgEmergence = arg0_1:findTF("bgEmergence$").gameObject
-	arg0_1.timeLimit = arg0_1:findTF("timeLimit$").gameObject
-	arg0_1.labelLimitTime = arg0_1:findTF("timeLimit$/labelLimitTime$"):GetComponent("Text")
-	arg0_1.iconType = arg0_1:findTF("iconType$"):GetComponent("Image")
-	arg0_1.iconState = arg0_1:findTF("iconState$")
-	arg0_1.activityLimitBg = arg0_1:findTF("bgAct")
-	arg0_1.shadow = arg0_1:findTF("Image"):GetComponent(typeof(Image))
-	arg0_1.timerBg = arg0_1:findTF("labelTime$"):GetComponent(typeof(Image))
-	arg0_1.label = arg0_1:findTF("labelName$/Image"):GetComponent(typeof(Text))
-	arg0_1.labelLv = arg0_1:findTF("level/labelLv$"):GetComponent("Text")
-	arg0_1.iconTip = arg0_1:findTF("iconTip$").gameObject
-	arg0_1.labelName = arg0_1:findTF("labelName$"):GetComponent("Text")
-	arg0_1.labelTime = arg0_1:findTF("labelTime$/Text"):GetComponent("Text")
-	arg0_1.awardsTr = arg0_1:findTF("awards$")
-	arg0_1.specialAward = arg0_1:findTF("specialAward/item")
-	arg0_1.awardItem = arg0_1:findTF("awards$/item").gameObject
-	arg0_1.mark = arg0_1:findTF("mark")
+	arg0_1.bgNormal = arg0_1.tr:Find("bgNormal$").gameObject
+	arg0_1.bgEmergence = arg0_1.tr:Find("bgEmergence$").gameObject
+	arg0_1.timeLimit = arg0_1.tr:Find("timeLimit$").gameObject
+	arg0_1.labelLimitTime = arg0_1.tr:Find("timeLimit$/labelLimitTime$"):GetComponent("Text")
+	arg0_1.iconType = arg0_1.tr:Find("iconType$"):GetComponent("Image")
+	arg0_1.iconState = arg0_1.tr:Find("iconState$")
+	arg0_1.activityLimitBg = arg0_1.tr:Find("bgAct")
+	arg0_1.shadow = arg0_1.tr:Find("Image"):GetComponent(typeof(Image))
+	arg0_1.timerBg = arg0_1.tr:Find("labelTime$"):GetComponent(typeof(Image))
+	arg0_1.label = arg0_1.tr:Find("labelName$/Image"):GetComponent(typeof(Text))
+	arg0_1.labelLv = arg0_1.tr:Find("level/labelLv$"):GetComponent("Text")
+	arg0_1.iconTip = arg0_1.tr:Find("iconTip$").gameObject
+	arg0_1.labelName = arg0_1.tr:Find("labelName$"):GetComponent("Text")
+	arg0_1.labelTime = arg0_1.tr:Find("labelTime$/Text"):GetComponent("Text")
+	arg0_1.awardsTr = arg0_1.tr:Find("awards$")
+	arg0_1.specialAward = arg0_1.tr:Find("specialAward/item")
+	arg0_1.awardItem = arg0_1.tr:Find("awards$/item").gameObject
+	arg0_1.mark = arg0_1.tr:Find("mark")
 
 	SetActive(arg0_1.mark, false)
 
-	arg0_1.ptBonus = EventPtBonus.New(arg0_1:findTF("bonusPt"))
+	arg0_1.ptBonus = EventPtBonus.New(arg0_1.tr:Find("bonusPt"))
 end
 
 function var0_0.Update(arg0_2, arg1_2, arg2_2)
@@ -143,10 +143,6 @@ end
 
 function var0_0.Clear(arg0_6)
 	return
-end
-
-function var0_0.findTF(arg0_7, arg1_7)
-	return findTF(arg0_7.tr, arg1_7)
 end
 
 return var0_0

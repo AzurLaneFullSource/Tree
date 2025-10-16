@@ -7,14 +7,14 @@ end
 function var0_0.init(arg0_2)
 	local var0_2 = arg0_2.contextData.skill
 
-	arg0_2.backBtn = arg0_2:findTF("top/btnBack")
-	arg0_2.skillInfoName = arg0_2:findTF("panel/bg/skill_name")
-	arg0_2.skillInfoLv = arg0_2:findTF("panel/bg/skill_lv")
-	arg0_2.skillInfoIntro = arg0_2:findTF("panel/bg/help_panel/skill_intro")
-	arg0_2.skillInfoIcon = arg0_2:findTF("panel/bg/skill_icon")
-	arg0_2.buttonList = arg0_2:findTF("panel/buttonList")
-	arg0_2.skillDescTF = arg0_2:findTF("panel/bg/help_panel/Viewport/content/introTF")
-	arg0_2.skillDescContent = arg0_2:findTF("panel/bg/help_panel/Viewport/content")
+	arg0_2.backBtn = arg0_2._tf:Find("top/btnBack")
+	arg0_2.skillInfoName = arg0_2._tf:Find("panel/bg/skill_name")
+	arg0_2.skillInfoLv = arg0_2._tf:Find("panel/bg/skill_lv")
+	arg0_2.skillInfoIntro = arg0_2._tf:Find("panel/bg/help_panel/skill_intro")
+	arg0_2.skillInfoIcon = arg0_2._tf:Find("panel/bg/skill_icon")
+	arg0_2.buttonList = arg0_2._tf:Find("panel/buttonList")
+	arg0_2.skillDescTF = arg0_2._tf:Find("panel/bg/help_panel/Viewport/content/introTF")
+	arg0_2.skillDescContent = arg0_2._tf:Find("panel/bg/help_panel/Viewport/content")
 
 	setText(arg0_2.skillInfoName, var0_2:getConfig("name"))
 	setText(arg0_2.skillInfoLv, "Lv." .. var0_2:getLevel())
@@ -26,8 +26,8 @@ function var0_0.init(arg0_2)
 end
 
 function var0_0.SetLocaliza(arg0_3)
-	setText(arg0_3:findTF("top/title_list/infomation/title"), i18n("words_information"))
-	setText(arg0_3:findTF("panel/buttonList/ok_button/Image"), i18n("word_ok"))
+	setText(arg0_3._tf:Find("top/title_list/infomation/title"), i18n("words_information"))
+	setText(arg0_3._tf:Find("panel/buttonList/ok_button/Image"), i18n("word_ok"))
 end
 
 function var0_0.didEnter(arg0_4)
@@ -37,7 +37,7 @@ function var0_0.didEnter(arg0_4)
 	onButton(arg0_4, arg0_4.backBtn, function()
 		arg0_4:emit(var0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(arg0_4, arg0_4:findTF("panel/buttonList/ok_button"), function()
+	onButton(arg0_4, arg0_4._tf:Find("panel/buttonList/ok_button"), function()
 		arg0_4:emit(var0_0.ON_CLOSE)
 	end, SFX_CONFIRM)
 	pg.UIMgr.GetInstance():BlurPanel(arg0_4._tf)

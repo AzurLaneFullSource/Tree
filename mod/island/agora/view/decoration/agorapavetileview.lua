@@ -5,14 +5,14 @@ function var0_0.GetUIName(arg0_1)
 end
 
 function var0_0.FirstFlush(arg0_2)
-	arg0_2.nameTxt = arg0_2:findTF("name"):GetComponent(typeof(Text))
-	arg0_2.icon = arg0_2:findTF("icon"):GetComponent(typeof(Image))
-	arg0_2.exitBtn = arg0_2:findTF("exit")
-	arg0_2.rotation = arg0_2:findTF("revert")
-	arg0_2.confirmBtn = arg0_2:findTF("confirm")
-	arg0_2.mode = arg0_2:findTF("mode")
+	arg0_2.nameTxt = arg0_2._tf:Find("name"):GetComponent(typeof(Text))
+	arg0_2.icon = arg0_2._tf:Find("icon"):GetComponent(typeof(Image))
+	arg0_2.exitBtn = arg0_2._tf:Find("exit")
+	arg0_2.rotation = arg0_2._tf:Find("revert")
+	arg0_2.confirmBtn = arg0_2._tf:Find("confirm")
+	arg0_2.mode = arg0_2._tf:Find("mode")
 
-	setText(arg0_2:findTF("desc"), i18n("island_agora_pave_tip"))
+	setText(arg0_2._tf:Find("desc"), i18n("island_agora_pave_tip"))
 	arg0_2:RegisterEvent()
 end
 

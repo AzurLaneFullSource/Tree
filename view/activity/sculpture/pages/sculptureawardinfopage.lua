@@ -5,7 +5,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.uilist = UIItemList.New(arg0_2:findTF("frame/scrollrect/content"), arg0_2:findTF("frame/scrollrect/content/tpl"))
+	arg0_2.uilist = UIItemList.New(arg0_2._tf:Find("frame/scrollrect/content"), arg0_2._tf:Find("frame/scrollrect/content/tpl"))
 end
 
 function var0_0.OnInit(arg0_3)
@@ -20,7 +20,7 @@ function var0_0.Show(arg0_5, arg1_5)
 	arg0_5.activity = arg1_5
 
 	arg0_5:UpdateList()
-	setText(arg0_5:findTF("frame/tip"), i18n("sculpture_close_tip"))
+	setText(arg0_5._tf:Find("frame/tip"), i18n("sculpture_close_tip"))
 end
 
 function var0_0.UpdateList(arg0_6)

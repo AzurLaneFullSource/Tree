@@ -14,8 +14,8 @@ function var0_0.OnUpdateFlush(arg0_3)
 	for iter0_3, iter1_3 in ipairs(arg0_3.taskVOList) do
 		local var0_3 = iter1_3.state
 		local var1_3 = arg0_3.progress:GetChild(iter0_3 - 1)
-		local var2_3 = arg0_3:findTF("Empty", var1_3)
-		local var3_3 = arg0_3:findTF("Full", var1_3)
+		local var2_3 = var1_3:Find("Empty")
+		local var3_3 = var1_3:Find("Full")
 
 		if var0_3 < SkirmishVO.StateClear then
 			setActive(var2_3, true)
@@ -28,10 +28,10 @@ function var0_0.OnUpdateFlush(arg0_3)
 end
 
 function var0_0.initUI(arg0_4)
-	arg0_4.bg = arg0_4:findTF("AD")
-	arg0_4.progress = arg0_4:findTF("Progress")
-	arg0_4.helpBtn = arg0_4:findTF("HelpBtn")
-	arg0_4.battleBtn = arg0_4:findTF("BattleBtn")
+	arg0_4.bg = arg0_4._tf:Find("AD")
+	arg0_4.progress = arg0_4._tf:Find("Progress")
+	arg0_4.helpBtn = arg0_4._tf:Find("HelpBtn")
+	arg0_4.battleBtn = arg0_4._tf:Find("BattleBtn")
 end
 
 function var0_0.initData(arg0_5)

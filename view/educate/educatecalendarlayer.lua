@@ -5,15 +5,15 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.calendarTF = arg0_2:findTF("anim_root/calendar")
-	arg0_2.monthTF = arg0_2:findTF("month", arg0_2.calendarTF)
+	arg0_2.calendarTF = arg0_2._tf:Find("anim_root/calendar")
+	arg0_2.monthTF = arg0_2.calendarTF:Find("month")
 
-	setText(arg0_2:findTF("Text", arg0_2.monthTF), i18n("word_month"))
+	setText(arg0_2.monthTF:Find("Text"), i18n("word_month"))
 
-	arg0_2.weekTF = arg0_2:findTF("week/week", arg0_2.calendarTF)
+	arg0_2.weekTF = arg0_2.calendarTF:Find("week/week")
 	arg0_2.curTime = getProxy(EducateProxy):GetCurTime()
-	arg0_2.anim = arg0_2:findTF("anim_root"):GetComponent(typeof(Animation))
-	arg0_2.animEvent = arg0_2:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+	arg0_2.anim = arg0_2._tf:Find("anim_root"):GetComponent(typeof(Animation))
+	arg0_2.animEvent = arg0_2._tf:Find("anim_root"):GetComponent(typeof(DftAniEvent))
 
 	arg0_2.animEvent:SetEndEvent(function()
 		arg0_2:emit(var0_0.ON_CLOSE)

@@ -1,13 +1,13 @@
 local var0_0 = class("TWCelebrationPage3", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.getBtn = arg0_1:findTF("AD/get")
-	arg0_1.gotBtn = arg0_1:findTF("AD/got")
-	arg0_1.share = arg0_1:findTF("AD/share")
-	arg0_1.mask = arg0_1:findTF("AD/mask")
-	arg0_1.finished = arg0_1:findTF("AD/finished")
-	arg0_1.unfinished = arg0_1:findTF("AD/unfinished")
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.getBtn = arg0_1._tf:Find("AD/get")
+	arg0_1.gotBtn = arg0_1._tf:Find("AD/got")
+	arg0_1.share = arg0_1._tf:Find("AD/share")
+	arg0_1.mask = arg0_1._tf:Find("AD/mask")
+	arg0_1.finished = arg0_1._tf:Find("AD/finished")
+	arg0_1.unfinished = arg0_1._tf:Find("AD/unfinished")
 end
 
 function var0_0.OnFirstFlush(arg0_2)

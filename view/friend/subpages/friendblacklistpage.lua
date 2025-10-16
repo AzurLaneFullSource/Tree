@@ -5,8 +5,8 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.blackListPanel = arg0_2:findTF("blacklist_panel")
-	arg0_2.blacklistTopTF = arg0_2:findTF("blacklist_view_top")
+	arg0_2.blackListPanel = arg0_2._tf:Find("blacklist_panel")
+	arg0_2.blacklistTopTF = arg0_2._tf:Find("blacklist_view_top")
 end
 
 function var0_0.OnInit(arg0_3)

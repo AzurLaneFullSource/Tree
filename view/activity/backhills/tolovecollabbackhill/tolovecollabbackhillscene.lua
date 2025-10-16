@@ -5,37 +5,37 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.top = arg0_2:findTF("top")
-	arg0_2._map = arg0_2:findTF("map")
-	arg0_2._upper = arg0_2:findTF("upper")
+	arg0_2.top = arg0_2._tf:Find("top")
+	arg0_2._map = arg0_2._tf:Find("map")
+	arg0_2._upper = arg0_2._tf:Find("upper")
 end
 
 function var0_0.didEnter(arg0_3)
-	onButton(arg0_3, arg0_3:findTF("upper/task"), function()
+	onButton(arg0_3, arg0_3._tf:Find("upper/task"), function()
 		arg0_3:emit(ToLoveCollabBackHillMediator.TASK)
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("upper/jinianzhang"), function()
+	onButton(arg0_3, arg0_3._tf:Find("upper/jinianzhang"), function()
 		arg0_3:emit(ToLoveCollabBackHillMediator.TROPHY)
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("upper/help"), function()
+	onButton(arg0_3, arg0_3._tf:Find("upper/help"), function()
 		arg0_3:emit(ToLoveCollabBackHillMediator.PUZZLE)
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("top/return_btn"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/return_btn"), function()
 		arg0_3:emit(var0_0.ON_BACK)
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("top/return_main_btn"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/return_main_btn"), function()
 		arg0_3:emit(var0_0.ON_HOME)
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("top/help_btn"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/help_btn"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.tolove_main_help.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("upper/xiaoyouxi"), function()
+	onButton(arg0_3, arg0_3._tf:Find("upper/xiaoyouxi"), function()
 		arg0_3:emit(ToLoveCollabBackHillMediator.MINI_GAME)
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("upper/tebiezuozhan"), function()
+	onButton(arg0_3, arg0_3._tf:Find("upper/tebiezuozhan"), function()
 		local var0_11 = getProxy(ChapterProxy)
 		local var1_11, var2_11 = var0_11:getLastMapForActivity()
 
@@ -54,7 +54,7 @@ end
 function var0_0.UpdateView(arg0_12)
 	local var0_12 = getProxy(ActivityProxy)
 
-	setActive(arg0_12:findTF("upper/task/tips"), ToLoveCollabTaskMediator.GetTaskRedTip())
+	setActive(arg0_12._tf:Find("upper/task/tips"), ToLoveCollabTaskMediator.GetTaskRedTip())
 
 	local var1_12 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA)
 	local var2_12 = false
@@ -71,9 +71,9 @@ function var0_0.UpdateView(arg0_12)
 		var2_12 = true
 	end
 
-	setActive(arg0_12:findTF("upper/jinianzhang/tips"), var2_12)
-	setActive(arg0_12:findTF("upper/help/tips"), PuzzleConnectMediator.GetRedTip())
-	setActive(arg0_12:findTF("upper/xiaoyouxi/tips"), ToLoveGameVo.ShouldShowTip())
+	setActive(arg0_12._tf:Find("upper/jinianzhang/tips"), var2_12)
+	setActive(arg0_12._tf:Find("upper/help/tips"), PuzzleConnectMediator.GetRedTip())
+	setActive(arg0_12._tf:Find("upper/xiaoyouxi/tips"), ToLoveGameVo.ShouldShowTip())
 end
 
 function var0_0.willExit(arg0_13)

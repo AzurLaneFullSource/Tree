@@ -5,11 +5,11 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnInit(arg0_2)
-	arg0_2.bg = arg0_2:findTF("AD")
-	arg0_2.items = arg0_2:findTF("items", arg0_2.bg)
-	arg0_2.uilist = UIItemList.New(arg0_2.items, arg0_2:findTF("tpl", arg0_2.items))
-	arg0_2.goBtn = arg0_2:findTF("btn_go", arg0_2.bg)
-	arg0_2.lockTF = arg0_2:findTF("lock", arg0_2.bg)
+	arg0_2.bg = arg0_2._tf:Find("AD")
+	arg0_2.items = arg0_2.bg:Find("items")
+	arg0_2.uilist = UIItemList.New(arg0_2.items, arg0_2.items:Find("tpl"))
+	arg0_2.goBtn = arg0_2.bg:Find("btn_go")
+	arg0_2.lockTF = arg0_2.bg:Find("lock")
 end
 
 function var0_0.OnDataSetting(arg0_3)
@@ -36,7 +36,7 @@ function var0_0.OnFirstFlush(arg0_7)
 		if arg0_8 == UIItemList.EventInit then
 			local var0_8 = arg1_8 + 1
 			local var1_8 = arg0_7.taskGroup[var0_8]
-			local var2_8 = arg0_7:findTF("item", arg2_8)
+			local var2_8 = arg2_8:Find("item")
 			local var3_8 = Drop.Create(arg0_7.taskConfig[var1_8].award_display[1])
 
 			if var0_8 > 1 then
@@ -58,8 +58,8 @@ function var0_0.OnFirstFlush(arg0_7)
 			local var5_8 = arg0_7.taskGroup[var4_8]
 			local var6_8 = arg0_7.taskDic[var5_8]
 
-			setActive(arg0_7:findTF("got", arg2_8), var6_8 and var6_8:isOver())
-			setActive(arg0_7:findTF("get_bg", arg2_8), var6_8 and var6_8:getTaskStatus() == 1 and not var6_8:isOver())
+			setActive(arg2_8:Find("got"), var6_8 and var6_8:isOver())
+			setActive(arg2_8:Find("get_bg"), var6_8 and var6_8:getTaskStatus() == 1 and not var6_8:isOver())
 		end
 	end)
 	onButton(arg0_7, arg0_7.goBtn, function()

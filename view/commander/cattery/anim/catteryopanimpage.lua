@@ -5,8 +5,8 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.homeExpAnim = CatteryAddHomeExpAnim.New(arg0_2:findTF("bg/single"))
-	arg0_2.homeAndCommanderAnim = CattertAddHomeExpAndCommanderExpAnim.New(arg0_2:findTF("bg/both"))
+	arg0_2.homeExpAnim = CatteryAddHomeExpAnim.New(arg0_2._tf:Find("bg/single"))
+	arg0_2.homeAndCommanderAnim = CattertAddHomeExpAndCommanderExpAnim.New(arg0_2._tf:Find("bg/both"))
 end
 
 function var0_0.OnInit(arg0_3)

@@ -26,9 +26,9 @@ function var0_0.OnLoaded(arg0_2)
 		removeOnButton(arg1_6)
 	end
 
-	arg0_2.cancelBtn = arg0_2:findTF("frame/cancel_button")
-	arg0_2.backBtn = arg0_2:findTF("frame/top/btnBack")
-	arg0_2.confirmBtn = arg0_2:findTF("frame/confirm_button")
+	arg0_2.cancelBtn = arg0_2._tf:Find("frame/cancel_button")
+	arg0_2.backBtn = arg0_2._tf:Find("frame/top/btnBack")
+	arg0_2.confirmBtn = arg0_2._tf:Find("frame/confirm_button")
 
 	setText(arg0_2._tf:Find("frame/bg_award/label"), i18n("disassemble_available") .. ":")
 

@@ -24,10 +24,10 @@ end
 
 function var0_0.OnLoaded(arg0_3)
 	arg0_3.parentTr = arg0_3._tf.parent
-	arg0_3.itemContainer = arg0_3:findTF("item/container")
-	arg0_3.itemTpl = arg0_3:findTF("item/tpl")
-	arg0_3.confirmBtn = arg0_3:findTF("confirm_btn")
-	arg0_3.lineTxt = arg0_3:findTF("words/text")
+	arg0_3.itemContainer = arg0_3._tf:Find("item/container")
+	arg0_3.itemTpl = arg0_3._tf:Find("item/tpl")
+	arg0_3.confirmBtn = arg0_3._tf:Find("confirm_btn")
+	arg0_3.lineTxt = arg0_3._tf:Find("words/text")
 
 	setText(arg0_3.confirmBtn:Find("text"), i18n("word_ok"))
 end

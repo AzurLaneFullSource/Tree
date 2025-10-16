@@ -27,17 +27,17 @@ function var0_0.initData(arg0_5)
 end
 
 function var0_0.findUI(arg0_6)
-	arg0_6.backBtn = arg0_6:findTF("BG")
-	arg0_6.scrollView = arg0_6:findTF("Scroll View")
-	arg0_6.viewport = arg0_6:findTF("Viewport", arg0_6.scrollView)
-	arg0_6.typeContainer = arg0_6:findTF("Content", arg0_6.viewport)
-	arg0_6.typeItemTpl = arg0_6:findTF("TypeItemTpl")
-	arg0_6.buffItemTpl = arg0_6:findTF("BuffItemTpl")
+	arg0_6.backBtn = arg0_6._tf:Find("BG")
+	arg0_6.scrollView = arg0_6._tf:Find("Scroll View")
+	arg0_6.viewport = arg0_6.scrollView:Find("Viewport")
+	arg0_6.typeContainer = arg0_6.viewport:Find("Content")
+	arg0_6.typeItemTpl = arg0_6._tf:Find("TypeItemTpl")
+	arg0_6.buffItemTpl = arg0_6._tf:Find("BuffItemTpl")
 	arg0_6.scrollViewGroupCom = GetComponent(arg0_6.scrollView, "VerticalLayoutGroup")
 	arg0_6.scrollViewFitterCom = GetComponent(arg0_6.scrollView, "ContentSizeFitter")
 	arg0_6.viewportGroupCom = GetComponent(arg0_6.viewport, "VerticalLayoutGroup")
 	arg0_6.viewportFitterCom = GetComponent(arg0_6.viewport, "ContentSizeFitter")
-	arg0_6.setValueBtn = arg0_6:findTF("Scroll View/bg/SetValueBtn")
+	arg0_6.setValueBtn = arg0_6._tf:Find("Scroll View/bg/SetValueBtn")
 end
 
 function var0_0.onBackPressed(arg0_7)
@@ -62,9 +62,9 @@ function var0_0.updateDetail(arg0_11)
 
 	var0_11:make(function(arg0_12, arg1_12, arg2_12)
 		if arg0_12 == UIItemList.EventUpdate then
-			local var0_12 = arg0_11:findTF("TypeTitle/TypeImg", arg2_12)
-			local var1_12 = arg0_11:findTF("TypeTitle/TypeTextImg", arg2_12)
-			local var2_12 = arg0_11:findTF("Container", arg2_12)
+			local var0_12 = arg2_12:Find("TypeTitle/TypeImg")
+			local var1_12 = arg2_12:Find("TypeTitle/TypeTextImg")
+			local var2_12 = arg2_12:Find("Container")
 			local var3_12 = arg0_11.typeOrder[arg1_12 + 1]
 
 			setImageSprite(var1_12, GetSpriteFromAtlas("ShipType", "ch_title_" .. var3_12))
@@ -95,8 +95,8 @@ function var0_0.updateBuffList(arg0_13, arg1_13, arg2_13)
 
 	var0_13:make(function(arg0_14, arg1_14, arg2_14)
 		if arg0_14 == UIItemList.EventUpdate then
-			local var0_14 = arg0_13:findTF("AttrText", arg2_14)
-			local var1_14 = arg0_13:findTF("ValueText", arg2_14)
+			local var0_14 = arg2_14:Find("AttrText")
+			local var1_14 = arg2_14:Find("ValueText")
 			local var2_14 = var2_13[arg1_14 + 1]
 			local var3_14 = var1_13[var2_14]
 			local var4_14 = arg0_13.technologyNationProxy:getSetableAttrAdditionValueByTypeAttr(arg2_13, var2_14)

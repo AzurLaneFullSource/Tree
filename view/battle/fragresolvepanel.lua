@@ -51,7 +51,7 @@ function var0_0.OnInit(arg0_2)
 
 	var0_0.keepFateTog = arg0_2._tf:Find("control/condition/keep_tog")
 
-	setText(arg0_2:findTF("label", arg0_2.keepFateTog), i18n("keep_fate_tip"))
+	setText(arg0_2.keepFateTog:Find("label"), i18n("keep_fate_tip"))
 
 	local var5_2 = GetComponent(arg0_2.keepFateTog, typeof(Toggle))
 

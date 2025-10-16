@@ -5,22 +5,22 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.shipListTF = arg0_2:findTF("window/list/scrollview/list", arg0_2._tf)
-	arg0_2.shipListTpl = arg0_2:findTF("window/list/scrollview/item", arg0_2._tf)
+	arg0_2.shipListTF = arg0_2._tf:Find("window/list/scrollview/list")
+	arg0_2.shipListTpl = arg0_2._tf:Find("window/list/scrollview/item")
 
 	setActive(arg0_2.shipListTpl, false)
 
-	arg0_2.tipListTF = arg0_2:findTF("window/rateList/scrollview/list", arg0_2._tf)
-	arg0_2.tipListTpl = arg0_2:findTF("window/rateList/scrollview/item", arg0_2._tf)
+	arg0_2.tipListTF = arg0_2._tf:Find("window/rateList/scrollview/list")
+	arg0_2.tipListTpl = arg0_2._tf:Find("window/rateList/scrollview/item")
 
-	setText(arg0_2:findTF("window/confirm_btn/Image/Image (1)"), i18n("text_confirm"))
+	setText(arg0_2._tf:Find("window/confirm_btn/Image/Image (1)"), i18n("text_confirm"))
 end
 
 function var0_0.OnInit(arg0_3)
-	onButton(arg0_3, arg0_3:findTF("window/close_btn", arg0_3._tf), function()
+	onButton(arg0_3, arg0_3._tf:Find("window/close_btn"), function()
 		arg0_3:Hide()
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("window/confirm_btn", arg0_3._tf), function()
+	onButton(arg0_3, arg0_3._tf:Find("window/confirm_btn"), function()
 		arg0_3:Hide()
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3._tf, function()
@@ -33,7 +33,7 @@ function var0_0.Show(arg0_7, arg1_7, arg2_7, arg3_7)
 
 	arg0_7.isSupport = arg2_7 == "support"
 
-	local var0_7 = arg0_7:findTF("window/rateList/title/Text")
+	local var0_7 = arg0_7._tf:Find("window/rateList/title/Text")
 
 	if arg0_7.isSupport then
 		setText(var0_7, i18n("support_rate_title"))
@@ -117,27 +117,27 @@ function var0_0.OnDestroy(arg0_11)
 end
 
 function var0_0.PlayOpenAnimation(arg0_12)
-	local var0_12 = arg0_12:findTF("window/bg_decorations"):GetComponent(typeof(Animation))
+	local var0_12 = arg0_12._tf:Find("window/bg_decorations"):GetComponent(typeof(Animation))
 
 	var0_12:Stop()
 	var0_12:Play("anim_window_bg")
 
-	local var1_12 = arg0_12:findTF("window/title"):GetComponent(typeof(Animation))
+	local var1_12 = arg0_12._tf:Find("window/title"):GetComponent(typeof(Animation))
 
 	var1_12:Stop()
 	var1_12:Play("anim_top")
 
-	local var2_12 = arg0_12:findTF("window"):GetComponent(typeof(Animation))
+	local var2_12 = arg0_12._tf:Find("window"):GetComponent(typeof(Animation))
 
 	var2_12:Stop()
 	var2_12:Play("anim_content")
 
-	local var3_12 = arg0_12:findTF("print"):GetComponent(typeof(Animation))
+	local var3_12 = arg0_12._tf:Find("print"):GetComponent(typeof(Animation))
 
 	var3_12:Stop()
 	var3_12:Play("anim_bg_plus")
 
-	local var4_12 = arg0_12:findTF("window/confirm_btn"):GetComponent(typeof(Animation))
+	local var4_12 = arg0_12._tf:Find("window/confirm_btn"):GetComponent(typeof(Animation))
 
 	var4_12:Stop()
 	var4_12:Play("anim_button_container")

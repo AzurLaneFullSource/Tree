@@ -22,15 +22,15 @@ function var0_0.init(arg0_2)
 	arg0_2.panelTemplate = arg0_2.layout:Find("container/Template")
 	arg0_2.displayList = {}
 	arg0_2.typeList = {}
-	arg0_2.btnConfirm = arg0_2:findTF("layout/btns/ok", arg0_2.panel)
-	arg0_2.btnCancel = arg0_2:findTF("layout/btns/cancel", arg0_2.panel)
+	arg0_2.btnConfirm = arg0_2.panel:Find("layout/btns/ok")
+	arg0_2.btnCancel = arg0_2.panel:Find("layout/btns/cancel")
 
-	setText(arg0_2:findTF("Image", arg0_2.btnConfirm), i18n("text_confirm"))
-	setText(arg0_2:findTF("Image", arg0_2.btnCancel), i18n("text_cancel"))
+	setText(arg0_2.btnConfirm:Find("Image"), i18n("text_confirm"))
+	setText(arg0_2.btnCancel:Find("Image"), i18n("text_cancel"))
 
-	arg0_2.greySprite = arg0_2:findTF("resource/grey", arg0_2.panel):GetComponent(typeof(Image)).sprite
-	arg0_2.blueSprite = arg0_2:findTF("resource/blue", arg0_2.panel):GetComponent(typeof(Image)).sprite
-	arg0_2.yellowSprite = arg0_2:findTF("resource/yellow", arg0_2.panel):GetComponent(typeof(Image)).sprite
+	arg0_2.greySprite = arg0_2.panel:Find("resource/grey"):GetComponent(typeof(Image)).sprite
+	arg0_2.blueSprite = arg0_2.panel:Find("resource/blue"):GetComponent(typeof(Image)).sprite
+	arg0_2.yellowSprite = arg0_2.panel:Find("resource/yellow"):GetComponent(typeof(Image)).sprite
 end
 
 function var0_0.didEnter(arg0_4)
@@ -46,7 +46,7 @@ function var0_0.didEnter(arg0_4)
 	onButton(arg0_4, arg0_4.btnCancel, function()
 		arg0_4:emit(var0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(arg0_4, arg0_4:findTF("btn", arg0_4.panel), function()
+	onButton(arg0_4, arg0_4.panel:Find("btn"), function()
 		arg0_4:emit(var0_0.ON_CLOSE)
 	end, SFX_CANCEL)
 	arg0_4:DoEnterAnimation()
@@ -114,7 +114,7 @@ function var0_0.InitDropdown(arg0_11, arg1_11)
 	for iter0_11, iter1_11 in ipairs(var0_11) do
 		local var3_11 = var2_11[iter0_11]
 
-		setActive(arg0_11:findTF("dropdown", var3_11), true)
+		setActive(var3_11:Find("dropdown"), true)
 
 		local var4_11 = CustomDropdown.New(arg0_11.panel, arg0_11.event, arg0_11.contextData, iter1_11, var3_11)
 
@@ -268,7 +268,7 @@ function var0_0.InitCustoms(arg0_13, arg1_13)
 
 			local var13_13 = SimpleDropdown.New(arg0_13.panel, arg0_13.event, arg0_13.contextData, var0_13, var12_13, var11_13, var7_13, arg0_13.greySprite, arg0_13.yellowSprite)
 
-			setActive(arg0_13:findTF("dropdown", var12_13), true)
+			setActive(var12_13:Find("dropdown"), true)
 			onButton(arg0_13, var12_13, function()
 				local var0_22 = arg0_13.panel:InverseTransformPoint(var12_13.position)
 

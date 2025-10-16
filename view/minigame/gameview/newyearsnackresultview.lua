@@ -17,7 +17,7 @@ function var0_0.updateView(arg0_2)
 	arg0_2.orderList:make(function(arg0_3, arg1_3, arg2_3)
 		if arg0_3 == UIItemList.EventUpdate then
 			local var0_3 = arg0_2.contextData.orderIDList[arg1_3 + 1]
-			local var1_3 = arg0_2:findTF("SnackImg", arg2_3)
+			local var1_3 = arg2_3:Find("SnackImg")
 
 			setImageSprite(var1_3, GetSpriteFromAtlas("ui/minigameui/newyearsnackui_atlas", "snack_" .. var0_3))
 		end
@@ -26,13 +26,13 @@ function var0_0.updateView(arg0_2)
 	arg0_2.selectedList:make(function(arg0_4, arg1_4, arg2_4)
 		if arg0_4 == UIItemList.EventUpdate then
 			local var0_4 = arg0_2.contextData.selectedIDList[arg1_4 + 1]
-			local var1_4 = arg0_2:findTF("SnackImg", arg2_4)
+			local var1_4 = arg2_4:Find("SnackImg")
 
 			setImageSprite(var1_4, GetSpriteFromAtlas("ui/minigameui/newyearsnackui_atlas", "snack_" .. var0_4))
 
 			local var2_4 = arg0_2.contextData.orderIDList[arg1_4 + 1]
-			local var3_4 = arg0_2:findTF("ErrorImg", arg2_4)
-			local var4_4 = arg0_2:findTF("CorrectImg", arg2_4)
+			local var3_4 = arg2_4:Find("ErrorImg")
+			local var4_4 = arg2_4:Find("CorrectImg")
 
 			setActive(var4_4, var0_4 == var2_4)
 			setActive(var3_4, var0_4 ~= var2_4)

@@ -9,20 +9,20 @@ function var0_0.OnInit(arg0_2)
 		arg0_2:Hide()
 	end, SFX_PANEL)
 
-	arg0_2.closeBtn = arg0_2:findTF("window/top/btnBack")
+	arg0_2.closeBtn = arg0_2._tf:Find("window/top/btnBack")
 
 	onButton(arg0_2, arg0_2.closeBtn, function()
 		arg0_2:Hide()
 	end, SFX_PANEL)
 
-	arg0_2.btnDiamond = arg0_2:findTF("window/button_container/btn_diamond")
+	arg0_2.btnDiamond = arg0_2._tf:Find("window/button_container/btn_diamond")
 
 	onButton(arg0_2, arg0_2.btnDiamond, function()
 		arg0_2:emit(MailMediator.ON_EXTEND_STORE, true)
 		arg0_2:Hide()
 	end, SFX_PANEL)
 
-	arg0_2.btnGold = arg0_2:findTF("window/button_container/btn_gold")
+	arg0_2.btnGold = arg0_2._tf:Find("window/button_container/btn_gold")
 
 	onButton(arg0_2, arg0_2.btnGold, function()
 		arg0_2:emit(MailMediator.ON_EXTEND_STORE, false)

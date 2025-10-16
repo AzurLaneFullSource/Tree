@@ -3,11 +3,11 @@ local var0_0 = class("SaDingFramePage", import(".TemplatePage.NewFrameTemplatePa
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.bar = arg0_1:findTF("AD/switcher/phase2/barContent")
-	arg0_1.cur = arg0_1:findTF("AD/switcher/phase2/progress/step")
-	arg0_1.target = arg0_1:findTF("AD/switcher/phase2/progress/all")
-	arg0_1.getTag = arg0_1:findTF("AD/switcher/phase2/get")
-	arg0_1.gotTag = arg0_1:findTF("AD/switcher/phase2/got")
+	arg0_1.bar = arg0_1._tf:Find("AD/switcher/phase2/barContent")
+	arg0_1.cur = arg0_1._tf:Find("AD/switcher/phase2/progress/step")
+	arg0_1.target = arg0_1._tf:Find("AD/switcher/phase2/progress/all")
+	arg0_1.getTag = arg0_1._tf:Find("AD/switcher/phase2/get")
+	arg0_1.gotTag = arg0_1._tf:Find("AD/switcher/phase2/got")
 	arg0_1.titles = {
 		arg0_1.switchBtn:Find("2"),
 		arg0_1.switchBtn:Find("1")
@@ -34,7 +34,7 @@ function var0_0.OnUpdateFlush(arg0_2)
 	setActive(arg0_2.gotBtn, arg0_2.inPhase2 and var4_2)
 	setActive(arg0_2.getTag, arg0_2.inPhase2 and not var4_2 and var3_2)
 	setActive(arg0_2.gotTag, arg0_2.inPhase2 and var4_2)
-	setActive(arg0_2:findTF("AD/switcher/phase2/progress"), not var4_2)
+	setActive(arg0_2._tf:Find("AD/switcher/phase2/progress"), not var4_2)
 end
 
 function var0_0.Switch(arg0_3, arg1_3)

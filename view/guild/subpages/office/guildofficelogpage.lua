@@ -36,15 +36,15 @@ function var0_0.getUIName(arg0_2)
 end
 
 function var0_0.OnLoaded(arg0_3)
-	arg0_3.uilist = UIItemList.New(arg0_3:findTF("frame/window/sliders/list/content"), arg0_3:findTF("frame/window/sliders/list/content/tpl"))
+	arg0_3.uilist = UIItemList.New(arg0_3._tf:Find("frame/window/sliders/list/content"), arg0_3._tf:Find("frame/window/sliders/list/content/tpl"))
 
-	setText(arg0_3:findTF("frame/window/top/bg/infomation/title"), i18n("guild_log_title"))
+	setText(arg0_3._tf:Find("frame/window/top/bg/infomation/title"), i18n("guild_log_title"))
 
-	arg0_3.btnAll = arg0_3:findTF("frame/window/sliders/filter/1")
+	arg0_3.btnAll = arg0_3._tf:Find("frame/window/sliders/filter/1")
 	arg0_3.btns = {
-		arg0_3:findTF("frame/window/sliders/filter/2"),
-		arg0_3:findTF("frame/window/sliders/filter/3"),
-		arg0_3:findTF("frame/window/sliders/filter/4")
+		arg0_3._tf:Find("frame/window/sliders/filter/2"),
+		arg0_3._tf:Find("frame/window/sliders/filter/3"),
+		arg0_3._tf:Find("frame/window/sliders/filter/4")
 	}
 end
 

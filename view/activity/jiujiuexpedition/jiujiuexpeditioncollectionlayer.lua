@@ -40,18 +40,18 @@ function var0_0.GetAwardState(arg0_5, arg1_5)
 end
 
 function var0_0.init(arg0_6)
-	arg0_6.bookContainer = arg0_6:findTF("books")
-	arg0_6.book = arg0_6:findTF("book")
-	arg0_6.nextPageBtn = arg0_6:findTF("book/next")
-	arg0_6.prevPageBtn = arg0_6:findTF("book/prev")
-	arg0_6.scoreList = UIItemList.New(arg0_6:findTF("book/list"), arg0_6:findTF("book/list/tpl"))
-	arg0_6.getBtn = arg0_6:findTF("book/get")
-	arg0_6.gotBtn = arg0_6:findTF("book/got")
-	arg0_6.goBtn = arg0_6:findTF("book/go")
+	arg0_6.bookContainer = arg0_6._tf:Find("books")
+	arg0_6.book = arg0_6._tf:Find("book")
+	arg0_6.nextPageBtn = arg0_6._tf:Find("book/next")
+	arg0_6.prevPageBtn = arg0_6._tf:Find("book/prev")
+	arg0_6.scoreList = UIItemList.New(arg0_6._tf:Find("book/list"), arg0_6._tf:Find("book/list/tpl"))
+	arg0_6.getBtn = arg0_6._tf:Find("book/get")
+	arg0_6.gotBtn = arg0_6._tf:Find("book/got")
+	arg0_6.goBtn = arg0_6._tf:Find("book/go")
 	arg0_6.books = {
-		arg0_6:findTF("books/1"),
-		arg0_6:findTF("books/2"),
-		arg0_6:findTF("books/3")
+		arg0_6._tf:Find("books/1"),
+		arg0_6._tf:Find("books/2"),
+		arg0_6._tf:Find("books/3")
 	}
 	arg0_6.parent = arg0_6._tf.parent
 

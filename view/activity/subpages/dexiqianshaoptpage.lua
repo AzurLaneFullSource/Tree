@@ -1,7 +1,7 @@
 local var0_0 = class("DeXiQianShaoPtPage", import(".TemplatePage.PtTemplatePage"))
 
 function var0_0.OnFirstFlush(arg0_1)
-	arg0_1.awardTF = arg0_1:findTF("switcher/phase2/Image/award", arg0_1.bg)
+	arg0_1.awardTF = arg0_1.bg:Find("switcher/phase2/Image/award")
 
 	var0_0.super.OnFirstFlush(arg0_1)
 	setActive(arg0_1.displayBtn, false)
@@ -11,13 +11,13 @@ function var0_0.OnFirstFlush(arg0_1)
 		})
 	end, SFX_PANEL)
 
-	arg0_1.step = arg0_1:findTF("AD/switcher/phase2/Image/step")
-	arg0_1.progress = arg0_1:findTF("AD/switcher/phase2/Image/progress")
-	arg0_1.switchBtn = arg0_1:findTF("AD/switcher/switch_btn")
-	arg0_1.bar = arg0_1:findTF("AD/switcher/phase2/Image/bar")
+	arg0_1.step = arg0_1._tf:Find("AD/switcher/phase2/Image/step")
+	arg0_1.progress = arg0_1._tf:Find("AD/switcher/phase2/Image/progress")
+	arg0_1.switchBtn = arg0_1._tf:Find("AD/switcher/switch_btn")
+	arg0_1.bar = arg0_1._tf:Find("AD/switcher/phase2/Image/bar")
 	arg0_1.phases = {
-		arg0_1:findTF("AD/switcher/phase1"),
-		arg0_1:findTF("AD/switcher/phase2")
+		arg0_1._tf:Find("AD/switcher/phase1"),
+		arg0_1._tf:Find("AD/switcher/phase2")
 	}
 	arg0_1.inPhase2 = false
 
@@ -72,7 +72,7 @@ function var0_0.Switch(arg0_4, arg1_4)
 end
 
 function var0_0.UpdateAwardGot(arg0_10)
-	local var0_10 = arg0_10:findTF("switcher/phase2/got", arg0_10.bg)
+	local var0_10 = arg0_10.bg:Find("switcher/phase2/got")
 	local var1_10 = arg0_10.ptData:CanGetAward()
 	local var2_10 = not arg0_10.ptData:CanGetNextAward() and arg0_10.inPhase2
 

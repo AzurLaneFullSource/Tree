@@ -72,49 +72,49 @@ function var0_0.findUI(arg0_6)
 	arg0_6._tf.anchorMax = Vector2.one
 	arg0_6._tf.offsetMax = Vector2.zero
 	arg0_6._tf.offsetMin = Vector2.zero
-	arg0_6.topPanel = arg0_6:findTF("TopPanel")
-	arg0_6.scrollBar = arg0_6:findTF("Scrollbar")
-	arg0_6.timeFilterToggle = arg0_6:findTF("List/TimeFilterBtn", arg0_6.topPanel)
-	arg0_6.timeTextSelected = arg0_6:findTF("TextSelected", arg0_6.timeFilterToggle)
-	arg0_6.timeItemContainer = arg0_6:findTF("Panel", arg0_6.timeFilterToggle)
-	arg0_6.timeItemTpl = arg0_6:findTF("Item", arg0_6.timeItemContainer)
+	arg0_6.topPanel = arg0_6._tf:Find("TopPanel")
+	arg0_6.scrollBar = arg0_6._tf:Find("Scrollbar")
+	arg0_6.timeFilterToggle = arg0_6.topPanel:Find("List/TimeFilterBtn")
+	arg0_6.timeTextSelected = arg0_6.timeFilterToggle:Find("TextSelected")
+	arg0_6.timeItemContainer = arg0_6.timeFilterToggle:Find("Panel")
+	arg0_6.timeItemTpl = arg0_6.timeItemContainer:Find("Item")
 
 	setActive(arg0_6.timeFilterToggle, #GalleryConst.DateIndex >= 2)
 
-	arg0_6.setFilteToggle = arg0_6:findTF("List/SetFilterBtn", arg0_6.topPanel)
+	arg0_6.setFilteToggle = arg0_6.topPanel:Find("List/SetFilterBtn")
 
 	setActive(arg0_6.setFilteToggle, false)
 
-	arg0_6.setOpenToggle = arg0_6:findTF("SetToggle")
+	arg0_6.setOpenToggle = arg0_6._tf:Find("SetToggle")
 
 	setActive(arg0_6.setOpenToggle, false)
 
-	arg0_6.likeFilterToggle = arg0_6:findTF("List/LikeFilterBtn", arg0_6.topPanel)
-	arg0_6.likeNumText = arg0_6:findTF("TextNum", arg0_6.likeFilterToggle)
+	arg0_6.likeFilterToggle = arg0_6.topPanel:Find("List/LikeFilterBtn")
+	arg0_6.likeNumText = arg0_6.likeFilterToggle:Find("TextNum")
 
 	setActive(arg0_6.likeFilterToggle, true)
 	setActive(arg0_6.likeNumText, false)
 
-	arg0_6.orderToggle = arg0_6:findTF("List/OrderBtn", arg0_6.topPanel)
-	arg0_6.resRepaireBtn = arg0_6:findTF("List/RepaireBtn", arg0_6.topPanel)
-	arg0_6.progressText = arg0_6:findTF("TextProgress", arg0_6.topPanel)
-	arg0_6.scrollPanel = arg0_6:findTF("Scroll")
+	arg0_6.orderToggle = arg0_6.topPanel:Find("List/OrderBtn")
+	arg0_6.resRepaireBtn = arg0_6.topPanel:Find("List/RepaireBtn")
+	arg0_6.progressText = arg0_6.topPanel:Find("TextProgress")
+	arg0_6.scrollPanel = arg0_6._tf:Find("Scroll")
 	arg0_6.lScrollPageSC = GetComponent(arg0_6.scrollPanel, "LScrollPage")
-	arg0_6.picPanel = arg0_6:findTF("PicPanel")
-	arg0_6.picPanelBG = arg0_6:findTF("PanelBG", arg0_6.picPanel)
-	arg0_6.picTopContainer = arg0_6:findTF("Container", arg0_6.picPanel)
-	arg0_6.picContainer = arg0_6:findTF("Container/Picture", arg0_6.picPanel)
-	arg0_6.picBGImg = arg0_6:findTF("Container/Picture/PicBG", arg0_6.picPanel)
-	arg0_6.picImg = arg0_6:findTF("Container/Picture/Pic", arg0_6.picPanel)
-	arg0_6.picLikeToggle = arg0_6:findTF("LikeBtn", arg0_6.picContainer)
-	arg0_6.picName = arg0_6:findTF("PicName", arg0_6.picContainer)
-	arg0_6.picPreBtn = arg0_6:findTF("PreBtn", arg0_6.picPanel)
-	arg0_6.picNextBtn = arg0_6:findTF("NextBtn", arg0_6.picPanel)
+	arg0_6.picPanel = arg0_6._tf:Find("PicPanel")
+	arg0_6.picPanelBG = arg0_6.picPanel:Find("PanelBG")
+	arg0_6.picTopContainer = arg0_6.picPanel:Find("Container")
+	arg0_6.picContainer = arg0_6.picPanel:Find("Container/Picture")
+	arg0_6.picBGImg = arg0_6.picPanel:Find("Container/Picture/PicBG")
+	arg0_6.picImg = arg0_6.picPanel:Find("Container/Picture/Pic")
+	arg0_6.picLikeToggle = arg0_6.picContainer:Find("LikeBtn")
+	arg0_6.picName = arg0_6.picContainer:Find("PicName")
+	arg0_6.picPreBtn = arg0_6.picPanel:Find("PreBtn")
+	arg0_6.picNextBtn = arg0_6.picPanel:Find("NextBtn")
 
 	setActive(arg0_6.picLikeToggle, true)
 
-	arg0_6.emptyPanel = arg0_6:findTF("EmptyPanel")
-	arg0_6.updatePanel = arg0_6:findTF("UpdatePanel")
+	arg0_6.emptyPanel = arg0_6._tf:Find("EmptyPanel")
+	arg0_6.updatePanel = arg0_6._tf:Find("UpdatePanel")
 end
 
 function var0_0.addListener(arg0_7)
@@ -173,7 +173,7 @@ function var0_0.initTimeSelectPanel(arg0_12)
 		if arg0_13 == UIItemList.EventUpdate then
 			local var0_13 = GalleryConst.DateIndex[arg1_13 + 1]
 			local var1_13 = GalleryConst.DateIndexName[arg1_13 + 1]
-			local var2_13 = arg0_12:findTF("Text", arg2_13)
+			local var2_13 = arg2_13:Find("Text")
 
 			setText(var2_13, var1_13)
 			onButton(arg0_12, arg2_13, function()
@@ -291,10 +291,10 @@ function var0_0.updateCardListPanel(arg0_21)
 end
 
 function var0_0.initDownBtnPanel(arg0_22)
-	local var0_22 = arg0_22:findTF("Btn", arg0_22.updatePanel)
-	local var1_22 = arg0_22:findTF("Text", var0_22)
-	local var2_22 = arg0_22:findTF("Progress", arg0_22.updatePanel)
-	local var3_22 = arg0_22:findTF("Slider", var2_22)
+	local var0_22 = arg0_22.updatePanel:Find("Btn")
+	local var1_22 = var0_22:Find("Text")
+	local var2_22 = arg0_22.updatePanel:Find("Progress")
+	local var3_22 = var2_22:Find("Slider")
 
 	setActive(var0_22, true)
 	setActive(var2_22, false)
@@ -322,10 +322,10 @@ function var0_0.initDownBtnPanel(arg0_22)
 end
 
 function var0_0.updateDownBtnPanel(arg0_25)
-	local var0_25 = arg0_25:findTF("Btn", arg0_25.updatePanel)
-	local var1_25 = arg0_25:findTF("Text", var0_25)
-	local var2_25 = arg0_25:findTF("Progress", arg0_25.updatePanel)
-	local var3_25 = arg0_25:findTF("Slider", var2_25)
+	local var0_25 = arg0_25.updatePanel:Find("Btn")
+	local var1_25 = var0_25:Find("Text")
+	local var2_25 = arg0_25.updatePanel:Find("Progress")
+	local var3_25 = var2_25:Find("Slider")
 	local var4_25 = arg0_25.manager.state
 
 	if var4_25 == DownloadState.None then
@@ -621,15 +621,15 @@ function var0_0.tryShowTipMsgBox(arg0_50)
 end
 
 function var0_0.cardUpdate(arg0_52, arg1_52, arg2_52)
-	local var0_52 = arg0_52:findTF("CardImg", arg2_52)
-	local var1_52 = arg0_52:findTF("CardNum/Text", arg2_52)
-	local var2_52 = arg0_52:findTF("SelectBtn", arg2_52)
-	local var3_52 = arg0_52:findTF("BlackMask", arg2_52)
-	local var4_52 = arg0_52:findTF("Update", var3_52)
-	local var5_52 = arg0_52:findTF("DownloadBtn", var3_52)
-	local var6_52 = arg0_52:findTF("LockImg", var3_52)
-	local var7_52 = arg0_52:findTF("TextUnlockTip", var3_52)
-	local var8_52 = arg0_52:findTF("UnLockBtn", var3_52)
+	local var0_52 = arg2_52:Find("CardImg")
+	local var1_52 = arg2_52:Find("CardNum/Text")
+	local var2_52 = arg2_52:Find("SelectBtn")
+	local var3_52 = arg2_52:Find("BlackMask")
+	local var4_52 = var3_52:Find("Update")
+	local var5_52 = var3_52:Find("DownloadBtn")
+	local var6_52 = var3_52:Find("LockImg")
+	local var7_52 = var3_52:Find("TextUnlockTip")
+	local var8_52 = var3_52:Find("UnLockBtn")
 
 	setActive(var4_52, false)
 
@@ -708,9 +708,9 @@ function var0_0.cardUpdate(arg0_52, arg1_52, arg2_52)
 end
 
 function var0_0.initEmptyCard(arg0_56, arg1_56)
-	local var0_56 = arg0_56:findTF("CardImg", arg1_56)
-	local var1_56 = arg0_56:findTF("CardNum", arg1_56)
-	local var2_56 = arg0_56:findTF("SelectBtn", arg1_56)
+	local var0_56 = arg1_56:Find("CardImg")
+	local var1_56 = arg1_56:Find("CardNum")
+	local var2_56 = arg1_56:Find("SelectBtn")
 
 	setActive(var0_56, true)
 	setActive(var1_56, false)
@@ -733,20 +733,20 @@ function var0_0.initEmptyCard(arg0_56, arg1_56)
 
 	arg0_56.resLoader:LoadSprite(var3_56, var4_56, var0_56, false)
 
-	local var7_56 = arg0_56:findTF("BlackMask", arg1_56)
-	local var8_56 = arg0_56:findTF("LockImg", var7_56)
-	local var9_56 = arg0_56:findTF("TextUnlockTip", var7_56)
-	local var10_56 = arg0_56:findTF("UnLockBtn", var7_56)
+	local var7_56 = arg1_56:Find("BlackMask")
+	local var8_56 = var7_56:Find("LockImg")
+	local var9_56 = var7_56:Find("TextUnlockTip")
+	local var10_56 = var7_56:Find("UnLockBtn")
 
 	setActive(var7_56, true)
 	setActive(var8_56, false)
 	setActive(var9_56, false)
 	setActive(var10_56, false)
 
-	local var11_56 = arg0_56:findTF("Update", var7_56)
-	local var12_56 = arg0_56:findTF("Btn", var11_56)
-	local var13_56 = arg0_56:findTF("Progress", var11_56)
-	local var14_56 = arg0_56:findTF("Slider", var13_56)
+	local var11_56 = var7_56:Find("Update")
+	local var12_56 = var11_56:Find("Btn")
+	local var13_56 = var11_56:Find("Progress")
+	local var14_56 = var13_56:Find("Slider")
 
 	setActive(var11_56, true)
 	setActive(var12_56, true)
@@ -775,49 +775,48 @@ function var0_0.initEmptyCard(arg0_56, arg1_56)
 end
 
 function var0_0.updateEmptyCard(arg0_59, arg1_59)
-	local var0_59 = arg0_59:findTF("BlackMask", arg1_59)
-	local var1_59 = arg0_59:findTF("Update", var0_59)
-	local var2_59 = arg0_59:findTF("Btn", var1_59)
-	local var3_59 = arg0_59:findTF("Text", var2_59)
-	local var4_59 = arg0_59:findTF("Progress", var1_59)
-	local var5_59 = arg0_59:findTF("Slider", var4_59)
-	local var6_59 = arg0_59.manager.state
+	local var0_59 = arg1_59:Find("BlackMask"):Find("Update")
+	local var1_59 = var0_59:Find("Btn")
+	local var2_59 = var1_59:Find("Text")
+	local var3_59 = var0_59:Find("Progress")
+	local var4_59 = var3_59:Find("Slider")
+	local var5_59 = arg0_59.manager.state
 
-	if var6_59 == DownloadState.None then
-		setText(var3_59, "None")
-		setActive(var2_59, true)
-		setActive(var4_59, false)
-	elseif var6_59 == DownloadState.Checking then
-		setText(var3_59, i18n("word_manga_checking"))
-		setActive(var2_59, true)
-		setActive(var4_59, false)
-	elseif var6_59 == DownloadState.CheckToUpdate then
-		setText(var3_59, i18n("word_manga_checktoupdate"))
-		setActive(var2_59, true)
-		setActive(var4_59, false)
-	elseif var6_59 == DownloadState.CheckOver then
-		setText(var3_59, "Latest Ver")
-		setActive(var2_59, true)
-		setActive(var4_59, false)
-	elseif var6_59 == DownloadState.CheckFailure then
-		setText(var3_59, i18n("word_manga_checkfailure"))
-		setActive(var2_59, true)
-		setActive(var4_59, false)
-	elseif var6_59 == DownloadState.Updating then
-		setText(var3_59, i18n("word_manga_updating", arg0_59.manager.downloadCount, arg0_59.manager.downloadTotal))
-		setActive(var2_59, false)
-		setActive(var4_59, true)
-		setSlider(var5_59, 0, arg0_59.manager.downloadTotal, arg0_59.manager.downloadCount)
-	elseif var6_59 == DownloadState.UpdateSuccess then
-		setText(var3_59, i18n("word_manga_updatesuccess"))
-		setActive(var2_59, true)
-		setActive(var4_59, false)
+	if var5_59 == DownloadState.None then
+		setText(var2_59, "None")
+		setActive(var1_59, true)
+		setActive(var3_59, false)
+	elseif var5_59 == DownloadState.Checking then
+		setText(var2_59, i18n("word_manga_checking"))
+		setActive(var1_59, true)
+		setActive(var3_59, false)
+	elseif var5_59 == DownloadState.CheckToUpdate then
+		setText(var2_59, i18n("word_manga_checktoupdate"))
+		setActive(var1_59, true)
+		setActive(var3_59, false)
+	elseif var5_59 == DownloadState.CheckOver then
+		setText(var2_59, "Latest Ver")
+		setActive(var1_59, true)
+		setActive(var3_59, false)
+	elseif var5_59 == DownloadState.CheckFailure then
+		setText(var2_59, i18n("word_manga_checkfailure"))
+		setActive(var1_59, true)
+		setActive(var3_59, false)
+	elseif var5_59 == DownloadState.Updating then
+		setText(var2_59, i18n("word_manga_updating", arg0_59.manager.downloadCount, arg0_59.manager.downloadTotal))
+		setActive(var1_59, false)
+		setActive(var3_59, true)
+		setSlider(var4_59, 0, arg0_59.manager.downloadTotal, arg0_59.manager.downloadCount)
+	elseif var5_59 == DownloadState.UpdateSuccess then
+		setText(var2_59, i18n("word_manga_updatesuccess"))
+		setActive(var1_59, true)
+		setActive(var3_59, false)
 		arg0_59:filtePic()
 		arg0_59:updateCardListPanel()
-	elseif var6_59 == DownloadState.UpdateFailure then
-		setText(var3_59, i18n("word_manga_updatefailure"))
-		setActive(var2_59, true)
-		setActive(var4_59, false)
+	elseif var5_59 == DownloadState.UpdateFailure then
+		setText(var2_59, i18n("word_manga_updatefailure"))
+		setActive(var1_59, true)
+		setActive(var3_59, false)
 	end
 end
 

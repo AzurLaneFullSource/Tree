@@ -6,7 +6,7 @@ end
 
 function var0_0.OnLoaded(arg0_2)
 	arg0_2.cards = {}
-	arg0_2.scrollrect = arg0_2:findTF("frame/view"):GetComponent("LScrollRect")
+	arg0_2.scrollrect = arg0_2._tf:Find("frame/view"):GetComponent("LScrollRect")
 
 	function arg0_2.scrollrect.onInitItem(arg0_3)
 		arg0_2:OnInitItem(arg0_3)
@@ -16,10 +16,10 @@ function var0_0.OnLoaded(arg0_2)
 		arg0_2:onUpdateItem(arg0_4, arg1_4)
 	end
 
-	arg0_2.frameTr = arg0_2:findTF("frame")
-	arg0_2.subTitleTxt = arg0_2:findTF("frame/subtitle"):GetComponent(typeof(Text))
+	arg0_2.frameTr = arg0_2._tf:Find("frame")
+	arg0_2.subTitleTxt = arg0_2._tf:Find("frame/subtitle"):GetComponent(typeof(Text))
 
-	setText(arg0_2:findTF("frame/title"), i18n("cryptolalia_list_title"))
+	setText(arg0_2._tf:Find("frame/title"), i18n("cryptolalia_list_title"))
 end
 
 function var0_0.OnInit(arg0_5)

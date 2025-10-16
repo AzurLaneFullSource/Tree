@@ -43,10 +43,10 @@ function var0_0.preload(arg0_5, arg1_5)
 end
 
 function var0_0.init(arg0_8)
-	arg0_8.infos = arg0_8:findTF("infos")
+	arg0_8.infos = arg0_8._tf:Find("infos")
 	arg0_8.infoTpl = arg0_8:getTpl("infos/info_tpl")
-	arg0_8.indicator = arg0_8:findTF("load")
-	arg0_8.bg = arg0_8:findTF("BG")
+	arg0_8.indicator = arg0_8._tf:Find("load")
+	arg0_8.bg = arg0_8._tf:Find("BG")
 
 	arg0_8:displayBG(true)
 end

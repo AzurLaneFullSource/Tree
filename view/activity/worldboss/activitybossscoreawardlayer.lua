@@ -5,8 +5,8 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.closeBtn = arg0_2:findTF("window/top/btnBack")
-	arg0_2.uiItemList = UIItemList.New(arg0_2:findTF("window/panel/list"), arg0_2:findTF("window/panel/list/item"))
+	arg0_2.closeBtn = arg0_2._tf:Find("window/top/btnBack")
+	arg0_2.uiItemList = UIItemList.New(arg0_2._tf:Find("window/panel/list"), arg0_2._tf:Find("window/panel/list/item"))
 
 	arg0_2.uiItemList:make(function(arg0_3, arg1_3, arg2_3)
 		if arg0_3 == UIItemList.EventUpdate then
@@ -14,11 +14,11 @@ function var0_0.init(arg0_2)
 		end
 	end)
 
-	arg0_2.currentTxt = arg0_2:findTF("window/pt/Text"):GetComponent(typeof(Text))
+	arg0_2.currentTxt = arg0_2._tf:Find("window/pt/Text"):GetComponent(typeof(Text))
 
-	setText(arg0_2:findTF("window/top/bg/infomation"), i18n("world_expedition_reward_display"))
-	setText(arg0_2:findTF("window/pt/title"), i18n("activityboss_sp_window_best_score"))
-	setText(arg0_2:findTF("window/panel/list/item/target/title"), i18n("activityboss_sp_score_target"))
+	setText(arg0_2._tf:Find("window/top/bg/infomation"), i18n("world_expedition_reward_display"))
+	setText(arg0_2._tf:Find("window/pt/title"), i18n("activityboss_sp_window_best_score"))
+	setText(arg0_2._tf:Find("window/panel/list/item/target/title"), i18n("activityboss_sp_score_target"))
 end
 
 function var0_0.didEnter(arg0_4)

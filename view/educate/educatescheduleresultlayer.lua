@@ -5,8 +5,8 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.anim = arg0_2:findTF("anim_root"):GetComponent(typeof(Animation))
-	arg0_2.animEvent = arg0_2:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+	arg0_2.anim = arg0_2._tf:Find("anim_root"):GetComponent(typeof(Animation))
+	arg0_2.animEvent = arg0_2._tf:Find("anim_root"):GetComponent(typeof(DftAniEvent))
 	arg0_2.inAnimPlaying = true
 
 	arg0_2.animEvent:SetEndEvent(function()
@@ -17,13 +17,13 @@ function var0_0.init(arg0_2)
 		end)
 	end)
 
-	arg0_2.windowTF = arg0_2:findTF("anim_root/window")
-	arg0_2.personalTF = arg0_2:findTF("personal", arg0_2.windowTF)
-	arg0_2.majorArrTF = arg0_2:findTF("major", arg0_2.windowTF)
-	arg0_2.minorArrTF = arg0_2:findTF("minor", arg0_2.windowTF)
-	arg0_2.resTF = arg0_2:findTF("res/content", arg0_2.windowTF)
+	arg0_2.windowTF = arg0_2._tf:Find("anim_root/window")
+	arg0_2.personalTF = arg0_2.windowTF:Find("personal")
+	arg0_2.majorArrTF = arg0_2.windowTF:Find("major")
+	arg0_2.minorArrTF = arg0_2.windowTF:Find("minor")
+	arg0_2.resTF = arg0_2.windowTF:Find("res/content")
 
-	setText(arg0_2:findTF("tip", arg0_2.windowTF), i18n("child_close_tip"))
+	setText(arg0_2.windowTF:Find("tip"), i18n("child_close_tip"))
 	arg0_2:BlurPanel(arg0_2._tf, {
 		groupDelta = 1
 	})
@@ -89,24 +89,22 @@ function var0_0.updatePersonalPanel(arg0_8)
 	setActive(arg0_8.personalTF, var0_8)
 
 	if var0_8 then
-		local var1_8 = arg0_8:findTF("content", arg0_8.natureTF)
-
 		for iter0_8, iter1_8 in ipairs(arg0_8.natureIds) do
-			local var2_8 = arg0_8:findTF(tostring(iter1_8), arg0_8.personalTF)
-			local var3_8 = arg0_8.char:GetAttrById(iter1_8)
+			local var1_8 = arg0_8._tf:Find(tostring(iter1_8), arg0_8.personalTF)
+			local var2_8 = arg0_8.char:GetAttrById(iter1_8)
 
-			setText(arg0_8:findTF("old", var2_8), pg.child_attr[iter1_8].name .. " " .. var3_8)
+			setText(var1_8:Find("old"), pg.child_attr[iter1_8].name .. " " .. var2_8)
 
-			local var4_8 = arg0_8.result[iter1_8] or 0
+			local var3_8 = arg0_8.result[iter1_8] or 0
 
-			setActive(arg0_8:findTF("new", var2_8), var4_8 ~= 0)
+			setActive(var1_8:Find("new"), var3_8 ~= 0)
 
-			if var4_8 ~= 0 then
-				local var5_8 = var4_8 > 0 and "39BFFF" or "FF6767"
-				local var6_8 = var4_8 > 0 and "+" or ""
+			if var3_8 ~= 0 then
+				local var4_8 = var3_8 > 0 and "39BFFF" or "FF6767"
+				local var5_8 = var3_8 > 0 and "+" or ""
 
-				setText(arg0_8:findTF("new", var2_8), var6_8 .. " " .. var4_8)
-				setTextColor(arg0_8:findTF("new", var2_8), Color.NewHex(var5_8))
+				setText(var1_8:Find("new"), var5_8 .. " " .. var3_8)
+				setTextColor(var1_8:Find("new"), Color.NewHex(var4_8))
 			end
 		end
 	end
@@ -117,30 +115,30 @@ function var0_0.updateMajorPanel(arg0_9)
 		local var0_9 = arg0_9.majorArrTF:GetChild(iter0_9 - 1)
 		local var1_9 = arg0_9.majorIds[iter0_9]
 
-		GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var1_9, arg0_9:findTF("icon_bg/icon", var0_9), true)
-		setScrollText(arg0_9:findTF("name_mask/name", var0_9), pg.child_attr[var1_9].name)
+		GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var1_9, var0_9:Find("icon_bg/icon"), true)
+		setScrollText(var0_9:Find("name_mask/name"), pg.child_attr[var1_9].name)
 
 		local var2_9 = arg0_9.char:GetAttrInfo(var1_9)
 
-		setText(arg0_9:findTF("grade/Text", var0_9), var2_9)
+		setText(var0_9:Find("grade/Text"), var2_9)
 
 		local var3_9 = arg0_9.char:GetAttrById(var1_9)
 
-		setText(arg0_9:findTF("value_old", var0_9), var3_9)
+		setText(var0_9:Find("value_old"), var3_9)
 
 		local var4_9 = EducateConst.GRADE_2_COLOR[var2_9][1]
 		local var5_9 = EducateConst.GRADE_2_COLOR[var2_9][2]
 
-		setImageColor(arg0_9:findTF("gradient", var0_9), Color.NewHex(var4_9))
-		setImageColor(arg0_9:findTF("grade", var0_9), Color.NewHex(var5_9))
+		setImageColor(var0_9:Find("gradient"), Color.NewHex(var4_9))
+		setImageColor(var0_9:Find("grade"), Color.NewHex(var5_9))
 
 		local var6_9 = arg0_9.result[var1_9] or 0
 		local var7_9 = var6_9 == 0 and "39393C" or "39BFFF"
 
-		setActive(arg0_9:findTF("VX", var0_9), var6_9 ~= 0)
-		setImageColor(arg0_9:findTF("arrow", var0_9), Color.NewHex(var7_9))
-		setText(arg0_9:findTF("value_new", var0_9), var3_9 + var6_9)
-		setTextColor(arg0_9:findTF("value_new", var0_9), Color.NewHex(var7_9))
+		setActive(var0_9:Find("VX"), var6_9 ~= 0)
+		setImageColor(var0_9:Find("arrow"), Color.NewHex(var7_9))
+		setText(var0_9:Find("value_new"), var3_9 + var6_9)
+		setTextColor(var0_9:Find("value_new"), Color.NewHex(var7_9))
 	end
 end
 
@@ -149,21 +147,21 @@ function var0_0.updateMinorPanel(arg0_10)
 		local var0_10 = arg0_10.minorArrTF:GetChild(iter0_10 - 1)
 		local var1_10 = arg0_10.minorIds[iter0_10]
 
-		GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var1_10, arg0_10:findTF("icon", var0_10), true)
-		setText(arg0_10:findTF("name", var0_10), pg.child_attr[var1_10].name)
+		GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var1_10, var0_10:Find("icon"), true)
+		setText(var0_10:Find("name"), pg.child_attr[var1_10].name)
 
 		local var2_10 = arg0_10.char:GetAttrById(var1_10)
 
-		setText(arg0_10:findTF("value_add/value_old", var0_10), var2_10)
+		setText(var0_10:Find("value_add/value_old"), var2_10)
 
 		local var3_10 = arg0_10.result[var1_10] or 0
 
-		setActive(arg0_10:findTF("VX", var0_10), var3_10 ~= 0)
-		setText(arg0_10:findTF("value_add", var0_10), "")
+		setActive(var0_10:Find("VX"), var3_10 ~= 0)
+		setText(var0_10:Find("value_add"), "")
 
 		if var3_10 ~= 0 then
 			onDelayTick(function()
-				setText(arg0_10:findTF("value_add", var0_10), "+" .. var3_10)
+				setText(var0_10:Find("value_add"), "+" .. var3_10)
 			end, 0.891)
 		end
 	end
@@ -174,8 +172,8 @@ function var0_0.updateResPanel(arg0_12)
 		local var0_12 = arg0_12.resTF:GetChild(iter0_12 - 1)
 		local var1_12 = arg0_12.resIds[iter0_12]
 
-		GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "res_" .. var1_12, arg0_12:findTF("icon", var0_12), true)
-		setText(arg0_12:findTF("name", var0_12), pg.child_resource[var1_12].name)
+		GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "res_" .. var1_12, var0_12:Find("icon"), true)
+		setText(var0_12:Find("name"), pg.child_resource[var1_12].name)
 
 		local var2_12 = arg0_12.char:GetResById(var1_12)
 
@@ -183,12 +181,12 @@ function var0_0.updateResPanel(arg0_12)
 			var2_12 = 0
 		end
 
-		setText(arg0_12:findTF("value_add/value_old", var0_12), var2_12)
+		setText(var0_12:Find("value_add/value_old"), var2_12)
 
 		local var3_12 = arg0_12.resResult[var1_12] or 0
 		local var4_12 = var3_12 == 0 and "" or "+" .. var3_12
 
-		setText(arg0_12:findTF("value_add", var0_12), var4_12)
+		setText(var0_12:Find("value_add"), var4_12)
 	end
 end
 

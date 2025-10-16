@@ -9,39 +9,39 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.emojiGroup = arg0_2:findTF("frame/group")
-	arg0_2.emojiType = arg0_2:findTF("type", arg0_2.emojiGroup)
-	arg0_2.emojiEvent = arg0_2:findTF("frame/bg/mask/event")
-	arg0_2.emojiSnap = arg0_2:findTF("frame/bg/mask/event"):GetComponent("HScrollSnap")
+	arg0_2.emojiGroup = arg0_2._tf:Find("frame/group")
+	arg0_2.emojiType = arg0_2.emojiGroup:Find("type")
+	arg0_2.emojiEvent = arg0_2._tf:Find("frame/bg/mask/event")
+	arg0_2.emojiSnap = arg0_2._tf:Find("frame/bg/mask/event"):GetComponent("HScrollSnap")
 
 	arg0_2.emojiSnap:Init()
 
-	arg0_2.emojiContent = arg0_2:findTF("content", arg0_2.emojiSnap)
-	arg0_2.emojiItem = arg0_2:findTF("item", arg0_2.emojiSnap)
-	arg0_2.emojiDots = arg0_2:findTF("frame/dots")
-	arg0_2.emojiIconDots = arg0_2:findTF("frame/emojiDots")
-	arg0_2.emojiDot = arg0_2:findTF("dot", arg0_2.emojiSnap)
+	arg0_2.emojiContent = tf(arg0_2.emojiSnap):Find("content")
+	arg0_2.emojiItem = tf(arg0_2.emojiSnap):Find("item")
+	arg0_2.emojiDots = arg0_2._tf:Find("frame/dots")
+	arg0_2.emojiIconDots = arg0_2._tf:Find("frame/emojiDots")
+	arg0_2.emojiDot = tf(arg0_2.emojiSnap):Find("dot")
 
 	setText(arg0_2.emojiEvent:Find("null_tpl/Text"), i18n("recently_sticker_placeholder"))
 	setActive(arg0_2.emojiItem, false)
 	setActive(arg0_2.emojiDot, false)
 
-	arg0_2.emojiIconEvent = arg0_2:findTF("frame/bg/mask/emojiicon_event")
-	arg0_2.emojiIconSnap = arg0_2:findTF("frame/bg/mask/emojiicon_event"):GetComponent("HScrollSnap")
+	arg0_2.emojiIconEvent = arg0_2._tf:Find("frame/bg/mask/emojiicon_event")
+	arg0_2.emojiIconSnap = arg0_2._tf:Find("frame/bg/mask/emojiicon_event"):GetComponent("HScrollSnap")
 
 	arg0_2.emojiIconSnap:Init()
 
-	arg0_2.emojiIconContent = arg0_2:findTF("content", arg0_2.emojiIconSnap)
-	arg0_2.emojiIconItem = arg0_2:findTF("item_emojiicon", arg0_2.emojiIconSnap)
+	arg0_2.emojiIconContent = tf(arg0_2.emojiIconSnap):Find("content")
+	arg0_2.emojiIconItem = tf(arg0_2.emojiIconSnap):Find("item_emojiicon")
 
 	setActive(arg0_2.emojiIconItem, false)
 
 	arg0_2.parentTr = arg0_2._tf.parent
-	arg0_2.resource = arg0_2:findTF("frame/resource")
-	arg0_2.frame = arg0_2:findTF("frame")
+	arg0_2.resource = arg0_2._tf:Find("frame/resource")
+	arg0_2.frame = arg0_2._tf:Find("frame")
 	arg0_2.frame.position = arg0_2.contextData.pos or Vector3(0, 0, 0)
 	arg0_2.frame.localPosition = Vector3(arg0_2.frame.localPosition.x, arg0_2.frame.localPosition.y, 0)
-	arg0_2.newTag = arg0_2:findTF("newtag")
+	arg0_2.newTag = arg0_2._tf:Find("newtag")
 	arg0_2.emojiProxy = getProxy(EmojiProxy)
 end
 
@@ -259,14 +259,14 @@ function var0_0.emojiIconFliter(arg0_18)
 
 	for iter3_18 = arg0_18.emojiIconContent.childCount + 1, var3_18 do
 		local var4_18 = Instantiate(arg0_18.emojiIconItem)
-		local var5_18 = arg0_18:findTF("TitleCommom", var4_18)
-		local var6_18 = arg0_18:findTF("TitleAll", var4_18)
-		local var7_18 = arg0_18:findTF("CommomIconContainer", var4_18)
-		local var8_18 = arg0_18:findTF("AllIconContainer", var4_18)
+		local var5_18 = var4_18:Find("TitleCommom")
+		local var6_18 = var4_18:Find("TitleAll")
+		local var7_18 = var4_18:Find("CommomIconContainer")
+		local var8_18 = var4_18:Find("AllIconContainer")
 		local var9_18 = GetComponent(var8_18, "GridLayoutGroup")
 
 		if iter3_18 == 1 then
-			local var10_18 = arg0_18:findTF("Icon", var7_18)
+			local var10_18 = var7_18:Find("Icon")
 			local var11_18 = UIItemList.New(var7_18, var10_18)
 
 			var11_18:make(function(arg0_19, arg1_19, arg2_19)
@@ -292,7 +292,7 @@ function var0_0.emojiIconFliter(arg0_18)
 
 			var9_18.padding.left = 20
 
-			local var12_18 = arg0_18:findTF("Icon", var8_18)
+			local var12_18 = var8_18:Find("Icon")
 			local var13_18 = UIItemList.New(var8_18, var12_18)
 
 			var13_18:make(function(arg0_22, arg1_22, arg2_22)
@@ -321,7 +321,7 @@ function var0_0.emojiIconFliter(arg0_18)
 
 			var9_18.padding.left = 60
 
-			local var16_18 = arg0_18:findTF("Icon", var8_18)
+			local var16_18 = var8_18:Find("Icon")
 			local var17_18 = UIItemList.New(var8_18, var16_18)
 
 			var17_18:make(function(arg0_25, arg1_25, arg2_25)

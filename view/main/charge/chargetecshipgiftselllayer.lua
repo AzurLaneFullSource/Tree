@@ -56,25 +56,25 @@ function var0_0.initData(arg0_5)
 end
 
 function var0_0.initUIText(arg0_6)
-	local var0_6 = arg0_6:findTF("Adapt/TipBG/Text")
+	local var0_6 = arg0_6._tf:Find("Adapt/TipBG/Text")
 
 	setText(var0_6, i18n("tech_package_tip"))
 end
 
 function var0_0.findUI(arg0_7)
-	arg0_7.bg = arg0_7:findTF("BG")
+	arg0_7.bg = arg0_7._tf:Find("BG")
 
 	local var0_7 = GetComponent(arg0_7._tf, "ItemList").prefabItem[0]
 	local var1_7 = Instantiate(var0_7)
 
-	arg0_7.itemTpl = arg0_7:findTF("ItemTpl")
+	arg0_7.itemTpl = arg0_7._tf:Find("ItemTpl")
 
-	local var2_7 = arg0_7:findTF("Container", arg0_7.itemTpl)
+	local var2_7 = arg0_7.itemTpl:Find("Container")
 
 	setParent(var1_7, var2_7, false)
 
-	arg0_7.giftTpl = arg0_7:findTF("GiftTpl")
-	arg0_7.giftContainer = arg0_7:findTF("List")
+	arg0_7.giftTpl = arg0_7._tf:Find("GiftTpl")
+	arg0_7.giftContainer = arg0_7._tf:Find("List")
 	arg0_7.giftUIItemList = UIItemList.New(arg0_7.giftContainer, arg0_7.giftTpl)
 
 	arg0_7.giftUIItemList:make(function(arg0_8, arg1_8, arg2_8)
@@ -95,17 +95,17 @@ function var0_0.addListener(arg0_9)
 end
 
 function var0_0.updateGiftTF(arg0_11, arg1_11, arg2_11)
-	local var0_11 = arg0_11:findTF("BG/Normal", arg1_11)
-	local var1_11 = arg0_11:findTF("BG/Special", arg1_11)
-	local var2_11 = arg0_11:findTF("Buy/Normal", arg1_11)
-	local var3_11 = arg0_11:findTF("Buy/Special", arg1_11)
-	local var4_11 = arg0_11:findTF("Buy/Up", arg1_11)
-	local var5_11 = arg0_11:findTF("Buy/Disable", arg1_11)
-	local var6_11 = arg0_11:findTF("Title", arg1_11)
-	local var7_11 = arg0_11:findTF("GiftImage", arg1_11)
-	local var8_11 = arg0_11:findTF("Desc1", arg1_11)
-	local var9_11 = arg0_11:findTF("Desc2", arg1_11)
-	local var10_11 = arg0_11:findTF("List", arg1_11)
+	local var0_11 = arg1_11:Find("BG/Normal")
+	local var1_11 = arg1_11:Find("BG/Special")
+	local var2_11 = arg1_11:Find("Buy/Normal")
+	local var3_11 = arg1_11:Find("Buy/Special")
+	local var4_11 = arg1_11:Find("Buy/Up")
+	local var5_11 = arg1_11:Find("Buy/Disable")
+	local var6_11 = arg1_11:Find("Title")
+	local var7_11 = arg1_11:Find("GiftImage")
+	local var8_11 = arg1_11:Find("Desc1")
+	local var9_11 = arg1_11:Find("Desc2")
+	local var10_11 = arg1_11:Find("List")
 	local var11_11 = arg2_11:getConfig("limit_arg") == 1
 	local var12_11 = arg2_11:getConfig("limit_arg") == 2
 	local var13_11 = arg2_11:getConfig("limit_arg") == 3
@@ -153,8 +153,8 @@ function var0_0.updateGiftTF(arg0_11, arg1_11, arg2_11)
 
 	var17_11:make(function(arg0_16, arg1_16, arg2_16)
 		if arg0_16 == UIItemList.EventUpdate then
-			local var0_16 = arg0_11:findTF("Container", arg2_16):GetChild(0)
-			local var1_16 = arg0_11:findTF("TextMask/Text", arg2_16)
+			local var0_16 = arg2_16:Find("Container"):GetChild(0)
+			local var1_16 = arg2_16:Find("TextMask/Text")
 
 			arg1_16 = arg1_16 + 1
 

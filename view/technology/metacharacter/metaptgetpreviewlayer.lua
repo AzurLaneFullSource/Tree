@@ -20,7 +20,7 @@ function var0_0.willExit(arg0_4)
 end
 
 function var0_0.initUITextTips(arg0_5)
-	local var0_5 = arg0_5:findTF("Panel/BG/TitleText")
+	local var0_5 = arg0_5._tf:Find("Panel/BG/TitleText")
 
 	setText(var0_5, i18n("meta_pt_get_way"))
 end
@@ -30,11 +30,11 @@ function var0_0.initData(arg0_6)
 end
 
 function var0_0.findUI(arg0_7)
-	arg0_7.bg = arg0_7:findTF("BG")
-	arg0_7.panelTF = arg0_7:findTF("Panel")
-	arg0_7.bossBtn = arg0_7:findTF("BossTip", arg0_7.panelTF)
-	arg0_7.taskBtn = arg0_7:findTF("TaskTip", arg0_7.panelTF)
-	arg0_7.resetBtn = arg0_7:findTF("ResetTip", arg0_7.panelTF)
+	arg0_7.bg = arg0_7._tf:Find("BG")
+	arg0_7.panelTF = arg0_7._tf:Find("Panel")
+	arg0_7.bossBtn = arg0_7.panelTF:Find("BossTip")
+	arg0_7.taskBtn = arg0_7.panelTF:Find("TaskTip")
+	arg0_7.resetBtn = arg0_7.panelTF:Find("ResetTip")
 end
 
 function var0_0.addListener(arg0_8)

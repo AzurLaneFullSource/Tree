@@ -96,14 +96,14 @@ function var0_0.initUI(arg0_6)
 	arg0_6.maxRaritySpriteMap = {}
 	arg0_6.ratioSpriteMap = {}
 
-	local var0_6 = arg0_6:findTF("MiniRarity")
-	local var1_6 = arg0_6:findTF("MaxRarity")
-	local var2_6 = arg0_6:findTF("Ratio")
+	local var0_6 = arg0_6._tf:Find("MiniRarity")
+	local var1_6 = arg0_6._tf:Find("MaxRarity")
+	local var2_6 = arg0_6._tf:Find("Ratio")
 
 	for iter0_6 = 2, 6 do
-		local var3_6 = getImageSprite(arg0_6:findTF(tostring(iter0_6), var0_6))
-		local var4_6 = getImageSprite(arg0_6:findTF(tostring(iter0_6), var1_6))
-		local var5_6 = getImageSprite(arg0_6:findTF(tostring(iter0_6), var2_6))
+		local var3_6 = getImageSprite(arg0_6._tf:Find(tostring(iter0_6), var0_6))
+		local var4_6 = getImageSprite(arg0_6._tf:Find(tostring(iter0_6), var1_6))
+		local var5_6 = getImageSprite(arg0_6._tf:Find(tostring(iter0_6), var2_6))
 
 		arg0_6.minRaritySpriteMap[iter0_6] = var3_6
 		arg0_6.maxRaritySpriteMap[iter0_6] = var4_6
@@ -112,25 +112,25 @@ function var0_0.initUI(arg0_6)
 
 	arg0_6.poolSpriteMap = {}
 
-	local var6_6 = arg0_6:findTF("Pool")
+	local var6_6 = arg0_6._tf:Find("Pool")
 
 	for iter1_6 = 1, 3 do
-		local var7_6 = getImageSprite(arg0_6:findTF(tostring(iter1_6), var6_6))
+		local var7_6 = getImageSprite(arg0_6._tf:Find(tostring(iter1_6), var6_6))
 
 		arg0_6.poolSpriteMap[iter1_6] = var7_6
 	end
 
-	arg0_6.poolNameImg = arg0_6:findTF("PoolNameImg")
-	arg0_6.shipCardTpl = arg0_6:findTF("ShipCardTpl")
+	arg0_6.poolNameImg = arg0_6._tf:Find("PoolNameImg")
+	arg0_6.shipCardTpl = arg0_6._tf:Find("ShipCardTpl")
 
-	local var8_6 = arg0_6:findTF("SelectedShipMax")
-	local var9_6 = arg0_6:findTF("Light", var8_6)
-	local var10_6 = arg0_6:findTF("Ship1", var8_6)
-	local var11_6 = arg0_6:findTF("Ship2", var8_6)
-	local var12_6 = arg0_6:findTF("SelectedShipMini")
-	local var13_6 = arg0_6:findTF("Light", var12_6)
-	local var14_6 = arg0_6:findTF("Ship1", var12_6)
-	local var15_6 = arg0_6:findTF("Ship2", var12_6)
+	local var8_6 = arg0_6._tf:Find("SelectedShipMax")
+	local var9_6 = var8_6:Find("Light")
+	local var10_6 = var8_6:Find("Ship1")
+	local var11_6 = var8_6:Find("Ship2")
+	local var12_6 = arg0_6._tf:Find("SelectedShipMini")
+	local var13_6 = var12_6:Find("Light")
+	local var14_6 = var12_6:Find("Ship1")
+	local var15_6 = var12_6:Find("Ship2")
 
 	arg0_6.selectedShipTFMap = {}
 	arg0_6.selectedShipTFMap.Max = {
@@ -149,8 +149,8 @@ function var0_0.initUI(arg0_6)
 	setActive(var8_6, not var16_6)
 	setActive(var12_6, var16_6)
 
-	arg0_6.shipListArea = arg0_6:findTF("ShipListArea")
-	arg0_6.shipListContainer = arg0_6:findTF("Viewport/Content", arg0_6.shipListArea)
+	arg0_6.shipListArea = arg0_6._tf:Find("ShipListArea")
+	arg0_6.shipListContainer = arg0_6.shipListArea:Find("Viewport/Content")
 	arg0_6.shipListSC = GetComponent(arg0_6.shipListArea, "LScrollRect")
 
 	setLocalPosition(arg0_6.shipListArea, {
@@ -158,31 +158,31 @@ function var0_0.initUI(arg0_6)
 		y = var16_6 and -40 or -120
 	})
 
-	arg0_6.bg2 = arg0_6:findTF("BG2")
+	arg0_6.bg2 = arg0_6._tf:Find("BG2")
 
 	setLocalPosition(arg0_6.bg2, {
 		x = 0,
 		y = var16_6 and -62.5 or -174
 	})
 
-	arg0_6.indexBtn = arg0_6:findTF("IndexBtn")
-	arg0_6.preBtn = arg0_6:findTF("PreBtn")
-	arg0_6.nextBtn = arg0_6:findTF("NextBtn")
+	arg0_6.indexBtn = arg0_6._tf:Find("IndexBtn")
+	arg0_6.preBtn = arg0_6._tf:Find("PreBtn")
+	arg0_6.nextBtn = arg0_6._tf:Find("NextBtn")
 	arg0_6.nextBtnCom = GetComponent(arg0_6.nextBtn, "Button")
 
 	arg0_6.indexBtn:GetComponent(typeof(Image)):SetNativeSize()
 
 	for iter2_6, iter3_6 in ipairs(arg0_6.selectedShipTFMap.Max) do
-		arg0_6:findTF("Tip/Tip", iter3_6):GetComponent(typeof(Image)):SetNativeSize()
+		iter3_6:Find("Tip/Tip"):GetComponent(typeof(Image)):SetNativeSize()
 	end
 
 	for iter4_6, iter5_6 in ipairs(arg0_6.selectedShipTFMap.Min) do
-		arg0_6:findTF("Tip/Tip", iter5_6):GetComponent(typeof(Image)):SetNativeSize()
+		iter5_6:Find("Tip/Tip"):GetComponent(typeof(Image)):SetNativeSize()
 	end
 
 	arg0_6.nextBtnCom.interactable = false
 
-	local var17_6 = arg0_6:findTF("InstructionText")
+	local var17_6 = arg0_6._tf:Find("InstructionText")
 
 	setText(var17_6, i18n("pray_build_select_ship_instruction"))
 	onButton(arg0_6, arg0_6.preBtn, function()
@@ -263,13 +263,13 @@ function var0_0.updateMax(arg0_15)
 	for iter0_15 = 1, 2 do
 		local var2_15 = var0_15[iter0_15]
 		local var3_15 = var1_15[iter0_15]
-		local var4_15 = arg0_15:findTF("Paint", var3_15)
-		local var5_15 = arg0_15:findTF("Tip", var3_15)
-		local var6_15 = arg0_15:findTF("Info", var3_15)
-		local var7_15 = arg0_15:findTF("Btn", var3_15)
-		local var8_15 = arg0_15:findTF("Name/Text", var6_15)
-		local var9_15 = arg0_15:findTF("RarityBG", var3_15)
-		local var10_15 = arg0_15:findTF("Ratio/NumImg", var6_15)
+		local var4_15 = var3_15:Find("Paint")
+		local var5_15 = var3_15:Find("Tip")
+		local var6_15 = var3_15:Find("Info")
+		local var7_15 = var3_15:Find("Btn")
+		local var8_15 = var6_15:Find("Name/Text")
+		local var9_15 = var3_15:Find("RarityBG")
+		local var10_15 = var6_15:Find("Ratio/NumImg")
 
 		if var2_15 then
 			setActive(var4_15, true)
@@ -358,13 +358,13 @@ function var0_0.updateMin(arg0_17)
 	for iter0_17 = 1, 2 do
 		local var2_17 = var0_17[iter0_17]
 		local var3_17 = var1_17[iter0_17]
-		local var4_17 = arg0_17:findTF("Mask/Paint", var3_17)
-		local var5_17 = arg0_17:findTF("Tip", var3_17)
-		local var6_17 = arg0_17:findTF("Info", var3_17)
-		local var7_17 = arg0_17:findTF("Btn", var3_17)
-		local var8_17 = arg0_17:findTF("Name/Text", var6_17)
-		local var9_17 = arg0_17:findTF("Mask/RarityBG", var3_17)
-		local var10_17 = arg0_17:findTF("Ratio/NumImg", var6_17)
+		local var4_17 = var3_17:Find("Mask/Paint")
+		local var5_17 = var3_17:Find("Tip")
+		local var6_17 = var3_17:Find("Info")
+		local var7_17 = var3_17:Find("Btn")
+		local var8_17 = var6_17:Find("Name/Text")
+		local var9_17 = var3_17:Find("Mask/RarityBG")
+		local var10_17 = var6_17:Find("Ratio/NumImg")
 
 		if var2_17 then
 			setActive(var4_17, true)
@@ -446,11 +446,11 @@ function var0_0.updateShipList(arg0_19, arg1_19)
 
 	function arg0_19.shipListSC.onUpdateItem(arg0_20, arg1_20)
 		local var0_20 = arg1_19[arg0_20 + 1]
-		local var1_20 = arg0_19:findTF("BG/Icon", arg1_20)
+		local var1_20 = arg1_20:Find("BG/Icon")
 
 		GetImageSpriteFromAtlasAsync("SquareIcon/" .. Ship.getPaintingName(var0_20), "", var1_20)
 
-		local var2_20 = arg0_19:findTF("BG/GroupLocked", arg1_20)
+		local var2_20 = arg1_20:Find("BG/GroupLocked")
 		local var3_20 = pg.ship_data_template[var0_20].group_type
 
 		if var3_20 and var3_20 > 0 then
@@ -459,23 +459,23 @@ function var0_0.updateShipList(arg0_19, arg1_19)
 			setActive(var2_20, false)
 		end
 
-		local var4_20 = arg0_19:findTF("BG/icon_bg/frame", arg1_20)
+		local var4_20 = arg1_20:Find("BG/icon_bg/frame")
 		local var5_20 = pg.ship_data_statistics[var0_20].rarity
 		local var6_20 = ShipRarity.Rarity2Print(var5_20)
 
 		setFrame(var4_20, var6_20)
-		setIconColorful(arg0_19:findTF("BG", arg1_20), var5_20 - 1, {})
+		setIconColorful(arg1_20:Find("BG"), var5_20 - 1, {})
 
-		local var7_20 = arg0_19:findTF("BG", arg1_20)
+		local var7_20 = arg1_20:Find("BG")
 
 		setImageSprite(var7_20, GetSpriteFromAtlas("weaponframes", "bg" .. var6_20))
 
 		local var8_20 = pg.ship_data_statistics[var0_20].name
-		local var9_20 = arg0_19:findTF("NameBG/NameText", arg1_20)
+		local var9_20 = arg1_20:Find("NameBG/NameText")
 
 		setText(var9_20, shortenString(var8_20, 6))
 
-		local var10_20 = arg0_19:findTF("BG/SelectedImg", arg1_20)
+		local var10_20 = arg1_20:Find("BG/SelectedImg")
 
 		if table.indexof(var0_19, var0_20, 1) then
 			SetActive(var10_20, true)

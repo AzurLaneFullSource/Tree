@@ -12,12 +12,12 @@ function var0_0.OnInit(arg0_2)
 
 	arg0_2.content = arg0_2.scroll:Find("Viewport/Content")
 	arg0_2.progressText = arg0_2.scroll:Find("ProgressText")
-	arg0_2.recordTogGroup = arg0_2:findTF("Toggles", arg0_2._top)
+	arg0_2.recordTogGroup = arg0_2._tf:Find("Toggles")
 	arg0_2.recordToggles = {
-		arg0_2:findTF("0", arg0_2.recordTogGroup),
-		arg0_2:findTF("1", arg0_2.recordTogGroup),
-		arg0_2:findTF("2", arg0_2.recordTogGroup),
-		arg0_2:findTF("3", arg0_2.recordTogGroup)
+		arg0_2.recordTogGroup:Find("0"),
+		arg0_2.recordTogGroup:Find("1"),
+		arg0_2.recordTogGroup:Find("2"),
+		arg0_2.recordTogGroup:Find("3")
 	}
 	arg0_2.recordFilterIndex = {
 		false,
@@ -72,7 +72,9 @@ function var0_0.OnInit(arg0_2)
 
 	arg0_2.recordGroups = {}
 
-	arg0_2.viewParent:Add2TopContainer(arg0_2.recordTogGroup)
+	arg0_2:OverlayPanel(arg0_2.recordTogGroup, {
+		overlayType = LayerWeightConst.OVERLAY_UI_ADAPT
+	})
 
 	arg0_2.loader = AutoLoader.New()
 

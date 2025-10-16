@@ -52,75 +52,82 @@ function var0_0.UpdateAward(arg0_7, arg1_7, arg2_7)
 	onButton(arg0_7, arg2_7:Find("get"), function()
 		arg0_7:emit(IslandMediator.ON_GET_SEASON_PT_AWARD, var0_7.target)
 	end, SFX_PANEL)
+	onButton(arg0_7, arg2_7, function()
+		arg0_7.contextData:ShowMsgBox({
+			title = i18n("island_word_desc"),
+			type = IslandMsgBox.TYPE_COMMON_DROP_DESCRIBE,
+			dropData = var0_7.drop
+		})
+	end)
 end
 
-function var0_0.Show(arg0_9)
-	arg0_9.super.Show(arg0_9)
-	arg0_9:Flush()
-	arg0_9:OverlayPanel(arg0_9._tf, {
+function var0_0.Show(arg0_10)
+	arg0_10.super.Show(arg0_10)
+	arg0_10:Flush()
+	arg0_10:OverlayPanel(arg0_10._tf, {
 		pbList = {
-			arg0_9.blurTF
+			arg0_10.blurTF
 		}
 	})
 	IslandGuideChecker.CheckGuide("ISLAND_GUIDE_15")
 end
 
-function var0_0.Flush(arg0_10)
-	if not arg0_10:isShowing() then
+function var0_0.Flush(arg0_11)
+	if not arg0_11:isShowing() then
 		return
 	end
 
-	arg0_10.pt = arg0_10.contextData.season:GetPt()
-	arg0_10.gotList = arg0_10.contextData.season:GetGotPtAwardList()
+	arg0_11.pt = arg0_11.contextData.season:GetPt()
+	arg0_11.gotList = arg0_11.contextData.season:GetGotPtAwardList()
 
-	setText(arg0_10.ptValueTF, arg0_10.pt)
-	setActive(arg0_10.getAllBtn, arg0_10.contextData.season:GanGetPtAward())
-	arg0_10.scrollCom:SetTotalCount(#arg0_10.awardInfos)
-	arg0_10:UpdateNextAward(arg0_10.scrollCom.value)
+	setText(arg0_11.ptValueTF, arg0_11.pt)
+	setActive(arg0_11.getAllBtn, arg0_11.contextData.season:GanGetPtAward())
+	arg0_11.scrollCom:SetTotalCount(#arg0_11.awardInfos)
+	arg0_11:UpdateNextAward(arg0_11.scrollCom.value)
 end
 
-function var0_0.BuildPhaseAwardScrollPos(arg0_11)
-	arg0_11.awardInfos = IslandSeason.GetPtAwardInfos(arg0_11.contextData.season.id)
-	arg0_11.impTotalPos = arg0_11.scrollCom:HeadIndexToValue(#arg0_11.awardInfos - var0_0.AWARD_SHOW_CNT) - arg0_11.scrollCom:HeadIndexToValue(0)
-	arg0_11.importantInfos = {}
+function var0_0.BuildPhaseAwardScrollPos(arg0_12)
+	arg0_12.awardInfos = IslandSeason.GetPtAwardInfos(arg0_12.contextData.season.id)
+	arg0_12.impTotalPos = arg0_12.scrollCom:HeadIndexToValue(#arg0_12.awardInfos - var0_0.AWARD_SHOW_CNT) - arg0_12.scrollCom:HeadIndexToValue(0)
+	arg0_12.importantInfos = {}
 
-	for iter0_11, iter1_11 in pairs(arg0_11.awardInfos) do
-		if iter1_11.isImportant then
-			table.insert(arg0_11.importantInfos, {
-				idx = iter0_11,
-				pos = arg0_11.scrollCom:HeadIndexToValue(iter0_11 - var0_0.AWARD_SHOW_CNT) / arg0_11.impTotalPos
+	for iter0_12, iter1_12 in pairs(arg0_12.awardInfos) do
+		if iter1_12.isImportant then
+			table.insert(arg0_12.importantInfos, {
+				idx = iter0_12,
+				pos = arg0_12.scrollCom:HeadIndexToValue(iter0_12 - var0_0.AWARD_SHOW_CNT) / arg0_12.impTotalPos
 			})
 		end
 	end
 end
 
-function var0_0.UpdateNextAward(arg0_12, arg1_12)
-	arg1_12 = math.min(arg1_12, 1)
+function var0_0.UpdateNextAward(arg0_13, arg1_13)
+	arg1_13 = math.min(arg1_13, 1)
 
-	for iter0_12, iter1_12 in pairs(arg0_12.importantInfos) do
-		if arg1_12 + var0_0.AWARD_OFFSET < iter1_12.pos then
-			setActive(arg0_12.importantAwardTF, true)
-			arg0_12:UpdateAward(iter1_12.idx - 1, arg0_12.importantAwardTF)
+	for iter0_13, iter1_13 in pairs(arg0_13.importantInfos) do
+		if arg1_13 + var0_0.AWARD_OFFSET < iter1_13.pos then
+			setActive(arg0_13.importantAwardTF, true)
+			arg0_13:UpdateAward(iter1_13.idx - 1, arg0_13.importantAwardTF)
 
 			break
-		elseif iter0_12 == #arg0_12.importantInfos then
-			setActive(arg0_12.importantAwardTF, false)
+		elseif iter0_13 == #arg0_13.importantInfos then
+			setActive(arg0_13.importantAwardTF, false)
 		end
 	end
 end
 
-function var0_0.Hide(arg0_13)
-	arg0_13.super.Hide(arg0_13)
-	arg0_13:OnHide()
+function var0_0.Hide(arg0_14)
+	arg0_14.super.Hide(arg0_14)
+	arg0_14:OnHide()
 end
 
-function var0_0.OnHide(arg0_14)
-	arg0_14:UnOverlayPanel(arg0_14._tf, arg0_14._parentTf)
+function var0_0.OnHide(arg0_15)
+	arg0_15:UnOverlayPanel(arg0_15._tf, arg0_15._parentTf)
 end
 
-function var0_0.OnDestroy(arg0_15)
-	ClearLScrollrect(arg0_15.scrollCom)
-	arg0_15:OnHide()
+function var0_0.OnDestroy(arg0_16)
+	ClearLScrollrect(arg0_16.scrollCom)
+	arg0_16:OnHide()
 end
 
 return var0_0

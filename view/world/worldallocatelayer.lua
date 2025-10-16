@@ -17,26 +17,26 @@ function var0_0.init(arg0_2)
 	arg0_2._selectedShipList = {}
 	arg0_2._shipTFList = {}
 	arg0_2._shipVOList = {}
-	arg0_2.cancelBtn = arg0_2:findTF("actions/cancel_button")
-	arg0_2.confirmBtn = arg0_2:findTF("actions/compose_button")
-	arg0_2.itemTF = arg0_2:findTF("item")
-	arg0_2.nameTF = arg0_2:findTF("item/name_container/name")
-	arg0_2.descTF = arg0_2:findTF("item/desc")
-	arg0_2.fleetInfo = arg0_2:findTF("fleet_info")
+	arg0_2.cancelBtn = arg0_2._tf:Find("actions/cancel_button")
+	arg0_2.confirmBtn = arg0_2._tf:Find("actions/compose_button")
+	arg0_2.itemTF = arg0_2._tf:Find("item")
+	arg0_2.nameTF = arg0_2._tf:Find("item/name_container/name")
+	arg0_2.descTF = arg0_2._tf:Find("item/desc")
+	arg0_2.fleetInfo = arg0_2._tf:Find("fleet_info")
 
 	setText(arg0_2.fleetInfo:Find("top/Text"), i18n("world_ship_repair"))
 
 	arg0_2.shipTpl = arg0_2:getTpl("fleet_info/shiptpl")
 	arg0_2.emptyTpl = arg0_2:getTpl("fleet_info/emptytpl")
-	arg0_2.shipsContainer = arg0_2:findTF("fleet_info/contain")
-	arg0_2.descLabel = arg0_2:findTF("fleet_info/top/Text")
+	arg0_2.shipsContainer = arg0_2._tf:Find("fleet_info/contain")
+	arg0_2.descLabel = arg0_2._tf:Find("fleet_info/top/Text")
 
 	setText(arg0_2.fleetInfo:Find("tip/Text"), i18n("world_battle_damage"))
 
-	arg0_2.countLabel = arg0_2:findTF("count")
-	arg0_2.quotaTxt = arg0_2:findTF("count/value")
-	arg0_2.btnFleet = arg0_2:findTF("fleets/selected")
-	arg0_2.fleetToggleMask = arg0_2:findTF("fleets/list_mask")
+	arg0_2.countLabel = arg0_2._tf:Find("count")
+	arg0_2.quotaTxt = arg0_2._tf:Find("count/value")
+	arg0_2.btnFleet = arg0_2._tf:Find("fleets/selected")
+	arg0_2.fleetToggleMask = arg0_2._tf:Find("fleets/list_mask")
 	arg0_2.fleetToggleList = arg0_2.fleetToggleMask:Find("list")
 
 	onButton(arg0_2, arg0_2.cancelBtn, function()

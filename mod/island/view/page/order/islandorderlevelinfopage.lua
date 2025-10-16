@@ -5,11 +5,11 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.levelTxt = arg0_2:findTF("frame/animroot/level"):GetComponent(typeof(Text))
-	arg0_2.expTr = arg0_2:findTF("frame/animroot/slider")
-	arg0_2.expTxt = arg0_2:findTF("frame/animroot/exp"):GetComponent(typeof(Text))
-	arg0_2.cntTxt = arg0_2:findTF("frame/bg/Image/cnt"):GetComponent(typeof(Text))
-	arg0_2.uiItemList = UIItemList.New(arg0_2:findTF("frame/animroot/rect/content"), arg0_2:findTF("frame/animroot/rect/content/tpl"))
+	arg0_2.levelTxt = arg0_2._tf:Find("frame/animroot/level"):GetComponent(typeof(Text))
+	arg0_2.expTr = arg0_2._tf:Find("frame/animroot/slider")
+	arg0_2.expTxt = arg0_2._tf:Find("frame/animroot/exp"):GetComponent(typeof(Text))
+	arg0_2.cntTxt = arg0_2._tf:Find("frame/bg/Image/cnt"):GetComponent(typeof(Text))
+	arg0_2.uiItemList = UIItemList.New(arg0_2._tf:Find("frame/animroot/rect/content"), arg0_2._tf:Find("frame/animroot/rect/content/tpl"))
 	arg0_2.canvasGroup = GetOrAddComponent(arg0_2._tf, typeof(CanvasGroup))
 end
 

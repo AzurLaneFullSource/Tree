@@ -5,28 +5,28 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.scrollrect = arg0_2:findTF("scrollView"):GetComponent("LScrollRect")
-	arg0_2.resTxt = arg0_2:findTF("res_pt/Text"):GetComponent(typeof(Text))
-	arg0_2.resIcon = arg0_2:findTF("res_pt/icon")
+	arg0_2.scrollrect = arg0_2._tf:Find("scrollView"):GetComponent("LScrollRect")
+	arg0_2.resTxt = arg0_2._tf:Find("res_pt/Text"):GetComponent(typeof(Text))
+	arg0_2.resIcon = arg0_2._tf:Find("res_pt/icon")
 	arg0_2.pagefooters = {
-		arg0_2:findTF("pagefooter/ptShop"),
-		arg0_2:findTF("pagefooter/gemShop"),
-		arg0_2:findTF("pagefooter/coinShop")
+		arg0_2._tf:Find("pagefooter/ptShop"),
+		arg0_2._tf:Find("pagefooter/gemShop"),
+		arg0_2._tf:Find("pagefooter/coinShop")
 	}
 
-	setText(arg0_2:findTF("pagefooter/coinShop/Text"), i18n("blackfriday_coinshop"))
-	setText(arg0_2:findTF("pagefooter/coinShop/mark"), i18n("blackfriday_coinshop"))
-	setText(arg0_2:findTF("pagefooter/gemShop/Text"), i18n("blackfriday_gemshop"))
-	setText(arg0_2:findTF("pagefooter/gemShop/mark"), i18n("blackfriday_gemshop"))
-	setText(arg0_2:findTF("pagefooter/ptShop/Text"), i18n("blackfriday_ptshop"))
-	setText(arg0_2:findTF("pagefooter/ptShop/mark"), i18n("blackfriday_ptshop"))
+	setText(arg0_2._tf:Find("pagefooter/coinShop/Text"), i18n("blackfriday_coinshop"))
+	setText(arg0_2._tf:Find("pagefooter/coinShop/mark"), i18n("blackfriday_coinshop"))
+	setText(arg0_2._tf:Find("pagefooter/gemShop/Text"), i18n("blackfriday_gemshop"))
+	setText(arg0_2._tf:Find("pagefooter/gemShop/mark"), i18n("blackfriday_gemshop"))
+	setText(arg0_2._tf:Find("pagefooter/ptShop/Text"), i18n("blackfriday_ptshop"))
+	setText(arg0_2._tf:Find("pagefooter/ptShop/mark"), i18n("blackfriday_ptshop"))
 
 	arg0_2.ress = {
-		arg0_2:findTF("res_pt/icon_pt"),
-		arg0_2:findTF("res_pt/icon_gem"),
-		arg0_2:findTF("res_pt/icon_coin")
+		arg0_2._tf:Find("res_pt/icon_pt"),
+		arg0_2._tf:Find("res_pt/icon_gem"),
+		arg0_2._tf:Find("res_pt/icon_coin")
 	}
-	arg0_2.resText = arg0_2:findTF("res_pt/Text")
+	arg0_2.resText = arg0_2._tf:Find("res_pt/Text")
 	arg0_2.pagefooterWid = arg0_2.pagefooters[1].rect.width
 	arg0_2.pagefooterStartPosX = arg0_2.pagefooters[1].anchoredPosition.x
 	arg0_2.purchasePage = BlackFridayServerShopPurchasePanel.New(arg0_2._tf, arg0_2.event, arg0_2.contextData)
@@ -219,7 +219,7 @@ function var0_0.SwitchTab(arg0_22, arg1_22)
 	local var0_22 = arg0_22.shop:GetGoodsByTabs(arg1_22)
 
 	if arg0_22.shop:GetTabCount() <= 1 then
-		setActive(arg0_22:findTF("pagefooter"), false)
+		setActive(arg0_22._tf:Find("pagefooter"), false)
 	end
 
 	arg0_22.displays = var0_22

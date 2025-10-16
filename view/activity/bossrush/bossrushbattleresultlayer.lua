@@ -225,8 +225,8 @@ function var0_0.didEnter(arg0_7)
 			setActive(arg2_16:Find("result/Statistics"), false)
 			var18_7(arg2_16, var0_16.id, arg3_15)
 
-			local var2_16 = arg0_7:findTF("result/mask/icon", arg2_16)
-			local var3_16 = arg0_7:findTF("result/type", arg2_16)
+			local var2_16 = arg2_16:Find("result/mask/icon")
+			local var3_16 = arg2_16:Find("result/type")
 			local var4_16 = GetSpriteFromAtlas("shiptype", shipType2print(var1_16:getShipType()))
 
 			setImageSprite(var3_16, var4_16, true)
@@ -265,7 +265,7 @@ function var0_0.didEnter(arg0_7)
 				setText(var9_16, "+" .. (var1_16.expAdd or 0))
 			end
 
-			local var12_16 = arg0_7:findTF("result/Progress/progress_bar", arg2_16)
+			local var12_16 = arg2_16:Find("result/Progress/progress_bar")
 			local var13_16 = var0_16:getExp() / getExpByRarityFromLv1(var10_16, var0_16.level)
 
 			var12_16:GetComponent(typeof(Image)).fillAmount = var13_16
@@ -301,8 +301,8 @@ function var0_0.didEnter(arg0_7)
 			setActive(arg2_19:Find("result/Exp"), false)
 			var18_7(arg2_19, var0_19.id, arg3_18)
 
-			local var2_19 = arg0_7:findTF("result/mask/icon", arg2_19)
-			local var3_19 = arg0_7:findTF("result/type", arg2_19)
+			local var2_19 = arg2_19:Find("result/mask/icon")
+			local var3_19 = arg2_19:Find("result/type")
 			local var4_19 = GetSpriteFromAtlas("shiptype", shipType2print(var1_19:getShipType()))
 
 			setImageSprite(var3_19, var4_19, true)
@@ -326,17 +326,17 @@ function var0_0.didEnter(arg0_7)
 
 			local var9_19 = arg4_18 and arg4_18[var1_19.id].output or 0
 			local var10_19 = arg4_18 and arg4_18[var1_19.id].kill_count or 0
-			local var11_19 = arg0_7:findTF("result/Statistics/atk", arg2_19)
+			local var11_19 = arg2_19:Find("result/Statistics/atk")
 
 			setText(var11_19, 0)
 			setText(var11_19, var9_19)
 
-			local var12_19 = arg0_7:findTF("result/Statistics/killCount", arg2_19)
+			local var12_19 = arg2_19:Find("result/Statistics/killCount")
 
 			setText(var12_19, 0)
 			setText(var12_19, var10_19)
 
-			local var13_19 = arg0_7:findTF("result/Progress/progress_bar", arg2_19)
+			local var13_19 = arg2_19:Find("result/Progress/progress_bar")
 
 			var13_19:GetComponent(typeof(Image)).fillAmount = 0
 

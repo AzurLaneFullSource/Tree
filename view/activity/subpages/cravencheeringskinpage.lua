@@ -3,7 +3,7 @@ local var0_0 = class("CravenCheeringSkinPage", import(".TemplatePage.SkinTemplat
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.step_txt = arg0_1:findTF("step_text", arg0_1.bg)
+	arg0_1.step_txt = arg0_1.bg:Find("step_text")
 end
 
 function var0_0.OnUpdateFlush(arg0_2)

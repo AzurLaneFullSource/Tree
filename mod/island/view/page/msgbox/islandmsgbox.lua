@@ -26,6 +26,7 @@ var0_0.TYPE_DRAW_AWARD_LIST = 23
 var0_0.TYPE_DRAW_AWARD_ALL = 24
 var0_0.TYPE_TICKET_EXPIRED = 25
 var0_0.TYPE_DRESS_WEAR_CONFIRE = 26
+var0_0.TYPE_COMMON_DROP_DESCRIBE = 27
 
 function var0_0.getUIName(arg0_1)
 	return "IslandMsgboxUI"
@@ -61,7 +62,8 @@ function var0_0.OnLoaded(arg0_2)
 		[var0_0.TYPE_DRAW_AWARD_LIST] = IslandDrawAwardListWindow,
 		[var0_0.TYPE_DRAW_AWARD_ALL] = IslandDrawAwardAllWindow,
 		[var0_0.TYPE_TICKET_EXPIRED] = IslandTicketExpiredMsgBoxWindow,
-		[var0_0.TYPE_DRESS_WEAR_CONFIRE] = IslandDressWearMsgboxWindow
+		[var0_0.TYPE_DRESS_WEAR_CONFIRE] = IslandDressWearMsgboxWindow,
+		[var0_0.TYPE_COMMON_DROP_DESCRIBE] = IslandMsgBoxSingleDropWindow
 	}
 end
 

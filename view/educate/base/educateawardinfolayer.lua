@@ -17,7 +17,7 @@ function var0_0.init(arg0_2)
 	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
 
 	arg0_2.drops = arg0_2.contextData.items or {}
-	arg0_2.awardWindow = arg0_2:findTF("award_window")
+	arg0_2.awardWindow = arg0_2._tf:Find("award_window")
 	arg0_2.anim = arg0_2.awardWindow:GetComponent(typeof(Animation))
 	arg0_2.animEvent = arg0_2.awardWindow:GetComponent(typeof(DftAniEvent))
 
@@ -34,25 +34,25 @@ function var0_0.init(arg0_2)
 		end
 	end)
 
-	arg0_2.tipTF = arg0_2:findTF("tip", arg0_2.awardWindow)
+	arg0_2.tipTF = arg0_2.awardWindow:Find("tip")
 
 	setText(arg0_2.tipTF, i18n("child_close_tip"))
 
-	arg0_2.itemContent = arg0_2:findTF("content/items", arg0_2.awardWindow)
-	arg0_2.itemContainer = arg0_2:findTF("items_scroll/content", arg0_2.itemContent)
-	arg0_2.itemTpl = arg0_2:findTF("item_tpl", arg0_2.awardWindow)
+	arg0_2.itemContent = arg0_2.awardWindow:Find("content/items")
+	arg0_2.itemContainer = arg0_2.itemContent:Find("items_scroll/content")
+	arg0_2.itemTpl = arg0_2.awardWindow:Find("item_tpl")
 
 	setActive(arg0_2.itemTpl, false)
 
-	arg0_2.attrContent = arg0_2:findTF("content/attrs", arg0_2.awardWindow)
-	arg0_2.attrContainer = arg0_2:findTF("attrs_scroll/content", arg0_2.attrContent)
-	arg0_2.attrTpl = arg0_2:findTF("attr_tpl", arg0_2.awardWindow)
+	arg0_2.attrContent = arg0_2.awardWindow:Find("content/attrs")
+	arg0_2.attrContainer = arg0_2.attrContent:Find("attrs_scroll/content")
+	arg0_2.attrTpl = arg0_2.awardWindow:Find("attr_tpl")
 
 	setActive(arg0_2.attrTpl, false)
 
-	arg0_2.polaroidWindow = arg0_2:findTF("polaroid_window")
-	arg0_2.polaroidIconTF = arg0_2:findTF("content/mask/icon", arg0_2.polaroidWindow)
-	arg0_2.polaroidDescTF = arg0_2:findTF("content/desc", arg0_2.polaroidWindow)
+	arg0_2.polaroidWindow = arg0_2._tf:Find("polaroid_window")
+	arg0_2.polaroidIconTF = arg0_2.polaroidWindow:Find("content/mask/icon")
+	arg0_2.polaroidDescTF = arg0_2.polaroidWindow:Find("content/desc")
 
 	setActive(arg0_2.awardWindow, false)
 	setActive(arg0_2.polaroidWindow, false)
@@ -60,7 +60,7 @@ function var0_0.init(arg0_2)
 end
 
 function var0_0.didEnter(arg0_4)
-	onButton(arg0_4, arg0_4:findTF("close", arg0_4.awardWindow), function()
+	onButton(arg0_4, arg0_4.awardWindow:Find("close"), function()
 		arg0_4:_close()
 	end, SFX_CANCEL)
 	onButton(arg0_4, arg0_4.polaroidWindow, function()

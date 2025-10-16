@@ -12,13 +12,13 @@ function var0_0.getUIName(arg0_2)
 end
 
 function var0_0.OnLoaded(arg0_3)
-	arg0_3.scrollRect = arg0_3:findTF("adpter/frame/bg"):GetComponent("LScrollRect")
-	arg0_3.searchInput = arg0_3:findTF("adpter/search")
-	arg0_3.searchClear = arg0_3:findTF("adpter/search/clear")
-	arg0_3.filterBtn = arg0_3:findTF("adpter/filter")
+	arg0_3.scrollRect = arg0_3._tf:Find("adpter/frame/bg"):GetComponent("LScrollRect")
+	arg0_3.searchInput = arg0_3._tf:Find("adpter/search")
+	arg0_3.searchClear = arg0_3._tf:Find("adpter/search/clear")
+	arg0_3.filterBtn = arg0_3._tf:Find("adpter/filter")
 	arg0_3.filterBtnTxt = arg0_3.filterBtn:Find("Text"):GetComponent(typeof(Text))
 	arg0_3.filterBtnTxt.text = i18n("word_default")
-	arg0_3.orderBtn = arg0_3:findTF("adpter/order")
+	arg0_3.orderBtn = arg0_3._tf:Find("adpter/order")
 	arg0_3.orderBtnIcon = arg0_3.orderBtn:Find("icon")
 	arg0_3.orderBtnTxt = arg0_3.orderBtn:Find("Text"):GetComponent(typeof(Text))
 

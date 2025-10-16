@@ -1,10 +1,10 @@
 local var0_0 = class("WudaoLoginPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.labelDay = arg0_1:findTF("days")
-	arg0_1.items = arg0_1:findTF("items")
-	arg0_1.item = arg0_1:findTF("item")
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.labelDay = arg0_1._tf:Find("days")
+	arg0_1.items = arg0_1._tf:Find("items")
+	arg0_1.item = arg0_1._tf:Find("item")
 end
 
 function var0_0.OnDataSetting(arg0_2)
@@ -16,7 +16,7 @@ function var0_0.OnFirstFlush(arg0_3)
 
 	for iter0_3 = 1, 8 do
 		local var0_3 = cloneTplTo(arg0_3.item, arg0_3.items:Find("layout"))
-		local var1_3 = arg0_3:findTF("item", var0_3)
+		local var1_3 = var0_3:Find("item")
 		local var2_3 = arg0_3.config.front_drops[iter0_3]
 		local var3_3 = {
 			type = var2_3[1],
@@ -36,8 +36,8 @@ function var0_0.OnUpdateFlush(arg0_5)
 		local var0_5 = arg0_5.items:Find("layout"):GetChild(iter0_5 - 1)
 		local var1_5 = iter0_5 <= arg0_5.activity.data1
 
-		GetImageSpriteFromAtlasAsync("ui/activityuipage/wudaologinpage_atlas", string.format("number%d", iter0_5), arg0_5:findTF("day", var0_5), true)
-		setActive(arg0_5:findTF("got", var0_5), var1_5)
+		GetImageSpriteFromAtlasAsync("ui/activityuipage/wudaologinpage_atlas", string.format("number%d", iter0_5), var0_5:Find("day"), true)
+		setActive(var0_5:Find("got"), var1_5)
 	end
 end
 

@@ -101,7 +101,7 @@ function var0_0.init(arg0_7)
 	arg0_7.descTxt = arg0_7.selectetPanel:Find("desc/bg/Text"):GetComponent(typeof(Text))
 	arg0_7.timerTxt = arg0_7.selectetPanel:Find("timer/bg/Text"):GetComponent(typeof(Text))
 	arg0_7.itemContainer = arg0_7.selectetPanel:Find("consume_panel/bg/container")
-	arg0_7.itemTpl = arg0_7:findTF("item_tpl", arg0_7.itemContainer)
+	arg0_7.itemTpl = arg0_7.itemContainer:Find("item_tpl")
 	arg0_7.emptyTF = arg0_7.selectetPanel:Find("consume_panel/bg/empty")
 	arg0_7.taskPanel = arg0_7.selectetPanel:Find("consume_panel/bg/task_panel")
 	arg0_7.taskSlider = arg0_7.taskPanel:Find("slider"):GetComponent(typeof(Slider))
@@ -127,14 +127,14 @@ function var0_0.init(arg0_7)
 end
 
 function var0_0.updateSettingsBtn(arg0_8)
-	local var0_8 = arg0_8:findTF("RedPoint", arg0_8.settingsBtn)
-	local var1_8 = arg0_8:findTF("TipText", arg0_8.settingsBtn)
+	local var0_8 = arg0_8.settingsBtn:Find("RedPoint")
+	local var1_8 = arg0_8.settingsBtn:Find("TipText")
 
 	setText(var1_8, i18n("tec_settings_btn_word"))
 
-	local var2_8 = arg0_8:findTF("TargetCatchup", arg0_8.settingsBtn)
-	local var3_8 = arg0_8:findTF("Selected", var2_8)
-	local var4_8 = arg0_8:findTF("ActCatchup", arg0_8.settingsBtn)
+	local var2_8 = arg0_8.settingsBtn:Find("TargetCatchup")
+	local var3_8 = var2_8:Find("Selected")
+	local var4_8 = arg0_8.settingsBtn:Find("ActCatchup")
 
 	arg0_8:updateSettingBtnVersion()
 
@@ -148,11 +148,11 @@ function var0_0.updateSettingsBtn(arg0_8)
 		local var10_8 = pg.activity_event_blueprint_catchup[var8_8].obtain_max
 
 		if var7_8 < var10_8 then
-			local var11_8 = arg0_8:findTF("Selected/CharImg", var4_8)
+			local var11_8 = var4_8:Find("Selected/CharImg")
 
 			setImageSprite(var11_8, LoadSprite("TecCatchup/QChar" .. var9_8, tostring(var9_8)))
 
-			local var12_8 = arg0_8:findTF("Selected/ProgressText", var4_8)
+			local var12_8 = var4_8:Find("Selected/ProgressText")
 
 			setText(var12_8, var7_8 .. "/" .. var10_8)
 
@@ -164,10 +164,10 @@ function var0_0.updateSettingsBtn(arg0_8)
 				arg0_8.actCatchupTimer = nil
 			end
 
-			local var14_8 = arg0_8:findTF("TimeLeft/Day", var4_8)
-			local var15_8 = arg0_8:findTF("TimeLeft/Hour", var4_8)
-			local var16_8 = arg0_8:findTF("TimeLeft/Min", var4_8)
-			local var17_8 = arg0_8:findTF("TimeLeft/NumText", var4_8)
+			local var14_8 = var4_8:Find("TimeLeft/Day")
+			local var15_8 = var4_8:Find("TimeLeft/Hour")
+			local var16_8 = var4_8:Find("TimeLeft/Min")
+			local var17_8 = var4_8:Find("TimeLeft/NumText")
 
 			local function var18_8()
 				local var0_9, var1_9, var2_9, var3_9 = pg.TimeMgr.GetInstance():parseTimeFrom(var13_8)
@@ -232,11 +232,11 @@ function var0_0.updateSettingsBtn(arg0_8)
 				setActive(var3_8, true)
 				setActive(var0_8, false)
 
-				local var27_8 = arg0_8:findTF("CharImg", var3_8)
+				local var27_8 = var3_8:Find("CharImg")
 
 				setImageSprite(var27_8, LoadSprite("TecCatchup/QChar" .. var24_8, tostring(var24_8)))
 
-				local var28_8 = arg0_8:findTF("ProgressText", var3_8)
+				local var28_8 = var3_8:Find("ProgressText")
 
 				setText(var28_8, var25_8 .. "/" .. var26_8)
 			end
@@ -964,7 +964,7 @@ function var0_0.updateItem(arg0_66, arg1_66, arg2_66, arg3_66)
 		__index = var0_66
 	}))
 
-	local var1_66 = arg0_66:findTF("icon_bg/count", arg1_66)
+	local var1_66 = arg1_66:Find("icon_bg/count")
 
 	if not IsNil(var1_66) then
 		setColorCount(var1_66, var0_66:getOwnedCount(), var0_66.count)

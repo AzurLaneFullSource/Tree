@@ -5,8 +5,8 @@ var0_0.SHOW_COUNT = 8
 var0_0.AWARD_OFFSET = 1e-05
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.getBtn = arg0_1:findTF("get_btn", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.getBtn = arg0_1.bg:Find("get_btn")
 	arg0_1.shopBtn = arg0_1.bg:Find("exchange_btn")
 	arg0_1.content = arg0_1.bg:Find("award_list/content")
 	arg0_1.awardTpl = arg0_1.bg:Find("award")

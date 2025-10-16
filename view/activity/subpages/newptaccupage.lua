@@ -5,8 +5,8 @@ var0_0.TIME = 300
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.value2 = arg0_1:findTF("AD/value2")
-	arg0_1.sliderTxt = arg0_1:findTF("AD/slider/Text")
+	arg0_1.value2 = arg0_1._tf:Find("AD/value2")
+	arg0_1.sliderTxt = arg0_1._tf:Find("AD/slider/Text")
 end
 
 function var0_0.OnUpdateFlush(arg0_2)

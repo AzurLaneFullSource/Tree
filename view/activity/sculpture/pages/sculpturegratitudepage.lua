@@ -5,17 +5,17 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.backBtn = arg0_2:findTF("back")
-	arg0_2.roleImg = arg0_2:findTF("char/Image")
-	arg0_2.container = arg0_2:findTF("frame/gift")
-	arg0_2.awards = arg0_2:findTF("frame/awards")
-	arg0_2.giftBg = arg0_2:findTF("frame/Image")
-	arg0_2.wordTxtScr = arg0_2:findTF("frame/scrollrect")
-	arg0_2.wordTxt = arg0_2:findTF("frame/scrollrect/content/Text"):GetComponent(typeof(Text))
-	arg0_2.typer = arg0_2:findTF("frame/scrollrect/content/Text"):GetComponent(typeof(Typewriter))
-	arg0_2.uilist = UIItemList.New(arg0_2:findTF("frame/awards"), arg0_2:findTF("frame/awards/tpl"))
-	arg0_2.arrLeft = arg0_2:findTF("frame/arr")
-	arg0_2.arrRight = arg0_2:findTF("frame/arr (1)")
+	arg0_2.backBtn = arg0_2._tf:Find("back")
+	arg0_2.roleImg = arg0_2._tf:Find("char/Image")
+	arg0_2.container = arg0_2._tf:Find("frame/gift")
+	arg0_2.awards = arg0_2._tf:Find("frame/awards")
+	arg0_2.giftBg = arg0_2._tf:Find("frame/Image")
+	arg0_2.wordTxtScr = arg0_2._tf:Find("frame/scrollrect")
+	arg0_2.wordTxt = arg0_2._tf:Find("frame/scrollrect/content/Text"):GetComponent(typeof(Text))
+	arg0_2.typer = arg0_2._tf:Find("frame/scrollrect/content/Text"):GetComponent(typeof(Typewriter))
+	arg0_2.uilist = UIItemList.New(arg0_2._tf:Find("frame/awards"), arg0_2._tf:Find("frame/awards/tpl"))
+	arg0_2.arrLeft = arg0_2._tf:Find("frame/arr")
+	arg0_2.arrRight = arg0_2._tf:Find("frame/arr (1)")
 end
 
 function var0_0.OnInit(arg0_3)
@@ -24,7 +24,7 @@ end
 
 function var0_0.Show(arg0_4, arg1_4, arg2_4, arg3_4)
 	arg0_4:Clear()
-	setText(arg0_4:findTF("tip"), i18n("sculpture_gratitude_tip"))
+	setText(arg0_4._tf:Find("tip"), i18n("sculpture_gratitude_tip"))
 	var0_0.super.Show(arg0_4)
 	setActive(arg0_4.giftBg, true)
 	setAnchoredPosition(arg0_4.arrLeft, {
@@ -70,7 +70,7 @@ function var0_0.Flush(arg0_8, arg1_8)
 		setActive(arg0_8.awards, true)
 		arg0_8:InitAwards()
 		arg0_8:SetScrollTxt(arg1_8:getDataConfig(arg0_8.id, "thankwords"))
-		setText(arg0_8:findTF("tip"), "")
+		setText(arg0_8._tf:Find("tip"), "")
 		setActive(arg0_8.giftBg, false)
 		setAnchoredPosition(arg0_8.arrLeft, {
 			x = 260

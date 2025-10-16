@@ -111,63 +111,63 @@ function var0_0.getBGM(arg0_2)
 end
 
 function var0_0.init(arg0_3)
-	arg0_3.countUI = arg0_3:findTF("count_ui")
-	arg0_3.countAnimator = arg0_3:findTF("count_bg/count", arg0_3.countUI):GetComponent(typeof(Animator))
-	arg0_3.countDft = arg0_3:findTF("count_bg/count", arg0_3.countUI):GetComponent(typeof(DftAniEvent))
+	arg0_3.countUI = arg0_3._tf:Find("count_ui")
+	arg0_3.countAnimator = arg0_3.countUI:Find("count_bg/count"):GetComponent(typeof(Animator))
+	arg0_3.countDft = arg0_3.countUI:Find("count_bg/count"):GetComponent(typeof(DftAniEvent))
 
 	arg0_3.countDft:SetEndEvent(function()
 		setActive(arg0_3.countUI, false)
 		arg0_3:startGame()
 	end)
 
-	arg0_3.pauseUI = arg0_3:findTF("pause_ui")
-	arg0_3.resuemBtn = arg0_3:findTF("box/sure_btn", arg0_3.pauseUI)
+	arg0_3.pauseUI = arg0_3._tf:Find("pause_ui")
+	arg0_3.resuemBtn = arg0_3.pauseUI:Find("box/sure_btn")
 
-	setText(arg0_3:findTF("box/content", arg0_3.pauseUI), i18n("idolmaster_game_tip1"))
+	setText(arg0_3.pauseUI:Find("box/content"), i18n("idolmaster_game_tip1"))
 
-	arg0_3.exitUI = arg0_3:findTF("exit_ui")
-	arg0_3.exitSureBtn = arg0_3:findTF("box/sure_btn", arg0_3.exitUI)
-	arg0_3.exitCancelBtn = arg0_3:findTF("box/cancel_btn", arg0_3.exitUI)
+	arg0_3.exitUI = arg0_3._tf:Find("exit_ui")
+	arg0_3.exitSureBtn = arg0_3.exitUI:Find("box/sure_btn")
+	arg0_3.exitCancelBtn = arg0_3.exitUI:Find("box/cancel_btn")
 
-	setText(arg0_3:findTF("box/content", arg0_3.exitUI), i18n("idolmaster_game_tip2"))
+	setText(arg0_3.exitUI:Find("box/content"), i18n("idolmaster_game_tip2"))
 
-	arg0_3.endUI = arg0_3:findTF("end_ui")
-	arg0_3.endSureBtn = arg0_3:findTF("box/sure_btn", arg0_3.endUI)
+	arg0_3.endUI = arg0_3._tf:Find("end_ui")
+	arg0_3.endSureBtn = arg0_3.endUI:Find("box/sure_btn")
 
-	setText(arg0_3:findTF("box/cur_score", arg0_3.endUI), i18n("idolmaster_game_tip3"))
+	setText(arg0_3.endUI:Find("box/cur_score"), i18n("idolmaster_game_tip3"))
 
-	arg0_3.endScoreTxt = arg0_3:findTF("box/cur_score/score", arg0_3.endUI)
-	arg0_3.newTag = arg0_3:findTF("new", arg0_3.endScoreTxt)
+	arg0_3.endScoreTxt = arg0_3.endUI:Find("box/cur_score/score")
+	arg0_3.newTag = arg0_3.endScoreTxt:Find("new")
 
-	setText(arg0_3:findTF("box/highest_score", arg0_3.endUI), i18n("idolmaster_game_tip4"))
+	setText(arg0_3.endUI:Find("box/highest_score"), i18n("idolmaster_game_tip4"))
 
-	arg0_3.highestScoreTxt = arg0_3:findTF("box/highest_score/score", arg0_3.endUI)
-	arg0_3.gameUI = arg0_3:findTF("game_ui")
-	arg0_3.returnBtn = arg0_3:findTF("top/return_btn", arg0_3.gameUI)
-	arg0_3.pauseBtn = arg0_3:findTF("top/pause_btn", arg0_3.gameUI)
-	arg0_3.roundTxt = arg0_3:findTF("top/title/round/num", arg0_3.gameUI)
+	arg0_3.highestScoreTxt = arg0_3.endUI:Find("box/highest_score/score")
+	arg0_3.gameUI = arg0_3._tf:Find("game_ui")
+	arg0_3.returnBtn = arg0_3.gameUI:Find("top/return_btn")
+	arg0_3.pauseBtn = arg0_3.gameUI:Find("top/pause_btn")
+	arg0_3.roundTxt = arg0_3.gameUI:Find("top/title/round/num")
 	arg0_3.roundNum = 0
-	arg0_3.curScoreTxt = arg0_3:findTF("top/title/score_title/score", arg0_3.gameUI)
+	arg0_3.curScoreTxt = arg0_3.gameUI:Find("top/title/score_title/score")
 	arg0_3.curScore = 0
 
 	setText(arg0_3.curScoreTxt, arg0_3.curScore)
 
-	arg0_3.curTimeTxt = arg0_3:findTF("top/time_bg/time", arg0_3.gameUI)
+	arg0_3.curTimeTxt = arg0_3.gameUI:Find("top/time_bg/time")
 	arg0_3.curTime = 0
 
-	setText(arg0_3:findTF("top/title/score_title", arg0_3.gameUI), i18n("idolmaster_game_tip5"))
+	setText(arg0_3.gameUI:Find("top/title/score_title"), i18n("idolmaster_game_tip5"))
 
-	arg0_3.correctBar = arg0_3:findTF("correct_bar", arg0_3.gameUI)
-	arg0_3.failBar = arg0_3:findTF("fail_bar", arg0_3.gameUI)
-	arg0_3.manjuu = arg0_3:findTF("play/manjuu", arg0_3.gameUI)
+	arg0_3.correctBar = arg0_3.gameUI:Find("correct_bar")
+	arg0_3.failBar = arg0_3.gameUI:Find("fail_bar")
+	arg0_3.manjuu = arg0_3.gameUI:Find("play/manjuu")
 	arg0_3.manjuuAnimator = arg0_3.manjuu:GetComponent(typeof(Animator))
 	arg0_3.manjuuDft = arg0_3.manjuu:GetComponent(typeof(DftAniEvent))
-	arg0_3.result = arg0_3:findTF("result", arg0_3.gameUI)
+	arg0_3.result = arg0_3.gameUI:Find("result")
 	arg0_3.resultAnimator = arg0_3.result:GetComponent(typeof(Animator))
 	arg0_3.resultDft = arg0_3.result:GetComponent(typeof(DftAniEvent))
-	arg0_3.scoreAni = arg0_3:findTF("score", arg0_3.gameUI)
-	arg0_3.cupContainer = arg0_3:findTF("cup_container", arg0_3.gameUI)
-	arg0_3.fork = arg0_3:findTF("fork", arg0_3.gameUI)
+	arg0_3.scoreAni = arg0_3.gameUI:Find("score")
+	arg0_3.cupContainer = arg0_3.gameUI:Find("cup_container")
+	arg0_3.fork = arg0_3.gameUI:Find("fork")
 	arg0_3.isGuessTime = false
 end
 
@@ -201,7 +201,7 @@ function var0_0.didEnter(arg0_5)
 				return
 			end
 
-			setActive(arg0_5:findTF("select", arg0_12), true)
+			setActive(arg0_12:Find("select"), true)
 
 			arg0_5.isGuessTime = false
 
@@ -224,7 +224,7 @@ function var0_0.initGameData(arg0_14)
 
 	eachChild(arg0_14.cupContainer, function(arg0_15)
 		GetSpriteFromAtlasAsync("ui/minigameui/guessforkgameui", var1_14, function(arg0_16)
-			setImageSprite(arg0_14:findTF("front", arg0_15), arg0_16, true)
+			setImageSprite(arg0_15:Find("front"), arg0_16, true)
 		end)
 	end)
 
@@ -253,9 +253,9 @@ function var0_0.startGame(arg0_17)
 end
 
 function var0_0.playForkAni(arg0_19, arg1_19)
-	local var0_19 = arg0_19:findTF("cup_" .. arg0_19.forkIndex, arg0_19.cupContainer)
+	local var0_19 = arg0_19.cupContainer:Find("cup_" .. arg0_19.forkIndex)
 
-	setParent(arg0_19.fork, arg0_19:findTF("fork_node", var0_19), false)
+	setParent(arg0_19.fork, var0_19:Find("fork_node"), false)
 	setLocalScale(arg0_19.fork, Vector3.one)
 	setLocalPosition(arg0_19.fork, Vector3(0, 50, 0))
 	setActive(arg0_19.fork, true)
@@ -288,8 +288,8 @@ function var0_0.startSwap(arg0_22, arg1_22)
 
 	table.remove(var0_22, var1_22)
 
-	local var2_22 = arg0_22:findTF("cup_" .. var0_22[1], arg0_22.cupContainer)
-	local var3_22 = arg0_22:findTF("cup_" .. var0_22[2], arg0_22.cupContainer)
+	local var2_22 = arg0_22.cupContainer:Find("cup_" .. var0_22[1])
+	local var3_22 = arg0_22.cupContainer:Find("cup_" .. var0_22[2])
 
 	arg0_22:swapCup(var2_22, var3_22, function()
 		arg0_22:startSwap(arg1_22 - 1)
@@ -371,7 +371,7 @@ function var0_0.endRound(arg0_31, arg1_31)
 end
 
 function var0_0.playManjuuAni(arg0_32, arg1_32)
-	local var0_32 = arg0_32:findTF("cup_" .. arg0_32.selectIndex, arg0_32.cupContainer)
+	local var0_32 = arg0_32.cupContainer:Find("cup_" .. arg0_32.selectIndex)
 	local var1_32 = (var0_32.anchoredPosition.x + 480) / 480 + 1
 
 	arg0_32.manjuuAnimator:Play(var18_0[var1_32])
@@ -380,16 +380,16 @@ function var0_0.playManjuuAni(arg0_32, arg1_32)
 
 		local var0_33 = arg1_32 and var19_0[var1_32] or var20_0[var1_32]
 
-		setActive(arg0_32:findTF("select", var0_32), false)
+		setActive(var0_32:Find("select"), false)
 		arg0_32.manjuuAnimator:Play(var0_33)
 		arg0_32:playResultAni(arg1_32)
 	end)
 end
 
 function var0_0.playResultAni(arg0_34, arg1_34)
-	local var0_34 = arg0_34:findTF("cup_" .. arg0_34.selectIndex, arg0_34.cupContainer)
+	local var0_34 = arg0_34.cupContainer:Find("cup_" .. arg0_34.selectIndex)
 
-	setParent(arg0_34.result, arg0_34:findTF("result_node", var0_34), false)
+	setParent(arg0_34.result, var0_34:Find("result_node"), false)
 	setLocalScale(arg0_34.result, Vector3.one)
 	setLocalPosition(arg0_34.result, Vector3.zero)
 	setActive(arg0_34.result, true)
@@ -461,9 +461,9 @@ function var0_0.showCorrectBar(arg0_37)
 end
 
 function var0_0.playTimeOutAni(arg0_45)
-	local var0_45 = arg0_45:findTF("cup_" .. arg0_45.forkIndex, arg0_45.cupContainer)
+	local var0_45 = arg0_45.cupContainer:Find("cup_" .. arg0_45.forkIndex)
 
-	setParent(arg0_45.result, arg0_45:findTF("result_node", var0_45), false)
+	setParent(arg0_45.result, var0_45:Find("result_node"), false)
 	setLocalScale(arg0_45.result, Vector3.one)
 	setLocalPosition(arg0_45.result, Vector3.zero)
 	setActive(arg0_45.result, true)

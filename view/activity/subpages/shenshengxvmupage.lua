@@ -19,10 +19,14 @@ function var0_0.OnUpdateFlush(arg0_3)
 
 	setActive(arg0_3.battleBtn, isActive(arg0_3.battleBtn) and var1_3)
 
-	local var2_3, var3_3, var4_3 = arg0_3.ptData:GetResProgress()
+	local var2_3 = arg0_3.bg:Find("got")
 
-	setText(arg0_3.step, var4_3 >= 1 and setColorStr(var2_3, COLOR_GREEN) or var2_3)
-	setText(arg0_3.progress, "/" .. var3_3)
+	setActive(var2_3, not arg0_3.ptData:CanGetNextAward())
+
+	local var3_3, var4_3, var5_3 = arg0_3.ptData:GetResProgress()
+
+	setText(arg0_3.step, var5_3 >= 1 and setColorStr(var3_3, COLOR_GREEN) or var3_3)
+	setText(arg0_3.progress, "/" .. var4_3)
 end
 
 return var0_0

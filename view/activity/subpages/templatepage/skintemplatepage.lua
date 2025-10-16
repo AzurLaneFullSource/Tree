@@ -1,10 +1,10 @@
 local var0_0 = class("SkinTemplatePage", import("view.base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.dayTF = arg0_1:findTF("day", arg0_1.bg)
-	arg0_1.item = arg0_1:findTF("item", arg0_1.bg)
-	arg0_1.items = arg0_1:findTF("items", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.dayTF = arg0_1.bg:Find("day")
+	arg0_1.item = arg0_1.bg:Find("item")
+	arg0_1.items = arg0_1.bg:Find("items")
 	arg0_1.uilist = UIItemList.New(arg0_1.items, arg0_1.item)
 
 	setActive(arg0_1.item, false)
@@ -28,7 +28,7 @@ end
 
 function var0_0.UpdateTask(arg0_5, arg1_5, arg2_5)
 	local var0_5 = arg1_5 + 1
-	local var1_5 = arg0_5:findTF("item", arg2_5)
+	local var1_5 = arg2_5:Find("item")
 	local var2_5 = arg0_5.taskGroup[arg0_5.nday][var0_5]
 	local var3_5 = arg0_5.taskProxy:getTaskById(var2_5) or arg0_5.taskProxy:getFinishTaskById(var2_5)
 
@@ -44,7 +44,7 @@ function var0_0.UpdateTask(arg0_5, arg1_5, arg2_5)
 	local var5_5 = var3_5:getProgress()
 	local var6_5 = var3_5:getConfig("target_num")
 
-	setText(arg0_5:findTF("description", arg2_5), var3_5:getConfig("desc"))
+	setText(arg2_5:Find("description"), var3_5:getConfig("desc"))
 
 	local var7_5, var8_5 = arg0_5:GetProgressColor()
 	local var9_5
@@ -55,12 +55,12 @@ function var0_0.UpdateTask(arg0_5, arg1_5, arg2_5)
 
 	var10_5 = var8_5 and setColorStr("/" .. var6_5, var8_5) or "/" .. var6_5
 
-	setText(arg0_5:findTF("progressText", arg2_5), var9_5 .. var10_5)
-	setSlider(arg0_5:findTF("progress", arg2_5), 0, var6_5, var5_5)
+	setText(arg2_5:Find("progressText"), var9_5 .. var10_5)
+	setSlider(arg2_5:Find("progress"), 0, var6_5, var5_5)
 
-	local var11_5 = arg0_5:findTF("go_btn", arg2_5)
-	local var12_5 = arg0_5:findTF("get_btn", arg2_5)
-	local var13_5 = arg0_5:findTF("got_btn", arg2_5)
+	local var11_5 = arg2_5:Find("go_btn")
+	local var12_5 = arg2_5:Find("get_btn")
+	local var13_5 = arg2_5:Find("got_btn")
 	local var14_5 = var3_5:getTaskStatus()
 
 	setActive(var11_5, var14_5 == 0)

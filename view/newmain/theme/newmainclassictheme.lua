@@ -7,7 +7,7 @@ end
 function var0_0.OnLoaded(arg0_2)
 	var0_0.super.OnLoaded(arg0_2)
 
-	arg0_2.adapterView = MainAdpterView.New(arg0_2:findTF("top_bg"), arg0_2:findTF("bottom_bg"), arg0_2:findTF("bg/right"))
+	arg0_2.adapterView = MainAdpterView.New(arg0_2._tf:Find("top_bg"), arg0_2._tf:Find("bottom_bg"), arg0_2._tf:Find("bg/right"))
 end
 
 function var0_0.PlayEnterAnimation(arg0_3, arg1_3, arg2_3)
@@ -44,8 +44,8 @@ end
 
 function var0_0.GetPbList(arg0_8)
 	return {
-		arg0_8:findTF("frame/chatPreview"),
-		arg0_8:findTF("frame/eventPanel")
+		arg0_8._tf:Find("frame/chatPreview"),
+		arg0_8._tf:Find("frame/eventPanel")
 	}
 end
 
@@ -64,47 +64,47 @@ function var0_0.GetPaintingOffset(arg0_9, arg1_9)
 end
 
 function var0_0.GetWordView(arg0_10)
-	return MainWordView.New(arg0_10:findTF("chat"), arg0_10.event)
+	return MainWordView.New(arg0_10._tf:Find("chat"), arg0_10.event)
 end
 
 function var0_0.GetTagView(arg0_11)
-	return MainTagsView.New(arg0_11:findTF("frame/bottom/tags"), arg0_11.event)
+	return MainTagsView.New(arg0_11._tf:Find("frame/bottom/tags"), arg0_11.event)
 end
 
 function var0_0.GetTopPanel(arg0_12)
-	return MainTopPanel.New(arg0_12:findTF("frame/top"), arg0_12.event, arg0_12.contextData)
+	return MainTopPanel.New(arg0_12._tf:Find("frame/top"), arg0_12.event, arg0_12.contextData)
 end
 
 function var0_0.GetRightPanel(arg0_13)
-	return MainRightPanel.New(arg0_13:findTF("frame/right"), arg0_13.event, arg0_13.contextData)
+	return MainRightPanel.New(arg0_13._tf:Find("frame/right"), arg0_13.event, arg0_13.contextData)
 end
 
 function var0_0.GetLeftPanel(arg0_14)
-	return MainLeftPanel.New(arg0_14:findTF("frame/left"), arg0_14.event, arg0_14.contextData)
+	return MainLeftPanel.New(arg0_14._tf:Find("frame/left"), arg0_14.event, arg0_14.contextData)
 end
 
 function var0_0.GetBottomPanel(arg0_15)
-	return MainBottomPanel.New(arg0_15:findTF("frame/bottom"), arg0_15.event, arg0_15.contextData)
+	return MainBottomPanel.New(arg0_15._tf:Find("frame/bottom"), arg0_15.event, arg0_15.contextData)
 end
 
 function var0_0.GetIconView(arg0_16)
-	return MainIconView.New(arg0_16:findTF("frame/char"))
+	return MainIconView.New(arg0_16._tf:Find("frame/char"))
 end
 
 function var0_0.GetChatRoomView(arg0_17)
-	return MainChatRoomView.New(arg0_17:findTF("frame/chatPreview"), arg0_17.event)
+	return MainChatRoomView.New(arg0_17._tf:Find("frame/chatPreview"), arg0_17.event)
 end
 
 function var0_0.GetBannerView(arg0_18)
-	return MainBannerView.New(arg0_18:findTF("frame/eventPanel"), arg0_18.event)
+	return MainBannerView.New(arg0_18._tf:Find("frame/eventPanel"), arg0_18.event)
 end
 
 function var0_0.GetActBtnView(arg0_19)
-	return MainActivityBtnView.New(arg0_19:findTF("frame/linkBtns"), arg0_19.event)
+	return MainActivityBtnView.New(arg0_19._tf:Find("frame/linkBtns"), arg0_19.event)
 end
 
 function var0_0.GetBuffView(arg0_20)
-	return MainBuffView.New(arg0_20:findTF("frame/buffs"), arg0_20.event)
+	return MainBuffView.New(arg0_20._tf:Find("frame/buffs"), arg0_20.event)
 end
 
 function var0_0.GetCalibrationView(arg0_21)
@@ -112,7 +112,7 @@ function var0_0.GetCalibrationView(arg0_21)
 end
 
 function var0_0.GetChangeSkinView(arg0_22)
-	return MainChangeSkinView.New(arg0_22:findTF("frame/left/change_skin"), arg0_22.event)
+	return MainChangeSkinView.New(arg0_22._tf:Find("frame/left/change_skin"), arg0_22.event)
 end
 
 function var0_0.GetRedDots(arg0_23)

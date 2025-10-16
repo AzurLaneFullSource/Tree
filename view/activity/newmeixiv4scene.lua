@@ -9,14 +9,14 @@ function var0_0.ResUISettings(arg0_2)
 end
 
 function var0_0.init(arg0_3)
-	arg0_3.ani = arg0_3:findTF("TV01")
-	arg0_3.progress = arg0_3:findTF("progress/Text")
-	arg0_3.nodes = arg0_3:findTF("nodes")
-	arg0_3.nodeInfo = arg0_3:findTF("node_info")
-	arg0_3.titleTxt = arg0_3:findTF("progress/title")
-	arg0_3.titleNum = arg0_3:findTF("progress/cur")
-	arg0_3.helpBtn = arg0_3:findTF("help_btn")
-	arg0_3.storyTip = arg0_3:findTF("get_story")
+	arg0_3.ani = arg0_3._tf:Find("TV01")
+	arg0_3.progress = arg0_3._tf:Find("progress/Text")
+	arg0_3.nodes = arg0_3._tf:Find("nodes")
+	arg0_3.nodeInfo = arg0_3._tf:Find("node_info")
+	arg0_3.titleTxt = arg0_3._tf:Find("progress/title")
+	arg0_3.titleNum = arg0_3._tf:Find("progress/cur")
+	arg0_3.helpBtn = arg0_3._tf:Find("help_btn")
+	arg0_3.storyTip = arg0_3._tf:Find("get_story")
 	arg0_3.taskProxy = getProxy(TaskProxy)
 
 	local var0_3 = pg.activity_template[ActivityConst.NEWMEIXIV4_SKIRMISH_ID]
@@ -26,10 +26,10 @@ function var0_0.init(arg0_3)
 end
 
 function var0_0.didEnter(arg0_4)
-	onButton(arg0_4, arg0_4:findTF("top/back_btn"), function()
+	onButton(arg0_4, arg0_4._tf:Find("top/back_btn"), function()
 		arg0_4:emit(var0_0.ON_BACK)
 	end, SOUND_BACK)
-	onButton(arg0_4, arg0_4:findTF("top/option"), function()
+	onButton(arg0_4, arg0_4._tf:Find("top/option"), function()
 		arg0_4:emit(var0_0.ON_HOME)
 	end, SFX_CANCEL)
 	onButton(arg0_4, arg0_4.helpBtn, function()
@@ -38,7 +38,7 @@ function var0_0.didEnter(arg0_4)
 			helps = i18n("MeixiV4_help")
 		})
 	end, SFX_PANEL)
-	setText(arg0_4:findTF("bar/tip", arg0_4.storyTip), i18n("world_collection_back"))
+	setText(arg0_4.storyTip:Find("bar/tip"), i18n("world_collection_back"))
 	arg0_4:playAni()
 	arg0_4:updateNodes()
 end
@@ -110,7 +110,7 @@ function var0_0.updateNodes(arg0_14)
 end
 
 function var0_0.nodeInfoTween(arg0_17, arg1_17)
-	local var0_17 = tf(arg0_17:findTF(tostring(arg1_17), arg0_17.nodes)).localPosition
+	local var0_17 = tf(arg0_17._tf:Find(tostring(arg1_17), arg0_17.nodes)).localPosition
 
 	if arg1_17 == 9 then
 		var0_17.x = var0_17.x - 80
@@ -156,14 +156,14 @@ function var0_0.updateNodeInfo(arg0_21, arg1_21)
 	local var6_21 = var2_21 and var2_21:getTaskStatus() or 2
 	local var7_21 = var2_21 and var2_21:getConfig("desc") or var3_21.desc
 
-	setSlider(arg0_21:findTF("progress", arg0_21.nodeInfo), 0, var5_21, var4_21)
-	setText(arg0_21:findTF("step", arg0_21.nodeInfo), var4_21 .. "/" .. var5_21)
-	setText(arg0_21:findTF("content", arg0_21.nodeInfo), var7_21)
-	setText(arg0_21:findTF("title", arg0_21.nodeInfo), string.format("%02d", arg1_21))
+	setSlider(arg0_21.nodeInfo:Find("progress"), 0, var5_21, var4_21)
+	setText(arg0_21.nodeInfo:Find("step"), var4_21 .. "/" .. var5_21)
+	setText(arg0_21.nodeInfo:Find("content"), var7_21)
+	setText(arg0_21.nodeInfo:Find("title"), string.format("%02d", arg1_21))
 
-	local var8_21 = arg0_21:findTF("go_btn", arg0_21.nodeInfo)
-	local var9_21 = arg0_21:findTF("get_btn", arg0_21.nodeInfo)
-	local var10_21 = arg0_21:findTF("step/finish", arg0_21.nodeInfo)
+	local var8_21 = arg0_21.nodeInfo:Find("go_btn")
+	local var9_21 = arg0_21.nodeInfo:Find("get_btn")
+	local var10_21 = arg0_21.nodeInfo:Find("step/finish")
 
 	setActive(var8_21, var6_21 == 0)
 	setActive(var9_21, var6_21 == 1)
@@ -175,7 +175,7 @@ function var0_0.updateNodeInfo(arg0_21, arg1_21)
 		arg0_21:emit(NewMeixiV4Mediator.ON_TASK_SUBMIT, var2_21)
 	end, SFX_PANEL)
 	eachChild(arg0_21.nodes, function(arg0_24)
-		local var0_24 = arg0_21:findTF("arrow", arg0_24)
+		local var0_24 = arg0_24:Find("arrow")
 
 		LeanTween.cancel(var0_24.gameObject)
 		setLocalPosition(var0_24, Vector3(0, 27, 0))
@@ -208,19 +208,19 @@ function var0_0.getStory(arg0_26, arg1_26, arg2_26)
 	local var0_26 = pg.memory_template[arg1_26].title
 
 	pg.NewStoryMgr.GetInstance():SetPlayedFlag(arg2_26)
-	setText(arg0_26:findTF("bar/Anim/Frame/Mask/Name", arg0_26.storyTip), var0_26)
+	setText(arg0_26.storyTip:Find("bar/Anim/Frame/Mask/Name"), var0_26)
 	removeOnButton(arg0_26.storyTip)
-	removeOnButton(arg0_26:findTF("bar/Button", arg0_26.storyTip))
+	removeOnButton(arg0_26.storyTip:Find("bar/Button"))
 	pg.UIMgr.GetInstance():BlurPanel(arg0_26.storyTip)
 
-	local var1_26 = arg0_26:findTF("bar", arg0_26.storyTip):GetComponent(typeof(DftAniEvent))
+	local var1_26 = arg0_26.storyTip:Find("bar"):GetComponent(typeof(DftAniEvent))
 
 	local function var2_26()
 		onButton(arg0_26, arg0_26.storyTip, function()
 			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_26.storyTip)
 			setActive(arg0_26.storyTip, false)
 		end)
-		onButton(arg0_26, arg0_26:findTF("bar/Button", arg0_26.storyTip), function()
+		onButton(arg0_26, arg0_26.storyTip:Find("bar/Button"), function()
 			arg0_26:emit(NewMeixiV4Mediator.GO_STORY, arg0_26.memoryGroup)
 			triggerButton(arg0_26.storyTip)
 		end, SFX_PANEL)

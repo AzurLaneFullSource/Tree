@@ -56,18 +56,18 @@ function var0_0.Ctor(arg0_2, arg1_2, arg2_2, arg3_2)
 end
 
 function var0_0.OnLoaded(arg0_4)
-	arg0_4.sortTpl = arg0_4:findTF("bg/sort_tpl")
-	arg0_4.filterTpl = arg0_4:findTF("bg/filter_tpl")
-	arg0_4.sortContainer = arg0_4:findTF("bg/frame/sorts/sort_container")
-	arg0_4.filterContainer = arg0_4:findTF("bg/frame/filters/rect_view/conent/theme_panel")
-	arg0_4.selectedAllBtn = arg0_4:findTF("bg/frame/filters/rect_view/conent/all_panel/sort_tpl")
-	arg0_4.close = arg0_4:findTF("bg/close")
+	arg0_4.sortTpl = arg0_4._tf:Find("bg/sort_tpl")
+	arg0_4.filterTpl = arg0_4._tf:Find("bg/filter_tpl")
+	arg0_4.sortContainer = arg0_4._tf:Find("bg/frame/sorts/sort_container")
+	arg0_4.filterContainer = arg0_4._tf:Find("bg/frame/filters/rect_view/conent/theme_panel")
+	arg0_4.selectedAllBtn = arg0_4._tf:Find("bg/frame/filters/rect_view/conent/all_panel/sort_tpl")
+	arg0_4.close = arg0_4._tf:Find("bg/close")
 
-	setText(arg0_4:findTF("bg/frame/title"), i18n("indexsort_sort"))
-	setText(arg0_4:findTF("bg/frame/title_filter"), i18n("indexsort_index"))
+	setText(arg0_4._tf:Find("bg/frame/title"), i18n("indexsort_sort"))
+	setText(arg0_4._tf:Find("bg/frame/title_filter"), i18n("indexsort_index"))
 	setText(arg0_4.selectedAllBtn:Find("Text"), i18n("index_all"))
-	setText(arg0_4:findTF("bg/frame/confirm_btn/Text"), i18n("word_ok"))
-	setText(arg0_4:findTF("bg/title"), i18n("courtyard_label_filter"))
+	setText(arg0_4._tf:Find("bg/frame/confirm_btn/Text"), i18n("word_ok"))
+	setText(arg0_4._tf:Find("bg/title"), i18n("courtyard_label_filter"))
 end
 
 function var0_0.setFilterData(arg0_5, arg1_5)
@@ -87,7 +87,7 @@ function var0_0.updateOrderMode(arg0_8, arg1_8)
 end
 
 function var0_0.OnInit(arg0_9)
-	onButton(arg0_9, arg0_9:findTF("bg/frame/confirm_btn"), function()
+	onButton(arg0_9, arg0_9._tf:Find("bg/frame/confirm_btn"), function()
 		arg0_9:filter()
 		arg0_9:Hide()
 

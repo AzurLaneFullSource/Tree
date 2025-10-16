@@ -17,8 +17,8 @@ var0_0.Buildings = {
 
 function var0_0.init(arg0_1)
 	arg0_1.loader = AutoLoader.New()
-	arg0_1.top = arg0_1:findTF("top")
-	arg0_1._map = arg0_1:findTF("map")
+	arg0_1.top = arg0_1._tf:Find("top")
+	arg0_1._map = arg0_1._tf:Find("map")
 
 	for iter0_1 = 0, arg0_1._map.childCount - 1 do
 		local var0_1 = arg0_1._map:GetChild(iter0_1)
@@ -27,7 +27,7 @@ function var0_0.init(arg0_1)
 		arg0_1["map_" .. var1_1] = var0_1
 	end
 
-	arg0_1._upper = arg0_1:findTF("upper")
+	arg0_1._upper = arg0_1._tf:Find("upper")
 
 	for iter1_1 = 0, arg0_1._upper.childCount - 1 do
 		local var2_1 = arg0_1._upper:GetChild(iter1_1)
@@ -130,16 +130,16 @@ function var0_0.RegisterDataResponse(arg0_2)
 end
 
 function var0_0.didEnter(arg0_7)
-	onButton(arg0_7, arg0_7:findTF("top/return_btn"), function()
+	onButton(arg0_7, arg0_7._tf:Find("top/return_btn"), function()
 		arg0_7:emit(var0_0.ON_BACK)
 	end)
 	onButton(arg0_7, arg0_7.top:Find("daka_count"), function()
 		arg0_7:emit(ThirdAnniversarySquareMediator.ON_OPEN_TOWERCLIMBING_SIGNED)
 	end)
-	onButton(arg0_7, arg0_7:findTF("top/return_main_btn"), function()
+	onButton(arg0_7, arg0_7._tf:Find("top/return_main_btn"), function()
 		arg0_7:emit(var0_0.ON_HOME)
 	end)
-	onButton(arg0_7, arg0_7:findTF("top/help_btn"), function()
+	onButton(arg0_7, arg0_7._tf:Find("top/help_btn"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.qingdianguangchang_help.tip

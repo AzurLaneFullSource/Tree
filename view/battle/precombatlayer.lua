@@ -40,16 +40,16 @@ end
 
 function var0_0.CommonInit(arg0_4)
 	arg0_4.eventTriggers = {}
-	arg0_4._startBtn = arg0_4:findTF("right/start")
-	arg0_4._costContainer = arg0_4:findTF("right/start/cost_container")
+	arg0_4._startBtn = arg0_4.rtAdapt:Find("right/start")
+	arg0_4._costContainer = arg0_4.rtAdapt:Find("right/start/cost_container")
 	arg0_4._popup = arg0_4._costContainer:Find("popup")
 	arg0_4._costText = arg0_4._popup:Find("Text")
-	arg0_4._moveLayer = arg0_4:findTF("moveLayer")
+	arg0_4._moveLayer = arg0_4._tf:Find("moveLayer")
 
-	local var0_4 = arg0_4:findTF("middle")
+	local var0_4 = arg0_4.rtAdapt:Find("middle")
 
-	arg0_4._autoToggle = arg0_4:findTF("auto_toggle")
-	arg0_4._autoSubToggle = arg0_4:findTF("sub_toggle_container/sub_toggle")
+	arg0_4._autoToggle = arg0_4.rtAdapt:Find("auto_toggle")
+	arg0_4._autoSubToggle = arg0_4.rtAdapt:Find("sub_toggle_container/sub_toggle")
 	arg0_4._fleetInfo = var0_4:Find("fleet_info")
 	arg0_4._fleetNameText = var0_4:Find("fleet_info/fleet_name/Text")
 	arg0_4._fleetNumText = var0_4:Find("fleet_info/fleet_number")
@@ -74,34 +74,34 @@ function var0_0.CommonInit(arg0_4)
 		arg0_4._gridTFs[TeamType.Submarine][iter0_4] = arg0_4._gridFrame:Find("submarine_" .. iter0_4)
 	end
 
-	arg0_4._nextPage = arg0_4:findTF("middle/nextPage")
-	arg0_4._prevPage = arg0_4:findTF("middle/prevPage")
+	arg0_4._nextPage = arg0_4.rtAdapt:Find("middle/nextPage")
+	arg0_4._prevPage = arg0_4.rtAdapt:Find("middle/prevPage")
 	arg0_4._heroContainer = var0_4:Find("HeroContainer")
 	arg0_4._checkBtn = var0_4:Find("checkBtn")
-	arg0_4._blurPanel = arg0_4:findTF("blur_panel")
-	arg0_4.topPanel = arg0_4:findTF("top", arg0_4._blurPanel)
-	arg0_4.topPanelBg = arg0_4:findTF("top_bg", arg0_4._blurPanel)
-	arg0_4._backBtn = arg0_4:findTF("back_btn", arg0_4.topPanel)
-	arg0_4._spoilsContainer = arg0_4:findTF("right/infomation/atlasloot/spoils/items/items_container")
-	arg0_4._item = arg0_4:findTF("right/infomation/atlasloot/spoils/items/item_tpl")
+	arg0_4._blurPanel = arg0_4._tf:Find("blur_panel")
+	arg0_4.topPanel = arg0_4._blurPanel:Find("top")
+	arg0_4.topPanelBg = arg0_4._blurPanel:Find("top_bg")
+	arg0_4._backBtn = arg0_4.topPanel:Find("back_btn")
+	arg0_4._spoilsContainer = arg0_4.rtAdapt:Find("right/infomation/atlasloot/spoils/items/items_container")
+	arg0_4._item = arg0_4.rtAdapt:Find("right/infomation/atlasloot/spoils/items/item_tpl")
 
 	SetActive(arg0_4._item, false)
 
-	arg0_4._goals = arg0_4:findTF("right/infomation/target/goal")
+	arg0_4._goals = arg0_4.rtAdapt:Find("right/infomation/target/goal")
 	arg0_4._heroInfo = arg0_4:getTpl("heroInfo")
 	arg0_4._starTpl = arg0_4:getTpl("star_tpl")
 
-	setText(findTF(arg0_4._tf, "middle/gear_score/vanguard/line/Image/Text1"), i18n("pre_combat_vanguard"))
-	setText(findTF(arg0_4._tf, "middle/gear_score/main/line/Image/Text1"), i18n("pre_combat_main"))
-	setText(findTF(arg0_4._tf, "middle/gear_score/submarine/line/Image/text1"), i18n("pre_combat_submarine"))
+	setText(arg0_4.rtAdapt:Find("middle/gear_score/vanguard/line/Image/Text1"), i18n("pre_combat_vanguard"))
+	setText(arg0_4.rtAdapt:Find("middle/gear_score/main/line/Image/Text1"), i18n("pre_combat_main"))
+	setText(arg0_4.rtAdapt:Find("middle/gear_score/submarine/line/Image/text1"), i18n("pre_combat_submarine"))
 	setText(arg0_4._costContainer:Find("title"), i18n("pre_combat_consume"))
-	setText(findTF(arg0_4._tf, "right/infomation/target/title/GameObject"), i18n("pre_combat_targets"))
-	setText(findTF(arg0_4._tf, "right/infomation/atlasloot/atlasloot/title/GameObject"), i18n("pre_combat_atlasloot"))
+	setText(arg0_4.rtAdapt:Find("right/infomation/target/title/GameObject"), i18n("pre_combat_targets"))
+	setText(arg0_4.rtAdapt:Find("right/infomation/atlasloot/atlasloot/title/GameObject"), i18n("pre_combat_atlasloot"))
 	setText(arg0_4._startBtn:Find("text"), i18n("pre_combat_start"))
 	setText(arg0_4._startBtn:Find("text_en"), i18n("pre_combat_start_en"))
 
-	arg0_4._middle = arg0_4:findTF("middle")
-	arg0_4._right = arg0_4:findTF("right")
+	arg0_4._middle = arg0_4.rtAdapt:Find("middle")
+	arg0_4._right = arg0_4.rtAdapt:Find("right")
 
 	setAnchoredPosition(arg0_4._middle, {
 		x = -840
@@ -110,7 +110,7 @@ function var0_0.CommonInit(arg0_4)
 		x = 470
 	})
 
-	arg0_4.guideDesc = arg0_4:findTF("guideDesc", arg0_4._middle)
+	arg0_4.guideDesc = arg0_4._middle:Find("guideDesc")
 
 	if arg0_4.contextData.stageId then
 		arg0_4:SetStageID(arg0_4.contextData.stageId)
@@ -132,10 +132,10 @@ function var0_0.Register(arg0_5)
 
 		arg0_7.name = "info"
 
-		local var0_7 = findTF(arg0_7, "info")
-		local var1_7 = findTF(var0_7, "stars")
+		local var0_7 = arg0_7:Find("info")
+		local var1_7 = var0_7:Find("stars")
 		local var2_7 = arg1_7.energy <= Ship.ENERGY_MID
-		local var3_7 = findTF(var0_7, "energy")
+		local var3_7 = var0_7:Find("energy")
 
 		if var2_7 then
 			local var4_7, var5_7 = arg1_7:getEnergyPrint()
@@ -165,8 +165,8 @@ function var0_0.Register(arg0_5)
 			warning("找不到船形, shipConfigId: " .. arg1_7.configId)
 		end
 
-		setImageSprite(findTF(var0_7, "type"), var10_7, true)
-		setText(findTF(var0_7, "frame/lv_contain/lv"), arg1_7.level)
+		setImageSprite(var0_7:Find("type"), var10_7, true)
+		setText(var0_7:Find("frame/lv_contain/lv"), arg1_7.level)
 
 		if var8_7.ship_exp_award > 0 then
 			local var11_7 = getProxy(ActivityProxy):getBuffShipList()[arg1_7:getGroupId()]
@@ -195,12 +195,12 @@ function var0_0.Register(arg0_5)
 		arg0_5:emit(PreCombatMediator.OPEN_SHIP_INFO, arg1_8.id, arg2_8)
 	end)
 	arg0_5._formationLogic:AddBeginDrag(function(arg0_9)
-		local var0_9 = findTF(arg0_9, "info")
+		local var0_9 = arg0_9:Find("info")
 
 		SetActive(var0_9, false)
 	end)
 	arg0_5._formationLogic:AddEndDrag(function(arg0_10)
-		local var0_10 = findTF(arg0_10, "info")
+		local var0_10 = arg0_10:Find("info")
 
 		SetActive(var0_10, true)
 	end)
@@ -347,9 +347,9 @@ function var0_0.SetStageID(arg0_22, arg1_22)
 	end
 
 	local var8_22 = {
-		findTF(arg0_22._goals, "goal_tpl"),
-		findTF(arg0_22._goals, "goal_sink"),
-		findTF(arg0_22._goals, "goal_time")
+		arg0_22._goals:Find("goal_tpl"),
+		arg0_22._goals:Find("goal_sink"),
+		arg0_22._goals:Find("goal_time")
 	}
 	local var9_22 = {
 		var0_22.objective_1,

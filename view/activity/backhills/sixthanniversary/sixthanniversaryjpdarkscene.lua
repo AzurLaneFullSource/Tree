@@ -14,45 +14,45 @@ end
 function var0_0.init(arg0_2)
 	var0_0.super.init(arg0_2)
 
-	arg0_2.top = arg0_2:findTF("top")
-	arg0_2._bg = arg0_2:findTF("BG")
-	arg0_2.countText = arg0_2:findTF("top/Count/Text")
+	arg0_2.top = arg0_2._tf:Find("top")
+	arg0_2._bg = arg0_2._tf:Find("BG")
+	arg0_2.countText = arg0_2._tf:Find("top/Count/Text")
 
-	setText(arg0_2:findTF("top/Count/explain"), i18n("jp6th_lihoushan_pt1"))
+	setText(arg0_2._tf:Find("top/Count/explain"), i18n("jp6th_lihoushan_pt1"))
 
-	arg0_2.levelcontainer = arg0_2:findTF("upper")
+	arg0_2.levelcontainer = arg0_2._tf:Find("upper")
 	arg0_2.player = getProxy(PlayerProxy):getRawData()
 	arg0_2.activityID = ActivityConst.MINIGAME_ZUMA
 	arg0_2.config = pg.activity_template[arg0_2.activityID]
 	arg0_2.arrowPosYList = {}
 
 	for iter0_2 = 1, 7 do
-		local var0_2 = arg0_2:findTF(tostring(iter0_2), arg0_2.levelcontainer)
+		local var0_2 = arg0_2._tf:Find(tostring(iter0_2), arg0_2.levelcontainer)
 
-		arg0_2.arrowPosYList[iter0_2] = arg0_2:findTF("arrow", var0_2).localPosition.y
+		arg0_2.arrowPosYList[iter0_2] = var0_2:Find("arrow").localPosition.y
 	end
 end
 
 function var0_0.didEnter(arg0_3)
-	onButton(arg0_3, arg0_3:findTF("top/Back"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/Back"), function()
 		arg0_3:onBackPressed()
 	end, SFX_CANCEL)
-	onButton(arg0_3, arg0_3:findTF("top/Home"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/Home"), function()
 		arg0_3:quickExitFunc()
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("top/Help"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/Help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.jp6th_lihoushan_help.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("top/Shop"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/Shop"), function()
 		arg0_3:emit(SixthAnniversaryJPDarkMediator.GO_SCENE, SCENE.ZUMA_PT_SHOP)
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("top/Task"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/Task"), function()
 		arg0_3:emit(SixthAnniversaryJPDarkMediator.GO_SCENE, SCENE.LAUNCH_BALL_TASK)
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("BG/door"), function()
+	onButton(arg0_3, arg0_3._tf:Find("BG/door"), function()
 		pg.SceneAnimMgr.GetInstance():SixthAnniversaryJPCoverGoScene(SCENE.SIXTH_ANNIVERSARY_JP)
 	end, SFX_PANEL)
 	arg0_3:UpdateView()
@@ -75,14 +75,14 @@ function var0_0.UpdateLevels(arg0_11)
 	arg0_11.curIndex = arg0_11.finishCnt < arg0_11.maxCnt and arg0_11.finishCnt + 1 or -1
 
 	for iter0_11 = 1, 7 do
-		local var0_11 = arg0_11:findTF(tostring(iter0_11), arg0_11.levelcontainer)
+		local var0_11 = arg0_11._tf:Find(tostring(iter0_11), arg0_11.levelcontainer)
 		local var1_11 = arg0_11:GetLevelStatus(iter0_11)
 
 		arg0_11:UpdateLevelByStatus(var0_11, var1_11)
 	end
 
 	for iter1_11 = 1, 3 do
-		local var2_11 = arg0_11:findTF("role" .. iter1_11, arg0_11.levelcontainer)
+		local var2_11 = arg0_11.levelcontainer:Find("role" .. iter1_11)
 		local var3_11 = LaunchBallActivityMgr.CheckZhuanShuAble(arg0_11.activityID, iter1_11)
 		local var4_11 = LaunchBallActivityMgr.IsFinishZhuanShu(arg0_11.activityID, iter1_11)
 
@@ -96,7 +96,7 @@ function var0_0.UpdateLevels(arg0_11)
 		end, SFX_PANEL)
 	end
 
-	local var5_11 = arg0_11:findTF("endless", arg0_11.levelcontainer)
+	local var5_11 = arg0_11.levelcontainer:Find("endless")
 	local var6_11 = arg0_11.finishCnt >= arg0_11.maxCnt
 
 	setActive(var5_11, var6_11)
@@ -131,26 +131,26 @@ end
 
 function var0_0.UpdateLevelByStatus(arg0_16, arg1_16, arg2_16)
 	if arg2_16 == var0_0.STATUS_LOCK then
-		setActive(arg0_16:findTF("lock", arg1_16), true)
-		setActive(arg0_16:findTF("title/lock", arg1_16), true)
-		setActive(arg0_16:findTF("fog", arg1_16), false)
-		setActive(arg0_16:findTF("tag", arg1_16), false)
+		setActive(arg1_16:Find("lock"), true)
+		setActive(arg1_16:Find("title/lock"), true)
+		setActive(arg1_16:Find("fog"), false)
+		setActive(arg1_16:Find("tag"), false)
 		onButton(arg0_16, arg1_16, function()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("jp6th_lihoushan_time"))
 		end, SFX_PANEL)
 	elseif arg2_16 == var0_0.STATUS_FOG then
-		setActive(arg0_16:findTF("lock", arg1_16), false)
-		setActive(arg0_16:findTF("title/lock", arg1_16), false)
-		setActive(arg0_16:findTF("fog", arg1_16), true)
-		setActive(arg0_16:findTF("tag", arg1_16), false)
+		setActive(arg1_16:Find("lock"), false)
+		setActive(arg1_16:Find("title/lock"), false)
+		setActive(arg1_16:Find("fog"), true)
+		setActive(arg1_16:Find("tag"), false)
 		onButton(arg0_16, arg1_16, function()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("jp6th_lihoushan_order"))
 		end, SFX_PANEL)
 	elseif arg2_16 == var0_0.STATUS_STORY then
-		setActive(arg0_16:findTF("lock", arg1_16), false)
-		setActive(arg0_16:findTF("title/lock", arg1_16), false)
-		setActive(arg0_16:findTF("fog", arg1_16), false)
-		setActive(arg0_16:findTF("tag", arg1_16), false)
+		setActive(arg1_16:Find("lock"), false)
+		setActive(arg1_16:Find("title/lock"), false)
+		setActive(arg1_16:Find("fog"), false)
+		setActive(arg1_16:Find("tag"), false)
 		onButton(arg0_16, arg1_16, function()
 			local var0_19 = arg0_16.config.config_client.zumaStory[tonumber(arg1_16.name)]
 
@@ -159,16 +159,16 @@ function var0_0.UpdateLevelByStatus(arg0_16, arg1_16, arg2_16)
 			end)
 		end, SFX_PANEL)
 	elseif arg2_16 == var0_0.STATUS_NOROMAL then
-		setActive(arg0_16:findTF("lock", arg1_16), false)
-		setActive(arg0_16:findTF("title/lock", arg1_16), false)
-		setActive(arg0_16:findTF("fog", arg1_16), false)
-		setActive(arg0_16:findTF("tag", arg1_16), true)
+		setActive(arg1_16:Find("lock"), false)
+		setActive(arg1_16:Find("title/lock"), false)
+		setActive(arg1_16:Find("fog"), false)
+		setActive(arg1_16:Find("tag"), true)
 		onButton(arg0_16, arg1_16, function()
 			LaunchBallActivityMgr.OpenGame(LaunchBallGameConst.round_type_juqing, tonumber(arg1_16.name))
 		end, SFX_PANEL)
 	end
 
-	local var0_16 = arg0_16:findTF("arrow", arg1_16)
+	local var0_16 = arg1_16:Find("arrow")
 
 	LeanTween.cancel(var0_16.gameObject)
 
@@ -190,7 +190,7 @@ function var0_0.UpdateCount(arg0_22)
 end
 
 function var0_0.UpdateTaskTip(arg0_23)
-	setActive(arg0_23:findTF("Task/Tip", arg0_23.top), LaunchBallTaskMgr.GetRedTip())
+	setActive(arg0_23.top:Find("Task/Tip"), LaunchBallTaskMgr.GetRedTip())
 end
 
 function var0_0.onBackPressed(arg0_24)

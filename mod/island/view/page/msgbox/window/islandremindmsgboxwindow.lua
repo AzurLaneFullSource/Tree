@@ -7,9 +7,9 @@ end
 function var0_0.OnLoaded(arg0_2)
 	var0_0.super.OnLoaded(arg0_2)
 
-	arg0_2.remindToggle = arg0_2:findTF("remind")
+	arg0_2.remindToggle = arg0_2._tf:Find("remind")
 
-	setText(arg0_2:findTF("remind/Text"), i18n("island_no_remind_today"))
+	setText(arg0_2._tf:Find("remind/Text"), i18n("island_no_remind_today"))
 end
 
 function var0_0.OnInit(arg0_3)

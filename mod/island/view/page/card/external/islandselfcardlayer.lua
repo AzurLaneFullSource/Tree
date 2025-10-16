@@ -112,13 +112,19 @@ function var0_0.didEnter(arg0_11)
 		pg.UIMgr.GetInstance():BlurPanel(arg0_11._tf)
 	end
 
+	onButton(arg0_11, arg0_11._tf:Find("panel/help"), function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.island_helpbtn_card.tip
+		})
+	end, SFX_PANEL)
 	onButton(arg0_11, arg0_11._tf:Find("close"), function()
 		arg0_11:PlayHideAnim()
 	end, SFX_PANEL)
 	onButton(arg0_11, arg0_11.photoSwitchBtn, function()
-		local var0_13 = arg0_11.island:GetCardDiyAgency():GetIds()
+		local var0_14 = arg0_11.island:GetCardDiyAgency():GetIds()
 
-		arg0_11.setPhotoBox:ExecuteAction("Show", var0_13, arg0_11.photoId)
+		arg0_11.setPhotoBox:ExecuteAction("Show", var0_14, arg0_11.photoId)
 	end, SFX_PANEL)
 	onButton(arg0_11, arg0_11.editBtn, function()
 		arg0_11:ShowEditPanel()
@@ -136,233 +142,233 @@ function var0_0.didEnter(arg0_11)
 	arg0_11:Flush()
 end
 
-function var0_0.InitAchvUIList(arg0_18)
-	arg0_18.achvUIList:make(function(arg0_19, arg1_19, arg2_19)
-		if arg0_19 == UIItemList.EventInit then
-			onButton(arg0_18, arg2_19, function()
-				local var0_20 = arg0_18.island:GetAchievementAgency():GetGotGroupMaxStageList()
+function var0_0.InitAchvUIList(arg0_19)
+	arg0_19.achvUIList:make(function(arg0_20, arg1_20, arg2_20)
+		if arg0_20 == UIItemList.EventInit then
+			onButton(arg0_19, arg2_20, function()
+				local var0_21 = arg0_19.island:GetAchievementAgency():GetGotGroupMaxStageList()
 
-				arg0_18.setAchvsBox:ExecuteAction("Show", var0_20, Clone(arg0_18.card.achvList))
+				arg0_19.setAchvsBox:ExecuteAction("Show", var0_21, Clone(arg0_19.card.achvList))
 			end, SFX_PANEL)
-		elseif arg0_19 == UIItemList.EventUpdate then
-			arg0_18:UpdataAchvItem(arg1_19, arg2_19)
+		elseif arg0_20 == UIItemList.EventUpdate then
+			arg0_19:UpdataAchvItem(arg1_20, arg2_20)
 		end
 	end)
 end
 
-function var0_0.ShowEditPanel(arg0_21)
-	local var0_21 = arg0_21._tf:InverseTransformPoint(arg0_21.editBtn.position)
+function var0_0.ShowEditPanel(arg0_22)
+	local var0_22 = arg0_22._tf:InverseTransformPoint(arg0_22.editBtn.position)
 
-	setAnchoredPosition(arg0_21.editPanel:Find("content"), var0_21)
-	setActive(arg0_21.editPanel, true)
+	setAnchoredPosition(arg0_22.editPanel:Find("content"), var0_22)
+	setActive(arg0_22.editPanel, true)
 end
 
-function var0_0.HideEditPanel(arg0_22)
-	setActive(arg0_22.editPanel, false)
+function var0_0.HideEditPanel(arg0_23)
+	setActive(arg0_23.editPanel, false)
 end
 
-function var0_0.UpdataAchvItem(arg0_23, arg1_23, arg2_23)
-	local var0_23 = arg0_23.card.achvList[arg1_23 + 1]
+function var0_0.UpdataAchvItem(arg0_24, arg1_24, arg2_24)
+	local var0_24 = arg0_24.card.achvList[arg1_24 + 1]
 
-	setActive(arg2_23:Find("empty"), not var0_23)
-	setActive(arg2_23:Find("content"), var0_23)
+	setActive(arg2_24:Find("empty"), not var0_24)
+	setActive(arg2_24:Find("content"), var0_24)
 
-	if var0_23 then
-		local var1_23 = pg.island_achievement[var0_23]
+	if var0_24 then
+		local var1_24 = pg.island_achievement[var0_24]
 
-		LoadImageSpriteAtlasAsync("islandachievement", "achv_stage_" .. var1_23.stage, arg2_23:Find("content/Image"), true)
-		setText(arg2_23:Find("content/Text"), var1_23.name)
+		LoadImageSpriteAtlasAsync("islandachievement", "achv_stage_" .. var1_24.stage, arg2_24:Find("content/Image"), true)
+		setText(arg2_24:Find("content/Text"), var1_24.name)
 	end
 end
 
-function var0_0.Flush(arg0_24)
-	arg0_24:UpdataPhoto()
-	arg0_24:UpdataLabels()
-	arg0_24:UpdataInfos()
+function var0_0.Flush(arg0_25)
+	arg0_25:UpdataPhoto()
+	arg0_25:UpdataLabels()
+	arg0_25:UpdataInfos()
 end
 
-function var0_0.UpdataPhoto(arg0_25)
-	arg0_25.photoId = tonumber(arg0_25.card.photoStr)
+function var0_0.UpdataPhoto(arg0_26)
+	arg0_26.photoId = tonumber(arg0_26.card.photoStr)
 
-	if arg0_25.photoId then
-		local var0_25 = pg.island_card_diy[arg0_25.photoId].resource
+	if arg0_26.photoId then
+		local var0_26 = pg.island_card_diy[arg0_26.photoId].resource
 
-		LoadImageSpriteAsync(var0_25, arg0_25.photoTF, true)
+		LoadImageSpriteAsync(var0_26, arg0_26.photoTF, true)
 	end
 end
 
-function var0_0.UpdataLabels(arg0_26)
-	arg0_26.labels = arg0_26.card:GetLabelList()
+function var0_0.UpdataLabels(arg0_27)
+	arg0_27.labels = arg0_27.card:GetLabelList()
 
-	table.sort(arg0_26.labels, CompareFuncs({
-		function(arg0_27)
-			return -arg0_27.num
-		end,
+	table.sort(arg0_27.labels, CompareFuncs({
 		function(arg0_28)
-			return arg0_28.id
+			return -arg0_28.num
+		end,
+		function(arg0_29)
+			return arg0_29.id
 		end
 	}))
 
-	for iter0_26 = 1, var0_0.LABEL_SHOW_CNT + 1 do
-		local var0_26 = arg0_26.labelsTF:GetChild(iter0_26 - 1)
-		local var1_26 = iter0_26 <= #arg0_26.labels + 1
+	for iter0_27 = 1, var0_0.LABEL_SHOW_CNT + 1 do
+		local var0_27 = arg0_27.labelsTF:GetChild(iter0_27 - 1)
+		local var1_27 = iter0_27 <= #arg0_27.labels + 1
 
-		setActive(var0_26, var1_26)
+		setActive(var0_27, var1_27)
 
-		if var1_26 then
-			if iter0_26 <= #arg0_26.labels then
-				arg0_26:UpdateNoramlLabel(var0_26, arg0_26.labels[iter0_26])
+		if var1_27 then
+			if iter0_27 <= #arg0_27.labels then
+				arg0_27:UpdateNoramlLabel(var0_27, arg0_27.labels[iter0_27])
 			else
-				arg0_26:UpdateGrayLabel(var0_26)
+				arg0_27:UpdateGrayLabel(var0_27)
 			end
 		end
 	end
 end
 
-function var0_0.UpdateNoramlLabel(arg0_29, arg1_29, arg2_29)
-	local var0_29 = pg.island_card_label[arg2_29.id]
+function var0_0.UpdateNoramlLabel(arg0_30, arg1_30, arg2_30)
+	local var0_30 = pg.island_card_label[arg2_30.id]
 
-	LoadImageSpriteAtlasAsync("ui/islandcardui_atlas", "label_bg_" .. var0_29.color, arg1_29, true)
+	LoadImageSpriteAtlasAsync("ui/islandcardui_atlas", "label_bg_" .. var0_30.color, arg1_30, true)
 
-	local var1_29 = var0_0.COLORS[var0_29.color]
+	local var1_30 = var0_0.COLORS[var0_30.color]
 
-	setTextColor(arg1_29:Find("name"), Color.NewHex(var1_29))
-	setTextColor(arg1_29:Find("value"), Color.NewHex(var1_29))
-	setText(arg1_29:Find("name"), var0_29.name)
-	setText(arg1_29:Find("value"), arg2_29.num)
-	removeOnButton(arg1_29)
+	setTextColor(arg1_30:Find("name"), Color.NewHex(var1_30))
+	setTextColor(arg1_30:Find("value"), Color.NewHex(var1_30))
+	setText(arg1_30:Find("name"), var0_30.name)
+	setText(arg1_30:Find("value"), arg2_30.num)
+	removeOnButton(arg1_30)
 end
 
-function var0_0.UpdateGrayLabel(arg0_30, arg1_30)
-	LoadImageSpriteAtlasAsync("ui/islandcardui_atlas", "bg_label_gray", arg1_30, true)
+function var0_0.UpdateGrayLabel(arg0_31, arg1_31)
+	LoadImageSpriteAtlasAsync("ui/islandcardui_atlas", "bg_label_gray", arg1_31, true)
 
-	local var0_30 = #arg0_30.labels == 0
+	local var0_31 = #arg0_31.labels == 0
 
-	setTextColor(arg1_30:Find("name"), Color.NewHex("#F7F7F7"))
-	setText(arg1_30:Find("name"), var0_30 and i18n("island_card_no_label") or i18n("island_card_view_detaills"))
-	setText(arg1_30:Find("value"), "")
+	setTextColor(arg1_31:Find("name"), Color.NewHex("#F7F7F7"))
+	setText(arg1_31:Find("name"), var0_31 and i18n("island_card_no_label") or i18n("island_card_view_detaills"))
+	setText(arg1_31:Find("value"), "")
 
-	if not var0_30 then
-		onButton(arg0_30, arg1_30, function()
-			arg0_30.showLabelBox:ExecuteAction("Show", arg0_30.labels)
+	if not var0_31 then
+		onButton(arg0_31, arg1_31, function()
+			arg0_31.showLabelBox:ExecuteAction("Show", arg0_31.labels)
 		end, SFX_PANEL)
 	else
-		removeOnButton(arg1_30)
+		removeOnButton(arg1_31)
 	end
 end
 
-function var0_0.UpdataInfos(arg0_32)
-	setText(arg0_32.nameTF, arg0_32.card.name)
-	setText(arg0_32.levelTF, "Lv." .. arg0_32.card.level)
-	setText(arg0_32.wordTF, arg0_32.card.word)
-	setText(arg0_32.likeTF, arg0_32.card.likeCnt)
-	setText(arg0_32.visitTF, arg0_32.card.visitCnt)
-	setText(arg0_32.shipTF, arg0_32.card.shipCnt)
-	setText(arg0_32.achvTF, arg0_32.card.achvCnt)
-	setText(arg0_32.bookTF, arg0_32.card.bookCnt)
-	arg0_32.achvUIList:align(var0_0.ACHV_SHOW_CNT)
-end
-
-function var0_0.OnSetNameDone(arg0_33, arg1_33)
-	arg0_33:HideEditPanel()
-	arg0_33.editNameBox:ExecuteAction("Hide")
-
-	arg0_33.card.name = arg1_33
-
+function var0_0.UpdataInfos(arg0_33)
 	setText(arg0_33.nameTF, arg0_33.card.name)
+	setText(arg0_33.levelTF, "Lv." .. arg0_33.card.level)
+	setText(arg0_33.wordTF, arg0_33.card.word)
+	setText(arg0_33.likeTF, arg0_33.card.likeCnt)
+	setText(arg0_33.visitTF, arg0_33.card.visitCnt)
+	setText(arg0_33.shipTF, arg0_33.card.shipCnt)
+	setText(arg0_33.achvTF, arg0_33.card.achvCnt)
+	setText(arg0_33.bookTF, arg0_33.card.bookCnt)
+	arg0_33.achvUIList:align(var0_0.ACHV_SHOW_CNT)
 end
 
-function var0_0.OnSetWordDone(arg0_34, arg1_34)
+function var0_0.OnSetNameDone(arg0_34, arg1_34)
 	arg0_34:HideEditPanel()
-	arg0_34.editWordBox:ExecuteAction("Hide")
+	arg0_34.editNameBox:ExecuteAction("Hide")
 
-	arg0_34.card.word = arg1_34
+	arg0_34.card.name = arg1_34
 
-	setText(arg0_34.wordTF, arg0_34.card.word)
+	setText(arg0_34.nameTF, arg0_34.card.name)
 end
 
-function var0_0.OnSetPhotoDone(arg0_35, arg1_35)
-	arg0_35.setPhotoBox:ExecuteAction("Hide")
+function var0_0.OnSetWordDone(arg0_35, arg1_35)
+	arg0_35:HideEditPanel()
+	arg0_35.editWordBox:ExecuteAction("Hide")
 
-	arg0_35.card.photoStr = arg1_35
+	arg0_35.card.word = arg1_35
 
-	arg0_35:UpdataPhoto()
+	setText(arg0_35.wordTF, arg0_35.card.word)
 end
 
-function var0_0.OnSetAchvsDone(arg0_36, arg1_36)
-	arg0_36.setAchvsBox:ExecuteAction("Hide")
+function var0_0.OnSetPhotoDone(arg0_36, arg1_36)
+	arg0_36.setPhotoBox:ExecuteAction("Hide")
 
-	arg0_36.card.achvList = arg1_36
+	arg0_36.card.photoStr = arg1_36
 
-	arg0_36.achvUIList:align(var0_0.ACHV_SHOW_CNT)
+	arg0_36:UpdataPhoto()
+end
 
-	local var0_36 = {}
+function var0_0.OnSetAchvsDone(arg0_37, arg1_37)
+	arg0_37.setAchvsBox:ExecuteAction("Hide")
 
-	arg0_36.achvUIList:eachActive(function(arg0_37, arg1_37)
-		if arg0_36.card.achvList[arg0_37 + 1] then
-			local var0_37 = arg1_37:Find("content/Image")
+	arg0_37.card.achvList = arg1_37
 
-			var0_37:GetComponent(typeof(CanvasGroup)).alpha = 0
+	arg0_37.achvUIList:align(var0_0.ACHV_SHOW_CNT)
 
-			table.insert(var0_36, function(arg0_38)
-				arg1_37:GetComponent(typeof(Animation)):Play()
+	local var0_37 = {}
 
-				var0_37:GetComponent(typeof(CanvasGroup)).alpha = 1
+	arg0_37.achvUIList:eachActive(function(arg0_38, arg1_38)
+		if arg0_37.card.achvList[arg0_38 + 1] then
+			local var0_38 = arg1_38:Find("content/Image")
 
-				arg0_36:managedTween(LeanTween.delayedCall, function()
-					arg0_38()
+			var0_38:GetComponent(typeof(CanvasGroup)).alpha = 0
+
+			table.insert(var0_37, function(arg0_39)
+				arg1_38:GetComponent(typeof(Animation)):Play()
+
+				var0_38:GetComponent(typeof(CanvasGroup)).alpha = 1
+
+				arg0_37:managedTween(LeanTween.delayedCall, function()
+					arg0_39()
 				end, 0.08, nil)
 			end)
 		end
 	end)
-	seriesAsync(var0_36)
+	seriesAsync(var0_37)
 end
 
-function var0_0.PlayHideAnim(arg0_40)
-	if arg0_40.playingHideAnim then
+function var0_0.PlayHideAnim(arg0_41)
+	if arg0_41.playingHideAnim then
 		return
 	end
 
-	arg0_40.uiAnim:Play("anim_IslandSelfCardUI_out")
+	arg0_41.uiAnim:Play("anim_IslandSelfCardUI_out")
 
-	arg0_40.playingHideAnim = true
+	arg0_41.playingHideAnim = true
 end
 
-function var0_0.willExit(arg0_41)
-	arg0_41.uiAnimEvent:SetEndEvent(nil)
+function var0_0.willExit(arg0_42)
+	arg0_42.uiAnimEvent:SetEndEvent(nil)
 
-	if not arg0_41.contextData.isIslandPage then
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_41._tf)
+	if not arg0_42.contextData.isIslandPage then
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_42._tf)
 	end
 
-	if arg0_41.editNameBox then
-		arg0_41.editNameBox:Destroy()
+	if arg0_42.editNameBox then
+		arg0_42.editNameBox:Destroy()
 
-		arg0_41.editNameBox = nil
+		arg0_42.editNameBox = nil
 	end
 
-	if arg0_41.editWordBox then
-		arg0_41.editWordBox:Destroy()
+	if arg0_42.editWordBox then
+		arg0_42.editWordBox:Destroy()
 
-		arg0_41.editWordBox = nil
+		arg0_42.editWordBox = nil
 	end
 
-	if arg0_41.setPhotoBox then
-		arg0_41.setPhotoBox:Destroy()
+	if arg0_42.setPhotoBox then
+		arg0_42.setPhotoBox:Destroy()
 
-		arg0_41.setPhotoBox = nil
+		arg0_42.setPhotoBox = nil
 	end
 
-	if arg0_41.setAchvsBox then
-		arg0_41.setAchvsBox:Destroy()
+	if arg0_42.setAchvsBox then
+		arg0_42.setAchvsBox:Destroy()
 
-		arg0_41.setAchvsBox = nil
+		arg0_42.setAchvsBox = nil
 	end
 
-	if arg0_41.showLabelBox then
-		arg0_41.showLabelBox:Destroy()
+	if arg0_42.showLabelBox then
+		arg0_42.showLabelBox:Destroy()
 
-		arg0_41.showLabelBox = nil
+		arg0_42.showLabelBox = nil
 	end
 end
 

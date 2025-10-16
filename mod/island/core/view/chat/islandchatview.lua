@@ -11,20 +11,20 @@ function var0_0.GetUIName(arg0_2)
 end
 
 function var0_0.SetUIParent(arg0_3, arg1_3)
-	setParent(arg1_3, arg0_3.parent)
+	return arg0_3.parent
 end
 
 function var0_0.FirstFlush(arg0_4)
-	arg0_4.settingsBtn = arg0_4:findTF("top/settings")
-	arg0_4.uiChannelList = UIItemList.New(arg0_4:findTF("top/channels"), arg0_4:findTF("top/channels/tpl"))
-	arg0_4.sendChanncelBtn = arg0_4:findTF("send_panel/channel_btn")
-	arg0_4.sendChanncelTxt = arg0_4:findTF("send_panel/channel_btn/Text"):GetComponent(typeof(Text))
-	arg0_4.roomNumTxt = arg0_4:findTF("top/settings/Text"):GetComponent(typeof(Text))
-	arg0_4.scrollrect = arg0_4:findTF("list"):GetComponent("LScrollRect")
-	arg0_4.emojiBtn = arg0_4:findTF("send_panel/input_panel/emoji")
-	arg0_4.sendBtn = arg0_4:findTF("send_panel/send_btn")
-	arg0_4.inputField = arg0_4:findTF("send_panel/input_panel/input"):GetComponent(typeof(InputField))
-	arg0_4.uiSendChanncelList = UIItemList.New(arg0_4:findTF("send_panel/channel_sel_panel"), arg0_4:findTF("send_panel/channel_sel_panel/tpl"))
+	arg0_4.settingsBtn = arg0_4._tf:Find("top/settings")
+	arg0_4.uiChannelList = UIItemList.New(arg0_4._tf:Find("top/channels"), arg0_4._tf:Find("top/channels/tpl"))
+	arg0_4.sendChanncelBtn = arg0_4._tf:Find("send_panel/channel_btn")
+	arg0_4.sendChanncelTxt = arg0_4._tf:Find("send_panel/channel_btn/Text"):GetComponent(typeof(Text))
+	arg0_4.roomNumTxt = arg0_4._tf:Find("top/settings/Text"):GetComponent(typeof(Text))
+	arg0_4.scrollrect = arg0_4._tf:Find("list"):GetComponent("LScrollRect")
+	arg0_4.emojiBtn = arg0_4._tf:Find("send_panel/input_panel/emoji")
+	arg0_4.sendBtn = arg0_4._tf:Find("send_panel/send_btn")
+	arg0_4.inputField = arg0_4._tf:Find("send_panel/input_panel/input"):GetComponent(typeof(InputField))
+	arg0_4.uiSendChanncelList = UIItemList.New(arg0_4._tf:Find("send_panel/channel_sel_panel"), arg0_4._tf:Find("send_panel/channel_sel_panel/tpl"))
 	arg0_4.channelValue = IslandChatConst.CHANNEL_ALL
 	arg0_4.sendChannelValue = IslandChatConst.CHANNEL_ISLAND
 	arg0_4.cards = {}

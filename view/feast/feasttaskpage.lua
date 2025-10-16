@@ -8,27 +8,27 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.getAllBtn = arg0_2:findTF("main/getall")
+	arg0_2.getAllBtn = arg0_2._tf:Find("main/getall")
 	arg0_2.getAllTip = arg0_2.getAllBtn:Find("tip")
-	arg0_2.levelTxt = arg0_2:findTF("main/level/Text"):GetComponent(typeof(Text))
-	arg0_2.progressTxt = arg0_2:findTF("main/level/value/Text"):GetComponent(typeof(Text))
-	arg0_2.progress = arg0_2:findTF("main/level/progress/bar")
-	arg0_2.lastAwardItem = arg0_2:findTF("main/level/item")
+	arg0_2.levelTxt = arg0_2._tf:Find("main/level/Text"):GetComponent(typeof(Text))
+	arg0_2.progressTxt = arg0_2._tf:Find("main/level/value/Text"):GetComponent(typeof(Text))
+	arg0_2.progress = arg0_2._tf:Find("main/level/progress/bar")
+	arg0_2.lastAwardItem = arg0_2._tf:Find("main/level/item")
 	arg0_2.lastAwardLvTxt = arg0_2.lastAwardItem:Find("lock/Text"):GetComponent(typeof(Text))
 
 	setText(arg0_2.lastAwardItem:Find("get"), i18n("feast_task_pt_get"))
 	setText(arg0_2.lastAwardItem:Find("got"), i18n("feast_task_pt_got"))
-	setText(arg0_2:findTF("main/tip"), i18n("feast_click_to_close"))
-	setText(arg0_2:findTF("main/level/value/label"), i18n("feast_task_pt_label"))
+	setText(arg0_2._tf:Find("main/tip"), i18n("feast_click_to_close"))
+	setText(arg0_2._tf:Find("main/level/value/label"), i18n("feast_task_pt_label"))
 
-	arg0_2.taskTip = arg0_2:findTF("main/toggles/task/tip")
+	arg0_2.taskTip = arg0_2._tf:Find("main/toggles/task/tip")
 	arg0_2.toggles = {
-		arg0_2:findTF("main/toggles/pt"),
-		arg0_2:findTF("main/toggles/task")
+		arg0_2._tf:Find("main/toggles/pt"),
+		arg0_2._tf:Find("main/toggles/task")
 	}
 	arg0_2.scrollRects = {
-		arg0_2:findTF("main/pt/scrollrect"):GetComponent("LScrollRect"),
-		arg0_2:findTF("main/task/scrollrect"):GetComponent("LScrollRect")
+		arg0_2._tf:Find("main/pt/scrollrect"):GetComponent("LScrollRect"),
+		arg0_2._tf:Find("main/task/scrollrect"):GetComponent("LScrollRect")
 	}
 	arg0_2.cardCls = {
 		FeastPtCard,

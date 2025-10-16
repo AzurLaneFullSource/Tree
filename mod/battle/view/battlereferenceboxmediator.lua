@@ -19,7 +19,7 @@ function var4_0.Initialize(arg0_2)
 	arg0_2._dataProxy = arg0_2._state:GetProxyByName(var0_0.Battle.BattleDataProxy.__name)
 	arg0_2._sceneMediator = arg0_2._state:GetSceneMediator()
 	arg0_2._boxContainer = GameObject("BoxContainer")
-	arg0_2._detailContainer = arg0_2._state:GetUI():findGO("CharacterDetailContainer")
+	arg0_2._detailContainer = arg0_2._state:GetUI()._tf:Find("CharacterDetailContainer").gameObject
 	arg0_2._unitBoxList = {}
 	arg0_2._bulletBoxList = {}
 	arg0_2._wallBoxList = {}
@@ -182,7 +182,7 @@ end
 function var4_0.createDetail(arg0_12, arg1_12)
 	local var0_12 = var0_0.Battle.BattleUnitDetailView.New()
 	local var1_12 = arg1_12:GetIFF()
-	local var2_12 = arg0_12._state:GetUI():findTF("CharacterDetailContainer/" .. arg1_12:GetIFF())
+	local var2_12 = arg0_12._state:GetUI()._tf:Find("CharacterDetailContainer/" .. arg1_12:GetIFF())
 	local var3_12 = arg0_12._sceneMediator:InstantiateCharacterComponent("CharacterDetailContainer/detailPanel")
 
 	var3_12.transform:SetParent(var2_12, true)

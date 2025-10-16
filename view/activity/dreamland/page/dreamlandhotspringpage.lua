@@ -6,14 +6,14 @@ end
 
 function var0_0.OnLoaded(arg0_2)
 	arg0_2.slots = {}
-	arg0_2.uiItemList = UIItemList.New(arg0_2:findTF("bg/list"), arg0_2:findTF("bg/list/tpl"))
+	arg0_2.uiItemList = UIItemList.New(arg0_2._tf:Find("bg/list"), arg0_2._tf:Find("bg/list/tpl"))
 	arg0_2.iconList = {
 		"icon_1",
 		"icon_2",
 		"icon_3"
 	}
 
-	setText(arg0_2:findTF("bg/list/tpl/lock/Text"), i18n("dreamland_spring_lock_tip"))
+	setText(arg0_2._tf:Find("bg/list/tpl/lock/Text"), i18n("dreamland_spring_lock_tip"))
 end
 
 function var0_0.OnInit(arg0_3)
@@ -54,7 +54,7 @@ function var0_0.Flush(arg0_10, arg1_10)
 	local var0_10 = arg1_10:GetHotSpringMaxCnt()
 	local var1_10 = arg1_10:GetHotSpringAddition()
 
-	setText(arg0_10:findTF("bg/Text"), i18n("dreamland_spring_tip", var1_10))
+	setText(arg0_10._tf:Find("bg/Text"), i18n("dreamland_spring_tip", var1_10))
 
 	arg0_10.gameData = arg1_10
 

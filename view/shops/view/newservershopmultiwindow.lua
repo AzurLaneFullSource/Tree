@@ -14,7 +14,7 @@ function var0_0.InitWindow(arg0_1, arg1_1, arg2_1)
 		local var4_1 = getProxy(ActivityProxy):getActivityById(Item.getConfigData(var0_1.id).link_id)
 		local var5_1 = pg.TimeMgr.GetInstance():STimeDescC(var4_1.stopTime, "%m.%d")
 
-		setText(arg0_1:findTF("Text", arg0_1.timeLimitTF), i18n("eventshop_time_hint", var5_1))
+		setText(arg0_1.timeLimitTF:Find("Text"), i18n("eventshop_time_hint", var5_1))
 	end
 
 	local var6_1 = Drop.New({

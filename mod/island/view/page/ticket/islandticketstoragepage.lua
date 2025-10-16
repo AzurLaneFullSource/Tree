@@ -39,6 +39,12 @@ function var0_0.OnLoaded(arg0_2)
 end
 
 function var0_0.OnInit(arg0_5)
+	onButton(arg0_5, arg0_5._tf:Find("frame/title/help"), function()
+		arg0_5:ShowMsgBox({
+			type = IslandMsgBox.TYPE_WHITOUT_BTN,
+			content = i18n("island_helpbtn_speedup")
+		})
+	end, SFX_PANEL)
 	onButton(arg0_5, arg0_5._tf:Find("frame/close"), function()
 		arg0_5:Hide()
 	end, SFX_PANEL)
@@ -48,15 +54,15 @@ function var0_0.OnInit(arg0_5)
 	onButton(arg0_5, arg0_5.confirmBtn, function()
 		arg0_5:Hide()
 	end, SFX_PANEL)
-	onToggle(arg0_5, arg0_5.ascToggleTF, function(arg0_9)
-		arg0_5.isAsc = arg0_9
+	onToggle(arg0_5, arg0_5.ascToggleTF, function(arg0_10)
+		arg0_5.isAsc = arg0_10
 
 		arg0_5:SetTotalCount()
 	end, SFX_PANEL)
-	onToggle(arg0_5, arg0_5.sortToggleTF, function(arg0_10)
-		local var0_10 = arg0_10 and "anim_IslandTicketStorageUI_sort_in" or "anim_IslandTicketStorageUI_sort_out"
+	onToggle(arg0_5, arg0_5.sortToggleTF, function(arg0_11)
+		local var0_11 = arg0_11 and "anim_IslandTicketStorageUI_sort_in" or "anim_IslandTicketStorageUI_sort_out"
 
-		arg0_5.sortPanelAnim:Play(var0_10)
+		arg0_5.sortPanelAnim:Play(var0_11)
 	end, SFX_PANEL)
 	onButton(arg0_5, arg0_5.sortByValidBtn, function()
 		arg0_5.sortType = var0_0.SORT_TYPES.VALID
@@ -76,97 +82,97 @@ function var0_0.OnInit(arg0_5)
 	arg0_5.cards = {}
 end
 
-function var0_0.OnInitItem(arg0_13, arg1_13)
-	local var0_13 = IslandTicketCard.New(arg1_13)
+function var0_0.OnInitItem(arg0_14, arg1_14)
+	local var0_14 = IslandTicketCard.New(arg1_14)
 
-	arg0_13.cards[arg1_13] = var0_13
+	arg0_14.cards[arg1_14] = var0_14
 end
 
-function var0_0.OnUpdateItem(arg0_14, arg1_14, arg2_14)
-	local var0_14 = arg0_14.cards[arg2_14]
+function var0_0.OnUpdateItem(arg0_15, arg1_15, arg2_15)
+	local var0_15 = arg0_15.cards[arg2_15]
 
-	if not var0_14 then
-		arg0_14:OnInitItem(arg2_14)
+	if not var0_15 then
+		arg0_15:OnInitItem(arg2_15)
 
-		var0_14 = arg0_14.cards[arg2_14]
+		var0_15 = arg0_15.cards[arg2_15]
 	end
 
-	local var1_14 = arg0_14.displays[arg1_14 + 1]
+	local var1_15 = arg0_15.displays[arg1_15 + 1]
 
-	var0_14:Update(var1_14)
+	var0_15:Update(var1_15)
 end
 
-function var0_0.OnShow(arg0_15)
-	arg0_15:BlurPanel()
+function var0_0.OnShow(arg0_16)
+	arg0_16:BlurPanel()
 
-	arg0_15.ticketAgency = getProxy(IslandProxy):GetIsland():GetTicketAgency()
-	arg0_15.displays = arg0_15.ticketAgency:GetAllTicketList()
-	arg0_15.isAsc = true
-	arg0_15.sortType = var0_0.SORT_TYPES.SPEED_UP
+	arg0_16.ticketAgency = getProxy(IslandProxy):GetIsland():GetTicketAgency()
+	arg0_16.displays = arg0_16.ticketAgency:GetAllTicketList()
+	arg0_16.isAsc = true
+	arg0_16.sortType = var0_0.SORT_TYPES.SPEED_UP
 
-	triggerButton(arg0_15.sortBySpeedupBtn)
+	triggerButton(arg0_16.sortBySpeedupBtn)
 end
 
-function var0_0.SetTotalCount(arg0_16)
-	if arg0_16.sortType == var0_0.SORT_TYPES.VALID then
-		arg0_16:SortByValid()
-	elseif arg0_16.sortType == var0_0.SORT_TYPES.SPEED_UP then
-		arg0_16:SortBySpeedup()
+function var0_0.SetTotalCount(arg0_17)
+	if arg0_17.sortType == var0_0.SORT_TYPES.VALID then
+		arg0_17:SortByValid()
+	elseif arg0_17.sortType == var0_0.SORT_TYPES.SPEED_UP then
+		arg0_17:SortBySpeedup()
 	end
 
-	arg0_16.scrollRect:SetTotalCount(#arg0_16.displays, -1)
+	arg0_17.scrollRect:SetTotalCount(#arg0_17.displays, -1)
 end
 
-function var0_0.SortBySpeedup(arg0_17)
-	local var0_17 = arg0_17.isAsc and 1 or -1
+function var0_0.SortBySpeedup(arg0_18)
+	local var0_18 = arg0_18.isAsc and 1 or -1
 
-	table.sort(arg0_17.displays, CompareFuncs({
-		function(arg0_18)
-			return var0_17 * arg0_18:GetTime()
-		end,
+	table.sort(arg0_18.displays, CompareFuncs({
 		function(arg0_19)
-			return var0_17 * (arg0_19:IsForever() and 1 or 0)
+			return var0_18 * arg0_19:GetTime()
 		end,
 		function(arg0_20)
-			return var0_17 * arg0_20:GetEndTime()
+			return var0_18 * (arg0_20:IsForever() and 1 or 0)
 		end,
 		function(arg0_21)
-			return var0_17 * arg0_21.id
+			return var0_18 * arg0_21:GetEndTime()
+		end,
+		function(arg0_22)
+			return var0_18 * arg0_22.id
 		end
 	}))
 end
 
-function var0_0.SortByValid(arg0_22)
-	local var0_22 = arg0_22.isAsc and 1 or -1
+function var0_0.SortByValid(arg0_23)
+	local var0_23 = arg0_23.isAsc and 1 or -1
 
-	table.sort(arg0_22.displays, CompareFuncs({
-		function(arg0_23)
-			return var0_22 * (arg0_23:IsForever() and 1 or 0)
-		end,
+	table.sort(arg0_23.displays, CompareFuncs({
 		function(arg0_24)
-			return var0_22 * arg0_24:GetEndTime()
+			return var0_23 * (arg0_24:IsForever() and 1 or 0)
 		end,
 		function(arg0_25)
-			return var0_22 * arg0_25:GetTime()
+			return var0_23 * arg0_25:GetEndTime()
 		end,
 		function(arg0_26)
-			return var0_22 * arg0_26.id
+			return var0_23 * arg0_26:GetTime()
+		end,
+		function(arg0_27)
+			return var0_23 * arg0_27.id
 		end
 	}))
 end
 
-function var0_0.OnHide(arg0_27)
-	arg0_27:UnBlurPanel()
+function var0_0.OnHide(arg0_28)
+	arg0_28:UnBlurPanel()
 end
 
-function var0_0.OnDestroy(arg0_28)
-	ClearLScrollrect(arg0_28.scrollRect)
+function var0_0.OnDestroy(arg0_29)
+	ClearLScrollrect(arg0_29.scrollRect)
 
-	for iter0_28, iter1_28 in pairs(arg0_28.cards) do
-		iter1_28:Dispose()
+	for iter0_29, iter1_29 in pairs(arg0_29.cards) do
+		iter1_29:Dispose()
 	end
 
-	arg0_28.cards = {}
+	arg0_29.cards = {}
 end
 
 return var0_0

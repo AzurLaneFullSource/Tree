@@ -5,10 +5,11 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.frameTr = arg0_2:findTF("frame")
-	arg0_2.title = arg0_2:findTF("frame/Board/Top/text/text"):GetComponent("Text")
+	arg0_2.frameTr = arg0_2._tf:Find("frame")
+	arg0_2.title = arg0_2._tf:Find("frame/Board/Top/text/text"):GetComponent("Text")
+	arg0_2.uiitemList = UIItemList.New(arg0_2._tf:Find("frame/Board/Content/award/content"), arg0_2._tf:Find("frame/Board/Content/award/content/tpl"))
 
-	setText(arg0_2:findTF("frame/tip"), i18n("island_click_close"))
+	setText(arg0_2._tf:Find("frame/tip"), i18n("island_click_close"))
 
 	arg0_2.animator = arg0_2.frameTr:GetComponent(typeof(Animation))
 	arg0_2.aniDft = arg0_2.frameTr:GetComponent(typeof(DftAniEvent))
@@ -21,8 +22,6 @@ function var0_0.OnLoaded(arg0_2)
 	function arg0_2.scrollRect.onUpdateItem(arg0_4, arg1_4)
 		arg0_2:OnUpdateItem(arg0_4, arg1_4)
 	end
-
-	arg0_2.uiitemList = UIItemList.New(arg0_2:findTF("frame/Board/Content/award/content"), arg0_2:findTF("frame/Board/Content/award/content/tpl"))
 end
 
 function var0_0.Show(arg0_5, arg1_5)

@@ -35,11 +35,11 @@ function var0_0.init(arg0_2, ...)
 				local var1_3 = arg0_2.pageDic[var0_3.id]
 
 				if var0_3.id == 50063 or var0_3.id == 50058 then
-					local var2_3 = arg0_2:findTF("tip", arg2_3)
+					local var2_3 = arg2_3:Find("tip")
 
 					setActive(var2_3, var0_3:readyToAchieve())
 				else
-					setActive(arg0_2:findTF("tip", arg2_3), false)
+					setActive(arg2_3:Find("tip"), false)
 				end
 
 				onToggle(arg0_2, arg2_3, function(arg0_5)
@@ -53,7 +53,7 @@ function var0_0.init(arg0_2, ...)
 						end
 
 						arg0_2:selectActivity(var0_3)
-						quickPlayAnimation(arg0_2:findTF("on", arg2_3), "Anim_ALYCoreActivityUI_tabs_selected")
+						quickPlayAnimation(arg2_3:Find("on"), "Anim_ALYCoreActivityUI_tabs_selected")
 					end
 				end, SFX_PANEL)
 			end

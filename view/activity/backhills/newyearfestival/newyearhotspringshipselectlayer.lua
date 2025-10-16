@@ -6,9 +6,9 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.counterTxt = arg0_2:findTF("frame/top/value/Text"):GetComponent(typeof(Text))
-	arg0_2.cardContainer = arg0_2:findTF("frame/panel")
-	arg0_2.mainPanel = arg0_2:findTF("frame")
+	arg0_2.counterTxt = arg0_2._tf:Find("frame/top/value/Text"):GetComponent(typeof(Text))
+	arg0_2.cardContainer = arg0_2._tf:Find("frame/panel")
+	arg0_2.mainPanel = arg0_2._tf:Find("frame")
 	arg0_2.addShipTpl = arg0_2.cardContainer:Find("AddShipTpl")
 	arg0_2.extendShipTpl = arg0_2.cardContainer:Find("ExtendShipTpl")
 	arg0_2.shipCardTpl = arg0_2.cardContainer:Find("ShipCardTpl")
@@ -20,7 +20,7 @@ function var0_0.init(arg0_2)
 	arg0_2.cardContainer = arg0_2.cardContainer:Find("Scroll View/Content")
 	arg0_2.shipCards = {}
 
-	setText(arg0_2:findTF("frame/desc"), i18n("hotspring_tip1"))
+	setText(arg0_2._tf:Find("frame/desc"), i18n("hotspring_tip1"))
 end
 
 function var0_0.SetActivity(arg0_3, arg1_3)
@@ -34,8 +34,8 @@ function var0_0.didEnter(arg0_4)
 	end, SFX_PANEL)
 
 	local function var0_4(arg0_6)
-		setActive(arg0_4:findTF("frame/panel/ArrowRight"), arg0_6.x < 0.01)
-		setActive(arg0_4:findTF("frame/panel/ArrowLeft"), arg0_6.x > 0.99)
+		setActive(arg0_4._tf:Find("frame/panel/ArrowRight"), arg0_6.x < 0.01)
+		setActive(arg0_4._tf:Find("frame/panel/ArrowLeft"), arg0_6.x > 0.99)
 	end
 
 	onScroll(arg0_4, arg0_4.cardContainer.parent, var0_4)

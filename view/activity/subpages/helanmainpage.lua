@@ -7,7 +7,7 @@ function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
 	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.btnList = arg0_1:findTF("btn_list", arg0_1.bg)
+	arg0_1.btnList = arg0_1.bg:Find("btn_list")
 	arg0_1.build_bgtime = arg0_1.bg:Find("btn_list/build/build_bgtime")
 	arg0_1.build_time = arg0_1.bg:Find("btn_list/build/build_bgtime/time")
 	arg0_1.shop_bgtime = arg0_1.bg:Find("btn_list/shop/shop_bgtime")

@@ -25,17 +25,17 @@ function var0_0.initData(arg0_5)
 end
 
 function var0_0.initUI(arg0_6)
-	arg0_6.poolListContainer = arg0_6:findTF("PoolList")
-	arg0_6.poolTpl = arg0_6:findTF("PoolTpl")
-	arg0_6.preBtn = arg0_6:findTF("PreBtn")
-	arg0_6.nextBtn = arg0_6:findTF("NextBtn")
+	arg0_6.poolListContainer = arg0_6._tf:Find("PoolList")
+	arg0_6.poolTpl = arg0_6._tf:Find("PoolTpl")
+	arg0_6.preBtn = arg0_6._tf:Find("PreBtn")
+	arg0_6.nextBtn = arg0_6._tf:Find("NextBtn")
 	arg0_6.nextBtnCom = GetComponent(arg0_6.nextBtn, "Button")
 	arg0_6.poolList = UIItemList.New(arg0_6.poolListContainer, arg0_6.poolTpl)
 
 	arg0_6.poolList:make(function(arg0_7, arg1_7, arg2_7)
 		if arg0_7 == UIItemList.EventUpdate then
 			local var0_7 = arg1_7 + 1
-			local var1_7 = arg0_6:findTF("PoolImg", arg2_7)
+			local var1_7 = arg2_7:Find("PoolImg")
 
 			setImageSprite(var1_7, GetSpriteFromAtlas("ui/prayselectpoolpage_atlas", "pool" .. var0_7))
 			onToggle(arg0_6, arg2_7, function(arg0_8)

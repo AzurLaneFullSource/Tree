@@ -8,14 +8,14 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.width = arg0_2._tf.rect.width
 	arg0_2.height = arg0_2._tf.rect.height
 	arg0_2.prantLeftBound = arg0_2._tf.parent.rect.width / 2
-	arg0_2.nameTxt = arg0_2:findTF("name"):GetComponent(typeof(Text))
-	arg0_2.themeNameTxt = arg0_2:findTF("theme"):GetComponent(typeof(Text))
-	arg0_2.capacityTxt = arg0_2:findTF("capacity/Text"):GetComponent(typeof(Text))
-	arg0_2.descTxt = arg0_2:findTF("Text"):GetComponent(typeof(Text))
-	arg0_2.icon = arg0_2:findTF("icon"):GetComponent(typeof(Image))
-	arg0_2.cntTxt = arg0_2:findTF("cnt/Text"):GetComponent(typeof(Text))
+	arg0_2.nameTxt = arg0_2._tf:Find("name"):GetComponent(typeof(Text))
+	arg0_2.themeNameTxt = arg0_2._tf:Find("theme"):GetComponent(typeof(Text))
+	arg0_2.capacityTxt = arg0_2._tf:Find("capacity/Text"):GetComponent(typeof(Text))
+	arg0_2.descTxt = arg0_2._tf:Find("Text"):GetComponent(typeof(Text))
+	arg0_2.icon = arg0_2._tf:Find("icon"):GetComponent(typeof(Image))
+	arg0_2.cntTxt = arg0_2._tf:Find("cnt/Text"):GetComponent(typeof(Text))
 
-	setActive(arg0_2:findTF("cnt"), false)
+	setActive(arg0_2._tf:Find("cnt"), false)
 end
 
 function var0_0.Show(arg0_3, arg1_3, arg2_3)

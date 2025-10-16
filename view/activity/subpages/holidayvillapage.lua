@@ -1,21 +1,21 @@
 local var0_0 = class("HolidayVillaPage", import("view.base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.signTF = arg0_1:findTF("sign", arg0_1.bg)
-	arg0_1.getBtn = arg0_1:findTF("get", arg0_1.signTF)
-	arg0_1.got = arg0_1:findTF("got", arg0_1.signTF)
-	arg0_1.getBtn_tip = arg0_1:findTF("get/tip", arg0_1.signTF)
-	arg0_1.countbg = arg0_1:findTF("count_bg", arg0_1.signTF)
-	arg0_1.countText = arg0_1:findTF("count_bg/count", arg0_1.signTF)
-	arg0_1.go = arg0_1:findTF("go_btn", arg0_1.signTF)
-	arg0_1.Notbtn = arg0_1:findTF("Not_unlocked", arg0_1.signTF)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.signTF = arg0_1.bg:Find("sign")
+	arg0_1.getBtn = arg0_1.signTF:Find("get")
+	arg0_1.got = arg0_1.signTF:Find("got")
+	arg0_1.getBtn_tip = arg0_1.signTF:Find("get/tip")
+	arg0_1.countbg = arg0_1.signTF:Find("count_bg")
+	arg0_1.countText = arg0_1.signTF:Find("count_bg/count")
+	arg0_1.go = arg0_1.signTF:Find("go_btn")
+	arg0_1.Notbtn = arg0_1.signTF:Find("Not_unlocked")
 	arg0_1.list = {
-		arg0_1:findTF("list/unfinished_1", arg0_1.signTF),
-		arg0_1:findTF("list/unfinished_2", arg0_1.signTF),
-		arg0_1:findTF("list/unfinished_3", arg0_1.signTF),
-		arg0_1:findTF("list/unfinished_4", arg0_1.signTF),
-		arg0_1:findTF("list/unfinished_5", arg0_1.signTF)
+		arg0_1.signTF:Find("list/unfinished_1"),
+		arg0_1.signTF:Find("list/unfinished_2"),
+		arg0_1.signTF:Find("list/unfinished_3"),
+		arg0_1.signTF:Find("list/unfinished_4"),
+		arg0_1.signTF:Find("list/unfinished_5")
 	}
 
 	setActive(arg0_1.go, false)
@@ -102,9 +102,9 @@ function var0_0.OnUpdateFlush(arg0_8)
 	end
 
 	for iter0_8, iter1_8 in ipairs(arg0_8.list) do
-		setActive(arg0_8:findTF("accomplish", arg0_8.list[iter0_8]), var0_8 or iter0_8 < arg0_8.nday)
+		setActive(arg0_8.list[iter0_8]:Find("accomplish"), var0_8 or iter0_8 < arg0_8.nday)
 		setImageAlpha(iter1_8, (var0_8 or iter0_8 < arg0_8.nday) and 0 or 1)
-		setActive(arg0_8:findTF("Check_point", arg0_8.list[iter0_8]), not var0_8 and iter0_8 == arg0_8.nday)
+		setActive(arg0_8.list[iter0_8]:Find("Check_point"), not var0_8 and iter0_8 == arg0_8.nday)
 	end
 end
 

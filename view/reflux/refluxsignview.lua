@@ -26,7 +26,7 @@ function var0_0.initData(arg0_5)
 end
 
 function var0_0.initUI(arg0_6)
-	local var0_6 = arg0_6:findTF("DayImg")
+	local var0_6 = arg0_6._tf:Find("DayImg")
 
 	arg0_6.daySpriteList = {}
 
@@ -37,20 +37,20 @@ function var0_0.initUI(arg0_6)
 		table.insert(arg0_6.daySpriteList, var2_6)
 	end
 
-	arg0_6.dayTpl = arg0_6:findTF("DayTpl")
-	arg0_6.scrollRectTF = arg0_6:findTF("ScrollRect")
-	arg0_6.dayContainerTF = arg0_6:findTF("ScrollRect/Container")
-	arg0_6.signCountText = arg0_6:findTF("DayCount/Text")
+	arg0_6.dayTpl = arg0_6._tf:Find("DayTpl")
+	arg0_6.scrollRectTF = arg0_6._tf:Find("ScrollRect")
+	arg0_6.dayContainerTF = arg0_6._tf:Find("ScrollRect/Container")
+	arg0_6.signCountText = arg0_6._tf:Find("DayCount/Text")
 	arg0_6.dayUIItemList = UIItemList.New(arg0_6.dayContainerTF, arg0_6.dayTpl)
 
 	arg0_6.dayUIItemList:make(function(arg0_7, arg1_7, arg2_7)
 		if arg0_7 == UIItemList.EventUpdate then
-			local var0_7 = arg0_6:findTF("Item1/Icon", arg2_7)
-			local var1_7 = arg0_6:findTF("Item2/Icon", arg2_7)
-			local var2_7 = arg0_6:findTF("Item3/Icon", arg2_7)
-			local var3_7 = arg0_6:findTF("DayImg", arg2_7)
-			local var4_7 = arg0_6:findTF("Got", arg2_7)
-			local var5_7 = arg0_6:findTF("GotMask", arg2_7)
+			local var0_7 = arg2_7:Find("Item1/Icon")
+			local var1_7 = arg2_7:Find("Item2/Icon")
+			local var2_7 = arg2_7:Find("Item3/Icon")
+			local var3_7 = arg2_7:Find("DayImg")
+			local var4_7 = arg2_7:Find("Got")
+			local var5_7 = arg2_7:Find("GotMask")
 			local var6_7 = {
 				var0_7,
 				var1_7,

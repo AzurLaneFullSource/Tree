@@ -34,7 +34,7 @@ function var0_0.init(arg0_2)
 end
 
 function var0_0.didEnter(arg0_4)
-	onButton(arg0_4, arg0_4:findTF("close", arg0_4.awardWindow), function()
+	onButton(arg0_4, arg0_4.awardWindow:Find("close"), function()
 		arg0_4:_close()
 	end, SFX_CANCEL)
 	seriesAsync({

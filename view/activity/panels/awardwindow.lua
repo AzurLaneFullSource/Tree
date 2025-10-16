@@ -5,12 +5,12 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.closeBtn = arg0_2:findTF("window/top/btnBack")
-	arg0_2.uiItemList = UIItemList.New(arg0_2:findTF("window/panel/list"), arg0_2:findTF("window/panel/list/item"))
-	arg0_2.currentTitle = arg0_2:findTF("window/pt/title"):GetComponent(typeof(Text))
-	arg0_2.currentTxt = arg0_2:findTF("window/pt/Text"):GetComponent(typeof(Text))
+	arg0_2.closeBtn = arg0_2._tf:Find("window/top/btnBack")
+	arg0_2.uiItemList = UIItemList.New(arg0_2._tf:Find("window/panel/list"), arg0_2._tf:Find("window/panel/list/item"))
+	arg0_2.currentTitle = arg0_2._tf:Find("window/pt/title"):GetComponent(typeof(Text))
+	arg0_2.currentTxt = arg0_2._tf:Find("window/pt/Text"):GetComponent(typeof(Text))
 
-	setText(arg0_2:findTF("window/top/bg/infomation"), i18n("world_expedition_reward_display"))
+	setText(arg0_2._tf:Find("window/top/bg/infomation"), i18n("world_expedition_reward_display"))
 end
 
 function var0_0.OnInit(arg0_3)

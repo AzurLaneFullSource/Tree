@@ -23,9 +23,9 @@ function var0_0.init(arg0_2)
 		arg0_2:emit(var0_0.ON_CLOSE)
 	end)
 
-	arg0_2.togglesTF = arg0_2:findTF("frame/toggles")
+	arg0_2.togglesTF = arg0_2._tf:Find("frame/toggles")
 
-	local var0_2 = arg0_2:findTF("frame/pages")
+	local var0_2 = arg0_2._tf:Find("frame/pages")
 
 	arg0_2.schedulePage = LinerLogSchedulePage.New(var0_2, arg0_2)
 	arg0_2.roomPage = LinerLogRoomPage.New(var0_2, arg0_2)
@@ -35,18 +35,18 @@ function var0_0.init(arg0_2)
 		[var0_0.PAGE_ROOM] = arg0_2.roomPage,
 		[var0_0.PAGE_EVENT] = arg0_2.eventPage
 	}
-	arg0_2.reasoningPage = LinerReasoningPage.New(arg0_2:findTF("pages"), arg0_2)
+	arg0_2.reasoningPage = LinerReasoningPage.New(arg0_2._tf:Find("pages"), arg0_2)
 end
 
 function var0_0.didEnter(arg0_4)
-	onButton(arg0_4, arg0_4:findTF("frame/close"), function()
+	onButton(arg0_4, arg0_4._tf:Find("frame/close"), function()
 		arg0_4:onBackPressed()
 	end, SFX_PANEL)
-	onButton(arg0_4, arg0_4:findTF("mask"), function()
+	onButton(arg0_4, arg0_4._tf:Find("mask"), function()
 		arg0_4:onBackPressed()
 	end, SFX_PANEL)
 	eachChild(arg0_4.togglesTF, function(arg0_7)
-		setText(arg0_4:findTF("Text", arg0_7), i18n(var1_0[tonumber(arg0_7.name)]))
+		setText(arg0_7:Find("Text"), i18n(var1_0[tonumber(arg0_7.name)]))
 		onButton(arg0_4, arg0_7, function()
 			local var0_8 = tonumber(arg0_7.name)
 
@@ -68,14 +68,14 @@ function var0_0.didEnter(arg0_4)
 
 	local var0_4 = arg0_4.contextData.page or var2_0
 
-	triggerButton(arg0_4:findTF(tostring(var0_4), arg0_4.togglesTF), true)
+	triggerButton(arg0_4._tf:Find(tostring(var0_4), arg0_4.togglesTF), true)
 	arg0_4:UpdateTips()
 end
 
 function var0_0.UpdateToggles(arg0_9)
-	setActive(arg0_9:findTF("3/lock", arg0_9.togglesTF), not LinerLogEventPage.IsUnlcok())
+	setActive(arg0_9.togglesTF:Find("3/lock"), not LinerLogEventPage.IsUnlcok())
 	eachChild(arg0_9.togglesTF, function(arg0_10)
-		setActive(arg0_9:findTF("selected", arg0_10), tonumber(arg0_10.name) == arg0_9.curPageIdx)
+		setActive(arg0_10:Find("selected"), tonumber(arg0_10.name) == arg0_9.curPageIdx)
 	end)
 end
 
@@ -104,7 +104,7 @@ function var0_0.UpdateTips(arg0_13)
 	eachChild(arg0_13.togglesTF, function(arg0_14)
 		local var0_14 = tonumber(arg0_14.name)
 
-		setActive(arg0_13:findTF("tip", arg0_14), arg0_13.pages[var0_14].IsTip())
+		setActive(arg0_14:Find("tip"), arg0_13.pages[var0_14].IsTip())
 	end)
 end
 

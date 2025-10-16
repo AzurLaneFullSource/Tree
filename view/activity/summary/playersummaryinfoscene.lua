@@ -17,9 +17,9 @@ function var0_0.setSummaryInfo(arg0_4, arg1_4)
 end
 
 function var0_0.init(arg0_5)
-	arg0_5.backBtn = arg0_5:findTF("bg/back_btn")
-	arg0_5.pageContainer = arg0_5:findTF("bg/main/pages")
-	arg0_5.pageFootContainer = arg0_5:findTF("bg/main/page_foot")
+	arg0_5.backBtn = arg0_5._tf:Find("bg/back_btn")
+	arg0_5.pageContainer = arg0_5._tf:Find("bg/main/pages")
+	arg0_5.pageFootContainer = arg0_5._tf:Find("bg/main/page_foot")
 end
 
 function var0_0.didEnter(arg0_6)
@@ -51,13 +51,13 @@ end
 function var0_0.initSummaryInfo(arg0_10)
 	arg0_10.loadingPage = SummaryPageLoading.New(arg0_10.pageContainer:Find("loading"))
 	arg0_10.pages = {
-		SummaryPage1.New(arg0_10:findTF("page1", arg0_10.pageContainer)),
-		SummaryPage2.New(arg0_10:findTF("page2", arg0_10.pageContainer)),
-		SummaryPage3.New(arg0_10:findTF("page3", arg0_10.pageContainer)),
-		SummaryPage4.New(arg0_10:findTF("page4", arg0_10.pageContainer)),
-		SummaryPage4.New(arg0_10:findTF("page4_1", arg0_10.pageContainer)),
-		SummaryPage4.New(arg0_10:findTF("page4_2", arg0_10.pageContainer)),
-		SummaryPage5.New(arg0_10:findTF("page5", arg0_10.pageContainer))
+		SummaryPage1.New(arg0_10.pageContainer:Find("page1")),
+		SummaryPage2.New(arg0_10.pageContainer:Find("page2")),
+		SummaryPage3.New(arg0_10.pageContainer:Find("page3")),
+		SummaryPage4.New(arg0_10.pageContainer:Find("page4")),
+		SummaryPage4.New(arg0_10.pageContainer:Find("page4_1")),
+		SummaryPage4.New(arg0_10.pageContainer:Find("page4_2")),
+		SummaryPage5.New(arg0_10.pageContainer:Find("page5"))
 	}
 
 	local var0_10 = arg0_10.summaryInfoVO.isProPose and 3 or 2
@@ -125,7 +125,7 @@ function var0_0.registerFootEvent(arg0_19)
 end
 
 function var0_0.registerDrag(arg0_21)
-	arg0_21:addVerticalDrag(arg0_21:findTF("bg"), function()
+	arg0_21:addVerticalDrag(arg0_21._tf:Find("bg"), function()
 		arg0_21:updatePageFoot(arg0_21.currPage + 1)
 	end, function()
 		arg0_21:updatePageFoot(arg0_21.currPage - 1)

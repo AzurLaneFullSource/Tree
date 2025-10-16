@@ -11,10 +11,10 @@ function var0_0.init(arg0_2)
 end
 
 function var0_0.FindUI(arg0_3)
-	local var0_3 = arg0_3:findTF("Top")
+	local var0_3 = arg0_3._tf:Find("Top")
 
-	arg0_3.bg = arg0_3:findTF("mask")
-	arg0_3.backBtn = arg0_3:findTF("BackBtn", var0_3)
+	arg0_3.bg = arg0_3._tf:Find("mask")
+	arg0_3.backBtn = var0_3:Find("BackBtn")
 	arg0_3.slots = {}
 
 	for iter0_3 = 1, 6 do

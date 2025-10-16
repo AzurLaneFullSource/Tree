@@ -3,12 +3,12 @@ local var0_0 = class("BlackFridayWithSignInPage", import(".BlackFridayPage"))
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.signInUIlist = UIItemList.New(arg0_1:findTF("AD/signIn"), arg0_1:findTF("AD/signIn/award"))
+	arg0_1.signInUIlist = UIItemList.New(arg0_1._tf:Find("AD/signIn"), arg0_1._tf:Find("AD/signIn/award"))
 	arg0_1.toggles = {
-		arg0_1:findTF("AD/toggles/skin"),
-		arg0_1:findTF("AD/toggles/sign")
+		arg0_1._tf:Find("AD/toggles/skin"),
+		arg0_1._tf:Find("AD/toggles/sign")
 	}
-	arg0_1.lockSignBtn = arg0_1:findTF("AD/toggles/sign/lock")
+	arg0_1.lockSignBtn = arg0_1._tf:Find("AD/toggles/sign/lock")
 end
 
 function var0_0.OnFirstFlush(arg0_2)

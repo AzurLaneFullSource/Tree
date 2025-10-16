@@ -33,8 +33,8 @@ function var0_0.setMessages(arg0_4, arg1_4)
 end
 
 function var0_0.init(arg0_5)
-	arg0_5.close = arg0_5:findTF("close")
-	arg0_5.frame = arg0_5:findTF("frame")
+	arg0_5.close = arg0_5._tf:Find("close")
+	arg0_5.frame = arg0_5._tf:Find("adapt/frame")
 	arg0_5.contain = arg0_5.frame:Find("contain")
 
 	local var0_5 = arg0_5.contain:Find("ListContainer/list")
@@ -61,19 +61,19 @@ function var0_0.init(arg0_5)
 
 	SetActive(arg0_5.topMsg, false)
 
-	arg0_5.topPublic = arg0_5:findTF("popo_public", arg0_5.topMsg)
+	arg0_5.topPublic = arg0_5.topMsg:Find("popo_public")
 	arg0_5.emoji = arg0_5.frame:Find("contain/ListContainer/inputbg/emoji")
-	arg0_5.changeRoomPanel = arg0_5:findTF("change_room_Panel")
-	arg0_5.roomSendBtns = arg0_5:findTF("frame/bg/type_send", arg0_5.changeRoomPanel)
-	arg0_5.roomRecvBtns = arg0_5:findTF("frame/bg/type_recv", arg0_5.changeRoomPanel)
+	arg0_5.changeRoomPanel = arg0_5._tf:Find("change_room_Panel")
+	arg0_5.roomSendBtns = arg0_5.changeRoomPanel:Find("frame/bg/type_send")
+	arg0_5.roomRecvBtns = arg0_5.changeRoomPanel:Find("frame/bg/type_recv")
 	arg0_5.enterRoomTip = arg0_5.frame:Find("enter_room_tip")
 	arg0_5.enterRoomCG = arg0_5.enterRoomTip:GetComponent(typeof(CanvasGroup))
 	arg0_5.roomBtn = arg0_5.contain:Find("top/room")
 	arg0_5.typeBtns = arg0_5.contain:Find("top/type")
-	arg0_5.inputTF = arg0_5:findTF("frame/bg/InputField", arg0_5.changeRoomPanel):GetComponent(typeof(InputField))
-	arg0_5.switchTpl = arg0_5:findTF("switch_tpl", arg0_5.changeRoomPanel)
-	arg0_5.switchNormalSprite = arg0_5:findTF("switch_normal", arg0_5.changeRoomPanel):GetComponent(typeof(Image)).sprite
-	arg0_5.switchSelectedSprite = arg0_5:findTF("switch_selected", arg0_5.changeRoomPanel):GetComponent(typeof(Image)).sprite
+	arg0_5.inputTF = arg0_5.changeRoomPanel:Find("frame/bg/InputField"):GetComponent(typeof(InputField))
+	arg0_5.switchTpl = arg0_5.changeRoomPanel:Find("switch_tpl")
+	arg0_5.switchNormalSprite = arg0_5.changeRoomPanel:Find("switch_normal"):GetComponent(typeof(Image)).sprite
+	arg0_5.switchSelectedSprite = arg0_5.changeRoomPanel:Find("switch_selected"):GetComponent(typeof(Image)).sprite
 
 	setText(findTF(arg0_5.changeRoomPanel, "frame/bg/label_send"), i18n("notice_label_send"))
 	setText(findTF(arg0_5.changeRoomPanel, "frame/bg/label_recv"), i18n("notice_label_recv"))
@@ -83,13 +83,13 @@ function var0_0.init(arg0_5)
 	setText(findTF(arg0_5.changeRoomPanel, "frame/cancel/Image"), i18n("word_cancel"))
 	setText(findTF(arg0_5.changeRoomPanel, "frame/confirm/Image"), i18n("word_ok"))
 
-	arg0_5.resource = arg0_5:findTF("resource")
-	arg0_5.typeTpl = arg0_5:findTF("type_tpl", arg0_5.resource)
-	arg0_5.normalSprite = arg0_5:findTF("normal", arg0_5.resource):GetComponent(typeof(Image)).sprite
-	arg0_5.selectedSprite = arg0_5:findTF("selected", arg0_5.resource):GetComponent(typeof(Image)).sprite
-	arg0_5.bottomChannelTpl = arg0_5:findTF("channel_tpl", arg0_5.resource)
-	arg0_5.bottomChannelNormalSprite = arg0_5:findTF("channel_normal", arg0_5.resource):GetComponent(typeof(Image)).sprite
-	arg0_5.bottomChannelSelectedSprite = arg0_5:findTF("channel_selected", arg0_5.resource):GetComponent(typeof(Image)).sprite
+	arg0_5.resource = arg0_5._tf:Find("resource")
+	arg0_5.typeTpl = arg0_5.resource:Find("type_tpl")
+	arg0_5.normalSprite = arg0_5.resource:Find("normal"):GetComponent(typeof(Image)).sprite
+	arg0_5.selectedSprite = arg0_5.resource:Find("selected"):GetComponent(typeof(Image)).sprite
+	arg0_5.bottomChannelTpl = arg0_5.resource:Find("channel_tpl")
+	arg0_5.bottomChannelNormalSprite = arg0_5.resource:Find("channel_normal"):GetComponent(typeof(Image)).sprite
+	arg0_5.bottomChannelSelectedSprite = arg0_5.resource:Find("channel_selected"):GetComponent(typeof(Image)).sprite
 
 	local var1_5 = {
 		ChatConst.ChannelAll,
@@ -108,12 +108,12 @@ function var0_0.init(arg0_5)
 	for iter0_5, iter1_5 in pairs(var1_5) do
 		local var2_5 = ChatConst.GetChannelSprite(iter0_5)
 
-		arg0_5.textSprites[iter0_5] = arg0_5:findTF("text_" .. var2_5, arg0_5.resource):GetComponent(typeof(Image)).sprite
-		arg0_5.textSelectedSprites[iter0_5] = arg0_5:findTF("text_" .. var2_5 .. "_selected", arg0_5.resource):GetComponent(typeof(Image)).sprite
-		arg0_5.switchTextSprites[iter0_5] = arg0_5:findTF("text_" .. var2_5 .. "_switch", arg0_5.changeRoomPanel):GetComponent(typeof(Image)).sprite
+		arg0_5.textSprites[iter0_5] = arg0_5.resource:Find("text_" .. var2_5):GetComponent(typeof(Image)).sprite
+		arg0_5.textSelectedSprites[iter0_5] = arg0_5.resource:Find("text_" .. var2_5 .. "_selected"):GetComponent(typeof(Image)).sprite
+		arg0_5.switchTextSprites[iter0_5] = arg0_5.changeRoomPanel:Find("text_" .. var2_5 .. "_switch"):GetComponent(typeof(Image)).sprite
 
 		if table.contains(ChatConst.SendChannels, iter0_5) then
-			arg0_5.bottomChannelTextSprites[iter0_5] = arg0_5:findTF("channel_" .. var2_5, arg0_5.resource):GetComponent(typeof(Image)).sprite
+			arg0_5.bottomChannelTextSprites[iter0_5] = arg0_5.resource:Find("channel_" .. var2_5):GetComponent(typeof(Image)).sprite
 		end
 	end
 
@@ -356,7 +356,7 @@ end
 
 function var0_0.updateRoom(arg0_33)
 	setText(arg0_33.enterRoomTip:Find("text"), i18n("main_notificationLayer_enter_room", arg0_33.player.chatRoomId == 0 and "" or arg0_33.player.chatRoomId))
-	setText(arg0_33:findTF("Text", arg0_33.roomBtn), arg0_33.player.chatRoomId == 0 and i18n("common_not_enter_room") or arg0_33.player.chatRoomId)
+	setText(arg0_33.roomBtn:Find("Text"), arg0_33.player.chatRoomId == 0 and i18n("common_not_enter_room") or arg0_33.player.chatRoomId)
 	arg0_33:showEnterRommTip()
 end
 
@@ -546,7 +546,7 @@ function var0_0.appendOthers(arg0_48, arg1_48, arg2_48)
 	var3_48:update(arg1_48)
 	removeOnButton(var3_48.headTF)
 	onButton(arg0_48, var3_48.headTF, function()
-		local var0_49 = arg0_48:findTF("shipicon/icon", var3_48.tf).position
+		local var0_49 = var3_48.tf:Find("shipicon/icon").position
 
 		arg0_48:emit(NotificationMediator.OPEN_INFO, var0_48, var0_49, arg1_48.content)
 	end, SFX_PANEL)

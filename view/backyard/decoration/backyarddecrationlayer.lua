@@ -19,30 +19,30 @@ end
 function var0_0.init(arg0_2)
 	arg0_2.animation = arg0_2._tf:GetComponent(typeof(Animation))
 	arg0_2.dftAniEvent = arg0_2._tf:GetComponent(typeof(DftAniEvent))
-	arg0_2.adpter = arg0_2:findTF("adpter")
-	arg0_2.pageConainer = arg0_2:findTF("adpter/bottom/animroot/root/pages")
-	arg0_2.bAnimtion = arg0_2:findTF("adpter/bottom"):GetComponent(typeof(Animation))
-	arg0_2.shopBtn = arg0_2:findTF("adpter/shop_btn")
-	arg0_2.saveBtn = arg0_2:findTF("adpter/bottom/animroot/save_btn")
-	arg0_2.clearBtn = arg0_2:findTF("adpter/bottom/animroot/clear_btn")
-	arg0_2.bottomTr = arg0_2:findTF("adpter/bottom")
-	arg0_2.orderBtn = arg0_2:findTF("adpter/bottom/animroot/root/fliter_container/order")
+	arg0_2.adpter = arg0_2._tf:Find("adpter")
+	arg0_2.pageConainer = arg0_2._tf:Find("adpter/bottom/animroot/root/pages")
+	arg0_2.bAnimtion = arg0_2._tf:Find("adpter/bottom"):GetComponent(typeof(Animation))
+	arg0_2.shopBtn = arg0_2._tf:Find("adpter/shop_btn")
+	arg0_2.saveBtn = arg0_2._tf:Find("adpter/bottom/animroot/save_btn")
+	arg0_2.clearBtn = arg0_2._tf:Find("adpter/bottom/animroot/clear_btn")
+	arg0_2.bottomTr = arg0_2._tf:Find("adpter/bottom")
+	arg0_2.orderBtn = arg0_2._tf:Find("adpter/bottom/animroot/root/fliter_container/order")
 	arg0_2.orderBtnTxt = arg0_2.orderBtn:Find("Text"):GetComponent(typeof(Image))
 	arg0_2.orderBtnIcon = arg0_2.orderBtn:Find("icon")
-	arg0_2.filterBtn = arg0_2:findTF("adpter/bottom/animroot/root/fliter_container/filter")
+	arg0_2.filterBtn = arg0_2._tf:Find("adpter/bottom/animroot/root/fliter_container/filter")
 	arg0_2.filterBtnTxt = arg0_2.filterBtn:Find("Text"):GetComponent(typeof(Image))
 	arg0_2.filterBtnTxt.sprite = GetSpriteFromAtlas("ui/NewBackYardDecorateUI_atlas", "text_default")
 
 	arg0_2.filterBtnTxt:SetNativeSize()
 
-	arg0_2.searchInput = arg0_2:findTF("adpter/bottom/animroot/root/fliter_container/search/search")
+	arg0_2.searchInput = arg0_2._tf:Find("adpter/bottom/animroot/root/fliter_container/search/search")
 
 	setText(arg0_2.searchInput:Find("holder"), i18n("courtyard_label_search_holder"))
 
-	arg0_2.searchClear = arg0_2:findTF("adpter/bottom/animroot/root/fliter_container/search/search/clear")
-	arg0_2.hideBtn = arg0_2:findTF("adpter/bottom/animroot/root/fliter_container/hide")
-	arg0_2.showBtn = arg0_2:findTF("adpter/bottom/animroot/show_btn")
-	arg0_2.showPutListBtn = arg0_2:findTF("adpter/putlist_btn")
+	arg0_2.searchClear = arg0_2._tf:Find("adpter/bottom/animroot/root/fliter_container/search/search/clear")
+	arg0_2.hideBtn = arg0_2._tf:Find("adpter/bottom/animroot/root/fliter_container/hide")
+	arg0_2.showBtn = arg0_2._tf:Find("adpter/bottom/animroot/show_btn")
+	arg0_2.showPutListBtn = arg0_2._tf:Find("adpter/putlist_btn")
 	arg0_2.themePage = BackYardDecorationThemePage.New(arg0_2.pageConainer, arg0_2.event, arg0_2.contextData)
 	arg0_2.furniturePage = BackYardDecorationFurniturePage.New(arg0_2.pageConainer, arg0_2.event, arg0_2.contextData)
 	arg0_2.putListPage = BackYardDecorationPutlistPage.New(arg0_2.adpter, arg0_2.event, arg0_2.contextData)
@@ -68,7 +68,7 @@ function var0_0.init(arg0_2)
 		[var8_0] = arg0_2.furniturePage,
 		[var9_0] = arg0_2.furniturePage
 	}
-	arg0_2.themeTag = arg0_2:findTF("adpter/bottom/animroot/root/theme")
+	arg0_2.themeTag = arg0_2._tf:Find("adpter/bottom/animroot/root/theme")
 
 	setText(arg0_2.shopBtn:Find("Text"), i18n("courtyard_label_shop_1"))
 	setText(arg0_2.showPutListBtn:Find("Text"), i18n("courtyard_label_placed_furniture"))
@@ -159,14 +159,14 @@ function var0_0.didEnter(arg0_5)
 	end, SFX_PANEL)
 
 	arg0_5.tags = {
-		arg0_5:findTF("adpter/bottom/animroot/root/tags/1"),
-		arg0_5:findTF("adpter/bottom/animroot/root/tags/2"),
-		arg0_5:findTF("adpter/bottom/animroot/root/tags/3"),
-		arg0_5:findTF("adpter/bottom/animroot/root/tags/4"),
-		arg0_5:findTF("adpter/bottom/animroot/root/tags/5"),
-		arg0_5:findTF("adpter/bottom/animroot/root/tags/6"),
-		arg0_5:findTF("adpter/bottom/animroot/root/tags/7"),
-		arg0_5:findTF("adpter/bottom/animroot/root/tags/8")
+		arg0_5._tf:Find("adpter/bottom/animroot/root/tags/1"),
+		arg0_5._tf:Find("adpter/bottom/animroot/root/tags/2"),
+		arg0_5._tf:Find("adpter/bottom/animroot/root/tags/3"),
+		arg0_5._tf:Find("adpter/bottom/animroot/root/tags/4"),
+		arg0_5._tf:Find("adpter/bottom/animroot/root/tags/5"),
+		arg0_5._tf:Find("adpter/bottom/animroot/root/tags/6"),
+		arg0_5._tf:Find("adpter/bottom/animroot/root/tags/7"),
+		arg0_5._tf:Find("adpter/bottom/animroot/root/tags/8")
 	}
 
 	onNextTick(function()

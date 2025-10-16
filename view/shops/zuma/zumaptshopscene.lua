@@ -40,14 +40,14 @@ function var0_0.initData(arg0_7)
 end
 
 function var0_0.findUI(arg0_8)
-	arg0_8.tpl = arg0_8:findTF("Tpl")
-	arg0_8.containerTF = arg0_8:findTF("Shop/Panel/ScrollView/Viewport/Content")
-	arg0_8.backBtn = arg0_8:findTF("Adapt/Back")
-	arg0_8.helpBtn = arg0_8:findTF("Adapt/Help")
-	arg0_8.ptInfoIcon = arg0_8:findTF("Shop/PTInfo/Icon")
-	arg0_8.ptInfoCountText = arg0_8:findTF("Shop/PTInfo/Count")
+	arg0_8.tpl = arg0_8._tf:Find("Tpl")
+	arg0_8.containerTF = arg0_8._tf:Find("Shop/Panel/ScrollView/Viewport/Content")
+	arg0_8.backBtn = arg0_8._tf:Find("Adapt/Back")
+	arg0_8.helpBtn = arg0_8._tf:Find("Adapt/Help")
+	arg0_8.ptInfoIcon = arg0_8._tf:Find("Shop/PTInfo/Icon")
+	arg0_8.ptInfoCountText = arg0_8._tf:Find("Shop/PTInfo/Count")
 
-	setText(arg0_8:findTF("Tip", arg0_8.tpl), i18n("islandshop_tips2"))
+	setText(arg0_8.tpl:Find("Tip"), i18n("islandshop_tips2"))
 end
 
 function var0_0.addListener(arg0_9)
@@ -70,7 +70,7 @@ function var0_0.addListener(arg0_9)
 			arg0_9.goodTFList[arg1_12] = arg2_12
 
 			onButton(arg0_9, arg2_12, function()
-				if not isActive(arg0_9:findTF("Mask", arg2_12)) then
+				if not isActive(arg2_12:Find("Mask")) then
 					arg0_9:emit(ZumaPTShopMediator.OPEN_ZUMA_PT_SHOP_BUY_WINDOW, arg0_9:getGoodVOByIndex(arg1_12))
 				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("launchball_minigame_shop"))
@@ -107,10 +107,10 @@ function var0_0.updateGoodPanel(arg0_17)
 end
 
 function var0_0.updateTpl(arg0_18, arg1_18, arg2_18)
-	local var0_18 = arg0_18:findTF("Item", arg2_18)
-	local var1_18 = arg0_18:findTF("Name/Name", arg2_18)
-	local var2_18 = arg0_18:findTF("PTCount", arg2_18)
-	local var3_18 = arg0_18:findTF("BuyCount", arg2_18)
+	local var0_18 = arg2_18:Find("Item")
+	local var1_18 = arg2_18:Find("Name/Name")
+	local var2_18 = arg2_18:Find("PTCount")
+	local var3_18 = arg2_18:Find("BuyCount")
 	local var4_18 = arg0_18.goodVOListForShow[arg1_18]
 	local var5_18 = Drop.New({
 		type = var4_18:getConfig("commodity_type"),
@@ -133,9 +133,9 @@ function var0_0.updateTpl(arg0_18, arg1_18, arg2_18)
 		setText(var3_18, math.max(var4_18:GetPurchasableCnt(), 0) .. "/" .. var7_18)
 	end
 
-	local var8_18 = arg0_18:findTF("Mask", arg2_18)
-	local var9_18 = arg0_18:findTF("Lock", var8_18)
-	local var10_18 = arg0_18:findTF("SellOut", var8_18)
+	local var8_18 = arg2_18:Find("Mask")
+	local var9_18 = var8_18:Find("Lock")
+	local var10_18 = var8_18:Find("SellOut")
 	local var11_18 = var7_18 > 0 and var4_18:GetPurchasableCnt() <= 0
 
 	setActive(var8_18, var11_18)

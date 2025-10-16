@@ -12,18 +12,18 @@ function var0_0.getUIName(arg0_3)
 end
 
 function var0_0.OnLoaded(arg0_4)
-	arg0_4._bg = arg0_4:findTF("bg")
+	arg0_4._bg = arg0_4._tf:Find("bg")
 
-	setText(arg0_4:findTF("day/Text", arg0_4._bg), i18n("word_harbour"))
-	setText(arg0_4:findTF("night/Text", arg0_4._bg), i18n("word_harbour"))
+	setText(arg0_4._bg:Find("day/Text"), i18n("word_harbour"))
+	setText(arg0_4._bg:Find("night/Text"), i18n("word_harbour"))
 
 	arg0_4.timeCfg = pg.gameset.main_live_area_time.description
-	arg0_4._coverBtn = arg0_4:findTF("cover_btn")
-	arg0_4._academyBtn = arg0_4:findTF("school_btn")
-	arg0_4._haremBtn = arg0_4:findTF("backyard_btn")
-	arg0_4._commanderBtn = arg0_4:findTF("commander_btn")
-	arg0_4._educateBtn = arg0_4:findTF("educate_btn")
-	arg0_4._islandBtn = arg0_4:findTF("island_btn")
+	arg0_4._coverBtn = arg0_4._tf:Find("cover_btn")
+	arg0_4._academyBtn = arg0_4._tf:Find("school_btn")
+	arg0_4._haremBtn = arg0_4._tf:Find("backyard_btn")
+	arg0_4._commanderBtn = arg0_4._tf:Find("commander_btn")
+	arg0_4._educateBtn = arg0_4._tf:Find("educate_btn")
+	arg0_4._islandBtn = arg0_4._tf:Find("island_btn")
 	arg0_4.islandAwardTF = arg0_4._islandBtn:Find("banners/award")
 
 	setText(arg0_4.islandAwardTF:Find("Text"), i18n("island_post_acceptable"))
@@ -32,8 +32,8 @@ function var0_0.OnLoaded(arg0_4)
 
 	setText(arg0_4.islandEmptyTF:Find("Text"), i18n("island_post_vacant"))
 
-	arg0_4._dormBtn = arg0_4:findTF("dorm_btn")
-	arg0_4._islandBtnEffect = arg0_4:findTF("VX", arg0_4._islandBtn)
+	arg0_4._dormBtn = arg0_4._tf:Find("dorm_btn")
+	arg0_4._islandBtnEffect = arg0_4._islandBtn:Find("VX")
 	arg0_4.coverPage = LivingAreaCoverPage.New(arg0_4._tf, arg0_4.event, {
 		onHide = function()
 			arg0_4:UpdateCoverTip()
@@ -240,19 +240,19 @@ function var0_0.UpdateTime(arg0_22)
 	local var1_22 = var0_22:GetServerHour()
 	local var2_22 = var1_22 < 12
 
-	setActive(arg0_22:findTF("AM", arg0_22._bg), var2_22)
-	setActive(arg0_22:findTF("PM", arg0_22._bg), not var2_22)
+	setActive(arg0_22._bg:Find("AM"), var2_22)
+	setActive(arg0_22._bg:Find("PM"), not var2_22)
 
 	local var3_22 = arg0_22:getCoverType(var1_22)
 
-	setActive(arg0_22:findTF("day", arg0_22._bg), var3_22 == LivingAreaCover.TYPE_DAY)
-	setActive(arg0_22:findTF("night", arg0_22._bg), var3_22 == LivingAreaCover.TYPE_NIGHT)
-	setActive(arg0_22:findTF("lock/day", arg0_22._islandBtn), var3_22 == LivingAreaCover.TYPE_DAY)
-	setActive(arg0_22:findTF("lock/night", arg0_22._islandBtn), var3_22 ~= LivingAreaCover.TYPE_DAY)
+	setActive(arg0_22._bg:Find("day"), var3_22 == LivingAreaCover.TYPE_DAY)
+	setActive(arg0_22._bg:Find("night"), var3_22 == LivingAreaCover.TYPE_NIGHT)
+	setActive(arg0_22._islandBtn:Find("lock/day"), var3_22 == LivingAreaCover.TYPE_DAY)
+	setActive(arg0_22._islandBtn:Find("lock/night"), var3_22 ~= LivingAreaCover.TYPE_DAY)
 
 	local var4_22 = var0_22:CurrentSTimeDesc("%Y/%m/%d", true)
 
-	setText(arg0_22:findTF("date", arg0_22._bg), var4_22)
+	setText(arg0_22._bg:Find("date"), var4_22)
 
 	local var5_22 = var0_22:CurrentSTimeDesc(":%M", true)
 
@@ -260,11 +260,11 @@ function var0_0.UpdateTime(arg0_22)
 		var1_22 = var1_22 - 12
 	end
 
-	setText(arg0_22:findTF("time", arg0_22._bg), var1_22 .. var5_22)
+	setText(arg0_22._bg:Find("time"), var1_22 .. var5_22)
 
 	local var6_22 = EducateHelper.GetWeekStrByNumber(var0_22:GetServerWeek())
 
-	setText(arg0_22:findTF("date/week", arg0_22._bg), var6_22)
+	setText(arg0_22._bg:Find("date/week"), var6_22)
 end
 
 function var0_0.getCoverType(arg0_23, arg1_23)
@@ -302,12 +302,12 @@ function var0_0.UpdateCoverTemp(arg0_25, arg1_25)
 end
 
 function var0_0._loadBg(arg0_26)
-	setImageSprite(arg0_26:findTF("day", arg0_26._bg), GetSpriteFromAtlas(arg0_26.cover:GetBg(LivingAreaCover.TYPE_DAY), ""), true)
-	setImageSprite(arg0_26:findTF("night", arg0_26._bg), GetSpriteFromAtlas(arg0_26.cover:GetBg(LivingAreaCover.TYPE_NIGHT), ""), true)
+	setImageSprite(arg0_26._bg:Find("day"), GetSpriteFromAtlas(arg0_26.cover:GetBg(LivingAreaCover.TYPE_DAY), ""), true)
+	setImageSprite(arg0_26._bg:Find("night"), GetSpriteFromAtlas(arg0_26.cover:GetBg(LivingAreaCover.TYPE_NIGHT), ""), true)
 end
 
 function var0_0.UpdateCoverTip(arg0_27)
-	setActive(arg0_27:findTF("tip", arg0_27._coverBtn), getProxy(LivingAreaCoverProxy):IsTip())
+	setActive(arg0_27._coverBtn:Find("tip"), getProxy(LivingAreaCoverProxy):IsTip())
 end
 
 function var0_0.UpdataIslandTip(arg0_28)

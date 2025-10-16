@@ -17,7 +17,7 @@ function var0_0.didEnter(arg0_3)
 		arg0_3:closeView()
 	end)
 	arg0_3.paintingView:Start()
-	setActive(arg0_3:findTF("Enc"), true)
+	setActive(arg0_3._tf:Find("Enc"), true)
 end
 
 function var0_0.willExit(arg0_5)
@@ -33,7 +33,7 @@ function var0_0.initData(arg0_6)
 end
 
 function var0_0.findUI(arg0_7)
-	arg0_7.painting = arg0_7:findTF("paint")
+	arg0_7.painting = arg0_7._tf:Find("paint")
 	arg0_7.paintingFitter = findTF(arg0_7.painting, "fitter")
 	arg0_7.paintingInitPos = arg0_7.painting.transform.localPosition
 	arg0_7.paintingView = ShipProfilePaintingView.New(arg0_7._tf, arg0_7.painting, true)

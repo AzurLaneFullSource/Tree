@@ -150,7 +150,7 @@ end
 function var0_0.UpdateTask(arg0_10, arg1_10, arg2_10)
 	var0_0.super.UpdateTask(arg0_10, arg1_10, arg2_10)
 
-	local var0_10 = arg0_10:findTF("get_btn", arg2_10)
+	local var0_10 = arg2_10:Find("get_btn")
 	local var1_10 = arg1_10 + 1
 	local var2_10 = arg0_10.taskGroup[arg0_10.nday][var1_10]
 	local var3_10 = arg0_10.taskProxy:getTaskById(var2_10) or arg0_10.taskProxy:getFinishTaskById(var2_10)
@@ -181,7 +181,7 @@ function var0_0.UpdateTask(arg0_10, arg1_10, arg2_10)
 		end
 	end, SFX_PANEL)
 
-	local var4_10 = arg0_10:findTF("got_btn", arg2_10)
+	local var4_10 = arg2_10:Find("got_btn")
 
 	onButton(arg0_10, var4_10, function()
 		arg0_10:displayWindow(true)

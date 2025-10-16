@@ -2,12 +2,12 @@ local var0_0 = class("VoteRankScene", import("..VoteScene"))
 
 function var0_0.init(arg0_1)
 	var0_0.super.init(arg0_1)
-	setActive(arg0_1:findTF("blur_panel/adapt/top/title_rank"), true)
-	setActive(arg0_1:findTF("blur_panel/adapt/top/title"), false)
-	setActive(arg0_1:findTF("main/right_panel/filter_bg"), false)
-	setActive(arg0_1:findTF("main/right_panel/title/help"), false)
-	setActive(arg0_1:findTF("main/right_panel/title/schedule"), false)
-	setActive(arg0_1:findTF("main/right_panel/title/Text"), false)
+	setActive(arg0_1._tf:Find("blur_panel/adapt/top/title_rank"), true)
+	setActive(arg0_1._tf:Find("blur_panel/adapt/top/title"), false)
+	setActive(arg0_1._tf:Find("main/right_panel/filter_bg"), false)
+	setActive(arg0_1._tf:Find("main/right_panel/title/help"), false)
+	setActive(arg0_1._tf:Find("main/right_panel/title/schedule"), false)
+	setActive(arg0_1._tf:Find("main/right_panel/title/Text"), false)
 end
 
 function var0_0.GetPageMap(arg0_2)

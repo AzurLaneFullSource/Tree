@@ -1,11 +1,11 @@
 local var0_0 = class("CardPairFXPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.startBtn = arg0_1:findTF("StartBtn", arg0_1.bg)
-	arg0_1.slider = arg0_1:findTF("Slider", arg0_1.bg)
-	arg0_1.heartImg = arg0_1:findTF("Fill/Heart", arg0_1.slider)
-	arg0_1.gotImg = arg0_1:findTF("GotImg", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.startBtn = arg0_1.bg:Find("StartBtn")
+	arg0_1.slider = arg0_1.bg:Find("Slider")
+	arg0_1.heartImg = arg0_1.slider:Find("Fill/Heart")
+	arg0_1.gotImg = arg0_1.bg:Find("GotImg")
 end
 
 function var0_0.OnDataSetting(arg0_2)

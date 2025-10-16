@@ -9,7 +9,7 @@ end
 function var0_0.didEnter(arg0_2)
 	var0_0.super.didEnter(arg0_2)
 
-	local var0_2 = arg0_2:findTF("Image")
+	local var0_2 = arg0_2._tf:Find("Image")
 	local var1_2 = math.random(1, var0_2.childCount)
 
 	eachChild(var0_2, function(arg0_3)

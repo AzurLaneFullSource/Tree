@@ -8,14 +8,14 @@ var0_0.DropType2Name = {
 }
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.btnList = arg0_1:findTF("btn_list", arg0_1.bg)
-	arg0_1.itemPanel = arg0_1:findTF("item_panel", arg0_1.bg)
-	arg0_1.togglesTF = arg0_1:findTF("toggles", arg0_1.itemPanel)
-	arg0_1.content = arg0_1:findTF("item_list/content", arg0_1.itemPanel)
-	arg0_1.itemList = UIItemList.New(arg0_1.content, arg0_1:findTF("tpl", arg0_1.content))
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.btnList = arg0_1.bg:Find("btn_list")
+	arg0_1.itemPanel = arg0_1.bg:Find("item_panel")
+	arg0_1.togglesTF = arg0_1.itemPanel:Find("toggles")
+	arg0_1.content = arg0_1.itemPanel:Find("item_list/content")
+	arg0_1.itemList = UIItemList.New(arg0_1.content, arg0_1.content:Find("tpl"))
 
-	setText(arg0_1:findTF("tpl/owner/title", arg0_1.content), i18n("collect_page_got"))
+	setText(arg0_1.content:Find("tpl/owner/title"), i18n("collect_page_got"))
 end
 
 function var0_0.OnDataSetting(arg0_2)
@@ -84,7 +84,7 @@ function var0_0.AddTogglesListener(arg0_8)
 	assert(#var0_8 == arg0_8.togglesTF.childCount, "dropType数量与togglesTF子节点数不匹配")
 
 	for iter0_8, iter1_8 in ipairs(var0_8) do
-		local var1_8 = arg0_8:findTF(var0_0.DropType2Name[iter1_8], arg0_8.togglesTF)
+		local var1_8 = arg0_8.togglesTF:Find(var0_0.DropType2Name[iter1_8])
 
 		onToggle(arg0_8, var1_8, function(arg0_9)
 			if arg0_9 then
@@ -99,7 +99,7 @@ end
 function var0_0.AddSpecialBtnListener(arg0_10)
 	local var0_10 = arg0_10.activity:getConfig("config_client")
 
-	arg0_10.furnitureThemeBtn = arg0_10:findTF("furniture_theme", arg0_10.btnList)
+	arg0_10.furnitureThemeBtn = arg0_10.btnList:Find("furniture_theme")
 
 	if arg0_10.furnitureThemeBtn and var0_10.furniture_theme_link then
 		onButton(arg0_10, arg0_10.furnitureThemeBtn, function()
@@ -107,7 +107,7 @@ function var0_0.AddSpecialBtnListener(arg0_10)
 		end, SFX_PANEL)
 	end
 
-	arg0_10.medalBtn = arg0_10:findTF("medal", arg0_10.btnList)
+	arg0_10.medalBtn = arg0_10.btnList:Find("medal")
 
 	if arg0_10.medalBtn and var0_10.medal_link then
 		onButton(arg0_10, arg0_10.medalBtn, function()
@@ -115,7 +115,7 @@ function var0_0.AddSpecialBtnListener(arg0_10)
 		end, SFX_PANEL)
 	end
 
-	arg0_10.equipSkinBoxBtn = arg0_10:findTF("equip_skin_box", arg0_10.btnList)
+	arg0_10.equipSkinBoxBtn = arg0_10.btnList:Find("equip_skin_box")
 
 	if arg0_10.equipSkinBoxBtn and var0_10.equipskin_box_link then
 		local var1_10 = Drop.New({
@@ -138,7 +138,7 @@ end
 
 function var0_0.OnUpdateItem(arg0_14, arg1_14, arg2_14)
 	local var0_14 = arg0_14.showDataList[arg1_14 + 1]
-	local var1_14 = arg0_14:findTF("icon_mask/icon", arg2_14)
+	local var1_14 = arg2_14:Find("icon_mask/icon")
 	local var2_14 = {
 		type = var0_14.config.type,
 		id = var0_14.config.drop_id
@@ -148,16 +148,16 @@ function var0_0.OnUpdateItem(arg0_14, arg1_14, arg2_14)
 	onButton(arg0_14, var1_14, function()
 		arg0_14:OnClickItem(var0_14)
 	end, SFX_PANEL)
-	changeToScrollText(arg0_14:findTF("name_mask/name", arg2_14), Drop.New({
+	changeToScrollText(arg2_14:Find("name_mask/name"), Drop.New({
 		type = var0_14.config.type,
 		id = var0_14.config.drop_id
 	}):getName())
-	setText(arg0_14:findTF("owner/number", arg2_14), var0_14.count .. "/" .. var0_14.config.count)
+	setText(arg2_14:Find("owner/number"), var0_14.count .. "/" .. var0_14.config.count)
 
-	GetOrAddComponent(arg0_14:findTF("owner", arg2_14), typeof(CanvasGroup)).alpha = var0_14.count == var0_14.config.count and 0.5 or 1
+	GetOrAddComponent(arg2_14:Find("owner"), typeof(CanvasGroup)).alpha = var0_14.count == var0_14.config.count and 0.5 or 1
 
-	setActive(arg0_14:findTF("got", arg2_14), var0_14.count == var0_14.config.count)
-	setActive(arg0_14:findTF("new", arg2_14), var0_14.config.is_new == "1")
+	setActive(arg2_14:Find("got"), var0_14.count == var0_14.config.count)
+	setActive(arg2_14:Find("new"), var0_14.config.is_new == "1")
 end
 
 function var0_0.OnClickItem(arg0_16, arg1_16)

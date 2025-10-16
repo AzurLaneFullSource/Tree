@@ -19,11 +19,11 @@ function var0_0.OnLoaded(arg0_2)
 
 	setText(arg0_2.okBtn:Find("Text"), i18n("word_ok"))
 	setText(arg0_2.cancelBtn:Find("Text"), i18n("word_cancel"))
-	setText(arg0_2:findTF("frame/tip_1/text_1"), i18n("backyard_extend_tip_1"))
-	setText(arg0_2:findTF("frame/tip_1/text_2"), i18n("backyard_extend_tip_2"))
-	setText(arg0_2:findTF("frame/tip_2/text_1"), i18n("backyard_extend_tip_3"))
-	setText(arg0_2:findTF("frame/tip_2/text_2"), i18n("backyard_extend_tip_4"))
-	setText(arg0_2:findTF("frame/title"), i18n("words_information"))
+	setText(arg0_2._tf:Find("frame/tip_1/text_1"), i18n("backyard_extend_tip_1"))
+	setText(arg0_2._tf:Find("frame/tip_1/text_2"), i18n("backyard_extend_tip_2"))
+	setText(arg0_2._tf:Find("frame/tip_2/text_1"), i18n("backyard_extend_tip_3"))
+	setText(arg0_2._tf:Find("frame/tip_2/text_2"), i18n("backyard_extend_tip_4"))
+	setText(arg0_2._tf:Find("frame/title"), i18n("words_information"))
 end
 
 function var0_0.OnInit(arg0_3)

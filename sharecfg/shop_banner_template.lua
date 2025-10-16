@@ -40,7 +40,7 @@ pg.shop_banner_template = {
 		}
 	},
 	[11] = {
-		order = 9,
+		order = 8,
 		name = "banner_big",
 		type = 2,
 		id = 11,
@@ -79,13 +79,13 @@ pg.shop_banner_template = {
 		}
 	},
 	[12] = {
-		order = 10,
+		order = 9,
 		name = "banner_big",
 		time = "stop",
 		type = 2,
 		id = 12,
 		relation_param = "",
-		pic = "shopbanner/shop_skin",
+		pic = "shopbanner/shop_skin3",
 		time_lable = 1,
 		param = {
 			"scene skinshop",

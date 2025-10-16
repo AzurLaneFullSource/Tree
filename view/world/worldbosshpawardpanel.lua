@@ -11,14 +11,14 @@ function var0_0.getUIName(arg0_2)
 end
 
 function var0_0.OnInit(arg0_3)
-	setText(arg0_3:findTF("window/top/bg/infomation"), i18n("world_expedition_reward_display"))
+	setText(arg0_3._tf:Find("window/top/bg/infomation"), i18n("world_expedition_reward_display"))
 
-	arg0_3.itemList = arg0_3:findTF("window/panel/viewport/list")
+	arg0_3.itemList = arg0_3._tf:Find("window/panel/viewport/list")
 
-	onButton(arg0_3, arg0_3:findTF("window/top/btnBack"), function()
+	onButton(arg0_3, arg0_3._tf:Find("window/top/btnBack"), function()
 		arg0_3:Hide()
 	end, SFX_CANCEL)
-	onButton(arg0_3, arg0_3:findTF("bg_dark"), function()
+	onButton(arg0_3, arg0_3._tf:Find("bg_dark"), function()
 		arg0_3:Hide()
 	end)
 	arg0_3.buffer:SetNotifier(arg0_3)

@@ -276,15 +276,6 @@ function var1_0.onError(arg0_11)
 end
 
 function var1_0.Send(arg0_15, arg1_15, arg2_15, arg3_15, arg4_15, arg5_15, arg6_15)
-	if not var7_0 then
-		warning("Network is not connected. msgid " .. arg1_15)
-		var0_0.m02:sendNotification(GAME.LOGOUT, {
-			code = 5
-		})
-
-		return
-	end
-
 	local function var0_15(arg0_16)
 		if arg0_16.result == 9998 then
 			var0_0.m02:sendNotification(GAME.EXTRA_PROTO_RESULT, {

@@ -15,7 +15,7 @@ function var0_0.OnInit(arg0_2)
 	arg0_2.memoryGroups = _.map(pg.memory_group.all, function(arg0_3)
 		return pg.memory_group[arg0_3]
 	end)
-	arg0_2.memoryGroupList = arg0_2:findTF("GroupRect"):GetComponent("LScrollRect")
+	arg0_2.memoryGroupList = arg0_2._tf:Find("GroupRect"):GetComponent("LScrollRect")
 
 	function arg0_2.memoryGroupList.onInitItem(arg0_4)
 		arg0_2:onInitMemoryGroup(arg0_4)
@@ -27,20 +27,20 @@ function var0_0.OnInit(arg0_2)
 
 	arg0_2.memoryGroupInfos = {}
 
-	local var0_2 = arg0_2:findTF("GroupItem", arg0_2.memoryGroupList)
+	local var0_2 = tf(arg0_2.memoryGroupList):Find("GroupItem")
 
 	setActive(var0_2, false)
 
-	arg0_2.memoryGroupViewport = arg0_2:findTF("Viewport", arg0_2.memoryGroupList)
-	arg0_2.memoryGroupsGrid = arg0_2:findTF("Viewport/Content", arg0_2.memoryGroupList):GetComponent(typeof(GridLayoutGroup))
-	arg0_2.memoryTogGroup = arg0_2:findTF("Toggles", arg0_2._tf)
+	arg0_2.memoryGroupViewport = tf(arg0_2.memoryGroupList):Find("Viewport")
+	arg0_2.memoryGroupsGrid = tf(arg0_2.memoryGroupList):Find("Viewport/Content"):GetComponent(typeof(GridLayoutGroup))
+	arg0_2.memoryTogGroup = arg0_2._tf:Find("Toggles")
 
 	setActive(arg0_2.memoryTogGroup, true)
 
 	arg0_2.memoryToggles = {}
 
 	for iter0_2 = 0, 3 do
-		arg0_2.memoryToggles[iter0_2 + 1] = arg0_2:findTF(iter0_2, arg0_2.memoryTogGroup)
+		arg0_2.memoryToggles[iter0_2 + 1] = arg0_2.memoryTogGroup:Find(iter0_2)
 	end
 
 	arg0_2.memoryFilterIndex = {
@@ -48,15 +48,15 @@ function var0_0.OnInit(arg0_2)
 		true,
 		true
 	}
-	arg0_2.groupToggle = arg0_2:findTF("ActivityToggle", arg0_2._tf)
-	arg0_2.memoryActivityTogGroup = arg0_2:findTF("ActivityToggle/ActivityBar", arg0_2._tf)
+	arg0_2.groupToggle = arg0_2._tf:Find("ActivityToggle")
+	arg0_2.memoryActivityTogGroup = arg0_2._tf:Find("ActivityToggle/ActivityBar")
 
 	setActive(arg0_2.memoryActivityTogGroup, true)
 
 	arg0_2.memoryActivityToggles = {}
 
 	for iter1_2 = 0, 3 do
-		arg0_2.memoryActivityToggles[iter1_2 + 1] = arg0_2:findTF(iter1_2, arg0_2.memoryActivityTogGroup)
+		arg0_2.memoryActivityToggles[iter1_2 + 1] = arg0_2.memoryActivityTogGroup:Find(iter1_2)
 	end
 
 	arg0_2.activityFilter = 0
@@ -111,14 +111,14 @@ function var0_0.OnInit(arg0_2)
 		end, SFX_UI_TAG)
 	end
 
-	arg0_2.viewParent:Add2TopContainer(arg0_2.memoryTogGroup)
+	arg0_2:OverlayPanel(arg0_2.memoryTogGroup)
 
 	arg0_2.loader = AutoLoader.New()
-	arg0_2.searchBtn = arg0_2:findTF("ActivityToggle/search_btn/btn", arg0_2._tf)
-	arg0_2.nameSearchInput = arg0_2:findTF("ActivityToggle/search_btn/search", arg0_2._tf)
-	arg0_2.closeSearch = arg0_2:findTF("ActivityToggle/search_btn/icon", arg0_2._tf)
+	arg0_2.searchBtn = arg0_2._tf:Find("ActivityToggle/search_btn/btn")
+	arg0_2.nameSearchInput = arg0_2._tf:Find("ActivityToggle/search_btn/search")
+	arg0_2.closeSearch = arg0_2._tf:Find("ActivityToggle/search_btn/icon")
 
-	setText(arg0_2:findTF("label", arg0_2.searchBtn), i18n("storyline_memorysearch2"))
+	setText(arg0_2.searchBtn:Find("label"), i18n("storyline_memorysearch2"))
 	onButton(arg0_2, arg0_2.searchBtn, function()
 		setActive(arg0_2.nameSearchInput, true)
 		setActive(arg0_2.searchBtn, false)
@@ -130,7 +130,7 @@ function var0_0.OnInit(arg0_2)
 		if arg0_2.searchOpen then
 			setActive(arg0_2.nameSearchInput, false)
 			setActive(arg0_2.searchBtn, true)
-			setText(arg0_2:findTF("label", arg0_2.searchBtn), i18n("storyline_memorysearch2"))
+			setText(arg0_2.searchBtn:Find("label"), i18n("storyline_memorysearch2"))
 		else
 			triggerButton(arg0_2.searchBtn)
 		end
@@ -141,13 +141,13 @@ function var0_0.OnInit(arg0_2)
 	end)
 	arg0_2:MemoryFilter()
 
-	arg0_2.rectAnchorX = arg0_2:findTF("GroupRect").anchoredPosition.x
+	arg0_2.rectAnchorX = arg0_2._tf:Find("GroupRect").anchoredPosition.x
 
 	arg0_2:UpdateView()
 
-	arg0_2.storyLineBtn = arg0_2:findTF("StoryLineBtn")
-	arg0_2.storyLineEntranceBtn = arg0_2:findTF("StoryLineBtn/entranceBtn")
-	arg0_2.storyLineHideBtn = arg0_2:findTF("StoryLineBtn/closeBtn")
+	arg0_2.storyLineBtn = arg0_2._tf:Find("StoryLineBtn")
+	arg0_2.storyLineEntranceBtn = arg0_2._tf:Find("StoryLineBtn/entranceBtn")
+	arg0_2.storyLineHideBtn = arg0_2._tf:Find("StoryLineBtn/closeBtn")
 	arg0_2.currentMode = var0_0.FORM_MODE
 
 	onButton(arg0_2, arg0_2.storyLineEntranceBtn, function()
@@ -160,7 +160,7 @@ function var0_0.OnInit(arg0_2)
 		arg0_2:StoryLineBtnSetActive(true)
 	end)
 
-	arg0_2.storylineTF = arg0_2:findTF("StoryLine")
+	arg0_2.storylineTF = arg0_2._tf:Find("StoryLine")
 	arg0_2.storyLineView = WorldMediaCollectionStoryLineView.New(arg0_2.storylineTF)
 
 	local function var2_2(arg0_14, arg1_14)
@@ -178,14 +178,14 @@ end
 function var0_0.StoryLineBtnSetActive(arg0_16, arg1_16)
 	setActive(arg0_16.storyLineEntranceBtn, arg1_16)
 	setActive(arg0_16.storyLineHideBtn, arg1_16)
-	setActive(arg0_16:findTF("StoryLineBtn/on"), not arg1_16)
+	setActive(arg0_16._tf:Find("StoryLineBtn/on"), not arg1_16)
 end
 
 function var0_0.SwitchStoryLineMode(arg0_17, arg1_17)
 	arg0_17.currentMode = arg1_17
 
 	if arg1_17 == var0_0.FORM_MODE then
-		setActive(arg0_17:findTF("GroupRect"), true)
+		setActive(arg0_17._tf:Find("GroupRect"), true)
 		setActive(arg0_17.memoryTogGroup, true)
 		setActive(arg0_17.groupToggle, true)
 		setActive(arg0_17.storylineTF, false)
@@ -194,7 +194,7 @@ function var0_0.SwitchStoryLineMode(arg0_17, arg1_17)
 		arg0_17:MemoryFilter()
 		pg.BgmMgr.GetInstance():ContinuePlay()
 	elseif arg1_17 == var0_0.LINE_MODE then
-		setActive(arg0_17:findTF("GroupRect"), false)
+		setActive(arg0_17._tf:Find("GroupRect"), false)
 		setActive(arg0_17.memoryTogGroup, false)
 		setActive(arg0_17.groupToggle, false)
 		setActive(arg0_17.storylineTF, true)
@@ -395,7 +395,7 @@ end
 function var0_0.UpdateView(arg0_33)
 	local var0_33 = WorldMediaCollectionScene.WorldRecordLock()
 
-	setAnchoredPosition(arg0_33:findTF("GroupRect"), {
+	setAnchoredPosition(arg0_33._tf:Find("GroupRect"), {
 		x = var0_33 and 0 or arg0_33.rectAnchorX
 	})
 

@@ -26,32 +26,32 @@ end
 
 function var0_0.init(arg0_2)
 	arg0_2.eventTriggers = {}
-	arg0_2.characters = arg0_2:findTF("select_character/characters")
-	arg0_2.propPanel = arg0_2:findTF("prop_panel")
-	arg0_2.selectPanel = arg0_2:findTF("select_character")
+	arg0_2.characters = arg0_2._tf:Find("select_character/characters")
+	arg0_2.propPanel = arg0_2._tf:Find("prop_panel")
+	arg0_2.selectPanel = arg0_2._tf:Find("select_character")
 
 	setActive(arg0_2.propPanel, false)
 	setActive(arg0_2.selectPanel, true)
 
-	arg0_2.confirmBtn = arg0_2:findTF("bg/qr_btn", arg0_2.propPanel)
-	arg0_2.tip = arg0_2:findTF("select_character/tip")
-	arg0_2.skillPanel = arg0_2:findTF("bg/skill_panel", arg0_2.propPanel)
+	arg0_2.confirmBtn = arg0_2.propPanel:Find("bg/qr_btn")
+	arg0_2.tip = arg0_2._tf:Find("select_character/tip")
+	arg0_2.skillPanel = arg0_2.propPanel:Find("bg/skill_panel")
 	arg0_2.skillTpl = arg0_2:getTpl("bg/skill_panel/frame/skilltpl", arg0_2.propPanel)
-	arg0_2.skillContainer = arg0_2:findTF("bg/skill_panel/frame", arg0_2.propPanel)
-	arg0_2.namedPanel = arg0_2:findTF("named_panel")
+	arg0_2.skillContainer = arg0_2.propPanel:Find("bg/skill_panel/frame")
+	arg0_2.namedPanel = arg0_2._tf:Find("named_panel")
 
 	setActive(arg0_2.namedPanel, false)
 
 	arg0_2.info = arg0_2.namedPanel:Find("info")
 	arg0_2.nickname = arg0_2.info:Find("nickname")
 	arg0_2.qChar = arg0_2.propPanel:Find("q_char")
-	arg0_2.chat = arg0_2:findTF("info/tip/chatbgtop0/Text", arg0_2.namedPanel)
+	arg0_2.chat = arg0_2.namedPanel:Find("info/tip/chatbgtop0/Text")
 	arg0_2.propertyPanel = PropertyPanel.New(arg0_2.propPanel:Find("bg/property_panel/frame"))
-	arg0_2.paintTF = arg0_2:findTF("prop_panel/bg/paint")
-	arg0_2.nameTF = arg0_2:findTF("prop_panel/bg/name")
-	arg0_2.nameEnTF = arg0_2:findTF("prop_panel/bg/english_name_bg")
-	arg0_2.titleShipinfoTF = arg0_2:findTF("lines/hori/shipinfo_text")
-	arg0_2.titleShipchooseTF = arg0_2:findTF("lines/hori/shipchoose_text")
+	arg0_2.paintTF = arg0_2._tf:Find("prop_panel/bg/paint")
+	arg0_2.nameTF = arg0_2._tf:Find("prop_panel/bg/name")
+	arg0_2.nameEnTF = arg0_2._tf:Find("prop_panel/bg/english_name_bg")
+	arg0_2.titleShipinfoTF = arg0_2._tf:Find("lines/hori/shipinfo_text")
+	arg0_2.titleShipchooseTF = arg0_2._tf:Find("lines/hori/shipchoose_text")
 
 	setImageAlpha(arg0_2.titleShipinfoTF, 1)
 	setImageAlpha(arg0_2.titleShipchooseTF, 0)
@@ -94,15 +94,15 @@ function var0_0.switchPanel(arg0_4)
 
 	LeanTween.moveX(arg0_4.skillPanel, 339, 0.2)
 
-	local var2_4 = arg0_4:findTF("lines/line")
-	local var3_4 = arg0_4:findTF("lines/hori")
+	local var2_4 = arg0_4._tf:Find("lines/line")
+	local var3_4 = arg0_4._tf:Find("lines/hori")
 
 	LeanTween.moveY(var2_4, -328, 0.2)
 	LeanTween.moveX(var3_4, -820, 0.2)
 
 	for iter0_4 = 1, 3 do
-		local var4_4 = arg0_4:findTF("character_" .. iter0_4, arg0_4.characters)
-		local var5_4 = arg0_4:findTF("bg/characters/character_" .. iter0_4, arg0_4.propPanel)
+		local var4_4 = arg0_4.characters:Find("character_" .. iter0_4)
+		local var5_4 = arg0_4.propPanel:Find("bg/characters/character_" .. iter0_4)
 
 		setImageAlpha(var4_4, 1)
 		LeanTween.alpha(var4_4, 0, 0.25)
@@ -118,16 +118,16 @@ function var0_0.initCharacters(arg0_7)
 	arg0_7.charInitPos = {}
 
 	for iter0_7 = 1, 3 do
-		local var0_7 = arg0_7:findTF("prop_panel/bg/characters/character_" .. iter0_7)
+		local var0_7 = arg0_7._tf:Find("prop_panel/bg/characters/character_" .. iter0_7)
 
 		onToggle(arg0_7, var0_7, function(arg0_8)
 			if arg0_8 then
 				arg0_7:selectCharacterByIdx(var0_7, var5_0[iter0_7])
-				setActive(arg0_7:findTF("selected", var0_7), true)
+				setActive(var0_7:Find("selected"), true)
 
 				var0_7:GetComponent(typeof(RectTransform)).sizeDelta = Vector2(196, 196)
 			else
-				setActive(arg0_7:findTF("selected", var0_7), false)
+				setActive(var0_7:Find("selected"), false)
 
 				var0_7:GetComponent(typeof(RectTransform)).sizeDelta = Vector2(140, 140)
 			end
@@ -141,11 +141,11 @@ function var0_0.initCharacters(arg0_7)
 	}
 
 	for iter1_7 = 1, 3 do
-		local var2_7 = arg0_7:findTF("character_" .. iter1_7, arg0_7.characters)
+		local var2_7 = arg0_7.characters:Find("character_" .. iter1_7)
 
 		onButton(arg0_7, var2_7, function()
 			arg0_7:switchPanel()
-			triggerToggle(arg0_7:findTF("prop_panel/bg/characters/character_" .. iter1_7), true)
+			triggerToggle(arg0_7._tf:Find("prop_panel/bg/characters/character_" .. iter1_7), true)
 		end)
 
 		var2_7.localPosition = Vector3.New(var2_7.localPosition.x, 912, var2_7.localPosition.z)
@@ -214,8 +214,8 @@ function var0_0.selectCharacterByIdx(arg0_15, arg1_15, arg2_15)
 	local var0_15 = pg.ship_data_statistics[arg2_15]
 
 	setPaintingPrefab(arg0_15.paintTF, var6_0[arg2_15], "chuanwu")
-	setText(arg0_15:findTF("name_mask/Text", arg0_15.nameTF), var0_15.name)
-	setText(arg0_15:findTF("english_name", arg0_15.nameTF), var0_15.english_name)
+	setText(arg0_15.nameTF:Find("name_mask/Text"), var0_15.name)
+	setText(arg0_15.nameTF:Find("english_name"), var0_15.english_name)
 	setText(arg0_15.nameEnTF, string.upper(var0_15.english_name))
 
 	local var1_15 = Ship.New({

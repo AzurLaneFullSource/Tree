@@ -5,12 +5,12 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.photoImgTrans = arg0_2:findTF("PhotoImg")
-	arg0_2.shareBtnTrans = arg0_2:findTF("ShareBtn")
-	arg0_2.confirmBtnTrans = arg0_2:findTF("ConfirmBtn")
-	arg0_2.cancelBtnTrans = arg0_2:findTF("CancelBtn")
-	arg0_2.frameBtn = arg0_2:findTF("frameBtn")
-	arg0_2.photoAdapter = arg0_2:findTF("photoAdapter")
+	arg0_2.photoImgTrans = arg0_2._tf:Find("PhotoImg")
+	arg0_2.shareBtnTrans = arg0_2._tf:Find("ShareBtn")
+	arg0_2.confirmBtnTrans = arg0_2._tf:Find("ConfirmBtn")
+	arg0_2.cancelBtnTrans = arg0_2._tf:Find("CancelBtn")
+	arg0_2.frameBtn = arg0_2._tf:Find("frameBtn")
+	arg0_2.photoAdapter = arg0_2._tf:Find("photoAdapter")
 	arg0_2.bytes = arg0_2.contextData.photoData
 	arg0_2.frameDic = {}
 	arg0_2.loadingDic = {}

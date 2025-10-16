@@ -5,7 +5,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.panelContainer = arg0_2:findTF("content")
+	arg0_2.panelContainer = arg0_2._tf:Find("content")
 
 	local var0_2 = arg0_2:GetPanels()
 

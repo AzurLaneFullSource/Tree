@@ -1,9 +1,9 @@
 local var0_0 = class("ThirdAnniversarySignPageKR", import(".TemplatePage.LoginTemplatePage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.item = arg0_1:findTF("item", arg0_1.bg)
-	arg0_1.items = arg0_1:findTF("mask/items", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.item = arg0_1.bg:Find("item")
+	arg0_1.items = arg0_1.bg:Find("mask/items")
 	arg0_1.itemList = UIItemList.New(arg0_1.items, arg0_1.item)
 	arg0_1.initItems = {}
 end
@@ -13,7 +13,7 @@ function var0_0.OnFirstFlush(arg0_2)
 	arg0_2.itemList:make(function(arg0_3, arg1_3, arg2_3)
 		if arg0_3 == UIItemList.EventUpdate then
 			if not table.contains(arg0_2.initItems, arg1_3) then
-				local var0_3 = arg0_2:findTF("item", arg2_3)
+				local var0_3 = arg2_3:Find("item")
 				local var1_3 = arg0_2.config.front_drops[arg1_3 + 1]
 				local var2_3 = {
 					type = var1_3[1],
@@ -28,7 +28,7 @@ function var0_0.OnFirstFlush(arg0_2)
 				table.insert(arg0_2.initItems, arg1_3)
 			end
 
-			local var3_3 = arg0_2:findTF("got", arg2_3)
+			local var3_3 = arg2_3:Find("got")
 
 			setActive(var3_3, arg1_3 < arg0_2.nday)
 		end

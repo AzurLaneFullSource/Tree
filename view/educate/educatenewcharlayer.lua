@@ -13,16 +13,20 @@ end
 function var0_0.initData(arg0_3)
 	arg0_3.char = getProxy(EducateProxy):GetCharData()
 	arg0_3.defaultName = i18n("child_default_callname")
+	arg0_3.lockNamed = PLATFORM_CODE == PLATFORM_CH and LOCK_NAMED
 end
 
 function var0_0.findUI(arg0_4)
-	arg0_4.blurPanel = arg0_4:findTF("bg")
-	arg0_4.namedPanelTF = arg0_4:findTF("named_panel")
-	arg0_4.callInput = arg0_4:findTF("bg/panel/input/nickname")
-	arg0_4.sureBtn = arg0_4:findTF("bg/panel/sure_button")
+	arg0_4.blurPanel = arg0_4._tf:Find("bg")
+	arg0_4.callInput = arg0_4._tf:Find("bg/panel/input/nickname")
+	arg0_4.sureBtn = arg0_4._tf:Find("bg/panel/sure_button")
 
-	setText(arg0_4:findTF("Image", arg0_4.sureBtn), i18n("word_ok"))
-	setText(arg0_4:findTF("Placeholder", arg0_4.callInput), i18n("child_callname_tip"))
+	setText(arg0_4.sureBtn:Find("Image"), i18n("word_ok"))
+	setText(arg0_4.callInput:Find("Placeholder"), i18n("child_callname_tip"))
+
+	arg0_4.callInput:GetComponent(typeof(InputField)).interactable = not arg0_4.lockNamed
+
+	setActive(arg0_4._tf:Find("bg/panel/input/pan"), not arg0_4.lockNamed)
 end
 
 function var0_0.addListener(arg0_5)

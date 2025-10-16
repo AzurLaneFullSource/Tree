@@ -129,9 +129,9 @@ function var0_0.set(arg0_9, arg1_9, arg2_9)
 
 	local var11_9 = var3_9 == 1 and Color.NewHex("FFDE38") or Color.white
 
-	setTextColor(arg0_9:findTF("title_index", arg0_9.txTitle), var11_9)
-	setTextColor(arg0_9:findTF("title", arg0_9.txTitle), var11_9)
-	setTextColor(arg0_9:findTF("title_en", arg0_9.txTitle), var11_9)
+	setTextColor(arg0_9.txTitle:Find("title_index"), var11_9)
+	setTextColor(arg0_9.txTitle:Find("title"), var11_9)
+	setTextColor(arg0_9.txTitle:Find("title_en"), var11_9)
 
 	local var12_9 = var0_9:getConfig("boss_expedition_id")
 

@@ -27,9 +27,9 @@ function var0_0.UpdateView(arg0_3, arg1_3)
 end
 
 function var0_0.findUI(arg0_5)
-	arg0_5.contextText = arg0_5:findTF("Context")
-	arg0_5.toggleTF = arg0_5:findTF("Toggle")
-	arg0_5.tickTF = arg0_5:findTF("Tip/TickBG/Tick", arg0_5.toggleTF)
+	arg0_5.contextText = arg0_5._tf:Find("Context")
+	arg0_5.toggleTF = arg0_5._tf:Find("Toggle")
+	arg0_5.tickTF = arg0_5.toggleTF:Find("Tip/TickBG/Tick")
 end
 
 function var0_0.addListener(arg0_6)

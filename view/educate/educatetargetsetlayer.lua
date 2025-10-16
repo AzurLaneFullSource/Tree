@@ -79,15 +79,15 @@ function var0_0.initTargetList(arg0_4)
 end
 
 function var0_0.findUI(arg0_7)
-	arg0_7.windowTF = arg0_7:findTF("anim_root/window")
-	arg0_7.targetContent = arg0_7:findTF("content", arg0_7.windowTF)
-	arg0_7.targetTpl = arg0_7:findTF("tpl", arg0_7.targetContent)
+	arg0_7.windowTF = arg0_7._tf:Find("anim_root/window")
+	arg0_7.targetContent = arg0_7.windowTF:Find("content")
+	arg0_7.targetTpl = arg0_7.targetContent:Find("tpl")
 
 	setActive(arg0_7.targetTpl, false)
 
-	arg0_7.sureBtn = arg0_7:findTF("sure_btn", arg0_7.windowTF)
+	arg0_7.sureBtn = arg0_7.windowTF:Find("sure_btn")
 
-	setText(arg0_7:findTF("Text", arg0_7.sureBtn), i18n("word_ok"))
+	setText(arg0_7.sureBtn:Find("Text"), i18n("word_ok"))
 end
 
 function var0_0.addListener(arg0_8)
@@ -104,8 +104,8 @@ function var0_0.addListener(arg0_8)
 					id = var0_9
 				})
 
-				local var0_10 = arg0_8:findTF("anim_root"):GetComponent(typeof(Animation))
-				local var1_10 = arg0_8:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+				local var0_10 = arg0_8._tf:Find("anim_root"):GetComponent(typeof(Animation))
+				local var1_10 = arg0_8._tf:Find("anim_root"):GetComponent(typeof(DftAniEvent))
 
 				var1_10:SetEndEvent(function()
 					var1_10:SetEndEvent(nil)
@@ -127,8 +127,8 @@ function var0_0.initTarget(arg0_13)
 		local var0_13 = cloneTplTo(arg0_13.targetTpl, arg0_13.targetContent, tostring(iter0_13))
 		local var1_13 = arg0_13.targetList[iter0_13]
 
-		setImageSprite(arg0_13:findTF("animroot/icon/Image", var0_13), LoadSprite("educatetarget/" .. pg.child_target_set[var1_13].icon), true)
-		setImageSprite(arg0_13:findTF("animroot/name", var0_13), LoadSprite("educatetarget/" .. pg.child_target_set[var1_13].pic), true)
+		setImageSprite(var0_13:Find("animroot/icon/Image"), LoadSprite("educatetarget/" .. pg.child_target_set[var1_13].icon), true)
+		setImageSprite(var0_13:Find("animroot/name"), LoadSprite("educatetarget/" .. pg.child_target_set[var1_13].pic), true)
 		onButton(arg0_13, var0_13, function()
 			if arg0_13.selectedIndex == iter0_13 then
 				return
@@ -141,7 +141,7 @@ function var0_0.initTarget(arg0_13)
 
 		local var2_13 = pg.child_target_set[var1_13].recommend_attr
 
-		setActive(arg0_13:findTF("animroot/recommand", var0_13), var2_13 == arg0_13.maxAttrId)
+		setActive(var0_13:Find("animroot/recommand"), var2_13 == arg0_13.maxAttrId)
 	end
 
 	arg0_13:updateTarget()
@@ -156,7 +156,7 @@ function var0_0.initTarget(arg0_13)
 
 	for iter1_13 = 1, #arg0_13.targetList do
 		table.insert(var3_13, function(arg0_17)
-			arg0_13:findTF(tostring(iter1_13), arg0_13.targetContent):GetComponent(typeof(Animation)):Play("anim_educate_targetset_tpl_in")
+			arg0_13.targetContent:Find(tostring(iter1_13)):GetComponent(typeof(Animation)):Play("anim_educate_targetset_tpl_in")
 			onDelayTick(function()
 				arg0_17()
 			end, 0.066)
@@ -170,7 +170,7 @@ end
 
 function var0_0.updateTarget(arg0_20)
 	eachChild(arg0_20.targetContent, function(arg0_21)
-		setActive(arg0_20:findTF("animroot/selected", arg0_21), arg0_20.selectedIndex == tonumber(arg0_21.name))
+		setActive(arg0_21:Find("animroot/selected"), arg0_20.selectedIndex == tonumber(arg0_21.name))
 	end)
 end
 

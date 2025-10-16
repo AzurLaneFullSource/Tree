@@ -74,42 +74,42 @@ function var0_0.initData(arg0_5)
 end
 
 function var0_0.findUI(arg0_6)
-	arg0_6.bg = arg0_6:findTF("BG")
+	arg0_6.bg = arg0_6._tf:Find("BG")
 
-	local var0_6 = arg0_6:findTF("BackTips/ClickText", arg0_6.bg)
+	local var0_6 = arg0_6.bg:Find("BackTips/ClickText")
 
 	setText(var0_6, i18n("click_back_tip"))
 
-	local var1_6 = arg0_6:findTF("Panel")
-	local var2_6 = arg0_6:findTF("LeftScrollViewMask/LeftScrollView/LeftBtnList", var1_6)
+	local var1_6 = arg0_6._tf:Find("Panel")
+	local var2_6 = var1_6:Find("LeftScrollViewMask/LeftScrollView/LeftBtnList")
 
 	arg0_6.leftBtnList = {}
-	arg0_6.tendencyBtn = arg0_6:findTF("TendencyBtn", var2_6)
+	arg0_6.tendencyBtn = var2_6:Find("TendencyBtn")
 	arg0_6.leftBtnList[var0_0.TEC_PAGE_TENDENCY] = arg0_6.tendencyBtn
 	arg0_6.catchupBtns = {}
 
 	for iter0_6 = 1, var0_0.CATCHUP_VERSION do
-		arg0_6.catchupBtns[iter0_6] = cloneTplTo(arg0_6:findTF("TargetCatchupBtn_tpl", var2_6), var2_6)
+		arg0_6.catchupBtns[iter0_6] = cloneTplTo(var2_6:Find("TargetCatchupBtn_tpl"), var2_6)
 		arg0_6.leftBtnList[iter0_6 + 1] = arg0_6.catchupBtns[iter0_6]
 	end
 
-	arg0_6.actCatchupBtn = arg0_6:findTF("ActCatchupBtn", var2_6)
+	arg0_6.actCatchupBtn = var2_6:Find("ActCatchupBtn")
 
 	arg0_6.actCatchupBtn:SetAsLastSibling()
 
 	arg0_6.leftBtnList[var0_0.TEC_PAGE_CATCHUP_ACT] = arg0_6.actCatchupBtn
 
-	local var3_6 = arg0_6:findTF("RightPanelContainer", var1_6)
+	local var3_6 = var1_6:Find("RightPanelContainer")
 
 	arg0_6.rightPageTFList = {}
-	arg0_6.tendencyPanel = arg0_6:findTF("TecTendencyPanel", var3_6)
+	arg0_6.tendencyPanel = var3_6:Find("TecTendencyPanel")
 	arg0_6.rightPageTFList[var0_0.TEC_PAGE_TENDENCY] = arg0_6.tendencyPanel
 	arg0_6.catchupPanels = {}
-	arg0_6.actCatchupPanel = arg0_6:findTF("ActCatchupPanel", var3_6)
+	arg0_6.actCatchupPanel = var3_6:Find("ActCatchupPanel")
 	arg0_6.rightPageTFList[var0_0.TEC_PAGE_CATCHUP_ACT] = arg0_6.actCatchupPanel
-	arg0_6.showFinish = arg0_6:findTF("ShowFinishToggle")
+	arg0_6.showFinish = arg0_6._tf:Find("ShowFinishToggle")
 
-	setText(arg0_6:findTF("Label", arg0_6.showFinish), i18n("tec_target_catchup_show_the_finished_version"))
+	setText(arg0_6.showFinish:Find("Label"), i18n("tec_target_catchup_show_the_finished_version"))
 
 	arg0_6.showFinishFlag = PlayerPrefs.GetInt("isShowFinishCatchupVersion") or 0
 
@@ -131,7 +131,7 @@ function var0_0.addListener(arg0_7)
 
 			if arg0_7.curPageID ~= iter0_7 then
 				arg0_7:resetLeftBtnUnsel()
-				setActive(arg0_7:findTF("Selected", iter1_7), true)
+				setActive(iter1_7:Find("Selected"), true)
 				arg0_7:switchRightPage(iter0_7)
 			end
 		end, SFX_PANEL)
@@ -161,7 +161,7 @@ end
 
 function var0_0.resetLeftBtnUnsel(arg0_11)
 	for iter0_11, iter1_11 in pairs(arg0_11.leftBtnList) do
-		local var0_11 = arg0_11:findTF("Selected", iter1_11)
+		local var0_11 = iter1_11:Find("Selected")
 
 		setActive(var0_11, false)
 	end
@@ -172,7 +172,7 @@ function var0_0.switchRightPage(arg0_12, arg1_12)
 		function(arg0_13)
 			if not arg0_12.rightPageTFList[arg1_12] then
 				local var0_13 = arg1_12 - 1
-				local var1_13 = arg0_12:findTF("Panel/RightPanelContainer")
+				local var1_13 = arg0_12._tf:Find("Panel/RightPanelContainer")
 
 				arg0_12.catchupPanels[var0_13] = var0_0.CATCHUP_CLASSES[var0_13].New(nil, function()
 					arg0_12.rightPageTFList[arg1_12] = arg0_12.catchupPanels[var0_13]._go
@@ -218,7 +218,7 @@ end
 
 function var0_0.initTendencyPage(arg0_18)
 	local var0_18 = getProxy(TechnologyProxy):getConfigMaxVersion()
-	local var1_18 = arg0_18:findTF("TecItemList", arg0_18.tendencyPanel)
+	local var1_18 = arg0_18.tendencyPanel:Find("TecItemList")
 	local var2_18 = UIItemList.New(var1_18, var1_18:Find("tpl"))
 
 	var2_18:make(function(arg0_19, arg1_19, arg2_19)
@@ -238,7 +238,7 @@ function var0_0.initTendencyPage(arg0_18)
 end
 
 function var0_0.updateTendencyPage(arg0_21, arg1_21)
-	local var0_21 = arg0_21:findTF("TecItemList", arg0_21.tendencyPanel)
+	local var0_21 = arg0_21.tendencyPanel:Find("TecItemList")
 
 	setActive(var0_21:GetChild(arg0_21.curTendency):Find("Selected"), false)
 
@@ -248,7 +248,7 @@ function var0_0.updateTendencyPage(arg0_21, arg1_21)
 	setImageAlpha(var1_21:Find("Image"), 0)
 	arg0_21:managedTween(LeanTween.alpha, nil, var1_21:Find("Image"), 1, var0_0.SELECT_TENDENCY_FADE_TIME):setFrom(0)
 
-	local var2_21 = arg0_21:findTF("TendencyNum", arg0_21.tendencyPanel)
+	local var2_21 = arg0_21.tendencyPanel:Find("TendencyNum")
 
 	setImageAlpha(var2_21:Find("Image"), 0)
 
@@ -276,12 +276,12 @@ function var0_0.updateTargetCatchupBtns(arg0_24)
 		if iter0_24 <= var0_0.CATCHUP_VERSION then
 			local var0_24 = arg0_24.technologyProxy:getCatchupState(iter0_24)
 			local var1_24 = var0_24 == TechnologyCatchup.STATE_CATCHUPING
-			local var2_24 = arg0_24:findTF("UnSelect/Text", iter1_24)
-			local var3_24 = arg0_24:findTF("Selected/Text", iter1_24)
-			local var4_24 = arg0_24:findTF("UnSelect/CharImg", iter1_24)
-			local var5_24 = arg0_24:findTF("Selected/CharImg", iter1_24)
-			local var6_24 = arg0_24:findTF("ProgressText", var4_24)
-			local var7_24 = arg0_24:findTF("ProgressText", var5_24)
+			local var2_24 = iter1_24:Find("UnSelect/Text")
+			local var3_24 = iter1_24:Find("Selected/Text")
+			local var4_24 = iter1_24:Find("UnSelect/CharImg")
+			local var5_24 = iter1_24:Find("Selected/CharImg")
+			local var6_24 = var4_24:Find("ProgressText")
+			local var7_24 = var5_24:Find("ProgressText")
 
 			setActive(var4_24, var1_24)
 			setActive(var5_24, var1_24)
@@ -329,18 +329,18 @@ function var0_0.initActCatchupPage(arg0_25)
 			})
 			setAnchoredPosition(arg0_26, Vector2.zero)
 
-			arg0_25.actCatchupTF = arg0_25:findTF("AD", tf(arg0_26))
-			arg0_25.actCatchupItemTF = arg0_25:findTF("Award", arg0_25.actCatchupTF)
-			arg0_25.actCatchupSliderTF = arg0_25:findTF("Slider", arg0_25.actCatchupTF)
-			arg0_25.actCatchupProgressText = arg0_25:findTF("Progress", arg0_25.actCatchupTF)
+			arg0_25.actCatchupTF = tf(arg0_26:Find("AD"))
+			arg0_25.actCatchupItemTF = arg0_25.actCatchupTF:Find("Award")
+			arg0_25.actCatchupSliderTF = arg0_25.actCatchupTF:Find("Slider")
+			arg0_25.actCatchupProgressText = arg0_25.actCatchupTF:Find("Progress")
 
-			local var0_26 = arg0_25:findTF("GoBtn", arg0_25.actCatchupTF)
+			local var0_26 = arg0_25.actCatchupTF:Find("GoBtn")
 
 			if var0_26 then
 				setActive(var0_26, false)
 			end
 
-			local var1_26 = arg0_25:findTF("FinishBtn", arg0_25.actCatchupTF)
+			local var1_26 = arg0_25.actCatchupTF:Find("FinishBtn")
 
 			if var1_26 then
 				setActive(var1_26, false)
@@ -371,16 +371,16 @@ function var0_0.updateActCatchupPage(arg0_28)
 end
 
 function var0_0.updateActCatchupBtn(arg0_29)
-	local var0_29 = arg0_29:findTF("UnSelect/Text", arg0_29.actCatchupBtn)
-	local var1_29 = arg0_29:findTF("Selected/Text", arg0_29.actCatchupBtn)
+	local var0_29 = arg0_29.actCatchupBtn:Find("UnSelect/Text")
+	local var1_29 = arg0_29.actCatchupBtn:Find("Selected/Text")
 
 	setText(var0_29, i18n("tec_act_catchup_btn_word"))
 	setText(var1_29, i18n("tec_act_catchup_btn_word"))
 
-	local var2_29 = arg0_29:findTF("UnSelect/CharImg", arg0_29.actCatchupBtn)
-	local var3_29 = arg0_29:findTF("Selected/CharImg", arg0_29.actCatchupBtn)
-	local var4_29 = arg0_29:findTF("ProgressText", var2_29)
-	local var5_29 = arg0_29:findTF("ProgressText", var3_29)
+	local var2_29 = arg0_29.actCatchupBtn:Find("UnSelect/CharImg")
+	local var3_29 = arg0_29.actCatchupBtn:Find("Selected/CharImg")
+	local var4_29 = var2_29:Find("ProgressText")
+	local var5_29 = var3_29:Find("ProgressText")
 	local var6_29 = false
 	local var7_29 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BLUEPRINT_CATCHUP)
 
@@ -403,10 +403,10 @@ function var0_0.updateActCatchupBtn(arg0_29)
 			arg0_29.actCatchupTimer = nil
 		end
 
-		local var13_29 = arg0_29:findTF("TimeLeft/Day", arg0_29.actCatchupBtn)
-		local var14_29 = arg0_29:findTF("TimeLeft/Hour", arg0_29.actCatchupBtn)
-		local var15_29 = arg0_29:findTF("TimeLeft/Min", arg0_29.actCatchupBtn)
-		local var16_29 = arg0_29:findTF("TimeLeft/NumText", arg0_29.actCatchupBtn)
+		local var13_29 = arg0_29.actCatchupBtn:Find("TimeLeft/Day")
+		local var14_29 = arg0_29.actCatchupBtn:Find("TimeLeft/Hour")
+		local var15_29 = arg0_29.actCatchupBtn:Find("TimeLeft/Min")
+		local var16_29 = arg0_29.actCatchupBtn:Find("TimeLeft/NumText")
 
 		local function var17_29()
 			local var0_30, var1_30, var2_30, var3_30 = pg.TimeMgr.GetInstance():parseTimeFrom(var12_29)

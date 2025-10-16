@@ -11,7 +11,7 @@ function var0_0.OnInit(arg0_2)
 	arg0_2.albumGroups = _.map(pg.activity_medal_group.all, function(arg0_3)
 		return pg.activity_medal_group[arg0_3]
 	end)
-	arg0_2.albumGroupList = arg0_2:findTF("GroupRect"):GetComponent("LScrollRect")
+	arg0_2.albumGroupList = arg0_2._tf:Find("GroupRect"):GetComponent("LScrollRect")
 
 	function arg0_2.albumGroupList.onInitItem(arg0_4)
 		arg0_2:onInitAlbumGroup(arg0_4)
@@ -23,19 +23,19 @@ function var0_0.OnInit(arg0_2)
 
 	arg0_2.albumGroupInfos = {}
 
-	local var0_2 = arg0_2:findTF("GroupItem", arg0_2.albumGroupList)
+	local var0_2 = tf(arg0_2.albumGroupList):Find("GroupItem")
 
 	setActive(var0_2, false)
 
-	arg0_2.albumGroupViewport = arg0_2:findTF("Viewport", arg0_2.albumGroupList)
-	arg0_2.albumGroupsGrid = arg0_2:findTF("Viewport/Content", arg0_2.albumGroupList):GetComponent(typeof(GridLayoutGroup))
+	arg0_2.albumGroupViewport = tf(arg0_2.albumGroupList):Find("Viewport")
+	arg0_2.albumGroupsGrid = tf(arg0_2.albumGroupList):Find("Viewport/Content"):GetComponent(typeof(GridLayoutGroup))
 	arg0_2.loader = AutoLoader.New()
 
-	setText(arg0_2:findTF("top/title/text"), i18n("word_limited_activity"))
-	setText(arg0_2:findTF("top/expireCheckBox/text"), i18n("word_show_expire_content"))
+	setText(arg0_2._tf:Find("top/title/text"), i18n("word_limited_activity"))
+	setText(arg0_2._tf:Find("top/expireCheckBox/text"), i18n("word_show_expire_content"))
 
-	arg0_2.showExpireBtn = arg0_2:findTF("top/expireCheckBox/click")
-	arg0_2.showExpireCheckBox = arg0_2:findTF("top/expireCheckBox/checkBox/check")
+	arg0_2.showExpireBtn = arg0_2._tf:Find("top/expireCheckBox/click")
+	arg0_2.showExpireCheckBox = arg0_2._tf:Find("top/expireCheckBox/checkBox/check")
 	arg0_2.showExpire = true
 
 	onButton(arg0_2, arg0_2.showExpireBtn, function()
@@ -47,7 +47,7 @@ function var0_0.OnInit(arg0_2)
 	end)
 	triggerButton(arg0_2.showExpireBtn)
 
-	arg0_2.rectAnchorX = arg0_2:findTF("GroupRect").anchoredPosition.x
+	arg0_2.rectAnchorX = arg0_2._tf:Find("GroupRect").anchoredPosition.x
 
 	arg0_2:UpdateView(arg0_2.showExpireBtn)
 end
@@ -144,7 +144,7 @@ end
 function var0_0.UpdateView(arg0_14)
 	local var0_14 = WorldMediaCollectionScene.WorldRecordLock()
 
-	setAnchoredPosition(arg0_14:findTF("GroupRect"), {
+	setAnchoredPosition(arg0_14._tf:Find("GroupRect"), {
 		x = var0_14 and 0 or arg0_14.rectAnchorX
 	})
 	arg0_14.albumGroupList:SetTotalCount(#arg0_14.albumGroups, 0)

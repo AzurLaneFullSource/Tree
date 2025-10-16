@@ -162,7 +162,7 @@ function var0_0.handleNotification(arg0_12, arg1_12)
 		arg0_12.friendInfoPosition = nil
 		arg0_12.friendInfoMsg = nil
 	elseif var0_12 == GAME.ON_APPLICATION_PAUSE then
-		if not var1_12 and _IslandCore then
+		if not var1_12 and _IslandCore and not arg0_12.exitProcessing then
 			arg0_12:sendNotification(GAME.ISLAND_RECONNECT, {
 				islandId = _IslandCore:GetController():GetIsland().id
 			})
@@ -170,7 +170,15 @@ function var0_0.handleNotification(arg0_12, arg1_12)
 	elseif var0_12 == GAME.ISLAND_ON_HOME then
 		arg0_12.viewComponent:emit(BaseUI.ON_HOME)
 	elseif var0_12 == GAME.ISLAND_ON_RECONNECT then
+		if arg0_12.exitProcessing then
+			return
+		end
+
+		arg0_12.exitProcessing = true
+
 		arg0_12.viewComponent:ExitProcess(BaseUI.ON_HOME, function()
+			arg0_12.exitProcessing = false
+
 			pg.m02:sendNotification(GAME.ISLAND_ENTER, var1_12)
 		end)
 	elseif var0_12 == GAME.ISLAND_SELECT_GIFT_DONE then

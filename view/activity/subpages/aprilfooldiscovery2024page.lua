@@ -2,9 +2,9 @@ local var0_0 = class("AprilFoolDiscovery2024Page", import(".AprilFoolDiscoveryRe
 local var1_0 = "goldenawake"
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.bg = arg0_1._tf:Find("AD")
 
-	local var0_1 = arg0_1:findTF("AD/List")
+	local var0_1 = arg0_1._tf:Find("AD/List")
 
 	arg0_1.items = CustomIndexLayer.Clone2Full(var0_1, 11)
 	arg0_1.selectIndex = 0

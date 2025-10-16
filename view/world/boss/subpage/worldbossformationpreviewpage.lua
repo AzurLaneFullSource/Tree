@@ -6,11 +6,11 @@ end
 
 function var0_0.OnLoaded(arg0_2)
 	arg0_2.shipList = {
-		arg0_2:findTF("frame/ships/1"),
-		arg0_2:findTF("frame/ships/2"),
-		arg0_2:findTF("frame/ships/3")
+		arg0_2._tf:Find("frame/ships/1"),
+		arg0_2._tf:Find("frame/ships/2"),
+		arg0_2._tf:Find("frame/ships/3")
 	}
-	arg0_2.returnBtn = arg0_2:findTF("frame/return")
+	arg0_2.returnBtn = arg0_2._tf:Find("frame/return")
 end
 
 function var0_0.OnInit(arg0_3)
@@ -20,12 +20,12 @@ function var0_0.OnInit(arg0_3)
 	onButton(arg0_3, arg0_3.returnBtn, function()
 		arg0_3:Hide()
 	end, SFX_PANEL)
-	onToggle(arg0_3, arg0_3:findTF("frame/toggles/main"), function(arg0_6)
+	onToggle(arg0_3, arg0_3._tf:Find("frame/toggles/main"), function(arg0_6)
 		if arg0_6 then
 			arg0_3:Switch(1)
 		end
 	end, SFX_PANEL)
-	onToggle(arg0_3, arg0_3:findTF("frame/toggles/vanguard"), function(arg0_7)
+	onToggle(arg0_3, arg0_3._tf:Find("frame/toggles/vanguard"), function(arg0_7)
 		if arg0_7 then
 			arg0_3:Switch(2)
 		end
@@ -64,7 +64,7 @@ function var0_0.Show(arg0_9, arg1_9)
 		var1_9
 	}
 
-	triggerToggle(arg0_9:findTF("frame/toggles/main"), true)
+	triggerToggle(arg0_9._tf:Find("frame/toggles/main"), true)
 end
 
 function var0_0.OnHide(arg0_10)

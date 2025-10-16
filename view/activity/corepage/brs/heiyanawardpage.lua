@@ -1,33 +1,33 @@
 local var0_0 = class("HeiYanAwardPage", import("view.activity.CorePage.CoreActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.AD = arg0_1:findTF("AD")
+	arg0_1.AD = arg0_1._tf:Find("AD")
 	arg0_1.table_Top = {
-		arg0_1:findTF("tabs/top_1", arg0_1.AD),
-		arg0_1:findTF("tabs/top_2", arg0_1.AD),
-		arg0_1:findTF("tabs/top_3", arg0_1.AD),
-		arg0_1:findTF("tabs/top_4", arg0_1.AD)
+		arg0_1.AD:Find("tabs/top_1"),
+		arg0_1.AD:Find("tabs/top_2"),
+		arg0_1.AD:Find("tabs/top_3"),
+		arg0_1.AD:Find("tabs/top_4")
 	}
-	arg0_1.bg_1 = arg0_1:findTF("bg_1", arg0_1.AD)
-	arg0_1.bg_2 = arg0_1:findTF("bg_2", arg0_1.AD)
-	arg0_1.boxTF = arg0_1:findTF("Box")
-	arg0_1.boxBG = arg0_1:findTF("BG", arg0_1.boxTF)
-	arg0_1.panel = arg0_1:findTF("Panel", arg0_1.boxTF)
-	arg0_1.infoTF = arg0_1:findTF("Info", arg0_1.panel)
-	arg0_1.boxCloseBtn = arg0_1:findTF("CloseBtn", arg0_1.infoTF)
-	arg0_1.Title = arg0_1:findTF("Title", arg0_1.infoTF)
+	arg0_1.bg_1 = arg0_1.AD:Find("bg_1")
+	arg0_1.bg_2 = arg0_1.AD:Find("bg_2")
+	arg0_1.boxTF = arg0_1._tf:Find("Box")
+	arg0_1.boxBG = arg0_1.boxTF:Find("BG")
+	arg0_1.panel = arg0_1.boxTF:Find("Panel")
+	arg0_1.infoTF = arg0_1.panel:Find("Info")
+	arg0_1.boxCloseBtn = arg0_1.infoTF:Find("CloseBtn")
+	arg0_1.Title = arg0_1.infoTF:Find("Title")
 
 	setText(arg0_1.Title, i18n("brs_reward_tip_1"))
 
-	arg0_1.boxIconTF = arg0_1:findTF("Icon/Mask/IconTpl", arg0_1.infoTF)
-	arg0_1.boxNameText = arg0_1:findTF("NameText", arg0_1.infoTF)
-	arg0_1.boxNumTF = arg0_1:findTF("Num", arg0_1.infoTF)
-	arg0_1.boxNumTip = arg0_1:findTF("Text", arg0_1.boxNumTF)
-	arg0_1.boxNumText = arg0_1:findTF("NumText", arg0_1.boxNumTF)
-	arg0_1.boxDescText = arg0_1:findTF("DescText", arg0_1.infoTF)
-	arg0_1.boxSrcText = arg0_1:findTF("SrcText", arg0_1.infoTF)
-	arg0_1.boxSrcContent = arg0_1:findTF("Content", arg0_1.panel)
-	arg0_1.boxSrcTpl = arg0_1:findTF("SrcTpl", arg0_1.boxSrcContent)
+	arg0_1.boxIconTF = arg0_1.infoTF:Find("Icon/Mask/IconTpl")
+	arg0_1.boxNameText = arg0_1.infoTF:Find("NameText")
+	arg0_1.boxNumTF = arg0_1.infoTF:Find("Num")
+	arg0_1.boxNumTip = arg0_1.boxNumTF:Find("Text")
+	arg0_1.boxNumText = arg0_1.boxNumTF:Find("NumText")
+	arg0_1.boxDescText = arg0_1.infoTF:Find("DescText")
+	arg0_1.boxSrcText = arg0_1.infoTF:Find("SrcText")
+	arg0_1.boxSrcContent = arg0_1.panel:Find("Content")
+	arg0_1.boxSrcTpl = arg0_1.boxSrcContent:Find("SrcTpl")
 
 	onButton(arg0_1, arg0_1.boxBG, function()
 		arg0_1:showBoxPanel(false)
@@ -94,7 +94,7 @@ end
 
 function var0_0.UpdateView(arg0_10)
 	for iter0_10 = 1, #arg0_10.table_Top do
-		setText(arg0_10:findTF("Label", arg0_10.table_Top[iter0_10]), arg0_10:OnGetCount(iter0_10) .. "/" .. arg0_10:OnCount(iter0_10))
+		setText(arg0_10.table_Top[iter0_10]:Find("Label"), arg0_10:OnGetCount(iter0_10) .. "/" .. arg0_10:OnCount(iter0_10))
 	end
 
 	triggerToggle(arg0_10.table_Top[arg0_10.pageIndex or 1], true)
@@ -181,13 +181,13 @@ end
 
 function var0_0.ShowSitePage(arg0_16)
 	local var0_16 = arg0_16.showDataList[1].config.drop_id
-	local var1_16 = arg0_16:findTF("Role_left", arg0_16.bg_1)
-	local var2_16 = arg0_16:findTF("lock_bg", var1_16)
-	local var3_16 = arg0_16:findTF("name", var1_16)
-	local var4_16 = arg0_16:findTF("get", var1_16)
-	local var5_16 = arg0_16:findTF("Text", var4_16)
-	local var6_16 = arg0_16:findTF("notget", var1_16)
-	local var7_16 = arg0_16:findTF("Text", var6_16)
+	local var1_16 = arg0_16.bg_1:Find("Role_left")
+	local var2_16 = var1_16:Find("lock_bg")
+	local var3_16 = var1_16:Find("name")
+	local var4_16 = var1_16:Find("get")
+	local var5_16 = var4_16:Find("Text")
+	local var6_16 = var1_16:Find("notget")
+	local var7_16 = var6_16:Find("Text")
 
 	setText(var5_16, i18n("word_got"))
 	setText(var7_16, i18n("word_not_get"))
@@ -201,18 +201,18 @@ function var0_0.ShowSitePage(arg0_16)
 	local var11_16 = pg.ship_data_template[var10_16].group_type
 	local var12_16 = tobool(getProxy(CollectionProxy):getShipGroup(var11_16))
 
-	setText(arg0_16:findTF("Text", var3_16), var9_16)
+	setText(var3_16:Find("Text"), var9_16)
 	SetActive(var2_16, not var12_16)
 	SetActive(var4_16, var12_16)
 	SetActive(var6_16, not var12_16)
 
-	local var13_16 = arg0_16:findTF("Role_right", arg0_16.bg_1)
-	local var14_16 = arg0_16:findTF("lock_bg", var13_16)
-	local var15_16 = arg0_16:findTF("name", var13_16)
-	local var16_16 = arg0_16:findTF("get", var13_16)
-	local var17_16 = arg0_16:findTF("Text", var16_16)
-	local var18_16 = arg0_16:findTF("notget", var13_16)
-	local var19_16 = arg0_16:findTF("Text", var18_16)
+	local var13_16 = arg0_16.bg_1:Find("Role_right")
+	local var14_16 = var13_16:Find("lock_bg")
+	local var15_16 = var13_16:Find("name")
+	local var16_16 = var13_16:Find("get")
+	local var17_16 = var16_16:Find("Text")
+	local var18_16 = var13_16:Find("notget")
+	local var19_16 = var18_16:Find("Text")
 
 	setText(var17_16, i18n("word_got"))
 	setText(var19_16, i18n("word_not_get"))
@@ -227,15 +227,15 @@ function var0_0.ShowSitePage(arg0_16)
 	local var24_16 = pg.ship_data_template[var23_16].group_type
 	local var25_16 = tobool(getProxy(CollectionProxy):getShipGroup(var24_16))
 
-	setText(arg0_16:findTF("Text", var15_16), var22_16)
+	setText(var15_16:Find("Text"), var22_16)
 	SetActive(var18_16, not var25_16)
 	SetActive(var16_16, var25_16)
 	SetActive(var14_16, not var25_16)
 end
 
 function var0_0.ShowCharaPage(arg0_17)
-	arg0_17.award = arg0_17:findTF("tpl", arg0_17.bg_2)
-	arg0_17.count = arg0_17:findTF("count", arg0_17.bg_2)
+	arg0_17.award = arg0_17.bg_2:Find("tpl")
+	arg0_17.count = arg0_17.bg_2:Find("count")
 	arg0_17.tabsList = UIItemList.New(arg0_17.count, arg0_17.award)
 
 	arg0_17.tabsList:make(function(arg0_18, arg1_18, arg2_18)
@@ -248,7 +248,7 @@ end
 
 function var0_0.OnUpdateItem(arg0_19, arg1_19, arg2_19)
 	local var0_19 = arg0_19.showDataList[arg1_19 + 1]
-	local var1_19 = arg0_19:findTF("icon_mask/icon", arg2_19)
+	local var1_19 = arg2_19:Find("icon_mask/icon")
 	local var2_19 = {
 		type = var0_19.config.type,
 		id = var0_19.config.drop_id
@@ -269,15 +269,15 @@ function var0_0.OnUpdateItem(arg0_19, arg1_19, arg2_19)
 		arg0_19:updateBoxPanel(var0_20)
 		arg0_19:showBoxPanel(true)
 	end, SFX_PANEL)
-	changeToScrollText(arg0_19:findTF("name_mask/name", arg2_19), Drop.New({
+	changeToScrollText(arg2_19:Find("name_mask/name"), Drop.New({
 		type = var0_19.config.type,
 		id = var0_19.config.drop_id
 	}):getName())
-	setText(arg0_19:findTF("owner/number", arg2_19), var0_19.count .. "/" .. var0_19.config.count)
+	setText(arg2_19:Find("owner/number"), var0_19.count .. "/" .. var0_19.config.count)
 
-	GetOrAddComponent(arg0_19:findTF("owner", arg2_19), typeof(CanvasGroup)).alpha = var0_19.count == var0_19.config.count and 0.5 or 1
+	GetOrAddComponent(arg2_19:Find("owner"), typeof(CanvasGroup)).alpha = var0_19.count == var0_19.config.count and 0.5 or 1
 
-	setActive(arg0_19:findTF("got", arg2_19), var0_19.count == var0_19.config.count)
+	setActive(arg2_19:Find("got"), var0_19.count == var0_19.config.count)
 end
 
 function var0_0.updateBoxPanel(arg0_21, arg1_21)
@@ -307,11 +307,11 @@ function var0_0.updateBoxPanel(arg0_21, arg1_21)
 			local var2_22 = var0_22[2]
 			local var3_22 = var0_22[3]
 
-			changeToScrollText(arg0_21:findTF("SrcText", arg2_22), var3_22)
+			changeToScrollText(arg2_22:Find("SrcText"), var3_22)
 
-			local var4_22 = arg0_21:findTF("GoBtn", arg2_22)
+			local var4_22 = arg2_22:Find("GoBtn")
 
-			setText(arg0_21:findTF("go", var4_22), i18n("brs_reward_tip_2"))
+			setText(var4_22:Find("go"), i18n("brs_reward_tip_2"))
 			onButton(arg0_21, var4_22, function()
 				if var1_22 == Msgbox4LinkCollectGuide.SKIP_TYPE_SCENE then
 					pg.m02:sendNotification(GAME.GO_SCENE, var2_22[1], var2_22[2] or {})

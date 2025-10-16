@@ -36,10 +36,10 @@ function var0_0.initData(arg0_5)
 end
 
 function var0_0.initUI(arg0_6)
-	arg0_6.choosePanel = arg0_6:findTF("ChoosePanel")
+	arg0_6.choosePanel = arg0_6._tf:Find("ChoosePanel")
 
-	local var0_6 = arg0_6:findTF("SelectedImgTpl", arg0_6.choosePanel)
-	local var1_6 = arg0_6:findTF("SelectedImgList", arg0_6.choosePanel)
+	local var0_6 = arg0_6.choosePanel:Find("SelectedImgTpl")
+	local var1_6 = arg0_6.choosePanel:Find("SelectedImgList")
 
 	arg0_6.selectedImgUIItemList = UIItemList.New(var1_6, var0_6)
 
@@ -47,7 +47,7 @@ function var0_0.initUI(arg0_6)
 		if arg0_7 == UIItemList.EventUpdate then
 			arg1_7 = arg1_7 + 1
 
-			local var0_7 = arg0_6:findTF("Selected", arg2_7)
+			local var0_7 = arg2_7:Find("Selected")
 
 			setActive(var0_7, arg1_7 == arg0_6.curSelectedIndex)
 
@@ -60,8 +60,8 @@ function var0_0.initUI(arg0_6)
 	end)
 	arg0_6.selectedImgUIItemList:align(#arg0_6.charIDList)
 
-	local var2_6 = arg0_6:findTF("CharTpl", arg0_6.choosePanel)
-	local var3_6 = arg0_6:findTF("CharList", arg0_6.choosePanel)
+	local var2_6 = arg0_6.choosePanel:Find("CharTpl")
+	local var3_6 = arg0_6.choosePanel:Find("CharList")
 
 	arg0_6.charUIItemList = UIItemList.New(var3_6, var2_6)
 
@@ -81,7 +81,7 @@ function var0_0.initUI(arg0_6)
 	end)
 	arg0_6.charUIItemList:align(#arg0_6.charIDList)
 
-	arg0_6.confirmBtn = arg0_6:findTF("ConfirmBtn", arg0_6.choosePanel)
+	arg0_6.confirmBtn = arg0_6.choosePanel:Find("ConfirmBtn")
 
 	onButton(arg0_6, arg0_6.confirmBtn, function()
 		if arg0_6.curSelectedIndex and arg0_6.curSelectedIndex ~= 0 then
@@ -99,24 +99,24 @@ function var0_0.initUI(arg0_6)
 		end
 	end, SFX_PANEL)
 
-	arg0_6.proTitle = arg0_6:findTF("ProgressTitle/Text", arg0_6.choosePanel)
+	arg0_6.proTitle = arg0_6.choosePanel:Find("ProgressTitle/Text")
 
 	setText(arg0_6.proTitle, i18n("tec_target_catchup_progress"))
 
-	arg0_6.ssrProgress = arg0_6:findTF("ProgressTitle/Progress_SSR", arg0_6.choosePanel)
-	arg0_6.urProgress = arg0_6:findTF("ProgressTitle/Progress_UR", arg0_6.choosePanel)
-	arg0_6.showPanel = arg0_6:findTF("ShowPanel", arg0_6.targetCatchupPanel)
-	arg0_6.showBG = arg0_6:findTF("BG", arg0_6.showPanel)
-	arg0_6.nameText = arg0_6:findTF("NameText", arg0_6.showPanel)
-	arg0_6.progressText = arg0_6:findTF("Progress/ProgressText", arg0_6.showPanel)
-	arg0_6.tipText = arg0_6:findTF("Progress/Text", arg0_6.showPanel)
+	arg0_6.ssrProgress = arg0_6.choosePanel:Find("ProgressTitle/Progress_SSR")
+	arg0_6.urProgress = arg0_6.choosePanel:Find("ProgressTitle/Progress_UR")
+	arg0_6.showPanel = arg0_6._tf:Find("ShowPanel")
+	arg0_6.showBG = arg0_6.showPanel:Find("BG")
+	arg0_6.nameText = arg0_6.showPanel:Find("NameText")
+	arg0_6.progressText = arg0_6.showPanel:Find("Progress/ProgressText")
+	arg0_6.tipText = arg0_6.showPanel:Find("Progress/Text")
 
 	setText(arg0_6.tipText, i18n("tec_target_catchup_progress"))
 
-	arg0_6.selectedImg = arg0_6:findTF("Selected", arg0_6.showPanel)
-	arg0_6.giveupBtn = arg0_6:findTF("GiveupBtn", arg0_6.showPanel)
-	arg0_6.finishedImg = arg0_6:findTF("Finished", arg0_6.showPanel)
-	arg0_6.helpBtn = arg0_6:findTF("HelpBtn", arg0_6.targetCatchupPanel)
+	arg0_6.selectedImg = arg0_6.showPanel:Find("Selected")
+	arg0_6.giveupBtn = arg0_6.showPanel:Find("GiveupBtn")
+	arg0_6.finishedImg = arg0_6.showPanel:Find("Finished")
+	arg0_6.helpBtn = arg0_6._tf:Find("HelpBtn")
 
 	onButton(arg0_6, arg0_6.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
@@ -124,16 +124,16 @@ function var0_0.initUI(arg0_6)
 			helps = pg.gametip.tec_target_catchup_help_tip.tip
 		})
 	end, SFX_PANEL)
-	setText(arg0_6:findTF("FinishAll/BG/Text", arg0_6.choosePanel), i18n("tec_target_catchup_all_finish_tip"))
-	setText(arg0_6:findTF("CharListBG/SSRTag/Text", arg0_6.choosePanel), i18n("tec_target_catchup_pry_char"))
+	setText(arg0_6.choosePanel:Find("FinishAll/BG/Text"), i18n("tec_target_catchup_all_finish_tip"))
+	setText(arg0_6.choosePanel:Find("CharListBG/SSRTag/Text"), i18n("tec_target_catchup_pry_char"))
 
 	if #arg0_6.urList > 0 then
-		setText(arg0_6:findTF("FinishPart/BG/Text", arg0_6.choosePanel), i18n("tec_target_catchup_dr_finish_tip"))
-		setText(arg0_6:findTF("CharListBG/URTag/Text", arg0_6.choosePanel), i18n("tec_target_catchup_dr_char"))
+		setText(arg0_6.choosePanel:Find("FinishPart/BG/Text"), i18n("tec_target_catchup_dr_finish_tip"))
+		setText(arg0_6.choosePanel:Find("CharListBG/URTag/Text"), i18n("tec_target_catchup_dr_char"))
 	end
 
 	for iter0_6, iter1_6 in ipairs(arg0_6.urList) do
-		setText(arg0_6:findTF("Finish_" .. iter1_6 .. "/BG/Text", arg0_6.choosePanel), i18n("tec_target_catchup_dr_finish_tip"))
+		setText(arg0_6.choosePanel:Find("Finish_" .. iter1_6 .. "/BG/Text"), i18n("tec_target_catchup_dr_finish_tip"))
 	end
 end
 
@@ -148,14 +148,14 @@ function var0_0.updateTargetCatchupPage(arg0_13)
 end
 
 function var0_0.updateCharTpl(arg0_14, arg1_14, arg2_14)
-	local var0_14 = arg0_14:findTF("PrintNum/Text", arg2_14)
+	local var0_14 = arg2_14:Find("PrintNum/Text")
 
 	setText(var0_14, i18n("tec_target_need_print"))
 
-	local var1_14 = arg0_14:findTF("PrintNum/NumText", arg2_14)
-	local var2_14 = arg0_14:findTF("NameText", arg2_14)
-	local var3_14 = arg0_14:findTF("LevelText", arg2_14)
-	local var4_14 = arg0_14:findTF("NotGetTag", arg2_14)
+	local var1_14 = arg2_14:Find("PrintNum/NumText")
+	local var2_14 = arg2_14:Find("NameText")
+	local var3_14 = arg2_14:Find("LevelText")
+	local var4_14 = arg2_14:Find("NotGetTag")
 	local var5_14 = arg0_14.charIDList[arg1_14]
 	local var6_14 = arg0_14.bayProxy:findShipByGroup(var5_14)
 	local var7_14 = arg0_14.technologyProxy:getBluePrintVOByGroupID(var5_14)
@@ -202,7 +202,7 @@ function var0_0.updateShowPanel(arg0_15)
 	setActive(arg0_15.selectedImg, not var5_15)
 	onButton(arg0_15, arg0_15.selectedImg, function()
 		arg0_15:updateChoosePanel()
-		setActive(arg0_15:findTF("ProgressTitle", arg0_15.choosePanel), false)
+		setActive(arg0_15.choosePanel:Find("ProgressTitle"), false)
 	end, SFX_PANEL)
 end
 
@@ -213,25 +213,25 @@ function var0_0.updateChoosePanel(arg0_17)
 	local var0_17 = arg0_17.technologyProxy:getCatchupData(arg0_17.tecID)
 
 	if arg0_17.state == TechnologyCatchup.STATE_FINISHED_ALL then
-		setActive(arg0_17:findTF("FinishAll", arg0_17.choosePanel), true)
-		setActive(arg0_17:findTF("ProgressTitle", arg0_17.choosePanel), false)
+		setActive(arg0_17.choosePanel:Find("FinishAll"), true)
+		setActive(arg0_17.choosePanel:Find("ProgressTitle"), false)
 	elseif #arg0_17.urList > 0 then
-		setActive(arg0_17:findTF("FinishAll", arg0_17.choosePanel), false)
+		setActive(arg0_17.choosePanel:Find("FinishAll"), false)
 
 		local var1_17 = var0_17:isFinishSSR()
 
-		setActive(arg0_17:findTF("FinishPart", arg0_17.choosePanel), var1_17)
+		setActive(arg0_17.choosePanel:Find("FinishPart"), var1_17)
 
 		for iter0_17, iter1_17 in ipairs(arg0_17.urList) do
 			local var2_17 = var0_17:isFinish(iter1_17)
 
-			setActive(arg0_17:findTF("Finish_" .. iter1_17, arg0_17.choosePanel), var2_17)
+			setActive(arg0_17.choosePanel:Find("Finish_" .. iter1_17), var2_17)
 		end
 	end
 end
 
 function var0_0.updateProgress(arg0_18, arg1_18)
-	setActive(arg0_18:findTF("ProgressTitle", arg0_18.choosePanel), true)
+	setActive(arg0_18.choosePanel:Find("ProgressTitle"), true)
 
 	local var0_18 = arg0_18.technologyProxy:getCatchupData(arg0_18.tecID):getTargetNum(arg1_18)
 	local var1_18 = arg0_18:getMaxNum(arg1_18)
@@ -239,11 +239,11 @@ function var0_0.updateProgress(arg0_18, arg1_18)
 	if arg0_18:isUR(arg1_18) then
 		setActive(arg0_18.urProgress, true)
 		setActive(arg0_18.ssrProgress, false)
-		setText(arg0_18:findTF("Text", arg0_18.urProgress), var0_18 .. "/" .. var1_18)
+		setText(arg0_18.urProgress:Find("Text"), var0_18 .. "/" .. var1_18)
 	else
 		setActive(arg0_18.urProgress, false)
 		setActive(arg0_18.ssrProgress, true)
-		setText(arg0_18:findTF("Text", arg0_18.ssrProgress), var0_18 .. "/" .. var1_18)
+		setText(arg0_18.ssrProgress:Find("Text"), var0_18 .. "/" .. var1_18)
 	end
 end
 

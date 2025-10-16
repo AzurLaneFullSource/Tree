@@ -6,9 +6,9 @@ end
 
 function var0_0.OnInit(arg0_2)
 	arg0_2.treePanel = arg0_2._tf
-	arg0_2.treeList = UIItemList.New(arg0_2:findTF("bg/frame/bg/talents", arg0_2.treePanel), arg0_2:findTF("bg/frame/bg/talents/telent", arg0_2.treePanel))
+	arg0_2.treeList = UIItemList.New(arg0_2.treePanel:Find("bg/frame/bg/talents"), arg0_2.treePanel:Find("bg/frame/bg/talents/telent"))
 	arg0_2.treeTalentDesTxt = arg0_2.treePanel:Find("bg/frame/bg/desc/Text"):GetComponent(typeof(Text))
-	arg0_2.treePanelCloseBtn = arg0_2:findTF("bg/frame/close_btn", arg0_2.treePanel)
+	arg0_2.treePanelCloseBtn = arg0_2.treePanel:Find("bg/frame/close_btn")
 
 	setActive(arg0_2.treePanel, false)
 	onButton(arg0_2, arg0_2.treePanel, function()

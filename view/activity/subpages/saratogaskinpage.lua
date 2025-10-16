@@ -3,8 +3,8 @@ local var0_0 = class("SaratogaSkinPage", import(".TemplatePage.PreviewTemplatePa
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.shopBtn = arg0_1:findTF("btn_list/shop", arg0_1.bg)
-	arg0_1.fightBtn = arg0_1:findTF("btn_list/fight", arg0_1.bg)
+	arg0_1.shopBtn = arg0_1.bg:Find("btn_list/shop")
+	arg0_1.fightBtn = arg0_1.bg:Find("btn_list/fight")
 end
 
 function var0_0.OnFirstFlush(arg0_2)

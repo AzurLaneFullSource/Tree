@@ -3,6 +3,10 @@ local var0_0 = class("LogoutCommand", pm.SimpleCommand)
 function var0_0.execute(arg0_1, arg1_1)
 	local var0_1 = arg1_1:getBody()
 
+	if not pg.proxyRegister then
+		return
+	end
+
 	arg0_1:sendNotification(GAME.WILL_LOGOUT)
 
 	if PLATFORM ~= PLATFORM_WINDOWSEDITOR and PLATFORM_CHT == PLATFORM_CODE and var0_1.code ~= SDK_EXIT_CODE then

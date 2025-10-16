@@ -22,11 +22,11 @@ function var0_0.init(arg0_3)
 		end
 	end
 
-	arg0_3.btnBack = arg0_3:findTF("adapt/top/title/back_button")
-	arg0_3.rtRes = arg0_3:findTF("adapt/middle/content/res")
-	arg0_3.rtResetTime = arg0_3:findTF("adapt/middle/content/resetTimer")
-	arg0_3.rtResetTip = arg0_3:findTF("adapt/middle/content/resetTip")
-	arg0_3.rtShop = arg0_3:findTF("adapt/middle/content/world_shop")
+	arg0_3.btnBack = arg0_3._tf:Find("adapt/top/title/back_button")
+	arg0_3.rtRes = arg0_3._tf:Find("adapt/middle/content/res")
+	arg0_3.rtResetTime = arg0_3._tf:Find("adapt/middle/content/resetTimer")
+	arg0_3.rtResetTip = arg0_3._tf:Find("adapt/middle/content/resetTip")
+	arg0_3.rtShop = arg0_3._tf:Find("adapt/middle/content/world_shop")
 	arg0_3.goodsItemList = UIItemList.New(arg0_3.rtShop:Find("content"), arg0_3.rtShop:Find("content/item_tpl"))
 	arg0_3.singleWindow = OriginShopSingleWindow.New(arg0_3._tf, arg0_3.event)
 	arg0_3.multiWindow = OriginShopMultiWindow.New(arg0_3._tf, arg0_3.event)

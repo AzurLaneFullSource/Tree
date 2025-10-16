@@ -68,26 +68,26 @@ function var0_0.init(arg0_2)
 end
 
 function var0_0.InitTF(arg0_3)
-	arg0_3.main = arg0_3:findTF("main")
-	arg0_3.map = arg0_3:findTF("map", arg0_3.main)
+	arg0_3.main = arg0_3._tf:Find("main")
+	arg0_3.map = arg0_3.main:Find("map")
 	arg0_3.floors = {
-		arg0_3:findTF("floor1", arg0_3.map),
-		arg0_3:findTF("floor2", arg0_3.map)
+		arg0_3.map:Find("floor1"),
+		arg0_3.map:Find("floor2")
 	}
 	arg0_3.rooms = {
-		arg0_3:findTF("rooms", arg0_3.floors[1]),
-		arg0_3:findTF("rooms", arg0_3.floors[2])
+		arg0_3.floors[1]:Find("rooms"),
+		arg0_3.floors[2]:Find("rooms")
 	}
-	arg0_3.top = arg0_3:findTF("top", arg0_3.main)
-	arg0_3.buttonBack = arg0_3:findTF("btn_back", arg0_3.top)
-	arg0_3.buttonHelp = arg0_3:findTF("btn_help", arg0_3.top)
-	arg0_3.buttonAward = arg0_3:findTF("btn_award", arg0_3.top)
-	arg0_3.buttonCharacter = arg0_3:findTF("btn_character", arg0_3.top)
-	arg0_3.buttonDice = arg0_3:findTF("btn_dice", arg0_3.top)
-	arg0_3.diceRes = arg0_3:findTF("dice_res", arg0_3.buttonDice)
-	arg0_3.button1F = arg0_3:findTF("btn_1F", arg0_3.top)
-	arg0_3.button2F = arg0_3:findTF("btn_2F", arg0_3.top)
-	arg0_3.window = arg0_3:findTF("window")
+	arg0_3.top = arg0_3.main:Find("top")
+	arg0_3.buttonBack = arg0_3.top:Find("btn_back")
+	arg0_3.buttonHelp = arg0_3.top:Find("btn_help")
+	arg0_3.buttonAward = arg0_3.top:Find("btn_award")
+	arg0_3.buttonCharacter = arg0_3.top:Find("btn_character")
+	arg0_3.buttonDice = arg0_3.top:Find("btn_dice")
+	arg0_3.diceRes = arg0_3.buttonDice:Find("dice_res")
+	arg0_3.button1F = arg0_3.top:Find("btn_1F")
+	arg0_3.button2F = arg0_3.top:Find("btn_2F")
+	arg0_3.window = arg0_3._tf:Find("window")
 end
 
 function var0_0.InitData(arg0_4)
@@ -130,11 +130,11 @@ function var0_0.InitData(arg0_4)
 end
 
 function var0_0.InitAward(arg0_5)
-	arg0_5.awardWindow = arg0_5:findTF("award_window", arg0_5.window)
-	arg0_5.buttonAwardGet = arg0_5:findTF("award_bg/btn_get", arg0_5.awardWindow)
-	arg0_5.awardWindowBg = arg0_5:findTF("bg", arg0_5.awardWindow)
-	arg0_5.awardItem = arg0_5:findTF("award_bg/mask/item", arg0_5.awardWindow)
-	arg0_5.awardItems = arg0_5:findTF("award_bg/mask/content", arg0_5.awardWindow)
+	arg0_5.awardWindow = arg0_5.window:Find("award_window")
+	arg0_5.buttonAwardGet = arg0_5.awardWindow:Find("award_bg/btn_get")
+	arg0_5.awardWindowBg = arg0_5.awardWindow:Find("bg")
+	arg0_5.awardItem = arg0_5.awardWindow:Find("award_bg/mask/item")
+	arg0_5.awardItems = arg0_5.awardWindow:Find("award_bg/mask/content")
 	arg0_5.awardActivity = getProxy(ActivityProxy):getActivityById(var0_0.AWARD_ACT_ID)
 	arg0_5.taskProxy = getProxy(TaskProxy)
 	arg0_5.taskGroup = arg0_5.awardActivity:getConfig("config_data")
@@ -147,40 +147,40 @@ function var0_0.InitAward(arg0_5)
 end
 
 function var0_0.InitDice(arg0_6)
-	arg0_6.diceWindow = arg0_6:findTF("dice_window", arg0_6.window)
-	arg0_6.buttonDiceContinue = arg0_6:findTF("btn_continue", arg0_6.diceWindow)
-	arg0_6.dice = arg0_6:findTF("dice", arg0_6.diceWindow)
+	arg0_6.diceWindow = arg0_6.window:Find("dice_window")
+	arg0_6.buttonDiceContinue = arg0_6.diceWindow:Find("btn_continue")
+	arg0_6.dice = arg0_6.diceWindow:Find("dice")
 	arg0_6.dices = {
-		arg0_6:findTF("dice1", arg0_6.dice),
-		arg0_6:findTF("dice2", arg0_6.dice)
+		arg0_6.dice:Find("dice1"),
+		arg0_6.dice:Find("dice2")
 	}
-	arg0_6.result = arg0_6:findTF("result", arg0_6.diceWindow)
-	arg0_6.success = arg0_6:findTF("success", arg0_6.result)
-	arg0_6.criticalSuccess = arg0_6:findTF("critical_success", arg0_6.result)
-	arg0_6.failure = arg0_6:findTF("failure", arg0_6.result)
-	arg0_6.criticalFailure = arg0_6:findTF("critical_failure", arg0_6.result)
+	arg0_6.result = arg0_6.diceWindow:Find("result")
+	arg0_6.success = arg0_6.result:Find("success")
+	arg0_6.criticalSuccess = arg0_6.result:Find("critical_success")
+	arg0_6.failure = arg0_6.result:Find("failure")
+	arg0_6.criticalFailure = arg0_6.result:Find("critical_failure")
 end
 
 function var0_0.InitCharacter(arg0_7)
-	arg0_7.characterWindow = arg0_7:findTF("character_window", arg0_7.window)
-	arg0_7.characterWindowBg = arg0_7:findTF("bg", arg0_7.characterWindow)
-	arg0_7.characterCard = arg0_7:findTF("character_card", arg0_7.characterWindowBg)
-	arg0_7.characterName = arg0_7:findTF("title_base/name", arg0_7.characterCard)
-	arg0_7.profession = arg0_7:findTF("title_base/profession", arg0_7.characterCard)
-	arg0_7.nameInput = arg0_7:findTF("InputField", arg0_7.characterName)
-	arg0_7.attrGroup = arg0_7:findTF("title_attr/attrGroup", arg0_7.characterCard)
-	arg0_7.skillGroup = arg0_7:findTF("title_skill/skillGroup", arg0_7.characterCard)
-	arg0_7.characterTip = arg0_7:findTF("tip", arg0_7.characterCard)
+	arg0_7.characterWindow = arg0_7.window:Find("character_window")
+	arg0_7.characterWindowBg = arg0_7.characterWindow:Find("bg")
+	arg0_7.characterCard = arg0_7.characterWindowBg:Find("character_card")
+	arg0_7.characterName = arg0_7.characterCard:Find("title_base/name")
+	arg0_7.profession = arg0_7.characterCard:Find("title_base/profession")
+	arg0_7.nameInput = arg0_7.characterName:Find("InputField")
+	arg0_7.attrGroup = arg0_7.characterCard:Find("title_attr/attrGroup")
+	arg0_7.skillGroup = arg0_7.characterCard:Find("title_skill/skillGroup")
+	arg0_7.characterTip = arg0_7.characterCard:Find("tip")
 
 	setText(arg0_7.characterTip, i18n("roll_unlock"))
 
-	arg0_7.buttonRandom = arg0_7:findTF("random", arg0_7.characterCard)
-	arg0_7.randomLock = arg0_7:findTF("lock", arg0_7.buttonRandom)
-	arg0_7.randomText = arg0_7:findTF("Image", arg0_7.buttonRandom)
+	arg0_7.buttonRandom = arg0_7.characterCard:Find("random")
+	arg0_7.randomLock = arg0_7.buttonRandom:Find("lock")
+	arg0_7.randomText = arg0_7.buttonRandom:Find("Image")
 
-	setText(arg0_7:findTF("title_base", arg0_7.characterCard), i18n("roll_card_info"))
-	setText(arg0_7:findTF("title_attr", arg0_7.characterCard), i18n("roll_card_attr"))
-	setText(arg0_7:findTF("title_skill", arg0_7.characterCard), i18n("roll_card_skill"))
+	setText(arg0_7.characterCard:Find("title_base"), i18n("roll_card_info"))
+	setText(arg0_7.characterCard:Find("title_attr"), i18n("roll_card_attr"))
+	setText(arg0_7.characterCard:Find("title_skill"), i18n("roll_card_skill"))
 
 	local var0_7 = arg0_7.activity:getConfig("config_client")[2]
 
@@ -502,17 +502,17 @@ function var0_0.UpdateCharacter(arg0_33)
 
 	arg0_33.nameInput:GetComponent(typeof(InputField)).interactable = arg0_33:IsFinish()
 
-	setActive(arg0_33:findTF("edit", arg0_33.characterName), arg0_33:IsFinish())
+	setActive(arg0_33.characterName:Find("edit"), arg0_33:IsFinish())
 end
 
 function var0_0.UpdateTask(arg0_34, arg1_34, arg2_34)
 	local var0_34 = arg0_34.taskMap[arg1_34 + 1]
-	local var1_34 = arg0_34:findTF("IconTpl", arg2_34)
+	local var1_34 = arg2_34:Find("IconTpl")
 	local var2_34 = arg0_34.taskGroup[var0_34]
 	local var3_34 = arg0_34.taskProxy:getTaskVO(var2_34)
 
 	assert(var3_34, "without this task by id: " .. var2_34)
-	setText(arg0_34:findTF("title", arg2_34), i18n("roll_reward_word" .. var0_34))
+	setText(arg2_34:Find("title"), i18n("roll_reward_word" .. var0_34))
 
 	local var4_34 = var3_34:getConfig("award_display")[1]
 	local var5_34 = {
@@ -529,9 +529,9 @@ function var0_0.UpdateTask(arg0_34, arg1_34, arg2_34)
 	local var6_34 = var3_34:getProgress()
 	local var7_34 = var3_34:getConfig("target_num")
 
-	setText(arg0_34:findTF("progress", arg2_34), i18n("roll_reward_tip", var6_34, var7_34))
-	setText(arg0_34:findTF("mask/Text", arg2_34), i18n("roll_reward_got"))
-	setActive(arg0_34:findTF("mask", arg2_34), var3_34:isReceive())
+	setText(arg2_34:Find("progress"), i18n("roll_reward_tip", var6_34, var7_34))
+	setText(arg2_34:Find("mask/Text"), i18n("roll_reward_got"))
+	setActive(arg2_34:Find("mask"), var3_34:isReceive())
 end
 
 function var0_0.UpdateAttrLock(arg0_36)

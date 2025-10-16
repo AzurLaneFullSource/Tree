@@ -5,18 +5,18 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.closeBtn = arg0_2:findTF("window/top/btnBack")
-	arg0_2.cancelBtn = arg0_2:findTF("window/button_container/cancel")
-	arg0_2.confirmBtn = arg0_2:findTF("window/button_container/confirm")
-	arg0_2.content = arg0_2:findTF("window/single_item_panel/Text")
-	arg0_2.itemTpl = arg0_2:findTF("window/single_item_panel/left")
-	arg0_2.resTpl = arg0_2:findTF("window/single_item_panel/right")
+	arg0_2.closeBtn = arg0_2._tf:Find("window/top/btnBack")
+	arg0_2.cancelBtn = arg0_2._tf:Find("window/button_container/cancel")
+	arg0_2.confirmBtn = arg0_2._tf:Find("window/button_container/confirm")
+	arg0_2.content = arg0_2._tf:Find("window/single_item_panel/Text")
+	arg0_2.itemTpl = arg0_2._tf:Find("window/single_item_panel/left")
+	arg0_2.resTpl = arg0_2._tf:Find("window/single_item_panel/right")
 	arg0_2.itemName = arg0_2.itemTpl:Find("name_bg/Text"):GetComponent(typeof(Text))
 	arg0_2.resName = arg0_2.resTpl:Find("name_bg/Text"):GetComponent(typeof(Text))
 
-	setText(arg0_2:findTF("window/top/bg/infomation/title"), i18n("words_information"))
-	setText(arg0_2:findTF("window/button_container/cancel/pic"), i18n("word_cancel"))
-	setText(arg0_2:findTF("window/button_container/confirm/pic"), i18n("word_ok"))
+	setText(arg0_2._tf:Find("window/top/bg/infomation/title"), i18n("words_information"))
+	setText(arg0_2._tf:Find("window/button_container/cancel/pic"), i18n("word_cancel"))
+	setText(arg0_2._tf:Find("window/button_container/confirm/pic"), i18n("word_ok"))
 end
 
 function var0_0.OnInit(arg0_3)

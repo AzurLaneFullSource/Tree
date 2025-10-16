@@ -3,7 +3,7 @@ local var0_0 = class("SpTemplatePage", import(".PtTemplatePage"))
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.buildBtn = arg0_1:findTF("build_btn", arg0_1.bg)
+	arg0_1.buildBtn = arg0_1.bg:Find("build_btn")
 end
 
 function var0_0.OnFirstFlush(arg0_2)

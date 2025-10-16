@@ -5,14 +5,14 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.icon = arg0_2:findTF("frame/item/icon"):GetComponent(typeof(Image))
-	arg0_2.name = arg0_2:findTF("frame/name/Text"):GetComponent(typeof(Text))
-	arg0_2.desc = arg0_2:findTF("frame/Text"):GetComponent(typeof(Text))
-	arg0_2.outPut = arg0_2:findTF("frame/output/Text"):GetComponent(typeof(Text))
-	arg0_2.goBtn = arg0_2:findTF("frame/go")
+	arg0_2.icon = arg0_2._tf:Find("frame/item/icon"):GetComponent(typeof(Image))
+	arg0_2.name = arg0_2._tf:Find("frame/name/Text"):GetComponent(typeof(Text))
+	arg0_2.desc = arg0_2._tf:Find("frame/Text"):GetComponent(typeof(Text))
+	arg0_2.outPut = arg0_2._tf:Find("frame/output/Text"):GetComponent(typeof(Text))
+	arg0_2.goBtn = arg0_2._tf:Find("frame/go")
 
 	setText(arg0_2.goBtn:Find("Text"), i18n("feast_res_window_go_label"))
-	setText(arg0_2:findTF("frame/title"), i18n("feast_res_window_title"))
+	setText(arg0_2._tf:Find("frame/title"), i18n("feast_res_window_title"))
 end
 
 function var0_0.OnInit(arg0_3)

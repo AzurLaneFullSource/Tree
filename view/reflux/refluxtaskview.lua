@@ -31,7 +31,7 @@ function var0_0.initData(arg0_5)
 end
 
 function var0_0.initUI(arg0_6)
-	local var0_6 = arg0_6:findTF("DayImg")
+	local var0_6 = arg0_6._tf:Find("DayImg")
 
 	arg0_6.daySpriteList = {}
 
@@ -42,10 +42,10 @@ function var0_0.initUI(arg0_6)
 		table.insert(arg0_6.daySpriteList, var2_6)
 	end
 
-	arg0_6.itemTpl = arg0_6:findTF("ItemTpl")
+	arg0_6.itemTpl = arg0_6._tf:Find("ItemTpl")
 
-	local var3_6 = arg0_6:findTF("TaskTpl")
-	local var4_6 = arg0_6:findTF("ScrollRect/Container")
+	local var3_6 = arg0_6._tf:Find("TaskTpl")
+	local var4_6 = arg0_6._tf:Find("ScrollRect/Container")
 
 	arg0_6.taskUIList = UIItemList.New(var4_6, var3_6)
 
@@ -59,9 +59,9 @@ function var0_0.initUI(arg0_6)
 		end
 	end)
 
-	arg0_6.taskProgressText = arg0_6:findTF("BG/ProgressText")
-	arg0_6.oneStepBtnDisable = arg0_6:findTF("OneStepDisable")
-	arg0_6.oneStepBtn = arg0_6:findTF("OneStepBtn")
+	arg0_6.taskProgressText = arg0_6._tf:Find("BG/ProgressText")
+	arg0_6.oneStepBtnDisable = arg0_6._tf:Find("OneStepDisable")
+	arg0_6.oneStepBtn = arg0_6._tf:Find("OneStepBtn")
 
 	onButton(arg0_6, arg0_6.oneStepBtn, function()
 		if arg0_6:isTaskListOverflow() then
@@ -110,8 +110,8 @@ function var0_0.updateOutline(arg0_11)
 end
 
 function var0_0.updateItem(arg0_12, arg1_12, arg2_12)
-	local var0_12 = arg0_12:findTF("Icon", arg1_12)
-	local var1_12 = arg0_12:findTF("Count", arg1_12)
+	local var0_12 = arg1_12:Find("Icon")
+	local var1_12 = arg1_12:Find("Count")
 
 	setText(var1_12, arg2_12.count)
 
@@ -131,31 +131,31 @@ function var0_0.updateTaskList(arg0_13)
 end
 
 function var0_0.updateTask(arg0_14, arg1_14, arg2_14)
-	local var0_14 = arg0_14:findTF("Go", arg1_14)
-	local var1_14 = arg0_14:findTF("Btn", var0_14)
-	local var2_14 = arg0_14:findTF("Progress", var0_14)
-	local var3_14 = arg0_14:findTF("Text", var2_14)
-	local var4_14 = arg0_14:findTF("Get", arg1_14)
-	local var5_14 = arg0_14:findTF("Btn", var4_14)
-	local var6_14 = arg0_14:findTF("Progress", var4_14)
-	local var7_14 = arg0_14:findTF("Text", var6_14)
-	local var8_14 = arg0_14:findTF("Got", arg1_14)
+	local var0_14 = arg1_14:Find("Go")
+	local var1_14 = var0_14:Find("Btn")
+	local var2_14 = var0_14:Find("Progress")
+	local var3_14 = var2_14:Find("Text")
+	local var4_14 = arg1_14:Find("Get")
+	local var5_14 = var4_14:Find("Btn")
+	local var6_14 = var4_14:Find("Progress")
+	local var7_14 = var6_14:Find("Text")
+	local var8_14 = arg1_14:Find("Got")
 	local var9_14 = arg2_14:getTaskStatus()
 
 	setActive(var0_14, var9_14 == 0)
 	setActive(var4_14, var9_14 == 1)
 	setActive(var8_14, var9_14 == 2)
 
-	local var10_14 = arg0_14:findTF("DayImg", arg1_14)
+	local var10_14 = arg1_14:Find("DayImg")
 	local var11_14 = arg0_14:getTaskUnlockSignCount(arg2_14)
 
 	setImageSprite(var10_14, arg0_14.daySpriteList[var11_14])
 
-	local var12_14 = arg0_14:findTF("Lock", arg1_14)
+	local var12_14 = arg1_14:Find("Lock")
 
 	setActive(var12_14, not arg0_14:isTaskUnlocked(arg2_14))
 
-	local var13_14 = arg0_14:findTF("DescText", arg1_14)
+	local var13_14 = arg1_14:Find("DescText")
 
 	setText(var13_14, arg2_14:getConfig("desc"))
 
@@ -167,7 +167,7 @@ function var0_0.updateTask(arg0_14, arg1_14, arg2_14)
 	setSlider(var6_14, 0, var15_14, var14_14)
 	setText(var7_14, var14_14 .. "/" .. var15_14)
 
-	local var16_14 = arg0_14:findTF("Drops", arg1_14)
+	local var16_14 = arg1_14:Find("Drops")
 	local var17_14 = arg0_14:getTaskAwardForShow(arg2_14)
 	local var18_14 = UIItemList.New(var16_14, arg0_14.itemTpl)
 

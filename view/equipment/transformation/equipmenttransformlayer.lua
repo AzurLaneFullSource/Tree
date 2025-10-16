@@ -5,7 +5,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.layer = arg0_2:findTF("Adapt")
+	arg0_2.layer = arg0_2._tf:Find("Adapt")
 	arg0_2.formulaItems = {}
 	arg0_2.formulaItems[1] = arg0_2.layer:Find("MaterialModule1")
 	arg0_2.formulaItems[2] = arg0_2.layer:Find("MaterialModule2")

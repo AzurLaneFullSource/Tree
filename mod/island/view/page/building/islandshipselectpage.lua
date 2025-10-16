@@ -5,13 +5,13 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.backBtn = arg0_2:findTF("top/back")
-	arg0_2.title = arg0_2:findTF("top/title/Text")
+	arg0_2.backBtn = arg0_2._tf:Find("top/back")
+	arg0_2.title = arg0_2._tf:Find("top/title/Text")
 
 	setText(arg0_2.title, i18n("island_select_ship"))
 
-	arg0_2.frameTF = arg0_2:findTF("frame")
-	arg0_2.shipRectCom = arg0_2:findTF("ships", arg0_2.frameTF):GetComponent("LScrollRect")
+	arg0_2.frameTF = arg0_2._tf:Find("frame")
+	arg0_2.shipRectCom = arg0_2.frameTF:Find("ships"):GetComponent("LScrollRect")
 
 	setText(arg0_2.frameTF:Find("selected/Text"), i18n("island_select_ship_label_1"))
 
@@ -26,20 +26,20 @@ function var0_0.OnLoaded(arg0_2)
 	setText(arg0_2.benefitsTF:Find("main/Text"), IslandShipAttr.ATTRS_CH[IslandShipAttr.MANAGE_KEY])
 
 	arg0_2.subAttrUIList = UIItemList.New(arg0_2.benefitsTF:Find("subs"), arg0_2.benefitsTF:Find("subs/tpl"))
-	arg0_2.infoEmptyTF = arg0_2:findTF("info/empty")
+	arg0_2.infoEmptyTF = arg0_2._tf:Find("info/empty")
 
 	setText(arg0_2.infoEmptyTF:Find("Image/Text"), i18n("island_select_ship"))
 
 	arg0_2.infoEmptyTitleTF = arg0_2.infoEmptyTF:Find("name")
-	arg0_2.infoPanel = arg0_2:findTF("info/content")
-	arg0_2.nameTF = arg0_2:findTF("name", arg0_2.infoPanel)
-	arg0_2.levelTF = arg0_2:findTF("name/level", arg0_2.infoPanel)
-	arg0_2.attrUIList = UIItemList.New(arg0_2:findTF("attrs", arg0_2.infoPanel), arg0_2:findTF("attrs/tpl", arg0_2.infoPanel))
-	arg0_2.skillTF = arg0_2:findTF("skill", arg0_2.infoPanel)
-	arg0_2.energyTFInfo = arg0_2:findTF("selectShipEnergyInfo", arg0_2.infoPanel)
-	arg0_2.energyTF = arg0_2:findTF("energy", arg0_2.energyTFInfo)
-	arg0_2.statusTF = arg0_2:findTF("status", arg0_2.infoPanel)
-	arg0_2.sureBtn = arg0_2:findTF("sure")
+	arg0_2.infoPanel = arg0_2._tf:Find("info/content")
+	arg0_2.nameTF = arg0_2.infoPanel:Find("name")
+	arg0_2.levelTF = arg0_2.infoPanel:Find("name/level")
+	arg0_2.attrUIList = UIItemList.New(arg0_2.infoPanel:Find("attrs"), arg0_2.infoPanel:Find("attrs/tpl"))
+	arg0_2.skillTF = arg0_2.infoPanel:Find("skill")
+	arg0_2.energyTFInfo = arg0_2.infoPanel:Find("selectShipEnergyInfo")
+	arg0_2.energyTF = arg0_2.energyTFInfo:Find("energy")
+	arg0_2.statusTF = arg0_2.infoPanel:Find("status")
+	arg0_2.sureBtn = arg0_2._tf:Find("sure")
 
 	setText(arg0_2.sureBtn:Find("Text"), i18n("island_shipselect_confirm"))
 
@@ -49,7 +49,7 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.orderTxt = arg0_2._tf:Find("frame/filter_panel/index/content/Text"):GetComponent(typeof(Text))
 	arg0_2.shipIconTF = arg0_2.energyTFInfo:Find("icon_mask/icon")
 	arg0_2.energyTimeTextTf = arg0_2.energyTFInfo:Find("time_Text")
-	arg0_2.recoveryTimeTips = arg0_2:findTF("selectShipEnergyInfo/recoveryTimeTips", arg0_2.infoPanel)
+	arg0_2.recoveryTimeTips = arg0_2.infoPanel:Find("selectShipEnergyInfo/recoveryTimeTips")
 	arg0_2.skill = arg0_2.infoPanel:Find("skill")
 	arg0_2.skillEmp = arg0_2.infoPanel:Find("skillEmp")
 	arg0_2.skillEmpDes = arg0_2.skillEmp:Find("Text")
@@ -351,8 +351,8 @@ function var0_0.FlushInfo(arg0_29)
 	local var2_29 = var0_29:GetCurrentEnergy()
 	local var3_29 = var0_29:GetMaxEnergy()
 
-	setText(arg0_29:findTF("text", arg0_29.energyTF), var2_29 .. "/" .. var3_29)
-	setSlider(arg0_29:findTF("energy_bar", arg0_29.energyTF), 0, 1, var2_29 / var3_29)
+	setText(arg0_29.energyTF:Find("text"), var2_29 .. "/" .. var3_29)
+	setSlider(arg0_29.energyTF:Find("energy_bar"), 0, 1, var2_29 / var3_29)
 
 	if var2_29 ~= var3_29 then
 		setActive(arg0_29.recoveryTimeTips, true)

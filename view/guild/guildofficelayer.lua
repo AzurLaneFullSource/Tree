@@ -19,7 +19,7 @@ end
 
 function var0_0.init(arg0_4)
 	arg0_4.taskPage = GuildOfficeTaskPage.New(arg0_4._tf, arg0_4.event)
-	arg0_4.helpBtn = arg0_4:findTF("frame/help")
+	arg0_4.helpBtn = arg0_4._tf:Find("frame/help")
 end
 
 function var0_0.didEnter(arg0_5)

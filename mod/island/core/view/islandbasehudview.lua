@@ -12,7 +12,7 @@ function var0_0.OnInit(arg0_1, arg1_1)
 end
 
 function var0_0.SetUIParent(arg0_2, arg1_2)
-	setParent(arg1_2, arg0_2:GetView().hudContainer)
+	return arg0_2:GetView().hudContainer
 end
 
 function var0_0.GetSubView(arg0_3, arg1_3)

@@ -99,15 +99,15 @@ function var0_0.GenerateRandomFanPosition(arg0_5, arg1_5, arg2_5, arg3_5, arg4_5
 end
 
 function var0_0.init(arg0_6)
-	arg0_6.top = arg0_6:findTF("top")
-	arg0_6._closeBtn = arg0_6:findTF("top/back")
-	arg0_6._homeBtn = arg0_6:findTF("top/home")
-	arg0_6._helpBtn = arg0_6:findTF("top/help")
+	arg0_6.top = arg0_6._tf:Find("top")
+	arg0_6._closeBtn = arg0_6._tf:Find("top/back")
+	arg0_6._homeBtn = arg0_6._tf:Find("top/home")
+	arg0_6._helpBtn = arg0_6._tf:Find("top/help")
 	arg0_6.ticketTimes = arg0_6.top:Find("ticket/text")
 	arg0_6.yinhuace = arg0_6.top:Find("yinhuace")
 	arg0_6.yinhuaceTimes = arg0_6.yinhuace:Find("get")
 	arg0_6.yinhuaceTips = arg0_6.yinhuace:Find("tip")
-	arg0_6.shouce = arg0_6.top:Find("yinhuashouceye")
+	arg0_6.shouce = arg0_6._tf:Find("yinhuashouceye")
 	arg0_6.shouce_bg = arg0_6.shouce:Find("bg")
 	arg0_6.layout_shouce = arg0_6.shouce:Find("yinhuace/go/layout")
 	arg0_6.group_get = CustomIndexLayer.Clone2Full(arg0_6.layout_shouce, 14)
@@ -117,8 +117,8 @@ function var0_0.init(arg0_6)
 
 	setActive(arg0_6.shouce, false)
 
-	arg0_6.sakura = arg0_6:findTF("effect")
-	arg0_6._map = arg0_6:findTF("scrollRect/map")
+	arg0_6.sakura = arg0_6._tf:Find("effect")
+	arg0_6._map = arg0_6._tf:Find("scrollRect/map")
 	arg0_6.wave = arg0_6._map:Find("effect_wave")
 	arg0_6.shrine = arg0_6._map:Find("shrine")
 	arg0_6.snack_street = arg0_6._map:Find("snack_street")
@@ -154,9 +154,11 @@ function var0_0.didEnter(arg0_8)
 		})
 	end)
 	onButton(arg0_8, arg0_8.yinhuace, function()
+		pg.UIMgr.GetInstance():OverlayPanel(arg0_8.shouce)
 		setActive(arg0_8.shouce, true)
 	end)
 	onButton(arg0_8, arg0_8.shouce_bg, function()
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_8.shoucem, arg0_8._tf)
 		setActive(arg0_8.shouce, false)
 	end)
 	onButton(arg0_8, arg0_8.btn_shouce_help, function()
@@ -457,6 +459,12 @@ end
 
 function var0_0.willExit(arg0_38)
 	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_38.top, arg0_38._tf)
+
+	if isActive(arg0_38.shouce) then
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_38.shoucem, arg0_38._tf)
+		setActive(arg0_38.shouce, false)
+	end
+
 	arg0_38:clearStudents()
 	arg0_38:ClearEffectFirework()
 end

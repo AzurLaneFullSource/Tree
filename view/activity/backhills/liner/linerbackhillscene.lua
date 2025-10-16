@@ -28,8 +28,8 @@ function var0_0.IsDay()
 end
 
 function var0_0.init(arg0_4)
-	arg0_4._dayTF = arg0_4:findTF("day")
-	arg0_4._nightTF = arg0_4:findTF("night")
+	arg0_4._dayTF = arg0_4._tf:Find("day")
+	arg0_4._nightTF = arg0_4._tf:Find("night")
 
 	for iter0_4 = 0, arg0_4._dayTF.childCount - 1 do
 		local var0_4 = arg0_4._dayTF:GetChild(iter0_4)
@@ -47,17 +47,17 @@ function var0_0.init(arg0_4)
 
 	arg0_4._map = arg0_4._dayTF
 	arg0_4._upper = arg0_4._nightTF
-	arg0_4._log_tip = arg0_4:findTF("top/btn_log/tip")
-	arg0_4._unlock = arg0_4:findTF("top/unlock_info")
+	arg0_4._log_tip = arg0_4._tf:Find("top/btn_log/tip")
+	arg0_4._unlock = arg0_4._tf:Find("top/unlock_info")
 	arg0_4.activity = getProxy(ActivityProxy):getActivityById(var0_0.ACT_ID)
 	arg0_4.timeMgr = pg.TimeMgr.GetInstance()
 end
 
 function var0_0.didEnter(arg0_5)
-	onButton(arg0_5, arg0_5:findTF("top/btn_back"), function()
+	onButton(arg0_5, arg0_5._tf:Find("top/btn_back"), function()
 		arg0_5:emit(var0_0.ON_BACK)
 	end, SFX_CANCEL)
-	onButton(arg0_5, arg0_5:findTF("top/btn_help"), function()
+	onButton(arg0_5, arg0_5._tf:Find("top/btn_help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip["7th_main_tip"].tip
@@ -81,7 +81,7 @@ function var0_0.didEnter(arg0_5)
 	local var0_5 = getProxy(ActivityProxy):getActivityById(var0_0.TASK_ACT_ID):getConfig("config_client").preStory
 	local var1_5 = not pg.NewStoryMgr.GetInstance():IsPlayed(var0_5)
 
-	onButton(arg0_5, arg0_5:findTF("top/btn_log"), function()
+	onButton(arg0_5, arg0_5._tf:Find("top/btn_log"), function()
 		if var1_5 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("liner_activity_lock"))
 		else
@@ -103,10 +103,10 @@ end
 
 function var0_0.UpdateView(arg0_12)
 	setActive(arg0_12._log_tip, var0_0.LogTip())
-	setActive(arg0_12:findTF("tip", arg0_12.day_btn_game), var0_0.MiniGameTip())
-	setActive(arg0_12:findTF("tip", arg0_12.night_btn_game), var0_0.MiniGameTip())
-	setActive(arg0_12:findTF("tip", arg0_12.day_btn_cruise), var0_0.CruiseTip())
-	setActive(arg0_12:findTF("tip", arg0_12.night_btn_cruise), var0_0.CruiseTip())
+	setActive(arg0_12.day_btn_game:Find("tip"), var0_0.MiniGameTip())
+	setActive(arg0_12.night_btn_game:Find("tip"), var0_0.MiniGameTip())
+	setActive(arg0_12.day_btn_cruise:Find("tip"), var0_0.CruiseTip())
+	setActive(arg0_12.night_btn_cruise:Find("tip"), var0_0.CruiseTip())
 end
 
 function var0_0.GetDate()

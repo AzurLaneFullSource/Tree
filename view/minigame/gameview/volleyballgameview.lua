@@ -54,89 +54,89 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.countTimeUI = arg0_2:findTF("count_time_ui")
-	arg0_2.countTimeImage = arg0_2:findTF("time", arg0_2.countTimeUI)
-	arg0_2.countTimeNumImage = arg0_2:findTF("nums", arg0_2.countTimeUI)
-	arg0_2.mainUI = arg0_2:findTF("main_ui")
-	arg0_2.returnBtn = arg0_2:findTF("return_btn", arg0_2.mainUI)
-	arg0_2.mainStartBtn = arg0_2:findTF("start_btn", arg0_2.mainUI)
-	arg0_2.ruleBtn = arg0_2:findTF("rule_btn", arg0_2.mainUI)
-	arg0_2.progressScroll = arg0_2:findTF("right_panel/scroll_view/", arg0_2.mainUI)
-	arg0_2.progressContent = arg0_2:findTF("right_panel/scroll_view/viewport/content", arg0_2.mainUI)
-	arg0_2.colors = arg0_2:findTF("right_panel/colors", arg0_2.mainUI)
-	arg0_2.icons = arg0_2:findTF("right_panel/icons", arg0_2.mainUI)
-	arg0_2.gotIcon = arg0_2:findTF("bg/got", arg0_2.mainUI)
-	arg0_2.selectUI = arg0_2:findTF("select_ui")
-	arg0_2.selectBackBtn = arg0_2:findTF("back_btn", arg0_2.selectUI)
-	arg0_2.selectStartBtn = arg0_2:findTF("start_btn", arg0_2.selectUI)
-	arg0_2.tags = arg0_2:findTF("select_panel/tags", arg0_2.selectUI)
-	arg0_2.paints = arg0_2:findTF("select_panel/paints", arg0_2.selectUI)
-	arg0_2.freeTitle = arg0_2:findTF("select_panel/title/free", arg0_2.selectUI)
-	arg0_2.dayTitle = arg0_2:findTF("select_panel/title/challenge", arg0_2.selectUI)
-	arg0_2.titleDayNum = arg0_2:findTF("select_panel/title/challenge/num", arg0_2.selectUI)
-	arg0_2.ruleTxt = arg0_2:findTF("select_panel/rule/rule_txt", arg0_2.selectUI)
-	arg0_2.select4Chars = arg0_2:findTF("select_panel/chars", arg0_2.selectUI)
-	arg0_2.selectWindow = arg0_2:findTF("select_windows", arg0_2.selectUI)
-	arg0_2.selectSureBtn = arg0_2:findTF("windows/sure_btn", arg0_2.selectWindow)
-	arg0_2.select9Chars = arg0_2:findTF("windows/char_layout", arg0_2.selectWindow)
-	arg0_2.selectNum = arg0_2:findTF("windows/tips/num", arg0_2.selectWindow)
-	arg0_2.gameUI = arg0_2:findTF("game_ui")
-	arg0_2.bgEffect = arg0_2:findTF("bg/shatanpaiqiu_hailang", arg0_2.gameUI)
-	arg0_2.hitEffect = arg0_2:findTF("shatanpaiqiu_jida", arg0_2.gameUI)
-	arg0_2.upEffect = arg0_2:findTF("shatanpaiqiu_jieqiu", arg0_2.gameUI)
-	arg0_2.ball = arg0_2:findTF("ball", arg0_2.gameUI)
-	arg0_2.ballShadow = arg0_2:findTF("ball_shadow", arg0_2.gameUI)
-	arg0_2.pauseBtn = arg0_2:findTF("pause_btn", arg0_2.gameUI)
-	arg0_2.backBtn = arg0_2:findTF("back_btn", arg0_2.gameUI)
-	arg0_2.qteBtn = arg0_2:findTF("qte_btn", arg0_2.gameUI)
-	arg0_2.pos = arg0_2:findTF("pos", arg0_2.gameUI)
+	arg0_2.countTimeUI = arg0_2._tf:Find("count_time_ui")
+	arg0_2.countTimeImage = arg0_2.countTimeUI:Find("time")
+	arg0_2.countTimeNumImage = arg0_2.countTimeUI:Find("nums")
+	arg0_2.mainUI = arg0_2._tf:Find("main_ui")
+	arg0_2.returnBtn = arg0_2.mainUI:Find("return_btn")
+	arg0_2.mainStartBtn = arg0_2.mainUI:Find("start_btn")
+	arg0_2.ruleBtn = arg0_2.mainUI:Find("rule_btn")
+	arg0_2.progressScroll = arg0_2.mainUI:Find("right_panel/scroll_view/")
+	arg0_2.progressContent = arg0_2.mainUI:Find("right_panel/scroll_view/viewport/content")
+	arg0_2.colors = arg0_2.mainUI:Find("right_panel/colors")
+	arg0_2.icons = arg0_2.mainUI:Find("right_panel/icons")
+	arg0_2.gotIcon = arg0_2.mainUI:Find("bg/got")
+	arg0_2.selectUI = arg0_2._tf:Find("select_ui")
+	arg0_2.selectBackBtn = arg0_2.selectUI:Find("back_btn")
+	arg0_2.selectStartBtn = arg0_2.selectUI:Find("start_btn")
+	arg0_2.tags = arg0_2.selectUI:Find("select_panel/tags")
+	arg0_2.paints = arg0_2.selectUI:Find("select_panel/paints")
+	arg0_2.freeTitle = arg0_2.selectUI:Find("select_panel/title/free")
+	arg0_2.dayTitle = arg0_2.selectUI:Find("select_panel/title/challenge")
+	arg0_2.titleDayNum = arg0_2.selectUI:Find("select_panel/title/challenge/num")
+	arg0_2.ruleTxt = arg0_2.selectUI:Find("select_panel/rule/rule_txt")
+	arg0_2.select4Chars = arg0_2.selectUI:Find("select_panel/chars")
+	arg0_2.selectWindow = arg0_2.selectUI:Find("select_windows")
+	arg0_2.selectSureBtn = arg0_2.selectWindow:Find("windows/sure_btn")
+	arg0_2.select9Chars = arg0_2.selectWindow:Find("windows/char_layout")
+	arg0_2.selectNum = arg0_2.selectWindow:Find("windows/tips/num")
+	arg0_2.gameUI = arg0_2._tf:Find("game_ui")
+	arg0_2.bgEffect = arg0_2.gameUI:Find("bg/shatanpaiqiu_hailang")
+	arg0_2.hitEffect = arg0_2.gameUI:Find("shatanpaiqiu_jida")
+	arg0_2.upEffect = arg0_2.gameUI:Find("shatanpaiqiu_jieqiu")
+	arg0_2.ball = arg0_2.gameUI:Find("ball")
+	arg0_2.ballShadow = arg0_2.gameUI:Find("ball_shadow")
+	arg0_2.pauseBtn = arg0_2.gameUI:Find("pause_btn")
+	arg0_2.backBtn = arg0_2.gameUI:Find("back_btn")
+	arg0_2.qteBtn = arg0_2.gameUI:Find("qte_btn")
+	arg0_2.pos = arg0_2.gameUI:Find("pos")
 
 	arg0_2:initPos()
 
-	arg0_2.ourScore = arg0_2:findTF("score/our", arg0_2.gameUI)
-	arg0_2.enemyScore = arg0_2:findTF("score/enemy", arg0_2.gameUI)
-	arg0_2.qte = arg0_2:findTF("qte", arg0_2.gameUI)
-	arg0_2.qteCircles = arg0_2:findTF("circles", arg0_2.qte)
-	arg0_2.qteCircle = arg0_2:findTF("circles/big", arg0_2.qte)
-	arg0_2.result = arg0_2:findTF("result", arg0_2.qte)
-	arg0_2.resultTxt = arg0_2:findTF("txts", arg0_2.qte)
-	arg0_2.cutin = arg0_2:findTF("cutin", arg0_2.gameUI)
-	arg0_2.cutinPaint = arg0_2:findTF("cutin/paint", arg0_2.gameUI)
-	arg0_2.cutinPaints = arg0_2:findTF("cutin_paints", arg0_2.gameUI)
-	arg0_2.scoreCutin = arg0_2:findTF("score_cutin", arg0_2.gameUI)
-	arg0_2.scoreCutinNums = arg0_2:findTF("score_cutin/nums", arg0_2.gameUI)
-	arg0_2.ourScoreCutin = arg0_2:findTF("score_cutin/our", arg0_2.gameUI)
-	arg0_2.enemyScoreCutin = arg0_2:findTF("score_cutin/enemy", arg0_2.gameUI)
+	arg0_2.ourScore = arg0_2.gameUI:Find("score/our")
+	arg0_2.enemyScore = arg0_2.gameUI:Find("score/enemy")
+	arg0_2.qte = arg0_2.gameUI:Find("qte")
+	arg0_2.qteCircles = arg0_2.qte:Find("circles")
+	arg0_2.qteCircle = arg0_2.qte:Find("circles/big")
+	arg0_2.result = arg0_2.qte:Find("result")
+	arg0_2.resultTxt = arg0_2.qte:Find("txts")
+	arg0_2.cutin = arg0_2.gameUI:Find("cutin")
+	arg0_2.cutinPaint = arg0_2.gameUI:Find("cutin/paint")
+	arg0_2.cutinPaints = arg0_2.gameUI:Find("cutin_paints")
+	arg0_2.scoreCutin = arg0_2.gameUI:Find("score_cutin")
+	arg0_2.scoreCutinNums = arg0_2.gameUI:Find("score_cutin/nums")
+	arg0_2.ourScoreCutin = arg0_2.gameUI:Find("score_cutin/our")
+	arg0_2.enemyScoreCutin = arg0_2.gameUI:Find("score_cutin/enemy")
 	arg0_2.charTF = {}
-	arg0_2.charTF.our1 = arg0_2:findTF("char/our1", arg0_2.gameUI)
-	arg0_2.charTF.our2 = arg0_2:findTF("char/our2", arg0_2.gameUI)
-	arg0_2.charTF.enemy1 = arg0_2:findTF("char/enemy1", arg0_2.gameUI)
-	arg0_2.charTF.enemy2 = arg0_2:findTF("char/enemy2", arg0_2.gameUI)
+	arg0_2.charTF.our1 = arg0_2.gameUI:Find("char/our1")
+	arg0_2.charTF.our2 = arg0_2.gameUI:Find("char/our2")
+	arg0_2.charTF.enemy1 = arg0_2.gameUI:Find("char/enemy1")
+	arg0_2.charTF.enemy2 = arg0_2.gameUI:Find("char/enemy2")
 	arg0_2.charModels = {}
 	arg0_2.charactor = {}
-	arg0_2.cutinMask = arg0_2:findTF("cutin_mask", arg0_2.gameUI)
-	arg0_2.endUI = arg0_2:findTF("end_ui")
-	arg0_2.endDayTitle = arg0_2:findTF("title/race", arg0_2.endUI)
-	arg0_2.endFreeTitle = arg0_2:findTF("title/free", arg0_2.endUI)
-	arg0_2.endTitleDay = arg0_2:findTF("title/race/num", arg0_2.endUI)
-	arg0_2.titleDays = arg0_2:findTF("title_days", arg0_2.endUI)
-	arg0_2.endOurScore = arg0_2:findTF("score_panel/score/our", arg0_2.endUI)
-	arg0_2.endEnemyScore = arg0_2:findTF("score_panel/score/enemy", arg0_2.endUI)
-	arg0_2.endScoreNums = arg0_2:findTF("nums", arg0_2.endUI)
-	arg0_2.sureBtn = arg0_2:findTF("sure_btn", arg0_2.endUI)
-	arg0_2.winTag = arg0_2:findTF("score_panel/score/win", arg0_2.endUI)
-	arg0_2.loseTag = arg0_2:findTF("score_panel/score/lose", arg0_2.endUI)
-	arg0_2.helpUI = arg0_2:findTF("help_ui")
+	arg0_2.cutinMask = arg0_2.gameUI:Find("cutin_mask")
+	arg0_2.endUI = arg0_2._tf:Find("end_ui")
+	arg0_2.endDayTitle = arg0_2.endUI:Find("title/race")
+	arg0_2.endFreeTitle = arg0_2.endUI:Find("title/free")
+	arg0_2.endTitleDay = arg0_2.endUI:Find("title/race/num")
+	arg0_2.titleDays = arg0_2.endUI:Find("title_days")
+	arg0_2.endOurScore = arg0_2.endUI:Find("score_panel/score/our")
+	arg0_2.endEnemyScore = arg0_2.endUI:Find("score_panel/score/enemy")
+	arg0_2.endScoreNums = arg0_2.endUI:Find("nums")
+	arg0_2.sureBtn = arg0_2.endUI:Find("sure_btn")
+	arg0_2.winTag = arg0_2.endUI:Find("score_panel/score/win")
+	arg0_2.loseTag = arg0_2.endUI:Find("score_panel/score/lose")
+	arg0_2.helpUI = arg0_2._tf:Find("help_ui")
 end
 
 function var0_0.initPos(arg0_3)
 	arg0_3.orgPos = {}
-	arg0_3.orgPos.our_serve = arg0_3:findTF("our_pos/serve_pos", arg0_3.pos).anchoredPosition
-	arg0_3.orgPos.our1 = arg0_3:findTF("our_pos/drop_pos1", arg0_3.pos).anchoredPosition
-	arg0_3.orgPos.our2 = arg0_3:findTF("our_pos/drop_pos2", arg0_3.pos).anchoredPosition
-	arg0_3.orgPos.enemy_serve = arg0_3:findTF("enemy_pos/serve_pos", arg0_3.pos).anchoredPosition
-	arg0_3.orgPos.enemy1 = arg0_3:findTF("enemy_pos/drop_pos1", arg0_3.pos).anchoredPosition
-	arg0_3.orgPos.enemy2 = arg0_3:findTF("enemy_pos/drop_pos2", arg0_3.pos).anchoredPosition
+	arg0_3.orgPos.our_serve = arg0_3.pos:Find("our_pos/serve_pos").anchoredPosition
+	arg0_3.orgPos.our1 = arg0_3.pos:Find("our_pos/drop_pos1").anchoredPosition
+	arg0_3.orgPos.our2 = arg0_3.pos:Find("our_pos/drop_pos2").anchoredPosition
+	arg0_3.orgPos.enemy_serve = arg0_3.pos:Find("enemy_pos/serve_pos").anchoredPosition
+	arg0_3.orgPos.enemy1 = arg0_3.pos:Find("enemy_pos/drop_pos1").anchoredPosition
+	arg0_3.orgPos.enemy2 = arg0_3.pos:Find("enemy_pos/drop_pos2").anchoredPosition
 
 	arg0_3:resetPos()
 end
@@ -209,7 +209,7 @@ function var0_0.didEnter(arg0_5)
 		setActive(arg0_5.selectWindow, false)
 		arg0_5:refreshSelectUI()
 	end, SFX_PANEL)
-	onButton(arg0_5, arg0_5:findTF("mask", arg0_5.selectWindow), function()
+	onButton(arg0_5, arg0_5.selectWindow:Find("mask"), function()
 		setActive(arg0_5.selectWindow, false)
 	end, SFX_PANEL)
 	onButton(arg0_5, arg0_5.pauseBtn, function()
@@ -308,39 +308,39 @@ function var0_0.initMainUI(arg0_25)
 
 	arg0_25.isFree = arg0_25.hubData.ultimate ~= 0 and true or false
 
-	setActive(arg0_25:findTF("free_tag", arg0_25.mainStartBtn), arg0_25.isFree)
+	setActive(arg0_25.mainStartBtn:Find("free_tag"), arg0_25.isFree)
 	setActive(arg0_25.gotIcon, arg0_25.isFree)
 	eachChild(arg0_25.progressContent, function(arg0_26)
 		local var0_26 = ""
 		local var1_26 = tonumber(arg0_26.name)
 		local var2_26 = var1_0[arg0_25.mgData:GetSimpleValue("mainChar")[var1_26]]
 
-		setActive(arg0_25:findTF("char_bg/mask", arg0_26), false)
-		setActive(arg0_25:findTF("name_bg/mask", arg0_26), false)
-		setActive(arg0_25:findTF("pass", arg0_26), false)
+		setActive(arg0_26:Find("char_bg/mask"), false)
+		setActive(arg0_26:Find("name_bg/mask"), false)
+		setActive(arg0_26:Find("pass"), false)
 
 		if var1_26 == arg0_25.curDay and arg0_25.hubData.count > 0 then
 			var0_26 = "red"
 
-			setImageSprite(arg0_25:findTF("char_bg/icon", arg0_26), arg0_25.icons:Find(arg0_25:getCharIndex(var2_26)):GetComponent(typeof(Image)).sprite, true)
+			setImageSprite(arg0_26:Find("char_bg/icon"), arg0_25.icons:Find(arg0_25:getCharIndex(var2_26)):GetComponent(typeof(Image)).sprite, true)
 		elseif var1_26 < arg0_25.curDay or var1_26 == arg0_25.curDay and arg0_25.hubData.count == 0 then
 			var0_26 = "grey"
 
-			setImageSprite(arg0_25:findTF("char_bg/icon", arg0_26), arg0_25.icons:Find(arg0_25:getCharIndex(var2_26)):GetComponent(typeof(Image)).sprite, true)
-			setActive(arg0_25:findTF("char_bg/mask", arg0_26), true)
-			setActive(arg0_25:findTF("name_bg/mask", arg0_26), true)
-			setActive(arg0_25:findTF("pass", arg0_26), true)
+			setImageSprite(arg0_26:Find("char_bg/icon"), arg0_25.icons:Find(arg0_25:getCharIndex(var2_26)):GetComponent(typeof(Image)).sprite, true)
+			setActive(arg0_26:Find("char_bg/mask"), true)
+			setActive(arg0_26:Find("name_bg/mask"), true)
+			setActive(arg0_26:Find("pass"), true)
 		elseif var1_26 > arg0_25.curDay and var1_26 <= arg0_25.unlockDay then
 			var0_26 = "blue"
 
-			setImageSprite(arg0_25:findTF("char_bg/icon", arg0_26), arg0_25.icons:Find(arg0_25:getCharIndex(var2_26)):GetComponent(typeof(Image)).sprite, true)
+			setImageSprite(arg0_26:Find("char_bg/icon"), arg0_25.icons:Find(arg0_25:getCharIndex(var2_26)):GetComponent(typeof(Image)).sprite, true)
 		else
 			var0_26 = "grey"
 
-			setImageSprite(arg0_25:findTF("char_bg/icon", arg0_26), arg0_25.colors:Find("unkonwn"):GetComponent(typeof(Image)).sprite)
+			setImageSprite(arg0_26:Find("char_bg/icon"), arg0_25.colors:Find("unkonwn"):GetComponent(typeof(Image)).sprite)
 		end
 
-		setImageSprite(arg0_25:findTF("name_bg", arg0_26), arg0_25.colors:Find(var0_26):GetComponent(typeof(Image)).sprite)
+		setImageSprite(arg0_26:Find("name_bg"), arg0_25.colors:Find(var0_26):GetComponent(typeof(Image)).sprite)
 	end)
 
 	local var0_25 = 215
@@ -352,8 +352,8 @@ function var0_0.initMainUI(arg0_25)
 	}
 
 	onScroll(arg0_25, arg0_25.progressScroll, function(arg0_27)
-		setActive(arg0_25:findTF("right_panel/arraws_up", arg0_25.mainUI), arg0_27.y < 1 and true or false)
-		setActive(arg0_25:findTF("right_panel/arraws_down", arg0_25.mainUI), arg0_27.y > 0 and true or false)
+		setActive(arg0_25.mainUI:Find("right_panel/arraws_up"), arg0_27.y < 1 and true or false)
+		setActive(arg0_25.mainUI:Find("right_panel/arraws_down"), arg0_27.y > 0 and true or false)
 	end)
 end
 
@@ -404,13 +404,13 @@ function var0_0.refreshSelectUI(arg0_32)
 		local var0_33 = arg0_33.name
 
 		if arg0_32.charNames[var0_33] then
-			setActive(arg0_32:findTF("select_btn", arg0_33), false)
-			setActive(arg0_32:findTF("char", arg0_33), true)
-			setImageSprite(arg0_32:findTF("char/icon", arg0_33), arg0_32.paints:Find(arg0_32:getCharIndex(arg0_32.charNames[var0_33])):GetComponent(typeof(Image)).sprite, true)
-			setImageSprite(arg0_32:findTF("char/tag", arg0_33), arg0_32.tags:Find(arg0_32:getCharIndex(arg0_32.charNames[var0_33])):GetComponent(typeof(Image)).sprite, true)
+			setActive(arg0_33:Find("select_btn"), false)
+			setActive(arg0_33:Find("char"), true)
+			setImageSprite(arg0_33:Find("char/icon"), arg0_32.paints:Find(arg0_32:getCharIndex(arg0_32.charNames[var0_33])):GetComponent(typeof(Image)).sprite, true)
+			setImageSprite(arg0_33:Find("char/tag"), arg0_32.tags:Find(arg0_32:getCharIndex(arg0_32.charNames[var0_33])):GetComponent(typeof(Image)).sprite, true)
 		else
-			setActive(arg0_32:findTF("select_btn", arg0_33), true)
-			setActive(arg0_32:findTF("char", arg0_33), false)
+			setActive(arg0_33:Find("select_btn"), true)
+			setActive(arg0_33:Find("char"), false)
 		end
 	end)
 
@@ -444,7 +444,7 @@ function var0_0.openSelectWindow(arg0_35)
 	eachChild(arg0_35.select9Chars, function(arg0_36)
 		local var0_36 = tonumber(arg0_36.name)
 
-		setImageSprite(arg0_35:findTF("char/frame/icon", arg0_36), arg0_35.icons:Find(var0_36):GetComponent(typeof(Image)).sprite, true)
+		setImageSprite(arg0_36:Find("char/frame/icon"), arg0_35.icons:Find(var0_36):GetComponent(typeof(Image)).sprite, true)
 		onButton(arg0_35, arg0_36, function()
 			if arg0_35:isSelected(var1_0[var0_36], arg0_35.selectCharCamp) then
 				return
@@ -452,8 +452,8 @@ function var0_0.openSelectWindow(arg0_35)
 
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var29_0)
 
-			if isActive(arg0_35:findTF("selected", arg0_36)) then
-				setActive(arg0_35:findTF("selected", arg0_36), false)
+			if isActive(arg0_36:Find("selected")) then
+				setActive(arg0_36:Find("selected"), false)
 
 				if arg0_35.selectSDIndex1 and arg0_35.selectSDIndex1 == var0_36 then
 					arg0_35.selectSDIndex1 = nil
@@ -484,12 +484,12 @@ function var0_0.refreshSelectWindow(arg0_38)
 	eachChild(arg0_38.select9Chars, function(arg0_39)
 		local var0_39 = tonumber(arg0_39.name)
 
-		setActive(arg0_38:findTF("char/mask", arg0_39), arg0_38:isSelected(var1_0[var0_39], arg0_38.selectCharCamp) and true or false)
+		setActive(arg0_39:Find("char/mask"), arg0_38:isSelected(var1_0[var0_39], arg0_38.selectCharCamp) and true or false)
 
 		if var0_39 == arg0_38.selectSDIndex1 or var0_39 == arg0_38.selectSDIndex2 then
-			setActive(arg0_38:findTF("selected", arg0_39), true)
+			setActive(arg0_39:Find("selected"), true)
 		else
-			setActive(arg0_38:findTF("selected", arg0_39), false)
+			setActive(arg0_39:Find("selected"), false)
 		end
 	end)
 	setText(arg0_38.selectNum, setColorStr(arg0_38.hasSelectNum, COLOR_GREEN) .. "/2")
@@ -1318,13 +1318,13 @@ function var0_0.showcutin(arg0_145, arg1_145)
 	local var1_145, var2_145, var3_145 = ShipWordHelper.GetWordAndCV(var2_0[arg0_145:getCharIndex(var0_145)], "skill")
 
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var2_145)
-	setActive(arg0_145:findTF("line", arg0_145.gameUI), true)
-	setActive(arg0_145:findTF("shatanpaiqiu_cutin", arg0_145.cutin), false)
-	setActive(arg0_145:findTF("shatanpaiqiu_cutin", arg0_145.cutin), true)
+	setActive(arg0_145.gameUI:Find("line"), true)
+	setActive(arg0_145.cutin:Find("shatanpaiqiu_cutin"), false)
+	setActive(arg0_145.cutin:Find("shatanpaiqiu_cutin"), true)
 	setImageSprite(arg0_145.cutinPaint, arg0_145.cutinPaints:Find(arg0_145:getCharIndex(var0_145)):GetComponent(typeof(Image)).sprite, true)
 	LeanTween.moveX(arg0_145.cutin, 0, 0.3):setOnComplete(System.Action(function()
 		LeanTween.delayedCall(1, System.Action(function()
-			setActive(arg0_145:findTF("line", arg0_145.gameUI), false)
+			setActive(arg0_145.gameUI:Find("line"), false)
 			LeanTween.moveX(arg0_145.cutin, -567, 0.3):setOnComplete(System.Action(function()
 				setActive(arg0_145.cutin, false)
 				arg0_145:setBtnAvailable(true)

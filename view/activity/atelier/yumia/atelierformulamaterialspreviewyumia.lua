@@ -1,13 +1,13 @@
 local var0_0 = class("AtelierFormulaMaterialsYumiaPreview", import("view.activity.Atelier.base.AtelierFormulaMaterialsPreview"))
 
 function var0_0.InitCustom(arg0_1)
-	setText(arg0_1:findTF("Frame/closeText"), i18n("yumia_atelier_tip13"))
-	setText(arg0_1:findTF("Frame/Text"), i18n("yumia_atelier_tip11"))
-	setText(arg0_1:findTF("Frame/Text_1"), i18n("yumia_atelier_tip12"))
+	setText(arg0_1._tf:Find("Frame/closeText"), i18n("yumia_atelier_tip13"))
+	setText(arg0_1._tf:Find("Frame/Text"), i18n("yumia_atelier_tip11"))
+	setText(arg0_1._tf:Find("Frame/Text_1"), i18n("yumia_atelier_tip12"))
 end
 
 function var0_0.didEnter(arg0_2)
-	onButton(arg0_2, arg0_2:findTF("BG"), function()
+	onButton(arg0_2, arg0_2._tf:Find("BG"), function()
 		arg0_2:HideMaterialsPreview(true)
 	end, SFX_CANCEL)
 end
@@ -139,7 +139,7 @@ function var0_0.ShowMaterialsPreview(arg0_4, arg1_4)
 	table.sort(var10_4, var8_4)
 
 	local function var11_4()
-		local var0_15 = arg0_4:findTF("Frame/Scroll/Content")
+		local var0_15 = arg0_4._tf:Find("Frame/Scroll/Content")
 
 		setActive(var0_15.parent, #var9_4 > 0)
 
@@ -165,7 +165,7 @@ function var0_0.ShowMaterialsPreview(arg0_4, arg1_4)
 	end
 
 	local function var12_4()
-		local var0_18 = arg0_4:findTF("Frame/LackScroll/Content")
+		local var0_18 = arg0_4._tf:Find("Frame/LackScroll/Content")
 
 		setActive(var0_18.parent, #var10_4 > 0)
 
@@ -238,8 +238,8 @@ end
 
 function var0_0.AddTimer(arg0_24, arg1_24, arg2_24)
 	local var0_24 = 0
-	local var1_24 = arg0_24:findTF("Frame/Scroll/Content")
-	local var2_24 = arg0_24:findTF("Frame/LackScroll/Content")
+	local var1_24 = arg0_24._tf:Find("Frame/Scroll/Content")
+	local var2_24 = arg0_24._tf:Find("Frame/LackScroll/Content")
 
 	arg0_24.timer = FrameTimer.New(function()
 		local var0_25 = 0
@@ -271,8 +271,8 @@ function var0_0.AddTimer(arg0_24, arg1_24, arg2_24)
 end
 
 function var0_0.AddTimer2(arg0_26)
-	local var0_26 = arg0_26:findTF("Frame/Scroll/Content")
-	local var1_26 = arg0_26:findTF("Frame/LackScroll/Content")
+	local var0_26 = arg0_26._tf:Find("Frame/Scroll/Content")
+	local var1_26 = arg0_26._tf:Find("Frame/LackScroll/Content")
 	local var2_26 = var0_26.childCount
 	local var3_26 = var1_26.childCount
 

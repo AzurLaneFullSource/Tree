@@ -57,7 +57,7 @@ function var0_0.UpdateHuntingRange(arg0_8, arg1_8, arg2_8)
 	for iter0_8 = 0, var0_8.childCount - 1 do
 		local var1_8 = var0_8:GetChild(iter0_8)
 
-		setActive(arg0_8:findTF("activate", var1_8), false)
+		setActive(var1_8:Find("activate"), false)
 	end
 
 	local var2_8 = arg1_8:getHuntingRange(arg2_8)
@@ -69,7 +69,7 @@ function var0_0.UpdateHuntingRange(arg0_8, arg1_8, arg2_8)
 		local var3_9 = var0_8:GetChild(var2_9)
 
 		if var3_9 and var2_9 ~= 24 then
-			setActive(arg0_8:findTF("activate", var3_9), true)
+			setActive(var3_9:Find("activate"), true)
 		end
 	end)
 

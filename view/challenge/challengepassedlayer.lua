@@ -49,15 +49,15 @@ function var0_0.onBackPressed(arg0_7)
 end
 
 function var0_0.findUI(arg0_8)
-	arg0_8.bg = arg0_8:findTF("BG")
-	arg0_8.paintingTF = arg0_8:findTF("Painting")
-	arg0_8.paintingShadow1 = arg0_8:findTF("Painting/PaintingShadow1")
-	arg0_8.paintingNextTF = arg0_8:findTF("PaintingNext")
-	arg0_8.paintingNextShadow1 = arg0_8:findTF("PaintingNext/PaintingShadow1")
-	arg0_8.material1 = arg0_8:findTF("material1"):GetComponent(typeof(Image)).material
-	arg0_8.slider = arg0_8:findTF("Slider")
-	arg0_8.squareContainer = arg0_8:findTF("SquareList", arg0_8.slider)
-	arg0_8.squareTpl = arg0_8:findTF("Squre", arg0_8.slider)
+	arg0_8.bg = arg0_8._tf:Find("BG")
+	arg0_8.paintingTF = arg0_8._tf:Find("Painting")
+	arg0_8.paintingShadow1 = arg0_8._tf:Find("Painting/PaintingShadow1")
+	arg0_8.paintingNextTF = arg0_8._tf:Find("PaintingNext")
+	arg0_8.paintingNextShadow1 = arg0_8._tf:Find("PaintingNext/PaintingShadow1")
+	arg0_8.material1 = arg0_8._tf:Find("material1"):GetComponent(typeof(Image)).material
+	arg0_8.slider = arg0_8._tf:Find("Slider")
+	arg0_8.squareContainer = arg0_8.slider:Find("SquareList")
+	arg0_8.squareTpl = arg0_8.slider:Find("Squre")
 	arg0_8.squareList = UIItemList.New(arg0_8.squareContainer, arg0_8.squareTpl)
 	arg0_8.sliderSC = GetComponent(arg0_8.slider, "Slider")
 end
@@ -131,7 +131,7 @@ function var0_0.updatePainting(arg0_12, arg1_12, arg2_12, arg3_12, arg4_12)
 
 	setPaintingPrefab(arg2_12, arg1_12, "chuanwu")
 
-	local var1_12 = arg0_12:findTF("fitter", arg2_12):GetChild(0)
+	local var1_12 = arg2_12:Find("fitter"):GetChild(0)
 
 	if var1_12 then
 		local var2_12 = GetComponent(var1_12, "MeshImage")
@@ -146,7 +146,7 @@ function var0_0.updatePainting(arg0_12, arg1_12, arg2_12, arg3_12, arg4_12)
 
 	setPaintingPrefabAsync(arg3_12, arg1_12, "chuanwu")
 
-	local var3_12 = arg0_12:findTF("fitter", arg3_12):GetChild(0)
+	local var3_12 = arg3_12:Find("fitter"):GetChild(0)
 
 	if var3_12 then
 		var3_12:GetComponent("Image").color = Color.New(1, 1, 1, 0.15)
@@ -168,10 +168,10 @@ function var0_0.updateSlider(arg0_15, arg1_15)
 	arg0_15.sliderSC.value = var2_15
 
 	arg0_15.squareList:make(function(arg0_16, arg1_16, arg2_16)
-		local var0_16 = arg0_15:findTF("UnFinished", arg2_16)
-		local var1_16 = arg0_15:findTF("Finished", arg2_16)
-		local var2_16 = arg0_15:findTF("Challengeing", arg2_16)
-		local var3_16 = arg0_15:findTF("Arrow", arg2_16)
+		local var0_16 = arg2_16:Find("UnFinished")
+		local var1_16 = arg2_16:Find("Finished")
+		local var2_16 = arg2_16:Find("Challengeing")
+		local var3_16 = arg2_16:Find("Arrow")
 
 		local function var4_16()
 			setActive(var1_16, true)

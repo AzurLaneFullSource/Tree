@@ -16,35 +16,35 @@ function var0_0.initData(arg0_3)
 end
 
 function var0_0.findUI(arg0_4)
-	arg0_4.anim = arg0_4:findTF("anim_root"):GetComponent(typeof(Animation))
-	arg0_4.animEvent = arg0_4:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+	arg0_4.anim = arg0_4._tf:Find("anim_root"):GetComponent(typeof(Animation))
+	arg0_4.animEvent = arg0_4._tf:Find("anim_root"):GetComponent(typeof(DftAniEvent))
 
 	arg0_4.animEvent:SetEndEvent(function()
 		arg0_4:emit(var0_0.ON_CLOSE)
 	end)
 
-	arg0_4.windowTF = arg0_4:findTF("anim_root/window")
-	arg0_4.scrollview = arg0_4:findTF("scrollview", arg0_4.windowTF)
-	arg0_4.emptyTF = arg0_4:findTF("empty", arg0_4.scrollview)
+	arg0_4.windowTF = arg0_4._tf:Find("anim_root/window")
+	arg0_4.scrollview = arg0_4.windowTF:Find("scrollview")
+	arg0_4.emptyTF = arg0_4.scrollview:Find("empty")
 
-	setText(arg0_4:findTF("Text", arg0_4.emptyTF), i18n("child_mind_empty_tip"))
+	setText(arg0_4.emptyTF:Find("Text"), i18n("child_mind_empty_tip"))
 
-	arg0_4.contentTF = arg0_4:findTF("view/content", arg0_4.scrollview)
-	arg0_4.finishListTF = arg0_4:findTF("finish_list", arg0_4.contentTF)
-	arg0_4.finishUIList = UIItemList.New(arg0_4:findTF("list", arg0_4.finishListTF), arg0_4:findTF("list/tpl", arg0_4.finishListTF))
+	arg0_4.contentTF = arg0_4.scrollview:Find("view/content")
+	arg0_4.finishListTF = arg0_4.contentTF:Find("finish_list")
+	arg0_4.finishUIList = UIItemList.New(arg0_4.finishListTF:Find("list"), arg0_4.finishListTF:Find("list/tpl"))
 
-	setText(arg0_4:findTF("title/Text", arg0_4.finishListTF), i18n("child_mind_finish_title"))
-	setText(arg0_4:findTF("list/tpl/get_btn/Text", arg0_4.finishListTF), i18n("word_take"))
+	setText(arg0_4.finishListTF:Find("title/Text"), i18n("child_mind_finish_title"))
+	setText(arg0_4.finishListTF:Find("list/tpl/get_btn/Text"), i18n("word_take"))
 
-	arg0_4.unFinishListTF = arg0_4:findTF("unfinish_list", arg0_4.contentTF)
-	arg0_4.unFinishUIList = UIItemList.New(arg0_4:findTF("list", arg0_4.unFinishListTF), arg0_4:findTF("list/tpl", arg0_4.unFinishListTF))
+	arg0_4.unFinishListTF = arg0_4.contentTF:Find("unfinish_list")
+	arg0_4.unFinishUIList = UIItemList.New(arg0_4.unFinishListTF:Find("list"), arg0_4.unFinishListTF:Find("list/tpl"))
 
-	setText(arg0_4:findTF("title/Text", arg0_4.unFinishListTF), i18n("child_mind_processing_title"))
-	setText(arg0_4:findTF("list/tpl/time_desc", arg0_4.unFinishListTF), i18n("child_mind_time_title"))
+	setText(arg0_4.unFinishListTF:Find("title/Text"), i18n("child_mind_processing_title"))
+	setText(arg0_4.unFinishListTF:Find("list/tpl/time_desc"), i18n("child_mind_time_title"))
 end
 
 function var0_0.addListener(arg0_6)
-	onButton(arg0_6, arg0_6:findTF("anim_root/bg"), function()
+	onButton(arg0_6, arg0_6._tf:Find("anim_root/bg"), function()
 		arg0_6:_close()
 	end, SFX_PANEL)
 end
@@ -119,8 +119,8 @@ function var0_0.updateFinishItem(arg0_17, arg1_17, arg2_17)
 
 	local var0_17 = arg0_17.finishTaskVOs[arg1_17 + 1]
 
-	setText(arg0_17:findTF("desc", arg2_17), var0_17:getConfig("name"))
-	onButton(arg0_17, arg0_17:findTF("get_btn", arg2_17), function()
+	setText(arg2_17:Find("desc"), var0_17:getConfig("name"))
+	onButton(arg0_17, arg2_17:Find("get_btn"), function()
 		if not arg0_17.isClick then
 			arg0_17.isClick = true
 
@@ -139,12 +139,12 @@ end
 function var0_0.updateUnfinishItem(arg0_21, arg1_21, arg2_21)
 	local var0_21 = arg0_21.unFinishTaskVOs[arg1_21 + 1]
 
-	setText(arg0_21:findTF("desc", arg2_21), var0_21:getConfig("name"))
+	setText(arg2_21:Find("desc"), var0_21:getConfig("name"))
 
 	local var1_21 = var0_21:GetRemainTime()
 	local var2_21 = var1_21 < 7 and 0 or math.floor(var1_21 / 7)
 
-	setText(arg0_21:findTF("time_desc/time", arg2_21), var2_21 .. i18n("word_week"))
+	setText(arg2_21:Find("time_desc/time"), var2_21 .. i18n("word_week"))
 end
 
 function var0_0.doAnim(arg0_22, arg1_22, arg2_22)

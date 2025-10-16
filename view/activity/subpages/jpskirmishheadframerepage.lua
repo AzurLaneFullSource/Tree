@@ -1,13 +1,13 @@
 local var0_0 = class("JPSkirmishHeadFrameRePage", import(".TemplatePage.FrameReTemplatePage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.battleBtn = arg0_1:findTF("GoBtn", arg0_1.bg)
-	arg0_1.getBtn = arg0_1:findTF("GetBtn", arg0_1.bg)
-	arg0_1.gotBtn = arg0_1:findTF("GotBtn", arg0_1.bg)
-	arg0_1.bar = arg0_1:findTF("Progress", arg0_1.bg)
-	arg0_1.progress = arg0_1:findTF("ProgressText", arg0_1.bg)
-	arg0_1.frameGot = arg0_1:findTF("GotTag", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.battleBtn = arg0_1.bg:Find("GoBtn")
+	arg0_1.getBtn = arg0_1.bg:Find("GetBtn")
+	arg0_1.gotBtn = arg0_1.bg:Find("GotBtn")
+	arg0_1.bar = arg0_1.bg:Find("Progress")
+	arg0_1.progress = arg0_1.bg:Find("ProgressText")
+	arg0_1.frameGot = arg0_1.bg:Find("GotTag")
 end
 
 function var0_0.OnUpdateFlush(arg0_2)

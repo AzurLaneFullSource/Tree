@@ -5,15 +5,15 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.confirmBtn = arg0_2:findTF("frame/confirm")
-	arg0_2.cancelBtn = arg0_2:findTF("frame/cancel")
-	arg0_2.closeBtn = arg0_2:findTF("frame/close")
-	arg0_2.input = arg0_2:findTF("frame/input")
+	arg0_2.confirmBtn = arg0_2._tf:Find("frame/confirm")
+	arg0_2.cancelBtn = arg0_2._tf:Find("frame/cancel")
+	arg0_2.closeBtn = arg0_2._tf:Find("frame/close")
+	arg0_2.input = arg0_2._tf:Find("frame/input")
 
-	setText(arg0_2:findTF("frame/cancel/Text"), i18n("word_cancel"))
-	setText(arg0_2:findTF("frame/confirm/Text"), i18n("word_ok"))
-	setText(arg0_2:findTF("frame/title"), i18n("backyard_rename_title"))
-	setText(arg0_2:findTF("frame/input/placehoder"), i18n("backyard_rename_tip"))
+	setText(arg0_2._tf:Find("frame/cancel/Text"), i18n("word_cancel"))
+	setText(arg0_2._tf:Find("frame/confirm/Text"), i18n("word_ok"))
+	setText(arg0_2._tf:Find("frame/title"), i18n("backyard_rename_title"))
+	setText(arg0_2._tf:Find("frame/input/placehoder"), i18n("backyard_rename_tip"))
 end
 
 function var0_0.OnInit(arg0_3)

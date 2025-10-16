@@ -1,9 +1,9 @@
 local var0_0 = class("CoreStoryTemplatePage", import("view.activity.CorePage.CoreActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("bg_story")
-	arg0_1.ad = arg0_1:findTF("AD")
-	arg0_1.goBtn = arg0_1:findTF("AD/go_btn")
+	arg0_1.bg = arg0_1._tf:Find("bg_story")
+	arg0_1.ad = arg0_1._tf:Find("AD")
+	arg0_1.goBtn = arg0_1._tf:Find("AD/go_btn")
 	arg0_1.scenario = CoreScenarioTemplatePage.New(arg0_1._tf)
 
 	arg0_1.scenario:SetCoreStoryPage(arg0_1)

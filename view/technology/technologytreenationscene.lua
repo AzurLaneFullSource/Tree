@@ -104,14 +104,14 @@ function var0_0.calculateCurBuff(arg0_6, arg1_6, arg2_6)
 end
 
 function var0_0.findUI(arg0_9)
-	arg0_9.scrollRect = arg0_9:findTF("Scroll View")
-	arg0_9.tecItemContainer = arg0_9:findTF("Scroll View/Viewport/Content")
+	arg0_9.scrollRect = arg0_9._tf:Find("Scroll View")
+	arg0_9.tecItemContainer = arg0_9._tf:Find("Scroll View/Viewport/Content")
 	arg0_9.scrollRectCom = GetComponent(arg0_9.scrollRect, "ScrollRect")
-	arg0_9.tecItemTpl = arg0_9:findTF("CampTecItem")
-	arg0_9.typeItemTpl = arg0_9:findTF("TypeItem")
-	arg0_9.buffItemTpl = arg0_9:findTF("BuffItem")
+	arg0_9.tecItemTpl = arg0_9._tf:Find("CampTecItem")
+	arg0_9.typeItemTpl = arg0_9._tf:Find("TypeItem")
+	arg0_9.buffItemTpl = arg0_9._tf:Find("BuffItem")
 	arg0_9.tecItemTplOriginWidth = arg0_9.tecItemTpl.rect.width
-	arg0_9.oneStepBtn = arg0_9:findTF("OneStepBtn")
+	arg0_9.oneStepBtn = arg0_9._tf:Find("OneStepBtn")
 
 	if not LOCK_TEC_NATION_AWARD then
 		arg0_9.awardTpl = Instantiate(GetComponent(arg0_9._tf, "ItemList").prefabItem[0])
@@ -123,7 +123,7 @@ function var0_0.findUI(arg0_9)
 		var0_9.preferredWidth = 204
 		var0_9.preferredHeight = 206
 
-		local var1_9 = arg0_9:findTF("CampTecItem/AwardPanel/FinishBtn/Text")
+		local var1_9 = arg0_9._tf:Find("CampTecItem/AwardPanel/FinishBtn/Text")
 
 		setText(var1_9, i18n("tec_nation_award_finish"))
 	else
@@ -162,26 +162,26 @@ end
 
 function var0_0.updateTecItem(arg0_16, arg1_16)
 	local var0_16 = arg0_16.panelList[arg1_16]
-	local var1_16 = arg0_16:findTF("AwardPanel", var0_16)
+	local var1_16 = var0_16:Find("AwardPanel")
 
 	arg0_16:updateTecLevelAward(var1_16, arg1_16)
 
-	local var2_16 = arg0_16:findTF("BaseInfo", var0_16)
-	local var3_16 = arg0_16:findTF("BG/Title/Text", var2_16)
-	local var4_16 = arg0_16:findTF("BG/UpLevelColor", var2_16)
-	local var5_16 = arg0_16:findTF("NationBG", var2_16)
-	local var6_16 = arg0_16:findTF("Code", var2_16)
-	local var7_16 = arg0_16:findTF("NationTextImg", var6_16)
-	local var8_16 = arg0_16:findTF("UpLevelBG", var2_16)
-	local var9_16 = arg0_16:findTF("UpLevelBtn", var8_16)
-	local var10_16 = arg0_16:findTF("FinishBtn", var8_16)
-	local var11_16 = arg0_16:findTF("Uping", var2_16)
-	local var12_16 = arg0_16:findTF("Text", var11_16)
-	local var13_16 = arg0_16:findTF("EnglishTextImg", var2_16)
-	local var14_16 = arg0_16:findTF("ProgressBarBG/Progress", var2_16)
-	local var15_16 = arg0_16:findTF("CampLogo", var2_16)
-	local var16_16 = arg0_16:findTF("LevelText/Text", var2_16)
-	local var17_16 = arg0_16:findTF("PointTextBar", var2_16)
+	local var2_16 = var0_16:Find("BaseInfo")
+	local var3_16 = var2_16:Find("BG/Title/Text")
+	local var4_16 = var2_16:Find("BG/UpLevelColor")
+	local var5_16 = var2_16:Find("NationBG")
+	local var6_16 = var2_16:Find("Code")
+	local var7_16 = var6_16:Find("NationTextImg")
+	local var8_16 = var2_16:Find("UpLevelBG")
+	local var9_16 = var8_16:Find("UpLevelBtn")
+	local var10_16 = var8_16:Find("FinishBtn")
+	local var11_16 = var2_16:Find("Uping")
+	local var12_16 = var11_16:Find("Text")
+	local var13_16 = var2_16:Find("EnglishTextImg")
+	local var14_16 = var2_16:Find("ProgressBarBG/Progress")
+	local var15_16 = var2_16:Find("CampLogo")
+	local var16_16 = var2_16:Find("LevelText/Text")
+	local var17_16 = var2_16:Find("PointTextBar")
 	local var18_16 = pg.fleet_tech_group[arg1_16].name
 	local var19_16 = pg.fleet_tech_group[arg1_16].nation[1]
 
@@ -260,12 +260,12 @@ function var0_0.updateTecItem(arg0_16, arg1_16)
 		arg0_16:emit(TechnologyConst.CLICK_UP_TEC_BTN, arg1_16, var21_16)
 	end, SFX_PANEL)
 
-	local var27_16 = arg0_16:findTF("Mask/DetailPanel", var0_16)
+	local var27_16 = var0_16:Find("Mask/DetailPanel")
 	local var28_16 = GetComponent(var0_16, "LayoutElement")
-	local var29_16 = arg0_16:findTF("Toggle", var27_16)
+	local var29_16 = var27_16:Find("Toggle")
 
 	arg0_16:updateDetailPanel(var27_16, var22_16, arg1_16, var19_16, false)
-	onToggle(arg0_16, arg0_16:findTF("BG", var2_16), function(arg0_20)
+	onToggle(arg0_16, var2_16:Find("BG"), function(arg0_20)
 		if arg0_20 then
 			triggerToggle(var29_16, false)
 			LeanTween.value(go(var0_16), arg0_16.tecItemTplOriginWidth, arg0_16.tecItemTplOriginWidth + var27_16.rect.width, 0.25):setOnUpdate(System.Action_float(function(arg0_21)
@@ -292,12 +292,12 @@ function var0_0.updateTecItem(arg0_16, arg1_16)
 end
 
 function var0_0.updateDetailPanel(arg0_24, arg1_24, arg2_24, arg3_24, arg4_24, arg5_24)
-	local var0_24 = arg0_24:findTF("TypeItemContainer", arg1_24)
-	local var1_24 = arg0_24:findTF("BG/Logo", arg1_24)
+	local var0_24 = arg1_24:Find("TypeItemContainer")
+	local var1_24 = arg1_24:Find("BG/Logo")
 
 	setImageSprite(var1_24, GetSpriteFromAtlas("TecNation", "camptec_logo_" .. arg4_24))
 
-	local var2_24 = arg0_24:findTF("Toggle", arg1_24)
+	local var2_24 = arg1_24:Find("Toggle")
 
 	if arg2_24 == #pg.fleet_tech_group[arg3_24].techs and arg5_24 == false then
 		setActive(var2_24, false)
@@ -383,8 +383,8 @@ function var0_0.updateDetailPanel(arg0_24, arg1_24, arg2_24, arg3_24, arg4_24, a
 
 		var0_25:make(function(arg0_26, arg1_26, arg2_26)
 			if arg0_26 == UIItemList.EventUpdate then
-				local var0_26 = arg0_24:findTF("TypeIcon", arg2_26)
-				local var1_26 = arg0_24:findTF("BuffItemContainer", arg2_26)
+				local var0_26 = arg2_26:Find("TypeIcon")
+				local var1_26 = arg2_26:Find("BuffItemContainer")
 				local var2_26 = var8_25[arg1_26 + 1]
 
 				setImageSprite(var0_26, GetSpriteFromAtlas("ShipType", "buffitem_tec_" .. var2_26))
@@ -408,13 +408,13 @@ function var0_0.updateDetailPanel(arg0_24, arg1_24, arg2_24, arg3_24, arg4_24, a
 end
 
 function var0_0.upBuffList(arg0_28, arg1_28, arg2_28)
-	local var0_28 = arg0_28:findTF("BuffItemContainer", arg1_28)
+	local var0_28 = arg1_28:Find("BuffItemContainer")
 	local var1_28 = UIItemList.New(var0_28, arg0_28.buffItemTpl)
 
 	var1_28:make(function(arg0_29, arg1_29, arg2_29)
 		if arg0_29 == UIItemList.EventUpdate then
-			local var0_29 = arg0_28:findTF("AttrText", arg2_29)
-			local var1_29 = arg0_28:findTF("ValueText", arg2_29)
+			local var0_29 = arg2_29:Find("AttrText")
+			local var1_29 = arg2_29:Find("ValueText")
 			local var2_29 = arg2_28[arg1_29 + 1].attr
 			local var3_29 = arg2_28[arg1_29 + 1].value
 			local var4_29 = arg2_28[arg1_29 + 1].attrColor
@@ -446,14 +446,14 @@ function var0_0.updateTecLevelAward(arg0_30, arg1_30, arg2_30)
 		return
 	end
 
-	local var0_30 = arg0_30:findTF("AwardItem")
-	local var1_30 = arg0_30:findTF("ItemContainer", arg1_30)
+	local var0_30 = arg0_30._tf:Find("AwardItem")
+	local var1_30 = arg1_30:Find("ItemContainer")
 	local var2_30 = UIItemList.New(var1_30, arg0_30.awardTpl)
-	local var3_30 = arg0_30:findTF("Level", arg1_30)
-	local var4_30 = arg0_30:findTF("Level/Num", arg1_30)
-	local var5_30 = arg0_30:findTF("GetBtn", arg1_30)
-	local var6_30 = arg0_30:findTF("DisGetBtn", arg1_30)
-	local var7_30 = arg0_30:findTF("FinishBtn", arg1_30)
+	local var3_30 = arg1_30:Find("Level")
+	local var4_30 = arg1_30:Find("Level/Num")
+	local var5_30 = arg1_30:Find("GetBtn")
+	local var6_30 = arg1_30:Find("DisGetBtn")
+	local var7_30 = arg1_30:Find("FinishBtn")
 	local var8_30 = arg0_30.nationProxy:GetTecItemByGroupID(arg2_30)
 	local var9_30 = pg.fleet_tech_group[arg2_30]
 	local var10_30 = var8_30 and var8_30.rewardedID or 0

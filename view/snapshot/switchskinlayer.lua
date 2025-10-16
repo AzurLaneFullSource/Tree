@@ -27,7 +27,7 @@ function var0_0.back(arg0_6)
 end
 
 function var0_0.init(arg0_7)
-	arg0_7.shareBtn = arg0_7:findTF("select_skin/share_btn")
+	arg0_7.shareBtn = arg0_7._tf:Find("select_skin/share_btn")
 
 	arg0_7:BlurPanel(arg0_7._tf)
 end
@@ -42,8 +42,8 @@ end
 function var0_0.initSelectSkinPanel(arg0_9)
 	arg0_9.skinPanel = arg0_9._tf
 
-	local var0_9 = arg0_9:findTF("select_skin/btnBack", arg0_9.skinPanel)
-	local var1_9 = arg0_9:findTF("print", arg0_9.skinPanel)
+	local var0_9 = arg0_9.skinPanel:Find("select_skin/btnBack")
+	local var1_9 = arg0_9.skinPanel:Find("print")
 
 	onButton(arg0_9, var0_9, function()
 		arg0_9:back()
@@ -59,8 +59,8 @@ function var0_0.initSelectSkinPanel(arg0_9)
 		end
 	end, SFX_PANEL)
 
-	arg0_9.skinScroll = arg0_9:findTF("select_skin/style_scroll", arg0_9.skinPanel)
-	arg0_9.skinContainer = arg0_9:findTF("view_port", arg0_9.skinScroll)
+	arg0_9.skinScroll = arg0_9.skinPanel:Find("select_skin/style_scroll")
+	arg0_9.skinContainer = arg0_9.skinScroll:Find("view_port")
 	arg0_9.skinCard = arg0_9._go:GetComponent(typeof(ItemList)).prefabItem[0]
 
 	setActive(arg0_9.skinCard, false)

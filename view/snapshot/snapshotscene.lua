@@ -15,41 +15,41 @@ end
 function var0_0.init(arg0_2)
 	setActive(pg.UIMgr.GetInstance().OverlayEffect, false)
 
-	arg0_2.dummy = arg0_2:findTF("SnapshotInvisible")
+	arg0_2.dummy = arg0_2._tf:Find("SnapshotInvisible")
 
 	arg0_2:SetDummyForIOS(true)
 
-	arg0_2.ui = arg0_2:findTF("ui")
-	arg0_2.backBtn = arg0_2:findTF("ui/back")
-	arg0_2.switchDirBtn = arg0_2:findTF("ui/switchDir")
-	arg0_2.takeBtn = arg0_2:findTF("ui/bg/take")
-	arg0_2.videoTakeImg = arg0_2:findTF("ui/bg/take/videoTakeImg")
+	arg0_2.ui = arg0_2._tf:Find("ui")
+	arg0_2.backBtn = arg0_2._tf:Find("ui/back")
+	arg0_2.switchDirBtn = arg0_2._tf:Find("ui/switchDir")
+	arg0_2.takeBtn = arg0_2._tf:Find("ui/bg/take")
+	arg0_2.videoTakeImg = arg0_2._tf:Find("ui/bg/take/videoTakeImg")
 
 	SetActive(arg0_2.videoTakeImg, false)
 
-	arg0_2.switchCamBtn = arg0_2:findTF("ui/bg/switchCam")
-	arg0_2.selectCharBtn = arg0_2:findTF("ui/bg/selectChar")
-	arg0_2.l2dCtrlPanl = arg0_2:findTF("ui/bg/l2dBgImg")
-	arg0_2.l2dStopBtnGo = arg0_2:findTF("ui/bg/l2dBgImg/stopBtn")
-	arg0_2.l2dPlayBtnGo = arg0_2:findTF("ui/bg/l2dBgImg/playBtn")
+	arg0_2.switchCamBtn = arg0_2._tf:Find("ui/bg/switchCam")
+	arg0_2.selectCharBtn = arg0_2._tf:Find("ui/bg/selectChar")
+	arg0_2.l2dCtrlPanl = arg0_2._tf:Find("ui/bg/l2dBgImg")
+	arg0_2.l2dStopBtnGo = arg0_2._tf:Find("ui/bg/l2dBgImg/stopBtn")
+	arg0_2.l2dPlayBtnGo = arg0_2._tf:Find("ui/bg/l2dBgImg/playBtn")
 
 	SetActive(arg0_2.l2dPlayBtnGo, false)
 
-	arg0_2.l2dAnimationBtnGo = arg0_2:findTF("ui/bg/l2dBgImg/animationsBtn").gameObject
-	arg0_2.l2dAnimations = arg0_2:findTF("ui/bg/animationsBg")
-	arg0_2.l2dAnimationBackBtnTrans = arg0_2:findTF("animationsBackBtn", arg0_2.l2dAnimations)
+	arg0_2.l2dAnimationBtnGo = arg0_2._tf:Find("ui/bg/l2dBgImg/animationsBtn").gameObject
+	arg0_2.l2dAnimations = arg0_2._tf:Find("ui/bg/animationsBg")
+	arg0_2.l2dAnimationBackBtnTrans = arg0_2.l2dAnimations:Find("animationsBackBtn")
 
 	SetActive(arg0_2.l2dAnimations, false)
 
 	arg0_2.selectedID = 1
 	arg0_2.scrollItems = {}
 	arg0_2.isPause = false
-	arg0_2.animTpl = arg0_2:findTF("animation_tpl", arg0_2.l2dAnimations)
+	arg0_2.animTpl = arg0_2.l2dAnimations:Find("animation_tpl")
 
 	SetActive(arg0_2.animTpl, false)
 
-	arg0_2.animLayout = arg0_2:findTF("animation_container/animations", arg0_2.l2dAnimations)
-	arg0_2.animContainer = arg0_2:findTF("animation_container", arg0_2.l2dAnimations):GetComponent("LScrollRect")
+	arg0_2.animLayout = arg0_2.l2dAnimations:Find("animation_container/animations")
+	arg0_2.animContainer = arg0_2.l2dAnimations:Find("animation_container"):GetComponent("LScrollRect")
 	arg0_2.animContainer.decelerationRate = 0.1
 
 	function arg0_2.animContainer.onInitItem(arg0_3)
@@ -68,19 +68,19 @@ function var0_0.init(arg0_2)
 		arg0_2:updateSelectedItem()
 	end
 
-	arg0_2.paintBtn = arg0_2:findTF("ui/bg/paintBtn")
-	arg0_2.live2dBtn = arg0_2:findTF("ui/bg/l2dBgImg/live2dBtn")
-	arg0_2.spineBtn = arg0_2:findTF("ui/bg/spineBtn")
-	arg0_2.modePnlTF = arg0_2:findTF("ui/bg/modePnl")
-	arg0_2.takePhotoBtn = arg0_2:findTF("ui/bg/modePnl/takePhotoBtn")
-	arg0_2.takeVideoBtn = arg0_2:findTF("ui/bg/modePnl/takeVideoBtn")
-	arg0_2.stopRecBtn = arg0_2:findTF("stopRec")
-	arg0_2.snapshot = arg0_2:findTF("snapshot")
+	arg0_2.paintBtn = arg0_2._tf:Find("ui/bg/paintBtn")
+	arg0_2.live2dBtn = arg0_2._tf:Find("ui/bg/l2dBgImg/live2dBtn")
+	arg0_2.spineBtn = arg0_2._tf:Find("ui/bg/spineBtn")
+	arg0_2.modePnlTF = arg0_2._tf:Find("ui/bg/modePnl")
+	arg0_2.takePhotoBtn = arg0_2._tf:Find("ui/bg/modePnl/takePhotoBtn")
+	arg0_2.takeVideoBtn = arg0_2._tf:Find("ui/bg/modePnl/takeVideoBtn")
+	arg0_2.stopRecBtn = arg0_2._tf:Find("stopRec")
+	arg0_2.snapshot = arg0_2._tf:Find("snapshot")
 	arg0_2.webcam = arg0_2.snapshot:GetComponent(typeof(WebCam))
 	arg0_2.ysScreenShoter = arg0_2.snapshot:GetComponent(typeof(YSTool.YSScreenShoter))
-	arg0_2.paint = arg0_2:findTF("container/paint")
-	arg0_2.live2d = arg0_2:findTF("live2d", arg0_2.paint)
-	arg0_2.spine = arg0_2:findTF("spine", arg0_2.paint)
+	arg0_2.paint = arg0_2._tf:Find("container/paint")
+	arg0_2.live2d = arg0_2.paint:Find("live2d")
+	arg0_2.spine = arg0_2.paint:Find("spine")
 	arg0_2.paintSkin = nil
 	arg0_2.showLive2d = false
 	arg0_2.showType = var0_0.SHOW_PAINT
@@ -92,29 +92,29 @@ function var0_0.init(arg0_2)
 	arg0_2.horizontalEulerAngle = 0
 	arg0_2.rotateUseTime = 0.2
 	arg0_2.isVertical = false
-	arg0_2.backBtnImg = arg0_2:findTF("ui/back/Image")
-	arg0_2.selectCharBtnImg = arg0_2:findTF("ui/bg/selectChar/Image")
-	arg0_2.switchCamBtnImg = arg0_2:findTF("ui/bg/switchCam/Image")
-	arg0_2.l2dBtnImg = arg0_2:findTF("ui/bg/paintBtn/Image")
-	arg0_2.l2dStopBtnImg = arg0_2:findTF("ui/bg/l2dBgImg/stopBtn/Image")
-	arg0_2.l2dPlayBtnImg = arg0_2:findTF("ui/bg/l2dBgImg/playBtn/Image")
-	arg0_2.l2d2PaintBtnImg = arg0_2:findTF("ui/bg/l2dBgImg/live2dBtn/Image")
-	arg0_2.takePhotoVerticalText = arg0_2:findTF("ui/bg/modePnl/takePhotoBtn/verticalText")
-	arg0_2.takePhotoHorizontalText = arg0_2:findTF("ui/bg/modePnl/takePhotoBtn/horizontalText")
+	arg0_2.backBtnImg = arg0_2._tf:Find("ui/back/Image")
+	arg0_2.selectCharBtnImg = arg0_2._tf:Find("ui/bg/selectChar/Image")
+	arg0_2.switchCamBtnImg = arg0_2._tf:Find("ui/bg/switchCam/Image")
+	arg0_2.l2dBtnImg = arg0_2._tf:Find("ui/bg/paintBtn/Image")
+	arg0_2.l2dStopBtnImg = arg0_2._tf:Find("ui/bg/l2dBgImg/stopBtn/Image")
+	arg0_2.l2dPlayBtnImg = arg0_2._tf:Find("ui/bg/l2dBgImg/playBtn/Image")
+	arg0_2.l2d2PaintBtnImg = arg0_2._tf:Find("ui/bg/l2dBgImg/live2dBtn/Image")
+	arg0_2.takePhotoVerticalText = arg0_2._tf:Find("ui/bg/modePnl/takePhotoBtn/verticalText")
+	arg0_2.takePhotoHorizontalText = arg0_2._tf:Find("ui/bg/modePnl/takePhotoBtn/horizontalText")
 	arg0_2.takePhotoVerticalText:GetComponent("Text").text = i18n("word_photo_mode")
 	arg0_2.takePhotoHorizontalText:GetComponent("Text").text = i18n("word_photo_mode")
 
 	SetActive(arg0_2.takePhotoHorizontalText, false)
 
-	arg0_2.takeVideoVerticalText = arg0_2:findTF("ui/bg/modePnl/takeVideoBtn/verticalText")
-	arg0_2.takeVideoHorizontalText = arg0_2:findTF("ui/bg/modePnl/takeVideoBtn/horizontalText")
+	arg0_2.takeVideoVerticalText = arg0_2._tf:Find("ui/bg/modePnl/takeVideoBtn/verticalText")
+	arg0_2.takeVideoHorizontalText = arg0_2._tf:Find("ui/bg/modePnl/takeVideoBtn/horizontalText")
 	arg0_2.takeVideoVerticalText:GetComponent("Text").text = i18n("word_video_mode")
 	arg0_2.takeVideoHorizontalText:GetComponent("Text").text = i18n("word_video_mode")
 
 	SetActive(arg0_2.takeVideoHorizontalText, false)
 
 	arg0_2.isFlipping = false
-	arg0_2.videoTipPanel = arg0_2:findTF("videoTipPanel")
+	arg0_2.videoTipPanel = arg0_2._tf:Find("videoTipPanel")
 
 	setActive(arg0_2.videoTipPanel, false)
 end
@@ -189,7 +189,7 @@ function var0_0.didEnter(arg0_10)
 			if not var4_13 or var4_13 <= 0 then
 				PlayerPrefs.SetInt("hadShowForVideoTip", 1)
 
-				arg0_10:findTF("Text", arg0_10.videoTipPanel):GetComponent("Text").text = i18n("word_take_video_tip")
+				arg0_10.videoTipPanel:Find("Text"):GetComponent("Text").text = i18n("word_take_video_tip")
 
 				onButton(arg0_10, arg0_10.videoTipPanel, function()
 					setActive(arg0_10.videoTipPanel, false)
@@ -358,7 +358,7 @@ function var0_0.clearSkin(arg0_41)
 	end
 
 	if arg0_41.spineSkin and arg0_41.showType == var0_0.SHOW_SPINE then
-		PoolMgr.GetInstance():ReturnSpineChar(arg0_41.spineSkin, go(arg0_41:findTF("model", arg0_41.spine)))
+		PoolMgr.GetInstance():ReturnSpineChar(arg0_41.spineSkin, go(arg0_41.spine:Find("model")))
 	end
 
 	if arg0_41.live2dCom then
@@ -501,8 +501,13 @@ function var0_0.updateSkin(arg0_48)
 
 			var0_49:SetParent(arg0_48.live2d, true)
 
-			var0_49.localScale = Vector3(52, 52, 52)
-			var0_49.localPosition = BuildVector3(arg0_48.skin.live2d_offset)
+			if arg0_48.skin.live2d_offset and #arg0_48.skin.live2d_offset >= 4 then
+				var0_49.localScale = Vector3(arg0_48.skin.live2d_offset[4], arg0_48.skin.live2d_offset[4], arg0_48.skin.live2d_offset[4])
+			else
+				var0_49.localScale = Vector3(52, 52, 52)
+			end
+
+			var0_49.localPosition = Vector3(arg0_48.skin.live2d_offset[1] + 500, arg0_48.skin.live2d_offset[2], arg0_48.skin.live2d_offset[3])
 
 			local var1_49 = arg0_49:GetComponent(typeof(Live2dChar))
 			local var2_49 = pg.AssistantInfo.action2Id.idle
@@ -577,7 +582,7 @@ function var0_0.playAction(arg0_52, arg1_52)
 		return
 	end
 
-	GetOrAddComponent(arg0_52:findTF("model", arg0_52.spine), typeof(SpineAnimUI)):SetAction(arg1_52, 0)
+	GetOrAddComponent(arg0_52.spine:Find("model"), typeof(SpineAnimUI)):SetAction(arg1_52, 0)
 end
 
 function var0_0.ResetL2dPanel(arg0_53)

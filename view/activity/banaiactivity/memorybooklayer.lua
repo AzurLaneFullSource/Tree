@@ -194,22 +194,22 @@ function var0_0.updateMemorys(arg0_11)
 end
 
 function var0_0.init(arg0_12)
-	arg0_12.backBtn = arg0_12:findTF("back_btn")
-	arg0_12.page1 = arg0_12:findTF("page1")
-	arg0_12.page2 = arg0_12:findTF("page2")
+	arg0_12.backBtn = arg0_12._tf:Find("back_btn")
+	arg0_12.page1 = arg0_12._tf:Find("page1")
+	arg0_12.page2 = arg0_12._tf:Find("page2")
 
-	local var0_12 = arg0_12:findTF("get")
+	local var0_12 = arg0_12._tf:Find("get")
 
 	setActive(var0_12, false)
 
 	arg0_12.getSprite = var0_12:GetComponent(typeof(Image)).sprite
-	arg0_12.slider = arg0_12:findTF("slider"):GetComponent(typeof(Slider))
-	arg0_12.totalTxt = arg0_12:findTF("progress"):GetComponent(typeof(Text))
-	arg0_12.currValueTxt = arg0_12:findTF("progress/value"):GetComponent(typeof(Text))
-	arg0_12.awardIcon = arg0_12:findTF("award_bg/icon")
-	arg0_12.awardLabel = arg0_12:findTF("award_bg/label")
-	arg0_12.awardLabelGot = arg0_12:findTF("award_bg/label_got")
-	arg0_12.helpBtn = arg0_12:findTF("help")
+	arg0_12.slider = arg0_12._tf:Find("slider"):GetComponent(typeof(Slider))
+	arg0_12.totalTxt = arg0_12._tf:Find("progress"):GetComponent(typeof(Text))
+	arg0_12.currValueTxt = arg0_12._tf:Find("progress/value"):GetComponent(typeof(Text))
+	arg0_12.awardIcon = arg0_12._tf:Find("award_bg/icon")
+	arg0_12.awardLabel = arg0_12._tf:Find("award_bg/label")
+	arg0_12.awardLabelGot = arg0_12._tf:Find("award_bg/label_got")
+	arg0_12.helpBtn = arg0_12._tf:Find("help")
 	arg0_12.pool = var6_0(arg0_12._tf)
 end
 

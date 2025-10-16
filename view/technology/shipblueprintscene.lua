@@ -53,73 +53,73 @@ function var0_0.updateShipBluePrintVO(arg0_9, arg1_9)
 end
 
 function var0_0.init(arg0_10)
-	arg0_10.main = arg0_10:findTF("main")
-	arg0_10.centerPanel = arg0_10:findTF("center_panel", arg0_10.main)
-	arg0_10.blurPanel = arg0_10:findTF("blur_panel")
-	arg0_10.top = arg0_10:findTF("adapt", arg0_10.blurPanel)
-	arg0_10.topPanel = arg0_10:findTF("top", arg0_10.top)
-	arg0_10.topBg = arg0_10:findTF("top_bg", arg0_10.blurPanel)
-	arg0_10.backBtn = arg0_10:findTF("top/back", arg0_10.top)
-	arg0_10.leftPanle = arg0_10:findTF("left_panel", arg0_10.top)
-	arg0_10.bottomPanel = arg0_10:findTF("bottom_panel", arg0_10.top)
-	arg0_10.rightPanel = arg0_10:findTF("right_panel", arg0_10.top)
-	arg0_10.shipContainer = arg0_10:findTF("ships/bg/content", arg0_10.bottomPanel)
-	arg0_10.shipTpl = arg0_10:findTF("ship_tpl", arg0_10.bottomPanel)
-	arg0_10.versionBtn = arg0_10:findTF("ships/bg/version/version_btn", arg0_10.bottomPanel)
-	arg0_10.eyeTF = arg0_10:findTF("eye", arg0_10.leftPanle)
-	arg0_10.painting = arg0_10:findTF("main/center_panel/painting")
-	arg0_10.nameTF = arg0_10:findTF("name", arg0_10.centerPanel)
-	arg0_10.shipName = arg0_10:findTF("name_mask/Text", arg0_10.nameTF)
-	arg0_10.shipType = arg0_10:findTF("type", arg0_10.nameTF)
-	arg0_10.englishName = arg0_10:findTF("english_name", arg0_10.nameTF)
-	arg0_10.shipInfoStarTpl = arg0_10:findTF("star_tpl", arg0_10.nameTF)
+	arg0_10.main = arg0_10._tf:Find("main")
+	arg0_10.centerPanel = arg0_10.main:Find("center_panel")
+	arg0_10.blurPanel = arg0_10._tf:Find("blur_panel")
+	arg0_10.top = arg0_10.blurPanel:Find("adapt")
+	arg0_10.topPanel = arg0_10.top:Find("top")
+	arg0_10.topBg = arg0_10.blurPanel:Find("top_bg")
+	arg0_10.backBtn = arg0_10.top:Find("top/back")
+	arg0_10.leftPanle = arg0_10.top:Find("left_panel")
+	arg0_10.bottomPanel = arg0_10.top:Find("bottom_panel")
+	arg0_10.rightPanel = arg0_10.top:Find("right_panel")
+	arg0_10.shipContainer = arg0_10.bottomPanel:Find("ships/bg/content")
+	arg0_10.shipTpl = arg0_10.bottomPanel:Find("ship_tpl")
+	arg0_10.versionBtn = arg0_10.bottomPanel:Find("ships/bg/version/version_btn")
+	arg0_10.eyeTF = arg0_10.leftPanle:Find("eye")
+	arg0_10.painting = arg0_10._tf:Find("main/center_panel/painting")
+	arg0_10.nameTF = arg0_10.centerPanel:Find("name")
+	arg0_10.shipName = arg0_10.nameTF:Find("name_mask/Text")
+	arg0_10.shipType = arg0_10.nameTF:Find("type")
+	arg0_10.englishName = arg0_10.nameTF:Find("english_name")
+	arg0_10.shipInfoStarTpl = arg0_10.nameTF:Find("star_tpl")
 
 	setActive(arg0_10.shipInfoStarTpl, false)
 
-	arg0_10.stars = arg0_10:findTF("stars", arg0_10.nameTF)
-	arg0_10.initBtn = arg0_10:findTF("property_panel/btns/init_toggle", arg0_10.leftPanle)
-	arg0_10.attrBtn = arg0_10:findTF("property_panel/btns/attr_toggle", arg0_10.leftPanle)
-	arg0_10.attrDisableBtn = arg0_10:findTF("property_panel/btns/attr_toggle/disable", arg0_10.leftPanle)
-	arg0_10.initPanel = arg0_10:findTF("property_panel/init_panel", arg0_10.leftPanle)
+	arg0_10.stars = arg0_10.nameTF:Find("stars")
+	arg0_10.initBtn = arg0_10.leftPanle:Find("property_panel/btns/init_toggle")
+	arg0_10.attrBtn = arg0_10.leftPanle:Find("property_panel/btns/attr_toggle")
+	arg0_10.attrDisableBtn = arg0_10.leftPanle:Find("property_panel/btns/attr_toggle/disable")
+	arg0_10.initPanel = arg0_10.leftPanle:Find("property_panel/init_panel")
 	arg0_10.propertyPanel = PropertyPanel.New(arg0_10.initPanel, 32)
 
-	setText(arg0_10:findTF("property_title1/Text", arg0_10.initPanel), i18n("blueprint_combatperformance"))
-	setText(arg0_10:findTF("property_title2/Text", arg0_10.initPanel), i18n("blueprint_shipperformance"))
+	setText(arg0_10.initPanel:Find("property_title1/Text"), i18n("blueprint_combatperformance"))
+	setText(arg0_10.initPanel:Find("property_title2/Text"), i18n("blueprint_shipperformance"))
 
-	arg0_10.skillRect = arg0_10:findTF("property_panel/init_panel/skills_rect", arg0_10.leftPanle)
-	arg0_10.skillPanel = arg0_10:findTF("property_panel/init_panel/skills_rect/skills", arg0_10.leftPanle)
-	arg0_10.skillTpl = arg0_10:findTF("skilltpl", arg0_10.skillPanel)
-	arg0_10.skillArrLeft = arg0_10:findTF("property_panel/init_panel/arrow1", arg0_10.leftPanle)
-	arg0_10.skillArrRight = arg0_10:findTF("property_panel/init_panel/arrow2", arg0_10.leftPanle)
-	arg0_10.simulationBtn = arg0_10:findTF("property_panel/init_panel/property_title2/simulation", arg0_10.leftPanle)
-	arg0_10.attrPanel = arg0_10:findTF("property_panel/attr_panel", arg0_10.leftPanle)
-	arg0_10.modAdditionPanel = arg0_10:findTF("property_panel/attr_panel", arg0_10.leftPanle)
-	arg0_10.modAdditionContainer = arg0_10:findTF("scroll_rect/content", arg0_10.modAdditionPanel)
-	arg0_10.modAdditionTpl = arg0_10:findTF("addition_tpl", arg0_10.modAdditionContainer)
-	arg0_10.preViewBtn = arg0_10:findTF("pre_view", arg0_10.attrPanel)
-	arg0_10.stateInfo = arg0_10:findTF("state_info", arg0_10.centerPanel)
-	arg0_10.startBtn = arg0_10:findTF("state_info/start_btn", arg0_10.centerPanel)
-	arg0_10.lockPanel = arg0_10:findTF("state_info/lock_panel", arg0_10.centerPanel)
-	arg0_10.lockBtn = arg0_10:findTF("lock", arg0_10.lockPanel)
-	arg0_10.finishedBtn = arg0_10:findTF("state_info/finished_btn", arg0_10.centerPanel)
-	arg0_10.progressPanel = arg0_10:findTF("state_info/progress", arg0_10.centerPanel)
+	arg0_10.skillRect = arg0_10.leftPanle:Find("property_panel/init_panel/skills_rect")
+	arg0_10.skillPanel = arg0_10.leftPanle:Find("property_panel/init_panel/skills_rect/skills")
+	arg0_10.skillTpl = arg0_10.skillPanel:Find("skilltpl")
+	arg0_10.skillArrLeft = arg0_10.leftPanle:Find("property_panel/init_panel/arrow1")
+	arg0_10.skillArrRight = arg0_10.leftPanle:Find("property_panel/init_panel/arrow2")
+	arg0_10.simulationBtn = arg0_10.leftPanle:Find("property_panel/init_panel/property_title2/simulation")
+	arg0_10.attrPanel = arg0_10.leftPanle:Find("property_panel/attr_panel")
+	arg0_10.modAdditionPanel = arg0_10.leftPanle:Find("property_panel/attr_panel")
+	arg0_10.modAdditionContainer = arg0_10.modAdditionPanel:Find("scroll_rect/content")
+	arg0_10.modAdditionTpl = arg0_10.modAdditionContainer:Find("addition_tpl")
+	arg0_10.preViewBtn = arg0_10.attrPanel:Find("pre_view")
+	arg0_10.stateInfo = arg0_10.centerPanel:Find("state_info")
+	arg0_10.startBtn = arg0_10.centerPanel:Find("state_info/start_btn")
+	arg0_10.lockPanel = arg0_10.centerPanel:Find("state_info/lock_panel")
+	arg0_10.lockBtn = arg0_10.lockPanel:Find("lock")
+	arg0_10.finishedBtn = arg0_10.centerPanel:Find("state_info/finished_btn")
+	arg0_10.progressPanel = arg0_10.centerPanel:Find("state_info/progress")
 
-	setText(arg0_10:findTF("label", arg0_10.progressPanel), i18n("blueprint_researching"))
+	setText(arg0_10.progressPanel:Find("label"), i18n("blueprint_researching"))
 
-	arg0_10.progressContainer = arg0_10:findTF("content", arg0_10.progressPanel)
-	arg0_10.progressTpl = arg0_10:findTF("item", arg0_10.progressContainer)
-	arg0_10.openCondition = arg0_10:findTF("state_info/open_condition", arg0_10.centerPanel)
-	arg0_10.speedupBtn = arg0_10:findTF("main/speedup_btn")
-	arg0_10.taskListPanel = arg0_10:findTF("task_list", arg0_10.rightPanel)
-	arg0_10.taskContainer = arg0_10:findTF("task_list/scroll/content", arg0_10.rightPanel)
-	arg0_10.taskTpl = arg0_10:findTF("task_tpl", arg0_10.taskContainer)
-	arg0_10.modPanel = arg0_10:findTF("mod_panel", arg0_10.rightPanel)
-	arg0_10.attrContainer = arg0_10:findTF("desc/atrrs", arg0_10.modPanel)
-	arg0_10.levelSlider = arg0_10:findTF("title/slider", arg0_10.modPanel):GetComponent(typeof(Slider))
-	arg0_10.levelSliderTxt = arg0_10:findTF("title/slider/Text", arg0_10.modPanel)
-	arg0_10.preLevelSlider = arg0_10:findTF("title/pre_slider", arg0_10.modPanel):GetComponent(typeof(Slider))
-	arg0_10.modLevel = arg0_10:findTF("title/level_bg/Text", arg0_10.modPanel):GetComponent(typeof(Text))
-	arg0_10.needLevelTxt = arg0_10:findTF("title/Text", arg0_10.modPanel):GetComponent(typeof(Text))
+	arg0_10.progressContainer = arg0_10.progressPanel:Find("content")
+	arg0_10.progressTpl = arg0_10.progressContainer:Find("item")
+	arg0_10.openCondition = arg0_10.centerPanel:Find("state_info/open_condition")
+	arg0_10.speedupBtn = arg0_10._tf:Find("main/speedup_btn")
+	arg0_10.taskListPanel = arg0_10.rightPanel:Find("task_list")
+	arg0_10.taskContainer = arg0_10.rightPanel:Find("task_list/scroll/content")
+	arg0_10.taskTpl = arg0_10.taskContainer:Find("task_tpl")
+	arg0_10.modPanel = arg0_10.rightPanel:Find("mod_panel")
+	arg0_10.attrContainer = arg0_10.modPanel:Find("desc/atrrs")
+	arg0_10.levelSlider = arg0_10.modPanel:Find("title/slider"):GetComponent(typeof(Slider))
+	arg0_10.levelSliderTxt = arg0_10.modPanel:Find("title/slider/Text")
+	arg0_10.preLevelSlider = arg0_10.modPanel:Find("title/pre_slider"):GetComponent(typeof(Slider))
+	arg0_10.modLevel = arg0_10.modPanel:Find("title/level_bg/Text"):GetComponent(typeof(Text))
+	arg0_10.needLevelTxt = arg0_10.modPanel:Find("title/Text"):GetComponent(typeof(Text))
 	arg0_10.phantomPanel = arg0_10.rightPanel:Find("phantom_panel")
 	arg0_10.rtPhantomQuestContainer = arg0_10.phantomPanel:Find("desc/content")
 	arg0_10.questTpl = arg0_10.rtPhantomQuestContainer:GetChild(0)
@@ -133,29 +133,29 @@ function var0_0.init(arg0_10)
 	arg0_10.itemInfoIcon = arg0_10.itemInfo:Find("icon")
 	arg0_10.itemInfoCount = arg0_10.itemInfo:Find("kc")
 	arg0_10.modBtn = arg0_10.calcPanel:Find("confirm_btn")
-	arg0_10.fittingBtn = arg0_10:findTF("desc/fitting_btn", arg0_10.modPanel)
+	arg0_10.fittingBtn = arg0_10.modPanel:Find("desc/fitting_btn")
 	arg0_10.fittingBtnEffect = arg0_10.fittingBtn:Find("anim/ShipBlue02")
-	arg0_10.fittingPanel = arg0_10:findTF("fitting_panel", arg0_10.rightPanel)
+	arg0_10.fittingPanel = arg0_10.rightPanel:Find("fitting_panel")
 
 	setActive(arg0_10.fittingPanel, false)
 
-	arg0_10.fittingAttrPanel = arg0_10:findTF("desc/middle", arg0_10.fittingPanel)
-	arg0_10.phasePic = arg0_10:findTF("title/phase", arg0_10.fittingPanel)
-	arg0_10.phaseSlider = arg0_10:findTF("desc/top/slider", arg0_10.fittingPanel):GetComponent(typeof(Slider))
-	arg0_10.phaseSliderTxt = arg0_10:findTF("desc/top/precent", arg0_10.fittingPanel)
-	arg0_10.prePhaseSlider = arg0_10:findTF("desc/top/pre_slider", arg0_10.fittingPanel):GetComponent(typeof(Slider))
-	arg0_10.fittingNeedMask = arg0_10:findTF("desc/top/mask", arg0_10.fittingPanel)
-	arg0_10.fittingCalcPanel = arg0_10:findTF("desc/bottom", arg0_10.fittingPanel)
-	arg0_10.fittingCalcMinusBtn = arg0_10:findTF("calc/base/minus", arg0_10.fittingCalcPanel)
-	arg0_10.fittingCalcPlusBtn = arg0_10:findTF("calc/base/plus", arg0_10.fittingCalcPanel)
-	arg0_10.fittingCalcTxt = arg0_10:findTF("calc/base/count/Text", arg0_10.fittingCalcPanel)
-	arg0_10.fittingCalcMaxBtn = arg0_10:findTF("calc/max", arg0_10.fittingCalcPanel)
-	arg0_10.fittingItemInfo = arg0_10:findTF("item_bg", arg0_10.fittingCalcPanel)
-	arg0_10.fittingItemInfoIcon = arg0_10:findTF("icon", arg0_10.fittingItemInfo)
-	arg0_10.fittingItemInfoCount = arg0_10:findTF("kc", arg0_10.fittingItemInfo)
-	arg0_10.fittingConfirmBtn = arg0_10:findTF("confirm_btn", arg0_10.fittingCalcPanel)
-	arg0_10.fittingCancelBtn = arg0_10:findTF("cancel_btn", arg0_10.fittingCalcPanel)
-	arg0_10.msgPanel = arg0_10:findTF("msg_panel", arg0_10.blurPanel)
+	arg0_10.fittingAttrPanel = arg0_10.fittingPanel:Find("desc/middle")
+	arg0_10.phasePic = arg0_10.fittingPanel:Find("title/phase")
+	arg0_10.phaseSlider = arg0_10.fittingPanel:Find("desc/top/slider"):GetComponent(typeof(Slider))
+	arg0_10.phaseSliderTxt = arg0_10.fittingPanel:Find("desc/top/precent")
+	arg0_10.prePhaseSlider = arg0_10.fittingPanel:Find("desc/top/pre_slider"):GetComponent(typeof(Slider))
+	arg0_10.fittingNeedMask = arg0_10.fittingPanel:Find("desc/top/mask")
+	arg0_10.fittingCalcPanel = arg0_10.fittingPanel:Find("desc/bottom")
+	arg0_10.fittingCalcMinusBtn = arg0_10.fittingCalcPanel:Find("calc/base/minus")
+	arg0_10.fittingCalcPlusBtn = arg0_10.fittingCalcPanel:Find("calc/base/plus")
+	arg0_10.fittingCalcTxt = arg0_10.fittingCalcPanel:Find("calc/base/count/Text")
+	arg0_10.fittingCalcMaxBtn = arg0_10.fittingCalcPanel:Find("calc/max")
+	arg0_10.fittingItemInfo = arg0_10.fittingCalcPanel:Find("item_bg")
+	arg0_10.fittingItemInfoIcon = arg0_10.fittingItemInfo:Find("icon")
+	arg0_10.fittingItemInfoCount = arg0_10.fittingItemInfo:Find("kc")
+	arg0_10.fittingConfirmBtn = arg0_10.fittingCalcPanel:Find("confirm_btn")
+	arg0_10.fittingCancelBtn = arg0_10.fittingCalcPanel:Find("cancel_btn")
+	arg0_10.msgPanel = arg0_10.blurPanel:Find("msg_panel")
 
 	setActive(arg0_10.msgPanel, false)
 
@@ -163,34 +163,34 @@ function var0_0.init(arg0_10)
 
 	setActive(arg0_10.versionPanel, false)
 
-	arg0_10.preViewer = arg0_10:findTF("preview")
-	arg0_10.preViewerFrame = arg0_10:findTF("preview/frame")
+	arg0_10.preViewer = arg0_10._tf:Find("preview")
+	arg0_10.preViewerFrame = arg0_10._tf:Find("preview/frame")
 
-	setText(arg0_10:findTF("bg/title/Image", arg0_10.preViewerFrame), i18n("word_preview"))
+	setText(arg0_10.preViewerFrame:Find("bg/title/Image"), i18n("word_preview"))
 	setActive(arg0_10.preViewer, false)
 
-	arg0_10.sea = arg0_10:findTF("sea", arg0_10.preViewerFrame)
+	arg0_10.sea = arg0_10.preViewerFrame:Find("sea")
 	arg0_10.rawImage = arg0_10.sea:GetComponent("RawImage")
 
 	setActive(arg0_10.rawImage, false)
 
-	arg0_10.seaLoading = arg0_10:findTF("bg/loading", arg0_10.preViewerFrame)
-	arg0_10.healTF = arg0_10:findTF("resources/heal")
+	arg0_10.seaLoading = arg0_10.preViewerFrame:Find("bg/loading")
+	arg0_10.healTF = arg0_10._tf:Find("resources/heal")
 	arg0_10.healTF.transform.localPosition = Vector3(-360, 50, 40)
 
 	setActive(arg0_10.healTF, false)
 
-	arg0_10.stages = arg0_10:findTF("stageScrollRect/stages", arg0_10.preViewerFrame)
-	arg0_10.breakView = arg0_10:findTF("content/Text", arg0_10.preViewerFrame)
-	arg0_10.previewAttrPanel = arg0_10:findTF("preview/attrs_panel/attr_panel")
-	arg0_10.previewAttrContainer = arg0_10:findTF("content", arg0_10.previewAttrPanel)
+	arg0_10.stages = arg0_10.preViewerFrame:Find("stageScrollRect/stages")
+	arg0_10.breakView = arg0_10.preViewerFrame:Find("content/Text")
+	arg0_10.previewAttrPanel = arg0_10._tf:Find("preview/attrs_panel/attr_panel")
+	arg0_10.previewAttrContainer = arg0_10.previewAttrPanel:Find("content")
 
-	setText(arg0_10:findTF("preview/attrs_panel/Text"), i18n("meta_energy_preview_tip"))
-	setText(arg0_10:findTF("preview/attrs_panel/desc"), i18n("meta_energy_preview_title"))
+	setText(arg0_10._tf:Find("preview/attrs_panel/Text"), i18n("meta_energy_preview_tip"))
+	setText(arg0_10._tf:Find("preview/attrs_panel/desc"), i18n("meta_energy_preview_title"))
 
-	arg0_10.helpBtn = arg0_10:findTF("helpBtn", arg0_10.top)
-	arg0_10.exchangeBtn = arg0_10:findTF("exchangeBtn", arg0_10.top)
-	arg0_10.itemUnlockBtn = arg0_10:findTF("itemUnlockBtn", arg0_10.top)
+	arg0_10.helpBtn = arg0_10.top:Find("helpBtn")
+	arg0_10.exchangeBtn = arg0_10.top:Find("exchangeBtn")
+	arg0_10.itemUnlockBtn = arg0_10.top:Find("itemUnlockBtn")
 	arg0_10.bottomWidth = arg0_10.bottomPanel.rect.height
 	arg0_10.topWidth = arg0_10.topPanel.rect.height * 2
 	arg0_10.taskTFs = {}
@@ -339,17 +339,17 @@ function var0_0.didEnter(arg0_11)
 			arg0_11.bottomPanel:Find("ships/bg")
 		}
 	})
-	setText(arg0_11:findTF("window/top/bg/infomation/title", arg0_11.msgPanel), i18n("title_info"))
-	onButton(arg0_11, arg0_11:findTF("window/top/btnBack", arg0_11.msgPanel), function()
+	setText(arg0_11.msgPanel:Find("window/top/bg/infomation/title"), i18n("title_info"))
+	onButton(arg0_11, arg0_11.msgPanel:Find("window/top/btnBack"), function()
 		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11.msgPanel, arg0_11.top)
 		setActive(arg0_11.msgPanel, false)
 	end, SFX_CANCEL)
-	setText(arg0_11:findTF("window/confirm_btn/Text", arg0_11.msgPanel), i18n("text_confirm"))
-	onButton(arg0_11, arg0_11:findTF("window/confirm_btn", arg0_11.msgPanel), function()
+	setText(arg0_11.msgPanel:Find("window/confirm_btn/Text"), i18n("text_confirm"))
+	onButton(arg0_11, arg0_11.msgPanel:Find("window/confirm_btn"), function()
 		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11.msgPanel, arg0_11.top)
 		setActive(arg0_11.msgPanel, false)
 	end, SFX_CANCEL)
-	onButton(arg0_11, arg0_11:findTF("bg", arg0_11.msgPanel), function()
+	onButton(arg0_11, arg0_11.msgPanel:Find("bg"), function()
 		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_11.msgPanel, arg0_11.top)
 		setActive(arg0_11.msgPanel, false)
 	end, SFX_CANCEL)
@@ -815,12 +815,12 @@ function var0_0.updateModInfo(arg0_76, arg1_76)
 	local var5_76 = intProperties(var4_76:getShipProperties(var0_76))
 
 	local function var6_76(arg0_77, arg1_77, arg2_77, arg3_77)
-		local var0_77 = arg0_76:findTF("attr_bg/name", arg0_77)
-		local var1_77 = arg0_76:findTF("attr_bg/value", arg0_77)
-		local var2_77 = arg0_76:findTF("attr_bg/max", arg0_77)
-		local var3_77 = arg0_76:findTF("slider", arg0_77):GetComponent(typeof(Slider))
-		local var4_77 = arg0_76:findTF("pre_slider", arg0_77):GetComponent(typeof(Slider))
-		local var5_77 = arg0_76:findTF("exp", arg0_77)
+		local var0_77 = arg0_77:Find("attr_bg/name")
+		local var1_77 = arg0_77:Find("attr_bg/value")
+		local var2_77 = arg0_77:Find("attr_bg/max")
+		local var3_77 = arg0_77:Find("slider"):GetComponent(typeof(Slider))
+		local var4_77 = arg0_77:Find("pre_slider"):GetComponent(typeof(Slider))
+		local var5_77 = arg0_77:Find("exp")
 
 		if arg1_76:isMaxLevel() then
 			arg3_77 = arg2_77
@@ -993,9 +993,9 @@ function var0_0.doAttrsAinm(arg0_90, arg1_90, arg2_90, arg3_90)
 	for iter0_90, iter1_90 in ipairs(ShipModAttr.BLUEPRINT_ATTRS) do
 		if iter1_90 ~= AttributeType.AntiAircraft then
 			local var4_90 = arg0_90.attrContainer:Find(iter1_90)
-			local var5_90 = arg0_90:findTF("attr_bg/value", var4_90):GetComponent(typeof(Text))
-			local var6_90 = arg0_90:findTF("slider", var4_90):GetComponent(typeof(Slider))
-			local var7_90 = arg0_90:findTF("pre_slider", var4_90):GetComponent(typeof(Slider))
+			local var5_90 = var4_90:Find("attr_bg/value"):GetComponent(typeof(Text))
+			local var6_90 = var4_90:Find("slider"):GetComponent(typeof(Slider))
+			local var7_90 = var4_90:Find("pre_slider"):GetComponent(typeof(Slider))
 			local var8_90 = table.indexof(ShipModAttr.BLUEPRINT_ATTRS, iter1_90)
 			local var9_90 = arg1_90:getExpRetio(var8_90)
 			local var10_90 = var2_90[iter1_90]
@@ -1555,14 +1555,14 @@ function var0_0.updateFittingInfo(arg0_128, arg1_128)
 	setActive(arg0_128.fittingNeedMask, var5_128)
 
 	if var5_128 then
-		setText(arg0_128:findTF("limit", arg0_128.fittingNeedMask), i18n("buleprint_need_level_tip", var6_128))
+		setText(arg0_128.fittingNeedMask:Find("limit"), i18n("buleprint_need_level_tip", var6_128))
 
 		arg0_128.phaseSlider.value = 1
 	end
 end
 
 function var0_0.updateFittingAttrPanel(arg0_129, arg1_129, arg2_129)
-	setText(arg0_129:findTF("attr/name/Text", arg0_129.fittingAttrPanel), " + " .. defaultValue((arg2_129 or arg1_129):attrSpecialAddition()[AttributeType.Luck], 0))
+	setText(arg0_129.fittingAttrPanel:Find("attr/name/Text"), " + " .. defaultValue((arg2_129 or arg1_129):attrSpecialAddition()[AttributeType.Luck], 0))
 
 	arg0_129.blinkTarget = arg0_129.blinkTarget or {
 		{},
@@ -1570,9 +1570,9 @@ function var0_0.updateFittingAttrPanel(arg0_129, arg1_129, arg2_129)
 	}
 
 	for iter0_129 = 1, arg1_129:getMaxFateLevel() do
-		local var0_129 = arg0_129:findTF("phase_panel/phase_" .. iter0_129, arg0_129.fittingAttrPanel)
-		local var1_129 = arg0_129:findTF("off", var0_129)
-		local var2_129 = arg0_129:findTF("on", var0_129)
+		local var0_129 = arg0_129.fittingAttrPanel:Find("phase_panel/phase_" .. iter0_129)
+		local var1_129 = var0_129:Find("off")
+		local var2_129 = var0_129:Find("on")
 
 		if arg2_129 and iter0_129 > arg1_129.fateLevel and iter0_129 <= arg2_129.fateLevel then
 			setActive(var1_129, true)
@@ -1650,7 +1650,7 @@ function var0_0.updateAdvanceTF(arg0_132, arg1_132, arg2_132, arg3_132)
 
 	removeAllChildren(var3_132)
 
-	local var4_132 = arg0_132:findTF("scroll_rect/info", arg0_132.modAdditionPanel)
+	local var4_132 = arg0_132.modAdditionPanel:Find("scroll_rect/info")
 
 	local function var5_132(arg0_133, arg1_133)
 		local var0_133 = arg1_133[2]
@@ -1790,7 +1790,7 @@ function var0_0.updateInfo(arg0_134)
 				local var17_134 = var15_134:getProgress()
 				local var18_134 = var15_134:getConfig("target_num")
 
-				setText(arg0_134:findTF("Text", var16_134), (var18_134 <= var17_134 and setColorStr(var17_134, COLOR_GREEN) or var17_134) .. "/" .. var18_134)
+				setText(var16_134:Find("Text"), (var18_134 <= var17_134 and setColorStr(var17_134, COLOR_GREEN) or var17_134) .. "/" .. var18_134)
 			end
 
 			for iter6_134 = #var14_134 + 1, arg0_134.lockPanel.childCount do
@@ -1799,7 +1799,7 @@ function var0_0.updateInfo(arg0_134)
 		end
 	end
 
-	setText(arg0_134:findTF("Text", arg0_134.openCondition), var0_134:getConfig("unlock_word"))
+	setText(arg0_134.openCondition:Find("Text"), var0_134:getConfig("unlock_word"))
 	setActive(arg0_134.openCondition, var9_134)
 	setActive(arg0_134.startBtn, var9_134 and var12_134)
 	setActive(arg0_134.lockPanel, var9_134 and not var12_134)
@@ -2076,27 +2076,27 @@ end
 
 function var0_0.createTask(arg0_152, arg1_152)
 	local var0_152 = {
-		title = arg0_152:findTF("title/name", arg1_152),
-		desc = arg0_152:findTF("desc/info/Text", arg1_152),
-		timerTF = arg0_152:findTF("title/timer", arg1_152),
-		timerTFTxt = arg0_152:findTF("title/timer/Text", arg1_152),
-		timerOpen = arg0_152:findTF("title/timer/open", arg1_152),
-		timerClose = arg0_152:findTF("title/timer/close", arg1_152),
-		maskAchieved = arg0_152:findTF("title/slider/complete", arg1_152),
-		tip = arg0_152:findTF("title/tip", arg1_152),
-		commitBtn = arg0_152:findTF("desc/commit_panel/commit_btn", arg1_152),
-		itemInfo = arg0_152:findTF("desc/item_info", arg1_152)
+		title = arg1_152:Find("title/name"),
+		desc = arg1_152:Find("desc/info/Text"),
+		timerTF = arg1_152:Find("title/timer"),
+		timerTFTxt = arg1_152:Find("title/timer/Text"),
+		timerOpen = arg1_152:Find("title/timer/open"),
+		timerClose = arg1_152:Find("title/timer/close"),
+		maskAchieved = arg1_152:Find("title/slider/complete"),
+		tip = arg1_152:Find("title/tip"),
+		commitBtn = arg1_152:Find("desc/commit_panel/commit_btn"),
+		itemInfo = arg1_152:Find("desc/item_info")
 	}
 
-	var0_152.itemContainer = arg0_152:findTF("items", var0_152.itemInfo)
-	var0_152.itemTpl = arg0_152:findTF("item_tpl", var0_152.itemContainer)
-	var0_152.numberTF = arg0_152:findTF("title/number", arg1_152)
-	var0_152.progressTF = arg0_152:findTF("title/slider", arg1_152)
+	var0_152.itemContainer = var0_152.itemInfo:Find("items")
+	var0_152.itemTpl = var0_152.itemContainer:Find("item_tpl")
+	var0_152.numberTF = arg1_152:Find("title/number")
+	var0_152.progressTF = arg1_152:Find("title/slider")
 	var0_152.progessSlider = var0_152.progressTF:GetComponent(typeof(Slider))
-	var0_152.lockBtn = arg0_152:findTF("desc/commit_panel/lock_btn", arg1_152)
+	var0_152.lockBtn = arg1_152:Find("desc/commit_panel/lock_btn")
 	var0_152.itemCount = var0_152.itemTpl:Find("award/icon_bg/count")
-	var0_152.progres = arg0_152:findTF("desc/info/progress", arg1_152)
-	var0_152.progreshadow = arg0_152:findTF("desc/info/progress/shadow", arg1_152)
+	var0_152.progres = arg1_152:Find("desc/info/progress")
+	var0_152.progreshadow = arg1_152:Find("desc/info/progress/shadow")
 	var0_152.check = findTF(arg1_152, "title/complete")
 	var0_152.lock = findTF(arg1_152, "title/lock")
 	var0_152.working = findTF(arg1_152, "title/working")
@@ -2314,7 +2314,7 @@ function var0_0.openPreView(arg0_165)
 		for iter0_165 = 1, var4_0 do
 			local var1_165 = arg0_165.breakIds[iter0_165]
 			local var2_165 = var3_0[var1_165]
-			local var3_165 = arg0_165:findTF("stage" .. iter0_165, arg0_165.stages)
+			local var3_165 = arg0_165.stages:Find("stage" .. iter0_165)
 
 			onToggle(arg0_165, var3_165, function(arg0_166)
 				if arg0_166 then
@@ -2580,7 +2580,7 @@ function var0_0.buildStartAni(arg0_183, arg1_183, arg2_183)
 		end)
 	end
 
-	local var1_183 = arg0_183:findTF(arg1_183 .. "(Clone)")
+	local var1_183 = arg0_183._tf:Find(arg1_183 .. "(Clone)")
 
 	arg0_183.awakenAni = var1_183 and go(var1_183)
 
@@ -2603,12 +2603,12 @@ function var0_0.showFittingMsgPanel(arg0_187, arg1_187)
 
 	local var0_187 = arg0_187.contextData.shipBluePrintVO
 	local var1_187 = var0_187:getMaxFateLevel()
-	local var2_187 = arg0_187:findTF("window/content", arg0_187.msgPanel)
-	local var3_187 = arg0_187:findTF("pre_btn", var2_187)
-	local var4_187 = arg0_187:findTF("next_btn", var2_187)
-	local var5_187 = arg0_187:findTF("attrl_panel", var2_187)
-	local var6_187 = arg0_187:findTF("skill_panel", var2_187)
-	local var7_187 = arg0_187:findTF("phase", var2_187)
+	local var2_187 = arg0_187.msgPanel:Find("window/content")
+	local var3_187 = var2_187:Find("pre_btn")
+	local var4_187 = var2_187:Find("next_btn")
+	local var5_187 = var2_187:Find("attrl_panel")
+	local var6_187 = var2_187:Find("skill_panel")
+	local var7_187 = var2_187:Find("phase")
 	local var8_187 = {
 		"I",
 		"II",
@@ -2646,13 +2646,13 @@ function var0_0.showFittingMsgPanel(arg0_187, arg1_187)
 		if var2_188 then
 			local var5_188 = getSkillConfig(var2_188)
 
-			GetImageSpriteFromAtlasAsync("skillicon/" .. var5_188.icon, "", arg0_187:findTF("skill_icon", var6_187))
-			setText(arg0_187:findTF("skill_name", var6_187), getSkillName(var2_188))
+			GetImageSpriteFromAtlasAsync("skillicon/" .. var5_188.icon, "", var6_187:Find("skill_icon"))
+			setText(var6_187:Find("skill_name"), getSkillName(var2_188))
 
 			local var6_188 = 1
 
-			setText(arg0_187:findTF("skill_lv", var6_187), "Lv." .. var6_188)
-			setText(arg0_187:findTF("help_panel/skill_intro", var6_187), getSkillDescGet(var2_188))
+			setText(var6_187:Find("skill_lv"), "Lv." .. var6_188)
+			setText(var6_187:Find("help_panel/skill_intro"), getSkillDescGet(var2_188))
 		end
 
 		if #var3_188 > 0 then
@@ -2679,7 +2679,7 @@ function var0_0.showFittingMsgPanel(arg0_187, arg1_187)
 
 		var9_187()
 	end)
-	setText(arg0_187:findTF("desc", var5_187), i18n("fate_attr_word"))
+	setText(var5_187:Find("desc"), i18n("fate_attr_word"))
 	var9_187()
 end
 

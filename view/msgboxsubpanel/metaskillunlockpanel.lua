@@ -20,15 +20,15 @@ function var0_0.UpdateView(arg0_3, arg1_3)
 end
 
 function var0_0.findUI(arg0_4)
-	arg0_4.tipText = arg0_4:findTF("Tip")
-	arg0_4.materialTpl = arg0_4:findTF("Material")
-	arg0_4.materialContainer = arg0_4:findTF("MaterialContainer")
+	arg0_4.tipText = arg0_4._tf:Find("Tip")
+	arg0_4.materialTpl = arg0_4._tf:Find("Material")
+	arg0_4.materialContainer = arg0_4._tf:Find("MaterialContainer")
 	arg0_4.uiItemList = UIItemList.New(arg0_4.materialContainer, arg0_4.materialTpl)
-	arg0_4.cancelBtn = arg0_4:findTF("Buttons/CancelBtn")
-	arg0_4.confirmBtn = arg0_4:findTF("Buttons/ConfirmBtn")
+	arg0_4.cancelBtn = arg0_4._tf:Find("Buttons/CancelBtn")
+	arg0_4.confirmBtn = arg0_4._tf:Find("Buttons/ConfirmBtn")
 
-	local var0_4 = arg0_4:findTF("Text", arg0_4.cancelBtn)
-	local var1_4 = arg0_4:findTF("Text", arg0_4.confirmBtn)
+	local var0_4 = arg0_4.cancelBtn:Find("Text")
+	local var1_4 = arg0_4.confirmBtn:Find("Text")
 
 	setText(var0_4, i18n("word_cancel"))
 	setText(var1_4, i18n("word_ok"))
@@ -107,9 +107,9 @@ function var0_0.updateContent(arg0_9, arg1_9)
 			arg1_10 = arg1_10 + 1
 
 			local var0_10 = var7_9[arg1_10]
-			local var1_10 = arg0_9:findTF("Item", arg2_10)
-			local var2_10 = arg0_9:findTF("SelectedTag", arg2_10)
-			local var3_10 = arg0_9:findTF("Count/Text", arg2_10)
+			local var1_10 = arg2_10:Find("Item")
+			local var2_10 = arg2_10:Find("SelectedTag")
+			local var3_10 = arg2_10:Find("Count/Text")
 			local var4_10 = {
 				type = DROP_TYPE_ITEM,
 				id = var0_10[2],

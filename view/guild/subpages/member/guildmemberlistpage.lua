@@ -5,10 +5,10 @@ function var0_0.getTargetUI(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.rectView = arg0_2:findTF("scroll")
+	arg0_2.rectView = arg0_2._tf:Find("scroll")
 	arg0_2.rectRect = arg0_2.rectView:GetComponent("LScrollRect")
-	arg0_2.rankBtn = arg0_2:findTF("rank")
-	arg0_2.blurBg = arg0_2:findTF("blur_bg", arg0_2._tf)
+	arg0_2.rankBtn = arg0_2._tf:Find("rank")
+	arg0_2.blurBg = arg0_2._tf:Find("blur_bg")
 end
 
 function var0_0.OnInit(arg0_3)

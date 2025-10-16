@@ -34,65 +34,71 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	})
 end
 
-function var0_0.IsLoadUpAll(arg0_2)
-	return _.all(arg0_2.consumeList, function(arg0_3)
+function var0_0.IsAnyLoadUp(arg0_2)
+	return _.any(arg0_2.consumeList, function(arg0_3)
 		return arg0_3.state == 1
 	end)
 end
 
-function var0_0.MarkLoadUp(arg0_4, arg1_4)
-	arg0_4:GetComsume(arg1_4).state = 1
-end
-
-function var0_0.GetConsumeList(arg0_5)
-	return arg0_5.consumeList
-end
-
-function var0_0.GetComsume(arg0_6, arg1_6)
-	return arg0_6.consumeList[arg1_6] or {}
-end
-
-function var0_0.AnyCanLoadUp(arg0_7)
-	if arg0_7:IsLoadUpAll() then
-		return false
-	end
-
-	return _.any(arg0_7.consumeList, function(arg0_8)
-		local var0_8 = Drop.New(arg0_8)
-
-		return arg0_8.state ~= 1 and var0_8:getOwnedCount() >= arg0_8.count
+function var0_0.IsLoadUpAll(arg0_4)
+	return _.all(arg0_4.consumeList, function(arg0_5)
+		return arg0_5.state == 1
 	end)
 end
 
-function var0_0.ItemIsSubmited(arg0_9, arg1_9)
-	local var0_9 = arg0_9.consumeList[arg1_9]
-
-	return var0_9 and var0_9.state == 1
+function var0_0.MarkLoadUp(arg0_6, arg1_6)
+	arg0_6:GetComsume(arg1_6).state = 1
 end
 
-function var0_0.GetConsumeAwards(arg0_10, arg1_10)
-	local var0_10 = arg0_10:GetComsume(arg1_10)
-	local var1_10 = pg.island_item_data_template[var0_10.id]
-	local var2_10 = pg.island_set.order_ship_award_coefficient.key_value_varchar
-	local var3_10 = var1_10.order_price * var0_10.count
+function var0_0.GetConsumeList(arg0_7)
+	return arg0_7.consumeList
+end
+
+function var0_0.GetComsume(arg0_8, arg1_8)
+	return arg0_8.consumeList[arg1_8] or {}
+end
+
+function var0_0.AnyCanLoadUp(arg0_9)
+	if arg0_9:IsLoadUpAll() then
+		return false
+	end
+
+	return _.any(arg0_9.consumeList, function(arg0_10)
+		local var0_10 = Drop.New(arg0_10)
+
+		return arg0_10.state ~= 1 and var0_10:getOwnedCount() >= arg0_10.count
+	end)
+end
+
+function var0_0.ItemIsSubmited(arg0_11, arg1_11)
+	local var0_11 = arg0_11.consumeList[arg1_11]
+
+	return var0_11 and var0_11.state == 1
+end
+
+function var0_0.GetConsumeAwards(arg0_12, arg1_12)
+	local var0_12 = arg0_12:GetComsume(arg1_12)
+	local var1_12 = pg.island_item_data_template[var0_12.id]
+	local var2_12 = pg.island_set.order_ship_award_coefficient.key_value_varchar
+	local var3_12 = var1_12.order_price * var0_12.count
 
 	return {
 		{
 			type = DROP_TYPE_ISLAND_ITEM,
-			id = var2_10[1],
-			count = math.floor(var3_10 * (var2_10[2] / 100))
+			id = var2_12[1],
+			count = math.floor(var3_12 * (var2_12[2] / 100))
 		},
 		{
 			id = 2,
 			type = DROP_TYPE_ISLAND_ITEM,
-			count = math.floor(var3_10 * (var2_10[3] / 100))
+			count = math.floor(var3_12 * (var2_12[3] / 100))
 		}
 	}
 end
 
-function var0_0.GetAwardList(arg0_11)
-	return _.select(arg0_11.awardList, function(arg0_12)
-		return arg0_12.count > 0
+function var0_0.GetAwardList(arg0_13)
+	return _.select(arg0_13.awardList, function(arg0_14)
+		return arg0_14.count > 0
 	end)
 end
 

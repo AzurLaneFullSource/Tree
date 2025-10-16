@@ -66,7 +66,7 @@ function var0_0.init(arg0_2)
 
 	setActive(arg0_2.extraBouns, arg0_2.contextData.extraBonus)
 
-	arg0_2.continueBtn = arg0_2:findTF("items/close")
+	arg0_2.continueBtn = arg0_2._tf:Find("items/close")
 
 	local var1_2 = arg0_2._tf:Find("decorations")
 
@@ -82,7 +82,7 @@ function var0_0.init(arg0_2)
 
 	arg0_2._tf:SetAsLastSibling()
 
-	arg0_2.metaRepeatAwardTF = arg0_2:findTF("MetaShipRepeatAward")
+	arg0_2.metaRepeatAwardTF = arg0_2._tf:Find("MetaShipRepeatAward")
 end
 
 function var0_0.doAnim(arg0_5, arg1_5)
@@ -304,7 +304,7 @@ function var0_0.displayAwards(arg0_24)
 				setLocalPosition(var8_24, Vector3.zero)
 				setLocalScale(var8_24, Vector3.zero)
 
-				local var9_24 = arg0_24:findTF("item_tpl/bg", var8_24)
+				local var9_24 = var8_24:Find("item_tpl/bg")
 
 				updateDrop(var9_24, var7_24)
 				setActive(var9_24:Find("name"), false)

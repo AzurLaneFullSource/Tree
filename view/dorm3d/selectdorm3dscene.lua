@@ -564,14 +564,10 @@ function var0_0.SetMapSwitch(arg0_61)
 					local var3_72 = var2_72 and var2_72:getState() or "lock"
 
 					setActive(arg2_72:Find("lock"), var3_72 ~= "complete")
-					setActive(arg2_72:Find("normal"), var3_72 == "complete")
 
-					if var3_72 == "complete" then
-						local var4_72 = string.format("dorm3dselect/room_icon_%s", string.lower(var1_72.assets_prefix))
+					local var4_72 = string.format("dorm3dselect/room_icon_%s", string.lower(var1_72.assets_prefix))
 
-						GetImageSpriteFromAtlasAsync(var4_72, "", arg2_72:Find("normal/mask/icon"), false)
-					end
-
+					GetImageSpriteFromAtlasAsync(var4_72, "", arg2_72:Find("normal/mask/icon"), false)
 					setText(arg2_72:Find("roomId"), var0_72)
 				end
 			end)

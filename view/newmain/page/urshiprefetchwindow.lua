@@ -5,10 +5,10 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.shipTpl = arg0_2:findTF("window/content/ships/itemtpl")
-	arg0_2.contentTxt = arg0_2:findTF("window/content/Text"):GetComponent(typeof(Text))
-	arg0_2.cntTxt = arg0_2:findTF("window/content/count"):GetComponent(typeof(Text))
-	arg0_2.confirmBtn = arg0_2:findTF("window/confirm_btn")
+	arg0_2.shipTpl = arg0_2._tf:Find("window/content/ships/itemtpl")
+	arg0_2.contentTxt = arg0_2._tf:Find("window/content/Text"):GetComponent(typeof(Text))
+	arg0_2.cntTxt = arg0_2._tf:Find("window/content/count"):GetComponent(typeof(Text))
+	arg0_2.confirmBtn = arg0_2._tf:Find("window/confirm_btn")
 
 	setText(arg0_2._tf:Find("window/top/bg/infomation/title"), i18n("title_info"))
 	setText(arg0_2.confirmBtn:Find("pic"), i18n("word_take"))

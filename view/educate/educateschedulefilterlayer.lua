@@ -60,34 +60,34 @@ function var0_0.getUIName(arg0_2)
 end
 
 function var0_0.init(arg0_3)
-	arg0_3.anim = arg0_3:findTF("anim_root"):GetComponent(typeof(Animation))
-	arg0_3.animEvent = arg0_3:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+	arg0_3.anim = arg0_3._tf:Find("anim_root"):GetComponent(typeof(Animation))
+	arg0_3.animEvent = arg0_3._tf:Find("anim_root"):GetComponent(typeof(DftAniEvent))
 
 	arg0_3.animEvent:SetEndEvent(function()
 		arg0_3:emit(var0_0.ON_CLOSE)
 	end)
 
-	arg0_3.windowTF = arg0_3:findTF("anim_root/window")
+	arg0_3.windowTF = arg0_3._tf:Find("anim_root/window")
 
-	setText(arg0_3:findTF("top/title", arg0_3.windowTF), i18n("child_filter_title"))
+	setText(arg0_3.windowTF:Find("top/title"), i18n("child_filter_title"))
 
-	arg0_3.filterContainer = arg0_3:findTF("frame/filter_content", arg0_3.windowTF)
-	arg0_3.filterTpl = arg0_3:findTF("anim_root/filter_tpl")
-	arg0_3.itemTpl = arg0_3:findTF("anim_root/item_tpl")
+	arg0_3.filterContainer = arg0_3.windowTF:Find("frame/filter_content")
+	arg0_3.filterTpl = arg0_3._tf:Find("anim_root/filter_tpl")
+	arg0_3.itemTpl = arg0_3._tf:Find("anim_root/item_tpl")
 
 	setActive(arg0_3.filterTpl, false)
 	setActive(arg0_3.itemTpl, false)
 
-	arg0_3.dropdownPanel = arg0_3:findTF("anim_root/dropdown_panel")
-	arg0_3.dropdownUIList = UIItemList.New(arg0_3:findTF("dropdown/list", arg0_3.dropdownPanel), arg0_3:findTF("dropdown/list/tpl", arg0_3.dropdownPanel))
+	arg0_3.dropdownPanel = arg0_3._tf:Find("anim_root/dropdown_panel")
+	arg0_3.dropdownUIList = UIItemList.New(arg0_3.dropdownPanel:Find("dropdown/list"), arg0_3.dropdownPanel:Find("dropdown/list/tpl"))
 
 	setActive(arg0_3.dropdownPanel, false)
-	setText(arg0_3:findTF("sure_btn/Text", arg0_3.windowTF), i18n("word_ok"))
-	setText(arg0_3:findTF("reset_btn/Text", arg0_3.windowTF), i18n("word_reset"))
+	setText(arg0_3.windowTF:Find("sure_btn/Text"), i18n("word_ok"))
+	setText(arg0_3.windowTF:Find("reset_btn/Text"), i18n("word_reset"))
 end
 
 function var0_0.didEnter(arg0_5)
-	onButton(arg0_5, arg0_5:findTF("sure_btn", arg0_5.windowTF), function()
+	onButton(arg0_5, arg0_5.windowTF:Find("sure_btn"), function()
 		if arg0_5.contextData.callback then
 			arg0_5.contextData.callback(arg0_5.contextData.indexDatas)
 
@@ -96,7 +96,7 @@ function var0_0.didEnter(arg0_5)
 
 		arg0_5:_close()
 	end, SFX_PANEL)
-	onButton(arg0_5, arg0_5:findTF("reset_btn", arg0_5.windowTF), function()
+	onButton(arg0_5, arg0_5.windowTF:Find("reset_btn"), function()
 		arg0_5.contextData.indexDatas = nil
 
 		removeAllChildren(arg0_5.filterContainer)
@@ -105,10 +105,10 @@ function var0_0.didEnter(arg0_5)
 	onButton(arg0_5, arg0_5.dropdownPanel, function()
 		arg0_5:closeDropdownPanel()
 	end, SFX_PANEL)
-	onButton(arg0_5, arg0_5:findTF("anim_root/bg"), function()
+	onButton(arg0_5, arg0_5._tf:Find("anim_root/bg"), function()
 		arg0_5:_close()
 	end, SFX_PANEL)
-	onButton(arg0_5, arg0_5:findTF("top/close_btn", arg0_5.windowTF), function()
+	onButton(arg0_5, arg0_5.windowTF:Find("top/close_btn"), function()
 		arg0_5:_close()
 	end, SFX_PANEL)
 	arg0_5:initDropdownPanel()
@@ -127,8 +127,8 @@ function var0_0.initDropdownPanel(arg0_11)
 			local var3_12 = arg0_11.dropdownCfg.tags[arg0_11.dropdownCfgIndex]
 			local var4_12 = arg0_11.dropdownCfg.defaults[arg0_11.dropdownCfgIndex]
 
-			setActive(arg0_11:findTF("line", arg2_12), var0_12 ~= #arg0_11.dropdownCfg.options[arg0_11.dropdownCfgIndex])
-			setText(arg0_11:findTF("Text", arg2_12), var1_12)
+			setActive(arg2_12:Find("line"), var0_12 ~= #arg0_11.dropdownCfg.options[arg0_11.dropdownCfgIndex])
+			setText(arg2_12:Find("Text"), var1_12)
 			onButton(arg0_11, arg2_12, function()
 				if arg0_11.contextData.indexDatas[var3_12] == var2_12 then
 					arg0_11.contextData.indexDatas[var3_12] = var4_12
@@ -150,7 +150,7 @@ function var0_0.initFilters(arg0_14)
 	for iter0_14, iter1_14 in ipairs(var0_0.FILTER_CONFIG) do
 		local var0_14 = cloneTplTo(arg0_14.filterTpl, arg0_14.filterContainer)
 
-		setText(arg0_14:findTF("title/title", var0_14), iter1_14.title)
+		setText(var0_14:Find("title/title"), iter1_14.title)
 
 		if not iter1_14.dropdown then
 			arg0_14:initNormal(iter0_14, iter1_14, var0_14)
@@ -161,7 +161,7 @@ function var0_0.initFilters(arg0_14)
 end
 
 function var0_0.initNormal(arg0_15, arg1_15, arg2_15, arg3_15)
-	local var0_15 = arg0_15:findTF("content/container", arg3_15)
+	local var0_15 = arg3_15:Find("content/container")
 	local var1_15 = UIItemList.New(var0_15, arg0_15.itemTpl)
 
 	var1_15:make(function(arg0_16, arg1_16, arg2_16)
@@ -170,9 +170,9 @@ function var0_0.initNormal(arg0_15, arg1_15, arg2_15, arg3_15)
 			local var1_16 = arg2_15.names[var0_16]
 			local var2_16 = arg2_15.options[var0_16]
 
-			setText(arg0_15:findTF("Text", arg2_16), var1_16)
-			setActive(arg0_15:findTF("line", arg2_16), var0_16 ~= #arg2_15.names)
-			setActive(arg0_15:findTF("arrow", arg2_16), false)
+			setText(arg2_16:Find("Text"), var1_16)
+			setActive(arg2_16:Find("line"), var0_16 ~= #arg2_15.names)
+			setActive(arg2_16:Find("arrow"), false)
 
 			if not arg0_15.contextData.indexDatas[arg2_15.tag] then
 				arg0_15.contextData.indexDatas[arg2_15.tag] = arg2_15.default
@@ -197,8 +197,8 @@ function var0_0.initNormal(arg0_15, arg1_15, arg2_15, arg3_15)
 			local var5_16
 			local var6_16 = (arg0_15.contextData.indexDatas[arg2_15.tag] ~= arg2_15.default or false) and bit.band(arg0_15.contextData.indexDatas[arg2_15.tag], var4_16) > 0
 
-			setActive(arg0_15:findTF("selected", arg2_16), var6_16)
-			setTextColor(arg0_15:findTF("Text", arg2_16), var6_16 and Color.white or Color.NewHex("393a3c"))
+			setActive(arg2_16:Find("selected"), var6_16)
+			setTextColor(arg2_16:Find("Text"), var6_16 and Color.white or Color.NewHex("393a3c"))
 		end
 	end)
 	var1_15:align(#arg2_15.options)
@@ -207,7 +207,7 @@ function var0_0.initNormal(arg0_15, arg1_15, arg2_15, arg3_15)
 end
 
 function var0_0.initDropdown(arg0_18, arg1_18, arg2_18, arg3_18)
-	local var0_18 = arg0_18:findTF("content/container", arg3_18)
+	local var0_18 = arg3_18:Find("content/container")
 	local var1_18 = UIItemList.New(var0_18, arg0_18.itemTpl)
 
 	var1_18:make(function(arg0_19, arg1_19, arg2_19)
@@ -216,8 +216,8 @@ function var0_0.initDropdown(arg0_18, arg1_18, arg2_18, arg3_18)
 			local var1_19 = arg2_18.tags[var0_19]
 			local var2_19 = arg2_18.defaults[var0_19]
 
-			setActive(arg0_18:findTF("line", arg2_19), var0_19 ~= #arg2_18.tags)
-			setActive(arg0_18:findTF("arrow", arg2_19), true)
+			setActive(arg2_19:Find("line"), var0_19 ~= #arg2_18.tags)
+			setActive(arg2_19:Find("arrow"), true)
 
 			if not arg0_18.contextData.indexDatas[var1_19] then
 				arg0_18.contextData.indexDatas[var1_19] = var2_19
@@ -254,10 +254,10 @@ function var0_0.initDropdown(arg0_18, arg1_18, arg2_18, arg3_18)
 				end
 			end
 
-			setText(arg0_18:findTF("Text", arg2_19), var6_19)
-			setActive(arg0_18:findTF("selected", arg2_19), var7_19)
-			setTextColor(arg0_18:findTF("Text", arg2_19), var7_19 and Color.white or Color.NewHex("393a3c"))
-			setImageColor(arg0_18:findTF("arrow", arg2_19), var7_19 and Color.white or Color.NewHex("393a3c"))
+			setText(arg2_19:Find("Text"), var6_19)
+			setActive(arg2_19:Find("selected"), var7_19)
+			setTextColor(arg2_19:Find("Text"), var7_19 and Color.white or Color.NewHex("393a3c"))
+			setImageColor(arg2_19:Find("arrow"), var7_19 and Color.white or Color.NewHex("393a3c"))
 		end
 	end)
 	var1_18:align(#arg2_18.options)
@@ -266,7 +266,7 @@ function var0_0.initDropdown(arg0_18, arg1_18, arg2_18, arg3_18)
 end
 
 function var0_0.showDropdownPanel(arg0_21, arg1_21)
-	setAnchoredPosition(arg0_21:findTF("dropdown", arg0_21.dropdownPanel), arg1_21)
+	setAnchoredPosition(arg0_21.dropdownPanel:Find("dropdown"), arg1_21)
 	setActive(arg0_21.dropdownPanel, true)
 	arg0_21.dropdownUIList:align(#arg0_21.dropdownCfg.options[arg0_21.dropdownCfgIndex] - 1)
 end

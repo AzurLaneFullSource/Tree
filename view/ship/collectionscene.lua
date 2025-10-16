@@ -117,18 +117,18 @@ end
 function var0_0.init(arg0_9)
 	arg0_9:initEvents()
 
-	arg0_9.blurPanel = arg0_9:findTF("blur_panel")
-	arg0_9.top = arg0_9:findTF("blur_panel/adapt/top")
-	arg0_9.leftPanel = arg0_9:findTF("blur_panel/adapt/left_length")
+	arg0_9.blurPanel = arg0_9._tf:Find("blur_panel")
+	arg0_9.top = arg0_9._tf:Find("blur_panel/adapt/top")
+	arg0_9.leftPanel = arg0_9._tf:Find("blur_panel/adapt/left_length")
 	arg0_9.backBtn = findTF(arg0_9.top, "back_btn")
 	arg0_9.contextData.toggle = arg0_9.contextData.toggle or 2
 	arg0_9.toggles = {
-		arg0_9:findTF("frame/tagRoot/card", arg0_9.leftPanel),
-		arg0_9:findTF("frame/tagRoot/display", arg0_9.leftPanel),
-		arg0_9:findTF("frame/tagRoot/trans", arg0_9.leftPanel),
-		arg0_9:findTF("frame/tagRoot/manga", arg0_9.leftPanel),
-		arg0_9:findTF("frame/tagRoot/gallery", arg0_9.leftPanel),
-		arg0_9:findTF("frame/tagRoot/music", arg0_9.leftPanel)
+		arg0_9.leftPanel:Find("frame/tagRoot/card"),
+		arg0_9.leftPanel:Find("frame/tagRoot/display"),
+		arg0_9.leftPanel:Find("frame/tagRoot/trans"),
+		arg0_9.leftPanel:Find("frame/tagRoot/manga"),
+		arg0_9.leftPanel:Find("frame/tagRoot/gallery"),
+		arg0_9.leftPanel:Find("frame/tagRoot/music")
 	}
 	arg0_9.toggleUpdates = {
 		"initCardPanel",
@@ -138,7 +138,7 @@ function var0_0.init(arg0_9)
 		"initGalleryPanel",
 		"initMusicPanel"
 	}
-	arg0_9.cardList = arg0_9:findTF("main/list_card/scroll"):GetComponent("LScrollRect")
+	arg0_9.cardList = arg0_9._tf:Find("main/list_card/scroll"):GetComponent("LScrollRect")
 
 	function arg0_9.cardList.onInitItem(arg0_10)
 		arg0_9:onInitCard(arg0_10)
@@ -153,19 +153,19 @@ function var0_0.init(arg0_9)
 	end
 
 	arg0_9.cardItems = {}
-	arg0_9.cardContent = arg0_9:findTF("ships", arg0_9.cardList)
+	arg0_9.cardContent = tf(arg0_9.cardList):Find("ships")
 	arg0_9.contextData.cardToggle = arg0_9.contextData.cardToggle or 1
-	arg0_9.cardToggleGroup = arg0_9:findTF("main/list_card/types")
+	arg0_9.cardToggleGroup = arg0_9._tf:Find("main/list_card/types")
 	arg0_9.cardToggles = {
-		arg0_9:findTF("char", arg0_9.cardToggleGroup),
-		arg0_9:findTF("link", arg0_9.cardToggleGroup),
-		arg0_9:findTF("blueprint", arg0_9.cardToggleGroup),
-		arg0_9:findTF("meta", arg0_9.cardToggleGroup)
+		arg0_9.cardToggleGroup:Find("char"),
+		arg0_9.cardToggleGroup:Find("link"),
+		arg0_9.cardToggleGroup:Find("blueprint"),
+		arg0_9.cardToggleGroup:Find("meta")
 	}
 	arg0_9.cardList.decelerationRate = 0.07
-	arg0_9.bonusPanel = arg0_9:findTF("bonus_panel")
+	arg0_9.bonusPanel = arg0_9._tf:Find("bonus_panel")
 	arg0_9.charTpl = arg0_9:getTpl("chartpl")
-	arg0_9.tip = arg0_9:findTF("tip", arg0_9.toggles[2])
+	arg0_9.tip = arg0_9.toggles[2]:Find("tip")
 
 	local var0_9 = pg.storeup_data_template
 
@@ -183,7 +183,7 @@ function var0_0.init(arg0_9)
 		return pg.memory_group[arg0_13]
 	end)
 	arg0_9.memories = nil
-	arg0_9.memoryList = arg0_9:findTF("main/list_memory"):GetComponent("LScrollRect")
+	arg0_9.memoryList = arg0_9._tf:Find("main/list_memory"):GetComponent("LScrollRect")
 
 	function arg0_9.memoryList.onInitItem(arg0_14)
 		arg0_9:onInitMemory(arg0_14)
@@ -197,35 +197,35 @@ function var0_0.init(arg0_9)
 		arg0_9:onReturnMemory(arg0_16, arg1_16)
 	end
 
-	arg0_9.memoryViewport = arg0_9:findTF("main/list_memory/viewport")
-	arg0_9.memoriesGrid = arg0_9:findTF("main/list_memory/viewport/memories"):GetComponent(typeof(GridLayoutGroup))
+	arg0_9.memoryViewport = arg0_9._tf:Find("main/list_memory/viewport")
+	arg0_9.memoriesGrid = arg0_9._tf:Find("main/list_memory/viewport/memories"):GetComponent(typeof(GridLayoutGroup))
 	arg0_9.memoryItems = {}
 
-	local var2_9 = arg0_9:findTF("memory", arg0_9.memoryList)
+	local var2_9 = tf(arg0_9.memoryList):Find("memory")
 
-	arg0_9.memoryMask = arg0_9:findTF("blur_panel/adapt/story_mask")
+	arg0_9.memoryMask = arg0_9._tf:Find("blur_panel/story_mask")
 
 	setActive(var2_9, false)
 	setActive(arg0_9.memoryMask, false)
 
-	arg0_9.memoryTogGroup = arg0_9:findTF("memory", arg0_9.top)
+	arg0_9.memoryTogGroup = arg0_9.top:Find("memory")
 
 	setActive(arg0_9.memoryTogGroup, false)
 
 	arg0_9.memoryToggles = {
-		arg0_9:findTF("memory/0", arg0_9.top),
-		arg0_9:findTF("memory/1", arg0_9.top),
-		arg0_9:findTF("memory/2", arg0_9.top),
-		arg0_9:findTF("memory/3", arg0_9.top)
+		arg0_9.top:Find("memory/0"),
+		arg0_9.top:Find("memory/1"),
+		arg0_9.top:Find("memory/2"),
+		arg0_9.top:Find("memory/3")
 	}
 	arg0_9.memoryFilterIndex = {
 		true,
 		true,
 		true
 	}
-	arg0_9.galleryPanelContainer = arg0_9:findTF("main/GalleryContainer")
-	arg0_9.musicPanelContainer = arg0_9:findTF("main/MusicContainer")
-	arg0_9.mangaPanelContainer = arg0_9:findTF("main/MangaContainer")
+	arg0_9.galleryPanelContainer = arg0_9._tf:Find("main/GalleryContainer")
+	arg0_9.musicPanelContainer = arg0_9._tf:Find("main/MusicContainer")
+	arg0_9.mangaPanelContainer = arg0_9._tf:Find("main/MangaContainer")
 
 	arg0_9:initIndexPanel()
 end
@@ -237,7 +237,7 @@ function var0_0.didEnter(arg0_17)
 		arg0_17:emit(var0_0.ON_BACK)
 	end, SFX_CANCEL)
 
-	arg0_17.helpBtn = arg0_17:findTF("help_btn", arg0_17.leftPanel)
+	arg0_17.helpBtn = arg0_17.leftPanel:Find("help_btn")
 
 	onButton(arg0_17, arg0_17.helpBtn, function()
 		if arg0_17.contextData.toggle == var0_0.MUSIC_INDEX then
@@ -253,7 +253,7 @@ function var0_0.didEnter(arg0_17)
 		end
 	end, SFX_PANEL)
 
-	local var0_17 = arg0_17:findTF("stamp", arg0_17.top)
+	local var0_17 = arg0_17.top:Find("stamp")
 
 	setActive(var0_17, getProxy(TaskProxy):mingshiTouchFlagEnabled())
 	onButton(arg0_17, var0_17, function()
@@ -300,7 +300,7 @@ function var0_0.didEnter(arg0_17)
 						if arg0_17.bulinTip then
 							arg0_17.bulinTip.buffer:Show()
 						else
-							arg0_17.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(arg0_17, arg0_17:findTF("main"))
+							arg0_17.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(arg0_17, arg0_17._tf:Find("main"))
 						end
 					end
 
@@ -386,19 +386,19 @@ end
 
 function var0_0.updateCollectNotices(arg0_25, arg1_25)
 	setActive(arg0_25.tip, arg1_25)
-	setActive(arg0_25:findTF("tip", arg0_25.toggles[var0_0.GALLERY_INDEX]), getProxy(AppreciateProxy):isGalleryHaveNewRes())
-	setActive(arg0_25:findTF("tip", arg0_25.toggles[var0_0.MUSIC_INDEX]), getProxy(AppreciateProxy):isMusicHaveNewRes())
-	setActive(arg0_25:findTF("tip", arg0_25.toggles[var0_0.MANGA_INDEX]), getProxy(AppreciateProxy):isMangaHaveNewRes())
+	setActive(arg0_25.toggles[var0_0.GALLERY_INDEX]:Find("tip"), getProxy(AppreciateProxy):isGalleryHaveNewRes())
+	setActive(arg0_25.toggles[var0_0.MUSIC_INDEX]:Find("tip"), getProxy(AppreciateProxy):isMusicHaveNewRes())
+	setActive(arg0_25.toggles[var0_0.MANGA_INDEX]:Find("tip"), getProxy(AppreciateProxy):isMangaHaveNewRes())
 end
 
 function var0_0.calFavoriteRate(arg0_26)
 	local var0_26 = arg0_26.contextData.toggle == 1 and arg0_26.contextData.cardToggle == 2
 
-	setActive(arg0_26:findTF("total/char", arg0_26.top), not var0_26)
-	setActive(arg0_26:findTF("total/link", arg0_26.top), var0_26)
-	setText(arg0_26:findTF("total/char/rate/Text", arg0_26.top), arg0_26.rate * 100 .. "%")
-	setText(arg0_26:findTF("total/char/count/Text", arg0_26.top), arg0_26.count .. "/" .. arg0_26.totalCount)
-	setText(arg0_26:findTF("total/link/count/Text", arg0_26.top), arg0_26.linkCount)
+	setActive(arg0_26.top:Find("total/char"), not var0_26)
+	setActive(arg0_26.top:Find("total/link"), var0_26)
+	setText(arg0_26.top:Find("total/char/rate/Text"), arg0_26.rate * 100 .. "%")
+	setText(arg0_26.top:Find("total/char/count/Text"), arg0_26.count .. "/" .. arg0_26.totalCount)
+	setText(arg0_26.top:Find("total/link/count/Text"), arg0_26.linkCount)
 end
 
 function var0_0.initCardPanel(arg0_27)
@@ -423,7 +423,7 @@ function var0_0.initCardPanel(arg0_27)
 end
 
 function var0_0.initIndexPanel(arg0_30)
-	arg0_30.indexBtn = arg0_30:findTF("index_button", arg0_30.top)
+	arg0_30.indexBtn = arg0_30.top:Find("index_button")
 
 	onButton(arg0_30, arg0_30.indexBtn, function()
 		local var0_31 = Clone(var0_0.ShipIndexData)
@@ -641,7 +641,7 @@ end
 function var0_0.initDisplayPanel(arg0_46)
 	if not arg0_46.isInitDisplay then
 		arg0_46.isInitDisplay = true
-		arg0_46.displayRect = arg0_46:findTF("main/list_display"):GetComponent("LScrollRect")
+		arg0_46.displayRect = arg0_46._tf:Find("main/list_display"):GetComponent("LScrollRect")
 		arg0_46.displayRect.decelerationRate = 0.07
 
 		function arg0_46.displayRect.onInitItem(arg0_47)
@@ -771,7 +771,7 @@ function var0_0.showSubMemories(arg0_56, arg1_56)
 	end
 
 	arg0_56.memoryList:SetTotalCount(#arg0_56.memories, 0)
-	setActive(arg0_56:findTF("memory", arg0_56.top), false)
+	setActive(arg0_56.top:Find("memory"), false)
 end
 
 local var1_0 = 3
@@ -806,7 +806,7 @@ function var0_0.return2MemoryGroup(arg0_58)
 	end
 
 	arg0_58.memoryList:SetTotalCount(#arg0_58.memoryGroups, var1_58)
-	setActive(arg0_58:findTF("memory", arg0_58.top), true)
+	setActive(arg0_58.top:Find("memory"), true)
 end
 
 function var0_0.initMemoryPanel(arg0_59)

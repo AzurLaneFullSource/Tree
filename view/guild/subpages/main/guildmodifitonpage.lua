@@ -21,7 +21,7 @@ end
 
 function var0_0.OnInit(arg0_3)
 	arg0_3.costTF.text = 0
-	arg0_3.modifyBackBG = arg0_3:findTF("bg_decorations", arg0_3._tf)
+	arg0_3.modifyBackBG = arg0_3._tf:Find("bg_decorations")
 
 	setActive(arg0_3._tf, false)
 	onButton(arg0_3, arg0_3.cancelBtn, function()
@@ -214,7 +214,7 @@ function var0_0.Show(arg0_20, arg1_20, arg2_20)
 	if var1_20 then
 		local var2_20 = arg0_20.guildVO:changeFactionLeftTime()
 
-		setText(arg0_20:findTF("timer_container/Text", arg0_20.factionMask), var2_20)
+		setText(arg0_20.factionMask:Find("timer_container/Text"), var2_20)
 	end
 
 	arg0_20.faction = arg0_20.guildVO:getFaction()

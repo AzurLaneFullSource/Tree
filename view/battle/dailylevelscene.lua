@@ -12,34 +12,34 @@ function var0_0.ResUISettings(arg0_2)
 end
 
 function var0_0.init(arg0_3)
-	arg0_3.blurPanel = arg0_3:findTF("blur_panel")
-	arg0_3.topPanel = arg0_3:findTF("blur_panel/adapt/top")
-	arg0_3.backBtn = arg0_3:findTF("back_button", arg0_3.topPanel)
-	arg0_3.listPanel = arg0_3:findTF("list_panel")
-	arg0_3.content = arg0_3:findTF("list", arg0_3.listPanel)
+	arg0_3.blurPanel = arg0_3._tf:Find("blur_panel")
+	arg0_3.topPanel = arg0_3._tf:Find("blur_panel/adapt/top")
+	arg0_3.backBtn = arg0_3.topPanel:Find("back_button")
+	arg0_3.listPanel = arg0_3._tf:Find("list_panel")
+	arg0_3.content = arg0_3.listPanel:Find("list")
 
 	setActive(arg0_3.content, true)
 
 	arg0_3.dailylevelTpl = arg0_3:getTpl("list_panel/list/captertpl")
-	arg0_3.descPanel = arg0_3:findTF("desc_panel")
+	arg0_3.descPanel = arg0_3._tf:Find("desc_panel")
 	arg0_3.selectedPanel = arg0_3.descPanel:Find("selected")
-	arg0_3.descMain = arg0_3:findTF("main_mask/main", arg0_3.descPanel)
+	arg0_3.descMain = arg0_3.descPanel:Find("main_mask/main")
 	arg0_3.stageTpl = arg0_3:getTpl("scrollview/content/stagetpl", arg0_3.descMain)
-	arg0_3.stageScrollRect = arg0_3:findTF("scrollview", arg0_3.descMain):GetComponent(typeof(ScrollRect))
-	arg0_3.stageContain = arg0_3:findTF("scrollview/content", arg0_3.descMain)
-	arg0_3.arrows = arg0_3:findTF("arrows")
+	arg0_3.stageScrollRect = arg0_3.descMain:Find("scrollview"):GetComponent(typeof(ScrollRect))
+	arg0_3.stageContain = arg0_3.descMain:Find("scrollview/content")
+	arg0_3.arrows = arg0_3._tf:Find("arrows")
 	arg0_3.itemTpl = arg0_3:getTpl("item_tpl")
 	arg0_3.selStageTF = arg0_3.selectedPanel:Find("stagetpl/info")
 	arg0_3.selQuicklyTF = arg0_3.selStageTF.parent:Find("quickly/bg")
 	arg0_3.selQuicklyTFSizeDeltaY = arg0_3.selQuicklyTF.sizeDelta.y
-	arg0_3.descChallengeNum = arg0_3:findTF("challenge_count", arg0_3.descMain)
-	arg0_3.descChallengeText = arg0_3:findTF("Text", arg0_3.descChallengeNum)
-	arg0_3.challengeQuotaDaily = arg0_3:findTF("challenge_count/label", arg0_3.descMain)
-	arg0_3.challengeQuotaWeekly = arg0_3:findTF("challenge_count/week_label", arg0_3.descMain)
-	arg0_3.fleetEditView = arg0_3:findTF("fleet_edit")
-	arg0_3.resource = arg0_3:findTF("resource")
-	arg0_3.rightBtn = arg0_3:findTF("arrows/arrow1")
-	arg0_3.leftBtn = arg0_3:findTF("arrows/arrow2")
+	arg0_3.descChallengeNum = arg0_3.descMain:Find("challenge_count")
+	arg0_3.descChallengeText = arg0_3.descChallengeNum:Find("Text")
+	arg0_3.challengeQuotaDaily = arg0_3.descMain:Find("challenge_count/label")
+	arg0_3.challengeQuotaWeekly = arg0_3.descMain:Find("challenge_count/week_label")
+	arg0_3.fleetEditView = arg0_3._tf:Find("fleet_edit")
+	arg0_3.resource = arg0_3._tf:Find("resource")
+	arg0_3.rightBtn = arg0_3._tf:Find("arrows/arrow1")
+	arg0_3.leftBtn = arg0_3._tf:Find("arrows/arrow2")
 
 	arg0_3:initItems()
 end
@@ -65,7 +65,7 @@ function var0_0.updateRes(arg0_8, arg1_8)
 end
 
 function var0_0.didEnter(arg0_9)
-	onButton(arg0_9, arg0_9:findTF("help_btn"), function()
+	onButton(arg0_9, arg0_9._tf:Find("help_btn"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_daily_task.tip
@@ -236,11 +236,11 @@ function var0_0.displayDailyLevels(arg0_18)
 					arg0_18.centerCardId = iter2_20
 				end
 
-				local var3_20 = arg0_18:findTF("icon/card", iter3_20)
+				local var3_20 = iter3_20:Find("icon/card")
 
 				if var3_20 then
-					local var4_20 = arg0_18:findTF("mask/char", var3_20):GetComponent(typeof(Animator))
-					local var5_20 = arg0_18:findTF("effect", var3_20)
+					local var4_20 = var3_20:Find("mask/char"):GetComponent(typeof(Animator))
+					local var5_20 = var3_20:Find("effect")
 
 					setActive(var5_20, var2_20)
 
@@ -462,19 +462,19 @@ function var0_0.updateStageTF(arg0_32, arg1_32, arg2_32)
 	setText(findTF(arg1_32, "left_panel/name"), var0_32.name)
 	setText(findTF(arg1_32, "left_panel/lv/Text"), "Lv." .. arg2_32.level)
 
-	local var1_32 = arg0_32:findTF("mask", arg1_32)
+	local var1_32 = arg1_32:Find("mask")
 
 	setActive(var1_32, arg2_32.level > arg0_32.player.level)
 
 	if arg2_32.level > arg0_32.player.level then
-		setText(arg0_32:findTF("msg/msg_contain/Text", var1_32), "Lv." .. arg2_32.level .. " ")
+		setText(var1_32:Find("msg/msg_contain/Text"), "Lv." .. arg2_32.level .. " ")
 
 		if PLATFORM_CODE == PLATFORM_US then
-			arg0_32:findTF("msg/msg_contain/Text", var1_32):SetAsLastSibling()
+			var1_32:Find("msg/msg_contain/Text"):SetAsLastSibling()
 		end
 	end
 
-	local var2_32 = UIItemList.New(arg0_32:findTF("scrollView/right_panel", arg1_32), arg0_32.itemTpl)
+	local var2_32 = UIItemList.New(arg1_32:Find("scrollView/right_panel"), arg0_32.itemTpl)
 
 	var2_32:make(function(arg0_33, arg1_33, arg2_33)
 		if arg0_33 == UIItemList.EventUpdate then
@@ -695,7 +695,7 @@ end
 function var0_0.enableDescMode(arg0_61, arg1_61, arg2_61)
 	arg0_61.descMode = arg1_61
 
-	setActive(arg0_61:findTF("help_btn"), not arg1_61)
+	setActive(arg0_61._tf:Find("help_btn"), not arg1_61)
 
 	local function var0_61(arg0_62, arg1_62, arg2_62)
 		if LeanTween.isTweening(go(arg0_62)) then
@@ -772,7 +772,7 @@ end
 
 function var0_0.tryPlayGuide(arg0_70)
 	pg.SystemGuideMgr.GetInstance():PlayDailyLevel(function()
-		triggerButton(arg0_70:findTF("help_btn"))
+		triggerButton(arg0_70._tf:Find("help_btn"))
 	end)
 end
 

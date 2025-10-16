@@ -39,16 +39,16 @@ function var0_0.SetPlayer(arg0_7, arg1_7)
 end
 
 function var0_0.init(arg0_8)
-	arg0_8._playerResOb = arg0_8:findTF("blur_panel/adapt/top/res")
+	arg0_8._playerResOb = arg0_8._tf:Find("blur_panel/adapt/top/res")
 	arg0_8.resPage = PublicGuildResPage.New(arg0_8._playerResOb, arg0_8.event)
-	arg0_8.backBtn = arg0_8:findTF("blur_panel/adapt/top/back")
-	arg0_8.helpBtn = arg0_8:findTF("blur_panel/adapt/left_length/frame/help")
+	arg0_8.backBtn = arg0_8._tf:Find("blur_panel/adapt/top/back")
+	arg0_8.helpBtn = arg0_8._tf:Find("blur_panel/adapt/left_length/frame/help")
 	arg0_8.toggles = {
-		arg0_8:findTF("blur_panel/adapt/left_length/frame/scroll_rect/tagRoot/office"),
-		arg0_8:findTF("blur_panel/adapt/left_length/frame/scroll_rect/tagRoot/technology")
+		arg0_8._tf:Find("blur_panel/adapt/left_length/frame/scroll_rect/tagRoot/office"),
+		arg0_8._tf:Find("blur_panel/adapt/left_length/frame/scroll_rect/tagRoot/technology")
 	}
 
-	local var0_8 = arg0_8:findTF("pages")
+	local var0_8 = arg0_8._tf:Find("pages")
 
 	arg0_8.pages = {
 		PublicGuildOfficePage.New(var0_8, arg0_8.event),
@@ -57,7 +57,7 @@ function var0_0.init(arg0_8)
 end
 
 function var0_0.didEnter(arg0_9)
-	pg.GuildPaintingMgr.GetInstance():Enter(arg0_9:findTF("bg/painting"))
+	pg.GuildPaintingMgr.GetInstance():Enter(arg0_9._tf:Find("bg/painting"))
 	arg0_9.resPage:ExecuteAction("Update", arg0_9.player)
 	onButton(arg0_9, arg0_9.backBtn, function()
 		arg0_9:emit(var0_0.ON_BACK)

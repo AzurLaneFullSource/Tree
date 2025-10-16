@@ -10,7 +10,7 @@ function var0_0.OnInit(arg0_2)
 	setActive(arg0_2._tf:Find("ItemRect/TitleRecord"), false)
 	setActive(arg0_2._tf:Find("ItemRect/TitleMemory"), true)
 
-	arg0_2.memoryItemList = arg0_2:findTF("ItemRect"):GetComponent("LScrollRect")
+	arg0_2.memoryItemList = arg0_2._tf:Find("ItemRect"):GetComponent("LScrollRect")
 
 	function arg0_2.memoryItemList.onInitItem(arg0_3)
 		arg0_2:onInitMemoryItem(arg0_3)
@@ -22,17 +22,17 @@ function var0_0.OnInit(arg0_2)
 
 	arg0_2.memoryItems = {}
 
-	local var0_2 = arg0_2:findTF("Item", arg0_2.memoryItemList)
+	local var0_2 = tf(arg0_2.memoryItemList):Find("Item")
 
 	setActive(var0_2, false)
 
 	arg0_2.loader = AutoLoader.New()
-	arg0_2.memoryItemViewport = arg0_2:findTF("Viewport", arg0_2.memoryItemList)
-	arg0_2.memoryItemsGrid = arg0_2:findTF("Viewport/Content", arg0_2.memoryItemList):GetComponent(typeof(GridLayoutGroup))
+	arg0_2.memoryItemViewport = tf(arg0_2.memoryItemList):Find("Viewport")
+	arg0_2.memoryItemsGrid = tf(arg0_2.memoryItemList):Find("Viewport/Content"):GetComponent(typeof(GridLayoutGroup))
 
 	setText(arg0_2._tf:Find("ItemRect/ProgressDesc"), i18n("world_collection_2"))
 
-	arg0_2.rectAnchorX = arg0_2:findTF("ItemRect").anchoredPosition.x
+	arg0_2.rectAnchorX = arg0_2._tf:Find("ItemRect").anchoredPosition.x
 
 	arg0_2:UpdateView()
 end
@@ -177,7 +177,7 @@ end
 function var0_0.UpdateView(arg0_17)
 	local var0_17 = WorldMediaCollectionScene.WorldRecordLock()
 
-	setAnchoredPosition(arg0_17:findTF("ItemRect"), {
+	setAnchoredPosition(arg0_17._tf:Find("ItemRect"), {
 		x = var0_17 and 0 or arg0_17.rectAnchorX
 	})
 end

@@ -51,9 +51,9 @@ function var0_0.init(arg0_2)
 		end
 	end
 
-	arg0_2.goodEffect = arg0_2:findTF("sanxiaoGood")
-	arg0_2.greatEffect = arg0_2:findTF("sanxiaoGreat")
-	arg0_2.perfectEffect = arg0_2:findTF("sanxiaoPerfect")
+	arg0_2.goodEffect = arg0_2._tf:Find("sanxiaoGood")
+	arg0_2.greatEffect = arg0_2._tf:Find("sanxiaoGreat")
+	arg0_2.perfectEffect = arg0_2._tf:Find("sanxiaoPerfect")
 	arg0_2.caidaiTf = findTF(arg0_2._tf, "zhuanzhu_caidai")
 
 	setActive(arg0_2.caidaiTf, false)

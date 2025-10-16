@@ -127,9 +127,9 @@ function var0_0.getUIName(arg0_9)
 end
 
 function var0_0.OnInit(arg0_10)
-	arg0_10.list = arg0_10:findTF("skipable_list")
-	arg0_10.tpl = arg0_10:findTF("tpl", arg0_10.list)
-	arg0_10.title = arg0_10:findTF("name")
+	arg0_10.list = arg0_10._tf:Find("skipable_list")
+	arg0_10.tpl = arg0_10.list:Find("tpl")
+	arg0_10.title = arg0_10._tf:Find("name")
 end
 
 function var0_0.OnRefresh(arg0_11, arg1_11)

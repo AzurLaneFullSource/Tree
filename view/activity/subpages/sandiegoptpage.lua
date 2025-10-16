@@ -5,7 +5,7 @@ function var0_0.OnFirstFlush(arg0_1)
 	onButton(arg0_1, arg0_1.battleBtn, function()
 		arg0_1:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
-	onButton(arg0_1, arg0_1:findTF("help_btn", arg0_1.bg), function()
+	onButton(arg0_1, arg0_1.bg:Find("help_btn"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("littleSanDiego_npc")

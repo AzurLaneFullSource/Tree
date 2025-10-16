@@ -23,15 +23,15 @@ function var0_0.initData(arg0_5)
 end
 
 function var0_0.initUI(arg0_6)
-	arg0_6.nextBtn = arg0_6:findTF("NextBtn")
-	arg0_6.countText = arg0_6:findTF("PTCount")
+	arg0_6.nextBtn = arg0_6._tf:Find("NextBtn")
+	arg0_6.countText = arg0_6._tf:Find("PTCount")
 
 	local var0_6 = arg0_6.countText:GetComponent(typeof(Text))
 
 	var0_6.material = Object.Instantiate(var0_6.material)
 	arg0_6.faceSpriteList = {}
 
-	local var1_6 = arg0_6:findTF("Face")
+	local var1_6 = arg0_6._tf:Find("Face")
 
 	for iter0_6 = 0, var1_6.childCount - 1 do
 		local var2_6 = var1_6:GetChild(iter0_6)
@@ -40,10 +40,10 @@ function var0_0.initUI(arg0_6)
 		table.insert(arg0_6.faceSpriteList, var3_6)
 	end
 
-	arg0_6.scrollViewTF = arg0_6:findTF("ScrollRect")
+	arg0_6.scrollViewTF = arg0_6._tf:Find("ScrollRect")
 	arg0_6.viewportTF = arg0_6.scrollViewTF
-	arg0_6.tpl = arg0_6:findTF("StepTpl")
-	arg0_6.tplContainerTF = arg0_6:findTF("ScrollRect/Container")
+	arg0_6.tpl = arg0_6._tf:Find("StepTpl")
+	arg0_6.tplContainerTF = arg0_6._tf:Find("ScrollRect/Container")
 	arg0_6.stepUIIList = UIItemList.New(arg0_6.tplContainerTF, arg0_6.tpl)
 
 	arg0_6.stepUIIList:make(function(arg0_7, arg1_7, arg2_7)
@@ -72,16 +72,16 @@ function var0_0.updateOutline(arg0_10)
 end
 
 function var0_0.updateTpl(arg0_11, arg1_11, arg2_11)
-	local var0_11 = arg0_11:findTF("item", arg1_11)
-	local var1_11 = arg0_11:findTF("award", var0_11)
-	local var2_11 = arg0_11:findTF("text_unlock", var0_11)
-	local var3_11 = arg0_11:findTF("text_pt", var0_11)
-	local var4_11 = arg0_11:findTF("checked", arg1_11)
-	local var5_11 = arg0_11:findTF("face", arg1_11)
-	local var6_11 = arg0_11:findTF("progress", arg1_11)
-	local var7_11 = arg0_11:findTF("text", var6_11)
-	local var8_11 = arg0_11:findTF("Fill Area", var6_11)
-	local var9_11 = arg0_11:findTF("achieve", arg1_11)
+	local var0_11 = arg1_11:Find("item")
+	local var1_11 = var0_11:Find("award")
+	local var2_11 = var0_11:Find("text_unlock")
+	local var3_11 = var0_11:Find("text_pt")
+	local var4_11 = arg1_11:Find("checked")
+	local var5_11 = arg1_11:Find("face")
+	local var6_11 = arg1_11:Find("progress")
+	local var7_11 = var6_11:Find("text")
+	local var8_11 = var6_11:Find("Fill Area")
+	local var9_11 = arg1_11:Find("achieve")
 	local var10_11 = pg.return_pt_template[arg2_11]
 	local var11_11 = arg0_11.refluxProxy.ptNum
 	local var12_11 = var10_11.pt_require

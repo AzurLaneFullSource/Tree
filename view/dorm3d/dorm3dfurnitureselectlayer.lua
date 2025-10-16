@@ -164,7 +164,14 @@ function var0_0.UpdateDataZone(arg0_25)
 		var3_25[arg0_27:GetType()] = true
 	end)
 
+	var3_25[Dorm3dFurniture.TYPE.SPECIAL] = nil
 	arg0_25.activeFurnitureTypes = _.keys(var3_25)
+
+	if _.any(arg0_25:GetDisplayFurnitures(nil), function(arg0_28)
+		return arg0_28.template:IsSpecial()
+	end) then
+		table.insert(arg0_25.activeFurnitureTypes, Dorm3dFurniture.TYPE.SPECIAL)
+	end
 
 	var0_25:SortTypes(arg0_25.activeFurnitureTypes)
 
@@ -175,450 +182,462 @@ function var0_0.UpdateDataZone(arg0_25)
 	arg0_25:FilterDataFurnitures()
 end
 
-function var0_0.ResetSelectSetting(arg0_28)
-	arg0_28.selectFurnitureId = nil
-	arg0_28.selectSlotId = nil
+function var0_0.ResetSelectSetting(arg0_29)
+	arg0_29.selectFurnitureId = nil
+	arg0_29.selectSlotId = nil
 end
 
-function var0_0.UpdateDataDisplayFurnitures(arg0_29)
-	local var0_29 = arg0_29.room
-	local var1_29 = arg0_29.furnitureType
-	local var2_29 = arg0_29.normalZones[arg0_29.zoneIndex]
-	local var3_29 = {
-		var2_29,
-		unpack(arg0_29.globalZones)
+function var0_0.GetDisplayFurnitures(arg0_30, arg1_30)
+	local var0_30 = arg0_30.room
+	local var1_30 = arg0_30.normalZones[arg0_30.zoneIndex]
+	local var2_30 = {
+		var1_30,
+		unpack(arg0_30.globalZones)
 	}
-	local var4_29 = _.reduce(var3_29, {}, function(arg0_30, arg1_30)
-		table.insertto(arg0_30, arg1_30:GetSlots())
+	local var3_30 = _.reduce(var2_30, {}, function(arg0_31, arg1_31)
+		table.insertto(arg0_31, arg1_31:GetSlots())
 
-		return arg0_30
+		return arg0_31
 	end)
-	local var5_29 = var0_29:GetFurnitureIDList()
-	local var6_29 = var0_29:GetFurnitures()
-	local var7_29 = {}
-	local var8_29 = {}
+	local var4_30 = var0_30:GetFurnitureIDList()
+	local var5_30 = var0_30:GetFurnitures()
+	local var6_30 = {}
+	local var7_30 = {}
 
-	_.each(var5_29, function(arg0_31)
-		local var0_31 = Dorm3dFurniture.New({
-			configId = arg0_31
+	_.each(var4_30, function(arg0_32)
+		local var0_32 = Dorm3dFurniture.New({
+			configId = arg0_32
 		})
 
-		if var0_31:GetType() ~= var1_29 then
+		if arg1_30 and var0_32:GetType() ~= arg1_30 then
 			return
 		end
 
-		if not _.any(var4_29, function(arg0_32)
-			return arg0_32:CanUseFurniture(var0_31)
+		if not _.any(var3_30, function(arg0_33)
+			return arg0_33:CanUseFurniture(var0_32)
 		end) then
-			warning("家具没有可用槽位，检查类型是否一致 FURNITUREID = " .. arg0_31)
+			if arg1_30 then
+				warning("家具没有可用槽位，检查类型是否一致 FURNITUREID = " .. arg0_32)
+			end
 
 			return
 		end
 
-		table.insert(var8_29, {
+		table.insert(var7_30, {
 			useable = 0,
 			count = 0,
-			id = arg0_31,
-			template = var0_31
+			id = arg0_32,
+			template = var0_32
 		})
 
-		var7_29[arg0_31] = #var8_29
+		var6_30[arg0_32] = #var7_30
 	end)
-	_.each(var6_29, function(arg0_33)
-		if arg0_33:GetType() ~= var1_29 then
+	_.each(var5_30, function(arg0_34)
+		if arg1_30 and arg0_34:GetType() ~= arg1_30 then
 			return
 		end
 
-		if not _.any(var4_29, function(arg0_34)
-			return arg0_34:CanUseFurniture(arg0_33)
+		if not _.any(var3_30, function(arg0_35)
+			return arg0_35:CanUseFurniture(arg0_34)
 		end) then
 			return
 		end
 
-		local var0_33 = arg0_33:GetConfigID()
-		local var1_33 = var8_29[var7_29[var0_33]]
+		local var0_34 = arg0_34:GetConfigID()
+		local var1_34 = var7_30[var6_30[var0_34]]
 
-		var1_33.count = var1_33.count + 1
+		var1_34.count = var1_34.count + 1
 
-		if arg0_33:GetSlotID() == 0 then
-			var1_33.useable = var1_33.useable + 1
+		if arg0_34:GetSlotID() == 0 then
+			var1_34.useable = var1_34.useable + 1
 		end
 
-		var1_33.viewedFlag = Dorm3dFurniture.GetViewedFlag(var0_33) ~= 0
+		var1_34.viewedFlag = Dorm3dFurniture.GetViewedFlag(var0_34) ~= 0
 	end)
 
-	var8_29 = _.filter(var8_29, function(arg0_35)
-		return arg0_35.count > 0 or arg0_35.template:InShopTime()
+	var7_30 = _.filter(var7_30, function(arg0_36)
+		return arg0_36.count > 0 or arg0_36.template:InShopTime()
 	end)
-	arg0_29.displayFurnitures = var8_29
+
+	return var7_30
 end
 
-function var0_0.FilterDataFurnitures(arg0_36)
-	local var0_36 = {
-		function(arg0_37)
-			return arg0_37.useable > 0 and 0 or 1
-		end,
-		function(arg0_38)
-			return -arg0_38.template:GetRarity()
-		end,
-		function(arg0_39)
-			return -arg0_39.template:GetTargetSlotID()
-		end,
+function var0_0.UpdateDataDisplayFurnitures(arg0_37)
+	if arg0_37.furnitureType == Dorm3dFurniture.TYPE.SPECIAL then
+		arg0_37.displayFurnitures = _.filter(arg0_37:GetDisplayFurnitures(nil), function(arg0_38)
+			return arg0_38.template:IsSpecial()
+		end)
+	else
+		arg0_37.displayFurnitures = arg0_37:GetDisplayFurnitures(arg0_37.furnitureType)
+	end
+end
+
+function var0_0.FilterDataFurnitures(arg0_39)
+	local var0_39 = {
 		function(arg0_40)
-			return -arg0_40.id
+			return arg0_40.useable > 0 and 0 or 1
+		end,
+		function(arg0_41)
+			return -arg0_41.template:GetRarity()
+		end,
+		function(arg0_42)
+			return -arg0_42.template:GetTargetSlotID()
+		end,
+		function(arg0_43)
+			return -arg0_43.id
 		end
 	}
 
-	table.sort(arg0_36.displayFurnitures, CompareFuncs(var0_36))
+	table.sort(arg0_39.displayFurnitures, CompareFuncs(var0_39))
 end
 
-function var0_0.InitViewZoneList(arg0_41)
-	local var0_41 = arg0_41.normalZones
+function var0_0.InitViewZoneList(arg0_44)
+	local var0_44 = arg0_44.normalZones
 
-	UIItemList.StaticAlign(arg0_41.zoneList:Find("List"), arg0_41.zoneList:Find("List"):GetChild(0), #var0_41, function(arg0_42, arg1_42, arg2_42)
-		if arg0_42 ~= UIItemList.EventUpdate then
-			return
-		end
-
-		arg1_42 = arg1_42 + 1
-
-		local var0_42 = var0_41[arg1_42]
-
-		arg2_42.name = var0_42:GetWatchCameraName()
-
-		setText(arg2_42:Find("Name"), var0_42:GetName())
-		onButton(arg0_41, arg2_42, function()
-			arg0_41.zoneIndex = arg1_42
-
-			arg0_41:UpdateDataZone()
-			arg0_41.scene:SwitchFurnitureZone(var0_42)
-			arg0_41:InitViewTypeList()
-			arg0_41:UpdateView()
-			quickPlayAnimation(arg0_41._tf, "anim_dorm3d_furniture_change")
-			setActive(arg0_41.zoneList, false)
-		end, SFX_PANEL)
-		setActive(arg2_42:Find("Line"), arg1_42 < #var0_41)
-		setActive(arg2_42:Find("New"), false)
-	end)
-end
-
-function var0_0.InitViewTypeList(arg0_44)
-	UIItemList.StaticAlign(arg0_44._tf:Find("Right/Panel/Container/Types"), arg0_44._tf:Find("Right/Panel/Container/Types"):GetChild(0), #arg0_44.activeFurnitureTypes, function(arg0_45, arg1_45, arg2_45)
+	UIItemList.StaticAlign(arg0_44.zoneList:Find("List"), arg0_44.zoneList:Find("List"):GetChild(0), #var0_44, function(arg0_45, arg1_45, arg2_45)
 		if arg0_45 ~= UIItemList.EventUpdate then
 			return
 		end
 
 		arg1_45 = arg1_45 + 1
 
-		local var0_45 = arg0_44.activeFurnitureTypes[arg1_45]
+		local var0_45 = var0_44[arg1_45]
 
-		setText(arg2_45:Find("Name"), i18n(Dorm3dFurniture.TYPE2NAME[var0_45]))
+		arg2_45.name = var0_45:GetWatchCameraName()
+
+		setText(arg2_45:Find("Name"), var0_45:GetName())
 		onButton(arg0_44, arg2_45, function()
-			if arg0_44.furnitureType == var0_45 then
-				return
-			end
+			arg0_44.zoneIndex = arg1_45
 
-			arg0_44.furnitureType = var0_45
-
-			arg0_44:ResetSelectSetting()
-			arg0_44:UpdateDataDisplayFurnitures()
-			arg0_44:FilterDataFurnitures()
+			arg0_44:UpdateDataZone()
+			arg0_44.scene:SwitchFurnitureZone(var0_45)
+			arg0_44:InitViewTypeList()
 			arg0_44:UpdateView()
 			quickPlayAnimation(arg0_44._tf, "anim_dorm3d_furniture_change")
 			setActive(arg0_44.zoneList, false)
 		end, SFX_PANEL)
+		setActive(arg2_45:Find("Line"), arg1_45 < #var0_44)
+		setActive(arg2_45:Find("New"), false)
 	end)
 end
 
-function var0_0.UpdateView(arg0_47)
-	local var0_47 = arg0_47.normalZones
-	local var1_47 = var0_47[arg0_47.zoneIndex]
-
-	setText(arg0_47._tf:Find("Right/Panel/Container/Zone/ZoneContainer/Name"), var1_47:GetName())
-	UIItemList.StaticAlign(arg0_47.zoneList:Find("List"), arg0_47.zoneList:Find("List"):GetChild(0), #var0_47, function(arg0_48, arg1_48, arg2_48)
+function var0_0.InitViewTypeList(arg0_47)
+	UIItemList.StaticAlign(arg0_47._tf:Find("Right/Panel/Container/Types"), arg0_47._tf:Find("Right/Panel/Container/Types"):GetChild(0), #arg0_47.activeFurnitureTypes, function(arg0_48, arg1_48, arg2_48)
 		if arg0_48 ~= UIItemList.EventUpdate then
 			return
 		end
 
 		arg1_48 = arg1_48 + 1
 
-		local var0_48 = arg2_48:Find("Name"):GetComponent(typeof(Text)).color
-		local var1_48 = arg0_47.zoneIndex == arg1_48 and Color.NewHex("39bfff") or Color.white
+		local var0_48 = arg0_47.activeFurnitureTypes[arg1_48]
 
-		var1_48.a = var0_48.a
+		setText(arg2_48:Find("Name"), i18n(Dorm3dFurniture.TYPE2NAME[var0_48]))
+		onButton(arg0_47, arg2_48, function()
+			if arg0_47.furnitureType == var0_48 then
+				return
+			end
 
-		setTextColor(arg2_48:Find("Name"), var1_48)
-		setActive(arg2_48:Find("New"), false)
+			arg0_47.furnitureType = var0_48
+
+			arg0_47:ResetSelectSetting()
+			arg0_47:UpdateDataDisplayFurnitures()
+			arg0_47:FilterDataFurnitures()
+			arg0_47:UpdateView()
+			quickPlayAnimation(arg0_47._tf, "anim_dorm3d_furniture_change")
+			setActive(arg0_47.zoneList, false)
+		end, SFX_PANEL)
+	end)
+end
+
+function var0_0.UpdateView(arg0_50)
+	local var0_50 = arg0_50.normalZones
+	local var1_50 = var0_50[arg0_50.zoneIndex]
+
+	setText(arg0_50._tf:Find("Right/Panel/Container/Zone/ZoneContainer/Name"), var1_50:GetName())
+	UIItemList.StaticAlign(arg0_50.zoneList:Find("List"), arg0_50.zoneList:Find("List"):GetChild(0), #var0_50, function(arg0_51, arg1_51, arg2_51)
+		if arg0_51 ~= UIItemList.EventUpdate then
+			return
+		end
+
+		arg1_51 = arg1_51 + 1
+
+		local var0_51 = arg2_51:Find("Name"):GetComponent(typeof(Text)).color
+		local var1_51 = arg0_50.zoneIndex == arg1_51 and Color.NewHex("39bfff") or Color.white
+
+		var1_51.a = var0_51.a
+
+		setTextColor(arg2_51:Find("Name"), var1_51)
+		setActive(arg2_51:Find("New"), false)
 	end)
 
-	local var2_47 = arg0_47.room:GetFurnitures()
+	local var2_50 = arg0_50.room:GetFurnitures()
 
 	;(function()
-		local var0_49 = false
+		local var0_52 = false
 
-		table.Ipairs(arg0_47.normalZones, function(arg0_50, arg1_50)
-			local var0_50 = false
+		table.Ipairs(arg0_50.normalZones, function(arg0_53, arg1_53)
+			local var0_53 = false
 
-			if arg1_50 ~= var1_47 then
-				var0_50 = _.any(arg1_50:GetSlots(), function(arg0_51)
-					return _.any(var2_47, function(arg0_52)
-						if not arg0_51:CanUseFurniture(arg0_52) then
+			if arg1_53 ~= var1_50 then
+				var0_53 = _.any(arg1_53:GetSlots(), function(arg0_54)
+					return _.any(var2_50, function(arg0_55)
+						if not arg0_54:CanUseFurniture(arg0_55) then
 							return
 						end
 
-						return Dorm3dFurniture.GetViewedFlag(arg0_52:GetConfigID()) == 0
+						return Dorm3dFurniture.GetViewedFlag(arg0_55:GetConfigID()) == 0
 					end)
 				end)
 			end
 
-			setActive(arg0_47.zoneList:Find("List"):GetChild(arg0_50 - 1):Find("New"), var0_50)
+			setActive(arg0_50.zoneList:Find("List"):GetChild(arg0_53 - 1):Find("New"), var0_53)
 
-			var0_49 = var0_49 or var0_50
+			var0_52 = var0_52 or var0_53
 		end)
-		setActive(arg0_47._tf:Find("Right/Panel/Container/Zone/ZoneContainer/Switch/New"), var0_49)
+		setActive(arg0_50._tf:Find("Right/Panel/Container/Zone/ZoneContainer/Switch/New"), var0_52)
 	end)()
-	setActive(arg0_47._tf:Find("Right/Panel/Container/Types"), #arg0_47.activeFurnitureTypes > 1)
-	UIItemList.StaticAlign(arg0_47._tf:Find("Right/Panel/Container/Types"), arg0_47._tf:Find("Right/Panel/Container/Types"):GetChild(0), #arg0_47.activeFurnitureTypes, function(arg0_53, arg1_53, arg2_53)
-		if arg0_53 ~= UIItemList.EventUpdate then
+	setActive(arg0_50._tf:Find("Right/Panel/Container/Types"), #arg0_50.activeFurnitureTypes > 1)
+	UIItemList.StaticAlign(arg0_50._tf:Find("Right/Panel/Container/Types"), arg0_50._tf:Find("Right/Panel/Container/Types"):GetChild(0), #arg0_50.activeFurnitureTypes, function(arg0_56, arg1_56, arg2_56)
+		if arg0_56 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		arg1_53 = arg1_53 + 1
+		arg1_56 = arg1_56 + 1
 
-		local var0_53 = arg0_47.activeFurnitureTypes[arg1_53]
+		local var0_56 = arg0_50.activeFurnitureTypes[arg1_56]
 
-		setActive(arg2_53:Find("Selected"), arg0_47.furnitureType == var0_53)
+		setActive(arg2_56:Find("Selected"), arg0_50.furnitureType == var0_56)
 
-		local var1_53 = _.any(var1_47:GetSlots(), function(arg0_54)
-			return _.any(var2_47, function(arg0_55)
-				if arg0_55:GetType() ~= var0_53 then
+		local var1_56 = _.any(var1_50:GetSlots(), function(arg0_57)
+			return _.any(var2_50, function(arg0_58)
+				if arg0_58:GetType() ~= var0_56 then
 					return
 				end
 
-				if not arg0_54:CanUseFurniture(arg0_55) then
+				if not arg0_57:CanUseFurniture(arg0_58) then
 					return
 				end
 
-				return Dorm3dFurniture.GetViewedFlag(arg0_55:GetConfigID()) == 0
+				return Dorm3dFurniture.GetViewedFlag(arg0_58:GetConfigID()) == 0
 			end)
 		end)
 
-		setActive(arg2_53:Find("New"), var1_53)
+		setActive(arg2_56:Find("New"), var1_56)
 	end)
 
-	arg0_47.furnitureItems = {}
+	arg0_50.furnitureItems = {}
 
-	arg0_47.furnitureScroll:SetTotalCount(#arg0_47.displayFurnitures)
-	setActive(arg0_47.furnitureEmpty, #arg0_47.displayFurnitures == 0)
+	arg0_50.furnitureScroll:SetTotalCount(#arg0_50.displayFurnitures)
+	setActive(arg0_50.furnitureEmpty, #arg0_50.displayFurnitures == 0)
 
-	if arg0_47.timerRefreshShop then
-		arg0_47.timerRefreshShop:Stop()
+	if arg0_50.timerRefreshShop then
+		arg0_50.timerRefreshShop:Stop()
 	end
 
-	arg0_47.timerRefreshShop = Timer.New(function()
-		table.Foreach(arg0_47.furnitureItems, function(arg0_57, arg1_57)
-			arg0_47:UpdateViewFurnitureItem(arg0_57)
+	arg0_50.timerRefreshShop = Timer.New(function()
+		table.Foreach(arg0_50.furnitureItems, function(arg0_60, arg1_60)
+			arg0_50:UpdateViewFurnitureItem(arg0_60)
 		end)
 	end, 1, -1)
 
-	arg0_47.timerRefreshShop:Start()
+	arg0_50.timerRefreshShop:Start()
 
-	local var3_47 = {}
-	local var4_47 = arg0_47.furnitureType
-	local var5_47 = {
-		var1_47,
-		unpack(arg0_47.globalZones)
+	local var3_50 = {}
+	local var4_50 = arg0_50.furnitureType
+	local var5_50 = {
+		var1_50,
+		unpack(arg0_50.globalZones)
 	}
-	local var6_47 = _.reduce(var5_47, {}, function(arg0_58, arg1_58)
-		table.insertto(arg0_58, arg1_58:GetSlots())
+	local var6_50 = _.reduce(var5_50, {}, function(arg0_61, arg1_61)
+		table.insertto(arg0_61, arg1_61:GetSlots())
 
-		return arg0_58
+		return arg0_61
 	end)
-	local var7_47 = _.select(var6_47, function(arg0_59)
-		return arg0_59:GetType() == var4_47
-	end)
-
-	_.each(var7_47, function(arg0_60)
-		local var0_60 = arg0_60:GetConfigID()
-
-		var3_47[var0_60] = 0
+	local var7_50 = _.select(var6_50, function(arg0_62)
+		return arg0_62:GetType() == var4_50
 	end)
 
-	local var8_47 = false
+	_.each(var7_50, function(arg0_63)
+		local var0_63 = arg0_63:GetConfigID()
 
-	if arg0_47.selectSlotId then
-		local var9_47 = Dorm3dFurnitureSlot.New({
-			configId = arg0_47.selectSlotId
+		var3_50[var0_63] = 0
+	end)
+
+	local var8_50 = false
+
+	if arg0_50.selectSlotId then
+		local var9_50 = Dorm3dFurnitureSlot.New({
+			configId = arg0_50.selectSlotId
 		})
 
-		if var9_47:GetType() == Dorm3dFurniture.TYPE.DECORATION then
-			local var10_47 = arg0_47.room:GetFurnitures()
+		if var9_50:GetType() == Dorm3dFurniture.TYPE.DECORATION or var9_50:GetType() == Dorm3dFurniture.TYPE.SPECIAL then
+			local var10_50 = arg0_50.room:GetFurnitures()
 
-			if _.detect(var10_47, function(arg0_61)
-				return arg0_61:GetSlotID() == var9_47:GetConfigID()
+			if _.detect(var10_50, function(arg0_64)
+				return arg0_64:GetSlotID() == var9_50:GetConfigID()
 			end) then
-				arg0_47:CleanSlot()
+				arg0_50:CleanSlot()
 			end
 		end
 	end
 
-	if not var8_47 then
-		arg0_47.labelSettings = nil
+	if not var8_50 then
+		arg0_50.labelSettings = nil
 	end
 
-	setActive(arg0_47.lableTrans, var8_47)
-	arg0_47.scene:DisplayFurnitureSlots(_.map(var7_47, function(arg0_62)
-		return arg0_62:GetConfigID()
+	setActive(arg0_50.lableTrans, var8_50)
+	arg0_50.scene:DisplayFurnitureSlots(_.map(var7_50, function(arg0_65)
+		return arg0_65:GetConfigID()
 	end))
-	arg0_47.scene:UpdateDisplaySlots(var3_47)
-	arg0_47.scene:RefreshSlots(arg0_47.room)
+	arg0_50.scene:UpdateDisplaySlots(var3_50)
+	arg0_50.scene:RefreshSlots(arg0_50.room)
 end
 
-function var0_0.UpdateViewFurnitureItem(arg0_63, arg1_63)
-	local var0_63 = arg0_63.furnitureItems[arg1_63]
-	local var1_63 = arg0_63.displayFurnitures[arg1_63]
+function var0_0.UpdateViewFurnitureItem(arg0_66, arg1_66)
+	local var0_66 = arg0_66.furnitureItems[arg1_66]
+	local var1_66 = arg0_66.displayFurnitures[arg1_66]
 
-	if not var0_63 then
+	if not var0_66 then
 		return
 	end
 
-	local var2_63 = tf(var0_63)
+	local var2_66 = tf(var0_66)
 
-	var2_63.name = var1_63.id
+	var2_66.name = var1_66.id
 
-	updateCustomDrop(var2_63:Find("Item/Dorm3dIconTpl"), Drop.New({
+	updateCustomDrop(var2_66:Find("Item/Dorm3dIconTpl"), Drop.New({
 		type = DROP_TYPE_DORM3D_FURNITURE,
-		id = var1_63.id,
-		count = var1_63.count
+		id = var1_66.id,
+		count = var1_66.count
 	}))
-	setText(var2_63:Find("Item/Name"), var1_63.template:GetName())
+	setText(var2_66:Find("Item/Name"), var1_66.template:GetName())
 
-	local var3_63 = i18n("dorm3d_furniture_count", var1_63.useable .. "/" .. var1_63.count)
+	local var3_66 = i18n("dorm3d_furniture_count", var1_66.useable .. "/" .. var1_66.count)
 
-	if var1_63.useable < var1_63.count then
-		var3_63 = i18n("dorm3d_furniture_used") .. var3_63
-	elseif var1_63.count == 0 then
-		var3_63 = i18n("dorm3d_furniture_lack") .. var3_63
+	if var1_66.useable < var1_66.count then
+		var3_66 = i18n("dorm3d_furniture_used") .. var3_66
+	elseif var1_66.count == 0 then
+		var3_66 = i18n("dorm3d_furniture_lack") .. var3_66
 	end
 
-	setText(var2_63:Find("Item/Count"), var3_63)
-	setActive(var2_63:Find("Selected"), arg0_63.selectFurnitureId == var1_63.id)
-	setCanvasGroupAlpha(var2_63:Find("Item"), 1)
+	setText(var2_66:Find("Item/Count"), var3_66)
+	setActive(var2_66:Find("Selected"), arg0_66.selectFurnitureId == var1_66.id)
+	setCanvasGroupAlpha(var2_66:Find("Item"), 1)
 
-	local var4_63 = var1_63.template:IsValuable()
-	local var5_63 = var1_63.template:IsSpecial()
-	local var6_63 = 0
+	local var4_66 = var1_66.template:IsValuable()
+	local var5_66 = var1_66.template:IsSpecial()
+	local var6_66 = 0
 
-	if var5_63 then
-		var6_63 = 2
-	elseif var4_63 then
-		var6_63 = 1
+	if var5_66 then
+		var6_66 = 2
+	elseif var4_66 then
+		var6_66 = 1
 	end
 
-	setActive(var2_63:Find("Item/BG/Pro"), var6_63 == 1)
-	setActive(var2_63:Find("Item/LabelPro"), var6_63 == 1)
-	setActive(var2_63:Find("Item/BG/SP"), var6_63 == 2)
-	setActive(var2_63:Find("Item/LabelSP"), var6_63 == 2)
-	setActive(var2_63:Find("Item/Action"), false)
+	setActive(var2_66:Find("Item/BG/Pro"), var6_66 == 1)
+	setActive(var2_66:Find("Item/LabelPro"), var6_66 == 1)
+	setActive(var2_66:Find("Item/BG/SP"), var6_66 == 2)
+	setActive(var2_66:Find("Item/LabelSP"), var6_66 == 2)
+	setActive(var2_66:Find("Item/Action"), false)
 
-	local var7_63 = var1_63.template:GetEndTime()
-	local var8_63 = var1_63.count == 0 and var7_63 > 0 and var7_63 > pg.TimeMgr.GetInstance():GetServerTime()
+	local var7_66 = var1_66.template:GetEndTime()
+	local var8_66 = var1_66.count == 0 and var7_66 > 0 and var7_66 > pg.TimeMgr.GetInstance():GetServerTime()
 
-	setActive(var2_63:Find("TimeLimit"), var8_63)
+	setActive(var2_66:Find("TimeLimit"), var8_66)
 
-	if var8_63 then
-		setText(var2_63:Find("TimeLimit/Text"), skinCommdityTimeStamp(var7_63))
+	if var8_66 then
+		setText(var2_66:Find("TimeLimit/Text"), skinCommdityTimeStamp(var7_66))
 	end
 
-	onButton(arg0_63, var2_63:Find("Item/Tip"), function()
-		arg0_63:emit(Dorm3dFurnitureSelectMediator.SHOW_FURNITURE_ACESSES, {
+	onButton(arg0_66, var2_66:Find("Item/Tip"), function()
+		arg0_66:emit(Dorm3dFurnitureSelectMediator.SHOW_FURNITURE_ACESSES, {
 			showGOBtn = true,
 			title = i18n("courtyard_label_detail"),
 			drop = {
 				type = DROP_TYPE_DORM3D_FURNITURE,
-				id = var1_63.id,
-				count = var1_63.count
+				id = var1_66.id,
+				count = var1_66.count
 			},
-			list = var1_63.template:GetAcesses()
+			list = var1_66.template:GetAcesses()
 		})
 	end, SFX_PANEL)
 
-	local var9_63 = var1_63.count > 0 and not var1_63.viewedFlag
+	local var9_66 = var1_66.count > 0 and not var1_66.viewedFlag
 
-	setActive(var2_63:Find("Item/New"), var9_63)
+	setActive(var2_66:Find("Item/New"), var9_66)
 
-	if var9_63 then
-		Dorm3dFurniture.SetViewedFlag(var1_63.id)
+	if var9_66 then
+		Dorm3dFurniture.SetViewedFlag(var1_66.id)
 	end
 
-	onButton(arg0_63, var2_63, function()
-		if var1_63.count > 0 then
-			setActive(var2_63:Find("Item/New"), false)
+	onButton(arg0_66, var2_66, function()
+		if var1_66.count > 0 then
+			setActive(var2_66:Find("Item/New"), false)
 
-			var1_63.viewedFlag = true
+			var1_66.viewedFlag = true
 		end
 
-		local var0_65 = var1_63.template:GetTargetSlotID()
+		local var0_68 = var1_66.template:GetTargetSlotID()
 
-		arg0_63.selectSlotId = nil
+		arg0_66.selectSlotId = nil
 
-		if var1_63.useable > 0 then
-			arg0_63.room:ReplaceFurniture(var0_65, var1_63.id)
-			table.insert(arg0_63.replaceFurnitures, {
-				slotId = var0_65,
-				furnitureId = var1_63.id
+		if var1_66.useable > 0 then
+			arg0_66.room:ReplaceFurniture(var0_68, var1_66.id)
+			table.insert(arg0_66.replaceFurnitures, {
+				slotId = var0_68,
+				furnitureId = var1_66.id
 			})
-			arg0_63:UpdateDataDisplayFurnitures()
-			arg0_63:UpdateView()
+			arg0_66:UpdateDataDisplayFurnitures()
+			arg0_66:UpdateView()
 			pg.CriMgr.GetInstance():PlaySE_V3("ui-dorm_furniture_placement")
-		elseif var1_63.useable < var1_63.count then
-			arg0_63.selectSlotId = var0_65
+		elseif var1_66.useable < var1_66.count then
+			arg0_66.selectSlotId = var0_68
 
-			arg0_63:UpdateView()
+			arg0_66:UpdateView()
 		end
 	end)
 
-	local var10_63 = var1_63.count == 0 and var1_63.template:GetShopID() or 0
+	local var10_66 = var1_66.count == 0 and var1_66.template:GetShopID() or 0
 
-	setActive(var2_63:Find("GO"), var10_63 ~= 0)
+	setActive(var2_66:Find("GO"), var10_66 ~= 0)
 
-	if var10_63 ~= 0 then
-		local var11_63 = CommonCommodity.New({
-			id = var10_63
+	if var10_66 ~= 0 then
+		local var11_66 = CommonCommodity.New({
+			id = var10_66
 		}, Goods.TYPE_SHOPSTREET)
-		local var12_63, var13_63, var14_63 = var11_63:GetPrice()
-		local var15_63 = Drop.New({
+		local var12_66, var13_66, var14_66 = var11_66:GetPrice()
+		local var15_66 = Drop.New({
 			type = DROP_TYPE_RESOURCE,
-			id = var11_63:GetResType(),
-			count = var12_63
+			id = var11_66:GetResType(),
+			count = var12_66
 		})
-		local var16_63 = pg.shop_template[var10_63]
+		local var16_66 = pg.shop_template[var10_66]
 
-		onButton(arg0_63, var2_63:Find("GO"), function()
-			local var0_66 = var1_63.template:GetEndTime()
+		onButton(arg0_66, var2_66:Find("GO"), function()
+			local var0_69 = var1_66.template:GetEndTime()
 
-			arg0_63:emit(Dorm3dFurnitureSelectMediator.SHOW_SHOPPING_CONFIRM_WINDOW, {
+			arg0_66:emit(Dorm3dFurnitureSelectMediator.SHOW_SHOPPING_CONFIRM_WINDOW, {
 				content = {
-					icon = "<icon name=" .. var11_63:GetResIcon() .. " w=1.1 h=1.1/>",
-					off = var13_63,
-					cost = var15_63.count,
-					old = var14_63,
-					name = var1_63.template:GetName()
+					icon = "<icon name=" .. var11_66:GetResIcon() .. " w=1.1 h=1.1/>",
+					off = var13_66,
+					cost = var15_66.count,
+					old = var14_66,
+					name = var1_66.template:GetName()
 				},
 				tip = i18n("dorm3d_shop_gift_tip"),
-				drop = var1_63.template,
-				endTime = var0_66,
+				drop = var1_66.template,
+				endTime = var0_69,
 				onYes = function()
-					if not var1_63.template:InShopTime() then
+					if not var1_66.template:InShopTime() then
 						pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_purchase_outtime"))
 
 						return
 					end
 
-					arg0_63:emit(GAME.SHOPPING, {
+					arg0_66:emit(GAME.SHOPPING, {
 						silentTip = true,
 						count = 1,
-						shopId = var10_63
+						shopId = var10_66
 					})
 				end
 			})
@@ -626,129 +645,129 @@ function var0_0.UpdateViewFurnitureItem(arg0_63, arg1_63)
 	end
 end
 
-function var0_0.CleanSlot(arg0_68)
-	if not arg0_68.selectSlotId then
+function var0_0.CleanSlot(arg0_71)
+	if not arg0_71.selectSlotId then
 		return
 	end
 
-	local var0_68 = arg0_68.selectSlotId
+	local var0_71 = arg0_71.selectSlotId
 
-	arg0_68.room:ReplaceFurniture(var0_68, 0)
-	table.insert(arg0_68.replaceFurnitures, {
+	arg0_71.room:ReplaceFurniture(var0_71, 0)
+	table.insert(arg0_71.replaceFurnitures, {
 		furnitureId = 0,
-		slotId = var0_68
+		slotId = var0_71
 	})
-	arg0_68:ResetSelectSetting()
-	arg0_68:UpdateDataDisplayFurnitures()
-	arg0_68:UpdateView()
-end
-
-function var0_0.OnReplaceFurnitureDone(arg0_69)
-	arg0_69.replaceFurnitures = {}
-
-	existCall(arg0_69.replaceFurnitureCallback)
-
-	arg0_69.replaceFurnitureCallback = nil
-end
-
-function var0_0.OnReplaceFurnitureError(arg0_70)
-	arg0_70.replaceFurnitureCallback = nil
-end
-
-function var0_0.AutoReplaceFurniture(arg0_71)
-	local var0_71 = arg0_71.normalZones[arg0_71.zoneIndex]:GetSlots()
-
-	_.each(var0_71, function(arg0_72)
-		if arg0_72:GetType() == Dorm3dFurniture.TYPE.FLOOR or arg0_72:GetType() == Dorm3dFurniture.TYPE.WALLPAPER then
-			return
-		end
-
-		local var0_72 = arg0_71.room:GetFurnitures()
-		local var1_72 = _.detect(var0_72, function(arg0_73)
-			return arg0_73:GetSlotID() == arg0_72:GetConfigID()
-		end)
-
-		if var1_72 and var1_72:GetConfigID() ~= arg0_72:GetDefaultFurniture() then
-			return
-		end
-
-		local var2_72 = table.shallowCopy(var0_72)
-		local var3_72 = {
-			function(arg0_74)
-				return arg0_74:GetSlotID() == 0 and arg0_72:CanUseFurniture(arg0_74) and 0 or 1
-			end,
-			function(arg0_75)
-				return -arg0_75:GetRarity()
-			end,
-			function(arg0_76)
-				return -arg0_76:GetConfigID()
-			end
-		}
-
-		table.sort(var2_72, CompareFuncs(var3_72))
-
-		local var4_72 = var2_72[1]
-
-		if not var4_72 or var4_72:GetSlotID() ~= 0 or not arg0_72:CanUseFurniture(var4_72) then
-			return
-		end
-
-		arg0_71.room:ReplaceFurniture(arg0_72:GetConfigID(), var4_72:GetConfigID())
-		table.insert(arg0_71.replaceFurnitures, {
-			slotId = arg0_72:GetConfigID(),
-			furnitureId = var4_72:GetConfigID()
-		})
-	end)
 	arg0_71:ResetSelectSetting()
 	arg0_71:UpdateDataDisplayFurnitures()
 	arg0_71:UpdateView()
 end
 
-function var0_0.ShowReplaceWindow(arg0_77, arg1_77, arg2_77)
-	local var0_77 = arg0_77.replaceFurnitures
+function var0_0.OnReplaceFurnitureDone(arg0_72)
+	arg0_72.replaceFurnitures = {}
 
-	if #var0_77 == 0 then
-		return existCall(arg1_77)
+	existCall(arg0_72.replaceFurnitureCallback)
+
+	arg0_72.replaceFurnitureCallback = nil
+end
+
+function var0_0.OnReplaceFurnitureError(arg0_73)
+	arg0_73.replaceFurnitureCallback = nil
+end
+
+function var0_0.AutoReplaceFurniture(arg0_74)
+	local var0_74 = arg0_74.normalZones[arg0_74.zoneIndex]:GetSlots()
+
+	_.each(var0_74, function(arg0_75)
+		if arg0_75:GetType() == Dorm3dFurniture.TYPE.FLOOR or arg0_75:GetType() == Dorm3dFurniture.TYPE.WALLPAPER then
+			return
+		end
+
+		local var0_75 = arg0_74.room:GetFurnitures()
+		local var1_75 = _.detect(var0_75, function(arg0_76)
+			return arg0_76:GetSlotID() == arg0_75:GetConfigID()
+		end)
+
+		if var1_75 and var1_75:GetConfigID() ~= arg0_75:GetDefaultFurniture() then
+			return
+		end
+
+		local var2_75 = table.shallowCopy(var0_75)
+		local var3_75 = {
+			function(arg0_77)
+				return arg0_77:GetSlotID() == 0 and arg0_75:CanUseFurniture(arg0_77) and 0 or 1
+			end,
+			function(arg0_78)
+				return -arg0_78:GetRarity()
+			end,
+			function(arg0_79)
+				return -arg0_79:GetConfigID()
+			end
+		}
+
+		table.sort(var2_75, CompareFuncs(var3_75))
+
+		local var4_75 = var2_75[1]
+
+		if not var4_75 or var4_75:GetSlotID() ~= 0 or not arg0_75:CanUseFurniture(var4_75) then
+			return
+		end
+
+		arg0_74.room:ReplaceFurniture(arg0_75:GetConfigID(), var4_75:GetConfigID())
+		table.insert(arg0_74.replaceFurnitures, {
+			slotId = arg0_75:GetConfigID(),
+			furnitureId = var4_75:GetConfigID()
+		})
+	end)
+	arg0_74:ResetSelectSetting()
+	arg0_74:UpdateDataDisplayFurnitures()
+	arg0_74:UpdateView()
+end
+
+function var0_0.ShowReplaceWindow(arg0_80, arg1_80, arg2_80)
+	local var0_80 = arg0_80.replaceFurnitures
+
+	if #var0_80 == 0 then
+		return existCall(arg1_80)
 	end
 
-	arg0_77:emit(Dorm3dFurnitureSelectMediator.SHOW_CONFIRM_WINDOW, {
+	arg0_80:emit(Dorm3dFurnitureSelectMediator.SHOW_CONFIRM_WINDOW, {
 		title = i18n("title_info"),
 		content = i18n("dorm3d_furniture_sure_save"),
 		onYes = function()
-			arg0_77:emit(GAME.APARTMENT_REPLACE_FURNITURE, {
-				roomId = arg0_77.room:GetConfigID(),
-				furnitures = var0_77
+			arg0_80:emit(GAME.APARTMENT_REPLACE_FURNITURE, {
+				roomId = arg0_80.room:GetConfigID(),
+				furnitures = var0_80
 			})
 
-			arg0_77.replaceFurnitureCallback = arg1_77
+			arg0_80.replaceFurnitureCallback = arg1_80
 		end,
-		onNo = arg2_77
+		onNo = arg2_80
 	})
 end
 
-function var0_0.onBackPressed(arg0_79)
+function var0_0.onBackPressed(arg0_82)
 	seriesAsync({
-		function(arg0_80)
-			arg0_79:ShowReplaceWindow(arg0_80, arg0_80)
+		function(arg0_83)
+			arg0_82:ShowReplaceWindow(arg0_83, arg0_83)
 		end,
-		function(arg0_81)
-			GetOrAddComponent(arg0_79._tf, typeof(CanvasGroup)).alpha = 0
+		function(arg0_84)
+			GetOrAddComponent(arg0_82._tf, typeof(CanvasGroup)).alpha = 0
 
-			arg0_79.scene:ExitFurnitureWatchMode(function()
-				var0_0.super.onBackPressed(arg0_79)
+			arg0_82.scene:ExitFurnitureWatchMode(function()
+				var0_0.super.onBackPressed(arg0_82)
 			end)
 		end
 	})
 end
 
-function var0_0.willExit(arg0_83)
-	arg0_83.furnitureScroll.enabled = false
+function var0_0.willExit(arg0_86)
+	arg0_86.furnitureScroll.enabled = false
 
-	if arg0_83.timerRefreshShop then
-		arg0_83.timerRefreshShop:Stop()
+	if arg0_86.timerRefreshShop then
+		arg0_86.timerRefreshShop:Stop()
 	end
 
-	UpdateBeat:RemoveListener(arg0_83.updateHandler)
+	UpdateBeat:RemoveListener(arg0_86.updateHandler)
 end
 
 return var0_0

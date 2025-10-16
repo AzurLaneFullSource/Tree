@@ -8,12 +8,14 @@ pg.island_dress_template = {
 		exclusive_default_skin = "",
 		remove = 1,
 		attachmentPoint = "Bip001 Spine1",
+		desc = "Featuring a sleek design made from waterproof materials, it looks ready to split the waves at any time.",
 		belongto = 1,
-		exclusive_skin = "",
 		sub_type = 0,
 		model = "island/item/03/30013/prefab/pre_item_03_30013",
+		tech_id = 0,
 		id = 1010001,
 		icon = "dress_1010001",
+		exclusive_skin = "",
 		face_clip = "",
 		offset = {
 			0.038,
@@ -27,7 +29,8 @@ pg.island_dress_template = {
 		},
 		scale = {
 			0.8
-		}
+		},
+		jump_page = {}
 	},
 	[1010002] = {
 		quality = 4,
@@ -37,12 +40,14 @@ pg.island_dress_template = {
 		exclusive_default_skin = "",
 		remove = 1,
 		attachmentPoint = "Bip001 Spine1",
+		desc = "Featuring a sleek design made from waterproof materials, it looks ready to split the waves at any time.",
 		belongto = 1,
-		exclusive_skin = "",
 		sub_type = 0,
 		model = "island/item/03/30023/prefab/pre_item_03_30023",
+		tech_id = 0,
 		id = 1010002,
 		icon = "dress_1010002",
+		exclusive_skin = "",
 		face_clip = "",
 		offset = {
 			0.345,
@@ -56,22 +61,30 @@ pg.island_dress_template = {
 		},
 		scale = {
 			1.8
+		},
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
 		}
 	},
 	[1010003] = {
-		quality = 4,
-		related_dress = 0,
 		name = "Fairy's Travel Bag",
-		type = 1,
+		related_dress = 0,
 		exclusive_default_skin = "",
-		remove = 1,
+		type = 1,
 		attachmentPoint = "Bip001 Spine1",
-		belongto = 1,
-		exclusive_skin = "",
+		remove = 1,
+		desc = "A faint light flows between the veins of the leaves. Light and comfortable, it is as if you carry the spirits of nature by your side.",
 		sub_type = 0,
 		model = "island/item/03/30033/prefab/pre_item_03_30033",
-		id = 1010003,
 		icon = "dress_1010003",
+		quality = 4,
+		belongto = 1,
+		tech_id = 0,
+		exclusive_skin = "",
+		id = 1010003,
 		scale = "",
 		face_clip = "",
 		offset = {
@@ -83,6 +96,12 @@ pg.island_dress_template = {
 			77.707,
 			-77.981,
 			10.403
+		},
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
 		}
 	},
 	[1010004] = {
@@ -93,12 +112,14 @@ pg.island_dress_template = {
 		exclusive_default_skin = "",
 		remove = 1,
 		attachmentPoint = "Bip001 Spine1",
+		desc = "An eraser that is always trying to roll away. Gotta put this naughty, naughty eraser on a leash.",
 		belongto = 1,
-		exclusive_skin = "",
 		sub_type = 0,
 		model = "island/item/03/30053/prefab/pre_item_03_30053",
+		tech_id = 0,
 		id = 1010004,
 		icon = "dress_1010004",
+		exclusive_skin = "",
 		face_clip = "",
 		offset = {
 			0.096,
@@ -112,22 +133,25 @@ pg.island_dress_template = {
 		},
 		scale = {
 			0.9
-		}
+		},
+		jump_page = {}
 	},
 	[1010005] = {
-		quality = 4,
-		related_dress = 0,
 		name = "Floatie Buddy",
-		type = 1,
+		related_dress = 0,
 		exclusive_default_skin = "",
-		remove = 1,
+		type = 1,
 		attachmentPoint = "Bip001 Spine1",
-		belongto = 1,
-		exclusive_skin = "",
+		remove = 1,
+		desc = "An ocean-colored floatie that bounces up and down energetically, inviting you to jump into the sea.",
 		sub_type = 0,
 		model = "island/item/03/30063/prefab/pre_item_03_30063",
-		id = 1010005,
 		icon = "dress_1010005",
+		quality = 4,
+		belongto = 1,
+		tech_id = 0,
+		exclusive_skin = "",
+		id = 1010005,
 		scale = "",
 		face_clip = "",
 		offset = {
@@ -139,22 +163,25 @@ pg.island_dress_template = {
 			85,
 			-74,
 			97
-		}
+		},
+		jump_page = {}
 	},
 	[1010006] = {
-		quality = 4,
-		related_dress = 0,
 		name = "Nappy Hug Pillow",
-		type = 1,
+		related_dress = 0,
 		exclusive_default_skin = "",
-		remove = 1,
+		type = 1,
 		attachmentPoint = "Bip001 Spine1",
-		belongto = 1,
-		exclusive_skin = "",
+		remove = 1,
+		desc = "This soft, fluffy hug pillow seems to sway gently in response to your movements, ready to whisk you away into the land of slumber at any moment.",
 		sub_type = 0,
 		model = "island/item/03/30043/prefab/pre_item_03_30043",
-		id = 1010006,
 		icon = "dress_1010006",
+		quality = 4,
+		belongto = 1,
+		tech_id = 0,
+		exclusive_skin = "",
+		id = 1010006,
 		scale = "",
 		face_clip = "",
 		offset = {
@@ -166,22 +193,30 @@ pg.island_dress_template = {
 			11.481,
 			165.721,
 			-89.502
+		},
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
 		}
 	},
 	[1020001] = {
-		quality = 4,
-		related_dress = 0,
 		name = "Floating Gun",
-		type = 2,
+		related_dress = 0,
 		exclusive_default_skin = "",
-		remove = 1,
+		type = 2,
 		attachmentPoint = "",
-		belongto = 1,
-		exclusive_skin = "",
+		remove = 1,
+		desc = "Stray bits of shipgirl rigging, floating with the waves. I guess they technically also count as... a floating gun.",
 		sub_type = 0,
 		model = "island/item/03/30011/prefab/pre_item_03_30011",
-		id = 1020001,
 		icon = "dress_1020001",
+		quality = 4,
+		belongto = 1,
+		tech_id = 0,
+		exclusive_skin = "",
+		id = 1020001,
 		scale = "",
 		face_clip = "",
 		offset = {
@@ -193,22 +228,30 @@ pg.island_dress_template = {
 			0,
 			-123.364,
 			0
+		},
+		jump_page = {
+			{
+				"Island Seasonal Shop",
+				{}
+			}
 		}
 	},
 	[1020002] = {
-		quality = 4,
-		related_dress = 0,
 		name = "Cup Ramen",
-		type = 2,
+		related_dress = 0,
 		exclusive_default_skin = "",
-		remove = 1,
+		type = 2,
 		attachmentPoint = "",
-		belongto = 1,
-		exclusive_skin = "",
+		remove = 1,
+		desc = "A cup of piping-hot ramen. For once, these chewy noodles taste like pure vacation relaxation.",
 		sub_type = 0,
 		model = "island/item/03/30021/prefab/pre_item_03_30021",
-		id = 1020002,
 		icon = "dress_1020002",
+		quality = 4,
+		belongto = 1,
+		tech_id = 0,
+		exclusive_skin = "",
+		id = 1020002,
 		scale = "",
 		face_clip = "",
 		offset = {
@@ -220,22 +263,30 @@ pg.island_dress_template = {
 			0,
 			-98.8,
 			0
+		},
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
 		}
 	},
 	[1020003] = {
-		quality = 4,
-		related_dress = 0,
 		name = "Green Lotuslight",
-		type = 2,
+		related_dress = 0,
 		exclusive_default_skin = "",
-		remove = 1,
+		type = 2,
 		attachmentPoint = "",
-		belongto = 1,
-		exclusive_skin = "",
+		remove = 1,
+		desc = "A lush lotus leaf, casting its mottled green shadow at just the right height.",
 		sub_type = 0,
 		model = "island/item/03/30031/prefab/pre_item_03_30031",
-		id = 1020003,
 		icon = "dress_1020003",
+		quality = 4,
+		belongto = 1,
+		tech_id = 0,
+		exclusive_skin = "",
+		id = 1020003,
 		scale = "",
 		face_clip = "",
 		offset = {
@@ -247,22 +298,30 @@ pg.island_dress_template = {
 			0,
 			12.177,
 			0
+		},
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
 		}
 	},
 	[1020004] = {
-		quality = 4,
-		related_dress = 0,
 		name = "Wandering Pencil",
-		type = 2,
+		related_dress = 0,
 		exclusive_default_skin = "",
-		remove = 1,
+		type = 2,
 		attachmentPoint = "",
-		belongto = 1,
-		exclusive_skin = "",
+		remove = 1,
+		desc = "A short, thick pencil that slowly traces through the air around you. It's pretending to be real busy, but it's definitely just slacking off.",
 		sub_type = 0,
 		model = "island/item/03/30051/prefab/pre_item_03_30051",
-		id = 1020004,
 		icon = "dress_1020004",
+		quality = 4,
+		belongto = 1,
+		tech_id = 0,
+		exclusive_skin = "",
+		id = 1020004,
 		scale = "",
 		face_clip = "",
 		offset = {
@@ -274,22 +333,25 @@ pg.island_dress_template = {
 			-0.585,
 			-0.013,
 			2.632
-		}
+		},
+		jump_page = {}
 	},
 	[1020005] = {
-		quality = 4,
-		related_dress = 0,
 		name = "Stealthy Companion",
-		type = 2,
+		related_dress = 0,
 		exclusive_default_skin = "",
-		remove = 1,
+		type = 2,
 		attachmentPoint = "",
-		belongto = 1,
-		exclusive_skin = "",
+		remove = 1,
+		desc = "A transparent companion that changes the way it floats to match your rhythm. It sometimes bumps into you because it gets curious!",
 		sub_type = 0,
 		model = "island/item/03/30061/prefab/pre_item_03_30061",
-		id = 1020005,
 		icon = "dress_1020005",
+		quality = 4,
+		belongto = 1,
+		tech_id = 0,
+		exclusive_skin = "",
+		id = 1020005,
 		scale = "",
 		face_clip = "",
 		offset = {
@@ -301,22 +363,25 @@ pg.island_dress_template = {
 			0,
 			-7.428,
 			0
-		}
+		},
+		jump_page = {}
 	},
 	[1020006] = {
-		quality = 4,
-		related_dress = 0,
 		name = "Groggy Bubbles",
-		type = 2,
+		related_dress = 0,
 		exclusive_default_skin = "",
-		remove = 1,
+		type = 2,
 		attachmentPoint = "",
-		belongto = 1,
-		exclusive_skin = "",
+		remove = 1,
+		desc = "Ambiguous symbols that continue to float upwards, invoking the feeling of someone who just doesn't want to fully wake up.",
 		sub_type = 0,
 		model = "island/item/03/30041/prefab/pre_item_03_30041",
-		id = 1020006,
 		icon = "dress_1020006",
+		quality = 4,
+		belongto = 1,
+		tech_id = 0,
+		exclusive_skin = "",
+		id = 1020006,
 		scale = "",
 		face_clip = "",
 		offset = {
@@ -328,6 +393,12 @@ pg.island_dress_template = {
 			0,
 			0,
 			0
+		},
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
 		}
 	},
 	[1030001] = {
@@ -338,16 +409,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 1,
 		rotation = "",
+		desc = "With each step you take, a splash of crystal-clear water springs forth, evoking the refreshing and lively feeling of a seaside stroll.",
 		sub_type = 0,
 		model = "island/item/03/30012/prefab/pre_item_03_30012",
 		icon = "dress_1030001",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1030001,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	[1030002] = {
 		name = "Trail of Fragrant Broth",
@@ -357,16 +431,24 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 1,
 		rotation = "",
+		desc = "With each step you take, ebullient broth and savory soup gushes forth.",
 		sub_type = 0,
 		model = "island/item/03/30022/prefab/pre_item_03_30022",
 		icon = "dress_1030002",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1030002,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
+		}
 	},
 	[1030003] = {
 		name = "Mossy Steps",
@@ -376,16 +458,24 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 1,
 		rotation = "",
+		desc = "You leave behind damp footprints with each step you take, like treading along a forest path still glistening with morning dew.",
 		sub_type = 0,
 		model = "island/item/03/30032/prefab/pre_item_03_30032",
 		icon = "dress_1030003",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1030003,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
+		}
 	},
 	[1030004] = {
 		name = "Trail of Musical Kitties",
@@ -395,16 +485,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 1,
 		rotation = "",
+		desc = "With a stroke of brush, multi-colored note-cats spring to life, composing a cheerful, colorful musical opus.",
 		sub_type = 0,
 		model = "island/item/03/30052/prefab/pre_item_03_30052",
 		icon = "dress_1030004",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1030004,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	[1030005] = {
 		name = "Trail of Frosty Seaspray",
@@ -414,16 +507,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 1,
 		rotation = "",
+		desc = "The seaspray falls like shimmering snowflakes, leaving a trail of ice that glows in the azure seabreeze with each step you take.",
 		sub_type = 0,
 		model = "island/item/03/30062/prefab/pre_item_03_30062",
 		icon = "dress_1030005",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1030005,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	[1030006] = {
 		name = "Trail of Slumbering Stars",
@@ -433,16 +529,24 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 1,
 		rotation = "",
+		desc = "As you wade through the cosmos, the round stars yawn and awaken their brilliance.",
 		sub_type = 0,
 		model = "island/item/03/30042/prefab/pre_item_03_30042",
 		icon = "dress_1030006",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1030006,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
+		}
 	},
 	[1040001] = {
 		name = "Cool",
@@ -452,16 +556,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 0,
 		rotation = "",
+		desc = "Clean, sharp lines outline a cool, composed demeanor, perfect for conveying decisiveness and fortitude.",
 		sub_type = 0,
 		model = "island/character/9001/prefab/9001_02_hair_component_desc",
 		icon = "dress_1040001",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1040001,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	[1040002] = {
 		name = "Fresh",
@@ -471,16 +578,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 0,
 		rotation = "",
+		desc = "Naturally tousled bangs suit styles that pursue lightness and vitality.",
 		sub_type = 0,
 		model = "island/character/9001/prefab/9001_01_hair_component_desc",
 		icon = "dress_1040002",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1040002,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	[1040003] = {
 		name = "Quiet",
@@ -490,16 +600,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 0,
 		rotation = "",
+		desc = "Classic side-swept styling reveals a steady demeanor, perfect for crafting a composed and confident image.",
 		sub_type = 0,
 		model = "island/character/9001/prefab/9001_00_hair_component_desc",
 		icon = "dress_1040003",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1040003,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	[1050001] = {
 		name = "Daydreaming",
@@ -509,16 +622,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 0,
 		rotation = "",
+		desc = "A dreamy expression conveys yearning for ideals, fitting for free-spirited or unconventional atmospheres.",
 		sub_type = 0,
 		model = "island/character/9001/prefab/9001_02_face_component_desc",
 		icon = "dress_1050001",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1050001,
 		scale = "",
-		face_clip = "face_3"
+		face_clip = "face_3",
+		jump_page = {}
 	},
 	[1050002] = {
 		name = "Grit Teeth",
@@ -528,16 +644,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 0,
 		rotation = "",
+		desc = "Gritted teeth and focused, unyielding eyes express persistence and effort.",
 		sub_type = 0,
 		model = "island/character/9001/prefab/9001_01_face_component_desc",
 		icon = "dress_1050002",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1050002,
 		scale = "",
-		face_clip = "face_2"
+		face_clip = "face_2",
+		jump_page = {}
 	},
 	[1050003] = {
 		name = "Cat's Smile",
@@ -547,16 +666,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 0,
 		rotation = "",
+		desc = "A mischievous, upturned mouth conveys playfulness and charm, perfect for showcasing a lively, cheeky side.",
 		sub_type = 0,
 		model = "island/character/9001/prefab/9001_00_face_component_desc",
 		icon = "dress_1050003",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1050003,
 		scale = "",
-		face_clip = "face_1"
+		face_clip = "face_1",
+		jump_page = {}
 	},
 	[1050004] = {
 		name = "Gentle",
@@ -566,16 +688,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 0,
 		rotation = "",
+		desc = "A serene countenance radiates warmth and approachability, ideal for conveying gentleness.",
 		sub_type = 0,
 		model = "island/character/9001/prefab/9001_02_face_component_desc",
 		icon = "dress_1050004",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1050004,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	[1050005] = {
 		name = "Sharp",
@@ -585,16 +710,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 0,
 		rotation = "",
+		desc = "Sharp gaze, radiating focus and resolve, perfect for conveying decisiveness and presence.",
 		sub_type = 0,
 		model = "island/character/9001/prefab/9001_01_face_component_desc",
 		icon = "dress_1050005",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1050005,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	[1050006] = {
 		name = "Calm",
@@ -604,16 +732,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 0,
 		rotation = "",
+		desc = "Reserved eyes, cool and unassuming, ideal for portraying depth and steadiness.",
 		sub_type = 0,
 		model = "island/character/9001/prefab/9001_00_face_component_desc",
 		icon = "dress_1050006",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1050006,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	[1060001] = {
 		name = "Uniform",
@@ -623,16 +754,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 0,
 		rotation = "",
+		desc = "A uniform that blends classic design with comfort, suitable for all daily activities and occasions.",
 		sub_type = 0,
 		model = "island/character/9001/prefab/9001_00_body_component_desc",
 		icon = "dress_1060001",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1060001,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	[1060002] = {
 		name = "Formalwear",
@@ -642,16 +776,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 0,
 		rotation = "",
+		desc = "A set of elegant and refined white formalwear, perfect for any formal occasion.",
 		sub_type = 0,
 		model = "island/character/9001/prefab/9001_02_body_component_desc",
 		icon = "dress_1060002",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1060002,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	[1060003] = {
 		name = "Relaxation Time",
@@ -661,16 +798,24 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 0,
 		rotation = "",
+		desc = "Pajamas that are comfortable and easy on the skin, making it easier for your to fall asleep and improving sleep quality.",
 		sub_type = 0,
 		model = "island/character/9001/prefab/9001_03_body_component_desc",
 		icon = "dress_1060003",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1060003,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
+		}
 	},
 	[1060004] = {
 		name = "Manjuu Suit",
@@ -680,16 +825,24 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 0,
 		rotation = "",
+		desc = "A cute, Manjuu-themed full-body costume. Wearing this makes you 500% more huggable.",
 		sub_type = 0,
 		model = "island/character/9001/prefab/9001_07_body_component_desc",
 		icon = "dress_1060004",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1060004,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
+		}
 	},
 	[1060005] = {
 		name = "The Polar Tuxedo",
@@ -699,16 +852,24 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 0,
 		rotation = "",
+		desc = "A classic penguin suit. The two-tone black and white design is elegant yet playful.",
 		sub_type = 0,
 		model = "island/character/9001/prefab/9001_09_body_component_desc",
 		icon = "dress_1060005",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1060005,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
+		}
 	},
 	[1060006] = {
 		name = "Stick Figure Suit",
@@ -718,16 +879,24 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 0,
 		rotation = "",
+		desc = "A full-body suit that transforms you into a stick figure. Leaves behind a black trail effect when moving.",
 		sub_type = 0,
 		model = "island/character/9001/prefab/9001_04_body_component_desc",
 		icon = "dress_1060006",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1060006,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {
+			{
+				"Island Collection",
+				{}
+			}
+		}
 	},
 	[1070001] = {
 		name = "Uniform Hat",
@@ -737,16 +906,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 1,
 		rotation = "",
+		desc = "Exquisitely designed yet comfortable, effortlessly styled for versatile wear.",
 		sub_type = 1,
 		model = "island/character/9001/prefab/9001_00_headware_component_desc",
 		icon = "dress_1060001",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1070001,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	[1070002] = {
 		name = "Formalwear Hat",
@@ -756,16 +928,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 1,
 		rotation = "",
+		desc = "Exquisitely designed yet comfortable, effortlessly styled for versatile wear.",
 		sub_type = 1,
 		model = "island/character/9001/prefab/9001_02_headware_component_desc",
 		icon = "dress_1060002",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1070002,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	[1070003] = {
 		name = "Relaxation Time Hat",
@@ -775,16 +950,24 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 1,
 		rotation = "",
+		desc = "Exquisitely designed yet comfortable, effortlessly styled for versatile wear.",
 		sub_type = 1,
 		model = "island/character/9001/prefab/9001_03_headware_component_desc",
 		icon = "dress_1060003",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1070003,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
+		}
 	},
 	[1070004] = {
 		name = "Manjuu Suit Hat",
@@ -794,16 +977,24 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 1,
 		rotation = "",
+		desc = "Exquisitely designed yet comfortable, effortlessly styled for versatile wear.",
 		sub_type = 2,
 		model = "island/character/9001/prefab/9001_07_headware_component_desc",
 		icon = "dress_1060004",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1070004,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
+		}
 	},
 	[1070005] = {
 		name = "The Polar Tuxedo Hat",
@@ -813,16 +1004,24 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 1,
 		rotation = "",
+		desc = "Exquisitely designed yet comfortable, effortlessly styled for versatile wear.",
 		sub_type = 2,
 		model = "island/character/9001/prefab/9001_09_headware_component_desc",
 		icon = "dress_1060005",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1070005,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
+		}
 	},
 	[1070006] = {
 		name = "Stick Figure Hat",
@@ -832,16 +1031,24 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 1,
 		rotation = "",
+		desc = "Exquisitely designed yet comfortable, effortlessly styled for versatile wear.",
 		sub_type = 2,
 		model = "island/character/9001/prefab/9001_04_headware_component_desc",
 		icon = "dress_1060006",
 		quality = 4,
 		belongto = 1,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 1070006,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {
+			{
+				"Island Collection",
+				{}
+			}
+		}
 	},
 	[2010001] = {
 		quality = 4,
@@ -851,6 +1058,8 @@ pg.island_dress_template = {
 		attachmentPoint = "Bip001 Spine1",
 		remove = 1,
 		belongto = 2,
+		desc = "A backpack that resembles a small rocket, decorated with a simple mechanical pattern on its surface. With this equipped to your back, you're ready to blast off wherever, whenever!",
+		tech_id = 0,
 		sub_type = 0,
 		model = "island/item/03/39001/prefab/pre_item_03_39001",
 		id = 2010001,
@@ -872,7 +1081,8 @@ pg.island_dress_template = {
 		},
 		exclusive_skin = {
 			3040701
-		}
+		},
+		jump_page = {}
 	},
 	[2010002] = {
 		quality = 4,
@@ -882,6 +1092,8 @@ pg.island_dress_template = {
 		attachmentPoint = "Bip001 Spine1",
 		remove = 1,
 		belongto = 2,
+		desc = "A standard school backpack. It has a square-shaped exterior with practical compartments that can keep the contents neat and tidy even when the wearer is running and jumping about.",
+		tech_id = 0,
 		sub_type = 0,
 		model = "island/item/03/39002/prefab/pre_item_03_39002",
 		id = 2010002,
@@ -903,76 +1115,96 @@ pg.island_dress_template = {
 		},
 		exclusive_skin = {
 			3040701
+		},
+		jump_page = {
+			{
+				"图鉴",
+				{}
+			}
 		}
 	},
 	[2020001] = {
-		quality = 4,
-		related_dress = 0,
 		name = "Cotton Candy Clouds",
-		type = 2,
+		related_dress = 0,
 		exclusive_default_skin = "",
-		remove = 1,
+		type = 2,
 		attachmentPoint = "",
-		belongto = 2,
-		exclusive_skin = "",
+		remove = 1,
+		rotation = "",
+		desc = "Fluffy clouds drift lazily cross the sky, slow changing shapes in the breeze.",
 		sub_type = 0,
 		model = "island/item/03/37001/prefab/pre_item_03_37001",
-		rotation = "",
-		id = 2020001,
 		icon = "dress_2020001",
+		quality = 4,
+		belongto = 2,
+		tech_id = 0,
+		exclusive_skin = "",
+		id = 2020001,
 		scale = "",
 		face_clip = "",
 		offset = {
 			-0.784,
 			1.457,
 			-0.046
-		}
+		},
+		jump_page = {}
 	},
 	[2020002] = {
-		quality = 4,
-		related_dress = 0,
 		name = "Breezy Balloon",
-		type = 2,
+		related_dress = 0,
 		exclusive_default_skin = "",
-		remove = 1,
+		type = 2,
 		attachmentPoint = "",
-		belongto = 2,
-		exclusive_skin = "",
+		remove = 1,
+		rotation = "",
+		desc = "Small balloons that sway with the wind, leaving joyous trails of color in the deep blue sky.",
 		sub_type = 0,
 		model = "island/item/03/37002/prefab/pre_item_03_37002",
-		rotation = "",
-		id = 2020002,
 		icon = "dress_2020002",
+		quality = 4,
+		belongto = 2,
+		tech_id = 0,
+		exclusive_skin = "",
+		id = 2020002,
 		scale = "",
 		face_clip = "",
 		offset = {
 			-0.73,
 			1.65,
 			-0.307
+		},
+		jump_page = {
+			{
+				"图鉴",
+				{}
+			}
 		}
 	},
 	[2020003] = {
-		quality = 4,
-		related_dress = 0,
 		name = "Moonlit Shell Ornament",
-		type = 2,
+		related_dress = 0,
 		exclusive_default_skin = "",
-		remove = 1,
+		type = 2,
 		attachmentPoint = "",
-		belongto = 2,
-		exclusive_skin = "",
+		remove = 1,
+		rotation = "",
+		desc = "Shells float beneath the warm light, shimmering as they trace graceful arcs through the air.",
 		sub_type = 0,
 		model = "island/item/03/37004/prefab/pre_item_03_37004",
-		rotation = "",
-		id = 2020003,
 		icon = "dress_2020003",
+		quality = 4,
+		belongto = 2,
+		tech_id = 0,
+		exclusive_skin = "",
+		id = 2020003,
 		scale = "",
 		face_clip = "",
 		offset = {
 			-0.742,
 			1.383,
 			-0.043
-		}
+		},
+		jump_page = {}
 	},
 	[2030001] = {
 		name = "Pawpad Trail",
@@ -982,16 +1214,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 1,
 		rotation = "",
+		desc = "Leaves behind soft cat pawprints outlined with faint pink lines, like a kitten passing through cotton candy clouds.",
 		sub_type = 0,
 		model = "island/item/03/38001/prefab/pre_item_03_38001",
 		icon = "dress_2030001",
 		quality = 4,
 		belongto = 2,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 2030001,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	[2030002] = {
 		name = "Manjuu Trail",
@@ -1001,16 +1236,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 1,
 		rotation = "",
+		desc = "Leaves behind cute and round Manjuu prints that exude youthful energy.",
 		sub_type = 0,
 		model = "island/item/03/38002/prefab/pre_item_03_38002",
 		icon = "dress_2030002",
 		quality = 4,
 		belongto = 2,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 2030002,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	[2030003] = {
 		name = "Honeycomb Trail",
@@ -1020,16 +1258,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 1,
 		rotation = "",
+		desc = "Leaves behind sticky trails of sweetness with each step, the hexagonal honeycombs glimmering with golden light.",
 		sub_type = 0,
 		model = "island/item/03/38003/prefab/pre_item_03_38003",
 		icon = "dress_2030003",
 		quality = 4,
 		belongto = 2,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 2030003,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	[2030004] = {
 		name = "Trail of Dancing Cherry Blossoms",
@@ -1039,16 +1280,19 @@ pg.island_dress_template = {
 		attachmentPoint = "",
 		remove = 1,
 		rotation = "",
+		desc = "Cherry blossom petals dance in the wind, blooming into a gentle spring rain.",
 		sub_type = 0,
 		model = "island/item/03/38004/prefab/pre_item_03_38004",
 		icon = "dress_2030004",
 		quality = 4,
 		belongto = 2,
 		offset = "",
+		tech_id = 0,
 		exclusive_skin = "",
 		id = 2030004,
 		scale = "",
-		face_clip = ""
+		face_clip = "",
+		jump_page = {}
 	},
 	get_id_list_by_type = {
 		{

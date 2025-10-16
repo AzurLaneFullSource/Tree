@@ -10,8 +10,8 @@ var0_0.edge2area = {
 }
 
 function var0_0.init(arg0_2)
-	arg0_2.top = arg0_2:findTF("top")
-	arg0_2._map = arg0_2:findTF("map")
+	arg0_2.top = arg0_2._tf:Find("top")
+	arg0_2._map = arg0_2._tf:Find("map")
 
 	for iter0_2 = 0, arg0_2._map.childCount - 1 do
 		local var0_2 = arg0_2._map:GetChild(iter0_2)
@@ -21,7 +21,7 @@ function var0_0.init(arg0_2)
 	end
 
 	arg0_2._shipTpl = arg0_2._map:Find("ship")
-	arg0_2._upper = arg0_2:findTF("upper")
+	arg0_2._upper = arg0_2._tf:Find("upper")
 
 	for iter1_2 = 0, arg0_2._upper.childCount - 1 do
 		local var2_2 = arg0_2._upper:GetChild(iter1_2)
@@ -56,13 +56,13 @@ function var0_0.init(arg0_2)
 end
 
 function var0_0.didEnter(arg0_3)
-	onButton(arg0_3, arg0_3:findTF("top/return_btn"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/return_btn"), function()
 		arg0_3:emit(var0_0.ON_BACK)
 	end)
-	onButton(arg0_3, arg0_3:findTF("top/return_main_btn"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/return_main_btn"), function()
 		arg0_3:emit(var0_0.ON_HOME)
 	end)
-	onButton(arg0_3, arg0_3:findTF("top/help_btn"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/help_btn"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.doa_main.tip

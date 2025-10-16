@@ -7,8 +7,8 @@ end
 function var0_0.OnInit(arg0_2)
 	setActive(arg0_2._tf, false)
 
-	arg0_2.anim = arg0_2:findTF("anim_root"):GetComponent(typeof(Animation))
-	arg0_2.animEvent = arg0_2:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+	arg0_2.anim = arg0_2._tf:Find("adapt"):GetComponent(typeof(Animation))
+	arg0_2.animEvent = arg0_2._tf:Find("adapt"):GetComponent(typeof(DftAniEvent))
 
 	arg0_2.animEvent:SetEndEvent(function()
 		setActive(arg0_2._tf, false)
@@ -18,21 +18,21 @@ function var0_0.OnInit(arg0_2)
 		end
 	end)
 
-	arg0_2.windowTF = arg0_2:findTF("anim_root/window")
-	arg0_2.closeBtn = arg0_2:findTF("close_btn", arg0_2.windowTF)
-	arg0_2.nameTF = arg0_2:findTF("name_bg/name", arg0_2.windowTF)
-	arg0_2.picTF = arg0_2:findTF("pic", arg0_2.windowTF)
-	arg0_2.descTF = arg0_2:findTF("desc", arg0_2.windowTF)
-	arg0_2.optionsTF = arg0_2:findTF("options/content", arg0_2.windowTF)
-	arg0_2.optionTpl = arg0_2:findTF("option_tpl", arg0_2.windowTF)
+	arg0_2.windowTF = arg0_2._tf:Find("adapt/window")
+	arg0_2.closeBtn = arg0_2.windowTF:Find("close_btn")
+	arg0_2.nameTF = arg0_2.windowTF:Find("name_bg/name")
+	arg0_2.picTF = arg0_2.windowTF:Find("pic")
+	arg0_2.descTF = arg0_2.windowTF:Find("desc")
+	arg0_2.optionsTF = arg0_2.windowTF:Find("options/content")
+	arg0_2.optionTpl = arg0_2.windowTF:Find("option_tpl")
 
-	setText(arg0_2:findTF("limit/Text", arg0_2.optionTpl), i18n("child_option_limit"))
-	setText(arg0_2:findTF("type_2/awards/polaroid/Text", arg0_2.optionTpl), i18n("child_random_polaroid_drop"))
+	setText(arg0_2.optionTpl:Find("limit/Text"), i18n("child_option_limit"))
+	setText(arg0_2.optionTpl:Find("type_2/awards/polaroid/Text"), i18n("child_random_polaroid_drop"))
 	setActive(arg0_2.optionTpl, false)
 
 	arg0_2.optionUIList = UIItemList.New(arg0_2.optionsTF, arg0_2.optionTpl)
-	arg0_2.performTF = arg0_2:findTF("anim_root/perform")
-	arg0_2.performName = arg0_2:findTF("name", arg0_2.performTF)
+	arg0_2.performTF = arg0_2._tf:Find("perform")
+	arg0_2.performName = arg0_2.performTF:Find("name")
 
 	arg0_2:addListener()
 	arg0_2:OverlayPanel(arg0_2._tf, {
@@ -41,7 +41,7 @@ function var0_0.OnInit(arg0_2)
 end
 
 function var0_0.addListener(arg0_4)
-	onButton(arg0_4, arg0_4:findTF("anim_root/bg"), function()
+	onButton(arg0_4, arg0_4._tf:Find("bg"), function()
 		arg0_4:onClose()
 	end, SFX_PANEL)
 	onButton(arg0_4, arg0_4.closeBtn, function()
@@ -202,35 +202,35 @@ function var0_0.updateOptionItem(arg0_17, arg1_17, arg2_17)
 
 	local var0_17 = arg0_17.optionVOs[arg1_17 + 1]
 
-	setActive(arg0_17:findTF("limit", arg2_17), var0_17:IsShowLimit())
+	setActive(arg2_17:Find("limit"), var0_17:IsShowLimit())
 
 	local var1_17 = var0_17:GetType()
 
 	for iter0_17 = 1, 3 do
-		setActive(arg0_17:findTF("type_" .. iter0_17, arg2_17), iter0_17 == var1_17)
+		setActive(arg2_17:Find("type_" .. iter0_17), iter0_17 == var1_17)
 	end
 
-	local var2_17 = arg0_17:findTF("type_" .. var1_17, arg2_17)
+	local var2_17 = arg2_17:Find("type_" .. var1_17)
 	local var3_17 = not var0_17:IsCountLimit() and true or var0_17:CanTrigger()
 
 	setGray(arg2_17, not var3_17)
 	switch(var1_17, {
 		[EducateSiteOption.TYPE_SHOP] = function()
-			setText(arg0_17:findTF("name/Text", var2_17), var0_17:getConfig("name"))
+			setText(var2_17:Find("name/Text"), var0_17:getConfig("name"))
 			onButton(arg0_17, arg2_17, function()
 				arg0_17:emit(EducateMapMediator.ON_OPEN_SHOP, var0_17:GetLinkId())
 			end, SFX_PANEL)
 		end,
 		[EducateSiteOption.TYPE_EVENT] = function()
-			setText(arg0_17:findTF("name", var2_17), shortenString(var0_17:getConfig("name") .. var0_17:GetCntText(), 12))
+			setText(var2_17:Find("name"), shortenString(var0_17:getConfig("name") .. var0_17:GetCntText(), 12))
 
 			local var0_20 = var0_17:IsShowPolaroid()
 
-			setActive(arg0_17:findTF("awards/polaroid", var2_17), var0_20)
+			setActive(var2_17:Find("awards/polaroid"), var0_20)
 
 			local var1_20 = var0_20 and 2 or 3
 			local var2_20 = var0_17:GetResults()
-			local var3_20 = UIItemList.New(arg0_17:findTF("awards/normal", var2_17), arg0_17:findTF("awards/normal/tpl", var2_17))
+			local var3_20 = UIItemList.New(var2_17:Find("awards/normal"), var2_17:Find("awards/normal/tpl"))
 
 			var3_20:make(function(arg0_21, arg1_21, arg2_21)
 				if arg0_21 == UIItemList.EventUpdate then
@@ -243,7 +243,7 @@ function var0_0.updateOptionItem(arg0_17, arg1_17, arg2_17)
 			var3_20:align(var4_20)
 
 			local var5_20 = var0_17:GetCost()
-			local var6_20 = UIItemList.New(arg0_17:findTF("costs", var2_17), arg0_17:findTF("costs/tpl", var2_17))
+			local var6_20 = UIItemList.New(var2_17:Find("costs"), var2_17:Find("costs/tpl"))
 
 			var6_20:make(function(arg0_22, arg1_22, arg2_22)
 				if arg0_22 == UIItemList.EventUpdate then
@@ -263,7 +263,7 @@ function var0_0.updateOptionItem(arg0_17, arg1_17, arg2_17)
 			end, SFX_PANEL)
 		end,
 		[EducateSiteOption.TYPE_SITE] = function()
-			setText(arg0_17:findTF("name/Text", var2_17), var0_17:getConfig("name"))
+			setText(var2_17:Find("name/Text"), var0_17:getConfig("name"))
 			onButton(arg0_17, arg2_17, function()
 				local var0_25 = var0_17:GetLinkId()
 

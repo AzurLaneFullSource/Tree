@@ -34,32 +34,32 @@ end
 
 function var0_0.OnLoaded(arg0_5)
 	arg0_5.toggles = {
-		[var2_0] = arg0_5:findTF("filter/finish"),
-		[var1_0] = arg0_5:findTF("filter/parse")
+		[var2_0] = arg0_5._tf:Find("filter/finish"),
+		[var1_0] = arg0_5._tf:Find("filter/parse")
 	}
-	arg0_5.filterTr = arg0_5:findTF("filter")
-	arg0_5.mainTr = arg0_5:findTF("main")
-	arg0_5.scrollRect = arg0_5:findTF("main/list/scrollrect"):GetComponent("LScrollRect")
-	arg0_5.paintingTr = arg0_5:findTF("main/paint")
-	arg0_5.openTr = arg0_5:findTF("main/open")
-	arg0_5.ptIcon = arg0_5:findTF("main/award/pt/icon")
-	arg0_5.ptTr = arg0_5:findTF("main/award/pt/Text"):GetComponent(typeof(Text))
-	arg0_5.getAllBtn = arg0_5:findTF("main/award/get_all")
-	arg0_5.awardScrollrect = arg0_5:findTF("main/award/scrollrect"):GetComponent("LScrollRect")
-	arg0_5.awardArrTr = arg0_5:findTF("main/award/arr")
-	arg0_5.emptyTr = arg0_5:findTF("empty")
-	arg0_5.emptyFinishTr = arg0_5:findTF("empty_finsih")
-	arg0_5.backBtn = arg0_5:findTF("blur_panel/adapt/top/back")
+	arg0_5.filterTr = arg0_5._tf:Find("filter")
+	arg0_5.mainTr = arg0_5._tf:Find("main")
+	arg0_5.scrollRect = arg0_5._tf:Find("main/list/scrollrect"):GetComponent("LScrollRect")
+	arg0_5.paintingTr = arg0_5._tf:Find("main/paint")
+	arg0_5.openTr = arg0_5._tf:Find("main/open")
+	arg0_5.ptIcon = arg0_5._tf:Find("main/award/pt/icon")
+	arg0_5.ptTr = arg0_5._tf:Find("main/award/pt/Text"):GetComponent(typeof(Text))
+	arg0_5.getAllBtn = arg0_5._tf:Find("main/award/get_all")
+	arg0_5.awardScrollrect = arg0_5._tf:Find("main/award/scrollrect"):GetComponent("LScrollRect")
+	arg0_5.awardArrTr = arg0_5._tf:Find("main/award/arr")
+	arg0_5.emptyTr = arg0_5._tf:Find("empty")
+	arg0_5.emptyFinishTr = arg0_5._tf:Find("empty_finsih")
+	arg0_5.backBtn = arg0_5._tf:Find("blur_panel/adapt/top/back")
 	arg0_5.msgBox = ArchivesWorldBossMsgboxPage.New(arg0_5._parentTf.parent, arg0_5.event)
 
-	setText(arg0_5:findTF("main/award/pt/label"), i18n("meta_syn_value_label"))
+	setText(arg0_5._tf:Find("main/award/pt/label"), i18n("meta_syn_value_label"))
 end
 
 function var0_0.OnInit(arg0_6)
 	onButton(arg0_6, arg0_6.backBtn, function()
 		arg0_6:emit(WorldBossScene.ON_QUIT_ARCHIVES_LIST)
 	end, SFX_CANCEL)
-	onButton(arg0_6, arg0_6:findTF("help"), function()
+	onButton(arg0_6, arg0_6._tf:Find("help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.world_archives_boss_list_help.tip
@@ -98,8 +98,8 @@ function var0_0.OnInit(arg0_6)
 		end, SFX_PANEL)
 	end
 
-	if arg0_6:findTF("empty_finsih") then
-		GetComponent(arg0_6:findTF("empty_finsih"), typeof(Image)):SetNativeSize()
+	if arg0_6._tf:Find("empty_finsih") then
+		GetComponent(arg0_6._tf:Find("empty_finsih"), typeof(Image)):SetNativeSize()
 	end
 end
 

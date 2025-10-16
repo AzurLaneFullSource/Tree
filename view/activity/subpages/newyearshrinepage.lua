@@ -5,17 +5,17 @@ var0_0.GO_MINI_GAME_ID = 34
 var0_0.GO_BACKHILL_SCENE = SCENE.NEWYEAR_BACKHILL_2022
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.progressTpl = arg0_1:findTF("ProgressTpl")
-	arg0_1.progressTplContainer = arg0_1:findTF("ProgressList")
+	arg0_1.progressTpl = arg0_1._tf:Find("ProgressTpl")
+	arg0_1.progressTplContainer = arg0_1._tf:Find("ProgressList")
 	arg0_1.progressUIItemList = UIItemList.New(arg0_1.progressTplContainer, arg0_1.progressTpl)
-	arg0_1.countText = arg0_1:findTF("CountText")
+	arg0_1.countText = arg0_1._tf:Find("CountText")
 
-	local var0_1 = arg0_1:findTF("Award")
+	local var0_1 = arg0_1._tf:Find("Award")
 
-	arg0_1.lockTF = arg0_1:findTF("Unlock", var0_1)
-	arg0_1.getBtn = arg0_1:findTF("Achieve", var0_1)
-	arg0_1.gotTag = arg0_1:findTF("Got", var0_1)
-	arg0_1.goBtn = arg0_1:findTF("GoBtn")
+	arg0_1.lockTF = var0_1:Find("Unlock")
+	arg0_1.getBtn = var0_1:Find("Achieve")
+	arg0_1.gotTag = var0_1:Find("Got")
+	arg0_1.goBtn = arg0_1._tf:Find("GoBtn")
 end
 
 function var0_0.OnDataSetting(arg0_2)
@@ -47,9 +47,9 @@ function var0_0.OnFirstFlush(arg0_3)
 		if arg0_4 == UIItemList.EventUpdate then
 			arg1_4 = arg1_4 + 1
 
-			local var0_4 = arg0_3:findTF("Achieve", arg2_4)
-			local var1_4 = arg0_3:findTF("Unlock", arg2_4)
-			local var2_4 = arg0_3:findTF("Lock", arg2_4)
+			local var0_4 = arg2_4:Find("Achieve")
+			local var1_4 = arg2_4:Find("Unlock")
+			local var2_4 = arg2_4:Find("Lock")
 
 			setActive(var2_4, not (arg1_4 <= arg0_3.curDay))
 

@@ -18,6 +18,10 @@ function var0_0.OnStart(arg0_2)
 		}
 		local var1_2 = arg0_2.data:GetWorkerList() or {}
 
+		if arg0_2.data.id == IslandProductConst.MinePlaceId then
+			return
+		end
+
 		for iter0_2, iter1_2 in ipairs(var1_2) do
 			iter1_2.nextIn = table.contains(var0_2, arg0_2.data.id)
 

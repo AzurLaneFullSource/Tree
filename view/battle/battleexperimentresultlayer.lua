@@ -20,12 +20,12 @@ function var0_0.skip(arg0_2)
 			var0_2 = var0_2 - 1
 		end
 
-		SetActive(arg0_2:findTF("jieuan01/tips", arg0_2._bg), true)
+		SetActive(arg0_2._bg:Find("jieuan01/tips"), true)
 
 		arg0_2._stateFlag = var0_0.STATE_REPORTED
 	elseif arg0_2._stateFlag == var0_0.STATE_REPORTED then
 		arg0_2:displayBG()
-		SetActive(arg0_2:findTF("jieuan01/tips", arg0_2._bg), false)
+		SetActive(arg0_2._bg:Find("jieuan01/tips"), false)
 	end
 end
 
@@ -44,7 +44,7 @@ function var0_0.displayBG(arg0_3)
 
 		arg0_3._stateFlag = var0_0.STATE_DISPLAY
 	end))
-	setActive(arg0_3:findTF("jieuan01/Bomb", arg0_3._bg), false)
+	setActive(arg0_3._bg:Find("jieuan01/Bomb"), false)
 end
 
 function var0_0.closeStatistics(arg0_5)
@@ -137,8 +137,8 @@ function var0_0.displayShips(arg0_6)
 			var18_6.y = var18_6.y + (iter6_6 - var16_6) * -124
 			var17_6.localPosition = var18_6
 
-			local var19_6 = arg0_6:findTF("result/mask/icon", var17_6)
-			local var20_6 = arg0_6:findTF("result/type", var17_6)
+			local var19_6 = var17_6:Find("result/mask/icon")
+			local var20_6 = var17_6:Find("result/type")
 
 			var19_6:GetComponent(typeof(Image)).sprite = LoadSprite("herohrzicon/" .. iter7_6:getPainting())
 

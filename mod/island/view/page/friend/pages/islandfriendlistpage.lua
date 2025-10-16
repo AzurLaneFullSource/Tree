@@ -5,12 +5,12 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.morePanel = arg0_2:findTF("scrollrect/content/more_panel")
+	arg0_2.morePanel = arg0_2._tf:Find("scrollrect/content/more_panel")
 	arg0_2.whiteBtn = arg0_2.morePanel:Find("white")
 	arg0_2.blackBtn = arg0_2.morePanel:Find("black")
 	arg0_2.delBtn = arg0_2.morePanel:Find("del")
 	arg0_2.cards = {}
-	arg0_2._scrollrect = arg0_2:findTF("scrollrect"):GetComponent("LScrollRect")
+	arg0_2._scrollrect = arg0_2._tf:Find("scrollrect"):GetComponent("LScrollRect")
 
 	function arg0_2._scrollrect.onInitItem(arg0_3)
 		arg0_2:OnInitItem(arg0_3)

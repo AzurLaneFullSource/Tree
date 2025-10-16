@@ -46,10 +46,10 @@ function var0_0.onBackPressed(arg0_5)
 end
 
 function var0_0.initTipText(arg0_6)
-	local var0_6 = arg0_6:findTF("Repair/AttrListPanel/AttrItemContainer/AttrItemCannon/SelectedPanel/AttrRepairTipText")
-	local var1_6 = arg0_6:findTF("Repair/AttrListPanel/AttrItemContainer/AttrItemTorpedo/SelectedPanel/AttrRepairTipText")
-	local var2_6 = arg0_6:findTF("Repair/AttrListPanel/AttrItemContainer/AttrItemAir/SelectedPanel/AttrRepairTipText")
-	local var3_6 = arg0_6:findTF("Repair/AttrListPanel/AttrItemContainer/AttrItemReload/SelectedPanel/AttrRepairTipText")
+	local var0_6 = arg0_6._tf:Find("Repair/AttrListPanel/AttrItemContainer/AttrItemCannon/SelectedPanel/AttrRepairTipText")
+	local var1_6 = arg0_6._tf:Find("Repair/AttrListPanel/AttrItemContainer/AttrItemTorpedo/SelectedPanel/AttrRepairTipText")
+	local var2_6 = arg0_6._tf:Find("Repair/AttrListPanel/AttrItemContainer/AttrItemAir/SelectedPanel/AttrRepairTipText")
+	local var3_6 = arg0_6._tf:Find("Repair/AttrListPanel/AttrItemContainer/AttrItemReload/SelectedPanel/AttrRepairTipText")
 
 	setText(var0_6, i18n("meta_repair"))
 	setText(var1_6, i18n("meta_repair"))
@@ -70,31 +70,31 @@ function var0_0.initData(arg0_7)
 end
 
 function var0_0.findUI(arg0_8)
-	arg0_8.repairPanel = arg0_8:findTF("Repair")
-	arg0_8.attrListPanel = arg0_8:findTF("AttrListPanel", arg0_8.repairPanel)
-	arg0_8.attrItemContainer = arg0_8:findTF("AttrItemContainer", arg0_8.attrListPanel)
-	arg0_8.attrCannonTF = arg0_8:findTF("AttrItemCannon", arg0_8.attrItemContainer)
-	arg0_8.attrTorpedoTF = arg0_8:findTF("AttrItemTorpedo", arg0_8.attrItemContainer)
-	arg0_8.attrAirTF = arg0_8:findTF("AttrItemAir", arg0_8.attrItemContainer)
-	arg0_8.attrReloadTF = arg0_8:findTF("AttrItemReload", arg0_8.attrItemContainer)
+	arg0_8.repairPanel = arg0_8._tf:Find("Repair")
+	arg0_8.attrListPanel = arg0_8.repairPanel:Find("AttrListPanel")
+	arg0_8.attrItemContainer = arg0_8.attrListPanel:Find("AttrItemContainer")
+	arg0_8.attrCannonTF = arg0_8.attrItemContainer:Find("AttrItemCannon")
+	arg0_8.attrTorpedoTF = arg0_8.attrItemContainer:Find("AttrItemTorpedo")
+	arg0_8.attrAirTF = arg0_8.attrItemContainer:Find("AttrItemAir")
+	arg0_8.attrReloadTF = arg0_8.attrItemContainer:Find("AttrItemReload")
 	arg0_8.attrTFList.cannon = arg0_8.attrCannonTF
 	arg0_8.attrTFList.torpedo = arg0_8.attrTorpedoTF
 	arg0_8.attrTFList.air = arg0_8.attrAirTF
 	arg0_8.attrTFList.reload = arg0_8.attrReloadTF
-	arg0_8.repairPercentText = arg0_8:findTF("SynProgressPanel/SynRate/NumTextText", arg0_8.repairPanel)
-	arg0_8.repairSliderTF = arg0_8:findTF("SynProgressPanel/Slider", arg0_8.repairPanel)
-	arg0_8.repairBtn = arg0_8:findTF("RepairBtn", arg0_8.repairPanel)
-	arg0_8.repairBtnDisable = arg0_8:findTF("RepairBtnDisable", arg0_8.repairPanel)
-	arg0_8.showDetailLine = arg0_8:findTF("ShowDetailLine")
-	arg0_8.showDetailBtn = arg0_8:findTF("ShowDetailBtn", arg0_8.showDetailLine)
-	arg0_8.detailPanel = arg0_8:findTF("Detail")
-	arg0_8.detailBG = arg0_8:findTF("BG", arg0_8.detailPanel)
-	arg0_8.detailTF = arg0_8:findTF("Panel", arg0_8.detailPanel)
-	arg0_8.detailCloseBtn = arg0_8:findTF("CloseBtn", arg0_8.detailTF)
-	arg0_8.detailLineTpl = arg0_8:findTF("DetailLineTpl", arg0_8.detailTF)
-	arg0_8.detailItemTpl = arg0_8:findTF("DetailItemTpl", arg0_8.detailTF)
-	arg0_8.detailItemContainer = arg0_8:findTF("ScrollView/Viewport/Content", arg0_8.detailTF)
-	arg0_8.repairEffectBoxPanel = arg0_8:findTF("RepairEffectBox")
+	arg0_8.repairPercentText = arg0_8.repairPanel:Find("SynProgressPanel/SynRate/NumTextText")
+	arg0_8.repairSliderTF = arg0_8.repairPanel:Find("SynProgressPanel/Slider")
+	arg0_8.repairBtn = arg0_8.repairPanel:Find("RepairBtn")
+	arg0_8.repairBtnDisable = arg0_8.repairPanel:Find("RepairBtnDisable")
+	arg0_8.showDetailLine = arg0_8._tf:Find("ShowDetailLine")
+	arg0_8.showDetailBtn = arg0_8.showDetailLine:Find("ShowDetailBtn")
+	arg0_8.detailPanel = arg0_8._tf:Find("Detail")
+	arg0_8.detailBG = arg0_8.detailPanel:Find("BG")
+	arg0_8.detailTF = arg0_8.detailPanel:Find("Panel")
+	arg0_8.detailCloseBtn = arg0_8.detailTF:Find("CloseBtn")
+	arg0_8.detailLineTpl = arg0_8.detailTF:Find("DetailLineTpl")
+	arg0_8.detailItemTpl = arg0_8.detailTF:Find("DetailItemTpl")
+	arg0_8.detailItemContainer = arg0_8.detailTF:Find("ScrollView/Viewport/Content")
+	arg0_8.repairEffectBoxPanel = arg0_8._tf:Find("RepairEffectBox")
 end
 
 function var0_0.addListener(arg0_9)
@@ -176,10 +176,10 @@ function var0_0.updateAttrListPanel(arg0_21)
 end
 
 function var0_0.updateAttrItem(arg0_22, arg1_22, arg2_22)
-	local var0_22 = arg0_22:findTF("LockPanel", arg1_22)
-	local var1_22 = arg0_22:findTF("UnSelectPanel", arg1_22)
-	local var2_22 = arg0_22:findTF("SelectedPanel", arg1_22)
-	local var3_22 = arg0_22:findTF("TitleImg", var2_22)
+	local var0_22 = arg1_22:Find("LockPanel")
+	local var1_22 = arg1_22:Find("UnSelectPanel")
+	local var2_22 = arg1_22:Find("SelectedPanel")
+	local var3_22 = var2_22:Find("TitleImg")
 
 	GetComponent(var3_22, "Image"):SetNativeSize()
 
@@ -200,14 +200,14 @@ function var0_0.updateAttrItem(arg0_22, arg1_22, arg2_22)
 
 		var5_22.interactable = true
 
-		local var6_22 = arg0_22:findTF("ValueText", var1_22)
-		local var7_22 = arg0_22:findTF("ValueText", var2_22)
-		local var8_22 = arg0_22:findTF("AttrRepairValue/CurValueText", var2_22)
-		local var9_22 = arg0_22:findTF("AttrRepairValue/Image", var2_22)
-		local var10_22 = arg0_22:findTF("AttrRepairValue/NextValueText", var2_22)
-		local var11_22 = arg0_22:findTF("IconTpl", var2_22)
-		local var12_22 = arg0_22:findTF("ItemCount", var2_22)
-		local var13_22 = arg0_22:findTF("NumText", var12_22)
+		local var6_22 = var1_22:Find("ValueText")
+		local var7_22 = var2_22:Find("ValueText")
+		local var8_22 = var2_22:Find("AttrRepairValue/CurValueText")
+		local var9_22 = var2_22:Find("AttrRepairValue/Image")
+		local var10_22 = var2_22:Find("AttrRepairValue/NextValueText")
+		local var11_22 = var2_22:Find("IconTpl")
+		local var12_22 = var2_22:Find("ItemCount")
+		local var13_22 = var12_22:Find("NumText")
 		local var14_22 = var4_22:getAddition()
 
 		setText(var6_22, "+" .. var14_22)
@@ -302,9 +302,9 @@ function var0_0.updateRepairBtn(arg0_24, arg1_24)
 end
 
 function var0_0.updateDetailItem(arg0_25, arg1_25, arg2_25)
-	local var0_25 = arg0_25:findTF("LineContainer", arg1_25)
-	local var1_25 = arg0_25:findTF("LockPanel", arg1_25)
-	local var2_25 = arg0_25:findTF("TipText", var1_25)
+	local var0_25 = arg1_25:Find("LineContainer")
+	local var1_25 = arg1_25:Find("LockPanel")
+	local var2_25 = var1_25:Find("TipText")
 	local var3_25 = arg2_25.progress
 
 	setText(var2_25, i18n("meta_repair_effect_unlock", var3_25))
@@ -320,9 +320,9 @@ function var0_0.updateDetailItem(arg0_25, arg1_25, arg2_25)
 	local var9_25 = UIItemList.New(var0_25, arg0_25.detailLineTpl)
 
 	var9_25:make(function(arg0_26, arg1_26, arg2_26)
-		local var0_26 = arg0_25:findTF("AttrLine", arg2_26)
-		local var1_26 = arg0_25:findTF("UnlockTipLine", arg2_26)
-		local var2_26 = arg0_25:findTF("Text", arg2_26)
+		local var0_26 = arg2_26:Find("AttrLine")
+		local var1_26 = arg2_26:Find("UnlockTipLine")
+		local var2_26 = arg2_26:Find("Text")
 
 		if arg0_26 == UIItemList.EventUpdate then
 			arg1_26 = arg1_26 + 1
@@ -340,9 +340,9 @@ function var0_0.updateDetailItem(arg0_25, arg1_25, arg2_25)
 				setActive(var0_26, true)
 				setActive(var1_26, false)
 
-				local var3_26 = arg0_25:findTF("AttrIcon", var0_26)
-				local var4_26 = arg0_25:findTF("AttrNameText", var0_26)
-				local var5_26 = arg0_25:findTF("NumText", var0_26)
+				local var3_26 = var0_26:Find("AttrIcon")
+				local var4_26 = var0_26:Find("AttrNameText")
+				local var5_26 = var0_26:Find("NumText")
 				local var6_26 = var5_25[arg1_26 - 1]
 				local var7_26 = var6_26[1]
 				local var8_26 = var6_26[2]
@@ -354,7 +354,7 @@ function var0_0.updateDetailItem(arg0_25, arg1_25, arg2_25)
 				setActive(var0_26, false)
 				setActive(var1_26, true)
 
-				local var9_26 = arg0_25:findTF("Text", var1_26)
+				local var9_26 = var1_26:Find("Text")
 				local var10_26 = var7_25[arg1_26 - 1 - var6_25]
 
 				setScrollText(var9_26, var10_26)
@@ -410,20 +410,20 @@ function var0_0.openRepairEffectBoxPanel(arg0_31, arg1_31)
 	local var3_31 = #var2_31
 	local var4_31 = 1 + var1_31 + var3_31
 	local var5_31 = arg1_31.progress
-	local var6_31 = arg0_31:findTF("BG", arg0_31.repairEffectBoxPanel)
-	local var7_31 = arg0_31:findTF("Box/BtnContainer/ConfirmBtn", arg0_31.repairEffectBoxPanel)
+	local var6_31 = arg0_31.repairEffectBoxPanel:Find("BG")
+	local var7_31 = arg0_31.repairEffectBoxPanel:Find("Box/BtnContainer/ConfirmBtn")
 
 	onButton(arg0_31, var7_31, function()
 		arg0_31:closeRepairEffectBoxPanel()
 	end, SFX_CANCEL)
 
-	local var8_31 = arg0_31:findTF("Box/Panel/TypeRepairEffect", arg0_31.repairEffectBoxPanel)
-	local var9_31 = arg0_31:findTF("DetailLineTpl", var8_31)
+	local var8_31 = arg0_31.repairEffectBoxPanel:Find("Box/Panel/TypeRepairEffect")
+	local var9_31 = var8_31:Find("DetailLineTpl")
 	local var10_31 = UIItemList.New(var8_31, var9_31)
 
 	var10_31:make(function(arg0_33, arg1_33, arg2_33)
-		local var0_33 = arg0_31:findTF("AttrLine", arg2_33)
-		local var1_33 = arg0_31:findTF("UnlockTipLine", arg2_33)
+		local var0_33 = arg2_33:Find("AttrLine")
+		local var1_33 = arg2_33:Find("UnlockTipLine")
 
 		if arg0_33 == UIItemList.EventUpdate then
 			arg1_33 = arg1_33 + 1
@@ -432,16 +432,16 @@ function var0_0.openRepairEffectBoxPanel(arg0_31, arg1_31)
 				setActive(var0_33, false)
 				setActive(var1_33, true)
 
-				local var2_33 = arg0_31:findTF("Text", var1_33)
+				local var2_33 = var1_33:Find("Text")
 
 				setScrollText(var2_33, i18n("meta_repair_effect_special", var5_31))
 			elseif arg1_33 > 1 and arg1_33 <= 1 + var1_31 then
 				setActive(var0_33, true)
 				setActive(var1_33, false)
 
-				local var3_33 = arg0_31:findTF("AttrIcon", var0_33)
-				local var4_33 = arg0_31:findTF("AttrNameText", var0_33)
-				local var5_33 = arg0_31:findTF("NumText", var0_33)
+				local var3_33 = var0_33:Find("AttrIcon")
+				local var4_33 = var0_33:Find("AttrNameText")
+				local var5_33 = var0_33:Find("NumText")
 				local var6_33 = var0_31[arg1_33 - 1]
 				local var7_33 = var6_33[1]
 				local var8_33 = var6_33[2]
@@ -453,7 +453,7 @@ function var0_0.openRepairEffectBoxPanel(arg0_31, arg1_31)
 				setActive(var0_33, false)
 				setActive(var1_33, true)
 
-				local var9_33 = arg0_31:findTF("Text", var1_33)
+				local var9_33 = var1_33:Find("Text")
 				local var10_33 = var2_31[arg1_33 - (1 + var1_31)]
 
 				setScrollText(var9_33, var10_33)

@@ -163,34 +163,28 @@ function var0_0.Emit(arg0_17, arg1_17, ...)
 	arg0_17.parent:Emit(arg1_17, ...)
 end
 
-function var0_0.findTF(arg0_18, arg1_18, arg2_18)
-	assert(arg0_18._tf, "transform should exist")
+function var0_0.getTpl(arg0_18, arg1_18, arg2_18)
+	local var0_18 = arg2_18:Find(arg1_18)
 
-	return findTF(arg2_18 or arg0_18._tf, arg1_18)
+	var0_18:SetParent(arg0_18._tf, false)
+	SetActive(var0_18, false)
+
+	return var0_18
 end
 
-function var0_0.getTpl(arg0_19, arg1_19, arg2_19)
-	local var0_19 = arg0_19:findTF(arg1_19, arg2_19)
-
-	var0_19:SetParent(arg0_19._tf, false)
-	SetActive(var0_19, false)
-
-	return var0_19
-end
-
-function var0_0.getUIName(arg0_20)
+function var0_0.getUIName(arg0_19)
 	return nil
 end
 
-function var0_0.OnLoaded(arg0_21)
+function var0_0.OnLoaded(arg0_20)
 	return
 end
 
-function var0_0.OnInit(arg0_22)
+function var0_0.OnInit(arg0_21)
 	return
 end
 
-function var0_0.OnDestroy(arg0_23)
+function var0_0.OnDestroy(arg0_22)
 	return
 end
 

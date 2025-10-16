@@ -1,9 +1,9 @@
 local var0_0 = class("AvroraTWCBTPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.get = arg0_1:findTF("get", arg0_1.bg)
-	arg0_1.go = arg0_1:findTF("go", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.get = arg0_1.bg:Find("get")
+	arg0_1.go = arg0_1.bg:Find("go")
 end
 
 function var0_0.OnFirstFlush(arg0_2)

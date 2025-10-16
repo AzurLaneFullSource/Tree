@@ -26,11 +26,11 @@ function var0_0.init(arg0_2, ...)
 			elseif not arg0_2.pageDic[var0_3.id] then
 				warning(string.format("without page in act:", var0_3.id))
 			else
-				setText(arg0_2:findTF("on/name", arg2_3), i18n("outpost_20250904_Sidebar" .. var0_3:getConfig("is_show")))
-				setText(arg0_2:findTF("name", arg2_3), i18n("outpost_20250904_Sidebar" .. var0_3:getConfig("is_show")))
+				setText(arg2_3:Find("on/name"), i18n("outpost_20250904_Sidebar" .. var0_3:getConfig("is_show")))
+				setText(arg2_3:Find("name"), i18n("outpost_20250904_Sidebar" .. var0_3:getConfig("is_show")))
 
 				if arg0_2.pageDic[var0_3.id] ~= nil then
-					setActive(arg0_2:findTF("tip", arg2_3), var0_3:readyToAchieve())
+					setActive(arg2_3:Find("tip"), var0_3:readyToAchieve())
 					onToggle(arg0_2, arg2_3, function(arg0_5)
 						if arg0_5 then
 							arg0_2:selectActivity(var0_3)

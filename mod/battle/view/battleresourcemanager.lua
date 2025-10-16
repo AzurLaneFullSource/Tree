@@ -309,7 +309,7 @@ function var5_0.InstBullet(arg0_30, arg1_30, arg2_30)
 		return true
 	else
 		ResourceMgr.Inst:getAssetAsync(var0_30, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_31)
-			if arg0_30._poolRoot then
+			if not arg0_30._poolRoot then
 				var4_0.Destroy(arg0_31)
 
 				return

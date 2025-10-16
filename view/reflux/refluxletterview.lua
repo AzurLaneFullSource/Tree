@@ -27,15 +27,15 @@ function var0_0.initData(arg0_5)
 end
 
 function var0_0.initUI(arg0_6)
-	local var0_6 = arg0_6:findTF("billboard")
+	local var0_6 = arg0_6._tf:Find("billboard")
 
 	arg0_6.billboardTF = var0_6
-	arg0_6.yearText = arg0_6:findTF("year", var0_6)
-	arg0_6.monthText = arg0_6:findTF("month", var0_6)
-	arg0_6.dateText = arg0_6:findTF("date", var0_6)
-	arg0_6.daysText = arg0_6:findTF("days", var0_6)
-	arg0_6.countText = arg0_6:findTF("count", var0_6)
-	arg0_6.shareBtn = arg0_6:findTF("btn_share", var0_6)
+	arg0_6.yearText = var0_6:Find("year")
+	arg0_6.monthText = var0_6:Find("month")
+	arg0_6.dateText = var0_6:Find("date")
+	arg0_6.daysText = var0_6:Find("days")
+	arg0_6.countText = var0_6:Find("count")
+	arg0_6.shareBtn = var0_6:Find("btn_share")
 
 	setActive(arg0_6.shareBtn, false)
 	onButton(arg0_6, arg0_6.billboardTF, function()

@@ -5,17 +5,17 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.toggleRank = arg0_2:findTF("rank")
-	arg0_2.toggleInfo = arg0_2:findTF("info")
-	arg0_2.myRankTF = arg0_2:findTF("rank_panel/tpl")
-	arg0_2.rankList = UIItemList.New(arg0_2:findTF("rank_panel/list"), arg0_2.myRankTF)
+	arg0_2.toggleRank = arg0_2._tf:Find("rank")
+	arg0_2.toggleInfo = arg0_2._tf:Find("info")
+	arg0_2.myRankTF = arg0_2._tf:Find("rank_panel/tpl")
+	arg0_2.rankList = UIItemList.New(arg0_2._tf:Find("rank_panel/list"), arg0_2.myRankTF)
 	arg0_2.maxRankCnt = pg.gameset.joint_boss_fighter_max.key_value
-	arg0_2.rankCnt1 = arg0_2:findTF("rank_panel/cnt/Text"):GetComponent(typeof(Text))
-	arg0_2.rankTF = arg0_2:findTF("rank_panel")
-	arg0_2.maskTF = arg0_2:findTF("rank_panel/mask")
-	arg0_2.maskTxt = arg0_2:findTF("rank_panel/mask/Text"):GetComponent(typeof(Text))
-	arg0_2.infoTitle = arg0_2:findTF("info_panel/title/Text"):GetComponent(typeof(Text))
-	arg0_2.infoSkillList = UIItemList.New(arg0_2:findTF("info_panel/scrollrect/content"), arg0_2:findTF("info_panel/scrollrect/content/tpl"))
+	arg0_2.rankCnt1 = arg0_2._tf:Find("rank_panel/cnt/Text"):GetComponent(typeof(Text))
+	arg0_2.rankTF = arg0_2._tf:Find("rank_panel")
+	arg0_2.maskTF = arg0_2._tf:Find("rank_panel/mask")
+	arg0_2.maskTxt = arg0_2._tf:Find("rank_panel/mask/Text"):GetComponent(typeof(Text))
+	arg0_2.infoTitle = arg0_2._tf:Find("info_panel/title/Text"):GetComponent(typeof(Text))
+	arg0_2.infoSkillList = UIItemList.New(arg0_2._tf:Find("info_panel/scrollrect/content"), arg0_2._tf:Find("info_panel/scrollrect/content/tpl"))
 end
 
 function var0_0.SetCallback(arg0_3, arg1_3, arg2_3)

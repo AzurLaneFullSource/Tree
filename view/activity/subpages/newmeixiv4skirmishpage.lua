@@ -1,13 +1,13 @@
 local var0_0 = class("NewMeixiV4SkirmishPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.battleBtn = arg0_1:findTF("battle_btn", arg0_1.bg)
-	arg0_1.progressBar = arg0_1:findTF("progress/bar", arg0_1.bg)
-	arg0_1.curNum = arg0_1:findTF("progress/cur_num", arg0_1.bg)
-	arg0_1.curSection = arg0_1:findTF("progress/cur_section", arg0_1.bg)
-	arg0_1.item = arg0_1:findTF("scrollview/item", arg0_1.bg)
-	arg0_1.items = arg0_1:findTF("scrollview/items", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.battleBtn = arg0_1.bg:Find("battle_btn")
+	arg0_1.progressBar = arg0_1.bg:Find("progress/bar")
+	arg0_1.curNum = arg0_1.bg:Find("progress/cur_num")
+	arg0_1.curSection = arg0_1.bg:Find("progress/cur_section")
+	arg0_1.item = arg0_1.bg:Find("scrollview/item")
+	arg0_1.items = arg0_1.bg:Find("scrollview/items")
 	arg0_1.uilist = UIItemList.New(arg0_1.items, arg0_1.item)
 end
 
@@ -73,13 +73,13 @@ function var0_0.OnFirstFlush(arg0_6)
 	arg0_6.uilist:make(function(arg0_8, arg1_8, arg2_8)
 		if arg0_8 == UIItemList.EventUpdate then
 			local var0_8 = arg1_8 + 1
-			local var1_8 = arg0_6:findTF("item", arg2_8)
+			local var1_8 = arg2_8:Find("item")
 			local var2_8 = arg0_6.taskList[var0_8]
 			local var3_8 = arg0_6.taskProxy:getTaskById(var2_8) or arg0_6.taskProxy:getFinishTaskById(var2_8)
 
-			setActive(arg0_6:findTF("finish", arg2_8), var3_8 and var3_8:getTaskStatus() == 2 or var0_8 <= arg0_6.clearTaskNum)
-			setActive(arg0_6:findTF("lock", arg2_8), false)
-			setText(arg0_6:findTF("title", arg2_8), "P" .. var0_8)
+			setActive(arg2_8:Find("finish"), var3_8 and var3_8:getTaskStatus() == 2 or var0_8 <= arg0_6.clearTaskNum)
+			setActive(arg2_8:Find("lock"), false)
+			setText(arg2_8:Find("title"), "P" .. var0_8)
 		end
 	end)
 	arg0_6.uilist:align(#arg0_6.taskList)

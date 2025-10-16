@@ -14,12 +14,12 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.backBtn = arg0_2:findTF("blur_panel/adapt/top/back_btn")
-	arg0_2.raceTpl = arg0_2:findTF("res/raceTpl")
-	arg0_2.layoutTpl = arg0_2:findTF("res/layoutTpl")
-	arg0_2.raceTpl1 = arg0_2:findTF("res/raceTpl1")
-	arg0_2.layoutTpl1 = arg0_2:findTF("res/layoutTpl1")
-	arg0_2.container = arg0_2:findTF("scrollrect/content")
+	arg0_2.backBtn = arg0_2._tf:Find("blur_panel/adapt/top/back_btn")
+	arg0_2.raceTpl = arg0_2._tf:Find("res/raceTpl")
+	arg0_2.layoutTpl = arg0_2._tf:Find("res/layoutTpl")
+	arg0_2.raceTpl1 = arg0_2._tf:Find("res/raceTpl1")
+	arg0_2.layoutTpl1 = arg0_2._tf:Find("res/layoutTpl1")
+	arg0_2.container = arg0_2._tf:Find("scrollrect/content")
 	arg0_2.verLeftTpl = arg0_2._tf:Find("res/ver_left")
 	arg0_2.verLeftTplClose = arg0_2._tf:Find("res/ver_left_close")
 	arg0_2.verRightTpl = arg0_2._tf:Find("res/ver_right")
@@ -30,14 +30,14 @@ function var0_0.init(arg0_2)
 	arg0_2.hrzRightTplClose = arg0_2._tf:Find("res/hrz_rigth_close")
 	arg0_2.hrzLeftTpl = arg0_2._tf:Find("res/hrz_left")
 	arg0_2.hrzLeftTplClose = arg0_2._tf:Find("res/hrz_left_close")
-	arg0_2.lineContainer = arg0_2:findTF("scrollrect/content/line")
+	arg0_2.lineContainer = arg0_2._tf:Find("scrollrect/content/line")
 	arg0_2.lineTpls = {}
 
 	setText(arg0_2.raceTpl:Find("open/Text"), i18n("vote_lable_voting"))
 	setText(arg0_2.raceTpl:Find("close/Text"), i18n("vote_lable_not_start"))
 	setText(arg0_2.raceTpl1:Find("open/Text"), i18n("vote_lable_voting"))
 	setText(arg0_2.raceTpl1:Find("close/Text"), i18n("vote_lable_not_start"))
-	setText(arg0_2:findTF("title/Text"), i18n("vote_lable_title"))
+	setText(arg0_2._tf:Find("title/Text"), i18n("vote_lable_title"))
 
 	arg0_2.LayoutHeight = arg0_2.layoutTpl:GetComponent(typeof(LayoutElement)).preferredHeight
 	arg0_2.spacing = arg0_2.container:GetComponent(typeof(VerticalLayoutGroup)).spacing

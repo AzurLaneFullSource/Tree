@@ -11,16 +11,16 @@ function var0_0.InitCustom(arg0_1)
 		1,
 		2
 	}, function(arg0_2)
-		return arg0_1:findTF("Frame/Tabs"):GetChild(arg0_2 - 1)
+		return arg0_1._tf:Find("Frame/Tabs"):GetChild(arg0_2 - 1)
 	end)
 
-	setText(arg0_1:findTF("Bar/Text"), i18n("yumia_atelier_tip5"))
-	setText(arg0_1:findTF("Frame/Tabs/Equip/UnSelected/Text"), i18n("yumia_atelier_tip2"))
-	setText(arg0_1:findTF("Frame/Tabs/Equip/Selected/Text"), i18n("yumia_atelier_tip2"))
-	setText(arg0_1:findTF("Frame/Tabs/Item/UnSelected/Text"), i18n("yumia_atelier_tip3"))
-	setText(arg0_1:findTF("Frame/Tabs/Item/Selected/Text"), i18n("yumia_atelier_tip3"))
-	setText(arg0_1:findTF("Frame/title/Text"), i18n("yumia_atelier_tip4"))
-	setCanvasGroupAlpha(arg0_1:findTF("Frame"), 0)
+	setText(arg0_1._tf:Find("Bar/Text"), i18n("yumia_atelier_tip5"))
+	setText(arg0_1._tf:Find("Frame/Tabs/Equip/UnSelected/Text"), i18n("yumia_atelier_tip2"))
+	setText(arg0_1._tf:Find("Frame/Tabs/Equip/Selected/Text"), i18n("yumia_atelier_tip2"))
+	setText(arg0_1._tf:Find("Frame/Tabs/Item/UnSelected/Text"), i18n("yumia_atelier_tip3"))
+	setText(arg0_1._tf:Find("Frame/Tabs/Item/Selected/Text"), i18n("yumia_atelier_tip3"))
+	setText(arg0_1._tf:Find("Frame/title/Text"), i18n("yumia_atelier_tip4"))
+	setCanvasGroupAlpha(arg0_1._tf:Find("Frame"), 0)
 end
 
 function var0_0.didEnter(arg0_3)
@@ -36,7 +36,7 @@ function var0_0.didEnter(arg0_3)
 		end, SFX_PANEL)
 	end
 
-	onToggle(arg0_3, arg0_3:findTF("Frame/Filter/Toggle"), function(arg0_5)
+	onToggle(arg0_3, arg0_3._tf:Find("Frame/Filter/Toggle"), function(arg0_5)
 		arg0_3.showOnlyComposite = arg0_5
 
 		arg0_3:FilterFormulas()
@@ -46,7 +46,7 @@ end
 
 function var0_0.UpdateFilterButtons(arg0_6)
 	for iter0_6, iter1_6 in pairs(arg0_6.formulaFilterButtons) do
-		setActive(arg0_6:findTF("Selected", iter1_6), arg0_6.contextData.filterType == iter0_6)
+		setActive(iter1_6:Find("Selected"), arg0_6.contextData.filterType == iter0_6)
 	end
 end
 

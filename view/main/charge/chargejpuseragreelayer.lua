@@ -30,10 +30,10 @@ function var0_0.initUIText(arg0_6)
 end
 
 function var0_0.findUI(arg0_7)
-	arg0_7.bg = arg0_7:findTF("bg")
-	arg0_7.closeBtn = arg0_7:findTF("window/top/btnBack")
-	arg0_7.scrollRect = arg0_7:findTF("container/scrollrect")
-	arg0_7.scrollText = arg0_7:findTF("content/Text", arg0_7.scrollRect)
+	arg0_7.bg = arg0_7._tf:Find("bg")
+	arg0_7.closeBtn = arg0_7._tf:Find("window/top/btnBack")
+	arg0_7.scrollRect = arg0_7._tf:Find("container/scrollrect")
+	arg0_7.scrollText = arg0_7.scrollRect:Find("content/Text")
 end
 
 function var0_0.addListener(arg0_8)

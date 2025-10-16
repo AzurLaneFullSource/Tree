@@ -1,40 +1,40 @@
 local var0_0 = class("ALYAwardPage", import("..CoreActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.AD = arg0_1:findTF("AD")
+	arg0_1.AD = arg0_1._tf:Find("AD")
 	arg0_1.table_Top = {
-		arg0_1:findTF("tabs/top_1", arg0_1.AD),
-		arg0_1:findTF("tabs/top_2", arg0_1.AD),
-		arg0_1:findTF("tabs/top_3", arg0_1.AD),
-		arg0_1:findTF("tabs/top_4", arg0_1.AD)
+		arg0_1.AD:Find("tabs/top_1"),
+		arg0_1.AD:Find("tabs/top_2"),
+		arg0_1.AD:Find("tabs/top_3"),
+		arg0_1.AD:Find("tabs/top_4")
 	}
-	arg0_1.btn = arg0_1:findTF("btn", arg0_1.AD)
-	arg0_1.furmiturebtn = arg0_1:findTF("furmiturebtn", arg0_1.btn)
-	arg0_1.commemoratebtn = arg0_1:findTF("commemoratebtn", arg0_1.btn)
-	arg0_1.equipmentbtn = arg0_1:findTF("equipmentbtn", arg0_1.btn)
+	arg0_1.btn = arg0_1.AD:Find("btn")
+	arg0_1.furmiturebtn = arg0_1.btn:Find("furmiturebtn")
+	arg0_1.commemoratebtn = arg0_1.btn:Find("commemoratebtn")
+	arg0_1.equipmentbtn = arg0_1.btn:Find("equipmentbtn")
 
-	arg0_1:findTF("left/Title", arg0_1.furmiturebtn):GetComponent(typeof(Image)):SetNativeSize()
-	arg0_1:findTF("left/Title", arg0_1.commemoratebtn):GetComponent(typeof(Image)):SetNativeSize()
-	arg0_1:findTF("left/Title", arg0_1.equipmentbtn):GetComponent(typeof(Image)):SetNativeSize()
+	arg0_1.furmiturebtn:Find("left/Title"):GetComponent(typeof(Image)):SetNativeSize()
+	arg0_1.commemoratebtn:Find("left/Title"):GetComponent(typeof(Image)):SetNativeSize()
+	arg0_1.equipmentbtn:Find("left/Title"):GetComponent(typeof(Image)):SetNativeSize()
 
-	arg0_1.boxTF = arg0_1:findTF("Box")
-	arg0_1.boxBG = arg0_1:findTF("BG", arg0_1.boxTF)
-	arg0_1.panel = arg0_1:findTF("Panel", arg0_1.boxTF)
-	arg0_1.infoTF = arg0_1:findTF("Info", arg0_1.panel)
-	arg0_1.boxCloseBtn = arg0_1:findTF("CloseBtn", arg0_1.infoTF)
-	arg0_1.Title = arg0_1:findTF("Title", arg0_1.infoTF)
+	arg0_1.boxTF = arg0_1._tf:Find("Box")
+	arg0_1.boxBG = arg0_1.boxTF:Find("BG")
+	arg0_1.panel = arg0_1.boxTF:Find("Panel")
+	arg0_1.infoTF = arg0_1.panel:Find("Info")
+	arg0_1.boxCloseBtn = arg0_1.infoTF:Find("CloseBtn")
+	arg0_1.Title = arg0_1.infoTF:Find("Title")
 
 	setText(arg0_1.Title, i18n("brs_reward_tip_1"))
 
-	arg0_1.boxIconTF = arg0_1:findTF("Icon/Mask/IconTpl", arg0_1.infoTF)
-	arg0_1.boxNameText = arg0_1:findTF("NameText", arg0_1.infoTF)
-	arg0_1.boxNumTF = arg0_1:findTF("Num", arg0_1.infoTF)
-	arg0_1.boxNumTip = arg0_1:findTF("Text", arg0_1.boxNumTF)
-	arg0_1.boxNumText = arg0_1:findTF("NumText", arg0_1.boxNumTF)
-	arg0_1.boxDescText = arg0_1:findTF("DescText", arg0_1.infoTF)
-	arg0_1.boxSrcText = arg0_1:findTF("SrcText", arg0_1.infoTF)
-	arg0_1.boxSrcContent = arg0_1:findTF("Content", arg0_1.panel)
-	arg0_1.boxSrcTpl = arg0_1:findTF("SrcTpl", arg0_1.boxSrcContent)
+	arg0_1.boxIconTF = arg0_1.infoTF:Find("Icon/Mask/IconTpl")
+	arg0_1.boxNameText = arg0_1.infoTF:Find("NameText")
+	arg0_1.boxNumTF = arg0_1.infoTF:Find("Num")
+	arg0_1.boxNumTip = arg0_1.boxNumTF:Find("Text")
+	arg0_1.boxNumText = arg0_1.boxNumTF:Find("NumText")
+	arg0_1.boxDescText = arg0_1.infoTF:Find("DescText")
+	arg0_1.boxSrcText = arg0_1.infoTF:Find("SrcText")
+	arg0_1.boxSrcContent = arg0_1.panel:Find("Content")
+	arg0_1.boxSrcTpl = arg0_1.boxSrcContent:Find("SrcTpl")
 
 	onButton(arg0_1, arg0_1.boxBG, function()
 		arg0_1:showBoxPanel(false)
@@ -105,8 +105,8 @@ end
 
 function var0_0.ResetTop(arg0_11)
 	for iter0_11 = 1, #arg0_11.table_Top do
-		setText(arg0_11:findTF("tabs/top_" .. iter0_11 .. "/Label", arg0_11.AD), i18n("yumia_award_" .. iter0_11))
-		setTextColor(arg0_11:findTF("tabs/top_" .. iter0_11 .. "/Label", arg0_11.AD), Color.NewHex("cfcfcf"))
+		setText(arg0_11.AD:Find("tabs/top_" .. iter0_11 .. "/Label"), i18n("yumia_award_" .. iter0_11))
+		setTextColor(arg0_11.AD:Find("tabs/top_" .. iter0_11 .. "/Label"), Color.NewHex("cfcfcf"))
 	end
 end
 
@@ -120,7 +120,7 @@ function var0_0.InitData(arg0_12)
 					arg0_12:DataList(iter0_12)
 				end, 0.08)
 				arg0_12:ResetTop()
-				setTextColor(arg0_12:findTF("tabs/top_" .. iter0_12 .. "/Label", arg0_12.AD), Color.NewHex("0a2e31"))
+				setTextColor(arg0_12.AD:Find("tabs/top_" .. iter0_12 .. "/Label"), Color.NewHex("0a2e31"))
 			end
 		end, SFX_PANEL)
 	end
@@ -156,8 +156,8 @@ function var0_0.DataList(arg0_15, arg1_15)
 end
 
 function var0_0.ShowCharaPage(arg0_19)
-	arg0_19.award = arg0_19:findTF("tpl", arg0_19.AD)
-	arg0_19.count = arg0_19:findTF("item_list/content", arg0_19.AD)
+	arg0_19.award = arg0_19.AD:Find("tpl")
+	arg0_19.count = arg0_19.AD:Find("item_list/content")
 	arg0_19.tabsList = UIItemList.New(arg0_19.count, arg0_19.award)
 
 	arg0_19.tabsList:make(function(arg0_20, arg1_20, arg2_20)
@@ -170,7 +170,7 @@ end
 
 function var0_0.OnUpdateItem(arg0_21, arg1_21, arg2_21)
 	local var0_21 = arg0_21.showDataList[arg1_21 + 1]
-	local var1_21 = arg0_21:findTF("icon_mask/icon", arg2_21)
+	local var1_21 = arg2_21:Find("icon_mask/icon")
 	local var2_21 = {
 		type = var0_21.config.type,
 		id = var0_21.config.drop_id
@@ -191,17 +191,17 @@ function var0_0.OnUpdateItem(arg0_21, arg1_21, arg2_21)
 		arg0_21:updateBoxPanel(var0_22)
 		arg0_21:showBoxPanel(true)
 	end, SFX_PANEL)
-	changeToScrollText(arg0_21:findTF("name_mask/name", arg2_21), Drop.New({
+	changeToScrollText(arg2_21:Find("name_mask/name"), Drop.New({
 		type = var0_21.config.type,
 		id = var0_21.config.drop_id
 	}):getName())
-	setText(arg0_21:findTF("owner/title", arg2_21), i18n("collect_page_got"))
-	setText(arg0_21:findTF("owner/Text", arg2_21), var0_21.count)
-	setText(arg0_21:findTF("owner/number", arg2_21), "/" .. var0_21.config.count)
+	setText(arg2_21:Find("owner/title"), i18n("collect_page_got"))
+	setText(arg2_21:Find("owner/Text"), var0_21.count)
+	setText(arg2_21:Find("owner/number"), "/" .. var0_21.config.count)
 
-	GetOrAddComponent(arg0_21:findTF("owner", arg2_21), typeof(CanvasGroup)).alpha = var0_21.count == var0_21.config.count and 0.5 or 1
+	GetOrAddComponent(arg2_21:Find("owner"), typeof(CanvasGroup)).alpha = var0_21.count == var0_21.config.count and 0.5 or 1
 
-	setActive(arg0_21:findTF("got", arg2_21), var0_21.count == var0_21.config.count)
+	setActive(arg2_21:Find("got"), var0_21.count == var0_21.config.count)
 end
 
 function var0_0.updateBoxPanel(arg0_23, arg1_23)
@@ -231,11 +231,11 @@ function var0_0.updateBoxPanel(arg0_23, arg1_23)
 			local var2_24 = var0_24[2]
 			local var3_24 = var0_24[3]
 
-			changeToScrollText(arg0_23:findTF("SrcText", arg2_24), var3_24)
+			changeToScrollText(arg2_24:Find("SrcText"), var3_24)
 
-			local var4_24 = arg0_23:findTF("GoBtn", arg2_24)
+			local var4_24 = arg2_24:Find("GoBtn")
 
-			setText(arg0_23:findTF("go", var4_24), i18n("brs_reward_tip_2"))
+			setText(var4_24:Find("go"), i18n("brs_reward_tip_2"))
 			onButton(arg0_23, var4_24, function()
 				arg0_23:DoSkip(var1_24, var2_24)
 				arg0_23:showBoxPanel(false)

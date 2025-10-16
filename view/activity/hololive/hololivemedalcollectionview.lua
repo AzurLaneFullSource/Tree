@@ -49,18 +49,18 @@ local var2_0 = {
 }
 
 function var0_0.FindUI(arg0_5)
-	arg0_5.bg = arg0_5:findTF("bg")
-	arg0_5.top = arg0_5:findTF("top")
-	arg0_5.backBtn = arg0_5:findTF("back", arg0_5.top)
-	arg0_5.helpBtn = arg0_5:findTF("help", arg0_5.top)
-	arg0_5.progressText = arg0_5:findTF("middle/board/progress")
-	arg0_5.taskScroll = arg0_5:findTF("middle/board/Scroll View")
-	arg0_5.taskScrollBar = arg0_5:findTF("middle/board/Scrollbar")
+	arg0_5.bg = arg0_5._tf:Find("bg")
+	arg0_5.top = arg0_5._tf:Find("top")
+	arg0_5.backBtn = arg0_5.top:Find("back")
+	arg0_5.helpBtn = arg0_5.top:Find("help")
+	arg0_5.progressText = arg0_5._tf:Find("middle/board/progress")
+	arg0_5.taskScroll = arg0_5._tf:Find("middle/board/Scroll View")
+	arg0_5.taskScrollBar = arg0_5._tf:Find("middle/board/Scrollbar")
 	arg0_5.taskListItems = CustomIndexLayer.Clone2Full(arg0_5.taskScroll:Find("Content"), #arg0_5.taskGroup)
-	arg0_5.medalListItems = CustomIndexLayer.Clone2Full(arg0_5:findTF("middle/console/grid"), 9)
-	arg0_5.medalImg = arg0_5:findTF("middle/console/slot"):GetComponent(typeof(Image))
-	arg0_5.medalGet = arg0_5:findTF("middle/console/get")
-	arg0_5.medalGot = arg0_5:findTF("middle/console/got")
+	arg0_5.medalListItems = CustomIndexLayer.Clone2Full(arg0_5._tf:Find("middle/console/grid"), 9)
+	arg0_5.medalImg = arg0_5._tf:Find("middle/console/slot"):GetComponent(typeof(Image))
+	arg0_5.medalGet = arg0_5._tf:Find("middle/console/get")
+	arg0_5.medalGot = arg0_5._tf:Find("middle/console/got")
 
 	for iter0_5 = 1, #arg0_5.taskGroup do
 		local var0_5 = LoadSprite("ui/HololiveMedalCollectionUI_atlas", var1_0[iter0_5])
@@ -89,7 +89,7 @@ function var0_0.AddListener(arg0_6)
 		})
 	end, SFX_PANEL)
 
-	local var0_6 = arg0_6:findTF("middle/board/arrow")
+	local var0_6 = arg0_6._tf:Find("middle/board/arrow")
 
 	onScroll(arg0_6, arg0_6.taskScroll, function(arg0_9)
 		setActive(var0_6, arg0_9.y > 0.001)
@@ -142,9 +142,9 @@ function var0_0.UpdateView(arg0_12)
 		local var3_12 = arg0_12.taskListItems[iter0_12]
 		local var4_12 = arg0_12.taskGroup[iter0_12]
 		local var5_12 = arg0_12.taskProxy:getTaskVO(var4_12)
-		local var6_12 = arg0_12:findTF("btn_go", var3_12)
-		local var7_12 = arg0_12:findTF("btn_get", var3_12)
-		local var8_12 = arg0_12:findTF("btn_got", var3_12)
+		local var6_12 = var3_12:Find("btn_go")
+		local var7_12 = var3_12:Find("btn_get")
+		local var8_12 = var3_12:Find("btn_got")
 		local var9_12 = table.contains(arg0_12.activeIDList, arg0_12.allIDList[iter0_12])
 		local var10_12
 		local var11_12 = 0
@@ -156,7 +156,7 @@ function var0_0.UpdateView(arg0_12)
 			local var15_12 = string.gsub(var14_12, "$1", var12_12)
 			local var16_12 = string.gsub(var15_12, "$2", var13_12)
 
-			setText(arg0_12:findTF("desc", var3_12), var16_12)
+			setText(var3_12:Find("desc"), var16_12)
 
 			var11_12 = var5_12:getTaskStatus()
 			var10_12 = var11_12 == 2 and arg0_12.materialGray or nil
@@ -174,7 +174,7 @@ function var0_0.UpdateView(arg0_12)
 			local var20_12 = string.gsub(var19_12, "$1", var18_12)
 			local var21_12 = string.gsub(var20_12, "$2", var17_12)
 
-			setText(arg0_12:findTF("desc", var3_12), var21_12)
+			setText(var3_12:Find("desc"), var21_12)
 
 			var11_12 = var9_12 and 2 or 0
 			var10_12 = arg0_12.materialGray

@@ -5,7 +5,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnInit(arg0_2)
-	arg0_2.favorPanelTF = arg0_2:findTF("favor_panel")
+	arg0_2.favorPanelTF = arg0_2._tf:Find("favor_panel")
 	arg0_2.favorPanelAnim = arg0_2.favorPanelTF:GetComponent(typeof(Animation))
 	arg0_2.favorPanelAnimEvent = arg0_2.favorPanelTF:GetComponent(typeof(DftAniEvent))
 
@@ -14,12 +14,12 @@ function var0_0.OnInit(arg0_2)
 	end)
 	setActive(arg0_2.favorPanelTF, false)
 
-	arg0_2.favorUIList = UIItemList.New(arg0_2:findTF("panel/bg/view/content", arg0_2.favorPanelTF), arg0_2:findTF("panel/bg/view/content/tpl", arg0_2.favorPanelTF))
-	arg0_2.favorCurTF = arg0_2:findTF("panel/bg/cur", arg0_2.favorPanelTF)
+	arg0_2.favorUIList = UIItemList.New(arg0_2.favorPanelTF:Find("panel/bg/view/content"), arg0_2.favorPanelTF:Find("panel/bg/view/content/tpl"))
+	arg0_2.favorCurTF = arg0_2.favorPanelTF:Find("panel/bg/cur")
 
 	arg0_2:OverlayPanel(arg0_2._tf, {
 		pbList = {
-			arg0_2:findTF("panel/bg", arg0_2.favorPanelTF)
+			arg0_2.favorPanelTF:Find("panel/bg")
 		}
 	})
 	arg0_2:addListener()
@@ -42,32 +42,32 @@ function var0_0.updateFavorPanel(arg0_7)
 
 	local var0_7 = arg0_7.char:GetFavor()
 
-	setText(arg0_7:findTF("lv", arg0_7.favorCurTF), var0_7.lv)
+	setText(arg0_7.favorCurTF:Find("lv"), var0_7.lv)
 
 	local var1_7 = arg0_7.char:GetFavorUpgradExp(var0_7.lv)
 	local var2_7 = var0_7.exp .. "/" .. var1_7
 
-	setText(arg0_7:findTF("progress", arg0_7.favorCurTF), i18n("child_favor_progress", var2_7))
-	setSlider(arg0_7:findTF("slider", arg0_7.favorCurTF), 0, 1, var0_7.exp / var1_7)
+	setText(arg0_7.favorCurTF:Find("progress"), i18n("child_favor_progress", var2_7))
+	setSlider(arg0_7.favorCurTF:Find("slider"), 0, 1, var0_7.exp / var1_7)
 	arg0_7.favorUIList:align(arg0_7.char:getConfig("favor_level") - 1)
 end
 
 function var0_0.updateFavorItem(arg0_8, arg1_8, arg2_8)
 	local var0_8 = arg1_8 + 1
 
-	setText(arg0_8:findTF("lv", arg2_8), var0_8 + 1)
+	setText(arg2_8:Find("lv"), var0_8 + 1)
 
 	local var1_8 = var0_8 < arg0_8.char:GetFavor().lv
 
-	setActive(arg0_8:findTF("lock", arg2_8), not var1_8)
-	setActive(arg0_8:findTF("unlock", arg2_8), var1_8)
+	setActive(arg2_8:Find("lock"), not var1_8)
+	setActive(arg2_8:Find("unlock"), var1_8)
 
 	if not var1_8 then
 		local var2_8 = arg0_8.char:GetFavorUpgradExp(var0_8)
 
-		setText(arg0_8:findTF("Text", arg2_8), i18n("child_favor_lock1", var0_8 + 1))
-		setTextColor(arg0_8:findTF("Text", arg2_8), Color.NewHex("F5F5F5"))
-		setTextColor(arg0_8:findTF("lv", arg2_8), Color.NewHex("F5F5F5"))
+		setText(arg2_8:Find("Text"), i18n("child_favor_lock1", var0_8 + 1))
+		setTextColor(arg2_8:Find("Text"), Color.NewHex("F5F5F5"))
+		setTextColor(arg2_8:Find("lv"), Color.NewHex("F5F5F5"))
 	else
 		local var3_8 = arg0_8.char:GetPerformByReplace(var0_8)
 
@@ -75,12 +75,12 @@ function var0_0.updateFavorItem(arg0_8, arg1_8, arg2_8)
 			local var4_8 = pg.child_performance[var3_8[1]].param
 			local var5_8 = arg0_8:getStoryTitle(var4_8)
 
-			setText(arg0_8:findTF("Text", arg2_8), var5_8)
+			setText(arg2_8:Find("Text"), var5_8)
 		end
 
-		setTextColor(arg0_8:findTF("Text", arg2_8), Color.NewHex("393A3C"))
-		setTextColor(arg0_8:findTF("lv", arg2_8), Color.NewHex("FFFFFF"))
-		onButton(arg0_8, arg0_8:findTF("unlock", arg2_8), function()
+		setTextColor(arg2_8:Find("Text"), Color.NewHex("393A3C"))
+		setTextColor(arg2_8:Find("lv"), Color.NewHex("FFFFFF"))
+		onButton(arg0_8, arg2_8:Find("unlock"), function()
 			pg.PerformMgr.GetInstance():PlayOne(var3_8[1])
 		end, SFX_PANEL)
 	end

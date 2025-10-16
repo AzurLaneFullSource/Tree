@@ -24,8 +24,8 @@ function var0_0.setPoint(arg0_3)
 end
 
 function var0_0.setGradeLabel(arg0_4)
-	local var0_4 = arg0_4:findTF("grade/Xyz/bg13")
-	local var1_4 = arg0_4:findTF("grade/Xyz/bg14")
+	local var0_4 = arg0_4._tf:Find("grade/Xyz/bg13")
+	local var1_4 = arg0_4._tf:Find("grade/Xyz/bg14")
 
 	setActive(var0_4, false)
 
@@ -43,7 +43,7 @@ function var0_0.rankAnimaFinish(arg0_5)
 	local var0_5 = LeanTween.delayedCall(1, System.Action(function()
 		arg0_5._stateFlag = var0_0.STATE_REPORTED
 
-		SetActive(arg0_5:findTF("jieuan01/tips", arg0_5._bg), true)
+		SetActive(arg0_5._bg:Find("jieuan01/tips"), true)
 	end))
 
 	table.insert(arg0_5._delayLeanList, var0_5.id)

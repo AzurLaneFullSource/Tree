@@ -15,8 +15,8 @@ var0_0.Buildings = {
 function var0_0.init(arg0_2)
 	var0_0.super.init(arg0_2)
 
-	arg0_2.top = arg0_2:findTF("top")
-	arg0_2._map = arg0_2:findTF("map")
+	arg0_2.top = arg0_2._tf:Find("top")
+	arg0_2._map = arg0_2._tf:Find("map")
 
 	for iter0_2 = 0, arg0_2._map.childCount - 1 do
 		local var0_2 = arg0_2._map:GetChild(iter0_2)
@@ -25,9 +25,9 @@ function var0_0.init(arg0_2)
 		arg0_2["map_" .. var1_2] = var0_2
 	end
 
-	arg0_2._middle = arg0_2:findTF("middle")
+	arg0_2._middle = arg0_2._tf:Find("middle")
 	arg0_2._shipTpl = arg0_2._map:Find("ship")
-	arg0_2._upper = arg0_2:findTF("upper")
+	arg0_2._upper = arg0_2._tf:Find("upper")
 
 	for iter1_2 = 0, arg0_2._upper.childCount - 1 do
 		local var2_2 = arg0_2._upper:GetChild(iter1_2)
@@ -46,13 +46,13 @@ function var0_0.init(arg0_2)
 end
 
 function var0_0.didEnter(arg0_3)
-	onButton(arg0_3, arg0_3:findTF("top/back"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/back"), function()
 		arg0_3:emit(var0_0.ON_BACK)
 	end, SFX_CANCEL)
-	onButton(arg0_3, arg0_3:findTF("top/home"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/home"), function()
 		arg0_3:emit(var0_0.ON_HOME)
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3:findTF("top/help"), function()
+	onButton(arg0_3, arg0_3._tf:Find("top/help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_xinnian2022_feast.tip

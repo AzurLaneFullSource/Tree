@@ -4,25 +4,25 @@ local var2_0 = 18
 
 function var0_0.OnInit(arg0_1)
 	arg0_1.icons = {
-		arg0_1:findTF("AD/bg/npc1"),
-		arg0_1:findTF("AD/bg/npc2"),
-		arg0_1:findTF("AD/bg/npc3"),
-		arg0_1:findTF("AD/bg/npc4"),
-		arg0_1:findTF("AD/bg/npc5"),
-		arg0_1:findTF("AD/bg/npc6"),
-		arg0_1:findTF("AD/bg/npc7")
+		arg0_1._tf:Find("AD/bg/npc1"),
+		arg0_1._tf:Find("AD/bg/npc2"),
+		arg0_1._tf:Find("AD/bg/npc3"),
+		arg0_1._tf:Find("AD/bg/npc4"),
+		arg0_1._tf:Find("AD/bg/npc5"),
+		arg0_1._tf:Find("AD/bg/npc6"),
+		arg0_1._tf:Find("AD/bg/npc7")
 	}
 	arg0_1.opens = {
-		arg0_1:findTF("AD/bg/open1"),
-		arg0_1:findTF("AD/bg/open2"),
-		arg0_1:findTF("AD/bg/open3"),
-		arg0_1:findTF("AD/bg/open4"),
-		arg0_1:findTF("AD/bg/open5"),
-		arg0_1:findTF("AD/bg/open6"),
-		arg0_1:findTF("AD/bg/open7")
+		arg0_1._tf:Find("AD/bg/open1"),
+		arg0_1._tf:Find("AD/bg/open2"),
+		arg0_1._tf:Find("AD/bg/open3"),
+		arg0_1._tf:Find("AD/bg/open4"),
+		arg0_1._tf:Find("AD/bg/open5"),
+		arg0_1._tf:Find("AD/bg/open6"),
+		arg0_1._tf:Find("AD/bg/open7")
 	}
-	arg0_1.helpBtn = arg0_1:findTF("AD/help")
-	arg0_1.goBtn = arg0_1:findTF("AD/go")
+	arg0_1.helpBtn = arg0_1._tf:Find("AD/help")
+	arg0_1.goBtn = arg0_1._tf:Find("AD/go")
 end
 
 function var0_0.SetData(arg0_2)

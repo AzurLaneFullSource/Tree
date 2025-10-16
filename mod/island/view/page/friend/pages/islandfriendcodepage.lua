@@ -6,17 +6,17 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.enterBtn = arg0_2:findTF("frame/visit")
-	arg0_2.saveBtn = arg0_2:findTF("frame/like")
-	arg0_2.inputTr = arg0_2:findTF("frame/input")
-	arg0_2.uiItemlist = UIItemList.New(arg0_2:findTF("frame/list"), arg0_2:findTF("frame/list/tpl"))
-	arg0_2.tipTxt = arg0_2:findTF("frame/sub_title/Text"):GetComponent(typeof(Text))
+	arg0_2.enterBtn = arg0_2._tf:Find("frame/visit")
+	arg0_2.saveBtn = arg0_2._tf:Find("frame/like")
+	arg0_2.inputTr = arg0_2._tf:Find("frame/input")
+	arg0_2.uiItemlist = UIItemList.New(arg0_2._tf:Find("frame/list"), arg0_2._tf:Find("frame/list/tpl"))
+	arg0_2.tipTxt = arg0_2._tf:Find("frame/sub_title/Text"):GetComponent(typeof(Text))
 	arg0_2.frequentlyUsedList = arg0_2:GetSaveCodeList()
 
-	setText(arg0_2:findTF("frame/title/Text"), i18n("island_input_code_tip"))
-	setText(arg0_2:findTF("frame/input/Text"), i18n("island_input_code_tip_1"))
-	setText(arg0_2:findTF("frame/like/Text"), i18n("island_set_like"))
-	setText(arg0_2:findTF("frame/visit/Text"), i18n("island_btn_label_visit"))
+	setText(arg0_2._tf:Find("frame/title/Text"), i18n("island_input_code_tip"))
+	setText(arg0_2._tf:Find("frame/input/Text"), i18n("island_input_code_tip_1"))
+	setText(arg0_2._tf:Find("frame/like/Text"), i18n("island_set_like"))
+	setText(arg0_2._tf:Find("frame/visit/Text"), i18n("island_btn_label_visit"))
 end
 
 function var0_0.OnInit(arg0_3)

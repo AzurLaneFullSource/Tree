@@ -16,7 +16,7 @@ end
 function var0_0.init(arg0_2)
 	arg0_2:BlurPanel(arg0_2._tf)
 
-	arg0_2.window = arg0_2:findTF("window")
+	arg0_2.window = arg0_2._tf:Find("window")
 
 	setText(arg0_2.window:Find("top/bg/infomation/title"), i18n("words_information"))
 
@@ -84,7 +84,7 @@ function var0_0.init(arg0_2)
 	end
 
 	arg0_2.itemTF = arg0_2.window:Find("item")
-	arg0_2.operatePanel = arg0_2:findTF("operate")
+	arg0_2.operatePanel = arg0_2._tf:Find("operate")
 	arg0_2.countTF = arg0_2.operatePanel:Find("item/left/own/Text"):GetComponent(typeof(Text))
 	arg0_2.keepFateTog = arg0_2.operatePanel:Find("got/keep_tog")
 
@@ -324,7 +324,7 @@ function var0_0.closeView(arg0_21)
 end
 
 function var0_0.didEnter(arg0_22)
-	local var0_22 = arg0_22:findTF("OpenBox(Clone)")
+	local var0_22 = arg0_22._tf:Find("OpenBox(Clone)")
 
 	if var0_22 then
 		SetActive(var0_22, false)
@@ -701,7 +701,7 @@ function var0_0.PlayOpenBox(arg0_55, arg1_55, arg2_55)
 	end
 
 	local var0_55 = {}
-	local var1_55 = arg0_55:findTF(arg1_55 .. "(Clone)")
+	local var1_55 = arg0_55._tf:Find(arg1_55 .. "(Clone)")
 
 	if var1_55 then
 		arg0_55[arg1_55] = go(var1_55)
@@ -754,22 +754,22 @@ end
 
 function var0_0.inOutAnim(arg0_61, arg1_61, arg2_61)
 	if arg1_61 then
-		local var0_61 = arg0_61:findTF("window/bg_decorations"):GetComponent(typeof(Animation))
+		local var0_61 = arg0_61._tf:Find("window/bg_decorations"):GetComponent(typeof(Animation))
 
 		var0_61:Stop()
 		var0_61:Play("anim_window_bg")
 
-		local var1_61 = arg0_61:findTF("window/top"):GetComponent(typeof(Animation))
+		local var1_61 = arg0_61._tf:Find("window/top"):GetComponent(typeof(Animation))
 
 		var1_61:Stop()
 		var1_61:Play("anim_top")
 
-		local var2_61 = arg0_61:findTF("window"):GetComponent(typeof(Animation))
+		local var2_61 = arg0_61._tf:Find("window"):GetComponent(typeof(Animation))
 
 		var2_61:Stop()
 		var2_61:Play("anim_content")
 
-		local var3_61 = arg0_61:findTF("bg"):GetComponent(typeof(Animation))
+		local var3_61 = arg0_61._tf:Find("bg"):GetComponent(typeof(Animation))
 
 		var3_61:Stop()
 		var3_61:Play("anim_bg_plus")

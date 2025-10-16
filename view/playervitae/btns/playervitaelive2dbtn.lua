@@ -43,97 +43,106 @@ function var0_0.RequesetLive2dRes(arg0_6)
 end
 
 function var0_0.StartCheckUpdate(arg0_7, arg1_7)
-	local var0_7 = BundleWizard.Inst:GetGroupMgr("L2D")
-	local var1_7 = var0_7.state
+	local var0_7 = BundleWizard.Inst:GetGroupMgr("L2D"):CheckF(arg1_7)
 
-	if var1_7 == DownloadState.None or var1_7 == DownloadState.CheckFailure then
-		var0_7:CheckD()
-	end
-
-	local var2_7 = var0_7:CheckF(arg1_7)
-
-	if var2_7 == DownloadState.CheckToUpdate or var2_7 == DownloadState.UpdateFailure then
+	if var0_7 == DownloadState.CheckToUpdate or var0_7 == DownloadState.UpdateFailure then
 		arg0_7:ShowOrHide(true)
 		arg0_7:UpdateBtnState(false, false)
 		onButton(arg0_7, arg0_7.tf, function()
-			VersionMgr.Inst:RequestUIForUpdateF("L2D", arg1_7, true)
+			if arg0_7.isDownloading then
+				return
+			end
+
+			local var0_8 = "L2D"
+			local var1_8 = {
+				arg1_7
+			}
+			local var2_8 = var0_8 .. arg1_7
+			local var3_8 = GroupHelper.CalcSizeWithFileArr(var0_8, var1_8)
+			local var4_8 = HashUtil.BytesToString(var3_8)
+
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				type = MSGBOX_TYPE_NORMAL,
+				content = string.format(i18n("group_download_tip", var4_8)),
+				onYes = function()
+					local function var0_9(arg0_10, arg1_10)
+						if not arg0_7.isDisposed then
+							local var0_10 = checkABExist(arg1_7)
+
+							arg0_7:ShowOrHide(var0_10)
+
+							if var0_10 then
+								arg0_7:UpdateBtnState(false, false)
+								var0_0.super.InitBtn(arg0_7)
+							end
+						end
+
+						arg0_7.isDownloading = false
+					end
+
+					local var1_9 = BundleWizardUpdater.Inst:GetFileList(var0_8, var1_8)
+					local var2_9 = BundleWizardUpdater.Inst:CreateListInfo(var2_8, var1_9, nil, var0_9, nil)
+
+					BundleWizardUpdater.Inst:StartUpdate(var2_9)
+
+					arg0_7.isDownloading = true
+				end
+			})
 		end, SFX_PANEL)
-	elseif var2_7 == DownloadState.Updating then
-		arg0_7:ShowOrHide(true)
-		arg0_7:UpdateBtnState(true, false)
-		removeOnButton(arg0_7.tf)
 	else
-		local var3_7 = checkABExist(arg1_7)
+		local var1_7 = checkABExist(arg1_7)
 
-		arg0_7:ShowOrHide(var3_7)
+		arg0_7:ShowOrHide(var1_7)
 
-		if var3_7 then
+		if var1_7 then
 			arg0_7:UpdateBtnState(false, false)
 			var0_0.super.InitBtn(arg0_7)
 		end
 	end
-
-	if arg0_7.live2dTimer then
-		arg0_7.live2dTimer:Stop()
-
-		arg0_7.live2dTimer = nil
-	end
-
-	if var2_7 == DownloadState.CheckToUpdate or var2_7 == DownloadState.UpdateFailure or var2_7 == DownloadState.Updating then
-		arg0_7.live2dTimer = Timer.New(function()
-			arg0_7:StartCheckUpdate(arg1_7)
-		end, 0.5, 1)
-
-		arg0_7.live2dTimer:Start()
-	end
 end
 
-function var0_0.GetDefaultValue(arg0_10)
-	local var0_10 = getProxy(SettingsProxy):getCharacterSetting(arg0_10.ship.id, SHIP_FLAG_L2D)
+function var0_0.GetDefaultValue(arg0_11)
+	local var0_11 = getProxy(SettingsProxy):getCharacterSetting(arg0_11.ship.id, SHIP_FLAG_L2D)
 
 	if Live2dConst.GetLive2DArm32MatchAble() then
-		if var0_10 then
-			arg0_10:OnSwitch(false)
+		if var0_11 then
+			arg0_11:OnSwitch(false)
 		end
 
 		return false
 	end
 
-	return getProxy(SettingsProxy):getCharacterSetting(arg0_10.ship.id, SHIP_FLAG_L2D)
+	return getProxy(SettingsProxy):getCharacterSetting(arg0_11.ship.id, SHIP_FLAG_L2D)
 end
 
-function var0_0.OnSwitch(arg0_11, arg1_11)
-	if Live2dConst.GetLive2DArm32MatchAble() and arg1_11 then
+function var0_0.OnSwitch(arg0_12, arg1_12)
+	if Live2dConst.GetLive2DArm32MatchAble() and arg1_12 then
 		Live2dConst.ShowLive2DArm32Tips()
 
 		return false
 	end
 
-	if ShipSkin.GetChangeSkinData(arg0_11.ship:getSkinId()) and true or false then
-		getProxy(SettingsProxy):setCharacterSetting(arg0_11.ship.id, SHIP_FLAG_SP, arg1_11)
+	if ShipSkin.GetChangeSkinData(arg0_12.ship:getSkinId()) and true or false then
+		getProxy(SettingsProxy):setCharacterSetting(arg0_12.ship.id, SHIP_FLAG_SP, arg1_12)
 	end
 
-	getProxy(SettingsProxy):setCharacterSetting(arg0_11.ship.id, SHIP_FLAG_L2D, arg1_11)
+	getProxy(SettingsProxy):setCharacterSetting(arg0_12.ship.id, SHIP_FLAG_L2D, arg1_12)
 
 	return true
 end
 
-function var0_0.OnDispose(arg0_12)
-	if arg0_12.live2dTimer then
-		arg0_12.live2dTimer:Stop()
-
-		arg0_12.live2dTimer = nil
-	end
+function var0_0.OnDispose(arg0_13)
+	arg0_13.isDisposed = true
 end
 
-function var0_0.Load(arg0_13, arg1_13)
-	var0_0.super.Load(arg0_13, arg1_13)
+function var0_0.Load(arg0_14, arg1_14)
+	var0_0.super.Load(arg0_14, arg1_14)
 
-	if arg0_13:IsHrzType() then
-		arg1_13.gameObject.name = "live2d"
+	if arg0_14:IsHrzType() then
+		arg1_14.gameObject.name = "live2d"
 	end
 
-	arg0_13.tf:GetComponent(typeof(Image)):SetNativeSize()
+	arg0_14.tf:GetComponent(typeof(Image)):SetNativeSize()
 end
 
 return var0_0

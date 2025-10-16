@@ -1,12 +1,12 @@
 local var0_0 = class("TeaTimePuzzlePage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.bg = arg0_1._tf:Find("AD")
 	arg0_1.total = 15
-	arg0_1.Text = arg0_1:findTF("AD/Text"):GetComponent(typeof(Text))
-	arg0_1.container = arg0_1:findTF("AD/container")
-	arg0_1.GOBtn = arg0_1:findTF("AD/go")
-	arg0_1.got = arg0_1:findTF("AD/got")
+	arg0_1.Text = arg0_1._tf:Find("AD/Text"):GetComponent(typeof(Text))
+	arg0_1.container = arg0_1._tf:Find("AD/container")
+	arg0_1.GOBtn = arg0_1._tf:Find("AD/go")
+	arg0_1.got = arg0_1._tf:Find("AD/got")
 end
 
 function var0_0.OnFirstFlush(arg0_2)

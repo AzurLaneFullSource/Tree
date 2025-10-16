@@ -27,8 +27,15 @@ function var0_0.OnLoaded(arg0_2)
 	setText(var0_2:Find("normal/cost/title"), i18n("island_tech_dev_cost"))
 	setText(var0_2:Find("studying/Text"), i18n("island_tech_dev_starting"))
 	setText(var0_2:Find("receive/Text"), i18n("island_tech_dev_success"))
-	setText(var0_2:Find("finished/Text"), i18n("island_tech_dev_finish"))
+	setText(var0_2:Find("finished/normal/Text"), i18n("island_tech_dev_finish"))
 
+	arg0_2.noramlFinsh = var0_2:Find("finished/normal")
+	arg0_2.mapFinsh = var0_2:Find("finished/map")
+	arg0_2.mapFinshIcon = arg0_2.mapFinsh:Find("mapicon")
+	arg0_2.mapFinshName = arg0_2.mapFinsh:Find("maptitle/name")
+	arg0_2.npcTF = arg0_2.mapFinsh:Find("npc")
+	arg0_2.npcIcon = arg0_2.npcTF:Find("npcicon")
+	arg0_2.npcName = arg0_2.npcTF:Find("npcName")
 	arg0_2.statusTFs = {
 		[IslandTechnology.STATUS.LOCK] = var0_2:Find("lock"),
 		[IslandTechnology.STATUS.UNLOCK] = var0_2:Find("unlock"),
@@ -40,7 +47,6 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.costTF = arg0_2.panel:Find("status/normal/cost")
 	arg0_2.costUIList = UIItemList.New(arg0_2.costTF:Find("list"), arg0_2.costTF:Find("list/tpl"))
 
-	setText(arg0_2._tf:Find("panel/desc/name"), i18n("island_tech_detail_desctitle"))
 	setText(arg0_2._tf:Find("panel/unlock/title"), i18n("island_tech_detail_unlocktitle"))
 end
 
@@ -74,6 +80,14 @@ function var0_0.OnInit(arg0_3)
 			else
 				setText(var2_6, (var1_6 < var0_6.count and setColorStr(var1_6, "#FF6767") or var1_6) .. "/" .. var0_6.count)
 			end
+
+			onButton(arg0_3, arg2_6, function()
+				arg0_3.contextData:ShowMsgBox({
+					title = i18n("island_word_desc"),
+					type = IslandMsgBox.TYPE_COMMON_DROP_DESCRIBE,
+					dropData = var0_6
+				})
+			end)
 		end
 	end)
 
@@ -81,201 +95,244 @@ function var0_0.OnInit(arg0_3)
 	arg0_3.baseEffectSpeed = pg.island_set.base_efficiency.key_value_int
 end
 
-function var0_0.Flush(arg0_7)
-	arg0_7:StopTimer()
+function var0_0.Flush(arg0_8)
+	arg0_8:StopTimer()
 
-	local var0_7 = getProxy(IslandProxy):GetIsland()
+	local var0_8 = getProxy(IslandProxy):GetIsland()
 
-	arg0_7.buildingAgency = var0_7:GetBuildingAgency()
-	arg0_7.techAgency = var0_7:GetTechnologyAgency()
-	arg0_7.inventoryAgency = var0_7:GetInventoryAgency()
-	arg0_7.showTechVO = arg0_7.techAgency:GetTechnology(arg0_7.configId)
+	arg0_8.buildingAgency = var0_8:GetBuildingAgency()
+	arg0_8.techAgency = var0_8:GetTechnologyAgency()
+	arg0_8.inventoryAgency = var0_8:GetInventoryAgency()
+	arg0_8.showTechVO = arg0_8.techAgency:GetTechnology(arg0_8.configId)
 
-	LoadImageSpriteAsync("island/IslandTechnology/" .. arg0_7.showTechVO:getConfig("tech_icon"), arg0_7.iconTF, true)
-	setText(arg0_7.nameTF, arg0_7.showTechVO:getConfig("tech_name"))
-	setText(arg0_7.descTF, arg0_7.showTechVO:getConfig("tech_desc"))
+	LoadImageSpriteAsync("island/IslandTechnology/" .. arg0_8.showTechVO:getConfig("tech_icon"), arg0_8.iconTF, true)
+	setText(arg0_8.nameTF, arg0_8.showTechVO:getConfig("tech_name"))
+	setText(arg0_8.descTF, arg0_8.showTechVO:getConfig("tech_desc"))
 
-	local var1_7 = arg0_7.showTechVO:GetFormulaId()
-	local var2_7 = math.floor(pg.island_formula[var1_7].workload / arg0_7.baseEffectSpeed)
+	local var1_8 = arg0_8.showTechVO:GetFormulaId()
+	local var2_8 = math.floor(pg.island_formula[var1_8].workload / arg0_8.baseEffectSpeed)
 
-	setText(arg0_7.normalTimeTextTF, arg0_7.timeMgr:DescCDTime(var2_7))
+	setText(arg0_8.normalTimeTextTF, arg0_8.timeMgr:DescCDTime(var2_8))
 
-	arg0_7.unlockCondList = Clone(arg0_7.showTechVO:getConfig("sys_unlock"))
+	arg0_8.unlockCondList = Clone(arg0_8.showTechVO:getConfig("sys_unlock"))
 
-	local var3_7 = arg0_7.showTechVO:getConfig("island_level")
+	local var3_8 = arg0_8.showTechVO:getConfig("island_level")
 
-	if var3_7 ~= 0 then
-		table.insert(arg0_7.unlockCondList, 1, {
+	if var3_8 ~= 0 then
+		table.insert(arg0_8.unlockCondList, 1, {
 			0,
-			var3_7
+			var3_8
 		})
 	end
 
-	arg0_7.unlockUIList:align(#arg0_7.unlockCondList)
+	arg0_8.unlockUIList:align(#arg0_8.unlockCondList)
 
-	local var4_7 = arg0_7.showTechVO:GetStatus()
+	local var4_8 = arg0_8.showTechVO:GetStatus()
 
-	for iter0_7, iter1_7 in pairs(arg0_7.statusTFs) do
-		setActive(iter1_7, iter0_7 == var4_7)
+	for iter0_8, iter1_8 in pairs(arg0_8.statusTFs) do
+		setActive(iter1_8, iter0_8 == var4_8)
 	end
 
-	local var5_7 = var4_7 == IslandTechnology.STATUS.LOCK or var4_7 == IslandTechnology.STATUS.UNLOCK
+	local var5_8 = var4_8 == IslandTechnology.STATUS.LOCK or var4_8 == IslandTechnology.STATUS.UNLOCK
 
-	setActive(arg0_7.unlockTF, var5_7)
-	setActive(arg0_7.descPanel, not var5_7)
+	setActive(arg0_8.unlockTF, var5_8)
+	setActive(arg0_8.descPanel, not var5_8)
 
-	arg0_7.costList = arg0_7.showTechVO:GetCostItems()
+	arg0_8.costList = arg0_8.showTechVO:GetCostItems()
 
-	arg0_7.costUIList:align(#arg0_7.costList)
-	switch(var4_7, {
+	arg0_8.costUIList:align(#arg0_8.costList)
+	setText(arg0_8._tf:Find("panel/desc/name"), arg0_8.showTechVO:getConfig("complete_title"))
+	switch(var4_8, {
 		[IslandTechnology.STATUS.LOCK] = function()
-			onButton(arg0_7, arg0_7.statusTFs[var4_7], function()
+			onButton(arg0_8, arg0_8.statusTFs[var4_8], function()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("island_tech_unlock_tip"))
 			end, SFX_PANEL)
 		end,
 		[IslandTechnology.STATUS.UNLOCK] = function()
-			onButton(arg0_7, arg0_7.statusTFs[var4_7], function()
-				arg0_7:emit(IslandMediator.ON_UNLOCK_TECH, arg0_7.showTechVO.id)
+			onButton(arg0_8, arg0_8.statusTFs[var4_8], function()
+				arg0_8:emit(IslandMediator.ON_UNLOCK_TECH, arg0_8.showTechVO.id)
 			end, SFX_PANEL)
 		end,
 		[IslandTechnology.STATUS.NORMAL] = function()
-			setGray(arg0_7.statusTFs[var4_7], not arg0_7:CheckCost(), false)
-			onButton(arg0_7, arg0_7.statusTFs[var4_7], function()
-				if not arg0_7:CheckCost() then
+			setGray(arg0_8.statusTFs[var4_8], not arg0_8:CheckCost(), false)
+			onButton(arg0_8, arg0_8.statusTFs[var4_8], function()
+				if not arg0_8:CheckCost() then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("island_production_cost_notenough"))
 
 					return
 				end
 
-				if not arg0_7.techAgency:GetEmptySlotId() then
+				if not arg0_8.techAgency:GetEmptySlotId() then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("island_tech_no_slot"))
 
 					return
 				end
 
-				if arg0_7.showTechVO:IsAutoType() then
-					existCall(arg0_7.contextData.onFinishImmd, arg0_7.showTechVO.id)
+				if arg0_8.showTechVO:IsAutoType() then
+					existCall(arg0_8.contextData.onFinishImmd, arg0_8.showTechVO.id)
 				else
-					existCall(arg0_7.contextData.onSelecteShip)
+					existCall(arg0_8.contextData.onSelecteShip, arg0_8.showTechVO:GetFormulaId())
 				end
 			end, SFX_PANEL)
 		end,
 		[IslandTechnology.STATUS.STUDYING] = function()
-			onButton(arg0_7, arg0_7.statusTFs[var4_7]:Find("ticket"), function()
-				existCall(arg0_7.contextData.openTicketPage, arg0_7.showTechVO:GetSlotId())
+			onButton(arg0_8, arg0_8.statusTFs[var4_8]:Find("ticket"), function()
+				existCall(arg0_8.contextData.openTicketPage, arg0_8.showTechVO:GetSlotId())
 			end, SFX_PANEL)
 		end,
 		[IslandTechnology.STATUS.RECEIVE] = function()
-			onButton(arg0_7, arg0_7.statusTFs[var4_7], function()
-				arg0_7:emit(IslandMediator.GET_DELEGATION_AWARD, arg0_7.placeId, arg0_7.showTechVO:GetSlotId(), 2, function()
-					existCall(arg0_7.contextData.onGetAwardDone, arg0_7.showTechVO.id)
+			onButton(arg0_8, arg0_8.statusTFs[var4_8], function()
+				arg0_8:emit(IslandMediator.GET_DELEGATION_AWARD, arg0_8.placeId, arg0_8.showTechVO:GetSlotId(), 2, function()
+					existCall(arg0_8.contextData.onGetAwardDone, arg0_8.showTechVO.id)
 				end)
 			end, SFX_PANEL)
+		end,
+		[IslandTechnology.STATUS.FINISHED] = function()
+			local var0_20 = arg0_8.showTechVO:getConfig("complete_map_id")
+
+			if var0_20 == 0 then
+				setActive(arg0_8.noramlFinsh, true)
+				setActive(arg0_8.mapFinsh, false)
+
+				return
+			end
+
+			setActive(arg0_8.noramlFinsh, false)
+			setActive(arg0_8.mapFinsh, true)
+
+			local var1_20 = var0_20
+
+			LoadImageSpriteAtlasAsync("island/IslandMapIcon/" .. var1_20, "", arg0_8.mapFinshIcon)
+			setText(arg0_8.mapFinshName, pg.island_map[var1_20].name)
+
+			local var2_20 = arg0_8.showTechVO:getConfig("complete_character_id")
+
+			if var2_20 == "" or #var2_20 == 0 then
+				setActive(arg0_8.npcTF, false)
+
+				return
+			end
+
+			setActive(arg0_8.npcTF, true)
+
+			local var3_20 = pg.island_unit_character[var2_20[1]]
+
+			GetImageSpriteFromAtlasAsync("island/IslandShipIcon/" .. var3_20.IslandShipIcon, "", arg0_8.npcIcon)
+			setText(arg0_8.npcName, var3_20.name)
 		end
 	}, function()
 		return
 	end)
-	arg0_7:StartTimer()
-	arg0_7:UpdateTime()
-	setActive(arg0_7.selectedTF, arg0_7.selectedItemPos)
+	arg0_8:StartTimer()
+	arg0_8:UpdateTime()
+	setActive(arg0_8.selectedTF, arg0_8.selectedItemPos)
 
-	if arg0_7.selectedItemPos then
-		arg0_7:FlushSelectedItem()
+	if arg0_8.selectedItemPos then
+		arg0_8:FlushSelectedItem()
 	end
 end
 
-function var0_0.CheckCost(arg0_20)
-	return underscore.all(arg0_20.costList or {}, function(arg0_21)
-		return arg0_20.inventoryAgency:GetOwnCount(arg0_21.id) >= arg0_21.count
+function var0_0.CheckCost(arg0_22)
+	return underscore.all(arg0_22.costList or {}, function(arg0_23)
+		return arg0_22.inventoryAgency:GetOwnCount(arg0_23.id) >= arg0_23.count
 	end)
 end
 
-function var0_0.FlushSelectedItem(arg0_22)
-	setAnchoredPosition(arg0_22.selectedTF, arg0_22.selectedItemPos)
-	setActive(arg0_22.selectedTF:Find("selected"), true)
+function var0_0.FlushSelectedItem(arg0_24)
+	setAnchoredPosition(arg0_24.selectedTF, arg0_24.selectedItemPos)
+	setActive(arg0_24.selectedTF:Find("selected"), true)
 
-	arg0_22.selectedTF.name = arg0_22.configId
+	arg0_24.selectedTF.name = arg0_24.configId
 
-	local var0_22 = arg0_22.techAgency:GetTechnology(arg0_22.configId)
+	local var0_24 = arg0_24.techAgency:GetTechnology(arg0_24.configId)
 
-	IslandTechTreePanel.SetTechName(arg0_22.selectedTF:Find("name"), var0_22:getConfig("tech_name"))
+	IslandTechTreePanel.SetTechName(arg0_24.selectedTF:Find("name"), var0_24:getConfig("tech_name"))
 
-	local var1_22 = var0_22:GetStatus()
-	local var2_22 = var1_22 == IslandTechnology.STATUS.FINISHED
+	local var1_24 = var0_24:GetStatus()
+	local var2_24 = var1_24 == IslandTechnology.STATUS.FINISHED
 
-	setTextColor(arg0_22.selectedTF:Find("name/Text"), Color.NewHex(var2_22 and "1b3650" or "ffffff"))
-	setTextColor(arg0_22.selectedTF:Find("name/ScrollText"), Color.NewHex(var2_22 and "1b3650" or "ffffff"))
-	LoadImageSpriteAsync("island/IslandTechnology/" .. var0_22:getConfig("tech_icon"), arg0_22.selectedTF:Find("icon"), true)
-	setActive(arg0_22.selectedTF:Find("icon"), var1_22 ~= IslandTechnology.STATUS.STUDYING and var1_22 ~= IslandTechnology.STATUS.RECEIVE)
-	setImageColor(arg0_22.selectedTF:Find("icon"), Color.NewHex(var2_22 and "455a81" or "ffffff"))
-	eachChild(arg0_22.selectedTF:Find("back"), function(arg0_23)
-		setActive(arg0_23, arg0_23.name == var1_22)
+	setTextColor(arg0_24.selectedTF:Find("name/Text"), Color.NewHex(var2_24 and "1b3650" or "ffffff"))
+	setTextColor(arg0_24.selectedTF:Find("name/ScrollText"), Color.NewHex(var2_24 and "1b3650" or "ffffff"))
+	LoadImageSpriteAsync("island/IslandTechnology/" .. var0_24:getConfig("tech_icon"), arg0_24.selectedTF:Find("icon"), true)
+	setActive(arg0_24.selectedTF:Find("icon"), var1_24 ~= IslandTechnology.STATUS.STUDYING and var1_24 ~= IslandTechnology.STATUS.RECEIVE)
+	setImageColor(arg0_24.selectedTF:Find("icon"), Color.NewHex(var2_24 and "455a81" or "ffffff"))
+	eachChild(arg0_24.selectedTF:Find("back"), function(arg0_25)
+		setActive(arg0_25, arg0_25.name == var1_24)
 	end)
-	setActive(arg0_22.selectedTF:Find("back/normal"), not var2_22 and var1_22 ~= IslandTechnology.STATUS.STUDYING)
-	eachChild(arg0_22.selectedTF:Find("front"), function(arg0_24)
-		setActive(arg0_24, arg0_24.name == var1_22)
+	setActive(arg0_24.selectedTF:Find("back/normal"), not var2_24 and var1_24 ~= IslandTechnology.STATUS.STUDYING)
+	eachChild(arg0_24.selectedTF:Find("front"), function(arg0_26)
+		setActive(arg0_26, arg0_26.name == var1_24)
 	end)
 end
 
-function var0_0.Show(arg0_25, arg1_25, arg2_25)
-	var0_0.super.Show(arg0_25)
+function var0_0.Show(arg0_27, arg1_27, arg2_27)
+	var0_0.super.Show(arg0_27)
 
-	arg0_25.configId = arg1_25
-	arg0_25.timeMgr = pg.TimeMgr.GetInstance()
-	arg0_25.selectedItemPos = arg2_25
+	arg0_27.configId = arg1_27
+	arg0_27.timeMgr = pg.TimeMgr.GetInstance()
+	arg0_27.selectedItemPos = arg2_27
 
-	arg0_25:Flush()
-	arg0_25:OverlayPanel(arg0_25._tf)
+	arg0_27:Flush()
+	arg0_27:OverlayPanel(arg0_27._tf)
 end
 
-function var0_0.OnShipSelected(arg0_26, arg1_26)
-	local var0_26 = arg0_26.techAgency:GetEmptySlotId()
-	local var1_26 = arg0_26.showTechVO:GetFormulaId()
+function var0_0.OnShipSelected(arg0_28, arg1_28)
+	local var0_28 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipById(arg1_28)
+	local var1_28 = arg0_28.showTechVO:GetFormulaId()
 
-	arg0_26:emit(IslandMediator.START_DELEGATION, arg0_26.placeId, var0_26, arg1_26, var1_26, 1)
+	if pg.island_formula[var1_28].stamina_cost > var0_28:GetCurrentEnergy() then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("island_production_cost_notenough"))
+
+		return
+	end
+
+	local var2_28 = arg0_28.techAgency:GetEmptySlotId()
+	local var3_28 = arg0_28.showTechVO:GetFormulaId()
+
+	arg0_28:emit(IslandMediator.START_DELEGATION, arg0_28.placeId, var2_28, arg1_28, var3_28, 1)
 end
 
-function var0_0.UpdateTime(arg0_27)
-	local var0_27 = arg0_27.showTechVO:GetStatus()
-	local var1_27 = arg0_27.buildingAgency:GetDelegationSlotDataByTechId(arg0_27.showTechVO.id)
+function var0_0.UpdateTime(arg0_29)
+	local var0_29 = arg0_29.showTechVO:GetStatus()
+	local var1_29 = arg0_29.buildingAgency:GetDelegationSlotDataByTechId(arg0_29.showTechVO.id)
 
-	if var1_27 then
-		if var1_27:GetSlotRewardData() then
-			setText(arg0_27.timeTextTF, "00:00:00")
+	if var1_29 then
+		if var1_29:GetSlotRewardData() then
+			setText(arg0_29.timeTextTF, "00:00:00")
 		else
-			local var2_27 = var1_27:GetSlotRoleData():GetFinishTime() - arg0_27.timeMgr:GetServerTime()
+			local var2_29 = var1_29:GetSlotRoleData():GetFinishTime() - arg0_29.timeMgr:GetServerTime()
 
-			setText(arg0_27.timeTextTF, var2_27 > 0 and arg0_27.timeMgr:DescCDTime(var2_27) or "00:00:00")
+			setText(arg0_29.timeTextTF, var2_29 > 0 and arg0_29.timeMgr:DescCDTime(var2_29) or "00:00:00")
 		end
 	else
-		setText(arg0_27.timeTextTF, "??:??:??")
+		setText(arg0_29.timeTextTF, "??:??:??")
 	end
 end
 
-function var0_0.StartTimer(arg0_28)
-	arg0_28.timer = Timer.New(function()
-		arg0_28:UpdateTime()
+function var0_0.StartTimer(arg0_30)
+	arg0_30.timer = Timer.New(function()
+		arg0_30:UpdateTime()
 	end, 1, -1)
 
-	arg0_28.timer:Start()
+	arg0_30.timer:Start()
 end
 
-function var0_0.StopTimer(arg0_30)
-	if arg0_30.timer ~= nil then
-		arg0_30.timer:Stop()
+function var0_0.StopTimer(arg0_32)
+	if arg0_32.timer ~= nil then
+		arg0_32.timer:Stop()
 
-		arg0_30.timer = nil
+		arg0_32.timer = nil
 	end
 end
 
-function var0_0.OnHide(arg0_31)
-	arg0_31:StopTimer()
-	arg0_31:UnOverlayPanel(arg0_31._tf, arg0_31._parentTf)
+function var0_0.OnHide(arg0_33)
+	arg0_33:StopTimer()
+	arg0_33:UnOverlayPanel(arg0_33._tf, arg0_33._parentTf)
 end
 
-function var0_0.OnDestroy(arg0_32)
-	arg0_32:StopTimer()
-	arg0_32:UnOverlayPanel(arg0_32._tf, arg0_32._parentTf)
+function var0_0.OnDestroy(arg0_34)
+	arg0_34:StopTimer()
+	arg0_34:UnOverlayPanel(arg0_34._tf, arg0_34._parentTf)
 end
 
 return var0_0

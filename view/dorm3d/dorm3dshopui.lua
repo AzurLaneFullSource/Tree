@@ -11,29 +11,29 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.closeBtn = arg0_2:findTF("closeBtn")
-	arg0_2.res = arg0_2:findTF("resourceBg/res")
-	arg0_2.recommendationTg = arg0_2:findTF("left/recommendation")
-	arg0_2.charaList = UIItemList.New(arg0_2:findTF("left/charaScroll/mask/list"), arg0_2:findTF("left/charaScroll/mask/list/tpl"))
-	arg0_2.recommendationPage = arg0_2:findTF("pages/recommendationPage")
-	arg0_2.charaPage = arg0_2:findTF("pages/charaPage")
-	arg0_2.mask = arg0_2:findTF("mask")
+	arg0_2.closeBtn = arg0_2.rtAdapt:Find("closeBtn")
+	arg0_2.res = arg0_2.rtAdapt:Find("resourceBg/res")
+	arg0_2.recommendationTg = arg0_2.rtAdapt:Find("left/recommendation")
+	arg0_2.charaList = UIItemList.New(arg0_2.rtAdapt:Find("left/charaScroll/mask/list"), arg0_2.rtAdapt:Find("left/charaScroll/mask/list/tpl"))
+	arg0_2.recommendationPage = arg0_2.rtAdapt:Find("pages/recommendationPage")
+	arg0_2.charaPage = arg0_2.rtAdapt:Find("pages/charaPage")
+	arg0_2.mask = arg0_2._tf:Find("mask")
 
-	setText(arg0_2:findTF("title/Text"), i18n("dorm3d_shop_title"))
-	setText(arg0_2:findTF("bannerCard/mask/content/item/soldOut", arg0_2.recommendationPage), i18n("dorm3d_shop_sold_out"))
-	setText(arg0_2:findTF("giftCard/soldOut", arg0_2.recommendationPage), i18n("dorm3d_shop_sold_out"))
-	setText(arg0_2:findTF("card1/soldOut", arg0_2.recommendationPage), i18n("dorm3d_shop_sold_out"))
-	setText(arg0_2:findTF("card2/soldOut", arg0_2.recommendationPage), i18n("dorm3d_shop_sold_out"))
-	setText(arg0_2:findTF("card3/soldOut", arg0_2.recommendationPage), i18n("dorm3d_shop_sold_out"))
-	setText(arg0_2:findTF("scroll/Viewport/Content/card/soldOut", arg0_2.charaPage), i18n("dorm3d_shop_sold_out"))
-	setText(arg0_2:findTF("switch/all/Text", arg0_2.charaPage), i18n("dorm3d_shop_all"))
-	setText(arg0_2:findTF("switch/gift/Text", arg0_2.charaPage), i18n("dorm3d_shop_gift1"))
-	setText(arg0_2:findTF("switch/furniture/Text", arg0_2.charaPage), i18n("dorm3d_shop_furniture"))
-	setText(arg0_2:findTF("switch/others/Text", arg0_2.charaPage), i18n("dorm3d_shop_others"))
-	setText(arg0_2:findTF("switch/all/selected/Text", arg0_2.charaPage), i18n("dorm3d_shop_all"))
-	setText(arg0_2:findTF("switch/gift/selected/Text", arg0_2.charaPage), i18n("dorm3d_shop_gift1"))
-	setText(arg0_2:findTF("switch/furniture/selected/Text", arg0_2.charaPage), i18n("dorm3d_shop_furniture"))
-	setText(arg0_2:findTF("switch/others/selected/Text", arg0_2.charaPage), i18n("dorm3d_shop_others"))
+	setText(arg0_2.rtAdapt:Find("title/Text"), i18n("dorm3d_shop_title"))
+	setText(arg0_2.recommendationPage:Find("bannerCard/mask/content/item/soldOut"), i18n("dorm3d_shop_sold_out"))
+	setText(arg0_2.recommendationPage:Find("giftCard/soldOut"), i18n("dorm3d_shop_sold_out"))
+	setText(arg0_2.recommendationPage:Find("card1/soldOut"), i18n("dorm3d_shop_sold_out"))
+	setText(arg0_2.recommendationPage:Find("card2/soldOut"), i18n("dorm3d_shop_sold_out"))
+	setText(arg0_2.recommendationPage:Find("card3/soldOut"), i18n("dorm3d_shop_sold_out"))
+	setText(arg0_2.charaPage:Find("scroll/Viewport/Content/card/soldOut"), i18n("dorm3d_shop_sold_out"))
+	setText(arg0_2.charaPage:Find("switch/all/Text"), i18n("dorm3d_shop_all"))
+	setText(arg0_2.charaPage:Find("switch/gift/Text"), i18n("dorm3d_shop_gift1"))
+	setText(arg0_2.charaPage:Find("switch/furniture/Text"), i18n("dorm3d_shop_furniture"))
+	setText(arg0_2.charaPage:Find("switch/others/Text"), i18n("dorm3d_shop_others"))
+	setText(arg0_2.charaPage:Find("switch/all/selected/Text"), i18n("dorm3d_shop_all"))
+	setText(arg0_2.charaPage:Find("switch/gift/selected/Text"), i18n("dorm3d_shop_gift1"))
+	setText(arg0_2.charaPage:Find("switch/furniture/selected/Text"), i18n("dorm3d_shop_furniture"))
+	setText(arg0_2.charaPage:Find("switch/others/selected/Text"), i18n("dorm3d_shop_others"))
 end
 
 function var0_0.didEnter(arg0_3)
@@ -77,7 +77,7 @@ function var0_0.InitData(arg0_5)
 end
 
 function var0_0.SetPageBtns(arg0_9)
-	SetParent(arg0_9.recommendationTg, arg0_9:findTF("left"), false)
+	SetParent(arg0_9.recommendationTg, arg0_9.rtAdapt:Find("left"), false)
 	arg0_9.charaList:make(function(arg0_10, arg1_10, arg2_10)
 		if arg0_10 == UIItemList.EventUpdate then
 			local var0_10 = arg0_9.roomCfgs[arg1_10 + 1]
@@ -109,7 +109,7 @@ function var0_0.SetPageBtns(arg0_9)
 	table.insertto(var0_9, arg0_9:GetCommoditiesCfgByPanel(3, 1))
 	table.insertto(var0_9, arg0_9:GetCommoditiesCfgByPanel(4, 1))
 	table.insertto(var0_9, arg0_9:GetCommoditiesCfgByPanel(5, 1))
-	setActive(arg0_9:findTF("icon/tip", arg0_9.recommendationTg), var0_0.ShouldShowSumTip(var0_9))
+	setActive(arg0_9.recommendationTg:Find("icon/tip"), var0_0.ShouldShowSumTip(var0_9))
 	onToggle(arg0_9, arg0_9.recommendationTg, function(arg0_12)
 		if arg0_12 then
 			arg0_9.selectedId = 0
@@ -118,7 +118,7 @@ function var0_0.SetPageBtns(arg0_9)
 			arg0_9:RefreshPage()
 		end
 	end)
-	SetParent(arg0_9.recommendationTg, arg0_9:findTF("left/charaScroll/mask/list"), false)
+	SetParent(arg0_9.recommendationTg, arg0_9.rtAdapt:Find("left/charaScroll/mask/list"), false)
 	arg0_9.recommendationTg:SetSiblingIndex(0)
 end
 
@@ -229,20 +229,20 @@ end
 function var0_0.ShowResUI(arg0_17)
 	local var0_17 = getProxy(PlayerProxy):getRawData()
 
-	arg0_17.goldMax = arg0_17:findTF("gold/max", arg0_17.res):GetComponent(typeof(Text))
-	arg0_17.goldValue = arg0_17:findTF("gold/Text", arg0_17.res):GetComponent(typeof(Text))
-	arg0_17.oilMax = arg0_17:findTF("oil/max", arg0_17.res):GetComponent(typeof(Text))
-	arg0_17.oilValue = arg0_17:findTF("oil/Text", arg0_17.res):GetComponent(typeof(Text))
-	arg0_17.gemValue = arg0_17:findTF("gem/Text", arg0_17.res):GetComponent(typeof(Text))
+	arg0_17.goldMax = arg0_17.res:Find("gold/max"):GetComponent(typeof(Text))
+	arg0_17.goldValue = arg0_17.res:Find("gold/Text"):GetComponent(typeof(Text))
+	arg0_17.oilMax = arg0_17.res:Find("oil/max"):GetComponent(typeof(Text))
+	arg0_17.oilValue = arg0_17.res:Find("oil/Text"):GetComponent(typeof(Text))
+	arg0_17.gemValue = arg0_17.res:Find("gem/Text"):GetComponent(typeof(Text))
 
 	PlayerResUI.StaticFlush(var0_17, arg0_17.goldMax, arg0_17.goldValue, arg0_17.oilMax, arg0_17.oilValue, arg0_17.gemValue)
-	onButton(arg0_17, arg0_17:findTF("gold", arg0_17.res), function()
+	onButton(arg0_17, arg0_17.res:Find("gold"), function()
 		pg.playerResUI:ClickGold()
 	end, SFX_PANEL)
-	onButton(arg0_17, arg0_17:findTF("oil", arg0_17.res), function()
+	onButton(arg0_17, arg0_17.res:Find("oil"), function()
 		pg.playerResUI:ClickOil()
 	end, SFX_PANEL)
-	onButton(arg0_17, arg0_17:findTF("gem", arg0_17.res), function()
+	onButton(arg0_17, arg0_17.res:Find("gem"), function()
 		pg.playerResUI:ClickGem()
 	end, SFX_PANEL)
 end
@@ -263,11 +263,11 @@ function var0_0.RefreshPage(arg0_21)
 end
 
 function var0_0.SetBannnerCard(arg0_22)
-	local var0_22 = arg0_22:findTF("bannerCard", arg0_22.recommendationPage)
+	local var0_22 = arg0_22.recommendationPage:Find("bannerCard")
 	local var1_22 = arg0_22:GetCommoditiesCfgByPanel(1, arg0_22.bannerCount)
 
 	if not arg0_22.scrollSnap then
-		arg0_22.scrollSnap = BannerScrollRectDorm3dShop.New(arg0_22:findTF("mask/content", var0_22), arg0_22:findTF("dots", var0_22))
+		arg0_22.scrollSnap = BannerScrollRectDorm3dShop.New(var0_22:Find("mask/content"), var0_22:Find("dots"))
 	end
 
 	for iter0_22, iter1_22 in ipairs(var1_22) do
@@ -327,9 +327,9 @@ function var0_0.SetBannnerCard(arg0_22)
 
 			var9_22 = var10_22 .. " " .. getProxy(ApartmentProxy):GetGiftShopCount(iter1_22.item_id) .. "/" .. var14_22
 
-			setText(arg0_22:findTF("favor/number", var2_22), "+" .. pg.dorm3d_favor_trigger[var5_0[iter1_22.item_id].favor_trigger_id].num)
+			setText(var2_22:Find("favor/number"), "+" .. pg.dorm3d_favor_trigger[var5_0[iter1_22.item_id].favor_trigger_id].num)
 
-			arg0_22:findTF("favor", var2_22):GetComponent(typeof(CanvasGroup)).alpha = var3_22 and 0.5 or 1
+			var2_22:Find("favor"):GetComponent(typeof(CanvasGroup)).alpha = var3_22 and 0.5 or 1
 			var6_22 = var12_22.unlock_tips or {}
 			var7_22 = var13_22:GetShopID()
 		elseif iter1_22.type == 3 then
@@ -349,31 +349,31 @@ function var0_0.SetBannnerCard(arg0_22)
 			var7_22 = iter1_22.shop_id[1]
 		end
 
-		setActive(arg0_22:findTF("bg/normal", var2_22), not var4_22 and not var5_22)
-		setActive(arg0_22:findTF("bg/zhuanshu", var2_22), var4_22)
-		setActive(arg0_22:findTF("bg/tedian", var2_22), var5_22)
-		setActive(arg0_22:findTF("normal", var2_22), not var4_22 and not var5_22)
-		setActive(arg0_22:findTF("zhuanshu", var2_22), var4_22)
-		setActive(arg0_22:findTF("tedian", var2_22), var5_22)
-		setActive(arg0_22:findTF("favor", var2_22), iter1_22.type == 2)
-		LoadImageSpriteAsync("dorm3dbanner/" .. iter1_22.banners[1] .. "_shopCard1", arg0_22:findTF("bannerMask/banner", var2_22), true)
-		setText(arg0_22:findTF("name", var2_22), iter1_22.name)
+		setActive(var2_22:Find("bg/normal"), not var4_22 and not var5_22)
+		setActive(var2_22:Find("bg/zhuanshu"), var4_22)
+		setActive(var2_22:Find("bg/tedian"), var5_22)
+		setActive(var2_22:Find("normal"), not var4_22 and not var5_22)
+		setActive(var2_22:Find("zhuanshu"), var4_22)
+		setActive(var2_22:Find("tedian"), var5_22)
+		setActive(var2_22:Find("favor"), iter1_22.type == 2)
+		LoadImageSpriteAsync("dorm3dbanner/" .. iter1_22.banners[1] .. "_shopCard1", var2_22:Find("bannerMask/banner"), true)
+		setText(var2_22:Find("name"), iter1_22.name)
 
 		local var20_22 = var3_0[iter1_22.shop_id[1]].time
 
-		setActive(arg0_22:findTF("timeLimit", var2_22), var20_22 ~= "always")
+		setActive(var2_22:Find("timeLimit"), var20_22 ~= "always")
 
 		if var20_22 ~= "always" then
 			local var21_22 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var20_22[2])
 
-			setText(arg0_22:findTF("timeLimit/Text", var2_22), arg0_22:GetTimeRemain(var21_22))
+			setText(var2_22:Find("timeLimit/Text"), arg0_22:GetTimeRemain(var21_22))
 		end
 
-		local var22_22 = UIItemList.New(arg0_22:findTF("bubbles/content", var2_22), arg0_22:findTF("bubbles/content/tpl", var2_22))
+		local var22_22 = UIItemList.New(var2_22:Find("bubbles/content"), var2_22:Find("bubbles/content/tpl"))
 
 		arg0_22:SetBubbles(var22_22, var6_22)
-		setActive(arg0_22:findTF("consume", var2_22), not var3_22)
-		setActive(arg0_22:findTF("soldOut", var2_22), var3_22)
+		setActive(var2_22:Find("consume"), not var3_22)
+		setActive(var2_22:Find("soldOut"), var3_22)
 
 		local var23_22 = CommonCommodity.New({
 			id = var7_22
@@ -385,41 +385,41 @@ function var0_0.SetBannnerCard(arg0_22)
 			count = var24_22
 		})
 
-		setText(arg0_22:findTF("consume/Text", var2_22), "<icon name=" .. var23_22:GetResIcon() .. " w=0.81 h=0.81/>" .. var24_22)
-		GetImageSpriteFromAtlasAsync(var8_22, "", arg0_22:findTF("normal/Dorm3dIconTpl/icon", var2_22))
-		GetImageSpriteFromAtlasAsync(var8_22, "", arg0_22:findTF("zhuanshu/Dorm3dIconTpl/icon", var2_22))
-		GetImageSpriteFromAtlasAsync(var8_22, "", arg0_22:findTF("tedian/Dorm3dIconTpl/icon", var2_22))
-		setText(arg0_22:findTF("normal/countLimit", var2_22), var9_22)
-		setText(arg0_22:findTF("zhuanshu/countLimit", var2_22), var9_22)
-		setText(arg0_22:findTF("tedian/countLimit", var2_22), var9_22)
+		setText(var2_22:Find("consume/Text"), "<icon name=" .. var23_22:GetResIcon() .. " w=0.81 h=0.81/>" .. var24_22)
+		GetImageSpriteFromAtlasAsync(var8_22, "", var2_22:Find("normal/Dorm3dIconTpl/icon"))
+		GetImageSpriteFromAtlasAsync(var8_22, "", var2_22:Find("zhuanshu/Dorm3dIconTpl/icon"))
+		GetImageSpriteFromAtlasAsync(var8_22, "", var2_22:Find("tedian/Dorm3dIconTpl/icon"))
+		setText(var2_22:Find("normal/countLimit"), var9_22)
+		setText(var2_22:Find("zhuanshu/countLimit"), var9_22)
+		setText(var2_22:Find("tedian/countLimit"), var9_22)
 
-		arg0_22:findTF("normal/Dorm3dIconTpl", var2_22):GetComponent(typeof(CanvasGroup)).alpha = var3_22 and 0.5 or 1
-		arg0_22:findTF("zhuanshu/Dorm3dIconTpl", var2_22):GetComponent(typeof(CanvasGroup)).alpha = var3_22 and 0.5 or 1
-		arg0_22:findTF("tedian/Dorm3dIconTpl", var2_22):GetComponent(typeof(CanvasGroup)).alpha = var3_22 and 0.5 or 1
+		var2_22:Find("normal/Dorm3dIconTpl"):GetComponent(typeof(CanvasGroup)).alpha = var3_22 and 0.5 or 1
+		var2_22:Find("zhuanshu/Dorm3dIconTpl"):GetComponent(typeof(CanvasGroup)).alpha = var3_22 and 0.5 or 1
+		var2_22:Find("tedian/Dorm3dIconTpl"):GetComponent(typeof(CanvasGroup)).alpha = var3_22 and 0.5 or 1
 
 		if not var3_22 then
 			onButton(arg0_22, var2_22, function()
-				arg0_22:ClickCommodity(iter1_22, arg0_22:findTF("tip", var2_22))
+				arg0_22:ClickCommodity(iter1_22, var2_22:Find("tip"))
 			end, SFX_PANEL)
 		else
 			onButton(arg0_22, var2_22, function()
 				var0_0.UpdateCommodtyTip(iter1_22)
-				setActive(arg0_22:findTF("tip", var2_22), false)
+				setActive(var2_22:Find("tip"), false)
 				pg.TipsMgr.GetInstance():ShowTips(i18n("word_sell_out"))
 			end, SFX_PANEL)
 		end
 
 		local var28_22 = var0_0.ShouldShowCommodtyTip(iter1_22)
 
-		setActive(arg0_22:findTF("new", var2_22), var28_22)
-		setActive(arg0_22:findTF("tip", var2_22), var28_22)
+		setActive(var2_22:Find("new"), var28_22)
+		setActive(var2_22:Find("tip"), var28_22)
 	end
 
 	arg0_22.scrollSnap:SetUp()
 end
 
 function var0_0.SetGiftCard(arg0_25)
-	local var0_25 = arg0_25:findTF("giftCard", arg0_25.recommendationPage)
+	local var0_25 = arg0_25.recommendationPage:Find("giftCard")
 	local var1_25 = arg0_25:GetCommoditiesCfgByPanel(2, 1)[1]
 	local var2_25 = 0
 	local var3_25 = arg0_25:IsCommoditySoldOut(var1_25)
@@ -440,7 +440,7 @@ function var0_0.SetGiftCard(arg0_25)
 			id = var8_25.id
 		})
 
-		updateCustomDrop(arg0_25:findTF("Dorm3dIconTpl", var0_25), var9_25)
+		updateCustomDrop(var0_25:Find("Dorm3dIconTpl"), var9_25)
 
 		var2_25 = var1_25.shop_id[1]
 		var4_25 = var7_25 .. " " .. getProxy(ApartmentProxy):GetFurnitureShopCount(var1_25.item_id) .. "/1"
@@ -458,8 +458,8 @@ function var0_0.SetGiftCard(arg0_25)
 			count = getProxy(ApartmentProxy):getGiftCount(var1_25.item_id)
 		})
 
-		setText(arg0_25:findTF("favor/number", var0_25), "+" .. pg.dorm3d_favor_trigger[var5_0[var1_25.item_id].favor_trigger_id].num)
-		updateCustomDrop(arg0_25:findTF("Dorm3dIconTpl", var0_25), var12_25)
+		setText(var0_25:Find("favor/number"), "+" .. pg.dorm3d_favor_trigger[var5_0[var1_25.item_id].favor_trigger_id].num)
+		updateCustomDrop(var0_25:Find("Dorm3dIconTpl"), var12_25)
 
 		var2_25 = var11_25:GetShopID()
 
@@ -492,8 +492,8 @@ function var0_0.SetGiftCard(arg0_25)
 			end
 		end
 
-		GetImageSpriteFromAtlasAsync(var18_25, "", arg0_25:findTF("Dorm3dIconTpl/icon", var0_25))
-		GetImageSpriteFromAtlasAsync("weaponframes", "dorm3d_" .. ItemRarity.Rarity2Print(var1_25.rarity), arg0_25:findTF("Dorm3dIconTpl", var0_25))
+		GetImageSpriteFromAtlasAsync(var18_25, "", var0_25:Find("Dorm3dIconTpl/icon"))
+		GetImageSpriteFromAtlasAsync("weaponframes", "dorm3d_" .. ItemRarity.Rarity2Print(var1_25.rarity), var0_25:Find("Dorm3dIconTpl"))
 
 		local var19_25 = var3_25 and 1 or 0
 
@@ -501,32 +501,32 @@ function var0_0.SetGiftCard(arg0_25)
 		var2_25 = var1_25.shop_id[1]
 	end
 
-	arg0_25:findTF("Dorm3dIconTpl", var0_25):GetComponent(typeof(CanvasGroup)).alpha = var3_25 and 0.5 or 1
-	arg0_25:findTF("favor", var0_25):GetComponent(typeof(CanvasGroup)).alpha = var3_25 and 0.5 or 1
+	var0_25:Find("Dorm3dIconTpl"):GetComponent(typeof(CanvasGroup)).alpha = var3_25 and 0.5 or 1
+	var0_25:Find("favor"):GetComponent(typeof(CanvasGroup)).alpha = var3_25 and 0.5 or 1
 
-	setActive(arg0_25:findTF("bg/normal", var0_25), not var5_25 and not var6_25)
-	setActive(arg0_25:findTF("bg/zhuanshu", var0_25), var5_25)
-	setActive(arg0_25:findTF("bg/tedian", var0_25), var6_25)
-	setActive(arg0_25:findTF("normal", var0_25), not var5_25 and not var6_25)
-	setActive(arg0_25:findTF("zhuanshu", var0_25), var5_25)
-	setActive(arg0_25:findTF("tedian", var0_25), var6_25)
-	setText(arg0_25:findTF("normal/countLimit", var0_25), var4_25)
-	setText(arg0_25:findTF("zhuanshu/countLimit", var0_25), var4_25)
-	setText(arg0_25:findTF("tedian/countLimit", var0_25), var4_25)
-	LoadImageSpriteAsync("dorm3dbanner/" .. var1_25.banners[1] .. "_shopCard2", arg0_25:findTF("mask/item", var0_25), true)
-	setText(arg0_25:findTF("name", var0_25), var1_25.name)
-	setActive(arg0_25:findTF("favor", var0_25), var1_25.type == 2)
-	setActive(arg0_25:findTF("consume", var0_25), not var3_25)
-	setActive(arg0_25:findTF("soldOut", var0_25), var3_25)
+	setActive(var0_25:Find("bg/normal"), not var5_25 and not var6_25)
+	setActive(var0_25:Find("bg/zhuanshu"), var5_25)
+	setActive(var0_25:Find("bg/tedian"), var6_25)
+	setActive(var0_25:Find("normal"), not var5_25 and not var6_25)
+	setActive(var0_25:Find("zhuanshu"), var5_25)
+	setActive(var0_25:Find("tedian"), var6_25)
+	setText(var0_25:Find("normal/countLimit"), var4_25)
+	setText(var0_25:Find("zhuanshu/countLimit"), var4_25)
+	setText(var0_25:Find("tedian/countLimit"), var4_25)
+	LoadImageSpriteAsync("dorm3dbanner/" .. var1_25.banners[1] .. "_shopCard2", var0_25:Find("mask/item"), true)
+	setText(var0_25:Find("name"), var1_25.name)
+	setActive(var0_25:Find("favor"), var1_25.type == 2)
+	setActive(var0_25:Find("consume"), not var3_25)
+	setActive(var0_25:Find("soldOut"), var3_25)
 
 	local var20_25 = var3_0[var1_25.shop_id[1]].time
 
-	setActive(arg0_25:findTF("timeLimit", var0_25), var20_25 ~= "always")
+	setActive(var0_25:Find("timeLimit"), var20_25 ~= "always")
 
 	if var20_25 ~= "always" then
 		local var21_25 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var20_25[2])
 
-		setText(arg0_25:findTF("timeLimit/Text", var0_25), arg0_25:GetTimeRemain(var21_25))
+		setText(var0_25:Find("timeLimit/Text"), arg0_25:GetTimeRemain(var21_25))
 	end
 
 	local var22_25 = CommonCommodity.New({
@@ -539,29 +539,29 @@ function var0_0.SetGiftCard(arg0_25)
 		count = var23_25
 	})
 
-	setText(arg0_25:findTF("consume/Text", var0_25), "<icon name=" .. var22_25:GetResIcon() .. " w=0.81 h=0.81/>" .. var23_25)
+	setText(var0_25:Find("consume/Text"), "<icon name=" .. var22_25:GetResIcon() .. " w=0.81 h=0.81/>" .. var23_25)
 
 	if not var3_25 then
 		onButton(arg0_25, var0_25, function()
-			arg0_25:ClickCommodity(var1_25, arg0_25:findTF("tip", var0_25))
+			arg0_25:ClickCommodity(var1_25, var0_25:Find("tip"))
 		end, SFX_PANEL)
 	else
 		onButton(arg0_25, var0_25, function()
 			var0_0.UpdateCommodtyTip(var1_25)
-			setActive(arg0_25:findTF("tip", var0_25), false)
+			setActive(var0_25:Find("tip"), false)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("word_sell_out"))
 		end, SFX_PANEL)
 	end
 
 	local var27_25 = var0_0.ShouldShowCommodtyTip(var1_25)
 
-	setActive(arg0_25:findTF("new", var0_25), var27_25)
-	setActive(arg0_25:findTF("tip", var0_25), var27_25)
+	setActive(var0_25:Find("new"), var27_25)
+	setActive(var0_25:Find("tip"), var27_25)
 end
 
 function var0_0.SetNormalCard(arg0_28)
 	for iter0_28 = 1, 3 do
-		local var0_28 = arg0_28:findTF("card" .. iter0_28, arg0_28.recommendationPage)
+		local var0_28 = arg0_28.recommendationPage:Find("card" .. iter0_28)
 		local var1_28 = arg0_28:GetCommoditiesCfgByPanel(iter0_28 + 2, 1)[1]
 		local var2_28 = false
 		local var3_28 = false
@@ -582,7 +582,7 @@ function var0_0.SetNormalCard(arg0_28)
 				id = var9_28.id
 			}):getIcon()
 
-			setText(arg0_28:findTF("countLimit/Text", var0_28), var8_28 .. " " .. getProxy(ApartmentProxy):GetFurnitureShopCount(var1_28.item_id) .. "/1")
+			setText(var0_28:Find("countLimit/Text"), var8_28 .. " " .. getProxy(ApartmentProxy):GetFurnitureShopCount(var1_28.item_id) .. "/1")
 
 			var5_28 = var9_28.unlock_tips or {}
 			var6_28 = var1_28.shop_id[1]
@@ -617,13 +617,13 @@ function var0_0.SetNormalCard(arg0_28)
 				end
 			end
 
-			setText(arg0_28:findTF("countLimit/Text", var0_28), var8_28 .. " " .. getProxy(ApartmentProxy):GetGiftShopCount(var1_28.item_id) .. "/" .. var12_28)
+			setText(var0_28:Find("countLimit/Text"), var8_28 .. " " .. getProxy(ApartmentProxy):GetGiftShopCount(var1_28.item_id) .. "/" .. var12_28)
 
 			local var16_28 = pg.dorm3d_favor_trigger[var5_0[var1_28.item_id].favor_trigger_id].num
 
-			setText(arg0_28:findTF("normal/favor/number", var0_28), "+" .. var16_28)
-			setText(arg0_28:findTF("zhuanshu/favor/number", var0_28), "+" .. var16_28)
-			setText(arg0_28:findTF("tedian/favor/number", var0_28), "+" .. var16_28)
+			setText(var0_28:Find("normal/favor/number"), "+" .. var16_28)
+			setText(var0_28:Find("zhuanshu/favor/number"), "+" .. var16_28)
+			setText(var0_28:Find("tedian/favor/number"), "+" .. var16_28)
 
 			var5_28 = var10_28.unlock_tips or {}
 			var6_28 = var11_28:GetShopID()
@@ -640,27 +640,27 @@ function var0_0.SetNormalCard(arg0_28)
 
 			local var18_28 = var4_28 and 1 or 0
 
-			setText(arg0_28:findTF("countLimit/Text", var0_28), var8_28 .. " " .. var18_28 .. "/1")
+			setText(var0_28:Find("countLimit/Text"), var8_28 .. " " .. var18_28 .. "/1")
 
 			var6_28 = var1_28.shop_id[1]
 		end
 
-		setActive(arg0_28:findTF("bg/normal", var0_28), not var3_28 and not var2_28)
-		setActive(arg0_28:findTF("bg/zhuanshu", var0_28), var3_28)
-		setActive(arg0_28:findTF("bg/tedian", var0_28), var2_28)
-		setActive(arg0_28:findTF("normal", var0_28), not var3_28 and not var2_28)
-		setActive(arg0_28:findTF("zhuanshu", var0_28), var3_28)
-		setActive(arg0_28:findTF("tedian", var0_28), var2_28)
-		setActive(arg0_28:findTF("normal/favor", var0_28), var1_28.type == 2)
-		setActive(arg0_28:findTF("zhuanshu/favor", var0_28), var1_28.type == 2)
-		setActive(arg0_28:findTF("tedian/favor", var0_28), var1_28.type == 2)
-		setText(arg0_28:findTF("name", var0_28), var1_28.name)
+		setActive(var0_28:Find("bg/normal"), not var3_28 and not var2_28)
+		setActive(var0_28:Find("bg/zhuanshu"), var3_28)
+		setActive(var0_28:Find("bg/tedian"), var2_28)
+		setActive(var0_28:Find("normal"), not var3_28 and not var2_28)
+		setActive(var0_28:Find("zhuanshu"), var3_28)
+		setActive(var0_28:Find("tedian"), var2_28)
+		setActive(var0_28:Find("normal/favor"), var1_28.type == 2)
+		setActive(var0_28:Find("zhuanshu/favor"), var1_28.type == 2)
+		setActive(var0_28:Find("tedian/favor"), var1_28.type == 2)
+		setText(var0_28:Find("name"), var1_28.name)
 
-		local var19_28 = UIItemList.New(arg0_28:findTF("bubbles/content", var0_28), arg0_28:findTF("bubbles/content/tpl", var0_28))
+		local var19_28 = UIItemList.New(var0_28:Find("bubbles/content"), var0_28:Find("bubbles/content/tpl"))
 
 		arg0_28:SetBubbles(var19_28, var5_28)
-		setActive(arg0_28:findTF("consume", var0_28), not var4_28)
-		setActive(arg0_28:findTF("soldOut", var0_28), var4_28)
+		setActive(var0_28:Find("consume"), not var4_28)
+		setActive(var0_28:Find("soldOut"), var4_28)
 
 		local var20_28 = CommonCommodity.New({
 			id = var6_28
@@ -672,33 +672,33 @@ function var0_0.SetNormalCard(arg0_28)
 			count = var21_28
 		})
 
-		setText(arg0_28:findTF("consume/Text", var0_28), "<icon name=" .. var20_28:GetResIcon() .. " w=0.81 h=0.81/>" .. var21_28)
-		GetImageSpriteFromAtlasAsync(var7_28, "", arg0_28:findTF("normal/mask/Dorm3dIconTpl/icon", var0_28))
-		GetImageSpriteFromAtlasAsync(var7_28, "", arg0_28:findTF("zhuanshu/mask/Dorm3dIconTpl/icon", var0_28))
-		GetImageSpriteFromAtlasAsync(var7_28, "", arg0_28:findTF("tedian/mask/Dorm3dIconTpl/icon", var0_28))
+		setText(var0_28:Find("consume/Text"), "<icon name=" .. var20_28:GetResIcon() .. " w=0.81 h=0.81/>" .. var21_28)
+		GetImageSpriteFromAtlasAsync(var7_28, "", var0_28:Find("normal/mask/Dorm3dIconTpl/icon"))
+		GetImageSpriteFromAtlasAsync(var7_28, "", var0_28:Find("zhuanshu/mask/Dorm3dIconTpl/icon"))
+		GetImageSpriteFromAtlasAsync(var7_28, "", var0_28:Find("tedian/mask/Dorm3dIconTpl/icon"))
 
 		if not var4_28 then
 			onButton(arg0_28, var0_28, function()
-				arg0_28:ClickCommodity(var1_28, arg0_28:findTF("tip", var0_28))
+				arg0_28:ClickCommodity(var1_28, var0_28:Find("tip"))
 			end, SFX_PANEL)
 		else
 			onButton(arg0_28, var0_28, function()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("word_sell_out"))
 				var0_0.UpdateCommodtyTip(var1_28)
-				setActive(arg0_28:findTF("tip", var0_28), false)
+				setActive(var0_28:Find("tip"), false)
 			end, SFX_PANEL)
 		end
 
 		local var25_28 = var0_0.ShouldShowCommodtyTip(var1_28)
 
-		setActive(arg0_28:findTF("new", var0_28), var25_28)
-		setActive(arg0_28:findTF("tip", var0_28), var25_28)
+		setActive(var0_28:Find("new"), var25_28)
+		setActive(var0_28:Find("tip"), var25_28)
 	end
 end
 
 function var0_0.SetCharaCard(arg0_31)
 	local var0_31 = arg0_31:GetCommoditiesCfgByChara(var4_0[arg0_31.selectedId].character[1])
-	local var1_31 = UIItemList.New(arg0_31:findTF("scroll/Viewport/Content", arg0_31.charaPage), arg0_31:findTF("scroll/Viewport/Content/card", arg0_31.charaPage))
+	local var1_31 = UIItemList.New(arg0_31.charaPage:Find("scroll/Viewport/Content"), arg0_31.charaPage:Find("scroll/Viewport/Content/card"))
 	local var2_31 = {}
 
 	var1_31:make(function(arg0_32, arg1_32, arg2_32)
@@ -837,7 +837,7 @@ function var0_0.SetCharaCard(arg0_31)
 			else
 				onButton(arg0_31, arg2_32, function()
 					var0_0.UpdateCommodtyTip(var0_32)
-					setActive(arg0_31:findTF("tip", arg2_32), false)
+					setActive(arg2_32:Find("tip"), false)
 					pg.TipsMgr.GetInstance():ShowTips(i18n("word_sell_out"))
 				end, SFX_PANEL)
 			end
@@ -853,7 +853,7 @@ function var0_0.SetCharaCard(arg0_31)
 	arg0_31.filterIndex = 1
 
 	for iter0_31 = 1, 4 do
-		local var3_31 = arg0_31:findTF("switch", arg0_31.charaPage):GetChild(iter0_31 - 1)
+		local var3_31 = arg0_31.charaPage:Find("switch"):GetChild(iter0_31 - 1)
 
 		onToggle(arg0_31, var3_31, function(arg0_35)
 			if arg0_35 then
@@ -878,9 +878,9 @@ function var0_0.SetCharaCard(arg0_31)
 				end
 
 				for iter8_35 = 1, 4 do
-					local var0_35 = arg0_31:findTF("switch", arg0_31.charaPage):GetChild(iter8_35 - 1)
+					local var0_35 = arg0_31.charaPage:Find("switch"):GetChild(iter8_35 - 1)
 
-					setActive(arg0_31:findTF("selected", var0_35), iter8_35 == iter0_31)
+					setActive(var0_35:Find("selected"), iter8_35 == iter0_31)
 				end
 			end
 		end)

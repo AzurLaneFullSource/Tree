@@ -2,8 +2,8 @@ local var0_0 = class("IslandAgoraUpgradeMsgboxWindow", import(".IslandCommonMsgb
 
 function var0_0.OnLoaded(arg0_1)
 	var0_0.super.OnLoaded(arg0_1)
-	setText(arg0_1:findTF("cancel/Text"), i18n("island_label_furniture_exit"))
-	setText(arg0_1:findTF("confirm/Text"), i18n("island_label_furniture_save"))
+	setText(arg0_1._tf:Find("cancel/Text"), i18n("island_label_furniture_exit"))
+	setText(arg0_1._tf:Find("confirm/Text"), i18n("island_label_furniture_save"))
 end
 
 function var0_0.OnShow(arg0_2)

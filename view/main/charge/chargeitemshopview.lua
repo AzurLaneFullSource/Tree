@@ -31,9 +31,9 @@ function var0_0.initData(arg0_4)
 end
 
 function var0_0.initUI(arg0_5)
-	arg0_5.contextTF = arg0_5:findTF("scroll")
+	arg0_5.contextTF = arg0_5._tf:Find("scroll")
 	arg0_5.lScrollRect = GetComponent(arg0_5.contextTF, "LScrollRect")
-	arg0_5.scrollContent = arg0_5:findTF("scroll/content")
+	arg0_5.scrollContent = arg0_5._tf:Find("scroll/content")
 	arg0_5.scrollRectTF = GetComponent(arg0_5.scrollContent, typeof(RectTransform))
 	arg0_5.layoutGroup = GetComponent(arg0_5.scrollContent, typeof(GridLayoutGroup))
 
@@ -57,7 +57,7 @@ function var0_0.initUI(arg0_5)
 	arg0_5:initToggleList()
 	arg0_5:updateToggleList()
 	arg0_5:updateScrollRect()
-	triggerButton(arg0_5:findTF("toggleGroup"):GetChild(0))
+	triggerButton(arg0_5._tf:Find("toggleGroup"):GetChild(0))
 	arg0_5:blurView()
 end
 
@@ -210,15 +210,15 @@ function var0_0.updateToggleList(arg0_13)
 end
 
 function var0_0.initToggleList(arg0_14)
-	arg0_14.uiToggleList = UIItemList.New(arg0_14:findTF("toggleGroup"), arg0_14:findTF("toggleGroup/Toggle"))
+	arg0_14.uiToggleList = UIItemList.New(arg0_14._tf:Find("toggleGroup"), arg0_14._tf:Find("toggleGroup/Toggle"))
 
 	arg0_14.uiToggleList:make(function(arg0_15, arg1_15, arg2_15)
 		if arg0_15 == UIItemList.EventInit then
 			local var0_15 = arg0_14.packageSortList[arg1_15 + 1]
 
-			setText(arg0_14:findTF("selected/Label", arg2_15), i18n(string.format("shop_package_sort_%s", var0_15)))
-			setText(arg0_14:findTF("selected/enText", arg2_15), i18n(string.format("shop_package_sort_en_%s", var0_15)))
-			setText(arg0_14:findTF("unselected/Label", arg2_15), i18n(string.format("shop_package_sort_%s", var0_15)))
+			setText(arg2_15:Find("selected/Label"), i18n(string.format("shop_package_sort_%s", var0_15)))
+			setText(arg2_15:Find("selected/enText"), i18n(string.format("shop_package_sort_en_%s", var0_15)))
+			setText(arg2_15:Find("unselected/Label"), i18n(string.format("shop_package_sort_%s", var0_15)))
 			setActive(arg2_15:Find("unselected"), true)
 			setActive(arg2_15:Find("selected"), false)
 		elseif arg0_15 == UIItemList.EventUpdate then
@@ -376,7 +376,7 @@ end
 function var0_0.blurView(arg0_25)
 	arg0_25:OverlayPanel(arg0_25._tf, {
 		pbList = {
-			arg0_25:findTF("bg")
+			arg0_25._tf:Find("bg")
 		}
 	})
 end

@@ -8,18 +8,18 @@ end
 function var0_0.OnLoaded(arg0_2)
 	var0_0.super.OnLoaded(arg0_2)
 
-	arg0_2.idTxt = arg0_2:findTF("top/id/Text"):GetComponent(typeof(Text))
-	arg0_2.copyBtn = arg0_2:findTF("top/id/copy")
-	arg0_2.saerchBtn = arg0_2:findTF("top/search/copy")
-	arg0_2.refreshBtn = arg0_2:findTF("top/refresh")
-	arg0_2.searchBar = arg0_2:findTF("top/search/input")
+	arg0_2.idTxt = arg0_2._tf:Find("top/id/Text"):GetComponent(typeof(Text))
+	arg0_2.copyBtn = arg0_2._tf:Find("top/id/copy")
+	arg0_2.saerchBtn = arg0_2._tf:Find("top/search/copy")
+	arg0_2.refreshBtn = arg0_2._tf:Find("top/refresh")
+	arg0_2.searchBar = arg0_2._tf:Find("top/search/input")
 	arg0_2.displays = {}
 
-	setText(arg0_2:findTF("top/id/copy/Text"), i18n("island_btn_label_copy"))
-	setText(arg0_2:findTF("top/search/copy/Text"), i18n("island_search"))
-	setText(arg0_2:findTF("top/search/input/Text"), i18n("island_input_my_id"))
-	setText(arg0_2:findTF("top/id/label"), i18n("island_my_id"))
-	setText(arg0_2:findTF("top/refresh/Text"), i18n("island_visit_set_refresh"))
+	setText(arg0_2._tf:Find("top/id/copy/Text"), i18n("island_btn_label_copy"))
+	setText(arg0_2._tf:Find("top/search/copy/Text"), i18n("island_search"))
+	setText(arg0_2._tf:Find("top/search/input/Text"), i18n("island_input_my_id"))
+	setText(arg0_2._tf:Find("top/id/label"), i18n("island_my_id"))
+	setText(arg0_2._tf:Find("top/refresh/Text"), i18n("island_visit_set_refresh"))
 
 	arg0_2.requestFriendBox = IslandRequestFriendBox.New(arg0_2._tf, arg0_2.event)
 end

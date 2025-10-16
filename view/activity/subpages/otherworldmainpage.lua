@@ -6,14 +6,14 @@ local var3_0 = 1.2
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.effectBlankScreen = arg0_1:findTF("blank_screen_effect", arg0_1.bg)
-	arg0_1.effectOpen = arg0_1:findTF("open_effect", arg0_1.bg)
-	arg0_1.effectBlink = arg0_1:findTF("blink_effect", arg0_1.bg)
-	arg0_1.effectClick = arg0_1:findTF("click_effect", arg0_1.bg)
+	arg0_1.effectBlankScreen = arg0_1.bg:Find("blank_screen_effect")
+	arg0_1.effectOpen = arg0_1.bg:Find("open_effect")
+	arg0_1.effectBlink = arg0_1.bg:Find("blink_effect")
+	arg0_1.effectClick = arg0_1.bg:Find("click_effect")
 end
 
 function var0_0.OnFirstFlush(arg0_2)
-	arg0_2.skinshopBtn = arg0_2:findTF("skinshop", arg0_2.btnList)
+	arg0_2.skinshopBtn = arg0_2.btnList:Find("skinshop")
 
 	onButton(arg0_2, arg0_2.skinshopBtn, function()
 		arg0_2:PlayClickEffect(arg0_2.skinshopBtn, function()
@@ -21,7 +21,7 @@ function var0_0.OnFirstFlush(arg0_2)
 		end)
 	end, SFX_PANEL)
 
-	arg0_2.mountainBtn = arg0_2:findTF("mountain", arg0_2.btnList)
+	arg0_2.mountainBtn = arg0_2.btnList:Find("mountain")
 
 	onButton(arg0_2, arg0_2.mountainBtn, function()
 		arg0_2:PlayClickEffect(arg0_2.mountainBtn, function()
@@ -29,7 +29,7 @@ function var0_0.OnFirstFlush(arg0_2)
 		end)
 	end, SFX_PANEL)
 
-	arg0_2.buildBtn = arg0_2:findTF("build", arg0_2.btnList)
+	arg0_2.buildBtn = arg0_2.btnList:Find("build")
 
 	onButton(arg0_2, arg0_2.buildBtn, function()
 		arg0_2:PlayClickEffect(arg0_2.buildBtn, function()
@@ -39,7 +39,7 @@ function var0_0.OnFirstFlush(arg0_2)
 		end)
 	end, SFX_PANEL)
 
-	arg0_2.fightBtn = arg0_2:findTF("fight", arg0_2.btnList)
+	arg0_2.fightBtn = arg0_2.btnList:Find("fight")
 
 	onButton(arg0_2, arg0_2.fightBtn, function()
 		arg0_2:PlayClickEffect(arg0_2.fightBtn, function()

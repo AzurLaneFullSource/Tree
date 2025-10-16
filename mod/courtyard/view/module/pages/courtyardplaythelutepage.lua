@@ -5,9 +5,9 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.backBtn = arg0_2:findTF("back")
-	arg0_2.tpl = arg0_2:findTF("keys/key")
-	arg0_2.noteTr = arg0_2:findTF("prints/tansou_yinfu")
+	arg0_2.backBtn = arg0_2._tf:Find("back")
+	arg0_2.tpl = arg0_2._tf:Find("keys/key")
+	arg0_2.noteTr = arg0_2._tf:Find("prints/tansou_yinfu")
 	arg0_2.keyTplPool = {
 		arg0_2.tpl
 	}

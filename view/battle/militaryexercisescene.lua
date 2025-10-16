@@ -66,20 +66,20 @@ function var0_0.setSeasonInfo(arg0_12, arg1_12)
 end
 
 function var0_0.init(arg0_13)
-	arg0_13.backBtn = arg0_13:findTF("blur_panel/adapt/top/backBtn")
+	arg0_13.backBtn = arg0_13._tf:Find("blur_panel/adapt/top/backBtn")
 	arg0_13._normalUIMain = pg.UIMgr.GetInstance().UIMain
 	arg0_13._overlayUIMain = pg.UIMgr.GetInstance().OverlayMain
 	arg0_13.top = findTF(arg0_13._tf, "blur_panel/adapt/top")
-	arg0_13.awardPanel = arg0_13:findTF("award_info_panel")
+	arg0_13.awardPanel = arg0_13._tf:Find("award_info_panel")
 
 	setActive(arg0_13.awardPanel, false)
 
-	arg0_13.rivalList = arg0_13:findTF("center/rival_list")
-	arg0_13.bottomPanel = arg0_13:findTF("bottom")
+	arg0_13.rivalList = arg0_13._tf:Find("center/rival_list")
+	arg0_13.bottomPanel = arg0_13._tf:Find("bottom")
 	arg0_13.shipTpl = arg0_13:getTpl("fleet_info/shiptpl", arg0_13.bottomPanel)
 	arg0_13.emptyTpl = arg0_13:getTpl("fleet_info/emptytpl", arg0_13.bottomPanel)
-	arg0_13.mainContainer = arg0_13:findTF("fleet_info/main", arg0_13.bottomPanel)
-	arg0_13.vanguardContainer = arg0_13:findTF("fleet_info/vanguard", arg0_13.bottomPanel)
+	arg0_13.mainContainer = arg0_13.bottomPanel:Find("fleet_info/main")
+	arg0_13.vanguardContainer = arg0_13.bottomPanel:Find("fleet_info/vanguard")
 	arg0_13.rankCfg = pg.arena_data_rank
 
 	arg0_13:uiStartAnimating()
@@ -88,7 +88,7 @@ end
 function var0_0.updatePlayer(arg0_14, arg1_14)
 	arg0_14.player = arg1_14
 
-	setText(findTF(arg0_14:findTF("bottom/player_info"), "statistics_panel/exploit_bg/score"), arg1_14.exploit)
+	setText(findTF(arg0_14._tf:Find("bottom/player_info"), "statistics_panel/exploit_bg/score"), arg1_14.exploit)
 end
 
 function var0_0.uiStartAnimating(arg0_15)
@@ -116,22 +116,22 @@ function var0_0.didEnter(arg0_17)
 			arg0_17:emit(var0_0.ON_BACK)
 		end
 	end, SFX_CANCEL)
-	setActive(arg0_17:findTF("stamp"), getProxy(TaskProxy):mingshiTouchFlagEnabled())
+	setActive(arg0_17._tf:Find("stamp"), getProxy(TaskProxy):mingshiTouchFlagEnabled())
 
 	if LOCK_CLICK_MINGSHI then
-		setActive(arg0_17:findTF("stamp"), false)
+		setActive(arg0_17._tf:Find("stamp"), false)
 	end
 
-	onButton(arg0_17, arg0_17:findTF("stamp"), function()
+	onButton(arg0_17, arg0_17._tf:Find("stamp"), function()
 		getProxy(TaskProxy):dealMingshiTouchFlag(10)
 	end, SFX_CONFIRM)
-	onButton(arg0_17, arg0_17:findTF("bottom/buttons/rank_btn"), function()
+	onButton(arg0_17, arg0_17._tf:Find("bottom/buttons/rank_btn"), function()
 		arg0_17:emit(MilitaryExerciseMediator.OPEN_RANK)
 	end, SFX_PANEL)
-	onButton(arg0_17, arg0_17:findTF("bottom/buttons/shop_btn"), function()
+	onButton(arg0_17, arg0_17._tf:Find("bottom/buttons/shop_btn"), function()
 		arg0_17:emit(MilitaryExerciseMediator.OPEN_SHOP)
 	end, SFX_PANEL)
-	onButton(arg0_17, arg0_17:findTF("bottom/buttons/award_btn"), function()
+	onButton(arg0_17, arg0_17._tf:Find("bottom/buttons/award_btn"), function()
 		arg0_17.isOpenAwards = true
 
 		pg.UIMgr.GetInstance():BlurPanel(arg0_17.awardPanel)
@@ -154,7 +154,7 @@ function var0_0.didEnter(arg0_17)
 end
 
 function var0_0.updateSeasonTime(arg0_24)
-	arg0_24.seasonInfoPanel = arg0_24:findTF("center/season_info")
+	arg0_24.seasonInfoPanel = arg0_24._tf:Find("center/season_info")
 
 	arg0_24:updateSeasonLeftTime(arg0_24.seasonTime)
 	arg0_24:updateRecoverTime(arg0_24.recoverTime)
@@ -284,7 +284,7 @@ end
 
 function var0_0.initPlayerInfo(arg0_35)
 	local var0_35 = arg0_35.seasonInfo.score
-	local var1_35 = arg0_35:findTF("bottom/player_info")
+	local var1_35 = arg0_35._tf:Find("bottom/player_info")
 
 	setText(findTF(var1_35, "statistics_panel/score_bg/score"), var0_35)
 	setText(findTF(var1_35, "statistics_panel/rank_bg/score"), arg0_35.seasonInfo.rank)
@@ -365,28 +365,28 @@ end
 function var0_0.initAwards(arg0_39)
 	assert(not arg0_39.isInitAward, "已经初始化奖励列表")
 	setActive(arg0_39.awardPanel, true)
-	onButton(arg0_39, arg0_39:findTF("top/btnBack", arg0_39.awardPanel), function()
+	onButton(arg0_39, arg0_39.awardPanel:Find("top/btnBack"), function()
 		arg0_39:closeAwards()
 	end, SFX_CANCEL)
 
-	local var0_39 = arg0_39:findTF("bg/frame/content/time_panel/Text", arg0_39.awardPanel)
+	local var0_39 = arg0_39.awardPanel:Find("bg/frame/content/time_panel/Text")
 
 	setText(var0_39, i18n("exercise_time_tip", "   " .. os.date("%Y.%m.%d", arg0_39.activity.data1) .. " — " .. os.date("%Y.%m.%d", arg0_39.activity.stopTime)))
 
-	local var1_39 = arg0_39:findTF("bg/frame/content/desc_panel/Text", arg0_39.awardPanel)
+	local var1_39 = arg0_39.awardPanel:Find("bg/frame/content/desc_panel/Text")
 
 	setText(var1_39, i18n("exercise_rule_tip"))
 
-	local var2_39 = arg0_39:findTF("bg/frame/content/award_panel/award_list", arg0_39.awardPanel)
+	local var2_39 = arg0_39.awardPanel:Find("bg/frame/content/award_panel/award_list")
 	local var3_39 = arg0_39:getTpl("awardtpl", var2_39)
 	local var4_39 = arg0_39:getTpl("awards/equipmenttpl", var3_39)
-	local var5_39 = arg0_39:findTF("linetpl", var2_39)
-	local var6_39 = arg0_39:findTF("bg/frame/content/award_panel/Text", arg0_39.awardPanel)
+	local var5_39 = var2_39:Find("linetpl")
+	local var6_39 = arg0_39.awardPanel:Find("bg/frame/content/award_panel/Text")
 
 	setText(var6_39, i18n("exercise_award_tip"))
 
 	local function var7_39(arg0_41, arg1_41)
-		local var0_41 = arg0_39:findTF("awards", arg0_41)
+		local var0_41 = arg0_41:Find("awards")
 		local var1_41 = arg0_39.rankCfg[arg1_41]
 
 		setText(findTF(arg0_41, "Text"), var1_41.name .. ":")

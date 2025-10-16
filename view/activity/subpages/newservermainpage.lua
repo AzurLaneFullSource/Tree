@@ -1,11 +1,11 @@
 local var0_0 = class("NewServerMainPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.time = arg0_1:findTF("time", arg0_1.bg)
-	arg0_1.shopBtn = arg0_1:findTF("btn_list/shop", arg0_1.bg)
-	arg0_1.fightBtn = arg0_1:findTF("btn_list/fight", arg0_1.bg)
-	arg0_1.buildBtn = arg0_1:findTF("btn_list/build", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.time = arg0_1.bg:Find("time")
+	arg0_1.shopBtn = arg0_1.bg:Find("btn_list/shop")
+	arg0_1.fightBtn = arg0_1.bg:Find("btn_list/fight")
+	arg0_1.buildBtn = arg0_1.bg:Find("btn_list/build")
 end
 
 function var0_0.OnFirstFlush(arg0_2)

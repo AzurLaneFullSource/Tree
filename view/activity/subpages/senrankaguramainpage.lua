@@ -6,9 +6,9 @@ var0_0.SWITCH_WIDTH = 367
 var0_0.TACHIE_DELAY = 0.03
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD/mask")
-	arg0_1.btnList = arg0_1:findTF("btn_list", arg0_1.bg)
-	arg0_1.main = arg0_1:findTF("main", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD/mask")
+	arg0_1.btnList = arg0_1.bg:Find("btn_list")
+	arg0_1.main = arg0_1.bg:Find("main")
 	arg0_1.totalNum = arg0_1.main.childCount
 	arg0_1.randomList = {}
 	arg0_1.children = {}
@@ -31,7 +31,7 @@ end
 
 function var0_0.OnFirstFlush(arg0_2)
 	var0_0.super.OnFirstFlush(arg0_2)
-	onButton(arg0_2, arg0_2:findTF("mountain", arg0_2.btnList), function()
+	onButton(arg0_2, arg0_2.btnList:Find("mountain"), function()
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SENRANKAGURA_BACKHILL)
 	end, SFX_PANEL)
 

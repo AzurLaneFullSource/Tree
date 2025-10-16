@@ -11,7 +11,7 @@ local var1_0 = {
 }
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
+	arg0_1.bg = arg0_1._tf:Find("AD")
 	arg0_1.masklist = arg0_1.bg:Find("maskList")
 	arg0_1.slider = arg0_1.bg:Find("slider")
 end

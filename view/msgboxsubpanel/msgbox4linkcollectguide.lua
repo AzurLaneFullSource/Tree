@@ -10,21 +10,21 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnInit(arg0_2)
-	arg0_2.title = arg0_2:findTF("name_mask/name")
-	arg0_2.owner = arg0_2:findTF("owner")
+	arg0_2.title = arg0_2._tf:Find("name_mask/name")
+	arg0_2.owner = arg0_2._tf:Find("owner")
 
-	setText(arg0_2:findTF("title", arg0_2.owner), i18n("collect_page_got"))
+	setText(arg0_2.owner:Find("title"), i18n("collect_page_got"))
 
-	arg0_2.ownerLimit = arg0_2:findTF("owner_limit")
+	arg0_2.ownerLimit = arg0_2._tf:Find("owner_limit")
 
-	setText(arg0_2:findTF("title", arg0_2.ownerLimit), i18n("collect_page_got"))
+	setText(arg0_2.ownerLimit:Find("title"), i18n("collect_page_got"))
 
-	arg0_2.iconTF = arg0_2:findTF("left/IconTpl")
-	arg0_2.ownTF = arg0_2:findTF("left/own")
-	arg0_2.detailTF = arg0_2:findTF("left/detail")
-	arg0_2.desc = arg0_2:findTF("content/desc")
-	arg0_2.list = arg0_2:findTF("content/skipable_list")
-	arg0_2.tpl = arg0_2:findTF("tpl", arg0_2.list)
+	arg0_2.iconTF = arg0_2._tf:Find("left/IconTpl")
+	arg0_2.ownTF = arg0_2._tf:Find("left/own")
+	arg0_2.detailTF = arg0_2._tf:Find("left/detail")
+	arg0_2.desc = arg0_2._tf:Find("content/desc")
+	arg0_2.list = arg0_2._tf:Find("content/skipable_list")
+	arg0_2.tpl = arg0_2.list:Find("tpl")
 end
 
 function var0_0.OnRefresh(arg0_3, arg1_3)
@@ -48,11 +48,11 @@ function var0_0.OnRefresh(arg0_3, arg1_3)
 	if arg1_3.show_type == var0_0.SHOW_TYPE_NORMAL then
 		setActive(arg0_3.owner, true)
 		setActive(arg0_3.ownerLimit, false)
-		setText(arg0_3:findTF("Text", arg0_3.owner), arg1_3.count)
+		setText(arg0_3.owner:Find("Text"), arg1_3.count)
 	elseif arg1_3.show_type == var0_0.SHOW_TYPE_LIMIT then
 		setActive(arg0_3.owner, false)
 		setActive(arg0_3.ownerLimit, true)
-		setText(arg0_3:findTF("Text", arg0_3.ownerLimit), arg1_3.count .. "/" .. (arg1_3.count_limit or 0))
+		setText(arg0_3.ownerLimit:Find("Text"), arg1_3.count .. "/" .. (arg1_3.count_limit or 0))
 	end
 
 	UIItemList.StaticAlign(arg0_3.list, arg0_3.tpl, #arg1_3.skipable_list, function(arg0_4, arg1_4, arg2_4)
@@ -62,9 +62,9 @@ function var0_0.OnRefresh(arg0_3, arg1_3)
 			local var2_4 = var0_4[2]
 			local var3_4 = var0_4[3]
 
-			changeToScrollText(arg0_3:findTF("mask/title", arg2_4), var3_4)
+			changeToScrollText(arg2_4:Find("mask/title"), var3_4)
 
-			local var4_4 = arg0_3:findTF("skip_btn", arg2_4)
+			local var4_4 = arg2_4:Find("skip_btn")
 
 			onButton(arg0_3, var4_4, function()
 				if var1_4 == var0_0.SKIP_TYPE_SCENE then

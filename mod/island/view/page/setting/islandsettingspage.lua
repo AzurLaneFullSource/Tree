@@ -44,9 +44,9 @@ function var0_0.GetPage(arg0_7, arg1_7)
 end
 
 function var0_0.OnLoaded(arg0_8)
-	arg0_8.backBtn = arg0_8:findTF("top/closeBtn")
+	arg0_8.backBtn = arg0_8._tf:Find("top/closeBtn")
 
-	local var0_8 = arg0_8:findTF("pages")
+	local var0_8 = arg0_8._tf:Find("pages")
 
 	arg0_8.pages = {
 		IslandSettings3DPage.New(var0_8, arg0_8.event, {}),
@@ -54,9 +54,9 @@ function var0_0.OnLoaded(arg0_8)
 		IslandSettingsCommonPage.New(var0_8, arg0_8.event, arg0_8.contextData)
 	}
 	arg0_8.toggles = {
-		arg0_8:findTF("adapt/left_length/imageQuality"),
-		arg0_8:findTF("adapt/left_length/operation"),
-		arg0_8:findTF("adapt/left_length/common")
+		arg0_8._tf:Find("adapt/left_length/imageQuality"),
+		arg0_8._tf:Find("adapt/left_length/operation"),
+		arg0_8._tf:Find("adapt/left_length/common")
 	}
 
 	local function var1_8(arg0_9, arg1_9)
@@ -64,11 +64,11 @@ function var0_0.OnLoaded(arg0_8)
 		setText(arg0_9:Find("name"), arg1_9)
 	end
 
-	var1_8(arg0_8:findTF("adapt/left_length/imageQuality"), i18n("grapihcs3d_setting_3Dquality"))
-	var1_8(arg0_8:findTF("adapt/left_length/operation"), i18n("grapihcs3d_setting_control"))
-	var1_8(arg0_8:findTF("adapt/left_length/common"), i18n("grapihcs3d_setting_general"))
-	setText(arg0_8:findTF("top/title/Text"), i18n("island_settings"))
-	setText(arg0_8:findTF("top/title/Text/en"), i18n("island_settings_en"))
+	var1_8(arg0_8._tf:Find("adapt/left_length/imageQuality"), i18n("grapihcs3d_setting_3Dquality"))
+	var1_8(arg0_8._tf:Find("adapt/left_length/operation"), i18n("grapihcs3d_setting_control"))
+	var1_8(arg0_8._tf:Find("adapt/left_length/common"), i18n("grapihcs3d_setting_general"))
+	setText(arg0_8._tf:Find("top/title/Text"), i18n("island_settings"))
+	setText(arg0_8._tf:Find("top/title/Text/en"), i18n("island_settings_en"))
 end
 
 function var0_0.OnShow(arg0_10)

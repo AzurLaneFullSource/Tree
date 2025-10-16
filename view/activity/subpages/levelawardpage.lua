@@ -1,12 +1,12 @@
 local var0_0 = class("LevelAwardPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("bg")
-	arg0_1.award = arg0_1:findTF("scroll/award")
-	arg0_1.content = arg0_1:findTF("scroll/content")
-	arg0_1.scrollTF = arg0_1:findTF("scroll")
-	arg0_1.pageSignDownTF = arg0_1:findTF("sign")
-	arg0_1.pageSignUpTF = arg0_1:findTF("sign_up")
+	arg0_1.bg = arg0_1._tf:Find("bg")
+	arg0_1.award = arg0_1._tf:Find("scroll/award")
+	arg0_1.content = arg0_1._tf:Find("scroll/content")
+	arg0_1.scrollTF = arg0_1._tf:Find("scroll")
+	arg0_1.pageSignDownTF = arg0_1._tf:Find("sign")
+	arg0_1.pageSignUpTF = arg0_1._tf:Find("sign_up")
 end
 
 function var0_0.OnDataSetting(arg0_2)
@@ -20,10 +20,10 @@ function var0_0.OnFirstFlush(arg0_3)
 		local var0_3 = arg0_3.config.front_drops[iter0_3]
 		local var1_3 = var0_3[1]
 		local var2_3 = cloneTplTo(arg0_3.award, arg0_3.content, "award" .. tostring(iter0_3))
-		local var3_3 = arg0_3:findTF("limit_label/labelLevel", var2_3)
-		local var4_3 = arg0_3:findTF("btnAchieve", var2_3)
-		local var5_3 = arg0_3:findTF("items", var2_3)
-		local var6_3 = arg0_3:findTF("item", var2_3)
+		local var3_3 = var2_3:Find("limit_label/labelLevel")
+		local var4_3 = var2_3:Find("btnAchieve")
+		local var5_3 = var2_3:Find("items")
+		local var6_3 = var2_3:Find("item")
 
 		setActive(var6_3, false)
 		GetImageSpriteFromAtlasAsync("ui/activityuipage/level_award_atlas", tostring(var1_3), var3_3, true)
@@ -60,17 +60,17 @@ end
 function var0_0.OnUpdateFlush(arg0_7)
 	for iter0_7 = 1, #arg0_7.config.front_drops do
 		local var0_7 = arg0_7.config.front_drops[iter0_7]
-		local var1_7 = arg0_7:findTF("award" .. tostring(iter0_7), arg0_7.content)
-		local var2_7 = arg0_7:findTF("btnAchieve", var1_7)
-		local var3_7 = arg0_7:findTF("achieve_sign", var1_7)
+		local var1_7 = arg0_7._tf:Find("award" .. tostring(iter0_7), arg0_7.content)
+		local var2_7 = var1_7:Find("btnAchieve")
+		local var3_7 = var1_7:Find("achieve_sign")
 		local var4_7 = _.include(arg0_7.activity.data1_list, var0_7[1])
 
 		if var4_7 then
 			var1_7.transform:SetAsLastSibling()
 		end
 
-		setGray(arg0_7:findTF("limit_label", var1_7), var4_7)
-		setGray(arg0_7:findTF("items", var1_7), var4_7)
+		setGray(var1_7:Find("limit_label"), var4_7)
+		setGray(var1_7:Find("items"), var4_7)
 		setActive(var3_7, var4_7)
 		setActive(var2_7, arg0_7.shareData.player.level >= var0_7[1] and not var4_7)
 	end

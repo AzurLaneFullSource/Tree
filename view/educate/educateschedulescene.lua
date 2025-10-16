@@ -160,71 +160,71 @@ function var0_0.clearGridData(arg0_10, arg1_10, arg2_10)
 end
 
 function var0_0.findUI(arg0_11)
-	arg0_11.bgTF = arg0_11:findTF("anim_root/bg")
-	arg0_11.topTF = arg0_11:findTF("anim_root/top")
-	arg0_11.returnBtn = arg0_11:findTF("return_btn/return_btn", arg0_11.topTF)
-	arg0_11.mainTF = arg0_11:findTF("anim_root/main")
-	arg0_11.leftPanelTF = arg0_11:findTF("schedule_left", arg0_11.mainTF)
-	arg0_11.targetTF = arg0_11:findTF("target", arg0_11.leftPanelTF)
+	arg0_11.bgTF = arg0_11._tf:Find("anim_root/bg")
+	arg0_11.topTF = arg0_11._tf:Find("anim_root/top")
+	arg0_11.returnBtn = arg0_11.topTF:Find("return_btn/return_btn")
+	arg0_11.mainTF = arg0_11._tf:Find("anim_root/main")
+	arg0_11.leftPanelTF = arg0_11.mainTF:Find("schedule_left")
+	arg0_11.targetTF = arg0_11.leftPanelTF:Find("target")
 
-	setText(arg0_11:findTF("title", arg0_11.targetTF), i18n("child_btn_target") .. ":")
+	setText(arg0_11.targetTF:Find("title"), i18n("child_btn_target") .. ":")
 
-	arg0_11.scheduleTF = arg0_11:findTF("schedule", arg0_11.leftPanelTF)
-	arg0_11.dayList = UIItemList.New(arg0_11.scheduleTF, arg0_11:findTF("schedule/day_tpl", arg0_11.leftPanelTF))
-	arg0_11.monthText = arg0_11:findTF("title/month", arg0_11.leftPanelTF)
+	arg0_11.scheduleTF = arg0_11.leftPanelTF:Find("schedule")
+	arg0_11.dayList = UIItemList.New(arg0_11.scheduleTF, arg0_11.leftPanelTF:Find("schedule/day_tpl"))
+	arg0_11.monthText = arg0_11.leftPanelTF:Find("title/month")
 
-	setText(arg0_11:findTF("title/right/content/month", arg0_11.leftPanelTF), i18n("word_month"))
+	setText(arg0_11.leftPanelTF:Find("title/right/content/month"), i18n("word_month"))
 
-	arg0_11.weekText = arg0_11:findTF("title/right/content/week", arg0_11.leftPanelTF)
-	arg0_11.skipToggle = arg0_11:findTF("skip_toggle", arg0_11.leftPanelTF)
+	arg0_11.weekText = arg0_11.leftPanelTF:Find("title/right/content/week")
+	arg0_11.skipToggle = arg0_11.leftPanelTF:Find("skip_toggle")
 	arg0_11.skipToggleCom = arg0_11.skipToggle:GetComponent(typeof(Toggle))
 
 	local var0_11 = PlayerPrefs.GetInt(EducateConst.SKIP_PLANS_ANIM_KEY .. "_" .. arg0_11.playerID)
 
 	triggerToggle(arg0_11.skipToggle, var0_11 == 1)
 	setActive(arg0_11.skipToggle, true)
-	setText(arg0_11:findTF("Text", arg0_11.skipToggle), i18n("child_plan_skip"))
+	setText(arg0_11.skipToggle:Find("Text"), i18n("child_plan_skip"))
 
-	arg0_11.selectPanelTF = arg0_11:findTF("select_panel", arg0_11.leftPanelTF)
+	arg0_11.selectPanelTF = arg0_11.leftPanelTF:Find("select_panel")
 
 	setActive(arg0_11.selectPanelTF, false)
 
-	arg0_11.selectCloseBtn = arg0_11:findTF("fold_btn", arg0_11.selectPanelTF)
-	arg0_11.plansView = arg0_11:findTF("scrollview", arg0_11.selectPanelTF)
-	arg0_11.rightPanelTF = arg0_11:findTF("result_right", arg0_11.mainTF)
-	arg0_11.rightEmptyTF = arg0_11:findTF("empty", arg0_11.rightPanelTF)
+	arg0_11.selectCloseBtn = arg0_11.selectPanelTF:Find("fold_btn")
+	arg0_11.plansView = arg0_11.selectPanelTF:Find("scrollview")
+	arg0_11.rightPanelTF = arg0_11.mainTF:Find("result_right")
+	arg0_11.rightEmptyTF = arg0_11.rightPanelTF:Find("empty")
 
-	setText(arg0_11:findTF("Text", arg0_11.rightEmptyTF), i18n("child_schedule_empty_tip"))
+	setText(arg0_11.rightEmptyTF:Find("Text"), i18n("child_schedule_empty_tip"))
 
-	arg0_11.rightContentTF = arg0_11:findTF("content", arg0_11.rightPanelTF)
-	arg0_11.buffUIList = UIItemList.New(arg0_11:findTF("buff_list", arg0_11.rightContentTF), arg0_11:findTF("buff_list/tpl", arg0_11.rightContentTF))
-	arg0_11.avatarTF = arg0_11:findTF("avatar", arg0_11.rightContentTF)
-	arg0_11.avatarImage = arg0_11:findTF("mask/Image", arg0_11.avatarTF)
-	arg0_11.natureTF = arg0_11:findTF("nature/unlock", arg0_11.rightContentTF)
-	arg0_11.natureLockTF = arg0_11:findTF("nature/lock", arg0_11.rightContentTF)
+	arg0_11.rightContentTF = arg0_11.rightPanelTF:Find("content")
+	arg0_11.buffUIList = UIItemList.New(arg0_11.rightContentTF:Find("buff_list"), arg0_11.rightContentTF:Find("buff_list/tpl"))
+	arg0_11.avatarTF = arg0_11.rightContentTF:Find("avatar")
+	arg0_11.avatarImage = arg0_11.avatarTF:Find("mask/Image")
+	arg0_11.natureTF = arg0_11.rightContentTF:Find("nature/unlock")
+	arg0_11.natureLockTF = arg0_11.rightContentTF:Find("nature/lock")
 
-	setText(arg0_11:findTF("major_title/Text", arg0_11.rightContentTF), i18n("child_attr_name1"))
-	setText(arg0_11:findTF("minor_title/Text", arg0_11.rightContentTF), i18n("child_attr_name2"))
+	setText(arg0_11.rightContentTF:Find("major_title/Text"), i18n("child_attr_name1"))
+	setText(arg0_11.rightContentTF:Find("minor_title/Text"), i18n("child_attr_name2"))
 
-	arg0_11.majorUIList = UIItemList.New(arg0_11:findTF("major", arg0_11.rightContentTF), arg0_11:findTF("major/tpl", arg0_11.rightContentTF))
-	arg0_11.minorUIList = UIItemList.New(arg0_11:findTF("minor", arg0_11.rightContentTF), arg0_11:findTF("minor/tpl", arg0_11.rightContentTF))
-	arg0_11.nextBtn = arg0_11:findTF("next_btn", arg0_11.rightPanelTF)
-	arg0_11.topPanel = EducateTopPanel.New(arg0_11:findTF("top_right", arg0_11.topTF), arg0_11.event)
+	arg0_11.majorUIList = UIItemList.New(arg0_11.rightContentTF:Find("major"), arg0_11.rightContentTF:Find("major/tpl"))
+	arg0_11.minorUIList = UIItemList.New(arg0_11.rightContentTF:Find("minor"), arg0_11.rightContentTF:Find("minor/tpl"))
+	arg0_11.nextBtn = arg0_11.rightPanelTF:Find("next_btn")
+	arg0_11.topPanel = EducateTopPanel.New(arg0_11.topTF:Find("top_right"), arg0_11.event)
 
 	arg0_11.topPanel:Load()
 
-	arg0_11.resPanel = EducateResPanel.New(arg0_11:findTF("res", arg0_11.topTF), arg0_11.event)
+	arg0_11.resPanel = EducateResPanel.New(arg0_11.topTF:Find("res"), arg0_11.event)
 
 	arg0_11.resPanel:Load()
 end
 
 function var0_0.addListener(arg0_12)
-	setActive(arg0_12:findTF("clear_btn", arg0_12.topTF), false)
-	onButton(arg0_12, arg0_12:findTF("clear_btn", arg0_12.topTF), function()
+	setActive(arg0_12.topTF:Find("clear_btn"), false)
+	onButton(arg0_12, arg0_12.topTF:Find("clear_btn"), function()
 		arg0_12:clearLocalPlans()
-		arg0_12.resPanel:Flush()
+		arg0_12.resPanel:ActionInvoke("Flush")
 	end, SFX_PANEL)
-	onButton(arg0_12, arg0_12:findTF("index_btn", arg0_12.selectPanelTF), function()
+	onButton(arg0_12, arg0_12.selectPanelTF:Find("index_btn"), function()
 		local var0_14 = {
 			indexDatas = Clone(arg0_12.contextData.indexDatas) or {},
 			callback = function(arg0_15)
@@ -334,7 +334,7 @@ function var0_0.didEnter(arg0_29)
 	arg0_29:checkTips()
 	arg0_29:OverlayPanel(arg0_29.mainTF, {
 		pbList = {
-			arg0_29:findTF("bg", arg0_29.mainTF)
+			arg0_29.mainTF:Find("bg")
 		}
 	})
 	arg0_29:OverlayPanel(arg0_29.topTF, {
@@ -376,8 +376,8 @@ function var0_0.initTargetText(arg0_33)
 	local var0_33 = arg0_33.educateProxy:GetTaskProxy()
 
 	if not var0_33:CanGetTargetAward() then
-		setText(arg0_33:findTF("Text", arg0_33.targetTF), i18n("child_task_finish_all"))
-		setActive(arg0_33:findTF("icon", arg0_33.targetTF), false)
+		setText(arg0_33.targetTF:Find("Text"), i18n("child_task_finish_all"))
+		setActive(arg0_33.targetTF:Find("icon"), false)
 	else
 		local var1_33 = var0_33:FilterByGroup(var0_33:GetTargetTasksForShow())[1]
 
@@ -385,18 +385,18 @@ function var0_0.initTargetText(arg0_33)
 			setActive(arg0_33.targetTF, false)
 		end
 
-		setText(arg0_33:findTF("Text", arg0_33.targetTF), var1_33:getConfig("name"))
+		setText(arg0_33.targetTF:Find("Text"), var1_33:getConfig("name"))
 
 		if var1_33:GetType() == EducateTask.TYPE_ATTR then
-			setActive(arg0_33:findTF("icon", arg0_33.targetTF), true)
+			setActive(arg0_33.targetTF:Find("icon"), true)
 
 			arg0_33.showAttrSubtype = var1_33:getConfig("sub_type")
 
 			local var2_33 = type(arg0_33.showAttrSubtype) == "string" and arg0_33.showAttrSubtype or arg0_33.showAttrSubtype[1]
 
-			GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var2_33, arg0_33:findTF("icon", arg0_33.targetTF))
+			GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var2_33, arg0_33.targetTF:Find("icon"))
 		else
-			setActive(arg0_33:findTF("icon", arg0_33.targetTF), false)
+			setActive(arg0_33.targetTF:Find("icon"), false)
 		end
 	end
 end
@@ -418,14 +418,14 @@ function var0_0.initSchedulePanel(arg0_35)
 
 			arg2_36.name = tostring(var0_36)
 
-			GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", var0_36, arg0_35:findTF("title", arg2_36), true)
+			GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", var0_36, arg2_36:Find("title"), true)
 
 			for iter0_36 = 1, 3 do
-				local var1_36 = arg0_35:findTF("cells", arg2_36):GetChild(iter0_36 - 1)
+				local var1_36 = arg2_36:Find("cells"):GetChild(iter0_36 - 1)
 				local var2_36 = arg0_35.planProxy:GetGridBgName(var0_36, iter0_36)
 
-				GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", var2_36[1], arg0_35:findTF("empty", var1_36), true)
-				GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", var2_36[2], arg0_35:findTF("plan/name_bg", var1_36), true)
+				GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", var2_36[1], var1_36:Find("empty"), true)
+				GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", var2_36[2], var1_36:Find("plan/name_bg"), true)
 				onButton(arg0_35, var1_36, function()
 					local var0_37 = arg0_35.gridData[var0_36][iter0_36]
 
@@ -449,22 +449,22 @@ function var0_0._updateGrid(arg0_38, arg1_38, arg2_38)
 	setActive(arg1_38, not arg2_38:IsLock())
 
 	if not arg2_38:IsLock() then
-		setActive(arg0_38:findTF("empty", arg1_38), arg2_38:IsEmpty())
+		setActive(arg1_38:Find("empty"), arg2_38:IsEmpty())
 
 		arg1_38:GetComponent(typeof(Image)).enabled = not arg2_38:IsEmpty()
 
-		setActive(arg0_38:findTF("plan", arg1_38), not arg2_38:IsEmpty())
+		setActive(arg1_38:Find("plan"), not arg2_38:IsEmpty())
 
 		if arg2_38:IsPlan() or arg2_38:IsPlanOccupy() then
-			LoadImageSpriteAsync("educateprops/" .. arg2_38.data:getConfig("icon"), arg0_38:findTF("plan/icon", arg1_38), true)
-			setScrollText(arg0_38:findTF("plan/name_bg/Text", arg1_38), arg2_38.data:getConfig("name"))
+			LoadImageSpriteAsync("educateprops/" .. arg2_38.data:getConfig("icon"), arg1_38:Find("plan/icon"), true)
+			setScrollText(arg1_38:Find("plan/name_bg/Text"), arg2_38.data:getConfig("name"))
 		end
 
 		if arg2_38:IsEvent() or arg2_38:IsEventOccupy() then
 			local var0_38 = arg2_38.data:getConfig("type_param")[1] or ""
 
-			LoadImageSpriteAsync("educateprops/" .. var0_38, arg0_38:findTF("plan/icon", arg1_38), true)
-			setScrollText(arg0_38:findTF("plan/name_bg/Text", arg1_38), i18n("child_plan_event"))
+			LoadImageSpriteAsync("educateprops/" .. var0_38, arg1_38:Find("plan/icon"), true)
+			setScrollText(arg1_38:Find("plan/name_bg/Text"), i18n("child_plan_event"))
 		end
 	end
 end
@@ -473,7 +473,7 @@ function var0_0.updateDayGrids(arg0_39, arg1_39, arg2_39)
 	local var0_39 = arg1_39 + 1
 
 	for iter0_39 = 1, 3 do
-		local var1_39 = arg0_39:findTF("cells", arg2_39):GetChild(iter0_39 - 1)
+		local var1_39 = arg2_39:Find("cells"):GetChild(iter0_39 - 1)
 
 		var1_39.name = tostring(iter0_39)
 
@@ -518,7 +518,7 @@ function var0_0.initSelectPlans(arg0_40)
 	end
 
 	for iter0_40 = 1, 3 do
-		local var0_40 = arg0_40:findTF("day/cells", arg0_40.selectPanelTF):GetChild(iter0_40 - 1)
+		local var0_40 = arg0_40.selectPanelTF:Find("day/cells"):GetChild(iter0_40 - 1)
 
 		onButton(arg0_40, var0_40, function()
 			local var0_44 = arg0_40.gridData[arg0_40.selectDay][iter0_40]
@@ -536,7 +536,7 @@ function var0_0.initSelectPlans(arg0_40)
 end
 
 function var0_0.openSelectPanel(arg0_45, arg1_45, arg2_45)
-	LoadImageSpriteAtlasAsync("ui/educatescheduleui_atlas", arg1_45, arg0_45:findTF("day/title", arg0_45.selectPanelTF), true)
+	LoadImageSpriteAtlasAsync("ui/educatescheduleui_atlas", arg1_45, arg0_45.selectPanelTF:Find("day/title"), true)
 	setActive(arg0_45.selectPanelTF, true)
 	setActive(arg0_45.scheduleTF, false)
 
@@ -549,13 +549,13 @@ end
 
 function var0_0.updateSelectdDay(arg0_46)
 	for iter0_46 = 1, 3 do
-		local var0_46 = arg0_46:findTF("day/cells", arg0_46.selectPanelTF):GetChild(iter0_46 - 1)
+		local var0_46 = arg0_46.selectPanelTF:Find("day/cells"):GetChild(iter0_46 - 1)
 		local var1_46 = arg0_46.gridData[arg0_46.selectDay][iter0_46]
 		local var2_46 = arg0_46.planProxy:GetGridBgName(arg0_46.selectDay, iter0_46)
 
-		GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", var2_46[1], arg0_46:findTF("empty", var0_46), true)
-		GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", var2_46[2], arg0_46:findTF("plan/name_bg", var0_46), true)
-		setActive(arg0_46:findTF("selected", var0_46), arg0_46.selectIndex == iter0_46)
+		GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", var2_46[1], var0_46:Find("empty"), true)
+		GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", var2_46[2], var0_46:Find("plan/name_bg"), true)
+		setActive(var0_46:Find("selected"), arg0_46.selectIndex == iter0_46)
 		arg0_46:_updateGrid(var0_46, var1_46)
 	end
 end
@@ -695,7 +695,7 @@ function var0_0.showBuffBox(arg0_60, arg1_60)
 end
 
 function var0_0.initResultPanel(arg0_61)
-	arg0_61.resPanel:FlushAddValue("", "")
+	arg0_61.resPanel:ActionInvoke("FlushAddValue", "", "")
 	arg0_61.buffUIList:make(function(arg0_62, arg1_62, arg2_62)
 		if arg0_62 == UIItemList.EventUpdate then
 			onButton(arg0_61, arg2_62, function()
@@ -705,20 +705,20 @@ function var0_0.initResultPanel(arg0_61)
 	end)
 	arg0_61.buffUIList:align(#arg0_61.buffList)
 
-	local var0_61 = arg0_61:findTF("content", arg0_61.natureTF)
-	local var1_61 = arg0_61:findTF("progress", arg0_61.avatarTF)
+	local var0_61 = arg0_61.natureTF:Find("content")
+	local var1_61 = arg0_61.avatarTF:Find("progress")
 	local var2_61 = arg0_61.char:GetPaintingName()
 
-	setImageSprite(arg0_61:findTF("mask/Image", arg0_61.avatarTF), LoadSprite("squareicon/" .. var2_61), true)
+	setImageSprite(arg0_61.avatarTF:Find("mask/Image"), LoadSprite("squareicon/" .. var2_61), true)
 
 	for iter0_61, iter1_61 in ipairs(arg0_61.natureIds) do
 		local var3_61 = var0_61:GetChild(iter0_61 - 1)
 
-		setActive(arg0_61:findTF("tip", var3_61), false)
+		setActive(var3_61:Find("tip"), false)
 
 		var3_61.name = iter1_61
 
-		setScrollText(arg0_61:findTF("mask/Text", var3_61), pg.child_attr[iter1_61].name .. " " .. arg0_61.char:GetAttrById(iter1_61))
+		setScrollText(var3_61:Find("mask/Text"), pg.child_attr[iter1_61].name .. " " .. arg0_61.char:GetAttrById(iter1_61))
 	end
 
 	arg0_61.majorUIList:make(function(arg0_64, arg1_64, arg2_64)
@@ -727,18 +727,18 @@ function var0_0.initResultPanel(arg0_61)
 
 			arg2_64.name = var0_64
 
-			GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var0_64, arg0_61:findTF("icon", arg2_64), true)
-			setScrollText(arg0_61:findTF("name_mask/name", arg2_64), pg.child_attr[var0_64].name)
+			GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var0_64, arg2_64:Find("icon"), true)
+			setScrollText(arg2_64:Find("name_mask/name"), pg.child_attr[var0_64].name)
 
 			local var1_64 = arg0_61.char:GetAttrInfo(var0_64)
 
-			setText(arg0_61:findTF("grade/Text", arg2_64), var1_64)
-			setText(arg0_61:findTF("before_value", arg2_64), arg0_61.char:GetAttrById(var0_64))
+			setText(arg2_64:Find("grade/Text"), var1_64)
+			setText(arg2_64:Find("before_value"), arg0_61.char:GetAttrById(var0_64))
 
 			local var2_64 = EducateConst.GRADE_2_COLOR[var1_64][2]
 
-			setActive(arg0_61:findTF("gradient", arg2_64), false)
-			setImageColor(arg0_61:findTF("grade", arg2_64), Color.NewHex(var2_64))
+			setActive(arg2_64:Find("gradient"), false)
+			setImageColor(arg2_64:Find("grade"), Color.NewHex(var2_64))
 		elseif arg0_64 == UIItemList.EventUpdate then
 			local var3_64 = tonumber(arg2_64.name)
 			local var4_64 = arg0_61.char:GetAttrById(var3_64)
@@ -746,13 +746,13 @@ function var0_0.initResultPanel(arg0_61)
 			if arg0_61.attrResults and arg0_61.attrResults[var3_64] then
 				var4_64 = var4_64 + arg0_61.attrResults[var3_64]
 
-				setActive(arg0_61:findTF("gradient", arg2_64), true)
-				setImageColor(arg0_61:findTF("arrow", arg2_64), Color.NewHex("9efffe"))
-				setText(arg0_61:findTF("after_value", arg2_64), setColorStr(var4_64, "#9efffe"))
+				setActive(arg2_64:Find("gradient"), true)
+				setImageColor(arg2_64:Find("arrow"), Color.NewHex("9efffe"))
+				setText(arg2_64:Find("after_value"), setColorStr(var4_64, "#9efffe"))
 			else
-				setActive(arg0_61:findTF("gradient", arg2_64), false)
-				setImageColor(arg0_61:findTF("arrow", arg2_64), Color.NewHex("dddedf"))
-				setText(arg0_61:findTF("after_value", arg2_64), setColorStr(var4_64, "#ffffff"))
+				setActive(arg2_64:Find("gradient"), false)
+				setImageColor(arg2_64:Find("arrow"), Color.NewHex("dddedf"))
+				setText(arg2_64:Find("after_value"), setColorStr(var4_64, "#ffffff"))
 			end
 		end
 	end)
@@ -762,19 +762,19 @@ function var0_0.initResultPanel(arg0_61)
 
 			arg2_65.name = var0_65
 
-			GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var0_65, arg0_61:findTF("icon", arg2_65), true)
-			setText(arg0_61:findTF("value", arg2_65), arg0_61.char:GetAttrById(var0_65))
+			GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var0_65, arg2_65:Find("icon"), true)
+			setText(arg2_65:Find("value"), arg0_61.char:GetAttrById(var0_65))
 		elseif arg0_65 == UIItemList.EventUpdate then
 			local var1_65 = tonumber(arg2_65.name)
 			local var2_65 = arg0_61.char:GetAttrById(var1_65)
 
-			setText(arg0_61:findTF("name", arg2_65), pg.child_attr[var1_65].name)
+			setText(arg2_65:Find("name"), pg.child_attr[var1_65].name)
 
 			if arg0_61.attrResults and arg0_61.attrResults[var1_65] then
 				var2_65 = var2_65 .. setColorStr("+" .. arg0_61.attrResults[var1_65], "#9efffe")
 			end
 
-			setText(arg0_61:findTF("value", arg2_65), var2_65)
+			setText(arg2_65:Find("value"), var2_65)
 		end
 	end)
 
@@ -801,7 +801,7 @@ function var0_0.updateResultPanel(arg0_66)
 		local var5_66 = var3_66 - var1_66 >= 0 and "+" .. var3_66 - var1_66 or var3_66 - var1_66
 		local var6_66 = var4_66 - var2_66 >= 0 and "+" .. var4_66 - var2_66 or var4_66 - var2_66
 
-		arg0_66.resPanel:FlushAddValue(var6_66, var5_66)
+		arg0_66.resPanel:ActionInvoke("FlushAddValue", var6_66, var5_66)
 
 		local var7_66 = EducateHelper.IsShowNature()
 
@@ -809,7 +809,7 @@ function var0_0.updateResultPanel(arg0_66)
 		setActive(arg0_66.natureLockTF, not var7_66)
 
 		if var7_66 then
-			local var8_66 = arg0_66:findTF("content", arg0_66.natureTF)
+			local var8_66 = arg0_66.natureTF:Find("content")
 
 			eachChild(var8_66, function(arg0_67)
 				local var0_67 = tonumber(arg0_67.name)
@@ -819,11 +819,11 @@ function var0_0.updateResultPanel(arg0_66)
 					local var2_67 = var1_67 > 0 and "+" or ""
 					local var3_67 = var1_67 > 0 and "39bfff" or "a9a9a9"
 
-					setActive(arg0_66:findTF("tip", arg0_67), true)
-					setImageColor(arg0_66:findTF("tip", arg0_67), Color.NewHex(var3_67))
-					setText(arg0_66:findTF("tip/Text", arg0_67), var2_67 .. var1_67)
+					setActive(arg0_67:Find("tip"), true)
+					setImageColor(arg0_67:Find("tip"), Color.NewHex(var3_67))
+					setText(arg0_67:Find("tip/Text"), var2_67 .. var1_67)
 				else
-					setActive(arg0_66:findTF("tip", arg0_67), false)
+					setActive(arg0_67:Find("tip"), false)
 				end
 			end)
 		end
@@ -930,8 +930,8 @@ function var0_0.willExit(arg0_73)
 
 	arg0_73.resPanel = nil
 
-	arg0_73:UnOverlayPanel(arg0_73.mainTF, arg0_73:findTF("anim_root"))
-	arg0_73:UnOverlayPanel(arg0_73.topTF, arg0_73:findTF("anim_root"))
+	arg0_73:UnOverlayPanel(arg0_73.mainTF, arg0_73._tf:Find("anim_root"))
+	arg0_73:UnOverlayPanel(arg0_73.topTF, arg0_73._tf:Find("anim_root"))
 
 	for iter0_73, iter1_73 in pairs(arg0_73.planCards) do
 		iter1_73:dispose()

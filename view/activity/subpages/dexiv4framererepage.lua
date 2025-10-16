@@ -3,7 +3,7 @@ local var0_0 = class("DexiV4FrameReRePage", import(".TemplatePage.NewFrameTempla
 function var0_0.OnInit(arg0_1)
 	arg0_1.super.OnInit(arg0_1)
 
-	arg0_1.redDot = arg0_1:findTF("AD/switcher/phase2/Image/red")
+	arg0_1.redDot = arg0_1._tf:Find("AD/switcher/phase2/Image/red")
 end
 
 function var0_0.OnFirstFlush(arg0_2)

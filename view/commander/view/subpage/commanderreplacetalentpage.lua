@@ -5,16 +5,16 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.replaceList = UIItemList.New(arg0_2:findTF("bg/frame/bg/talents/content"), arg0_2:findTF("bg/frame/bg/talents/content/talent"))
-	arg0_2.replaceTargetTF = arg0_2:findTF("bg/frame/bg/talent")
-	arg0_2.replaceTalent = arg0_2:findTF("bg/frame/bg/replace")
-	arg0_2.replaceCloseBtn = arg0_2:findTF("bg/frame/close_btn")
-	arg0_2.replaceCancelBtn = arg0_2:findTF("bg/frame/cancel_btn")
-	arg0_2.confirmBtn = arg0_2:findTF("bg/frame/confirm_btn")
+	arg0_2.replaceList = UIItemList.New(arg0_2._tf:Find("bg/frame/bg/talents/content"), arg0_2._tf:Find("bg/frame/bg/talents/content/talent"))
+	arg0_2.replaceTargetTF = arg0_2._tf:Find("bg/frame/bg/talent")
+	arg0_2.replaceTalent = arg0_2._tf:Find("bg/frame/bg/replace")
+	arg0_2.replaceCloseBtn = arg0_2._tf:Find("bg/frame/close_btn")
+	arg0_2.replaceCancelBtn = arg0_2._tf:Find("bg/frame/cancel_btn")
+	arg0_2.confirmBtn = arg0_2._tf:Find("bg/frame/confirm_btn")
 
-	setActive(arg0_2:findTF("bg/frame/consume"), false)
-	setText(arg0_2:findTF("bg/frame/bg/title/Text"), i18n("commander_choice_talent_3"))
-	setText(arg0_2:findTF("bg/frame/bg/talents/title/Text"), i18n("commander_choice_talent_2"))
+	setActive(arg0_2._tf:Find("bg/frame/consume"), false)
+	setText(arg0_2._tf:Find("bg/frame/bg/title/Text"), i18n("commander_choice_talent_3"))
+	setText(arg0_2._tf:Find("bg/frame/bg/talents/title/Text"), i18n("commander_choice_talent_2"))
 end
 
 function var0_0.OnInit(arg0_3)

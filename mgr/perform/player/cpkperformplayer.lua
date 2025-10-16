@@ -3,11 +3,11 @@ local var0_0 = class("CpkPerformPlayer", import(".BasePerformPlayer"))
 function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.Ctor(arg0_1, arg1_1)
 
-	arg0_1.bgTF = arg0_1:findTF("bg", arg0_1._tf)
-	arg0_1.nameTF = arg0_1:findTF("name", arg0_1.bgTF)
-	arg0_1.sliderTF = arg0_1:findTF("slider", arg0_1.bgTF)
-	arg0_1.cpkParentTF = arg0_1:findTF("cpk", arg0_1.bgTF)
-	arg0_1.cpkCoverTF = arg0_1:findTF("cpk_cover", arg0_1.bgTF)
+	arg0_1.bgTF = arg0_1._tf:Find("bg")
+	arg0_1.nameTF = arg0_1.bgTF:Find("name")
+	arg0_1.sliderTF = arg0_1.bgTF:Find("slider")
+	arg0_1.cpkParentTF = arg0_1.bgTF:Find("cpk")
+	arg0_1.cpkCoverTF = arg0_1.bgTF:Find("cpk_cover")
 	arg0_1.frameRate = Application.targetFrameRate or 60
 
 	local var0_1 = pg.child_data[1]

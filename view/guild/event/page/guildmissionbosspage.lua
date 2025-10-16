@@ -5,27 +5,27 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.hp = arg0_2:findTF("hp/bar")
-	arg0_2.hpProgress = arg0_2:findTF("hp/bar/Text"):GetComponent(typeof(Text))
+	arg0_2.hp = arg0_2._tf:Find("hp/bar")
+	arg0_2.hpProgress = arg0_2._tf:Find("hp/bar/Text"):GetComponent(typeof(Text))
 	arg0_2.hpL = arg0_2.hp.rect.width
-	arg0_2.titleTxt = arg0_2:findTF("title"):GetComponent(typeof(Text))
-	arg0_2.assaultBtn = arg0_2:findTF("btn_a_formation")
-	arg0_2.battleBtn = arg0_2:findTF("btn_go")
-	arg0_2.reportBtn = arg0_2:findTF("btn_report")
-	arg0_2.reportTip = arg0_2:findTF("btn_report/tip")
-	arg0_2.reportTipTxt = arg0_2:findTF("btn_report/tip/Text"):GetComponent(typeof(Text))
-	arg0_2.cntTxt = arg0_2:findTF("btn_go/cnt/Text"):GetComponent(typeof(Text))
-	arg0_2.rankList = UIItemList.New(arg0_2:findTF("rank/content"), arg0_2:findTF("rank/content/tpl"))
-	arg0_2.paintingTF = arg0_2:findTF("painting")
-	arg0_2.prefabTF = arg0_2:findTF("prefab")
-	arg0_2.viewAllBtn = arg0_2:findTF("rank/view_all")
+	arg0_2.titleTxt = arg0_2._tf:Find("title"):GetComponent(typeof(Text))
+	arg0_2.assaultBtn = arg0_2.rtAdapt:Find("btn_a_formation")
+	arg0_2.battleBtn = arg0_2.rtAdapt:Find("btn_go")
+	arg0_2.reportBtn = arg0_2.rtAdapt:Find("btn_report")
+	arg0_2.reportTip = arg0_2.rtAdapt:Find("btn_report/tip")
+	arg0_2.reportTipTxt = arg0_2.rtAdapt:Find("btn_report/tip/Text"):GetComponent(typeof(Text))
+	arg0_2.cntTxt = arg0_2.rtAdapt:Find("btn_go/cnt/Text"):GetComponent(typeof(Text))
+	arg0_2.rankList = UIItemList.New(arg0_2._tf:Find("rank/content"), arg0_2._tf:Find("rank/content/tpl"))
+	arg0_2.paintingTF = arg0_2._tf:Find("painting")
+	arg0_2.prefabTF = arg0_2._tf:Find("prefab")
+	arg0_2.viewAllBtn = arg0_2._tf:Find("rank/view_all")
 	arg0_2.allRankPage = GuildBossRankPage.New(arg0_2._parentTf, arg0_2.event)
 
 	setActive(arg0_2.viewAllBtn, PLATFORM_CODE ~= PLATFORM_JP)
 
-	arg0_2.eventTimerTxt = arg0_2:findTF("timer/Text"):GetComponent(typeof(Text))
+	arg0_2.eventTimerTxt = arg0_2._tf:Find("timer/Text"):GetComponent(typeof(Text))
 
-	setText(arg0_2:findTF("timer/label"), i18n("guild_time_remaining_tip"))
+	setText(arg0_2._tf:Find("timer/label"), i18n("guild_time_remaining_tip"))
 
 	arg0_2.timeView = GuildEventTimerView.New()
 end
@@ -162,7 +162,7 @@ function var0_0.UpdatePainting(arg0_13)
 			end
 		end)
 
-		local var4_13 = arg0_13:findTF("name/Image", arg0_13.prefabTF):GetComponent(typeof(Image))
+		local var4_13 = arg0_13.prefabTF:Find("name/Image"):GetComponent(typeof(Image))
 
 		var4_13.sprite = GetSpriteFromAtlas("guildboss/name_" .. var3_13, "")
 

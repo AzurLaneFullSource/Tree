@@ -87,15 +87,15 @@ function var0_0.initData(arg0_4)
 end
 
 function var0_0.initUI(arg0_5)
-	arg0_5.bg = arg0_5:findTF("BG")
-	arg0_5.cardTpl = arg0_5:findTF("CardTpl")
-	arg0_5.backBtn = arg0_5:findTF("Adapt/BackBtn")
-	arg0_5.helpBtn = arg0_5:findTF("Adapt/HelpBtn")
-	arg0_5.panelTF = arg0_5:findTF("Adapt/Panel")
-	arg0_5.tipTF = arg0_5:findTF("Adapt/Tip")
-	arg0_5.cardContainer = arg0_5:findTF("CardContainer", arg0_5.panelTF)
+	arg0_5.bg = arg0_5._tf:Find("BG")
+	arg0_5.cardTpl = arg0_5._tf:Find("CardTpl")
+	arg0_5.backBtn = arg0_5._tf:Find("Adapt/BackBtn")
+	arg0_5.helpBtn = arg0_5._tf:Find("Adapt/HelpBtn")
+	arg0_5.panelTF = arg0_5._tf:Find("Adapt/Panel")
+	arg0_5.tipTF = arg0_5._tf:Find("Adapt/Tip")
+	arg0_5.cardContainer = arg0_5.panelTF:Find("CardContainer")
 	arg0_5.cardUIItemList = UIItemList.New(arg0_5.cardContainer, arg0_5.cardTpl)
-	arg0_5.confirmBtn = arg0_5:findTF("ConfirmBtn")
+	arg0_5.confirmBtn = arg0_5._tf:Find("ConfirmBtn")
 
 	onButton(arg0_5, arg0_5.bg, function()
 		arg0_5:closeSelf()
@@ -125,14 +125,14 @@ function var0_0.initUI(arg0_5)
 
 			setImageSprite(arg2_10, LoadSprite(var2_10, var1_10), true)
 
-			local var3_10 = arg0_5:findTF("Name", arg2_10)
+			local var3_10 = arg2_10:Find("Name")
 			local var4_10 = "cardselectname_" .. var0_10
 			local var5_10 = "Shrine2022/" .. var4_10
 
 			setImageSprite(var3_10, LoadSprite(var5_10, var4_10), true)
 			setLocalPosition(arg2_10, arg0_5.cardPosList[var0_10])
 
-			local var6_10 = arg0_5:findTF("Selected", arg2_10)
+			local var6_10 = arg2_10:Find("Selected")
 			local var7_10 = arg0_5:isSelected(var0_10)
 
 			setActive(var6_10, var7_10)

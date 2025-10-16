@@ -148,28 +148,28 @@ function var0_0.initData(arg0_8)
 end
 
 function var0_0.findUI(arg0_11)
-	arg0_11.noAdaptPanel = arg0_11:findTF("noAdaptPanel")
-	arg0_11.buffTF = arg0_11:findTF("Buff", arg0_11.noAdaptPanel)
-	arg0_11.buffRope = arg0_11:findTF("BuffRope", arg0_11.buffTF)
-	arg0_11.buffImg = arg0_11:findTF("BuffTypeImg", arg0_11.buffTF)
-	arg0_11.buffText = arg0_11:findTF("BuffText", arg0_11.buffTF)
+	arg0_11.noAdaptPanel = arg0_11._tf:Find("noAdaptPanel")
+	arg0_11.buffTF = arg0_11.noAdaptPanel:Find("Buff")
+	arg0_11.buffRope = arg0_11.buffTF:Find("BuffRope")
+	arg0_11.buffImg = arg0_11.buffTF:Find("BuffTypeImg")
+	arg0_11.buffText = arg0_11.buffTF:Find("BuffText")
 	arg0_11.buffEffectAni = GetComponent(arg0_11.buffImg, "Animator")
 	arg0_11.buffDftAniEvent = GetComponent(arg0_11.buffImg, "DftAniEvent")
-	arg0_11.bgImg = arg0_11:findTF("BGImg"):GetComponent(typeof(Image))
+	arg0_11.bgImg = arg0_11._tf:Find("BGImg"):GetComponent(typeof(Image))
 	arg0_11.bgImg.color = Color.New(1, 1, 1)
 
-	local var0_11 = arg0_11:findTF("Top", arg0_11.noAdaptPanel)
+	local var0_11 = arg0_11.noAdaptPanel:Find("Top")
 
 	arg0_11.topTF = var0_11
-	arg0_11.backBtn = arg0_11:findTF("BackBtn", var0_11)
-	arg0_11.helpBtn = arg0_11:findTF("HelpBtn", var0_11)
-	arg0_11.timesText = arg0_11:findTF("Times/Text", var0_11)
-	arg0_11.goldText = arg0_11:findTF("Gold/Text", var0_11)
+	arg0_11.backBtn = var0_11:Find("BackBtn")
+	arg0_11.helpBtn = var0_11:Find("HelpBtn")
+	arg0_11.timesText = var0_11:Find("Times/Text")
+	arg0_11.goldText = var0_11:Find("Gold/Text")
 
-	local var1_11 = arg0_11:findTF("Main")
+	local var1_11 = arg0_11._tf:Find("Main")
 
-	arg0_11.clockTF = arg0_11:findTF("Clock", var1_11)
-	arg0_11.clockBtn = arg0_11:findTF("ClockBtn", var1_11)
+	arg0_11.clockTF = var1_11:Find("Clock")
+	arg0_11.clockBtn = var1_11:Find("ClockBtn")
 	arg0_11.clockEffectAni = GetComponent(arg0_11.clockTF, "Animator")
 	arg0_11.clockDftAniEvent = GetComponent(arg0_11.clockTF, "DftAniEvent")
 end

@@ -9,7 +9,7 @@ function var0_0.OnInit(arg0_2)
 		arg0_2:Hide()
 	end, SFX_PANEL)
 
-	arg0_2.closeBtn = arg0_2:findTF("window/top/btnBack")
+	arg0_2.closeBtn = arg0_2._tf:Find("window/top/btnBack")
 
 	onButton(arg0_2, arg0_2.closeBtn, function()
 		arg0_2:Hide()

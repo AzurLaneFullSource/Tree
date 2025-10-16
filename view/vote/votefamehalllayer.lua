@@ -13,8 +13,8 @@ function var0_0.SetPastVoteData(arg0_2, arg1_2)
 end
 
 function var0_0.init(arg0_3)
-	arg0_3.tip = arg0_3:findTF("Text"):GetComponent(typeof(Text))
-	arg0_3.backBtn = arg0_3:findTF("adapt/back")
+	arg0_3.tip = arg0_3._tf:Find("Text"):GetComponent(typeof(Text))
+	arg0_3.backBtn = arg0_3._tf:Find("adapt/back")
 end
 
 function var0_0.didEnter(arg0_4)
@@ -31,7 +31,7 @@ function var0_0.InitData(arg0_6)
 	local var0_6 = false
 
 	for iter0_6, iter1_6 in pairs(arg0_6.voteData) do
-		local var1_6 = arg0_6:findTF("adapt/btns/btn_" .. iter0_6)
+		local var1_6 = arg0_6._tf:Find("adapt/btns/btn_" .. iter0_6)
 
 		arg0_6.displays[iter0_6] = iter1_6
 
@@ -58,7 +58,7 @@ function var0_0.Flush(arg0_8, arg1_8)
 
 	for iter0_8, iter1_8 in ipairs(var0_8) do
 		local var1_8 = pg.vote_champion[iter1_8]
-		local var2_8 = arg0_8:findTF(arg1_8 .. "/" .. var1_8.rank)
+		local var2_8 = arg0_8._tf:Find(arg1_8 .. "/" .. var1_8.rank)
 		local var3_8 = var1_8.story
 		local var4_8 = var1_8.task
 
@@ -100,7 +100,7 @@ function var0_0.UpdateTips(arg0_10, arg1_10)
 		local var5_10 = var3_10.task
 		local var6_10 = getProxy(TaskProxy)
 		local var7_10 = var6_10:getTaskById(var5_10) or var6_10:getFinishTaskById(var5_10)
-		local var8_10 = arg0_10:findTF(arg1_10 .. "/" .. var3_10.rank .. "/title/tip")
+		local var8_10 = arg0_10._tf:Find(arg1_10 .. "/" .. var3_10.rank .. "/title/tip")
 		local var9_10 = pg.task_data_template[var5_10].award_display[1]
 		local var10_10 = var1_10:getAttireFrame(AttireConst.TYPE_ICON_FRAME, var9_10[2])
 

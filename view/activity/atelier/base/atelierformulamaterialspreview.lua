@@ -15,7 +15,7 @@ function var0_0.Init(arg0_2)
 end
 
 function var0_0.InitCustom(arg0_3)
-	setText(arg0_3:findTF("Frame/Text"), i18n("ryza_tip_item_access"))
+	setText(arg0_3._tf:Find("Frame/Text"), i18n("ryza_tip_item_access"))
 end
 
 function var0_0.SetContextData(arg0_4, arg1_4)
@@ -27,7 +27,7 @@ function var0_0.SetActivity(arg0_5, arg1_5)
 end
 
 function var0_0.didEnter(arg0_6)
-	onButton(arg0_6, arg0_6:findTF("BG"), function()
+	onButton(arg0_6, arg0_6._tf:Find("BG"), function()
 		arg0_6:HideMaterialsPreview()
 	end, SFX_CANCEL)
 end
@@ -167,7 +167,7 @@ function var0_0.ShowMaterialsPreview(arg0_8, arg1_8)
 	table.sort(var4_8, var8_8)
 
 	local function var9_8()
-		local var0_19 = arg0_8:findTF("Frame/Scroll/Content/Owned/List")
+		local var0_19 = arg0_8._tf:Find("Frame/Scroll/Content/Owned/List")
 
 		setActive(var0_19.parent, #var3_8 > 0)
 
@@ -188,7 +188,7 @@ function var0_0.ShowMaterialsPreview(arg0_8, arg1_8)
 	end
 
 	local function var10_8()
-		local var0_22 = arg0_8:findTF("Frame/Scroll/Content/Lack/List")
+		local var0_22 = arg0_8._tf:Find("Frame/Scroll/Content/Lack/List")
 
 		setActive(var0_22.parent, #var4_8 > 0)
 

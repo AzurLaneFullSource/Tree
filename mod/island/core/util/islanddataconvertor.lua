@@ -320,9 +320,11 @@ function var0_0.CollectPordunctSystem(arg0_19, arg1_19, arg2_19, arg3_19, arg4_1
 			local var8_19 = var6_19:GetShipIdAndAreaIdList()
 
 			for iter4_19, iter5_19 in ipairs(var8_19) do
-				local var9_19 = var5_19:GetUnit(iter5_19.ship_id, iter5_19.area_id, table.contains(var3_19, iter3_19))
+				if iter3_19 ~= IslandProductConst.MinePlaceId then
+					local var9_19 = var5_19:GetUnit(iter5_19.ship_id, iter5_19.area_id, table.contains(var3_19, iter3_19))
 
-				table.insert(arg1_19, var9_19)
+					table.insert(arg1_19, var9_19)
+				end
 
 				var7_19 = var7_19 + 1
 			end

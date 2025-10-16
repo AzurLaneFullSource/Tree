@@ -7,12 +7,12 @@ end
 function var0_0.OnLoaded(arg0_2)
 	var0_0.super.OnLoaded(arg0_2)
 
-	arg0_2.iconRaw = arg0_2:findTF("icon_raw"):GetComponent(typeof(RawImage))
-	arg0_2.icon = arg0_2:findTF("icon"):GetComponent(typeof(Image))
-	arg0_2.delBtn = arg0_2:findTF("delete")
+	arg0_2.iconRaw = arg0_2._tf:Find("icon_raw"):GetComponent(typeof(RawImage))
+	arg0_2.icon = arg0_2._tf:Find("icon"):GetComponent(typeof(Image))
+	arg0_2.delBtn = arg0_2._tf:Find("delete")
 
 	setText(arg0_2.delBtn:Find("Text"), i18n("island_btn_label_del"))
-	setText(arg0_2:findTF("confirm/Text"), i18n("island_word_place"))
+	setText(arg0_2._tf:Find("confirm/Text"), i18n("island_word_place"))
 end
 
 function var0_0.OnInit(arg0_3)

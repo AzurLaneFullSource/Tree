@@ -113,9 +113,9 @@ function var0_0.didEnter(arg0_6)
 end
 
 function var0_0.initUI(arg0_7)
-	arg0_7.clickMask = arg0_7:findTF("ui/click_mask")
+	arg0_7.clickMask = arg0_7._tf:Find("ui/click_mask")
 	arg0_7.rtResource = arg0_7._tf:Find("Resource")
-	arg0_7.mainUI = arg0_7:findTF("ui/main_ui")
+	arg0_7.mainUI = arg0_7._tf:Find("ui/main_ui")
 	arg0_7.listScrollRect = GetComponent(arg0_7.mainUI:Find("right_panel/item_list/content"), typeof(ScrollRect))
 
 	onButton(arg0_7, arg0_7.mainUI:Find("btn_back"), function()
@@ -136,7 +136,7 @@ function var0_0.initUI(arg0_7)
 	local var0_7 = arg0_7:getGameUsedTimes() - 4 < 0 and 0 or arg0_7:getGameUsedTimes() - 4
 
 	scrollTo(arg0_7.listScrollRect, 0, 1 - var0_7 / (arg0_7.totalTimes - 4))
-	onButton(arg0_7, arg0_7:findTF("right_panel/arrows_up", arg0_7.mainUI), function()
+	onButton(arg0_7, arg0_7.mainUI:Find("right_panel/arrows_up"), function()
 		local var0_11 = arg0_7.listScrollRect.normalizedPosition.y + 1 / (arg0_7.totalTimes - 4)
 
 		if var0_11 > 1 then
@@ -145,7 +145,7 @@ function var0_0.initUI(arg0_7)
 
 		scrollTo(arg0_7.listScrollRect, 0, var0_11)
 	end, SFX_PANEL)
-	onButton(arg0_7, arg0_7:findTF("right_panel/arrows_down", arg0_7.mainUI), function()
+	onButton(arg0_7, arg0_7.mainUI:Find("right_panel/arrows_down"), function()
 		local var0_12 = arg0_7.listScrollRect.normalizedPosition.y - 1 / (arg0_7.totalTimes - 4)
 
 		if var0_12 < 0 then
@@ -181,9 +181,9 @@ function var0_0.initUI(arg0_7)
 	end)
 	arg0_7.itemList:align(#var1_7)
 
-	arg0_7.countUI = arg0_7:findTF("ui/count_ui")
-	arg0_7.countAnimator = GetComponent(arg0_7:findTF("count", arg0_7.countUI), typeof(Animator))
-	arg0_7.countDft = GetOrAddComponent(arg0_7:findTF("count", arg0_7.countUI), typeof(DftAniEvent))
+	arg0_7.countUI = arg0_7._tf:Find("ui/count_ui")
+	arg0_7.countAnimator = GetComponent(arg0_7.countUI:Find("count"), typeof(Animator))
+	arg0_7.countDft = GetOrAddComponent(arg0_7.countUI:Find("count"), typeof(DftAniEvent))
 
 	arg0_7.countDft:SetTriggerEvent(function()
 		return
@@ -193,31 +193,31 @@ function var0_0.initUI(arg0_7)
 		arg0_7:startGame()
 	end)
 
-	arg0_7.pauseUI = arg0_7:findTF("ui/pause_ui")
+	arg0_7.pauseUI = arg0_7._tf:Find("ui/pause_ui")
 
-	onButton(arg0_7, arg0_7:findTF("panel/btn_confirm", arg0_7.pauseUI), function()
+	onButton(arg0_7, arg0_7.pauseUI:Find("panel/btn_confirm"), function()
 		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7.pauseUI, arg0_7._tf:Find("ui"))
 		setActive(arg0_7.pauseUI, false)
 		arg0_7:resumeGame()
 	end, SFX_PANEL)
 
-	arg0_7.returnUI = arg0_7:findTF("ui/return_ui")
+	arg0_7.returnUI = arg0_7._tf:Find("ui/return_ui")
 
-	onButton(arg0_7, arg0_7:findTF("panel/btn_confirm", arg0_7.returnUI), function()
+	onButton(arg0_7, arg0_7.returnUI:Find("panel/btn_confirm"), function()
 		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7.returnUI, arg0_7._tf:Find("ui"))
 		setActive(arg0_7.returnUI, false)
 		arg0_7:resumeGame()
 		arg0_7:endGame()
 	end, SFX_PANEL)
-	onButton(arg0_7, arg0_7:findTF("panel/btn_cancel", arg0_7.returnUI), function()
+	onButton(arg0_7, arg0_7.returnUI:Find("panel/btn_cancel"), function()
 		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7.returnUI, arg0_7._tf:Find("ui"))
 		setActive(arg0_7.returnUI, false)
 		arg0_7:resumeGame()
 	end, SFX_PANEL)
 
-	arg0_7.endUI = arg0_7:findTF("ui/end_ui")
+	arg0_7.endUI = arg0_7._tf:Find("ui/end_ui")
 
-	onButton(arg0_7, arg0_7:findTF("panel/btn_finish", arg0_7.endUI), function()
+	onButton(arg0_7, arg0_7.endUI:Find("panel/btn_finish"), function()
 		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7.endUI, arg0_7._tf:Find("ui"))
 		setActive(arg0_7.endUI, false)
 		arg0_7:openMainUI()
@@ -235,7 +235,7 @@ function var0_0.Update(arg0_21)
 end
 
 function var0_0.initGameUI(arg0_22)
-	arg0_22.gameUI = arg0_22:findTF("ui/game_ui")
+	arg0_22.gameUI = arg0_22._tf:Find("ui/game_ui")
 	arg0_22.timeTF = arg0_22.gameUI:Find("Score/time/Text")
 	arg0_22.scoreTF = arg0_22.gameUI:Find("Score/point/Text")
 	arg0_22.addScoreTF = arg0_22.gameUI:Find("Score/add_score")
@@ -1228,7 +1228,7 @@ function var0_0.showEndUI(arg0_82)
 	local var0_82 = arg0_82.scoreNum
 	local var1_82 = getProxy(GameRoomProxy):getRoomScore(arg0_82:getGameRoomData().id)
 
-	setActive(arg0_82:findTF("panel/now/Text/new", arg0_82.endUI), var1_82 < var0_82)
+	setActive(arg0_82.endUI:Find("panel/now/Text/new"), var1_82 < var0_82)
 
 	if var1_82 <= var0_82 then
 		var1_82 = var0_82
@@ -1238,8 +1238,8 @@ function var0_0.showEndUI(arg0_82)
 		})
 	end
 
-	local var2_82 = arg0_82:findTF("panel/max/Text", arg0_82.endUI)
-	local var3_82 = arg0_82:findTF("panel/now/Text", arg0_82.endUI)
+	local var2_82 = arg0_82.endUI:Find("panel/max/Text")
+	local var3_82 = arg0_82.endUI:Find("panel/now/Text")
 
 	setText(var2_82, var1_82)
 	setText(var3_82, var0_82)

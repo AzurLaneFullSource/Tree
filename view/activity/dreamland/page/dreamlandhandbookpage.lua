@@ -7,10 +7,10 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.closeBtn = arg0_2:findTF("bg/close")
+	arg0_2.closeBtn = arg0_2._tf:Find("bg/close")
 	arg0_2.tags = {
-		[var1_0] = arg0_2:findTF("bg/tags/area"),
-		[var2_0] = arg0_2:findTF("bg/tags/ex")
+		[var1_0] = arg0_2._tf:Find("bg/tags/area"),
+		[var2_0] = arg0_2._tf:Find("bg/tags/ex")
 	}
 	arg0_2.tagTip = {}
 
@@ -18,28 +18,28 @@ function var0_0.OnLoaded(arg0_2)
 		arg0_2.tagTip[iter0_2] = iter1_2:Find("tip")
 	end
 
-	arg0_2.mapContent = arg0_2:findTF("bg/area/content")
-	arg0_2.mapNameTxt = arg0_2:findTF("bg/area/content/name"):GetComponent(typeof(Text))
-	arg0_2.mapDescTxt = arg0_2:findTF("bg/area/content/scrollrect/desc"):GetComponent(typeof(Text))
-	arg0_2.mapGoBtn = arg0_2:findTF("bg/area/content/btn_go")
-	arg0_2.mapGetBtn = arg0_2:findTF("bg/area/content/btn_get")
-	arg0_2.mapGotBtn = arg0_2:findTF("bg/area/content/btn_got")
-	arg0_2.mapAwardList = UIItemList.New(arg0_2:findTF("bg/area/content/awards/list"), arg0_2:findTF("bg/area/content/awards/list/award"))
-	arg0_2.lineUIList = UIItemList.New(arg0_2:findTF("bg/area/content/scrollrect/desc/lines"), arg0_2:findTF("bg/area/content/scrollrect/desc/lines/tpl"))
-	arg0_2.exGoBtn = arg0_2:findTF("bg/ex/content/btn_go")
-	arg0_2.exGetBtn = arg0_2:findTF("bg/ex/content/btn_get")
-	arg0_2.exGotBtn = arg0_2:findTF("bg/ex/content/btn_got")
-	arg0_2.exAwardList = UIItemList.New(arg0_2:findTF("bg/ex/content/awards/list"), arg0_2:findTF("bg/ex/content/awards/list/award"))
-	arg0_2.exContentList = UIItemList.New(arg0_2:findTF("bg/ex/content/scrollrect/content"), arg0_2:findTF("bg/ex/content/scrollrect/content/tpl"))
-	arg0_2.exContent = arg0_2:findTF("bg/ex/content")
-	arg0_2.areaList = UIItemList.New(arg0_2:findTF("bg/area/list"), arg0_2:findTF("bg/area/list/1"))
-	arg0_2.exploreList = UIItemList.New(arg0_2:findTF("bg/ex/list"), arg0_2:findTF("bg/ex/list/tpl"))
+	arg0_2.mapContent = arg0_2._tf:Find("bg/area/content")
+	arg0_2.mapNameTxt = arg0_2._tf:Find("bg/area/content/name"):GetComponent(typeof(Text))
+	arg0_2.mapDescTxt = arg0_2._tf:Find("bg/area/content/scrollrect/desc"):GetComponent(typeof(Text))
+	arg0_2.mapGoBtn = arg0_2._tf:Find("bg/area/content/btn_go")
+	arg0_2.mapGetBtn = arg0_2._tf:Find("bg/area/content/btn_get")
+	arg0_2.mapGotBtn = arg0_2._tf:Find("bg/area/content/btn_got")
+	arg0_2.mapAwardList = UIItemList.New(arg0_2._tf:Find("bg/area/content/awards/list"), arg0_2._tf:Find("bg/area/content/awards/list/award"))
+	arg0_2.lineUIList = UIItemList.New(arg0_2._tf:Find("bg/area/content/scrollrect/desc/lines"), arg0_2._tf:Find("bg/area/content/scrollrect/desc/lines/tpl"))
+	arg0_2.exGoBtn = arg0_2._tf:Find("bg/ex/content/btn_go")
+	arg0_2.exGetBtn = arg0_2._tf:Find("bg/ex/content/btn_get")
+	arg0_2.exGotBtn = arg0_2._tf:Find("bg/ex/content/btn_got")
+	arg0_2.exAwardList = UIItemList.New(arg0_2._tf:Find("bg/ex/content/awards/list"), arg0_2._tf:Find("bg/ex/content/awards/list/award"))
+	arg0_2.exContentList = UIItemList.New(arg0_2._tf:Find("bg/ex/content/scrollrect/content"), arg0_2._tf:Find("bg/ex/content/scrollrect/content/tpl"))
+	arg0_2.exContent = arg0_2._tf:Find("bg/ex/content")
+	arg0_2.areaList = UIItemList.New(arg0_2._tf:Find("bg/area/list"), arg0_2._tf:Find("bg/area/list/1"))
+	arg0_2.exploreList = UIItemList.New(arg0_2._tf:Find("bg/ex/list"), arg0_2._tf:Find("bg/ex/list/tpl"))
 
-	setText(arg0_2:findTF("bg/tags/area/Text"), i18n("dreamland_label_area"))
-	setText(arg0_2:findTF("bg/tags/ex/Text"), i18n("dreamland_label_explore"))
-	setText(arg0_2:findTF("bg/ex/content/award_desc"), i18n("dreamland_label_explore_award_tip"))
+	setText(arg0_2._tf:Find("bg/tags/area/Text"), i18n("dreamland_label_area"))
+	setText(arg0_2._tf:Find("bg/tags/ex/Text"), i18n("dreamland_label_explore"))
+	setText(arg0_2._tf:Find("bg/ex/content/award_desc"), i18n("dreamland_label_explore_award_tip"))
 
-	arg0_2.tipTr = arg0_2:findTF("tip")
+	arg0_2.tipTr = arg0_2._tf:Find("tip")
 	arg0_2.tipTxt = arg0_2.tipTr:Find("Text"):GetComponent(typeof(Text))
 end
 

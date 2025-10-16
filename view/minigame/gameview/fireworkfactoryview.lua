@@ -48,14 +48,14 @@ function var0_0.TransformColor(arg0_2)
 end
 
 function var0_0.init(arg0_3)
-	arg0_3.top = arg0_3:findTF("top")
-	arg0_3.plate = arg0_3:findTF("plate")
-	arg0_3.storage = arg0_3:findTF("storage")
-	arg0_3.dispenseView = arg0_3:findTF("top/dispenseView")
+	arg0_3.top = arg0_3._tf:Find("top")
+	arg0_3.plate = arg0_3._tf:Find("plate")
+	arg0_3.storage = arg0_3._tf:Find("storage")
+	arg0_3.dispenseView = arg0_3._tf:Find("top/dispenseView")
 
 	setActive(arg0_3.dispenseView, false)
 
-	arg0_3.resultWindow = arg0_3:findTF("top/resultwindow")
+	arg0_3.resultWindow = arg0_3._tf:Find("top/resultwindow")
 
 	setActive(arg0_3.resultWindow, false)
 
@@ -80,8 +80,8 @@ function var0_0.init(arg0_3)
 	arg0_3.lastSelectedBall = nil
 	arg0_3.ballStoragePanel = arg0_3.storage:Find("house/layout")
 	arg0_3.ballStorages = CustomIndexLayer.Clone2Full(arg0_3.ballStoragePanel, 6)
-	arg0_3.screen_mask = arg0_3:findTF("mask")
-	arg0_3.btn_next = arg0_3:findTF("Button")
+	arg0_3.screen_mask = arg0_3._tf:Find("mask")
+	arg0_3.btn_next = arg0_3._tf:Find("Button")
 	arg0_3.btn_next_text = arg0_3.btn_next:Find("Image")
 	arg0_3.desc_dispense = arg0_3.dispenseView:Find("intro/Scroll View/Viewport/text")
 

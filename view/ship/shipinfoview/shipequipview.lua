@@ -39,9 +39,9 @@ function var0_0.InitEquipment(arg0_6)
 	arg0_6.equipRCon = arg0_6._parentTf:Find("equipment_r_container")
 	arg0_6.equipLCon = arg0_6._parentTf:Find("equipment_l_container")
 	arg0_6.equipBCon = arg0_6._parentTf:Find("equipment_b_container")
-	arg0_6.equipmentR = arg0_6:findTF("equipment_r")
-	arg0_6.equipmentL = arg0_6:findTF("equipment_l")
-	arg0_6.equipmentB = arg0_6:findTF("equipment_b")
+	arg0_6.equipmentR = arg0_6._tf:Find("equipment_r")
+	arg0_6.equipmentL = arg0_6._tf:Find("equipment_l")
+	arg0_6.equipmentB = arg0_6._tf:Find("equipment_b")
 	arg0_6.equipmentR1 = arg0_6.equipmentR:Find("equipment/equipment_r1")
 	arg0_6.equipmentR2 = arg0_6.equipmentR:Find("equipment/equipment_r2")
 	arg0_6.equipmentR3 = arg0_6.equipmentR:Find("equipment/equipment_r3")
@@ -266,7 +266,7 @@ function var0_0.UpdateEquipmentPanel(arg0_13, arg1_13, arg2_13, arg3_13)
 			setButtonText(var3_13, var21_13 and setColorStr(var20_13 .. "%", COLOR_GREEN) or var20_13 .. "%")
 		end
 
-		local var22_13 = arg0_13:findTF("IconTpl", var1_13)
+		local var22_13 = var1_13:Find("IconTpl")
 
 		updateEquipment(var22_13, arg2_13)
 

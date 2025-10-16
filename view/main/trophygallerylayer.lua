@@ -20,26 +20,26 @@ function var0_0.setTrophyList(arg0_3, arg1_3)
 end
 
 function var0_0.init(arg0_4)
-	arg0_4._bg = arg0_4:findTF("bg")
-	arg0_4._blurPanel = arg0_4:findTF("blur_panel")
-	arg0_4._topPanel = arg0_4:findTF("adapt/top", arg0_4._blurPanel)
+	arg0_4._bg = arg0_4._tf:Find("bg")
+	arg0_4._blurPanel = arg0_4._tf:Find("blur_panel")
+	arg0_4._topPanel = arg0_4._blurPanel:Find("adapt/top")
 	arg0_4._backBtn = arg0_4._topPanel:Find("back_btn")
 	arg0_4._helpBtn = arg0_4._topPanel:Find("help_btn")
-	arg0_4._center = arg0_4:findTF("bg/taskBGCenter")
+	arg0_4._center = arg0_4._tf:Find("bg/taskBGCenter")
 	arg0_4._trophyUpperTpl = arg0_4:getTpl("trophy_upper", arg0_4._center)
 	arg0_4._trophyLowerTpl = arg0_4:getTpl("trophy_lower", arg0_4._center)
-	arg0_4._trophyContainer = arg0_4:findTF("bg/taskBGCenter/right_panel/Grid")
-	arg0_4._scrllPanel = arg0_4:findTF("bg/taskBGCenter/right_panel")
+	arg0_4._trophyContainer = arg0_4._tf:Find("bg/taskBGCenter/right_panel/Grid")
+	arg0_4._scrllPanel = arg0_4._tf:Find("bg/taskBGCenter/right_panel")
 	arg0_4._scrollView = arg0_4._scrllPanel:GetComponent("LScrollRect")
-	arg0_4._trophyDetailPanel = TrophyDetailPanel.New(arg0_4:findTF("trophyPanel"), arg0_4._tf)
-	arg0_4._filterBtn = arg0_4:findTF("filter/toggle", arg0_4._topPanel)
-	arg0_4._trophyCounter = arg0_4:findTF("filter/counter/Text", arg0_4._topPanel)
-	arg0_4._reminderRes = arg0_4:findTF("bg/resource")
+	arg0_4._trophyDetailPanel = TrophyDetailPanel.New(arg0_4._tf:Find("trophyPanel"), arg0_4._tf)
+	arg0_4._filterBtn = arg0_4._topPanel:Find("filter/toggle")
+	arg0_4._trophyCounter = arg0_4._topPanel:Find("filter/counter/Text")
+	arg0_4._reminderRes = arg0_4._tf:Find("bg/resource")
 	arg0_4._pageToggle = {
-		arg0_4:findTF("blur_panel/adapt/left_length/frame/root/common_toggle"),
-		arg0_4:findTF("blur_panel/adapt/left_length/frame/root/limited_toggle")
+		arg0_4._tf:Find("blur_panel/adapt/left_length/frame/root/common_toggle"),
+		arg0_4._tf:Find("blur_panel/adapt/left_length/frame/root/limited_toggle")
 	}
-	arg0_4._hideExpireBtn = arg0_4:findTF("blur_panel/adapt/top/expireCheckBox")
+	arg0_4._hideExpireBtn = arg0_4._tf:Find("blur_panel/adapt/top/expireCheckBox")
 	arg0_4._hideExpireCheck = arg0_4._hideExpireBtn:Find("check")
 	arg0_4._pageIndex = 1
 	arg0_4._hideExpire = false

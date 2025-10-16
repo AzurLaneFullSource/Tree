@@ -8,7 +8,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	local var0_2 = arg0_2:findTF("loading")
+	local var0_2 = arg0_2._tf:Find("loading")
 
 	arg0_2._loadingProgress = var0_2:Find("loading_bar"):GetComponent(typeof(Slider))
 	arg0_2._loadingProgress.value = 0

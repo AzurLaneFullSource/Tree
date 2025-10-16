@@ -3,7 +3,7 @@ local var0_0 = class("HolidayVillaIslandMainPage", import(".TemplatePage.Preview
 function var0_0.initBtn(arg0_1)
 	var0_0.super.initBtn(arg0_1)
 
-	arg0_1.Manual = arg0_1:findTF("Manual", arg0_1.bg)
+	arg0_1.Manual = arg0_1.bg:Find("Manual")
 
 	function arg0_1.btnFuncList.shop(arg0_2)
 		onButton(arg0_1, arg0_2, function()

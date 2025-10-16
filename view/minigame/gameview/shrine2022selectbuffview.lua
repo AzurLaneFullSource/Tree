@@ -22,10 +22,10 @@ function var0_0.initData(arg0_4)
 end
 
 function var0_0.initUI(arg0_5)
-	arg0_5.bg = arg0_5:findTF("BG")
-	arg0_5.cloud1 = arg0_5:findTF("Cloud1")
-	arg0_5.cloud2 = arg0_5:findTF("Cloud2")
-	arg0_5.buffListTF = arg0_5:findTF("BuffContainer")
+	arg0_5.bg = arg0_5._tf:Find("BG")
+	arg0_5.cloud1 = arg0_5._tf:Find("Cloud1")
+	arg0_5.cloud2 = arg0_5._tf:Find("Cloud2")
+	arg0_5.buffListTF = arg0_5._tf:Find("BuffContainer")
 	arg0_5.buffListCG = GetComponent(arg0_5.buffListTF, "CanvasGroup")
 
 	for iter0_5 = 1, 3 do

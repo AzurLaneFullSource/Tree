@@ -5,7 +5,7 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.backBtn = arg0_2:findTF("overview/back")
+	arg0_2.backBtn = arg0_2._tf:Find("overview/back")
 end
 
 local var1_0 = 7

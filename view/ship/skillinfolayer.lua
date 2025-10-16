@@ -7,19 +7,19 @@ end
 function var0_0.init(arg0_2)
 	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
 
-	arg0_2.backBtn = arg0_2:findTF("panel/top/btnBack")
-	arg0_2.skillInfoName = arg0_2:findTF("panel/bg/skill_name")
-	arg0_2.skillInfoLv = arg0_2:findTF("panel/bg/skill_lv")
-	arg0_2.skillInfoIntro = arg0_2:findTF("panel/bg/help_panel/skill_intro")
-	arg0_2.skillInfoIcon = arg0_2:findTF("panel/bg/skill_icon")
-	arg0_2.btnTypeNormal = arg0_2:findTF("panel/bg/btn_type_normal")
-	arg0_2.btnTypeWorld = arg0_2:findTF("panel/bg/btn_type_world")
-	arg0_2.buttonList = arg0_2:findTF("panel/buttonList")
-	arg0_2.upgradeBtn = arg0_2:findTF("panel/buttonList/level_button")
-	arg0_2.metaBtn = arg0_2:findTF("panel/buttonList/meta_button")
+	arg0_2.backBtn = arg0_2._tf:Find("panel/top/btnBack")
+	arg0_2.skillInfoName = arg0_2._tf:Find("panel/bg/skill_name")
+	arg0_2.skillInfoLv = arg0_2._tf:Find("panel/bg/skill_lv")
+	arg0_2.skillInfoIntro = arg0_2._tf:Find("panel/bg/help_panel/skill_intro")
+	arg0_2.skillInfoIcon = arg0_2._tf:Find("panel/bg/skill_icon")
+	arg0_2.btnTypeNormal = arg0_2._tf:Find("panel/bg/btn_type_normal")
+	arg0_2.btnTypeWorld = arg0_2._tf:Find("panel/bg/btn_type_world")
+	arg0_2.buttonList = arg0_2._tf:Find("panel/buttonList")
+	arg0_2.upgradeBtn = arg0_2._tf:Find("panel/buttonList/level_button")
+	arg0_2.metaBtn = arg0_2._tf:Find("panel/buttonList/meta_button")
 
-	setText(arg0_2:findTF("Image", arg0_2.metaBtn), i18n("meta_skillbtn_tactics"))
-	setText(arg0_2:findTF("panel/top/title_list/infomation/title"), i18n("words_information"))
+	setText(arg0_2.metaBtn:Find("Image"), i18n("meta_skillbtn_tactics"))
+	setText(arg0_2._tf:Find("panel/top/title_list/infomation/title"), i18n("words_information"))
 	setText(arg0_2.buttonList:Find("ok_button/Image"), i18n("text_confirm"))
 
 	if PLATFORM_CODE == PLATFORM_JP then
@@ -36,7 +36,7 @@ function var0_0.didEnter(arg0_3)
 	onButton(arg0_3, arg0_3.backBtn, function()
 		arg0_3:emit(var0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(arg0_3, arg0_3:findTF("panel/buttonList/ok_button"), function()
+	onButton(arg0_3, arg0_3._tf:Find("panel/buttonList/ok_button"), function()
 		arg0_3:emit(var0_0.ON_CLOSE)
 	end, SFX_CONFIRM)
 	onButton(arg0_3, arg0_3.upgradeBtn, function()
@@ -142,27 +142,27 @@ end
 
 function var0_0.inOutAnim(arg0_16, arg1_16, arg2_16)
 	if arg1_16 then
-		local var0_16 = arg0_16:findTF("panel/bg_decorations"):GetComponent(typeof(Animation))
+		local var0_16 = arg0_16._tf:Find("panel/bg_decorations"):GetComponent(typeof(Animation))
 
 		var0_16:Stop()
 		var0_16:Play("anim_window_bg")
 
-		local var1_16 = arg0_16:findTF("panel/top"):GetComponent(typeof(Animation))
+		local var1_16 = arg0_16._tf:Find("panel/top"):GetComponent(typeof(Animation))
 
 		var1_16:Stop()
 		var1_16:Play("anim_top")
 
-		local var2_16 = arg0_16:findTF("panel/bg"):GetComponent(typeof(Animation))
+		local var2_16 = arg0_16._tf:Find("panel/bg"):GetComponent(typeof(Animation))
 
 		var2_16:Stop()
 		var2_16:Play("anim_content")
 
-		local var3_16 = arg0_16:findTF("bg"):GetComponent(typeof(Animation))
+		local var3_16 = arg0_16._tf:Find("bg"):GetComponent(typeof(Animation))
 
 		var3_16:Stop()
 		var3_16:Play("anim_bg_plus")
 
-		local var4_16 = arg0_16:findTF("panel/buttonList"):GetComponent(typeof(Animation))
+		local var4_16 = arg0_16._tf:Find("panel/buttonList"):GetComponent(typeof(Animation))
 
 		var4_16:Stop()
 		var4_16:Play("anim_button_container")

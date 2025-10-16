@@ -2,7 +2,7 @@ local var0_0 = class("AEBCSStoryPage", import("view.activity.CorePage.CoreStoryT
 
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
-	setActive(arg0_1:findTF("tip", arg0_1.goBtn), PlayerPrefs.GetInt("AEBCSStoryReminder", 0) == 0)
+	setActive(arg0_1.goBtn:Find("tip"), PlayerPrefs.GetInt("AEBCSStoryReminder", 0) == 0)
 end
 
 function var0_0.IsShowReminder(arg0_2)

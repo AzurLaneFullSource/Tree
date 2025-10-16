@@ -6,7 +6,7 @@ end
 
 function var0_0.OnLoaded(arg0_2)
 	var0_0.super.OnLoaded(arg0_2)
-	setText(arg0_2:findTF("frame/title"), i18n("island_rename_subtitle"))
+	setText(arg0_2._tf:Find("frame/title"), i18n("island_rename_subtitle"))
 	setActive(arg0_2.closeBtn, false)
 end
 

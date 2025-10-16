@@ -51,63 +51,67 @@ function var0_0.init(arg0_7)
 
 	arg0_7:setBg()
 
-	arg0_7.version = arg0_7:findTF("version")
+	arg0_7.version = arg0_7._tf:Find("version")
 	arg0_7.version:GetComponent("Text").text = "ver " .. var0_7.CurrentVersion:ToString()
-	arg0_7.bgLay = arg0_7:findTF("bg_lay")
-	arg0_7.accountBtn = arg0_7:findTF("bg_lay/buttons/account_button")
-	arg0_7.repairBtn = arg0_7:findTF("btns/repair_button")
-	arg0_7.privateBtn = arg0_7:findTF("btns/private_btn")
-	arg0_7.licenceBtn = arg0_7:findTF("btns/Licence_btn")
-	arg0_7.chInfo = arg0_7:findTF("background/info")
+	arg0_7.bgLay = arg0_7._tf:Find("bg_lay")
+	arg0_7.accountBtn = arg0_7._tf:Find("bg_lay/buttons/account_button")
+	arg0_7.repairBtn = arg0_7._tf:Find("btns/repair_button")
+	arg0_7.privateBtn = arg0_7._tf:Find("btns/private_btn")
+	arg0_7.licenceBtn = arg0_7._tf:Find("btns/Licence_btn")
+	arg0_7.chInfo = arg0_7._tf:Find("background/info")
 
 	setActive(arg0_7.chInfo, PLATFORM_CODE == PLATFORM_CH)
 
 	if PLATFORM_CODE == PLATFORM_CH then
-		arg0_7.urlClick = arg0_7:findTF("urlClick", arg0_7.chInfo)
+		arg0_7.urlClick = arg0_7.chInfo:Find("urlClick")
 
 		onButton(arg0_7, arg0_7.urlClick, function()
 			Application.OpenURL("https://beian.miit.gov.cn/#/home")
 		end)
 	end
 
-	arg0_7.pressToLogin = GetOrAddComponent(arg0_7:findTF("background/press_to_login"), "CanvasGroup")
+	arg0_7.pressToLogin = GetOrAddComponent(arg0_7._tf:Find("background/press_to_login"), "CanvasGroup")
 
 	LeanTween.alphaCanvas(arg0_7.pressToLogin, 0.25, var1_0):setFrom(1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
 
-	arg0_7.currentServer = arg0_7:findTF("current_server")
-	arg0_7.serviceBtn = arg0_7:findTF("bg_lay/buttons/service_button")
-	arg0_7.filingBtn = arg0_7:findTF("filingBtn")
+	arg0_7.currentServer = arg0_7._tf:Find("current_server")
+	arg0_7.serviceBtn = arg0_7._tf:Find("bg_lay/buttons/service_button")
+	arg0_7.filingBtn = arg0_7._tf:Find("filingBtn")
 
 	setActive(arg0_7.filingBtn, PLATFORM_CODE == PLATFORM_CH)
 
-	arg0_7.serversPanel = arg0_7:findTF("servers")
-	arg0_7.servers = arg0_7:findTF("panel/servers/content/server_list", arg0_7.serversPanel)
+	arg0_7.serversPanel = arg0_7._tf:Find("servers")
+	arg0_7.servers = arg0_7.serversPanel:Find("panel/panel/servers/content/server_list")
 	arg0_7.serverTpl = arg0_7:getTpl("server_tpl")
-	arg0_7.recentTF = arg0_7:findTF("panel/servers/content/advice_panel/recent", arg0_7.serversPanel)
-	arg0_7.adviceTF = arg0_7:findTF("panel/servers/content/advice_panel/advice", arg0_7.serversPanel)
-	arg0_7.userAgreenTF = arg0_7:findTF("UserAgreement")
-	arg0_7.userAgreenMainTF = arg0_7:findTF("UserAgreement/window")
+	arg0_7.recentTF = arg0_7.serversPanel:Find("panel/panel/servers/content/advice_panel/recent")
+	arg0_7.adviceTF = arg0_7.serversPanel:Find("panel/panel/servers/content/advice_panel/advice")
+	arg0_7.userAgreenTF = arg0_7._tf:Find("UserAgreement")
+	arg0_7.userAgreenMainTF = arg0_7._tf:Find("UserAgreement/window")
 	arg0_7.closeUserAgreenTF = arg0_7.userAgreenTF:Find("window/close_btn")
-	arg0_7.userAgreenConfirmTF = arg0_7:findTF("UserAgreement/window/accept_btn")
-	arg0_7.userDisagreeConfirmTF = arg0_7:findTF("UserAgreement/window/disagree_btn")
-	arg0_7.switchGatewayBtn = SwitchGatewayBtn.New(arg0_7:findTF("servers/panel/switch_platform"))
+	arg0_7.userAgreenConfirmTF = arg0_7._tf:Find("UserAgreement/window/accept_btn")
+	arg0_7.userDisagreeConfirmTF = arg0_7._tf:Find("UserAgreement/window/disagree_btn")
+	arg0_7.switchGatewayBtn = SwitchGatewayBtn.New(arg0_7._tf:Find("servers/panel/panel/switch_platform"))
+
+	if PLATFORM == PLATFORM_OPENHARMONY then
+		arg0_7.switchGatewayBtn4Oh = SwitchGatewayBtn4OpenHarmony.New(arg0_7._tf:Find("servers/panel/panel/switch_platform"))
+	end
 
 	setActive(arg0_7.userAgreenTF, false)
 	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7.userAgreenTF, arg0_7._tf)
 
-	arg0_7.opBtn = arg0_7:findTF("bg_lay/buttons/opBtn")
+	arg0_7.opBtn = arg0_7._tf:Find("bg_lay/buttons/opBtn")
 
 	if arg0_7.opBtn then
 		setActive(arg0_7.opBtn, arg0_7.isOpPlay)
 	end
 
-	arg0_7.airiUidTxt = arg0_7:findTF("airi_uid")
+	arg0_7.airiUidTxt = arg0_7._tf:Find("airi_uid")
 	arg0_7.shareData = {}
-	arg0_7.searchAccount = arg0_7:findTF("panel/searchAccount", arg0_7.serversPanel)
+	arg0_7.searchAccount = arg0_7.serversPanel:Find("panel/panel/searchAccount")
 
 	setText(findTF(arg0_7.searchAccount, "text"), i18n("query_role_button"))
 
-	arg0_7.serverPanelCanvas = GetComponent(arg0_7:findTF("servers/panel/servers"), typeof(CanvasGroup))
+	arg0_7.serverPanelCanvas = GetComponent(arg0_7._tf:Find("servers/panel/panel/servers"), typeof(CanvasGroup))
 
 	onButton(arg0_7, arg0_7.searchAccount, function()
 		if not arg0_7.serversDic or arg0_7.searching then
@@ -172,7 +176,7 @@ function var0_0.init(arg0_7)
 	arg0_7.subViewList[LoginSceneConst.DEFINE.SERVER_PANEL] = arg0_7.serversPanel
 	arg0_7.subViewList[LoginSceneConst.DEFINE.ACCOUNT_BTN] = arg0_7.accountBtn
 	arg0_7.subViewList[LoginSceneConst.DEFINE.CURRENT_SERVER] = arg0_7.currentServer
-	arg0_7.age = arg0_7:findTF("background/age")
+	arg0_7.age = arg0_7._tf:Find("background/age")
 
 	if PLATFORM_CODE == PLATFORM_CH then
 		onButton(arg0_7, arg0_7.age, function()
@@ -191,122 +195,130 @@ function var0_0.init(arg0_7)
 	arg0_7:initEvents()
 end
 
-function var0_0.setServerAccountData(arg0_13, arg1_13)
-	local var0_13 = arg1_13.id
-	local var1_13
+function var0_0.FlushGateWaySwitchBtn(arg0_13)
+	arg0_13.switchGatewayBtn:Flush()
 
-	for iter0_13 = 1, #arg0_13.serversDic do
-		if arg0_13.serversDic[iter0_13].id == var0_13 then
-			var1_13 = arg0_13.serversDic[iter0_13]
+	if PLATFORM == PLATFORM_OPENHARMONY then
+		arg0_13.switchGatewayBtn4Oh:Flush()
+	end
+end
+
+function var0_0.setServerAccountData(arg0_14, arg1_14)
+	local var0_14 = arg1_14.id
+	local var1_14
+
+	for iter0_14 = 1, #arg0_14.serversDic do
+		if arg0_14.serversDic[iter0_14].id == var0_14 then
+			var1_14 = arg0_14.serversDic[iter0_14]
 
 			break
 		end
 	end
 
-	if not var1_13 then
+	if not var1_14 then
 		return
 	end
 
-	local var2_13 = var1_13.tf
+	local var2_14 = var1_14.tf
 
-	if arg1_13 and arg1_13.level then
-		setActive(findTF(var2_13, "mark/charactor"), true)
-		setActive(findTF(var2_13, "mark/level"), true)
-		setActive(findTF(var2_13, "mark/searching"), false)
-		setText(findTF(var2_13, "mark/level"), "lv." .. arg1_13.level)
-		setText(findTF(var2_13, "mark/level"), setColorStr("lv." .. arg1_13.level, "#ffffffff"))
+	if arg1_14 and arg1_14.level then
+		setActive(findTF(var2_14, "mark/charactor"), true)
+		setActive(findTF(var2_14, "mark/level"), true)
+		setActive(findTF(var2_14, "mark/searching"), false)
+		setText(findTF(var2_14, "mark/level"), "lv." .. arg1_14.level)
+		setText(findTF(var2_14, "mark/level"), setColorStr("lv." .. arg1_14.level, "#ffffffff"))
 
-		var1_13.level = arg1_13.level
+		var1_14.level = arg1_14.level
 	else
-		setActive(findTF(var2_13, "mark/level"), true)
-		setActive(findTF(var2_13, "mark/searching"), false)
-		setActive(findTF(var2_13, "mark/charactor"), false)
+		setActive(findTF(var2_14, "mark/level"), true)
+		setActive(findTF(var2_14, "mark/searching"), false)
+		setActive(findTF(var2_14, "mark/charactor"), false)
 
-		var1_13.level = 0
+		var1_14.level = 0
 
-		setText(findTF(var2_13, "mark/level"), setColorStr(i18n("query_role_none"), "#d0d0d0FF"))
+		setText(findTF(var2_14, "mark/level"), setColorStr(i18n("query_role_none"), "#d0d0d0FF"))
 	end
 end
 
-function var0_0.searchAountState(arg0_14, arg1_14)
-	arg0_14.searching = arg1_14
+function var0_0.searchAountState(arg0_15, arg1_15)
+	arg0_15.searching = arg1_15
 
-	for iter0_14 = 1, #arg0_14.serversDic do
-		local var0_14 = arg0_14.serversDic[iter0_14].tf
-		local var1_14 = arg0_14.serversDic[iter0_14].level
+	for iter0_15 = 1, #arg0_15.serversDic do
+		local var0_15 = arg0_15.serversDic[iter0_15].tf
+		local var1_15 = arg0_15.serversDic[iter0_15].level
 
-		setActive(findTF(var0_14, "mark"), true)
+		setActive(findTF(var0_15, "mark"), true)
 
-		if arg1_14 then
-			setActive(findTF(var0_14, "mark/charactor"), false)
-			setActive(findTF(var0_14, "mark/level"), true)
-			setText(findTF(var0_14, "mark/level"), setColorStr(i18n("query_role"), "#d0d0d0FF"))
-			setActive(findTF(var0_14, "mark/searching"), true)
+		if arg1_15 then
+			setActive(findTF(var0_15, "mark/charactor"), false)
+			setActive(findTF(var0_15, "mark/level"), true)
+			setText(findTF(var0_15, "mark/level"), setColorStr(i18n("query_role"), "#d0d0d0FF"))
+			setActive(findTF(var0_15, "mark/searching"), true)
 		else
-			if not var1_14 then
-				setText(findTF(var0_14, "mark/level"), setColorStr(i18n("query_role_fail"), "#d0d0d0FF"))
+			if not var1_15 then
+				setText(findTF(var0_15, "mark/level"), setColorStr(i18n("query_role_fail"), "#d0d0d0FF"))
 			end
 
-			setActive(findTF(var0_14, "mark/searching"), false)
+			setActive(findTF(var0_15, "mark/searching"), false)
 		end
 	end
 end
 
-function var0_0.initEvents(arg0_15)
-	arg0_15:bind(LoginSceneConst.SWITCH_SUB_VIEW, function(arg0_16, arg1_16)
-		arg0_15:switchSubView(arg1_16)
+function var0_0.initEvents(arg0_16)
+	arg0_16:bind(LoginSceneConst.SWITCH_SUB_VIEW, function(arg0_17, arg1_17)
+		arg0_16:switchSubView(arg1_17)
 	end)
-	arg0_15:bind(LoginSceneConst.CLEAR_REGISTER_VIEW, function(arg0_17)
-		arg0_15.registerPanelView:ActionInvoke("Clear")
+	arg0_16:bind(LoginSceneConst.CLEAR_REGISTER_VIEW, function(arg0_18)
+		arg0_16.registerPanelView:ActionInvoke("Clear")
 	end)
 end
 
-function var0_0.switchSubView(arg0_18, arg1_18)
-	for iter0_18, iter1_18 in ipairs(arg0_18.subViewList) do
-		if isa(iter1_18, BaseSubView) then
-			if table.contains(arg1_18, iter0_18) then
-				iter1_18:CallbackInvoke(function()
-					arg0_18.repairBtn:SetAsLastSibling()
+function var0_0.switchSubView(arg0_19, arg1_19)
+	for iter0_19, iter1_19 in ipairs(arg0_19.subViewList) do
+		if isa(iter1_19, BaseSubView) then
+			if table.contains(arg1_19, iter0_19) then
+				iter1_19:CallbackInvoke(function()
+					arg0_19.repairBtn:SetAsLastSibling()
 				end)
-				iter1_18:Load()
-				iter1_18:ActionInvoke("Show")
+				iter1_19:Load()
+				iter1_19:ActionInvoke("Show")
 			else
-				iter1_18:ActionInvoke("Hide")
+				iter1_19:ActionInvoke("Hide")
 			end
 		else
-			setActive(iter1_18, table.contains(arg1_18, iter0_18))
+			setActive(iter1_19, table.contains(arg1_19, iter0_19))
 		end
 	end
 
-	if not table.contains(arg1_18, LoginSceneConst.DEFINE.SERVER_PANEL) then
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_18.serversPanel, arg0_18._tf)
+	if not table.contains(arg1_19, LoginSceneConst.DEFINE.SERVER_PANEL) then
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_19.serversPanel, arg0_19._tf)
 	end
 
-	if table.contains(arg1_18, LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW) then
-		setActive(arg0_18.airiUidTxt, false)
+	if table.contains(arg1_19, LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW) then
+		setActive(arg0_19.airiUidTxt, false)
 	end
 
-	arg0_18.userAgreenTF:SetAsLastSibling()
-	arg0_18.repairBtn:SetAsLastSibling()
+	arg0_19.userAgreenTF:SetAsLastSibling()
+	arg0_19.repairBtn:SetAsLastSibling()
 end
 
-function var0_0.onBackPressed(arg0_20)
-	if arg0_20.searching then
+function var0_0.onBackPressed(arg0_21)
+	if arg0_21.searching then
 		return
 	end
 
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	if isActive(arg0_20.serversPanel) then
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_20.serversPanel, arg0_20._tf)
-		setActive(arg0_20.serversPanel, false)
+	if isActive(arg0_21.serversPanel) then
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_21.serversPanel, arg0_21._tf)
+		setActive(arg0_21.serversPanel, false)
 
 		return
 	end
 
-	if isActive(arg0_20.userAgreenTF) then
-		setActive(arg0_20.userAgreenTF, false)
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_20.userAgreenTF, arg0_20._tf)
+	if isActive(arg0_21.userAgreenTF) then
+		setActive(arg0_21.userAgreenTF, false)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_21.userAgreenTF, arg0_21._tf)
 
 		return
 	end
@@ -314,215 +326,215 @@ function var0_0.onBackPressed(arg0_20)
 	pg.SdkMgr.GetInstance():OnAndoridBackPress()
 end
 
-function var0_0.setUserData(arg0_21, arg1_21)
-	setActive(arg0_21.airiUidTxt, true)
-	setText(arg0_21.airiUidTxt, "uid: " .. arg1_21.arg2)
+function var0_0.setUserData(arg0_22, arg1_22)
+	setActive(arg0_22.airiUidTxt, true)
+	setText(arg0_22.airiUidTxt, "uid: " .. arg1_22.arg2)
 end
 
-function var0_0.showUserAgreement(arg0_22, arg1_22)
-	local var0_22
+function var0_0.showUserAgreement(arg0_23, arg1_23)
+	local var0_23
 
 	if PLATFORM_CODE == PLATFORM_CH then
-		arg0_22.userAgreenConfirmTF:GetComponent(typeof(Image)).color = Color.New(0.784313725490196, 0.784313725490196, 0.784313725490196, 0.501960784313725)
+		arg0_23.userAgreenConfirmTF:GetComponent(typeof(Image)).color = Color.New(0.784313725490196, 0.784313725490196, 0.784313725490196, 0.501960784313725)
 	else
-		var0_22 = true
+		var0_23 = true
 	end
 
-	local var1_22 = require("ShareCfg.UserAgreement")
+	local var1_23 = require("ShareCfg.UserAgreement")
 
-	setActive(arg0_22.userAgreenTF, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_22.userAgreenTF)
-	setText(arg0_22.userAgreenTF:Find("window/container/scrollrect/content/Text"), var1_22.content)
-	onButton(arg0_22, arg0_22.userAgreenConfirmTF, function()
-		if var0_22 then
-			setActive(arg0_22.userAgreenTF, false)
-			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_22.userAgreenTF, arg0_22._tf)
+	setActive(arg0_23.userAgreenTF, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_23.userAgreenTF)
+	setText(arg0_23.userAgreenTF:Find("window/container/scrollrect/content/Text"), var1_23.content)
+	onButton(arg0_23, arg0_23.userAgreenConfirmTF, function()
+		if var0_23 then
+			setActive(arg0_23.userAgreenTF, false)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_23.userAgreenTF, arg0_23._tf)
 
-			if arg1_22 then
-				arg1_22()
+			if arg1_23 then
+				arg1_23()
 			end
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("read_the_user_agreement"))
 		end
 	end)
-	onScroll(arg0_22, arg0_22.userAgreenTF:Find("window/container/scrollrect"), function(arg0_24)
-		if arg0_24.y <= 0.01 and not var0_22 then
-			var0_22 = true
+	onScroll(arg0_23, arg0_23.userAgreenTF:Find("window/container/scrollrect"), function(arg0_25)
+		if arg0_25.y <= 0.01 and not var0_23 then
+			var0_23 = true
 
 			if PLATFORM_CODE == PLATFORM_CH then
-				arg0_22.userAgreenConfirmTF:GetComponent(typeof(Image)).color = Color.New(1, 1, 1, 1)
+				arg0_23.userAgreenConfirmTF:GetComponent(typeof(Image)).color = Color.New(1, 1, 1, 1)
 			end
 		end
 	end)
 end
 
-function var0_0.setBg(arg0_25)
-	arg0_25.bgImg = arg0_25:findTF("background/bg"):GetComponent(typeof(Image))
+function var0_0.setBg(arg0_26)
+	arg0_26.bgImg = arg0_26._tf:Find("background/bg"):GetComponent(typeof(Image))
 
-	local var0_25 = arg0_25:findTF("background/bg"):GetComponent("AspectRatioFitter")
+	local var0_26 = arg0_26._tf:Find("background/bg"):GetComponent("AspectRatioFitter")
 
-	if var0_25 then
-		var0_25.aspectMode = AspectMode.FitInParent
+	if var0_26 then
+		var0_26.aspectMode = AspectMode.FitInParent
 	end
 
-	if not arg0_25.isCriBg then
-		setImageSprite(arg0_25.bgImg, arg0_25.staticBgSprite)
+	if not arg0_26.isCriBg then
+		setImageSprite(arg0_26.bgImg, arg0_26.staticBgSprite)
 	else
-		arg0_25.bgImg.enabled = false
+		arg0_26.bgImg.enabled = false
 
-		local var1_25 = arg0_25.criBgGo.transform
+		local var1_26 = arg0_26.criBgGo.transform
 
-		var1_25:SetParent(arg0_25.bgImg.transform, false)
-		var1_25:SetAsFirstSibling()
+		var1_26:SetParent(arg0_26.bgImg.transform, false)
+		var1_26:SetAsFirstSibling()
 
-		local var2_25 = arg0_25.criBgGo:GetComponent("AspectRatioFitter")
+		local var2_26 = arg0_26.criBgGo:GetComponent("AspectRatioFitter")
 
-		if var2_25 then
-			var2_25.enabled = true
+		if var2_26 then
+			var2_26.enabled = true
 		end
 	end
 end
 
-function var0_0.setLastLogin(arg0_26, arg1_26)
-	arg0_26.shareData.lastLoginUser = arg1_26
+function var0_0.setLastLogin(arg0_27, arg1_27)
+	arg0_27.shareData.lastLoginUser = arg1_27
 end
 
-function var0_0.setAutoLogin(arg0_27)
-	arg0_27.shareData.autoLoginEnabled = true
+function var0_0.setAutoLogin(arg0_28)
+	arg0_28.shareData.autoLoginEnabled = true
 end
 
-function var0_0.setLastLoginServer(arg0_28, arg1_28)
-	if not arg1_28 then
-		setText(findTF(arg0_28.currentServer, "server_name"), "")
+function var0_0.setLastLoginServer(arg0_29, arg1_29)
+	if not arg1_29 then
+		setText(findTF(arg0_29.currentServer, "server_name"), "")
 
-		arg0_28.shareData.lastLoginServer = nil
+		arg0_29.shareData.lastLoginServer = nil
 
-		arg0_28:updateAdviceServer()
+		arg0_29:updateAdviceServer()
 
 		return
 	end
 
-	setText(findTF(arg0_28.currentServer, "server_name"), arg1_28.name)
+	setText(findTF(arg0_29.currentServer, "server_name"), arg1_29.name)
 
-	arg0_28.shareData.lastLoginServer = arg1_28
+	arg0_29.shareData.lastLoginServer = arg1_29
 end
 
-function var0_0.didEnter(arg0_29)
-	onButton(arg0_29, arg0_29.closeUserAgreenTF, function()
+function var0_0.didEnter(arg0_30)
+	onButton(arg0_30, arg0_30.closeUserAgreenTF, function()
 		if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
-			setActive(arg0_29.userAgreenTF, false)
-			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_29.userAgreenTF, arg0_29._tf)
+			setActive(arg0_30.userAgreenTF, false)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_30.userAgreenTF, arg0_30._tf)
 		else
-			setActive(arg0_29.userAgreenMainTF, false)
+			setActive(arg0_30.userAgreenMainTF, false)
 			onNextTick(function()
-				setActive(arg0_29.userAgreenMainTF, true)
+				setActive(arg0_30.userAgreenMainTF, true)
 			end)
 		end
 	end, SFX_CANCEL)
-	onButton(arg0_29, arg0_29.privateBtn, function()
+	onButton(arg0_30, arg0_30.privateBtn, function()
 		pg.SdkMgr.GetInstance():ShowPrivate()
 	end, SFX_PANEL)
-	onButton(arg0_29, arg0_29.licenceBtn, function()
+	onButton(arg0_30, arg0_30.licenceBtn, function()
 		pg.SdkMgr.GetInstance():ShowLicence()
 	end, SFX_PANEL)
-	setActive(arg0_29.privateBtn, PLATFORM_CODE == PLATFORM_CH)
-	setActive(arg0_29.licenceBtn, PLATFORM_CODE == PLATFORM_CH)
+	setActive(arg0_30.privateBtn, PLATFORM_CODE == PLATFORM_CH)
+	setActive(arg0_30.licenceBtn, PLATFORM_CODE == PLATFORM_CH)
 
 	if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
-		onButton(arg0_29, arg0_29.userDisagreeConfirmTF, function()
-			setActive(arg0_29.userAgreenTF, false)
-			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_29.userAgreenTF, arg0_29._tf)
+		onButton(arg0_30, arg0_30.userDisagreeConfirmTF, function()
+			setActive(arg0_30.userAgreenTF, false)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_30.userAgreenTF, arg0_30._tf)
 		end)
 	end
 
-	setActive(arg0_29.serviceBtn, PLATFORM_CODE == PLATFORM_KR)
-	onButton(arg0_29, arg0_29.serviceBtn, function()
+	setActive(arg0_30.serviceBtn, PLATFORM_CODE == PLATFORM_KR)
+	onButton(arg0_30, arg0_30.serviceBtn, function()
 		if PLATFORM_CODE == PLATFORM_KR then
 			pg.SdkMgr.GetInstance():UserCenter()
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("word_systemClose"))
 		end
 	end, SFX_MAIN)
-	onButton(arg0_29, arg0_29.accountBtn, function()
-		local var0_36 = pg.SdkMgr.GetInstance():GetLoginType() ~= LoginType.PLATFORM_INNER
+	onButton(arg0_30, arg0_30.accountBtn, function()
+		local var0_37 = pg.SdkMgr.GetInstance():GetLoginType() ~= LoginType.PLATFORM_INNER
 
-		if not var0_36 then
-			arg0_29:switchToLogin()
-		elseif var0_36 and PLATFORM_KR == PLATFORM_CODE then
+		if not var0_37 then
+			arg0_30:switchToLogin()
+		elseif var0_37 and PLATFORM_KR == PLATFORM_CODE then
 			pg.SdkMgr.GetInstance():SwitchAccount()
 		end
 	end, SFX_MAIN)
-	onButton(arg0_29, arg0_29.repairBtn, function()
+	onButton(arg0_30, arg0_30.repairBtn, function()
 		pg.RepairResMgr.GetInstance():Repair()
 	end)
 
-	local function var0_29()
-		local var0_38 = pg.SdkMgr.GetInstance():GetLoginType()
+	local function var0_30()
+		local var0_39 = pg.SdkMgr.GetInstance():GetLoginType()
 
-		if var0_38 == LoginType.PLATFORM then
+		if var0_39 == LoginType.PLATFORM then
 			pg.SdkMgr.GetInstance():LoginSdk()
-		elseif var0_38 == LoginType.PLATFORM_TENCENT then
-			arg0_29:switchToTencentLogin()
-		elseif var0_38 == LoginType.PLATFORM_INNER then
-			arg0_29:switchToLogin()
+		elseif var0_39 == LoginType.PLATFORM_TENCENT then
+			arg0_30:switchToTencentLogin()
+		elseif var0_39 == LoginType.PLATFORM_INNER then
+			arg0_30:switchToLogin()
 		end
 	end
 
-	onButton(arg0_29, arg0_29.filingBtn, function()
+	onButton(arg0_30, arg0_30.filingBtn, function()
 		Application.OpenURL("http://sq.ccm.gov.cn:80/ccnt/sczr/service/business/emark/gameNetTag/4028c08b58bd467b0158bd8bd80d062a")
 	end, SFX_PANEL)
-	onButton(arg0_29, arg0_29.currentServer, function()
-		if table.getCount(arg0_29.serverList or {}) == 0 then
-			var0_29()
+	onButton(arg0_30, arg0_30.currentServer, function()
+		if table.getCount(arg0_30.serverList or {}) == 0 then
+			var0_30()
 		else
-			pg.UIMgr.GetInstance():BlurPanel(arg0_29.serversPanel)
-			setActive(arg0_29.serversPanel, true)
+			pg.UIMgr.GetInstance():BlurPanel(arg0_30.serversPanel)
+			setActive(arg0_30.serversPanel, true)
 		end
 	end, SFX_PANEL)
-	onButton(arg0_29, arg0_29.serversPanel, function()
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_29.serversPanel, arg0_29._tf)
-		setActive(arg0_29.serversPanel, false)
+	onButton(arg0_30, arg0_30.serversPanel, function()
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_30.serversPanel, arg0_30._tf)
+		setActive(arg0_30.serversPanel, false)
 	end, SFX_CANCEL)
-	onButton(arg0_29, arg0_29:findTF("background"), function()
+	onButton(arg0_30, arg0_30._tf:Find("background"), function()
 		if pg.CpkPlayMgr.GetInstance():OnPlaying() then
 			return
 		end
 
-		if not arg0_29.initFinished then
+		if not arg0_30.initFinished then
 			return
 		end
 
-		if arg0_29.isNeedResCheck then
-			arg0_29.event:emit(LoginMediator.CHECK_RES)
+		if arg0_30.isNeedResCheck then
+			arg0_30.event:emit(LoginMediator.CHECK_RES)
 
 			return
 		end
 
 		if getProxy(SettingsProxy):CheckNeedUserAgreement() then
-			arg0_29.event:emit(LoginMediator.ON_LOGIN_PROCESS)
+			arg0_30.event:emit(LoginMediator.ON_LOGIN_PROCESS)
 
 			return
 		end
 
-		if go(arg0_29.pressToLogin).activeSelf then
-			if table.getCount(arg0_29.serverList or {}) == 0 then
-				var0_29()
+		if go(arg0_30.pressToLogin).activeSelf then
+			if table.getCount(arg0_30.serverList or {}) == 0 then
+				var0_30()
 
 				return
 			end
 
-			if not arg0_29.shareData.lastLoginServer then
+			if not arg0_30.shareData.lastLoginServer then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("login_loginScene_choiseServer"))
 
 				return
 			end
 
-			if arg0_29.shareData.lastLoginServer.status == Server.STATUS.VINDICATE or arg0_29.shareData.lastLoginServer.status == Server.STATUS.FULL then
-				ServerStateChecker.New():Execute(function(arg0_43)
-					if arg0_43 then
+			if arg0_30.shareData.lastLoginServer.status == Server.STATUS.VINDICATE or arg0_30.shareData.lastLoginServer.status == Server.STATUS.FULL then
+				ServerStateChecker.New():Execute(function(arg0_44)
+					if arg0_44 then
 						pg.TipsMgr.GetInstance():ShowTips(i18n("login_loginScene_server_disabled"))
 					else
-						arg0_29.event:emit(LoginMediator.ON_SERVER, arg0_29.shareData.lastLoginServer)
+						arg0_30.event:emit(LoginMediator.ON_SERVER, arg0_30.shareData.lastLoginServer)
 						pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CONFIRM)
 					end
 				end)
@@ -530,130 +542,130 @@ function var0_0.didEnter(arg0_29)
 				return
 			end
 
-			arg0_29.event:emit(LoginMediator.ON_SERVER, arg0_29.shareData.lastLoginServer)
+			arg0_30.event:emit(LoginMediator.ON_SERVER, arg0_30.shareData.lastLoginServer)
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CONFIRM)
 		end
 	end)
 
-	if arg0_29.isOpPlay then
-		onButton(arg0_29, arg0_29.opBtn, function()
-			if arg0_29.initFinished and not pg.CpkPlayMgr.GetInstance():OnPlaying() then
-				arg0_29:playOpening()
+	if arg0_30.isOpPlay then
+		onButton(arg0_30, arg0_30.opBtn, function()
+			if arg0_30.initFinished and not pg.CpkPlayMgr.GetInstance():OnPlaying() then
+				arg0_30:playOpening()
 			end
 		end)
 
-		if PLATFORM_CODE ~= PLATFORM_JP and PlayerPrefs.GetString("op_ver", "") ~= arg0_29.opVersion then
-			arg0_29:playOpening(function()
-				PlayerPrefs.SetString("op_ver", arg0_29.opVersion)
-				arg0_29:playExtraVoice()
+		if PLATFORM_CODE ~= PLATFORM_JP and PlayerPrefs.GetString("op_ver", "") ~= arg0_30.opVersion then
+			arg0_30:playOpening(function()
+				PlayerPrefs.SetString("op_ver", arg0_30.opVersion)
+				arg0_30:playExtraVoice()
 
-				arg0_29.initFinished = true
+				arg0_30.initFinished = true
 
-				arg0_29.event:emit(LoginMediator.ON_LOGIN_PROCESS)
+				arg0_30.event:emit(LoginMediator.ON_LOGIN_PROCESS)
 			end)
 
 			return
 		end
 
-		arg0_29.event:emit(LoginMediator.ON_LOGIN_PROCESS)
+		arg0_30.event:emit(LoginMediator.ON_LOGIN_PROCESS)
 	else
-		arg0_29.event:emit(LoginMediator.ON_LOGIN_PROCESS)
+		arg0_30.event:emit(LoginMediator.ON_LOGIN_PROCESS)
 	end
 
-	arg0_29:playExtraVoice()
+	arg0_30:playExtraVoice()
 
-	arg0_29.initFinished = true
+	arg0_30.initFinished = true
 
-	arg0_29:InitPrivateAndLicence()
+	arg0_30:InitPrivateAndLicence()
 end
 
-function var0_0.InitPrivateAndLicence(arg0_46)
-	local var0_46 = PLATFORM_CODE == PLATFORM_CH or IsUnityEditor
+function var0_0.InitPrivateAndLicence(arg0_47)
+	local var0_47 = PLATFORM_CODE == PLATFORM_CH or IsUnityEditor
 
-	setActive(arg0_46.privateBtn, var0_46)
-	setActive(arg0_46.licenceBtn, var0_46)
+	setActive(arg0_47.privateBtn, var0_47)
+	setActive(arg0_47.licenceBtn, var0_47)
 
-	if var0_46 then
-		onButton(arg0_46, arg0_46.privateBtn, function()
+	if var0_47 then
+		onButton(arg0_47, arg0_47.privateBtn, function()
 			pg.SdkMgr.GetInstance():ShowPrivate()
 		end, SFX_PANEL)
-		onButton(arg0_46, arg0_46.licenceBtn, function()
+		onButton(arg0_47, arg0_47.licenceBtn, function()
 			pg.SdkMgr.GetInstance():ShowLicence()
 		end, SFX_PANEL)
 	end
 end
 
 local function var2_0()
-	local var0_49 = pg.gameset.login_extra_voice.description
+	local var0_50 = pg.gameset.login_extra_voice.description
 
-	if var0_49 and #var0_49 > 0 then
-		local var1_49 = var0_49[math.clamp(math.floor(math.random() * #var0_49) + 1, 1, #var0_49)]
+	if var0_50 and #var0_50 > 0 then
+		local var1_50 = var0_50[math.clamp(math.floor(math.random() * #var0_50) + 1, 1, #var0_50)]
 
-		return "cv-" .. var1_49, "extra"
+		return "cv-" .. var1_50, "extra"
 	end
 
 	return nil, nil
 end
 
-local function var3_0(arg0_50)
-	local var0_50 = arg0_50.description[1]
-	local var1_50 = arg0_50.description[2]
-	local var2_50 = arg0_50.description[3]
+local function var3_0(arg0_51)
+	local var0_51 = arg0_51.description[1]
+	local var1_51 = arg0_51.description[2]
+	local var2_51 = arg0_51.description[3]
 
-	if pg.TimeMgr.GetInstance():inTime(var1_50) then
-		local var3_50 = math.random(1, var2_50)
+	if pg.TimeMgr.GetInstance():inTime(var1_51) then
+		local var3_51 = math.random(1, var2_51)
 
-		return var0_50, "extra" .. var3_50
+		return var0_51, "extra" .. var3_51
 	end
 
 	return nil, nil
 end
 
-function var0_0.GetExtraVoiceSheetAndCue(arg0_51)
-	local var0_51
-	local var1_51
-	local var2_51 = pg.gameset.new_login_extra_voice
+function var0_0.GetExtraVoiceSheetAndCue(arg0_52)
+	local var0_52
+	local var1_52
+	local var2_52 = pg.gameset.new_login_extra_voice
 
-	if var2_51 then
-		var0_51, var1_51 = var3_0(var2_51)
+	if var2_52 then
+		var0_52, var1_52 = var3_0(var2_52)
 	end
 
-	if not var0_51 or not var1_51 then
-		var0_51, var1_51 = var2_0()
+	if not var0_52 or not var1_52 then
+		var0_52, var1_52 = var2_0()
 	end
 
-	return var0_51, var1_51
+	return var0_52, var1_52
 end
 
-function var0_0.playExtraVoice(arg0_52)
-	local var0_52, var1_52 = arg0_52:GetExtraVoiceSheetAndCue()
+function var0_0.playExtraVoice(arg0_53)
+	local var0_53, var1_53 = arg0_53:GetExtraVoiceSheetAndCue()
 
-	if var0_52 and var1_52 then
-		arg0_52.loginCueSheet = var0_52
+	if var0_53 and var1_53 then
+		arg0_53.loginCueSheet = var0_53
 
-		pg.CriMgr.GetInstance():PlayCV_V3(var0_52, var1_52)
-	end
-end
-
-function var0_0.unloadExtraVoice(arg0_53)
-	if arg0_53.loginCueSheet then
-		pg.CriMgr.GetInstance():UnloadCueSheet(arg0_53.loginCueSheet)
-
-		arg0_53.loginCueSheet = nil
+		pg.CriMgr.GetInstance():PlayCV_V3(var0_53, var1_53)
 	end
 end
 
-function var0_0.autoLogin(arg0_54)
-	if arg0_54.shareData.lastLoginUser then
-		if arg0_54.shareData.autoLoginEnabled then
-			arg0_54.event:emit(LoginMediator.ON_LOGIN, arg0_54.shareData.lastLoginUser)
+function var0_0.unloadExtraVoice(arg0_54)
+	if arg0_54.loginCueSheet then
+		pg.CriMgr.GetInstance():UnloadCueSheet(arg0_54.loginCueSheet)
+
+		arg0_54.loginCueSheet = nil
+	end
+end
+
+function var0_0.autoLogin(arg0_55)
+	if arg0_55.shareData.lastLoginUser then
+		if arg0_55.shareData.autoLoginEnabled then
+			arg0_55.event:emit(LoginMediator.ON_LOGIN, arg0_55.shareData.lastLoginUser)
 		end
 
-		if arg0_54.loginPanelView:GetLoaded() then
-			if arg0_54.shareData.lastLoginUser.type == 1 then
-				arg0_54.loginPanelView:SetContent(arg0_54.shareData.lastLoginUser.arg2, arg0_54.shareData.lastLoginUser.arg3)
-			elseif arg0_54.shareData.lastLoginUser.type == 2 then
-				arg0_54.loginPanelView:SetContent(arg0_54.shareData.lastLoginUser.arg1, arg0_54.shareData.lastLoginUser.arg2)
+		if arg0_55.loginPanelView:GetLoaded() then
+			if arg0_55.shareData.lastLoginUser.type == 1 then
+				arg0_55.loginPanelView:ActionInvoke("SetContent", arg0_55.shareData.lastLoginUser.arg2, arg0_55.shareData.lastLoginUser.arg3)
+			elseif arg0_55.shareData.lastLoginUser.type == 2 then
+				arg0_55.loginPanelView:ActionInvoke("SetContent", arg0_55.shareData.lastLoginUser.arg1, arg0_55.shareData.lastLoginUser.arg2)
 			end
 		end
 	end
@@ -686,123 +698,123 @@ local var4_0 = {
 	}
 }
 
-function var0_0.updateServerTF(arg0_55, arg1_55, arg2_55)
-	setText(findTF(arg1_55, "name"), "-  " .. arg2_55.name .. "  -")
-	arg0_55:setSpriteTo(arg0_55.iconSpries[arg2_55.status + 1], findTF(arg1_55, "statu"), true)
+function var0_0.updateServerTF(arg0_56, arg1_56, arg2_56)
+	setText(findTF(arg1_56, "name"), "-  " .. arg2_56.name .. "  -")
+	arg0_56:setSpriteTo(arg0_56.iconSpries[arg2_56.status + 1], findTF(arg1_56, "statu"), true)
 
-	findTF(arg1_55, "statu_1"):GetComponent("Image").color = Color.New(var4_0[arg2_55.status + 1][1], var4_0[arg2_55.status + 1][2], var4_0[arg2_55.status + 1][3], var4_0[arg2_55.status + 1][4])
+	findTF(arg1_56, "statu_1"):GetComponent("Image").color = Color.New(var4_0[arg2_56.status + 1][1], var4_0[arg2_56.status + 1][2], var4_0[arg2_56.status + 1][3], var4_0[arg2_56.status + 1][4])
 
-	setActive(findTF(arg1_55, "mark"), arg2_55.isLogined)
-	setActive(arg0_55:findTF("tag_new", arg1_55), arg2_55.isNew)
-	setActive(arg0_55:findTF("tag_hot", arg1_55), arg2_55.isHot)
-	onButton(arg0_55, arg1_55, function()
-		if arg2_55.status == Server.STATUS.VINDICATE then
+	setActive(findTF(arg1_56, "mark"), arg2_56.isLogined)
+	setActive(arg1_56:Find("tag_new"), arg2_56.isNew)
+	setActive(arg1_56:Find("tag_hot"), arg2_56.isHot)
+	onButton(arg0_56, arg1_56, function()
+		if arg2_56.status == Server.STATUS.VINDICATE then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("login_loginScene_server_vindicate"))
 
 			return
 		end
 
-		if arg2_55.status == Server.STATUS.FULL then
+		if arg2_56.status == Server.STATUS.FULL then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("login_loginScene_server_full"))
 
 			return
 		end
 
-		arg0_55:setLastLoginServer(arg2_55)
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_55.serversPanel, arg0_55._tf)
-		setActive(arg0_55.serversPanel, false)
+		arg0_56:setLastLoginServer(arg2_56)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_56.serversPanel, arg0_56._tf)
+		setActive(arg0_56.serversPanel, false)
 	end, SFX_CONFIRM)
 end
 
-function var0_0.updateAdviceServer(arg0_57)
-	if not arg0_57.recentTF or not arg0_57.adviceTF then
+function var0_0.updateAdviceServer(arg0_58)
+	if not arg0_58.recentTF or not arg0_58.adviceTF then
 		return
 	end
 
-	setActive(arg0_57.recentTF, arg0_57.shareData.lastLoginServer)
+	setActive(arg0_58.recentTF, arg0_58.shareData.lastLoginServer)
 
-	if arg0_57.shareData.lastLoginServer then
-		local var0_57 = findTF(arg0_57.recentTF, "server")
+	if arg0_58.shareData.lastLoginServer then
+		local var0_58 = findTF(arg0_58.recentTF, "server")
 
-		arg0_57:updateServerTF(var0_57, arg0_57.shareData.lastLoginServer)
+		arg0_58:updateServerTF(var0_58, arg0_58.shareData.lastLoginServer)
 	end
 
-	local var1_57 = getProxy(ServerProxy).firstServer
+	local var1_58 = getProxy(ServerProxy).firstServer
 
-	setActive(arg0_57.adviceTF, var1_57)
+	setActive(arg0_58.adviceTF, var1_58)
 
-	if var1_57 then
-		local var2_57 = findTF(arg0_57.adviceTF, "server")
+	if var1_58 then
+		local var2_58 = findTF(arg0_58.adviceTF, "server")
 
-		arg0_57:updateServerTF(var2_57, var1_57)
+		arg0_58:updateServerTF(var2_58, var1_58)
 	end
 end
 
-function var0_0.updateServerList(arg0_58, arg1_58)
-	arg0_58.serverList = arg1_58
+function var0_0.updateServerList(arg0_59, arg1_59)
+	arg0_59.serverList = arg1_59
 
-	local var0_58 = _.sort(_.values(arg1_58), function(arg0_59, arg1_59)
-		return arg0_59.sortIndex < arg1_59.sortIndex
+	local var0_59 = _.sort(_.values(arg1_59), function(arg0_60, arg1_60)
+		return arg0_60.sortIndex < arg1_60.sortIndex
 	end)
 
-	removeAllChildren(arg0_58.servers)
+	removeAllChildren(arg0_59.servers)
 
 	if IsUnityEditor then
-		table.sort(var0_58, function(arg0_60, arg1_60)
-			local var0_60 = string.lower(arg0_60.name)
-			local var1_60 = string.lower(arg1_60.name)
+		table.sort(var0_59, function(arg0_61, arg1_61)
+			local var0_61 = string.lower(arg0_61.name)
+			local var1_61 = string.lower(arg1_61.name)
 
-			return string.byte(var0_60, 1) > string.byte(var1_60, 1)
+			return string.byte(var0_61, 1) > string.byte(var1_61, 1)
 		end)
 	end
 
-	arg0_58.serversDic = {}
+	arg0_59.serversDic = {}
 
-	for iter0_58, iter1_58 in pairs(var0_58) do
-		local var1_58 = cloneTplTo(arg0_58.serverTpl, arg0_58.servers)
+	for iter0_59, iter1_59 in pairs(var0_59) do
+		local var1_59 = cloneTplTo(arg0_59.serverTpl, arg0_59.servers)
 
-		arg0_58:updateServerTF(var1_58, iter1_58)
-		table.insert(arg0_58.serversDic, {
-			server = iter1_58,
-			tf = var1_58,
-			id = iter1_58.id
+		arg0_59:updateServerTF(var1_59, iter1_59)
+		table.insert(arg0_59.serversDic, {
+			server = iter1_59,
+			tf = var1_59,
+			id = iter1_59.id
 		})
 	end
 end
 
-function var0_0.fillterRefundServer(arg0_61)
-	local var0_61 = getProxy(UserProxy)
-	local var1_61 = {}
+function var0_0.fillterRefundServer(arg0_62)
+	local var0_62 = getProxy(UserProxy)
+	local var1_62 = {}
 
-	if var0_61.data.limitServerIds and #var0_61.data.limitServerIds > 0 and arg0_61.serverList and #arg0_61.serverList > 0 then
-		local var2_61 = var0_61.data.limitServerIds
-		local var3_61
+	if var0_62.data.limitServerIds and #var0_62.data.limitServerIds > 0 and arg0_62.serverList and #arg0_62.serverList > 0 then
+		local var2_62 = var0_62.data.limitServerIds
+		local var3_62
 
-		for iter0_61, iter1_61 in pairs(arg0_61.serverList) do
-			local var4_61 = iter1_61.id
-			local var5_61 = false
+		for iter0_62, iter1_62 in pairs(arg0_62.serverList) do
+			local var4_62 = iter1_62.id
+			local var5_62 = false
 
-			for iter2_61, iter3_61 in pairs(var2_61) do
-				if var2_61[iter2_61] == var4_61 and not var5_61 then
-					if not var3_61 then
-						var3_61 = "\n" .. iter1_61.name
+			for iter2_62, iter3_62 in pairs(var2_62) do
+				if var2_62[iter2_62] == var4_62 and not var5_62 then
+					if not var3_62 then
+						var3_62 = "\n" .. iter1_62.name
 					else
-						var3_61 = var3_61 .. "," .. iter1_61.name
+						var3_62 = var3_62 .. "," .. iter1_62.name
 					end
 
-					table.insert(var1_61, iter1_61)
+					table.insert(var1_62, iter1_62)
 
-					var5_61 = true
+					var5_62 = true
 				end
 			end
 		end
 
-		arg0_61:updateServerList(var1_61)
+		arg0_62:updateServerList(var1_62)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			modal = true,
 			hideNo = true,
 			hideClose = true,
-			content = i18n("login_arrears_tips", var3_61),
+			content = i18n("login_arrears_tips", var3_62),
 			onYes = function()
 				return
 			end
@@ -810,42 +822,42 @@ function var0_0.fillterRefundServer(arg0_61)
 	end
 end
 
-function var0_0.switchToTencentLogin(arg0_63)
-	arg0_63:switchSubView({
+function var0_0.switchToTencentLogin(arg0_64)
+	arg0_64:switchSubView({
 		LoginSceneConst.DEFINE.TENCENT_LOGIN_VIEW
 	})
 end
 
-function var0_0.switchToAiriLogin(arg0_64)
-	arg0_64:switchSubView({
+function var0_0.switchToAiriLogin(arg0_65)
+	arg0_65:switchSubView({
 		LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW,
 		LoginSceneConst.DEFINE.PRESS_TO_LOGIN
 	})
 end
 
-function var0_0.switchToLogin(arg0_65)
-	arg0_65:switchSubView({
+function var0_0.switchToLogin(arg0_66)
+	arg0_66:switchSubView({
 		LoginSceneConst.DEFINE.LOGIN_PANEL_VIEW
 	})
 end
 
-function var0_0.switchToRegister(arg0_66)
-	arg0_66:switchSubView({
+function var0_0.switchToRegister(arg0_67)
+	arg0_67:switchSubView({
 		LoginSceneConst.DEFINE.REGISTER_PANEL_VIEW
 	})
 end
 
-function var0_0.switchToServer(arg0_67)
-	arg0_67:updateAdviceServer()
+function var0_0.switchToServer(arg0_68)
+	arg0_68:updateAdviceServer()
 
 	if pg.SdkMgr.GetInstance():GetLoginType() ~= LoginType.PLATFORM_INNER and PLATFORM_CODE ~= PLATFORM_KR then
-		arg0_67:switchSubView({
+		arg0_68:switchSubView({
 			LoginSceneConst.DEFINE.PRESS_TO_LOGIN,
 			LoginSceneConst.DEFINE.CURRENT_SERVER,
 			LoginSceneConst.DEFINE.BG_LAY
 		})
 	else
-		arg0_67:switchSubView({
+		arg0_68:switchSubView({
 			LoginSceneConst.DEFINE.ACCOUNT_BTN,
 			LoginSceneConst.DEFINE.PRESS_TO_LOGIN,
 			LoginSceneConst.DEFINE.CURRENT_SERVER,
@@ -854,82 +866,86 @@ function var0_0.switchToServer(arg0_67)
 	end
 end
 
-function var0_0.SwitchToWaitPanel(arg0_68, arg1_68)
-	local var0_68 = arg0_68:findTF("Msgbox")
-	local var1_68 = arg0_68:findTF("window/content", var0_68)
+function var0_0.SwitchToWaitPanel(arg0_69, arg1_69)
+	local var0_69 = arg0_69._tf:Find("Msgbox")
+	local var1_69 = var0_69:Find("window/content")
 
-	arg0_68.waitTimer = nil
+	arg0_69.waitTimer = nil
 
-	local var2_68 = 0
-	local var3_68 = arg1_68
+	local var2_69 = 0
+	local var3_69 = arg1_69
 
-	arg0_68.waitTimer = Timer.New(function()
-		setText(var1_68, i18n("login_wait_tip", var3_68))
+	arg0_69.waitTimer = Timer.New(function()
+		setText(var1_69, i18n("login_wait_tip", var3_69))
 
-		arg1_68 = arg1_68 - 1
+		arg1_69 = arg1_69 - 1
 
 		if math.random(0, 1) == 1 then
-			var3_68 = arg1_68
+			var3_69 = arg1_69
 		end
 
-		if arg1_68 <= 0 then
-			triggerButton(arg0_68:findTF("background"))
-			arg0_68.waitTimer:Stop()
+		if arg1_69 <= 0 then
+			triggerButton(arg0_69._tf:Find("background"))
+			arg0_69.waitTimer:Stop()
 
-			arg0_68.waitTimer = nil
+			arg0_69.waitTimer = nil
 		end
 	end, 1, -1)
 
-	arg0_68.waitTimer:Start()
-	arg0_68.waitTimer.func()
-	setActive(var0_68, true)
+	arg0_69.waitTimer:Start()
+	arg0_69.waitTimer.func()
+	setActive(var0_69, true)
 end
 
-function var0_0.willExit(arg0_70)
-	if arg0_70.waitTimer then
-		arg0_70.waitTimer:Stop()
+function var0_0.willExit(arg0_71)
+	if arg0_71.waitTimer then
+		arg0_71.waitTimer:Stop()
 
-		arg0_70.waitTimer = nil
+		arg0_71.waitTimer = nil
 	end
 
 	pg.CpkPlayMgr.GetInstance():DisposeCpkMovie()
-	arg0_70.loginPanelView:Destroy()
-	arg0_70.registerPanelView:Destroy()
-	arg0_70.tencentLoginPanelView:Destroy()
-	arg0_70.airiLoginPanelView:Destroy()
-	arg0_70.transcodeAlertView:Destroy()
-	arg0_70.yostarAlertView:Destroy()
-	arg0_70.switchGatewayBtn:Dispose()
+	arg0_71.loginPanelView:Destroy()
+	arg0_71.registerPanelView:Destroy()
+	arg0_71.tencentLoginPanelView:Destroy()
+	arg0_71.airiLoginPanelView:Destroy()
+	arg0_71.transcodeAlertView:Destroy()
+	arg0_71.yostarAlertView:Destroy()
+	arg0_71.switchGatewayBtn:Dispose()
 
-	arg0_70.iconSpries = nil
+	if PLATFORM == PLATFORM_OPENHARMONY then
+		arg0_71.switchGatewayBtn4Oh:Dispose()
+	end
+
+	arg0_71.iconSpries = nil
 end
 
-function var0_0.playOpening(arg0_71, arg1_71)
+function var0_0.playOpening(arg0_72, arg1_72)
 	pg.CpkPlayMgr.GetInstance():PlayCpkMovie(function()
-		if not arg0_71.cg then
-			arg0_71.cg = GetOrAddComponent(arg0_71._tf, "CanvasGroup")
+		if not arg0_72.cg then
+			arg0_72.cg = GetOrAddComponent(arg0_72._tf, "CanvasGroup")
 		end
 
-		arg0_71.cg.alpha = 0
+		arg0_72.cg.alpha = 0
 	end, function()
-		arg0_71.cg.alpha = 1
+		arg0_72.cg.alpha = 1
 
-		if arg1_71 then
-			arg1_71()
+		if arg1_72 then
+			arg1_72()
 		end
 	end, "ui", "opening", true, false)
 
-	arg0_71.onPlayingOP = true
+	arg0_72.onPlayingOP = true
 end
 
-function var0_0.closeYostarAlertView(arg0_74)
-	if arg0_74.yostarAlertView and arg0_74.yostarAlertView:CheckState(BaseSubView.STATES.INITED) then
-		arg0_74.yostarAlertView:Destroy()
+function var0_0.closeYostarAlertView(arg0_75)
+	if arg0_75.yostarAlertView and arg0_75.yostarAlertView:CheckState(BaseSubView.STATES.INITED) then
+		arg0_75.yostarAlertView:Destroy()
 	end
 end
 
-function var0_0.onLoadDataDone(arg0_75)
-	arg0_75:unloadExtraVoice()
+function var0_0.onLoadDataDone(arg0_76)
+	arg0_76:unloadExtraVoice()
 
 	if getProxy(PlayerProxy) then
 		getProxy(PlayerProxy):setFlag("login", true)

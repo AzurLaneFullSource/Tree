@@ -23,7 +23,7 @@ end
 
 function var0_0.OnUpdateItem(arg0_4, arg1_4, arg2_4)
 	local var0_4 = arg0_4.showDataList[arg1_4 + 1]
-	local var1_4 = arg0_4:findTF("icon_mask/icon", arg2_4)
+	local var1_4 = arg2_4:Find("icon_mask/icon")
 	local var2_4 = {
 		type = var0_4.config.type,
 		id = var0_4.config.drop_id
@@ -50,8 +50,8 @@ end
 
 function var0_0.UpdateView(arg0_6)
 	for iter0_6 = 1, #arg0_6.table_Top do
-		setText(arg0_6:findTF("Label", arg0_6.table_Top[iter0_6]), arg0_6:OnGetCount(iter0_6) .. "/" .. arg0_6:OnCount(iter0_6))
-		setText(arg0_6:findTF("type_image/name", arg0_6.table_Top[iter0_6]), i18n("danmachi_award_" .. iter0_6))
+		setText(arg0_6.table_Top[iter0_6]:Find("Label"), arg0_6:OnGetCount(iter0_6) .. "/" .. arg0_6:OnCount(iter0_6))
+		setText(arg0_6.table_Top[iter0_6]:Find("type_image/name"), i18n("danmachi_award_" .. iter0_6))
 	end
 
 	triggerToggle(arg0_6.table_Top[arg0_6.pageIndex or 1], true)
@@ -59,14 +59,14 @@ end
 
 function var0_0.selectBoxbg(arg0_7, arg1_7)
 	if table.getCount(arg1_7.skipable_list) > 1 then
-		setImageSprite(arg0_7:findTF("Panel/BG", arg0_7.boxTF), LoadSprite("ui/AEBCSAwardPage_atlas", "box_bg1"), true)
+		setImageSprite(arg0_7.boxTF:Find("Panel/BG"), LoadSprite("ui/AEBCSAwardPage_atlas", "box_bg1"), true)
 	elseif table.getCount(arg1_7.skipable_list) == 1 then
-		setImageSprite(arg0_7:findTF("Panel/BG", arg0_7.boxTF), LoadSprite("ui/AEBCSAwardPage_atlas", "box_bg2"), true)
+		setImageSprite(arg0_7.boxTF:Find("Panel/BG"), LoadSprite("ui/AEBCSAwardPage_atlas", "box_bg2"), true)
 	end
 end
 
 function var0_0.RefreshCountText(arg0_8, arg1_8, arg2_8)
-	setText(arg0_8:findTF("owner/number", arg2_8), arg1_8.count .. "/" .. arg1_8.config.count)
+	setText(arg2_8:Find("owner/number"), arg1_8.count .. "/" .. arg1_8.config.count)
 end
 
 function var0_0.showBoxPanel(arg0_9, arg1_9)

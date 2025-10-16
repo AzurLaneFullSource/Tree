@@ -23,20 +23,20 @@ function var0_0.getUIName(arg0_5)
 end
 
 function var0_0.init(arg0_6)
-	arg0_6.buttonsPanel = arg0_6:findTF("buttons_panel")
-	arg0_6.toggleGroup = arg0_6:findTF("buttons_panel"):GetComponent(typeof(ToggleGroup))
-	arg0_6.chatPanel = arg0_6:findTF("chat")
+	arg0_6.buttonsPanel = arg0_6._tf:Find("buttons_panel")
+	arg0_6.toggleGroup = arg0_6._tf:Find("buttons_panel"):GetComponent(typeof(ToggleGroup))
+	arg0_6.chatPanel = arg0_6._tf:Find("chat")
 
 	setActive(arg0_6.chatPanel, false)
 	setActive(arg0_6.buttonsPanel, false)
 
 	arg0_6.btns = {
-		arg0_6:findTF("buttons_panel/info_btn"),
-		arg0_6:findTF("buttons_panel/duty_btn"),
-		arg0_6:findTF("buttons_panel/fire_btn"),
-		arg0_6:findTF("buttons_panel/impeach_btn")
+		arg0_6._tf:Find("buttons_panel/info_btn"),
+		arg0_6._tf:Find("buttons_panel/duty_btn"),
+		arg0_6._tf:Find("buttons_panel/fire_btn"),
+		arg0_6._tf:Find("buttons_panel/impeach_btn")
 	}
-	arg0_6.helpBtn = arg0_6:findTF("help")
+	arg0_6.helpBtn = arg0_6._tf:Find("help")
 	arg0_6.pages = {
 		GuildMemberInfoPage.New(arg0_6._tf, arg0_6.event),
 		GuildAppiontPage.New(arg0_6._tf, arg0_6.event),
@@ -133,7 +133,7 @@ function var0_0.LoadPainting(arg0_15, arg1_15)
 		setActive(arg0_15.chatPanel, false)
 	else
 		setActive(arg0_15.chatPanel, true)
-		setText(arg0_15:findTF("Text", arg0_15.chatPanel), var2_15)
+		setText(arg0_15.chatPanel:Find("Text"), var2_15)
 	end
 
 	local var3_15

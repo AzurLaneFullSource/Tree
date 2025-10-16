@@ -50,10 +50,10 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.bgTF = arg0_2:findTF("background")
+	arg0_2.bgTF = arg0_2._tf:Find("background")
 	arg0_2.bgImg = arg0_2.bgTF:GetComponent(typeof(Image))
-	arg0_2.paintingTF = arg0_2:findTF("painting/frame")
-	arg0_2.blurPanel = arg0_2:findTF("blur_panel")
+	arg0_2.paintingTF = arg0_2._tf:Find("painting/frame")
+	arg0_2.blurPanel = arg0_2._tf:Find("blur_panel")
 	arg0_2.backBtn = findTF(arg0_2.blurPanel, "top/back_btn")
 	arg0_2.topPanel = findTF(arg0_2.blurPanel, "top")
 	arg0_2.pageContainer = findTF(arg0_2.blurPanel, "pages")

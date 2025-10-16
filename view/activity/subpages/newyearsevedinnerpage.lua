@@ -7,16 +7,16 @@ local var4_0 = Vector2(370, -144)
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.roleTF = arg0_1:findTF("mask/role_pos", arg0_1.bg)
-	arg0_1.effectNode = arg0_1:findTF("mofang_yanwu", arg0_1.bg)
-	arg0_1.foodTF = arg0_1:findTF("food", arg0_1.bg)
-	arg0_1.dialogTF = arg0_1:findTF("dialog", arg0_1.bg)
-	arg0_1.rightPanel = arg0_1:findTF("right_panel", arg0_1.bg)
-	arg0_1.helpBtn = arg0_1:findTF("help_btn", arg0_1.rightPanel)
-	arg0_1.titleFoodTF = arg0_1:findTF("menu_title/icon", arg0_1.rightPanel)
-	arg0_1.cookBtn = arg0_1:findTF("cook_btn", arg0_1.rightPanel)
-	arg0_1.cookProgress = arg0_1:findTF("progress", arg0_1.cookBtn)
-	arg0_1.cookAwardTF = arg0_1:findTF("award", arg0_1.cookBtn)
+	arg0_1.roleTF = arg0_1.bg:Find("mask/role_pos")
+	arg0_1.effectNode = arg0_1.bg:Find("mofang_yanwu")
+	arg0_1.foodTF = arg0_1.bg:Find("food")
+	arg0_1.dialogTF = arg0_1.bg:Find("dialog")
+	arg0_1.rightPanel = arg0_1.bg:Find("right_panel")
+	arg0_1.helpBtn = arg0_1.rightPanel:Find("help_btn")
+	arg0_1.titleFoodTF = arg0_1.rightPanel:Find("menu_title/icon")
+	arg0_1.cookBtn = arg0_1.rightPanel:Find("cook_btn")
+	arg0_1.cookProgress = arg0_1.cookBtn:Find("progress")
+	arg0_1.cookAwardTF = arg0_1.cookBtn:Find("award")
 end
 
 function var0_0.OnDataSetting(arg0_2)
@@ -83,7 +83,7 @@ function var0_0.OnFirstFlush(arg0_4)
 			end, var2_0, nil)
 		end
 	end, SFX_PANEL)
-	setActive(arg0_4:findTF("shine", arg0_4.cookBtn), false)
+	setActive(arg0_4.cookBtn:Find("shine"), false)
 end
 
 function var0_0.OnUpdateFlush(arg0_8)
@@ -172,9 +172,9 @@ function var0_0.UpdateCookUI(arg0_13)
 
 	local var4_13 = var1_13:getTaskStatus() == 2
 
-	setActive(arg0_13:findTF("got", arg0_13.cookAwardTF), var4_13)
-	setActive(arg0_13:findTF("icon_bg/count", arg0_13.cookAwardTF), var4_13)
-	setText(arg0_13:findTF("Text", arg0_13.dialogTF), i18n(arg0_13.cookCfg[arg0_13.curTaskId][3]))
+	setActive(arg0_13.cookAwardTF:Find("got"), var4_13)
+	setActive(arg0_13.cookAwardTF:Find("icon_bg/count"), var4_13)
+	setText(arg0_13.dialogTF:Find("Text"), i18n(arg0_13.cookCfg[arg0_13.curTaskId][3]))
 
 	local var5_13 = var4_13 and arg0_13.cookCfg[arg0_13.curTaskId][2] .. "_2" or "unknown"
 
@@ -213,14 +213,14 @@ function var0_0.PlayRoleAnim(arg0_16)
 
 	setActive(arg0_16.foodTF, false)
 	setActive(arg0_16.dialogTF, false)
-	setActive(arg0_16:findTF("shine", arg0_16.cookBtn), false)
+	setActive(arg0_16.cookBtn:Find("shine"), false)
 
 	if var0_16 then
 		setAnchoredPosition(arg0_16.roleTF, var4_0)
 		var1_16:SetAction("normal", 0)
 		setActive(arg0_16.foodTF, true)
 		setActive(arg0_16.dialogTF, true)
-		setActive(arg0_16:findTF("shine", arg0_16.cookBtn), not var0_16 and arg0_16.remainCnt > 0)
+		setActive(arg0_16.cookBtn:Find("shine"), not var0_16 and arg0_16.remainCnt > 0)
 	else
 		var1_16:SetAction("move", 0)
 
@@ -234,7 +234,7 @@ function var0_0.PlayRoleAnim(arg0_16)
 
 			setActive(arg0_16.foodTF, var0_16)
 			setActive(arg0_16.dialogTF, var0_16)
-			setActive(arg0_16:findTF("shine", arg0_16.cookBtn), not var0_16 and arg0_16.remainCnt > 0)
+			setActive(arg0_16.cookBtn:Find("shine"), not var0_16 and arg0_16.remainCnt > 0)
 		end, arg0_16.roleTF, var4_0.x, var1_0):setEase(LeanTweenType.linear)
 	end
 end

@@ -9,16 +9,16 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.frame = arg0_2:findTF("frame")
+	arg0_2.frame = arg0_2._tf:Find("frame")
 	arg0_2.parentTr = arg0_2._tf.parent
-	arg0_2.resourcesTF = arg0_2:findTF("resources", arg0_2.frame)
-	arg0_2.oilTF = arg0_2:findTF("canteen/bubble/Text", arg0_2.resourcesTF):GetComponent(typeof(Text))
-	arg0_2.goldTF = arg0_2:findTF("merchant/bubble/Text", arg0_2.resourcesTF):GetComponent(typeof(Text))
-	arg0_2.classTF = arg0_2:findTF("class/bubble/Text", arg0_2.resourcesTF):GetComponent(typeof(Text))
+	arg0_2.resourcesTF = arg0_2.frame:Find("resources")
+	arg0_2.oilTF = arg0_2.resourcesTF:Find("canteen/bubble/Text"):GetComponent(typeof(Text))
+	arg0_2.goldTF = arg0_2.resourcesTF:Find("merchant/bubble/Text"):GetComponent(typeof(Text))
+	arg0_2.classTF = arg0_2.resourcesTF:Find("class/bubble/Text"):GetComponent(typeof(Text))
 	arg0_2.classLockTF = arg0_2.resourcesTF:Find("class/lock")
-	arg0_2.oilbubbleTF = arg0_2:findTF("canteen/bubble", arg0_2.resourcesTF)
-	arg0_2.goldbubbleTF = arg0_2:findTF("merchant/bubble", arg0_2.resourcesTF)
-	arg0_2.classbubbleTF = arg0_2:findTF("class/bubble", arg0_2.resourcesTF)
+	arg0_2.oilbubbleTF = arg0_2.resourcesTF:Find("canteen/bubble")
+	arg0_2.goldbubbleTF = arg0_2.resourcesTF:Find("merchant/bubble")
+	arg0_2.classbubbleTF = arg0_2.resourcesTF:Find("class/bubble")
 	arg0_2.oilbubbleCG = GetOrAddComponent(arg0_2.oilbubbleTF, typeof(CanvasGroup))
 	arg0_2.goldbubbleCG = GetOrAddComponent(arg0_2.goldbubbleTF, typeof(CanvasGroup))
 	arg0_2.classbubbleCG = GetOrAddComponent(arg0_2.classbubbleTF, typeof(CanvasGroup))
@@ -27,23 +27,23 @@ function var0_0.init(arg0_2)
 	local var1_2 = Item.getConfigData(var0_2).icon
 
 	arg0_2.classbubbleTF:Find("icon"):GetComponent(typeof(Image)).sprite = LoadSprite(var1_2)
-	arg0_2.projectContainer = arg0_2:findTF("main/content", arg0_2.frame)
+	arg0_2.projectContainer = arg0_2.frame:Find("main/content")
 	arg0_2.items = {
-		CommissionInfoEventItem.New(arg0_2:findTF("frame/main/content/event"), arg0_2),
-		CommissionInfoClassItem.New(arg0_2:findTF("frame/main/content/class"), arg0_2),
-		CommissionInfoTechnologyItem.New(arg0_2:findTF("frame/main/content/technology"), arg0_2)
+		CommissionInfoEventItem.New(arg0_2._tf:Find("frame/main/content/event"), arg0_2),
+		CommissionInfoClassItem.New(arg0_2._tf:Find("frame/main/content/class"), arg0_2),
+		CommissionInfoTechnologyItem.New(arg0_2._tf:Find("frame/main/content/technology"), arg0_2)
 	}
 
 	arg0_2:BlurPanel()
 
-	arg0_2.linkBtnPanel = arg0_2:findTF("frame/link_btns/btns")
-	arg0_2.activityInsBtn = arg0_2:findTF("frame/link_btns/btns/ins")
-	arg0_2.activtyUrExchangeBtn = arg0_2:findTF("frame/link_btns/btns/urEx")
-	arg0_2.activtyUrExchangeTxt = arg0_2:findTF("frame/link_btns/btns/urEx/Text"):GetComponent(typeof(Text))
+	arg0_2.linkBtnPanel = arg0_2._tf:Find("frame/link_btns/btns")
+	arg0_2.activityInsBtn = arg0_2._tf:Find("frame/link_btns/btns/ins")
+	arg0_2.activtyUrExchangeBtn = arg0_2._tf:Find("frame/link_btns/btns/urEx")
+	arg0_2.activtyUrExchangeTxt = arg0_2._tf:Find("frame/link_btns/btns/urEx/Text"):GetComponent(typeof(Text))
 	arg0_2.activtyUrExchangeCG = arg0_2.activtyUrExchangeBtn:GetComponent(typeof(CanvasGroup))
-	arg0_2.activtyUrExchangeTip = arg0_2:findTF("frame/link_btns/btns/urEx/tip")
-	arg0_2.activityCrusingBtn = arg0_2:findTF("frame/link_btns/btns/crusing")
-	arg0_2.metaBossBtn = CommissionMetaBossBtn.New(arg0_2:findTF("frame/link_btns/btns/meta_boss"), arg0_2.event)
+	arg0_2.activtyUrExchangeTip = arg0_2._tf:Find("frame/link_btns/btns/urEx/tip")
+	arg0_2.activityCrusingBtn = arg0_2._tf:Find("frame/link_btns/btns/crusing")
+	arg0_2.metaBossBtn = CommissionMetaBossBtn.New(arg0_2._tf:Find("frame/link_btns/btns/meta_boss"), arg0_2.event)
 end
 
 function var0_0.BlurPanel(arg0_3)

@@ -31,8 +31,8 @@ function var0_0.preload(arg0_2, arg1_2)
 end
 
 function var0_0.init(arg0_3)
-	arg0_3._shake = arg0_3:findTF("shake_panel")
-	arg0_3._shade = arg0_3:findTF("shade")
+	arg0_3._shake = arg0_3._tf:Find("shake_panel")
+	arg0_3._shade = arg0_3._tf:Find("shade")
 	arg0_3._bg = arg0_3._shake:Find("bg")
 	arg0_3._staticBg = arg0_3._bg:Find("static_bg")
 	arg0_3._paintingTF = arg0_3._shake:Find("paint")
@@ -47,8 +47,8 @@ function var0_0.init(arg0_3)
 
 	setActive(arg0_3.newTF, false)
 
-	arg0_3.changeSkinBtn = arg0_3:findTF("set_skin_btn", arg0_3._shake)
-	arg0_3.selectPanel = arg0_3:findTF("select_ship_panel")
+	arg0_3.changeSkinBtn = arg0_3._shake:Find("set_skin_btn")
+	arg0_3.selectPanel = arg0_3._tf:Find("select_ship_panel")
 	arg0_3.isTimeLimit = arg0_3.contextData.timeLimit
 
 	setActive(arg0_3.timelimit, arg0_3.isTimeLimit)

@@ -5,18 +5,18 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.frame = arg0_2:findTF("frame")
-	arg0_2.attrPanel = arg0_2:findTF("right_panel/top/attrs")
-	arg0_2.rarePanel = arg0_2:findTF("right_panel/top/rare")
-	arg0_2.paintContain = arg0_2:findTF("paint")
-	arg0_2.qCharaContain = arg0_2:findTF("right_panel/top/q_chara")
-	arg0_2._chat = arg0_2:findTF("chat", arg0_2.paintContain)
+	arg0_2.frame = arg0_2._tf:Find("frame")
+	arg0_2.attrPanel = arg0_2._tf:Find("right_panel/top/attrs")
+	arg0_2.rarePanel = arg0_2._tf:Find("right_panel/top/rare")
+	arg0_2.paintContain = arg0_2._tf:Find("paint")
+	arg0_2.qCharaContain = arg0_2._tf:Find("right_panel/top/q_chara")
+	arg0_2._chat = arg0_2.paintContain:Find("chat")
 
 	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
 
-	arg0_2._shake = arg0_2:findTF("shake_panel")
-	arg0_2._bg = arg0_2:findTF("bg", arg0_2._shake)
-	arg0_2._paintingShadowTF = arg0_2:findTF("shadow")
+	arg0_2._shake = arg0_2._tf:Find("shake_panel")
+	arg0_2._bg = arg0_2._shake:Find("bg")
+	arg0_2._paintingShadowTF = arg0_2._tf:Find("shadow")
 end
 
 function var0_0.didEnter(arg0_3)
@@ -132,7 +132,7 @@ function var0_0.updateStatistics(arg0_5)
 
 	setWidgetText(arg0_5._chat, var21_5)
 
-	local var22_5 = arg0_5:findTF("Text", arg0_5._chat):GetComponent(typeof(Text))
+	local var22_5 = arg0_5._chat:Find("Text"):GetComponent(typeof(Text))
 
 	var22_5.alignment = #var22_5.text > CHAT_POP_STR_LEN and TextAnchor.MiddleLeft or TextAnchor.MiddleCenter
 	arg0_5._chat.transform.localScale = Vector3(0, 0, 1)

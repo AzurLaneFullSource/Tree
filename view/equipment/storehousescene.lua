@@ -34,22 +34,22 @@ function var0_0.init(arg0_4)
 
 	local var0_4 = arg0_4.contextData
 
-	arg0_4.topItems = arg0_4:findTF("topItems")
-	arg0_4.equipmentView = arg0_4:findTF("adapt/equipment_scrollview")
-	arg0_4.blurPanel = arg0_4:findTF("blur_panel")
-	arg0_4.topPanel = arg0_4:findTF("adapt/top", arg0_4.blurPanel)
-	arg0_4.indexBtn = arg0_4:findTF("buttons/index_button", arg0_4.topPanel)
-	arg0_4.sortBtn = arg0_4:findTF("buttons/sort_button", arg0_4.topPanel)
-	arg0_4.sortPanel = arg0_4:findTF("sort", arg0_4.topItems)
+	arg0_4.topItems = arg0_4._tf:Find("topItems")
+	arg0_4.equipmentView = arg0_4._tf:Find("adapt/equipment_scrollview")
+	arg0_4.blurPanel = arg0_4._tf:Find("blur_panel")
+	arg0_4.topPanel = arg0_4.blurPanel:Find("adapt/top")
+	arg0_4.indexBtn = arg0_4.topPanel:Find("buttons/index_button")
+	arg0_4.sortBtn = arg0_4.topPanel:Find("buttons/sort_button")
+	arg0_4.sortPanel = arg0_4.topItems:Find("sort")
 	arg0_4.sortPanelTG = arg0_4.sortPanel:GetComponent("ToggleGroup")
 	arg0_4.sortPanelTG.allowSwitchOff = true
-	arg0_4.sortContain = arg0_4:findTF("adapt/mask/panel", arg0_4.sortPanel)
-	arg0_4.sortTpl = arg0_4:findTF("tpl", arg0_4.sortContain)
+	arg0_4.sortContain = arg0_4.sortPanel:Find("adapt/mask/panel")
+	arg0_4.sortTpl = arg0_4.sortContain:Find("tpl")
 
 	setActive(arg0_4.sortTpl, false)
 
-	arg0_4.equipSkinFilteBtn = arg0_4:findTF("buttons/EquipSkinFilteBtn", arg0_4.topPanel)
-	arg0_4.itemView = arg0_4:findTF("adapt/item_scrollview")
+	arg0_4.equipSkinFilteBtn = arg0_4.topPanel:Find("buttons/EquipSkinFilteBtn")
+	arg0_4.itemView = arg0_4._tf:Find("adapt/item_scrollview")
 
 	local var1_4
 	local var2_4 = getProxy(SettingsProxy)
@@ -78,19 +78,19 @@ function var0_0.init(arg0_4)
 	setActive(arg0_4.designTabRoot, false)
 
 	arg0_4.designTabs = CustomIndexLayer.Clone2Full(arg0_4.designTabRoot, 2)
-	arg0_4.bottomBack = arg0_4:findTF("adapt/bottom_back", arg0_4.topItems)
-	arg0_4.bottomPanel = arg0_4:findTF("types", arg0_4.bottomBack)
+	arg0_4.bottomBack = arg0_4.topItems:Find("adapt/bottom_back")
+	arg0_4.bottomPanel = arg0_4.bottomBack:Find("types")
 	arg0_4.materialToggle = arg0_4.bottomPanel:Find("material")
 	arg0_4.weaponToggle = arg0_4.bottomPanel:Find("weapon")
 	arg0_4.designToggle = arg0_4.bottomPanel:Find("design")
-	arg0_4.capacityTF = arg0_4:findTF("bottom_left/tip/capcity/Text", arg0_4.bottomBack)
-	arg0_4.tipTF = arg0_4:findTF("bottom_left/tip", arg0_4.bottomBack)
+	arg0_4.capacityTF = arg0_4.bottomBack:Find("bottom_left/tip/capcity/Text")
+	arg0_4.tipTF = arg0_4.bottomBack:Find("bottom_left/tip")
 	arg0_4.tip = arg0_4.tipTF:Find("label")
-	arg0_4.helpBtn = arg0_4:findTF("adapt/help_btn", arg0_4.topItems)
+	arg0_4.helpBtn = arg0_4.topItems:Find("adapt/help_btn")
 
 	setActive(arg0_4.helpBtn, true)
 
-	arg0_4.backBtn = arg0_4:findTF("blur_panel/adapt/top/back_btn")
+	arg0_4.backBtn = arg0_4._tf:Find("blur_panel/adapt/top/back_btn")
 	arg0_4.selectedMin = defaultValue(var0_4.selectedMin, 1)
 	arg0_4.selectedMax = defaultValue(var0_4.selectedMax, pg.gameset.equip_select_limit.key_value or 0)
 	arg0_4.selectedIds = Clone(var0_4.selectedIds or {})
@@ -100,28 +100,28 @@ function var0_0.init(arg0_4)
 	arg0_4.onSelected = var0_4.onSelected or function()
 		warning("not implemented.")
 	end
-	arg0_4.BatchDisposeBtn = arg0_4:findTF("dispos", arg0_4.bottomPanel)
+	arg0_4.BatchDisposeBtn = arg0_4.bottomPanel:Find("dispos")
 
 	if not arg0_4.BatchDisposeBtn then
-		arg0_4.BatchDisposeBtn = arg0_4:findTF("dispos", arg0_4.bottomBack)
+		arg0_4.BatchDisposeBtn = arg0_4.bottomBack:Find("dispos")
 	end
 
-	arg0_4.selectPanel = arg0_4:findTF("adapt/select_panel", arg0_4.topItems)
+	arg0_4.selectPanel = arg0_4.topItems:Find("adapt/select_panel")
 
 	setActive(arg0_4.selectPanel, true)
 	setAnchoredPosition(arg0_4.selectPanel, {
 		y = -124
 	})
 
-	arg0_4.selectTransformPanel = arg0_4:findTF("adapt/select_transform_panel", arg0_4.topItems)
+	arg0_4.selectTransformPanel = arg0_4.topItems:Find("adapt/select_transform_panel")
 
 	setActive(arg0_4.selectTransformPanel, false)
 
-	arg0_4.listEmptyTF = arg0_4:findTF("adapt/empty")
+	arg0_4.listEmptyTF = arg0_4._tf:Find("adapt/empty")
 
 	setActive(arg0_4.listEmptyTF, false)
 
-	arg0_4.listEmptyTxt = arg0_4:findTF("Text", arg0_4.listEmptyTF)
+	arg0_4.listEmptyTxt = arg0_4.listEmptyTF:Find("Text")
 	arg0_4.destroyConfirmView = DestroyConfirmView.New(arg0_4.topItems, arg0_4.event)
 	arg0_4.assignedItemView = AssignedItemView.New(arg0_4.topItems, arg0_4.event)
 	arg0_4.blueprintAssignedItemView = BlueprintAssignedItemView.New(arg0_4.topItems, arg0_4.event)
@@ -224,9 +224,9 @@ function var0_0.SetSpWeaponUpdate(arg0_14)
 end
 
 function var0_0.didEnter(arg0_15)
-	setText(arg0_15:findTF("tip", arg0_15.selectPanel), i18n("equipment_select_device_destroy_tip"))
-	setActive(arg0_15:findTF("adapt/stamp", arg0_15.topItems), getProxy(TaskProxy):mingshiTouchFlagEnabled())
-	onButton(arg0_15, arg0_15:findTF("adapt/stamp", arg0_15.topItems), function()
+	setText(arg0_15.selectPanel:Find("tip"), i18n("equipment_select_device_destroy_tip"))
+	setActive(arg0_15.topItems:Find("adapt/stamp"), getProxy(TaskProxy):mingshiTouchFlagEnabled())
+	onButton(arg0_15, arg0_15.topItems:Find("adapt/stamp"), function()
 		getProxy(TaskProxy):dealMingshiTouchFlag(2)
 	end, SFX_CONFIRM)
 	onButton(arg0_15, arg0_15.helpBtn, function()
@@ -915,7 +915,7 @@ function var0_0.filterEquipment(arg0_78)
 
 	arg0_78:updateSelected()
 	arg0_78:updateEquipmentCount()
-	setImageSprite(arg0_78:findTF("Image", arg0_78.sortBtn), GetSpriteFromAtlas("ui/equipmentui_atlas", var4_78.spr), true)
+	setImageSprite(arg0_78.sortBtn:Find("Image"), GetSpriteFromAtlas("ui/equipmentui_atlas", var4_78.spr), true)
 	setActive(arg0_78.sortImgAsc, arg0_78.asc)
 	setActive(arg0_78.sortImgDec, not arg0_78.asc)
 	arg0_78:updateCapacity()
@@ -1009,7 +1009,7 @@ function var0_0.filterSpWeapon(arg0_81)
 
 	arg0_81:updateSelected()
 	arg0_81:updateEquipmentCount()
-	setImageSprite(arg0_81:findTF("Image", arg0_81.sortBtn), GetSpriteFromAtlas("ui/equipmentui_atlas", var3_81.spr), true)
+	setImageSprite(arg0_81.sortBtn:Find("Image"), GetSpriteFromAtlas("ui/equipmentui_atlas", var3_81.spr), true)
 	setActive(arg0_81.sortImgAsc, arg0_81.asc)
 	setActive(arg0_81.sortImgDec, not arg0_81.asc)
 	arg0_81:UpdateSpweaponCapacity()

@@ -22,32 +22,14 @@ end
 
 function var0_0.CommonInit(arg0_4)
 	arg0_4.eventTriggers = {}
-	arg0_4._startBtn = arg0_4:findTF("right/start")
-	arg0_4._costContainer = arg0_4:findTF("right/start/cost_container")
-	arg0_4._popup = arg0_4._costContainer:Find("popup")
-	arg0_4._costText = arg0_4._popup:Find("Text")
-	arg0_4._moveLayer = arg0_4:findTF("moveLayer")
-	arg0_4._autoToggle = arg0_4:findTF("auto_toggle")
-	arg0_4._autoSubToggle = arg0_4:findTF("sub_toggle_container/sub_toggle")
-	arg0_4._fleetInfo = arg0_4._tf:Find("right/fleet_info")
-	arg0_4._fleetNameText = arg0_4._fleetInfo:Find("fleet_name/Text")
-	arg0_4._fleetNumText = arg0_4._fleetInfo:Find("fleet_number")
 
 	setActive(arg0_4._fleetInfo, true)
 
-	local var0_4 = arg0_4:findTF("middle")
-
-	arg0_4._mainGS = var0_4:Find("gear_score/main/Text")
-	arg0_4._vanguardGS = var0_4:Find("gear_score/vanguard/Text")
-	arg0_4._subGS = var0_4:Find("gear_score/submarine/Text")
-	arg0_4._bgFleet = var0_4:Find("mask/grid_bg")
-	arg0_4._bgSub = var0_4:Find("mask/bg_sub")
 	arg0_4._gridTFs = {
 		[TeamType.Vanguard] = {},
 		[TeamType.Main] = {},
 		[TeamType.Submarine] = {}
 	}
-	arg0_4._gridFrame = var0_4:Find("mask/GridFrame")
 
 	for iter0_4 = 1, 3 do
 		arg0_4._gridTFs[TeamType.Main][iter0_4] = arg0_4._gridFrame:Find("main_" .. iter0_4)
@@ -55,37 +37,17 @@ function var0_0.CommonInit(arg0_4)
 		arg0_4._gridTFs[TeamType.Submarine][iter0_4] = arg0_4._gridFrame:Find("submarine_" .. iter0_4)
 	end
 
-	arg0_4._nextPage = arg0_4:findTF("middle/nextPage")
-	arg0_4._prevPage = arg0_4:findTF("middle/prevPage")
-	arg0_4._heroContainer = var0_4:Find("HeroContainer")
-	arg0_4._blurPanel = arg0_4:findTF("blur_panel")
-	arg0_4.topPanel = arg0_4:findTF("top", arg0_4._blurPanel)
-	arg0_4.topPanelBg = arg0_4:findTF("top_bg", arg0_4._blurPanel)
-	arg0_4._backBtn = arg0_4:findTF("back_btn", arg0_4.topPanel)
-	arg0_4._spoilsContainer = arg0_4:findTF("right/infomation/atlasloot/spoils/items/items_container")
-	arg0_4._item = arg0_4:findTF("right/infomation/atlasloot/spoils/items/item_tpl")
-
 	SetActive(arg0_4._item, false)
-
-	arg0_4._goals = arg0_4:findTF("right/infomation/target/goal")
-	arg0_4._heroInfo = arg0_4:getTpl("heroInfo")
-	arg0_4._starTpl = arg0_4:getTpl("star_tpl")
-
-	setText(findTF(arg0_4._tf, "middle/gear_score/vanguard/line/Image/Text1"), i18n("pre_combat_vanguard"))
-	setText(findTF(arg0_4._tf, "middle/gear_score/main/line/Image/Text1"), i18n("pre_combat_main"))
-	setText(findTF(arg0_4._tf, "middle/gear_score/submarine/line/Image/text1"), i18n("pre_combat_submarine"))
+	SetActive(arg0_4._heroInfo, false)
+	SetActive(arg0_4._starTplsa, false)
+	setText(arg0_4._gearScore:Find("vanguard/line/Image/Text1"), i18n("pre_combat_vanguard"))
+	setText(arg0_4._gearScore:Find("main/line/Image/Text1"), i18n("pre_combat_main"))
+	setText(arg0_4._gearScore:Find("submarine/line/Image/text1"), i18n("pre_combat_submarine"))
 	setText(arg0_4._costContainer:Find("title"), i18n("pre_combat_consume"))
-	setText(findTF(arg0_4._tf, "right/infomation/target/title/GameObject"), i18n("pre_combat_targets"))
-	setText(findTF(arg0_4._tf, "right/infomation/atlasloot/atlasloot/title/GameObject"), i18n("pre_combat_atlasloot"))
+	setText(arg0_4._infomation:Find("target/title/GameObject"), i18n("pre_combat_targets"))
+	setText(arg0_4._infomation:Find("atlasloot/atlasloot/title/GameObject"), i18n("pre_combat_atlasloot"))
 	setText(arg0_4._startBtn:Find("text"), i18n("pre_combat_start"))
 	setText(arg0_4._startBtn:Find("text_en"), i18n("pre_combat_start_en"))
-
-	arg0_4._middle = arg0_4:findTF("middle")
-	arg0_4._right = arg0_4:findTF("right")
-	arg0_4._bottom = arg0_4:findTF("bottom")
-	arg0_4.btnRegular = arg0_4:findTF("fleet_select/regular", arg0_4._bottom)
-	arg0_4.btnSub = arg0_4:findTF("fleet_select/sub", arg0_4._bottom)
-
 	setText(arg0_4.btnRegular:Find("fleet/CnFleet"), Fleet.DEFAULT_NAME[1])
 	setText(arg0_4.btnSub:Find("fleet/CnFleet"), Fleet.DEFAULT_NAME[1])
 	setAnchoredPosition(arg0_4._middle, {
@@ -135,7 +97,7 @@ function var0_0.Register(arg0_5)
 		local var7_7 = arg1_7:getStar()
 
 		for iter0_7 = 1, var7_7 do
-			cloneTplTo(arg0_5._starTpl, var1_7)
+			cloneTplTo(arg0_5._starTplsa, var1_7)
 		end
 
 		local var8_7 = GetSpriteFromAtlas("shiptype", shipType2print(arg1_7:getShipType()))
@@ -416,7 +378,7 @@ function var0_0.didEnter(arg0_35)
 			arg0_35:closeView()
 		end))
 	end, SFX_CANCEL)
-	onButton(arg0_35, arg0_35._tf:Find("blur_panel/top/option"), function()
+	onButton(arg0_35, arg0_35._option, function()
 		arg0_35:emit(LimitChallengePreCombatMediator.ON_UPDATE_CUSTOM_FLEET)
 		arg0_35:quickExitFunc()
 	end, SFX_PANEL)
@@ -447,10 +409,10 @@ function var0_0.didEnter(arg0_35)
 			toggle = arg0_35._autoSubToggle
 		})
 	end, SFX_PANEL, SFX_PANEL)
-	onButton(arg0_35, arg0_35._tf:Find("bottom/fleet_select/regular"), function()
+	onButton(arg0_35, arg0_35.btnRegular, function()
 		arg0_35:emit(LimitChallengePreCombatMediator.ON_CHANGE_FLEET, FleetProxy.CHALLENGE_FLEET_ID)
 	end, SFX_PANEL)
-	onButton(arg0_35, arg0_35._tf:Find("bottom/fleet_select/sub"), function()
+	onButton(arg0_35, arg0_35.btnSub, function()
 		arg0_35:emit(LimitChallengePreCombatMediator.ON_CHANGE_FLEET, FleetProxy.CHALLENGE_SUB_FLEET_ID)
 	end, SFX_PANEL)
 

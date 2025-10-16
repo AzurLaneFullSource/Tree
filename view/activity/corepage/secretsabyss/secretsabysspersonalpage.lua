@@ -36,52 +36,52 @@ function var0_0.getUIName(arg0_2)
 end
 
 function var0_0.OnLoaded(arg0_3)
-	arg0_3.infoTF = arg0_3:findTF("frame/info")
-	arg0_3.nameTitle = arg0_3:findTF("infos/name/title", arg0_3.infoTF)
-	arg0_3.nameInput = arg0_3:findTF("infos/name/box/InputField", arg0_3.infoTF)
-	arg0_3.jobTitle = arg0_3:findTF("infos/job/title", arg0_3.infoTF)
-	arg0_3.jobValue = arg0_3:findTF("infos/job/value", arg0_3.infoTF)
-	arg0_3.guardianTitle = arg0_3:findTF("infos/guardian/title", arg0_3.infoTF)
-	arg0_3.guardianValue = arg0_3:findTF("infos/guardian/value", arg0_3.infoTF)
-	arg0_3.lvTitle = arg0_3:findTF("level/lv/title", arg0_3.infoTF)
-	arg0_3.lvValue = arg0_3:findTF("level/lv/value", arg0_3.infoTF)
-	arg0_3.lvSlider = arg0_3:findTF("level/slider/slider", arg0_3.infoTF)
+	arg0_3.infoTF = arg0_3._tf:Find("frame/info")
+	arg0_3.nameTitle = arg0_3.infoTF:Find("infos/name/title")
+	arg0_3.nameInput = arg0_3.infoTF:Find("infos/name/box/InputField")
+	arg0_3.jobTitle = arg0_3.infoTF:Find("infos/job/title")
+	arg0_3.jobValue = arg0_3.infoTF:Find("infos/job/value")
+	arg0_3.guardianTitle = arg0_3.infoTF:Find("infos/guardian/title")
+	arg0_3.guardianValue = arg0_3.infoTF:Find("infos/guardian/value")
+	arg0_3.lvTitle = arg0_3.infoTF:Find("level/lv/title")
+	arg0_3.lvValue = arg0_3.infoTF:Find("level/lv/value")
+	arg0_3.lvSlider = arg0_3.infoTF:Find("level/slider/slider")
 	arg0_3.lvSliderImage = arg0_3.lvSlider:GetComponent(typeof(Image))
-	arg0_3.lvUpgradeTF = arg0_3:findTF("level/slider/upgrade", arg0_3.infoTF)
+	arg0_3.lvUpgradeTF = arg0_3.infoTF:Find("level/slider/upgrade")
 
 	setActive(arg0_3.lvUpgradeTF, false)
 
-	arg0_3.propertyTF = arg0_3:findTF("frame/property")
-	arg0_3.propertyContent = arg0_3:findTF("content", arg0_3.propertyTF)
-	arg0_3.propertyTpl = arg0_3:findTF("tpl", arg0_3.propertyTF)
+	arg0_3.propertyTF = arg0_3._tf:Find("frame/property")
+	arg0_3.propertyContent = arg0_3.propertyTF:Find("content")
+	arg0_3.propertyTpl = arg0_3.propertyTF:Find("tpl")
 
 	setActive(arg0_3.propertyTpl, false)
-	setActive(arg0_3:findTF("upgrade", arg0_3.propertyTpl), false)
+	setActive(arg0_3.propertyTpl:Find("upgrade"), false)
 
 	if PLATFORM_CODE == PLATFORM_CH or PLATFORM_CODE == PLATFORM_CHT then
-		arg0_3.abilityTF = arg0_3:findTF("frame/ability")
+		arg0_3.abilityTF = arg0_3._tf:Find("frame/ability")
 
-		setActive(arg0_3:findTF("frame/ability_2"), false)
+		setActive(arg0_3._tf:Find("frame/ability_2"), false)
 	else
-		arg0_3.abilityTF = arg0_3:findTF("frame/ability_2")
+		arg0_3.abilityTF = arg0_3._tf:Find("frame/ability_2")
 
-		setActive(arg0_3:findTF("frame/ability"), false)
+		setActive(arg0_3._tf:Find("frame/ability"), false)
 	end
 
 	setActive(arg0_3.abilityTF, true)
 
-	arg0_3.abilityContent = arg0_3:findTF("content", arg0_3.abilityTF)
-	arg0_3.abilityTpl = arg0_3:findTF("tpl", arg0_3.abilityTF)
+	arg0_3.abilityContent = arg0_3.abilityTF:Find("content")
+	arg0_3.abilityTpl = arg0_3.abilityTF:Find("tpl")
 
 	setActive(arg0_3.abilityTpl, false)
 
-	arg0_3.randomBtn = arg0_3:findTF("frame/random_btn")
-	arg0_3.helpBtn = arg0_3:findTF("frame/help_tips")
-	arg0_3.effectTF = arg0_3:findTF("effect")
+	arg0_3.randomBtn = arg0_3._tf:Find("frame/random_btn")
+	arg0_3.helpBtn = arg0_3._tf:Find("frame/help_tips")
+	arg0_3.effectTF = arg0_3._tf:Find("effect")
 
 	setActive(arg0_3.effectTF, false)
 
-	arg0_3.quitBtn = arg0_3:findTF("frame/close_btn")
+	arg0_3.quitBtn = arg0_3._tf:Find("frame/close_btn")
 	arg0_3.playerId = getProxy(PlayerProxy):getRawData().id
 	arg0_3.showName = getProxy(PlayerProxy):getRawData().name
 end
@@ -126,7 +126,7 @@ function var0_0.OnInit(arg0_4)
 	end, SFX_PANEL)
 	setActive(arg0_4.randomBtn, arg0_4.unlockRandom)
 	setActive(arg0_4.helpBtn, not arg0_4.unlockRandom)
-	setActive(arg0_4:findTF("infos/name/box/edit", arg0_4.infoTF), arg0_4.unlockRandom)
+	setActive(arg0_4.infoTF:Find("infos/name/box/edit"), arg0_4.unlockRandom)
 
 	if arg0_4.unlockRandom and arg0_4:GetLocalName() ~= "" then
 		arg0_4.showName = arg0_4:GetLocalName()
@@ -137,7 +137,7 @@ function var0_0.OnInit(arg0_4)
 	onButton(arg0_4, arg0_4.quitBtn, function()
 		arg0_4:Hide()
 	end)
-	onButton(arg0_4, arg0_4:findTF("mask"), function()
+	onButton(arg0_4, arg0_4._tf:Find("mask"), function()
 		arg0_4:Hide()
 	end)
 	arg0_4:UpdateView()
@@ -245,8 +245,8 @@ function var0_0.UpdateProperty(arg0_19, arg1_19)
 
 		local var2_19, var3_19 = arg0_19:GetRollAttrInfoById(iter1_19, arg1_19)
 
-		setText(arg0_19:findTF("name", var1_19), var2_19)
-		setText(arg0_19:findTF("value/Text", var1_19), var3_19)
+		setText(var1_19:Find("name"), var2_19)
+		setText(var1_19:Find("value/Text"), var3_19)
 
 		if arg1_19 then
 			var0_0.personalRandomData[iter1_19] = var3_19
@@ -288,8 +288,8 @@ function var0_0.UpdateAbility(arg0_20, arg1_20)
 
 		local var2_20, var3_20 = arg0_20:GetRollAttrInfoById(iter5_20, arg1_20)
 
-		setScrollText(arg0_20:findTF("name_mask/name", var1_20), var2_20)
-		setText(arg0_20:findTF("value/Text", var1_20), var3_20)
+		setScrollText(var1_20:Find("name_mask/name"), var2_20)
+		setText(var1_20:Find("value/Text"), var3_20)
 
 		if arg1_20 then
 			var0_0.personalRandomData[iter5_20] = var3_20
@@ -409,8 +409,8 @@ function var0_0.PlayAbilityAnim(arg0_33, arg1_33)
 						arg0_33:managedTween(LeanTween.value, nil, go(var6_33), 1, 0, var0_0.ABILITY_TPL_ANIM_TIME):setEase(LeanTweenType.easeInBack):setOnUpdate(System.Action_float(function(arg0_35)
 							GetOrAddComponent(var6_33, typeof(CanvasGroup)).alpha = arg0_35
 						end)):setOnComplete(System.Action(function()
-							setText(arg0_33:findTF("name", var6_33), var0_0.config[var5_33].name)
-							setText(arg0_33:findTF("value/Text", var6_33), arg0_33.upgradeCfg[var5_33])
+							setText(var6_33:Find("name"), var0_0.config[var5_33].name)
+							setText(var6_33:Find("value/Text"), arg0_33.upgradeCfg[var5_33])
 							arg0_34()
 						end))
 					end)
@@ -418,8 +418,8 @@ function var0_0.PlayAbilityAnim(arg0_33, arg1_33)
 
 				table.insert(var3_33, function(arg0_37)
 					if var4_33 then
-						setText(arg0_33:findTF("name", var6_33), var0_0.config[var5_33].name)
-						setText(arg0_33:findTF("value/Text", var6_33), arg0_33.upgradeCfg[var5_33])
+						setText(var6_33:Find("name"), var0_0.config[var5_33].name)
+						setText(var6_33:Find("value/Text"), arg0_33.upgradeCfg[var5_33])
 					end
 
 					arg0_33:managedTween(LeanTween.value, nil, go(var6_33), 0, 1, var0_0.ABILITY_TPL_ANIM_TIME):setEase(LeanTweenType.easeOutBack):setOnUpdate(System.Action_float(function(arg0_38)

@@ -21,20 +21,20 @@ function var0_0.SetBossProxy(arg0_3, arg1_3, arg2_3)
 end
 
 function var0_0.init(arg0_4)
-	arg0_4._startBtn = arg0_4:findTF("right/start")
-	arg0_4._popup = arg0_4:findTF("right/start/cost_container/popup")
-	arg0_4._costText = arg0_4:findTF("right/start/cost_container/popup/Text")
-	arg0_4._backBtn = arg0_4:findTF("blur_panel/top/back_btn")
-	arg0_4._moveLayer = arg0_4:findTF("moveLayer")
+	arg0_4._startBtn = arg0_4.rtAdapt:Find("right/start")
+	arg0_4._popup = arg0_4.rtAdapt:Find("right/start/cost_container/popup")
+	arg0_4._costText = arg0_4.rtAdapt:Find("right/start/cost_container/popup/Text")
+	arg0_4._backBtn = arg0_4._tf:Find("blur_panel/top/back_btn")
+	arg0_4._moveLayer = arg0_4._tf:Find("moveLayer")
 
-	local var0_4 = arg0_4:findTF("middle")
+	local var0_4 = arg0_4.rtAdapt:Find("middle")
 
-	arg0_4._autoToggle = arg0_4:findTF("auto_toggle")
-	arg0_4.subToggle = arg0_4:findTF("sub_toggle_container")
+	arg0_4._autoToggle = arg0_4.rtAdapt:Find("auto_toggle")
+	arg0_4.subToggle = arg0_4.rtAdapt:Find("sub_toggle_container")
 
 	setActive(arg0_4.subToggle, false)
 
-	arg0_4._buffContainer = arg0_4._tf:Find("BuffContainer")
+	arg0_4._buffContainer = arg0_4.rtAdapt:Find("BuffContainer")
 
 	setActive(arg0_4._buffContainer, false)
 
@@ -57,21 +57,21 @@ function var0_0.init(arg0_4)
 		arg0_4._gridTFs[TeamType.Main][iter0_4] = arg0_4._gridFrame:Find("main_" .. iter0_4)
 	end
 
-	arg0_4._nextPage = arg0_4:findTF("middle/nextPage")
-	arg0_4._prevPage = arg0_4:findTF("middle/prevPage")
+	arg0_4._nextPage = arg0_4.rtAdapt:Find("middle/nextPage")
+	arg0_4._prevPage = arg0_4.rtAdapt:Find("middle/prevPage")
 
 	arg0_4:disableAllStepper()
 
 	arg0_4._heroContainer = var0_4:Find("HeroContainer")
 	arg0_4._checkBtn = var0_4:Find("checkBtn")
-	arg0_4._spoilsContainer = arg0_4:findTF("right/infomation/atlasloot/spoils/items/items_container")
-	arg0_4._item = arg0_4:getTpl("right/infomation/atlasloot/spoils/items/item_tpl")
-	arg0_4._goals = arg0_4:findTF("right/infomation/target/goal")
+	arg0_4._spoilsContainer = arg0_4.rtAdapt:Find("right/infomation/atlasloot/spoils/items/items_container")
+	arg0_4._item = arg0_4:getTpl("right/infomation/atlasloot/spoils/items/item_tpl", arg0_4.rtAdapt)
+	arg0_4._goals = arg0_4.rtAdapt:Find("right/infomation/target/goal")
 	arg0_4._heroInfo = arg0_4:getTpl("heroInfo")
 	arg0_4._starTpl = arg0_4:getTpl("star_tpl")
-	arg0_4._middle = arg0_4:findTF("middle")
-	arg0_4._right = arg0_4:findTF("right")
-	arg0_4.topPanel = arg0_4:findTF("blur_panel/top")
+	arg0_4._middle = arg0_4.rtAdapt:Find("middle")
+	arg0_4._right = arg0_4.rtAdapt:Find("right")
+	arg0_4.topPanel = arg0_4._tf:Find("blur_panel/top")
 
 	setAnchoredPosition(arg0_4._middle, {
 		x = -840
@@ -80,7 +80,7 @@ function var0_0.init(arg0_4)
 		x = 470
 	})
 
-	arg0_4.guideDesc = arg0_4:findTF("guideDesc", arg0_4._middle)
+	arg0_4.guideDesc = arg0_4._middle:Find("guideDesc")
 
 	if arg0_4.contextData.stageId then
 		arg0_4:SetStageID(arg0_4.contextData.stageId)
@@ -101,10 +101,10 @@ function var0_0.Register(arg0_5)
 		arg2_7:SetLocalScale(Vector3(0.65, 0.65, 1))
 		SetActive(arg0_7, true)
 
-		local var0_7 = findTF(arg0_7, "info")
-		local var1_7 = findTF(var0_7, "stars")
+		local var0_7 = arg0_7:Find("info")
+		local var1_7 = var0_7:Find("stars")
 		local var2_7 = arg1_7.energy <= Ship.ENERGY_MID
-		local var3_7 = findTF(var0_7, "energy")
+		local var3_7 = var0_7:Find("energy")
 
 		if var2_7 then
 			local var4_7, var5_7 = arg1_7:getEnergyPrint()
@@ -118,7 +118,7 @@ function var0_0.Register(arg0_5)
 		end
 
 		setActive(var3_7, false)
-		setActive(findTF(var0_7, "expbuff"), false)
+		setActive(var0_7:Find("expbuff"), false)
 
 		local var7_7 = arg1_7:getStar()
 
@@ -132,8 +132,8 @@ function var0_0.Register(arg0_5)
 			warning("找不到船形, shipConfigId: " .. arg1_7.configId)
 		end
 
-		setImageSprite(findTF(var0_7, "type"), var8_7, true)
-		setText(findTF(var0_7, "frame/lv_contain/lv"), arg1_7.level)
+		setImageSprite(var0_7:Find("type"), var8_7, true)
+		setText(var0_7:Find("frame/lv_contain/lv"), arg1_7.level)
 	end)
 	arg0_5._formationLogic:AddLongPress(function(arg0_8, arg1_8, arg2_8)
 		arg0_5:emit(WorldBossFormationMediator.OPEN_SHIP_INFO, arg1_8.id, arg2_8)
@@ -143,12 +143,12 @@ function var0_0.Register(arg0_5)
 		arg0_5:emit(WorldBossFormationMediator.CHANGE_FLEET_SHIP, arg0_9, arg2_9, arg1_9)
 	end)
 	arg0_5._formationLogic:AddBeginDrag(function(arg0_10)
-		local var0_10 = findTF(arg0_10, "info")
+		local var0_10 = arg0_10:Find("info")
 
 		SetActive(var0_10, false)
 	end)
 	arg0_5._formationLogic:AddEndDrag(function(arg0_11)
-		local var0_11 = findTF(arg0_11, "info")
+		local var0_11 = arg0_11:Find("info")
 
 		SetActive(var0_11, true)
 	end)
@@ -229,9 +229,9 @@ function var0_0.SetStageID(arg0_21, arg1_21)
 		updateDrop(var5_21, var6_21)
 	end
 
-	local var7_21 = findTF(arg0_21._goals, "goal_tpl")
-	local var8_21 = findTF(arg0_21._goals, "goal_sink")
-	local var9_21 = findTF(arg0_21._goals, "goal_time")
+	local var7_21 = arg0_21._goals:Find("goal_tpl")
+	local var8_21 = arg0_21._goals:Find("goal_sink")
+	local var9_21 = arg0_21._goals:Find("goal_time")
 
 	if var1_21 == 1 then
 		local var10_21

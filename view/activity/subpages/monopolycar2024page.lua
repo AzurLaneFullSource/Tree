@@ -1,18 +1,18 @@
 local var0_0 = class("MonopolyCar2024Page", import("view.base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.startBtn = arg0_1:findTF("AD/start")
+	arg0_1.startBtn = arg0_1._tf:Find("AD/start")
 	arg0_1.leftCountTxt = arg0_1.startBtn:Find("Text"):GetComponent(typeof(Text))
-	arg0_1.turnCntTxt = arg0_1:findTF("AD/turn"):GetComponent(typeof(Text))
-	arg0_1.progressTxt = arg0_1:findTF("AD/progress"):GetComponent(typeof(Text))
+	arg0_1.turnCntTxt = arg0_1._tf:Find("AD/turn"):GetComponent(typeof(Text))
+	arg0_1.progressTxt = arg0_1._tf:Find("AD/progress"):GetComponent(typeof(Text))
 	arg0_1.turnAwards = {
-		arg0_1:findTF("AD/turn_awards/award_1"),
-		arg0_1:findTF("AD/turn_awards/award_2"),
-		arg0_1:findTF("AD/turn_awards/award_3")
+		arg0_1._tf:Find("AD/turn_awards/award_1"),
+		arg0_1._tf:Find("AD/turn_awards/award_2"),
+		arg0_1._tf:Find("AD/turn_awards/award_3")
 	}
-	arg0_1.turnGoBtn = arg0_1:findTF("AD/turn_awards/battle_btn")
-	arg0_1.turnGetBtn = arg0_1:findTF("AD/turn_awards/get_btn")
-	arg0_1.progressImage = arg0_1:findTF("AD/turn_awards/progress/bar")
+	arg0_1.turnGoBtn = arg0_1._tf:Find("AD/turn_awards/battle_btn")
+	arg0_1.turnGetBtn = arg0_1._tf:Find("AD/turn_awards/get_btn")
+	arg0_1.progressImage = arg0_1._tf:Find("AD/turn_awards/progress/bar")
 
 	onButton(arg0_1, arg0_1.startBtn, function()
 		if not arg0_1.activity or arg0_1.activity:isEnd() then
@@ -32,12 +32,12 @@ function var0_0.OnInit(arg0_1)
 		end)
 	end, SFX_PANEL)
 
-	arg0_1.taskGoBtn = arg0_1:findTF("AD/battle_btn")
-	arg0_1.taskGetBtn = arg0_1:findTF("AD/get_btn")
-	arg0_1.taskGotBtn = arg0_1:findTF("AD/got_btn")
-	arg0_1.taskDesc = arg0_1:findTF("AD/Text"):GetComponent(typeof(Text))
-	arg0_1.taskAward = arg0_1:findTF("AD/award")
-	arg0_1.taskProgress = arg0_1:findTF("AD/taskProgress")
+	arg0_1.taskGoBtn = arg0_1._tf:Find("AD/battle_btn")
+	arg0_1.taskGetBtn = arg0_1._tf:Find("AD/get_btn")
+	arg0_1.taskGotBtn = arg0_1._tf:Find("AD/got_btn")
+	arg0_1.taskDesc = arg0_1._tf:Find("AD/Text"):GetComponent(typeof(Text))
+	arg0_1.taskAward = arg0_1._tf:Find("AD/award")
+	arg0_1.taskProgress = arg0_1._tf:Find("AD/taskProgress")
 end
 
 function var0_0.OnDataSetting(arg0_4)

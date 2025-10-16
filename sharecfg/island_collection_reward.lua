@@ -106,8 +106,8 @@ pg.base.island_collection_reward = {
 		describe = "100 Collection Pt. Total: Working Efficiency at Faircrop Fields +4%",
 		level = 5,
 		award_display = {
-			43,
-			38001,
+			41,
+			300001,
 			1
 		}
 	},
@@ -161,8 +161,8 @@ pg.base.island_collection_reward = {
 		describe = "350 Collection Pt. Total: Working Efficiency at Sweetscent Orchard +4%",
 		level = 10,
 		award_display = {
-			43,
-			39001,
+			41,
+			300002,
 			1
 		}
 	},
@@ -216,8 +216,8 @@ pg.base.island_collection_reward = {
 		describe = "600 Collection Pt. Total: Working Efficiency at Newsprout Nursery +4%",
 		level = 15,
 		award_display = {
-			43,
-			40001,
+			41,
+			300003,
 			1
 		}
 	},
@@ -271,8 +271,8 @@ pg.base.island_collection_reward = {
 		describe = "850 Collection Pt. Total: Working Efficiency at Faircrop Fields +8%",
 		level = 20,
 		award_display = {
-			43,
-			38002,
+			41,
+			300004,
 			1
 		}
 	},
@@ -326,8 +326,8 @@ pg.base.island_collection_reward = {
 		describe = "1200 Collection Pt. Total: Working Efficiency at Sweetscent Orchard +8%",
 		level = 25,
 		award_display = {
-			43,
-			39002,
+			41,
+			300005,
 			1
 		}
 	},
@@ -381,8 +381,8 @@ pg.base.island_collection_reward = {
 		describe = "1700 Collection Pt. Total: Working Efficiency at Newsprout Nursery +8%",
 		level = 30,
 		award_display = {
-			43,
-			39002,
+			41,
+			300006,
 			1
 		}
 	},

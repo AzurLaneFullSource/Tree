@@ -65,14 +65,14 @@ function var7_0.InitPopNumPool(arg0_5)
 	local var1_5 = arg0_5._state:GetUI()
 
 	if arg0_5._dataProxy:GetInitData().battleType == SYSTEM_DODGEM then
-		arg0_5._popNumMgr:InitialScorePool(var1_5:findTF(var0_5.CONTAINER_CHARACTER_HP .. "/container"))
+		arg0_5._popNumMgr:InitialScorePool(var1_5._tf:Find(var0_5.CONTAINER_CHARACTER_HP .. "/container"))
 	else
-		arg0_5._popNumMgr:InitialBundlePool(var1_5:findTF(var0_5.CONTAINER_CHARACTER_HP .. "/container"))
+		arg0_5._popNumMgr:InitialBundlePool(var1_5._tf:Find(var0_5.CONTAINER_CHARACTER_HP .. "/container"))
 	end
 end
 
 function var7_0.InitFlagShipMark(arg0_6)
-	local var0_6 = arg0_6._state:GetUI():findGO("flagShipMark")
+	local var0_6 = arg0_6._state:GetUI()._tf:Find("flagShipMark").gameObject
 
 	var0_6:SetActive(true)
 
@@ -87,8 +87,8 @@ end
 function var7_0.InitCharacterFactory(arg0_8)
 	local var0_8 = arg0_8._state:GetUI()
 
-	var0_0.Battle.BattleHPBarManager.GetInstance():InitialPoolRoot(var0_8:findTF(var0_0.Battle.BattleHPBarManager.ROOT_NAME))
-	var0_0.Battle.BattleArrowManager.GetInstance():Init(var0_8:findTF(var0_0.Battle.BattleArrowManager.ROOT_NAME))
+	var0_0.Battle.BattleHPBarManager.GetInstance():InitialPoolRoot(var0_8._tf:Find(var0_0.Battle.BattleHPBarManager.ROOT_NAME))
+	var0_0.Battle.BattleArrowManager.GetInstance():Init(var0_8._tf:Find(var0_0.Battle.BattleArrowManager.ROOT_NAME))
 
 	arg0_8._characterFactoryList = {
 		[var3_0.UnitType.PLAYER_UNIT] = var0_0.Battle.BattlePlayerCharacterFactory.GetInstance(),
@@ -737,7 +737,7 @@ function var7_0.GetBulletRoot(arg0_54)
 end
 
 function var7_0.EnablePopContainer(arg0_55, arg1_55, arg2_55)
-	setActive(arg0_55._state:GetUI():findTF(arg1_55), arg2_55)
+	setActive(arg0_55._state:GetUI()._tf:Find(arg1_55), arg2_55)
 end
 
 function var7_0.AddPlayerCharacter(arg0_56, arg1_56)
@@ -766,7 +766,7 @@ function var7_0.AppendCharacter(arg0_58, arg1_58)
 end
 
 function var7_0.InstantiateCharacterComponent(arg0_59, arg1_59)
-	local var0_59 = arg0_59._state:GetUI():findTF(arg1_59)
+	local var0_59 = arg0_59._state:GetUI()._tf:Find(arg1_59)
 
 	return cloneTplTo(var0_59, var0_59.parent).gameObject
 end

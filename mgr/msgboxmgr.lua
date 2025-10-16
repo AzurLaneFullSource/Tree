@@ -553,6 +553,9 @@ local function var10_0(arg0_23, arg1_23)
 	if arg1_23.helps.ImageMode then
 		setActive(arg0_23._top, false)
 		setActive(findTF(arg0_23._window, "bg"), false)
+	else
+		setActive(arg0_23._top, true)
+		setActive(findTF(arg0_23._window, "bg"), true)
 	end
 
 	local var1_23 = arg0_23.settings.helps

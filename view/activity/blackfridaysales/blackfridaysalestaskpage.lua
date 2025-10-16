@@ -35,10 +35,10 @@ function var0_0.initData(arg0_3)
 end
 
 function var0_0.initUI(arg0_4)
-	arg0_4.getAllBtn = arg0_4:findTF("get_all")
-	arg0_4.extendTpl = arg0_4:findTF("extend_tpl")
-	arg0_4.content = arg0_4:findTF("view/content")
-	arg0_4.taskGroupItemList = UIItemList.New(arg0_4.content, arg0_4:findTF("tpl", arg0_4.content))
+	arg0_4.getAllBtn = arg0_4._tf:Find("get_all")
+	arg0_4.extendTpl = arg0_4._tf:Find("extend_tpl")
+	arg0_4.content = arg0_4._tf:Find("view/content")
+	arg0_4.taskGroupItemList = UIItemList.New(arg0_4.content, arg0_4.content:Find("tpl"))
 
 	setActive(arg0_4.getAllBtn, false)
 end

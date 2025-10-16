@@ -13,7 +13,7 @@ local var3_0 = 0.4
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.paintTF = arg0_1:findTF("Image", arg0_1.bg)
+	arg0_1.paintTF = arg0_1.bg:Find("Image")
 end
 
 function var0_0.OnUpdateFlush(arg0_2)

@@ -1,14 +1,14 @@
 local var0_0 = class("JamaicaSkinRePage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.slider = arg0_1:findTF("slider", arg0_1.bg)
-	arg0_1.step = arg0_1:findTF("step", arg0_1.bg)
-	arg0_1.progress = arg0_1:findTF("progress", arg0_1.bg)
-	arg0_1.awardTF = arg0_1:findTF("award", arg0_1.bg)
-	arg0_1.battleBtn = arg0_1:findTF("battle_btn", arg0_1.bg)
-	arg0_1.getBtn = arg0_1:findTF("get_btn", arg0_1.bg)
-	arg0_1.gotBtn = arg0_1:findTF("got_btn", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.slider = arg0_1.bg:Find("slider")
+	arg0_1.step = arg0_1.bg:Find("step")
+	arg0_1.progress = arg0_1.bg:Find("progress")
+	arg0_1.awardTF = arg0_1.bg:Find("award")
+	arg0_1.battleBtn = arg0_1.bg:Find("battle_btn")
+	arg0_1.getBtn = arg0_1.bg:Find("get_btn")
+	arg0_1.gotBtn = arg0_1.bg:Find("got_btn")
 end
 
 function var0_0.OnDataSetting(arg0_2)

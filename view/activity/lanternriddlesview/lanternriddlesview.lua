@@ -11,29 +11,29 @@ function var0_0.SetUI(arg0_2, arg1_2)
 	arg0_2.questioneTFs = {}
 
 	for iter0_2, iter1_2 in ipairs(pg.activity_event_question.all) do
-		local var0_2 = arg0_2:findTF("labels/label" .. iter0_2)
+		local var0_2 = arg0_2._tf:Find("labels/label" .. iter0_2)
 
 		arg0_2.questioneTFs[iter1_2] = var0_2
 	end
 
-	arg0_2.mainPanel = arg0_2:findTF("main")
-	arg0_2.day = arg0_2:findTF("time/Text"):GetComponent(typeof(Text))
-	arg0_2:findTF("frame/time", arg0_2.mainPanel):GetComponent(typeof(Text)).text = i18n("LanternRiddle_wait_time_tip")
+	arg0_2.mainPanel = arg0_2._tf:Find("main")
+	arg0_2.day = arg0_2._tf:Find("time/Text"):GetComponent(typeof(Text))
+	arg0_2.mainPanel:Find("frame/time"):GetComponent(typeof(Text)).text = i18n("LanternRiddle_wait_time_tip")
 
 	setActive(arg0_2.mainPanel, false)
 	onButton(arg0_2, arg0_2.mainPanel, function()
 		arg0_2:HideMainPanel()
 	end, SFX_PANEL)
-	onButton(arg0_2, arg0_2:findTF("back"), function()
+	onButton(arg0_2, arg0_2._tf:Find("back"), function()
 		arg0_2.controller:ExitGame()
 	end, SFX_PANEL)
-	onButton(arg0_2, arg0_2:findTF("back/help"), function()
+	onButton(arg0_2, arg0_2._tf:Find("back/help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.lanternRiddles_gametip.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg0_2, arg0_2:findTF("option"), function()
+	onButton(arg0_2, arg0_2._tf:Find("option"), function()
 		arg0_2.controller:ExitGameAndGoHome()
 	end, SFX_PANEL)
 end
@@ -79,13 +79,13 @@ end
 function var0_0.ShowMainPanel(arg0_11, arg1_11)
 	pg.UIMgr.GetInstance():BlurPanel(arg0_11.mainPanel)
 	setActive(arg0_11.mainPanel, true)
-	setActive(arg0_11:findTF("frame/label_game", arg0_11.mainPanel), arg1_11.type == 2)
-	setActive(arg0_11:findTF("frame/label_his", arg0_11.mainPanel), arg1_11.type == 1)
-	setText(arg0_11:findTF("frame/Text", arg0_11.mainPanel), arg1_11.text)
+	setActive(arg0_11.mainPanel:Find("frame/label_game"), arg1_11.type == 2)
+	setActive(arg0_11.mainPanel:Find("frame/label_his"), arg1_11.type == 1)
+	setText(arg0_11.mainPanel:Find("frame/Text"), arg1_11.text)
 	arg0_11:UpdateMainPanelTime()
 
 	local var0_11 = arg1_11.answers
-	local var1_11 = arg0_11:findTF("frame/answers", arg0_11.mainPanel)
+	local var1_11 = arg0_11.mainPanel:Find("frame/answers")
 	local var2_11 = arg1_11.isFinish
 
 	for iter0_11 = 1, 4 do
@@ -121,7 +121,7 @@ function var0_0.UpdateMainPanelTime(arg0_13)
 
 	local var0_13 = pg.TimeMgr.GetInstance():GetServerTime() <= arg0_13.controller:GetLockTime()
 
-	setActive(arg0_13:findTF("frame/time", arg0_13.mainPanel), var0_13)
+	setActive(arg0_13.mainPanel:Find("frame/time"), var0_13)
 
 	if var0_13 then
 		arg0_13:AddTimer()
@@ -129,7 +129,7 @@ function var0_0.UpdateMainPanelTime(arg0_13)
 end
 
 function var0_0.OnUpdateAnswer(arg0_14, arg1_14, arg2_14, arg3_14)
-	local var0_14 = arg0_14:findTF("frame/answers", arg0_14.mainPanel):GetChild(arg2_14 - 1)
+	local var0_14 = arg0_14.mainPanel:Find("frame/answers"):GetChild(arg2_14 - 1)
 
 	setActive(var0_14:Find("right"), arg3_14)
 	setActive(var0_14:Find("false"), not arg3_14)
@@ -158,7 +158,7 @@ end
 
 function var0_0.AddTimer(arg0_16)
 	local var0_16 = arg0_16.controller:GetLockTime()
-	local var1_16 = arg0_16:findTF("frame/time/Text", arg0_16.mainPanel):GetComponent(typeof(Text))
+	local var1_16 = arg0_16.mainPanel:Find("frame/time/Text"):GetComponent(typeof(Text))
 
 	arg0_16.timer = Timer.New(function()
 		local var0_17 = pg.TimeMgr.GetInstance():GetServerTime()
@@ -166,7 +166,7 @@ function var0_0.AddTimer(arg0_16)
 
 		if var1_17 <= 0 then
 			arg0_16:RemoveTimer()
-			setActive(arg0_16:findTF("frame/time", arg0_16.mainPanel), false)
+			setActive(arg0_16.mainPanel:Find("frame/time"), false)
 		else
 			var1_16.text = pg.TimeMgr.GetInstance():DescCDTime(var1_17)
 		end
@@ -188,12 +188,6 @@ function var0_0.Dispose(arg0_19)
 	arg0_19:RemoveTimer()
 	arg0_19:HideMainPanel()
 	pg.DelegateInfo.Dispose(arg0_19)
-end
-
-function var0_0.findTF(arg0_20, arg1_20, arg2_20)
-	assert(arg0_20._tf, "transform should exist")
-
-	return findTF(arg2_20 or arg0_20._tf, arg1_20)
 end
 
 return var0_0

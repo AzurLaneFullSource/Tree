@@ -14,13 +14,13 @@ function var0_0.setDormVO(arg0_3, arg1_3)
 end
 
 function var0_0.init(arg0_4)
-	arg0_4.frame = arg0_4:findTF("frame")
-	arg0_4.painting = arg0_4:findTF("painting")
-	arg0_4.confirmBtn = arg0_4:findTF("painting/confirm_btn")
-	arg0_4.timeTF = arg0_4:findTF("ship_word/text_contain1")
-	arg0_4.expTF = arg0_4:findTF("ship_word/text_contain2")
-	arg0_4.emptyTF = arg0_4:findTF("ship_word/Text")
-	arg0_4.uilist = UIItemList.New(arg0_4:findTF("container", arg0_4.frame), arg0_4:findTF("container/ship_tpl", arg0_4.frame))
+	arg0_4.frame = arg0_4._tf:Find("frame")
+	arg0_4.painting = arg0_4._tf:Find("painting")
+	arg0_4.confirmBtn = arg0_4._tf:Find("painting/confirm_btn")
+	arg0_4.timeTF = arg0_4._tf:Find("ship_word/text_contain1")
+	arg0_4.expTF = arg0_4._tf:Find("ship_word/text_contain2")
+	arg0_4.emptyTF = arg0_4._tf:Find("ship_word/Text")
+	arg0_4.uilist = UIItemList.New(arg0_4.frame:Find("container"), arg0_4.frame:Find("container/ship_tpl"))
 end
 
 function var0_0.didEnter(arg0_5)
@@ -57,7 +57,7 @@ function var0_0.InitPainting(arg0_8, arg1_8, arg2_8)
 
 		assert(#var2_8 > 0, "gametip ==> backyard_addExp_Info 必须用||分开")
 
-		local var3_8 = arg0_8:findTF("ship_word/text_contain1")
+		local var3_8 = arg0_8._tf:Find("ship_word/text_contain1")
 		local var4_8 = 0
 
 		while var4_8 < var3_8.childCount do
@@ -66,7 +66,7 @@ function var0_0.InitPainting(arg0_8, arg1_8, arg2_8)
 			var4_8 = var4_8 + 1
 		end
 
-		local var5_8 = arg0_8:findTF("ship_word/text_contain2")
+		local var5_8 = arg0_8._tf:Find("ship_word/text_contain2")
 		local var6_8 = 0
 
 		while var6_8 < var5_8.childCount do

@@ -5,17 +5,17 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.uilist = UIItemList.New(arg0_2:findTF("window/list/scrollrect/content"), arg0_2:findTF("window/list/scrollrect/content/tpl"))
+	arg0_2.uilist = UIItemList.New(arg0_2._tf:Find("window/list/scrollrect/content"), arg0_2._tf:Find("window/list/scrollrect/content/tpl"))
 end
 
 function var0_0.OnInit(arg0_3)
-	onButton(arg0_3, arg0_3:findTF("window/button_container/confirm_btn"), function()
+	onButton(arg0_3, arg0_3._tf:Find("window/button_container/confirm_btn"), function()
 		arg0_3:Hide()
 	end, SFX_CANCEL)
 	onButton(arg0_3, arg0_3._tf, function()
 		arg0_3:Hide()
 	end, SFX_CANCEL)
-	onButton(arg0_3, arg0_3:findTF("window/top/btnBack"), function()
+	onButton(arg0_3, arg0_3._tf:Find("window/top/btnBack"), function()
 		arg0_3:Hide()
 	end, SFX_CANCEL)
 end

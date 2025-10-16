@@ -49,7 +49,7 @@ function var0_0.onDestroy(arg0_5)
 end
 
 function var0_0.findUI(arg0_6)
-	local var0_6 = arg0_6:findTF("IconList")
+	local var0_6 = arg0_6._tf:Find("IconList")
 
 	arg0_6.nameList = {
 		"feiniao",
@@ -72,14 +72,14 @@ function var0_0.findUI(arg0_6)
 	arg0_6.iconSpriteDict = {}
 
 	for iter0_6, iter1_6 in ipairs(arg0_6.nameList) do
-		local var1_6 = arg0_6:findTF(iter1_6, var0_6)
+		local var1_6 = var0_6:Find(iter1_6)
 		local var2_6 = getImageSprite(var1_6)
 
 		arg0_6.iconSpriteDict[iter0_6] = var2_6
 		arg0_6.iconSpriteDict[iter1_6] = var2_6
 	end
 
-	local var3_6 = arg0_6:findTF("HXList")
+	local var3_6 = arg0_6._tf:Find("HXList")
 	local var4_6 = {
 		"feiniao",
 		"yan",
@@ -91,7 +91,7 @@ function var0_0.findUI(arg0_6)
 	arg0_6.hxSpriteDict = {}
 
 	for iter2_6, iter3_6 in ipairs(var4_6) do
-		local var5_6 = arg0_6:findTF(iter3_6, var3_6)
+		local var5_6 = var3_6:Find(iter3_6)
 		local var6_6 = getImageSprite(var5_6)
 
 		arg0_6.hxSpriteDict[iter3_6] = var6_6
@@ -149,19 +149,19 @@ function var0_0.findUI(arg0_6)
 			y = -1
 		}
 	}
-	arg0_6.posPanel = arg0_6:findTF("PosPanel")
-	arg0_6.finalLockTF = arg0_6:findTF("FinalAward/Lock", arg0_6.posPanel)
-	arg0_6.finalGotTF = arg0_6:findTF("FinalAward/Got", arg0_6.posPanel)
+	arg0_6.posPanel = arg0_6._tf:Find("PosPanel")
+	arg0_6.finalLockTF = arg0_6.posPanel:Find("FinalAward/Lock")
+	arg0_6.finalGotTF = arg0_6.posPanel:Find("FinalAward/Got")
 	arg0_6.posTFList = {}
 
-	local var7_6 = arg0_6:findTF("PosList", arg0_6.posPanel)
+	local var7_6 = arg0_6.posPanel:Find("PosList")
 
 	for iter4_6 = 1, #arg0_6.nameList do
-		local var8_6 = arg0_6:findTF(iter4_6, var7_6)
+		local var8_6 = var7_6:Find(iter4_6)
 
 		table.insert(arg0_6.posTFList, var8_6)
 
-		local var9_6 = arg0_6:findTF("Get", var8_6)
+		local var9_6 = var8_6:Find("Get")
 
 		onButton(arg0_6, var9_6, function()
 			local var0_7 = arg0_6:getStep()
@@ -174,23 +174,23 @@ function var0_0.findUI(arg0_6)
 		end, SFX_PANEL)
 	end
 
-	arg0_6.taskPanel = arg0_6:findTF("TaskPanel")
-	arg0_6.paintingTF = arg0_6:findTF("PaintingPanel/Main/Painting", arg0_6.taskPanel)
-	arg0_6.paintingHXTF = arg0_6:findTF("PaintingPanel/Main/HX", arg0_6.taskPanel)
+	arg0_6.taskPanel = arg0_6._tf:Find("TaskPanel")
+	arg0_6.paintingTF = arg0_6.taskPanel:Find("PaintingPanel/Main/Painting")
+	arg0_6.paintingHXTF = arg0_6.taskPanel:Find("PaintingPanel/Main/HX")
 	arg0_6.progressTFList = {}
 
-	local var10_6 = arg0_6:findTF("Progress", arg0_6.taskPanel)
+	local var10_6 = arg0_6.taskPanel:Find("Progress")
 
 	for iter5_6 = 1, #arg0_6.nameList do
-		local var11_6 = arg0_6:findTF(iter5_6, var10_6)
+		local var11_6 = var10_6:Find(iter5_6)
 
 		arg0_6.progressTFList[iter5_6] = var11_6
 	end
 
 	arg0_6.taskTFList = {}
-	arg0_6.taskTFList[1] = arg0_6:findTF("Task1", arg0_6.taskPanel)
-	arg0_6.taskTFList[2] = arg0_6:findTF("Task2", arg0_6.taskPanel)
-	arg0_6.logText = arg0_6:findTF("LogText")
+	arg0_6.taskTFList[1] = arg0_6.taskPanel:Find("Task1")
+	arg0_6.taskTFList[2] = arg0_6.taskPanel:Find("Task2")
+	arg0_6.logText = arg0_6._tf:Find("LogText")
 end
 
 function var0_0.updatePosPanel(arg0_8)
@@ -199,8 +199,8 @@ function var0_0.updatePosPanel(arg0_8)
 
 	for iter0_8, iter1_8 in ipairs(var0_8) do
 		local var2_8 = var1_8[iter0_8] > 0
-		local var3_8 = arg0_8:findTF("Got", iter1_8)
-		local var4_8 = arg0_8:findTF("Icon", var3_8)
+		local var3_8 = iter1_8:Find("Got")
+		local var4_8 = var3_8:Find("Icon")
 		local var5_8 = var1_8[iter0_8]
 		local var6_8 = arg0_8.iconSpriteDict[var5_8]
 
@@ -226,22 +226,22 @@ function var0_0.updateTaskList(arg0_10)
 	for iter0_10, iter1_10 in ipairs(arg0_10.taskTFList) do
 		local var1_10 = var0_10[iter0_10]
 		local var2_10 = arg0_10.taskProxy:getTaskVO(var1_10)
-		local var3_10 = arg0_10:findTF("Desc", iter1_10)
+		local var3_10 = iter1_10:Find("Desc")
 
 		setText(var3_10, var2_10:getConfig("desc"))
 
 		local var4_10 = var2_10:getProgress()
 		local var5_10 = var2_10:getConfig("target_num")
-		local var6_10 = arg0_10:findTF("ProgressText", iter1_10)
-		local var7_10 = arg0_10:findTF("ProgressBar", iter1_10)
+		local var6_10 = iter1_10:Find("ProgressText")
+		local var7_10 = iter1_10:Find("ProgressBar")
 
 		setText(var6_10, var4_10 .. "/" .. var5_10)
 		setSlider(var7_10, 0, var5_10, var4_10)
 
 		local var8_10 = var2_10:getTaskStatus()
-		local var9_10 = arg0_10:findTF("GetBtn", iter1_10)
-		local var10_10 = arg0_10:findTF("GotBtn", iter1_10)
-		local var11_10 = arg0_10:findTF("GoBtn", iter1_10)
+		local var9_10 = iter1_10:Find("GetBtn")
+		local var10_10 = iter1_10:Find("GotBtn")
+		local var11_10 = iter1_10:Find("GoBtn")
 
 		setActive(var11_10, var8_10 == 0)
 		setActive(var9_10, var8_10 == 1)
@@ -259,7 +259,7 @@ function var0_0.updateTaskList(arg0_10)
 			id = var12_10[2],
 			count = var12_10[3]
 		}
-		local var14_10 = arg0_10:findTF("Icon", iter1_10)
+		local var14_10 = iter1_10:Find("Icon")
 
 		updateDrop(var14_10, var13_10)
 		onButton(arg0_10, var14_10, function()
@@ -283,9 +283,9 @@ function var0_0.updateProgress(arg0_14)
 	local var0_14 = arg0_14:getStep()
 
 	for iter0_14, iter1_14 in ipairs(arg0_14.progressTFList) do
-		local var1_14 = arg0_14:findTF("Get", iter1_14)
-		local var2_14 = arg0_14:findTF("Got", iter1_14)
-		local var3_14 = arg0_14:findTF("Doing", iter1_14)
+		local var1_14 = iter1_14:Find("Get")
+		local var2_14 = iter1_14:Find("Got")
+		local var3_14 = iter1_14:Find("Doing")
 
 		setActive(var2_14, iter0_14 < var0_14)
 		setActive(var1_14, var0_14 < iter0_14)
@@ -327,15 +327,15 @@ function var0_0.openTaskAni(arg0_16)
 	local var1_16 = arg0_16.activity.data1_list
 	local var2_16 = table.indexof(var1_16, var0_16, 1)
 	local var3_16 = arg0_16.posTFList[var2_16]
-	local var4_16 = arg0_16:findTF("Get", var3_16)
-	local var5_16 = arg0_16:findTF("Got", var3_16)
+	local var4_16 = var3_16:Find("Get")
+	local var5_16 = var3_16:Find("Got")
 
 	setImageAlpha(var4_16, 1)
 	setImageAlpha(var5_16, 0)
 	setActive(var4_16, true)
 	setActive(var5_16, true)
 
-	local var6_16 = arg0_16:findTF("Icon", var5_16)
+	local var6_16 = var5_16:Find("Icon")
 
 	setActive(var6_16, false)
 

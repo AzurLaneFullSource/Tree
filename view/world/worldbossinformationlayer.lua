@@ -7,9 +7,9 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.bg = arg0_2:findTF("bg")
-	arg0_2.layer = arg0_2:findTF("fixed")
-	arg0_2.top = arg0_2:findTF("top", arg0_2.layer)
+	arg0_2.bg = arg0_2._tf:Find("bg")
+	arg0_2.layer = arg0_2._tf:Find("fixed")
+	arg0_2.top = arg0_2.layer:Find("top")
 	arg0_2.backBtn = arg0_2.top:Find("back_btn")
 	arg0_2.homeBtn = arg0_2.top:Find("option")
 	arg0_2.playerResOb = arg0_2.top:Find("playerRes")

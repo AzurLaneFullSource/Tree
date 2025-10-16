@@ -29,34 +29,34 @@ function var0_0.Set(arg0_1, arg1_1, arg2_1)
 	local var11_1 = var2_1 <= var10_1
 	local var12_1 = var2_1 + var10_1
 
-	setText(arg0_1:findTF("window/top/name"), var0_1.name)
-	setText(arg0_1:findTF("window/top/name/lv"), "Lv." .. var2_1)
-	setScrollText(arg0_1:findTF("window/frame/describe/text"), var0_1.desc)
-	setText(arg0_1:findTF("window/frame/content/title/lv/current"), "Lv." .. var2_1)
-	setActive(arg0_1:findTF("window/frame/content/title/lv/next"), not var6_1)
+	setText(arg0_1._tf:Find("window/top/name"), var0_1.name)
+	setText(arg0_1._tf:Find("window/top/name/lv"), "Lv." .. var2_1)
+	setScrollText(arg0_1._tf:Find("window/frame/describe/text"), var0_1.desc)
+	setText(arg0_1._tf:Find("window/frame/content/title/lv/current"), "Lv." .. var2_1)
+	setActive(arg0_1._tf:Find("window/frame/content/title/lv/next"), not var6_1)
 
 	if not var6_1 then
-		setText(arg0_1:findTF("window/frame/content/title/lv/next"), "Lv." .. var2_1 + 1)
+		setText(arg0_1._tf:Find("window/frame/content/title/lv/next"), "Lv." .. var2_1 + 1)
 	end
 
 	local var13_1 = var0_1.buff[var2_1]
 	local var14_1 = pg.benefit_buff_template[var13_1]
 
 	assert(var14_1, "Can't Find benefit_buff_template Config ID: " .. var13_1)
-	setText(arg0_1:findTF("window/frame/content/preview/current"), var14_1.desc)
-	setActive(arg0_1:findTF("window/frame/content/preview/arrow"), not var6_1)
-	setActive(arg0_1:findTF("window/frame/content/preview/next"), not var6_1)
+	setText(arg0_1._tf:Find("window/frame/content/preview/current"), var14_1.desc)
+	setActive(arg0_1._tf:Find("window/frame/content/preview/arrow"), not var6_1)
+	setActive(arg0_1._tf:Find("window/frame/content/preview/next"), not var6_1)
 
 	if not var6_1 then
 		local var15_1 = var0_1.buff[var2_1 + 1]
 		local var16_1 = pg.benefit_buff_template[var15_1]
 
 		assert(var16_1, "Can't Find benefit_buff_template Config ID: " .. var15_1)
-		setText(arg0_1:findTF("window/frame/content/preview/next"), var16_1.desc)
+		setText(arg0_1._tf:Find("window/frame/content/preview/next"), var16_1.desc)
 	end
 
-	arg0_1.loader:GetSprite(Item.getConfigData(var4_1).icon, "", arg0_1:findTF("window/frame/costback/icon"))
-	setText(arg0_1:findTF("window/frame/costback/cost"), var0_1.material[var2_1] or 0)
+	arg0_1.loader:GetSprite(Item.getConfigData(var4_1).icon, "", arg0_1._tf:Find("window/frame/costback/icon"))
+	setText(arg0_1._tf:Find("window/frame/costback/cost"), var0_1.material[var2_1] or 0)
 	onButton(arg0_1, arg0_1.btnUpgrade, function()
 		if not var11_1 then
 			local var0_2 = pg.activity_event_building[var9_1].name

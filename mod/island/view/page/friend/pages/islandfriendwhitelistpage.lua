@@ -7,7 +7,7 @@ end
 function var0_0.OnLoaded(arg0_2)
 	var0_0.super.OnLoaded(arg0_2)
 
-	arg0_2.titleTxt = arg0_2:findTF("tip/Text"):GetComponent(typeof(Text))
+	arg0_2.titleTxt = arg0_2._tf:Find("tip/Text"):GetComponent(typeof(Text))
 
 	arg0_2:InitTitle()
 end

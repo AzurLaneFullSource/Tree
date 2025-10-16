@@ -13,18 +13,18 @@ function var0_0.OnGetReportRankList(arg0_3, arg1_3)
 end
 
 function var0_0.init(arg0_4)
-	arg0_4.scrollrect = arg0_4:findTF("frame/scrollrect"):GetComponent("LScrollRect")
-	arg0_4.getAll = arg0_4:findTF("frame/get_all")
-	arg0_4.gotAll = arg0_4:findTF("frame/get_all/gray")
-	arg0_4.descTxt = arg0_4:findTF("frame/desc"):GetComponent(typeof(Text))
-	arg0_4.cntTxt = arg0_4:findTF("frame/cnt"):GetComponent(typeof(Text))
-	arg0_4.closeBtn = arg0_4:findTF("frame/close")
+	arg0_4.scrollrect = arg0_4._tf:Find("frame/scrollrect"):GetComponent("LScrollRect")
+	arg0_4.getAll = arg0_4._tf:Find("frame/get_all")
+	arg0_4.gotAll = arg0_4._tf:Find("frame/get_all/gray")
+	arg0_4.descTxt = arg0_4._tf:Find("frame/desc"):GetComponent(typeof(Text))
+	arg0_4.cntTxt = arg0_4._tf:Find("frame/cnt"):GetComponent(typeof(Text))
+	arg0_4.closeBtn = arg0_4._tf:Find("frame/close")
 
 	setText(arg0_4.getAll:Find("Text"), i18n("guild_report_get_all"))
 
 	arg0_4._parentTf = arg0_4._tf.parent
 
-	setText(arg0_4:findTF("frame/desc"), i18n("guild_report_tooltip"))
+	setText(arg0_4._tf:Find("frame/desc"), i18n("guild_report_tooltip"))
 
 	arg0_4.rankPage = GuildBossRankPage.New(arg0_4._tf, arg0_4.event)
 end

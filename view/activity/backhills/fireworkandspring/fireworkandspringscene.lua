@@ -48,34 +48,34 @@ function var0_0.init(arg0_2)
 	arg0_2:InitData()
 	var0_0.super.init(arg0_2)
 
-	arg0_2._map = arg0_2:findTF("map")
-	arg0_2._shipTpl = arg0_2:findTF("ship")
-	arg0_2.fireworksTF = arg0_2:findTF("fireworks")
-	arg0_2._SDPlace = arg0_2:findTF("SDPlace")
+	arg0_2._map = arg0_2._tf:Find("map")
+	arg0_2._shipTpl = arg0_2._tf:Find("ship")
+	arg0_2.fireworksTF = arg0_2._tf:Find("fireworks")
+	arg0_2._SDPlace = arg0_2._tf:Find("SDPlace")
 	arg0_2.containers = {
 		arg0_2._SDPlace
 	}
 	arg0_2.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.FireworkAndSpringGraph"))
-	arg0_2.backBtn = arg0_2:findTF("panel/btn_back")
-	arg0_2.tipBtn = arg0_2:findTF("panel/btn_tip")
-	arg0_2.ptBtn = arg0_2:findTF("panel/btn_pt")
-	arg0_2.stage = arg0_2:findTF("panel/btn_pt/stage")
-	arg0_2.pt = arg0_2:findTF("panel/btn_pt/pt")
-	arg0_2.taskBtn = arg0_2:findTF("panel/btn_task")
-	arg0_2.fireworkBtn = arg0_2:findTF("panel/btn_firework")
-	arg0_2.springBtn = arg0_2:findTF("panel/btn_spring")
-	arg0_2.subPanel = arg0_2:findTF("subPanel")
-	arg0_2.subPanelPanel = arg0_2:findTF("panel", arg0_2.subPanel)
-	arg0_2.subLeft = arg0_2:findTF("left", arg0_2.subPanelPanel)
-	arg0_2.subRight = arg0_2:findTF("right", arg0_2.subPanelPanel)
-	arg0_2.subPtBtn = arg0_2:findTF("ptBtn", arg0_2.subLeft)
-	arg0_2.subTaskBtn = arg0_2:findTF("taskBtn", arg0_2.subLeft)
-	arg0_2.subFireworkBtn = arg0_2:findTF("fireworkBtn", arg0_2.subLeft)
-	arg0_2.subSpringBtn = arg0_2:findTF("springBtn", arg0_2.subLeft)
-	arg0_2.ptPanel = arg0_2:findTF("ptPanel", arg0_2.subRight)
-	arg0_2.taskPanel = arg0_2:findTF("taskPanel", arg0_2.subRight)
-	arg0_2.fireworkPanel = arg0_2:findTF("fireworkPanel", arg0_2.subRight)
-	arg0_2.springPanel = arg0_2:findTF("springPanel", arg0_2.subRight)
+	arg0_2.backBtn = arg0_2._tf:Find("panel/btn_back")
+	arg0_2.tipBtn = arg0_2._tf:Find("panel/btn_tip")
+	arg0_2.ptBtn = arg0_2._tf:Find("panel/btn_pt")
+	arg0_2.stage = arg0_2._tf:Find("panel/btn_pt/stage")
+	arg0_2.pt = arg0_2._tf:Find("panel/btn_pt/pt")
+	arg0_2.taskBtn = arg0_2._tf:Find("panel/btn_task")
+	arg0_2.fireworkBtn = arg0_2._tf:Find("panel/btn_firework")
+	arg0_2.springBtn = arg0_2._tf:Find("panel/btn_spring")
+	arg0_2.subPanel = arg0_2._tf:Find("subPanel")
+	arg0_2.subPanelPanel = arg0_2.subPanel:Find("panel")
+	arg0_2.subLeft = arg0_2.subPanelPanel:Find("left")
+	arg0_2.subRight = arg0_2.subPanelPanel:Find("right")
+	arg0_2.subPtBtn = arg0_2.subLeft:Find("ptBtn")
+	arg0_2.subTaskBtn = arg0_2.subLeft:Find("taskBtn")
+	arg0_2.subFireworkBtn = arg0_2.subLeft:Find("fireworkBtn")
+	arg0_2.subSpringBtn = arg0_2.subLeft:Find("springBtn")
+	arg0_2.ptPanel = arg0_2.subRight:Find("ptPanel")
+	arg0_2.taskPanel = arg0_2.subRight:Find("taskPanel")
+	arg0_2.fireworkPanel = arg0_2.subRight:Find("fireworkPanel")
+	arg0_2.springPanel = arg0_2.subRight:Find("springPanel")
 end
 
 function var0_0.didEnter(arg0_3)
@@ -119,19 +119,19 @@ function var0_0.didEnter(arg0_3)
 		arg0_3:CloseSubPanel()
 		arg0_3:PlayFireworks()
 	end)
-	onButton(arg0_3, arg0_3:findTF("btnClose", arg0_3.ptPanel), function()
+	onButton(arg0_3, arg0_3.ptPanel:Find("btnClose"), function()
 		arg0_3:CloseSubPanel()
 		arg0_3:PlayFireworks()
 	end)
-	onButton(arg0_3, arg0_3:findTF("btnClose", arg0_3.taskPanel), function()
+	onButton(arg0_3, arg0_3.taskPanel:Find("btnClose"), function()
 		arg0_3:CloseSubPanel()
 		arg0_3:PlayFireworks()
 	end)
-	onButton(arg0_3, arg0_3:findTF("btnClose", arg0_3.fireworkPanel), function()
+	onButton(arg0_3, arg0_3.fireworkPanel:Find("btnClose"), function()
 		arg0_3:CloseSubPanel()
 		arg0_3:PlayFireworks()
 	end)
-	onButton(arg0_3, arg0_3:findTF("btnClose", arg0_3.springPanel), function()
+	onButton(arg0_3, arg0_3.springPanel:Find("btnClose"), function()
 		arg0_3:CloseSubPanel()
 		arg0_3:PlayFireworks()
 	end)
@@ -292,10 +292,10 @@ function var0_0.SetSubPanel(arg0_30, arg1_30)
 	setActive(arg0_30.fireworkPanel, false)
 	setActive(arg0_30.springPanel, false)
 	setActive(arg1_30, true)
-	setActive(arg0_30:findTF("selected", arg0_30.subPtBtn), arg1_30 == arg0_30.ptPanel)
-	setActive(arg0_30:findTF("selected", arg0_30.subTaskBtn), arg1_30 == arg0_30.taskPanel)
-	setActive(arg0_30:findTF("selected", arg0_30.subFireworkBtn), arg1_30 == arg0_30.fireworkPanel)
-	setActive(arg0_30:findTF("selected", arg0_30.subSpringBtn), arg1_30 == arg0_30.springPanel)
+	setActive(arg0_30.subPtBtn:Find("selected"), arg1_30 == arg0_30.ptPanel)
+	setActive(arg0_30.subTaskBtn:Find("selected"), arg1_30 == arg0_30.taskPanel)
+	setActive(arg0_30.subFireworkBtn:Find("selected"), arg1_30 == arg0_30.fireworkPanel)
+	setActive(arg0_30.subSpringBtn:Find("selected"), arg1_30 == arg0_30.springPanel)
 end
 
 function var0_0.UpdateMainPt(arg0_31)
@@ -309,20 +309,20 @@ function var0_0.UpdateMainPt(arg0_31)
 end
 
 function var0_0.SetPtPanel(arg0_32)
-	setText(arg0_32:findTF("lvText", arg0_32.ptPanel), arg0_32.ptData:GetCurrLevel())
+	setText(arg0_32.ptPanel:Find("lvText"), arg0_32.ptData:GetCurrLevel())
 
 	if not arg0_32.ptData:IsMaxLevel() then
-		setText(arg0_32:findTF("pt", arg0_32.ptPanel), arg0_32.ptData.count .. "/" .. arg0_32.ptData:GetNextLevelTarget())
-		setSlider(arg0_32:findTF("slider", arg0_32.ptPanel), 0, arg0_32.ptData:GetNextLevelTarget(), arg0_32.ptData.count)
+		setText(arg0_32.ptPanel:Find("pt"), arg0_32.ptData.count .. "/" .. arg0_32.ptData:GetNextLevelTarget())
+		setSlider(arg0_32.ptPanel:Find("slider"), 0, arg0_32.ptData:GetNextLevelTarget(), arg0_32.ptData.count)
 	else
-		setText(arg0_32:findTF("pt", arg0_32.ptPanel), "MAX")
-		setSlider(arg0_32:findTF("slider", arg0_32.ptPanel), 0, 1, 1)
+		setText(arg0_32.ptPanel:Find("pt"), "MAX")
+		setSlider(arg0_32.ptPanel:Find("slider"), 0, 1, 1)
 	end
 
-	setText(arg0_32:findTF("ptScroll/Viewport/Content/tpl/get/Text", arg0_32.ptPanel), i18n("firework_2025_get"))
-	setText(arg0_32:findTF("ptScroll/Viewport/Content/tpl/got/Text", arg0_32.ptPanel), i18n("firework_2025_got"))
+	setText(arg0_32.ptPanel:Find("ptScroll/Viewport/Content/tpl/get/Text"), i18n("firework_2025_get"))
+	setText(arg0_32.ptPanel:Find("ptScroll/Viewport/Content/tpl/got/Text"), i18n("firework_2025_got"))
 
-	local var0_32 = UIItemList.New(arg0_32:findTF("ptScroll/Viewport/Content", arg0_32.ptPanel), arg0_32:findTF("ptScroll/Viewport/Content/tpl", arg0_32.ptPanel))
+	local var0_32 = UIItemList.New(arg0_32.ptPanel:Find("ptScroll/Viewport/Content"), arg0_32.ptPanel:Find("ptScroll/Viewport/Content/tpl"))
 
 	var0_32:make(function(arg0_33, arg1_33, arg2_33)
 		if arg0_33 == UIItemList.EventUpdate then
@@ -357,11 +357,11 @@ function var0_0.SetPtPanel(arg0_32)
 	end)
 	var0_32:align(#arg0_32.ptData.dropList)
 
-	local var1_32 = rtf(arg0_32:findTF("ptScroll/Viewport/Content/tpl", arg0_32.ptPanel)).rect.width
-	local var2_32 = arg0_32:findTF("ptScroll/Viewport/Content", arg0_32.ptPanel):GetComponent(typeof(HorizontalLayoutGroup)).spacing
-	local var3_32 = rtf(arg0_32:findTF("ptScroll/Viewport", arg0_32.ptPanel)).rect.width
+	local var1_32 = rtf(arg0_32.ptPanel:Find("ptScroll/Viewport/Content/tpl")).rect.width
+	local var2_32 = arg0_32.ptPanel:Find("ptScroll/Viewport/Content"):GetComponent(typeof(HorizontalLayoutGroup)).spacing
+	local var3_32 = rtf(arg0_32.ptPanel:Find("ptScroll/Viewport")).rect.width
 
-	scrollTo(arg0_32:findTF("ptScroll", arg0_32.ptPanel), arg0_32.ptData.level * (var1_32 + var2_32) / (#arg0_32.ptData.targets * (var1_32 + var2_32) - var2_32 - var3_32), 0)
+	scrollTo(arg0_32.ptPanel:Find("ptScroll"), arg0_32.ptData.level * (var1_32 + var2_32) / (#arg0_32.ptData.targets * (var1_32 + var2_32) - var2_32 - var3_32), 0)
 
 	local var4_32 = 6
 
@@ -373,13 +373,13 @@ function var0_0.SetPtPanel(arg0_32)
 	end
 
 	arg0_32:PtScrollToDo(arg0_32.ptData.level * (var1_32 + var2_32) / (#arg0_32.ptData.targets * (var1_32 + var2_32) - var2_32 - var3_32))
-	onScroll(arg0_32, arg0_32:findTF("ptScroll", arg0_32.ptPanel), function(arg0_35)
+	onScroll(arg0_32, arg0_32.ptPanel:Find("ptScroll"), function(arg0_35)
 		arg0_32:PtScrollToDo(arg0_35.x)
 	end)
 
 	if arg0_32.ptData:CanGetAward() then
-		setActive(arg0_32:findTF("btn_get", arg0_32.ptPanel), true)
-		onButton(arg0_32, arg0_32:findTF("btn_get", arg0_32.ptPanel), function()
+		setActive(arg0_32.ptPanel:Find("btn_get"), true)
+		onButton(arg0_32, arg0_32.ptPanel:Find("btn_get"), function()
 			local var0_36 = {}
 			local var1_36 = arg0_32.ptData:GetAllAvailableAwards()
 			local var2_36 = getProxy(PlayerProxy):getRawData()
@@ -409,11 +409,11 @@ function var0_0.SetPtPanel(arg0_32)
 			end)
 		end, SFX_PANEL)
 	else
-		setActive(arg0_32:findTF("btn_get", arg0_32.ptPanel), false)
-		removeOnButton(arg0_32:findTF("btn_get", arg0_32.ptPanel))
+		setActive(arg0_32.ptPanel:Find("btn_get"), false)
+		removeOnButton(arg0_32.ptPanel:Find("btn_get"))
 	end
 
-	setText(arg0_32:findTF("ptName", arg0_32.ptPanel), i18n("firework_2025_pt"))
+	setText(arg0_32.ptPanel:Find("ptName"), i18n("firework_2025_pt"))
 end
 
 function var0_0.PtScrollToDo(arg0_39, arg1_39)
@@ -429,26 +429,26 @@ function var0_0.PtScrollToDo(arg0_39, arg1_39)
 
 	local var1_39 = Drop.Create(arg0_39.ptData.dropList[var0_39])
 
-	updateDrop(arg0_39:findTF("award", arg0_39.ptPanel), var1_39)
-	onButton(arg0_39, arg0_39:findTF("award", arg0_39.ptPanel), function()
+	updateDrop(arg0_39.ptPanel:Find("award"), var1_39)
+	onButton(arg0_39, arg0_39.ptPanel:Find("award"), function()
 		arg0_39:emit(BaseUI.ON_DROP, var1_39)
 	end, SFX_PANEL)
-	setText(arg0_39:findTF("awardInfo/Text", arg0_39.ptPanel), i18n("firework_2025_level", var0_39))
-	setActive(arg0_39:findTF("award/got", arg0_39.ptPanel), var0_39 <= arg0_39.ptData.level)
+	setText(arg0_39.ptPanel:Find("awardInfo/Text"), i18n("firework_2025_level", var0_39))
+	setActive(arg0_39.ptPanel:Find("award/got"), var0_39 <= arg0_39.ptData.level)
 end
 
 function var0_0.SetTaskPanel(arg0_41)
-	setText(arg0_41:findTF("lvText", arg0_41.taskPanel), arg0_41.ptData:GetCurrLevel())
+	setText(arg0_41.taskPanel:Find("lvText"), arg0_41.ptData:GetCurrLevel())
 
 	if not arg0_41.ptData:IsMaxLevel() then
-		setText(arg0_41:findTF("pt", arg0_41.taskPanel), arg0_41.ptData.count .. "/" .. arg0_41.ptData:GetNextLevelTarget())
-		setSlider(arg0_41:findTF("slider", arg0_41.taskPanel), 0, arg0_41.ptData:GetNextLevelTarget(), arg0_41.ptData.count)
+		setText(arg0_41.taskPanel:Find("pt"), arg0_41.ptData.count .. "/" .. arg0_41.ptData:GetNextLevelTarget())
+		setSlider(arg0_41.taskPanel:Find("slider"), 0, arg0_41.ptData:GetNextLevelTarget(), arg0_41.ptData.count)
 	else
-		setText(arg0_41:findTF("pt", arg0_41.taskPanel), "MAX")
-		setSlider(arg0_41:findTF("slider", arg0_41.taskPanel), 0, 1, 1)
+		setText(arg0_41.taskPanel:Find("pt"), "MAX")
+		setSlider(arg0_41.taskPanel:Find("slider"), 0, 1, 1)
 	end
 
-	local var0_41 = UIItemList.New(arg0_41:findTF("taskScroll/Viewport/Content", arg0_41.taskPanel), arg0_41:findTF("taskScroll/Viewport/Content/Tasktpl", arg0_41.taskPanel))
+	local var0_41 = UIItemList.New(arg0_41.taskPanel:Find("taskScroll/Viewport/Content"), arg0_41.taskPanel:Find("taskScroll/Viewport/Content/Tasktpl"))
 
 	var0_41:make(function(arg0_42, arg1_42, arg2_42)
 		if arg0_42 == UIItemList.EventUpdate then
@@ -499,8 +499,8 @@ function var0_0.SetTaskPanel(arg0_41)
 	var0_41:align(#arg0_41.taskVOs)
 
 	if arg0_41.canGetTaskAward then
-		setActive(arg0_41:findTF("btn_get", arg0_41.taskPanel), true)
-		onButton(arg0_41, arg0_41:findTF("btn_get", arg0_41.taskPanel), function()
+		setActive(arg0_41.taskPanel:Find("btn_get"), true)
+		onButton(arg0_41, arg0_41.taskPanel:Find("btn_get"), function()
 			local var0_45 = {}
 			local var1_45 = {}
 
@@ -547,11 +547,11 @@ function var0_0.SetTaskPanel(arg0_41)
 			end)
 		end, SFX_PANEL)
 	else
-		setActive(arg0_41:findTF("btn_get", arg0_41.taskPanel), false)
-		removeOnButton(arg0_41:findTF("btn_get", arg0_41.taskPanel))
+		setActive(arg0_41.taskPanel:Find("btn_get"), false)
+		removeOnButton(arg0_41.taskPanel:Find("btn_get"))
 	end
 
-	setText(arg0_41:findTF("ptName", arg0_41.taskPanel), i18n("firework_2025_pt"))
+	setText(arg0_41.taskPanel:Find("ptName"), i18n("firework_2025_pt"))
 end
 
 function var0_0.updateTaskAwards(arg0_48, arg1_48, arg2_48, arg3_48)
@@ -586,51 +586,51 @@ function var0_0.updateTaskAwards(arg0_48, arg1_48, arg2_48, arg3_48)
 end
 
 function var0_0.SetFireWorkPanel(arg0_50)
-	local var0_50 = arg0_50:findTF("left_panel", arg0_50.fireworkPanel)
-	local var1_50 = arg0_50:findTF("right_panel", arg0_50.fireworkPanel)
-	local var2_50 = arg0_50:findTF("fire_btn", var1_50)
-	local var3_50 = arg0_50:findTF("scrollrect/content/item_tpl", var0_50)
-	local var4_50 = arg0_50:findTF("scrollrect/content", var0_50)
+	local var0_50 = arg0_50.fireworkPanel:Find("left_panel")
+	local var1_50 = arg0_50.fireworkPanel:Find("right_panel")
+	local var2_50 = var1_50:Find("fire_btn")
+	local var3_50 = var0_50:Find("scrollrect/content/item_tpl")
+	local var4_50 = var0_50:Find("scrollrect/content")
 
 	arg0_50.leftUIList = UIItemList.New(var4_50, var3_50)
 
-	local var5_50 = arg0_50:findTF("content/item_tpl", var1_50)
-	local var6_50 = arg0_50:findTF("content", var1_50)
+	local var5_50 = var1_50:Find("content/item_tpl")
+	local var6_50 = var1_50:Find("content")
 
 	arg0_50.rightUIList = UIItemList.New(var6_50, var5_50)
 
-	local var7_50 = arg0_50:findTF("arrows", var1_50)
+	local var7_50 = var1_50:Find("arrows")
 
 	onButton(arg0_50, var2_50, function()
 		arg0_50:CloseSubPanel()
 		arg0_50:PlayFireworks()
 	end)
-	setText(arg0_50:findTF("tip", var1_50), i18n("activity_yanhua_tip7"))
-	setText(arg0_50:findTF("tip", var0_50), i18n("firework_2025_tip1"))
+	setText(var1_50:Find("tip"), i18n("activity_yanhua_tip7"))
+	setText(var0_50:Find("tip"), i18n("firework_2025_tip1"))
 	arg0_50.leftUIList:make(function(arg0_52, arg1_52, arg2_52)
 		if arg0_52 == UIItemList.EventUpdate then
 			local var0_52 = arg0_50.fireworkAllIds[arg1_52 + 1]
-			local var1_52 = arg0_50:findTF("firework/icon", arg2_52)
+			local var1_52 = arg2_52:Find("firework/icon")
 
 			GetImageSpriteFromAtlasAsync(Item.getConfigData(var0_52).icon, "", var1_52)
 
-			local var2_52 = arg0_50:findTF("firework/selected", arg2_52)
+			local var2_52 = arg2_52:Find("firework/selected")
 			local var3_52 = table.contains(arg0_50.fireworkOrderIds, var0_52)
 
 			setActive(var2_52, var3_52)
 
 			if not table.contains(arg0_50.fireworkUnlockIds, var0_52) then
-				setActive(arg0_50:findTF("firework/lock", arg2_52), true)
-				setActive(arg0_50:findTF("firework/get", arg2_52), false)
+				setActive(arg2_52:Find("firework/lock"), true)
+				setActive(arg2_52:Find("firework/get"), false)
 			elseif not table.contains(arg0_50.fireworkGotIds, var0_52) then
-				setActive(arg0_50:findTF("firework/lock", arg2_52), false)
-				setActive(arg0_50:findTF("firework/get", arg2_52), true)
+				setActive(arg2_52:Find("firework/lock"), false)
+				setActive(arg2_52:Find("firework/get"), true)
 				onButton(arg0_50, arg2_52, function()
 					arg0_50:emit(FireworkAndSpringMediator.ACTIVITY_OPERATION, arg0_50.fireworkActId, var0_52)
 				end, SFX_PANEL)
 			else
-				setActive(arg0_50:findTF("firework/lock", arg2_52), false)
-				setActive(arg0_50:findTF("firework/get", arg2_52), false)
+				setActive(arg2_52:Find("firework/lock"), false)
+				setActive(arg2_52:Find("firework/get"), false)
 				onButton(arg0_50, arg2_52, function()
 					arg0_50:FireworkLeftClick(var0_52, var3_52)
 				end, SFX_PANEL)
@@ -643,16 +643,16 @@ function var0_0.SetFireWorkPanel(arg0_50)
 		arg0_50.hasClonedFireworkArrows = true
 
 		for iter0_50 = 1, #arg0_50.fireworkAllIds - 2 do
-			cloneTplTo(arg0_50:findTF("tpl", var7_50), var7_50)
+			cloneTplTo(var7_50:Find("tpl"), var7_50)
 		end
 	end
 
 	arg0_50.rightUIList:make(function(arg0_55, arg1_55, arg2_55)
 		if arg0_55 == UIItemList.EventUpdate then
 			local var0_55 = arg1_55 + 1
-			local var1_55 = arg0_50:findTF("icon", arg2_55)
+			local var1_55 = arg2_55:Find("icon")
 
-			setActive(arg0_50:findTF("add", arg2_55), var0_55 > #arg0_50.fireworkOrderIds)
+			setActive(arg2_55:Find("add"), var0_55 > #arg0_50.fireworkOrderIds)
 
 			if var0_55 > #arg0_50.fireworkOrderIds then
 				setActive(var1_55, false)
@@ -695,9 +695,9 @@ function var0_0.SetSpringPanel(arg0_59)
 end
 
 function var0_0.CreateSpringUI(arg0_60)
-	setText(arg0_60:findTF("list/iconTpl/lock/Text", arg0_60.springPanel), i18n("firework_2025_unlock_tip1"))
+	setText(arg0_60.springPanel:Find("list/iconTpl/lock/Text"), i18n("firework_2025_unlock_tip1"))
 
-	arg0_60.springList = UIItemList.New(arg0_60:findTF("list", arg0_60.springPanel), arg0_60:findTF("list/iconTpl", arg0_60.springPanel))
+	arg0_60.springList = UIItemList.New(arg0_60.springPanel:Find("list"), arg0_60.springPanel:Find("list/iconTpl"))
 
 	arg0_60.springList:make(function(arg0_61, arg1_61, arg2_61)
 		if arg0_61 == UIItemList.EventUpdate then
@@ -741,8 +741,8 @@ function var0_0.CreateSpringUI(arg0_60)
 			setText(arg2_61:Find("ship/name/Text"), var3_61:getName())
 		end
 	end)
-	setText(arg0_60:findTF("tipText1", arg0_60.springPanel), i18n("firework_2025_tip2"))
-	setText(arg0_60:findTF("tipText2", arg0_60.springPanel), "+" .. arg0_60.energyRecoverAddition .. "/h")
+	setText(arg0_60.springPanel:Find("tipText1"), i18n("firework_2025_tip2"))
+	setText(arg0_60.springPanel:Find("tipText2"), "+" .. arg0_60.energyRecoverAddition .. "/h")
 end
 
 function var0_0.UpdateSpringUI(arg0_63)
@@ -980,22 +980,22 @@ end
 function var0_0.SetPtTip(arg0_80)
 	local var0_80 = arg0_80.ptData:CanGetAward()
 
-	setActive(arg0_80:findTF("tip", arg0_80.ptBtn), var0_80)
-	setActive(arg0_80:findTF("tip", arg0_80.subPtBtn), var0_80)
+	setActive(arg0_80.ptBtn:Find("tip"), var0_80)
+	setActive(arg0_80.subPtBtn:Find("tip"), var0_80)
 end
 
 function var0_0.SetTaskTip(arg0_81)
 	local var0_81 = arg0_81.canGetTaskAward
 
-	setActive(arg0_81:findTF("tip", arg0_81.taskBtn), var0_81)
-	setActive(arg0_81:findTF("tip", arg0_81.subTaskBtn), var0_81)
+	setActive(arg0_81.taskBtn:Find("tip"), var0_81)
+	setActive(arg0_81.subTaskBtn:Find("tip"), var0_81)
 end
 
 function var0_0.SetFireworkTip(arg0_82)
 	local var0_82 = #arg0_82.fireworkUnlockIds ~= #arg0_82.fireworkGotIds
 
-	setActive(arg0_82:findTF("tip", arg0_82.fireworkBtn), var0_82)
-	setActive(arg0_82:findTF("tip", arg0_82.subFireworkBtn), var0_82)
+	setActive(arg0_82.fireworkBtn:Find("tip"), var0_82)
+	setActive(arg0_82.subFireworkBtn:Find("tip"), var0_82)
 end
 
 function var0_0.SetSpringTip(arg0_83)
@@ -1009,8 +1009,8 @@ function var0_0.SetSpringTip(arg0_83)
 		end
 	end
 
-	setActive(arg0_83:findTF("tip", arg0_83.springBtn), var0_83)
-	setActive(arg0_83:findTF("tip", arg0_83.subSpringBtn), var0_83)
+	setActive(arg0_83.springBtn:Find("tip"), var0_83)
+	setActive(arg0_83.subSpringBtn:Find("tip"), var0_83)
 end
 
 function var0_0.willExit(arg0_84)

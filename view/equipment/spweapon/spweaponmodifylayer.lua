@@ -5,25 +5,25 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.equipmentPanel = arg0_2:findTF("Main/panel/equipment_panel")
-	arg0_2.materialPanel = arg0_2:findTF("Main/panel/material_panel")
-	arg0_2.equipmentIcon = arg0_2:findTF("Icon", arg0_2.equipmentPanel)
-	arg0_2.equipmentName = arg0_2:findTF("Name", arg0_2.equipmentPanel)
-	arg0_2.attributeList = arg0_2:findTF("Attribute/Rect/Attrs", arg0_2.equipmentPanel)
-	arg0_2.attributeButtons = arg0_2:findTF("Attribute/Rect/Buttons", arg0_2.equipmentPanel)
-	arg0_2.attributeExchangeButton = arg0_2:findTF("Exchange", arg0_2.attributeButtons)
-	arg0_2.attributeDiscardButton = arg0_2:findTF("Discard", arg0_2.attributeButtons)
+	arg0_2.equipmentPanel = arg0_2._tf:Find("Main/panel/equipment_panel")
+	arg0_2.materialPanel = arg0_2._tf:Find("Main/panel/material_panel")
+	arg0_2.equipmentIcon = arg0_2.equipmentPanel:Find("Icon")
+	arg0_2.equipmentName = arg0_2.equipmentPanel:Find("Name")
+	arg0_2.attributeList = arg0_2.equipmentPanel:Find("Attribute/Rect/Attrs")
+	arg0_2.attributeButtons = arg0_2.equipmentPanel:Find("Attribute/Rect/Buttons")
+	arg0_2.attributeExchangeButton = arg0_2.attributeButtons:Find("Exchange")
+	arg0_2.attributeDiscardButton = arg0_2.attributeButtons:Find("Discard")
 
-	setText(arg0_2:findTF("Attribute/Text", arg0_2.equipmentPanel), i18n("spweapon_ui_transform_attr_text"))
+	setText(arg0_2.equipmentPanel:Find("Attribute/Text"), i18n("spweapon_ui_transform_attr_text"))
 	setText(arg0_2.attributeExchangeButton:Find("Text"), i18n("spweapon_ui_change_attr"))
 	setText(arg0_2.attributeDiscardButton:Find("Text"), i18n("spweapon_ui_keep_attr"))
 
-	arg0_2.materialItems = CustomIndexLayer.Clone2Full(arg0_2:findTF("materials/materials", arg0_2.materialPanel), 3)
-	arg0_2.materialLimit = arg0_2:findTF("materials/limit", arg0_2.materialPanel)
-	arg0_2.materialCostText = arg0_2:findTF("cost/consume", arg0_2.materialPanel)
-	arg0_2.materialStartButton = arg0_2:findTF("start_btn", arg0_2.materialPanel)
+	arg0_2.materialItems = CustomIndexLayer.Clone2Full(arg0_2.materialPanel:Find("materials/materials"), 3)
+	arg0_2.materialLimit = arg0_2.materialPanel:Find("materials/limit")
+	arg0_2.materialCostText = arg0_2.materialPanel:Find("cost/consume")
+	arg0_2.materialStartButton = arg0_2.materialPanel:Find("start_btn")
 
-	setText(arg0_2:findTF("materials/panel_title", arg0_2.materialPanel), i18n("spweapon_ui_need_resource"))
+	setText(arg0_2.materialPanel:Find("materials/panel_title"), i18n("spweapon_ui_need_resource"))
 	setText(arg0_2.materialStartButton:Find("Image"), i18n("spweapon_ui_transform"))
 end
 
@@ -36,7 +36,7 @@ function var0_0.SetItems(arg0_4, arg1_4)
 end
 
 function var0_0.didEnter(arg0_5)
-	onButton(arg0_5, arg0_5:findTF("BG"), function()
+	onButton(arg0_5, arg0_5._tf:Find("BG"), function()
 		arg0_5:closeView()
 	end)
 	arg0_5:UpdateView()

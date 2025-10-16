@@ -3,17 +3,17 @@ local var1_0 = import("Mgr.Pool.PoolPlural")
 
 function var0_0.InitCustom(arg0_1)
 	arg0_1.atelierFormulaOverlayView = AtelierFormulaOverlayYumiaView.New(arg0_1.layerFormulaDescriptionPanel, arg0_1._parentClass)
-	arg0_1.compositePanel = arg0_1:findTF("Overlay/compositePanel")
-	arg0_1.tipsText = arg0_1:findTF("tips/Text")
+	arg0_1.compositePanel = arg0_1._tf:Find("Overlay/compositePanel")
+	arg0_1.tipsText = arg0_1._tf:Find("tips/Text")
 
-	setText(arg0_1:findTF("Overlay/compositePanel/backBtn/Text"), i18n("yumia_atelier_tip9"))
-	setText(arg0_1:findTF("Overlay/compositePanel/CompositeBtn/Text"), i18n("yumia_atelier_tip18"))
-	setText(arg0_1:findTF("Overlay/compositePanel/autoBtn/Text"), i18n("yumia_atelier_tip23"))
+	setText(arg0_1._tf:Find("Overlay/compositePanel/backBtn/Text"), i18n("yumia_atelier_tip9"))
+	setText(arg0_1._tf:Find("Overlay/compositePanel/CompositeBtn/Text"), i18n("yumia_atelier_tip18"))
+	setText(arg0_1._tf:Find("Overlay/compositePanel/autoBtn/Text"), i18n("yumia_atelier_tip23"))
 
 	arg0_1.lineGoList = {
-		arg0_1:findTF("ScrollView/Content/lineGo1"),
-		arg0_1:findTF("ScrollView/Content/lineGo2"),
-		arg0_1:findTF("ScrollView/Content/lineGo3")
+		arg0_1._tf:Find("ScrollView/Content/lineGo1"),
+		arg0_1._tf:Find("ScrollView/Content/lineGo2"),
+		arg0_1._tf:Find("ScrollView/Content/lineGo3")
 	}
 
 	SetComponentEnabled(arg0_1._parentClass.scrollView, typeof(ScrollRect), false)
@@ -21,13 +21,13 @@ end
 
 function var0_0.didEnter(arg0_2)
 	arg0_2.atelierFormulaOverlayView:didEnter()
-	onButton(arg0_2, arg0_2:findTF("Overlay/compositePanel/CompositeBtn"), function()
+	onButton(arg0_2, arg0_2._tf:Find("Overlay/compositePanel/CompositeBtn"), function()
 		arg0_2:OnClickComposite()
 	end, SFX_PANEL)
-	onButton(arg0_2, arg0_2:findTF("Overlay/compositePanel/backBtn"), function()
+	onButton(arg0_2, arg0_2._tf:Find("Overlay/compositePanel/backBtn"), function()
 		arg0_2._parentClass:OnClickFormulaBack()
 	end, SFX_PANEL)
-	onButton(arg0_2, arg0_2:findTF("Overlay/compositePanel/autoBtn"), function()
+	onButton(arg0_2, arg0_2._tf:Find("Overlay/compositePanel/autoBtn"), function()
 		arg0_2:OnClickAutoFill()
 	end, SFX_PANEL)
 end
@@ -39,8 +39,8 @@ function var0_0.Show(arg0_6, arg1_6)
 
 	if not arg0_6.nodePools then
 		arg0_6.nodePools = {
-			core = var1_0.New(arg0_6:findTF("coreNode").gameObject, 100),
-			material = var1_0.New(arg0_6:findTF("materialNode").gameObject, 100)
+			core = var1_0.New(arg0_6._tf:Find("coreNode").gameObject, 100),
+			material = var1_0.New(arg0_6._tf:Find("materialNode").gameObject, 100)
 		}
 
 		table.Foreach(arg0_6.nodePools, function(arg0_7, arg1_7)
@@ -96,7 +96,7 @@ function var0_0.Show(arg0_6, arg1_6)
 			arg0_6:HideNodeLight(var4_9)
 		end
 
-		setActive(arg0_6:findTF("select", var3_9), false)
+		setActive(var3_9:Find("select"), false)
 	end)
 	arg0_6:InitNodeLayer()
 	arg0_6:SetCirclePanel()
@@ -154,9 +154,9 @@ function var0_0.RefreshElement(arg0_12, arg1_12)
 	local var1_12 = arg1_12.Data
 	local var2_12 = var1_12:GetProp()
 
-	GetImageSpriteFromAtlasAsync("ui/ateliercommonyumiaui_atlas", "slot_" .. AtelierFormulaCircle.ELEMENT_NAME[var2_12], arg0_12:findTF("icon", var0_12))
+	GetImageSpriteFromAtlasAsync("ui/ateliercommonyumiaui_atlas", "slot_" .. AtelierFormulaCircle.ELEMENT_NAME[var2_12], var0_12:Find("icon"))
 
-	local var3_12 = arg0_12:findTF("light", var0_12)
+	local var3_12 = var0_12:Find("light")
 
 	setImageColor(var3_12, var1_12:GetElementLightColor(instance))
 end
@@ -166,16 +166,16 @@ function var0_0.RefreshCategory(arg0_13, arg1_13)
 	local var1_13 = arg1_13.Data:GetCategory()
 
 	if var1_13 ~= 0 then
-		GetImageSpriteFromAtlasAsync("ui/ateliercommonyumiaui_atlas", "category" .. var1_13, arg0_13:findTF("categoryBg/category", var0_13))
+		GetImageSpriteFromAtlasAsync("ui/ateliercommonyumiaui_atlas", "category" .. var1_13, var0_13:Find("categoryBg/category"))
 	end
 
-	setActive(arg0_13:findTF("categoryBg", var0_13), true)
+	setActive(var0_13:Find("categoryBg"), true)
 end
 
 function var0_0.HideCategory(arg0_14, arg1_14)
 	local var0_14 = tf(arg1_14.GO)
 
-	setActive(arg0_14:findTF("categoryBg", var0_14), false)
+	setActive(var0_14:Find("categoryBg"), false)
 end
 
 function var0_0.DisPlayUnlockEffect(arg0_15, arg1_15, arg2_15)
@@ -307,7 +307,7 @@ end
 function var0_0.AddStarList(arg0_32, arg1_32)
 	local var0_32 = arg1_32.Data
 	local var1_32 = var0_32:GetStarList()
-	local var2_32 = arg0_32:findTF("starContant", arg1_32.GO)
+	local var2_32 = arg1_32.GO:Find("starContant")
 
 	arg0_32:HideStarList(arg1_32)
 
@@ -332,7 +332,7 @@ function var0_0.PlayStarAnimation(arg0_33, arg1_33)
 		return
 	end
 
-	local var1_33 = arg0_33:findTF("starContant", arg1_33.GO)
+	local var1_33 = arg1_33.GO:Find("starContant")
 
 	for iter0_33 = 0, var1_33.childCount - 1 do
 		arg0_33._parentClass:managedTween(LeanTween.moveLocal, nil, var1_33:GetChild(iter0_33).gameObject, Vector3.zero, 0.5)
@@ -344,7 +344,7 @@ function var0_0.PlayStarAnimation(arg0_33, arg1_33)
 end
 
 function var0_0.HideStarList(arg0_35, arg1_35)
-	local var0_35 = arg0_35:findTF("starContant", arg1_35.GO)
+	local var0_35 = arg1_35.GO:Find("starContant")
 
 	for iter0_35 = 0, var0_35.childCount - 1 do
 		setActive(var0_35:GetChild(iter0_35), false)
@@ -356,11 +356,11 @@ function var0_0.ShowNodeLight(arg0_36, arg1_36)
 		return
 	end
 
-	setActive(arg0_36:findTF("light", arg1_36.GO), true)
+	setActive(arg1_36.GO:Find("light"), true)
 end
 
 function var0_0.HideNodeLight(arg0_37, arg1_37)
-	setActive(arg0_37:findTF("light", arg1_37.GO), false)
+	setActive(arg1_37.GO:Find("light"), false)
 end
 
 function var0_0.InitStr(arg0_38)

@@ -6,9 +6,9 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.addPanel = arg0_2:findTF("add_panel")
-	arg0_2.searchPanel = arg0_2:findTF("search_panel", arg0_2.addPanel)
-	arg0_2.searchBar = arg0_2:findTF("InputField", arg0_2.searchPanel)
+	arg0_2.addPanel = arg0_2._tf:Find("add_panel")
+	arg0_2.searchPanel = arg0_2.addPanel:Find("search_panel")
+	arg0_2.searchBar = arg0_2.searchPanel:Find("InputField")
 end
 
 function var0_0.OnInit(arg0_3)
@@ -77,7 +77,7 @@ end
 function var0_0.initAddPage(arg0_9)
 	arg0_9.searchItems = {}
 
-	setText(arg0_9:findTF("self_id_bg/Text", arg0_9.searchPanel), arg0_9.playerVO.id)
+	setText(arg0_9.searchPanel:Find("self_id_bg/Text"), arg0_9.playerVO.id)
 
 	arg0_9.addRect = arg0_9.addPanel:Find("mask/view"):GetComponent("LScrollRect")
 

@@ -54,13 +54,13 @@ function var0_0.initData(arg0_5)
 end
 
 function var0_0.initUI(arg0_6)
-	local var0_6 = arg0_6:findTF("BG/MoneyTip")
+	local var0_6 = arg0_6._tf:Find("BG/MoneyTip")
 
 	setActive(var0_6, false)
 
-	arg0_6.itemTpl = arg0_6:findTF("ItemTpl")
-	arg0_6.packTpl = arg0_6:findTF("PackTpl")
-	arg0_6.packContainerTF = arg0_6:findTF("Container")
+	arg0_6.itemTpl = arg0_6._tf:Find("ItemTpl")
+	arg0_6.packTpl = arg0_6._tf:Find("PackTpl")
+	arg0_6.packContainerTF = arg0_6._tf:Find("Container")
 	arg0_6.packItemList = UIItemList.New(arg0_6.packContainerTF, arg0_6.packTpl)
 
 	arg0_6.packItemList:make(function(arg0_7, arg1_7, arg2_7)
@@ -79,7 +79,7 @@ function var0_0.initUI(arg0_6)
 	local var1_6 = GetComponent(arg0_6._tf, "ItemList").prefabItem[0]
 	local var2_6 = tf(Instantiate(var1_6))
 
-	setActive(arg0_6:findTF("icon_bg/count", var2_6), true)
+	setActive(var2_6:Find("icon_bg/count"), true)
 	setParent(var2_6, arg0_6.itemTpl)
 	setLocalScale(var2_6, {
 		x = 0.45,
@@ -122,24 +122,24 @@ function var0_0.updateOutline(arg0_10)
 	for iter0_10 = 1, var0_10 do
 		local var1_10 = iter0_10 - 1
 		local var2_10 = arg0_10.packContainerTF:GetChild(var1_10)
-		local var3_10 = arg0_10:findTF("TimeLimit/Text", var2_10):GetComponent(typeof(Text))
+		local var3_10 = var2_10:Find("TimeLimit/Text"):GetComponent(typeof(Text))
 
 		var3_10.material = Object.Instantiate(var3_10.material)
 
-		local var4_10 = arg0_10:findTF("Price/Text", var2_10):GetComponent(typeof(Text))
+		local var4_10 = var2_10:Find("Price/Text"):GetComponent(typeof(Text))
 
 		var4_10.material = Object.Instantiate(var4_10.material)
 
-		local var5_10 = arg0_10:findTF("Mask/Text", var2_10):GetComponent(typeof(Text))
+		local var5_10 = var2_10:Find("Mask/Text"):GetComponent(typeof(Text))
 
 		var5_10.material = Object.Instantiate(var5_10.material)
 	end
 end
 
 function var0_0.updateItem(arg0_11, arg1_11, arg2_11)
-	local var0_11 = arg0_11:findTF("Frame", arg1_11)
-	local var1_11 = arg0_11:findTF("Icon", arg1_11)
-	local var2_11 = arg0_11:findTF("Count", arg1_11)
+	local var0_11 = arg1_11:Find("Frame")
+	local var1_11 = arg1_11:Find("Icon")
+	local var2_11 = arg1_11:Find("Count")
 	local var3_11 = arg2_11.type or arg2_11[1]
 	local var4_11 = arg2_11.id or arg2_11[2]
 	local var5_11 = arg2_11.count or arg2_11[3]
@@ -163,7 +163,7 @@ function var0_0.updateItem(arg0_11, arg1_11, arg2_11)
 	setActive(var1_11, false)
 	setActive(var2_11, false)
 
-	local var7_11 = arg0_11:findTF("CommonItemTemplate(Clone)", arg1_11)
+	local var7_11 = findTF(arg1_11, "CommonItemTemplate(Clone)")
 
 	setActive(var7_11, true)
 	updateDrop(var7_11, {
@@ -197,7 +197,7 @@ function var0_0.updatePack(arg0_12, arg1_12, arg2_12, arg3_12)
 		var1_12 = Item.getConfigData(var2_12[1])
 	end
 
-	local var3_12 = arg0_12:findTF("PackIcon", arg1_12)
+	local var3_12 = arg1_12:Find("PackIcon")
 	local var4_12
 
 	if arg3_12 == var0_0.GiftPackType.Money then
@@ -208,7 +208,7 @@ function var0_0.updatePack(arg0_12, arg1_12, arg2_12, arg3_12)
 
 	setImageSprite(var3_12, LoadSprite(var4_12), true)
 
-	local var5_12 = arg0_12:findTF("PackName", arg1_12)
+	local var5_12 = arg1_12:Find("PackName")
 
 	if arg3_12 == var0_0.GiftPackType.Money then
 		setText(var5_12, arg2_12:getConfig("name_display"))
@@ -216,7 +216,7 @@ function var0_0.updatePack(arg0_12, arg1_12, arg2_12, arg3_12)
 		setText(var5_12, var1_12.name)
 	end
 
-	local var6_12 = arg0_12:findTF("ItemList", arg1_12)
+	local var6_12 = arg1_12:Find("ItemList")
 	local var7_12
 
 	if arg3_12 == var0_0.GiftPackType.Money then
@@ -238,7 +238,7 @@ function var0_0.updatePack(arg0_12, arg1_12, arg2_12, arg3_12)
 	end)
 	var8_12:align(#var7_12)
 
-	local var9_12 = arg0_12:findTF("DescFrame/Text", arg1_12)
+	local var9_12 = arg1_12:Find("DescFrame/Text")
 
 	if arg3_12 == var0_0.GiftPackType.Money then
 		setText(var9_12, arg2_12:getConfig("descrip"))
@@ -246,8 +246,8 @@ function var0_0.updatePack(arg0_12, arg1_12, arg2_12, arg3_12)
 		setText(var9_12, var1_12.display)
 	end
 
-	local var10_12 = arg0_12:findTF("TimeLimit", arg1_12)
-	local var11_12 = arg0_12:findTF("Text", var10_12)
+	local var10_12 = arg1_12:Find("TimeLimit")
+	local var11_12 = var10_12:Find("Text")
 	local var12_12 = arg3_12 ~= var0_0.GiftPackType.Money and arg0_12:isHaveNextPack(var0_0.GiftPackTypeName[arg3_12])
 
 	var12_12 = var12_12 and not arg0_12:isBuyEver(arg2_12.id)
@@ -259,14 +259,14 @@ function var0_0.updatePack(arg0_12, arg1_12, arg2_12, arg3_12)
 		setActive(var10_12, false)
 	end
 
-	local var13_12 = arg0_12:findTF("MoneyTag", arg1_12)
+	local var13_12 = arg1_12:Find("MoneyTag")
 
 	setActive(var13_12, arg3_12 == var0_0.GiftPackType.Money)
 
-	local var14_12 = arg0_12:findTF("Price/IconMoney", arg1_12)
-	local var15_12 = arg0_12:findTF("Price/Icon", arg1_12)
-	local var16_12 = arg0_12:findTF("Price/Icon/Res", arg1_12)
-	local var17_12 = arg0_12:findTF("Price/Text", arg1_12)
+	local var14_12 = arg1_12:Find("Price/IconMoney")
+	local var15_12 = arg1_12:Find("Price/Icon")
+	local var16_12 = arg1_12:Find("Price/Icon/Res")
+	local var17_12 = arg1_12:Find("Price/Text")
 
 	if arg3_12 == var0_0.GiftPackType.Money then
 		setActive(var14_12, true)
@@ -289,15 +289,15 @@ function var0_0.updatePack(arg0_12, arg1_12, arg2_12, arg3_12)
 		setImageSprite(var16_12, LoadSprite(var19_12), true)
 	end
 
-	local var20_12 = arg0_12:findTF("Mask", arg1_12)
+	local var20_12 = arg1_12:Find("Mask")
 	local var21_12 = arg0_12:isBuyEver(arg2_12.id)
 
 	setActive(var20_12, var21_12)
 
 	if var21_12 then
-		local var22_12 = arg0_12:findTF("NextTime", var20_12)
-		local var23_12 = arg0_12:findTF("Text", var20_12)
-		local var24_12 = arg0_12:findTF("Sellout", var20_12)
+		local var22_12 = var20_12:Find("NextTime")
+		local var23_12 = var20_12:Find("Text")
+		local var24_12 = var20_12:Find("Sellout")
 
 		if arg0_12:isHaveNextPack(var0_0.GiftPackTypeName[arg3_12]) then
 			setActive(var22_12, true)

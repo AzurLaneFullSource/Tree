@@ -436,13 +436,13 @@ function var0_0.willExit(arg0_40)
 end
 
 function var0_0.findUI(arg0_41)
-	arg0_41.backBtn = arg0_41:findTF("BackBtn")
-	arg0_41.menuListTF = arg0_41:findTF("MenuList")
-	arg0_41.initARBtn = arg0_41:findTF("InitARBtn", arg0_41.menuListTF)
-	arg0_41.resetBtn = arg0_41:findTF("ResetBtn", arg0_41.menuListTF)
-	arg0_41.tipTextTF = arg0_41:findTF("TipText")
-	arg0_41.tipsLabel = arg0_41:findTF("tipsText", arg0_41.tipTextTF)
-	arg0_41.tipsText = arg0_41:findTF("tipsText/text", arg0_41.tipTextTF)
+	arg0_41.backBtn = arg0_41._tf:Find("BackBtn")
+	arg0_41.menuListTF = arg0_41._tf:Find("MenuList")
+	arg0_41.initARBtn = arg0_41.menuListTF:Find("InitARBtn")
+	arg0_41.resetBtn = arg0_41.menuListTF:Find("ResetBtn")
+	arg0_41.tipTextTF = arg0_41._tf:Find("TipText")
+	arg0_41.tipsLabel = arg0_41.tipTextTF:Find("tipsText")
+	arg0_41.tipsText = arg0_41.tipTextTF:Find("tipsText/text")
 
 	setActive(arg0_41.tipsLabel, false)
 
@@ -451,7 +451,7 @@ function var0_0.findUI(arg0_41)
 	setSizeDelta(arg0_41.fakeARCanvas, Vector2(Screen.width, Screen.height))
 
 	arg0_41.fakeARCamera = GameObject.Find("FakeAR/Main Camera"):GetComponent("Camera")
-	arg0_41.drag = arg0_41:findTF("drag")
+	arg0_41.drag = arg0_41._tf:Find("drag")
 
 	local var0_41 = GameObject.Find("ARScriptHandle")
 

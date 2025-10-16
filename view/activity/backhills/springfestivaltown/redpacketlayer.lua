@@ -41,22 +41,22 @@ function var0_0.initData(arg0_5)
 end
 
 function var0_0.findUI(arg0_6)
-	arg0_6.packetBtn = arg0_6:findTF("Container/PacketBtn")
-	arg0_6.packetMask = arg0_6:findTF("Container/PacketBtnMask")
-	arg0_6.helpBtn = arg0_6:findTF("Container/HelpBtn")
-	arg0_6.tagTF = arg0_6:findTF("tag", arg0_6.packetBtn)
-	arg0_6.countTF = arg0_6:findTF("Container/Count")
-	arg0_6.specialTF = arg0_6:findTF("Container/Count/Special")
-	arg0_6.specialCountText = arg0_6:findTF("Text", arg0_6.specialTF)
-	arg0_6.normalTF = arg0_6:findTF("Container/Count/Normal")
-	arg0_6.normalCountText = arg0_6:findTF("Text", arg0_6.normalTF)
+	arg0_6.packetBtn = arg0_6._tf:Find("Container/PacketBtn")
+	arg0_6.packetMask = arg0_6._tf:Find("Container/PacketBtnMask")
+	arg0_6.helpBtn = arg0_6._tf:Find("Container/HelpBtn")
+	arg0_6.tagTF = arg0_6.packetBtn:Find("tag")
+	arg0_6.countTF = arg0_6._tf:Find("Container/Count")
+	arg0_6.specialTF = arg0_6._tf:Find("Container/Count/Special")
+	arg0_6.specialCountText = arg0_6.specialTF:Find("Text")
+	arg0_6.normalTF = arg0_6._tf:Find("Container/Count/Normal")
+	arg0_6.normalCountText = arg0_6.normalTF:Find("Text")
 	arg0_6.awardBtnList = {}
 
-	table.insert(arg0_6.awardBtnList, arg0_6:findTF("Container/Award"))
-	table.insert(arg0_6.awardBtnList, arg0_6:findTF("Container/Award2"))
+	table.insert(arg0_6.awardBtnList, arg0_6._tf:Find("Container/Award"))
+	table.insert(arg0_6.awardBtnList, arg0_6._tf:Find("Container/Award2"))
 
-	arg0_6.countText = arg0_6:findTF("Container/CountText")
-	arg0_6.backBtn = arg0_6:findTF("Top/BackBtn")
+	arg0_6.countText = arg0_6._tf:Find("Container/CountText")
+	arg0_6.backBtn = arg0_6._tf:Find("Top/BackBtn")
 end
 
 function var0_0.addListener(arg0_7)

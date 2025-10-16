@@ -11,7 +11,7 @@ function var0_0.OnInit(arg0_2)
 	end, SFX_PANEL)
 	setActive(arg0_2.icon, false)
 
-	arg0_2.iconRaw = arg0_2:findTF("frame/icon/Image_raw"):GetComponent(typeof(RawImage))
+	arg0_2.iconRaw = arg0_2._tf:Find("frame/icon/Image_raw"):GetComponent(typeof(RawImage))
 
 	setActive(arg0_2.leftArrBtn, false)
 	setActive(arg0_2.rightArrBtn, false)

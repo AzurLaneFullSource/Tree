@@ -5,15 +5,15 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.close = arg0_2:findTF("bg/frame/close_btn")
-	arg0_2.scrollrect = arg0_2:findTF("bg/frame/scrollrect"):GetComponent("LScrollRect")
-	arg0_2.levelTxt = arg0_2:findTF("bg/frame/level/Text"):GetComponent(typeof(Text))
-	arg0_2.descPanel = arg0_2:findTF("desc_panel")
+	arg0_2.close = arg0_2._tf:Find("bg/frame/close_btn")
+	arg0_2.scrollrect = arg0_2._tf:Find("bg/frame/scrollrect"):GetComponent("LScrollRect")
+	arg0_2.levelTxt = arg0_2._tf:Find("bg/frame/level/Text"):GetComponent(typeof(Text))
+	arg0_2.descPanel = arg0_2._tf:Find("desc_panel")
 	arg0_2.descLevelTxt = arg0_2.descPanel:Find("frame/level"):GetComponent(typeof(Text))
 	arg0_2.descTxt = arg0_2.descPanel:Find("frame/Text"):GetComponent(typeof(Text))
-	arg0_2.expTxt = arg0_2:findTF("bg/frame/level/exp"):GetComponent(typeof(Text))
+	arg0_2.expTxt = arg0_2._tf:Find("bg/frame/level/exp"):GetComponent(typeof(Text))
 
-	setText(arg0_2:findTF("bg/frame/level/label"), i18n("commander_home_level_label"))
+	setText(arg0_2._tf:Find("bg/frame/level/label"), i18n("commander_home_level_label"))
 end
 
 function var0_0.OnInit(arg0_3)

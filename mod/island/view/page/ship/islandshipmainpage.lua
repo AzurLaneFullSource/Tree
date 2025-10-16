@@ -13,13 +13,13 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.backBtn = arg0_2:findTF("top/back")
-	arg0_2.homeBtn = arg0_2:findTF("top/home")
-	arg0_2.leftPanel = arg0_2:findTF("adapt/left_panel")
-	arg0_2.dockBtn = arg0_2:findTF("adapt/left_panel/dock_btn")
-	arg0_2.togglePanel = arg0_2:findTF("top/toggles")
-	arg0_2.shipRect = arg0_2:findTF("adapt/left_panel/ships"):GetComponent("LScrollRect")
-	arg0_2.shipContainer = arg0_2:findTF("adapt/left_panel/ships/content")
+	arg0_2.backBtn = arg0_2._tf:Find("top/back")
+	arg0_2.homeBtn = arg0_2._tf:Find("top/home")
+	arg0_2.leftPanel = arg0_2._tf:Find("adapt/left_panel")
+	arg0_2.dockBtn = arg0_2._tf:Find("adapt/left_panel/dock_btn")
+	arg0_2.togglePanel = arg0_2._tf:Find("top/toggles")
+	arg0_2.shipRect = arg0_2._tf:Find("adapt/left_panel/ships"):GetComponent("LScrollRect")
+	arg0_2.shipContainer = arg0_2._tf:Find("adapt/left_panel/ships/content")
 
 	function arg0_2.shipRect.onInitItem(arg0_3)
 		arg0_2:OnInitItem(arg0_3)
@@ -30,10 +30,10 @@ function var0_0.OnLoaded(arg0_2)
 	end
 
 	arg0_2.toggles = {
-		[var0_0.PAGE_INFO] = arg0_2:findTF("top/toggles/info"),
-		[var0_0.PAGE_DRESS] = arg0_2:findTF("top/toggles/dress"),
-		[var0_0.PAGE_STATUS] = arg0_2:findTF("top/toggles/gift"),
-		[var0_0.PAGE_PROFILE] = arg0_2:findTF("top/toggles/data")
+		[var0_0.PAGE_INFO] = arg0_2._tf:Find("top/toggles/info"),
+		[var0_0.PAGE_DRESS] = arg0_2._tf:Find("top/toggles/dress"),
+		[var0_0.PAGE_STATUS] = arg0_2._tf:Find("top/toggles/gift"),
+		[var0_0.PAGE_PROFILE] = arg0_2._tf:Find("topapt/toggles/data")
 	}
 	arg0_2.pages = {
 		[var0_0.PAGE_INFO] = IslandShipInfoPage,
@@ -44,12 +44,12 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.cards = {}
 
 	setActive(arg0_2.togglePanel, true)
-	setText(arg0_2:findTF("top/title/Text"), i18n("island_chara_totalname"))
-	setText(arg0_2:findTF("top/title/Text/en"), i18n("island_chara_totalname_en"))
+	setText(arg0_2._tf:Find("top/title/Text"), i18n("island_chara_totalname"))
+	setText(arg0_2._tf:Find("top/title/Text/en"), i18n("island_chara_totalname_en"))
 end
 
 function var0_0.GetSmoothRotateObject(arg0_5)
-	return arg0_5:findTF("adapt/char")
+	return arg0_5._tf:Find("adapt/char")
 end
 
 function var0_0.AddListeners(arg0_6)
@@ -107,6 +107,12 @@ function var0_0.OnTriggerPage(arg0_13, arg1_13)
 end
 
 function var0_0.OnInit(arg0_14)
+	onButton(arg0_14, arg0_14._tf:Find("top/title/help"), function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.island_help_character_info.tip
+		})
+	end, SFX_PANEL)
 	onButton(arg0_14, arg0_14.homeBtn, function()
 		arg0_14:OnHome()
 	end, SFX_PANEL)
@@ -127,8 +133,8 @@ function var0_0.OnInit(arg0_14)
 	end, SFX_PANEL)
 
 	for iter0_14, iter1_14 in ipairs(arg0_14.toggles) do
-		onToggle(arg0_14, iter1_14, function(arg0_19)
-			if arg0_19 then
+		onToggle(arg0_14, iter1_14, function(arg0_20)
+			if arg0_20 then
 				if arg0_14.childPage then
 					arg0_14.childPage:CheckInReturn(function()
 						arg0_14:SwitchPage(iter0_14)
@@ -141,233 +147,233 @@ function var0_0.OnInit(arg0_14)
 	end
 end
 
-function var0_0.SwitchPage(arg0_21, arg1_21)
-	if not arg0_21.contextData.selectedId then
+function var0_0.SwitchPage(arg0_22, arg1_22)
+	if not arg0_22.contextData.selectedId then
 		return
 	end
 
-	if arg0_21.page then
-		arg0_21:ClosePage(arg0_21.page)
+	if arg0_22.page then
+		arg0_22:ClosePage(arg0_22.page)
 
-		arg0_21.page = nil
+		arg0_22.page = nil
 	end
 
-	local var0_21 = arg0_21.pages[arg1_21]
+	local var0_22 = arg0_22.pages[arg1_22]
 
-	if arg1_21 == 1 then
-		arg0_21.childPage = arg0_21:OpenPage(var0_21, arg0_21.contextData.selectedId, false, arg0_21.shipDressHelper, function(arg0_22)
-			arg0_21:SetObjInitRotaion(arg0_22)
+	if arg1_22 == 1 then
+		arg0_22.childPage = arg0_22:OpenPage(var0_22, arg0_22.contextData.selectedId, false, arg0_22.shipDressHelper, function(arg0_23)
+			arg0_22:SetObjInitRotaion(arg0_23)
 		end)
 	else
-		arg0_21:OpenPage(var0_21, arg0_21.contextData.selectedId)
+		arg0_22:OpenPage(var0_22, arg0_22.contextData.selectedId)
 
-		arg0_21.childPage = nil
+		arg0_22.childPage = nil
 	end
 
-	arg0_21.page = var0_21
+	arg0_22.page = var0_22
 end
 
-function var0_0.TriggerPage(arg0_23, arg1_23)
-	local var0_23 = arg0_23.toggles[arg1_23]
+function var0_0.TriggerPage(arg0_24, arg1_24)
+	local var0_24 = arg0_24.toggles[arg1_24]
 
-	triggerToggle(var0_23, true)
+	triggerToggle(var0_24, true)
 end
 
-function var0_0.Show(arg0_24)
-	var0_0.super.Show(arg0_24)
-	arg0_24:Flush()
+function var0_0.Show(arg0_25)
+	var0_0.super.Show(arg0_25)
+	arg0_25:Flush()
 end
 
-function var0_0.Flush(arg0_25)
-	local var0_25 = getProxy(IslandProxy):GetIsland():GetCharacterAgency()
+function var0_0.Flush(arg0_26)
+	local var0_26 = getProxy(IslandProxy):GetIsland():GetCharacterAgency()
 
-	arg0_25:FlushShips(var0_25)
-	arg0_25:ActiveDefaultCard()
+	arg0_26:FlushShips(var0_26)
+	arg0_26:ActiveDefaultCard()
 end
 
-function var0_0.ActiveDefaultCard(arg0_26)
-	if arg0_26.contextData.selectedId then
-		local var0_26 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipById(arg0_26.contextData.selectedId)
+function var0_0.ActiveDefaultCard(arg0_27)
+	if arg0_27.contextData.selectedId then
+		local var0_27 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipById(arg0_27.contextData.selectedId)
 
-		arg0_26.contextData.selectedId = nil
+		arg0_27.contextData.selectedId = nil
 
-		arg0_26:UpdateMainView(var0_26)
-		setActive(arg0_26.togglePanel, true)
+		arg0_27:UpdateMainView(var0_27)
+		setActive(arg0_27.togglePanel, true)
 	end
 end
 
-function var0_0.OnInitItem(arg0_27, arg1_27)
-	local var0_27 = IslandMiniShipCard.New(arg1_27)
+function var0_0.OnInitItem(arg0_28, arg1_28)
+	local var0_28 = IslandMiniShipCard.New(arg1_28)
 
-	onButton(arg0_27, var0_27.go, function()
-		if arg0_27.childPage then
-			arg0_27.childPage:CheckInReturn(function()
-				arg0_27.childPage = nil
+	onButton(arg0_28, var0_28.go, function()
+		if arg0_28.childPage then
+			arg0_28.childPage:CheckInReturn(function()
+				arg0_28.childPage = nil
 
-				arg0_27:ClickCard(var0_27.ship, var0_27.configId)
+				arg0_28:ClickCard(var0_28.ship, var0_28.configId)
 			end)
 		else
-			arg0_27:ClickCard(var0_27.ship, var0_27.configId)
+			arg0_28:ClickCard(var0_28.ship, var0_28.configId)
 		end
 	end, SFX_PANEL)
 
-	arg0_27.cards[arg1_27] = var0_27
+	arg0_28.cards[arg1_28] = var0_28
 end
 
-function var0_0.ClickCard(arg0_30, arg1_30, arg2_30)
-	if arg1_30 then
-		arg0_30:ClearSelected(arg0_30.contextData.selectedId)
-		arg0_30:UpdateMainView(arg1_30)
-		arg0_30:MarkSelected(arg2_30)
+function var0_0.ClickCard(arg0_31, arg1_31, arg2_31)
+	if arg1_31 then
+		arg0_31:ClearSelected(arg0_31.contextData.selectedId)
+		arg0_31:UpdateMainView(arg1_31)
+		arg0_31:MarkSelected(arg2_31)
 	else
-		arg0_30:UpdateUnlockView(arg2_30)
+		arg0_31:UpdateUnlockView(arg2_31)
 	end
 end
 
-function var0_0.ClearSelected(arg0_31, arg1_31)
-	for iter0_31, iter1_31 in pairs(arg0_31.cards) do
-		if iter1_31.configId == arg1_31 then
-			iter1_31:UpdateSelected(nil)
-
-			break
-		end
-	end
-end
-
-function var0_0.MarkSelected(arg0_32, arg1_32)
+function var0_0.ClearSelected(arg0_32, arg1_32)
 	for iter0_32, iter1_32 in pairs(arg0_32.cards) do
 		if iter1_32.configId == arg1_32 then
-			iter1_32:UpdateSelected(iter1_32.configId)
+			iter1_32:UpdateSelected(nil)
 
 			break
 		end
 	end
 end
 
-function var0_0.OnUpdateItem(arg0_33, arg1_33, arg2_33)
-	local var0_33 = arg0_33.cards[arg2_33]
+function var0_0.MarkSelected(arg0_33, arg1_33)
+	for iter0_33, iter1_33 in pairs(arg0_33.cards) do
+		if iter1_33.configId == arg1_33 then
+			iter1_33:UpdateSelected(iter1_33.configId)
 
-	if not var0_33 then
-		arg0_33:OnInitItem(arg2_33)
+			break
+		end
+	end
+end
 
-		var0_33 = arg0_33.cards[arg2_33]
+function var0_0.OnUpdateItem(arg0_34, arg1_34, arg2_34)
+	local var0_34 = arg0_34.cards[arg2_34]
+
+	if not var0_34 then
+		arg0_34:OnInitItem(arg2_34)
+
+		var0_34 = arg0_34.cards[arg2_34]
 	end
 
-	local var1_33 = arg0_33.displays[arg1_33 + 1]
+	local var1_34 = arg0_34.displays[arg1_34 + 1]
 
-	if not var1_33 then
+	if not var1_34 then
 		return
 	end
 
-	var0_33:Update(var1_33, arg0_33.contextData.selectedId)
+	var0_34:Update(var1_34, arg0_34.contextData.selectedId)
 end
 
-function var0_0.FlushShips(arg0_34, arg1_34)
-	arg0_34.displays = {}
-	arg0_34.displays = arg1_34:GetUnlockOrCanUnlockShipConfigIds()
+function var0_0.FlushShips(arg0_35, arg1_35)
+	arg0_35.displays = {}
+	arg0_35.displays = arg1_35:GetUnlockOrCanUnlockShipConfigIds()
 
-	local var0_34
+	local var0_35
 
-	if #arg0_34.displays > 0 then
-		var0_34 = arg1_34:GetShipById(arg0_34.displays[1])
+	if #arg0_35.displays > 0 then
+		var0_35 = arg1_35:GetShipById(arg0_35.displays[1])
 	end
 
-	arg0_34.contextData.selectedId = arg0_34.contextData.selectedId or var0_34 and var0_34.configId
+	arg0_35.contextData.selectedId = arg0_35.contextData.selectedId or var0_35 and var0_35.configId
 
-	arg0_34.shipRect:SetTotalCount(#arg0_34.displays)
+	arg0_35.shipRect:SetTotalCount(#arg0_35.displays)
 end
 
-function var0_0.CalcShipLayout(arg0_35)
-	local var0_35 = arg0_35.shipContainer.rect.height
-	local var1_35 = arg0_35.shipRect.gameObject.transform
+function var0_0.CalcShipLayout(arg0_36)
+	local var0_36 = arg0_36.shipContainer.rect.height
+	local var1_36 = arg0_36.shipRect.gameObject.transform
 
-	if var0_35 < var1_35.rect.height then
-		local var2_35 = (arg0_35._tf.rect.height - var0_35) * 0.5
+	if var0_36 < var1_36.rect.height then
+		local var2_36 = (arg0_36._tf.rect.height - var0_36) * 0.5
 
-		var1_35.offsetMax = Vector2(var1_35.offsetMax.x, -var2_35)
-		var1_35.offsetMin = Vector2(var1_35.offsetMin.x, var2_35)
+		var1_36.offsetMax = Vector2(var1_36.offsetMax.x, -var2_36)
+		var1_36.offsetMin = Vector2(var1_36.offsetMin.x, var2_36)
 	end
 end
 
-function var0_0.UpdateMainView(arg0_36, arg1_36)
-	if arg0_36.contextData.selectedId == arg1_36.configId then
+function var0_0.UpdateMainView(arg0_37, arg1_37)
+	if arg0_37.contextData.selectedId == arg1_37.configId then
 		return
 	end
 
-	if not arg0_36.shipDressHelper then
-		arg0_36.shipDressHelper = IslandShipDressHelperNew.New()
+	if not arg0_37.shipDressHelper then
+		arg0_37.shipDressHelper = IslandShipDressHelperNew.New()
 	end
 
-	arg0_36.shipDressHelper:SetShipId(arg1_36.configId)
-	arg0_36:LoadCharacter(arg1_36:GetModel())
+	arg0_37.shipDressHelper:SetShipId(arg1_37.configId)
+	arg0_37:LoadCharacter(arg1_37:GetModel())
 
-	arg0_36.contextData.selectedId = arg1_36.configId
+	arg0_37.contextData.selectedId = arg1_37.configId
 
-	arg0_36:TriggerPage(var0_0.PAGE_INFO)
+	arg0_37:TriggerPage(var0_0.PAGE_INFO)
 end
 
-function var0_0.UpdateUnlockView(arg0_37, arg1_37)
-	local var0_37 = pg.island_chara_template[arg1_37].name
+function var0_0.UpdateUnlockView(arg0_38, arg1_38)
+	local var0_38 = pg.island_chara_template[arg1_38].name
 
-	arg0_37:ShowMsgBox({
+	arg0_38:ShowMsgBox({
 		content = i18n("island_open_ship_tip"),
 		onYes = function()
-			arg0_37:Hide()
-			arg0_37:emit(IslandBaseMediator.SWITCH_MAP, IslandConst.LABORATORY_MAP_ID, IslandConst.LETTEROFINVITATION_SP)
+			arg0_38:Hide()
+			arg0_38:emit(IslandBaseMediator.SWITCH_MAP, IslandConst.LABORATORY_MAP_ID, IslandConst.LETTEROFINVITATION_SP)
 		end
 	})
 end
 
-function var0_0.OnDestroy(arg0_39)
-	var0_0.super.OnDestroy(arg0_39)
-	ClearLScrollrect(arg0_39.shipRect)
+function var0_0.OnDestroy(arg0_40)
+	var0_0.super.OnDestroy(arg0_40)
+	ClearLScrollrect(arg0_40.shipRect)
 
-	for iter0_39, iter1_39 in pairs(arg0_39.cards or {}) do
-		iter1_39:Dispose()
+	for iter0_40, iter1_40 in pairs(arg0_40.cards or {}) do
+		iter1_40:Dispose()
 	end
 
-	arg0_39.cards = nil
+	arg0_40.cards = nil
 
-	if arg0_39.timer then
-		arg0_39.timer:Stop()
+	if arg0_40.timer then
+		arg0_40.timer:Stop()
 	end
 
-	if arg0_39.shipDressHelper then
-		arg0_39.shipDressHelper:Destroy()
-	end
-end
-
-function var0_0.OnHide(arg0_40)
 	if arg0_40.shipDressHelper then
 		arg0_40.shipDressHelper:Destroy()
 	end
 end
 
-function var0_0.OnCharLoaded(arg0_41, arg1_41)
+function var0_0.OnHide(arg0_41)
 	if arg0_41.shipDressHelper then
-		arg0_41.shipDressHelper:OnRoleLoaded(arg0_41.role.transform, arg1_41)
+		arg0_41.shipDressHelper:Destroy()
 	end
 end
 
-function var0_0.SetObjInitRotaion(arg0_42, arg1_42)
-	local var0_42 = arg0_42:GetSmoothRotateObject()
-	local var1_42 = GetOrAddComponent(var0_42, typeof(SmoothRotateObject))
+function var0_0.OnCharLoaded(arg0_42, arg1_42)
+	if arg0_42.shipDressHelper then
+		arg0_42.shipDressHelper:OnRoleLoaded(arg0_42.role.transform, arg1_42)
+	end
+end
 
-	var1_42.rotationSpeed = 5
+function var0_0.SetObjInitRotaion(arg0_43, arg1_43)
+	local var0_43 = arg0_43:GetSmoothRotateObject()
+	local var1_43 = GetOrAddComponent(var0_43, typeof(SmoothRotateObject))
 
-	ReflectionHelp.RefSetProperty(typeof(SmoothRotateObject), "targetRotation", var1_42, arg1_42)
+	var1_43.rotationSpeed = 5
 
-	if arg0_42.timer then
-		arg0_42.timer:Stop()
+	ReflectionHelp.RefSetProperty(typeof(SmoothRotateObject), "targetRotation", var1_43, arg1_43)
+
+	if arg0_43.timer then
+		arg0_43.timer:Stop()
 	end
 
-	arg0_42.timer = Timer.New(function()
-		local var0_43 = pg.island_set.character_detail_camera_speed.key_value_int
+	arg0_43.timer = Timer.New(function()
+		local var0_44 = pg.island_set.character_detail_camera_speed.key_value_int
 
-		var1_42.rotationSpeed = var0_43
+		var1_43.rotationSpeed = var0_44
 	end, 0.5, 1)
 
-	arg0_42.timer:Start()
+	arg0_43.timer:Start()
 end
 
 return var0_0

@@ -23,6 +23,7 @@ function var0_0.SetUp(arg0_3)
 	arg0_3.hudContainer = arg0_3.baseContainer:Find("layer1/hud")
 	arg0_3.pageContianer = arg0_3.baseContainer:Find("layer1/page")
 	arg0_3.layer2UIContianer = arg0_3.baseContainer:Find("layer2/ui")
+	arg0_3.layer2OpContianer = arg0_3.baseContainer:Find("layer2/op")
 	arg0_3.root = arg0_3:CreateRoot()
 
 	arg0_3:Init()
@@ -138,59 +139,63 @@ function var0_0.InMap(arg0_24, arg1_24)
 	return arg0_24:GetCore():GetMapId() == arg1_24
 end
 
-function var0_0.AddListener(arg0_25, arg1_25, arg2_25)
-	local function var0_25(arg0_26, ...)
-		arg2_25(arg0_25, ...)
-	end
-
-	assert(arg0_25.callbacks[arg2_25] == nil, "This method has been monitored. Please use another one" .. arg1_25)
-
-	arg0_25.callbacks[arg2_25] = var0_25
-
-	arg0_25.core:AddListener(arg1_25, var0_25)
+function var0_0.GetMapId(arg0_25)
+	return arg0_25:GetCore():GetMapId()
 end
 
-function var0_0.RemoveListener(arg0_27, arg1_27, arg2_27)
-	local var0_27 = arg0_27.callbacks[arg2_27]
+function var0_0.AddListener(arg0_26, arg1_26, arg2_26)
+	local function var0_26(arg0_27, ...)
+		arg2_26(arg0_26, ...)
+	end
 
-	if var0_27 then
-		arg0_27.core:RemoveListener(arg1_27, var0_27)
+	assert(arg0_26.callbacks[arg2_26] == nil, "This method has been monitored. Please use another one" .. arg1_26)
 
-		arg0_27.callbacks[var0_27] = nil
+	arg0_26.callbacks[arg2_26] = var0_26
+
+	arg0_26.core:AddListener(arg1_26, var0_26)
+end
+
+function var0_0.RemoveListener(arg0_28, arg1_28, arg2_28)
+	local var0_28 = arg0_28.callbacks[arg2_28]
+
+	if var0_28 then
+		arg0_28.core:RemoveListener(arg1_28, var0_28)
+
+		arg0_28.callbacks[var0_28] = nil
 	end
 end
 
-function var0_0.Dispose(arg0_28)
+function var0_0.Dispose(arg0_29)
 	pg.BgmMgr.GetInstance():StopPlay()
-	arg0_28:RemoveListeners()
-	arg0_28:OnDispose()
+	arg0_29:RemoveListeners()
+	arg0_29:OnDispose()
 
-	arg0_28.callbacks = nil
-	arg0_28.unitRegister = nil
-	arg0_28.registerIndex = 0
+	arg0_29.callbacks = nil
+	arg0_29.unitRegister = nil
+	arg0_29.registerIndex = 0
 end
 
-function var0_0.Init(arg0_29)
+function var0_0.Init(arg0_30)
 	return
 end
 
-function var0_0.Update(arg0_30)
+function var0_0.Update(arg0_31)
 	return
 end
 
-function var0_0.LateUpdate(arg0_31)
+function var0_0.LateUpdate(arg0_32)
 	return
 end
 
-function var0_0.AddListeners(arg0_32)
+function var0_0.AddListeners(arg0_33)
 	return
 end
 
-function var0_0.RemoveListeners(arg0_33)
+function var0_0.RemoveListeners(arg0_34)
 	return
 end
 
-function var0_0.OnDispose(arg0_34)
+function var0_0.OnDispose(arg0_35)
 	return
 end
 

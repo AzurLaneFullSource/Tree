@@ -1,12 +1,12 @@
 local var0_0 = class("NeptuneTecCatchupPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.itemTF = arg0_1:findTF("Award", arg0_1.bg)
-	arg0_1.sliderTF = arg0_1:findTF("Slider", arg0_1.bg)
-	arg0_1.progressText = arg0_1:findTF("Progress", arg0_1.bg)
-	arg0_1.goBtn = arg0_1:findTF("GoBtn", arg0_1.bg)
-	arg0_1.finishBtn = arg0_1:findTF("FinishBtn", arg0_1.bg)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.itemTF = arg0_1.bg:Find("Award")
+	arg0_1.sliderTF = arg0_1.bg:Find("Slider")
+	arg0_1.progressText = arg0_1.bg:Find("Progress")
+	arg0_1.goBtn = arg0_1.bg:Find("GoBtn")
+	arg0_1.finishBtn = arg0_1.bg:Find("FinishBtn")
 end
 
 function var0_0.OnDataSetting(arg0_2)

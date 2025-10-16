@@ -5,10 +5,10 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.confrimBtn = arg0_2:findTF("frame/confirm_btn")
-	arg0_2.skillTpl = arg0_2:findTF("frame/skill_container/content/skill")
-	arg0_2.emptyTpl = arg0_2:findTF("frame/skill_container/content/empty")
-	arg0_2.toggleGroup = arg0_2:findTF("frame/skill_container/content"):GetComponent(typeof(ToggleGroup))
+	arg0_2.confrimBtn = arg0_2._tf:Find("frame/confirm_btn")
+	arg0_2.skillTpl = arg0_2._tf:Find("frame/skill_container/content/skill")
+	arg0_2.emptyTpl = arg0_2._tf:Find("frame/skill_container/content/empty")
+	arg0_2.toggleGroup = arg0_2._tf:Find("frame/skill_container/content"):GetComponent(typeof(ToggleGroup))
 	arg0_2.skillCards = {
 		NewNavalTacticsSkillCard.New(arg0_2.skillTpl)
 	}
@@ -17,7 +17,7 @@ function var0_0.OnLoaded(arg0_2)
 	}
 
 	setText(arg0_2.confrimBtn:Find("Image"), i18n("tactics_class_start"))
-	setText(arg0_2:findTF("frame/bg/title"), i18n("nav_tactics_sel_skill_title"))
+	setText(arg0_2._tf:Find("frame/bg/title"), i18n("nav_tactics_sel_skill_title"))
 end
 
 function var0_0.SetCancelCallback(arg0_3, arg1_3)

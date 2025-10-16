@@ -1,10 +1,11 @@
 local var0_0 = class("Dorm3dFurniture", import("model.vo.BaseVO"))
 
 var0_0.TYPE = {
-	DECORATION = 3,
+	SPECIAL = 99,
 	FLOOR = 2,
-	COUCH = 5,
+	DECORATION = 3,
 	BED = 4,
+	COUCH = 5,
 	WALLPAPER = 1,
 	TABLE = 6
 }
@@ -14,7 +15,8 @@ var0_0.TYPE2NAME = {
 	"dorm3d_furnitrue_type_decoration",
 	"dorm3d_furnitrue_type_bed",
 	"dorm3d_furnitrue_type_couch",
-	"dorm3d_furnitrue_type_table"
+	"dorm3d_furnitrue_type_table",
+	[99] = "dorm3d_furnitrue_type_special"
 }
 
 function var0_0.bindConfigTable(arg0_1)

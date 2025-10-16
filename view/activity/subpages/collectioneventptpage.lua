@@ -1,13 +1,13 @@
 local var0_0 = class("CollectionEventPtPage", import("view.base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.helpBtn = arg0_1:findTF("help", arg0_1.bg)
-	arg0_1.shopBtn = arg0_1:findTF("shop", arg0_1.bg)
-	arg0_1.eventBtn = arg0_1:findTF("event", arg0_1.bg)
-	arg0_1.resTF = arg0_1:findTF("res", arg0_1.bg)
-	arg0_1.resIcon = arg0_1:findTF("icon", arg0_1.resTF):GetComponent(typeof(Image))
-	arg0_1.resNum = arg0_1:findTF("num", arg0_1.resTF):GetComponent(typeof(Text))
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.helpBtn = arg0_1.bg:Find("help")
+	arg0_1.shopBtn = arg0_1.bg:Find("shop")
+	arg0_1.eventBtn = arg0_1.bg:Find("event")
+	arg0_1.resTF = arg0_1.bg:Find("res")
+	arg0_1.resIcon = arg0_1.resTF:Find("icon"):GetComponent(typeof(Image))
+	arg0_1.resNum = arg0_1.resTF:Find("num"):GetComponent(typeof(Text))
 end
 
 function var0_0.OnDataSetting(arg0_2)

@@ -16,10 +16,10 @@ function var0_0.OnFirstFlush(arg0_2)
 		if arg0_3 == UIItemList.EventUpdate then
 			arg1_3 = arg1_3 + 1
 
-			local var0_3 = arg0_2:findTF("Locked", arg2_3)
-			local var1_3 = arg0_2:findTF("Unlocked", arg2_3)
-			local var2_3 = arg0_2:findTF("Finished", arg2_3)
-			local var3_3 = arg0_2:findTF("FinalFinished", arg2_3)
+			local var0_3 = arg2_3:Find("Locked")
+			local var1_3 = arg2_3:Find("Unlocked")
+			local var2_3 = arg2_3:Find("Finished")
+			local var3_3 = arg2_3:Find("FinalFinished")
 
 			setActive(var0_3, arg1_3 > arg0_2.curDay)
 

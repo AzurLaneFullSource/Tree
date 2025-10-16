@@ -27,9 +27,9 @@ function var0_0.preload(arg0_3, arg1_3)
 end
 
 function var0_0.init(arg0_4)
-	arg0_4.top = arg0_4:findTF("top")
-	arg0_4._bg = arg0_4:findTF("BG")
-	arg0_4._map = arg0_4:findTF("map")
+	arg0_4.top = arg0_4._tf:Find("top")
+	arg0_4._bg = arg0_4._tf:Find("BG")
+	arg0_4._map = arg0_4._tf:Find("map")
 
 	for iter0_4 = 0, arg0_4._map.childCount - 1 do
 		local var0_4 = arg0_4._map:GetChild(iter0_4)
@@ -38,7 +38,7 @@ function var0_0.init(arg0_4)
 		arg0_4["map_" .. var1_4] = var0_4
 	end
 
-	arg0_4._upper = arg0_4:findTF("upper")
+	arg0_4._upper = arg0_4._tf:Find("upper")
 
 	for iter1_4 = 0, arg0_4._upper.childCount - 1 do
 		local var2_4 = arg0_4._upper:GetChild(iter1_4)
@@ -56,13 +56,13 @@ function var0_0.init(arg0_4)
 end
 
 function var0_0.didEnter(arg0_5)
-	onButton(arg0_5, arg0_5:findTF("top/Back"), function()
+	onButton(arg0_5, arg0_5._tf:Find("top/Back"), function()
 		arg0_5:onBackPressed()
 	end, SFX_CANCEL)
-	onButton(arg0_5, arg0_5:findTF("top/Home"), function()
+	onButton(arg0_5, arg0_5._tf:Find("top/Home"), function()
 		arg0_5:emit(var0_0.ON_HOME)
 	end, SFX_PANEL)
-	onButton(arg0_5, arg0_5:findTF("top/Help"), function()
+	onButton(arg0_5, arg0_5._tf:Find("top/Help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.haidaojudian_help.tip
@@ -208,8 +208,8 @@ function var0_0.RegisterDataResponse(arg0_19)
 		var2_22("xianshijianzao")
 		var2_22("huanzhuangshangdian")
 		var2_22("taskboard")
-		var1_22.loader:GetSpriteQuiet("ui/" .. arg0_19:getUIName() .. "_atlas", "title_" .. var0_22, var1_22:findTF("top/Title/Number"), true)
-		var1_22.loader:GetSpriteQuiet("ui/" .. arg0_19:getUIName() .. "_level" .. var0_22, "bg", var1_22:findTF("map"))
+		var1_22.loader:GetSpriteQuiet("ui/" .. arg0_19:getUIName() .. "_atlas", "title_" .. var0_22, var1_22._tf:Find("top/Title/Number"), true)
+		var1_22.loader:GetSpriteQuiet("ui/" .. arg0_19:getUIName() .. "_level" .. var0_22, "bg", var1_22._tf:Find("map"))
 	end, {
 		useOldRef = true
 	})

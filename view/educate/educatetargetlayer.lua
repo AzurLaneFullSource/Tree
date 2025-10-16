@@ -19,67 +19,67 @@ function var0_0.initData(arg0_3)
 end
 
 function var0_0.findUI(arg0_4)
-	arg0_4.anim = arg0_4:findTF("anim_root"):GetComponent(typeof(Animation))
-	arg0_4.animEvent = arg0_4:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
+	arg0_4.anim = arg0_4._tf:Find("anim_root"):GetComponent(typeof(Animation))
+	arg0_4.animEvent = arg0_4._tf:Find("anim_root"):GetComponent(typeof(DftAniEvent))
 
 	arg0_4.animEvent:SetEndEvent(function()
 		arg0_4:emit(var0_0.ON_CLOSE)
 	end)
 
-	arg0_4.windowTF = arg0_4:findTF("anim_root/window")
-	arg0_4.leftTF = arg0_4:findTF("left/content", arg0_4.windowTF)
-	arg0_4.leftEmptyTF = arg0_4:findTF("left/empty", arg0_4.windowTF)
+	arg0_4.windowTF = arg0_4._tf:Find("anim_root/window")
+	arg0_4.leftTF = arg0_4.windowTF:Find("left/content")
+	arg0_4.leftEmptyTF = arg0_4.windowTF:Find("left/empty")
 
-	setText(arg0_4:findTF("target_info/Text", arg0_4.leftEmptyTF), i18n("child_target_set_empty"))
+	setText(arg0_4.leftEmptyTF:Find("target_info/Text"), i18n("child_target_set_empty"))
 
-	arg0_4.targetSetBtn = arg0_4:findTF("target_info/target_set_btn", arg0_4.leftEmptyTF)
+	arg0_4.targetSetBtn = arg0_4.leftEmptyTF:Find("target_info/target_set_btn")
 
-	setText(arg0_4:findTF("skip_title", arg0_4.targetSetBtn), i18n("child_target_set_skip"))
+	setText(arg0_4.targetSetBtn:Find("skip_title"), i18n("child_target_set_skip"))
 
-	arg0_4.targetInfoTF = arg0_4:findTF("target_info", arg0_4.leftTF)
-	arg0_4.iconTF = arg0_4:findTF("icon", arg0_4.targetInfoTF)
-	arg0_4.nameTF = arg0_4:findTF("name_bg/name", arg0_4.targetInfoTF)
-	arg0_4.unfinishTF = arg0_4:findTF("unfinish", arg0_4.targetInfoTF)
-	arg0_4.sliderTF = arg0_4:findTF("progress", arg0_4.unfinishTF)
-	arg0_4.progressWhiteTF = arg0_4:findTF("white", arg0_4.sliderTF)
+	arg0_4.targetInfoTF = arg0_4.leftTF:Find("target_info")
+	arg0_4.iconTF = arg0_4.targetInfoTF:Find("icon")
+	arg0_4.nameTF = arg0_4.targetInfoTF:Find("name_bg/name")
+	arg0_4.unfinishTF = arg0_4.targetInfoTF:Find("unfinish")
+	arg0_4.sliderTF = arg0_4.unfinishTF:Find("progress")
+	arg0_4.progressWhiteTF = arg0_4.sliderTF:Find("white")
 
 	setActive(arg0_4.progressWhiteTF, true)
-	setText(arg0_4:findTF("progress/title", arg0_4.unfinishTF), i18n("child_target_progress"))
+	setText(arg0_4.unfinishTF:Find("progress/title"), i18n("child_target_progress"))
 
-	arg0_4.progressTextTF = arg0_4:findTF("progress/title/Text", arg0_4.unfinishTF)
-	arg0_4.targetAwardTF = arg0_4:findTF("award", arg0_4.unfinishTF)
-	arg0_4.finishTF = arg0_4:findTF("finish", arg0_4.targetInfoTF)
+	arg0_4.progressTextTF = arg0_4.unfinishTF:Find("progress/title/Text")
+	arg0_4.targetAwardTF = arg0_4.unfinishTF:Find("award")
+	arg0_4.finishTF = arg0_4.targetInfoTF:Find("finish")
 
-	setText(arg0_4:findTF("Text", arg0_4.finishTF), i18n("child_target_finish_tip"))
-	setText(arg0_4:findTF("time/title", arg0_4.leftTF), i18n("child_target_time_title"))
+	setText(arg0_4.finishTF:Find("Text"), i18n("child_target_finish_tip"))
+	setText(arg0_4.leftTF:Find("time/title"), i18n("child_target_time_title"))
 
-	arg0_4.timeTF = arg0_4:findTF("time/Text", arg0_4.leftTF)
-	arg0_4.taskContentTF = arg0_4:findTF("task_scrollview/content", arg0_4.windowTF)
-	arg0_4.mainTaskTF = arg0_4:findTF("main_list", arg0_4.taskContentTF)
+	arg0_4.timeTF = arg0_4.leftTF:Find("time/Text")
+	arg0_4.taskContentTF = arg0_4.windowTF:Find("task_scrollview/content")
+	arg0_4.mainTaskTF = arg0_4.taskContentTF:Find("main_list")
 
-	setText(arg0_4:findTF("list/tpl/status/get/btn/Text", arg0_4.mainTaskTF), i18n("word_take"))
+	setText(arg0_4.mainTaskTF:Find("list/tpl/status/get/btn/Text"), i18n("word_take"))
 
-	arg0_4.mainTaskUIList = UIItemList.New(arg0_4:findTF("list", arg0_4.mainTaskTF), arg0_4:findTF("list/tpl", arg0_4.mainTaskTF))
-	arg0_4.mainTitleTF = arg0_4:findTF("title/Text", arg0_4.mainTaskTF)
+	arg0_4.mainTaskUIList = UIItemList.New(arg0_4.mainTaskTF:Find("list"), arg0_4.mainTaskTF:Find("list/tpl"))
+	arg0_4.mainTitleTF = arg0_4.mainTaskTF:Find("title/Text")
 
 	setText(arg0_4.mainTitleTF, i18n("child_target_title1"))
 
-	arg0_4.mainProgressTF = arg0_4:findTF("title/progress", arg0_4.mainTaskTF)
+	arg0_4.mainProgressTF = arg0_4.mainTaskTF:Find("title/progress")
 
 	setActive(arg0_4.mainProgressTF, false)
 
-	arg0_4.otherTaskTF = arg0_4:findTF("other_list", arg0_4.taskContentTF)
+	arg0_4.otherTaskTF = arg0_4.taskContentTF:Find("other_list")
 
-	setText(arg0_4:findTF("list/tpl/status/get/btn/Text", arg0_4.otherTaskTF), i18n("word_take"))
+	setText(arg0_4.otherTaskTF:Find("list/tpl/status/get/btn/Text"), i18n("word_take"))
 
-	arg0_4.otherTaskUIList = UIItemList.New(arg0_4:findTF("list", arg0_4.otherTaskTF), arg0_4:findTF("list/tpl", arg0_4.otherTaskTF))
-	arg0_4.otherTitleTF = arg0_4:findTF("title/Text", arg0_4.otherTaskTF)
+	arg0_4.otherTaskUIList = UIItemList.New(arg0_4.otherTaskTF:Find("list"), arg0_4.otherTaskTF:Find("list/tpl"))
+	arg0_4.otherTitleTF = arg0_4.otherTaskTF:Find("title/Text")
 
 	setText(arg0_4.otherTitleTF, i18n("child_target_title2"))
 end
 
 function var0_0.addListener(arg0_6)
-	onButton(arg0_6, arg0_6:findTF("anim_root/close"), function()
+	onButton(arg0_6, arg0_6._tf:Find("anim_root/close"), function()
 		arg0_6:_close()
 	end, SFX_PANEL)
 	onButton(arg0_6, arg0_6.targetSetBtn, function()
@@ -185,8 +185,8 @@ function var0_0.updataTarget(arg0_17)
 	arg0_17.canGetFinishAward = var3_17 and arg0_17.canGetTargetAward
 
 	setActive(arg0_17.unfinishTF, not var3_17 or arg0_17.canGetFinishAward)
-	setActive(arg0_17:findTF("receiveVX", arg0_17.targetAwardTF), arg0_17.canGetFinishAward)
-	setActive(arg0_17:findTF("tip", arg0_17.unfinishTF), arg0_17.canGetFinishAward)
+	setActive(arg0_17.targetAwardTF:Find("receiveVX"), arg0_17.canGetFinishAward)
+	setActive(arg0_17.unfinishTF:Find("tip"), arg0_17.canGetFinishAward)
 	setActive(arg0_17.finishTF, var3_17 and not arg0_17.canGetTargetAward)
 end
 
@@ -216,24 +216,24 @@ end
 function var0_0.updateItem(arg0_22, arg1_22, arg2_22, arg3_22)
 	local var0_22 = arg3_22 == "main" and arg0_22.mainTaskVOs[arg1_22 + 1] or arg0_22.otherTaskVOs[arg1_22 + 1]
 
-	setText(arg0_22:findTF("desc", arg2_22), var0_22:getConfig("name"))
-	setText(arg0_22:findTF("status/go/btn/Text", arg2_22), var0_22:GetProgress() .. "/" .. var0_22:GetFinishNum())
+	setText(arg2_22:Find("desc"), var0_22:getConfig("name"))
+	setText(arg2_22:Find("status/go/btn/Text"), var0_22:GetProgress() .. "/" .. var0_22:GetFinishNum())
 
 	local var1_22 = var0_22:GetTaskStatus()
 
-	setActive(arg0_22:findTF("status/go", arg2_22), var1_22 == EducateTask.STATUS_UNFINISH)
-	setActive(arg0_22:findTF("status/get", arg2_22), var1_22 == EducateTask.STATUS_FINISH)
-	setActive(arg0_22:findTF("status/got", arg2_22), var1_22 == EducateTask.STATUS_RECEIVE)
+	setActive(arg2_22:Find("status/go"), var1_22 == EducateTask.STATUS_UNFINISH)
+	setActive(arg2_22:Find("status/get"), var1_22 == EducateTask.STATUS_FINISH)
+	setActive(arg2_22:Find("status/got"), var1_22 == EducateTask.STATUS_RECEIVE)
 
 	local var2_22 = var0_22:GetAwardShow()
 
-	EducateHelper.UpdateDropShow(arg0_22:findTF("award", arg2_22), var2_22)
-	onButton(arg0_22, arg0_22:findTF("award", arg2_22), function()
+	EducateHelper.UpdateDropShow(arg2_22:Find("award"), var2_22)
+	onButton(arg0_22, arg2_22:Find("award"), function()
 		arg0_22:emit(var0_0.EDUCATE_ON_ITEM, {
 			drop = var2_22
 		})
 	end)
-	onButton(arg0_22, arg0_22:findTF("status/get", arg2_22), function()
+	onButton(arg0_22, arg2_22:Find("status/get"), function()
 		if arg0_22.isClick then
 			return
 		end

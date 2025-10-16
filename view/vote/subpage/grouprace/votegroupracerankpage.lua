@@ -6,9 +6,9 @@ end
 
 function var0_0.OnInit(arg0_2)
 	arg0_2.cards = {}
-	arg0_2.title1 = arg0_2:findTF("stages/title1")
-	arg0_2.title2 = arg0_2:findTF("stages/title2")
-	arg0_2.scrollRect = arg0_2:findTF("scrollrect"):GetComponent("LScrollRect")
+	arg0_2.title1 = arg0_2._tf:Find("stages/title1")
+	arg0_2.title2 = arg0_2._tf:Find("stages/title2")
+	arg0_2.scrollRect = arg0_2._tf:Find("scrollrect"):GetComponent("LScrollRect")
 
 	function arg0_2.scrollRect.onInitItem(arg0_3)
 		arg0_2:OnInitItem(arg0_3)
@@ -18,9 +18,9 @@ function var0_0.OnInit(arg0_2)
 		arg0_2:OnUpdateItem(arg0_4, arg1_4)
 	end
 
-	setText(arg0_2:findTF("titles/rank_title"), i18n("vote_label_rank"))
-	setText(arg0_2:findTF("titles/votes"), i18n("word_votes"))
-	setText(arg0_2:findTF("tip"), i18n("vote_label_rank_fresh_time_tip"))
+	setText(arg0_2._tf:Find("titles/rank_title"), i18n("vote_label_rank"))
+	setText(arg0_2._tf:Find("titles/votes"), i18n("word_votes"))
+	setText(arg0_2._tf:Find("tip"), i18n("vote_label_rank_fresh_time_tip"))
 end
 
 function var0_0.Update(arg0_5, arg1_5)
@@ -29,7 +29,7 @@ function var0_0.Update(arg0_5, arg1_5)
 
 	setActive(arg0_5.title1, arg0_5.phase == VoteGroup.VOTE_STAGE)
 	setActive(arg0_5.title2, arg0_5.phase ~= VoteGroup.VOTE_STAGE)
-	setActive(arg0_5:findTF("tip"), arg0_5.phase == VoteGroup.VOTE_STAGE)
+	setActive(arg0_5._tf:Find("tip"), arg0_5.phase == VoteGroup.VOTE_STAGE)
 	arg0_5:UpdateList()
 end
 

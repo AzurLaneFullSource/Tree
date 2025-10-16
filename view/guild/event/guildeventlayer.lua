@@ -249,7 +249,7 @@ function var0_0.init(arg0_25)
 	arg0_25.missBossForamtionPage = GuildMissionBossFormationPage.New(arg0_25._tf, arg0_25.event, arg0_25.contextData)
 	arg0_25.showAssultShipPage = GuildShowAssultShipPage.New(arg0_25._tf, arg0_25.event, arg0_25.contextData)
 	arg0_25.shipEquipmentsPage = GuildShipEquipmentsPage.New(arg0_25._tf, arg0_25.event, arg0_25.contextData)
-	arg0_25.helpBtn = arg0_25:findTF("frame/help")
+	arg0_25.helpBtn = arg0_25._tf:Find("frame/help")
 end
 
 function var0_0.didEnter(arg0_34)

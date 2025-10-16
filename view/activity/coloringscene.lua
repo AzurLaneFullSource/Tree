@@ -34,26 +34,26 @@ function var0_0.setColorGroups(arg0_4, arg1_4)
 end
 
 function var0_0.init(arg0_5)
-	arg0_5.topPanel = arg0_5:findTF("top")
-	arg0_5.btnBack = arg0_5:findTF("top/btnBack")
-	arg0_5.title = arg0_5:findTF("center/title_bar/text")
-	arg0_5.bg = arg0_5:findTF("center/board/container/bg")
-	arg0_5.painting = arg0_5:findTF("center/painting")
-	arg0_5.paintingCompleted = arg0_5:findTF("center/painting_completed")
+	arg0_5.topPanel = arg0_5.rtAdapt:Find("top")
+	arg0_5.btnBack = arg0_5.rtAdapt:Find("top/btnBack")
+	arg0_5.title = arg0_5.rtAdapt:Find("center/title_bar/text")
+	arg0_5.bg = arg0_5.rtAdapt:Find("center/board/container/bg")
+	arg0_5.painting = arg0_5.rtAdapt:Find("center/painting")
+	arg0_5.paintingCompleted = arg0_5.rtAdapt:Find("center/painting_completed")
 	arg0_5.zoom = arg0_5.bg:GetComponent("Zoom")
 	arg0_5.zoom.maxZoom = 3
-	arg0_5.cells = arg0_5:findTF("cells", arg0_5.bg)
-	arg0_5.cell = arg0_5:findTF("cell", arg0_5.bg)
-	arg0_5.lines = arg0_5:findTF("lines", arg0_5.bg)
-	arg0_5.line = arg0_5:findTF("line", arg0_5.bg)
-	arg0_5.btnHelp = arg0_5:findTF("top/btnHelp")
-	arg0_5.btnShare = arg0_5:findTF("top/btnShare")
-	arg0_5.colorgroupfront = arg0_5:findTF("center/colorgroupfront")
-	arg0_5.scrollColor = arg0_5:findTF("color_bar/scroll")
-	arg0_5.barExtra = arg0_5:findTF("color_bar/extra")
-	arg0_5.toggleEraser = arg0_5:findTF("eraser", arg0_5.barExtra)
-	arg0_5.btnEraserAll = arg0_5:findTF("eraser_all", arg0_5.barExtra)
-	arg0_5.arrowDown = arg0_5:findTF("arrow", arg0_5.barExtra)
+	arg0_5.cells = arg0_5.bg:Find("cells")
+	arg0_5.cell = arg0_5.bg:Find("cell")
+	arg0_5.lines = arg0_5.bg:Find("lines")
+	arg0_5.line = arg0_5.bg:Find("line")
+	arg0_5.btnHelp = arg0_5.rtAdapt:Find("top/btnHelp")
+	arg0_5.btnShare = arg0_5.rtAdapt:Find("top/btnShare")
+	arg0_5.colorgroupfront = arg0_5.rtAdapt:Find("center/colorgroupfront")
+	arg0_5.scrollColor = arg0_5.rtAdapt:Find("color_bar/scroll")
+	arg0_5.barExtra = arg0_5.rtAdapt:Find("color_bar/extra")
+	arg0_5.toggleEraser = arg0_5.barExtra:Find("eraser")
+	arg0_5.btnEraserAll = arg0_5.barExtra:Find("eraser_all")
+	arg0_5.arrowDown = arg0_5.barExtra:Find("arrow")
 
 	setActive(arg0_5.cell, false)
 	setActive(arg0_5.line, false)
@@ -63,14 +63,14 @@ end
 function var0_0.DidMediatorRegisterDone(arg0_6)
 	local var0_6 = arg0_6.colorGroups[1]:getConfig("color_id_list")
 
-	arg0_6.colorPlates = CustomIndexLayer.Clone2Full(arg0_6:findTF("content", arg0_6.scrollColor), #var0_6)
+	arg0_6.colorPlates = CustomIndexLayer.Clone2Full(arg0_6.scrollColor:Find("content"), #var0_6)
 
 	local var1_6 = #arg0_6.colorGroups
 
 	arg0_6.coloringUIGroupName = "ColoringUIGroupSize" .. var1_6
 
 	PoolMgr.GetInstance():GetUI(arg0_6.coloringUIGroupName, false, function(arg0_7)
-		setParent(arg0_7, arg0_6:findTF("center"))
+		setParent(arg0_7, arg0_6.rtAdapt:Find("center"))
 		setAnchoredPosition(arg0_7, var5_0)
 		tf(arg0_7):SetSiblingIndex(1)
 		setActive(arg0_7, true)
@@ -241,23 +241,21 @@ end
 
 function var0_0.SelectColoBar(arg0_24, arg1_24)
 	if arg0_24.selectedColorIndex ~= 0 and arg0_24.selectedColorIndex ~= arg1_24 then
-		local var0_24 = arg0_24.colorPlates[arg0_24.selectedColorIndex]
-		local var1_24 = arg0_24:findTF("icon", var0_24)
-		local var2_24 = var1_24.sizeDelta
+		local var0_24 = arg0_24.colorPlates[arg0_24.selectedColorIndex]:Find("icon")
+		local var1_24 = var0_24.sizeDelta
 
-		var2_24.x = var1_0
-		var1_24.sizeDelta = var2_24
+		var1_24.x = var1_0
+		var0_24.sizeDelta = var1_24
 	end
 
 	arg0_24.selectedColorIndex = arg1_24
 
 	if arg0_24.selectedColorIndex ~= 0 then
-		local var3_24 = arg0_24.colorPlates[arg0_24.selectedColorIndex]
-		local var4_24 = arg0_24:findTF("icon", var3_24)
-		local var5_24 = var4_24.sizeDelta
+		local var2_24 = arg0_24.colorPlates[arg0_24.selectedColorIndex]:Find("icon")
+		local var3_24 = var2_24.sizeDelta
 
-		var5_24.x = var2_0
-		var4_24.sizeDelta = var5_24
+		var3_24.x = var2_0
+		var2_24.sizeDelta = var3_24
 	end
 end
 

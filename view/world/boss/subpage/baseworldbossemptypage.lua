@@ -40,18 +40,18 @@ function var0_0.OnBossProgressUpdate(arg0_6)
 end
 
 function var0_0.OnLoaded(arg0_7)
-	arg0_7.helpBtn = arg0_7:findTF("help")
-	arg0_7.compass = arg0_7:findTF("compass")
-	arg0_7.latitude = arg0_7:findTF("info/latitude", arg0_7.compass)
-	arg0_7.altitude = arg0_7:findTF("info/altitude", arg0_7.compass)
-	arg0_7.longitude = arg0_7:findTF("info/longitude", arg0_7.compass)
-	arg0_7.speed = arg0_7:findTF("info/speed", arg0_7.compass)
-	arg0_7.rader = arg0_7:findTF("rader/rader")
-	arg0_7.progressTr = arg0_7:findTF("progress")
+	arg0_7.helpBtn = arg0_7._tf:Find("help")
+	arg0_7.compass = arg0_7._tf:Find("compass")
+	arg0_7.latitude = arg0_7.compass:Find("info/latitude")
+	arg0_7.altitude = arg0_7.compass:Find("info/altitude")
+	arg0_7.longitude = arg0_7.compass:Find("info/longitude")
+	arg0_7.speed = arg0_7.compass:Find("info/speed")
+	arg0_7.rader = arg0_7._tf:Find("rader/rader")
+	arg0_7.progressTr = arg0_7._tf:Find("progress")
 	arg0_7.progressTxt = arg0_7.progressTr:Find("value"):GetComponent(typeof(Text))
-	arg0_7.activeBtn = arg0_7:findTF("useItem/list/tpl")
-	arg0_7.useItem = arg0_7:findTF("useItem")
-	arg0_7.noItem = arg0_7:findTF("noitem")
+	arg0_7.activeBtn = arg0_7._tf:Find("useItem/list/tpl")
+	arg0_7.useItem = arg0_7._tf:Find("useItem")
+	arg0_7.noItem = arg0_7._tf:Find("noitem")
 end
 
 function var0_0.OnInit(arg0_8)
@@ -61,15 +61,15 @@ function var0_0.OnInit(arg0_8)
 	setText(arg0_8.speed, "000")
 	rotateAni(arg0_8.rader, 1, 3)
 
-	if arg0_8:findTF("title") then
-		GetComponent(arg0_8:findTF("title"), typeof(Image)):SetNativeSize()
+	if arg0_8._tf:Find("title") then
+		GetComponent(arg0_8._tf:Find("title"), typeof(Image)):SetNativeSize()
 	end
 end
 
 function var0_0.UpdateUseItemStyle(arg0_9, arg1_9)
-	arg0_9:findTF("useItem/list/tpl"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("MetaWorldboss/" .. arg1_9, "useitem")
+	arg0_9._tf:Find("useItem/list/tpl"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("MetaWorldboss/" .. arg1_9, "useitem")
 
-	arg0_9:findTF("useItem/list/tpl"):GetComponent(typeof(Image)):SetNativeSize()
+	arg0_9._tf:Find("useItem/list/tpl"):GetComponent(typeof(Image)):SetNativeSize()
 end
 
 function var0_0.Update(arg0_10)

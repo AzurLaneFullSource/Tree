@@ -25,35 +25,35 @@ function var0_0.initData(arg0_5)
 end
 
 function var0_0.initUIText(arg0_6)
-	local var0_6 = arg0_6:findTF("window/button_container/button_cancel/Image")
-	local var1_6 = arg0_6:findTF("window/button_container/button_ok/Image")
+	local var0_6 = arg0_6._tf:Find("window/button_container/button_cancel/Image")
+	local var1_6 = arg0_6._tf:Find("window/button_container/button_ok/Image")
 
 	setText(var0_6, i18n("text_cancel"))
 	setText(var1_6, i18n("text_buy"))
 end
 
 function var0_0.findUI(arg0_7)
-	arg0_7.bg = arg0_7:findTF("back_sign")
-	arg0_7.detailWindow = arg0_7:findTF("window")
-	arg0_7.cancelBtn = arg0_7:findTF("button_container/button_cancel", arg0_7.detailWindow)
-	arg0_7.confirmBtn = arg0_7:findTF("button_container/button_ok", arg0_7.detailWindow)
-	arg0_7.detailName = arg0_7:findTF("goods/name", arg0_7.detailWindow)
-	arg0_7.detailIcon = arg0_7:findTF("goods/icon", arg0_7.detailWindow)
-	arg0_7.detailRmb = arg0_7:findTF("prince_bg/contain/icon_rmb", arg0_7.detailWindow)
-	arg0_7.detailGem = arg0_7:findTF("prince_bg/contain/icon_gem", arg0_7.detailWindow)
-	arg0_7.detailPrice = arg0_7:findTF("prince_bg/contain/Text", arg0_7.detailWindow)
-	arg0_7.detailTag = arg0_7:findTF("goods/tag", arg0_7.detailWindow)
+	arg0_7.bg = arg0_7._tf:Find("back_sign")
+	arg0_7.detailWindow = arg0_7._tf:Find("window")
+	arg0_7.cancelBtn = arg0_7.detailWindow:Find("button_container/button_cancel")
+	arg0_7.confirmBtn = arg0_7.detailWindow:Find("button_container/button_ok")
+	arg0_7.detailName = arg0_7.detailWindow:Find("goods/name")
+	arg0_7.detailIcon = arg0_7.detailWindow:Find("goods/icon")
+	arg0_7.detailRmb = arg0_7.detailWindow:Find("prince_bg/contain/icon_rmb")
+	arg0_7.detailGem = arg0_7.detailWindow:Find("prince_bg/contain/icon_gem")
+	arg0_7.detailPrice = arg0_7.detailWindow:Find("prince_bg/contain/Text")
+	arg0_7.detailTag = arg0_7.detailWindow:Find("goods/tag")
 	arg0_7.detailTags = {}
 
-	table.insert(arg0_7.detailTags, arg0_7:findTF("hot", arg0_7.detailTag))
-	table.insert(arg0_7.detailTags, arg0_7:findTF("new", arg0_7.detailTag))
-	table.insert(arg0_7.detailTags, arg0_7:findTF("advice", arg0_7.detailTag))
-	table.insert(arg0_7.detailTags, arg0_7:findTF("double", arg0_7.detailTag))
-	table.insert(arg0_7.detailTags, arg0_7:findTF("discount", arg0_7.detailTag))
+	table.insert(arg0_7.detailTags, arg0_7.detailTag:Find("hot"))
+	table.insert(arg0_7.detailTags, arg0_7.detailTag:Find("new"))
+	table.insert(arg0_7.detailTags, arg0_7.detailTag:Find("advice"))
+	table.insert(arg0_7.detailTags, arg0_7.detailTag:Find("double"))
+	table.insert(arg0_7.detailTags, arg0_7.detailTag:Find("discount"))
 
 	arg0_7.detailTagAdviceTF = arg0_7.detailTags[3]
 	arg0_7.detailTagDoubleTF = arg0_7.detailTags[4]
-	arg0_7.detailNormalTip = arg0_7:findTF("NormalTips", arg0_7.detailWindow)
+	arg0_7.detailNormalTip = arg0_7.detailWindow:Find("NormalTips")
 end
 
 function var0_0.addListener(arg0_8)

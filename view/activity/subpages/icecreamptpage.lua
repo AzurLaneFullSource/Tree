@@ -64,45 +64,45 @@ function var0_0.OnDestroy(arg0_4)
 end
 
 function var0_0.findUI(arg0_5)
-	arg0_5.shareBtn = arg0_5:findTF("Logo/share_btn", arg0_5.bg)
-	arg0_5.icecreamTF = arg0_5:findTF("Icecream", arg0_5.bg)
-	arg0_5.openBtn = arg0_5:findTF("open_btn", arg0_5.bg)
-	arg0_5.helpBtn = arg0_5:findTF("help_btn", arg0_5.bg)
-	arg0_5.specialTF = arg0_5:findTF("Special")
-	arg0_5.backBG = arg0_5:findTF("BG", arg0_5.specialTF)
-	arg0_5.menuTF = arg0_5:findTF("Menu", arg0_5.specialTF)
-	arg0_5.mainPanel = arg0_5:findTF("MainPanel", arg0_5.menuTF)
+	arg0_5.shareBtn = arg0_5.bg:Find("Logo/share_btn")
+	arg0_5.icecreamTF = arg0_5.bg:Find("Icecream")
+	arg0_5.openBtn = arg0_5.bg:Find("open_btn")
+	arg0_5.helpBtn = arg0_5.bg:Find("help_btn")
+	arg0_5.specialTF = arg0_5._tf:Find("Special")
+	arg0_5.backBG = arg0_5.specialTF:Find("BG")
+	arg0_5.menuTF = arg0_5.specialTF:Find("Menu")
+	arg0_5.mainPanel = arg0_5.menuTF:Find("MainPanel")
 	arg0_5.mainToggleTFList = {}
 
 	for iter0_5 = 1, 4 do
 		arg0_5.mainToggleTFList[iter0_5] = arg0_5.mainPanel:GetChild(iter0_5 - 1)
 	end
 
-	arg0_5.secondPanel = arg0_5:findTF("SecondList", arg0_5.menuTF)
-	arg0_5.selectBtn = arg0_5:findTF("SelectBtn", arg0_5.menuTF)
+	arg0_5.secondPanel = arg0_5.menuTF:Find("SecondList")
+	arg0_5.selectBtn = arg0_5.menuTF:Find("SelectBtn")
 	arg0_5.mainPanelCG = GetComponent(arg0_5.mainPanel, "CanvasGroup")
 	arg0_5.secondPanelCG = GetComponent(arg0_5.secondPanel, "CanvasGroup")
 	arg0_5.selectBtnImg = GetComponent(arg0_5.selectBtn, "Image")
-	arg0_5.resTF = arg0_5:findTF("Res")
+	arg0_5.resTF = arg0_5._tf:Find("Res")
 
-	local var0_5 = arg0_5:findTF("1/1", arg0_5.resTF)
-	local var1_5 = arg0_5:findTF("1/2", arg0_5.resTF)
-	local var2_5 = arg0_5:findTF("1/3", arg0_5.resTF)
-	local var3_5 = arg0_5:findTF("2/1/1", arg0_5.resTF)
-	local var4_5 = arg0_5:findTF("2/1/2", arg0_5.resTF)
-	local var5_5 = arg0_5:findTF("2/1/3", arg0_5.resTF)
-	local var6_5 = arg0_5:findTF("2/2/1", arg0_5.resTF)
-	local var7_5 = arg0_5:findTF("2/2/2", arg0_5.resTF)
-	local var8_5 = arg0_5:findTF("2/2/3", arg0_5.resTF)
-	local var9_5 = arg0_5:findTF("2/3/1", arg0_5.resTF)
-	local var10_5 = arg0_5:findTF("2/3/2", arg0_5.resTF)
-	local var11_5 = arg0_5:findTF("2/3/3", arg0_5.resTF)
-	local var12_5 = arg0_5:findTF("3/1", arg0_5.resTF)
-	local var13_5 = arg0_5:findTF("3/2", arg0_5.resTF)
-	local var14_5 = arg0_5:findTF("3/3", arg0_5.resTF)
-	local var15_5 = arg0_5:findTF("4/1", arg0_5.resTF)
-	local var16_5 = arg0_5:findTF("4/2", arg0_5.resTF)
-	local var17_5 = arg0_5:findTF("4/3", arg0_5.resTF)
+	local var0_5 = arg0_5.resTF:Find("1/1")
+	local var1_5 = arg0_5.resTF:Find("1/2")
+	local var2_5 = arg0_5.resTF:Find("1/3")
+	local var3_5 = arg0_5.resTF:Find("2/1/1")
+	local var4_5 = arg0_5.resTF:Find("2/1/2")
+	local var5_5 = arg0_5.resTF:Find("2/1/3")
+	local var6_5 = arg0_5.resTF:Find("2/2/1")
+	local var7_5 = arg0_5.resTF:Find("2/2/2")
+	local var8_5 = arg0_5.resTF:Find("2/2/3")
+	local var9_5 = arg0_5.resTF:Find("2/3/1")
+	local var10_5 = arg0_5.resTF:Find("2/3/2")
+	local var11_5 = arg0_5.resTF:Find("2/3/3")
+	local var12_5 = arg0_5.resTF:Find("3/1")
+	local var13_5 = arg0_5.resTF:Find("3/2")
+	local var14_5 = arg0_5.resTF:Find("3/3")
+	local var15_5 = arg0_5.resTF:Find("4/1")
+	local var16_5 = arg0_5.resTF:Find("4/2")
+	local var17_5 = arg0_5.resTF:Find("4/3")
 
 	arg0_5.iconTable = {
 		["1"] = {
@@ -136,7 +136,7 @@ function var0_0.findUI(arg0_5)
 			var17_5
 		}
 	}
-	arg0_5.icecreamResTF = arg0_5:findTF("Icecream")
+	arg0_5.icecreamResTF = arg0_5._tf:Find("Icecream")
 	arg0_5.mainToggleSelectedTF = {}
 	arg0_5.mainToggleUnlockTF = {}
 
@@ -148,7 +148,7 @@ end
 
 function var0_0.addListener(arg0_6)
 	if IsUnityEditor then
-		local var0_6 = arg0_6:findTF("Logo", arg0_6.bg)
+		local var0_6 = arg0_6.bg:Find("Logo")
 
 		onButton(arg0_6, var0_6, function()
 			for iter0_7 = 1, 4 do
@@ -253,7 +253,7 @@ function var0_0.initMainPanel(arg0_15)
 				for iter1_17 = 1, 3 do
 					local var4_17 = getImageSprite(var1_17[iter1_17])
 
-					setImageSprite(arg0_15:findTF("icon", var3_17[iter1_17]), var4_17, true)
+					setImageSprite(var3_17[iter1_17]:Find("icon"), var4_17, true)
 					onToggle(arg0_15, var3_17[iter1_17], function(arg0_18)
 						if arg0_18 == true then
 							local var0_18 = Clone(arg0_15.selectedList)
@@ -445,11 +445,11 @@ function var0_0.updateIcecream(arg0_48, arg1_48)
 
 	setActive(arg0_48.icecreamTF, var0_48[1] > 0)
 
-	local var1_48 = arg0_48:findTF("1", arg0_48.icecreamTF)
-	local var2_48 = arg0_48:findTF("Taste", var1_48)
-	local var3_48 = arg0_48:findTF("2", arg0_48.icecreamTF)
-	local var4_48 = arg0_48:findTF("3", arg0_48.icecreamTF)
-	local var5_48 = arg0_48:findTF("4", arg0_48.icecreamTF)
+	local var1_48 = arg0_48.icecreamTF:Find("1")
+	local var2_48 = var1_48:Find("Taste")
+	local var3_48 = arg0_48.icecreamTF:Find("2")
+	local var4_48 = arg0_48.icecreamTF:Find("3")
+	local var5_48 = arg0_48.icecreamTF:Find("4")
 	local var6_48 = var0_48[1] and var0_48[1] > 0
 
 	if var6_48 then
@@ -467,28 +467,28 @@ function var0_0.updateIcecream(arg0_48, arg1_48)
 
 	if var6_48 then
 		local var7_48 = "1_" .. var0_48[1]
-		local var8_48 = getImageSprite(arg0_48:findTF(var7_48, arg0_48.icecreamResTF))
+		local var8_48 = getImageSprite(arg0_48.icecreamResTF:Find(var7_48))
 
 		setImageSprite(var2_48, var8_48, true)
 	end
 
 	if var0_48[2] and var0_48[2] > 0 then
 		local var9_48 = "2_" .. var0_48[1] .. var0_48[2]
-		local var10_48 = getImageSprite(arg0_48:findTF(var9_48, arg0_48.icecreamResTF))
+		local var10_48 = getImageSprite(arg0_48.icecreamResTF:Find(var9_48))
 
 		setImageSprite(var3_48, var10_48, true)
 	end
 
 	if var0_48[3] and var0_48[3] > 0 then
 		local var11_48 = "3_" .. var0_48[3]
-		local var12_48 = getImageSprite(arg0_48:findTF(var11_48, arg0_48.icecreamResTF))
+		local var12_48 = getImageSprite(arg0_48.icecreamResTF:Find(var11_48))
 
 		setImageSprite(var4_48, var12_48, true)
 	end
 
 	if var0_48[4] and var0_48[4] > 0 then
 		local var13_48 = "4_" .. var0_48[4]
-		local var14_48 = getImageSprite(arg0_48:findTF(var13_48, arg0_48.icecreamResTF))
+		local var14_48 = getImageSprite(arg0_48.icecreamResTF:Find(var13_48))
 
 		setImageSprite(var5_48, var14_48, true)
 	end
@@ -606,8 +606,8 @@ function var0_0.share(arg0_54)
 
 		arg0_54.shareGo = arg0_55
 
-		local var1_55 = arg0_54:findTF("PlayerName", arg0_55)
-		local var2_55 = arg0_54:findTF("IcecreamContainer", arg0_55)
+		local var1_55 = arg0_55:Find("PlayerName")
+		local var2_55 = arg0_55:Find("IcecreamContainer")
 		local var3_55 = getProxy(PlayerProxy):getData().name
 
 		setText(var1_55, i18n("icecream_make_tip", var3_55))
@@ -617,7 +617,7 @@ function var0_0.share(arg0_54)
 		local var6_55 = getProxy(ServerProxy):getRawData()[var5_55 and var5_55.server or 0]
 		local var7_55 = var4_55 and var4_55.name or ""
 		local var8_55 = var6_55 and var6_55.name or ""
-		local var9_55 = arg0_54:findTF("deck", arg0_55)
+		local var9_55 = arg0_55:Find("deck")
 
 		setText(var9_55:Find("name/value"), var7_55)
 		setText(var9_55:Find("server/value"), var8_55)
@@ -644,7 +644,7 @@ function var0_0.share(arg0_54)
 end
 
 function var0_0.initSD(arg0_56)
-	arg0_56.sdContainer = arg0_56:findTF("sdcontainer", arg0_56.bg)
+	arg0_56.sdContainer = arg0_56.bg:Find("sdcontainer")
 	arg0_56.spine = nil
 	arg0_56.spineLRQ = GetSpineRequestPackage.New("salatuojia_8", function(arg0_57)
 		SetParent(arg0_57, arg0_56.sdContainer)

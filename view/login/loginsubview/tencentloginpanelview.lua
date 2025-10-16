@@ -14,8 +14,8 @@ end
 
 function var0_0.OnInit(arg0_4)
 	arg0_4.tencentPanel = arg0_4._tf
-	arg0_4.wxLoginBtn = arg0_4:findTF("wx_login", arg0_4.tencentPanel)
-	arg0_4.qqLoginBtn = arg0_4:findTF("qq_login", arg0_4.tencentPanel)
+	arg0_4.wxLoginBtn = arg0_4.tencentPanel:Find("wx_login")
+	arg0_4.qqLoginBtn = arg0_4.tencentPanel:Find("qq_login")
 
 	arg0_4:InitEvent()
 end

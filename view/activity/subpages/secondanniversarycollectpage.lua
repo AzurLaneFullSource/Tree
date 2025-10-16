@@ -1,14 +1,14 @@
 local var0_0 = class("SecondAnniversaryCollectPage", import("...base.BaseActivityPage"))
 
 function var0_0.OnInit(arg0_1)
-	arg0_1.bg = arg0_1:findTF("AD")
-	arg0_1.btnContainer = arg0_1:findTF("BtnList")
-	arg0_1.btn1 = arg0_1:findTF("1", arg0_1.btnContainer)
-	arg0_1.btn2 = arg0_1:findTF("2", arg0_1.btnContainer)
-	arg0_1.btn3 = arg0_1:findTF("3", arg0_1.btnContainer)
-	arg0_1.btn4 = arg0_1:findTF("4", arg0_1.btnContainer)
-	arg0_1.btn5 = arg0_1:findTF("5", arg0_1.btnContainer)
-	arg0_1.btn6 = arg0_1:findTF("6", arg0_1.btnContainer)
+	arg0_1.bg = arg0_1._tf:Find("AD")
+	arg0_1.btnContainer = arg0_1._tf:Find("BtnList")
+	arg0_1.btn1 = arg0_1.btnContainer:Find("1")
+	arg0_1.btn2 = arg0_1.btnContainer:Find("2")
+	arg0_1.btn3 = arg0_1.btnContainer:Find("3")
+	arg0_1.btn4 = arg0_1.btnContainer:Find("4")
+	arg0_1.btn5 = arg0_1.btnContainer:Find("5")
+	arg0_1.btn6 = arg0_1.btnContainer:Find("6")
 end
 
 function var0_0.OnFirstFlush(arg0_2)

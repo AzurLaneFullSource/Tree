@@ -3,7 +3,7 @@ local var0_0 = class("ZProjectPage", import(".TemplatePage.PreviewTemplatePage")
 function var0_0.OnInit(arg0_1)
 	var0_0.super.OnInit(arg0_1)
 
-	arg0_1.awardTF = arg0_1:findTF("AD/award")
+	arg0_1.awardTF = arg0_1._tf:Find("AD/award")
 end
 
 function var0_0.OnFirstFlush(arg0_2)

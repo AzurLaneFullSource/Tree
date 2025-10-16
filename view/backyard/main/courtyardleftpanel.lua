@@ -5,7 +5,7 @@ function var0_0.GetUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	arg0_2.viewBtn = arg0_2:findTF("eye_btn")
+	arg0_2.viewBtn = arg0_2._tf:Find("eye_btn")
 end
 
 function var0_0.OnRegister(arg0_3)
