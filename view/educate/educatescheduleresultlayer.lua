@@ -90,7 +90,7 @@ function var0_0.updatePersonalPanel(arg0_8)
 
 	if var0_8 then
 		for iter0_8, iter1_8 in ipairs(arg0_8.natureIds) do
-			local var1_8 = arg0_8._tf:Find(tostring(iter1_8), arg0_8.personalTF)
+			local var1_8 = arg0_8.personalTF:Find(tostring(iter1_8))
 			local var2_8 = arg0_8.char:GetAttrById(iter1_8)
 
 			setText(var1_8:Find("old"), pg.child_attr[iter1_8].name .. " " .. var2_8)

@@ -259,17 +259,18 @@ function var0_0.emojiIconFliter(arg0_18)
 
 	for iter3_18 = arg0_18.emojiIconContent.childCount + 1, var3_18 do
 		local var4_18 = Instantiate(arg0_18.emojiIconItem)
-		local var5_18 = var4_18:Find("TitleCommom")
-		local var6_18 = var4_18:Find("TitleAll")
-		local var7_18 = var4_18:Find("CommomIconContainer")
-		local var8_18 = var4_18:Find("AllIconContainer")
-		local var9_18 = GetComponent(var8_18, "GridLayoutGroup")
+		local var5_18 = tf(var4_18)
+		local var6_18 = var5_18:Find("TitleCommom")
+		local var7_18 = var5_18:Find("TitleAll")
+		local var8_18 = var5_18:Find("CommomIconContainer")
+		local var9_18 = var5_18:Find("AllIconContainer")
+		local var10_18 = GetComponent(var9_18, "GridLayoutGroup")
 
 		if iter3_18 == 1 then
-			local var10_18 = var7_18:Find("Icon")
-			local var11_18 = UIItemList.New(var7_18, var10_18)
+			local var11_18 = var8_18:Find("Icon")
+			local var12_18 = UIItemList.New(var8_18, var11_18)
 
-			var11_18:make(function(arg0_19, arg1_19, arg2_19)
+			var12_18:make(function(arg0_19, arg1_19, arg2_19)
 				local var0_19 = var1_18[arg1_19 + 1]
 
 				if arg0_19 == UIItemList.EventUpdate then
@@ -288,14 +289,14 @@ function var0_0.emojiIconFliter(arg0_18)
 					end)
 				end
 			end)
-			var11_18:align(#var1_18)
+			var12_18:align(#var1_18)
 
-			var9_18.padding.left = 20
+			var10_18.padding.left = 20
 
-			local var12_18 = var8_18:Find("Icon")
-			local var13_18 = UIItemList.New(var8_18, var12_18)
+			local var13_18 = var9_18:Find("Icon")
+			local var14_18 = UIItemList.New(var9_18, var13_18)
 
-			var13_18:make(function(arg0_22, arg1_22, arg2_22)
+			var14_18:make(function(arg0_22, arg1_22, arg2_22)
 				local var0_22 = var0_18[arg1_22 + 1]
 
 				if arg0_22 == UIItemList.EventUpdate then
@@ -314,18 +315,18 @@ function var0_0.emojiIconFliter(arg0_18)
 					end)
 				end
 			end)
-			var13_18:align(var0_0.True_Emoji_Num_Of_Page - var0_0.Frequently_Used_Emoji_Num)
+			var14_18:align(var0_0.True_Emoji_Num_Of_Page - var0_0.Frequently_Used_Emoji_Num)
 		else
-			local var14_18 = var0_0.True_Emoji_Num_Of_Page - var0_0.Frequently_Used_Emoji_Num
-			local var15_18 = _.slice(var0_18, (iter3_18 - 2) * var0_0.True_Emoji_Num_Of_Page + 9 + 1, var0_0.True_Emoji_Num_Of_Page)
+			local var15_18 = var0_0.True_Emoji_Num_Of_Page - var0_0.Frequently_Used_Emoji_Num
+			local var16_18 = _.slice(var0_18, (iter3_18 - 2) * var0_0.True_Emoji_Num_Of_Page + 9 + 1, var0_0.True_Emoji_Num_Of_Page)
 
-			var9_18.padding.left = 60
+			var10_18.padding.left = 60
 
-			local var16_18 = var8_18:Find("Icon")
-			local var17_18 = UIItemList.New(var8_18, var16_18)
+			local var17_18 = var9_18:Find("Icon")
+			local var18_18 = UIItemList.New(var9_18, var17_18)
 
-			var17_18:make(function(arg0_25, arg1_25, arg2_25)
-				local var0_25 = var15_18[arg1_25 + 1]
+			var18_18:make(function(arg0_25, arg1_25, arg2_25)
+				local var0_25 = var16_18[arg1_25 + 1]
 
 				if arg0_25 == UIItemList.EventUpdate then
 					PoolMgr.GetInstance():GetPrefab("emoji/" .. var0_25.pic, var0_25.pic, true, function(arg0_26)
@@ -343,12 +344,12 @@ function var0_0.emojiIconFliter(arg0_18)
 					end)
 				end
 			end)
-			var17_18:align(#var15_18)
+			var18_18:align(#var16_18)
 		end
 
-		setActive(var5_18, iter3_18 == 1)
 		setActive(var6_18, iter3_18 == 1)
 		setActive(var7_18, iter3_18 == 1)
+		setActive(var8_18, iter3_18 == 1)
 		setActive(var4_18, true)
 		arg0_18.emojiIconSnap:AddChild(var4_18)
 	end

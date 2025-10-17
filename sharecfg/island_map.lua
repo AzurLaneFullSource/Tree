@@ -1,7 +1,7 @@
 pg = pg or {}
 pg.island_map = {
 	[1001] = {
-		name = "Morningdew Farm",
+		name = "Farm",
 		minigame_id = 0,
 		time = "always",
 		loading = 0,
@@ -52,7 +52,7 @@ pg.island_map = {
 		}
 	},
 	[1004] = {
-		name = "Windswept Plains",
+		name = "Plains",
 		minigame_id = 0,
 		time = "always",
 		loading = 0,
@@ -69,7 +69,7 @@ pg.island_map = {
 		}
 	},
 	[1005] = {
-		name = "Prosperous Plantation",
+		name = "Plantation",
 		minigame_id = 0,
 		time = "always",
 		loading = 0,
@@ -86,7 +86,7 @@ pg.island_map = {
 		}
 	},
 	[1006] = {
-		name = "Harbor Commercial Area",
+		name = "Commercial",
 		minigame_id = 0,
 		time = "always",
 		loading = 0,
