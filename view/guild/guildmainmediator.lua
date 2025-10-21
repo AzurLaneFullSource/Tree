@@ -119,6 +119,7 @@ function var0_0.register(arg0_1)
 			data = {
 				pos = arg1_18,
 				callback = arg2_18,
+				groupName = arg0_1.viewComponent:getGroupName(),
 				emojiIconCallback = function(arg0_19)
 					arg0_1.viewComponent:insertEmojiToInputText(arg0_19)
 				end

@@ -7487,13 +7487,13 @@ pg.base.island_item_data_template = {
 	},
 	[300001] = {
 		pt_num = 0,
-		name = "丰壤农田委派效率提高 4%",
+		name = "Working Efficiency at Faircrop Fields +4%",
 		group_max = 0,
 		type = 2,
 		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
-		desc = "获得后，丰壤农田委派效率提高 4%",
+		desc = "When obtained, Working Efficiency at Faircrop Fields +4%",
 		usage = "usage_undefined",
 		resource_type = 0,
 		order_price = 0,
@@ -7509,20 +7509,20 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"图鉴",
+				"Island Collection",
 				{}
 			}
 		}
 	},
 	[300002] = {
 		pt_num = 0,
-		name = "坠香果园委派效率提高 4%",
+		name = "Working Efficiency at Sweetscent Orchard +4%",
 		group_max = 0,
 		type = 2,
 		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
-		desc = "获得后，坠香果园委派效率提高 4%",
+		desc = "When obtained, Working Efficiency at Sweetscent Orchard +4%",
 		usage = "usage_undefined",
 		resource_type = 0,
 		order_price = 0,
@@ -7538,20 +7538,20 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"图鉴",
+				"Island Collection",
 				{}
 			}
 		}
 	},
 	[300003] = {
 		pt_num = 0,
-		name = "青芽苗圃委派效率提高 4%",
+		name = "Working Efficiency at Newsprout Nursery +4%",
 		group_max = 0,
 		type = 2,
 		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
-		desc = "获得后，青芽苗圃委派效率提高 4%",
+		desc = "When obtained, Working Efficiency at Newsprout Nursery +4%",
 		usage = "usage_undefined",
 		resource_type = 0,
 		order_price = 0,
@@ -7567,20 +7567,20 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"图鉴",
+				"Island Collection",
 				{}
 			}
 		}
 	},
 	[300004] = {
 		pt_num = 0,
-		name = "丰壤农田委派效率提高 8%",
+		name = "Working Efficiency at Faircrop Fields +8%",
 		group_max = 0,
 		type = 2,
 		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
-		desc = "获得后，丰壤农田委派效率提高 8%",
+		desc = "When obtained, Working Efficiency at Faircrop Fields +8%",
 		usage = "usage_undefined",
 		resource_type = 0,
 		order_price = 0,
@@ -7596,20 +7596,20 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"图鉴",
+				"Island Collection",
 				{}
 			}
 		}
 	},
 	[300005] = {
 		pt_num = 0,
-		name = "坠香果园委派效率提高 8%",
+		name = "Working Efficiency at Sweetscent Orchard +8%",
 		group_max = 0,
 		type = 2,
 		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
-		desc = "获得后，坠香果园委派效率提高 8%",
+		desc = "When obtained, Working Efficiency at Sweetscent Orchard +8%",
 		usage = "usage_undefined",
 		resource_type = 0,
 		order_price = 0,
@@ -7625,20 +7625,20 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"图鉴",
+				"Island Collection",
 				{}
 			}
 		}
 	},
 	[300006] = {
 		pt_num = 0,
-		name = "青芽苗圃委派效率提高 8%",
+		name = "Working Efficiency at Newsprout Nursery +8%",
 		group_max = 0,
 		type = 2,
 		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
-		desc = "获得后，青芽苗圃委派效率提高 8%",
+		desc = "When obtained, Working Efficiency at Newsprout Nursery +8%",
 		usage = "usage_undefined",
 		resource_type = 0,
 		order_price = 0,
@@ -7654,7 +7654,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"图鉴",
+				"Island Collection",
 				{}
 			}
 		}
