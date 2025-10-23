@@ -162,6 +162,7 @@ function var0_0.OnDisable(arg0_20)
 end
 
 function var0_0.OnDestroy(arg0_21)
+	arg0_21:OnHide()
 	arg0_21:RemoveTimer()
 	arg0_21.systemTimeUtil:Dispose()
 

@@ -21,6 +21,7 @@ function var0_0.OnInit(arg0_2)
 	setParent(arg0_2.randomFlagToggle, arg0_2._tf.parent)
 	setActive(arg0_2.randomFlagToggle, true)
 	triggerToggle(arg0_2.showQuickBtn, false)
+	triggerToggle(arg0_2.showRecordBtn, false)
 end
 
 function var0_0.InitDetail(arg0_3)

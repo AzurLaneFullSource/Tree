@@ -10,6 +10,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.id = arg1_1
 	arg0_1.sceneObject = arg2_1
 	arg0_1.animator = arg2_1:GetAnimator()
+	arg0_1.inTimeline = false
 end
 
 function var0_0.GetStatus(arg0_2)

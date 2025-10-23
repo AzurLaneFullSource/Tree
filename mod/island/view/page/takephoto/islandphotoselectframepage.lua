@@ -323,6 +323,8 @@ function var0_0.OnHide(arg0_19)
 end
 
 function var0_0.OnDestroy(arg0_20)
+	arg0_20:OnHide()
+
 	for iter0_20, iter1_20 in pairs(arg0_20.lateFuncDic) do
 		LateUpdateBeat:RemoveListener(iter1_20)
 	end

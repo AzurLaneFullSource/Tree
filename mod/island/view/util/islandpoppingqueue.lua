@@ -165,16 +165,22 @@ function var0_0.ExecuteAwardDisplay(arg0_13, arg1_13, arg2_13, arg3_13)
 			onNextTick(arg0_19)
 		end,
 		function(arg0_20)
-			pg.m02:sendNotification(GAME.ISLAND_UPGRADE, {
-				callback = arg0_20
-			})
+			arg0_13:GetSceneView():DisplaySystemUnlock(arg2_13.abilitys, arg0_20)
 		end,
 		function(arg0_21)
 			onNextTick(arg0_21)
 		end,
 		function(arg0_22)
+			pg.m02:sendNotification(GAME.ISLAND_UPGRADE, {
+				callback = arg0_22
+			})
+		end,
+		function(arg0_23)
+			onNextTick(arg0_23)
+		end,
+		function(arg0_24)
 			if not arg2_13.overflowAwards or #arg2_13.overflowAwards == 0 then
-				arg0_22()
+				arg0_24()
 
 				return
 			end
@@ -183,45 +189,45 @@ function var0_0.ExecuteAwardDisplay(arg0_13, arg1_13, arg2_13, arg3_13)
 				titleColor = "#ab4734",
 				title = i18n("island_add_temp_bag"),
 				awards = arg2_13.overflowAwards,
-				callback = arg0_22
+				callback = arg0_24
 			})
 		end,
-		function(arg0_23)
+		function(arg0_25)
 			if not arg2_13.overflowAwards or #arg2_13.overflowAwards == 0 then
-				arg0_23()
+				arg0_25()
 
 				return
 			end
 
 			arg0_13:GetSceneView():OpenPage(IslandInventoryPage)
-			arg0_23()
+			arg0_25()
 		end
 	}, arg1_13)
 end
 
-function var0_0.ExecuteTaskAcceptWin(arg0_24, arg1_24, arg2_24)
-	arg0_24:GetSceneView():emitCore(ISLAND_EVT.DISABLE_INPUT)
+function var0_0.ExecuteTaskAcceptWin(arg0_26, arg1_26, arg2_26)
+	arg0_26:GetSceneView():emitCore(ISLAND_EVT.DISABLE_INPUT)
 
-	local function var0_24()
-		arg0_24:GetSceneView():emitCore(ISLAND_EVT.ENABLE_INPUT)
-		arg1_24()
+	local function var0_26()
+		arg0_26:GetSceneView():emitCore(ISLAND_EVT.ENABLE_INPUT)
+		arg1_26()
 	end
 
-	arg0_24:GetSceneView():GetSubView(Island3dTaskAcceptPage):ExecuteAction("Show", arg2_24, var0_24)
+	arg0_26:GetSceneView():GetSubView(Island3dTaskAcceptPage):ExecuteAction("Show", arg2_26, var0_26)
 end
 
-function var0_0.AnyPlayerIsRunning(arg0_26)
-	return #arg0_26.playerList > 0
+function var0_0.AnyPlayerIsRunning(arg0_28)
+	return #arg0_28.playerList > 0
 end
 
-function var0_0.Dispose(arg0_27)
-	arg0_27.schedule = nil
+function var0_0.Dispose(arg0_29)
+	arg0_29.schedule = nil
 
-	for iter0_27, iter1_27 in ipairs(arg0_27.playerList or {}) do
-		iter1_27:Dispose()
+	for iter0_29, iter1_29 in ipairs(arg0_29.playerList or {}) do
+		iter1_29:Dispose()
 	end
 
-	arg0_27.playerList = nil
+	arg0_29.playerList = nil
 end
 
 return var0_0

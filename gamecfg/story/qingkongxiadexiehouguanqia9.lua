@@ -9,7 +9,7 @@ return {
 			bgName = "star_level_bg_650",
 			hidePaintObj = true,
 			say = "After filling their stomachs, Hestia and Ryu stocked up as best as they could before setting off again.",
-			bgm = "danmachi-2",
+			bgm = "danmachi-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

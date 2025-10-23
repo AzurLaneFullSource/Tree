@@ -46,6 +46,8 @@ function var0_0.OnLoaded(arg0_2)
 	setText(arg0_2.tracedBtn:Find("Text"), i18n("island_task_tracked"))
 	setText(arg0_2._tf:Find("top/title/Text"), i18n("island_task_title"))
 	setText(arg0_2._tf:Find("top/title/Text/en"), i18n("island_task_title_en"))
+
+	arg0_2.richtext = arg0_2.descTF:GetComponent("RichText")
 end
 
 function var0_0.OnInit(arg0_3)
@@ -343,7 +345,25 @@ function var0_0.FlushDetail(arg0_28)
 			setText(arg0_28.timeTF:Find("Text"), arg0_28.showVO:GetRemainTimeStr())
 		end
 
-		setText(arg0_28.descTF, arg0_28.showVO:GetDesc())
+		arg0_28.richtext.text = arg0_28.showVO:GetDesc()
+
+		arg0_28.richtext:RemoveAllListeners()
+		arg0_28.richtext:AddListener(function(arg0_29, arg1_29)
+			if arg0_29 == "dropDesHandle" then
+				local var0_29, var1_29 = string.match(arg1_29, "{(%d+),(%d+)}")
+				local var2_29 = Drop.New({
+					count = 0,
+					type = tonumber(var0_29),
+					id = tonumber(var1_29)
+				})
+
+				arg0_28:ShowMsgBox({
+					title = i18n("island_word_desc"),
+					type = IslandMsgBox.TYPE_COMMON_DROP_DESCRIBE,
+					dropData = var2_29
+				})
+			end
+		end)
 
 		arg0_28.showTargets = arg0_28.showVO:GetTargetList()
 
@@ -371,56 +391,57 @@ function var0_0.FlushDetail(arg0_28)
 	end
 end
 
-function var0_0.OnShow(arg0_31, arg1_31, arg2_31)
-	arg0_31.isOpen = true
-	arg0_31.toggleList = arg0_31:GetShowTypeList()
+function var0_0.OnShow(arg0_32, arg1_32, arg2_32)
+	arg0_32.isOpen = true
+	arg0_32.toggleList = arg0_32:GetShowTypeList()
 
-	table.insert(arg0_31.toggleList, 1, IslandTaskType.SHOW_ALL)
-	arg0_31.toggleUIList:align(#arg0_31.toggleList)
-	arg0_31:Flush()
+	table.insert(arg0_32.toggleList, 1, IslandTaskType.SHOW_ALL)
+	arg0_32.toggleUIList:align(#arg0_32.toggleList)
+	arg0_32:Flush()
 
-	local var0_31 = false
+	local var0_32 = false
 
-	if arg1_31 and arg0_31.toggleUIList.container:Find(arg1_31) then
-		triggerToggle(arg0_31.toggleUIList.container:Find(arg1_31), true)
+	if arg1_32 and arg0_32.toggleUIList.container:Find(arg1_32) then
+		triggerToggle(arg0_32.toggleUIList.container:Find(arg1_32), true)
 
-		var0_31 = true
+		var0_32 = true
 	end
 
-	if getProxy(IslandProxy):GetIsland():GetTaskAgency():GetTask(arg2_31 or 0) then
-		if not var0_31 then
-			triggerToggle(arg0_31.toggleUIList.container:GetChild(0), true)
+	if getProxy(IslandProxy):GetIsland():GetTaskAgency():GetTask(arg2_32 or 0) then
+		if not var0_32 then
+			triggerToggle(arg0_32.toggleUIList.container:GetChild(0), true)
 		end
 
-		local var1_31 = IslandTaskType.Type2ShowType[pg.island_task[arg2_31].type]
+		local var1_32 = IslandTaskType.Type2ShowType[pg.island_task[arg2_32].type]
 
-		triggerToggle(arg0_31.typeUIList.container:Find(var1_31 .. "/list/" .. arg2_31), true)
+		triggerToggle(arg0_32.typeUIList.container:Find(var1_32 .. "/list/" .. arg2_32), true)
 	end
 
-	pg.UIMgr.GetInstance():BlurPanel(arg0_31._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_32._tf)
 end
 
-function var0_0.GetShowTypeList(arg0_32)
-	local var0_32 = getProxy(IslandProxy):GetIsland():GetAblityAgency()
-	local var1_32 = underscore.select(underscore.keys(IslandTaskType.ShowTypeUnlockId), function(arg0_33)
-		return var0_32:HasAbility(IslandTaskType.ShowTypeUnlockId[arg0_33])
+function var0_0.GetShowTypeList(arg0_33)
+	local var0_33 = getProxy(IslandProxy):GetIsland():GetAblityAgency()
+	local var1_33 = underscore.select(underscore.keys(IslandTaskType.ShowTypeUnlockId), function(arg0_34)
+		return var0_33:HasAbility(IslandTaskType.ShowTypeUnlockId[arg0_34])
 	end)
 
-	table.sort(var1_32)
+	table.sort(var1_33)
 
-	return var1_32
+	return var1_33
 end
 
-function var0_0.OnHide(arg0_34)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_34._tf)
+function var0_0.OnHide(arg0_35)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_35._tf)
 end
 
-function var0_0.OnDisable(arg0_35)
-	arg0_35:OnHide()
-end
-
-function var0_0.OnDestroy(arg0_36)
+function var0_0.OnDisable(arg0_36)
 	arg0_36:OnHide()
+end
+
+function var0_0.OnDestroy(arg0_37)
+	arg0_37.richtext:RemoveAllListeners()
+	arg0_37:OnHide()
 end
 
 return var0_0

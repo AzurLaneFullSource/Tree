@@ -72,11 +72,9 @@ function var0_0.GenPool(arg0_2, arg1_2)
 
 				table.insert(arg0_2.goList, arg0_6)
 
-				if Object.Instantiate(arg0_6) then
-					local var0_6 = Object.Instantiate(arg0_6)
+				local var0_6 = Object.Instantiate(arg0_6)
 
-					arg0_2.pools[iter3_2] = CourtYardEffectPool.New(arg1_2, var0_6, 0, 3)
-				end
+				arg0_2.pools[iter3_2] = CourtYardEffectPool.New(arg1_2, var0_6, 0, 3)
 
 				arg0_5()
 			end), true, true)

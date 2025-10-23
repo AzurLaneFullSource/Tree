@@ -11,7 +11,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			say = "Look at this, Miss Elf! Seems there's a supply point near here.",
-			bgm = "danmachi-1",
+			bgm = "danmachi-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

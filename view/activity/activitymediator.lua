@@ -581,8 +581,6 @@ function var0_0.initNotificationHandleDic(arg0_59)
 			if arg1_80:getBody().context.mediator == VoteFameHallMediator then
 				arg0_80.viewComponent:updateEntrances()
 			end
-
-			arg0_80.viewComponent:removeLayers()
 		end,
 		[GAME.MONOPOLY_AWARD_DONE] = function(arg0_81, arg1_81)
 			local var0_81 = arg1_81:getBody()
@@ -633,103 +631,98 @@ function var0_0.initNotificationHandleDic(arg0_59)
 
 			arg0_87.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_87.awards)
 		end,
-		[GAME.LOAD_LAYERS] = function(arg0_88, arg1_88)
+		[GAME.CHARGE_SUCCESS] = function(arg0_88, arg1_88)
 			local var0_88 = arg1_88:getBody()
 
-			arg0_88.viewComponent:loadLayers()
-		end,
-		[GAME.CHARGE_SUCCESS] = function(arg0_89, arg1_89)
-			local var0_89 = arg1_89:getBody()
+			arg0_88.viewComponent:updateTaskLayers()
 
-			arg0_89.viewComponent:updateTaskLayers()
-
-			local var1_89 = Goods.Create({
-				shop_id = var0_89.shopId
+			local var1_88 = Goods.Create({
+				shop_id = var0_88.shopId
 			}, Goods.TYPE_CHARGE)
 
-			arg0_89.viewComponent:OnChargeSuccess(var1_89)
+			arg0_88.viewComponent:OnChargeSuccess(var1_88)
 		end,
-		[GAME.SHOPPING_DONE] = function(arg0_90, arg1_90)
-			local var0_90 = arg1_90:getBody()
+		[GAME.SHOPPING_DONE] = function(arg0_89, arg1_89)
+			local var0_89 = arg1_89:getBody()
 
-			arg0_90.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_90.awards, function()
-				arg0_90.viewComponent:updateTaskLayers()
+			arg0_89.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_89.awards, function()
+				arg0_89.viewComponent:updateTaskLayers()
 			end)
 		end,
-		[GAME.ACT_MANUAL_SIGN_DONE] = function(arg0_92, arg1_92)
+		[GAME.ACT_MANUAL_SIGN_DONE] = function(arg0_91, arg1_91)
+			local var0_91 = arg1_91:getBody()
+
+			arg0_91.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_91.awards)
+		end,
+		[ActivityProxy.ACTIVITY_SHOP_SHOW_AWARDS] = function(arg0_92, arg1_92)
 			local var0_92 = arg1_92:getBody()
 
-			arg0_92.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_92.awards)
-		end,
-		[ActivityProxy.ACTIVITY_SHOP_SHOW_AWARDS] = function(arg0_93, arg1_93)
-			local var0_93 = arg1_93:getBody()
+			arg0_92.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_92.awards, function()
+				local var0_93 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_UR_EXCHANGE)
 
-			arg0_93.viewComponent:emit(BaseUI.ON_ACHIEVE, var0_93.awards, function()
-				local var0_94 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_UR_EXCHANGE)
-
-				if var0_94 and not var0_94:isShow() and var0_94:isCorePage(arg0_93.contextData.coreName) then
-					arg0_93.viewComponent:removeActivity(var0_94.id)
+				if var0_93 and not var0_93:isShow() and var0_93:isCorePage(arg0_92.contextData.coreName) then
+					arg0_92.viewComponent:removeActivity(var0_93.id)
 				end
 
-				arg0_93.viewComponent:updateTaskLayers()
-				existCall(var0_93.callback)
+				arg0_92.viewComponent:updateTaskLayers()
+				existCall(var0_92.callback)
 			end)
 		end
 	}
 end
 
-function var0_0.showNextActivity(arg0_95, arg1_95)
-	local var0_95 = getProxy(ActivityProxy)
+function var0_0.showNextActivity(arg0_94, arg1_94)
+	local var0_94 = getProxy(ActivityProxy)
 
-	if not var0_95 then
+	if not var0_94 then
 		return
 	end
 
-	local var1_95 = var0_95:findNextAutoActivity(arg1_95)
+	local var1_94 = var0_94:findNextAutoActivity(arg1_94)
 
-	if var1_95 then
-		if var1_95.id == ActivityConst.BLACK_FRIDAY_SIGNIN_ACT_ID then
-			arg0_95.contextData.showByNextAct = true
+	if var1_94 then
+		if var1_94.id == ActivityConst.BLACK_FRIDAY_SIGNIN_ACT_ID then
+			arg0_94.contextData.showByNextAct = true
 
-			arg0_95.viewComponent:verifyTabs(ActivityConst.BLACK_FRIDAY_ACT_ID)
+			arg0_94.viewComponent:verifyTabs(ActivityConst.BLACK_FRIDAY_ACT_ID)
 		else
-			arg0_95.viewComponent:verifyTabs(var1_95.id)
+			arg0_94.viewComponent:verifyTabs(var1_94.id)
 		end
 
-		local var2_95 = var1_95:getConfig("type")
+		local var2_94 = var1_94:getConfig("type")
 
-		if var2_95 == ActivityConst.ACTIVITY_TYPE_7DAYSLOGIN then
-			arg0_95:sendNotification(GAME.ACTIVITY_OPERATION, {
+		if var2_94 == ActivityConst.ACTIVITY_TYPE_7DAYSLOGIN then
+			arg0_94:sendNotification(GAME.ACTIVITY_OPERATION, {
 				cmd = 1,
-				activity_id = var1_95.id
+				activity_id = var1_94.id
 			})
-		elseif var2_95 == ActivityConst.ACTIVITY_TYPE_MONTHSIGN then
-			local var3_95 = var1_95:getSpecialData("reMonthSignDay") ~= nil and 3 or 1
+		elseif var2_94 == ActivityConst.ACTIVITY_TYPE_MONTHSIGN then
+			local var3_94 = var1_94:getSpecialData("reMonthSignDay") ~= nil and 3 or 1
 
-			arg0_95:sendNotification(GAME.ACTIVITY_OPERATION, {
-				activity_id = var1_95.id,
-				cmd = var3_95,
-				arg1 = var1_95:getSpecialData("reMonthSignDay")
+			arg0_94:sendNotification(GAME.ACTIVITY_OPERATION, {
+				activity_id = var1_94.id,
+				cmd = var3_94,
+				arg1 = var1_94:getSpecialData("reMonthSignDay")
 			})
-		elseif var2_95 == ActivityConst.ACTIVITY_TYPE_PROGRESSLOGIN then
-			arg0_95:sendNotification(GAME.ACTIVITY_OPERATION, {
-				activity_id = var1_95.id,
-				cmd = var1_95.data1 < 7 and 1 or 2
+		elseif var2_94 == ActivityConst.ACTIVITY_TYPE_PROGRESSLOGIN then
+			arg0_94:sendNotification(GAME.ACTIVITY_OPERATION, {
+				activity_id = var1_94.id,
+				cmd = var1_94.data1 < 7 and 1 or 2
 			})
-		elseif var1_95.id == ActivityConst.SHADOW_PLAY_ID then
-			var1_95.clientData1 = 1
+		elseif var1_94.id == ActivityConst.SHADOW_PLAY_ID then
+			var1_94.clientData1 = 1
 
-			arg0_95:showNextActivity(arg1_95)
+			arg0_94:showNextActivity(arg1_94)
 		end
-	elseif not arg0_95.viewComponent.activity then
-		local var4_95 = arg0_95:getDisplayActivity()
-		local var5_95 = arg0_95.contextData.id or arg0_95.contextData.type and checkExist(_.detect(var4_95, function(arg0_96)
-			return arg0_96:getConfig("type") == arg0_95.contextData.type
+	elseif not arg0_94.viewComponent.activity then
+		local var4_94 = arg0_94:getDisplayActivity()
+		local var5_94 = arg0_94.contextData.id or arg0_94.contextData.type and checkExist(_.detect(var4_94, function(arg0_95)
+			return arg0_95:getConfig("type") == arg0_94.contextData.type
 		end), {
 			"id"
 		}) or 0
 
-		arg0_95.viewComponent:verifyTabs(var5_95)
+		arg0_94.viewComponent:verifyTabs(var5_94)
 	end
 end
 

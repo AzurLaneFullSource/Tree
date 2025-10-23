@@ -1839,5 +1839,25 @@ pg.voice_actor_CN = {
 	[476] = {
 		code = 476,
 		actor_name = "Mizuki Niizaki"
+	},
+	[477] = {
+		code = 477,
+		actor_name = "Haru Amaichi"
+	},
+	[478] = {
+		code = 478,
+		actor_name = "Yumika Yano"
+	},
+	[479] = {
+		code = 479,
+		actor_name = "Narumi Aisaka"
+	},
+	[480] = {
+		code = 480,
+		actor_name = "Rena Ozawa"
+	},
+	[481] = {
+		code = 481,
+		actor_name = "Misuzu Yamada"
 	}
 }

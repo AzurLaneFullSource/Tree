@@ -50,104 +50,58 @@ function var0_0.UpdateHandCollet(arg0_6)
 		end
 
 		arg0_6.hasEffect = false
-
-		arg0_6:StopEffectTimer()
-
-		local var0_6 = arg0_6.slotData:GetCanCollectTimeStamps() - pg.TimeMgr.GetInstance():GetServerTime()
-
-		arg0_6:StartEffectTimer(var0_6)
-	end
-
-	;(function()
-		local var0_7 = arg0_6.slotData:GetCanCollectTimeStamps()
-
-		if var0_7 ~= 0 then
-			local var1_7 = var0_7 - pg.TimeMgr.GetInstance():GetServerTime()
-
-			arg0_6.delayInfoTimer = Timer.New(function()
-				arg0_6:NotifiyCore(ISLAND_EVT.UPDATE_HUD, tonumber(arg0_6.id))
-			end, var1_7, 1)
-
-			arg0_6.delayInfoTimer:Start()
-		end
-	end)()
-end
-
-function var0_0.StartEffectTimer(arg0_9, arg1_9)
-	arg0_9.effectTimer = Timer.New(function()
-		arg0_9.hasEffect = true
-
-		arg0_9:LoadEffectItem()
-	end, arg1_9, 1)
-
-	arg0_9.effectTimer:Start()
-end
-
-function var0_0.StopEffectTimer(arg0_11)
-	if arg0_11.effectTimer ~= nil then
-		arg0_11.effectTimer:Stop()
-
-		arg0_11.effectTimer = nil
 	end
 end
 
-function var0_0.StopUpdateInfoTimer(arg0_12)
-	if arg0_12.delayInfoTimer ~= nil then
-		arg0_12.delayInfoTimer:Stop()
+function var0_0.GetToolId(arg0_7)
+	local var0_7 = pg.island_production_slot[arg0_7.slotData.configId].place
+	local var1_7 = pg.island_production_place[var0_7].tool_list
+	local var2_7
+	local var3_7 = getProxy(IslandProxy):GetIsland():GetAblityAgency()
 
-		arg0_12.delayInfoTimer = nil
-	end
-end
-
-function var0_0.GetToolId(arg0_13)
-	local var0_13 = pg.island_production_slot[arg0_13.slotData.configId].place
-	local var1_13 = pg.island_production_place[var0_13].tool_list
-	local var2_13
-	local var3_13 = getProxy(IslandProxy):GetIsland():GetAblityAgency()
-
-	for iter0_13, iter1_13 in ipairs(var1_13) do
-		if pg.island_animation_attachments[iter1_13].unlock == 0 then
-			var2_13 = iter1_13
+	for iter0_7, iter1_7 in ipairs(var1_7) do
+		if pg.island_animation_attachments[iter1_7].unlock == 0 then
+			var2_7 = iter1_7
 		end
 
-		if var3_13:IsUnlockCollectTool(iter1_13) then
-			var2_13 = iter1_13
+		if var3_7:IsUnlockCollectTool(iter1_7) then
+			var2_7 = iter1_7
 		end
 	end
 
-	return var2_13
+	return var2_7
 end
 
-function var0_0.GetAnimatorTrigger(arg0_14)
-	if pg.island_production_slot[arg0_14.slotData.configId].place == IslandProductConst.MinePlaceId then
+function var0_0.GetAnimatorTrigger(arg0_8)
+	if pg.island_production_slot[arg0_8.slotData.configId].place == IslandProductConst.MinePlaceId then
 		return IslandConst.MINING_FLAG
 	else
 		return IslandConst.LOP_FLAG
 	end
 end
 
-function var0_0.TakeDamage(arg0_15, arg1_15)
-	if arg0_15.currentHp then
-		arg0_15.currentHp = arg0_15.currentHp - arg1_15
+function var0_0.TakeDamage(arg0_9, arg1_9)
+	if arg0_9.currentHp then
+		arg0_9.currentHp = arg0_9.currentHp - arg1_9
 	end
 end
 
-function var0_0.ResetHp(arg0_16)
-	arg0_16.currentHp = arg0_16.maxHp
+function var0_0.ResetHp(arg0_10)
+	arg0_10.currentHp = arg0_10.maxHp
 end
 
-function var0_0.CheckCanStartColloct(arg0_17)
-	if not (arg0_17.slotData:GetCanCollectTimeStamps() == 0) then
-		local var0_17 = arg0_17.slotData:GetCanCollectTimeStamps() - pg.TimeMgr.GetInstance():GetServerTime()
-		local var1_17 = (function(arg0_18)
-			local var0_18 = math.floor(arg0_18 / 3600)
-			local var1_18 = math.floor(arg0_18 % 3600 / 60)
-			local var2_18 = arg0_18 % 60
+function var0_0.CheckCanStartColloct(arg0_11)
+	if not (arg0_11.slotData:GetCanCollectTimeStamps() == 0) then
+		local var0_11 = arg0_11.slotData:GetCanCollectTimeStamps() - pg.TimeMgr.GetInstance():GetServerTime()
+		local var1_11 = (function(arg0_12)
+			local var0_12 = math.floor(arg0_12 / 3600)
+			local var1_12 = math.floor(arg0_12 % 3600 / 60)
+			local var2_12 = arg0_12 % 60
 
-			return string.format("%02d:%02d:%02d", var0_18, var1_18, var2_18)
-		end)(var0_17)
+			return string.format("%02d:%02d:%02d", var0_12, var1_12, var2_12)
+		end)(var0_11)
 
-		pg.TipsMgr.GetInstance():ShowTips(i18n("island_production_log_recover", var1_17))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("island_production_log_recover", var1_11))
 
 		return false
 	end
@@ -155,81 +109,72 @@ function var0_0.CheckCanStartColloct(arg0_17)
 	return true
 end
 
-function var0_0.GetHudInfo(arg0_19)
-	local var0_19 = {}
+function var0_0.GetHudInfo(arg0_13)
+	local var0_13 = {}
 
-	if not arg0_19.slotData then
-		var0_19.needShowHud = false
+	if not arg0_13.slotData then
+		var0_13.needShowHud = false
 
-		return var0_19
+		return var0_13
 	end
 
-	var0_19.needShowHud = true
+	var0_13.needShowHud = true
 
-	local var1_19 = pg.island_formula[arg0_19.formulaId]
+	local var1_13 = pg.island_formula[arg0_13.formulaId]
 
-	var0_19.name = var1_19.name
+	var0_13.name = var1_13.name
 
-	local var2_19 = arg0_19.slotData:GetCanCollectTimeStamps() == 0 and 1 or 0
+	local var2_13 = arg0_13.slotData:GetCanCollectTimeStamps() == 0 and 1 or 0
 
-	var0_19.numProcess = string.format("%d/%d", var2_19, 1)
-	var0_19.itemIcon = "island/" .. pg.island_item_data_template[var1_19.item_id].icon
+	var0_13.numProcess = string.format("%d/%d", var2_13, 1)
+	var0_13.itemIcon = "island/" .. pg.island_item_data_template[var1_13.item_id].icon
 
-	if var2_19 == 0 then
-		var0_19.process = 0
-	elseif arg0_19.maxHp ~= 0 then
-		var0_19.process = arg0_19.currentHp / arg0_19.maxHp
+	if var2_13 == 0 then
+		var0_13.process = 0
+	elseif arg0_13.maxHp ~= 0 then
+		var0_13.process = arg0_13.currentHp / arg0_13.maxHp
 	end
 
-	return var0_19
+	return var0_13
 end
 
-function var0_0.TakeAttack(arg0_20)
-	local var0_20 = pg.island_formula[arg0_20.formulaId]
-	local var1_20 = var0_20.affected_vfx[1]
+function var0_0.TakeAttack(arg0_14)
+	local var0_14 = pg.island_formula[arg0_14.formulaId]
+	local var1_14 = var0_14.affected_vfx[1]
 
-	arg0_20:NotifiyIsland(IslandProxy.GEN_RECYCLEITEM, {
-		id = arg0_20.id,
-		unitId = var1_20,
-		position = arg0_20.position,
-		rotation = arg0_20.rotation,
+	arg0_14:NotifiyIsland(IslandProxy.GEN_RECYCLEITEM, {
+		id = arg0_14.id,
+		unitId = var1_14,
+		position = arg0_14.position,
+		rotation = arg0_14.rotation,
 		recycleAssetType = IslandDelayRecycleUnitBuilder.RecycleType.ProductEffect,
-		delayRecycleTime = var0_20.affected_vfx[2],
+		delayRecycleTime = var0_14.affected_vfx[2],
 		behaviourTree = {}
 	})
 
-	if arg0_20.maxHp ~= 0 then
-		local var2_20 = arg0_20:GetToolId()
-		local var3_20 = pg.island_animation_attachments[var2_20].attack
+	if arg0_14.maxHp ~= 0 then
+		local var2_14 = arg0_14:GetToolId()
+		local var3_14 = pg.island_animation_attachments[var2_14].attack
 
-		arg0_20:TakeDamage(var3_20)
-		arg0_20:NotifiyCore(ISLAND_EVT.UPDATE_HUD, tonumber(arg0_20.id))
+		arg0_14:TakeDamage(var3_14)
+		arg0_14:NotifiyCore(ISLAND_EVT.UPDATE_HUD, tonumber(arg0_14.id))
 
-		if arg0_20.currentHp < 0 then
-			arg0_20.slotData:StartColloct()
+		if arg0_14.currentHp < 0 then
+			arg0_14.slotData:StartColloct()
 		end
 	else
-		arg0_20.slotData:StartColloct()
+		arg0_14.slotData:StartColloct()
 	end
 end
 
-function var0_0.OnDispose(arg0_21)
-	var0_0.super.OnDispose(arg0_21)
+function var0_0.OnDispose(arg0_15)
+	var0_0.super.OnDispose(arg0_15)
 
-	if arg0_21.effectGo then
-		arg0_21:UnLoadSceneItemRes(arg0_21.effectPath, arg0_21.effectGo)
+	if arg0_15.effectGo then
+		arg0_15:UnLoadSceneItemRes(arg0_15.effectPath, arg0_15.effectGo)
 	end
 
-	arg0_21:StopUpdateInfoTimer()
-	arg0_21:StopEffectTimer()
-
-	arg0_21.hasEffect = false
-
-	if arg0_21.modelDelayTimer then
-		arg0_21.modelDelayTimer:Stop()
-
-		arg0_21.modelDelayTimer = nil
-	end
+	arg0_15.hasEffect = false
 end
 
 return var0_0

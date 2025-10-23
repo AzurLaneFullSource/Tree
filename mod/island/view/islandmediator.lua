@@ -544,20 +544,22 @@ function var0_0._register(arg0_1)
 			callback = arg2_82
 		})
 	end)
-	arg0_1:bind(var0_0.START_DELEGATION, function(arg0_83, arg1_83, arg2_83, arg3_83, arg4_83, arg5_83)
+	arg0_1:bind(var0_0.START_DELEGATION, function(arg0_83, arg1_83, arg2_83, arg3_83, arg4_83, arg5_83, arg6_83)
 		arg0_1:sendNotification(GAME.ISLAND_START_DELEGATION, {
 			build_id = arg1_83,
 			area_id = arg2_83,
 			ship_id = arg3_83,
 			formula_id = arg4_83,
-			num = arg5_83
+			num = arg5_83,
+			extraCost = arg6_83
 		})
 	end)
-	arg0_1:bind(var0_0.ADD_DELEGATION, function(arg0_84, arg1_84, arg2_84, arg3_84)
+	arg0_1:bind(var0_0.ADD_DELEGATION, function(arg0_84, arg1_84, arg2_84, arg3_84, arg4_84)
 		arg0_1:sendNotification(GAME.ISLAND_ADD_DELEGATION, {
 			build_id = arg1_84,
 			area_id = arg2_84,
-			add_num = arg3_84
+			add_num = arg3_84,
+			extraCost = arg4_84
 		})
 	end)
 	arg0_1:bind(var0_0.STOP_DELEGATION, function(arg0_85, arg1_85, arg2_85)

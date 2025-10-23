@@ -240,6 +240,8 @@ pg.memory_group = setmetatable({
 		340,
 		341,
 		342,
+		343,
+		344,
 		501,
 		502,
 		503,
@@ -352,6 +354,7 @@ pg.memory_group = setmetatable({
 		612,
 		613,
 		614,
+		615,
 		1000,
 		1001,
 		1002,
@@ -5950,6 +5953,65 @@ pg.base.memory_group = {
 			4692
 		}
 	},
+	[343] = {
+		id = 343,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 50202,
+		title = "Sails and Spooks II",
+		group_id = "",
+		memories = {
+			4711,
+			4712,
+			4713,
+			4714,
+			4715,
+			4716,
+			4717,
+			4718
+		}
+	},
+	[344] = {
+		id = 344,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 50181,
+		title = "Tempesta and Islas de Libertád",
+		group_id = "",
+		memories = {
+			4721,
+			4722,
+			4723,
+			4724,
+			4725,
+			4726,
+			4727,
+			4728,
+			4729,
+			4730,
+			4731,
+			4732,
+			4733,
+			4734,
+			4735,
+			4736,
+			4737,
+			4738,
+			4739,
+			4740,
+			4741,
+			4742,
+			4743,
+			4744,
+			4745,
+			4746,
+			4747,
+			4748,
+			4749
+		}
+	},
 	[501] = {
 		id = 501,
 		subtype = 0,
@@ -8196,6 +8258,26 @@ pg.base.memory_group = {
 			4665,
 			4666,
 			4667
+		},
+		group_id = {
+			10000
+		}
+	},
+	[615] = {
+		id = 615,
+		subtype = 0,
+		icon = "title_chara_zhenzhuhao",
+		type = 3,
+		link_event = 0,
+		title = "Sounds of the Ocean",
+		memories = {
+			4701,
+			4702,
+			4703,
+			4704,
+			4705,
+			4706,
+			4707
 		},
 		group_id = {
 			10000

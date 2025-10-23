@@ -40,15 +40,8 @@ function var0_0.register(arg0_1)
 		arg0_1:HandleBookData(arg0_9.item_ids)
 	end)
 	arg0_1:on(21518, function(arg0_10)
-		if arg0_10.type == 1 or arg0_10.type == 3 then
-			arg0_1:HandleSlotFormulaData(arg0_10)
-		end
-
-		if arg0_10.type == 1 or arg0_10.type == 2 then
-			local var0_10 = pg.island_formula[arg0_10.formula_id].commission_product[1][2]
-
-			getProxy(IslandProxy):GetIsland():GetBuildingAgency():AddFormulaNum(arg0_10.formula_id, arg0_10.num * var0_10)
-		end
+		arg0_1:HandleSlotFormulaData(arg0_10)
+		getProxy(IslandProxy):GetIsland():GetBuildingAgency():AddFormulaNum(arg0_10.formula_id, comb_num)
 	end)
 	arg0_1:on(21519, function(arg0_11)
 		arg0_1:HandleBuildUnlockData(arg0_11)

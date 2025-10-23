@@ -66,4 +66,14 @@ function var0_0.GetEnterExtraItem(arg0_13)
 	end
 end
 
+function var0_0.GetHideSceneItem(arg0_14)
+	local var0_14 = arg0_14:getConfig("hide_scene_item")
+
+	if var0_14 and var0_14 ~= "" and #var0_14 > 0 then
+		return var0_14
+	else
+		return {}
+	end
+end
+
 return var0_0

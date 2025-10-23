@@ -61,31 +61,45 @@ function var0_0.ShowAnimationOp(arg0_6, arg1_6, arg2_6)
 	arg0_6.animationOpTpls[var0_6.key] = var2_6
 
 	table.insert(arg0_6.animationOpShowFlags, var0_6.key)
+	setActive(var2_6.transform:Find("effect"), false)
 end
 
-function var0_0.HideAnimationOp(arg0_7, arg1_7)
-	local var0_7 = arg0_7:GenUnitData(arg1_7.id, arg1_7.unitType)
+function var0_0.UpdateAnimationOpEffect(arg0_7, arg1_7, arg2_7)
+	local var0_7, var1_7 = IslandCalcUtil.GetTypeAndIdByUniqueId(arg1_7)
+	local var2_7 = arg0_7:GenUnitData(var1_7, var0_7)
+	local var3_7 = arg0_7.animationOpTpls[var2_7.key]
 
-	table.removebyvalue(arg0_7.animationOpShowFlags, var0_7.key)
-
-	local var1_7 = arg0_7.animationOpTpls[var0_7.key]
-
-	if not var1_7 then
+	if not var3_7 then
 		return
 	end
 
-	setActive(var1_7, false)
+	setActive(var3_7.transform:Find("effect"), arg2_7)
 end
 
-function var0_0.OnDispose(arg0_8)
-	var0_0.super.OnDispose(arg0_8)
+function var0_0.HideAnimationOp(arg0_8, arg1_8)
+	local var0_8 = arg0_8:GenUnitData(arg1_8.id, arg1_8.unitType)
 
-	for iter0_8, iter1_8 in pairs(arg0_8.animationOpTpls) do
-		Object.Destroy(iter1_8)
+	table.removebyvalue(arg0_8.animationOpShowFlags, var0_8.key)
+
+	local var1_8 = arg0_8.animationOpTpls[var0_8.key]
+
+	if not var1_8 then
+		return
 	end
 
-	arg0_8.animationOpTpls = nil
-	arg0_8.animationOpShowFlags = nil
+	setActive(var1_8, false)
+	setActive(var1_8.transform:Find("effect"), false)
+end
+
+function var0_0.OnDispose(arg0_9)
+	var0_0.super.OnDispose(arg0_9)
+
+	for iter0_9, iter1_9 in pairs(arg0_9.animationOpTpls) do
+		Object.Destroy(iter1_9)
+	end
+
+	arg0_9.animationOpTpls = nil
+	arg0_9.animationOpShowFlags = nil
 end
 
 return var0_0

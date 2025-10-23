@@ -11,4 +11,8 @@ function var0_0.SetupBt(arg0_1)
 	var0_0.super.SetupBt(arg0_1)
 end
 
+function var0_0.ExistActionFeedbackBubble(arg0_2)
+	return arg0_2.data:ExistActionFeedback()
+end
+
 return var0_0

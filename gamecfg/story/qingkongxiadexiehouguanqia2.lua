@@ -11,7 +11,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			say = "Until just a while ago, I was standing in a familiar alleyway in Orario and thinking to myself. Y'know, \"Maybe I should buy some Potato Poppers.\"",
-			bgm = "danmachi-1",
+			bgm = "danmachi-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

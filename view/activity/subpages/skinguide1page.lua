@@ -184,19 +184,11 @@ function var0_0.updateUI(arg0_9)
 	end
 end
 
-function var0_0.OnLoadLayers(arg0_10)
+function var0_0.OnShowFlush(arg0_10)
 	return
 end
 
-function var0_0.OnRemoveLayers(arg0_11)
-	return
-end
-
-function var0_0.OnShowFlush(arg0_12)
-	return
-end
-
-function var0_0.OnDestroy(arg0_13)
+function var0_0.OnDestroy(arg0_11)
 	return
 end
 

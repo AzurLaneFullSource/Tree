@@ -611,6 +611,7 @@ function var0_0.stampWindow(arg0_49)
 	end)
 	setActive(arg0_49.window, true)
 	setActive(arg0_49.button, false)
+	setActive(arg0_49.giftButton, false)
 	setActive(arg0_49.targetActorTF:Find("live2d"), false)
 
 	local var0_49

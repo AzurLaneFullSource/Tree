@@ -336,6 +336,8 @@ function var0_0.OnHide(arg0_28)
 end
 
 function var0_0.OnDestroy(arg0_29)
+	arg0_29:OnHide()
+
 	for iter0_29, iter1_29 in ipairs(arg0_29.loadingIdList or {}) do
 		IslandAssetLoadDispatcher.Instance:Cancel(iter1_29)
 	end

@@ -93,4 +93,8 @@ function var0_0.OnHide(arg0_14)
 	arg0_14.selected = {}
 end
 
+function var0_0.OnDestroy(arg0_15)
+	arg0_15:OnHide()
+end
+
 return var0_0

@@ -10,7 +10,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			bgm = "danmachi-1",
+			bgm = "danmachi-az-story",
 			say = "Speaking of supplies – as in, food – I've got an idea, Miss Elf!",
 			actorPosition = {
 				x = -200,

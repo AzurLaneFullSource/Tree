@@ -228,14 +228,18 @@ function var0_0.OnHide(arg0_24)
 	arg0_24:UnBlurPanel()
 end
 
-function var0_0.OnDestroy(arg0_25)
-	arg0_25:UnBlurPanel()
+function var0_0.OnDisable(arg0_25)
+	arg0_25:OnHide()
+end
 
-	for iter0_25, iter1_25 in ipairs(arg0_25.pages) do
-		iter1_25:Destroy()
+function var0_0.OnDestroy(arg0_26)
+	arg0_26:UnBlurPanel()
+
+	for iter0_26, iter1_26 in ipairs(arg0_26.pages) do
+		iter1_26:Destroy()
 	end
 
-	arg0_25.pages = nil
+	arg0_26.pages = nil
 end
 
 return var0_0

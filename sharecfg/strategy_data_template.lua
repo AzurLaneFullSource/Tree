@@ -337,6 +337,10 @@ pg.strategy_data_template = setmetatable({
 		201530,
 		201531,
 		201532,
+		201547,
+		201550,
+		201551,
+		201552,
 		205001,
 		205002,
 		205003,
@@ -4094,6 +4098,50 @@ pg.base.strategy_data_template = {
 		icon = "200908",
 		buff_type = 0,
 		desc = "The Boss is joined in battle by red balls of light. The balls of light cannot inflict DMG, but they do continuously deploy scented smokescreens. As long as a ship with a valid hitbox is inside the scented smokescreen, it inflicts its effects on her: <color=#92fc63>her SPD will decrease and her DMG taken will increase the longer she remains in it. After being inside the smokescreen for a total of 1 second, she will gain the Woozy status, doubling her DMG taken and rendering her unable to attack or move</color> until the smokescreen vanishes.\nAfter exiting the smokescreen, the affected shipgirl loses its negative effects half as fast.\n\n- Hard Mode Details -\nEnemies <color=#ffc038>deal significantly more DMG.</color> Their large shells cannot be negated by shields or launching an airstrike.\n<color=#92fc63>Your Vanguard's hitbox is substantially smaller than usual, and only the frontmost ship in your Vanguard possesses a hitbox,</color> while the rest of your Vanguard cannot be damaged.\nYour ships become briefly invulnerable after taking DMG.\n\n· The skills \"Operation Rainbow,\" \"Fiercer When Cornered,\" and \"Eleventh Hour\" are rendered ineffective.",
+		arg = {}
+	},
+	[201547] = {
+		buff_id = 201547,
+		name = "Island Ruins Support",
+		iconSize = "",
+		type = 10,
+		id = 201547,
+		icon = "201547",
+		buff_type = 0,
+		desc = "Every 20s, your fleet receives supporting fire from the island ruins.",
+		arg = {}
+	},
+	[201550] = {
+		buff_id = 201550,
+		name = "Island Ruins Support",
+		iconSize = "",
+		type = 10,
+		id = 201550,
+		icon = "201547",
+		buff_type = 0,
+		desc = "Every 20s, your fleet receives supporting fire from the island ruins.",
+		arg = {}
+	},
+	[201551] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 201551,
+		icon = "200908",
+		buff_type = 0,
+		desc = "\"A True Duel Must Be Fair!\"\nLyme aims to eliminate \"unfair\" elements from the battle:\n1. Both your ships and the enemy are <color=#92fc63>unable to recover HP</color>.\n2. If any of your ships gain a buff that provides complete evasion or invincibility, Lyme gains <color=#92fc63>a barrier that fixes her DMG taken to 1</color>.\n3. If your ships launch an airstrike which clears the screen of enemy shells, 1.5 seconds later, Lyme will <color=#92fc63>clear all shells on the screen and fire a retaliatory barrage</color>. When your ships launch an airstrike, this effect cannot activate more than 2 times within 5 seconds.\n\n",
+		arg = {}
+	},
+	[201552] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 201552,
+		icon = "200908",
+		buff_type = 0,
+		desc = "\"A True Duel Must Be Fair!\"\nLyme aims to eliminate \"unfair\" elements from the battle:\n1. Both your ships and the enemy are <color=#92fc63>unable to recover HP</color>.\n2. If any of your ships gain a buff that provides complete evasion or invincibility, Lyme gains <color=#92fc63>a barrier that fixes her DMG taken to 1</color>.\n3. If your ships launch an airstrike which clears the screen of enemy shells, 1.5 seconds later, Lyme will <color=#92fc63>clear all shells on the screen and fire a retaliatory barrage</color>. When your ships launch an airstrike, this effect cannot activate more than 2 times within 5 seconds.\n\n- Hard Mode Details -\nEnemies <color=#ffc038>deal significantly more DMG.</color> Their large shells cannot be negated by shields or launching an airstrike.\n<color=#92fc63>Your Vanguard's hitbox is substantially smaller than usual, and only the frontmost ship in your Vanguard possesses a hitbox,</color> while the rest of your Vanguard cannot be damaged.\nYour ships become briefly invulnerable after taking DMG.\n\n· The skill \"Fiercer When Cornered\" is rendered ineffective.",
 		arg = {}
 	},
 	[205001] = {

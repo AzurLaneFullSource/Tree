@@ -135020,6 +135020,59 @@ _G.pg.base.equip_data_statistics[80532] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[80541] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 80541,
+	name = "专属弹幕-莱姆号I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170891,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80542] = {
+	base = 80541,
+	id = 80542,
+	name = "专属弹幕-莱姆号II",
+	weapon_id = {
+		170892,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[85000] = {
 	ammo = 3,
 	attribute_2 = "cannon",
@@ -162454,7 +162507,7 @@ _G.pg.base.equip_data_statistics[150011] = {
 _G.pg.base.equip_data_statistics[150020] = {
 	ammo = 10,
 	attribute_1 = "dodge",
-	descrip = "No description",
+	descrip = "The banner of the Tempesta Fleet flutters freely in the wind.",
 	icon = "150020",
 	id = 150020,
 	name = "Tempesta Banner",
@@ -167536,6 +167589,123 @@ _G.pg.base.equip_data_statistics[150831] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[150840] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	descrip = "Seekers of liberty, Islas de Libertád welcome you!",
+	icon = "150840",
+	id = 150840,
+	name = "Invitation to Islas de Libertád",
+	nationality = 96,
+	rarity = 4,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "200",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			60940,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"MOT",
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150841] = {
+	base = 150840,
+	id = 150841,
+	value_1 = "230",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150842] = {
+	base = 150840,
+	id = 150842,
+	value_1 = "260",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150843] = {
+	base = 150840,
+	id = 150843,
+	value_1 = "290",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150844] = {
+	base = 150840,
+	id = 150844,
+	value_1 = "320",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150845] = {
+	base = 150840,
+	id = 150845,
+	value_1 = "350",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150846] = {
+	base = 150840,
+	id = 150846,
+	value_1 = "380",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150847] = {
+	base = 150840,
+	id = 150847,
+	value_1 = "410",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150848] = {
+	base = 150840,
+	id = 150848,
+	value_1 = "440",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150849] = {
+	base = 150840,
+	id = 150849,
+	value_1 = "470",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150850] = {
+	base = 150840,
+	id = 150850,
+	value_1 = "500",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150851] = {
+	anti_siren = 100,
+	base = 150840,
+	id = 150851,
+	value_1 = "530",
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[170001] = {
 	ammo = 10,
 	descrip = "Barrage",
@@ -169166,6 +169336,112 @@ _G.pg.base.equip_data_statistics[170862] = {
 	name = "专属弹幕-杜威META",
 	weapon_id = {
 		170862,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[170871] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 170871,
+	name = "专属弹幕-冒险号I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170871,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[170872] = {
+	base = 170871,
+	id = 170872,
+	name = "专属弹幕-冒险号II",
+	weapon_id = {
+		170872,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[170881] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 170881,
+	name = "专属弹幕-皇家詹姆斯",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170881,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[170882] = {
+	base = 170881,
+	id = 170882,
+	name = "专属弹幕-皇家詹姆斯",
+	weapon_id = {
+		170882,
 	},
 	hidden_skill_id = {},
 }

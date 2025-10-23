@@ -1934,6 +1934,21 @@ pg.ship_data_group = setmetatable({
 		[960011] = {
 			668
 		},
+		[960012] = {
+			709
+		},
+		[960013] = {
+			710
+		},
+		[960014] = {
+			711
+		},
+		[960015] = {
+			712
+		},
+		[960016] = {
+			713
+		},
 		[1010001] = {
 			10001
 		},
@@ -3075,7 +3090,12 @@ pg.ship_data_group = setmetatable({
 			665,
 			666,
 			667,
-			668
+			668,
+			709,
+			710,
+			711,
+			712,
+			713
 		},
 		{
 			10001,
@@ -3894,6 +3914,11 @@ pg.ship_data_group = setmetatable({
 		666,
 		667,
 		668,
+		709,
+		710,
+		711,
+		712,
+		713,
 		10001,
 		10002,
 		10003,
@@ -32269,6 +32294,166 @@ pg.base.ship_data_group = {
 		description = {
 			{
 				"Event: Tempesta and the Sleeping Sea",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[709] = {
+		type = 24,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 96,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 646,
+		code = 709,
+		group_type = 960012,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"C",
+			"E",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: Tempesta and Islas de Libertád",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[710] = {
+		type = 23,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 96,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 647,
+		code = 710,
+		group_type = 960013,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"C",
+			"E",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: Tempesta and Islas de Libertád",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[711] = {
+		type = 24,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 96,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 646,
+		code = 711,
+		group_type = 960014,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"C",
+			"E",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: Tempesta and Islas de Libertád",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[712] = {
+		type = 23,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 96,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 646,
+		code = 712,
+		group_type = 960015,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"C",
+			"E",
+			"E",
+			"C",
+			"E",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: Tempesta and Islas de Libertád",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[713] = {
+		type = 22,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 96,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 647,
+		code = 713,
+		group_type = 960016,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"C",
+			"E",
+			"E",
+			"C",
+			"E",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: Tempesta and Islas de Libertád",
 				{
 					""
 				},

@@ -36,8 +36,6 @@ function var0_0.InitUS()
 	var0_0.isPretest = IsUnityEditor or var0_0.isPreAudit
 	var0_0.isGoogleSimulator = NetConst.GATEWAY_PORT == 50001 and NetConst.GATEWAY_HOST == "audit.us.yo-star.com"
 	var0_0.isRelease = NetConst.GATEWAY_PORT == 80 and NetConst.GATEWAY_HOST == "blhxusgate.yo-star.com"
-	var0_0.isAudit = NetConst.GATEWAY_PORT == 50001 and NetConst.GATEWAY_HOST == "audit.us.yo-star.com"
-	var0_0.isGoogleSimulator = false
 	var0_0.LoginPlatform = PLATFORM_YOSTARUS
 	var0_0.SDK_PID_TEST = ""
 	var0_0.SDK_PID_RELEASE = ""

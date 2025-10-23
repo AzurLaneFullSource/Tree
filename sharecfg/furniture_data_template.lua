@@ -175,6 +175,7 @@ pg.furniture_data_template = setmetatable({
 			316,
 			317,
 			318,
+			319,
 			100002,
 			100003,
 			100004,
@@ -3585,6 +3586,24 @@ pg.furniture_data_template = setmetatable({
 			329118,
 			329119,
 			329120
+		},
+		[132] = {
+			332001,
+			332002,
+			332101,
+			332102,
+			332103,
+			332104,
+			332105,
+			332106,
+			332107,
+			332108,
+			332109,
+			332110,
+			332111,
+			332112,
+			332113,
+			332301
 		}
 	},
 	get_id_list_by_tag = {
@@ -3831,7 +3850,8 @@ pg.furniture_data_template = setmetatable({
 			311,
 			314,
 			316,
-			318
+			318,
+			319
 		},
 		[7] = {
 			211,
@@ -4042,7 +4062,8 @@ pg.furniture_data_template = setmetatable({
 			325126,
 			328118,
 			330102,
-			329120
+			329120,
+			332113
 		},
 		[4] = {
 			1001,
@@ -4160,7 +4181,8 @@ pg.furniture_data_template = setmetatable({
 			327001,
 			328001,
 			330001,
-			329001
+			329001,
+			332001
 		},
 		[3] = {
 			1002,
@@ -4279,7 +4301,8 @@ pg.furniture_data_template = setmetatable({
 			327002,
 			328002,
 			330002,
-			329002
+			329002,
+			332002
 		},
 		{
 			1101,
@@ -6413,7 +6436,19 @@ pg.furniture_data_template = setmetatable({
 			329116,
 			329117,
 			329118,
-			329119
+			329119,
+			332101,
+			332102,
+			332103,
+			332104,
+			332105,
+			332106,
+			332107,
+			332108,
+			332109,
+			332110,
+			332111,
+			332112
 		},
 		{
 			1108,
@@ -6952,7 +6987,8 @@ pg.furniture_data_template = setmetatable({
 			325302,
 			325303,
 			327301,
-			327302
+			327302,
+			332301
 		}
 	},
 	get_id_list_by_type = {
@@ -7104,6 +7140,7 @@ pg.furniture_data_template = setmetatable({
 			316,
 			317,
 			318,
+			319,
 			100002,
 			100004,
 			100005,
@@ -9290,7 +9327,19 @@ pg.furniture_data_template = setmetatable({
 			329117,
 			329118,
 			329119,
-			329120
+			329120,
+			332101,
+			332103,
+			332104,
+			332105,
+			332106,
+			332107,
+			332108,
+			332109,
+			332110,
+			332111,
+			332112,
+			332113
 		},
 		[11] = {
 			131,
@@ -9487,7 +9536,8 @@ pg.furniture_data_template = setmetatable({
 			327001,
 			328001,
 			330001,
-			329001
+			329001,
+			332001
 		},
 		{
 			1002,
@@ -9606,7 +9656,8 @@ pg.furniture_data_template = setmetatable({
 			327002,
 			328002,
 			330002,
-			329002
+			329002,
+			332002
 		},
 		[5] = {
 			1101,
@@ -9764,7 +9815,8 @@ pg.furniture_data_template = setmetatable({
 			328104,
 			330102,
 			329103,
-			329108
+			329108,
+			332102
 		},
 		[3] = {
 			1108,
@@ -10297,7 +10349,8 @@ pg.furniture_data_template = setmetatable({
 			325302,
 			325303,
 			327301,
-			327302
+			327302,
+			332301
 		},
 		[8] = {
 			17121
@@ -10512,6 +10565,7 @@ pg.furniture_data_template = setmetatable({
 		316,
 		317,
 		318,
+		319,
 		100002,
 		100003,
 		100004,
@@ -13687,7 +13741,23 @@ pg.furniture_data_template = setmetatable({
 		329117,
 		329118,
 		329119,
-		329120
+		329120,
+		332001,
+		332002,
+		332101,
+		332102,
+		332103,
+		332104,
+		332105,
+		332106,
+		332107,
+		332108,
+		332109,
+		332110,
+		332111,
+		332112,
+		332113,
+		332301
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -22407,6 +22477,50 @@ pg.base.furniture_data_template = {
 		},
 		interAction_group = {}
 	},
+	[319] = {
+		effect = "",
+		name = "Great Lighthouse Miniature",
+		gain_by = "Tempesta and Islas de Libertád",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 1,
+		count = 1,
+		describe = "A scale version of the great lighthouse on Islas de Libertád. Despite being a miniature, it feels rather grand. ――Given to Commanders who participated in the Tempesta and Islas de Libertád event.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "fengfan3xunzhangicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 5,
+		tag = 8,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 319,
+		can_rotate = 0,
+		size = {
+			3,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"fengfan3xunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
 	[100002] = {
 		can_rotate = 0,
 		name = "Air Pump of Friendship",
@@ -27191,7 +27305,7 @@ pg.base.furniture_data_template = {
 	},
 	[100078] = {
 		effect = "",
-		name = "召唤法杖",
+		name = "Summoning Staff",
 		gain_by = "",
 		type = 7,
 		dir = 0,
@@ -27199,7 +27313,7 @@ pg.base.furniture_data_template = {
 		picture = "",
 		is_get_time_note = 0,
 		count = 1,
-		describe = "自然的精灵，于此处现身吧~",
+		describe = "Spirits of nature, appear before me!",
 		is_3d_obj = 0,
 		spine_combine_action_replace = "",
 		themeId = 0,
@@ -167374,6 +167488,715 @@ pg.base.furniture_data_template = {
 		followBone = {
 			"char",
 			-1
+		},
+		interAction_group = {}
+	},
+	[332001] = {
+		icon = "dibanmficon",
+		name = "Temple Flooring",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "mf/dibanmf",
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 132,
+		size = "",
+		spine_extra = "",
+		level = 1,
+		describe = "Despite looking a thousand years old, it's remarkably tidy.",
+		rarity = 4,
+		advice = 0,
+		tag = 4,
+		spine_action_replace = "",
+		belong = 0,
+		deblocking = 1,
+		canputon = 0,
+		comfortable = 4,
+		id = 332001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[332002] = {
+		icon = "qiangbimficon",
+		name = "Temple Wallpaper",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "mf/qiangbimf",
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 132,
+		size = "",
+		spine_extra = "",
+		level = 5,
+		describe = "What lies beyond all these windows? Find out at your own peril.",
+		rarity = 4,
+		advice = 0,
+		tag = 3,
+		spine_action_replace = "",
+		belong = 0,
+		deblocking = 1,
+		canputon = 0,
+		comfortable = 4,
+		id = 332002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[332101] = {
+		effect = "",
+		name = "Holy Water Pond",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "The off-puttingly smooth tentacles cling to the edge of the pond, leaving wet prints behind.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 132,
+		icon = "chitangmficon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 332101,
+		can_rotate = 0,
+		size = {
+			7,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"chitangmf",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[332102] = {
+		effect = "",
+		name = "Temple Magic Carpet",
+		gain_by = "",
+		type = 5,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Are you trying to summon something from beyond the sky?",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 132,
+		icon = "ditanmficon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 332102,
+		can_rotate = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"ditanmf",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[332103] = {
+		effect = "",
+		name = "Temple Portrait",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Carcosa, Carcosa!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 132,
+		icon = "huaxiangmficon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 332103,
+		can_rotate = 0,
+		size = {
+			5,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"huaxiangmf",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[332104] = {
+		effect = "",
+		name = "Temple Staircase",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 2,
+		describe = "The stairs continue upward to the silent and profound unknown.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 132,
+		icon = "loutimficon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 332104,
+		can_rotate = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"loutimf",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[332105] = {
+		effect = "",
+		name = "Site of Rest",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "It seems excessive curiosity leads to the end of all beings.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 132,
+		icon = "mubeimficon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		tag = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 332105,
+		can_rotate = 0,
+		size = {
+			3,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"mubeimf",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[332106] = {
+		effect = "",
+		name = "Buckets of Purifying",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "After you've scrubbed all the floors in the temple, then we can talk about mercy.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 132,
+		icon = "mutongmficon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		tag = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 332106,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"mutongmf",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[332107] = {
+		effect = "",
+		name = "Sunken Dreams",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Once the bearer of many's dreams of going to sea, it has now sunk along with entangled whispers.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 132,
+		icon = "pofengfanmficon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 332107,
+		can_rotate = 0,
+		size = {
+			3,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"pofengfanmf",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[332108] = {
+		effect = "",
+		name = "Temple Entrance",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "These heavy doors silently guard an eternal slumber.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 132,
+		icon = "shiqiangmficon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 332108,
+		can_rotate = 0,
+		size = {
+			3,
+			24
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shiqiangmf",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[332109] = {
+		effect = "",
+		name = "Temple Statue",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "The ancient statue stands there silently. It commands a sense of awe that's hard to describe.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 132,
+		icon = "shixiangmficon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 332109,
+		can_rotate = 0,
+		size = {
+			3,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shixiangmf",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[332110] = {
+		effect = "",
+		name = "Temple Stone Pillar",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 2,
+		describe = "A forgotten pillar. Some creature seems to have made it its own.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 132,
+		icon = "shizhumficon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		tag = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 332110,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shizhumf",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[332111] = {
+		effect = "",
+		name = "Temple Debris",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A chunk of stone that has come loose. There is an ancient symbol engraved on what still stands.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 132,
+		icon = "suishikuaimficon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 332111,
+		can_rotate = 0,
+		size = {
+			4,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"suishikuaimf",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[332112] = {
+		effect = "",
+		name = "Temple Candelabra",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 2,
+		describe = "As the candlelight flickers, the shadows twitch with it.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 132,
+		icon = "zhutaimficon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 332112,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zhutaimf",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[332113] = {
+		effect = "",
+		name = "Call of the Phantom Light",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Warning: Keep your distance! You may get a surprise or a scare – it's all down to luck.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 132,
+		icon = "shenmipenmficon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 332113,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shenmipenmf",
+				"normal",
+				{
+					"action1",
+					false,
+					{
+						"action2",
+						"action3",
+						"action4"
+					}
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[332301] = {
+		effect = "",
+		name = "Temple Wall Lantern",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		picture = "mf/diaodengmf",
+		is_get_time_note = 0,
+		count = 2,
+		describe = "Moths are always drawn to a flame, even if it kills them.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 132,
+		icon = "diaodengmficon",
+		spine_extra = "",
+		level = 5,
+		advice = 0,
+		rarity = 1,
+		tag = 5,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 2,
+		comfortable = 1,
+		canputon = 0,
+		id = 332301,
+		can_rotate = 0,
+		size = {
+			2,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
 		},
 		interAction_group = {}
 	}

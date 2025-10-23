@@ -114,6 +114,8 @@ function var0_0.init(arg0_5)
 			end, SFX_PANEL)
 		end
 	end)
+
+	arg0_5.switchCount = 0
 end
 
 function var0_0.didEnter(arg0_10)
@@ -261,22 +263,6 @@ function var0_0.removeActivity(arg0_28, arg1_28)
 	end
 end
 
-function var0_0.loadLayers(arg0_29)
-	local var0_29 = arg0_29.pageDic[arg0_29.activity.id]
-
-	if var0_29 and var0_29.OnLoadLayers then
-		var0_29:OnLoadLayers()
-	end
-end
-
-function var0_0.removeLayers(arg0_30)
-	local var0_30 = arg0_30.pageDic[arg0_30.activity.id]
-
-	if var0_30 and var0_30.OnRemoveLayers then
-		var0_30:OnRemoveLayers()
-	end
-end
-
 function var0_0.GetOnShowEntranceData()
 	var1_0 = var1_0 or require("GameCfg.activity.EntranceData")
 
@@ -284,162 +270,203 @@ function var0_0.GetOnShowEntranceData()
 
 	var1_0 = var1_0 or {}
 
-	return (_.select(var1_0, function(arg0_32)
-		return arg0_32.isShow and arg0_32.isShow()
+	return (_.select(var1_0, function(arg0_30)
+		return arg0_30.isShow and arg0_30.isShow()
 	end))
 end
 
-function var0_0.updateEntrances(arg0_33)
-	local var0_33 = var0_0.GetOnShowEntranceData()
-	local var1_33 = math.max(#var0_33, 5)
+function var0_0.updateEntrances(arg0_31)
+	local var0_31 = var0_0.GetOnShowEntranceData()
+	local var1_31 = math.max(#var0_31, 5)
 
-	arg0_33.entranceList:make(function(arg0_34, arg1_34, arg2_34)
-		if arg0_34 == UIItemList.EventUpdate then
-			local var0_34 = var0_33[arg1_34 + 1]
-			local var1_34 = "empty"
+	arg0_31.entranceList:make(function(arg0_32, arg1_32, arg2_32)
+		if arg0_32 == UIItemList.EventUpdate then
+			local var0_32 = var0_31[arg1_32 + 1]
+			local var1_32 = "empty"
 
-			removeOnButton(arg2_34)
+			removeOnButton(arg2_32)
 
-			local var2_34 = false
+			local var2_32 = false
 
-			if var0_34 and table.getCount(var0_34) ~= 0 and var0_34.isShow() then
-				onButton(arg0_33, arg2_34, function()
-					arg0_33:emit(var0_34.event, var0_34.data[1], var0_34.data[2])
+			if var0_32 and table.getCount(var0_32) ~= 0 and var0_32.isShow() then
+				onButton(arg0_31, arg2_32, function()
+					arg0_31:emit(var0_32.event, var0_32.data[1], var0_32.data[2])
 				end, SFX_PANEL)
 
-				var1_34 = var0_34.banner
+				var1_32 = var0_32.banner
 
-				if var0_34.isTip then
-					var2_34 = var0_34.isTip()
+				if var0_32.isTip then
+					var2_32 = var0_32.isTip()
 				end
 			end
 
-			setActive(arg2_34:Find("tip"), var2_34)
-			LoadImageSpriteAsync("activitybanner/" .. var1_34, arg2_34)
+			setActive(arg2_32:Find("tip"), var2_32)
+			LoadImageSpriteAsync("activitybanner/" .. var1_32, arg2_32)
 		end
 	end)
-	arg0_33.entranceList:align(var1_33)
+	arg0_31.entranceList:align(var1_31)
 end
 
-function var0_0.flushTabs(arg0_36)
-	arg0_36.tabsList:align(#arg0_36.activities)
+function var0_0.flushTabs(arg0_34)
+	arg0_34.tabsList:align(#arg0_34.activities)
 end
 
-function var0_0.selectActivity(arg0_37, arg1_37)
-	if arg1_37 and (not arg0_37.activity or arg0_37.activity.id ~= arg1_37.id) then
-		local var0_37 = arg0_37.pageDic[arg1_37.id]
-
-		assert(var0_37, "找不到id:" .. arg1_37.id .. "的活动页，请检查")
-		var0_37:Load()
-		var0_37:ActionInvoke("Flush", arg1_37)
-		var0_37:ActionInvoke("ShowOrHide", true)
-
-		if arg0_37.activity and arg0_37.activity.id ~= arg1_37.id then
-			arg0_37.pageDic[arg0_37.activity.id]:ActionInvoke("ShowOrHide", false)
-		end
-
-		arg0_37.activity = arg1_37
-		arg0_37.contextData.id = arg1_37.id
-
-		setActive(arg0_37.permanentFinshMask, pg.activity_task_permanent[arg1_37.id] and arg1_37:canPermanentFinish())
-	end
-end
-
-function var0_0.checkAutoHideActivity(arg0_38)
-	if arg0_38.activity and not arg0_38.activity:isShow() then
-		arg0_38:removeActivity(arg0_38.activity.id)
-	end
-end
-
-function var0_0.verifyTabs(arg0_39, arg1_39)
-	local var0_39 = arg0_39:getActivityIndex(arg1_39) or 1
-	local var1_39 = arg0_39.tabs:GetChild(var0_39 - 1)
-
-	triggerToggle(var1_39, true)
-end
-
-function var0_0.loadActivityPanel(arg0_40, arg1_40, arg2_40)
-	local var0_40 = arg2_40:getConfig("type")
-	local var1_40
-
-	if var1_40 and arg1_40 then
-		arg0_40:emit(ActivityMediator.OPEN_LAYER, var1_40)
-	elseif var1_40 and not arg1_40 then
-		arg0_40:emit(ActivityMediator.CLOSE_LAYER, var1_40.mediator)
-	else
-		originalPrint("------活动id为" .. arg2_40.id .. "类型为" .. arg2_40:getConfig("type") .. "的页面不存在")
-	end
-end
-
-function var0_0.getBonusWindow(arg0_41, arg1_41, arg2_41)
-	local var0_41 = arg0_41._tf:Find(arg1_41)
-
-	if not var0_41 then
-		PoolMgr.GetInstance():GetUI("ActivitybonusWindow", true, function(arg0_42)
-			SetParent(arg0_42, arg0_41._tf, false)
-
-			arg0_42.name = arg1_41
-
-			arg2_41(arg0_42)
-		end)
-	else
-		arg2_41(var0_41)
-	end
-end
-
-function var0_0.ShowWindow(arg0_43, arg1_43, arg2_43)
-	local var0_43 = arg1_43.__cname
-
-	if not arg0_43.windowList[var0_43] then
-		arg0_43:getBonusWindow(var0_43, function(arg0_44)
-			arg0_43.windowList[var0_43] = arg1_43.New(tf(arg0_44), arg0_43)
-
-			arg0_43.windowList[var0_43]:Show(arg2_43)
-		end)
-	else
-		arg0_43.windowList[var0_43]:Show(arg2_43)
-	end
-end
-
-function var0_0.HideWindow(arg0_45, arg1_45)
-	local var0_45 = arg1_45.__cname
-
-	if not arg0_45.windowList[var0_45] then
+function var0_0.selectActivity(arg0_35, arg1_35)
+	if arg0_35.nextActivity == arg1_35 or not arg0_35.nextActivity and arg0_35.activity and arg1_35.id == arg0_35.activity.id then
 		return
 	end
 
-	arg0_45.windowList[var0_45]:Hide()
-end
+	local var0_35 = {}
 
-function var0_0.ShowAwardWindow(arg0_46, arg1_46, arg2_46, arg3_46)
-	arg0_46.awardWindow:ExecuteAction("Flush", arg1_46, arg2_46, arg3_46)
-end
+	if arg0_35.activity and not arg0_35.nextActivity then
+		arg0_35.switchCount = arg0_35.switchCount + 1
 
-function var0_0.OnChargeSuccess(arg0_47, arg1_47)
-	arg0_47.chargeTipWindow:ExecuteAction("Show", arg1_47)
-end
+		table.insert(var0_35, function(arg0_36)
+			arg0_35.pageDic[arg0_35.activity.id]:ActionInvoke("SwitchOut", function()
+				arg0_35.switchCount = arg0_35.switchCount - 1
 
-function var0_0.willExit(arg0_48)
-	arg0_48.shareData = nil
-
-	for iter0_48, iter1_48 in pairs(arg0_48.pageDic) do
-		iter1_48:Destroy()
+				arg0_36()
+			end)
+		end)
 	end
 
-	for iter2_48, iter3_48 in pairs(arg0_48.windowList) do
-		iter3_48:Dispose()
+	if not arg0_35.activity or arg0_35.activity.id ~= arg1_35.id then
+		local var1_35 = arg0_35.pageDic[arg1_35.id]
+
+		assert(var1_35, "找不到id:" .. arg1_35.id .. "的活动页，请检查")
+
+		arg0_35.switchCount = arg0_35.switchCount + 1
+
+		table.insert(var0_35, function(arg0_38)
+			var1_35:Load()
+			var1_35:ActionInvoke("ShowOrHide", false)
+			var1_35:CallbackInvoke(function()
+				arg0_35.switchCount = arg0_35.switchCount - 1
+
+				arg0_38()
+			end)
+		end)
 	end
 
-	if arg0_48.awardWindow then
-		arg0_48.awardWindow:Destroy()
+	arg0_35.nextActivity = arg1_35
 
-		arg0_48.awardWindow = nil
+	parallelAsync(var0_35, function()
+		if arg0_35.switchCount > 0 then
+			return
+		end
+
+		if arg0_35.activity then
+			arg0_35.pageDic[arg0_35.activity.id]:ActionInvoke("ShowOrHide", false)
+		end
+
+		arg0_35.activity = arg0_35.nextActivity
+		arg0_35.contextData.id = arg0_35.nextActivity.id
+		arg0_35.nextActivity = nil
+
+		local var0_40 = arg0_35.pageDic[arg0_35.activity.id]
+
+		var0_40:ActionInvoke("Flush", arg0_35.activity)
+		var0_40:ActionInvoke("ShowOrHide", true)
+		setActive(arg0_35.permanentFinshMask, pg.activity_task_permanent[arg1_35.id] and arg1_35:canPermanentFinish())
+	end)
+end
+
+function var0_0.checkAutoHideActivity(arg0_41)
+	if arg0_41.activity and not arg0_41.activity:isShow() then
+		arg0_41:removeActivity(arg0_41.activity.id)
+	end
+end
+
+function var0_0.verifyTabs(arg0_42, arg1_42)
+	local var0_42 = arg0_42:getActivityIndex(arg1_42) or 1
+	local var1_42 = arg0_42.tabs:GetChild(var0_42 - 1)
+
+	triggerToggle(var1_42, true)
+end
+
+function var0_0.loadActivityPanel(arg0_43, arg1_43, arg2_43)
+	local var0_43 = arg2_43:getConfig("type")
+	local var1_43
+
+	if var1_43 and arg1_43 then
+		arg0_43:emit(ActivityMediator.OPEN_LAYER, var1_43)
+	elseif var1_43 and not arg1_43 then
+		arg0_43:emit(ActivityMediator.CLOSE_LAYER, var1_43.mediator)
+	else
+		originalPrint("------活动id为" .. arg2_43.id .. "类型为" .. arg2_43:getConfig("type") .. "的页面不存在")
+	end
+end
+
+function var0_0.getBonusWindow(arg0_44, arg1_44, arg2_44)
+	local var0_44 = arg0_44._tf:Find(arg1_44)
+
+	if not var0_44 then
+		PoolMgr.GetInstance():GetUI("ActivitybonusWindow", true, function(arg0_45)
+			SetParent(arg0_45, arg0_44._tf, false)
+
+			arg0_45.name = arg1_44
+
+			arg2_44(arg0_45)
+		end)
+	else
+		arg2_44(var0_44)
+	end
+end
+
+function var0_0.ShowWindow(arg0_46, arg1_46, arg2_46)
+	local var0_46 = arg1_46.__cname
+
+	if not arg0_46.windowList[var0_46] then
+		arg0_46:getBonusWindow(var0_46, function(arg0_47)
+			arg0_46.windowList[var0_46] = arg1_46.New(tf(arg0_47), arg0_46)
+
+			arg0_46.windowList[var0_46]:Show(arg2_46)
+		end)
+	else
+		arg0_46.windowList[var0_46]:Show(arg2_46)
+	end
+end
+
+function var0_0.HideWindow(arg0_48, arg1_48)
+	local var0_48 = arg1_48.__cname
+
+	if not arg0_48.windowList[var0_48] then
+		return
 	end
 
-	if arg0_48.chargeTipWindow then
-		arg0_48.chargeTipWindow:Destroy()
+	arg0_48.windowList[var0_48]:Hide()
+end
 
-		arg0_48.chargeTipWindow = nil
+function var0_0.ShowAwardWindow(arg0_49, arg1_49, arg2_49, arg3_49)
+	arg0_49.awardWindow:ExecuteAction("Flush", arg1_49, arg2_49, arg3_49)
+end
+
+function var0_0.OnChargeSuccess(arg0_50, arg1_50)
+	arg0_50.chargeTipWindow:ExecuteAction("Show", arg1_50)
+end
+
+function var0_0.willExit(arg0_51)
+	arg0_51.switchCount = nil
+	arg0_51.shareData = nil
+
+	for iter0_51, iter1_51 in pairs(arg0_51.pageDic) do
+		iter1_51:Destroy()
+	end
+
+	for iter2_51, iter3_51 in pairs(arg0_51.windowList) do
+		iter3_51:Dispose()
+	end
+
+	if arg0_51.awardWindow then
+		arg0_51.awardWindow:Destroy()
+
+		arg0_51.awardWindow = nil
+	end
+
+	if arg0_51.chargeTipWindow then
+		arg0_51.chargeTipWindow:Destroy()
+
+		arg0_51.chargeTipWindow = nil
 	end
 end
 

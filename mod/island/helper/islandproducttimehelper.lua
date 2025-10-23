@@ -53,22 +53,13 @@ function var0_0.CalculateTimeToProductFormula(arg0_8, arg1_8, arg2_8, arg3_8, ar
 	end
 
 	local var11_8 = 0
+	local var12_8 = var1_8:GetAttr(IslandShipAttr.ATTRS[var4_8])
+	local var13_8 = var1_8:GetAttrGradeByValue(var12_8)
+	local var14_8 = pg.island_chara_att[var13_8].effect
+	local var15_8 = var2_8 * (1 + 0.01 * (var5_8 + var9_8 + var11_8))
+	local var16_8 = var1_8:GetVaildStatusByType(IslandBuffType.SHIP_ATTR)
 
-	if arg3_8 == IslandProductConst.PasturePlaceId then
-		local var12_8 = var0_8:GetBuildingAgency():GetBuilding(arg3_8):GetDelegationSlotData(arg4_8):GetPartList()
-
-		for iter2_8, iter3_8 in ipairs(var12_8) do
-			var11_8 = var11_8 + pg.island_ranch_animal[iter3_8].efficiency_gains
-		end
-	end
-
-	local var13_8 = var1_8:GetAttr(IslandShipAttr.ATTRS[var4_8])
-	local var14_8 = var1_8:GetAttrGradeByValue(var13_8)
-	local var15_8 = pg.island_chara_att[var14_8].effect
-	local var16_8 = var2_8 * (1 + 0.01 * (var5_8 + var9_8 + var11_8))
-	local var17_8 = var1_8:GetVaildStatusByType(IslandBuffType.SHIP_ATTR)
-
-	table.sort(var17_8, function(arg0_10, arg1_10)
+	table.sort(var16_8, function(arg0_10, arg1_10)
 		local var0_10 = arg0_10:GetEndTime()
 		local var1_10 = arg1_10:GetEndTime()
 
@@ -79,91 +70,91 @@ function var0_0.CalculateTimeToProductFormula(arg0_8, arg1_8, arg2_8, arg3_8, ar
 		return arg0_10.id < arg1_10.id
 	end)
 
-	local var18_8, var19_8 = pg.TimeMgr.GetInstance():GetServerTime(), {}
-	local var20_8 = #var17_8
+	local var17_8, var18_8 = pg.TimeMgr.GetInstance():GetServerTime(), {}
+	local var19_8 = #var16_8
 
-	for iter4_8, iter5_8 in ipairs(var17_8) do
-		local var21_8 = iter5_8:GetEndTime()
+	for iter2_8, iter3_8 in ipairs(var16_8) do
+		local var20_8 = iter3_8:GetEndTime()
 
-		if var18_8 ~= var21_8 then
-			local var22_8 = math.max(var21_8 - var18_8, 0)
+		if var17_8 ~= var20_8 then
+			local var21_8 = math.max(var20_8 - var17_8, 0)
 
-			var18_8 = var21_8
+			var17_8 = var20_8
 
-			table.insert(var19_8, {
-				timeLength = var22_8,
-				buffCount = var20_8
+			table.insert(var18_8, {
+				timeLength = var21_8,
+				buffCount = var19_8
 			})
 		end
 
-		var20_8 = var20_8 - 1
+		var19_8 = var19_8 - 1
 	end
 
-	local var23_8 = {}
+	local var22_8 = {}
 
-	for iter6_8, iter7_8 in ipairs(var19_8) do
-		local var24_8 = 0
-		local var25_8 = iter7_8.buffCount
-		local var26_8 = #var17_8
+	for iter4_8, iter5_8 in ipairs(var18_8) do
+		local var23_8 = 0
+		local var24_8 = iter5_8.buffCount
+		local var25_8 = #var16_8
 
-		for iter8_8 = var26_8, var26_8 - var25_8 + 1, -1 do
-			local var27_8 = var17_8[iter8_8]:GetBuffEffect()
+		for iter6_8 = var25_8, var25_8 - var24_8 + 1, -1 do
+			local var26_8 = var16_8[iter6_8]:GetBuffEffect()
 
-			for iter9_8, iter10_8 in ipairs(var27_8) do
-				if iter10_8[1] == var4_8 then
-					var24_8 = var24_8 + iter10_8[2]
+			for iter7_8, iter8_8 in ipairs(var26_8) do
+				if iter8_8[1] == var4_8 then
+					var23_8 = var23_8 + iter8_8[2]
 				end
 			end
 		end
 
-		local var28_8 = var13_8 * (1 + var24_8 * 0.01)
-		local var29_8 = var1_8:GetAttrGradeByValue(var28_8)
+		local var27_8 = var12_8 * (1 + var23_8 * 0.01)
+		local var28_8 = var1_8:GetAttrGradeByValue(var27_8)
 
-		if var29_8 == var14_8 then
+		if var28_8 == var13_8 then
 			break
 		end
 
-		local var30_8 = var16_8 * (1 + 0.01 * pg.island_chara_att[var29_8].effect)
+		local var29_8 = var15_8 * (1 + 0.01 * pg.island_chara_att[var28_8].effect)
 
-		table.insert(var23_8, {
-			buffSpeed = var30_8,
-			timeLength = iter7_8.timeLength
+		table.insert(var22_8, {
+			buffSpeed = var29_8,
+			timeLength = iter5_8.timeLength
 		})
 	end
 
-	local var31_8 = {}
-	local var32_8 = var3_8.workload
+	local var30_8 = {}
+	local var31_8 = var3_8.workload
 
-	for iter11_8 = 1, arg2_8 do
-		local var33_8 = var32_8
-		local var34_8 = 0
+	for iter9_8 = 1, arg2_8 do
+		local var32_8 = var31_8
+		local var33_8 = 0
 
-		for iter12_8, iter13_8 in ipairs(var23_8) do
-			local var35_8 = math.floor(var33_8 / iter13_8.buffSpeed)
+		for iter10_8, iter11_8 in ipairs(var22_8) do
+			local var34_8 = math.floor(var32_8 / iter11_8.buffSpeed)
 
-			if var35_8 <= iter13_8.timeLength then
-				iter13_8.timeLength = iter13_8.timeLength - var35_8
-				var34_8 = var34_8 + var35_8
-				var33_8 = 0
+			if var34_8 <= iter11_8.timeLength then
+				iter11_8.timeLength = iter11_8.timeLength - var34_8
+				var33_8 = var33_8 + var34_8
+				var32_8 = 0
 
 				break
 			else
-				var34_8 = var34_8 + iter13_8.timeLength
-				var33_8 = var33_8 - iter13_8.timeLength * iter13_8.buffSpeed
-				iter13_8.timeLength = 0
+				var33_8 = var33_8 + iter11_8.timeLength
+				var32_8 = var32_8 - iter11_8.timeLength * iter11_8.buffSpeed
+				iter11_8.timeLength = 0
 			end
 		end
 
-		if var33_8 > 0 then
-			local var36_8 = var16_8 * (1 + 0.01 * var15_8)
+		if var32_8 > 0 then
+			local var35_8 = var15_8 * (1 + 0.01 * var14_8)
 
-			var34_8 = var34_8 + math.floor(var33_8 / var36_8)
+			var33_8 = var33_8 + math.floor(var32_8 / var35_8)
 		end
 
-		table.insert(var31_8, var34_8)
+		table.insert(var30_8, var33_8)
 	end
 
-	return var31_8
+	return var30_8
 end
 
 return var0_0

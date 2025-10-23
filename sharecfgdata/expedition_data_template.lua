@@ -905267,7 +905267,7 @@ _G.pg.base.expedition_data_template[1861013] = {
 	exp_commander_ratio = 50,
 	expose_speed = 15,
 	guide_desc = "",
-	icon = "fengfan_haigu01",
+	icon = "fengfan_haigu_quzhu",
 	icon_type = 1,
 	id = 1861013,
 	level = 30,
@@ -906359,7 +906359,7 @@ _G.pg.base.expedition_data_template[1862301] = {
 	exp_commander_ratio = 30,
 	expose_speed = 15,
 	guide_desc = "",
-	icon = "fengfan_haigu01",
+	icon = "fengfan_haigu_quzhu",
 	icon_type = 1,
 	id = 1862301,
 	level = 39,
@@ -906437,7 +906437,7 @@ _G.pg.base.expedition_data_template[1863001] = {
 	exp_commander_ratio = 30,
 	expose_speed = 15,
 	guide_desc = "",
-	icon = "fengfan_haigu01",
+	icon = "fengfan_haigu_quzhu",
 	icon_type = 1,
 	id = 1863001,
 	level = 56,
@@ -906515,7 +906515,7 @@ _G.pg.base.expedition_data_template[1863002] = {
 	exp_commander_ratio = 30,
 	expose_speed = 15,
 	guide_desc = "",
-	icon = "fengfan_haigu02",
+	icon = "fengfan_haigu_zhongxun",
 	icon_type = 1,
 	id = 1863002,
 	level = 57,
@@ -906671,7 +906671,7 @@ _G.pg.base.expedition_data_template[1863013] = {
 	exp_commander_ratio = 50,
 	expose_speed = 15,
 	guide_desc = "",
-	icon = "fengfan_haigu02",
+	icon = "fengfan_haigu_zhongxun",
 	icon_type = 1,
 	id = 1863013,
 	level = 60,
@@ -906827,7 +906827,7 @@ _G.pg.base.expedition_data_template[1864001] = {
 	exp_commander_ratio = 30,
 	expose_speed = 15,
 	guide_desc = "",
-	icon = "fengfan_haigu01",
+	icon = "fengfan_haigu_quzhu",
 	icon_type = 1,
 	id = 1864001,
 	level = 76,
@@ -906905,7 +906905,7 @@ _G.pg.base.expedition_data_template[1864002] = {
 	exp_commander_ratio = 30,
 	expose_speed = 15,
 	guide_desc = "",
-	icon = "fengfan_haigu02",
+	icon = "fengfan_haigu_zhongxun",
 	icon_type = 1,
 	id = 1864002,
 	level = 77,
@@ -907061,7 +907061,7 @@ _G.pg.base.expedition_data_template[1864013] = {
 	exp_commander_ratio = 50,
 	expose_speed = 15,
 	guide_desc = "",
-	icon = "fengfan_haigu03",
+	icon = "fengfan_haigu_boss01",
 	icon_type = 2,
 	id = 1864013,
 	level = 80,
@@ -907139,7 +907139,7 @@ _G.pg.base.expedition_data_template[1864301] = {
 	exp_commander_ratio = 30,
 	expose_speed = 15,
 	guide_desc = "",
-	icon = "fengfan_haigu02",
+	icon = "fengfan_haigu_zhongxun",
 	icon_type = 1,
 	id = 1864301,
 	level = 79,
@@ -907217,7 +907217,7 @@ _G.pg.base.expedition_data_template[1865001] = {
 	exp_commander_ratio = 30,
 	expose_speed = 15,
 	guide_desc = "",
-	icon = "fengfan_haigu04",
+	icon = "fengfan_lingti_quzhu",
 	icon_type = 1,
 	id = 1865001,
 	level = 96,
@@ -907295,7 +907295,7 @@ _G.pg.base.expedition_data_template[1865002] = {
 	exp_commander_ratio = 30,
 	expose_speed = 15,
 	guide_desc = "",
-	icon = "fengfan_haigu05",
+	icon = "fengfan_lingti_zhongxun",
 	icon_type = 1,
 	id = 1865002,
 	level = 97,
@@ -907451,7 +907451,7 @@ _G.pg.base.expedition_data_template[1865013] = {
 	exp_commander_ratio = 50,
 	expose_speed = 15,
 	guide_desc = "",
-	icon = "fengfan_haigu06",
+	icon = "fengfan_lingti_boss01",
 	icon_type = 2,
 	id = 1865013,
 	level = 100,
@@ -907529,7 +907529,7 @@ _G.pg.base.expedition_data_template[1865301] = {
 	exp_commander_ratio = 30,
 	expose_speed = 15,
 	guide_desc = "",
-	icon = "fengfan_haigu03",
+	icon = "fengfan_haigu_boss01",
 	icon_type = 2,
 	id = 1865301,
 	level = 99,
@@ -907607,7 +907607,7 @@ _G.pg.base.expedition_data_template[1866001] = {
 	exp_commander_ratio = 30,
 	expose_speed = 15,
 	guide_desc = "",
-	icon = "fengfan_haigu04",
+	icon = "fengfan_lingti_quzhu",
 	icon_type = 1,
 	id = 1866001,
 	level = 105,
@@ -907685,7 +907685,7 @@ _G.pg.base.expedition_data_template[1866002] = {
 	exp_commander_ratio = 30,
 	expose_speed = 15,
 	guide_desc = "",
-	icon = "fengfan_haigu05",
+	icon = "fengfan_lingti_zhongxun",
 	icon_type = 1,
 	id = 1866002,
 	level = 105,
@@ -907841,7 +907841,7 @@ _G.pg.base.expedition_data_template[1866013] = {
 	exp_commander_ratio = 50,
 	expose_speed = 15,
 	guide_desc = "",
-	icon = "fengfan_haigu06",
+	icon = "fengfan_lingti_boss01",
 	icon_type = 2,
 	id = 1866013,
 	level = 105,
@@ -972792,7 +972792,7 @@ _G.pg.base.expedition_data_template[1950301] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50204,
@@ -972870,7 +972870,7 @@ _G.pg.base.expedition_data_template[1950302] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50204,
@@ -972948,7 +972948,7 @@ _G.pg.base.expedition_data_template[1950303] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50204,
@@ -973026,7 +973026,7 @@ _G.pg.base.expedition_data_template[1950304] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50204,
@@ -973104,7 +973104,7 @@ _G.pg.base.expedition_data_template[1950305] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50204,
@@ -973182,7 +973182,7 @@ _G.pg.base.expedition_data_template[1950306] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50204,
@@ -973260,7 +973260,7 @@ _G.pg.base.expedition_data_template[1950307] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50205,
@@ -973338,7 +973338,7 @@ _G.pg.base.expedition_data_template[1950308] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50205,
@@ -973416,7 +973416,7 @@ _G.pg.base.expedition_data_template[1950309] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50205,
@@ -975822,7 +975822,7 @@ _G.pg.base.expedition_data_template[1951301] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50205,
@@ -975900,7 +975900,7 @@ _G.pg.base.expedition_data_template[1951302] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50205,
@@ -975978,7 +975978,7 @@ _G.pg.base.expedition_data_template[1951303] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50205,
@@ -976056,7 +976056,7 @@ _G.pg.base.expedition_data_template[1951304] = {
 	scale = 100,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50206,
@@ -976134,7 +976134,7 @@ _G.pg.base.expedition_data_template[1951305] = {
 	scale = 100,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50206,
@@ -978540,7 +978540,7 @@ _G.pg.base.expedition_data_template[1952301] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50204,
@@ -978618,7 +978618,7 @@ _G.pg.base.expedition_data_template[1952302] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50204,
@@ -978696,7 +978696,7 @@ _G.pg.base.expedition_data_template[1952303] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50204,
@@ -978774,7 +978774,7 @@ _G.pg.base.expedition_data_template[1952304] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50204,
@@ -978852,7 +978852,7 @@ _G.pg.base.expedition_data_template[1952305] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50204,
@@ -978930,7 +978930,7 @@ _G.pg.base.expedition_data_template[1952306] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50204,
@@ -979008,7 +979008,7 @@ _G.pg.base.expedition_data_template[1952307] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50205,
@@ -979086,7 +979086,7 @@ _G.pg.base.expedition_data_template[1952308] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50205,
@@ -979164,7 +979164,7 @@ _G.pg.base.expedition_data_template[1952309] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50205,
@@ -981570,7 +981570,7 @@ _G.pg.base.expedition_data_template[1953301] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50205,
@@ -981648,7 +981648,7 @@ _G.pg.base.expedition_data_template[1953302] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50205,
@@ -981726,7 +981726,7 @@ _G.pg.base.expedition_data_template[1953303] = {
 	scale = 40,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50205,
@@ -981804,7 +981804,7 @@ _G.pg.base.expedition_data_template[1953304] = {
 	scale = 100,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50206,
@@ -981882,7 +981882,7 @@ _G.pg.base.expedition_data_template[1953305] = {
 	scale = 100,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50206,
@@ -982736,7 +982736,7 @@ _G.pg.base.expedition_data_template[1954301] = {
 	scale = 100,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50207,
@@ -988223,7 +988223,7 @@ _G.pg.base.expedition_data_template[1961301] = {
 	scale = 25,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50209,
@@ -988305,7 +988305,7 @@ _G.pg.base.expedition_data_template[1961302] = {
 	scale = 25,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50209,
@@ -988387,7 +988387,7 @@ _G.pg.base.expedition_data_template[1961303] = {
 	scale = 25,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50209,
@@ -993713,7 +993713,7 @@ _G.pg.base.expedition_data_template[1963301] = {
 	scale = 25,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50209,
@@ -993795,7 +993795,7 @@ _G.pg.base.expedition_data_template[1963302] = {
 	scale = 25,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50209,
@@ -993877,7 +993877,7 @@ _G.pg.base.expedition_data_template[1963303] = {
 	scale = 25,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50209,
@@ -994735,7 +994735,7 @@ _G.pg.base.expedition_data_template[1964301] = {
 	scale = 25,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50209,
@@ -994813,7 +994813,7 @@ _G.pg.base.expedition_data_template[1964302] = {
 	scale = 60,
 	sink_limit = 1,
 	time_limit = 120,
-	type = 95,
+	type = 98,
 	map_id = {
 		{
 			50209,
@@ -995066,6 +995066,6552 @@ _G.pg.base.expedition_data_template[1967001] = {
 	map_id = {
 		{
 			8000,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1970001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1970001,
+	effect_prefab = "",
+	exp = 80,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1970001,
+	level = 16,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200605,
+		},
+		{
+			2,
+			17021,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1970002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1970002,
+	effect_prefab = "",
+	exp = 93,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1970002,
+	level = 17,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200605,
+		},
+		{
+			2,
+			17021,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1970003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1970003,
+	effect_prefab = "",
+	exp = 108,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1970003,
+	level = 18,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200605,
+		},
+		{
+			2,
+			17021,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1970004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1970004,
+	effect_prefab = "",
+	exp = 80,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1970004,
+	level = 16,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200605,
+		},
+		{
+			2,
+			17011,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1970005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1970005,
+	effect_prefab = "",
+	exp = 93,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1970005,
+	level = 17,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200605,
+		},
+		{
+			2,
+			17011,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1970006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1970006,
+	effect_prefab = "",
+	exp = 108,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1970006,
+	level = 18,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200605,
+		},
+		{
+			2,
+			17011,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1970007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1970007,
+	effect_prefab = "",
+	exp = 80,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1970007,
+	level = 16,
+	limit_type = 1,
+	name = "Small Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 10,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200598,
+		},
+		{
+			2,
+			17041,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1970008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1970008,
+	effect_prefab = "",
+	exp = 93,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1970008,
+	level = 17,
+	limit_type = 1,
+	name = "Medium Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 11,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200598,
+		},
+		{
+			2,
+			17041,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1970009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1970009,
+	effect_prefab = "",
+	exp = 108,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1970009,
+	level = 18,
+	limit_type = 1,
+	name = "Large Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 12,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200598,
+		},
+		{
+			2,
+			17041,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1970013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1970013,
+	effect_prefab = "",
+	exp = 145,
+	exp_commander = 0,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1970013,
+	level = 20,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200598,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			54014,
+		},
+		{
+			2,
+			200597,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1970301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1970301,
+	effect_prefab = "",
+	exp = 128,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1970301,
+	level = 19,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200598,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54014,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1971001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1971001,
+	effect_prefab = "",
+	exp = 130,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1971001,
+	level = 26,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200606,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1971002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1971002,
+	effect_prefab = "",
+	exp = 148,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1971002,
+	level = 27,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200606,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1971003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1971003,
+	effect_prefab = "",
+	exp = 168,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1971003,
+	level = 28,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200606,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1971004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1971004,
+	effect_prefab = "",
+	exp = 130,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1971004,
+	level = 26,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200606,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1971005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1971005,
+	effect_prefab = "",
+	exp = 148,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1971005,
+	level = 27,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200606,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1971006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1971006,
+	effect_prefab = "",
+	exp = 168,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1971006,
+	level = 28,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200606,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1971007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1971007,
+	effect_prefab = "",
+	exp = 130,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1971007,
+	level = 26,
+	limit_type = 1,
+	name = "Small Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 10,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200599,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1971008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1971008,
+	effect_prefab = "",
+	exp = 148,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1971008,
+	level = 27,
+	limit_type = 1,
+	name = "Medium Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 11,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200599,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1971009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1971009,
+	effect_prefab = "",
+	exp = 168,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1971009,
+	level = 28,
+	limit_type = 1,
+	name = "Large Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 12,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200599,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1971013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1971013,
+	effect_prefab = "",
+	exp = 217,
+	exp_commander = 0,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1971013,
+	level = 30,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200599,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			54015,
+		},
+		{
+			2,
+			200597,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1971301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1971301,
+	effect_prefab = "",
+	exp = 196,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1971301,
+	level = 29,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200599,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1972001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1972001,
+	effect_prefab = "",
+	exp = 180,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1972001,
+	level = 36,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200607,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1972002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1972002,
+	effect_prefab = "",
+	exp = 203,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1972002,
+	level = 37,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200607,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1972003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1972003,
+	effect_prefab = "",
+	exp = 228,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1972003,
+	level = 38,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200607,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1972004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1972004,
+	effect_prefab = "",
+	exp = 180,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1972004,
+	level = 36,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200607,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1972005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1972005,
+	effect_prefab = "",
+	exp = 203,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1972005,
+	level = 37,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200607,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1972006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1972006,
+	effect_prefab = "",
+	exp = 228,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1972006,
+	level = 38,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200607,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1972007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1972007,
+	effect_prefab = "",
+	exp = 180,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1972007,
+	level = 36,
+	limit_type = 1,
+	name = "Small Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 10,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200600,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1972008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1972008,
+	effect_prefab = "",
+	exp = 203,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1972008,
+	level = 37,
+	limit_type = 1,
+	name = "Medium Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 11,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200600,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1972009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1972009,
+	effect_prefab = "",
+	exp = 228,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1972009,
+	level = 38,
+	limit_type = 1,
+	name = "Large Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 12,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200600,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1972013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1972013,
+	effect_prefab = "",
+	exp = 290,
+	exp_commander = 0,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1972013,
+	level = 40,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200600,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			54015,
+		},
+		{
+			2,
+			200597,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1972301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1972301,
+	effect_prefab = "",
+	exp = 263,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1972301,
+	level = 39,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200600,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1972302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1972302,
+	effect_prefab = "",
+	exp = 263,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1972302,
+	level = 39,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200600,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1973001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1973001,
+	effect_prefab = "",
+	exp = 280,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1973001,
+	level = 56,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200608,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1973002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1973002,
+	effect_prefab = "",
+	exp = 313,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1973002,
+	level = 57,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200608,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1973003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1973003,
+	effect_prefab = "",
+	exp = 348,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1973003,
+	level = 58,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200608,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1973004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1973004,
+	effect_prefab = "",
+	exp = 280,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1973004,
+	level = 56,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200608,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1973005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1973005,
+	effect_prefab = "",
+	exp = 313,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1973005,
+	level = 57,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200608,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1973006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1973006,
+	effect_prefab = "",
+	exp = 348,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1973006,
+	level = 58,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200608,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1973007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1973007,
+	effect_prefab = "",
+	exp = 280,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1973007,
+	level = 56,
+	limit_type = 1,
+	name = "Small Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 10,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200601,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1973008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1973008,
+	effect_prefab = "",
+	exp = 313,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1973008,
+	level = 57,
+	limit_type = 1,
+	name = "Medium Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 11,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200601,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1973009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1973009,
+	effect_prefab = "",
+	exp = 348,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1973009,
+	level = 58,
+	limit_type = 1,
+	name = "Large Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 12,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200601,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1973013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-boss-temepest-1",
+	difficulty = 2,
+	dungeon_id = 1973013,
+	effect_prefab = "",
+	exp = 435,
+	exp_commander = 1,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_lingti_hangmu",
+	icon_type = 1,
+	id = 1973013,
+	level = 60,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200601,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54015,
+		},
+		{
+			2,
+			200597,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1973301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1973301,
+	effect_prefab = "",
+	exp = 398,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_lingti_zhongxun",
+	icon_type = 1,
+	id = 1973301,
+	level = 59,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200601,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1973302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1973302,
+	effect_prefab = "",
+	exp = 398,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_lingti_zhanlie",
+	icon_type = 1,
+	id = 1973302,
+	level = 59,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200601,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1974001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1974001,
+	effect_prefab = "",
+	exp = 380,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1974001,
+	level = 76,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200609,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1974002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1974002,
+	effect_prefab = "",
+	exp = 423,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1974002,
+	level = 77,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200609,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1974003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1974003,
+	effect_prefab = "",
+	exp = 468,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1974003,
+	level = 78,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200609,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1974004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1974004,
+	effect_prefab = "",
+	exp = 380,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1974004,
+	level = 76,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200609,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1974005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1974005,
+	effect_prefab = "",
+	exp = 423,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1974005,
+	level = 77,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200609,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1974006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1974006,
+	effect_prefab = "",
+	exp = 468,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1974006,
+	level = 78,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200609,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1974007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1974007,
+	effect_prefab = "",
+	exp = 380,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1974007,
+	level = 76,
+	limit_type = 1,
+	name = "Small Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 10,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200602,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1974008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1974008,
+	effect_prefab = "",
+	exp = 423,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1974008,
+	level = 77,
+	limit_type = 1,
+	name = "Medium Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 11,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200602,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1974009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1974009,
+	effect_prefab = "",
+	exp = 468,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1974009,
+	level = 78,
+	limit_type = 1,
+	name = "Large Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 12,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200602,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1974013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-boss-temepest-1",
+	difficulty = 2,
+	dungeon_id = 1974013,
+	effect_prefab = "",
+	exp = 580,
+	exp_commander = 1,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_lingti_boss01",
+	icon_type = 2,
+	id = 1974013,
+	level = 80,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 120,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200602,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+		{
+			2,
+			200597,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1974301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1974301,
+	effect_prefab = "",
+	exp = 533,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_lingti_zhanlie",
+	icon_type = 1,
+	id = 1974301,
+	level = 79,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200602,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1974302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1974302,
+	effect_prefab = "",
+	exp = 533,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_lingti_hangmu",
+	icon_type = 1,
+	id = 1974302,
+	level = 79,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200602,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1975001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1975001,
+	effect_prefab = "",
+	exp = 480,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1975001,
+	level = 96,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200610,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1975002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1975002,
+	effect_prefab = "",
+	exp = 533,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1975002,
+	level = 97,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200610,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1975003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1975003,
+	effect_prefab = "",
+	exp = 588,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1975003,
+	level = 98,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200610,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1975004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1975004,
+	effect_prefab = "",
+	exp = 480,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1975004,
+	level = 96,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200610,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1975005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1975005,
+	effect_prefab = "",
+	exp = 533,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1975005,
+	level = 97,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200610,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1975006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1975006,
+	effect_prefab = "",
+	exp = 588,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1975006,
+	level = 98,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200610,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1975007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1975007,
+	effect_prefab = "",
+	exp = 480,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1975007,
+	level = 96,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200610,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1975008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1975008,
+	effect_prefab = "",
+	exp = 533,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1975008,
+	level = 97,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200610,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1975009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1975009,
+	effect_prefab = "",
+	exp = 588,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1975009,
+	level = 98,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200610,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1975013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-boss-temepest-1",
+	difficulty = 2,
+	dungeon_id = 1975013,
+	effect_prefab = "",
+	exp = 725,
+	exp_commander = 2,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_boss02",
+	icon_type = 2,
+	id = 1975013,
+	level = 100,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 150,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56000,
+		},
+		{
+			2,
+			200603,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+		{
+			2,
+			200597,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1975301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1975301,
+	effect_prefab = "",
+	exp = 668,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_lingti_zhanlie",
+	icon_type = 1,
+	id = 1975301,
+	level = 99,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200603,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1975302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1975302,
+	effect_prefab = "",
+	exp = 668,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_lingti_hangmu",
+	icon_type = 1,
+	id = 1975302,
+	level = 99,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200603,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1976001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1976001,
+	effect_prefab = "",
+	exp = 525,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1976001,
+	level = 105,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200611,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1976002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1976002,
+	effect_prefab = "",
+	exp = 577,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1976002,
+	level = 105,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200611,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1976003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1976003,
+	effect_prefab = "",
+	exp = 630,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhongxun",
+	icon_type = 1,
+	id = 1976003,
+	level = 105,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200611,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1976004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1976004,
+	effect_prefab = "",
+	exp = 525,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1976004,
+	level = 105,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200611,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1976005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1976005,
+	effect_prefab = "",
+	exp = 577,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1976005,
+	level = 105,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200611,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1976006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1976006,
+	effect_prefab = "",
+	exp = 630,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_zhanlie",
+	icon_type = 1,
+	id = 1976006,
+	level = 105,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200611,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1976007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1976007,
+	effect_prefab = "",
+	exp = 525,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1976007,
+	level = 105,
+	limit_type = 1,
+	name = "Small Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200611,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1976008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1976008,
+	effect_prefab = "",
+	exp = 561,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1976008,
+	level = 102,
+	limit_type = 1,
+	name = "Medium Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200611,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1976009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1976009,
+	effect_prefab = "",
+	exp = 618,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_hangmu",
+	icon_type = 1,
+	id = 1976009,
+	level = 103,
+	limit_type = 1,
+	name = "Large Convoy Duty",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200611,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1976013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-boss-temepest-1",
+	difficulty = 2,
+	dungeon_id = 1976013,
+	effect_prefab = "",
+	exp = 761,
+	exp_commander = 3,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_boss02",
+	icon_type = 2,
+	id = 1976013,
+	level = 105,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 150,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56000,
+		},
+		{
+			2,
+			200604,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+		{
+			2,
+			200597,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1976301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "theme-tempest-light",
+	difficulty = 2,
+	dungeon_id = 1976301,
+	effect_prefab = "",
+	exp = 702,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "fengfan_haigu_boss01",
+	icon_type = 2,
+	id = 1976301,
+	level = 104,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 70,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 98,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200604,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1977001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-tempest-freedom",
+	difficulty = 2,
+	dungeon_id = 1977001,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "laimuhao",
+	icon_type = 2,
+	id = 1977001,
+	level = 125,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 150,
+	type = 99,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		150,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1977002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-tempest-freedom",
+	difficulty = 2,
+	dungeon_id = 1977002,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "laimuhao",
+	icon_type = 2,
+	id = 1977002,
+	level = 125,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 150,
+	type = 99,
+	map_id = {
+		{
+			50211,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		150,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1978001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-nightmare-theme",
+	difficulty = 2,
+	dungeon_id = 1978001,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1978001,
+	level = 100,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 300,
+	type = 99,
+	map_id = {
+		{
+			50210,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1978002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-temepest-2",
+	difficulty = 2,
+	dungeon_id = 1978002,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1978002,
+	level = 100,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 300,
+	type = 99,
+	map_id = {
+		{
+			50211,
 			1,
 		},
 	},

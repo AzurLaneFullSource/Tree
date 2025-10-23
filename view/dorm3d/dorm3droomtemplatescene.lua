@@ -304,10 +304,12 @@ function var0_0.BindEvent(arg0_14)
 	end)
 
 	local var2_14 = {
-		PlayEnterExtraItem = true,
+		HideSceneItem = true,
 		SetExtraAnimSpeed = true,
 		EnableHeadIK = true,
+		PlayEnterExtraItem = true,
 		ResetCharacterExtraItem = true,
+		ResetTempHideSceneItems = true,
 		HideCharacterBylayer = true,
 		RevertCharacterBylayer = true
 	}

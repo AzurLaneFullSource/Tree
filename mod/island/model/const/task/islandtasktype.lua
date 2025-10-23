@@ -121,4 +121,20 @@ function var0_0.GetHudPriority(arg0_11)
 	end)
 end
 
+function var0_0.GetTrackingIconName(arg0_18)
+	if arg0_18 == var0_0.MAIN then
+		return "task_type_1"
+	elseif arg0_18 == var0_0.BRANCH then
+		return "task_type_2"
+	elseif arg0_18 == var0_0.DAILY then
+		return "task_type_3"
+	elseif arg0_18 == var0_0.WEEKLY then
+		return "task_type_4"
+	elseif arg0_18 == var0_0.ACTIVITY_BRANCH or arg0_18 == var0_0.ACTIVITY_DAILY or arg0_18 == var0_0.ACTIVITY_WEEKLY or arg0_18 == var0_0.SEASON or arg0_18 == var0_0.HIDE then
+		return "task_type_5"
+	end
+
+	assert(false, "Unknown type >>>" .. arg0_18)
+end
+
 return var0_0

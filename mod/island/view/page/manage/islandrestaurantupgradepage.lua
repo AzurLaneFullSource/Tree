@@ -123,4 +123,8 @@ function var0_0.OnHide(arg0_9)
 	arg0_9.callback = nil
 end
 
+function var0_0.OnDestroy(arg0_10)
+	arg0_10:UnBlurPanel()
+end
+
 return var0_0

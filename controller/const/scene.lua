@@ -1607,7 +1607,6 @@ local var1_0 = {
 		pg.m02:sendNotification(GAME.GET_OPEN_SHOPS, {
 			callback = arg1_252
 		})
-		arg1_252()
 	end,
 	IslandMediator = function(arg0_253, arg1_253)
 		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandEnter(0, 0))

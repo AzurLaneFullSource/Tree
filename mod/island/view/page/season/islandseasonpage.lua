@@ -211,6 +211,8 @@ function var0_0.OnDisable(arg0_24)
 end
 
 function var0_0.OnDestroy(arg0_25)
+	arg0_25:OnHide()
+
 	for iter0_25, iter1_25 in pairs(arg0_25.pages) do
 		if iter1_25 then
 			iter1_25:Destroy()

@@ -19,44 +19,46 @@ function var0_0.execute(arg0_1, arg1_1)
 
 			if arg0_2.return_num and arg0_2.return_num > 0 then
 				local var1_2 = var0_2:GetDelegationSlotData(var2_1):GetFormulaId()
-				local var2_2 = pg.island_formula[var1_2].commission_cost
-				local var3_2 = {}
+				local var2_2 = pg.island_formula[var1_2]
+				local var3_2 = var0_2:GetDelegationSlotData(var2_1):GetSlotRoleData():GetReturnExtraNum(arg0_2.return_num)
+				local var4_2 = var2_2.commission_cost
+				local var5_2 = {}
 
-				for iter0_2, iter1_2 in ipairs(var2_2) do
-					table.insert(var3_2, {
+				for iter0_2, iter1_2 in ipairs(var4_2) do
+					table.insert(var5_2, {
 						type = DROP_TYPE_ISLAND_ITEM,
 						id = iter1_2[1],
-						number = iter1_2[2] * arg0_2.return_num
+						number = iter1_2[2] * arg0_2.return_num + var3_2
 					})
 				end
 
-				local var4_2 = IslandDropHelper.AddItems({
-					drop_list = var3_2
+				local var6_2 = IslandDropHelper.AddItems({
+					drop_list = var5_2
 				})
 			end
 
 			var0_2:UpdateDeleationRoleDataBySlotId(var2_1, nil)
 
-			local var5_2
+			local var7_2
 
 			if #arg0_2.award > 0 then
-				local var6_2 = arg0_2.award[1]
+				local var8_2 = arg0_2.award[1]
 
-				var5_2 = true
+				var7_2 = true
 
-				var0_2:UpdateDeleationRewardDataBySlotId(var2_1, var6_2)
+				var0_2:UpdateDeleationRewardDataBySlotId(var2_1, var8_2)
 			end
 
-			local var7_2 = var5_1:GetShipById(arg0_2.ship_id)
+			local var9_2 = var5_1:GetShipById(arg0_2.ship_id)
 
-			var7_2:UpdateEnergy(arg0_2.cur_energy)
-			var7_2:UpdateEnergyBeginRecoverTime(arg0_2.recover_time)
-			var7_2:AddExp(arg0_2.add_exp)
+			var9_2:UpdateEnergy(arg0_2.cur_energy)
+			var9_2:UpdateEnergyBeginRecoverTime(arg0_2.recover_time)
+			var9_2:AddExp(arg0_2.add_exp)
 
-			local var8_2
+			local var10_2
 
 			if #arg0_2.award == 0 and arg0_2.add_exp > 0 then
-				var8_2 = {
+				var10_2 = {
 					addShipId = arg0_2.ship_id,
 					addExp = arg0_2.add_exp
 				}
@@ -66,11 +68,11 @@ function var0_0.execute(arg0_1, arg1_1)
 				build_id = var1_1,
 				ship_id = arg0_2.ship_id,
 				area_id = var2_1,
-				remainReward = var5_2
+				remainReward = var7_2
 			})
 			arg0_1:sendNotification(GAME.ISLAND_FINISH_DELEGATION_DONE, {
 				slotId = var2_1,
-				addShipExpData = var8_2
+				addShipExpData = var10_2
 			})
 		else
 			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)

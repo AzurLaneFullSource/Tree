@@ -255,74 +255,82 @@ function var0_0.FlushInfos(arg0_19)
 			}):getConfigTable().icon
 
 			GetImageSpriteFromAtlasAsync("island/" .. var11_19, "", arg0_19.canRewardIcon)
-			setText(arg0_19.canRewardNum, "×" .. var10_19)
 
-			local var12_19 = pg.island_formula[var7_19].item_id
-			local var13_19 = pg.island_item_data_template[var12_19]
+			local var12_19 = "×" .. var10_19
+			local var13_19 = var5_19.main_num
 
-			GetImageSpriteFromAtlasAsync("island/" .. var13_19.icon, "", arg0_19.finishFurmalaIcon)
+			if var13_19 and var13_19 > 0 then
+				var12_19 = string.format("%s+%d", var12_19, var13_19)
+			end
+
+			setText(arg0_19.canRewardNum, var12_19)
+
+			local var14_19 = pg.island_formula[var7_19].item_id
+			local var15_19 = pg.island_item_data_template[var14_19]
+
+			GetImageSpriteFromAtlasAsync("island/" .. var15_19.icon, "", arg0_19.finishFurmalaIcon)
 		end
 
 		if var4_19 then
 			arg0_19.showShip = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipById(var4_19.ship_id)
 
-			local var14_19 = arg0_19.showShip:GetCurrentEnergy()
-			local var15_19 = arg0_19.showShip:GetMaxEnergy()
+			local var16_19 = arg0_19.showShip:GetCurrentEnergy()
+			local var17_19 = arg0_19.showShip:GetMaxEnergy()
 
-			setText(arg0_19.energyTFText, var14_19 .. "/" .. var15_19)
-			setSlider(arg0_19.energySliderTF, 0, 1, var14_19 / var15_19)
+			setText(arg0_19.energyTFText, var16_19 .. "/" .. var17_19)
+			setSlider(arg0_19.energySliderTF, 0, 1, var16_19 / var17_19)
 			setText(arg0_19.seletShipName, arg0_19.showShip:GetName())
 
-			local var16_19 = IslandShip.StaticGetPrefab(var4_19.ship_id)
+			local var18_19 = IslandShip.StaticGetPrefab(var4_19.ship_id)
 
-			GetImageSpriteFromAtlasAsync("ShipYardIcon/" .. var16_19, "", arg0_19.shipIconTF)
+			GetImageSpriteFromAtlasAsync("ShipYardIcon/" .. var18_19, "", arg0_19.shipIconTF)
 
-			local var17_19 = var4_19.formula_id
-			local var18_19 = pg.island_formula[var17_19]
-			local var19_19 = var18_19.commission_product[1][1]
-			local var20_19 = pg.island_item_data_template[var19_19]
-			local var21_19 = Drop.New({
+			local var19_19 = var4_19.formula_id
+			local var20_19 = pg.island_formula[var19_19]
+			local var21_19 = var20_19.commission_product[1][1]
+			local var22_19 = pg.island_item_data_template[var21_19]
+			local var23_19 = Drop.New({
 				count = 0,
 				type = DROP_TYPE_ISLAND_ITEM,
-				id = var19_19
+				id = var21_19
 			})
 
 			onButton(arg0_19, arg0_19.currentFormulaIcon, function()
 				arg0_19.contextData:ShowMsgBox({
 					title = i18n("island_word_desc"),
 					type = IslandMsgBox.TYPE_COMMON_DROP_DESCRIBE,
-					dropData = var21_19
+					dropData = var23_19
 				})
 			end)
-			GetImageSpriteFromAtlasAsync("island/" .. var20_19.icon, "", arg0_19.currentFormulaIcon)
-			setText(arg0_19.currentFormulaNum, "×" .. var18_19.commission_product[1][2])
+			GetImageSpriteFromAtlasAsync("island/" .. var22_19.icon, "", arg0_19.currentFormulaIcon)
+			setText(arg0_19.currentFormulaNum, "×" .. var20_19.commission_product[1][2])
 
-			local var22_19 = getProxy(IslandProxy):GetIsland():GetAblityAgency()
+			local var24_19 = getProxy(IslandProxy):GetIsland():GetAblityAgency()
 
-			if #var18_19.second_product == 0 or not var22_19:IsUnlcokSecondProduct(var17_19) then
+			if #var20_19.second_product == 0 or not var24_19:IsUnlcokSecondProduct(var19_19) then
 				setActive(arg0_19.extraProduct, false)
 			else
 				setActive(arg0_19.extraProduct, true)
 
-				local var23_19 = var18_19.second_product_display
-				local var24_19 = var23_19[1][1]
-				local var25_19 = pg.island_item_data_template[var24_19]
+				local var25_19 = var20_19.second_product_display
+				local var26_19 = var25_19[1][1]
+				local var27_19 = pg.island_item_data_template[var26_19]
 
-				GetImageSpriteFromAtlasAsync("island/" .. var25_19.icon, "", arg0_19.extraProductIcon)
-				setText(arg0_19.extraProductName, var25_19.name)
-				setText(arg0_19.extraProductNum, "×" .. var23_19[1][2])
+				GetImageSpriteFromAtlasAsync("island/" .. var27_19.icon, "", arg0_19.extraProductIcon)
+				setText(arg0_19.extraProductName, var27_19.name)
+				setText(arg0_19.extraProductNum, "×" .. var25_19[1][2])
 
-				local var26_19 = Drop.New({
+				local var28_19 = Drop.New({
 					count = 0,
 					type = DROP_TYPE_ISLAND_ITEM,
-					id = var24_19
+					id = var26_19
 				})
 
 				onButton(arg0_19, arg0_19.extraProductIcon, function()
 					arg0_19.contextData:ShowMsgBox({
 						title = i18n("island_word_desc"),
 						type = IslandMsgBox.TYPE_COMMON_DROP_DESCRIBE,
-						dropData = var26_19
+						dropData = var28_19
 					})
 				end)
 			end
@@ -399,30 +407,56 @@ function var0_0.UpdateTime(arg0_27)
 	local var4_27 = var1_27:CanRewardTimes()
 	local var5_27 = var1_27.formula_id
 	local var6_27 = pg.island_formula[var5_27]
+	local var7_27 = var1_27:GetCurrentCanRewardExtraMainNum()
+	local var8_27 = "×" .. tostring(var6_27.commission_product[1][2] * var4_27)
 
-	setText(arg0_27.canRewardNum, "×" .. tostring(var6_27.commission_product[1][2] * var4_27))
+	if var7_27 and var7_27 > 0 then
+		var8_27 = string.format("%s+%d", var8_27, var7_27)
+	end
 
-	local var7_27 = var1_27:InCurrentTime()
-	local var8_27 = arg0_27.timeMgr:GetServerTime() - var1_27:InCurrentTimeStart(var7_27)
+	setText(arg0_27.canRewardNum, var8_27)
 
-	arg0_27.formulaProcess.fillAmount = var8_27 / var1_27:CurrentTimeNeed(var7_27)
+	local var9_27 = var1_27:InCurrentTime()
+	local var10_27 = arg0_27.timeMgr:GetServerTime() - var1_27:InCurrentTimeStart(var9_27)
 
-	local var9_27 = var6_27.commission_product[1][1]
-	local var10_27 = pg.island_item_data_template[var9_27]
+	arg0_27.formulaProcess.fillAmount = var10_27 / var1_27:CurrentTimeNeed(var9_27)
 
-	GetImageSpriteFromAtlasAsync("island/" .. var10_27.icon, "", arg0_27.canRewardIcon)
+	local var11_27 = var6_27.commission_product[1][1]
+	local var12_27 = pg.island_item_data_template[var11_27]
 
-	local var11_27 = var1_27:LastTimes()
+	GetImageSpriteFromAtlasAsync("island/" .. var12_27.icon, "", arg0_27.canRewardIcon)
 
-	setText(arg0_27.currentFormulaLastNum, var11_27)
+	local var13_27 = var1_27:LastTimes()
+
+	setText(arg0_27.currentFormulaLastNum, var13_27)
+
+	local var14_27 = var1_27:GetExtraMainProduct(var9_27)
+	local var15_27 = "×" .. var6_27.commission_product[1][2]
+
+	if var14_27 > 0 then
+		var15_27 = string.format("×(%s<color=#7df39f>+%d</color>)", var6_27.commission_product[1][2], var14_27)
+	end
+
+	setText(arg0_27.currentFormulaNum, var15_27)
+
+	if #var6_27.second_product > 0 and getProxy(IslandProxy):GetIsland():GetAblityAgency():IsUnlcokSecondProduct(var5_27) then
+		local var16_27 = var1_27:GetExtraExtraProduct(var9_27)
+		local var17_27 = "×" .. var6_27.second_product_display[1][2]
+
+		if var16_27 > 0 then
+			var17_27 = string.format("×(%s<color=#7df39f>+%d</color>)", var6_27.second_product_display[1][2], var16_27)
+		end
+
+		setText(arg0_27.extraProductNum, var17_27)
+	end
 
 	if var4_27 > 0 then
 		setActive(arg0_27.getBtn, true)
 		setActive(arg0_27.addBtn, false)
 	else
-		setActive(arg0_27.addBtn, var11_27 < 5)
+		setActive(arg0_27.addBtn, var13_27 < 5)
 		onButton(arg0_27, arg0_27.addBtn, function()
-			arg0_27:OpenFormulaSelectPage(var5_27, var11_27, var4_27, var1_27.ship_id)
+			arg0_27:OpenFormulaSelectPage(var5_27, var13_27, var4_27, var1_27.ship_id)
 		end, SFX_PANEL)
 	end
 
@@ -430,20 +464,20 @@ function var0_0.UpdateTime(arg0_27)
 		return
 	end
 
-	local var12_27 = var0_27:GetFromulaTatalCount(var6_27.id) + var4_27
-	local var13_27 = var6_27.second_product[1]
-	local var14_27 = math.floor(var12_27 / var13_27)
-	local var15_27 = var12_27 % var13_27
+	local var18_27 = var0_27:GetFromulaTatalCount(var6_27.id) + var4_27
+	local var19_27 = var6_27.second_product[1]
+	local var20_27 = math.floor(var18_27 / var19_27)
+	local var21_27 = var18_27 % var19_27
 
-	if var15_27 ~= arg0_27.extraProcess then
-		arg0_27.extraProcess = var15_27
+	if var21_27 ~= arg0_27.extraProcess then
+		arg0_27.extraProcess = var21_27
 
-		arg0_27.extraProductList:align(var13_27)
+		arg0_27.extraProductList:align(var19_27)
 	end
 
-	local var16_27 = math.floor((var11_27 + var15_27) / var13_27)
+	local var22_27 = math.floor((var13_27 + var21_27) / var19_27)
 
-	setText(arg0_27.extraProductLastNum, "×" .. var16_27)
+	setText(arg0_27.extraProductLastNum, "×" .. var22_27)
 end
 
 function var0_0.StartTimer(arg0_29)

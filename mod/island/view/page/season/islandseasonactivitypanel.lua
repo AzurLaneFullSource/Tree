@@ -50,6 +50,8 @@ function var0_0.OnInit(arg0_3)
 			end, SFX_PANEL)
 		end
 	end)
+
+	arg0_3.switchCount = 0
 end
 
 function var0_0.Show(arg0_6)
@@ -189,32 +191,74 @@ function var0_0.flushTabs(arg0_19)
 end
 
 function var0_0.selectActivity(arg0_20, arg1_20)
-	if arg1_20 and (not arg0_20.activity or arg0_20.activity.id ~= arg1_20.id) then
-		local var0_20 = arg0_20.pageDic[arg1_20.id]
+	if arg0_20.nextActivity == arg1_20 or not arg0_20.nextActivity and arg0_20.activity and arg1_20.id == arg0_20.activity.id then
+		return
+	end
 
-		assert(var0_20, "找不到id:" .. arg1_20.id .. "的活动页，请检查")
-		var0_20:Load()
-		var0_20:ActionInvoke("Flush", arg1_20)
-		var0_20:ActionInvoke("ShowOrHide", true)
+	local var0_20 = {}
 
-		if arg0_20.activity and arg0_20.activity.id ~= arg1_20.id then
+	if arg0_20.activity and not arg0_20.nextActivity then
+		arg0_20.switchCount = arg0_20.switchCount + 1
+
+		table.insert(var0_20, function(arg0_21)
+			arg0_20.pageDic[arg0_20.activity.id]:ActionInvoke("SwitchOut", function()
+				arg0_20.switchCount = arg0_20.switchCount - 1
+
+				arg0_21()
+			end)
+		end)
+	end
+
+	if not arg0_20.activity or arg0_20.activity.id ~= arg1_20.id then
+		local var1_20 = arg0_20.pageDic[arg1_20.id]
+
+		assert(var1_20, "找不到id:" .. arg1_20.id .. "的活动页，请检查")
+
+		arg0_20.switchCount = arg0_20.switchCount + 1
+
+		table.insert(var0_20, function(arg0_23)
+			var1_20:Load()
+			var1_20:ActionInvoke("ShowOrHide", false)
+			var1_20:CallbackInvoke(function()
+				arg0_20.switchCount = arg0_20.switchCount - 1
+
+				arg0_23()
+			end)
+		end)
+	end
+
+	arg0_20.nextActivity = arg1_20
+
+	parallelAsync(var0_20, function()
+		if arg0_20.switchCount > 0 then
+			return
+		end
+
+		if arg0_20.activity then
 			arg0_20.pageDic[arg0_20.activity.id]:ActionInvoke("ShowOrHide", false)
 		end
 
-		arg0_20.activity = arg1_20
-		arg0_20.contextData.id = arg1_20.id
-	end
+		arg0_20.activity = arg0_20.nextActivity
+		arg0_20.contextData.id = arg0_20.nextActivity.id
+		arg0_20.nextActivity = nil
+
+		local var0_25 = arg0_20.pageDic[arg0_20.activity.id]
+
+		var0_25:ActionInvoke("Flush", arg0_20.activity)
+		var0_25:ActionInvoke("ShowOrHide", true)
+	end)
 end
 
-function var0_0.OnDestroy(arg0_21)
-	arg0_21.shareData = nil
+function var0_0.OnDestroy(arg0_26)
+	arg0_26.shareData = nil
 
-	for iter0_21, iter1_21 in pairs(arg0_21.pageDic) do
-		iter1_21:Destroy()
+	for iter0_26, iter1_26 in pairs(arg0_26.pageDic) do
+		iter1_26:Destroy()
 	end
 
-	arg0_21.pageDic = nil
-	arg0_21.activities = nil
+	arg0_26.pageDic = nil
+	arg0_26.activities = nil
+	arg0_26.switchCount = nil
 end
 
 return var0_0

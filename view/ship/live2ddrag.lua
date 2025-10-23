@@ -434,7 +434,7 @@ function var0_0.onEventCallback(arg0_22, arg1_22, arg2_22, arg3_22)
 			var3_22 = arg0_22.actionTrigger.target or nil
 			var6_22 = arg0_22.actionTrigger.target_focus == 1 and true or false
 
-			if (arg0_22.actionTrigger.circle or nil) and var3_22 and var3_22 == arg0_22.parameterTargetValue then
+			if (arg0_22.actionTrigger.circle ~= nil and true or false) and var3_22 and var3_22 == arg0_22.parameterTargetValue then
 				var3_22 = arg0_22.startValue
 			end
 
@@ -454,6 +454,11 @@ function var0_0.onEventCallback(arg0_22, arg1_22, arg2_22, arg3_22)
 			end
 
 			var2_22 = var8_22.focus == 1 and true or false
+
+			if not var2_22 and arg0_22.actionTrigger.focus then
+				var2_22 = arg0_22.actionTrigger.focus == 1 and true or false
+			end
+
 			var3_22 = var8_22.target or nil
 			var6_22 = var8_22.target_focus == 1 and true or false
 			var4_22 = var8_22.react or nil
@@ -478,7 +483,7 @@ function var0_0.onEventCallback(arg0_22, arg1_22, arg2_22, arg3_22)
 			var3_22 = arg0_22.actionTrigger.target or nil
 			var6_22 = arg0_22.actionTrigger.target_focus == 1 and true or false
 
-			local var9_22 = arg0_22.actionTrigger.circle or nil
+			local var9_22 = arg0_22.actionTrigger.circle ~= nil and true or false
 
 			var4_22 = arg0_22.actionTrigger.react or nil
 

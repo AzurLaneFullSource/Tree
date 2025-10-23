@@ -481,6 +481,7 @@ end
 function var0_0.OnDestroy(arg0_41)
 	ClearLScrollrect(arg0_41.shipRectCom)
 	arg0_41:StopTimer()
+	arg0_41:OnHide()
 end
 
 function var0_0.OnHide(arg0_42)

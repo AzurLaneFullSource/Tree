@@ -266690,6 +266690,766 @@ _G.pg.base.aircraft_template[3207537] = {
 	},
 }
 
+_G.pg.base.aircraft_template[3218085] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 1680,
+	icon = "feiji_haigushou01",
+	id = 3218085,
+	max_hp = 60,
+	model_ID = "feiji_haigushou01",
+	name = "【2024风帆二期】骸骨兽航母 飞鱼舰载机（快速冲底） Lv1",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 50,
+	type = 1,
+	weapon_ID = {
+		3218090,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[3218086] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 1960,
+	icon = "feiji_haigushou01",
+	id = 3218086,
+	max_hp = 90,
+	model_ID = "feiji_haigushou01",
+	name = "【2024风帆二期】骸骨兽航母 飞鱼舰载机（快速冲底） Lv2",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 50,
+	type = 1,
+	weapon_ID = {
+		3218091,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[3218087] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 2240,
+	icon = "feiji_haigushou01",
+	id = 3218087,
+	max_hp = 120,
+	model_ID = "feiji_haigushou01",
+	name = "【2024风帆二期】骸骨兽航母 飞鱼舰载机（快速冲底） Lv3",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 50,
+	type = 1,
+	weapon_ID = {
+		3218092,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[3218088] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 2520,
+	icon = "feiji_haigushou01",
+	id = 3218088,
+	max_hp = 150,
+	model_ID = "feiji_haigushou01",
+	name = "【2024风帆二期】骸骨兽航母 飞鱼舰载机（快速冲底） Lv4",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 50,
+	type = 1,
+	weapon_ID = {
+		3218093,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[3218089] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 2800,
+	icon = "feiji_haigushou01",
+	id = 3218089,
+	max_hp = 180,
+	model_ID = "feiji_haigushou01",
+	name = "【2024风帆二期】骸骨兽航母 飞鱼舰载机（快速冲底） Lv5",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 50,
+	type = 1,
+	weapon_ID = {
+		3218094,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[3218185] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 1680,
+	icon = "feiji_haigushou02",
+	id = 3218185,
+	max_hp = 60,
+	model_ID = "feiji_haigushou02",
+	name = "【2024风帆二期】（换皮）灵体骸骨兽航母 飞鱼舰载机（快速冲底） Lv1",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 50,
+	type = 1,
+	weapon_ID = {
+		3218190,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[3218186] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 1960,
+	icon = "feiji_haigushou02",
+	id = 3218186,
+	max_hp = 90,
+	model_ID = "feiji_haigushou02",
+	name = "【2024风帆二期】（换皮）灵体骸骨兽航母 飞鱼舰载机（快速冲底） Lv2",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 50,
+	type = 1,
+	weapon_ID = {
+		3218191,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[3218187] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 2240,
+	icon = "feiji_haigushou02",
+	id = 3218187,
+	max_hp = 120,
+	model_ID = "feiji_haigushou02",
+	name = "【2024风帆二期】（换皮）灵体骸骨兽航母 飞鱼舰载机（快速冲底） Lv3",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 50,
+	type = 1,
+	weapon_ID = {
+		3218192,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[3218188] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 2520,
+	icon = "feiji_haigushou02",
+	id = 3218188,
+	max_hp = 150,
+	model_ID = "feiji_haigushou02",
+	name = "【2024风帆二期】（换皮）灵体骸骨兽航母 飞鱼舰载机（快速冲底） Lv4",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 50,
+	type = 1,
+	weapon_ID = {
+		3218193,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[3218189] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 2800,
+	icon = "feiji_haigushou02",
+	id = 3218189,
+	max_hp = 180,
+	model_ID = "feiji_haigushou02",
+	name = "【2024风帆二期】（换皮）灵体骸骨兽航母 飞鱼舰载机（快速冲底） Lv5",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 50,
+	type = 1,
+	weapon_ID = {
+		3218194,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
 _G.pg.base.aircraft_template[3218501] = {
 	ACC_growth = 0,
 	AP_growth = 2000,
@@ -278821,6 +279581,160 @@ _G.pg.base.aircraft_template[3315110] = {
 			{
 				0.82,
 				2.04,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[3320207] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 1680,
+	icon = "feiji_haigushou01",
+	id = 3320207,
+	max_hp = 60,
+	model_ID = "feiji_haigushou01",
+	name = "【2025风帆三期T3】BOSS 寂静守卫航母 飞鱼舰载机（快速冲底）",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 50,
+	type = 1,
+	weapon_ID = {
+		3320208,
+		3320209,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[3320307] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 1680,
+	icon = "feiji_haigushou02",
+	id = 3320307,
+	max_hp = 60,
+	model_ID = "feiji_haigushou02",
+	name = "【2025风帆三期T4】BOSS 寂静之灵航母 飞鱼舰载机（快速冲底）",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 50,
+	type = 1,
+	weapon_ID = {
+		3320308,
+		3320309,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
 				0,
 			},
 		},

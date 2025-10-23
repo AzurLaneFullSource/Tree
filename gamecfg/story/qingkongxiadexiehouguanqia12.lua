@@ -9,7 +9,7 @@ return {
 			bgName = "star_level_bg_650",
 			hidePaintObj = true,
 			say = "As soon as she put on the rigging, Hestia had a drastic change and bravely went to the front line.",
-			bgm = "danmachi-3",
+			bgm = "danmachi-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -112,7 +112,7 @@ function var0_0.OnHide(arg0_14)
 end
 
 function var0_0.OnDestroy(arg0_15)
-	return
+	arg0_15:OnHide()
 end
 
 return var0_0

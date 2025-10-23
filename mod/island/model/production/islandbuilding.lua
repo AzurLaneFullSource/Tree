@@ -199,6 +199,10 @@ function var0_0.UpdatePerSecond(arg0_20)
 	for iter0_20, iter1_20 in pairs(arg0_20.delegationSlotData) do
 		iter1_20:UpdatePerSecond(arg0_20.isSelf)
 	end
+
+	if arg0_20.collectPlaceSystem then
+		arg0_20.collectPlaceSystem:UpdatePerSecond()
+	end
 end
 
 function var0_0.GetSlotUnitDataByModelData(arg0_21)

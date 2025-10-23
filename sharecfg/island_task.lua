@@ -4173,7 +4173,7 @@ pg.base.island_task = {
 		complete_data = 10020025,
 		map_complete_tips = 1002,
 		rec_perform = "",
-		task_desc = "It seems there are loads of autumn gatherables around the island. Commander, could you help me get some?",
+		task_desc = "It seems there are loads of autumnal foraging items around the island. Could you help me gather some, Commander?\n<Collectable Specialties>\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4001}>Autumn Chrysanthemum</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4002}>Reed Flowers</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4003}>Peanuts</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4004}>Matsutake</material></color>",
 		series_name = "Event Gatherable",
 		id = 50001001,
 		unlock_condition = {
@@ -4690,7 +4690,7 @@ pg.base.island_task = {
 		complete_data = 10020025,
 		map_complete_tips = 1002,
 		rec_perform = "",
-		task_desc = "These autumn specialties seem like they'd generate good economic value. Commander, for the sake of the island's development, please procure some!",
+		task_desc = "These autumn specialties should fetch a nice price. Commander, please procure some for the sake of the island's development!\n<Makable Specialties> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>Yoizuki Pear</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>Kaki Persimmon</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>Dried Persimmon</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>Matsutake and Chicken Soup</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>Autumn Bouquet</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>Carrot and Pear Juice</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>Chrysanthemum Tea</material></color>",
 		series_name = "Event Recipe",
 		id = 50002001,
 		unlock_condition = {

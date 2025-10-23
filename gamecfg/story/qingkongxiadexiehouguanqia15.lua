@@ -11,7 +11,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			say = "The exit is just ahead. By the look of things, there's a good chance that there is a Floor Boss.",
-			bgm = "danmachi-2",
+			bgm = "danmachi-az-story",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
