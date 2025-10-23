@@ -835,7 +835,7 @@ local function var20_0(arg0_33, arg1_33)
 		arg0_33.delayChangeParamater = nil
 	end
 
-	arg0_33:offsetL2dPositonDelay(0.6, 6)
+	arg0_33:offsetL2dPositonDelay(0.3, 6)
 	var14_0(arg0_33, "idle", true)
 end
 
@@ -888,7 +888,7 @@ function var0_0.SetVisible(arg0_40, arg1_40)
 		onNextTick(function()
 			setActive(arg0_40._tf, true)
 			arg0_40:loadLive2dData()
-			arg0_40:offsetL2dPositonDelay(0.6, 5, function()
+			arg0_40:offsetL2dPositonDelay(0.3, 5, function()
 				return
 			end)
 			var14_0(arg0_40, "idle", true)
