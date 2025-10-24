@@ -260,6 +260,8 @@ function var0_0.IsSupplyShop(arg0_18)
 end
 
 function var0_0.SetPlayer(arg0_19, arg1_19)
+	arg0_19.player = arg1_19
+
 	arg0_19.page:SetPlayer(arg1_19)
 end
 

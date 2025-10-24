@@ -34186,3 +34186,7 @@ _G.pg.base.gametip.fengfanV3_20251023_jinianshouce = {
 	tip = "Achievements",
 }
 
+_G.pg.base.gametip.shop_sell_ended = {
+	tip = "Unavailable ",
+}
+

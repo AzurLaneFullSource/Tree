@@ -206,7 +206,9 @@ function var0_0.InsertMsg(arg0_28, arg1_28, arg2_28)
 		return
 	end
 
-	table.insert(arg1_28, arg2_28)
+	if arg2_28.player and arg2_28.content then
+		table.insert(arg1_28, arg2_28)
+	end
 end
 
 function var0_0.MatchChannel(arg0_29, arg1_29)
