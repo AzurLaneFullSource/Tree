@@ -28,6 +28,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			end
 
 			IslandTaskHelper.UpdateRuntimeTaskByTargetType(IslandTaskTargetType.TASK)
+			IslandTaskHelper.UpdateRuntimeTaskByTargetType(IslandTaskTargetType.TASK_TYPE_PLUS)
 			var0_2:TryAcceptAutoTasks()
 
 			local var4_2 = IslandDropHelper.AddItems(arg0_2, var1_2)

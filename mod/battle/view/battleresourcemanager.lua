@@ -673,7 +673,6 @@ function var5_0.StartPreload(arg0_54, arg1_54, arg2_54)
 				var2_54()
 			end)
 		elseif string.find(iter6_54, "UI/") then
-			print(var3_54)
 			LoadAndInstantiateAsync("UI", var3_54, function(arg0_60)
 				if arg0_60 == nil then
 					originalPrint("资源预加载失败，检查以下目录：>>" .. iter6_54 .. "<<")
@@ -691,7 +690,6 @@ function var5_0.StartPreload(arg0_54, arg1_54, arg2_54)
 					end
 				end
 
-				print(iter6_54)
 				arg0_54:InitPool(iter6_54, arg0_60)
 				var2_54()
 			end, true, true)
@@ -1268,8 +1266,6 @@ function var5_0.GetStageResource(arg0_79)
 				local var3_79 = var0_0.Battle.BattleDataFunction.GetResFromBuff(iter3_79.id, iter3_79.level, {})
 
 				for iter4_79, iter5_79 in ipairs(var3_79) do
-					print(iter5_79)
-
 					var1_79[#var1_79 + 1] = iter5_79
 				end
 			end

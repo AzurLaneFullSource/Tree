@@ -238,6 +238,7 @@ _G.pg.base.chapter_template[101] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -612,6 +613,7 @@ _G.pg.base.chapter_template[102] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"UI10202",
 	},
@@ -1024,6 +1026,7 @@ _G.pg.base.chapter_template[103] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -1521,6 +1524,7 @@ _G.pg.base.chapter_template[104] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -2106,6 +2110,7 @@ _G.pg.base.chapter_template[201] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -2744,6 +2749,7 @@ _G.pg.base.chapter_template[202] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -3357,6 +3363,7 @@ _G.pg.base.chapter_template[203] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -3944,6 +3951,7 @@ _G.pg.base.chapter_template[204] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -4550,6 +4558,7 @@ _G.pg.base.chapter_template[301] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -5180,6 +5189,7 @@ _G.pg.base.chapter_template[302] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -5805,6 +5815,7 @@ _G.pg.base.chapter_template[303] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -6416,6 +6427,7 @@ _G.pg.base.chapter_template[304] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -6946,6 +6958,7 @@ _G.pg.base.chapter_template[401] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -7469,6 +7482,7 @@ _G.pg.base.chapter_template[402] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -7937,6 +7951,7 @@ _G.pg.base.chapter_template[403] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -8542,6 +8557,7 @@ _G.pg.base.chapter_template[404] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -9152,6 +9168,7 @@ _G.pg.base.chapter_template[501] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -9700,6 +9717,7 @@ _G.pg.base.chapter_template[502] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -10218,6 +10236,7 @@ _G.pg.base.chapter_template[503] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -10761,6 +10780,7 @@ _G.pg.base.chapter_template[504] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -11342,6 +11362,7 @@ _G.pg.base.chapter_template[601] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -11979,6 +12000,7 @@ _G.pg.base.chapter_template[602] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -12540,6 +12562,7 @@ _G.pg.base.chapter_template[603] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -13145,6 +13168,7 @@ _G.pg.base.chapter_template[604] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -13573,6 +13597,7 @@ _G.pg.base.chapter_template[701] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -14104,6 +14129,7 @@ _G.pg.base.chapter_template[702] = {
 		1,
 		2,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -14706,6 +14732,7 @@ _G.pg.base.chapter_template[703] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -15292,6 +15319,7 @@ _G.pg.base.chapter_template[704] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -15742,6 +15770,7 @@ _G.pg.base.chapter_template[801] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -16278,6 +16307,7 @@ _G.pg.base.chapter_template[802] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -16877,6 +16907,7 @@ _G.pg.base.chapter_template[803] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -17539,6 +17570,7 @@ _G.pg.base.chapter_template[804] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -18083,6 +18115,10 @@ _G.pg.base.chapter_template[901] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -18666,6 +18702,10 @@ _G.pg.base.chapter_template[902] = {
 	box_refresh = {
 		0,
 		1,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -19273,6 +19313,10 @@ _G.pg.base.chapter_template[903] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -19903,6 +19947,10 @@ _G.pg.base.chapter_template[904] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		3,
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -20466,6 +20514,10 @@ _G.pg.base.chapter_template[1001] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -21086,6 +21138,10 @@ _G.pg.base.chapter_template[1002] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -21723,6 +21779,10 @@ _G.pg.base.chapter_template[1003] = {
 	box_refresh = {
 		0,
 		1,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -22375,6 +22435,10 @@ _G.pg.base.chapter_template[1004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		3,
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -22987,6 +23051,10 @@ _G.pg.base.chapter_template[1101] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -23716,6 +23784,10 @@ _G.pg.base.chapter_template[1102] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		3,
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -24413,6 +24485,10 @@ _G.pg.base.chapter_template[1103] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -25221,6 +25297,10 @@ _G.pg.base.chapter_template[1104] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		3,
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -25811,6 +25891,10 @@ _G.pg.base.chapter_template[1201] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -26515,6 +26599,10 @@ _G.pg.base.chapter_template[1202] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -27255,6 +27343,10 @@ _G.pg.base.chapter_template[1203] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -28112,6 +28204,10 @@ _G.pg.base.chapter_template[1204] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		3,
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -28709,6 +28805,10 @@ _G.pg.base.chapter_template[1301] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -29413,6 +29513,10 @@ _G.pg.base.chapter_template[1302] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -30161,6 +30265,10 @@ _G.pg.base.chapter_template[1303] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -31019,6 +31127,10 @@ _G.pg.base.chapter_template[1304] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		3,
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -31663,6 +31775,10 @@ _G.pg.base.chapter_template[1401] = {
 	},
 	box_refresh = {
 		1,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -32440,6 +32556,10 @@ _G.pg.base.chapter_template[1402] = {
 	},
 	box_refresh = {
 		1,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -33266,6 +33386,10 @@ _G.pg.base.chapter_template[1403] = {
 	},
 	box_refresh = {
 		1,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -34216,6 +34340,10 @@ _G.pg.base.chapter_template[1404] = {
 		5002,
 	},
 	box_refresh = {
+		2,
+	},
+	box_auto_pick = {
+		3,
 		2,
 	},
 	story_refresh = {},
@@ -35391,6 +35519,10 @@ _G.pg.base.chapter_template[1501] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {
+		3,
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -36150,6 +36282,10 @@ _G.pg.base.chapter_template[1502] = {
 	},
 	box_refresh = {
 		1,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -36962,6 +37098,10 @@ _G.pg.base.chapter_template[1503] = {
 	},
 	box_refresh = {
 		1,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -37890,6 +38030,10 @@ _G.pg.base.chapter_template[1504] = {
 	box_refresh = {
 		2,
 	},
+	box_auto_pick = {
+		3,
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -38318,6 +38462,7 @@ _G.pg.base.chapter_template[10000] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"TACT10001",
 	},
@@ -38794,6 +38939,7 @@ _G.pg.base.chapter_template[10001] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"TACT10002",
 	},
@@ -39300,6 +39446,7 @@ _G.pg.base.chapter_template[10002] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"TACT10004",
 	},
@@ -39592,6 +39739,7 @@ _G.pg.base.chapter_template[10101] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -40006,6 +40154,7 @@ _G.pg.base.chapter_template[10102] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -40456,6 +40605,7 @@ _G.pg.base.chapter_template[10103] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -40989,6 +41139,7 @@ _G.pg.base.chapter_template[10104] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -41622,6 +41773,7 @@ _G.pg.base.chapter_template[10201] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -42308,6 +42460,7 @@ _G.pg.base.chapter_template[10202] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -42971,6 +43124,7 @@ _G.pg.base.chapter_template[10203] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -43604,6 +43758,7 @@ _G.pg.base.chapter_template[10204] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -44258,6 +44413,7 @@ _G.pg.base.chapter_template[10301] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -44936,6 +45092,7 @@ _G.pg.base.chapter_template[10302] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -45609,6 +45766,7 @@ _G.pg.base.chapter_template[10303] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -46268,6 +46426,7 @@ _G.pg.base.chapter_template[10304] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -46844,6 +47003,7 @@ _G.pg.base.chapter_template[10401] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -47413,6 +47573,7 @@ _G.pg.base.chapter_template[10402] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -47927,6 +48088,7 @@ _G.pg.base.chapter_template[10403] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -48578,6 +48740,7 @@ _G.pg.base.chapter_template[10404] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -49234,6 +49397,7 @@ _G.pg.base.chapter_template[10501] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -49828,6 +49992,7 @@ _G.pg.base.chapter_template[10502] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -50392,6 +50557,7 @@ _G.pg.base.chapter_template[10503] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -50981,6 +51147,7 @@ _G.pg.base.chapter_template[10504] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -51609,6 +51776,7 @@ _G.pg.base.chapter_template[10601] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -52293,6 +52461,7 @@ _G.pg.base.chapter_template[10602] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -52901,6 +53070,7 @@ _G.pg.base.chapter_template[10603] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -53553,6 +53723,7 @@ _G.pg.base.chapter_template[10604] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -54030,6 +54201,7 @@ _G.pg.base.chapter_template[10701] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -54610,6 +54782,7 @@ _G.pg.base.chapter_template[10702] = {
 		1,
 		2,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -55261,6 +55434,7 @@ _G.pg.base.chapter_template[10703] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -55896,6 +56070,7 @@ _G.pg.base.chapter_template[10704] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -56399,6 +56574,7 @@ _G.pg.base.chapter_template[10801] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -56988,6 +57164,7 @@ _G.pg.base.chapter_template[10802] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -57640,6 +57817,7 @@ _G.pg.base.chapter_template[10803] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -58355,6 +58533,7 @@ _G.pg.base.chapter_template[10804] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -58951,6 +59130,10 @@ _G.pg.base.chapter_template[10901] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -59586,6 +59769,10 @@ _G.pg.base.chapter_template[10902] = {
 	box_refresh = {
 		0,
 		1,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -60245,6 +60432,10 @@ _G.pg.base.chapter_template[10903] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -60927,6 +61118,10 @@ _G.pg.base.chapter_template[10904] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		3,
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -61542,6 +61737,10 @@ _G.pg.base.chapter_template[11001] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -62214,6 +62413,10 @@ _G.pg.base.chapter_template[11002] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -62903,6 +63106,10 @@ _G.pg.base.chapter_template[11003] = {
 	box_refresh = {
 		0,
 		1,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -63607,6 +63814,10 @@ _G.pg.base.chapter_template[11004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		3,
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -64271,6 +64482,10 @@ _G.pg.base.chapter_template[11101] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -65052,6 +65267,10 @@ _G.pg.base.chapter_template[11102] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		3,
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -65801,6 +66020,10 @@ _G.pg.base.chapter_template[11103] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -66661,6 +66884,10 @@ _G.pg.base.chapter_template[11104] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		3,
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -67303,6 +67530,10 @@ _G.pg.base.chapter_template[11201] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -68059,6 +68290,10 @@ _G.pg.base.chapter_template[11202] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -68851,6 +69086,10 @@ _G.pg.base.chapter_template[11203] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -69760,6 +69999,10 @@ _G.pg.base.chapter_template[11204] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		3,
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -70406,6 +70649,10 @@ _G.pg.base.chapter_template[11301] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -71159,6 +71406,10 @@ _G.pg.base.chapter_template[11302] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -71956,6 +72207,10 @@ _G.pg.base.chapter_template[11303] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		3,
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -72863,6 +73118,10 @@ _G.pg.base.chapter_template[11304] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		3,
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -73370,6 +73629,7 @@ _G.pg.base.chapter_template[20001] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -73911,6 +74171,7 @@ _G.pg.base.chapter_template[20002] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -74544,6 +74805,7 @@ _G.pg.base.chapter_template[20003] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -75026,6 +75288,7 @@ _G.pg.base.chapter_template[20004] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -75554,6 +75817,7 @@ _G.pg.base.chapter_template[20005] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -76174,6 +76438,7 @@ _G.pg.base.chapter_template[20006] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -76656,6 +76921,7 @@ _G.pg.base.chapter_template[20007] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -77189,6 +77455,7 @@ _G.pg.base.chapter_template[20008] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -77759,6 +78026,7 @@ _G.pg.base.chapter_template[20009] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -78268,6 +78536,7 @@ _G.pg.base.chapter_template[20010] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -78822,6 +79091,7 @@ _G.pg.base.chapter_template[20011] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -79420,6 +79690,7 @@ _G.pg.base.chapter_template[20012] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -79930,6 +80201,7 @@ _G.pg.base.chapter_template[20013] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -80484,6 +80756,7 @@ _G.pg.base.chapter_template[20014] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -81082,6 +81355,7 @@ _G.pg.base.chapter_template[20015] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -81621,6 +81895,7 @@ _G.pg.base.chapter_template[1040001] = {
 		1,
 		2,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -82213,6 +82488,7 @@ _G.pg.base.chapter_template[1040002] = {
 		1,
 		2,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -82874,6 +83150,7 @@ _G.pg.base.chapter_template[1040003] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -83485,6 +83762,7 @@ _G.pg.base.chapter_template[1040004] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -84195,6 +84473,7 @@ _G.pg.base.chapter_template[1040005] = {
 		1,
 		2,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -84902,6 +85181,7 @@ _G.pg.base.chapter_template[1040006] = {
 		1,
 		2,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -85480,6 +85760,7 @@ _G.pg.base.chapter_template[1040011] = {
 		1,
 		2,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -86113,6 +86394,7 @@ _G.pg.base.chapter_template[1040012] = {
 		1,
 		2,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -86816,6 +87098,7 @@ _G.pg.base.chapter_template[1040013] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -87469,6 +87752,7 @@ _G.pg.base.chapter_template[1040014] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -88221,6 +88505,7 @@ _G.pg.base.chapter_template[1040015] = {
 		1,
 		2,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -88969,6 +89254,7 @@ _G.pg.base.chapter_template[1040016] = {
 		1,
 		2,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -89494,6 +89780,7 @@ _G.pg.base.chapter_template[1080001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -90124,6 +90411,7 @@ _G.pg.base.chapter_template[1080002] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -90747,6 +91035,7 @@ _G.pg.base.chapter_template[1080003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -91483,6 +91772,7 @@ _G.pg.base.chapter_template[1080004] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -92266,6 +92556,7 @@ _G.pg.base.chapter_template[1080005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -92837,6 +93128,7 @@ _G.pg.base.chapter_template[1200001] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"NAERWEIKE2",
@@ -93570,6 +93862,7 @@ _G.pg.base.chapter_template[1200002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -94332,6 +94625,7 @@ _G.pg.base.chapter_template[1200003] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -95082,6 +95376,7 @@ _G.pg.base.chapter_template[1200004] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"NAERWEIKE12",
@@ -95717,6 +96012,7 @@ _G.pg.base.chapter_template[1210001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -96291,6 +96587,7 @@ _G.pg.base.chapter_template[1210002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -96963,6 +97260,7 @@ _G.pg.base.chapter_template[1210003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -97633,6 +97931,7 @@ _G.pg.base.chapter_template[1210004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -98354,6 +98653,7 @@ _G.pg.base.chapter_template[1210005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -99135,6 +99435,7 @@ _G.pg.base.chapter_template[1210006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -99785,6 +100086,7 @@ _G.pg.base.chapter_template[1210011] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -100402,6 +100704,7 @@ _G.pg.base.chapter_template[1210012] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -101116,6 +101419,7 @@ _G.pg.base.chapter_template[1210013] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -101828,6 +102132,7 @@ _G.pg.base.chapter_template[1210014] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -102593,6 +102898,7 @@ _G.pg.base.chapter_template[1210015] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -103418,6 +103724,7 @@ _G.pg.base.chapter_template[1210016] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -103856,6 +104163,7 @@ _G.pg.base.chapter_template[1210021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -104393,6 +104701,7 @@ _G.pg.base.chapter_template[1240001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -105053,6 +105362,7 @@ _G.pg.base.chapter_template[1240003] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -105825,6 +106135,7 @@ _G.pg.base.chapter_template[1240004] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -106392,6 +106703,7 @@ _G.pg.base.chapter_template[1240005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -107064,6 +107376,7 @@ _G.pg.base.chapter_template[1240007] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -107858,6 +108171,7 @@ _G.pg.base.chapter_template[1240008] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FAXI11",
@@ -108458,6 +108772,7 @@ _G.pg.base.chapter_template[1240011] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -109159,6 +109474,7 @@ _G.pg.base.chapter_template[1240013] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -109972,6 +110288,7 @@ _G.pg.base.chapter_template[1240014] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -110582,6 +110899,7 @@ _G.pg.base.chapter_template[1240015] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -111297,6 +111615,7 @@ _G.pg.base.chapter_template[1240017] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -112134,6 +112453,7 @@ _G.pg.base.chapter_template[1240018] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FAXI11",
@@ -112844,6 +113164,7 @@ _G.pg.base.chapter_template[1240019] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -113239,6 +113560,7 @@ _G.pg.base.chapter_template[1240021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -113844,6 +114166,7 @@ _G.pg.base.chapter_template[1450001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"JIARIHANGXIAN4",
 	},
@@ -114526,6 +114849,7 @@ _G.pg.base.chapter_template[1450002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -115207,6 +115531,7 @@ _G.pg.base.chapter_template[1450003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -115969,6 +116294,7 @@ _G.pg.base.chapter_template[1450004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JIARIHANGXIAN15",
@@ -116648,6 +116974,7 @@ _G.pg.base.chapter_template[1450041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -117109,6 +117436,7 @@ _G.pg.base.chapter_template[1450051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -117577,6 +117905,7 @@ _G.pg.base.chapter_template[1450052] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -118191,6 +118520,7 @@ _G.pg.base.chapter_template[1540001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"OUXIANGDASHIGUANQIA4",
@@ -118881,6 +119211,7 @@ _G.pg.base.chapter_template[1540002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"OUXIANGDASHIGUANQIA8",
@@ -119573,6 +119904,7 @@ _G.pg.base.chapter_template[1540003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"",
 		"OUXIANGDASHIGUANQIA10",
@@ -120346,6 +120678,7 @@ _G.pg.base.chapter_template[1540004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"OUXIANGDASHIGUANQIA16",
@@ -121057,6 +121390,7 @@ _G.pg.base.chapter_template[1540041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -121518,6 +121852,7 @@ _G.pg.base.chapter_template[1540051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -122125,6 +122460,7 @@ _G.pg.base.chapter_template[1590001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"GULITEGUANQIA6",
@@ -122801,6 +123137,7 @@ _G.pg.base.chapter_template[1590002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"GULITEGUANQIA11",
@@ -123488,6 +123825,7 @@ _G.pg.base.chapter_template[1590003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"",
 		"GULITEGUANQIA13",
@@ -124300,6 +124638,7 @@ _G.pg.base.chapter_template[1590004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"GULITEGUANQIA20",
 	},
@@ -124786,6 +125125,7 @@ _G.pg.base.chapter_template[1590021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -125154,6 +125494,7 @@ _G.pg.base.chapter_template[1590022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -125536,6 +125877,7 @@ _G.pg.base.chapter_template[1590023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -125978,6 +126320,7 @@ _G.pg.base.chapter_template[1590024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -126455,6 +126798,7 @@ _G.pg.base.chapter_template[1590025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -127177,6 +127521,7 @@ _G.pg.base.chapter_template[1590041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -127644,6 +127989,7 @@ _G.pg.base.chapter_template[1590051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -128307,6 +128653,7 @@ _G.pg.base.chapter_template[1670001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YUANHUIDIANZUOZHAN5",
@@ -129048,6 +129395,7 @@ _G.pg.base.chapter_template[1670002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YUANHUIDIANZUOZHAN8",
@@ -129736,6 +130084,7 @@ _G.pg.base.chapter_template[1670003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"YUANHUIDIANZUOZHAN11",
 	},
@@ -130550,6 +130899,7 @@ _G.pg.base.chapter_template[1670004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YUANHUIDIANZUOZHAN15",
@@ -131186,6 +131536,7 @@ _G.pg.base.chapter_template[1670041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -131578,6 +131929,7 @@ _G.pg.base.chapter_template[1670051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -132288,6 +132640,7 @@ _G.pg.base.chapter_template[1690001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"LAISHAGUANQIA4",
@@ -132961,6 +133314,7 @@ _G.pg.base.chapter_template[1690002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"LAISHAGUANQIA8",
@@ -133695,6 +134049,7 @@ _G.pg.base.chapter_template[1690003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"LAISHAGUANQIA12",
@@ -134431,6 +134786,7 @@ _G.pg.base.chapter_template[1690004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"LAISHAGUANQIA18",
 	},
@@ -135125,6 +135481,7 @@ _G.pg.base.chapter_template[1690005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"LAISHAGUANQIA25",
@@ -135980,6 +136337,9 @@ _G.pg.base.chapter_template[1690021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -136666,6 +137026,9 @@ _G.pg.base.chapter_template[1690022] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -137415,6 +137778,9 @@ _G.pg.base.chapter_template[1690023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -138163,6 +138529,9 @@ _G.pg.base.chapter_template[1690024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -138863,6 +139232,9 @@ _G.pg.base.chapter_template[1690025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -139398,6 +139770,7 @@ _G.pg.base.chapter_template[1690031] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"LAISHAGUANQIA16",
@@ -140105,6 +140478,7 @@ _G.pg.base.chapter_template[1690041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -140551,6 +140925,7 @@ _G.pg.base.chapter_template[1690051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -141212,6 +141587,7 @@ _G.pg.base.chapter_template[1700001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"DINGXIANGZHEDIE4",
@@ -141897,6 +142273,7 @@ _G.pg.base.chapter_template[1700002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"DINGXIANGZHEDIE8",
@@ -142641,6 +143018,7 @@ _G.pg.base.chapter_template[1700003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"DINGXIANGZHEDIE12",
@@ -143379,6 +143757,7 @@ _G.pg.base.chapter_template[1700004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"DINGXIANGZHEDIE15",
 	},
@@ -144184,6 +144563,7 @@ _G.pg.base.chapter_template[1700005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"DINGXIANGZHEDIE20",
 	},
@@ -145009,6 +145389,7 @@ _G.pg.base.chapter_template[1700006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"DINGXIANGZHEDIE27",
@@ -145751,6 +146132,7 @@ _G.pg.base.chapter_template[1700021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"DINGXIANGZHEDIE4",
@@ -146477,6 +146859,7 @@ _G.pg.base.chapter_template[1700022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"DINGXIANGZHEDIE8",
@@ -147262,6 +147645,7 @@ _G.pg.base.chapter_template[1700023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"DINGXIANGZHEDIE12",
@@ -148045,6 +148429,7 @@ _G.pg.base.chapter_template[1700024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"DINGXIANGZHEDIE15",
 	},
@@ -148897,6 +149282,7 @@ _G.pg.base.chapter_template[1700025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"DINGXIANGZHEDIE20",
 	},
@@ -149769,6 +150155,7 @@ _G.pg.base.chapter_template[1700026] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"DINGXIANGZHEDIE27",
@@ -150675,6 +151062,7 @@ _G.pg.base.chapter_template[1700041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -151134,6 +151522,7 @@ _G.pg.base.chapter_template[1700051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -151801,6 +152190,7 @@ _G.pg.base.chapter_template[1710001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"YANJINCHENXU3",
 	},
@@ -152489,6 +152879,7 @@ _G.pg.base.chapter_template[1710002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YANJINCHENXU10",
@@ -153222,6 +153613,7 @@ _G.pg.base.chapter_template[1710003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YANJINCHENXU14",
@@ -153968,6 +154360,7 @@ _G.pg.base.chapter_template[1710004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YANJINCHENXU18",
@@ -154763,6 +155156,7 @@ _G.pg.base.chapter_template[1710005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YANJINCHENXU21",
@@ -155641,6 +156035,7 @@ _G.pg.base.chapter_template[1710006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		1715003,
@@ -156384,6 +156779,7 @@ _G.pg.base.chapter_template[1710021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"YANJINCHENXU3",
 	},
@@ -157113,6 +157509,7 @@ _G.pg.base.chapter_template[1710022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YANJINCHENXU10",
@@ -157887,6 +158284,7 @@ _G.pg.base.chapter_template[1710023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YANJINCHENXU14",
@@ -158678,6 +159076,7 @@ _G.pg.base.chapter_template[1710024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YANJINCHENXU18",
@@ -159521,6 +159920,7 @@ _G.pg.base.chapter_template[1710025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YANJINCHENXU21",
@@ -160447,6 +160847,7 @@ _G.pg.base.chapter_template[1710026] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		1715003,
@@ -161315,6 +161716,7 @@ _G.pg.base.chapter_template[1710041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -161705,6 +162107,7 @@ _G.pg.base.chapter_template[1710051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -162488,6 +162891,7 @@ _G.pg.base.chapter_template[1720001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"KONGXIANGJIAOHUIDIAN3",
 	},
@@ -163284,6 +163688,7 @@ _G.pg.base.chapter_template[1720002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"KONGXIANGJIAOHUIDIAN10",
@@ -164127,6 +164532,7 @@ _G.pg.base.chapter_template[1720003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"KONGXIANGJIAOHUIDIAN17",
@@ -164930,6 +165336,7 @@ _G.pg.base.chapter_template[1720004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"KONGXIANGJIAOHUIDIAN21",
@@ -165767,6 +166174,7 @@ _G.pg.base.chapter_template[1720005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"KONGXIANGJIAOHUIDIAN24",
@@ -166563,6 +166971,7 @@ _G.pg.base.chapter_template[1720006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		1725003,
@@ -167368,6 +167777,7 @@ _G.pg.base.chapter_template[1720007] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"KONGXIANGJIAOHUIDIAN14",
@@ -168169,6 +168579,7 @@ _G.pg.base.chapter_template[1720008] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"KONGXIANGJIAOHUIDIAN28",
@@ -169017,6 +169428,7 @@ _G.pg.base.chapter_template[1720021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"KONGXIANGJIAOHUIDIAN3",
 	},
@@ -169855,6 +170267,7 @@ _G.pg.base.chapter_template[1720022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"KONGXIANGJIAOHUIDIAN10",
@@ -170739,6 +171152,7 @@ _G.pg.base.chapter_template[1720023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"KONGXIANGJIAOHUIDIAN17",
@@ -171587,6 +172001,7 @@ _G.pg.base.chapter_template[1720024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"KONGXIANGJIAOHUIDIAN21",
@@ -172471,6 +172886,7 @@ _G.pg.base.chapter_template[1720025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"KONGXIANGJIAOHUIDIAN24",
@@ -173314,6 +173730,7 @@ _G.pg.base.chapter_template[1720026] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		1725003,
@@ -174160,6 +174577,7 @@ _G.pg.base.chapter_template[1720027] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"KONGXIANGJIAOHUIDIAN14",
@@ -175004,6 +175422,7 @@ _G.pg.base.chapter_template[1720028] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"KONGXIANGJIAOHUIDIAN28",
@@ -175827,6 +176246,7 @@ _G.pg.base.chapter_template[1720041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -176550,6 +176970,7 @@ _G.pg.base.chapter_template[1720051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -176564,7 +176985,7 @@ _G.pg.base.chapter_template[1720051] = {
 
 _G.pg.base.chapter_template[1730001] = {
 	ItemTransformPattern = "",
-	act_id = 4940,
+	act_id = 50213,
 	air_dominance = 150,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -176601,7 +177022,7 @@ _G.pg.base.chapter_template[1730001] = {
 	model = 2,
 	name = "Past and Present",
 	num_1 = 1,
-	num_2 = 10,
+	num_2 = 6,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -176609,7 +177030,7 @@ _G.pg.base.chapter_template[1730001] = {
 	pos_y = "0.458333333",
 	pre_story = 0,
 	profiles = "To retrieve the Crown of the Holy See, Richelieu and her companions set out for Saint Helena Island, unaware of the trials that lie ahead.",
-	progress_boss = 50,
+	progress_boss = 100,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -177146,6 +177567,7 @@ _G.pg.base.chapter_template[1730001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"ZOUXIANGYUANWEIZHIGE3",
@@ -177183,7 +177605,7 @@ _G.pg.base.chapter_template[1730001] = {
 
 _G.pg.base.chapter_template[1730002] = {
 	ItemTransformPattern = "",
-	act_id = 4940,
+	act_id = 50213,
 	air_dominance = 300,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -177220,7 +177642,7 @@ _G.pg.base.chapter_template[1730002] = {
 	model = 2,
 	name = "Memories of the Burning City",
 	num_1 = 1,
-	num_2 = 12,
+	num_2 = 8,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -177228,7 +177650,7 @@ _G.pg.base.chapter_template[1730002] = {
 	pos_y = "0.094444444",
 	pre_story = 0,
 	profiles = "Painful memories of betrayal and conspiracy resurface. However, the embers of war would move to a new battlefield far, far away.",
-	progress_boss = 50,
+	progress_boss = 100,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -177778,6 +178200,7 @@ _G.pg.base.chapter_template[1730002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"ZOUXIANGYUANWEIZHIGE6",
@@ -177815,7 +178238,7 @@ _G.pg.base.chapter_template[1730002] = {
 
 _G.pg.base.chapter_template[1730003] = {
 	ItemTransformPattern = "",
-	act_id = 4940,
+	act_id = 50213,
 	air_dominance = 700,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -178539,6 +178962,7 @@ _G.pg.base.chapter_template[1730003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"ZOUXIANGYUANWEIZHIGE8",
@@ -179319,6 +179743,7 @@ _G.pg.base.chapter_template[1740001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YUZHEDETIANPING7",
@@ -180201,6 +180626,7 @@ _G.pg.base.chapter_template[1740002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -181127,6 +181553,7 @@ _G.pg.base.chapter_template[1740003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YUZHEDETIANPING20",
@@ -181821,6 +182248,7 @@ _G.pg.base.chapter_template[1740004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YUZHEDETIANPING25",
@@ -182601,6 +183029,7 @@ _G.pg.base.chapter_template[1740005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -183918,6 +184347,7 @@ _G.pg.base.chapter_template[1740006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		1745002,
@@ -185186,6 +185616,7 @@ _G.pg.base.chapter_template[1740021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YUZHEDETIANPING7",
@@ -186109,6 +186540,7 @@ _G.pg.base.chapter_template[1740022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -187076,6 +187508,7 @@ _G.pg.base.chapter_template[1740023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YUZHEDETIANPING20",
@@ -187815,6 +188248,7 @@ _G.pg.base.chapter_template[1740024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YUZHEDETIANPING25",
@@ -188642,6 +189076,7 @@ _G.pg.base.chapter_template[1740025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -190006,6 +190441,7 @@ _G.pg.base.chapter_template[1740026] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		1745002,
@@ -191255,6 +191691,7 @@ _G.pg.base.chapter_template[1740041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -191805,6 +192242,7 @@ _G.pg.base.chapter_template[1740051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -192526,6 +192964,7 @@ _G.pg.base.chapter_template[1750001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -193163,6 +193602,7 @@ _G.pg.base.chapter_template[1750002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUYUWANGYUECHAO6",
@@ -193844,6 +194284,7 @@ _G.pg.base.chapter_template[1750003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUYUWANGYUECHAO9",
@@ -194523,6 +194964,7 @@ _G.pg.base.chapter_template[1750004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUYUWANGYUECHAO14",
@@ -195271,6 +195713,7 @@ _G.pg.base.chapter_template[1750005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUYUWANGYUECHAO19",
@@ -196230,6 +196673,7 @@ _G.pg.base.chapter_template[1750006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XUYUWANGYUECHAO22",
 	},
@@ -197033,6 +197477,7 @@ _G.pg.base.chapter_template[1750021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -197711,6 +198156,7 @@ _G.pg.base.chapter_template[1750022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUYUWANGYUECHAO6",
@@ -198433,6 +198879,7 @@ _G.pg.base.chapter_template[1750023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUYUWANGYUECHAO9",
@@ -199158,6 +199605,7 @@ _G.pg.base.chapter_template[1750024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUYUWANGYUECHAO14",
@@ -199953,6 +200401,7 @@ _G.pg.base.chapter_template[1750025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUYUWANGYUECHAO19",
@@ -200959,6 +201408,7 @@ _G.pg.base.chapter_template[1750026] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XUYUWANGYUECHAO22",
 	},
@@ -201534,6 +201984,7 @@ _G.pg.base.chapter_template[1750041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -201925,6 +202376,7 @@ _G.pg.base.chapter_template[1750051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -202635,6 +203087,7 @@ _G.pg.base.chapter_template[1760001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JUFENGYUQINGCHUNZHIQUAN6",
@@ -203368,6 +203821,7 @@ _G.pg.base.chapter_template[1760002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JUFENGYUQINGCHUNZHIQUAN10",
@@ -204171,6 +204625,7 @@ _G.pg.base.chapter_template[1760003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JUFENGYUQINGCHUNZHIQUAN13",
@@ -204969,6 +205424,7 @@ _G.pg.base.chapter_template[1760004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JUFENGYUQINGCHUNZHIQUAN17",
@@ -205852,6 +206308,7 @@ _G.pg.base.chapter_template[1760005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"JUFENGYUQINGCHUNZHIQUAN19",
 	},
@@ -206758,6 +207215,7 @@ _G.pg.base.chapter_template[1760006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"JUFENGYUQINGCHUNZHIQUAN23",
 	},
@@ -207436,6 +207894,7 @@ _G.pg.base.chapter_template[1760041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -207899,6 +208358,7 @@ _G.pg.base.chapter_template[1760051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -208607,6 +209067,7 @@ _G.pg.base.chapter_template[1770001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"CANGSHANRENFATIEGUANQIA4",
@@ -209296,6 +209757,7 @@ _G.pg.base.chapter_template[1770002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"CANGSHANRENFATIEGUANQIA7",
@@ -210034,6 +210496,7 @@ _G.pg.base.chapter_template[1770003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"CANGSHANRENFATIEGUANQIA9",
 	},
@@ -210791,6 +211254,7 @@ _G.pg.base.chapter_template[1770004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"CANGSHANRENFATIEGUANQIA14",
 		"CANGSHANRENFATIEGUANQIA15",
@@ -211669,6 +212133,7 @@ _G.pg.base.chapter_template[1770005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"CANGSHANRENFATIEGUANQIA22",
@@ -212065,6 +212530,7 @@ _G.pg.base.chapter_template[1770021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -212436,6 +212902,7 @@ _G.pg.base.chapter_template[1770022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -212807,6 +213274,7 @@ _G.pg.base.chapter_template[1770023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -213178,6 +213646,7 @@ _G.pg.base.chapter_template[1770024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -213549,6 +214018,7 @@ _G.pg.base.chapter_template[1770025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -214451,6 +214921,7 @@ _G.pg.base.chapter_template[1770041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -214870,6 +215341,7 @@ _G.pg.base.chapter_template[1770051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -215591,6 +216063,7 @@ _G.pg.base.chapter_template[1780001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XINGHAIZHUGUANG3",
 	},
@@ -216229,6 +216702,7 @@ _G.pg.base.chapter_template[1780002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XINGHAIZHUGUANG10",
@@ -216975,6 +217449,7 @@ _G.pg.base.chapter_template[1780003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XINGHAIZHUGUANG13",
 	},
@@ -217665,6 +218140,7 @@ _G.pg.base.chapter_template[1780004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XINGHAIZHUGUANG21",
@@ -218419,6 +218895,7 @@ _G.pg.base.chapter_template[1780005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XINGHAIZHUGUANG24",
@@ -219335,6 +219812,7 @@ _G.pg.base.chapter_template[1780006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XINGHAIZHUGUANG27",
 	},
@@ -220139,6 +220617,7 @@ _G.pg.base.chapter_template[1780021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XINGHAIZHUGUANG3",
 	},
@@ -220819,6 +221298,7 @@ _G.pg.base.chapter_template[1780022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XINGHAIZHUGUANG10",
@@ -221607,6 +222087,7 @@ _G.pg.base.chapter_template[1780023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XINGHAIZHUGUANG13",
 	},
@@ -222342,6 +222823,7 @@ _G.pg.base.chapter_template[1780024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XINGHAIZHUGUANG21",
@@ -223143,6 +223625,7 @@ _G.pg.base.chapter_template[1780025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XINGHAIZHUGUANG24",
@@ -224106,6 +224589,7 @@ _G.pg.base.chapter_template[1780026] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XINGHAIZHUGUANG27",
 	},
@@ -224855,6 +225339,7 @@ _G.pg.base.chapter_template[1780041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -225247,6 +225732,7 @@ _G.pg.base.chapter_template[1780051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -225969,6 +226455,7 @@ _G.pg.base.chapter_template[1790001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XUEJINGMIZONG3",
 	},
@@ -226709,6 +227196,7 @@ _G.pg.base.chapter_template[1790002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUEJINGMIZONG8",
@@ -227449,6 +227937,7 @@ _G.pg.base.chapter_template[1790003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XUEJINGMIZONG10",
 	},
@@ -228199,6 +228688,7 @@ _G.pg.base.chapter_template[1790004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUEJINGMIZONG18",
@@ -228937,6 +229427,7 @@ _G.pg.base.chapter_template[1790005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUEJINGMIZONG21",
@@ -229870,6 +230361,7 @@ _G.pg.base.chapter_template[1790006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUEJINGMIZONG25",
@@ -230677,6 +231169,7 @@ _G.pg.base.chapter_template[1790021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XUEJINGMIZONG3",
 	},
@@ -231458,6 +231951,7 @@ _G.pg.base.chapter_template[1790022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUEJINGMIZONG8",
@@ -232239,6 +232733,7 @@ _G.pg.base.chapter_template[1790023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XUEJINGMIZONG10",
 	},
@@ -233034,6 +233529,7 @@ _G.pg.base.chapter_template[1790024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUEJINGMIZONG18",
@@ -233819,6 +234315,7 @@ _G.pg.base.chapter_template[1790025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUEJINGMIZONG21",
@@ -234799,6 +235296,7 @@ _G.pg.base.chapter_template[1790026] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUEJINGMIZONG25",
@@ -236471,6 +236969,7 @@ _G.pg.base.chapter_template[1790041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -236879,6 +237378,7 @@ _G.pg.base.chapter_template[1790051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -237597,6 +238097,7 @@ _G.pg.base.chapter_template[1800001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"GONGMINGDEPASSION4",
@@ -238272,6 +238773,7 @@ _G.pg.base.chapter_template[1800002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"GONGMINGDEPASSION7",
@@ -239022,6 +239524,7 @@ _G.pg.base.chapter_template[1800003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"GONGMINGDEPASSION10",
@@ -239773,6 +240276,7 @@ _G.pg.base.chapter_template[1800004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"GONGMINGDEPASSION13",
@@ -240590,6 +241094,7 @@ _G.pg.base.chapter_template[1800005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"GONGMINGDEPASSION16",
@@ -240988,6 +241493,7 @@ _G.pg.base.chapter_template[1800021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -241363,6 +241869,7 @@ _G.pg.base.chapter_template[1800022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -241738,6 +242245,7 @@ _G.pg.base.chapter_template[1800023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -242113,6 +242621,7 @@ _G.pg.base.chapter_template[1800024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -242488,6 +242997,7 @@ _G.pg.base.chapter_template[1800025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -242863,6 +243373,7 @@ _G.pg.base.chapter_template[1800026] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -243752,6 +244263,7 @@ _G.pg.base.chapter_template[1800041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -244197,6 +244709,7 @@ _G.pg.base.chapter_template[1800051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -244988,6 +245501,7 @@ _G.pg.base.chapter_template[1810001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"ZHANFANGYUHUIGUANGZHICHENG4",
@@ -245733,6 +246247,7 @@ _G.pg.base.chapter_template[1810002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"ZHANFANGYUHUIGUANGZHICHENG7",
 	},
@@ -246527,6 +247042,7 @@ _G.pg.base.chapter_template[1810003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"ZHANFANGYUHUIGUANGZHICHENG13",
@@ -247351,6 +247867,7 @@ _G.pg.base.chapter_template[1810004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"ZHANFANGYUHUIGUANGZHICHENG18",
@@ -248080,6 +248597,7 @@ _G.pg.base.chapter_template[1810005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"ZHANFANGYUHUIGUANGZHICHENG21",
 	},
@@ -248999,6 +249517,7 @@ _G.pg.base.chapter_template[1810006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"ZHANFANGYUHUIGUANGZHICHENG27",
@@ -249870,6 +250389,7 @@ _G.pg.base.chapter_template[1810021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"ZHANFANGYUHUIGUANGZHICHENG4",
@@ -250656,6 +251176,7 @@ _G.pg.base.chapter_template[1810022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"ZHANFANGYUHUIGUANGZHICHENG7",
 	},
@@ -251491,6 +252012,7 @@ _G.pg.base.chapter_template[1810023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"ZHANFANGYUHUIGUANGZHICHENG13",
@@ -252360,6 +252882,7 @@ _G.pg.base.chapter_template[1810024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"ZHANFANGYUHUIGUANGZHICHENG18",
@@ -253136,6 +253659,7 @@ _G.pg.base.chapter_template[1810025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"ZHANFANGYUHUIGUANGZHICHENG21",
 	},
@@ -254102,6 +254626,7 @@ _G.pg.base.chapter_template[1810026] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"ZHANFANGYUHUIGUANGZHICHENG27",
@@ -254737,6 +255262,7 @@ _G.pg.base.chapter_template[1810041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -255266,6 +255792,7 @@ _G.pg.base.chapter_template[1810051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -255919,6 +256446,7 @@ _G.pg.base.chapter_template[1820001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -256604,6 +257132,7 @@ _G.pg.base.chapter_template[1820002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -257350,6 +257879,7 @@ _G.pg.base.chapter_template[1820003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -258060,6 +258590,7 @@ _G.pg.base.chapter_template[1820021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -258792,6 +259323,7 @@ _G.pg.base.chapter_template[1820022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -259585,6 +260117,7 @@ _G.pg.base.chapter_template[1820023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -260400,6 +260933,7 @@ _G.pg.base.chapter_template[1820041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -260901,6 +261435,7 @@ _G.pg.base.chapter_template[1820051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -261610,6 +262145,7 @@ _G.pg.base.chapter_template[1830001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEYIQINGFENG4",
@@ -262349,6 +262885,7 @@ _G.pg.base.chapter_template[1830002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEYIQINGFENG8",
@@ -263127,6 +263664,7 @@ _G.pg.base.chapter_template[1830003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEYIQINGFENG17",
@@ -264050,6 +264588,7 @@ _G.pg.base.chapter_template[1830004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"TIEYIQINGFENG21",
 	},
@@ -264857,6 +265396,7 @@ _G.pg.base.chapter_template[1830005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEYIQINGFENG27",
@@ -265775,6 +266315,7 @@ _G.pg.base.chapter_template[1830006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEYIQINGFENG31",
@@ -266561,6 +267102,7 @@ _G.pg.base.chapter_template[1830021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEYIQINGFENG4",
@@ -267342,6 +267884,7 @@ _G.pg.base.chapter_template[1830022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEYIQINGFENG8",
@@ -268162,6 +268705,7 @@ _G.pg.base.chapter_template[1830023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEYIQINGFENG17",
@@ -269130,6 +269674,7 @@ _G.pg.base.chapter_template[1830024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"TIEYIQINGFENG21",
 	},
@@ -269984,6 +270529,7 @@ _G.pg.base.chapter_template[1830025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEYIQINGFENG27",
@@ -270949,6 +271495,7 @@ _G.pg.base.chapter_template[1830026] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEYIQINGFENG31",
@@ -271831,6 +272378,7 @@ _G.pg.base.chapter_template[1830041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -272452,6 +273000,7 @@ _G.pg.base.chapter_template[1830051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -273104,6 +273653,7 @@ _G.pg.base.chapter_template[1840001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -273838,6 +274388,7 @@ _G.pg.base.chapter_template[1840002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -274698,6 +275249,7 @@ _G.pg.base.chapter_template[1840003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -275500,6 +276052,7 @@ _G.pg.base.chapter_template[1840004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -276150,6 +276703,7 @@ _G.pg.base.chapter_template[1850001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -276892,6 +277446,7 @@ _G.pg.base.chapter_template[1850002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -277566,6 +278121,7 @@ _G.pg.base.chapter_template[1850003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -278418,6 +278974,7 @@ _G.pg.base.chapter_template[1850004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -279278,6 +279835,7 @@ _G.pg.base.chapter_template[1850005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -280076,6 +280634,7 @@ _G.pg.base.chapter_template[1850006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -280785,6 +281344,7 @@ _G.pg.base.chapter_template[1850021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -281568,6 +282128,7 @@ _G.pg.base.chapter_template[1850022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -282283,6 +282844,7 @@ _G.pg.base.chapter_template[1850023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -283180,6 +283742,7 @@ _G.pg.base.chapter_template[1850024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -284087,6 +284650,7 @@ _G.pg.base.chapter_template[1850025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -284932,6 +285496,7 @@ _G.pg.base.chapter_template[1850026] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -285585,6 +286150,7 @@ _G.pg.base.chapter_template[1850041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -286052,6 +286618,7 @@ _G.pg.base.chapter_template[1850051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -286515,6 +287082,7 @@ _G.pg.base.chapter_template[1850052] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -287243,6 +287811,7 @@ _G.pg.base.chapter_template[1860001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -287990,6 +288559,7 @@ _G.pg.base.chapter_template[1860002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -288797,6 +289367,7 @@ _G.pg.base.chapter_template[1860003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -289555,6 +290126,7 @@ _G.pg.base.chapter_template[1860004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -290414,6 +290986,7 @@ _G.pg.base.chapter_template[1860005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -291373,6 +291946,7 @@ _G.pg.base.chapter_template[1860006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -292031,6 +292605,7 @@ _G.pg.base.chapter_template[1860041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -292466,6 +293041,7 @@ _G.pg.base.chapter_template[1860051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -293169,6 +293745,7 @@ _G.pg.base.chapter_template[1870001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -293843,6 +294420,7 @@ _G.pg.base.chapter_template[1870002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -294578,6 +295156,7 @@ _G.pg.base.chapter_template[1870003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -295314,6 +295893,7 @@ _G.pg.base.chapter_template[1870004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -296130,6 +296710,7 @@ _G.pg.base.chapter_template[1870005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -296518,6 +297099,7 @@ _G.pg.base.chapter_template[1870021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -296889,6 +297471,7 @@ _G.pg.base.chapter_template[1870022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -297260,6 +297843,7 @@ _G.pg.base.chapter_template[1870023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -297631,6 +298215,7 @@ _G.pg.base.chapter_template[1870024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -298002,6 +298587,7 @@ _G.pg.base.chapter_template[1870025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -298714,6 +299300,7 @@ _G.pg.base.chapter_template[1870041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -299147,6 +299734,7 @@ _G.pg.base.chapter_template[1870051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -299580,6 +300168,7 @@ _G.pg.base.chapter_template[1870052] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -300313,6 +300902,7 @@ _G.pg.base.chapter_template[1880001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -301061,6 +301651,7 @@ _G.pg.base.chapter_template[1880002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -301993,6 +302584,7 @@ _G.pg.base.chapter_template[1880003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -302854,6 +303446,7 @@ _G.pg.base.chapter_template[1880004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -303728,6 +304321,7 @@ _G.pg.base.chapter_template[1880005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -304661,6 +305255,7 @@ _G.pg.base.chapter_template[1880006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -305455,6 +306050,7 @@ _G.pg.base.chapter_template[1880021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -306245,6 +306841,7 @@ _G.pg.base.chapter_template[1880022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -307219,6 +307816,7 @@ _G.pg.base.chapter_template[1880023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -308125,6 +308723,7 @@ _G.pg.base.chapter_template[1880024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -309046,6 +309645,7 @@ _G.pg.base.chapter_template[1880025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -310026,6 +310626,7 @@ _G.pg.base.chapter_template[1880026] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -310870,6 +311471,7 @@ _G.pg.base.chapter_template[1880041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -311304,6 +311906,7 @@ _G.pg.base.chapter_template[1880051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -311732,6 +312335,7 @@ _G.pg.base.chapter_template[1880052] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -312438,6 +313042,7 @@ _G.pg.base.chapter_template[1890001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -313162,6 +313767,7 @@ _G.pg.base.chapter_template[1890002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -313955,6 +314561,7 @@ _G.pg.base.chapter_template[1890003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -314814,6 +315421,7 @@ _G.pg.base.chapter_template[1890004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -315643,6 +316251,7 @@ _G.pg.base.chapter_template[1890005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -316568,6 +317177,7 @@ _G.pg.base.chapter_template[1890006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -317334,6 +317944,7 @@ _G.pg.base.chapter_template[1890021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -318099,6 +318710,7 @@ _G.pg.base.chapter_template[1890022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -318933,6 +319545,7 @@ _G.pg.base.chapter_template[1890023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -319837,6 +320450,7 @@ _G.pg.base.chapter_template[1890024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -320713,6 +321327,7 @@ _G.pg.base.chapter_template[1890025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -321685,6 +322300,7 @@ _G.pg.base.chapter_template[1890026] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -322517,6 +323133,7 @@ _G.pg.base.chapter_template[1890041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -322968,6 +323585,7 @@ _G.pg.base.chapter_template[1890051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -323417,6 +324035,7 @@ _G.pg.base.chapter_template[1890052] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -324073,6 +324692,7 @@ _G.pg.base.chapter_template[1910001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -324749,6 +325369,7 @@ _G.pg.base.chapter_template[1910002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -325485,6 +326106,7 @@ _G.pg.base.chapter_template[1910003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -326202,6 +326824,7 @@ _G.pg.base.chapter_template[1910021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -326925,6 +327548,7 @@ _G.pg.base.chapter_template[1910022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -327708,6 +328332,7 @@ _G.pg.base.chapter_template[1910023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -328472,6 +329097,7 @@ _G.pg.base.chapter_template[1910041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -329192,6 +329818,7 @@ _G.pg.base.chapter_template[1920001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -329933,6 +330560,7 @@ _G.pg.base.chapter_template[1920002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -330721,6 +331349,7 @@ _G.pg.base.chapter_template[1920003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -331578,6 +332207,7 @@ _G.pg.base.chapter_template[1920004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -332441,6 +333071,7 @@ _G.pg.base.chapter_template[1920005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -333333,6 +333964,7 @@ _G.pg.base.chapter_template[1920006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -334122,6 +334754,7 @@ _G.pg.base.chapter_template[1920021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -334905,6 +335538,7 @@ _G.pg.base.chapter_template[1920022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -335735,6 +336369,7 @@ _G.pg.base.chapter_template[1920023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -336637,6 +337272,7 @@ _G.pg.base.chapter_template[1920024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -337547,6 +338183,7 @@ _G.pg.base.chapter_template[1920025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -338486,6 +339123,7 @@ _G.pg.base.chapter_template[1920026] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -339382,6 +340020,7 @@ _G.pg.base.chapter_template[1920041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -339842,6 +340481,7 @@ _G.pg.base.chapter_template[1920051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -340298,6 +340938,7 @@ _G.pg.base.chapter_template[1920052] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -341018,6 +341659,7 @@ _G.pg.base.chapter_template[1940001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -341760,6 +342402,7 @@ _G.pg.base.chapter_template[1940002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -342502,6 +343145,7 @@ _G.pg.base.chapter_template[1940003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -343245,6 +343889,7 @@ _G.pg.base.chapter_template[1940004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -344054,6 +344699,7 @@ _G.pg.base.chapter_template[1940005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -344810,6 +345456,9 @@ _G.pg.base.chapter_template[1940021] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -345575,6 +346224,9 @@ _G.pg.base.chapter_template[1940022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -346339,6 +346991,9 @@ _G.pg.base.chapter_template[1940023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {
+		2,
+	},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -347102,6 +347757,9 @@ _G.pg.base.chapter_template[1940024] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -347927,6 +348585,9 @@ _G.pg.base.chapter_template[1940025] = {
 	},
 	box_refresh = {
 		0,
+	},
+	box_auto_pick = {
+		2,
 	},
 	story_refresh = {},
 	defeat_story = {},
@@ -349027,6 +349688,7 @@ _G.pg.base.chapter_template[1940041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -349391,6 +350053,7 @@ _G.pg.base.chapter_template[1940051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -349757,6 +350420,7 @@ _G.pg.base.chapter_template[1940052] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -350410,6 +351074,7 @@ _G.pg.base.chapter_template[1950001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -351130,6 +351795,7 @@ _G.pg.base.chapter_template[1950002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -351790,6 +352456,7 @@ _G.pg.base.chapter_template[1950003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -352633,6 +353300,7 @@ _G.pg.base.chapter_template[1950004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -353371,6 +354039,7 @@ _G.pg.base.chapter_template[1950005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -354177,6 +354846,7 @@ _G.pg.base.chapter_template[1950006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -354886,6 +355556,7 @@ _G.pg.base.chapter_template[1950021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -355647,6 +356318,7 @@ _G.pg.base.chapter_template[1950022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -356348,6 +357020,7 @@ _G.pg.base.chapter_template[1950023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -357236,6 +357909,7 @@ _G.pg.base.chapter_template[1950024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -358021,6 +358695,7 @@ _G.pg.base.chapter_template[1950025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -358874,6 +359549,7 @@ _G.pg.base.chapter_template[1950026] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -359709,6 +360385,7 @@ _G.pg.base.chapter_template[1950041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -360077,6 +360754,7 @@ _G.pg.base.chapter_template[1950051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -360447,6 +361125,7 @@ _G.pg.base.chapter_template[1950052] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -361173,6 +361852,7 @@ _G.pg.base.chapter_template[1960001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -361921,6 +362601,7 @@ _G.pg.base.chapter_template[1960002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -362703,6 +363384,7 @@ _G.pg.base.chapter_template[1960003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -363501,6 +364183,7 @@ _G.pg.base.chapter_template[1960004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -364305,6 +364988,7 @@ _G.pg.base.chapter_template[1960005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -365272,6 +365956,7 @@ _G.pg.base.chapter_template[1960006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -366060,6 +366745,7 @@ _G.pg.base.chapter_template[1960021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -366850,6 +367536,7 @@ _G.pg.base.chapter_template[1960022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -367674,6 +368361,7 @@ _G.pg.base.chapter_template[1960023] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -368517,6 +369205,7 @@ _G.pg.base.chapter_template[1960024] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -369368,6 +370057,7 @@ _G.pg.base.chapter_template[1960025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -370382,6 +371072,7 @@ _G.pg.base.chapter_template[1960026] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -371141,6 +371832,7 @@ _G.pg.base.chapter_template[1960041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -371566,6 +372258,7 @@ _G.pg.base.chapter_template[1960051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -371987,6 +372680,7 @@ _G.pg.base.chapter_template[1960052] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -372722,6 +373416,7 @@ _G.pg.base.chapter_template[1970001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -373467,6 +374162,7 @@ _G.pg.base.chapter_template[1970002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -374268,6 +374964,7 @@ _G.pg.base.chapter_template[1970003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -375062,6 +375759,7 @@ _G.pg.base.chapter_template[1970004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -375861,6 +376559,7 @@ _G.pg.base.chapter_template[1970005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -376649,6 +377348,7 @@ _G.pg.base.chapter_template[1970006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -377498,6 +378198,7 @@ _G.pg.base.chapter_template[1970041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -377869,6 +378570,7 @@ _G.pg.base.chapter_template[1970051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -378239,6 +378941,7 @@ _G.pg.base.chapter_template[1970052] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -378776,6 +379479,7 @@ _G.pg.base.chapter_template[2100001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -379383,6 +380087,7 @@ _G.pg.base.chapter_template[2100002] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -380057,6 +380762,7 @@ _G.pg.base.chapter_template[2100003] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -380681,6 +381387,7 @@ _G.pg.base.chapter_template[2100004] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -381407,6 +382114,7 @@ _G.pg.base.chapter_template[2100005] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -382128,6 +382836,7 @@ _G.pg.base.chapter_template[2100006] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -382719,6 +383428,7 @@ _G.pg.base.chapter_template[2100011] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -383367,6 +384077,7 @@ _G.pg.base.chapter_template[2100012] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -384083,6 +384794,7 @@ _G.pg.base.chapter_template[2100013] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -384753,6 +385465,7 @@ _G.pg.base.chapter_template[2100014] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -385525,6 +386238,7 @@ _G.pg.base.chapter_template[2100015] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -386291,6 +387005,7 @@ _G.pg.base.chapter_template[2100016] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -386791,6 +387506,7 @@ _G.pg.base.chapter_template[2100021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -387354,6 +388070,7 @@ _G.pg.base.chapter_template[2100022] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -388007,6 +388724,7 @@ _G.pg.base.chapter_template[2100023] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -388683,6 +389401,7 @@ _G.pg.base.chapter_template[2100024] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -389377,6 +390096,7 @@ _G.pg.base.chapter_template[2100025] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -390246,6 +390966,7 @@ _G.pg.base.chapter_template[2100026] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -390788,6 +391509,7 @@ _G.pg.base.chapter_template[2100031] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -391392,6 +392114,7 @@ _G.pg.base.chapter_template[2100032] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -392086,6 +392809,7 @@ _G.pg.base.chapter_template[2100033] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -392807,6 +393531,7 @@ _G.pg.base.chapter_template[2100034] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -393546,6 +394271,7 @@ _G.pg.base.chapter_template[2100035] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -394460,6 +395186,7 @@ _G.pg.base.chapter_template[2100036] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -395023,6 +395750,7 @@ _G.pg.base.chapter_template[2100041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -395725,6 +396453,7 @@ _G.pg.base.chapter_template[2100042] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -396394,6 +397123,7 @@ _G.pg.base.chapter_template[2100043] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -397181,6 +397911,7 @@ _G.pg.base.chapter_template[2100044] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -397763,6 +398494,7 @@ _G.pg.base.chapter_template[2100045] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -398353,6 +399085,7 @@ _G.pg.base.chapter_template[2100046] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -398998,6 +399731,7 @@ _G.pg.base.chapter_template[2100047] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -399799,6 +400533,7 @@ _G.pg.base.chapter_template[2100048] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -400402,6 +401137,7 @@ _G.pg.base.chapter_template[2100051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -401147,6 +401883,7 @@ _G.pg.base.chapter_template[2100052] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -401857,6 +402594,7 @@ _G.pg.base.chapter_template[2100053] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -402685,6 +403423,7 @@ _G.pg.base.chapter_template[2100054] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -403312,6 +404051,7 @@ _G.pg.base.chapter_template[2100055] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -403947,6 +404687,7 @@ _G.pg.base.chapter_template[2100056] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -404637,6 +405378,7 @@ _G.pg.base.chapter_template[2100057] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -405483,6 +406225,7 @@ _G.pg.base.chapter_template[2100058] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -406073,6 +406816,7 @@ _G.pg.base.chapter_template[2100061] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"",
 		"DONGHUO13",
@@ -406727,6 +407471,7 @@ _G.pg.base.chapter_template[2100062] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -407469,6 +408214,7 @@ _G.pg.base.chapter_template[2100063] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -408149,6 +408895,7 @@ _G.pg.base.chapter_template[2100064] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -408970,6 +409717,7 @@ _G.pg.base.chapter_template[2100065] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -409964,6 +410712,7 @@ _G.pg.base.chapter_template[2100066] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		1060600,
@@ -410601,6 +411350,7 @@ _G.pg.base.chapter_template[2100071] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"",
 		"DONGHUO13",
@@ -411296,6 +412046,7 @@ _G.pg.base.chapter_template[2100072] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -412079,6 +412830,7 @@ _G.pg.base.chapter_template[2100073] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -412804,6 +413556,7 @@ _G.pg.base.chapter_template[2100074] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -413670,6 +414423,7 @@ _G.pg.base.chapter_template[2100075] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -414709,6 +415463,7 @@ _G.pg.base.chapter_template[2100076] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		1060600,
@@ -415269,6 +416024,7 @@ _G.pg.base.chapter_template[2100081] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -415929,6 +416685,7 @@ _G.pg.base.chapter_template[2100082] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -416701,6 +417458,7 @@ _G.pg.base.chapter_template[2100083] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -417268,6 +418026,7 @@ _G.pg.base.chapter_template[2100084] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -417940,6 +418699,7 @@ _G.pg.base.chapter_template[2100085] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -418733,6 +419493,7 @@ _G.pg.base.chapter_template[2100086] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FAXI11",
@@ -419333,6 +420094,7 @@ _G.pg.base.chapter_template[2100091] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -420034,6 +420796,7 @@ _G.pg.base.chapter_template[2100092] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -420847,6 +421610,7 @@ _G.pg.base.chapter_template[2100093] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -421459,6 +422223,7 @@ _G.pg.base.chapter_template[2100094] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -422178,6 +422943,7 @@ _G.pg.base.chapter_template[2100095] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -423019,6 +423785,7 @@ _G.pg.base.chapter_template[2100096] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FAXI11",
@@ -423630,6 +424397,7 @@ _G.pg.base.chapter_template[2100101] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -424204,6 +424972,7 @@ _G.pg.base.chapter_template[2100102] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -424876,6 +425645,7 @@ _G.pg.base.chapter_template[2100103] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -425547,6 +426317,7 @@ _G.pg.base.chapter_template[2100104] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -426269,6 +427040,7 @@ _G.pg.base.chapter_template[2100105] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -427051,6 +427823,7 @@ _G.pg.base.chapter_template[2100106] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -427703,6 +428476,7 @@ _G.pg.base.chapter_template[2100111] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -428320,6 +429094,7 @@ _G.pg.base.chapter_template[2100112] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -429034,6 +429809,7 @@ _G.pg.base.chapter_template[2100113] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -429747,6 +430523,7 @@ _G.pg.base.chapter_template[2100114] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -430517,6 +431294,7 @@ _G.pg.base.chapter_template[2100115] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -431347,6 +432125,7 @@ _G.pg.base.chapter_template[2100116] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -431951,6 +432730,7 @@ _G.pg.base.chapter_template[2100121] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -432526,6 +433306,7 @@ _G.pg.base.chapter_template[2100122] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -433193,6 +433974,7 @@ _G.pg.base.chapter_template[2100123] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIANCHENGHUODONG9-2",
@@ -433870,6 +434652,7 @@ _G.pg.base.chapter_template[2100124] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -434586,6 +435369,7 @@ _G.pg.base.chapter_template[2100125] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -435268,6 +436052,7 @@ _G.pg.base.chapter_template[2100126] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIANCHENGHUODONG19",
@@ -435922,6 +436707,7 @@ _G.pg.base.chapter_template[2100131] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -436539,6 +437325,7 @@ _G.pg.base.chapter_template[2100132] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -437248,6 +438035,7 @@ _G.pg.base.chapter_template[2100133] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIANCHENGHUODONG9-2",
@@ -437971,6 +438759,7 @@ _G.pg.base.chapter_template[2100134] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -438735,6 +439524,7 @@ _G.pg.base.chapter_template[2100135] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -439465,6 +440255,7 @@ _G.pg.base.chapter_template[2100136] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIANCHENGHUODONG19",
@@ -440041,6 +440832,7 @@ _G.pg.base.chapter_template[2100141] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEXUEYUYINFU4",
@@ -440621,6 +441413,7 @@ _G.pg.base.chapter_template[2100142] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -441282,6 +442075,7 @@ _G.pg.base.chapter_template[2100143] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -441949,6 +442743,7 @@ _G.pg.base.chapter_template[2100144] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEXUEYUYINFU13",
@@ -442663,6 +443458,7 @@ _G.pg.base.chapter_template[2100145] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEXUEYUYINFU15",
@@ -443343,6 +444139,7 @@ _G.pg.base.chapter_template[2100146] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEXUEYUYINFU19",
@@ -443965,6 +444762,7 @@ _G.pg.base.chapter_template[2100151] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEXUEYUYINFU4",
@@ -444587,6 +445385,7 @@ _G.pg.base.chapter_template[2100152] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -445290,6 +446089,7 @@ _G.pg.base.chapter_template[2100153] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -446003,6 +446803,7 @@ _G.pg.base.chapter_template[2100154] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEXUEYUYINFU13",
@@ -446765,6 +447566,7 @@ _G.pg.base.chapter_template[2100155] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEXUEYUYINFU15",
@@ -447493,6 +448295,7 @@ _G.pg.base.chapter_template[2100156] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"TIEXUEYUYINFU19",
@@ -448080,6 +448883,7 @@ _G.pg.base.chapter_template[2100161] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENSHENGDEBEIXIJU3",
@@ -448674,6 +449478,7 @@ _G.pg.base.chapter_template[2100162] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -449365,6 +450170,7 @@ _G.pg.base.chapter_template[2100163] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENSHENGDEBEIXIJU12",
@@ -449938,6 +450744,7 @@ _G.pg.base.chapter_template[2100164] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENSHENGDEBEIXIJU5",
@@ -450538,6 +451345,7 @@ _G.pg.base.chapter_template[2100165] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENSHENGDEBEIXIJU9",
@@ -451136,6 +451944,7 @@ _G.pg.base.chapter_template[2100166] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -451789,6 +452598,7 @@ _G.pg.base.chapter_template[2100167] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -452402,6 +453212,7 @@ _G.pg.base.chapter_template[2100168] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENSHENGDEBEIXIJU22",
@@ -453028,6 +453839,7 @@ _G.pg.base.chapter_template[2100171] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENSHENGDEBEIXIJU3",
@@ -453662,6 +454474,7 @@ _G.pg.base.chapter_template[2100172] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -454394,6 +455207,7 @@ _G.pg.base.chapter_template[2100173] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENSHENGDEBEIXIJU12",
@@ -455009,6 +455823,7 @@ _G.pg.base.chapter_template[2100174] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENSHENGDEBEIXIJU5",
@@ -455652,6 +456467,7 @@ _G.pg.base.chapter_template[2100175] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENSHENGDEBEIXIJU9",
@@ -456295,6 +457111,7 @@ _G.pg.base.chapter_template[2100176] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -456996,6 +457813,7 @@ _G.pg.base.chapter_template[2100177] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -457656,6 +458474,7 @@ _G.pg.base.chapter_template[2100178] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENSHENGDEBEIXIJU22",
@@ -458244,6 +459063,7 @@ _G.pg.base.chapter_template[2100181] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA5",
@@ -458884,6 +459704,7 @@ _G.pg.base.chapter_template[2100182] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA11",
@@ -459621,6 +460442,7 @@ _G.pg.base.chapter_template[2100183] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA15",
@@ -460257,6 +461079,7 @@ _G.pg.base.chapter_template[2100184] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA19",
@@ -460930,6 +461753,7 @@ _G.pg.base.chapter_template[2100185] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA24",
@@ -461569,6 +462393,7 @@ _G.pg.base.chapter_template[2100186] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA30",
@@ -462137,6 +462962,7 @@ _G.pg.base.chapter_template[2100187] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA7",
@@ -462738,6 +463564,7 @@ _G.pg.base.chapter_template[2100188] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA13",
@@ -463332,6 +464159,7 @@ _G.pg.base.chapter_template[2100189] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA21",
@@ -463983,6 +464811,7 @@ _G.pg.base.chapter_template[2100190] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA26",
@@ -464594,6 +465423,7 @@ _G.pg.base.chapter_template[2100191] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA5",
@@ -465276,6 +466106,7 @@ _G.pg.base.chapter_template[2100192] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA11",
@@ -466050,6 +466881,7 @@ _G.pg.base.chapter_template[2100193] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA15",
@@ -466732,6 +467564,7 @@ _G.pg.base.chapter_template[2100194] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA19",
@@ -467453,6 +468286,7 @@ _G.pg.base.chapter_template[2100195] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA24",
@@ -468140,6 +468974,7 @@ _G.pg.base.chapter_template[2100196] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA30",
@@ -468750,6 +469585,7 @@ _G.pg.base.chapter_template[2100197] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA7",
@@ -469393,6 +470229,7 @@ _G.pg.base.chapter_template[2100198] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA13",
@@ -470029,6 +470866,7 @@ _G.pg.base.chapter_template[2100199] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA21",
@@ -470724,6 +471562,7 @@ _G.pg.base.chapter_template[2100200] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIANGTINGLIAOFA26",
@@ -471287,6 +472126,7 @@ _G.pg.base.chapter_template[2100201] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -471877,6 +472717,7 @@ _G.pg.base.chapter_template[2100202] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUYINGYINGHUA8",
@@ -472494,6 +473335,7 @@ _G.pg.base.chapter_template[2100203] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUYINGYINGHUA12",
@@ -473125,6 +473967,7 @@ _G.pg.base.chapter_template[2100204] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"FUYINGYINGHUA15",
 	},
@@ -473806,6 +474649,7 @@ _G.pg.base.chapter_template[2100205] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUYINGYINGHUA21",
@@ -474444,6 +475288,7 @@ _G.pg.base.chapter_template[2100206] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUYINGYINGHUA26",
@@ -475071,6 +475916,7 @@ _G.pg.base.chapter_template[2100211] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -475704,6 +476550,7 @@ _G.pg.base.chapter_template[2100212] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUYINGYINGHUA8",
@@ -476364,6 +477211,7 @@ _G.pg.base.chapter_template[2100213] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUYINGYINGHUA12",
@@ -477041,6 +477889,7 @@ _G.pg.base.chapter_template[2100214] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"FUYINGYINGHUA15",
 	},
@@ -477770,6 +478619,7 @@ _G.pg.base.chapter_template[2100215] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUYINGYINGHUA21",
@@ -478456,6 +479306,7 @@ _G.pg.base.chapter_template[2100216] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUYINGYINGHUA26",
@@ -479013,6 +479864,7 @@ _G.pg.base.chapter_template[2100221] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"WEICENGHUNHE3",
 		"WEICENGHUNHE4",
@@ -479599,6 +480451,7 @@ _G.pg.base.chapter_template[2100222] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"WEICENGHUNHE10",
@@ -480204,6 +481057,7 @@ _G.pg.base.chapter_template[2100223] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"WEICENGHUNHE13",
 	},
@@ -480846,6 +481700,7 @@ _G.pg.base.chapter_template[2100224] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"WEICENGHUNHE19",
 	},
@@ -481476,6 +482331,7 @@ _G.pg.base.chapter_template[2100225] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"WEICENGHUNHE24",
 	},
@@ -482176,6 +483032,7 @@ _G.pg.base.chapter_template[2100226] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"WEICENGHUNHE31",
@@ -482780,6 +483637,7 @@ _G.pg.base.chapter_template[2100231] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"WEICENGHUNHE3",
 		"WEICENGHUNHE4",
@@ -483408,6 +484266,7 @@ _G.pg.base.chapter_template[2100232] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"WEICENGHUNHE10",
@@ -484056,6 +484915,7 @@ _G.pg.base.chapter_template[2100233] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"WEICENGHUNHE13",
 	},
@@ -484744,6 +485604,7 @@ _G.pg.base.chapter_template[2100234] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"WEICENGHUNHE19",
 	},
@@ -485422,6 +486283,7 @@ _G.pg.base.chapter_template[2100235] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"WEICENGHUNHE24",
 	},
@@ -486170,6 +487032,7 @@ _G.pg.base.chapter_template[2100236] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"WEICENGHUNHE31",
@@ -486769,6 +487632,7 @@ _G.pg.base.chapter_template[2100241] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"SHENGYONGQU3",
 	},
@@ -487386,6 +488250,7 @@ _G.pg.base.chapter_template[2100242] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"",
 		"SHENGYONGQU7",
@@ -488017,6 +488882,7 @@ _G.pg.base.chapter_template[2100243] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENGYONGQU14",
@@ -488719,6 +489585,7 @@ _G.pg.base.chapter_template[2100244] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENGYONGQU19",
@@ -489566,6 +490433,7 @@ _G.pg.base.chapter_template[2100245] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENGYONGQU24",
@@ -490978,6 +491846,7 @@ _G.pg.base.chapter_template[2100246] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		1393214,
 	},
@@ -492224,6 +493093,7 @@ _G.pg.base.chapter_template[2100251] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"SHENGYONGQU3",
 	},
@@ -492883,6 +493753,7 @@ _G.pg.base.chapter_template[2100252] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"",
 		"SHENGYONGQU7",
@@ -493557,6 +494428,7 @@ _G.pg.base.chapter_template[2100253] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENGYONGQU14",
@@ -494304,6 +495176,7 @@ _G.pg.base.chapter_template[2100254] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENGYONGQU19",
@@ -495198,6 +496071,7 @@ _G.pg.base.chapter_template[2100255] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENGYONGQU24",
@@ -496657,6 +497531,7 @@ _G.pg.base.chapter_template[2100256] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		1393214,
 	},
@@ -497864,6 +498739,7 @@ _G.pg.base.chapter_template[2100261] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"MAOZIHUODONG3",
 	},
@@ -498445,6 +499321,7 @@ _G.pg.base.chapter_template[2100262] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"MAOZIHUODONG8",
@@ -499062,6 +499939,7 @@ _G.pg.base.chapter_template[2100263] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"MAOZIHUODONG9",
 		"MAOZIHUODONG10",
@@ -499706,6 +500584,7 @@ _G.pg.base.chapter_template[2100264] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"MAOZIHUODONG17",
@@ -500288,6 +501167,7 @@ _G.pg.base.chapter_template[2100265] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"MAOZIHUODONG18",
 		"MAOZIHUODONG19",
@@ -500928,6 +501808,7 @@ _G.pg.base.chapter_template[2100266] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"MAOZIHUODONG23",
 		"MAOZIHUODONG24",
@@ -501574,6 +502455,7 @@ _G.pg.base.chapter_template[2100271] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"MAOZIHUODONG3",
 	},
@@ -502198,6 +503080,7 @@ _G.pg.base.chapter_template[2100272] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"MAOZIHUODONG8",
@@ -502857,6 +503740,7 @@ _G.pg.base.chapter_template[2100273] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"MAOZIHUODONG9",
 		"MAOZIHUODONG10",
@@ -503547,6 +504431,7 @@ _G.pg.base.chapter_template[2100274] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"MAOZIHUODONG17",
@@ -504177,6 +505062,7 @@ _G.pg.base.chapter_template[2100275] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"MAOZIHUODONG18",
 		"MAOZIHUODONG19",
@@ -504865,6 +505751,7 @@ _G.pg.base.chapter_template[2100276] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"MAOZIHUODONG23",
 		"MAOZIHUODONG24",
@@ -505559,6 +506446,7 @@ _G.pg.base.chapter_template[2100281] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"YONGYEHUANGUANG3",
 	},
@@ -506232,6 +507120,7 @@ _G.pg.base.chapter_template[2100282] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"YONGYEHUANGUANG9",
 		"YONGYEHUANGUANG10",
@@ -506927,6 +507816,7 @@ _G.pg.base.chapter_template[2100283] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YONGYEHUANGUANG19",
@@ -507675,6 +508565,7 @@ _G.pg.base.chapter_template[2100284] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"",
 		"YONGYEHUANGUANG22",
@@ -508451,6 +509342,7 @@ _G.pg.base.chapter_template[2100285] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"",
 		"YONGYEHUANGUANG27",
@@ -509320,6 +510212,7 @@ _G.pg.base.chapter_template[2100286] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YONGYEHUANGUANG36",
@@ -510053,6 +510946,7 @@ _G.pg.base.chapter_template[2100291] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"YONGYEHUANGUANG3",
 	},
@@ -510765,6 +511659,7 @@ _G.pg.base.chapter_template[2100292] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"YONGYEHUANGUANG9",
 		"YONGYEHUANGUANG10",
@@ -511499,6 +512394,7 @@ _G.pg.base.chapter_template[2100293] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YONGYEHUANGUANG19",
@@ -512291,6 +513187,7 @@ _G.pg.base.chapter_template[2100294] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"",
 		"YONGYEHUANGUANG22",
@@ -513113,6 +514010,7 @@ _G.pg.base.chapter_template[2100295] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"",
 		"YONGYEHUANGUANG27",
@@ -514029,6 +514927,7 @@ _G.pg.base.chapter_template[2100296] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YONGYEHUANGUANG36",
@@ -514709,6 +515608,7 @@ _G.pg.base.chapter_template[2100301] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"",
 		"",
@@ -515381,6 +516281,7 @@ _G.pg.base.chapter_template[2100302] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUXIANGXIANZUOZHAN9",
@@ -516041,6 +516942,7 @@ _G.pg.base.chapter_template[2100303] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"",
 		"",
@@ -516800,6 +517702,7 @@ _G.pg.base.chapter_template[2100304] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUXIANGXIANZUOZHAN20",
@@ -517600,6 +518503,7 @@ _G.pg.base.chapter_template[2100305] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUXIANGXIANZUOZHAN24",
@@ -518567,6 +519471,7 @@ _G.pg.base.chapter_template[2100306] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUXIANGXIANZUOZHAN29",
@@ -519298,6 +520203,7 @@ _G.pg.base.chapter_template[2100311] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"",
 		"",
@@ -520011,6 +520917,7 @@ _G.pg.base.chapter_template[2100312] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUXIANGXIANZUOZHAN9",
@@ -520714,6 +521621,7 @@ _G.pg.base.chapter_template[2100313] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"",
 		"",
@@ -521518,6 +522426,7 @@ _G.pg.base.chapter_template[2100314] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUXIANGXIANZUOZHAN20",
@@ -522365,6 +523274,7 @@ _G.pg.base.chapter_template[2100315] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUXIANGXIANZUOZHAN24",
@@ -523379,6 +524289,7 @@ _G.pg.base.chapter_template[2100316] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUXIANGXIANZUOZHAN29",
@@ -524192,6 +525103,7 @@ _G.pg.base.chapter_template[2100321] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"DIEHAIMENGHUA9",
@@ -524865,6 +525777,7 @@ _G.pg.base.chapter_template[2100322] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"DIEHAIMENGHUA11",
 	},
@@ -525718,6 +526631,7 @@ _G.pg.base.chapter_template[2100323] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"DIEHAIMENGHUA16",
 	},
@@ -526732,6 +527646,7 @@ _G.pg.base.chapter_template[2100324] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"DIEHAIMENGHUA22",
 	},
@@ -527650,6 +528565,7 @@ _G.pg.base.chapter_template[2100325] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"DIEHAIMENGHUA34",
@@ -528670,6 +529586,7 @@ _G.pg.base.chapter_template[2100326] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"DIEHAIMENGHUA36",
 	},
@@ -529224,6 +530141,7 @@ _G.pg.base.chapter_template[2100327] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"DIEHAIMENGHUA3",
 	},
@@ -529879,6 +530797,7 @@ _G.pg.base.chapter_template[2100328] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"DIEHAIMENGHUA30",
@@ -530696,6 +531615,7 @@ _G.pg.base.chapter_template[2100331] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"DIEHAIMENGHUA9",
@@ -531411,6 +532331,7 @@ _G.pg.base.chapter_template[2100332] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"DIEHAIMENGHUA11",
 	},
@@ -532306,6 +533227,7 @@ _G.pg.base.chapter_template[2100333] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"DIEHAIMENGHUA16",
 	},
@@ -533365,6 +534287,7 @@ _G.pg.base.chapter_template[2100334] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"DIEHAIMENGHUA22",
 	},
@@ -534330,6 +535253,7 @@ _G.pg.base.chapter_template[2100335] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"DIEHAIMENGHUA34",
@@ -535398,6 +536322,7 @@ _G.pg.base.chapter_template[2100336] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"DIEHAIMENGHUA36",
 	},
@@ -535952,6 +536877,7 @@ _G.pg.base.chapter_template[2100337] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"DIEHAIMENGHUA3",
 	},
@@ -536607,6 +537533,7 @@ _G.pg.base.chapter_template[2100338] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"DIEHAIMENGHUA30",
@@ -537277,6 +538204,7 @@ _G.pg.base.chapter_template[2100341] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"JINGWEILUOXUAN3",
 	},
@@ -537991,6 +538919,7 @@ _G.pg.base.chapter_template[2100342] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"JINGWEILUOXUAN9",
 	},
@@ -538822,6 +539751,7 @@ _G.pg.base.chapter_template[2100343] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JINGWEILUOXUAN15",
@@ -539639,6 +540569,7 @@ _G.pg.base.chapter_template[2100344] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JINGWEILUOXUAN20",
@@ -540470,6 +541401,7 @@ _G.pg.base.chapter_template[2100345] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JINGWEILUOXUAN24",
@@ -541301,6 +542233,7 @@ _G.pg.base.chapter_template[2100346] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JINGWEILUOXUAN29",
@@ -542042,6 +542975,7 @@ _G.pg.base.chapter_template[2100351] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"JINGWEILUOXUAN3",
 	},
@@ -542798,6 +543732,7 @@ _G.pg.base.chapter_template[2100352] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"JINGWEILUOXUAN9",
 	},
@@ -543672,6 +544607,7 @@ _G.pg.base.chapter_template[2100353] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JINGWEILUOXUAN15",
@@ -544535,6 +545471,7 @@ _G.pg.base.chapter_template[2100354] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JINGWEILUOXUAN20",
@@ -545414,6 +546351,7 @@ _G.pg.base.chapter_template[2100355] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JINGWEILUOXUAN24",
@@ -546292,6 +547230,7 @@ _G.pg.base.chapter_template[2100356] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JINGWEILUOXUAN29",
@@ -546984,6 +547923,7 @@ _G.pg.base.chapter_template[2100361] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"POXIAOBINGHUA4",
@@ -547678,6 +548618,7 @@ _G.pg.base.chapter_template[2100362] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"POXIAOBINGHUA7",
@@ -548585,6 +549526,7 @@ _G.pg.base.chapter_template[2100363] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"POXIAOBINGHUA12",
@@ -549373,6 +550315,7 @@ _G.pg.base.chapter_template[2100364] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"POXIAOBINGHUA17",
@@ -550188,6 +551131,7 @@ _G.pg.base.chapter_template[2100365] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"POXIAOBINGHUA19",
 	},
@@ -551105,6 +552049,7 @@ _G.pg.base.chapter_template[2100366] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"POXIAOBINGHUA23",
 	},
@@ -551847,6 +552792,7 @@ _G.pg.base.chapter_template[2100371] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"POXIAOBINGHUA4",
@@ -552583,6 +553529,7 @@ _G.pg.base.chapter_template[2100372] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"POXIAOBINGHUA7",
@@ -553533,6 +554480,7 @@ _G.pg.base.chapter_template[2100373] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"POXIAOBINGHUA12",
@@ -554366,6 +555314,7 @@ _G.pg.base.chapter_template[2100374] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"POXIAOBINGHUA17",
@@ -555228,6 +556177,7 @@ _G.pg.base.chapter_template[2100375] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"POXIAOBINGHUA19",
 	},
@@ -556192,6 +557142,7 @@ _G.pg.base.chapter_template[2100376] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"POXIAOBINGHUA23",
 	},
@@ -556850,6 +557801,7 @@ _G.pg.base.chapter_template[2100381] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"BIHAIGUANGLIN5",
@@ -557545,6 +558497,7 @@ _G.pg.base.chapter_template[2100382] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"BIHAIGUANGLIN10",
@@ -558391,6 +559344,7 @@ _G.pg.base.chapter_template[2100383] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"BIHAIGUANGLIN15",
@@ -559207,6 +560161,7 @@ _G.pg.base.chapter_template[2100384] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"BIHAIGUANGLIN21",
@@ -560044,6 +560999,7 @@ _G.pg.base.chapter_template[2100385] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"BIHAIGUANGLIN25",
@@ -560958,6 +561914,7 @@ _G.pg.base.chapter_template[2100386] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"BIHAIGUANGLIN28",
 	},
@@ -561649,6 +562606,7 @@ _G.pg.base.chapter_template[2100391] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"BIHAIGUANGLIN5",
@@ -562386,6 +563344,7 @@ _G.pg.base.chapter_template[2100392] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"BIHAIGUANGLIN10",
@@ -563275,6 +564234,7 @@ _G.pg.base.chapter_template[2100393] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"BIHAIGUANGLIN15",
@@ -564137,6 +565097,7 @@ _G.pg.base.chapter_template[2100394] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"BIHAIGUANGLIN21",
@@ -565022,6 +565983,7 @@ _G.pg.base.chapter_template[2100395] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"BIHAIGUANGLIN25",
@@ -565983,6 +566945,7 @@ _G.pg.base.chapter_template[2100396] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"BIHAIGUANGLIN28",
 	},
@@ -566667,6 +567630,7 @@ _G.pg.base.chapter_template[2100401] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"FUXINGDEZANMEISHI3",
 	},
@@ -567363,6 +568327,7 @@ _G.pg.base.chapter_template[2100402] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUXINGDEZANMEISHI9",
@@ -568166,6 +569131,7 @@ _G.pg.base.chapter_template[2100403] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"FUXINGDEZANMEISHI11",
 	},
@@ -569065,6 +570031,7 @@ _G.pg.base.chapter_template[2100404] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUXINGDEZANMEISHI18",
@@ -569989,6 +570956,7 @@ _G.pg.base.chapter_template[2100405] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"FUXINGDEZANMEISHI20",
 	},
@@ -570927,6 +571895,7 @@ _G.pg.base.chapter_template[2100406] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"FUXINGDEZANMEISHI27",
 	},
@@ -571672,6 +572641,7 @@ _G.pg.base.chapter_template[2100411] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"FUXINGDEZANMEISHI3",
 	},
@@ -572410,6 +573380,7 @@ _G.pg.base.chapter_template[2100412] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUXINGDEZANMEISHI9",
@@ -573256,6 +574227,7 @@ _G.pg.base.chapter_template[2100413] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"FUXINGDEZANMEISHI11",
 	},
@@ -574201,6 +575173,7 @@ _G.pg.base.chapter_template[2100414] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"FUXINGDEZANMEISHI18",
@@ -575173,6 +576146,7 @@ _G.pg.base.chapter_template[2100415] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"FUXINGDEZANMEISHI20",
 	},
@@ -576158,6 +577132,7 @@ _G.pg.base.chapter_template[2100416] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"FUXINGDEZANMEISHI27",
 	},
@@ -576814,6 +577789,7 @@ _G.pg.base.chapter_template[2100421] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"NIZHUANCAIHONGZHITA3",
 	},
@@ -577505,6 +578481,7 @@ _G.pg.base.chapter_template[2100422] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"NIZHUANCAIHONGZHITA8",
 	},
@@ -578325,6 +579302,7 @@ _G.pg.base.chapter_template[2100423] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"NIZHUANCAIHONGZHITA14",
@@ -579127,6 +580105,7 @@ _G.pg.base.chapter_template[2100424] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"NIZHUANCAIHONGZHITA20",
@@ -579949,6 +580928,7 @@ _G.pg.base.chapter_template[2100425] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"NIZHUANCAIHONGZHITA24",
@@ -580705,6 +581685,7 @@ _G.pg.base.chapter_template[2100426] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"NIZHUANCAIHONGZHITA28",
@@ -581467,6 +582448,7 @@ _G.pg.base.chapter_template[2100427] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"NIZHUANCAIHONGZHITA34",
@@ -582143,6 +583125,7 @@ _G.pg.base.chapter_template[2100431] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"NIZHUANCAIHONGZHITA3",
 	},
@@ -582876,6 +583859,7 @@ _G.pg.base.chapter_template[2100432] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"NIZHUANCAIHONGZHITA8",
 	},
@@ -583738,6 +584722,7 @@ _G.pg.base.chapter_template[2100433] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"NIZHUANCAIHONGZHITA14",
@@ -584586,6 +585571,7 @@ _G.pg.base.chapter_template[2100434] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"NIZHUANCAIHONGZHITA20",
@@ -585456,6 +586442,7 @@ _G.pg.base.chapter_template[2100435] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"NIZHUANCAIHONGZHITA24",
@@ -586256,6 +587243,7 @@ _G.pg.base.chapter_template[2100436] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"NIZHUANCAIHONGZHITA28",
@@ -587064,6 +588052,7 @@ _G.pg.base.chapter_template[2100437] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"NIZHUANCAIHONGZHITA34",
@@ -587741,6 +588730,7 @@ _G.pg.base.chapter_template[2100441] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"SHENDUHUIYIN3",
 	},
@@ -588536,6 +589526,7 @@ _G.pg.base.chapter_template[2100442] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"",
 		"SHENDUHUIYIN8",
@@ -589352,6 +590343,7 @@ _G.pg.base.chapter_template[2100443] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENDUHUIYIN14",
@@ -589981,6 +590973,7 @@ _G.pg.base.chapter_template[2100444] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"SHENDUHUIYIN18",
 	},
@@ -590663,6 +591656,7 @@ _G.pg.base.chapter_template[2100445] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENDUHUIYIN24",
@@ -591509,6 +592503,7 @@ _G.pg.base.chapter_template[2100446] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENDUHUIYIN28",
@@ -592239,6 +593234,7 @@ _G.pg.base.chapter_template[2100451] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"SHENDUHUIYIN3",
 	},
@@ -593075,6 +594071,7 @@ _G.pg.base.chapter_template[2100452] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"",
 		"SHENDUHUIYIN8",
@@ -593932,6 +594929,7 @@ _G.pg.base.chapter_template[2100453] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENDUHUIYIN14",
@@ -594606,6 +595604,7 @@ _G.pg.base.chapter_template[2100454] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"SHENDUHUIYIN18",
 	},
@@ -595335,6 +596334,7 @@ _G.pg.base.chapter_template[2100455] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENDUHUIYIN24",
@@ -596228,6 +597228,7 @@ _G.pg.base.chapter_template[2100456] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"SHENDUHUIYIN28",
@@ -596886,6 +597887,7 @@ _G.pg.base.chapter_template[2100461] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"LINGSHIGUANGTING3",
 	},
@@ -597571,6 +598573,7 @@ _G.pg.base.chapter_template[2100462] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"LINGSHIGUANGTING9",
@@ -598363,6 +599366,7 @@ _G.pg.base.chapter_template[2100463] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"LINGSHIGUANGTING11",
 	},
@@ -599044,6 +600048,7 @@ _G.pg.base.chapter_template[2100464] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"LINGSHIGUANGTING20",
@@ -599744,6 +600749,7 @@ _G.pg.base.chapter_template[2100465] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"LINGSHIGUANGTING23",
 		"LINGSHIGUANGTING24",
@@ -600605,6 +601611,7 @@ _G.pg.base.chapter_template[2100466] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"LINGSHIGUANGTING29",
 	},
@@ -601298,6 +602305,7 @@ _G.pg.base.chapter_template[2100471] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"LINGSHIGUANGTING3",
 	},
@@ -602025,6 +603033,7 @@ _G.pg.base.chapter_template[2100472] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"LINGSHIGUANGTING9",
@@ -602859,6 +603868,7 @@ _G.pg.base.chapter_template[2100473] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"LINGSHIGUANGTING11",
 	},
@@ -603586,6 +604596,7 @@ _G.pg.base.chapter_template[2100474] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"LINGSHIGUANGTING20",
@@ -604334,6 +605345,7 @@ _G.pg.base.chapter_template[2100475] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"LINGSHIGUANGTING23",
 		"LINGSHIGUANGTING24",
@@ -605242,6 +606254,7 @@ _G.pg.base.chapter_template[2100476] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"LINGSHIGUANGTING29",
 	},
@@ -605934,6 +606947,7 @@ _G.pg.base.chapter_template[2100481] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIONGYINGDEXUSHIGE4",
@@ -606751,6 +607765,7 @@ _G.pg.base.chapter_template[2100482] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIONGYINGDEXUSHIGE9",
@@ -607482,6 +608497,7 @@ _G.pg.base.chapter_template[2100483] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XIONGYINGDEXUSHIGE12",
 	},
@@ -608272,6 +609288,7 @@ _G.pg.base.chapter_template[2100484] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIONGYINGDEXUSHIGE21",
@@ -609018,6 +610035,7 @@ _G.pg.base.chapter_template[2100485] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIONGYINGDEXUSHIGE26",
@@ -609844,6 +610862,7 @@ _G.pg.base.chapter_template[2100486] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XIONGYINGDEXUSHIGE28",
 	},
@@ -610582,6 +611601,7 @@ _G.pg.base.chapter_template[2100491] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIONGYINGDEXUSHIGE4",
@@ -611441,6 +612461,7 @@ _G.pg.base.chapter_template[2100492] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIONGYINGDEXUSHIGE9",
@@ -612214,6 +613235,7 @@ _G.pg.base.chapter_template[2100493] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XIONGYINGDEXUSHIGE12",
 	},
@@ -613049,6 +614071,7 @@ _G.pg.base.chapter_template[2100494] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIONGYINGDEXUSHIGE21",
@@ -613842,6 +614865,7 @@ _G.pg.base.chapter_template[2100495] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIONGYINGDEXUSHIGE26",
@@ -614715,6 +615739,7 @@ _G.pg.base.chapter_template[2100496] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XIONGYINGDEXUSHIGE28",
 	},
@@ -615370,6 +616395,7 @@ _G.pg.base.chapter_template[2100501] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"HONGCAIDEZHONGMUQU5",
@@ -616060,6 +617086,7 @@ _G.pg.base.chapter_template[2100502] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"HONGCAIDEZHONGMUQU10",
@@ -616861,6 +617888,7 @@ _G.pg.base.chapter_template[2100503] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"HONGCAIDEZHONGMUQU13",
 	},
@@ -617555,6 +618583,7 @@ _G.pg.base.chapter_template[2100504] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"HONGCAIDEZHONGMUQU20",
@@ -618234,6 +619263,7 @@ _G.pg.base.chapter_template[2100505] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"HONGCAIDEZHONGMUQU23",
 		"HONGCAIDEZHONGMUQU24",
@@ -619071,6 +620101,7 @@ _G.pg.base.chapter_template[2100506] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		1645002,
@@ -619762,6 +620793,7 @@ _G.pg.base.chapter_template[2100511] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"HONGCAIDEZHONGMUQU5",
@@ -620494,6 +621526,7 @@ _G.pg.base.chapter_template[2100512] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"HONGCAIDEZHONGMUQU10",
@@ -621337,6 +622370,7 @@ _G.pg.base.chapter_template[2100513] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"HONGCAIDEZHONGMUQU13",
 	},
@@ -622077,6 +623111,7 @@ _G.pg.base.chapter_template[2100514] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"HONGCAIDEZHONGMUQU20",
@@ -622804,6 +623839,7 @@ _G.pg.base.chapter_template[2100515] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"HONGCAIDEZHONGMUQU23",
 		"HONGCAIDEZHONGMUQU24",
@@ -623689,6 +624725,7 @@ _G.pg.base.chapter_template[2100516] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		1645002,
@@ -623727,6 +624764,9004 @@ _G.pg.base.chapter_template[2100516] = {
 	chapter_strategy = {
 		8943,
 		8959,
+	},
+	wall_prefab = {},
+	alarm_cell = {},
+	weather_grids = {},
+}
+
+_G.pg.base.chapter_template[2100521] = {
+	ItemTransformPattern = "",
+	act_id = 100001,
+	air_dominance = 100,
+	ammo_submarine = 0,
+	ammo_total = 5,
+	avoid_ratio = 8,
+	avoid_require = 0,
+	best_air_dominance = 150,
+	bg = "",
+	bgm = "musashi-1",
+	boss_refresh = 3,
+	chapter_fx = "",
+	chapter_name = "A1",
+	chapter_tag = 0,
+	collection_team = 0,
+	count = 0,
+	difficulty = 3,
+	enter_story = "ZIJIANGJINLAN2",
+	enter_story_limit = "",
+	event_skip = 0,
+	formation = 2100521,
+	friendly_id = 0,
+	group_num = 2,
+	icon_outline = 0,
+	id = 2100521,
+	investigation_ratio = 0,
+	is_ai = 1,
+	is_air_attack = 0,
+	is_ambush = 0,
+	is_limit_move = 1,
+	levelstage_bar = "",
+	lose_condition_display = "lose_condition_display_quanmie",
+	map = 2100521,
+	mitigation_level = 5,
+	mitigation_rate = 2,
+	model = 2,
+	name = "Violet Domain",
+	num_1 = 1,
+	num_2 = 10,
+	num_3 = 1,
+	oil = 10,
+	pop_pic = "",
+	pos_x = "0.2515625",
+	pos_y = "0.523611111",
+	pre_story = 0,
+	profiles = "A unique game of Go unfolds in a mysterious, sealed-off domain. Four players gather in a clash of wits and ideals.",
+	progress_boss = 100,
+	special_operation_list = "",
+	star_require_1 = 1,
+	star_require_2 = 2,
+	star_require_3 = 3,
+	story_refresh_boss = "ZIJIANGJINLAN4",
+	submarine_num = 1,
+	support_group_num = 0,
+	time = 43200,
+	type = 1,
+	uifx = "",
+	unlocklevel = 0,
+	win_condition_display = "win_condition_display_qijian",
+	pre_chapter = {
+		{
+			0,
+		},
+	},
+	scale = {
+		0.34,
+		0.53,
+		1.5,
+	},
+	limitation = {},
+	property_limitation = {},
+	expedition_id_weight_list = {
+		{
+			1680001,
+			15,
+			0,
+		},
+		{
+			1680002,
+			20,
+			0,
+		},
+		{
+			1680003,
+			30,
+			1,
+		},
+		{
+			1680004,
+			15,
+			0,
+		},
+		{
+			1680005,
+			20,
+			0,
+		},
+		{
+			1680006,
+			30,
+			1,
+		},
+		{
+			1680007,
+			15,
+			0,
+		},
+		{
+			1680008,
+			20,
+			0,
+		},
+		{
+			1680009,
+			30,
+			1,
+		},
+	},
+	ambush_expedition_list = {},
+	guarder_expedition_list = {},
+	elite_expedition_list = {
+		1680005,
+		1680008,
+	},
+	ai_expedition_list = {
+		1680301,
+		1680302,
+	},
+	patrolai_expedition_list = {
+		1,
+	},
+	submarine_expedition_list = {
+		1,
+	},
+	boss_expedition_id = {
+		1680013,
+	},
+	enemy_refresh = {
+		1,
+		1,
+		1,
+		1,
+		1,
+	},
+	elite_refresh = {
+		1,
+		0,
+		0,
+		0,
+		0,
+	},
+	ai_refresh = {
+		1,
+	},
+	patrolai_refresh = {
+		0,
+	},
+	submarine_refresh = {
+		0,
+	},
+	use_oil_limit = {},
+	win_condition = {
+		{
+			1,
+			1,
+		},
+	},
+	lose_condition = {
+		{
+			1,
+			0,
+		},
+	},
+	icon = {
+		"unknown1",
+	},
+	awards = {
+		{
+			2,
+			58692,
+		},
+		{
+			2,
+			58680,
+		},
+		{
+			2,
+			54012,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			59001,
+		},
+	},
+	grids = {
+		{
+			7,
+			7,
+			true,
+			0,
+		},
+		{
+			7,
+			6,
+			false,
+			0,
+		},
+		{
+			7,
+			5,
+			false,
+			0,
+		},
+		{
+			7,
+			4,
+			true,
+			0,
+		},
+		{
+			7,
+			3,
+			true,
+			6,
+		},
+		{
+			7,
+			2,
+			true,
+			0,
+		},
+		{
+			7,
+			1,
+			true,
+			1,
+		},
+		{
+			7,
+			0,
+			true,
+			0,
+		},
+		{
+			6,
+			7,
+			true,
+			0,
+		},
+		{
+			6,
+			6,
+			false,
+			0,
+		},
+		{
+			6,
+			5,
+			false,
+			0,
+		},
+		{
+			6,
+			4,
+			true,
+			4,
+		},
+		{
+			6,
+			3,
+			true,
+			0,
+		},
+		{
+			6,
+			2,
+			true,
+			0,
+		},
+		{
+			6,
+			1,
+			true,
+			0,
+		},
+		{
+			6,
+			0,
+			true,
+			1,
+		},
+		{
+			5,
+			7,
+			true,
+			0,
+		},
+		{
+			5,
+			6,
+			true,
+			6,
+		},
+		{
+			5,
+			5,
+			true,
+			4,
+		},
+		{
+			5,
+			4,
+			true,
+			0,
+		},
+		{
+			5,
+			3,
+			true,
+			12,
+		},
+		{
+			5,
+			2,
+			false,
+			0,
+		},
+		{
+			5,
+			1,
+			true,
+			0,
+		},
+		{
+			5,
+			0,
+			true,
+			0,
+		},
+		{
+			4,
+			7,
+			true,
+			6,
+		},
+		{
+			4,
+			6,
+			true,
+			0,
+		},
+		{
+			4,
+			5,
+			true,
+			0,
+		},
+		{
+			4,
+			4,
+			true,
+			16,
+		},
+		{
+			4,
+			3,
+			true,
+			6,
+		},
+		{
+			4,
+			2,
+			false,
+			0,
+		},
+		{
+			4,
+			1,
+			true,
+			0,
+		},
+		{
+			4,
+			0,
+			true,
+			0,
+		},
+		{
+			3,
+			7,
+			true,
+			0,
+		},
+		{
+			3,
+			6,
+			true,
+			8,
+		},
+		{
+			3,
+			5,
+			true,
+			0,
+		},
+		{
+			3,
+			4,
+			true,
+			4,
+		},
+		{
+			3,
+			3,
+			true,
+			0,
+		},
+		{
+			3,
+			2,
+			true,
+			12,
+		},
+		{
+			3,
+			1,
+			true,
+			0,
+		},
+		{
+			3,
+			0,
+			true,
+			12,
+		},
+		{
+			2,
+			7,
+			true,
+			0,
+		},
+		{
+			2,
+			6,
+			false,
+			0,
+		},
+		{
+			2,
+			5,
+			false,
+			0,
+		},
+		{
+			2,
+			4,
+			true,
+			0,
+		},
+		{
+			2,
+			3,
+			true,
+			0,
+		},
+		{
+			2,
+			2,
+			true,
+			0,
+		},
+		{
+			2,
+			1,
+			true,
+			0,
+		},
+		{
+			2,
+			0,
+			true,
+			6,
+		},
+		{
+			1,
+			7,
+			true,
+			0,
+		},
+		{
+			1,
+			6,
+			false,
+			0,
+		},
+		{
+			1,
+			5,
+			false,
+			0,
+		},
+		{
+			1,
+			4,
+			true,
+			4,
+		},
+		{
+			1,
+			3,
+			true,
+			6,
+		},
+		{
+			1,
+			2,
+			false,
+			0,
+		},
+		{
+			1,
+			1,
+			true,
+			6,
+		},
+		{
+			1,
+			0,
+			true,
+			0,
+		},
+		{
+			0,
+			7,
+			true,
+			0,
+		},
+		{
+			0,
+			6,
+			true,
+			0,
+		},
+		{
+			0,
+			5,
+			true,
+			0,
+		},
+		{
+			0,
+			4,
+			true,
+			0,
+		},
+		{
+			0,
+			3,
+			true,
+			0,
+		},
+		{
+			0,
+			2,
+			false,
+			0,
+		},
+		{
+			0,
+			1,
+			false,
+			0,
+		},
+		{
+			0,
+			0,
+			true,
+			0,
+		},
+	},
+	float_items = {
+		{
+			6,
+			5,
+			"wuzang_normal_II_2x2_2",
+			50,
+			-50,
+		},
+		{
+			4,
+			2,
+			"wuzang_normal_II_1x2_2",
+			0,
+			-50,
+		},
+		{
+			1,
+			5,
+			"wuzang_normal_sp2",
+			65,
+			-8,
+		},
+		{
+			0,
+			1,
+			"wuzang_normal_II_2x2_1",
+			66,
+			-39,
+		},
+	},
+	ambush_event_ratio = {},
+	ambush_ratio_extra = {},
+	theme = {
+		"sea_wuzang_normal",
+		45,
+		20,
+		-143,
+		-8,
+		100,
+		100,
+		4,
+		4,
+		"",
+	},
+	box_list = {},
+	random_box_list = {
+		4,
+		22,
+		102,
+		1004,
+		5001,
+	},
+	box_refresh = {
+		0,
+	},
+	box_auto_pick = {},
+	story_refresh = {
+		"ZIJIANGJINLAN3",
+	},
+	defeat_story = {
+		"ZIJIANGJINLAN6",
+		"ZIJIANGJINLAN7",
+	},
+	defeat_story_count = {
+		1,
+		2,
+	},
+	npc_data = {},
+	risk_levels = {
+		{
+			5,
+			4,
+		},
+		{
+			3,
+			2,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			0,
+			0,
+		},
+	},
+	land_based = {},
+	chapter_strategy = {
+		200052,
+	},
+	wall_prefab = {},
+	alarm_cell = {},
+	weather_grids = {},
+}
+
+_G.pg.base.chapter_template[2100522] = {
+	ItemTransformPattern = "",
+	act_id = 100001,
+	air_dominance = 130,
+	ammo_submarine = 0,
+	ammo_total = 5,
+	avoid_ratio = 9,
+	avoid_require = 0,
+	best_air_dominance = 170,
+	bg = "",
+	bgm = "musashi-1",
+	boss_refresh = 4,
+	chapter_fx = "",
+	chapter_name = "A2",
+	chapter_tag = 0,
+	collection_team = 0,
+	count = 0,
+	difficulty = 4,
+	enter_story = "ZIJIANGJINLAN8",
+	enter_story_limit = "",
+	event_skip = 0,
+	formation = 2100521,
+	friendly_id = 0,
+	group_num = 2,
+	icon_outline = 0,
+	id = 2100522,
+	investigation_ratio = 0,
+	is_ai = 1,
+	is_air_attack = 0,
+	is_ambush = 0,
+	is_limit_move = 1,
+	levelstage_bar = "",
+	lose_condition_display = "lose_condition_display_quanmie",
+	map = 2100521,
+	mitigation_level = 5,
+	mitigation_rate = 2,
+	model = 2,
+	name = "Obscuring Fog",
+	num_1 = 1,
+	num_2 = 11,
+	num_3 = 1,
+	oil = 10,
+	pop_pic = "",
+	pos_x = "0.38203125",
+	pos_y = "0.069444444",
+	pre_story = 0,
+	profiles = "A sea fog spreads across the board, hiding one player's intentions. Will the participants ever be able to see eye-to-eye?",
+	progress_boss = 100,
+	special_operation_list = "",
+	star_require_1 = 1,
+	star_require_2 = 2,
+	star_require_3 = 3,
+	story_refresh_boss = "ZIJIANGJINLAN10",
+	submarine_num = 1,
+	support_group_num = 0,
+	time = 43200,
+	type = 1,
+	uifx = "",
+	unlocklevel = 0,
+	win_condition_display = "win_condition_display_qijian",
+	pre_chapter = {
+		{
+			2100521,
+		},
+	},
+	scale = {
+		0.34,
+		0.53,
+		1.5,
+	},
+	limitation = {},
+	property_limitation = {},
+	expedition_id_weight_list = {
+		{
+			1680101,
+			15,
+			0,
+		},
+		{
+			1680102,
+			20,
+			0,
+		},
+		{
+			1680103,
+			30,
+			1,
+		},
+		{
+			1680104,
+			15,
+			0,
+		},
+		{
+			1680105,
+			20,
+			0,
+		},
+		{
+			1680106,
+			30,
+			1,
+		},
+		{
+			1680107,
+			15,
+			0,
+		},
+		{
+			1680108,
+			20,
+			0,
+		},
+		{
+			1680109,
+			30,
+			1,
+		},
+	},
+	ambush_expedition_list = {},
+	guarder_expedition_list = {},
+	elite_expedition_list = {
+		1680105,
+		1680108,
+	},
+	ai_expedition_list = {
+		1680303,
+		1680304,
+	},
+	patrolai_expedition_list = {
+		1,
+	},
+	submarine_expedition_list = {
+		1,
+	},
+	boss_expedition_id = {
+		1680113,
+	},
+	enemy_refresh = {
+		1,
+		1,
+		1,
+		1,
+		1,
+	},
+	elite_refresh = {
+		1,
+		0,
+		0,
+		0,
+		0,
+	},
+	ai_refresh = {
+		1,
+	},
+	patrolai_refresh = {
+		0,
+	},
+	submarine_refresh = {
+		0,
+	},
+	use_oil_limit = {},
+	win_condition = {
+		{
+			1,
+			1,
+		},
+	},
+	lose_condition = {
+		{
+			1,
+			0,
+		},
+	},
+	icon = {
+		"unknown5",
+	},
+	awards = {
+		{
+			2,
+			58693,
+		},
+		{
+			2,
+			58681,
+		},
+		{
+			2,
+			54012,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			59001,
+		},
+	},
+	grids = {
+		{
+			7,
+			7,
+			false,
+			0,
+		},
+		{
+			7,
+			6,
+			true,
+			0,
+		},
+		{
+			7,
+			5,
+			true,
+			0,
+		},
+		{
+			7,
+			4,
+			true,
+			6,
+		},
+		{
+			7,
+			3,
+			true,
+			0,
+		},
+		{
+			7,
+			2,
+			false,
+			0,
+		},
+		{
+			7,
+			1,
+			true,
+			6,
+		},
+		{
+			7,
+			0,
+			true,
+			0,
+		},
+		{
+			6,
+			7,
+			true,
+			0,
+		},
+		{
+			6,
+			6,
+			false,
+			0,
+		},
+		{
+			6,
+			5,
+			false,
+			0,
+		},
+		{
+			6,
+			4,
+			true,
+			0,
+		},
+		{
+			6,
+			3,
+			true,
+			6,
+		},
+		{
+			6,
+			2,
+			true,
+			0,
+		},
+		{
+			6,
+			1,
+			true,
+			0,
+		},
+		{
+			6,
+			0,
+			true,
+			6,
+		},
+		{
+			5,
+			7,
+			true,
+			0,
+		},
+		{
+			5,
+			6,
+			false,
+			0,
+		},
+		{
+			5,
+			5,
+			false,
+			0,
+		},
+		{
+			5,
+			4,
+			true,
+			0,
+		},
+		{
+			5,
+			3,
+			false,
+			0,
+		},
+		{
+			5,
+			2,
+			false,
+			0,
+		},
+		{
+			5,
+			1,
+			false,
+			0,
+		},
+		{
+			5,
+			0,
+			true,
+			0,
+		},
+		{
+			4,
+			7,
+			true,
+			0,
+		},
+		{
+			4,
+			6,
+			true,
+			8,
+		},
+		{
+			4,
+			5,
+			true,
+			0,
+		},
+		{
+			4,
+			4,
+			true,
+			0,
+		},
+		{
+			4,
+			3,
+			true,
+			0,
+		},
+		{
+			4,
+			2,
+			true,
+			4,
+		},
+		{
+			4,
+			1,
+			true,
+			12,
+		},
+		{
+			4,
+			0,
+			true,
+			0,
+		},
+		{
+			3,
+			7,
+			false,
+			0,
+		},
+		{
+			3,
+			6,
+			true,
+			0,
+		},
+		{
+			3,
+			5,
+			true,
+			0,
+		},
+		{
+			3,
+			4,
+			true,
+			16,
+		},
+		{
+			3,
+			3,
+			true,
+			0,
+		},
+		{
+			3,
+			2,
+			true,
+			0,
+		},
+		{
+			3,
+			1,
+			true,
+			0,
+		},
+		{
+			3,
+			0,
+			true,
+			4,
+		},
+		{
+			2,
+			7,
+			false,
+			0,
+		},
+		{
+			2,
+			6,
+			true,
+			0,
+		},
+		{
+			2,
+			5,
+			true,
+			4,
+		},
+		{
+			2,
+			4,
+			true,
+			0,
+		},
+		{
+			2,
+			3,
+			true,
+			12,
+		},
+		{
+			2,
+			2,
+			true,
+			6,
+		},
+		{
+			2,
+			1,
+			true,
+			0,
+		},
+		{
+			2,
+			0,
+			true,
+			0,
+		},
+		{
+			1,
+			7,
+			true,
+			0,
+		},
+		{
+			1,
+			6,
+			true,
+			0,
+		},
+		{
+			1,
+			5,
+			true,
+			0,
+		},
+		{
+			1,
+			4,
+			true,
+			4,
+		},
+		{
+			1,
+			3,
+			false,
+			0,
+		},
+		{
+			1,
+			2,
+			true,
+			0,
+		},
+		{
+			1,
+			1,
+			true,
+			0,
+		},
+		{
+			1,
+			0,
+			true,
+			1,
+		},
+		{
+			0,
+			7,
+			true,
+			6,
+		},
+		{
+			0,
+			6,
+			true,
+			0,
+		},
+		{
+			0,
+			5,
+			true,
+			6,
+		},
+		{
+			0,
+			4,
+			true,
+			0,
+		},
+		{
+			0,
+			3,
+			false,
+			0,
+		},
+		{
+			0,
+			2,
+			false,
+			0,
+		},
+		{
+			0,
+			1,
+			true,
+			1,
+		},
+		{
+			0,
+			0,
+			true,
+			0,
+		},
+	},
+	float_items = {
+		{
+			7,
+			7,
+			"wuzang_normal_I_1x1_2",
+			11,
+			0,
+		},
+		{
+			7,
+			2,
+			"wuzang_normal_I_1x1_1",
+			0,
+			0,
+		},
+		{
+			5,
+			5,
+			"wuzang_normal_sp3",
+			53,
+			-23,
+		},
+		{
+			5,
+			1,
+			"wuzang_normal_I_3x1_2",
+			99,
+			-8,
+		},
+		{
+			2,
+			7,
+			"wuzang_normal_I_1x2_2",
+			2,
+			-54,
+		},
+		{
+			0,
+			2,
+			"wuzang_normal_I_2x2_1",
+			54,
+			-50,
+		},
+	},
+	ambush_event_ratio = {},
+	ambush_ratio_extra = {},
+	theme = {
+		"sea_wuzang_normal",
+		45,
+		20,
+		-174,
+		-392,
+		100,
+		100,
+		4,
+		4,
+		"",
+	},
+	box_list = {},
+	random_box_list = {
+		4,
+		22,
+		102,
+		1004,
+		5001,
+	},
+	box_refresh = {
+		0,
+	},
+	box_auto_pick = {},
+	story_refresh = {
+		"ZIJIANGJINLAN9",
+	},
+	defeat_story = {
+		"ZIJIANGJINLAN12",
+		"ZIJIANGJINLAN13",
+	},
+	defeat_story_count = {
+		1,
+		2,
+	},
+	npc_data = {},
+	risk_levels = {
+		{
+			5,
+			4,
+		},
+		{
+			3,
+			2,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			0,
+			0,
+		},
+	},
+	land_based = {},
+	chapter_strategy = {
+		200052,
+	},
+	wall_prefab = {},
+	alarm_cell = {},
+	weather_grids = {},
+}
+
+_G.pg.base.chapter_template[2100523] = {
+	ItemTransformPattern = "",
+	act_id = 100001,
+	air_dominance = 165,
+	ammo_submarine = 0,
+	ammo_total = 5,
+	avoid_ratio = 10,
+	avoid_require = 0,
+	best_air_dominance = 215,
+	bg = "",
+	bgm = "musashi-1",
+	boss_refresh = 4,
+	chapter_fx = "",
+	chapter_name = "A3",
+	chapter_tag = 0,
+	collection_team = 0,
+	count = 0,
+	difficulty = 5,
+	enter_story = "ZIJIANGJINLAN14",
+	enter_story_limit = "",
+	event_skip = 0,
+	formation = 2100521,
+	friendly_id = 0,
+	group_num = 2,
+	icon_outline = 0,
+	id = 2100523,
+	investigation_ratio = 0,
+	is_ai = 1,
+	is_air_attack = 0,
+	is_ambush = 0,
+	is_limit_move = 1,
+	levelstage_bar = "",
+	lose_condition_display = "lose_condition_display_quanmie",
+	map = 2100521,
+	mitigation_level = 5,
+	mitigation_rate = 2,
+	model = 2,
+	name = "A New Path",
+	num_1 = 1,
+	num_2 = 11,
+	num_3 = 1,
+	oil = 10,
+	pop_pic = "",
+	pos_x = "0.665625",
+	pos_y = "0.459722223",
+	pre_story = 0,
+	profiles = "Does a single act of determination speak louder than a thousand words? Cast aside your impassive mantle and fight alongside your friends.",
+	progress_boss = 100,
+	special_operation_list = "",
+	star_require_1 = 1,
+	star_require_2 = 2,
+	star_require_3 = 3,
+	story_refresh_boss = "ZIJIANGJINLAN16",
+	submarine_num = 1,
+	support_group_num = 0,
+	time = 43200,
+	type = 1,
+	uifx = "",
+	unlocklevel = 0,
+	win_condition_display = "win_condition_display_qijian",
+	pre_chapter = {
+		{
+			2100522,
+		},
+	},
+	scale = {
+		0.34,
+		0.53,
+		1.5,
+	},
+	limitation = {},
+	property_limitation = {},
+	expedition_id_weight_list = {
+		{
+			1680201,
+			15,
+			0,
+		},
+		{
+			1680202,
+			20,
+			0,
+		},
+		{
+			1680203,
+			30,
+			1,
+		},
+		{
+			1680204,
+			15,
+			0,
+		},
+		{
+			1680205,
+			20,
+			0,
+		},
+		{
+			1680206,
+			30,
+			1,
+		},
+		{
+			1680207,
+			15,
+			0,
+		},
+		{
+			1680208,
+			20,
+			0,
+		},
+		{
+			1680209,
+			30,
+			1,
+		},
+	},
+	ambush_expedition_list = {},
+	guarder_expedition_list = {},
+	elite_expedition_list = {
+		1680205,
+		1680208,
+	},
+	ai_expedition_list = {
+		1680305,
+		1680306,
+		1680307,
+	},
+	patrolai_expedition_list = {
+		1,
+	},
+	submarine_expedition_list = {
+		1,
+	},
+	boss_expedition_id = {
+		1680213,
+	},
+	enemy_refresh = {
+		1,
+		1,
+		1,
+		1,
+		1,
+	},
+	elite_refresh = {
+		1,
+		0,
+		0,
+		0,
+		0,
+	},
+	ai_refresh = {
+		1,
+	},
+	patrolai_refresh = {
+		0,
+	},
+	submarine_refresh = {
+		0,
+	},
+	use_oil_limit = {},
+	win_condition = {
+		{
+			1,
+			1,
+		},
+	},
+	lose_condition = {
+		{
+			1,
+			0,
+		},
+	},
+	icon = {
+		"qingchuzhe",
+	},
+	awards = {
+		{
+			2,
+			58694,
+		},
+		{
+			2,
+			58682,
+		},
+		{
+			2,
+			54012,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			59001,
+		},
+	},
+	grids = {
+		{
+			7,
+			7,
+			false,
+			0,
+		},
+		{
+			7,
+			6,
+			false,
+			0,
+		},
+		{
+			7,
+			5,
+			true,
+			0,
+		},
+		{
+			7,
+			4,
+			true,
+			4,
+		},
+		{
+			7,
+			3,
+			true,
+			0,
+		},
+		{
+			7,
+			2,
+			true,
+			0,
+		},
+		{
+			7,
+			1,
+			true,
+			0,
+		},
+		{
+			7,
+			0,
+			true,
+			0,
+		},
+		{
+			6,
+			7,
+			false,
+			0,
+		},
+		{
+			6,
+			6,
+			false,
+			0,
+		},
+		{
+			6,
+			5,
+			true,
+			6,
+		},
+		{
+			6,
+			4,
+			true,
+			0,
+		},
+		{
+			6,
+			3,
+			true,
+			8,
+		},
+		{
+			6,
+			2,
+			false,
+			0,
+		},
+		{
+			6,
+			1,
+			false,
+			0,
+		},
+		{
+			6,
+			0,
+			true,
+			0,
+		},
+		{
+			5,
+			7,
+			true,
+			0,
+		},
+		{
+			5,
+			6,
+			true,
+			4,
+		},
+		{
+			5,
+			5,
+			true,
+			0,
+		},
+		{
+			5,
+			4,
+			true,
+			0,
+		},
+		{
+			5,
+			3,
+			false,
+			0,
+		},
+		{
+			5,
+			2,
+			false,
+			0,
+		},
+		{
+			5,
+			1,
+			false,
+			0,
+		},
+		{
+			5,
+			0,
+			true,
+			0,
+		},
+		{
+			4,
+			7,
+			true,
+			6,
+		},
+		{
+			4,
+			6,
+			true,
+			0,
+		},
+		{
+			4,
+			5,
+			true,
+			16,
+		},
+		{
+			4,
+			4,
+			true,
+			6,
+		},
+		{
+			4,
+			3,
+			false,
+			0,
+		},
+		{
+			4,
+			2,
+			false,
+			0,
+		},
+		{
+			4,
+			1,
+			false,
+			0,
+		},
+		{
+			4,
+			0,
+			true,
+			0,
+		},
+		{
+			3,
+			7,
+			true,
+			0,
+		},
+		{
+			3,
+			6,
+			true,
+			12,
+		},
+		{
+			3,
+			5,
+			true,
+			0,
+		},
+		{
+			3,
+			4,
+			true,
+			4,
+		},
+		{
+			3,
+			3,
+			true,
+			0,
+		},
+		{
+			3,
+			2,
+			true,
+			6,
+		},
+		{
+			3,
+			1,
+			true,
+			0,
+		},
+		{
+			3,
+			0,
+			true,
+			6,
+		},
+		{
+			2,
+			7,
+			true,
+			0,
+		},
+		{
+			2,
+			6,
+			true,
+			0,
+		},
+		{
+			2,
+			5,
+			false,
+			0,
+		},
+		{
+			2,
+			4,
+			true,
+			0,
+		},
+		{
+			2,
+			3,
+			true,
+			0,
+		},
+		{
+			2,
+			2,
+			true,
+			0,
+		},
+		{
+			2,
+			1,
+			true,
+			0,
+		},
+		{
+			2,
+			0,
+			true,
+			0,
+		},
+		{
+			1,
+			7,
+			true,
+			1,
+		},
+		{
+			1,
+			6,
+			true,
+			0,
+		},
+		{
+			1,
+			5,
+			true,
+			0,
+		},
+		{
+			1,
+			4,
+			true,
+			12,
+		},
+		{
+			1,
+			3,
+			true,
+			0,
+		},
+		{
+			1,
+			2,
+			true,
+			4,
+		},
+		{
+			1,
+			1,
+			true,
+			0,
+		},
+		{
+			1,
+			0,
+			true,
+			6,
+		},
+		{
+			0,
+			7,
+			true,
+			0,
+		},
+		{
+			0,
+			6,
+			true,
+			1,
+		},
+		{
+			0,
+			5,
+			true,
+			0,
+		},
+		{
+			0,
+			4,
+			true,
+			0,
+		},
+		{
+			0,
+			3,
+			true,
+			6,
+		},
+		{
+			0,
+			2,
+			false,
+			0,
+		},
+		{
+			0,
+			1,
+			false,
+			0,
+		},
+		{
+			0,
+			0,
+			false,
+			0,
+		},
+	},
+	float_items = {
+		{
+			6,
+			6,
+			"wuzang_normal_I_2x2_2",
+			64,
+			-52,
+		},
+		{
+			4,
+			1,
+			"wuzang_normal_sp4",
+			107,
+			-67,
+		},
+		{
+			2,
+			5,
+			"wuzang_normal_I_1x1_1",
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			"wuzang_normal_I_3x1_2",
+			104,
+			-8,
+		},
+	},
+	ambush_event_ratio = {},
+	ambush_ratio_extra = {},
+	theme = {
+		"sea_wuzang_normal",
+		45,
+		20,
+		-179,
+		-355,
+		100,
+		100,
+		4,
+		4,
+		"",
+	},
+	box_list = {},
+	random_box_list = {
+		4,
+		22,
+		102,
+		1004,
+		5001,
+	},
+	box_refresh = {
+		0,
+	},
+	box_auto_pick = {},
+	story_refresh = {
+		"ZIJIANGJINLAN15",
+	},
+	defeat_story = {
+		"ZIJIANGJINLAN17",
+		"ZIJIANGJINLAN18",
+	},
+	defeat_story_count = {
+		1,
+		2,
+	},
+	npc_data = {},
+	risk_levels = {
+		{
+			5,
+			4,
+		},
+		{
+			3,
+			2,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			0,
+			0,
+		},
+	},
+	land_based = {},
+	chapter_strategy = {
+		200052,
+	},
+	wall_prefab = {},
+	alarm_cell = {},
+	weather_grids = {},
+}
+
+_G.pg.base.chapter_template[2100524] = {
+	ItemTransformPattern = "",
+	act_id = 100001,
+	air_dominance = 210,
+	ammo_submarine = 0,
+	ammo_total = 5,
+	avoid_ratio = 10,
+	avoid_require = 0,
+	best_air_dominance = 275,
+	bg = "",
+	bgm = "musashi-2",
+	boss_refresh = 4,
+	chapter_fx = "",
+	chapter_name = "B1",
+	chapter_tag = 0,
+	collection_team = 0,
+	count = 0,
+	difficulty = 5,
+	enter_story = "ZIJIANGJINLAN20",
+	enter_story_limit = "",
+	event_skip = 0,
+	formation = 2100522,
+	friendly_id = 0,
+	group_num = 2,
+	icon_outline = 0,
+	id = 2100524,
+	investigation_ratio = 0,
+	is_ai = 1,
+	is_air_attack = 0,
+	is_ambush = 0,
+	is_limit_move = 1,
+	levelstage_bar = "",
+	lose_condition_display = "lose_condition_display_quanmie",
+	map = 2100522,
+	mitigation_level = 5,
+	mitigation_rate = 2,
+	model = 2,
+	name = "Irreconciliable Promises",
+	num_1 = 1,
+	num_2 = 14,
+	num_3 = 1,
+	oil = 10,
+	pop_pic = "",
+	pos_x = "0.23125",
+	pos_y = "0.302777777",
+	pre_story = 0,
+	profiles = "To confront the enemy without conflict - a lofty ideal, or egotistical naivete?",
+	progress_boss = 100,
+	special_operation_list = "",
+	star_require_1 = 1,
+	star_require_2 = 2,
+	star_require_3 = 3,
+	story_refresh_boss = "ZIJIANGJINLAN21",
+	submarine_num = 1,
+	support_group_num = 0,
+	time = 43200,
+	type = 1,
+	uifx = "",
+	unlocklevel = 0,
+	win_condition_display = "win_condition_display_qijian",
+	pre_chapter = {
+		{
+			2100523,
+		},
+	},
+	scale = {
+		0.34,
+		0.53,
+		1.5,
+	},
+	limitation = {},
+	property_limitation = {},
+	expedition_id_weight_list = {
+		{
+			1681001,
+			15,
+			0,
+		},
+		{
+			1681002,
+			20,
+			0,
+		},
+		{
+			1681003,
+			30,
+			1,
+		},
+		{
+			1681004,
+			15,
+			0,
+		},
+		{
+			1681005,
+			20,
+			0,
+		},
+		{
+			1681006,
+			30,
+			1,
+		},
+		{
+			1681007,
+			15,
+			0,
+		},
+		{
+			1681008,
+			20,
+			0,
+		},
+		{
+			1681009,
+			30,
+			1,
+		},
+	},
+	ambush_expedition_list = {},
+	guarder_expedition_list = {},
+	elite_expedition_list = {
+		1681005,
+		1681008,
+	},
+	ai_expedition_list = {
+		1681301,
+		1681302,
+		1681303,
+	},
+	patrolai_expedition_list = {
+		1,
+	},
+	submarine_expedition_list = {
+		1,
+	},
+	boss_expedition_id = {
+		1681013,
+	},
+	enemy_refresh = {
+		1,
+		1,
+		1,
+		1,
+		1,
+		1,
+	},
+	elite_refresh = {
+		1,
+		0,
+		1,
+		0,
+		1,
+	},
+	ai_refresh = {
+		1,
+	},
+	patrolai_refresh = {
+		0,
+	},
+	submarine_refresh = {
+		0,
+	},
+	use_oil_limit = {},
+	win_condition = {
+		{
+			1,
+			1,
+		},
+	},
+	lose_condition = {
+		{
+			1,
+			0,
+		},
+	},
+	icon = {
+		"unknown3",
+	},
+	awards = {
+		{
+			2,
+			58695,
+		},
+		{
+			2,
+			58683,
+		},
+		{
+			2,
+			54012,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+	},
+	grids = {
+		{
+			7,
+			7,
+			true,
+			0,
+		},
+		{
+			7,
+			6,
+			true,
+			1,
+		},
+		{
+			7,
+			5,
+			true,
+			0,
+		},
+		{
+			7,
+			4,
+			true,
+			0,
+		},
+		{
+			7,
+			3,
+			false,
+			0,
+		},
+		{
+			7,
+			2,
+			false,
+			0,
+		},
+		{
+			7,
+			1,
+			false,
+			0,
+		},
+		{
+			7,
+			0,
+			true,
+			0,
+		},
+		{
+			6,
+			7,
+			true,
+			1,
+		},
+		{
+			6,
+			6,
+			true,
+			0,
+		},
+		{
+			6,
+			5,
+			true,
+			0,
+		},
+		{
+			6,
+			4,
+			true,
+			12,
+		},
+		{
+			6,
+			3,
+			true,
+			0,
+		},
+		{
+			6,
+			2,
+			true,
+			4,
+		},
+		{
+			6,
+			1,
+			true,
+			0,
+		},
+		{
+			6,
+			0,
+			true,
+			0,
+		},
+		{
+			5,
+			7,
+			true,
+			0,
+		},
+		{
+			5,
+			6,
+			true,
+			0,
+		},
+		{
+			5,
+			5,
+			false,
+			0,
+		},
+		{
+			5,
+			4,
+			true,
+			0,
+		},
+		{
+			5,
+			3,
+			true,
+			6,
+		},
+		{
+			5,
+			2,
+			true,
+			0,
+		},
+		{
+			5,
+			1,
+			true,
+			6,
+		},
+		{
+			5,
+			0,
+			false,
+			0,
+		},
+		{
+			4,
+			7,
+			true,
+			0,
+		},
+		{
+			4,
+			6,
+			true,
+			12,
+		},
+		{
+			4,
+			5,
+			true,
+			6,
+		},
+		{
+			4,
+			4,
+			true,
+			4,
+		},
+		{
+			4,
+			3,
+			true,
+			16,
+		},
+		{
+			4,
+			2,
+			true,
+			0,
+		},
+		{
+			4,
+			1,
+			true,
+			0,
+		},
+		{
+			4,
+			0,
+			true,
+			4,
+		},
+		{
+			3,
+			7,
+			true,
+			0,
+		},
+		{
+			3,
+			6,
+			true,
+			0,
+		},
+		{
+			3,
+			5,
+			true,
+			0,
+		},
+		{
+			3,
+			4,
+			true,
+			0,
+		},
+		{
+			3,
+			3,
+			true,
+			0,
+		},
+		{
+			3,
+			2,
+			true,
+			0,
+		},
+		{
+			3,
+			1,
+			true,
+			8,
+		},
+		{
+			3,
+			0,
+			true,
+			0,
+		},
+		{
+			2,
+			7,
+			true,
+			6,
+		},
+		{
+			2,
+			6,
+			false,
+			0,
+		},
+		{
+			2,
+			5,
+			true,
+			4,
+		},
+		{
+			2,
+			4,
+			true,
+			0,
+		},
+		{
+			2,
+			3,
+			true,
+			6,
+		},
+		{
+			2,
+			2,
+			false,
+			0,
+		},
+		{
+			2,
+			1,
+			false,
+			0,
+		},
+		{
+			2,
+			0,
+			true,
+			0,
+		},
+		{
+			1,
+			7,
+			true,
+			0,
+		},
+		{
+			1,
+			6,
+			false,
+			0,
+		},
+		{
+			1,
+			5,
+			true,
+			6,
+		},
+		{
+			1,
+			4,
+			true,
+			0,
+		},
+		{
+			1,
+			3,
+			true,
+			6,
+		},
+		{
+			1,
+			2,
+			true,
+			0,
+		},
+		{
+			1,
+			1,
+			true,
+			0,
+		},
+		{
+			1,
+			0,
+			true,
+			0,
+		},
+		{
+			0,
+			7,
+			true,
+			0,
+		},
+		{
+			0,
+			6,
+			true,
+			0,
+		},
+		{
+			0,
+			5,
+			true,
+			0,
+		},
+		{
+			0,
+			4,
+			true,
+			6,
+		},
+		{
+			0,
+			3,
+			true,
+			0,
+		},
+		{
+			0,
+			2,
+			true,
+			0,
+		},
+		{
+			0,
+			1,
+			true,
+			0,
+		},
+		{
+			0,
+			0,
+			false,
+			0,
+		},
+	},
+	float_items = {
+		{
+			7,
+			1,
+			"wuzang_normal_I_3x1_1",
+			95,
+			6,
+		},
+		{
+			5,
+			5,
+			"wuzang_normal_I_1x1_1",
+			0,
+			0,
+		},
+		{
+			5,
+			0,
+			"wuzang_normal_I_1x1_3",
+			5,
+			-23,
+		},
+		{
+			2,
+			1,
+			"wuzang_normal_sp1",
+			53,
+			40,
+		},
+		{
+			1,
+			6,
+			"wuzang_normal_I_1x2_2",
+			0,
+			-54,
+		},
+		{
+			0,
+			0,
+			"wuzang_normal_I_1x1_2",
+			10,
+			0,
+		},
+	},
+	ambush_event_ratio = {},
+	ambush_ratio_extra = {},
+	theme = {
+		"sea_wuzang_normal",
+		45,
+		20,
+		-206,
+		35,
+		100,
+		100,
+		4,
+		4,
+		"",
+	},
+	box_list = {},
+	random_box_list = {
+		5,
+		22,
+		103,
+		1004,
+		5001,
+	},
+	box_refresh = {
+		0,
+	},
+	box_auto_pick = {},
+	story_refresh = {},
+	defeat_story = {
+		"ZIJIANGJINLAN22",
+		"ZIJIANGJINLAN23",
+	},
+	defeat_story_count = {
+		1,
+		2,
+	},
+	npc_data = {},
+	risk_levels = {
+		{
+			5,
+			4,
+		},
+		{
+			3,
+			2,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			0,
+			0,
+		},
+	},
+	land_based = {},
+	chapter_strategy = {
+		200052,
+	},
+	wall_prefab = {},
+	alarm_cell = {},
+	weather_grids = {},
+}
+
+_G.pg.base.chapter_template[2100525] = {
+	ItemTransformPattern = "",
+	act_id = 100001,
+	air_dominance = 270,
+	ammo_submarine = 0,
+	ammo_total = 5,
+	avoid_ratio = 11,
+	avoid_require = 0,
+	best_air_dominance = 350,
+	bg = "",
+	bgm = "musashi-2",
+	boss_refresh = 5,
+	chapter_fx = "",
+	chapter_name = "B2",
+	chapter_tag = 0,
+	collection_team = 0,
+	count = 0,
+	difficulty = 6,
+	enter_story = "ZIJIANGJINLAN24",
+	enter_story_limit = "",
+	event_skip = 0,
+	formation = 2100522,
+	friendly_id = 0,
+	group_num = 2,
+	icon_outline = 0,
+	id = 2100525,
+	investigation_ratio = 0,
+	is_ai = 1,
+	is_air_attack = 0,
+	is_ambush = 0,
+	is_limit_move = 1,
+	levelstage_bar = "",
+	lose_condition_display = "lose_condition_display_quanmie",
+	map = 2100522,
+	mitigation_level = 5,
+	mitigation_rate = 2,
+	model = 2,
+	name = "A Shifting Board",
+	num_1 = 1,
+	num_2 = 15,
+	num_3 = 1,
+	oil = 10,
+	pop_pic = "",
+	pos_x = "0.5390625",
+	pos_y = "0.069444444",
+	pre_story = 0,
+	profiles = "As the game shifts, offense turns into defense, and battles become fiercer and fiercer. What does it mean to seize victory?",
+	progress_boss = 100,
+	special_operation_list = "",
+	star_require_1 = 1,
+	star_require_2 = 2,
+	star_require_3 = 3,
+	story_refresh_boss = "ZIJIANGJINLAN26",
+	submarine_num = 1,
+	support_group_num = 0,
+	time = 43200,
+	type = 1,
+	uifx = "",
+	unlocklevel = 0,
+	win_condition_display = "win_condition_display_qijian",
+	pre_chapter = {
+		{
+			2100524,
+		},
+	},
+	scale = {
+		0.34,
+		0.53,
+		1.5,
+	},
+	limitation = {},
+	property_limitation = {},
+	expedition_id_weight_list = {
+		{
+			1681101,
+			15,
+			0,
+		},
+		{
+			1681102,
+			20,
+			0,
+		},
+		{
+			1681103,
+			30,
+			1,
+		},
+		{
+			1681104,
+			15,
+			0,
+		},
+		{
+			1681105,
+			20,
+			0,
+		},
+		{
+			1681106,
+			30,
+			1,
+		},
+		{
+			1681107,
+			15,
+			0,
+		},
+		{
+			1681108,
+			20,
+			0,
+		},
+		{
+			1681109,
+			30,
+			1,
+		},
+	},
+	ambush_expedition_list = {},
+	guarder_expedition_list = {},
+	elite_expedition_list = {
+		1681105,
+		1681108,
+	},
+	ai_expedition_list = {
+		1681304,
+		1681305,
+		1681306,
+		1681307,
+	},
+	patrolai_expedition_list = {
+		1,
+	},
+	submarine_expedition_list = {
+		1,
+	},
+	boss_expedition_id = {
+		1681113,
+	},
+	enemy_refresh = {
+		1,
+		1,
+		1,
+		1,
+		1,
+		1,
+	},
+	elite_refresh = {
+		1,
+		0,
+		1,
+		0,
+		1,
+	},
+	ai_refresh = {
+		1,
+	},
+	patrolai_refresh = {
+		0,
+	},
+	submarine_refresh = {
+		0,
+	},
+	use_oil_limit = {},
+	win_condition = {
+		{
+			1,
+			1,
+		},
+	},
+	lose_condition = {
+		{
+			1,
+			0,
+		},
+	},
+	icon = {
+		"sanli",
+	},
+	awards = {
+		{
+			2,
+			58696,
+		},
+		{
+			2,
+			58684,
+		},
+		{
+			2,
+			54012,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+	},
+	grids = {
+		{
+			5,
+			12,
+			false,
+			0,
+		},
+		{
+			5,
+			11,
+			false,
+			0,
+		},
+		{
+			5,
+			10,
+			false,
+			0,
+		},
+		{
+			5,
+			9,
+			true,
+			4,
+		},
+		{
+			5,
+			8,
+			true,
+			0,
+		},
+		{
+			5,
+			7,
+			false,
+			0,
+		},
+		{
+			5,
+			6,
+			false,
+			0,
+		},
+		{
+			5,
+			5,
+			true,
+			0,
+		},
+		{
+			5,
+			4,
+			true,
+			6,
+		},
+		{
+			5,
+			3,
+			false,
+			0,
+		},
+		{
+			5,
+			2,
+			true,
+			6,
+		},
+		{
+			5,
+			1,
+			true,
+			6,
+		},
+		{
+			5,
+			0,
+			true,
+			0,
+		},
+		{
+			4,
+			12,
+			true,
+			0,
+		},
+		{
+			4,
+			11,
+			true,
+			0,
+		},
+		{
+			4,
+			10,
+			true,
+			0,
+		},
+		{
+			4,
+			9,
+			true,
+			0,
+		},
+		{
+			4,
+			8,
+			true,
+			12,
+		},
+		{
+			4,
+			7,
+			false,
+			0,
+		},
+		{
+			4,
+			6,
+			false,
+			0,
+		},
+		{
+			4,
+			5,
+			true,
+			4,
+		},
+		{
+			4,
+			4,
+			true,
+			0,
+		},
+		{
+			4,
+			3,
+			true,
+			0,
+		},
+		{
+			4,
+			2,
+			true,
+			0,
+		},
+		{
+			4,
+			1,
+			true,
+			0,
+		},
+		{
+			4,
+			0,
+			true,
+			6,
+		},
+		{
+			3,
+			12,
+			false,
+			0,
+		},
+		{
+			3,
+			11,
+			false,
+			0,
+		},
+		{
+			3,
+			10,
+			true,
+			1,
+		},
+		{
+			3,
+			9,
+			true,
+			0,
+		},
+		{
+			3,
+			8,
+			true,
+			0,
+		},
+		{
+			3,
+			7,
+			true,
+			12,
+		},
+		{
+			3,
+			6,
+			true,
+			0,
+		},
+		{
+			3,
+			5,
+			true,
+			16,
+		},
+		{
+			3,
+			4,
+			true,
+			0,
+		},
+		{
+			3,
+			3,
+			true,
+			0,
+		},
+		{
+			3,
+			2,
+			true,
+			8,
+		},
+		{
+			3,
+			1,
+			false,
+			0,
+		},
+		{
+			3,
+			0,
+			false,
+			0,
+		},
+		{
+			2,
+			12,
+			false,
+			0,
+		},
+		{
+			2,
+			11,
+			false,
+			0,
+		},
+		{
+			2,
+			10,
+			true,
+			1,
+		},
+		{
+			2,
+			9,
+			true,
+			0,
+		},
+		{
+			2,
+			8,
+			true,
+			0,
+		},
+		{
+			2,
+			7,
+			true,
+			12,
+		},
+		{
+			2,
+			6,
+			true,
+			0,
+		},
+		{
+			2,
+			5,
+			true,
+			16,
+		},
+		{
+			2,
+			4,
+			true,
+			0,
+		},
+		{
+			2,
+			3,
+			true,
+			6,
+		},
+		{
+			2,
+			2,
+			false,
+			0,
+		},
+		{
+			2,
+			1,
+			false,
+			0,
+		},
+		{
+			2,
+			0,
+			false,
+			0,
+		},
+		{
+			1,
+			12,
+			true,
+			0,
+		},
+		{
+			1,
+			11,
+			true,
+			0,
+		},
+		{
+			1,
+			10,
+			true,
+			0,
+		},
+		{
+			1,
+			9,
+			true,
+			0,
+		},
+		{
+			1,
+			8,
+			true,
+			12,
+		},
+		{
+			1,
+			7,
+			false,
+			0,
+		},
+		{
+			1,
+			6,
+			false,
+			0,
+		},
+		{
+			1,
+			5,
+			true,
+			4,
+		},
+		{
+			1,
+			4,
+			true,
+			0,
+		},
+		{
+			1,
+			3,
+			true,
+			6,
+		},
+		{
+			1,
+			2,
+			false,
+			0,
+		},
+		{
+			1,
+			1,
+			false,
+			0,
+		},
+		{
+			1,
+			0,
+			false,
+			0,
+		},
+		{
+			0,
+			12,
+			false,
+			0,
+		},
+		{
+			0,
+			11,
+			false,
+			0,
+		},
+		{
+			0,
+			10,
+			false,
+			0,
+		},
+		{
+			0,
+			9,
+			true,
+			4,
+		},
+		{
+			0,
+			8,
+			true,
+			0,
+		},
+		{
+			0,
+			7,
+			false,
+			0,
+		},
+		{
+			0,
+			6,
+			false,
+			0,
+		},
+		{
+			0,
+			5,
+			true,
+			0,
+		},
+		{
+			0,
+			4,
+			true,
+			6,
+		},
+		{
+			0,
+			3,
+			true,
+			0,
+		},
+		{
+			0,
+			2,
+			true,
+			0,
+		},
+		{
+			0,
+			1,
+			true,
+			0,
+		},
+		{
+			0,
+			0,
+			true,
+			0,
+		},
+	},
+	float_items = {
+		{
+			5,
+			10,
+			"wuzang_normal_II_3x1_2",
+			106,
+			-1,
+		},
+		{
+			5,
+			3,
+			"wuzang_normal_II_1x1_2",
+			0,
+			6,
+		},
+		{
+			4,
+			6,
+			"wuzang_normal_II_2x2_2",
+			49,
+			-45,
+		},
+		{
+			2,
+			11,
+			"wuzang_normal_sp2",
+			55,
+			-8,
+		},
+		{
+			1,
+			0,
+			"wuzang_normal_sp4",
+			111,
+			-66,
+		},
+		{
+			0,
+			10,
+			"wuzang_normal_II_3x1_1",
+			102,
+			3,
+		},
+		{
+			0,
+			6,
+			"wuzang_normal_II_2x2_2",
+			57,
+			-37,
+		},
+	},
+	ambush_event_ratio = {},
+	ambush_ratio_extra = {},
+	theme = {
+		"sea_wuzang_normal",
+		45,
+		20,
+		-736,
+		-198,
+		100,
+		100,
+		4,
+		4,
+		"",
+	},
+	box_list = {},
+	random_box_list = {
+		5,
+		22,
+		103,
+		1004,
+		5001,
+	},
+	box_refresh = {
+		0,
+	},
+	box_auto_pick = {},
+	story_refresh = {
+		"ZIJIANGJINLAN25",
+	},
+	defeat_story = {
+		"ZIJIANGJINLAN28",
+		"ZIJIANGJINLAN29",
+	},
+	defeat_story_count = {
+		1,
+		2,
+	},
+	npc_data = {},
+	risk_levels = {
+		{
+			5,
+			4,
+		},
+		{
+			3,
+			2,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			0,
+			0,
+		},
+	},
+	land_based = {},
+	chapter_strategy = {
+		200052,
+	},
+	wall_prefab = {},
+	alarm_cell = {},
+	weather_grids = {},
+}
+
+_G.pg.base.chapter_template[2100526] = {
+	ItemTransformPattern = "",
+	act_id = 100001,
+	air_dominance = 330,
+	ammo_submarine = 0,
+	ammo_total = 5,
+	avoid_ratio = 12,
+	avoid_require = 0,
+	best_air_dominance = 430,
+	bg = "",
+	bgm = "musashi-2",
+	boss_refresh = 5,
+	chapter_fx = "",
+	chapter_name = "B3",
+	chapter_tag = 0,
+	collection_team = 0,
+	count = 0,
+	difficulty = 7,
+	enter_story = "ZIJIANGJINLAN30",
+	enter_story_limit = "",
+	event_skip = 0,
+	formation = 2100522,
+	friendly_id = 0,
+	group_num = 2,
+	icon_outline = 0,
+	id = 2100526,
+	investigation_ratio = 0,
+	is_ai = 1,
+	is_air_attack = 0,
+	is_ambush = 0,
+	is_limit_move = 1,
+	levelstage_bar = "",
+	lose_condition_display = "lose_condition_display_quanmie",
+	map = 2100522,
+	mitigation_level = 5,
+	mitigation_rate = 2,
+	model = 2,
+	name = "Blooming Lycoris",
+	num_1 = 1,
+	num_2 = 21,
+	num_3 = 1,
+	oil = 10,
+	pop_pic = "",
+	pos_x = "0.67109375",
+	pos_y = "0.511111111",
+	pre_story = 0,
+	profiles = "A clash of convictions causes a flower of battle to bloom on the battlefield. The weeping moon sheds a tear that illuminates the path of the victor alone.",
+	progress_boss = 100,
+	special_operation_list = "",
+	star_require_1 = 1,
+	star_require_2 = 2,
+	star_require_3 = 3,
+	story_refresh_boss = "ZIJIANGJINLAN31",
+	submarine_num = 1,
+	support_group_num = 0,
+	time = 43200,
+	type = 1,
+	uifx = "",
+	unlocklevel = 0,
+	win_condition_display = "win_condition_display_qijian",
+	pre_chapter = {
+		{
+			2100525,
+		},
+	},
+	scale = {
+		0.34,
+		0.53,
+		1.5,
+	},
+	limitation = {},
+	property_limitation = {},
+	expedition_id_weight_list = {
+		{
+			1681201,
+			15,
+			0,
+		},
+		{
+			1681202,
+			20,
+			0,
+		},
+		{
+			1681203,
+			30,
+			1,
+		},
+		{
+			1681204,
+			15,
+			0,
+		},
+		{
+			1681205,
+			20,
+			0,
+		},
+		{
+			1681206,
+			30,
+			1,
+		},
+		{
+			1681207,
+			15,
+			0,
+		},
+		{
+			1681208,
+			20,
+			0,
+		},
+		{
+			1681209,
+			30,
+			1,
+		},
+	},
+	ambush_expedition_list = {},
+	guarder_expedition_list = {},
+	elite_expedition_list = {
+		1681205,
+		1681208,
+	},
+	ai_expedition_list = {
+		1681308,
+		1681309,
+		1681310,
+		1681311,
+	},
+	patrolai_expedition_list = {
+		1,
+	},
+	submarine_expedition_list = {
+		1,
+	},
+	boss_expedition_id = {
+		1681213,
+	},
+	enemy_refresh = {
+		1,
+		1,
+		1,
+		1,
+		1,
+		1,
+	},
+	elite_refresh = {
+		1,
+		0,
+		1,
+		0,
+		1,
+	},
+	ai_refresh = {
+		2,
+	},
+	patrolai_refresh = {
+		0,
+	},
+	submarine_refresh = {
+		0,
+	},
+	use_oil_limit = {},
+	win_condition = {
+		{
+			1,
+			1,
+		},
+	},
+	lose_condition = {
+		{
+			1,
+			0,
+		},
+	},
+	icon = {
+		"sairenboss5",
+	},
+	awards = {
+		{
+			2,
+			58697,
+		},
+		{
+			2,
+			58685,
+		},
+		{
+			2,
+			54012,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+	},
+	grids = {
+		{
+			8,
+			8,
+			false,
+			0,
+		},
+		{
+			8,
+			7,
+			false,
+			0,
+		},
+		{
+			8,
+			6,
+			false,
+			0,
+		},
+		{
+			8,
+			5,
+			true,
+			1,
+		},
+		{
+			8,
+			4,
+			true,
+			0,
+		},
+		{
+			8,
+			3,
+			true,
+			1,
+		},
+		{
+			8,
+			2,
+			false,
+			0,
+		},
+		{
+			8,
+			1,
+			false,
+			0,
+		},
+		{
+			8,
+			0,
+			false,
+			0,
+		},
+		{
+			7,
+			8,
+			true,
+			0,
+		},
+		{
+			7,
+			7,
+			true,
+			0,
+		},
+		{
+			7,
+			6,
+			true,
+			0,
+		},
+		{
+			7,
+			5,
+			true,
+			0,
+		},
+		{
+			7,
+			4,
+			true,
+			16,
+		},
+		{
+			7,
+			3,
+			true,
+			0,
+		},
+		{
+			7,
+			2,
+			true,
+			0,
+		},
+		{
+			7,
+			1,
+			true,
+			0,
+		},
+		{
+			7,
+			0,
+			true,
+			0,
+		},
+		{
+			6,
+			8,
+			true,
+			0,
+		},
+		{
+			6,
+			7,
+			true,
+			6,
+		},
+		{
+			6,
+			6,
+			false,
+			0,
+		},
+		{
+			6,
+			5,
+			true,
+			0,
+		},
+		{
+			6,
+			4,
+			true,
+			12,
+		},
+		{
+			6,
+			3,
+			true,
+			0,
+		},
+		{
+			6,
+			2,
+			false,
+			0,
+		},
+		{
+			6,
+			1,
+			true,
+			6,
+		},
+		{
+			6,
+			0,
+			true,
+			0,
+		},
+		{
+			5,
+			8,
+			true,
+			0,
+		},
+		{
+			5,
+			7,
+			true,
+			0,
+		},
+		{
+			5,
+			6,
+			true,
+			4,
+		},
+		{
+			5,
+			5,
+			true,
+			0,
+		},
+		{
+			5,
+			4,
+			true,
+			8,
+		},
+		{
+			5,
+			3,
+			true,
+			0,
+		},
+		{
+			5,
+			2,
+			true,
+			4,
+		},
+		{
+			5,
+			1,
+			true,
+			0,
+		},
+		{
+			5,
+			0,
+			true,
+			0,
+		},
+		{
+			4,
+			8,
+			true,
+			6,
+		},
+		{
+			4,
+			7,
+			true,
+			0,
+		},
+		{
+			4,
+			6,
+			true,
+			12,
+		},
+		{
+			4,
+			5,
+			true,
+			0,
+		},
+		{
+			4,
+			4,
+			false,
+			0,
+		},
+		{
+			4,
+			3,
+			true,
+			0,
+		},
+		{
+			4,
+			2,
+			true,
+			12,
+		},
+		{
+			4,
+			1,
+			true,
+			0,
+		},
+		{
+			4,
+			0,
+			true,
+			6,
+		},
+		{
+			3,
+			8,
+			true,
+			0,
+		},
+		{
+			3,
+			7,
+			true,
+			0,
+		},
+		{
+			3,
+			6,
+			true,
+			4,
+		},
+		{
+			3,
+			5,
+			true,
+			0,
+		},
+		{
+			3,
+			4,
+			true,
+			0,
+		},
+		{
+			3,
+			3,
+			true,
+			0,
+		},
+		{
+			3,
+			2,
+			true,
+			4,
+		},
+		{
+			3,
+			1,
+			true,
+			0,
+		},
+		{
+			3,
+			0,
+			true,
+			0,
+		},
+		{
+			2,
+			8,
+			true,
+			0,
+		},
+		{
+			2,
+			7,
+			true,
+			6,
+		},
+		{
+			2,
+			6,
+			false,
+			0,
+		},
+		{
+			2,
+			5,
+			true,
+			4,
+		},
+		{
+			2,
+			4,
+			true,
+			12,
+		},
+		{
+			2,
+			3,
+			true,
+			4,
+		},
+		{
+			2,
+			2,
+			false,
+			0,
+		},
+		{
+			2,
+			1,
+			true,
+			6,
+		},
+		{
+			2,
+			0,
+			true,
+			0,
+		},
+		{
+			1,
+			8,
+			true,
+			0,
+		},
+		{
+			1,
+			7,
+			true,
+			6,
+		},
+		{
+			1,
+			6,
+			true,
+			6,
+		},
+		{
+			1,
+			5,
+			true,
+			0,
+		},
+		{
+			1,
+			4,
+			true,
+			0,
+		},
+		{
+			1,
+			3,
+			true,
+			0,
+		},
+		{
+			1,
+			2,
+			true,
+			6,
+		},
+		{
+			1,
+			1,
+			true,
+			6,
+		},
+		{
+			1,
+			0,
+			true,
+			0,
+		},
+		{
+			0,
+			8,
+			false,
+			0,
+		},
+		{
+			0,
+			7,
+			true,
+			0,
+		},
+		{
+			0,
+			6,
+			true,
+			0,
+		},
+		{
+			0,
+			5,
+			true,
+			0,
+		},
+		{
+			0,
+			4,
+			true,
+			6,
+		},
+		{
+			0,
+			3,
+			true,
+			0,
+		},
+		{
+			0,
+			2,
+			true,
+			0,
+		},
+		{
+			0,
+			1,
+			true,
+			0,
+		},
+		{
+			0,
+			0,
+			false,
+			0,
+		},
+	},
+	float_items = {
+		{
+			8,
+			6,
+			"wuzang_normal_II_3x1_2",
+			112,
+			0,
+		},
+		{
+			8,
+			0,
+			"wuzang_normal_II_3x1_1",
+			106,
+			0,
+		},
+		{
+			6,
+			6,
+			"wuzang_normal_II_1x1_2",
+			0,
+			7,
+		},
+		{
+			6,
+			2,
+			"wuzang_normal_II_1x1_2",
+			0,
+			11,
+		},
+		{
+			4,
+			4,
+			"wuzang_normal_sp5",
+			-36,
+			57,
+		},
+		{
+			2,
+			6,
+			"wuzang_normal_II_1x1_3",
+			0,
+			6,
+		},
+		{
+			2,
+			2,
+			"wuzang_normal_II_1x1_3",
+			-9,
+			4,
+		},
+		{
+			0,
+			8,
+			"wuzang_normal_I_1x1_2",
+			11,
+			0,
+		},
+		{
+			0,
+			0,
+			"wuzang_normal_I_1x1_2",
+			14,
+			-3,
+		},
+	},
+	ambush_event_ratio = {},
+	ambush_ratio_extra = {},
+	theme = {
+		"sea_wuzang_normal",
+		45,
+		20,
+		-242,
+		123,
+		100,
+		100,
+		4,
+		4,
+		"",
+	},
+	box_list = {},
+	random_box_list = {
+		5,
+		22,
+		103,
+		1004,
+		5001,
+	},
+	box_refresh = {
+		0,
+	},
+	box_auto_pick = {},
+	story_refresh = {},
+	defeat_story = {
+		"ZIJIANGJINLAN32",
+		"ZIJIANGJINLAN33",
+		"ZIJIANGJINLAN34",
+		"ZIJIANGJINLAN35",
+		"ZIJIANGJINLAN36",
+		"ZIJIANGJINLAN37",
+		"ZIJIANGJINLAN38",
+		"ZIJIANGJINLAN39",
+	},
+	defeat_story_count = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+	},
+	npc_data = {},
+	risk_levels = {
+		{
+			5,
+			4,
+		},
+		{
+			3,
+			2,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			0,
+			0,
+		},
+	},
+	land_based = {},
+	chapter_strategy = {
+		200052,
+	},
+	wall_prefab = {},
+	alarm_cell = {},
+	weather_grids = {},
+}
+
+_G.pg.base.chapter_template[2100531] = {
+	ItemTransformPattern = "",
+	act_id = 100001,
+	air_dominance = 455,
+	ammo_submarine = 0,
+	ammo_total = 5,
+	avoid_ratio = 12,
+	avoid_require = 0,
+	best_air_dominance = 590,
+	bg = "",
+	bgm = "musashi-1",
+	boss_refresh = 4,
+	chapter_fx = "",
+	chapter_name = "C1",
+	chapter_tag = 0,
+	collection_team = 0,
+	count = 0,
+	difficulty = 6,
+	enter_story = "ZIJIANGJINLAN2",
+	enter_story_limit = "",
+	event_skip = 0,
+	formation = 2100531,
+	friendly_id = 0,
+	group_num = 2,
+	icon_outline = 0,
+	id = 2100531,
+	investigation_ratio = 0,
+	is_ai = 1,
+	is_air_attack = 0,
+	is_ambush = 0,
+	is_limit_move = 1,
+	levelstage_bar = "",
+	lose_condition_display = "lose_condition_display_quanmie",
+	map = 2100531,
+	mitigation_level = 8,
+	mitigation_rate = 2,
+	model = 2,
+	name = "Violet Domain",
+	num_1 = 1,
+	num_2 = 13,
+	num_3 = 1,
+	oil = 10,
+	pop_pic = "",
+	pos_x = "0.2515625",
+	pos_y = "0.523611111",
+	pre_story = 0,
+	profiles = "A unique game of Go unfolds in a mysterious, sealed-off domain. Four players gather in a clash of wits and ideals.",
+	progress_boss = 100,
+	special_operation_list = "",
+	star_require_1 = 1,
+	star_require_2 = 2,
+	star_require_3 = 3,
+	story_refresh_boss = "ZIJIANGJINLAN4",
+	submarine_num = 1,
+	support_group_num = 0,
+	time = 43200,
+	type = 2,
+	uifx = "",
+	unlocklevel = 0,
+	win_condition_display = "win_condition_display_qijian",
+	pre_chapter = {
+		{
+			0,
+		},
+	},
+	scale = {
+		0.34,
+		0.53,
+		1.5,
+	},
+	limitation = {
+		{
+			{
+				"zhan",
+				0,
+				0,
+			},
+			{
+				3,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				0,
+				0,
+				0,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+	},
+	property_limitation = {
+		{
+			"level",
+			1,
+			70,
+		},
+		{
+			"cannon",
+			1,
+			500,
+		},
+		{
+			"dodge",
+			1,
+			350,
+		},
+	},
+	expedition_id_weight_list = {
+		{
+			1682001,
+			15,
+			0,
+		},
+		{
+			1682002,
+			20,
+			0,
+		},
+		{
+			1682003,
+			30,
+			1,
+		},
+		{
+			1682004,
+			15,
+			0,
+		},
+		{
+			1682005,
+			20,
+			0,
+		},
+		{
+			1682006,
+			30,
+			1,
+		},
+		{
+			1682007,
+			15,
+			0,
+		},
+		{
+			1682008,
+			20,
+			0,
+		},
+		{
+			1682009,
+			30,
+			1,
+		},
+	},
+	ambush_expedition_list = {},
+	guarder_expedition_list = {},
+	elite_expedition_list = {
+		1682005,
+		1682008,
+	},
+	ai_expedition_list = {
+		1682301,
+		1682302,
+		1682303,
+	},
+	patrolai_expedition_list = {
+		1,
+	},
+	submarine_expedition_list = {
+		1,
+	},
+	boss_expedition_id = {
+		1682013,
+	},
+	enemy_refresh = {
+		1,
+		1,
+		1,
+		1,
+		1,
+	},
+	elite_refresh = {
+		1,
+		0,
+		1,
+		0,
+		0,
+	},
+	ai_refresh = {
+		2,
+	},
+	patrolai_refresh = {
+		0,
+	},
+	submarine_refresh = {
+		0,
+	},
+	use_oil_limit = {},
+	win_condition = {
+		{
+			1,
+			1,
+		},
+	},
+	lose_condition = {
+		{
+			1,
+			0,
+		},
+	},
+	icon = {
+		"unknown1",
+	},
+	awards = {
+		{
+			2,
+			58710,
+		},
+		{
+			2,
+			58698,
+		},
+		{
+			2,
+			54013,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+	},
+	grids = {
+		{
+			7,
+			7,
+			true,
+			0,
+		},
+		{
+			7,
+			6,
+			false,
+			0,
+		},
+		{
+			7,
+			5,
+			false,
+			0,
+		},
+		{
+			7,
+			4,
+			true,
+			0,
+		},
+		{
+			7,
+			3,
+			true,
+			6,
+		},
+		{
+			7,
+			2,
+			true,
+			0,
+		},
+		{
+			7,
+			1,
+			true,
+			1,
+		},
+		{
+			7,
+			0,
+			true,
+			0,
+		},
+		{
+			6,
+			7,
+			true,
+			0,
+		},
+		{
+			6,
+			6,
+			false,
+			0,
+		},
+		{
+			6,
+			5,
+			false,
+			0,
+		},
+		{
+			6,
+			4,
+			true,
+			4,
+		},
+		{
+			6,
+			3,
+			true,
+			0,
+		},
+		{
+			6,
+			2,
+			true,
+			0,
+		},
+		{
+			6,
+			1,
+			true,
+			0,
+		},
+		{
+			6,
+			0,
+			true,
+			1,
+		},
+		{
+			5,
+			7,
+			true,
+			0,
+		},
+		{
+			5,
+			6,
+			true,
+			6,
+		},
+		{
+			5,
+			5,
+			true,
+			4,
+		},
+		{
+			5,
+			4,
+			true,
+			0,
+		},
+		{
+			5,
+			3,
+			true,
+			12,
+		},
+		{
+			5,
+			2,
+			false,
+			0,
+		},
+		{
+			5,
+			1,
+			true,
+			0,
+		},
+		{
+			5,
+			0,
+			true,
+			0,
+		},
+		{
+			4,
+			7,
+			true,
+			6,
+		},
+		{
+			4,
+			6,
+			true,
+			0,
+		},
+		{
+			4,
+			5,
+			true,
+			0,
+		},
+		{
+			4,
+			4,
+			true,
+			16,
+		},
+		{
+			4,
+			3,
+			true,
+			6,
+		},
+		{
+			4,
+			2,
+			false,
+			0,
+		},
+		{
+			4,
+			1,
+			true,
+			0,
+		},
+		{
+			4,
+			0,
+			true,
+			0,
+		},
+		{
+			3,
+			7,
+			true,
+			0,
+		},
+		{
+			3,
+			6,
+			true,
+			8,
+		},
+		{
+			3,
+			5,
+			true,
+			0,
+		},
+		{
+			3,
+			4,
+			true,
+			4,
+		},
+		{
+			3,
+			3,
+			true,
+			0,
+		},
+		{
+			3,
+			2,
+			true,
+			12,
+		},
+		{
+			3,
+			1,
+			true,
+			0,
+		},
+		{
+			3,
+			0,
+			true,
+			12,
+		},
+		{
+			2,
+			7,
+			true,
+			0,
+		},
+		{
+			2,
+			6,
+			false,
+			0,
+		},
+		{
+			2,
+			5,
+			false,
+			0,
+		},
+		{
+			2,
+			4,
+			true,
+			0,
+		},
+		{
+			2,
+			3,
+			true,
+			0,
+		},
+		{
+			2,
+			2,
+			true,
+			0,
+		},
+		{
+			2,
+			1,
+			true,
+			0,
+		},
+		{
+			2,
+			0,
+			true,
+			6,
+		},
+		{
+			1,
+			7,
+			true,
+			0,
+		},
+		{
+			1,
+			6,
+			false,
+			0,
+		},
+		{
+			1,
+			5,
+			false,
+			0,
+		},
+		{
+			1,
+			4,
+			true,
+			4,
+		},
+		{
+			1,
+			3,
+			true,
+			6,
+		},
+		{
+			1,
+			2,
+			false,
+			0,
+		},
+		{
+			1,
+			1,
+			true,
+			6,
+		},
+		{
+			1,
+			0,
+			true,
+			0,
+		},
+		{
+			0,
+			7,
+			true,
+			0,
+		},
+		{
+			0,
+			6,
+			true,
+			0,
+		},
+		{
+			0,
+			5,
+			true,
+			0,
+		},
+		{
+			0,
+			4,
+			true,
+			0,
+		},
+		{
+			0,
+			3,
+			true,
+			0,
+		},
+		{
+			0,
+			2,
+			false,
+			0,
+		},
+		{
+			0,
+			1,
+			false,
+			0,
+		},
+		{
+			0,
+			0,
+			true,
+			0,
+		},
+	},
+	float_items = {
+		{
+			6,
+			5,
+			"wuzang_hard_II_2x2_2",
+			50,
+			-50,
+		},
+		{
+			4,
+			2,
+			"wuzang_hard_II_1x2_2",
+			0,
+			-50,
+		},
+		{
+			1,
+			5,
+			"wuzang_hard_sp2",
+			65,
+			-8,
+		},
+		{
+			0,
+			1,
+			"wuzang_hard_II_2x2_1",
+			66,
+			-39,
+		},
+	},
+	ambush_event_ratio = {},
+	ambush_ratio_extra = {},
+	theme = {
+		"sea_wuzang_hard",
+		45,
+		20,
+		-143,
+		-8,
+		100,
+		100,
+		4,
+		4,
+		"",
+	},
+	box_list = {},
+	random_box_list = {
+		7,
+		23,
+		103,
+		1004,
+		5001,
+	},
+	box_refresh = {
+		0,
+	},
+	box_auto_pick = {},
+	story_refresh = {
+		"ZIJIANGJINLAN3",
+	},
+	defeat_story = {
+		"ZIJIANGJINLAN6",
+		"ZIJIANGJINLAN7",
+	},
+	defeat_story_count = {
+		1,
+		2,
+	},
+	npc_data = {},
+	risk_levels = {
+		{
+			8,
+			6,
+		},
+		{
+			5,
+			3,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			0,
+			0,
+		},
+	},
+	land_based = {},
+	chapter_strategy = {
+		200052,
+	},
+	wall_prefab = {},
+	alarm_cell = {},
+	weather_grids = {},
+}
+
+_G.pg.base.chapter_template[2100532] = {
+	ItemTransformPattern = "",
+	act_id = 100001,
+	air_dominance = 605,
+	ammo_submarine = 0,
+	ammo_total = 5,
+	avoid_ratio = 13,
+	avoid_require = 0,
+	best_air_dominance = 785,
+	bg = "",
+	bgm = "musashi-1",
+	boss_refresh = 4,
+	chapter_fx = "",
+	chapter_name = "C2",
+	chapter_tag = 0,
+	collection_team = 0,
+	count = 0,
+	difficulty = 7,
+	enter_story = "ZIJIANGJINLAN8",
+	enter_story_limit = "",
+	event_skip = 0,
+	formation = 2100531,
+	friendly_id = 0,
+	group_num = 2,
+	icon_outline = 0,
+	id = 2100532,
+	investigation_ratio = 0,
+	is_ai = 1,
+	is_air_attack = 0,
+	is_ambush = 0,
+	is_limit_move = 1,
+	levelstage_bar = "",
+	lose_condition_display = "lose_condition_display_quanmie",
+	map = 2100531,
+	mitigation_level = 8,
+	mitigation_rate = 2,
+	model = 2,
+	name = "Obscuring Fog",
+	num_1 = 1,
+	num_2 = 13,
+	num_3 = 1,
+	oil = 10,
+	pop_pic = "",
+	pos_x = "0.38203125",
+	pos_y = "0.069444444",
+	pre_story = 0,
+	profiles = "A sea fog spreads across the board, hiding one player's intentions. Will the participants ever be able to see eye-to-eye?",
+	progress_boss = 100,
+	special_operation_list = "",
+	star_require_1 = 1,
+	star_require_2 = 2,
+	star_require_3 = 3,
+	story_refresh_boss = "ZIJIANGJINLAN10",
+	submarine_num = 1,
+	support_group_num = 0,
+	time = 43200,
+	type = 2,
+	uifx = "",
+	unlocklevel = 0,
+	win_condition_display = "win_condition_display_qijian",
+	pre_chapter = {
+		{
+			2100531,
+		},
+	},
+	scale = {
+		0.34,
+		0.53,
+		1.5,
+	},
+	limitation = {
+		{
+			{
+				"zhan",
+				0,
+				0,
+			},
+			{
+				3,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				0,
+				0,
+				0,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+	},
+	property_limitation = {
+		{
+			"level",
+			1,
+			75,
+		},
+		{
+			"cannon",
+			1,
+			650,
+		},
+		{
+			"reload",
+			1,
+			720,
+		},
+	},
+	expedition_id_weight_list = {
+		{
+			1682101,
+			15,
+			0,
+		},
+		{
+			1682102,
+			20,
+			0,
+		},
+		{
+			1682103,
+			30,
+			1,
+		},
+		{
+			1682104,
+			15,
+			0,
+		},
+		{
+			1682105,
+			20,
+			0,
+		},
+		{
+			1682106,
+			30,
+			1,
+		},
+		{
+			1682107,
+			15,
+			0,
+		},
+		{
+			1682108,
+			20,
+			0,
+		},
+		{
+			1682109,
+			30,
+			1,
+		},
+	},
+	ambush_expedition_list = {},
+	guarder_expedition_list = {},
+	elite_expedition_list = {
+		1682105,
+		1682108,
+	},
+	ai_expedition_list = {
+		1682304,
+		1682305,
+		1682306,
+	},
+	patrolai_expedition_list = {
+		1,
+	},
+	submarine_expedition_list = {
+		1,
+	},
+	boss_expedition_id = {
+		1682113,
+	},
+	enemy_refresh = {
+		1,
+		1,
+		1,
+		1,
+		1,
+	},
+	elite_refresh = {
+		1,
+		0,
+		1,
+		0,
+		0,
+	},
+	ai_refresh = {
+		2,
+	},
+	patrolai_refresh = {
+		0,
+	},
+	submarine_refresh = {
+		0,
+	},
+	use_oil_limit = {},
+	win_condition = {
+		{
+			1,
+			1,
+		},
+	},
+	lose_condition = {
+		{
+			1,
+			0,
+		},
+	},
+	icon = {
+		"unknown5",
+	},
+	awards = {
+		{
+			2,
+			58711,
+		},
+		{
+			2,
+			58699,
+		},
+		{
+			2,
+			54013,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+	},
+	grids = {
+		{
+			7,
+			7,
+			false,
+			0,
+		},
+		{
+			7,
+			6,
+			true,
+			0,
+		},
+		{
+			7,
+			5,
+			true,
+			0,
+		},
+		{
+			7,
+			4,
+			true,
+			6,
+		},
+		{
+			7,
+			3,
+			true,
+			0,
+		},
+		{
+			7,
+			2,
+			false,
+			0,
+		},
+		{
+			7,
+			1,
+			true,
+			6,
+		},
+		{
+			7,
+			0,
+			true,
+			0,
+		},
+		{
+			6,
+			7,
+			true,
+			0,
+		},
+		{
+			6,
+			6,
+			false,
+			0,
+		},
+		{
+			6,
+			5,
+			false,
+			0,
+		},
+		{
+			6,
+			4,
+			true,
+			0,
+		},
+		{
+			6,
+			3,
+			true,
+			6,
+		},
+		{
+			6,
+			2,
+			true,
+			0,
+		},
+		{
+			6,
+			1,
+			true,
+			0,
+		},
+		{
+			6,
+			0,
+			true,
+			6,
+		},
+		{
+			5,
+			7,
+			true,
+			0,
+		},
+		{
+			5,
+			6,
+			false,
+			0,
+		},
+		{
+			5,
+			5,
+			false,
+			0,
+		},
+		{
+			5,
+			4,
+			true,
+			0,
+		},
+		{
+			5,
+			3,
+			false,
+			0,
+		},
+		{
+			5,
+			2,
+			false,
+			0,
+		},
+		{
+			5,
+			1,
+			false,
+			0,
+		},
+		{
+			5,
+			0,
+			true,
+			0,
+		},
+		{
+			4,
+			7,
+			true,
+			0,
+		},
+		{
+			4,
+			6,
+			true,
+			8,
+		},
+		{
+			4,
+			5,
+			true,
+			0,
+		},
+		{
+			4,
+			4,
+			true,
+			0,
+		},
+		{
+			4,
+			3,
+			true,
+			0,
+		},
+		{
+			4,
+			2,
+			true,
+			4,
+		},
+		{
+			4,
+			1,
+			true,
+			12,
+		},
+		{
+			4,
+			0,
+			true,
+			0,
+		},
+		{
+			3,
+			7,
+			false,
+			0,
+		},
+		{
+			3,
+			6,
+			true,
+			0,
+		},
+		{
+			3,
+			5,
+			true,
+			0,
+		},
+		{
+			3,
+			4,
+			true,
+			16,
+		},
+		{
+			3,
+			3,
+			true,
+			0,
+		},
+		{
+			3,
+			2,
+			true,
+			0,
+		},
+		{
+			3,
+			1,
+			true,
+			0,
+		},
+		{
+			3,
+			0,
+			true,
+			4,
+		},
+		{
+			2,
+			7,
+			false,
+			0,
+		},
+		{
+			2,
+			6,
+			true,
+			0,
+		},
+		{
+			2,
+			5,
+			true,
+			4,
+		},
+		{
+			2,
+			4,
+			true,
+			0,
+		},
+		{
+			2,
+			3,
+			true,
+			12,
+		},
+		{
+			2,
+			2,
+			true,
+			6,
+		},
+		{
+			2,
+			1,
+			true,
+			0,
+		},
+		{
+			2,
+			0,
+			true,
+			0,
+		},
+		{
+			1,
+			7,
+			true,
+			0,
+		},
+		{
+			1,
+			6,
+			true,
+			0,
+		},
+		{
+			1,
+			5,
+			true,
+			0,
+		},
+		{
+			1,
+			4,
+			true,
+			4,
+		},
+		{
+			1,
+			3,
+			false,
+			0,
+		},
+		{
+			1,
+			2,
+			true,
+			0,
+		},
+		{
+			1,
+			1,
+			true,
+			0,
+		},
+		{
+			1,
+			0,
+			true,
+			1,
+		},
+		{
+			0,
+			7,
+			true,
+			6,
+		},
+		{
+			0,
+			6,
+			true,
+			0,
+		},
+		{
+			0,
+			5,
+			true,
+			6,
+		},
+		{
+			0,
+			4,
+			true,
+			0,
+		},
+		{
+			0,
+			3,
+			false,
+			0,
+		},
+		{
+			0,
+			2,
+			false,
+			0,
+		},
+		{
+			0,
+			1,
+			true,
+			1,
+		},
+		{
+			0,
+			0,
+			true,
+			0,
+		},
+	},
+	float_items = {
+		{
+			7,
+			7,
+			"wuzang_hard_I_1x1_2",
+			11,
+			0,
+		},
+		{
+			7,
+			2,
+			"wuzang_hard_I_1x1_1",
+			0,
+			0,
+		},
+		{
+			5,
+			5,
+			"wuzang_hard_sp3",
+			53,
+			-23,
+		},
+		{
+			5,
+			1,
+			"wuzang_hard_I_3x1_2",
+			99,
+			-8,
+		},
+		{
+			2,
+			7,
+			"wuzang_hard_I_1x2_2",
+			2,
+			-54,
+		},
+		{
+			0,
+			2,
+			"wuzang_hard_I_2x2_1",
+			54,
+			-50,
+		},
+	},
+	ambush_event_ratio = {},
+	ambush_ratio_extra = {},
+	theme = {
+		"sea_wuzang_hard",
+		45,
+		20,
+		-174,
+		-392,
+		100,
+		100,
+		4,
+		4,
+		"",
+	},
+	box_list = {},
+	random_box_list = {
+		7,
+		23,
+		103,
+		1004,
+		5001,
+	},
+	box_refresh = {
+		0,
+	},
+	box_auto_pick = {},
+	story_refresh = {
+		"ZIJIANGJINLAN9",
+	},
+	defeat_story = {
+		"ZIJIANGJINLAN12",
+		"ZIJIANGJINLAN13",
+	},
+	defeat_story_count = {
+		1,
+		2,
+	},
+	npc_data = {},
+	risk_levels = {
+		{
+			8,
+			6,
+		},
+		{
+			5,
+			3,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			0,
+			0,
+		},
+	},
+	land_based = {},
+	chapter_strategy = {
+		200052,
+	},
+	wall_prefab = {},
+	alarm_cell = {},
+	weather_grids = {},
+}
+
+_G.pg.base.chapter_template[2100533] = {
+	ItemTransformPattern = "",
+	act_id = 100001,
+	air_dominance = 775,
+	ammo_submarine = 0,
+	ammo_total = 5,
+	avoid_ratio = 14,
+	avoid_require = 0,
+	best_air_dominance = 1010,
+	bg = "",
+	bgm = "musashi-1",
+	boss_refresh = 5,
+	chapter_fx = "",
+	chapter_name = "C3",
+	chapter_tag = 0,
+	collection_team = 0,
+	count = 0,
+	difficulty = 8,
+	enter_story = "ZIJIANGJINLAN14",
+	enter_story_limit = "",
+	event_skip = 0,
+	formation = 2100531,
+	friendly_id = 0,
+	group_num = 2,
+	icon_outline = 0,
+	id = 2100533,
+	investigation_ratio = 0,
+	is_ai = 1,
+	is_air_attack = 0,
+	is_ambush = 0,
+	is_limit_move = 1,
+	levelstage_bar = "",
+	lose_condition_display = "lose_condition_display_quanmie",
+	map = 2100531,
+	mitigation_level = 8,
+	mitigation_rate = 2,
+	model = 2,
+	name = "A New Path",
+	num_1 = 1,
+	num_2 = 14,
+	num_3 = 1,
+	oil = 10,
+	pop_pic = "",
+	pos_x = "0.665625",
+	pos_y = "0.459722223",
+	pre_story = 0,
+	profiles = "Does a single act of determination speak louder than a thousand words? Cast aside your impassive mantle and fight alongside your friends.",
+	progress_boss = 100,
+	special_operation_list = "",
+	star_require_1 = 1,
+	star_require_2 = 2,
+	star_require_3 = 3,
+	story_refresh_boss = "ZIJIANGJINLAN16",
+	submarine_num = 1,
+	support_group_num = 0,
+	time = 43200,
+	type = 2,
+	uifx = "",
+	unlocklevel = 0,
+	win_condition_display = "win_condition_display_qijian",
+	pre_chapter = {
+		{
+			2100532,
+		},
+	},
+	scale = {
+		0.34,
+		0.53,
+		1.5,
+	},
+	limitation = {
+		{
+			{
+				"zhan",
+				0,
+				0,
+			},
+			{
+				3,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				0,
+				0,
+				0,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+	},
+	property_limitation = {
+		{
+			"level",
+			1,
+			80,
+		},
+		{
+			"cannon",
+			1,
+			850,
+		},
+		{
+			"torpedo",
+			1,
+			1000,
+		},
+	},
+	expedition_id_weight_list = {
+		{
+			1682201,
+			15,
+			0,
+		},
+		{
+			1682202,
+			20,
+			0,
+		},
+		{
+			1682203,
+			30,
+			1,
+		},
+		{
+			1682204,
+			15,
+			0,
+		},
+		{
+			1682205,
+			20,
+			0,
+		},
+		{
+			1682206,
+			30,
+			1,
+		},
+		{
+			1682207,
+			15,
+			0,
+		},
+		{
+			1682208,
+			20,
+			0,
+		},
+		{
+			1682209,
+			30,
+			1,
+		},
+	},
+	ambush_expedition_list = {},
+	guarder_expedition_list = {},
+	elite_expedition_list = {
+		1682205,
+		1682208,
+	},
+	ai_expedition_list = {
+		1682307,
+		1682308,
+		1682309,
+	},
+	patrolai_expedition_list = {
+		1,
+	},
+	submarine_expedition_list = {
+		1,
+	},
+	boss_expedition_id = {
+		1682213,
+	},
+	enemy_refresh = {
+		1,
+		1,
+		1,
+		1,
+		1,
+	},
+	elite_refresh = {
+		1,
+		0,
+		1,
+		0,
+		0,
+	},
+	ai_refresh = {
+		2,
+	},
+	patrolai_refresh = {
+		0,
+	},
+	submarine_refresh = {
+		0,
+	},
+	use_oil_limit = {},
+	win_condition = {
+		{
+			1,
+			1,
+		},
+	},
+	lose_condition = {
+		{
+			1,
+			0,
+		},
+	},
+	icon = {
+		"qingchuzhe",
+	},
+	awards = {
+		{
+			2,
+			58712,
+		},
+		{
+			2,
+			58700,
+		},
+		{
+			2,
+			54013,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+	},
+	grids = {
+		{
+			7,
+			7,
+			false,
+			0,
+		},
+		{
+			7,
+			6,
+			false,
+			0,
+		},
+		{
+			7,
+			5,
+			true,
+			0,
+		},
+		{
+			7,
+			4,
+			true,
+			4,
+		},
+		{
+			7,
+			3,
+			true,
+			0,
+		},
+		{
+			7,
+			2,
+			true,
+			0,
+		},
+		{
+			7,
+			1,
+			true,
+			0,
+		},
+		{
+			7,
+			0,
+			true,
+			0,
+		},
+		{
+			6,
+			7,
+			false,
+			0,
+		},
+		{
+			6,
+			6,
+			false,
+			0,
+		},
+		{
+			6,
+			5,
+			true,
+			6,
+		},
+		{
+			6,
+			4,
+			true,
+			0,
+		},
+		{
+			6,
+			3,
+			true,
+			8,
+		},
+		{
+			6,
+			2,
+			false,
+			0,
+		},
+		{
+			6,
+			1,
+			false,
+			0,
+		},
+		{
+			6,
+			0,
+			true,
+			0,
+		},
+		{
+			5,
+			7,
+			true,
+			0,
+		},
+		{
+			5,
+			6,
+			true,
+			4,
+		},
+		{
+			5,
+			5,
+			true,
+			0,
+		},
+		{
+			5,
+			4,
+			true,
+			0,
+		},
+		{
+			5,
+			3,
+			false,
+			0,
+		},
+		{
+			5,
+			2,
+			false,
+			0,
+		},
+		{
+			5,
+			1,
+			false,
+			0,
+		},
+		{
+			5,
+			0,
+			true,
+			0,
+		},
+		{
+			4,
+			7,
+			true,
+			6,
+		},
+		{
+			4,
+			6,
+			true,
+			0,
+		},
+		{
+			4,
+			5,
+			true,
+			16,
+		},
+		{
+			4,
+			4,
+			true,
+			6,
+		},
+		{
+			4,
+			3,
+			false,
+			0,
+		},
+		{
+			4,
+			2,
+			false,
+			0,
+		},
+		{
+			4,
+			1,
+			false,
+			0,
+		},
+		{
+			4,
+			0,
+			true,
+			0,
+		},
+		{
+			3,
+			7,
+			true,
+			0,
+		},
+		{
+			3,
+			6,
+			true,
+			12,
+		},
+		{
+			3,
+			5,
+			true,
+			0,
+		},
+		{
+			3,
+			4,
+			true,
+			4,
+		},
+		{
+			3,
+			3,
+			true,
+			0,
+		},
+		{
+			3,
+			2,
+			true,
+			6,
+		},
+		{
+			3,
+			1,
+			true,
+			0,
+		},
+		{
+			3,
+			0,
+			true,
+			6,
+		},
+		{
+			2,
+			7,
+			true,
+			0,
+		},
+		{
+			2,
+			6,
+			true,
+			0,
+		},
+		{
+			2,
+			5,
+			false,
+			0,
+		},
+		{
+			2,
+			4,
+			true,
+			0,
+		},
+		{
+			2,
+			3,
+			true,
+			0,
+		},
+		{
+			2,
+			2,
+			true,
+			0,
+		},
+		{
+			2,
+			1,
+			true,
+			0,
+		},
+		{
+			2,
+			0,
+			true,
+			0,
+		},
+		{
+			1,
+			7,
+			true,
+			1,
+		},
+		{
+			1,
+			6,
+			true,
+			0,
+		},
+		{
+			1,
+			5,
+			true,
+			0,
+		},
+		{
+			1,
+			4,
+			true,
+			12,
+		},
+		{
+			1,
+			3,
+			true,
+			0,
+		},
+		{
+			1,
+			2,
+			true,
+			4,
+		},
+		{
+			1,
+			1,
+			true,
+			0,
+		},
+		{
+			1,
+			0,
+			true,
+			6,
+		},
+		{
+			0,
+			7,
+			true,
+			0,
+		},
+		{
+			0,
+			6,
+			true,
+			1,
+		},
+		{
+			0,
+			5,
+			true,
+			0,
+		},
+		{
+			0,
+			4,
+			true,
+			0,
+		},
+		{
+			0,
+			3,
+			true,
+			6,
+		},
+		{
+			0,
+			2,
+			false,
+			0,
+		},
+		{
+			0,
+			1,
+			false,
+			0,
+		},
+		{
+			0,
+			0,
+			false,
+			0,
+		},
+	},
+	float_items = {
+		{
+			6,
+			6,
+			"wuzang_hard_I_2x2_2",
+			64,
+			-52,
+		},
+		{
+			4,
+			1,
+			"wuzang_hard_sp4",
+			107,
+			-67,
+		},
+		{
+			2,
+			5,
+			"wuzang_hard_I_1x1_1",
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			"wuzang_hard_I_3x1_2",
+			104,
+			-8,
+		},
+	},
+	ambush_event_ratio = {},
+	ambush_ratio_extra = {},
+	theme = {
+		"sea_wuzang_hard",
+		45,
+		20,
+		-179,
+		-355,
+		100,
+		100,
+		4,
+		4,
+		"",
+	},
+	box_list = {},
+	random_box_list = {
+		7,
+		23,
+		103,
+		1004,
+		5001,
+	},
+	box_refresh = {
+		0,
+	},
+	box_auto_pick = {},
+	story_refresh = {
+		"ZIJIANGJINLAN15",
+	},
+	defeat_story = {
+		"ZIJIANGJINLAN17",
+		"ZIJIANGJINLAN18",
+	},
+	defeat_story_count = {
+		1,
+		2,
+	},
+	npc_data = {},
+	risk_levels = {
+		{
+			8,
+			6,
+		},
+		{
+			5,
+			3,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			0,
+			0,
+		},
+	},
+	land_based = {},
+	chapter_strategy = {
+		200052,
+	},
+	wall_prefab = {},
+	alarm_cell = {},
+	weather_grids = {},
+}
+
+_G.pg.base.chapter_template[2100534] = {
+	ItemTransformPattern = "",
+	act_id = 100001,
+	air_dominance = 850,
+	ammo_submarine = 0,
+	ammo_total = 5,
+	avoid_ratio = 14,
+	avoid_require = 0,
+	best_air_dominance = 1105,
+	bg = "",
+	bgm = "musashi-2",
+	boss_refresh = 5,
+	chapter_fx = "",
+	chapter_name = "D1",
+	chapter_tag = 0,
+	collection_team = 0,
+	count = 0,
+	difficulty = 8,
+	enter_story = "ZIJIANGJINLAN20",
+	enter_story_limit = "",
+	event_skip = 0,
+	formation = 2100532,
+	friendly_id = 0,
+	group_num = 2,
+	icon_outline = 0,
+	id = 2100534,
+	investigation_ratio = 0,
+	is_ai = 1,
+	is_air_attack = 0,
+	is_ambush = 0,
+	is_limit_move = 1,
+	levelstage_bar = "",
+	lose_condition_display = "lose_condition_display_quanmie",
+	map = 2100532,
+	mitigation_level = 8,
+	mitigation_rate = 2,
+	model = 2,
+	name = "Irreconciliable Promises",
+	num_1 = 1,
+	num_2 = 16,
+	num_3 = 1,
+	oil = 10,
+	pop_pic = "",
+	pos_x = "0.23125",
+	pos_y = "0.302777777",
+	pre_story = 0,
+	profiles = "To confront the enemy without conflict - a lofty ideal, or egotistical naivete?",
+	progress_boss = 100,
+	special_operation_list = "",
+	star_require_1 = 1,
+	star_require_2 = 2,
+	star_require_3 = 3,
+	story_refresh_boss = "ZIJIANGJINLAN21",
+	submarine_num = 1,
+	support_group_num = 0,
+	time = 43200,
+	type = 2,
+	uifx = "",
+	unlocklevel = 0,
+	win_condition_display = "win_condition_display_qijian",
+	pre_chapter = {
+		{
+			2100533,
+		},
+	},
+	scale = {
+		0.34,
+		0.53,
+		1.5,
+	},
+	limitation = {
+		{
+			{
+				"zhan",
+				5,
+				0,
+			},
+			{
+				"quzhu",
+				0,
+				0,
+			},
+		},
+		{
+			{
+				5,
+				0,
+				0,
+			},
+			{
+				3,
+				"quzhu",
+				0,
+			},
+		},
+	},
+	property_limitation = {
+		{
+			"level",
+			1,
+			90,
+		},
+		{
+			"cannon",
+			1,
+			1000,
+		},
+		{
+			"dodge",
+			1,
+			650,
+		},
+	},
+	expedition_id_weight_list = {
+		{
+			1683001,
+			15,
+			0,
+		},
+		{
+			1683002,
+			20,
+			0,
+		},
+		{
+			1683003,
+			30,
+			1,
+		},
+		{
+			1683004,
+			15,
+			0,
+		},
+		{
+			1683005,
+			20,
+			0,
+		},
+		{
+			1683006,
+			30,
+			1,
+		},
+		{
+			1683007,
+			15,
+			0,
+		},
+		{
+			1683008,
+			20,
+			0,
+		},
+		{
+			1683009,
+			30,
+			1,
+		},
+	},
+	ambush_expedition_list = {},
+	guarder_expedition_list = {},
+	elite_expedition_list = {
+		1683005,
+		1683008,
+	},
+	ai_expedition_list = {
+		1683301,
+		1683302,
+		1683303,
+	},
+	patrolai_expedition_list = {
+		1,
+	},
+	submarine_expedition_list = {
+		1,
+	},
+	boss_expedition_id = {
+		1683013,
+	},
+	enemy_refresh = {
+		1,
+		1,
+		1,
+		1,
+		1,
+		1,
+	},
+	elite_refresh = {
+		1,
+		0,
+		1,
+		0,
+		1,
+	},
+	ai_refresh = {
+		2,
+	},
+	patrolai_refresh = {
+		0,
+	},
+	submarine_refresh = {
+		0,
+	},
+	use_oil_limit = {
+		29,
+		39,
+		15,
+	},
+	win_condition = {
+		{
+			1,
+			1,
+		},
+	},
+	lose_condition = {
+		{
+			1,
+			0,
+		},
+	},
+	icon = {
+		"unknown3",
+	},
+	awards = {
+		{
+			2,
+			58713,
+		},
+		{
+			2,
+			58701,
+		},
+		{
+			2,
+			54013,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+	},
+	grids = {
+		{
+			7,
+			7,
+			true,
+			0,
+		},
+		{
+			7,
+			6,
+			true,
+			1,
+		},
+		{
+			7,
+			5,
+			true,
+			0,
+		},
+		{
+			7,
+			4,
+			true,
+			0,
+		},
+		{
+			7,
+			3,
+			false,
+			0,
+		},
+		{
+			7,
+			2,
+			false,
+			0,
+		},
+		{
+			7,
+			1,
+			false,
+			0,
+		},
+		{
+			7,
+			0,
+			true,
+			0,
+		},
+		{
+			6,
+			7,
+			true,
+			1,
+		},
+		{
+			6,
+			6,
+			true,
+			0,
+		},
+		{
+			6,
+			5,
+			true,
+			0,
+		},
+		{
+			6,
+			4,
+			true,
+			12,
+		},
+		{
+			6,
+			3,
+			true,
+			0,
+		},
+		{
+			6,
+			2,
+			true,
+			4,
+		},
+		{
+			6,
+			1,
+			true,
+			0,
+		},
+		{
+			6,
+			0,
+			true,
+			0,
+		},
+		{
+			5,
+			7,
+			true,
+			0,
+		},
+		{
+			5,
+			6,
+			true,
+			0,
+		},
+		{
+			5,
+			5,
+			false,
+			0,
+		},
+		{
+			5,
+			4,
+			true,
+			0,
+		},
+		{
+			5,
+			3,
+			true,
+			6,
+		},
+		{
+			5,
+			2,
+			true,
+			0,
+		},
+		{
+			5,
+			1,
+			true,
+			6,
+		},
+		{
+			5,
+			0,
+			false,
+			0,
+		},
+		{
+			4,
+			7,
+			true,
+			0,
+		},
+		{
+			4,
+			6,
+			true,
+			12,
+		},
+		{
+			4,
+			5,
+			true,
+			6,
+		},
+		{
+			4,
+			4,
+			true,
+			4,
+		},
+		{
+			4,
+			3,
+			true,
+			16,
+		},
+		{
+			4,
+			2,
+			true,
+			0,
+		},
+		{
+			4,
+			1,
+			true,
+			0,
+		},
+		{
+			4,
+			0,
+			true,
+			4,
+		},
+		{
+			3,
+			7,
+			true,
+			0,
+		},
+		{
+			3,
+			6,
+			true,
+			0,
+		},
+		{
+			3,
+			5,
+			true,
+			0,
+		},
+		{
+			3,
+			4,
+			true,
+			0,
+		},
+		{
+			3,
+			3,
+			true,
+			0,
+		},
+		{
+			3,
+			2,
+			true,
+			0,
+		},
+		{
+			3,
+			1,
+			true,
+			8,
+		},
+		{
+			3,
+			0,
+			true,
+			0,
+		},
+		{
+			2,
+			7,
+			true,
+			6,
+		},
+		{
+			2,
+			6,
+			false,
+			0,
+		},
+		{
+			2,
+			5,
+			true,
+			4,
+		},
+		{
+			2,
+			4,
+			true,
+			0,
+		},
+		{
+			2,
+			3,
+			true,
+			6,
+		},
+		{
+			2,
+			2,
+			false,
+			0,
+		},
+		{
+			2,
+			1,
+			false,
+			0,
+		},
+		{
+			2,
+			0,
+			true,
+			0,
+		},
+		{
+			1,
+			7,
+			true,
+			0,
+		},
+		{
+			1,
+			6,
+			false,
+			0,
+		},
+		{
+			1,
+			5,
+			true,
+			6,
+		},
+		{
+			1,
+			4,
+			true,
+			0,
+		},
+		{
+			1,
+			3,
+			true,
+			6,
+		},
+		{
+			1,
+			2,
+			true,
+			0,
+		},
+		{
+			1,
+			1,
+			true,
+			0,
+		},
+		{
+			1,
+			0,
+			true,
+			0,
+		},
+		{
+			0,
+			7,
+			true,
+			0,
+		},
+		{
+			0,
+			6,
+			true,
+			0,
+		},
+		{
+			0,
+			5,
+			true,
+			0,
+		},
+		{
+			0,
+			4,
+			true,
+			6,
+		},
+		{
+			0,
+			3,
+			true,
+			0,
+		},
+		{
+			0,
+			2,
+			true,
+			0,
+		},
+		{
+			0,
+			1,
+			true,
+			0,
+		},
+		{
+			0,
+			0,
+			false,
+			0,
+		},
+	},
+	float_items = {
+		{
+			7,
+			1,
+			"wuzang_hard_I_3x1_1",
+			95,
+			6,
+		},
+		{
+			5,
+			5,
+			"wuzang_hard_I_1x1_1",
+			0,
+			0,
+		},
+		{
+			5,
+			0,
+			"wuzang_hard_I_1x1_3",
+			5,
+			-23,
+		},
+		{
+			2,
+			1,
+			"wuzang_hard_sp1",
+			53,
+			40,
+		},
+		{
+			1,
+			6,
+			"wuzang_hard_I_1x2_2",
+			0,
+			-54,
+		},
+		{
+			0,
+			0,
+			"wuzang_hard_I_1x1_2",
+			10,
+			0,
+		},
+	},
+	ambush_event_ratio = {},
+	ambush_ratio_extra = {},
+	theme = {
+		"sea_wuzang_hard",
+		45,
+		20,
+		-206,
+		35,
+		100,
+		100,
+		4,
+		4,
+		"",
+	},
+	box_list = {},
+	random_box_list = {
+		9,
+		23,
+		103,
+		1004,
+		5001,
+	},
+	box_refresh = {
+		0,
+	},
+	box_auto_pick = {},
+	story_refresh = {},
+	defeat_story = {
+		"ZIJIANGJINLAN22",
+		"ZIJIANGJINLAN23",
+	},
+	defeat_story_count = {
+		1,
+		2,
+	},
+	npc_data = {},
+	risk_levels = {
+		{
+			8,
+			6,
+		},
+		{
+			5,
+			3,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			0,
+			0,
+		},
+	},
+	land_based = {},
+	chapter_strategy = {
+		200052,
+	},
+	wall_prefab = {},
+	alarm_cell = {},
+	weather_grids = {},
+}
+
+_G.pg.base.chapter_template[2100535] = {
+	ItemTransformPattern = "",
+	act_id = 100001,
+	air_dominance = 1100,
+	ammo_submarine = 0,
+	ammo_total = 5,
+	avoid_ratio = 15,
+	avoid_require = 0,
+	best_air_dominance = 1430,
+	bg = "",
+	bgm = "musashi-2",
+	boss_refresh = 6,
+	chapter_fx = "",
+	chapter_name = "D2",
+	chapter_tag = 0,
+	collection_team = 0,
+	count = 0,
+	difficulty = 9,
+	enter_story = "ZIJIANGJINLAN24",
+	enter_story_limit = "",
+	event_skip = 0,
+	formation = 2100532,
+	friendly_id = 0,
+	group_num = 2,
+	icon_outline = 0,
+	id = 2100535,
+	investigation_ratio = 0,
+	is_ai = 1,
+	is_air_attack = 0,
+	is_ambush = 0,
+	is_limit_move = 1,
+	levelstage_bar = "",
+	lose_condition_display = "lose_condition_display_quanmie",
+	map = 2100532,
+	mitigation_level = 8,
+	mitigation_rate = 2,
+	model = 2,
+	name = "A Shifting Board",
+	num_1 = 1,
+	num_2 = 18,
+	num_3 = 1,
+	oil = 10,
+	pop_pic = "",
+	pos_x = "0.5390625",
+	pos_y = "0.069444444",
+	pre_story = 0,
+	profiles = "As the game shifts, offense turns into defense, and battles become fiercer and fiercer. What does it mean to seize victory?",
+	progress_boss = 100,
+	special_operation_list = "",
+	star_require_1 = 1,
+	star_require_2 = 2,
+	star_require_3 = 3,
+	story_refresh_boss = "ZIJIANGJINLAN26",
+	submarine_num = 1,
+	support_group_num = 0,
+	time = 43200,
+	type = 2,
+	uifx = "",
+	unlocklevel = 0,
+	win_condition_display = "win_condition_display_qijian",
+	pre_chapter = {
+		{
+			2100534,
+		},
+	},
+	scale = {
+		0.34,
+		0.53,
+		1.5,
+	},
+	limitation = {
+		{
+			{
+				"zhan",
+				5,
+				0,
+			},
+			{
+				"quzhu",
+				0,
+				0,
+			},
+		},
+		{
+			{
+				5,
+				0,
+				0,
+			},
+			{
+				3,
+				"quzhu",
+				0,
+			},
+		},
+	},
+	property_limitation = {
+		{
+			"level",
+			1,
+			95,
+		},
+		{
+			"cannon",
+			1,
+			1300,
+		},
+		{
+			"reload",
+			1,
+			1050,
+		},
+	},
+	expedition_id_weight_list = {
+		{
+			1683101,
+			15,
+			0,
+		},
+		{
+			1683102,
+			20,
+			0,
+		},
+		{
+			1683103,
+			30,
+			1,
+		},
+		{
+			1683104,
+			15,
+			0,
+		},
+		{
+			1683105,
+			20,
+			0,
+		},
+		{
+			1683106,
+			30,
+			1,
+		},
+		{
+			1683107,
+			15,
+			0,
+		},
+		{
+			1683108,
+			20,
+			0,
+		},
+		{
+			1683109,
+			30,
+			1,
+		},
+	},
+	ambush_expedition_list = {},
+	guarder_expedition_list = {},
+	elite_expedition_list = {
+		1683105,
+		1683108,
+	},
+	ai_expedition_list = {
+		1683304,
+		1683305,
+		1683306,
+		1683307,
+	},
+	patrolai_expedition_list = {
+		1,
+	},
+	submarine_expedition_list = {
+		1,
+	},
+	boss_expedition_id = {
+		1683113,
+	},
+	enemy_refresh = {
+		1,
+		1,
+		1,
+		1,
+		1,
+		1,
+	},
+	elite_refresh = {
+		1,
+		0,
+		1,
+		0,
+		1,
+	},
+	ai_refresh = {
+		2,
+		0,
+		1,
+	},
+	patrolai_refresh = {
+		0,
+	},
+	submarine_refresh = {
+		0,
+	},
+	use_oil_limit = {
+		32,
+		43,
+		16,
+	},
+	win_condition = {
+		{
+			1,
+			1,
+		},
+	},
+	lose_condition = {
+		{
+			1,
+			0,
+		},
+	},
+	icon = {
+		"sanli",
+	},
+	awards = {
+		{
+			2,
+			58714,
+		},
+		{
+			2,
+			58702,
+		},
+		{
+			2,
+			54013,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+	},
+	grids = {
+		{
+			5,
+			12,
+			false,
+			0,
+		},
+		{
+			5,
+			11,
+			false,
+			0,
+		},
+		{
+			5,
+			10,
+			false,
+			0,
+		},
+		{
+			5,
+			9,
+			true,
+			4,
+		},
+		{
+			5,
+			8,
+			true,
+			0,
+		},
+		{
+			5,
+			7,
+			false,
+			0,
+		},
+		{
+			5,
+			6,
+			false,
+			0,
+		},
+		{
+			5,
+			5,
+			true,
+			0,
+		},
+		{
+			5,
+			4,
+			true,
+			6,
+		},
+		{
+			5,
+			3,
+			false,
+			0,
+		},
+		{
+			5,
+			2,
+			true,
+			6,
+		},
+		{
+			5,
+			1,
+			true,
+			6,
+		},
+		{
+			5,
+			0,
+			true,
+			0,
+		},
+		{
+			4,
+			12,
+			true,
+			0,
+		},
+		{
+			4,
+			11,
+			true,
+			0,
+		},
+		{
+			4,
+			10,
+			true,
+			0,
+		},
+		{
+			4,
+			9,
+			true,
+			0,
+		},
+		{
+			4,
+			8,
+			true,
+			12,
+		},
+		{
+			4,
+			7,
+			false,
+			0,
+		},
+		{
+			4,
+			6,
+			false,
+			0,
+		},
+		{
+			4,
+			5,
+			true,
+			4,
+		},
+		{
+			4,
+			4,
+			true,
+			0,
+		},
+		{
+			4,
+			3,
+			true,
+			0,
+		},
+		{
+			4,
+			2,
+			true,
+			0,
+		},
+		{
+			4,
+			1,
+			true,
+			0,
+		},
+		{
+			4,
+			0,
+			true,
+			6,
+		},
+		{
+			3,
+			12,
+			false,
+			0,
+		},
+		{
+			3,
+			11,
+			false,
+			0,
+		},
+		{
+			3,
+			10,
+			true,
+			1,
+		},
+		{
+			3,
+			9,
+			true,
+			0,
+		},
+		{
+			3,
+			8,
+			true,
+			0,
+		},
+		{
+			3,
+			7,
+			true,
+			12,
+		},
+		{
+			3,
+			6,
+			true,
+			0,
+		},
+		{
+			3,
+			5,
+			true,
+			16,
+		},
+		{
+			3,
+			4,
+			true,
+			0,
+		},
+		{
+			3,
+			3,
+			true,
+			0,
+		},
+		{
+			3,
+			2,
+			true,
+			8,
+		},
+		{
+			3,
+			1,
+			false,
+			0,
+		},
+		{
+			3,
+			0,
+			false,
+			0,
+		},
+		{
+			2,
+			12,
+			false,
+			0,
+		},
+		{
+			2,
+			11,
+			false,
+			0,
+		},
+		{
+			2,
+			10,
+			true,
+			1,
+		},
+		{
+			2,
+			9,
+			true,
+			0,
+		},
+		{
+			2,
+			8,
+			true,
+			0,
+		},
+		{
+			2,
+			7,
+			true,
+			12,
+		},
+		{
+			2,
+			6,
+			true,
+			0,
+		},
+		{
+			2,
+			5,
+			true,
+			16,
+		},
+		{
+			2,
+			4,
+			true,
+			0,
+		},
+		{
+			2,
+			3,
+			true,
+			6,
+		},
+		{
+			2,
+			2,
+			false,
+			0,
+		},
+		{
+			2,
+			1,
+			false,
+			0,
+		},
+		{
+			2,
+			0,
+			false,
+			0,
+		},
+		{
+			1,
+			12,
+			true,
+			0,
+		},
+		{
+			1,
+			11,
+			true,
+			0,
+		},
+		{
+			1,
+			10,
+			true,
+			0,
+		},
+		{
+			1,
+			9,
+			true,
+			0,
+		},
+		{
+			1,
+			8,
+			true,
+			12,
+		},
+		{
+			1,
+			7,
+			false,
+			0,
+		},
+		{
+			1,
+			6,
+			false,
+			0,
+		},
+		{
+			1,
+			5,
+			true,
+			4,
+		},
+		{
+			1,
+			4,
+			true,
+			0,
+		},
+		{
+			1,
+			3,
+			true,
+			6,
+		},
+		{
+			1,
+			2,
+			false,
+			0,
+		},
+		{
+			1,
+			1,
+			false,
+			0,
+		},
+		{
+			1,
+			0,
+			false,
+			0,
+		},
+		{
+			0,
+			12,
+			false,
+			0,
+		},
+		{
+			0,
+			11,
+			false,
+			0,
+		},
+		{
+			0,
+			10,
+			false,
+			0,
+		},
+		{
+			0,
+			9,
+			true,
+			4,
+		},
+		{
+			0,
+			8,
+			true,
+			0,
+		},
+		{
+			0,
+			7,
+			false,
+			0,
+		},
+		{
+			0,
+			6,
+			false,
+			0,
+		},
+		{
+			0,
+			5,
+			true,
+			0,
+		},
+		{
+			0,
+			4,
+			true,
+			6,
+		},
+		{
+			0,
+			3,
+			true,
+			0,
+		},
+		{
+			0,
+			2,
+			true,
+			0,
+		},
+		{
+			0,
+			1,
+			true,
+			0,
+		},
+		{
+			0,
+			0,
+			true,
+			0,
+		},
+	},
+	float_items = {
+		{
+			5,
+			10,
+			"wuzang_hard_II_3x1_2",
+			106,
+			-1,
+		},
+		{
+			5,
+			3,
+			"wuzang_hard_II_1x1_2",
+			0,
+			6,
+		},
+		{
+			4,
+			6,
+			"wuzang_hard_II_2x2_2",
+			49,
+			-45,
+		},
+		{
+			2,
+			11,
+			"wuzang_hard_sp2",
+			55,
+			-8,
+		},
+		{
+			1,
+			0,
+			"wuzang_hard_sp4",
+			111,
+			-66,
+		},
+		{
+			0,
+			10,
+			"wuzang_hard_II_3x1_1",
+			102,
+			3,
+		},
+		{
+			0,
+			6,
+			"wuzang_hard_II_2x2_2",
+			57,
+			-37,
+		},
+	},
+	ambush_event_ratio = {},
+	ambush_ratio_extra = {},
+	theme = {
+		"sea_wuzang_hard",
+		45,
+		20,
+		-736,
+		-198,
+		100,
+		100,
+		4,
+		4,
+		"",
+	},
+	box_list = {},
+	random_box_list = {
+		9,
+		23,
+		103,
+		1004,
+		5001,
+	},
+	box_refresh = {
+		0,
+	},
+	box_auto_pick = {},
+	story_refresh = {
+		"ZIJIANGJINLAN25",
+	},
+	defeat_story = {
+		"ZIJIANGJINLAN28",
+		"ZIJIANGJINLAN29",
+	},
+	defeat_story_count = {
+		1,
+		2,
+	},
+	npc_data = {},
+	risk_levels = {
+		{
+			8,
+			6,
+		},
+		{
+			5,
+			3,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			0,
+			0,
+		},
+	},
+	land_based = {},
+	chapter_strategy = {
+		200052,
+	},
+	wall_prefab = {},
+	alarm_cell = {},
+	weather_grids = {},
+}
+
+_G.pg.base.chapter_template[2100536] = {
+	ItemTransformPattern = "",
+	act_id = 100001,
+	air_dominance = 1410,
+	ammo_submarine = 0,
+	ammo_total = 5,
+	avoid_ratio = 16,
+	avoid_require = 0,
+	best_air_dominance = 1835,
+	bg = "",
+	bgm = "musashi-2",
+	boss_refresh = 6,
+	chapter_fx = "",
+	chapter_name = "D3",
+	chapter_tag = 0,
+	collection_team = 0,
+	count = 0,
+	difficulty = 10,
+	enter_story = "ZIJIANGJINLAN30",
+	enter_story_limit = "",
+	event_skip = 0,
+	formation = 2100532,
+	friendly_id = 0,
+	group_num = 2,
+	icon_outline = 0,
+	id = 2100536,
+	investigation_ratio = 0,
+	is_ai = 1,
+	is_air_attack = 0,
+	is_ambush = 0,
+	is_limit_move = 1,
+	levelstage_bar = "",
+	lose_condition_display = "lose_condition_display_quanmie",
+	map = 2100532,
+	mitigation_level = 8,
+	mitigation_rate = 2,
+	model = 2,
+	name = "Blooming Lycoris",
+	num_1 = 1,
+	num_2 = 24,
+	num_3 = 1,
+	oil = 10,
+	pop_pic = "",
+	pos_x = "0.67109375",
+	pos_y = "0.511111111",
+	pre_story = 0,
+	profiles = "A clash of convictions causes a flower of battle to bloom on the battlefield. The weeping moon sheds a tear that illuminates the path of the victor alone.",
+	progress_boss = 100,
+	special_operation_list = "",
+	star_require_1 = 1,
+	star_require_2 = 2,
+	star_require_3 = 3,
+	story_refresh_boss = "ZIJIANGJINLAN31",
+	submarine_num = 1,
+	support_group_num = 0,
+	time = 43200,
+	type = 2,
+	uifx = "",
+	unlocklevel = 0,
+	win_condition_display = "win_condition_display_qijian",
+	pre_chapter = {
+		{
+			2100535,
+		},
+	},
+	scale = {
+		0.34,
+		0.53,
+		1.5,
+	},
+	limitation = {
+		{
+			{
+				"zhan",
+				5,
+				0,
+			},
+			{
+				"quzhu",
+				0,
+				0,
+			},
+		},
+		{
+			{
+				5,
+				0,
+				0,
+			},
+			{
+				3,
+				"quzhu",
+				0,
+			},
+		},
+	},
+	property_limitation = {
+		{
+			"level",
+			1,
+			100,
+		},
+		{
+			"cannon",
+			1,
+			1800,
+		},
+		{
+			"torpedo",
+			1,
+			1500,
+		},
+	},
+	expedition_id_weight_list = {
+		{
+			1683201,
+			15,
+			0,
+		},
+		{
+			1683202,
+			20,
+			0,
+		},
+		{
+			1683203,
+			30,
+			1,
+		},
+		{
+			1683204,
+			15,
+			0,
+		},
+		{
+			1683205,
+			20,
+			0,
+		},
+		{
+			1683206,
+			30,
+			1,
+		},
+		{
+			1683207,
+			15,
+			0,
+		},
+		{
+			1683208,
+			20,
+			0,
+		},
+		{
+			1683209,
+			30,
+			1,
+		},
+	},
+	ambush_expedition_list = {},
+	guarder_expedition_list = {},
+	elite_expedition_list = {
+		1683205,
+		1683208,
+	},
+	ai_expedition_list = {
+		1683308,
+		1683309,
+		1683310,
+		1683311,
+	},
+	patrolai_expedition_list = {
+		1,
+	},
+	submarine_expedition_list = {
+		1,
+	},
+	boss_expedition_id = {
+		1683213,
+	},
+	enemy_refresh = {
+		1,
+		1,
+		1,
+		1,
+		1,
+		1,
+	},
+	elite_refresh = {
+		1,
+		0,
+		1,
+		0,
+		1,
+	},
+	ai_refresh = {
+		2,
+		0,
+		1,
+	},
+	patrolai_refresh = {
+		0,
+	},
+	submarine_refresh = {
+		0,
+	},
+	use_oil_limit = {
+		35,
+		47,
+		16,
+	},
+	win_condition = {
+		{
+			1,
+			1,
+		},
+	},
+	lose_condition = {
+		{
+			1,
+			0,
+		},
+	},
+	icon = {
+		"sairenboss5",
+	},
+	awards = {
+		{
+			2,
+			58715,
+		},
+		{
+			2,
+			58703,
+		},
+		{
+			2,
+			54013,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+	},
+	grids = {
+		{
+			8,
+			8,
+			false,
+			0,
+		},
+		{
+			8,
+			7,
+			false,
+			0,
+		},
+		{
+			8,
+			6,
+			false,
+			0,
+		},
+		{
+			8,
+			5,
+			true,
+			1,
+		},
+		{
+			8,
+			4,
+			true,
+			0,
+		},
+		{
+			8,
+			3,
+			true,
+			1,
+		},
+		{
+			8,
+			2,
+			false,
+			0,
+		},
+		{
+			8,
+			1,
+			false,
+			0,
+		},
+		{
+			8,
+			0,
+			false,
+			0,
+		},
+		{
+			7,
+			8,
+			true,
+			0,
+		},
+		{
+			7,
+			7,
+			true,
+			0,
+		},
+		{
+			7,
+			6,
+			true,
+			0,
+		},
+		{
+			7,
+			5,
+			true,
+			0,
+		},
+		{
+			7,
+			4,
+			true,
+			16,
+		},
+		{
+			7,
+			3,
+			true,
+			0,
+		},
+		{
+			7,
+			2,
+			true,
+			0,
+		},
+		{
+			7,
+			1,
+			true,
+			0,
+		},
+		{
+			7,
+			0,
+			true,
+			0,
+		},
+		{
+			6,
+			8,
+			true,
+			0,
+		},
+		{
+			6,
+			7,
+			true,
+			6,
+		},
+		{
+			6,
+			6,
+			false,
+			0,
+		},
+		{
+			6,
+			5,
+			true,
+			0,
+		},
+		{
+			6,
+			4,
+			true,
+			12,
+		},
+		{
+			6,
+			3,
+			true,
+			0,
+		},
+		{
+			6,
+			2,
+			false,
+			0,
+		},
+		{
+			6,
+			1,
+			true,
+			6,
+		},
+		{
+			6,
+			0,
+			true,
+			0,
+		},
+		{
+			5,
+			8,
+			true,
+			0,
+		},
+		{
+			5,
+			7,
+			true,
+			0,
+		},
+		{
+			5,
+			6,
+			true,
+			4,
+		},
+		{
+			5,
+			5,
+			true,
+			0,
+		},
+		{
+			5,
+			4,
+			true,
+			8,
+		},
+		{
+			5,
+			3,
+			true,
+			0,
+		},
+		{
+			5,
+			2,
+			true,
+			4,
+		},
+		{
+			5,
+			1,
+			true,
+			0,
+		},
+		{
+			5,
+			0,
+			true,
+			0,
+		},
+		{
+			4,
+			8,
+			true,
+			6,
+		},
+		{
+			4,
+			7,
+			true,
+			0,
+		},
+		{
+			4,
+			6,
+			true,
+			12,
+		},
+		{
+			4,
+			5,
+			true,
+			0,
+		},
+		{
+			4,
+			4,
+			false,
+			0,
+		},
+		{
+			4,
+			3,
+			true,
+			0,
+		},
+		{
+			4,
+			2,
+			true,
+			12,
+		},
+		{
+			4,
+			1,
+			true,
+			0,
+		},
+		{
+			4,
+			0,
+			true,
+			6,
+		},
+		{
+			3,
+			8,
+			true,
+			0,
+		},
+		{
+			3,
+			7,
+			true,
+			0,
+		},
+		{
+			3,
+			6,
+			true,
+			4,
+		},
+		{
+			3,
+			5,
+			true,
+			0,
+		},
+		{
+			3,
+			4,
+			true,
+			0,
+		},
+		{
+			3,
+			3,
+			true,
+			0,
+		},
+		{
+			3,
+			2,
+			true,
+			4,
+		},
+		{
+			3,
+			1,
+			true,
+			0,
+		},
+		{
+			3,
+			0,
+			true,
+			0,
+		},
+		{
+			2,
+			8,
+			true,
+			0,
+		},
+		{
+			2,
+			7,
+			true,
+			6,
+		},
+		{
+			2,
+			6,
+			false,
+			0,
+		},
+		{
+			2,
+			5,
+			true,
+			4,
+		},
+		{
+			2,
+			4,
+			true,
+			12,
+		},
+		{
+			2,
+			3,
+			true,
+			4,
+		},
+		{
+			2,
+			2,
+			false,
+			0,
+		},
+		{
+			2,
+			1,
+			true,
+			6,
+		},
+		{
+			2,
+			0,
+			true,
+			0,
+		},
+		{
+			1,
+			8,
+			true,
+			0,
+		},
+		{
+			1,
+			7,
+			true,
+			6,
+		},
+		{
+			1,
+			6,
+			true,
+			6,
+		},
+		{
+			1,
+			5,
+			true,
+			0,
+		},
+		{
+			1,
+			4,
+			true,
+			0,
+		},
+		{
+			1,
+			3,
+			true,
+			0,
+		},
+		{
+			1,
+			2,
+			true,
+			6,
+		},
+		{
+			1,
+			1,
+			true,
+			6,
+		},
+		{
+			1,
+			0,
+			true,
+			0,
+		},
+		{
+			0,
+			8,
+			false,
+			0,
+		},
+		{
+			0,
+			7,
+			true,
+			0,
+		},
+		{
+			0,
+			6,
+			true,
+			0,
+		},
+		{
+			0,
+			5,
+			true,
+			0,
+		},
+		{
+			0,
+			4,
+			true,
+			6,
+		},
+		{
+			0,
+			3,
+			true,
+			0,
+		},
+		{
+			0,
+			2,
+			true,
+			0,
+		},
+		{
+			0,
+			1,
+			true,
+			0,
+		},
+		{
+			0,
+			0,
+			false,
+			0,
+		},
+	},
+	float_items = {
+		{
+			8,
+			6,
+			"wuzang_hard_II_3x1_2",
+			112,
+			0,
+		},
+		{
+			8,
+			0,
+			"wuzang_hard_II_3x1_1",
+			106,
+			0,
+		},
+		{
+			6,
+			6,
+			"wuzang_hard_II_1x1_2",
+			0,
+			7,
+		},
+		{
+			6,
+			2,
+			"wuzang_hard_II_1x1_2",
+			0,
+			11,
+		},
+		{
+			4,
+			4,
+			"wuzang_hard_sp5",
+			-36,
+			57,
+		},
+		{
+			2,
+			6,
+			"wuzang_hard_II_1x1_3",
+			0,
+			6,
+		},
+		{
+			2,
+			2,
+			"wuzang_hard_II_1x1_3",
+			-9,
+			4,
+		},
+		{
+			0,
+			8,
+			"wuzang_hard_I_1x1_2",
+			11,
+			0,
+		},
+		{
+			0,
+			0,
+			"wuzang_hard_I_1x1_2",
+			14,
+			-3,
+		},
+	},
+	ambush_event_ratio = {},
+	ambush_ratio_extra = {},
+	theme = {
+		"sea_wuzang_hard",
+		45,
+		20,
+		-242,
+		123,
+		100,
+		100,
+		4,
+		4,
+		"",
+	},
+	box_list = {},
+	random_box_list = {
+		9,
+		23,
+		103,
+		1004,
+		5001,
+	},
+	box_refresh = {
+		0,
+	},
+	box_auto_pick = {},
+	story_refresh = {},
+	defeat_story = {
+		"ZIJIANGJINLAN32",
+		"ZIJIANGJINLAN33",
+		"ZIJIANGJINLAN34",
+		"ZIJIANGJINLAN35",
+		"ZIJIANGJINLAN36",
+		"ZIJIANGJINLAN37",
+		"ZIJIANGJINLAN38",
+		"ZIJIANGJINLAN39",
+	},
+	defeat_story_count = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+	},
+	npc_data = {},
+	risk_levels = {
+		{
+			8,
+			6,
+		},
+		{
+			5,
+			3,
+		},
+		{
+			2,
+			1,
+		},
+		{
+			0,
+			0,
+		},
+	},
+	land_based = {},
+	chapter_strategy = {
+		200052,
 	},
 	wall_prefab = {},
 	alarm_cell = {},
@@ -624121,6 +634156,7 @@ _G.pg.base.chapter_template[2200001] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"TACT10001",
 	},
@@ -624615,6 +634651,7 @@ _G.pg.base.chapter_template[2200002] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"TACT10002",
 	},
@@ -625138,6 +635175,7 @@ _G.pg.base.chapter_template[2200003] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"TACT10004",
 	},
@@ -625732,6 +635770,7 @@ _G.pg.base.chapter_template[2200011] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -626423,6 +636462,7 @@ _G.pg.base.chapter_template[2200012] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -627172,6 +637212,7 @@ _G.pg.base.chapter_template[2200013] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -627870,6 +637911,7 @@ _G.pg.base.chapter_template[2200021] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"ZHUNUO2",
 	},
@@ -628587,6 +638629,7 @@ _G.pg.base.chapter_template[2200022] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -629310,6 +639353,7 @@ _G.pg.base.chapter_template[2200023] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -629831,6 +639875,7 @@ _G.pg.base.chapter_template[2200031] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -630411,6 +640456,7 @@ _G.pg.base.chapter_template[2200032] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -631029,6 +641075,7 @@ _G.pg.base.chapter_template[2200033] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -631630,6 +641677,7 @@ _G.pg.base.chapter_template[2200041] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"OUXIANGHUODONG3",
 	},
@@ -632328,6 +642376,7 @@ _G.pg.base.chapter_template[2200042] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -633024,6 +643073,7 @@ _G.pg.base.chapter_template[2200043] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"OUXIANGHUODONG14",
@@ -633726,6 +643776,7 @@ _G.pg.base.chapter_template[2200044] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -634422,6 +644473,7 @@ _G.pg.base.chapter_template[2200045] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"OUXIANGHUODONG23",
@@ -634965,6 +645017,7 @@ _G.pg.base.chapter_template[2200051] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"LONGXIANGHUODONG2",
 	},
@@ -635565,6 +645618,7 @@ _G.pg.base.chapter_template[2200052] = {
 	box_refresh = {
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"LONGXIANGHUODONG7",
@@ -636206,6 +646260,7 @@ _G.pg.base.chapter_template[2200053] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"LONGXIANGHUODONG11",
@@ -636784,6 +646839,7 @@ _G.pg.base.chapter_template[2200061] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"ZUIZHENGUIDEBAOWU2",
@@ -637468,6 +647524,7 @@ _G.pg.base.chapter_template[2200062] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -638108,6 +648165,7 @@ _G.pg.base.chapter_template[2200063] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"ZUIZHENGUIDEBAOWU9",
@@ -638704,6 +648762,7 @@ _G.pg.base.chapter_template[2200071] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JICHANG5",
@@ -639386,6 +649445,7 @@ _G.pg.base.chapter_template[2200072] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JICHANG9",
@@ -640075,6 +650135,7 @@ _G.pg.base.chapter_template[2200073] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JICHANG13",
@@ -640779,6 +650840,7 @@ _G.pg.base.chapter_template[2200074] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JICHANG17",
@@ -641699,6 +651761,7 @@ _G.pg.base.chapter_template[2200075] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JICHANG21",
@@ -642297,6 +652360,7 @@ _G.pg.base.chapter_template[2200081] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"NAERWEIKE2",
@@ -643030,6 +653094,7 @@ _G.pg.base.chapter_template[2200082] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -643792,6 +653857,7 @@ _G.pg.base.chapter_template[2200083] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -644546,6 +654612,7 @@ _G.pg.base.chapter_template[2200084] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"NAERWEIKE12",
@@ -645186,6 +655253,7 @@ _G.pg.base.chapter_template[2200091] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YESEXIADEGUITU3",
@@ -645865,6 +655933,7 @@ _G.pg.base.chapter_template[2200092] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YESEXIADEGUITU6",
@@ -646545,6 +656614,7 @@ _G.pg.base.chapter_template[2200093] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"YESEXIADEGUITU9",
@@ -647296,6 +657366,7 @@ _G.pg.base.chapter_template[2200101] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIAWANJIANDEFANJI4",
@@ -648055,6 +658126,7 @@ _G.pg.base.chapter_template[2200102] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIAWANJIANDEFANJI8",
@@ -648813,6 +658885,7 @@ _G.pg.base.chapter_template[2200103] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XIAWANJIANDEFANJI12",
@@ -649425,6 +659498,7 @@ _G.pg.base.chapter_template[2200111] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"HUAPOHAIKONGZHIYI3",
@@ -650047,6 +660121,7 @@ _G.pg.base.chapter_template[2200112] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"HUAPOHAIKONGZHIYI6",
@@ -650670,6 +660745,7 @@ _G.pg.base.chapter_template[2200113] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"HUAPOHAIKONGZHIYI10",
@@ -651295,6 +661371,7 @@ _G.pg.base.chapter_template[2200121] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JIENUOWADEYANHUO4",
@@ -651969,6 +662046,7 @@ _G.pg.base.chapter_template[2200122] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JIENUOWADEYANHUO7",
@@ -652703,6 +662781,7 @@ _G.pg.base.chapter_template[2200123] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JIENUOWADEYANHUO11",
@@ -653327,6 +663406,7 @@ _G.pg.base.chapter_template[2200131] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUXIANGGOUZHUZHITAXUZHANG3",
@@ -654011,6 +664091,7 @@ _G.pg.base.chapter_template[2200132] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"XUXIANGGOUZHUZHITAXUZHANG5",
 	},
@@ -654697,6 +664778,7 @@ _G.pg.base.chapter_template[2200133] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUXIANGGOUZHUZHITAXUZHANG9",
@@ -655393,6 +665475,7 @@ _G.pg.base.chapter_template[2200134] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"XUXIANGGOUZHUZHITAXUZHANG11",
@@ -656124,6 +666207,7 @@ _G.pg.base.chapter_template[2200141] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JUFENGYUQINGCHUNZHIQUAN6",
@@ -656857,6 +666941,7 @@ _G.pg.base.chapter_template[2200142] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JUFENGYUQINGCHUNZHIQUAN10",
@@ -657660,6 +667745,7 @@ _G.pg.base.chapter_template[2200143] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JUFENGYUQINGCHUNZHIQUAN13",
@@ -658458,6 +668544,7 @@ _G.pg.base.chapter_template[2200144] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {
 		"JUFENGYUQINGCHUNZHIQUAN17",
@@ -659341,6 +669428,7 @@ _G.pg.base.chapter_template[2200145] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"JUFENGYUQINGCHUNZHIQUAN19",
 	},
@@ -660247,6 +670335,7 @@ _G.pg.base.chapter_template[2200146] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {
 		"JUFENGYUQINGCHUNZHIQUAN23",
 	},
@@ -660827,6 +670916,7 @@ _G.pg.base.chapter_template[9920001] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -661529,6 +671619,7 @@ _G.pg.base.chapter_template[9920002] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -662198,6 +672289,7 @@ _G.pg.base.chapter_template[9920003] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -662985,6 +673077,7 @@ _G.pg.base.chapter_template[9920004] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -663567,6 +673660,7 @@ _G.pg.base.chapter_template[9920005] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -664157,6 +674251,7 @@ _G.pg.base.chapter_template[9920006] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -664802,6 +674897,7 @@ _G.pg.base.chapter_template[9920007] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -665603,6 +675699,7 @@ _G.pg.base.chapter_template[9920008] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -666206,6 +676303,7 @@ _G.pg.base.chapter_template[9920011] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -666951,6 +677049,7 @@ _G.pg.base.chapter_template[9920012] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -667661,6 +677760,7 @@ _G.pg.base.chapter_template[9920013] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -668489,6 +678589,7 @@ _G.pg.base.chapter_template[9920014] = {
 		1,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -669112,6 +679213,7 @@ _G.pg.base.chapter_template[9920015] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -669743,6 +679845,7 @@ _G.pg.base.chapter_template[9920016] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -670429,6 +680532,7 @@ _G.pg.base.chapter_template[9920017] = {
 		0,
 		1,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -671271,6 +681375,7 @@ _G.pg.base.chapter_template[9920018] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},
@@ -671724,6 +681829,7 @@ _G.pg.base.chapter_template[9920021] = {
 	box_refresh = {
 		0,
 	},
+	box_auto_pick = {},
 	story_refresh = {},
 	defeat_story = {},
 	defeat_story_count = {},

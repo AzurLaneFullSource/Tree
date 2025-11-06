@@ -15,7 +15,7 @@ var0_0.BuyingLimit = 60
 var0_0.isCache = false
 
 function var0_0.CheckAudit()
-	return NetConst.GATEWAY_PORT == 20001 and NetConst.GATEWAY_HOST == "blhxjpauditapi.azurlane.jp"
+	return NetConst.getwayType == 1
 end
 
 function var0_0.CheckPreAudit()

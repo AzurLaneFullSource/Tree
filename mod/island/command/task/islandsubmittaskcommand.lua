@@ -12,7 +12,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			local var0_2 = getProxy(IslandProxy):GetIsland()
 			local var1_2 = var0_2:GetTaskAgency()
 			local var2_2 = var1_2:GetTask(var1_1)
-			local var3_2 = var2_2.id == var1_2:GetTraceId()
+			local var3_2 = var2_2.id == var1_2:GetTraceId() or var2_2.id == var1_2:GetMainTraceId()
 			local var4_2 = var2_2:GetExp()
 
 			if var2_2:GetType() == IslandTaskType.MAIN then
@@ -32,6 +32,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			var1_2:RemoveTask(var1_1)
 			var1_2:AddFinishId(var1_1)
 			IslandTaskHelper.UpdateRuntimeTaskByTargetType(IslandTaskTargetType.TASK)
+			IslandTaskHelper.UpdateRuntimeTaskByTargetType(IslandTaskTargetType.TASK_TYPE_PLUS)
 
 			local var6_2 = IslandDropHelper.AddItems(arg0_2, var4_2)
 

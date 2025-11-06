@@ -8,11 +8,11 @@ function var0_0.execute(arg0_1, arg1_1)
 	}, 21346, function(arg0_2)
 		if arg0_2.result == 0 then
 			local var0_2 = getProxy(IslandProxy):GetIsland():GetBookAgency()
-			local var1_2 = var0_2:GetAllPoints()
+			local var1_2 = var0_2:GetTotalPoints()
 
 			var0_2:OnGetPointDone(arg0_2.collect_list)
 
-			local var2_2 = var0_2:GetAllPoints()
+			local var2_2 = var0_2:GetTotalPoints()
 
 			pg.TipsMgr.GetInstance():ShowTips(i18n("island_get_collect_point_success", var2_2 - var1_2))
 			arg0_1:sendNotification(GAME.ISLAND_GET_COLLECT_POINT_DONE)

@@ -37,7 +37,8 @@ function var0_0.register(arg0_1)
 			actId = arg0_1.contextData.actId,
 			mode = arg0_1.contextData.mode,
 			puzzleCombatID = arg0_1.contextData.puzzleCombatID,
-			useVariableTicket = arg0_1.contextData.useVariableTicket
+			useVariableTicket = arg0_1.contextData.useVariableTicket,
+			isSimulate = arg0_1.contextData.isSimulate
 		})
 	end)
 	arg0_1:bind(var0_0.ON_AUTO, function(arg0_3, arg1_3)
@@ -925,8 +926,6 @@ function var0_0.GenBattleData(arg0_35)
 		local var69_35 = var67_35:GetFleet(var68_35)
 		local var70_35 = var67_35:GetBossById(var68_35)
 
-		assert(var70_35, var68_35)
-
 		if arg0_35.contextData.hpRate then
 			var0_35.RepressInfo = {
 				repressEnemyHpRant = arg0_35.contextData.hpRate
@@ -977,7 +976,7 @@ function var0_0.GenBattleData(arg0_35)
 
 		var0_35.MapAidSkills = {}
 
-		if var70_35:IsSelf() then
+		if var70_35 and var70_35:IsSelf() then
 			local var81_35, var82_35, var83_35 = var67_35.GetSupportValue()
 
 			if var81_35 then

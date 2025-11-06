@@ -86985,6 +86985,366 @@ _G.pg.base.aircraft_template[168990] = {
 	},
 }
 
+_G.pg.base.aircraft_template[169531] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 206,
+	dodge = 3.03,
+	dodge_limit = 2.2,
+	funnel_behavior = "",
+	hp_growth = 2076,
+	icon = "f6f",
+	id = 169531,
+	max_hp = 54,
+	model_ID = "ad1",
+	name = "独立专武弹幕",
+	nationality = 3,
+	scale = 1,
+	spawn_brownian = 1,
+	speed = 45,
+	type = 3,
+	weapon_ID = {
+		169541,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.93,
+				-1.03,
+				0,
+			},
+			{
+				0.96,
+				1.08,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[169532] = {
+	base = 169531,
+	hp_growth = 2387,
+	id = 169532,
+	max_hp = 62,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169542,
+	},
+}
+
+_G.pg.base.aircraft_template[169533] = {
+	base = 169531,
+	hp_growth = 2698,
+	id = 169533,
+	max_hp = 70,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169543,
+	},
+}
+
+_G.pg.base.aircraft_template[169534] = {
+	base = 169531,
+	hp_growth = 3010,
+	id = 169534,
+	max_hp = 78,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169544,
+	},
+}
+
+_G.pg.base.aircraft_template[169535] = {
+	base = 169531,
+	hp_growth = 3321,
+	id = 169535,
+	max_hp = 86,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169545,
+	},
+}
+
+_G.pg.base.aircraft_template[169536] = {
+	base = 169531,
+	hp_growth = 3632,
+	id = 169536,
+	max_hp = 94,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169546,
+	},
+}
+
+_G.pg.base.aircraft_template[169537] = {
+	base = 169531,
+	hp_growth = 3944,
+	id = 169537,
+	max_hp = 103,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169547,
+	},
+}
+
+_G.pg.base.aircraft_template[169538] = {
+	base = 169531,
+	hp_growth = 4255,
+	id = 169538,
+	max_hp = 111,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169548,
+	},
+}
+
+_G.pg.base.aircraft_template[169539] = {
+	base = 169531,
+	hp_growth = 4566,
+	id = 169539,
+	max_hp = 119,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169549,
+	},
+}
+
+_G.pg.base.aircraft_template[169540] = {
+	base = 169531,
+	hp_growth = 4878,
+	id = 169540,
+	max_hp = 127,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169550,
+	},
+}
+
+_G.pg.base.aircraft_template[169551] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 24,
+	attack_power = 2,
+	crash_DMG = 156,
+	dodge = 0.327,
+	dodge_limit = 10.5,
+	funnel_behavior = "",
+	hp_growth = 3881,
+	icon = "f6f",
+	id = 169551,
+	max_hp = 110,
+	model_ID = "f6f",
+	name = "独立兵装战斗机",
+	nationality = 1,
+	scale = 1,
+	spawn_brownian = 1,
+	speed = 60,
+	type = 1,
+	weapon_ID = {
+		169561,
+		169571,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				-1.28,
+				1.62,
+				0,
+			},
+			{
+				-1.12,
+				-1,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[169552] = {
+	base = 169551,
+	hp_growth = 3881,
+	id = 169552,
+	max_hp = 110,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169562,
+		169572,
+	},
+}
+
+_G.pg.base.aircraft_template[169553] = {
+	base = 169551,
+	hp_growth = 3881,
+	id = 169553,
+	max_hp = 110,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169563,
+		169573,
+	},
+}
+
+_G.pg.base.aircraft_template[169554] = {
+	base = 169551,
+	hp_growth = 3881,
+	id = 169554,
+	max_hp = 110,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169564,
+		169574,
+	},
+}
+
+_G.pg.base.aircraft_template[169555] = {
+	base = 169551,
+	hp_growth = 3881,
+	id = 169555,
+	max_hp = 110,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169565,
+		169575,
+	},
+}
+
+_G.pg.base.aircraft_template[169556] = {
+	base = 169551,
+	hp_growth = 3881,
+	id = 169556,
+	max_hp = 110,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169566,
+		169576,
+	},
+}
+
+_G.pg.base.aircraft_template[169557] = {
+	base = 169551,
+	hp_growth = 3881,
+	id = 169557,
+	max_hp = 110,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169567,
+		169577,
+	},
+}
+
+_G.pg.base.aircraft_template[169558] = {
+	base = 169551,
+	hp_growth = 3881,
+	id = 169558,
+	max_hp = 110,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169568,
+		169578,
+	},
+}
+
+_G.pg.base.aircraft_template[169559] = {
+	base = 169551,
+	hp_growth = 3881,
+	id = 169559,
+	max_hp = 110,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169569,
+		169579,
+	},
+}
+
+_G.pg.base.aircraft_template[169560] = {
+	base = 169551,
+	hp_growth = 3881,
+	id = 169560,
+	max_hp = 110,
+	spawn_brownian = 1,
+	weapon_ID = {
+		169570,
+		169580,
+	},
+}
+
 _G.pg.base.aircraft_template[170844] = {
 	ACC_growth = 0,
 	AP_growth = 2000,

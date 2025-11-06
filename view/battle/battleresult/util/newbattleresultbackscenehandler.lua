@@ -139,7 +139,7 @@ function var0_0.ExitWorldBossSystem(arg0_9, arg1_9)
 	local var0_9 = getProxy(ContextProxy):getContextByMediator(WorldBossMediator)
 	local var1_9 = var0_9:getContextByMediator(WorldBossFormationMediator)
 
-	if var1_9 then
+	if var1_9 and not arg1_9.isSimulate then
 		var0_9:removeChild(var1_9)
 	end
 
@@ -263,11 +263,7 @@ end
 function var0_0.ExitRewardPerform(arg0_17, arg1_17)
 	local var0_17, var1_17 = getProxy(ContextProxy):getContextByMediator(BossSinglePreCombatLiteMediator)
 
-	print(var0_17.parent)
-
 	if var0_17 then
-		print(var1_17.mediator.__cname)
-
 		local var2_17 = var1_17:removeChild(var0_17)
 	end
 

@@ -236,6 +236,11 @@ end
 
 function var0_0.PlayAnimation(arg0_21, arg1_21, arg2_21, arg3_21)
 	local var0_21 = defaultValue(arg2_21, 0.25)
+
+	if arg1_21 == IslandConst.ANIMATION_HEROCOMING then
+		var0_21 = 0
+	end
+
 	local var1_21 = arg0_21:GetAnimator()
 	local var2_21 = Animator.StringToHash(arg1_21)
 

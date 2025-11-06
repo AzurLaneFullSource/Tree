@@ -13,7 +13,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.bgTr = arg1_1:Find("bg")
 	arg0_1.bgImg = arg1_1:Find("bg"):GetComponent(typeof(Image))
 	arg0_1.request = arg1_1:Find("request")
-	arg0_1.refreshBtn = arg1_1:Find("refresh")
+	arg0_1.exchangeBtn = arg1_1:Find("refresh")
 	arg0_1.requestCG = GetOrAddComponent(arg0_1.request, typeof(CanvasGroup))
 	arg0_1.uiRequestList = UIItemList.New(arg1_1:Find("request"), arg1_1:Find("request/tpl"))
 	arg0_1.titleTr = arg1_1:Find("title")
@@ -35,12 +35,14 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.getBtn = arg1_1:Find("state_finish/get")
 	arg0_1.signTr = arg1_1:Find("sign")
 	arg0_1.resImg = arg1_1:Find("state_lock/gold/content/icon")
-	arg0_1.reloadingTr = arg1_1:Find("reloading")
-	arg0_1.reloadingTimerTxt = arg0_1.reloadingTr:Find("timer/Text"):GetComponent(typeof(Text))
+	arg0_1.emptyTr = arg1_1:Find("empty")
+	arg0_1.finishCntTxt = arg1_1:Find("count"):GetComponent(typeof(Text))
 
 	setText(arg1_1:Find("loading_award/state/Text"), i18n("island_order_get_label"))
 	setText(arg1_1:Find("normal_award/state/Text"), i18n("island_order_get_label"))
 	setText(arg0_1.getBtn:Find("Text"), i18n("island_order_get_label"))
+	setText(arg1_1:Find("empty/Text"), i18n("island_order_ship_sel_delegate_label"))
+	setText(arg0_1.exchangeBtn:Find("Text"), i18n("island_order_ship_btn_replace"))
 
 	arg0_1.animator = arg1_1:GetComponent(typeof(Animation))
 	arg0_1.aniDft = arg1_1:GetComponent(typeof(DftAniEvent))
@@ -59,17 +61,14 @@ function var0_0.FlushMain(arg0_3, arg1_3, arg2_3)
 	arg0_3:UpdateAward(arg1_3)
 	arg0_3:UpdateLockTip(arg1_3)
 	arg0_3:UpdateTitle(arg1_3)
-	arg0_3:UpdateReloadingTime(arg1_3)
+	arg0_3:UpdateFinishCnt(arg1_3)
 end
 
-function var0_0.UpdateRefreshBtn(arg0_4, arg1_4, arg2_4)
-	local var0_4 = arg1_4:CanRefresh()
+function var0_0.UpdateFinishCnt(arg0_4, arg1_4)
+	local var0_4 = arg1_4:GetRealFinishCnt()
+	local var1_4 = arg1_4:GetMaxFinishCnt()
 
-	setGray(arg0_4.refreshBtn, not var0_4, true)
-
-	local var1_4 = arg2_4 == IslandShipOrderPage.MODE_REQUEST_VIEW
-
-	setActive(arg0_4.refreshBtn, arg1_4:IsWaiting() and var1_4 and not arg1_4:IsReloading())
+	arg0_4.finishCntTxt.text = i18n("island_order_ship_finish_cnt", var1_4 - var0_4, var1_4)
 end
 
 function var0_0.PlayAniamtion(arg0_5, arg1_5, arg2_5, arg3_5)
@@ -125,7 +124,6 @@ function var0_0.SwitchMode(arg0_10, arg1_10, arg2_10)
 	arg0_10.mode = arg2_10
 
 	arg0_10:UpdateStyle(arg1_10, arg2_10)
-	arg0_10:UpdateRefreshBtn(arg1_10, arg2_10)
 end
 
 function var0_0.UpdateTimer(arg0_11, arg1_11)
@@ -242,7 +240,7 @@ function var0_0.UpdateStyle(arg0_23, arg1_23, arg2_23)
 	local var2_23 = arg1_23:IsFinished()
 	local var3_23 = arg1_23:IsSubmited() and not var2_23
 	local var4_23 = arg1_23:CanUnlock()
-	local var5_23 = arg1_23:IsReloading()
+	local var5_23 = arg1_23:IsEmpty()
 	local var6_23 = arg2_23 == IslandShipOrderPage.MODE_REQUEST_VIEW
 	local var7_23 = arg2_23 == IslandShipOrderPage.MODE_AWARD_VIEW
 
@@ -257,80 +255,53 @@ function var0_0.UpdateStyle(arg0_23, arg1_23, arg2_23)
 	setActive(arg0_23.levelLockTr, var0_23 and not var4_23)
 	setActive(arg0_23.resLockTr, var0_23 and var4_23)
 	setActive(arg0_23.titleTr, not var0_23 and not var5_23)
-	setActive(arg0_23.reloadingTr, var5_23)
+	setActive(arg0_23.emptyTr, var5_23 and var1_23)
+	setActive(arg0_23.exchangeBtn, not var5_23 and var1_23 and var6_23)
+	setActive(arg0_23.finishCntTxt.gameObject, not var0_23)
 
 	arg0_23.requestCG.alpha = var3_23 and 0.6 or 1
-	arg0_23.titleTr.sizeDelta = var1_23 and Vector2(360, 39) or Vector2(155, 39)
+	arg0_23.titleTr.sizeDelta = var1_23 and Vector2(360, 39) or Vector2(240, 39)
 
 	arg0_23:UpdateBgColor(arg1_23)
 	arg0_23:UpdateTitleColor(arg1_23)
 end
 
-function var0_0.UpdateReloadingTime(arg0_24, arg1_24)
-	arg0_24:RemoveReloadingTimer()
+function var0_0.RemoveReloadingTimer(arg0_24)
+	if arg0_24.reloadingTimer then
+		arg0_24.reloadingTimer:Stop()
 
-	if not arg1_24:IsReloading() then
-		return
-	end
-
-	local var0_24 = arg1_24:GetReloadingEndTime()
-
-	arg0_24.reloadingTimer = Timer.New(function()
-		local var0_25 = pg.TimeMgr.GetInstance():GetServerTime()
-		local var1_25 = var0_24 - var0_25
-
-		if var1_25 <= 0 then
-			arg0_24:RemoveReloadingTimer()
-
-			arg0_24.reloadingTimerTxt.text = ""
-
-			arg0_24:Flush(arg1_24, arg0_24.mode)
-			pg.m02:sendNotification(var0_0.EVENT_CD_END)
-		else
-			arg0_24.reloadingTimerTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var1_25)
-		end
-	end, 1, -1)
-
-	arg0_24.reloadingTimer:Start()
-	arg0_24.reloadingTimer.func()
-end
-
-function var0_0.RemoveReloadingTimer(arg0_26)
-	if arg0_26.reloadingTimer then
-		arg0_26.reloadingTimer:Stop()
-
-		arg0_26.reloadingTimer = nil
+		arg0_24.reloadingTimer = nil
 	end
 end
 
-function var0_0.UpdateBgColor(arg0_27, arg1_27)
-	if arg1_27:IsSubmited() and not arg1_27:IsFinished() then
-		setActive(arg0_27.bgTr, false)
+function var0_0.UpdateBgColor(arg0_25, arg1_25)
+	if arg1_25:IsSubmited() and not arg1_25:IsFinished() then
+		setActive(arg0_25.bgTr, false)
 
 		return
 	end
 
-	setActive(arg0_27.bgTr, true)
+	setActive(arg0_25.bgTr, true)
 
-	arg0_27.bgImg.color = arg1_27:IsFinished() and var1_0 or var3_0
+	arg0_25.bgImg.color = arg1_25:IsFinished() and var1_0 or var3_0
 end
 
-function var0_0.UpdateTitleColor(arg0_28, arg1_28)
-	if arg1_28:IsFinished() then
-		arg0_28.titleLineImg.color = var1_0
-	elseif arg1_28:IsSubmited() and not arg1_28:IsFinished() then
-		arg0_28.titleLineImg.color = var4_0
-	elseif arg1_28:IsWaiting() then
-		arg0_28.titleLineImg.color = var2_0
+function var0_0.UpdateTitleColor(arg0_26, arg1_26)
+	if arg1_26:IsFinished() then
+		arg0_26.titleLineImg.color = var1_0
+	elseif arg1_26:IsSubmited() and not arg1_26:IsFinished() then
+		arg0_26.titleLineImg.color = var4_0
+	elseif arg1_26:IsWaiting() then
+		arg0_26.titleLineImg.color = var2_0
 	end
 
-	arg0_28.titleTxt.color = arg1_28:IsWaiting() and var2_0 or var5_0
+	arg0_26.titleTxt.color = arg1_26:IsWaiting() and var2_0 or var5_0
 end
 
-function var0_0.Dispose(arg0_29)
-	arg0_29:RemoveTimer()
-	arg0_29:RemoveReloadingTimer()
-	arg0_29.aniDft:SetEndEvent(nil)
+function var0_0.Dispose(arg0_27)
+	arg0_27:RemoveTimer()
+	arg0_27:RemoveReloadingTimer()
+	arg0_27.aniDft:SetEndEvent(nil)
 end
 
 return var0_0

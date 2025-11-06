@@ -42,4 +42,8 @@ function var0_0.GetLimitRestaurantTypes()
 	}
 end
 
+function var0_0.IsLimitRestaurantType(arg0_6)
+	return table.contains(var0_0.GetLimitRestaurantTypes(), arg0_6)
+end
+
 return var0_0

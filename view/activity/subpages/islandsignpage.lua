@@ -96,7 +96,7 @@ function var0_0.GetDate()
 end
 
 function var0_0.IsShowRed()
-	return var0_0.IsShowGoRed() or var0_0.IsShowAwardRed()
+	return var0_0.IsShowAwardRed()
 end
 
 function var0_0.IsShowGoRed()

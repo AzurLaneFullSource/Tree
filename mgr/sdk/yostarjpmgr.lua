@@ -2,7 +2,7 @@ local var0_0 = {}
 local var1_0 = YoStarSDKMgr.inst
 
 function var0_0.CheckAudit()
-	return NetConst.GATEWAY_PORT == 20001 and NetConst.GATEWAY_HOST == "blhxjpauditapi.azurlane.jp"
+	return NetConst.getwayType == 1
 end
 
 function var0_0.CheckPreAudit()

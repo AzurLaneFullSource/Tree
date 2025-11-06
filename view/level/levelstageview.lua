@@ -2235,20 +2235,12 @@ function var0_0.TryAutoFight(arg0_165)
 	local var3_165 = _.detect(var2_165, function(arg0_166)
 		return ChapterConst.IsBossCell(arg0_166)
 	end)
-	local var4_165
+	local var4_165 = var0_165:GetFleetOfDuty(tobool(var3_165))
 
-	if ChapterConst.IsAtelierMap(var1_165) then
-		var4_165 = _.filter(var0_165:findChapterCells(ChapterConst.AttachBox), function(arg0_167)
-			return arg0_167.flag ~= ChapterConst.CellFlagDisabled
-		end)
-	end
-
-	local var5_165 = var0_165:GetFleetofDuty(tobool(var3_165))
-
-	if var5_165 and var5_165.id ~= var0_165.fleet.id then
+	if var4_165 and var4_165.id ~= var0_165.fleet.id then
 		arg0_165:emit(LevelMediator2.ON_OP, {
 			type = ChapterConst.OpSwitch,
-			id = var5_165.id
+			id = var4_165.id
 		})
 		arg0_165:tryAutoTrigger()
 
@@ -2261,91 +2253,123 @@ function var0_0.TryAutoFight(arg0_165)
 		return
 	end
 
-	if var4_165 and #var4_165 > 0 then
-		var2_165 = _.map(var4_165, function(arg0_168)
-			local var0_168, var1_168 = var0_165:findPath(ChapterConst.SubjectPlayer, var5_165.line, arg0_168)
+	local var5_165
 
-			return {
-				target = arg0_168,
-				priority = var0_168,
-				path = var1_168
-			}
+	for iter0_165, iter1_165 in ipairs(var0_165:getConfig("box_auto_pick")) do
+		local var6_165 = underscore.filter(switch(iter1_165, {
+			[ChapterConst.AttachBox] = function()
+				return var0_165:findChapterCells(iter1_165)
+			end,
+			[ChapterConst.AttachSupply] = function()
+				local var0_168, var1_168 = var0_165:getFleetAmmo(var4_165)
+
+				if var0_168 - var1_168 < 3 then
+					return {}
+				else
+					return underscore.filter(var0_165:findChapterCells(iter1_165), function(arg0_169)
+						return arg0_169.attachmentId > 0
+					end)
+				end
+			end
+		}), function(arg0_170)
+			return arg0_170.flag ~= ChapterConst.CellFlagDisabled
 		end)
-	elseif var3_165 then
-		local var6_165, var7_165 = var0_165:FindBossPath(var5_165.line, var3_165)
-		local var8_165 = {}
-		local var9_165
 
-		for iter0_165, iter1_165 in ipairs(var7_165) do
-			table.insert(var8_165, iter1_165)
+		for iter2_165, iter3_165 in ipairs(var6_165) do
+			local var7_165, var8_165 = var0_165:findPath(ChapterConst.SubjectPlayer, var4_165.line, iter3_165)
 
-			if var0_165:existEnemy(ChapterConst.SubjectPlayer, iter1_165.row, iter1_165.column) then
-				var6_165 = iter0_165
-				var9_165 = iter1_165
+			if var7_165 < PathFinding.PrioObstacle then
+				var5_165 = var5_165 or {}
 
-				break
+				table.insert(var5_165, {
+					target = iter3_165,
+					priority = var7_165,
+					path = var8_165
+				})
 			end
 		end
 
-		var2_165 = {
-			{
-				target = var9_165 or var3_165,
-				priority = var6_165 or 0,
-				path = var8_165
-			}
-		}
-	else
-		var2_165 = _.map(var2_165, function(arg0_169)
-			local var0_169, var1_169 = var0_165:findPath(ChapterConst.SubjectPlayer, var5_165.line, arg0_169)
+		if var5_165 then
+			table.sort(var5_165, CompareFuncs({
+				function(arg0_171)
+					return arg0_171.priority
+				end
+			}))
 
-			return {
-				target = arg0_169,
-				priority = var0_169,
-				path = var1_169
-			}
-		end)
-
-		local function var10_165(arg0_170)
-			local var0_170 = arg0_170.target
-			local var1_170 = pg.expedition_data_template[var0_170.attachmentId]
-
-			assert(var1_170, "expedition_data_template not exist: " .. var0_170.attachmentId)
-
-			if var0_170.flag == ChapterConst.CellFlagDisabled then
-				return 0
-			end
-
-			return ChapterConst.EnemyPreference[var1_170.type]
+			break
 		end
-
-		table.sort(var2_165, function(arg0_171, arg1_171)
-			local var0_171 = arg0_171.priority >= PathFinding.PrioObstacle
-
-			if var0_171 ~= (arg1_171.priority >= PathFinding.PrioObstacle) then
-				return not var0_171
-			end
-
-			local var1_171 = var10_165(arg0_171)
-			local var2_171 = var10_165(arg1_171)
-
-			if var1_171 ~= var2_171 then
-				return var2_171 < var1_171
-			end
-
-			return arg0_171.priority < arg1_171.priority
-		end)
 	end
 
-	local var11_165 = var2_165[1]
+	if not var5_165 then
+		if var3_165 then
+			local var9_165, var10_165 = var0_165:FindBossPath(var4_165.line, var3_165)
+			local var11_165 = {}
+			local var12_165
 
-	if var11_165 and var11_165.priority < PathFinding.PrioObstacle then
-		local var12_165 = var11_165.target
+			for iter4_165, iter5_165 in ipairs(var10_165) do
+				table.insert(var11_165, iter5_165)
+
+				if var0_165:existEnemy(ChapterConst.SubjectPlayer, iter5_165.row, iter5_165.column) then
+					var9_165 = iter4_165
+					var12_165 = iter5_165
+
+					break
+				end
+			end
+
+			var5_165 = {
+				{
+					target = var12_165 or var3_165,
+					priority = var9_165 or 0,
+					path = var11_165
+				}
+			}
+		else
+			var5_165 = underscore.map(var2_165, function(arg0_172)
+				local var0_172, var1_172 = var0_165:findPath(ChapterConst.SubjectPlayer, var4_165.line, arg0_172)
+
+				return {
+					target = arg0_172,
+					priority = var0_172,
+					path = var1_172
+				}
+			end)
+
+			local function var13_165(arg0_173)
+				local var0_173 = arg0_173.target
+				local var1_173 = pg.expedition_data_template[var0_173.attachmentId]
+
+				assert(var1_173, "expedition_data_template not exist: " .. var0_173.attachmentId)
+
+				if var0_173.flag == ChapterConst.CellFlagDisabled then
+					return 0
+				end
+
+				return ChapterConst.EnemyPreference[var1_173.type]
+			end
+
+			table.sort(var5_165, CompareFuncs({
+				function(arg0_174)
+					return arg0_174.priority < PathFinding.PrioObstacle and 0 or 1
+				end,
+				function(arg0_175)
+					return -var13_165(arg0_175)
+				end,
+				function(arg0_176)
+					return arg0_176.priority
+				end
+			}))
+		end
+	end
+
+	if var5_165 and #var5_165 > 0 and var5_165[1].priority < PathFinding.PrioObstacle then
+		local var14_165 = var5_165[1].target
 
 		arg0_165:emit(LevelMediator2.ON_OP, {
 			type = ChapterConst.OpMove,
-			id = var5_165.id,
-			arg1 = var12_165.row,
-			arg2 = var12_165.column
+			id = var4_165.id,
+			arg1 = var14_165.row,
+			arg2 = var14_165.column
 		})
 	else
 		pg.TipsMgr.GetInstance():ShowTips(i18n("autofight_errors_tip"))
@@ -2353,80 +2377,80 @@ function var0_0.TryAutoFight(arg0_165)
 	end
 end
 
-function var0_0.popStageStrategy(arg0_172)
-	local var0_172 = arg0_172.rightStage:Find("event/collapse")
+function var0_0.popStageStrategy(arg0_177)
+	local var0_177 = arg0_177.rightStage:Find("event/collapse")
 
-	if var0_172.anchoredPosition.x <= 1 then
-		triggerButton(var0_172)
+	if var0_177.anchoredPosition.x <= 1 then
+		triggerButton(var0_177)
 	end
 end
 
-function var0_0.UpdateAutoFightPanel(arg0_173)
-	if arg0_173.contextData.chapterVO:CanActivateAutoFight() then
-		if not arg0_173.autoFightPanel then
-			arg0_173.autoFightPanel = LevelStageAutoFightPanel.New(arg0_173.rightStage:Find("event/collapse"), arg0_173.event, arg0_173.contextData)
+function var0_0.UpdateAutoFightPanel(arg0_178)
+	if arg0_178.contextData.chapterVO:CanActivateAutoFight() then
+		if not arg0_178.autoFightPanel then
+			arg0_178.autoFightPanel = LevelStageAutoFightPanel.New(arg0_178.rightStage:Find("event/collapse"), arg0_178.event, arg0_178.contextData)
 
-			arg0_173.autoFightPanel:Load()
+			arg0_178.autoFightPanel:Load()
 
-			arg0_173.autoFightPanel.isFrozen = arg0_173.isFrozen
+			arg0_178.autoFightPanel.isFrozen = arg0_178.isFrozen
 		end
 
-		arg0_173.autoFightPanel.buffer:Show()
-	elseif arg0_173.autoFightPanel then
-		arg0_173.autoFightPanel.buffer:Hide()
+		arg0_178.autoFightPanel.buffer:Show()
+	elseif arg0_178.autoFightPanel then
+		arg0_178.autoFightPanel.buffer:Hide()
 	end
 end
 
-function var0_0.UpdateAutoFightMark(arg0_174)
-	if not arg0_174.autoFightPanel then
+function var0_0.UpdateAutoFightMark(arg0_179)
+	if not arg0_179.autoFightPanel then
 		return
 	end
 
-	arg0_174.autoFightPanel.buffer:UpdateAutoFightMark()
+	arg0_179.autoFightPanel.buffer:UpdateAutoFightMark()
 end
 
-function var0_0.DestroyAutoFightPanel(arg0_175)
-	if not arg0_175.autoFightPanel then
+function var0_0.DestroyAutoFightPanel(arg0_180)
+	if not arg0_180.autoFightPanel then
 		return
 	end
 
-	arg0_175.autoFightPanel:Destroy()
+	arg0_180.autoFightPanel:Destroy()
 
-	arg0_175.autoFightPanel = nil
+	arg0_180.autoFightPanel = nil
 end
 
-function var0_0.DestroyToast(arg0_176)
-	if not arg0_176.toastPanel then
+function var0_0.DestroyToast(arg0_181)
+	if not arg0_181.toastPanel then
 		return
 	end
 
-	arg0_176.toastPanel:Destroy()
+	arg0_181.toastPanel:Destroy()
 
-	arg0_176.toastPanel = nil
+	arg0_181.toastPanel = nil
 end
 
-function var0_0.Toast(arg0_177)
-	arg0_177:DestroyToast()
+function var0_0.Toast(arg0_182)
+	arg0_182:DestroyToast()
 
-	local var0_177 = table.remove(arg0_177.toastQueue, 1)
+	local var0_182 = table.remove(arg0_182.toastQueue, 1)
 
-	if not var0_177 then
+	if not var0_182 then
 		return
 	end
 
-	arg0_177.toastPanel = var0_177.Class.New(arg0_177)
+	arg0_182.toastPanel = var0_182.Class.New(arg0_182)
 
-	arg0_177.toastPanel:Load()
+	arg0_182.toastPanel:Load()
 
-	arg0_177.toastPanel.contextData.settings = var0_177
+	arg0_182.toastPanel.contextData.settings = var0_182
 
-	arg0_177.toastPanel.buffer:Play(function()
-		arg0_177:Toast()
+	arg0_182.toastPanel.buffer:Play(function()
+		arg0_182:Toast()
 	end)
 end
 
-function var0_0.HandleShowMsgBox(arg0_179, arg1_179)
-	pg.MsgboxMgr.GetInstance():ShowMsgBox(arg1_179)
+function var0_0.HandleShowMsgBox(arg0_184, arg1_184)
+	pg.MsgboxMgr.GetInstance():ShowMsgBox(arg1_184)
 end
 
 return var0_0

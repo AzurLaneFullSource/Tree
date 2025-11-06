@@ -5,6 +5,17 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var1_1 = var0_1.id
 	local var2_1 = var0_1.code
 	local var3_1 = var0_1.reconnect
+	local var4_1 = getProxy(PlayerProxy):getRawData()
+
+	if var4_1 then
+		local var5_1, var6_1 = pg.SystemOpenMgr.GetInstance():isOpenSystem(var4_1.level, IslandMediator.__cname)
+
+		if not var5_1 then
+			pg.TipsMgr.GetInstance():ShowTips(var6_1)
+
+			return
+		end
+	end
 
 	if var2_1 and var2_1 ~= "" then
 		arg0_1:Send(0, var2_1, var3_1)

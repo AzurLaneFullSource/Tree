@@ -39,8 +39,19 @@ function var0_0.IsMapTip()
 		local var2_11 = var1_11:GetTraceParam()
 		local var3_11 = tonumber(var2_11)
 
-		if var3_11 then
-			return var0_11:GetMapId() ~= pg.island_world_objects[var3_11].mapId
+		if var3_11 and var0_11:GetMapId() ~= pg.island_world_objects[var3_11].mapId then
+			return true
+		end
+	end
+
+	local var4_11 = var0_11:GetTaskAgency():GetMainTraceTask()
+
+	if var4_11 then
+		local var5_11 = var4_11:GetTraceParam()
+		local var6_11 = tonumber(var5_11)
+
+		if var6_11 and var0_11:GetMapId() ~= pg.island_world_objects[var6_11].mapId then
+			return true
 		end
 	end
 
@@ -55,14 +66,8 @@ function var0_0.IsDeviceTip()
 		local var2_12 = var1_12.btn_name
 		local var3_12 = var1_12.ability_id
 
-		if var0_12:HasAbility(var3_12) then
-			if var2_12 == "book" then
-				if var0_0.IsBookTipInDeviceBtn() then
-					return true
-				end
-			elseif var0_0.IsTip(var2_12) then
-				return true
-			end
+		if var0_12:HasAbility(var3_12) and var0_0.IsTip(var2_12) then
+			return true
 		end
 	end
 
@@ -119,24 +124,18 @@ function var0_0.IsBookTip()
 	})
 end
 
-function var0_0.IsBookTipInDeviceBtn()
-	return getProxy(IslandProxy):GetIsland():GetBookAgency():IsTipFromTypes({
-		IslandIllustration.TYPES.CHAR
-	})
-end
-
-function var0_0.IsUnlock(arg0_24)
-	local var0_24 = underscore.detect(pg.island_main_btns.all, function(arg0_25)
-		return pg.island_main_btns[arg0_25].btn_name == arg0_24
+function var0_0.IsUnlock(arg0_23)
+	local var0_23 = underscore.detect(pg.island_main_btns.all, function(arg0_24)
+		return pg.island_main_btns[arg0_24].btn_name == arg0_23
 	end)
 
-	if not var0_24 then
+	if not var0_23 then
 		return false
 	end
 
-	local var1_24 = pg.island_main_btns[var0_24].ability_id
+	local var1_23 = pg.island_main_btns[var0_23].ability_id
 
-	return getProxy(IslandProxy):GetIsland():GetAblityAgency():HasAbility(var1_24)
+	return getProxy(IslandProxy):GetIsland():GetAblityAgency():HasAbility(var1_23)
 end
 
 return var0_0

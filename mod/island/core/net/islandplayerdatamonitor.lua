@@ -37,11 +37,11 @@ function var0_0.register(arg0_1)
 		arg0_1:HandleAchievementData(arg0_8.event_list)
 	end)
 	arg0_1:on(21342, function(arg0_9)
-		arg0_1:HandleBookData(arg0_9.item_ids)
+		arg0_1:HandleBookData(arg0_9.item_list)
 	end)
 	arg0_1:on(21518, function(arg0_10)
 		arg0_1:HandleSlotFormulaData(arg0_10)
-		getProxy(IslandProxy):GetIsland():GetBuildingAgency():AddFormulaNum(arg0_10.formula_id, comb_num)
+		getProxy(IslandProxy):GetIsland():GetBuildingAgency():AddFormulaNum(arg0_10.formula_id, arg0_10.comb_num)
 	end)
 	arg0_1:on(21519, function(arg0_11)
 		arg0_1:HandleBuildUnlockData(arg0_11)
@@ -244,7 +244,7 @@ function var0_0.HandleAchievementData(arg0_36, arg1_36)
 end
 
 function var0_0.HandleBookData(arg0_37, arg1_37)
-	getProxy(IslandProxy):GetIsland():GetBookAgency():AddCanUnlockItems(arg1_37)
+	getProxy(IslandProxy):GetIsland():GetBookAgency():HandlePushData(arg1_37)
 end
 
 function var0_0.HandleSlotFormulaData(arg0_38, arg1_38)

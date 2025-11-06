@@ -369,19 +369,13 @@ function var0_0.IsSceneType(arg0_35, arg1_35)
 end
 
 function var0_0.OnBackPressed(arg0_36)
-	for iter0_36 = #arg0_36.noStatePages, 1, -1 do
-		local var0_36 = arg0_36.noStatePages[iter0_36]
+	local var0_36 = arg0_36.stack[#arg0_36.stack]
 
-		arg0_36:ClosePage(var0_36.class)
+	if var0_36 then
+		local var1_36 = arg0_36:GetPage(var0_36.class)
 
-		return true
-	end
-
-	for iter1_36 = #arg0_36.pages, 1, -1 do
-		local var1_36 = arg0_36.pages[iter1_36]
-
-		if var1_36:CanEsc() then
-			arg0_36:ClosePage(var1_36.class)
+		if var1_36 and var1_36:CanEsc() then
+			var1_36:Hide()
 		end
 
 		return true

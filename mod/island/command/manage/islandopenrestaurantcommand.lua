@@ -26,7 +26,8 @@ function var0_0.execute(arg0_1, arg1_1)
 	pg.ConnectionMgr.GetInstance():Send(21418, {
 		trade_id = var1_1,
 		post_list = var2_1,
-		food_list = var3_1
+		food_list = var3_1,
+		presell = var0_1.estimateData
 	}, 21419, function(arg0_2)
 		if arg0_2.result == 0 then
 			local var0_2 = getProxy(IslandProxy):GetIsland()
@@ -45,6 +46,7 @@ function var0_0.execute(arg0_1, arg1_1)
 
 			var2_2:SetEndTime(var3_2)
 			var2_2:ReduceRemainCnt()
+			var2_2:InitEstimateData(var0_1.estimateData)
 
 			local var4_2 = var0_2:GetCharacterAgency()
 

@@ -469,9 +469,10 @@ function var0_0.OnShow(arg0_35, arg1_35)
 	if arg0_35.addDelegateFormulaTimes then
 		setActive(arg0_35.barLimit, true)
 
-		local var0_35 = arg0_35.addDelegateFormulaTimes / 5 * 352.6
+		local var0_35 = pg.island_formula[arg0_35.addDelegateFormula].production_limit or 5
+		local var1_35 = arg0_35.addDelegateFormulaTimes / var0_35 * 352.6
 
-		arg0_35.barLimit.sizeDelta = Vector2(var0_35, 22)
+		arg0_35.barLimit.sizeDelta = Vector2(var1_35, 22)
 
 		setActive(arg0_35.addCountTips, true)
 	else
@@ -479,9 +480,9 @@ function var0_0.OnShow(arg0_35, arg1_35)
 		setActive(arg0_35.addCountTips, false)
 	end
 
-	local var1_35 = arg0_35.addDelegateFormulaTimes and i18n("island_additional_production_tip1") or i18n("island_production_start")
+	local var2_35 = arg0_35.addDelegateFormulaTimes and i18n("island_additional_production_tip1") or i18n("island_production_start")
 
-	setText(arg0_35.sureBtn:Find("adapt/time/Text"), var1_35)
+	setText(arg0_35.sureBtn:Find("adapt/time/Text"), var2_35)
 
 	arg0_35.slotId = pg.island_production_commission[arg0_35.commissionId].slot
 	arg0_35.placeId = pg.island_production_slot[arg0_35.slotId].place
@@ -622,16 +623,23 @@ function var0_0.RefreshCurSelectCount(arg0_40)
 		var2_40 = string.format("×(%s<color=#7df39f>+%d</color>)", arg0_40.formulaCfg.commission_product[1][2], var3_40)
 	end
 
-	setText(arg0_40.currentformulaIcon:Find("icon_bg/product_count_bg/product_count"), var2_40)
+	setText(arg0_40.currentformulaIcon:Find("icon_bg/product_count_bg/product_count"), var2_40 .. i18n("island_production_tip"))
 
-	local var4_40 = arg0_40:CacaluteProductTime()
-	local var5_40 = 0
+	local var4_40, var5_40 = arg0_40:CacaluteProductTime()
+	local var6_40 = 0
 
 	for iter0_40, iter1_40 in ipairs(var4_40) do
-		var5_40 = var5_40 + iter1_40
+		var6_40 = var6_40 + iter1_40
 	end
 
-	setText(arg0_40.needTimeText, pg.TimeMgr.GetInstance():DescCDTime(var5_40))
+	local var7_40 = var5_40 - var6_40
+	local var8_40 = pg.TimeMgr.GetInstance():DescCDTime(var6_40)
+
+	if var7_40 > 0 then
+		var8_40 = string.format("%s(<color=#7df39f>-%s</color>)", var8_40, pg.TimeMgr.GetInstance():DescCDTime(var7_40))
+	end
+
+	setText(arg0_40.needTimeText, var8_40)
 end
 
 function var0_0.RefreshExtraProduct(arg0_41)
@@ -670,7 +678,7 @@ function var0_0.RefreshExtraProduct(arg0_41)
 		var5_41 = string.format("×(%s<color=#7df39f>+%d</color>)", var2_41, var6_41)
 	end
 
-	setText(arg0_41.extraProductNum, var5_41)
+	setText(arg0_41.extraProductNum, var5_41 .. i18n("island_production_tip"))
 	setText(arg0_41.currentformulaIcon:Find("icon_bg/product_count_bg/product_count"), curCountStr)
 
 	local var7_41 = pg.island_production_slot[arg0_41.slotId].place
@@ -700,8 +708,10 @@ end
 
 function var0_0.CacaluteProductTime(arg0_43)
 	local var0_43 = arg0_43.addDelegateFormulaTimes and arg0_43.curSelectCount - arg0_43.addDelegateFormulaTimes or arg0_43.curSelectCount
+	local var1_43 = pg.island_set.base_efficiency.key_value_int
+	local var2_43 = math.ceil(arg0_43.formulaCfg.workload / var1_43)
 
-	return IslandProductTimeHelper.CalculateTimeToProductFormula(arg0_43.selectedShipId, arg0_43.selectFormulaId, var0_43, arg0_43.placeId, arg0_43.slotId)
+	return IslandProductTimeHelper.CalculateTimeToProductFormula(arg0_43.selectedShipId, arg0_43.selectFormulaId, var0_43, arg0_43.placeId, arg0_43.slotId), var2_43 * var0_43
 end
 
 function var0_0.CheckInPlace(arg0_44, arg1_44, arg2_44)

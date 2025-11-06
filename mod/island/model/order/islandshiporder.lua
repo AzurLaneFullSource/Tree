@@ -26,79 +26,81 @@ function var0_0.Ctor(arg0_1, arg1_1)
 			count = iter3_1.num
 		})
 	end
-
-	table.insert(arg0_1.awardList, {
-		id = 0,
-		type = VIRTUAL_DROP_TYPE_ISLAND_SEASON_PT,
-		count = arg1_1.add_pt or 0
-	})
 end
 
-function var0_0.IsAnyLoadUp(arg0_2)
-	return _.any(arg0_2.consumeList, function(arg0_3)
-		return arg0_3.state == 1
-	end)
+function var0_0.FillConsumeList(arg0_2, arg1_2)
+	arg0_2.consumeList = arg1_2
 end
 
-function var0_0.IsLoadUpAll(arg0_4)
-	return _.all(arg0_4.consumeList, function(arg0_5)
+function var0_0.FillAwardList(arg0_3, arg1_3)
+	arg0_3.awardList = arg1_3
+end
+
+function var0_0.IsAnyLoadUp(arg0_4)
+	return _.any(arg0_4.consumeList, function(arg0_5)
 		return arg0_5.state == 1
 	end)
 end
 
-function var0_0.MarkLoadUp(arg0_6, arg1_6)
-	arg0_6:GetComsume(arg1_6).state = 1
-end
-
-function var0_0.GetConsumeList(arg0_7)
-	return arg0_7.consumeList
-end
-
-function var0_0.GetComsume(arg0_8, arg1_8)
-	return arg0_8.consumeList[arg1_8] or {}
-end
-
-function var0_0.AnyCanLoadUp(arg0_9)
-	if arg0_9:IsLoadUpAll() then
-		return false
-	end
-
-	return _.any(arg0_9.consumeList, function(arg0_10)
-		local var0_10 = Drop.New(arg0_10)
-
-		return arg0_10.state ~= 1 and var0_10:getOwnedCount() >= arg0_10.count
+function var0_0.IsLoadUpAll(arg0_6)
+	return _.all(arg0_6.consumeList, function(arg0_7)
+		return arg0_7.state == 1
 	end)
 end
 
-function var0_0.ItemIsSubmited(arg0_11, arg1_11)
-	local var0_11 = arg0_11.consumeList[arg1_11]
-
-	return var0_11 and var0_11.state == 1
+function var0_0.MarkLoadUp(arg0_8, arg1_8)
+	arg0_8:GetComsume(arg1_8).state = 1
 end
 
-function var0_0.GetConsumeAwards(arg0_12, arg1_12)
-	local var0_12 = arg0_12:GetComsume(arg1_12)
-	local var1_12 = pg.island_item_data_template[var0_12.id]
-	local var2_12 = pg.island_set.order_ship_award_coefficient.key_value_varchar
-	local var3_12 = var1_12.order_price * var0_12.count
+function var0_0.GetConsumeList(arg0_9)
+	return arg0_9.consumeList
+end
+
+function var0_0.GetComsume(arg0_10, arg1_10)
+	return arg0_10.consumeList[arg1_10] or {}
+end
+
+function var0_0.AnyCanLoadUp(arg0_11)
+	if arg0_11:IsLoadUpAll() then
+		return false
+	end
+
+	return _.any(arg0_11.consumeList, function(arg0_12)
+		local var0_12 = Drop.New(arg0_12)
+
+		return arg0_12.state ~= 1 and var0_12:getOwnedCount() >= arg0_12.count
+	end)
+end
+
+function var0_0.ItemIsSubmited(arg0_13, arg1_13)
+	local var0_13 = arg0_13.consumeList[arg1_13]
+
+	return var0_13 and var0_13.state == 1
+end
+
+function var0_0.GetConsumeAwards(arg0_14, arg1_14)
+	local var0_14 = arg0_14:GetComsume(arg1_14)
+	local var1_14 = pg.island_item_data_template[var0_14.id]
+	local var2_14 = pg.island_set.order_ship_award_coefficient.key_value_varchar
+	local var3_14 = var1_14.order_price * var0_14.count
 
 	return {
 		{
 			type = DROP_TYPE_ISLAND_ITEM,
-			id = var2_12[1],
-			count = math.floor(var3_12 * (var2_12[2] / 100))
+			id = var2_14[1],
+			count = math.floor(var3_14 * (var2_14[2] / 100))
 		},
 		{
 			id = 2,
 			type = DROP_TYPE_ISLAND_ITEM,
-			count = math.floor(var3_12 * (var2_12[3] / 100))
+			count = math.floor(var3_14 * (var2_14[3] / 100))
 		}
 	}
 end
 
-function var0_0.GetAwardList(arg0_13)
-	return _.select(arg0_13.awardList, function(arg0_14)
-		return arg0_14.count > 0
+function var0_0.GetAwardList(arg0_15)
+	return _.select(arg0_15.awardList, function(arg0_16)
+		return arg0_16.count > 0
 	end)
 end
 

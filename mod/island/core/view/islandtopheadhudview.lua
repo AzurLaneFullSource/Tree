@@ -27,6 +27,7 @@ function var0_0.OnInit(arg0_4, arg1_4)
 	arg0_4.includePlayerStorys = {}
 	arg0_4.animationOpShowDistance = pg.island_set.action_detection.key_value_int
 	arg0_4.chatBubbleShowDistance = pg.island_set.island_message_bubble_range.key_value_int
+	arg0_4.bubbleTasks = {}
 
 	var0_0.super.OnInit(arg0_4, arg1_4)
 end
@@ -140,14 +141,14 @@ function var0_0.TryHidePlayerChat(arg0_12)
 	end
 end
 
-function var0_0.PlayBubble(arg0_13, arg1_13, arg2_13, arg3_13)
-	local var0_13 = pg.NewStoryMgr.GetInstance():GetScript(arg1_13)
-	local var1_13 = IslandStory.New(var0_13, arg2_13, IslandStory.MODE_BUBBLE)
+function var0_0.RawPlayBubble(arg0_13, arg1_13, arg2_13, arg3_13)
+	local var0_13 = arg1_13.id
+	local var1_13 = IslandStory.New(arg1_13, arg2_13, IslandStory.MODE_BUBBLE)
 
 	arg0_13:TryHidePlayerChat()
 
 	if var1_13:ContainerPlayer() then
-		table.insert(arg0_13.includePlayerStorys, arg1_13)
+		table.insert(arg0_13.includePlayerStorys, var0_13)
 	end
 
 	local var2_13 = {}
@@ -161,143 +162,182 @@ function var0_0.PlayBubble(arg0_13, arg1_13, arg2_13, arg3_13)
 		table.insert(var2_13, function(arg0_14)
 			local var0_14 = arg0_13.bubblePlayers[var3_13.key] or IslandChatBubblePlayer.New(Object.Instantiate(arg0_13.chatTpl, var4_13), var5_13._go)
 
-			var0_14:Play(iter1_13, arg3_13)
+			var0_14:Play(iter1_13, arg0_14)
 
 			arg0_13.bubblePlayers[var3_13.key] = var0_14
 		end)
 	end
 
-	seriesAsync(var2_13, function()
-		table.removebyvalue(arg0_13.includePlayerStorys, arg1_13)
+	seriesAsyncExtend(var2_13, function()
+		table.removebyvalue(arg0_13.includePlayerStorys, var0_13)
+
+		arg0_13.bubbleTasks[arg1_13.id] = nil
 
 		if arg3_13 then
 			arg3_13()
 		end
 	end)
+
+	arg0_13.bubbleTasks[arg1_13.id] = var2_13
 end
 
-function var0_0.ShowAnimationOp(arg0_16, arg1_16, arg2_16)
-	local var0_16 = arg0_16:GenUnitData(arg1_16.id, arg1_16.unitType)
-	local var1_16 = arg0_16:GetUnitHudRoot(var0_16):Find("aniamtionOpContainer")
-	local var2_16 = arg0_16.animationOpTpls[var0_16.key] or Object.Instantiate(arg0_16.animationOpTpl, var1_16)
+function var0_0.PlayBubble(arg0_16, arg1_16, arg2_16, arg3_16)
+	local var0_16 = pg.NewStoryMgr.GetInstance():GetScript(arg1_16)
 
-	setParent(var2_16, var1_16)
-	setActive(var2_16, false)
+	arg0_16:RawPlayBubble(var0_16, arg2_16, arg3_16)
+end
 
-	arg0_16.animationOpTpls[var0_16.key] = var2_16
+function var0_0.StopBubble(arg0_17, arg1_17)
+	local var0_17 = pg.NewStoryMgr.GetInstance():GetScript(arg1_17)
 
-	onButton(arg0_16, var2_16, function()
-		if not arg0_16:CanReponseAnimationOp(arg1_16, arg2_16) then
+	arg0_17:RawStopBubble(var0_17)
+end
+
+function var0_0.RawStopBubble(arg0_18, arg1_18)
+	if not arg0_18.bubbleTasks[arg1_18.id] then
+		return
+	end
+
+	arg0_18.bubbleTasks[arg1_18.id] = {}
+
+	local var0_18 = IslandStory.New(arg1_18, unitList, IslandStory.MODE_BUBBLE)
+
+	for iter0_18, iter1_18 in ipairs(var0_18.steps) do
+		local var1_18 = iter1_18:GetUnitData()
+		local var2_18 = arg0_18.bubblePlayers[var1_18.key]
+
+		if var2_18 then
+			var2_18:Stop()
+			var2_18:Dispose()
+		end
+
+		arg0_18.bubblePlayers[var1_18.key] = nil
+	end
+end
+
+function var0_0.ShowAnimationOp(arg0_19, arg1_19, arg2_19)
+	local var0_19 = arg0_19:GenUnitData(arg1_19.id, arg1_19.unitType)
+	local var1_19 = arg0_19:GetUnitHudRoot(var0_19):Find("aniamtionOpContainer")
+	local var2_19 = arg0_19.animationOpTpls[var0_19.key] or Object.Instantiate(arg0_19.animationOpTpl, var1_19)
+
+	setParent(var2_19, var1_19)
+	setActive(var2_19, false)
+
+	arg0_19.animationOpTpls[var0_19.key] = var2_19
+
+	onButton(arg0_19, var2_19, function()
+		if not arg0_19:CanReponseAnimationOp(arg1_19, arg2_19) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("island_position_cant_response_cp_action"))
 
 			return
 		end
 
-		arg0_16.isResponeAnimationOp[var0_16.key] = true
+		arg0_19.isResponeAnimationOp[var0_19.key] = true
 
-		arg0_16:NotifiyMeditor(IslandBaseMediator.ANIMATION_OP, arg1_16.id, arg2_16)
+		arg0_19:NotifiyMeditor(IslandBaseMediator.ANIMATION_OP, arg1_19.id, arg2_19)
 	end, SFX_PANEL)
 
-	arg0_16.animationOpShowFlags[var0_16.key] = false
+	arg0_19.animationOpShowFlags[var0_19.key] = false
 end
 
-function var0_0.CanReponseAnimationOp(arg0_18, arg1_18, arg2_18)
-	local var0_18 = arg0_18:GetView().player
-	local var1_18 = pg.island_action[arg2_18]
-	local var2_18 = BuildVector3(var1_18.respond_point).magnitude
+function var0_0.CanReponseAnimationOp(arg0_21, arg1_21, arg2_21)
+	local var0_21 = arg0_21:GetView().player
+	local var1_21 = pg.island_action[arg2_21]
+	local var2_21 = BuildVector3(var1_21.respond_point).magnitude
 
-	return IslandCalcUtil.CanReachPoint(var0_18._go.transform.position, var2_18, arg1_18.agent, arg1_18._tf.position, 36)
+	return IslandCalcUtil.CanReachPoint(var0_21._go.transform.position, var2_21, arg1_21.agent, arg1_21._tf.position, 36)
 end
 
-function var0_0.HideAnimationOp(arg0_19, arg1_19)
-	local var0_19 = arg0_19:GenUnitData(arg1_19.id, arg1_19.unitType)
+function var0_0.HideAnimationOp(arg0_22, arg1_22)
+	local var0_22 = arg0_22:GenUnitData(arg1_22.id, arg1_22.unitType)
 
-	if arg0_19.animationOpShowFlags[var0_19.key] == nil then
+	if arg0_22.animationOpShowFlags[var0_22.key] == nil then
 		return
 	end
 
-	arg0_19.animationOpShowFlags[var0_19.key] = nil
+	arg0_22.animationOpShowFlags[var0_22.key] = nil
 
-	local var1_19 = arg0_19.animationOpTpls[var0_19.key]
+	local var1_22 = arg0_22.animationOpTpls[var0_22.key]
 
-	if not var1_19 then
+	if not var1_22 then
 		return
 	end
 
-	local var2_19 = var1_19.transform:Find("tpl")
-	local var3_19 = var2_19:GetComponent(typeof(DftAniEvent))
-	local var4_19 = var2_19:GetComponent(typeof(Animation))
+	local var2_22 = var1_22.transform:Find("tpl")
+	local var3_22 = var2_22:GetComponent(typeof(DftAniEvent))
+	local var4_22 = var2_22:GetComponent(typeof(Animation))
 
-	var3_19:SetEndEvent(nil)
-	var3_19:SetEndEvent(function()
-		var3_19:SetEndEvent(nil)
-		setActive(var1_19, false)
-		removeOnButton(var1_19)
+	var3_22:SetEndEvent(nil)
+	var3_22:SetEndEvent(function()
+		var3_22:SetEndEvent(nil)
+		setActive(var1_22, false)
+		removeOnButton(var1_22)
 	end)
 
-	if arg0_19.isResponeAnimationOp[var0_19.key] then
-		var4_19:Play("anim_IslandAnimationOpTpl_callback")
+	if arg0_22.isResponeAnimationOp[var0_22.key] then
+		var4_22:Play("anim_IslandAnimationOpTpl_callback")
 	else
-		var4_19:Play("anim_IslandAnimationOpTpl_Out")
+		var4_22:Play("anim_IslandAnimationOpTpl_Out")
 	end
 
-	arg0_19.isResponeAnimationOp[var0_19.key] = nil
+	arg0_22.isResponeAnimationOp[var0_22.key] = nil
 end
 
-function var0_0.ShowHud(arg0_21, arg1_21)
-	local var0_21 = IslandHudView.LuaName2ContainerName[arg1_21.uiLuaName]
-	local var1_21 = arg0_21:GetUnitHudRoot(arg0_21:GenUnitData(arg1_21.id, arg1_21.type)):Find(var0_21)
+function var0_0.ShowHud(arg0_24, arg1_24)
+	local var0_24 = IslandHudView.LuaName2ContainerName[arg1_24.uiLuaName]
+	local var1_24 = arg0_24:GetUnitHudRoot(arg0_24:GenUnitData(arg1_24.id, arg1_24.type)):Find(var0_24)
 
-	arg0_21:GetSubView(IslandHudView):ShowHud(arg1_21, var1_21)
+	arg0_24:GetSubView(IslandHudView):ShowHud(arg1_24, var1_24)
 end
 
-function var0_0.RefreshHud(arg0_22, arg1_22)
-	local var0_22 = IslandHudView.LuaName2ContainerName[arg1_22.uiLuaName]
-	local var1_22 = arg0_22:GetUnitHudRoot(arg0_22:GenUnitData(arg1_22.id, arg1_22.type)):Find(var0_22)
+function var0_0.RefreshHud(arg0_25, arg1_25)
+	local var0_25 = IslandHudView.LuaName2ContainerName[arg1_25.uiLuaName]
+	local var1_25 = arg0_25:GetUnitHudRoot(arg0_25:GenUnitData(arg1_25.id, arg1_25.type)):Find(var0_25)
 
-	arg0_22:GetSubView(IslandHudView):RefreshHud(arg1_22, var1_22)
+	arg0_25:GetSubView(IslandHudView):RefreshHud(arg1_25, var1_25)
 end
 
-function var0_0.HideHud(arg0_23, arg1_23)
-	arg0_23:GetSubView(IslandHudView):HideHud(arg1_23)
+function var0_0.HideHud(arg0_26, arg1_26)
+	arg0_26:GetSubView(IslandHudView):HideHud(arg1_26)
 end
 
-function var0_0.UpdateAllHud(arg0_24)
-	arg0_24:GetSubView(IslandHudView):UpdateAllHud()
+function var0_0.UpdateAllHud(arg0_27)
+	arg0_27:GetSubView(IslandHudView):UpdateAllHud()
 end
 
-function var0_0.OnDispose(arg0_25)
-	var0_0.super.OnDispose(arg0_25)
+function var0_0.OnDispose(arg0_28)
+	var0_0.super.OnDispose(arg0_28)
 
-	for iter0_25, iter1_25 in ipairs(arg0_25.views) do
-		iter1_25:Dispose()
+	for iter0_28, iter1_28 in ipairs(arg0_28.views) do
+		iter1_28:Dispose()
 	end
 
-	for iter2_25, iter3_25 in pairs(arg0_25.bubblePlayers) do
-		iter3_25:Dispose()
+	for iter2_28, iter3_28 in pairs(arg0_28.bubblePlayers) do
+		iter3_28:Dispose()
 	end
 
-	for iter4_25, iter5_25 in ipairs(arg0_25.views) do
-		iter5_25:Dispose()
+	for iter4_28, iter5_28 in ipairs(arg0_28.views) do
+		iter5_28:Dispose()
 	end
 
-	arg0_25.bubblePlayers = nil
+	arg0_28.bubblePlayers = nil
 
-	for iter6_25, iter7_25 in pairs(arg0_25.chatPlayers) do
-		iter7_25:Dispose()
+	for iter6_28, iter7_28 in pairs(arg0_28.chatPlayers) do
+		iter7_28:Dispose()
 	end
 
-	arg0_25.chatPlayers = nil
+	arg0_28.chatPlayers = nil
 
-	for iter8_25, iter9_25 in pairs(arg0_25.animationOpTpls) do
-		iter9_25.transform:Find("tpl"):GetComponent(typeof(DftAniEvent)):SetEndEvent(nil)
-		Object.Destroy(iter9_25)
+	for iter8_28, iter9_28 in pairs(arg0_28.animationOpTpls) do
+		iter9_28.transform:Find("tpl"):GetComponent(typeof(DftAniEvent)):SetEndEvent(nil)
+		Object.Destroy(iter9_28)
 	end
 
-	arg0_25.animationOpTpls = nil
-	arg0_25.animationOpShowFlags = nil
-	arg0_25.includePlayerStorys = nil
-	arg0_25.isResponeAnimationOp = nil
+	arg0_28.animationOpTpls = nil
+	arg0_28.animationOpShowFlags = nil
+	arg0_28.includePlayerStorys = nil
+	arg0_28.isResponeAnimationOp = nil
+	arg0_28.bubbleTasks = nil
 end
 
 return var0_0

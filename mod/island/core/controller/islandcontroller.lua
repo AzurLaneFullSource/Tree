@@ -261,7 +261,7 @@ function var0_0.OnAddFollower(arg0_18, arg1_18)
 		end
 	end
 
-	arg0_18:NotifiyCore(ISLAND_EVT.ADD_FOLLOWER)
+	arg0_18:NotifiyCore(ISLAND_EVT.ADD_FOLLOWER, var4_18.id)
 end
 
 function var0_0.OnDelFollower(arg0_19, arg1_19)
@@ -298,7 +298,7 @@ function var0_0.OnDelFollower(arg0_19, arg1_19)
 		end
 	end
 
-	arg0_19:NotifiyCore(ISLAND_EVT.DEL_FOLLOWER)
+	arg0_19:NotifiyCore(ISLAND_EVT.DEL_FOLLOWER, var1_19.id)
 end
 
 function var0_0.OnResetNpcActionFeedback(arg0_20)

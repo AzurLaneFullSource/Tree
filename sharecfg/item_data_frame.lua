@@ -621,6 +621,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>A commemorative frame that brings back memories of laughter and champagne.</color>\n–\"Castle of Celebrations\" event reward.",
 		scene = {}
 	},
+	[604] = {
+		time_limit_type = 0,
+		name = "Fitness Aficionado",
+		gain_by = "",
+		id = 604,
+		time_second = 0,
+		desc = "<color=#ffffff>Proof of all the exercise you did and the sweat you perspirated.</color>",
+		scene = {}
+	},
 	[605] = {
 		time_limit_type = 0,
 		name = "Seal of the Speedster",
@@ -943,6 +952,7 @@ pg.item_data_frame = {
 		601,
 		602,
 		603,
+		604,
 		605,
 		606,
 		607,

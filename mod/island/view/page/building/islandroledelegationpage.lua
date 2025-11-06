@@ -167,6 +167,7 @@ function var0_0.UpdateDelegationTabItem(arg0_20, arg1_20, arg2_20)
 	local var3_20 = getProxy(IslandProxy):GetIsland():GetBuildingAgency():GetBuilding(arg0_20.placeId):GetDelegationSlotData(var2_20)
 
 	setActive(arg2_20:Find("lock"), not var3_20)
+	setActive(arg2_20:Find("slotName"), var3_20)
 	setButtonEnabled(arg2_20, var3_20 ~= nil)
 
 	if arg0_20.selectedIdx == var0_20 then
@@ -255,6 +256,8 @@ end
 function var0_0.OnExit(arg0_25)
 	arg0_25.contextData.selectedIdx = nil
 	arg0_25.contextData.selectedShip = nil
+
+	IslandCameraMgr.instance:ActiveVirtualCamera(IslandConst.FOLLOW_CAMERA_NAME)
 end
 
 function var0_0.StartTimer(arg0_26)

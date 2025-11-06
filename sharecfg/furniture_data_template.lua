@@ -126,6 +126,7 @@ pg.furniture_data_template = setmetatable({
 			251,
 			253,
 			254,
+			255,
 			256,
 			257,
 			258,
@@ -3688,6 +3689,7 @@ pg.furniture_data_template = setmetatable({
 			251,
 			253,
 			254,
+			255,
 			258,
 			260,
 			263,
@@ -7095,6 +7097,7 @@ pg.furniture_data_template = setmetatable({
 			248,
 			253,
 			254,
+			255,
 			256,
 			257,
 			258,
@@ -10516,6 +10519,7 @@ pg.furniture_data_template = setmetatable({
 		251,
 		253,
 		254,
+		255,
 		256,
 		257,
 		258,
@@ -19757,6 +19761,82 @@ pg.base.furniture_data_template = {
 		canputonGrid = {},
 		can_trigger = {
 			0
+		},
+		interAction_group = {}
+	},
+	[255] = {
+		gain_by = "",
+		name = "Exercise Ball",
+		count = 2,
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		comfortable = 0,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "yujiatantanqiuicon",
+		deblocking = 1,
+		level = 1,
+		describe = "\"Okay, now just keep your balance and... Aahh!\"",
+		rarity = 3,
+		can_rotate = 0,
+		tag = 6,
+		spine_action_replace = "",
+		belong = 1,
+		spine_extra = "",
+		canputon = 0,
+		id = 255,
+		advice = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yujiatantanqiu",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			1
 		},
 		interAction_group = {}
 	},

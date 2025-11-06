@@ -115,7 +115,14 @@ function var0_0.OnInit(arg0_3)
 		arg0_3:emit(IslandMediator.OPEN_RESTAURANT, {
 			restId = arg0_3.restId,
 			ships = var0_7,
-			commodities = arg0_3.selectedDic
+			commodities = arg0_3.selectedDic,
+			estimateData = {
+				trade_id = arg0_3.restId,
+				sell_num_min = arg0_3.totalMinCnt,
+				sell_num_max = arg0_3.totalMaxCnt,
+				sell_money_min = arg0_3.totalMinSales,
+				sell_money_max = arg0_3.totalMaxSales
+			}
 		})
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3.btnsTF:Find("close"), function()
@@ -642,6 +649,11 @@ function var0_0.UpdateShelfItem(arg0_49, arg1_49, arg2_49)
 			arg0_49:ReduceShelfCnt(var2_49.id, 1)
 			arg0_49:FlushEstimate()
 		end, SFX_PANEL)
+
+		if var4_49 < var2_49.num then
+			arg0_49:ReduceShelfCnt(var2_49.id, var2_49.num - var4_49)
+			arg0_49:FlushEstimate()
+		end
 	end
 end
 
@@ -657,25 +669,32 @@ function var0_0.ReduceShelfCnt(arg0_51, arg1_51, arg2_51)
 end
 
 function var0_0.FlushEstimate(arg0_52)
-	local var0_52, var1_52 = arg0_52.rest:GetRandomSaleCntBound()
-	local var2_52 = 0
-	local var3_52 = 0
-	local var4_52 = 0
-	local var5_52 = 0
+	local var0_52 = arg0_52.rest:GetStatus()
 
-	for iter0_52, iter1_52 in pairs(arg0_52.selectedDic) do
-		local var6_52 = arg0_52:CaclBaseSaleCnt(iter0_52)
-		local var7_52 = math.min(iter1_52, math.max(arg0_52.minSaleCnt, var6_52 + var0_52))
-		local var8_52 = math.min(iter1_52, math.max(arg0_52.minSaleCnt, var6_52 + var1_52))
+	if var0_52 == IslandRestaurant.STATUS.OPENING or var0_52 == IslandRestaurant.STATUS.CLOSE then
+		local var1_52 = arg0_52.rest:GetEstimateData()
 
-		var4_52 = var4_52 + arg0_52:CaclGroupPrice(iter0_52, var7_52)
-		var5_52 = var5_52 + arg0_52:CaclGroupPrice(iter0_52, var8_52)
-		var2_52 = var2_52 + var7_52
-		var3_52 = var3_52 + var8_52
+		setText(arg0_52.estimateCntTF, var1_52.cntMin .. "-" .. var1_52.cntMax)
+		setText(arg0_52.estimateSalesTF, var1_52.salesMin .. "-" .. var1_52.salesMax)
+	else
+		local var2_52, var3_52 = arg0_52.rest:GetRandomSaleCntBound()
+
+		arg0_52.totalMinCnt, arg0_52.totalMaxCnt, arg0_52.totalMinSales, arg0_52.totalMaxSales = 0, 0, 0, 0
+
+		for iter0_52, iter1_52 in pairs(arg0_52.selectedDic) do
+			local var4_52 = arg0_52:CaclBaseSaleCnt(iter0_52)
+			local var5_52 = math.min(iter1_52, math.max(arg0_52.minSaleCnt, var4_52 + var2_52))
+			local var6_52 = math.min(iter1_52, math.max(arg0_52.minSaleCnt, var4_52 + var3_52))
+
+			arg0_52.totalMinSales = arg0_52.totalMinSales + arg0_52:CaclGroupPrice(iter0_52, var5_52)
+			arg0_52.totalMaxSales = arg0_52.totalMaxSales + arg0_52:CaclGroupPrice(iter0_52, var6_52)
+			arg0_52.totalMinCnt = arg0_52.totalMinCnt + var5_52
+			arg0_52.totalMaxCnt = arg0_52.totalMaxCnt + var6_52
+		end
+
+		setText(arg0_52.estimateCntTF, arg0_52.totalMinCnt .. "-" .. arg0_52.totalMaxCnt)
+		setText(arg0_52.estimateSalesTF, arg0_52.totalMinSales .. "-" .. arg0_52.totalMaxSales)
 	end
-
-	setText(arg0_52.estimateCntTF, var2_52 .. "-" .. var3_52)
-	setText(arg0_52.estimateSalesTF, var4_52 .. "-" .. var5_52)
 end
 
 function var0_0.CaclBaseSaleCnt(arg0_53, arg1_53)

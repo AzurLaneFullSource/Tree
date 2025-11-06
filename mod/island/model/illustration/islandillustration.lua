@@ -18,7 +18,9 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.isTip = false
 	arg0_1.basePoint = 0
 	arg0_1.levelPoints = 0
+	arg0_1.levelPointGotData = {}
 	arg0_1.starPoints = 0
+	arg0_1.starPointGotData = {}
 end
 
 function var0_0.bindConfigTable(arg0_2)
@@ -126,15 +128,19 @@ end
 function var0_0.SetPointData(arg0_26, arg1_26)
 	arg0_26.basePoint = arg1_26.base
 	arg0_26.levelPoints = 0
+	arg0_26.levelPointGotData = {}
 
 	for iter0_26, iter1_26 in ipairs(arg1_26.lv_list) do
 		arg0_26.levelPoints = arg0_26.levelPoints + iter1_26.value
+		arg0_26.levelPointGotData[iter1_26.lv] = iter1_26.value
 	end
 
 	arg0_26.starPoints = 0
+	arg0_26.starPointGotData = {}
 
 	for iter2_26, iter3_26 in ipairs(arg1_26.star_list) do
 		arg0_26.starPoints = arg0_26.starPoints + iter3_26.value
+		arg0_26.starPointGotData[iter3_26.lv] = iter3_26.value
 	end
 end
 

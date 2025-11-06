@@ -2,6 +2,7 @@ local var0_0 = class("IslandInventoryPage", import("...base.IslandBasePage"))
 local var1_0 = 101
 local var2_0 = 102
 local var3_0 = 103
+local var4_0 = false
 
 var0_0.INVENTORY_TYPE_OVERFLOW = 100
 var0_0.INVENTORY_TYPE_COMMON = 101
@@ -35,9 +36,17 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.upgradeProg = arg0_2._tf:Find("window/upgrade/bar")
 	arg0_2.batchSellBtn = arg0_2._tf:Find("window/batch_sell")
 	arg0_2.sellPanel = arg0_2._tf:Find("window/sell_panel")
+
+	setText(arg0_2.sellPanel:Find("tip"), i18n("island_quickselect_tip"))
+
 	arg0_2.sortPaenl = arg0_2._tf:Find("window/sort_panel")
 	arg0_2.sellBtn = arg0_2._tf:Find("window/sell_panel/batch_sell_1")
 	arg0_2.sellCancelBtn = arg0_2._tf:Find("window/sell_panel/cancel")
+	arg0_2.sellAllBtn = arg0_2._tf:Find("window/sell_panel/all")
+
+	setActive(arg0_2.sellAllBtn, var4_0)
+
+	arg0_2.sellAllFlagTF = arg0_2.sellAllBtn:Find("flag")
 	arg0_2.sellPriceTxt = arg0_2._tf:Find("window/sell_panel/price/Text"):GetComponent(typeof(Text))
 
 	LoadImageSpriteAsync("island/" .. getIslandSeasonPtInfo().icon, arg0_2._tf:Find("window/sell_panel/price/Text/icon"))
@@ -50,6 +59,7 @@ function var0_0.OnLoaded(arg0_2)
 	setText(arg0_2._tf:Find("window/batch_sell/Text"), i18n("island_batch_covert"))
 	setText(arg0_2._tf:Find("window/sell_panel/price/label"), i18n("island_total_price"))
 	setText(arg0_2._tf:Find("window/sell_panel/cancel/Text"), i18n("word_cancel"))
+	setText(arg0_2._tf:Find("window/sell_panel/all/Text"), i18n("island_selectall"))
 	setText(arg0_2._tf:Find("window/sell_panel/batch_sell_1/Text"), i18n("island_batch_covert"))
 	setText(arg0_2._tf:Find("window/one_key_panel/fetch_btn/Text"), i18n("mail_get_oneclick"))
 end
@@ -82,10 +92,21 @@ function var0_0.OnInit(arg0_3)
 			arg0_3.values[iter0_8] = 0
 		end
 	end, SFX_PANEL)
-	onButton(arg0_3, arg0_3.sellBtn, function()
-		local var0_9 = arg0_3:GetSellItems()
+	onButton(arg0_3, arg0_3.sellAllBtn, function(arg0_9)
+		if not var4_0 then
+			return
+		end
 
-		if #var0_9 <= 0 then
+		if arg0_3.selAllFlag then
+			arg0_3:UpdataUnselAll()
+		else
+			arg0_3:UpdataSelAll()
+		end
+	end, SFX_PANEL)
+	onButton(arg0_3, arg0_3.sellBtn, function()
+		local var0_10 = arg0_3:GetSellItems()
+
+		if #var0_10 <= 0 then
 			return
 		end
 
@@ -93,9 +114,9 @@ function var0_0.OnInit(arg0_3)
 			content = i18n("island_season_window_transformtip"),
 			onYes = function()
 				if arg0_3.tagType == var0_0.INVENTORY_TYPE_OVERFLOW then
-					arg0_3:emit(IslandMediator.ON_CONVERT_SEASON_PT_4_OVERFLOW, var0_9)
+					arg0_3:emit(IslandMediator.ON_CONVERT_SEASON_PT_4_OVERFLOW, var0_10)
 				else
-					arg0_3:emit(IslandMediator.ON_CONVERT_SEASON_PT, var0_9)
+					arg0_3:emit(IslandMediator.ON_CONVERT_SEASON_PT, var0_10)
 				end
 			end
 		})
@@ -109,397 +130,455 @@ function var0_0.OnInit(arg0_3)
 	end, SFX_PANEL)
 end
 
-function var0_0.OnShow(arg0_12)
-	arg0_12:SetUp()
+function var0_0.OnShow(arg0_13)
+	arg0_13:SetUp()
 end
 
-function var0_0.GetSellItems(arg0_13)
-	local var0_13 = {}
+function var0_0.GetSellItems(arg0_14)
+	local var0_14 = {}
 
-	for iter0_13, iter1_13 in ipairs(arg0_13.values) do
-		local var1_13 = arg0_13.displays[iter0_13]
+	for iter0_14, iter1_14 in ipairs(arg0_14.values) do
+		local var1_14 = arg0_14.displays[iter0_14]
 
-		var0_13[var1_13.id] = (var0_13[var1_13.id] or 0) + iter1_13
+		var0_14[var1_14.id] = (var0_14[var1_14.id] or 0) + iter1_14
 	end
 
-	local var2_13 = {}
+	local var2_14 = {}
 
-	for iter2_13, iter3_13 in pairs(var0_13) do
-		if iter3_13 > 0 then
-			table.insert(var2_13, {
-				id = iter2_13,
-				num = iter3_13
+	for iter2_14, iter3_14 in pairs(var0_14) do
+		if iter3_14 > 0 then
+			table.insert(var2_14, {
+				id = iter2_14,
+				num = iter3_14
 			})
 		end
 	end
 
-	return var2_13
+	return var2_14
 end
 
-function var0_0.UpdateStyle(arg0_14)
-	setActive(arg0_14.sellPanel, arg0_14.mode == var0_0.MODE_EDIT)
-	setActive(arg0_14.sortPaenl, arg0_14.mode == var0_0.MODE_VIEW and arg0_14.tagType ~= var0_0.INVENTORY_TYPE_OVERFLOW)
-	setActive(arg0_14.oneKeyPanel, arg0_14.tagType == var0_0.INVENTORY_TYPE_OVERFLOW and arg0_14.mode ~= var0_0.MODE_EDIT)
-	setActive(arg0_14.batchSellBtn, arg0_14.mode == var0_0.MODE_VIEW)
-end
+function var0_0.UpdateStyle(arg0_15)
+	setActive(arg0_15.sellPanel, arg0_15.mode == var0_0.MODE_EDIT)
+	setActive(arg0_15.sortPaenl, arg0_15.mode == var0_0.MODE_VIEW and arg0_15.tagType ~= var0_0.INVENTORY_TYPE_OVERFLOW)
+	setActive(arg0_15.oneKeyPanel, arg0_15.tagType == var0_0.INVENTORY_TYPE_OVERFLOW and arg0_15.mode ~= var0_0.MODE_EDIT)
+	setActive(arg0_15.batchSellBtn, arg0_15.mode == var0_0.MODE_VIEW)
 
-function var0_0.AddListeners(arg0_15)
-	arg0_15:AddListener(IslandScene.ON_INVENTORY_FILTER, arg0_15.OnInventoryFilter)
-	arg0_15:AddListener(GAME.ISLAND_UPGRADE_INVENTORY_DONE, arg0_15.OnUpgrade)
-	arg0_15:AddListener(GAME.ISLAND_CONVERT_SEASON_PT_DONE, arg0_15.OnSell)
-	arg0_15:AddListener(GAME.ISLAND_GET_OVERFLOW_ITEM_DOME, arg0_15.OnSell)
-	arg0_15:AddListener(GAME.ISLAND_INVITE_SHIP_DONE, arg0_15.OnUseInvitation)
-end
-
-function var0_0.RemoveListeners(arg0_16)
-	arg0_16:RemoveListener(IslandScene.ON_INVENTORY_FILTER, arg0_16.OnInventoryFilter)
-	arg0_16:RemoveListener(GAME.ISLAND_UPGRADE_INVENTORY_DONE, arg0_16.OnUpgrade)
-	arg0_16:RemoveListener(GAME.ISLAND_CONVERT_SEASON_PT_DONE, arg0_16.OnSell)
-	arg0_16:RemoveListener(GAME.ISLAND_GET_OVERFLOW_ITEM_DOME, arg0_16.OnSell)
-	arg0_16:RemoveListener(GAME.ISLAND_INVITE_SHIP_DONE, arg0_16.OnUseInvitation)
-end
-
-function var0_0.OnUseInvitation(arg0_17)
-	arg0_17:SetTotalCount()
-end
-
-function var0_0.GetIndexData(arg0_18, arg1_18)
-	assert(arg0_18.indexDatas[arg1_18])
-
-	return arg0_18.indexDatas[arg1_18]
-end
-
-function var0_0.UpdateIndexData(arg0_19, arg1_19, arg2_19)
-	assert(arg0_19.indexDatas[arg1_19])
-	arg0_19.indexDatas[arg1_19]:SetData(arg2_19)
-end
-
-function var0_0.OnInventoryFilter(arg0_20, arg1_20)
-	arg0_20:UpdateIndexData(arg0_20.tagType, arg1_20)
-	arg0_20:FlushSortBtn()
-	arg0_20:SetTotalCount()
-end
-
-function var0_0.OnUpgrade(arg0_21)
-	arg0_21:SetTotalCount()
-	arg0_21:FlushCapacity()
-	arg0_21:ClosePage(IslandInventoryUpgradePage)
-end
-
-function var0_0.OnSell(arg0_22)
-	arg0_22.mode = var0_0.MODE_VIEW
-
-	arg0_22:SetTotalCount()
-	arg0_22:UpdateStyle()
-	arg0_22:FlushCapacity()
-
-	arg0_22.sellPriceTxt.text = "x 0"
-end
-
-function var0_0.SetUp(arg0_23)
-	arg0_23.tagType = IslandItem.TYPE_MATERIAL
-	arg0_23.mode = var0_0.MODE_VIEW
-	arg0_23.asc = true
-	arg0_23.cards = {}
-
-	arg0_23:FlushTags()
-	arg0_23:FlushFilterBtn()
-	arg0_23:FlushSortBtn()
-	arg0_23:FlushList()
-	arg0_23:FlushCapacity()
-	arg0_23:UpdateStyle()
-end
-
-function var0_0.FlushCapacity(arg0_24)
-	if arg0_24.tagType == IslandItem.TYPE_MATERIAL then
-		setActive(arg0_24.upgradeBtn, true)
-		setActive(arg0_24.batchSellBtn, true)
-
-		local var0_24 = getProxy(IslandProxy):GetIsland():GetInventoryAgency()
-		local var1_24 = var0_24:GetLength()
-		local var2_24 = var0_24:GetCapacity()
-
-		setButtonEnabled(arg0_24.upgradeBtn, not var0_24:IsMaxLevel())
-
-		local var3_24 = var1_24 / var2_24
-		local var4_24 = math.min(var3_24, 1)
-
-		arg0_24:managedTween(LeanTween.value, nil, go(arg0_24.upgradeBtn), 0, var3_24, var4_24):setOnUpdate(System.Action_float(function(arg0_25)
-			arg0_24.capacityTxt.text = calcFloor(var2_24 * arg0_25) .. "/" .. var2_24
-
-			setFillAmount(arg0_24.upgradeProg, arg0_25)
-		end)):setOnComplete(System.Action(function()
-			arg0_24.capacityTxt.text = var1_24 .. "/" .. var2_24
-
-			setFillAmount(arg0_24.upgradeProg, var3_24)
-		end))
-
-		local var5_24 = var3_24 > 0.85 and Color.New(0.952941176470588, 0.423529411764706, 0.431372549019608, 1) or Color.New(0.223529411764706, 0.745098039215686, 1, 1)
-
-		arg0_24.upgradeProg:GetComponent(typeof(Image)).color = var5_24
-	elseif arg0_24.tagType == var0_0.INVENTORY_TYPE_OVERFLOW then
-		setActive(arg0_24.upgradeBtn, false)
-		setActive(arg0_24.batchSellBtn, true)
-	else
-		setActive(arg0_24.upgradeBtn, false)
-		setActive(arg0_24.batchSellBtn, false)
+	if arg0_15.mode == var0_0.MODE_EDIT then
+		arg0_15:CheckSelAllFlag()
 	end
 end
 
-function var0_0.FlushTags(arg0_27)
-	for iter0_27, iter1_27 in pairs(arg0_27.toggles) do
-		onToggle(arg0_27, iter1_27, function(arg0_28)
-			if arg0_28 then
-				arg0_27:CheckEditMode(iter0_27)
+function var0_0.AddListeners(arg0_16)
+	arg0_16:AddListener(IslandScene.ON_INVENTORY_FILTER, arg0_16.OnInventoryFilter)
+	arg0_16:AddListener(GAME.ISLAND_UPGRADE_INVENTORY_DONE, arg0_16.OnUpgrade)
+	arg0_16:AddListener(GAME.ISLAND_CONVERT_SEASON_PT_DONE, arg0_16.OnSell)
+	arg0_16:AddListener(GAME.ISLAND_GET_OVERFLOW_ITEM_DOME, arg0_16.OnSell)
+	arg0_16:AddListener(GAME.ISLAND_INVITE_SHIP_DONE, arg0_16.OnUseInvitation)
+end
 
-				arg0_27.tagType = iter0_27
+function var0_0.RemoveListeners(arg0_17)
+	arg0_17:RemoveListener(IslandScene.ON_INVENTORY_FILTER, arg0_17.OnInventoryFilter)
+	arg0_17:RemoveListener(GAME.ISLAND_UPGRADE_INVENTORY_DONE, arg0_17.OnUpgrade)
+	arg0_17:RemoveListener(GAME.ISLAND_CONVERT_SEASON_PT_DONE, arg0_17.OnSell)
+	arg0_17:RemoveListener(GAME.ISLAND_GET_OVERFLOW_ITEM_DOME, arg0_17.OnSell)
+	arg0_17:RemoveListener(GAME.ISLAND_INVITE_SHIP_DONE, arg0_17.OnUseInvitation)
+end
 
-				arg0_27:FlushCapacity()
-				arg0_27:FlushSortBtn()
-				arg0_27:SetTotalCount()
-				arg0_27:UpdateStyle()
+function var0_0.OnUseInvitation(arg0_18)
+	arg0_18:SetTotalCount()
+end
+
+function var0_0.GetIndexData(arg0_19, arg1_19)
+	assert(arg0_19.indexDatas[arg1_19])
+
+	return arg0_19.indexDatas[arg1_19]
+end
+
+function var0_0.UpdateIndexData(arg0_20, arg1_20, arg2_20)
+	assert(arg0_20.indexDatas[arg1_20])
+	arg0_20.indexDatas[arg1_20]:SetData(arg2_20)
+end
+
+function var0_0.OnInventoryFilter(arg0_21, arg1_21)
+	arg0_21:UpdateIndexData(arg0_21.tagType, arg1_21)
+	arg0_21:FlushSortBtn()
+	arg0_21:SetTotalCount()
+end
+
+function var0_0.OnUpgrade(arg0_22)
+	arg0_22:SetTotalCount()
+	arg0_22:FlushCapacity()
+	arg0_22:ClosePage(IslandInventoryUpgradePage)
+end
+
+function var0_0.OnSell(arg0_23)
+	arg0_23.mode = var0_0.MODE_VIEW
+
+	arg0_23:SetTotalCount()
+	arg0_23:UpdateStyle()
+	arg0_23:FlushCapacity()
+
+	arg0_23.sellPriceTxt.text = "x 0"
+end
+
+function var0_0.SetUp(arg0_24)
+	arg0_24.tagType = IslandItem.TYPE_MATERIAL
+	arg0_24.mode = var0_0.MODE_VIEW
+	arg0_24.asc = true
+	arg0_24.cards = {}
+
+	arg0_24:FlushTags()
+	arg0_24:FlushFilterBtn()
+	arg0_24:FlushSortBtn()
+	arg0_24:FlushList()
+	arg0_24:FlushCapacity()
+	arg0_24:UpdateStyle()
+end
+
+function var0_0.FlushCapacity(arg0_25)
+	if arg0_25.tagType == IslandItem.TYPE_MATERIAL then
+		setActive(arg0_25.upgradeBtn, true)
+		setActive(arg0_25.batchSellBtn, true)
+
+		local var0_25 = getProxy(IslandProxy):GetIsland():GetInventoryAgency()
+		local var1_25 = var0_25:GetLength()
+		local var2_25 = var0_25:GetCapacity()
+
+		setButtonEnabled(arg0_25.upgradeBtn, not var0_25:IsMaxLevel())
+
+		local var3_25 = var1_25 / var2_25
+		local var4_25 = math.min(var3_25, 1)
+
+		arg0_25:managedTween(LeanTween.value, nil, go(arg0_25.upgradeBtn), 0, var3_25, var4_25):setOnUpdate(System.Action_float(function(arg0_26)
+			arg0_25.capacityTxt.text = calcFloor(var2_25 * arg0_26) .. "/" .. var2_25
+
+			setFillAmount(arg0_25.upgradeProg, arg0_26)
+		end)):setOnComplete(System.Action(function()
+			arg0_25.capacityTxt.text = var1_25 .. "/" .. var2_25
+
+			setFillAmount(arg0_25.upgradeProg, var3_25)
+		end))
+
+		local var5_25 = var3_25 > 0.85 and Color.New(0.952941176470588, 0.423529411764706, 0.431372549019608, 1) or Color.New(0.223529411764706, 0.745098039215686, 1, 1)
+
+		arg0_25.upgradeProg:GetComponent(typeof(Image)).color = var5_25
+	elseif arg0_25.tagType == var0_0.INVENTORY_TYPE_OVERFLOW then
+		setActive(arg0_25.upgradeBtn, false)
+		setActive(arg0_25.batchSellBtn, true)
+	else
+		setActive(arg0_25.upgradeBtn, false)
+		setActive(arg0_25.batchSellBtn, false)
+	end
+end
+
+function var0_0.FlushTags(arg0_28)
+	for iter0_28, iter1_28 in pairs(arg0_28.toggles) do
+		onToggle(arg0_28, iter1_28, function(arg0_29)
+			if arg0_29 then
+				arg0_28:CheckEditMode(iter0_28)
+
+				arg0_28.tagType = iter0_28
+
+				arg0_28:FlushCapacity()
+				arg0_28:FlushSortBtn()
+				arg0_28:SetTotalCount()
+				arg0_28:UpdateStyle()
 			end
 		end, SFX_PANEL)
 
-		if iter0_27 == var0_0.INVENTORY_TYPE_OVERFLOW then
-			setText(iter1_27:Find("Text"), i18n("island_word_temp"))
+		if iter0_28 == var0_0.INVENTORY_TYPE_OVERFLOW then
+			setText(iter1_28:Find("Text"), i18n("island_word_temp"))
 		else
-			setText(iter1_27:Find("Text"), IslandItemKind.Type2TagName(iter0_27))
+			setText(iter1_28:Find("Text"), IslandItemKind.Type2TagName(iter0_28))
 		end
 	end
 
-	arg0_27:ActiveDefaultTag()
+	arg0_28:ActiveDefaultTag()
 end
 
-function var0_0.ActiveDefaultTag(arg0_29)
-	local var0_29 = getProxy(IslandProxy):GetIsland():GetInventoryAgency():ExistAnyOverFlowItem()
+function var0_0.ActiveDefaultTag(arg0_30)
+	local var0_30 = getProxy(IslandProxy):GetIsland():GetInventoryAgency():ExistAnyOverFlowItem()
 
-	setActive(arg0_29.toggles[var0_0.INVENTORY_TYPE_OVERFLOW], var0_29)
+	setActive(arg0_30.toggles[var0_0.INVENTORY_TYPE_OVERFLOW], var0_30)
 
-	if var0_29 then
-		triggerToggle(arg0_29.toggles[var0_0.INVENTORY_TYPE_OVERFLOW], true)
+	if var0_30 then
+		triggerToggle(arg0_30.toggles[var0_0.INVENTORY_TYPE_OVERFLOW], true)
 	else
-		triggerToggle(arg0_29.toggles[IslandItem.TYPE_MATERIAL], true)
+		triggerToggle(arg0_30.toggles[IslandItem.TYPE_MATERIAL], true)
 	end
 end
 
-function var0_0.CheckEditMode(arg0_30, arg1_30)
-	if arg0_30.tagType ~= arg1_30 and arg0_30.mode == var0_0.MODE_EDIT then
-		triggerButton(arg0_30.sellCancelBtn)
+function var0_0.CheckEditMode(arg0_31, arg1_31)
+	if arg0_31.tagType ~= arg1_31 and arg0_31.mode == var0_0.MODE_EDIT then
+		triggerButton(arg0_31.sellCancelBtn)
 	end
 end
 
-function var0_0.FlushFilterBtn(arg0_31)
-	onButton(arg0_31, arg0_31.filterBtn, function()
-		local var0_32 = arg0_31:GetIndexData(arg0_31.tagType)
+function var0_0.FlushFilterBtn(arg0_32)
+	onButton(arg0_32, arg0_32.filterBtn, function()
+		local var0_33 = arg0_32:GetIndexData(arg0_32.tagType)
 
-		arg0_31:OpenPage(IslandInventoryIndexPage, var0_32)
+		arg0_32:OpenPage(IslandInventoryIndexPage, var0_33)
 	end, SFX_PANEL)
 end
 
-function var0_0.FlushSortBtn(arg0_33)
-	local function var0_33()
-		local var0_34 = arg0_33:GetIndexData(arg0_33.tagType)
+function var0_0.FlushSortBtn(arg0_34)
+	local function var0_34()
+		local var0_35 = arg0_34:GetIndexData(arg0_34.tagType)
 
-		arg0_33.orderTxt.text = var0_34:GetSortText()
-		arg0_33.orderArr.localScale = arg0_33.asc and Vector2(1, -1, 1) or Vector2(1, 1, 1)
+		arg0_34.orderTxt.text = var0_35:GetSortText()
+		arg0_34.orderArr.localScale = arg0_34.asc and Vector2(1, -1, 1) or Vector2(1, 1, 1)
 	end
 
-	onButton(arg0_33, arg0_33.orderBtn, function()
-		arg0_33.asc = not arg0_33.asc
+	onButton(arg0_34, arg0_34.orderBtn, function()
+		arg0_34.asc = not arg0_34.asc
 
-		var0_33()
-		arg0_33:SetTotalCount()
+		var0_34()
+		arg0_34:SetTotalCount()
 	end, SFX_PANEL)
-	var0_33()
+	var0_34()
 end
 
-function var0_0.FlushList(arg0_36)
-	function arg0_36.scrollRect.onInitItem(arg0_37)
-		arg0_36:OnInitItem(arg0_37)
+function var0_0.FlushList(arg0_37)
+	function arg0_37.scrollRect.onInitItem(arg0_38)
+		arg0_37:OnInitItem(arg0_38)
 	end
 
-	function arg0_36.scrollRect.onUpdateItem(arg0_38, arg1_38)
-		arg0_36:OnUpdateItem(arg0_38, arg1_38)
+	function arg0_37.scrollRect.onUpdateItem(arg0_39, arg1_39)
+		arg0_37:OnUpdateItem(arg0_39, arg1_39)
 	end
 
-	arg0_36:SetTotalCount()
+	arg0_37:SetTotalCount()
 end
 
-function var0_0.SetTotalCount(arg0_39)
-	arg0_39.displays = arg0_39:Filter()
-	arg0_39.values = {}
+function var0_0.SetTotalCount(arg0_40)
+	arg0_40.displays = arg0_40:Filter()
+	arg0_40.values = {}
+	arg0_40.selAllFlag = false
 
-	for iter0_39, iter1_39 in ipairs(arg0_39.displays) do
-		table.insert(arg0_39.values, 0)
+	for iter0_40, iter1_40 in ipairs(arg0_40.displays) do
+		table.insert(arg0_40.values, 0)
 	end
 
-	local var0_39 = arg0_39:GetIndexData(arg0_39.tagType)
+	local var0_40 = arg0_40:GetIndexData(arg0_40.tagType)
 
-	table.sort(arg0_39.displays, function(arg0_40, arg1_40)
-		return var0_39:Sort(arg0_40, arg1_40, arg0_39.asc)
+	table.sort(arg0_40.displays, function(arg0_41, arg1_41)
+		return var0_40:Sort(arg0_41, arg1_41, arg0_40.asc)
 	end)
-	arg0_39.scrollRect:SetTotalCount(#arg0_39.displays, -1)
+	arg0_40.scrollRect:SetTotalCount(#arg0_40.displays, -1)
 end
 
-function var0_0.OnInitItem(arg0_41, arg1_41)
-	local var0_41 = IslandItemCard.New(arg1_41)
+function var0_0.OnInitItem(arg0_42, arg1_42)
+	local var0_42 = IslandItemCard.New(arg1_42)
 
-	onButton(arg0_41, var0_41._go, function()
-		if arg0_41.mode == var0_0.MODE_VIEW then
-			if arg0_41.tagType ~= var0_0.INVENTORY_TYPE_OVERFLOW then
-				arg0_41:OnClickItem(var0_41)
+	onButton(arg0_42, var0_42._go, function()
+		if arg0_42.mode == var0_0.MODE_VIEW then
+			if arg0_42.tagType ~= var0_0.INVENTORY_TYPE_OVERFLOW then
+				arg0_42:OnClickItem(var0_42)
 			end
-		elseif arg0_41.mode == var0_0.MODE_EDIT then
-			arg0_41:OnClickItemForSell(var0_41)
+		elseif arg0_42.mode == var0_0.MODE_EDIT then
+			arg0_42:OnClickItemForSell(var0_42)
 		end
 	end, SFX_PANEL)
-	onButton(arg0_41, var0_41.calcPanel, function()
-		if arg0_41.mode == var0_0.MODE_EDIT then
-			arg0_41:UpdateSellPrice(var0_41, -1)
+	onButton(arg0_42, var0_42.reduceBtn, function()
+		if arg0_42.mode == var0_0.MODE_EDIT then
+			arg0_42:UpdateSellPrice(var0_42, -1)
 		end
 	end, SFX_PANEL)
-	onInputEndEdit(arg0_41, var0_41.valueInput, function(arg0_44)
-		local var0_44 = table.indexof(arg0_41.displays, var0_41.item)
+	onInputEndEdit(arg0_42, var0_42.valueInput, function(arg0_45)
+		local var0_45 = table.indexof(arg0_42.displays, var0_42.item)
 
-		if not var0_44 then
+		if not var0_45 then
 			return
 		end
 
-		local var1_44 = 0
+		local var1_45 = 0
 
-		if not arg0_44 or arg0_44 == "" or not tonumber(arg0_44) then
-			local var2_44 = 1
+		if not arg0_45 or arg0_45 == "" or not tonumber(arg0_45) then
+			local var2_45 = 1
 		end
 
-		local var3_44 = tonumber(arg0_44) - arg0_41.values[var0_44]
+		local var3_45 = tonumber(arg0_45) - arg0_42.values[var0_45]
 
-		arg0_41:UpdateSellPrice(var0_41, var3_44)
+		arg0_42:UpdateSellPrice(var0_42, var3_45)
 	end)
+	pressPersistTrigger(var0_42.calcPanel, 0.5, function()
+		if arg0_42.mode == var0_0.MODE_EDIT then
+			arg0_42:UpdateSellPrice(var0_42, 1)
+		end
+	end, nil, true, true, 0.1, SFX_PANEL)
 
-	arg0_41.cards[arg1_41] = var0_41
+	arg0_42.cards[arg1_42] = var0_42
 end
 
-function var0_0.OnClickItem(arg0_45, arg1_45)
-	if isa(arg1_45.item, IslandInvitation) then
-		local var0_45 = arg1_45.item:GetShipName()
+function var0_0.OnClickItem(arg0_47, arg1_47)
+	if isa(arg1_47.item, IslandInvitation) then
+		local var0_47 = arg1_47.item:GetShipName()
 
-		arg0_45:ShowMsgBox({
+		arg0_47:ShowMsgBox({
 			content = i18n("island_open_ship_tip"),
 			onYes = function()
-				arg0_45:Hide()
-				arg0_45:emit(IslandBaseMediator.SWITCH_MAP, IslandConst.LABORATORY_MAP_ID, IslandConst.LETTEROFINVITATION_SP)
+				arg0_47:Hide()
+				arg0_47:emit(IslandBaseMediator.SWITCH_MAP, IslandConst.LABORATORY_MAP_ID, IslandConst.LETTEROFINVITATION_SP)
 			end
 		})
 	else
-		arg0_45:ShowMsgBox({
+		arg0_47:ShowMsgBox({
 			title = i18n("island_word_desc"),
 			type = IslandMsgBox.TYPE_COMMON_ITEM,
-			itemId = arg1_45.item.id
+			itemId = arg1_47.item.id
 		})
 	end
 end
 
-function var0_0.OnClickItemForSell(arg0_47, arg1_47)
-	arg0_47:UpdateSellPrice(arg1_47, 1)
+function var0_0.OnClickItemForSell(arg0_49, arg1_49)
+	arg0_49:UpdateSellPrice(arg1_49, 1)
 end
 
-function var0_0.UpdateSellPrice(arg0_48, arg1_48, arg2_48)
-	local var0_48 = table.indexof(arg0_48.displays, arg1_48.item)
+function var0_0._IsSelAll(arg0_50)
+	for iter0_50, iter1_50 in ipairs(arg0_50.values) do
+		if iter1_50 ~= arg0_50.displays[iter0_50]:GetCount() then
+			return false
+		end
+	end
 
-	if not var0_48 then
+	return true
+end
+
+function var0_0.CheckSelAllFlag(arg0_51)
+	arg0_51.selAllFlag = arg0_51:_IsSelAll()
+
+	setActive(arg0_51.sellAllFlagTF, arg0_51.selAllFlag)
+end
+
+function var0_0.UpdataSelAll(arg0_52)
+	arg0_52.values = {}
+
+	for iter0_52, iter1_52 in ipairs(arg0_52.displays) do
+		arg0_52.values[iter0_52] = iter1_52:GetCount()
+	end
+
+	arg0_52.scrollRect:SetTotalCount(#arg0_52.displays, -1)
+
+	local var0_52 = 0
+
+	for iter2_52, iter3_52 in ipairs(arg0_52.values) do
+		var0_52 = arg0_52.displays[iter2_52]:GetConvertPt() * iter3_52 + var0_52
+	end
+
+	arg0_52.sellPriceTxt.text = "x " .. var0_52
+	arg0_52.selAllFlag = true
+
+	setActive(arg0_52.sellAllFlagTF, arg0_52.selAllFlag)
+end
+
+function var0_0.UpdataUnselAll(arg0_53)
+	arg0_53:SetTotalCount()
+
+	arg0_53.sellPriceTxt.text = "x 0"
+	arg0_53.selAllFlag = false
+
+	setActive(arg0_53.sellAllFlagTF, arg0_53.selAllFlag)
+end
+
+function var0_0.UpdateSellPrice(arg0_54, arg1_54, arg2_54)
+	local var0_54 = table.indexof(arg0_54.displays, arg1_54.item)
+
+	if not var0_54 then
 		return
 	end
 
-	local var1_48 = arg0_48.values[var0_48] + arg2_48
+	local var1_54 = arg0_54.values[var0_54] + arg2_54
 
-	arg0_48.values[var0_48] = math.max(0, math.min(var1_48, arg1_48.item:GetCount()))
+	arg0_54.values[var0_54] = math.max(0, math.min(var1_54, arg1_54.item:GetCount()))
 
-	arg1_48:UpdateValue(arg0_48.values[var0_48])
+	arg1_54:UpdateValue(arg0_54.values[var0_54])
 
-	local var2_48 = 0
+	local var2_54 = 0
 
-	for iter0_48, iter1_48 in ipairs(arg0_48.values) do
-		var2_48 = arg0_48.displays[iter0_48]:GetConvertPt() * iter1_48 + var2_48
+	for iter0_54, iter1_54 in ipairs(arg0_54.values) do
+		var2_54 = arg0_54.displays[iter0_54]:GetConvertPt() * iter1_54 + var2_54
 	end
 
-	arg0_48.sellPriceTxt.text = "x " .. var2_48
+	arg0_54.sellPriceTxt.text = "x " .. var2_54
+
+	arg0_54:CheckSelAllFlag()
 end
 
-function var0_0.OnUpdateItem(arg0_49, arg1_49, arg2_49)
-	local var0_49 = arg0_49.cards[arg2_49]
+function var0_0.OnUpdateItem(arg0_55, arg1_55, arg2_55)
+	local var0_55 = arg0_55.cards[arg2_55]
 
-	if not var0_49 then
-		arg0_49:OnInitItem(arg2_49)
+	if not var0_55 then
+		arg0_55:OnInitItem(arg2_55)
 
-		var0_49 = arg0_49.cards[arg2_49]
+		var0_55 = arg0_55.cards[arg2_55]
 	end
 
-	if arg0_49.displays[arg1_49 + 1] then
-		var0_49:Update(arg0_49.displays[arg1_49 + 1], arg0_49.mode, arg0_49.values[arg1_49 + 1], arg0_49.tagType)
+	if arg0_55.displays[arg1_55 + 1] then
+		var0_55:Update(arg0_55.displays[arg1_55 + 1], arg0_55.mode, arg0_55.values[arg1_55 + 1], arg0_55.tagType)
 	end
 end
 
-function var0_0.Filter(arg0_50)
-	local var0_50 = {}
+function var0_0.Filter(arg0_56)
+	local var0_56 = {}
 
-	if arg0_50.tagType == var0_0.INVENTORY_TYPE_OVERFLOW then
-		arg0_50:CollectOverFlowInventoryItems(var0_50)
+	if arg0_56.tagType == var0_0.INVENTORY_TYPE_OVERFLOW then
+		arg0_56:CollectOverFlowInventoryItems(var0_56)
 	else
-		arg0_50:CollectCommonInventoryItems(var0_50)
+		arg0_56:CollectCommonInventoryItems(var0_56)
 	end
 
-	if arg0_50.mode == var0_0.MODE_EDIT then
-		var0_50 = underscore.select(var0_50, function(arg0_51)
-			return arg0_51:CanConvert()
+	if arg0_56.mode == var0_0.MODE_EDIT then
+		var0_56 = underscore.select(var0_56, function(arg0_57)
+			return arg0_57:CanConvert()
 		end)
 	end
 
-	return var0_50
+	return var0_56
 end
 
-function var0_0.CollectOverFlowInventoryItems(arg0_52, arg1_52)
-	local var0_52 = getProxy(IslandProxy):GetIsland():GetInventoryAgency():GetOverflowItemList()
+function var0_0.CollectOverFlowInventoryItems(arg0_58, arg1_58)
+	local var0_58 = getProxy(IslandProxy):GetIsland():GetInventoryAgency():GetOverflowItemList()
 
-	for iter0_52, iter1_52 in pairs(var0_52) do
-		table.insert(arg1_52, iter1_52)
+	for iter0_58, iter1_58 in pairs(var0_58) do
+		table.insert(arg1_58, iter1_58)
 	end
 end
 
-function var0_0.CollectCommonInventoryItems(arg0_53, arg1_53)
-	local var0_53 = getProxy(IslandProxy):GetIsland():GetInventoryAgency():GetGroupedItemList()
+function var0_0.CollectCommonInventoryItems(arg0_59, arg1_59)
+	local var0_59 = getProxy(IslandProxy):GetIsland():GetInventoryAgency():GetGroupedItemList()
 
-	for iter0_53, iter1_53 in ipairs(var0_53) do
-		if arg0_53.tagType == IslandItem.TYPE_MATERIAL and iter1_53:IsMaterial() and arg0_53.indexDatas[IslandItem.TYPE_MATERIAL]:Match(iter1_53) then
-			table.insert(arg1_53, iter1_53)
-		elseif arg0_53.tagType == IslandItem.TYPE_PROP and iter1_53:IsProp() and arg0_53.indexDatas[IslandItem.TYPE_PROP]:Match(iter1_53) then
-			table.insert(arg1_53, iter1_53)
-		elseif arg0_53.tagType == IslandItem.TYPE_SPECIAL_PROP and iter1_53:IsSpecialProp() and arg0_53.indexDatas[IslandItem.TYPE_SPECIAL_PROP]:Match(iter1_53) then
-			table.insert(arg1_53, iter1_53)
+	for iter0_59, iter1_59 in ipairs(var0_59) do
+		if arg0_59.tagType == IslandItem.TYPE_MATERIAL and iter1_59:IsMaterial() and arg0_59.indexDatas[IslandItem.TYPE_MATERIAL]:Match(iter1_59) then
+			table.insert(arg1_59, iter1_59)
+		elseif arg0_59.tagType == IslandItem.TYPE_PROP and iter1_59:IsProp() and arg0_59.indexDatas[IslandItem.TYPE_PROP]:Match(iter1_59) then
+			table.insert(arg1_59, iter1_59)
+		elseif arg0_59.tagType == IslandItem.TYPE_SPECIAL_PROP and iter1_59:IsSpecialProp() and arg0_59.indexDatas[IslandItem.TYPE_SPECIAL_PROP]:Match(iter1_59) then
+			table.insert(arg1_59, iter1_59)
 		end
 	end
 
-	if arg0_53.tagType == IslandItem.TYPE_SPECIAL_PROP then
-		local var1_53 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetInviteList()
+	if arg0_59.tagType == IslandItem.TYPE_SPECIAL_PROP then
+		local var1_59 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetInviteList()
 
-		for iter2_53, iter3_53 in ipairs(var1_53) do
-			local var2_53 = IslandInvitation.New(iter3_53)
+		for iter2_59, iter3_59 in ipairs(var1_59) do
+			local var2_59 = IslandInvitation.New(iter3_59)
 
-			if arg0_53.indexDatas[IslandItem.TYPE_SPECIAL_PROP]:Match(var2_53) then
-				table.insert(arg1_53, var2_53)
+			if arg0_59.indexDatas[IslandItem.TYPE_SPECIAL_PROP]:Match(var2_59) then
+				table.insert(arg1_59, var2_59)
 			end
 		end
 	end
 end
 
-function var0_0.OnDestroy(arg0_54)
-	ClearLScrollrect(arg0_54.scrollRect)
+function var0_0.OnDestroy(arg0_60)
+	ClearLScrollrect(arg0_60.scrollRect)
 
-	for iter0_54, iter1_54 in pairs(arg0_54.cards) do
-		iter1_54:Dispose()
+	for iter0_60, iter1_60 in pairs(arg0_60.cards) do
+		iter1_60:Dispose()
 	end
 
-	arg0_54.cards = {}
+	arg0_60.cards = {}
 end
 
 return var0_0

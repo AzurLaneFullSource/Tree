@@ -18,6 +18,7 @@ function var0_0.OnInit(arg0_1, arg1_1)
 
 	arg0_1:InitEventData(var0_1)
 	arg0_1:InitRemainCnt(var0_1.today_num)
+	arg0_1:InitEstimateData(var0_1.presell_list)
 end
 
 function var0_0.InitEventData(arg0_2, arg1_2)
@@ -50,92 +51,104 @@ function var0_0.InitRemainCnt(arg0_3, arg1_3)
 	end
 end
 
-function var0_0.GetRestaurants(arg0_4)
-	return arg0_4.restaurants
+function var0_0.InitEstimateData(arg0_4, arg1_4)
+	local var0_4 = {}
+
+	for iter0_4, iter1_4 in ipairs(arg1_4 or {}) do
+		var0_4[iter1_4.trade_id] = iter1_4
+	end
+
+	for iter2_4, iter3_4 in pairs(arg0_4.restaurants) do
+		iter3_4:InitEstimateData(var0_4[iter3_4.id] or {})
+	end
 end
 
-function var0_0.GetRestaurantList(arg0_5)
-	return underscore.values(arg0_5.restaurants)
+function var0_0.GetRestaurants(arg0_5)
+	return arg0_5.restaurants
 end
 
-function var0_0.GetRestaurant(arg0_6, arg1_6)
-	return arg0_6.restaurants[arg1_6]
+function var0_0.GetRestaurantList(arg0_6)
+	return underscore.values(arg0_6.restaurants)
 end
 
-function var0_0.GetCntByRestLevel(arg0_7, arg1_7)
-	local var0_7 = 0
+function var0_0.GetRestaurant(arg0_7, arg1_7)
+	return arg0_7.restaurants[arg1_7]
+end
 
-	for iter0_7, iter1_7 in pairs(arg0_7.restaurants) do
-		if arg1_7 <= iter1_7:GetRankLevel() then
-			var0_7 = var0_7 + 1
+function var0_0.GetCntByRestLevel(arg0_8, arg1_8)
+	local var0_8 = 0
+
+	for iter0_8, iter1_8 in pairs(arg0_8.restaurants) do
+		if arg1_8 <= iter1_8:GetRankLevel() then
+			var0_8 = var0_8 + 1
 		end
 	end
 
-	return var0_7
+	return var0_8
 end
 
-function var0_0.UpdataRestaurant(arg0_8, arg1_8)
-	arg0_8.restaurants[arg1_8.id] = arg1_8
+function var0_0.UpdataRestaurant(arg0_9, arg1_9)
+	arg0_9.restaurants[arg1_9.id] = arg1_9
 
-	arg0_8:DispatchEvent(var0_0.UPDATE_RESTAURANT)
+	arg0_9:DispatchEvent(var0_0.UPDATE_RESTAURANT)
 end
 
-function var0_0.UnlockNewRestaurant(arg0_9, arg1_9)
-	local var0_9 = IslandRestaurant.New({
-		id = arg1_9
+function var0_0.UnlockNewRestaurant(arg0_10, arg1_10)
+	local var0_10 = IslandRestaurant.New({
+		id = arg1_10
 	})
 
-	var0_9:InitEventData(0, {})
-	var0_9:InitRemainCnt(0)
+	var0_10:InitEventData(0, {})
+	var0_10:InitRemainCnt(0)
 
-	arg0_9.restaurants[var0_9.id] = var0_9
+	arg0_10.restaurants[var0_10.id] = var0_10
 
-	arg0_9:DispatchEvent(var0_0.ADD_RESTAURANT)
+	arg0_10:DispatchEvent(var0_0.ADD_RESTAURANT)
 end
 
-function var0_0.UnlockNewAssistant(arg0_10, arg1_10)
-	local var0_10 = pg.island_manage_assistant[arg1_10].restaurant
+function var0_0.UnlockNewAssistant(arg0_11, arg1_11)
+	local var0_11 = pg.island_manage_assistant[arg1_11].restaurant
 
-	assert(arg0_10.restaurants[var0_10], string.format("未解锁%d餐厅,提前解锁了%d餐厅岗位", var0_10, arg1_10))
-	arg0_10.restaurants[var0_10]:UnlockNewAssistant(arg1_10)
-	arg0_10:DispatchEvent(var0_0.ADD_ASSISTANT)
+	assert(arg0_11.restaurants[var0_11], string.format("未解锁%d餐厅,提前解锁了%d餐厅岗位", var0_11, arg1_11))
+	arg0_11.restaurants[var0_11]:UnlockNewAssistant(arg1_11)
+	arg0_11:DispatchEvent(var0_0.ADD_ASSISTANT)
 end
 
-function var0_0.DailyRefresh(arg0_11, arg1_11)
-	arg0_11:InitEventData(arg1_11)
-	arg0_11:InitRemainCnt({})
-	arg0_11:DispatchEvent(var0_0.ON_DAILY_REFRESH)
-end
-
-function var0_0.UnlockDailyEvent(arg0_12, arg1_12)
+function var0_0.DailyRefresh(arg0_12, arg1_12)
 	arg0_12:InitEventData(arg1_12)
+	arg0_12:InitRemainCnt({})
+	arg0_12:DispatchEvent(var0_0.ON_DAILY_REFRESH)
 end
 
-function var0_0.GetTipInfos(arg0_13)
-	local var0_13 = 0
-	local var1_13 = 0
-	local var2_13 = {}
+function var0_0.UnlockDailyEvent(arg0_13, arg1_13)
+	arg0_13:InitEventData(arg1_13)
+end
 
-	for iter0_13, iter1_13 in ipairs(pg.island_set.post_manage_operate.key_value_varchar) do
-		local var3_13 = arg0_13.restaurants[iter1_13]
+function var0_0.GetTipInfos(arg0_14)
+	local var0_14 = 0
+	local var1_14 = 0
+	local var2_14 = {}
 
-		if var3_13 then
-			local var4_13 = var3_13:GetStatus()
+	for iter0_14, iter1_14 in ipairs(pg.island_set.post_manage_operate.key_value_varchar) do
+		local var3_14 = arg0_14.restaurants[iter1_14]
 
-			if var4_13 == IslandRestaurant.STATUS.CLOSE then
-				var0_13 = var0_13 + 1
-			elseif var4_13 == IslandRestaurant.STATUS.PREPARE then
-				var1_13 = var1_13 + #var3_13:GetAssistants()
-			elseif var4_13 == IslandRestaurant.STATUS.OPENING then
-				table.insert(var2_13, var3_13:GetEndTime())
+		if var3_14 then
+			local var4_14 = var3_14:GetStatus()
+
+			if var4_14 == IslandRestaurant.STATUS.CLOSE then
+				var0_14 = var0_14 + 1
+			elseif var4_14 == IslandRestaurant.STATUS.PREPARE then
+				var1_14 = var1_14 + #var3_14:GetAssistants()
+			elseif var4_14 == IslandRestaurant.STATUS.OPENING then
+				table.insert(var2_14, var3_14:GetEndTime())
 			end
 		end
 	end
 
 	return {
-		awardCnt = var0_13,
-		emptyCnt = var1_13,
-		timestamps = var2_13
+		awardCnt = var0_14,
+		emptyCnt = var1_14,
+		timestamps = var2_14
 	}
 end
 

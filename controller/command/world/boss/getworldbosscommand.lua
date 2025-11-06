@@ -13,6 +13,16 @@ function var0_0.execute(arg0_1, arg1_1)
 	}, 34502, function(arg0_2)
 		local var0_2 = var1_1.worldBossProxy
 
+		if var0_2.currentBossLV ~= nil then
+			var0_2.currentBossLV = arg0_2.self_boss_lv
+
+			if var0_1 then
+				var0_1()
+			end
+
+			return
+		end
+
 		var0_2:Setup(arg0_2)
 		arg0_1:sendNotification(GAME.WORLD_GET_BOSS_DONE)
 

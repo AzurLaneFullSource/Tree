@@ -830,4 +830,12 @@ function var0_0.GetEquipComposeCfgStatic(arg0_79)
 	end
 end
 
+function var0_0.IsMatchKey(arg0_80, arg1_80)
+	local var0_80 = {
+		arg0_80:getConfig("name")
+	}
+
+	return EquipmentTools.IsMatchKey(var0_80, arg1_80)
+end
+
 return var0_0

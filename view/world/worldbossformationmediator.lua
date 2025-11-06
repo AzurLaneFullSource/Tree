@@ -66,37 +66,44 @@ function var0_0.register(arg0_1)
 		arg0_1:onAutoBtn(arg1_6)
 	end)
 	arg0_1:bind(var0_0.ON_START, function(arg0_7)
-		local var0_7, var1_7 = var1_1:GetFleet(arg0_1.contextData.bossId):isLegalToFight()
+		local var0_7 = SYSTEM_WORLD_BOSS
 
-		if var0_7 ~= true then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("elite_disable_no_fleet"))
+		if not arg0_1.contextData.isSimulate then
+			local var1_7, var2_7 = var1_1:GetFleet(arg0_1.contextData.bossId):isLegalToFight()
 
-			return
-		end
+			if var1_7 ~= true then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("elite_disable_no_fleet"))
 
-		local var2_7 = nowWorld():GetBossProxy():GetBossById(arg0_1.contextData.bossId)
+				return
+			end
 
-		if not var2_7 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_boss_not_found"))
+			local var3_7 = nowWorld():GetBossProxy():GetBossById(arg0_1.contextData.bossId)
 
-			return
-		end
+			if not var3_7 then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_boss_not_found"))
 
-		if arg0_1.contextData.isOther and var1_1:GetPt() <= 0 and WorldBossConst._IsCurrBoss(var2_7) then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_count_no_enough"))
+				return
+			end
 
-			return
-		end
+			if arg0_1.contextData.isOther and var1_1:GetPt() <= 0 and WorldBossConst._IsCurrBoss(var3_7) then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_count_no_enough"))
 
-		if arg0_1.contextData.isOther then
-			WorldBossScene.inOtherBossBattle = arg0_1.contextData.bossId
+				return
+			end
+
+			if arg0_1.contextData.isOther then
+				WorldBossScene.inOtherBossBattle = arg0_1.contextData.bossId
+			end
+		else
+			var0_7 = SYSTEM_WORLD_BOSS_SIMULATE
 		end
 
 		arg0_1:sendNotification(GAME.BEGIN_STAGE, {
 			actId = 0,
 			bossId = arg0_1.contextData.bossId,
-			system = SYSTEM_WORLD_BOSS,
-			hpRate = arg0_1.contextData.hpRate
+			system = var0_7,
+			hpRate = arg0_1.contextData.hpRate,
+			isSimulate = isSimulate
 		})
 	end)
 	arg0_1:bind(var0_0.CHANGE_FLEET_SHIP, function(arg0_8, arg1_8, arg2_8, arg3_8)

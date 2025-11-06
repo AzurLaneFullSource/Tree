@@ -170195,6 +170195,30 @@ _G.pg.base.item_virtual_data_statistics[65730] = {
 	combination_display = {},
 }
 
+_G.pg.base.item_virtual_data_statistics[65731] = {
+	display = "\"Anthem of Remembrance Rerun\" event currency. Used to unlock milestone rewards.",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "Props/masaiqu_pt",
+	id = 65731,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Blank Sheet Music",
+	order = 0,
+	rarity = 2,
+	replace_item = 0,
+	shop_id = -1,
+	time_limit = 0,
+	type = 98,
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
 _G.pg.base.item_virtual_data_statistics[66001] = {
 	display = "A material used for villa reconstruction.",
 	drop_gold_max = 0,

@@ -349,31 +349,45 @@ function var0_0.OnHide(arg0_41)
 	end
 end
 
-function var0_0.OnCharLoaded(arg0_42, arg1_42)
-	if arg0_42.shipDressHelper then
-		arg0_42.shipDressHelper:OnRoleLoaded(arg0_42.role.transform, arg1_42)
+function var0_0.CanEsc(arg0_42)
+	if arg0_42.childPage then
+		arg0_42.childPage:CheckInReturn(function()
+			arg0_42:Hide()
+
+			arg0_42.childPage = nil
+		end)
+
+		return false
+	else
+		return true
 	end
 end
 
-function var0_0.SetObjInitRotaion(arg0_43, arg1_43)
-	local var0_43 = arg0_43:GetSmoothRotateObject()
-	local var1_43 = GetOrAddComponent(var0_43, typeof(SmoothRotateObject))
+function var0_0.OnCharLoaded(arg0_44, arg1_44)
+	if arg0_44.shipDressHelper then
+		arg0_44.shipDressHelper:OnRoleLoaded(arg0_44.role.transform, arg1_44)
+	end
+end
 
-	var1_43.rotationSpeed = 5
+function var0_0.SetObjInitRotaion(arg0_45, arg1_45)
+	local var0_45 = arg0_45:GetSmoothRotateObject()
+	local var1_45 = GetOrAddComponent(var0_45, typeof(SmoothRotateObject))
 
-	ReflectionHelp.RefSetProperty(typeof(SmoothRotateObject), "targetRotation", var1_43, arg1_43)
+	var1_45.rotationSpeed = 5
 
-	if arg0_43.timer then
-		arg0_43.timer:Stop()
+	ReflectionHelp.RefSetProperty(typeof(SmoothRotateObject), "targetRotation", var1_45, arg1_45)
+
+	if arg0_45.timer then
+		arg0_45.timer:Stop()
 	end
 
-	arg0_43.timer = Timer.New(function()
-		local var0_44 = pg.island_set.character_detail_camera_speed.key_value_int
+	arg0_45.timer = Timer.New(function()
+		local var0_46 = pg.island_set.character_detail_camera_speed.key_value_int
 
-		var1_43.rotationSpeed = var0_44
+		var1_45.rotationSpeed = var0_46
 	end, 0.5, 1)
 
-	arg0_43.timer:Start()
+	arg0_45.timer:Start()
 end
 
 return var0_0

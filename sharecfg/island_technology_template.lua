@@ -1022,20 +1022,20 @@ pg.base.island_technology_template = {
 		}
 	},
 	[130301] = {
-		tech_desc = "Increases the content of daily supply drops at Get-Together Island. That means new surprises to go and collect!",
+		tech_desc = "Increases the max number of daily friend supplies you can get by 1. Let's see what new surprises are in store for us!",
 		tech_chara = 1,
 		tech_level = "1",
 		complete_character_id = "",
 		tech_icon = "tech_130301",
 		auto_finish = 1,
 		tech_name = "Daily Supplies Amount+ I",
-		complete_tips = "The content of daily supply drops on Get-Together Island has increased. You can check on them at the <color=#1E8FFE>Get-Together Island drop point</color>.",
+		complete_tips = "Your <color=#1E8FFE>daily friend supplies</color> is increased. Can be checked on the <color=#1E8FFE>Friend Visit screen</color>.",
 		formula_id = 7130301,
-		complete_title = "The content of daily supply drops on Get-Together Island has increased. You can check on them at the <color=#1E8FFE>Get-Together Island drop point</color>.",
+		complete_title = "Your <color=#1E8FFE>daily friend supplies</color> is increased. Can be checked on the <color=#1E8FFE>Friend Visit screen</color>.",
 		tech_belong = 1,
 		id = 130301,
 		island_level = 19,
-		complete_map_id = 1003,
+		complete_map_id = 0,
 		sys_unlock = {
 			{
 				1,
@@ -1124,20 +1124,20 @@ pg.base.island_technology_template = {
 		}
 	},
 	[130302] = {
-		tech_desc = "Increases the content of daily supply drops at Get-Together Island. That means new surprises to go and collect!",
+		tech_desc = "Increases the max number of daily friend supplies you can get by 1. Let's see what new surprises are in store for us!",
 		tech_chara = 1,
 		tech_level = "2",
 		complete_character_id = "",
 		tech_icon = "tech_130301",
 		auto_finish = 1,
 		tech_name = "Daily Supplies Amount+ II",
-		complete_tips = "The content of daily supply drops on Get-Together Island has increased. You can check on them at the <color=#1E8FFE>Get-Together Island drop point</color>.",
+		complete_tips = "Your <color=#1E8FFE>daily friend supplies</color> is increased. Can be checked on the <color=#1E8FFE>Friend Visit screen</color>.",
 		formula_id = 7130302,
-		complete_title = "The content of daily supply drops on Get-Together Island has increased. You can check on them at the <color=#1E8FFE>Get-Together Island drop point</color>.",
+		complete_title = "Your <color=#1E8FFE>daily friend supplies</color> is increased. Can be checked on the <color=#1E8FFE>Friend Visit screen</color>.",
 		tech_belong = 1,
 		id = 130302,
 		island_level = 22,
-		complete_map_id = 1003,
+		complete_map_id = 0,
 		sys_unlock = {
 			{
 				1,
@@ -4493,7 +4493,7 @@ pg.base.island_technology_template = {
 		complete_title = "You can now check <color=#1E8FFE>the Golden Koi Restaurant</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 510204,
 		island_level = 14,
-		complete_map_id = 1005,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -4741,7 +4741,7 @@ pg.base.island_technology_template = {
 		complete_title = "You can now get Avocado Tree Seeds from <color=#1E8FFE>Lusitania at the Prosperous Plantation</color>.",
 		id = 500236,
 		island_level = 18,
-		complete_map_id = 1006,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				1,
@@ -4809,7 +4809,7 @@ pg.base.island_technology_template = {
 		complete_title = "You can now check <color=#1E8FFE>the Polar Bear Teahouse</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 520205,
 		island_level = 19,
-		complete_map_id = 1005,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -4873,7 +4873,7 @@ pg.base.island_technology_template = {
 		complete_title = "You can now check <color=#1E8FFE>the Manjuu Eatery</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 530202,
 		island_level = 20,
-		complete_map_id = 1005,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,

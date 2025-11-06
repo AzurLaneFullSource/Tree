@@ -240,13 +240,7 @@ function var0_0.SetSystemData(arg0_25)
 			arg0_25.allTime = arg0_25.appointRoleData:GetAllTime()
 		end,
 		[IslandUseTicketCommand.TYPES.SHIP_ORDER_RELOAD] = function()
-			local var0_30 = getProxy(IslandProxy):GetIsland():GetOrderAgency():GetShipOrderSlot(arg0_25.id)
-
-			if not var0_30 then
-				return
-			end
-
-			arg0_25.endTime = var0_30:GetReloadingEndTime()
+			arg0_25.endTime = getProxy(IslandProxy):GetIsland():GetOrderAgency():GetNextManualReloadDelegateTime()
 			arg0_25.allTime = pg.island_set.island_shiporder_refresh_cd.key_value_int
 		end
 	}, function()

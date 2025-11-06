@@ -5,9 +5,7 @@ var0_0.SIGN_CNT_UPDATE = "IslandSignInAgency:SIGN_CNT_UPDATE"
 var0_0.OTHER_FETCH_CNT_UPDATE = "IslandSignInAgency:OTHER_FETCH_CNT_UPDATE"
 
 function var0_0.OnInit(arg0_1, arg1_1)
-	local var0_1 = arg0_1:GetHost():GetAblityAgency():GetSignInGiftAddition()
-
-	arg0_1.defaultGiftCnt = pg.island_set.daily_gift_drop_num.key_value_int + var0_1
+	arg0_1.defaultGiftCnt = pg.island_set.daily_gift_drop_num.key_value_int
 	arg0_1.maxFetchCnt = pg.island_set.daily_gift_get_max.key_value_int
 	arg0_1.giftEndTime = arg1_1.tree_gift_timestamp or 0
 	arg0_1.giftCnt = arg1_1.tree_gift_count or 0
@@ -31,7 +29,7 @@ function var0_0.UpdateGiftEndTime(arg0_2, arg1_2)
 end
 
 function var0_0.IsMaxFetchCnt(arg0_3)
-	return arg0_3.otherFetchCnt >= arg0_3.maxFetchCnt
+	return arg0_3.otherFetchCnt >= arg0_3:GetMaxOtheFetchcnt()
 end
 
 function var0_0.InInInviteList(arg0_4, arg1_4)
@@ -105,11 +103,13 @@ function var0_0.UpdateOtherFetchCnt(arg0_15, arg1_15)
 end
 
 function var0_0.GetLeftOtherFetchCnt(arg0_16)
-	return arg0_16.maxFetchCnt - arg0_16.otherFetchCnt
+	return arg0_16:GetMaxOtheFetchcnt() - arg0_16.otherFetchCnt
 end
 
 function var0_0.GetMaxOtheFetchcnt(arg0_17)
-	return arg0_17.maxFetchCnt
+	local var0_17 = arg0_17:GetHost():GetAblityAgency():GetSignInGiftAddition()
+
+	return arg0_17.maxFetchCnt + var0_17
 end
 
 function var0_0.CanInvite(arg0_18)

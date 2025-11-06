@@ -17,7 +17,9 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.SetBossProxy(arg0_2, arg1_2, arg2_2)
-	assert(not arg0_2.bossProxy)
+	if arg0_2.bossProxy then
+		return
+	end
 
 	arg0_2.bossProxy = arg1_2
 	arg0_2.metaCharacterProxy = arg2_2

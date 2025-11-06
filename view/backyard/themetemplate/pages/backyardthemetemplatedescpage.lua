@@ -280,6 +280,7 @@ function var0_0.Show(arg0_30)
 
 	var0_0.super.Show(arg0_30)
 	pg.UIMgr.GetInstance():OverlayPanel(arg0_30.adpter, {
+		groupName = "NewBackYardThemeTemplateLayer",
 		pbList = {
 			arg0_30._tf:Find("adpter/frame")
 		}

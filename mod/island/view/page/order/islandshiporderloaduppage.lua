@@ -9,12 +9,14 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.cntTxt = arg0_2._tf:Find("main/name/count"):GetComponent(typeof(Text))
 	arg0_2.submitBtn = arg0_2._tf:Find("main/btn/btn_1")
 	arg0_2.noResBtn = arg0_2._tf:Find("main/btn/btn_2")
+	arg0_2.disableBtn = arg0_2._tf:Find("main/btn/btn_3")
 	arg0_2.awardCntTxt = arg0_2._tf:Find("main/price/Text"):GetComponent(typeof(Text))
 	arg0_2.nameTxt = arg0_2._tf:Find("main/name"):GetComponent(typeof(Text))
 
 	setText(arg0_2._tf:Find("main/title/Text"), i18n("island_order_ship_loadup_award"))
 	setText(arg0_2._tf:Find("main/btn/btn_2/Text"), i18n("island_order_ship_loadup_nores"))
 	setText(arg0_2._tf:Find("main/btn/btn_1/Text"), i18n("island_order_ship_loadup"))
+	setText(arg0_2._tf:Find("main/btn/btn_3/Text"), i18n("island_order_ship_finish_cnt_not_enough"))
 end
 
 function var0_0.OnInit(arg0_3)
@@ -23,6 +25,10 @@ function var0_0.OnInit(arg0_3)
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3.submitBtn, function()
 		if not arg0_3.slot or not arg0_3.index then
+			return
+		end
+
+		if not arg0_3.slot:CanTransport() then
 			return
 		end
 
@@ -48,8 +54,11 @@ function var0_0.Show(arg0_6, arg1_6, arg2_6, arg3_6)
 	arg0_6.nameTxt.text = var1_6:getName()
 	arg0_6.awardCntTxt.text = "X" .. arg2_6:GetOrder():GetConsumeAwards(arg3_6)[1].count
 
-	setActive(arg0_6.submitBtn, var4_6)
-	setActive(arg0_6.noResBtn, not var4_6)
+	local var6_6 = arg0_6.slot:CanTransport()
+
+	setActive(arg0_6.submitBtn, var4_6 and var6_6)
+	setActive(arg0_6.noResBtn, not var4_6 and var6_6)
+	setActive(arg0_6.disableBtn, not var6_6)
 end
 
 function var0_0.OnDestroy(arg0_7)

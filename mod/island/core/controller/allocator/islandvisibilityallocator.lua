@@ -57,52 +57,53 @@ function var0_0.ApplyCondition(arg0_5, arg1_5)
 
 	local var2_5 = arg0_5.controller.island:GetTaskAgency()
 	local var3_5 = var2_5:GetTraceId()
-	local var4_5 = arg0_5:CollectAllTaskStatus(var2_5)
-	local var5_5 = pg.NewStoryMgr.GetInstance():GetPlayedList()
-	local var6_5 = arg0_5.flags[arg1_5.id]
-	local var7_5 = arg0_5:GetCondition(var4_5, var5_5, var3_5, var0_5)
-	local var8_5 = arg0_5:GetCondition(var4_5, var5_5, var3_5, var1_5)
+	local var4_5 = var2_5:GetMainTraceId()
+	local var5_5 = arg0_5:CollectAllTaskStatus(var2_5)
+	local var6_5 = pg.NewStoryMgr.GetInstance():GetPlayedList()
+	local var7_5 = arg0_5.flags[arg1_5.id]
+	local var8_5 = arg0_5:GetCondition(var5_5, var6_5, var3_5, var4_5, var0_5)
+	local var9_5 = arg0_5:GetCondition(var5_5, var6_5, var3_5, var4_5, var1_5)
 
 	if #var0_5 > 0 and #var1_5 == 0 then
-		if var7_5 then
-			var6_5 = true
+		if var8_5 then
+			var7_5 = true
 		end
 	elseif #var0_5 == 0 and #var1_5 > 0 then
-		if var8_5 then
-			var6_5 = false
+		if var9_5 then
+			var7_5 = false
 		end
 	elseif #var0_5 > 0 and #var1_5 > 0 then
-		var6_5 = arg0_5:SortCondition(arg1_5, var3_5, var7_5, var8_5)
+		var7_5 = arg0_5:SortCondition(arg1_5, var3_5, var4_5, var8_5, var9_5)
 	end
 
-	arg0_5.flags[arg1_5.id] = var6_5
+	arg0_5.flags[arg1_5.id] = var7_5
 end
 
-function var0_0.SortCondition(arg0_6, arg1_6, arg2_6, arg3_6, arg4_6)
-	if not arg3_6 and not arg4_6 then
+function var0_0.SortCondition(arg0_6, arg1_6, arg2_6, arg3_6, arg4_6, arg5_6)
+	if not arg4_6 and not arg5_6 then
 		return false
-	elseif arg3_6 and not arg4_6 then
+	elseif arg4_6 and not arg5_6 then
 		return true
-	elseif not arg3_6 and arg4_6 then
+	elseif not arg4_6 and arg5_6 then
 		return false
 	end
 
-	if arg0_6:IsTaskType(arg3_6) and arg0_6:IsTaskType(arg4_6) then
-		return arg0_6:SortTaskCondition(arg2_6, arg3_6, arg4_6)
-	elseif arg0_6:IsStoryType(arg3_6) and arg0_6:IsStoryType(arg4_6) then
-		return arg0_6:SortStoryCondition(arg3_6, arg4_6)
-	elseif arg3_6[3] == arg4_6[3] then
-		if arg0_6:IsStoryType(arg3_6) then
+	if arg0_6:IsTaskType(arg4_6) and arg0_6:IsTaskType(arg5_6) then
+		return arg0_6:SortTaskCondition(arg2_6, arg3_6, arg4_6, arg5_6)
+	elseif arg0_6:IsStoryType(arg4_6) and arg0_6:IsStoryType(arg5_6) then
+		return arg0_6:SortStoryCondition(arg4_6, arg5_6)
+	elseif arg4_6[3] == arg5_6[3] then
+		if arg0_6:IsStoryType(arg4_6) then
 			return true
 		end
 
-		if arg0_6:IsStoryType(arg4_6) then
+		if arg0_6:IsStoryType(arg5_6) then
 			return false
 		end
 
 		return true
 	else
-		return arg3_6[3] > arg4_6[3]
+		return arg4_6[3] > arg5_6[3]
 	end
 end
 
@@ -123,12 +124,12 @@ function var0_0.SortStoryCondition(arg0_7, arg1_7, arg2_7)
 	end
 end
 
-function var0_0.SortTaskCondition(arg0_9, arg1_9, arg2_9, arg3_9)
-	if arg2_9[2] == arg1_9 and arg3_9[2] == arg1_9 then
-		if arg2_9[3] == arg3_9[3] then
+function var0_0.SortTaskCondition(arg0_9, arg1_9, arg2_9, arg3_9, arg4_9)
+	if arg3_9[2] == arg1_9 and arg4_9[2] == arg1_9 or arg3_9[2] == arg2_9 and arg4_9[2] == arg2_9 then
+		if arg3_9[3] == arg4_9[3] then
 			local var0_9 = {
-				arg2_9[2],
-				arg3_9[2]
+				arg3_9[2],
+				arg4_9[2]
 			}
 
 			table.sort(var0_9, CompareFuncs({
@@ -140,12 +141,12 @@ function var0_0.SortTaskCondition(arg0_9, arg1_9, arg2_9, arg3_9)
 				end
 			}))
 
-			return var0_9[1] == arg2_9[2]
+			return var0_9[1] == arg3_9[2]
 		else
-			return arg2_9[3] > arg3_9[3]
+			return arg3_9[3] > arg4_9[3]
 		end
 	else
-		return arg2_9[2] == arg1_9
+		return arg3_9[2] == arg1_9 or arg3_9[2] == arg2_9
 	end
 end
 
@@ -178,11 +179,11 @@ function var0_0.IsStoryType(arg0_14, arg1_14)
 	return arg1_14[1] == IslandConst.UNIT_SHOW_TYPE_STORY_PLAYED
 end
 
-function var0_0.GetCondition(arg0_15, arg1_15, arg2_15, arg3_15, arg4_15)
+function var0_0.GetCondition(arg0_15, arg1_15, arg2_15, arg3_15, arg4_15, arg5_15)
 	local var0_15 = {}
 	local var1_15 = {}
 
-	for iter0_15, iter1_15 in ipairs(arg4_15) do
+	for iter0_15, iter1_15 in ipairs(arg5_15) do
 		if arg0_15:IsTaskType(iter1_15) then
 			table.insert(var0_15, iter1_15)
 		elseif arg0_15:IsStoryType(iter1_15) then
@@ -190,7 +191,7 @@ function var0_0.GetCondition(arg0_15, arg1_15, arg2_15, arg3_15, arg4_15)
 		end
 	end
 
-	local var2_15 = arg0_15:GetTaskCondition(var0_15, arg3_15, arg1_15)
+	local var2_15 = arg0_15:GetTaskCondition(var0_15, arg3_15, arg4_15, arg1_15)
 	local var3_15 = arg0_15:GetStoryCondition(arg2_15, var1_15)
 
 	if var2_15 and var3_15 then
@@ -204,10 +205,10 @@ function var0_0.GetCondition(arg0_15, arg1_15, arg2_15, arg3_15, arg4_15)
 	return nil
 end
 
-function var0_0.GetTaskCondition(arg0_16, arg1_16, arg2_16, arg3_16)
+function var0_0.GetTaskCondition(arg0_16, arg1_16, arg2_16, arg3_16, arg4_16)
 	table.sort(arg1_16, CompareFuncs({
 		function(arg0_17)
-			return arg0_17[2] == arg2_16 and 1 or 0
+			return (arg0_17[2] == arg2_16 or arg0_17[2] == arg3_16) and 1 or 0
 		end,
 		function(arg0_18)
 			return arg0_18[3]
@@ -217,7 +218,7 @@ function var0_0.GetTaskCondition(arg0_16, arg1_16, arg2_16, arg3_16)
 	for iter0_16, iter1_16 in ipairs(arg1_16) do
 		local var0_16 = iter1_16[1]
 
-		if arg3_16[iter1_16[2]] == var0_16 then
+		if arg4_16[iter1_16[2]] == var0_16 then
 			return iter1_16
 		end
 	end

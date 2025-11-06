@@ -4,6 +4,10 @@ local var2_0 = {
 	[99] = true
 }
 
+var0_0.optionsPath = {
+	"adapt/top/option"
+}
+
 function var0_0.getUIName(arg0_1)
 	return "WorldPreCombatUI"
 end

@@ -17,10 +17,9 @@ function var0_0.StartInteract(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2, arg5_2, ar
 
 	if arg7_2 then
 		arg0_2.behaviourTreeOwner.graph.blackboard:SetVariableValue("inProgress", true)
-		arg0_2:SetPlayerTransform(arg1_2, arg0_2.attachGo.transform.parent)
-	else
-		arg0_2:SetVisitorTransform(arg1_2, arg0_2.attachGo.transform.parent)
 	end
+
+	arg0_2:SetPlayerTransform(arg1_2, arg0_2.attachGo.transform.parent)
 
 	if arg5_2 and #arg5_2 > 1 then
 		arg0_2.behaviourTreeOwner.graph.blackboard:SetVariableValue(arg5_2[1], arg5_2[2])

@@ -53,10 +53,12 @@ function var0_0.OnLoaded(arg0_2)
 			local var0_5 = pg.island_formula[arg0_5].attribute
 
 			arg0_2:OpenPage(IslandShipSelectPage, {
+				needWorkSpeed = true,
 				attrType = var0_5,
 				confirmFunc = function(arg0_6)
 					arg0_2.detailPanel:ExecuteAction("OnShipSelected", arg0_6[1])
-				end
+				end,
+				placeId = IslandProductConst.TechnologyPlaceId
 			})
 		end,
 		onFinishImmd = function(arg0_7)

@@ -141,54 +141,67 @@ function var0_0.GetRemainCnt(arg0_15)
 	return arg0_15.remainCnt
 end
 
-function var0_0.InitEventData(arg0_16, arg1_16, arg2_16)
-	arg0_16.eventId = arg1_16
-	arg0_16.eventEffects = arg2_16
-	arg0_16.eventInfluence = 0
+function var0_0.InitEstimateData(arg0_16, arg1_16)
+	arg0_16.estimateData = {
+		cntMin = arg1_16.sell_num_min or 0,
+		cntMax = arg1_16.sell_num_max or 0,
+		salesMin = arg1_16.sell_money_min or 0,
+		salesMax = arg1_16.sell_money_max or 0
+	}
+end
 
-	if arg0_16.eventId ~= 0 then
-		arg0_16.eventInfluence = pg.island_manage_event[arg0_16.eventId].influence_bonus / 100
+function var0_0.GetEstimateData(arg0_17)
+	return arg0_17.estimateData
+end
+
+function var0_0.InitEventData(arg0_18, arg1_18, arg2_18)
+	arg0_18.eventId = arg1_18
+	arg0_18.eventEffects = arg2_18
+	arg0_18.eventInfluence = 0
+
+	if arg0_18.eventId ~= 0 then
+		arg0_18.eventInfluence = pg.island_manage_event[arg0_18.eventId].influence_bonus / 100
 	end
 end
 
-function var0_0.GetEventInfo(arg0_17)
-	return arg0_17.eventId, arg0_17.eventEffects, arg0_17.eventInfluence
+function var0_0.GetEventInfo(arg0_19)
+	return arg0_19.eventId, arg0_19.eventEffects, arg0_19.eventInfluence
 end
 
-function var0_0.GetStatus(arg0_18)
-	if arg0_18.endTime ~= 0 then
-		return pg.TimeMgr.GetInstance():GetServerTime() > arg0_18.endTime and var0_0.STATUS.CLOSE or var0_0.STATUS.OPENING
+function var0_0.GetStatus(arg0_20)
+	if arg0_20.endTime ~= 0 then
+		return pg.TimeMgr.GetInstance():GetServerTime() > arg0_20.endTime and var0_0.STATUS.CLOSE or var0_0.STATUS.OPENING
 	else
-		return arg0_18.remainCnt > 0 and var0_0.STATUS.PREPARE or var0_0.STATUS.END
+		return arg0_20.remainCnt > 0 and var0_0.STATUS.PREPARE or var0_0.STATUS.END
 	end
 end
 
-function var0_0.AddSales(arg0_19)
-	local var0_19 = 0
+function var0_0.AddSales(arg0_21)
+	local var0_21 = 0
 
-	for iter0_19, iter1_19 in pairs(arg0_19.sellCommodities) do
-		var0_19 = var0_19 + iter1_19.price
+	for iter0_21, iter1_21 in pairs(arg0_21.sellCommodities) do
+		var0_21 = var0_21 + iter1_21.price
 	end
 
-	IslandAchievementHelper.UpdateRecordWithAdd(IslandAchievementType.RESTAURANT_SALES, arg0_19.id, var0_19)
+	IslandAchievementHelper.UpdateRecordWithAdd(IslandAchievementType.RESTAURANT_SALES, arg0_21.id, var0_21)
 
-	arg0_19.sales = arg0_19.sales + var0_19
+	arg0_21.sales = arg0_21.sales + var0_21
 
-	return arg0_19:CheckUpgrade()
+	return arg0_21:CheckUpgrade()
 end
 
-function var0_0.GetSales(arg0_20)
-	return arg0_20.sales
+function var0_0.GetSales(arg0_22)
+	return arg0_22.sales
 end
 
-function var0_0.CheckUpgrade(arg0_21)
-	local var0_21 = arg0_21:GetCanUpgradeExp()
+function var0_0.CheckUpgrade(arg0_23)
+	local var0_23 = arg0_23:GetCanUpgradeExp()
 
-	if var0_21 ~= 0 and var0_21 <= arg0_21.sales then
-		arg0_21.level = arg0_21.level + 1
-		arg0_21.rankCfg = pg.island_manage_rank[arg0_21.level]
+	if var0_23 ~= 0 and var0_23 <= arg0_23.sales then
+		arg0_23.level = arg0_23.level + 1
+		arg0_23.rankCfg = pg.island_manage_rank[arg0_23.level]
 
-		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandRestUpgrade(arg0_21.id, arg0_21.level))
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandRestUpgrade(arg0_23.id, arg0_23.level))
 		IslandTaskHelper.UpdateRuntimeTaskByTargetType(IslandTaskTargetType.RESTAURANT_RANK)
 
 		return true
@@ -197,83 +210,83 @@ function var0_0.CheckUpgrade(arg0_21)
 	return false
 end
 
-function var0_0.UnlockNewAssistant(arg0_22, arg1_22)
-	table.insert(arg0_22.assistants, {
+function var0_0.UnlockNewAssistant(arg0_24, arg1_24)
+	table.insert(arg0_24.assistants, {
 		shipId = 0,
-		id = arg1_22
+		id = arg1_24
 	})
 end
 
-function var0_0.GetRankLevel(arg0_23)
-	return arg0_23.level
+function var0_0.GetRankLevel(arg0_25)
+	return arg0_25.level
 end
 
-function var0_0.GetShelfCnt(arg0_24)
-	return arg0_24.rankCfg.slot_num[1]
+function var0_0.GetShelfCnt(arg0_26)
+	return arg0_26.rankCfg.slot_num[1]
 end
 
-function var0_0.GetBaseShelfCapacity(arg0_25)
-	return arg0_25.rankCfg.slot_num[2]
+function var0_0.GetBaseShelfCapacity(arg0_27)
+	return arg0_27.rankCfg.slot_num[2]
 end
 
-function var0_0.GetRandomSaleCntBound(arg0_26)
-	local var0_26 = math.huge
-	local var1_26 = -math.huge
+function var0_0.GetRandomSaleCntBound(arg0_28)
+	local var0_28 = math.huge
+	local var1_28 = -math.huge
 
-	for iter0_26, iter1_26 in ipairs(arg0_26.rankCfg.random_range) do
-		if iter1_26 < var0_26 then
-			var0_26 = iter1_26
+	for iter0_28, iter1_28 in ipairs(arg0_28.rankCfg.random_range) do
+		if iter1_28 < var0_28 then
+			var0_28 = iter1_28
 		end
 
-		if var1_26 < iter1_26 then
-			var1_26 = iter1_26
+		if var1_28 < iter1_28 then
+			var1_28 = iter1_28
 		end
 	end
 
-	return var0_26, var1_26
+	return var0_28, var1_28
 end
 
-function var0_0.GetCanUpgradeExp(arg0_27)
-	return underscore.detect(arg0_27.rankCfg.level_up_exp, function(arg0_28)
-		return arg0_28[1] == arg0_27.id
+function var0_0.GetCanUpgradeExp(arg0_29)
+	return underscore.detect(arg0_29.rankCfg.level_up_exp, function(arg0_30)
+		return arg0_30[1] == arg0_29.id
 	end)[2]
 end
 
-function var0_0.GetRankFactor(arg0_29)
-	return arg0_29.rankCfg.bonus_coefficient / 100
+function var0_0.GetRankFactor(arg0_31)
+	return arg0_31.rankCfg.bonus_coefficient / 100
 end
 
-function var0_0.GetRankIcon(arg0_30)
-	return arg0_30.rankCfg.icon
+function var0_0.GetRankIcon(arg0_32)
+	return arg0_32.rankCfg.icon
 end
 
-function var0_0.UpdateData(arg0_31, arg1_31)
-	arg0_31.level = arg1_31.lv or 1
-	arg0_31.rankCfg = pg.island_manage_rank[arg0_31.level] or 1
-	arg0_31.sales = arg1_31.total_sell or 0
+function var0_0.UpdateData(arg0_33, arg1_33)
+	arg0_33.level = arg1_33.lv or 1
+	arg0_33.rankCfg = pg.island_manage_rank[arg0_33.level] or 1
+	arg0_33.sales = arg1_33.total_sell or 0
 
-	arg0_31:SetCommodities(arg1_31.sell_list or {}, arg1_31.rest_list or {})
-	arg0_31:SetAssistants(arg1_31.post_list or {})
-	arg0_31:SetEndTime(arg1_31.end_time or 0)
+	arg0_33:SetCommodities(arg1_33.sell_list or {}, arg1_33.rest_list or {})
+	arg0_33:SetAssistants(arg1_33.post_list or {})
+	arg0_33:SetEndTime(arg1_33.end_time or 0)
 end
 
-function var0_0.IsPostTip(arg0_32)
-	local var0_32 = arg0_32:GetStatus()
+function var0_0.IsPostTip(arg0_34)
+	local var0_34 = arg0_34:GetStatus()
 
-	return var0_32 == var0_0.STATUS.PREPARE or var0_32 == var0_0.STATUS.CLOSE
+	return var0_34 == var0_0.STATUS.PREPARE or var0_34 == var0_0.STATUS.CLOSE
 end
 
-function var0_0.GET_RNAK_EXPS(arg0_33)
-	local var0_33 = {}
-	local var1_33 = pg.island_manage_rank
+function var0_0.GET_RNAK_EXPS(arg0_35)
+	local var0_35 = {}
+	local var1_35 = pg.island_manage_rank
 
-	for iter0_33, iter1_33 in ipairs(var1_33.all) do
-		var0_33[iter1_33] = underscore.detect(var1_33[iter1_33].level_up_exp, function(arg0_34)
-			return arg0_34[1] == arg0_33
+	for iter0_35, iter1_35 in ipairs(var1_35.all) do
+		var0_35[iter1_35] = underscore.detect(var1_35[iter1_35].level_up_exp, function(arg0_36)
+			return arg0_36[1] == arg0_35
 		end)[2]
 	end
 
-	return var0_33
+	return var0_35
 end
 
 return var0_0

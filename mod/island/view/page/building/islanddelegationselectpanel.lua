@@ -260,7 +260,7 @@ function var0_0.FlushInfos(arg0_19)
 			local var13_19 = var5_19.main_num
 
 			if var13_19 and var13_19 > 0 then
-				var12_19 = string.format("%s+%d", var12_19, var13_19)
+				var12_19 = string.format("×(%d<color=#7df39f>+%d</color>)", var10_19, var13_19)
 			end
 
 			setText(arg0_19.canRewardNum, var12_19)
@@ -351,6 +351,7 @@ function var0_0.OpenShipSelectPage(arg0_23)
 
 	arg0_23:emit(IslandMediator.OPEN_PAGE, "IslandShipSelectPage", {
 		{
+			needWorkSpeed = true,
 			attrType = var0_23,
 			confirmFunc = function(arg0_24)
 				arg0_23:AfterShipSelect(arg0_24[1])
@@ -411,7 +412,7 @@ function var0_0.UpdateTime(arg0_27)
 	local var8_27 = "×" .. tostring(var6_27.commission_product[1][2] * var4_27)
 
 	if var7_27 and var7_27 > 0 then
-		var8_27 = string.format("%s+%d", var8_27, var7_27)
+		var8_27 = string.format("×(%d<color=#7df39f>+%d</color>)", var6_27.commission_product[1][2] * var4_27, var7_27)
 	end
 
 	setText(arg0_27.canRewardNum, var8_27)
@@ -437,7 +438,7 @@ function var0_0.UpdateTime(arg0_27)
 		var15_27 = string.format("×(%s<color=#7df39f>+%d</color>)", var6_27.commission_product[1][2], var14_27)
 	end
 
-	setText(arg0_27.currentFormulaNum, var15_27)
+	setText(arg0_27.currentFormulaNum, var15_27 .. i18n("island_production_tip"))
 
 	if #var6_27.second_product > 0 and getProxy(IslandProxy):GetIsland():GetAblityAgency():IsUnlcokSecondProduct(var5_27) then
 		local var16_27 = var1_27:GetExtraExtraProduct(var9_27)
@@ -447,14 +448,16 @@ function var0_0.UpdateTime(arg0_27)
 			var17_27 = string.format("×(%s<color=#7df39f>+%d</color>)", var6_27.second_product_display[1][2], var16_27)
 		end
 
-		setText(arg0_27.extraProductNum, var17_27)
+		setText(arg0_27.extraProductNum, var17_27 .. i18n("island_production_tip"))
 	end
 
 	if var4_27 > 0 then
 		setActive(arg0_27.getBtn, true)
 		setActive(arg0_27.addBtn, false)
 	else
-		setActive(arg0_27.addBtn, var13_27 < 5)
+		local var18_27 = var6_27.production_limit or 5
+
+		setActive(arg0_27.addBtn, var13_27 < var18_27)
 		onButton(arg0_27, arg0_27.addBtn, function()
 			arg0_27:OpenFormulaSelectPage(var5_27, var13_27, var4_27, var1_27.ship_id)
 		end, SFX_PANEL)
@@ -464,20 +467,20 @@ function var0_0.UpdateTime(arg0_27)
 		return
 	end
 
-	local var18_27 = var0_27:GetFromulaTatalCount(var6_27.id) + var4_27
-	local var19_27 = var6_27.second_product[1]
-	local var20_27 = math.floor(var18_27 / var19_27)
-	local var21_27 = var18_27 % var19_27
+	local var19_27 = var0_27:GetFromulaTatalCount(var6_27.id) + var4_27
+	local var20_27 = var6_27.second_product[1]
+	local var21_27 = math.floor(var19_27 / var20_27)
+	local var22_27 = var19_27 % var20_27
 
-	if var21_27 ~= arg0_27.extraProcess then
-		arg0_27.extraProcess = var21_27
+	if var22_27 ~= arg0_27.extraProcess then
+		arg0_27.extraProcess = var22_27
 
-		arg0_27.extraProductList:align(var19_27)
+		arg0_27.extraProductList:align(var20_27)
 	end
 
-	local var22_27 = math.floor((var13_27 + var21_27) / var19_27)
+	local var23_27 = math.floor((var13_27 + var22_27) / var20_27)
 
-	setText(arg0_27.extraProductLastNum, "×" .. var22_27)
+	setText(arg0_27.extraProductLastNum, "×" .. var23_27)
 end
 
 function var0_0.StartTimer(arg0_29)

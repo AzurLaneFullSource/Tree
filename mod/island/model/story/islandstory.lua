@@ -171,7 +171,7 @@ end
 
 function var0_0.GetUnitIdFromCharaId(arg0_25, arg1_25)
 	if not arg1_25 or arg1_25 == 0 then
-		return 0, IslandConst.UNIT_LIST_OBJ
+		return 0, IslandConst.UNIT_LIST_PLAYER
 	end
 
 	for iter0_25, iter1_25 in ipairs(arg0_25.unitMap) do
@@ -184,7 +184,7 @@ function var0_0.GetUnitIdFromCharaId(arg0_25, arg1_25)
 		end
 	end
 
-	return 0, IslandConst.UNIT_LIST_OBJ
+	return 0, IslandConst.UNIT_LIST_PLAYER
 end
 
 function var0_0.GetLookGroup(arg0_26)

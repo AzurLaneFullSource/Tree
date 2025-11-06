@@ -314,9 +314,10 @@ function var0_0.BuildIslandShipUpgrade(arg0_34, arg1_34)
 	}, {})
 end
 
-function var0_0.BuildIslandShipBreakout(arg0_35)
+function var0_0.BuildIslandShipBreakout(arg0_35, arg1_35)
 	return var3_0(30015, {
-		arg0_35
+		arg0_35,
+		arg1_35
 	}, {})
 end
 

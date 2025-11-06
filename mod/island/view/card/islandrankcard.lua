@@ -17,6 +17,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 	arg0_1.ptText = arg0_1._tf:Find("pt"):GetComponent(typeof(Text))
 
 	setText(arg0_1._tf:Find("island"), i18n("island_season_charts_level"))
+	setText(arg0_1.notOnTF, i18n("island_season_charts_out"))
 
 	arg0_1.awardsTF = arg0_1._tf:Find("awards")
 end

@@ -42,6 +42,7 @@ function var0_0.OnLoaded(arg0_5)
 	arg0_5.scrollRect = arg0_5._tf:Find("main/list/scrollrect"):GetComponent("LScrollRect")
 	arg0_5.paintingTr = arg0_5._tf:Find("main/paint")
 	arg0_5.openTr = arg0_5._tf:Find("main/open")
+	arg0_5.simulateBtn = arg0_5._tf:Find("main/simulate")
 	arg0_5.ptIcon = arg0_5._tf:Find("main/award/pt/icon")
 	arg0_5.ptTr = arg0_5._tf:Find("main/award/pt/Text"):GetComponent(typeof(Text))
 	arg0_5.getAllBtn = arg0_5._tf:Find("main/award/get_all")
@@ -224,170 +225,189 @@ function var0_0.UpdateMain(arg0_22, arg1_22)
 	setMetaPaintingPrefabAsync(arg0_22.paintingTr, var0_22, "archives")
 
 	local var1_22 = WorldBossConst.GetArchivesId()
-	local var2_22 = arg1_22.id == var1_22 or arg1_22.progress.metaPtData:IsMaxPt()
+	local var2_22 = arg1_22.progress.metaPtData:IsMaxPt()
+	local var3_22 = arg1_22.id == var1_22 or var2_22
 
-	setActive(arg0_22.openTr, not var2_22)
+	setActive(arg0_22.openTr, not var3_22)
+	setActive(arg0_22.simulateBtn, not arg1_22.progress.metaPtData:CanGetNextAward())
 
-	if var2_22 then
+	if var3_22 then
 		removeOnButton(arg0_22.openTr)
 	else
 		onButton(arg0_22, arg0_22.openTr, function()
 			arg0_22:Switch(arg1_22)
 		end, SFX_PANEL)
 	end
+
+	if var2_22 then
+		onButton(arg0_22, arg0_22.simulateBtn, function()
+			arg0_22:Simulate(arg1_22)
+		end)
+	else
+		removeOnButton(arg0_22.simulateBtn)
+	end
 end
 
-function var0_0.Switch(arg0_24, arg1_24)
-	local var0_24 = WorldBossConst.GetAchieveState()
+function var0_0.Switch(arg0_25, arg1_25)
+	local var0_25 = WorldBossConst.GetAchieveState()
 
-	if var0_24 == WorldBossConst.ACHIEVE_STATE_NOSTART then
-		arg0_24:emit(WorldBossMediator.ON_SWITCH_ARCHIVES, arg1_24.id)
-	elseif var0_24 == WorldBossConst.ACHIEVE_STATE_STARTING then
-		local var1_24 = WorldBossConst.GetArchivesId()
-		local var2_24 = WorldBossConst.BossId2MetaId(var1_24)
-		local var3_24 = pg.ship_strengthen_meta[var2_24].ship_id
-		local var4_24 = pg.ship_data_statistics[var3_24].name
+	if var0_25 == WorldBossConst.ACHIEVE_STATE_NOSTART then
+		arg0_25:emit(WorldBossMediator.ON_SWITCH_ARCHIVES, arg1_25.id)
+	elseif var0_25 == WorldBossConst.ACHIEVE_STATE_STARTING then
+		local var1_25 = WorldBossConst.GetArchivesId()
+		local var2_25 = WorldBossConst.BossId2MetaId(var1_25)
+		local var3_25 = pg.ship_strengthen_meta[var2_25].ship_id
+		local var4_25 = pg.ship_data_statistics[var3_25].name
 
-		arg0_24.msgBox:ExecuteAction("Show", {
-			content = i18n("world_boss_switch_archives", var4_24),
+		arg0_25.msgBox:ExecuteAction("Show", {
+			content = i18n("world_boss_switch_archives", var4_25),
 			onYes = function()
-				arg0_24:emit(WorldBossMediator.ON_SWITCH_ARCHIVES, arg1_24.id)
+				arg0_25:emit(WorldBossMediator.ON_SWITCH_ARCHIVES, arg1_25.id)
 			end
 		})
 	end
 end
 
-function var0_0.UpdateAwards(arg0_26, arg1_26)
-	local var0_26 = arg1_26.progress.metaPtData
-	local var1_26 = var0_26.dropList
-	local var2_26 = var0_26.targets
+function var0_0.Simulate(arg0_27, arg1_27)
+	pg.MsgboxMgr.GetInstance():ShowMsgBox({
+		content = i18n("meta_reproduce_btn"),
+		onYes = function()
+			arg0_27:emit(WorldBossMediator.ON_BATTLE, arg1_27.id, false, 1, true)
+		end
+	})
+end
 
-	setImageSprite(arg0_26.ptIcon, LoadSprite(arg1_26.progress:getPtIconPath()))
+function var0_0.UpdateAwards(arg0_29, arg1_29)
+	local var0_29 = arg1_29.progress.metaPtData
+	local var1_29 = var0_29.dropList
+	local var2_29 = var0_29.targets
 
-	arg0_26.ptTr.text = var0_26.count
+	setImageSprite(arg0_29.ptIcon, LoadSprite(arg1_29.progress:getPtIconPath()))
 
-	local var3_26 = arg1_26.progress.metaPtData:CanGetAward()
+	arg0_29.ptTr.text = var0_29.count
 
-	setActive(arg0_26.getAllBtn, var3_26)
+	local var3_29 = arg1_29.progress.metaPtData:CanGetAward()
 
-	if not var3_26 then
-		removeOnButton(arg0_26.getAllBtn)
+	setActive(arg0_29.getAllBtn, var3_29)
+
+	if not var3_29 then
+		removeOnButton(arg0_29.getAllBtn)
 	else
-		onButton(arg0_26, arg0_26.getAllBtn, function()
-			local var0_27, var1_27 = arg0_26:getOneStepPTAwardLevelAndCount(arg1_26.progress)
+		onButton(arg0_29, arg0_29.getAllBtn, function()
+			local var0_30, var1_30 = arg0_29:getOneStepPTAwardLevelAndCount(arg1_29.progress)
 
 			pg.m02:sendNotification(GAME.GET_META_PT_AWARD, {
-				groupID = arg1_26.progress.id,
-				targetCount = var1_27
+				groupID = arg1_29.progress.id,
+				targetCount = var1_30
 			})
 		end, SFX_PANEL)
 	end
 
-	arg0_26.awardCards = {}
-	arg0_26.awardDisplays = {}
+	arg0_29.awardCards = {}
+	arg0_29.awardDisplays = {}
 
-	for iter0_26, iter1_26 in ipairs(var1_26) do
-		table.insert(arg0_26.awardDisplays, {
-			itemInfo = iter1_26,
-			target = var2_26[iter0_26],
-			level = var0_26.level,
-			count = var0_26.count,
-			unlockPTNum = arg1_26.progress.unlockPTNum
+	for iter0_29, iter1_29 in ipairs(var1_29) do
+		table.insert(arg0_29.awardDisplays, {
+			itemInfo = iter1_29,
+			target = var2_29[iter0_29],
+			level = var0_29.level,
+			count = var0_29.count,
+			unlockPTNum = arg1_29.progress.unlockPTNum
 		})
 	end
 
-	arg0_26.awardScrollrect:SetTotalCount(#arg0_26.awardDisplays)
+	arg0_29.awardScrollrect:SetTotalCount(#arg0_29.awardDisplays)
 
-	local var4_26 = math.min(var0_26.level, #var2_26 - 5)
-	local var5_26 = arg0_26.awardScrollrect:HeadIndexToValue(var4_26)
+	local var4_29 = math.min(var0_29.level, #var2_29 - 5)
+	local var5_29 = arg0_29.awardScrollrect:HeadIndexToValue(var4_29)
 
-	arg0_26.awardScrollrect:ScrollTo(var5_26)
+	arg0_29.awardScrollrect:ScrollTo(var5_29)
 end
 
-function var0_0.getOneStepPTAwardLevelAndCount(arg0_28, arg1_28)
-	local var0_28 = arg1_28.metaPtData:GetResProgress()
-	local var1_28 = arg1_28.metaPtData.targets
-	local var2_28 = arg1_28:getStoryIndexList()
-	local var3_28 = arg1_28.unlockPTLevel
-	local var4_28 = 0
+function var0_0.getOneStepPTAwardLevelAndCount(arg0_31, arg1_31)
+	local var0_31 = arg1_31.metaPtData:GetResProgress()
+	local var1_31 = arg1_31.metaPtData.targets
+	local var2_31 = arg1_31:getStoryIndexList()
+	local var3_31 = arg1_31.unlockPTLevel
+	local var4_31 = 0
 
-	for iter0_28 = 1, #var1_28 do
-		local var5_28 = false
-		local var6_28 = false
+	for iter0_31 = 1, #var1_31 do
+		local var5_31 = false
+		local var6_31 = false
 
-		if var0_28 >= var1_28[iter0_28] then
-			var5_28 = true
+		if var0_31 >= var1_31[iter0_31] then
+			var5_31 = true
 		end
 
-		local var7_28 = var2_28[iter0_28]
+		local var7_31 = var2_31[iter0_31]
 
-		if var7_28 == 0 then
-			var6_28 = true
-		elseif pg.NewStoryMgr.GetInstance():IsPlayed(var7_28) then
-			var6_28 = true
+		if var7_31 == 0 then
+			var6_31 = true
+		elseif pg.NewStoryMgr.GetInstance():IsPlayed(var7_31) then
+			var6_31 = true
 		end
 
-		if var5_28 and var6_28 then
-			var4_28 = iter0_28
+		if var5_31 and var6_31 then
+			var4_31 = iter0_31
 		else
 			break
 		end
 	end
 
-	print("calc max level", var4_28, var1_28[var4_28])
+	print("calc max level", var4_31, var1_31[var4_31])
 
-	return var4_28, var1_28[var4_28]
+	return var4_31, var1_31[var4_31]
 end
 
-function var0_0.OnInitAwardItem(arg0_29, arg1_29)
-	local var0_29 = ArchivesWorldBossAwardCard.New(arg1_29)
+function var0_0.OnInitAwardItem(arg0_32, arg1_32)
+	local var0_32 = ArchivesWorldBossAwardCard.New(arg1_32)
 
-	onButton(arg0_29, var0_29.itemTF, function()
-		arg0_29:emit(BaseUI.ON_DROP, var0_29.dropInfo)
+	onButton(arg0_32, var0_32.itemTF, function()
+		arg0_32:emit(BaseUI.ON_DROP, var0_32.dropInfo)
 	end, SFX_PANEL)
 
-	arg0_29.awardCards[arg1_29] = var0_29
+	arg0_32.awardCards[arg1_32] = var0_32
 end
 
-function var0_0.OnUpdateAwardItem(arg0_31, arg1_31, arg2_31)
-	local var0_31 = arg0_31.awardCards[arg2_31]
+function var0_0.OnUpdateAwardItem(arg0_34, arg1_34, arg2_34)
+	local var0_34 = arg0_34.awardCards[arg2_34]
 
-	if not var0_31 then
-		arg0_31:OnInitAwardItem(arg2_31)
+	if not var0_34 then
+		arg0_34:OnInitAwardItem(arg2_34)
 
-		var0_31 = arg0_31.awardCards[arg2_31]
+		var0_34 = arg0_34.awardCards[arg2_34]
 	end
 
-	local var1_31 = arg0_31.awardDisplays[arg1_31 + 1]
+	local var1_34 = arg0_34.awardDisplays[arg1_34 + 1]
 
-	var0_31:Update(var1_31, arg1_31 + 1)
+	var0_34:Update(var1_34, arg1_34 + 1)
 end
 
-function var0_0.OnDestroy(arg0_32)
-	arg0_32.scrollRect.onInitItem = nil
-	arg0_32.scrollRect.onUpdateItem = nil
-	arg0_32.awardScrollrect.onInitItem = nil
-	arg0_32.awardScrollrect.onUpdateItem = nil
+function var0_0.OnDestroy(arg0_35)
+	arg0_35.scrollRect.onInitItem = nil
+	arg0_35.scrollRect.onUpdateItem = nil
+	arg0_35.awardScrollrect.onInitItem = nil
+	arg0_35.awardScrollrect.onUpdateItem = nil
 
-	arg0_32.awardScrollrect.onValueChanged:RemoveAllListeners()
+	arg0_35.awardScrollrect.onValueChanged:RemoveAllListeners()
 
-	if arg0_32.msgBox then
-		arg0_32.msgBox:Destroy()
+	if arg0_35.msgBox then
+		arg0_35.msgBox:Destroy()
 
-		arg0_32.msgBox = nil
+		arg0_35.msgBox = nil
 	end
 
-	for iter0_32, iter1_32 in pairs(arg0_32.cards) do
-		iter1_32:Dispose()
+	for iter0_35, iter1_35 in pairs(arg0_35.cards) do
+		iter1_35:Dispose()
 	end
 
-	arg0_32.cards = nil
+	arg0_35.cards = nil
 
-	for iter2_32, iter3_32 in pairs(arg0_32.awardCards or {}) do
-		iter3_32:Dispose()
+	for iter2_35, iter3_35 in pairs(arg0_35.awardCards or {}) do
+		iter3_35:Dispose()
 	end
 
-	arg0_32.awardCards = nil
+	arg0_35.awardCards = nil
 end
 
 return var0_0

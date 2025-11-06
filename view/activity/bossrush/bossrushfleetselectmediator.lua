@@ -353,9 +353,17 @@ function var0_0.getRecommendShip(arg0_25, arg1_25, arg2_25)
 		var3_25[iter1_25] = iter1_25:getShipCombatPower()
 	end
 
-	table.sort(var2_25, function(arg0_26, arg1_26)
-		return var3_25[arg0_26] < var3_25[arg1_26]
-	end)
+	table.sort(var2_25, CompareFuncs({
+		function(arg0_26)
+			return var3_25[arg0_26]
+		end
+	}))
+
+	if getProxy(SettingsProxy):GetRecommendLowEnerySkipEnable() then
+		var2_25 = underscore.filter(var2_25, function(arg0_27)
+			return not arg0_27:isLowEnergy()
+		end)
+	end
 
 	local var4_25 = {}
 	local var5_25 = var1_25:getRawData()
@@ -388,28 +396,28 @@ function var0_0.getRecommendShip(arg0_25, arg1_25, arg2_25)
 	return var8_25
 end
 
-function var0_0.openCommanderPanel(arg0_27, arg1_27, arg2_27)
-	local var0_27 = arg0_27.contextData.actId
+function var0_0.openCommanderPanel(arg0_28, arg1_28, arg2_28)
+	local var0_28 = arg0_28.contextData.actId
 
-	arg0_27:addSubLayers(Context.New({
+	arg0_28:addSubLayers(Context.New({
 		mediator = BossRushCMDFormationMediator,
 		viewComponent = BossRushCMDFormationView,
 		data = {
-			fleet = arg1_27,
-			callback = function(arg0_28)
-				if arg0_28.type == LevelUIConst.COMMANDER_OP_SHOW_SKILL then
-					arg0_27.viewComponent:emit(var0_0.ON_COMMANDER_SKILL, arg0_28.skill)
-				elseif arg0_28.type == LevelUIConst.COMMANDER_OP_ADD then
-					arg0_27:closeCommanderPanel()
-					arg0_27.viewComponent:emit(var0_0.ON_SELECT_COMMANDER, arg2_27, arg0_28.pos)
+			fleet = arg1_28,
+			callback = function(arg0_29)
+				if arg0_29.type == LevelUIConst.COMMANDER_OP_SHOW_SKILL then
+					arg0_28.viewComponent:emit(var0_0.ON_COMMANDER_SKILL, arg0_29.skill)
+				elseif arg0_29.type == LevelUIConst.COMMANDER_OP_ADD then
+					arg0_28:closeCommanderPanel()
+					arg0_28.viewComponent:emit(var0_0.ON_SELECT_COMMANDER, arg2_28, arg0_29.pos)
 				else
-					arg0_27:sendNotification(GAME.COMMANDER_FORMATION_OP, {
+					arg0_28:sendNotification(GAME.COMMANDER_FORMATION_OP, {
 						data = {
 							FleetType = LevelUIConst.FLEET_TYPE_BOSSRUSH,
-							data = arg0_28,
-							fleetId = arg1_27.id,
-							actId = var0_27,
-							fleets = arg0_27.contextData.fleets
+							data = arg0_29,
+							fleetId = arg1_28.id,
+							actId = var0_28,
+							fleets = arg0_28.contextData.fleets
 						}
 					})
 				end
@@ -418,58 +426,58 @@ function var0_0.openCommanderPanel(arg0_27, arg1_27, arg2_27)
 	}))
 end
 
-function var0_0.closeCommanderPanel(arg0_29)
-	local var0_29 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossRushCMDFormationMediator)
+function var0_0.closeCommanderPanel(arg0_30)
+	local var0_30 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossRushCMDFormationMediator)
 
-	if var0_29 then
-		arg0_29:sendNotification(GAME.REMOVE_LAYERS, {
-			context = var0_29
+	if var0_30 then
+		arg0_30:sendNotification(GAME.REMOVE_LAYERS, {
+			context = var0_30
 		})
 	end
 end
 
-function var0_0.listNotificationInterests(arg0_30)
+function var0_0.listNotificationInterests(arg0_31)
 	return {
 		GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE,
 		BossRushPreCombatMediator.ON_FLEET_REFRESHED
 	}
 end
 
-function var0_0.handleNotification(arg0_31, arg1_31)
-	local var0_31 = arg1_31:getName()
-	local var1_31 = arg1_31:getBody()
+function var0_0.handleNotification(arg0_32, arg1_32)
+	local var0_32 = arg1_32:getName()
+	local var1_32 = arg1_32:getBody()
 
-	if var0_31 == nil then
+	if var0_32 == nil then
 		-- block empty
-	elseif var0_31 == GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE then
-		arg0_31.viewComponent:updateEliteFleets()
-	elseif var0_31 == BossRushPreCombatMediator.ON_FLEET_REFRESHED then
-		arg0_31.viewComponent:updateEliteFleets()
+	elseif var0_32 == GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE then
+		arg0_32.viewComponent:updateEliteFleets()
+	elseif var0_32 == BossRushPreCombatMediator.ON_FLEET_REFRESHED then
+		arg0_32.viewComponent:updateEliteFleets()
 	end
 end
 
-function var0_0.remove(arg0_32)
+function var0_0.remove(arg0_33)
 	return
 end
 
-function var0_0.getDockCallbackFuncs(arg0_33, arg1_33, arg2_33, arg3_33, arg4_33)
-	local var0_33 = getProxy(BayProxy)
+function var0_0.getDockCallbackFuncs(arg0_34, arg1_34, arg2_34, arg3_34, arg4_34)
+	local var0_34 = getProxy(BayProxy)
 
-	local function var1_33(arg0_34, arg1_34)
-		local var0_34, var1_34 = ShipStatus.ShipStatusCheck("inActivity", arg0_34, arg1_34, {
-			inActivity = arg4_33
+	local function var1_34(arg0_35, arg1_35)
+		local var0_35, var1_35 = ShipStatus.ShipStatusCheck("inActivity", arg0_35, arg1_35, {
+			inActivity = arg4_34
 		})
 
-		if not var0_34 then
-			return var0_34, var1_34
+		if not var0_35 then
+			return var0_35, var1_35
 		end
 
-		if arg0_33 and arg0_33:isSameKind(arg0_34) then
+		if arg0_34 and arg0_34:isSameKind(arg0_35) then
 			return true
 		end
 
-		for iter0_34, iter1_34 in ipairs(arg3_33) do
-			if arg0_34:isSameKind(var0_33:getShipById(iter1_34)) then
+		for iter0_35, iter1_35 in ipairs(arg3_34) do
+			if arg0_35:isSameKind(var0_34:getShipById(iter1_35)) then
 				return false, i18n("ship_formationMediator_changeNameError_sameShip")
 			end
 		end
@@ -477,31 +485,31 @@ function var0_0.getDockCallbackFuncs(arg0_33, arg1_33, arg2_33, arg3_33, arg4_33
 		return true
 	end
 
-	local function var2_33(arg0_35, arg1_35, arg2_35)
-		arg1_35()
+	local function var2_34(arg0_36, arg1_36, arg2_36)
+		arg1_36()
 	end
 
-	local function var3_33(arg0_36)
-		if arg0_33 then
-			arg1_33:removeShip(arg0_33)
+	local function var3_34(arg0_37)
+		if arg0_34 then
+			arg1_34:removeShip(arg0_34)
 		end
 
-		if #arg0_36 > 0 then
-			local var0_36 = var0_33:getShipById(arg0_36[1])
+		if #arg0_37 > 0 then
+			local var0_37 = var0_34:getShipById(arg0_37[1])
 
-			if not arg1_33:containShip(var0_36) then
-				arg1_33:insertShip(var0_36, nil, arg2_33)
-			elseif arg0_33 then
-				arg1_33:insertShip(arg0_33, nil, arg2_33)
+			if not arg1_34:containShip(var0_37) then
+				arg1_34:insertShip(var0_37, nil, arg2_34)
+			elseif arg0_34 then
+				arg1_34:insertShip(arg0_34, nil, arg2_34)
 			end
 
-			arg1_33:RemoveUnusedItems()
+			arg1_34:RemoveUnusedItems()
 		end
 
-		getProxy(FleetProxy):updateActivityFleet(arg4_33, arg1_33.id, arg1_33)
+		getProxy(FleetProxy):updateActivityFleet(arg4_34, arg1_34.id, arg1_34)
 	end
 
-	return var1_33, var2_33, var3_33
+	return var1_34, var2_34, var3_34
 end
 
 return var0_0

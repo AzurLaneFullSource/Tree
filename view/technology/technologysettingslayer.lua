@@ -329,7 +329,7 @@ function var0_0.initActCatchupPage(arg0_25)
 			})
 			setAnchoredPosition(arg0_26, Vector2.zero)
 
-			arg0_25.actCatchupTF = tf(arg0_26:Find("AD"))
+			arg0_25.actCatchupTF = tf(arg0_26):Find("AD")
 			arg0_25.actCatchupItemTF = arg0_25.actCatchupTF:Find("Award")
 			arg0_25.actCatchupSliderTF = arg0_25.actCatchupTF:Find("Slider")
 			arg0_25.actCatchupProgressText = arg0_25.actCatchupTF:Find("Progress")

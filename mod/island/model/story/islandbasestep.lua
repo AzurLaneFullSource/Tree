@@ -74,11 +74,19 @@ function var0_0.GetUnitData(arg0_8)
 end
 
 function var0_0.GenUnitData(arg0_9, arg1_9, arg2_9)
-	return {
-		id = arg1_9,
-		type = arg2_9,
-		key = arg2_9 .. "_" .. arg1_9
-	}
+	if arg1_9 == 0 then
+		return {
+			id = arg1_9,
+			type = IslandConst.UNIT_LIST_PLAYER,
+			key = IslandConst.UNIT_LIST_PLAYER .. "_" .. arg1_9
+		}
+	else
+		return {
+			id = arg1_9,
+			type = arg2_9,
+			key = arg2_9 .. "_" .. arg1_9
+		}
+	end
 end
 
 function var0_0.GetAnimation(arg0_10)

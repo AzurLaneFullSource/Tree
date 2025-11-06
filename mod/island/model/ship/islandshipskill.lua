@@ -91,7 +91,11 @@ function var0_0.IsEffectiveInPlace(arg0_16, arg1_16)
 	return underscore.any(arg0_16:GetEffectIds(), function(arg0_17)
 		local var0_17 = pg.island_buff_template[arg0_17]
 
-		return IslandBuffType.GetLimitPlaceTypes(var0_17.buff_type) and table.contains(var0_17.type_use[1], arg1_16)
+		if var0_17.buff_type == IslandBuffType.SHIP_POWER_RECOVER then
+			return true
+		end
+
+		return IslandBuffType.IsLimitPlaceType(var0_17.buff_type) and table.contains(var0_17.type_use[1], arg1_16)
 	end)
 end
 
@@ -99,7 +103,7 @@ function var0_0.IsEffectiveInRest(arg0_18, arg1_18)
 	return underscore.any(arg0_18:GetEffectIds(), function(arg0_19)
 		local var0_19 = pg.island_buff_template[arg0_19]
 
-		return IslandBuffType.GetLimitRestaurantTypes(var0_19.buff_type) and table.contains(var0_19.type_use[1], arg1_18)
+		return IslandBuffType.IsLimitRestaurantType(var0_19.buff_type) and table.contains(var0_19.type_use[1], arg1_18)
 	end)
 end
 

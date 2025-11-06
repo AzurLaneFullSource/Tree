@@ -21,10 +21,18 @@ function var0_0.SetUIParent(arg0_3, arg1_3)
 end
 
 function var0_0.TryDisable(arg0_4, arg1_4)
+	if arg0_4.exiting then
+		return
+	end
+
 	arg0_4.enableCnt = arg0_4.enableCnt - 1
 
 	if arg0_4.enableCnt == 0 then
+		arg0_4.exiting = true
+
 		arg0_4:HideUI(arg1_4, function()
+			arg0_4.exiting = false
+
 			arg0_4:OnDisable()
 		end)
 	end

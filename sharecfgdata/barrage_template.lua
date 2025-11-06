@@ -69728,6 +69728,25 @@ _G.pg.base.barrage_template[82199] = {
 	trans_ID = -1,
 }
 
+_G.pg.base.barrage_template[82200] = {
+	angle = 7,
+	delay = 0.03,
+	delta_angle = 0,
+	delta_delay = 0,
+	delta_offset_x = 0,
+	delta_offset_z = 0,
+	first_delay = 0,
+	id = 82200,
+	offset_prioritise = false,
+	offset_x = 0,
+	offset_z = 0,
+	primal_repeat = 1,
+	random_angle = true,
+	senior_delay = 0.08,
+	senior_repeat = 3,
+	trans_ID = -1,
+}
+
 _G.pg.base.barrage_template[90002] = {
 	angle = 30,
 	delay = 0,

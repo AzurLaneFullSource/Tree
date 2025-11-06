@@ -165,7 +165,7 @@ function var0_0.UpdateAllFashion(arg0_13, arg1_13)
 			local var10_13 = arg0_13.styleContainer:GetChild(iter4_13 - 1)
 			local var11_13 = arg0_13.fashionCellMap[var10_13]
 			local var12_13 = arg0_13:GetShipVO():getRemouldSkinId() == iter5_13.id and arg0_13:GetShipVO():isRemoulded()
-			local var13_13 = arg0_13:GetShipVO():proposeSkinOwned(iter5_13) or table.contains(arg0_13.skinList, iter5_13.id) or var12_13 or iter5_13.skin_type == ShipSkin.SKIN_TYPE_OLD
+			local var13_13 = arg0_13:GetShipVO():proposeSkinOwned(iter5_13) or table.contains(arg0_13.skinList, iter5_13.id) or var12_13 or iter5_13.skin_type == ShipSkin.SKIN_TYPE_OLD or getProxy(ShipSkinProxy):hasSkin(iter5_13.id)
 
 			var11_13:updateData(arg0_13:GetShipVO(), iter5_13, var13_13)
 		end
