@@ -6,7 +6,10 @@ function var0_0.getUIName(arg0_1)
 	return "IslandAwardDisplayInMainPanel"
 end
 
+local var3_0 = "UICamera/Canvas/UIMain/UIIsland/layer1/ui/IslandUI(Clone)/track_container/Island3dTaskTrackPanel(Clone)"
+
 function var0_0.OnLoaded(arg0_2)
+	arg0_2.tileTF = arg0_2._tf:Find("title")
 	arg0_2.nameTf = arg0_2._tf:Find("title/name")
 
 	setText(arg0_2.nameTf, i18n("word_get"))
@@ -27,6 +30,28 @@ end
 
 function var0_0.Show(arg0_4, arg1_4)
 	var0_0.super.Show(arg0_4)
+
+	arg0_4.trackPanelTF = tf(GameObject.Find(var3_0))
+
+	local var0_4 = 0
+
+	if arg0_4.contextData and arg0_4.contextData.needAdapt and not IsNil(arg0_4.trackPanelTF) then
+		local var1_4 = arg0_4.trackPanelTF.rect.height
+
+		setAnchoredPosition(arg0_4.tileTF, {
+			y = -256 - var1_4
+		})
+		setAnchoredPosition(arg0_4.container, {
+			y = -306 - var1_4
+		})
+	else
+		setAnchoredPosition(arg0_4.tileTF, {
+			y = -410
+		})
+		setAnchoredPosition(arg0_4.container, {
+			y = -450
+		})
+	end
 
 	arg0_4.isShow = true
 end

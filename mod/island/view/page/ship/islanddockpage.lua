@@ -200,20 +200,29 @@ end
 function var0_0.GetShips(arg0_29)
 	local var0_29 = {}
 	local var1_29 = {}
-	local var2_29 = arg0_29.characterAgency:GetShipsContainNpc()
+	local var2_29 = arg0_29.characterAgency:GetUnlockOrCanUnlockShipConfigIds()
 
 	for iter0_29, iter1_29 in ipairs(var2_29) do
-		if var1_0(iter1_29.id, arg0_29.searchKey) and var2_0(arg0_29, iter1_29.id, arg0_29.sortData) then
-			table.insert(var1_29, iter1_29)
+		if var1_0(iter1_29, arg0_29.searchKey) and var2_0(arg0_29, iter1_29, arg0_29.sortData) then
+			local var3_29 = arg0_29.characterAgency:GetShipById(iter1_29)
+
+			if var3_29 then
+				table.insert(var1_29, var3_29)
+			else
+				table.insert(var1_29, {
+					isInvite = true,
+					configId = iter1_29
+				})
+			end
 		end
 	end
 
-	local var3_29 = IslandShipIndexLayer.getSortFuncAndName(arg0_29.sortData.sortIndex, arg0_29.selectAsc)
+	local var4_29 = IslandShipIndexLayer.getSortFuncAndName(arg0_29.sortData.sortIndex, arg0_29.selectAsc)
 
-	table.sort(var1_29, CompareFuncs(var3_29))
+	table.sort(var1_29, CompareFuncs(var4_29))
 
 	for iter2_29, iter3_29 in ipairs(var1_29) do
-		table.insert(var0_29, iter3_29.id)
+		table.insert(var0_29, iter3_29.configId)
 	end
 
 	return var0_29

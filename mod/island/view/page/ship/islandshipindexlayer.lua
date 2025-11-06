@@ -3,11 +3,11 @@ local var0_0 = class("IslandShipIndexLayer", import("view.common.CustomIndexLaye
 function var0_0.SortFunc(arg0_1)
 	return {
 		function(arg0_2)
-			if arg0_2 then
+			if not arg0_2.isInvite then
 				local var0_2 = arg0_2["Get" .. arg0_1](arg0_2)
 
 				return arg0_2["Get" .. arg0_1](arg0_2)
-			else
+			elseif arg0_2.isInvite then
 				return 0
 			end
 		end,
