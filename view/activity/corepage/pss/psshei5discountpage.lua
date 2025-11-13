@@ -118,7 +118,7 @@ function var0_0.GetCouponCountText(arg0_14)
 end
 
 function var0_0.GetGiftShopType(arg0_15)
-	return ChargeScene.TYPE_GIFT
+	return ChargeScene.TYPE_PICK
 end
 
 return var0_0

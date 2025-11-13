@@ -214,7 +214,7 @@ pg.dorm3d_gift = {
 		unlock_dialogue_id = 10060,
 		id = 2022001,
 		icon = "dorm3dicon/3Ddrom_tianlangxing_FancyGift2",
-		name = "Cleaning Supplies Toolbox",
+		name = "Cleaning Supplies\nToolbox",
 		favor_trigger_id = 1004,
 		reply_dialogue_id = {
 			{
@@ -274,7 +274,7 @@ pg.dorm3d_gift = {
 		unlock_dialogue_id = 10080,
 		id = 2022003,
 		icon = "dorm3dicon/3Ddrom_tianlangxing_FancyGift4",
-		name = "The Perfect Maid's Guidebook",
+		name = "The Perfect Maid's\nGuidebook",
 		favor_trigger_id = 1004,
 		reply_dialogue_id = {
 			{

@@ -273551,6 +273551,52 @@ _G.pg.base.task_data_template[24600] = {
 	},
 }
 
+_G.pg.base.task_data_template[24601] = {
+	activity_client_config = "",
+	added_tip = 0,
+	auto_commit = 0,
+	award = 907574,
+	award_choice = "",
+	count_inherit = 0,
+	desc = "Buy 20 Gear Skin Boxes (Halloween Horrors) from the Event Exchange or the Supply Shop.",
+	fix_task = 0,
+	guild_coin_award = 0,
+	id = 24601,
+	is_head = 1,
+	level = 1,
+	name = "『风帆三期』外观装备箱保底",
+	next_task = "0",
+	priority_type = 0,
+	quick_finish = 0,
+	ryza_icon = "",
+	ryza_type = 0,
+	story_icon = "",
+	story_icon_shift = "",
+	story_id = "",
+	sub_type = 52,
+	target_id = "30361",
+	target_id_2 = "",
+	target_num = 20,
+	task_fold = 0,
+	tutorial_handbook_pic = "",
+	type = 6,
+	visibility = 1,
+	open_need = {},
+	award_display = {
+		{
+			2,
+			30547,
+			1,
+		},
+	},
+	scene = {
+		"SHOP",
+		{
+			warp = "shopstreet",
+		},
+	},
+}
+
 _G.pg.base.task_data_template[24611] = {
 	activity_client_config = "",
 	added_tip = 0,
@@ -323942,7 +323988,7 @@ _G.pg.base.task_data_template[43839] = {
 	award = 104536,
 	award_choice = "",
 	count_inherit = 0,
-	desc = "Sortie and obtain 3 victories.",
+	desc = "Sortie and obtain 3 victories.",
 	fix_task = 0,
 	guild_coin_award = 0,
 	id = 43839,

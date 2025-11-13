@@ -690,7 +690,7 @@ pg.item_data_frame = {
 		gain_by = "",
 		id = 612,
 		time_second = 0,
-		desc = "<color=#ffffff>50% OFF Mega Sale, Black Friday extravaganza begins!</color>Obtained from Black Friday Cruise Missions.",
+		desc = "<color=#FFD40D>50% OFF Mega Sale, Black Friday extravaganza begins!</color>Obtained from Black Friday Cruise Missions.",
 		scene = {}
 	},
 	[1001] = {
