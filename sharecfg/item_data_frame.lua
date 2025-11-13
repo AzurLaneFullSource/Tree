@@ -684,6 +684,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>Take in the atmosphere and feel the wind blow through the trees on this extraordinary vacation.</color> Obtained by participating in the A Sylvan Retreat event.",
 		scene = {}
 	},
+	[612] = {
+		time_limit_type = 0,
+		name = "Black Friday Extravaganza",
+		gain_by = "",
+		id = 612,
+		time_second = 0,
+		desc = "<color=#ffffff>50% OFF Mega Sale, Black Friday extravaganza begins!</color>Obtained from Black Friday Cruise Missions.",
+		scene = {}
+	},
 	[1001] = {
 		time_limit_type = 0,
 		name = "Sweet Rendezvous",
@@ -959,6 +968,7 @@ pg.item_data_frame = {
 		608,
 		610,
 		611,
+		612,
 		1001,
 		1002,
 		1003,

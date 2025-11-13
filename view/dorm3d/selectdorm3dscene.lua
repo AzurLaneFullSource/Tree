@@ -128,7 +128,7 @@ function var0_0.InitIconTrigger(arg0_17, arg1_17)
 			return
 		end
 
-		if arg1_17 ~= 1 and (not getProxy(ApartmentProxy):getRoom(1) or not pg.NewStoryMgr.GetInstance():IsPlayed("DORM3D_GUIDE_02")) then
+		if arg1_17 ~= 1 and (not getProxy(ApartmentProxy):getRoom(1) or not pg.NewStoryMgr.GetInstance():IsPlayed("DORM3D_GUIDE_02")) and not DORM_LOCK_GUIDE then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_guide_tip"))
 
 			return
@@ -138,7 +138,7 @@ function var0_0.InitIconTrigger(arg0_17, arg1_17)
 		local var1_18 = pg.dorm3d_rooms[arg1_17].type
 
 		if var1_18 == 1 then
-			if arg1_17 ~= 4 and not pg.NewStoryMgr.GetInstance():IsPlayed("DORM3D_GUIDE_06") then
+			if arg1_17 ~= 4 and not pg.NewStoryMgr.GetInstance():IsPlayed("DORM3D_GUIDE_06") and not DORM_LOCK_GUIDE then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_guide_tip2"))
 
 				return
@@ -261,6 +261,10 @@ function var0_0.ReplaceSpecialRoomIcon(arg0_29)
 
 		local var3_29 = iter5_29[1]
 		local var4_29 = pg.dorm3d_dialogue_group[var3_29]
+
+		if DORM_LOCK_GUIDE and var3_29 == 10010 then
+			return
+		end
 
 		onButton(arg0_29, var2_29, function()
 			arg0_29:TryDownloadResource({
@@ -447,6 +451,10 @@ end
 function var0_0.CheckGuide(arg0_55, arg1_55)
 	if pg.NewStoryMgr.GetInstance():IsPlayed(arg1_55) then
 		return
+	end
+
+	if DORM_LOCK_GUIDE then
+		return false
 	end
 
 	return switch(arg1_55, {

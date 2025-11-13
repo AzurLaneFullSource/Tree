@@ -10172,7 +10172,7 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 }
 
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Rate UP for Clemenceau, Guichen, and more!",
+	tip = "Get Unzen guaranteed with every 200 event builds (can be done up to 4 times)!",
 }
 
 _G.pg.base.gametip.buildship_heavy_tip = {
@@ -20461,6 +20461,10 @@ _G.pg.base.gametip.word_chinese = {
 	tip = "中文",
 }
 
+_G.pg.base.gametip.word_japanese_3 = {
+	tip = "1",
+}
+
 _G.pg.base.gametip.word_japanese_2 = {
 	tip = "2",
 }
@@ -28549,6 +28553,14 @@ _G.pg.base.gametip.SkinDiscountHelp_School = {
 	},
 }
 
+_G.pg.base.gametip.SkinDiscountHelp_BlackFriday = {
+	tip = {
+		{
+			info = "1. During the campaign, if you purchase a Black Friday rerun skin in this campaign <color=#92fc63>without using a coupon</color> or purchase any one of the Black Friday campaign's lucky bags, you may claim a <color=#92fc63>Skin Coupon (Black Friday 2025)</color> from the campaign page.\n2. The <color=#92fc63>Skin Coupon (Black Friday 2025)</color> gives you a discount of 300 Gems when purchasing a Black Friday rerun skin. This discount is not applicable to item packs.\n3. If you have not used this coupon before the campaign ends (at the server reset on December 3rd, 2025), it will be removed automatically.",
+		},
+	},
+}
+
 _G.pg.base.gametip.SkinDiscount_Hint = {
 	tip = "You have an unclaimed coupon. Would you like to go to the claim coupon page?",
 }
@@ -32936,7 +32948,7 @@ _G.pg.base.gametip.island_production_selected_character = {
 }
 
 _G.pg.base.gametip.island_production_collect = {
-	tip = "Collect Products",
+	tip = "Collect",
 }
 
 _G.pg.base.gametip.island_production_selected_item = {
@@ -34363,5 +34375,145 @@ _G.pg.base.gametip.island_urgent_notice = {
 			info = "After the next maintenance on <color=#39bfff>November 6th</color>, the current Island Planner Season will be reset. The new season will run from <color=#39bfff>11/6/2025 after maintenance - 2/5/2026 maintenance</color>. Compensation will be sent through <color=#39bfff>Main Menu > Compensation</color> to Commanders who participated in the Island Planner. \n* Reset and Compensation Rules: \n1. Production and Store Management: Ongoing <color=#39bfff>island requests, transport jobs, character assignments, manual farming, and store management</color> will be cleared and reset.\n2. Development Rank: All Commanders will automatically receive the highest-tier development ranking reward.\n3. Development Plan: Development Plan will be reset. Commanders will receive Stellar Tickets through <color=#39bfff>Main Menu > Compensation</color> based on the progress of incomplete development plans and completed but unclaimed development plans.\n4. Shop: The shop's content will be reset. Commander accessories or actions in the shop before the next maintenance will remain (they can only be obtained once).\n5. Island Request: <color=#39bfff>Island Seasonal PT Exchange Tickets</color> will be added. Based on the number of completed seasonal requests, Commanders will receive corresponding PT tickets, which can be directly converted into a certain amount of Island Dev. Points.\n* Island Seasonal PT Exchange Tickets is a resource and will be automatically converted into Island Dev. Points when the season ends.\n6. Other Progress Reset: Island requests (daily requests, weekly urgent requests limit, weekly ratings), transport jobs (refresh count is reset), development plan (daily and weekly plans), map collection points (map items, ore, logging sites), daily supplies and available daily supply limit, and store management counts will also be reset.\n* As the season ended early, for this special reset, after all resources have been converted, the total Island Dev. Points will be converted <color=#39bfff>x4</color> into Final Island Dev. Points. Accumulated Island Dev. Points rewards will be sent based on this Final Island Dev. Points, to be collected through <color=#39bfff>Main Menu > Compensation</color>.\n - Note: Autumn's seasonal resources will not be converted.\n\nWhat will NOT be reset after the special reset:\n- Island Dev. Level, character status, Island Tech;\n- Stellar Prize Draw status, including Prizes, obtained rewards, draws remaining, accumulative rewards, and Stellar Tickets;\n- Autumn specialties and resources\n- Seasonal Express Tickets",
 		},
 	},
+}
+
+_G.pg.base.gametip.general_activity_side_bar1 = {
+	tip = "Pit Stop Standby",
+}
+
+_G.pg.base.gametip.general_activity_side_bar2 = {
+	tip = "Port Fashion Collection",
+}
+
+_G.pg.base.gametip.general_activity_side_bar3 = {
+	tip = "BF Cruise Missions",
+}
+
+_G.pg.base.gametip.general_activity_side_bar4 = {
+	tip = "BF Ltd. Rerun Outfits",
+}
+
+_G.pg.base.gametip.black5_bundle_desc = {
+	tip = "Buy 3 featured skins to receive a Promise Ring",
+}
+
+_G.pg.base.gametip.black5_bundle_purchased = {
+	tip = "Purchased",
+}
+
+_G.pg.base.gametip.black5_bundle_tip = {
+	tip = "Purchase to Receive All",
+}
+
+_G.pg.base.gametip.black5_bundle_buy_all = {
+	tip = "Purchase All",
+}
+
+_G.pg.base.gametip.black5_bundle_popup = {
+	tip = "Do you want to spend <color=#92fc63>$1</color> Gems to receive <color=#92fc63>$2</color>?",
+}
+
+_G.pg.base.gametip.black5_bundle_receive = {
+	tip = "Claim Bonus",
+}
+
+_G.pg.base.gametip.black5_bundle_button = {
+	tip = "Packs",
+}
+
+_G.pg.base.gametip.skinshop_on_sale_tip = {
+	tip = "Packs on Sale",
+}
+
+_G.pg.base.gametip.skinshop_on_sale_tip_2 = {
+	tip = "Lucky Bag on Sale",
+}
+
+_G.pg.base.gametip.blackfriday_cruise_task_tips = {
+	tip = "Completed",
+}
+
+_G.pg.base.gametip.blackfriday_cruise_task_unlock = {
+	tip = "Unlocks in $1 day(s) $2 hour(s)",
+}
+
+_G.pg.base.gametip.blackfriday_cruise_task_day = {
+	tip = "Day $1",
+}
+
+_G.pg.base.gametip.blackfriday_battlepass_pay_acquire = {
+	tip = "Buy Now to Get:",
+}
+
+_G.pg.base.gametip.blackfriday_battlepass_pay_tip = {
+	tip = "Purchase to unlock these Bonus Rewards:",
+}
+
+_G.pg.base.gametip.blackfriday_battlepass_complete = {
+	tip = "Black Friday Cruise Missions have been completed",
+}
+
+_G.pg.base.gametip.blackfriday_cruise_phase_title = {
+	tip = "Phase",
+}
+
+_G.pg.base.gametip.blackfriday_cruise_title_1113 = {
+	tip = "Black Friday Cruise Missions",
+}
+
+_G.pg.base.gametip.blackfriday_battlepass_main_time_title = {
+	tip = "Time Remaining:",
+}
+
+_G.pg.base.gametip.blackfriday_cruise_btn_pay = {
+	tip = "Unlock Bonus Rewards",
+}
+
+_G.pg.base.gametip.blackfriday_cruise_btn_all = {
+	tip = "Collect All",
+}
+
+_G.pg.base.gametip.blackfriday_battlepass_main_help_1113 = {
+	tip = {
+		{
+			info = "Black Friday Cruise Missions\n2025/11/13 00:00 – 2025/12/3 23:59\n\n- Overview -\n\"Black Friday Cruise Missions\" is a special campaign where you can complete special missions, collect BF Progress Pts., and obtain great rewards for reaching certain Progress milestones.\nAdditionally, you can unlock an additional set of \"Black Friday Cruise\" rewards by purchasing the \"Black Friday Cruise Pass\" item from Akashi's shop.\n\n\n- How to Play -\n· Two types of missions will be released at the same time at the start of the campaign season:\na) Daily Missions - Missions unlocked in batches every day during the campaign, for a total of 12 batches.\nb) SP Missions - One set of missions available for the entire campaign, available from the start of the campaign.\n· All of the above missions are automatically active, and when you open the Black Friday Cruise Missions menu, you will automatically obtain BF Progress Pts. for any missions you've completed.\n· If you purchase the Black Friday Cruise Pass, you will automatically receive <color=#ff5c5c>200 BF Progress Pts.</color>\n· You can purchase the Black Friday Cruise Pass up until 1 hour before the campaign ends, i.e. 2025/12/3 22:59:59.\n· You can receive rewards for reaching certain Progress milestones. There are two types of rewards:\na) Base Rewards - Rewards that can be obtained based on the total number of accumulated BF Progress Pts. There are a total of 15 levels. Base Rewards include <color=#ff5c5c>Skin Coupon (BF Cruise Missions)</color>, <color=#ff5c5c>Special General Blueprint - Series 8</color> and more.\nb) Bonus Rewards - An additional set of rewards that will be unlocked when you purchase a Black Friday Cruise Pass. As with the Base Rewards, there are a total of 15 levels, and they can be collected alongside Base Rewards at the same Progress level. Bonus Rewards include <color=#ff5c5c>Wisdom Cubes</color>, <color=#ff5c5c>Gems</color> and more.\n\n- Tips - \n· When the campaign ends, you cannot continue completing the missions or collecting the rewards. Please take note of the campaign period and collect the rewards on time.\n· BF Progress Pts. and Black Friday Cruise Pass only apply to the Black Friday Cruise Missions Campaign, and not to any other Cruise Missions Campaign.",
+		},
+	},
+}
+
+_G.pg.base.gametip.blackfriday_cruise_task_help_1113 = {
+	tip = {
+		{
+			info = "- Regarding Cruise Missions - \n2025/11/13 00:00 – 2025/12/3 23:59\n\n· Two types of missions will be released at the same time at the start of the campaign season:\na) Daily Missions - Missions unlocked in batches every day during the campaign, for a total of 12 batches.\nb) SP Missions - One set of missions available for the entire campaign, available from the start of the campaign.\n· All of the above missions are automatically active, and when you open the Black Friday Cruise Missions menu, you will automatically obtain BF Progress Pts. for any missions you've completed.",
+		},
+	},
+}
+
+_G.pg.base.gametip.shop_tag_control_tip = {
+	tip = "Cannot download assets.",
+}
+
+_G.pg.base.gametip.blackfriday_battlepass_mission = {
+	tip = "MISSIONS",
+}
+
+_G.pg.base.gametip.blackfriday_battlepass_rewards = {
+	tip = "REWARDS",
+}
+
+_G.pg.base.gametip.black5_bundle_help = {
+	tip = {
+		{
+			info = "If you have already purchased some of these skins, you can pay the price difference to get the rest of the pack's content.\n*The Outfit Coupon cannot be used when purchasing this pack, but it can be applied to individual skins in the skin shop.",
+		},
+	},
+}
+
+_G.pg.base.gametip.blackfriday_luckybag_164 = {
+	tip = "After purchasing this Lucky Bag, you can collect 1 Skin Discount Coupon (300 Gems Off) on the event page that can be used on any featured skin in the Black Friday Campaign. The coupon expires when the campaign ends.",
+}
+
+_G.pg.base.gametip.blackfriday_luckybag_165 = {
+	tip = "After purchasing this Lucky Bag, you can collect 1 Skin Discount Coupon (300 Gems Off) on the event page that can be used on any featured skin in the Black Friday Campaign. The coupon expires when the campaign ends.\nThe Lucky Bag contains 1 random Live2D skin in the Black Friday Campaign rerun skin list that you do not yet own (if you already own all the listed skins, you will receive Gems x1080 instead), as well as Coins x2,000, Oil x1,000, and Cognitive Chips x20.",
 }
 

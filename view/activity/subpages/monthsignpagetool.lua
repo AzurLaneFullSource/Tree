@@ -83,7 +83,7 @@ function var0_0.onAcheve(arg0_2, arg1_2, arg2_2)
 				if iter4_4.type == DROP_TYPE_SKIN then
 					if pg.ship_skin_template[iter4_4.id].skin_type == ShipSkin.SKIN_TYPE_REMAKE then
 						-- block empty
-					elseif not getProxy(ShipSkinProxy):hasOldNonLimitSkin(iter4_4.id) then
+					else
 						arg0_2._event:emit(ActivityMediator.OPEN_LAYER, Context.New({
 							mediator = NewSkinMediator,
 							viewComponent = NewSkinLayer,

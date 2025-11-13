@@ -99,7 +99,26 @@ function var0_0.init(arg0_4)
 	arg0_4.chat = arg0_4._tf:Find("frame/chat")
 	arg0_4.chatText = arg0_4.chat:Find("Text")
 	arg0_4.stamp = arg0_4._tf:Find("frame/stamp")
-	arg0_4.giftTip = var0_4:Find("shop1List/specialShop/shop1Tg/tip")
+	arg0_4.specialTip = var0_4:Find("shop1List/specialShop/shop1Tg/tip")
+	arg0_4.giftTip = var0_4:Find("shop1List/giftPackShop/shop1Tg/tip")
+
+	pg.EasyRedDotMgr.GetInstance():RegisterRedDot(arg0_4.specialTip, {
+		"specialShop",
+		"Charge_Page_Exposure"
+	}, function(arg0_5)
+		getProxy(ShopsProxy):GiftPackageRedDotTip({
+			arg0_5
+		}, true)
+	end)
+	pg.EasyRedDotMgr.GetInstance():RegisterRedDot(arg0_4.giftTip, {
+		"specialShop",
+		"Charge_Page_Exposure"
+	}, function(arg0_6)
+		getProxy(ShopsProxy):GiftPackageRedDotTip({
+			arg0_6
+		}, false)
+	end)
+
 	arg0_4.toggleList = {
 		{
 			type = ChargeScene.TYPE_DIAMOND,
@@ -127,101 +146,101 @@ function var0_0.init(arg0_4)
 	arg0_4:initSubView()
 end
 
-function var0_0.setPlayer(arg0_5, arg1_5)
-	arg0_5.player = arg1_5
+function var0_0.setPlayer(arg0_7, arg1_7)
+	arg0_7.player = arg1_7
 
-	if arg0_5.subViewList[arg0_5.curSubViewNum] and arg0_5.subViewList[arg0_5.curSubViewNum]:IsSupplyShop() then
-		arg0_5.subViewList[arg0_5.curSubViewNum]:SetPlayer(arg1_5)
+	if arg0_7.subViewList[arg0_7.curSubViewNum] and arg0_7.subViewList[arg0_7.curSubViewNum]:IsSupplyShop() then
+		arg0_7.subViewList[arg0_7.curSubViewNum]:SetPlayer(arg1_7)
 	end
 
-	if arg0_5.goldMax then
-		PlayerResUI.StaticFlush(arg0_5.player, arg0_5.goldMax, arg0_5.goldText, arg0_5.oilMax, arg0_5.oilText, arg0_5.diamondText)
+	if arg0_7.goldMax then
+		PlayerResUI.StaticFlush(arg0_7.player, arg0_7.goldMax, arg0_7.goldText, arg0_7.oilMax, arg0_7.oilText, arg0_7.diamondText)
 	end
 end
 
-function var0_0.setFirstChargeIds(arg0_6, arg1_6)
-	arg0_6.firstChargeIds = arg1_6
+function var0_0.setFirstChargeIds(arg0_8, arg1_8)
+	arg0_8.firstChargeIds = arg1_8
 end
 
-function var0_0.setChargedList(arg0_7, arg1_7)
-	arg0_7.chargedList = arg1_7
+function var0_0.setChargedList(arg0_9, arg1_9)
+	arg0_9.chargedList = arg1_9
 end
 
-function var0_0.setNormalList(arg0_8, arg1_8)
-	arg0_8.normalList = arg1_8
+function var0_0.setNormalList(arg0_10, arg1_10)
+	arg0_10.normalList = arg1_10
 end
 
-function var0_0.setNormalGroupList(arg0_9, arg1_9)
-	arg0_9.normalGroupList = arg1_9
+function var0_0.setNormalGroupList(arg0_11, arg1_11)
+	arg0_11.normalGroupList = arg1_11
 
-	arg0_9:addRefreshTimer(GetZeroTime())
+	arg0_11:addRefreshTimer(GetZeroTime())
 end
 
-function var0_0.SetSupplyShopList(arg0_10, arg1_10)
-	arg0_10.supplyShopList = arg1_10
+function var0_0.SetSupplyShopList(arg0_12, arg1_12)
+	arg0_12.supplyShopList = arg1_12
 
-	arg0_10:SortActivityShops()
+	arg0_12:SortActivityShops()
 end
 
-function var0_0.SortActivityShops(arg0_11)
-	for iter0_11, iter1_11 in pairs(arg0_11.supplyShopList) do
-		if #iter1_11 > 1 then
-			table.sort(iter1_11, function(arg0_12, arg1_12)
-				return arg0_12:getStartTime() > arg1_12:getStartTime()
+function var0_0.SortActivityShops(arg0_13)
+	for iter0_13, iter1_13 in pairs(arg0_13.supplyShopList) do
+		if #iter1_13 > 1 then
+			table.sort(iter1_13, function(arg0_14, arg1_14)
+				return arg0_14:getStartTime() > arg1_14:getStartTime()
 			end)
 		end
 	end
 end
 
-function var0_0.OnInitItems(arg0_13, arg1_13)
-	arg0_13.items = arg1_13
+function var0_0.OnInitItems(arg0_15, arg1_15)
+	arg0_15.items = arg1_15
 
-	arg0_13.subViewList[ShopConst.SHOP_ID.MONTH]:OnUpdateItems(arg1_13)
-	arg0_13.subViewList[ShopConst.SHOP_ID.SUPPLY]:OnUpdateItems(arg1_13)
-	arg0_13.subViewList[ShopConst.SHOP_ID.ACTIVITY]:OnUpdateItems(arg1_13)
+	arg0_15.subViewList[ShopConst.SHOP_ID.MONTH]:OnUpdateItems(arg1_15)
+	arg0_15.subViewList[ShopConst.SHOP_ID.SUPPLY]:OnUpdateItems(arg1_15)
+	arg0_15.subViewList[ShopConst.SHOP_ID.ACTIVITY]:OnUpdateItems(arg1_15)
 end
 
-function var0_0.OnUpdateItems(arg0_14, arg1_14)
-	arg0_14.items = arg1_14
-
-	if arg0_14.subViewList[arg0_14.curSubViewNum] and arg0_14.subViewList[arg0_14.curSubViewNum]:IsSupplyShop() then
-		arg0_14.subViewList[arg0_14.curSubViewNum]:OnUpdateItems(arg1_14)
-	end
-end
-
-function var0_0.OnUpdateShop(arg0_15, arg1_15, arg2_15)
-	arg0_15:SetShop(arg1_15, arg2_15)
-
-	if arg0_15.subViewList[arg0_15.curSubViewNum] and arg0_15.subViewList[arg0_15.curSubViewNum]:IsSupplyShop() then
-		arg0_15.subViewList[arg0_15.curSubViewNum]:OnUpdateShop(arg1_15, arg2_15)
-	end
-end
-
-function var0_0.OnUpdateCommodity(arg0_16, arg1_16, arg2_16, arg3_16)
-	arg0_16:SetShop(arg1_16, arg2_16)
+function var0_0.OnUpdateItems(arg0_16, arg1_16)
+	arg0_16.items = arg1_16
 
 	if arg0_16.subViewList[arg0_16.curSubViewNum] and arg0_16.subViewList[arg0_16.curSubViewNum]:IsSupplyShop() then
-		arg0_16.subViewList[arg0_16.curSubViewNum]:OnUpdateCommodity(arg1_16, arg2_16, arg3_16)
+		arg0_16.subViewList[arg0_16.curSubViewNum]:OnUpdateItems(arg1_16)
 	end
 end
 
-function var0_0.OnFragmentSellUpdate(arg0_17)
+function var0_0.OnUpdateShop(arg0_17, arg1_17, arg2_17)
+	arg0_17:SetShop(arg1_17, arg2_17)
+
 	if arg0_17.subViewList[arg0_17.curSubViewNum] and arg0_17.subViewList[arg0_17.curSubViewNum]:IsSupplyShop() then
-		arg0_17.subViewList[arg0_17.curSubViewNum]:OnFragmentSellUpdate()
+		arg0_17.subViewList[arg0_17.curSubViewNum]:OnUpdateShop(arg1_17, arg2_17)
 	end
 end
 
-function var0_0.SetShop(arg0_18, arg1_18, arg2_18)
-	if not arg0_18.supplyShopList then
+function var0_0.OnUpdateCommodity(arg0_18, arg1_18, arg2_18, arg3_18)
+	arg0_18:SetShop(arg1_18, arg2_18)
+
+	if arg0_18.subViewList[arg0_18.curSubViewNum] and arg0_18.subViewList[arg0_18.curSubViewNum]:IsSupplyShop() then
+		arg0_18.subViewList[arg0_18.curSubViewNum]:OnUpdateCommodity(arg1_18, arg2_18, arg3_18)
+	end
+end
+
+function var0_0.OnFragmentSellUpdate(arg0_19)
+	if arg0_19.subViewList[arg0_19.curSubViewNum] and arg0_19.subViewList[arg0_19.curSubViewNum]:IsSupplyShop() then
+		arg0_19.subViewList[arg0_19.curSubViewNum]:OnFragmentSellUpdate()
+	end
+end
+
+function var0_0.SetShop(arg0_20, arg1_20, arg2_20)
+	if not arg0_20.supplyShopList then
 		return
 	end
 
-	local var0_18 = arg0_18.supplyShopList[arg1_18]
+	local var0_20 = arg0_20.supplyShopList[arg1_20]
 
-	if var0_18 then
-		for iter0_18, iter1_18 in ipairs(var0_18) do
-			if iter1_18:IsSameKind(arg2_18) then
-				arg0_18.supplyShopList[arg1_18][iter0_18] = arg2_18
+	if var0_20 then
+		for iter0_20, iter1_20 in ipairs(var0_20) do
+			if iter1_20:IsSameKind(arg2_20) then
+				arg0_20.supplyShopList[arg1_20][iter0_20] = arg2_20
 
 				break
 			end
@@ -229,233 +248,254 @@ function var0_0.SetShop(arg0_18, arg1_18, arg2_18)
 	end
 end
 
-function var0_0.didEnter(arg0_19)
-	setActive(arg0_19.chat, false)
-	onButton(arg0_19, arg0_19.backBtn, function()
-		arg0_19:closeView()
+function var0_0.didEnter(arg0_21)
+	setActive(arg0_21.chat, false)
+	onButton(arg0_21, arg0_21.backBtn, function()
+		arg0_21:closeView()
 	end, SFX_CANCEL)
-	onButton(arg0_19, arg0_19.homeBtn, function()
-		arg0_19:emit(var0_0.ON_HOME)
+	onButton(arg0_21, arg0_21.homeBtn, function()
+		arg0_21:emit(var0_0.ON_HOME)
 	end, SFX_CANCEL)
-	onButton(arg0_19, arg0_19.goldBtn, function()
+	onButton(arg0_21, arg0_21.goldBtn, function()
 		pg.playerResUI:ClickGold()
 	end, SFX_PANEL)
-	onButton(arg0_19, arg0_19.oilBtn, function()
+	onButton(arg0_21, arg0_21.oilBtn, function()
 		pg.playerResUI:ClickOil()
 	end, SFX_PANEL)
-	onButton(arg0_19, arg0_19.diamondBtn, function()
+	onButton(arg0_21, arg0_21.diamondBtn, function()
 		pg.playerResUI:ClickGem()
 	end, SFX_PANEL)
-	onToggle(arg0_19, arg0_19.buttonList:Find("shop1List/recommendation/shop1Tg"), function(arg0_25)
-		if arg0_25 then
-			arg0_19.contextData.shop1 = nil
-			arg0_19.contextData.shop2 = nil
-
-			if arg0_19.shop1 == "recommendation" then
-				return
-			end
-
-			arg0_19.shop1 = "recommendation"
-			arg0_19.shop2 = nil
-
-			arg0_19:ShowChargeWarp(false)
-			pg.m02:sendNotification(var0_0.CLOSE_ALL_LAYER)
-			arg0_19:emit(NewShopMainMediator.OPEN_LAYER, NewRecommendationShopLayer, NewRecommendationShopMediator)
-		end
-	end, SFX_PANEL)
-
-	local var0_19 = getProxy(ShipSkinProxy):GetInTimeSkins()
-
-	setActive(arg0_19.buttonList:Find("shop1List/skinShop/shop1Tg/timeLimit"), #var0_19 > 0)
-	setActive(arg0_19.buttonList:Find("shop1List/skinShop/shop2List/newSkin"), #var0_19 > 0)
-	onToggle(arg0_19, arg0_19.buttonList:Find("shop1List/skinShop/shop2List/newSkin"), function(arg0_26)
-		if arg0_26 then
-			arg0_19.contextData.shop2 = "newSkin"
-
-			if arg0_19.shop2 == "newSkin" then
-				return
-			end
-
-			arg0_19.shop2 = "newSkin"
-
-			arg0_19:ShowChargeWarp(false)
-			pg.m02:sendNotification(var0_0.CLOSE_ALL_LAYER)
-			arg0_19:emit(NewShopMainMediator.OPEN_LAYER, LatestSkinShopLayer, LatestSkinShopMediator, {
-				type = "newSkin",
-				mode = arg0_19.contextData.mode
-			})
-		end
-	end, SFX_PANEL)
-	onToggle(arg0_19, arg0_19.buttonList:Find("shop1List/skinShop/shop2List/permanentSkin"), function(arg0_27)
+	onToggle(arg0_21, arg0_21.buttonList:Find("shop1List/recommendation/shop1Tg"), function(arg0_27)
 		if arg0_27 then
-			arg0_19.contextData.shop2 = "permanentSkin"
+			arg0_21.contextData.shop1 = nil
+			arg0_21.contextData.shop2 = nil
 
-			if arg0_19.shop2 == "permanentSkin" then
+			if arg0_21.shop1 == "recommendation" then
 				return
 			end
 
-			arg0_19.shop2 = "permanentSkin"
+			arg0_21.shop1 = "recommendation"
+			arg0_21.shop2 = nil
 
-			arg0_19:ShowChargeWarp(false)
+			arg0_21:ShowChargeWarp(false)
 			pg.m02:sendNotification(var0_0.CLOSE_ALL_LAYER)
-			arg0_19:emit(NewShopMainMediator.OPEN_LAYER, LatestSkinShopLayer, LatestSkinShopMediator, {
-				type = "permanentSkin",
-				mode = arg0_19.contextData.mode
+			arg0_21:emit(NewShopMainMediator.OPEN_LAYER, NewRecommendationShopLayer, NewRecommendationShopMediator)
+		end
+	end, SFX_PANEL)
+
+	local var0_21 = getProxy(ShipSkinProxy):GetInTimeSkins()
+
+	setActive(arg0_21.buttonList:Find("shop1List/skinShop/shop1Tg/timeLimit"), #var0_21 > 0)
+	setActive(arg0_21.buttonList:Find("shop1List/skinShop/shop2List/newSkin"), #var0_21 > 0)
+	onToggle(arg0_21, arg0_21.buttonList:Find("shop1List/skinShop/shop2List/newSkin"), function(arg0_28)
+		if arg0_28 then
+			arg0_21.contextData.shop2 = "newSkin"
+
+			if arg0_21.shop2 == "newSkin" then
+				return
+			end
+
+			arg0_21.shop2 = "newSkin"
+
+			arg0_21:ShowChargeWarp(false)
+			pg.m02:sendNotification(var0_0.CLOSE_ALL_LAYER)
+			arg0_21:emit(NewShopMainMediator.OPEN_LAYER, LatestSkinShopLayer, LatestSkinShopMediator, {
+				type = "newSkin",
+				mode = arg0_21.contextData.mode
 			})
 		end
 	end, SFX_PANEL)
-	onToggle(arg0_19, arg0_19.buttonList:Find("shop1List/skinShop/shop1Tg"), function(arg0_28)
-		setActive(arg0_19.buttonList:Find("shop1List/skinShop/shop2List"), arg0_28)
+	onToggle(arg0_21, arg0_21.buttonList:Find("shop1List/skinShop/shop2List/permanentSkin"), function(arg0_29)
+		if arg0_29 then
+			arg0_21.contextData.shop2 = "permanentSkin"
 
-		if arg0_28 then
-			if arg0_19.shop1 == "skinShop" then
+			if arg0_21.shop2 == "permanentSkin" then
 				return
 			end
 
-			arg0_19.shop1 = "skinShop"
+			arg0_21.shop2 = "permanentSkin"
 
-			if arg0_19.contextData.shop1 and arg0_19.contextData.shop2 then
-				triggerToggle(arg0_19.buttonList:Find("shop1List/skinShop/shop2List/" .. arg0_19.contextData.shop2), true)
+			arg0_21:ShowChargeWarp(false)
+			pg.m02:sendNotification(var0_0.CLOSE_ALL_LAYER)
+			arg0_21:emit(NewShopMainMediator.OPEN_LAYER, LatestSkinShopLayer, LatestSkinShopMediator, {
+				type = "permanentSkin",
+				mode = arg0_21.contextData.mode
+			})
+		end
+	end, SFX_PANEL)
+	onToggle(arg0_21, arg0_21.buttonList:Find("shop1List/skinShop/shop1Tg"), function(arg0_30)
+		setActive(arg0_21.buttonList:Find("shop1List/skinShop/shop2List"), arg0_30)
+
+		if arg0_30 then
+			if arg0_21.shop1 == "skinShop" then
+				return
+			end
+
+			arg0_21.shop1 = "skinShop"
+
+			if arg0_21.contextData.shop1 and arg0_21.contextData.shop2 then
+				triggerToggle(arg0_21.buttonList:Find("shop1List/skinShop/shop2List/" .. arg0_21.contextData.shop2), true)
 			else
-				arg0_19.contextData.shop1 = "skinShop"
+				arg0_21.contextData.shop1 = "skinShop"
 
-				triggerToggle(arg0_19.buttonList:Find("shop1List/skinShop/shop2List/" .. (#var0_19 > 0 and "newSkin" or "permanentSkin")), true)
+				triggerToggle(arg0_21.buttonList:Find("shop1List/skinShop/shop2List/" .. (#var0_21 > 0 and "newSkin" or "permanentSkin")), true)
 			end
 		end
 	end, SFX_PANEL)
 
-	for iter0_19 = 1, #arg0_19.toggleList do
-		local var1_19 = arg0_19.toggleList[iter0_19]
+	for iter0_21 = 1, #arg0_21.toggleList do
+		local var1_21 = arg0_21.toggleList[iter0_21]
 
-		onToggle(arg0_19, var1_19.go, function(arg0_29)
-			if arg0_29 then
-				arg0_19:ShowChargeWarp(true)
+		onToggle(arg0_21, var1_21.go, function(arg0_31)
+			if arg0_31 then
+				arg0_21:ShowChargeWarp(true)
 				pg.m02:sendNotification(var0_0.CLOSE_ALL_LAYER)
 
-				arg0_19.contextData.shop1 = nil
-				arg0_19.contextData.shop2 = nil
-				arg0_19.shop1 = nil
-				arg0_19.shop2 = nil
+				arg0_21.contextData.shop1 = nil
+				arg0_21.contextData.shop2 = nil
+				arg0_21.shop1 = nil
+				arg0_21.shop2 = nil
 
-				originalPrint(string.format("Begin: toggleType=%s, goName=%s", var1_19.type, var1_19.go.parent.name))
+				originalPrint(string.format("Begin: toggleType=%s, goName=%s", var1_21.type, var1_21.go.parent.name))
 
-				arg0_19.contextData.type = ShopConst.SHOP_TYPE.CHARGE
-				arg0_19.contextData.warp = var1_19.type
+				arg0_21.contextData.type = ShopConst.SHOP_TYPE.CHARGE
+				arg0_21.contextData.warp = var1_21.type
 
-				originalPrint(string.format("End: warp=%s", arg0_19.contextData.warp))
+				originalPrint(string.format("End: warp=%s", arg0_21.contextData.warp))
 
-				local var0_29 = arg0_19:GetShopID(ShopConst.SHOP_TYPE.CHARGE, var1_19.type)
+				local var0_31 = arg0_21:GetShopID(ShopConst.SHOP_TYPE.CHARGE, var1_21.type)
 
-				arg0_19:switchSubView(var0_29)
+				arg0_21:switchSubView(var0_31)
+			end
+
+			local var1_31 = switch(var1_21.type, {
+				[ChargeScene.TYPE_PICK] = function()
+					return "payshop_pack_red_dot"
+				end,
+				[ChargeScene.TYPE_GIFT] = function()
+					return "gemshop_pack_red_dot"
+				end
+			})
+
+			if var1_31 then
+				if arg0_31 then
+					arg0_21.toggleMark = arg0_21.toggleMark or {}
+					arg0_21.toggleMark[var1_21.type] = defaultValue(arg0_21.toggleMark[var1_21.type], 0) + 1
+				elseif arg0_21.toggleMark and defaultValue(arg0_21.toggleMark[var1_21.type], 0) > 0 then
+					arg0_21.toggleMark[var1_21.type] = arg0_21.toggleMark[var1_21.type] - 1
+
+					PlayerPrefs.SetInt(var1_31, getGameset(var1_31)[1])
+					pg.EasyRedDotMgr.GetInstance():TriggerMarks("Charge_Page_Exposure")
+				end
 			end
 		end, SFX_PANEL)
 	end
 
-	onToggle(arg0_19, arg0_19.buttonList:Find("shop1List/supplyShop/shop1Tg"), function(arg0_30)
-		setActive(arg0_19.buttonList:Find("shop1List/supplyShop/shop2List"), arg0_30)
+	onToggle(arg0_21, arg0_21.buttonList:Find("shop1List/supplyShop/shop1Tg"), function(arg0_34)
+		setActive(arg0_21.buttonList:Find("shop1List/supplyShop/shop2List"), arg0_34)
 
-		if arg0_30 then
-			triggerToggle(arg0_19.buttonList:Find("shop1List/supplyShop/shop2List/" .. arg0_19:GetDefaultSupplyShopName()), true)
+		if arg0_34 then
+			triggerToggle(arg0_21.buttonList:Find("shop1List/supplyShop/shop2List/" .. arg0_21:GetDefaultSupplyShopName()), true)
 		end
 	end, SFX_PANEL)
 
-	local var2_19 = {
+	local var2_21 = {
 		{
 			type = ShopConst.CATEGORY_MONTH,
-			go = arg0_19.buttonList:Find("shop1List/supplyShop/shop2List/monthShop")
+			go = arg0_21.buttonList:Find("shop1List/supplyShop/shop2List/monthShop")
 		},
 		{
 			type = ShopConst.CATEGORY_SUPPLY,
-			go = arg0_19.buttonList:Find("shop1List/supplyShop/shop2List/supplyShop")
+			go = arg0_21.buttonList:Find("shop1List/supplyShop/shop2List/supplyShop")
 		},
 		{
 			type = ShopConst.CATEGORY_ACTIVITY,
-			go = arg0_19.buttonList:Find("shop1List/supplyShop/shop2List/activityShop")
+			go = arg0_21.buttonList:Find("shop1List/supplyShop/shop2List/activityShop")
 		}
 	}
 
-	for iter1_19, iter2_19 in ipairs(var2_19) do
-		onToggle(arg0_19, iter2_19.go, function(arg0_31)
-			if arg0_31 then
-				arg0_19:ShowChargeWarp(true)
+	for iter1_21, iter2_21 in ipairs(var2_21) do
+		onToggle(arg0_21, iter2_21.go, function(arg0_35)
+			if arg0_35 then
+				arg0_21:ShowChargeWarp(true)
 				pg.m02:sendNotification(var0_0.CLOSE_ALL_LAYER)
 
-				arg0_19.contextData.shop1 = nil
-				arg0_19.contextData.shop2 = nil
-				arg0_19.shop1 = nil
-				arg0_19.shop2 = nil
-				arg0_19.contextData.type = ShopConst.SHOP_TYPE.SUPPLY
-				arg0_19.contextData.warp = iter2_19.type
+				arg0_21.contextData.shop1 = nil
+				arg0_21.contextData.shop2 = nil
+				arg0_21.shop1 = nil
+				arg0_21.shop2 = nil
+				arg0_21.contextData.type = ShopConst.SHOP_TYPE.SUPPLY
+				arg0_21.contextData.warp = iter2_21.type
 
-				local var0_31 = arg0_19:GetShopID(ShopConst.SHOP_TYPE.SUPPLY, iter2_19.type)
+				local var0_35 = arg0_21:GetShopID(ShopConst.SHOP_TYPE.SUPPLY, iter2_21.type)
 
-				arg0_19:switchSubView(var0_31)
+				arg0_21:switchSubView(var0_35)
 			end
 		end, SFX_PANEL)
 	end
 
-	local var3_19 = "recommendation"
+	local var3_21 = "recommendation"
 
-	if arg0_19.contextData.type == ShopConst.SHOP_TYPE.CHARGE then
-		if arg0_19.contextData.warp == ChargeScene.TYPE_DIAMOND then
-			var3_19 = "diamondShop"
-		elseif arg0_19.contextData.warp == ChargeScene.TYPE_GIFT then
-			var3_19 = "giftPackShop"
-		elseif arg0_19.contextData.warp == ChargeScene.TYPE_ITEM then
-			var3_19 = "functionalItemShop"
-		elseif arg0_19.contextData.warp == ChargeScene.TYPE_PICK then
-			var3_19 = "specialShop"
+	if arg0_21.contextData.type == ShopConst.SHOP_TYPE.CHARGE then
+		if arg0_21.contextData.warp == ChargeScene.TYPE_DIAMOND then
+			var3_21 = "diamondShop"
+		elseif arg0_21.contextData.warp == ChargeScene.TYPE_GIFT then
+			var3_21 = "giftPackShop"
+		elseif arg0_21.contextData.warp == ChargeScene.TYPE_ITEM then
+			var3_21 = "functionalItemShop"
+		elseif arg0_21.contextData.warp == ChargeScene.TYPE_PICK then
+			var3_21 = "specialShop"
 		else
-			var3_19 = "diamondShop"
+			var3_21 = "diamondShop"
 		end
-	elseif arg0_19.contextData.type == ShopConst.SHOP_TYPE.SKIN then
-		var3_19 = "skinShop"
-	elseif arg0_19.contextData.type == ShopConst.SHOP_TYPE.SUPPLY then
-		var3_19 = "supplyShop"
+	elseif arg0_21.contextData.type == ShopConst.SHOP_TYPE.SKIN then
+		var3_21 = "skinShop"
+	elseif arg0_21.contextData.type == ShopConst.SHOP_TYPE.SUPPLY then
+		var3_21 = "supplyShop"
 	end
 
-	if arg0_19.contextData.shop1 then
-		var3_19 = arg0_19.contextData.shop1
+	if arg0_21.contextData.shop1 then
+		var3_21 = arg0_21.contextData.shop1
 	end
 
-	triggerToggle(arg0_19.buttonList:Find("shop1List/" .. var3_19 .. "/shop1Tg"), true)
+	triggerToggle(arg0_21.buttonList:Find("shop1List/" .. var3_21 .. "/shop1Tg"), true)
 
-	if var3_19 == "skinShop" then
+	if var3_21 == "skinShop" then
 		-- block empty
-	elseif var3_19 == "supplyShop" then
-		triggerToggle(arg0_19.buttonList:Find("shop1List/supplyShop/shop2List/" .. arg0_19:GetDefaultSupplyShopName()), true)
+	elseif var3_21 == "supplyShop" then
+		triggerToggle(arg0_21.buttonList:Find("shop1List/supplyShop/shop2List/" .. arg0_21:GetDefaultSupplyShopName()), true)
 	end
 
-	onButton(arg0_19, arg0_19.painting, function()
-		arg0_19:displayShipWord()
-		arg0_19:emit(NewShopMainMediator.CLICK_MING_SHI)
+	onButton(arg0_21, arg0_21.painting, function()
+		arg0_21:displayShipWord()
+		arg0_21:emit(NewShopMainMediator.CLICK_MING_SHI)
 	end, SFX_PANEL)
-	onButton(arg0_19, arg0_19.stamp, function()
+	onButton(arg0_21, arg0_21.stamp, function()
 		getProxy(TaskProxy):dealMingshiTouchFlag(4)
 	end, SFX_CONFIRM)
-	arg0_19:RefreshActivityShop()
-	arg0_19:updateNoRes()
-	arg0_19:jpUIEnter()
+	arg0_21:RefreshActivityShop()
+	arg0_21:updateNoRes()
+	arg0_21:jpUIEnter()
 end
 
-function var0_0.GetDefaultSupplyShopName(arg0_34)
-	if arg0_34.contextData.type ~= ShopConst.SHOP_TYPE.SUPPLY then
+function var0_0.GetDefaultSupplyShopName(arg0_38)
+	if arg0_38.contextData.type ~= ShopConst.SHOP_TYPE.SUPPLY then
 		return "supplyShop"
 	end
 
-	local var0_34 = arg0_34.contextData.warp
+	local var0_38 = arg0_38.contextData.warp
 
-	if type(var0_34) == "string" then
-		local var1_34 = ShopConst.SHOP_NAME_LIST[var0_34]
+	if type(var0_38) == "string" then
+		local var1_38 = ShopConst.SHOP_NAME_LIST[var0_38]
 
-		arg0_34.contextData.warp = var1_34[1]
-		arg0_34.contextData.shopID = var1_34[2]
-	elseif type(var0_34) == "number" and arg0_34.contextData.shopID == nil then
-		for iter0_34, iter1_34 in pairs(ShopConst.SUPPLY_SHOP_LIST) do
-			for iter2_34, iter3_34 in pairs(iter1_34) do
-				if iter3_34 == var0_34 then
-					arg0_34.contextData.warp = iter0_34
-					arg0_34.contextData.shopID = iter3_34
+		arg0_38.contextData.warp = var1_38[1]
+		arg0_38.contextData.shopID = var1_38[2]
+	elseif type(var0_38) == "number" and arg0_38.contextData.shopID == nil then
+		for iter0_38, iter1_38 in pairs(ShopConst.SUPPLY_SHOP_LIST) do
+			for iter2_38, iter3_38 in pairs(iter1_38) do
+				if iter3_38 == var0_38 then
+					arg0_38.contextData.warp = iter0_38
+					arg0_38.contextData.shopID = iter3_38
 
 					break
 				end
@@ -463,396 +503,428 @@ function var0_0.GetDefaultSupplyShopName(arg0_34)
 		end
 	end
 
-	local var2_34 = ""
+	local var2_38 = ""
 
-	return arg0_34.contextData.warp == ShopConst.CATEGORY_MONTH and "monthShop" or arg0_34.contextData.warp == ShopConst.CATEGORY_SUPPLY and "supplyShop" or arg0_34.contextData.warp == ShopConst.CATEGORY_ACTIVITY and "activityShop" or "supplyShop"
+	return arg0_38.contextData.warp == ShopConst.CATEGORY_MONTH and "monthShop" or arg0_38.contextData.warp == ShopConst.CATEGORY_SUPPLY and "supplyShop" or arg0_38.contextData.warp == ShopConst.CATEGORY_ACTIVITY and "activityShop" or "supplyShop"
 end
 
-function var0_0.RefreshActivityShop(arg0_35)
-	local var0_35 = arg0_35.supplyShopList[ShopConst.TYPE_ACTIVITY] or {}
+function var0_0.RefreshActivityShop(arg0_39)
+	local var0_39 = arg0_39.supplyShopList[ShopConst.TYPE_ACTIVITY] or {}
 
-	setActive(arg0_35.buttonList:Find("shop1List/supplyShop/shop2List/activityShop"), #var0_35 > 0)
+	setActive(arg0_39.buttonList:Find("shop1List/supplyShop/shop2List/activityShop"), #var0_39 > 0)
 end
 
-function var0_0.ShowOrHideUI(arg0_36, arg1_36)
-	arg0_36:setVisible(arg1_36)
-	setActive(arg0_36.buttonList, arg1_36)
+function var0_0.ShowOrHideUI(arg0_40, arg1_40)
+	arg0_40:setVisible(arg1_40)
+	setActive(arg0_40.buttonList, arg1_40)
 end
 
-function var0_0.ShowOrHideUI2(arg0_37, arg1_37)
-	for iter0_37 = 0, arg0_37._tf.childCount - 1 do
-		setActive(arg0_37._tf:GetChild(iter0_37), arg1_37)
+function var0_0.ShowOrHideUI2(arg0_41, arg1_41)
+	for iter0_41 = 0, arg0_41._tf.childCount - 1 do
+		setActive(arg0_41._tf:GetChild(iter0_41), arg1_41)
 	end
 
-	setActive(arg0_37.buttonList:Find("leftBg"), arg1_37)
-	setActive(arg0_37.buttonList:Find("shop1List"), arg1_37)
-	setActive(arg0_37.buttonList:Find("top"), true)
+	setActive(arg0_41.buttonList:Find("leftBg"), arg1_41)
+	setActive(arg0_41.buttonList:Find("shop1List"), arg1_41)
+	setActive(arg0_41.buttonList:Find("top"), true)
 end
 
-function var0_0.OnChargeSuccess(arg0_38, arg1_38)
-	arg0_38.chargeTipWindow:ExecuteAction("Show", arg1_38)
+function var0_0.OnChargeSuccess(arg0_42, arg1_42)
+	arg0_42.chargeTipWindow:ExecuteAction("Show", arg1_42)
 end
 
-function var0_0.LoadMingshi(arg0_39)
+function var0_0.LoadMingshi(arg0_43)
 	if Live2dConst.GetLive2DArm32MatchAble() then
-		local var0_39 = Ship.New({
+		local var0_43 = Ship.New({
 			configId = 312011
 		}):getPainting()
 
-		LoadPaintingPrefabAsync(arg0_39.painting, var0_39, var0_39, "mainNormal", function()
-			arg0_39.loading = false
+		LoadPaintingPrefabAsync(arg0_43.painting, var0_43, var0_43, "mainNormal", function()
+			arg0_43.loading = false
 		end)
 	else
-		arg0_39:createLive2D()
+		arg0_43:createLive2D()
 	end
 
-	arg0_39:AddLive2dTimer()
+	arg0_43:AddLive2dTimer()
 end
 
-function var0_0.AddLive2dTimer(arg0_41)
-	arg0_41:StopLive2dTimer()
+function var0_0.AddLive2dTimer(arg0_45)
+	arg0_45:StopLive2dTimer()
 
-	arg0_41.live2dTimer = Timer.New(function()
-		local var0_42 = pg.ChargeShipTalkInfo.Actions
-		local var1_42 = var0_42[math.random(#var0_42)]
+	arg0_45.live2dTimer = Timer.New(function()
+		local var0_46 = pg.ChargeShipTalkInfo.Actions
+		local var1_46 = var0_46[math.random(#var0_46)]
 
-		if arg0_41:checkBuyDone(var1_42.action) then
-			arg0_41:displayShipWord(nil, false, var1_42.dialog_index)
+		if arg0_45:checkBuyDone(var1_46.action) then
+			arg0_45:displayShipWord(nil, false, var1_46.dialog_index)
 		end
 	end, 20, -1)
 
-	arg0_41.live2dTimer:Start()
+	arg0_45.live2dTimer:Start()
 end
 
-function var0_0.StopLive2dTimer(arg0_43)
-	if arg0_43.live2dTimer then
-		arg0_43.live2dTimer:Stop()
+function var0_0.StopLive2dTimer(arg0_47)
+	if arg0_47.live2dTimer then
+		arg0_47.live2dTimer:Stop()
 
-		arg0_43.live2dTimer = nil
-	end
-end
-
-function var0_0.ShowChargeWarp(arg0_44, arg1_44)
-	setActive(arg0_44.frame, arg1_44)
-	setActive(arg0_44.viewContainer, arg1_44)
-	arg0_44:ShowResourceBar(arg1_44)
-
-	local var0_44 = arg0_44.subViewList[arg0_44.curSubViewNum]
-
-	if var0_44 then
-		var0_44:ShowPanel(arg1_44)
+		arg0_47.live2dTimer = nil
 	end
 end
 
-function var0_0.ShowResourceBar(arg0_45, arg1_45)
-	if arg0_45.resourceBarFlag == arg1_45 then
-		return
-	end
+function var0_0.ShowChargeWarp(arg0_48, arg1_48)
+	setActive(arg0_48.frame, arg1_48)
+	setActive(arg0_48.viewContainer, arg1_48)
+	arg0_48:ShowResourceBar(arg1_48)
 
-	arg0_45.resourceBarFlag = arg1_45
+	local var0_48 = arg0_48.subViewList[arg0_48.curSubViewNum]
 
-	setActive(arg0_45.resourcePanel, arg1_45)
-end
+	if var0_48 then
+		if arg1_48 == false then
+			var0_48:Destroy()
 
-function var0_0.willExit(arg0_46)
-	arg0_46:ShowResourceBar()
-	arg0_46:unBlurView()
-
-	if arg0_46.chargeTipWindow then
-		arg0_46.chargeTipWindow:Destroy()
-
-		arg0_46.chargeTipWindow = nil
-	end
-
-	arg0_46.contextData.singleWindow:Destroy()
-	arg0_46.contextData.multiWindow:Destroy()
-	arg0_46.contextData.singleWindowForESkin:Destroy()
-	arg0_46.contextData.paintingView:Dispose()
-
-	arg0_46.contextData.singleWindow = nil
-	arg0_46.contextData.multiWindow = nil
-	arg0_46.contextData.singleWindowForESkin = nil
-	arg0_46.contextData.paintingView = nil
-
-	for iter0_46, iter1_46 in pairs(arg0_46.subViewList) do
-		iter1_46:Destroy()
-	end
-
-	arg0_46.subViewList = nil
-
-	if arg0_46.heartsTimer then
-		arg0_46.heartsTimer:Stop()
-
-		arg0_46.heartsTimer = nil
-	end
-
-	if arg0_46.live2dChar then
-		arg0_46.live2dChar:Dispose()
-	end
-
-	arg0_46:StopLive2dTimer()
-	arg0_46:stopCV()
-
-	if arg0_46.giftShopView then
-		arg0_46.giftShopView:OnDestroy()
-	end
-end
-
-function var0_0.onBackPressed(arg0_47)
-	if arg0_47.contextData.singleWindow:GetLoaded() and arg0_47.contextData.singleWindow:isShowing() then
-		arg0_47.contextData.singleWindow:Close()
-
-		return
-	end
-
-	if arg0_47.contextData.multiWindow:GetLoaded() and arg0_47.contextData.multiWindow:isShowing() then
-		arg0_47.contextData.multiWindow:Close()
-
-		return
-	end
-
-	if arg0_47.contextData.singleWindowForESkin:GetLoaded() and arg0_47.contextData.singleWindowForESkin:isShowing() then
-		arg0_47.contextData.singleWindowForESkin:Hide()
-
-		return
-	end
-
-	var0_0.super.onBackPressed(arg0_47)
-end
-
-function var0_0.initSubView(arg0_48)
-	local var0_48 = ChargeDiamondShopView.New(arg0_48.viewContainer, arg0_48.event, arg0_48.contextData)
-	local var1_48 = ChargeGiftShopView.New(arg0_48.viewContainer, arg0_48.event, arg0_48.contextData)
-	local var2_48 = ChargeItemShopView.New(arg0_48.viewContainer, arg0_48.event, arg0_48.contextData)
-	local var3_48 = ChargePickShopView.New(arg0_48.viewContainer, arg0_48.event, arg0_48.contextData)
-	local var4_48 = SupplyShopView.New(arg0_48.viewContainer, arg0_48.event, arg0_48.contextData, ShopConst.CATEGORY_MONTH)
-	local var5_48 = SupplyShopView.New(arg0_48.viewContainer, arg0_48.event, arg0_48.contextData, ShopConst.CATEGORY_SUPPLY)
-	local var6_48 = SupplyShopView.New(arg0_48.viewContainer, arg0_48.event, arg0_48.contextData, ShopConst.CATEGORY_ACTIVITY)
-
-	arg0_48.curSubViewNum = 0
-	arg0_48.subViewList = {
-		[ShopConst.SHOP_ID.DIAMOND] = var0_48,
-		[ShopConst.SHOP_ID.GIFT] = var1_48,
-		[ShopConst.SHOP_ID.ITEM] = var2_48,
-		[ShopConst.SHOP_ID.PICK] = var3_48,
-		[ShopConst.SHOP_ID.MONTH] = var4_48,
-		[ShopConst.SHOP_ID.SUPPLY] = var5_48,
-		[ShopConst.SHOP_ID.ACTIVITY] = var6_48
-	}
-
-	for iter0_48, iter1_48 in pairs(arg0_48.subViewList) do
-		iter1_48:RegisterView(arg0_48)
-	end
-
-	arg0_48.contextData.singleWindow = ShopSingleWindow.New(arg0_48._tf, arg0_48.event)
-	arg0_48.contextData.multiWindow = ShopMultiWindow.New(arg0_48._tf, arg0_48.event)
-	arg0_48.contextData.singleWindowForESkin = EquipmentSkinInfoUIForShopWindow.New(arg0_48._tf, arg0_48.event)
-	arg0_48.contextData.paintingView = ShopPaintingView.New(arg0_48._tf:Find("frame/supplyPaint"), arg0_48._tf:Find("frame/chat"))
-
-	arg0_48.contextData.paintingView:setSecretaryPos(arg0_48._tf:Find("frame/secretaryPos"))
-end
-
-function var0_0.GetShopID(arg0_49, arg1_49, arg2_49)
-	return ShopConst.SHOP_LIST[arg1_49][arg2_49]
-end
-
-function var0_0.switchSubView(arg0_50, arg1_50)
-	originalPrint(string.format("End: shopID=%s curShopID=%s", arg1_50, arg0_50.curSubViewNum))
-
-	if arg1_50 == arg0_50.curSubViewNum then
-		return
-	end
-
-	arg0_50.subViewList[arg1_50]:setGoodData(arg0_50.firstChargeIds, arg0_50.chargedList, arg0_50.normalList, arg0_50.normalGroupList)
-	arg0_50.subViewList[arg1_50]:Reset()
-	arg0_50.subViewList[arg1_50]:Load()
-
-	if arg0_50.subViewList[arg1_50].SetAllShopData then
-		arg0_50.subViewList[arg1_50]:ActionInvoke("SetAllShopData", arg0_50.supplyShopList)
-	end
-
-	local var0_50 = arg0_50.subViewList[arg0_50.curSubViewNum]
-
-	if var0_50 then
-		var0_50:Destroy()
-	end
-
-	arg0_50.curSubViewNum = arg1_50
-
-	arg0_50:SwitchPainting(arg0_50.subViewList[arg1_50]:IsSupplyShop())
-
-	if PLATFORM_CODE == PLATFORM_JP then
-		setActive(arg0_50.userAgreeBtn3, arg1_50 == ChargeScene.TYPE_DIAMOND)
-		setActive(arg0_50.userAgreeBtn4, arg1_50 == ChargeScene.TYPE_DIAMOND)
-	end
-end
-
-function var0_0.SwitchPainting(arg0_51, arg1_51)
-	arg0_51.contextData.paintingView:Show(arg1_51)
-	setActive(arg0_51.painting, not arg1_51)
-
-	if arg1_51 then
-		arg0_51:StopLive2dTimer()
-
-		arg0_51.chatFlag = nil
-
-		arg0_51:stopCV()
-		setActive(arg0_51.stamp, getProxy(TaskProxy):mingshiTouchFlagEnabled())
-
-		if LOCK_CLICK_MINGSHI then
-			setActive(arg0_51.stamp, false)
+			arg0_48.curSubViewNum = 0
+		else
+			var0_48:ShowPanel(arg1_48)
 		end
-	else
-		setActive(arg0_51.stamp, false)
-		arg0_51:AddLive2dTimer()
 	end
 end
 
-function var0_0.switchSubViewByTogger(arg0_52, arg1_52)
-	local var0_52 = arg0_52.toggleList[arg1_52]
-
-	triggerToggle(var0_52.go, true)
-end
-
-function var0_0.updateCurSubView(arg0_53)
-	local var0_53 = arg0_53.subViewList[arg0_53.curSubViewNum]
-
-	if var0_53 == nil then
+function var0_0.ShowResourceBar(arg0_49, arg1_49)
+	if arg0_49.resourceBarFlag == arg1_49 then
 		return
 	end
 
-	var0_53:setGoodData(arg0_53.firstChargeIds, arg0_53.chargedList, arg0_53.normalList, arg0_53.normalGroupList)
-	var0_53:reUpdateAll()
+	arg0_49.resourceBarFlag = arg1_49
+
+	setActive(arg0_49.resourcePanel, arg1_49)
 end
 
-function var0_0.updateNoRes(arg0_54, arg1_54)
-	if not arg1_54 then
-		arg1_54 = arg0_54.contextData.noRes
-	else
-		arg0_54.contextData.noRes = arg1_54
-	end
+function var0_0.willExit(arg0_50)
+	pg.EasyRedDotMgr.GetInstance():UnRegisterRedDot(arg0_50.specialTip)
+	pg.EasyRedDotMgr.GetInstance():UnRegisterRedDot(arg0_50.giftTip)
 
-	if not arg1_54 or #arg1_54 <= 0 then
-		return
-	end
+	if arg0_50.toggleMark then
+		for iter0_50, iter1_50 in pairs(arg0_50.toggleMark) do
+			if iter1_50 > 0 then
+				local var0_50 = switch(iter0_50, {
+					[ChargeScene.TYPE_PICK] = function()
+						return "payshop_pack_red_dot"
+					end,
+					[ChargeScene.TYPE_GIFT] = function()
+						return "gemshop_pack_red_dot"
+					end
+				})
 
-	arg0_54.contextData.noRes = {}
-
-	local var0_54 = getProxy(BagProxy):getData()
-	local var1_54 = ""
-
-	for iter0_54, iter1_54 in ipairs(arg1_54) do
-		if iter1_54[2] > 0 then
-			if iter1_54[1] == 59001 then
-				arg1_54[iter0_54][2] = iter1_54[3] - arg0_54.player.gold
-			else
-				arg1_54[iter0_54][2] = iter1_54[3] - (var0_54[iter1_54[1]] and var0_54[iter1_54[1]].count or 0)
+				PlayerPrefs.SetInt(var0_50, getGameset(var0_50)[1])
 			end
 		end
 
-		if arg1_54[iter0_54][2] > 0 then
-			table.insert(arg0_54.contextData.noRes, arg1_54[iter0_54])
-		end
+		arg0_50.toggleMark = nil
 	end
 
-	for iter2_54, iter3_54 in ipairs(arg0_54.contextData.noRes) do
-		local var2_54 = Item.getConfigData(iter3_54[1]).name
+	arg0_50:ShowResourceBar()
+	arg0_50:unBlurView()
 
-		var1_54 = var1_54 .. i18n(iter3_54[1] == 59001 and "text_noRes_info_tip" or "text_noRes_info_tip2", var2_54, iter3_54[2])
+	if arg0_50.chargeTipWindow then
+		arg0_50.chargeTipWindow:Destroy()
 
-		if iter2_54 < #arg0_54.contextData.noRes then
-			var1_54 = var1_54 .. i18n("text_noRes_info_tip_link")
-		end
+		arg0_50.chargeTipWindow = nil
 	end
 
-	if var1_54 == "" then
-		arg0_54:displayShipWord(i18n("text_shop_enoughRes_tip"), false)
-	else
-		arg0_54:displayShipWord(i18n("text_shop_noRes_tip", var1_54), true)
+	arg0_50.contextData.singleWindow:Destroy()
+	arg0_50.contextData.multiWindow:Destroy()
+	arg0_50.contextData.singleWindowForESkin:Destroy()
+	arg0_50.contextData.paintingView:Dispose()
+
+	arg0_50.contextData.singleWindow = nil
+	arg0_50.contextData.multiWindow = nil
+	arg0_50.contextData.singleWindowForESkin = nil
+	arg0_50.contextData.paintingView = nil
+
+	for iter2_50, iter3_50 in pairs(arg0_50.subViewList) do
+		iter3_50:Destroy()
+	end
+
+	arg0_50.subViewList = nil
+
+	if arg0_50.heartsTimer then
+		arg0_50.heartsTimer:Stop()
+
+		arg0_50.heartsTimer = nil
+	end
+
+	if arg0_50.live2dChar then
+		arg0_50.live2dChar:Dispose()
+	end
+
+	arg0_50:StopLive2dTimer()
+	arg0_50:stopCV()
+
+	if arg0_50.giftShopView then
+		arg0_50.giftShopView:OnDestroy()
 	end
 end
 
-function var0_0.displayShipWord(arg0_55, arg1_55, arg2_55, arg3_55)
-	if not arg0_55.chatFlag then
-		if not arg1_55 and arg0_55.contextData.noRes and #arg0_55.contextData.noRes > 0 then
-			setActive(arg0_55.chat, false)
+function var0_0.onBackPressed(arg0_53)
+	if arg0_53.contextData.singleWindow:GetLoaded() and arg0_53.contextData.singleWindow:isShowing() then
+		arg0_53.contextData.singleWindow:Close()
 
-			arg0_55.chat.transform.localScale = Vector3(0, 0, 1)
+		return
+	end
+
+	if arg0_53.contextData.multiWindow:GetLoaded() and arg0_53.contextData.multiWindow:isShowing() then
+		arg0_53.contextData.multiWindow:Close()
+
+		return
+	end
+
+	if arg0_53.contextData.singleWindowForESkin:GetLoaded() and arg0_53.contextData.singleWindowForESkin:isShowing() then
+		arg0_53.contextData.singleWindowForESkin:Hide()
+
+		return
+	end
+
+	var0_0.super.onBackPressed(arg0_53)
+end
+
+function var0_0.initSubView(arg0_54)
+	local var0_54 = ChargeDiamondShopView.New(arg0_54.viewContainer, arg0_54.event, arg0_54.contextData)
+	local var1_54 = ChargeGiftShopView.New(arg0_54.viewContainer, arg0_54.event, arg0_54.contextData)
+	local var2_54 = ChargeItemShopView.New(arg0_54.viewContainer, arg0_54.event, arg0_54.contextData)
+	local var3_54 = ChargePickShopView.New(arg0_54.viewContainer, arg0_54.event, arg0_54.contextData)
+	local var4_54 = SupplyShopView.New(arg0_54.viewContainer, arg0_54.event, arg0_54.contextData, ShopConst.CATEGORY_MONTH)
+	local var5_54 = SupplyShopView.New(arg0_54.viewContainer, arg0_54.event, arg0_54.contextData, ShopConst.CATEGORY_SUPPLY)
+	local var6_54 = SupplyShopView.New(arg0_54.viewContainer, arg0_54.event, arg0_54.contextData, ShopConst.CATEGORY_ACTIVITY)
+
+	arg0_54.curSubViewNum = 0
+	arg0_54.subViewList = {
+		[ShopConst.SHOP_ID.DIAMOND] = var0_54,
+		[ShopConst.SHOP_ID.GIFT] = var1_54,
+		[ShopConst.SHOP_ID.ITEM] = var2_54,
+		[ShopConst.SHOP_ID.PICK] = var3_54,
+		[ShopConst.SHOP_ID.MONTH] = var4_54,
+		[ShopConst.SHOP_ID.SUPPLY] = var5_54,
+		[ShopConst.SHOP_ID.ACTIVITY] = var6_54
+	}
+
+	for iter0_54, iter1_54 in pairs(arg0_54.subViewList) do
+		iter1_54:RegisterView(arg0_54)
+	end
+
+	arg0_54.contextData.singleWindow = ShopSingleWindow.New(arg0_54._tf, arg0_54.event)
+	arg0_54.contextData.multiWindow = ShopMultiWindow.New(arg0_54._tf, arg0_54.event)
+	arg0_54.contextData.singleWindowForESkin = EquipmentSkinInfoUIForShopWindow.New(arg0_54._tf, arg0_54.event)
+	arg0_54.contextData.paintingView = ShopPaintingView.New(arg0_54._tf:Find("frame/supplyPaint"), arg0_54._tf:Find("frame/chat"))
+
+	arg0_54.contextData.paintingView:setSecretaryPos(arg0_54._tf:Find("frame/secretaryPos"))
+end
+
+function var0_0.GetShopID(arg0_55, arg1_55, arg2_55)
+	return ShopConst.SHOP_LIST[arg1_55][arg2_55]
+end
+
+function var0_0.switchSubView(arg0_56, arg1_56)
+	originalPrint(string.format("End: shopID=%s curShopID=%s", arg1_56, arg0_56.curSubViewNum))
+
+	if arg1_56 == arg0_56.curSubViewNum then
+		return
+	end
+
+	arg0_56.subViewList[arg1_56]:setGoodData(arg0_56.firstChargeIds, arg0_56.chargedList, arg0_56.normalList, arg0_56.normalGroupList)
+	arg0_56.subViewList[arg1_56]:Reset()
+	arg0_56.subViewList[arg1_56]:Load()
+
+	if arg0_56.subViewList[arg1_56].SetAllShopData then
+		arg0_56.subViewList[arg1_56]:ActionInvoke("SetAllShopData", arg0_56.supplyShopList)
+	end
+
+	local var0_56 = arg0_56.subViewList[arg0_56.curSubViewNum]
+
+	if var0_56 then
+		var0_56:Destroy()
+	end
+
+	arg0_56.curSubViewNum = arg1_56
+
+	arg0_56:SwitchPainting(arg0_56.subViewList[arg1_56]:IsSupplyShop())
+
+	if PLATFORM_CODE == PLATFORM_JP then
+		setActive(arg0_56.userAgreeBtn3, arg1_56 == ChargeScene.TYPE_DIAMOND)
+		setActive(arg0_56.userAgreeBtn4, arg1_56 == ChargeScene.TYPE_DIAMOND)
+	end
+end
+
+function var0_0.SwitchPainting(arg0_57, arg1_57)
+	arg0_57.contextData.paintingView:Show(arg1_57)
+	setActive(arg0_57.painting, not arg1_57)
+
+	if arg1_57 then
+		arg0_57:StopLive2dTimer()
+
+		arg0_57.chatFlag = nil
+
+		arg0_57:stopCV()
+		setActive(arg0_57.stamp, getProxy(TaskProxy):mingshiTouchFlagEnabled())
+
+		if LOCK_CLICK_MINGSHI then
+			setActive(arg0_57.stamp, false)
+		end
+	else
+		setActive(arg0_57.stamp, false)
+		arg0_57:AddLive2dTimer()
+	end
+end
+
+function var0_0.switchSubViewByTogger(arg0_58, arg1_58)
+	local var0_58 = arg0_58.toggleList[arg1_58]
+
+	triggerToggle(var0_58.go, true)
+end
+
+function var0_0.updateCurSubView(arg0_59)
+	if not isActive(arg0_59.viewContainer) then
+		return
+	end
+
+	local var0_59 = arg0_59.subViewList[arg0_59.curSubViewNum]
+
+	if var0_59 == nil then
+		return
+	end
+
+	var0_59:setGoodData(arg0_59.firstChargeIds, arg0_59.chargedList, arg0_59.normalList, arg0_59.normalGroupList)
+	var0_59:reUpdateAll()
+end
+
+function var0_0.updateNoRes(arg0_60, arg1_60)
+	if not arg1_60 then
+		arg1_60 = arg0_60.contextData.noRes
+	else
+		arg0_60.contextData.noRes = arg1_60
+	end
+
+	if not arg1_60 or #arg1_60 <= 0 then
+		return
+	end
+
+	arg0_60.contextData.noRes = {}
+
+	local var0_60 = getProxy(BagProxy):getData()
+	local var1_60 = ""
+
+	for iter0_60, iter1_60 in ipairs(arg1_60) do
+		if iter1_60[2] > 0 then
+			if iter1_60[1] == 59001 then
+				arg1_60[iter0_60][2] = iter1_60[3] - arg0_60.player.gold
+			else
+				arg1_60[iter0_60][2] = iter1_60[3] - (var0_60[iter1_60[1]] and var0_60[iter1_60[1]].count or 0)
+			end
 		end
 
-		arg0_55.chatFlag = true
+		if arg1_60[iter0_60][2] > 0 then
+			table.insert(arg0_60.contextData.noRes, arg1_60[iter0_60])
+		end
+	end
 
-		if not arg0_55.isInitChatPosition then
-			arg0_55.isInitChatPosition = true
+	for iter2_60, iter3_60 in ipairs(arg0_60.contextData.noRes) do
+		local var2_60 = Item.getConfigData(iter3_60[1]).name
 
-			arg0_55:InitChatPosition()
+		var1_60 = var1_60 .. i18n(iter3_60[1] == 59001 and "text_noRes_info_tip" or "text_noRes_info_tip2", var2_60, iter3_60[2])
+
+		if iter2_60 < #arg0_60.contextData.noRes then
+			var1_60 = var1_60 .. i18n("text_noRes_info_tip_link")
+		end
+	end
+
+	if var1_60 == "" then
+		arg0_60:displayShipWord(i18n("text_shop_enoughRes_tip"), false)
+	else
+		arg0_60:displayShipWord(i18n("text_shop_noRes_tip", var1_60), true)
+	end
+end
+
+function var0_0.displayShipWord(arg0_61, arg1_61, arg2_61, arg3_61)
+	if not arg0_61.chatFlag then
+		if not arg1_61 and arg0_61.contextData.noRes and #arg0_61.contextData.noRes > 0 then
+			setActive(arg0_61.chat, false)
+
+			arg0_61.chat.transform.localScale = Vector3(0, 0, 1)
 		end
 
-		setActive(arg0_55.chat, true)
+		arg0_61.chatFlag = true
 
-		local var0_55 = arg0_55.player:getChargeLevel()
-		local var1_55 = arg3_55 or math.random(1, var0_55)
-		local var2_55
+		if not arg0_61.isInitChatPosition then
+			arg0_61.isInitChatPosition = true
 
-		if arg3_55 then
-			var2_55 = pg.pay_level_award[var1_55].dialog
+			arg0_61:InitChatPosition()
+		end
+
+		setActive(arg0_61.chat, true)
+
+		local var0_61 = arg0_61.player:getChargeLevel()
+		local var1_61 = arg3_61 or math.random(1, var0_61)
+		local var2_61
+
+		if arg3_61 then
+			var2_61 = pg.pay_level_award[var1_61].dialog
 		else
-			var2_55 = arg1_55 or pg.pay_level_award[var1_55].dialog
+			var2_61 = arg1_61 or pg.pay_level_award[var1_61].dialog
 		end
 
-		if not arg1_55 then
-			arg0_55:playCV(var1_55)
+		if not arg1_61 then
+			arg0_61:playCV(var1_61)
 		end
 
-		setText(arg0_55.chatText, var2_55)
+		setText(arg0_61.chatText, var2_61)
 
-		local var3_55 = arg0_55.chatText:GetComponent(typeof(Text))
+		local var3_61 = arg0_61.chatText:GetComponent(typeof(Text))
 
 		;(function()
-			local var0_56 = 3
-			local var1_56 = 0.3
+			local var0_62 = 3
+			local var1_62 = 0.3
 
-			LeanTween.scale(rtf(arg0_55.chat.gameObject), Vector3.New(1, 1, 1), var1_56):setFrom(Vector3.New(0, 0, 0)):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
-				if not arg2_55 then
-					LeanTween.scale(rtf(arg0_55.chat.gameObject), Vector3.New(0, 0, 1), var1_56):setEase(LeanTweenType.easeInBack):setDelay(var1_56 + var0_56):setOnComplete(System.Action(function()
-						arg0_55.chatFlag = nil
+			LeanTween.scale(rtf(arg0_61.chat.gameObject), Vector3.New(1, 1, 1), var1_62):setFrom(Vector3.New(0, 0, 0)):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
+				if not arg2_61 then
+					LeanTween.scale(rtf(arg0_61.chat.gameObject), Vector3.New(0, 0, 1), var1_62):setEase(LeanTweenType.easeInBack):setDelay(var1_62 + var0_62):setOnComplete(System.Action(function()
+						arg0_61.chatFlag = nil
 
-						setActive(arg0_55.chat, false)
+						setActive(arg0_61.chat, false)
 
-						if arg0_55.contextData.noRes and #arg0_55.contextData.noRes > 0 then
-							arg0_55:updateNoRes()
+						if arg0_61.contextData.noRes and #arg0_61.contextData.noRes > 0 then
+							arg0_61:updateNoRes()
 						end
 					end))
 				else
-					arg0_55.chatFlag = nil
+					arg0_61.chatFlag = nil
 				end
 			end))
 		end)()
 	end
 end
 
-function var0_0.InitChatPosition(arg0_59)
+function var0_0.InitChatPosition(arg0_65)
 	return
 end
 
-function var0_0.playHeartEffect(arg0_60)
-	if arg0_60.heartsTimer then
-		arg0_60.heartsTimer:Stop()
+function var0_0.playHeartEffect(arg0_66)
+	if arg0_66.heartsTimer then
+		arg0_66.heartsTimer:Stop()
 	end
 
-	local var0_60 = arg0_60.painting:Find("heartsfly")
+	local var0_66 = arg0_66.painting:Find("heartsfly")
 
-	setActive(var0_60, true)
+	setActive(var0_66, true)
 
-	arg0_60.heartsTimer = Timer.New(function()
-		setActive(var0_60, false)
+	arg0_66.heartsTimer = Timer.New(function()
+		setActive(var0_66, false)
 	end, 1, 1)
 
-	arg0_60.heartsTimer:Start()
+	arg0_66.heartsTimer:Start()
 end
 
-function var0_0.createLive2D(arg0_62)
-	local var0_62 = Live2D.GenerateData({
+function var0_0.createLive2D(arg0_68)
+	local var0_68 = Live2D.GenerateData({
 		ship = Ship.New({
 			configId = 312011
 		}),
@@ -863,143 +935,137 @@ function var0_0.createLive2D(arg0_62)
 			75
 		},
 		position = Vector3(0, 0, 0),
-		parent = arg0_62._tf:Find("frame/painting/live2d")
+		parent = arg0_68._tf:Find("frame/painting/live2d")
 	})
 
-	arg0_62.live2dChar = Live2D.New(var0_62, function(arg0_63)
-		arg0_63:setSortingLayer(LayerWeightConst.L2D_DEFAULT_LAYER)
+	arg0_68.live2dChar = Live2D.New(var0_68, function(arg0_69)
+		arg0_69:setSortingLayer(LayerWeightConst.L2D_DEFAULT_LAYER)
 	end)
 end
 
-function var0_0.checkBuyDone(arg0_64, arg1_64)
-	if not arg0_64.live2dChar or not arg0_64.live2dChar:IsLoaded() then
+function var0_0.checkBuyDone(arg0_70, arg1_70)
+	if not arg0_70.live2dChar or not arg0_70.live2dChar:IsLoaded() then
 		return
 	end
 
-	local var0_64
+	local var0_70
 
-	if type(arg1_64) == "string" then
-		if arg1_64 == "damonds" then
-			var0_64 = "diamond"
+	if type(arg1_70) == "string" then
+		if arg1_70 == "damonds" then
+			var0_70 = "diamond"
 		else
-			var0_64 = arg1_64
+			var0_70 = arg1_70
 		end
 	else
-		local var1_64 = pg.shop_template[arg1_64]
+		local var1_70 = pg.shop_template[arg1_70]
 
-		if var1_64 and var1_64.effect_args and type(var1_64.effect_args) == "table" then
-			for iter0_64, iter1_64 in ipairs(var1_64.effect_args) do
-				if iter1_64 == 1 then
-					var0_64 = "gold"
+		if var1_70 and var1_70.effect_args and type(var1_70.effect_args) == "table" then
+			for iter0_70, iter1_70 in ipairs(var1_70.effect_args) do
+				if iter1_70 == 1 then
+					var0_70 = "gold"
 				end
 			end
 		end
 	end
 
-	local var2_64 = arg0_64.preAniName == "gold" or arg0_64.preAniName == "diamond"
-	local var3_64 = var0_64 == "gold" or var0_64 == "diamond"
-	local var4_64 = var2_64 and var3_64 or not var2_64
+	local var2_70 = arg0_70.preAniName == "gold" or arg0_70.preAniName == "diamond"
+	local var3_70 = var0_70 == "gold" or var0_70 == "diamond"
+	local var4_70 = var2_70 and var3_70 or not var2_70
 
-	var4_64 = var0_64 and arg0_64.preAniName ~= var0_64 and var4_64
+	var4_70 = var0_70 and arg0_70.preAniName ~= var0_70 and var4_70
 
-	if var4_64 then
-		arg0_64.preAniName = var0_64
+	if var4_70 then
+		arg0_70.preAniName = var0_70
 
-		arg0_64.live2dChar:TriggerAction(var0_64, nil, true)
+		arg0_70.live2dChar:TriggerAction(var0_70, nil, true)
 	end
 
-	return var4_64
+	return var4_70
 end
 
-function var0_0.playCV(arg0_65, arg1_65)
-	local var0_65 = pg.pay_level_award[arg1_65]
-	local var1_65
+function var0_0.playCV(arg0_71, arg1_71)
+	local var0_71 = pg.pay_level_award[arg1_71]
+	local var1_71
 
-	if var0_65 and var0_65.cv_key ~= "" then
-		var1_65 = "event:/cv/chargeShop/" .. var0_65.cv_key
+	if var0_71 and var0_71.cv_key ~= "" then
+		var1_71 = "event:/cv/chargeShop/" .. var0_71.cv_key
 	end
 
-	if var1_65 then
-		arg0_65:stopCV()
+	if var1_71 then
+		arg0_71:stopCV()
 
-		arg0_65._currentVoice = var1_65
+		arg0_71._currentVoice = var1_71
 
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var1_65)
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var1_71)
 	end
 end
 
-function var0_0.stopCV(arg0_66)
-	if arg0_66._currentVoice then
-		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(arg0_66._currentVoice)
+function var0_0.stopCV(arg0_72)
+	if arg0_72._currentVoice then
+		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(arg0_72._currentVoice)
 	end
 
-	arg0_66._currentVoice = nil
+	arg0_72._currentVoice = nil
 end
 
-function var0_0.blurView(arg0_67)
-	arg0_67:OverlayPanel(arg0_67.buttonList, {
+function var0_0.blurView(arg0_73)
+	arg0_73:OverlayPanel(arg0_73.buttonList, {
 		pbList = {
-			arg0_67.buttonList:Find("leftBg")
+			arg0_73.buttonList:Find("leftBg")
 		}
 	})
 end
 
-function var0_0.unBlurView(arg0_68)
-	arg0_68:UnOverlayPanel(arg0_68.buttonList, arg0_68._tf)
+function var0_0.unBlurView(arg0_74)
+	arg0_74:UnOverlayPanel(arg0_74.buttonList, arg0_74._tf)
 end
 
-function var0_0.jpUIInit(arg0_69)
+function var0_0.jpUIInit(arg0_75)
 	if PLATFORM_CODE ~= PLATFORM_JP then
 		return
 	end
 
-	arg0_69.userAgreeBtn3 = arg0_69._tf:Find("frame/raw1Btn")
-	arg0_69.userAgreeBtn4 = arg0_69._tf:Find("frame/raw2Btn")
+	arg0_75.userAgreeBtn3 = arg0_75._tf:Find("frame/raw1Btn")
+	arg0_75.userAgreeBtn4 = arg0_75._tf:Find("frame/raw2Btn")
 end
 
-function var0_0.jpUIEnter(arg0_70)
+function var0_0.jpUIEnter(arg0_76)
 	if PLATFORM_CODE ~= PLATFORM_JP then
 		return
 	end
 
-	onButton(arg0_70, arg0_70.userAgreeBtn3, function()
-		local var0_71 = require("ShareCfg.UserAgreement3")
+	onButton(arg0_76, arg0_76.userAgreeBtn3, function()
+		local var0_77 = require("ShareCfg.UserAgreement3")
 
-		arg0_70:emit(NewShopMainMediator.OPEN_USER_AGREE, var0_71 or "")
+		arg0_76:emit(NewShopMainMediator.OPEN_USER_AGREE, var0_77 or "")
 	end, SFX_PANEL)
-	onButton(arg0_70, arg0_70.userAgreeBtn4, function()
-		local var0_72 = require("ShareCfg.UserAgreement4")
+	onButton(arg0_76, arg0_76.userAgreeBtn4, function()
+		local var0_78 = require("ShareCfg.UserAgreement4")
 
-		arg0_70:emit(NewShopMainMediator.OPEN_USER_AGREE, var0_72 or "")
+		arg0_76:emit(NewShopMainMediator.OPEN_USER_AGREE, var0_78 or "")
 	end, SFX_PANEL)
 end
 
-function var0_0.addRefreshTimer(arg0_73, arg1_73)
-	local function var0_73()
-		if arg0_73.refreshTimer then
-			arg0_73.refreshTimer:Stop()
+function var0_0.addRefreshTimer(arg0_79, arg1_79)
+	local function var0_79()
+		if arg0_79.refreshTimer then
+			arg0_79.refreshTimer:Stop()
 
-			arg0_73.refreshTimer = nil
+			arg0_79.refreshTimer = nil
 		end
 	end
 
-	var0_73()
+	var0_79()
 
-	arg0_73.refreshTimer = Timer.New(function()
-		if arg1_73 + 1 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
-			var0_73()
-			arg0_73:emit(NewShopMainMediator.GET_CHARGE_LIST)
+	arg0_79.refreshTimer = Timer.New(function()
+		if arg1_79 + 1 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
+			var0_79()
+			arg0_79:emit(NewShopMainMediator.GET_CHARGE_LIST)
 		end
 	end, 1, -1)
 
-	arg0_73.refreshTimer:Start()
-	arg0_73.refreshTimer.func()
-end
-
-function var0_0.checkFreeGiftTag(arg0_76)
-	TagTipHelper.FreeGiftTag({
-		arg0_76.giftTip
-	})
+	arg0_79.refreshTimer:Start()
+	arg0_79.refreshTimer.func()
 end
 
 return var0_0

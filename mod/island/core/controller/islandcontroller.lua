@@ -877,6 +877,7 @@ end
 
 function var0_0.InitSyncMgr(arg0_60)
 	arg0_60.islandSyncMgr:Init(arg0_60.sceneData.unitList)
+	arg0_60:NotifiyCore(ISLAND_EVT.INIT_INTERACTION_OP_VIEW)
 end
 
 function var0_0.SetVisitorSyncData(arg0_61, arg1_61, arg2_61)

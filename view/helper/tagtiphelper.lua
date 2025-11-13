@@ -99,54 +99,58 @@ function var0_0.MonthCardTagTip(arg0_9)
 	triggerToggle(arg0_9, var0_9)
 end
 
-function var0_0.FreeGiftTag(arg0_10)
-	local var0_10 = getProxy(ShopsProxy)
+function var0_0.GiftPackagesTag(arg0_10)
+	getProxy(ShopsProxy):GiftPackageRedDotTip(arg0_10, nil)
+end
 
-	if not var0_10:getChargedList() then
+function var0_0.FreeGiftTag(arg0_11)
+	local var0_11 = getProxy(ShopsProxy)
+
+	if not var0_11:getChargedList() then
 		pg.m02:sendNotification(GAME.GET_CHARGE_LIST, {
 			callback = function()
-				if _.all(arg0_10, function(arg0_12)
-					return not IsNil(arg0_12)
+				if _.all(arg0_11, function(arg0_13)
+					return not IsNil(arg0_13)
 				end) then
-					for iter0_11, iter1_11 in ipairs(arg0_10) do
-						setActive(iter1_11, var0_10:checkHasFreeNormal())
+					for iter0_12, iter1_12 in ipairs(arg0_11) do
+						setActive(iter1_12, var0_11:checkHasFreeNormal())
 					end
 				end
 			end
 		})
 	else
-		for iter0_10, iter1_10 in ipairs(arg0_10) do
-			setActive(iter1_10, var0_10:checkHasFreeNormal())
+		for iter0_11, iter1_11 in ipairs(arg0_11) do
+			setActive(iter1_11, var0_11:checkHasFreeNormal())
 		end
 	end
 end
 
-function var0_0.FreeBuildTicketTip(arg0_13, arg1_13)
-	local var0_13 = getProxy(ActivityProxy):IsShowFreeBuildMark(false)
+function var0_0.FreeBuildTicketTip(arg0_14, arg1_14)
+	local var0_14 = getProxy(ActivityProxy):IsShowFreeBuildMark(false)
 
-	if var0_13 then
-		setActive(arg0_13, true)
+	if var0_14 then
+		setActive(arg0_14, true)
 		LoadImageSpriteAtlasAsync(Drop.New({
 			type = DROP_TYPE_VITEM,
-			id = var0_13:getConfig("config_client")[1]
-		}):getIcon(), "", arg0_13:Find("Image"))
+			id = var0_14:getConfig("config_client")[1]
+		}):getIcon(), "", arg0_14:Find("Image"))
 
-		local var1_13 = tostring(var0_13.data1)
+		local var1_14 = tostring(var0_14.data1)
 
-		if var0_13.data1 < 10 then
-			var1_13 = var1_13 .. " "
+		if var0_14.data1 < 10 then
+			var1_14 = var1_14 .. " "
 		end
 
-		setText(arg0_13:Find("Text"), i18n("build_ticket_expire_warning", var1_13))
+		setText(arg0_14:Find("Text"), i18n("build_ticket_expire_warning", var1_14))
 
 		var0_0.BuildMark = true
 	else
-		setActive(arg0_13, false)
+		setActive(arg0_14, false)
 	end
 end
 
-function var0_0.TecShipGiftTip(arg0_14)
-	local var0_14 = {
+function var0_0.TecShipGiftTip(arg0_15)
+	local var0_15 = {
 		2001,
 		2002,
 		2003,
@@ -156,31 +160,31 @@ function var0_0.TecShipGiftTip(arg0_14)
 		2007,
 		2008
 	}
-	local var1_14 = 30 <= getProxy(PlayerProxy):getData().level
-	local var2_14 = PlayerPrefs.GetInt("Tec_Ship_Gift_Enter_Tag", 0) > 0
-	local var3_14 = false
+	local var1_15 = 30 <= getProxy(PlayerProxy):getData().level
+	local var2_15 = PlayerPrefs.GetInt("Tec_Ship_Gift_Enter_Tag", 0) > 0
+	local var3_15 = false
 
-	for iter0_14, iter1_14 in ipairs(pg.pay_data_display.all) do
-		if table.contains(var0_14, iter1_14) then
-			var3_14 = true
+	for iter0_15, iter1_15 in ipairs(pg.pay_data_display.all) do
+		if table.contains(var0_15, iter1_15) then
+			var3_15 = true
 
 			break
 		end
 	end
 
-	if var3_14 and var1_14 and not var2_14 then
-		triggerToggle(arg0_14, true)
+	if var3_15 and var1_15 and not var2_15 then
+		triggerToggle(arg0_15, true)
 	else
-		triggerToggle(arg0_14, false)
+		triggerToggle(arg0_15, false)
 	end
 end
 
 function var0_0.SetFreeBuildMark()
 	if var0_0.BuildMark then
-		local var0_15 = getProxy(ActivityProxy):IsShowFreeBuildMark(false)
+		local var0_16 = getProxy(ActivityProxy):IsShowFreeBuildMark(false)
 
-		if var0_15 then
-			PlayerPrefs.SetString("Free_Build_Ticket_" .. var0_15.id, pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d"))
+		if var0_16 then
+			PlayerPrefs.SetString("Free_Build_Ticket_" .. var0_16.id, pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d"))
 			PlayerPrefs.Save()
 		end
 

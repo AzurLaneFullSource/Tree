@@ -1,5 +1,7 @@
 local var0_0 = class("ChargeGiftShopView", import("...base.BaseSubView"))
 
+var0_0.ShowPickUp = false
+
 function var0_0.getUIName(arg0_1)
 	return "ChargeGiftShopUI"
 end
@@ -12,14 +14,13 @@ end
 
 function var0_0.OnDestroy(arg0_3)
 	for iter0_3, iter1_3 in pairs(arg0_3.chargeCardTable or {}) do
-		iter1_3:destoryTimer()
+		iter1_3:Dispose()
 	end
 
 	arg0_3:removeUpdateTimer()
 end
 
 function var0_0.initData(arg0_4)
-	arg0_4.giftGoodsVOList = {}
 	arg0_4.giftGoodsVOListForShow = {}
 	arg0_4.packageSortList = {
 		0
@@ -210,15 +211,21 @@ function var0_0.confirm(arg0_17, arg1_17)
 
 			arg0_17:emit(NewShopMainMediator.OPEN_CHARGE_ITEM_BOX, var10_17)
 		end
-	else
-		local var11_17 = {}
-		local var12_17 = arg1_17:getConfig("effect_args")
-		local var13_17 = Item.getConfigData(var12_17[1])
-		local var14_17 = var13_17.display_icon
+	elseif arg1_17:isActGiftPackage() then
+		local var11_17 = arg1_17:getBindActivity()
 
-		if type(var14_17) == "table" then
-			for iter0_17, iter1_17 in ipairs(var14_17) do
-				table.insert(var11_17, Drop.New({
+		arg0_17:emit(NewShopMainMediator.OPEN_LAYER, ChargeActGiftLayer, ChargeActGiftMediator, {
+			actId = var11_17.id
+		})
+	else
+		local var12_17 = {}
+		local var13_17 = arg1_17:getConfig("effect_args")
+		local var14_17 = Item.getConfigData(var13_17[1])
+		local var15_17 = var14_17.display_icon
+
+		if type(var15_17) == "table" then
+			for iter0_17, iter1_17 in ipairs(var15_17) do
+				table.insert(var12_17, Drop.New({
 					type = iter1_17[1],
 					id = iter1_17[2],
 					count = iter1_17[3]
@@ -226,20 +233,20 @@ function var0_0.confirm(arg0_17, arg1_17)
 			end
 		end
 
-		local var15_17 = {
+		local var16_17 = {
 			isMonthCard = false,
 			isChargeType = false,
 			isLocalPrice = false,
 			commodity = arg1_17,
-			icon = var13_17.icon,
-			name = var13_17.name,
+			icon = var14_17.icon,
+			name = var14_17.name,
 			tipExtra = i18n("charge_title_getitem"),
-			extraItems = var11_17,
+			extraItems = var12_17,
 			price = arg1_17:getConfig("resource_num"),
 			tagType = arg1_17:getConfig("tag"),
 			onYes = function()
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
-					content = i18n("charge_scene_buy_confirm", arg1_17:getConfig("resource_num"), var13_17.name),
+					content = i18n("charge_scene_buy_confirm", arg1_17:getConfig("resource_num"), var14_17.name),
 					onYes = function()
 						arg0_17:emit(NewShopMainMediator.BUY_ITEM, arg1_17.id, 1)
 					end
@@ -247,7 +254,7 @@ function var0_0.confirm(arg0_17, arg1_17)
 			end
 		}
 
-		arg0_17:emit(NewShopMainMediator.OPEN_CHARGE_ITEM_PANEL, var15_17)
+		arg0_17:emit(NewShopMainMediator.OPEN_CHARGE_ITEM_PANEL, var16_17)
 	end
 end
 
@@ -288,291 +295,179 @@ function var0_0.initToggleList(arg0_22)
 	end)
 end
 
-function var0_0.updateGiftGoodsVOList(arg0_25)
-	arg0_25.giftGoodsVOList = {}
+function var0_0.sortGiftGoodsVOList(arg0_25)
+	local var0_25
+	local var1_25
+
+	arg0_25.giftGoodsVOListForShow, var1_25 = getProxy(ShopsProxy):GetAllShowGiftPackages(arg0_25.ShowPickUp)
 	arg0_25.packageSortList = {
 		0
 	}
 
-	local var0_25 = RefluxShopView.getAllRefluxPackID()
-	local var1_25 = pg.pay_data_display
+	local var2_25 = {
+		[0] = true
+	}
 
-	for iter0_25, iter1_25 in pairs(var1_25.all) do
-		if not table.contains(var0_25, iter1_25) then
-			local var2_25 = var1_25[iter1_25]
-			local var3_25 = var2_25.extra_service
+	for iter0_25, iter1_25 in ipairs(var1_25) do
+		local var3_25, var4_25 = pg.TimeMgr.GetInstance():inTime(iter1_25:getConfig("time"))
 
-			if not (var2_25.akashi_pick == 1) and (var3_25 == Goods.ITEM_BOX or var3_25 == Goods.PASS_ITEM) then
-				local var4_25 = Goods.Create({
-					shop_id = iter1_25
-				}, Goods.TYPE_CHARGE)
-
-				if arg0_25:filterLimitTypeGoods(var4_25) then
-					local var5_25 = var2_25.package_sort_id
-
-					if not table.contains(arg0_25.packageSortList, var5_25) then
-						table.insert(arg0_25.packageSortList, var5_25)
-					end
-
-					table.insert(arg0_25.giftGoodsVOList, var4_25)
-				end
-			end
+		if var4_25 then
+			arg0_25:addUpdateTimer(var4_25)
 		end
 	end
 
-	for iter2_25, iter3_25 in pairs(pg.shop_template.get_id_list_by_genre.gift_package) do
-		local var6_25 = pg.shop_template[iter3_25]
+	for iter2_25, iter3_25 in ipairs(arg0_25.giftGoodsVOListForShow) do
+		if not iter3_25:isChargeType() then
+			local var5_25, var6_25 = pg.TimeMgr.GetInstance():inTime(iter3_25:getConfig("time"))
 
-		if not (var6_25.akashi_pick == 1) and not table.contains(var0_25, iter3_25) then
-			local var7_25 = Goods.Create({
-				shop_id = iter3_25
-			}, Goods.TYPE_GIFT_PACKAGE)
-			local var8_25 = var6_25.package_sort_id
-
-			if not table.contains(arg0_25.packageSortList, var8_25) then
-				table.insert(arg0_25.packageSortList, var8_25)
+			if var6_25 then
+				arg0_25:addUpdateTimer(var6_25)
 			end
+		end
 
-			table.insert(arg0_25.giftGoodsVOList, var7_25)
+		local var7_25 = iter3_25:getConfig("package_sort_id")
+
+		if not var2_25[var7_25] then
+			var2_25[var7_25] = true
+
+			table.insert(arg0_25.packageSortList, var7_25)
 		end
 	end
 
-	table.sort(arg0_25.packageSortList, function(arg0_26, arg1_26)
-		return arg0_26 < arg1_26
-	end)
-end
+	table.sort(arg0_25.packageSortList)
 
-function var0_0.sortGiftGoodsVOList(arg0_27)
-	arg0_27.giftGoodsVOListForShow = {}
+	local function var8_25(arg0_26)
+		local var0_26 = arg0_26:getConfig("time")
+		local var1_26 = 0
 
-	for iter0_27, iter1_27 in ipairs(arg0_27.giftGoodsVOList) do
-		if iter1_27:isChargeType() then
-			local var0_27 = ChargeConst.getBuyCount(arg0_27.chargedList, iter1_27.id)
-
-			iter1_27:updateBuyCount(var0_27)
-
-			if iter1_27:canPurchase() and iter1_27:inTime() then
-				table.insert(arg0_27.giftGoodsVOListForShow, iter1_27)
-			end
-		elseif not iter1_27:isLevelLimit(arg0_27.player.level, true) then
-			local var1_27 = ChargeConst.getBuyCount(arg0_27.normalList, iter1_27.id)
-
-			iter1_27:updateBuyCount(var1_27)
-
-			local var2_27 = iter1_27:getConfig("group") or 0
-			local var3_27 = false
-
-			if var2_27 > 0 then
-				local var4_27 = iter1_27:getConfig("group_limit")
-				local var5_27 = ChargeConst.getGroupLimit(arg0_27.normalGroupList, var2_27)
-
-				iter1_27:updateGroupCount(var5_27)
-
-				var3_27 = var4_27 > 0 and var4_27 <= var5_27
-			end
-
-			local var6_27, var7_27 = pg.TimeMgr.GetInstance():inTime(iter1_27:getConfig("time"))
-
-			if var7_27 then
-				arg0_27:addUpdateTimer(var7_27)
-			end
-
-			if var6_27 and iter1_27:canPurchase() and not var3_27 then
-				table.insert(arg0_27.giftGoodsVOListForShow, iter1_27)
-			end
-		end
-	end
-
-	local function var8_27(arg0_28)
-		local var0_28 = arg0_28:getConfig("time")
-		local var1_28 = 0
-
-		if type(var0_28) == "string" then
-			var1_28 = var1_28 + 999999999999
-		elseif type(var0_28) == "table" then
-			var1_28 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var0_28[2]) - pg.TimeMgr.GetInstance():GetServerTime()
-			var1_28 = var1_28 > 0 and var1_28 or 999999999999
+		if type(var0_26) == "string" then
+			var1_26 = var1_26 + 999999999999
+		elseif type(var0_26) == "table" then
+			var1_26 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var0_26[2]) - pg.TimeMgr.GetInstance():GetServerTime()
+			var1_26 = var1_26 > 0 and var1_26 or 999999999999
 		else
-			var1_28 = var1_28 + 999999999999
+			var1_26 = var1_26 + 999999999999
 		end
 
-		return var1_28
+		return var1_26
 	end
 
-	local var9_27 = {}
-	local var10_27 = getProxy(ActivityProxy)
+	local var9_25 = {}
+	local var10_25 = getProxy(ActivityProxy)
 
-	for iter2_27, iter3_27 in ipairs(var10_27:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_GIFT_UP)) do
-		if var10_27:IsActivityNotEnd(iter3_27.id) then
-			underscore(iter3_27:getConfig("config_client").gifts):chain():flatten():map(function(arg0_29)
-				var9_27[arg0_29] = true
+	for iter4_25, iter5_25 in ipairs(var10_25:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_GIFT_UP)) do
+		if var10_25:IsActivityNotEnd(iter5_25.id) then
+			underscore(iter5_25:getConfig("config_client").gifts):chain():flatten():map(function(arg0_27)
+				var9_25[arg0_27] = true
 			end)
 		end
 	end
 
-	table.sort(arg0_27.giftGoodsVOListForShow, CompareFuncs({
+	table.sort(arg0_25.giftGoodsVOListForShow, CompareFuncs({
+		function(arg0_28)
+			return var9_25[arg0_28.id] and 0 or 1
+		end,
+		function(arg0_29)
+			return (arg0_29:getConfig("type_order") - 1) % 1000
+		end,
 		function(arg0_30)
-			return var9_27[arg0_30.id] and 0 or 1
+			return var8_25(arg0_30)
 		end,
 		function(arg0_31)
-			return (arg0_31:getConfig("type_order") - 1) % 1000
+			return -arg0_31:getConfig("tag")
 		end,
 		function(arg0_32)
-			return var8_27(arg0_32)
+			return arg0_32:getConfig("order") or 999
 		end,
 		function(arg0_33)
-			return -arg0_33:getConfig("tag")
-		end,
-		function(arg0_34)
-			return arg0_34:getConfig("order") or 999
-		end,
-		function(arg0_35)
-			return arg0_35.id
+			return arg0_33.id
 		end
 	}))
 end
 
-function var0_0.getFilterList(arg0_36)
-	if arg0_36.selectedPackageType == nil or arg0_36.selectedPackageType == 0 then
-		return arg0_36.giftGoodsVOListForShow
+function var0_0.getFilterList(arg0_34)
+	if arg0_34.selectedPackageType == nil or arg0_34.selectedPackageType == 0 then
+		return arg0_34.giftGoodsVOListForShow
 	end
 
-	return arg0_36:getFilterListByType(arg0_36.selectedPackageType)
+	return arg0_34:getFilterListByType(arg0_34.selectedPackageType)
 end
 
-function var0_0.getFilterListByType(arg0_37, arg1_37)
-	local var0_37 = {}
+function var0_0.getFilterListByType(arg0_35, arg1_35)
+	local var0_35 = {}
 
-	for iter0_37, iter1_37 in ipairs(arg0_37.giftGoodsVOListForShow) do
-		if iter1_37:getConfig("package_sort_id") == arg1_37 then
-			table.insert(var0_37, iter1_37)
+	for iter0_35, iter1_35 in ipairs(arg0_35.giftGoodsVOListForShow) do
+		if iter1_35:getConfig("package_sort_id") == arg1_35 then
+			table.insert(var0_35, iter1_35)
 		end
 	end
 
-	return var0_37
+	return var0_35
 end
 
-function var0_0.updateGoodsData(arg0_38)
-	arg0_38.firstChargeIds = arg0_38.contextData.firstChargeIds
-	arg0_38.chargedList = arg0_38.contextData.chargedList
-	arg0_38.normalList = arg0_38.contextData.normalList
-	arg0_38.normalGroupList = arg0_38.contextData.normalGroupList
+function var0_0.updateGoodsData(arg0_36)
+	arg0_36.firstChargeIds = arg0_36.contextData.firstChargeIds
+	arg0_36.chargedList = arg0_36.contextData.chargedList
 end
 
-function var0_0.setGoodData(arg0_39, arg1_39, arg2_39, arg3_39, arg4_39)
-	arg0_39.firstChargeIds = arg1_39
-	arg0_39.chargedList = arg2_39
-	arg0_39.normalList = arg3_39
-	arg0_39.normalGroupList = arg4_39
+function var0_0.setGoodData(arg0_37, arg1_37, arg2_37, arg3_37, arg4_37)
+	arg0_37.firstChargeIds = arg1_37
+	arg0_37.chargedList = arg2_37
 end
 
-function var0_0.updateData(arg0_40)
-	arg0_40.player = getProxy(PlayerProxy):getData()
+function var0_0.updateData(arg0_38)
+	arg0_38.player = getProxy(PlayerProxy):getData()
 
-	arg0_40:updateGiftGoodsVOList()
-	arg0_40:sortGiftGoodsVOList()
+	arg0_38:sortGiftGoodsVOList()
 end
 
-function var0_0.addUpdateTimer(arg0_41, arg1_41)
-	local var0_41 = pg.TimeMgr.GetInstance()
-	local var1_41 = var0_41:Table2ServerTime(arg1_41)
+function var0_0.addUpdateTimer(arg0_39, arg1_39)
+	local var0_39 = pg.TimeMgr.GetInstance()
+	local var1_39 = var0_39:Table2ServerTime(arg1_39)
 
-	if arg0_41.updateTime and var1_41 > var0_41:Table2ServerTime(arg0_41.updateTime) then
+	if arg0_39.updateTime and var1_39 > var0_39:Table2ServerTime(arg0_39.updateTime) then
 		return
 	end
 
-	arg0_41.updateTime = arg1_41
+	arg0_39.updateTime = arg1_39
 
-	arg0_41:removeUpdateTimer()
+	arg0_39:removeUpdateTimer()
 
-	arg0_41.updateTimer = Timer.New(function()
-		if var0_41:GetServerTime() > var1_41 then
-			arg0_41:removeUpdateTimer()
-			arg0_41:reUpdateAll()
+	arg0_39.updateTimer = Timer.New(function()
+		if var0_39:GetServerTime() > var1_39 then
+			arg0_39:removeUpdateTimer()
+			arg0_39:reUpdateAll()
 		end
 	end, 1, -1)
 
-	arg0_41.updateTimer:Start()
-	arg0_41.updateTimer.func()
+	arg0_39.updateTimer:Start()
+	arg0_39.updateTimer.func()
 end
 
-function var0_0.removeUpdateTimer(arg0_43)
-	if arg0_43.updateTimer then
-		arg0_43.updateTimer:Stop()
+function var0_0.removeUpdateTimer(arg0_41)
+	if arg0_41.updateTimer then
+		arg0_41.updateTimer:Stop()
 
-		arg0_43.updateTimer = nil
+		arg0_41.updateTimer = nil
 	end
 end
 
-function var0_0.IsSupplyShop(arg0_44)
+function var0_0.IsSupplyShop(arg0_42)
 	return false
 end
 
-function var0_0.reUpdateAll(arg0_45)
-	arg0_45:updateData()
-	arg0_45:updateToggleList()
-	arg0_45:updateScrollRect()
+function var0_0.reUpdateAll(arg0_43)
+	arg0_43:updateData()
+	arg0_43:updateToggleList()
+	arg0_43:updateScrollRect()
 
-	if not table.contains(arg0_45.packageSortList, arg0_45.selectedPackageType) then
-		triggerButton(arg0_45._tf:Find("toggleGroup"):GetChild(0))
+	if not table.contains(arg0_43.packageSortList, arg0_43.selectedPackageType) then
+		triggerButton(arg0_43._tf:Find("toggleGroup"):GetChild(0))
 	end
 end
 
-function var0_0.ShowPanel(arg0_46, arg1_46)
-	setActive(arg0_46._go, arg1_46)
-end
-
-function var0_0.filterLimitTypeGoods(arg0_47, arg1_47)
-	local var0_47 = arg1_47:getConfig("limit_type")
-
-	return switch(var0_47, {
-		[3] = function()
-			if arg1_47:getConfig("limit_arg") ~= 0 or arg1_47:isLevelLimit(arg0_47.player.level, true) then
-				return false
-			end
-
-			local var0_48
-			local var1_48
-			local var2_48
-
-			for iter0_48, iter1_48 in ipairs(arg1_47:getSameLimitGroupTecGoods()) do
-				if iter1_48:getConfig("limit_arg") == 1 then
-					var1_48 = iter1_48
-				elseif iter1_48:getConfig("limit_arg") == 2 then
-					var0_48 = iter1_48
-				elseif iter1_48:getConfig("limit_arg") == 3 then
-					var2_48 = iter1_48
-				end
-			end
-
-			local var3_48 = ChargeConst.getBuyCount(arg0_47.chargedList, var0_48.id)
-			local var4_48 = ChargeConst.getBuyCount(arg0_47.chargedList, var1_48.id)
-			local var5_48 = ChargeConst.getBuyCount(arg0_47.chargedList, var2_48.id)
-
-			if var4_48 > 0 then
-				return false
-			elseif var3_48 > 0 and var5_48 > 0 then
-				return false
-			else
-				return true
-			end
-		end,
-		[5] = function()
-			if arg1_47:getConfig("limit_arg") ~= 0 or arg1_47:isLevelLimit(arg0_47.player.level, true) then
-				return false
-			end
-
-			for iter0_49, iter1_49 in ipairs(arg1_47:getSameLimitGroupTecGoods()) do
-				if iter1_49:getConfig("limit_arg") ~= 0 and ChargeConst.getBuyCount(arg0_47.chargedList, iter1_49.id) > 0 then
-					return false
-				end
-			end
-
-			return true
-		end
-	}, function()
-		return true
-	end)
+function var0_0.ShowPanel(arg0_44, arg1_44)
+	setActive(arg0_44._go, arg1_44)
 end
 
 return var0_0

@@ -1056,7 +1056,7 @@ function var0_0.getNotificationMsg(arg0_101)
 	local var0_101 = arg0_101:getConfig("type")
 	local var1_101 = ActivityProxy.ACTIVITY_SHOW_AWARDS
 
-	if var0_101 == ActivityConst.ACTIVITY_TYPE_SHOP then
+	if var0_101 == ActivityConst.ACTIVITY_TYPE_SHOP or var0_101 == ActivityConst.ACTIVITY_TYPE_SKIN_FAKE_PACKAGE then
 		var1_101 = ActivityProxy.ACTIVITY_SHOP_SHOW_AWARDS
 	elseif var0_101 == ActivityConst.ACTIVITY_TYPE_LOTTERY then
 		var1_101 = ActivityProxy.ACTIVITY_LOTTERY_SHOW_AWARDS
@@ -1236,48 +1236,141 @@ function var0_0.GetCrusingInfo(arg0_112)
 	}
 end
 
-function var0_0.IsActivityReady(arg0_113)
-	return arg0_113 and not arg0_113:isEnd() and arg0_113:readyToAchieve()
+function var0_0.GetHei5Info(arg0_113)
+	local var0_113 = pg.black_friday_battlepass_event_pt[arg0_113.id]
+	local var1_113 = var0_113.pt
+	local var2_113 = {}
+	local var3_113 = {}
+
+	for iter0_113, iter1_113 in ipairs(var0_113.key_point_display) do
+		var3_113[iter1_113] = true
+	end
+
+	for iter2_113, iter3_113 in ipairs(var0_113.target) do
+		table.insert(var2_113, {
+			id = iter2_113,
+			pt = iter3_113,
+			award = pg.black_friday_battlepass_event_award[var0_113.award[iter2_113]].drop_client,
+			award_pay = pg.black_friday_battlepass_event_award[var0_113.award_pay[iter2_113]].drop_client,
+			isImportent = var3_113[iter2_113]
+		})
+	end
+
+	local var4_113 = arg0_113.data1
+	local var5_113 = arg0_113.data2 == 1
+	local var6_113 = {}
+
+	for iter4_113, iter5_113 in ipairs(arg0_113.data1_list) do
+		var6_113[iter5_113] = true
+	end
+
+	local var7_113 = {}
+
+	for iter6_113, iter7_113 in ipairs(arg0_113.data2_list) do
+		var7_113[iter7_113] = true
+	end
+
+	local var8_113 = 0
+
+	for iter8_113, iter9_113 in ipairs(var2_113) do
+		if var4_113 < iter9_113.pt then
+			break
+		else
+			var8_113 = iter8_113
+		end
+	end
+
+	return {
+		ptId = var1_113,
+		awardList = var2_113,
+		pt = var4_113,
+		isPay = var5_113,
+		awardDic = var6_113,
+		awardPayDic = var7_113,
+		phase = var8_113
+	}
 end
 
-function var0_0.GetEndTimeStrByConfig(arg0_114)
-	local var0_114 = arg0_114:getConfig("time")
+function var0_0.GetHei5UnreceiveAward(arg0_114)
+	local var0_114 = pg.black_friday_battlepass_event_pt[arg0_114.id]
+	local var1_114 = {}
+	local var2_114 = {}
 
-	if type(var0_114) == "table" then
-		local var1_114 = var0_114[3]
-		local var2_114 = var1_114[1][2]
-		local var3_114 = var1_114[1][3]
+	for iter0_114, iter1_114 in ipairs(arg0_114.data1_list) do
+		var2_114[iter1_114] = true
+	end
 
-		return var2_114 .. "." .. var3_114
+	for iter2_114, iter3_114 in ipairs(var0_114.target) do
+		if iter3_114 > arg0_114.data1 then
+			break
+		elseif not var2_114[iter3_114] then
+			table.insert(var1_114, Drop.Create(pg.black_friday_battlepass_event_award[var0_114.award[iter2_114]].drop_client))
+		end
+	end
+
+	if arg0_114.data2 ~= 1 then
+		return PlayerConst.MergePassItemDrop(var1_114)
+	end
+
+	local var3_114 = {}
+
+	for iter4_114, iter5_114 in ipairs(arg0_114.data2_list) do
+		var3_114[iter5_114] = true
+	end
+
+	for iter6_114, iter7_114 in ipairs(var0_114.target) do
+		if iter7_114 > arg0_114.data1 then
+			break
+		elseif not var3_114[iter7_114] then
+			table.insert(var1_114, Drop.Create(pg.black_friday_battlepass_event_award[var0_114.award_pay[iter6_114]].drop_client))
+		end
+	end
+
+	return PlayerConst.MergePassItemDrop(var1_114)
+end
+
+function var0_0.IsActivityReady(arg0_115)
+	return arg0_115 and not arg0_115:isEnd() and arg0_115:readyToAchieve()
+end
+
+function var0_0.GetEndTimeStrByConfig(arg0_116)
+	local var0_116 = arg0_116:getConfig("time")
+
+	if type(var0_116) == "table" then
+		local var1_116 = var0_116[3]
+		local var2_116 = var1_116[1][2]
+		local var3_116 = var1_116[1][3]
+
+		return var2_116 .. "." .. var3_116
 	else
 		return ""
 	end
 end
 
-function var0_0.NeedLoginRedPoint(arg0_115)
-	return PlayerPrefs.GetString(arg0_115:GetLoginRedPointKey(), "") ~= arg0_115:GetLoginRedPointValue()
+function var0_0.NeedLoginRedPoint(arg0_117)
+	return PlayerPrefs.GetString(arg0_117:GetLoginRedPointKey(), "") ~= arg0_117:GetLoginRedPointValue()
 end
 
-function var0_0.SetLoginRedPoint(arg0_116)
-	PlayerPrefs.SetString(arg0_116:GetLoginRedPointKey(), arg0_116:GetLoginRedPointValue())
+function var0_0.SetLoginRedPoint(arg0_118)
+	PlayerPrefs.SetString(arg0_118:GetLoginRedPointKey(), arg0_118:GetLoginRedPointValue())
 end
 
-function var0_0.GetLoginRedPointValue(arg0_117)
+function var0_0.GetLoginRedPointValue(arg0_119)
 	return pg.TimeMgr.GetInstance():STimeDescC(pg.TimeMgr.GetInstance():GetServerTime(), "%Y/%m/%d")
 end
 
-function var0_0.GetLoginRedPointKey(arg0_118)
-	local var0_118 = arg0_118:GetPlayerID()
+function var0_0.GetLoginRedPointKey(arg0_120)
+	local var0_120 = arg0_120:GetPlayerID()
 
-	return string.format("%s_%s", var0_118, arg0_118.id)
+	return string.format("%s_%s", var0_120, arg0_120.id)
 end
 
-function var0_0.GetPlayerID(arg0_119)
+function var0_0.GetPlayerID(arg0_121)
 	return getProxy(PlayerProxy):getPlayerId()
 end
 
-function var0_0.GetConfigClientSetting(arg0_120, arg1_120)
-	return arg0_120:getConfig("config_client")[arg1_120]
+function var0_0.GetConfigClientSetting(arg0_122, arg1_122)
+	return arg0_122:getConfig("config_client")[arg1_122]
 end
 
 return var0_0

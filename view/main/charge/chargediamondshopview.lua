@@ -227,87 +227,70 @@ function var0_0.sortDiamondGoodsVOList(arg0_17)
 		end
 	end
 
-	table.sort(arg0_17.diamondGoodsVOListForShow, function(arg0_18, arg1_18)
-		local var0_18 = not table.contains(arg0_17.firstChargeIds, arg0_18.id) and arg0_18:firstPayDouble() and 1 or 0
-		local var1_18 = not table.contains(arg0_17.firstChargeIds, arg1_18.id) and arg1_18:firstPayDouble() and 1 or 0
-		local var2_18 = 0
-		local var3_18 = 0
+	table.sort(arg0_17.diamondGoodsVOListForShow, CompareFuncs({
+		function(arg0_18)
+			return arg0_18:isFree() and 0 or 1
+		end,
+		function(arg0_19)
+			if arg0_19:isChargeType() and arg0_19:isMonthCard() then
+				local var0_19 = arg0_17.player:getCardById(VipCard.MONTH)
 
-		if arg0_18:isFree() then
-			return true
-		elseif arg1_18:isFree() then
-			return false
-		end
+				if var0_19 then
+					local var1_19 = var0_19:getLeftDate()
+					local var2_19 = pg.TimeMgr.GetInstance():GetServerTime()
 
-		if arg0_18:isChargeType() and arg0_18:isMonthCard() then
-			local var4_18 = arg0_17.player:getCardById(VipCard.MONTH)
-
-			if var4_18 then
-				local var5_18 = var4_18:getLeftDate()
-				local var6_18 = pg.TimeMgr.GetInstance():GetServerTime()
-
-				var2_18 = math.floor((var5_18 - var6_18) / 86400) > (arg0_18:getConfig("limit_arg") or 0) and 1 or 0
+					if math.floor((var1_19 - var2_19) / 86400) > (arg0_19:getConfig("limit_arg") or 0) then
+						return 1
+					end
+				end
 			end
+
+			return 0
+		end,
+		function(arg0_20)
+			return not table.contains(arg0_17.firstChargeIds, arg0_20.id) and arg0_20:firstPayDouble() and 0 or 1
+		end,
+		function(arg0_21)
+			return arg0_21:getConfig("tag") == 2 and 0 or 1
+		end,
+		function(arg0_22)
+			return arg0_22.id
 		end
-
-		if arg1_18:isChargeType() and arg1_18:isMonthCard() then
-			local var7_18 = arg0_17.player:getCardById(VipCard.MONTH)
-
-			if var7_18 then
-				local var8_18 = var7_18:getLeftDate()
-				local var9_18 = pg.TimeMgr.GetInstance():GetServerTime()
-
-				var3_18 = math.floor((var8_18 - var9_18) / 86400) > (arg1_18:getConfig("limit_arg") or 0) and 1 or 0
-			end
-		end
-
-		if var2_18 ~= var3_18 then
-			return var2_18 < var3_18
-		end
-
-		local var10_18 = arg0_18:getConfig("tag") == 2 and 1 or 0
-		local var11_18 = arg1_18:getConfig("tag") == 2 and 1 or 0
-
-		if var0_18 == var1_18 and var10_18 == var11_18 then
-			return arg0_18.id < arg1_18.id
-		else
-			return var1_18 < var0_18 or var0_18 == var1_18 and var11_18 < var10_18
-		end
-	end)
+	}))
 end
 
-function var0_0.updateGoodsData(arg0_19)
-	arg0_19.firstChargeIds = arg0_19.contextData.firstChargeIds
-	arg0_19.chargedList = arg0_19.contextData.chargedList
-	arg0_19.normalList = arg0_19.contextData.normalList
-	arg0_19.normalGroupList = arg0_19.contextData.normalGroupList
+function var0_0.updateGoodsData(arg0_23)
+	arg0_23.firstChargeIds = arg0_23.contextData.firstChargeIds
+	arg0_23.chargedList = arg0_23.contextData.chargedList
+	arg0_23.normalList = arg0_23.contextData.normalList
+	arg0_23.normalGroupList = arg0_23.contextData.normalGroupList
 end
 
-function var0_0.setGoodData(arg0_20, arg1_20, arg2_20, arg3_20, arg4_20)
-	arg0_20.firstChargeIds = arg1_20
-	arg0_20.chargedList = arg2_20
-	arg0_20.normalList = arg3_20
-	arg0_20.normalGroupList = arg4_20
+function var0_0.setGoodData(arg0_24, arg1_24, arg2_24, arg3_24, arg4_24)
+	arg0_24.firstChargeIds = arg1_24
+	arg0_24.chargedList = arg2_24
+	arg0_24.normalList = arg3_24
+	arg0_24.normalGroupList = arg4_24
 end
 
-function var0_0.updateData(arg0_21)
-	arg0_21.player = getProxy(PlayerProxy):getData()
+function var0_0.updateData(arg0_25)
+	arg0_25.player = getProxy(PlayerProxy):getData()
 
-	arg0_21:updateDiamondGoodsVOList()
-	arg0_21:sortDiamondGoodsVOList()
+	arg0_25:updateDiamondGoodsVOList()
+	arg0_25:sortDiamondGoodsVOList()
 end
 
-function var0_0.IsSupplyShop(arg0_22)
+function var0_0.IsSupplyShop(arg0_26)
 	return false
 end
 
-function var0_0.reUpdateAll(arg0_23)
-	arg0_23:updateData()
-	arg0_23:updateView()
+function var0_0.reUpdateAll(arg0_27)
+	arg0_27:updateData()
+	arg0_27:updateView()
 end
 
-function var0_0.ShowPanel(arg0_24, arg1_24)
-	setActive(arg0_24._go, arg1_24)
+function var0_0.ShowPanel(arg0_28, arg1_28)
+	setActive(arg0_28._go, arg1_28)
 end
 
 return var0_0

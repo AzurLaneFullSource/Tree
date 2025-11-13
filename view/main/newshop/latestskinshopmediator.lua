@@ -16,6 +16,7 @@ var0_0.CHARGE = "LatestSkinShopMediator:CHARGE"
 var0_0.OPEN_CHARGE_ITEM_PANEL = "LatestSkinShopMediator:OPEN_CHARGE_ITEM_PANEL"
 var0_0.OPEN_CHARGE_ITEM_BOX = "LatestSkinShopMediator:OPEN_CHARGE_ITEM_BOX"
 var0_0.BUY_ITEM = "LatestSkinShopMediator:BUY_ITEM"
+var0_0.OPEN_GIFT_ACT_LAYER = "LatestSkinShopMediator.OPEN_GIFT_ACT_LAYER"
 
 function var0_0.register(arg0_1)
 	arg0_1:bind(var0_0.ON_RECORD_ANIM_PREVIEW_BTN, function(arg0_2, arg1_2)
@@ -130,72 +131,86 @@ function var0_0.register(arg0_1)
 			count = arg2_17
 		})
 	end)
+	arg0_1:bind(var0_0.OPEN_GIFT_ACT_LAYER, function(arg0_18, arg1_18)
+		arg0_1:addSubLayers(Context.New({
+			mediator = ChargeActGiftMediator,
+			viewComponent = ChargeActGiftLayer,
+			data = {
+				actId = arg1_18
+			}
+		}))
+	end)
 end
 
-function var0_0.listNotificationInterests(arg0_18)
+function var0_0.listNotificationInterests(arg0_19)
 	return {
 		NewShopMainScene.CLOSE_ALL_LAYER,
 		PlayerProxy.UPDATED,
 		GAME.SKIN_SHOPPIGN_DONE,
 		GAME.SKIN_COUPON_SHOPPING_DONE,
-		GAME.BUY_FURNITURE_DONE
+		GAME.BUY_FURNITURE_DONE,
+		NewShopMainMediator.NOTI_UPDATE_CURRENT
 	}
 end
 
-function var0_0.handleNotification(arg0_19, arg1_19)
-	local var0_19 = arg1_19:getName()
-	local var1_19 = arg1_19:getBody()
-	local var2_19 = arg1_19:getType()
+function var0_0.handleNotification(arg0_20, arg1_20)
+	local var0_20 = arg1_20:getName()
+	local var1_20 = arg1_20:getBody()
+	local var2_20 = arg1_20:getType()
 
-	if var0_19 == NewShopMainScene.CLOSE_ALL_LAYER then
-		arg0_19.viewComponent:closeView()
-	elseif var0_19 == PlayerProxy.UPDATED then
-		arg0_19.viewComponent:SetResource()
-	elseif var0_19 == GAME.SKIN_SHOPPIGN_DONE or var0_19 == GAME.SKIN_COUPON_SHOPPING_DONE then
-		local var3_19 = pg.shop_template[var1_19.id]
+	if var0_20 == NewShopMainScene.CLOSE_ALL_LAYER then
+		arg0_20.viewComponent:closeView()
+	elseif var0_20 == PlayerProxy.UPDATED then
+		arg0_20.viewComponent:SetResource()
+	elseif var0_20 == GAME.SKIN_SHOPPIGN_DONE or var0_20 == GAME.SKIN_COUPON_SHOPPING_DONE then
+		local var3_20 = pg.shop_template[var1_20.id]
 
-		if var3_19 and (var3_19.genre == ShopArgs.SkinShop or var3_19.genre == ShopArgs.SkinShopTimeLimit) then
-			local var4_19 = var3_19.effect_args[1]
+		if var3_20 and (var3_20.genre == ShopArgs.SkinShop or var3_20.genre == ShopArgs.SkinShopTimeLimit) then
+			local var4_20 = var3_20.effect_args[1]
 
-			if pg.ship_skin_template[var4_19].skin_type == ShipSkin.SKIN_TYPE_TB then
-				arg0_19:addSubLayers(Context.New({
+			if pg.ship_skin_template[var4_20].skin_type == ShipSkin.SKIN_TYPE_TB then
+				arg0_20:addSubLayers(Context.New({
 					mediator = NewSkinTBMediator,
 					viewComponent = NewSkinTBLayer,
 					data = {
-						skinId = var3_19.effect_args[1],
-						timeLimit = var3_19.genre == ShopArgs.SkinShopTimeLimit
+						skinId = var3_20.effect_args[1],
+						timeLimit = var3_20.genre == ShopArgs.SkinShopTimeLimit
 					}
 				}))
 			else
-				local function var5_19()
-					arg0_19:addSubLayers(Context.New({
+				local function var5_20()
+					arg0_20:addSubLayers(Context.New({
 						mediator = NewSkinMediator,
 						viewComponent = NewSkinLayer,
 						data = {
-							skinId = var3_19.effect_args[1],
-							timeLimit = var3_19.genre == ShopArgs.SkinShopTimeLimit
+							skinId = var3_20.effect_args[1],
+							timeLimit = var3_20.genre == ShopArgs.SkinShopTimeLimit
 						}
 					}))
 				end
 
-				if PaintingShowScene.GetSkinShowAble(var4_19) then
-					arg0_19:addSubLayers(Context.New({
+				if PaintingShowScene.GetSkinShowAble(var4_20) then
+					arg0_20:addSubLayers(Context.New({
 						mediator = PaintingShowMediator,
 						viewComponent = PaintingShowScene,
 						data = {
-							skinId = var4_19,
-							callback = var5_19
+							skinId = var4_20,
+							callback = var5_20
 						}
 					}))
 				else
-					var5_19()
+					var5_20()
 				end
 			end
 
-			arg0_19.viewComponent:OnShopping(var1_19.id)
+			arg0_20.viewComponent:OnShopping(var1_20.id)
+			pg.EasyRedDotMgr.GetInstance():TriggerMarks("specialShop")
 		end
-	elseif var0_19 == GAME.BUY_FURNITURE_DONE then
-		arg0_19.viewComponent:OnFurnitureUpdate(var2_19[1])
+	elseif var0_20 == GAME.BUY_FURNITURE_DONE then
+		arg0_20.viewComponent:OnFurnitureUpdate(var2_20[1])
+	elseif var0_20 == NewShopMainMediator.NOTI_UPDATE_CURRENT then
+		arg0_20.viewComponent:GetAllCommodities()
+		arg0_20.viewComponent:Refresh(true)
 	end
 end
 

@@ -175,6 +175,10 @@ function var0_0.getTalkingList(arg0_22, arg1_22)
 end
 
 function var0_0.getForceEnterTalking(arg0_24, arg1_24)
+	if DORM_LOCK_GUIDE then
+		return {}
+	end
+
 	return arg0_24:getTalkingList({
 		unlock = true,
 		unplay = true,

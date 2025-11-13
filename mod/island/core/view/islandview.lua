@@ -210,6 +210,7 @@ function var0_0.AddListeners(arg0_18)
 	arg0_18:AddListener(ISLAND_EVT.WORLD_OBJECT_START_INTERACTION, arg0_18.OnWorldObjectStartInteraction)
 	arg0_18:AddListener(ISLAND_EVT.WORLD_OBJECT_END_INTERACTION, arg0_18.OnWorldObjectEndInteraction)
 	arg0_18:AddListener(ISLAND_EVT.WORLD_OBJECT_INIT_STATUS, arg0_18.OnWorldObjectInitStatus)
+	arg0_18:AddListener(ISLAND_EVT.INIT_INTERACTION_OP_VIEW, arg0_18.InitInteractionOpView)
 	arg0_18:AddListener(ISLAND_EVT.REFRESH_INTERACTION, arg0_18.OnRefreshInteractionBtn)
 	arg0_18:AddListener(ISLAND_EVT.SHOW_UNIT_HUD_OP, arg0_18.OnShowUnitHudAndOpBtn)
 	arg0_18:AddListener(ISLAND_EVT.HIDE_UNIT_HUD_OP, arg0_18.OnHideUnitHudAndOpBtn)
@@ -308,6 +309,7 @@ function var0_0.RemoveListeners(arg0_19)
 	arg0_19:RemoveListener(ISLAND_EVT.WORLD_OBJECT_START_INTERACTION, arg0_19.OnWorldObjectStartInteraction)
 	arg0_19:RemoveListener(ISLAND_EVT.WORLD_OBJECT_END_INTERACTION, arg0_19.OnWorldObjectEndInteraction)
 	arg0_19:RemoveListener(ISLAND_EVT.WORLD_OBJECT_INIT_STATUS, arg0_19.OnWorldObjectInitStatus)
+	arg0_19:RemoveListener(ISLAND_EVT.INIT_INTERACTION_OP_VIEW, arg0_19.InitInteractionOpView)
 	arg0_19:RemoveListener(ISLAND_EVT.REFRESH_INTERACTION, arg0_19.OnRefreshInteractionBtn)
 	arg0_19:RemoveListener(ISLAND_EVT.SHOW_UNIT_HUD_OP, arg0_19.OnShowUnitHudAndOpBtn)
 	arg0_19:RemoveListener(ISLAND_EVT.HIDE_UNIT_HUD_OP, arg0_19.OnHideUnitHudAndOpBtn)
@@ -1382,230 +1384,234 @@ function var0_0.OnWorldObjectInitStatus(arg0_121, arg1_121, arg2_121)
 	var0_121:InitStatus(arg2_121, var1_121, var2_121)
 end
 
-function var0_0.OnPlayerAreaChange(arg0_122)
-	arg0_122.detectionSystem:SetAreaDetection()
+function var0_0.InitInteractionOpView(arg0_122)
+	arg0_122:GetSubView(IslandOpView):EndInteraction()
 end
 
-function var0_0.OnChangeDress(arg0_123, arg1_123, arg2_123)
-	arg0_123.player:OnChangeDress(arg1_123, arg2_123)
+function var0_0.OnPlayerAreaChange(arg0_123)
+	arg0_123.detectionSystem:SetAreaDetection()
 end
 
-function var0_0.OnCharacterChangeDress(arg0_124, arg1_124, arg2_124, arg3_124, arg4_124)
-	local var0_124 = arg0_124:GetUnitModuleWithType(IslandConst.UNIT_LIST_DELEGATION, arg1_124)
-
-	if var0_124 then
-		var0_124:OnCharacterChangeDress(arg2_124, arg3_124, arg4_124)
-	end
-
-	local var1_124 = arg0_124:GetUnitListByKey(IslandConst.UNIT_LIST_FOLLOW)
-
-	for iter0_124, iter1_124 in ipairs(var1_124) do
-		if iter1_124:GetDataVO():IsSameShip(arg1_124) then
-			iter1_124:OnCharacterChangeDress(arg2_124, arg3_124, arg4_124)
-		end
-	end
-
-	local var2_124 = arg0_124:GetUnitListByKey(IslandConst.UNIT_LIST_STROLL)
-
-	for iter2_124, iter3_124 in ipairs(var2_124) do
-		if iter3_124:GetDataVO():IsSameShip(arg1_124) then
-			iter3_124:OnCharacterChangeDress(arg2_124, arg3_124, arg4_124)
-		end
-	end
+function var0_0.OnChangeDress(arg0_124, arg1_124, arg2_124)
+	arg0_124.player:OnChangeDress(arg1_124, arg2_124)
 end
 
-function var0_0.OnStartDelegation(arg0_125, arg1_125, arg2_125)
-	local var0_125 = arg0_125:GetSystemModule(arg1_125.build_id)
+function var0_0.OnCharacterChangeDress(arg0_125, arg1_125, arg2_125, arg3_125, arg4_125)
+	local var0_125 = arg0_125:GetUnitModuleWithType(IslandConst.UNIT_LIST_DELEGATION, arg1_125)
 
 	if var0_125 then
-		var0_125:StartDelegation(arg1_125)
+		var0_125:OnCharacterChangeDress(arg2_125, arg3_125, arg4_125)
+	end
+
+	local var1_125 = arg0_125:GetUnitListByKey(IslandConst.UNIT_LIST_FOLLOW)
+
+	for iter0_125, iter1_125 in ipairs(var1_125) do
+		if iter1_125:GetDataVO():IsSameShip(arg1_125) then
+			iter1_125:OnCharacterChangeDress(arg2_125, arg3_125, arg4_125)
+		end
+	end
+
+	local var2_125 = arg0_125:GetUnitListByKey(IslandConst.UNIT_LIST_STROLL)
+
+	for iter2_125, iter3_125 in ipairs(var2_125) do
+		if iter3_125:GetDataVO():IsSameShip(arg1_125) then
+			iter3_125:OnCharacterChangeDress(arg2_125, arg3_125, arg4_125)
+		end
 	end
 end
 
-function var0_0.OnEndDelegation(arg0_126, arg1_126, arg2_126)
+function var0_0.OnStartDelegation(arg0_126, arg1_126, arg2_126)
 	local var0_126 = arg0_126:GetSystemModule(arg1_126.build_id)
 
 	if var0_126 then
-		var0_126:EndDelegation(arg1_126)
+		var0_126:StartDelegation(arg1_126)
 	end
 end
 
-function var0_0.GetPlayerPosition(arg0_127)
-	return arg0_127.player:GetCurrentPosition()
-end
+function var0_0.OnEndDelegation(arg0_127, arg1_127, arg2_127)
+	local var0_127 = arg0_127:GetSystemModule(arg1_127.build_id)
 
-function var0_0.GetUnitPosition(arg0_128, arg1_128)
-	local var0_128 = arg0_128:GetUnitModule(arg1_128)
-
-	return var0_128 and var0_128._go.transform.position
-end
-
-function var0_0.OnShowUnitHudAndOpBtn(arg0_129, arg1_129)
-	arg0_129.currentHudUnitData = arg1_129
-
-	arg0_129:GetSubView(IslandSlotHudView):ShowHud(arg1_129.id, arg1_129.height)
-	arg0_129:GetSubView(IslandOpView):UpdateOperationButton(arg1_129.operationType, arg1_129.id)
-
-	if arg1_129.isHighLightControl then
-		arg0_129.detectionSystem:HighLightUnitHandle(arg1_129.id, true)
+	if var0_127 then
+		var0_127:EndDelegation(arg1_127)
 	end
 end
 
-function var0_0.OnHideUnitHudAndOpBtn(arg0_130, arg1_130, arg2_130)
-	if not arg0_130.currentHudUnitData then
-		return
-	end
+function var0_0.GetPlayerPosition(arg0_128)
+	return arg0_128.player:GetCurrentPosition()
+end
 
-	if arg0_130.currentHudUnitData.id ~= arg1_130.id or arg0_130.currentHudUnitData.type ~= arg1_130.type then
-		return
-	end
+function var0_0.GetUnitPosition(arg0_129, arg1_129)
+	local var0_129 = arg0_129:GetUnitModule(arg1_129)
 
-	if not arg2_130 then
-		arg0_130.currentHudUnitData = nil
-	end
+	return var0_129 and var0_129._go.transform.position
+end
 
-	arg0_130:GetSubView(IslandSlotHudView):HideUnitHud(arg1_130.id)
-	arg0_130:GetSubView(IslandOpView):UpdateOperationButton(IslandOpView.OperationType.None, arg1_130.id)
+function var0_0.OnShowUnitHudAndOpBtn(arg0_130, arg1_130)
+	arg0_130.currentHudUnitData = arg1_130
+
+	arg0_130:GetSubView(IslandSlotHudView):ShowHud(arg1_130.id, arg1_130.height)
+	arg0_130:GetSubView(IslandOpView):UpdateOperationButton(arg1_130.operationType, arg1_130.id)
 
 	if arg1_130.isHighLightControl then
-		arg0_130.detectionSystem:HighLightUnitHandle(arg1_130.id, false)
+		arg0_130.detectionSystem:HighLightUnitHandle(arg1_130.id, true)
 	end
 end
 
-function var0_0.OnUpdateHud(arg0_131, arg1_131)
+function var0_0.OnHideUnitHudAndOpBtn(arg0_131, arg1_131, arg2_131)
 	if not arg0_131.currentHudUnitData then
 		return
 	end
 
-	if arg1_131 ~= arg0_131.currentHudUnitData.id then
+	if arg0_131.currentHudUnitData.id ~= arg1_131.id or arg0_131.currentHudUnitData.type ~= arg1_131.type then
 		return
 	end
 
-	arg0_131:GetSubView(IslandSlotHudView):UpdateHud(arg0_131.currentHudUnitData.id, arg0_131.currentHudUnitData.height)
-	arg0_131:GetSubView(IslandOpView):UpdateOperationButton(arg0_131.currentHudUnitData.operationType, arg0_131.currentHudUnitData.id)
-end
+	if not arg2_131 then
+		arg0_131.currentHudUnitData = nil
+	end
 
-function var0_0.OnUpdateHandCollectUnit(arg0_132, arg1_132)
-	local var0_132 = arg0_132:GetUnitModuleWithType(IslandConst.UNIT_LIST_OBJ, arg1_132)
+	arg0_131:GetSubView(IslandSlotHudView):HideUnitHud(arg1_131.id)
+	arg0_131:GetSubView(IslandOpView):UpdateOperationButton(IslandOpView.OperationType.None, arg1_131.id)
 
-	if var0_132 then
-		var0_132:UpdateHandCollet()
-		var0_132:ResetHp()
+	if arg1_131.isHighLightControl then
+		arg0_131.detectionSystem:HighLightUnitHandle(arg1_131.id, false)
 	end
 end
 
-function var0_0.OnShowHud(arg0_133, arg1_133)
-	arg0_133:GetSubView(IslandTopHeadHudView):ShowHud(arg1_133)
-	arg0_133:GetSubView(IslandDistanceView):ShowHud(arg1_133.id)
+function var0_0.OnUpdateHud(arg0_132, arg1_132)
+	if not arg0_132.currentHudUnitData then
+		return
+	end
+
+	if arg1_132 ~= arg0_132.currentHudUnitData.id then
+		return
+	end
+
+	arg0_132:GetSubView(IslandSlotHudView):UpdateHud(arg0_132.currentHudUnitData.id, arg0_132.currentHudUnitData.height)
+	arg0_132:GetSubView(IslandOpView):UpdateOperationButton(arg0_132.currentHudUnitData.operationType, arg0_132.currentHudUnitData.id)
 end
 
-function var0_0.OnRefreshHud(arg0_134, arg1_134)
-	arg0_134:GetSubView(IslandTopHeadHudView):RefreshHud(arg1_134)
-end
+function var0_0.OnUpdateHandCollectUnit(arg0_133, arg1_133)
+	local var0_133 = arg0_133:GetUnitModuleWithType(IslandConst.UNIT_LIST_OBJ, arg1_133)
 
-function var0_0.OnHideHud(arg0_135, arg1_135)
-	arg0_135:GetSubView(IslandTopHeadHudView):HideHud(arg1_135)
-	arg0_135:GetSubView(IslandDistanceView):HideHud(arg1_135.id)
-end
-
-function var0_0.OnDelegateSlotStartPerform(arg0_136, arg1_136)
-	local var0_136 = arg0_136:GetUnitModuleWithType(arg1_136.type, arg1_136.id)
-
-	if var0_136 then
-		var0_136:DelegateSlotStartPerform()
+	if var0_133 then
+		var0_133:UpdateHandCollet()
+		var0_133:ResetHp()
 	end
 end
 
-function var0_0.OnRecycleAllSlotEffct(arg0_137)
-	arg0_137.effectMgr:RecycleAllSlotEffct()
+function var0_0.OnShowHud(arg0_134, arg1_134)
+	arg0_134:GetSubView(IslandTopHeadHudView):ShowHud(arg1_134)
+	arg0_134:GetSubView(IslandDistanceView):ShowHud(arg1_134.id)
 end
 
-function var0_0.OnLoadDelegatePreviewRole(arg0_138, arg1_138, arg2_138)
-	arg0_138.effectMgr:LoadDelegatePreviewRole(arg1_138, arg2_138)
+function var0_0.OnRefreshHud(arg0_135, arg1_135)
+	arg0_135:GetSubView(IslandTopHeadHudView):RefreshHud(arg1_135)
 end
 
-function var0_0.OnUnLoadDelegatePreviewRole(arg0_139)
-	arg0_139.effectMgr:UnLoadDelegatePreviewRole()
+function var0_0.OnHideHud(arg0_136, arg1_136)
+	arg0_136:GetSubView(IslandTopHeadHudView):HideHud(arg1_136)
+	arg0_136:GetSubView(IslandDistanceView):HideHud(arg1_136.id)
 end
 
-function var0_0.OnSelectSlotEffectShow(arg0_140, arg1_140, arg2_140, arg3_140, arg4_140)
-	arg0_140.effectMgr:SelectSlotEffectShow(arg1_140, arg2_140, arg3_140, arg4_140)
-end
+function var0_0.OnDelegateSlotStartPerform(arg0_137, arg1_137)
+	local var0_137 = arg0_137:GetUnitModuleWithType(arg1_137.type, arg1_137.id)
 
-function var0_0.OnTakePlantAttack(arg0_141, arg1_141)
-	local var0_141 = arg0_141:GetUnitModuleWithType(arg1_141.type, arg1_141.id)
-
-	if var0_141 then
-		var0_141:TakeAttack()
+	if var0_137 then
+		var0_137:DelegateSlotStartPerform()
 	end
 end
 
-function var0_0.OnStartManage(arg0_142, arg1_142)
-	local var0_142 = arg0_142:GetManageSystemModule(arg1_142.id)
+function var0_0.OnRecycleAllSlotEffct(arg0_138)
+	arg0_138.effectMgr:RecycleAllSlotEffct()
+end
+
+function var0_0.OnLoadDelegatePreviewRole(arg0_139, arg1_139, arg2_139)
+	arg0_139.effectMgr:LoadDelegatePreviewRole(arg1_139, arg2_139)
+end
+
+function var0_0.OnUnLoadDelegatePreviewRole(arg0_140)
+	arg0_140.effectMgr:UnLoadDelegatePreviewRole()
+end
+
+function var0_0.OnSelectSlotEffectShow(arg0_141, arg1_141, arg2_141, arg3_141, arg4_141)
+	arg0_141.effectMgr:SelectSlotEffectShow(arg1_141, arg2_141, arg3_141, arg4_141)
+end
+
+function var0_0.OnTakePlantAttack(arg0_142, arg1_142)
+	local var0_142 = arg0_142:GetUnitModuleWithType(arg1_142.type, arg1_142.id)
 
 	if var0_142 then
-		var0_142:StartManage(arg1_142)
+		var0_142:TakeAttack()
 	end
 end
 
-function var0_0.OnEndManage(arg0_143, arg1_143)
+function var0_0.OnStartManage(arg0_143, arg1_143)
 	local var0_143 = arg0_143:GetManageSystemModule(arg1_143.id)
 
 	if var0_143 then
-		var0_143:EndManage(arg1_143)
+		var0_143:StartManage(arg1_143)
 	end
 end
 
-function var0_0.OnRefreshTaskInfoHud(arg0_144)
-	arg0_144:GetSubView(IslandTopHeadHudView):UpdateAllHud()
+function var0_0.OnEndManage(arg0_144, arg1_144)
+	local var0_144 = arg0_144:GetManageSystemModule(arg1_144.id)
+
+	if var0_144 then
+		var0_144:EndManage(arg1_144)
+	end
 end
 
-function var0_0.OnRefreshWeatherSystem(arg0_145)
-	arg0_145.weatherSystem:Play()
+function var0_0.OnRefreshTaskInfoHud(arg0_145)
+	arg0_145:GetSubView(IslandTopHeadHudView):UpdateAllHud()
 end
 
-function var0_0.OnDispose(arg0_146)
-	arg0_146.detectionSystem:Dispose()
-	arg0_146.effectMgr:Dispose()
-	arg0_146.coupleActionPlayer:Dispose()
-	arg0_146.coupleAction4FollowerPlayer:Dispose()
-	arg0_146.npcActionPlayer:Dispose()
-	arg0_146.weatherSystem:Dispose()
-	arg0_146.coupleNpcWordPlayer:Dispose()
+function var0_0.OnRefreshWeatherSystem(arg0_146)
+	arg0_146.weatherSystem:Play()
+end
 
-	for iter0_146, iter1_146 in ipairs(arg0_146.views) do
-		iter1_146:Dispose()
+function var0_0.OnDispose(arg0_147)
+	arg0_147.detectionSystem:Dispose()
+	arg0_147.effectMgr:Dispose()
+	arg0_147.coupleActionPlayer:Dispose()
+	arg0_147.coupleAction4FollowerPlayer:Dispose()
+	arg0_147.npcActionPlayer:Dispose()
+	arg0_147.weatherSystem:Dispose()
+	arg0_147.coupleNpcWordPlayer:Dispose()
+
+	for iter0_147, iter1_147 in ipairs(arg0_147.views) do
+		iter1_147:Dispose()
 	end
 
-	for iter2_146, iter3_146 in ipairs(arg0_146.pathfinders) do
-		iter3_146:Dispose()
+	for iter2_147, iter3_147 in ipairs(arg0_147.pathfinders) do
+		iter3_147:Dispose()
 	end
 
-	for iter4_146, iter5_146 in ipairs(arg0_146:GetAllUnits()) do
-		iter5_146:Dispose()
+	for iter4_147, iter5_147 in ipairs(arg0_147:GetAllUnits()) do
+		iter5_147:Dispose()
 	end
 
-	for iter6_146, iter7_146 in pairs(arg0_146.unitBuilders) do
-		iter7_146:Dispose()
+	for iter6_147, iter7_147 in pairs(arg0_147.unitBuilders) do
+		iter7_147:Dispose()
 	end
 
-	for iter8_146, iter9_146 in pairs(arg0_146.systemBuilders) do
-		iter9_146:Dispose()
+	for iter8_147, iter9_147 in pairs(arg0_147.systemBuilders) do
+		iter9_147:Dispose()
 	end
 
-	arg0_146.npcActionPlayer = nil
-	arg0_146.coupleActionPlayer = nil
-	arg0_146.coupleAction4FollowerPlayer = nil
-	arg0_146.pathfinders = nil
-	arg0_146.unitBuilders = nil
-	arg0_146.systemBuilders = nil
-	arg0_146.views = nil
-	arg0_146.player = nil
-	arg0_146.isInit = false
-	arg0_146._unitList = nil
-	arg0_146.detectionSystem = nil
-	arg0_146.effectMgr = nil
-	arg0_146.coupleNpcWordPlayer = nil
+	arg0_147.npcActionPlayer = nil
+	arg0_147.coupleActionPlayer = nil
+	arg0_147.coupleAction4FollowerPlayer = nil
+	arg0_147.pathfinders = nil
+	arg0_147.unitBuilders = nil
+	arg0_147.systemBuilders = nil
+	arg0_147.views = nil
+	arg0_147.player = nil
+	arg0_147.isInit = false
+	arg0_147._unitList = nil
+	arg0_147.detectionSystem = nil
+	arg0_147.effectMgr = nil
+	arg0_147.coupleNpcWordPlayer = nil
 end
 
 return var0_0

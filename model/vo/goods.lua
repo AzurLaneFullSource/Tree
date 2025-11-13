@@ -4,6 +4,7 @@ var0_0.TYPE_SHOPSTREET = 1
 var0_0.TYPE_MILITARY = 2
 var0_0.TYPE_CHARGE = 3
 var0_0.TYPE_GIFT_PACKAGE = 4
+var0_0.TYPE_GIFT_PACKAGE_ACT = 5
 var0_0.TYPE_SKIN = 6
 var0_0.TYPE_ACTIVITY = 7
 var0_0.TYPE_ACTIVITY_EXTRA = 8
@@ -41,67 +42,70 @@ local var1_0 = {
 	[var0_0.TYPE_CHARGE] = function(arg0_2, arg1_2)
 		return ChargeCommodity.New(arg0_2, arg1_2)
 	end,
-	[var0_0.TYPE_ACTIVITY] = function(arg0_3, arg1_3)
-		return ActivityCommodity.New(arg0_3, arg1_3)
+	[var0_0.TYPE_GIFT_PACKAGE_ACT] = function(arg0_3, arg1_3)
+		return GiftActCommodity.New(arg0_3, arg1_3)
 	end,
-	[var0_0.TYPE_SHAM_BATTLE] = function(arg0_4, arg1_4)
+	[var0_0.TYPE_ACTIVITY] = function(arg0_4, arg1_4)
 		return ActivityCommodity.New(arg0_4, arg1_4)
 	end,
-	[var0_0.TYPE_FRAGMENT] = function(arg0_5, arg1_5)
+	[var0_0.TYPE_SHAM_BATTLE] = function(arg0_5, arg1_5)
 		return ActivityCommodity.New(arg0_5, arg1_5)
 	end,
-	[var0_0.TYPE_FRAGMENT_NORMAL] = function(arg0_6, arg1_6)
+	[var0_0.TYPE_FRAGMENT] = function(arg0_6, arg1_6)
 		return ActivityCommodity.New(arg0_6, arg1_6)
 	end,
-	[var0_0.TYPE_ESCORT] = function(arg0_7, arg1_7)
+	[var0_0.TYPE_FRAGMENT_NORMAL] = function(arg0_7, arg1_7)
 		return ActivityCommodity.New(arg0_7, arg1_7)
 	end,
-	[var0_0.TYPE_ACTIVITY_EXTRA] = function(arg0_8, arg1_8)
-		return ActivityExtraCommodity.New(arg0_8, arg1_8)
+	[var0_0.TYPE_ESCORT] = function(arg0_8, arg1_8)
+		return ActivityCommodity.New(arg0_8, arg1_8)
 	end,
-	[var0_0.TYPE_MINI_GAME] = function(arg0_9, arg1_9)
-		return MiniGameGoods.New(arg0_9, arg1_9)
+	[var0_0.TYPE_ACTIVITY_EXTRA] = function(arg0_9, arg1_9)
+		return ActivityExtraCommodity.New(arg0_9, arg1_9)
 	end,
-	[var0_0.TYPE_QUOTA] = function(arg0_10, arg1_10)
-		return QuotaCommodity.New(arg0_10, arg1_10)
+	[var0_0.TYPE_MINI_GAME] = function(arg0_10, arg1_10)
+		return MiniGameGoods.New(arg0_10, arg1_10)
 	end,
-	[var0_0.TYPE_ESCORT] = function(arg0_11, arg1_11)
-		return ActivityCommodity.New(arg0_11, arg1_11)
+	[var0_0.TYPE_QUOTA] = function(arg0_11, arg1_11)
+		return QuotaCommodity.New(arg0_11, arg1_11)
 	end,
-	[var0_0.TYPE_WORLD_NSHOP] = function(arg0_12, arg1_12)
-		return WorldNShopCommodity.New(arg0_12, arg1_12)
+	[var0_0.TYPE_ESCORT] = function(arg0_12, arg1_12)
+		return ActivityCommodity.New(arg0_12, arg1_12)
 	end,
-	[var0_0.TYPE_ACTIVITY_SELECTABLE] = function(arg0_13, arg1_13)
-		return ActivitySelectableCommodity.New(arg0_13, arg1_13)
+	[var0_0.TYPE_WORLD_NSHOP] = function(arg0_13, arg1_13)
+		return WorldNShopCommodity.New(arg0_13, arg1_13)
+	end,
+	[var0_0.TYPE_ACTIVITY_SELECTABLE] = function(arg0_14, arg1_14)
+		return ActivitySelectableCommodity.New(arg0_14, arg1_14)
 	end
 }
 
-function var0_0.Create(arg0_14, arg1_14)
-	return switch(arg1_14, var1_0, function(arg0_15, arg1_15)
-		return CommonCommodity.New(arg0_15, arg1_15)
-	end, arg0_14, arg1_14)
+function var0_0.Create(arg0_15, arg1_15)
+	return switch(arg1_15, var1_0, function(arg0_16, arg1_16)
+		return CommonCommodity.New(arg0_16, arg1_16)
+	end, arg0_15, arg1_15)
 end
 
-function var0_0.ExistFurniture(arg0_16)
-	return pg.shop_furniture_relation[arg0_16] ~= nil
+function var0_0.ExistFurniture(arg0_17)
+	return pg.shop_furniture_relation[arg0_17] ~= nil
 end
 
-function var0_0.Id2FurnitureId(arg0_17)
-	return pg.shop_furniture_relation[arg0_17].fur_id
+function var0_0.Id2FurnitureId(arg0_18)
+	return pg.shop_furniture_relation[arg0_18].fur_id
 end
 
-function var0_0.FurnitureId2Id(arg0_18)
-	local var0_18 = pg.shop_furniture_relation.get_id_list_by_fur_id[arg0_18]
+function var0_0.FurnitureId2Id(arg0_19)
+	local var0_19 = pg.shop_furniture_relation.get_id_list_by_fur_id[arg0_19]
 
-	return var0_18 and var0_18[1]
+	return var0_19 and var0_19[1]
 end
 
-function var0_0.GetFurnitureConfig(arg0_19)
-	return pg.shop_furniture_relation[arg0_19]
+function var0_0.GetFurnitureConfig(arg0_20)
+	return pg.shop_furniture_relation[arg0_20]
 end
 
-function var0_0.Id2ShipSkinId(arg0_20)
-	return pg.shop_template[arg0_20].effect_args[1]
+function var0_0.Id2ShipSkinId(arg0_21)
+	return pg.shop_template[arg0_21].effect_args[1]
 end
 
 return var0_0

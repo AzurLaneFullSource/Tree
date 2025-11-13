@@ -60,7 +60,11 @@ function var0_0.update(arg0_2, arg1_2, arg2_2, arg3_2)
 	setActive(arg0_2.tecShipBuyTag, var0_2)
 	setActive(arg0_2.freeTag, arg1_2:isFree())
 	setActive(arg0_2.priceTf, not arg1_2:isFree() and not var0_2)
-	setActive(arg0_2.focusTip, arg1_2:isFree())
+	pg.EasyRedDotMgr.GetInstance():RegisterRedDot(arg0_2.focusTip, {
+		"Charge_Page_Exposure"
+	}, function(arg0_3)
+		setActive(arg0_3, arg1_2:isTip())
+	end)
 	setActive(arg0_2.icon, arg1_2:isChargeType())
 	setActive(arg0_2.contain, true)
 
@@ -84,371 +88,350 @@ function var0_0.update(arg0_2, arg1_2, arg2_2, arg3_2)
 	arg0_2:destoryTimer()
 end
 
-function var0_0.updateCharge(arg0_3, arg1_3, arg2_3, arg3_3)
-	setActive(arg0_3.tag, true)
+function var0_0.updateCharge(arg0_4, arg1_4, arg2_4, arg3_4)
+	setActive(arg0_4.tag, true)
 
-	local var0_3 = not table.contains(arg3_3, arg1_3.id) and arg1_3:firstPayDouble() and 4 or arg1_3:getConfig("tag")
+	local var0_4 = not table.contains(arg3_4, arg1_4.id) and arg1_4:firstPayDouble() and 4 or arg1_4:getConfig("tag")
 
-	setActive(arg0_3.tag, var0_3 > 0)
+	setActive(arg0_4.tag, var0_4 > 0)
 
-	if var0_3 > 0 then
-		for iter0_3, iter1_3 in ipairs(arg0_3.tags) do
-			setActive(iter1_3, iter0_3 == var0_3)
+	if var0_4 > 0 then
+		for iter0_4, iter1_4 in ipairs(arg0_4.tags) do
+			setActive(iter1_4, iter0_4 == var0_4)
 		end
 	end
 
-	setActive(arg0_3.numLeftText, false)
+	setActive(arg0_4.numLeftText, false)
 
-	local var1_3, var2_3 = arg1_3:inTime()
+	local var1_4, var2_4 = arg1_4:inTime()
 
-	if var1_3 and not arg1_3:isFree() and var2_3 and var2_3 > 0 then
-		setActive(arg0_3.numLeftText, true)
+	if var1_4 and not arg1_4:isFree() and var2_4 and var2_4 > 0 then
+		setActive(arg0_4.numLeftText, true)
 
-		local var3_3, var4_3, var5_3 = pg.TimeMgr.GetInstance():parseTimeFrom(var2_3)
+		local var3_4, var4_4, var5_4 = pg.TimeMgr.GetInstance():parseTimeFrom(var2_4)
 
-		if var3_3 > 0 then
-			setText(arg0_3.numLeftText, i18n("shop_goods_left_day", var3_3))
-		elseif var4_3 > 0 then
-			setText(arg0_3.numLeftText, i18n("shop_goods_left_hour", var4_3))
-		elseif var5_3 then
-			setText(arg0_3.numLeftText, i18n("shop_goods_left_minute", var5_3 > 0 and var5_3 or 1))
+		if var3_4 > 0 then
+			setText(arg0_4.numLeftText, i18n("shop_goods_left_day", var3_4))
+		elseif var4_4 > 0 then
+			setText(arg0_4.numLeftText, i18n("shop_goods_left_hour", var4_4))
+		elseif var5_4 then
+			setText(arg0_4.numLeftText, i18n("shop_goods_left_minute", var5_4 > 0 and var5_4 or 1))
 		end
 
-		local var6_3 = 60
-		local var7_3 = 3600
-		local var8_3 = 86400
-		local var9_3
+		local var6_4 = 60
+		local var7_4 = 3600
+		local var8_4 = 86400
+		local var9_4
 
-		if var8_3 <= var2_3 then
-			var9_3 = var2_3 % var8_3
-		elseif var7_3 <= var2_3 then
-			var9_3 = var2_3 % var7_3
-		elseif var6_3 <= var2_3 then
-			var9_3 = var2_3 % var6_3
+		if var8_4 <= var2_4 then
+			var9_4 = var2_4 % var8_4
+		elseif var7_4 <= var2_4 then
+			var9_4 = var2_4 % var7_4
+		elseif var6_4 <= var2_4 then
+			var9_4 = var2_4 % var6_4
 		end
 
-		if var9_3 and var9_3 > 0 then
-			if arg0_3.countDownTimer then
-				arg0_3.countDownTimer:Stop()
+		if var9_4 and var9_4 > 0 then
+			if arg0_4.countDownTimer then
+				arg0_4.countDownTimer:Stop()
 
-				arg0_3.countDownTimer = nil
+				arg0_4.countDownTimer = nil
 			end
 
-			arg0_3.countDownTimer = Timer.New(function()
-				arg0_3:updateGemItem(arg1_3, arg2_3)
-			end, var9_3, 1)
+			arg0_4.countDownTimer = Timer.New(function()
+				arg0_4:updateGemItem(arg1_4, arg2_4)
+			end, var9_4, 1)
 
-			arg0_3.countDownTimer:Start()
+			arg0_4.countDownTimer:Start()
 		end
 	end
 
-	setScrollText(arg0_3.name, arg1_3:getConfig("name_display"))
+	setScrollText(arg0_4.name, arg1_4:getConfig("name_display"))
 
-	if arg1_3:isItemBox() or arg1_3:isGiftBox() or arg1_3:isPassItem() then
-		arg0_3:updateImport(arg0_3:GetPayDisplayItemData(arg1_3))
+	if arg1_4:isItemBox() or arg1_4:isGiftBox() or arg1_4:isPassItem() then
+		arg0_4:updateImport(arg0_4:GetPayDisplayItemData(arg1_4))
 	end
 
-	local var10_3 = arg1_3:getConfig("limit_type")
-	local var11_3 = arg1_3.buyCount
-	local var12_3 = arg1_3:getLimitCount()
+	local var10_4 = arg1_4:getConfig("limit_type")
+	local var11_4 = arg1_4.buyCount
+	local var12_4 = arg1_4:getLimitCount()
 
-	if var10_3 == 2 then
-		setText(arg0_3.limitText, i18n("charge_limit_all", var12_3 - var11_3, var12_3))
-	elseif var10_3 == 4 then
-		setText(arg0_3.limitText, i18n("charge_limit_daily", var12_3 - var11_3, var12_3))
+	if var10_4 == 2 then
+		setText(arg0_4.limitText, i18n("charge_limit_all", var12_4 - var11_4, var12_4))
+	elseif var10_4 == 4 then
+		setText(arg0_4.limitText, i18n("charge_limit_daily", var12_4 - var11_4, var12_4))
 	else
-		setText(arg0_3.limitText, "")
+		setText(arg0_4.limitText, "")
 	end
 
-	arg0_3.price.text = arg1_3:getConfig("money")
+	arg0_4.price.text = arg1_4:getConfig("money")
 
-	if PLATFORM_CODE == PLATFORM_CHT and arg1_3:IsLocalPrice() then
-		setActive(arg0_3.rmb, false)
+	if PLATFORM_CODE == PLATFORM_CHT and arg1_4:IsLocalPrice() then
+		setActive(arg0_4.rmb, false)
 	end
 
-	arg0_3.iconTF.sprite = GetSpriteFromAtlas("chargeicon/1", "")
+	arg0_4.iconTF.sprite = GetSpriteFromAtlas("chargeicon/1", "")
 
-	LoadSpriteAsync("chargeicon/" .. arg1_3:getConfig("picture"), function(arg0_5)
-		if arg0_5 and not IsNil(arg0_3.iconTF) then
-			arg0_3.iconTF.sprite = arg0_5
+	LoadSpriteAsync("chargeicon/" .. arg1_4:getConfig("picture"), function(arg0_6)
+		if arg0_6 and not IsNil(arg0_4.iconTF) then
+			arg0_4.iconTF.sprite = arg0_6
 		end
 	end)
 end
 
-function var0_0.UpdateShipIcon(arg0_6, arg1_6)
-	if IsNil(arg0_6.shipIcon) then
+function var0_0.UpdateShipIcon(arg0_7, arg1_7)
+	if IsNil(arg0_7.shipIcon) then
 		return
 	end
 
-	setActive(arg0_6.shipIcon, true)
+	setActive(arg0_7.shipIcon, true)
 
-	local var0_6 = arg0_6.shipIcon:Find("icon"):GetComponent(typeof(Image))
-	local var1_6 = arg1_6:getConfigTable().usage_arg[1][1]
+	local var0_7 = arg0_7.shipIcon:Find("icon"):GetComponent(typeof(Image))
+	local var1_7 = arg1_7:getConfigTable().usage_arg[1][1]
 
-	assert(var1_6)
+	assert(var1_7)
 
-	local var2_6 = pg.shop_template[var1_6].effect_args[1]
+	local var2_7 = pg.shop_template[var1_7].effect_args[1]
 
-	assert(var2_6)
+	assert(var2_7)
 
-	local var3_6 = pg.ship_skin_template[var2_6]
+	local var3_7 = pg.ship_skin_template[var2_7]
 
-	LoadSpriteAsync("qicon/" .. var3_6.prefab, function(arg0_7)
-		if arg0_7 and not IsNil(arg0_6.shipIcon) then
-			var0_6.sprite = arg0_7
+	LoadSpriteAsync("qicon/" .. var3_7.prefab, function(arg0_8)
+		if arg0_8 and not IsNil(arg0_7.shipIcon) then
+			var0_7.sprite = arg0_8
 		end
 	end)
 end
 
-function var0_0.updateGemItem(arg0_8, arg1_8, arg2_8)
-	setText(arg0_8.limitText, "")
+function var0_0.updateGemItem(arg0_9, arg1_9, arg2_9)
+	setText(arg0_9.limitText, "")
 
-	local var0_8 = arg1_8:getLimitCount()
-	local var1_8 = arg1_8.buyCount or 0
+	local var0_9 = arg1_9:getLimitCount()
+	local var1_9 = arg1_9.buyCount or 0
 
-	if var0_8 > 0 then
-		setText(arg0_8.limitText, i18n("charge_limit_all", var0_8 - var1_8, var0_8))
+	if var0_9 > 0 then
+		setText(arg0_9.limitText, i18n("charge_limit_all", var0_9 - var1_9, var0_9))
 	end
 
-	local var2_8 = arg1_8:getConfig("group_limit")
+	local var2_9 = arg1_9:getConfig("group_limit")
 
-	if var2_8 > 0 then
-		local var3_8 = arg1_8:getConfig("group_type") or 0
+	if var2_9 > 0 then
+		local var3_9 = arg1_9:getConfig("group_type") or 0
 
-		if var3_8 == 1 then
-			setText(arg0_8.limitText, i18n("charge_limit_daily", var2_8 - arg1_8.groupCount, var2_8))
-		elseif var3_8 == 2 then
-			setText(arg0_8.limitText, i18n("charge_limit_weekly", var2_8 - arg1_8.groupCount, var2_8))
-		elseif var3_8 == 3 then
-			setText(arg0_8.limitText, i18n("charge_limit_monthly", var2_8 - arg1_8.groupCount, var2_8))
-		end
-	end
-
-	arg0_8.price.text = arg1_8:getConfig("resource_num")
-
-	setActive(arg0_8.icon, true)
-
-	local var4_8 = arg1_8:getConfig("tag")
-
-	setActive(arg0_8.tag, var4_8 > 0)
-
-	if var4_8 > 0 then
-		for iter0_8, iter1_8 in ipairs(arg0_8.tags) do
-			setActive(iter1_8, iter0_8 == var4_8)
+		if var3_9 == 1 then
+			setText(arg0_9.limitText, i18n("charge_limit_daily", var2_9 - arg1_9.groupCount, var2_9))
+		elseif var3_9 == 2 then
+			setText(arg0_9.limitText, i18n("charge_limit_weekly", var2_9 - arg1_9.groupCount, var2_9))
+		elseif var3_9 == 3 then
+			setText(arg0_9.limitText, i18n("charge_limit_monthly", var2_9 - arg1_9.groupCount, var2_9))
 		end
 	end
 
-	setActive(arg0_8.numLeftText, false)
+	arg0_9.price.text = arg1_9:GetPrice()
 
-	local var5_8, var6_8 = arg1_8:inTime()
+	setActive(arg0_9.icon, true)
 
-	if var5_8 and not arg1_8:isFree() and var6_8 and var6_8 > 0 then
-		setActive(arg0_8.numLeftText, true)
+	local var4_9 = arg1_9:getConfig("tag")
 
-		local var7_8, var8_8, var9_8 = pg.TimeMgr.GetInstance():parseTimeFrom(var6_8)
+	setActive(arg0_9.tag, var4_9 > 0)
 
-		if var7_8 > 0 then
-			setText(arg0_8.numLeftText, i18n("shop_goods_left_day", var7_8))
-		elseif var8_8 > 0 then
-			setText(arg0_8.numLeftText, i18n("shop_goods_left_hour", var8_8))
-		elseif var9_8 then
-			setText(arg0_8.numLeftText, i18n("shop_goods_left_minute", var9_8 > 0 and var9_8 or 1))
+	if var4_9 > 0 then
+		for iter0_9, iter1_9 in ipairs(arg0_9.tags) do
+			setActive(iter1_9, iter0_9 == var4_9)
+		end
+	end
+
+	setActive(arg0_9.numLeftText, false)
+
+	local var5_9, var6_9 = arg1_9:inTime()
+
+	if var5_9 and not arg1_9:isFree() and var6_9 and var6_9 > 0 then
+		setActive(arg0_9.numLeftText, true)
+
+		local var7_9, var8_9, var9_9 = pg.TimeMgr.GetInstance():parseTimeFrom(var6_9)
+
+		if var7_9 > 0 then
+			setText(arg0_9.numLeftText, i18n("shop_goods_left_day", var7_9))
+		elseif var8_9 > 0 then
+			setText(arg0_9.numLeftText, i18n("shop_goods_left_hour", var8_9))
+		elseif var9_9 then
+			setText(arg0_9.numLeftText, i18n("shop_goods_left_minute", var9_9 > 0 and var9_9 or 1))
 		end
 
-		local var10_8 = 60
-		local var11_8 = 3600
-		local var12_8 = 86400
-		local var13_8
+		local var10_9 = 60
+		local var11_9 = 3600
+		local var12_9 = 86400
+		local var13_9
 
-		if var12_8 <= var6_8 then
-			var13_8 = var6_8 % var12_8
-		elseif var11_8 <= var6_8 then
-			var13_8 = var6_8 % var11_8
-		elseif var10_8 <= var6_8 then
-			var13_8 = var6_8 % var10_8
+		if var12_9 <= var6_9 then
+			var13_9 = var6_9 % var12_9
+		elseif var11_9 <= var6_9 then
+			var13_9 = var6_9 % var11_9
+		elseif var10_9 <= var6_9 then
+			var13_9 = var6_9 % var10_9
 		end
 
-		if var13_8 and var13_8 > 0 then
-			if arg0_8.countDownTimer then
-				arg0_8.countDownTimer:Stop()
+		if var13_9 and var13_9 > 0 then
+			if arg0_9.countDownTimer then
+				arg0_9.countDownTimer:Stop()
 
-				arg0_8.countDownTimer = nil
+				arg0_9.countDownTimer = nil
 			end
 
-			arg0_8.countDownTimer = Timer.New(function()
-				arg0_8:updateGemItem(arg1_8, arg2_8)
-			end, var13_8, 1)
+			arg0_9.countDownTimer = Timer.New(function()
+				arg0_9:updateGemItem(arg1_9, arg2_9)
+			end, var13_9, 1)
 
-			arg0_8.countDownTimer:Start()
+			arg0_9.countDownTimer:Start()
 		end
 	end
 
-	setActive(arg0_8.name, true)
+	setActive(arg0_9.name, true)
 
-	local var14_8 = arg1_8:getConfig("effect_args")
+	local var14_9 = arg1_9:getConfig("effect_args")
 
-	if #var14_8 > 0 then
-		local var15_8 = Item.getConfigData(var14_8[1])
+	if #var14_9 > 0 then
+		local var15_9 = Item.getConfigData(var14_9[1])
 
-		if var15_8 then
-			setScrollText(arg0_8.name, var15_8.name)
-			arg0_8:updateImport(arg0_8:GetShopDisplayItemData(arg1_8))
+		if var15_9 then
+			setScrollText(arg0_9.name, var15_9.name)
+			arg0_9:updateImport(arg0_9:GetShopDisplayItemData(arg1_9))
 
-			local var16_8 = arg0_8:CheckSkinDiscounItem(var15_8.display_icon)
+			local var16_9 = arg0_9:CheckSkinDiscounItem(var15_9.display_icon)
 
-			if var16_8 then
-				arg0_8:UpdateShipIcon(var16_8)
+			if var16_9 then
+				arg0_9:UpdateShipIcon(var16_9)
 			end
 		end
 
-		arg0_8.iconTF.sprite = GetSpriteFromAtlas("chargeicon/1", "")
+		arg0_9.iconTF.sprite = GetSpriteFromAtlas("chargeicon/1", "")
 
-		LoadSpriteAsync(var15_8.icon, function(arg0_10)
-			if arg0_10 and not IsNil(arg0_8.iconTF) then
-				arg0_8.iconTF.sprite = arg0_10
+		LoadSpriteAsync(var15_9.icon, function(arg0_11)
+			if arg0_11 and not IsNil(arg0_9.iconTF) then
+				arg0_9.iconTF.sprite = arg0_11
 			end
 		end)
 	end
 end
 
-function var0_0.CheckSkinDiscounItem(arg0_11, arg1_11)
-	for iter0_11, iter1_11 in pairs(arg1_11) do
-		local var0_11 = Drop.Create(iter1_11)
-		local var1_11 = var0_11:getConfigTable()
+function var0_0.CheckSkinDiscounItem(arg0_12, arg1_12)
+	for iter0_12, iter1_12 in pairs(arg1_12) do
+		local var0_12 = Drop.Create(iter1_12)
+		local var1_12 = var0_12:getConfigTable()
 
-		if var1_11.usage and var1_11.usage == ItemUsage.USAGE_SHOP_DISCOUNT then
-			return var0_11
+		if var1_12.usage and var1_12.usage == ItemUsage.USAGE_SHOP_DISCOUNT then
+			return var0_12
 		end
 	end
 
 	return nil
 end
 
-local function var1_0(arg0_12)
-	local var0_12 = arg0_12:getConfigTable()
+local function var1_0(arg0_13)
+	local var0_13 = arg0_13:getConfigTable()
 
-	if var0_12.usage and var0_12.usage == ItemUsage.USAGE_SKIN_EXP then
+	if var0_13.usage and var0_13.usage == ItemUsage.USAGE_SKIN_EXP then
 		return false
 	end
 
 	return true
 end
 
-function var0_0.updateImport(arg0_13, arg1_13)
-	local var0_13 = #arg1_13 >= 2
+function var0_0.updateImport(arg0_14, arg1_14)
+	local var0_14 = #arg1_14 >= 2
 
-	setActive(arg0_13.itemPanel1, var0_13)
+	setActive(arg0_14.itemPanel1, var0_14)
 
-	if var0_13 then
-		setActive(arg0_13.itemPanel2, false)
-		setActive(arg0_13.itemPanel3, false)
-		setScrollText(arg0_13.firstTipText, arg1_13[1].text)
-		setScrollText(arg0_13.secondTipText, arg1_13[2].text)
+	if var0_14 then
+		setActive(arg0_14.itemPanel2, false)
+		setActive(arg0_14.itemPanel3, false)
+		setScrollText(arg0_14.firstTipText, arg1_14[1].text)
+		setScrollText(arg0_14.secondTipText, arg1_14[2].text)
 
-		local var1_13 = {}
+		local var1_14 = {}
 
-		for iter0_13, iter1_13 in ipairs(arg1_13[1].list) do
-			table.insert(var1_13, Drop.Create(iter1_13))
+		for iter0_14, iter1_14 in ipairs(arg1_14[1].list) do
+			table.insert(var1_14, Drop.Create(iter1_14))
 		end
 
-		for iter2_13 = 1, arg0_13.grid1.childCount do
-			local var2_13 = arg0_13.grid:GetChild(iter2_13 - 1)
+		for iter2_14 = 1, arg0_14.grid1.childCount do
+			local var2_14 = arg0_14.grid:GetChild(iter2_14 - 1)
 
-			if iter2_13 <= #var1_13 then
-				setActive(var2_13, var1_0(var1_13[iter2_13]))
-				updateDrop(var2_13:Find("itemBg/item"), var1_13[iter2_13])
+			if iter2_14 <= #var1_14 then
+				setActive(var2_14, var1_0(var1_14[iter2_14]))
+				updateDrop(var2_14:Find("itemBg/item"), var1_14[iter2_14])
 			else
-				setActive(var2_13, false)
+				setActive(var2_14, false)
 			end
 		end
 
-		local var3_13 = {}
+		local var3_14 = {}
 
-		for iter3_13, iter4_13 in ipairs(arg1_13[2].list) do
-			table.insert(var3_13, Drop.Create(iter4_13))
+		for iter3_14, iter4_14 in ipairs(arg1_14[2].list) do
+			table.insert(var3_14, Drop.Create(iter4_14))
 		end
 
-		for iter5_13 = 1, arg0_13.grid1.childCount do
-			local var4_13 = arg0_13.grid1:GetChild(iter5_13 - 1)
+		for iter5_14 = 1, arg0_14.grid1.childCount do
+			local var4_14 = arg0_14.grid1:GetChild(iter5_14 - 1)
 
-			if iter5_13 <= #var3_13 then
-				setActive(var4_13, var1_0(var3_13[iter5_13]))
-				updateDrop(var4_13:Find("itemBg/item"), var3_13[iter5_13])
+			if iter5_14 <= #var3_14 then
+				setActive(var4_14, var1_0(var3_14[iter5_14]))
+				updateDrop(var4_14:Find("itemBg/item"), var3_14[iter5_14])
 			else
-				setActive(var4_13, false)
+				setActive(var4_14, false)
 			end
 		end
 	else
-		local var5_13 = arg1_13[1].text
-		local var6_13 = var5_13 == ""
+		local var5_14 = arg1_14[1].text
+		local var6_14 = var5_14 == ""
 
-		setActive(arg0_13.itemPanel2, not var6_13)
-		setActive(arg0_13.itemPanel3, var6_13)
+		setActive(arg0_14.itemPanel2, not var6_14)
+		setActive(arg0_14.itemPanel3, var6_14)
 
-		if var6_13 then
-			setScrollText(arg0_13.firstTipText3, i18n("shop_item_unlock"))
+		if var6_14 then
+			setScrollText(arg0_14.firstTipText3, i18n("shop_item_unlock"))
 
-			local var7_13 = {}
+			local var7_14 = {}
 
-			for iter6_13, iter7_13 in ipairs(arg1_13[1].list) do
-				table.insert(var7_13, Drop.Create(iter7_13))
+			for iter6_14, iter7_14 in ipairs(arg1_14[1].list) do
+				table.insert(var7_14, Drop.Create(iter7_14))
 			end
 
-			for iter8_13 = 1, arg0_13.grid3.childCount do
-				local var8_13 = arg0_13.grid3:GetChild(iter8_13 - 1)
+			for iter8_14 = 1, arg0_14.grid3.childCount do
+				local var8_14 = arg0_14.grid3:GetChild(iter8_14 - 1)
 
-				if iter8_13 <= #var7_13 then
-					setActive(var8_13, var1_0(var7_13[iter8_13]))
-					updateDrop(var8_13:Find("itemBg/item"), var7_13[iter8_13])
+				if iter8_14 <= #var7_14 then
+					setActive(var8_14, var1_0(var7_14[iter8_14]))
+					updateDrop(var8_14:Find("itemBg/item"), var7_14[iter8_14])
 				else
-					setActive(var8_13, false)
+					setActive(var8_14, false)
 				end
 			end
 		else
-			setScrollText(arg0_13.firstTipText2, var5_13)
+			setScrollText(arg0_14.firstTipText2, var5_14)
 
-			local var9_13 = {}
+			local var9_14 = {}
 
-			for iter9_13, iter10_13 in ipairs(arg1_13[1].list) do
-				table.insert(var9_13, Drop.Create(iter10_13))
+			for iter9_14, iter10_14 in ipairs(arg1_14[1].list) do
+				table.insert(var9_14, Drop.Create(iter10_14))
 			end
 
-			for iter11_13 = 1, arg0_13.grid2.childCount do
-				local var10_13 = arg0_13.grid2:GetChild(iter11_13 - 1)
+			for iter11_14 = 1, arg0_14.grid2.childCount do
+				local var10_14 = arg0_14.grid2:GetChild(iter11_14 - 1)
 
-				if iter11_13 <= #var9_13 then
-					setActive(var10_13, var1_0(var9_13[iter11_13]))
-					updateDrop(var10_13:Find("itemBg/item"), var9_13[iter11_13])
+				if iter11_14 <= #var9_14 then
+					setActive(var10_14, var1_0(var9_14[iter11_14]))
+					updateDrop(var10_14:Find("itemBg/item"), var9_14[iter11_14])
 				else
-					setActive(var10_13, false)
+					setActive(var10_14, false)
 				end
 			end
 		end
 	end
 end
 
-function var0_0.GetPayDisplayItemData(arg0_14, arg1_14)
-	local var0_14 = {}
-	local var1_14 = arg1_14:getConfig("first_text")
-
-	if var1_14 ~= "" then
-		table.insert(var0_14, {
-			text = var1_14,
-			list = arg1_14:getConfig("first_icon")
-		})
-	end
-
-	local var2_14 = arg1_14:getConfig("second_text")
-
-	table.insert(var0_14, {
-		text = var2_14,
-		list = arg1_14:getConfig("display")
-	})
-
-	return var0_14
-end
-
-function var0_0.GetShopDisplayItemData(arg0_15, arg1_15)
+function var0_0.GetPayDisplayItemData(arg0_15, arg1_15)
 	local var0_15 = {}
 	local var1_15 = arg1_15:getConfig("first_text")
 
@@ -460,23 +443,49 @@ function var0_0.GetShopDisplayItemData(arg0_15, arg1_15)
 	end
 
 	local var2_15 = arg1_15:getConfig("second_text")
-	local var3_15 = arg1_15:getConfig("effect_args")
-	local var4_15 = Item.getConfigData(var3_15[1])
 
 	table.insert(var0_15, {
 		text = var2_15,
-		list = var4_15.display_icon
+		list = arg1_15:getConfig("display")
 	})
 
 	return var0_15
 end
 
-function var0_0.destoryTimer(arg0_16)
-	if arg0_16.countDownTimer then
-		arg0_16.countDownTimer:Stop()
+function var0_0.GetShopDisplayItemData(arg0_16, arg1_16)
+	local var0_16 = {}
+	local var1_16 = arg1_16:getConfig("first_text")
 
-		arg0_16.countDownTimer = nil
+	if var1_16 ~= "" then
+		table.insert(var0_16, {
+			text = var1_16,
+			list = arg1_16:getConfig("first_icon")
+		})
 	end
+
+	local var2_16 = arg1_16:getConfig("second_text")
+	local var3_16 = arg1_16:getConfig("effect_args")
+	local var4_16 = Item.getConfigData(var3_16[1])
+
+	table.insert(var0_16, {
+		text = var2_16,
+		list = var4_16.display_icon
+	})
+
+	return var0_16
+end
+
+function var0_0.destoryTimer(arg0_17)
+	if arg0_17.countDownTimer then
+		arg0_17.countDownTimer:Stop()
+
+		arg0_17.countDownTimer = nil
+	end
+end
+
+function var0_0.Dispose(arg0_18)
+	arg0_18:destoryTimer()
+	pg.EasyRedDotMgr.GetInstance():UnRegisterRedDot(arg0_18.focusTip)
 end
 
 return var0_0

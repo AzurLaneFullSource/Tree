@@ -97,9 +97,69 @@ function var0_0.ClickTrigger(arg0_6, arg1_6, arg2_6)
 	arg0_6:Check(arg1_6.skin)
 end
 
-function var0_0.willExit(arg0_7)
-	var0_0.super.willExit(arg0_7)
-	arg0_7.msgBox:Destroy()
+function var0_0.OnUpdateItem(arg0_7, arg1_7, arg2_7)
+	TweenItemAlphaAndWhite(arg2_7)
+
+	arg1_7 = arg1_7 + 1
+
+	local var0_7 = arg0_7.scrollDisplays[arg1_7]
+
+	if arg0_7.goDic[arg2_7] and arg0_7.goDic[arg2_7] ~= arg1_7 then
+		local var1_7 = arg0_7.scrollShowClassifyIds[arg0_7.goDic[arg2_7]]
+		local var2_7 = arg0_7:GetDisplayIndex(var1_7)
+
+		arg0_7:ReturnIndex(arg0_7.goDic[arg2_7])
+
+		if var2_7 ~= arg0_7:GetDisplayIndex(var1_7) then
+			local var3_7 = {}
+
+			table.insert(var3_7, var2_7)
+			table.insert(var3_7, arg0_7:GetDisplayIndex(var1_7))
+			arg0_7:ChangeClassifyName(var3_7)
+		end
+	end
+
+	arg0_7.goDic[arg2_7] = arg1_7
+
+	local var4_7 = arg0_7.scrollShowClassifyIds[arg1_7]
+	local var5_7 = arg0_7:GetDisplayIndex(var4_7)
+
+	arg0_7:RegisterIndex(arg1_7)
+
+	local var6_7 = {}
+
+	if var5_7 ~= arg0_7:GetDisplayIndex(var4_7) then
+		table.insert(var6_7, var5_7)
+	end
+
+	table.insert(var6_7, arg1_7)
+	arg0_7:ChangeClassifyName(var6_7)
+
+	if var0_7 then
+		local var7_7 = UIItemList.New(tf(arg2_7):Find("skins"), tf(arg2_7):Find("skins/SkinAtlasCard"))
+
+		var7_7:make(function(arg0_8, arg1_8, arg2_8)
+			if arg0_8 == UIItemList.EventUpdate then
+				local var0_8 = var0_7[arg1_8 + 1]
+				local var1_8 = SkinAtlasCard.New(arg2_8)
+
+				table.insert(arg0_7.cards, var1_8)
+				var1_8:Update(var0_8, arg1_8 + 1, true)
+				onButton(arg0_7, arg2_8, function()
+					arg0_7:ClickTrigger(var1_8, var0_8)
+				end, SFX_PANEL)
+				onButton(arg0_7, var1_8.changeSkinUI, function()
+					var1_8:changeSkinNext()
+				end, SFX_PANEL)
+			end
+		end)
+		var7_7:align(#var0_7)
+	end
+end
+
+function var0_0.willExit(arg0_11)
+	var0_0.super.willExit(arg0_11)
+	arg0_11.msgBox:Destroy()
 end
 
 return var0_0

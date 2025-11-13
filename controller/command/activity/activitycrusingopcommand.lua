@@ -21,7 +21,20 @@ function var0_0.execute(arg0_1, arg1_1)
 			local var0_2 = {}
 
 			if var0_1.cmd == 1 then
-				-- block empty
+				var0_2 = PlayerConst.addTranDrop(arg0_2.award_list)
+				var3_1.data1_list = {}
+
+				for iter0_2, iter1_2 in ipairs(pg.black_friday_battlepass_event_pt[var3_1.id].target) do
+					if iter1_2 <= var3_1.data1 then
+						table.insert(var3_1.data1_list, iter1_2)
+					else
+						break
+					end
+				end
+
+				if var3_1.data2 == 1 then
+					var3_1.data2_list = underscore.rest(var3_1.data1_list, 1)
+				end
 			elseif var0_1.cmd == 2 then
 				var0_2 = PlayerConst.addTranDrop(arg0_2.award_list)
 
@@ -34,9 +47,9 @@ function var0_0.execute(arg0_1, arg1_1)
 				var0_2 = PlayerConst.addTranDrop(arg0_2.award_list)
 				var3_1.data1_list = {}
 
-				for iter0_2, iter1_2 in ipairs(pg.battlepass_event_pt[var3_1.id].target) do
-					if iter1_2 <= var3_1.data1 then
-						table.insert(var3_1.data1_list, iter1_2)
+				for iter2_2, iter3_2 in ipairs(pg.battlepass_event_pt[var3_1.id].target) do
+					if iter3_2 <= var3_1.data1 then
+						table.insert(var3_1.data1_list, iter3_2)
 					else
 						break
 					end

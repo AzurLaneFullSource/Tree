@@ -181,6 +181,8 @@ end
 function var1_0.LayerSortHandler(arg0_14)
 	arg0_14:SortStoreUIs()
 
+	arg0_14.indexDic = {}
+
 	local var0_14
 	local var1_14
 	local var2_14 = {}
@@ -258,6 +260,8 @@ function var1_0.LayerSortHandler(arg0_14)
 		end
 	end
 
+	arg0_14:SequentizationUIIndex()
+
 	if not var4_14 then
 		var0_0.UIMgr.GetInstance():SetCameraBlurLock(var4_14)
 	end
@@ -285,74 +289,90 @@ function var1_0.LayerSortHandler(arg0_14)
 end
 
 function var1_0.SetSpecificParent(arg0_18, arg1_18, arg2_18, arg3_18)
-	SetParent(arg1_18, arg2_18, false)
-
 	if arg3_18 then
-		arg1_18:SetSiblingIndex(arg3_18)
-	end
-end
+		arg0_18.indexDic[arg2_18] = arg0_18.indexDic[arg2_18] or {}
 
-function var1_0.GetAdaptObj(arg0_19, arg1_19)
-	local var0_19 = arg0_19:GetAdatpObjName(arg1_19)
-	local var1_19
-
-	if #arg0_19.adaptPool > 0 then
-		var1_19 = table.remove(arg0_19.adaptPool, #arg0_19.adaptPool)
-		var1_19.name = var0_19
+		table.insert(arg0_18.indexDic[arg2_18], 1, arg1_18)
 	else
-		var1_19 = GameObject.New(var0_19, typeof(RectTransform), typeof(NotchAdapt)).transform
+		SetParent(arg1_18, arg2_18, false)
 	end
-
-	var1_19.anchorMin = Vector2.zero
-	var1_19.anchorMax = Vector2.one
-	var1_19.pivot = Vector2(0.5, 0.5)
-	var1_19.offsetMax = Vector2.zero
-	var1_19.offsetMin = Vector2.zero
-	var1_19.localPosition = Vector3.zero
-
-	SetActive(var1_19, true)
-	SetParent(arg1_19, var1_19, false)
-
-	return var1_19
 end
 
-function var1_0.CheckRecycleAdaptObj(arg0_20, arg1_20, arg2_20)
-	local var0_20 = arg0_20:GetAdaptObjFromUI(arg1_20)
+function var1_0.SequentizationUIIndex(arg0_19)
+	for iter0_19, iter1_19 in pairs(arg0_19.indexDic) do
+		for iter2_19, iter3_19 in ipairs(iter1_19) do
+			SetParent(iter3_19, iter0_19, false)
 
-	if arg2_20 ~= nil then
-		SetParent(arg1_20, arg2_20, false)
+			if iter3_19:GetSiblingIndex() ~= iter2_19 - 1 then
+				iter3_19:SetSiblingIndex(iter2_19 - 1)
+			end
+		end
 	end
 
-	if var0_20 ~= nil then
-		if #arg0_20.adaptPool < 4 then
-			table.insert(arg0_20.adaptPool, var0_20)
-			SetParent(var0_20, arg0_20.OverlayAdapt, false)
+	arg0_19.indexDic = nil
+end
 
-			var0_20.name = var1_0.RECYCLE_ADAPT_TAG
+function var1_0.GetAdaptObj(arg0_20, arg1_20)
+	local var0_20 = arg0_20:GetAdatpObjName(arg1_20)
+	local var1_20
 
-			SetActive(var0_20, false)
+	if #arg0_20.adaptPool > 0 then
+		var1_20 = table.remove(arg0_20.adaptPool, #arg0_20.adaptPool)
+		var1_20.name = var0_20
+	else
+		var1_20 = GameObject.New(var0_20, typeof(RectTransform), typeof(NotchAdapt)).transform
+	end
+
+	var1_20.anchorMin = Vector2.zero
+	var1_20.anchorMax = Vector2.one
+	var1_20.pivot = Vector2(0.5, 0.5)
+	var1_20.offsetMax = Vector2.zero
+	var1_20.offsetMin = Vector2.zero
+	var1_20.localPosition = Vector3.zero
+
+	SetActive(var1_20, true)
+	SetParent(arg1_20, var1_20, false)
+
+	return var1_20
+end
+
+function var1_0.CheckRecycleAdaptObj(arg0_21, arg1_21, arg2_21)
+	local var0_21 = arg0_21:GetAdaptObjFromUI(arg1_21)
+
+	if arg2_21 ~= nil then
+		SetParent(arg1_21, arg2_21, false)
+	end
+
+	if var0_21 ~= nil then
+		if #arg0_21.adaptPool < 4 then
+			table.insert(arg0_21.adaptPool, var0_21)
+			SetParent(var0_21, arg0_21.OverlayAdapt, false)
+
+			var0_21.name = var1_0.RECYCLE_ADAPT_TAG
+
+			SetActive(var0_21, false)
 		else
-			Destroy(var0_20)
+			Destroy(var0_21)
 		end
 	end
 end
 
-function var1_0.GetAdaptObjFromUI(arg0_21, arg1_21)
-	if arg1_21.parent ~= nil and arg1_21.parent.name == arg0_21:GetAdatpObjName(arg1_21) then
-		return arg1_21.parent
+function var1_0.GetAdaptObjFromUI(arg0_22, arg1_22)
+	if arg1_22.parent ~= nil and arg1_22.parent.name == arg0_22:GetAdatpObjName(arg1_22) then
+		return arg1_22.parent
 	end
 
 	return nil
 end
 
-function var1_0.GetAdatpObjName(arg0_22, arg1_22)
-	return arg1_22.name .. var1_0.ADAPT_TAG
+function var1_0.GetAdatpObjName(arg0_23, arg1_23)
+	return arg1_23.name .. var1_0.ADAPT_TAG
 end
 
-function var1_0.Log(arg0_23, arg1_23)
+function var1_0.Log(arg0_24, arg1_24)
 	if not var1_0.DEBUG then
 		return
 	end
 
-	originalPrint(arg1_23)
+	originalPrint(arg1_24)
 end

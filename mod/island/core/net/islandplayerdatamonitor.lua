@@ -28,7 +28,7 @@ function var0_0.register(arg0_1)
 		arg0_1:HandleTaskData(arg0_5.task_list)
 	end)
 	arg0_1:on(21043, function(arg0_6)
-		arg0_1:HandleRandomTaskData(arg0_6.task_list_random)
+		arg0_1:HandleRandomTaskData(arg0_6.task_list or {})
 	end)
 	arg0_1:on(21422, function(arg0_7)
 		arg0_1:HandleManageData(arg0_7)
@@ -222,7 +222,17 @@ function var0_0.HandleTaskData(arg0_32, arg1_32)
 end
 
 function var0_0.HandleRandomTaskData(arg0_34, arg1_34)
-	arg0_34:GetIsland():GetTaskAgency():InitFutureTasks(arg1_34 or {})
+	local var0_34 = arg0_34:GetIsland():GetTaskAgency()
+
+	for iter0_34, iter1_34 in ipairs(arg1_34) do
+		local var1_34 = IslandTask.New(iter1_34)
+
+		var0_34:AddTask(var1_34)
+	end
+
+	if #arg1_34 > 0 then
+		var0_34:TryAutoTrackTask()
+	end
 end
 
 function var0_0.HandleManageData(arg0_35, arg1_35)

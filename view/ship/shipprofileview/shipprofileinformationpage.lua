@@ -166,157 +166,166 @@ end
 function var0_0.UpdateLanguage(arg0_20)
 	local var0_20 = arg0_20.skin.ship_group
 	local var1_20 = ShipGroup.getDefaultSkin(var0_20)
-	local var2_20 = pg.ship_skin_words[var1_20.id]
-	local var3_20 = ShipWordHelper.GetLanguageSetting(var1_20.id)
-	local var4_20 = var2_20.voice_key_2 >= 0 or var2_20.voice_key_2 == -2
+	local var2_20 = pg.ship_skin_words[arg0_20.skin.id]
+	local var3_20 = setmetatable({}, {
+		__index = function(arg0_21, arg1_21)
+			if arg1_21 == "voice_key_2" and pg.ship_skin_words[arg0_20.skin.id][arg1_21] == 0 then
+				rawset(arg0_21, arg1_21, pg.ship_skin_words[var1_20.id][arg1_21])
+			else
+				rawset(arg0_21, arg1_21, pg.ship_skin_words[arg0_20.skin.id][arg1_21])
+			end
 
-	if var2_20.voice_key_2 >= 0 and var3_20 == 0 then
-		var3_20 = pg.gameset.language_default.key_value
-
-		PlayerPrefs.SetInt(CV_LANGUAGE_KEY .. var0_20, var3_20)
-	end
-
-	arg0_20:OnCvBtn(var3_20 == 2)
-
-	if var2_20.voice_key_2 >= 0 or var2_20.voice_key_2 == -2 then
-		local var5_20 = var2_20.voice_key_2 % 10
-		local var6_20 = ""
-
-		if var5_20 == 2 then
-			var6_20 = i18n("word_chinese")
-		elseif var5_20 == 3 then
-			var6_20 = i18n("word_japanese_2")
+			return arg0_21[arg1_21]
 		end
+	})
+	local var4_20 = ShipWordHelper.GetLanguageSetting(arg0_20.skin.id)
+	local var5_20 = var3_20.voice_key_2 >= 0 or var3_20.voice_key_2 == -2
 
-		arg0_20.voiceBtnTxt.text = var6_20
-		arg0_20.voiceBtnTxt1.text = i18n("word_japanese")
+	if var3_20.voice_key_2 >= 0 and var4_20 == 0 then
+		var4_20 = pg.gameset.language_default.key_value
+
+		PlayerPrefs.SetInt(CV_LANGUAGE_KEY .. var0_20, var4_20)
 	end
 
-	setActive(arg0_20.voiceBtn, var4_20)
+	arg0_20:OnCvBtn(var4_20 == 2)
+
+	if var3_20.voice_key_2 >= 0 or var3_20.voice_key_2 == -2 then
+		local var6_20 = var3_20.voice_key_2 % 10
+
+		if var6_20 == 2 then
+			arg0_20.voiceBtnTxt.text = i18n("word_chinese")
+			arg0_20.voiceBtnTxt1.text = i18n("word_japanese")
+		elseif var6_20 == 3 then
+			arg0_20.voiceBtnTxt.text = i18n("word_japanese_2")
+			arg0_20.voiceBtnTxt1.text = i18n("word_japanese_3")
+		end
+	end
+
+	setActive(arg0_20.voiceBtn, var5_20)
 end
 
-function var0_0.SetAuthorInfo(arg0_21)
-	local var0_21 = arg0_21.skin
-	local var1_21 = ShipWordHelper.GetCVAuthor(var0_21.id)
+function var0_0.SetAuthorInfo(arg0_22)
+	local var0_22 = arg0_22.skin
+	local var1_22 = ShipWordHelper.GetCVAuthor(var0_22.id)
 
-	print(var1_21 .. "  ----")
-	arg0_21.voiceActor:SetText(var1_21)
+	print(var1_22 .. "  ----")
+	arg0_22.voiceActor:SetText(var1_22)
 end
 
-function var0_0.SetIllustrator(arg0_22)
-	local var0_22 = arg0_22.shipGroup:GetNationTxt()
+function var0_0.SetIllustrator(arg0_23)
+	local var0_23 = arg0_23.shipGroup:GetNationTxt()
 
-	print(var0_22)
-	arg0_22.illustrator:SetText(var0_22)
+	print(var0_23)
+	arg0_23.illustrator:SetText(var0_23)
 end
 
-function var0_0.GetCvList(arg0_23, arg1_23)
-	local var0_23 = {}
+function var0_0.GetCvList(arg0_24, arg1_24)
+	local var0_24 = {}
 
-	if arg1_23 then
-		if pg.ship_skin_template[arg0_23.skin.id].spine_use_live2d == 1 then
-			var0_23 = pg.AssistantInfo.GetCVListForProfile(true, arg0_23.skin.id)
+	if arg1_24 then
+		if pg.ship_skin_template[arg0_24.skin.id].spine_use_live2d == 1 then
+			var0_24 = pg.AssistantInfo.GetCVListForProfile(true, arg0_24.skin.id)
 		else
-			var0_23 = pg.AssistantInfo.GetCVListForProfile(false, arg0_23.skin.id)
+			var0_24 = pg.AssistantInfo.GetCVListForProfile(false, arg0_24.skin.id)
 		end
 	else
-		var0_23 = ShipWordHelper.GetCVList()
+		var0_24 = ShipWordHelper.GetCVList()
 	end
 
-	return var0_23
+	return var0_24
 end
 
-function var0_0.UpdateCvList(arg0_24, arg1_24)
-	arg0_24:DestroyCvBtns()
+function var0_0.UpdateCvList(arg0_25, arg1_25)
+	arg0_25:DestroyCvBtns()
 
-	arg0_24.cvBtns = {}
-	arg0_24.dispalys = arg0_24:GetCvList(arg1_24)
+	arg0_25.cvBtns = {}
+	arg0_25.dispalys = arg0_25:GetCvList(arg1_25)
 
-	table.sort(arg0_24.dispalys, function(arg0_25, arg1_25)
-		return arg0_25.profile_index < arg1_25.profile_index
+	table.sort(arg0_25.dispalys, function(arg0_26, arg1_26)
+		return arg0_26.profile_index < arg1_26.profile_index
 	end)
 
-	for iter0_24, iter1_24 in ipairs(arg0_24.dispalys) do
-		arg0_24:AddCvBtn(iter1_24)
-		arg0_24:AddExCvBtn(iter1_24)
+	for iter0_25, iter1_25 in ipairs(arg0_25.dispalys) do
+		arg0_25:AddCvBtn(iter1_25)
+		arg0_25:AddExCvBtn(iter1_25)
 	end
 
-	local var0_24 = (pg.character_voice.touch.profile_index - 1) * 2
-	local var1_24 = arg0_24.cvBtns[var0_24]
+	local var0_25 = (pg.character_voice.touch.profile_index - 1) * 2
+	local var1_25 = arg0_25.cvBtns[var0_25]
 
-	var0_24 = var1_24 and var1_24._tf:GetSiblingIndex() or var0_24
+	var0_25 = var1_25 and var1_25._tf:GetSiblingIndex() or var0_25
 
-	local var2_24 = ShipWordHelper.GetMainSceneWordCnt(arg0_24.skin.id, -1)
-	local var3_24 = arg0_24.shipGroup:GetMaxIntimacy()
-	local var4_24 = ShipWordHelper.GetMainSceneWordCnt(arg0_24.skin.id, var3_24)
+	local var2_25 = ShipWordHelper.GetMainSceneWordCnt(arg0_25.skin.id, -1)
+	local var3_25 = arg0_25.shipGroup:GetMaxIntimacy()
+	local var4_25 = ShipWordHelper.GetMainSceneWordCnt(arg0_25.skin.id, var3_25)
 
-	if var2_24 < var4_24 then
-		for iter2_24 = var2_24 + 1, var4_24 do
-			arg0_24:AddMainExBtn(iter2_24, var0_24)
+	if var2_25 < var4_25 then
+		for iter2_25 = var2_25 + 1, var4_25 do
+			arg0_25:AddMainExBtn(iter2_25, var0_25)
 
-			var0_24 = var0_24 + 1
+			var0_25 = var0_25 + 1
 		end
 	end
 end
 
-function var0_0.AddMainExBtn(arg0_26, arg1_26, arg2_26)
-	local var0_26 = ShipProfileMainExCvBtn.New(cloneTplTo(arg0_26.cvTpl, arg0_26.cvContainer))
+function var0_0.AddMainExBtn(arg0_27, arg1_27, arg2_27)
+	local var0_27 = ShipProfileMainExCvBtn.New(cloneTplTo(arg0_27.cvTpl, arg0_27.cvContainer))
 
-	onButton(arg0_26, var0_26._tf, function()
-		if arg0_26.callback then
-			arg0_26.callback(var0_26)
+	onButton(arg0_27, var0_27._tf, function()
+		if arg0_27.callback then
+			arg0_27.callback(var0_27)
 		end
 	end, SFX_PANEL)
-	var0_26:Init(arg0_26.shipGroup, arg0_26.skin, arg0_26.isLive2d, arg1_26)
-	var0_26:Update()
-	var0_26._tf:SetSiblingIndex(arg2_26)
-	table.insert(arg0_26.cvBtns, var0_26)
+	var0_27:Init(arg0_27.shipGroup, arg0_27.skin, arg0_27.isLive2d, arg1_27)
+	var0_27:Update()
+	var0_27._tf:SetSiblingIndex(arg2_27)
+	table.insert(arg0_27.cvBtns, var0_27)
 end
 
-function var0_0.AddCvBtn(arg0_28, arg1_28)
-	local var0_28 = ShipProfileCvBtn.New(cloneTplTo(arg0_28.cvTpl, arg0_28.cvContainer))
+function var0_0.AddCvBtn(arg0_29, arg1_29)
+	local var0_29 = ShipProfileCvBtn.New(cloneTplTo(arg0_29.cvTpl, arg0_29.cvContainer))
 
-	onButton(arg0_28, var0_28._tf, function()
-		if arg0_28.callback then
-			arg0_28.callback(var0_28)
+	onButton(arg0_29, var0_29._tf, function()
+		if arg0_29.callback then
+			arg0_29.callback(var0_29)
 		end
 	end, SFX_PANEL)
-	var0_28:Init(arg0_28.shipGroup, arg0_28.skin, arg0_28.isLive2d, arg1_28)
-	var0_28:Update()
-	table.insert(arg0_28.cvBtns, var0_28)
+	var0_29:Init(arg0_29.shipGroup, arg0_29.skin, arg0_29.isLive2d, arg1_29)
+	var0_29:Update()
+	table.insert(arg0_29.cvBtns, var0_29)
 end
 
-function var0_0.AddExCvBtn(arg0_30, arg1_30)
-	local var0_30 = ShipProfileExCvBtn.New(cloneTplTo(arg0_30.cvTpl, arg0_30.cvContainer))
+function var0_0.AddExCvBtn(arg0_31, arg1_31)
+	local var0_31 = ShipProfileExCvBtn.New(cloneTplTo(arg0_31.cvTpl, arg0_31.cvContainer))
 
-	onButton(arg0_30, var0_30._tf, function()
-		if arg0_30.callback then
-			arg0_30.callback(var0_30)
+	onButton(arg0_31, var0_31._tf, function()
+		if arg0_31.callback then
+			arg0_31.callback(var0_31)
 		end
 	end, SFX_PANEL)
 
-	local var1_30 = arg0_30.shipGroup:GetMaxIntimacy()
+	local var1_31 = arg0_31.shipGroup:GetMaxIntimacy()
 
-	var0_30:Init(arg0_30.shipGroup, arg0_30.skin, arg0_30.isLive2d, arg1_30, var1_30)
-	var0_30:Update()
-	table.insert(arg0_30.cvBtns, var0_30)
+	var0_31:Init(arg0_31.shipGroup, arg0_31.skin, arg0_31.isLive2d, arg1_31, var1_31)
+	var0_31:Update()
+	table.insert(arg0_31.cvBtns, var0_31)
 end
 
-function var0_0.DestroyCvBtns(arg0_32)
-	if not arg0_32.cvBtns then
+function var0_0.DestroyCvBtns(arg0_33)
+	if not arg0_33.cvBtns then
 		return
 	end
 
-	for iter0_32, iter1_32 in ipairs(arg0_32.cvBtns) do
-		iter1_32:Destroy()
+	for iter0_33, iter1_33 in ipairs(arg0_33.cvBtns) do
+		iter1_33:Destroy()
 	end
 end
 
-function var0_0.OnDestroy(arg0_33)
-	arg0_33:DestroyCvBtns()
+function var0_0.OnDestroy(arg0_34)
+	arg0_34:DestroyCvBtns()
 
-	arg0_33.cvLoader = nil
-	arg0_33.callback = nil
+	arg0_34.cvLoader = nil
+	arg0_34.callback = nil
 end
 
 return var0_0

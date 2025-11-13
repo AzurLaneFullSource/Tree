@@ -1859,5 +1859,9 @@ pg.voice_actor_CN = {
 	[481] = {
 		code = 481,
 		actor_name = "Misuzu Yamada"
+	},
+	[482] = {
+		code = 482,
+		actor_name = "Takako Honda"
 	}
 }

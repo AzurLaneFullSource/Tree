@@ -192257,7 +192257,7 @@ _G.pg.base.chapter_template[1740051] = {
 
 _G.pg.base.chapter_template[1750001] = {
 	ItemTransformPattern = "",
-	act_id = 5001,
+	act_id = 50222,
 	air_dominance = 100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -192294,7 +192294,7 @@ _G.pg.base.chapter_template[1750001] = {
 	model = 2,
 	name = "A Legend Reenacted",
 	num_1 = 1,
-	num_2 = 10,
+	num_2 = 7,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -192302,7 +192302,7 @@ _G.pg.base.chapter_template[1750001] = {
 	pos_y = "0.470277777",
 	pre_story = 0,
 	profiles = "Nagato and her friends head to the Prime Sakura's sanctuary to save the sacred tree. They are reminded of a folk tale related to Watatsumi.",
-	progress_boss = 50,
+	progress_boss = 100,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -192996,7 +192996,7 @@ _G.pg.base.chapter_template[1750001] = {
 
 _G.pg.base.chapter_template[1750002] = {
 	ItemTransformPattern = "",
-	act_id = 5001,
+	act_id = 50222,
 	air_dominance = 130,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -193033,7 +193033,7 @@ _G.pg.base.chapter_template[1750002] = {
 	model = 2,
 	name = "Source of the Withering",
 	num_1 = 1,
-	num_2 = 11,
+	num_2 = 7,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -193041,7 +193041,7 @@ _G.pg.base.chapter_template[1750002] = {
 	pos_y = "0.201111107",
 	pre_story = 0,
 	profiles = "The true source of the withering is the corruption of the calamitous darkness, as well as the shadowy legion in its wake.",
-	progress_boss = 50,
+	progress_boss = 100,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -193638,7 +193638,7 @@ _G.pg.base.chapter_template[1750002] = {
 
 _G.pg.base.chapter_template[1750003] = {
 	ItemTransformPattern = "",
-	act_id = 5001,
+	act_id = 50222,
 	air_dominance = 165,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -194324,7 +194324,7 @@ _G.pg.base.chapter_template[1750003] = {
 
 _G.pg.base.chapter_template[1750004] = {
 	ItemTransformPattern = "",
-	act_id = 5002,
+	act_id = 50223,
 	air_dominance = 210,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -195004,7 +195004,7 @@ _G.pg.base.chapter_template[1750004] = {
 
 _G.pg.base.chapter_template[1750005] = {
 	ItemTransformPattern = "",
-	act_id = 5002,
+	act_id = 50223,
 	air_dominance = 270,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -195753,7 +195753,7 @@ _G.pg.base.chapter_template[1750005] = {
 
 _G.pg.base.chapter_template[1750006] = {
 	ItemTransformPattern = "",
-	act_id = 5002,
+	act_id = 50223,
 	air_dominance = 330,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -196729,7 +196729,7 @@ _G.pg.base.chapter_template[1750006] = {
 
 _G.pg.base.chapter_template[1750021] = {
 	ItemTransformPattern = "",
-	act_id = 5001,
+	act_id = 50222,
 	air_dominance = 455,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -196766,7 +196766,7 @@ _G.pg.base.chapter_template[1750021] = {
 	model = 2,
 	name = "A Legend Reenacted",
 	num_1 = 1,
-	num_2 = 13,
+	num_2 = 9,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -196774,7 +196774,7 @@ _G.pg.base.chapter_template[1750021] = {
 	pos_y = "0.470277777",
 	pre_story = 0,
 	profiles = "Nagato and her friends head to the Prime Sakura's sanctuary to save the sacred tree. They are reminded of a folk tale related to Watatsumi.",
-	progress_boss = 50,
+	progress_boss = 100,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -197509,7 +197509,7 @@ _G.pg.base.chapter_template[1750021] = {
 
 _G.pg.base.chapter_template[1750022] = {
 	ItemTransformPattern = "",
-	act_id = 5001,
+	act_id = 50222,
 	air_dominance = 605,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -197546,7 +197546,7 @@ _G.pg.base.chapter_template[1750022] = {
 	model = 2,
 	name = "Source of the Withering",
 	num_1 = 1,
-	num_2 = 13,
+	num_2 = 9,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -197554,7 +197554,7 @@ _G.pg.base.chapter_template[1750022] = {
 	pos_y = "0.201111107",
 	pre_story = 0,
 	profiles = "The true source of the withering is the corruption of the calamitous darkness, as well as the shadowy legion in its wake.",
-	progress_boss = 50,
+	progress_boss = 100,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -198192,7 +198192,7 @@ _G.pg.base.chapter_template[1750022] = {
 
 _G.pg.base.chapter_template[1750023] = {
 	ItemTransformPattern = "",
-	act_id = 5001,
+	act_id = 50222,
 	air_dominance = 775,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -198919,7 +198919,7 @@ _G.pg.base.chapter_template[1750023] = {
 
 _G.pg.base.chapter_template[1750024] = {
 	ItemTransformPattern = "",
-	act_id = 5002,
+	act_id = 50223,
 	air_dominance = 850,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -198956,7 +198956,7 @@ _G.pg.base.chapter_template[1750024] = {
 	model = 2,
 	name = "Shadow of Corruption",
 	num_1 = 1,
-	num_2 = 21,
+	num_2 = 16,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -198964,7 +198964,7 @@ _G.pg.base.chapter_template[1750024] = {
 	pos_y = "0.470277777",
 	pre_story = 0,
 	profiles = "The seal is broken, the formless darkness overflows, and the beasts of corruption overrun the sacred tree's barrier.",
-	progress_boss = 34,
+	progress_boss = 50,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -199613,7 +199613,7 @@ _G.pg.base.chapter_template[1750024] = {
 	},
 	defeat_story_count = {
 		1,
-		3,
+		2,
 	},
 	npc_data = {},
 	risk_levels = {
@@ -199645,7 +199645,7 @@ _G.pg.base.chapter_template[1750024] = {
 
 _G.pg.base.chapter_template[1750025] = {
 	ItemTransformPattern = "",
-	act_id = 5002,
+	act_id = 50223,
 	air_dominance = 1100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -199682,7 +199682,7 @@ _G.pg.base.chapter_template[1750025] = {
 	model = 2,
 	name = "Safe Haven",
 	num_1 = 1,
-	num_2 = 24,
+	num_2 = 18,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -199690,7 +199690,7 @@ _G.pg.base.chapter_template[1750025] = {
 	pos_y = "0.201111107",
 	pre_story = 0,
 	profiles = "The final unsullied land in the darkness of the unknown. Will you throw away your doubts and accept the finality of annihilation, or...",
-	progress_boss = 34,
+	progress_boss = 50,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -200409,7 +200409,7 @@ _G.pg.base.chapter_template[1750025] = {
 	},
 	defeat_story_count = {
 		1,
-		3,
+		2,
 	},
 	npc_data = {},
 	risk_levels = {
@@ -200441,7 +200441,7 @@ _G.pg.base.chapter_template[1750025] = {
 
 _G.pg.base.chapter_template[1750026] = {
 	ItemTransformPattern = "",
-	act_id = 5002,
+	act_id = 50223,
 	air_dominance = 1410,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -201464,7 +201464,7 @@ _G.pg.base.chapter_template[1750026] = {
 
 _G.pg.base.chapter_template[1750041] = {
 	ItemTransformPattern = "",
-	act_id = 5002,
+	act_id = 50223,
 	air_dominance = 1820,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -202001,7 +202001,7 @@ _G.pg.base.chapter_template[1750041] = {
 
 _G.pg.base.chapter_template[1750051] = {
 	ItemTransformPattern = "",
-	act_id = 5002,
+	act_id = 50223,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -202070,18 +202070,6 @@ _G.pg.base.chapter_template[1750051] = {
 		1.5,
 	},
 	limitation = {
-		{
-			{
-				5,
-				"zhan",
-				0,
-			},
-			{
-				0,
-				0,
-				0,
-			},
-		},
 		{
 			{
 				0,

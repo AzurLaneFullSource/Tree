@@ -54049,6 +54049,179 @@ pg.equip_skin_template = {
 			24000
 		}
 	},
+	[3055] = {
+		hit_sfx = "",
+		bullet_name = "zidan_heiwuqiqiu",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		name = "Discount Balloon Shell",
+		themeid = 199,
+		desc = "Get the discount now, place your order at half the price!",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		orbit_ui = "",
+		orbit_combat_anima_change = "",
+		icon = "99176",
+		orbit_combat = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		miss_sfx = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "zidan_heiwuqiqiu_hit",
+		id = 3055,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			1,
+			2,
+			3
+		},
+		weapon_ids = {
+			101,
+			101
+		}
+	},
+	[3056] = {
+		hit_sfx = "",
+		bullet_name = "yulei_heiwudengpai",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		name = "Shopping Signpost Torpedo",
+		themeid = 199,
+		desc = "Follow the signpost to redeem your prizes!",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		orbit_ui = "",
+		orbit_combat_anima_change = "",
+		icon = "99177",
+		orbit_combat = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		miss_sfx = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 3056,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			5,
+			13
+		},
+		weapon_ids = {
+			107,
+			107
+		}
+	},
+	[3057] = {
+		hit_sfx = "",
+		bullet_name = "paodan_gouwuhe",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		name = "Shopping Giftbox Shell",
+		themeid = 199,
+		desc = "No shortage of gift boxes—the discounts keep coming.",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		orbit_ui = "",
+		orbit_combat_anima_change = "",
+		icon = "99178",
+		orbit_combat = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		miss_sfx = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 3057,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	},
+	[3058] = {
+		hit_sfx = "",
+		bullet_name = "",
+		name = "Lucky Roulette",
+		type = 1,
+		preview_hit_distance = 0,
+		themeid = 199,
+		orbit_ui = "shebei_heiwuzhantaiui",
+		desc = "Ding dong! Thank you for your patronage!",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = false,
+		miss_sfx = "",
+		orbit_combat_anima_change = "",
+		icon = "99179",
+		orbit_combat = "shebei_heiwuzhantai",
+		orbit_ui_back = 1,
+		mirror = 0,
+		rarity = 4,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 3058,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				0.05,
+				-2.74,
+				-0.91
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				2,
+				38
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	},
 	all = {
 		1,
 		2,
@@ -55421,6 +55594,10 @@ pg.equip_skin_template = {
 		3051,
 		3052,
 		3053,
-		3054
+		3054,
+		3055,
+		3056,
+		3057,
+		3058
 	}
 }

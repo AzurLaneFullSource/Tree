@@ -31,14 +31,9 @@ function var0_0.Init(arg0_2)
 		onNextTick(arg0_6)
 	end)
 	table.insert(var0_2, function(arg0_7)
-		if not arg0_2:AnyMallTipShowing() then
-			TagTipHelper.FreeGiftTag({
-				arg0_2.mallTip
-			})
-		else
-			setActive(arg0_2.mallTip, false)
-		end
-
+		TagTipHelper.GiftPackagesTag({
+			arg0_2.mallTip
+		})
 		onNextTick(arg0_7)
 	end)
 	table.insert(var0_2, function(arg0_8)
@@ -48,21 +43,8 @@ function var0_0.Init(arg0_2)
 	seriesAsync(var0_2)
 end
 
-function var0_0.AnyMallTipShowing(arg0_9)
-	local var0_9 = {
-		arg0_9.monthCardTag,
-		arg0_9.sellTag,
-		arg0_9.skinTag,
-		arg0_9.tecShipGiftTag
-	}
-
-	return _.any(var0_9, function(arg0_10)
-		return arg0_10:GetComponent(typeof(Image)).enabled
-	end)
-end
-
-function var0_0.Refresh(arg0_11)
-	arg0_11:Init()
+function var0_0.Refresh(arg0_9)
+	arg0_9:Init()
 end
 
 return var0_0

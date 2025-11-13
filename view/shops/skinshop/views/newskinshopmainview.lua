@@ -943,16 +943,15 @@ function var0_0.FlushObtainBtn(arg0_66, arg1_66)
 
 	onButton(arg0_66, arg0_66.obtainBtn, function()
 		local var0_67 = {}
+		local var1_67 = SkinCouponActivity.StaticEncoreActTip(arg1_66.id)
 
-		if SkinCouponActivity.StaticEncoreActTip(arg1_66.id) then
+		if tobool(var1_67) then
 			table.insert(var0_67, function(arg0_68)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("SkinDiscount_Hint"),
 					onYes = function()
-						local var0_69 = SkinCouponActivity.GetSkinCouponEncoreAct(arg1_66.id)
-
-						if var0_69 then
-							arg0_66:emit(NewSkinShopMediator.OPEN_ACTIVITY, var0_69.id)
+						if var1_67 and not var1_67:isEnd() then
+							arg0_66:emit(NewSkinShopMediator.OPEN_ACTIVITY, var1_67.id)
 						end
 					end,
 					onNo = function()

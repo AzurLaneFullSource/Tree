@@ -22,7 +22,7 @@ function var0_0.update(arg0_2, arg1_2, arg2_2, arg3_2)
 		setText(arg0_2.unlockBlockLabel, i18n("blackfriday_shop_tip", var1_2, var2_2))
 	end
 
-	setActive(arg0_2.focusTip, arg1_2:isFree() and arg0_2:inTime())
+	setActive(arg0_2.focusTip, arg0_2:inTime() and arg1_2:isTip())
 end
 
 function var0_0.inTime(arg0_3)

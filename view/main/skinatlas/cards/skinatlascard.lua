@@ -5,6 +5,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1._tf = arg1_1.transform
 	arg0_1.usingTr = findTF(arg0_1._tf, "using")
 	arg0_1.unavailableTr = findTF(arg0_1._tf, "unavailable")
+	arg0_1.have = arg0_1._tf:Find("have")
 	arg0_1.icon = findTF(arg0_1._tf, "mask/icon")
 	arg0_1.name = findTF(arg0_1._tf, "name/Text"):GetComponent(typeof(Text))
 	arg0_1.enName = findTF(arg0_1._tf, "name/en"):GetComponent(typeof(Text))
@@ -14,9 +15,11 @@ function var0_0.Ctor(arg0_1, arg1_1)
 
 	setText(arg0_1.usingTr:Find("Text"), i18n("shop_new_in_use"))
 	setText(arg0_1.unavailableTr:Find("Text"), i18n("shop_new_unable_to_use"))
+	setText(arg0_1.have:Find("Text"), i18n("shop_new_owned"))
+	setActive()
 end
 
-function var0_0.Update(arg0_2, arg1_2, arg2_2)
+function var0_0.Update(arg0_2, arg1_2, arg2_2, arg3_2)
 	arg0_2.index = arg2_2
 	arg0_2.skin = arg1_2
 
@@ -38,23 +41,31 @@ function var0_0.Update(arg0_2, arg1_2, arg2_2)
 	setActive(arg0_2.usingTr, var1_2)
 	setActive(arg0_2.unavailableTr, var2_2)
 
-	local var7_2 = arg1_2:getConfig("name")
+	if arg3_2 then
+		local var7_2 = getProxy(ShipSkinProxy):hasSkin(arg0_2.skin.id)
 
-	arg0_2.name.text = shortenString(var7_2, 7)
+		setActive(arg0_2.have, var7_2)
+	else
+		setActive(arg0_2.have, false)
+	end
+
+	local var8_2 = arg1_2:getConfig("name")
+
+	arg0_2.name.text = shortenString(var8_2, 7)
 
 	if var0_2.skin_type == ShipSkin.SKIN_TYPE_TB then
 		arg0_2.enName.text = NewEducateHelper.GetShipNameBySecId(NewEducateHelper.GetSecIdBySkinId(arg0_2.skinId))
 	else
-		local var8_2 = ShipGroup.getDefaultShipConfig(var0_2.ship_group)
+		local var9_2 = ShipGroup.getDefaultShipConfig(var0_2.ship_group)
 
-		arg0_2.enName.text = var8_2.english_name
+		arg0_2.enName.text = var9_2.english_name
 	end
 
-	local var9_2 = ShipSkin.GetChangeSkinData(arg0_2.skin.id)
+	local var10_2 = ShipSkin.GetChangeSkinData(arg0_2.skin.id)
 
-	setActive(arg0_2.changeSkinUI, var9_2 and true or false)
+	setActive(arg0_2.changeSkinUI, var10_2 and true or false)
 
-	if var9_2 then
+	if var10_2 then
 		if not arg0_2.changeSkinToggle then
 			arg0_2.changeSkinToggle = ChangeSkinToggle.New(findTF(arg0_2.changeSkinUI, "ChangeSkinToggleUI"))
 		end

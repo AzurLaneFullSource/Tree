@@ -274,7 +274,7 @@ function var0_0.InitTitle(arg0_29, arg1_29)
 
 						setLocalPosition(arg0_29.tipsGo, var0_31 + Vector3(-20, 46, 0))
 						arg0_29:ShowTips(arg0_31)
-					end, SFX_CONFIGM)
+					end, SFX_CONFIRM)
 				end
 			end)
 			arg0_29.toggleList:align(#var1_29.rare_display)
