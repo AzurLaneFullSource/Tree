@@ -255,11 +255,7 @@ function var0_0.OnUpdateTrackTask(arg0_38, arg1_38, arg2_38)
 	end
 
 	if arg0_38.mainTraceTaskId and arg0_38.mainTraceTaskId ~= 0 or arg0_38.otherTraceTaskId and arg0_38.otherTraceTaskId ~= 0 then
-		if not arg0_38.taskTrackPanel:isShowing() then
-			arg0_38.taskTrackPanel:ExecuteAction("Show")
-		else
-			arg0_38.taskTrackPanel:ExecuteAction("UpdateTask", arg2_38)
-		end
+		arg0_38.taskTrackPanel:ExecuteAction("Show")
 	end
 
 	arg0_38.btnContainer:OnTrackTaskChange()
