@@ -6,6 +6,7 @@ function var0_0.OnInit(arg0_1)
 	arg0_1.item = arg0_1.items:Find("item")
 	arg0_1.btn = arg0_1.bg:Find("btn")
 	arg0_1.itemList = UIItemList.New(arg0_1.items, arg0_1.item)
+	arg0_1.red = arg0_1.bg:Find("btn/red")
 end
 
 function var0_0.OnFirstFlush(arg0_2)
@@ -19,6 +20,7 @@ function var0_0.OnFirstFlush(arg0_2)
 			viewComponent = PSSHei5Scene
 		}))
 	end, SOUND_BACK)
+	SetActive(arg0_2.red, #arg0_2.activity:GetHei5UnreceiveAward() > 0)
 end
 
 function var0_0.OnUpdateFlush(arg0_4)
