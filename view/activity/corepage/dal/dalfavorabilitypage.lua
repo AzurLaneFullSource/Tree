@@ -85,10 +85,6 @@ function var0_0.OnUpdateFlush(arg0_10)
 
 	local var1_10, var2_10, var3_10 = arg0_10.ptData:GetResProgress()
 
-	if var2_10 < var1_10 then
-		var1_10 = var2_10
-	end
-
 	setText(arg0_10.progres, setColorStr(var1_10, "#ffffff") .. setColorStr("/" .. var2_10, "#DD9D9D"))
 
 	local var4_10 = arg0_10.ptData:CanGetAward()
