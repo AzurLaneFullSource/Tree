@@ -216,6 +216,7 @@ function var3_0.onPlayerShutDown(arg0_19, arg1_19)
 
 		arg0_19._failReason = nil
 
+		arg0_19._dataProxy:TriggerFinishBattle()
 		arg0_19._state:BattleEnd()
 	end
 
@@ -259,6 +260,7 @@ function var3_0.onUpdateCountDown(arg0_20, arg1_20)
 		local var0_20, var1_20 = arg0_20._userFleet:GetDamageRatioResult()
 		local var2_20, var3_20 = arg0_20._rivalFleet:GetDamageRatioResult()
 
+		arg0_20._dataProxy:TriggerFinishBattle()
 		arg0_20._dataProxy:CalcDuelScoreAtTimesUp(var0_20, var2_20, var1_20, var3_20)
 		arg0_20._state:BattleEnd()
 	end

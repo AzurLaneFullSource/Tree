@@ -28,6 +28,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 
 	arg0_1.state = var0_0.STATE_IDLE
 	arg0_1.moveCnt = 0
+	arg0_1.sideIndex = 0
 end
 
 function var0_0.GetLevel(arg0_2)
@@ -182,6 +183,20 @@ function var0_0.GetState(arg0_26)
 end
 
 function var0_0.GetPrefab(arg0_27)
+	local var0_27 = pg.ship_skin_template[arg0_27.skinId]
+
+	assert(var0_27, "ship_skin_template not exist: " .. arg0_27.configId .. " " .. arg0_27.skinId)
+
+	if var0_27.double_char and var0_27.double_char == 1 and arg0_27.sideIndex and arg0_27.sideIndex ~= 0 then
+		local var1_27
+
+		if arg0_27.sideIndex == 1 then
+			return arg0_27.prefab .. "_L"
+		elseif arg0_27.sideIndex == 2 then
+			return arg0_27.prefab .. "_R"
+		end
+	end
+
 	return arg0_27.prefab
 end
 
@@ -189,74 +204,90 @@ function var0_0.getPrefab(arg0_28)
 	return arg0_28:GetPrefab()
 end
 
-function var0_0.getAttachmentPrefab(arg0_29)
-	return arg0_29.attachments
+function var0_0.SetSide(arg0_29, arg1_29)
+	arg0_29.sideIndex = arg1_29
 end
 
-function var0_0.GetMoveTime(arg0_30)
-	return arg0_30.moveTime
+function var0_0.GetSide(arg0_30, arg1_30)
+	return arg0_30.sideIndex
 end
 
-function var0_0.Clear(arg0_31)
-	if arg0_31.timer then
-		arg0_31.timer:Stop()
+function var0_0.IsDoubleSkin(arg0_31)
+	local var0_31 = pg.ship_skin_template[arg0_31.skinId]
 
-		arg0_31.timer = nil
+	assert(var0_31, "ship_skin_template not exist: " .. arg0_31.configId .. " " .. arg0_31.skinId)
+
+	return var0_31.double_char and var0_31.double_char == 1 or false
+end
+
+function var0_0.getAttachmentPrefab(arg0_32)
+	return arg0_32.attachments
+end
+
+function var0_0.GetMoveTime(arg0_33)
+	return arg0_33.moveTime
+end
+
+function var0_0.Clear(arg0_34)
+	if arg0_34.timer then
+		arg0_34.timer:Stop()
+
+		arg0_34.timer = nil
 	end
 end
 
-function var0_0.ChangeInimacy(arg0_32, arg1_32)
-	arg0_32.inimacy = arg1_32
+function var0_0.ChangeInimacy(arg0_35, arg1_35)
+	arg0_35.inimacy = arg1_35
 
-	arg0_32:DispatchEvent(CourtYardEvent.SHIP_INIMACY_CHANGE, arg1_32)
+	arg0_35:DispatchEvent(CourtYardEvent.SHIP_INIMACY_CHANGE, arg1_35)
 end
 
-function var0_0.ChangeCoin(arg0_33, arg1_33)
-	arg0_33.coin = arg1_33
+function var0_0.ChangeCoin(arg0_36, arg1_36)
+	arg0_36.coin = arg1_36
 
-	arg0_33:DispatchEvent(CourtYardEvent.SHIP_COIN_CHANGE, arg1_33)
+	arg0_36:DispatchEvent(CourtYardEvent.SHIP_COIN_CHANGE, arg1_36)
 end
 
-function var0_0.ClearInimacy(arg0_34)
-	local var0_34 = arg0_34.inimacy
+function var0_0.ClearInimacy(arg0_37)
+	local var0_37 = arg0_37.inimacy
 
-	if var0_34 <= 0 then
+	if var0_37 <= 0 then
 		return
 	end
 
-	arg0_34:ChangeInimacy(0)
-	arg0_34:ChangeState(var0_0.STATE_GETAWARD)
-	arg0_34:DispatchEvent(CourtYardEvent.SHIP_GET_AWARD, var0_34, 2)
+	arg0_37:ChangeInimacy(0)
+	arg0_37:ChangeState(var0_0.STATE_GETAWARD)
+	arg0_37:DispatchEvent(CourtYardEvent.SHIP_GET_AWARD, var0_37, 2)
 end
 
-function var0_0.ClearCoin(arg0_35)
-	local var0_35 = arg0_35.coin
+function var0_0.ClearCoin(arg0_38)
+	local var0_38 = arg0_38.coin
 
-	if var0_35 <= 0 then
+	if var0_38 <= 0 then
 		return
 	end
 
-	arg0_35:ChangeCoin(0)
-	arg0_35:ChangeState(var0_0.STATE_GETAWARD)
-	arg0_35:DispatchEvent(CourtYardEvent.SHIP_GET_AWARD, var0_35, 1)
+	arg0_38:ChangeCoin(0)
+	arg0_38:ChangeState(var0_0.STATE_GETAWARD)
+	arg0_38:DispatchEvent(CourtYardEvent.SHIP_GET_AWARD, var0_38, 1)
 end
 
-function var0_0.AddExp(arg0_36, arg1_36)
-	arg0_36:DispatchEvent(CourtYardEvent.SHIP_GET_AWARD, arg1_36, 3)
+function var0_0.AddExp(arg0_39, arg1_39)
+	arg0_39:DispatchEvent(CourtYardEvent.SHIP_GET_AWARD, arg1_39, 3)
 end
 
-function var0_0.GetInterActionBgm(arg0_37)
+function var0_0.GetInterActionBgm(arg0_40)
 	return nil
 end
 
-function var0_0.Dispose(arg0_38)
-	var0_0.super.Dispose(arg0_38)
-	arg0_38:Clear()
+function var0_0.Dispose(arg0_41)
+	var0_0.super.Dispose(arg0_41)
+	arg0_41:Clear()
 
-	local var0_38 = arg0_38:GetInterActionData()
+	local var0_41 = arg0_41:GetInterActionData()
 
-	if var0_38 then
-		var0_38:Stop()
+	if var0_41 then
+		var0_41:Stop()
 	end
 end
 

@@ -165,6 +165,7 @@ function var0_0.listNotificationInterests(arg0_21)
 		GAME.BEGIN_STAGE_DONE,
 		GAME.SEND_MINI_GAME_OP_DONE,
 		GAME.FETCH_NPC_SHIP_DONE,
+		GAME.FETCH_NPC_SHIP_ACTIVITY_DONE,
 		GAME.ZERO_HOUR_OP_DONE,
 		GAME.CONFIRM_GET_SHIP,
 		GAME.WILL_LOGOUT,
@@ -232,7 +233,7 @@ function var0_0.handleNotification(arg0_22, arg1_22)
 		MainTechnologySequence.New():Execute(function()
 			return
 		end)
-	elseif var0_22 == GAME.FETCH_NPC_SHIP_DONE then
+	elseif var0_22 == GAME.FETCH_NPC_SHIP_DONE or var0_22 == GAME.FETCH_NPC_SHIP_ACTIVITY_DONE then
 		arg0_22.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_22.items, var1_22.callback)
 	elseif var0_22 == var0_0.REFRESH_VIEW then
 		arg0_22.viewComponent:setVisible(false)

@@ -51,8 +51,8 @@ function var0_0.updateStudent(arg0_6, arg1_6, arg2_6)
 	setActive(arg0_6._go, true)
 
 	if arg0_6.shipVO == nil or arg0_6.shipVO.configId ~= arg1_6.configId then
-		if not IsNil(arg0_6.model) then
-			PoolMgr.GetInstance():ReturnSpineChar(arg0_6.prefab, arg0_6.model)
+		if arg0_6.model then
+			arg0_6.model:Dispose()
 		end
 
 		arg0_6.prefab = arg1_6:getPrefab()
@@ -66,22 +66,20 @@ function var0_0.updateStudent(arg0_6, arg1_6, arg2_6)
 
 		local var2_6 = arg0_6.prefab
 
-		PoolMgr.GetInstance():GetSpineChar(var2_6, true, function(arg0_7)
+		arg0_6.model = SpineAnimChar.New()
+
+		arg0_6.model:SetPaint(var2_6)
+		arg0_6.model:Load(true, function(arg0_7)
 			if var2_6 ~= arg0_6.prefab then
-				PoolMgr.GetInstance():ReturnSpineChar(var2_6, arg0_7)
+				arg0_7:Dispose()
 
 				return
 			end
 
-			arg0_6.model = arg0_7
-			arg0_6.model.transform.localScale = Vector3(0.5, 0.5, 1)
-			arg0_6.model.transform.localPosition = Vector3.zero
-
-			arg0_6.model.transform:SetParent(arg0_6._tf, false)
-			arg0_6.model.transform:SetSiblingIndex(1)
-
-			arg0_6.anim = arg0_6.model:GetComponent(typeof(SpineAnimUI))
-
+			arg0_6.model:SetLocalScale(Vector3(0.5, 0.5, 1))
+			arg0_6.model:SetLocalPosition(Vector3.zero)
+			arg0_6.model:SetParent(arg0_6._tf)
+			arg0_6.model:SetSiblingIndex(1)
 			arg0_6:updateState(var0_0.ShipState.Idle)
 			onButton(arg0_6, arg0_6.chat, function()
 				arg0_6:onClickShip()
@@ -90,7 +88,7 @@ function var0_0.updateStudent(arg0_6, arg1_6, arg2_6)
 	end
 
 	onButton(arg0_6, arg0_6.clickArea, function()
-		if not IsNil(arg0_6.model) then
+		if arg0_6.model then
 			arg0_6:updateState(var0_0.ShipState.Touch)
 		end
 	end)
@@ -127,14 +125,14 @@ function var0_0.updateState(arg0_10, arg1_10)
 end
 
 function var0_0.updateAction(arg0_11)
-	if not IsNil(arg0_11.anim) then
+	if arg0_11.model then
 		if arg0_11.state == var0_0.ShipState.Walk then
-			arg0_11.anim:SetAction("walk", 0)
+			arg0_11.model:SetAction("walk", 0)
 		elseif arg0_11.state == var0_0.ShipState.Idle then
-			arg0_11.anim:SetAction("stand2", 0)
+			arg0_11.model:SetAction("stand2", 0)
 		elseif arg0_11.state == var0_0.ShipState.Touch then
-			arg0_11.anim:SetAction("touch", 0)
-			arg0_11.anim:SetActionCallBack(function(arg0_12)
+			arg0_11.model:SetAction("touch", 0)
+			arg0_11.model:SetActionCallBack(function(arg0_12)
 				arg0_11:updateState(var0_0.ShipState.Idle)
 			end)
 		end
@@ -208,18 +206,15 @@ end
 function var0_0.clear(arg0_19)
 	arg0_19:clearLogic()
 
-	if not IsNil(arg0_19.model) then
-		arg0_19.anim:SetActionCallBack(nil)
-
-		arg0_19.model.transform.localScale = Vector3.one
-
-		PoolMgr.GetInstance():ReturnSpineChar(arg0_19.prefab, arg0_19.model)
+	if arg0_19.model then
+		arg0_19.model:SetActionCallBack(nil)
+		arg0_19.model:SetLocalScale(Vector3.one)
+		arg0_19.model:Dispose()
 	end
 
 	arg0_19.shipVO = nil
 	arg0_19.prefab = nil
 	arg0_19.model = nil
-	arg0_19.anim = nil
 	arg0_19.position = nil
 	arg0_19.currentPoint = nil
 	arg0_19.targetPoint = nil

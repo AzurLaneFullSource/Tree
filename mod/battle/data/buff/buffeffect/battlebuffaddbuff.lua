@@ -29,6 +29,7 @@ function var3_0.SetArgs(arg0_2, arg1_2, arg2_2)
 	arg0_2._countType = var0_2.countType
 	arg0_2._weaponType = arg0_2._tempData.arg_list.weaponType
 	arg0_2._repeatCount = var0_2.repeat_count or 1
+	arg0_2._attrConsumeRepeat = var0_2.fleetAttrConsume
 end
 
 function var3_0.onUpdate(arg0_3, arg1_3, arg2_3, arg3_3)
@@ -124,7 +125,13 @@ function var3_0.attachBuff(arg0_9, arg1_9, arg2_9, arg3_9, arg4_9)
 	if var1_9 then
 		var1_9:SetCommander(arg0_9._commander)
 
-		local var2_9 = arg0_9._repeatCount
+		local var2_9
+
+		if arg0_9._attrConsumeRepeat then
+			var2_9 = arg0_9:fleetAttrRepeatConsume(arg0_9._attrConsumeRepeat)
+		else
+			var2_9 = arg0_9:repeatCountParse(arg0_9._repeatCount)
+		end
 
 		if var2_9 == -1 then
 			var2_9 = arg4_9:GetStack()

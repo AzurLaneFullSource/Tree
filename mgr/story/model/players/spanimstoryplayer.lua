@@ -41,16 +41,12 @@ end
 function var0_0.GetSpine(arg0_5, arg1_5, arg2_5)
 	local var0_5 = arg1_5:GetSpineName()
 
-	PoolMgr.GetInstance():GetSpineChar(var0_5, true, function(arg0_6)
-		setParent(arg0_6, arg0_5.spAnimPanel)
+	arg0_5.spineChar = SpineAnimChar.New()
 
-		tf(arg0_6).localPosition = Vector3(0, 0, 0)
-
-		local var0_6 = arg0_6:GetComponent("SpineAnimUI")
-
-		arg0_5.spineAnim = var0_6
-		arg0_5.shipModel = arg0_6
-
+	arg0_5.spineChar:SetPaint(var0_5)
+	arg0_5.spineChar:Load(true, function(arg0_6)
+		arg0_6:SetParent(arg0_5.spAnimPanel)
+		arg0_6:SetLocalPosition(Vector3(0, 0, 0))
 		arg2_5()
 	end)
 
@@ -58,14 +54,14 @@ function var0_0.GetSpine(arg0_5, arg1_5, arg2_5)
 end
 
 function var0_0.PlaySpAnim(arg0_7, arg1_7, arg2_7)
-	arg0_7.spineAnim:SetActionCallBack(nil)
+	arg0_7.spineChar:SetActionCallBack(nil)
 
 	if arg1_7:HasStopTime() then
 		arg0_7:DelayCall(arg1_7:GetStopTime(), arg2_7)
 	else
-		arg0_7.spineAnim:SetActionCallBack(function(arg0_8)
+		arg0_7.spineChar:SetActionCallBack(function(arg0_8)
 			if arg0_8 == "finish" then
-				arg0_7.spineAnim:SetActionCallBack(nil)
+				arg0_7.spineChar:SetActionCallBack(nil)
 				arg2_7()
 			end
 		end)
@@ -73,7 +69,7 @@ function var0_0.PlaySpAnim(arg0_7, arg1_7, arg2_7)
 
 	local var0_7 = arg1_7:GetActionName()
 
-	arg0_7.spineAnim:SetAction(var0_7, 0)
+	arg0_7.spineChar:SetAction(var0_7, 0)
 
 	if arg1_7:ShouldAdjustSpeed() then
 		arg0_7:AdjustSpeed(arg1_7:GetSpeed())
@@ -87,21 +83,19 @@ function var0_0.AdjustSpeed(arg0_9, arg1_9)
 end
 
 function var0_0.GetAnimationState(arg0_10)
-	return arg0_10.shipModel:GetComponent("Spine.Unity.SkeletonGraphic").AnimationState
+	return arg0_10.spineChar:GetSkeletonGraphic().AnimationState
 end
 
 function var0_0.ReturnSpine(arg0_11)
-	if arg0_11.shipModel == nil or arg0_11.spineAnim == nil or arg0_11.prefab == nil then
+	if arg0_11.spineChar == nil or arg0_11.prefab == nil then
 		return
 	end
 
 	arg0_11:GetAnimationState().TimeScale = 1
 
-	arg0_11.spineAnim:SetActionCallBack(nil)
-	PoolMgr.GetInstance():ReturnSpineChar(arg0_11.prefab, arg0_11.shipModel)
+	arg0_11.spineChar:Dispose()
 
-	arg0_11.shipModel = nil
-	arg0_11.spineAnim = nil
+	arg0_11.spineChar = nil
 	arg0_11.prefab = nil
 end
 

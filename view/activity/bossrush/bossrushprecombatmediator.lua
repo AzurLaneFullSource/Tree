@@ -101,10 +101,7 @@ function var0_0.bindEvent(arg0_2)
 				__index = ShipStatus.TAG_HIDE_ACTIVITY_BOSS
 			}),
 			blockTagFlags = var0_10,
-			otherSelectedIds = var1_10,
-			ignoredIds = pg.ShipFlagMgr.GetInstance():FilterShips({
-				isActivityNpc = true
-			})
+			otherSelectedIds = var1_10
 		})
 	end)
 	arg0_2:bind(var0_0.ON_UPDATE_CUSTOM_FLEET, function(arg0_12)
@@ -246,7 +243,16 @@ function var0_0.bindEvent(arg0_2)
 
 		local function var5_30()
 			local var0_31 = 0
-			local var1_31 = var3_30:GetType() == BossRushSeriesData.TYPE.EXTRA and SYSTEM_BOSS_RUSH_EX or SYSTEM_BOSS_RUSH
+			local var1_31
+
+			if var3_30.__cname == "CollabrateBossRushSeriesData" then
+				var1_31 = SYSTEM_BOSS_RUSH_COLLABRATE
+			elseif var3_30:GetType() == BossRushSeriesData.TYPE.EXTRA then
+				var1_31 = SYSTEM_BOSS_RUSH_EX
+			else
+				var1_31 = SYSTEM_BOSS_RUSH
+			end
+
 			local var2_31 = pg.battle_cost_template[var1_31]
 			local var3_31 = var3_30:GetOilLimit()
 			local var4_31 = var2_31.oil_cost > 0

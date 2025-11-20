@@ -46,18 +46,19 @@ end
 function var0_0.LoadShip(arg0_8, arg1_8, arg2_8)
 	local var0_8 = pg.ship_skin_template[arg1_8].prefab
 
-	pg.PoolMgr.GetInstance():GetSpineChar(var0_8, true, function(arg0_9)
+	arg0_8.loadedShip = SpineAnimChar.New()
+
+	arg0_8.loadedShip:SetPaint(var0_8)
+	arg0_8.loadedShip:Load(true, function(arg0_9)
 		if arg0_8.loadedAnimator then
-			setParent(arg0_9, arg0_8.loadedAnimator)
+			arg0_9:SetParent(arg0_8.loadedAnimator)
 		else
-			setParent(arg0_9, arg0_8.loadedFurniture)
+			arg0_9:SetParent(arg0_8.loadedFurniture)
 		end
 
-		arg0_9.name = var0_8
-		arg0_9.transform.localScale = Vector3(var1_0, var1_0, 1)
-		arg0_8.loadedShip = arg0_9
-		arg0_9.transform.localPosition = Vector3()
-
+		arg0_9:SetName(var0_8)
+		arg0_9:SetLocalScale(Vector3(var1_0, var1_0, 1))
+		arg0_9:SetLocalPosition(Vector3())
 		arg2_8()
 	end)
 end
@@ -238,26 +239,26 @@ function var0_0.StartFollowBone(arg0_25, arg1_25)
 	local var2_25 = var0_25[2]
 	local var3_25 = arg0_25.loadedFurniture.transform
 
-	arg0_25.loadedShip.transform.localScale = Vector3(var2_25 * var1_0, var1_0, 1)
+	arg0_25.loadedShip:SetLocalScale(Vector3(var2_25 * var1_0, var1_0, 1))
+
 	SpineAnimUI.AddFollower(var1_25, var3_25:Find("spine"), arg0_25.loadedShip.transform):GetComponent("Spine.Unity.BoneFollowerGraphic").followLocalScale = true
-	arg0_25.loadedShip.transform.localPosition = Vector3(0, 0, 0)
+
+	arg0_25.loadedShip:SetLocalPosition(Vector3(0, 0, 0))
 end
 
 function var0_0.PlayAction(arg0_26, arg1_26, arg2_26, arg3_26)
-	local var0_26 = GetOrAddComponent(arg1_26, typeof(SpineAnimUI))
-
-	var0_26:SetActionCallBack(function(arg0_27)
+	arg1_26:SetActionCallBack(function(arg0_27)
 		if arg0_27 == "finish" then
-			var0_26:SetActionCallBack(nil)
+			arg1_26:SetActionCallBack(nil)
 			arg3_26()
 		end
 	end)
-	var0_26:SetAction(arg2_26, 0)
+	arg1_26:SetAction(arg2_26, 0)
 end
 
 function var0_0.UnloadSpines(arg0_28)
 	if not IsNil(arg0_28.loadedShip) then
-		pg.PoolMgr.GetInstance():ReturnSpineChar(arg0_28.loadedShip.name, arg0_28.loadedShip)
+		arg0_28.loadedShip:Dispose()
 	end
 
 	if not IsNil(arg0_28.loadedAnimator) then

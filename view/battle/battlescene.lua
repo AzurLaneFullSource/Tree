@@ -404,141 +404,163 @@ function var0_0.CutInPainting(arg0_18, arg1_18, arg2_18, arg3_18, arg4_18)
 	arg0_18._paintingAnimator:Play("skill_painting", -1, 0)
 end
 
-function var0_0.didEnter(arg0_19)
-	setActive(arg0_19._tf, false)
+function var0_0.CutInPaintingDAL(arg0_19, arg1_19, arg2_19, arg3_19, arg4_19)
+	local var0_19 = ys.Battle.BattleResourceManager.GetInstance():InstSkillPaintingDALUI()
 
-	arg0_19._ratioFitter.enabled = true
-	arg0_19._ratioFitter.aspectRatio = pg.CameraFixMgr.GetInstance():GetBattleUIRatio()
-	arg0_19.camEventId = pg.CameraFixMgr.GetInstance():bind(pg.CameraFixMgr.ASPECT_RATIO_UPDATE, function(arg0_20, arg1_20)
-		arg0_19._ratioFitter.aspectRatio = pg.CameraFixMgr.GetInstance():GetBattleUIRatio()
+	setParent(var0_19, arg0_19.uiCanvas, false)
+
+	local var1_19 = findTF(var0_19, "hero/fitter")
+	local var2_19 = arg4_19.cutin_cover_DAL
+	local var3_19 = GetOrAddComponent(var1_19, "PaintingScaler")
+
+	var3_19.FrameName = "lihuisha"
+	var3_19.Tween = 1
+
+	local var4_19 = ys.Battle.BattleResourceManager.GetInstance():InstPainting(var2_19)
+
+	setParent(var4_19, var1_19, false)
+	var0_19:GetComponent(typeof(Animator)):Play("skill_painting", -1, 0)
+	setText(findTF(var0_19, "pop/text"), arg4_19.cutin_script)
+	var0_19:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg0_20)
+		setActive(var0_19, false)
+	end)
+end
+
+function var0_0.didEnter(arg0_21)
+	setActive(arg0_21._tf, false)
+
+	arg0_21._ratioFitter.enabled = true
+	arg0_21._ratioFitter.aspectRatio = pg.CameraFixMgr.GetInstance():GetBattleUIRatio()
+	arg0_21.camEventId = pg.CameraFixMgr.GetInstance():bind(pg.CameraFixMgr.ASPECT_RATIO_UPDATE, function(arg0_22, arg1_22)
+		arg0_21._ratioFitter.aspectRatio = pg.CameraFixMgr.GetInstance():GetBattleUIRatio()
 	end)
 
-	local var0_19 = ys.Battle.BattleState.GetInstance()
+	local var0_21 = ys.Battle.BattleState.GetInstance()
 
-	var0_19:SetBattleUI(arg0_19)
-	onButton(arg0_19, arg0_19._tf:Find("PauseBtn"), function()
-		arg0_19:emit(BattleMediator.ON_PAUSE)
+	var0_21:SetBattleUI(arg0_21)
+	onButton(arg0_21, arg0_21._tf:Find("PauseBtn"), function()
+		arg0_21:emit(BattleMediator.ON_PAUSE)
 	end, SFX_CONFIRM)
 
-	arg0_19._chatBtn = arg0_19._tf:Find("chatBtn")
+	arg0_21._chatBtn = arg0_21._tf:Find("chatBtn")
 
-	local var1_19 = arg0_19._chatBtn:GetComponent(typeof(Animation))
+	local var1_21 = arg0_21._chatBtn:GetComponent(typeof(Animation))
 
-	onButton(arg0_19, arg0_19._chatBtn, function()
-		arg0_19:emit(BattleMediator.ON_CHAT, arg0_19._tf:Find("chatContainer"))
+	onButton(arg0_21, arg0_21._chatBtn, function()
+		arg0_21:emit(BattleMediator.ON_CHAT, arg0_21._tf:Find("chatContainer"))
 
-		if not var1_19 then
-			setActive(arg0_19._chatBtn, false)
+		if not var1_21 then
+			setActive(arg0_21._chatBtn, false)
 		else
-			var1_19:Play("chatbtn_out")
+			var1_21:Play("chatbtn_out")
 		end
 	end)
-	onToggle(arg0_19, arg0_19._tf:Find("AutoBtn"), function(arg0_23)
-		local var0_23 = var0_19:GetBattleType()
+	onToggle(arg0_21, arg0_21._tf:Find("AutoBtn"), function(arg0_25)
+		local var0_25 = var0_21:GetBattleType()
 
-		arg0_19:emit(BattleMediator.ON_AUTO, {
-			isOn = not arg0_23,
-			toggle = arg0_19._tf:Find("AutoBtn"),
-			system = var0_23
+		arg0_21:emit(BattleMediator.ON_AUTO, {
+			isOn = not arg0_25,
+			toggle = arg0_21._tf:Find("AutoBtn"),
+			system = var0_25
 		})
-		var0_19:ActiveBot(ys.Battle.BattleState.IsAutoBotActive(var0_23))
+		var0_21:ActiveBot(ys.Battle.BattleState.IsAutoBotActive(var0_25))
 
-		if var0_19:ChatUseable() then
-			setActive(arg0_19._chatBtn, true)
+		if var0_21:ChatUseable() then
+			setActive(arg0_21._chatBtn, true)
 
-			if var1_19 then
-				var1_19:Play("chatbtn_in")
+			if var1_21 then
+				var1_21:Play("chatbtn_in")
 			end
-		elseif var1_19 then
-			var1_19:Play("chatbtn_out")
+		elseif var1_21 then
+			var1_21:Play("chatbtn_out")
 		else
-			setActive(arg0_19._chatBtn, false)
+			setActive(arg0_21._chatBtn, false)
 		end
 	end, SFX_PANEL, SFX_PANEL)
-	onButton(arg0_19, arg0_19._tf:Find("CardPuzzleConsole/relic/bg"), function()
-		local var0_24 = var0_19:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE):GetCardPuzzleComponent():GetRelicList()
+	onButton(arg0_21, arg0_21._tf:Find("CardPuzzleConsole/relic/bg"), function()
+		local var0_26 = var0_21:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE):GetCardPuzzleComponent():GetRelicList()
 
-		arg0_19:emit(BattleMediator.ON_PUZZLE_RELIC, {
-			relicList = var0_24
+		arg0_21:emit(BattleMediator.ON_PUZZLE_RELIC, {
+			relicList = var0_26
 		})
 	end, SFX_CONFIRM)
-	onButton(arg0_19, arg0_19._tf:Find("CardPuzzleConsole/deck/bg"), function()
-		local var0_25 = var0_19:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE):GetCardPuzzleComponent()
-		local var1_25 = var0_25:GetDeck():GetCardList()
-		local var2_25 = var0_25:GetHand():GetCardList()
+	onButton(arg0_21, arg0_21._tf:Find("CardPuzzleConsole/deck/bg"), function()
+		local var0_27 = var0_21:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE):GetCardPuzzleComponent()
+		local var1_27 = var0_27:GetDeck():GetCardList()
+		local var2_27 = var0_27:GetHand():GetCardList()
 
-		arg0_19:emit(BattleMediator.ON_PUZZLE_CARD, {
-			card = var1_25,
-			hand = var2_25
+		arg0_21:emit(BattleMediator.ON_PUZZLE_CARD, {
+			card = var1_27,
+			hand = var2_27
 		})
 	end, SFX_CONFIRM)
-	var0_19:ConfigBattleEndFunc(function(arg0_26)
-		arg0_19:clear()
-		arg0_19:emit(BattleMediator.ON_BATTLE_RESULT, arg0_26)
+	var0_21:ConfigBattleEndFunc(function(arg0_28)
+		arg0_21:clear()
+		arg0_21:emit(BattleMediator.ON_BATTLE_RESULT, arg0_28)
 	end)
 
-	local var2_19 = ys.Battle.BattleConst.BuffEffectType
-	local var3_19 = {
-		var2_19.ON_START_GAME,
-		var2_19.ON_FLAG_SHIP,
-		var2_19.ON_CONSORT,
-		var2_19.ON_LEADER,
-		var2_19.ON_REAR,
-		var2_19.ON_SUB_LEADER,
-		var2_19.ON_SUB_CONSORT
+	local var2_21 = ys.Battle.BattleConst.BuffEffectType
+	local var3_21 = {
+		var2_21.ON_START_GAME,
+		var2_21.ON_FLAG_SHIP,
+		var2_21.ON_CONSORT,
+		var2_21.ON_LEADER,
+		var2_21.ON_REAR,
+		var2_21.ON_SUB_LEADER,
+		var2_21.ON_SUB_CONSORT
 	}
-	local var4_19 = 0
+	local var4_21 = 0
 
-	local function var5_19(arg0_27)
-		local var0_27 = 0
+	local function var5_21(arg0_29)
+		local var0_29 = 0
 
-		for iter0_27, iter1_27 in ipairs(arg0_27) do
-			var0_27 = var0_27 + ys.Battle.BattleDataFunction.GetShipSkillTriggerCount(iter1_27, var3_19)
+		for iter0_29, iter1_29 in ipairs(arg0_29) do
+			var0_29 = var0_29 + ys.Battle.BattleDataFunction.GetShipSkillTriggerCount(iter1_29, var3_21)
 		end
 
-		return var0_27
+		return var0_29
 	end
 
-	local var6_19 = var4_19 + var5_19(arg0_19.contextData.battleData.MainUnitList) + var5_19(arg0_19.contextData.battleData.VanguardUnitList) + var5_19(arg0_19.contextData.battleData.SubUnitList) + 4
+	local var6_21 = var4_21 + var5_21(arg0_21.contextData.battleData.MainUnitList) + var5_21(arg0_21.contextData.battleData.VanguardUnitList) + var5_21(arg0_21.contextData.battleData.SubUnitList) + 4
 
-	arg0_19._skillFloatPool = pg.Pool.New(arg0_19.skillRoot, arg0_19.skillTpl, var6_19, 10, true, false):InitSize()
+	arg0_21._skillFloatPool = pg.Pool.New(arg0_21.skillRoot, arg0_21.skillTpl, var6_21, 10, true, false):InitSize()
 
-	arg0_19._skillFloatPool:SetRecycleFuncs(function(arg0_28)
-		arg0_28.transform:GetComponent(typeof(DftAniEvent)):OnDestroy()
+	arg0_21._skillFloatPool:SetRecycleFuncs(function(arg0_30)
+		arg0_30.transform:GetComponent(typeof(DftAniEvent)):OnDestroy()
 	end)
-	arg0_19:emit(BattleMediator.ENTER)
-	arg0_19:initPauseWindow()
+	arg0_21:emit(BattleMediator.ENTER)
+	arg0_21:initPauseWindow()
 
-	if arg0_19.contextData.prePause then
-		triggerButton(arg0_19._tf:Find("PauseBtn"))
+	if arg0_21.contextData.prePause then
+		triggerButton(arg0_21._tf:Find("PauseBtn"))
 	end
 
-	setActive(arg0_19._chatBtn, var0_19:ChatUseable())
+	setActive(arg0_21._chatBtn, var0_21:ChatUseable())
 end
 
-function var0_0.onBackPressed(arg0_29)
-	if isActive(arg0_29.pauseWindow) then
+function var0_0.onBackPressed(arg0_31)
+	if isActive(arg0_31.pauseWindow) then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-		triggerButton(arg0_29.continueBtn)
+		triggerButton(arg0_31.continueBtn)
 	end
 end
 
-function var0_0.activeBotHelp(arg0_30, arg1_30)
-	local var0_30 = getProxy(PlayerProxy)
+function var0_0.activeBotHelp(arg0_32, arg1_32)
+	local var0_32 = getProxy(PlayerProxy)
 
-	if not arg1_30 then
-		if arg0_30.autoBotHelp then
+	if not arg1_32 then
+		if arg0_32.autoBotHelp then
 			pg.MsgboxMgr.GetInstance():hide()
 		end
 
 		return
 	end
 
-	if var0_30.botHelp then
+	if var0_32.botHelp then
 		return
 	end
 
-	arg0_30.autoBotHelp = true
+	arg0_32.autoBotHelp = true
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		type = MSGBOX_TYPE_HELP,
@@ -550,167 +572,167 @@ function var0_0.activeBotHelp(arg0_30, arg1_30)
 			}
 		},
 		onClose = function()
-			arg0_30.autoBotHelp = false
+			arg0_32.autoBotHelp = false
 		end
 	})
 
-	var0_30.botHelp = true
+	var0_32.botHelp = true
 end
 
-function var0_0.exitBattle(arg0_32, arg1_32)
-	if not arg1_32 then
-		arg0_32:emit(BattleMediator.ON_QUIT_BATTLE_MANUALLY)
-		arg0_32:emit(BattleMediator.ON_BACK_PRE_SCENE)
-	elseif arg1_32 == "kick" then
+function var0_0.exitBattle(arg0_34, arg1_34)
+	if not arg1_34 then
+		arg0_34:emit(BattleMediator.ON_QUIT_BATTLE_MANUALLY)
+		arg0_34:emit(BattleMediator.ON_BACK_PRE_SCENE)
+	elseif arg1_34 == "kick" then
 		-- block empty
 	end
 end
 
-function var0_0.setChapter(arg0_33, arg1_33)
-	arg0_33._chapter = arg1_33
+function var0_0.setChapter(arg0_35, arg1_35)
+	arg0_35._chapter = arg1_35
 end
 
-function var0_0.setFleet(arg0_34, arg1_34, arg2_34)
-	arg0_34._mainShipVOs = arg1_34
-	arg0_34._vanShipVOs = arg2_34
+function var0_0.setFleet(arg0_36, arg1_36, arg2_36)
+	arg0_36._mainShipVOs = arg1_36
+	arg0_36._vanShipVOs = arg2_36
 end
 
-function var0_0.initPauseWindow(arg0_35)
-	arg0_35.pauseWindow = arg0_35._tf:Find("Msgbox")
-	arg0_35.LeftTimeContainer = arg0_35.pauseWindow:Find("window/LeftTime")
-	arg0_35.LeftTime = arg0_35.pauseWindow:Find("window/LeftTime/Text")
-	arg0_35.mainTFs = {}
-	arg0_35.vanTFs = {}
+function var0_0.initPauseWindow(arg0_37)
+	arg0_37.pauseWindow = arg0_37._tf:Find("Msgbox")
+	arg0_37.LeftTimeContainer = arg0_37.pauseWindow:Find("window/LeftTime")
+	arg0_37.LeftTime = arg0_37.pauseWindow:Find("window/LeftTime/Text")
+	arg0_37.mainTFs = {}
+	arg0_37.vanTFs = {}
 
-	setText(arg0_35.LeftTimeContainer:Find("label"), i18n("battle_battleMediator_remainTime"))
-	setText(arg0_35.pauseWindow:Find("window/van/power/title"), i18n("word_vanguard_fleet"))
-	setText(arg0_35.pauseWindow:Find("window/main/power/title"), i18n("word_main_fleet"))
+	setText(arg0_37.LeftTimeContainer:Find("label"), i18n("battle_battleMediator_remainTime"))
+	setText(arg0_37.pauseWindow:Find("window/van/power/title"), i18n("word_vanguard_fleet"))
+	setText(arg0_37.pauseWindow:Find("window/main/power/title"), i18n("word_main_fleet"))
 
-	local function var0_35(arg0_36, arg1_36, arg2_36)
-		for iter0_36 = 1, 3 do
-			local var0_36 = arg1_36:Find("ship_" .. iter0_36)
+	local function var0_37(arg0_38, arg1_38, arg2_38)
+		for iter0_38 = 1, 3 do
+			local var0_38 = arg1_38:Find("ship_" .. iter0_38)
 
-			setActive(var0_36, arg2_36 and iter0_36 <= #arg2_36)
+			setActive(var0_38, arg2_38 and iter0_38 <= #arg2_38)
 
-			if arg2_36 and iter0_36 <= #arg2_36 then
-				updateShip(var0_36, arg2_36[iter0_36])
+			if arg2_38 and iter0_38 <= #arg2_38 then
+				updateShip(var0_38, arg2_38[iter0_38])
 			end
 
-			table.insert(arg0_36 and arg0_35.mainTFs or arg0_35.vanTFs, var0_36)
+			table.insert(arg0_38 and arg0_37.mainTFs or arg0_37.vanTFs, var0_38)
 		end
 
-		if arg2_36 then
-			local var1_36 = 0
+		if arg2_38 then
+			local var1_38 = 0
 
-			for iter1_36, iter2_36 in ipairs(arg2_36) do
-				var1_36 = var1_36 + iter2_36:getShipCombatPower()
+			for iter1_38, iter2_38 in ipairs(arg2_38) do
+				var1_38 = var1_38 + iter2_38:getShipCombatPower()
 			end
 
-			setText(arg1_36:Find("power/value"), var1_36)
+			setText(arg1_38:Find("power/value"), var1_38)
 		end
 	end
 
-	if arg0_35._mainShipVOs then
-		var0_35(true, arg0_35.pauseWindow:Find("window/main"), arg0_35._mainShipVOs)
-		var0_35(false, arg0_35.pauseWindow:Find("window/van"), arg0_35._vanShipVOs)
+	if arg0_37._mainShipVOs then
+		var0_37(true, arg0_37.pauseWindow:Find("window/main"), arg0_37._mainShipVOs)
+		var0_37(false, arg0_37.pauseWindow:Find("window/van"), arg0_37._vanShipVOs)
 	end
 
-	local var1_35 = ys.Battle.BattleState.GetInstance()
-	local var2_35 = findTF(arg0_35.pauseWindow, "window/Chapter")
-	local var3_35 = findTF(arg0_35.pauseWindow, "window/Chapter/Text")
+	local var1_37 = ys.Battle.BattleState.GetInstance()
+	local var2_37 = findTF(arg0_37.pauseWindow, "window/Chapter")
+	local var3_37 = findTF(arg0_37.pauseWindow, "window/Chapter/Text")
 
-	arg0_35.continueBtn = arg0_35.pauseWindow:Find("window/button_container/continue")
-	arg0_35.leaveBtn = arg0_35.pauseWindow:Find("window/button_container/leave")
+	arg0_37.continueBtn = arg0_37.pauseWindow:Find("window/button_container/continue")
+	arg0_37.leaveBtn = arg0_37.pauseWindow:Find("window/button_container/leave")
 
-	setText(arg0_35.continueBtn:Find("pic"), i18n("battle_battleMediator_goOnFight"))
-	setText(arg0_35.leaveBtn:Find("pic"), i18n("battle_battleMediator_existFight"))
+	setText(arg0_37.continueBtn:Find("pic"), i18n("battle_battleMediator_goOnFight"))
+	setText(arg0_37.leaveBtn:Find("pic"), i18n("battle_battleMediator_existFight"))
 
-	local var4_35 = var1_35:GetBattleType()
+	local var4_37 = var1_37:GetBattleType()
 
-	if var4_35 == SYSTEM_SCENARIO then
-		local var5_35 = arg0_35._chapter:getConfigTable()
+	if var4_37 == SYSTEM_SCENARIO then
+		local var5_37 = arg0_37._chapter:getConfigTable()
 
-		setText(var2_35, var5_35.chapter_name)
-		setText(var3_35, string.split(var5_35.name, "|")[1])
-	elseif var4_35 == SYSTEM_ROUTINE or var4_35 == SYSTEM_DUEL or var4_35 == SYSTEM_HP_SHARE_ACT_BOSS or var4_35 == SYSTEM_BOSS_EXPERIMENT or var4_35 == SYSTEM_ACT_BOSS or var4_35 == SYSTEM_ACT_BOSS_SP or var4_35 == SYSTEM_BOSS_RUSH or var4_35 == SYSTEM_BOSS_RUSH_EX or var4_35 == SYSTEM_LIMIT_CHALLENGE or var4_35 == SYSTEM_BOSS_SINGLE or var4_35 == SYSTEM_BOSS_SINGLE_VARIABLE then
-		setText(var2_35, "SP")
+		setText(var2_37, var5_37.chapter_name)
+		setText(var3_37, string.split(var5_37.name, "|")[1])
+	elseif var4_37 == SYSTEM_ROUTINE or var4_37 == SYSTEM_DUEL or var4_37 == SYSTEM_HP_SHARE_ACT_BOSS or var4_37 == SYSTEM_BOSS_EXPERIMENT or var4_37 == SYSTEM_ACT_BOSS or var4_37 == SYSTEM_ACT_BOSS_SP or var4_37 == SYSTEM_BOSS_RUSH or var4_37 == SYSTEM_BOSS_RUSH_EX or var4_37 == SYSTEM_BOSS_RUSH_COLLABRATE or var4_37 == SYSTEM_LIMIT_CHALLENGE or var4_37 == SYSTEM_BOSS_SINGLE or var4_37 == SYSTEM_BOSS_SINGLE_VARIABLE then
+		setText(var2_37, "SP")
 
-		local var6_35 = var1_35:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetInitData().StageTmpId
-		local var7_35 = pg.expedition_data_template[var6_35]
+		local var6_37 = var1_37:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetInitData().StageTmpId
+		local var7_37 = pg.expedition_data_template[var6_37]
 
-		setText(var3_35, var7_35.name)
-	elseif var4_35 == SYSTEM_DEBUG then
-		setText(var2_35, "??")
-		setText(var3_35, "碧蓝梦境")
-	elseif var4_35 == SYSTEM_CHALLENGE then
-		local var8_35 = arg0_35._chapter:getNextExpedition()
+		setText(var3_37, var7_37.name)
+	elseif var4_37 == SYSTEM_DEBUG then
+		setText(var2_37, "??")
+		setText(var3_37, "碧蓝梦境")
+	elseif var4_37 == SYSTEM_CHALLENGE then
+		local var8_37 = arg0_37._chapter:getNextExpedition()
 
-		setText(var2_35, "SP")
-		setText(var3_35, var8_35.chapter_name[2])
-		setActive(arg0_35.LeftTimeContainer, true)
-	elseif var4_35 == SYSTEM_WORLD_BOSS or var4_35 == SYSTEM_WORLD then
-		setText(var2_35, i18n("world_battle_pause"))
-		setText(var3_35, i18n("world_battle_pause2"))
+		setText(var2_37, "SP")
+		setText(var3_37, var8_37.chapter_name[2])
+		setActive(arg0_37.LeftTimeContainer, true)
+	elseif var4_37 == SYSTEM_WORLD_BOSS or var4_37 == SYSTEM_WORLD then
+		setText(var2_37, i18n("world_battle_pause"))
+		setText(var3_37, i18n("world_battle_pause2"))
 
-		if var4_35 == SYSTEM_WORLD_BOSS then
-			setActive(arg0_35.leaveBtn, false)
+		if var4_37 == SYSTEM_WORLD_BOSS then
+			setActive(arg0_37.leaveBtn, false)
 		end
-	elseif var4_35 == SYSTEM_GUILD then
-		local var9_35 = var1_35:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetInitData().ActID
-		local var10_35 = pg.guild_boss_event[var9_35]
+	elseif var4_37 == SYSTEM_GUILD then
+		local var9_37 = var1_37:GetProxyByName(ys.Battle.BattleDataProxy.__name):GetInitData().ActID
+		local var10_37 = pg.guild_boss_event[var9_37]
 
-		setText(var2_35, "BOSS")
-		setText(var3_35, var10_35 and var10_35.name or "")
-	elseif var4_35 == SYSTEM_TEST or var4_35 == SYSTEM_SUB_ROUTINE or var4_35 == SYSTEM_PERFORM or var4_35 == SYSTEM_PROLOGUE or var4_35 == SYSTEM_DODGEM or var4_35 == SYSTEM_SIMULATION or var4_35 == SYSTEM_SUBMARINE_RUN or var4_35 == SYSTEM_BOSS_EXPERIMENT or var4_35 == SYSTEM_REWARD_PERFORM or var4_35 == SYSTEM_AIRFIGHT then
+		setText(var2_37, "BOSS")
+		setText(var3_37, var10_37 and var10_37.name or "")
+	elseif var4_37 == SYSTEM_TEST or var4_37 == SYSTEM_SUB_ROUTINE or var4_37 == SYSTEM_PERFORM or var4_37 == SYSTEM_PROLOGUE or var4_37 == SYSTEM_DODGEM or var4_37 == SYSTEM_SIMULATION or var4_37 == SYSTEM_SUBMARINE_RUN or var4_37 == SYSTEM_BOSS_EXPERIMENT or var4_37 == SYSTEM_REWARD_PERFORM or var4_37 == SYSTEM_AIRFIGHT then
 		-- block empty
-	elseif var4_35 == SYSTEM_CARDPUZZLE then
+	elseif var4_37 == SYSTEM_CARDPUZZLE then
 		-- block empty
 	else
-		assert(false, "System not defined " .. (var4_35 or "NIL"))
+		assert(false, "System not defined " .. (var4_37 or "NIL"))
 	end
 
-	onButton(arg0_35, arg0_35.leaveBtn, function()
-		arg0_35:emit(BattleMediator.ON_LEAVE)
+	onButton(arg0_37, arg0_37.leaveBtn, function()
+		arg0_37:emit(BattleMediator.ON_LEAVE)
 
-		local var0_37 = arg0_35.leaveBtn:GetComponent(typeof(Animation))
+		local var0_39 = arg0_37.leaveBtn:GetComponent(typeof(Animation))
 
-		if var0_37 and var0_37:GetClip("msgbox_btn_blink") then
-			var0_37:Play("msgbox_btn_blink")
+		if var0_39 and var0_39:GetClip("msgbox_btn_blink") then
+			var0_39:Play("msgbox_btn_blink")
 		end
 	end)
-	onButton(arg0_35, arg0_35.continueBtn, function()
-		local var0_38 = arg0_35.continueBtn:GetComponent(typeof(Animation))
+	onButton(arg0_37, arg0_37.continueBtn, function()
+		local var0_40 = arg0_37.continueBtn:GetComponent(typeof(Animation))
 
-		if var0_38 and var0_38:GetClip("msgbox_btn_blink") then
-			var0_38:Play("msgbox_btn_blink")
+		if var0_40 and var0_40:GetClip("msgbox_btn_blink") then
+			var0_40:Play("msgbox_btn_blink")
 		end
 
-		local var1_38 = arg0_35.pauseWindow:GetComponent(typeof(Animation))
+		local var1_40 = arg0_37.pauseWindow:GetComponent(typeof(Animation))
 
-		if var1_38 then
-			if var1_38:IsPlaying("msgbox_out") then
-				var1_38:Stop("msgbox_out")
-				var1_38:Play("msgbox_in")
+		if var1_40 then
+			if var1_40:IsPlaying("msgbox_out") then
+				var1_40:Stop("msgbox_out")
+				var1_40:Play("msgbox_in")
 			else
-				var1_38:Play("msgbox_out")
-				arg0_35.pauseWindow:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg0_39)
-					setActive(arg0_35.pauseWindow, false)
-					pg.UIMgr.GetInstance():UnOverlayPanel(arg0_35.pauseWindow, arg0_35._tf)
-					var1_35:Resume()
+				var1_40:Play("msgbox_out")
+				arg0_37.pauseWindow:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg0_41)
+					setActive(arg0_37.pauseWindow, false)
+					pg.UIMgr.GetInstance():UnOverlayPanel(arg0_37.pauseWindow, arg0_37._tf)
+					var1_37:Resume()
 				end)
 			end
 		else
-			setActive(arg0_35.pauseWindow, false)
-			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_35.pauseWindow, arg0_35._tf)
-			var1_35:Resume()
+			setActive(arg0_37.pauseWindow, false)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_37.pauseWindow, arg0_37._tf)
+			var1_37:Resume()
 		end
 	end)
-	onButton(arg0_35, arg0_35.pauseWindow:Find("help"), function()
+	onButton(arg0_37, arg0_37.pauseWindow:Find("help"), function()
 		if BATTLE_DEBUG and PLATFORM == 7 then
-			setActive(arg0_35.pauseWindow, false)
-			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_35.pauseWindow, arg0_35._tf)
-			var1_35:Resume()
-			var1_35:OpenConsole()
+			setActive(arg0_37.pauseWindow, false)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg0_37.pauseWindow, arg0_37._tf)
+			var1_37:Resume()
+			var1_37:OpenConsole()
 		else
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_HELP,
@@ -718,121 +740,121 @@ function var0_0.initPauseWindow(arg0_35)
 			})
 		end
 	end)
-	onButton(arg0_35, arg0_35.pauseWindow:Find("window/top/btnBack"), function()
-		triggerButton(arg0_35.continueBtn)
+	onButton(arg0_37, arg0_37.pauseWindow:Find("window/top/btnBack"), function()
+		triggerButton(arg0_37.continueBtn)
 	end)
-	onButton(arg0_35, arg0_35.pauseWindow, function()
-		triggerButton(arg0_35.continueBtn)
+	onButton(arg0_37, arg0_37.pauseWindow, function()
+		triggerButton(arg0_37.continueBtn)
 	end)
-	onButton(arg0_35, arg0_35.pauseWindow, function()
-		local var0_43 = arg0_35.pauseWindow:GetComponent(typeof(Animation))
+	onButton(arg0_37, arg0_37.pauseWindow, function()
+		local var0_45 = arg0_37.pauseWindow:GetComponent(typeof(Animation))
 
-		if var0_43 and var0_43:IsPlaying("msgbox_out") then
+		if var0_45 and var0_45:IsPlaying("msgbox_out") then
 			-- block empty
 		else
-			triggerButton(arg0_35.continueBtn)
+			triggerButton(arg0_37.continueBtn)
 		end
 	end)
-	setActive(arg0_35.pauseWindow, false)
+	setActive(arg0_37.pauseWindow, false)
 end
 
-function var0_0.updatePauseWindow(arg0_44)
-	if not arg0_44.pauseWindow then
+function var0_0.updatePauseWindow(arg0_46)
+	if not arg0_46.pauseWindow then
 		return
 	end
 
-	setActive(arg0_44.pauseWindow, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_44.pauseWindow)
+	setActive(arg0_46.pauseWindow, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_46.pauseWindow)
 
-	local var0_44 = ys.Battle.BattleState.GetInstance():GetProxyByName(ys.Battle.BattleDataProxy.__name)
-	local var1_44 = var0_44:GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE)
-	local var2_44 = var1_44:GetMainList()
-	local var3_44 = var1_44:GetScoutList()
+	local var0_46 = ys.Battle.BattleState.GetInstance():GetProxyByName(ys.Battle.BattleDataProxy.__name)
+	local var1_46 = var0_46:GetFleetByIFF(ys.Battle.BattleConfig.FRIENDLY_CODE)
+	local var2_46 = var1_46:GetMainList()
+	local var3_46 = var1_46:GetScoutList()
 
-	local function var4_44(arg0_45, arg1_45, arg2_45)
-		if not arg0_45 then
+	local function var4_46(arg0_47, arg1_47, arg2_47)
+		if not arg0_47 then
 			return
 		end
 
-		for iter0_45 = 1, #arg0_45 do
-			local var0_45 = arg0_45[iter0_45].id
+		for iter0_47 = 1, #arg0_47 do
+			local var0_47 = arg0_47[iter0_47].id
 
-			if var1_44:GetFreezeShipByID(var0_45) then
-				local var1_45 = var1_44:GetFreezeShipByID(var0_45)
+			if var1_46:GetFreezeShipByID(var0_47) then
+				local var1_47 = var1_46:GetFreezeShipByID(var0_47)
 
-				setSlider(arg2_45[iter0_45]:Find("blood"), 0, 1, var1_45:GetHPRate())
-				SetActive(arg2_45[iter0_45]:Find("mask"), false)
-			elseif var1_44:GetShipByID(var0_45) then
-				local var2_45 = var1_44:GetShipByID(var0_45)
+				setSlider(arg2_47[iter0_47]:Find("blood"), 0, 1, var1_47:GetHPRate())
+				SetActive(arg2_47[iter0_47]:Find("mask"), false)
+			elseif var1_46:GetShipByID(var0_47) then
+				local var2_47 = var1_46:GetShipByID(var0_47)
 
-				setSlider(arg2_45[iter0_45]:Find("blood"), 0, 1, var2_45:GetHPRate())
-				SetActive(arg2_45[iter0_45]:Find("mask"), false)
+				setSlider(arg2_47[iter0_47]:Find("blood"), 0, 1, var2_47:GetHPRate())
+				SetActive(arg2_47[iter0_47]:Find("mask"), false)
 			else
-				setSlider(arg2_45[iter0_45]:Find("blood"), 0, 1, 0)
-				SetActive(arg2_45[iter0_45]:Find("mask"), true)
+				setSlider(arg2_47[iter0_47]:Find("blood"), 0, 1, 0)
+				SetActive(arg2_47[iter0_47]:Find("mask"), true)
 			end
 		end
 	end
 
-	var4_44(arg0_44._mainShipVOs, var2_44, arg0_44.mainTFs)
-	var4_44(arg0_44._vanShipVOs, var3_44, arg0_44.vanTFs)
-	setText(arg0_44.LeftTime, ys.Battle.BattleTimerView.formatTime(math.floor(var0_44:GetCountDown())))
+	var4_46(arg0_46._mainShipVOs, var2_46, arg0_46.mainTFs)
+	var4_46(arg0_46._vanShipVOs, var3_46, arg0_46.vanTFs)
+	setText(arg0_46.LeftTime, ys.Battle.BattleTimerView.formatTime(math.floor(var0_46:GetCountDown())))
 end
 
-function var0_0.AddUIFX(arg0_46, arg1_46, arg2_46)
-	arg2_46 = arg2_46 or 1
+function var0_0.AddUIFX(arg0_48, arg1_48, arg2_48)
+	arg2_48 = arg2_48 or 1
 
-	local var0_46 = arg2_46 > 0
+	local var0_48 = arg2_48 > 0
 
-	arg1_46 = tf(arg1_46)
+	arg1_48 = tf(arg1_48)
 
-	local var1_46 = var0_46 and arg0_46._fxContainerUpper or arg0_46._fxContainerBottom
+	local var1_48 = var0_48 and arg0_48._fxContainerUpper or arg0_48._fxContainerBottom
 
-	arg1_46:SetParent(var1_46)
-	pg.ViewUtils.SetSortingOrder(arg1_46, arg0_46._canvasOrder + arg2_46)
-	pg.ViewUtils.SetLayer(arg1_46, Layer.UI)
+	arg1_48:SetParent(var1_48)
+	pg.ViewUtils.SetSortingOrder(arg1_48, arg0_48._canvasOrder + arg2_48)
+	pg.ViewUtils.SetLayer(arg1_48, Layer.UI)
 
-	return var1_46.localScale
+	return var1_48.localScale
 end
 
-function var0_0.OnCloseChat(arg0_47)
-	local var0_47 = ys.Battle.BattleState.GetInstance():IsBotActive()
-	local var1_47 = arg0_47._chatBtn:GetComponent(typeof(Animation))
+function var0_0.OnCloseChat(arg0_49)
+	local var0_49 = ys.Battle.BattleState.GetInstance():IsBotActive()
+	local var1_49 = arg0_49._chatBtn:GetComponent(typeof(Animation))
 
-	if var0_47 then
-		setActive(arg0_47._chatBtn, true)
+	if var0_49 then
+		setActive(arg0_49._chatBtn, true)
 
-		if var1_47 then
-			var1_47:Play("chatbtn_in")
+		if var1_49 then
+			var1_49:Play("chatbtn_in")
 		end
-	elseif var1_47 then
-		var1_47:Play("chatbtn_out")
+	elseif var1_49 then
+		var1_49:Play("chatbtn_out")
 	else
-		setActive(arg0_47._chatBtn, false)
+		setActive(arg0_49._chatBtn, false)
 	end
 end
 
-function var0_0.clear(arg0_48)
-	arg0_48._preSkillTF = nil
+function var0_0.clear(arg0_50)
+	arg0_50._preSkillTF = nil
 
-	arg0_48._skillFloatPool:AllRecycle()
-	arg0_48._skillFloatCMDPool:AllRecycle()
+	arg0_50._skillFloatPool:AllRecycle()
+	arg0_50._skillFloatCMDPool:AllRecycle()
 
-	arg0_48._preCommanderSkillTF = nil
-	arg0_48._commanderSkillList = nil
-	arg0_48._skillPaintings = nil
-	arg0_48._currentPainting = nil
+	arg0_50._preCommanderSkillTF = nil
+	arg0_50._commanderSkillList = nil
+	arg0_50._skillPaintings = nil
+	arg0_50._currentPainting = nil
 
-	Destroy(arg0_48._paintingUI)
+	Destroy(arg0_50._paintingUI)
 end
 
-function var0_0.willExit(arg0_49)
-	arg0_49._skillFloatPool:Dispose()
-	arg0_49._skillFloatCMDPool:Dispose()
+function var0_0.willExit(arg0_51)
+	arg0_51._skillFloatPool:Dispose()
+	arg0_51._skillFloatCMDPool:Dispose()
 	ys.Battle.BattleState.GetInstance():ExitBattle()
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_49.pauseWindow, arg0_49._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_51.pauseWindow, arg0_51._tf)
 	ys.Battle.BattleCameraUtil.GetInstance().ActiveMainCamera(false)
-	pg.CameraFixMgr.GetInstance():disconnect(arg0_49.camEventId)
+	pg.CameraFixMgr.GetInstance():disconnect(arg0_51.camEventId)
 end
 
 return var0_0

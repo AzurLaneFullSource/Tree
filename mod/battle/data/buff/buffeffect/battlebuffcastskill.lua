@@ -53,6 +53,8 @@ function var1_0.SetArgs(arg0_4, arg1_4, arg2_4)
 	arg0_4._streak = var0_4.streakRange
 	arg0_4._dungeonTypeList = var0_4.dungeonTypeList
 	arg0_4._effectAttachData = var0_4.effectAttachData
+	arg0_4._repeatCount = var0_4.repeat_count or 1
+	arg0_4._attrConsumeRepeat = var0_4.fleetAttrConsume
 	arg0_4._group = var0_4.group
 	arg0_4._srcBuff = arg2_4
 end
@@ -219,7 +221,21 @@ function var1_0.castSkill(arg0_8, arg1_8, arg2_8, arg3_8)
 		end
 
 		if var10_8 then
-			arg0_8:spell(iter1_8, arg2_8)
+			local var13_8
+
+			if arg0_8._attrConsumeRepeat then
+				var13_8 = arg0_8:fleetAttrRepeatConsume(arg0_8._attrConsumeRepeat)
+			else
+				var13_8 = arg0_8:repeatCountParse(arg0_8._repeatCount)
+			end
+
+			if var13_8 == -1 then
+				var13_8 = srcBuff:GetStack()
+			end
+
+			for iter6_8 = 1, var13_8 do
+				arg0_8:spell(iter1_8, arg2_8)
+			end
 		end
 	end
 

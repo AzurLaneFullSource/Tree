@@ -301,18 +301,19 @@ function var0_0.UpdateShip(arg0_33, arg1_33, arg2_33, arg3_33, arg4_33)
 	if arg4_33 then
 		local var1_33 = arg4_33.ship
 		local var2_33 = var1_33:getPrefab()
+		local var3_33 = SpineAnimChar.New()
 
-		PoolMgr.GetInstance():GetSpineChar(var2_33, true, function(arg0_34)
-			arg0_34.name = var2_33
-
-			SetParent(arg0_34, arg2_33.parent)
+		var3_33:SetPaint(var2_33)
+		var3_33:Load(true, function(arg0_34)
+			arg0_34:SetName(var2_33)
+			arg0_34:SetParent(arg2_33.parent)
 
 			local var0_34 = GuildBossFormationShipCard.New(arg0_34)
 
 			var0_34:Update(var1_33, arg1_33)
-			SetAction(arg0_34, "stand")
+			arg0_34:SetAction("stand", 0)
 
-			local var1_34 = GetOrAddComponent(arg0_34, "EventTriggerListener")
+			local var1_34 = GetOrAddComponent(arg0_34:GetModel(), "EventTriggerListener")
 
 			var1_34:AddPointClickFunc(function(arg0_35, arg1_35)
 				if arg0_33.dragging then
@@ -325,7 +326,7 @@ function var0_0.UpdateShip(arg0_33, arg1_33, arg2_33, arg3_33, arg4_33)
 				arg0_33.dragging = true
 
 				arg0_36.transform:SetAsLastSibling()
-				SetAction(arg0_36, "tuozhuai")
+				arg0_34:SetAction("tuozhuai", 0)
 			end)
 			var1_34:AddDragFunc(function(arg0_37, arg1_37)
 				local var0_37 = var0_0.Scr2Lpos(arg2_33.parent, arg1_37.position)
@@ -342,7 +343,7 @@ function var0_0.UpdateShip(arg0_33, arg1_33, arg2_33, arg3_33, arg4_33)
 				arg0_33.dragging = false
 
 				var0_34:RefreshPosition(var0_34:GetSoltIndex(), true)
-				SetAction(arg0_38, "stand")
+				arg0_34:SetAction("stand", 0)
 				arg0_33:RefreshFleet()
 			end)
 			table.insert(arg0_33.shipCards, var0_34)

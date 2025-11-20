@@ -633,15 +633,14 @@ function var0_0.initXGM(arg0_52)
 end
 
 function var0_0.loadGuinu(arg0_54, arg1_54)
-	if arg0_54.guinu then
+	if arg0_54.guinuChar then
 		arg1_54()
 	else
 		arg0_54.autoLoader:GetSpine("guinu_2", function(arg0_55)
-			arg0_54.guinu = tf(arg0_55)
-			arg0_54.guinuSpine = arg0_54.guinu:GetComponent("SpineAnimUI")
-			arg0_54.guinuSklGraphic = arg0_54.guinu:GetComponent("SkeletonGraphic")
+			arg0_54.guinuChar = arg0_55
+			arg0_54.guinuSklGraphic = arg0_55:GetSkeletonGraphic()
 
-			setParent(arg0_54.guinu, arg0_54.guinuPos, false)
+			arg0_54.guinuChar:SetParent(arg0_54.guinuPos)
 			arg0_54:initGuinu()
 			arg1_54()
 		end)
@@ -649,10 +648,9 @@ function var0_0.loadGuinu(arg0_54, arg1_54)
 end
 
 function var0_0.initGuinu(arg0_56)
-	arg0_56.guinu.localScale = Vector3.one
-
+	arg0_56.guinuChar:SetLocalScale(Vector3.one)
 	arg0_56:setGuinuAction("normal")
-	arg0_56.guinuSpine:SetActionCallBack(function(arg0_57)
+	arg0_56.guinuChar:SetActionCallBack(function(arg0_57)
 		if arg0_57 == "finish" then
 			arg0_56:setGuinuAction("normal")
 		end
@@ -672,7 +670,7 @@ function var0_0.setXgmAction(arg0_58, arg1_58)
 end
 
 function var0_0.setGuinuAction(arg0_59, arg1_59)
-	if not arg0_59.guinu then
+	if not arg0_59.guinuChar then
 		return
 	end
 
@@ -680,7 +678,7 @@ function var0_0.setGuinuAction(arg0_59, arg1_59)
 
 	arg0_59.guinuSklGraphic.timeScale = var0_59
 
-	arg0_59.guinuSpine:SetAction(arg1_59, 0)
+	arg0_59.guinuChar:SetAction(arg1_59, 0)
 end
 
 function var0_0.setBucketAAction(arg0_60, arg1_60)
@@ -967,8 +965,7 @@ function var0_0.willExit(arg0_86)
 	arg0_86.xgm = nil
 	arg0_86.xgmSpine = nil
 	arg0_86.xgmSklGraphic = nil
-	arg0_86.guinu = nil
-	arg0_86.guinuSpine = nil
+	arg0_86.guinuChar = nil
 	arg0_86.guinuSklGraphic = nil
 
 	arg0_86.autoLoader:Clear()

@@ -470,10 +470,16 @@ function var0_0.SetMinionAttr(arg0_39, arg1_39)
 	local function var5_39(arg0_40, arg1_40)
 		local var0_40 = var2_39[arg0_40 .. "_growth"]
 
-		if var0_40 ~= 0 then
-			var4_39[arg1_40] = var1_39[arg1_40] * var0_40 * 0.0001
-		else
+		if var0_40 == 0 then
 			var4_39[arg1_40] = var2_39[arg0_40]
+		elseif var0_40 == -1 then
+			if arg0_40 == "durability" then
+				var4_39[arg1_40] = var0_39:GetCurrentHP()
+			else
+				var4_39[arg1_40] = var1_39[arg1_40]
+			end
+		else
+			var4_39[arg1_40] = var1_39[arg1_40] * var0_40 * 0.0001
 		end
 	end
 

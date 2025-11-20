@@ -65,6 +65,7 @@ function var4_0.initWaveModule(arg0_6)
 			return
 		end
 
+		arg0_6._dataProxy:TriggerFinishBattle()
 		arg0_6._dataProxy:CalcSubRoutineScore()
 		arg0_6._state:BattleEnd()
 	end
@@ -96,6 +97,7 @@ function var4_0.onPlayerShutDown(arg0_11, arg1_11)
 	if #arg0_11._userFleet:GetSubBench() > 0 then
 		arg0_11._userFleet:ShiftManualSub()
 	else
+		arg0_11._dataProxy:TriggerFinishBattle()
 		arg0_11._dataProxy:CalcSubRountineElimate()
 		arg0_11._state:BattleEnd()
 	end

@@ -113,58 +113,62 @@ function var0_0.updateStatistics(arg0_5)
 	local var17_5 = var0_5:getPrefab()
 
 	pg.UIMgr.GetInstance():LoadingOn()
-	PoolMgr.GetInstance():GetSpineChar(var17_5, true, function(arg0_7)
+
+	local var18_5 = SpineAnimChar.New()
+
+	var18_5:SetPaint(var17_5)
+	var18_5:Load(true, function(arg0_7)
 		pg.UIMgr.GetInstance():LoadingOff()
 
 		arg0_5.shipPrefab = var17_5
 		arg0_5.shipModel = arg0_7
-		tf(arg0_7).localScale = Vector3(1, 1, 1)
 
-		arg0_7:GetComponent("SpineAnimUI"):SetAction("stand", 0)
-		setParent(arg0_7, arg0_5.qCharaContain)
+		arg0_7:SetLocalScale(Vector3(1, 1, 1))
+		arg0_7:SetParent(arg0_5.qCharaContain)
+		arg0_7:SetAction("stand", 0)
 	end)
 	GetSpriteFromAtlasAsync("newshipbg/bg_" .. var0_5:rarity2bgPrintForGet(), "", function(arg0_8)
 		setImageSprite(arg0_5._tf, arg0_8, false)
 	end)
 
-	local var18_5 = var0_5:getCVIntimacy()
-	local var19_5, var20_5, var21_5 = ShipWordHelper.GetWordAndCV(var0_5:getSkinId(), ShipWordHelper.WORD_TYPE_UPGRADE, nil, nil, var18_5)
+	local var19_5 = var0_5:getCVIntimacy()
+	local var20_5, var21_5, var22_5 = ShipWordHelper.GetWordAndCV(var0_5:getSkinId(), ShipWordHelper.WORD_TYPE_UPGRADE, nil, nil, var19_5)
 
-	setWidgetText(arg0_5._chat, var21_5)
+	setWidgetText(arg0_5._chat, var22_5)
 
-	local var22_5 = arg0_5._chat:Find("Text"):GetComponent(typeof(Text))
+	local var23_5 = arg0_5._chat:Find("Text"):GetComponent(typeof(Text))
 
-	var22_5.alignment = #var22_5.text > CHAT_POP_STR_LEN and TextAnchor.MiddleLeft or TextAnchor.MiddleCenter
+	var23_5.alignment = #var23_5.text > CHAT_POP_STR_LEN and TextAnchor.MiddleLeft or TextAnchor.MiddleCenter
 	arg0_5._chat.transform.localScale = Vector3(0, 0, 1)
 	arg0_5.delayTId = LeanTween.delayedCall(0.6, System.Action(function()
 		SetActive(arg0_5._chat, true)
 		LeanTween.scale(rtf(arg0_5._chat), Vector3.New(1, 1, 1), 0.3):setEase(LeanTweenType.easeOutBack)
-		arg0_5:voice(var20_5)
+		arg0_5:voice(var21_5)
 	end)).id
 
-	local var23_5 = var0_5
-	local var24_5 = var23_5:isBluePrintShip()
-	local var25_5 = var23_5:isMetaShip()
+	local var24_5 = var0_5
+	local var25_5 = var24_5:isBluePrintShip()
+	local var26_5 = var24_5:isMetaShip()
 
-	GetSpriteFromAtlasAsync("newshipbg/bg_" .. var23_5:rarity2bgPrintForGet(), "", function(arg0_10)
+	GetSpriteFromAtlasAsync("newshipbg/bg_" .. var24_5:rarity2bgPrintForGet(), "", function(arg0_10)
 		setImageSprite(arg0_5._bg, arg0_10)
 	end)
 
-	if var24_5 then
+	if var25_5 then
 		if arg0_5.metaBg then
 			setActive(arg0_5.metaBg, false)
 		end
 
-		if arg0_5.designBg and arg0_5.designName ~= "raritydesign" .. var23_5:getRarity() then
+		if arg0_5.designBg and arg0_5.designName ~= "raritydesign" .. var24_5:getRarity() then
 			PoolMgr.GetInstance():ReturnUI(arg0_5.designName, arg0_5.designBg)
 
 			arg0_5.designBg = nil
 		end
 
 		if not arg0_5.designBg then
-			PoolMgr.GetInstance():GetUI("raritydesign" .. var23_5:getRarity(), true, function(arg0_11)
+			PoolMgr.GetInstance():GetUI("raritydesign" .. var24_5:getRarity(), true, function(arg0_11)
 				arg0_5.designBg = arg0_11
-				arg0_5.designName = "raritydesign" .. var23_5:getRarity()
+				arg0_5.designName = "raritydesign" .. var24_5:getRarity()
 
 				arg0_11.transform:SetParent(arg0_5._shake, false)
 
@@ -177,21 +181,21 @@ function var0_0.updateStatistics(arg0_5)
 		else
 			setActive(arg0_5.designBg, true)
 		end
-	elseif var25_5 then
+	elseif var26_5 then
 		if arg0_5.designBg then
 			setActive(arg0_5.designBg, false)
 		end
 
-		if arg0_5.metaBg and arg0_5.metaName ~= "raritymeta" .. var23_5:getRarity() then
+		if arg0_5.metaBg and arg0_5.metaName ~= "raritymeta" .. var24_5:getRarity() then
 			PoolMgr.GetInstance():ReturnUI(arg0_5.metaName, arg0_5.metaBg)
 
 			arg0_5.metaBg = nil
 		end
 
 		if not arg0_5.metaBg then
-			PoolMgr.GetInstance():GetUI("raritymeta" .. var23_5:getRarity(), true, function(arg0_12)
+			PoolMgr.GetInstance():GetUI("raritymeta" .. var24_5:getRarity(), true, function(arg0_12)
 				arg0_5.metaBg = arg0_12
-				arg0_5.metaName = "raritymeta" .. var23_5:getRarity()
+				arg0_5.metaName = "raritymeta" .. var24_5:getRarity()
 
 				arg0_12.transform:SetParent(arg0_5._shake, false)
 
@@ -214,7 +218,7 @@ function var0_0.updateStatistics(arg0_5)
 		end
 	end
 
-	PoolMgr.GetInstance():GetUI("tupo_" .. var23_5:getRarity(), true, function(arg0_13)
+	PoolMgr.GetInstance():GetUI("tupo_" .. var24_5:getRarity(), true, function(arg0_13)
 		arg0_13.transform:SetParent(arg0_5._tf, false)
 
 		arg0_13.transform.localPosition = Vector3(1, 1, 1)
@@ -223,7 +227,7 @@ function var0_0.updateStatistics(arg0_5)
 		arg0_13.transform:SetSiblingIndex(4)
 		setActive(arg0_13, true)
 	end)
-	PoolMgr.GetInstance():GetUI(var23_5:isMetaShip() and "tupo_meta" or "tupo", true, function(arg0_14)
+	PoolMgr.GetInstance():GetUI(var24_5:isMetaShip() and "tupo_meta" or "tupo", true, function(arg0_14)
 		arg0_14.transform:SetParent(arg0_5._tf, false)
 
 		arg0_14.transform.localPosition = Vector3(1, 1, 1)
@@ -255,7 +259,7 @@ end
 
 function var0_0.recycleSpineChar(arg0_17)
 	if arg0_17.shipPrefab and arg0_17.shipModel then
-		PoolMgr.GetInstance():ReturnSpineChar(arg0_17.shipPrefab, arg0_17.shipModel)
+		arg0_17.shipModel:Dispose()
 
 		arg0_17.shipPrefab = nil
 		arg0_17.shipModel = nil

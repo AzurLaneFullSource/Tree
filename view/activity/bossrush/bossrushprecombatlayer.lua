@@ -26,33 +26,36 @@ end
 
 function var0_0.CommonInit(arg0_5)
 	arg0_5.eventTriggers = {}
-	arg0_5._startBtn = arg0_5._tf:Find("right/start")
-	arg0_5._costContainer = arg0_5._tf:Find("right/start/cost_container")
+
+	local var0_5 = arg0_5._tf:Find("adapt")
+
+	arg0_5._startBtn = var0_5:Find("right/start")
+	arg0_5._costContainer = var0_5:Find("right/start/cost_container")
 	arg0_5._popup = arg0_5._costContainer:Find("popup")
 	arg0_5._costText = arg0_5._popup:Find("Text")
-	arg0_5._moveLayer = arg0_5._tf:Find("moveLayer")
+	arg0_5._moveLayer = var0_5:Find("moveLayer")
 
-	local var0_5 = arg0_5._tf:Find("middle")
+	local var1_5 = var0_5:Find("middle")
 
-	arg0_5._autoToggle = arg0_5._tf:Find("auto_toggle")
-	arg0_5._autoSubToggle = arg0_5._tf:Find("sub_toggle_container/sub_toggle")
-	arg0_5._fleetInfo = var0_5:Find("fleet_info")
-	arg0_5._fleetNameText = var0_5:Find("fleet_info/fleet_name/Text")
-	arg0_5._fleetNumText = var0_5:Find("fleet_info/fleet_number")
+	arg0_5._autoToggle = var0_5:Find("auto_toggle")
+	arg0_5._autoSubToggle = var0_5:Find("sub_toggle_container/sub_toggle")
+	arg0_5._fleetInfo = var1_5:Find("fleet_info")
+	arg0_5._fleetNameText = var1_5:Find("fleet_info/fleet_name/Text")
+	arg0_5._fleetNumText = var1_5:Find("fleet_info/fleet_number")
 
 	setActive(arg0_5._fleetInfo, arg0_5.contextData.system ~= SYSTEM_DUEL)
 
-	arg0_5._mainGS = var0_5:Find("gear_score/main/Text")
-	arg0_5._vanguardGS = var0_5:Find("gear_score/vanguard/Text")
-	arg0_5._subGS = var0_5:Find("gear_score/submarine/Text")
-	arg0_5._bgFleet = var0_5:Find("mask/grid_bg")
-	arg0_5._bgSub = var0_5:Find("mask/bg_sub")
+	arg0_5._mainGS = var1_5:Find("gear_score/main/Text")
+	arg0_5._vanguardGS = var1_5:Find("gear_score/vanguard/Text")
+	arg0_5._subGS = var1_5:Find("gear_score/submarine/Text")
+	arg0_5._bgFleet = var1_5:Find("mask/grid_bg")
+	arg0_5._bgSub = var1_5:Find("mask/bg_sub")
 	arg0_5._gridTFs = {
 		[TeamType.Vanguard] = {},
 		[TeamType.Main] = {},
 		[TeamType.Submarine] = {}
 	}
-	arg0_5._gridFrame = var0_5:Find("mask/GridFrame")
+	arg0_5._gridFrame = var1_5:Find("mask/GridFrame")
 
 	for iter0_5 = 1, 3 do
 		arg0_5._gridTFs[TeamType.Main][iter0_5] = arg0_5._gridFrame:Find("main_" .. iter0_5)
@@ -60,34 +63,34 @@ function var0_0.CommonInit(arg0_5)
 		arg0_5._gridTFs[TeamType.Submarine][iter0_5] = arg0_5._gridFrame:Find("submarine_" .. iter0_5)
 	end
 
-	arg0_5._nextPage = arg0_5._tf:Find("middle/nextPage")
-	arg0_5._prevPage = arg0_5._tf:Find("middle/prevPage")
-	arg0_5._heroContainer = var0_5:Find("HeroContainer")
-	arg0_5._checkBtn = var0_5:Find("checkBtn")
+	arg0_5._nextPage = var0_5:Find("middle/nextPage")
+	arg0_5._prevPage = var0_5:Find("middle/prevPage")
+	arg0_5._heroContainer = var1_5:Find("HeroContainer")
+	arg0_5._checkBtn = var1_5:Find("checkBtn")
 	arg0_5._blurPanel = arg0_5._tf:Find("blur_panel")
 	arg0_5.topPanel = arg0_5._blurPanel:Find("top")
 	arg0_5.topPanelBg = arg0_5._blurPanel:Find("top_bg")
 	arg0_5._backBtn = arg0_5.topPanel:Find("back_btn")
-	arg0_5._spoilsContainer = arg0_5._tf:Find("right/infomation/atlasloot/spoils/items/items_container")
-	arg0_5._item = arg0_5._tf:Find("right/infomation/atlasloot/spoils/items/item_tpl")
+	arg0_5._spoilsContainer = var0_5:Find("right/infomation/atlasloot/spoils/items/items_container")
+	arg0_5._item = var0_5:Find("right/infomation/atlasloot/spoils/items/item_tpl")
 
 	SetActive(arg0_5._item, false)
 
-	arg0_5._goals = arg0_5._tf:Find("right/infomation/target/goal")
+	arg0_5._goals = var0_5:Find("right/infomation/target/goal")
 	arg0_5._heroInfo = arg0_5:getTpl("heroInfo")
 	arg0_5._starTpl = arg0_5:getTpl("star_tpl")
 
-	setText(findTF(arg0_5._tf, "middle/gear_score/vanguard/line/Image/Text1"), i18n("pre_combat_vanguard"))
-	setText(findTF(arg0_5._tf, "middle/gear_score/main/line/Image/Text1"), i18n("pre_combat_main"))
-	setText(findTF(arg0_5._tf, "middle/gear_score/submarine/line/Image/text1"), i18n("pre_combat_submarine"))
+	setText(findTF(var0_5, "middle/gear_score/vanguard/line/Image/Text1"), i18n("pre_combat_vanguard"))
+	setText(findTF(var0_5, "middle/gear_score/main/line/Image/Text1"), i18n("pre_combat_main"))
+	setText(findTF(var0_5, "middle/gear_score/submarine/line/Image/text1"), i18n("pre_combat_submarine"))
 	setText(arg0_5._costContainer:Find("title"), i18n("pre_combat_consume"))
-	setText(findTF(arg0_5._tf, "right/infomation/target/title/GameObject"), i18n("pre_combat_targets"))
-	setText(findTF(arg0_5._tf, "right/infomation/atlasloot/atlasloot/title/GameObject"), i18n("pre_combat_atlasloot"))
+	setText(findTF(var0_5, "right/infomation/target/title/GameObject"), i18n("pre_combat_targets"))
+	setText(findTF(var0_5, "right/infomation/atlasloot/atlasloot/title/GameObject"), i18n("pre_combat_atlasloot"))
 	setText(arg0_5._startBtn:Find("text"), i18n("pre_combat_start"))
 	setText(arg0_5._startBtn:Find("text_en"), i18n("pre_combat_start_en"))
 
-	arg0_5._middle = arg0_5._tf:Find("middle")
-	arg0_5._right = arg0_5._tf:Find("right")
+	arg0_5._middle = var0_5:Find("middle")
+	arg0_5._right = var0_5:Find("right")
 
 	setAnchoredPosition(arg0_5._middle, {
 		x = -840
@@ -98,7 +101,7 @@ function var0_0.CommonInit(arg0_5)
 
 	arg0_5.guideDesc = arg0_5._middle:Find("guideDesc")
 	arg0_5._costTip = arg0_5._startBtn:Find("cost_container/popup/tip")
-	arg0_5._continuousBtn = arg0_5._tf:Find("right/multiple")
+	arg0_5._continuousBtn = var0_5:Find("right/multiple")
 
 	setText(arg0_5._continuousBtn:Find("text"), i18n("multiple_sorties_title"))
 	setText(arg0_5._continuousBtn:Find("text_en"), i18n("multiple_sorties_title_eng"))
@@ -481,7 +484,13 @@ function var0_0.didEnter(arg0_37)
 			return
 		end
 
-		local var1_47 = var0_37:HasPassSeries(var1_37.id)
+		local var1_47
+
+		if var0_37:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BOSS_RUSH_DAL_COLLAB then
+			var1_47 = var0_37:HasPlayerDefeatSeries(var1_37.id)
+		else
+			var1_47 = var0_37:HasPassSeries(var1_37.id)
+		end
 
 		setActive(arg0_37._continuousBtn:Find("lock"), not var1_47)
 
@@ -501,7 +510,7 @@ function var0_0.didEnter(arg0_37)
 
 	local var2_37 = var1_37:GetExpeditionIds()
 	local var3_37 = var1_37:GetBossIcons()
-	local var4_37 = arg0_37._tf:Find("middle/Boss")
+	local var4_37 = arg0_37._tf:Find("adapt/middle/Boss")
 
 	UIItemList.StaticAlign(var4_37, var4_37:GetChild(0), #var2_37, function(arg0_49, arg1_49, arg2_49)
 		if arg0_49 ~= UIItemList.EventUpdate then
@@ -566,7 +575,7 @@ function var0_0.displayFleetInfo(arg0_51)
 
 	local var5_51 = arg0_51.contextData.seriesData
 	local var6_51 = var5_51:GetExpeditionIds()
-	local var7_51 = arg0_51._tf:Find("middle/Boss")
+	local var7_51 = arg0_51._tf:Find("adapt/middle/Boss")
 
 	UIItemList.StaticAlign(var7_51, var7_51:GetChild(0), #var6_51, function(arg0_52, arg1_52, arg2_52)
 		if arg0_52 ~= UIItemList.EventUpdate then

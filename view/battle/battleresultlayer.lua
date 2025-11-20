@@ -261,7 +261,7 @@ function var0_0.didEnter(arg0_13)
 		lockGlobalBlur = true
 	})
 
-	if arg0_13.contextData.system ~= SYSTEM_BOSS_RUSH and arg0_13.contextData.system ~= SYSTEM_BOSS_RUSH_EX and arg0_13.contextData.system ~= SYSTEM_ACT_BOSS and arg0_13.contextData.system ~= SYSTEM_BOSS_SINGLE and arg0_13.contextData.system ~= SYSTEM_BOSS_SINGLE_VARIABLE then
+	if arg0_13.contextData.system ~= SYSTEM_BOSS_RUSH and arg0_13.contextData.system ~= SYSTEM_BOSS_RUSH_EX and arg0_13.contextData.system ~= SYSTEM_BOSS_RUSH_COLLABRATE and arg0_13.contextData.system ~= SYSTEM_ACT_BOSS and arg0_13.contextData.system ~= SYSTEM_BOSS_SINGLE and arg0_13.contextData.system ~= SYSTEM_BOSS_SINGLE_VARIABLE then
 		ys.Battle.BattleCameraUtil.GetInstance().ActiveMainCamera(false)
 	end
 
@@ -390,7 +390,7 @@ end
 function var0_0.showRewardInfo(arg0_24)
 	arg0_24._stateFlag = var0_0.STATE_REWARD
 
-	if arg0_24.contextData.system == SYSTEM_BOSS_RUSH or arg0_24.contextData.system == SYSTEM_BOSS_RUSH_EX then
+	if arg0_24.contextData.system == SYSTEM_BOSS_RUSH or arg0_24.contextData.system == SYSTEM_BOSS_RUSH_EX or arg0_24.contextData.system == SYSTEM_BOSS_RUSH_COLLABRATE then
 		arg0_24:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE)
 
 		return

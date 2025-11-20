@@ -1,15 +1,14 @@
 local var0_0 = class("UIStrikeAnim", import(".UIAnim"))
 
 var0_0.Fields = {
-	spineAnim = "userdata",
-	prefab = "string",
-	aniEvent = "userdata",
-	char = "userdata",
-	transform = "userdata",
 	playing = "boolean",
+	aniEvent = "userdata",
+	transform = "userdata",
+	char = "userdata",
+	prefab = "string",
+	onEnd = "function",
 	onTrigger = "function",
 	onStart = "function",
-	onEnd = "function",
 	skelegraph = "userdata",
 	painting = "userdata",
 	shipVO = "table"
@@ -50,18 +49,20 @@ function var0_0.ReloadShip(arg0_5, arg1_5)
 	arg0_5.painting = nil
 	arg0_5.char = nil
 
-	local var0_5 = PoolMgr.GetInstance()
-
-	var0_5.GetInstance():GetPainting(arg1_5:getPainting(), true, function(arg0_6)
+	PoolMgr.GetInstance().GetInstance():GetPainting(arg1_5:getPainting(), true, function(arg0_6)
 		arg0_5.painting = arg0_6
 
 		ShipExpressionHelper.SetExpression(arg0_5.painting, arg1_5:getPainting())
 		arg0_5:LoadBack()
 	end)
-	var0_5.GetInstance():GetSpineChar(arg1_5:getPrefab(), true, function(arg0_7)
-		arg0_5.char = arg0_7
-		arg0_5.char.transform.localScale = Vector3.one
 
+	arg0_5.char = SpineAnimChar.New()
+
+	arg0_5.char:SetPaint(arg1_5:getPrefab())
+	arg0_5.char:Load(true, function(arg0_7)
+		arg0_5.char = arg0_7
+
+		arg0_5.char:SetLocalScale(Vector3.one)
 		arg0_5:LoadBack()
 	end)
 end
@@ -70,7 +71,7 @@ function var0_0.UnloadShipVO(arg0_8)
 	local var0_8 = arg0_8.shipVO
 
 	retPaintingPrefab(arg0_8.transform:Find("mask/painting"), var0_8:getPainting())
-	PoolMgr.GetInstance():ReturnSpineChar(var0_8:getPrefab(), arg0_8.char)
+	arg0_8.char:Dispose()
 
 	arg0_8.shipVO = nil
 	arg0_8.painting = nil
@@ -81,7 +82,7 @@ function var0_0.Play(arg0_9, arg1_9)
 	arg0_9.playing = true
 
 	function arg0_9.onStart(arg0_10)
-		arg0_9.spineAnim:SetAction("attack", 0)
+		arg0_9.char:SetAction("attack", 0)
 
 		arg0_9.skelegraph.freeze = true
 	end
@@ -89,7 +90,7 @@ function var0_0.Play(arg0_9, arg1_9)
 	function arg0_9.onTrigger(arg0_11)
 		arg0_9.skelegraph.freeze = false
 
-		arg0_9.spineAnim:SetActionCallBack(function(arg0_12)
+		arg0_9.char:SetActionCallBack(function(arg0_12)
 			if arg0_12 == "action" then
 				-- block empty
 			elseif arg0_12 == "finish" then
@@ -123,12 +124,11 @@ function var0_0.Init(arg0_14)
 	local var2_14 = arg0_14.transform:Find("ship")
 
 	setParent(arg0_14.painting, var1_14:Find("fitter"), false)
-	setParent(arg0_14.char, var2_14, false)
+	arg0_14.char:SetParent(var2_14)
 	setActive(var2_14, false)
 	setActive(var0_14, false)
 
-	arg0_14.spineAnim = arg0_14.char:GetComponent("SpineAnimUI")
-	arg0_14.skelegraph = arg0_14.spineAnim:GetComponent("SkeletonGraphic")
+	arg0_14.skelegraph = arg0_14.char:GetSkeletonGraphic()
 	arg0_14.aniEvent = arg0_14.transform:GetComponent("DftAniEvent")
 
 	arg0_14:Update()

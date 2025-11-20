@@ -54,6 +54,8 @@ function var0_0.register(arg0_1)
 					arg0_1:InitActtivityFleet(var0_2, iter3_2)
 				elseif var1_2 == ActivityConst.ACTIVITY_TYPE_EVENT_SINGLE then
 					arg0_1:CheckDailyEventRequest(var0_2)
+				elseif var1_2 == ActivityConst.ACTIVITY_TYPE_BOSS_RUSH_DAL_COLLAB then
+					arg0_1:InitActtivityFleet(var0_2, iter3_2)
 				end
 
 				arg0_1.data[iter3_2.id] = var0_2
@@ -138,7 +140,7 @@ function var0_0.register(arg0_1)
 		})
 	end)
 	arg0_1:on(40009, function(arg0_6)
-		local var0_6 = arg0_1:getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSSRUSH)
+		local var0_6 = arg0_1:getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSSRUSH) or arg0_1:getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_RUSH_DAL_COLLAB)
 		local var1_6
 
 		if var0_6 then
@@ -1005,12 +1007,15 @@ function var0_0.getEnterReadyActivity(arg0_89)
 		end,
 		[ActivityConst.ACTIVITY_TYPE_BOSSSINGLE_VARIABLE] = function(arg0_94)
 			return true
+		end,
+		[ActivityConst.ACTIVITY_TYPE_BOSS_RUSH_DAL_COLLAB] = function(arg0_95)
+			return true
 		end
 	}
 	local var1_89 = {}
 
 	for iter0_89, iter1_89 in pairs(arg0_89.data) do
-		if switch(iter1_89:getConfig("type"), var0_89, function(arg0_95)
+		if switch(iter1_89:getConfig("type"), var0_89, function(arg0_96)
 			return false
 		end) and not iter1_89:isEnd() and tobool(iter1_89:getConfig("config_client").entrance_bg) then
 			table.insert(var1_89, iter1_89)
@@ -1018,28 +1023,28 @@ function var0_0.getEnterReadyActivity(arg0_89)
 	end
 
 	table.sort(var1_89, CompareFuncs({
-		function(arg0_96)
-			return arg0_96:getConfig("config_client").order or 1
-		end,
 		function(arg0_97)
-			return -arg0_97.id
+			return arg0_97:getConfig("config_client").order or 1
+		end,
+		function(arg0_98)
+			return -arg0_98.id
 		end
 	}))
 
 	return var1_89
 end
 
-function var0_0.AtelierActivityAllSlotIsEmpty(arg0_98)
-	local var0_98 = arg0_98:getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+function var0_0.AtelierActivityAllSlotIsEmpty(arg0_99)
+	local var0_99 = arg0_99:getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
-	if not var0_98 or var0_98:isEnd() then
+	if not var0_99 or var0_99:isEnd() then
 		return false
 	end
 
-	local var1_98 = var0_98:GetSlots()
+	local var1_99 = var0_99:GetSlots()
 
-	for iter0_98, iter1_98 in pairs(var1_98) do
-		if iter1_98[1] ~= 0 then
+	for iter0_99, iter1_99 in pairs(var1_99) do
+		if iter1_99[1] ~= 0 then
 			return false
 		end
 	end
@@ -1047,62 +1052,62 @@ function var0_0.AtelierActivityAllSlotIsEmpty(arg0_98)
 	return true
 end
 
-function var0_0.OwnAtelierActivityItemCnt(arg0_99, arg1_99, arg2_99)
-	local var0_99 = arg0_99:getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+function var0_0.OwnAtelierActivityItemCnt(arg0_100, arg1_100, arg2_100)
+	local var0_100 = arg0_100:getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
-	if not var0_99 or var0_99:isEnd() then
+	if not var0_100 or var0_100:isEnd() then
 		return false
 	end
 
-	local var1_99 = var0_99:GetItems()[arg1_99]
+	local var1_100 = var0_100:GetItems()[arg1_100]
 
-	return var1_99 and arg2_99 <= var1_99.count
+	return var1_100 and arg2_100 <= var1_100.count
 end
 
-function var0_0.InitContinuousTime(arg0_100, arg1_100)
-	arg0_100.continuousOpeartionTime = arg1_100
-	arg0_100.continuousOpeartionTotalTime = arg1_100
+function var0_0.InitContinuousTime(arg0_101, arg1_101)
+	arg0_101.continuousOpeartionTime = arg1_101
+	arg0_101.continuousOpeartionTotalTime = arg1_101
 end
 
-function var0_0.UseContinuousTime(arg0_101)
-	if not arg0_101.continuousOpeartionTime then
+function var0_0.UseContinuousTime(arg0_102)
+	if not arg0_102.continuousOpeartionTime then
 		return
 	end
 
-	arg0_101.continuousOpeartionTime = arg0_101.continuousOpeartionTime - 1
+	arg0_102.continuousOpeartionTime = arg0_102.continuousOpeartionTime - 1
 end
 
-function var0_0.GetContinuousTime(arg0_102)
-	return arg0_102.continuousOpeartionTime, arg0_102.continuousOpeartionTotalTime
+function var0_0.GetContinuousTime(arg0_103)
+	return arg0_103.continuousOpeartionTime, arg0_103.continuousOpeartionTotalTime
 end
 
-function var0_0.AddBossRushAwards(arg0_103, arg1_103)
-	arg0_103.bossrushAwards = arg0_103.bossrushAwards or {}
+function var0_0.AddBossRushAwards(arg0_104, arg1_104)
+	arg0_104.bossrushAwards = arg0_104.bossrushAwards or {}
 
-	table.insertto(arg0_103.bossrushAwards, arg1_103)
+	table.insertto(arg0_104.bossrushAwards, arg1_104)
 end
 
-function var0_0.PopBossRushAwards(arg0_104)
-	local var0_104 = arg0_104.bossrushAwards or {}
+function var0_0.PopBossRushAwards(arg0_105)
+	local var0_105 = arg0_105.bossrushAwards or {}
 
-	arg0_104.bossrushAwards = nil
+	arg0_105.bossrushAwards = nil
 
-	return var0_104
+	return var0_105
 end
 
-function var0_0.GetBossRushRuntime(arg0_105, arg1_105)
-	if not arg0_105.extraDatas[arg1_105] then
-		arg0_105.extraDatas[arg1_105] = {
+function var0_0.GetBossRushRuntime(arg0_106, arg1_106)
+	if not arg0_106.extraDatas[arg1_106] then
+		arg0_106.extraDatas[arg1_106] = {
 			record = 0
 		}
 	end
 
-	return arg0_105.extraDatas[arg1_105]
+	return arg0_106.extraDatas[arg1_106]
 end
 
-function var0_0.GetActivityBossRuntime(arg0_106, arg1_106)
-	if not arg0_106.extraDatas[arg1_106] then
-		arg0_106.extraDatas[arg1_106] = {
+function var0_0.GetActivityBossRuntime(arg0_107, arg1_107)
+	if not arg0_107.extraDatas[arg1_107] then
+		arg0_107.extraDatas[arg1_107] = {
 			buffIds = {},
 			spScore = {
 				score = 0
@@ -1110,72 +1115,72 @@ function var0_0.GetActivityBossRuntime(arg0_106, arg1_106)
 		}
 	end
 
-	return arg0_106.extraDatas[arg1_106]
+	return arg0_107.extraDatas[arg1_107]
 end
 
-function var0_0.GetTaskActivities(arg0_107)
-	local var0_107 = {}
+function var0_0.GetTaskActivities(arg0_108)
+	local var0_108 = {}
 
-	table.Foreach(Activity.GetType2Class(), function(arg0_108, arg1_108)
-		if not isa(arg1_108, ITaskActivity) then
+	table.Foreach(Activity.GetType2Class(), function(arg0_109, arg1_109)
+		if not isa(arg1_109, ITaskActivity) then
 			return
 		end
 
-		table.insertto(var0_107, arg0_107:getActivitiesByType(arg0_108))
+		table.insertto(var0_108, arg0_108:getActivitiesByType(arg0_109))
 	end)
 
-	return var0_107
+	return var0_108
 end
 
-function var0_0.setSurveyState(arg0_109, arg1_109)
-	local var0_109 = arg0_109:getActivityByType(ActivityConst.ACTIVITY_TYPE_SURVEY)
-
-	if var0_109 and not var0_109:isEnd() then
-		arg0_109.surveyState = arg1_109
-	end
-end
-
-function var0_0.isSurveyDone(arg0_110)
+function var0_0.setSurveyState(arg0_110, arg1_110)
 	local var0_110 = arg0_110:getActivityByType(ActivityConst.ACTIVITY_TYPE_SURVEY)
 
 	if var0_110 and not var0_110:isEnd() then
-		return arg0_110.surveyState and arg0_110.surveyState > 0
+		arg0_110.surveyState = arg1_110
 	end
 end
 
-function var0_0.isSurveyOpen(arg0_111)
+function var0_0.isSurveyDone(arg0_111)
 	local var0_111 = arg0_111:getActivityByType(ActivityConst.ACTIVITY_TYPE_SURVEY)
 
 	if var0_111 and not var0_111:isEnd() then
-		local var1_111 = var0_111:getConfig("config_data")
-		local var2_111 = var1_111[1]
-		local var3_111 = var1_111[2]
+		return arg0_111.surveyState and arg0_111.surveyState > 0
+	end
+end
 
-		if var2_111 == 1 then
-			local var4_111 = var3_111 <= getProxy(PlayerProxy):getData().level
-			local var5_111 = var0_111:getConfig("config_id")
+function var0_0.isSurveyOpen(arg0_112)
+	local var0_112 = arg0_112:getActivityByType(ActivityConst.ACTIVITY_TYPE_SURVEY)
 
-			return var4_111, var5_111
+	if var0_112 and not var0_112:isEnd() then
+		local var1_112 = var0_112:getConfig("config_data")
+		local var2_112 = var1_112[1]
+		local var3_112 = var1_112[2]
+
+		if var2_112 == 1 then
+			local var4_112 = var3_112 <= getProxy(PlayerProxy):getData().level
+			local var5_112 = var0_112:getConfig("config_id")
+
+			return var4_112, var5_112
 		end
 	end
 end
 
-function var0_0.GetActBossLinkPTActID(arg0_112, arg1_112)
-	local var0_112 = table.Find(arg0_112.data, function(arg0_113, arg1_113)
-		if arg1_113:getConfig("type") ~= ActivityConst.ACTIVITY_TYPE_PT_BUFF then
+function var0_0.GetActBossLinkPTActID(arg0_113, arg1_113)
+	local var0_113 = table.Find(arg0_113.data, function(arg0_114, arg1_114)
+		if arg1_114:getConfig("type") ~= ActivityConst.ACTIVITY_TYPE_PT_BUFF then
 			return
 		end
 
-		return arg1_113:getDataConfig("link_id") == arg1_112
+		return arg1_114:getDataConfig("link_id") == arg1_113
 	end)
 
-	return var0_112 and var0_112.id
+	return var0_113 and var0_113.id
 end
 
-function var0_0.CheckDailyEventRequest(arg0_114, arg1_114)
-	if arg1_114:CheckDailyEventRequest() then
-		arg0_114:sendNotification(GAME.SINGLE_EVENT_REFRESH, {
-			actId = arg1_114.id
+function var0_0.CheckDailyEventRequest(arg0_115, arg1_115)
+	if arg1_115:CheckDailyEventRequest() then
+		arg0_115:sendNotification(GAME.SINGLE_EVENT_REFRESH, {
+			actId = arg1_115.id
 		})
 	end
 end

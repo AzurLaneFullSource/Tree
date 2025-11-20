@@ -6,10 +6,10 @@ function var0_0.__call(arg0_1)
 	end
 
 	if arg0_1.callback then
-		arg0_1.callback(arg0_1.model)
+		arg0_1.callback(arg0_1.spineChar)
 	end
 
-	pg.PoolMgr.GetInstance():ReturnSpineChar(arg0_1.name, arg0_1.model)
+	arg0_1.spineChar:Dispose()
 
 	return arg0_1
 end
@@ -17,7 +17,7 @@ end
 function var0_0.Ctor(arg0_2, arg1_2, arg2_2, arg3_2)
 	arg0_2.path = "Spine"
 	arg0_2.name = arg1_2
-	arg0_2.model = arg2_2
+	arg0_2.spineChar = arg2_2
 	arg0_2.callback = arg3_2
 end
 

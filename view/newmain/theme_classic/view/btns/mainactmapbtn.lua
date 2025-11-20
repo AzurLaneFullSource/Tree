@@ -33,7 +33,7 @@ function var0_0.IsShowTip(arg0_5)
 
 	if var0_5 == ActivityConst.OTHER_WORLD_TERMINAL_BATTLE_ID then
 		return OtherworldMapScene.IsShowTip()
-	elseif var1_5 == ActivityConst.ACTIVITY_TYPE_BOSSRUSH then
+	elseif var1_5 == ActivityConst.ACTIVITY_TYPE_BOSSRUSH or var1_5 == ActivityConst.ACTIVITY_TYPE_BOSS_RUSH_DAL_COLLAB then
 		return false
 	end
 

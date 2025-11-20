@@ -313,29 +313,25 @@ function var0_0.initShipModel(arg0_19)
 	local var0_19 = arg0_19.shipVO:getPrefab()
 
 	if arg0_19.shipContainer.childCount ~= 0 then
-		PoolMgr.GetInstance():ReturnSpineChar(var0_19, go(arg0_19.shipModel))
+		arg0_19.shipModel:Dispose()
 	end
 
 	local function var1_19(arg0_20)
 		if not IsNil(arg0_19._tf) then
-			local var0_20 = tf(arg0_20)
+			arg0_19.shipModel = arg0_20
 
-			arg0_19.shipModel = var0_20
-			arg0_19.spineAnimUI = var0_20:GetComponent("SpineAnimUI")
-
-			pg.ViewUtils.SetLayer(var0_20, Layer.UI)
-
-			var0_20.localScale = Vector3(var3_0, var3_0, 1)
-
-			setParent(var0_20, arg0_19.shipContainer)
-
-			var0_20.localPosition = Vector2(0, 10)
-
-			arg0_19.spineAnimUI:SetAction("stand2", 0)
+			arg0_20:SetLayer(Layer.UI)
+			arg0_20:SetLocalScale(Vector3(var3_0, var3_0, 1))
+			arg0_20:SetParent(arg0_19.shipContainer)
+			arg0_20:SetLocalPosition(Vector2(0, 10))
+			arg0_20:SetAction("stand2", 0)
 		end
 	end
 
-	PoolMgr.GetInstance():GetSpineChar(var0_19, true, function(arg0_21)
+	local var2_19 = SpineAnimChar.New()
+
+	var2_19:SetPaint(var0_19)
+	var2_19:Load(true, function(arg0_21)
 		var1_19(arg0_21)
 	end)
 end

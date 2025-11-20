@@ -283,16 +283,18 @@ function var0_0.UpdateFashionDetail(arg0_20, arg1_20)
 
 		local var3_20 = var0_20.prefab
 
-		PoolMgr.GetInstance():GetSpineChar(var3_20, true, function(arg0_21)
-			if var0_20.prefab ~= var3_20 then
-				PoolMgr.GetInstance():ReturnSpineChar(var3_20, arg0_21)
-			else
-				arg0_21.name = var3_20
-				arg0_21.transform.localPosition = Vector3.zero
-				arg0_21.transform.localScale = Vector3(0.5, 0.5, 1)
+		arg0_20.spineChar = SpineAnimChar.New()
 
-				arg0_21.transform:SetParent(var0_20.character, false)
-				arg0_21:GetComponent(typeof(SpineAnimUI)):SetAction(arg1_20.show_skin or "stand", 0)
+		arg0_20.spineChar:SetPaint(var3_20)
+		arg0_20.spineChar:Load(true, function(arg0_21)
+			if var0_20.prefab ~= var3_20 then
+				arg0_21:Dispose()
+			else
+				arg0_21:SetName(var3_20)
+				arg0_21:SetLocalPosition(Vector3.zero)
+				arg0_21:SetLocalScale(Vector3(0.5, 0.5, 1))
+				arg0_21:SetParent(var0_20.character)
+				arg0_21:SetAction(arg1_20.show_skin or "stand", 0)
 			end
 		end)
 	end
@@ -405,10 +407,11 @@ function var0_0.OnDestroy(arg0_28)
 
 	if arg0_28.fashionDetailWrapper then
 		local var0_28 = arg0_28.fashionDetailWrapper
-		local var1_28 = var0_28.character:Find(var0_28.prefab)
 
-		if not IsNil(var1_28) then
-			PoolMgr.GetInstance():ReturnSpineChar(var0_28.prefab, var1_28.gameObject)
+		if var0_28.character:Find(var0_28.prefab) and arg0_28.spineChar then
+			arg0_28.spineChar:Dispose()
+
+			arg0_28.spineChar = nil
 		end
 	end
 

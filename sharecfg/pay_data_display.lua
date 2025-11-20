@@ -143,6 +143,7 @@ pg.pay_data_display = setmetatable({
 		1022,
 		1023,
 		1024,
+		1025,
 		1301,
 		2001,
 		2002,
@@ -201,6 +202,7 @@ pg.pay_data_display = setmetatable({
 		2058,
 		2059,
 		2063,
+		2064,
 		5011,
 		5012,
 		5013,
@@ -16151,6 +16153,91 @@ pg.base.pay_data_display = {
 		limit_args = {},
 		drop_item = {}
 	},
+	[1025] = {
+		limit_group = 0,
+		name = "Fair Winds Cruise Pass (2025.12)",
+		descrip_extra = "You must complete certain missions to obtain these rewards.",
+		type = 0,
+		second_text = "Unlock Special Rewards",
+		type_order = 6,
+		subject = "Fair Winds Cruise Pass",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 1,
+		money = 999,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 1025,
+		name_display = "Fair Winds Cruise Pass",
+		limit_type = 2,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "battlepass_1",
+		extra_service = 4,
+		skin_inquire_relation = 0,
+		show_group = "",
+		id_str = "com.yostaren.azurlane.passport29",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Purchase to immediately gain 1,500 Progress Points, and also unlock additional Fair Winds Cruise rewards.",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.passport29",
+		extra_service_item = {
+			{
+				1,
+				4026,
+				1500
+			},
+			{
+				8,
+				65108,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					12,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					1,
+					31
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				8,
+				59599,
+				1500
+			}
+		},
+		sub_display = {
+			7026,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
 	[1301] = {
 		limit_group = 0,
 		name = "Black Friday Cruise Pass",
@@ -21118,6 +21205,124 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40070,
+				1
+			}
+		}
+	},
+	[2064] = {
+		limit_group = 0,
+		name = "Skill Book Pack",
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 0,
+		subject = "Skill Book Pack",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 4,
+		money = 299,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 2064,
+		name_display = "Skill Book Pack",
+		limit_type = 2,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "boxSkill",
+		extra_service = 3,
+		skin_inquire_relation = 0,
+		show_group = "",
+		id_str = "com.yostaren.azurlane.pack34",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Buy to receive a large amount of Skill Books.",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.pack34",
+		extra_service_item = {
+			{
+				2,
+				16004,
+				1
+			},
+			{
+				2,
+				16014,
+				1
+			},
+			{
+				2,
+				16024,
+				1
+			},
+			{
+				2,
+				16003,
+				3
+			},
+			{
+				2,
+				16013,
+				3
+			},
+			{
+				2,
+				16023,
+				3
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					11,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					4,
+					15
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				16004,
+				1
+			},
+			{
+				2,
+				16014,
+				1
+			},
+			{
+				2,
+				16024,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40023,
 				1
 			}
 		}

@@ -174,6 +174,8 @@ function var0_0.onBackPressed(arg0_23)
 end
 
 function var0_0.willExit(arg0_24)
+	arg0_24.charController:Dispose()
+
 	if arg0_24.timer then
 		arg0_24.timer:Stop()
 

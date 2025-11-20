@@ -47,7 +47,7 @@ function var0_0.LoadSpine(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
 	arg0_7.spineRole:Load(function()
 		arg0_7.spineRole:SetParent(arg0_7.tfShip)
 		arg0_7.spineRole:SetRaycastTarget(false)
-		arg0_7.spineRole:SetLocalPos(Vector3.zero)
+		arg0_7.spineRole:SetLocalPosition(Vector3.zero)
 
 		arg2_7 = arg2_7 and arg2_7 * 0.01 or 1
 

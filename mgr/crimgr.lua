@@ -9,6 +9,7 @@ local var1_0 = var0_0.CriMgr
 var1_0.Category_CV = "Category_CV"
 var1_0.Category_BGM = "Category_BGM"
 var1_0.Category_SE = "Category_SE"
+var1_0.Category_Mute_Other_CV = "Mute_Other_CV"
 var1_0.C_BGM = "C_BGM"
 var1_0.C_VOICE = "cv"
 var1_0.C_SE = "C_SE"
@@ -66,9 +67,7 @@ function var1_0.InitCri(arg0_8, arg1_8)
 	arg0_8.criInst = CriWareMgr.Inst
 
 	arg0_8.criInst:Init(function()
-		CriWare.CriAtom.SetCategoryVolume(var1_0.Category_CV, arg0_8:getCVVolume())
-		CriWare.CriAtom.SetCategoryVolume(var1_0.Category_SE, arg0_8:getSEVolume())
-		CriWare.CriAtom.SetCategoryVolume(var1_0.Category_BGM, arg0_8:getBGMVolume())
+		arg0_8:ResetAllVolume()
 
 		local var0_9 = arg0_8.criInst:GetChannelData(var1_0.C_VOICE)
 
@@ -363,6 +362,7 @@ end
 function var1_0.setCVVolume(arg0_56, arg1_56)
 	PlayerPrefs.SetFloat("cv_vol", arg1_56)
 	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_CV, arg1_56)
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_Mute_Other_CV, arg1_56)
 end
 
 function var1_0.getBGMVolume(arg0_57)
@@ -383,101 +383,115 @@ function var1_0.setSEVolume(arg0_60, arg1_60)
 	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_SE, arg1_60)
 end
 
-function var1_0.InitBgmCfg(arg0_61, arg1_61)
-	arg0_61.isDefaultBGM = false
+function var1_0.MuteAllVolume(arg0_61)
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_CV, 0)
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_Mute_Other_CV, 0)
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_BGM, 0)
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_SE, 0)
+end
+
+function var1_0.ResetAllVolume(arg0_62)
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_CV, arg0_62:getCVVolume())
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_Mute_Other_CV, arg0_62:getCVVolume())
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_BGM, arg0_62:getBGMVolume())
+	CriWare.CriAtom.SetCategoryVolume(var1_0.Category_SE, arg0_62:getSEVolume())
+end
+
+function var1_0.InitBgmCfg(arg0_63, arg1_63)
+	arg0_63.isDefaultBGM = false
 
 	if OPEN_SPECIAL_IP_BGM and PLATFORM_CODE == PLATFORM_US then
 		if Application.isEditor then
-			if arg1_61 then
-				arg1_61()
+			if arg1_63 then
+				arg1_63()
 			end
 
 			return
 		end
 
-		local var0_61 = {
+		local var0_63 = {
 			"Malaysia",
 			"Indonesia"
 		}
-		local var1_61 = "https://pro.ip-api.com/json/?key=TShzQlq7O9KuthI"
-		local var2_61 = ""
+		local var1_63 = "https://pro.ip-api.com/json/?key=TShzQlq7O9KuthI"
+		local var2_63 = ""
 
-		local function var3_61(arg0_62)
-			local var0_62 = "\"country\":\""
-			local var1_62 = "\","
-			local var2_62, var3_62 = string.find(arg0_62, var0_62)
+		local function var3_63(arg0_64)
+			local var0_64 = "\"country\":\""
+			local var1_64 = "\","
+			local var2_64, var3_64 = string.find(arg0_64, var0_64)
 
-			if var3_62 then
-				arg0_62 = string.sub(arg0_62, var3_62 + 1)
+			if var3_64 then
+				arg0_64 = string.sub(arg0_64, var3_64 + 1)
 			end
 
-			local var4_62 = string.find(arg0_62, var1_62)
+			local var4_64 = string.find(arg0_64, var1_64)
 
-			if var4_62 then
-				arg0_62 = string.sub(arg0_62, 1, var4_62 - 1)
+			if var4_64 then
+				arg0_64 = string.sub(arg0_64, 1, var4_64 - 1)
 			end
 
-			return arg0_62
+			return arg0_64
 		end
 
-		local function var4_61(arg0_63)
-			local var0_63 = false
+		local function var4_63(arg0_65)
+			local var0_65 = false
 
-			for iter0_63, iter1_63 in ipairs(var0_61) do
-				if iter1_63 == arg0_63 then
-					var0_63 = true
+			for iter0_65, iter1_65 in ipairs(var0_63) do
+				if iter1_65 == arg0_65 then
+					var0_65 = true
 				end
 			end
 
-			return var0_63
+			return var0_65
 		end
 
-		VersionMgr.Inst:WebRequest(var1_61, function(arg0_64, arg1_64)
-			local var0_64 = var3_61(arg1_64)
+		VersionMgr.Inst:WebRequest(var1_63, function(arg0_66, arg1_66)
+			local var0_66 = var3_63(arg1_66)
 
-			originalPrint("content: " .. arg1_64)
-			originalPrint("country is: " .. var0_64)
+			originalPrint("content: " .. arg1_66)
+			originalPrint("country is: " .. var0_66)
 
-			arg0_61.isDefaultBGM = var4_61(var0_64)
+			arg0_63.isDefaultBGM = var4_63(var0_66)
 
-			originalPrint("IP limit: " .. tostring(arg0_61.isDefaultBGM))
+			originalPrint("IP limit: " .. tostring(arg0_63.isDefaultBGM))
 
-			if arg1_61 then
-				arg1_61()
+			if arg1_63 then
+				arg1_63()
 			end
 		end)
-	elseif arg1_61 then
-		arg1_61()
+	elseif arg1_63 then
+		arg1_63()
 	end
 end
 
-function var1_0.IsDefaultBGM(arg0_65)
-	return arg0_65.isDefaultBGM
+function var1_0.IsDefaultBGM(arg0_67)
+	return arg0_67.isDefaultBGM
 end
 
-function var1_0.getAtomSource(arg0_66, arg1_66)
-	return GetComponent(GameObject.Find("CRIWARE/" .. arg1_66), "CriAtomSource")
+function var1_0.getAtomSource(arg0_68, arg1_68)
+	return GetComponent(GameObject.Find("CRIWARE/" .. arg1_68), "CriAtomSource")
 end
 
-function var1_0.GetCueInfo(arg0_67, arg1_67, arg2_67, arg3_67, arg4_67)
-	arg0_67:LoadCueSheet(arg1_67, function(arg0_68)
-		if not arg0_68 then
+function var1_0.GetCueInfo(arg0_69, arg1_69, arg2_69, arg3_69, arg4_69)
+	arg0_69:LoadCueSheet(arg1_69, function(arg0_70)
+		if not arg0_70 then
 			warning("加载CueSheet失败")
 
 			return
 		end
 
-		local var0_68 = arg0_67.criInst:GetCueInfo(arg1_67, arg2_67)
+		local var0_70 = arg0_69.criInst:GetCueInfo(arg1_69, arg2_69)
 
-		arg3_67(var0_68)
+		arg3_69(var0_70)
 
-		if not arg4_67 then
-			arg0_67:UnloadCueSheet(arg1_67)
+		if not arg4_69 then
+			arg0_69:UnloadCueSheet(arg1_69)
 		end
 	end)
 end
 
-function var1_0.SetBgmWaveAnalyzerOnCapture(arg0_69, arg1_69, arg2_69)
-	arg0_69.bgmWaveAnalyzer.OnCaptureL = arg1_69
-	arg0_69.bgmWaveAnalyzer.OnCaptureR = arg2_69
+function var1_0.SetBgmWaveAnalyzerOnCapture(arg0_71, arg1_71, arg2_71)
+	arg0_71.bgmWaveAnalyzer.OnCaptureL = arg1_71
+	arg0_71.bgmWaveAnalyzer.OnCaptureR = arg2_71
 end

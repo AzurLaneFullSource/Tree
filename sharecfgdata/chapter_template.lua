@@ -348802,7 +348802,7 @@ _G.pg.base.chapter_template[1940041] = {
 		},
 	},
 	icon = {
-		"sairenboss27",
+		"weixu_baojian_2",
 	},
 	awards = {
 		{
@@ -349831,7 +349831,7 @@ _G.pg.base.chapter_template[1940051] = {
 		},
 	},
 	icon = {
-		"sairenboss27",
+		"weixu_baojian_2",
 	},
 	awards = {},
 	grids = {
@@ -350198,7 +350198,7 @@ _G.pg.base.chapter_template[1940052] = {
 		},
 	},
 	icon = {
-		"sairenboss27",
+		"weixu_baojian_2",
 	},
 	awards = {},
 	grids = {

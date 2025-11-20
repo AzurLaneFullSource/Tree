@@ -174,25 +174,19 @@ function var0_0.LoadClassRoom(arg0_17)
 end
 
 function var0_0.AddStudent(arg0_23, arg1_23, arg2_23)
-	local var0_23 = arg1_23.transform
-
-	var0_23.localScale = Vector3(-0.9, 0.9, 1)
-	var0_23.localPosition = Vector3(37, 62, 0)
-
-	setParent(var0_23, arg2_23)
+	arg1_23:SetLocalScale(Vector3(-0.9, 0.9, 1))
+	arg1_23:SetLocalPosition(Vector3(37, 62, 0))
+	arg1_23:SetParent(arg2_23)
 	setActive(arg2_23:Find("icon"), true)
-	arg1_23:GetComponent("SpineAnimUI"):SetAction("sit", 0)
-	var0_23:SetSiblingIndex(0)
+	arg1_23:SetAction("sit", 0)
+	arg1_23:SetSiblingIndex(0)
 end
 
 function var0_0.AddTeacher(arg0_24, arg1_24, arg2_24)
-	local var0_24 = arg1_24.transform
-
-	var0_24.localScale = Vector3(0.9, 0.9, 1)
-	var0_24.localPosition = Vector3(0, 0, 0)
-
-	setParent(var0_24, arg2_24)
-	arg1_24:GetComponent("SpineAnimUI"):SetAction("stand2", 0)
+	arg1_24:SetLocalScale(Vector3(0.9, 0.9, 1))
+	arg1_24:SetLocalPosition(Vector3(0, 0, 0))
+	arg1_24:SetParent(arg2_24)
+	arg1_24:SetAction("stand2", 0)
 end
 
 function var0_0.willExit(arg0_25)
@@ -203,14 +197,17 @@ function var0_0.willExit(arg0_25)
 end
 
 function var0_0.LoadChar(arg0_26, arg1_26, arg2_26)
-	PoolMgr.GetInstance():GetSpineChar(arg1_26, true, function(arg0_27)
+	local var0_26 = SpineAnimChar.New()
+
+	var0_26:SetPaint(arg1_26)
+	var0_26:Load(true, function(arg0_27)
 		if arg0_26.exited then
-			PoolMgr.GetInstance():ReturnSpineChar(arg1_26, arg0_27)
+			arg0_27:Dispose()
 
 			return
 		end
 
-		pg.ViewUtils.SetLayer(arg0_27.transform, Layer.UI)
+		arg0_27:SetLayer(Layer.UI)
 
 		arg0_26.chars[arg1_26] = arg0_27
 
@@ -220,7 +217,7 @@ end
 
 function var0_0.ClearChars(arg0_28)
 	for iter0_28, iter1_28 in pairs(arg0_28.chars) do
-		PoolMgr.GetInstance():ReturnSpineChar(iter0_28, iter1_28)
+		iter1_28:Dispose()
 	end
 
 	arg0_28.chars = {}

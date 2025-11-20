@@ -6,14 +6,14 @@ pg.shop_banner_template = {
 		type = 2,
 		id = 10,
 		relation_param = "",
-		pic = "shopbanner/shop_skin2",
+		pic = "shopbanner/shop_skin",
 		time_lable = 1,
 		time = {
 			{
 				{
 					2025,
 					11,
-					13
+					20
 				},
 				{
 					0,
@@ -45,7 +45,7 @@ pg.shop_banner_template = {
 		type = 2,
 		id = 11,
 		relation_param = "",
-		pic = "shopbanner/shop_skin3",
+		pic = "shopbanner/shop_skin2",
 		time_lable = 1,
 		time = {
 			{
@@ -431,7 +431,7 @@ pg.shop_banner_template = {
 				{
 					2025,
 					11,
-					13
+					20
 				},
 				{
 					0,
@@ -442,8 +442,8 @@ pg.shop_banner_template = {
 			{
 				{
 					2025,
-					11,
-					26
+					12,
+					3
 				},
 				{
 					23,

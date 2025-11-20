@@ -208,9 +208,28 @@ function var2_0.MakeSkinOrbit(arg0_28, arg1_28)
 	if var0_28 then
 		for iter0_28, iter1_28 in ipairs(var0_28) do
 			local var1_28 = var0_0.Battle.BattleDataFunction.GetEquipSkinDataFromID(iter1_28)
-			local var2_28 = var0_0.Battle.BattleResourceManager.GetInstance():InstOrbit(var1_28.orbit_combat)
 
-			arg1_28:AddOrbit(var2_28, var1_28)
+			if arg1_28:IsDoubleChar() then
+				local var2_28 = var0_0.Battle.BattleResourceManager.GetInstance():InstOrbit(var1_28.orbit_combat)
+				local var3_28 = var0_0.Battle.BattleResourceManager.GetInstance():InstOrbit(var1_28.orbit_combat)
+				local var4_28 = var1_28.double_char_bone
+
+				if var4_28 and #var4_28 > 0 and var4_28[1] == 1 then
+					arg1_28:AddOrbit(var3_28, var1_28, "char2")
+				end
+
+				if var4_28 and #var4_28 > 0 and var4_28[2] == 1 then
+					arg1_28:AddOrbit(var2_28, var1_28)
+				end
+
+				if var4_28 and #var4_28 > 0 and var4_28[3] == 1 then
+					arg1_28:AddOrbit(var2_28, var1_28, "char1")
+				end
+			else
+				local var5_28 = var0_0.Battle.BattleResourceManager.GetInstance():InstOrbit(var1_28.orbit_combat)
+
+				arg1_28:AddOrbit(var5_28, var1_28)
+			end
 		end
 	end
 end

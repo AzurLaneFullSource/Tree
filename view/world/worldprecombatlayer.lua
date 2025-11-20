@@ -413,15 +413,13 @@ function var0_0.loadAllCharacter(arg0_33, arg1_33)
 			return
 		end
 
-		local var0_34 = arg0_34.model
+		local var0_34 = arg0_34:GetRoleModel()
 		local var1_34 = WorldConst.FetchWorldShip(arg1_34.id)
 
 		arg0_33.characterList[arg2_34][arg3_34] = arg0_34
 
-		tf(var0_34):SetParent(arg0_33.heroContainer, false)
-
-		tf(var0_34).localScale = Vector3(0.65, 0.65, 1)
-
+		arg0_34:SetParent(arg0_33.heroContainer, false)
+		arg0_34:SetLocalScale(Vector3(0.65, 0.65, 1))
 		pg.ViewUtils.SetLayer(tf(var0_34), Layer.UI)
 		arg0_33:enabledCharacter(var0_34, true, arg2_34)
 		arg0_33:setCharacterPos(arg2_34, arg3_34, var0_34)
@@ -555,11 +553,11 @@ end
 
 function var0_0.setAllCharacterPos(arg0_41, arg1_41)
 	for iter0_41, iter1_41 in ipairs(arg0_41.characterList[TeamType.Vanguard]) do
-		arg0_41:setCharacterPos(TeamType.Vanguard, iter0_41, tf(iter1_41.model), arg1_41)
+		arg0_41:setCharacterPos(TeamType.Vanguard, iter0_41, tf(iter1_41:GetRootModel()), arg1_41)
 	end
 
 	for iter2_41, iter3_41 in ipairs(arg0_41.characterList[TeamType.Main]) do
-		arg0_41:setCharacterPos(TeamType.Main, iter2_41, tf(iter3_41.model), arg1_41)
+		arg0_41:setCharacterPos(TeamType.Main, iter2_41, tf(iter3_41:GetRootModel()), arg1_41)
 	end
 
 	arg0_41:sortSiblingIndex()
@@ -596,7 +594,7 @@ end
 function var0_0.switchToEditMode(arg0_44)
 	local function var0_44(arg0_45)
 		for iter0_45, iter1_45 in ipairs(arg0_45) do
-			local var0_45 = iter1_45.model
+			local var0_45 = iter1_45:GetRootModel()
 			local var1_45 = tf(var0_45):Find("mouseChild")
 
 			if var1_45 then
@@ -636,7 +634,7 @@ function var0_0.switchToShiftMode(arg0_46, arg1_46, arg2_46)
 	local var2_46 = arg0_46.characterList[arg2_46]
 
 	for iter1_46, iter2_46 in ipairs(var2_46) do
-		local var3_46 = iter2_46.model
+		local var3_46 = iter2_46:GetRootModel()
 
 		if var3_46 ~= arg1_46 then
 			local var4_46 = arg0_46.gridTFs[arg2_46][iter1_46]
@@ -649,7 +647,7 @@ function var0_0.switchToShiftMode(arg0_46, arg1_46, arg2_46)
 
 			var5_46:AddPointEnterFunc(function()
 				for iter0_47, iter1_47 in ipairs(var2_46) do
-					if iter1_47.model == var3_46 then
+					if iter1_47:GetRootModel() == var3_46 then
 						arg0_46:shift(arg0_46._shiftIndex, iter0_47, arg2_46)
 
 						break
@@ -668,7 +666,7 @@ end
 function var0_0.shift(arg0_48, arg1_48, arg2_48, arg3_48)
 	local var0_48 = arg0_48.characterList[arg3_48]
 	local var1_48 = arg0_48.gridTFs[arg3_48]
-	local var2_48 = var0_48[arg2_48].model
+	local var2_48 = var0_48[arg2_48]:GetRootModel()
 	local var3_48 = var1_48[arg1_48].localPosition
 
 	tf(var2_48).localPosition = Vector3(var3_48.x + 2, var3_48.y - 80, var3_48.z)
@@ -696,7 +694,7 @@ function var0_0.sortSiblingIndex(arg0_49)
 		local var3_49 = arg0_49.characterList[TeamType.Vanguard][var0_49]
 
 		if var2_49 then
-			local var4_49 = var2_49.model
+			local var4_49 = var2_49:GetRootModel()
 
 			tf(var4_49):SetSiblingIndex(var1_49)
 
@@ -704,7 +702,7 @@ function var0_0.sortSiblingIndex(arg0_49)
 		end
 
 		if var3_49 then
-			local var5_49 = var3_49.model
+			local var5_49 = var3_49:GetRootModel()
 
 			tf(var5_49):SetSiblingIndex(var1_49)
 
@@ -719,7 +717,7 @@ function var0_0.enabledTeamCharacter(arg0_50, arg1_50, arg2_50)
 	local var0_50 = arg0_50.characterList[arg1_50]
 
 	for iter0_50, iter1_50 in ipairs(var0_50) do
-		arg0_50:enabledCharacter(iter1_50.model, arg2_50, arg1_50)
+		arg0_50:enabledCharacter(iter1_50:GetRootModel(), arg2_50, arg1_50)
 	end
 end
 

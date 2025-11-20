@@ -93,7 +93,7 @@ function var0_0.PlayModelAction(arg0_10, arg1_10, arg2_10, arg3_10)
 		if arg0_10.modelType == WorldConst.ModelSpine then
 			local var1_10 = arg0_10.modelComps and arg0_10.modelComps[1]
 
-			if var1_10 and var1_10.transform.gameObject.activeInHierarchy then
+			if var1_10 and var1_10:GetModel().transform.gameObject.activeInHierarchy then
 				table.insert(var0_10, function(arg0_11)
 					var1_10:SetAction(arg1_10, 0)
 
@@ -215,24 +215,27 @@ function var0_0.LoadSpine(arg0_20, arg1_20)
 	local var0_20 = arg0_20.modelResPath
 	local var1_20 = arg0_20.modelResAsync
 
-	PoolMgr.GetInstance():GetSpineChar(var0_20, var1_20, function(arg0_21)
+	arg0_20.spineChar = SpineAnimChar.New()
+
+	arg0_20.spineChar:SetPaint(var0_20)
+	arg0_20.spineChar:Load(var1_20, function(arg0_21)
 		if arg0_20.modelType ~= WorldConst.ModelSpine or arg0_20.modelResPath ~= var0_20 then
-			PoolMgr.GetInstance():ReturnSpineChar(var0_20, arg0_21)
+			arg0_21:Dispose()
+
+			arg0_20.spineChar = nil
 
 			return
 		end
 
-		local var0_21 = arg0_21.transform
+		arg0_21:GetSkeletonGraphic().raycastTarget = false
 
-		var0_21:GetComponent("SkeletonGraphic").raycastTarget = false
-		var0_21.anchoredPosition3D = Vector3.zero
-		var0_21.localScale = Vector3.one
-
-		pg.ViewUtils.SetLayer(var0_21, Layer.UI)
-		var0_21:SetParent(arg0_20.model, false)
+		arg0_21:SetAnchoredPosition3D(Vector3.zero)
+		arg0_21:SetLocalScale(Vector3.one)
+		arg0_21:SetLayer(Layer.UI)
+		arg0_21:SetParent(arg0_20.model)
 
 		arg0_20.modelComps = {
-			var0_21:GetComponent("SpineAnimUI")
+			arg0_21
 		}
 
 		arg1_20()
@@ -277,8 +280,10 @@ function var0_0.LoadPrefab(arg0_22, arg1_22)
 end
 
 function var0_0.UnloadSpine(arg0_24)
-	arg0_24.modelComps[1]:SetActionCallBack(nil)
-	PoolMgr.GetInstance():ReturnSpineChar(arg0_24.modelResPath, arg0_24.model:GetChild(0).gameObject)
+	local var0_24 = arg0_24.modelComps[1]
+
+	var0_24:SetActionCallBack(nil)
+	var0_24:Dispose()
 end
 
 function var0_0.UnloadPrefab(arg0_25)

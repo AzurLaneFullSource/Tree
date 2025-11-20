@@ -187,7 +187,7 @@ function var0_0.register(arg0_1)
 		for iter16_1, iter17_1 in ipairs(var35_1:GetShips()) do
 			table.insert(var12_1, iter17_1.ship)
 		end
-	elseif var5_1 == SYSTEM_BOSS_RUSH or var5_1 == SYSTEM_BOSS_RUSH_EX then
+	elseif var5_1 == SYSTEM_BOSS_RUSH or var5_1 == SYSTEM_BOSS_RUSH_EX or var5_1 == SYSTEM_BOSS_RUSH_COLLABRATE then
 		local var36_1 = arg0_1.contextData.actId
 		local var37_1 = getProxy(ActivityProxy):getActivityById(var36_1):GetSeriesData()
 
@@ -419,7 +419,7 @@ function var0_0.register(arg0_1)
 			if var41_6 then
 				var40_6:removeChild(var41_6)
 			end
-		elseif var5_1 == SYSTEM_BOSS_RUSH or var5_1 == SYSTEM_BOSS_RUSH_EX then
+		elseif var5_1 == SYSTEM_BOSS_RUSH or var5_1 == SYSTEM_BOSS_RUSH_EX or var5_1 == SYSTEM_BOSS_RUSH_COLLABRATE then
 			local var42_6 = arg0_1.contextData.score > ys.Battle.BattleConst.BattleScore.C
 			local var43_6 = arg0_1.contextData.actId
 			local var44_6 = getProxy(ActivityProxy):getActivityById(var43_6):GetSeriesData()
@@ -799,8 +799,19 @@ function var0_0.handleNotification(arg0_30, arg1_30)
 			return
 		end
 
-		local var6_30 = var2_30 == SYSTEM_BOSS_RUSH and BossRushBattleResultMediator or BossRushBattleResultMediator
-		local var7_30 = var2_30 == SYSTEM_BOSS_RUSH and BossRushBattleResultLayer or BossRushConst.GetEXBattleResultLayer(var3_30)
+		local var6_30
+		local var7_30
+
+		if var2_30 == SYSTEM_BOSS_RUSH_COLLABRATE then
+			var6_30 = BossRushDALBattleResultMediator
+			var7_30 = BossRushDALBattleResultLayer
+		elseif var2_30 == SYSTEM_BOSS_RUSH_EX then
+			var6_30 = BossRushBattleResultMediator
+			var7_30 = BossRushConst.GetEXBattleResultLayer(var3_30)
+		else
+			var6_30 = BossRushBattleResultMediator
+			var7_30 = BossRushBattleResultLayer
+		end
 
 		arg0_30:addSubLayers(Context.New({
 			mediator = var6_30,

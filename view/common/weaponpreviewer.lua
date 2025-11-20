@@ -91,9 +91,10 @@ function var0_0.load(arg0_6, arg1_6, arg2_6, arg3_6, arg4_6)
 			var1_8.localPosition = var1_0
 			var1_8.localEulerAngles = var3_0
 			arg0_6.seaAnimator = var1_8:GetComponent("SpineAnim")
+			arg0_6.skeletonAnimation = var1_8:GetComponent("SkeletonAnimation")
 			arg0_6.characterAction = ys.Battle.BattleConst.ActionName.MOVE
 
-			arg0_6.seaAnimator:SetAction(arg0_6.characterAction, 0, true)
+			arg0_6:setSeaAction(arg0_6.characterAction, 0, true)
 
 			arg0_6.seaFXList = {}
 			arg0_6._FXAttachPoint = GameObject()
@@ -200,647 +201,655 @@ function var0_0.attachOrbit(arg0_10)
 	end
 end
 
-function var0_0.playShipAnims(arg0_12)
-	if arg0_12.loaded and arg0_12.seaAnimator then
-		local var0_12 = {
+function var0_0.setSeaAction(arg0_12, arg1_12, arg2_12, arg3_12)
+	if arg0_12.seaAnimator then
+		local var0_12 = SpineAnimUtil.GetCharAnimDirect(arg0_12.skeletonAnimation, 1, arg1_12)
+
+		arg0_12.seaAnimator:SetAction(var0_12, 0, true)
+	end
+end
+
+function var0_0.playShipAnims(arg0_13)
+	if arg0_13.loaded and arg0_13.seaAnimator then
+		local var0_13 = {
 			"attack",
 			"victory",
 			"dead"
 		}
 
-		local function var1_12(arg0_13)
-			if arg0_12.seaAnimator then
-				arg0_12.seaAnimator:SetActionCallBack(nil)
+		local function var1_13(arg0_14)
+			if arg0_13.seaAnimator then
+				arg0_13.seaAnimator:SetActionCallBack(nil)
 			end
 
-			arg0_12.seaAnimator:SetAction(var0_12[arg0_13], 0, false)
-			arg0_12.seaAnimator:SetActionCallBack(function(arg0_14)
-				if arg0_14 == "finish" then
-					arg0_12.seaAnimator:SetActionCallBack(nil)
-					arg0_12.seaAnimator:SetAction("stand", 0, false)
+			arg0_13:setSeaAction(var0_13[arg0_14], 0, false)
+			arg0_13.seaAnimator:SetActionCallBack(function(arg0_15)
+				if arg0_15 == "finish" then
+					arg0_13.seaAnimator:SetActionCallBack(nil)
+					arg0_13:setSeaAction("stand", 0, false)
 				end
 			end)
 		end
 
-		if arg0_12.palyAnimTimer then
-			arg0_12.palyAnimTimer:Stop()
+		if arg0_13.palyAnimTimer then
+			arg0_13.palyAnimTimer:Stop()
 
-			arg0_12.palyAnimTimer = nil
+			arg0_13.palyAnimTimer = nil
 		end
 
-		arg0_12.palyAnimTimer = Timer.New(function()
-			var1_12(math.random(1, #var0_12))
+		arg0_13.palyAnimTimer = Timer.New(function()
+			var1_13(math.random(1, #var0_13))
 		end, 5, -1)
 
-		arg0_12.palyAnimTimer:Start()
-		arg0_12.palyAnimTimer.func()
+		arg0_13.palyAnimTimer:Start()
+		arg0_13.palyAnimTimer.func()
 	end
 end
 
-function var0_0.onWeaponUpdate(arg0_16)
-	if arg0_16.loaded and arg0_16.weaponIds then
-		if arg0_16.seaAnimator then
-			arg0_16.seaAnimator:SetActionCallBack(nil)
+function var0_0.onWeaponUpdate(arg0_17)
+	if arg0_17.loaded and arg0_17.weaponIds then
+		if arg0_17.seaAnimator then
+			arg0_17.seaAnimator:SetActionCallBack(nil)
 		end
 
-		local function var0_16()
-			for iter0_17, iter1_17 in pairs(arg0_16.weaponList or {}) do
-				for iter2_17, iter3_17 in pairs(iter1_17.emitterList or {}) do
-					iter3_17:Destroy()
+		local function var0_17()
+			for iter0_18, iter1_18 in pairs(arg0_17.weaponList or {}) do
+				for iter2_18, iter3_18 in pairs(iter1_18.emitterList or {}) do
+					iter3_18:Destroy()
 				end
 			end
 
-			for iter4_17, iter5_17 in ipairs(arg0_16.bulletList or {}) do
-				Object.Destroy(iter5_17._go)
+			for iter4_18, iter5_18 in ipairs(arg0_17.bulletList or {}) do
+				Object.Destroy(iter5_18._go)
 			end
 
-			for iter6_17, iter7_17 in pairs(arg0_16.aircraftList or {}) do
-				Object.Destroy(iter7_17.obj)
+			for iter6_18, iter7_18 in pairs(arg0_17.aircraftList or {}) do
+				Object.Destroy(iter7_18.obj)
 			end
 
-			arg0_16.bulletList = {}
-			arg0_16.aircraftList = {}
-			arg0_16.UpdateHandlers = {}
+			arg0_17.bulletList = {}
+			arg0_17.aircraftList = {}
+			arg0_17.UpdateHandlers = {}
 		end
 
-		if #arg0_16.weaponIds == 0 and arg0_16.playRandomAnims then
-			if arg0_16._fireTimer then
-				arg0_16._fireTimer:Stop()
+		if #arg0_17.weaponIds == 0 and arg0_17.playRandomAnims then
+			if arg0_17._fireTimer then
+				arg0_17._fireTimer:Stop()
 			end
 
-			if arg0_16._delayTimer then
-				arg0_16._delayTimer:Stop()
+			if arg0_17._delayTimer then
+				arg0_17._delayTimer:Stop()
 			end
 
-			if arg0_16.shipVO:getShipType() ~= ShipType.WeiXiu then
-				var0_16()
-			elseif arg0_16.buffTimer then
-				pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_16.buffTimer)
+			if arg0_17.shipVO:getShipType() ~= ShipType.WeiXiu then
+				var0_17()
+			elseif arg0_17.buffTimer then
+				pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_17.buffTimer)
 
-				arg0_16.buffTimer = nil
+				arg0_17.buffTimer = nil
 			end
 
-			arg0_16:playShipAnims()
-		elseif arg0_16.shipVO:getShipType() ~= ShipType.WeiXiu then
-			var0_16()
-			arg0_16:MakeWeapon(arg0_16.weaponIds)
-			arg0_16:SeaFire()
+			arg0_17:playShipAnims()
+		elseif arg0_17.shipVO:getShipType() ~= ShipType.WeiXiu then
+			var0_17()
+			arg0_17:MakeWeapon(arg0_17.weaponIds)
+			arg0_17:SeaFire()
 		else
-			local var1_16 = arg0_16.weaponIds[1]
+			local var1_17 = arg0_17.weaponIds[1]
 
-			if var1_16 then
-				local var2_16 = Equipment.getConfigData(var1_16).skill_id[1]
-				local var3_16 = var2_16 and var2_16[1]
+			if var1_17 then
+				local var2_17 = Equipment.getConfigData(var1_17).skill_id[1]
+				local var3_17 = var2_17 and var2_17[1]
 
-				arg0_16:MakeBuff(var3_16)
+				arg0_17:MakeBuff(var3_17)
 			end
 		end
 	end
 end
 
-function var0_0.SeaFire(arg0_18)
-	local var0_18 = 1
+function var0_0.SeaFire(arg0_19)
+	local var0_19 = 1
 
-	if arg0_18._fireTimer then
-		arg0_18._delayTimer:Stop()
-		arg0_18._fireTimer:Stop()
-		arg0_18._fireTimer:Start()
+	if arg0_19._fireTimer then
+		arg0_19._delayTimer:Stop()
+		arg0_19._fireTimer:Stop()
+		arg0_19._fireTimer:Start()
 	else
-		local function var1_18()
-			local var0_19 = arg0_18.weaponList[var0_18]
+		local function var1_19()
+			local var0_20 = arg0_19.weaponList[var0_19]
 
-			if var0_19 then
-				local function var1_19()
-					local var0_20 = 1
-					local var1_20 = 0
+			if var0_20 then
+				local function var1_20()
+					local var0_21 = 1
+					local var1_21 = 0
 
-					for iter0_20, iter1_20 in ipairs(var0_19.emitterList) do
-						iter1_20:Ready()
+					for iter0_21, iter1_21 in ipairs(var0_20.emitterList) do
+						iter1_21:Ready()
 					end
 
-					for iter2_20, iter3_20 in ipairs(var0_19.emitterList) do
-						iter3_20:Fire(nil, var0_20, var1_20)
+					for iter2_21, iter3_21 in ipairs(var0_20.emitterList) do
+						iter3_21:Fire(nil, var0_21, var1_21)
 					end
 
-					local var2_20 = var0_19.tmpData.fire_fx
+					local var2_21 = var0_20.tmpData.fire_fx
 
-					if arg0_18.equipSkinId > 0 then
-						local var3_20, var4_20, var5_20, var6_20, var7_20, var8_20 = ys.Battle.BattleDataFunction.GetEquipSkin(arg0_18.equipSkinId)
+					if arg0_19.equipSkinId > 0 then
+						local var3_21, var4_21, var5_21, var6_21, var7_21, var8_21 = ys.Battle.BattleDataFunction.GetEquipSkin(arg0_19.equipSkinId)
 
-						if var7_20 ~= "" then
-							var2_20 = var7_20
+						if var7_21 ~= "" then
+							var2_21 = var7_21
 						end
 					end
 
-					if var2_20 and var2_20 ~= "" and arg0_18.displayFireFX then
-						arg0_18.seaFXPool:GetCharacterFX(var2_20, arg0_18, true, function()
+					if var2_21 and var2_21 ~= "" and arg0_19.displayFireFX then
+						arg0_19.seaFXPool:GetCharacterFX(var2_21, arg0_19, true, function()
 							return
 						end)
 					end
 
-					var0_18 = var0_18 + 1
+					var0_19 = var0_19 + 1
 				end
 
-				if var0_19.tmpData.action_index ~= "" then
-					arg0_18.characterAction = var0_19.tmpData.action_index
+				if var0_20.tmpData.action_index ~= "" then
+					arg0_19.characterAction = var0_20.tmpData.action_index
 
-					arg0_18.seaAnimator:SetAction(arg0_18.characterAction, 0, false)
-					arg0_18.seaAnimator:SetActionCallBack(function(arg0_22)
-						if arg0_22 == "action" then
-							var1_19()
+					arg0_19:setSeaAction(arg0_19.characterAction, 0, false)
+					arg0_19.seaAnimator:SetActionCallBack(function(arg0_23)
+						if arg0_23 == "action" then
+							var1_20()
 						end
 					end)
 				else
-					var1_19()
+					var1_20()
 				end
-			elseif arg0_18.characterAction ~= ys.Battle.BattleConst.ActionName.MOVE then
-				arg0_18.characterAction = ys.Battle.BattleConst.ActionName.MOVE
+			elseif arg0_19.characterAction ~= ys.Battle.BattleConst.ActionName.MOVE then
+				arg0_19.characterAction = ys.Battle.BattleConst.ActionName.MOVE
 
-				arg0_18.seaAnimator:SetAction(arg0_18.characterAction, 0, true)
+				arg0_19:setSeaAction(arg0_19.characterAction, 0, true)
 
-				var0_18 = 1
+				var0_19 = 1
 
-				arg0_18._fireTimer:Pause()
-				arg0_18._delayTimer:Start()
+				arg0_19._fireTimer:Pause()
+				arg0_19._delayTimer:Start()
 			end
 		end
 
-		arg0_18._fireTimer = pg.TimeMgr.GetInstance():AddBattleTimer("barrageFireTimer", -1, 1.5, var1_18)
+		arg0_19._fireTimer = pg.TimeMgr.GetInstance():AddBattleTimer("barrageFireTimer", -1, 1.5, var1_19)
 
-		local function var2_18()
-			arg0_18._delayTimer:Stop()
-			arg0_18._fireTimer:Resume()
+		local function var2_19()
+			arg0_19._delayTimer:Stop()
+			arg0_19._fireTimer:Resume()
 		end
 
-		arg0_18._delayTimer = pg.TimeMgr.GetInstance():AddBattleTimer("", -1, 3, var2_18, nil, true)
+		arg0_19._delayTimer = pg.TimeMgr.GetInstance():AddBattleTimer("", -1, 3, var2_19, nil, true)
 	end
 end
 
-function var0_0.MakeBuff(arg0_24, arg1_24)
-	local var0_24 = getSkillConfig(arg1_24)
-	local var1_24 = var0_24.effect_list[1].arg_list.skill_id
-	local var2_24 = var0_24.effect_list[1].arg_list.time
-	local var3_24 = pg.skillCfg["skill_" .. var1_24]
+function var0_0.MakeBuff(arg0_25, arg1_25)
+	local var0_25 = getSkillConfig(arg1_25)
+	local var1_25 = var0_25.effect_list[1].arg_list.skill_id
+	local var2_25 = var0_25.effect_list[1].arg_list.time
+	local var3_25 = pg.skillCfg["skill_" .. var1_25]
 
-	if arg0_24.buffTimer then
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_24.buffTimer)
+	if arg0_25.buffTimer then
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg0_25.buffTimer)
 
-		arg0_24.buffTimer = nil
+		arg0_25.buffTimer = nil
 	end
 
-	arg0_24.buffTimer = pg.TimeMgr.GetInstance():AddBattleTimer("buffTimer", -1, var2_24, function()
-		setActive(arg0_24.healTF, true)
-		setText(arg0_24.healTF:Find("text"), var3_24.effect_list[1].arg_list.number)
+	arg0_25.buffTimer = pg.TimeMgr.GetInstance():AddBattleTimer("buffTimer", -1, var2_25, function()
+		setActive(arg0_25.healTF, true)
+		setText(arg0_25.healTF:Find("text"), var3_25.effect_list[1].arg_list.number)
 	end)
 end
 
-function var0_0.MakeWeapon(arg0_26, arg1_26)
-	arg0_26.weaponList = {}
-	arg0_26.bulletList = {}
-	arg0_26.aircraftList = {}
+function var0_0.MakeWeapon(arg0_27, arg1_27)
+	arg0_27.weaponList = {}
+	arg0_27.bulletList = {}
+	arg0_27.aircraftList = {}
 
-	local var0_26 = 0
-	local var1_26 = ys.Battle.BattleConst
+	local var0_27 = 0
+	local var1_27 = ys.Battle.BattleConst
 
-	for iter0_26, iter1_26 in ipairs(arg1_26) do
-		local var2_26 = Equipment.getConfigData(iter1_26).weapon_id
+	for iter0_27, iter1_27 in ipairs(arg1_27) do
+		local var2_27 = Equipment.getConfigData(iter1_27).weapon_id
 
-		for iter2_26, iter3_26 in ipairs(var2_26) do
-			if iter3_26 <= 0 then
+		for iter2_27, iter3_27 in ipairs(var2_27) do
+			if iter3_27 <= 0 then
 				break
 			end
 
-			var0_26 = var0_26 + 1
+			var0_27 = var0_27 + 1
 
-			local var3_26 = ys.Battle.BattleDataFunction.GetWeaponPropertyDataFromID(iter3_26)
+			local var3_27 = ys.Battle.BattleDataFunction.GetWeaponPropertyDataFromID(iter3_27)
 
-			if var3_26.type == var1_26.EquipmentType.MAIN_CANNON or var3_26.type == var1_26.EquipmentType.SUB_CANNON or var3_26.type == var1_26.EquipmentType.TORPEDO or var3_26.type == var1_26.EquipmentType.MANUAL_TORPEDO or var3_26.type == var1_26.EquipmentType.POINT_HIT_AND_LOCK then
-				if type(var3_26.barrage_ID) == "table" then
-					arg0_26.weaponList[var0_26] = {
-						tmpData = var3_26,
+			if var3_27.type == var1_27.EquipmentType.MAIN_CANNON or var3_27.type == var1_27.EquipmentType.SUB_CANNON or var3_27.type == var1_27.EquipmentType.TORPEDO or var3_27.type == var1_27.EquipmentType.MANUAL_TORPEDO or var3_27.type == var1_27.EquipmentType.POINT_HIT_AND_LOCK then
+				if type(var3_27.barrage_ID) == "table" then
+					arg0_27.weaponList[var0_27] = {
+						tmpData = var3_27,
 						emitterList = {}
 					}
 
-					for iter4_26, iter5_26 in ipairs(var3_26.barrage_ID) do
-						local var4_26 = arg0_26:createEmitterCannon(iter5_26, var3_26.bullet_ID[iter4_26], var3_26.spawn_bound)
+					for iter4_27, iter5_27 in ipairs(var3_27.barrage_ID) do
+						local var4_27 = arg0_27:createEmitterCannon(iter5_27, var3_27.bullet_ID[iter4_27], var3_27.spawn_bound)
 
-						arg0_26.weaponList[var0_26].emitterList[iter4_26] = var4_26
+						arg0_27.weaponList[var0_27].emitterList[iter4_27] = var4_27
 					end
 				end
-			elseif var3_26.type == var1_26.EquipmentType.PREVIEW_ARICRAFT and type(var3_26.barrage_ID) == "table" then
-				arg0_26.weaponList[var0_26] = {
-					tmpData = var3_26,
+			elseif var3_27.type == var1_27.EquipmentType.PREVIEW_ARICRAFT and type(var3_27.barrage_ID) == "table" then
+				arg0_27.weaponList[var0_27] = {
+					tmpData = var3_27,
 					emitterList = {}
 				}
 
-				for iter6_26, iter7_26 in ipairs(var3_26.barrage_ID) do
-					local var5_26 = arg0_26:createEmitterAir(iter7_26, var3_26.bullet_ID[iter6_26], var3_26.spawn_bound)
+				for iter6_27, iter7_27 in ipairs(var3_27.barrage_ID) do
+					local var5_27 = arg0_27:createEmitterAir(iter7_27, var3_27.bullet_ID[iter6_27], var3_27.spawn_bound)
 
-					arg0_26.weaponList[var0_26].emitterList[iter6_26] = var5_26
+					arg0_27.weaponList[var0_27].emitterList[iter6_27] = var5_27
 				end
 			end
 		end
 	end
 end
 
-function var0_0.getEmitterHost(arg0_27)
-	if not arg0_27._emitterHost then
-		arg0_27._emitterHost = ys.Battle.BattlePlayerUnit.New(1, ys.Battle.BattleConfig.FRIENDLY_CODE)
+function var0_0.getEmitterHost(arg0_28)
+	if not arg0_28._emitterHost then
+		arg0_28._emitterHost = ys.Battle.BattlePlayerUnit.New(1, ys.Battle.BattleConfig.FRIENDLY_CODE)
 
-		local var0_27 = {
+		local var0_28 = {
 			speed = 0
 		}
 
-		arg0_27._emitterHost:SetSkinId(arg0_27.shipVO.skinId)
-		arg0_27._emitterHost:SetTemplate(arg0_27.shipVO.configId, var0_27)
+		arg0_28._emitterHost:SetSkinId(arg0_28.shipVO.skinId)
+		arg0_28._emitterHost:SetTemplate(arg0_28.shipVO.configId, var0_28)
 	end
 
-	return arg0_27._emitterHost
+	return arg0_28._emitterHost
 end
 
-function var0_0.createEmitterCannon(arg0_28, arg1_28, arg2_28, arg3_28)
-	local var0_28 = arg0_28:getEmitterHost()
+function var0_0.createEmitterCannon(arg0_29, arg1_29, arg2_29, arg3_29)
+	local var0_29 = arg0_29:getEmitterHost()
 
-	local function var1_28(arg0_29, arg1_29, arg2_29, arg3_29, arg4_29)
-		local var0_29
-		local var1_29 = ys.Battle.BattleDataFunction.CreateBattleBulletData(arg2_28, arg2_28, var0_28, var0_29, var2_0)
+	local function var1_29(arg0_30, arg1_30, arg2_30, arg3_30, arg4_30)
+		local var0_30
+		local var1_30 = ys.Battle.BattleDataFunction.CreateBattleBulletData(arg2_29, arg2_29, var0_29, var0_30, var2_0)
 
-		var1_29:SetOffsetPriority(arg3_29)
-		var1_29:SetShiftInfo(arg0_29, arg1_29)
-		var1_29:SetRotateInfo(nil, 0, arg2_29)
+		var1_30:SetOffsetPriority(arg3_30)
+		var1_30:SetShiftInfo(arg0_30, arg1_30)
+		var1_30:SetRotateInfo(nil, 0, arg2_30)
 
-		if arg0_28.equipSkinId > 0 then
-			local var2_29 = pg.equip_skin_template[arg0_28.equipSkinId]
-			local var3_29, var4_29, var5_29, var6_29, var7_29, var8_29 = ys.Battle.BattleDataFunction.GetEquipSkin(arg0_28.equipSkinId)
-			local var9_29 = var1_29:GetType()
-			local var10_29 = ys.Battle.BattleConst.BulletType
-			local var11_29
+		if arg0_29.equipSkinId > 0 then
+			local var2_30 = pg.equip_skin_template[arg0_29.equipSkinId]
+			local var3_30, var4_30, var5_30, var6_30, var7_30, var8_30 = ys.Battle.BattleDataFunction.GetEquipSkin(arg0_29.equipSkinId)
+			local var9_30 = var1_30:GetType()
+			local var10_30 = ys.Battle.BattleConst.BulletType
+			local var11_30
 
-			if var9_29 == var10_29.CANNON or var9_29 == var10_29.BOMB then
-				if _.any(EquipType.CannonEquipTypes, function(arg0_30)
-					return table.contains(var2_29.equip_type, arg0_30)
+			if var9_30 == var10_30.CANNON or var9_30 == var10_30.BOMB then
+				if _.any(EquipType.CannonEquipTypes, function(arg0_31)
+					return table.contains(var2_30.equip_type, arg0_31)
 				end) then
-					var1_29:SetModleID(var3_29)
-				elseif var4_29 and #var4_29 > 0 then
-					var1_29:SetModleID(var4_29, nil, var8_29)
-				elseif var6_29 and #var6_29 > 0 then
-					var1_29:SetModleID(var6_29, nil, var8_29)
+					var1_30:SetModleID(var3_30)
+				elseif var4_30 and #var4_30 > 0 then
+					var1_30:SetModleID(var4_30, nil, var8_30)
+				elseif var6_30 and #var6_30 > 0 then
+					var1_30:SetModleID(var6_30, nil, var8_30)
 				end
-			elseif var9_29 == var10_29.TORPEDO then
-				if table.contains(var2_29.equip_type, EquipType.Torpedo) then
-					var1_29:SetModleID(var3_29)
-				elseif var5_29 and #var5_29 > 0 then
-					var1_29:SetModleID(var5_29, nil, var8_29)
+			elseif var9_30 == var10_30.TORPEDO then
+				if table.contains(var2_30.equip_type, EquipType.Torpedo) then
+					var1_30:SetModleID(var3_30)
+				elseif var5_30 and #var5_30 > 0 then
+					var1_30:SetModleID(var5_30, nil, var8_30)
 				end
 			end
 		end
 
-		local var12_29 = var1_29:GetType()
-		local var13_29 = ys.Battle.BattleConst.BulletType
-		local var14_29
+		local var12_30 = var1_30:GetType()
+		local var13_30 = ys.Battle.BattleConst.BulletType
+		local var14_30
 
-		if var12_29 == var13_29.CANNON then
-			var14_29 = ys.Battle.BattleCannonBullet.New()
-		elseif var12_29 == var13_29.BOMB then
-			var14_29 = ys.Battle.BattleBombBullet.New()
-		elseif var12_29 == var13_29.TORPEDO then
-			var14_29 = ys.Battle.BattleTorpedoBullet.New()
+		if var12_30 == var13_30.CANNON then
+			var14_30 = ys.Battle.BattleCannonBullet.New()
+		elseif var12_30 == var13_30.BOMB then
+			var14_30 = ys.Battle.BattleBombBullet.New()
+		elseif var12_30 == var13_30.TORPEDO then
+			var14_30 = ys.Battle.BattleTorpedoBullet.New()
 		else
-			var14_29 = ys.Battle.BattleBullet.New()
+			var14_30 = ys.Battle.BattleBullet.New()
 		end
 
-		var14_29:SetBulletData(var1_29)
+		var14_30:SetBulletData(var1_30)
 
-		local function var15_29(arg0_31)
-			var14_29:AddModel(arg0_31)
-			var14_29:AddRotateScript()
+		local function var15_30(arg0_32)
+			var14_30:AddModel(arg0_32)
+			var14_30:AddRotateScript()
 
-			local var0_31 = tf(arg0_31)
+			local var0_32 = tf(arg0_32)
 
-			if var0_31.parent then
-				var0_31.parent = nil
+			if var0_32.parent then
+				var0_32.parent = nil
 			end
 
-			local var1_31 = var0_31:Find("bullet_random")
+			local var1_32 = var0_32:Find("bullet_random")
 
-			if var1_31 and var1_31:GetComponent(typeof(SpineAnim)) then
-				local var2_31 = var1_31:GetComponent(typeof(SpineAnim))
-				local var3_31 = tostring(math.random(3))
+			if var1_32 and var1_32:GetComponent(typeof(SpineAnim)) then
+				local var2_32 = var1_32:GetComponent(typeof(SpineAnim))
+				local var3_32 = tostring(math.random(3))
 
-				var2_31:SetAction(var3_31, 0, false)
+				var2_32:SetAction(var3_32, 0, false)
 			end
 
-			var14_29:SetSpawn(arg0_28.boneList[arg3_28])
+			var14_30:SetSpawn(arg0_29.boneList[arg3_29])
 
-			if arg0_28.bulletList then
-				table.insert(arg0_28.bulletList, var14_29)
+			if arg0_29.bulletList then
+				table.insert(arg0_29.bulletList, var14_30)
 
-				if arg0_28.equipSkinId > 0 then
-					local var4_31 = pg.equip_skin_template[arg0_28.equipSkinId]
-					local var5_31 = var1_29:GetType()
-					local var6_31 = ys.Battle.BattleConst.BulletType
+				if arg0_29.equipSkinId > 0 then
+					local var4_32 = pg.equip_skin_template[arg0_29.equipSkinId]
+					local var5_32 = var1_30:GetType()
+					local var6_32 = ys.Battle.BattleConst.BulletType
 
-					if var5_31 == var6_31.CANNON then
-						if _.any(EquipType.CannonEquipTypes, function(arg0_32)
-							return table.contains(var4_31.equip_type, arg0_32)
-						end) and var4_31.preview_hit_distance > 0 then
-							arg0_28:AddSelfDestroyBullet(var14_29, var4_31.preview_hit_distance)
+					if var5_32 == var6_32.CANNON then
+						if _.any(EquipType.CannonEquipTypes, function(arg0_33)
+							return table.contains(var4_32.equip_type, arg0_33)
+						end) and var4_32.preview_hit_distance > 0 then
+							arg0_29:AddSelfDestroyBullet(var14_30, var4_32.preview_hit_distance)
 						end
-					elseif var5_31 == var6_31.TORPEDO and table.contains(var4_31.equip_type, EquipType.Torpedo) and var4_31.preview_hit_distance > 0 then
-						arg0_28:AddSelfDestroyBullet(var14_29, var4_31.preview_hit_distance)
+					elseif var5_32 == var6_32.TORPEDO and table.contains(var4_32.equip_type, EquipType.Torpedo) and var4_32.preview_hit_distance > 0 then
+						arg0_29:AddSelfDestroyBullet(var14_30, var4_32.preview_hit_distance)
 					end
 				end
 			end
 		end
 
-		ys.Battle.BattleResourceManager.GetInstance():InstBullet(var14_29:GetModleID(), function(arg0_33)
-			var15_29(arg0_33)
+		ys.Battle.BattleResourceManager.GetInstance():InstBullet(var14_30:GetModleID(), function(arg0_34)
+			var15_30(arg0_34)
 		end)
 	end
 
-	local function var2_28()
+	local function var2_29()
 		return
 	end
 
-	local var3_28 = "BattleBulletEmitter"
+	local var3_29 = "BattleBulletEmitter"
 
-	return (ys.Battle[var3_28].New(var1_28, var2_28, arg1_28))
+	return (ys.Battle[var3_29].New(var1_29, var2_29, arg1_29))
 end
 
-function var0_0.createEmitterAir(arg0_35, arg1_35, arg2_35, arg3_35)
-	local function var0_35(arg0_36, arg1_36, arg2_36, arg3_36, arg4_36)
-		local var0_36 = {
-			id = arg2_35
+function var0_0.createEmitterAir(arg0_36, arg1_36, arg2_36, arg3_36)
+	local function var0_36(arg0_37, arg1_37, arg2_37, arg3_37, arg4_37)
+		local var0_37 = {
+			id = arg2_36
 		}
-		local var1_36 = pg.aircraft_template[arg2_35]
+		local var1_37 = pg.aircraft_template[arg2_36]
 
-		var0_36.tmpData = var1_36
+		var0_37.tmpData = var1_37
 
-		local var2_36 = math.deg2Rad * arg2_36
-		local var3_36 = Vector3(math.cos(var2_36), 0, math.sin(var2_36))
+		local var2_37 = math.deg2Rad * arg2_37
+		local var3_37 = Vector3(math.cos(var2_37), 0, math.sin(var2_37))
 
-		local function var4_36(arg0_37)
-			local var0_37 = var1_0 + Vector3(var1_36.position_offset[1] + arg0_36, var1_36.position_offset[2], var1_36.position_offset[3] + arg1_36)
+		local function var4_37(arg0_38)
+			local var0_38 = var1_0 + Vector3(var1_37.position_offset[1] + arg0_37, var1_37.position_offset[2], var1_37.position_offset[3] + arg1_37)
 
-			arg0_37.transform.localPosition = var0_37
-			arg0_37.transform.localScale = var4_0
-			var0_36.obj = arg0_37
-			var0_36.tf = arg0_37.transform
-			var0_36.pos = var0_37
-			var0_36.baseVelocity = ys.Battle.BattleFormulas.ConvertAircraftSpeed(var0_36.tmpData.speed)
-			var0_36.speed = var3_36 * var0_36.baseVelocity
-			var0_36.speedZ = (math.random() - 0.5) * 0.5
-			var0_36.targetZ = var1_0.z
+			arg0_38.transform.localPosition = var0_38
+			arg0_38.transform.localScale = var4_0
+			var0_37.obj = arg0_38
+			var0_37.tf = arg0_38.transform
+			var0_37.pos = var0_38
+			var0_37.baseVelocity = ys.Battle.BattleFormulas.ConvertAircraftSpeed(var0_37.tmpData.speed)
+			var0_37.speed = var3_37 * var0_37.baseVelocity
+			var0_37.speedZ = (math.random() - 0.5) * 0.5
+			var0_37.targetZ = var1_0.z
 
-			if arg0_35.aircraftList then
-				table.insert(arg0_35.aircraftList, var0_36)
+			if arg0_36.aircraftList then
+				table.insert(arg0_36.aircraftList, var0_37)
 			end
 		end
 
-		local var5_36 = var1_36.model_ID
+		local var5_37 = var1_37.model_ID
 
-		if arg0_35.equipSkinId > 0 then
-			local var6_36 = pg.equip_skin_template[arg0_35.equipSkinId]
+		if arg0_36.equipSkinId > 0 then
+			local var6_37 = pg.equip_skin_template[arg0_36.equipSkinId]
 
-			if table.contains(var6_36.equip_type, EquipType.AirProtoEquipTypes[var1_36.type]) then
-				var5_36 = ys.Battle.BattleDataFunction.GetEquipSkin(arg0_35.equipSkinId)
+			if table.contains(var6_37.equip_type, EquipType.AirProtoEquipTypes[var1_37.type]) then
+				var5_37 = ys.Battle.BattleDataFunction.GetEquipSkin(arg0_36.equipSkinId)
 			end
 		end
 
-		ys.Battle.BattleResourceManager.GetInstance():InstAirCharacter(var5_36, function(arg0_38)
-			var4_36(arg0_38)
+		ys.Battle.BattleResourceManager.GetInstance():InstAirCharacter(var5_37, function(arg0_39)
+			var4_37(arg0_39)
 		end)
 	end
 
-	local function var1_35()
+	local function var1_36()
 		return
 	end
 
-	local var2_35 = "BattleBulletEmitter"
+	local var2_36 = "BattleBulletEmitter"
 
-	return (ys.Battle[var2_35].New(var0_35, var1_35, arg1_35))
+	return (ys.Battle[var2_36].New(var0_36, var1_36, arg1_36))
 end
 
-function var0_0.AddSelfDestroyBullet(arg0_40, arg1_40, arg2_40)
-	if not arg0_40.displayHitFX then
+function var0_0.AddSelfDestroyBullet(arg0_41, arg1_41, arg2_41)
+	if not arg0_41.displayHitFX then
 		return
 	end
 
-	table.insert(arg0_40.UpdateHandlers, function(arg0_41)
-		local var0_41 = table.indexof(arg0_40.bulletList, arg1_40)
+	table.insert(arg0_41.UpdateHandlers, function(arg0_42)
+		local var0_42 = table.indexof(arg0_41.bulletList, arg1_41)
 
-		if not var0_41 then
-			arg0_41()
+		if not var0_42 then
+			arg0_42()
 
 			return
 		end
 
-		if arg1_40:GetBulletData():GetCurrentDistance() < arg2_40 then
+		if arg1_41:GetBulletData():GetCurrentDistance() < arg2_41 then
 			return
 		end
 
-		arg0_40:RemoveBullet(var0_41, true)
-		arg0_41()
+		arg0_41:RemoveBullet(var0_42, true)
+		arg0_42()
 	end)
 end
 
-function var0_0.RemoveBullet(arg0_42, arg1_42, arg2_42)
-	local var0_42 = arg0_42.bulletList[arg1_42]
+function var0_0.RemoveBullet(arg0_43, arg1_43, arg2_43)
+	local var0_43 = arg0_43.bulletList[arg1_43]
 
-	Object.Destroy(var0_42._go)
-	table.remove(arg0_42.bulletList, arg1_42)
+	Object.Destroy(var0_43._go)
+	table.remove(arg0_43.bulletList, arg1_43)
 
-	if arg2_42 then
-		local var1_42 = var0_42:GetMissFXID()
+	if arg2_43 then
+		local var1_43 = var0_43:GetMissFXID()
 
-		if arg0_42.equipSkinId > 0 then
-			local var2_42 = pg.equip_skin_template[arg0_42.equipSkinId]
+		if arg0_43.equipSkinId > 0 then
+			local var2_43 = pg.equip_skin_template[arg0_43.equipSkinId]
 
-			if var2_42.hit_fx_name ~= "" then
-				var1_42 = var2_42.hit_fx_name
+			if var2_43.hit_fx_name ~= "" then
+				var1_43 = var2_43.hit_fx_name
 			end
 		end
 
-		if var1_42 and var1_42 ~= "" then
-			local var3_42, var4_42 = arg0_42.seaFXPool:GetFX(var1_42)
+		if var1_43 and var1_43 ~= "" then
+			local var3_43, var4_43 = arg0_43.seaFXPool:GetFX(var1_43)
 
-			pg.EffectMgr.GetInstance():PlayBattleEffect(var3_42, var0_42:GetPosition() + var4_42, true)
+			pg.EffectMgr.GetInstance():PlayBattleEffect(var3_43, var0_43:GetPosition() + var4_43, true)
 		end
 	end
 end
 
-function var0_0.SeaUpdate(arg0_43)
-	local var0_43 = 0
-	local var1_43 = -20
-	local var2_43 = 60
-	local var3_43 = 0
-	local var4_43 = 60
-	local var5_43 = ys.Battle.BattleConfig
-	local var6_43 = ys.Battle.BattleConst
+function var0_0.SeaUpdate(arg0_44)
+	local var0_44 = 0
+	local var1_44 = -20
+	local var2_44 = 60
+	local var3_44 = 0
+	local var4_44 = 60
+	local var5_44 = ys.Battle.BattleConfig
+	local var6_44 = ys.Battle.BattleConst
 
-	local function var7_43()
-		for iter0_44 = #arg0_43.bulletList, 1, -1 do
-			local var0_44 = arg0_43.bulletList[iter0_44]
-			local var1_44 = var0_44._bulletData:GetSpeed()()
-			local var2_44 = var0_44:GetPosition()
+	local function var7_44()
+		for iter0_45 = #arg0_44.bulletList, 1, -1 do
+			local var0_45 = arg0_44.bulletList[iter0_45]
+			local var1_45 = var0_45._bulletData:GetSpeed()()
+			local var2_45 = var0_45:GetPosition()
 
-			if var2_44.x > var2_43 and var1_44.x > 0 or var2_44.z < var3_43 and var1_44.z < 0 then
-				arg0_43:RemoveBullet(iter0_44, false)
-			elseif var2_44.x < var1_43 and var1_44.x < 0 and var0_44:GetType() ~= var6_43.BulletType.BOMB then
-				arg0_43:RemoveBullet(iter0_44, false)
+			if var2_45.x > var2_44 and var1_45.x > 0 or var2_45.z < var3_44 and var1_45.z < 0 then
+				arg0_44:RemoveBullet(iter0_45, false)
+			elseif var2_45.x < var1_44 and var1_45.x < 0 and var0_45:GetType() ~= var6_44.BulletType.BOMB then
+				arg0_44:RemoveBullet(iter0_45, false)
 			else
-				local var3_44 = pg.TimeMgr.GetInstance():GetCombatTime()
+				local var3_45 = pg.TimeMgr.GetInstance():GetCombatTime()
 
-				var0_44._bulletData:Update(var3_44)
-				var0_44:Update(var0_43)
+				var0_45._bulletData:Update(var3_45)
+				var0_45:Update(var0_44)
 
-				if var2_44.z > var4_43 and var1_44.z > 0 or var0_44._bulletData:IsOutRange(var0_43) then
-					arg0_43:RemoveBullet(iter0_44, true)
+				if var2_45.z > var4_44 and var1_45.z > 0 or var0_45._bulletData:IsOutRange(var0_44) then
+					arg0_44:RemoveBullet(iter0_45, true)
 				end
 			end
 		end
 
-		for iter1_44, iter2_44 in ipairs(arg0_43.aircraftList) do
-			local var4_44 = iter2_44.pos + iter2_44.speed
+		for iter1_45, iter2_45 in ipairs(arg0_44.aircraftList) do
+			local var4_45 = iter2_45.pos + iter2_45.speed
 
-			if var4_44.y < var5_43.AircraftHeight + 5 then
-				iter2_44.speed.y = math.max(0.4, 1 - var4_44.y / var5_43.AircraftHeight)
+			if var4_45.y < var5_44.AircraftHeight + 5 then
+				iter2_45.speed.y = math.max(0.4, 1 - var4_45.y / var5_44.AircraftHeight)
 
-				local var5_44 = math.min(1, var4_44.y / var5_43.AircraftHeight)
+				local var5_45 = math.min(1, var4_45.y / var5_44.AircraftHeight)
 
-				iter2_44.tf.localScale = Vector3(var5_44, var5_44, var5_44)
+				iter2_45.tf.localScale = Vector3(var5_45, var5_45, var5_45)
 			end
 
-			iter2_44.speed.z = iter2_44.baseVelocity * iter2_44.speedZ
+			iter2_45.speed.z = iter2_45.baseVelocity * iter2_45.speedZ
 
-			local var6_44 = iter2_44.targetZ - var4_44.z
+			local var6_45 = iter2_45.targetZ - var4_45.z
 
-			if var6_44 > iter2_44.baseVelocity then
-				iter2_44.speed.z = iter2_44.baseVelocity * 0.5
-			elseif var6_44 < -iter2_44.baseVelocity then
-				iter2_44.speed.z = -iter2_44.baseVelocity * 0.5
+			if var6_45 > iter2_45.baseVelocity then
+				iter2_45.speed.z = iter2_45.baseVelocity * 0.5
+			elseif var6_45 < -iter2_45.baseVelocity then
+				iter2_45.speed.z = -iter2_45.baseVelocity * 0.5
 			else
-				iter2_44.targetZ = var1_0.z + var1_0.z * (math.random() - 0.5) * 0.6
+				iter2_45.targetZ = var1_0.z + var1_0.z * (math.random() - 0.5) * 0.6
 			end
 
-			if var4_44.x > var2_43 or var4_44.x < var1_43 then
-				Object.Destroy(iter2_44.obj)
-				table.remove(arg0_43.aircraftList, iter1_44)
+			if var4_45.x > var2_44 or var4_45.x < var1_44 then
+				Object.Destroy(iter2_45.obj)
+				table.remove(arg0_44.aircraftList, iter1_45)
 			else
-				iter2_44.tf.localPosition = var4_44
-				iter2_44.pos = var4_44
+				iter2_45.tf.localPosition = var4_45
+				iter2_45.pos = var4_45
 			end
 		end
 
-		for iter3_44 = #arg0_43.UpdateHandlers, 1, -1 do
-			local var7_44 = arg0_43.UpdateHandlers[iter3_44]
+		for iter3_45 = #arg0_44.UpdateHandlers, 1, -1 do
+			local var7_45 = arg0_44.UpdateHandlers[iter3_45]
 
-			local function var8_44()
-				table.remove(arg0_43.UpdateHandlers, iter3_44)
+			local function var8_45()
+				table.remove(arg0_44.UpdateHandlers, iter3_45)
 			end
 
-			var7_44(var8_44)
+			var7_45(var8_45)
 		end
 
-		var0_43 = var0_43 + 1
+		var0_44 = var0_44 + 1
 	end
 
-	pg.TimeMgr.GetInstance():AddBattleTimer("barrageUpdateTimer", -1, 0.033, var7_43)
+	pg.TimeMgr.GetInstance():AddBattleTimer("barrageUpdateTimer", -1, 0.033, var7_44)
 end
 
-function var0_0.GetFXOffsets(arg0_46, arg1_46)
-	arg1_46 = arg1_46 or 1
+function var0_0.GetFXOffsets(arg0_47, arg1_47)
+	arg1_47 = arg1_47 or 1
 
-	return arg0_46._FXOffset[arg1_46]
+	return arg0_47._FXOffset[arg1_47]
 end
 
-function var0_0.GetAttachPoint(arg0_47)
-	return arg0_47._FXAttachPoint
+function var0_0.GetAttachPoint(arg0_48)
+	return arg0_48._FXAttachPoint
 end
 
-function var0_0.GetGO(arg0_48)
-	return arg0_48.seaCharacter
+function var0_0.GetGO(arg0_49)
+	return arg0_49.seaCharacter
 end
 
-function var0_0.GetSpecificFXScale(arg0_49)
+function var0_0.GetSpecificFXScale(arg0_50)
 	return {}
 end
 
-function var0_0.clear(arg0_50)
+function var0_0.clear(arg0_51)
 	pg.TimeMgr.GetInstance():RemoveAllBattleTimer()
 
-	arg0_50._emitterHost = nil
+	arg0_51._emitterHost = nil
 
-	if arg0_50.seaCharacter then
-		Destroy(arg0_50.seaCharacter)
+	if arg0_51.seaCharacter then
+		Destroy(arg0_51.seaCharacter)
 
-		arg0_50.seaCharacter = nil
+		arg0_51.seaCharacter = nil
 	end
 
-	if arg0_50.aircraftList then
-		for iter0_50, iter1_50 in ipairs(arg0_50.aircraftList) do
-			Destroy(iter1_50.obj)
+	if arg0_51.aircraftList then
+		for iter0_51, iter1_51 in ipairs(arg0_51.aircraftList) do
+			Destroy(iter1_51.obj)
 		end
 
-		arg0_50.aircraftList = nil
+		arg0_51.aircraftList = nil
 	end
 
-	if arg0_50.seaView then
-		arg0_50.seaView:Dispose()
+	if arg0_51.seaView then
+		arg0_51.seaView:Dispose()
 
-		arg0_50.seaView = nil
+		arg0_51.seaView = nil
 	end
 
-	if arg0_50.weaponList then
-		for iter2_50, iter3_50 in ipairs(arg0_50.weaponList) do
-			for iter4_50, iter5_50 in ipairs(iter3_50.emitterList) do
-				iter5_50:Destroy()
+	if arg0_51.weaponList then
+		for iter2_51, iter3_51 in ipairs(arg0_51.weaponList) do
+			for iter4_51, iter5_51 in ipairs(iter3_51.emitterList) do
+				iter5_51:Destroy()
 			end
 		end
 
-		arg0_50.weaponList = nil
+		arg0_51.weaponList = nil
 	end
 
-	if arg0_50.bulletList then
-		for iter6_50, iter7_50 in ipairs(arg0_50.bulletList) do
-			Destroy(iter7_50._go)
+	if arg0_51.bulletList then
+		for iter6_51, iter7_51 in ipairs(arg0_51.bulletList) do
+			Destroy(iter7_51._go)
 		end
 
-		arg0_50.bulletList = nil
+		arg0_51.bulletList = nil
 	end
 
-	if arg0_50.orbitList then
-		for iter8_50, iter9_50 in ipairs(arg0_50.orbitList) do
-			Destroy(iter9_50)
+	if arg0_51.orbitList then
+		for iter8_51, iter9_51 in ipairs(arg0_51.orbitList) do
+			Destroy(iter9_51)
 		end
 
-		arg0_50.orbitList = nil
+		arg0_51.orbitList = nil
 	end
 
-	if arg0_50.seaFXPool then
-		arg0_50.seaFXPool:Clear()
+	if arg0_51.seaFXPool then
+		arg0_51.seaFXPool:Clear()
 
-		arg0_50.seaFXPool = nil
+		arg0_51.seaFXPool = nil
 	end
 
-	if arg0_50.seaFXContainersPool then
-		arg0_50.seaFXContainersPool:Clear()
+	if arg0_51.seaFXContainersPool then
+		arg0_51.seaFXContainersPool:Clear()
 
-		arg0_50.seaFXContainersPool = nil
+		arg0_51.seaFXContainersPool = nil
 	end
 
 	ys.Battle.BattleResourceManager.GetInstance():Clear()
 
-	arg0_50.seaCamera.enabled = false
-	arg0_50.seaCameraGO = nil
-	arg0_50.seaCamera = nil
-	arg0_50.loading = false
-	arg0_50.loaded = false
+	arg0_51.seaCamera.enabled = false
+	arg0_51.seaCameraGO = nil
+	arg0_51.seaCamera = nil
+	arg0_51.loading = false
+	arg0_51.loaded = false
 
-	if arg0_50.palyAnimTimer then
-		arg0_50.palyAnimTimer:Stop()
+	if arg0_51.palyAnimTimer then
+		arg0_51.palyAnimTimer:Stop()
 
-		arg0_50.palyAnimTimer = nil
+		arg0_51.palyAnimTimer = nil
 	end
 end
 

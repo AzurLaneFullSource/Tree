@@ -120438,6 +120438,106 @@ _G.pg.base.equip_data_statistics[61142] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[61151] = {
+	ammo = 10,
+	descrip = "Aircraft Carrier Airstrike",
+	icon = "1",
+	id = 61151,
+	name = "航空攻击展示-鸢一折纸I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 99,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61151,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[61152] = {
+	base = 61151,
+	id = 61152,
+	name = "航空攻击展示-鸢一折纸II",
+	weapon_id = {
+		61152,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[61153] = {
+	base = 61151,
+	id = 61153,
+	name = "航空攻击展示-鸢一折纸II",
+	weapon_id = {
+		61153,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[61161] = {
+	ammo = 10,
+	descrip = "Aircraft Carrier Airstrike",
+	icon = "1",
+	id = 61161,
+	name = "航空攻击展示-四糸乃I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 99,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61161,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[61162] = {
+	base = 61161,
+	id = 61162,
+	name = "航空攻击展示-四糸乃II",
+	weapon_id = {
+		61162,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[61163] = {
+	base = 61161,
+	id = 61163,
+	name = "航空攻击展示-四糸乃II",
+	weapon_id = {
+		61163,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[61501] = {
 	ammo = 10,
 	descrip = "Used during airstrikes",
@@ -167703,6 +167803,425 @@ _G.pg.base.equip_data_statistics[150851] = {
 	base = 150840,
 	id = 150851,
 	value_1 = "530",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150860] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	descrip = "An unknown object shaped like a key inlaid with shimmering stars. It perpetually hums with a melody as mysterious as the distant cosmos.",
+	icon = "150860",
+	id = 150860,
+	name = "Michael",
+	nationality = 115,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "250",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			60950,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150861] = {
+	base = 150860,
+	id = 150861,
+	value_1 = "280",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150862] = {
+	base = 150860,
+	id = 150862,
+	value_1 = "310",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150863] = {
+	base = 150860,
+	id = 150863,
+	value_1 = "340",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150864] = {
+	base = 150860,
+	id = 150864,
+	value_1 = "370",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150865] = {
+	base = 150860,
+	id = 150865,
+	value_1 = "400",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150866] = {
+	base = 150860,
+	id = 150866,
+	value_1 = "430",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150867] = {
+	base = 150860,
+	id = 150867,
+	value_1 = "460",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150868] = {
+	base = 150860,
+	id = 150868,
+	value_1 = "490",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150869] = {
+	base = 150860,
+	id = 150869,
+	value_1 = "520",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150870] = {
+	base = 150860,
+	id = 150870,
+	value_1 = "550",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150871] = {
+	anti_siren = 100,
+	base = 150860,
+	id = 150871,
+	value_1 = "580",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150872] = {
+	anti_siren = 200,
+	base = 150860,
+	id = 150872,
+	value_1 = "610",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150873] = {
+	anti_siren = 300,
+	base = 150860,
+	id = 150873,
+	value_1 = "640",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150880] = {
+	ammo = 10,
+	attribute_1 = "dodge",
+	attribute_2 = "speed",
+	descrip = "A Sephira Crystal made from the combined technology of the entire port. It emanates mysterious waves that gently envelop everything around it.",
+	icon = "150880",
+	id = 150880,
+	name = "Sephira Crystal",
+	nationality = 115,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "13",
+	value_2 = 1,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			60960,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150881] = {
+	base = 150880,
+	id = 150881,
+	value_1 = "14",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150882] = {
+	base = 150880,
+	id = 150882,
+	value_1 = "15",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150883] = {
+	base = 150880,
+	id = 150883,
+	value_1 = "16",
+	value_2 = 2,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150884] = {
+	base = 150880,
+	id = 150884,
+	value_1 = "17",
+	value_2 = 2,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150885] = {
+	base = 150880,
+	id = 150885,
+	value_1 = "18",
+	value_2 = 2,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150886] = {
+	base = 150880,
+	id = 150886,
+	value_1 = "20",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150887] = {
+	base = 150880,
+	id = 150887,
+	value_1 = "22",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150888] = {
+	base = 150880,
+	id = 150888,
+	value_1 = "24",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150889] = {
+	base = 150880,
+	id = 150889,
+	value_1 = "26",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150890] = {
+	base = 150880,
+	id = 150890,
+	value_1 = "28",
+	value_2 = 5,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150891] = {
+	anti_siren = 100,
+	base = 150880,
+	id = 150891,
+	value_1 = "30",
+	value_2 = 5,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150892] = {
+	anti_siren = 200,
+	base = 150880,
+	id = 150892,
+	value_1 = "32",
+	value_2 = 5,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150893] = {
+	anti_siren = 300,
+	base = 150880,
+	id = 150893,
+	value_1 = "34",
+	value_2 = 5,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150900] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	attribute_2 = "speed",
+	descrip = "Appears to be a perfectly ordinary onigiri. The only difference is that it was made by Tohka Yatogami. Perhaps that has given it some special power.",
+	icon = "150900",
+	id = 150900,
+	name = "Giant Onigiri",
+	nationality = 115,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "100",
+	value_2 = 1,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			60970,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150901] = {
+	base = 150900,
+	id = 150901,
+	value_1 = "130",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150902] = {
+	base = 150900,
+	id = 150902,
+	value_1 = "160",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150903] = {
+	base = 150900,
+	id = 150903,
+	value_1 = "190",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150904] = {
+	base = 150900,
+	id = 150904,
+	value_1 = "220",
+	value_2 = 2,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150905] = {
+	base = 150900,
+	id = 150905,
+	value_1 = "250",
+	value_2 = 2,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150906] = {
+	base = 150900,
+	id = 150906,
+	value_1 = "280",
+	value_2 = 2,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150907] = {
+	base = 150900,
+	id = 150907,
+	value_1 = "310",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150908] = {
+	base = 150900,
+	id = 150908,
+	value_1 = "340",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150909] = {
+	base = 150900,
+	id = 150909,
+	value_1 = "370",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150910] = {
+	base = 150900,
+	id = 150910,
+	value_1 = "400",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150911] = {
+	anti_siren = 100,
+	base = 150900,
+	id = 150911,
+	value_1 = "424",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150912] = {
+	anti_siren = 200,
+	base = 150900,
+	id = 150912,
+	value_1 = "448",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150913] = {
+	anti_siren = 300,
+	base = 150900,
+	id = 150913,
+	value_1 = "472",
+	value_2 = 4,
 	hidden_skill_id = {},
 }
 

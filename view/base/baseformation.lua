@@ -135,7 +135,7 @@ function var0_0.LoadAllCharacter(arg0_23)
 		arg0_24:SetRaycastTarget(false)
 		arg0_24:SetLocalScale(Vector3(0.8, 0.8, 1))
 		arg0_24:SetLayer(Layer.UI)
-		arg0_24.modelRoot.transform:SetAsFirstSibling()
+		arg0_24:SetAsFirstSibling()
 
 		if arg0_23._heroInfoModifyCb ~= nil then
 			arg0_23._heroInfoModifyCb(var1_24, var0_24, arg0_24)
@@ -175,10 +175,10 @@ function var0_0.LoadAllCharacter(arg0_23)
 				return
 			end
 
-			arg0_23._modelDrag = arg0_24.modelRoot
+			arg0_23._modelDrag = arg0_24:GetRootModel()
 			arg0_23._currentDragDelegate = var6_24
 
-			LeanTween.cancel(arg0_24.modelRoot)
+			LeanTween.cancel(arg0_23._modelDrag)
 			var1_24:SetAsLastSibling()
 			arg0_23:SwitchToShiftMode(var1_24, arg2_24)
 			arg0_24:SetAction("tuozhuai")
@@ -190,14 +190,14 @@ function var0_0.LoadAllCharacter(arg0_23)
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_HOME_DRAG)
 		end)
 		var6_24:AddDragFunc(function(arg0_28, arg1_28)
-			if arg0_23._modelDrag ~= arg0_24.modelRoot then
+			if arg0_23._modelDrag ~= arg0_24:GetRootModel() then
 				return
 			end
 
 			var1_24.localPosition = Vector3(arg1_28.position.x * arg0_23._widthRate - arg0_23._halfWidth - arg0_23._offset.x, arg1_28.position.y * arg0_23._heightRate - arg0_23._halfHeight - arg0_23._offset.y, -22)
 		end)
 		var6_24:AddDragEndFunc(function(arg0_29, arg1_29)
-			if arg0_23._modelDrag ~= arg0_24.modelRoot then
+			if arg0_23._modelDrag ~= arg0_24:GetRootModel() then
 				return
 			end
 
@@ -333,7 +333,7 @@ function var0_0.SetCharacterPos(arg0_39, arg1_39, arg2_39, arg3_39)
 
 	local var0_39 = arg3_39.heroInfoTF
 	local var1_39 = arg3_39.spineRole
-	local var2_39 = var1_39.modelRoot
+	local var2_39 = var1_39:GetRootModel()
 	local var3_39 = arg0_39._gridTFs[arg1_39][arg2_39]
 	local var4_39 = var3_39.localPosition
 
@@ -420,7 +420,7 @@ function var0_0.SwitchToShiftMode(arg0_43, arg1_43, arg2_43)
 	for iter1_43, iter2_43 in ipairs(var1_43) do
 		local var2_43 = iter2_43.heroInfoTF
 		local var3_43 = iter2_43.spineRole
-		local var4_43 = var3_43.modelRoot
+		local var4_43 = var3_43:GetRootModel()
 
 		if var2_43 ~= arg1_43 then
 			LeanTween.moveY(rtf(var4_43), var4_43.transform.localPosition.y + 20, 0.5)
@@ -468,7 +468,7 @@ function var0_0.SwitchToDisplayMode(arg0_48)
 		for iter0_49, iter1_49 in ipairs(arg0_49) do
 			local var0_49 = iter1_49.heroInfoTF
 			local var1_49 = iter1_49.spineRole
-			local var2_49 = var1_49.modelRoot
+			local var2_49 = var1_49:GetRootModel()
 			local var3_49, var4_49, var5_49 = var1_49:GetInterface()
 
 			if var5_49 then
@@ -534,7 +534,7 @@ function var0_0.Shift(arg0_54, arg1_54, arg2_54, arg3_54)
 	local var1_54 = arg0_54._gridTFs[arg3_54]
 	local var2_54 = var0_54[arg2_54]
 	local var3_54 = var2_54.heroInfoTF
-	local var4_54 = var2_54.spineRole.modelRoot
+	local var4_54 = var2_54.spineRole:GetRootModel()
 	local var5_54 = var1_54[arg1_54].localPosition
 
 	var3_54.localPosition = Vector3(var5_54.x, var5_54.y + 20, -15 + var5_54.z + arg1_54)

@@ -86985,6 +86985,190 @@ _G.pg.base.aircraft_template[168990] = {
 	},
 }
 
+_G.pg.base.aircraft_template[169391] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 208,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 1846,
+	icon = "97jiangong",
+	id = 169391,
+	max_hp = 48,
+	model_ID = "97jiangong",
+	name = "鸢一折纸飞机Lv1",
+	nationality = 107,
+	scale = 1,
+	spawn_brownian = 1,
+	speed = 50,
+	type = 3,
+	weapon_ID = {
+		169401,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0,
+			},
+			{
+				0.82,
+				2.04,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0.64,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[169392] = {
+	base = 169391,
+	hp_growth = 2087,
+	id = 169392,
+	max_hp = 54,
+	name = "鸢一折纸飞机Lv2",
+	spawn_brownian = 1,
+	weapon_ID = {
+		169402,
+	},
+}
+
+_G.pg.base.aircraft_template[169393] = {
+	base = 169391,
+	hp_growth = 2327,
+	id = 169393,
+	max_hp = 61,
+	name = "鸢一折纸飞机Lv3",
+	spawn_brownian = 1,
+	weapon_ID = {
+		169403,
+	},
+}
+
+_G.pg.base.aircraft_template[169394] = {
+	base = 169391,
+	hp_growth = 2568,
+	id = 169394,
+	max_hp = 67,
+	name = "鸢一折纸飞机Lv4",
+	spawn_brownian = 1,
+	weapon_ID = {
+		169404,
+	},
+}
+
+_G.pg.base.aircraft_template[169395] = {
+	base = 169391,
+	hp_growth = 2809,
+	id = 169395,
+	max_hp = 73,
+	name = "鸢一折纸飞机Lv5",
+	spawn_brownian = 1,
+	weapon_ID = {
+		169405,
+	},
+}
+
+_G.pg.base.aircraft_template[169396] = {
+	base = 169391,
+	hp_growth = 3050,
+	id = 169396,
+	max_hp = 79,
+	name = "鸢一折纸飞机Lv6",
+	spawn_brownian = 1,
+	weapon_ID = {
+		169406,
+	},
+}
+
+_G.pg.base.aircraft_template[169397] = {
+	base = 169391,
+	hp_growth = 3290,
+	id = 169397,
+	max_hp = 86,
+	name = "鸢一折纸飞机Lv7",
+	spawn_brownian = 1,
+	weapon_ID = {
+		169407,
+	},
+}
+
+_G.pg.base.aircraft_template[169398] = {
+	base = 169391,
+	hp_growth = 3531,
+	id = 169398,
+	max_hp = 92,
+	name = "鸢一折纸飞机Lv8",
+	spawn_brownian = 1,
+	weapon_ID = {
+		169408,
+	},
+}
+
+_G.pg.base.aircraft_template[169399] = {
+	base = 169391,
+	hp_growth = 3772,
+	id = 169399,
+	max_hp = 98,
+	name = "鸢一折纸飞机Lv9",
+	spawn_brownian = 1,
+	weapon_ID = {
+		169409,
+	},
+}
+
+_G.pg.base.aircraft_template[169400] = {
+	base = 169391,
+	hp_growth = 4013,
+	id = 169400,
+	max_hp = 104,
+	name = "鸢一折纸飞机Lv10",
+	spawn_brownian = 1,
+	weapon_ID = {
+		169410,
+	},
+}
+
 _G.pg.base.aircraft_template[169531] = {
 	ACC_growth = 0,
 	AP_growth = 2000,
@@ -280095,6 +280279,235 @@ _G.pg.base.aircraft_template[3320307] = {
 			{
 				0.48,
 				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[3333301] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 48,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 1960,
+	icon = "sairenfeiji_6",
+	id = 3333301,
+	max_hp = 80,
+	model_ID = "sairenfeiji_6",
+	name = "【2025约战联动L6-4】BOSS宝剑VII「Impulse」战斗机",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 33,
+	type = 1,
+	weapon_ID = {
+		3333303,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0,
+			},
+			{
+				0.82,
+				2.04,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[3333302] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 48,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 1960,
+	icon = "sairenfeiji_6",
+	id = 3333302,
+	max_hp = 80,
+	model_ID = "sairenfeiji_6",
+	name = "【2025约战联动L6-4】BOSS宝剑VII「Impulse」轰炸机",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 33,
+	type = 3,
+	weapon_ID = {
+		3333304,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0,
+			},
+			{
+				0.82,
+				2.04,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+
+_G.pg.base.aircraft_template[3335007] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 48,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 1960,
+	icon = "feiji_dal_rilunzhihuan",
+	id = 3335007,
+	max_hp = 86,
+	model_ID = "feiji_dal_rilunzhihuan",
+	name = "【2025约战联动L3角色支援】鸢一折纸 大批量舰载机",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 48,
+	type = 1,
+	weapon_ID = {
+		3335008,
+		3335009,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0,
+			},
+			{
+				0.82,
+				2.04,
 				0,
 			},
 		},

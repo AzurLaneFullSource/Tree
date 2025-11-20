@@ -228,6 +228,7 @@ function var0_0.InitHideMode(arg0_13)
 
 				setActive(arg0_13.stockingTFs[arg0_14], true)
 				setActive(arg0_13.sceneStockingTFs[arg0_14], false)
+				GraphicsInterface.Instance:SetStockingPos(arg0_13.stockingTFs[arg0_14].gameObject, var1_0.wear_initial_pos[arg0_14])
 			end)
 		end
 

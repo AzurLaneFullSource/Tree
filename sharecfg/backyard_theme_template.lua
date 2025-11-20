@@ -5070,6 +5070,51 @@ pg.backyard_theme_template = {
 			330101
 		}
 	},
+	[131] = {
+		Cfg_1 = 5,
+		name = "Airship Interior",
+		hot = 1,
+		is_view = 1,
+		id = 131,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "Stand on the bridge and conquer the clouds. Look down upon the battlefield as a torrent of data.",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "dalthemeicon",
+		deblocking = 1,
+		order = 131,
+		ids = {
+			331001,
+			331002,
+			331101,
+			331102,
+			331103,
+			331104,
+			331105,
+			331106,
+			331107,
+			331108,
+			331109,
+			331110,
+			331111,
+			331112,
+			331113,
+			331114,
+			331115,
+			331116,
+			331117,
+			331301,
+			331302,
+			331303,
+			331304,
+			331305,
+			331306,
+			331307,
+			331308
+		}
+	},
 	[132] = {
 		Cfg_1 = 5,
 		name = "Temple of Phantom Light",
@@ -5221,6 +5266,7 @@ pg.backyard_theme_template = {
 		127,
 		129,
 		130,
+		131,
 		132
 	}
 }

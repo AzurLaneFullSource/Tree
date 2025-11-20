@@ -125,7 +125,7 @@ local var2_0 = {
 		end
 	end,
 	isActivityNpc = function()
-		return getProxy(BayProxy).activityNpcShipIds
+		return getProxy(BayProxy).activityNPCShipIds
 	end,
 	inGuildEvent = function()
 		local var0_21 = getProxy(GuildProxy):getRawData()

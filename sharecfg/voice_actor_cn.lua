@@ -1863,5 +1863,25 @@ pg.voice_actor_CN = {
 	[482] = {
 		code = 482,
 		actor_name = "Takako Honda"
+	},
+	[483] = {
+		code = 483,
+		actor_name = "Misuzu Togashi"
+	},
+	[484] = {
+		code = 484,
+		actor_name = "Ayana Taketatsu"
+	},
+	[485] = {
+		code = 485,
+		actor_name = "Iori Nomizu"
+	},
+	[486] = {
+		code = 486,
+		actor_name = "Asami Sanada"
+	},
+	[487] = {
+		code = 487,
+		actor_name = "Maaya Uchida & Sarah Emi Bridcutt"
 	}
 }

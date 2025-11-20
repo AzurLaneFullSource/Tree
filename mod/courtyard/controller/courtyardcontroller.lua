@@ -128,380 +128,401 @@ function var0_0.AddShip(arg0_12, arg1_12)
 	end
 
 	local var0_12 = arg0_12:DataToShip(arg1_12)
-	local var1_12 = arg0_12.storey:GetRandomPosition(var0_12)
 
-	if var1_12 then
-		var0_12:SetPosition(var1_12)
-		arg0_12.storey:AddShip(var0_12)
+	if arg1_12:IsDoubleSkin() then
+		var0_12:SetSide(1)
+
+		local var1_12 = arg0_12:DataToShip(arg1_12)
+
+		var1_12.id = var1_12.id + CourtYardConst.DOUBLE_SKIN_ADD
+
+		var1_12:SetSide(2)
+
+		var1_12.inimacy = 0
+		var1_12.coin = 0
+
+		arg0_12:CreateShip(var0_12)
+		arg0_12:CreateShip(var1_12)
 	else
-		arg0_12:SendNotification(CourtYardEvent._NO_POS_TO_ADD_SHIP, var0_12.id)
+		arg0_12:CreateShip(var0_12)
 	end
 end
 
-function var0_0.AddVisitorShip(arg0_13, arg1_13)
-	if not arg0_13.storey then
+function var0_0.CreateShip(arg0_13, arg1_13)
+	local var0_13 = arg0_13.storey:GetRandomPosition(arg1_13)
+
+	if var0_13 then
+		arg1_13:SetPosition(var0_13)
+		arg0_13.storey:AddShip(arg1_13)
+	else
+		arg0_13:SendNotification(CourtYardEvent._NO_POS_TO_ADD_SHIP, arg1_13.id)
+	end
+end
+
+function var0_0.AddVisitorShip(arg0_14, arg1_14)
+	if not arg0_14.storey then
 		return
 	end
 
-	local var0_13 = arg0_13:DataToVisitorShip(arg1_13)
-	local var1_13 = arg0_13.storey:GetRandomPosition(var0_13)
+	local var0_14 = arg0_14:DataToVisitorShip(arg1_14)
+	local var1_14 = arg0_14.storey:GetRandomPosition(var0_14)
 
-	if var1_13 then
-		var0_13:SetPosition(var1_13)
-		arg0_13.storey:AddShip(var0_13)
+	if var1_14 then
+		var0_14:SetPosition(var1_14)
+		arg0_14.storey:AddShip(var0_14)
 	end
 end
 
-function var0_0.ExitShip(arg0_14, arg1_14)
-	arg0_14.storey:ExitShip(arg1_14)
+function var0_0.ExitShip(arg0_15, arg1_15)
+	arg0_15.storey:ExitShip(arg1_15)
 end
 
-function var0_0.Extend(arg0_15)
-	arg0_15:SendNotification(CourtYardEvent._EXTEND)
+function var0_0.Extend(arg0_16)
+	arg0_16:SendNotification(CourtYardEvent._EXTEND)
 end
 
-function var0_0.LevelUp(arg0_16)
-	arg0_16.storey:LevelUp(id)
+function var0_0.LevelUp(arg0_17)
+	arg0_17.storey:LevelUp(id)
 end
 
-function var0_0.DragShip(arg0_17, arg1_17)
-	arg0_17.storey:DragShip(arg1_17)
-	arg0_17:SendNotification(CourtYardEvent._DRAG_ITEM)
+function var0_0.DragShip(arg0_18, arg1_18)
+	arg0_18.storey:DragShip(arg1_18)
+	arg0_18:SendNotification(CourtYardEvent._DRAG_ITEM)
 end
 
-function var0_0.DragingShip(arg0_18, arg1_18, arg2_18)
-	arg0_18.storey:DragingShip(arg1_18, arg2_18)
+function var0_0.DragingShip(arg0_19, arg1_19, arg2_19)
+	arg0_19.storey:DragingShip(arg1_19, arg2_19)
 end
 
-function var0_0.DragShipEnd(arg0_19, arg1_19, arg2_19)
-	arg0_19.storey:DragShipEnd(arg1_19, arg2_19)
-	arg0_19:SendNotification(CourtYardEvent._DRAG_ITEM_END)
+function var0_0.DragShipEnd(arg0_20, arg1_20, arg2_20)
+	arg0_20.storey:DragShipEnd(arg1_20, arg2_20)
+	arg0_20:SendNotification(CourtYardEvent._DRAG_ITEM_END)
 end
 
-function var0_0.TouchShip(arg0_20, arg1_20)
-	arg0_20.storey:TouchShip(arg1_20)
-	arg0_20:SendNotification(CourtYardEvent._TOUCH_SHIP, arg1_20)
+function var0_0.TouchShip(arg0_21, arg1_21)
+	arg0_21.storey:TouchShip(arg1_21)
+	arg0_21:SendNotification(CourtYardEvent._TOUCH_SHIP, arg1_21)
 end
 
-function var0_0.GetShipInimacy(arg0_21, arg1_21)
-	arg0_21:SendNotification(GAME.BACKYARD_ADD_INTIMACY, arg1_21)
+function var0_0.GetShipInimacy(arg0_22, arg1_22)
+	arg0_22:SendNotification(GAME.BACKYARD_ADD_INTIMACY, arg1_22)
 end
 
-function var0_0.GetShipCoin(arg0_22, arg1_22)
-	arg0_22:SendNotification(GAME.BACKYARD_ADD_MONEY, arg1_22)
+function var0_0.GetShipCoin(arg0_23, arg1_23)
+	arg0_23:SendNotification(GAME.BACKYARD_ADD_MONEY, arg1_23)
 end
 
-function var0_0.ClearShipCoin(arg0_23, arg1_23)
-	arg0_23.storey:ClearShipCoin(arg1_23)
+function var0_0.ClearShipCoin(arg0_24, arg1_24)
+	arg0_24.storey:ClearShipCoin(arg1_24)
 end
 
-function var0_0.ClearShipIntimacy(arg0_24, arg1_24)
-	arg0_24.storey:ClearShipIntimacy(arg1_24)
+function var0_0.ClearShipIntimacy(arg0_25, arg1_25)
+	arg0_25.storey:ClearShipIntimacy(arg1_25)
 end
 
-function var0_0.UpdateShipCoinAndIntimacy(arg0_25, arg1_25, arg2_25, arg3_25)
-	arg0_25.storey:UpdateShipCoin(arg1_25, arg2_25)
-	arg0_25.storey:UpdateShipIntimacy(arg1_25, arg3_25)
+function var0_0.UpdateShipCoinAndIntimacy(arg0_26, arg1_26, arg2_26, arg3_26)
+	arg0_26.storey:UpdateShipCoin(arg1_26, arg2_26)
+	arg0_26.storey:UpdateShipIntimacy(arg1_26, arg3_26)
 end
 
-function var0_0.AddShipExp(arg0_26, arg1_26, arg2_26)
-	arg0_26.storey:AddShipExp(arg1_26, arg2_26)
+function var0_0.AddShipExp(arg0_27, arg1_27, arg2_27)
+	arg0_27.storey:AddShipExp(arg1_27, arg2_27)
 end
 
-function var0_0.ShipAnimtionFinish(arg0_27, arg1_27, arg2_27)
-	arg0_27.storey:ShipAnimtionFinish(arg1_27, arg2_27)
+function var0_0.ShipAnimtionFinish(arg0_28, arg1_28, arg2_28)
+	arg0_28.storey:ShipAnimtionFinish(arg1_28, arg2_28)
 end
 
-function var0_0.GetMaxCntForShip(arg0_28)
-	return #arg0_28.storey:GetEmptyPositions(CourtYardShip.New(arg0_28, Ship.New({
+function var0_0.GetMaxCntForShip(arg0_29)
+	return #arg0_29.storey:GetEmptyPositions(CourtYardShip.New(arg0_29, Ship.New({
 		id = 999,
 		configId = 100001
-	}))) + table.getCount(arg0_28.storey:GetShips())
+	}))) + table.getCount(arg0_29.storey:GetShips())
 end
 
-function var0_0.SelectFurnitureByConfigId(arg0_29, arg1_29)
-	if arg0_29.storey.wallPaper and arg0_29.storey.wallPaper.configId == arg1_29 then
+function var0_0.SelectFurnitureByConfigId(arg0_30, arg1_30)
+	if arg0_30.storey.wallPaper and arg0_30.storey.wallPaper.configId == arg1_30 then
 		return
 	end
 
-	if arg0_29.storey.floorPaper and arg0_29.storey.floorPaper.configId == arg1_29 then
+	if arg0_30.storey.floorPaper and arg0_30.storey.floorPaper.configId == arg1_30 then
 		return
 	end
 
-	local var0_29
+	local var0_30
 
-	for iter0_29, iter1_29 in pairs(arg0_29.storey.furnitures) do
-		if iter1_29.configId == arg1_29 then
-			var0_29 = iter1_29
+	for iter0_30, iter1_30 in pairs(arg0_30.storey.furnitures) do
+		if iter1_30.configId == arg1_30 then
+			var0_30 = iter1_30
 
 			break
 		end
 	end
 
-	if var0_29 then
-		arg0_29:SelectFurniture(var0_29.id)
+	if var0_30 then
+		arg0_30:SelectFurniture(var0_30.id)
 	else
 		pg.TipsMgr.GetInstance():ShowTips(i18n("courtyard_tip_furniture_not_in_layer"))
 	end
 end
 
-function var0_0.SelectFurniture(arg0_30, arg1_30)
-	if arg0_30.storey:InEidtMode() then
-		arg0_30.storey:SelectFurniture(arg1_30)
+function var0_0.SelectFurniture(arg0_31, arg1_31)
+	if arg0_31.storey:InEidtMode() then
+		arg0_31.storey:SelectFurniture(arg1_31)
 
-		local var0_30 = arg0_30.storey:GetFurniture(arg1_30)
+		local var0_31 = arg0_31.storey:GetFurniture(arg1_31)
 
-		if var0_30:GetOpFlag() then
-			arg0_30:SendNotification(CourtYardEvent._FURNITURE_SELECTED, var0_30.configId)
+		if var0_31:GetOpFlag() then
+			arg0_31:SendNotification(CourtYardEvent._FURNITURE_SELECTED, var0_31.configId)
 		end
 	else
-		arg0_30.storey:ClickFurniture(arg1_30)
+		arg0_31.storey:ClickFurniture(arg1_31)
 	end
 end
 
-function var0_0.PlayFurnitureVoice(arg0_31, arg1_31)
-	arg0_31.storey:PlayFurnitureVoice(arg1_31)
+function var0_0.PlayFurnitureVoice(arg0_32, arg1_32)
+	arg0_32.storey:PlayFurnitureVoice(arg1_32)
 end
 
-function var0_0.PlayMusicalInstruments(arg0_32, arg1_32)
-	arg0_32.storey:PlayMusicalInstruments(arg1_32)
+function var0_0.PlayMusicalInstruments(arg0_33, arg1_33)
+	arg0_33.storey:PlayMusicalInstruments(arg1_33)
 end
 
-function var0_0.StopPlayMusicalInstruments(arg0_33, arg1_33)
-	arg0_33.storey:StopPlayMusicalInstruments(arg1_33)
+function var0_0.StopPlayMusicalInstruments(arg0_34, arg1_34)
+	arg0_34.storey:StopPlayMusicalInstruments(arg1_34)
 end
 
-function var0_0.PlayFurnitureBg(arg0_34, arg1_34)
-	arg0_34.storey:PlayFurnitureBg(arg1_34)
+function var0_0.PlayFurnitureBg(arg0_35, arg1_35)
+	arg0_35.storey:PlayFurnitureBg(arg1_35)
 end
 
-function var0_0.UnSelectFurniture(arg0_35, arg1_35)
-	arg0_35.storey:UnSelectFurniture(arg1_35)
+function var0_0.UnSelectFurniture(arg0_36, arg1_36)
+	arg0_36.storey:UnSelectFurniture(arg1_36)
 
-	if not arg0_35.storey:GetFurniture(arg1_35):GetOpFlag() then
-		arg0_35:SendNotification(CourtYardEvent._FURNITURE_SELECTED, -99999)
+	if not arg0_36.storey:GetFurniture(arg1_36):GetOpFlag() then
+		arg0_36:SendNotification(CourtYardEvent._FURNITURE_SELECTED, -99999)
 	end
 end
 
-function var0_0.BeginDragFurniture(arg0_36, arg1_36)
-	arg0_36.storey:BeginDragFurniture(arg1_36)
-	arg0_36:SendNotification(CourtYardEvent._DRAG_ITEM)
+function var0_0.BeginDragFurniture(arg0_37, arg1_37)
+	arg0_37.storey:BeginDragFurniture(arg1_37)
+	arg0_37:SendNotification(CourtYardEvent._DRAG_ITEM)
 end
 
-function var0_0.DragingFurniture(arg0_37, arg1_37, arg2_37)
-	arg0_37.storey:DragingFurniture(arg1_37, arg2_37)
+function var0_0.DragingFurniture(arg0_38, arg1_38, arg2_38)
+	arg0_38.storey:DragingFurniture(arg1_38, arg2_38)
 end
 
-function var0_0.DragFurnitureEnd(arg0_38, arg1_38, arg2_38)
-	arg0_38.storey:DragFurnitureEnd(arg1_38, arg2_38)
-	arg0_38:CheckChange()
-	arg0_38:SendNotification(CourtYardEvent._DRAG_ITEM_END)
+function var0_0.DragFurnitureEnd(arg0_39, arg1_39, arg2_39)
+	arg0_39.storey:DragFurnitureEnd(arg1_39, arg2_39)
+	arg0_39:CheckChange()
+	arg0_39:SendNotification(CourtYardEvent._DRAG_ITEM_END)
 end
 
-function var0_0.FurnitureAnimtionFinish(arg0_39, arg1_39, arg2_39)
-	arg0_39.storey:FurnitureAnimtionFinish(arg1_39, arg2_39)
+function var0_0.FurnitureAnimtionFinish(arg0_40, arg1_40, arg2_40)
+	arg0_40.storey:FurnitureAnimtionFinish(arg1_40, arg2_40)
 end
 
-function var0_0.RotateFurniture(arg0_40, arg1_40)
-	arg0_40.storey:RotateFurniture(arg1_40)
-	arg0_40:CheckChange()
-end
-
-function var0_0.RemoveFurniture(arg0_41, arg1_41)
-	arg0_41.storey:RemoveFurniture(arg1_41)
+function var0_0.RotateFurniture(arg0_41, arg1_41)
+	arg0_41.storey:RotateFurniture(arg1_41)
 	arg0_41:CheckChange()
 end
 
-function var0_0.RemovePaper(arg0_42, arg1_42)
-	arg0_42.storey:RemovePaper(arg1_42)
+function var0_0.RemoveFurniture(arg0_42, arg1_42)
+	arg0_42.storey:RemoveFurniture(arg1_42)
 	arg0_42:CheckChange()
 end
 
-function var0_0.ClearFurnitures(arg0_43)
-	arg0_43.storey:RemoveAllFurniture()
+function var0_0.RemovePaper(arg0_43, arg1_43)
+	arg0_43.storey:RemovePaper(arg1_43)
 	arg0_43:CheckChange()
 end
 
-function var0_0.SaveFurnitures(arg0_44)
-	if arg0_44.storey.recoder:HasChange() then
-		local var0_44 = arg0_44.storey:ToTable()
+function var0_0.ClearFurnitures(arg0_44)
+	arg0_44.storey:RemoveAllFurniture()
+	arg0_44:CheckChange()
+end
 
-		arg0_44:SendNotification(GAME.PUT_FURNITURE, {
+function var0_0.SaveFurnitures(arg0_45)
+	if arg0_45.storey.recoder:HasChange() then
+		local var0_45 = arg0_45.storey:ToTable()
+
+		arg0_45:SendNotification(GAME.PUT_FURNITURE, {
 			tip = true,
-			furnsPos = var0_44
+			furnsPos = var0_45
 		})
 	end
 
-	arg0_44:ExitEditMode()
+	arg0_45:ExitEditMode()
 end
 
-function var0_0.GetStoreyData(arg0_45)
-	return (arg0_45.storey:ToTable())
+function var0_0.GetStoreyData(arg0_46)
+	return (arg0_46.storey:ToTable())
 end
 
-function var0_0.RestoreFurnitures(arg0_46)
-	arg0_46:ClearFurnitures()
+function var0_0.RestoreFurnitures(arg0_47)
+	arg0_47:ClearFurnitures()
 
-	local var0_46 = arg0_46.storey.recoder:GetHeadSample()
+	local var0_47 = arg0_47.storey.recoder:GetHeadSample()
 
-	for iter0_46, iter1_46 in ipairs(var0_46) do
-		arg0_46:AddFurniture(iter1_46)
+	for iter0_47, iter1_47 in ipairs(var0_47) do
+		arg0_47:AddFurniture(iter1_47)
 	end
 
-	arg0_46:ExitEditMode()
+	arg0_47:ExitEditMode()
 end
 
-function var0_0.EnterEditMode(arg0_47)
-	arg0_47.storey:EnterEditMode()
-	arg0_47:SendNotification(CourtYardEvent._ENTER_MODE)
+function var0_0.EnterEditMode(arg0_48)
+	arg0_48.storey:EnterEditMode()
+	arg0_48:SendNotification(CourtYardEvent._ENTER_MODE)
 end
 
-function var0_0.ExitEditMode(arg0_48)
-	arg0_48.storey:ExitEditMode()
-	arg0_48:SendNotification(CourtYardEvent._EXIT_MODE)
+function var0_0.ExitEditMode(arg0_49)
+	arg0_49.storey:ExitEditMode()
+	arg0_49:SendNotification(CourtYardEvent._EXIT_MODE)
 end
 
-function var0_0.CheckChange(arg0_49)
-	local var0_49, var1_49 = arg0_49.storey:GetDirty()
+function var0_0.CheckChange(arg0_50)
+	local var0_50, var1_50 = arg0_50.storey:GetDirty()
 
-	if var0_49 and var1_49 then
-		arg0_49:SendNotification(CourtYardEvent._SYN_FURNITURE, {
-			var0_49,
-			var1_49
+	if var0_50 and var1_50 then
+		arg0_50:SendNotification(CourtYardEvent._SYN_FURNITURE, {
+			var0_50,
+			var1_50
 		})
 	end
 end
 
-function var0_0.Quit(arg0_50)
-	if arg0_50.storey:InEidtMode() then
-		if arg0_50.storey.recoder:HasChange() then
-			arg0_50.storey:DispatchEvent(CourtYardEvent.REMIND_SAVE)
+function var0_0.Quit(arg0_51)
+	if arg0_51.storey:InEidtMode() then
+		if arg0_51.storey.recoder:HasChange() then
+			arg0_51.storey:DispatchEvent(CourtYardEvent.REMIND_SAVE)
 		else
-			arg0_50:ExitEditMode()
+			arg0_51:ExitEditMode()
 		end
 	else
-		arg0_50:SendNotification(CourtYardEvent._QUIT)
+		arg0_51:SendNotification(CourtYardEvent._QUIT)
 	end
 end
 
-function var0_0.IsVisit(arg0_51)
-	return arg0_51.system == CourtYardConst.SYSTEM_VISIT
+function var0_0.IsVisit(arg0_52)
+	return arg0_52.system == CourtYardConst.SYSTEM_VISIT
 end
 
-function var0_0.IsFeast(arg0_52)
-	return arg0_52.system == CourtYardConst.SYSTEM_FEAST
+function var0_0.IsFeast(arg0_53)
+	return arg0_53.system == CourtYardConst.SYSTEM_FEAST
 end
 
-function var0_0.IsEditModeOrIsVisit(arg0_53)
-	return arg0_53:IsVisit() or arg0_53.storey:InEidtMode()
+function var0_0.IsEditModeOrIsVisit(arg0_54)
+	return arg0_54:IsVisit() or arg0_54.storey:InEidtMode()
 end
 
-function var0_0.Receive(arg0_54, arg1_54, ...)
-	if not arg0_54.storey then
+function var0_0.Receive(arg0_55, arg1_55, ...)
+	if not arg0_55.storey then
 		return
 	end
 
-	arg0_54[arg1_54](arg0_54, ...)
+	arg0_55[arg1_55](arg0_55, ...)
 end
 
-function var0_0.OnTakeThemePhoto(arg0_55)
-	if arg0_55.storey then
-		arg0_55.storey:DispatchEvent(CourtYardEvent.TAKE_PHOTO)
-	end
-end
-
-function var0_0.OnEndTakeThemePhoto(arg0_56)
+function var0_0.OnTakeThemePhoto(arg0_56)
 	if arg0_56.storey then
-		arg0_56.storey:DispatchEvent(CourtYardEvent.END_TAKE_PHOTO)
+		arg0_56.storey:DispatchEvent(CourtYardEvent.TAKE_PHOTO)
 	end
 end
 
-function var0_0.OnApplicationPaused(arg0_57)
+function var0_0.OnEndTakeThemePhoto(arg0_57)
 	if arg0_57.storey then
-		arg0_57.storey:StopAllDragState()
-		arg0_57:SendNotification(CourtYardEvent._DRAG_ITEM_END)
+		arg0_57.storey:DispatchEvent(CourtYardEvent.END_TAKE_PHOTO)
 	end
 end
 
-function var0_0.OnOpenLayerOrCloseLayer(arg0_58, arg1_58, arg2_58)
-	if not arg2_58 or not arg0_58.storey then
+function var0_0.OnApplicationPaused(arg0_58)
+	if arg0_58.storey then
+		arg0_58.storey:StopAllDragState()
+		arg0_58:SendNotification(CourtYardEvent._DRAG_ITEM_END)
+	end
+end
+
+function var0_0.OnOpenLayerOrCloseLayer(arg0_59, arg1_59, arg2_59)
+	if not arg2_59 or not arg0_59.storey then
 		return
 	end
 
-	arg0_58.storey:DispatchEvent(CourtYardEvent.OPEN_LAYER, arg1_58)
+	arg0_59.storey:DispatchEvent(CourtYardEvent.OPEN_LAYER, arg1_59)
 end
 
-function var0_0.OnBackPressed(arg0_59)
-	if arg0_59.storey then
-		arg0_59.storey:DispatchEvent(CourtYardEvent.BACK_PRESSED)
-	end
-end
-
-function var0_0.Dispose(arg0_60)
+function var0_0.OnBackPressed(arg0_60)
 	if arg0_60.storey then
-		arg0_60.storey:Dispose()
-
-		arg0_60.storey = nil
+		arg0_60.storey:DispatchEvent(CourtYardEvent.BACK_PRESSED)
 	end
 end
 
-function var0_0.IsFloorPaper(arg0_61)
-	return pg.furniture_data_template[arg0_61.configId].type == Furniture.TYPE_FLOORPAPER
+function var0_0.Dispose(arg0_61)
+	if arg0_61.storey then
+		arg0_61.storey:Dispose()
+
+		arg0_61.storey = nil
+	end
 end
 
-function var0_0.DataToFurnitureVO(arg0_62, arg1_62)
-	local var0_62 = pg.furniture_data_template[arg1_62.configId]
+function var0_0.IsFloorPaper(arg0_62)
+	return pg.furniture_data_template[arg0_62.configId].type == Furniture.TYPE_FLOORPAPER
+end
 
-	if var0_62.type == Furniture.TYPE_WALLPAPER or var0_62.type == Furniture.TYPE_FLOORPAPER then
-		return CourtYardPaper.New(arg0_62, arg1_62)
-	elseif var0_62.type == Furniture.TYPE_FOLLOWER then
-		return CourtYardFollowerFurniture.New(arg0_62, arg1_62)
-	elseif var0_62.type == Furniture.TYPE_RANDOM_CONTROLLER then
-		return CourtYardRandomControllerFurniture.New(arg0_62, arg1_62)
-	elseif var0_62.type == Furniture.TYPE_MAT then
-		return CourtYardMatFurniture.New(arg0_62, arg1_62)
-	elseif var0_62.type == Furniture.TYPE_TRANSPORT then
-		return CourtYardTransportFurniture.New(arg0_62, arg1_62)
-	elseif var0_62.type == Furniture.TYPE_WALL_MAT then
-		return CourtYardWallMatFurniture.New(arg0_62, arg1_62)
-	elseif var0_62.type == Furniture.TYPE_STAGE or var0_62.type == Furniture.TYPE_ARCH then
-		return CourtYardStageFurniture.New(arg0_62, arg1_62)
-	elseif var0_62.type == Furniture.TYPE_MOVEABLE then
-		return CourtYardMoveableFurniture.New(arg0_62, arg1_62)
-	elseif var0_62.belong == 1 and var0_62.canputon == 1 then
-		return CourtYardCanPutFurniture.New(arg0_62, arg1_62)
-	elseif var0_62.belong > 1 then
-		return CourtYardWallFurniture.New(arg0_62, arg1_62)
+function var0_0.DataToFurnitureVO(arg0_63, arg1_63)
+	local var0_63 = pg.furniture_data_template[arg1_63.configId]
+
+	if var0_63.type == Furniture.TYPE_WALLPAPER or var0_63.type == Furniture.TYPE_FLOORPAPER then
+		return CourtYardPaper.New(arg0_63, arg1_63)
+	elseif var0_63.type == Furniture.TYPE_FOLLOWER then
+		return CourtYardFollowerFurniture.New(arg0_63, arg1_63)
+	elseif var0_63.type == Furniture.TYPE_RANDOM_CONTROLLER then
+		return CourtYardRandomControllerFurniture.New(arg0_63, arg1_63)
+	elseif var0_63.type == Furniture.TYPE_MAT then
+		return CourtYardMatFurniture.New(arg0_63, arg1_63)
+	elseif var0_63.type == Furniture.TYPE_TRANSPORT then
+		return CourtYardTransportFurniture.New(arg0_63, arg1_63)
+	elseif var0_63.type == Furniture.TYPE_WALL_MAT then
+		return CourtYardWallMatFurniture.New(arg0_63, arg1_63)
+	elseif var0_63.type == Furniture.TYPE_STAGE or var0_63.type == Furniture.TYPE_ARCH then
+		return CourtYardStageFurniture.New(arg0_63, arg1_63)
+	elseif var0_63.type == Furniture.TYPE_MOVEABLE then
+		return CourtYardMoveableFurniture.New(arg0_63, arg1_63)
+	elseif var0_63.belong == 1 and var0_63.canputon == 1 then
+		return CourtYardCanPutFurniture.New(arg0_63, arg1_63)
+	elseif var0_63.belong > 1 then
+		return CourtYardWallFurniture.New(arg0_63, arg1_63)
 	else
-		return CourtYardFurniture.New(arg0_62, arg1_62)
+		return CourtYardFurniture.New(arg0_63, arg1_63)
 	end
 end
 
-function var0_0.DataToShip(arg0_63, arg1_63)
-	if arg0_63.system == CourtYardConst.SYSTEM_FEAST then
-		return CourtYardFeastShip.New(arg0_63, arg1_63)
+function var0_0.DataToShip(arg0_64, arg1_64)
+	if arg0_64.system == CourtYardConst.SYSTEM_FEAST then
+		return CourtYardFeastShip.New(arg0_64, arg1_64)
 	else
-		return CourtYardShip.New(arg0_63, arg1_63)
+		return CourtYardShip.New(arg0_64, arg1_64)
 	end
 end
 
-function var0_0.DataToVisitorShip(arg0_64, arg1_64)
-	return CourtYardVisitorShip.New(arg0_64, arg1_64)
+function var0_0.DataToVisitorShip(arg0_65, arg1_65)
+	return CourtYardVisitorShip.New(arg0_65, arg1_65)
 end
 
-function var0_0.System2Storey(arg0_65, arg1_65)
-	local var0_65 = Vector4(arg1_65.mapSize.z + 1, arg1_65.mapSize.w + 1, arg1_65.mapSize.x, arg1_65.mapSize.y)
+function var0_0.System2Storey(arg0_66, arg1_66)
+	local var0_66 = Vector4(arg1_66.mapSize.z + 1, arg1_66.mapSize.w + 1, arg1_66.mapSize.x, arg1_66.mapSize.y)
 
-	if arg1_65.system == CourtYardConst.SYSTEM_OUTSIDE then
-		return CourtYardOutStorey.New(arg0_65, arg1_65.storeyId, arg1_65.style, var0_65)
+	if arg1_66.system == CourtYardConst.SYSTEM_OUTSIDE then
+		return CourtYardOutStorey.New(arg0_66, arg1_66.storeyId, arg1_66.style, var0_66)
 	else
-		return CourtYardStorey.New(arg0_65, arg1_65.storeyId, arg1_65.style, var0_65)
+		return CourtYardStorey.New(arg0_66, arg1_66.storeyId, arg1_66.style, var0_66)
 	end
 end
 
-function var0_0.SendNotification(arg0_66, ...)
-	if arg0_66.bridge then
-		arg0_66.bridge:SendNotification(...)
+function var0_0.SendNotification(arg0_67, ...)
+	if arg0_67.bridge then
+		arg0_67.bridge:SendNotification(...)
 	end
 end
 

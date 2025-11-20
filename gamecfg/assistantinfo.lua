@@ -339,9 +339,12 @@ var1_0.PaintingTouchEvents = {
 	"idleRandom9"
 }
 var1_0.PaintingTouchParts = {
+	["2"] = "TouchBody",
+	["22"] = "TouchBody",
 	["1"] = "TouchSpecial",
+	["33"] = "TouchHead",
 	["3"] = "TouchHead",
-	["2"] = "TouchBody"
+	["11"] = "TouchSpecial"
 }
 
 function var1_0.enable()

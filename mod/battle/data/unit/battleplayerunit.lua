@@ -570,49 +570,55 @@ function var7_0.GetTemplate(arg0_43)
 	return arg0_43._tmpData
 end
 
-function var7_0.GetRarity(arg0_44)
-	return arg0_44._rarity or arg0_44._tmpData.rarity
+function var7_0.GetGroupID(arg0_44)
+	local var0_44 = arg0_44:GetTemplateID()
+
+	return var1_0.GetPlayerShipModelFromID(var0_44).group_type
 end
 
-function var7_0.GetIntimacy(arg0_45)
-	return arg0_45._intimacy or 0
+function var7_0.GetRarity(arg0_45)
+	return arg0_45._rarity or arg0_45._tmpData.rarity
 end
 
-function var7_0.GetAutoPilotPreference(arg0_46)
-	return arg0_46._personality
+function var7_0.GetIntimacy(arg0_46)
+	return arg0_46._intimacy or 0
 end
 
-function var7_0.GetFleetVO(arg0_47)
-	return arg0_47._fleet
+function var7_0.GetAutoPilotPreference(arg0_47)
+	return arg0_47._personality
 end
 
-function var7_0.InitCldComponent(arg0_48)
-	var7_0.super.InitCldComponent(arg0_48)
+function var7_0.GetFleetVO(arg0_48)
+	return arg0_48._fleet
+end
 
-	local var0_48 = {
+function var7_0.InitCldComponent(arg0_49)
+	var7_0.super.InitCldComponent(arg0_49)
+
+	local var0_49 = {
 		type = var4_0.CldType.SHIP,
-		IFF = arg0_48:GetIFF(),
-		UID = arg0_48:GetUniqueID(),
+		IFF = arg0_49:GetIFF(),
+		UID = arg0_49:GetUniqueID(),
 		Mass = var4_0.CldMass.L2
 	}
 
-	arg0_48._cldComponent:SetCldData(var0_48)
+	arg0_49._cldComponent:SetCldData(var0_49)
 end
 
-function var7_0.AddPointAirStrike(arg0_49, arg1_49, arg2_49, arg3_49)
-	local var0_49 = arg0_49:AddWeapon(arg1_49, {}, nil, 1, -1)
+function var7_0.AddPointAirStrike(arg0_50, arg1_50, arg2_50, arg3_50)
+	local var0_50 = arg0_50:AddWeapon(arg1_50, {}, nil, 1, -1)
 
-	arg0_49:GetFleetVO():GetChargeWeaponVO():AppendWeapon(var0_49)
+	arg0_50:GetFleetVO():GetChargeWeaponVO():AppendWeapon(var0_50)
 
-	if arg3_49 then
-		var0_49:OverHeat()
-		var0_49:EnterCoolDown()
+	if arg3_50 then
+		var0_50:OverHeat()
+		var0_50:EnterCoolDown()
 	end
 
-	arg0_49:GetFleetVO():GetChargeWeaponVO():DispatchCountChange()
-	arg0_49:DispatchEvent(var0_0.Event.New(var0_0.Battle.BattleUnitEvent.CREATE_POINT_AIR_STRIKE, {
-		weapon = var0_49
+	arg0_50:GetFleetVO():GetChargeWeaponVO():DispatchCountChange()
+	arg0_50:DispatchEvent(var0_0.Event.New(var0_0.Battle.BattleUnitEvent.CREATE_POINT_AIR_STRIKE, {
+		weapon = var0_50
 	}))
 
-	return var0_49
+	return var0_50
 end

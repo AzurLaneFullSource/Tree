@@ -984,7 +984,7 @@ function var0_0.hasEquipmentSkinInPos(arg0_70, arg1_70)
 	return var0_70 and var0_70:hasSkin()
 end
 
-function var0_0.getPrefab(arg0_71)
+function var0_0.getPrefab(arg0_71, arg1_71)
 	local var0_71 = arg0_71:getSkinId()
 
 	if arg0_71:hasEquipmentSkinInPos(var2_0) then
@@ -998,178 +998,197 @@ function var0_0.getPrefab(arg0_71)
 
 	assert(var3_71, "ship_skin_template not exist: " .. arg0_71.configId .. " " .. var0_71)
 
+	if var3_71.double_char and var3_71.double_char == 1 and arg1_71 ~= nil then
+		local var4_71
+
+		if arg1_71 == 1 then
+			return var3_71.prefab .. "_L"
+		elseif arg1_71 == 2 then
+			return var3_71.prefab .. "_R"
+		end
+	end
+
 	return var3_71.prefab
 end
 
-function var0_0.getAttachmentPrefab(arg0_72)
-	local var0_72 = {}
+function var0_0.IsDoubleSkin(arg0_72)
+	local var0_72 = arg0_72:getSkinId()
+	local var1_72 = pg.ship_skin_template[var0_72]
 
-	for iter0_72, iter1_72 in ipairs(arg0_72.equipments) do
-		if iter1_72 and iter1_72:hasSkinOrbit() then
-			local var1_72 = iter1_72:getSkinId()
-			local var2_72 = var7_0[var1_72]
+	assert(var1_72, "ship_skin_template not exist: " .. arg0_72.configId .. " " .. var0_72)
 
-			var0_72[var1_72] = {
-				config = var2_72,
-				index = iter0_72
+	return var1_72.double_char and var1_72.double_char == 1 or false
+end
+
+function var0_0.getAttachmentPrefab(arg0_73)
+	local var0_73 = {}
+
+	for iter0_73, iter1_73 in ipairs(arg0_73.equipments) do
+		if iter1_73 and iter1_73:hasSkinOrbit() then
+			local var1_73 = iter1_73:getSkinId()
+			local var2_73 = var7_0[var1_73]
+
+			var0_73[var1_73] = {
+				config = var2_73,
+				index = iter0_73
 			}
 		end
 	end
 
-	return var0_72
+	return var0_73
 end
 
-function var0_0.getPainting(arg0_73)
-	local var0_73 = arg0_73:getSkinId()
-	local var1_73 = pg.ship_skin_template[var0_73]
-
-	assert(var1_73, "ship_skin_template not exist: " .. arg0_73.configId .. " " .. var0_73)
-
-	return var1_73.painting
-end
-
-function var0_0.GetSkinConfig(arg0_74, arg1_74)
+function var0_0.getPainting(arg0_74)
 	local var0_74 = arg0_74:getSkinId()
 	local var1_74 = pg.ship_skin_template[var0_74]
 
 	assert(var1_74, "ship_skin_template not exist: " .. arg0_74.configId .. " " .. var0_74)
 
-	return var1_74
+	return var1_74.painting
 end
 
-function var0_0.getRemouldPainting(arg0_75)
-	local var0_75 = arg0_75:getRemouldSkinId()
+function var0_0.GetSkinConfig(arg0_75, arg1_75)
+	local var0_75 = arg0_75:getSkinId()
 	local var1_75 = pg.ship_skin_template[var0_75]
 
 	assert(var1_75, "ship_skin_template not exist: " .. arg0_75.configId .. " " .. var0_75)
 
-	return var1_75.painting
+	return var1_75
 end
 
-function var0_0.updateStateInfo34(arg0_76, arg1_76, arg2_76)
-	arg0_76.state_info_3 = arg1_76
-	arg0_76.state_info_4 = arg2_76
+function var0_0.getRemouldPainting(arg0_76)
+	local var0_76 = arg0_76:getRemouldSkinId()
+	local var1_76 = pg.ship_skin_template[var0_76]
+
+	assert(var1_76, "ship_skin_template not exist: " .. arg0_76.configId .. " " .. var0_76)
+
+	return var1_76.painting
 end
 
-function var0_0.hasStateInfo3Or4(arg0_77)
-	return arg0_77.state_info_3 ~= 0 or arg0_77.state_info_4 ~= 0
+function var0_0.updateStateInfo34(arg0_77, arg1_77, arg2_77)
+	arg0_77.state_info_3 = arg1_77
+	arg0_77.state_info_4 = arg2_77
 end
 
-function var0_0.isTestShip(arg0_78)
-	return arg0_78.testShip
+function var0_0.hasStateInfo3Or4(arg0_78)
+	return arg0_78.state_info_3 ~= 0 or arg0_78.state_info_4 ~= 0
 end
 
-function var0_0.canUseTestShip(arg0_79, arg1_79)
-	assert(arg0_79.testShip, "ship is not TestShip")
-
-	return table.contains(arg0_79.testShip, arg1_79)
+function var0_0.isTestShip(arg0_79)
+	return arg0_79.testShip
 end
 
-function var0_0.updateEquip(arg0_80, arg1_80, arg2_80)
-	assert(arg2_80 == nil or arg2_80.count == 1)
+function var0_0.canUseTestShip(arg0_80, arg1_80)
+	assert(arg0_80.testShip, "ship is not TestShip")
 
-	local var0_80 = arg0_80.equipments[arg1_80]
+	return table.contains(arg0_80.testShip, arg1_80)
+end
 
-	arg0_80.equipments[arg1_80] = arg2_80 and Clone(arg2_80) or false
+function var0_0.updateEquip(arg0_81, arg1_81, arg2_81)
+	assert(arg2_81 == nil or arg2_81.count == 1)
 
-	local function var1_80(arg0_81)
-		arg0_81 = CreateShell(arg0_81)
-		arg0_81.shipId = arg0_80.id
-		arg0_81.shipPos = arg1_80
+	local var0_81 = arg0_81.equipments[arg1_81]
 
-		return arg0_81
+	arg0_81.equipments[arg1_81] = arg2_81 and Clone(arg2_81) or false
+
+	local function var1_81(arg0_82)
+		arg0_82 = CreateShell(arg0_82)
+		arg0_82.shipId = arg0_81.id
+		arg0_82.shipPos = arg1_81
+
+		return arg0_82
 	end
 
-	if var0_80 then
-		getProxy(EquipmentProxy):OnShipEquipsRemove(var0_80, arg0_80.id, arg1_80)
-		var0_80:setSkinId(0)
-		pg.m02:sendNotification(BayProxy.SHIP_EQUIPMENT_REMOVED, var1_80(var0_80))
+	if var0_81 then
+		getProxy(EquipmentProxy):OnShipEquipsRemove(var0_81, arg0_81.id, arg1_81)
+		var0_81:setSkinId(0)
+		pg.m02:sendNotification(BayProxy.SHIP_EQUIPMENT_REMOVED, var1_81(var0_81))
 	end
 
-	if arg2_80 then
-		getProxy(EquipmentProxy):OnShipEquipsAdd(arg2_80, arg0_80.id, arg1_80)
-		arg0_80:reletiveEquipSkin(arg1_80)
-		pg.m02:sendNotification(BayProxy.SHIP_EQUIPMENT_ADDED, var1_80(arg2_80))
+	if arg2_81 then
+		getProxy(EquipmentProxy):OnShipEquipsAdd(arg2_81, arg0_81.id, arg1_81)
+		arg0_81:reletiveEquipSkin(arg1_81)
+		pg.m02:sendNotification(BayProxy.SHIP_EQUIPMENT_ADDED, var1_81(arg2_81))
 	end
 end
 
-function var0_0.reletiveEquipSkin(arg0_82, arg1_82)
-	if arg0_82.equipments[arg1_82] and arg0_82.equipmentSkins[arg1_82] ~= 0 then
-		local var0_82 = pg.equip_skin_template[arg0_82.equipmentSkins[arg1_82]].equip_type
-		local var1_82 = arg0_82.equipments[arg1_82]:getType()
+function var0_0.reletiveEquipSkin(arg0_83, arg1_83)
+	if arg0_83.equipments[arg1_83] and arg0_83.equipmentSkins[arg1_83] ~= 0 then
+		local var0_83 = pg.equip_skin_template[arg0_83.equipmentSkins[arg1_83]].equip_type
+		local var1_83 = arg0_83.equipments[arg1_83]:getType()
 
-		if table.contains(var0_82, var1_82) then
-			arg0_82.equipments[arg1_82]:setSkinId(arg0_82.equipmentSkins[arg1_82])
+		if table.contains(var0_83, var1_83) then
+			arg0_83.equipments[arg1_83]:setSkinId(arg0_83.equipmentSkins[arg1_83])
 		else
-			arg0_82.equipments[arg1_82]:setSkinId(0)
+			arg0_83.equipments[arg1_83]:setSkinId(0)
 		end
-	elseif arg0_82.equipments[arg1_82] then
-		arg0_82.equipments[arg1_82]:setSkinId(0)
+	elseif arg0_83.equipments[arg1_83] then
+		arg0_83.equipments[arg1_83]:setSkinId(0)
 	end
 end
 
-function var0_0.updateEquipmentSkin(arg0_83, arg1_83, arg2_83)
-	if not arg1_83 then
+function var0_0.updateEquipmentSkin(arg0_84, arg1_84, arg2_84)
+	if not arg1_84 then
 		return
 	end
 
-	if arg2_83 and arg2_83 > 0 then
-		local var0_83 = arg0_83:getSkinTypes(arg1_83)
-		local var1_83 = pg.equip_skin_template[arg2_83].equip_type
-		local var2_83 = false
+	if arg2_84 and arg2_84 > 0 then
+		local var0_84 = arg0_84:getSkinTypes(arg1_84)
+		local var1_84 = pg.equip_skin_template[arg2_84].equip_type
+		local var2_84 = false
 
-		for iter0_83, iter1_83 in ipairs(var0_83) do
-			for iter2_83, iter3_83 in ipairs(var1_83) do
-				if iter1_83 == iter3_83 then
-					var2_83 = true
+		for iter0_84, iter1_84 in ipairs(var0_84) do
+			for iter2_84, iter3_84 in ipairs(var1_84) do
+				if iter1_84 == iter3_84 then
+					var2_84 = true
 
 					break
 				end
 			end
 		end
 
-		if not var2_83 then
-			assert(var2_83, "部位" .. arg1_83 .. " 无法穿戴皮肤 " .. arg2_83)
+		if not var2_84 then
+			assert(var2_84, "部位" .. arg1_84 .. " 无法穿戴皮肤 " .. arg2_84)
 
 			return
 		end
 
-		local var3_83 = arg0_83.equipments[arg1_83] and arg0_83.equipments[arg1_83]:getType() or false
+		local var3_84 = arg0_84.equipments[arg1_84] and arg0_84.equipments[arg1_84]:getType() or false
 
-		arg0_83.equipmentSkins[arg1_83] = arg2_83
+		arg0_84.equipmentSkins[arg1_84] = arg2_84
 
-		if var3_83 and table.contains(var1_83, var3_83) then
-			arg0_83.equipments[arg1_83]:setSkinId(arg0_83.equipmentSkins[arg1_83])
-		elseif var3_83 and not table.contains(var1_83, var3_83) then
-			arg0_83.equipments[arg1_83]:setSkinId(0)
+		if var3_84 and table.contains(var1_84, var3_84) then
+			arg0_84.equipments[arg1_84]:setSkinId(arg0_84.equipmentSkins[arg1_84])
+		elseif var3_84 and not table.contains(var1_84, var3_84) then
+			arg0_84.equipments[arg1_84]:setSkinId(0)
 		end
 	else
-		arg0_83.equipmentSkins[arg1_83] = 0
+		arg0_84.equipmentSkins[arg1_84] = 0
 
-		if arg0_83.equipments[arg1_83] then
-			arg0_83.equipments[arg1_83]:setSkinId(0)
+		if arg0_84.equipments[arg1_84] then
+			arg0_84.equipments[arg1_84]:setSkinId(0)
 		end
 	end
 end
 
-function var0_0.getEquip(arg0_84, arg1_84)
-	return Clone(arg0_84.equipments[arg1_84])
+function var0_0.getEquip(arg0_85, arg1_85)
+	return Clone(arg0_85.equipments[arg1_85])
 end
 
-function var0_0.getEquipSkins(arg0_85)
-	return Clone(arg0_85.equipmentSkins)
+function var0_0.getEquipSkins(arg0_86)
+	return Clone(arg0_86.equipmentSkins)
 end
 
-function var0_0.getEquipSkin(arg0_86, arg1_86)
-	return arg0_86.equipmentSkins[arg1_86]
+function var0_0.getEquipSkin(arg0_87, arg1_87)
+	return arg0_87.equipmentSkins[arg1_87]
 end
 
-function var0_0.getCanEquipSkin(arg0_87, arg1_87)
-	local var0_87 = arg0_87:getSkinTypes(arg1_87)
+function var0_0.getCanEquipSkin(arg0_88, arg1_88)
+	local var0_88 = arg0_88:getSkinTypes(arg1_88)
 
-	if var0_87 and #var0_87 then
-		for iter0_87, iter1_87 in ipairs(var0_87) do
-			if pg.equip_data_by_type[iter1_87].equip_skin == 1 then
+	if var0_88 and #var0_88 then
+		for iter0_88, iter1_88 in ipairs(var0_88) do
+			if pg.equip_data_by_type[iter1_88].equip_skin == 1 then
 				return true
 			end
 		end
@@ -1178,16 +1197,16 @@ function var0_0.getCanEquipSkin(arg0_87, arg1_87)
 	return false
 end
 
-function var0_0.checkCanEquipSkin(arg0_88, arg1_88, arg2_88)
-	if not arg1_88 or not arg2_88 then
+function var0_0.checkCanEquipSkin(arg0_89, arg1_89, arg2_89)
+	if not arg1_89 or not arg2_89 then
 		return
 	end
 
-	local var0_88 = arg0_88:getSkinTypes(arg1_88)
-	local var1_88 = pg.equip_skin_template[arg2_88].equip_type
+	local var0_89 = arg0_89:getSkinTypes(arg1_89)
+	local var1_89 = pg.equip_skin_template[arg2_89].equip_type
 
-	for iter0_88, iter1_88 in ipairs(var0_88) do
-		if table.contains(var1_88, iter1_88) then
+	for iter0_89, iter1_89 in ipairs(var0_89) do
+		if table.contains(var1_89, iter1_89) then
 			return true
 		end
 	end
@@ -1195,120 +1214,120 @@ function var0_0.checkCanEquipSkin(arg0_88, arg1_88, arg2_88)
 	return false
 end
 
-function var0_0.getSkinTypes(arg0_89, arg1_89)
-	return pg.ship_data_template[arg0_89.configId]["equip_" .. arg1_89] or {}
+function var0_0.getSkinTypes(arg0_90, arg1_90)
+	return pg.ship_data_template[arg0_90.configId]["equip_" .. arg1_90] or {}
 end
 
-function var0_0.updateState(arg0_90, arg1_90)
-	arg0_90.state = arg1_90
+function var0_0.updateState(arg0_91, arg1_91)
+	arg0_91.state = arg1_91
 end
 
-function var0_0.addSkillExp(arg0_91, arg1_91, arg2_91)
-	local var0_91 = arg0_91.skills[arg1_91] or {
+function var0_0.addSkillExp(arg0_92, arg1_92, arg2_92)
+	local var0_92 = arg0_92.skills[arg1_92] or {
 		exp = 0,
 		level = 1,
-		id = arg1_91
+		id = arg1_92
 	}
-	local var1_91 = var0_91.level and var0_91.level or 1
-	local var2_91 = pg.skill_need_exp.all[#pg.skill_need_exp.all]
+	local var1_92 = var0_92.level and var0_92.level or 1
+	local var2_92 = pg.skill_need_exp.all[#pg.skill_need_exp.all]
 
-	if var1_91 == var2_91 then
+	if var1_92 == var2_92 then
 		return
 	end
 
-	local var3_91 = var0_91.exp and arg2_91 + var0_91.exp or 0 + arg2_91
+	local var3_92 = var0_92.exp and arg2_92 + var0_92.exp or 0 + arg2_92
 
-	while var3_91 >= pg.skill_need_exp[var1_91].exp do
-		var3_91 = var3_91 - pg.skill_need_exp[var1_91].exp
-		var1_91 = var1_91 + 1
+	while var3_92 >= pg.skill_need_exp[var1_92].exp do
+		var3_92 = var3_92 - pg.skill_need_exp[var1_92].exp
+		var1_92 = var1_92 + 1
 
-		if var1_91 == var2_91 then
-			var3_91 = 0
+		if var1_92 == var2_92 then
+			var3_92 = 0
 
 			break
 		end
-	end
-
-	arg0_91:updateSkill({
-		id = var0_91.id,
-		level = var1_91,
-		exp = var3_91
-	})
-end
-
-function var0_0.upSkillLevelForMeta(arg0_92, arg1_92)
-	local var0_92 = arg0_92.skills[arg1_92] or {
-		exp = 0,
-		level = 0,
-		id = arg1_92
-	}
-	local var1_92 = arg0_92:isSkillLevelMax(arg1_92)
-	local var2_92 = var0_92.level
-
-	if not var1_92 then
-		var2_92 = var2_92 + 1
 	end
 
 	arg0_92:updateSkill({
-		exp = 0,
 		id = var0_92.id,
-		level = var2_92
+		level = var1_92,
+		exp = var3_92
 	})
 end
 
-function var0_0.getMetaSkillLevelBySkillID(arg0_93, arg1_93)
-	return (arg0_93.skills[arg1_93] or {
+function var0_0.upSkillLevelForMeta(arg0_93, arg1_93)
+	local var0_93 = arg0_93.skills[arg1_93] or {
 		exp = 0,
 		level = 0,
 		id = arg1_93
+	}
+	local var1_93 = arg0_93:isSkillLevelMax(arg1_93)
+	local var2_93 = var0_93.level
+
+	if not var1_93 then
+		var2_93 = var2_93 + 1
+	end
+
+	arg0_93:updateSkill({
+		exp = 0,
+		id = var0_93.id,
+		level = var2_93
+	})
+end
+
+function var0_0.getMetaSkillLevelBySkillID(arg0_94, arg1_94)
+	return (arg0_94.skills[arg1_94] or {
+		exp = 0,
+		level = 0,
+		id = arg1_94
 	}).level
 end
 
-function var0_0.isSkillLevelMax(arg0_94, arg1_94)
-	local var0_94 = arg0_94.skills[arg1_94] or {
+function var0_0.isSkillLevelMax(arg0_95, arg1_95)
+	local var0_95 = arg0_95.skills[arg1_95] or {
 		exp = 0,
 		level = 1,
-		id = arg1_94
+		id = arg1_95
 	}
 
-	return (var0_94.level and var0_94.level or 1) >= pg.skill_data_template[arg1_94].max_level
+	return (var0_95.level and var0_95.level or 1) >= pg.skill_data_template[arg1_95].max_level
 end
 
-function var0_0.isAllMetaSkillLevelMax(arg0_95)
-	local var0_95 = true
-	local var1_95 = MetaCharacterConst.getTacticsSkillIDListByShipConfigID(arg0_95.configId)
+function var0_0.isAllMetaSkillLevelMax(arg0_96)
+	local var0_96 = true
+	local var1_96 = MetaCharacterConst.getTacticsSkillIDListByShipConfigID(arg0_96.configId)
 
-	for iter0_95, iter1_95 in ipairs(var1_95) do
-		if not arg0_95:isSkillLevelMax(iter1_95) then
-			var0_95 = false
+	for iter0_96, iter1_96 in ipairs(var1_96) do
+		if not arg0_96:isSkillLevelMax(iter1_96) then
+			var0_96 = false
 
 			break
 		end
 	end
 
-	return var0_95
+	return var0_96
 end
 
-function var0_0.isAllMetaSkillLock(arg0_96)
-	local var0_96 = MetaCharacterConst.getTacticsSkillIDListByShipConfigID(arg0_96.configId)
-	local var1_96 = true
+function var0_0.isAllMetaSkillLock(arg0_97)
+	local var0_97 = MetaCharacterConst.getTacticsSkillIDListByShipConfigID(arg0_97.configId)
+	local var1_97 = true
 
-	for iter0_96, iter1_96 in ipairs(var0_96) do
-		if arg0_96:getMetaSkillLevelBySkillID(iter1_96) > 0 then
-			var1_96 = false
+	for iter0_97, iter1_97 in ipairs(var0_97) do
+		if arg0_97:getMetaSkillLevelBySkillID(iter1_97) > 0 then
+			var1_97 = false
 
 			break
 		end
 	end
 
-	return var1_96
+	return var1_97
 end
 
-function var0_0.bindConfigTable(arg0_97)
+function var0_0.bindConfigTable(arg0_98)
 	return pg.ship_data_statistics
 end
 
-function var0_0.isAvaiable(arg0_98)
+function var0_0.isAvaiable(arg0_99)
 	return true
 end
 
@@ -1352,229 +1371,229 @@ var0_0.SONAR_PROPERTIES = {
 	AttributeType.SonarRange
 }
 
-function var0_0.intimacyAdditions(arg0_99, arg1_99)
-	local var0_99 = pg.intimacy_template[arg0_99:getIntimacyLevel()].attr_bonus * 0.0001
+function var0_0.intimacyAdditions(arg0_100, arg1_100)
+	local var0_100 = pg.intimacy_template[arg0_100:getIntimacyLevel()].attr_bonus * 0.0001
 
-	for iter0_99, iter1_99 in pairs(arg1_99) do
-		if iter0_99 == AttributeType.Durability or iter0_99 == AttributeType.Cannon or iter0_99 == AttributeType.Torpedo or iter0_99 == AttributeType.AntiAircraft or iter0_99 == AttributeType.AntiSub or iter0_99 == AttributeType.Air or iter0_99 == AttributeType.Reload or iter0_99 == AttributeType.Hit or iter0_99 == AttributeType.Dodge then
-			arg1_99[iter0_99] = arg1_99[iter0_99] * (var0_99 + 1)
+	for iter0_100, iter1_100 in pairs(arg1_100) do
+		if iter0_100 == AttributeType.Durability or iter0_100 == AttributeType.Cannon or iter0_100 == AttributeType.Torpedo or iter0_100 == AttributeType.AntiAircraft or iter0_100 == AttributeType.AntiSub or iter0_100 == AttributeType.Air or iter0_100 == AttributeType.Reload or iter0_100 == AttributeType.Hit or iter0_100 == AttributeType.Dodge then
+			arg1_100[iter0_100] = arg1_100[iter0_100] * (var0_100 + 1)
 		end
 	end
 end
 
-function var0_0.getShipProperties(arg0_100)
-	local var0_100 = arg0_100:getBaseProperties()
+function var0_0.getShipProperties(arg0_101)
+	local var0_101 = arg0_101:getBaseProperties()
 
-	if arg0_100:isBluePrintShip() then
-		local var1_100 = arg0_100:getBluePrint()
+	if arg0_101:isBluePrintShip() then
+		local var1_101 = arg0_101:getBluePrint()
 
-		assert(var1_100, "blueprint can not be nil" .. arg0_100.configId)
+		assert(var1_101, "blueprint can not be nil" .. arg0_101.configId)
 
-		local var2_100 = var1_100:getTotalAdditions()
+		local var2_101 = var1_101:getTotalAdditions()
 
-		for iter0_100, iter1_100 in pairs(var2_100) do
-			var0_100[iter0_100] = var0_100[iter0_100] + calcFloor(iter1_100)
+		for iter0_101, iter1_101 in pairs(var2_101) do
+			var0_101[iter0_101] = var0_101[iter0_101] + calcFloor(iter1_101)
 		end
 
-		arg0_100:intimacyAdditions(var0_100)
-	elseif arg0_100:isMetaShip() then
-		assert(arg0_100.metaCharacter)
+		arg0_101:intimacyAdditions(var0_101)
+	elseif arg0_101:isMetaShip() then
+		assert(arg0_101.metaCharacter)
 
-		for iter2_100, iter3_100 in pairs(var0_100) do
-			var0_100[iter2_100] = var0_100[iter2_100] + arg0_100.metaCharacter:getAttrAddition(iter2_100)
+		for iter2_101, iter3_101 in pairs(var0_101) do
+			var0_101[iter2_101] = var0_101[iter2_101] + arg0_101.metaCharacter:getAttrAddition(iter2_101)
 		end
 
-		arg0_100:intimacyAdditions(var0_100)
+		arg0_101:intimacyAdditions(var0_101)
 	else
-		local var3_100 = pg.ship_data_template[arg0_100.configId].strengthen_id
-		local var4_100 = var5_0[var3_100]
+		local var3_101 = pg.ship_data_template[arg0_101.configId].strengthen_id
+		local var4_101 = var5_0[var3_101]
 
-		for iter4_100, iter5_100 in pairs(arg0_100.strengthList) do
-			local var5_100 = ShipModAttr.ATTR_TO_INDEX[iter4_100]
-			local var6_100 = math.min(iter5_100, var4_100.durability[var5_100] * var4_100.level_exp[var5_100])
-			local var7_100 = math.max(arg0_100:getModExpRatio(iter4_100), 1)
+		for iter4_101, iter5_101 in pairs(arg0_101.strengthList) do
+			local var5_101 = ShipModAttr.ATTR_TO_INDEX[iter4_101]
+			local var6_101 = math.min(iter5_101, var4_101.durability[var5_101] * var4_101.level_exp[var5_101])
+			local var7_101 = math.max(arg0_101:getModExpRatio(iter4_101), 1)
 
-			var0_100[iter4_100] = var0_100[iter4_100] + calcFloor(var6_100 / var7_100)
+			var0_101[iter4_101] = var0_101[iter4_101] + calcFloor(var6_101 / var7_101)
 		end
 
-		arg0_100:intimacyAdditions(var0_100)
+		arg0_101:intimacyAdditions(var0_101)
 
-		for iter6_100, iter7_100 in pairs(arg0_100.transforms) do
-			local var8_100 = pg.transform_data_template[iter7_100.id].effect
+		for iter6_101, iter7_101 in pairs(arg0_101.transforms) do
+			local var8_101 = pg.transform_data_template[iter7_101.id].effect
 
-			for iter8_100 = 1, iter7_100.level do
-				local var9_100 = var8_100[iter8_100] or {}
+			for iter8_101 = 1, iter7_101.level do
+				local var9_101 = var8_101[iter8_101] or {}
 
-				for iter9_100, iter10_100 in pairs(var0_100) do
-					if var9_100[iter9_100] then
-						var0_100[iter9_100] = var0_100[iter9_100] + var9_100[iter9_100]
+				for iter9_101, iter10_101 in pairs(var0_101) do
+					if var9_101[iter9_101] then
+						var0_101[iter9_101] = var0_101[iter9_101] + var9_101[iter9_101]
 					end
 				end
 			end
 		end
 	end
 
-	return var0_100
+	return var0_101
 end
 
-function var0_0.getTechNationAddition(arg0_101, arg1_101)
-	local var0_101 = getProxy(TechnologyNationProxy)
-	local var1_101 = arg0_101:getConfig("type")
-
-	if var1_101 == ShipType.DaoQuV or var1_101 == ShipType.DaoQuM then
-		var1_101 = ShipType.QuZhu
-	end
-
-	return var0_101:getShipAddition(var1_101, arg1_101)
-end
-
-function var0_0.getTechNationMaxAddition(arg0_102, arg1_102)
+function var0_0.getTechNationAddition(arg0_102, arg1_102)
 	local var0_102 = getProxy(TechnologyNationProxy)
 	local var1_102 = arg0_102:getConfig("type")
 
-	return var0_102:getShipMaxAddition(var1_102, arg1_102)
+	if var1_102 == ShipType.DaoQuV or var1_102 == ShipType.DaoQuM then
+		var1_102 = ShipType.QuZhu
+	end
+
+	return var0_102:getShipAddition(var1_102, arg1_102)
 end
 
-function var0_0.getEquipProficiencyByPos(arg0_103, arg1_103)
-	return arg0_103:getEquipProficiencyList()[arg1_103]
+function var0_0.getTechNationMaxAddition(arg0_103, arg1_103)
+	local var0_103 = getProxy(TechnologyNationProxy)
+	local var1_103 = arg0_103:getConfig("type")
+
+	return var0_103:getShipMaxAddition(var1_103, arg1_103)
 end
 
-function var0_0.getEquipProficiencyList(arg0_104)
-	local var0_104 = arg0_104:getConfigTable()
-	local var1_104 = Clone(var0_104.equipment_proficiency)
+function var0_0.getEquipProficiencyByPos(arg0_104, arg1_104)
+	return arg0_104:getEquipProficiencyList()[arg1_104]
+end
 
-	if arg0_104:isBluePrintShip() then
-		local var2_104 = arg0_104:getBluePrint()
+function var0_0.getEquipProficiencyList(arg0_105)
+	local var0_105 = arg0_105:getConfigTable()
+	local var1_105 = Clone(var0_105.equipment_proficiency)
 
-		assert(var2_104, "blueprint can not be nil >>>" .. arg0_104.groupId)
+	if arg0_105:isBluePrintShip() then
+		local var2_105 = arg0_105:getBluePrint()
 
-		var1_104 = var2_104:getEquipProficiencyList(arg0_104)
+		assert(var2_105, "blueprint can not be nil >>>" .. arg0_105.groupId)
+
+		var1_105 = var2_105:getEquipProficiencyList(arg0_105)
 	else
-		for iter0_104, iter1_104 in ipairs(var1_104) do
-			local var3_104 = 0
+		for iter0_105, iter1_105 in ipairs(var1_105) do
+			local var3_105 = 0
 
-			for iter2_104, iter3_104 in pairs(arg0_104.transforms) do
-				local var4_104 = pg.transform_data_template[iter3_104.id].effect
+			for iter2_105, iter3_105 in pairs(arg0_105.transforms) do
+				local var4_105 = pg.transform_data_template[iter3_105.id].effect
 
-				for iter4_104 = 1, iter3_104.level do
-					local var5_104 = var4_104[iter4_104] or {}
+				for iter4_105 = 1, iter3_105.level do
+					local var5_105 = var4_105[iter4_105] or {}
 
-					if var5_104["equipment_proficiency_" .. iter0_104] then
-						var3_104 = var3_104 + var5_104["equipment_proficiency_" .. iter0_104]
+					if var5_105["equipment_proficiency_" .. iter0_105] then
+						var3_105 = var3_105 + var5_105["equipment_proficiency_" .. iter0_105]
 					end
 				end
 			end
 
-			var1_104[iter0_104] = iter1_104 + var3_104
+			var1_105[iter0_105] = iter1_105 + var3_105
 		end
 	end
 
-	return var1_104
+	return var1_105
 end
 
-function var0_0.getBaseProperties(arg0_105)
-	local var0_105 = arg0_105:getConfigTable()
-
-	assert(var0_105, "配置表没有这艘船" .. arg0_105.configId)
-
-	local var1_105 = {}
-	local var2_105 = {}
-
-	for iter0_105, iter1_105 in ipairs(var0_0.PROPERTIES) do
-		var1_105[iter1_105] = arg0_105:getGrowthForAttr(iter1_105)
-		var2_105[iter1_105] = var1_105[iter1_105]
-	end
-
-	for iter2_105, iter3_105 in ipairs(arg0_105:getConfig("lock")) do
-		var2_105[iter3_105] = var1_105[iter3_105]
-	end
-
-	for iter4_105, iter5_105 in ipairs(var0_0.DIVE_PROPERTIES) do
-		var2_105[iter5_105] = var0_105[iter5_105]
-	end
-
-	for iter6_105, iter7_105 in ipairs(var0_0.SONAR_PROPERTIES) do
-		var2_105[iter7_105] = 0
-	end
-
-	return var2_105
-end
-
-function var0_0.getGrowthForAttr(arg0_106, arg1_106)
+function var0_0.getBaseProperties(arg0_106)
 	local var0_106 = arg0_106:getConfigTable()
-	local var1_106 = table.indexof(var0_0.PROPERTIES, arg1_106)
-	local var2_106 = pg.gameset.extra_attr_level_limit.key_value
-	local var3_106 = var0_106.attrs[var1_106] + (arg0_106.level - 1) * var0_106.attrs_growth[var1_106] / 1000
 
-	if var2_106 < arg0_106.level then
-		var3_106 = var3_106 + (arg0_106.level - var2_106) * var0_106.attrs_growth_extra[var1_106] / 1000
+	assert(var0_106, "配置表没有这艘船" .. arg0_106.configId)
+
+	local var1_106 = {}
+	local var2_106 = {}
+
+	for iter0_106, iter1_106 in ipairs(var0_0.PROPERTIES) do
+		var1_106[iter1_106] = arg0_106:getGrowthForAttr(iter1_106)
+		var2_106[iter1_106] = var1_106[iter1_106]
 	end
 
-	return var3_106
+	for iter2_106, iter3_106 in ipairs(arg0_106:getConfig("lock")) do
+		var2_106[iter3_106] = var1_106[iter3_106]
+	end
+
+	for iter4_106, iter5_106 in ipairs(var0_0.DIVE_PROPERTIES) do
+		var2_106[iter5_106] = var0_106[iter5_106]
+	end
+
+	for iter6_106, iter7_106 in ipairs(var0_0.SONAR_PROPERTIES) do
+		var2_106[iter7_106] = 0
+	end
+
+	return var2_106
 end
 
-function var0_0.isMaxStar(arg0_107)
-	return arg0_107:getStar() >= arg0_107:getMaxStar()
+function var0_0.getGrowthForAttr(arg0_107, arg1_107)
+	local var0_107 = arg0_107:getConfigTable()
+	local var1_107 = table.indexof(var0_0.PROPERTIES, arg1_107)
+	local var2_107 = pg.gameset.extra_attr_level_limit.key_value
+	local var3_107 = var0_107.attrs[var1_107] + (arg0_107.level - 1) * var0_107.attrs_growth[var1_107] / 1000
+
+	if var2_107 < arg0_107.level then
+		var3_107 = var3_107 + (arg0_107.level - var2_107) * var0_107.attrs_growth_extra[var1_107] / 1000
+	end
+
+	return var3_107
 end
 
-function var0_0.IsMaxStarByTmpID(arg0_108)
-	local var0_108 = pg.ship_data_template[arg0_108]
-
-	return var0_108.star >= var0_108.star_max
+function var0_0.isMaxStar(arg0_108)
+	return arg0_108:getStar() >= arg0_108:getMaxStar()
 end
 
-function var0_0.IsSpweaponUnlock(arg0_109)
-	if not arg0_109:CanAccumulateExp() then
+function var0_0.IsMaxStarByTmpID(arg0_109)
+	local var0_109 = pg.ship_data_template[arg0_109]
+
+	return var0_109.star >= var0_109.star_max
+end
+
+function var0_0.IsSpweaponUnlock(arg0_110)
+	if not arg0_110:CanAccumulateExp() then
 		return false, "spweapon_tip_locked"
 	else
 		return true
 	end
 end
 
-function var0_0.getModProperties(arg0_110, arg1_110)
-	return arg0_110.strengthList[arg1_110] or 0
+function var0_0.getModProperties(arg0_111, arg1_111)
+	return arg0_111.strengthList[arg1_111] or 0
 end
 
-function var0_0.addModAttrExp(arg0_111, arg1_111, arg2_111)
-	local var0_111 = arg0_111:getModAttrTopLimit(arg1_111)
+function var0_0.addModAttrExp(arg0_112, arg1_112, arg2_112)
+	local var0_112 = arg0_112:getModAttrTopLimit(arg1_112)
 
-	if var0_111 == 0 then
+	if var0_112 == 0 then
 		return
 	end
 
-	local var1_111 = arg0_111:getModExpRatio(arg1_111)
-	local var2_111 = arg0_111:getModProperties(arg1_111)
+	local var1_112 = arg0_112:getModExpRatio(arg1_112)
+	local var2_112 = arg0_112:getModProperties(arg1_112)
 
-	if var2_111 + arg2_111 > var0_111 * var1_111 then
-		arg0_111.strengthList[arg1_111] = var0_111 * var1_111
+	if var2_112 + arg2_112 > var0_112 * var1_112 then
+		arg0_112.strengthList[arg1_112] = var0_112 * var1_112
 	else
-		arg0_111.strengthList[arg1_111] = var2_111 + arg2_111
+		arg0_112.strengthList[arg1_112] = var2_112 + arg2_112
 	end
 end
 
-function var0_0.getNeedModExp(arg0_112)
-	local var0_112 = {}
+function var0_0.getNeedModExp(arg0_113)
+	local var0_113 = {}
 
-	for iter0_112, iter1_112 in pairs(ShipModAttr.ID_TO_ATTR) do
-		local var1_112 = arg0_112:getModAttrTopLimit(iter1_112)
+	for iter0_113, iter1_113 in pairs(ShipModAttr.ID_TO_ATTR) do
+		local var1_113 = arg0_113:getModAttrTopLimit(iter1_113)
 
-		if var1_112 == 0 then
-			var0_112[iter1_112] = 0
+		if var1_113 == 0 then
+			var0_113[iter1_113] = 0
 		else
-			var0_112[iter1_112] = var1_112 * arg0_112:getModExpRatio(iter1_112) - arg0_112:getModProperties(iter1_112)
+			var0_113[iter1_113] = var1_113 * arg0_113:getModExpRatio(iter1_113) - arg0_113:getModProperties(iter1_113)
 		end
 	end
 
-	return var0_112
+	return var0_113
 end
 
-function var0_0.attrVertify(arg0_113)
-	if not BayProxy.checkShiplevelVertify(arg0_113) then
+function var0_0.attrVertify(arg0_114)
+	if not BayProxy.checkShiplevelVertify(arg0_114) then
 		return false
 	end
 
-	for iter0_113, iter1_113 in ipairs(arg0_113.equipments) do
-		if iter1_113 and not iter1_113:vertify() then
+	for iter0_114, iter1_114 in ipairs(arg0_114.equipments) do
+		if iter1_114 and not iter1_114:vertify() then
 			return false
 		end
 	end
@@ -1582,497 +1601,497 @@ function var0_0.attrVertify(arg0_113)
 	return true
 end
 
-function var0_0.getEquipmentProperties(arg0_114)
-	local var0_114 = {}
-	local var1_114 = {}
+function var0_0.getEquipmentProperties(arg0_115)
+	local var0_115 = {}
+	local var1_115 = {}
 
-	for iter0_114, iter1_114 in ipairs(var0_0.PROPERTIES) do
-		var0_114[iter1_114] = 0
+	for iter0_115, iter1_115 in ipairs(var0_0.PROPERTIES) do
+		var0_115[iter1_115] = 0
 	end
 
-	for iter2_114, iter3_114 in ipairs(var0_0.DIVE_PROPERTIES) do
-		var0_114[iter3_114] = 0
+	for iter2_115, iter3_115 in ipairs(var0_0.DIVE_PROPERTIES) do
+		var0_115[iter3_115] = 0
 	end
 
-	for iter4_114, iter5_114 in ipairs(var0_0.SONAR_PROPERTIES) do
-		var0_114[iter5_114] = 0
+	for iter4_115, iter5_115 in ipairs(var0_0.SONAR_PROPERTIES) do
+		var0_115[iter5_115] = 0
 	end
 
-	for iter6_114, iter7_114 in ipairs(var0_0.PROPERTIES_ENHANCEMENT) do
-		var1_114[iter7_114] = 0
+	for iter6_115, iter7_115 in ipairs(var0_0.PROPERTIES_ENHANCEMENT) do
+		var1_115[iter7_115] = 0
 	end
 
-	var0_114[AttributeType.AirDominate] = 0
-	var0_114[AttributeType.AntiSiren] = 0
+	var0_115[AttributeType.AirDominate] = 0
+	var0_115[AttributeType.AntiSiren] = 0
 
-	local var2_114 = arg0_114:getActiveEquipments()
+	local var2_115 = arg0_115:getActiveEquipments()
 
-	for iter8_114, iter9_114 in ipairs(var2_114) do
-		if iter9_114 then
-			local var3_114 = iter9_114:GetAttributes()
+	for iter8_115, iter9_115 in ipairs(var2_115) do
+		if iter9_115 then
+			local var3_115 = iter9_115:GetAttributes()
 
-			for iter10_114, iter11_114 in ipairs(var3_114) do
-				if iter11_114 and var0_114[iter11_114.type] then
-					var0_114[iter11_114.type] = var0_114[iter11_114.type] + iter11_114.value
+			for iter10_115, iter11_115 in ipairs(var3_115) do
+				if iter11_115 and var0_115[iter11_115.type] then
+					var0_115[iter11_115.type] = var0_115[iter11_115.type] + iter11_115.value
 				end
 			end
 
-			local var4_114 = iter9_114:GetPropertyRate()
+			local var4_115 = iter9_115:GetPropertyRate()
 
-			for iter12_114, iter13_114 in pairs(var4_114) do
-				var1_114[iter12_114] = math.max(var1_114[iter12_114], iter13_114)
+			for iter12_115, iter13_115 in pairs(var4_115) do
+				var1_115[iter12_115] = math.max(var1_115[iter12_115], iter13_115)
 			end
 
-			local var5_114 = iter9_114:GetSonarProperty()
+			local var5_115 = iter9_115:GetSonarProperty()
 
-			if var5_114 then
-				for iter14_114, iter15_114 in pairs(var5_114) do
-					var0_114[iter14_114] = var0_114[iter14_114] + iter15_114
+			if var5_115 then
+				for iter14_115, iter15_115 in pairs(var5_115) do
+					var0_115[iter14_115] = var0_115[iter14_115] + iter15_115
 				end
 			end
 
-			local var6_114 = iter9_114:GetAntiSirenPower()
+			local var6_115 = iter9_115:GetAntiSirenPower()
 
-			if var6_114 then
-				var0_114[AttributeType.AntiSiren] = var0_114[AttributeType.AntiSiren] + var6_114 / 10000
+			if var6_115 then
+				var0_115[AttributeType.AntiSiren] = var0_115[AttributeType.AntiSiren] + var6_115 / 10000
 			end
 		end
 	end
 
 	;(function()
-		local var0_115 = arg0_114:GetSpWeapon()
+		local var0_116 = arg0_115:GetSpWeapon()
 
-		if not var0_115 then
+		if not var0_116 then
 			return
 		end
 
-		local var1_115 = var0_115:GetPropertiesInfo().attrs
+		local var1_116 = var0_116:GetPropertiesInfo().attrs
 
-		for iter0_115, iter1_115 in ipairs(var1_115) do
-			if iter1_115 and var0_114[iter1_115.type] then
-				var0_114[iter1_115.type] = var0_114[iter1_115.type] + iter1_115.value
+		for iter0_116, iter1_116 in ipairs(var1_116) do
+			if iter1_116 and var0_115[iter1_116.type] then
+				var0_115[iter1_116.type] = var0_115[iter1_116.type] + iter1_116.value
 			end
 		end
 	end)()
 
-	for iter16_114, iter17_114 in pairs(var1_114) do
-		var1_114[iter16_114] = iter17_114 + 1
+	for iter16_115, iter17_115 in pairs(var1_115) do
+		var1_115[iter16_115] = iter17_115 + 1
 	end
 
-	return var0_114, var1_114
+	return var0_115, var1_115
 end
 
-function var0_0.getSkillEffects(arg0_116)
-	local var0_116 = arg0_116:getShipSkillEffects()
+function var0_0.getSkillEffects(arg0_117)
+	local var0_117 = arg0_117:getShipSkillEffects()
 
-	_.each(arg0_116:getEquipmentSkillEffects(), function(arg0_117)
-		table.insert(var0_116, arg0_117)
+	_.each(arg0_117:getEquipmentSkillEffects(), function(arg0_118)
+		table.insert(var0_117, arg0_118)
 	end)
 
-	return var0_116
+	return var0_117
 end
 
-function var0_0.getShipSkillEffects(arg0_118)
-	local var0_118 = {}
-	local var1_118 = arg0_118:getSkillList()
-
-	for iter0_118, iter1_118 in ipairs(var1_118) do
-		local var2_118 = arg0_118:RemapSkillId(iter1_118)
-		local var3_118 = pg.buffCfg["buff_" .. var2_118]
-
-		arg0_118:FilterActiveSkill(var0_118, var3_118, arg0_118.skills[iter1_118])
-	end
-
-	return var0_118
-end
-
-function var0_0.getEquipmentSkillEffects(arg0_119)
+function var0_0.getShipSkillEffects(arg0_119)
 	local var0_119 = {}
-	local var1_119 = arg0_119:getActiveEquipments()
+	local var1_119 = arg0_119:getSkillList()
 
 	for iter0_119, iter1_119 in ipairs(var1_119) do
-		local var2_119
-		local var3_119 = iter1_119 and iter1_119:getConfig("skill_id")[1] and iter1_119:getConfig("skill_id")[1][1]
+		local var2_119 = arg0_119:RemapSkillId(iter1_119)
+		local var3_119 = pg.buffCfg["buff_" .. var2_119]
 
-		if var3_119 then
-			var2_119 = pg.buffCfg["buff_" .. var3_119]
-		end
-
-		arg0_119:FilterActiveSkill(var0_119, var2_119)
+		arg0_119:FilterActiveSkill(var0_119, var3_119, arg0_119.skills[iter1_119])
 	end
-
-	;(function()
-		local var0_120 = arg0_119:GetSpWeapon()
-		local var1_120 = var0_120 and var0_120:GetEffect() or 0
-		local var2_120
-
-		if var1_120 > 0 then
-			var2_120 = pg.buffCfg["buff_" .. var1_120]
-		end
-
-		arg0_119:FilterActiveSkill(var0_119, var2_120)
-	end)()
 
 	return var0_119
 end
 
-function var0_0.FilterActiveSkill(arg0_121, arg1_121, arg2_121, arg3_121)
-	if not arg2_121 or not arg2_121.const_effect_list then
+function var0_0.getEquipmentSkillEffects(arg0_120)
+	local var0_120 = {}
+	local var1_120 = arg0_120:getActiveEquipments()
+
+	for iter0_120, iter1_120 in ipairs(var1_120) do
+		local var2_120
+		local var3_120 = iter1_120 and iter1_120:getConfig("skill_id")[1] and iter1_120:getConfig("skill_id")[1][1]
+
+		if var3_120 then
+			var2_120 = pg.buffCfg["buff_" .. var3_120]
+		end
+
+		arg0_120:FilterActiveSkill(var0_120, var2_120)
+	end
+
+	;(function()
+		local var0_121 = arg0_120:GetSpWeapon()
+		local var1_121 = var0_121 and var0_121:GetEffect() or 0
+		local var2_121
+
+		if var1_121 > 0 then
+			var2_121 = pg.buffCfg["buff_" .. var1_121]
+		end
+
+		arg0_120:FilterActiveSkill(var0_120, var2_121)
+	end)()
+
+	return var0_120
+end
+
+function var0_0.FilterActiveSkill(arg0_122, arg1_122, arg2_122, arg3_122)
+	if not arg2_122 or not arg2_122.const_effect_list then
 		return
 	end
 
-	for iter0_121 = 1, #arg2_121.const_effect_list do
-		local var0_121 = arg2_121.const_effect_list[iter0_121]
-		local var1_121 = var0_121.trigger
-		local var2_121 = var0_121.arg_list
-		local var3_121 = 1
+	for iter0_122 = 1, #arg2_122.const_effect_list do
+		local var0_122 = arg2_122.const_effect_list[iter0_122]
+		local var1_122 = var0_122.trigger
+		local var2_122 = var0_122.arg_list
+		local var3_122 = 1
 
-		if arg3_121 then
-			var3_121 = arg3_121.level
+		if arg3_122 then
+			var3_122 = arg3_122.level
 
-			local var4_121 = arg2_121[var3_121].const_effect_list
+			local var4_122 = arg2_122[var3_122].const_effect_list
 
-			if var4_121 and var4_121[iter0_121] then
-				var1_121 = var4_121[iter0_121].trigger or var1_121
-				var2_121 = var4_121[iter0_121].arg_list or var2_121
+			if var4_122 and var4_122[iter0_122] then
+				var1_122 = var4_122[iter0_122].trigger or var1_122
+				var2_122 = var4_122[iter0_122].arg_list or var2_122
 			end
 		end
 
-		local var5_121 = true
+		local var5_122 = true
 
-		for iter1_121, iter2_121 in pairs(var1_121) do
-			if arg0_121.triggers[iter1_121] ~= iter2_121 then
-				var5_121 = false
+		for iter1_122, iter2_122 in pairs(var1_122) do
+			if arg0_122.triggers[iter1_122] ~= iter2_122 then
+				var5_122 = false
 
 				break
 			end
 		end
 
-		if var5_121 then
-			table.insert(arg1_121, {
-				type = var0_121.type,
-				arg_list = var2_121,
-				level = var3_121
+		if var5_122 then
+			table.insert(arg1_122, {
+				type = var0_122.type,
+				arg_list = var2_122,
+				level = var3_122
 			})
 		end
 	end
 end
 
-function var0_0.getEquipmentGearScore(arg0_122)
-	local var0_122 = 0
-	local var1_122 = arg0_122:getActiveEquipments()
+function var0_0.getEquipmentGearScore(arg0_123)
+	local var0_123 = 0
+	local var1_123 = arg0_123:getActiveEquipments()
 
-	for iter0_122, iter1_122 in ipairs(var1_122) do
-		if iter1_122 then
-			var0_122 = var0_122 + iter1_122:GetGearScore()
+	for iter0_123, iter1_123 in ipairs(var1_123) do
+		if iter1_123 then
+			var0_123 = var0_123 + iter1_123:GetGearScore()
 		end
 	end
 
-	return var0_122
+	return var0_123
 end
 
-function var0_0.getProperties(arg0_123, arg1_123, arg2_123, arg3_123, arg4_123)
-	local var0_123 = arg1_123 or {}
-	local var1_123 = arg0_123:getConfig("nationality")
-	local var2_123 = arg0_123:getConfig("type")
-	local var3_123 = arg0_123:getShipProperties()
-	local var4_123, var5_123 = arg0_123:getEquipmentProperties()
-	local var6_123
-	local var7_123
-	local var8_123
+function var0_0.getProperties(arg0_124, arg1_124, arg2_124, arg3_124, arg4_124)
+	local var0_124 = arg1_124 or {}
+	local var1_124 = arg0_124:getConfig("nationality")
+	local var2_124 = arg0_124:getConfig("type")
+	local var3_124 = arg0_124:getShipProperties()
+	local var4_124, var5_124 = arg0_124:getEquipmentProperties()
+	local var6_124
+	local var7_124
+	local var8_124
 
-	if arg3_123 and arg0_123:getFlag("inWorld") then
-		local var9_123 = WorldConst.FetchWorldShip(arg0_123.id)
+	if arg3_124 and arg0_124:getFlag("inWorld") then
+		local var9_124 = WorldConst.FetchWorldShip(arg0_124.id)
 
-		var6_123, var7_123 = var9_123:GetShipBuffProperties()
-		var8_123 = var9_123:GetShipPowerBuffProperties()
+		var6_124, var7_124 = var9_124:GetShipBuffProperties()
+		var8_124 = var9_124:GetShipPowerBuffProperties()
 	end
 
-	for iter0_123, iter1_123 in ipairs(var0_0.PROPERTIES) do
-		local var10_123 = 0
-		local var11_123 = 0
+	for iter0_124, iter1_124 in ipairs(var0_0.PROPERTIES) do
+		local var10_124 = 0
+		local var11_124 = 0
 
-		for iter2_123, iter3_123 in pairs(var0_123) do
-			var10_123 = var10_123 + iter3_123:getAttrRatioAddition(iter1_123, var1_123, var2_123) / 100
-			var11_123 = var11_123 + iter3_123:getAttrValueAddition(iter1_123, var1_123, var2_123)
+		for iter2_124, iter3_124 in pairs(var0_124) do
+			var10_124 = var10_124 + iter3_124:getAttrRatioAddition(iter1_124, var1_124, var2_124) / 100
+			var11_124 = var11_124 + iter3_124:getAttrValueAddition(iter1_124, var1_124, var2_124)
 		end
 
-		local var12_123 = var10_123 + (var5_123[iter1_123] or 1)
-		local var13_123 = var7_123 and var7_123[iter1_123] or 1
-		local var14_123 = var6_123 and var6_123[iter1_123] or 0
+		local var12_124 = var10_124 + (var5_124[iter1_124] or 1)
+		local var13_124 = var7_124 and var7_124[iter1_124] or 1
+		local var14_124 = var6_124 and var6_124[iter1_124] or 0
 
-		if iter1_123 == AttributeType.Speed then
-			var3_123[iter1_123] = var3_123[iter1_123] * var12_123 * var13_123 + var11_123 + var4_123[iter1_123] + var14_123
+		if iter1_124 == AttributeType.Speed then
+			var3_124[iter1_124] = var3_124[iter1_124] * var12_124 * var13_124 + var11_124 + var4_124[iter1_124] + var14_124
 		else
-			var3_123[iter1_123] = calcFloor(calcFloor(var3_123[iter1_123]) * var12_123 * var13_123) + var11_123 + var4_123[iter1_123] + var14_123
+			var3_124[iter1_124] = calcFloor(calcFloor(var3_124[iter1_124]) * var12_124 * var13_124) + var11_124 + var4_124[iter1_124] + var14_124
 		end
 	end
 
-	if not arg2_123 and arg0_123:isMaxStar() then
-		for iter4_123, iter5_123 in pairs(var3_123) do
-			local var15_123 = arg4_123 and arg0_123:getTechNationMaxAddition(iter4_123) or arg0_123:getTechNationAddition(iter4_123)
+	if not arg2_124 and arg0_124:isMaxStar() then
+		for iter4_124, iter5_124 in pairs(var3_124) do
+			local var15_124 = arg4_124 and arg0_124:getTechNationMaxAddition(iter4_124) or arg0_124:getTechNationAddition(iter4_124)
 
-			var3_123[iter4_123] = var3_123[iter4_123] + var15_123
+			var3_124[iter4_124] = var3_124[iter4_124] + var15_124
 		end
 	end
 
-	for iter6_123, iter7_123 in ipairs(var0_0.DIVE_PROPERTIES) do
-		var3_123[iter7_123] = var3_123[iter7_123] + var4_123[iter7_123]
+	for iter6_124, iter7_124 in ipairs(var0_0.DIVE_PROPERTIES) do
+		var3_124[iter7_124] = var3_124[iter7_124] + var4_124[iter7_124]
 	end
 
-	for iter8_123, iter9_123 in ipairs(var0_0.SONAR_PROPERTIES) do
-		var3_123[iter9_123] = var3_123[iter9_123] + var4_123[iter9_123]
+	for iter8_124, iter9_124 in ipairs(var0_0.SONAR_PROPERTIES) do
+		var3_124[iter9_124] = var3_124[iter9_124] + var4_124[iter9_124]
 	end
 
-	if arg3_123 then
-		var3_123[AttributeType.AntiSiren] = (var3_123[AttributeType.AntiSiren] or 0) + var4_123[AttributeType.AntiSiren]
+	if arg3_124 then
+		var3_124[AttributeType.AntiSiren] = (var3_124[AttributeType.AntiSiren] or 0) + var4_124[AttributeType.AntiSiren]
 	end
 
-	if var8_123 then
-		for iter10_123, iter11_123 in pairs(var8_123) do
-			if var3_123[iter10_123] then
-				if iter10_123 == AttributeType.Speed then
-					var3_123[iter10_123] = var3_123[iter10_123] * iter11_123
+	if var8_124 then
+		for iter10_124, iter11_124 in pairs(var8_124) do
+			if var3_124[iter10_124] then
+				if iter10_124 == AttributeType.Speed then
+					var3_124[iter10_124] = var3_124[iter10_124] * iter11_124
 				else
-					var3_123[iter10_123] = math.floor(var3_123[iter10_123] * iter11_123)
+					var3_124[iter10_124] = math.floor(var3_124[iter10_124] * iter11_124)
 				end
 			end
 		end
 	end
 
-	return var3_123
+	return var3_124
 end
 
-function var0_0.getTransGearScore(arg0_124)
-	local var0_124 = 0
-	local var1_124 = pg.transform_data_template
+function var0_0.getTransGearScore(arg0_125)
+	local var0_125 = 0
+	local var1_125 = pg.transform_data_template
 
-	for iter0_124, iter1_124 in pairs(arg0_124.transforms) do
-		for iter2_124 = 1, iter1_124.level do
-			var0_124 = var0_124 + (var1_124[iter1_124.id].gear_score[iter2_124] or 0)
+	for iter0_125, iter1_125 in pairs(arg0_125.transforms) do
+		for iter2_125 = 1, iter1_125.level do
+			var0_125 = var0_125 + (var1_125[iter1_125.id].gear_score[iter2_125] or 0)
 		end
 	end
 
-	return var0_124
+	return var0_125
 end
 
-function var0_0.getShipCombatPower(arg0_125, arg1_125)
-	local var0_125 = arg0_125:getProperties(arg1_125, nil, nil, true)
-	local var1_125 = var0_125[AttributeType.Durability] / 5 + var0_125[AttributeType.Cannon] + var0_125[AttributeType.Torpedo] + var0_125[AttributeType.AntiAircraft] + var0_125[AttributeType.Air] + var0_125[AttributeType.AntiSub] + var0_125[AttributeType.Reload] + var0_125[AttributeType.Hit] * 2 + var0_125[AttributeType.Dodge] * 2 + var0_125[AttributeType.Speed] + arg0_125:getEquipmentGearScore() + arg0_125:getTransGearScore()
+function var0_0.getShipCombatPower(arg0_126, arg1_126)
+	local var0_126 = arg0_126:getProperties(arg1_126, nil, nil, true)
+	local var1_126 = var0_126[AttributeType.Durability] / 5 + var0_126[AttributeType.Cannon] + var0_126[AttributeType.Torpedo] + var0_126[AttributeType.AntiAircraft] + var0_126[AttributeType.Air] + var0_126[AttributeType.AntiSub] + var0_126[AttributeType.Reload] + var0_126[AttributeType.Hit] * 2 + var0_126[AttributeType.Dodge] * 2 + var0_126[AttributeType.Speed] + arg0_126:getEquipmentGearScore() + arg0_126:getTransGearScore()
 
-	return math.floor(var1_125)
+	return math.floor(var1_126)
 end
 
-function var0_0.cosumeEnergy(arg0_126, arg1_126)
-	arg0_126:setEnergy(math.max(arg0_126:getEnergy() - arg1_126, 0))
+function var0_0.cosumeEnergy(arg0_127, arg1_127)
+	arg0_127:setEnergy(math.max(arg0_127:getEnergy() - arg1_127, 0))
 end
 
-function var0_0.addEnergy(arg0_127, arg1_127)
-	arg0_127:setEnergy(arg0_127:getEnergy() + arg1_127)
+function var0_0.addEnergy(arg0_128, arg1_128)
+	arg0_128:setEnergy(arg0_128:getEnergy() + arg1_128)
 end
 
-function var0_0.setEnergy(arg0_128, arg1_128)
-	arg0_128.energy = arg1_128
+function var0_0.setEnergy(arg0_129, arg1_129)
+	arg0_129.energy = arg1_129
 end
 
-function var0_0.setLikability(arg0_129, arg1_129)
-	assert(arg1_129 >= 0 and arg1_129 <= arg0_129.maxIntimacy, "intimacy value invaild" .. arg1_129)
-	arg0_129:setIntimacy(arg1_129)
+function var0_0.setLikability(arg0_130, arg1_130)
+	assert(arg1_130 >= 0 and arg1_130 <= arg0_130.maxIntimacy, "intimacy value invaild" .. arg1_130)
+	arg0_130:setIntimacy(arg1_130)
 end
 
-function var0_0.addLikability(arg0_130, arg1_130)
-	local var0_130 = Mathf.Clamp(arg0_130:getIntimacy() + arg1_130, 0, arg0_130.maxIntimacy)
+function var0_0.addLikability(arg0_131, arg1_131)
+	local var0_131 = Mathf.Clamp(arg0_131:getIntimacy() + arg1_131, 0, arg0_131.maxIntimacy)
 
-	arg0_130:setIntimacy(var0_130)
+	arg0_131:setIntimacy(var0_131)
 end
 
-function var0_0.setIntimacy(arg0_131, arg1_131)
-	if arg1_131 > 10000 and not arg0_131.propose then
-		arg1_131 = 10000
+function var0_0.setIntimacy(arg0_132, arg1_132)
+	if arg1_132 > 10000 and not arg0_132.propose then
+		arg1_132 = 10000
 	end
 
-	arg0_131.intimacy = arg1_131
+	arg0_132.intimacy = arg1_132
 
-	if not arg0_131:isActivityNpc() then
-		getProxy(CollectionProxy).shipGroups[arg0_131.groupId]:updateMaxIntimacy(arg0_131:getIntimacy())
+	if not arg0_132:isActivityNpc() then
+		getProxy(CollectionProxy).shipGroups[arg0_132.groupId]:updateMaxIntimacy(arg0_132:getIntimacy())
 	end
 end
 
-function var0_0.getLevelExpConfig(arg0_132, arg1_132)
-	if arg0_132:getConfig("rarity") == ShipRarity.SSR then
-		local var0_132 = Clone(getConfigFromLevel1(var6_0, arg1_132 or arg0_132.level))
+function var0_0.getLevelExpConfig(arg0_133, arg1_133)
+	if arg0_133:getConfig("rarity") == ShipRarity.SSR then
+		local var0_133 = Clone(getConfigFromLevel1(var6_0, arg1_133 or arg0_133.level))
 
-		var0_132.exp = var0_132.exp_ur
-		var0_132.exp_start = var0_132.exp_ur_start
-		var0_132.exp_interval = var0_132.exp_ur_interval
-		var0_132.exp_end = var0_132.exp_ur_end
+		var0_133.exp = var0_133.exp_ur
+		var0_133.exp_start = var0_133.exp_ur_start
+		var0_133.exp_interval = var0_133.exp_ur_interval
+		var0_133.exp_end = var0_133.exp_ur_end
 
-		return var0_132
+		return var0_133
 	else
-		return getConfigFromLevel1(var6_0, arg1_132 or arg0_132.level)
+		return getConfigFromLevel1(var6_0, arg1_133 or arg0_133.level)
 	end
 end
 
-function var0_0.getExp(arg0_133)
-	local var0_133 = arg0_133:getMaxLevel()
+function var0_0.getExp(arg0_134)
+	local var0_134 = arg0_134:getMaxLevel()
 
-	if arg0_133.level == var0_133 and LOCK_FULL_EXP then
+	if arg0_134.level == var0_134 and LOCK_FULL_EXP then
 		return 0
 	end
 
-	return arg0_133.exp
+	return arg0_134.exp
 end
 
-function var0_0.getProficiency(arg0_134)
-	return arg0_134.proficiency
+function var0_0.getProficiency(arg0_135)
+	return arg0_135.proficiency
 end
 
-function var0_0.addExp(arg0_135, arg1_135, arg2_135)
-	local var0_135 = arg0_135:getMaxLevel()
+function var0_0.addExp(arg0_136, arg1_136, arg2_136)
+	local var0_136 = arg0_136:getMaxLevel()
 
-	if arg0_135.level == var0_135 then
-		if arg0_135.exp >= pg.gameset.exp_overflow_max.key_value then
+	if arg0_136.level == var0_136 then
+		if arg0_136.exp >= pg.gameset.exp_overflow_max.key_value then
 			return
 		end
 
-		if LOCK_FULL_EXP or not arg2_135 or not arg0_135:CanAccumulateExp() then
-			arg1_135 = 0
+		if LOCK_FULL_EXP or not arg2_136 or not arg0_136:CanAccumulateExp() then
+			arg1_136 = 0
 		end
 	end
 
-	arg0_135.exp = arg0_135.exp + arg1_135
+	arg0_136.exp = arg0_136.exp + arg1_136
 
-	local var1_135 = false
+	local var1_136 = false
 
-	while arg0_135:canLevelUp() do
-		arg0_135.exp = arg0_135.exp - arg0_135:getLevelExpConfig().exp_interval
-		arg0_135.level = math.min(arg0_135.level + 1, var0_135)
-		var1_135 = true
+	while arg0_136:canLevelUp() do
+		arg0_136.exp = arg0_136.exp - arg0_136:getLevelExpConfig().exp_interval
+		arg0_136.level = math.min(arg0_136.level + 1, var0_136)
+		var1_136 = true
 	end
 
-	if arg0_135.level == var0_135 then
-		if arg2_135 and arg0_135:CanAccumulateExp() then
-			arg0_135.exp = math.min(arg0_135.exp, pg.gameset.exp_overflow_max.key_value)
-		elseif var1_135 then
-			arg0_135.exp = 0
+	if arg0_136.level == var0_136 then
+		if arg2_136 and arg0_136:CanAccumulateExp() then
+			arg0_136.exp = math.min(arg0_136.exp, pg.gameset.exp_overflow_max.key_value)
+		elseif var1_136 then
+			arg0_136.exp = 0
 		end
 	end
 end
 
-function var0_0.getMaxLevel(arg0_136)
-	return arg0_136.maxLevel
+function var0_0.getMaxLevel(arg0_137)
+	return arg0_137.maxLevel
 end
 
-function var0_0.canLevelUp(arg0_137)
-	local var0_137 = arg0_137:getLevelExpConfig(arg0_137.level + 1)
-	local var1_137 = arg0_137:getMaxLevel() <= arg0_137.level
+function var0_0.canLevelUp(arg0_138)
+	local var0_138 = arg0_138:getLevelExpConfig(arg0_138.level + 1)
+	local var1_138 = arg0_138:getMaxLevel() <= arg0_138.level
 
-	return var0_137 and arg0_137:getLevelExpConfig().exp_interval <= arg0_137.exp and not var1_137
+	return var0_138 and arg0_138:getLevelExpConfig().exp_interval <= arg0_138.exp and not var1_138
 end
 
-function var0_0.getConfigMaxLevel(arg0_138)
+function var0_0.getConfigMaxLevel(arg0_139)
 	return var6_0.all[#var6_0.all]
 end
 
-function var0_0.isConfigMaxLevel(arg0_139)
-	return arg0_139.level == arg0_139:getConfigMaxLevel()
+function var0_0.isConfigMaxLevel(arg0_140)
+	return arg0_140.level == arg0_140:getConfigMaxLevel()
 end
 
-function var0_0.updateMaxLevel(arg0_140, arg1_140)
-	local var0_140 = arg0_140:getConfigMaxLevel()
-
-	arg0_140.maxLevel = math.max(math.min(var0_140, arg1_140), arg0_140.maxLevel)
-end
-
-function var0_0.getNextMaxLevel(arg0_141)
+function var0_0.updateMaxLevel(arg0_141, arg1_141)
 	local var0_141 = arg0_141:getConfigMaxLevel()
 
-	for iter0_141 = arg0_141:getMaxLevel() + 1, var0_141 do
-		if var6_0[iter0_141].level_limit == 1 then
-			return iter0_141
+	arg0_141.maxLevel = math.max(math.min(var0_141, arg1_141), arg0_141.maxLevel)
+end
+
+function var0_0.getNextMaxLevel(arg0_142)
+	local var0_142 = arg0_142:getConfigMaxLevel()
+
+	for iter0_142 = arg0_142:getMaxLevel() + 1, var0_142 do
+		if var6_0[iter0_142].level_limit == 1 then
+			return iter0_142
 		end
 	end
 end
 
-function var0_0.canUpgrade(arg0_142)
-	if arg0_142:isBluePrintShip() then
+function var0_0.canUpgrade(arg0_143)
+	if arg0_143:isBluePrintShip() then
 		return false
 	end
 
-	if arg0_142:isMetaShip() then
-		local var0_142 = arg0_142:getMetaCharacter()
+	if arg0_143:isMetaShip() then
+		local var0_143 = arg0_143:getMetaCharacter()
 
-		if not var0_142 then
+		if not var0_143 then
 			return false
 		end
 
-		local var1_142 = var0_142:getBreakOutInfo()
+		local var1_143 = var0_143:getBreakOutInfo()
 
-		if not var1_142:hasNextInfo() then
+		if not var1_143:hasNextInfo() then
 			return false
 		end
 
-		local var2_142, var3_142 = var1_142:getLimited()
+		local var2_143, var3_143 = var1_143:getLimited()
 
-		if var2_142 > arg0_142.level then
+		if var2_143 > arg0_143.level then
 			return false
 		end
 
 		return true
 	else
-		local var4_142 = var8_0[arg0_142.configId]
+		local var4_143 = var8_0[arg0_143.configId]
 
-		assert(var4_142, "不存在配置" .. arg0_142.configId)
+		assert(var4_143, "不存在配置" .. arg0_143.configId)
 
-		return not arg0_142:isMaxStar() and arg0_142.level >= var4_142.level
+		return not arg0_143:isMaxStar() and arg0_143.level >= var4_143.level
 	end
 end
 
-function var0_0.isReachNextMaxLevel(arg0_143)
-	return arg0_143.level == arg0_143:getMaxLevel() and arg0_143:CanAccumulateExp() and arg0_143:getNextMaxLevel() ~= nil
+function var0_0.isReachNextMaxLevel(arg0_144)
+	return arg0_144.level == arg0_144:getMaxLevel() and arg0_144:CanAccumulateExp() and arg0_144:getNextMaxLevel() ~= nil
 end
 
-function var0_0.isAwakening(arg0_144)
-	return arg0_144:isReachNextMaxLevel() and arg0_144.level < var4_0
+function var0_0.isAwakening(arg0_145)
+	return arg0_145:isReachNextMaxLevel() and arg0_145.level < var4_0
 end
 
-function var0_0.isAwakening2(arg0_145)
-	return arg0_145:isReachNextMaxLevel() and arg0_145.level >= var4_0
+function var0_0.isAwakening2(arg0_146)
+	return arg0_146:isReachNextMaxLevel() and arg0_146.level >= var4_0
 end
 
-function var0_0.notMaxLevelForFilter(arg0_146)
-	return arg0_146.level ~= arg0_146:getMaxLevel()
+function var0_0.notMaxLevelForFilter(arg0_147)
+	return arg0_147.level ~= arg0_147:getMaxLevel()
 end
 
-function var0_0.getNextMaxLevelConsume(arg0_147)
-	local var0_147 = arg0_147:getMaxLevel()
-	local var1_147 = var6_0[var0_147]["need_item_rarity" .. arg0_147:getConfig("rarity")]
+function var0_0.getNextMaxLevelConsume(arg0_148)
+	local var0_148 = arg0_148:getMaxLevel()
+	local var1_148 = var6_0[var0_148]["need_item_rarity" .. arg0_148:getConfig("rarity")]
 
-	assert(var1_147, "items  can not be nil")
+	assert(var1_148, "items  can not be nil")
 
-	return _.map(var1_147, function(arg0_148)
+	return _.map(var1_148, function(arg0_149)
 		return {
-			type = arg0_148[1],
-			id = arg0_148[2],
-			count = arg0_148[3]
+			type = arg0_149[1],
+			id = arg0_149[2],
+			count = arg0_149[3]
 		}
 	end)
 end
 
-function var0_0.canUpgradeMaxLevel(arg0_149)
-	if not arg0_149:isReachNextMaxLevel() then
+function var0_0.canUpgradeMaxLevel(arg0_150)
+	if not arg0_150:isReachNextMaxLevel() then
 		return false, i18n("upgrade_to_next_maxlevel_failed")
 	else
-		local var0_149 = getProxy(PlayerProxy):getData()
-		local var1_149 = getProxy(BagProxy)
-		local var2_149 = arg0_149:getNextMaxLevelConsume()
+		local var0_150 = getProxy(PlayerProxy):getData()
+		local var1_150 = getProxy(BagProxy)
+		local var2_150 = arg0_150:getNextMaxLevelConsume()
 
-		for iter0_149, iter1_149 in pairs(var2_149) do
-			if iter1_149.type == DROP_TYPE_RESOURCE then
-				if var0_149:getResById(iter1_149.id) < iter1_149.count then
+		for iter0_150, iter1_150 in pairs(var2_150) do
+			if iter1_150.type == DROP_TYPE_RESOURCE then
+				if var0_150:getResById(iter1_150.id) < iter1_150.count then
 					return false, i18n("common_no_resource")
 				end
-			elseif iter1_149.type == DROP_TYPE_ITEM and var1_149:getItemCountById(iter1_149.id) < iter1_149.count then
+			elseif iter1_150.type == DROP_TYPE_ITEM and var1_150:getItemCountById(iter1_150.id) < iter1_150.count then
 				return false, i18n("common_no_item_1")
 			end
 		end
@@ -2081,111 +2100,91 @@ function var0_0.canUpgradeMaxLevel(arg0_149)
 	return true
 end
 
-function var0_0.CanAccumulateExp(arg0_150)
-	return pg.ship_data_template[arg0_150.configId].can_get_proficency == 1
+function var0_0.CanAccumulateExp(arg0_151)
+	return pg.ship_data_template[arg0_151.configId].can_get_proficency == 1
 end
 
-function var0_0.getTotalExp(arg0_151)
-	return arg0_151:getLevelExpConfig().exp_start + arg0_151.exp
+function var0_0.getTotalExp(arg0_152)
+	return arg0_152:getLevelExpConfig().exp_start + arg0_152.exp
 end
 
-function var0_0.getStartBattleExpend(arg0_152)
-	if table.contains(TeamType.SubShipType, arg0_152:getShipType()) then
+function var0_0.getStartBattleExpend(arg0_153)
+	if table.contains(TeamType.SubShipType, arg0_153:getShipType()) then
 		return 0
 	else
-		return pg.ship_data_template[arg0_152.configId].oil_at_start
+		return pg.ship_data_template[arg0_153.configId].oil_at_start
 	end
 end
 
-function var0_0.getEndBattleExpend(arg0_153)
-	local var0_153 = pg.ship_data_template[arg0_153.configId]
-	local var1_153 = arg0_153:getLevelExpConfig()
+function var0_0.getEndBattleExpend(arg0_154)
+	local var0_154 = pg.ship_data_template[arg0_154.configId]
+	local var1_154 = arg0_154:getLevelExpConfig()
 
-	return (math.floor(var0_153.oil_at_end * var1_153.fight_oil_ratio / 10000))
+	return (math.floor(var0_154.oil_at_end * var1_154.fight_oil_ratio / 10000))
 end
 
-function var0_0.getBattleTotalExpend(arg0_154)
-	return arg0_154:getStartBattleExpend() + arg0_154:getEndBattleExpend()
+function var0_0.getBattleTotalExpend(arg0_155)
+	return arg0_155:getStartBattleExpend() + arg0_155:getEndBattleExpend()
 end
 
-function var0_0.getShipAmmo(arg0_155)
-	local var0_155 = arg0_155:getConfig(AttributeType.Ammo)
-
-	for iter0_155, iter1_155 in pairs(arg0_155:getAllSkills()) do
-		local var1_155 = tonumber(iter0_155 .. string.format("%.2d", iter1_155.level))
-		local var2_155 = pg.skill_benefit_template[var1_155]
-
-		if var2_155 and arg0_155:IsBenefitSkillActive(var2_155) and (var2_155.type == var0_0.BENEFIT_EQUIP or var2_155.type == var0_0.BENEFIT_SKILL) then
-			var0_155 = var0_155 + defaultValue(var2_155.effect[1], 0)
-		end
-	end
-
-	local var3_155 = arg0_155:getActiveEquipments()
-
-	for iter2_155, iter3_155 in ipairs(var3_155) do
-		local var4_155 = iter3_155 and iter3_155:getConfig("equip_parameters").ammo
-
-		if var4_155 then
-			var0_155 = var0_155 + var4_155
-		end
-	end
-
-	return var0_155
-end
-
-function var0_0.getHuntingLv(arg0_156)
-	local var0_156 = arg0_156:getConfig("huntingrange_level")
+function var0_0.getShipAmmo(arg0_156)
+	local var0_156 = arg0_156:getConfig(AttributeType.Ammo)
 
 	for iter0_156, iter1_156 in pairs(arg0_156:getAllSkills()) do
 		local var1_156 = tonumber(iter0_156 .. string.format("%.2d", iter1_156.level))
 		local var2_156 = pg.skill_benefit_template[var1_156]
 
 		if var2_156 and arg0_156:IsBenefitSkillActive(var2_156) and (var2_156.type == var0_0.BENEFIT_EQUIP or var2_156.type == var0_0.BENEFIT_SKILL) then
-			var0_156 = var0_156 + defaultValue(var2_156.effect[2], 0)
+			var0_156 = var0_156 + defaultValue(var2_156.effect[1], 0)
 		end
 	end
 
 	local var3_156 = arg0_156:getActiveEquipments()
 
 	for iter2_156, iter3_156 in ipairs(var3_156) do
-		local var4_156 = iter3_156 and iter3_156:getConfig("equip_parameters").hunting_lv
+		local var4_156 = iter3_156 and iter3_156:getConfig("equip_parameters").ammo
 
 		if var4_156 then
 			var0_156 = var0_156 + var4_156
 		end
 	end
 
-	return (math.min(var0_156, arg0_156:getMaxHuntingLv()))
+	return var0_156
 end
 
-function var0_0.getMapAuras(arg0_157)
-	local var0_157 = {}
+function var0_0.getHuntingLv(arg0_157)
+	local var0_157 = arg0_157:getConfig("huntingrange_level")
 
 	for iter0_157, iter1_157 in pairs(arg0_157:getAllSkills()) do
 		local var1_157 = tonumber(iter0_157 .. string.format("%.2d", iter1_157.level))
 		local var2_157 = pg.skill_benefit_template[var1_157]
 
-		if var2_157 and arg0_157:IsBenefitSkillActive(var2_157) and var2_157.type == var0_0.BENEFIT_MAP_AURA then
-			local var3_157 = {
-				id = var2_157.effect[1],
-				level = iter1_157.level
-			}
-
-			table.insert(var0_157, var3_157)
+		if var2_157 and arg0_157:IsBenefitSkillActive(var2_157) and (var2_157.type == var0_0.BENEFIT_EQUIP or var2_157.type == var0_0.BENEFIT_SKILL) then
+			var0_157 = var0_157 + defaultValue(var2_157.effect[2], 0)
 		end
 	end
 
-	return var0_157
+	local var3_157 = arg0_157:getActiveEquipments()
+
+	for iter2_157, iter3_157 in ipairs(var3_157) do
+		local var4_157 = iter3_157 and iter3_157:getConfig("equip_parameters").hunting_lv
+
+		if var4_157 then
+			var0_157 = var0_157 + var4_157
+		end
+	end
+
+	return (math.min(var0_157, arg0_157:getMaxHuntingLv()))
 end
 
-function var0_0.getMapAids(arg0_158)
+function var0_0.getMapAuras(arg0_158)
 	local var0_158 = {}
 
 	for iter0_158, iter1_158 in pairs(arg0_158:getAllSkills()) do
 		local var1_158 = tonumber(iter0_158 .. string.format("%.2d", iter1_158.level))
 		local var2_158 = pg.skill_benefit_template[var1_158]
 
-		if var2_158 and arg0_158:IsBenefitSkillActive(var2_158) and var2_158.type == var0_0.BENEFIT_AID then
+		if var2_158 and arg0_158:IsBenefitSkillActive(var2_158) and var2_158.type == var0_0.BENEFIT_MAP_AURA then
 			local var3_158 = {
 				id = var2_158.effect[1],
 				level = iter1_158.level
@@ -2198,192 +2197,212 @@ function var0_0.getMapAids(arg0_158)
 	return var0_158
 end
 
-var0_0.BENEFIT_SKILL = 2
-var0_0.BENEFIT_EQUIP = 3
-var0_0.BENEFIT_MAP_AURA = 4
-var0_0.BENEFIT_AID = 5
+function var0_0.getMapAids(arg0_159)
+	local var0_159 = {}
 
-function var0_0.IsBenefitSkillActive(arg0_159, arg1_159)
-	local var0_159 = false
+	for iter0_159, iter1_159 in pairs(arg0_159:getAllSkills()) do
+		local var1_159 = tonumber(iter0_159 .. string.format("%.2d", iter1_159.level))
+		local var2_159 = pg.skill_benefit_template[var1_159]
 
-	if arg1_159.type == var0_0.BENEFIT_SKILL then
-		if not arg1_159.limit[1] or arg1_159.limit[1] == arg0_159.triggers.TeamNumbers then
-			var0_159 = true
+		if var2_159 and arg0_159:IsBenefitSkillActive(var2_159) and var2_159.type == var0_0.BENEFIT_AID then
+			local var3_159 = {
+				id = var2_159.effect[1],
+				level = iter1_159.level
+			}
+
+			table.insert(var0_159, var3_159)
 		end
-	elseif arg1_159.type == var0_0.BENEFIT_EQUIP then
-		local var1_159 = arg1_159.limit
-		local var2_159 = arg0_159:getAllEquipments()
-
-		for iter0_159, iter1_159 in ipairs(var2_159) do
-			if iter1_159 and table.contains(var1_159, iter1_159:getConfig("id")) then
-				var0_159 = true
-
-				break
-			end
-		end
-	elseif arg1_159.type == var0_0.BENEFIT_MAP_AURA then
-		if arg0_159.hpRant and arg0_159.hpRant > 0 then
-			return true
-		end
-	elseif arg1_159.type == var0_0.BENEFIT_AID and arg0_159.hpRant and arg0_159.hpRant > 0 then
-		return true
 	end
 
 	return var0_159
 end
 
-function var0_0.getMaxHuntingLv(arg0_160)
-	return #arg0_160:getConfig("hunting_range")
+var0_0.BENEFIT_SKILL = 2
+var0_0.BENEFIT_EQUIP = 3
+var0_0.BENEFIT_MAP_AURA = 4
+var0_0.BENEFIT_AID = 5
+
+function var0_0.IsBenefitSkillActive(arg0_160, arg1_160)
+	local var0_160 = false
+
+	if arg1_160.type == var0_0.BENEFIT_SKILL then
+		if not arg1_160.limit[1] or arg1_160.limit[1] == arg0_160.triggers.TeamNumbers then
+			var0_160 = true
+		end
+	elseif arg1_160.type == var0_0.BENEFIT_EQUIP then
+		local var1_160 = arg1_160.limit
+		local var2_160 = arg0_160:getAllEquipments()
+
+		for iter0_160, iter1_160 in ipairs(var2_160) do
+			if iter1_160 and table.contains(var1_160, iter1_160:getConfig("id")) then
+				var0_160 = true
+
+				break
+			end
+		end
+	elseif arg1_160.type == var0_0.BENEFIT_MAP_AURA then
+		if arg0_160.hpRant and arg0_160.hpRant > 0 then
+			return true
+		end
+	elseif arg1_160.type == var0_0.BENEFIT_AID and arg0_160.hpRant and arg0_160.hpRant > 0 then
+		return true
+	end
+
+	return var0_160
 end
 
-function var0_0.getHuntingRange(arg0_161, arg1_161)
-	local var0_161 = arg0_161:getConfig("hunting_range")
-	local var1_161 = Clone(var0_161[1])
-	local var2_161 = arg1_161 or arg0_161:getHuntingLv()
-	local var3_161 = math.min(var2_161, arg0_161:getMaxHuntingLv())
+function var0_0.getMaxHuntingLv(arg0_161)
+	return #arg0_161:getConfig("hunting_range")
+end
 
-	for iter0_161 = 2, var3_161 do
-		_.each(var0_161[iter0_161], function(arg0_162)
-			table.insert(var1_161, {
-				arg0_162[1],
-				arg0_162[2]
+function var0_0.getHuntingRange(arg0_162, arg1_162)
+	local var0_162 = arg0_162:getConfig("hunting_range")
+	local var1_162 = Clone(var0_162[1])
+	local var2_162 = arg1_162 or arg0_162:getHuntingLv()
+	local var3_162 = math.min(var2_162, arg0_162:getMaxHuntingLv())
+
+	for iter0_162 = 2, var3_162 do
+		_.each(var0_162[iter0_162], function(arg0_163)
+			table.insert(var1_162, {
+				arg0_163[1],
+				arg0_163[2]
 			})
 		end)
 	end
 
-	return var1_161
+	return var1_162
 end
 
-function var0_0.getTriggerSkills(arg0_163)
-	local var0_163 = {}
-	local var1_163 = arg0_163:getSkillEffects()
+function var0_0.getTriggerSkills(arg0_164)
+	local var0_164 = {}
+	local var1_164 = arg0_164:getSkillEffects()
 
-	_.each(var1_163, function(arg0_164)
-		if arg0_164.type == "AddBuff" and arg0_164.arg_list and arg0_164.arg_list.buff_id then
-			local var0_164 = arg0_164.arg_list.buff_id
+	_.each(var1_164, function(arg0_165)
+		if arg0_165.type == "AddBuff" and arg0_165.arg_list and arg0_165.arg_list.buff_id then
+			local var0_165 = arg0_165.arg_list.buff_id
 
-			var0_163[var0_164] = {
-				id = var0_164,
-				level = arg0_164.level
+			var0_164[var0_165] = {
+				id = var0_165,
+				level = arg0_165.level
 			}
 		end
 	end)
 
-	return var0_163
+	return var0_164
 end
 
-function var0_0.GetEquipmentSkills(arg0_165)
-	local var0_165 = {}
-	local var1_165 = arg0_165:getActiveEquipments()
+function var0_0.GetEquipmentSkills(arg0_166)
+	local var0_166 = {}
+	local var1_166 = arg0_166:getActiveEquipments()
 
-	for iter0_165, iter1_165 in ipairs(var1_165) do
-		if iter1_165 and iter1_165:getConfig("skill_id")[1] then
-			local var2_165, var3_165 = unpack(iter1_165:getConfig("skill_id")[1])
+	for iter0_166, iter1_166 in ipairs(var1_166) do
+		if iter1_166 and iter1_166:getConfig("skill_id")[1] then
+			local var2_166, var3_166 = unpack(iter1_166:getConfig("skill_id")[1])
 
-			var0_165[var2_165] = {
-				id = var2_165,
-				level = var3_165
+			var0_166[var2_166] = {
+				id = var2_166,
+				level = var3_166
 			}
 		end
 	end
 
 	;(function()
-		local var0_166 = arg0_165:GetSpWeapon()
-		local var1_166 = var0_166 and var0_166:GetEffect() or 0
+		local var0_167 = arg0_166:GetSpWeapon()
+		local var1_167 = var0_167 and var0_167:GetEffect() or 0
 
-		if var1_166 > 0 then
-			var0_165[var1_166] = {
+		if var1_167 > 0 then
+			var0_166[var1_167] = {
 				level = 1,
-				id = var1_166
+				id = var1_167
 			}
 		end
 	end)()
 
-	return var0_165
+	return var0_166
 end
 
-function var0_0.getAllSkills(arg0_167)
-	local var0_167 = Clone(arg0_167.skills)
+function var0_0.getAllSkills(arg0_168)
+	local var0_168 = Clone(arg0_168.skills)
 
-	for iter0_167, iter1_167 in pairs(arg0_167:GetEquipmentSkills()) do
-		var0_167[iter0_167] = iter1_167
+	for iter0_168, iter1_168 in pairs(arg0_168:GetEquipmentSkills()) do
+		var0_168[iter0_168] = iter1_168
 	end
 
-	for iter2_167, iter3_167 in pairs(arg0_167:getTriggerSkills()) do
-		var0_167[iter2_167] = iter3_167
+	for iter2_168, iter3_168 in pairs(arg0_168:getTriggerSkills()) do
+		var0_168[iter2_168] = iter3_168
 	end
 
-	return var0_167
+	return var0_168
 end
 
-function var0_0.isSameKind(arg0_168, arg1_168)
-	return pg.ship_data_template[arg0_168.configId].group_type == pg.ship_data_template[arg1_168.configId].group_type
+function var0_0.isSameKind(arg0_169, arg1_169)
+	return pg.ship_data_template[arg0_169.configId].group_type == pg.ship_data_template[arg1_169.configId].group_type
 end
 
-function var0_0.GetLockState(arg0_169)
-	return arg0_169.lockState
+function var0_0.GetLockState(arg0_170)
+	return arg0_170.lockState
 end
 
-function var0_0.IsLocked(arg0_170)
-	return arg0_170.lockState == var0_0.LOCK_STATE_LOCK
+function var0_0.IsLocked(arg0_171)
+	return arg0_171.lockState == var0_0.LOCK_STATE_LOCK
 end
 
-function var0_0.SetLockState(arg0_171, arg1_171)
-	arg0_171.lockState = arg1_171
+function var0_0.SetLockState(arg0_172, arg1_172)
+	arg0_172.lockState = arg1_172
 end
 
-function var0_0.GetPreferenceTag(arg0_172)
-	return arg0_172.preferenceTag or 0
+function var0_0.GetPreferenceTag(arg0_173)
+	return arg0_173.preferenceTag or 0
 end
 
-function var0_0.IsPreferenceTag(arg0_173)
-	return arg0_173:GetPreferenceTag() == var0_0.PREFERENCE_TAG_COMMON
+function var0_0.IsPreferenceTag(arg0_174)
+	return arg0_174:GetPreferenceTag() == var0_0.PREFERENCE_TAG_COMMON
 end
 
-function var0_0.SetPreferenceTag(arg0_174, arg1_174)
-	arg0_174.preferenceTag = arg1_174
+function var0_0.SetPreferenceTag(arg0_175, arg1_175)
+	arg0_175.preferenceTag = arg1_175
 end
 
-function var0_0.calReturnRes(arg0_175)
-	local var0_175 = pg.ship_data_by_type[arg0_175:getShipType()]
-	local var1_175 = var0_175.distory_resource_gold_ratio
-	local var2_175 = var0_175.distory_resource_oil_ratio
-	local var3_175 = pg.ship_data_by_star[arg0_175:getConfig("rarity")].destory_item
+function var0_0.calReturnRes(arg0_176)
+	local var0_176 = pg.ship_data_by_type[arg0_176:getShipType()]
+	local var1_176 = var0_176.distory_resource_gold_ratio
+	local var2_176 = var0_176.distory_resource_oil_ratio
+	local var3_176 = pg.ship_data_by_star[arg0_176:getConfig("rarity")].destory_item
 
-	return var1_175, 0, var3_175
+	return var1_176, 0, var3_176
 end
 
-function var0_0.getRarity(arg0_176)
-	local var0_176 = arg0_176:getConfig("rarity")
+function var0_0.getRarity(arg0_177)
+	local var0_177 = arg0_177:getConfig("rarity")
 
-	if arg0_176:isRemoulded() then
-		var0_176 = var0_176 + 1
+	if arg0_177:isRemoulded() then
+		var0_177 = var0_177 + 1
 	end
 
-	return var0_176
+	return var0_177
 end
 
-function var0_0.updateSkill(arg0_177, arg1_177)
-	local var0_177 = arg1_177.skill_id or arg1_177.id
-	local var1_177 = arg1_177.skill_lv or arg1_177.lv or arg1_177.level
-	local var2_177 = arg1_177.skill_exp or arg1_177.exp
+function var0_0.updateSkill(arg0_178, arg1_178)
+	local var0_178 = arg1_178.skill_id or arg1_178.id
+	local var1_178 = arg1_178.skill_lv or arg1_178.lv or arg1_178.level
+	local var2_178 = arg1_178.skill_exp or arg1_178.exp
 
-	arg0_177.skills[var0_177] = {
-		id = var0_177,
-		level = var1_177,
-		exp = var2_177
+	arg0_178.skills[var0_178] = {
+		id = var0_178,
+		level = var1_178,
+		exp = var2_178
 	}
 end
 
-function var0_0.canEquipAtPos(arg0_178, arg1_178, arg2_178)
-	local var0_178, var1_178 = arg0_178:isForbiddenAtPos(arg1_178, arg2_178)
+function var0_0.canEquipAtPos(arg0_179, arg1_179, arg2_179)
+	local var0_179, var1_179 = arg0_179:isForbiddenAtPos(arg1_179, arg2_179)
 
-	if var0_178 then
-		return false, var1_178
+	if var0_179 then
+		return false, var1_179
 	end
 
-	for iter0_178, iter1_178 in ipairs(arg0_178.equipments) do
-		if iter1_178 and iter0_178 ~= arg2_178 and iter1_178:getConfig("equip_limit") ~= 0 and arg1_178:getConfig("equip_limit") == iter1_178:getConfig("equip_limit") then
+	for iter0_179, iter1_179 in ipairs(arg0_179.equipments) do
+		if iter1_179 and iter0_179 ~= arg2_179 and iter1_179:getConfig("equip_limit") ~= 0 and arg1_179:getConfig("equip_limit") == iter1_179:getConfig("equip_limit") then
 			return false, i18n("ship_equip_same_group_equipment")
 		end
 	end
@@ -2391,204 +2410,204 @@ function var0_0.canEquipAtPos(arg0_178, arg1_178, arg2_178)
 	return true
 end
 
-function var0_0.isForbiddenAtPos(arg0_179, arg1_179, arg2_179)
-	local var0_179 = pg.ship_data_template[arg0_179.configId]
+function var0_0.isForbiddenAtPos(arg0_180, arg1_180, arg2_180)
+	local var0_180 = pg.ship_data_template[arg0_180.configId]
 
-	assert(var0_179, "can not find ship in ship_data_templtae: " .. arg0_179.configId)
+	assert(var0_180, "can not find ship in ship_data_templtae: " .. arg0_180.configId)
 
-	local var1_179 = var0_179["equip_" .. arg2_179]
+	local var1_180 = var0_180["equip_" .. arg2_180]
 
-	if not table.contains(var1_179, arg1_179:getConfig("type")) then
+	if not table.contains(var1_180, arg1_180:getConfig("type")) then
 		return true, i18n("common_limit_equip")
 	end
 
-	if table.contains(arg1_179:getConfig("ship_type_forbidden"), arg0_179:getShipType()) then
+	if table.contains(arg1_180:getConfig("ship_type_forbidden"), arg0_180:getShipType()) then
 		return true, i18n("common_limit_equip")
 	end
 
 	return false
 end
 
-function var0_0.canEquipCommander(arg0_180, arg1_180)
-	if arg1_180:getShipType() ~= arg0_180:getShipType() then
+function var0_0.canEquipCommander(arg0_181, arg1_181)
+	if arg1_181:getShipType() ~= arg0_181:getShipType() then
 		return false, i18n("commander_type_unmatch")
 	end
 
 	return true
 end
 
-function var0_0.upgrade(arg0_181)
-	local var0_181 = pg.ship_data_transform[arg0_181.configId]
+function var0_0.upgrade(arg0_182)
+	local var0_182 = pg.ship_data_transform[arg0_182.configId]
 
-	if var0_181.trans_id and var0_181.trans_id > 0 then
-		arg0_181.configId = var0_181.trans_id
-		arg0_181.star = arg0_181:getConfig("star")
+	if var0_182.trans_id and var0_182.trans_id > 0 then
+		arg0_182.configId = var0_182.trans_id
+		arg0_182.star = arg0_182:getConfig("star")
 	end
 end
 
-function var0_0.getTeamType(arg0_182)
-	return TeamType.GetTeamFromShipType(arg0_182:getShipType())
+function var0_0.getTeamType(arg0_183)
+	return TeamType.GetTeamFromShipType(arg0_183:getShipType())
 end
 
-function var0_0.getFleetName(arg0_183)
-	local var0_183 = arg0_183:getTeamType()
+function var0_0.getFleetName(arg0_184)
+	local var0_184 = arg0_184:getTeamType()
 
-	return var1_0[var0_183]
+	return var1_0[var0_184]
 end
 
-function var0_0.getMaxConfigId(arg0_184)
-	local var0_184 = pg.ship_data_template
-	local var1_184
+function var0_0.getMaxConfigId(arg0_185)
+	local var0_185 = pg.ship_data_template
+	local var1_185
 
-	for iter0_184 = 4, 1, -1 do
-		local var2_184 = tonumber(arg0_184.groupId .. iter0_184)
+	for iter0_185 = 4, 1, -1 do
+		local var2_185 = tonumber(arg0_185.groupId .. iter0_185)
 
-		if var0_184[var2_184] then
-			var1_184 = var2_184
+		if var0_185[var2_185] then
+			var1_185 = var2_185
 
 			break
 		end
 	end
 
-	return var1_184
+	return var1_185
 end
 
-function var0_0.getFlag(arg0_185, arg1_185, arg2_185)
-	return pg.ShipFlagMgr.GetInstance():GetShipFlag(arg0_185.id, arg1_185, arg2_185)
+function var0_0.getFlag(arg0_186, arg1_186, arg2_186)
+	return pg.ShipFlagMgr.GetInstance():GetShipFlag(arg0_186.id, arg1_186, arg2_186)
 end
 
-function var0_0.hasAnyFlag(arg0_186, arg1_186)
-	return _.any(arg1_186, function(arg0_187)
-		return arg0_186:getFlag(arg0_187)
+function var0_0.hasAnyFlag(arg0_187, arg1_187)
+	return _.any(arg1_187, function(arg0_188)
+		return arg0_187:getFlag(arg0_188)
 	end)
 end
 
-function var0_0.isBreakOut(arg0_188)
-	return arg0_188.configId % 10 > 1
+function var0_0.isBreakOut(arg0_189)
+	return arg0_189.configId % 10 > 1
 end
 
-function var0_0.fateSkillChange(arg0_189, arg1_189)
-	if not arg0_189.skillChangeList then
-		arg0_189.skillChangeList = arg0_189:isBluePrintShip() and arg0_189:getBluePrint():getChangeSkillList() or {}
+function var0_0.fateSkillChange(arg0_190, arg1_190)
+	if not arg0_190.skillChangeList then
+		arg0_190.skillChangeList = arg0_190:isBluePrintShip() and arg0_190:getBluePrint():getChangeSkillList() or {}
 	end
 
-	for iter0_189, iter1_189 in ipairs(arg0_189.skillChangeList) do
-		if iter1_189[1] == arg1_189 and arg0_189.skills[iter1_189[2]] then
-			return iter1_189[2]
-		end
-	end
-
-	return arg1_189
-end
-
-function var0_0.RemapSkillId(arg0_190, arg1_190)
-	local var0_190 = arg0_190:GetSpWeapon()
-
-	if var0_190 then
-		if table.contains(pg.ship_data_template[arg0_190.configId].hide_buff_list, arg1_190) then
-			return var0_190:RemapHiddenSkillId(arg1_190)
-		else
-			return var0_190:RemapSkillId(arg1_190)
+	for iter0_190, iter1_190 in ipairs(arg0_190.skillChangeList) do
+		if iter1_190[1] == arg1_190 and arg0_190.skills[iter1_190[2]] then
+			return iter1_190[2]
 		end
 	end
 
 	return arg1_190
 end
 
-function var0_0.getSkillList(arg0_191)
-	local var0_191 = pg.ship_data_template[arg0_191.configId]
-	local var1_191 = Clone(var0_191.buff_list_display)
-	local var2_191 = Clone(var0_191.buff_list)
-	local var3_191 = pg.ship_data_trans[arg0_191.groupId]
-	local var4_191 = 0
+function var0_0.RemapSkillId(arg0_191, arg1_191)
+	local var0_191 = arg0_191:GetSpWeapon()
 
-	if var3_191 and var3_191.skill_id ~= 0 then
-		local var5_191 = var3_191.skill_id
-		local var6_191 = pg.transform_data_template[var5_191]
-
-		if arg0_191.transforms[var5_191] and var6_191.skill_id ~= 0 then
-			table.insert(var2_191, var6_191.skill_id)
+	if var0_191 then
+		if table.contains(pg.ship_data_template[arg0_191.configId].hide_buff_list, arg1_191) then
+			return var0_191:RemapHiddenSkillId(arg1_191)
+		else
+			return var0_191:RemapSkillId(arg1_191)
 		end
 	end
 
-	local var7_191 = {}
+	return arg1_191
+end
 
-	for iter0_191, iter1_191 in ipairs(var1_191) do
-		for iter2_191, iter3_191 in ipairs(var2_191) do
-			if iter1_191 == iter3_191 then
-				table.insert(var7_191, arg0_191:fateSkillChange(iter1_191))
+function var0_0.getSkillList(arg0_192)
+	local var0_192 = pg.ship_data_template[arg0_192.configId]
+	local var1_192 = Clone(var0_192.buff_list_display)
+	local var2_192 = Clone(var0_192.buff_list)
+	local var3_192 = pg.ship_data_trans[arg0_192.groupId]
+	local var4_192 = 0
+
+	if var3_192 and var3_192.skill_id ~= 0 then
+		local var5_192 = var3_192.skill_id
+		local var6_192 = pg.transform_data_template[var5_192]
+
+		if arg0_192.transforms[var5_192] and var6_192.skill_id ~= 0 then
+			table.insert(var2_192, var6_192.skill_id)
+		end
+	end
+
+	local var7_192 = {}
+
+	for iter0_192, iter1_192 in ipairs(var1_192) do
+		for iter2_192, iter3_192 in ipairs(var2_192) do
+			if iter1_192 == iter3_192 then
+				table.insert(var7_192, arg0_192:fateSkillChange(iter1_192))
 			end
 		end
 	end
 
-	return var7_191
+	return var7_192
 end
 
-function var0_0.getModAttrTopLimit(arg0_192, arg1_192)
-	local var0_192 = ShipModAttr.ATTR_TO_INDEX[arg1_192]
-	local var1_192 = pg.ship_data_template[arg0_192.configId].strengthen_id
-	local var2_192 = pg.ship_data_strengthen[var1_192].durability[var0_192]
+function var0_0.getModAttrTopLimit(arg0_193, arg1_193)
+	local var0_193 = ShipModAttr.ATTR_TO_INDEX[arg1_193]
+	local var1_193 = pg.ship_data_template[arg0_193.configId].strengthen_id
+	local var2_193 = pg.ship_data_strengthen[var1_193].durability[var0_193]
 
-	return calcFloor((3 + 7 * (math.min(arg0_192.level, 100) / 100)) * var2_192 * 0.1)
+	return calcFloor((3 + 7 * (math.min(arg0_193.level, 100) / 100)) * var2_193 * 0.1)
 end
 
-function var0_0.leftModAdditionPoint(arg0_193, arg1_193)
-	local var0_193 = arg0_193:getModProperties(arg1_193)
-	local var1_193 = arg0_193:getModExpRatio(arg1_193)
-	local var2_193 = arg0_193:getModAttrTopLimit(arg1_193)
-	local var3_193 = calcFloor(var0_193 / var1_193)
+function var0_0.leftModAdditionPoint(arg0_194, arg1_194)
+	local var0_194 = arg0_194:getModProperties(arg1_194)
+	local var1_194 = arg0_194:getModExpRatio(arg1_194)
+	local var2_194 = arg0_194:getModAttrTopLimit(arg1_194)
+	local var3_194 = calcFloor(var0_194 / var1_194)
 
-	return math.max(0, var2_193 - var3_193)
+	return math.max(0, var2_194 - var3_194)
 end
 
-function var0_0.getModAttrBaseMax(arg0_194, arg1_194)
-	if not table.contains(arg0_194:getConfig("lock"), arg1_194) then
-		local var0_194 = arg0_194:leftModAdditionPoint(arg1_194)
-		local var1_194 = arg0_194:getShipProperties()
+function var0_0.getModAttrBaseMax(arg0_195, arg1_195)
+	if not table.contains(arg0_195:getConfig("lock"), arg1_195) then
+		local var0_195 = arg0_195:leftModAdditionPoint(arg1_195)
+		local var1_195 = arg0_195:getShipProperties()
 
-		return calcFloor(var1_194[arg1_194] + var0_194)
+		return calcFloor(var1_195[arg1_195] + var0_195)
 	else
 		return 0
 	end
 end
 
-function var0_0.getModExpRatio(arg0_195, arg1_195)
-	if not table.contains(arg0_195:getConfig("lock"), arg1_195) then
-		local var0_195 = pg.ship_data_template[arg0_195.configId].strengthen_id
+function var0_0.getModExpRatio(arg0_196, arg1_196)
+	if not table.contains(arg0_196:getConfig("lock"), arg1_196) then
+		local var0_196 = pg.ship_data_template[arg0_196.configId].strengthen_id
 
-		assert(pg.ship_data_strengthen[var0_195], "ship_data_strengthen>>>>>>" .. var0_195)
+		assert(pg.ship_data_strengthen[var0_196], "ship_data_strengthen>>>>>>" .. var0_196)
 
-		return math.max(pg.ship_data_strengthen[var0_195].level_exp[ShipModAttr.ATTR_TO_INDEX[arg1_195]], 1)
+		return math.max(pg.ship_data_strengthen[var0_196].level_exp[ShipModAttr.ATTR_TO_INDEX[arg1_196]], 1)
 	else
 		return 1
 	end
 end
 
-function var0_0.inUnlockTip(arg0_196)
-	local var0_196 = pg.gameset.tip_unlock_shipIds.description[0]
+function var0_0.inUnlockTip(arg0_197)
+	local var0_197 = pg.gameset.tip_unlock_shipIds.description[0]
 
-	return table.contains(var0_196, arg0_196)
+	return table.contains(var0_197, arg0_197)
 end
 
-function var0_0.proposeSkinOwned(arg0_197, arg1_197)
-	return arg1_197 and arg0_197.propose and arg1_197.skin_type == ShipSkin.SKIN_TYPE_PROPOSE
+function var0_0.proposeSkinOwned(arg0_198, arg1_198)
+	return arg1_198 and arg0_198.propose and arg1_198.skin_type == ShipSkin.SKIN_TYPE_PROPOSE
 end
 
-function var0_0.getProposeSkin(arg0_198)
-	return ShipSkin.GetSkinByType(arg0_198.groupId, ShipSkin.SKIN_TYPE_PROPOSE)
+function var0_0.getProposeSkin(arg0_199)
+	return ShipSkin.GetSkinByType(arg0_199.groupId, ShipSkin.SKIN_TYPE_PROPOSE)
 end
 
-function var0_0.getDisplaySkillIds(arg0_199)
-	return _.map(pg.ship_data_template[arg0_199.configId].buff_list_display, function(arg0_200)
-		return arg0_199:fateSkillChange(arg0_200)
+function var0_0.getDisplaySkillIds(arg0_200)
+	return _.map(pg.ship_data_template[arg0_200.configId].buff_list_display, function(arg0_201)
+		return arg0_200:fateSkillChange(arg0_201)
 	end)
 end
 
-function var0_0.isFullSkillLevel(arg0_201)
-	local var0_201 = pg.skill_data_template
+function var0_0.isFullSkillLevel(arg0_202)
+	local var0_202 = pg.skill_data_template
 
-	for iter0_201, iter1_201 in pairs(arg0_201.skills) do
-		if var0_201[iter1_201.id].max_level ~= iter1_201.level then
+	for iter0_202, iter1_202 in pairs(arg0_202.skills) do
+		if var0_202[iter1_202.id].max_level ~= iter1_202.level then
 			return false
 		end
 	end
@@ -2596,75 +2615,75 @@ function var0_0.isFullSkillLevel(arg0_201)
 	return true
 end
 
-function var0_0.setEquipmentRecord(arg0_202, arg1_202, arg2_202)
-	local var0_202 = "equipment_record" .. "_" .. arg1_202 .. "_" .. arg0_202.id
+function var0_0.setEquipmentRecord(arg0_203, arg1_203, arg2_203)
+	local var0_203 = "equipment_record" .. "_" .. arg1_203 .. "_" .. arg0_203.id
 
-	PlayerPrefs.SetString(var0_202, table.concat(_.flatten(arg2_202), ":"))
+	PlayerPrefs.SetString(var0_203, table.concat(_.flatten(arg2_203), ":"))
 	PlayerPrefs.Save()
 end
 
-function var0_0.getEquipmentRecord(arg0_203, arg1_203)
-	if not arg0_203.equipmentRecords then
-		local var0_203 = "equipment_record" .. "_" .. arg1_203 .. "_" .. arg0_203.id
-		local var1_203 = string.split(PlayerPrefs.GetString(var0_203) or "", ":")
-		local var2_203 = {}
+function var0_0.getEquipmentRecord(arg0_204, arg1_204)
+	if not arg0_204.equipmentRecords then
+		local var0_204 = "equipment_record" .. "_" .. arg1_204 .. "_" .. arg0_204.id
+		local var1_204 = string.split(PlayerPrefs.GetString(var0_204) or "", ":")
+		local var2_204 = {}
 
-		for iter0_203 = 1, 3 do
-			var2_203[iter0_203] = _.map(_.slice(var1_203, 5 * iter0_203 - 4, 5), function(arg0_204)
-				return tonumber(arg0_204)
+		for iter0_204 = 1, 3 do
+			var2_204[iter0_204] = _.map(_.slice(var1_204, 5 * iter0_204 - 4, 5), function(arg0_205)
+				return tonumber(arg0_205)
 			end)
 		end
 
-		arg0_203.equipmentRecords = var2_203
+		arg0_204.equipmentRecords = var2_204
 	end
 
-	return arg0_203.equipmentRecords
+	return arg0_204.equipmentRecords
 end
 
-function var0_0.SetSpWeaponRecord(arg0_205, arg1_205, arg2_205)
-	local var0_205 = "spweapon_record" .. "_" .. arg1_205 .. "_" .. arg0_205.id
-	local var1_205 = _.map({
+function var0_0.SetSpWeaponRecord(arg0_206, arg1_206, arg2_206)
+	local var0_206 = "spweapon_record" .. "_" .. arg1_206 .. "_" .. arg0_206.id
+	local var1_206 = _.map({
 		1,
 		2,
 		3
-	}, function(arg0_206)
-		local var0_206 = arg2_205[arg0_206]
+	}, function(arg0_207)
+		local var0_207 = arg2_206[arg0_207]
 
-		if var0_206 then
-			return (var0_206:GetUID() or 0) .. "," .. var0_206:GetConfigID()
+		if var0_207 then
+			return (var0_207:GetUID() or 0) .. "," .. var0_207:GetConfigID()
 		else
 			return "0,0"
 		end
 	end)
 
-	PlayerPrefs.SetString(var0_205, table.concat(var1_205, ":"))
+	PlayerPrefs.SetString(var0_206, table.concat(var1_206, ":"))
 	PlayerPrefs.Save()
 end
 
-function var0_0.GetSpWeaponRecord(arg0_207, arg1_207)
-	local var0_207 = "spweapon_record" .. "_" .. arg1_207 .. "_" .. arg0_207.id
+function var0_0.GetSpWeaponRecord(arg0_208, arg1_208)
+	local var0_208 = "spweapon_record" .. "_" .. arg1_208 .. "_" .. arg0_208.id
 
-	return (_.map(string.split(PlayerPrefs.GetString(var0_207, ""), ":"), function(arg0_208)
-		local var0_208 = string.split(arg0_208, ",")
+	return (_.map(string.split(PlayerPrefs.GetString(var0_208, ""), ":"), function(arg0_209)
+		local var0_209 = string.split(arg0_209, ",")
 
-		assert(var0_208)
+		assert(var0_209)
 
-		local var1_208 = tonumber(var0_208[1])
-		local var2_208 = tonumber(var0_208[2])
+		local var1_209 = tonumber(var0_209[1])
+		local var2_209 = tonumber(var0_209[2])
 
-		if not var2_208 or var2_208 == 0 then
+		if not var2_209 or var2_209 == 0 then
 			return false
 		end
 
 		return (SpWeapon.New({
-			id = var2_208
+			id = var2_209
 		}))
 	end))
 end
 
-function var0_0.hasEquipEquipmentSkin(arg0_209)
-	for iter0_209, iter1_209 in ipairs(arg0_209.equipments) do
-		if iter1_209 and iter1_209:hasSkin() then
+function var0_0.hasEquipEquipmentSkin(arg0_210)
+	for iter0_210, iter1_210 in ipairs(arg0_210.equipments) do
+		if iter1_210 and iter1_210:hasSkin() then
 			return true
 		end
 	end
@@ -2672,53 +2691,53 @@ function var0_0.hasEquipEquipmentSkin(arg0_209)
 	return false
 end
 
-function var0_0.hasCommander(arg0_210)
-	return arg0_210.commanderId and arg0_210.commanderId ~= 0
+function var0_0.hasCommander(arg0_211)
+	return arg0_211.commanderId and arg0_211.commanderId ~= 0
 end
 
-function var0_0.getCommander(arg0_211)
-	return arg0_211.commanderId
+function var0_0.getCommander(arg0_212)
+	return arg0_212.commanderId
 end
 
-function var0_0.setCommander(arg0_212, arg1_212)
-	arg0_212.commanderId = arg1_212
+function var0_0.setCommander(arg0_213, arg1_213)
+	arg0_213.commanderId = arg1_213
 end
 
-function var0_0.getSkillIndex(arg0_213, arg1_213)
-	local var0_213 = arg0_213:getSkillList()
+function var0_0.getSkillIndex(arg0_214, arg1_214)
+	local var0_214 = arg0_214:getSkillList()
 
-	for iter0_213, iter1_213 in ipairs(var0_213) do
-		if arg1_213 == iter1_213 then
-			return iter0_213
+	for iter0_214, iter1_214 in ipairs(var0_214) do
+		if arg1_214 == iter1_214 then
+			return iter0_214
 		end
 	end
 end
 
-function var0_0.getTactics(arg0_214)
+function var0_0.getTactics(arg0_215)
 	return 1, "tactics_attack"
 end
 
-function var0_0.IsBgmSkin(arg0_215)
-	local var0_215 = arg0_215:GetSkinConfig()
+function var0_0.IsBgmSkin(arg0_216)
+	local var0_216 = arg0_216:GetSkinConfig()
 
-	return table.contains(var0_215.tag, ShipSkin.WITH_BGM)
+	return table.contains(var0_216.tag, ShipSkin.WITH_BGM)
 end
 
-function var0_0.GetSkinBgm(arg0_216)
-	if arg0_216:IsBgmSkin() then
-		return arg0_216:GetSkinConfig().bgm
+function var0_0.GetSkinBgm(arg0_217)
+	if arg0_217:IsBgmSkin() then
+		return arg0_217:GetSkinConfig().bgm
 	end
 end
 
-function var0_0.isIntensifyMax(arg0_217)
-	local var0_217 = intProperties(arg0_217:getShipProperties())
+function var0_0.isIntensifyMax(arg0_218)
+	local var0_218 = intProperties(arg0_218:getShipProperties())
 
-	if arg0_217:isBluePrintShip() then
+	if arg0_218:isBluePrintShip() then
 		return true
 	end
 
-	for iter0_217, iter1_217 in pairs(ShipModAttr.ID_TO_ATTR) do
-		if arg0_217:getModAttrBaseMax(iter1_217) ~= var0_217[iter1_217] then
+	for iter0_218, iter1_218 in pairs(ShipModAttr.ID_TO_ATTR) do
+		if arg0_218:getModAttrBaseMax(iter1_218) ~= var0_218[iter1_218] then
 			return false
 		end
 	end
@@ -2726,22 +2745,22 @@ function var0_0.isIntensifyMax(arg0_217)
 	return true
 end
 
-function var0_0.isRemouldable(arg0_218)
-	return not arg0_218:isTestShip() and not arg0_218:isBluePrintShip() and pg.ship_data_trans[arg0_218.groupId]
+function var0_0.isRemouldable(arg0_219)
+	return not arg0_219:isTestShip() and not arg0_219:isBluePrintShip() and pg.ship_data_trans[arg0_219.groupId]
 end
 
-function var0_0.isAllRemouldFinish(arg0_219)
-	local var0_219 = pg.ship_data_trans[arg0_219.groupId]
+function var0_0.isAllRemouldFinish(arg0_220)
+	local var0_220 = pg.ship_data_trans[arg0_220.groupId]
 
-	assert(var0_219, "this ship group without remould config:" .. arg0_219.groupId)
+	assert(var0_220, "this ship group without remould config:" .. arg0_220.groupId)
 
-	for iter0_219, iter1_219 in ipairs(var0_219.transform_list) do
-		for iter2_219, iter3_219 in ipairs(iter1_219) do
-			local var1_219 = pg.transform_data_template[iter3_219[2]]
+	for iter0_220, iter1_220 in ipairs(var0_220.transform_list) do
+		for iter2_220, iter3_220 in ipairs(iter1_220) do
+			local var1_220 = pg.transform_data_template[iter3_220[2]]
 
-			if #var1_219.edit_trans > 0 then
+			if #var1_220.edit_trans > 0 then
 				-- block empty
-			elseif not arg0_219.transforms[iter3_219[2]] or arg0_219.transforms[iter3_219[2]].level < var1_219.max_level then
+			elseif not arg0_220.transforms[iter3_220[2]] or arg0_220.transforms[iter3_220[2]].level < var1_220.max_level then
 				return false
 			end
 		end
@@ -2750,13 +2769,13 @@ function var0_0.isAllRemouldFinish(arg0_219)
 	return true
 end
 
-function var0_0.isSpecialFilter(arg0_220)
-	local var0_220 = pg.ship_data_statistics[arg0_220.configId]
+function var0_0.isSpecialFilter(arg0_221)
+	local var0_221 = pg.ship_data_statistics[arg0_221.configId]
 
-	assert(var0_220, "this ship without statistics:" .. arg0_220.configId)
+	assert(var0_221, "this ship without statistics:" .. arg0_221.configId)
 
-	for iter0_220, iter1_220 in ipairs(var0_220.tag_list) do
-		if iter1_220 == "special" then
+	for iter0_221, iter1_221 in ipairs(var0_221.tag_list) do
+		if iter1_221 == "special" then
 			return true
 		end
 	end
@@ -2764,35 +2783,35 @@ function var0_0.isSpecialFilter(arg0_220)
 	return false
 end
 
-function var0_0.hasAvailiableSkin(arg0_221)
-	local var0_221 = getProxy(ShipSkinProxy)
-	local var1_221 = var0_221:GetAllSkinForShip(arg0_221)
-	local var2_221 = var0_221:getRawData()
-	local var3_221 = 0
-
-	for iter0_221, iter1_221 in ipairs(var1_221) do
-		if arg0_221:proposeSkinOwned(iter1_221) or var2_221[iter1_221.id] or var0_221:hasSkin(iter1_221.id) then
-			var3_221 = var3_221 + 1
-		end
-	end
-
-	return var3_221 > 0
-end
-
-function var0_0.hasProposeSkin(arg0_222)
+function var0_0.hasAvailiableSkin(arg0_222)
 	local var0_222 = getProxy(ShipSkinProxy)
 	local var1_222 = var0_222:GetAllSkinForShip(arg0_222)
+	local var2_222 = var0_222:getRawData()
+	local var3_222 = 0
 
 	for iter0_222, iter1_222 in ipairs(var1_222) do
-		if iter1_222.skin_type == ShipSkin.SKIN_TYPE_PROPOSE then
+		if arg0_222:proposeSkinOwned(iter1_222) or var2_222[iter1_222.id] or var0_222:hasSkin(iter1_222.id) then
+			var3_222 = var3_222 + 1
+		end
+	end
+
+	return var3_222 > 0
+end
+
+function var0_0.hasProposeSkin(arg0_223)
+	local var0_223 = getProxy(ShipSkinProxy)
+	local var1_223 = var0_223:GetAllSkinForShip(arg0_223)
+
+	for iter0_223, iter1_223 in ipairs(var1_223) do
+		if iter1_223.skin_type == ShipSkin.SKIN_TYPE_PROPOSE then
 			return true
 		end
 	end
 
-	local var2_222 = var0_222:GetShareSkinsForShip(arg0_222)
+	local var2_223 = var0_223:GetShareSkinsForShip(arg0_223)
 
-	for iter2_222, iter3_222 in ipairs(var2_222) do
-		if iter3_222.skin_type == ShipSkin.SKIN_TYPE_PROPOSE then
+	for iter2_223, iter3_223 in ipairs(var2_223) do
+		if iter3_223.skin_type == ShipSkin.SKIN_TYPE_PROPOSE then
 			return true
 		end
 	end
@@ -2800,199 +2819,199 @@ function var0_0.hasProposeSkin(arg0_222)
 	return false
 end
 
-function var0_0.HasUniqueSpWeapon(arg0_223)
-	return tobool(pg.spweapon_data_statistics.get_id_list_by_unique[arg0_223:getGroupId()])
+function var0_0.HasUniqueSpWeapon(arg0_224)
+	return tobool(pg.spweapon_data_statistics.get_id_list_by_unique[arg0_224:getGroupId()])
 end
 
-function var0_0.getAircraftReloadCD(arg0_224)
-	local var0_224 = arg0_224:getConfigTable().base_list
-	local var1_224 = arg0_224:getConfigTable().default_equip_list
-	local var2_224 = 0
-	local var3_224 = 0
+function var0_0.getAircraftReloadCD(arg0_225)
+	local var0_225 = arg0_225:getConfigTable().base_list
+	local var1_225 = arg0_225:getConfigTable().default_equip_list
+	local var2_225 = 0
+	local var3_225 = 0
 
-	for iter0_224 = 1, 3 do
-		local var4_224 = arg0_224:getEquip(iter0_224)
-		local var5_224 = var4_224 and var4_224.configId or var1_224[iter0_224]
-		local var6_224 = Equipment.getConfigData(var5_224).type
+	for iter0_225 = 1, 3 do
+		local var4_225 = arg0_225:getEquip(iter0_225)
+		local var5_225 = var4_225 and var4_225.configId or var1_225[iter0_225]
+		local var6_225 = Equipment.getConfigData(var5_225).type
 
-		if underscore.any(EquipType.AirEquipTypes, function(arg0_225)
-			return var6_224 == arg0_225
+		if underscore.any(EquipType.AirEquipTypes, function(arg0_226)
+			return var6_225 == arg0_226
 		end) then
-			var2_224 = var2_224 + Equipment.GetEquipReloadStatic(var5_224) * var0_224[iter0_224]
-			var3_224 = var3_224 + var0_224[iter0_224]
+			var2_225 = var2_225 + Equipment.GetEquipReloadStatic(var5_225) * var0_225[iter0_225]
+			var3_225 = var3_225 + var0_225[iter0_225]
 		end
 	end
 
-	local var7_224 = ys.Battle.BattleConfig.AIR_ASSIST_RELOAD_RATIO * pg.bfConsts.PERCENT
+	local var7_225 = ys.Battle.BattleConfig.AIR_ASSIST_RELOAD_RATIO * pg.bfConsts.PERCENT
 
 	return {
 		name = i18n("equip_info_31"),
 		type = AttributeType.CD,
-		value = var2_224 / var3_224 * var7_224
+		value = var2_225 / var3_225 * var7_225
 	}
 end
 
-function var0_0.IsTagShip(arg0_226, arg1_226)
-	local var0_226 = arg0_226:getConfig("tag_list")
+function var0_0.IsTagShip(arg0_227, arg1_227)
+	local var0_227 = arg0_227:getConfig("tag_list")
 
-	return table.contains(var0_226, arg1_226)
+	return table.contains(var0_227, arg1_227)
 end
 
-function var0_0.setReMetaSpecialItemVO(arg0_227, arg1_227)
-	arg0_227.reMetaSpecialItemVO = arg1_227
+function var0_0.setReMetaSpecialItemVO(arg0_228, arg1_228)
+	arg0_228.reMetaSpecialItemVO = arg1_228
 end
 
-function var0_0.getReMetaSpecialItemVO(arg0_228, arg1_228)
-	return arg0_228.reMetaSpecialItemVO
+function var0_0.getReMetaSpecialItemVO(arg0_229, arg1_229)
+	return arg0_229.reMetaSpecialItemVO
 end
 
-function var0_0.getProposeType(arg0_229)
-	if arg0_229:isMetaShip() then
+function var0_0.getProposeType(arg0_230)
+	if arg0_230:isMetaShip() then
 		return "meta"
-	elseif arg0_229:IsXIdol() then
+	elseif arg0_230:IsXIdol() then
 		return "imas"
 	else
 		return "default"
 	end
 end
 
-function var0_0.IsXIdol(arg0_230)
-	return arg0_230:getNation() == Nation.IDOL_LINK
+function var0_0.IsXIdol(arg0_231)
+	return arg0_231:getNation() == Nation.IDOL_LINK
 end
 
-function var0_0.getSpecificType(arg0_231)
-	return pg.ship_data_template[arg0_231.configId].specific_type
+function var0_0.getSpecificType(arg0_232)
+	return pg.ship_data_template[arg0_232.configId].specific_type
 end
 
-function var0_0.GetSpWeapon(arg0_232)
-	return arg0_232.spWeapon
+function var0_0.GetSpWeapon(arg0_233)
+	return arg0_233.spWeapon
 end
 
-function var0_0.UpdateSpWeapon(arg0_233, arg1_233)
-	local var0_233 = (arg1_233 and arg1_233:GetUID() or 0) == (arg0_233.spWeapon and arg0_233.spWeapon:GetUID() or 0)
+function var0_0.UpdateSpWeapon(arg0_234, arg1_234)
+	local var0_234 = (arg1_234 and arg1_234:GetUID() or 0) == (arg0_234.spWeapon and arg0_234.spWeapon:GetUID() or 0)
 
-	arg0_233.spWeapon = arg1_233
+	arg0_234.spWeapon = arg1_234
 
-	if arg1_233 then
-		arg1_233:SetShipId(arg0_233.id)
+	if arg1_234 then
+		arg1_234:SetShipId(arg0_234.id)
 	end
 
-	if var0_233 then
+	if var0_234 then
 		pg.m02:sendNotification(EquipmentProxy.SPWEAPONS_UPDATED)
 	end
 end
 
-function var0_0.CanEquipSpWeapon(arg0_234, arg1_234)
-	local var0_234, var1_234 = arg0_234:IsSpWeaponForbidden(arg1_234)
+function var0_0.CanEquipSpWeapon(arg0_235, arg1_235)
+	local var0_235, var1_235 = arg0_235:IsSpWeaponForbidden(arg1_235)
 
-	if var0_234 then
-		return false, var1_234
+	if var0_235 then
+		return false, var1_235
 	end
 
 	return true
 end
 
-function var0_0.IsSpWeaponForbidden(arg0_235, arg1_235)
-	local var0_235 = arg1_235:GetWearableShipTypes()
-	local var1_235 = arg0_235:getShipType()
+function var0_0.IsSpWeaponForbidden(arg0_236, arg1_236)
+	local var0_236 = arg1_236:GetWearableShipTypes()
+	local var1_236 = arg0_236:getShipType()
 
-	if not table.contains(var0_235, var1_235) then
+	if not table.contains(var0_236, var1_236) then
 		return true, i18n("spweapon_tip_group_error")
 	end
 
-	local var2_235 = arg1_235:GetUniqueGroup()
-	local var3_235 = arg0_235:getGroupId()
+	local var2_236 = arg1_236:GetUniqueGroup()
+	local var3_236 = arg0_236:getGroupId()
 
-	if var2_235 ~= 0 and var2_235 ~= var3_235 then
+	if var2_236 ~= 0 and var2_236 ~= var3_236 then
 		return true, i18n("spweapon_tip_group_error")
 	end
 
 	return false
 end
 
-function var0_0.GetMapStrikeAnim(arg0_236)
-	local var0_236
-	local var1_236 = arg0_236:getShipType()
+function var0_0.GetMapStrikeAnim(arg0_237)
+	local var0_237
+	local var1_237 = arg0_237:getShipType()
 
-	switch(TeamType.GetTeamFromShipType(var1_236), {
+	switch(TeamType.GetTeamFromShipType(var1_237), {
 		[TeamType.Main] = function()
-			if ShipType.IsTypeQuZhu(var1_236) then
-				var0_236 = "SubTorpedoUI"
-			elseif ShipType.ContainInLimitBundle(ShipType.BundleAircraftCarrier, var1_236) then
-				var0_236 = "AirStrikeUI"
-			elseif ShipType.ContainInLimitBundle(ShipType.BundleBattleShip, var1_236) then
-				var0_236 = "CannonUI"
+			if ShipType.IsTypeQuZhu(var1_237) then
+				var0_237 = "SubTorpedoUI"
+			elseif ShipType.ContainInLimitBundle(ShipType.BundleAircraftCarrier, var1_237) then
+				var0_237 = "AirStrikeUI"
+			elseif ShipType.ContainInLimitBundle(ShipType.BundleBattleShip, var1_237) then
+				var0_237 = "CannonUI"
 			else
-				var0_236 = "CannonUI"
+				var0_237 = "CannonUI"
 			end
 		end,
 		[TeamType.Vanguard] = function()
-			if ShipType.IsTypeQuZhu(var1_236) then
-				var0_236 = "SubTorpedoUI"
+			if ShipType.IsTypeQuZhu(var1_237) then
+				var0_237 = "SubTorpedoUI"
 			end
 		end,
 		[TeamType.Submarine] = function()
-			if arg0_236:getNation() == Nation.MOT then
-				var0_236 = "CannonUI"
+			if arg0_237:getNation() == Nation.MOT then
+				var0_237 = "CannonUI"
 			else
-				var0_236 = "SubTorpedoUI"
+				var0_237 = "SubTorpedoUI"
 			end
 		end
 	})
 
-	return var0_236
+	return var0_237
 end
 
-function var0_0.IsDefaultSkin(arg0_240)
-	local var0_240 = arg0_240:getSkinId()
+function var0_0.IsDefaultSkin(arg0_241)
+	local var0_241 = arg0_241:getSkinId()
 
-	return var0_240 == 0 or var0_240 == arg0_240:getConfig("skin_id")
+	return var0_241 == 0 or var0_241 == arg0_241:getConfig("skin_id")
 end
 
-function var0_0.IsMatchKey(arg0_241, arg1_241)
-	if not arg1_241 or arg1_241 == "" then
+function var0_0.IsMatchKey(arg0_242, arg1_242)
+	if not arg1_242 or arg1_242 == "" then
 		return true
 	end
 
-	arg1_241 = string.lower(string.gsub(arg1_241, "%.", "%%."))
+	arg1_242 = string.lower(string.gsub(arg1_242, "%.", "%%."))
 
-	local var0_241 = {
-		arg0_241:getName(),
-		arg0_241:GetDefaultName()
+	local var0_242 = {
+		arg0_242:getName(),
+		arg0_242:GetDefaultName()
 	}
 
-	if var0_241[1] == var0_241[2] then
-		table.remove(var0_241)
+	if var0_242[1] == var0_242[2] then
+		table.remove(var0_242)
 	end
 
-	return underscore.any(var0_241, function(arg0_242)
-		return string.find(string.lower(arg0_242), arg1_241)
+	return underscore.any(var0_242, function(arg0_243)
+		return string.find(string.lower(arg0_243), arg1_242)
 	end)
 end
 
-function var0_0.IsOwner(arg0_243)
-	return tobool(arg0_243.id)
+function var0_0.IsOwner(arg0_244)
+	return tobool(arg0_244.id)
 end
 
-function var0_0.GetUniqueId(arg0_244)
-	return arg0_244.id
+function var0_0.GetUniqueId(arg0_245)
+	return arg0_245.id
 end
 
-function var0_0.ShowPropose(arg0_245)
-	if not arg0_245.propose then
+function var0_0.ShowPropose(arg0_246)
+	if not arg0_246.propose then
 		return false
 	else
-		return not HXSet.isHxPropose() or arg0_245:IsOwner() and arg0_245:GetUniqueId() == getProxy(PlayerProxy):getRawData():GetProposeShipId()
+		return not HXSet.isHxPropose() or arg0_246:IsOwner() and arg0_246:GetUniqueId() == getProxy(PlayerProxy):getRawData():GetProposeShipId()
 	end
 end
 
-function var0_0.GetColorName(arg0_246, arg1_246)
-	arg1_246 = arg1_246 or arg0_246:getName()
+function var0_0.GetColorName(arg0_247, arg1_247)
+	arg1_247 = arg1_247 or arg0_247:getName()
 
-	if PlayerPrefs.GetInt("SHIP_NAME_COLOR", PLATFORM_CODE == PLATFORM_CH and 1 or 0) == 1 and arg0_246.propose then
-		return setColorStr(arg1_246, "#FFAACEFF")
+	if PlayerPrefs.GetInt("SHIP_NAME_COLOR", PLATFORM_CODE == PLATFORM_CH and 1 or 0) == 1 and arg0_247.propose then
+		return setColorStr(arg1_247, "#FFAACEFF")
 	else
-		return arg1_246
+		return arg1_247
 	end
 end
 
@@ -3011,50 +3030,50 @@ local var9_0 = {
 	}
 }
 
-function var0_0.GetFrameAndEffect(arg0_247, arg1_247)
-	arg1_247 = tobool(arg1_247)
+function var0_0.GetFrameAndEffect(arg0_248, arg1_248)
+	arg1_248 = tobool(arg1_248)
 
-	local var0_247
-	local var1_247
+	local var0_248
+	local var1_248
 
-	if arg0_247.propose then
-		if arg0_247:isMetaShip() then
-			var1_247 = string.format(var9_0.effect[1])
-			var0_247 = string.format(var9_0.frame[1])
-		elseif arg0_247:isBluePrintShip() then
-			var1_247 = string.format(var9_0.effect[2])
-			var0_247 = string.format(var9_0.frame[2], arg0_247:rarity2bgPrint())
+	if arg0_248.propose then
+		if arg0_248:isMetaShip() then
+			var1_248 = string.format(var9_0.effect[1])
+			var0_248 = string.format(var9_0.frame[1])
+		elseif arg0_248:isBluePrintShip() then
+			var1_248 = string.format(var9_0.effect[2])
+			var0_248 = string.format(var9_0.frame[2], arg0_248:rarity2bgPrint())
 		else
-			var1_247 = string.format(var9_0.effect[3])
-			var0_247 = string.format(var9_0.frame[3])
+			var1_248 = string.format(var9_0.effect[3])
+			var0_248 = string.format(var9_0.frame[3])
 		end
 
-		if not arg0_247:ShowPropose() then
-			var0_247 = nil
+		if not arg0_248:ShowPropose() then
+			var0_248 = nil
 		end
-	elseif arg0_247:isMetaShip() then
-		var1_247 = string.format(var9_0.effect[4], arg0_247:rarity2bgPrint())
-	elseif arg0_247:getRarity() == ShipRarity.SSR then
-		var1_247 = string.format(var9_0.effect[5])
+	elseif arg0_248:isMetaShip() then
+		var1_248 = string.format(var9_0.effect[4], arg0_248:rarity2bgPrint())
+	elseif arg0_248:getRarity() == ShipRarity.SSR then
+		var1_248 = string.format(var9_0.effect[5])
 	end
 
-	if arg1_247 then
-		var1_247 = var1_247 and var1_247 .. "_1"
+	if arg1_248 then
+		var1_248 = var1_248 and var1_248 .. "_1"
 	end
 
-	return var0_247, var1_247
+	return var0_248, var1_248
 end
 
-function var0_0.GetRecordPosKey(arg0_248)
-	return arg0_248:getSkinId()
+function var0_0.GetRecordPosKey(arg0_249)
+	return arg0_249:getSkinId()
 end
 
-function var0_0.GetShipPhantomMark(arg0_249, arg1_249)
-	return ShipPhantom.PackMark(arg0_249.id, arg1_249)
+function var0_0.GetShipPhantomMark(arg0_250, arg1_250)
+	return ShipPhantom.PackMark(arg0_250.id, arg1_250)
 end
 
-function var0_0.GetSelectMark(arg0_250)
-	return arg0_250.id
+function var0_0.GetSelectMark(arg0_251)
+	return arg0_251.id
 end
 
 return var0_0

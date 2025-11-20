@@ -108,6 +108,7 @@ function var3_0.initWaveModule(arg0_12)
 			return
 		end
 
+		arg0_12._dataProxy:TriggerFinishBattle()
 		arg0_12:CalcStatistic()
 		arg0_12._state:BattleEnd()
 	end
@@ -197,6 +198,7 @@ function var3_0.onPlayerShutDown(arg0_24, arg1_24)
 	end
 
 	if arg1_24.Data.unit == arg0_24._userFleet:GetFlagShip() and arg0_24._dataProxy:GetInitData().battleType ~= SYSTEM_PROLOGUE and arg0_24._dataProxy:GetInitData().battleType ~= SYSTEM_PERFORM then
+		arg0_24._dataProxy:TriggerFinishBattle()
 		arg0_24:CalcStatistic()
 		arg0_24._state:BattleEnd()
 
@@ -204,6 +206,7 @@ function var3_0.onPlayerShutDown(arg0_24, arg1_24)
 	end
 
 	if #arg0_24._userFleet:GetScoutList() == 0 then
+		arg0_24._dataProxy:TriggerFinishBattle()
 		arg0_24:CalcStatistic()
 		arg0_24._state:BattleEnd()
 	end

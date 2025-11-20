@@ -85,6 +85,7 @@ function var3_0.initWaveModule(arg0_9)
 			return
 		end
 
+		arg0_9._dataProxy:TriggerFinishBattle()
 		arg0_9._dataProxy:CalcAirFightScore()
 		arg0_9._state:BattleEnd()
 	end

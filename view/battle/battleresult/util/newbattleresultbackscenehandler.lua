@@ -27,7 +27,7 @@ function var0_0.Execute(arg0_2)
 		arg0_2:ExitWorldBossSystem(var0_2)
 	elseif var1_2 == SYSTEM_WORLD then
 		arg0_2:ExitWorldSystem(var0_2)
-	elseif var1_2 == SYSTEM_BOSS_RUSH or var1_2 == SYSTEM_BOSS_RUSH_EX then
+	elseif var1_2 == SYSTEM_BOSS_RUSH or var1_2 == SYSTEM_BOSS_RUSH_EX or var1_2 == SYSTEM_BOSS_RUSH_COLLABRATE then
 		if arg0_2:CheckBossRushSystem(var0_2) then
 			arg0_2:ResultRushBossSystem(var0_2)
 		end
@@ -200,8 +200,19 @@ function var0_0.ExitRushBossSystem(arg0_13, arg1_13, arg2_13)
 	local var1_13 = arg1_13.actId
 	local var2_13 = arg2_13.seriesData
 	local var3_13 = arg1_13.score > ys.Battle.BattleConst.BattleScore.C
-	local var4_13 = var0_13 == SYSTEM_BOSS_RUSH and BossRushBattleResultMediator or BossRushBattleResultMediator
-	local var5_13 = var0_13 == SYSTEM_BOSS_RUSH and BossRushBattleResultLayer or BossRushConst.GetEXBattleResultLayer(var1_13)
+	local var4_13
+	local var5_13
+
+	if var0_13 == SYSTEM_BOSS_RUSH_COLLABRATE then
+		var4_13 = BossRushDALBattleResultMediator
+		var5_13 = BossRushDALBattleResultLayer
+	elseif var0_13 == SYSTEM_BOSS_RUSH_EX then
+		var4_13 = BossRushBattleResultMediator
+		var5_13 = BossRushConst.GetEXBattleResultLayer(var1_13)
+	else
+		var4_13 = BossRushBattleResultMediator
+		var5_13 = BossRushBattleResultLayer
+	end
 
 	arg0_13:addSubLayers(Context.New({
 		mediator = var4_13,
@@ -494,15 +505,19 @@ end
 function var0_0.ContinuousBossRush(arg0_33, arg1_33, arg2_33, arg3_33, arg4_33, arg5_33, arg6_33)
 	seriesAsync({
 		function(arg0_34)
-			arg0_33:addSubLayers(Context.New({
-				mediator = ChallengePassedMediator,
-				viewComponent = BossRushConst.GetPassedLayer(arg2_33),
-				data = {
-					curIndex = arg3_33 - 1,
-					maxIndex = #arg4_33
-				},
-				onRemoved = arg0_34
-			}))
+			if arg1_33 == SYSTEM_BOSS_RUSH_COLLABRATE then
+				arg0_34()
+			else
+				arg0_33:addSubLayers(Context.New({
+					mediator = ChallengePassedMediator,
+					viewComponent = BossRushConst.GetPassedLayer(arg2_33),
+					data = {
+						curIndex = arg3_33 - 1,
+						maxIndex = #arg4_33
+					},
+					onRemoved = arg0_34
+				}))
+			end
 		end,
 		function(arg0_35)
 			pg.m02:sendNotification(GAME.BEGIN_STAGE, {

@@ -136,7 +136,7 @@ function var0_0.GetPaintingNameListInLogin()
 	local var6_9 = getProxy(BayProxy)
 
 	if var6_9 then
-		local var7_9 = var6_9.activityNpcShipIds
+		local var7_9 = var6_9.activityNPCShipIds
 
 		for iter4_9, iter5_9 in ipairs(var7_9) do
 			local var8_9 = var6_9:getShipById(iter5_9)
