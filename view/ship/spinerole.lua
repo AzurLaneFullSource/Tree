@@ -107,25 +107,26 @@ function var0_0.AttachOrbit(arg0_8, arg1_8)
 
 		if var4_8 ~= "" then
 			local var5_8 = var2_8.orbit_ui_bound[1]
-			local var6_8 = arg0_8._modleGraphic.Skeleton:FindBoneIndex("char1_" .. var5_8)
-			local var7_8 = arg0_8._modleGraphic.Skeleton:FindBoneIndex("char2_" .. var5_8)
-			local var8_8 = var2_8.double_char_bone
-			local var9_8 = ys.Battle.BattleResourceManager.GetOrbitPath(var4_8)
+			local var6_8 = arg0_8.ship and arg0_8.ship:IsDoubleSkin() and true or false
+			local var7_8 = arg0_8._modleGraphic.Skeleton:FindBoneIndex("char1_" .. var5_8)
+			local var8_8 = arg0_8._modleGraphic.Skeleton:FindBoneIndex("char2_" .. var5_8)
+			local var9_8 = var2_8.double_char_bone
+			local var10_8 = ys.Battle.BattleResourceManager.GetOrbitPath(var4_8)
 
-			if var6_8 >= 0 or var7_8 > 0 then
-				if var7_8 >= 0 and var8_8 and #var8_8 > 0 and var8_8[1] == 1 then
-					arg0_8:loadOrbitUI(var9_8, var0_8, var4_8, "char2" .. "_" .. var5_8, var3_8, var2_8)
+			if var6_8 and (var7_8 >= 0 or var8_8 > 0) or var7_8 >= 0 and var8_8 > 0 then
+				if var8_8 >= 0 and var9_8 and #var9_8 > 0 and var9_8[1] == 1 then
+					arg0_8:loadOrbitUI(var10_8, var0_8, var4_8, "char2" .. "_" .. var5_8, var3_8, var2_8)
 				end
 
-				if var8_8 and #var8_8 > 0 and var8_8[2] == 1 then
-					arg0_8:loadOrbitUI(var9_8, var0_8, var4_8, var5_8, var3_8, var2_8)
+				if var9_8 and #var9_8 > 0 and var9_8[2] == 1 then
+					arg0_8:loadOrbitUI(var10_8, var0_8, var4_8, var5_8, var3_8, var2_8)
 				end
 
-				if var6_8 >= 0 and var8_8 and #var8_8 > 0 and var8_8[3] == 1 then
-					arg0_8:loadOrbitUI(var9_8, var0_8, var4_8, "char1" .. "_" .. var5_8, var3_8, var2_8)
+				if var7_8 >= 0 and var9_8 and #var9_8 > 0 and var9_8[3] == 1 then
+					arg0_8:loadOrbitUI(var10_8, var0_8, var4_8, "char1" .. "_" .. var5_8, var3_8, var2_8)
 				end
 			else
-				arg0_8:loadOrbitUI(var9_8, var0_8, var4_8, var5_8, var3_8, var2_8)
+				arg0_8:loadOrbitUI(var10_8, var0_8, var4_8, var5_8, var3_8, var2_8)
 			end
 		end
 	end

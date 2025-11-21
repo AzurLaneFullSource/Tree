@@ -1156,8 +1156,8 @@ pg.activity_series_enemy = {
 		profiles = "[SECTOR-2] The operation has begun. Sweep the sector together with the Iris Orthodoxy and Dragon Empery fleets.",
 		limitation = {},
 		expedition_id = {
-			1981001,
-			1981002,
+			1981007,
+			1981011,
 			1981003
 		},
 		boss_icon = {
@@ -1240,8 +1240,8 @@ pg.activity_series_enemy = {
 		profiles = "[SECTOR-2] The operation has begun. Sweep the sector together with the Iris Orthodoxy and Dragon Empery fleets.",
 		limitation = {},
 		expedition_id = {
-			1982001,
-			1982002,
+			1982007,
+			1982011,
 			1982003
 		},
 		boss_icon = {
@@ -1324,8 +1324,8 @@ pg.activity_series_enemy = {
 		profiles = "[SECTOR-3] The operation has begun. Sweep the sector together with the Iron Blood and Sardegna Empire fleets.",
 		limitation = {},
 		expedition_id = {
-			1981001,
-			1981002,
+			1981008,
+			1981012,
 			1981004
 		},
 		boss_icon = {
@@ -1408,8 +1408,8 @@ pg.activity_series_enemy = {
 		profiles = "[SECTOR-3] The operation has begun. Sweep the sector together with the Iron Blood and Sardegna Empire fleets.",
 		limitation = {},
 		expedition_id = {
-			1982001,
-			1982002,
+			1982008,
+			1982012,
 			1982004
 		},
 		boss_icon = {
@@ -1492,8 +1492,8 @@ pg.activity_series_enemy = {
 		profiles = "[SECTOR-4] The operation has begun. Sweep the sector together with the Royal Navy and Northern Parliament fleets.",
 		limitation = {},
 		expedition_id = {
-			1981001,
-			1981002,
+			1981009,
+			1981013,
 			1981005
 		},
 		boss_icon = {
@@ -1576,8 +1576,8 @@ pg.activity_series_enemy = {
 		profiles = "[SECTOR-4] The operation has begun. Sweep the sector together with the Royal Navy and Northern Parliament fleets.",
 		limitation = {},
 		expedition_id = {
-			1982001,
-			1982002,
+			1982009,
+			1982013,
 			1982005
 		},
 		boss_icon = {
@@ -1660,8 +1660,8 @@ pg.activity_series_enemy = {
 		profiles = "[SECTOR-5] The operation has begun. Sweep the sector together with the Sakura Empire and Kingdom of Tulipa fleets.",
 		limitation = {},
 		expedition_id = {
-			1981001,
-			1981002,
+			1981010,
+			1981014,
 			1981006
 		},
 		boss_icon = {
@@ -1744,8 +1744,8 @@ pg.activity_series_enemy = {
 		profiles = "[SECTOR-5] The operation has begun. Sweep the sector together with the Sakura Empire and Kingdom of Tulipa fleets.",
 		limitation = {},
 		expedition_id = {
-			1982001,
-			1982002,
+			1982010,
+			1982014,
 			1982006
 		},
 		boss_icon = {
