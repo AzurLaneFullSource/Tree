@@ -67,7 +67,8 @@ function var0_0.ConcludeEXP(arg0_5, arg1_5, arg2_5)
 		for iter0_5, iter1_5 in pairs(pg.extraenemy_series_template) do
 			if table.contains(iter1_5.activity_series_enemy_id, var1_5) then
 				var2_5 = CollabrateBossRushSeriesData.New({
-					id = iter0_5
+					id = iter0_5,
+					actId = arg1_5.id
 				})
 				var1_5 = iter0_5
 

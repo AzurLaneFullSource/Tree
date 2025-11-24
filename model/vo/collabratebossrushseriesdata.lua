@@ -26,7 +26,6 @@ function var0_0.Ctor(arg0_2, arg1_2)
 	arg0_2.trafficPerHour = 0
 	arg0_2.damagePerHour = 0
 	arg0_2.actId = arg1_2.actId
-	arg0_2.diff = 1
 end
 
 function var0_0.UpdateCollabBossData(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
@@ -105,9 +104,10 @@ function var0_0.GetFleets(arg0_18)
 end
 
 function var0_0.GetExpeditionIds(arg0_19)
-	local var0_19 = arg0_19:getConfig("activity_series_enemy_id")[arg0_19.diff]
+	local var0_19 = getProxy(ActivityProxy):GetBossRushRuntime(arg0_19.actId).diff
+	local var1_19 = arg0_19:getConfig("activity_series_enemy_id")[var0_19]
 
-	return var1_0[var0_19].expedition_id
+	return var1_0[var1_19].expedition_id
 end
 
 function var0_0.GetFleetIds(arg0_20)
@@ -214,126 +214,122 @@ function var0_0.GetCurrentProfile(arg0_28)
 end
 
 function var0_0.SetDifficulty(arg0_29, arg1_29)
-	arg0_29.diff = arg1_29
+	getProxy(ActivityProxy):GetBossRushRuntime(arg0_29.actId).diff = arg1_29
 end
 
-function var0_0.GetDifficulty(arg0_30)
-	return arg0_30.diff
+function var0_0.GetSeriesCode(arg0_30)
+	return arg0_30:getConfig("chapter_name")
 end
 
-function var0_0.GetSeriesCode(arg0_31)
-	return arg0_31:getConfig("chapter_name")
+function var0_0.GetSeriesName(arg0_31)
+	return arg0_31:getConfig("chapter_name2")
 end
 
-function var0_0.GetSeriesName(arg0_32)
-	return arg0_32:getConfig("chapter_name2")
+function var0_0.GetCollabBossID(arg0_32)
+	return arg0_32:getConfig("boss_id")[1]
 end
 
-function var0_0.GetCollabBossID(arg0_33)
-	return arg0_33:getConfig("boss_id")[1]
+function var0_0.GetActivitySeriesID(arg0_33, arg1_33)
+	local var0_33 = arg1_33 or getProxy(ActivityProxy):GetBossRushRuntime(arg0_33.actId).diff
+
+	return arg0_33:getConfig("activity_series_enemy_id")[var0_33]
 end
 
-function var0_0.GetActivitySeriesID(arg0_34, arg1_34)
-	local var0_34 = arg1_34 or arg0_34.diff
+function var0_0.GetName(arg0_34, arg1_34)
+	local var0_34 = arg0_34:GetActivitySeriesID(arg1_34)
 
-	return arg0_34:getConfig("activity_series_enemy_id")[var0_34]
+	return var1_0[var0_34].name
 end
 
-function var0_0.GetName(arg0_35, arg1_35)
-	local var0_35 = arg0_35:GetActivitySeriesID(arg1_35)
+function var0_0.GetReplaceTaskIDList(arg0_35)
+	local var0_35 = arg0_35:getConfig("boss_id")[1]
 
-	return var1_0[var0_35].name
+	return var2_0[var0_35].replace_task
 end
 
-function var0_0.GetReplaceTaskIDList(arg0_36)
+function var0_0.GetRewardDisplay(arg0_36)
 	local var0_36 = arg0_36:getConfig("boss_id")[1]
 
-	return var2_0[var0_36].replace_task
+	return var2_0[var0_36].reward_display
 end
 
-function var0_0.GetRewardDisplay(arg0_37)
-	local var0_37 = arg0_37:getConfig("boss_id")[1]
+function var0_0.GetLimitations(arg0_37)
+	local var0_37 = arg0_37:GetActivitySeriesID()
 
-	return var2_0[var0_37].reward_display
+	return var1_0[var0_37].limitation
 end
 
-function var0_0.GetLimitations(arg0_38, arg1_38)
-	local var0_38 = arg0_38:GetActivitySeriesID(arg1_38)
+function var0_0.GetOilCost(arg0_38)
+	local var0_38 = arg0_38:GetActivitySeriesID()
 
-	return var1_0[var0_38].limitation
+	return var1_0[var0_38].oil
 end
 
-function var0_0.GetOilCost(arg0_39, arg1_39)
-	local var0_39 = arg0_39:GetActivitySeriesID(arg1_39)
+function var0_0.GetDescription(arg0_39)
+	local var0_39 = arg0_39:GetActivitySeriesID()
 
-	return var1_0[var0_39].oil
+	return var1_0[var0_39].profiles
 end
 
-function var0_0.GetDescription(arg0_40, arg1_40)
-	local var0_40 = arg0_40:GetActivitySeriesID(arg1_40)
+function var0_0.IsSingleFight(arg0_40)
+	local var0_40 = arg0_40:GetActivitySeriesID()
 
-	return var1_0[var0_40].profiles
+	return var1_0[var0_40].whether_singlefight == 1
 end
 
-function var0_0.IsSingleFight(arg0_41, arg1_41)
-	local var0_41 = arg0_41:GetActivitySeriesID(arg1_41)
+function var0_0.GetBossIcons(arg0_41)
+	local var0_41 = arg0_41:GetActivitySeriesID()
 
-	return var1_0[var0_41].whether_singlefight == 1
+	return var1_0[var0_41].boss_icon
 end
 
-function var0_0.GetBossIcons(arg0_42, arg1_42)
-	local var0_42 = arg0_42:GetActivitySeriesID(arg1_42)
+function var0_0.GetPassAwards(arg0_42)
+	local var0_42 = arg0_42:GetActivitySeriesID()
 
-	return var1_0[var0_42].boss_icon
+	return var1_0[var0_42].pass_awards_display
 end
 
-function var0_0.GetPassAwards(arg0_43, arg1_43)
-	local var0_43 = arg0_43:GetActivitySeriesID(arg1_43)
+function var0_0.GetAdditionalAwards(arg0_43)
+	local var0_43 = arg0_43:GetActivitySeriesID()
 
-	return var1_0[var0_43].pass_awards_display
+	return var1_0[var0_43].additional_awards_display
 end
 
-function var0_0.GetAdditionalAwards(arg0_44, arg1_44)
-	local var0_44 = arg0_44:GetActivitySeriesID(arg1_44)
+function var0_0.GetDefeatStories(arg0_44)
+	local var0_44 = arg0_44:GetActivitySeriesID()
 
-	return var1_0[var0_44].additional_awards_display
+	return var1_0[var0_44].defeat_story
 end
 
-function var0_0.GetDefeatStories(arg0_45, arg1_45)
-	local var0_45 = arg0_45:GetActivitySeriesID(arg1_45)
+function var0_0.GetDefeatStoriesCount(arg0_45)
+	local var0_45 = arg0_45:GetActivitySeriesID()
 
-	return var1_0[var0_45].defeat_story
+	return var1_0[var0_45].defeat_story_count
 end
 
-function var0_0.GetDefeatStoriesCount(arg0_46, arg1_46)
-	local var0_46 = arg0_46:GetActivitySeriesID(arg1_46)
+function var0_0.GetMaxBonusCount(arg0_46)
+	local var0_46 = arg0_46:GetActivitySeriesID()
 
-	return var1_0[var0_46].defeat_story_count
+	return var1_0[var0_46].count
 end
 
-function var0_0.GetMaxBonusCount(arg0_47, arg1_47)
-	local var0_47 = arg0_47:GetActivitySeriesID(arg1_47)
+function var0_0.GetOilLimit(arg0_47)
+	local var0_47 = arg0_47:GetActivitySeriesID()
 
-	return var1_0[var0_47].count
+	return var1_0[var0_47].use_oil_limit
 end
 
-function var0_0.GetOilLimit(arg0_48, arg1_48)
-	local var0_48 = arg0_48:GetActivitySeriesID(arg1_48)
+function var0_0.GetEXParamater(arg0_48)
+	local var0_48 = arg0_48:GetActivitySeriesID()
 
-	return var1_0[var0_48].use_oil_limit
+	return var1_0[var0_48].ex_count
 end
 
-function var0_0.GetEXParamater(arg0_49, arg1_49)
-	local var0_49 = arg0_49:GetActivitySeriesID(arg1_49)
+function var0_0.StaticCalculateFleetIds(arg0_49, arg1_49)
+	assert(arg1_49 <= 10, "expedition List Too long")
 
-	return var1_0[var0_49].ex_count
-end
-
-function var0_0.StaticCalculateFleetIds(arg0_50, arg1_50)
-	assert(arg1_50 <= 10, "expedition List Too long")
-
-	return _.map(_.range(arg1_50 + 1), function(arg0_51)
-		return arg0_50 * 10 + arg0_51 - 1
+	return _.map(_.range(arg1_49 + 1), function(arg0_50)
+		return arg0_49 * 10 + arg0_50 - 1
 	end)
 end
 

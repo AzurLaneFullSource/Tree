@@ -108,32 +108,57 @@ function var0_0.UpdateView(arg0_5)
 		setText(arg0_5.boxView:Find("Content/TextArea2/Text"), table.concat(var8_5, "\n"))
 	end
 
+	arg0_5:ShowShips(var1_5)
 	seriesAsync(var2_5, function()
 		arg0_5:SkipAnim()
 	end)
 end
 
-function var0_0.SkipAnim(arg0_11)
-	if not arg0_11.isRewardAnimating then
+function var0_0.ShowShips(arg0_11, arg1_11, arg2_11)
+	local var0_11 = #_.filter(arg1_11, function(arg0_12)
+		return arg0_12.type == DROP_TYPE_SHIP
+	end)
+	local var1_11 = getProxy(BayProxy):getNewShip(true)
+	local var2_11 = {}
+
+	for iter0_11 = math.max(1, #var1_11 - var0_11 + 1), #var1_11 do
+		local var3_11 = var1_11[iter0_11]
+		local var4_11 = PlayerPrefs.GetInt(DISPLAY_SHIP_GET_EFFECT) == 1 or var3_11.virgin or var3_11:getRarity() >= ShipRarity.Purple
+
+		print(var4_11)
+
+		if var4_11 then
+			table.insert(var2_11, function(arg0_13)
+				print("eeeeeeeeeeeee")
+				arg0_11:emit(ActivityBossTotalRewardPanelMediator.GET_NEW_SHIP, var3_11, arg0_13)
+			end)
+		end
+	end
+
+	seriesAsync(var2_11, arg2_11)
+end
+
+function var0_0.SkipAnim(arg0_14)
+	if not arg0_14.isRewardAnimating then
 		return
 	end
 
-	arg0_11.isRewardAnimating = nil
+	arg0_14.isRewardAnimating = nil
 
-	if arg0_11.LTid then
-		LeanTween.cancel(arg0_11.LTid)
+	if arg0_14.LTid then
+		LeanTween.cancel(arg0_14.LTid)
 
-		arg0_11.LTid = nil
+		arg0_14.LTid = nil
 	end
 
-	eachChild(arg0_11.itemList, function(arg0_12)
-		setActive(arg0_12, true)
+	eachChild(arg0_14.itemList, function(arg0_15)
+		setActive(arg0_15, true)
 	end)
 end
 
-function var0_0.onBackPressed(arg0_13)
-	existCall(arg0_13.contextData.onClose)
-	arg0_13:closeView()
+function var0_0.onBackPressed(arg0_16)
+	existCall(arg0_16.contextData.onClose)
+	arg0_16:closeView()
 end
 
 return var0_0
