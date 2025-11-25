@@ -19,13 +19,11 @@ function var0_0.OnFormationDone(arg0_3)
 
 	for iter0_3, iter1_3 in pairs(arg0_3.shipGos) do
 		table.insert(var0_3, function(arg0_4)
-			local var0_4 = iter1_3:GetComponent(typeof(SpineAnimUI))
-
-			var0_4:SetAction("victory", 0)
-			var0_4:SetActionCallBack(function(arg0_5)
+			iter1_3:SetAction("victory", 0)
+			iter1_3:SetActionCallBack(function(arg0_5)
 				if arg0_5 == "finish" then
-					var0_4:SetActionCallBack(nil)
-					var0_4:SetAction("stand", 0)
+					iter1_3:SetActionCallBack(nil)
+					iter1_3:SetAction("stand", 0)
 					arg0_4()
 				end
 			end)
@@ -386,18 +384,18 @@ function var0_0.UpdateShipSlot(arg0_33, arg1_33, arg2_33, arg3_33, arg4_33)
 		if var5_33 then
 			local var6_33 = var5_33:getPrefab()
 
-			PoolMgr.GetInstance():GetSpineChar(var6_33, true, function(arg0_34)
-				arg0_34.name = var6_33
-				tf(arg0_34).pivot = Vector2(0.5, 0)
-				tf(arg0_34).sizeDelta = Vector2(200, 300)
+			arg0_33.spineChar = SpineAnimChar.New()
 
-				SetParent(arg0_34, arg2_33)
-
-				tf(arg0_34).localPosition = Vector3(0, 0, 0)
-				tf(arg0_34).localScale = Vector3(0.6, 0.6, 0.6)
-
-				SetAction(arg0_34, "stand")
-				GetOrAddComponent(arg0_34, "EventTriggerListener"):AddPointClickFunc(function(arg0_35, arg1_35)
+			arg0_33.spineChar:SetPaint(var6_33)
+			arg0_33.spineChar:Load(true, function(arg0_34)
+				arg0_34:SetName(var6_33)
+				arg0_34:SetPivot(Vector2(0.5, 0))
+				arg0_34:SetSizeDelta(Vector2(200, 300))
+				arg0_34:SetParent(arg2_33)
+				arg0_34:SetLocalPosition(Vector3(0, 0, 0))
+				arg0_34:SetLocalScale(Vector3(0.6, 0.6, 0.6))
+				arg0_34:SetAction("stand")
+				GetOrAddComponent(arg0_34:GetModel(), "EventTriggerListener"):AddPointClickFunc(function(arg0_35, arg1_35)
 					arg0_33:emit(GuildEventMediator.ON_SELECT_MISSION_SHIP, var0_33.id, arg1_33, arg3_33)
 				end)
 
@@ -654,11 +652,10 @@ end
 
 function var0_0.ClearSlots(arg0_49)
 	for iter0_49, iter1_49 in pairs(arg0_49.shipGos) do
-		tf(iter1_49).pivot = Vector2(0.5, 0.5)
-
-		GetOrAddComponent(iter1_49, "EventTriggerListener"):RemovePointClickFunc()
-		iter1_49:GetComponent(typeof(SpineAnimUI)):SetActionCallBack(nil)
-		PoolMgr.GetInstance():ReturnSpineChar(iter1_49.name, iter1_49)
+		iter1_49:SetPivot(Vector2(0.5, 0.5))
+		GetOrAddComponent(iter1_49:GetModel(), "EventTriggerListener"):RemovePointClickFunc()
+		iter1_49:SetActionCallBack(nil)
+		iter1_49:Dispose()
 	end
 
 	arg0_49.shipGos = {}

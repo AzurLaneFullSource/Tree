@@ -184464,7 +184464,7 @@ _G.pg.base.bullet_template[168269] = {
 	attach_buff = {
 		{
 			buff_id = 115205,
-			group_level = 1,
+			buff_level = 1,
 			rant = 10000,
 		},
 	},
@@ -184527,7 +184527,7 @@ _G.pg.base.bullet_template[168270] = {
 	attach_buff = {
 		{
 			buff_id = 115205,
-			group_level = 2,
+			buff_level = 2,
 			rant = 10000,
 		},
 	},
@@ -184590,7 +184590,7 @@ _G.pg.base.bullet_template[168271] = {
 	attach_buff = {
 		{
 			buff_id = 115205,
-			group_level = 3,
+			buff_level = 3,
 			rant = 10000,
 		},
 	},
@@ -184653,7 +184653,7 @@ _G.pg.base.bullet_template[168272] = {
 	attach_buff = {
 		{
 			buff_id = 115205,
-			group_level = 4,
+			buff_level = 4,
 			rant = 10000,
 		},
 	},
@@ -184716,7 +184716,7 @@ _G.pg.base.bullet_template[168273] = {
 	attach_buff = {
 		{
 			buff_id = 115205,
-			group_level = 5,
+			buff_level = 5,
 			rant = 10000,
 		},
 	},
@@ -184779,7 +184779,7 @@ _G.pg.base.bullet_template[168274] = {
 	attach_buff = {
 		{
 			buff_id = 115205,
-			group_level = 6,
+			buff_level = 6,
 			rant = 10000,
 		},
 	},
@@ -184842,7 +184842,7 @@ _G.pg.base.bullet_template[168275] = {
 	attach_buff = {
 		{
 			buff_id = 115205,
-			group_level = 7,
+			buff_level = 7,
 			rant = 10000,
 		},
 	},
@@ -184905,7 +184905,7 @@ _G.pg.base.bullet_template[168276] = {
 	attach_buff = {
 		{
 			buff_id = 115205,
-			group_level = 8,
+			buff_level = 8,
 			rant = 10000,
 		},
 	},
@@ -184968,7 +184968,7 @@ _G.pg.base.bullet_template[168277] = {
 	attach_buff = {
 		{
 			buff_id = 115205,
-			group_level = 9,
+			buff_level = 9,
 			rant = 10000,
 		},
 	},
@@ -185031,7 +185031,7 @@ _G.pg.base.bullet_template[168278] = {
 	attach_buff = {
 		{
 			buff_id = 115205,
-			group_level = 10,
+			buff_level = 10,
 			rant = 10000,
 		},
 	},

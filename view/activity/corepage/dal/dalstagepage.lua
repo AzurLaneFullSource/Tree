@@ -20,18 +20,29 @@ function var0_0.OnUpdateFlush(arg0_3)
 
 		SetActive(arg0_3.AD:Find("tabs/" .. iter0_3 .. "/got_red"), var0_3 == 2)
 		SetActive(arg0_3.AD:Find("tabs/" .. iter0_3 .. "/red"), var0_3 == 1)
+
+		if var0_3 == 2 and not pg.NewStoryMgr.GetInstance():IsPlayed(arg0_3.config_client[iter0_3][1]) then
+			local var1_3, var2_3 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg0_3.config_client[iter0_3][1])
+
+			pg.m02:sendNotification(GAME.STORY_UPDATE_LIST, {
+				storyIds = {
+					var1_3
+				},
+				callback = callback
+			})
+		end
 	end
 
-	local var1_3 = -1
+	local var3_3 = -1
 
 	for iter1_3 = 0, arg0_3.tabsList - 1 do
 		onToggle(arg0_3, arg0_3.tabs:GetChild(iter1_3), function(arg0_4)
 			if arg0_4 then
-				if var1_3 ~= iter1_3 then
+				if var3_3 ~= iter1_3 then
 					arg0_3:OnUpdata(iter1_3 + 1)
 				end
 
-				var1_3 = iter1_3
+				var3_3 = iter1_3
 			end
 		end, SFX_PANEL)
 	end

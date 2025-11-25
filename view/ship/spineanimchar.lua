@@ -58,207 +58,219 @@ function var0_0.Load(arg0_6, arg1_6, arg2_6)
 	end
 end
 
-function var0_0.SetParent(arg0_8, arg1_8, arg2_8)
-	if not arg0_8:isComplete() then
-		arg0_8.loadedParent = arg1_8
+function var0_0.SetPivot(arg0_8, arg1_8)
+	if arg0_8:isComplete() then
+		tf(arg0_8._model).pivot = arg1_8
+	end
+end
+
+function var0_0.SetSizeDelta(arg0_9, arg1_9)
+	if arg0_9:isComplete() then
+		tf(arg0_9._model).sizeDelta = arg1_9
+	end
+end
+
+function var0_0.SetParent(arg0_10, arg1_10, arg2_10)
+	if not arg0_10:isComplete() then
+		arg0_10.loadedParent = arg1_10
 
 		return
 	end
 
-	SetParent(arg0_8._model, arg1_8, arg2_8 and true or false)
+	SetParent(arg0_10._model, arg1_10, arg2_10 and true or false)
 end
 
-function var0_0.SetNormalAction(arg0_9, arg1_9)
-	arg0_9.normalAction = arg1_9
+function var0_0.SetNormalAction(arg0_11, arg1_11)
+	arg0_11.normalAction = arg1_11
 end
 
-function var0_0.SetAction(arg0_10, arg1_10, arg2_10)
-	arg2_10 = arg2_10 or 0
-	arg0_10.actionName = arg1_10
+function var0_0.SetAction(arg0_12, arg1_12, arg2_12)
+	arg2_12 = arg2_12 or 0
+	arg0_12.actionName = arg1_12
 
-	local var0_10, var1_10 = arg0_10:getDirectActonName(arg1_10)
+	local var0_12, var1_12 = arg0_12:getDirectActonName(arg1_12)
 
-	if not arg0_10.modelScale then
-		arg0_10.modelScale = tf(arg0_10._model).localScale
+	if not arg0_12.modelScale then
+		arg0_12.modelScale = tf(arg0_12._model).localScale
 	end
 
-	local var2_10
+	local var2_12
 
-	if var1_10 then
-		local var3_10 = math.abs(arg0_10.modelScale.x)
+	if var1_12 then
+		local var3_12 = math.abs(arg0_12.modelScale.x)
 
-		tf(arg0_10._model).localScale = Vector3(var3_10, arg0_10.modelScale.y, arg0_10.modelScale.z)
+		tf(arg0_12._model).localScale = Vector3(var3_12, arg0_12.modelScale.y, arg0_12.modelScale.z)
 	else
-		local var4_10 = math.sign(arg0_10.modelScale.x)
+		local var4_12 = math.sign(arg0_12.modelScale.x)
 
-		tf(arg0_10._model).localScale = arg0_10.modelScale
+		tf(arg0_12._model).localScale = arg0_12.modelScale
 	end
 
-	arg0_10._animUI:SetAction(var0_10, arg2_10)
+	arg0_12._animUI:SetAction(var0_12, arg2_12)
 end
 
-function var0_0.SetActionOnce(arg0_11, arg1_11, arg2_11, arg3_11, arg4_11)
-	arg0_11:SetActionCallback(nil)
-	arg0_11:SetActionCallback(function(arg0_12)
-		if arg0_12 == "action" then
-			if arg3_11 then
-				arg3_11()
+function var0_0.SetActionOnce(arg0_13, arg1_13, arg2_13, arg3_13, arg4_13)
+	arg0_13:SetActionCallback(nil)
+	arg0_13:SetActionCallback(function(arg0_14)
+		if arg0_14 == "action" then
+			if arg3_13 then
+				arg3_13()
 			end
-		elseif arg0_12 == "finish" and arg4_11 then
-			arg4_11()
+		elseif arg0_14 == "finish" and arg4_13 then
+			arg4_13()
 		end
 	end)
-	arg0_11:SetAction(arg1_11, arg2_11)
+	arg0_13:SetAction(arg1_13, arg2_13)
 end
 
-function var0_0.SetActionCallBack(arg0_13, arg1_13)
-	arg0_13._animUI:SetActionCallBack(arg1_13)
+function var0_0.SetActionCallBack(arg0_15, arg1_15)
+	arg0_15._animUI:SetActionCallBack(arg1_15)
 end
 
-function var0_0.GetLocalScale(arg0_14)
-	if arg0_14:isComplete() then
-		return tf(arg0_14._model).localScale
-	end
-end
-
-function var0_0.SetLocalScale(arg0_15, arg1_15)
-	if arg0_15:isComplete() then
-		arg0_15.direct = math.sign(arg1_15.x)
-		tf(arg0_15._model).localScale = arg1_15
-		arg0_15.modelScale = arg1_15
-
-		arg0_15:updateCharDirect()
-	end
-end
-
-function var0_0.SetLocalPosition(arg0_16, arg1_16)
+function var0_0.GetLocalScale(arg0_16)
 	if arg0_16:isComplete() then
-		tf(arg0_16._model).localPosition = arg1_16
+		return tf(arg0_16._model).localScale
 	end
 end
 
-function var0_0.SetAnchoredPosition(arg0_17, arg1_17)
+function var0_0.SetLocalScale(arg0_17, arg1_17)
 	if arg0_17:isComplete() then
-		tf(arg0_17._model).anchoredPosition = arg1_17
+		arg0_17.direct = math.sign(arg1_17.x)
+		tf(arg0_17._model).localScale = arg1_17
+		arg0_17.modelScale = arg1_17
+
+		arg0_17:updateCharDirect()
 	end
 end
 
-function var0_0.GetAnchoredPosition(arg0_18)
+function var0_0.SetLocalPosition(arg0_18, arg1_18)
 	if arg0_18:isComplete() then
-		return tf(arg0_18._model).anchoredPosition
+		tf(arg0_18._model).localPosition = arg1_18
 	end
 end
 
-function var0_0.SetLayer(arg0_19, arg1_19)
+function var0_0.SetAnchoredPosition(arg0_19, arg1_19)
 	if arg0_19:isComplete() then
-		pg.ViewUtils.SetLayer(tf(arg0_19._model), arg1_19)
+		tf(arg0_19._model).anchoredPosition = arg1_19
 	end
 end
 
-function var0_0.SetAnchoredPosition3D(arg0_20, arg1_20)
+function var0_0.GetAnchoredPosition(arg0_20)
 	if arg0_20:isComplete() then
-		tf(arg0_20._model).anchoredPosition3D = arg1_20
+		return tf(arg0_20._model).anchoredPosition
 	end
 end
 
-function var0_0.GetPauseStatue(arg0_21)
-	if arg0_21._animUI then
-		return arg0_21._animUI.Pause
+function var0_0.SetLayer(arg0_21, arg1_21)
+	if arg0_21:isComplete() then
+		pg.ViewUtils.SetLayer(tf(arg0_21._model), arg1_21)
 	end
-
-	return nil
 end
 
-function var0_0.GetSkeletonGraphic(arg0_22)
-	return arg0_22._skeletonGraphic
+function var0_0.SetAnchoredPosition3D(arg0_22, arg1_22)
+	if arg0_22:isComplete() then
+		tf(arg0_22._model).anchoredPosition3D = arg1_22
+	end
 end
 
-function var0_0.GetAnimationState(arg0_23)
+function var0_0.GetPauseStatue(arg0_23)
 	if arg0_23._animUI then
-		return arg0_23._animUI:GetAnimationState()
+		return arg0_23._animUI.Pause
 	end
 
 	return nil
 end
 
-function var0_0.GetModel(arg0_24)
-	return arg0_24._model
+function var0_0.GetSkeletonGraphic(arg0_24)
+	return arg0_24._skeletonGraphic
 end
 
-function var0_0.Resume(arg0_25)
+function var0_0.GetAnimationState(arg0_25)
 	if arg0_25._animUI then
-		return arg0_25._animUI:Resume()
+		return arg0_25._animUI:GetAnimationState()
+	end
+
+	return nil
+end
+
+function var0_0.GetModel(arg0_26)
+	return arg0_26._model
+end
+
+function var0_0.Resume(arg0_27)
+	if arg0_27._animUI then
+		return arg0_27._animUI:Resume()
 	end
 end
 
-function var0_0.Pause(arg0_26)
-	if arg0_26._animUI then
-		return arg0_26._animUI:Pause()
+function var0_0.Pause(arg0_28)
+	if arg0_28._animUI then
+		return arg0_28._animUI:Pause()
 	end
 end
 
-function var0_0.Dispose(arg0_27)
-	if arg0_27.state == var0_0.state_complete then
-		arg0_27:SetActionCallBack(nil)
-		PoolMgr.GetInstance():ReturnSpineChar(arg0_27.prefab, arg0_27._model)
+function var0_0.Dispose(arg0_29)
+	if arg0_29.state == var0_0.state_complete then
+		arg0_29:SetActionCallBack(nil)
+		PoolMgr.GetInstance():ReturnSpineChar(arg0_29.prefab, arg0_29._model)
 	end
 
-	arg0_27.state = var0_0.state_dispose
-	arg0_27.parent = nil
+	arg0_29.state = var0_0.state_dispose
+	arg0_29.parent = nil
 end
 
-function var0_0.start(arg0_28, arg1_28)
-	arg0_28.state = var0_0.state_complete
-	arg0_28._model = arg1_28
-	arg0_28._animUI = arg1_28:GetComponent(typeof(SpineAnimUI))
-	arg0_28._skeletonGraphic = arg1_28:GetComponent("SkeletonGraphic")
+function var0_0.start(arg0_30, arg1_30)
+	arg0_30.state = var0_0.state_complete
+	arg0_30._model = arg1_30
+	arg0_30._animUI = arg1_30:GetComponent(typeof(SpineAnimUI))
+	arg0_30._skeletonGraphic = arg1_30:GetComponent("SkeletonGraphic")
 
-	if arg0_28.loadedParent then
-		arg0_28:setParent(arg1_28, arg0_28.parent)
+	if arg0_30.loadedParent then
+		arg0_30:setParent(arg1_30, arg0_30.parent)
 
-		arg0_28.loadedParent = nil
+		arg0_30.loadedParent = nil
 	end
 
-	if arg0_28.loadedScale then
-		arg0_28:setScale(arg0_28.loadedScale)
+	if arg0_30.loadedScale then
+		arg0_30:setScale(arg0_30.loadedScale)
 
-		arg0_28.loadedScale = nil
+		arg0_30.loadedScale = nil
 	end
 
-	if arg0_28.loadedPosition then
-		arg0_28:setPosition(arg0_28.loadedPosition)
+	if arg0_30.loadedPosition then
+		arg0_30:setPosition(arg0_30.loadedPosition)
 
-		arg0_28.loadedPosition = nil
-	end
-end
-
-function var0_0.updateCharDirect(arg0_29)
-	if arg0_29.normalAction == arg0_29.actionName then
-		arg0_29:SetAction(arg0_29.actionName, 0, -1)
+		arg0_30.loadedPosition = nil
 	end
 end
 
-function var0_0.getDirectActonName(arg0_30, arg1_30)
-	if not arg0_30.direct then
-		arg0_30.direct = math.sign(tf(arg0_30._model).localScale.x)
+function var0_0.updateCharDirect(arg0_31)
+	if arg0_31.normalAction == arg0_31.actionName then
+		arg0_31:SetAction(arg0_31.actionName, 0, -1)
 	end
-
-	local var0_30 = arg0_30.direct == 1 and "_R" or "_L"
-	local var1_30 = arg1_30 .. var0_30
-
-	if arg0_30._skeletonGraphic.SkeletonData:FindAnimation(var1_30) then
-		return var1_30, true
-	end
-
-	return arg1_30, false
 end
 
-function var0_0.isComplete(arg0_31)
-	return arg0_31.state == var0_0.state_complete
+function var0_0.getDirectActonName(arg0_32, arg1_32)
+	if not arg0_32.direct then
+		arg0_32.direct = math.sign(tf(arg0_32._model).localScale.x)
+	end
+
+	local var0_32 = arg0_32.direct == 1 and "_R" or "_L"
+	local var1_32 = arg1_32 .. var0_32
+
+	if arg0_32._skeletonGraphic.SkeletonData:FindAnimation(var1_32) then
+		return var1_32, true
+	end
+
+	return arg1_32, false
 end
 
-function var0_0.isDispose(arg0_32)
-	return arg0_32.state == var0_0.state_dispose
+function var0_0.isComplete(arg0_33)
+	return arg0_33.state == var0_0.state_complete
+end
+
+function var0_0.isDispose(arg0_34)
+	return arg0_34.state == var0_0.state_dispose
 end
 
 return var0_0

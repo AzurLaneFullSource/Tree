@@ -1,7 +1,7 @@
 local var0_0 = class("GuildBossFormationShipCard")
 
 function var0_0.Ctor(arg0_1, arg1_1)
-	arg0_1.char = arg1_1
+	arg0_1._char = arg1_1
 	arg0_1._go = arg1_1:GetModel()
 	tf(arg0_1._go).pivot = Vector2(0.5, 0)
 	tf(arg0_1._go).sizeDelta = Vector2(200, 300)
