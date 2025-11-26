@@ -5,7 +5,7 @@ pg.enemy_data_statistics_5 = {
 		name = "四糸乃",
 		type = 6,
 		speed_growth = 0,
-		air_growth = 0,
+		air_growth = 5000,
 		air = 0,
 		battle_unit_type = 49,
 		durability = 0,
@@ -126,7 +126,7 @@ pg.enemy_data_statistics_5 = {
 	},
 	[50142] = {
 		antisub_growth = 5500,
-		air_growth = 0,
+		air_growth = 5500,
 		name = "四糸乃",
 		cannon_growth = 5500,
 		base = 50141,
@@ -150,7 +150,7 @@ pg.enemy_data_statistics_5 = {
 	},
 	[50143] = {
 		antisub_growth = 6100,
-		air_growth = 0,
+		air_growth = 6100,
 		name = "四糸乃",
 		cannon_growth = 6100,
 		base = 50141,
@@ -174,7 +174,7 @@ pg.enemy_data_statistics_5 = {
 	},
 	[50144] = {
 		antisub_growth = 6650,
-		air_growth = 0,
+		air_growth = 6650,
 		name = "四糸乃",
 		cannon_growth = 6650,
 		base = 50141,
@@ -198,7 +198,7 @@ pg.enemy_data_statistics_5 = {
 	},
 	[50145] = {
 		antisub_growth = 7200,
-		air_growth = 0,
+		air_growth = 7200,
 		name = "四糸乃",
 		cannon_growth = 7200,
 		base = 50141,
@@ -222,7 +222,7 @@ pg.enemy_data_statistics_5 = {
 	},
 	[50146] = {
 		antisub_growth = 7750,
-		air_growth = 0,
+		air_growth = 7750,
 		name = "四糸乃",
 		cannon_growth = 7750,
 		base = 50141,
@@ -246,7 +246,7 @@ pg.enemy_data_statistics_5 = {
 	},
 	[50147] = {
 		antisub_growth = 8300,
-		air_growth = 0,
+		air_growth = 8300,
 		name = "四糸乃",
 		cannon_growth = 8300,
 		base = 50141,
@@ -270,7 +270,7 @@ pg.enemy_data_statistics_5 = {
 	},
 	[50148] = {
 		antisub_growth = 8850,
-		air_growth = 0,
+		air_growth = 8850,
 		name = "四糸乃",
 		cannon_growth = 8850,
 		base = 50141,
@@ -294,7 +294,7 @@ pg.enemy_data_statistics_5 = {
 	},
 	[50149] = {
 		antisub_growth = 9400,
-		air_growth = 0,
+		air_growth = 9400,
 		name = "四糸乃",
 		cannon_growth = 9400,
 		base = 50141,
@@ -318,7 +318,7 @@ pg.enemy_data_statistics_5 = {
 	},
 	[50150] = {
 		antisub_growth = 10000,
-		air_growth = 0,
+		air_growth = 10000,
 		name = "四糸乃",
 		cannon_growth = 10000,
 		base = 50141,

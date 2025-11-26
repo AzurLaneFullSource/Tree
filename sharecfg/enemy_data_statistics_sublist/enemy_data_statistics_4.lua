@@ -602,7 +602,7 @@ pg.enemy_data_statistics_4 = {
 		name = "Yoshino",
 		type = 6,
 		speed_growth = 0,
-		air_growth = 0,
+		air_growth = 5000,
 		air = 0,
 		battle_unit_type = 49,
 		durability = 0,
@@ -723,7 +723,7 @@ pg.enemy_data_statistics_4 = {
 	},
 	[50132] = {
 		antisub_growth = 5500,
-		air_growth = 0,
+		air_growth = 5500,
 		name = "Yoshino",
 		cannon_growth = 5500,
 		base = 50131,
@@ -747,7 +747,7 @@ pg.enemy_data_statistics_4 = {
 	},
 	[50133] = {
 		antisub_growth = 6100,
-		air_growth = 0,
+		air_growth = 6100,
 		name = "Yoshino",
 		cannon_growth = 6100,
 		base = 50131,
@@ -771,7 +771,7 @@ pg.enemy_data_statistics_4 = {
 	},
 	[50134] = {
 		antisub_growth = 6650,
-		air_growth = 0,
+		air_growth = 6650,
 		name = "Yoshino",
 		cannon_growth = 6650,
 		base = 50131,
@@ -795,7 +795,7 @@ pg.enemy_data_statistics_4 = {
 	},
 	[50135] = {
 		antisub_growth = 7200,
-		air_growth = 0,
+		air_growth = 7200,
 		name = "Yoshino",
 		cannon_growth = 7200,
 		base = 50131,
@@ -819,7 +819,7 @@ pg.enemy_data_statistics_4 = {
 	},
 	[50136] = {
 		antisub_growth = 7750,
-		air_growth = 0,
+		air_growth = 7750,
 		name = "Yoshino",
 		cannon_growth = 7750,
 		base = 50131,
@@ -843,7 +843,7 @@ pg.enemy_data_statistics_4 = {
 	},
 	[50137] = {
 		antisub_growth = 8300,
-		air_growth = 0,
+		air_growth = 8300,
 		name = "Yoshino",
 		cannon_growth = 8300,
 		base = 50131,
@@ -867,7 +867,7 @@ pg.enemy_data_statistics_4 = {
 	},
 	[50138] = {
 		antisub_growth = 8850,
-		air_growth = 0,
+		air_growth = 8850,
 		name = "Yoshino",
 		cannon_growth = 8850,
 		base = 50131,
@@ -891,7 +891,7 @@ pg.enemy_data_statistics_4 = {
 	},
 	[50139] = {
 		antisub_growth = 9400,
-		air_growth = 0,
+		air_growth = 9400,
 		name = "Yoshino",
 		cannon_growth = 9400,
 		base = 50131,
@@ -915,7 +915,7 @@ pg.enemy_data_statistics_4 = {
 	},
 	[50140] = {
 		antisub_growth = 10000,
-		air_growth = 0,
+		air_growth = 10000,
 		name = "Yoshino",
 		cannon_growth = 10000,
 		base = 50131,
