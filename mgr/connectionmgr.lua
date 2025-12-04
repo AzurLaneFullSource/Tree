@@ -258,7 +258,6 @@ function var1_0.onError(arg0_11)
 		}, arg0_11) then
 			var0_0.ConnectionMgr.GetInstance():Reconnect(var1_11)
 		else
-			var0_0.MsgboxMgr.GetInstance():CloseAndHide()
 			var0_0.MsgboxMgr.GetInstance():ShowMsgBox({
 				modal = true,
 				content = i18n("reconnect_tip", arg0_11),
@@ -284,6 +283,12 @@ function var1_0.Send(arg0_15, arg1_15, arg2_15, arg3_15, arg4_15, arg5_15, arg6_
 		else
 			arg4_15(arg0_16)
 		end
+	end
+
+	if not var4_0 then
+		warning("sendWindow is nil. msgid " .. arg1_15)
+
+		return
 	end
 
 	var4_0:Queue(arg1_15, arg2_15, arg3_15, var0_15, arg5_15, nil, arg6_15)

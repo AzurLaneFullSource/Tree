@@ -232,59 +232,65 @@ function var3_0.CalcNotFalling(arg0_15)
 	return false
 end
 
-function var3_0.Sit(arg0_16, arg1_16, arg2_16)
-	arg0_16.characterController.enabled = false
-	arg0_16.prevStandPosition = arg0_16._tf.position
-	arg0_16._tf.position = arg1_16
+function var3_0.StandOnWorldObject(arg0_16)
+	local var0_16, var1_16 = Physics.SphereCast(arg0_16._tf.position + arg0_16.characterController.center, arg0_16.characterController.radius * 1.2, Vector3.down, nil, 0.3 + 2 * arg0_16.characterController.skinWidth + (0.5 * arg0_16.characterController.height - arg0_16.characterController.radius), var9_0)
 
-	local var0_16 = arg0_16._tf:Find("all/foot_l_d_mount")
-	local var1_16 = Quaternion.LookRotation(arg2_16, Vector3.New(0, 1, 0))
+	if var0_16 then
+		if var1_16.collider.isTrigger then
+			return false
+		end
 
-	arg0_16._tf.rotation = var1_16
+		if var1_16.collider.gameObject:GetComponent(typeof(WorldObjectItem)) then
+			return true
+		end
+	end
 
-	arg0_16.animator:SetBool(IslandConst.SIT_HASH, true)
-
-	arg0_16.isSitting = true
+	return false
 end
 
-function var3_0.MoveHandle(arg0_17, arg1_17, arg2_17)
-	if arg0_17.cantMove then
+function var3_0.Sit(arg0_17, arg1_17, arg2_17)
+	arg0_17.characterController.enabled = false
+	arg0_17.prevStandPosition = arg0_17._tf.position
+	arg0_17._tf.position = arg1_17
+
+	local var0_17 = arg0_17._tf:Find("all/foot_l_d_mount")
+	local var1_17 = Quaternion.LookRotation(arg2_17, Vector3.New(0, 1, 0))
+
+	arg0_17._tf.rotation = var1_17
+
+	arg0_17.animator:SetBool(IslandConst.SIT_HASH, true)
+
+	arg0_17.isSitting = true
+end
+
+function var3_0.MoveHandle(arg0_18, arg1_18, arg2_18)
+	if arg0_18.cantMove then
 		return
 	end
 
-	if arg0_17.isSitting and arg0_17.prevStandPosition then
-		arg0_17.characterController.enabled = true
-		arg0_17._tf.position = arg0_17.prevStandPosition
+	if arg0_18.isSitting and arg0_18.prevStandPosition then
+		arg0_18.characterController.enabled = true
+		arg0_18._tf.position = arg0_18.prevStandPosition
 
-		arg0_17.animator:SetBool(IslandConst.SIT_HASH, false)
+		arg0_18.animator:SetBool(IslandConst.SIT_HASH, false)
 
-		arg0_17.isSitting = false
+		arg0_18.isSitting = false
 
 		return
 	end
 
-	if arg0_17.animator then
-		arg0_17.animator:SetFloat(IslandConst.INPUT_MAGNITUDE, arg2_17)
+	if arg0_18.animator then
+		arg0_18.animator:SetFloat(IslandConst.INPUT_MAGNITUDE, arg2_18)
 	end
 
-	arg0_17.orginTargetDir = arg1_17
-	arg0_17.lastTargetSpeed = arg2_17 * arg0_17.maxSpeed
-	arg0_17.targetSpeed = arg0_17.isSprint and arg0_17.sprintSpeed or arg0_17.lastTargetSpeed
+	arg0_18.orginTargetDir = arg1_18
+	arg0_18.lastTargetSpeed = arg2_18 * arg0_18.maxSpeed
+	arg0_18.targetSpeed = arg0_18.isSprint and arg0_18.sprintSpeed or arg0_18.lastTargetSpeed
 end
 
-function var3_0.StopMoveHandle(arg0_18)
-	arg0_18.targetSpeed = 0
-	arg0_18.speed = 0
-
-	arg0_18.animator:SetFloat(IslandConst.SPEED_FLAG_HASH, 0)
-	arg0_18.animator:SetFloat(IslandConst.INPUT_MAGNITUDE, 0)
-
-	arg0_18.orginTargetDir = var2_0
-	arg0_18.isSprint = false
-end
-
-function var3_0.StopMoveHandleByInput(arg0_19)
+function var3_0.StopMoveHandle(arg0_19)
 	arg0_19.targetSpeed = 0
+	arg0_19.speed = 0
 
 	arg0_19.animator:SetFloat(IslandConst.SPEED_FLAG_HASH, 0)
 	arg0_19.animator:SetFloat(IslandConst.INPUT_MAGNITUDE, 0)
@@ -293,248 +299,258 @@ function var3_0.StopMoveHandleByInput(arg0_19)
 	arg0_19.isSprint = false
 end
 
-function var3_0.JumpHandle(arg0_20)
-	if arg0_20.cantMove then
-		return
-	end
+function var3_0.StopMoveHandleByInput(arg0_20)
+	arg0_20.targetSpeed = 0
 
-	if arg0_20:CheckCanJump() then
-		arg0_20.animator:SetTrigger(IslandConst.JUMP_FLAG)
-	end
+	arg0_20.animator:SetFloat(IslandConst.SPEED_FLAG_HASH, 0)
+	arg0_20.animator:SetFloat(IslandConst.INPUT_MAGNITUDE, 0)
+
+	arg0_20.orginTargetDir = var2_0
+	arg0_20.isSprint = false
 end
 
-function var3_0.WorkHandle(arg0_21, arg1_21, arg2_21)
+function var3_0.JumpHandle(arg0_21)
 	if arg0_21.cantMove then
 		return
 	end
 
-	if arg2_21 then
-		arg0_21.unitData = arg2_21
-
-		local var0_21 = arg2_21.position - arg0_21:GetCurrentPosition()
-		local var1_21 = var0_0(var0_21.x, 0, var0_21.z).normalized
-
-		arg0_21.targetRotation = Quaternion.LookRotation(var1_21)
+	if arg0_21:CheckCanJump() then
+		arg0_21.animator:SetTrigger(IslandConst.JUMP_FLAG)
 	end
-
-	arg0_21.animator:SetTrigger(arg1_21)
 end
 
-function var3_0.DeviceStateHandle(arg0_22, arg1_22)
-	if not arg0_22.animator then
+function var3_0.WorkHandle(arg0_22, arg1_22, arg2_22)
+	if arg0_22.cantMove then
 		return
 	end
 
-	if arg0_22.view:GetController():IsPlayerInTimeline() then
+	if arg2_22 then
+		arg0_22.unitData = arg2_22
+
+		local var0_22 = arg2_22.position - arg0_22:GetCurrentPosition()
+		local var1_22 = var0_0(var0_22.x, 0, var0_22.z).normalized
+
+		arg0_22.targetRotation = Quaternion.LookRotation(var1_22)
+	end
+
+	arg0_22.animator:SetTrigger(arg1_22)
+end
+
+function var3_0.DeviceStateHandle(arg0_23, arg1_23)
+	if not arg0_23.animator then
 		return
 	end
 
-	if arg1_22 then
-		arg0_22.animator:SetTrigger(IslandConst.DEVICE_SHOW_FLAG)
-		arg0_22.animator:ResetTrigger(IslandConst.UN_DEVICE_SHOW_FLAG)
+	if arg0_23.view:GetController():IsPlayerInTimeline() then
+		return
+	end
+
+	if arg1_23 then
+		arg0_23.animator:SetTrigger(IslandConst.DEVICE_SHOW_FLAG)
+		arg0_23.animator:ResetTrigger(IslandConst.UN_DEVICE_SHOW_FLAG)
 	else
-		arg0_22.animator:SetTrigger(IslandConst.UN_DEVICE_SHOW_FLAG)
+		arg0_23.animator:SetTrigger(IslandConst.UN_DEVICE_SHOW_FLAG)
 	end
 end
 
-function var3_0.OnPlayerPlayerSprint(arg0_23)
-	if arg0_23.targetSpeed ~= 0 then
-		arg0_23.isSprint = true
-		arg0_23.lastTargetSpeed = arg0_23.targetSpeed
-		arg0_23.targetSpeed = arg0_23.sprintSpeed
-		arg0_23.speed = arg0_23.targetSpeed
+function var3_0.OnPlayerPlayerSprint(arg0_24)
+	if arg0_24.targetSpeed ~= 0 then
+		arg0_24.isSprint = true
+		arg0_24.lastTargetSpeed = arg0_24.targetSpeed
+		arg0_24.targetSpeed = arg0_24.sprintSpeed
+		arg0_24.speed = arg0_24.targetSpeed
 	end
 end
 
-function var3_0.OnStopPlayerSprint(arg0_24)
-	if arg0_24.isSprint and arg0_24.targetSpeed ~= 0 then
-		arg0_24.targetSpeed = arg0_24.lastTargetSpeed
-		arg0_24.speed = arg0_24.lastTargetSpeed
-		arg0_24.isSprint = false
+function var3_0.OnStopPlayerSprint(arg0_25)
+	if arg0_25.isSprint and arg0_25.targetSpeed ~= 0 then
+		arg0_25.targetSpeed = arg0_25.lastTargetSpeed
+		arg0_25.speed = arg0_25.lastTargetSpeed
+		arg0_25.isSprint = false
 	end
 end
 
-function var3_0.LoadInteractiveTool(arg0_25, arg1_25)
-	if arg1_25 == 0 then
-		arg0_25.toolId = arg0_25.unitData:GetToolId()
+function var3_0.LoadInteractiveTool(arg0_26, arg1_26)
+	if arg1_26 == 0 then
+		arg0_26.toolId = arg0_26.unitData:GetToolId()
 	else
-		arg0_25.toolId = arg1_25
+		arg0_26.toolId = arg1_26
 	end
 
-	local var0_25 = arg0_25.objTfList[arg0_25.toolId]
+	local var0_26 = arg0_26.objTfList[arg0_26.toolId]
 
-	if var0_25 then
-		setActive(var0_25, true)
-		setParent(var0_25, arg0_25._tf)
-		pg.ViewUtils.SetLayer(var0_25, Layer.UIHidden)
+	if var0_26 then
+		setActive(var0_26, true)
+		setParent(var0_26, arg0_26._tf)
+		pg.ViewUtils.SetLayer(var0_26, Layer.UIHidden)
 
 		return
 	end
 
-	local var1_25 = pg.island_animation_attachments[arg0_25.toolId]
-	local var2_25 = LoadAny(var1_25.model, nil)
-	local var3_25 = Object.Instantiate(var2_25)
+	local var1_26 = pg.island_animation_attachments[arg0_26.toolId]
+	local var2_26 = LoadAny(var1_26.model, nil)
+	local var3_26 = Object.Instantiate(var2_26)
 
-	arg0_25.objTfList[arg0_25.toolId] = var3_25.transform
+	arg0_26.objTfList[arg0_26.toolId] = var3_26.transform
 
-	local var4_25 = LoadAny(var1_25.animator, nil, typeof(RuntimeAnimatorController))
+	local var4_26 = LoadAny(var1_26.animator, nil, typeof(RuntimeAnimatorController))
 
-	GetOrAddComponent(arg0_25.objTfList[arg0_25.toolId], typeof(Animator)).runtimeAnimatorController = var4_25
+	GetOrAddComponent(arg0_26.objTfList[arg0_26.toolId], typeof(Animator)).runtimeAnimatorController = var4_26
 
-	setParent(arg0_25.objTfList[arg0_25.toolId], arg0_25._tf)
-	pg.ViewUtils.SetLayer(arg0_25.objTfList[arg0_25.toolId], Layer.UIHidden)
+	setParent(arg0_26.objTfList[arg0_26.toolId], arg0_26._tf)
+	pg.ViewUtils.SetLayer(arg0_26.objTfList[arg0_26.toolId], Layer.UIHidden)
 end
 
-function var3_0.UnLoadInteractiveTool(arg0_26)
-	if arg0_26.objTfList[arg0_26.toolId] then
-		setActive(arg0_26.objTfList[arg0_26.toolId], false)
+function var3_0.UnLoadInteractiveTool(arg0_27)
+	if arg0_27.objTfList[arg0_27.toolId] then
+		setActive(arg0_27.objTfList[arg0_27.toolId], false)
 	end
 end
 
-function var3_0.NoMoveHandle(arg0_27, arg1_27)
-	arg0_27.cantMove = true
+function var3_0.NoMoveHandle(arg0_28, arg1_28)
+	arg0_28.cantMove = true
 
-	if arg0_27.delayMoveTimer then
-		arg0_27.delayMoveTimer:Stop()
+	if arg0_28.delayMoveTimer then
+		arg0_28.delayMoveTimer:Stop()
 
-		arg0_27.delayMoveTimer = nil
+		arg0_28.delayMoveTimer = nil
 	end
 
-	arg0_27.delayMoveTimer = Timer.New(function()
-		arg0_27.cantMove = false
-	end, arg1_27, 1)
+	arg0_28.delayMoveTimer = Timer.New(function()
+		arg0_28.cantMove = false
+	end, arg1_28, 1)
 
-	arg0_27.delayMoveTimer:Start()
+	arg0_28.delayMoveTimer:Start()
 end
 
-function var3_0.AttackHandle(arg0_29, arg1_29)
-	if arg0_29.delayAttackTimer then
-		arg0_29.delayAttackTimer:Stop()
+function var3_0.AttackHandle(arg0_30, arg1_30)
+	if arg0_30.delayAttackTimer then
+		arg0_30.delayAttackTimer:Stop()
 
-		arg0_29.delayAttackTimer = nil
+		arg0_30.delayAttackTimer = nil
 	end
 
-	arg0_29.delayAttackTimer = Timer.New(function()
-		if arg0_29.unitData then
-			arg0_29:NotifiyCore(ISLAND_EVT.Take_Plant_Attact, {
-				type = arg0_29.unitData.unitType,
-				id = arg0_29.unitData.id
+	arg0_30.delayAttackTimer = Timer.New(function()
+		if arg0_30.unitData then
+			arg0_30:NotifiyCore(ISLAND_EVT.Take_Plant_Attact, {
+				type = arg0_30.unitData.unitType,
+				id = arg0_30.unitData.id
 			})
 		end
-	end, arg1_29, 1)
+	end, arg1_30, 1)
 
-	arg0_29.delayAttackTimer:Start()
+	arg0_30.delayAttackTimer:Start()
 end
 
-function var3_0.StateEnterHandle(arg0_31, arg1_31, arg2_31)
-	if arg1_31 == var10_0.JumpHandle then
-		arg0_31:OnEnterJumpState()
-	elseif arg1_31 == var10_0.LoadToolHandle then
-		arg0_31:LoadInteractiveTool(arg2_31)
-	elseif arg1_31 == var10_0.NoMoveAndWork then
-		arg0_31:NoMoveHandle(arg2_31)
-	elseif arg1_31 == var10_0.AttackHandle then
-		arg0_31:AttackHandle(arg2_31)
+function var3_0.StateEnterHandle(arg0_32, arg1_32, arg2_32)
+	if arg1_32 == var10_0.JumpHandle then
+		arg0_32:OnEnterJumpState()
+	elseif arg1_32 == var10_0.LoadToolHandle then
+		arg0_32:LoadInteractiveTool(arg2_32)
+	elseif arg1_32 == var10_0.NoMoveAndWork then
+		arg0_32:NoMoveHandle(arg2_32)
+	elseif arg1_32 == var10_0.AttackHandle then
+		arg0_32:AttackHandle(arg2_32)
 	end
 end
 
-function var3_0.StateEnterFixHandle(arg0_32, arg1_32, arg2_32)
-	pg.ViewUtils.SetLayer(arg0_32.objTfList[arg0_32.toolId], Layer.Default)
+function var3_0.StateEnterFixHandle(arg0_33, arg1_33, arg2_33)
+	pg.ViewUtils.SetLayer(arg0_33.objTfList[arg0_33.toolId], Layer.Default)
 end
 
-function var3_0.StateExitFixHandle(arg0_33, arg1_33, arg2_33)
-	pg.ViewUtils.SetLayer(arg0_33.objTfList[arg0_33.toolId], Layer.UIHidden)
+function var3_0.StateExitFixHandle(arg0_34, arg1_34, arg2_34)
+	pg.ViewUtils.SetLayer(arg0_34.objTfList[arg0_34.toolId], Layer.UIHidden)
 end
 
-function var3_0.StateExitHandle(arg0_34, arg1_34, arg2_34)
-	if arg1_34 == var10_0.LoadToolHandle then
-		arg0_34:UnLoadInteractiveTool(arg2_34)
+function var3_0.StateExitHandle(arg0_35, arg1_35, arg2_35)
+	if arg1_35 == var10_0.LoadToolHandle then
+		arg0_35:UnLoadInteractiveTool(arg2_35)
 	end
 end
 
-function var3_0.OnEnterJumpState(arg0_35)
-	arg0_35._positionTweenCom = {
+function var3_0.OnEnterJumpState(arg0_36)
+	arg0_36._positionTweenCom = {
 		elapse = 0,
 		oldPosition = 0,
-		duration = arg0_35.jumpCruveAllTime
+		duration = arg0_36.jumpCruveAllTime
 	}
 end
 
 local var11_0 = var1_0(0, 0)
 
-function var3_0.InitFarmCheckWorldObject(arg0_36)
-	if not arg0_36:IsSpecialMap() then
+function var3_0.InitFarmCheckWorldObject(arg0_37)
+	if not arg0_37:IsSpecialMap() then
 		return
 	end
 
-	arg0_36.detectionList = {}
+	arg0_37.detectionList = {}
 
-	for iter0_36, iter1_36 in ipairs(pg.island_production_place.get_id_list_by_map_id[arg0_36.mapId] or {}) do
-		for iter2_36, iter3_36 in ipairs(pg.island_production_farm.get_id_list_by_place_id[iter1_36] or {}) do
-			local var0_36 = pg.island_production_farm[iter3_36]
-			local var1_36 = pg.island_world_objects[var0_36.objId]
+	for iter0_37, iter1_37 in ipairs(pg.island_production_place.get_id_list_by_map_id[arg0_37.mapId] or {}) do
+		for iter2_37, iter3_37 in ipairs(pg.island_production_farm.get_id_list_by_place_id[iter1_37] or {}) do
+			local var0_37 = pg.island_production_farm[iter3_37]
+			local var1_37 = pg.island_world_objects[var0_37.objId]
 
-			table.insert(arg0_36.detectionList, {
-				id = var1_36.id,
-				position = var1_36.param.position
+			table.insert(arg0_37.detectionList, {
+				id = var1_37.id,
+				position = var1_37.param.position
 			})
 		end
 	end
 end
 
-function var3_0.IsSpecialMap(arg0_37)
-	return arg0_37.mapId == 1001 or arg0_37.mapId == 1005
+function var3_0.IsSpecialMap(arg0_38)
+	return arg0_38.mapId == 1001 or arg0_38.mapId == 1005
 end
 
-function var3_0.IsSelf(arg0_38)
+function var3_0.IsSelf(arg0_39)
 	return
 end
 
-function var3_0.Detectionobject(arg0_39)
-	if not arg0_39:IsSpecialMap() or not arg0_39.isSelfIsland then
+function var3_0.Detectionobject(arg0_40)
+	if not arg0_40:IsSpecialMap() or not arg0_40.isSelfIsland then
 		return
 	end
 
-	local var0_39 = {}
+	local var0_40 = {}
 
-	local function var1_39(arg0_40)
-		local var0_40 = arg0_40.position[1]
-		local var1_40 = arg0_40.position[3]
-		local var2_40 = var6_0.x / 2
-		local var3_40 = arg0_39._tf.position.x
-		local var4_40 = arg0_39._tf.position.z
-		local var5_40 = var4_0
-		local var6_40 = math.max(var0_40 - var2_40, math.min(var3_40, var0_40 + var2_40))
-		local var7_40 = math.max(var1_40 - var2_40, math.min(var4_40, var1_40 + var2_40))
-		local var8_40 = var6_40 - var3_40
-		local var9_40 = var7_40 - var4_40
+	local function var1_40(arg0_41)
+		local var0_41 = arg0_41.position[1]
+		local var1_41 = arg0_41.position[3]
+		local var2_41 = var6_0.x / 2
+		local var3_41 = arg0_40._tf.position.x
+		local var4_41 = arg0_40._tf.position.z
+		local var5_41 = var4_0
+		local var6_41 = math.max(var0_41 - var2_41, math.min(var3_41, var0_41 + var2_41))
+		local var7_41 = math.max(var1_41 - var2_41, math.min(var4_41, var1_41 + var2_41))
+		local var8_41 = var6_41 - var3_41
+		local var9_41 = var7_41 - var4_41
 
-		return var8_40 * var8_40 + var9_40 * var9_40 <= var5_40 * var5_40
+		return var8_41 * var8_41 + var9_41 * var9_41 <= var5_41 * var5_41
 	end
 
-	for iter0_39, iter1_39 in ipairs(arg0_39.detectionList) do
-		if arg0_39.view:GetUnitModuleWithType(IslandConst.UNIT_LIST_OBJ, iter1_39.id):CanCheckByPlayer() and var1_39(iter1_39) then
-			table.insert(var0_39, iter1_39)
+	for iter0_40, iter1_40 in ipairs(arg0_40.detectionList) do
+		if arg0_40.view:GetUnitModuleWithType(IslandConst.UNIT_LIST_OBJ, iter1_40.id):CanCheckByPlayer() and var1_40(iter1_40) then
+			table.insert(var0_40, iter1_40)
 		end
 	end
 
-	local function var2_39(arg0_41, arg1_41, arg2_41)
-		return (arg2_41.x - arg0_41.x) * (arg1_41.y - arg0_41.y) - (arg2_41.y - arg0_41.y) * (arg1_41.x - arg0_41.x)
+	local function var2_40(arg0_42, arg1_42, arg2_42)
+		return (arg2_42.x - arg0_42.x) * (arg1_42.y - arg0_42.y) - (arg2_42.y - arg0_42.y) * (arg1_42.x - arg0_42.x)
 	end
 
-	local function var3_39(arg0_42, arg1_42, arg2_42)
-		return Mathf.Min(arg0_42.x, arg1_42.x) <= arg2_42.x and arg2_42.x <= Mathf.Max(arg0_42.x, arg1_42.x) and Mathf.Min(arg0_42.y, arg1_42.y) <= arg2_42.y and arg2_42.y <= Mathf.Max(arg0_42.y, arg1_42.y)
+	local function var3_40(arg0_43, arg1_43, arg2_43)
+		return Mathf.Min(arg0_43.x, arg1_43.x) <= arg2_43.x and arg2_43.x <= Mathf.Max(arg0_43.x, arg1_43.x) and Mathf.Min(arg0_43.y, arg1_43.y) <= arg2_43.y and arg2_43.y <= Mathf.Max(arg0_43.y, arg1_43.y)
 	end
 
-	local function var4_39(arg0_43, arg1_43)
-		local var0_43 = #arg1_43
+	local function var4_40(arg0_44, arg1_44)
+		local var0_44 = #arg1_44
 
-		for iter0_43 = 0, var0_43 do
-			local var1_43 = arg1_43[iter0_43]
-			local var2_43 = arg1_43[(iter0_43 + 1) % var0_43] - var1_43
-			local var3_43 = arg0_43 - var1_43
+		for iter0_44 = 0, var0_44 do
+			local var1_44 = arg1_44[iter0_44]
+			local var2_44 = arg1_44[(iter0_44 + 1) % var0_44] - var1_44
+			local var3_44 = arg0_44 - var1_44
 
-			if var1_0.Dot(var2_43.normalized, var3_43) > 0 then
+			if var1_0.Dot(var2_44.normalized, var3_44) > 0 then
 				return false
 			end
 		end
@@ -542,147 +558,147 @@ function var3_0.Detectionobject(arg0_39)
 		return true
 	end
 
-	local function var5_39(arg0_44, arg1_44, arg2_44, arg3_44)
-		local var0_44 = var2_39(arg2_44, arg3_44, arg0_44)
-		local var1_44 = var2_39(arg2_44, arg3_44, arg1_44)
-		local var2_44 = var2_39(arg0_44, arg1_44, arg2_44)
-		local var3_44 = var2_39(arg0_44, arg1_44, arg3_44)
+	local function var5_40(arg0_45, arg1_45, arg2_45, arg3_45)
+		local var0_45 = var2_40(arg2_45, arg3_45, arg0_45)
+		local var1_45 = var2_40(arg2_45, arg3_45, arg1_45)
+		local var2_45 = var2_40(arg0_45, arg1_45, arg2_45)
+		local var3_45 = var2_40(arg0_45, arg1_45, arg3_45)
 
-		if (var0_44 > 0 and var1_44 < 0 or var0_44 < 0 and var1_44 > 0) and (var2_44 > 0 and var3_44 < 0 or var2_44 < 0 and var3_44 > 0) then
+		if (var0_45 > 0 and var1_45 < 0 or var0_45 < 0 and var1_45 > 0) and (var2_45 > 0 and var3_45 < 0 or var2_45 < 0 and var3_45 > 0) then
 			return true
 		end
 
-		if var0_44 == 0 and var3_39(arg2_44, arg3_44, arg0_44) then
+		if var0_45 == 0 and var3_40(arg2_45, arg3_45, arg0_45) then
 			return true
 		end
 
-		if var1_44 == 0 and var3_39(arg2_44, arg3_44, arg1_44) then
+		if var1_45 == 0 and var3_40(arg2_45, arg3_45, arg1_45) then
 			return true
 		end
 
-		if var2_44 == 0 and var3_39(arg0_44, arg1_44, arg2_44) then
+		if var2_45 == 0 and var3_40(arg0_45, arg1_45, arg2_45) then
 			return true
 		end
 
-		if var3_44 == 0 and var3_39(arg0_44, arg1_44, arg3_44) then
+		if var3_45 == 0 and var3_40(arg0_45, arg1_45, arg3_45) then
 			return true
 		end
 
 		return false
 	end
 
-	local function var6_39(arg0_45, arg1_45)
-		local var0_45 = {}
-		local var1_45 = arg1_45 * Mathf.Deg2Rad
-		local var2_45 = Mathf.Cos(var1_45)
-		local var3_45 = Mathf.Sin(var1_45)
-		local var4_45 = var6_0 * 0.5
+	local function var6_40(arg0_46, arg1_46)
+		local var0_46 = {}
+		local var1_46 = arg1_46 * Mathf.Deg2Rad
+		local var2_46 = Mathf.Cos(var1_46)
+		local var3_46 = Mathf.Sin(var1_46)
+		local var4_46 = var6_0 * 0.5
 
-		var0_45[0] = arg0_45 + var1_0(-var4_45.x * var2_45 - var4_45.y * var3_45, -var4_45.x * var3_45 + var4_45.y * var2_45)
-		var0_45[1] = arg0_45 + var1_0(var4_45.x * var2_45 - var4_45.y * var3_45, var4_45.x * var3_45 + var4_45.y * var2_45)
-		var0_45[2] = arg0_45 + var1_0(var4_45.x * var2_45 + var4_45.y * var3_45, var4_45.x * var3_45 - var4_45.y * var2_45)
-		var0_45[3] = arg0_45 + var1_0(-var4_45.x * var2_45 + var4_45.y * var3_45, -var4_45.x * var3_45 - var4_45.y * var2_45)
+		var0_46[0] = arg0_46 + var1_0(-var4_46.x * var2_46 - var4_46.y * var3_46, -var4_46.x * var3_46 + var4_46.y * var2_46)
+		var0_46[1] = arg0_46 + var1_0(var4_46.x * var2_46 - var4_46.y * var3_46, var4_46.x * var3_46 + var4_46.y * var2_46)
+		var0_46[2] = arg0_46 + var1_0(var4_46.x * var2_46 + var4_46.y * var3_46, var4_46.x * var3_46 - var4_46.y * var2_46)
+		var0_46[3] = arg0_46 + var1_0(-var4_46.x * var2_46 + var4_46.y * var3_46, -var4_46.x * var3_46 - var4_46.y * var2_46)
 
-		return var0_45
+		return var0_46
 	end
 
-	local function var7_39(arg0_46, arg1_46, arg2_46, arg3_46)
-		local var0_46 = var6_39(arg0_46, arg1_46)
+	local function var7_40(arg0_47, arg1_47, arg2_47, arg3_47)
+		local var0_47 = var6_40(arg0_47, arg1_47)
 
-		for iter0_46 = 0, 3 do
-			local var1_46 = var0_46[iter0_46]
-			local var2_46 = var0_46[(iter0_46 + 1) % 4]
+		for iter0_47 = 0, 3 do
+			local var1_47 = var0_47[iter0_47]
+			local var2_47 = var0_47[(iter0_47 + 1) % 4]
 
-			if var5_39(arg2_46, arg3_46, var1_46, var2_46) then
+			if var5_40(arg2_47, arg3_47, var1_47, var2_47) then
 				return true
 			end
 		end
 
-		if var4_39(arg2_46, var0_46) or var4_39(arg3_46, var0_46) then
+		if var4_40(arg2_47, var0_47) or var4_40(arg3_47, var0_47) then
 			return true
 		end
 
 		return false
 	end
 
-	local function var8_39(arg0_47, arg1_47, arg2_47)
-		local var0_47 = arg0_47 - arg2_47
-		local var1_47 = var1_0.Dot(var0_47, arg1_47)
-		local var2_47 = var1_0.Dot(var0_47, var1_0(-arg1_47.y, arg1_47.x))
-		local var3_47 = var1_0(var1_47, var2_47)
-		local var4_47 = var6_0 * 0.5
-		local var5_47 = var1_0.Max(var3_47 - var1_0.zero, var1_0.zero - var3_47)
-		local var6_47 = var1_0.Max(var5_47 - var4_47, var1_0.zero)
-		local var7_47 = var1_0.Angle(var6_47, var1_0.right)
-		local var8_47 = (180 - var5_0) / 2
-		local var9_47 = var7_39(var5_47, 0, var1_0.zero, var1_0(var4_0 * Mathf.Cos(15 * Mathf.Deg2Rad), var4_0 * Mathf.Sin(15 * Mathf.Deg2Rad)))
+	local function var8_40(arg0_48, arg1_48, arg2_48)
+		local var0_48 = arg0_48 - arg2_48
+		local var1_48 = var1_0.Dot(var0_48, arg1_48)
+		local var2_48 = var1_0.Dot(var0_48, var1_0(-arg1_48.y, arg1_48.x))
+		local var3_48 = var1_0(var1_48, var2_48)
+		local var4_48 = var6_0 * 0.5
+		local var5_48 = var1_0.Max(var3_48 - var1_0.zero, var1_0.zero - var3_48)
+		local var6_48 = var1_0.Max(var5_48 - var4_48, var1_0.zero)
+		local var7_48 = var1_0.Angle(var6_48, var1_0.right)
+		local var8_48 = (180 - var5_0) / 2
+		local var9_48 = var7_40(var5_48, 0, var1_0.zero, var1_0(var4_0 * Mathf.Cos(15 * Mathf.Deg2Rad), var4_0 * Mathf.Sin(15 * Mathf.Deg2Rad)))
 
-		return var8_47 <= var7_47 or var9_47
+		return var8_48 <= var7_48 or var9_48
 	end
 
-	local function var9_39(arg0_48)
-		if var0_0.Dot(var0_0(arg0_48.position[1], arg0_48.position[2], arg0_48.position[3]) - arg0_39._tf.position, arg0_39._tf.forward) < 0 then
+	local function var9_40(arg0_49)
+		if var0_0.Dot(var0_0(arg0_49.position[1], arg0_49.position[2], arg0_49.position[3]) - arg0_40._tf.position, arg0_40._tf.forward) < 0 then
 			return
 		end
 
-		local var0_48 = var1_0(arg0_48.position[1], arg0_48.position[3])
-		local var1_48 = arg0_39:Vector3ToVector2(arg0_39._tf.position) + var11_0
+		local var0_49 = var1_0(arg0_49.position[1], arg0_49.position[3])
+		local var1_49 = arg0_40:Vector3ToVector2(arg0_40._tf.position) + var11_0
 
-		return var8_39(var0_48, arg0_39:Vector3ToVector2(arg0_39._tf.right), var1_48)
+		return var8_40(var0_49, arg0_40:Vector3ToVector2(arg0_40._tf.right), var1_49)
 	end
 
-	local var10_39 = {}
+	local var10_40 = {}
 
-	for iter2_39, iter3_39 in ipairs(var0_39) do
-		if var9_39(iter3_39) then
-			table.insert(var10_39, iter3_39)
+	for iter2_40, iter3_40 in ipairs(var0_40) do
+		if var9_40(iter3_40) then
+			table.insert(var10_40, iter3_40)
 		end
 	end
 
-	local var11_39 = #var10_39
-	local var12_39 = false
+	local var11_40 = #var10_40
+	local var12_40 = false
 
-	if var11_39 ~= 0 then
-		local var13_39
-		local var14_39 = arg0_39:Vector3ToVector2(arg0_39._tf.position) + var11_0 + arg0_39:Vector3ToVector2(arg0_39._tf.forward) * 2
-		local var15_39 = 10
-		local var16_39 = {}
+	if var11_40 ~= 0 then
+		local var13_40
+		local var14_40 = arg0_40:Vector3ToVector2(arg0_40._tf.position) + var11_0 + arg0_40:Vector3ToVector2(arg0_40._tf.forward) * 2
+		local var15_40 = 10
+		local var16_40 = {}
 
-		for iter4_39, iter5_39 in ipairs(var10_39) do
-			local var17_39 = (var1_0(iter5_39.position[1], iter5_39.position[3]) - var14_39):Magnitude()
+		for iter4_40, iter5_40 in ipairs(var10_40) do
+			local var17_40 = (var1_0(iter5_40.position[1], iter5_40.position[3]) - var14_40):Magnitude()
 
-			if var17_39 < var15_39 then
-				var15_39 = var17_39
-				var13_39 = iter5_39
+			if var17_40 < var15_40 then
+				var15_40 = var17_40
+				var13_40 = iter5_40
 			end
 		end
 
-		if var13_39 then
-			itemId = var13_39.id
+		if var13_40 then
+			itemId = var13_40.id
 
-			if itemId ~= arg0_39.nearId then
-				arg0_39.nearId = itemId
-				arg0_39.nearItem = var13_39
-				var12_39 = true
+			if itemId ~= arg0_40.nearId then
+				arg0_40.nearId = itemId
+				arg0_40.nearItem = var13_40
+				var12_40 = true
 			end
 		end
 	end
 
-	if var11_39 ~= arg0_39.lastCrossCount or var12_39 then
-		arg0_39.lastCrossCount = var11_39
+	if var11_40 ~= arg0_40.lastCrossCount or var12_40 then
+		arg0_40.lastCrossCount = var11_40
 
-		if var11_39 == 0 then
-			arg0_39:NotifiyCore(ISLAND_EVT.HIDE_UNIT_HUD_OP, {
+		if var11_40 == 0 then
+			arg0_40:NotifiyCore(ISLAND_EVT.HIDE_UNIT_HUD_OP, {
 				isHighLightControl = true,
-				id = tonumber(arg0_39.nearId),
+				id = tonumber(arg0_40.nearId),
 				type = IslandConst.UNIT_LIST_OBJ
 			})
 
-			arg0_39.nearId = 0
+			arg0_40.nearId = 0
 		else
-			arg0_39:NotifiyCore(ISLAND_EVT.SHOW_UNIT_HUD_OP, {
+			arg0_40:NotifiyCore(ISLAND_EVT.SHOW_UNIT_HUD_OP, {
 				isHighLightControl = true,
-				id = tonumber(arg0_39.nearId),
+				id = tonumber(arg0_40.nearId),
 				operationType = IslandOpView.OperationType.Plant,
 				type = IslandConst.UNIT_LIST_OBJ
 			})
@@ -690,128 +706,132 @@ function var3_0.Detectionobject(arg0_39)
 	end
 end
 
-function var3_0.Vector3ToVector2(arg0_49, arg1_49)
-	return var1_0(arg1_49.x, arg1_49.z)
+function var3_0.Vector3ToVector2(arg0_50, arg1_50)
+	return var1_0(arg1_50.x, arg1_50.z)
 end
 
-function var3_0.GetNearItemId(arg0_50)
-	return arg0_50.nearId
+function var3_0.GetNearItemId(arg0_51)
+	return arg0_51.nearId
 end
 
-function var3_0.GetCurrentPosition(arg0_51)
-	return arg0_51._tf.position
+function var3_0.OnGrouded(arg0_52)
+	return arg0_52.onGroud
 end
 
-function var3_0.LastGroundedPosition(arg0_52)
-	local var0_52 = arg0_52._tf.eulerAngles
+function var3_0.GetCurrentPosition(arg0_53)
+	return arg0_53._tf.position
+end
 
-	if not arg0_52.onGroud then
-		local var1_52, var2_52 = Physics.Raycast(arg0_52._tf.position, Vector3.down, nil, math.huge, var9_0)
+function var3_0.LastGroundedPosition(arg0_54)
+	local var0_54 = arg0_54._tf.eulerAngles
 
-		if var1_52 then
-			return var2_52.point, var0_52
+	if not arg0_54.onGroud then
+		local var1_54, var2_54 = Physics.Raycast(arg0_54._tf.position, Vector3.down, nil, math.huge, var9_0)
+
+		if var1_54 then
+			return var2_54.point, var0_54
 		end
 	end
 
-	return arg0_52._tf.position, var0_52
+	return arg0_54._tf.position, var0_54
 end
 
-function var3_0.CheckCanJump(arg0_53)
-	if arg0_53.onGroud then
+function var3_0.CheckCanJump(arg0_55)
+	if arg0_55.onGroud then
 		return true
 	end
 
-	if arg0_53.jumpVector.y > 0 then
+	if arg0_55.jumpVector.y > 0 then
 		return false
 	end
 
-	local var0_53, var1_53 = Physics.Raycast(arg0_53._tf.position + arg0_53.characterController.center, Vector3.down, nil, 2, var9_0)
+	local var0_55, var1_55 = Physics.Raycast(arg0_55._tf.position + arg0_55.characterController.center, Vector3.down, nil, 2, var9_0)
 
-	if var0_53 then
+	if var0_55 then
 		return true
 	end
 
 	return false
 end
 
-function var3_0.OnDetach(arg0_54)
-	if arg0_54.delayMoveTimer then
-		arg0_54.delayMoveTimer:Stop()
+function var3_0.OnDetach(arg0_56)
+	if arg0_56.delayMoveTimer then
+		arg0_56.delayMoveTimer:Stop()
 
-		arg0_54.delayMoveTimer = nil
+		arg0_56.delayMoveTimer = nil
 	end
 
-	if arg0_54.delayAttackTimer then
-		arg0_54.delayAttackTimer:Stop()
+	if arg0_56.delayAttackTimer then
+		arg0_56.delayAttackTimer:Stop()
 
-		arg0_54.delayAttackTimer = nil
+		arg0_56.delayAttackTimer = nil
 	end
 
-	arg0_54:ClearAnimationTools()
-	arg0_54.shipDressHelper:Destroy()
-	arg0_54.characterHandleController:AddStateEnterFunc(nil)
-	arg0_54.characterHandleController:AddStateExitFunc(nil)
+	arg0_56:ClearAnimationTools()
+	arg0_56.shipDressHelper:Destroy()
+	arg0_56.characterHandleController:AddStateEnterFunc(nil)
+	arg0_56.characterHandleController:AddStateExitFunc(nil)
 end
 
-function var3_0.ClearAnimationTools(arg0_55)
-	for iter0_55, iter1_55 in pairs(arg0_55.objTfList) do
-		Object.Destroy(iter1_55.gameObject)
+function var3_0.ClearAnimationTools(arg0_57)
+	for iter0_57, iter1_57 in pairs(arg0_57.objTfList) do
+		Object.Destroy(iter1_57.gameObject)
 	end
 
-	arg0_55.objTfList = {}
+	arg0_57.objTfList = {}
 end
 
-function var3_0.SetActiveByLayer(arg0_56, arg1_56)
-	if arg1_56 then
-		pg.ViewUtils.SetLayer(arg0_56._tf, Layer.Default)
+function var3_0.SetActiveByLayer(arg0_58, arg1_58)
+	if arg1_58 then
+		pg.ViewUtils.SetLayer(arg0_58._tf, Layer.Default)
 	else
-		pg.ViewUtils.SetLayer(arg0_56._tf, Layer.UIHidden)
+		pg.ViewUtils.SetLayer(arg0_58._tf, Layer.UIHidden)
 	end
 end
 
-function var3_0.SetShipDressHelper(arg0_57, arg1_57)
-	arg0_57.shipDressHelper = arg1_57
+function var3_0.SetShipDressHelper(arg0_59, arg1_59)
+	arg0_59.shipDressHelper = arg1_59
 end
 
-function var3_0.OnChangeDress(arg0_58, arg1_58, arg2_58)
-	local var0_58 = {}
-	local var1_58 = getProxy(IslandProxy):GetIsland():GetDressUpAgency()
+function var3_0.OnChangeDress(arg0_60, arg1_60, arg2_60)
+	local var0_60 = {}
+	local var1_60 = getProxy(IslandProxy):GetIsland():GetDressUpAgency()
 
-	local function var2_58(arg0_59)
-		for iter0_59, iter1_59 in ipairs(arg2_58) do
-			if arg0_59 == iter1_59.id then
-				return iter1_59.color, true
+	local function var2_60(arg0_61)
+		for iter0_61, iter1_61 in ipairs(arg2_60) do
+			if arg0_61 == iter1_61.id then
+				return iter1_61.color, true
 			end
 		end
 
-		return var1_58:GetCurrentColorByDressId(arg0_59), false
+		return var1_60:GetCurrentColorByDressId(arg0_61), false
 	end
 
-	for iter0_58, iter1_58 in ipairs(arg1_58) do
-		local var3_58, var4_58 = var2_58(iter1_58.id)
+	for iter0_60, iter1_60 in ipairs(arg1_60) do
+		local var3_60, var4_60 = var2_60(iter1_60.id)
 
-		if var4_58 then
-			var0_58[iter1_58.id] = true
+		if var4_60 then
+			var0_60[iter1_60.id] = true
 		end
 
-		arg0_58.shipDressHelper:ChangeDressByType(iter1_58.type, {
-			id = iter1_58.id,
-			colorId = var3_58
+		arg0_60.shipDressHelper:ChangeDressByType(iter1_60.type, {
+			id = iter1_60.id,
+			colorId = var3_60
 		})
 	end
 
-	for iter2_58, iter3_58 in ipairs(arg2_58) do
-		local var5_58 = iter3_58.id
+	for iter2_60, iter3_60 in ipairs(arg2_60) do
+		local var5_60 = iter3_60.id
 
-		if not var0_58[var5_58] then
-			local var6_58 = pg.island_dress_template[var5_58].type
+		if not var0_60[var5_60] then
+			local var6_60 = pg.island_dress_template[var5_60].type
 
-			arg0_58.shipDressHelper:ChangeCommanderPartColor(var6_58, iter3_58.color)
+			arg0_60.shipDressHelper:ChangeCommanderPartColor(var6_60, iter3_60.color)
 		end
 	end
 end
 
-function var3_0.InitDress(arg0_60)
+function var3_0.InitDress(arg0_62)
 	return
 end
 

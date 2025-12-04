@@ -131,7 +131,7 @@ function var3_0.GetBuffBulletRes(arg0_9, arg1_9, arg2_9, arg3_9, arg4_9)
 				var0_10 = 1
 			end
 
-			iter1_10 = arg4_9 and arg4_9:RemapSkillId(iter1_10) or iter1_10
+			iter1_10 = arg4_9 and arg4_9:RemapSkillId(iter1_10, true) or iter1_10
 
 			local var1_10 = var3_0.SkillTranform(arg2_9, iter1_10)
 			local var2_10 = var3_0.GetResFromBuff(var1_10, var0_10, var1_9, arg3_9)

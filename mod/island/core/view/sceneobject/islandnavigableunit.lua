@@ -249,6 +249,8 @@ function var0_0.PlayAnimation(arg0_21, arg1_21, arg2_21, arg3_21)
 	end
 
 	if arg3_21 then
+		arg0_21:ClearSatetCallback()
+
 		arg0_21.stateCallback = {
 			state = arg1_21,
 			callback = arg3_21
@@ -269,8 +271,8 @@ function var0_0.CheckAnimationState(arg0_22)
 	end
 
 	if arg0_22.endTime and arg0_22:GetElapsedTime() >= arg0_22.endTime then
-		var1_22()
 		arg0_22:ClearSatetCallback()
+		var1_22()
 	end
 end
 

@@ -60,6 +60,10 @@ function var0_0.ProcessNextOne(arg0_6)
 			var0_6.callback()
 		end
 
+		if not arg0_6.schedule then
+			return
+		end
+
 		arg0_6.ignoringStoryList = {}
 
 		table.remove(arg0_6.schedule, 1)

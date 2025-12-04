@@ -442,7 +442,7 @@ function var0_0.didEnter(arg0_21)
 		arg0_21:emit(BattleMediator.ON_PAUSE)
 	end, SFX_CONFIRM)
 
-	arg0_21._chatBtn = arg0_21._tf:Find("chatBtn")
+	arg0_21._chatBtn = arg0_21._tf:Find("chatBtnContainer/chatBtn")
 
 	local var1_21 = arg0_21._chatBtn:GetComponent(typeof(Animation))
 

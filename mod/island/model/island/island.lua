@@ -14,6 +14,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.globalBuffAgency = IslandGlobalBuffAgency.New(arg0_1, arg1_1.private_data)
 	arg0_1.actionAgency = IslandActionAgency.New(arg0_1, arg1_1.private_data)
 	arg0_1.npcFeedbackAgency = IslandNpcFeedbackAgency.New(arg0_1, arg1_1.private_data)
+	arg0_1.fishingAgency = IslandFishingAgency.New(arg0_1, arg1_1.private_data)
 	arg0_1.settingsAgency = IslandSettingsAgency.New(arg0_1, arg1_1.private_data)
 	arg0_1.bookAgency = IslandBookAgency.New(arg0_1, arg1_1.private_data)
 	arg0_1.cardDiyAgency = IslandCardDiyAgency.New(arg0_1, arg1_1.private_data)
@@ -54,56 +55,60 @@ function var0_0.GetInventoryAgency(arg0_5)
 	return arg0_5.inventoryAgency
 end
 
-function var0_0.GetOrderAgency(arg0_6)
-	return arg0_6.orderAgency
+function var0_0.GetFishingAgency(arg0_6)
+	return arg0_6.fishingAgency
 end
 
-function var0_0.GetActionAgency(arg0_7)
-	return arg0_7.actionAgency
+function var0_0.GetOrderAgency(arg0_7)
+	return arg0_7.orderAgency
 end
 
-function var0_0.GetNpcFeedbackAgency(arg0_8)
-	return arg0_8.npcFeedbackAgency
+function var0_0.GetActionAgency(arg0_8)
+	return arg0_8.actionAgency
 end
 
-function var0_0.GetShopAgency(arg0_9)
-	return arg0_9.shopAgency
+function var0_0.GetNpcFeedbackAgency(arg0_9)
+	return arg0_9.npcFeedbackAgency
 end
 
-function var0_0.GetSeasonAgency(arg0_10)
-	return arg0_10.seasonAgency
+function var0_0.GetShopAgency(arg0_10)
+	return arg0_10.shopAgency
 end
 
-function var0_0.GetDressUpAgency(arg0_11)
-	return arg0_11.dressUpAgency
+function var0_0.GetSeasonAgency(arg0_11)
+	return arg0_11.seasonAgency
 end
 
-function var0_0.GetAchievementAgency(arg0_12)
-	return arg0_12.achievementAgency
+function var0_0.GetDressUpAgency(arg0_12)
+	return arg0_12.dressUpAgency
 end
 
-function var0_0.GetGlobalBuffAgency(arg0_13)
-	return arg0_13.globalBuffAgency
+function var0_0.GetAchievementAgency(arg0_13)
+	return arg0_13.achievementAgency
 end
 
-function var0_0.GetSettingsAgency(arg0_14)
-	return arg0_14.settingsAgency
+function var0_0.GetGlobalBuffAgency(arg0_14)
+	return arg0_14.globalBuffAgency
 end
 
-function var0_0.GetBookAgency(arg0_15)
-	return arg0_15.bookAgency
+function var0_0.GetSettingsAgency(arg0_15)
+	return arg0_15.settingsAgency
 end
 
-function var0_0.GetCardDiyAgency(arg0_16)
-	return arg0_16.cardDiyAgency
+function var0_0.GetBookAgency(arg0_16)
+	return arg0_16.bookAgency
 end
 
-function var0_0.GetTicketAgency(arg0_17)
-	return arg0_17.ticketAgency
+function var0_0.GetCardDiyAgency(arg0_17)
+	return arg0_17.cardDiyAgency
 end
 
-function var0_0.GetSystemTipInfos(arg0_18)
-	if not arg0_18:GetAblityAgency():IsUnlockPostManage() then
+function var0_0.GetTicketAgency(arg0_18)
+	return arg0_18.ticketAgency
+end
+
+function var0_0.GetSystemTipInfos(arg0_19)
+	if not arg0_19:GetAblityAgency():IsUnlockPostManage() then
 		return {
 			awardCnt = 0,
 			emptyCnt = 0,
@@ -111,28 +116,28 @@ function var0_0.GetSystemTipInfos(arg0_18)
 			timestamps = {}
 		}
 	else
-		local var0_18 = arg0_18:GetBuildingAgency():GetTipInfos()
-		local var1_18 = arg0_18:GetManageAgency():GetTipInfos()
+		local var0_19 = arg0_19:GetBuildingAgency():GetTipInfos()
+		local var1_19 = arg0_19:GetManageAgency():GetTipInfos()
 
 		return {
 			postFlag = 1,
-			awardCnt = var0_18.awardCnt + var1_18.awardCnt,
-			emptyCnt = var0_18.emptyCnt + var1_18.emptyCnt,
-			timestamps = table.mergeArray(var0_18.timestamps, var1_18.timestamps)
+			awardCnt = var0_19.awardCnt + var1_19.awardCnt,
+			emptyCnt = var0_19.emptyCnt + var1_19.emptyCnt,
+			timestamps = table.mergeArray(var0_19.timestamps, var1_19.timestamps)
 		}
 	end
 end
 
-function var0_0.UpdatePerDay(arg0_19)
-	var0_0.super.UpdatePerDay(arg0_19)
-	arg0_19:GetOrderAgency():UpdatePerDay()
-	arg0_19:GetTaskAgency():UpdatePerDay()
-	arg0_19:GetNpcFeedbackAgency():UpdatePerDay()
+function var0_0.UpdatePerDay(arg0_20)
+	var0_0.super.UpdatePerDay(arg0_20)
+	arg0_20:GetOrderAgency():UpdatePerDay()
+	arg0_20:GetTaskAgency():UpdatePerDay()
+	arg0_20:GetNpcFeedbackAgency():UpdatePerDay()
 end
 
-function var0_0.UpdatePerSecond(arg0_20)
-	var0_0.super.UpdatePerSecond(arg0_20)
-	arg0_20:GetTaskAgency():UpdatePerSecond()
+function var0_0.UpdatePerSecond(arg0_21)
+	var0_0.super.UpdatePerSecond(arg0_21)
+	arg0_21:GetTaskAgency():UpdatePerSecond()
 end
 
 return var0_0

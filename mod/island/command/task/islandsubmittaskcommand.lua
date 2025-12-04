@@ -31,8 +31,9 @@ function var0_0.execute(arg0_1, arg1_1)
 
 			var1_2:RemoveTask(var1_1)
 			var1_2:AddFinishId(var1_1)
-			IslandTaskHelper.UpdateRuntimeTaskByTargetType(IslandTaskTargetType.TASK)
-			IslandTaskHelper.UpdateRuntimeTaskByTargetType(IslandTaskTargetType.TASK_TYPE_PLUS)
+			IslandTaskHelper.OnSubmitTask({
+				var1_1
+			})
 
 			local var6_2 = IslandDropHelper.AddItems(arg0_2, var4_2)
 

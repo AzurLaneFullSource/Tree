@@ -4,7 +4,7 @@ pg.island_chara_skill = {
 		id = 1000,
 		name = "Manufacturing Expertise",
 		icon = "chara_all_skill_14",
-		desc = "When assigned to the manual workbench at the Base Factory, items take $1% less time to manufacture.",
+		desc = "When assigned to the manual workbench at the Base Factory, working speed increases by $1%.",
 		desc_add = {
 			{
 				{
@@ -398,7 +398,7 @@ pg.island_chara_skill = {
 		id = 1003,
 		name = "Fruit-Growing Expertise",
 		icon = "chara_all_skill_10",
-		desc = "When performing work at Sweetscent Orchard, fruit ripening time is shortened by $1%.",
+		desc = "When assigned to Sweetscent Orchard, working speed increases by $1%.",
 		desc_add = {
 			{
 				{
@@ -526,7 +526,7 @@ pg.island_chara_skill = {
 		id = 1004,
 		name = "Lumberjack Expertise",
 		icon = "chara_all_skill_2",
-		desc = "When performing work in the Verdant Woods, lumber production time is shortened by $1%.",
+		desc = "When assigned to the Verdant Woods, working speed increases by $1%.",
 		desc_add = {
 			{
 				{
@@ -654,7 +654,7 @@ pg.island_chara_skill = {
 		id = 1005,
 		name = "Ranching Expertise",
 		icon = "chara_all_skill_6",
-		desc = "When performing work at Laidback Ranch, animal product production time is shortened by $1%.",
+		desc = "When assigned to Laidback Ranch, working speed increases by $1%.",
 		desc_add = {
 			{
 				{
@@ -782,7 +782,7 @@ pg.island_chara_skill = {
 		id = 1006,
 		name = "Cooking Expertise",
 		icon = "chara_all_skill_7",
-		desc = "When performing work at the Golden Koi Restaurant, food preparation time is shortened by $1%.",
+		desc = "When assigned to the Golden Koi Restaurant, working speed increases by $1%.",
 		desc_add = {
 			{
 				{
@@ -910,7 +910,7 @@ pg.island_chara_skill = {
 		id = 1007,
 		name = "Research Expertise",
 		icon = "chara_all_skill_3",
-		desc = "When researching Island Technologies, research time is shortened by $1%.",
+		desc = "When researching Island Technology, working speed increases by $1%.",
 		desc_add = {
 			{
 				{
@@ -1038,7 +1038,7 @@ pg.island_chara_skill = {
 		id = 1008,
 		name = "Mining Expertise",
 		icon = "chara_all_skill_1",
-		desc = "When performing work at Rockheap Mine, mineral mining time is shortened by $1%.",
+		desc = "When assigned to Rockheap Mine, working speed increases by $1%.",
 		desc_add = {
 			{
 				{
@@ -1166,7 +1166,7 @@ pg.island_chara_skill = {
 		id = 1009,
 		name = "Farming Expertise",
 		icon = "chara_all_skill_5",
-		desc = "When performing work at Faircrop Fields, crop ripening time is shortened by $1%.",
+		desc = "When assigned to Faircrop Fields, working speed increases by $1%.",
 		desc_add = {
 			{
 				{
@@ -1422,7 +1422,7 @@ pg.island_chara_skill = {
 		id = 1011,
 		name = "Nursery Expertise",
 		icon = "chara_all_skill_9",
-		desc = "When performing work at Newsprout Nursery, crop ripening time is shortened by $1%.",
+		desc = "When assigned to Newsprout Nursery, working speed increases by $1%.",
 		desc_add = {
 			{
 				{
@@ -1942,9 +1942,9 @@ pg.island_chara_skill = {
 	},
 	[99999] = {
 		id = 99999,
-		name = "Infinite Stamina",
+		name = "Limitless Stamina",
 		icon = "chara_all_skill_8",
-		desc = "When performing work of any sort, stamina will not deplete.",
+		desc = "Workerjuus have no stamina limit and can be assigned to multiple slots at once.",
 		desc_add = {},
 		material = {},
 		skill_effect = {

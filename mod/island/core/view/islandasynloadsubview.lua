@@ -52,21 +52,26 @@ end
 
 function var0_0.Hide(arg0_8)
 	arg0_8:ShowOrHideGameObject(arg0_8._go, false)
+	arg0_8:OnHide()
 end
 
-function var0_0.ShowOrHideGameObject(arg0_9, arg1_9, arg2_9)
-	local var0_9 = GetOrAddComponent(arg1_9, typeof(CanvasGroup))
-
-	var0_9.alpha = arg2_9 and 1 or 0
-	var0_9.blocksRaycasts = arg2_9
+function var0_0.OnHide(arg0_9)
+	return
 end
 
-function var0_0.Execute(arg0_10, arg1_10, ...)
-	if arg0_10:IsLoaded() or not arg0_10:IsLoaded() and #arg0_10.__funcList == 0 and arg1_10 == "Show" then
-		arg0_10[arg1_10](arg0_10, ...)
-	elseif arg0_10.isloading then
-		table.insert(arg0_10.__funcList, {
-			name = arg1_10,
+function var0_0.ShowOrHideGameObject(arg0_10, arg1_10, arg2_10)
+	local var0_10 = GetOrAddComponent(arg1_10, typeof(CanvasGroup))
+
+	var0_10.alpha = arg2_10 and 1 or 0
+	var0_10.blocksRaycasts = arg2_10
+end
+
+function var0_0.Execute(arg0_11, arg1_11, ...)
+	if arg0_11:IsLoaded() or not arg0_11:IsLoaded() and #arg0_11.__funcList == 0 and arg1_11 == "Show" then
+		arg0_11[arg1_11](arg0_11, ...)
+	elseif arg0_11.isloading then
+		table.insert(arg0_11.__funcList, {
+			name = arg1_11,
 			args = packEx(...)
 		})
 	end

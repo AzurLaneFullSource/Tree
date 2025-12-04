@@ -18,7 +18,10 @@ function var0_0.execute(arg0_1, arg1_1)
 				pg.TipsMgr.GetInstance():ShowTips(i18n("island_get_collect_point_success", var2_2))
 			end
 
+			local var3_2 = IslandDropHelper.AddItems(arg0_2)
+
 			arg0_1:sendNotification(GAME.ISLAND_UNLOCK_ILLUSTRATION_DONE, {
+				dropData = var3_2,
 				ids = var0_1
 			})
 		else

@@ -4,7 +4,6 @@ _G.pg.base.ship_data_statistics[100001] = {
 	attack_duration = 0,
 	backyard_speed = "0.3",
 	english_name = "UNIV Universal Bulin",
-	gift_dislike = "",
 	huntingrange_level = 0,
 	id = 100001,
 	name = "Universal Bulin",
@@ -118,6 +117,10 @@ _G.pg.base.ship_data_statistics[100001] = {
 		{},
 	},
 	tag_list = {},
+	gift_dislike = {
+		180007,
+		180006,
+	},
 }
 
 _G.pg.base.ship_data_statistics[100011] = {

@@ -51,13 +51,14 @@ function var0_0.init(arg0_7)
 
 	arg0_7:setBg()
 
-	arg0_7.version = arg0_7._tf:Find("version")
+	arg0_7.adapt = arg0_7._tf:Find("adapt")
+	arg0_7.version = arg0_7.adapt:Find("version")
 	arg0_7.version:GetComponent("Text").text = "ver " .. var0_7.CurrentVersion:ToString()
-	arg0_7.bgLay = arg0_7._tf:Find("bg_lay")
-	arg0_7.accountBtn = arg0_7._tf:Find("bg_lay/buttons/account_button")
-	arg0_7.repairBtn = arg0_7._tf:Find("btns/repair_button")
-	arg0_7.privateBtn = arg0_7._tf:Find("btns/private_btn")
-	arg0_7.licenceBtn = arg0_7._tf:Find("btns/Licence_btn")
+	arg0_7.bgLay = arg0_7.adapt:Find("bg_lay")
+	arg0_7.accountBtn = arg0_7.adapt:Find("bg_lay/buttons/account_button")
+	arg0_7.repairBtn = arg0_7.adapt:Find("btns/repair_button")
+	arg0_7.privateBtn = arg0_7.adapt:Find("btns/private_btn")
+	arg0_7.licenceBtn = arg0_7.adapt:Find("btns/Licence_btn")
 	arg0_7.chInfo = arg0_7._tf:Find("background/info")
 
 	setActive(arg0_7.chInfo, PLATFORM_CODE == PLATFORM_CH)
@@ -74,44 +75,44 @@ function var0_0.init(arg0_7)
 
 	LeanTween.alphaCanvas(arg0_7.pressToLogin, 0.25, var1_0):setFrom(1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
 
-	arg0_7.currentServer = arg0_7._tf:Find("current_server")
-	arg0_7.serviceBtn = arg0_7._tf:Find("bg_lay/buttons/service_button")
-	arg0_7.filingBtn = arg0_7._tf:Find("filingBtn")
+	arg0_7.currentServer = arg0_7.adapt:Find("current_server")
+	arg0_7.serviceBtn = arg0_7.adapt:Find("bg_lay/buttons/service_button")
+	arg0_7.filingBtn = arg0_7.adapt:Find("filingBtn")
 
 	setActive(arg0_7.filingBtn, PLATFORM_CODE == PLATFORM_CH)
 
-	arg0_7.serversPanel = arg0_7._tf:Find("servers")
+	arg0_7.serversPanel = arg0_7.adapt:Find("servers")
 	arg0_7.servers = arg0_7.serversPanel:Find("panel/panel/servers/content/server_list")
 	arg0_7.serverTpl = arg0_7:getTpl("server_tpl")
 	arg0_7.recentTF = arg0_7.serversPanel:Find("panel/panel/servers/content/advice_panel/recent")
 	arg0_7.adviceTF = arg0_7.serversPanel:Find("panel/panel/servers/content/advice_panel/advice")
-	arg0_7.userAgreenTF = arg0_7._tf:Find("UserAgreement")
-	arg0_7.userAgreenMainTF = arg0_7._tf:Find("UserAgreement/window")
+	arg0_7.userAgreenTF = arg0_7.adapt:Find("UserAgreement")
+	arg0_7.userAgreenMainTF = arg0_7.adapt:Find("UserAgreement/window")
 	arg0_7.closeUserAgreenTF = arg0_7.userAgreenTF:Find("window/close_btn")
-	arg0_7.userAgreenConfirmTF = arg0_7._tf:Find("UserAgreement/window/accept_btn")
-	arg0_7.userDisagreeConfirmTF = arg0_7._tf:Find("UserAgreement/window/disagree_btn")
-	arg0_7.switchGatewayBtn = SwitchGatewayBtn.New(arg0_7._tf:Find("servers/panel/panel/switch_platform"))
+	arg0_7.userAgreenConfirmTF = arg0_7.adapt:Find("UserAgreement/window/accept_btn")
+	arg0_7.userDisagreeConfirmTF = arg0_7.adapt:Find("UserAgreement/window/disagree_btn")
+	arg0_7.switchGatewayBtn = SwitchGatewayBtn.New(arg0_7.adapt:Find("servers/panel/panel/switch_platform"))
 
 	if PLATFORM == PLATFORM_OPENHARMONY then
-		arg0_7.switchGatewayBtn4Oh = SwitchGatewayBtn4OpenHarmony.New(arg0_7._tf:Find("servers/panel/panel/switch_platform"))
+		arg0_7.switchGatewayBtn4Oh = SwitchGatewayBtn4OpenHarmony.New(arg0_7.adapt:Find("servers/panel/panel/switch_platform"))
 	end
 
 	setActive(arg0_7.userAgreenTF, false)
 	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7.userAgreenTF, arg0_7._tf)
 
-	arg0_7.opBtn = arg0_7._tf:Find("bg_lay/buttons/opBtn")
+	arg0_7.opBtn = arg0_7.adapt:Find("bg_lay/buttons/opBtn")
 
 	if arg0_7.opBtn then
 		setActive(arg0_7.opBtn, arg0_7.isOpPlay)
 	end
 
-	arg0_7.airiUidTxt = arg0_7._tf:Find("airi_uid")
+	arg0_7.airiUidTxt = arg0_7.adapt:Find("airi_uid")
 	arg0_7.shareData = {}
 	arg0_7.searchAccount = arg0_7.serversPanel:Find("panel/panel/searchAccount")
 
 	setText(findTF(arg0_7.searchAccount, "text"), i18n("query_role_button"))
 
-	arg0_7.serverPanelCanvas = GetComponent(arg0_7._tf:Find("servers/panel/panel/servers"), typeof(CanvasGroup))
+	arg0_7.serverPanelCanvas = GetComponent(arg0_7.adapt:Find("servers/panel/panel/servers"), typeof(CanvasGroup))
 
 	onButton(arg0_7, arg0_7.searchAccount, function()
 		if not arg0_7.serversDic or arg0_7.searching then
@@ -176,7 +177,7 @@ function var0_0.init(arg0_7)
 	arg0_7.subViewList[LoginSceneConst.DEFINE.SERVER_PANEL] = arg0_7.serversPanel
 	arg0_7.subViewList[LoginSceneConst.DEFINE.ACCOUNT_BTN] = arg0_7.accountBtn
 	arg0_7.subViewList[LoginSceneConst.DEFINE.CURRENT_SERVER] = arg0_7.currentServer
-	arg0_7.age = arg0_7._tf:Find("background/age")
+	arg0_7.age = arg0_7.adapt:Find("age")
 
 	if PLATFORM_CODE == PLATFORM_CH then
 		onButton(arg0_7, arg0_7.age, function()
@@ -861,7 +862,7 @@ function var0_0.switchToServer(arg0_68)
 end
 
 function var0_0.SwitchToWaitPanel(arg0_69, arg1_69)
-	local var0_69 = arg0_69._tf:Find("Msgbox")
+	local var0_69 = arg0_69.adapt:Find("Msgbox")
 	local var1_69 = var0_69:Find("window/content")
 
 	arg0_69.waitTimer = nil

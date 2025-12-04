@@ -49,7 +49,8 @@ function var0_0.execute(arg0_1, arg1_1)
 			var6_1:DispatchEvent(var0_0.START_DELEGATION, {
 				build_id = var1_1,
 				ship_id = var3_1,
-				area_id = var2_1
+				area_id = var2_1,
+				formula_id = var4_1
 			})
 			arg0_1:sendNotification(GAME.ISLAND_START_DELEGATION_DONE, {
 				slotId = var2_1

@@ -92368,6 +92368,46 @@ _G.pg.base.shop_template[100107] = {
 	},
 }
 
+_G.pg.base.shop_template[100108] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "档案坐标记录仪9",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "world_collection_task",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 100108,
+	limit_args2 = "",
+	num = 1,
+	order = 1,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 800,
+	resource_type = 3002,
+	second_text = "",
+	tag = 0,
+	time = "always",
+	time_second = 0,
+	type = 20,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			1,
+		},
+	},
+	effect_args = {
+		2058,
+		10080,
+	},
+}
+
 _G.pg.base.shop_template[105001] = {
 	akashi_pick = 0,
 	collaboration_skin_time = "",

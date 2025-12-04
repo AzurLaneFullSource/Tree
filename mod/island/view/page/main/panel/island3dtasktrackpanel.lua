@@ -116,7 +116,7 @@ function var0_0.RemoveTask(arg0_11, arg1_11)
 	arg0_11.otherTask = getProxy(IslandProxy):GetIsland():GetTaskAgency():GetTraceTask()
 
 	if not arg0_11.mainTask and not arg0_11.otherTask then
-		arg0_11.uiAnim:Play("Island3dTaskTrackPanel_out")
+		arg0_11:Hide()
 	end
 end
 

@@ -188,28 +188,32 @@ function var0_0.UpdateEquipmentPanel(arg0_13, arg1_13, arg2_13, arg3_13)
 	local var6_13 = {}
 	local var7_13 = var4_13:GetSpWeapon()
 
-	if var7_13 and var7_13:GetUpgradableSkillInfo().unlock then
+	if var7_13 then
 		local var8_13 = var7_13:GetUpgradableSkillInfo()
 
-		table.insert(var6_13, var7_13:GetUpgradableSkillIds()[1][1])
+		for iter0_13, iter1_13 in ipairs(var8_13) do
+			if iter1_13.unlock then
+				table.insert(var6_13, var7_13:GetUpgradableSkillIds()[1][1])
 
-		local var9_13 = var8_13.skillId
-		local var10_13 = ys.Battle.BattleDataFunction.GetBuffTemplate(var9_13, var8_13.lv)
+				local var9_13 = iter1_13.skillId
+				local var10_13 = ys.Battle.BattleDataFunction.GetBuffTemplate(var9_13, iter1_13.lv)
 
-		if var10_13.shipInfoScene and var10_13.shipInfoScene.equip then
-			for iter0_13, iter1_13 in ipairs(var10_13.shipInfoScene.equip) do
-				table.insert(var5_13, iter1_13)
+				if var10_13.shipInfoScene and var10_13.shipInfoScene.equip then
+					for iter2_13, iter3_13 in ipairs(var10_13.shipInfoScene.equip) do
+						table.insert(var5_13, iter3_13)
+					end
+				end
 			end
 		end
 	end
 
-	for iter2_13, iter3_13 in pairs(var4_13.skills) do
-		if not table.contains(var6_13, iter3_13.id) then
-			local var11_13 = ys.Battle.BattleDataFunction.GetBuffTemplate(iter3_13.id, iter3_13.level)
+	for iter4_13, iter5_13 in pairs(var4_13.skills) do
+		if not table.contains(var6_13, iter5_13.id) then
+			local var11_13 = ys.Battle.BattleDataFunction.GetBuffTemplate(iter5_13.id, iter5_13.level)
 
 			if var11_13.shipInfoScene and var11_13.shipInfoScene.equip then
-				for iter4_13, iter5_13 in ipairs(var11_13.shipInfoScene.equip) do
-					table.insert(var5_13, iter5_13)
+				for iter6_13, iter7_13 in ipairs(var11_13.shipInfoScene.equip) do
+					table.insert(var5_13, iter7_13)
 				end
 			end
 		end
@@ -220,8 +224,8 @@ function var0_0.UpdateEquipmentPanel(arg0_13, arg1_13, arg2_13, arg3_13)
 		local var13_13 = ys.Battle.BattleDataFunction.GetBuffTemplate(var12_13, 1)
 
 		if var13_13.shipInfoScene and var13_13.shipInfoScene.equip then
-			for iter6_13, iter7_13 in ipairs(var13_13.shipInfoScene.equip) do
-				table.insert(var5_13, iter7_13)
+			for iter8_13, iter9_13 in ipairs(var13_13.shipInfoScene.equip) do
+				table.insert(var5_13, iter9_13)
 			end
 		end
 	end
@@ -248,9 +252,11 @@ function var0_0.UpdateEquipmentPanel(arg0_13, arg1_13, arg2_13, arg3_13)
 			local var21_13 = false
 
 			if not (var4_13:getFlag("inWorld") and arg0_13.contextData.fromMediatorName == WorldMediator.__cname and WorldConst.FetchWorldShip(var4_13.id):IsBroken()) then
-				for iter8_13, iter9_13 in ipairs(var5_13) do
-					if arg0_13:equipmentCheck(iter9_13) and arg0_13.equipmentEnhance(iter9_13, arg2_13) then
-						var20_13 = var20_13 + iter9_13.number
+				for iter10_13, iter11_13 in ipairs(var5_13) do
+					print(arg0_13:equipmentCheck(iter11_13), arg0_13.equipmentEnhance(iter11_13, arg2_13))
+
+					if arg0_13:equipmentCheck(iter11_13) and arg0_13.equipmentEnhance(iter11_13, arg2_13) then
+						var20_13 = var20_13 + iter11_13.number
 						var21_13 = true
 					end
 				end
@@ -304,14 +310,14 @@ function var0_0.UpdateEquipmentPanel(arg0_13, arg1_13, arg2_13, arg3_13)
 			3
 		}
 
-		for iter10_13, iter11_13 in ipairs(var29_13) do
-			local var30_13 = var24_13:Find("attr_" .. iter11_13)
+		for iter12_13, iter13_13 in ipairs(var29_13) do
+			local var30_13 = var24_13:Find("attr_" .. iter13_13)
 			local var31_13 = findTF(var30_13, "panel")
 			local var32_13 = findTF(var30_13, "lock")
 
 			setActive(var30_13, true)
 
-			if iter11_13 == 5 then
+			if iter13_13 == 5 then
 				setText(var31_13:Find("values/value"), "")
 
 				local var33_13 = getSkillName(var28_13)

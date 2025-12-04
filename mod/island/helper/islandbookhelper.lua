@@ -26,4 +26,8 @@ function var0_0.OnNpcInteract(arg0_3)
 	})
 end
 
+function var0_0.OnFishingEnd(arg0_4)
+	getProxy(IslandProxy):GetIsland():GetBookAgency():OnFishingEnd(arg0_4)
+end
+
 return var0_0

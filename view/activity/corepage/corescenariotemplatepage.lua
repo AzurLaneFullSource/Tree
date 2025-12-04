@@ -1,18 +1,24 @@
 local var0_0 = class("CoreScenarioTemplatePage", import("view.base.BaseSubView"))
 local var1_0 = import("Mgr/Pool/PoolPlural")
 
+var0_0.LINE_COLOR = {
+	"43536c",
+	"dbe7ea",
+	"db6587"
+}
+
 function var0_0.getUIName(arg0_1)
 	return "AEBCSScenarioPage"
 end
 
 function var0_0.OnInit(arg0_2)
 	arg0_2.storyLayer = arg0_2._tf:Find("Story")
-	arg0_2.top = arg0_2._tf:Find("Top")
+	arg0_2.top = arg0_2._tf:Find("TopPage")
 	arg0_2.storyHolder = arg0_2._tf:Find("Story/Nodes")
 	arg0_2.storyContainer = arg0_2.storyHolder:Find("Viewport/Content")
 	arg0_2.nodes = {}
-	arg0_2.progressText = arg0_2._tf:Find("Story/Desc/Text")
-	arg0_2.storyAward = arg0_2._tf:Find("Story/Award")
+	arg0_2.progressText = arg0_2._tf:Find("TopPage/Desc/Text")
+	arg0_2.storyAward = arg0_2._tf:Find("TopPage/Award")
 	arg0_2.storyNodeTpl = arg0_2._tf:Find("Story/NodeTemplate")
 	arg0_2.oneLineTpl = arg0_2._tf:Find("Story/OneLine")
 	arg0_2.branchHeadTpl = arg0_2._tf:Find("Story/BranchHead")
@@ -23,6 +29,7 @@ function var0_0.OnInit(arg0_2)
 	arg0_2.unionCenterTpl = arg0_2._tf:Find("Story/UnionCenter")
 	arg0_2.unionUpTpl = arg0_2._tf:Find("Story/UnionUp")
 	arg0_2.unionDownTpl = arg0_2._tf:Find("Story/UnionDown")
+	arg0_2.unreleasedNodeTpl = arg0_2._tf:Find("Story/UnreleasedNode")
 
 	setActive(arg0_2.storyNodeTpl, false)
 	setActive(arg0_2.oneLineTpl, false)
@@ -34,6 +41,7 @@ function var0_0.OnInit(arg0_2)
 	setActive(arg0_2.unionCenterTpl, false)
 	setActive(arg0_2.unionUpTpl, false)
 	setActive(arg0_2.unionDownTpl, false)
+	setActive(arg0_2.unreleasedNodeTpl, false)
 
 	arg0_2.pools = {
 		[arg0_2.storyNodeTpl] = var1_0.New(go(arg0_2.storyNodeTpl), 0),
@@ -45,7 +53,8 @@ function var0_0.OnInit(arg0_2)
 		[arg0_2.unionTailTpl] = var1_0.New(go(arg0_2.unionTailTpl), 0),
 		[arg0_2.unionCenterTpl] = var1_0.New(go(arg0_2.unionCenterTpl), 0),
 		[arg0_2.unionUpTpl] = var1_0.New(go(arg0_2.unionUpTpl), 0),
-		[arg0_2.unionDownTpl] = var1_0.New(go(arg0_2.unionDownTpl), 0)
+		[arg0_2.unionDownTpl] = var1_0.New(go(arg0_2.unionDownTpl), 0),
+		[arg0_2.unreleasedNodeTpl] = var1_0.New(go(arg0_2.unreleasedNodeTpl), 0)
 	}
 	arg0_2.nodeTplWidth = arg0_2.storyNodeTpl.rect.width
 	arg0_2.oneLineWidth = arg0_2.oneLineTpl.rect.width
@@ -58,764 +67,922 @@ function var0_0.OnInit(arg0_2)
 	arg0_2.displayChapterIDs = {}
 	arg0_2.chapterTFsById = {}
 	arg0_2.storyNodeTFsById = {}
+	arg0_2.topPage = arg0_2._tf:Find("TopPage")
+	arg0_2.backBtn = arg0_2._tf:Find("TopPage/top/btn_back")
+	arg0_2.homeBtn = arg0_2._tf:Find("TopPage/top/btn_home")
 
-	setText(arg0_2.storyLayer:Find("Desc/Desc"), i18n("series_enemy_storyreward"))
+	onButton(arg0_2, arg0_2.backBtn, function()
+		arg0_2:Hide()
+	end, SFX_PANEL)
+	onButton(arg0_2, arg0_2.homeBtn, function()
+		arg0_2.event:emit(BaseUI.ON_HOME)
+	end, SFX_PANEL)
+	setText(arg0_2._tf:Find("TopPage/Desc/Desc"), i18n("series_enemy_storyreward"))
 end
 
-function var0_0.SetCoreStoryPage(arg0_3, arg1_3)
-	arg0_3.coreStoryPage = arg1_3
+function var0_0.SetCoreStoryPage(arg0_5, arg1_5)
+	arg0_5.coreStoryPage = arg1_5
 end
 
-function var0_0.SetActivity(arg0_4, arg1_4)
-	arg0_4.activity = arg1_4
+function var0_0.SetActivity(arg0_6, arg1_6)
+	arg0_6.activity = arg1_6
 
-	arg0_4:BuildStoryTree()
+	arg0_6:BuildStoryTree()
 end
 
-function var0_0.BuildStoryTree(arg0_5)
-	arg0_5.spStoryIDs = arg0_5.activity:getConfig("config_client").storys
-	arg0_5.spStoryNodes = {}
+function var0_0.BuildStoryTree(arg0_7)
+	arg0_7.spStoryIDs = arg0_7.activity:getConfig("config_client").storys
+	arg0_7.spStoryNodes = {}
 
-	_.each(arg0_5.spStoryIDs, function(arg0_6)
-		table.insert(arg0_5.spStoryNodes, ActivitySpStoryNode.New({
-			configId = arg0_6
+	_.each(arg0_7.spStoryIDs, function(arg0_8)
+		table.insert(arg0_7.spStoryNodes, ActivitySpStoryNode.New({
+			configId = arg0_8
 		}))
 	end)
 
-	arg0_5.nodeRootList, arg0_5.nodeChildDict = {}, {}
+	arg0_7.nodeRootList, arg0_7.nodeChildDict = {}, {}
 
-	_.each(arg0_5.spStoryNodes, function(arg0_7)
-		local var0_7 = arg0_7:GetPreNodes()
+	_.each(arg0_7.spStoryNodes, function(arg0_9)
+		local var0_9 = arg0_9:GetPreNodes()
 
-		if #var0_7 == 0 then
-			table.insert(arg0_5.nodeRootList, arg0_7)
+		if #var0_9 == 0 then
+			table.insert(arg0_7.nodeRootList, arg0_9)
 		else
-			_.each(var0_7, function(arg0_8)
-				arg0_5.nodeChildDict[arg0_8] = arg0_5.nodeChildDict[arg0_8] or {}
+			_.each(var0_9, function(arg0_10)
+				arg0_7.nodeChildDict[arg0_10] = arg0_7.nodeChildDict[arg0_10] or {}
 
-				table.insert(arg0_5.nodeChildDict[arg0_8], arg0_7)
+				table.insert(arg0_7.nodeChildDict[arg0_10], arg0_9)
 			end)
 		end
 	end)
 end
 
-function var0_0.UpdateView(arg0_9)
-	arg0_9:UpdateStoryNodeStatus()
-	arg0_9:UpdateStory()
-	arg0_9:Move2UnlockStory()
-	arg0_9:SwitchStoryMapAndBGM()
-	setActive(arg0_9.storyLayer, true)
-	arg0_9:TrySubmitTask()
+function var0_0.IsShowRed(arg0_11, arg1_11)
+	arg0_11:SetActivity(arg1_11)
+	arg0_11:UpdateStoryNodeStatus()
+
+	local var0_11 = false
+
+	for iter0_11 = 1, #arg0_11.spStoryNodes do
+		local var1_11 = arg0_11.spStoryNodes[iter0_11]
+
+		arg0_11:checkRequireBlock(var1_11)
+
+		if arg0_11.spStoryUnlockNode then
+			var0_11 = true
+
+			break
+		end
+	end
+
+	arg0_11.spStoryUnlockNode = nil
+	arg0_11.spStoryUnreleasedNode = nil
+
+	return var0_11
 end
 
-function var0_0.RecyclePools(arg0_10)
-	for iter0_10 = #arg0_10.activeItems, 1, -1 do
-		local var0_10 = arg0_10.activeItems[iter0_10]
-		local var1_10 = arg0_10.pools[var0_10.template]
+function var0_0.UpdateView(arg0_12, arg1_12)
+	arg0_12:UpdateStoryNodeStatus()
+	arg0_12:UpdateStory(arg1_12)
+	arg0_12:Move2UnlockStory()
+	arg0_12:SwitchStoryMapAndBGM()
+	setActive(arg0_12.storyLayer, true)
+	arg0_12:TrySubmitTask()
+end
 
-		if var0_10.template == arg0_10.oneLineTpl then
-			setSizeDelta(var0_10.active, {
-				x = arg0_10.oneLineWidth,
-				y = arg0_10.oneLineHeight
+function var0_0.RecyclePools(arg0_13)
+	for iter0_13 = #arg0_13.activeItems, 1, -1 do
+		local var0_13 = arg0_13.activeItems[iter0_13]
+		local var1_13 = arg0_13.pools[var0_13.template]
+
+		if var0_13.template == arg0_13.oneLineTpl then
+			setSizeDelta(var0_13.active, {
+				x = arg0_13.oneLineWidth,
+				y = arg0_13.oneLineHeight
 			})
 		end
 
-		var1_10:Enqueue(var0_10.active)
+		var1_13:Enqueue(var0_13.active)
 	end
 
-	table.clean(arg0_10.activeItems)
+	table.clean(arg0_13.activeItems)
 
-	arg0_10.storyNodeTFsById = {}
+	arg0_13.storyNodeTFsById = {}
 end
 
 local var2_0 = 1
 local var3_0 = 2
 local var4_0 = 3
 
-function var0_0.UpdateStoryNodeStatus(arg0_11)
-	local var0_11 = 0
-	local var1_11 = 0
-	local var2_11 = pg.NewStoryMgr.GetInstance()
-	local var3_11 = {}
+function var0_0.UpdateStoryNodeStatus(arg0_14)
+	local var0_14 = 0
+	local var1_14 = 0
+	local var2_14 = pg.NewStoryMgr.GetInstance()
+	local var3_14 = {}
 
-	table.Foreach(arg0_11.spStoryIDs, function(arg0_12, arg1_12)
-		var3_11[arg1_12] = {}
+	table.Foreach(arg0_14.spStoryIDs, function(arg0_15, arg1_15)
+		var3_14[arg1_15] = {}
 	end)
 
-	local var4_11 = arg0_11.spStoryNodes
+	local var4_14 = arg0_14.spStoryNodes
 
-	for iter0_11 = 1, #var4_11 do
-		local var5_11 = var4_11[iter0_11]
-		local var6_11 = var5_11:GetConfigID()
-		local var7_11 = var5_11:GetPreEvent()
-		local var8_11 = false
-		local var9_11 = var7_11 == 0 and true or var3_11[var7_11].status == var4_0
-		local var10_11 = var2_0
-		local var11_11 = var5_11:GetStoryName()
-		local var12_11 = false
+	for iter0_14 = 1, #var4_14 do
+		local var5_14 = var4_14[iter0_14]
+		local var6_14 = var5_14:GetConfigID()
+		local var7_14 = var5_14:GetPreEvent()
+		local var8_14 = true
+		local var9_14 = var2_0
+		local var10_14 = var5_14:GetStoryName()
+		local var11_14 = false
 
-		if var11_11 and var11_11 ~= "" then
-			var12_11 = var2_11:IsPlayed(var11_11)
-			var0_11 = var0_11 + (var12_11 and 1 or 0)
-			var1_11 = var1_11 + 1
+		if var10_14 and var10_14 ~= "" then
+			var11_14 = var2_14:IsPlayed(var10_14)
+			var0_14 = var0_14 + (var11_14 and 1 or 0)
+			var1_14 = var1_14 + 1
 		end
 
-		if not var12_11 and var9_11 then
-			_.each(var5_11:GetUnlockConditions(), function(arg0_13)
-				if arg0_13[1] == ActivitySpStoryNode.CONDITION.TIME then
-					local var0_13 = pg.TimeMgr.GetInstance():parseTimeFromConfig(arg0_13[2])
-					local var1_13 = pg.TimeMgr.GetInstance():GetServerTime()
+		if not var11_14 then
+			_.each(var5_14:GetUnlockConditions(), function(arg0_16)
+				if arg0_16[1] == ActivitySpStoryNode.CONDITION.TIME then
+					local var0_16 = pg.TimeMgr.GetInstance():parseTimeFromConfig(arg0_16[2])
+					local var1_16 = pg.TimeMgr.GetInstance():GetServerTime()
 
-					var9_11 = var9_11 and var0_13 <= var1_13
-				elseif arg0_13[1] == ActivitySpStoryNode.CONDITION.PASSCHAPTER then
-					local var2_13 = arg0_13[2]
+					var8_14 = var8_14 and var0_16 <= var1_16
+				elseif arg0_16[1] == ActivitySpStoryNode.CONDITION.PASSCHAPTER then
+					local var2_16 = arg0_16[2]
 
-					var9_11 = var9_11 and _.all(var2_13, function(arg0_14)
-						return getProxy(ChapterProxy):getChapterById(arg0_14, true):isClear()
+					var8_14 = var8_14 and _.all(var2_16, function(arg0_17)
+						return getProxy(ChapterProxy):getChapterById(arg0_17, true):isClear()
 					end)
-				elseif arg0_13[1] == ActivitySpStoryNode.CONDITION.PT then
-					local var3_13 = arg0_13[2][1]
-					local var4_13 = arg0_13[2][2]
-					local var5_13 = arg0_13[2][3]
-					local var6_13 = 0
+				elseif arg0_16[1] == ActivitySpStoryNode.CONDITION.PT then
+					local var3_16 = arg0_16[2][1]
+					local var4_16 = arg0_16[2][2]
+					local var5_16 = arg0_16[2][3]
+					local var6_16 = 0
 
-					if var3_13 == DROP_TYPE_RESOURCE then
-						var6_13 = getProxy(PlayerProxy):getRawData():getResource(arg0_13[2])
-					elseif var3_13 == DROP_TYPE_ITEM then
-						var6_13 = getProxy(BagProxy):getItemCountById(var4_13)
+					if var3_16 == DROP_TYPE_RESOURCE then
+						var6_16 = getProxy(PlayerProxy):getRawData():getResource(arg0_16[2][2])
+					elseif var3_16 == DROP_TYPE_ITEM then
+						var6_16 = getProxy(BagProxy):getItemCountById(var4_16)
 					end
 
-					var9_11 = var9_11 and var5_13 <= var6_13
+					var8_14 = var8_14 and var5_16 <= var6_16
+					var3_14[var6_14].reuqire = var5_16
+				elseif arg0_16[1] == ActivitySpStoryNode.CONDITION.PRE_PASSED then
+					var8_14 = var3_14[var5_14:GetPreEvent()].status == var4_0
 				end
 			end)
 		end
 
-		if var12_11 then
-			var10_11 = var4_0
-		elseif var9_11 then
-			var10_11 = var3_0
+		if var11_14 then
+			var9_14 = var4_0
+		elseif var8_14 then
+			var9_14 = var3_0
 		end
 
-		var3_11[var6_11].status = var10_11
+		var3_14[var6_14].status = var9_14
 	end
 
-	arg0_11.storyNodeStatus = var3_11
-	arg0_11.storyReadCount, arg0_11.storyReadMax = var0_11, var1_11
+	arg0_14.storyNodeStatus = var3_14
+	arg0_14.storyReadCount, arg0_14.storyReadMax = var0_14, var1_14
 end
 
-function var0_0.UpdateStory(arg0_15)
-	arg0_15:RecyclePools()
+function var0_0.checkRequireBlock(arg0_18, arg1_18)
+	local var0_18 = arg1_18:GetConfigID()
+	local var1_18 = arg0_18.storyNodeStatus[var0_18]
 
-	local var0_15 = {
-		"43536c",
-		"dbe7ea",
-		"db6587"
-	}
-	local var1_15 = 0
-	local var2_15 = 150
-	local var3_15 = 150
-	local var4_15 = arg0_15.nodeTplWidth
-	local var5_15 = arg0_15.oneLineWidth
-	local var6_15 = arg0_15.branchHeadWidth
-	local var7_15 = arg0_15.branchUpWidth
-	local var8_15 = arg0_15.branchUpHeight
-	local var9_15 = arg0_15.UnionTailWidth
-	local var10_15 = 95
-	local var11_15 = 82
-	local var12_15 = 20
+	if var1_18.reuqire and var1_18.status ~= var4_0 and arg1_18:GetCleanAnimator() then
+		if var1_18.status == var2_0 then
+			arg0_18.spStoryUnreleasedNode = arg1_18
 
-	for iter0_15, iter1_15 in ipairs(arg0_15.nodeRootList) do
-		local var13_15 = 0
-		local var14_15 = {
+			return false
+		elseif var1_18.status == var3_0 then
+			local var2_18 = getProxy(PlayerProxy):getRawData().id
+
+			if PlayerPrefs.GetInt("player_" .. var2_18 .. "_activity_spStoryNodeID_" .. var0_18 .. "_unlock", 0) == 0 then
+				arg0_18.spStoryUnlockNode = arg1_18
+
+				return false
+			end
+		end
+	end
+
+	return true
+end
+
+function var0_0.UpdateStory(arg0_19, arg1_19)
+	arg0_19:RecyclePools()
+
+	local var0_19 = arg0_19.LINE_COLOR
+	local var1_19 = 0
+	local var2_19 = 150
+	local var3_19 = 150
+	local var4_19 = arg0_19.nodeTplWidth
+	local var5_19 = arg0_19.oneLineWidth
+	local var6_19 = arg0_19.branchHeadWidth
+	local var7_19 = arg0_19.branchUpWidth
+	local var8_19 = arg0_19.branchUpHeight
+	local var9_19 = arg0_19.UnionTailWidth
+	local var10_19 = 95
+	local var11_19 = 82
+	local var12_19 = 20
+	local var13_19 = 0
+	local var14_19 = pg.NewStoryMgr.GetInstance()
+
+	for iter0_19, iter1_19 in ipairs(arg0_19.nodeRootList) do
+		local var15_19 = {
 			{
-				node = iter1_15,
-				nodePos = Vector2.New(var2_15, (iter0_15 - 1) * 400)
+				node = iter1_19,
+				nodePos = Vector2.New(var2_19, (iter0_19 - 1) * 400)
 			}
 		}
 
-		local function var15_15()
-			local var0_16 = table.remove(var14_15, 1)
-			local var1_16 = var0_16.node:GetConfigID()
+		local function var16_19()
+			local var0_20 = table.remove(var15_19, 1)
+			local var1_20 = var0_20.node
+
+			if not arg0_19:checkRequireBlock(var1_20) then
+				var13_19 = var0_20.nodePos.x + var3_19
+
+				return false
+			end
+
+			local var2_20 = var1_20:GetConfigID()
 
 			;(function()
-				local var0_17 = arg0_15:DequeItem(arg0_15.storyNodeTpl)
+				local var0_21 = arg0_19:DequeItem(arg0_19.storyNodeTpl, arg1_19)
 
-				var0_17.name = var1_16
+				var0_21.name = var2_20
 
-				setAnchoredPosition(var0_17, var0_16.nodePos)
+				setAnchoredPosition(var0_21, var0_20.nodePos)
 
-				arg0_15.storyNodeTFsById[var1_16] = {
-					nodeTF = tf(var0_17)
+				arg0_19.storyNodeTFsById[var2_20] = {
+					nodeTF = tf(var0_21)
 				}
 			end)()
 
-			local var2_16 = arg0_15.nodeChildDict[var1_16] or {}
+			local var3_20 = arg0_19.nodeChildDict[var2_20] or {}
 
-			if #var2_16 == 0 then
-				var13_15 = var0_16.nodePos.x + var4_15 + var3_15
-			elseif #var2_16 == 1 then
-				local var3_16 = var2_16[1]
-				local var4_16 = var3_16:GetConfigID()
-				local var5_16 = arg0_15:DequeItem(arg0_15.oneLineTpl)
+			if #var3_20 == 0 then
+				var13_19 = var0_20.nodePos.x + var4_19 + var3_19
+			elseif #var3_20 == 1 then
+				local var4_20 = var3_20[1]
+				local var5_20 = var4_20:GetConfigID()
+				local var6_20 = arg0_19:DequeItem(arg0_19.oneLineTpl, arg1_19)
 
-				var5_16.name = string.format("Line%s_%s", var1_16, var4_16)
+				var6_20.name = string.format("Line%s_%s", var2_20, var5_20)
 
-				setAnchoredPosition(var5_16, var0_16.nodePos + Vector2.New(var4_15 + var12_15, 0))
+				setAnchoredPosition(var6_20, var0_20.nodePos + Vector2.New(var4_19 + var12_19, 0))
 
-				nextPos = tf(var5_16).anchoredPosition + Vector2.New(var5_15 + var10_15, 0)
+				nextPos = tf(var6_20).anchoredPosition + Vector2.New(var5_19 + var10_19, 0)
 
-				local var6_16 = arg0_15.storyNodeStatus[var4_16].status
-				local var7_16 = tf(var5_16):Find("mask/Lines")
+				local var7_20 = arg0_19.storyNodeStatus[var5_20].status
+				local var8_20 = tf(var6_20):Find("mask/Lines")
 
-				eachChild(var7_16, function(arg0_18)
-					setImageColor(arg0_18, Color.NewHex(var0_15[var6_16]))
+				eachChild(var8_20, function(arg0_22)
+					setImageColor(arg0_22, Color.NewHex(var0_19[var7_20]))
 				end)
-				table.insert(var14_15, {
-					node = var3_16,
+				table.insert(var15_19, {
+					node = var4_20,
 					nodePos = nextPos
 				})
-			elseif #var2_16 > 1 then
-				local var8_16 = {}
-				local var9_16
+			elseif #var3_20 > 1 then
+				local var9_20 = {}
+				local var10_20
 
-				table.Ipairs(var2_16, function(arg0_19, arg1_19)
-					local var0_19 = 0
-					local var1_19 = arg1_19
+				table.Ipairs(var3_20, function(arg0_23, arg1_23)
+					local var0_23 = 0
+					local var1_23 = arg1_23
 
-					local function var2_19()
-						var0_19 = var0_19 + 1
+					local function var2_23()
+						var0_23 = var0_23 + 1
 
-						local var0_20 = arg0_15.nodeChildDict[var1_19:GetConfigID()]
+						local var0_24 = arg0_19.nodeChildDict[var1_23:GetConfigID()]
 
-						assert(#var0_20 <= 1)
+						assert(#var0_24 <= 1)
 
-						local var1_20 = var0_20[1]
+						local var1_24 = var0_24[1]
 
-						if var1_20 and #var1_20:GetPreNodes() == 1 then
-							var1_19 = var1_20
+						if var1_24 and #var1_24:GetPreNodes() == 1 then
+							var1_23 = var1_24
 
 							return true
 						else
-							var9_16 = var1_20
+							var10_20 = var1_24
 						end
 					end
 
-					while var2_19() do
+					while var2_23() do
 						-- block empty
 					end
 
-					var8_16[arg0_19] = var0_19
+					var9_20[arg0_23] = var0_23
 				end)
 
-				local var10_16 = _.max(var8_16)
-				local var11_16 = var10_16 * (var4_15 + var10_15 + var12_15) + (var10_16 - 1) * var5_15
-				local var12_16 = var0_16.nodePos + Vector2.New(var4_15 + var12_15, 0)
+				local var11_20 = _.max(var9_20)
+				local var12_20 = var11_20 * (var4_19 + var10_19 + var12_19) + (var11_20 - 1) * var5_19
+				local var13_20 = var0_20.nodePos + Vector2.New(var4_19 + var12_19, 0)
 
 				;(function()
-					local var0_21 = arg0_15:DequeItem(arg0_15.branchHeadTpl)
+					local var0_25 = arg0_19:DequeItem(arg0_19.branchHeadTpl, arg1_19)
 
-					setAnchoredPosition(var0_21, var12_16)
+					setAnchoredPosition(var0_25, var13_20)
 
-					var12_16 = var12_16 + Vector2.New(var6_15, 0)
+					var13_20 = var13_20 + Vector2.New(var6_19, 0)
 
-					local var1_21 = arg0_15.storyNodeStatus[var2_16[1]:GetConfigID()].status
-					local var2_21 = tf(var0_21):Find("mask/Lines")
+					local var1_25 = arg0_19.storyNodeStatus[var3_20[1]:GetConfigID()].status
+					local var2_25 = tf(var0_25):Find("mask/Lines")
 
-					eachChild(var2_21, function(arg0_22)
-						setImageColor(arg0_22, Color.NewHex(var0_15[var1_21]))
+					eachChild(var2_25, function(arg0_26)
+						setImageColor(arg0_26, Color.NewHex(var0_19[var1_25]))
 					end)
 				end)()
-				table.Ipairs(var2_16, function(arg0_23, arg1_23)
-					local var0_23 = var5_15
 
-					if var8_16[arg0_23] < var10_16 then
-						local var1_23 = var8_16[arg0_23]
+				local var14_20
 
-						var0_23 = (var11_16 - var1_23 * (var4_15 + var10_15 + var12_15)) / (var1_23 + 1)
+				table.Ipairs(var3_20, function(arg0_27, arg1_27)
+					local var0_27 = var5_19
+
+					if var9_20[arg0_27] < var11_20 then
+						local var1_27 = var9_20[arg0_27]
+
+						var0_27 = (var12_20 - var1_27 * (var4_19 + var10_19 + var12_19)) / (var1_27 + 1)
 					end
 
-					local var2_23 = arg1_23:GetConfigID()
-					local var3_23 = var12_16
+					local var2_27 = arg1_27:GetConfigID()
+					local var3_27 = var13_20
 
 					;(function()
-						local var0_24
+						local var0_28
 
-						if arg0_23 == 1 then
-							var0_24 = arg0_15:DequeItem(arg0_15.branchUpTpl)
+						if arg0_27 == 1 then
+							var0_28 = arg0_19:DequeItem(arg0_19.branchUpTpl, arg1_19)
 
-							setAnchoredPosition(var0_24, var3_23)
+							setAnchoredPosition(var0_28, var3_27)
 
-							var3_23 = var3_23 + Vector2.New(var7_15, var8_15)
+							var3_27 = var3_27 + Vector2.New(var7_19, var8_19)
 
-							if var8_16[arg0_23] < var10_16 then
-								setSizeDelta(var0_24, {
-									x = var7_15 + var0_23,
-									y = var8_15
+							if var9_20[arg0_27] < var11_20 then
+								setSizeDelta(var0_28, {
+									x = var7_19 + var0_27,
+									y = var8_19
 								})
 
-								local var1_24 = tf(var0_24):Find("Line_1").sizeDelta
+								local var1_28 = tf(var0_28):Find("Line_1").sizeDelta
 
-								var1_24.x = var1_24.x + var0_23
+								var1_28.x = var1_28.x + var0_27
 
-								setSizeDelta(tf(var0_24):Find("Line_1"), var1_24)
+								setSizeDelta(tf(var0_28):Find("Line_1"), var1_28)
 
-								var3_23 = var3_23 + Vector2.New(var0_23, 0)
+								var3_27 = var3_27 + Vector2.New(var0_27, 0)
 							end
-						elseif arg0_23 == 3 or arg0_23 == 2 and #var2_16 == 2 then
-							var0_24 = arg0_15:DequeItem(arg0_15.branchDownTpl)
+						elseif arg0_27 == 3 or arg0_27 == 2 and #var3_20 == 2 then
+							var0_28 = arg0_19:DequeItem(arg0_19.branchDownTpl, arg1_19)
 
-							setAnchoredPosition(var0_24, var3_23)
+							setAnchoredPosition(var0_28, var3_27)
 
-							var3_23 = var3_23 + Vector2.New(var7_15, -var8_15)
+							var3_27 = var3_27 + Vector2.New(var7_19, -var8_19)
 
-							if var8_16[arg0_23] < var10_16 then
-								setSizeDelta(var0_24, {
-									x = var7_15 + var0_23,
-									y = var8_15
+							if var9_20[arg0_27] < var11_20 then
+								setSizeDelta(var0_28, {
+									x = var7_19 + var0_27,
+									y = var8_19
 								})
 
-								local var2_24 = tf(var0_24):Find("Line_1").sizeDelta
+								local var2_28 = tf(var0_28):Find("Line_1").sizeDelta
 
-								var2_24.x = var2_24.x + var0_23
+								var2_28.x = var2_28.x + var0_27
 
-								setSizeDelta(tf(var0_24):Find("Line_1"), var2_24)
+								setSizeDelta(tf(var0_28):Find("Line_1"), var2_28)
 
-								var3_23 = var3_23 + Vector2.New(var0_23, 0)
+								var3_27 = var3_27 + Vector2.New(var0_27, 0)
 							end
 						else
-							var0_24 = arg0_15:DequeItem(arg0_15.branchCenterTpl)
+							var0_28 = arg0_19:DequeItem(arg0_19.branchCenterTpl, arg1_19)
 
-							setAnchoredPosition(var0_24, var3_23)
+							setAnchoredPosition(var0_28, var3_27)
 
-							var3_23 = var3_23 + Vector2.New(var7_15, 0)
+							var3_27 = var3_27 + Vector2.New(var7_19, 0)
 
-							if var8_16[arg0_23] < var10_16 then
-								local var3_24 = tf(var0_24).sizeDelta
+							if var9_20[arg0_27] < var11_20 then
+								local var3_28 = tf(var0_28).sizeDelta
 
-								var3_24.x = var3_24.x + var0_23
+								var3_28.x = var3_28.x + var0_27
 
-								setSizeDelta(var0_24, var3_24)
+								setSizeDelta(var0_28, var3_28)
 
-								var3_23 = var3_23 + Vector2.New(var0_23, 0)
+								var3_27 = var3_27 + Vector2.New(var0_27, 0)
 							end
 						end
 
-						var0_24.name = string.format("Branch%s_%s", var1_16, var2_23)
+						var0_28.name = string.format("Branch%s_%s", var2_20, var2_27)
 
-						local var4_24 = arg0_15.storyNodeStatus[var2_23].status
-						local var5_24 = tf(var0_24):Find("mask/Lines")
+						local var4_28 = arg0_19.storyNodeStatus[var2_27].status
+						local var5_28 = tf(var0_28):Find("mask/Lines")
 
-						eachChild(var5_24, function(arg0_25)
-							setImageColor(arg0_25, Color.NewHex(var0_15[var4_24]))
+						eachChild(var5_28, function(arg0_29)
+							setImageColor(arg0_29, Color.NewHex(var0_19[var4_28]))
 						end)
 					end)()
 
-					var3_23 = var3_23 + Vector2.New(var10_15, 0)
+					var3_27 = var3_27 + Vector2.New(var10_19, 0)
 
-					local var4_23 = arg0_15:DequeItem(arg0_15.storyNodeTpl)
+					if not arg0_19:checkRequireBlock(arg1_27) then
+						var13_19 = var3_27.x
+						var14_20 = true
 
-					var4_23.name = var2_23
+						return
+					end
 
-					setAnchoredPosition(var4_23, var3_23)
+					local var4_27 = arg0_19:DequeItem(arg0_19.storyNodeTpl, arg1_19)
 
-					arg0_15.storyNodeTFsById[var2_23] = {
-						nodeTF = tf(var4_23)
+					var4_27.name = var2_27
+
+					setAnchoredPosition(var4_27, var3_27)
+
+					arg0_19.storyNodeTFsById[var2_27] = {
+						nodeTF = tf(var4_27)
 					}
-					var3_23 = var3_23 + Vector2.New(var4_15 + var12_15, 0)
+					var3_27 = var3_27 + Vector2.New(var4_19 + var12_19, 0)
 
-					local var5_23 = arg0_15.nodeChildDict[var2_23][1]
-					local var6_23 = arg1_23
+					local var5_27 = arg0_19.nodeChildDict[var2_27][1]
+					local var6_27 = arg1_27
 
-					local function var7_23()
-						if not var5_23 or var5_23 == var9_16 then
+					local function var7_27()
+						if not var5_27 or var5_27 == var10_20 then
 							return
 						end
 
-						local var0_26 = arg0_15:DequeItem(arg0_15.oneLineTpl)
+						local var0_30 = arg0_19:DequeItem(arg0_19.oneLineTpl, arg1_19)
 
-						var0_26.name = string.format("Line%s_%s", var6_23:GetConfigID(), var5_23:GetConfigID())
+						var0_30.name = string.format("Line%s_%s", var6_27:GetConfigID(), var5_27:GetConfigID())
 
-						setAnchoredPosition(var0_26, var3_23)
+						setAnchoredPosition(var0_30, var3_27)
 
-						var3_23 = var3_23 + Vector2.New(var0_23 + var10_15, 0)
+						var3_27 = var3_27 + Vector2.New(var0_27 + var10_19, 0)
 
-						setSizeDelta(var0_26, {
-							x = var0_23,
-							y = arg0_15.oneLineHeight
+						setSizeDelta(var0_30, {
+							x = var0_27,
+							y = arg0_19.oneLineHeight
 						})
 
-						local var1_26 = arg0_15.storyNodeStatus[var5_23:GetConfigID()].status
-						local var2_26 = tf(var0_26):Find("mask/Lines")
+						local var1_30 = arg0_19.storyNodeStatus[var5_27:GetConfigID()].status
+						local var2_30 = tf(var0_30):Find("mask/Lines")
 
-						eachChild(var2_26, function(arg0_27)
-							setImageColor(arg0_27, Color.NewHex(var0_15[var1_26]))
+						eachChild(var2_30, function(arg0_31)
+							setImageColor(arg0_31, Color.NewHex(var0_19[var1_30]))
 						end)
 
-						local var3_26 = arg0_15:DequeItem(arg0_15.storyNodeTpl)
+						if not arg0_19:checkRequireBlock(var5_27) then
+							var13_19 = var3_27.x
+							var14_20 = true
 
-						var3_26.name = var5_23:GetConfigID()
+							return
+						end
 
-						setAnchoredPosition(var3_26, var3_23)
+						local var3_30 = arg0_19:DequeItem(arg0_19.storyNodeTpl, arg1_19)
 
-						arg0_15.storyNodeTFsById[var5_23:GetConfigID()] = {
-							nodeTF = tf(var3_26)
+						var3_30.name = var5_27:GetConfigID()
+
+						setAnchoredPosition(var3_30, var3_27)
+
+						arg0_19.storyNodeTFsById[var5_27:GetConfigID()] = {
+							nodeTF = tf(var3_30)
 						}
-						var3_23 = var3_23 + Vector2.New(var4_15 + var12_15, 0)
-						var5_23, var6_23 = arg0_15.nodeChildDict[var5_23:GetConfigID()][1], var5_23
+						var3_27 = var3_27 + Vector2.New(var4_19 + var12_19, 0)
+						var5_27, var6_27 = arg0_19.nodeChildDict[var5_27:GetConfigID()][1], var5_27
 
 						return true
 					end
 
-					while var7_23() do
+					while var7_27() do
 						-- block empty
 					end
 
-					if var9_16 then
-						local var8_23
+					if var10_20 then
+						local var8_27
 
-						if arg0_23 == 1 then
-							var8_23 = arg0_15:DequeItem(arg0_15.unionUpTpl)
+						if arg0_27 == 1 then
+							var8_27 = arg0_19:DequeItem(arg0_19.unionUpTpl, arg1_19)
 
-							setAnchoredPosition(var8_23, var3_23)
+							setAnchoredPosition(var8_27, var3_27)
 
-							if var8_16[arg0_23] < var10_16 then
-								setSizeDelta(var8_23, {
-									x = var7_15 + var0_23,
-									y = var8_15
+							if var9_20[arg0_27] < var11_20 then
+								setSizeDelta(var8_27, {
+									x = var7_19 + var0_27,
+									y = var8_19
 								})
 
-								local var9_23 = tf(var8_23):Find("Line_1").sizeDelta
+								local var9_27 = tf(var8_27):Find("Line_1").sizeDelta
 
-								var9_23.x = var9_23.x + var0_23
+								var9_27.x = var9_27.x + var0_27
 
-								setSizeDelta(tf(var8_23):Find("Line_1"), var9_23)
+								setSizeDelta(tf(var8_27):Find("Line_1"), var9_27)
 
-								var3_23 = var3_23 + Vector2.New(var0_23, 0)
+								var3_27 = var3_27 + Vector2.New(var0_27, 0)
 							end
-						elseif arg0_23 == 3 or arg0_23 == 2 and #var2_16 == 2 then
-							var8_23 = arg0_15:DequeItem(arg0_15.unionDownTpl)
+						elseif arg0_27 == 3 or arg0_27 == 2 and #var3_20 == 2 then
+							var8_27 = arg0_19:DequeItem(arg0_19.unionDownTpl, arg1_19)
 
-							setAnchoredPosition(var8_23, var3_23)
+							setAnchoredPosition(var8_27, var3_27)
 
-							if var8_16[arg0_23] < var10_16 then
-								setSizeDelta(var8_23, {
-									x = var7_15 + var0_23,
-									y = var8_15
+							if var9_20[arg0_27] < var11_20 then
+								setSizeDelta(var8_27, {
+									x = var7_19 + var0_27,
+									y = var8_19
 								})
 
-								local var10_23 = tf(var8_23):Find("Line_1").sizeDelta
+								local var10_27 = tf(var8_27):Find("Line_1").sizeDelta
 
-								var10_23.x = var10_23.x + var0_23
+								var10_27.x = var10_27.x + var0_27
 
-								setSizeDelta(tf(var8_23):Find("Line_1"), var10_23)
+								setSizeDelta(tf(var8_27):Find("Line_1"), var10_27)
 
-								var3_23 = var3_23 + Vector2.New(var0_23, 0)
+								var3_27 = var3_27 + Vector2.New(var0_27, 0)
 							end
 						else
-							var8_23 = arg0_15:DequeItem(arg0_15.unionCenterTpl)
+							var8_27 = arg0_19:DequeItem(arg0_19.unionCenterTpl, arg1_19)
 
-							setAnchoredPosition(var8_23, var3_23)
+							setAnchoredPosition(var8_27, var3_27)
 
-							if var8_16[arg0_23] < var10_16 then
-								local var11_23 = tf(var8_23).sizeDelta
+							if var9_20[arg0_27] < var11_20 then
+								local var11_27 = tf(var8_27).sizeDelta
 
-								var11_23.x = var11_23.x + var0_23
+								var11_27.x = var11_27.x + var0_27
 
-								setSizeDelta(var8_23, var11_23)
+								setSizeDelta(var8_27, var11_27)
 
-								var3_23 = var3_23 + Vector2.New(var0_23, 0)
+								var3_27 = var3_27 + Vector2.New(var0_27, 0)
 							end
 						end
 
-						var8_23.name = string.format("Union%s_%s", var6_23:GetConfigID(), var9_16:GetConfigID())
+						var8_27.name = string.format("Union%s_%s", var6_27:GetConfigID(), var10_20:GetConfigID())
 
-						local var12_23 = arg0_15.storyNodeStatus[var9_16:GetConfigID()].status
-						local var13_23 = tf(var8_23):Find("mask/Lines")
+						local var12_27 = arg0_19.storyNodeStatus[var10_20:GetConfigID()].status
+						local var13_27 = tf(var8_27):Find("mask/Lines")
 
-						eachChild(var13_23, function(arg0_28)
-							setImageColor(arg0_28, Color.NewHex(var0_15[var12_23]))
+						eachChild(var13_27, function(arg0_32)
+							setImageColor(arg0_32, Color.NewHex(var0_19[var12_27]))
 						end)
 					end
 				end)
 
-				var12_16 = var12_16 + Vector2.New(var11_16 + var7_15, 0)
+				if var14_20 then
+					return false
+				end
 
-				if var9_16 then
+				var13_20 = var13_20 + Vector2.New(var12_20 + var7_19, 0)
+
+				if var10_20 then
 					(function()
-						var12_16 = var12_16 + Vector2.New(var7_15, 0)
+						var13_20 = var13_20 + Vector2.New(var7_19, 0)
 
-						local var0_29 = arg0_15:DequeItem(arg0_15.unionTailTpl)
+						local var0_33 = arg0_19:DequeItem(arg0_19.unionTailTpl, arg1_19)
 
-						setAnchoredPosition(var0_29, var12_16)
+						setAnchoredPosition(var0_33, var13_20)
 
-						var12_16 = var12_16 + Vector2.New(var9_15 + var11_15, 0)
+						var13_20 = var13_20 + Vector2.New(var9_19 + var11_19, 0)
 
-						local var1_29 = arg0_15.storyNodeStatus[var9_16:GetConfigID()].status
-						local var2_29 = tf(var0_29):Find("mask/Lines")
+						local var1_33 = arg0_19.storyNodeStatus[var10_20:GetConfigID()].status
+						local var2_33 = tf(var0_33):Find("mask/Lines")
 
-						eachChild(var2_29, function(arg0_30)
-							setImageColor(arg0_30, Color.NewHex(var0_15[var1_29]))
+						eachChild(var2_33, function(arg0_34)
+							setImageColor(arg0_34, Color.NewHex(var0_19[var1_33]))
 						end)
 					end)()
-					table.insert(var14_15, {
-						node = var9_16,
-						nodePos = var12_16
+					table.insert(var15_19, {
+						node = var10_20,
+						nodePos = var13_20
 					})
 				else
-					var13_15 = var12_16 + var3_15
+					var13_19 = var13_20 + var3_19
 				end
 			end
 
-			return next(var14_15)
+			return next(var15_19)
 		end
 
-		while var15_15() do
+		while var16_19() do
 			-- block empty
 		end
 
-		var1_15 = math.max(var1_15, var13_15)
+		var1_19 = math.max(var1_19, var13_19)
 	end
 
-	setSizeDelta(arg0_15.storyContainer, {
-		x = var1_15
+	setSizeDelta(arg0_19.storyContainer, {
+		x = var1_19
 	})
 
-	local var16_15 = arg0_15.spStoryNodes
+	if arg0_19.spStoryUnreleasedNode or arg0_19.spStoryUnlockNode then
+		local var17_19 = tf(arg0_19:DequeItem(arg0_19.unreleasedNodeTpl), arg1_19)
 
-	for iter2_15 = 1, #var16_15 do
-		local var17_15 = var16_15[iter2_15]
-		local var18_15 = var17_15:GetConfigID()
-		local var19_15 = arg0_15.storyNodeStatus[var18_15].status
-		local var20_15 = arg0_15.storyNodeTFsById[var18_15].nodeTF
-		local var21_15 = var20_15:Find("info/bk/title_form/title")
-
-		if var19_15 == var2_0 then
-			setScrollText(var21_15, HXSet.hxLan(var17_15:GetUnlockDesc()))
-			setTextAlpha(var21_15, 0.5)
-		else
-			setScrollText(var21_15, HXSet.hxLan(var17_15:GetDisplayName()))
-			setTextAlpha(var21_15, 1)
-		end
-
-		local var22_15 = var17_15:GetType()
-
-		setActive(var20_15:Find("circle/lock"), var19_15 == var2_0)
-
-		if var19_15 == var2_0 then
-			setActive(var20_15:Find("circle/Story"), false)
-			setActive(var20_15:Find("circle/Battle"), false)
-			setText(var20_15:Find(""))
-		elseif var22_15 == ActivitySpStoryNode.NODE_TYPE.STORY then
-			setActive(var20_15:Find("circle/Story"), var22_15 == ActivitySpStoryNode.NODE_TYPE.STORY)
-			setActive(var20_15:Find("circle/Battle"), var22_15 == ActivitySpStoryNode.NODE_TYPE.BATTLE)
-			setActive(var20_15:Find("circle/Story/Done"), var19_15 == var4_0)
-		elseif var22_15 == ActivitySpStoryNode.NODE_TYPE.BATTLE then
-			setActive(var20_15:Find("circle/Story"), var22_15 == ActivitySpStoryNode.NODE_TYPE.STORY)
-			setActive(var20_15:Find("circle/Battle"), var22_15 == ActivitySpStoryNode.NODE_TYPE.BATTLE)
-			setActive(var20_15:Find("circle/Battle/Done"), var19_15 == var4_0)
-		end
-
-		setActive(var20_15:Find("circle/bk/Inactive"), var19_15 == var2_0)
-		setActive(var20_15:Find("circle/bk/Active"), var19_15 == var3_0)
-		setActive(var20_15:Find("circle/bk/Readed"), var19_15 == var4_0)
-		setActive(var20_15:Find("info/bk/BG/Inactive"), var19_15 == var2_0)
-		setActive(var20_15:Find("info/bk/BG/Active"), var19_15 ~= var2_0)
-		onButton(arg0_15, var20_15, function()
-			if var19_15 == var2_0 then
-				return
-			end
-
-			local var0_31 = var17_15:GetStoryName()
-
-			arg0_15:PlayStory(var0_31, function()
-				arg0_15:UpdateView()
-
-				arg0_15.needFocusStory = true
-
-				arg0_15:Move2UnlockStory()
-			end, true)
-		end)
-	end
-
-	local var23_15 = arg0_15.storyReadCount
-	local var24_15 = arg0_15.storyReadMax
-
-	setText(arg0_15.progressText, var23_15 .. "/" .. var24_15)
-	setActive(arg0_15.storyAward, tobool(arg0_15.storyTask))
-
-	if arg0_15.storyTask then
-		local var25_15 = arg0_15.storyTask:getConfig("award_display")
-		local var26_15 = Drop.New({
-			type = var25_15[1][1],
-			id = var25_15[1][2],
-			count = var25_15[1][3]
+		setAnchoredPosition(var17_19, {
+			y = 0,
+			x = var13_19
 		})
 
-		updateDrop(arg0_15.storyAward:Find("IconTpl"), var26_15)
+		local var18_19
 
-		local var27_15 = arg0_15.storyTask:getTaskStatus()
+		if arg0_19.spStoryUnreleasedNode then
+			local var19_19 = arg0_19.storyNodeStatus[arg0_19.spStoryUnreleasedNode:GetConfigID()].reuqire
 
-		setActive(arg0_15.storyAward:Find("get"), var27_15 == 1)
-		setActive(arg0_15.storyAward:Find("got"), var27_15 == 2)
-		onButton(arg0_15, arg0_15.storyAward, function()
-			arg0_15.coreStoryPage:emit(BaseUI.ON_DROP, var26_15)
+			setText(var17_19:Find("text"), i18n("scenario_unlock_pt_require", var19_19))
+
+			var18_19 = arg0_19.spStoryUnreleasedNode:GetCleanAnimator()
+		elseif arg0_19.spStoryUnlockNode then
+			setText(var17_19:Find("text"), i18n("scenario_unlock"))
+
+			local var20_19 = arg0_19.spStoryUnlockNode:GetConfigID()
+
+			onButton(arg0_19, var17_19:Find("btn_unlock"), function()
+				local var0_35 = getProxy(PlayerProxy):getRawData().id
+
+				PlayerPrefs.SetInt("player_" .. var0_35 .. "_activity_spStoryNodeID_" .. var20_19 .. "_unlock", 1)
+				arg0_19:UpdateView(true)
+
+				arg0_19.needFocusStory = true
+
+				arg0_19:Move2UnlockStory()
+			end)
+
+			var18_19 = arg0_19.spStoryUnlockNode:GetCleanAnimator()
+		end
+
+		ResourceMgr.Inst:getAssetAsync("ui/" .. var18_19, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_36)
+			local var0_36 = Instantiate(arg0_36)
+			local var1_36 = Vector3.New(-525, 0, 0)
+
+			tf(var0_36).localPosition = var1_36
+
+			setParent(var0_36, var17_19)
+			WorldConst.ArrayEffectOrder(var17_19, 200)
+		end), true, true)
+	end
+
+	arg0_19.spStoryUnreleasedNode = nil
+	arg0_19.spStoryUnlockNode = nil
+
+	local var21_19 = arg0_19.spStoryNodes
+
+	for iter2_19 = 1, #var21_19 do
+		local var22_19 = var21_19[iter2_19]
+		local var23_19 = var22_19:GetConfigID()
+
+		if arg0_19.storyNodeTFsById[var23_19] then
+			local var24_19 = arg0_19.storyNodeStatus[var23_19].status
+			local var25_19 = arg0_19.storyNodeTFsById[var23_19].nodeTF
+			local var26_19 = var25_19:Find("info/bk/title_form/title")
+
+			if var24_19 == var2_0 then
+				setScrollText(var26_19, HXSet.hxLan(var22_19:GetUnlockDesc()))
+				setTextAlpha(var26_19, 0.5)
+			else
+				setScrollText(var26_19, HXSet.hxLan(var22_19:GetDisplayName()))
+				setTextAlpha(var26_19, 1)
+			end
+
+			local var27_19 = var22_19:GetType()
+
+			setActive(var25_19:Find("circle/lock"), var24_19 == var2_0)
+
+			if var24_19 == var2_0 then
+				setActive(var25_19:Find("circle/Story"), false)
+				setActive(var25_19:Find("circle/Battle"), false)
+				setText(var25_19:Find(""))
+			elseif var27_19 == ActivitySpStoryNode.NODE_TYPE.STORY then
+				setActive(var25_19:Find("circle/Story"), var27_19 == ActivitySpStoryNode.NODE_TYPE.STORY)
+				setActive(var25_19:Find("circle/Battle"), var27_19 == ActivitySpStoryNode.NODE_TYPE.BATTLE)
+				setActive(var25_19:Find("circle/Story/Done"), var24_19 == var4_0)
+			elseif var27_19 == ActivitySpStoryNode.NODE_TYPE.BATTLE then
+				setActive(var25_19:Find("circle/Story"), var27_19 == ActivitySpStoryNode.NODE_TYPE.STORY)
+				setActive(var25_19:Find("circle/Battle"), var27_19 == ActivitySpStoryNode.NODE_TYPE.BATTLE)
+				setActive(var25_19:Find("circle/Battle/Done"), var24_19 == var4_0)
+			end
+
+			setActive(var25_19:Find("circle/bk/Inactive"), var24_19 == var2_0)
+			setActive(var25_19:Find("circle/bk/Active"), var24_19 == var3_0)
+			setActive(var25_19:Find("circle/bk/Readed"), var24_19 == var4_0)
+			setActive(var25_19:Find("info/bk/BG/Inactive"), var24_19 == var2_0)
+			setActive(var25_19:Find("info/bk/BG/Active"), var24_19 ~= var2_0)
+			onButton(arg0_19, var25_19, function()
+				if var24_19 == var2_0 then
+					return
+				end
+
+				local var0_37 = var22_19:GetStoryName()
+
+				arg0_19:PlayStory(var0_37, function()
+					arg0_19:UpdateView(true)
+
+					arg0_19.needFocusStory = true
+
+					arg0_19:Move2UnlockStory()
+				end, true)
+			end)
+		end
+	end
+
+	local var28_19 = arg0_19.storyReadCount
+	local var29_19 = arg0_19.storyReadMax
+
+	setText(arg0_19.progressText, var28_19 .. "/" .. var29_19)
+	setActive(arg0_19.storyAward, tobool(arg0_19.storyTask))
+
+	if arg0_19.storyTask then
+		local var30_19 = arg0_19.storyTask:getConfig("award_display")
+		local var31_19 = Drop.New({
+			type = var30_19[1][1],
+			id = var30_19[1][2],
+			count = var30_19[1][3]
+		})
+
+		updateDrop(arg0_19.storyAward:Find("IconTpl"), var31_19)
+
+		local var32_19 = arg0_19.storyTask:getTaskStatus()
+
+		setActive(arg0_19.storyAward:Find("get"), var32_19 == 1)
+		setActive(arg0_19.storyAward:Find("got"), var32_19 == 2)
+		onButton(arg0_19, arg0_19.storyAward, function()
+			arg0_19.coreStoryPage:emit(BaseUI.ON_DROP, var31_19)
 		end)
 	end
 end
 
-function var0_0.DequeItem(arg0_34, arg1_34)
-	local var0_34 = arg0_34.pools[arg1_34]:Dequeue()
+function var0_0.DequeItem(arg0_40, arg1_40, arg2_40)
+	local var0_40 = arg0_40.pools[arg1_40]:Dequeue()
 
-	table.insert(arg0_34.activeItems, {
-		template = arg1_34,
-		active = var0_34
+	table.insert(arg0_40.activeItems, {
+		template = arg1_40,
+		active = var0_40
 	})
-	setActive(var0_34, true)
-	setParent(var0_34, arg0_34.storyContainer)
+	setActive(var0_40, true)
+	setParent(var0_40, arg0_40.storyContainer)
 
-	return var0_34
+	local var1_40 = var0_40:GetComponent(typeof(Animation))
+
+	if var1_40 then
+		var1_40.enabled = not arg2_40
+	end
+
+	return var0_40
 end
 
-function var0_0.Move2UnlockStory(arg0_35)
-	if not arg0_35.needFocusStory then
+function var0_0.Move2UnlockStory(arg0_41)
+	if not arg0_41.needFocusStory then
 		return
 	end
 
-	arg0_35.needFocusStory = nil
+	arg0_41.needFocusStory = nil
 
-	local var0_35 = arg0_35.spStoryNodes
-	local var1_35
+	local var0_41 = arg0_41.spStoryNodes
+	local var1_41
 
-	for iter0_35 = #var0_35, 1, -1 do
-		local var2_35 = var0_35[iter0_35]:GetConfigID()
+	for iter0_41 = #var0_41, 1, -1 do
+		local var2_41 = var0_41[iter0_41]
+		local var3_41 = var2_41:GetConfigID()
+		local var4_41 = arg0_41.storyNodeStatus[var3_41]
 
-		if arg0_35.storyNodeStatus[var2_35].status > var2_0 then
-			var1_35 = var2_35
+		if var4_41.status > var2_0 and (not var4_41.reuqire or not var2_41:GetCleanAnimator()) then
+			var1_41 = var3_41
 
 			break
 		end
 	end
 
-	local var3_35 = arg0_35.storyNodeTFsById[var1_35].nodeTF
-	local var4_35 = arg0_35.storyNodeTpl.rect.width
-	local var5_35 = var3_35.anchoredPosition.x + var4_35 * 0.5 - arg0_35.storyContainer.parent.rect.width * 0.5
-	local var6_35 = math.clamp(var5_35, 0, math.max(0, arg0_35.storyContainer.rect.width - arg0_35.storyContainer.parent.rect.width))
+	local var5_41 = arg0_41.storyNodeTFsById[var1_41].nodeTF
+	local var6_41 = arg0_41.storyNodeTpl.rect.width
+	local var7_41 = var5_41.anchoredPosition.x + var6_41 * 0.5 - arg0_41.storyContainer.parent.rect.width * 0.5
+	local var8_41 = math.clamp(var7_41, 0, math.max(0, arg0_41.storyContainer.rect.width - arg0_41.storyContainer.parent.rect.width))
 
-	setAnchoredPosition(arg0_35.storyContainer, {
-		x = -var6_35
+	setAnchoredPosition(arg0_41.storyContainer, {
+		x = -var8_41
 	})
 end
 
-function var0_0.SwitchStoryMapAndBGM(arg0_36)
-	local var0_36 = arg0_36.activity:getConfig("config_client").default_background
-	local var1_36 = arg0_36.activity:getConfig("config_client").default_bgm
-	local var2_36
-	local var3_36 = arg0_36.spStoryNodes
+function var0_0.SwitchStoryMapAndBGM(arg0_42)
+	local var0_42 = arg0_42.activity:getConfig("config_client").default_background
+	local var1_42 = arg0_42.activity:getConfig("config_client").default_bgm
+	local var2_42
+	local var3_42 = arg0_42.spStoryNodes
 
-	for iter0_36 = 1, #var3_36 do
-		local var4_36 = var3_36[iter0_36]
-		local var5_36 = var4_36:GetConfigID()
+	for iter0_42 = 1, #var3_42 do
+		local var4_42 = var3_42[iter0_42]
+		local var5_42 = var4_42:GetConfigID()
 
-		if arg0_36.storyNodeStatus[var5_36].status == var4_0 then
-			local var6_36 = var4_36:GetCleanAnimator()
+		if arg0_42.storyNodeStatus[var5_42].status == var4_0 then
+			local var6_42 = var4_42:GetCleanAnimator()
 
-			var0_36 = var4_36:GetCleanBG() ~= "" and var4_36:GetCleanBG() or var0_36
+			var0_42 = var4_42:GetCleanBG() ~= "" and var4_42:GetCleanBG() or var0_42
 
-			if var4_36:GetCleanBGM() ~= "" then
-				var1_36 = var4_36:GetCleanBGM() or var1_36
+			if var4_42:GetCleanBGM() ~= "" then
+				var1_42 = var4_42:GetCleanBGM() or var1_42
 			end
 		else
 			break
 		end
 	end
 
-	if var0_36 ~= nil and var0_36 ~= "" then
-		arg0_36.coreStoryPage:SwitchBG({
+	if var0_42 ~= nil and var0_42 ~= "" then
+		arg0_42.coreStoryPage:SwitchBG({
 			{
-				BG = var0_36
+				BG = var0_42
 			}
 		})
 	end
 
-	if var1_36 ~= nil and var1_36 ~= "" then
-		pg.BgmMgr.GetInstance():Push(arg0_36.__cname, var1_36)
+	if var1_42 ~= nil and var1_42 ~= "" then
+		pg.BgmMgr.GetInstance():Push(arg0_42.__cname, var1_42)
 	end
 end
 
-function var0_0.TrySubmitTask(arg0_37)
-	local var0_37 = true
+function var0_0.TrySubmitTask(arg0_43)
+	local var0_43 = true
 
-	for iter0_37, iter1_37 in ipairs(arg0_37.spStoryNodes) do
-		local var1_37 = iter1_37:GetStoryName()
+	for iter0_43, iter1_43 in ipairs(arg0_43.spStoryNodes) do
+		local var1_43 = iter1_43:GetStoryName()
 
-		if var1_37 and var1_37 ~= "" then
-			var0_37 = var0_37 and pg.NewStoryMgr.GetInstance():IsPlayed(var1_37)
+		if var1_43 and var1_43 ~= "" then
+			var0_43 = var0_43 and pg.NewStoryMgr.GetInstance():IsPlayed(var1_43)
 		end
 
-		if not var0_37 then
+		if not var0_43 then
 			break
 		end
 	end
 
-	if var0_37 and arg0_37.storyTask and arg0_37.storyTask:getTaskStatus() == 1 then
-		arg0_37.coreStoryPage:emit(ActivityMediator.ON_TASK_SUBMIT, arg0_37.storyTask)
+	if var0_43 and arg0_43.storyTask and arg0_43.storyTask:getTaskStatus() == 1 then
+		arg0_43.coreStoryPage:emit(ActivityMediator.ON_TASK_SUBMIT, arg0_43.storyTask)
 
 		return
 	end
 end
 
-function var0_0.PlayStory(arg0_38, arg1_38, arg2_38, arg3_38)
-	if not arg1_38 then
-		return existCall(arg2_38)
+function var0_0.PlayStory(arg0_44, arg1_44, arg2_44, arg3_44)
+	if not arg1_44 then
+		return existCall(arg2_44)
 	end
 
-	local var0_38 = pg.NewStoryMgr.GetInstance()
-	local var1_38 = var0_38:IsPlayed(arg1_38)
+	local var0_44 = pg.NewStoryMgr.GetInstance()
+	local var1_44 = var0_44:IsPlayed(arg1_44)
 
 	seriesAsync({
-		function(arg0_39)
-			if var1_38 and not arg3_38 then
-				return arg0_39()
+		function(arg0_45)
+			if var1_44 and not arg3_44 then
+				return arg0_45()
 			end
 
-			local var0_39 = tonumber(arg1_38)
+			local var0_45 = tonumber(arg1_44)
 
-			if var0_39 and var0_39 > 0 then
-				arg0_38.coreStoryPage:emit(ActivityMediator.GO_PERFORM_COMBAT, {
-					stageId = var0_39
+			if var0_45 and var0_45 > 0 then
+				arg0_44.coreStoryPage:emit(ActivityMediator.GO_PERFORM_COMBAT, {
+					stageId = var0_45
 				})
 			else
-				var0_38:Play(arg1_38, arg0_39, arg3_38)
+				var0_44:Play(arg1_44, arg0_45, arg3_44)
 			end
 		end,
-		function(arg0_40, ...)
-			existCall(arg2_38, ...)
+		function(arg0_46, ...)
+			existCall(arg2_44, ...)
 		end
 	})
 end
 
-function var0_0.UpdateStoryTask(arg0_41)
-	local var0_41 = arg0_41.activity:getConfig("config_client").task_id
-	local var1_41 = getProxy(TaskProxy):getTaskVO(var0_41)
+function var0_0.UpdateStoryTask(arg0_47)
+	local var0_47 = arg0_47.activity:getConfig("config_client").task_id
+	local var1_47 = getProxy(TaskProxy):getTaskVO(var0_47)
 
-	if not var1_41 then
-		errorMsg("Missing Activity Task ID : " .. var0_41)
+	if not var1_47 then
+		errorMsg("Missing Activity Task ID : " .. var0_47)
 	end
 
-	arg0_41.storyTask = var1_41 or Task.New({
-		id = var0_41
+	arg0_47.storyTask = var1_47 or Task.New({
+		id = var0_47
 	})
 end
 
-function var0_0.OnSubmitTaskDone(arg0_42)
-	arg0_42:UpdateView()
+function var0_0.OnSubmitTaskDone(arg0_48)
+	arg0_48:UpdateView()
 end
 
-function var0_0.OnDestroy(arg0_43)
-	arg0_43:RecyclePools()
+function var0_0.Show(arg0_49)
+	var0_0.super.Show(arg0_49)
+	arg0_49:OverlayPanel(arg0_49._tf)
+	arg0_49:OverlayPanel(arg0_49.topPage, {
+		stopTop = true
+	})
+end
 
-	for iter0_43, iter1_43 in pairs(arg0_43.pools) do
-		iter1_43:Clear()
+function var0_0.Hide(arg0_50)
+	arg0_50:UnOverlayPanel(arg0_50.topPage, arg0_50._tf)
+	arg0_50:UnOverlayPanel(arg0_50._tf, arg0_50._parentTf)
+	var0_0.super.Hide(arg0_50)
+end
+
+function var0_0.OnDestroy(arg0_51)
+	arg0_51:RecyclePools()
+
+	for iter0_51, iter1_51 in pairs(arg0_51.pools) do
+		iter1_51:Clear()
 	end
 end
 

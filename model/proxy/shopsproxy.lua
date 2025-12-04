@@ -614,7 +614,7 @@ function var0_0.GetAllShowGiftPackages(arg0_73, arg1_73)
 		end
 	end
 
-	for iter2_73, iter3_73 in pairs(pg.shop_template.get_id_list_by_genre[ShopArgs.GiftPackage]) do
+	for iter2_73, iter3_73 in pairs(pg.shop_template.get_id_list_by_genre[ShopArgs.GiftPackage] or {}) do
 		local var8_73 = pg.shop_template[iter3_73].akashi_pick > 0
 
 		if (arg1_73 == nil or var8_73 == arg1_73) and not table.contains(var1_73, iter3_73) then
@@ -626,7 +626,7 @@ function var0_0.GetAllShowGiftPackages(arg0_73, arg1_73)
 		end
 	end
 
-	for iter4_73, iter5_73 in pairs(pg.shop_template.get_id_list_by_genre[ShopArgs.GiftActPackage]) do
+	for iter4_73, iter5_73 in pairs(pg.shop_template.get_id_list_by_genre[ShopArgs.GiftActPackage] or {}) do
 		local var10_73 = pg.shop_template[iter5_73].akashi_pick > 0
 
 		if (arg1_73 == nil or var10_73 == arg1_73) and not table.contains(var1_73, iter5_73) then

@@ -33,6 +33,7 @@ end
 
 function var0_0.OnInit(arg0_6, arg1_6, arg2_6)
 	arg0_6._go = arg1_6
+	arg0_6._tf = arg1_6.transform
 	arg0_6.builder = arg2_6
 
 	assert(arg0_6.builder and arg0_6._go)

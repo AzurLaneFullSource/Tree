@@ -56,75 +56,83 @@ function var0_0.GetPoolMgr(arg0_11)
 	return arg0_11.view:GetPoolMgr()
 end
 
-function var0_0.Reset(arg0_12)
-	if arg0_12:IsLoaded() then
-		arg0_12:OnDispose()
-	end
-
-	arg0_12:OnDestroy()
-
-	arg0_12.__state = var1_0
+function var0_0.GetIsland(arg0_12)
+	return arg0_12.view:GetIsland()
 end
 
-function var0_0.Dispose(arg0_13)
-	if arg0_13.__state == var3_0 then
+function var0_0.GetSelfIsland(arg0_13)
+	return arg0_13.view:GetSelfIsland()
+end
+
+function var0_0.Reset(arg0_14)
+	if arg0_14:IsLoaded() then
+		arg0_14:OnDispose()
+	end
+
+	arg0_14:OnDestroy()
+
+	arg0_14.__state = var1_0
+end
+
+function var0_0.Dispose(arg0_15)
+	if arg0_15.__state == var3_0 then
 		return
 	end
 
-	pg.DelegateInfo.Dispose(arg0_13)
+	pg.DelegateInfo.Dispose(arg0_15)
 
-	if arg0_13:IsLoaded() then
-		arg0_13:OnDispose()
+	if arg0_15:IsLoaded() then
+		arg0_15:OnDispose()
 	end
 
-	arg0_13.__state = var3_0
+	arg0_15.__state = var3_0
 
-	arg0_13:OnDestroy()
+	arg0_15:OnDestroy()
 
-	arg0_13.view = nil
+	arg0_15.view = nil
 end
 
-function var0_0.Update(arg0_14)
-	if not arg0_14:IsLoaded() then
+function var0_0.Update(arg0_16)
+	if not arg0_16:IsLoaded() then
 		return
 	end
 
-	arg0_14:OnUpdate()
+	arg0_16:OnUpdate()
 end
 
-function var0_0.LateUpdate(arg0_15)
-	if not arg0_15:IsLoaded() then
+function var0_0.LateUpdate(arg0_17)
+	if not arg0_17:IsLoaded() then
 		return
 	end
 
-	arg0_15:OnLateUpdate()
+	arg0_17:OnLateUpdate()
 end
 
-function var0_0.OnInit(arg0_16, ...)
+function var0_0.OnInit(arg0_18, ...)
 	return
 end
 
-function var0_0.OnAnomalyInit(arg0_17, ...)
+function var0_0.OnAnomalyInit(arg0_19, ...)
 	return
 end
 
-function var0_0.Start(arg0_18)
+function var0_0.Start(arg0_20)
 	return
 end
 
-function var0_0.OnUpdate(arg0_19)
+function var0_0.OnUpdate(arg0_21)
 	return
 end
 
-function var0_0.OnLateUpdate(arg0_20)
+function var0_0.OnLateUpdate(arg0_22)
 	return
 end
 
-function var0_0.OnDispose(arg0_21)
+function var0_0.OnDispose(arg0_23)
 	return
 end
 
-function var0_0.OnDestroy(arg0_22)
+function var0_0.OnDestroy(arg0_24)
 	return
 end
 

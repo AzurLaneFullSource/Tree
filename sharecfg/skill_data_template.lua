@@ -372,6 +372,7 @@ pg.skill_data_template = setmetatable({
 		60950,
 		60960,
 		60970,
+		60980,
 		7000,
 		9010,
 		9020,
@@ -2732,6 +2733,7 @@ pg.skill_data_template = setmetatable({
 		902330,
 		902340,
 		902350,
+		902360,
 		1010140,
 		1010390,
 		1010410,
@@ -2828,9 +2830,14 @@ pg.skill_data_template = setmetatable({
 		1011240,
 		1011450,
 		1012430,
+		1012640,
 		10151810,
 		1011910,
 		1011390,
+		1012840,
+		1011470,
+		1013910,
+		1012570,
 		1090010,
 		1090020,
 		1090030,
@@ -13368,6 +13375,20 @@ pg.base.skill_data_template = {
 		type = 0,
 		max_level = 0,
 		desc = "During battle, every 30s: restores 1.0% HP for the wearer and all Date A Live collab units in the fleet (can be activated up to 3 times per battle).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[60980] = {
+		desc_get = "",
+		name = "Blue Sea Mystery",
+		id = 60980,
+		type = 0,
+		max_level = 0,
+		desc = "Changes the combat BGM when equipped. If additional gear that changes the BGM is equipped at the same time, only a randomly chosen one will take effect.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -179046,7 +179067,7 @@ pg.base.skill_data_template = {
 		id = 901010,
 		type = 1,
 		max_level = 1,
-		desc = "The frontmost ship in your Vanguard performs a special slashing attack. The pattern, range, and DMG dealt are based on the number of ships in your Vanguard with slashing-type gear equipped, their hull types, and the effects of the gear.",
+		desc = "The ship in the frontmost position of your Vanguard performs a slash attack. Slash attack pattern, range, and DMG are based on the number of ships equipped with slash attack gear, the ships' hull type, and the equipped module's effects.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -179056,11 +179077,11 @@ pg.base.skill_data_template = {
 	},
 	[901020] = {
 		desc_get = "",
-		name = "Slash Attack - Area",
+		name = "Slash Attack - Spread",
 		id = 901020,
 		type = 2,
 		max_level = 1,
-		desc = "The frontmost ship in your Vanguard performs a special slashing attack. The pattern, range, and DMG dealt are based on the number of ships in your Vanguard with slashing-type gear equipped, their hull types, and the effects of the gear.",
+		desc = "The ship in the frontmost position of your Vanguard performs a slash attack. Slash attack pattern, range, and DMG are based on the number of ships equipped with slash attack gear, the ships' hull type, and the equipped module's effects.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -179551,6 +179572,20 @@ pg.base.skill_data_template = {
 		type = 1,
 		max_level = 1,
 		desc = "When this ship launches an airstrike: additionally launches an interceptive airstrike.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[902360] = {
+		desc_get = "",
+		name = "Seize the Sky",
+		id = 902360,
+		type = 2,
+		max_level = 1,
+		desc = "Increases this ship's SPD by 20.0% and increases her DMG dealt against enemies with lower SPD than her by 10.0%.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -192281,6 +192316,157 @@ pg.base.skill_data_template = {
 			}
 		}
 	},
+	[1012640] = {
+		desc_get = "",
+		name = "Sardegnian Coercion+",
+		id = 1012640,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's RLD by $1. When this ship fires her Main Guns: $2 chance to fire a special barrage (DMG is based on the skill's level); enemies hit by this barrage take $3 more DMG from Giulio Cesare until the battle ends (does not stack).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"50.0%",
+				"80.0%"
+			},
+			{
+				"10.0%",
+				"20.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"50.0%",
+					"+3.3%"
+				},
+				{
+					"53.3%",
+					"+3.3%"
+				},
+				{
+					"56.6%",
+					"+3.3%"
+				},
+				{
+					"59.9%",
+					"+3.3%"
+				},
+				{
+					"63.2%",
+					"+3.3%"
+				},
+				{
+					"66.5%",
+					"+3.3%"
+				},
+				{
+					"69.8%",
+					"+3.3%"
+				},
+				{
+					"73.1%",
+					"+3.3%"
+				},
+				{
+					"76.4%",
+					"+3.6%"
+				},
+				{
+					"80.0%"
+				}
+			},
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			}
+		}
+	},
 	[10151810] = {
 		desc_get = "",
 		name = "Final Sacrament+",
@@ -192678,6 +192864,718 @@ pg.base.skill_data_template = {
 				},
 				{
 					"20.0%"
+				}
+			}
+		}
+	},
+	[1012840] = {
+		desc_get = "",
+		name = "Skyslayer's Edge+",
+		id = 1012840,
+		type = 3,
+		max_level = 10,
+		desc = "Increases this ship's RLD and ACC by $1. Increases this ship's DMG dealt to enemy CVs and CVLs by $2. Every 10s: $3 chance to fire a $4 special barrage (DMG is based on the skill's level). While this ship is afloat: increases your Vanguard's TRP by $2$5.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"5.0%",
+				"20.0%"
+			},
+			{
+				"50.0%",
+				"80.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.6%"
+				},
+				{
+					"6.6%",
+					"+1.6%"
+				},
+				{
+					"8.2%",
+					"+1.8%"
+				},
+				{
+					"10.0%",
+					"+1.6%"
+				},
+				{
+					"11.6%",
+					"+1.6%"
+				},
+				{
+					"13.2%",
+					"+1.8%"
+				},
+				{
+					"15.0%",
+					"+1.6%"
+				},
+				{
+					"16.6%",
+					"+1.6%"
+				},
+				{
+					"18.2%",
+					"+1.8%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"50.0%",
+					"+3.3%"
+				},
+				{
+					"53.3%",
+					"+3.3%"
+				},
+				{
+					"56.6%",
+					"+3.3%"
+				},
+				{
+					"59.9%",
+					"+3.3%"
+				},
+				{
+					"63.2%",
+					"+3.3%"
+				},
+				{
+					"66.5%",
+					"+3.3%"
+				},
+				{
+					"69.8%",
+					"+3.3%"
+				},
+				{
+					"73.1%",
+					"+3.3%"
+				},
+				{
+					"76.4%",
+					"+3.6%"
+				},
+				{
+					"80.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					""
+				},
+				{
+					"",
+					" and Crit Rate by 3.0%."
+				},
+				{
+					" and Crit Rate by 3.0%",
+					"+3.0%"
+				},
+				{
+					" and Crit Rate by 6.0%",
+					"+3.0%"
+				},
+				{
+					" and Crit Rate by 9.0%",
+					"+3.0%"
+				},
+				{
+					" and Crit Rate by 12.0%"
+				}
+			}
+		}
+	},
+	[1011470] = {
+		desc_get = "",
+		name = "Nasty Asty+",
+		id = 1011470,
+		type = 3,
+		max_level = 10,
+		desc = "Increases your New Orleans-class ships' FP by $1 and AA and ACC by $2. When the battle starts, and every 20s after that: fires a $3 special barrage (DMG is based on the skill's level); enemies hit by this barrage take $4 more airstrike DMG from your Eagle Union ships for 6s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"4.0%",
+				"10.0%"
+			},
+			{
+				"5.0%",
+				"20.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"1.5%",
+				"5.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"4.0%",
+					"+0.6%"
+				},
+				{
+					"4.6%",
+					"+0.6%"
+				},
+				{
+					"5.2%",
+					"+0.8%"
+				},
+				{
+					"6.0%",
+					"+0.6%"
+				},
+				{
+					"6.6%",
+					"+0.6%"
+				},
+				{
+					"7.2%",
+					"+0.8%"
+				},
+				{
+					"8.0%",
+					"+0.6%"
+				},
+				{
+					"8.6%",
+					"+0.6%"
+				},
+				{
+					"9.2%",
+					"+0.8%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.2%"
+				},
+				{
+					"6.2%",
+					"+1.2%"
+				},
+				{
+					"7.4%",
+					"+1.6%"
+				},
+				{
+					"9.0%",
+					"+1.5%"
+				},
+				{
+					"10.5%",
+					"+1.5%"
+				},
+				{
+					"12.0%",
+					"+2.0%"
+				},
+				{
+					"14.0%",
+					"+1.8%"
+				},
+				{
+					"15.8%",
+					"+1.8%"
+				},
+				{
+					"17.6%",
+					"+2.4%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"Lv.1",
+					"+1"
+				},
+				{
+					"Lv.2",
+					"+1"
+				},
+				{
+					"Lv.3",
+					"+1"
+				},
+				{
+					"Lv.4",
+					"+1"
+				},
+				{
+					"Lv.5",
+					"+1"
+				},
+				{
+					"Lv.6",
+					"+1"
+				},
+				{
+					"Lv.7",
+					"+1"
+				},
+				{
+					"Lv.8",
+					"+1"
+				},
+				{
+					"Lv.9",
+					"+1"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"1.5%",
+					"+0.3%"
+				},
+				{
+					"1.8%",
+					"+0.3%"
+				},
+				{
+					"2.1%",
+					"+0.4%"
+				},
+				{
+					"2.5%",
+					"+0.3%"
+				},
+				{
+					"2.8%",
+					"+0.3%"
+				},
+				{
+					"3.1%",
+					"+0.4%"
+				},
+				{
+					"3.5%",
+					"+0.4%"
+				},
+				{
+					"3.9%",
+					"+0.4%"
+				},
+				{
+					"4.3%",
+					"+0.7%"
+				},
+				{
+					"5.0%"
+				}
+			}
+		}
+	},
+	[1013910] = {
+		desc_get = "",
+		name = "Sic 'em, Eisen!+",
+		id = 1013910,
+		type = 1,
+		max_level = 10,
+		desc = "When the battle starts, if there is another Iron Blood ship in your fleet: increases this ship's RLD and EVA by $2. When this ship fires her Main Guns: $1 chance to increase this ship's Main Gun DMG dealt by 50.0% for 3s, and also decrease the SPD of enemies hit by 30.0% for 3s (7s cooldown between activations on this effect).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"50.0%",
+				"80.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"50.0%",
+					"+3.3%"
+				},
+				{
+					"53.3%",
+					"+3.3%"
+				},
+				{
+					"56.6%",
+					"+3.3%"
+				},
+				{
+					"59.9%",
+					"+3.3%"
+				},
+				{
+					"63.2%",
+					"+3.3%"
+				},
+				{
+					"66.5%",
+					"+3.3%"
+				},
+				{
+					"69.8%",
+					"+3.3%"
+				},
+				{
+					"73.1%",
+					"+3.3%"
+				},
+				{
+					"76.4%",
+					"+3.6%"
+				},
+				{
+					"80%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			}
+		}
+	},
+	[1012570] = {
+		desc_get = "",
+		name = "Supporting Wings+",
+		id = 1012570,
+		type = 1,
+		max_level = 10,
+		desc = "Increases this ship's AVI and ACC by $2. When this ship has Royal Navy gear equipped, the following effects apply:\n1) Increases this ship's Torpedo Bomber slot efficiency by $1;\n2) When the enemy-slowing effect of Don't Move An Inch! activates, the enemy's SPD is slowed for an additional 0.5s at 0 SPD;\n3) When this ship launches an airstrike: $3 chance to launch a $4 special aerial attack using Fairey Albacores; enemies hit by this attack have an 80.0% chance to be inflicted with Flooding ailment for 9s (aerial attack DMG and Flooding DMG are based on the skill's level and this ship's AVI stat).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"70.0%",
+				"100.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"70.0%",
+					"+3.3%"
+				},
+				{
+					"73.3%",
+					"+3.3%"
+				},
+				{
+					"76.6%",
+					"+3.3%"
+				},
+				{
+					"79.9%",
+					"+3.3%"
+				},
+				{
+					"83.2%",
+					"+3.3%"
+				},
+				{
+					"86.5%",
+					"+3.3%"
+				},
+				{
+					"89.8%",
+					"+3.3%"
+				},
+				{
+					"93.1%",
+					"+3.3%"
+				},
+				{
+					"96.4%",
+					"+3.6%"
+				},
+				{
+					"100%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
 				}
 			}
 		}

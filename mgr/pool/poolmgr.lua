@@ -450,7 +450,7 @@ function var0_0.ExcessDymPainting(arg0_36, arg1_36)
 		end
 	elseif var1_36 < #var2_36 then
 		gcAll(false)
-	elseif var10_0 >= 10 then
+	elseif var10_0 >= 5 then
 		gcAll(false)
 	end
 end

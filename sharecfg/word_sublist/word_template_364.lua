@@ -650,7 +650,6 @@ temp()
 function temp()
 	var1_0["8"] = {
 		["9"] = {
-			this = true,
 			六 = {
 				四 = {
 					this = true

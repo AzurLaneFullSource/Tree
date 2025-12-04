@@ -5,7 +5,6 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1._go = arg1_1.go
 	arg0_1._tf = tf(arg0_1._go)
 	arg0_1.parent = arg0_1._tf.parent
-	arg0_1.spineAnimUI = arg0_1._go:GetComponent("SpineAnimUI")
 	arg0_1.path = arg1_1.path
 	arg0_1.speed = 1
 	arg0_1.stepCnt = 0
@@ -15,6 +14,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.interActionRatio = 10000 / GuildConst.MAX_DISPLAY_MEMBER_SHIP
 	arg0_1.name = arg1_1.name
 	arg0_1.isCommander = arg1_1.isCommander
+	arg0_1.spineChar = arg1_1.char
 
 	arg0_1:Init(arg1_1)
 end
@@ -234,7 +234,7 @@ function var0_0.SetAction(arg0_24, arg1_24)
 
 	arg0_24.actionName = arg1_24
 
-	arg0_24.spineAnimUI:SetAction(arg1_24, 0)
+	arg0_24.spineChar:SetAction(arg1_24, 0)
 end
 
 function var0_0.SetAsLastSibling(arg0_25)
@@ -482,6 +482,12 @@ function var0_0.Dispose(arg0_42)
 
 	if not IsNil(arg0_42._go) and LeanTween.isTweening(arg0_42._go) then
 		LeanTween.cancel(arg0_42._go)
+	end
+
+	if arg0_42.spineChar then
+		arg0_42.spineChar:Dispose()
+
+		arg0_42.spineChar = nil
 	end
 
 	Destroy(arg0_42.nameTF)

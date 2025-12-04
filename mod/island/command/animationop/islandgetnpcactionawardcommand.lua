@@ -17,6 +17,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			arg0_1:sendNotification(GAME.ISLAND_GET_NPC_ACTION_AWARD_DONE, {
 				dropData = var0_2
 			})
+			IslandTaskHelper.UpdateRuntimeTaskByTargetType(IslandTaskTargetType.ACTION_HELLO_DAILY)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)
 		end

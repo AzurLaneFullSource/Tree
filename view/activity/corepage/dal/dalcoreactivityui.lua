@@ -1,6 +1,6 @@
 local var0_0 = class("DALCoreActivityUI", import("view.activity.CorePage.SailingShip3.SailingShip3CoreActivityUI"))
 
-var0_0.finishtime = 50256
+var0_0.finishtime = 50245
 
 function var0_0.getUIName(arg0_1)
 	return "DALCoreActivityUI"

@@ -106,124 +106,128 @@ function var5_0.Contains(arg0_15, arg1_15)
 	return true
 end
 
-function var5_0.IntersectRay(arg0_16, arg1_16)
-	local var0_16 = -Mathf.Infinity
-	local var1_16 = Mathf.Infinity
-	local var2_16
-	local var3_16
-	local var4_16
-	local var5_16 = arg0_16:GetCenter() - arg1_16:GetOrigin()
-	local var6_16 = {
-		var5_16.x,
-		var5_16.y,
-		var5_16.z
+function var5_0.GetCenter(arg0_16)
+	return arg0_16.center
+end
+
+function var5_0.IntersectRay(arg0_17, arg1_17)
+	local var0_17 = -Mathf.Infinity
+	local var1_17 = Mathf.Infinity
+	local var2_17
+	local var3_17
+	local var4_17
+	local var5_17 = arg0_17:GetCenter() - arg1_17:GetOrigin()
+	local var6_17 = {
+		var5_17.x,
+		var5_17.y,
+		var5_17.z
 	}
-	local var7_16 = arg0_16.extents
-	local var8_16 = {
-		var7_16.x,
-		var7_16.y,
-		var7_16.z
+	local var7_17 = arg0_17.extents
+	local var8_17 = {
+		var7_17.x,
+		var7_17.y,
+		var7_17.z
 	}
-	local var9_16 = arg1_16:GetDirection()
-	local var10_16 = {
-		var9_16.x,
-		var9_16.y,
-		var9_16.z
+	local var9_17 = arg1_17:GetDirection()
+	local var10_17 = {
+		var9_17.x,
+		var9_17.y,
+		var9_17.z
 	}
 
-	for iter0_16 = 1, 3 do
-		local var11_16 = 1 / var10_16[iter0_16]
-		local var12_16 = (var6_16[iter0_16] + var8_16[iter0_16]) * var11_16
-		local var13_16 = (var6_16[iter0_16] - var8_16[iter0_16]) * var11_16
+	for iter0_17 = 1, 3 do
+		local var11_17 = 1 / var10_17[iter0_17]
+		local var12_17 = (var6_17[iter0_17] + var8_17[iter0_17]) * var11_17
+		local var13_17 = (var6_17[iter0_17] - var8_17[iter0_17]) * var11_17
 
-		if var12_16 < var13_16 then
-			if var0_16 < var12_16 then
-				var0_16 = var12_16
+		if var12_17 < var13_17 then
+			if var0_17 < var12_17 then
+				var0_17 = var12_17
 			end
 
-			if var13_16 < var1_16 then
-				var1_16 = var13_16
+			if var13_17 < var1_17 then
+				var1_17 = var13_17
 			end
 
-			if var1_16 < var0_16 then
+			if var1_17 < var0_17 then
 				return false
 			end
 
-			if var1_16 < 0 then
+			if var1_17 < 0 then
 				return false
 			end
 		else
-			if var0_16 < var13_16 then
-				var0_16 = var13_16
+			if var0_17 < var13_17 then
+				var0_17 = var13_17
 			end
 
-			if var12_16 < var1_16 then
-				var1_16 = var12_16
+			if var12_17 < var1_17 then
+				var1_17 = var12_17
 			end
 
-			if var1_16 < var0_16 then
+			if var1_17 < var0_17 then
 				return false
 			end
 
-			if var1_16 < 0 then
+			if var1_17 < 0 then
 				return false
 			end
 		end
 	end
 
-	return true, var0_16
+	return true, var0_17
 end
 
-function var5_0.ClosestPoint(arg0_17, arg1_17)
-	local var0_17 = arg1_17 - arg0_17:GetCenter()
-	local var1_17 = {
-		var0_17.x,
-		var0_17.y,
-		var0_17.z
+function var5_0.ClosestPoint(arg0_18, arg1_18)
+	local var0_18 = arg1_18 - arg0_18:GetCenter()
+	local var1_18 = {
+		var0_18.x,
+		var0_18.y,
+		var0_18.z
 	}
-	local var2_17 = arg0_17.extents
-	local var3_17 = {
-		var2_17.x,
-		var2_17.y,
-		var2_17.z
+	local var2_18 = arg0_18.extents
+	local var3_18 = {
+		var2_18.x,
+		var2_18.y,
+		var2_18.z
 	}
-	local var4_17 = 0
-	local var5_17
+	local var4_18 = 0
+	local var5_18
 
-	for iter0_17 = 1, 3 do
-		if var1_17[iter0_17] < -var3_17[iter0_17] then
-			local var6_17 = var1_17[iter0_17] + var3_17[iter0_17]
+	for iter0_18 = 1, 3 do
+		if var1_18[iter0_18] < -var3_18[iter0_18] then
+			local var6_18 = var1_18[iter0_18] + var3_18[iter0_18]
 
-			var4_17 = var4_17 + var6_17 * var6_17
-			var1_17[iter0_17] = -var3_17[iter0_17]
-		elseif var1_17[iter0_17] > var3_17[iter0_17] then
-			local var7_17 = var1_17[iter0_17] - var3_17[iter0_17]
+			var4_18 = var4_18 + var6_18 * var6_18
+			var1_18[iter0_18] = -var3_18[iter0_18]
+		elseif var1_18[iter0_18] > var3_18[iter0_18] then
+			local var7_18 = var1_18[iter0_18] - var3_18[iter0_18]
 
-			var4_17 = var4_17 + var7_17 * var7_17
-			var1_17[iter0_17] = var3_17[iter0_17]
+			var4_18 = var4_18 + var7_18 * var7_18
+			var1_18[iter0_18] = var3_18[iter0_18]
 		end
 	end
 
-	if var4_17 == 0 then
+	if var4_18 == 0 then
 		return rkPoint, 0
 	else
-		outPoint = var1_17 + arg0_17:GetCenter()
+		outPoint = var3_0(var1_18[1], var1_18[2], var1_18[3]) + arg0_18:GetCenter()
 
-		return outPoint, var4_17
+		return outPoint, var4_18
 	end
 end
 
-function var5_0.Destroy(arg0_18)
-	arg0_18.center = nil
-	arg0_18.size = nil
+function var5_0.Destroy(arg0_19)
+	arg0_19.center = nil
+	arg0_19.size = nil
 end
 
-function var5_0.__tostring(arg0_19)
-	return string.format("Center: %s, Extents %s", tostring(arg0_19.center), tostring(arg0_19.extents))
+function var5_0.__tostring(arg0_20)
+	return string.format("Center: %s, Extents %s", tostring(arg0_20.center), tostring(arg0_20.extents))
 end
 
-function var5_0.__eq(arg0_20, arg1_20)
-	return arg0_20.center == arg1_20.center and arg0_20.extents == arg1_20.extents
+function var5_0.__eq(arg0_21, arg1_21)
+	return arg0_21.center == arg1_21.center and arg0_21.extents == arg1_21.extents
 end
 
 var6_0.size = var5_0.GetSize

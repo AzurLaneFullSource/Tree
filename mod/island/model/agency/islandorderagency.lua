@@ -257,7 +257,7 @@ function var0_0.GetNextTargetExp(arg0_33)
 
 	local var0_33 = arg0_33:GetLevel()
 
-	return arg0_33:StaticGetTargetExp(var0_33 + 1)
+	return arg0_33:StaticGetTargetExp(var0_33)
 end
 
 function var0_0.StaticGetTargetExp(arg0_34, arg1_34)

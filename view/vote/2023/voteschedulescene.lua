@@ -478,10 +478,12 @@ function var0_0.UpdateRaceState(arg0_34, arg1_34, arg2_34, arg3_34)
 
 	var4_34:align(var5_34)
 	onButton(arg0_34, arg1_34, function()
-		if getProxy(VoteProxy):RawGetVoteGroupByConfigId(arg2_34.id) then
-			local var0_36 = getProxy(ContextProxy):getCurrentContext()
+		local var0_36 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup() or getProxy(VoteProxy):GetOpeningFunVoteGroup()
 
-			if var0_36 and var0_36.mediator == VoteMediator then
+		if getProxy(VoteProxy):RawGetVoteGroupByConfigId(arg2_34.id) and var0_36 and var0_36.id == arg2_34.id then
+			local var1_36 = getProxy(ContextProxy):getCurrentContext()
+
+			if var1_36 and var1_36.mediator == VoteMediator then
 				arg0_34:emit(var0_0.ON_CLOSE)
 			else
 				arg0_34:emit(VoteScheduleMediator.ON_VOTE)

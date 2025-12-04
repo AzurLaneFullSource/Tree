@@ -47,6 +47,8 @@ function var0_0.init(arg0_2)
 	arg0_2.awardWindowPage = VoteAwardWindowPage.New(arg0_2._tf, arg0_2.event)
 
 	VoteStoryUtil.Notify(VoteStoryUtil.ENTER_SCENE)
+	setActive(arg0_2.dropGetTr, false)
+	setActive(arg0_2.dropGotTr, false)
 end
 
 function var0_0.didEnter(arg0_3)
@@ -59,7 +61,7 @@ function var0_0.didEnter(arg0_3)
 	onButton(arg0_3, arg0_3.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = pg.gametip.vote_help_2023.tip
+			helps = pg.gametip.vote_help_2025.tip
 		})
 	end, SFX_PANEL)
 	onButton(arg0_3, arg0_3.awardBtn, function()

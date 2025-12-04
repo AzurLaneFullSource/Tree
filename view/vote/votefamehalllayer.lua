@@ -28,7 +28,7 @@ function var0_0.InitData(arg0_6)
 	arg0_6.displays = {}
 	arg0_6.btns = {}
 
-	local var0_6 = false
+	local var0_6 = 0
 
 	for iter0_6, iter1_6 in pairs(arg0_6.voteData) do
 		local var1_6 = arg0_6._tf:Find("adapt/btns/btn_" .. iter0_6)
@@ -43,13 +43,12 @@ function var0_0.InitData(arg0_6)
 
 		arg0_6.btns[iter0_6] = var1_6
 
-		if not var0_6 then
-			triggerToggle(var1_6, true)
-
-			var0_6 = true
+		if var0_6 < iter0_6 then
+			var0_6 = iter0_6
 		end
 	end
 
+	triggerToggle(arg0_6.btns[var0_6], true)
 	arg0_6:UpdateBtnsTip()
 end
 

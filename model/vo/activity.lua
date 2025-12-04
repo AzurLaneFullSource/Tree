@@ -928,7 +928,12 @@ function var0_0.IsShowTipById(arg0_81)
 
 			return false
 		end,
-		[ActivityConst.SAILING_SHIP_3_SKIN_ACT_ID] = SailingShip3SkinLayer.ShouldShowTip
+		[ActivityConst.SAILING_SHIP_3_SKIN_ACT_ID] = SailingShip3SkinLayer.ShouldShowTip,
+		[ActivityConst.HelenaPT_ACT_ID] = function()
+			local var0_90 = getProxy(ActivityProxy):getActivityById(ActivityConst.HelenaPT_ACT_ID)
+
+			return HelenaScenarioPage:IsShowRed(var0_90)
+		end
 	}
 
 	local var0_81 = var0_0.ShowTipTableById[arg0_81.id]
@@ -936,312 +941,257 @@ function var0_0.IsShowTipById(arg0_81)
 	return tobool(var0_81), var0_81 and var0_81()
 end
 
-function var0_0.isShow(arg0_90)
+function var0_0.isShow(arg0_91)
 	if LOCK_SKIN_US then
-		local var0_90 = pg.gameset.levellimit_skinstory.key_value
-		local var1_90 = pg.gameset.levellimit_skinstory.description
+		local var0_91 = pg.gameset.levellimit_skinstory.key_value
+		local var1_91 = pg.gameset.levellimit_skinstory.description
 
-		if var0_90 >= getProxy(PlayerProxy):getRawData().level and table.contains(var1_90, arg0_90.id) then
+		if var0_91 >= getProxy(PlayerProxy):getRawData().level and table.contains(var1_91, arg0_91.id) then
 			return false
 		end
 	end
 
-	local var2_90 = arg0_90:getConfig("page_info")
+	local var2_91 = arg0_91:getConfig("page_info")
 
-	if arg0_90:getConfig("is_show") <= 0 then
+	if arg0_91:getConfig("is_show") <= 0 then
 		return false
 	elseif underscore.any({
-		var2_90.ui_name,
-		var2_90.ui_name2
-	}, function(arg0_91)
-		return not checkABExist(string.format("ui/%s", arg0_91))
+		var2_91.ui_name,
+		var2_91.ui_name2
+	}, function(arg0_92)
+		return not checkABExist(string.format("ui/%s", arg0_92))
 	end) then
-		warning(string.format("activity:%d without ui:%s", arg0_90.id, table.concat({
-			var2_90.ui_name,
-			var2_90.ui_name2
+		warning(string.format("activity:%d without ui:%s", arg0_91.id, table.concat({
+			var2_91.ui_name,
+			var2_91.ui_name2
 		}, " or ")))
 
 		return false
 	end
 
-	if arg0_90:getConfig("type") == ActivityConst.ACTIVITY_TYPE_RETURN_AWARD then
-		return arg0_90.data1 ~= 0
-	elseif arg0_90:getConfig("type") == ActivityConst.ACTIVITY_TYPE_CLIENT_DISPLAY then
-		local var3_90 = arg0_90:getConfig("config_client").display_link
+	if arg0_91:getConfig("type") == ActivityConst.ACTIVITY_TYPE_RETURN_AWARD then
+		return arg0_91.data1 ~= 0
+	elseif arg0_91:getConfig("type") == ActivityConst.ACTIVITY_TYPE_CLIENT_DISPLAY then
+		local var3_91 = arg0_91:getConfig("config_client").display_link
 
-		if var3_90 then
-			return underscore.any(var3_90, function(arg0_92)
-				return arg0_92[2] == 0 or pg.TimeMgr.GetInstance():inTime(pg.shop_template[arg0_92[2]].time)
+		if var3_91 then
+			return underscore.any(var3_91, function(arg0_93)
+				return arg0_93[2] == 0 or pg.TimeMgr.GetInstance():inTime(pg.shop_template[arg0_93[2]].time)
 			end)
 		end
-	elseif arg0_90:getConfig("type") == ActivityConst.ACTIVITY_TYPE_SURVEY then
-		local var4_90 = getProxy(ActivityProxy)
-		local var5_90 = var4_90:isSurveyOpen()
-		local var6_90 = var4_90:isSurveyDone()
+	elseif arg0_91:getConfig("type") == ActivityConst.ACTIVITY_TYPE_SURVEY then
+		local var4_91 = getProxy(ActivityProxy)
+		local var5_91 = var4_91:isSurveyOpen()
+		local var6_91 = var4_91:isSurveyDone()
 
-		return var5_90 and not var6_90
-	elseif arg0_90:getConfig("type") == ActivityConst.ACTIVITY_TYPE_UR_EXCHANGE then
+		return var5_91 and not var6_91
+	elseif arg0_91:getConfig("type") == ActivityConst.ACTIVITY_TYPE_UR_EXCHANGE then
 		if getProxy(ShopsProxy):getActivityShops() == nil then
 			return false
 		end
 
-		local var7_90 = arg0_90:getConfig("config_client")
-		local var8_90 = getProxy(PlayerProxy):getData():getResource(var7_90.uPtId)
-		local var9_90 = #var7_90.goodsId + 1
+		local var7_91 = arg0_91:getConfig("config_client")
+		local var8_91 = getProxy(PlayerProxy):getData():getResource(var7_91.uPtId)
+		local var9_91 = #var7_91.goodsId + 1
 
-		return var9_90 > var9_90 - _.reduce(var7_90.goodsId, 0, function(arg0_93, arg1_93)
-			return arg0_93 + getProxy(ShopsProxy):getActivityShopById(var7_90.shopId):GetCommodityById(arg1_93):GetPurchasableCnt()
+		return var9_91 > var9_91 - _.reduce(var7_91.goodsId, 0, function(arg0_94, arg1_94)
+			return arg0_94 + getProxy(ShopsProxy):getActivityShopById(var7_91.shopId):GetCommodityById(arg1_94):GetPurchasableCnt()
 		end)
-	elseif arg0_90:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TASK_RYZA and table.contains({
+	elseif arg0_91:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TASK_RYZA and table.contains({
 		ActivityConst.DORM_SIGN_ID,
 		ActivityConst.DORM_SIGN_ID_2
-	}, arg0_90:getConfig("id")) then
-		return #getProxy(ActivityProxy):getActivityById(arg0_90:getConfig("id")):getConfig("config_data") ~= #getProxy(ActivityTaskProxy):getFinishTaskById(arg0_90:getConfig("id"))
+	}, arg0_91:getConfig("id")) then
+		return #getProxy(ActivityProxy):getActivityById(arg0_91:getConfig("id")):getConfig("config_data") ~= #getProxy(ActivityTaskProxy):getFinishTaskById(arg0_91:getConfig("id"))
 	end
 
 	return true
 end
 
-function var0_0.isAfterShow(arg0_94)
-	if arg0_94.configId == ActivityConst.UR_TASK_ACT_ID or arg0_94.configId == ActivityConst.SPECIAL_WEAPON_ACT_ID then
-		local var0_94 = getProxy(TaskProxy)
+function var0_0.isAfterShow(arg0_95)
+	if arg0_95.configId == ActivityConst.UR_TASK_ACT_ID or arg0_95.configId == ActivityConst.SPECIAL_WEAPON_ACT_ID then
+		local var0_95 = getProxy(TaskProxy)
 
-		return underscore.all(arg0_94:getConfig("config_data")[1], function(arg0_95)
-			local var0_95 = var0_94:getTaskVO(arg0_95)
+		return underscore.all(arg0_95:getConfig("config_data")[1], function(arg0_96)
+			local var0_96 = var0_95:getTaskVO(arg0_96)
 
-			return var0_95 and var0_95:isReceive()
+			return var0_96 and var0_96:isReceive()
 		end)
 	end
 
 	return false
 end
 
-function var0_0.getShowPriority(arg0_96)
-	return arg0_96:getConfig("is_show")
+function var0_0.getShowPriority(arg0_97)
+	return arg0_97:getConfig("is_show")
 end
 
-function var0_0.isCorePage(arg0_97, arg1_97)
-	return arg0_97:getConfig("page_core") == arg1_97
+function var0_0.isCorePage(arg0_98, arg1_98)
+	return arg0_98:getConfig("page_core") == arg1_98
 end
 
-function var0_0.left4Day(arg0_98)
-	if arg0_98.stopTime - pg.TimeMgr.GetInstance():GetServerTime() < 345600 then
+function var0_0.left4Day(arg0_99)
+	if arg0_99.stopTime - pg.TimeMgr.GetInstance():GetServerTime() < 345600 then
 		return true
 	end
 
 	return false
 end
 
-function var0_0.getAwardInfos(arg0_99)
-	return arg0_99.data1KeyValueList or {}
+function var0_0.getAwardInfos(arg0_100)
+	return arg0_100.data1KeyValueList or {}
 end
 
-function var0_0.updateData(arg0_100, arg1_100, arg2_100)
-	if arg0_100:getConfig("type") == ActivityConst.ACTIVITY_TYPE_LOTTERY then
-		if not arg0_100:getAwardInfos()[arg1_100] then
-			arg0_100.data1KeyValueList[arg1_100] = {}
+function var0_0.updateData(arg0_101, arg1_101, arg2_101)
+	if arg0_101:getConfig("type") == ActivityConst.ACTIVITY_TYPE_LOTTERY then
+		if not arg0_101:getAwardInfos()[arg1_101] then
+			arg0_101.data1KeyValueList[arg1_101] = {}
 		end
 
-		for iter0_100, iter1_100 in ipairs(arg2_100) do
-			if arg0_100.data1KeyValueList[arg1_100][iter1_100] then
-				arg0_100.data1KeyValueList[arg1_100][iter1_100] = arg0_100.data1KeyValueList[arg1_100][iter1_100] + 1
+		for iter0_101, iter1_101 in ipairs(arg2_101) do
+			if arg0_101.data1KeyValueList[arg1_101][iter1_101] then
+				arg0_101.data1KeyValueList[arg1_101][iter1_101] = arg0_101.data1KeyValueList[arg1_101][iter1_101] + 1
 			else
-				arg0_100.data1KeyValueList[arg1_100][iter1_100] = 1
+				arg0_101.data1KeyValueList[arg1_101][iter1_101] = 1
 			end
 		end
 	end
 end
 
-function var0_0.getTaskShip(arg0_101)
-	return arg0_101:getConfig("config_client")[1]
+function var0_0.getTaskShip(arg0_102)
+	return arg0_102:getConfig("config_client")[1]
 end
 
-function var0_0.getNotificationMsg(arg0_102)
-	local var0_102 = arg0_102:getConfig("type")
-	local var1_102 = ActivityProxy.ACTIVITY_SHOW_AWARDS
+function var0_0.getNotificationMsg(arg0_103)
+	local var0_103 = arg0_103:getConfig("type")
+	local var1_103 = ActivityProxy.ACTIVITY_SHOW_AWARDS
 
-	if var0_102 == ActivityConst.ACTIVITY_TYPE_SHOP or var0_102 == ActivityConst.ACTIVITY_TYPE_SKIN_FAKE_PACKAGE then
-		var1_102 = ActivityProxy.ACTIVITY_SHOP_SHOW_AWARDS
-	elseif var0_102 == ActivityConst.ACTIVITY_TYPE_LOTTERY then
-		var1_102 = ActivityProxy.ACTIVITY_LOTTERY_SHOW_AWARDS
-	elseif var0_102 == ActivityConst.ACTIVITY_TYPE_REFLUX then
-		var1_102 = ActivityProxy.ACTIVITY_SHOW_REFLUX_AWARDS
-	elseif var0_102 == ActivityConst.ACTIVITY_TYPE_RED_PACKETS or var0_102 == ActivityConst.ACTIVITY_TYPE_RED_PACKET_LOTTER then
-		var1_102 = ActivityProxy.ACTIVITY_SHOW_RED_PACKET_AWARDS
+	if var0_103 == ActivityConst.ACTIVITY_TYPE_SHOP or var0_103 == ActivityConst.ACTIVITY_TYPE_SKIN_FAKE_PACKAGE then
+		var1_103 = ActivityProxy.ACTIVITY_SHOP_SHOW_AWARDS
+	elseif var0_103 == ActivityConst.ACTIVITY_TYPE_LOTTERY then
+		var1_103 = ActivityProxy.ACTIVITY_LOTTERY_SHOW_AWARDS
+	elseif var0_103 == ActivityConst.ACTIVITY_TYPE_REFLUX then
+		var1_103 = ActivityProxy.ACTIVITY_SHOW_REFLUX_AWARDS
+	elseif var0_103 == ActivityConst.ACTIVITY_TYPE_RED_PACKETS or var0_103 == ActivityConst.ACTIVITY_TYPE_RED_PACKET_LOTTER then
+		var1_103 = ActivityProxy.ACTIVITY_SHOW_RED_PACKET_AWARDS
 	end
 
-	return var1_102
+	return var1_103
 end
 
-function var0_0.getDayIndex(arg0_103)
-	local var0_103 = arg0_103:getStartTime()
-	local var1_103 = pg.TimeMgr.GetInstance()
-	local var2_103 = var1_103:GetServerTime()
+function var0_0.getDayIndex(arg0_104)
+	local var0_104 = arg0_104:getStartTime()
+	local var1_104 = pg.TimeMgr.GetInstance()
+	local var2_104 = var1_104:GetServerTime()
 
-	return var1_103:DiffDay(var0_103, var2_103) + 1
+	return var1_104:DiffDay(var0_104, var2_104) + 1
 end
 
-function var0_0.getStartTime(arg0_104)
-	local var0_104, var1_104 = parseTimeConfig(arg0_104:getConfig("time"))
+function var0_0.getStartTime(arg0_105)
+	local var0_105, var1_105 = parseTimeConfig(arg0_105:getConfig("time"))
 
-	if var1_104 and var1_104[1] == "newuser" then
-		return arg0_104.stopTime - var1_104[3] * 86400
+	if var1_105 and var1_105[1] == "newuser" then
+		return arg0_105.stopTime - var1_105[3] * 86400
 	else
-		return pg.TimeMgr.GetInstance():parseTimeFromConfig(var0_104[2])
+		return pg.TimeMgr.GetInstance():parseTimeFromConfig(var0_105[2])
 	end
 end
 
-function var0_0.getNDay(arg0_105, arg1_105)
-	arg1_105 = arg1_105 or arg0_105:getStartTime()
+function var0_0.getNDay(arg0_106, arg1_106)
+	arg1_106 = arg1_106 or arg0_106:getStartTime()
 
-	local var0_105 = pg.TimeMgr.GetInstance()
+	local var0_106 = pg.TimeMgr.GetInstance()
 
-	return var0_105:DiffDay(arg1_105, var0_105:GetServerTime()) + 1
+	return var0_106:DiffDay(arg1_106, var0_106:GetServerTime()) + 1
 end
 
-function var0_0.isVariableTime(arg0_106)
-	local var0_106, var1_106 = parseTimeConfig(arg0_106:getConfig("time"))
+function var0_0.isVariableTime(arg0_107)
+	local var0_107, var1_107 = parseTimeConfig(arg0_107:getConfig("time"))
 
-	return var1_106 and var1_106[1] == "newuser"
+	return var1_107 and var1_107[1] == "newuser"
 end
 
-function var0_0.setSpecialData(arg0_107, arg1_107, arg2_107)
-	arg0_107.speciaData = arg0_107.speciaData and arg0_107.speciaData or {}
-	arg0_107.speciaData[arg1_107] = arg2_107
+function var0_0.setSpecialData(arg0_108, arg1_108, arg2_108)
+	arg0_108.speciaData = arg0_108.speciaData and arg0_108.speciaData or {}
+	arg0_108.speciaData[arg1_108] = arg2_108
 end
 
-function var0_0.getSpecialData(arg0_108, arg1_108)
-	return arg0_108.speciaData and arg0_108.speciaData[arg1_108] and arg0_108.speciaData[arg1_108] or nil
+function var0_0.getSpecialData(arg0_109, arg1_109)
+	return arg0_109.speciaData and arg0_109.speciaData[arg1_109] and arg0_109.speciaData[arg1_109] or nil
 end
 
-function var0_0.canPermanentFinish(arg0_109)
-	local var0_109 = arg0_109:getConfig("type")
+function var0_0.canPermanentFinish(arg0_110)
+	local var0_110 = arg0_110:getConfig("type")
 
-	if var0_109 == ActivityConst.ACTIVITY_TYPE_TASK_LIST then
-		local var1_109 = arg0_109:getConfig("config_data")
-		local var2_109 = getProxy(TaskProxy)
+	if var0_110 == ActivityConst.ACTIVITY_TYPE_TASK_LIST then
+		local var1_110 = arg0_110:getConfig("config_data")
+		local var2_110 = getProxy(TaskProxy)
 
 		return underscore.all(underscore.flatten({
-			var1_109[#var1_109]
-		}), function(arg0_110)
-			return var2_109:getFinishTaskById(arg0_110) ~= nil
+			var1_110[#var1_110]
+		}), function(arg0_111)
+			return var2_110:getFinishTaskById(arg0_111) ~= nil
 		end)
-	elseif var0_109 == ActivityConst.ACTIVITY_TYPE_PT_BUFF then
-		local var3_109 = ActivityPtData.New(arg0_109)
+	elseif var0_110 == ActivityConst.ACTIVITY_TYPE_PT_BUFF then
+		local var3_110 = ActivityPtData.New(arg0_110)
 
-		return var3_109.level >= #var3_109.targets
+		return var3_110.level >= #var3_110.targets
 	end
 
 	return false
 end
 
-function var0_0.GetShopTime(arg0_111)
-	local var0_111 = pg.TimeMgr.GetInstance()
-	local var1_111 = arg0_111:getStartTime()
-	local var2_111 = arg0_111.stopTime
+function var0_0.GetShopTime(arg0_112)
+	local var0_112 = pg.TimeMgr.GetInstance()
+	local var1_112 = arg0_112:getStartTime()
+	local var2_112 = arg0_112.stopTime
 
-	return var0_111:STimeDescS(var1_111, "%y.%m.%d") .. " - " .. var0_111:STimeDescS(var2_111, "%y.%m.%d")
+	return var0_112:STimeDescS(var1_112, "%y.%m.%d") .. " - " .. var0_112:STimeDescS(var2_112, "%y.%m.%d")
 end
 
-function var0_0.GetCrusingUnreceiveAward(arg0_112)
-	assert(arg0_112:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_CRUSING, "type error")
-
-	local var0_112 = pg.battlepass_event_pt[arg0_112.id]
-	local var1_112 = {}
-	local var2_112 = {}
-
-	for iter0_112, iter1_112 in ipairs(arg0_112.data1_list) do
-		var2_112[iter1_112] = true
-	end
-
-	for iter2_112, iter3_112 in ipairs(var0_112.target) do
-		if iter3_112 > arg0_112.data1 then
-			break
-		elseif not var2_112[iter3_112] then
-			table.insert(var1_112, Drop.Create(pg.battlepass_event_award[var0_112.award[iter2_112]].drop_client))
-		end
-	end
-
-	if arg0_112.data2 ~= 1 then
-		return PlayerConst.MergePassItemDrop(var1_112)
-	end
-
-	local var3_112 = {}
-
-	for iter4_112, iter5_112 in ipairs(arg0_112.data2_list) do
-		var3_112[iter5_112] = true
-	end
-
-	for iter6_112, iter7_112 in ipairs(var0_112.target) do
-		if iter7_112 > arg0_112.data1 then
-			break
-		elseif not var3_112[iter7_112] then
-			table.insert(var1_112, Drop.Create(pg.battlepass_event_award[var0_112.award_pay[iter6_112]].drop_client))
-		end
-	end
-
-	return PlayerConst.MergePassItemDrop(var1_112)
-end
-
-function var0_0.GetCrusingInfo(arg0_113)
+function var0_0.GetCrusingUnreceiveAward(arg0_113)
 	assert(arg0_113:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_CRUSING, "type error")
 
 	local var0_113 = pg.battlepass_event_pt[arg0_113.id]
-	local var1_113 = var0_113.pt
+	local var1_113 = {}
 	local var2_113 = {}
-	local var3_113 = {}
 
-	for iter0_113, iter1_113 in ipairs(var0_113.key_point_display) do
-		var3_113[iter1_113] = true
+	for iter0_113, iter1_113 in ipairs(arg0_113.data1_list) do
+		var2_113[iter1_113] = true
 	end
 
 	for iter2_113, iter3_113 in ipairs(var0_113.target) do
-		table.insert(var2_113, {
-			id = iter2_113,
-			pt = iter3_113,
-			award = pg.battlepass_event_award[var0_113.award[iter2_113]].drop_client,
-			award_pay = pg.battlepass_event_award[var0_113.award_pay[iter2_113]].drop_client,
-			isImportent = var3_113[iter2_113]
-		})
-	end
-
-	local var4_113 = arg0_113.data1
-	local var5_113 = arg0_113.data2 == 1
-	local var6_113 = {}
-
-	for iter4_113, iter5_113 in ipairs(arg0_113.data1_list) do
-		var6_113[iter5_113] = true
-	end
-
-	local var7_113 = {}
-
-	for iter6_113, iter7_113 in ipairs(arg0_113.data2_list) do
-		var7_113[iter7_113] = true
-	end
-
-	local var8_113 = 0
-
-	for iter8_113, iter9_113 in ipairs(var2_113) do
-		if var4_113 < iter9_113.pt then
+		if iter3_113 > arg0_113.data1 then
 			break
-		else
-			var8_113 = iter8_113
+		elseif not var2_113[iter3_113] then
+			table.insert(var1_113, Drop.Create(pg.battlepass_event_award[var0_113.award[iter2_113]].drop_client))
 		end
 	end
 
-	return {
-		ptId = var1_113,
-		awardList = var2_113,
-		pt = var4_113,
-		isPay = var5_113,
-		awardDic = var6_113,
-		awardPayDic = var7_113,
-		phase = var8_113
-	}
+	if arg0_113.data2 ~= 1 then
+		return PlayerConst.MergePassItemDrop(var1_113)
+	end
+
+	local var3_113 = {}
+
+	for iter4_113, iter5_113 in ipairs(arg0_113.data2_list) do
+		var3_113[iter5_113] = true
+	end
+
+	for iter6_113, iter7_113 in ipairs(var0_113.target) do
+		if iter7_113 > arg0_113.data1 then
+			break
+		elseif not var3_113[iter7_113] then
+			table.insert(var1_113, Drop.Create(pg.battlepass_event_award[var0_113.award_pay[iter6_113]].drop_client))
+		end
+	end
+
+	return PlayerConst.MergePassItemDrop(var1_113)
 end
 
-function var0_0.GetHei5Info(arg0_114)
-	local var0_114 = pg.black_friday_battlepass_event_pt[arg0_114.id]
+function var0_0.GetCrusingInfo(arg0_114)
+	assert(arg0_114:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PT_CRUSING, "type error")
+
+	local var0_114 = pg.battlepass_event_pt[arg0_114.id]
 	local var1_114 = var0_114.pt
 	local var2_114 = {}
 	local var3_114 = {}
@@ -1254,8 +1204,8 @@ function var0_0.GetHei5Info(arg0_114)
 		table.insert(var2_114, {
 			id = iter2_114,
 			pt = iter3_114,
-			award = pg.black_friday_battlepass_event_award[var0_114.award[iter2_114]].drop_client,
-			award_pay = pg.black_friday_battlepass_event_award[var0_114.award_pay[iter2_114]].drop_client,
+			award = pg.battlepass_event_award[var0_114.award[iter2_114]].drop_client,
+			award_pay = pg.battlepass_event_award[var0_114.award_pay[iter2_114]].drop_client,
 			isImportent = var3_114[iter2_114]
 		})
 	end
@@ -1295,86 +1245,141 @@ function var0_0.GetHei5Info(arg0_114)
 	}
 end
 
-function var0_0.GetHei5UnreceiveAward(arg0_115)
+function var0_0.GetHei5Info(arg0_115)
 	local var0_115 = pg.black_friday_battlepass_event_pt[arg0_115.id]
-	local var1_115 = {}
+	local var1_115 = var0_115.pt
 	local var2_115 = {}
+	local var3_115 = {}
 
-	for iter0_115, iter1_115 in ipairs(arg0_115.data1_list) do
-		var2_115[iter1_115] = true
+	for iter0_115, iter1_115 in ipairs(var0_115.key_point_display) do
+		var3_115[iter1_115] = true
 	end
 
 	for iter2_115, iter3_115 in ipairs(var0_115.target) do
-		if iter3_115 > arg0_115.data1 then
+		table.insert(var2_115, {
+			id = iter2_115,
+			pt = iter3_115,
+			award = pg.black_friday_battlepass_event_award[var0_115.award[iter2_115]].drop_client,
+			award_pay = pg.black_friday_battlepass_event_award[var0_115.award_pay[iter2_115]].drop_client,
+			isImportent = var3_115[iter2_115]
+		})
+	end
+
+	local var4_115 = arg0_115.data1
+	local var5_115 = arg0_115.data2 == 1
+	local var6_115 = {}
+
+	for iter4_115, iter5_115 in ipairs(arg0_115.data1_list) do
+		var6_115[iter5_115] = true
+	end
+
+	local var7_115 = {}
+
+	for iter6_115, iter7_115 in ipairs(arg0_115.data2_list) do
+		var7_115[iter7_115] = true
+	end
+
+	local var8_115 = 0
+
+	for iter8_115, iter9_115 in ipairs(var2_115) do
+		if var4_115 < iter9_115.pt then
 			break
-		elseif not var2_115[iter3_115] then
-			table.insert(var1_115, Drop.Create(pg.black_friday_battlepass_event_award[var0_115.award[iter2_115]].drop_client))
+		else
+			var8_115 = iter8_115
 		end
 	end
 
-	if arg0_115.data2 ~= 1 then
-		return PlayerConst.MergePassItemDrop(var1_115)
+	return {
+		ptId = var1_115,
+		awardList = var2_115,
+		pt = var4_115,
+		isPay = var5_115,
+		awardDic = var6_115,
+		awardPayDic = var7_115,
+		phase = var8_115
+	}
+end
+
+function var0_0.GetHei5UnreceiveAward(arg0_116)
+	local var0_116 = pg.black_friday_battlepass_event_pt[arg0_116.id]
+	local var1_116 = {}
+	local var2_116 = {}
+
+	for iter0_116, iter1_116 in ipairs(arg0_116.data1_list) do
+		var2_116[iter1_116] = true
 	end
 
-	local var3_115 = {}
-
-	for iter4_115, iter5_115 in ipairs(arg0_115.data2_list) do
-		var3_115[iter5_115] = true
-	end
-
-	for iter6_115, iter7_115 in ipairs(var0_115.target) do
-		if iter7_115 > arg0_115.data1 then
+	for iter2_116, iter3_116 in ipairs(var0_116.target) do
+		if iter3_116 > arg0_116.data1 then
 			break
-		elseif not var3_115[iter7_115] then
-			table.insert(var1_115, Drop.Create(pg.black_friday_battlepass_event_award[var0_115.award_pay[iter6_115]].drop_client))
+		elseif not var2_116[iter3_116] then
+			table.insert(var1_116, Drop.Create(pg.black_friday_battlepass_event_award[var0_116.award[iter2_116]].drop_client))
 		end
 	end
 
-	return PlayerConst.MergePassItemDrop(var1_115)
+	if arg0_116.data2 ~= 1 then
+		return PlayerConst.MergePassItemDrop(var1_116)
+	end
+
+	local var3_116 = {}
+
+	for iter4_116, iter5_116 in ipairs(arg0_116.data2_list) do
+		var3_116[iter5_116] = true
+	end
+
+	for iter6_116, iter7_116 in ipairs(var0_116.target) do
+		if iter7_116 > arg0_116.data1 then
+			break
+		elseif not var3_116[iter7_116] then
+			table.insert(var1_116, Drop.Create(pg.black_friday_battlepass_event_award[var0_116.award_pay[iter6_116]].drop_client))
+		end
+	end
+
+	return PlayerConst.MergePassItemDrop(var1_116)
 end
 
-function var0_0.IsActivityReady(arg0_116)
-	return arg0_116 and not arg0_116:isEnd() and arg0_116:readyToAchieve()
+function var0_0.IsActivityReady(arg0_117)
+	return arg0_117 and not arg0_117:isEnd() and arg0_117:readyToAchieve()
 end
 
-function var0_0.GetEndTimeStrByConfig(arg0_117)
-	local var0_117 = arg0_117:getConfig("time")
+function var0_0.GetEndTimeStrByConfig(arg0_118)
+	local var0_118 = arg0_118:getConfig("time")
 
-	if type(var0_117) == "table" then
-		local var1_117 = var0_117[3]
-		local var2_117 = var1_117[1][2]
-		local var3_117 = var1_117[1][3]
+	if type(var0_118) == "table" then
+		local var1_118 = var0_118[3]
+		local var2_118 = var1_118[1][2]
+		local var3_118 = var1_118[1][3]
 
-		return var2_117 .. "." .. var3_117
+		return var2_118 .. "." .. var3_118
 	else
 		return ""
 	end
 end
 
-function var0_0.NeedLoginRedPoint(arg0_118)
-	return PlayerPrefs.GetString(arg0_118:GetLoginRedPointKey(), "") ~= arg0_118:GetLoginRedPointValue()
+function var0_0.NeedLoginRedPoint(arg0_119)
+	return PlayerPrefs.GetString(arg0_119:GetLoginRedPointKey(), "") ~= arg0_119:GetLoginRedPointValue()
 end
 
-function var0_0.SetLoginRedPoint(arg0_119)
-	PlayerPrefs.SetString(arg0_119:GetLoginRedPointKey(), arg0_119:GetLoginRedPointValue())
+function var0_0.SetLoginRedPoint(arg0_120)
+	PlayerPrefs.SetString(arg0_120:GetLoginRedPointKey(), arg0_120:GetLoginRedPointValue())
 end
 
-function var0_0.GetLoginRedPointValue(arg0_120)
+function var0_0.GetLoginRedPointValue(arg0_121)
 	return pg.TimeMgr.GetInstance():STimeDescC(pg.TimeMgr.GetInstance():GetServerTime(), "%Y/%m/%d")
 end
 
-function var0_0.GetLoginRedPointKey(arg0_121)
-	local var0_121 = arg0_121:GetPlayerID()
+function var0_0.GetLoginRedPointKey(arg0_122)
+	local var0_122 = arg0_122:GetPlayerID()
 
-	return string.format("%s_%s", var0_121, arg0_121.id)
+	return string.format("%s_%s", var0_122, arg0_122.id)
 end
 
-function var0_0.GetPlayerID(arg0_122)
+function var0_0.GetPlayerID(arg0_123)
 	return getProxy(PlayerProxy):getPlayerId()
 end
 
-function var0_0.GetConfigClientSetting(arg0_123, arg1_123)
-	return arg0_123:getConfig("config_client")[arg1_123]
+function var0_0.GetConfigClientSetting(arg0_124, arg1_124)
+	return arg0_124:getConfig("config_client")[arg1_124]
 end
 
 return var0_0

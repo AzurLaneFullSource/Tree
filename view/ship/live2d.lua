@@ -867,6 +867,7 @@ function var0_0.Ctor(arg0_39, arg1_39, arg2_39)
 					arg2_39(arg0_39)
 				end
 			else
+				arg0_39:clearMaskTexture(arg0_40)
 				pg.Live2DMgr.GetInstance():ReturnLive2DModel(arg0_39.modelName, arg0_40)
 			end
 		end
@@ -1478,6 +1479,7 @@ function var0_0.Dispose(arg0_79)
 	end
 
 	if arg0_79._go and arg0_79.state == var0_0.STATE_INITED then
+		arg0_79:clearMaskTexture(arg0_79._go)
 		pg.Live2DMgr.GetInstance():ReturnLive2DModel(arg0_79.modelName, arg0_79._go)
 
 		arg0_79.modelName = nil
@@ -1487,104 +1489,135 @@ function var0_0.Dispose(arg0_79)
 	arg0_79.state = var0_0.STATE_DISPOSE
 end
 
-function var0_0.settempOffsetPosTime(arg0_80, arg1_80)
-	arg0_80.tempOffsetPosTime = arg1_80
+function var0_0.clearMaskTexture(arg0_80, arg1_80)
+	if not arg1_80 then
+		return
+	end
+
+	local var0_80 = GetComponent(arg1_80, "CubismMaskController")
+
+	if var0_80 then
+		local var1_80 = ReflectionHelp.RefGetProperty(typeof("Live2D.Cubism.Rendering.Masking.CubismMaskController"), "MaskTexture", var0_80)
+
+		if var1_80 then
+			local var2_80 = ReflectionHelp.RefGetProperty(typeof("Live2D.Cubism.Rendering.Masking.CubismMaskTexture"), "RenderTextures", var1_80)
+
+			for iter0_80 = 0, var2_80.Length - 1 do
+				local var3_80 = var2_80[iter0_80]
+
+				var3_80:Release()
+				Object.DestroyImmediate(var3_80)
+			end
+
+			ReflectionHelp.RefSetProperty(typeof("Live2D.Cubism.Rendering.Masking.CubismMaskTexture"), "RenderTextures", var1_80, nil)
+
+			local var4_80 = ReflectionHelp.RefGetProperty(typeof("Live2D.Cubism.Rendering.Masking.CubismMaskTexture"), "RenderTexture", var1_80)
+
+			var4_80:Release()
+			Object.DestroyImmediate(var4_80)
+			ReflectionHelp.RefSetProperty(typeof("Live2D.Cubism.Rendering.Masking.CubismMaskTexture"), "RenderTexture", var1_80, nil)
+		end
+	end
 end
 
-function var0_0.getParameterDic(arg0_81)
-	local var0_81 = {}
+function var0_0.settempOffsetPosTime(arg0_81, arg1_81)
+	arg0_81.tempOffsetPosTime = arg1_81
+end
 
-	if arg0_81.drags and #arg0_81.drags > 0 then
-		for iter0_81, iter1_81 in ipairs(arg0_81.drags) do
-			local var1_81 = iter1_81:getParameterName()
-			local var2_81 = iter1_81:getParameter()
+function var0_0.getParameterDic(arg0_82)
+	local var0_82 = {}
 
-			if var1_81 and #var1_81 > 0 and var2_81 then
-				var0_81[var1_81] = var2_81
+	if arg0_82.drags and #arg0_82.drags > 0 then
+		for iter0_82, iter1_82 in ipairs(arg0_82.drags) do
+			local var1_82 = iter1_82:getParameterName()
+			local var2_82 = iter1_82:getParameter()
+
+			if var1_82 and #var1_82 > 0 and var2_82 then
+				var0_82[var1_82] = var2_82
 			end
 		end
 	end
 
-	return var0_81
+	return var0_82
 end
 
-function var0_0.unloadCueSheet(arg0_82)
-	if not arg0_82.loadSheets then
+function var0_0.unloadCueSheet(arg0_83)
+	if not arg0_83.loadSheets then
 		return
 	end
 
-	for iter0_82, iter1_82 in ipairs(arg0_82.loadSheets) do
-		pg.CriMgr.GetInstance():UnloadCueSheet(iter1_82)
+	for iter0_83, iter1_83 in ipairs(arg0_83.loadSheets) do
+		pg.CriMgr.GetInstance():UnloadCueSheet(iter1_83)
 	end
 
-	arg0_82.loadSheets = {}
+	arg0_83.loadSheets = {}
 end
 
-function var0_0.stopVoice(arg0_83)
-	if not arg0_83.playingSheetInfo then
+function var0_0.stopVoice(arg0_84)
+	if not arg0_84.playingSheetInfo then
 		return
 	end
 
-	for iter0_83, iter1_83 in ipairs(arg0_83.playingSheetInfo) do
-		if iter1_83 then
-			iter1_83:PlaybackStop()
+	for iter0_84, iter1_84 in ipairs(arg0_84.playingSheetInfo) do
+		if iter1_84 then
+			iter1_84:PlaybackStop()
 		end
 	end
 
-	arg0_83.playingSheetInfo = {}
+	arg0_84.playingSheetInfo = {}
 end
 
-function var0_0.playL2dVoice(arg0_84, arg1_84, arg2_84, arg3_84)
-	if not table.contains(arg0_84.loadSheets, arg1_84) then
-		table.insert(arg0_84.loadSheets, arg1_84)
+function var0_0.playL2dVoice(arg0_85, arg1_85, arg2_85, arg3_85)
+	if not table.contains(arg0_85.loadSheets, arg1_85) then
+		table.insert(arg0_85.loadSheets, arg1_85)
 	end
 
-	pg.CriMgr.GetInstance():playCueSheetVoice(arg1_84, arg2_84, arg3_84, function(arg0_85)
-		if arg0_85 then
-			print("播放的语音长度为 = " .. arg0_85:GetLength())
-			table.insert(arg0_84.playingSheetInfo, arg0_85)
+	pg.CriMgr.GetInstance():playCueSheetVoice(arg1_85, arg2_85, arg3_85, function(arg0_86)
+		if arg0_86 then
+			print("播放的语音长度为 = " .. arg0_86:GetLength())
+			table.insert(arg0_85.playingSheetInfo, arg0_86)
 		end
 	end)
 end
 
-function var0_0.UpdateAtomSource(arg0_86)
-	arg0_86.updateAtom = true
+function var0_0.UpdateAtomSource(arg0_87)
+	arg0_87.updateAtom = true
 end
 
-function var0_0.AtomSouceFresh(arg0_87)
-	local var0_87 = pg.CriMgr.GetInstance():getAtomSource(pg.CriMgr.C_VOICE)
-	local var1_87 = arg0_87._go:GetComponent("CubismCriSrcMouthInput").Analyzer
+function var0_0.AtomSouceFresh(arg0_88)
+	local var0_88 = pg.CriMgr.GetInstance():getAtomSource(pg.CriMgr.C_VOICE)
+	local var1_88 = arg0_88._go:GetComponent("CubismCriSrcMouthInput").Analyzer
 
-	var0_87:AttachToAnalyzer(var1_87)
+	var0_88:AttachToAnalyzer(var1_88)
 
-	if arg0_87.updateAtom then
-		arg0_87.updateAtom = false
+	if arg0_88.updateAtom then
+		arg0_88.updateAtom = false
 	end
 end
 
-function var0_0.SetL2dSortingLayer(arg0_88, arg1_88)
-	var0_0.UpdateL2dSortMode(arg0_88)
+function var0_0.SetL2dSortingLayer(arg0_89, arg1_89)
+	var0_0.UpdateL2dSortMode(arg0_89)
 
-	local var0_88 = arg0_88:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
-	local var1_88 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
-
-	ReflectionHelp.RefSetProperty(var1_88, "SortingOrder", var0_88, arg1_88)
-end
-
-function var0_0.UpdateL2dSortMode(arg0_89)
 	local var0_89 = arg0_89:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
 	local var1_89 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
-	local var2_89 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontOrder", nil)
 
-	ReflectionHelp.RefSetProperty(var1_89, "SortingMode", var0_89, var2_89)
+	ReflectionHelp.RefSetProperty(var1_89, "SortingOrder", var0_89, arg1_89)
 end
 
-function var0_0.SetSortingModeFrontZ(arg0_90)
+function var0_0.UpdateL2dSortMode(arg0_90)
 	local var0_90 = arg0_90:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
 	local var1_90 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
-	local var2_90 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontZ", nil)
+	local var2_90 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontOrder", nil)
 
 	ReflectionHelp.RefSetProperty(var1_90, "SortingMode", var0_90, var2_90)
+end
+
+function var0_0.SetSortingModeFrontZ(arg0_91)
+	local var0_91 = arg0_91:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
+	local var1_91 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
+	local var2_91 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontZ", nil)
+
+	ReflectionHelp.RefSetProperty(var1_91, "SortingMode", var0_91, var2_91)
 end
 
 return var0_0

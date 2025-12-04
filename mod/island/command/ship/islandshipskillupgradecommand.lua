@@ -31,7 +31,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			IslandAchievementHelper.OnShipSkillUpgrade(var0_2:GetLevel())
 			var1_1:GetGlobalBuffAgency():OnShipSkillUpgrade(var0_1)
 			arg0_1:sendNotification(GAME.ISLAND_SHIP_SKILL_UPGRADE_DONE)
-			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandShipSkillUpgrade(var2_1.id, var0_2.id))
+			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandShipSkillUpgrade(var2_1.id, var0_2.id, var0_2:GetLevel()))
 		else
 			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)
 		end

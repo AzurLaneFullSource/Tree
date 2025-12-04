@@ -11,4 +11,8 @@ function var0_0.OnInit(arg0_2)
 	})
 end
 
+function var0_0.InShowTime(arg0_3)
+	return false
+end
+
 return var0_0

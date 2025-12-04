@@ -97,7 +97,7 @@ function var0_0.AfterIslandInit(arg0_7)
 	var0_7:GetAchievementAgency():InitRuntimeRecords()
 	var0_7:GetTechnologyAgency():InitLockData()
 	var0_7:GetGlobalBuffAgency():InitShipSkillGlobalBuff()
-	var0_7:GetBookAgency():InitShipTypeData()
+	var0_7:GetBookAgency():InitRuntimeTypesData()
 end
 
 return var0_0

@@ -261,6 +261,10 @@ function var1_0.gc(arg0_21, arg1_21)
 
 	arg1_21.exited = true
 
+	if arg1_21:DontGC() then
+		return
+	end
+
 	if var0_21 or arg0_21._gcCounter >= arg0_21._gcLimit then
 		arg0_21._gcCounter = 0
 

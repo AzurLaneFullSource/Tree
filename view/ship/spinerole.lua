@@ -38,14 +38,13 @@ function var0_0.Load(arg0_3, arg1_3, arg2_3, arg3_3)
 			arg0_3._modelRoot:AddComponent(typeof(RectTransform))
 
 			arg0_3._model = arg0_4
-			arg0_3._model.transform.localScale = Vector3.one
-			arg0_3._modelScale = Vector3.one
 
+			arg0_3:Init()
+			arg0_3:SetLocalScale(Vector3.one)
+			arg0_3:SetModelScale(Vector3.one)
 			arg0_3._model.transform:SetParent(arg0_3._modelRoot.transform, false)
 
 			arg0_3._model.transform.localPosition = Vector3.zero
-
-			arg0_3:Init()
 
 			if arg1_3 then
 				arg1_3()
@@ -70,11 +69,12 @@ function var0_0.LoadLite(arg0_5, arg1_5, arg2_5)
 		else
 			arg0_5._modelRoot = arg0_6
 			arg0_5._model = arg0_6
-			arg0_5._model.transform.localScale = Vector3.one
-			arg0_5._modelScale = Vector3.one
-			arg0_5._model.transform.localPosition = Vector3.zero
 
 			arg0_5:Init()
+			arg0_5:SetLocalScale(Vector3.one)
+			arg0_5:SetModelScale(Vector3.one)
+
+			arg0_5._model.transform.localPosition = Vector3.zero
 
 			if arg1_5 then
 				arg1_5()
@@ -310,21 +310,21 @@ function var0_0.SetAction(arg0_27, arg1_27)
 		return
 	end
 
-	local var0_27 = math.sign(arg0_27._modelRoot.transform.localScale.x)
+	local var0_27 = math.sign(arg0_27._rootScale.x)
 	local var1_27, var2_27 = SpineAnimUtil.GetCharAnimationDirect(arg0_27._modleGraphic, var0_27, arg1_27)
 
 	if var2_27 then
-		arg0_27._model.transform.localScale = Vector3(var0_27, arg0_27._modelScale.y, arg0_27._modelScale.z)
+		arg0_27._model.transform.localScale = Vector3(var0_27 * math.abs(arg0_27._modelScale.x), arg0_27._modelScale.y, arg0_27._modelScale.z)
 	else
 		arg0_27._model.transform.localScale = arg0_27._modelScale
 	end
 
-	print("root朝向 =" .. var0_27 .. "，model朝向 =" .. var0_27 .. "播放动作:" .. var1_27)
 	arg0_27._modleAnim:SetAction(var1_27, 0)
 
 	arg0_27._action = arg1_27
 
 	arg0_27:HiddenAttachmentByAction(arg1_27)
+	arg0_27:SetActionCallBack(nil)
 end
 
 function var0_0.SetActionOnce(arg0_28, arg1_28)
@@ -341,186 +341,217 @@ function var0_0.SetActionCallBack(arg0_29, arg1_29)
 		return
 	end
 
-	arg0_29._modleAnim:SetActionCallBack(arg1_29)
+	arg0_29._modleAnim:SetActionCallBack(function(arg0_30)
+		arg0_29:changeAttachLListVisible(arg0_30)
+
+		if arg1_29 then
+			arg1_29(arg0_30)
+		end
+	end)
 end
 
-function var0_0.HiddenAttachmentByAction(arg0_30, arg1_30)
-	for iter0_30, iter1_30 in pairs(arg0_30._attachmentList) do
-		SetActive(iter0_30, not table.contains(iter1_30.hiddenActionList, arg1_30))
+function var0_0.changeAttachLListVisible(arg0_31, arg1_31)
+	local var0_31
+
+	if arg1_31 == "skin_on" then
+		var0_31 = true
+	elseif arg1_31 == "skin_off" then
+		var0_31 = false
+	else
+		return
+	end
+
+	for iter0_31, iter1_31 in pairs(arg0_31._attachmentList) do
+		SetActive(iter0_31, var0_31)
 	end
 end
 
-function var0_0.SetSizeDelta(arg0_31, arg1_31)
-	if arg0_31:CheckInited() then
-		rtf(arg0_31._modelRoot).sizeDelta = arg1_31
+function var0_0.HiddenAttachmentByAction(arg0_32, arg1_32)
+	for iter0_32, iter1_32 in pairs(arg0_32._attachmentList) do
+		SetActive(iter0_32, not table.contains(iter1_32.hiddenActionList, arg1_32))
 	end
 end
 
-function var0_0.SetLocalScale(arg0_32, arg1_32)
-	if arg0_32:CheckInited() then
-		arg0_32._modelRoot.transform.localScale = arg1_32
+function var0_0.SetSizeDelta(arg0_33, arg1_33)
+	if arg0_33:CheckInited() then
+		rtf(arg0_33._modelRoot).sizeDelta = arg1_33
+	end
+end
 
-		if arg0_32._action then
-			arg0_32:SetAction(arg0_32._action)
+function var0_0.SetModelScale(arg0_34, arg1_34)
+	if arg0_34:CheckInited() then
+		arg0_34._model.transform.localScale = arg1_34
+		arg0_34._modelScale = arg1_34
+	end
+end
+
+function var0_0.SetLocalScale(arg0_35, arg1_35)
+	if arg0_35:CheckInited() then
+		arg0_35._rootScale = arg1_35
+		arg0_35._modelRoot.transform.localScale = arg1_35
+
+		if arg0_35._action then
+			arg0_35:SetAction(arg0_35._action)
 		end
 	end
 end
 
-function var0_0.GetLocalScale(arg0_33)
-	if arg0_33:CheckInited() then
-		return arg0_33._modelRoot.transform.localScale
-	end
-end
-
-function var0_0.SetLocalPosition(arg0_34, arg1_34)
-	if arg0_34:CheckInited() then
-		arg0_34._modelRoot.transform.localPosition = arg1_34
-	end
-end
-
-function var0_0.SetAsFirstSibling(arg0_35)
-	if arg0_35:CheckInited() then
-		arg0_35._modelRoot.transform:SetAsFirstSibling()
-	end
-end
-
-function var0_0.SetLayer(arg0_36, arg1_36)
+function var0_0.GetLocalScale(arg0_36)
 	if arg0_36:CheckInited() then
-		pg.ViewUtils.SetLayer(arg0_36._modelRoot.transform, arg1_36)
+		return arg0_36._modelRoot.transform.localScale
 	end
 end
 
-function var0_0.TweenShining(arg0_37, arg1_37, arg2_37, arg3_37, arg4_37, arg5_37, arg6_37, arg7_37, arg8_37, arg9_37, arg10_37)
+function var0_0.SetLocalPosition(arg0_37, arg1_37)
 	if arg0_37:CheckInited() then
-		arg0_37:StopTweenShining()
+		arg0_37._modelRoot.transform.localPosition = arg1_37
+	end
+end
 
-		local var0_37 = arg0_37._modleGraphic.material
-		local var1_37 = LeanTween.value(arg0_37._modelRoot, arg3_37, arg4_37, arg1_37):setEase(LeanTweenType.easeInOutSine):setOnUpdate(System.Action_float(function(arg0_38)
-			if arg7_37 then
-				var0_37:SetColor("_Color", Color.Lerp(arg5_37, arg6_37, arg0_38))
+function var0_0.SetAsFirstSibling(arg0_38)
+	if arg0_38:CheckInited() then
+		arg0_38._modelRoot.transform:SetAsFirstSibling()
+	end
+end
+
+function var0_0.SetLayer(arg0_39, arg1_39)
+	if arg0_39:CheckInited() then
+		pg.ViewUtils.SetLayer(arg0_39._modelRoot.transform, arg1_39)
+	end
+end
+
+function var0_0.TweenShining(arg0_40, arg1_40, arg2_40, arg3_40, arg4_40, arg5_40, arg6_40, arg7_40, arg8_40, arg9_40, arg10_40)
+	if arg0_40:CheckInited() then
+		arg0_40:StopTweenShining()
+
+		local var0_40 = arg0_40._modleGraphic.material
+		local var1_40 = LeanTween.value(arg0_40._modelRoot, arg3_40, arg4_40, arg1_40):setEase(LeanTweenType.easeInOutSine):setOnUpdate(System.Action_float(function(arg0_41)
+			if arg7_40 then
+				var0_40:SetColor("_Color", Color.Lerp(arg5_40, arg6_40, arg0_41))
 			else
-				arg0_37._modleGraphic.color = Color.Lerp(arg5_37, arg6_37, arg0_38)
+				arg0_40._modleGraphic.color = Color.Lerp(arg5_40, arg6_40, arg0_41)
 			end
 
-			existCall(arg9_37, arg0_38)
+			existCall(arg9_40, arg0_41)
 		end)):setOnComplete(System.Action(function()
-			arg0_37._tweenShiningId = nil
+			arg0_40._tweenShiningId = nil
 
-			if arg8_37 then
-				if arg7_37 then
-					var0_37:SetColor("_Color", arg5_37)
+			if arg8_40 then
+				if arg7_40 then
+					var0_40:SetColor("_Color", arg5_40)
 				else
-					arg0_37._modleGraphic.color = arg5_37
+					arg0_40._modleGraphic.color = arg5_40
 				end
 			end
 
-			existCall(arg10_37)
+			existCall(arg10_40)
 		end))
 
-		if arg2_37 then
-			var1_37:setLoopPingPong(arg2_37)
+		if arg2_40 then
+			var1_40:setLoopPingPong(arg2_40)
 		end
 
-		arg0_37._tweenShiningId = var1_37.uniqueId
+		arg0_40._tweenShiningId = var1_40.uniqueId
 	end
 end
 
-function var0_0.StopTweenShining(arg0_40)
-	if arg0_40:CheckInited() and arg0_40._tweenShiningId then
-		LeanTween.cancel(arg0_40._tweenShiningId, true)
+function var0_0.StopTweenShining(arg0_43)
+	if arg0_43:CheckInited() and arg0_43._tweenShiningId then
+		LeanTween.cancel(arg0_43._tweenShiningId, true)
 
-		arg0_40._tweenShiningId = nil
+		arg0_43._tweenShiningId = nil
 	end
 end
 
-function var0_0.ChangeMaterial(arg0_41, arg1_41)
-	if not arg0_41:CheckInited() then
+function var0_0.ChangeMaterial(arg0_44, arg1_44)
+	if not arg0_44:CheckInited() then
 		return
 	end
 
-	if not arg0_41._stageMaterial then
-		arg0_41._stageMaterial = arg0_41._modleGraphic.material
+	if not arg0_44._stageMaterial then
+		arg0_44._stageMaterial = arg0_44._modleGraphic.material
 	end
 
-	arg0_41._modleGraphic.material = arg1_41
+	arg0_44._modleGraphic.material = arg1_44
 end
 
-function var0_0.RevertMaterial(arg0_42)
-	if not arg0_42:CheckInited() then
+function var0_0.RevertMaterial(arg0_45)
+	if not arg0_45:CheckInited() then
 		return
 	end
 
-	if not arg0_42._stageMaterial then
+	if not arg0_45._stageMaterial then
 		return
 	end
 
-	arg0_42._modleGraphic.material = arg0_42._stageMaterial
+	arg0_45._modleGraphic.material = arg0_45._stageMaterial
 end
 
-function var0_0.CreateInterface(arg0_43)
-	arg0_43._mouseChild = GameObject("mouseChild")
+function var0_0.CreateInterface(arg0_46)
+	arg0_46._mouseChild = GameObject("mouseChild")
 
-	arg0_43._mouseChild.transform:SetParent(arg0_43._modelRoot.transform, false)
+	arg0_46._mouseChild.transform:SetParent(arg0_46._modelRoot.transform, false)
 
-	arg0_43._mouseChild.transform.localPosition = Vector3.zero
-	arg0_43._modelClick = GetOrAddComponent(arg0_43._mouseChild, "ModelDrag")
-	arg0_43._modelPress = GetOrAddComponent(arg0_43._mouseChild, "UILongPressTrigger")
-	arg0_43._dragDelegate = GetOrAddComponent(arg0_43._mouseChild, "EventTriggerListener")
+	arg0_46._mouseChild.transform.localPosition = Vector3.zero
+	arg0_46._modelClick = GetOrAddComponent(arg0_46._mouseChild, "ModelDrag")
+	arg0_46._modelPress = GetOrAddComponent(arg0_46._mouseChild, "UILongPressTrigger")
+	arg0_46._dragDelegate = GetOrAddComponent(arg0_46._mouseChild, "EventTriggerListener")
 
-	arg0_43._modelClick:Init()
+	arg0_46._modelClick:Init()
 
-	local var0_43 = GetOrAddComponent(arg0_43._mouseChild, typeof(RectTransform))
+	local var0_46 = GetOrAddComponent(arg0_46._mouseChild, typeof(RectTransform))
 
-	var0_43.pivot = Vector2(0.5, 0)
-	var0_43.anchoredPosition = Vector2(0, 0)
-	var0_43.localScale = Vector2(100, 100)
-	var0_43.sizeDelta = Vector2(3, 3)
+	var0_46.pivot = Vector2(0.5, 0)
+	var0_46.anchoredPosition = Vector2(0, 0)
+	var0_46.localScale = Vector2(100, 100)
+	var0_46.sizeDelta = Vector2(3, 3)
 
-	return arg0_43._modelClick, arg0_43._modelPress, arg0_43._dragDelegate
+	return arg0_46._modelClick, arg0_46._modelPress, arg0_46._dragDelegate
 end
 
-function var0_0.resumeRole(arg0_44)
-	if arg0_44._modleAnim and arg0_44._modleAnim:GetAnimationState() then
-		arg0_44._modleAnim:Resume()
+function var0_0.resumeRole(arg0_47)
+	if arg0_47._modleAnim and arg0_47._modleAnim:GetAnimationState() then
+		arg0_47._modleAnim:Resume()
 	end
 end
 
-function var0_0.GetInterface(arg0_45)
-	return arg0_45._modelClick, arg0_45._modelPress, arg0_45._dragDelegate
+function var0_0.GetInterface(arg0_48)
+	return arg0_48._modelClick, arg0_48._modelPress, arg0_48._dragDelegate
 end
 
-function var0_0.EnableInterface(arg0_46)
-	arg0_46._mouseChild:GetComponent(typeof(Image)).enabled = true
+function var0_0.EnableInterface(arg0_49)
+	arg0_49._mouseChild:GetComponent(typeof(Image)).enabled = true
 end
 
-function var0_0.DisableInterface(arg0_47)
-	arg0_47._mouseChild:GetComponent(typeof(Image)).enabled = false
+function var0_0.DisableInterface(arg0_50)
+	arg0_50._mouseChild:GetComponent(typeof(Image)).enabled = false
 end
 
-function var0_0.Dispose(arg0_48)
-	if arg0_48.state == var0_0.STATE_INITED then
-		arg0_48:StopTweenShining()
-		arg0_48:RevertMaterial()
-		PoolMgr.GetInstance():ReturnSpineChar(arg0_48.prefabName, arg0_48._model)
-		arg0_48:SetVisible(true)
-		arg0_48._modleGraphic.material:SetColor("_Color", Color.New(0, 0, 0, 0))
+function var0_0.Dispose(arg0_51)
+	if arg0_51.state == var0_0.STATE_INITED then
+		arg0_51._modleAnim:SetActionCallBack(nil)
+		arg0_51:StopTweenShining()
+		arg0_51:RevertMaterial()
+		PoolMgr.GetInstance():ReturnSpineChar(arg0_51.prefabName, arg0_51._model)
+		arg0_51:SetVisible(true)
+		arg0_51._modleGraphic.material:SetColor("_Color", Color.New(0, 0, 0, 0))
 
-		arg0_48._modleGraphic.color = Color.New(1, 1, 1, 1)
+		arg0_51._modleGraphic.color = Color.New(1, 1, 1, 1)
 
-		for iter0_48, iter1_48 in pairs(arg0_48._attachmentList) do
-			Object.Destroy(iter0_48.gameObject)
+		for iter0_51, iter1_51 in pairs(arg0_51._attachmentList) do
+			Object.Destroy(iter0_51.gameObject)
 		end
 
-		arg0_48._model = nil
-		arg0_48.prefabName = nil
-		arg0_48.ship = nil
-		arg0_48.attachmentData = nil
-		arg0_48._modleGraphic = nil
-		arg0_48._modleAnim = nil
-		arg0_48._attachmentList = nil
+		arg0_51._model = nil
+		arg0_51.prefabName = nil
+		arg0_51.ship = nil
+		arg0_51.attachmentData = nil
+		arg0_51._modleGraphic = nil
+		arg0_51._modleAnim = nil
+		arg0_51._attachmentList = nil
 	end
 
-	arg0_48.state = var0_0.STATE_DISPOSE
+	arg0_51.state = var0_0.STATE_DISPOSE
 end
 
 return var0_0

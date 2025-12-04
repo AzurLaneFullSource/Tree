@@ -425,7 +425,7 @@ local function var1_0(arg0_31, arg1_31, arg2_31, arg3_31)
 			level = arg0_32.level
 		}
 		local var1_32 = arg0_32.id
-		local var2_32 = arg1_31:RemapSkillId(var1_32)
+		local var2_32 = arg1_31:RemapSkillId(var1_32, true)
 
 		var0_32.id = ys.Battle.BattleDataFunction.SkillTranform(arg0_31, var2_32)
 

@@ -9,18 +9,20 @@ function var0_0.execute(arg0_1, arg1_1)
 		if arg0_2.result == 0 then
 			-- block empty
 		else
-			if _IslandCore and _IslandCore:GetView().player then
+			if _IslandCore and _IslandCore:GetView().player and _IslandCore:GetView().player._tf then
 				local var0_2 = _IslandCore:GetController().mapId
 				local var1_2, var2_2 = _IslandCore:GetView().player:LastGroundedPosition()
 
 				getProxy(IslandProxy):RecordTempPlayerPosition(var0_2, var1_2, var2_2)
 			end
 
-			pg.NewGuideMgr.GetInstance():Stop()
-			pg.m02:sendNotification(GAME.ISLAND_ON_RECONNECT, {
-				reconnect = true,
-				id = var0_1
-			})
+			if _IslandCore then
+				pg.NewGuideMgr.GetInstance():Stop()
+				pg.m02:sendNotification(GAME.ISLAND_ON_RECONNECT, {
+					reconnect = true,
+					id = var0_1
+				})
+			end
 		end
 	end)
 end

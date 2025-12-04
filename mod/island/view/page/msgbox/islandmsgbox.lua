@@ -169,6 +169,10 @@ function var0_0.HideWindow(arg0_10, arg1_10)
 	end
 
 	if arg1_10 then
+		if arg1_10.onHide then
+			arg1_10.onHide()
+		end
+
 		setActive(arg1_10._tf, false)
 	end
 

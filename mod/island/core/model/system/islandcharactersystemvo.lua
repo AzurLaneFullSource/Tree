@@ -120,7 +120,8 @@ function var0_0.GetperformanceObjidList(arg0_8, arg1_8)
 	local var2_8 = {
 		IslandProductConst.MinePlaceId,
 		IslandProductConst.FellingPlaceId,
-		IslandProductConst.TechnologyPlaceId
+		IslandProductConst.TechnologyPlaceId,
+		IslandProductConst.FisheryPlaceId
 	}
 
 	if table.contains(var1_8, arg0_8.id) then

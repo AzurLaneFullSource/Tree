@@ -79,63 +79,67 @@ function var0_0.GetIcon(arg0_14)
 	return arg0_14:getConfig("icon")
 end
 
-function var0_0.GetOwnTime(arg0_15)
-	return arg0_15.time
+function var0_0.GetUseArg(arg0_15)
+	return var0_0.StaticGetUsageArg(arg0_15.configId)
 end
 
-function var0_0.IsMaterial(arg0_16)
-	return arg0_16:GetType() == var0_0.TYPE_MATERIAL
+function var0_0.GetOwnTime(arg0_16)
+	return arg0_16.time
 end
 
-function var0_0.IsProp(arg0_17)
-	return arg0_17:GetType() == var0_0.TYPE_PROP or arg0_17:GetType() == var0_0.TYPE_SHIP_EXP_BOOK
+function var0_0.IsMaterial(arg0_17)
+	return arg0_17:GetType() == var0_0.TYPE_MATERIAL
 end
 
-function var0_0.IsSpecialProp(arg0_18)
-	return arg0_18:GetType() == var0_0.TYPE_SPECIAL_PROP
+function var0_0.IsProp(arg0_18)
+	return arg0_18:GetType() == var0_0.TYPE_PROP or arg0_18:GetType() == var0_0.TYPE_SHIP_EXP_BOOK
 end
 
-function var0_0.GetMaterialFacility(arg0_19)
-	if not arg0_19:IsMaterial() then
+function var0_0.IsSpecialProp(arg0_19)
+	return arg0_19:GetType() == var0_0.TYPE_SPECIAL_PROP
+end
+
+function var0_0.IsFishingProp(arg0_20)
+	return var0_0.StaticGetUsageType(arg0_20.configId) == IslandItemUsage.usage_fishing
+end
+
+function var0_0.GetMaterialFacility(arg0_21)
+	if not arg0_21:IsMaterial() then
 		return ""
 	end
 
 	return ""
 end
 
-function var0_0.CanConvert(arg0_20)
-	return arg0_20:getConfig("convert") == 1
+function var0_0.CanConvert(arg0_22)
+	return arg0_22:getConfig("convert") == 1
 end
 
-function var0_0.GetConvertPt(arg0_21)
-	return arg0_21:getConfig("pt_num")
+function var0_0.GetConvertPt(arg0_23)
+	return arg0_23:getConfig("pt_num")
 end
 
-function var0_0.StaticGetMapUsageList(arg0_22)
-	return pg.island_item_data_template.get_id_list_by_usage[arg0_22] or {}
+function var0_0.StaticGetMapUsageList(arg0_24)
+	return pg.island_item_data_template.get_id_list_by_usage[arg0_24] or {}
 end
 
-function var0_0.StaticGetUsageArg(arg0_23)
-	return pg.island_item_data_template[arg0_23].usage_arg
+function var0_0.StaticGetUsageArg(arg0_25)
+	return pg.island_item_data_template[arg0_25].usage_arg
 end
 
-function var0_0.StaticGetUsageType(arg0_24)
-	return pg.island_item_data_template[arg0_24].usage
+function var0_0.StaticGetUsageType(arg0_26)
+	return pg.island_item_data_template[arg0_26].usage
 end
 
-function var0_0.GetAcquiringWay(arg0_25)
-	local var0_25 = {}
-	local var1_25 = pg.island_item_data_template[arg0_25.configId]
+function var0_0.GetAcquiringWay(arg0_27)
+	local var0_27 = {}
+	local var1_27 = pg.island_item_data_template[arg0_27.configId]
 
-	for iter0_25, iter1_25 in ipairs(var1_25.jump_page) do
-		table.insert(var0_25, iter1_25)
+	for iter0_27, iter1_27 in ipairs(var1_27.jump_page) do
+		table.insert(var0_27, iter1_27)
 	end
 
-	return var0_25
-end
-
-function var0_0.GetUseArg(arg0_26)
-	return var0_0.StaticGetUsageArg(arg0_26.configId)
+	return var0_27
 end
 
 return var0_0

@@ -190,7 +190,12 @@ function var0_0.Flush(arg0_20)
 
 	arg0_20._tf.localScale = Vector3(var4_20, var4_20, 1)
 	arg0_20.initPos = arg0_20.initPos or arg0_20._tf.localPosition
-	arg0_20._tf.localPosition = Vector3(arg0_20.initPos.x, var5_20, 0)
+
+	onNextTick(function()
+		if not IsNil(arg0_20._tf) then
+			arg0_20._tf.localPosition = Vector3(arg0_20.initPos.x, var5_20, 0)
+		end
+	end)
 
 	local var6_20, var7_20 = arg0_20:FilterSpActivityBtns()
 
@@ -203,50 +208,50 @@ function var0_0.Flush(arg0_20)
 	end
 end
 
-function var0_0.Refresh(arg0_21)
-	if not arg0_21.isInit then
+function var0_0.Refresh(arg0_22)
+	if not arg0_22.isInit then
 		return
 	end
 
-	arg0_21:Flush()
+	arg0_22:Flush()
 
-	for iter0_21, iter1_21 in ipairs(arg0_21.specailBtns) do
-		if iter1_21:InShowTime() then
-			iter1_21:Refresh()
-		end
-	end
-end
-
-function var0_0.Disable(arg0_22)
 	for iter0_22, iter1_22 in ipairs(arg0_22.specailBtns) do
 		if iter1_22:InShowTime() then
-			iter1_22:Disable()
+			iter1_22:Refresh()
 		end
 	end
 end
 
-function var0_0.Dispose(arg0_23)
-	var0_0.super.Dispose(arg0_23)
-	arg0_23.linkBtnTopFoldableHelper:Dispose()
-
-	for iter0_23, iter1_23 in ipairs(arg0_23.activityBtns) do
-		iter1_23:Dispose()
+function var0_0.Disable(arg0_23)
+	for iter0_23, iter1_23 in ipairs(arg0_23.specailBtns) do
+		if iter1_23:InShowTime() then
+			iter1_23:Disable()
+		end
 	end
-
-	for iter2_23, iter3_23 in ipairs(arg0_23.specailBtns) do
-		iter3_23:Dispose()
-	end
-
-	arg0_23.specailBtns = nil
-	arg0_23.activityBtns = nil
 end
 
-function var0_0.Fold(arg0_24, arg1_24, arg2_24)
-	var0_0.super.Fold(arg0_24, arg1_24, arg2_24)
-	arg0_24.linkBtnTopFoldableHelper:Fold(arg1_24, arg2_24)
+function var0_0.Dispose(arg0_24)
+	var0_0.super.Dispose(arg0_24)
+	arg0_24.linkBtnTopFoldableHelper:Dispose()
+
+	for iter0_24, iter1_24 in ipairs(arg0_24.activityBtns) do
+		iter1_24:Dispose()
+	end
+
+	for iter2_24, iter3_24 in ipairs(arg0_24.specailBtns) do
+		iter3_24:Dispose()
+	end
+
+	arg0_24.specailBtns = nil
+	arg0_24.activityBtns = nil
 end
 
-function var0_0.GetDirection(arg0_25)
+function var0_0.Fold(arg0_25, arg1_25, arg2_25)
+	var0_0.super.Fold(arg0_25, arg1_25, arg2_25)
+	arg0_25.linkBtnTopFoldableHelper:Fold(arg1_25, arg2_25)
+end
+
+function var0_0.GetDirection(arg0_26)
 	return Vector2(1, 0)
 end
 

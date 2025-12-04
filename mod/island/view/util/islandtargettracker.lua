@@ -4,6 +4,9 @@ local var1_0 = {
 	200
 }
 local var2_0 = 25
+local var3_0 = 2
+local var4_0 = 6
+local var5_0 = 2
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1._tf = arg1_1
@@ -18,7 +21,6 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.screenSize = Vector2(Screen.width, Screen.height)
 	arg0_1.screenCenter = Vector2(arg0_1.screenSize.x * 0.5, arg0_1.screenSize.y * 0.5)
 	arg0_1.radiusOfEllipse = Vector2(var1_0[1], var1_0[2])
-	arg0_1.lines = {}
 	arg0_1.targetPosition = Vector3.zero
 	arg0_1.lerpSpeed = 25
 	arg0_1.showHudDic = {}
@@ -37,7 +39,7 @@ function var0_0.Update(arg0_4, arg1_4)
 		return
 	end
 
-	if arg1_4 then
+	if arg1_4 and not arg0_4.isAttach then
 		arg0_4:AdjustTargetPosition(arg1_4)
 	end
 
@@ -105,12 +107,22 @@ function var0_0.SetUp(arg0_12, arg1_12, arg2_12, arg3_12)
 
 		local var3_13 = Vector3.Distance(var0_13, arg1_12.transform.position)
 
-		arg0_12.distanceTxt.text = math.ceil(var3_13) .. "M"
+		arg0_12.distanceTxt.text = math.ceil(var3_13 > var3_0 and var3_13 or 0) .. "M"
 
-		local var4_13, var5_13 = arg0_12:CalcPosition(arg2_12.transform)
+		local var4_13 = var3_13 < var4_0
+		local var5_13 = Vector3(0, 0, 0)
+		local var6_13 = 0
+		local var7_13 = false
 
-		arg0_12.targetPosition = Vector3(var4_13.x, var4_13.y, 0)
-		arg0_12.arrTr.localEulerAngles = Vector3(0, 0, var5_13)
+		if var4_13 then
+			var5_13, var6_13, var7_13 = arg0_12:CalcNearPosition(arg2_12.transform)
+		else
+			var5_13, var6_13, var7_13 = arg0_12:CalcPosition(arg2_12.transform)
+		end
+
+		arg0_12.targetPosition = Vector3(var5_13.x, var5_13.y, 0)
+		arg0_12.arrTr.localEulerAngles = Vector3(0, 0, var6_13)
+		arg0_12.isAttach = var7_13
 	end, 1, -1)
 
 	arg0_12.timer:Start()
@@ -130,31 +142,34 @@ function var0_0.CalcPosition(arg0_14, arg1_14)
 	end
 
 	local var6_14 = Vector2(var1_14.x, var1_14.y) - arg0_14.screenCenter
+	local var7_14 = math.pow(var6_14.x / arg0_14.radiusOfEllipse.x, 2) + math.pow(var6_14.y / arg0_14.radiusOfEllipse.y, 2)
 
-	if math.pow(var6_14.x / arg0_14.radiusOfEllipse.x, 2) + math.pow(var6_14.y / arg0_14.radiusOfEllipse.y, 2) > 1 then
-		local var7_14 = var6_14.y / (var6_14.x + 1e-07)
-		local var8_14 = Mathf.Pow(arg0_14.radiusOfEllipse.x * arg0_14.radiusOfEllipse.y, 2)
-		local var9_14 = Mathf.Pow(arg0_14.radiusOfEllipse.y, 2) + Mathf.Pow(var7_14, 2) * Mathf.Pow(arg0_14.radiusOfEllipse.x, 2)
-		local var10_14 = math.sqrt(var8_14 / var9_14)
+	if var7_14 > 1 then
+		local var8_14 = var6_14.y / (var6_14.x + 1e-07)
+		local var9_14 = Mathf.Pow(arg0_14.radiusOfEllipse.x * arg0_14.radiusOfEllipse.y, 2)
+		local var10_14 = Mathf.Pow(arg0_14.radiusOfEllipse.y, 2) + Mathf.Pow(var8_14, 2) * Mathf.Pow(arg0_14.radiusOfEllipse.x, 2)
+		local var11_14 = math.sqrt(var9_14 / var10_14)
 
-		if math.sign(var10_14) ~= math.sign(var6_14.x) then
-			var10_14 = -1 * var10_14
+		if math.sign(var11_14) ~= math.sign(var6_14.x) then
+			var11_14 = -1 * var11_14
 		end
 
-		local var11_14 = var10_14 * var7_14
+		local var12_14 = var11_14 * var8_14
 
-		return Vector2(var10_14, var11_14), IslandCalcUtil.SignedAngle(Vector2.up, Vector2(var6_14.x, var6_14.y))
+		return Vector2(var11_14, var12_14), IslandCalcUtil.SignedAngle(Vector2.up, Vector2(var6_14.x, var6_14.y))
+	elseif var7_14 < 1 then
+		return arg0_14:CalcNearPosition(arg1_14)
 	else
 		return var6_14, IslandCalcUtil.SignedAngle(Vector2.up, Vector2(var6_14.x, var6_14.y))
 	end
 end
 
-function var0_0.ClearLine(arg0_15)
-	for iter0_15, iter1_15 in pairs(arg0_15.lines) do
-		Object.Destroy(iter1_15.gameObject)
-	end
+function var0_0.CalcNearPosition(arg0_15, arg1_15)
+	local var0_15 = IslandCameraMgr.instance._mainCamera
+	local var1_15 = Vector3(arg1_15.transform.position.x, arg1_15.transform.position.y + var5_0, arg1_15.transform.position.z)
+	local var2_15 = var0_15:WorldToScreenPoint(var1_15)
 
-	arg0_15.lines = {}
+	return Vector2(var2_15.x, var2_15.y) - arg0_15.screenCenter, 180, true
 end
 
 function var0_0.ShutDown(arg0_16)
@@ -166,8 +181,6 @@ function var0_0.ShutDown(arg0_16)
 
 	arg0_16.cg.alpha = 0
 	arg0_16.trackId = nil
-
-	arg0_16:ClearLine()
 end
 
 function var0_0.Clear(arg0_17)
