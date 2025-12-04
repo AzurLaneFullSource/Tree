@@ -40,17 +40,16 @@ function var0_0.GetClientVer()
 end
 
 function var0_0.GetSDKServerID()
-	local var0_4 = {
+	local var0_4 = ({
 		[0] = "1",
 		"2001",
 		"1001",
 		"not_define"
-	}
-	local var1_4 = var0_4[NetConst.getwayType]
+	})[NetConst.getwayType]
 
-	originalPrint("SDK ServerID:" .. tostring(var1_4))
+	originalPrint("SDK ServerID:" .. tostring(var0_4))
 
-	return var0_4[var1_4]
+	return var0_4
 end
 
 function var0_0.GoSDkLoginScene()
