@@ -4,7 +4,7 @@ function var0_0.GetUIName(arg0_1)
 	return "IslandDistanceUI"
 end
 
-function var0_0.SetUIParent(arg0_2, arg1_2)
+function var0_0.GetUIParent(arg0_2, arg1_2)
 	return arg0_2:GetView().interactionContainer
 end
 

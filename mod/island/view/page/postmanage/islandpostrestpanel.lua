@@ -13,6 +13,7 @@ function var0_0.OnLoaded(arg0_2)
 
 	setText(var1_2:Find("btns/opening/Text"), i18n("island_manage_view"))
 	setText(var1_2:Find("btns/close/Text"), i18n("island_manage_result"))
+	setText(var1_2:Find("btns/lock/Text"), i18n("word_lock"))
 
 	arg0_2.uiList = UIItemList.New(var0_2, var1_2)
 end

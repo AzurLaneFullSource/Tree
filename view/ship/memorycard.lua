@@ -37,13 +37,13 @@ function var0_0.flush(arg0_3)
 		for iter0_3, iter1_3 in ipairs(arg0_3.info.memories) do
 			local var2_3 = pg.memory_template[iter1_3]
 
-			if var2_3.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(var2_3.story, true) then
+			if var2_3.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(var2_3.unlock_pre, true) then
 				var0_3 = var0_3 + 1
 			end
 		end
 
 		setText(arg0_3.groupCount, var0_3 .. "/" .. var1_3)
-	elseif arg0_3.info.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(arg0_3.info.story, true) then
+	elseif arg0_3.info.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(arg0_3.info.unlock_pre, true) then
 		setActive(arg0_3.normal, true)
 		setText(arg0_3.txTitle, arg0_3.info.title)
 		setText(arg0_3.txSubtitle, arg0_3.info.subtitle)

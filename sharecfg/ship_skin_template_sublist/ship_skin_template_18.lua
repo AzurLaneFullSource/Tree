@@ -14464,6 +14464,125 @@ pg.base.ship_skin_template_18 = {
 			}
 		}
 	},
+	[9707080] = {
+		ship_group = 970708,
+		name = "Yorktown META",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 9707080,
+		group_index = 0,
+		purchase_offset = "",
+		painting = "yuekecheng_alter",
+		l2d_drag_rate = "",
+		part_scale = "",
+		prefab = "yuekecheng_alter",
+		shop_type_id = 0,
+		shop_dynamic_hx = 0,
+		double_char = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 0,
+		illustrator = -1,
+		bg = "",
+		l2d_para_range = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = -1,
+		l2d_voice_calibrate = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "...It's a pleasure to meet you. Or should I say... we meet again. Just keep staring like that, Commander. I want to bask in this calm moment for a while longer... ",
+		voice_actor = 42,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					0.96,
+					2.12,
+					0
+				}
+			},
+			plane = {
+				{
+					0.887,
+					0.737,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							-0.813,
+							2.493,
+							0
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							-0.789,
+							2.499,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[9708010] = {
 		ship_group = 970801,
 		name = "U-556 META",
@@ -15483,121 +15602,6 @@ pg.base.ship_skin_template_18 = {
 				{
 					1.04,
 					0.81,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.57,
-							2.46,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[10100051] = {
-		ship_group = 1010005,
-		name = "Goddesses' Promise",
-		hand_id = 1,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 10100051,
-		group_index = 1,
-		purchase_offset = "",
-		painting = "HDN102_2",
-		l2d_drag_rate = "",
-		part_scale = "",
-		prefab = "HDN102_2",
-		shop_type_id = 9999,
-		shop_dynamic_hx = 0,
-		double_char = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 70038,
-		illustrator = 1,
-		bg = "201",
-		l2d_para_range = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = 0,
-		l2d_voice_calibrate = "",
-		bg_sp = "",
-		voice_actor_2 = -1,
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Oh, Commander? Won't you join me in a short conversation? I'll tell you things about Planeptune. Oh, and I'm eagerly awaiting the day you come to Planeptune for a visit.",
-		voice_actor = 79,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "neppurple",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.01,
-					1.09,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.17,
-					0.13,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.94,
-					1.07,
 					0
 				}
 			}

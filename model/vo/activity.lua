@@ -825,7 +825,7 @@ function var0_0.readyToAchieve(arg0_25)
 			return arg0_79.data1 < #var1_79 and not var2_79:IsSameDay(var3_79, arg0_79.data2) and var3_79 > arg0_79.data2
 		end,
 		[ActivityConst.ACTIVITY_TYPE_PT_HEI5] = function(arg0_80)
-			return #getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_HEI5):GetHei5UnreceiveAward() > 0
+			return #arg0_80:GetHei5UnreceiveAward() > 0
 		end
 	}
 
@@ -1342,44 +1342,30 @@ function var0_0.IsActivityReady(arg0_117)
 	return arg0_117 and not arg0_117:isEnd() and arg0_117:readyToAchieve()
 end
 
-function var0_0.GetEndTimeStrByConfig(arg0_118)
-	local var0_118 = arg0_118:getConfig("time")
-
-	if type(var0_118) == "table" then
-		local var1_118 = var0_118[3]
-		local var2_118 = var1_118[1][2]
-		local var3_118 = var1_118[1][3]
-
-		return var2_118 .. "." .. var3_118
-	else
-		return ""
-	end
+function var0_0.NeedLoginRedPoint(arg0_118)
+	return PlayerPrefs.GetString(arg0_118:GetLoginRedPointKey(), "") ~= arg0_118:GetLoginRedPointValue()
 end
 
-function var0_0.NeedLoginRedPoint(arg0_119)
-	return PlayerPrefs.GetString(arg0_119:GetLoginRedPointKey(), "") ~= arg0_119:GetLoginRedPointValue()
+function var0_0.SetLoginRedPoint(arg0_119)
+	PlayerPrefs.SetString(arg0_119:GetLoginRedPointKey(), arg0_119:GetLoginRedPointValue())
 end
 
-function var0_0.SetLoginRedPoint(arg0_120)
-	PlayerPrefs.SetString(arg0_120:GetLoginRedPointKey(), arg0_120:GetLoginRedPointValue())
-end
-
-function var0_0.GetLoginRedPointValue(arg0_121)
+function var0_0.GetLoginRedPointValue(arg0_120)
 	return pg.TimeMgr.GetInstance():STimeDescC(pg.TimeMgr.GetInstance():GetServerTime(), "%Y/%m/%d")
 end
 
-function var0_0.GetLoginRedPointKey(arg0_122)
-	local var0_122 = arg0_122:GetPlayerID()
+function var0_0.GetLoginRedPointKey(arg0_121)
+	local var0_121 = arg0_121:GetPlayerID()
 
-	return string.format("%s_%s", var0_122, arg0_122.id)
+	return string.format("%s_%s", var0_121, arg0_121.id)
 end
 
-function var0_0.GetPlayerID(arg0_123)
+function var0_0.GetPlayerID(arg0_122)
 	return getProxy(PlayerProxy):getPlayerId()
 end
 
-function var0_0.GetConfigClientSetting(arg0_124, arg1_124)
-	return arg0_124:getConfig("config_client")[arg1_124]
+function var0_0.GetConfigClientSetting(arg0_123, arg1_123)
+	return arg0_123:getConfig("config_client")[arg1_123]
 end
 
 return var0_0

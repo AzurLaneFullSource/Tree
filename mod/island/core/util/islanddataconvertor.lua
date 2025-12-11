@@ -396,9 +396,11 @@ function var0_0.SceneData2IslandUnits(arg0_22, arg1_22, arg2_22, arg3_22, arg4_2
 	end
 
 	for iter2_22, iter3_22 in pairs(arg2_22) do
-		local var4_22 = var0_0.PlayerData2IslandUnit(iter3_22, arg3_22, arg6_22, arg4_22, arg5_22)
+		if iter3_22:IsSelf() then
+			local var4_22 = var0_0.PlayerData2IslandUnit(iter3_22, arg3_22, arg6_22, arg4_22, arg5_22)
 
-		table.insert(arg0_22, var4_22)
+			table.insert(arg0_22, var4_22)
+		end
 	end
 
 	local var5_22 = var0_0.TakePhotoData2IslandUnit(2)

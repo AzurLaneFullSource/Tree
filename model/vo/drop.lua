@@ -1646,7 +1646,7 @@ function var0_0.InitSwitch()
 			setText(arg3_252, i18n("world_" .. var0_252 .. "_name", arg0_252:getConfig("name")))
 		end,
 		[DROP_TYPE_ICON_FRAME] = function(arg0_253, arg1_253, arg2_253)
-			setText(arg2_253, arg0_253:getConfig("desc"))
+			setText(arg2_253, arg0_253.desc and arg0_253.desc or arg0_253:getConfig("desc"))
 		end,
 		[DROP_TYPE_CHAT_FRAME] = function(arg0_254, arg1_254, arg2_254)
 			setText(arg2_254, arg0_254:getConfig("desc"))

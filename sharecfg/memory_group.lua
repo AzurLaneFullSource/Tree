@@ -247,6 +247,7 @@ pg.memory_group = setmetatable({
 		347,
 		348,
 		349,
+		350,
 		501,
 		502,
 		503,
@@ -6041,7 +6042,7 @@ pg.base.memory_group = {
 		subtype = 3,
 		icon = "title_event",
 		type = 2,
-		link_event = 50240,
+		link_event = 50267,
 		title = "The New Sales Campaign Just Dropped!",
 		group_id = "",
 		memories = {
@@ -6136,6 +6137,26 @@ pg.base.memory_group = {
 			4857,
 			4858,
 			4859
+		}
+	},
+	[350] = {
+		id = 350,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 50266,
+		title = "To a Brighter World",
+		group_id = "",
+		memories = {
+			4871,
+			4872,
+			4873,
+			4874,
+			4875,
+			4876,
+			4877,
+			4878,
+			4879
 		}
 	},
 	[501] = {

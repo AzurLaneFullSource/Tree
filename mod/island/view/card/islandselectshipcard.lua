@@ -49,31 +49,36 @@ function var0_0.Update(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2)
 
 	GetImageSpriteFromAtlasAsync("ShipYardIcon/" .. var0_2, "", arg0_2.iconTF)
 
-	local var1_2 = arg0_2.ship:GetAttrGrade(IslandShipAttr.ATTRS[arg0_2.attrType])
+	local var1_2 = arg0_2.ship:GetAttr(IslandShipAttr.ATTRS[arg0_2.attrType])
+	local var2_2 = IslandProductTimeHelper.GetAttributeAddPercentByAttribute(arg1_2, arg0_2.attrType)
+
+	var1_2 = var2_2 ~= 0 and math.floor(var1_2 * (1 + 0.01 * var2_2)) or var1_2
+
+	local var3_2 = arg0_2.ship:GetAttrGradeByValue(var1_2)
 
 	for iter0_2, iter1_2 in ipairs(arg0_2.attrTfList) do
 		if iter1_2 ~= "" then
-			local var2_2 = var1_2 == iter0_2
+			local var4_2 = var3_2 == iter0_2
 
-			setActive(iter1_2, var2_2)
+			setActive(iter1_2, var4_2)
 		end
 	end
 
-	local var3_2 = arg0_2.ship:GetName()
+	local var5_2 = arg0_2.ship:GetName()
 
 	setText(arg0_2.nameTF, arg0_2.ship:GetName())
 
-	local var4_2 = arg0_2.ship:GetCurrentEnergy()
-	local var5_2 = arg0_2.ship:GetMaxEnergy()
+	local var6_2 = arg0_2.ship:GetCurrentEnergy()
+	local var7_2 = arg0_2.ship:GetMaxEnergy()
 
-	setSlider(arg0_2.energySliderTF, 0, 1, var4_2 / var5_2)
-	setText(arg0_2.energyTF, var4_2 .. "/" .. var5_2)
+	setSlider(arg0_2.energySliderTF, 0, 1, var6_2 / var7_2)
+	setText(arg0_2.energyTF, var6_2 .. "/" .. var7_2)
 	setActive(arg0_2.workingMaskTF, arg0_2.ship:GetState() ~= IslandShip.STATE_NORMAL)
 
-	local var6_2 = arg0_2.ship:GetSkill():IsEffectiveInPlace(arg0_2.buildingId)
+	local var8_2 = arg0_2.ship:GetSkill():IsEffectiveInPlace(arg0_2.buildingId)
 
-	setActive(arg0_2.skillInuse, var6_2)
-	setActive(arg0_2.skillUnuse, not var6_2)
+	setActive(arg0_2.skillInuse, var8_2)
+	setActive(arg0_2.skillUnuse, not var8_2)
 end
 
 function var0_0.UpdateSelected(arg0_3, arg1_3)

@@ -61,7 +61,11 @@ function var0_0.FlushAcquiringWay(arg0_5, arg1_5)
 			setText(arg2_6:Find("Text"), var0_6[1])
 			setText(arg2_6:Find("go/Text"), i18n("island_word_go"))
 			onButton(arg0_5, arg2_6:Find("go"), function()
-				arg0_5:GetMsgBoxMgr():emit(IslandMediator.OPEN_PAGE, var0_6[2][1], var0_6[2][2])
+				local var0_7 = Clone(var0_6[2])
+				local var1_7 = var0_7[1]
+
+				table.remove(var0_7, 1)
+				arg0_5:GetMsgBoxMgr():emit(IslandMediator.OPEN_PAGE, var1_7, var0_7)
 				arg0_5:Hide()
 			end, SFX_PANEL)
 			setActive(arg2_6:Find("go"), var0_6[2] and #var0_6[2] > 0)

@@ -34,7 +34,9 @@ function var1_0.onAttach(arg0_4, arg1_4, arg2_4)
 end
 
 function var1_0.onStack(arg0_5, arg1_5, arg2_5)
-	arg0_5._number = arg0_5._numberBase * arg2_5._stack
+	local var0_5 = math.min(arg2_5._stackCap, arg2_5._stack)
+
+	arg0_5._number = arg0_5._numberBase * var0_5
 
 	arg0_5:UpdateAttr(arg1_5)
 end

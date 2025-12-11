@@ -1,6 +1,121 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_19 = {
+	[10100051] = {
+		ship_group = 1010005,
+		name = "Goddesses' Promise",
+		hand_id = 1,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 10100051,
+		group_index = 1,
+		purchase_offset = "",
+		painting = "HDN102_2",
+		l2d_drag_rate = "",
+		part_scale = "",
+		prefab = "HDN102_2",
+		shop_type_id = 9999,
+		shop_dynamic_hx = 0,
+		double_char = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 70038,
+		illustrator = 1,
+		bg = "201",
+		l2d_para_range = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = 0,
+		l2d_voice_calibrate = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Oh, Commander? Won't you join me in a short conversation? I'll tell you things about Planeptune. Oh, and I'm eagerly awaiting the day you come to Planeptune for a visit.",
+		voice_actor = 79,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "neppurple",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.01,
+					1.09,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.17,
+					0.13,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.94,
+					1.07,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.57,
+							2.46,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[10100060] = {
 		ship_group = 1010006,
 		name = "Black Heart",
@@ -15262,126 +15377,6 @@ pg.base.ship_skin_template_19 = {
 					120,
 					0,
 					2
-				}
-			}
-		}
-	},
-	[11300020] = {
-		ship_group = 1130002,
-		name = "Isla von Duerer",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 11300020,
-		group_index = 0,
-		purchase_offset = "",
-		painting = "aila",
-		l2d_drag_rate = "",
-		part_scale = "",
-		prefab = "aila",
-		shop_type_id = 0,
-		shop_dynamic_hx = 0,
-		double_char = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 0,
-		illustrator = -1,
-		bg = "",
-		l2d_para_range = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = -1,
-		l2d_voice_calibrate = "",
-		bg_sp = "",
-		voice_actor_2 = -1,
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "I'm Isla von Duerer! Call me Isla! I'm with the Order of Eustella and the Aladiss Research Team... So hey, why am I here?! Do you know why?",
-		voice_actor = 291,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.353,
-					0.833,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.338,
-					0.922,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.977,
-					2.229,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.609,
-							2.334,
-							0
-						}
-					}
 				}
 			}
 		}

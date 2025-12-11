@@ -11,7 +11,7 @@ function var0_0.OnInit(arg0_1, arg1_1)
 	arg0_1:SubViewInit()
 end
 
-function var0_0.SetUIParent(arg0_2, arg1_2)
+function var0_0.GetUIParent(arg0_2, arg1_2)
 	return arg0_2:GetView().hudContainer
 end
 

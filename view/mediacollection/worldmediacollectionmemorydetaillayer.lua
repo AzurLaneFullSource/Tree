@@ -45,7 +45,7 @@ function var0_0.onInitMemoryItem(arg0_5, arg1_5)
 	onButton(arg0_5, arg1_5, function()
 		local var0_6 = arg0_5.memoryItems[arg1_5]
 
-		if var0_6 and (var0_6.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(var0_6.story, true)) then
+		if var0_6 and (var0_6.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(var0_6.unlock_pre, true)) then
 			arg0_5:PlayMemory(var0_6)
 		end
 	end, SOUND_BACK)
@@ -62,7 +62,7 @@ function var0_0.onUpdateMemoryItem(arg0_7, arg1_7, arg2_7)
 
 	local var1_7 = tf(arg2_7)
 
-	if var0_7.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(var0_7.story, true) then
+	if var0_7.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(var0_7.unlock_pre, true) then
 		setActive(var1_7:Find("normal"), true)
 		setActive(var1_7:Find("lock"), false)
 
@@ -143,7 +143,7 @@ function var0_0.ShowSubMemories(arg0_11, arg1_11, arg2_11)
 
 	local var6_11 = #arg0_11.memories
 	local var7_11 = _.reduce(arg0_11.memories, 0, function(arg0_13, arg1_13)
-		if arg1_13.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(arg1_13.story, true) then
+		if arg1_13.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(arg1_13.unlock_pre, true) then
 			arg0_13 = arg0_13 + 1
 		end
 

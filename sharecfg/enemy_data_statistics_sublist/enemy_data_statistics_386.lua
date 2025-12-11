@@ -1,5 +1,77 @@
 pg = pg or {}
 pg.enemy_data_statistics_386 = {
+	[295001] = {
+		cannon = 95,
+		name = "Hiryuu META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 288,
+		hit_growth = 0,
+		dodge = 11,
+		base = 90494,
+		durability_growth = 0,
+		antiaircraft = 190,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 10,
+		hit = 25,
+		antisub_growth = 0,
+		air_growth = 0,
+		fog_fx = "",
+		torpedo = 0,
+		durability = 50000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		id = 295001,
+		buff_list = {
+			{
+				ID = 8830,
+				LV = 2
+			}
+		}
+	},
+	[295002] = {
+		cannon = 105,
+		name = "Hiryuu META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 302,
+		hit_growth = 0,
+		dodge = 11,
+		base = 90494,
+		durability_growth = 0,
+		antiaircraft = 204,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 10,
+		hit = 30,
+		antisub_growth = 0,
+		air_growth = 0,
+		fog_fx = "",
+		torpedo = 0,
+		durability = 54000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		id = 295002,
+		buff_list = {
+			{
+				ID = 8830,
+				LV = 2
+			}
+		}
+	},
 	[295003] = {
 		cannon = 115,
 		name = "Hiryuu META",
@@ -1073,78 +1145,6 @@ pg.enemy_data_statistics_386 = {
 		armor = 0,
 		antisub = 0,
 		id = 295032,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			}
-		}
-	},
-	[295033] = {
-		cannon = 135,
-		name = "Helena META ",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 214,
-		hit_growth = 0,
-		dodge = 12,
-		base = 90541,
-		durability_growth = 0,
-		antiaircraft = 216,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 10,
-		hit = 40,
-		antisub_growth = 0,
-		air_growth = 0,
-		fog_fx = "",
-		torpedo = 0,
-		durability = 52000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		id = 295033,
-		buff_list = {
-			{
-				ID = 8830,
-				LV = 2
-			}
-		}
-	},
-	[295034] = {
-		cannon = 146,
-		name = "Helena META ",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 227,
-		hit_growth = 0,
-		dodge = 14,
-		base = 90541,
-		durability_growth = 0,
-		antiaircraft = 231,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 60,
-		luck = 10,
-		hit = 45,
-		antisub_growth = 0,
-		air_growth = 0,
-		fog_fx = "",
-		torpedo = 0,
-		durability = 68000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		id = 295034,
 		buff_list = {
 			{
 				ID = 8830,

@@ -324,7 +324,6 @@ function var0_0.SetAction(arg0_27, arg1_27)
 	arg0_27._action = arg1_27
 
 	arg0_27:HiddenAttachmentByAction(arg1_27)
-	arg0_27:SetActionCallBack(nil)
 end
 
 function var0_0.SetActionOnce(arg0_28, arg1_28)

@@ -311,7 +311,7 @@ end
 function var0_0.ClearPlaced(arg0_29, arg1_29)
 	if arg1_29 then
 		for iter0_29, iter1_29 in pairs(arg0_29.agora:GetPlacedlist()) do
-			arg0_29:UnPlaceItem(iter1_29.id)
+			arg0_29:UnPlaceItem(iter1_29.id, true)
 		end
 	else
 		for iter2_29, iter3_29 in pairs(arg0_29.agora:GetPlacedlist()) do

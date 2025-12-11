@@ -31,7 +31,7 @@ function var0_0.ExecuteFuncList(arg0_4)
 	arg0_4.__funcList = {}
 end
 
-function var0_0.SetUIParent(arg0_5, arg1_5)
+function var0_0.GetUIParent(arg0_5, arg1_5)
 	return arg0_5:GetView().pageContianer
 end
 

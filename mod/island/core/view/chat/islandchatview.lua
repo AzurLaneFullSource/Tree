@@ -10,7 +10,7 @@ function var0_0.GetUIName(arg0_2)
 	return "IslandChatUI"
 end
 
-function var0_0.SetUIParent(arg0_3, arg1_3)
+function var0_0.GetUIParent(arg0_3, arg1_3)
 	return arg0_3.parent
 end
 
