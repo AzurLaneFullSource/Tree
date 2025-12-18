@@ -14,6 +14,25 @@ function var0_0.OnFirstFlush(arg0_1)
 		setActive(var0_1, false)
 		setActive(var1_1, false)
 	end
+
+	local var2_1 = arg0_1.activity:getConfig("config_client").story
+
+	for iter2_1, iter3_1 in ipairs(arg0_1.taskList) do
+		local var3_1 = arg0_1.taskProxy:getFinishTaskById(iter3_1)
+
+		if var3_1 and var3_1:getTaskStatus() == 2 and checkExist(var2_1, {
+			iter2_1
+		}, {
+			1
+		}) then
+			local var4_1 = var2_1[iter2_1][1]
+			local var5_1, var6_1 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(var4_1)
+
+			pg.m02:sendNotification(GAME.STORY_UPDATE, {
+				storyId = var4_1
+			})
+		end
+	end
 end
 
 function var0_0.OnUpdateFlush(arg0_2)
@@ -58,43 +77,25 @@ function var0_0.OnUpdateFlush(arg0_2)
 			setActive(var2_2, false)
 			setActive(var3_2, var1_2[iter1_2])
 		end
-
-		local var7_2 = arg0_2.activity:getConfig("config_client").story
-
-		for iter2_2, iter3_2 in ipairs(arg0_2.taskList) do
-			if not arg0_2.taskProxy:getFinishTaskById(iter3_2) and checkExist(var7_2, {
-				iter2_2
-			}, {
-				1
-			}) then
-				local var8_2 = var7_2[iter2_2][1]
-				local var9_2, var10_2 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(var8_2)
-
-				print("try unlock story:", var9_2, var8_2)
-				pg.m02:sendNotification(GAME.STORY_UPDATE, {
-					storyId = var8_2
-				})
-			end
-		end
 	end
 
 	if arg0_2.usedCnt ~= var0_2 then
 		arg0_2.usedCnt = var0_2
 
-		local var11_2 = arg0_2.activity
+		local var7_2 = arg0_2.activity
 
-		var11_2.data1 = arg0_2.usedCnt
+		var7_2.data1 = arg0_2.usedCnt
 
-		getProxy(ActivityProxy):updateActivity(var11_2)
+		getProxy(ActivityProxy):updateActivity(var7_2)
 	end
 
 	arg0_2:RefreshData()
 	setText(arg0_2.countTf, arg0_2.remainCnt)
 
-	local var12_2 = var1_2[arg0_2.taskList[arg0_2.index]]
+	local var8_2 = var1_2[arg0_2.taskList[arg0_2.index]]
 
-	setActive(arg0_2.awardTf:Find("got"), var12_2)
-	setActive(arg0_2.awardTf:Find("get"), arg0_2.remainCnt > 0 and not var12_2)
+	setActive(arg0_2.awardTf:Find("got"), var8_2)
+	setActive(arg0_2.awardTf:Find("get"), arg0_2.remainCnt > 0 and not var8_2)
 end
 
 return var0_0
