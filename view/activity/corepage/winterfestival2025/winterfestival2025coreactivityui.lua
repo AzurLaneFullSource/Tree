@@ -5,6 +5,10 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.GetButtonNameText(arg0_2, arg1_2)
+	if arg1_2:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TASK_POOL then
+		return i18n(arg1_2:getConfig("title_res_tag"))
+	end
+
 	return (i18n("general_activity_side_bar" .. arg1_2:getConfig("is_show")))
 end
 
@@ -14,6 +18,11 @@ function var0_0.didEnter(arg0_3)
 	if arg0_3.contextData.actID then
 		arg0_3:verifyTabs(arg0_3.contextData.actID)
 	end
+end
+
+function var0_0.CustomInit(arg0_4)
+	setText(arg0_4._tf:Find("adapt/TopPage/top/deco/Text"), i18n("HelenaCoreActivity_title"))
+	setText(arg0_4._tf:Find("adapt/TopPage/top/deco/Text/Text_1"), i18n("HelenaCoreActivity_title2"))
 end
 
 return var0_0

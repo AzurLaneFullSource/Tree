@@ -34,6 +34,8 @@ function var0_0.OnFirstFlush(arg0_4)
 	arg0_4.index = #arg0_4.taskList
 
 	for iter0_4 = 1, #arg0_4.taskList do
+		warning(arg0_4.taskList[iter0_4])
+
 		if not arg0_4.taskProxy:getTaskVO(arg0_4.taskList[iter0_4]):isReceive() then
 			arg0_4.index = iter0_4
 
@@ -150,10 +152,16 @@ function var0_0.UpdateDrop(arg0_9)
 		arg0_9:emit(BaseUI.ON_DROP, var1_9)
 	end)
 
-	local var2_9 = var0_9:isReceive()
+	local var2_9 = {}
 
-	setActive(arg0_9.awardTf:Find("got"), var2_9)
-	setActive(arg0_9.awardTf:Find("get"), arg0_9.remainCnt > 0 and not var2_9)
+	for iter0_9, iter1_9 in ipairs(arg0_9.taskList) do
+		var2_9[iter1_9] = tobool(arg0_9.taskProxy:getFinishTaskById(iter1_9))
+	end
+
+	local var3_9 = var2_9[arg0_9.taskList[arg0_9.index]]
+
+	setActive(arg0_9.awardTf:Find("got"), var3_9)
+	setActive(arg0_9.awardTf:Find("get"), arg0_9.remainCnt > 0 and not var3_9)
 end
 
 function var0_0.OnDestroy(arg0_12)

@@ -1883,5 +1883,17 @@ pg.voice_actor_CN = {
 	[487] = {
 		code = 487,
 		actor_name = "Maaya Uchida & Sarah Emi Bridcutt"
+	},
+	[488] = {
+		code = 488,
+		actor_name = "Hiyori Miyazaki"
+	},
+	[489] = {
+		code = 489,
+		actor_name = "Nana Hasumi"
+	},
+	[490] = {
+		code = 490,
+		actor_name = "Seria Fukagawa"
 	}
 }

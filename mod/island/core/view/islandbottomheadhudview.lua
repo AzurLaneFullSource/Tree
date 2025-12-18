@@ -9,7 +9,7 @@ function var0_0.GetHeadOffset(arg0_2)
 end
 
 function var0_0.OnInit(arg0_3, arg1_3)
-	arg0_3.animationOpTpl = arg0_3._tf:GetComponent(typeof(ItemList)).prefabItem[2]
+	arg0_3.animationOpTpl = arg0_3._tf:Find("tpls/IslandNpcAnimationOpTpl")
 	arg0_3.animationOpTpls = {}
 	arg0_3.animationOpShowFlags = {}
 	arg0_3.animationOpShowDistance = pg.island_set.action_bubble_range.key_value_int

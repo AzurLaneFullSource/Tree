@@ -13,25 +13,54 @@ function var0_0.Execute(arg0_1, arg1_1)
 	local var7_1 = var1_1:GetNotActiveTopicIdsByType(6)
 	local var8_1 = var1_1:GetNotActiveTopicIdsByType(7)
 	local var9_1 = getProxy(CollectionProxy):getGroups()
+	local var10_1 = {}
 
-	for iter0_1, iter1_1 in ipairs(var2_0.all) do
-		local var10_1 = var2_0[iter1_1]
+	for iter0_1, iter1_1 in ipairs(var1_0.all) do
+		local var11_1 = var1_0[iter1_1]
 
-		if ShipGroup.getState(var10_1.code, var9_1[var10_1.group_type], false) == ShipGroup.STATE_UNLOCK then
-			local var11_1 = var1_0.get_id_list_by_ship_group[var10_1.group_type]
+		if var11_1.group_ii ~= 0 then
+			if not var10_1[var11_1.group_ii] then
+				var10_1[var11_1.group_ii] = {}
+			end
 
-			if var11_1 then
-				for iter2_1, iter3_1 in ipairs(var11_1) do
-					if var2_1 and _.contains(var2_1, iter3_1) then
-						table.insert(var0_1, iter3_1)
+			table.insert(var10_1[var11_1.group_ii], iter1_1)
+		end
+	end
+
+	for iter2_1, iter3_1 in ipairs(var2_0.all) do
+		local var12_1 = var2_0[iter3_1]
+
+		if ShipGroup.getState(var12_1.code, var9_1[var12_1.group_type], false) == ShipGroup.STATE_UNLOCK then
+			local var13_1 = {}
+			local var14_1 = Clone(var1_0.get_id_list_by_ship_group[var12_1.group_type])
+			local var15_1 = var10_1[var12_1.group_type]
+
+			if var14_1 then
+				for iter4_1 = #var14_1, 1, -1 do
+					if var1_0[var14_1[iter4_1]].group_ii ~= 0 then
+						table.remove(var14_1, iter4_1)
+					end
+				end
+
+				table.insertto(var13_1, var14_1)
+			end
+
+			if var15_1 then
+				table.insertto(var13_1, var15_1)
+			end
+
+			if #var13_1 > 0 then
+				for iter5_1, iter6_1 in ipairs(var13_1) do
+					if var2_1 and _.contains(var2_1, iter6_1) then
+						table.insert(var0_1, iter6_1)
 					end
 
-					if var3_1 and _.contains(var3_1, iter3_1) and var9_1[var10_1.group_type].maxIntimacy / 100 >= tonumber(var1_0[iter3_1].trigger_param) then
-						table.insert(var0_1, iter3_1)
+					if var3_1 and _.contains(var3_1, iter6_1) and var9_1[var12_1.group_type].maxIntimacy / 100 >= tonumber(var1_0[iter6_1].trigger_param) then
+						table.insert(var0_1, iter6_1)
 					end
 
-					if var8_1 and _.contains(var8_1, iter3_1) and var9_1[var10_1.group_type].married == 1 then
-						table.insert(var0_1, iter3_1)
+					if var8_1 and _.contains(var8_1, iter6_1) and var9_1[var12_1.group_type].married == 1 then
+						table.insert(var0_1, iter6_1)
 					end
 				end
 			end
@@ -39,48 +68,48 @@ function var0_0.Execute(arg0_1, arg1_1)
 	end
 
 	if var4_1 then
-		local var12_1 = pg.TimeMgr.GetInstance():GetServerTime()
+		local var16_1 = pg.TimeMgr.GetInstance():GetServerTime()
 
-		for iter4_1, iter5_1 in ipairs(var4_1) do
-			if #var1_0[iter5_1].trigger_param == 1 then
-				if var12_1 >= pg.TimeMgr.GetInstance():parseTimeFromConfig(var1_0[iter5_1].trigger_param[1]) then
-					table.insert(var0_1, iter5_1)
+		for iter7_1, iter8_1 in ipairs(var4_1) do
+			if #var1_0[iter8_1].trigger_param == 1 then
+				if var16_1 >= pg.TimeMgr.GetInstance():parseTimeFromConfig(var1_0[iter8_1].trigger_param[1]) then
+					table.insert(var0_1, iter8_1)
 				end
-			elseif #var1_0[iter5_1].trigger_param == 2 then
-				local var13_1 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var1_0[iter5_1].trigger_param[1])
-				local var14_1 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var1_0[iter5_1].trigger_param[2])
+			elseif #var1_0[iter8_1].trigger_param == 2 then
+				local var17_1 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var1_0[iter8_1].trigger_param[1])
+				local var18_1 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var1_0[iter8_1].trigger_param[2])
 
-				if var13_1 <= var12_1 and var12_1 <= var14_1 then
-					table.insert(var0_1, iter5_1)
+				if var17_1 <= var16_1 and var16_1 <= var18_1 then
+					table.insert(var0_1, iter8_1)
 				end
 			end
 		end
 	end
 
 	if var5_1 then
-		for iter6_1, iter7_1 in ipairs(var5_1) do
-			local var15_1 = pg.NewStoryMgr.GetInstance():StoryId2StoryName(tonumber(var1_0[iter7_1].trigger_param))
+		for iter9_1, iter10_1 in ipairs(var5_1) do
+			local var19_1 = pg.NewStoryMgr.GetInstance():StoryId2StoryName(tonumber(var1_0[iter10_1].trigger_param))
 
-			if pg.NewStoryMgr.GetInstance():IsPlayed(var15_1) then
-				table.insert(var0_1, iter7_1)
+			if pg.NewStoryMgr.GetInstance():IsPlayed(var19_1) then
+				table.insert(var0_1, iter10_1)
 			end
 		end
 	end
 
 	if var6_1 then
-		for iter8_1, iter9_1 in ipairs(var6_1) do
-			if getProxy(ChapterProxy):getChapterById(tonumber(var1_0[iter9_1].trigger_param)):isClear() then
-				table.insert(var0_1, iter9_1)
+		for iter11_1, iter12_1 in ipairs(var6_1) do
+			if getProxy(ChapterProxy):getChapterById(tonumber(var1_0[iter12_1].trigger_param)):isClear() then
+				table.insert(var0_1, iter12_1)
 			end
 		end
 	end
 
 	if var7_1 then
-		local var16_1 = getProxy(TaskProxy)
+		local var20_1 = getProxy(TaskProxy)
 
-		for iter10_1, iter11_1 in ipairs(var7_1) do
-			if var16_1:getFinishTaskById(tonumber(var1_0[iter11_1].trigger_param)) then
-				table.insert(var0_1, iter11_1)
+		for iter13_1, iter14_1 in ipairs(var7_1) do
+			if var20_1:getFinishTaskById(tonumber(var1_0[iter14_1].trigger_param)) then
+				table.insert(var0_1, iter14_1)
 			end
 		end
 	end

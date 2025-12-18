@@ -178,6 +178,8 @@ pg.furniture_data_template = setmetatable({
 			318,
 			319,
 			321,
+			323,
+			324,
 			100002,
 			100003,
 			100004,
@@ -3637,6 +3639,30 @@ pg.furniture_data_template = setmetatable({
 			331307,
 			331308,
 			331309
+		},
+		[133] = {
+			333001,
+			333002,
+			333101,
+			333102,
+			333103,
+			333104,
+			333105,
+			333106,
+			333107,
+			333108,
+			333109,
+			333110,
+			333111,
+			333112,
+			333113,
+			333114,
+			333115,
+			333116,
+			333117,
+			333118,
+			333119,
+			333301
 		}
 	},
 	get_id_list_by_tag = {
@@ -3744,6 +3770,7 @@ pg.furniture_data_template = setmetatable({
 			313,
 			315,
 			317,
+			324,
 			100002,
 			100003,
 			100004,
@@ -3887,7 +3914,8 @@ pg.furniture_data_template = setmetatable({
 			316,
 			318,
 			319,
-			321
+			321,
+			323
 		},
 		[7] = {
 			211,
@@ -4100,7 +4128,8 @@ pg.furniture_data_template = setmetatable({
 			330102,
 			329120,
 			332113,
-			331309
+			331309,
+			333119
 		},
 		[4] = {
 			1001,
@@ -4220,7 +4249,8 @@ pg.furniture_data_template = setmetatable({
 			330001,
 			329001,
 			332001,
-			331001
+			331001,
+			333001
 		},
 		[3] = {
 			1002,
@@ -4341,7 +4371,8 @@ pg.furniture_data_template = setmetatable({
 			330002,
 			329002,
 			332002,
-			331002
+			331002,
+			333002
 		},
 		{
 			1101,
@@ -6504,7 +6535,25 @@ pg.furniture_data_template = setmetatable({
 			331114,
 			331115,
 			331116,
-			331117
+			331117,
+			333101,
+			333102,
+			333103,
+			333104,
+			333105,
+			333106,
+			333107,
+			333108,
+			333109,
+			333110,
+			333111,
+			333112,
+			333113,
+			333114,
+			333115,
+			333116,
+			333117,
+			333118
 		},
 		{
 			1108,
@@ -7052,7 +7101,8 @@ pg.furniture_data_template = setmetatable({
 			331305,
 			331306,
 			331307,
-			331308
+			331308,
+			333301
 		}
 	},
 	get_id_list_by_type = {
@@ -7207,6 +7257,8 @@ pg.furniture_data_template = setmetatable({
 			318,
 			319,
 			321,
+			323,
+			324,
 			100002,
 			100004,
 			100005,
@@ -9421,7 +9473,25 @@ pg.furniture_data_template = setmetatable({
 			331114,
 			331115,
 			331116,
-			331117
+			331117,
+			333101,
+			333102,
+			333103,
+			333104,
+			333105,
+			333107,
+			333108,
+			333109,
+			333110,
+			333111,
+			333112,
+			333113,
+			333114,
+			333115,
+			333116,
+			333117,
+			333118,
+			333119
 		},
 		[11] = {
 			131,
@@ -9620,7 +9690,8 @@ pg.furniture_data_template = setmetatable({
 			330001,
 			329001,
 			332001,
-			331001
+			331001,
+			333001
 		},
 		{
 			1002,
@@ -9741,7 +9812,8 @@ pg.furniture_data_template = setmetatable({
 			330002,
 			329002,
 			332002,
-			331002
+			331002,
+			333002
 		},
 		[5] = {
 			1101,
@@ -9902,7 +9974,8 @@ pg.furniture_data_template = setmetatable({
 			329108,
 			332102,
 			331109,
-			331110
+			331110,
+			333106
 		},
 		[3] = {
 			1108,
@@ -10439,7 +10512,8 @@ pg.furniture_data_template = setmetatable({
 			332301,
 			331302,
 			331303,
-			331307
+			331307,
+			333301
 		},
 		[8] = {
 			17121
@@ -10663,6 +10737,8 @@ pg.furniture_data_template = setmetatable({
 		318,
 		319,
 		321,
+		323,
+		324,
 		100002,
 		100003,
 		100004,
@@ -13883,7 +13959,29 @@ pg.furniture_data_template = setmetatable({
 		331306,
 		331307,
 		331308,
-		331309
+		331309,
+		333001,
+		333002,
+		333101,
+		333102,
+		333103,
+		333104,
+		333105,
+		333106,
+		333107,
+		333108,
+		333109,
+		333110,
+		333111,
+		333112,
+		333113,
+		333114,
+		333115,
+		333116,
+		333117,
+		333118,
+		333119,
+		333301
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -22764,6 +22862,121 @@ pg.base.furniture_data_template = {
 				"dalxunzhang",
 				"normal"
 			}
+		},
+		interAction_group = {}
+	},
+	[323] = {
+		effect = "",
+		name = "Council Observatory Miniature",
+		gain_by = "A Note Through the Firmament",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 1,
+		count = 1,
+		describe = "A miniature based on the Council's observatory. Its glittering stars are not holograms, but rather the work of a built-in firework launchers. Given to Commanders who participated in the A Note Through the Firmament event.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "tianwentaixunzhangicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 5,
+		tag = 8,
+		comfortable = 0,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 323,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"tianwentaixunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[324] = {
+		gain_by = "",
+		name = "500K Followers - Photo Commemoration",
+		count = 1,
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		comfortable = 2,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "500khezhaobanicon",
+		deblocking = 1,
+		level = 1,
+		describe = "500K followers achieved! A huge thanks to all Commanders!",
+		rarity = 4,
+		can_rotate = 1,
+		tag = 6,
+		spine_action_replace = "",
+		belong = 1,
+		spine_extra = "",
+		canputon = 0,
+		id = 324,
+		advice = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"500khezhaobanB",
+				"normal"
+			},
+			{
+				"500khezhaobanT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"dance"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			-1
 		},
 		interAction_group = {}
 	},
@@ -169770,6 +169983,1059 @@ pg.base.furniture_data_template = {
 					}
 				}
 			}
+		},
+		interAction_group = {}
+	},
+	[333001] = {
+		icon = "dibannvpicon",
+		name = "Maid's House Flooring",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "nvp/dibannvp",
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		size = "",
+		spine_extra = "",
+		level = 1,
+		describe = "It reminds you of chocolate wafers a bit. Not as tasty, sadly!",
+		rarity = 4,
+		advice = 0,
+		tag = 4,
+		spine_action_replace = "",
+		belong = 0,
+		deblocking = 1,
+		canputon = 0,
+		comfortable = 4,
+		id = 333001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[333002] = {
+		icon = "qiangbinvpicon",
+		name = "Maid's House Wallpaper",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		size = "",
+		spine_extra = "",
+		level = 5,
+		describe = "It makes you feel like you're inside a strawberry cake.",
+		rarity = 4,
+		advice = 0,
+		tag = 3,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		deblocking = 1,
+		id = 333002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbinvp",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[333101] = {
+		effect = "",
+		name = "Cat Plant",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nvp/baijiannvp",
+		is_get_time_note = 0,
+		count = 2,
+		describe = "An ornamental plant that has been trimmed into the shape of a cat's head. It's quite well-designed.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "baijiannvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 2,
+		canputon = 0,
+		id = 333101,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[333102] = {
+		effect = "",
+		name = "Cat Tea Table",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nvp/chajinvp",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Not all good things start with tea and cookies, but tea and cookies are always a good start to anything!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "chajinvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 2,
+		canputon = 0,
+		id = 333102,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[333103] = {
+		effect = "",
+		name = "Cat Bed",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nvp/chuangnvp",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A spacious, comfortable bed. Sleeping on it feels like lying on a big cake.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "chuangnvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 333103,
+		can_rotate = 0,
+		size = {
+			6,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sleep",
+				{
+					31.2,
+					45.5
+				},
+				{
+					-1,
+					1
+				}
+			},
+			{
+				"sleep",
+				{
+					-45.4,
+					4.8
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[333104] = {
+		effect = "",
+		name = "Pawpad Chair",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nvp/dengzinvp",
+		is_get_time_note = 0,
+		count = 2,
+		describe = "This chair compels you to touch it even when you know you shouldn't.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "dengzinvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 333104,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					8.9,
+					77.79
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[333105] = {
+		effect = "",
+		name = "Cat Television",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nvp/dianshinvp",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A spanking new television and game console. Pick up a controller and let's play!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "dianshinvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 3,
+		canputon = 0,
+		id = 333105,
+		can_rotate = 0,
+		size = {
+			7,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[333106] = {
+		effect = "",
+		name = "Cat Carpet",
+		gain_by = "",
+		type = 5,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nvp/ditannvp",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Who's the clumsy maid who left her uniform and socks lying on the carpet?",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "ditannvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 1,
+		canputon = 0,
+		id = 333106,
+		can_rotate = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[333107] = {
+		effect = "",
+		name = "Cat Dinner Table",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nvp/fanzhuonvp",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "For some reason, any food you put here looks tastier than usual!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "fanzhuonvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 3,
+		canputon = 0,
+		id = 333107,
+		can_rotate = 0,
+		size = {
+			7,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[333108] = {
+		effect = "",
+		name = "Cat Beanbag",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nvp/lanrenshafanvp",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A powerful spell has been cast on this beanbag. Once you sit on it, you won't want to get up!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "lanrenshafanvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 333108,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-5.8,
+					19.2
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[333109] = {
+		effect = "",
+		name = "Cat Curtain",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nvp/lianzinvp",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Who's behind the curtains? A cat, or a maid?",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "lianzinvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 333109,
+		can_rotate = 0,
+		size = {
+			7,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"lianzinvp",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[333110] = {
+		effect = "",
+		name = "Cat Floor Lamp",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A floor lamp endowed with wings. It seems ready to take flight.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "luodidengnvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 333110,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"luodidengnvp",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[333111] = {
+		effect = "",
+		name = "Cat Tree",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "This cat tree incorporates several different themes and can grant four different wishes at once!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "maopajianvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 333111,
+		can_rotate = 0,
+		size = {
+			4,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"maopajianvp",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[333112] = {
+		effect = "",
+		name = "Cat Mirror",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nvp/quanshenjingnvp",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "This full-body mirror features a pink cat theme that even makes whoever stands in front of it look cuter.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "quanshenjingnvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 2,
+		canputon = 0,
+		id = 333112,
+		can_rotate = 0,
+		size = {
+			1,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[333113] = {
+		effect = "",
+		name = "Cat Couch (Small)",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nvp/shafa1nvp",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A fluffy couch that seats one. You can't help but feel endeared by the large cat's pawpad pillow.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "shafa1nvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 333113,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					30.8,
+					-0.3
+				},
+				{
+					1,
+					1
+				},
+				"nvp/shafa1nvp_using"
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[333114] = {
+		effect = "",
+		name = "Cat Couch (Large)",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nvp/shafa2nvp",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A soft couch that seats two. Whether you want to read or chat, it's a great pick.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "shafa2nvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 333114,
+		can_rotate = 0,
+		size = {
+			2,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-31.6,
+					10.6
+				},
+				{
+					-1,
+					1
+				},
+				"nvp/shafa2nvp_using"
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[333115] = {
+		effect = "",
+		name = "Cat Cupboard",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nvp/shuguinvp",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Better put away all your valuables, or the cats will play with them for all their worth!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "shuguinvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 2,
+		canputon = 0,
+		id = 333115,
+		can_rotate = 0,
+		size = {
+			2,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[333116] = {
+		effect = "",
+		name = "Cat Stand",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nvp/xiyuyongpingnvp",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A stand with a cat motif. The side panels have a texture almost like chocolate.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "xiyuyongpingnvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 2,
+		canputon = 0,
+		id = 333116,
+		can_rotate = 0,
+		size = {
+			2,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[333117] = {
+		effect = "",
+		name = "Cat Clothes Rack",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nvp/yijianvp",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "It neatly stores various maid clothes while looking clean and beautiful at the same time.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "yijianvpicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 3,
+		canputon = 0,
+		id = 333117,
+		can_rotate = 0,
+		size = {
+			1,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[333118] = {
+		gain_by = "",
+		name = "Cat Bath",
+		count = 1,
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		comfortable = 4,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "yugangnvpicon",
+		deblocking = 1,
+		level = 1,
+		describe = "It feels like a cat is giving you a massage when you lie down inside it.",
+		rarity = 4,
+		can_rotate = 0,
+		tag = 1,
+		spine_action_replace = "",
+		belong = 1,
+		spine_extra = "",
+		canputon = 0,
+		id = 333118,
+		advice = 0,
+		size = {
+			7,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"yugangnvpB",
+				"normal"
+			},
+			{
+				"yugangnvpT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"wash"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{
+				{
+					-5.32,
+					140
+				},
+				{
+					256.76,
+					250
+				},
+				"nvp/yugangnvp_mask"
+			},
+			{
+				-5.72,
+				-157.16
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[333119] = {
+		gain_by = "",
+		name = "Strawberry Cake Slide",
+		count = 1,
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		comfortable = 4,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "huatinvpicon",
+		deblocking = 1,
+		level = 1,
+		describe = "A slide with a cake theme that leads into a ball pit. Embrace your inner child and have some fun!",
+		rarity = 4,
+		can_rotate = 0,
+		tag = 7,
+		spine_action_replace = "",
+		belong = 1,
+		spine_extra = "",
+		canputon = 0,
+		id = 333119,
+		advice = 0,
+		size = {
+			10,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"huatinvpB",
+				"normal"
+			},
+			{
+				"huatinvpT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"walk",
+						1,
+						"walk"
+					},
+					{
+						"action1",
+						1,
+						"tuozhuai2"
+					},
+					{
+						"action2",
+						nil,
+						"tuozhuai2"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{
+				{
+					102,
+					128.5
+				},
+				{
+					300,
+					300
+				},
+				"nvp/huatinvp_mask"
+			},
+			{
+				-100,
+				-123.7
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	},
+	[333301] = {
+		effect = "",
+		name = "Cat Photo Wall",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		picture = "nvp/zhaopianqiangnvp",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A collection of brand new photo frames, waiting to be filled with warm memories.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 133,
+		icon = "zhaopianqiangnvpicon",
+		spine_extra = "",
+		level = 5,
+		advice = 0,
+		rarity = 2,
+		tag = 5,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 2,
+		comfortable = 2,
+		canputon = 0,
+		id = 333301,
+		can_rotate = 0,
+		size = {
+			6,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
 		},
 		interAction_group = {}
 	}

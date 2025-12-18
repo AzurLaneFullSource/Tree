@@ -97,15 +97,22 @@ function var0_0.execute(arg0_1, arg1_1)
 
 				pg.TrackerMgr.GetInstance():Tracking(TRACKING_PURCHASE, var0_1)
 				getProxy(ShopsProxy):addWaitTimer()
+				arg0_1:sendNotification(GAME.CHARGE_OPERATION_DONE)
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("charge_trade_no_error"))
 			end
-		elseif arg0_2.result == 6 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("charge_error_count_limit"))
-		elseif arg0_2.result == 5002 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("charge_error_disable"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("charge", arg0_2.result))
+			if arg0_2.result == 9999 then
+				arg0_1:sendNotification(GAME.CHARGE_OPERATION_DONE)
+			end
+
+			if arg0_2.result == 6 then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("charge_error_count_limit"))
+			elseif arg0_2.result == 5002 then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("charge_error_disable"))
+			else
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("charge", arg0_2.result))
+			end
 		end
 	end)
 end

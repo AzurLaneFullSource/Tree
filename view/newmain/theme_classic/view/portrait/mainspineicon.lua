@@ -50,6 +50,8 @@ function var0_0.Unload(arg0_6)
 	if arg0_6.spineChar then
 		arg0_6.spineChar:Resume()
 		arg0_6.spineChar:Dispose()
+
+		arg0_6.spineChar = nil
 	end
 
 	arg0_6.name = nil

@@ -5,6 +5,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 
 	arg0_1.acceptBtn = arg0_1.tf:Find("frame/accpet_btn")
 	arg0_1.refuseBtn = arg0_1.tf:Find("frame/refuse_btn")
+	arg0_1.reportBtn = arg0_1.tf:Find("frame/report_btn")
 	arg0_1.date = arg0_1.tf:Find("frame/request_info/date/Text"):GetComponent(typeof(Text))
 	arg0_1.levelTF = arg0_1.tf:Find("frame/request_info/lv_bg/Text"):GetComponent(typeof(Text))
 end

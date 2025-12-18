@@ -358,7 +358,7 @@ function var0_0.CalculateDamageFromAircraftToMainShip(arg0_21, arg1_21)
 	local var8_21 = var6_0.PLANE_LEAK_RATE
 	local var9_21 = math.max(var8_21[1], math.floor((var2_21 * (var8_21[2] + var0_21 * var8_21[3]) + var4_21 * var8_21[4]) * (var3_21 * var8_21[5] + var8_21[6]) * (var8_21[7] + (var4_21 - var5_21) * var8_21[8]) * (var8_21[9] / (var1_21 + var8_21[10])) * (var8_21[11] + var6_21) * (var8_21[12] + var7_21)))
 
-	return (math.floor(var9_21 * var3_0.GetCurrent(arg1_21, "repressReduce")))
+	return (math.floor(var9_21 * var3_0.GetCurrent(arg1_21, "repressReduce") * var3_0.GetCurrent(arg1_21, "injureRatioKamikazeAir")))
 end
 
 function var0_0.CalculateDamageFromShipToMainShip(arg0_22, arg1_22)
@@ -371,7 +371,7 @@ function var0_0.CalculateDamageFromShipToMainShip(arg0_22, arg1_22)
 	local var6_22 = var6_0.LEAK_RATE
 	local var7_22 = math.max(var6_22[1], math.floor(((var0_22 + var1_22) * var6_22[2] + var3_22 * var6_22[7]) * (var6_22[5] + var5_22) * (var2_22 * var6_22[3] + var6_22[4]) * (var6_22[5] + (var3_22 - var4_22) * var6_22[6])))
 
-	return (math.floor(var7_22 * var3_0.GetCurrent(arg1_22, "repressReduce")))
+	return (math.floor(var7_22 * var3_0.GetCurrent(arg1_22, "repressReduce") * var3_0.GetCurrent(arg1_22, "injureRatioKamikazeShip")))
 end
 
 function var0_0.CalculateDamageFromSubmarinToMainShip(arg0_23, arg1_23)

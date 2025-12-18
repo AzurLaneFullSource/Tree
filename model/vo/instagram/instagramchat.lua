@@ -14,6 +14,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.characterConfig = var1_0[arg0_1.characterId]
 	arg0_1.name = arg0_1.characterConfig.name
 	arg0_1.sculpture = arg0_1.characterConfig.sculpture
+	arg0_1.sculptureII = arg0_1.characterConfig.sculpture_ii
 	arg0_1.type = arg0_1.characterConfig.type
 	arg0_1.nationality = arg0_1.characterConfig.nationality
 	arg0_1.groupBackground = arg0_1.characterConfig.background
@@ -108,11 +109,18 @@ end
 
 function var0_0.SortTopicList(arg0_10)
 	table.sort(arg0_10.topics, function(arg0_11, arg1_11)
-		local var0_11 = arg0_11.active and 1 or 0
-		local var1_11 = arg1_11.active and 1 or 0
+		local var0_11 = arg0_11.isII and 1 or 0
+		local var1_11 = arg1_11.isII and 1 or 0
 
 		if var0_11 ~= var1_11 then
-			return var1_11 < var0_11
+			return var0_11 < var1_11
+		end
+
+		local var2_11 = arg0_11.active and 1 or 0
+		local var3_11 = arg1_11.active and 1 or 0
+
+		if var2_11 ~= var3_11 then
+			return var3_11 < var2_11
 		end
 
 		return arg0_11.topicId > arg1_11.topicId
@@ -122,17 +130,28 @@ end
 function var0_0.SetBackgrounds(arg0_12)
 	arg0_12.skins = ShipGroup.GetDisplayableSkinList(arg0_12.characterId)
 
-	local var0_12 = getProxy(CollectionProxy):getGroups()[arg0_12.characterId]
+	local var0_12 = getProxy(ShipSkinProxy):GetShareSkinsForShipGroupInJuus(arg0_12.characterId)
 
-	for iter0_12 = #arg0_12.skins, 1, -1 do
-		local var1_12 = arg0_12.skins[iter0_12]
+	for iter0_12, iter1_12 in ipairs(var0_12) do
+		table.insert(arg0_12.skins, pg.ship_skin_template[iter1_12.id])
+	end
 
-		if var1_12.skin_type == ShipSkin.SKIN_TYPE_PROPOSE and (not var0_12 or var0_12 and var0_12.married == 0) then
-			table.remove(arg0_12.skins, iter0_12)
+	local var1_12 = getProxy(CollectionProxy):getGroups()
+
+	for iter2_12 = #arg0_12.skins, 1, -1 do
+		local var2_12 = arg0_12.skins[iter2_12]
+		local var3_12 = var1_12[var2_12.ship_group]
+
+		if var2_12.skin_type == ShipSkin.SKIN_TYPE_PROPOSE and (not var3_12 or var3_12.married == 0) then
+			table.remove(arg0_12.skins, iter2_12)
 		end
 
-		if var1_12.skin_type == ShipSkin.SKIN_TYPE_REMAKE and (not var0_12 or var0_12 and not var0_12.trans) then
-			table.remove(arg0_12.skins, iter0_12)
+		if var2_12.skin_type == ShipSkin.SKIN_TYPE_REMAKE and (not var3_12 or not var3_12.trans) then
+			table.remove(arg0_12.skins, iter2_12)
+		end
+
+		if var2_12.skin_type == ShipSkin.SKIN_TYPE_DEFAULT and not var3_12 then
+			table.remove(arg0_12.skins, iter2_12)
 		end
 	end
 end
@@ -144,7 +163,14 @@ function var0_0.GetSkins(arg0_13)
 end
 
 function var0_0.GetPainting(arg0_14)
-	local var0_14 = ShipGroup.getDefaultShipConfig(arg0_14.characterId).skin_id
+	local var0_14 = 0
+
+	if arg0_14.currentTopic.isII then
+		var0_14 = ShipGroup.getDefaultShipConfig(arg0_14.currentTopic.topicConfig.group_ii).skin_id
+	else
+		var0_14 = ShipGroup.getDefaultShipConfig(arg0_14.characterId).skin_id
+	end
+
 	local var1_14 = pg.ship_skin_template[var0_14]
 
 	assert(var1_14, "ship_skin_template not exist: " .. var0_14)
@@ -153,7 +179,15 @@ function var0_0.GetPainting(arg0_14)
 end
 
 function var0_0.GetPaintingId(arg0_15)
-	return ShipGroup.getDefaultShipConfig(arg0_15.characterId).skin_id
+	local var0_15 = 0
+
+	if arg0_15.currentTopic.isII then
+		var0_15 = ShipGroup.getDefaultShipConfig(arg0_15.currentTopic.topicConfig.group_ii).skin_id
+	else
+		var0_15 = ShipGroup.getDefaultShipConfig(arg0_15.characterId).skin_id
+	end
+
+	return var0_15
 end
 
 return var0_0

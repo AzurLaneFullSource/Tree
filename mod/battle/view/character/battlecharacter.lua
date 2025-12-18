@@ -1592,8 +1592,13 @@ end
 
 function var6_0.doChangeSize(arg0_127, arg1_127)
 	local var0_127 = arg1_127.Data.size_ratio
+	local var1_127 = arg1_127.Data.size
 
-	arg0_127:setLocalScale(arg0_127._tf.localScale * var0_127)
+	if var0_127 then
+		arg0_127:setLocalScale(arg0_127._tf.localScale * var0_127)
+	elseif var1_127 then
+		arg0_127:setLocalScale(Vector3(var1_127 * arg0_127._unitData:GetDirection(), var1_127, var1_127))
+	end
 end
 
 function var6_0.InitEffectView(arg0_128)

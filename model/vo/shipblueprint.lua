@@ -901,4 +901,8 @@ function var0_0.isUnlockShipPhantom(arg0_79)
 	return arg0_79:isFetched() and var0_79 <= getProxy(BayProxy):getShipById(arg0_79.shipId).level
 end
 
+function var0_0.IsFate(arg0_80)
+	return #arg0_80:getConfig("fate_strengthen") > 0
+end
+
 return var0_0

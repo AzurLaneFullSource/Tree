@@ -36,43 +36,37 @@ function var1_0.OnTotalChange(arg0_1, arg1_1)
 	end
 end
 
-function var1_0.ConfigSkin(arg0_2, arg1_2)
-	var1_0.super.ConfigSkin(arg0_2, arg1_2)
-
-	arg0_2._glowEff = arg0_2._btn:Find("gizmos_1")
+function var1_0.OnCountChange(arg0_2)
+	var1_0.super.OnCountChange(arg0_2)
+	SetActive(arg0_2._chargeEff, arg0_2._progressInfo:GetCount() > 0)
 end
 
-function var1_0.OnCountChange(arg0_3)
-	var1_0.super.OnCountChange(arg0_3)
-	SetActive(arg0_3._glowEff, arg0_3._progressInfo:GetCount() > 0)
-end
-
-function var1_0.OnOverLoadChange(arg0_4, arg1_4)
-	if arg0_4._progressInfo:IsOverLoad() then
-		arg0_4._block:SetActive(true)
-		arg0_4:OnUnfill()
+function var1_0.OnOverLoadChange(arg0_3, arg1_3)
+	if arg0_3._progressInfo:IsOverLoad() then
+		arg0_3._block:SetActive(true)
+		arg0_3:OnUnfill()
 	else
-		arg0_4._block:SetActive(false)
-		arg0_4:OnFilled()
+		arg0_3._block:SetActive(false)
+		arg0_3:OnFilled()
 	end
 
-	if arg0_4._progressInfo:GetCount() >= 1 and arg1_4 and arg1_4.Data then
-		local var0_4 = arg1_4.Data.preCast
+	if arg0_3._progressInfo:GetCount() >= 1 and arg1_3 and arg1_3.Data then
+		local var0_3 = arg1_3.Data.preCast
 
-		if var0_4 then
-			if var0_4 == 0 then
-				quickCheckAndPlayAnimator(arg0_4._skin, "weapon_button_progress_filled")
-			elseif var0_4 > 0 then
-				quickCheckAndPlayAnimator(arg0_4._skin, "weapon_button_progress_charge")
+		if var0_3 then
+			if var0_3 == 0 then
+				quickCheckAndPlayAnimator(arg0_3._skin, "weapon_button_progress_filled")
+			elseif var0_3 > 0 then
+				quickCheckAndPlayAnimator(arg0_3._skin, "weapon_button_progress_charge")
 			end
 		end
 	end
 
-	if arg1_4 and arg1_4.Data and arg1_4.Data.postCast then
-		quickCheckAndPlayAnimator(arg0_4._skin, "weapon_button_progress_use")
+	if arg1_3 and arg1_3.Data and arg1_3.Data.postCast then
+		quickCheckAndPlayAnimator(arg0_3._skin, "weapon_button_progress_use")
 	end
 
-	if arg0_4._progressInfo:GetTotal() > 0 then
-		arg0_4:updateProgressBar()
+	if arg0_3._progressInfo:GetTotal() > 0 then
+		arg0_3:updateProgressBar()
 	end
 end

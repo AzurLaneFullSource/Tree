@@ -341,6 +341,10 @@ pg.strategy_data_template = setmetatable({
 		201550,
 		201551,
 		201552,
+		201650,
+		201651,
+		201654,
+		201655,
 		205001,
 		205002,
 		205003,
@@ -4142,6 +4146,50 @@ pg.base.strategy_data_template = {
 		icon = "200908",
 		buff_type = 0,
 		desc = "\"A True Duel Must Be Fair!\"\nLyme aims to eliminate \"unfair\" elements from the battle:\n1. Both your ships and the enemy are <color=#92fc63>unable to recover HP</color>.\n2. If any of your ships gain a buff that provides complete evasion or invincibility, Lyme gains <color=#92fc63>a barrier that fixes her DMG taken to 1</color>.\n3. If your ships launch an airstrike which clears the screen of enemy shells, 1.5 seconds later, Lyme will <color=#92fc63>clear all shells on the screen and fire a retaliatory barrage</color>. When your ships launch an airstrike, this effect cannot activate more than 2 times within 5 seconds.\n\n- Hard Mode Details -\nEnemies <color=#ffc038>deal significantly more DMG.</color> Their large shells cannot be negated by shields or launching an airstrike.\n<color=#92fc63>Your Vanguard's hitbox is substantially smaller than usual, and only the frontmost ship in your Vanguard possesses a hitbox,</color> while the rest of your Vanguard cannot be damaged.\nYour ships become briefly invulnerable after taking DMG.\n\n· The skill \"Fiercer When Cornered\" is rendered ineffective.",
+		arg = {}
+	},
+	[201650] = {
+		buff_id = 0,
+		name = "Star Veil",
+		iconSize = "",
+		type = 10,
+		id = 201650,
+		icon = "201650",
+		buff_type = 0,
+		desc = "Under the Star Veil, some AFWL VUL TPTPJ LUAPAPLZ become AFWL ADV TPTPJ LUAPAPLZ, preventing the AFWL VUL TPTPJ LUAPAPLZ from receiving reinforcements and decreasing the probability of large enemy fleets appearing on the map.",
+		arg = {}
+	},
+	[201651] = {
+		buff_id = 201651,
+		name = "Experimental Safety Management",
+		iconSize = "",
+		type = 10,
+		id = 201651,
+		icon = "201651",
+		buff_type = 0,
+		desc = "During the battle, Enforcers from the Arbiters will provide support.",
+		arg = {}
+	},
+	[201654] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 201654,
+		icon = "200908",
+		buff_type = 0,
+		desc = "The boss mimics 3 different types of enemies depending on what the boss' current HP is (<color=#92fc63>above 71%, below 70%, and below 40%</color>). The boss takes <color=#92fc63>50% less DMG</color> while in a mimic state.\nWhile in a mimic state, the boss' max HP is fixed. <color=#92fc63>When their HP is reduced to 0, the mimic state is dispelled, and then they regain it after 8s.</color>\nAdditionally, while in a mimic state, the boss' Armor Type becomes Heavy Armor; while not in this state, it becomes Light Armor.",
+		arg = {}
+	},
+	[201655] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 201655,
+		icon = "200908",
+		buff_type = 0,
+		desc = "The boss mimics 3 different types of enemies depending on what the boss' current HP is (<color=#92fc63>above 71%, below 70%, and below 40%</color>). The boss takes <color=#92fc63>50% less DMG</color> while in a mimic state.\nWhile in a mimic state, the boss' max HP is fixed. <color=#92fc63>When their HP is reduced to 0, the mimic state is dispelled, and then they regain it after 8s.</color>\nAdditionally, while in a mimic state, the boss' Armor Type becomes Heavy Armor; while not in this state, it becomes Light Armor.\n\n- Hard Mode Details -\nEnemies <color=#ffc038>deal significantly more DMG.</color> Their large shells cannot be negated by shields or by launching an airstrike.\n<color=#92fc63>Your Vanguard's hitbox is substantially smaller than usual, and only the frontmost ship in your Vanguard possesses a hitbox.</color>\nYour ships become briefly invulnerable after taking DMG.\n\n· The skills \"Operation Rainbow,\" \"Fiercer When Cornered,\" and \"Eleventh Hour\" are rendered ineffective.",
 		arg = {}
 	},
 	[205001] = {

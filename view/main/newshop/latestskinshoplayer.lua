@@ -1056,12 +1056,8 @@ function var0_0.FlushPaintingToggle(arg0_63, arg1_63)
 	local var1_63 = arg0_63.shipSkin:IsSpine() or arg0_63.shipSkin:IsLive2d() or arg0_63.shipSkin:IsSpinePlus() or arg0_63.shipSkin:IsLive2dPlus()
 	local var2_63 = arg0_63.shipSkin:IsHxDynamicPreview()
 
-	print("is hx prever" .. tostring(var2_63))
-
 	if var1_63 and not var2_63 and PlayerPrefs.GetInt("skinShop#l2dPreViewToggle" .. getProxy(PlayerProxy):getRawData().id, 0) == 1 then
 		arg0_63.isToggleDynamic = true
-
-		print("os   sssssssssssssssssssssssss")
 	end
 
 	if var1_63 then

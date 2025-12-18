@@ -48,11 +48,11 @@ function var0_0.OnInit(arg0_2, arg1_2)
 	arg0_2.lureIconTr = arg0_2.lureBtn:Find("icon")
 	arg0_2.lureIconTxt = arg0_2.lureBtn:Find("icon/count"):GetComponent(typeof(Text))
 	arg0_2.animationOpEffectCounter = {}
-
-	local var0_2 = arg0_2.followerBtn:GetComponent(typeof(ItemList))
-
 	arg0_2.uiFollowerPanel = arg0_2.followerBtn:Find("list")
-	arg0_2.uiFollowerList = UIItemList.New(arg0_2.uiFollowerPanel, var0_2.prefabItem[0])
+
+	local var0_2 = arg0_2.uiFollowerPanel:Find("tpl")
+
+	arg0_2.uiFollowerList = UIItemList.New(arg0_2.uiFollowerPanel, var0_2)
 
 	setActive(arg0_2.opPanel, true)
 	setActive(arg0_2.lureBtn, false)

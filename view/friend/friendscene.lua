@@ -153,9 +153,17 @@ function var0_0.updateRequestTip(arg0_18)
 	setActive(arg0_18.toggles[3]:Find("tip"), #arg0_18.requestVOs > 0)
 end
 
-function var0_0.willExit(arg0_19)
-	for iter0_19, iter1_19 in ipairs(arg0_19.pages) do
-		iter1_19:Destroy()
+function var0_0.closeInfromPanel(arg0_19)
+	if not arg0_19.pages[3] then
+		return
+	end
+
+	arg0_19.pages[3]:closeInfromPanel()
+end
+
+function var0_0.willExit(arg0_20)
+	for iter0_20, iter1_20 in ipairs(arg0_20.pages) do
+		iter1_20:Destroy()
 	end
 end
 

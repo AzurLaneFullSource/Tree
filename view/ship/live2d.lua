@@ -922,18 +922,7 @@ function var0_0.SetVisible(arg0_41, arg1_41)
 end
 
 function var0_0.loadL2dLinkData(arg0_44)
-	if ChangeSkinLink.L2D_PARAMETER_DIC and ChangeSkinLink.L2D_PARAMETER_DIC[arg0_44.live2dData.ship.id] and arg0_44.drags then
-		local var0_44 = ChangeSkinLink.L2D_PARAMETER_DIC[arg0_44.live2dData.ship.id]
-		local var1_44 = ChangeSkinLink.L2D_LINK_PARAMETER[arg0_44.live2dData.skinId]
-
-		for iter0_44 = 1, #arg0_44.drags do
-			local var2_44 = arg0_44.drags[iter0_44]
-
-			if table.contains(var1_44, var2_44.parameterName) and var2_44.parameterName and var0_44[var2_44.parameterName] then
-				var2_44:setTargetValue(var0_44[var2_44.parameterName])
-			end
-		end
-	end
+	return
 end
 
 function var0_0.loadLive2dData(arg0_45)

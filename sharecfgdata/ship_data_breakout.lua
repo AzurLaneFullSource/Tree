@@ -544,6 +544,69 @@ _G.pg.base.ship_data_breakout[101094] = {
 	weapon_ids = {},
 }
 
+_G.pg.base.ship_data_breakout[101101] = {
+	breakout_id = 101102,
+	breakout_view = "Unlock All Out Assault/All weapons' efficiency +2%",
+	icon = "10001",
+	id = 101101,
+	level = 10,
+	pre_id = 0,
+	use_char = 10110,
+	use_char_num = 1,
+	use_gold = 1500,
+	use_item = {},
+	weapon_ids = {
+		80561,
+	},
+}
+
+_G.pg.base.ship_data_breakout[101102] = {
+	breakout_id = 101103,
+	breakout_view = "Torpedo base +1/Torpedo preload +1/All weapons' efficiency +3%",
+	icon = "10001",
+	id = 101102,
+	level = 30,
+	pre_id = 101101,
+	use_char = 10110,
+	use_char_num = 1,
+	use_gold = 4500,
+	use_item = {},
+	weapon_ids = {
+		108,
+		108,
+	},
+}
+
+_G.pg.base.ship_data_breakout[101103] = {
+	breakout_id = 101104,
+	breakout_view = "Improve All Out Assault/All weapons' efficiency +5%",
+	icon = "10001",
+	id = 101103,
+	level = 70,
+	pre_id = 101102,
+	use_char = 10110,
+	use_char_num = 2,
+	use_gold = 20000,
+	use_item = {},
+	weapon_ids = {
+		80562,
+	},
+}
+
+_G.pg.base.ship_data_breakout[101104] = {
+	breakout_id = 0,
+	breakout_view = "None",
+	icon = "10001",
+	id = 101104,
+	level = 0,
+	pre_id = 101103,
+	use_char = 10110,
+	use_char_num = 0,
+	use_gold = 0,
+	use_item = {},
+	weapon_ids = {},
+}
+
 _G.pg.base.ship_data_breakout[101111] = {
 	breakout_id = 101112,
 	breakout_view = "Unlock All Out Assault Ⅰ/All weapons' efficiency +2%",
@@ -2742,6 +2805,69 @@ _G.pg.base.ship_data_breakout[101534] = {
 	level = 0,
 	pre_id = 101533,
 	use_char = 10153,
+	use_char_num = 0,
+	use_gold = 0,
+	use_item = {},
+	weapon_ids = {},
+}
+
+_G.pg.base.ship_data_breakout[101551] = {
+	breakout_id = 101552,
+	breakout_view = "Unlock All Out Assault/Torpedo efficiency +5%",
+	icon = "10001",
+	id = 101551,
+	level = 10,
+	pre_id = 0,
+	use_char = 10015,
+	use_char_num = 1,
+	use_gold = 500,
+	use_item = {},
+	weapon_ids = {
+		70041,
+	},
+}
+
+_G.pg.base.ship_data_breakout[101552] = {
+	breakout_id = 101553,
+	breakout_view = "Torpedo base +1/Torpedo preload +1/Torpedo efficiency +10%",
+	icon = "10001",
+	id = 101552,
+	level = 30,
+	pre_id = 101551,
+	use_char = 10015,
+	use_char_num = 1,
+	use_gold = 1500,
+	use_item = {},
+	weapon_ids = {
+		108,
+		108,
+	},
+}
+
+_G.pg.base.ship_data_breakout[101553] = {
+	breakout_id = 101554,
+	breakout_view = "Gain special ASW weapon/Improve All Out Assault/All weapons' efficiency +5%",
+	icon = "10001",
+	id = 101553,
+	level = 70,
+	pre_id = 101552,
+	use_char = 10015,
+	use_char_num = 2,
+	use_gold = 2500,
+	use_item = {},
+	weapon_ids = {
+		70042,
+	},
+}
+
+_G.pg.base.ship_data_breakout[101554] = {
+	breakout_id = 0,
+	breakout_view = "None",
+	icon = "10001",
+	id = 101554,
+	level = 0,
+	pre_id = 101553,
+	use_char = 10015,
 	use_char_num = 0,
 	use_gold = 0,
 	use_item = {},
@@ -4947,6 +5073,69 @@ _G.pg.base.ship_data_breakout[102344] = {
 	level = 0,
 	pre_id = 102343,
 	use_char = 10234,
+	use_char_num = 0,
+	use_gold = 0,
+	use_item = {},
+	weapon_ids = {},
+}
+
+_G.pg.base.ship_data_breakout[102351] = {
+	breakout_id = 102352,
+	breakout_view = "Unlock All Out Assault/Main gun efficiency +5%",
+	icon = "10001",
+	id = 102351,
+	level = 10,
+	pre_id = 0,
+	use_char = 10235,
+	use_char_num = 1,
+	use_gold = 500,
+	use_item = {},
+	weapon_ids = {
+		70141,
+	},
+}
+
+_G.pg.base.ship_data_breakout[102352] = {
+	breakout_id = 102353,
+	breakout_view = "Main gun base +1/Main gun efficiency +10%",
+	icon = "10001",
+	id = 102352,
+	level = 30,
+	pre_id = 102351,
+	use_char = 10235,
+	use_char_num = 1,
+	use_gold = 1500,
+	use_item = {},
+	weapon_ids = {
+		12100,
+		12100,
+	},
+}
+
+_G.pg.base.ship_data_breakout[102353] = {
+	breakout_id = 102354,
+	breakout_view = "Improve All Out Assault/Main gun efficiency +15%",
+	icon = "10001",
+	id = 102353,
+	level = 70,
+	pre_id = 102352,
+	use_char = 10235,
+	use_char_num = 2,
+	use_gold = 2500,
+	use_item = {},
+	weapon_ids = {
+		70142,
+	},
+}
+
+_G.pg.base.ship_data_breakout[102354] = {
+	breakout_id = 0,
+	breakout_view = "None",
+	icon = "10001",
+	id = 102354,
+	level = 0,
+	pre_id = 102353,
+	use_char = 10235,
 	use_char_num = 0,
 	use_gold = 0,
 	use_item = {},
@@ -8789,6 +8978,75 @@ _G.pg.base.ship_data_breakout[107144] = {
 	weapon_ids = {},
 }
 
+_G.pg.base.ship_data_breakout[107161] = {
+	breakout_id = 107162,
+	breakout_view = "All Fighters +1/Dive Bomber efficiency +10%/Can equip any aircraft in Torpedo Bomber slot",
+	icon = "10001",
+	id = 107161,
+	level = 10,
+	pre_id = 0,
+	use_char = 10716,
+	use_char_num = 1,
+	use_gold = 1500,
+	use_item = {},
+	weapon_ids = {
+		61171,
+		54014,
+	},
+}
+
+_G.pg.base.ship_data_breakout[107162] = {
+	breakout_id = 107163,
+	breakout_view = "Hangar capacity +1/All Dive Bombers +1/Torpedo Bomber efficiency +10%",
+	icon = "10001",
+	id = 107162,
+	level = 30,
+	pre_id = 107161,
+	use_char = 10716,
+	use_char_num = 1,
+	use_gold = 4500,
+	use_item = {},
+	weapon_ids = {
+		61172,
+		54014,
+		61172,
+		54014,
+	},
+}
+
+_G.pg.base.ship_data_breakout[107163] = {
+	breakout_id = 107164,
+	breakout_view = "All aircraft +1/Aircraft efficiency +5%",
+	icon = "10001",
+	id = 107163,
+	level = 70,
+	pre_id = 107162,
+	use_char = 10716,
+	use_char_num = 2,
+	use_gold = 20000,
+	use_item = {},
+	weapon_ids = {
+		61173,
+		54015,
+		61173,
+		54015,
+	},
+}
+
+_G.pg.base.ship_data_breakout[107164] = {
+	breakout_id = 0,
+	breakout_view = "None",
+	icon = "10001",
+	id = 107164,
+	level = 0,
+	pre_id = 107163,
+	use_char = 10716,
+	use_char_num = 0,
+	use_gold = 0,
+	use_item = {},
+	weapon_ids = {},
+}
+
 _G.pg.base.ship_data_breakout[107171] = {
 	breakout_id = 107172,
 	breakout_view = "All fighters +1/Aircraft efficiency +3%",
@@ -8990,6 +9248,75 @@ _G.pg.base.ship_data_breakout[107234] = {
 	level = 0,
 	pre_id = 107233,
 	use_char = 10723,
+	use_char_num = 0,
+	use_gold = 0,
+	use_item = {},
+	weapon_ids = {},
+}
+
+_G.pg.base.ship_data_breakout[107251] = {
+	breakout_id = 107252,
+	breakout_view = "All Fighters +1/Fighter efficiency +5%",
+	icon = "10001",
+	id = 107251,
+	level = 10,
+	pre_id = 0,
+	use_char = 10725,
+	use_char_num = 1,
+	use_gold = 1000,
+	use_item = {},
+	weapon_ids = {
+		60391,
+		54011,
+	},
+}
+
+_G.pg.base.ship_data_breakout[107252] = {
+	breakout_id = 107253,
+	breakout_view = "Hangar capacity +1/All Torpedo Bombers +1/Fighter efficiency +10%",
+	icon = "10001",
+	id = 107252,
+	level = 30,
+	pre_id = 107251,
+	use_char = 10725,
+	use_char_num = 1,
+	use_gold = 3000,
+	use_item = {},
+	weapon_ids = {
+		60392,
+		54011,
+		60392,
+		54011,
+	},
+}
+
+_G.pg.base.ship_data_breakout[107253] = {
+	breakout_id = 107254,
+	breakout_view = "All aircraft +1/Torpedo Bomber efficiency +15%",
+	icon = "10001",
+	id = 107253,
+	level = 70,
+	pre_id = 107252,
+	use_char = 10725,
+	use_char_num = 2,
+	use_gold = 10000,
+	use_item = {},
+	weapon_ids = {
+		60393,
+		54012,
+		60393,
+		54012,
+	},
+}
+
+_G.pg.base.ship_data_breakout[107254] = {
+	breakout_id = 0,
+	breakout_view = "None",
+	icon = "10001",
+	id = 107254,
+	level = 0,
+	pre_id = 107253,
+	use_char = 10725,
 	use_char_num = 0,
 	use_gold = 0,
 	use_item = {},
@@ -11897,7 +12224,7 @@ _G.pg.base.ship_data_breakout[201371] = {
 	use_gold = 1000,
 	use_item = {},
 	weapon_ids = {
-		80211,
+		80561,
 	},
 }
 
@@ -11930,7 +12257,7 @@ _G.pg.base.ship_data_breakout[201373] = {
 	use_gold = 10000,
 	use_item = {},
 	weapon_ids = {
-		80212,
+		80562,
 	},
 }
 

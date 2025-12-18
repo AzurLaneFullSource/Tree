@@ -85,15 +85,11 @@ function var0_0.register(arg0_1)
 		}))
 	end)
 	arg0_1:bind(var0_0.OPEN_GIFT_PACK_LAYER, function(arg0_12, arg1_12, arg2_12, arg3_12)
-		arg0_1:addSubLayers(Context.New({
-			viewComponent = LatestSkinGiftPackLayer,
-			mediator = LatestSkinGiftPackMediator,
-			data = {
-				giftPackCommodity = arg1_12,
-				skinCommodities = arg2_12,
-				skinProbabilitys = arg3_12
-			}
-		}))
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.PROBABILITY_SKINSHOP, {
+			giftPackCommodity = arg1_12,
+			skinCommodities = arg2_12,
+			skinProbabilitys = arg3_12
+		})
 	end)
 	arg0_1:bind(var0_0.OPEN_CHARGE_BIRTHDAY, function(arg0_13, arg1_13)
 		arg0_1:addSubLayers(Context.New({
@@ -149,7 +145,8 @@ function var0_0.listNotificationInterests(arg0_19)
 		GAME.SKIN_SHOPPIGN_DONE,
 		GAME.SKIN_COUPON_SHOPPING_DONE,
 		GAME.BUY_FURNITURE_DONE,
-		NewShopMainMediator.NOTI_UPDATE_CURRENT
+		NewShopMainMediator.NOTI_UPDATE_CURRENT,
+		GAME.CHARGE_OPERATION_DONE
 	}
 end
 
@@ -211,6 +208,8 @@ function var0_0.handleNotification(arg0_20, arg1_20)
 	elseif var0_20 == NewShopMainMediator.NOTI_UPDATE_CURRENT then
 		arg0_20.viewComponent:GetAllCommodities()
 		arg0_20.viewComponent:Refresh(true)
+	elseif var0_20 == GAME.CHARGE_OPERATION_DONE then
+		arg0_20.viewComponent:closeView()
 	end
 end
 

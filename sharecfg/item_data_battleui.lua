@@ -263,6 +263,23 @@ pg.item_data_battleui = {
 			3
 		}
 	},
+	[206] = {
+		key = "SkinElite_20251218",
+		name = "Maid Café",
+		desc = "Indulge in sweet snacks made by a loving maid and take on new and sugary challenges!",
+		display_icon = "ui_206",
+		is_unlock = 1,
+		rare = 4,
+		unlock = "Buy the Battle UI Pack – Maid Café",
+		id = 206,
+		icon = "206",
+		scene = {},
+		rare_display = {
+			1,
+			2,
+			3
+		}
+	},
 	all = {
 		0,
 		101,
@@ -280,6 +297,7 @@ pg.item_data_battleui = {
 		202,
 		203,
 		204,
-		205
+		205,
+		206
 	}
 }

@@ -337,6 +337,11 @@ pg.task_meta_data_template = setmetatable({
 		100493,
 		100494,
 		100495,
+		100501,
+		100502,
+		100503,
+		100504,
+		100505,
 		200001,
 		200002,
 		200003,
@@ -496,7 +501,11 @@ pg.task_meta_data_template = setmetatable({
 		200401,
 		200402,
 		200403,
-		200404
+		200404,
+		200411,
+		200412,
+		200413,
+		200414
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -3181,6 +3190,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100501] = {
+		target_id_2 = "970209",
+		sub_type = 180,
+		desc = "Win 1 battle with Cleveland META in your fleet.",
+		id = 100501,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100502] = {
+		target_id_2 = "970209",
+		sub_type = 180,
+		desc = "Defeat a Lv. 30+ fleet with Cleveland META in your fleet.",
+		id = 100502,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100503] = {
+		target_id_2 = "970209",
+		sub_type = 180,
+		desc = "Defeat a Lv. 55+ fleet with Cleveland META in your fleet.",
+		id = 100503,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100504] = {
+		target_id_2 = "970209",
+		sub_type = 180,
+		desc = "Defeat a Lv. 80+ fleet with Cleveland META in your fleet.",
+		id = 100504,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100505] = {
+		target_id_2 = "970209",
+		sub_type = 180,
+		desc = "Defeat a Lv. 100+ fleet with Cleveland META in your fleet.",
+		id = 100505,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -4458,6 +4507,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Yorktown META in your fleet.",
 		id = 200404,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200411] = {
+		target_id_2 = "970209",
+		sub_type = 302,
+		desc = "Win 1 Operation Siren battle with Cleveland META in your fleet.",
+		id = 200411,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200412] = {
+		target_id_2 = "970209",
+		sub_type = 302,
+		desc = "Defeat a Lv. 70+ fleet in Operation Siren with Cleveland META in your fleet.",
+		id = 200412,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200413] = {
+		target_id_2 = "970209",
+		sub_type = 302,
+		desc = "Defeat a Lv. 90+ fleet in Operation Siren with Cleveland META in your fleet.",
+		id = 200413,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200414] = {
+		target_id_2 = "970209",
+		sub_type = 302,
+		desc = "Defeat a Lv. 100+ fleet in Operation Siren with Cleveland META in your fleet.",
+		id = 200414,
 		target_num = 1,
 		target_id = "100"
 	}

@@ -9,6 +9,7 @@ var2_0.__name = "BattleAOEData"
 var2_0.ALIGNMENT_LEFT = "left"
 var2_0.ALIGNMENT_RIGHT = "right"
 var2_0.ALIGNMENT_MIDDLE = "middle"
+var2_0.SOURCE_BULLET_9 = "bulletType9"
 
 function var2_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1, arg4_1)
 	arg0_1._areaUniqueID = arg1_1
@@ -165,214 +166,222 @@ function var2_0.GetCldFunc(arg0_28)
 	return arg0_28._areaCldFunc
 end
 
-function var2_0.GetHeight(arg0_29)
-	return arg0_29._height
+function var2_0.GetSource(arg0_29)
+	return arg0_29._source
 end
 
-function var2_0.GetWidth(arg0_30)
-	return arg0_30._width
+function var2_0.GetHeight(arg0_30)
+	return arg0_30._height
 end
 
-function var2_0.GetAngle(arg0_31)
-	return arg0_31._angle
+function var2_0.GetWidth(arg0_31)
+	return arg0_31._width
 end
 
-function var2_0.GetRange(arg0_32)
-	return arg0_32._range
+function var2_0.GetAngle(arg0_32)
+	return arg0_32._angle
 end
 
-function var2_0.GetSectorAngle(arg0_33)
-	return arg0_33._sectorAngle
+function var2_0.GetRange(arg0_33)
+	return arg0_33._range
 end
 
-function var2_0.SetAreaType(arg0_34, arg1_34)
-	arg0_34._areaType = arg1_34
-
-	arg0_34:InitCldComponent()
+function var2_0.GetSectorAngle(arg0_34)
+	return arg0_34._sectorAngle
 end
 
-function var2_0.SetDiveFilter(arg0_35, arg1_35)
-	arg0_35._diveFilter = arg1_35
+function var2_0.SetAreaType(arg0_35, arg1_35)
+	arg0_35._areaType = arg1_35
+
+	arg0_35:InitCldComponent()
 end
 
-function var2_0.SetPosition(arg0_36, arg1_36)
-	arg0_36._pos = arg1_36
+function var2_0.SetDiveFilter(arg0_36, arg1_36)
+	arg0_36._diveFilter = arg1_36
 end
 
-function var2_0.SetTickness(arg0_37, arg1_37)
-	arg0_37._tickness = arg1_37
+function var2_0.SetPosition(arg0_37, arg1_37)
+	arg0_37._pos = arg1_37
 end
 
-function var2_0.SetFieldType(arg0_38, arg1_38)
-	arg0_38._fieldType = arg1_38
+function var2_0.SetTickness(arg0_38, arg1_38)
+	arg0_38._tickness = arg1_38
 end
 
-function var2_0.SetLifeTime(arg0_39, arg1_39)
-	arg0_39._lifeTime = arg1_39
+function var2_0.SetFieldType(arg0_39, arg1_39)
+	arg0_39._fieldType = arg1_39
 end
 
-function var2_0.SetHeight(arg0_40, arg1_40)
-	arg0_40._height = arg1_40
+function var2_0.SetLifeTime(arg0_40, arg1_40)
+	arg0_40._lifeTime = arg1_40
 end
 
-function var2_0.SetWidth(arg0_41, arg1_41)
-	arg0_41._width = arg1_41
+function var2_0.SetSource(arg0_41, arg1_41)
+	arg0_41._source = arg1_41
 end
 
-function var2_0.SetAngle(arg0_42, arg1_42)
-	arg0_42._angle = arg1_42
+function var2_0.SetHeight(arg0_42, arg1_42)
+	arg0_42._height = arg1_42
 end
 
-function var2_0.SetRange(arg0_43, arg1_43)
-	arg0_43._range = arg1_43
+function var2_0.SetWidth(arg0_43, arg1_43)
+	arg0_43._width = arg1_43
 end
 
-function var2_0.SetSectorAngle(arg0_44, arg1_44, arg2_44)
-	arg0_44._sectorAngle = arg1_44
-	arg0_44._sectorDir = arg2_44
+function var2_0.SetAngle(arg0_44, arg1_44)
+	arg0_44._angle = arg1_44
+end
 
-	local var0_44 = arg0_44._sectorAngle / 2
+function var2_0.SetRange(arg0_45, arg1_45)
+	arg0_45._range = arg1_45
+end
 
-	arg0_44._upperEdge = math.deg2Rad * var0_44
-	arg0_44._lowerEdge = -1 * arg0_44._upperEdge
+function var2_0.SetSectorAngle(arg0_46, arg1_46, arg2_46)
+	arg0_46._sectorAngle = arg1_46
+	arg0_46._sectorDir = arg2_46
 
-	local var1_44 = 0
+	local var0_46 = arg0_46._sectorAngle / 2
 
-	if arg2_44 == var1_0.UnitDir.LEFT then
-		arg0_44._normalizeOffset = math.pi - var1_44
-	elseif arg2_44 == var1_0.UnitDir.RIGHT then
-		arg0_44._normalizeOffset = var1_44
+	arg0_46._upperEdge = math.deg2Rad * var0_46
+	arg0_46._lowerEdge = -1 * arg0_46._upperEdge
+
+	local var1_46 = 0
+
+	if arg2_46 == var1_0.UnitDir.LEFT then
+		arg0_46._normalizeOffset = math.pi - var1_46
+	elseif arg2_46 == var1_0.UnitDir.RIGHT then
+		arg0_46._normalizeOffset = var1_46
 	end
 
-	arg0_44._wholeCircle = math.pi - arg0_44._normalizeOffset
-	arg0_44._negativeCircle = -math.pi - arg0_44._normalizeOffset
-	arg0_44._wholeCircleNormalizeOffset = arg0_44._normalizeOffset - math.pi * 2
-	arg0_44._negativeCircleNormalizeOffset = arg0_44._normalizeOffset + math.pi * 2
+	arg0_46._wholeCircle = math.pi - arg0_46._normalizeOffset
+	arg0_46._negativeCircle = -math.pi - arg0_46._normalizeOffset
+	arg0_46._wholeCircleNormalizeOffset = arg0_46._normalizeOffset - math.pi * 2
+	arg0_46._negativeCircleNormalizeOffset = arg0_46._normalizeOffset + math.pi * 2
 end
 
-function var2_0.SetAnchorPointAlignment(arg0_45, arg1_45)
-	if arg1_45 == var2_0.ALIGNMENT_LEFT then
-		arg0_45._alignment = Vector3(arg0_45._width * 0.5, 0, 0)
-	elseif arg1_45 == var2_0.ALIGNMENT_RIGHT then
-		arg0_45._alignment = Vector3(arg0_45._width * -0.5, 0, 0)
+function var2_0.SetAnchorPointAlignment(arg0_47, arg1_47)
+	if arg1_47 == var2_0.ALIGNMENT_LEFT then
+		arg0_47._alignment = Vector3(arg0_47._width * 0.5, 0, 0)
+	elseif arg1_47 == var2_0.ALIGNMENT_RIGHT then
+		arg0_47._alignment = Vector3(arg0_47._width * -0.5, 0, 0)
 	end
 end
 
-function var2_0.GetAnchorPointAlignment(arg0_46)
-	return arg0_46._alignment
+function var2_0.GetAnchorPointAlignment(arg0_48)
+	return arg0_48._alignment
 end
 
-function var2_0.GetFXStatic(arg0_47)
-	return arg0_47._fxStatic
+function var2_0.GetFXStatic(arg0_49)
+	return arg0_49._fxStatic
 end
 
-function var2_0.SetFXStatic(arg0_48, arg1_48)
-	arg0_48._fxStatic = arg1_48
+function var2_0.SetFXStatic(arg0_50, arg1_50)
+	arg0_50._fxStatic = arg1_50
 end
 
-function var2_0.AppendComponent(arg0_49, arg1_49)
-	table.insert(arg0_49._component, arg1_49)
+function var2_0.AppendComponent(arg0_51, arg1_51)
+	table.insert(arg0_51._component, arg1_51)
 end
 
-function var2_0.InitCldComponent(arg0_50)
-	if arg0_50._areaType == var1_0.AreaType.CUBE or arg0_50._areaType == var1_0.AreaType.ELLIPSE then
-		arg0_50._cldComponent = var0_0.Battle.BattleCubeCldComponent.New(arg0_50._width, arg0_50._tickness, arg0_50._height, 0, 0)
-	elseif arg0_50._areaType == var1_0.AreaType.COLUMN then
-		arg0_50._cldComponent = var0_0.Battle.BattleColumnCldComponent.New(arg0_50._range, arg0_50._tickness)
+function var2_0.InitCldComponent(arg0_52)
+	if arg0_52._areaType == var1_0.AreaType.CUBE or arg0_52._areaType == var1_0.AreaType.ELLIPSE then
+		arg0_52._cldComponent = var0_0.Battle.BattleCubeCldComponent.New(arg0_52._width, arg0_52._tickness, arg0_52._height, 0, 0)
+	elseif arg0_52._areaType == var1_0.AreaType.COLUMN then
+		arg0_52._cldComponent = var0_0.Battle.BattleColumnCldComponent.New(arg0_52._range, arg0_52._tickness)
 	end
 
-	local var0_50 = {
+	local var0_52 = {
 		type = var1_0.CldType.AOE,
-		UID = arg0_50:GetUniqueID(),
-		IFF = arg0_50:GetIFF(),
-		func = arg0_50:GetCldFunc()
+		UID = arg0_52:GetUniqueID(),
+		IFF = arg0_52:GetIFF(),
+		func = arg0_52:GetCldFunc()
 	}
 
-	arg0_50._cldComponent:SetCldData(var0_50)
-	arg0_50._cldComponent:SetActive(true)
+	arg0_52._cldComponent:SetCldData(var0_52)
+	arg0_52._cldComponent:SetActive(true)
 end
 
-function var2_0.GetCldComponent(arg0_51)
-	return arg0_51._cldComponent
+function var2_0.GetCldComponent(arg0_53)
+	return arg0_53._cldComponent
 end
 
-function var2_0.DeactiveCldBox(arg0_52)
-	arg0_52._cldComponent:SetActive(false)
+function var2_0.DeactiveCldBox(arg0_54)
+	arg0_54._cldComponent:SetActive(false)
 end
 
-function var2_0.GetCldBox(arg0_53)
-	return arg0_53._cldComponent:GetCldBox(arg0_53:GetPosition() + arg0_53._alignment)
+function var2_0.GetCldBox(arg0_55)
+	return arg0_55._cldComponent:GetCldBox(arg0_55:GetPosition() + arg0_55._alignment)
 end
 
-function var2_0.GetCldData(arg0_54)
-	return arg0_54._cldComponent:GetCldData()
+function var2_0.GetCldData(arg0_56)
+	return arg0_56._cldComponent:GetCldData()
 end
 
-function var2_0.UpdateDistanceInfo(arg0_55)
-	for iter0_55, iter1_55 in ipairs(arg0_55._cldObjList) do
-		local var0_55
-		local var1_55 = iter1_55.LeftBound
-		local var2_55 = iter1_55.RightBound
-		local var3_55 = iter1_55.UpperBound
-		local var4_55 = iter1_55.LowerBound
-		local var5_55 = arg0_55._pos.x
-		local var6_55
-		local var7_55
+function var2_0.UpdateDistanceInfo(arg0_57)
+	for iter0_57, iter1_57 in ipairs(arg0_57._cldObjList) do
+		local var0_57
+		local var1_57 = iter1_57.LeftBound
+		local var2_57 = iter1_57.RightBound
+		local var3_57 = iter1_57.UpperBound
+		local var4_57 = iter1_57.LowerBound
+		local var5_57 = arg0_57._pos.x
+		local var6_57
+		local var7_57
 
-		if var1_55 <= var5_55 and var5_55 <= var2_55 then
-			var6_55 = true
-		elseif var5_55 < var1_55 then
-			var7_55 = var1_55
-		elseif var2_55 < var5_55 then
-			var7_55 = var2_55
+		if var1_57 <= var5_57 and var5_57 <= var2_57 then
+			var6_57 = true
+		elseif var5_57 < var1_57 then
+			var7_57 = var1_57
+		elseif var2_57 < var5_57 then
+			var7_57 = var2_57
 		end
 
-		local var8_55 = arg0_55._pos.z
-		local var9_55
-		local var10_55
+		local var8_57 = arg0_57._pos.z
+		local var9_57
+		local var10_57
 
-		if var4_55 <= var8_55 and var8_55 <= var3_55 then
-			var9_55 = true
-		elseif var8_55 < var4_55 then
-			var10_55 = var4_55
-		elseif var3_55 < var8_55 then
-			var10_55 = var3_55
+		if var4_57 <= var8_57 and var8_57 <= var3_57 then
+			var9_57 = true
+		elseif var8_57 < var4_57 then
+			var10_57 = var4_57
+		elseif var3_57 < var8_57 then
+			var10_57 = var3_57
 		end
 
-		if var6_55 and var9_55 then
-			var0_55 = 0
-		elseif var6_55 then
-			var0_55 = math.abs(var10_55 - var8_55)
-		elseif var9_55 then
-			var0_55 = math.abs(var7_55 - var5_55)
+		if var6_57 and var9_57 then
+			var0_57 = 0
+		elseif var6_57 then
+			var0_57 = math.abs(var10_57 - var8_57)
+		elseif var9_57 then
+			var0_57 = math.abs(var7_57 - var5_57)
 		else
-			var0_55 = math.sqrt((var7_55 - var5_55)^2 + (var10_55 - var8_55)^2)
+			var0_57 = math.sqrt((var7_57 - var5_57)^2 + (var10_57 - var8_57)^2)
 		end
 
-		arg0_55._cldObjDistanceList[iter1_55.UID] = var0_55
+		arg0_57._cldObjDistanceList[iter1_57.UID] = var0_57
 	end
 end
 
-function var2_0.GetDistance(arg0_56, arg1_56)
-	return arg0_56._cldObjDistanceList[arg1_56]
+function var2_0.GetDistance(arg0_58, arg1_58)
+	return arg0_58._cldObjDistanceList[arg1_58]
 end
 
-function var2_0.IsOutOfAngle(arg0_57, arg1_57)
-	if not arg0_57._sectorAngle or arg0_57._sectorAngle >= 360 then
+function var2_0.IsOutOfAngle(arg0_59, arg1_59)
+	if not arg0_59._sectorAngle or arg0_59._sectorAngle >= 360 then
 		return false
 	else
-		local var0_57 = arg1_57:GetPosition()
-		local var1_57 = math.atan2(var0_57.z - arg0_57._pos.z, var0_57.x - arg0_57._pos.x)
+		local var0_59 = arg1_59:GetPosition()
+		local var1_59 = math.atan2(var0_59.z - arg0_59._pos.z, var0_59.x - arg0_59._pos.x)
 
-		if var1_57 > arg0_57._wholeCircle then
-			var1_57 = var1_57 + arg0_57._wholeCircleNormalizeOffset
-		elseif var1_57 < arg0_57._negativeCircle then
-			var1_57 = var1_57 + arg0_57._negativeCircleNormalizeOffset
+		if var1_59 > arg0_59._wholeCircle then
+			var1_59 = var1_59 + arg0_59._wholeCircleNormalizeOffset
+		elseif var1_59 < arg0_59._negativeCircle then
+			var1_59 = var1_59 + arg0_59._negativeCircleNormalizeOffset
 		else
-			var1_57 = var1_57 + arg0_57._normalizeOffset
+			var1_59 = var1_59 + arg0_59._normalizeOffset
 		end
 
-		if var1_57 > arg0_57._lowerEdge and var1_57 < arg0_57._upperEdge then
+		if var1_59 > arg0_59._lowerEdge and var1_59 < arg0_59._upperEdge then
 			return false
 		else
 			return true
