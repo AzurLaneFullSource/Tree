@@ -243,6 +243,7 @@ pg.furniture_data_template = setmetatable({
 			100066,
 			100067,
 			100068,
+			100070,
 			100072,
 			100073,
 			100074,
@@ -3834,6 +3835,7 @@ pg.furniture_data_template = setmetatable({
 			100066,
 			100067,
 			100068,
+			100070,
 			100072,
 			100073,
 			100074,
@@ -7331,6 +7333,7 @@ pg.furniture_data_template = setmetatable({
 			242,
 			291,
 			100060,
+			100070,
 			200001,
 			200002,
 			200003,
@@ -10802,6 +10805,7 @@ pg.furniture_data_template = setmetatable({
 		100066,
 		100067,
 		100068,
+		100070,
 		100072,
 		100073,
 		100074,
@@ -27488,6 +27492,44 @@ pg.base.furniture_data_template = {
 					false
 				}
 			}
+		},
+		interAction_group = {}
+	},
+	[100070] = {
+		effect = "",
+		name = "Nile Crocodile Statue",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "chuanmo/yingtouebaijian",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Behold one of the charms of the Nile civilization!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "yingtouebaijianicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 4,
+		tag = 6,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 0,
+		canputon = 0,
+		id = 100070,
+		can_rotate = 0,
+		size = {
+			1,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
 		},
 		interAction_group = {}
 	},

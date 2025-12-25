@@ -494,18 +494,25 @@ function var0_0.readyToAchieve(arg0_25)
 			local var1_44 = var0_44 and #var0_44 or 7
 			local var2_44 = pg.TimeMgr.GetInstance():DiffDay(arg0_44.data3, pg.TimeMgr.GetInstance():GetServerTime()) + 1
 			local var3_44 = math.clamp(var2_44, 1, var1_44)
-			local var4_44 = pg.NewStoryMgr.GetInstance()
-			local var5_44 = math.clamp(arg0_44.data2, 0, var1_44)
 
-			for iter0_44 = 1, var3_44 do
-				local var6_44 = var0_44[iter0_44][1]
+			if var0_44 then
+				local var4_44 = pg.NewStoryMgr.GetInstance()
+				local var5_44 = math.clamp(arg0_44.data2, 0, var1_44)
 
-				if var6_44 and iter0_44 <= var5_44 and not var4_44:IsPlayed(var6_44) then
-					return true
+				for iter0_44 = 1, var3_44 do
+					local var6_44 = var0_44[iter0_44][1]
+
+					if var6_44 and iter0_44 <= var5_44 and not var4_44:IsPlayed(var6_44) then
+						return true
+					end
 				end
 			end
 
 			if var1_44 <= var3_44 and var1_44 <= arg0_44.data2 and not (arg0_44.data1 > 0) then
+				return true
+			end
+
+			if Shrine2022View.IsNeedShowTipForShipCount() then
 				return true
 			end
 

@@ -34,11 +34,15 @@ function var0_0.startChangeAction(arg0_3, arg1_3, arg2_3, arg3_3)
 
 			if var0_4 then
 				ShipSkin.SetStoreChangeSkinId(arg2_3, arg3_3:GetShipPhantomMark())
+
+				local var2_4 = ShipSkin.GetChangeSkinCustomDataId(arg2_3, "asmr") == 1 and true or false
+
 				pg.ChangeSkinMgr.GetInstance():play(arg2_3, function()
 					arg0_3:sendNotification(GAME.CHANGE_SKIN_EXCHANGE, {
 						callback = function()
 							return
-						end
+						end,
+						asmr = var2_4
 					})
 				end, function()
 					arg0_3:sendNotification(GAME.PLAY_CHANGE_SKIN_IN)

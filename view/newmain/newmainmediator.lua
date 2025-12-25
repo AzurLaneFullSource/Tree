@@ -269,11 +269,14 @@ function var0_0.handleNotification(arg0_22, arg1_22)
 		arg0_22.viewComponent:SetEffectPanelVisible(true)
 		arg0_22.viewComponent:HidePanel(false)
 	elseif var0_22 == GAME.CHANGE_SKIN_EXCHANGE then
-		local var3_22 = arg0_22.viewComponent:GetFlagShip()
+		local var3_22 = var1_22.asmr and true or false
+		local var4_22 = arg0_22.viewComponent:GetFlagShip()
 
 		if arg0_22.viewComponent then
-			arg0_22.viewComponent:UpdateFlagShip(var3_22, var1_22)
+			arg0_22.viewComponent:UpdateFlagShip(var4_22, var1_22)
 		end
+
+		arg0_22.viewComponent:AsmrTurning(var3_22)
 	elseif var0_22 == MusicPlayer.NO_PLAY_MUSIC_NOTIFICATION then
 		arg0_22.viewComponent:CheckAndReplayBgm()
 	elseif var0_22 == NewMainMediator.FOLD_PANEL then

@@ -257,7 +257,7 @@ return {
 			spine = true,
 			withoutActorName = true,
 			nameColor = "#A9F548FF",
-			say = "Her long, stocking-clad legs casually press against mine – a silent invitation.",
+			say = "Her long legs casually press against mine – a silent invitation.",
 			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,

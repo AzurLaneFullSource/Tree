@@ -18,6 +18,7 @@ var0_0.WITH_SPINE_PLUS = 7
 var0_0.WITH_CHANGE = 8
 var0_0.WITH_LIVE2D_PLUS = 9
 var0_0.WITH_DOUBLE_VIOCE = 10
+var0_0.WITH_ASMR = 11
 
 function var0_0.Tag2Name(arg0_1)
 	if not var0_0.Tag2NameTab then
@@ -31,7 +32,8 @@ function var0_0.Tag2Name(arg0_1)
 			[var0_0.WITH_SPINE_PLUS] = "spine_plus",
 			[var0_0.WITH_CHANGE] = "change",
 			[var0_0.WITH_LIVE2D_PLUS] = "live2d_plus",
-			[var0_0.WITH_DOUBLE_VIOCE] = "double_voice"
+			[var0_0.WITH_DOUBLE_VIOCE] = "double_voice",
+			[var0_0.WITH_ASMR] = "asmr_skin"
 		}
 	end
 
@@ -490,7 +492,7 @@ function var0_0.IsChangeSkin(arg0_52)
 		warning("skin not exist " .. arg0_52)
 	end
 
-	return table.contains(var0_52.tag, var0_0.WITH_CHANGE) or table.contains(var0_52.tag, var0_0.WITH_DOUBLE_VIOCE)
+	return table.contains(var0_52.tag, var0_0.WITH_CHANGE) or table.contains(var0_52.tag, var0_0.WITH_DOUBLE_VIOCE) or table.contains(var0_52.tag, var0_0.WITH_ASMR)
 end
 
 function var0_0.GetChangeSkinMainId(arg0_53)
@@ -576,11 +578,15 @@ function var0_0.GetStoreChangeSkinId(arg0_62, arg1_62)
 end
 
 function var0_0.SetStoreChangeSkinId(arg0_63, arg1_63)
-	local var0_63, var1_63 = ShipPhantom.UnpackMark(arg1_63)
-	local var2_63 = var0_0.GetChangeSkinGroupId(arg0_63)
-	local var3_63 = var0_0.GetStoreChangeSkinPrefsName(var2_63, arg1_63)
+	local var0_63
 
-	PlayerPrefs.SetInt(var3_63, arg0_63)
+	var0_63 = ShipSkin.GetChangeSkinCustomDataId(arg0_63, "asmr") == 1 and true or false
+
+	local var1_63, var2_63 = ShipPhantom.UnpackMark(arg1_63)
+	local var3_63 = var0_0.GetChangeSkinGroupId(arg0_63)
+	local var4_63 = var0_0.GetStoreChangeSkinPrefsName(var3_63, arg1_63)
+
+	PlayerPrefs.SetInt(var4_63, arg0_63)
 end
 
 function var0_0.GetStoreChangeSkinPrefsName(...)

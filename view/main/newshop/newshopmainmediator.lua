@@ -460,8 +460,8 @@ function var0_0.handleNotification(arg0_34, arg1_34)
 			})
 		end
 	elseif var0_34 == GAME.FRAG_SELL_DONE then
-		arg0_34.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_34.awards)
 		arg0_34.viewComponent:OnFragmentSellUpdate()
+		arg0_34.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_34.awards)
 	elseif var0_34 == GAME.ON_GUILD_SHOP_PURCHASE_DONE then
 		arg0_34.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_34.awards)
 	elseif var0_34 == GAME.ON_MEDAL_SHOP_PURCHASE_DONE then

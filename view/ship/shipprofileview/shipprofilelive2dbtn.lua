@@ -9,7 +9,6 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.live2dState = arg0_1.live2dBtn:Find("state")
 	arg0_1.live2dOn = arg0_1.live2dToggle:Find("on")
 	arg0_1.live2dOff = arg0_1.live2dToggle:Find("off")
-	arg0_1.manager = BundleWizard.Inst:GetGroupMgr("L2D")
 end
 
 function var0_0.Update(arg0_2, arg1_2, arg2_2)
@@ -20,10 +19,12 @@ function var0_0.Update(arg0_2, arg1_2, arg2_2)
 	arg0_2.paintingName = arg1_2
 	arg0_2.isOn = arg2_2
 
-	local var0_2 = arg0_2.manager
-	local var1_2 = "live2d/" .. arg1_2
+	local var0_2 = BundleWizard.Inst:GetGroupMgr("L2D")
+	local var1_2 = "live2d/" .. string.lower(arg1_2)
 	local var2_2 = HXSet.autoHxShiftPath(var1_2, nil, true)
 	local var3_2 = var0_2:CheckF(var2_2)
+
+	warning("OnCheckToUpdate state = " .. tostring(var3_2))
 
 	if var3_2 == DownloadState.CheckToUpdate or var3_2 == DownloadState.UpdateFailure then
 		arg0_2:OnCheckToUpdate(var2_2)
@@ -71,6 +72,7 @@ end
 function var0_0.OnUpdated(arg0_7, arg1_7, arg2_7)
 	local var0_7 = checkABExist(arg1_7)
 
+	warning("fileExist = " .. tostring(var0_7))
 	setActive(arg0_7.live2dBtn, var0_7)
 	setActive(arg0_7.live2dState, false)
 	setActive(arg0_7.live2dToggle, true)

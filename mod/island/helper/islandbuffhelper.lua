@@ -27,7 +27,7 @@ function var0_0.GetGlobalBuffsByType(arg0_3)
 	return getProxy(IslandProxy):GetIsland():GetGlobalBuffAgency():GetBuffsByType(arg0_3)
 end
 
-function var0_0.GetAllShipManangeBuffs(arg0_4, arg1_4)
+function var0_0.GetAllShipManageBuffs(arg0_4, arg1_4)
 	local var0_4 = {
 		IslandBuffType.SHIP_MANAGE_SELL_PRICE,
 		IslandBuffType.SHIP_MANAGE_SELL_NUM
@@ -47,7 +47,7 @@ function var0_0.GetAllShipManangeBuffs(arg0_4, arg1_4)
 	return var1_4
 end
 
-function var0_0.GetManangeSellPriceBuffs(arg0_6, arg1_6)
+function var0_0.GetManageSellPriceBuffs(arg0_6, arg1_6)
 	local var0_6 = {
 		IslandBuffType.SHIP_MANAGE_SELL_PRICE,
 		IslandBuffType.GLOBAL_MANAGE_SELL_PRICE
@@ -65,7 +65,7 @@ function var0_0.GetManangeSellPriceBuffs(arg0_6, arg1_6)
 	return var1_6
 end
 
-function var0_0.GetManangeSellNumBuffs(arg0_8, arg1_8)
+function var0_0.GetManageSellNumBuffs(arg0_8, arg1_8)
 	local var0_8 = {
 		IslandBuffType.SHIP_MANAGE_SELL_NUM,
 		IslandBuffType.GLOBAL_MANAGE_SELL_NUM
@@ -81,6 +81,26 @@ function var0_0.GetManangeSellNumBuffs(arg0_8, arg1_8)
 	end
 
 	return var1_8
+end
+
+function var0_0.GetManageStatus(arg0_10, arg1_10)
+	local var0_10 = {
+		IslandBuffType.SHIP_MANAGE_SELL_PRICE,
+		IslandBuffType.SHIP_MANAGE_SELL_NUM
+	}
+	local var1_10 = {}
+
+	for iter0_10, iter1_10 in ipairs(var0_10) do
+		for iter2_10, iter3_10 in ipairs(arg0_10) do
+			local var2_10 = underscore.select(iter3_10:GetVaildStatusByType(iter1_10), function(arg0_11)
+				return table.contains(arg0_11:GetBuffEffect()[1], arg1_10)
+			end)
+
+			var1_10 = table.mergeArray(var1_10, var2_10)
+		end
+	end
+
+	return var1_10
 end
 
 return var0_0

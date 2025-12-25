@@ -216,10 +216,6 @@ function var0_0.GetDisplayFurnitures(arg0_30, arg1_30)
 		if not _.any(var3_30, function(arg0_33)
 			return arg0_33:CanUseFurniture(var0_32)
 		end) then
-			if arg1_30 then
-				warning("家具没有可用槽位，检查类型是否一致 FURNITUREID = " .. arg0_32)
-			end
-
 			return
 		end
 

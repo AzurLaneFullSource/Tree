@@ -2,6 +2,8 @@ local var0_0 = class("MainSilentChecker", import("view.base.BaseEventLogic"))
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.Ctor(arg0_1, arg1_1)
+
+	arg0_1._silentRunFlag = true
 end
 
 function var0_0.SetUp(arg0_2)
@@ -44,8 +46,10 @@ function var0_0.EnterState(arg0_5)
 		return
 	end
 
-	arg0_5:Clear()
-	arg0_5:emit(NewMainScene.ENTER_SILENT_VIEW)
+	if arg0_5._silentRunFlag then
+		arg0_5:Clear()
+		arg0_5:emit(NewMainScene.ENTER_SILENT_VIEW)
+	end
 end
 
 function var0_0.AnyOverlayShowing(arg0_6)
@@ -71,8 +75,12 @@ function var0_0.Disable(arg0_8)
 	arg0_8:Clear()
 end
 
-function var0_0.Dispose(arg0_9)
-	arg0_9:Disable()
+function var0_0.SetSilentRun(arg0_9, arg1_9)
+	arg0_9._silentRunFlag = arg1_9
+end
+
+function var0_0.Dispose(arg0_10)
+	arg0_10:Disable()
 end
 
 return var0_0

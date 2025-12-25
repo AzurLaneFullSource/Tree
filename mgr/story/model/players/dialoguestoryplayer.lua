@@ -651,9 +651,6 @@ function var0_0.UpdateLive2dPainting(arg0_53, arg1_53, arg2_53, arg3_53, arg4_53
 	local function var0_53(arg0_54)
 		local var0_54 = arg1_53:GetVirtualShip()
 		local var1_54 = arg1_53:GetLive2dPos()
-
-		print(var0_54:GetSkinConfig().id)
-
 		local var2_54 = Live2D.GenerateData({
 			ship = var0_54,
 			offset = var0_54:GetSkinConfig().live2d_offset,
@@ -857,7 +854,7 @@ function var0_0.UpdateSpinePainting(arg0_59, arg1_59, arg2_59, arg3_59, arg4_59)
 		local var2_60 = arg1_59:GetVirtualShip()
 		local var3_60 = SpinePainting.GenerateData({
 			ship = var2_60,
-			position = Vector3(0, 0, 0),
+			position = arg1_59:GetSpinePosition(),
 			parent = var0_60,
 			effectParent = var1_60
 		})

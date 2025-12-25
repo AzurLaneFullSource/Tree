@@ -93,6 +93,13 @@ function var0_0.init(arg0_9)
 	arg0_9:initUI()
 	arg0_9:initScene()
 	arg0_9:BindEvent()
+
+	local var0_9 = Dorm3dHxHelper.GetTimelineMainCharacter()
+
+	Dorm3dHxHelper.ReplaceCharacterParts(var0_9)
+	Dorm3dHxHelper.ShowHolyLight({
+		var0_9
+	}, arg0_9.holyLightRoot)
 end
 
 function var0_0.initUI(arg0_10)
@@ -162,6 +169,7 @@ function var0_0.initUI(arg0_10)
 
 	arg0_10.debugTimelineName = var0_10:Find("Timeline"):GetComponent(typeof(Text))
 	arg0_10.debugTrackName = var0_10:Find("Track"):GetComponent(typeof(Text))
+	arg0_10.holyLightRoot = arg0_10._tf:Find("HolyLightRoot")
 end
 
 function var0_0.BindEvent(arg0_14)

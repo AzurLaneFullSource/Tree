@@ -16,7 +16,12 @@ function var0_0.Ctor(arg0_1, arg1_1)
 		table.insert(arg0_1._toggleTfs, var0_1)
 	end
 
-	setActive(arg0_1._tf, false)
+	arg0_1._toggleContainer = findTF(arg0_1._tf, "ad/toggle")
+	arg0_1._asmrContainer = findTF(arg0_1._tf, "ad/asmr")
+
+	arg0_1:UpdateVisible(false)
+
+	arg0_1._asmrTurnning = false
 end
 
 function var0_0.setShipData(arg0_2, arg1_2, arg2_2)
@@ -33,7 +38,7 @@ function var0_0.setShipData(arg0_2, arg1_2, arg2_2)
 
 	arg0_2._nextSkinId = ShipSkin.GetChangeSkinNextId(arg0_2._skinId)
 
-	setActive(arg0_2._tf, true)
+	arg0_2:UpdateVisible(true)
 	arg0_2:updateUI()
 end
 
@@ -42,7 +47,7 @@ function var0_0.setSkinData(arg0_3, arg1_3)
 	arg0_3._toggleIndex = ShipSkin.GetChangeSkinIndex(arg1_3)
 	arg0_3._nextSkinId = ShipSkin.GetChangeSkinNextId(arg0_3._skinId)
 
-	setActive(arg0_3._tf, true)
+	arg0_3:UpdateVisible(true)
 	arg0_3:updateUI()
 end
 
@@ -57,6 +62,7 @@ function var0_0.updateUI(arg0_4)
 	end
 
 	arg0_4:updateToggleUI()
+	arg0_4:updateAsmrUI()
 end
 
 function var0_0.updateToggleUI(arg0_5)
@@ -82,12 +88,57 @@ function var0_0.updateToggleUI(arg0_5)
 			setActive(findTF(var1_5, "tag/spine"), table.contains(var4_5, ShipSkin.WITH_SPINE) or table.contains(var4_5, ShipSkin.WITH_SPINE_PLUS))
 		end
 	end
+
+	setActive(arg0_5._toggleContainer, not arg0_5:IsAsmrSkin())
 end
 
-function var0_0.setChildVisible(arg0_6, arg1_6, arg2_6)
-	for iter0_6 = 1, arg1_6.childCount do
-		setActive(arg1_6:GetChild(iter0_6 - 1), arg2_6)
+function var0_0.updateAsmrUI(arg0_6)
+	setActive(arg0_6._asmrContainer, arg0_6:IsAsmrSkin())
+
+	local var0_6 = ShipSkin.GetChangeSkinCustomDataId(arg0_6._skinId, "asmr") == 1
+
+	setActive(findTF(arg0_6._asmrContainer, "on"), var0_6)
+	setActive(findTF(arg0_6._asmrContainer, "off"), not var0_6)
+end
+
+function var0_0.setChildVisible(arg0_7, arg1_7, arg2_7)
+	for iter0_7 = 1, arg1_7.childCount do
+		setActive(arg1_7:GetChild(iter0_7 - 1), arg2_7)
 	end
+end
+
+function var0_0.SetAsmrTurnning(arg0_8, arg1_8)
+	arg0_8._asmrTurnning = arg1_8
+
+	arg0_8:UpdateVisible(true)
+
+	if arg0_8._skinId then
+		arg0_8:updateUI()
+	end
+end
+
+function var0_0.UpdateVisible(arg0_9, arg1_9)
+	if not arg0_9._skinId then
+		setActive(arg0_9._tf, false)
+
+		return
+	end
+
+	if arg0_9:IsAsmrSkin() and not arg0_9._asmrTurnning then
+		setActive(arg0_9._tf, false)
+
+		return
+	end
+
+	setActive(arg0_9._tf, arg1_9)
+end
+
+function var0_0.IsAsmrSkin(arg0_10)
+	if not arg0_10._skinId then
+		return false
+	end
+
+	return ShipSkin.GetChangeSkinCustomDataId(arg0_10._skinId, "asmr") == 1 or ShipSkin.GetChangeSkinCustomDataId(arg0_10._nextSkinId, "asmr") == 1 or false
 end
 
 return var0_0

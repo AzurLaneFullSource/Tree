@@ -30,6 +30,7 @@ pg.expedition_data_by_map = setmetatable({
 		211,
 		212,
 		213,
+		214,
 		10000,
 		70000,
 		1040000,
@@ -1490,7 +1491,7 @@ pg.base.expedition_data_by_map = {
 		destory_icon_suffix = "blue",
 		story_inactive_color = "",
 		animtor = 1,
-		bind_map = 0,
+		bind_map = 214,
 		clouds_pos = {},
 		drop_by_map_display = {}
 	},
@@ -2191,6 +2192,35 @@ pg.base.expedition_data_by_map = {
 				-465
 			}
 		},
+		drop_by_map_display = {}
+	},
+	[214] = {
+		map = 214,
+		name = "Surigao Night Combat",
+		level_limit = 80,
+		type = 2,
+		anchor = "",
+		title = "14",
+		map_name = "",
+		bgm = "level",
+		ani_name = "map_14",
+		ani_controller = "",
+		guide_id = "",
+		enter_story = "",
+		cloud_suffix = "",
+		default_background = "",
+		default_bgm = "",
+		uifx = "UIhuohua2",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_214",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 14,
+		clouds_pos = {},
 		drop_by_map_display = {}
 	},
 	[10000] = {

@@ -15,4 +15,8 @@ function var0_0.GetDirection(arg0_2)
 	return Vector2(1, 0)
 end
 
+function var0_0.SetEffectVisible(arg0_3, arg1_3)
+	setActive(findTF(arg0_3._tf, "1/battle"), arg1_3)
+end
+
 return var0_0

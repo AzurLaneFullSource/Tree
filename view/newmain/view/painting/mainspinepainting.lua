@@ -184,7 +184,7 @@ function var0_0.InitSpecialTouch(arg0_7)
 					end
 
 					arg0_7.spinePainting:readyDragAction(arg0_8.name, false)
-				elseif var0_12 then
+				elseif var0_12 and not arg0_7._asmrFlag then
 					arg0_7:TriggerEvent(var0_12)
 					arg0_7:TriggerPersonalTask(arg0_7.ship.groupId)
 				end
@@ -194,7 +194,7 @@ function var0_0.InitSpecialTouch(arg0_7)
 end
 
 function var0_0.OnClick(arg0_13)
-	if arg0_13.spinePainting:isInAction() then
+	if arg0_13.spinePainting:isInAction() or arg0_13._asmrFlag then
 		return
 	end
 
@@ -204,12 +204,16 @@ function var0_0.OnClick(arg0_13)
 end
 
 function var0_0.OnEnableTimerEvent(arg0_14)
-	return not arg0_14.spinePainting:isInAction()
+	return not arg0_14.spinePainting:isInAction() and not arg0_14._asmrFlag
 end
 
 function var0_0.PrepareTriggerAction(arg0_15, arg1_15)
+	if arg0_15._asmrFlag then
+		return
+	end
+
 	local var0_15
-	local var1_15
+	local var1_15 = false
 
 	if pg.AssistantInfo.assistantEvents[arg1_15] then
 		var0_15 = pg.AssistantInfo.assistantEvents[arg1_15].action

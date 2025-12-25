@@ -90,6 +90,13 @@ pg.benefit_buff_template = setmetatable({
 		86,
 		87,
 		88,
+		89,
+		90,
+		91,
+		92,
+		93,
+		94,
+		95,
 		101,
 		102,
 		103,
@@ -127,6 +134,9 @@ pg.benefit_buff_template = setmetatable({
 		140,
 		141,
 		142,
+		143,
+		144,
+		145,
 		300001,
 		300002,
 		300003,
@@ -1702,6 +1712,125 @@ pg.base.benefit_buff_template = {
 			0
 		}
 	},
+	{
+		type_priority = 0,
+		name = "Bismarck's Wish",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "Bismarck's Wish – Reduces the DMG taken in Main Campaign, Event, and War Archive stages by 3%.\nTime Remaining: $1",
+		benefit_effect = "520",
+		id = 89,
+		icon = "Props/jianchuanxinyuan",
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "South Dakota's Wish",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "South Dakota's Wish – Increases the EXP gained in Main Campaign, Event, and War Archive stages by 3%.\nTime Remaining: $1",
+		benefit_effect = "3",
+		id = 90,
+		icon = "Props/jianchuanxinyuan",
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "Kuybyshev's Wish",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "Kuybyshev's Wish – Increases the EXP gained from the Dormitory by 3%.\nTime Remaining: $1",
+		benefit_effect = "3",
+		id = 91,
+		icon = "Props/jianchuanxinyuan",
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "Impero's Wish",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "Impero's Wish – Increases the EXP gained from the Dormitory by 3%.\nTime Remaining: $1",
+		benefit_effect = "3",
+		id = 92,
+		icon = "Props/jianchuanxinyuan",
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "Belfast's Wish",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "Belfast's Wish – Reduces the DMG taken in Main Campaign, Event, and War Archive stages by 3%.\nTime Remaining: $1",
+		benefit_effect = "520",
+		id = 93,
+		icon = "Props/jianchuanxinyuan",
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "Richelieu's Wish",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "Richelieu's Wish – Reduces the DMG taken in Main Campaign, Event, and War Archive stages by 3%.\nTime Remaining: $1",
+		benefit_effect = "520",
+		id = 94,
+		icon = "Props/jianchuanxinyuan",
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "Graf Zeppelin's Wish",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "Graf Zeppelin's Wish – Increases the EXP gained in Main Campaign, Event, and War Archive stages by 3%.\nTime Remaining: $1",
+		benefit_effect = "3",
+		id = 95,
+		icon = "Props/jianchuanxinyuan",
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	},
 	[101] = {
 		type_priority = 1,
 		name = "EXP Bonus",
@@ -2410,6 +2539,45 @@ pg.base.benefit_buff_template = {
 		id = 142,
 		icon = "Props/yanhuiyaoyue",
 		benefit_type = "ship_battle_intimacy"
+	},
+	[143] = {
+		type_priority = 0,
+		name = "Academic Achievement",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "Tactical Class lesson time is reduced. \nTime remaining: $1",
+		benefit_effect = "300",
+		id = 143,
+		icon = "Props/buff_xinyuan_1",
+		benefit_type = "skill_learncost_up"
+	},
+	[144] = {
+		type_priority = 0,
+		name = "Career Success",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "While sortieing in a Campaign, Hard Mode, or War Archives map, your ships deal slightly more DMG. \nTime remaining: $1",
+		benefit_effect = "522",
+		id = 144,
+		icon = "Props/buff_xinyuan_2",
+		benefit_type = "battle_buff"
+	},
+	[145] = {
+		type_priority = 0,
+		name = "Romantic",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "Increases the rate at which your secretary ship gains Affection. \nTime remaining: $1",
+		benefit_effect = "1",
+		id = 145,
+		icon = "Props/buff_xinyuan_3",
+		benefit_type = "intimacy_up_extra"
 	},
 	[300001] = {
 		type_priority = 0,

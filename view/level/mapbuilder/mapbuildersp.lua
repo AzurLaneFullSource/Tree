@@ -258,7 +258,13 @@ end
 function var0_0.UpdateView(arg0_24)
 	local var0_24 = string.split(arg0_24.contextData.map:getConfig("name"), "||")
 
-	setText(arg0_24.sceneParent.chapterName, var0_24[1])
+	if arg0_24.contextData.displayMode == var0_0.DISPLAY.STORY then
+		var0_24 = string.split(var0_24[1], "·")
+
+		setText(arg0_24.sceneParent.chapterName, var0_24[1] .. i18n("levelscene_title_story"))
+	else
+		setText(arg0_24.sceneParent.chapterName, var0_24[1])
+	end
 
 	local var1_24 = arg0_24.contextData.map:getMapTitleNumber()
 

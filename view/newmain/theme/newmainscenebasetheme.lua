@@ -17,6 +17,7 @@ function var0_0.OnLoaded(arg0_1)
 	arg0_1.buffView = arg0_1:GetBuffView()
 	arg0_1.wordView = arg0_1:GetWordView()
 	arg0_1.changeView = arg0_1:GetChangeSkinView()
+	arg0_1.asmrChatView = arg0_1:GetAsmrChatView()
 
 	pg.redDotHelper:Init(arg0_1:GetRedDots())
 end
@@ -47,6 +48,7 @@ function var0_0.init(arg0_4, arg1_4)
 	arg0_4.buffView:Init()
 	arg0_4.tagView:Init()
 	arg0_4.changeView:Init(arg1_4)
+	arg0_4.asmrChatView:Init(arg1_4)
 	arg0_4:OverlayPanel(arg0_4._tf, {
 		stopTop = true,
 		pbList = arg0_4:GetPbList()
@@ -66,6 +68,7 @@ function var0_0._FoldPanels(arg0_5, arg1_5, arg2_5)
 	arg0_5.wordView:Fold(arg1_5, arg2_5)
 	arg0_5.tagView:Fold(arg1_5, arg2_5)
 	arg0_5.changeView:Fold(arg1_5, arg2_5)
+	arg0_5.asmrChatView:Fold(arg1_5, arg2_5)
 end
 
 function var0_0.OnFoldPanels(arg0_6, arg1_6)
@@ -82,118 +85,132 @@ function var0_0.OnFoldPanels(arg0_6, arg1_6)
 	arg0_6:_FoldPanels(arg1_6, 0.5)
 end
 
-function var0_0.OnSwitchToNextShip(arg0_8, arg1_8)
-	arg0_8.iconView:Refresh(arg1_8)
-	arg0_8.changeView:Refresh(arg1_8)
+function var0_0.OnAsmrTurnning(arg0_8, arg1_8)
+	arg0_8._asmrTurnning = arg1_8
 
 	for iter0_8, iter1_8 in ipairs(arg0_8.panels) do
-		iter1_8:Refresh()
-	end
-end
-
-function var0_0.Refresh(arg0_9, arg1_9)
-	for iter0_9, iter1_9 in ipairs(arg0_9.panels) do
-		iter1_9:Refresh()
+		iter1_8:SetAlpha(arg1_8 and 0 or 1)
+		iter1_8:SetInteractable(not arg1_8 and true or false)
+		iter1_8:SetBlocksRaycasts(not arg1_8 and true or false)
 	end
 
-	arg0_9.iconView:Refresh(arg1_9)
-	arg0_9.chatRoomView:Refresh()
-	arg0_9.buffView:Refresh()
-	arg0_9.actBtnView:Refresh()
-	arg0_9.bannerView:Refresh()
-	arg0_9.tagView:Refresh()
-	arg0_9.changeView:Refresh(arg1_9)
-	setActiveViaLayer(arg0_9._tf, true)
+	arg0_8.changeView:IgnoreParentGroups(arg1_8)
+	arg0_8.asmrChatView:SetVisible(arg1_8)
+	arg0_8.wordView:StopAnimation()
 end
 
-function var0_0.Disable(arg0_10)
+function var0_0.SetAsmrChatText(arg0_9, arg1_9, arg2_9)
+	arg0_9.asmrChatView:ShowChat(arg1_9, arg2_9)
+end
+
+function var0_0.OnSwitchToNextShip(arg0_10, arg1_10)
+	arg0_10.iconView:Refresh(arg1_10)
+	arg0_10.changeView:Refresh(arg1_10)
+
 	for iter0_10, iter1_10 in ipairs(arg0_10.panels) do
-		iter1_10:Disable()
+		iter1_10:Refresh()
 	end
-
-	arg0_10.iconView:Disable()
-	arg0_10.chatRoomView:Disable()
-	arg0_10.buffView:Disable()
-	arg0_10.actBtnView:Disable()
-	arg0_10.bannerView:Disable()
-	arg0_10.wordView:Disable()
-	arg0_10.changeView:Disable()
-	setActiveViaLayer(arg0_10._tf, false)
 end
 
-function var0_0.SetEffectPanelVisible(arg0_11, arg1_11)
-	return
+function var0_0.Refresh(arg0_11, arg1_11)
+	for iter0_11, iter1_11 in ipairs(arg0_11.panels) do
+		iter1_11:Refresh()
+	end
+
+	arg0_11.iconView:Refresh(arg1_11)
+	arg0_11.chatRoomView:Refresh()
+	arg0_11.buffView:Refresh()
+	arg0_11.actBtnView:Refresh()
+	arg0_11.bannerView:Refresh()
+	arg0_11.tagView:Refresh()
+	arg0_11.changeView:Refresh(arg1_11)
+	setActiveViaLayer(arg0_11._tf, true)
 end
 
-function var0_0.OnDestroy(arg0_12)
-	arg0_12:UnOverlayPanel(arg0_12._tf, arg0_12._parentTf)
-
-	for iter0_12, iter1_12 in ipairs(arg0_12.panels or {}) do
-		iter1_12:Dispose()
+function var0_0.Disable(arg0_12)
+	for iter0_12, iter1_12 in ipairs(arg0_12.panels) do
+		iter1_12:Disable()
 	end
 
-	arg0_12.panels = nil
+	arg0_12.iconView:Disable()
+	arg0_12.chatRoomView:Disable()
+	arg0_12.buffView:Disable()
+	arg0_12.actBtnView:Disable()
+	arg0_12.bannerView:Disable()
+	arg0_12.wordView:Disable()
+	arg0_12.changeView:Disable()
+	setActiveViaLayer(arg0_12._tf, false)
+end
 
-	if arg0_12.iconView then
-		arg0_12.iconView:Dispose()
+function var0_0.OnDestroy(arg0_13)
+	arg0_13:UnOverlayPanel(arg0_13._tf, arg0_13._parentTf)
 
-		arg0_12.iconView = nil
+	for iter0_13, iter1_13 in ipairs(arg0_13.panels or {}) do
+		iter1_13:Dispose()
 	end
 
-	if arg0_12.chatRoomView then
-		arg0_12.chatRoomView:Dispose()
+	arg0_13.panels = nil
 
-		arg0_12.chatRoomView = nil
+	if arg0_13.iconView then
+		arg0_13.iconView:Dispose()
+
+		arg0_13.iconView = nil
 	end
 
-	if arg0_12.bannerView then
-		arg0_12.bannerView:Dispose()
+	if arg0_13.chatRoomView then
+		arg0_13.chatRoomView:Dispose()
 
-		arg0_12.bannerView = nil
+		arg0_13.chatRoomView = nil
 	end
 
-	if arg0_12.actBtnView then
-		arg0_12.actBtnView:Dispose()
+	if arg0_13.bannerView then
+		arg0_13.bannerView:Dispose()
 
-		arg0_12.actBtnView = nil
+		arg0_13.bannerView = nil
 	end
 
-	if arg0_12.buffView then
-		arg0_12.buffView:Dispose()
+	if arg0_13.actBtnView then
+		arg0_13.actBtnView:Dispose()
 
-		arg0_12.buffView = nil
+		arg0_13.actBtnView = nil
 	end
 
-	if arg0_12.tagView then
-		arg0_12.tagView:Dispose()
+	if arg0_13.buffView then
+		arg0_13.buffView:Dispose()
 
-		arg0_12.tagView = nil
+		arg0_13.buffView = nil
 	end
 
-	if arg0_12.wordView then
-		arg0_12.wordView:Dispose()
+	if arg0_13.tagView then
+		arg0_13.tagView:Dispose()
 
-		arg0_12.wordView = nil
+		arg0_13.tagView = nil
 	end
 
-	if arg0_12.changeView then
-		arg0_12.changeView:Dispose()
+	if arg0_13.wordView then
+		arg0_13.wordView:Dispose()
 
-		arg0_12.changeView = nil
+		arg0_13.wordView = nil
+	end
+
+	if arg0_13.changeView then
+		arg0_13.changeView:Dispose()
+
+		arg0_13.changeView = nil
 	end
 
 	pg.redDotHelper:Clear()
 end
 
-function var0_0.GetPbList(arg0_13)
+function var0_0.GetPbList(arg0_14)
 	return {}
 end
 
-function var0_0.GetCalibrationBG(arg0_14)
+function var0_0.GetCalibrationBG(arg0_15)
 	assert(false)
 end
 
-function var0_0.GetPaintingOffset(arg0_15, arg1_15)
+function var0_0.GetPaintingOffset(arg0_16, arg1_16)
 	return MainPaintingShift.New({
 		0,
 		-10,
@@ -207,59 +224,63 @@ function var0_0.GetPaintingOffset(arg0_15, arg1_15)
 	})
 end
 
-function var0_0.ApplyDefaultResUI(arg0_16)
+function var0_0.ApplyDefaultResUI(arg0_17)
 	return true
 end
 
-function var0_0.GetWordView(arg0_17)
+function var0_0.GetWordView(arg0_18)
 	assert(false)
 end
 
-function var0_0.GetTagView(arg0_18)
+function var0_0.GetTagView(arg0_19)
 	assert(false)
 end
 
-function var0_0.GetTopPanel(arg0_19)
+function var0_0.GetTopPanel(arg0_20)
 	assert(false)
 end
 
-function var0_0.GetRightPanel(arg0_20)
+function var0_0.GetRightPanel(arg0_21)
 	assert(false)
 end
 
-function var0_0.GetLeftPanel(arg0_21)
+function var0_0.GetLeftPanel(arg0_22)
 	assert(false)
 end
 
-function var0_0.GetBottomPanel(arg0_22)
+function var0_0.GetBottomPanel(arg0_23)
 	assert(false)
 end
 
-function var0_0.GetIconView(arg0_23)
+function var0_0.GetIconView(arg0_24)
 	assert(false)
 end
 
-function var0_0.GetChatRoomView(arg0_24)
+function var0_0.GetChatRoomView(arg0_25)
 	assert(false)
 end
 
-function var0_0.GetBannerView(arg0_25)
+function var0_0.GetBannerView(arg0_26)
 	assert(false)
 end
 
-function var0_0.GetActBtnView(arg0_26)
+function var0_0.GetActBtnView(arg0_27)
 	assert(false)
 end
 
-function var0_0.GetBuffView(arg0_27)
+function var0_0.GetBuffView(arg0_28)
 	assert(false)
 end
 
-function var0_0.GetChangeSkinView(arg0_28)
+function var0_0.GetChangeSkinView(arg0_29)
 	assert(false)
 end
 
-function var0_0.GetRedDots(arg0_29)
+function var0_0.GetAsmrChatView(arg0_30)
+	assert(false)
+end
+
+function var0_0.GetRedDots(arg0_31)
 	return {}
 end
 

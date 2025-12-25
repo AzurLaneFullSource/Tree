@@ -349,7 +349,9 @@ function var0_0.didEnter(arg0_7)
 			var2_32(var0_36, arg0_36)
 		end
 
-		BLHX.Rendering.HotUpdate.ScreenShooterPass.TakePhoto(arg0_7.mainCamera, var3_32)
+		local var4_32, var5_32 = Dorm3dHxHelper.GetHolyLightScreenShotInfo(arg0_7.scene.holyLightRoot)
+
+		GraphicsInterface.Instance:TakePhotoWithPost(arg0_7.mainCamera, var4_32, var5_32, var3_32)
 	end, "ui-dorm_photograph")
 
 	GetOrAddComponent(arg0_7._tf:Find("RightTop/Film"), typeof(CanvasGroup)).blocksRaycasts = false

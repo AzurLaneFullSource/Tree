@@ -13,7 +13,7 @@ pg.shop_banner_template = {
 				{
 					2025,
 					12,
-					18
+					25
 				},
 				{
 					0,
@@ -269,7 +269,7 @@ pg.shop_banner_template = {
 		}
 	},
 	[24] = {
-		order = 47,
+		order = 51,
 		name = "banner_middle",
 		type = 2,
 		id = 24,
@@ -309,7 +309,7 @@ pg.shop_banner_template = {
 		},
 		relation_param = {
 			1,
-			9005
+			9010
 		}
 	},
 	[25] = {

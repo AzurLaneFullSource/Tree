@@ -78,6 +78,11 @@ function var0_0.play(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
 	arg0_7.changeState = ShipSkin.GetChangeSkinState(arg1_7)
 	arg0_7.changAction = ShipSkin.GetChangeSkinAction(arg1_7)
 	arg0_7.delayIn = ShipSkin.GetChangeSkinCustomDataId(arg1_7, "delay_in")
+	arg0_7.finishDelay = ShipSkin.GetChangeSkinCustomDataId(arg1_7, "finish_delay")
+
+	if not arg0_7.finishDelay or arg0_7.finishDelay == "" or arg0_7.finishDelay <= 0 then
+		arg0_7.finishDelay = 0.5
+	end
 
 	if arg0_7.changeState == var1_0 then
 		arg0_7._loadObjectName = "changeskin/" .. arg0_7.changAction
@@ -160,34 +165,41 @@ function var0_0.play(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
 					arg0_7:finish(arg4_7)
 				end
 			end)
+			arg0_7:localizationUI(arg0_7._aniamtorTf, arg0_7.changAction, arg0_7.changeIndex)
 		end)
 	end
 end
 
-function var0_0.finish(arg0_14, arg1_14)
-	if LeanTween.isTweening(arg0_14._go) then
-		LeanTween.cancel(arg0_14._go)
+function var0_0.localizationUI(arg0_14, arg1_14, arg2_14, arg3_14)
+	if arg2_14 == "changeAsmr" then
+		setText(findTF(arg1_14, "ad/animator/desc"), i18n("change_skin_asmr_desc_" .. arg3_14))
+	end
+end
+
+function var0_0.finish(arg0_15, arg1_15)
+	if LeanTween.isTweening(arg0_15._go) then
+		LeanTween.cancel(arg0_15._go)
 	end
 
-	LeanTween.delayedCall(0.5, System.Action(function()
-		if arg0_14._spineAnimUI then
-			arg0_14._spineAnimUI:SetActionCallBack(nil)
+	LeanTween.delayedCall(arg0_15.finishDelay, System.Action(function()
+		if arg0_15._spineAnimUI then
+			arg0_15._spineAnimUI:SetActionCallBack(nil)
 
-			arg0_14._spineAnimUI = nil
+			arg0_15._spineAnimUI = nil
 		end
 
-		if arg0_14._loadObject then
-			PoolMgr.GetInstance():ReturnPrefab(arg0_14._loadObjectName, "", arg0_14._loadObject, true)
+		if arg0_15._loadObject then
+			PoolMgr.GetInstance():ReturnPrefab(arg0_15._loadObjectName, "", arg0_15._loadObject, true)
 		end
 
-		arg0_14._inPlaying = false
+		arg0_15._inPlaying = false
 
-		if arg0_14._go then
-			arg0_14._go:SetActive(false)
+		if arg0_15._go then
+			arg0_15._go:SetActive(false)
 		end
 
-		if arg1_14 then
-			arg1_14()
+		if arg1_15 then
+			arg1_15()
 		end
 	end))
 end

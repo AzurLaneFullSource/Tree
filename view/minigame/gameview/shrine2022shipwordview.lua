@@ -17,81 +17,95 @@ function var0_0.OnDestroy(arg0_3)
 	arg0_3:cleanManagedTween()
 end
 
-function var0_0.initData(arg0_4)
-	arg0_4.curSelectShip = arg0_4.contextData.curSelectShip
+function var0_0.setUIData(arg0_4)
+	arg0_4.shipWordSpriteList = {}
+
+	local var0_4 = "shipword_" .. arg0_4.curSelectShip
+	local var1_4 = "Shrine2022/" .. var0_4
+	local var2_4 = LoadSprite(var1_4, var0_4)
+
+	arg0_4.shipWordSpriteList[arg0_4.curSelectShip] = var2_4
 end
 
-function var0_0.initUI(arg0_5)
-	arg0_5.bg = arg0_5._tf:Find("BG")
-	arg0_5.wordImg = arg0_5._tf:Find("Word")
-	arg0_5.cloud1 = arg0_5._tf:Find("Cloud1")
-	arg0_5.cloud2 = arg0_5._tf:Find("Cloud2")
+function var0_0.initData(arg0_5)
+	arg0_5.curSelectShip = arg0_5.contextData.curSelectShip
+end
 
-	local var0_5 = "shipword_" .. arg0_5.curSelectShip
-	local var1_5 = "Shrine2022/" .. var0_5
+function var0_0.initUI(arg0_6)
+	arg0_6:setUIData()
 
-	setImageSprite(arg0_5.wordImg, LoadSprite(var1_5, var0_5), true)
-	onButton(arg0_5, arg0_5.bg, function()
-		arg0_5:closeMySelf()
+	arg0_6.bg = arg0_6._tf:Find("BG")
+	arg0_6.wordImg = arg0_6._tf:Find("Word")
+	arg0_6.cloud1 = arg0_6._tf:Find("Cloud1")
+	arg0_6.cloud2 = arg0_6._tf:Find("Cloud2")
+
+	setImageSprite(arg0_6.wordImg, arg0_6.shipWordSpriteList[arg0_6.curSelectShip], true)
+	onButton(arg0_6, arg0_6.bg, function()
+		arg0_6:closeMySelf()
 	end, SFX_PANEL)
 end
 
-function var0_0.playEnterAni(arg0_7, arg1_7, arg2_7)
-	local var0_7 = arg1_7 and 1000 or 0
-	local var1_7 = arg1_7 and 0 or 1000
-	local var2_7 = {
-		x = var0_7,
-		y = rtf(arg0_7.cloud1).anchoredPosition.y
+function var0_0.playEnterAni(arg0_8, arg1_8, arg2_8)
+	local var0_8 = arg1_8 and 1000 or 0
+	local var1_8 = arg1_8 and 0 or 1000
+	local var2_8 = {
+		x = var0_8,
+		y = rtf(arg0_8.cloud1).anchoredPosition.y
 	}
-	local var3_7 = arg1_7 and -1000 or 0
-	local var4_7 = arg1_7 and 0 or -1000
-	local var5_7 = {
-		x = var3_7,
-		y = rtf(arg0_7.cloud2).anchoredPosition.y
+	local var3_8 = arg1_8 and -1000 or 0
+	local var4_8 = arg1_8 and 0 or -1000
+	local var5_8 = {
+		x = var3_8,
+		y = rtf(arg0_8.cloud2).anchoredPosition.y
 	}
-	local var6_7 = arg1_7 and 0 or 1
-	local var7_7 = arg1_7 and 1 or 0
-	local var8_7 = {
-		x = var6_7,
-		y = var6_7
+	local var6_8 = arg1_8 and 0 or 1
+	local var7_8 = arg1_8 and 1 or 0
+	local var8_8 = {
+		x = var6_8,
+		y = var6_8
 	}
-	local var9_7 = 0.3
+	local var9_8 = 0.3
 
-	arg0_7.isPlaying = true
+	arg0_8.isPlaying = true
 
-	arg0_7:managedTween(LeanTween.value, nil, go(arg0_7.cloud1), 0, 1, var9_7):setOnUpdate(System.Action_float(function(arg0_8)
-		local var0_8 = var0_7 + (var1_7 - var0_7) * arg0_8
-		local var1_8 = var3_7 + (var4_7 - var3_7) * arg0_8
-		local var2_8 = var6_7 + (var7_7 - var6_7) * arg0_8
+	setLocalScale(arg0_8.wordImg, {
+		x = 0,
+		y = 0
+	})
+	setActive(arg0_8.wordImg, true)
+	arg0_8:managedTween(LeanTween.value, nil, go(arg0_8.cloud1), 0, 1, var9_8):setOnUpdate(System.Action_float(function(arg0_9)
+		local var0_9 = var0_8 + (var1_8 - var0_8) * arg0_9
+		local var1_9 = var3_8 + (var4_8 - var3_8) * arg0_9
+		local var2_9 = var6_8 + (var7_8 - var6_8) * arg0_9
 
-		var2_7.x = var0_8
+		var2_8.x = var0_9
 
-		setAnchoredPosition(arg0_7.cloud1, var2_7)
+		setAnchoredPosition(arg0_8.cloud1, var2_8)
 
-		var5_7.x = var1_8
+		var5_8.x = var1_9
 
-		setAnchoredPosition(arg0_7.cloud2, var5_7)
+		setAnchoredPosition(arg0_8.cloud2, var5_8)
 
-		var8_7.x = var2_8
-		var8_7.y = var2_8
+		var8_8.x = var2_9
+		var8_8.y = var2_9
 
-		setLocalScale(arg0_7.wordImg, var8_7)
+		setLocalScale(arg0_8.wordImg, var8_8)
 	end)):setOnComplete(System.Action(function()
-		arg0_7.isPlaying = false
+		arg0_8.isPlaying = false
 
-		if arg2_7 then
-			arg2_7()
+		if arg2_8 then
+			arg2_8()
 		end
 	end))
 end
 
-function var0_0.closeMySelf(arg0_10)
-	if arg0_10.isPlaying then
+function var0_0.closeMySelf(arg0_11)
+	if arg0_11.isPlaying then
 		return
 	end
 
-	arg0_10:playEnterAni(false, function()
-		arg0_10:Destroy()
+	arg0_11:playEnterAni(false, function()
+		arg0_11:Destroy()
 	end)
 end
 

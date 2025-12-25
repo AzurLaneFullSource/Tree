@@ -171284,6 +171284,54 @@ _G.pg.base.item_virtual_data_statistics[65793] = {
 	combination_display = {},
 }
 
+_G.pg.base.item_virtual_data_statistics[65794] = {
+	display = "Collect 7 Winter Wishes to get Wish-Fulfilling Card.",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "Props/65794",
+	id = 65794,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Winter Wishes",
+	order = 0,
+	rarity = 2,
+	replace_item = 0,
+	shop_id = -1,
+	time_limit = 0,
+	type = 0,
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
+_G.pg.base.item_virtual_data_statistics[65795] = {
+	display = "Allows you to rent and equip an available outfit for a ship of your choice for a limited time.",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "Props/skinTicket",
+	id = 65795,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Rental Outfit Voucher",
+	order = 0,
+	rarity = 4,
+	replace_item = 0,
+	shop_id = 1,
+	time_limit = 0,
+	type = 98,
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+
 _G.pg.base.item_virtual_data_statistics[66001] = {
 	display = "A material used for villa reconstruction.",
 	drop_gold_max = 0,
@@ -179872,6 +179920,67 @@ _G.pg.base.item_virtual_data_statistics[86222] = {
 		{
 			102234,
 			2000,
+		},
+	},
+}
+
+_G.pg.base.item_virtual_data_statistics[86223] = {
+	display = "不会被看到",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "Props/clothIcon",
+	id = 86223,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Random Skin",
+	order = 0,
+	rarity = 4,
+	replace_item = 0,
+	shop_id = -1,
+	time_limit = 0,
+	type = 98,
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {
+		{
+			1199011,
+			1000,
+		},
+		{
+			499101,
+			1000,
+		},
+		{
+			403037,
+			1000,
+		},
+		{
+			802032,
+			1000,
+		},
+		{
+			401992,
+			1000,
+		},
+		{
+			199061,
+			1000,
+		},
+		{
+			702052,
+			1340,
+		},
+		{
+			799031,
+			1330,
+		},
+		{
+			699031,
+			1330,
 		},
 	},
 }

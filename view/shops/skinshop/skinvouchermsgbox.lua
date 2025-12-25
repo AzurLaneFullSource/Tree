@@ -7,6 +7,8 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
+	pg.UIMgr.GetInstance():OverlayPanel(arg0_2._tf)
+
 	arg0_2.closeBtn = arg0_2._tf:Find("window/top/btnBack")
 	arg0_2.cancelBtn = arg0_2._tf:Find("window/button_container/cancel")
 	arg0_2.confirmBtn = arg0_2._tf:Find("window/button_container/confirm")
@@ -254,6 +256,11 @@ function var0_0.SetTipText(arg0_25, arg1_25)
 
 		setText(arg0_25.tipText, i18n("no_share_skin_gametip", i18n(var2_25[var3_25][2]), var4_25))
 	end
+end
+
+function var0_0.OnDestroy(arg0_26)
+	arg0_26.super:OnDestroy()
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_26._tf)
 end
 
 return var0_0

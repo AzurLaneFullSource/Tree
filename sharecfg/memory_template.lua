@@ -3880,6 +3880,12 @@ pg.memory_template = setmetatable({
 		4933,
 		4934,
 		4935,
+		4941,
+		4942,
+		4943,
+		4944,
+		4945,
+		4946,
 		10011,
 		10012,
 		10013,
@@ -62262,6 +62268,96 @@ pg.base.memory_template = {
 		is_open = 0,
 		unlock_pre = {
 			"SHISHANGTEKANZHUANSHUXINDONGSHIKE5"
+		}
+	},
+	[4941] = {
+		type = 1,
+		subtitle = "",
+		story = "SHISHANGTEKANZHUANSHUXINDONGSHIKEII1",
+		mask = "bg/bg_memory",
+		title = "An Intimate Cleaning",
+		condition = "Complete Gouden Leeuw's Vignette in \"Port Fashion Collection: Heart-Throbbing Moment II\"",
+		number = 0,
+		id = 4941,
+		icon = "memory_gangqushishangtekan",
+		is_open = 0,
+		unlock_pre = {
+			"SHISHANGTEKANZHUANSHUXINDONGSHIKEII1"
+		}
+	},
+	[4942] = {
+		type = 1,
+		subtitle = "",
+		story = "SHISHANGTEKANZHUANSHUXINDONGSHIKEII2",
+		mask = "bg/bg_memory",
+		title = "Late-Night Leisure",
+		condition = "Complete Kansas's Vignette in \"Port Fashion Collection: Heart-Throbbing Moment II\"",
+		number = 0,
+		id = 4942,
+		icon = "memory_gangqushishangtekan",
+		is_open = 0,
+		unlock_pre = {
+			"SHISHANGTEKANZHUANSHUXINDONGSHIKEII2"
+		}
+	},
+	[4943] = {
+		type = 1,
+		subtitle = "",
+		story = "SHISHANGTEKANZHUANSHUXINDONGSHIKEII3",
+		mask = "bg/bg_memory",
+		title = "The Clumsy Maid Is in a Bind!",
+		condition = "Complete Otto von Alvensleben's Vignette in \"Port Fashion Collection: Heart-Throbbing Moment II\"",
+		number = 0,
+		id = 4943,
+		icon = "memory_gangqushishangtekan",
+		is_open = 0,
+		unlock_pre = {
+			"SHISHANGTEKANZHUANSHUXINDONGSHIKEII3"
+		}
+	},
+	[4944] = {
+		type = 1,
+		subtitle = "",
+		story = "SHISHANGTEKANZHUANSHUXINDONGSHIKEII4",
+		mask = "bg/bg_memory",
+		title = "Branding Witchcraft",
+		condition = "Complete Mecklenburg's Vignette in \"Port Fashion Collection: Heart-Throbbing Moment II\"",
+		number = 0,
+		id = 4944,
+		icon = "memory_gangqushishangtekan",
+		is_open = 0,
+		unlock_pre = {
+			"SHISHANGTEKANZHUANSHUXINDONGSHIKEII4"
+		}
+	},
+	[4945] = {
+		type = 1,
+		subtitle = "",
+		story = "SHISHANGTEKANZHUANSHUXINDONGSHIKEII5",
+		mask = "bg/bg_memory",
+		title = "Milk and Kisses",
+		condition = "Complete Guichen's Vignette in \"Port Fashion Collection: Heart-Throbbing Moment II\"",
+		number = 0,
+		id = 4945,
+		icon = "memory_gangqushishangtekan",
+		is_open = 0,
+		unlock_pre = {
+			"SHISHANGTEKANZHUANSHUXINDONGSHIKEII5"
+		}
+	},
+	[4946] = {
+		type = 1,
+		subtitle = "",
+		story = "SHISHANGTEKANZHUANSHUXINDONGSHIKEII6",
+		mask = "bg/bg_memory",
+		title = "Between Tipsiness and a Wager",
+		condition = "Complete Prinz Eugen's Vignette in \"Port Fashion Collection: Heart-Throbbing Moment II\"",
+		number = 0,
+		id = 4946,
+		icon = "memory_gangqushishangtekan",
+		is_open = 0,
+		unlock_pre = {
+			"SHISHANGTEKANZHUANSHUXINDONGSHIKEII6"
 		}
 	},
 	[10011] = {

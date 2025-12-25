@@ -679,8 +679,12 @@ function var0_0.SetActionWithFinishCallback(arg0_49, arg1_49, arg2_49, arg3_49, 
 
 				arg0_49.mainSpineAnim:SetActionCallBack(nil)
 				arg3_49()
+
+				arg3_49 = nil
 			elseif arg0_50 == "action" and arg5_49 then
 				arg5_49()
+
+				arg5_49 = nil
 			end
 		end)
 	end
@@ -698,10 +702,14 @@ function var0_0.SetOnceAction(arg0_51, arg1_51, arg2_51, arg3_51, arg4_51)
 
 		if arg2_51 then
 			arg2_51()
+
+			arg2_51 = nil
 		end
 	end, arg4_51, function()
 		if arg3_51 then
 			arg3_51()
+
+			arg3_51 = nil
 		end
 	end)
 end
