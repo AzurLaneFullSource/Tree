@@ -272,6 +272,7 @@ function var0_0.FoldPanels(arg0_37, arg1_37)
 	arg0_37.theme:OnFoldPanels(arg1_37)
 	arg0_37.paintingView:Fold(arg1_37, 0.5)
 	pg.playerResUI:Fold(arg1_37, 0.5)
+	arg0_37:SetEffectPanelVisible(not arg1_37)
 end
 
 function var0_0.HidePanel(arg0_38, arg1_38)
@@ -288,13 +289,17 @@ function var0_0.HidePanel(arg0_38, arg1_38)
 	arg0_38.theme:OnFoldPanels(arg1_38)
 
 	if arg0_38._asmrTurnning then
-		arg0_38:SetEffectPanelVisible(false)
-
 		if arg0_38.foldFlag == true then
 			pg.playerResUI:Fold(arg1_38, 0.5)
 		end
 	else
 		pg.playerResUI:Fold(arg1_38, 0.5)
+	end
+
+	if not arg1_38 and arg0_38._asmrTurnning then
+		arg0_38:SetEffectPanelVisible(false)
+	else
+		arg0_38:SetEffectPanelVisible(not arg1_38)
 	end
 end
 
@@ -303,7 +308,6 @@ function var0_0.AsmrTurning(arg0_39, arg1_39)
 
 	arg0_39.paintingView:OnAsmrTurnning(arg1_39)
 	arg0_39.theme:OnAsmrTurnning(arg1_39)
-	arg0_39:SetEffectPanelVisible(not arg1_39)
 	arg0_39.silentChecker:SetSilentRun(not arg1_39)
 
 	if not arg0_39._asmrTurnning then

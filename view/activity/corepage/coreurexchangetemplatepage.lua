@@ -311,7 +311,7 @@ function var0_0.UpdateExchangeStatus(arg0_33)
 end
 
 function var0_0.UpdatePtCount(arg0_35)
-	local var0_35 = ((arg0_35.exchangeState < arg0_35.length and arg0_35.ptCount < arg0_35.curGoods.resource_num and "<color=red>" or "<color=#3689DE>") .. arg0_35.ptCount .. "</color>/" .. (arg0_35.exchangeState == 3 and "--" or arg0_35.curGoods.resource_num)) .. i18n("UrExchange_Pt_charges", arg0_35.restExchange)
+	local var0_35 = ((arg0_35.exchangeState < arg0_35.length and arg0_35.ptCount < arg0_35.curGoods.resource_num and "<color=red>" or "<color=#FFE000>") .. arg0_35.ptCount .. "</color>/" .. (arg0_35.exchangeState == 3 and "--" or arg0_35.curGoods.resource_num)) .. i18n("UrExchange_Pt_charges", arg0_35.restExchange)
 
 	setText(arg0_35._ptText, var0_35)
 end

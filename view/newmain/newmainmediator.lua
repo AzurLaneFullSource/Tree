@@ -260,8 +260,8 @@ function var0_0.handleNotification(arg0_22, arg1_22)
 	elseif var0_22 == NewMainMediator.ON_AWRADS then
 		arg0_22.viewComponent:emit(BaseUI.ON_ACHIEVE, var1_22.items, var1_22.callback)
 	elseif var0_22 == GAME.PLAY_CHANGE_SKIN_OUT then
-		arg0_22.viewComponent:HidePanel(true)
 		arg0_22.viewComponent:SetEffectPanelVisible(false)
+		arg0_22.viewComponent:HidePanel(true)
 		arg0_22.viewComponent:PlayChangeSkinActionOut(var1_22)
 	elseif var0_22 == GAME.PLAY_CHANGE_SKIN_IN then
 		arg0_22.viewComponent:PlayChangeSkinActionIn(var1_22)
