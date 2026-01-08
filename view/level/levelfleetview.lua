@@ -1578,6 +1578,12 @@ function var0_0.initAddButton(arg0_100, arg1_100, arg2_100, arg3_100, arg4_100)
 				var7_100.enabled = true
 				arg0_100.dragIndex = nil
 
+				arg0_100.chapter:setEliteFleetByIndex(arg4_100, {
+					{
+						TeamType.FormShips,
+						underscore.to_array(var0_100)
+					}
+				})
 				arg0_100:emit(LevelMediator2.ON_ELITE_ADJUSTMENT, arg0_100.chapter)
 			end)
 		end
