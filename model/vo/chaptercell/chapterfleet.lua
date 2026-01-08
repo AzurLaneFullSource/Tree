@@ -11,6 +11,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.id = arg1_1.id
 	arg0_1.name = nil
 	arg0_1.fleetId = arg1_1.fleet_id
+	arg0_1.fleetType = arg1_1.fleetType
 
 	if arg1_1.fleet_id then
 		local var0_1 = getProxy(FleetProxy):getFleetById(arg1_1.fleet_id)
@@ -63,6 +64,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.rotation = Quaternion.identity
 	arg0_1.slowSpeedFactor = arg1_1.move_step_down
 	arg0_1.defeatEnemies = arg1_1.kill_count or 0
+	arg0_1.visibleLevel = arg1_1.vision_lv or 0
 
 	arg0_1:updateCommanders(arg1_1.commander_list)
 
@@ -73,244 +75,272 @@ end
 
 function var0_0.setup(arg0_6, arg1_6)
 	arg0_6.chapter = arg1_6
+
+	arg0_6:UpdateVisible()
 end
 
-function var0_0.fetchShipVO(arg0_7, arg1_7)
-	local var0_7
+function var0_0.UpdateVisible(arg0_7)
+	if arg0_7:getFleetType() == FleetType.Normal then
+		arg0_7.chapter:UpdateCellsVisible(arg0_7)
+	end
+end
 
-	if arg0_7.npcShipList[arg1_7] then
-		var0_7 = Clone(arg0_7.npcShipList[arg1_7])
+function var0_0.GetFogVisibleLV(arg0_8)
+	local var0_8 = #pg.chapter_model_fog.all
+
+	return arg0_8.visibleLevel, pg.chapter_model_fog[math.min(arg0_8.visibleLevel, var0_8)]
+end
+
+function var0_0.GetVisibleRange(arg0_9, arg1_9)
+	arg1_9 = arg1_9 or arg0_9.line
+
+	local var0_9, var1_9 = arg0_9:GetFogVisibleLV()
+
+	return underscore.map(var1_9.vision_range, function(arg0_10)
+		local var0_10, var1_10 = unpack(arg0_10)
+
+		return {
+			row = arg1_9.row + var0_10,
+			column = arg1_9.column + var1_10
+		}
+	end)
+end
+
+function var0_0.fetchShipVO(arg0_11, arg1_11)
+	local var0_11
+
+	if arg0_11.npcShipList[arg1_11] then
+		var0_11 = Clone(arg0_11.npcShipList[arg1_11])
 	else
-		var0_7 = getProxy(BayProxy):getShipById(arg1_7)
+		var0_11 = getProxy(BayProxy):getShipById(arg1_11)
 	end
 
-	if arg0_7.staticsReady then
-		var0_7.triggers.TeamNumbers = arg0_7.statics[var0_7:getTeamType()].count
+	if arg0_11.staticsReady then
+		var0_11.triggers.TeamNumbers = arg0_11.statics[var0_11:getTeamType()].count
 	end
 
-	return var0_7
+	return var0_11
 end
 
-function var0_0.updateNpcShipList(arg0_8, arg1_8)
-	arg0_8.npcShipList = {}
+function var0_0.updateNpcShipList(arg0_12, arg1_12)
+	arg0_12.npcShipList = {}
 
-	for iter0_8, iter1_8 in ipairs(arg1_8) do
-		arg0_8.npcShipList[iter1_8.id] = iter1_8
+	for iter0_12, iter1_12 in ipairs(arg1_12) do
+		arg0_12.npcShipList[iter1_12.id] = iter1_12
 	end
 end
 
-function var0_0.GetLine(arg0_9)
-	return arg0_9.line
+function var0_0.GetLine(arg0_13)
+	return arg0_13.line
 end
 
-function var0_0.SetLine(arg0_10, arg1_10)
-	arg0_10.line = {
-		row = arg1_10.row,
-		column = arg1_10.column
+function var0_0.SetLine(arg0_14, arg1_14)
+	arg0_14.line = {
+		row = arg1_14.row,
+		column = arg1_14.column
 	}
+
+	arg0_14:UpdateVisible()
 end
 
-function var0_0.updateCommanders(arg0_11, arg1_11)
-	arg0_11.commanders = {}
+function var0_0.updateCommanders(arg0_15, arg1_15)
+	arg0_15.commanders = {}
 
-	local var0_11 = getProxy(CommanderProxy)
+	local var0_15 = getProxy(CommanderProxy)
 
-	for iter0_11, iter1_11 in ipairs(arg1_11) do
-		local var1_11 = iter1_11.id
-		local var2_11 = var0_11:getCommanderById(var1_11)
+	for iter0_15, iter1_15 in ipairs(arg1_15) do
+		local var1_15 = iter1_15.id
+		local var2_15 = var0_15:getCommanderById(var1_15)
 
-		if var2_11 then
-			arg0_11.commanders[iter1_11.pos] = var2_11
+		if var2_15 then
+			arg0_15.commanders[iter1_15.pos] = var2_15
 		end
 	end
 end
 
-function var0_0.getCommanders(arg0_12)
-	return arg0_12.commanders or {}
+function var0_0.getCommanders(arg0_16)
+	return arg0_16.commanders or {}
 end
 
-function var0_0.prepareShips(arg0_13, arg1_13)
-	arg0_13.statics = {}
-	arg0_13.statics[TeamType.Vanguard] = {
+function var0_0.prepareShips(arg0_17, arg1_17)
+	arg0_17.statics = {}
+	arg0_17.statics[TeamType.Vanguard] = {
 		count = 0
 	}
-	arg0_13.statics[TeamType.Main] = {
+	arg0_17.statics[TeamType.Main] = {
 		count = 0
 	}
-	arg0_13.statics[TeamType.Submarine] = {
+	arg0_17.statics[TeamType.Submarine] = {
 		count = 0
 	}
 
-	_.each(arg1_13 or {}, function(arg0_14)
-		local var0_14 = arg0_13:fetchShipVO(arg0_14.id)
+	_.each(arg1_17 or {}, function(arg0_18)
+		local var0_18 = arg0_17:fetchShipVO(arg0_18.id)
 
-		if var0_14 then
-			local var1_14 = arg0_13.statics[var0_14:getTeamType()]
+		if var0_18 then
+			local var1_18 = arg0_17.statics[var0_18:getTeamType()]
 
-			var1_14.count = var1_14.count + 1
-		end
-	end)
-
-	arg0_13.staticsReady = true
-end
-
-function var0_0.updateShips(arg0_15, arg1_15)
-	arg0_15[TeamType.Vanguard] = {}
-	arg0_15[TeamType.Main] = {}
-	arg0_15[TeamType.Submarine] = {}
-	arg0_15.ships = {}
-
-	_.each(arg1_15 or {}, function(arg0_16)
-		local var0_16 = arg0_15:fetchShipVO(arg0_16.id)
-
-		if var0_16 then
-			var0_16.hpRant = arg0_16.hp_rant
-			arg0_15.ships[var0_16.id] = var0_16
-
-			table.insert(arg0_15[var0_16:getTeamType()], var0_16)
+			var1_18.count = var1_18.count + 1
 		end
 	end)
-	arg0_15:ResortShips()
+
+	arg0_17.staticsReady = true
 end
 
-function var0_0.ResortShips(arg0_17)
-	local var0_17 = {
+function var0_0.updateShips(arg0_19, arg1_19)
+	arg0_19[TeamType.Vanguard] = {}
+	arg0_19[TeamType.Main] = {}
+	arg0_19[TeamType.Submarine] = {}
+	arg0_19.ships = {}
+
+	_.each(arg1_19 or {}, function(arg0_20)
+		local var0_20 = arg0_19:fetchShipVO(arg0_20.id)
+
+		if var0_20 then
+			var0_20.hpRant = arg0_20.hp_rant
+			arg0_19.ships[var0_20.id] = var0_20
+
+			table.insert(arg0_19[var0_20:getTeamType()], var0_20)
+		end
+	end)
+	arg0_19:ResortShips()
+end
+
+function var0_0.ResortShips(arg0_21)
+	local var0_21 = {
 		TeamType.Vanguard,
 		TeamType.Main,
 		TeamType.Submarine
 	}
 
-	_.each(var0_17, function(arg0_18)
-		local var0_18 = arg0_17[arg0_18]
-		local var1_18 = {}
+	_.each(var0_21, function(arg0_22)
+		local var0_22 = arg0_21[arg0_22]
+		local var1_22 = {}
 
-		table.Ipairs(var0_18, function(arg0_19, arg1_19)
-			var1_18[arg1_19] = arg0_19
+		table.Ipairs(var0_22, function(arg0_23, arg1_23)
+			var1_22[arg1_23] = arg0_23
 		end)
-		table.sort(var0_18, CompareFuncs({
-			function(arg0_20)
-				return arg0_20.hpRant > 0 and 0 or 1
+		table.sort(var0_22, CompareFuncs({
+			function(arg0_24)
+				return arg0_24.hpRant > 0 and 0 or 1
 			end,
-			function(arg0_21)
-				return var1_18[arg0_21]
+			function(arg0_25)
+				return var1_22[arg0_25]
 			end
 		}))
 	end)
 end
 
-function var0_0.getTeamByName(arg0_22, arg1_22)
-	local var0_22 = {}
-	local var1_22 = arg0_22[arg1_22]
+function var0_0.getTeamByName(arg0_26, arg1_26)
+	local var0_26 = {}
+	local var1_26 = arg0_26[arg1_26]
 
-	for iter0_22, iter1_22 in ipairs(var1_22) do
-		table.insert(var0_22, iter1_22.id)
+	for iter0_26, iter1_26 in ipairs(var1_26) do
+		table.insert(var0_26, iter1_26.id)
 	end
 
-	return var0_22
+	return var0_26
 end
 
-function var0_0.flushShips(arg0_23)
-	local var0_23 = getProxy(FleetProxy):getFleetById(arg0_23.fleetId)
+function var0_0.flushShips(arg0_27)
+	local var0_27 = getProxy(FleetProxy):getFleetById(arg0_27.fleetId)
 
-	arg0_23.name = var0_23 and var0_23.name ~= "" and var0_23.name or Fleet.DEFAULT_NAME[arg0_23.fleetId] or Fleet.DEFAULT_NAME[arg0_23.id]
+	arg0_27.name = var0_27 and var0_27.name ~= "" and var0_27.name or Fleet.DEFAULT_NAME[arg0_27.fleetId] or Fleet.DEFAULT_NAME[arg0_27.id]
 
-	local var1_23 = _.keys(arg0_23.ships)
+	local var1_27 = _.keys(arg0_27.ships)
 
-	for iter0_23, iter1_23 in ipairs(var1_23) do
-		local var2_23 = arg0_23:fetchShipVO(iter1_23)
+	for iter0_27, iter1_27 in ipairs(var1_27) do
+		local var2_27 = arg0_27:fetchShipVO(iter1_27)
 
-		if var2_23 then
-			var2_23.hpRant = arg0_23.ships[iter1_23].hpRant
+		if var2_27 then
+			var2_27.hpRant = arg0_27.ships[iter1_27].hpRant
 		end
 
-		arg0_23.ships[iter1_23] = var2_23
+		arg0_27.ships[iter1_27] = var2_27
 	end
 
-	local var3_23 = {}
+	local var3_27 = {}
 
-	_.each(arg0_23[TeamType.Vanguard], function(arg0_24)
-		if arg0_23.ships[arg0_24.id] then
-			table.insert(var3_23, arg0_23.ships[arg0_24.id])
-		end
-	end)
-
-	arg0_23[TeamType.Vanguard] = var3_23
-
-	local var4_23 = {}
-
-	_.each(arg0_23[TeamType.Main], function(arg0_25)
-		if arg0_23.ships[arg0_25.id] then
-			table.insert(var4_23, arg0_23.ships[arg0_25.id])
+	_.each(arg0_27[TeamType.Vanguard], function(arg0_28)
+		if arg0_27.ships[arg0_28.id] then
+			table.insert(var3_27, arg0_27.ships[arg0_28.id])
 		end
 	end)
 
-	arg0_23[TeamType.Main] = var4_23
+	arg0_27[TeamType.Vanguard] = var3_27
 
-	local var5_23 = {}
+	local var4_27 = {}
 
-	_.each(arg0_23[TeamType.Submarine], function(arg0_26)
-		if arg0_23.ships[arg0_26.id] then
-			table.insert(var5_23, arg0_23.ships[arg0_26.id])
+	_.each(arg0_27[TeamType.Main], function(arg0_29)
+		if arg0_27.ships[arg0_29.id] then
+			table.insert(var4_27, arg0_27.ships[arg0_29.id])
 		end
 	end)
 
-	arg0_23[TeamType.Submarine] = var5_23
+	arg0_27[TeamType.Main] = var4_27
+
+	local var5_27 = {}
+
+	_.each(arg0_27[TeamType.Submarine], function(arg0_30)
+		if arg0_27.ships[arg0_30.id] then
+			table.insert(var5_27, arg0_27.ships[arg0_30.id])
+		end
+	end)
+
+	arg0_27[TeamType.Submarine] = var5_27
 end
 
-function var0_0.updateShipHp(arg0_27, arg1_27, arg2_27)
-	local var0_27 = arg0_27.ships[arg1_27]
+function var0_0.updateShipHp(arg0_31, arg1_31, arg2_31)
+	local var0_31 = arg0_31.ships[arg1_31]
 
-	if var0_27 then
-		var0_27.hpChange = arg2_27 - var0_27.hpRant
-		var0_27.hpRant = arg2_27
+	if var0_31 then
+		var0_31.hpChange = arg2_31 - var0_31.hpRant
+		var0_31.hpRant = arg2_31
 
-		arg0_27:ResortShips()
+		arg0_31:ResortShips()
 	end
 end
 
-function var0_0.getShip(arg0_28, arg1_28)
-	return arg0_28.ships[arg1_28]
+function var0_0.getShip(arg0_32, arg1_32)
+	return arg0_32.ships[arg1_32]
 end
 
-function var0_0.getShips(arg0_29, arg1_29)
-	local var0_29 = {}
-	local var1_29 = arg0_29:getFleetType()
+function var0_0.getShips(arg0_33, arg1_33)
+	local var0_33 = {}
+	local var1_33 = arg0_33:getFleetType()
 
-	if var1_29 == FleetType.Normal then
-		_.each(arg0_29:getShipsByTeam(TeamType.Main, arg1_29), function(arg0_30)
-			table.insert(var0_29, arg0_30)
-		end)
-		_.each(arg0_29:getShipsByTeam(TeamType.Vanguard, arg1_29), function(arg0_31)
-			table.insert(var0_29, arg0_31)
-		end)
-	elseif var1_29 == FleetType.Submarine then
-		_.each(arg0_29:getShipsByTeam(TeamType.Submarine, arg1_29), function(arg0_32)
-			table.insert(var0_29, arg0_32)
-		end)
-	elseif var1_29 == FleetType.Support then
-		_.each(arg0_29:getShipsByTeam(TeamType.Main, arg1_29), function(arg0_33)
-			table.insert(var0_29, arg0_33)
-		end)
+	if var1_33 == FleetType.Normal then
+		table.insertto(var0_33, arg0_33:getShipsByTeam(TeamType.Main, arg1_33))
+		table.insertto(var0_33, arg0_33:getShipsByTeam(TeamType.Vanguard, arg1_33))
+	elseif var1_33 == FleetType.Submarine then
+		table.insertto(var0_33, arg0_33:getShipsByTeam(TeamType.Submarine, arg1_33))
+	elseif var1_33 == FleetType.Support then
+		for iter0_33, iter1_33 in ipairs({
+			TeamType.Main,
+			TeamType.Vanguard,
+			TeamType.Submarine
+		}) do
+			table.insertto(var0_33, arg0_33:getShipsByTeam(iter1_33, arg1_33))
+		end
 	end
 
-	return var0_29
+	return var0_33
 end
 
 function var0_0.getShipsByTeam(arg0_34, arg1_34, arg2_34)
 	local var0_34 = {}
+	local var1_34 = {}
 
 	for iter0_34, iter1_34 in ipairs(arg0_34[arg1_34]) do
 		if iter1_34.hpRant > 0 then
-			var0_34[#var0_34 + 1] = iter1_34
+			table.insert(var0_34, iter1_34)
+		else
+			table.insert(var1_34, iter1_34)
 		end
 	end
 
 	if arg2_34 then
-		for iter2_34, iter3_34 in ipairs(arg0_34[arg1_34]) do
-			if iter3_34.hpRant <= 0 then
-				var0_34[#var0_34 + 1] = iter3_34
-			end
-		end
+		table.insertto(var0_34, var1_34)
 	end
 
 	return var0_34
@@ -514,71 +544,79 @@ function var0_0.getAntiAircraftSums(arg0_51)
 	return (_.reduce(arg0_51:getShips(false), 0, var0_51))
 end
 
-function var0_0.getShipAmmo(arg0_53)
-	local var0_53 = 0
-
-	if arg0_53:getFleetType() == FleetType.Normal then
-		for iter0_53, iter1_53 in pairs(arg0_53.ships) do
-			var0_53 = math.max(var0_53, iter1_53:getShipAmmo())
-		end
-	elseif arg0_53:getFleetType() == FleetType.Submarine then
-		for iter2_53, iter3_53 in pairs(arg0_53.ships) do
-			var0_53 = var0_53 + iter3_53:getShipAmmo()
-		end
-	elseif arg0_53:getFleetType() == FleetType.Support then
-		var0_53 = 0
+function var0_0.getAirSums(arg0_53, arg1_53)
+	local function var0_53(arg0_54, arg1_54)
+		return arg0_54 + arg1_54:getProperties(arg0_53:getCommanders())[AttributeType.Air]
 	end
 
-	return var0_53
+	return (_.reduce(arg0_53:getShips(arg1_53), 0, var0_53))
 end
 
-function var0_0.clearShipHpChange(arg0_54)
-	for iter0_54, iter1_54 in pairs(arg0_54.ships) do
-		arg0_54.ships[iter1_54.id].hpChange = 0
-	end
-end
-
-function var0_0.getEquipAmbushRateReduce(arg0_55)
+function var0_0.getShipAmmo(arg0_55)
 	local var0_55 = 0
 
-	for iter0_55, iter1_55 in pairs(arg0_55.ships) do
-		for iter2_55, iter3_55 in pairs(iter1_55:getActiveEquipments()) do
-			if iter3_55 then
-				var0_55 = math.max(var0_55, iter3_55:getConfig("equip_parameters").ambush_extra or 0)
-			end
+	if arg0_55:getFleetType() == FleetType.Normal then
+		for iter0_55, iter1_55 in pairs(arg0_55.ships) do
+			var0_55 = math.max(var0_55, iter1_55:getShipAmmo())
 		end
+	elseif arg0_55:getFleetType() == FleetType.Submarine then
+		for iter2_55, iter3_55 in pairs(arg0_55.ships) do
+			var0_55 = var0_55 + iter3_55:getShipAmmo()
+		end
+	elseif arg0_55:getFleetType() == FleetType.Support then
+		var0_55 = 0
 	end
 
-	return var0_55 / 10000
+	return var0_55
 end
 
-function var0_0.getEquipDodgeRateUp(arg0_56)
-	local var0_56 = 0
-
+function var0_0.clearShipHpChange(arg0_56)
 	for iter0_56, iter1_56 in pairs(arg0_56.ships) do
-		for iter2_56, iter3_56 in pairs(iter1_56:getActiveEquipments()) do
-			if iter3_56 then
-				var0_56 = math.max(var0_56, iter3_56:getConfig("equip_parameters").avoid_extra or 0)
+		arg0_56.ships[iter1_56.id].hpChange = 0
+	end
+end
+
+function var0_0.getEquipAmbushRateReduce(arg0_57)
+	local var0_57 = 0
+
+	for iter0_57, iter1_57 in pairs(arg0_57.ships) do
+		for iter2_57, iter3_57 in pairs(iter1_57:getActiveEquipments()) do
+			if iter3_57 then
+				var0_57 = math.max(var0_57, iter3_57:getConfig("equip_parameters").ambush_extra or 0)
 			end
 		end
 	end
 
-	return var0_56 / 10000
+	return var0_57 / 10000
 end
 
-function var0_0.isFormationDiffWith(arg0_57, arg1_57)
-	local var0_57 = {
+function var0_0.getEquipDodgeRateUp(arg0_58)
+	local var0_58 = 0
+
+	for iter0_58, iter1_58 in pairs(arg0_58.ships) do
+		for iter2_58, iter3_58 in pairs(iter1_58:getActiveEquipments()) do
+			if iter3_58 then
+				var0_58 = math.max(var0_58, iter3_58:getConfig("equip_parameters").avoid_extra or 0)
+			end
+		end
+	end
+
+	return var0_58 / 10000
+end
+
+function var0_0.isFormationDiffWith(arg0_59, arg1_59)
+	local var0_59 = {
 		TeamType.Main,
 		TeamType.Vanguard,
 		TeamType.Submarine
 	}
 
-	for iter0_57, iter1_57 in ipairs(var0_57) do
-		local var1_57 = arg0_57[iter1_57]
-		local var2_57 = arg1_57[iter1_57]
+	for iter0_59, iter1_59 in ipairs(var0_59) do
+		local var1_59 = arg0_59[iter1_59]
+		local var2_59 = arg1_59[iter1_59]
 
-		for iter2_57 = 1, math.max(#var1_57, #var2_57) do
-			if var1_57[iter2_57] ~= var2_57[iter2_57] and (var1_57[iter2_57] == nil or var2_57[iter2_57] == nil or var1_57[iter2_57].id ~= var2_57[iter2_57].id) then
+		for iter2_59 = 1, math.max(#var1_59, #var2_59) do
+			if var1_59[iter2_59] ~= var2_59[iter2_59] and (var1_59[iter2_59] == nil or var2_59[iter2_59] == nil or var1_59[iter2_59].id ~= var2_59[iter2_59].id) then
 				return true
 			end
 		end
@@ -587,184 +625,184 @@ function var0_0.isFormationDiffWith(arg0_57, arg1_57)
 	return false
 end
 
-function var0_0.getShipIds(arg0_58)
-	local var0_58 = {}
-	local var1_58 = arg0_58:getFleetType()
+function var0_0.getShipIds(arg0_60)
+	local var0_60 = {}
+	local var1_60 = arg0_60:getFleetType()
 
-	if var1_58 == FleetType.Normal then
-		_.each(arg0_58[TeamType.Main], function(arg0_59)
-			table.insert(var0_58, arg0_59.id)
+	if var1_60 == FleetType.Normal then
+		_.each(arg0_60[TeamType.Main], function(arg0_61)
+			table.insert(var0_60, arg0_61.id)
 		end)
-		_.each(arg0_58[TeamType.Vanguard], function(arg0_60)
-			table.insert(var0_58, arg0_60.id)
+		_.each(arg0_60[TeamType.Vanguard], function(arg0_62)
+			table.insert(var0_60, arg0_62.id)
 		end)
-	elseif var1_58 == FleetType.Submarine then
-		_.each(arg0_58[TeamType.Submarine], function(arg0_61)
-			table.insert(var0_58, arg0_61.id)
+	elseif var1_60 == FleetType.Submarine then
+		_.each(arg0_60[TeamType.Submarine], function(arg0_63)
+			table.insert(var0_60, arg0_63.id)
 		end)
-	elseif var1_58 == FleetType.Support then
-		for iter0_58, iter1_58 in pairs(arg0_58.ships) do
-			table.insert(var0_58, iter1_58.id)
+	elseif var1_60 == FleetType.Support then
+		for iter0_60, iter1_60 in pairs(arg0_60.ships) do
+			table.insert(var0_60, iter1_60.id)
 		end
 	end
 
-	return var0_58
+	return var0_60
 end
 
-function var0_0.containsSameKind(arg0_62, arg1_62)
-	return arg1_62 and _.any(_.values(arg0_62.ships), function(arg0_63)
-		return arg1_62:isSameKind(arg0_63)
+function var0_0.containsSameKind(arg0_64, arg1_64)
+	return arg1_64 and _.any(_.values(arg0_64.ships), function(arg0_65)
+		return arg1_64:isSameKind(arg0_65)
 	end)
 end
 
-function var0_0.increaseSlowSpeedFactor(arg0_64)
-	arg0_64.slowSpeedFactor = arg0_64.slowSpeedFactor + 1
+function var0_0.increaseSlowSpeedFactor(arg0_66)
+	arg0_66.slowSpeedFactor = arg0_66.slowSpeedFactor + 1
 end
 
-function var0_0.getSpeed(arg0_65)
-	local var0_65 = arg0_65:triggerSkill(FleetSkill.TypeMoveSpeed) or 0
+function var0_0.getSpeed(arg0_67)
+	local var0_67 = arg0_67:triggerSkill(FleetSkill.TypeMoveSpeed) or 0
 
-	return math.max(arg0_65.baseSpeed + var0_65 - arg0_65.slowSpeedFactor, 1)
+	return math.max(arg0_67.baseSpeed + var0_67 - arg0_67.slowSpeedFactor, 1)
 end
 
-function var0_0.calcBaseSpeed(arg0_66)
-	local var0_66 = arg0_66:getShips(true)
-	local var1_66 = _.reduce(var0_66, 0, function(arg0_67, arg1_67)
-		return arg0_67 + arg1_67:getProperties()[AttributeType.Speed]
-	end) / #var0_66 * (1 - 0.02 * (#var0_66 - 1))
-	local var2_66
-	local var3_66
-	local var4_66 = arg0_66:getFleetType()
+function var0_0.calcBaseSpeed(arg0_68)
+	local var0_68 = arg0_68:getShips(true)
+	local var1_68 = _.reduce(var0_68, 0, function(arg0_69, arg1_69)
+		return arg0_69 + arg1_69:getProperties()[AttributeType.Speed]
+	end) / #var0_68 * (1 - 0.02 * (#var0_68 - 1))
+	local var2_68
+	local var3_68
+	local var4_68 = arg0_68:getFleetType()
 
-	if var4_66 == FleetType.Normal then
-		var2_66 = pg.gameset.chapter_move_speed_1.key_value
-		var3_66 = pg.gameset.chapter_move_speed_2.key_value
-	elseif var4_66 == FleetType.Submarine then
-		var2_66 = pg.gameset.submarine_move_speed_1.key_value
-		var3_66 = pg.gameset.submarine_move_speed_2.key_value
-	elseif var4_66 == FleetType.Support then
-		var2_66 = pg.gameset.chapter_move_speed_1.key_value
-		var3_66 = pg.gameset.chapter_move_speed_2.key_value
+	if var4_68 == FleetType.Normal then
+		var2_68 = pg.gameset.chapter_move_speed_1.key_value
+		var3_68 = pg.gameset.chapter_move_speed_2.key_value
+	elseif var4_68 == FleetType.Submarine then
+		var2_68 = pg.gameset.submarine_move_speed_1.key_value
+		var3_68 = pg.gameset.submarine_move_speed_2.key_value
+	elseif var4_68 == FleetType.Support then
+		var2_68 = pg.gameset.chapter_move_speed_1.key_value
+		var3_68 = pg.gameset.chapter_move_speed_2.key_value
 	end
 
-	if var1_66 <= var2_66 then
+	if var1_68 <= var2_68 then
 		return 2
-	elseif var3_66 < var1_66 then
+	elseif var3_68 < var1_68 then
 		return 4
 	else
 		return 3
 	end
 end
 
-function var0_0.getDefeatCount(arg0_68)
-	return arg0_68.defeatEnemies
+function var0_0.getDefeatCount(arg0_70)
+	return arg0_70.defeatEnemies
 end
 
-function var0_0.getStrategies(arg0_69)
-	local var0_69 = arg0_69:getOwnStrategies()
+function var0_0.getStrategies(arg0_71)
+	local var0_71 = arg0_71:getOwnStrategies()
 
-	for iter0_69, iter1_69 in pairs(arg0_69.stgPicked) do
-		var0_69[iter0_69] = (var0_69[iter0_69] or 0) + iter1_69
+	for iter0_71, iter1_71 in pairs(arg0_71.stgPicked) do
+		var0_71[iter0_71] = (var0_71[iter0_71] or 0) + iter1_71
 	end
 
-	for iter2_69, iter3_69 in pairs(arg0_69.stgUsed) do
-		if var0_69[iter2_69] then
-			var0_69[iter2_69] = math.max(0, var0_69[iter2_69] - iter3_69)
+	for iter2_71, iter3_71 in pairs(arg0_71.stgUsed) do
+		if var0_71[iter2_71] then
+			var0_71[iter2_71] = math.max(0, var0_71[iter2_71] - iter3_71)
 		end
 	end
 
-	for iter4_69, iter5_69 in pairs(ChapterConst.StrategyPresents) do
-		var0_69[iter5_69] = var0_69[iter5_69] or 0
+	for iter4_71, iter5_71 in pairs(ChapterConst.StrategyPresents) do
+		var0_71[iter5_71] = var0_71[iter5_71] or 0
 	end
 
-	local var1_69 = {}
+	local var1_71 = {}
 
-	for iter6_69, iter7_69 in pairs(var0_69) do
-		table.insert(var1_69, {
-			id = iter6_69,
-			count = iter7_69
+	for iter6_71, iter7_71 in pairs(var0_71) do
+		table.insert(var1_71, {
+			id = iter6_71,
+			count = iter7_71
 		})
 	end
 
-	return _.sort(var1_69, function(arg0_70, arg1_70)
-		return arg0_70.id < arg1_70.id
+	return _.sort(var1_71, function(arg0_72, arg1_72)
+		return arg0_72.id < arg1_72.id
 	end)
 end
 
-function var0_0.getOwnStrategies(arg0_71)
-	local var0_71 = {}
-	local var1_71 = arg0_71:getShips(true)
+function var0_0.getOwnStrategies(arg0_73)
+	local var0_73 = {}
+	local var1_73 = arg0_73:getShips(true)
 
-	_.each(var1_71, function(arg0_72)
-		local var0_72 = arg0_72:getConfig("strategy_list")
+	_.each(var1_73, function(arg0_74)
+		local var0_74 = arg0_74:getConfig("strategy_list")
 
-		_.each(var0_72, function(arg0_73)
-			var0_71[arg0_73[1]] = (var0_71[arg0_73[1]] or 0) + arg0_73[2]
+		_.each(var0_74, function(arg0_75)
+			var0_73[arg0_75[1]] = (var0_73[arg0_75[1]] or 0) + arg0_75[2]
 		end)
 	end)
 
-	local var2_71 = arg0_71:triggerSkill(FleetSkill.TypeStrategy)
+	local var2_73 = arg0_73:triggerSkill(FleetSkill.TypeStrategy)
 
-	if var2_71 then
-		_.each(var2_71, function(arg0_74)
-			var0_71[arg0_74[1]] = (var0_71[arg0_74[1]] or 0) + arg0_74[2]
+	if var2_73 then
+		_.each(var2_73, function(arg0_76)
+			var0_73[arg0_76[1]] = (var0_73[arg0_76[1]] or 0) + arg0_76[2]
 		end)
 	end
 
-	return var0_71
+	return var0_73
 end
 
-function var0_0.achievedStrategy(arg0_75, arg1_75, arg2_75)
-	arg0_75.stgPicked[arg1_75] = (arg0_75.stgPicked[arg1_75] or 0) + arg2_75
+function var0_0.achievedStrategy(arg0_77, arg1_77, arg2_77)
+	arg0_77.stgPicked[arg1_77] = (arg0_77.stgPicked[arg1_77] or 0) + arg2_77
 end
 
-function var0_0.consumeOneStrategy(arg0_76, arg1_76)
-	local var0_76 = arg0_76:getOwnStrategies()
+function var0_0.consumeOneStrategy(arg0_78, arg1_78)
+	local var0_78 = arg0_78:getOwnStrategies()
 
-	if var0_76[arg1_76] and var0_76[arg1_76] > 0 then
-		local var1_76 = arg0_76.stgUsed
+	if var0_78[arg1_78] and var0_78[arg1_78] > 0 then
+		local var1_78 = arg0_78.stgUsed
 
-		var1_76[arg1_76] = (var1_76[arg1_76] or 0) + 1
+		var1_78[arg1_78] = (var1_78[arg1_78] or 0) + 1
 	else
-		local var2_76 = arg0_76.stgPicked
+		local var2_78 = arg0_78.stgPicked
 
-		if var2_76[arg1_76] then
-			var2_76[arg1_76] = math.max(0, var2_76[arg1_76] - 1)
+		if var2_78[arg1_78] then
+			var2_78[arg1_78] = math.max(0, var2_78[arg1_78] - 1)
 		end
 	end
 end
 
-function var0_0.GetStrategyCount(arg0_77, arg1_77)
-	local var0_77 = arg0_77:getStrategies()
-	local var1_77 = _.detect(var0_77, function(arg0_78)
-		return arg0_78.id == arg1_77
+function var0_0.GetStrategyCount(arg0_79, arg1_79)
+	local var0_79 = arg0_79:getStrategies()
+	local var1_79 = _.detect(var0_79, function(arg0_80)
+		return arg0_80.id == arg1_79
 	end)
 
-	return var1_77 and var1_77.count or 0
+	return var1_79 and var1_79.count or 0
 end
 
-function var0_0.getFormationStg(arg0_79)
-	return PlayerPrefs.GetInt("team_formation_" .. arg0_79.id, 1)
+function var0_0.getFormationStg(arg0_81)
+	return PlayerPrefs.GetInt("team_formation_" .. arg0_81.id, 1)
 end
 
-function var0_0.canUseStrategy(arg0_80, arg1_80)
-	local var0_80 = pg.strategy_data_template[arg1_80.id]
+function var0_0.canUseStrategy(arg0_82, arg1_82)
+	local var0_82 = pg.strategy_data_template[arg1_82.id]
 
-	if var0_80.type == ChapterConst.StgTypeForm then
-		if arg0_80:getFormationStg() == var0_80.id then
+	if var0_82.type == ChapterConst.StgTypeForm then
+		if arg0_82:getFormationStg() == var0_82.id then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("level_scene_formation_active_already"))
 
 			return false
 		end
-	elseif var0_80.type == ChapterConst.StgTypeConsume or var0_80.type == ChapterConst.StgTypeBindSupportConsume then
-		if arg1_80.count <= 0 then
+	elseif var0_82.type == ChapterConst.StgTypeConsume or var0_82.type == ChapterConst.StgTypeBindSupportConsume then
+		if arg1_82.count <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("level_scene_not_enough"))
 
 			return false
 		end
 
-		if var0_80.id == ChapterConst.StrategyRepair and _.all(arg0_80:getShips(true), function(arg0_81)
-			return arg0_81.hpRant == 0 or arg0_81.hpRant == 10000
+		if var0_82.id == ChapterConst.StrategyRepair and _.all(arg0_82:getShips(true), function(arg0_83)
+			return arg0_83.hpRant == 0 or arg0_83.hpRant == 10000
 		end) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("level_scene_full_hp"))
 
@@ -775,182 +813,168 @@ function var0_0.canUseStrategy(arg0_80, arg1_80)
 	return true
 end
 
-function var0_0.getNextStgUser(arg0_82, arg1_82)
-	return arg0_82.id
+function var0_0.getNextStgUser(arg0_84, arg1_84)
+	return arg0_84.id
 end
 
-function var0_0.GetStatusStrategy(arg0_83)
-	return arg0_83.stgIds
+function var0_0.GetStatusStrategy(arg0_85)
+	return arg0_85.stgIds
 end
 
-function var0_0.getFleetType(arg0_84)
-	local var0_84 = 0
+function var0_0.getFleetType(arg0_86)
+	assert(arg0_86.fleetType)
 
-	for iter0_84, iter1_84 in pairs(arg0_84.ships) do
-		local var1_84 = iter1_84:getTeamType()
-
-		if var1_84 == TeamType.Submarine then
-			return FleetType.Submarine
-		elseif var1_84 == TeamType.Vanguard then
-			var0_84 = var0_84 + 1
-		end
-	end
-
-	if var0_84 == 0 then
-		return FleetType.Support
-	else
-		return FleetType.Normal
-	end
+	return arg0_86.fleetType
 end
 
-function var0_0.canClearTorpedo(arg0_85)
-	local var0_85 = arg0_85:getShipsByTeam(TeamType.Vanguard, true)
+function var0_0.canClearTorpedo(arg0_87)
+	local var0_87 = arg0_87:getShipsByTeam(TeamType.Vanguard, true)
 
-	return _.any(var0_85, function(arg0_86)
-		return ShipType.IsTypeQuZhu(arg0_86:getShipType())
+	return _.any(var0_87, function(arg0_88)
+		return ShipType.IsTypeQuZhu(arg0_88:getShipType())
 	end)
 end
 
-function var0_0.getHuntingRange(arg0_87, arg1_87)
-	if arg0_87:getFleetType() ~= FleetType.Submarine then
+function var0_0.getHuntingRange(arg0_89, arg1_89)
+	if arg0_89:getFleetType() ~= FleetType.Submarine then
 		assert(false)
 
 		return {}
 	end
 
-	local var0_87 = arg1_87 or arg0_87.startPos
-	local var1_87 = arg0_87:getShipsByTeam(TeamType.Submarine, true)[1]
-	local var2_87 = arg0_87:triggerSkill(FleetSkill.TypeHuntingLv) or 0
-	local var3_87 = var1_87:getHuntingRange(var1_87:getHuntingLv() + var2_87)
+	local var0_89 = arg1_89 or arg0_89.startPos
+	local var1_89 = arg0_89:getShipsByTeam(TeamType.Submarine, true)[1]
+	local var2_89 = arg0_89:triggerSkill(FleetSkill.TypeHuntingLv) or 0
+	local var3_89 = var1_89:getHuntingRange(var1_89:getHuntingLv() + var2_89)
 
-	return (_.map(var3_87, function(arg0_88)
+	return (_.map(var3_89, function(arg0_90)
 		return {
-			row = var0_87.row + arg0_88[1],
-			column = var0_87.column + arg0_88[2]
+			row = var0_89.row + arg0_90[1],
+			column = var0_89.column + arg0_90[2]
 		}
 	end))
 end
 
-function var0_0.inHuntingRange(arg0_89, arg1_89, arg2_89)
-	return _.any(arg0_89:getHuntingRange(), function(arg0_90)
-		return arg0_90.row == arg1_89 and arg0_90.column == arg2_89
+function var0_0.inHuntingRange(arg0_91, arg1_91, arg2_91)
+	return _.any(arg0_91:getHuntingRange(), function(arg0_92)
+		return arg0_92.row == arg1_91 and arg0_92.column == arg2_91
 	end)
 end
 
-function var0_0.getSummonCost(arg0_91)
-	local var0_91 = arg0_91:getShips(false)
+function var0_0.getSummonCost(arg0_93)
+	local var0_93 = arg0_93:getShips(false)
 
-	return _.reduce(var0_91, 0, function(arg0_92, arg1_92)
-		return arg0_92 + arg1_92:getEndBattleExpend()
+	return _.reduce(var0_93, 0, function(arg0_94, arg1_94)
+		return arg0_94 + arg1_94:getEndBattleExpend()
 	end)
 end
 
-function var0_0.getMapAura(arg0_93)
-	local var0_93 = {}
+function var0_0.getMapAura(arg0_95)
+	local var0_95 = {}
 
-	for iter0_93, iter1_93 in pairs(arg0_93.ships) do
-		local var1_93 = iter1_93:getMapAuras()
+	for iter0_95, iter1_95 in pairs(arg0_95.ships) do
+		local var1_95 = iter1_95:getMapAuras()
 
-		for iter2_93, iter3_93 in ipairs(var1_93) do
-			table.insert(var0_93, iter3_93)
+		for iter2_95, iter3_95 in ipairs(var1_95) do
+			table.insert(var0_95, iter3_95)
 		end
 	end
 
-	return var0_93
+	return var0_95
 end
 
-function var0_0.getMapAid(arg0_94)
-	local var0_94 = {}
+function var0_0.getMapAid(arg0_96)
+	local var0_96 = {}
 
-	for iter0_94, iter1_94 in pairs(arg0_94.ships) do
-		local var1_94 = iter1_94:getMapAids()
+	for iter0_96, iter1_96 in pairs(arg0_96.ships) do
+		local var1_96 = iter1_96:getMapAids()
 
-		for iter2_94, iter3_94 in ipairs(var1_94) do
-			local var2_94 = var0_94[iter1_94] or {}
+		for iter2_96, iter3_96 in ipairs(var1_96) do
+			local var2_96 = var0_96[iter1_96] or {}
 
-			table.insert(var2_94, iter3_94)
+			table.insert(var2_96, iter3_96)
 
-			var0_94[iter1_94] = var2_94
+			var0_96[iter1_96] = var2_96
 		end
 	end
 
-	return var0_94
+	return var0_96
 end
 
-function var0_0.updateCommanderSkills(arg0_95)
-	local var0_95 = arg0_95:getCommanders()
+function var0_0.updateCommanderSkills(arg0_97)
+	local var0_97 = arg0_97:getCommanders()
 
-	for iter0_95, iter1_95 in pairs(var0_95) do
-		_.each(iter1_95:getSkills(), function(arg0_96)
-			_.each(arg0_96:getTacticSkill(), function(arg0_97)
-				table.insert(arg0_95.skills, FleetSkill.New(FleetSkill.SystemCommanderNeko, arg0_97))
+	for iter0_97, iter1_97 in pairs(var0_97) do
+		_.each(iter1_97:getSkills(), function(arg0_98)
+			_.each(arg0_98:getTacticSkill(), function(arg0_99)
+				table.insert(arg0_97.skills, FleetSkill.New(FleetSkill.SystemCommanderNeko, arg0_99))
 			end)
 		end)
 	end
 end
 
-function var0_0.getSkills(arg0_98)
-	return arg0_98.skills
+function var0_0.getSkills(arg0_100)
+	return arg0_100.skills
 end
 
-function var0_0.getSkill(arg0_99, arg1_99)
-	return _.detect(arg0_99:getSkills(), function(arg0_100)
-		return arg0_100.id == arg1_99
+function var0_0.getSkill(arg0_101, arg1_101)
+	return _.detect(arg0_101:getSkills(), function(arg0_102)
+		return arg0_102.id == arg1_101
 	end)
 end
 
-function var0_0.findSkills(arg0_101, arg1_101)
-	return _.filter(arg0_101:getSkills(), function(arg0_102)
-		return arg0_102:GetType() == arg1_101
+function var0_0.findSkills(arg0_103, arg1_103)
+	return _.filter(arg0_103:getSkills(), function(arg0_104)
+		return arg0_104:GetType() == arg1_103
 	end)
 end
 
-function var0_0.triggerSkill(arg0_103, arg1_103)
-	return arg0_103.chapter:triggerSkill(arg0_103, arg1_103)
+function var0_0.triggerSkill(arg0_105, arg1_105)
+	return arg0_105.chapter:triggerSkill(arg0_105, arg1_105)
 end
 
-function var0_0.findCommanderBySkillId(arg0_104, arg1_104)
-	local var0_104 = arg0_104:getCommanders()
+function var0_0.findCommanderBySkillId(arg0_106, arg1_106)
+	local var0_106 = arg0_106:getCommanders()
 
-	for iter0_104, iter1_104 in pairs(var0_104) do
-		if _.any(iter1_104:getSkills(), function(arg0_105)
-			return _.any(arg0_105:getTacticSkill(), function(arg0_106)
-				return arg0_106 == arg1_104
+	for iter0_106, iter1_106 in pairs(var0_106) do
+		if _.any(iter1_106:getSkills(), function(arg0_107)
+			return _.any(arg0_107:getTacticSkill(), function(arg0_108)
+				return arg0_108 == arg1_106
 			end)
 		end) then
-			return iter1_104
+			return iter1_106
 		end
 	end
 end
 
-function var0_0.getFleetAirDominanceValue(arg0_107)
-	local var0_107 = 0
+function var0_0.getFleetAirDominanceValue(arg0_109)
+	local var0_109 = 0
 
-	for iter0_107, iter1_107 in ipairs(arg0_107:getShips(false)) do
-		var0_107 = var0_107 + calcAirDominanceValue(iter1_107, arg0_107:getCommanders())
+	for iter0_109, iter1_109 in ipairs(arg0_109:getShips(false)) do
+		var0_109 = var0_109 + calcAirDominanceValue(iter1_109, arg0_109:getCommanders())
 	end
 
-	return var0_107
+	return var0_109
 end
 
-function var0_0.StaticTransformChapterFleet2Fleet(arg0_108, arg1_108)
-	local var0_108 = _.pluck(arg0_108:getShipsByTeam(TeamType.Vanguard, arg1_108), "id")
+function var0_0.StaticTransformChapterFleet2Fleet(arg0_110, arg1_110)
+	local var0_110 = _.pluck(arg0_110:getShipsByTeam(TeamType.Vanguard, arg1_110), "id")
 
-	table.insertto(var0_108, _.pluck(arg0_108:getShipsByTeam(TeamType.Main, arg1_108), "id"))
+	table.insertto(var0_110, _.pluck(arg0_110:getShipsByTeam(TeamType.Main, arg1_110), "id"))
 
-	local var1_108 = {}
+	local var1_110 = {}
 
-	for iter0_108, iter1_108 in pairs(arg0_108.commanders) do
-		table.insert(var1_108, {
-			pos = iter0_108,
-			id = iter1_108 and iter1_108.id
+	for iter0_110, iter1_110 in pairs(arg0_110.commanders) do
+		table.insert(var1_110, {
+			pos = iter0_110,
+			id = iter1_110 and iter1_110.id
 		})
 	end
 
 	return TypedFleet.New({
 		fleetType = FleetType.Normal,
-		ship_list = var0_108,
-		commanders = var1_108
+		ship_list = var0_110,
+		commanders = var1_110
 	})
 end
 

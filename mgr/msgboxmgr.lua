@@ -441,19 +441,6 @@ local function var9_0(arg0_17, arg1_17)
 	UpdateOwnDisplay(arg0_17._sigleItemPanel:Find("left/own"), var0_17)
 	RegisterDetailButton(arg0_17, arg0_17._sigleItemPanel:Find("left/detail"), var0_17)
 
-	if arg1_17.iconPreservedAspect then
-		local var14_17 = var1_17:Find("icon_bg/icon")
-		local var15_17 = var14_17:GetComponent(typeof(Image))
-
-		var14_17.pivot = Vector2(0.5, 1)
-
-		local var16_17 = var14_17.rect.width
-		local var17_17 = var15_17.preferredHeight / var15_17.preferredWidth * var16_17
-
-		var14_17.sizeDelta = Vector2(-4, var17_17 - var16_17 - 4)
-		var14_17.anchoredPosition = Vector2(0, -2)
-	end
-
 	if arg1_17.content and arg1_17.content ~= "" then
 		setText(var10_17, arg1_17.content)
 	elseif var0_17.type == DROP_TYPE_WORLD_COLLECTION then
@@ -469,10 +456,10 @@ local function var9_0(arg0_17, arg1_17)
 	setText(var11_17, arg1_17.subIntro or arg1_17.extendDesc or "")
 
 	if arg1_17.enabelYesBtn ~= nil then
-		local var18_17 = arg0_17._btnContainer:GetChild(1)
+		local var14_17 = arg0_17._btnContainer:GetChild(1)
 
-		setButtonEnabled(var18_17, arg1_17.enabelYesBtn)
-		eachChild(var18_17, function(arg0_22)
+		setButtonEnabled(var14_17, arg1_17.enabelYesBtn)
+		eachChild(var14_17, function(arg0_22)
 			local var0_22 = arg1_17.enabelYesBtn and 1 or 0.3
 
 			GetOrAddComponent(arg0_22, typeof(CanvasGroup)).alpha = var0_22
@@ -1292,13 +1279,6 @@ function var1_0.Clear(arg0_53)
 	SetCompomentEnabled(var0_53:Find("icon_bg"), typeof(Image), true)
 	SetCompomentEnabled(var0_53:Find("icon_bg/frame"), typeof(Image), true)
 	setActive(var0_53:Find("icon_bg/slv"), false)
-
-	local var1_53 = findTF(var0_53, "icon_bg/icon")
-
-	var1_53.pivot = Vector2(0.5, 0.5)
-	var1_53.sizeDelta = Vector2(-4, -4)
-	var1_53.anchoredPosition = Vector2(0, 0)
-
 	setActive(arg0_53.singleItemIntro, false)
 	setText(arg0_53._singleItemSubIntroTF, "")
 

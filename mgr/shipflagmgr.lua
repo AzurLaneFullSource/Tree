@@ -34,16 +34,36 @@ local var2_0 = {
 		local var1_5 = getProxy(ChapterProxy)
 		local var2_5 = getProxy(ActivityProxy)
 
-		if var1_5.mapEliteFleetCache then
-			for iter0_5, iter1_5 in pairs(var1_5.mapEliteFleetCache) do
-				assert(var0_0.expedition_data_by_map[iter0_5], "Missing Map Config " .. (iter0_5 or "NIL"))
+		if not var1_5.mapEliteFleetCache then
+			return {}, {}
+		end
 
-				local var3_5 = var0_0.expedition_data_by_map[iter0_5].on_activity
+		for iter0_5, iter1_5 in pairs(var1_5.mapEliteFleetCache) do
+			local var3_5 = checkExist(ChapterProxy.FormationToChapters[iter0_5], {
+				1
+			})
+			local var4_5 = var3_5 and var0_0.chapter_template[var3_5].map
 
-				if var3_5 == 0 or checkExist(var2_5:getActivityById(var3_5), {
+			if not var4_5 then
+				-- block empty
+			else
+				local var5_5 = var0_0.expedition_data_by_map[var4_5].on_activity or 0
+
+				if var5_5 == 0 or checkExist(var2_5:getActivityById(var5_5), {
 					"isEnd"
 				}) == false then
-					var0_5[iter0_5] = _.flatten(iter1_5)
+					local var6_5 = {}
+
+					for iter2_5, iter3_5 in ipairs({
+						iter1_5[FleetType.Normal],
+						iter1_5[FleetType.Submarine]
+					}) do
+						for iter4_5, iter5_5 in ipairs(iter3_5) do
+							table.insertto(var6_5, iter5_5[TeamType.FormShips])
+						end
+					end
+
+					var0_5[iter0_5] = var6_5
 				end
 			end
 		end
@@ -53,12 +73,34 @@ local var2_0 = {
 	inSupport = function()
 		local var0_6 = {}
 		local var1_6 = getProxy(ChapterProxy)
+		local var2_6 = getProxy(ActivityProxy)
 
-		if var1_6.mapSupportFleetCache then
-			for iter0_6, iter1_6 in pairs(var1_6.mapSupportFleetCache) do
-				assert(var0_0.expedition_data_by_map[iter0_6], "Missing Map Config " .. (iter0_6 or "NIL"))
+		if not var1_6.mapEliteFleetCache then
+			return {}, {}
+		end
 
-				var0_6[iter0_6] = _.flatten(iter1_6)
+		for iter0_6, iter1_6 in pairs(var1_6.mapEliteFleetCache) do
+			local var3_6 = checkExist(ChapterProxy.FormationToChapters[iter0_6], {
+				1
+			})
+			local var4_6 = var3_6 and var0_0.chapter_template[var3_6].map
+
+			if not var4_6 then
+				-- block empty
+			else
+				local var5_6 = var0_0.expedition_data_by_map[var4_6].on_activity or 0
+
+				if var5_6 == 0 or checkExist(var2_6:getActivityById(var5_6), {
+					"isEnd"
+				}) == false then
+					local var6_6 = {}
+
+					for iter2_6, iter3_6 in ipairs(iter1_6[FleetType.Support]) do
+						table.insertto(var6_6, iter3_6[TeamType.FormShips])
+					end
+
+					var0_6[iter0_6] = var6_6
+				end
 			end
 		end
 

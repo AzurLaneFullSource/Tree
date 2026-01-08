@@ -141,40 +141,11 @@ function var2_0.EnterBattle(arg0_9, arg1_9, arg2_9)
 
 	arg0_9._dataProxy = arg0_9:AddDataProxy(var0_0.Battle.BattleDataProxy.GetInstance())
 	arg0_9._uiMediator = arg0_9:AddMediator(var0_0.Battle.BattleUIMediator.New())
-
-	if arg1_9.battleType == SYSTEM_DUEL then
-		arg0_9._battleCommand = arg0_9:AddCommand(var0_0.Battle.BattleDuelArenaCommand.New())
-
-		arg0_9._battleCommand:ConfigBattleData(arg1_9)
-	elseif arg1_9.battleType == SYSTEM_CHALLENGE then
-		arg0_9._battleCommand = arg0_9:AddCommand(var0_0.Battle.BattleSingleChallengeCommand.New())
-
-		arg0_9._battleCommand:ConfigBattleData(arg1_9)
-	elseif arg1_9.battleType == SYSTEM_DODGEM then
-		arg0_9._battleCommand = arg0_9:AddCommand(var0_0.Battle.BattleDodgemCommand.New())
-	elseif arg1_9.battleType == SYSTEM_SUBMARINE_RUN then
-		arg0_9._battleCommand = arg0_9:AddCommand(var0_0.Battle.BattleSubmarineRunCommand.New())
-	elseif arg1_9.battleType == SYSTEM_SUB_ROUTINE then
-		arg0_9._battleCommand = arg0_9:AddCommand(var0_0.Battle.BattleSubRoutineCommand.New())
-	elseif arg1_9.battleType == SYSTEM_HP_SHARE_ACT_BOSS or arg1_9.battleType == SYSTEM_BOSS_EXPERIMENT then
-		arg0_9._battleCommand = arg0_9:AddCommand(var0_0.Battle.BattleInheritDungeonCommand.New())
-	elseif arg1_9.battleType == SYSTEM_WORLD_BOSS then
-		arg0_9._battleCommand = arg0_9:AddCommand(var0_0.Battle.BattleWorldBossCommand.New())
-	elseif arg1_9.battleType == SYSTEM_DEBUG then
-		arg0_9._battleCommand = arg0_9:AddCommand(var0_0.Battle.BattleDebugCommand.New())
-	elseif arg1_9.battleType == SYSTEM_AIRFIGHT then
-		arg0_9._battleCommand = arg0_9:AddCommand(var0_0.Battle.BattleAirFightCommand.New())
-	elseif arg1_9.battleType == SYSTEM_GUILD then
-		arg0_9._battleCommand = arg0_9:AddCommand(var0_0.Battle.BattleGuildBossCommand.New())
-	elseif arg1_9.battleType == SYSTEM_CARDPUZZLE then
-		arg0_9._battleCommand = arg0_9:AddCommand(var0_0.Battle.BattleCardPuzzleCommand.New())
-	elseif arg1_9.battleType == SYSTEM_BOSS_RUSH_COLLABRATE then
-		arg0_9._battleCommand = arg0_9:AddCommand(var0_0.Battle.BattleDALCollabSingleDungeonCommand.New())
-	else
-		arg0_9._battleCommand = arg0_9:AddCommand(var0_0.Battle.BattleSingleDungeonCommand.New())
-	end
-
 	arg0_9._battleType = arg1_9.battleType
+
+	local var0_9 = var0_0.Battle.BattleFacadeGate.CommandGates[arg0_9._battleType] or var0_0.Battle.BattleSingleDungeonCommand
+
+	arg0_9._battleCommand = arg0_9:AddCommand(var0_9.New())
 	arg0_9._sceneMediator = arg0_9:AddMediator(var0_0.Battle.BattleSceneMediator.New())
 	arg0_9._weaponCommand = arg0_9:AddCommand(var0_0.Battle.BattleControllerWeaponCommand.New())
 
@@ -377,7 +348,7 @@ function var2_0.reportDelayTimer(arg0_30, arg1_30, arg2_30)
 	arg0_30:RemoveAllTimer()
 	pg.TimeMgr.GetInstance():ResumeBattleTimer()
 
-	var0_30 = pg.TimeMgr.GetInstance():AddBattleTimer("", -1, arg2_30, var1_30)
+	var0_30 = pg.TimeMgr.GetInstance():AddBattleTimer("reportDelay", -1, arg2_30, var1_30)
 end
 
 function var2_0.SetTakeoverProcess(arg0_32, arg1_32)

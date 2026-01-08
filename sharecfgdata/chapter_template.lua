@@ -264,6 +264,7 @@ _G.pg.base.chapter_template[101] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[102] = {
@@ -641,6 +642,7 @@ _G.pg.base.chapter_template[102] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[103] = {
@@ -1052,6 +1054,7 @@ _G.pg.base.chapter_template[103] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[104] = {
@@ -1550,6 +1553,7 @@ _G.pg.base.chapter_template[104] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[201] = {
@@ -2136,6 +2140,7 @@ _G.pg.base.chapter_template[201] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[202] = {
@@ -2775,6 +2780,7 @@ _G.pg.base.chapter_template[202] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[203] = {
@@ -3391,6 +3397,7 @@ _G.pg.base.chapter_template[203] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[204] = {
@@ -3977,6 +3984,7 @@ _G.pg.base.chapter_template[204] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[301] = {
@@ -4584,6 +4592,7 @@ _G.pg.base.chapter_template[301] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[302] = {
@@ -5215,6 +5224,7 @@ _G.pg.base.chapter_template[302] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[303] = {
@@ -5841,6 +5851,7 @@ _G.pg.base.chapter_template[303] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[304] = {
@@ -6453,6 +6464,7 @@ _G.pg.base.chapter_template[304] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[401] = {
@@ -6984,6 +6996,7 @@ _G.pg.base.chapter_template[401] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[402] = {
@@ -7508,6 +7521,7 @@ _G.pg.base.chapter_template[402] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[403] = {
@@ -7977,6 +7991,7 @@ _G.pg.base.chapter_template[403] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[404] = {
@@ -8583,6 +8598,7 @@ _G.pg.base.chapter_template[404] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[501] = {
@@ -9194,6 +9210,7 @@ _G.pg.base.chapter_template[501] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[502] = {
@@ -9743,6 +9760,7 @@ _G.pg.base.chapter_template[502] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[503] = {
@@ -10262,6 +10280,7 @@ _G.pg.base.chapter_template[503] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[504] = {
@@ -10806,6 +10825,7 @@ _G.pg.base.chapter_template[504] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[601] = {
@@ -11388,6 +11408,7 @@ _G.pg.base.chapter_template[601] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[602] = {
@@ -12026,6 +12047,7 @@ _G.pg.base.chapter_template[602] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[603] = {
@@ -12588,6 +12610,7 @@ _G.pg.base.chapter_template[603] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[604] = {
@@ -13194,6 +13217,7 @@ _G.pg.base.chapter_template[604] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[701] = {
@@ -13623,6 +13647,7 @@ _G.pg.base.chapter_template[701] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[702] = {
@@ -14155,6 +14180,7 @@ _G.pg.base.chapter_template[702] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[703] = {
@@ -14758,6 +14784,7 @@ _G.pg.base.chapter_template[703] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[704] = {
@@ -15345,6 +15372,7 @@ _G.pg.base.chapter_template[704] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[801] = {
@@ -15796,6 +15824,7 @@ _G.pg.base.chapter_template[801] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[802] = {
@@ -16333,6 +16362,7 @@ _G.pg.base.chapter_template[802] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[803] = {
@@ -16933,6 +16963,7 @@ _G.pg.base.chapter_template[803] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[804] = {
@@ -17596,6 +17627,7 @@ _G.pg.base.chapter_template[804] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[901] = {
@@ -18145,6 +18177,7 @@ _G.pg.base.chapter_template[901] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[902] = {
@@ -18732,6 +18765,7 @@ _G.pg.base.chapter_template[902] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[903] = {
@@ -19343,6 +19377,7 @@ _G.pg.base.chapter_template[903] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[904] = {
@@ -19976,6 +20011,7 @@ _G.pg.base.chapter_template[904] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1001] = {
@@ -20544,6 +20580,7 @@ _G.pg.base.chapter_template[1001] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1002] = {
@@ -21168,6 +21205,7 @@ _G.pg.base.chapter_template[1002] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1003] = {
@@ -21809,6 +21847,7 @@ _G.pg.base.chapter_template[1003] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1004] = {
@@ -22464,6 +22503,7 @@ _G.pg.base.chapter_template[1004] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1101] = {
@@ -23081,6 +23121,7 @@ _G.pg.base.chapter_template[1101] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1102] = {
@@ -23813,6 +23854,7 @@ _G.pg.base.chapter_template[1102] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1103] = {
@@ -24515,6 +24557,7 @@ _G.pg.base.chapter_template[1103] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1104] = {
@@ -25326,6 +25369,7 @@ _G.pg.base.chapter_template[1104] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1201] = {
@@ -25921,6 +25965,7 @@ _G.pg.base.chapter_template[1201] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1202] = {
@@ -26629,6 +26674,7 @@ _G.pg.base.chapter_template[1202] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1203] = {
@@ -27373,6 +27419,7 @@ _G.pg.base.chapter_template[1203] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1204] = {
@@ -28233,6 +28280,7 @@ _G.pg.base.chapter_template[1204] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1301] = {
@@ -28836,6 +28884,7 @@ _G.pg.base.chapter_template[1301] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1302] = {
@@ -29544,6 +29593,7 @@ _G.pg.base.chapter_template[1302] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1303] = {
@@ -30296,6 +30346,7 @@ _G.pg.base.chapter_template[1303] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1304] = {
@@ -31157,6 +31208,7 @@ _G.pg.base.chapter_template[1304] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1401] = {
@@ -31826,6 +31878,7 @@ _G.pg.base.chapter_template[1401] = {
 			},
 		},
 	},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1402] = {
@@ -32601,6 +32654,7 @@ _G.pg.base.chapter_template[1402] = {
 			},
 		},
 	},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1403] = {
@@ -33437,6 +33491,7 @@ _G.pg.base.chapter_template[1403] = {
 			},
 		},
 	},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1404] = {
@@ -34896,6 +34951,7 @@ _G.pg.base.chapter_template[1404] = {
 			},
 		},
 	},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1501] = {
@@ -35549,6 +35605,7 @@ _G.pg.base.chapter_template[1501] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1502] = {
@@ -36313,6 +36370,7 @@ _G.pg.base.chapter_template[1502] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1503] = {
@@ -37129,6 +37187,7 @@ _G.pg.base.chapter_template[1503] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1504] = {
@@ -38060,6 +38119,3440 @@ _G.pg.base.chapter_template[1504] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
+}
+
+_G.pg.base.chapter_template[1601] = {
+	act_id = 0,
+	air_dominance = 3630,
+	ammo_submarine = 0,
+	ammo_total = 5,
+	avoid_ratio = 22,
+	avoid_require = 166,
+	best_air_dominance = 4720,
+	bg = "",
+	bgm = "level02",
+	boss_refresh = 6,
+	chapter_fx = "",
+	chapter_name = "16–1",
+	chapter_tag = 0,
+	collection_team = 4,
+	count = 0,
+	difficulty = 6,
+	enter_story = "",
+	enter_story_limit = "",
+	event_skip = 0,
+	formation = 1601,
+	friendly_id = 0,
+	group_num = 2,
+	icon_outline = 0,
+	id = 1601,
+	investigation_ratio = 39,
+	is_ai = 0,
+	is_air_attack = 1,
+	is_ambush = 1,
+	is_limit_move = 0,
+	levelstage_bar = "",
+	lose_condition_display = "lose_condition_display_quanmie",
+	map = 16,
+	mitigation_level = 10,
+	mitigation_rate = 2,
+	model = 2,
+	name = "Underwater Observer",
+	num_1 = 1,
+	num_2 = 30,
+	num_3 = 1,
+	oil = 10,
+	pop_pic = "",
+	pos_x = "0.182291667",
+	pos_y = "0.462962963",
+	pre_story = 0,
+	profiles = "Enemy fleet detected – but not in anti-sub formation! Submarine Fleet, prepare to sortie!",
+	progress_boss = 25,
+	special_operation_list = "",
+	star_require_1 = 1,
+	star_require_2 = 2,
+	star_require_3 = 3,
+	story_refresh_boss = "",
+	submarine_num = 1,
+	support_group_num = 1,
+	time = 43200,
+	type = 1,
+	uifx = "",
+	unlocklevel = 90,
+	win_condition_display = "win_condition_display_qijian",
+	pre_chapter = {
+		{
+			1504,
+		},
+	},
+	scale = {
+		0.35,
+		0.35,
+		1.5,
+	},
+	limitation = {},
+	property_limitation = {},
+	expedition_id_weight_list = {
+		{
+			160001,
+			10,
+			0,
+		},
+		{
+			160002,
+			90,
+			0,
+		},
+		{
+			160003,
+			160,
+			0,
+		},
+		{
+			160004,
+			15,
+			0,
+		},
+		{
+			160005,
+			11,
+			0,
+		},
+		{
+			160006,
+			170,
+			2,
+		},
+		{
+			160007,
+			25,
+			0,
+		},
+		{
+			160008,
+			150,
+			0,
+		},
+		{
+			160009,
+			230,
+			1,
+		},
+		{
+			160010,
+			10,
+			3,
+		},
+		{
+			160011,
+			20,
+			3,
+		},
+		{
+			160012,
+			10,
+			3,
+		},
+	},
+	ambush_expedition_list = {
+		160013,
+		160014,
+		160015,
+	},
+	guarder_expedition_list = {
+		160010,
+		160011,
+		160012,
+	},
+	elite_expedition_list = {
+		160002,
+		160003,
+		160005,
+	},
+	ai_expedition_list = {
+		0,
+	},
+	patrolai_expedition_list = {
+		0,
+	},
+	submarine_expedition_list = {
+		0,
+	},
+	boss_expedition_id = {
+		160021,
+	},
+	enemy_refresh = {
+		0,
+		2,
+		2,
+		1,
+		1,
+	},
+	elite_refresh = {
+		2,
+		0,
+		0,
+		0,
+	},
+	ai_refresh = {
+		0,
+	},
+	patrolai_refresh = {
+		0,
+	},
+	submarine_refresh = {
+		0,
+	},
+	use_oil_limit = {},
+	win_condition = {
+		{
+			1,
+			1,
+		},
+	},
+	lose_condition = {
+		{
+			1,
+			0,
+		},
+	},
+	icon = {
+		"aidang",
+	},
+	awards = {
+		{
+			2,
+			56061,
+		},
+		{
+			2,
+			55061,
+		},
+		{
+			2,
+			54017,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+	},
+	grids = {
+		{
+			8,
+			8,
+			true,
+			0,
+		},
+		{
+			8,
+			7,
+			false,
+			0,
+		},
+		{
+			8,
+			6,
+			false,
+			0,
+		},
+		{
+			8,
+			5,
+			true,
+			1,
+		},
+		{
+			8,
+			4,
+			true,
+			1,
+		},
+		{
+			8,
+			3,
+			true,
+			0,
+		},
+		{
+			8,
+			2,
+			true,
+			0,
+		},
+		{
+			8,
+			1,
+			true,
+			0,
+		},
+		{
+			8,
+			0,
+			true,
+			0,
+		},
+		{
+			7,
+			8,
+			false,
+			0,
+		},
+		{
+			7,
+			7,
+			false,
+			0,
+		},
+		{
+			7,
+			6,
+			true,
+			0,
+		},
+		{
+			7,
+			5,
+			true,
+			0,
+		},
+		{
+			7,
+			4,
+			true,
+			0,
+		},
+		{
+			7,
+			3,
+			true,
+			0,
+		},
+		{
+			7,
+			2,
+			true,
+			0,
+		},
+		{
+			7,
+			1,
+			true,
+			6,
+		},
+		{
+			7,
+			0,
+			true,
+			0,
+		},
+		{
+			6,
+			8,
+			false,
+			0,
+		},
+		{
+			6,
+			7,
+			false,
+			0,
+		},
+		{
+			6,
+			6,
+			true,
+			4,
+		},
+		{
+			6,
+			5,
+			true,
+			0,
+		},
+		{
+			6,
+			4,
+			true,
+			0,
+		},
+		{
+			6,
+			3,
+			true,
+			0,
+		},
+		{
+			6,
+			2,
+			true,
+			4,
+		},
+		{
+			6,
+			1,
+			false,
+			0,
+		},
+		{
+			6,
+			0,
+			true,
+			0,
+		},
+		{
+			5,
+			8,
+			true,
+			8,
+		},
+		{
+			5,
+			7,
+			true,
+			0,
+		},
+		{
+			5,
+			6,
+			true,
+			0,
+		},
+		{
+			5,
+			5,
+			true,
+			0,
+		},
+		{
+			5,
+			4,
+			true,
+			6,
+		},
+		{
+			5,
+			3,
+			true,
+			16,
+		},
+		{
+			5,
+			2,
+			true,
+			0,
+		},
+		{
+			5,
+			1,
+			true,
+			6,
+		},
+		{
+			5,
+			0,
+			true,
+			0,
+		},
+		{
+			4,
+			8,
+			true,
+			0,
+		},
+		{
+			4,
+			7,
+			true,
+			0,
+		},
+		{
+			4,
+			6,
+			true,
+			16,
+		},
+		{
+			4,
+			5,
+			false,
+			0,
+		},
+		{
+			4,
+			4,
+			true,
+			4,
+		},
+		{
+			4,
+			3,
+			true,
+			0,
+		},
+		{
+			4,
+			2,
+			true,
+			6,
+		},
+		{
+			4,
+			1,
+			true,
+			0,
+		},
+		{
+			4,
+			0,
+			true,
+			0,
+		},
+		{
+			3,
+			8,
+			true,
+			4,
+		},
+		{
+			3,
+			7,
+			true,
+			6,
+		},
+		{
+			3,
+			6,
+			true,
+			0,
+		},
+		{
+			3,
+			5,
+			true,
+			6,
+		},
+		{
+			3,
+			4,
+			true,
+			0,
+		},
+		{
+			3,
+			3,
+			true,
+			6,
+		},
+		{
+			3,
+			2,
+			false,
+			0,
+		},
+		{
+			3,
+			1,
+			true,
+			6,
+		},
+		{
+			3,
+			0,
+			true,
+			0,
+		},
+		{
+			2,
+			8,
+			false,
+			0,
+		},
+		{
+			2,
+			7,
+			true,
+			6,
+		},
+		{
+			2,
+			6,
+			true,
+			0,
+		},
+		{
+			2,
+			5,
+			true,
+			0,
+		},
+		{
+			2,
+			4,
+			true,
+			6,
+		},
+		{
+			2,
+			3,
+			true,
+			0,
+		},
+		{
+			2,
+			2,
+			true,
+			6,
+		},
+		{
+			2,
+			1,
+			true,
+			0,
+		},
+		{
+			2,
+			0,
+			true,
+			0,
+		},
+		{
+			1,
+			8,
+			true,
+			6,
+		},
+		{
+			1,
+			7,
+			true,
+			0,
+		},
+		{
+			1,
+			6,
+			true,
+			0,
+		},
+		{
+			1,
+			5,
+			true,
+			6,
+		},
+		{
+			1,
+			4,
+			false,
+			0,
+		},
+		{
+			1,
+			3,
+			true,
+			6,
+		},
+		{
+			1,
+			2,
+			true,
+			0,
+		},
+		{
+			1,
+			1,
+			true,
+			0,
+		},
+		{
+			1,
+			0,
+			true,
+			6,
+		},
+		{
+			0,
+			8,
+			true,
+			0,
+		},
+		{
+			0,
+			7,
+			true,
+			6,
+		},
+		{
+			0,
+			6,
+			true,
+			0,
+		},
+		{
+			0,
+			5,
+			true,
+			0,
+		},
+		{
+			0,
+			4,
+			true,
+			6,
+		},
+		{
+			0,
+			3,
+			true,
+			0,
+		},
+		{
+			0,
+			2,
+			true,
+			0,
+		},
+		{
+			0,
+			1,
+			true,
+			6,
+		},
+		{
+			0,
+			0,
+			false,
+			0,
+		},
+	},
+	float_items = {
+		{
+			8,
+			6,
+			"suligao_2x1_2",
+			57,
+			0,
+		},
+		{
+			6,
+			7,
+			"suligao_2x2_1",
+			67,
+			-25,
+		},
+		{
+			6,
+			1,
+			"suligao_1x1_3",
+			0,
+			0,
+		},
+		{
+			4,
+			5,
+			"suligao_1x1_2",
+			0,
+			0,
+		},
+		{
+			3,
+			2,
+			"suligao_1x1_1",
+			0,
+			0,
+		},
+		{
+			2,
+			8,
+			"suligao_1x1_2",
+			0,
+			0,
+		},
+		{
+			1,
+			4,
+			"suligao_1x1_3",
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			"suligao_1x1_1",
+			0,
+			0,
+		},
+	},
+	ambush_event_ratio = {
+		{
+			3001,
+			5000,
+		},
+	},
+	ambush_ratio_extra = {},
+	theme = {
+		"sea_suligao",
+		45,
+		20,
+		-284,
+		56,
+		100,
+		100,
+		4,
+		4,
+		"",
+	},
+	box_list = {
+		{
+			6,
+			3,
+			{
+				5002,
+			},
+		},
+	},
+	random_box_list = {
+		5002,
+	},
+	box_refresh = {
+		1,
+	},
+	box_auto_pick = {
+		3,
+		2,
+	},
+	story_refresh = {},
+	defeat_story = {},
+	defeat_story_count = {},
+	npc_data = {},
+	risk_levels = {
+		{
+			10,
+			7,
+		},
+		{
+			6,
+			4,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			0,
+			0,
+		},
+	},
+	land_based = {},
+	ItemTransformPattern = {
+		[20] = {
+			"close",
+			"open",
+		},
+	},
+	chapter_strategy = {},
+	wall_prefab = {},
+	alarm_cell = {},
+	weather_grids = {
+		{
+			0,
+			101,
+			{
+				{
+					0,
+					0,
+					12,
+					12,
+				},
+			},
+		},
+	},
+	misc_arg = {
+		{
+			"submarine_support",
+			160022,
+		},
+		{
+			"submarine_support_buff",
+			{
+				{
+					1,
+					9741,
+				},
+				{
+					2,
+					9737,
+				},
+				{
+					3,
+					9733,
+				},
+				{
+					4,
+					9729,
+				},
+			},
+		},
+	},
+}
+
+_G.pg.base.chapter_template[1602] = {
+	ItemTransformPattern = "",
+	act_id = 0,
+	air_dominance = 3810,
+	ammo_submarine = 0,
+	ammo_total = 5,
+	avoid_ratio = 22,
+	avoid_require = 166,
+	best_air_dominance = 4950,
+	bg = "",
+	bgm = "level02",
+	boss_refresh = 6,
+	chapter_fx = "",
+	chapter_name = "16–2",
+	chapter_tag = 0,
+	collection_team = 4,
+	count = 0,
+	difficulty = 7,
+	enter_story = "",
+	enter_story_limit = "",
+	event_skip = 0,
+	formation = 1601,
+	friendly_id = 0,
+	group_num = 2,
+	icon_outline = 0,
+	id = 1602,
+	investigation_ratio = 39,
+	is_ai = 0,
+	is_air_attack = 1,
+	is_ambush = 1,
+	is_limit_move = 0,
+	levelstage_bar = "",
+	lose_condition_display = "lose_condition_display_quanmie",
+	map = 16,
+	mitigation_level = 10,
+	mitigation_rate = 2,
+	model = 2,
+	name = "Frontline Breakthrough",
+	num_1 = 1,
+	num_2 = 35,
+	num_3 = 1,
+	oil = 10,
+	pop_pic = "",
+	pos_x = "0.361458333",
+	pos_y = "0.262962963",
+	pre_story = 0,
+	profiles = "Our torpedo attacks are proving effective, and the enemy has sustained heavy damage! All forces, press the advantage and give chase!",
+	progress_boss = 25,
+	special_operation_list = "",
+	star_require_1 = 1,
+	star_require_2 = 2,
+	star_require_3 = 3,
+	story_refresh_boss = "",
+	submarine_num = 1,
+	support_group_num = 1,
+	time = 43200,
+	type = 1,
+	uifx = "",
+	unlocklevel = 90,
+	win_condition_display = "win_condition_display_qijian",
+	pre_chapter = {
+		{
+			1601,
+		},
+	},
+	scale = {
+		0.66,
+		0.62,
+		1.5,
+	},
+	limitation = {},
+	property_limitation = {},
+	expedition_id_weight_list = {
+		{
+			161001,
+			8,
+			0,
+		},
+		{
+			161002,
+			87,
+			0,
+		},
+		{
+			161003,
+			165,
+			0,
+		},
+		{
+			161004,
+			13,
+			0,
+		},
+		{
+			161005,
+			107,
+			0,
+		},
+		{
+			161006,
+			175,
+			2,
+		},
+		{
+			161007,
+			23,
+			0,
+		},
+		{
+			161008,
+			147,
+			0,
+		},
+		{
+			161009,
+			235,
+			1,
+		},
+		{
+			161010,
+			10,
+			3,
+		},
+		{
+			161011,
+			20,
+			3,
+		},
+		{
+			161012,
+			10,
+			3,
+		},
+	},
+	ambush_expedition_list = {
+		161013,
+		161014,
+		161015,
+	},
+	guarder_expedition_list = {
+		161010,
+		161011,
+		161012,
+	},
+	elite_expedition_list = {
+		161002,
+		161003,
+		161005,
+	},
+	ai_expedition_list = {
+		0,
+	},
+	patrolai_expedition_list = {
+		0,
+	},
+	submarine_expedition_list = {
+		0,
+	},
+	boss_expedition_id = {
+		161021,
+	},
+	enemy_refresh = {
+		0,
+		2,
+		2,
+		1,
+		1,
+	},
+	elite_refresh = {
+		3,
+		0,
+		0,
+		0,
+		0,
+	},
+	ai_refresh = {
+		0,
+	},
+	patrolai_refresh = {
+		0,
+	},
+	submarine_refresh = {
+		0,
+	},
+	use_oil_limit = {},
+	win_condition = {
+		{
+			1,
+			1,
+		},
+	},
+	lose_condition = {
+		{
+			1,
+			0,
+		},
+	},
+	icon = {
+		"moye",
+	},
+	awards = {
+		{
+			2,
+			56062,
+		},
+		{
+			2,
+			55062,
+		},
+		{
+			2,
+			54017,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+	},
+	grids = {
+		{
+			7,
+			9,
+			true,
+			0,
+		},
+		{
+			7,
+			8,
+			true,
+			0,
+		},
+		{
+			7,
+			7,
+			true,
+			0,
+		},
+		{
+			7,
+			6,
+			false,
+			0,
+		},
+		{
+			7,
+			5,
+			false,
+			0,
+		},
+		{
+			7,
+			4,
+			false,
+			0,
+		},
+		{
+			7,
+			3,
+			true,
+			0,
+		},
+		{
+			7,
+			2,
+			true,
+			1,
+		},
+		{
+			7,
+			1,
+			true,
+			1,
+		},
+		{
+			7,
+			0,
+			true,
+			0,
+		},
+		{
+			6,
+			9,
+			true,
+			0,
+		},
+		{
+			6,
+			8,
+			false,
+			0,
+		},
+		{
+			6,
+			7,
+			true,
+			0,
+		},
+		{
+			6,
+			6,
+			true,
+			0,
+		},
+		{
+			6,
+			5,
+			true,
+			4,
+		},
+		{
+			6,
+			4,
+			true,
+			0,
+		},
+		{
+			6,
+			3,
+			true,
+			0,
+		},
+		{
+			6,
+			2,
+			true,
+			0,
+		},
+		{
+			6,
+			1,
+			true,
+			0,
+		},
+		{
+			6,
+			0,
+			true,
+			0,
+		},
+		{
+			5,
+			9,
+			true,
+			0,
+		},
+		{
+			5,
+			8,
+			false,
+			0,
+		},
+		{
+			5,
+			7,
+			false,
+			0,
+		},
+		{
+			5,
+			6,
+			true,
+			6,
+		},
+		{
+			5,
+			5,
+			true,
+			0,
+		},
+		{
+			5,
+			4,
+			true,
+			6,
+		},
+		{
+			5,
+			3,
+			true,
+			6,
+		},
+		{
+			5,
+			2,
+			true,
+			0,
+		},
+		{
+			5,
+			1,
+			true,
+			6,
+		},
+		{
+			5,
+			0,
+			false,
+			0,
+		},
+		{
+			4,
+			9,
+			true,
+			0,
+		},
+		{
+			4,
+			8,
+			true,
+			0,
+		},
+		{
+			4,
+			7,
+			true,
+			0,
+		},
+		{
+			4,
+			6,
+			true,
+			4,
+		},
+		{
+			4,
+			5,
+			true,
+			0,
+		},
+		{
+			4,
+			4,
+			false,
+			0,
+		},
+		{
+			4,
+			3,
+			true,
+			4,
+		},
+		{
+			4,
+			2,
+			true,
+			0,
+		},
+		{
+			4,
+			1,
+			true,
+			0,
+		},
+		{
+			4,
+			0,
+			true,
+			4,
+		},
+		{
+			3,
+			9,
+			true,
+			0,
+		},
+		{
+			3,
+			8,
+			false,
+			0,
+		},
+		{
+			3,
+			7,
+			true,
+			0,
+		},
+		{
+			3,
+			6,
+			true,
+			6,
+		},
+		{
+			3,
+			5,
+			true,
+			0,
+		},
+		{
+			3,
+			4,
+			true,
+			6,
+		},
+		{
+			3,
+			3,
+			true,
+			6,
+		},
+		{
+			3,
+			2,
+			true,
+			6,
+		},
+		{
+			3,
+			1,
+			true,
+			0,
+		},
+		{
+			3,
+			0,
+			true,
+			6,
+		},
+		{
+			2,
+			9,
+			false,
+			0,
+		},
+		{
+			2,
+			8,
+			false,
+			0,
+		},
+		{
+			2,
+			7,
+			true,
+			6,
+		},
+		{
+			2,
+			6,
+			true,
+			0,
+		},
+		{
+			2,
+			5,
+			true,
+			0,
+		},
+		{
+			2,
+			4,
+			true,
+			0,
+		},
+		{
+			2,
+			3,
+			true,
+			0,
+		},
+		{
+			2,
+			2,
+			true,
+			0,
+		},
+		{
+			2,
+			1,
+			true,
+			16,
+		},
+		{
+			2,
+			0,
+			true,
+			0,
+		},
+		{
+			1,
+			9,
+			true,
+			0,
+		},
+		{
+			1,
+			8,
+			true,
+			0,
+		},
+		{
+			1,
+			7,
+			true,
+			0,
+		},
+		{
+			1,
+			6,
+			true,
+			6,
+		},
+		{
+			1,
+			5,
+			false,
+			0,
+		},
+		{
+			1,
+			4,
+			true,
+			6,
+		},
+		{
+			1,
+			3,
+			true,
+			0,
+		},
+		{
+			1,
+			2,
+			true,
+			6,
+		},
+		{
+			1,
+			1,
+			true,
+			4,
+		},
+		{
+			1,
+			0,
+			true,
+			0,
+		},
+		{
+			0,
+			9,
+			true,
+			0,
+		},
+		{
+			0,
+			8,
+			true,
+			0,
+		},
+		{
+			0,
+			7,
+			true,
+			0,
+		},
+		{
+			0,
+			6,
+			true,
+			0,
+		},
+		{
+			0,
+			5,
+			true,
+			0,
+		},
+		{
+			0,
+			4,
+			true,
+			0,
+		},
+		{
+			0,
+			3,
+			true,
+			6,
+		},
+		{
+			0,
+			2,
+			true,
+			0,
+		},
+		{
+			0,
+			1,
+			false,
+			0,
+		},
+		{
+			0,
+			0,
+			true,
+			8,
+		},
+	},
+	float_items = {
+		{
+			7,
+			4,
+			"suligao_3x1_2",
+			100,
+			11,
+		},
+		{
+			5,
+			7,
+			"suligao_2x2_2",
+			57,
+			-42,
+		},
+		{
+			5,
+			0,
+			"suligao_1x1_1",
+			0,
+			0,
+		},
+		{
+			4,
+			4,
+			"suligao_1x1_3",
+			0,
+			0,
+		},
+		{
+			2,
+			9,
+			"suligao_1x1_2",
+			0,
+			0,
+		},
+		{
+			2,
+			8,
+			"suligao_1x2_1",
+			-1,
+			-44,
+		},
+		{
+			1,
+			5,
+			"suligao_1x1_2",
+			0,
+			0,
+		},
+		{
+			0,
+			1,
+			"16zhang_1x1_2",
+			0,
+			0,
+		},
+	},
+	ambush_event_ratio = {
+		{
+			3001,
+			5000,
+		},
+	},
+	ambush_ratio_extra = {},
+	theme = {
+		"sea_suligao",
+		45,
+		20,
+		-137,
+		-41,
+		100,
+		100,
+		4,
+		4,
+		"",
+	},
+	box_list = {
+		{
+			8,
+			8,
+			{
+				5002,
+			},
+		},
+		{
+			6,
+			1,
+			{
+				5002,
+			},
+		},
+	},
+	random_box_list = {
+		5002,
+	},
+	box_refresh = {
+		1,
+	},
+	box_auto_pick = {
+		3,
+		2,
+	},
+	story_refresh = {},
+	defeat_story = {},
+	defeat_story_count = {},
+	npc_data = {},
+	risk_levels = {
+		{
+			10,
+			7,
+		},
+		{
+			6,
+			4,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			0,
+			0,
+		},
+	},
+	land_based = {},
+	chapter_strategy = {},
+	wall_prefab = {},
+	alarm_cell = {},
+	weather_grids = {
+		{
+			0,
+			101,
+			{
+				{
+					0,
+					0,
+					12,
+					12,
+				},
+			},
+		},
+	},
+	misc_arg = {
+		{
+			"submarine_support",
+			161022,
+		},
+		{
+			"submarine_support_buff",
+			{
+				{
+					1,
+					9741,
+				},
+				{
+					2,
+					9737,
+				},
+				{
+					3,
+					9733,
+				},
+				{
+					4,
+					9729,
+				},
+			},
+		},
+	},
+}
+
+_G.pg.base.chapter_template[1603] = {
+	ItemTransformPattern = "",
+	act_id = 0,
+	air_dominance = 4000,
+	ammo_submarine = 0,
+	ammo_total = 5,
+	avoid_ratio = 24,
+	avoid_require = 170,
+	best_air_dominance = 5200,
+	bg = "",
+	bgm = "level02",
+	boss_refresh = 9,
+	chapter_fx = "",
+	chapter_name = "16–3",
+	chapter_tag = 0,
+	collection_team = 4,
+	count = 0,
+	difficulty = 8,
+	enter_story = "",
+	enter_story_limit = "",
+	event_skip = 0,
+	formation = 1602,
+	friendly_id = 0,
+	group_num = 2,
+	icon_outline = 0,
+	id = 1603,
+	investigation_ratio = 40,
+	is_ai = 0,
+	is_air_attack = 1,
+	is_ambush = 1,
+	is_limit_move = 0,
+	levelstage_bar = "",
+	lose_condition_display = "lose_condition_display_quanmie",
+	map = 16,
+	mitigation_level = 10,
+	mitigation_rate = 2,
+	model = 2,
+	name = "From the Skies",
+	num_1 = 1,
+	num_2 = 40,
+	num_3 = 1,
+	oil = 10,
+	pop_pic = "",
+	pos_x = "0.655208333",
+	pos_y = "0.409814815",
+	pre_story = 0,
+	profiles = "Our recons have found the enemy's main force once again! Our next wave of attacks will arrive soon!",
+	progress_boss = 20,
+	special_operation_list = "",
+	star_require_1 = 1,
+	star_require_2 = 2,
+	star_require_3 = 3,
+	story_refresh_boss = "",
+	submarine_num = 1,
+	support_group_num = 1,
+	time = 43200,
+	type = 1,
+	uifx = "",
+	unlocklevel = 95,
+	weather_grids = "",
+	win_condition_display = "win_condition_display_qijian",
+	pre_chapter = {
+		{
+			1602,
+		},
+	},
+	scale = {
+		0.66,
+		0.38,
+		1.5,
+	},
+	limitation = {},
+	property_limitation = {},
+	expedition_id_weight_list = {
+		{
+			162001,
+			6,
+			0,
+		},
+		{
+			162002,
+			104,
+			0,
+		},
+		{
+			162003,
+			150,
+			0,
+		},
+		{
+			162004,
+			11,
+			0,
+		},
+		{
+			162005,
+			124,
+			0,
+		},
+		{
+			162006,
+			160,
+			2,
+		},
+		{
+			162007,
+			21,
+			0,
+		},
+		{
+			162008,
+			164,
+			0,
+		},
+		{
+			162009,
+			220,
+			1,
+		},
+		{
+			162010,
+			10,
+			3,
+		},
+		{
+			162011,
+			20,
+			3,
+		},
+		{
+			162012,
+			10,
+			3,
+		},
+	},
+	ambush_expedition_list = {
+		162013,
+		162014,
+		162015,
+	},
+	guarder_expedition_list = {
+		162010,
+		162011,
+		162012,
+	},
+	elite_expedition_list = {
+		162002,
+		162003,
+		162006,
+	},
+	ai_expedition_list = {
+		0,
+	},
+	patrolai_expedition_list = {
+		0,
+	},
+	submarine_expedition_list = {
+		0,
+	},
+	boss_expedition_id = {
+		162021,
+	},
+	enemy_refresh = {
+		0,
+	},
+	elite_refresh = {
+		0,
+	},
+	ai_refresh = {
+		0,
+	},
+	patrolai_refresh = {
+		0,
+	},
+	submarine_refresh = {
+		0,
+	},
+	use_oil_limit = {},
+	win_condition = {
+		{
+			1,
+			1,
+		},
+	},
+	lose_condition = {
+		{
+			1,
+			0,
+		},
+	},
+	icon = {
+		"miaogao",
+	},
+	awards = {
+		{
+			2,
+			56063,
+		},
+		{
+			2,
+			55063,
+		},
+		{
+			2,
+			54017,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+	},
+	grids = {
+		{
+			5,
+			10,
+			false,
+			100,
+		},
+		{
+			5,
+			9,
+			true,
+			0,
+		},
+		{
+			5,
+			8,
+			true,
+			0,
+		},
+		{
+			5,
+			7,
+			true,
+			0,
+		},
+		{
+			5,
+			6,
+			false,
+			0,
+		},
+		{
+			5,
+			5,
+			true,
+			0,
+		},
+		{
+			5,
+			4,
+			true,
+			0,
+		},
+		{
+			5,
+			3,
+			true,
+			0,
+		},
+		{
+			5,
+			2,
+			true,
+			0,
+		},
+		{
+			5,
+			1,
+			true,
+			0,
+		},
+		{
+			5,
+			0,
+			true,
+			1,
+		},
+		{
+			4,
+			10,
+			true,
+			0,
+		},
+		{
+			4,
+			9,
+			true,
+			0,
+		},
+		{
+			4,
+			8,
+			true,
+			0,
+		},
+		{
+			4,
+			7,
+			true,
+			0,
+		},
+		{
+			4,
+			6,
+			false,
+			0,
+		},
+		{
+			4,
+			5,
+			true,
+			0,
+		},
+		{
+			4,
+			4,
+			true,
+			0,
+		},
+		{
+			4,
+			3,
+			false,
+			0,
+		},
+		{
+			4,
+			2,
+			true,
+			0,
+		},
+		{
+			4,
+			1,
+			true,
+			0,
+		},
+		{
+			4,
+			0,
+			true,
+			1,
+		},
+		{
+			3,
+			10,
+			true,
+			0,
+		},
+		{
+			3,
+			9,
+			true,
+			0,
+		},
+		{
+			3,
+			8,
+			true,
+			0,
+		},
+		{
+			3,
+			7,
+			true,
+			0,
+		},
+		{
+			3,
+			6,
+			true,
+			0,
+		},
+		{
+			3,
+			5,
+			true,
+			16,
+		},
+		{
+			3,
+			4,
+			false,
+			0,
+		},
+		{
+			3,
+			3,
+			false,
+			0,
+		},
+		{
+			3,
+			2,
+			true,
+			0,
+		},
+		{
+			3,
+			1,
+			true,
+			0,
+		},
+		{
+			3,
+			0,
+			true,
+			0,
+		},
+		{
+			2,
+			10,
+			true,
+			0,
+		},
+		{
+			2,
+			9,
+			true,
+			0,
+		},
+		{
+			2,
+			8,
+			false,
+			0,
+		},
+		{
+			2,
+			7,
+			true,
+			0,
+		},
+		{
+			2,
+			6,
+			false,
+			0,
+		},
+		{
+			2,
+			5,
+			true,
+			0,
+		},
+		{
+			2,
+			4,
+			true,
+			0,
+		},
+		{
+			2,
+			3,
+			true,
+			0,
+		},
+		{
+			2,
+			2,
+			true,
+			0,
+		},
+		{
+			2,
+			1,
+			true,
+			0,
+		},
+		{
+			2,
+			0,
+			true,
+			0,
+		},
+		{
+			1,
+			10,
+			true,
+			0,
+		},
+		{
+			1,
+			9,
+			true,
+			0,
+		},
+		{
+			1,
+			8,
+			false,
+			0,
+		},
+		{
+			1,
+			7,
+			true,
+			0,
+		},
+		{
+			1,
+			6,
+			true,
+			0,
+		},
+		{
+			1,
+			5,
+			true,
+			0,
+		},
+		{
+			1,
+			4,
+			true,
+			0,
+		},
+		{
+			1,
+			3,
+			false,
+			100,
+		},
+		{
+			1,
+			2,
+			true,
+			0,
+		},
+		{
+			1,
+			1,
+			true,
+			0,
+		},
+		{
+			1,
+			0,
+			true,
+			0,
+		},
+		{
+			0,
+			10,
+			true,
+			8,
+		},
+		{
+			0,
+			9,
+			true,
+			0,
+		},
+		{
+			0,
+			8,
+			false,
+			0,
+		},
+		{
+			0,
+			7,
+			true,
+			0,
+		},
+		{
+			0,
+			6,
+			true,
+			0,
+		},
+		{
+			0,
+			5,
+			true,
+			0,
+		},
+		{
+			0,
+			4,
+			false,
+			0,
+		},
+		{
+			0,
+			3,
+			false,
+			0,
+		},
+		{
+			0,
+			2,
+			false,
+			0,
+		},
+		{
+			0,
+			1,
+			true,
+			0,
+		},
+		{
+			0,
+			0,
+			true,
+			0,
+		},
+	},
+	float_items = {
+		{
+			4,
+			6,
+			"16zhang_1x2_1",
+			0,
+			-38,
+		},
+		{
+			3,
+			4,
+			"16zhang_1x1_3",
+			0,
+			0,
+		},
+		{
+			3,
+			3,
+			"16zhang_1x2_1",
+			0,
+			-42,
+		},
+		{
+			2,
+			6,
+			"16zhang_1x1_4",
+			0,
+			0,
+		},
+		{
+			0,
+			8,
+			"16zhang_1x3_1",
+			-16,
+			-95,
+		},
+		{
+			0,
+			4,
+			"16zhang_1x1_1",
+			0,
+			0,
+		},
+	},
+	ambush_event_ratio = {
+		{
+			3001,
+			5000,
+		},
+	},
+	ambush_ratio_extra = {},
+	theme = {
+		"sea_16zhang",
+		45,
+		20,
+		-190,
+		-213,
+		100,
+		100,
+		4,
+		4,
+		"",
+	},
+	box_list = {},
+	random_box_list = {
+		1004,
+		5001,
+	},
+	box_refresh = {
+		1,
+	},
+	box_auto_pick = {
+		3,
+		2,
+	},
+	story_refresh = {},
+	defeat_story = {},
+	defeat_story_count = {},
+	npc_data = {},
+	risk_levels = {
+		{
+			10,
+			7,
+		},
+		{
+			6,
+			4,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			0,
+			0,
+		},
+	},
+	land_based = {
+		{
+			5,
+			10,
+			101,
+		},
+		{
+			1,
+			3,
+			103,
+		},
+	},
+	chapter_strategy = {
+		1016,
+	},
+	wall_prefab = {},
+	alarm_cell = {},
+	misc_arg = {
+		{
+			"fog",
+			{
+				121,
+				122,
+				123,
+			},
+		},
+		{
+			"fog_visible_buff",
+			{
+				{
+					15,
+					1006,
+				},
+				{
+					50,
+					1007,
+				},
+				{
+					100,
+					1008,
+				},
+			},
+		},
+	},
+}
+
+_G.pg.base.chapter_template[1604] = {
+	ItemTransformPattern = "",
+	act_id = 0,
+	air_dominance = 4200,
+	ammo_submarine = 0,
+	ammo_total = 5,
+	avoid_ratio = 25,
+	avoid_require = 174,
+	best_air_dominance = 5460,
+	bg = "",
+	bgm = "level02",
+	boss_refresh = 10,
+	chapter_fx = "",
+	chapter_name = "16–4",
+	chapter_tag = 0,
+	collection_team = 4,
+	count = 0,
+	difficulty = 9,
+	enter_story = "",
+	enter_story_limit = "",
+	event_skip = 0,
+	formation = 1602,
+	friendly_id = 0,
+	group_num = 2,
+	icon_outline = 0,
+	id = 1604,
+	investigation_ratio = 41,
+	is_ai = 0,
+	is_air_attack = 1,
+	is_ambush = 1,
+	is_limit_move = 0,
+	levelstage_bar = "",
+	lose_condition_display = "lose_condition_display_quanmie",
+	map = 16,
+	mitigation_level = 10,
+	mitigation_rate = 2,
+	model = 2,
+	name = "The Curtains Fall",
+	num_1 = 1,
+	num_2 = 50,
+	num_3 = 1,
+	oil = 10,
+	pop_pic = "",
+	pos_x = "0.4540625",
+	pos_y = "0.635555555",
+	pre_story = 0,
+	profiles = "Our fleet has gained air superiority, and the enemies are but fish in a barrel. All fleets, let us put an end to this battle!",
+	progress_boss = 18,
+	special_operation_list = "",
+	star_require_1 = 1,
+	star_require_2 = 2,
+	star_require_3 = 3,
+	story_refresh_boss = "",
+	submarine_num = 1,
+	support_group_num = 1,
+	time = 43200,
+	type = 1,
+	uifx = "",
+	unlocklevel = 95,
+	weather_grids = "",
+	win_condition_display = "win_condition_display_qijian",
+	pre_chapter = {
+		{
+			1603,
+		},
+	},
+	scale = {
+		0.66,
+		0.34,
+		1.5,
+	},
+	limitation = {},
+	property_limitation = {},
+	expedition_id_weight_list = {
+		{
+			163001,
+			4,
+			0,
+		},
+		{
+			163002,
+			81,
+			0,
+		},
+		{
+			163003,
+			175,
+			0,
+		},
+		{
+			163004,
+			9,
+			0,
+		},
+		{
+			163005,
+			101,
+			0,
+		},
+		{
+			163006,
+			185,
+			2,
+		},
+		{
+			163007,
+			19,
+			0,
+		},
+		{
+			163008,
+			141,
+			0,
+		},
+		{
+			163009,
+			245,
+			1,
+		},
+		{
+			163010,
+			10,
+			3,
+		},
+		{
+			163011,
+			20,
+			3,
+		},
+		{
+			163012,
+			10,
+			3,
+		},
+	},
+	ambush_expedition_list = {
+		163013,
+		163014,
+		163015,
+	},
+	guarder_expedition_list = {
+		163010,
+		163011,
+		163012,
+	},
+	elite_expedition_list = {
+		163002,
+		163003,
+		163006,
+	},
+	ai_expedition_list = {
+		0,
+	},
+	patrolai_expedition_list = {
+		0,
+	},
+	submarine_expedition_list = {
+		0,
+	},
+	boss_expedition_id = {
+		163021,
+	},
+	enemy_refresh = {
+		0,
+	},
+	elite_refresh = {
+		0,
+	},
+	ai_refresh = {
+		0,
+	},
+	patrolai_refresh = {
+		0,
+	},
+	submarine_refresh = {
+		0,
+	},
+	use_oil_limit = {},
+	win_condition = {
+		{
+			1,
+			1,
+		},
+	},
+	lose_condition = {
+		{
+			1,
+			0,
+		},
+	},
+	icon = {
+		"wuzang",
+	},
+	awards = {
+		{
+			2,
+			56064,
+		},
+		{
+			2,
+			55064,
+		},
+		{
+			2,
+			54017,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+	},
+	grids = {
+		{
+			7,
+			10,
+			false,
+			100,
+		},
+		{
+			7,
+			9,
+			true,
+			0,
+		},
+		{
+			7,
+			8,
+			true,
+			0,
+		},
+		{
+			7,
+			7,
+			false,
+			0,
+		},
+		{
+			7,
+			6,
+			false,
+			100,
+		},
+		{
+			7,
+			5,
+			true,
+			0,
+		},
+		{
+			7,
+			4,
+			false,
+			0,
+		},
+		{
+			7,
+			3,
+			true,
+			0,
+		},
+		{
+			7,
+			2,
+			true,
+			0,
+		},
+		{
+			7,
+			1,
+			true,
+			0,
+		},
+		{
+			7,
+			0,
+			true,
+			1,
+		},
+		{
+			6,
+			10,
+			false,
+			0,
+		},
+		{
+			6,
+			9,
+			false,
+			0,
+		},
+		{
+			6,
+			8,
+			true,
+			0,
+		},
+		{
+			6,
+			7,
+			false,
+			0,
+		},
+		{
+			6,
+			6,
+			true,
+			0,
+		},
+		{
+			6,
+			5,
+			true,
+			0,
+		},
+		{
+			6,
+			4,
+			true,
+			0,
+		},
+		{
+			6,
+			3,
+			true,
+			0,
+		},
+		{
+			6,
+			2,
+			true,
+			0,
+		},
+		{
+			6,
+			1,
+			true,
+			0,
+		},
+		{
+			6,
+			0,
+			true,
+			1,
+		},
+		{
+			5,
+			10,
+			true,
+			0,
+		},
+		{
+			5,
+			9,
+			true,
+			0,
+		},
+		{
+			5,
+			8,
+			true,
+			0,
+		},
+		{
+			5,
+			7,
+			true,
+			0,
+		},
+		{
+			5,
+			6,
+			false,
+			0,
+		},
+		{
+			5,
+			5,
+			true,
+			0,
+		},
+		{
+			5,
+			4,
+			false,
+			0,
+		},
+		{
+			5,
+			3,
+			false,
+			0,
+		},
+		{
+			5,
+			2,
+			true,
+			0,
+		},
+		{
+			5,
+			1,
+			true,
+			16,
+		},
+		{
+			5,
+			0,
+			true,
+			0,
+		},
+		{
+			4,
+			10,
+			true,
+			0,
+		},
+		{
+			4,
+			9,
+			false,
+			0,
+		},
+		{
+			4,
+			8,
+			true,
+			0,
+		},
+		{
+			4,
+			7,
+			true,
+			0,
+		},
+		{
+			4,
+			6,
+			false,
+			0,
+		},
+		{
+			4,
+			5,
+			true,
+			0,
+		},
+		{
+			4,
+			4,
+			true,
+			0,
+		},
+		{
+			4,
+			3,
+			true,
+			0,
+		},
+		{
+			4,
+			2,
+			true,
+			0,
+		},
+		{
+			4,
+			1,
+			true,
+			0,
+		},
+		{
+			4,
+			0,
+			true,
+			0,
+		},
+		{
+			3,
+			10,
+			true,
+			0,
+		},
+		{
+			3,
+			9,
+			false,
+			0,
+		},
+		{
+			3,
+			8,
+			false,
+			0,
+		},
+		{
+			3,
+			7,
+			true,
+			0,
+		},
+		{
+			3,
+			6,
+			true,
+			0,
+		},
+		{
+			3,
+			5,
+			true,
+			0,
+		},
+		{
+			3,
+			4,
+			false,
+			0,
+		},
+		{
+			3,
+			3,
+			true,
+			0,
+		},
+		{
+			3,
+			2,
+			true,
+			0,
+		},
+		{
+			3,
+			1,
+			true,
+			0,
+		},
+		{
+			3,
+			0,
+			true,
+			0,
+		},
+		{
+			2,
+			10,
+			true,
+			0,
+		},
+		{
+			2,
+			9,
+			true,
+			0,
+		},
+		{
+			2,
+			8,
+			true,
+			0,
+		},
+		{
+			2,
+			7,
+			true,
+			0,
+		},
+		{
+			2,
+			6,
+			false,
+			0,
+		},
+		{
+			2,
+			5,
+			false,
+			0,
+		},
+		{
+			2,
+			4,
+			true,
+			0,
+		},
+		{
+			2,
+			3,
+			true,
+			0,
+		},
+		{
+			2,
+			2,
+			true,
+			0,
+		},
+		{
+			2,
+			1,
+			true,
+			0,
+		},
+		{
+			2,
+			0,
+			true,
+			0,
+		},
+		{
+			1,
+			10,
+			true,
+			0,
+		},
+		{
+			1,
+			9,
+			true,
+			0,
+		},
+		{
+			1,
+			8,
+			true,
+			0,
+		},
+		{
+			1,
+			7,
+			false,
+			0,
+		},
+		{
+			1,
+			6,
+			true,
+			0,
+		},
+		{
+			1,
+			5,
+			true,
+			0,
+		},
+		{
+			1,
+			4,
+			true,
+			0,
+		},
+		{
+			1,
+			3,
+			false,
+			0,
+		},
+		{
+			1,
+			2,
+			false,
+			0,
+		},
+		{
+			1,
+			1,
+			false,
+			0,
+		},
+		{
+			1,
+			0,
+			true,
+			0,
+		},
+		{
+			0,
+			10,
+			true,
+			8,
+		},
+		{
+			0,
+			9,
+			true,
+			0,
+		},
+		{
+			0,
+			8,
+			true,
+			0,
+		},
+		{
+			0,
+			7,
+			true,
+			0,
+		},
+		{
+			0,
+			6,
+			false,
+			0,
+		},
+		{
+			0,
+			5,
+			true,
+			0,
+		},
+		{
+			0,
+			4,
+			true,
+			0,
+		},
+		{
+			0,
+			3,
+			true,
+			0,
+		},
+		{
+			0,
+			2,
+			false,
+			100,
+		},
+		{
+			0,
+			1,
+			true,
+			0,
+		},
+		{
+			0,
+			0,
+			true,
+			0,
+		},
+	},
+	float_items = {
+		{
+			7,
+			4,
+			"16zhang_1x1_4",
+			0,
+			0,
+		},
+		{
+			6,
+			7,
+			"16zhang_1x1_4",
+			0,
+			0,
+		},
+		{
+			5,
+			3,
+			"16zhang_3x1_1",
+			49,
+			5,
+		},
+		{
+			4,
+			6,
+			"16zhang_1x2_1",
+			-5,
+			-40,
+		},
+		{
+			3,
+			8,
+			"16zhang_2x2_1",
+			50,
+			-34,
+		},
+		{
+			3,
+			4,
+			"16zhang_1x1_3",
+			0,
+			0,
+		},
+		{
+			2,
+			5,
+			"16zhang_3x1_1",
+			46,
+			6,
+		},
+		{
+			1,
+			7,
+			"16zhang_1x1_1",
+			0,
+			0,
+		},
+		{
+			1,
+			1,
+			"16zhang_3x1_2",
+			106,
+			0,
+		},
+		{
+			0,
+			6,
+			"16zhang_1x1_2",
+			0,
+			0,
+		},
+	},
+	ambush_event_ratio = {
+		{
+			3001,
+			5000,
+		},
+	},
+	ambush_ratio_extra = {},
+	theme = {
+		"sea_16zhang",
+		45,
+		20,
+		-299,
+		156,
+		100,
+		100,
+		4,
+		4,
+		"",
+	},
+	box_list = {},
+	random_box_list = {
+		1004,
+		5001,
+	},
+	box_refresh = {
+		2,
+	},
+	box_auto_pick = {
+		3,
+		2,
+	},
+	story_refresh = {},
+	defeat_story = {},
+	defeat_story_count = {},
+	npc_data = {},
+	risk_levels = {
+		{
+			10,
+			7,
+		},
+		{
+			6,
+			4,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			0,
+			0,
+		},
+	},
+	land_based = {
+		{
+			7,
+			10,
+			103,
+		},
+		{
+			7,
+			6,
+			102,
+		},
+		{
+			0,
+			2,
+			101,
+		},
+	},
+	chapter_strategy = {
+		1016,
+	},
+	wall_prefab = {},
+	alarm_cell = {},
+	misc_arg = {
+		{
+			"fog",
+			{
+				124,
+				125,
+				126,
+				127,
+			},
+		},
+		{
+			"fog_visible_buff",
+			{
+				{
+					14,
+					1006,
+				},
+				{
+					50,
+					1007,
+				},
+				{
+					100,
+					1008,
+				},
+			},
+		},
+	},
 }
 
 _G.pg.base.chapter_template[10000] = {
@@ -38473,6 +41966,7 @@ _G.pg.base.chapter_template[10000] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10001] = {
@@ -38950,6 +42444,7 @@ _G.pg.base.chapter_template[10001] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10002] = {
@@ -39457,6 +42952,7 @@ _G.pg.base.chapter_template[10002] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10101] = {
@@ -39765,6 +43261,7 @@ _G.pg.base.chapter_template[10101] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10102] = {
@@ -40180,6 +43677,7 @@ _G.pg.base.chapter_template[10102] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10103] = {
@@ -40631,6 +44129,7 @@ _G.pg.base.chapter_template[10103] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10104] = {
@@ -41165,6 +44664,7 @@ _G.pg.base.chapter_template[10104] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10201] = {
@@ -41799,6 +45299,7 @@ _G.pg.base.chapter_template[10201] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10202] = {
@@ -42486,6 +45987,7 @@ _G.pg.base.chapter_template[10202] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10203] = {
@@ -43150,6 +46652,7 @@ _G.pg.base.chapter_template[10203] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10204] = {
@@ -43784,6 +47287,7 @@ _G.pg.base.chapter_template[10204] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10301] = {
@@ -44439,6 +47943,7 @@ _G.pg.base.chapter_template[10301] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10302] = {
@@ -45118,6 +48623,7 @@ _G.pg.base.chapter_template[10302] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10303] = {
@@ -45792,6 +49298,7 @@ _G.pg.base.chapter_template[10303] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10304] = {
@@ -46452,6 +49959,7 @@ _G.pg.base.chapter_template[10304] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10401] = {
@@ -47029,6 +50537,7 @@ _G.pg.base.chapter_template[10401] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10402] = {
@@ -47599,6 +51108,7 @@ _G.pg.base.chapter_template[10402] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10403] = {
@@ -48114,6 +51624,7 @@ _G.pg.base.chapter_template[10403] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10404] = {
@@ -48766,6 +52277,7 @@ _G.pg.base.chapter_template[10404] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10501] = {
@@ -49423,6 +52935,7 @@ _G.pg.base.chapter_template[10501] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10502] = {
@@ -50018,6 +53531,7 @@ _G.pg.base.chapter_template[10502] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10503] = {
@@ -50583,6 +54097,7 @@ _G.pg.base.chapter_template[10503] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10504] = {
@@ -51173,6 +54688,7 @@ _G.pg.base.chapter_template[10504] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10601] = {
@@ -51802,6 +55318,7 @@ _G.pg.base.chapter_template[10601] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10602] = {
@@ -52487,6 +56004,7 @@ _G.pg.base.chapter_template[10602] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10603] = {
@@ -53096,6 +56614,7 @@ _G.pg.base.chapter_template[10603] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10604] = {
@@ -53749,6 +57268,7 @@ _G.pg.base.chapter_template[10604] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10701] = {
@@ -54227,6 +57747,7 @@ _G.pg.base.chapter_template[10701] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10702] = {
@@ -54808,6 +58329,7 @@ _G.pg.base.chapter_template[10702] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10703] = {
@@ -55460,6 +58982,7 @@ _G.pg.base.chapter_template[10703] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10704] = {
@@ -56096,6 +59619,7 @@ _G.pg.base.chapter_template[10704] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10801] = {
@@ -56600,6 +60124,7 @@ _G.pg.base.chapter_template[10801] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10802] = {
@@ -57190,6 +60715,7 @@ _G.pg.base.chapter_template[10802] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10803] = {
@@ -57843,6 +61369,7 @@ _G.pg.base.chapter_template[10803] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10804] = {
@@ -58559,6 +62086,7 @@ _G.pg.base.chapter_template[10804] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10901] = {
@@ -59160,6 +62688,7 @@ _G.pg.base.chapter_template[10901] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10902] = {
@@ -59799,6 +63328,7 @@ _G.pg.base.chapter_template[10902] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10903] = {
@@ -60462,6 +63992,7 @@ _G.pg.base.chapter_template[10903] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[10904] = {
@@ -61147,6 +64678,7 @@ _G.pg.base.chapter_template[10904] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11001] = {
@@ -61767,6 +65299,7 @@ _G.pg.base.chapter_template[11001] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11002] = {
@@ -62443,6 +65976,7 @@ _G.pg.base.chapter_template[11002] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11003] = {
@@ -63136,6 +66670,7 @@ _G.pg.base.chapter_template[11003] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11004] = {
@@ -63843,6 +67378,7 @@ _G.pg.base.chapter_template[11004] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11101] = {
@@ -64512,6 +68048,7 @@ _G.pg.base.chapter_template[11101] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11102] = {
@@ -65296,6 +68833,7 @@ _G.pg.base.chapter_template[11102] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11103] = {
@@ -66050,6 +69588,7 @@ _G.pg.base.chapter_template[11103] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11104] = {
@@ -66913,6 +70452,7 @@ _G.pg.base.chapter_template[11104] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11201] = {
@@ -67560,6 +71100,7 @@ _G.pg.base.chapter_template[11201] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11202] = {
@@ -68320,6 +71861,7 @@ _G.pg.base.chapter_template[11202] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11203] = {
@@ -69116,6 +72658,7 @@ _G.pg.base.chapter_template[11203] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11204] = {
@@ -70028,6 +73571,7 @@ _G.pg.base.chapter_template[11204] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11301] = {
@@ -70680,6 +74224,7 @@ _G.pg.base.chapter_template[11301] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11302] = {
@@ -71437,6 +74982,7 @@ _G.pg.base.chapter_template[11302] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11303] = {
@@ -72238,6 +75784,7 @@ _G.pg.base.chapter_template[11303] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11304] = {
@@ -73148,6 +76695,7 @@ _G.pg.base.chapter_template[11304] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11401] = {
@@ -73866,6 +77414,7 @@ _G.pg.base.chapter_template[11401] = {
 			},
 		},
 	},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11402] = {
@@ -74690,6 +78239,7 @@ _G.pg.base.chapter_template[11402] = {
 			},
 		},
 	},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11403] = {
@@ -75575,6 +79125,7 @@ _G.pg.base.chapter_template[11403] = {
 			},
 		},
 	},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[11404] = {
@@ -77092,6 +80643,7 @@ _G.pg.base.chapter_template[11404] = {
 			},
 		},
 	},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[20001] = {
@@ -77582,6 +81134,7 @@ _G.pg.base.chapter_template[20001] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[20002] = {
@@ -78124,6 +81677,7 @@ _G.pg.base.chapter_template[20002] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[20003] = {
@@ -78758,6 +82312,7 @@ _G.pg.base.chapter_template[20003] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[20004] = {
@@ -79242,6 +82797,7 @@ _G.pg.base.chapter_template[20004] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[20005] = {
@@ -79771,6 +83327,7 @@ _G.pg.base.chapter_template[20005] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[20006] = {
@@ -80392,6 +83949,7 @@ _G.pg.base.chapter_template[20006] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[20007] = {
@@ -80875,6 +84433,7 @@ _G.pg.base.chapter_template[20007] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[20008] = {
@@ -81409,6 +84968,7 @@ _G.pg.base.chapter_template[20008] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[20009] = {
@@ -81980,6 +85540,7 @@ _G.pg.base.chapter_template[20009] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[20010] = {
@@ -82491,6 +86052,7 @@ _G.pg.base.chapter_template[20010] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[20011] = {
@@ -83046,6 +86608,7 @@ _G.pg.base.chapter_template[20011] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[20012] = {
@@ -83645,6 +87208,7 @@ _G.pg.base.chapter_template[20012] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[20013] = {
@@ -84156,6 +87720,7 @@ _G.pg.base.chapter_template[20013] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[20014] = {
@@ -84711,6 +88276,7 @@ _G.pg.base.chapter_template[20014] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[20015] = {
@@ -85310,6 +88876,7 @@ _G.pg.base.chapter_template[20015] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1040001] = {
@@ -85848,6 +89415,7 @@ _G.pg.base.chapter_template[1040001] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1040002] = {
@@ -86441,6 +90009,7 @@ _G.pg.base.chapter_template[1040002] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1040003] = {
@@ -87103,6 +90672,7 @@ _G.pg.base.chapter_template[1040003] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1040004] = {
@@ -87715,6 +91285,7 @@ _G.pg.base.chapter_template[1040004] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1040005] = {
@@ -88426,6 +91997,7 @@ _G.pg.base.chapter_template[1040005] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1040006] = {
@@ -89134,6 +92706,7 @@ _G.pg.base.chapter_template[1040006] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1040011] = {
@@ -89713,6 +93286,7 @@ _G.pg.base.chapter_template[1040011] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1040012] = {
@@ -90347,6 +93921,7 @@ _G.pg.base.chapter_template[1040012] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1040013] = {
@@ -91051,6 +94626,7 @@ _G.pg.base.chapter_template[1040013] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1040014] = {
@@ -91705,6 +95281,7 @@ _G.pg.base.chapter_template[1040014] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1040015] = {
@@ -92458,6 +96035,7 @@ _G.pg.base.chapter_template[1040015] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1040016] = {
@@ -93207,6 +96785,7 @@ _G.pg.base.chapter_template[1040016] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1080001] = {
@@ -93733,6 +97312,7 @@ _G.pg.base.chapter_template[1080001] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1080002] = {
@@ -94364,6 +97944,7 @@ _G.pg.base.chapter_template[1080002] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1080003] = {
@@ -94988,6 +98569,7 @@ _G.pg.base.chapter_template[1080003] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1080004] = {
@@ -95725,6 +99307,7 @@ _G.pg.base.chapter_template[1080004] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1080005] = {
@@ -96509,6 +100092,7 @@ _G.pg.base.chapter_template[1080005] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1200001] = {
@@ -97107,6 +100691,7 @@ _G.pg.base.chapter_template[1200001] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1200002] = {
@@ -97854,6 +101439,7 @@ _G.pg.base.chapter_template[1200002] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1200003] = {
@@ -98617,6 +102203,7 @@ _G.pg.base.chapter_template[1200003] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1200004] = {
@@ -99372,6 +102959,7 @@ _G.pg.base.chapter_template[1200004] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1210001] = {
@@ -99982,6 +103570,7 @@ _G.pg.base.chapter_template[1210001] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1210002] = {
@@ -100557,6 +104146,7 @@ _G.pg.base.chapter_template[1210002] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1210003] = {
@@ -101230,6 +104820,7 @@ _G.pg.base.chapter_template[1210003] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1210004] = {
@@ -101901,6 +105492,7 @@ _G.pg.base.chapter_template[1210004] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1210005] = {
@@ -102623,6 +106215,7 @@ _G.pg.base.chapter_template[1210005] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1210006] = {
@@ -103405,6 +106998,7 @@ _G.pg.base.chapter_template[1210006] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1210011] = {
@@ -104057,6 +107651,7 @@ _G.pg.base.chapter_template[1210011] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1210012] = {
@@ -104674,6 +108269,7 @@ _G.pg.base.chapter_template[1210012] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1210013] = {
@@ -105389,6 +108985,7 @@ _G.pg.base.chapter_template[1210013] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1210014] = {
@@ -106102,6 +109699,7 @@ _G.pg.base.chapter_template[1210014] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1210015] = {
@@ -106868,6 +110466,7 @@ _G.pg.base.chapter_template[1210015] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1210016] = {
@@ -107694,6 +111293,7 @@ _G.pg.base.chapter_template[1210016] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1210021] = {
@@ -108116,6 +111716,7 @@ _G.pg.base.chapter_template[1210021] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1240001] = {
@@ -108671,6 +112272,7 @@ _G.pg.base.chapter_template[1240001] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1240003] = {
@@ -109332,6 +112934,7 @@ _G.pg.base.chapter_template[1240003] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1240004] = {
@@ -110105,6 +113708,7 @@ _G.pg.base.chapter_template[1240004] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1240005] = {
@@ -110673,6 +114277,7 @@ _G.pg.base.chapter_template[1240005] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1240007] = {
@@ -111346,6 +114951,7 @@ _G.pg.base.chapter_template[1240007] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1240008] = {
@@ -112146,6 +115752,7 @@ _G.pg.base.chapter_template[1240008] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1240011] = {
@@ -112742,6 +116349,7 @@ _G.pg.base.chapter_template[1240011] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1240013] = {
@@ -113444,6 +117052,7 @@ _G.pg.base.chapter_template[1240013] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1240014] = {
@@ -114258,6 +117867,7 @@ _G.pg.base.chapter_template[1240014] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1240015] = {
@@ -114869,6 +118479,7 @@ _G.pg.base.chapter_template[1240015] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1240017] = {
@@ -115585,6 +119196,7 @@ _G.pg.base.chapter_template[1240017] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1240018] = {
@@ -116427,6 +120039,7 @@ _G.pg.base.chapter_template[1240018] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1240019] = {
@@ -117118,6 +120731,7 @@ _G.pg.base.chapter_template[1240019] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1240021] = {
@@ -117513,6 +121127,7 @@ _G.pg.base.chapter_template[1240021] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1450001] = {
@@ -118140,6 +121755,7 @@ _G.pg.base.chapter_template[1450001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1450002] = {
@@ -118821,6 +122437,7 @@ _G.pg.base.chapter_template[1450002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1450003] = {
@@ -119503,6 +123120,7 @@ _G.pg.base.chapter_template[1450003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1450004] = {
@@ -120272,6 +123890,7 @@ _G.pg.base.chapter_template[1450004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1450041] = {
@@ -120929,6 +124548,7 @@ _G.pg.base.chapter_template[1450041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1450051] = {
@@ -121391,6 +125011,7 @@ _G.pg.base.chapter_template[1450051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1450052] = {
@@ -121860,6 +125481,7 @@ _G.pg.base.chapter_template[1450052] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1540001] = {
@@ -122496,6 +126118,7 @@ _G.pg.base.chapter_template[1540001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1540002] = {
@@ -123187,6 +126810,7 @@ _G.pg.base.chapter_template[1540002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1540003] = {
@@ -123883,6 +127507,7 @@ _G.pg.base.chapter_template[1540003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1540004] = {
@@ -124654,6 +128279,7 @@ _G.pg.base.chapter_template[1540004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1540041] = {
@@ -125345,6 +128971,7 @@ _G.pg.base.chapter_template[1540041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1540051] = {
@@ -125807,6 +129434,7 @@ _G.pg.base.chapter_template[1540051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1590001] = {
@@ -126436,6 +130064,7 @@ _G.pg.base.chapter_template[1590001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1590002] = {
@@ -127116,6 +130745,7 @@ _G.pg.base.chapter_template[1590002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1590003] = {
@@ -127810,6 +131440,7 @@ _G.pg.base.chapter_template[1590003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1590004] = {
@@ -128641,6 +132272,7 @@ _G.pg.base.chapter_template[1590004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1590021] = {
@@ -129084,6 +132716,7 @@ _G.pg.base.chapter_template[1590021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1590022] = {
@@ -129453,6 +133086,7 @@ _G.pg.base.chapter_template[1590022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1590023] = {
@@ -129836,6 +133470,7 @@ _G.pg.base.chapter_template[1590023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1590024] = {
@@ -130279,6 +133914,7 @@ _G.pg.base.chapter_template[1590024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1590025] = {
@@ -130757,6 +134393,7 @@ _G.pg.base.chapter_template[1590025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1590041] = {
@@ -131482,6 +135119,7 @@ _G.pg.base.chapter_template[1590041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1590051] = {
@@ -131944,6 +135582,7 @@ _G.pg.base.chapter_template[1590051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1670001] = {
@@ -132632,6 +136271,7 @@ _G.pg.base.chapter_template[1670001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1670002] = {
@@ -133376,6 +137016,7 @@ _G.pg.base.chapter_template[1670002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1670003] = {
@@ -134065,6 +137706,7 @@ _G.pg.base.chapter_template[1670003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1670004] = {
@@ -134880,6 +138522,7 @@ _G.pg.base.chapter_template[1670004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1670041] = {
@@ -135494,6 +139137,7 @@ _G.pg.base.chapter_template[1670041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1670051] = {
@@ -135884,6 +139528,7 @@ _G.pg.base.chapter_template[1670051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1690001] = {
@@ -136618,6 +140263,7 @@ _G.pg.base.chapter_template[1690001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1690002] = {
@@ -137292,6 +140938,7 @@ _G.pg.base.chapter_template[1690002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1690003] = {
@@ -138027,6 +141674,7 @@ _G.pg.base.chapter_template[1690003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1690004] = {
@@ -138766,6 +142414,7 @@ _G.pg.base.chapter_template[1690004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1690005] = {
@@ -139562,6 +143211,7 @@ _G.pg.base.chapter_template[1690005] = {
 		0,
 	},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1690021] = {
@@ -140313,6 +143963,7 @@ _G.pg.base.chapter_template[1690021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1690022] = {
@@ -141003,6 +144654,7 @@ _G.pg.base.chapter_template[1690022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1690023] = {
@@ -141754,6 +145406,7 @@ _G.pg.base.chapter_template[1690023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1690024] = {
@@ -142505,6 +146158,7 @@ _G.pg.base.chapter_template[1690024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1690025] = {
@@ -143208,6 +146862,7 @@ _G.pg.base.chapter_template[1690025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1690031] = {
@@ -143756,6 +147411,7 @@ _G.pg.base.chapter_template[1690031] = {
 		0,
 	},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1690041] = {
@@ -144492,6 +148148,7 @@ _G.pg.base.chapter_template[1690041] = {
 		0,
 	},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1690051] = {
@@ -144880,6 +148537,7 @@ _G.pg.base.chapter_template[1690051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1700001] = {
@@ -145565,6 +149223,7 @@ _G.pg.base.chapter_template[1700001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1700002] = {
@@ -146249,6 +149908,7 @@ _G.pg.base.chapter_template[1700002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1700003] = {
@@ -146994,6 +150654,7 @@ _G.pg.base.chapter_template[1700003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1700004] = {
@@ -147739,6 +151400,7 @@ _G.pg.base.chapter_template[1700004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1700005] = {
@@ -148545,6 +152207,7 @@ _G.pg.base.chapter_template[1700005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1700006] = {
@@ -149384,6 +153047,7 @@ _G.pg.base.chapter_template[1700006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1700021] = {
@@ -150110,6 +153774,7 @@ _G.pg.base.chapter_template[1700021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1700022] = {
@@ -150835,6 +154500,7 @@ _G.pg.base.chapter_template[1700022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1700023] = {
@@ -151621,6 +155287,7 @@ _G.pg.base.chapter_template[1700023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1700024] = {
@@ -152411,6 +156078,7 @@ _G.pg.base.chapter_template[1700024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1700025] = {
@@ -153264,6 +156932,7 @@ _G.pg.base.chapter_template[1700025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1700026] = {
@@ -154150,6 +157819,7 @@ _G.pg.base.chapter_template[1700026] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1700041] = {
@@ -155019,6 +158689,7 @@ _G.pg.base.chapter_template[1700041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1700051] = {
@@ -155477,6 +159148,7 @@ _G.pg.base.chapter_template[1700051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1710001] = {
@@ -156172,6 +159844,7 @@ _G.pg.base.chapter_template[1710001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1710002] = {
@@ -156859,6 +160532,7 @@ _G.pg.base.chapter_template[1710002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1710003] = {
@@ -157591,6 +161265,7 @@ _G.pg.base.chapter_template[1710003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1710004] = {
@@ -158339,6 +162014,7 @@ _G.pg.base.chapter_template[1710004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1710005] = {
@@ -159137,6 +162813,7 @@ _G.pg.base.chapter_template[1710005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1710006] = {
@@ -160025,6 +163702,7 @@ _G.pg.base.chapter_template[1710006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1710021] = {
@@ -160761,6 +164439,7 @@ _G.pg.base.chapter_template[1710021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1710022] = {
@@ -161489,6 +165168,7 @@ _G.pg.base.chapter_template[1710022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1710023] = {
@@ -162262,6 +165942,7 @@ _G.pg.base.chapter_template[1710023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1710024] = {
@@ -163055,6 +166736,7 @@ _G.pg.base.chapter_template[1710024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1710025] = {
@@ -163901,6 +167583,7 @@ _G.pg.base.chapter_template[1710025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1710026] = {
@@ -164837,6 +168520,7 @@ _G.pg.base.chapter_template[1710026] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1710041] = {
@@ -165675,6 +169359,7 @@ _G.pg.base.chapter_template[1710041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1710051] = {
@@ -166062,6 +169747,7 @@ _G.pg.base.chapter_template[1710051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720001] = {
@@ -166873,6 +170559,7 @@ _G.pg.base.chapter_template[1720001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720002] = {
@@ -167668,6 +171355,7 @@ _G.pg.base.chapter_template[1720002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720003] = {
@@ -168512,6 +172200,7 @@ _G.pg.base.chapter_template[1720003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720004] = {
@@ -169316,6 +173005,7 @@ _G.pg.base.chapter_template[1720004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720005] = {
@@ -170154,6 +173844,7 @@ _G.pg.base.chapter_template[1720005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720006] = {
@@ -170962,6 +174653,7 @@ _G.pg.base.chapter_template[1720006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720007] = {
@@ -171755,6 +175447,7 @@ _G.pg.base.chapter_template[1720007] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720008] = {
@@ -172557,6 +176250,7 @@ _G.pg.base.chapter_template[1720008] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720021] = {
@@ -173410,6 +177104,7 @@ _G.pg.base.chapter_template[1720021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720022] = {
@@ -174247,6 +177942,7 @@ _G.pg.base.chapter_template[1720022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720023] = {
@@ -175132,6 +178828,7 @@ _G.pg.base.chapter_template[1720023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720024] = {
@@ -175981,6 +179678,7 @@ _G.pg.base.chapter_template[1720024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720025] = {
@@ -176866,6 +180564,7 @@ _G.pg.base.chapter_template[1720025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720026] = {
@@ -177721,6 +181420,7 @@ _G.pg.base.chapter_template[1720026] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720027] = {
@@ -178555,6 +182255,7 @@ _G.pg.base.chapter_template[1720027] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720028] = {
@@ -179400,6 +183101,7 @@ _G.pg.base.chapter_template[1720028] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720041] = {
@@ -180203,6 +183905,7 @@ _G.pg.base.chapter_template[1720041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1720051] = {
@@ -180925,6 +184628,7 @@ _G.pg.base.chapter_template[1720051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1730001] = {
@@ -181545,6 +185249,7 @@ _G.pg.base.chapter_template[1730001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1730002] = {
@@ -182178,6 +185883,7 @@ _G.pg.base.chapter_template[1730002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1730003] = {
@@ -182945,6 +186651,7 @@ _G.pg.base.chapter_template[1730003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1740001] = {
@@ -183723,6 +187430,7 @@ _G.pg.base.chapter_template[1740001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1740002] = {
@@ -184601,6 +188309,7 @@ _G.pg.base.chapter_template[1740002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1740003] = {
@@ -185535,6 +189244,7 @@ _G.pg.base.chapter_template[1740003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1740004] = {
@@ -186231,6 +189941,7 @@ _G.pg.base.chapter_template[1740004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1740005] = {
@@ -187163,6 +190874,7 @@ _G.pg.base.chapter_template[1740005] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1740006] = {
@@ -188777,6 +192489,7 @@ _G.pg.base.chapter_template[1740006] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1740021] = {
@@ -189596,6 +193309,7 @@ _G.pg.base.chapter_template[1740021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1740022] = {
@@ -190515,6 +194229,7 @@ _G.pg.base.chapter_template[1740022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1740023] = {
@@ -191490,6 +195205,7 @@ _G.pg.base.chapter_template[1740023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1740024] = {
@@ -192231,6 +195947,7 @@ _G.pg.base.chapter_template[1740024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1740025] = {
@@ -193210,6 +196927,7 @@ _G.pg.base.chapter_template[1740025] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1740026] = {
@@ -194871,6 +198589,7 @@ _G.pg.base.chapter_template[1740026] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1740041] = {
@@ -195900,6 +199619,7 @@ _G.pg.base.chapter_template[1740041] = {
 		0,
 	},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1740051] = {
@@ -196197,6 +199917,7 @@ _G.pg.base.chapter_template[1740051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1750001] = {
@@ -196936,6 +200657,7 @@ _G.pg.base.chapter_template[1750001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1750002] = {
@@ -197578,6 +201300,7 @@ _G.pg.base.chapter_template[1750002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1750003] = {
@@ -198264,6 +201987,7 @@ _G.pg.base.chapter_template[1750003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1750004] = {
@@ -198944,6 +202668,7 @@ _G.pg.base.chapter_template[1750004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1750005] = {
@@ -199693,6 +203418,7 @@ _G.pg.base.chapter_template[1750005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1750006] = {
@@ -200669,6 +204395,7 @@ _G.pg.base.chapter_template[1750006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1750021] = {
@@ -201449,6 +205176,7 @@ _G.pg.base.chapter_template[1750021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1750022] = {
@@ -202132,6 +205860,7 @@ _G.pg.base.chapter_template[1750022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1750023] = {
@@ -202859,6 +206588,7 @@ _G.pg.base.chapter_template[1750023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1750024] = {
@@ -203585,6 +207315,7 @@ _G.pg.base.chapter_template[1750024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1750025] = {
@@ -204381,6 +208112,7 @@ _G.pg.base.chapter_template[1750025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1750026] = {
@@ -205404,6 +209136,7 @@ _G.pg.base.chapter_template[1750026] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1750041] = {
@@ -205941,6 +209674,7 @@ _G.pg.base.chapter_template[1750041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1750051] = {
@@ -206319,6 +210053,7 @@ _G.pg.base.chapter_template[1750051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1760001] = {
@@ -207053,6 +210788,7 @@ _G.pg.base.chapter_template[1760001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1760002] = {
@@ -207787,6 +211523,7 @@ _G.pg.base.chapter_template[1760002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1760003] = {
@@ -208592,6 +212329,7 @@ _G.pg.base.chapter_template[1760003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1760004] = {
@@ -209391,6 +213129,7 @@ _G.pg.base.chapter_template[1760004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1760005] = {
@@ -210276,6 +214015,7 @@ _G.pg.base.chapter_template[1760005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1760006] = {
@@ -211191,6 +214931,7 @@ _G.pg.base.chapter_template[1760006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1760041] = {
@@ -211837,6 +215578,7 @@ _G.pg.base.chapter_template[1760041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1760051] = {
@@ -212301,6 +216043,7 @@ _G.pg.base.chapter_template[1760051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1770001] = {
@@ -213031,6 +216774,7 @@ _G.pg.base.chapter_template[1770001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1770002] = {
@@ -213721,6 +217465,7 @@ _G.pg.base.chapter_template[1770002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1770003] = {
@@ -214464,6 +218209,7 @@ _G.pg.base.chapter_template[1770003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1770004] = {
@@ -215223,6 +218969,7 @@ _G.pg.base.chapter_template[1770004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1770005] = {
@@ -216101,6 +219848,7 @@ _G.pg.base.chapter_template[1770005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1770021] = {
@@ -216473,6 +220221,7 @@ _G.pg.base.chapter_template[1770021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1770022] = {
@@ -216845,6 +220594,7 @@ _G.pg.base.chapter_template[1770022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1770023] = {
@@ -217217,6 +220967,7 @@ _G.pg.base.chapter_template[1770023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1770024] = {
@@ -217589,6 +221340,7 @@ _G.pg.base.chapter_template[1770024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1770025] = {
@@ -217961,6 +221713,7 @@ _G.pg.base.chapter_template[1770025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1770041] = {
@@ -218864,6 +222617,7 @@ _G.pg.base.chapter_template[1770041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1770051] = {
@@ -219284,6 +223038,7 @@ _G.pg.base.chapter_template[1770051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1780001] = {
@@ -220033,6 +223788,7 @@ _G.pg.base.chapter_template[1780001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1780002] = {
@@ -220670,6 +224426,7 @@ _G.pg.base.chapter_template[1780002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1780003] = {
@@ -221420,6 +225177,7 @@ _G.pg.base.chapter_template[1780003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1780004] = {
@@ -222106,6 +225864,7 @@ _G.pg.base.chapter_template[1780004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1780005] = {
@@ -222863,6 +226622,7 @@ _G.pg.base.chapter_template[1780005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1780006] = {
@@ -223797,6 +227557,7 @@ _G.pg.base.chapter_template[1780006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1780021] = {
@@ -224587,6 +228348,7 @@ _G.pg.base.chapter_template[1780021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1780022] = {
@@ -225266,6 +229028,7 @@ _G.pg.base.chapter_template[1780022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1780023] = {
@@ -226058,6 +229821,7 @@ _G.pg.base.chapter_template[1780023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1780024] = {
@@ -226789,6 +230553,7 @@ _G.pg.base.chapter_template[1780024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1780025] = {
@@ -227593,6 +231358,7 @@ _G.pg.base.chapter_template[1780025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1780026] = {
@@ -228574,6 +232340,7 @@ _G.pg.base.chapter_template[1780026] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1780041] = {
@@ -229285,6 +233052,7 @@ _G.pg.base.chapter_template[1780041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1780051] = {
@@ -229675,6 +233443,7 @@ _G.pg.base.chapter_template[1780051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1790001] = {
@@ -230423,6 +234192,7 @@ _G.pg.base.chapter_template[1790001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1790002] = {
@@ -231162,6 +234932,7 @@ _G.pg.base.chapter_template[1790002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1790003] = {
@@ -231907,6 +235678,7 @@ _G.pg.base.chapter_template[1790003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1790004] = {
@@ -232654,6 +236426,7 @@ _G.pg.base.chapter_template[1790004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1790005] = {
@@ -233396,6 +237169,7 @@ _G.pg.base.chapter_template[1790005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1790006] = {
@@ -234348,6 +238122,7 @@ _G.pg.base.chapter_template[1790006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1790021] = {
@@ -235137,6 +238912,7 @@ _G.pg.base.chapter_template[1790021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1790022] = {
@@ -235917,6 +239693,7 @@ _G.pg.base.chapter_template[1790022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1790023] = {
@@ -236703,6 +240480,7 @@ _G.pg.base.chapter_template[1790023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1790024] = {
@@ -237495,6 +241273,7 @@ _G.pg.base.chapter_template[1790024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1790025] = {
@@ -238284,6 +242063,7 @@ _G.pg.base.chapter_template[1790025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1790026] = {
@@ -239283,6 +243063,7 @@ _G.pg.base.chapter_template[1790026] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1790041] = {
@@ -240915,6 +244696,7 @@ _G.pg.base.chapter_template[1790041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1790051] = {
@@ -241321,6 +245103,7 @@ _G.pg.base.chapter_template[1790051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1800001] = {
@@ -242064,6 +245847,7 @@ _G.pg.base.chapter_template[1800001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1800002] = {
@@ -242740,6 +246524,7 @@ _G.pg.base.chapter_template[1800002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1800003] = {
@@ -243491,6 +247276,7 @@ _G.pg.base.chapter_template[1800003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1800004] = {
@@ -244243,6 +248029,7 @@ _G.pg.base.chapter_template[1800004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1800005] = {
@@ -245063,6 +248850,7 @@ _G.pg.base.chapter_template[1800005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1800021] = {
@@ -245439,6 +249227,7 @@ _G.pg.base.chapter_template[1800021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1800022] = {
@@ -245815,6 +249604,7 @@ _G.pg.base.chapter_template[1800022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1800023] = {
@@ -246191,6 +249981,7 @@ _G.pg.base.chapter_template[1800023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1800024] = {
@@ -246567,6 +250358,7 @@ _G.pg.base.chapter_template[1800024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1800025] = {
@@ -246943,6 +250735,7 @@ _G.pg.base.chapter_template[1800025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1800026] = {
@@ -247319,6 +251112,7 @@ _G.pg.base.chapter_template[1800026] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1800041] = {
@@ -248211,6 +252005,7 @@ _G.pg.base.chapter_template[1800041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1800051] = {
@@ -248654,6 +252449,7 @@ _G.pg.base.chapter_template[1800051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1810001] = {
@@ -249467,6 +253263,7 @@ _G.pg.base.chapter_template[1810001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1810002] = {
@@ -250218,6 +254015,7 @@ _G.pg.base.chapter_template[1810002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1810003] = {
@@ -251011,6 +254809,7 @@ _G.pg.base.chapter_template[1810003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1810004] = {
@@ -251835,6 +255634,7 @@ _G.pg.base.chapter_template[1810004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1810005] = {
@@ -252568,6 +256368,7 @@ _G.pg.base.chapter_template[1810005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1810006] = {
@@ -253501,6 +257302,7 @@ _G.pg.base.chapter_template[1810006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1810021] = {
@@ -254355,6 +258157,7 @@ _G.pg.base.chapter_template[1810021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1810022] = {
@@ -255147,6 +258950,7 @@ _G.pg.base.chapter_template[1810022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1810023] = {
@@ -255981,6 +259785,7 @@ _G.pg.base.chapter_template[1810023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1810024] = {
@@ -256850,6 +260655,7 @@ _G.pg.base.chapter_template[1810024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1810025] = {
@@ -257630,6 +261436,7 @@ _G.pg.base.chapter_template[1810025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1810026] = {
@@ -258610,6 +262417,7 @@ _G.pg.base.chapter_template[1810026] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1810041] = {
@@ -259209,6 +263017,7 @@ _G.pg.base.chapter_template[1810041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1810051] = {
@@ -259737,6 +263546,7 @@ _G.pg.base.chapter_template[1810051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1820001] = {
@@ -260406,6 +264216,7 @@ _G.pg.base.chapter_template[1820001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1820002] = {
@@ -261092,6 +264903,7 @@ _G.pg.base.chapter_template[1820002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1820003] = {
@@ -261839,6 +265651,7 @@ _G.pg.base.chapter_template[1820003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1820021] = {
@@ -262550,6 +266363,7 @@ _G.pg.base.chapter_template[1820021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1820022] = {
@@ -263283,6 +267097,7 @@ _G.pg.base.chapter_template[1820022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1820023] = {
@@ -264077,6 +267892,7 @@ _G.pg.base.chapter_template[1820023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1820041] = {
@@ -264876,6 +268692,7 @@ _G.pg.base.chapter_template[1820041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1820051] = {
@@ -265380,6 +269197,7 @@ _G.pg.base.chapter_template[1820051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1830001] = {
@@ -266113,6 +269931,7 @@ _G.pg.base.chapter_template[1830001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1830002] = {
@@ -266853,6 +270672,7 @@ _G.pg.base.chapter_template[1830002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1830003] = {
@@ -267632,6 +271452,7 @@ _G.pg.base.chapter_template[1830003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1830004] = {
@@ -268560,6 +272381,7 @@ _G.pg.base.chapter_template[1830004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1830005] = {
@@ -269365,6 +273187,7 @@ _G.pg.base.chapter_template[1830005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1830006] = {
@@ -270295,6 +274118,7 @@ _G.pg.base.chapter_template[1830006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1830021] = {
@@ -271070,6 +274894,7 @@ _G.pg.base.chapter_template[1830021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1830022] = {
@@ -271852,6 +275677,7 @@ _G.pg.base.chapter_template[1830022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1830023] = {
@@ -272673,6 +276499,7 @@ _G.pg.base.chapter_template[1830023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1830024] = {
@@ -273646,6 +277473,7 @@ _G.pg.base.chapter_template[1830024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1830025] = {
@@ -274498,6 +278326,7 @@ _G.pg.base.chapter_template[1830025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1830026] = {
@@ -275475,6 +279304,7 @@ _G.pg.base.chapter_template[1830026] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1830041] = {
@@ -276325,6 +280155,7 @@ _G.pg.base.chapter_template[1830041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1830051] = {
@@ -276945,6 +280776,7 @@ _G.pg.base.chapter_template[1830051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1840001] = {
@@ -277616,6 +281448,7 @@ _G.pg.base.chapter_template[1840001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1840002] = {
@@ -278351,6 +282184,7 @@ _G.pg.base.chapter_template[1840002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1840003] = {
@@ -279212,6 +283046,7 @@ _G.pg.base.chapter_template[1840003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1840004] = {
@@ -279998,6 +283833,7 @@ _G.pg.base.chapter_template[1840004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1850001] = {
@@ -280666,6 +284502,7 @@ _G.pg.base.chapter_template[1850001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1850002] = {
@@ -281409,6 +285246,7 @@ _G.pg.base.chapter_template[1850002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1850003] = {
@@ -282084,6 +285922,7 @@ _G.pg.base.chapter_template[1850003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1850004] = {
@@ -282938,6 +286777,7 @@ _G.pg.base.chapter_template[1850004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1850005] = {
@@ -283799,6 +287639,7 @@ _G.pg.base.chapter_template[1850005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1850006] = {
@@ -284598,6 +288439,7 @@ _G.pg.base.chapter_template[1850006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1850021] = {
@@ -285307,6 +289149,7 @@ _G.pg.base.chapter_template[1850021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1850022] = {
@@ -286091,6 +289934,7 @@ _G.pg.base.chapter_template[1850022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1850023] = {
@@ -286807,6 +290651,7 @@ _G.pg.base.chapter_template[1850023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1850024] = {
@@ -287706,6 +291551,7 @@ _G.pg.base.chapter_template[1850024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1850025] = {
@@ -288614,6 +292460,7 @@ _G.pg.base.chapter_template[1850025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1850026] = {
@@ -289460,6 +293307,7 @@ _G.pg.base.chapter_template[1850026] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1850041] = {
@@ -290097,6 +293945,7 @@ _G.pg.base.chapter_template[1850041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1850051] = {
@@ -290561,6 +294410,7 @@ _G.pg.base.chapter_template[1850051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1850052] = {
@@ -291027,6 +294877,7 @@ _G.pg.base.chapter_template[1850052] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1860001] = {
@@ -291774,6 +295625,7 @@ _G.pg.base.chapter_template[1860001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1860002] = {
@@ -292522,6 +296374,7 @@ _G.pg.base.chapter_template[1860002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1860003] = {
@@ -293330,6 +297183,7 @@ _G.pg.base.chapter_template[1860003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1860004] = {
@@ -294089,6 +297943,7 @@ _G.pg.base.chapter_template[1860004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1860005] = {
@@ -294949,6 +298804,7 @@ _G.pg.base.chapter_template[1860005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1860006] = {
@@ -295909,6 +299765,7 @@ _G.pg.base.chapter_template[1860006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1860041] = {
@@ -296552,6 +300409,7 @@ _G.pg.base.chapter_template[1860041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1860051] = {
@@ -296984,6 +300842,7 @@ _G.pg.base.chapter_template[1860051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1870001] = {
@@ -297705,6 +301564,7 @@ _G.pg.base.chapter_template[1870001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1870002] = {
@@ -298380,6 +302240,7 @@ _G.pg.base.chapter_template[1870002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1870003] = {
@@ -299116,6 +302977,7 @@ _G.pg.base.chapter_template[1870003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1870004] = {
@@ -299853,6 +303715,7 @@ _G.pg.base.chapter_template[1870004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1870005] = {
@@ -300670,6 +304533,7 @@ _G.pg.base.chapter_template[1870005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1870021] = {
@@ -301042,6 +304906,7 @@ _G.pg.base.chapter_template[1870021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1870022] = {
@@ -301414,6 +305279,7 @@ _G.pg.base.chapter_template[1870022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1870023] = {
@@ -301786,6 +305652,7 @@ _G.pg.base.chapter_template[1870023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1870024] = {
@@ -302158,6 +306025,7 @@ _G.pg.base.chapter_template[1870024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1870025] = {
@@ -302530,6 +306398,7 @@ _G.pg.base.chapter_template[1870025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1870041] = {
@@ -303243,6 +307112,7 @@ _G.pg.base.chapter_template[1870041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1870051] = {
@@ -303677,6 +307547,7 @@ _G.pg.base.chapter_template[1870051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1870052] = {
@@ -304113,6 +307984,7 @@ _G.pg.base.chapter_template[1870052] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1880001] = {
@@ -304866,6 +308738,7 @@ _G.pg.base.chapter_template[1880001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1880002] = {
@@ -305616,6 +309489,7 @@ _G.pg.base.chapter_template[1880002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1880003] = {
@@ -306549,6 +310423,7 @@ _G.pg.base.chapter_template[1880003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1880004] = {
@@ -307410,6 +311285,7 @@ _G.pg.base.chapter_template[1880004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1880005] = {
@@ -308285,6 +312161,7 @@ _G.pg.base.chapter_template[1880005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1880006] = {
@@ -309219,6 +313096,7 @@ _G.pg.base.chapter_template[1880006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1880021] = {
@@ -310014,6 +313892,7 @@ _G.pg.base.chapter_template[1880021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1880022] = {
@@ -310806,6 +314685,7 @@ _G.pg.base.chapter_template[1880022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1880023] = {
@@ -311781,6 +315661,7 @@ _G.pg.base.chapter_template[1880023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1880024] = {
@@ -312687,6 +316568,7 @@ _G.pg.base.chapter_template[1880024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1880025] = {
@@ -313609,6 +317491,7 @@ _G.pg.base.chapter_template[1880025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1880026] = {
@@ -314590,6 +318473,7 @@ _G.pg.base.chapter_template[1880026] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1880041] = {
@@ -315420,6 +319304,7 @@ _G.pg.base.chapter_template[1880041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1880051] = {
@@ -315849,6 +319734,7 @@ _G.pg.base.chapter_template[1880051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1880052] = {
@@ -316280,6 +320166,7 @@ _G.pg.base.chapter_template[1880052] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1890001] = {
@@ -317002,6 +320889,7 @@ _G.pg.base.chapter_template[1890001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1890002] = {
@@ -317727,6 +321615,7 @@ _G.pg.base.chapter_template[1890002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1890003] = {
@@ -318523,6 +322412,7 @@ _G.pg.base.chapter_template[1890003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1890004] = {
@@ -319383,6 +323273,7 @@ _G.pg.base.chapter_template[1890004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1890005] = {
@@ -320214,6 +324105,7 @@ _G.pg.base.chapter_template[1890005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1890006] = {
@@ -321141,6 +325033,7 @@ _G.pg.base.chapter_template[1890006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1890021] = {
@@ -321904,6 +325797,7 @@ _G.pg.base.chapter_template[1890021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1890022] = {
@@ -322670,6 +326564,7 @@ _G.pg.base.chapter_template[1890022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1890023] = {
@@ -323507,6 +327402,7 @@ _G.pg.base.chapter_template[1890023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1890024] = {
@@ -324412,6 +328308,7 @@ _G.pg.base.chapter_template[1890024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1890025] = {
@@ -325290,6 +329187,7 @@ _G.pg.base.chapter_template[1890025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1890026] = {
@@ -326264,6 +330162,7 @@ _G.pg.base.chapter_template[1890026] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1890041] = {
@@ -327078,6 +330977,7 @@ _G.pg.base.chapter_template[1890041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1890051] = {
@@ -327528,6 +331428,7 @@ _G.pg.base.chapter_template[1890051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1890052] = {
@@ -327980,6 +331881,7 @@ _G.pg.base.chapter_template[1890052] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1910001] = {
@@ -328654,6 +332556,7 @@ _G.pg.base.chapter_template[1910001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1910002] = {
@@ -329331,6 +333234,7 @@ _G.pg.base.chapter_template[1910002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1910003] = {
@@ -330070,6 +333974,7 @@ _G.pg.base.chapter_template[1910003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1910021] = {
@@ -330786,6 +334691,7 @@ _G.pg.base.chapter_template[1910021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1910022] = {
@@ -331510,6 +335416,7 @@ _G.pg.base.chapter_template[1910022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1910023] = {
@@ -332296,6 +336203,7 @@ _G.pg.base.chapter_template[1910023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1910041] = {
@@ -333043,6 +336951,7 @@ _G.pg.base.chapter_template[1910041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1920001] = {
@@ -333782,6 +337691,7 @@ _G.pg.base.chapter_template[1920001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1920002] = {
@@ -334524,6 +338434,7 @@ _G.pg.base.chapter_template[1920002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1920003] = {
@@ -335313,6 +339224,7 @@ _G.pg.base.chapter_template[1920003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1920004] = {
@@ -336177,6 +340089,7 @@ _G.pg.base.chapter_template[1920004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1920005] = {
@@ -337044,6 +340957,7 @@ _G.pg.base.chapter_template[1920005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1920006] = {
@@ -337937,6 +341851,7 @@ _G.pg.base.chapter_template[1920006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1920021] = {
@@ -338718,6 +342633,7 @@ _G.pg.base.chapter_template[1920021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1920022] = {
@@ -339502,6 +343418,7 @@ _G.pg.base.chapter_template[1920022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1920023] = {
@@ -340333,6 +344250,7 @@ _G.pg.base.chapter_template[1920023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1920024] = {
@@ -341242,6 +345160,7 @@ _G.pg.base.chapter_template[1920024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1920025] = {
@@ -342156,6 +346075,7 @@ _G.pg.base.chapter_template[1920025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1920026] = {
@@ -343096,6 +347016,7 @@ _G.pg.base.chapter_template[1920026] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1920041] = {
@@ -343967,6 +347888,7 @@ _G.pg.base.chapter_template[1920041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1920051] = {
@@ -344424,6 +348346,7 @@ _G.pg.base.chapter_template[1920051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1920052] = {
@@ -344883,6 +348806,7 @@ _G.pg.base.chapter_template[1920052] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1940001] = {
@@ -345619,6 +349543,7 @@ _G.pg.base.chapter_template[1940001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1940002] = {
@@ -346362,6 +350287,7 @@ _G.pg.base.chapter_template[1940002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1940003] = {
@@ -347105,6 +351031,7 @@ _G.pg.base.chapter_template[1940003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1940004] = {
@@ -347849,6 +351776,7 @@ _G.pg.base.chapter_template[1940004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1940005] = {
@@ -348659,6 +352587,7 @@ _G.pg.base.chapter_template[1940005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1940021] = {
@@ -349419,6 +353348,7 @@ _G.pg.base.chapter_template[1940021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1940022] = {
@@ -350186,6 +354116,7 @@ _G.pg.base.chapter_template[1940022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1940023] = {
@@ -350953,6 +354884,7 @@ _G.pg.base.chapter_template[1940023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1940024] = {
@@ -351720,6 +355652,7 @@ _G.pg.base.chapter_template[1940024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1940025] = {
@@ -352548,6 +356481,7 @@ _G.pg.base.chapter_template[1940025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1940041] = {
@@ -353631,6 +357565,7 @@ _G.pg.base.chapter_template[1940041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1940051] = {
@@ -353998,6 +357933,7 @@ _G.pg.base.chapter_template[1940051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1940052] = {
@@ -354365,6 +358301,7 @@ _G.pg.base.chapter_template[1940052] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1950001] = {
@@ -355034,6 +358971,7 @@ _G.pg.base.chapter_template[1950001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1950002] = {
@@ -355755,6 +359693,7 @@ _G.pg.base.chapter_template[1950002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1950003] = {
@@ -356416,6 +360355,7 @@ _G.pg.base.chapter_template[1950003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1950004] = {
@@ -357260,6 +361200,7 @@ _G.pg.base.chapter_template[1950004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1950005] = {
@@ -357999,6 +361940,7 @@ _G.pg.base.chapter_template[1950005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1950006] = {
@@ -358806,6 +362748,7 @@ _G.pg.base.chapter_template[1950006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1950021] = {
@@ -359516,6 +363459,7 @@ _G.pg.base.chapter_template[1950021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1950022] = {
@@ -360278,6 +364222,7 @@ _G.pg.base.chapter_template[1950022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1950023] = {
@@ -360980,6 +364925,7 @@ _G.pg.base.chapter_template[1950023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1950024] = {
@@ -361869,6 +365815,7 @@ _G.pg.base.chapter_template[1950024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1950025] = {
@@ -362655,6 +366602,7 @@ _G.pg.base.chapter_template[1950025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1950026] = {
@@ -363509,6 +367457,7 @@ _G.pg.base.chapter_template[1950026] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1950041] = {
@@ -364328,6 +368277,7 @@ _G.pg.base.chapter_template[1950041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1950051] = {
@@ -364699,6 +368649,7 @@ _G.pg.base.chapter_template[1950051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1950052] = {
@@ -365070,6 +369021,7 @@ _G.pg.base.chapter_template[1950052] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1960001] = {
@@ -365816,6 +369768,7 @@ _G.pg.base.chapter_template[1960001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1960002] = {
@@ -366565,6 +370518,7 @@ _G.pg.base.chapter_template[1960002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1960003] = {
@@ -367349,6 +371303,7 @@ _G.pg.base.chapter_template[1960003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1960004] = {
@@ -368147,6 +372102,7 @@ _G.pg.base.chapter_template[1960004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1960005] = {
@@ -368952,6 +372908,7 @@ _G.pg.base.chapter_template[1960005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1960006] = {
@@ -369921,6 +373878,7 @@ _G.pg.base.chapter_template[1960006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1960021] = {
@@ -370709,6 +374667,7 @@ _G.pg.base.chapter_template[1960021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1960022] = {
@@ -371500,6 +375459,7 @@ _G.pg.base.chapter_template[1960022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1960023] = {
@@ -372326,6 +376286,7 @@ _G.pg.base.chapter_template[1960023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1960024] = {
@@ -373169,6 +377130,7 @@ _G.pg.base.chapter_template[1960024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1960025] = {
@@ -374021,6 +377983,7 @@ _G.pg.base.chapter_template[1960025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1960026] = {
@@ -375037,6 +379000,7 @@ _G.pg.base.chapter_template[1960026] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1960041] = {
@@ -375781,6 +379745,7 @@ _G.pg.base.chapter_template[1960041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1960051] = {
@@ -376203,6 +380168,7 @@ _G.pg.base.chapter_template[1960051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1960052] = {
@@ -376625,6 +380591,7 @@ _G.pg.base.chapter_template[1960052] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1970001] = {
@@ -377378,6 +381345,7 @@ _G.pg.base.chapter_template[1970001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1970002] = {
@@ -378124,6 +382092,7 @@ _G.pg.base.chapter_template[1970002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1970003] = {
@@ -378926,6 +382895,7 @@ _G.pg.base.chapter_template[1970003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1970004] = {
@@ -379721,6 +383691,7 @@ _G.pg.base.chapter_template[1970004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1970005] = {
@@ -380521,6 +384492,7 @@ _G.pg.base.chapter_template[1970005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1970006] = {
@@ -381310,6 +385282,7 @@ _G.pg.base.chapter_template[1970006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1970041] = {
@@ -382144,6 +386117,7 @@ _G.pg.base.chapter_template[1970041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1970051] = {
@@ -382515,6 +386489,7 @@ _G.pg.base.chapter_template[1970051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1970052] = {
@@ -382886,6 +386861,7 @@ _G.pg.base.chapter_template[1970052] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1990001] = {
@@ -383686,6 +387662,7 @@ _G.pg.base.chapter_template[1990001] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1990002] = {
@@ -384489,6 +388466,7 @@ _G.pg.base.chapter_template[1990002] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1990003] = {
@@ -385486,6 +389464,7 @@ _G.pg.base.chapter_template[1990003] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1990004] = {
@@ -386333,6 +390312,7 @@ _G.pg.base.chapter_template[1990004] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1990005] = {
@@ -387180,6 +391160,7 @@ _G.pg.base.chapter_template[1990005] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1990006] = {
@@ -388221,6 +392202,7 @@ _G.pg.base.chapter_template[1990006] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1990021] = {
@@ -389062,6 +393044,7 @@ _G.pg.base.chapter_template[1990021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1990022] = {
@@ -389906,6 +393889,7 @@ _G.pg.base.chapter_template[1990022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1990023] = {
@@ -390944,6 +394928,7 @@ _G.pg.base.chapter_template[1990023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1990024] = {
@@ -391836,6 +395821,7 @@ _G.pg.base.chapter_template[1990024] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1990025] = {
@@ -392728,6 +396714,7 @@ _G.pg.base.chapter_template[1990025] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1990026] = {
@@ -393814,6 +397801,7 @@ _G.pg.base.chapter_template[1990026] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1990041] = {
@@ -394611,6 +398599,7 @@ _G.pg.base.chapter_template[1990041] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1990051] = {
@@ -395026,6 +399015,7 @@ _G.pg.base.chapter_template[1990051] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[1990052] = {
@@ -395441,6 +399431,7 @@ _G.pg.base.chapter_template[1990052] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100001] = {
@@ -395992,6 +399983,7 @@ _G.pg.base.chapter_template[2100001] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100002] = {
@@ -396600,6 +400592,7 @@ _G.pg.base.chapter_template[2100002] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100003] = {
@@ -397275,6 +401268,7 @@ _G.pg.base.chapter_template[2100003] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100004] = {
@@ -397900,6 +401894,7 @@ _G.pg.base.chapter_template[2100004] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100005] = {
@@ -398627,6 +402622,7 @@ _G.pg.base.chapter_template[2100005] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100006] = {
@@ -399349,6 +403345,7 @@ _G.pg.base.chapter_template[2100006] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100011] = {
@@ -399941,6 +403938,7 @@ _G.pg.base.chapter_template[2100011] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100012] = {
@@ -400590,6 +404588,7 @@ _G.pg.base.chapter_template[2100012] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100013] = {
@@ -401307,6 +405306,7 @@ _G.pg.base.chapter_template[2100013] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100014] = {
@@ -401978,6 +405978,7 @@ _G.pg.base.chapter_template[2100014] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100015] = {
@@ -402751,6 +406752,7 @@ _G.pg.base.chapter_template[2100015] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100016] = {
@@ -403518,6 +407520,7 @@ _G.pg.base.chapter_template[2100016] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100021] = {
@@ -404020,6 +408023,7 @@ _G.pg.base.chapter_template[2100021] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100022] = {
@@ -404584,6 +408588,7 @@ _G.pg.base.chapter_template[2100022] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100023] = {
@@ -405238,6 +409243,7 @@ _G.pg.base.chapter_template[2100023] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100024] = {
@@ -405915,6 +409921,7 @@ _G.pg.base.chapter_template[2100024] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100025] = {
@@ -406610,6 +410617,7 @@ _G.pg.base.chapter_template[2100025] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100026] = {
@@ -407480,6 +411488,7 @@ _G.pg.base.chapter_template[2100026] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100031] = {
@@ -408023,6 +412032,7 @@ _G.pg.base.chapter_template[2100031] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100032] = {
@@ -408628,6 +412638,7 @@ _G.pg.base.chapter_template[2100032] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100033] = {
@@ -409323,6 +413334,7 @@ _G.pg.base.chapter_template[2100033] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100034] = {
@@ -410045,6 +414057,7 @@ _G.pg.base.chapter_template[2100034] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100035] = {
@@ -410785,6 +414798,7 @@ _G.pg.base.chapter_template[2100035] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100036] = {
@@ -411700,6 +415714,7 @@ _G.pg.base.chapter_template[2100036] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100041] = {
@@ -412263,6 +416278,7 @@ _G.pg.base.chapter_template[2100041] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100042] = {
@@ -412966,6 +416982,7 @@ _G.pg.base.chapter_template[2100042] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100043] = {
@@ -413636,6 +417653,7 @@ _G.pg.base.chapter_template[2100043] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100044] = {
@@ -414424,6 +418442,7 @@ _G.pg.base.chapter_template[2100044] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100045] = {
@@ -415007,6 +419026,7 @@ _G.pg.base.chapter_template[2100045] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100046] = {
@@ -415598,6 +419618,7 @@ _G.pg.base.chapter_template[2100046] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100047] = {
@@ -416244,6 +420265,7 @@ _G.pg.base.chapter_template[2100047] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100048] = {
@@ -417046,6 +421068,7 @@ _G.pg.base.chapter_template[2100048] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100051] = {
@@ -417650,6 +421673,7 @@ _G.pg.base.chapter_template[2100051] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100052] = {
@@ -418396,6 +422420,7 @@ _G.pg.base.chapter_template[2100052] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100053] = {
@@ -419107,6 +423132,7 @@ _G.pg.base.chapter_template[2100053] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100054] = {
@@ -419936,6 +423962,7 @@ _G.pg.base.chapter_template[2100054] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100055] = {
@@ -420564,6 +424591,7 @@ _G.pg.base.chapter_template[2100055] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100056] = {
@@ -421200,6 +425228,7 @@ _G.pg.base.chapter_template[2100056] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100057] = {
@@ -421891,6 +425920,7 @@ _G.pg.base.chapter_template[2100057] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100058] = {
@@ -422738,6 +426768,7 @@ _G.pg.base.chapter_template[2100058] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100061] = {
@@ -423332,6 +427363,7 @@ _G.pg.base.chapter_template[2100061] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100062] = {
@@ -423984,6 +428016,7 @@ _G.pg.base.chapter_template[2100062] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100063] = {
@@ -424727,6 +428760,7 @@ _G.pg.base.chapter_template[2100063] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100064] = {
@@ -425408,6 +429442,7 @@ _G.pg.base.chapter_template[2100064] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100065] = {
@@ -426230,6 +430265,7 @@ _G.pg.base.chapter_template[2100065] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100066] = {
@@ -427231,6 +431267,7 @@ _G.pg.base.chapter_template[2100066] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100071] = {
@@ -427866,6 +431903,7 @@ _G.pg.base.chapter_template[2100071] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100072] = {
@@ -428559,6 +432597,7 @@ _G.pg.base.chapter_template[2100072] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100073] = {
@@ -429343,6 +433382,7 @@ _G.pg.base.chapter_template[2100073] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100074] = {
@@ -430069,6 +434109,7 @@ _G.pg.base.chapter_template[2100074] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100075] = {
@@ -430936,6 +434977,7 @@ _G.pg.base.chapter_template[2100075] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100076] = {
@@ -431982,6 +436024,7 @@ _G.pg.base.chapter_template[2100076] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100081] = {
@@ -432537,6 +436580,7 @@ _G.pg.base.chapter_template[2100081] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100082] = {
@@ -433198,6 +437242,7 @@ _G.pg.base.chapter_template[2100082] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100083] = {
@@ -433971,6 +438016,7 @@ _G.pg.base.chapter_template[2100083] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100084] = {
@@ -434539,6 +438585,7 @@ _G.pg.base.chapter_template[2100084] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100085] = {
@@ -435212,6 +439259,7 @@ _G.pg.base.chapter_template[2100085] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100086] = {
@@ -436011,6 +440059,7 @@ _G.pg.base.chapter_template[2100086] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100091] = {
@@ -436607,6 +440656,7 @@ _G.pg.base.chapter_template[2100091] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100092] = {
@@ -437309,6 +441359,7 @@ _G.pg.base.chapter_template[2100092] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100093] = {
@@ -438123,6 +442174,7 @@ _G.pg.base.chapter_template[2100093] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100094] = {
@@ -438736,6 +442788,7 @@ _G.pg.base.chapter_template[2100094] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100095] = {
@@ -439456,6 +443509,7 @@ _G.pg.base.chapter_template[2100095] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100096] = {
@@ -440302,6 +444356,7 @@ _G.pg.base.chapter_template[2100096] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100101] = {
@@ -440912,6 +444967,7 @@ _G.pg.base.chapter_template[2100101] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100102] = {
@@ -441487,6 +445543,7 @@ _G.pg.base.chapter_template[2100102] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100103] = {
@@ -442160,6 +446217,7 @@ _G.pg.base.chapter_template[2100103] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100104] = {
@@ -442832,6 +446890,7 @@ _G.pg.base.chapter_template[2100104] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100105] = {
@@ -443555,6 +447614,7 @@ _G.pg.base.chapter_template[2100105] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100106] = {
@@ -444338,6 +448398,7 @@ _G.pg.base.chapter_template[2100106] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100111] = {
@@ -444990,6 +449051,7 @@ _G.pg.base.chapter_template[2100111] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100112] = {
@@ -445607,6 +449669,7 @@ _G.pg.base.chapter_template[2100112] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100113] = {
@@ -446322,6 +450385,7 @@ _G.pg.base.chapter_template[2100113] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100114] = {
@@ -447036,6 +451100,7 @@ _G.pg.base.chapter_template[2100114] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100115] = {
@@ -447807,6 +451872,7 @@ _G.pg.base.chapter_template[2100115] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100116] = {
@@ -448638,6 +452704,7 @@ _G.pg.base.chapter_template[2100116] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100121] = {
@@ -449243,6 +453310,7 @@ _G.pg.base.chapter_template[2100121] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100122] = {
@@ -449819,6 +453887,7 @@ _G.pg.base.chapter_template[2100122] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100123] = {
@@ -450491,6 +454560,7 @@ _G.pg.base.chapter_template[2100123] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100124] = {
@@ -451165,6 +455235,7 @@ _G.pg.base.chapter_template[2100124] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100125] = {
@@ -451882,6 +455953,7 @@ _G.pg.base.chapter_template[2100125] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100126] = {
@@ -452573,6 +456645,7 @@ _G.pg.base.chapter_template[2100126] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100131] = {
@@ -453220,6 +457293,7 @@ _G.pg.base.chapter_template[2100131] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100132] = {
@@ -453838,6 +457912,7 @@ _G.pg.base.chapter_template[2100132] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100133] = {
@@ -454552,6 +458627,7 @@ _G.pg.base.chapter_template[2100133] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100134] = {
@@ -455272,6 +459348,7 @@ _G.pg.base.chapter_template[2100134] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100135] = {
@@ -456037,6 +460114,7 @@ _G.pg.base.chapter_template[2100135] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100136] = {
@@ -456776,6 +460854,7 @@ _G.pg.base.chapter_template[2100136] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100141] = {
@@ -457351,6 +461430,7 @@ _G.pg.base.chapter_template[2100141] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100142] = {
@@ -457928,6 +462008,7 @@ _G.pg.base.chapter_template[2100142] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100143] = {
@@ -458590,6 +462671,7 @@ _G.pg.base.chapter_template[2100143] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100144] = {
@@ -459262,6 +463344,7 @@ _G.pg.base.chapter_template[2100144] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100145] = {
@@ -459977,6 +464060,7 @@ _G.pg.base.chapter_template[2100145] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100146] = {
@@ -460664,6 +464748,7 @@ _G.pg.base.chapter_template[2100146] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100151] = {
@@ -461281,6 +465366,7 @@ _G.pg.base.chapter_template[2100151] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100152] = {
@@ -461900,6 +465986,7 @@ _G.pg.base.chapter_template[2100152] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100153] = {
@@ -462604,6 +466691,7 @@ _G.pg.base.chapter_template[2100153] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100154] = {
@@ -463322,6 +467410,7 @@ _G.pg.base.chapter_template[2100154] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100155] = {
@@ -464085,6 +468174,7 @@ _G.pg.base.chapter_template[2100155] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100156] = {
@@ -464820,6 +468910,7 @@ _G.pg.base.chapter_template[2100156] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100161] = {
@@ -465402,6 +469493,7 @@ _G.pg.base.chapter_template[2100161] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100162] = {
@@ -466004,6 +470096,7 @@ _G.pg.base.chapter_template[2100162] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100163] = {
@@ -466700,6 +470793,7 @@ _G.pg.base.chapter_template[2100163] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100164] = {
@@ -467246,6 +471340,7 @@ _G.pg.base.chapter_template[2100164] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100165] = {
@@ -467847,6 +471942,7 @@ _G.pg.base.chapter_template[2100165] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100166] = {
@@ -468459,6 +472555,7 @@ _G.pg.base.chapter_template[2100166] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100167] = {
@@ -469113,6 +473210,7 @@ _G.pg.base.chapter_template[2100167] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100168] = {
@@ -469733,6 +473831,7 @@ _G.pg.base.chapter_template[2100168] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100171] = {
@@ -470357,6 +474456,7 @@ _G.pg.base.chapter_template[2100171] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100172] = {
@@ -470999,6 +475099,7 @@ _G.pg.base.chapter_template[2100172] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100173] = {
@@ -471736,6 +475837,7 @@ _G.pg.base.chapter_template[2100173] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100174] = {
@@ -472324,6 +476426,7 @@ _G.pg.base.chapter_template[2100174] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100175] = {
@@ -472968,6 +477071,7 @@ _G.pg.base.chapter_template[2100175] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100176] = {
@@ -473625,6 +477729,7 @@ _G.pg.base.chapter_template[2100176] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100177] = {
@@ -474327,6 +478432,7 @@ _G.pg.base.chapter_template[2100177] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100178] = {
@@ -474994,6 +479100,7 @@ _G.pg.base.chapter_template[2100178] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100181] = {
@@ -475587,6 +479694,7 @@ _G.pg.base.chapter_template[2100181] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100182] = {
@@ -476228,6 +480336,7 @@ _G.pg.base.chapter_template[2100182] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100183] = {
@@ -476966,6 +481075,7 @@ _G.pg.base.chapter_template[2100183] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100184] = {
@@ -477597,6 +481707,7 @@ _G.pg.base.chapter_template[2100184] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100185] = {
@@ -478271,6 +482382,7 @@ _G.pg.base.chapter_template[2100185] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100186] = {
@@ -478917,6 +483029,7 @@ _G.pg.base.chapter_template[2100186] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100187] = {
@@ -479463,6 +483576,7 @@ _G.pg.base.chapter_template[2100187] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100188] = {
@@ -480065,6 +484179,7 @@ _G.pg.base.chapter_template[2100188] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100189] = {
@@ -480660,6 +484775,7 @@ _G.pg.base.chapter_template[2100189] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100190] = {
@@ -481312,6 +485428,7 @@ _G.pg.base.chapter_template[2100190] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100191] = {
@@ -481947,6 +486064,7 @@ _G.pg.base.chapter_template[2100191] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100192] = {
@@ -482630,6 +486748,7 @@ _G.pg.base.chapter_template[2100192] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100193] = {
@@ -483405,6 +487524,7 @@ _G.pg.base.chapter_template[2100193] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100194] = {
@@ -484082,6 +488202,7 @@ _G.pg.base.chapter_template[2100194] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100195] = {
@@ -484804,6 +488925,7 @@ _G.pg.base.chapter_template[2100195] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100196] = {
@@ -485498,6 +489620,7 @@ _G.pg.base.chapter_template[2100196] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100197] = {
@@ -486086,6 +490209,7 @@ _G.pg.base.chapter_template[2100197] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100198] = {
@@ -486730,6 +490854,7 @@ _G.pg.base.chapter_template[2100198] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100199] = {
@@ -487367,6 +491492,7 @@ _G.pg.base.chapter_template[2100199] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100200] = {
@@ -488063,6 +492189,7 @@ _G.pg.base.chapter_template[2100200] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100201] = {
@@ -488641,6 +492768,7 @@ _G.pg.base.chapter_template[2100201] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100202] = {
@@ -489236,6 +493364,7 @@ _G.pg.base.chapter_template[2100202] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100203] = {
@@ -489854,6 +493983,7 @@ _G.pg.base.chapter_template[2100203] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100204] = {
@@ -490488,6 +494618,7 @@ _G.pg.base.chapter_template[2100204] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100205] = {
@@ -491168,6 +495299,7 @@ _G.pg.base.chapter_template[2100205] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100206] = {
@@ -491811,6 +495943,7 @@ _G.pg.base.chapter_template[2100206] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100211] = {
@@ -492431,6 +496564,7 @@ _G.pg.base.chapter_template[2100211] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100212] = {
@@ -493069,6 +497203,7 @@ _G.pg.base.chapter_template[2100212] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100213] = {
@@ -493730,6 +497865,7 @@ _G.pg.base.chapter_template[2100213] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100214] = {
@@ -494410,6 +498546,7 @@ _G.pg.base.chapter_template[2100214] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100215] = {
@@ -495138,6 +499275,7 @@ _G.pg.base.chapter_template[2100215] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100216] = {
@@ -495829,6 +499967,7 @@ _G.pg.base.chapter_template[2100216] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100221] = {
@@ -496387,6 +500526,7 @@ _G.pg.base.chapter_template[2100221] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100222] = {
@@ -496973,6 +501113,7 @@ _G.pg.base.chapter_template[2100222] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100223] = {
@@ -497579,6 +501720,7 @@ _G.pg.base.chapter_template[2100223] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100224] = {
@@ -498222,6 +502364,7 @@ _G.pg.base.chapter_template[2100224] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100225] = {
@@ -498855,6 +502998,7 @@ _G.pg.base.chapter_template[2100225] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100226] = {
@@ -499560,6 +503704,7 @@ _G.pg.base.chapter_template[2100226] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100231] = {
@@ -500160,6 +504305,7 @@ _G.pg.base.chapter_template[2100231] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100232] = {
@@ -500788,6 +504934,7 @@ _G.pg.base.chapter_template[2100232] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100233] = {
@@ -501437,6 +505584,7 @@ _G.pg.base.chapter_template[2100233] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100234] = {
@@ -502126,6 +506274,7 @@ _G.pg.base.chapter_template[2100234] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100235] = {
@@ -502807,6 +506956,7 @@ _G.pg.base.chapter_template[2100235] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100236] = {
@@ -503560,6 +507710,7 @@ _G.pg.base.chapter_template[2100236] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100241] = {
@@ -504149,6 +508300,7 @@ _G.pg.base.chapter_template[2100241] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100242] = {
@@ -504769,6 +508921,7 @@ _G.pg.base.chapter_template[2100242] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100243] = {
@@ -505482,6 +509635,7 @@ _G.pg.base.chapter_template[2100243] = {
 		0,
 	},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100244] = {
@@ -506185,6 +510339,7 @@ _G.pg.base.chapter_template[2100244] = {
 		0,
 	},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100245] = {
@@ -507206,6 +511361,7 @@ _G.pg.base.chapter_template[2100245] = {
 		0,
 	},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100246] = {
@@ -508979,6 +513135,7 @@ _G.pg.base.chapter_template[2100246] = {
 		0,
 	},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100251] = {
@@ -509610,6 +513767,7 @@ _G.pg.base.chapter_template[2100251] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100252] = {
@@ -510272,6 +514430,7 @@ _G.pg.base.chapter_template[2100252] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100253] = {
@@ -511028,6 +515187,7 @@ _G.pg.base.chapter_template[2100253] = {
 		0,
 	},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100254] = {
@@ -511776,6 +515936,7 @@ _G.pg.base.chapter_template[2100254] = {
 		0,
 	},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100255] = {
@@ -512844,6 +517005,7 @@ _G.pg.base.chapter_template[2100255] = {
 		0,
 	},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100256] = {
@@ -514664,6 +518826,7 @@ _G.pg.base.chapter_template[2100256] = {
 		0,
 	},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100261] = {
@@ -515259,6 +519422,7 @@ _G.pg.base.chapter_template[2100261] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100262] = {
@@ -515839,6 +520003,7 @@ _G.pg.base.chapter_template[2100262] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100263] = {
@@ -516464,6 +520629,7 @@ _G.pg.base.chapter_template[2100263] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100264] = {
@@ -517102,6 +521268,7 @@ _G.pg.base.chapter_template[2100264] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100265] = {
@@ -517688,6 +521855,7 @@ _G.pg.base.chapter_template[2100265] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100266] = {
@@ -518337,6 +522505,7 @@ _G.pg.base.chapter_template[2100266] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100271] = {
@@ -518975,6 +523144,7 @@ _G.pg.base.chapter_template[2100271] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100272] = {
@@ -519598,6 +523768,7 @@ _G.pg.base.chapter_template[2100272] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100273] = {
@@ -520265,6 +524436,7 @@ _G.pg.base.chapter_template[2100273] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100274] = {
@@ -520949,6 +525121,7 @@ _G.pg.base.chapter_template[2100274] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100275] = {
@@ -521583,6 +525756,7 @@ _G.pg.base.chapter_template[2100275] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100276] = {
@@ -522280,6 +526454,7 @@ _G.pg.base.chapter_template[2100276] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100281] = {
@@ -522970,6 +527145,7 @@ _G.pg.base.chapter_template[2100281] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100282] = {
@@ -523645,6 +527821,7 @@ _G.pg.base.chapter_template[2100282] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100283] = {
@@ -524338,6 +528515,7 @@ _G.pg.base.chapter_template[2100283] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100284] = {
@@ -525090,6 +529268,7 @@ _G.pg.base.chapter_template[2100284] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100285] = {
@@ -525867,6 +530046,7 @@ _G.pg.base.chapter_template[2100285] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100286] = {
@@ -526741,6 +530921,7 @@ _G.pg.base.chapter_template[2100286] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100291] = {
@@ -527470,6 +531651,7 @@ _G.pg.base.chapter_template[2100291] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100292] = {
@@ -528184,6 +532366,7 @@ _G.pg.base.chapter_template[2100292] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100293] = {
@@ -528916,6 +533099,7 @@ _G.pg.base.chapter_template[2100293] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100294] = {
@@ -529712,6 +533896,7 @@ _G.pg.base.chapter_template[2100294] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100295] = {
@@ -530535,6 +534720,7 @@ _G.pg.base.chapter_template[2100295] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100296] = {
@@ -531456,6 +535642,7 @@ _G.pg.base.chapter_template[2100296] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100301] = {
@@ -532139,6 +536326,7 @@ _G.pg.base.chapter_template[2100301] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100302] = {
@@ -532808,6 +536996,7 @@ _G.pg.base.chapter_template[2100302] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100303] = {
@@ -533473,6 +537662,7 @@ _G.pg.base.chapter_template[2100303] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100304] = {
@@ -534229,6 +538419,7 @@ _G.pg.base.chapter_template[2100304] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100305] = {
@@ -535032,6 +539223,7 @@ _G.pg.base.chapter_template[2100305] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100306] = {
@@ -536010,6 +540202,7 @@ _G.pg.base.chapter_template[2100306] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100311] = {
@@ -536734,6 +540927,7 @@ _G.pg.base.chapter_template[2100311] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100312] = {
@@ -537444,6 +541638,7 @@ _G.pg.base.chapter_template[2100312] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100313] = {
@@ -538152,6 +542347,7 @@ _G.pg.base.chapter_template[2100313] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100314] = {
@@ -538953,6 +543149,7 @@ _G.pg.base.chapter_template[2100314] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100315] = {
@@ -539803,6 +544000,7 @@ _G.pg.base.chapter_template[2100315] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100316] = {
@@ -540828,6 +545026,7 @@ _G.pg.base.chapter_template[2100316] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100321] = {
@@ -541622,6 +545821,7 @@ _G.pg.base.chapter_template[2100321] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100322] = {
@@ -542298,6 +546498,7 @@ _G.pg.base.chapter_template[2100322] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100323] = {
@@ -543154,6 +547355,7 @@ _G.pg.base.chapter_template[2100323] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100324] = {
@@ -544167,6 +548369,7 @@ _G.pg.base.chapter_template[2100324] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100325] = {
@@ -545084,6 +549287,7 @@ _G.pg.base.chapter_template[2100325] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100326] = {
@@ -546113,6 +550317,7 @@ _G.pg.base.chapter_template[2100326] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100327] = {
@@ -546645,6 +550850,7 @@ _G.pg.base.chapter_template[2100327] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100328] = {
@@ -547299,6 +551505,7 @@ _G.pg.base.chapter_template[2100328] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100331] = {
@@ -548134,6 +552341,7 @@ _G.pg.base.chapter_template[2100331] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100332] = {
@@ -548852,6 +553060,7 @@ _G.pg.base.chapter_template[2100332] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100333] = {
@@ -549750,6 +553959,7 @@ _G.pg.base.chapter_template[2100333] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100334] = {
@@ -550808,6 +555018,7 @@ _G.pg.base.chapter_template[2100334] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100335] = {
@@ -551772,6 +555983,7 @@ _G.pg.base.chapter_template[2100335] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100336] = {
@@ -552849,6 +557061,7 @@ _G.pg.base.chapter_template[2100336] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100337] = {
@@ -553381,6 +557594,7 @@ _G.pg.base.chapter_template[2100337] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100338] = {
@@ -554035,6 +558249,7 @@ _G.pg.base.chapter_template[2100338] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100341] = {
@@ -554730,6 +558945,7 @@ _G.pg.base.chapter_template[2100341] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100342] = {
@@ -555445,6 +559661,7 @@ _G.pg.base.chapter_template[2100342] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100343] = {
@@ -556275,6 +560492,7 @@ _G.pg.base.chapter_template[2100343] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100344] = {
@@ -557093,6 +561311,7 @@ _G.pg.base.chapter_template[2100344] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100345] = {
@@ -557925,6 +562144,7 @@ _G.pg.base.chapter_template[2100345] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100346] = {
@@ -558764,6 +562984,7 @@ _G.pg.base.chapter_template[2100346] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100351] = {
@@ -559501,6 +563722,7 @@ _G.pg.base.chapter_template[2100351] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100352] = {
@@ -560258,6 +564480,7 @@ _G.pg.base.chapter_template[2100352] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100353] = {
@@ -561131,6 +565354,7 @@ _G.pg.base.chapter_template[2100353] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100354] = {
@@ -561995,6 +566219,7 @@ _G.pg.base.chapter_template[2100354] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100355] = {
@@ -562875,6 +567100,7 @@ _G.pg.base.chapter_template[2100355] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100356] = {
@@ -563761,6 +567987,7 @@ _G.pg.base.chapter_template[2100356] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100361] = {
@@ -564442,6 +568669,7 @@ _G.pg.base.chapter_template[2100361] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100362] = {
@@ -565139,6 +569367,7 @@ _G.pg.base.chapter_template[2100362] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100363] = {
@@ -566049,6 +570278,7 @@ _G.pg.base.chapter_template[2100363] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100364] = {
@@ -566842,6 +571072,7 @@ _G.pg.base.chapter_template[2100364] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100365] = {
@@ -567660,6 +571891,7 @@ _G.pg.base.chapter_template[2100365] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100366] = {
@@ -568588,6 +572820,7 @@ _G.pg.base.chapter_template[2100366] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100371] = {
@@ -569311,6 +573544,7 @@ _G.pg.base.chapter_template[2100371] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100372] = {
@@ -570050,6 +574284,7 @@ _G.pg.base.chapter_template[2100372] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100373] = {
@@ -571003,6 +575238,7 @@ _G.pg.base.chapter_template[2100373] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100374] = {
@@ -571841,6 +576077,7 @@ _G.pg.base.chapter_template[2100374] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100375] = {
@@ -572706,6 +576943,7 @@ _G.pg.base.chapter_template[2100375] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100376] = {
@@ -573681,6 +577919,7 @@ _G.pg.base.chapter_template[2100376] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100381] = {
@@ -574322,6 +578561,7 @@ _G.pg.base.chapter_template[2100381] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100382] = {
@@ -575018,6 +579258,7 @@ _G.pg.base.chapter_template[2100382] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100383] = {
@@ -575867,6 +580108,7 @@ _G.pg.base.chapter_template[2100383] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100384] = {
@@ -576684,6 +580926,7 @@ _G.pg.base.chapter_template[2100384] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100385] = {
@@ -577522,6 +581765,7 @@ _G.pg.base.chapter_template[2100385] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100386] = {
@@ -578444,6 +582688,7 @@ _G.pg.base.chapter_template[2100386] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100391] = {
@@ -579127,6 +583372,7 @@ _G.pg.base.chapter_template[2100391] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100392] = {
@@ -579865,6 +584111,7 @@ _G.pg.base.chapter_template[2100392] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100393] = {
@@ -580757,6 +585004,7 @@ _G.pg.base.chapter_template[2100393] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100394] = {
@@ -581620,6 +585868,7 @@ _G.pg.base.chapter_template[2100394] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100395] = {
@@ -582506,6 +586755,7 @@ _G.pg.base.chapter_template[2100395] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100396] = {
@@ -583475,6 +587725,7 @@ _G.pg.base.chapter_template[2100396] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100401] = {
@@ -584151,6 +588402,7 @@ _G.pg.base.chapter_template[2100401] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100402] = {
@@ -584846,6 +589098,7 @@ _G.pg.base.chapter_template[2100402] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100403] = {
@@ -585654,6 +589907,7 @@ _G.pg.base.chapter_template[2100403] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100404] = {
@@ -586566,6 +590820,7 @@ _G.pg.base.chapter_template[2100404] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100405] = {
@@ -587497,6 +591752,7 @@ _G.pg.base.chapter_template[2100405] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100406] = {
@@ -588444,6 +592700,7 @@ _G.pg.base.chapter_template[2100406] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100411] = {
@@ -589162,6 +593419,7 @@ _G.pg.base.chapter_template[2100411] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100412] = {
@@ -589899,6 +594157,7 @@ _G.pg.base.chapter_template[2100412] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100413] = {
@@ -590750,6 +595009,7 @@ _G.pg.base.chapter_template[2100413] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100414] = {
@@ -591708,6 +595968,7 @@ _G.pg.base.chapter_template[2100414] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100415] = {
@@ -592687,6 +596948,7 @@ _G.pg.base.chapter_template[2100415] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100416] = {
@@ -593681,6 +597943,7 @@ _G.pg.base.chapter_template[2100416] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100421] = {
@@ -594312,6 +598575,7 @@ _G.pg.base.chapter_template[2100421] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100422] = {
@@ -595002,6 +599266,7 @@ _G.pg.base.chapter_template[2100422] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100423] = {
@@ -595825,6 +600090,7 @@ _G.pg.base.chapter_template[2100423] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100424] = {
@@ -596628,6 +600894,7 @@ _G.pg.base.chapter_template[2100424] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100425] = {
@@ -597451,6 +601718,7 @@ _G.pg.base.chapter_template[2100425] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100426] = {
@@ -598204,6 +602472,7 @@ _G.pg.base.chapter_template[2100426] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100427] = {
@@ -598975,6 +603244,7 @@ _G.pg.base.chapter_template[2100427] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100431] = {
@@ -599648,6 +603918,7 @@ _G.pg.base.chapter_template[2100431] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100432] = {
@@ -600380,6 +604651,7 @@ _G.pg.base.chapter_template[2100432] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100433] = {
@@ -601245,6 +605517,7 @@ _G.pg.base.chapter_template[2100433] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100434] = {
@@ -602094,6 +606367,7 @@ _G.pg.base.chapter_template[2100434] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100435] = {
@@ -602965,6 +607239,7 @@ _G.pg.base.chapter_template[2100435] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100436] = {
@@ -603762,6 +608037,7 @@ _G.pg.base.chapter_template[2100436] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100437] = {
@@ -604579,6 +608855,7 @@ _G.pg.base.chapter_template[2100437] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100441] = {
@@ -605255,6 +609532,7 @@ _G.pg.base.chapter_template[2100441] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100442] = {
@@ -606052,6 +610330,7 @@ _G.pg.base.chapter_template[2100442] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100443] = {
@@ -606866,6 +611145,7 @@ _G.pg.base.chapter_template[2100443] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100444] = {
@@ -607506,6 +611786,7 @@ _G.pg.base.chapter_template[2100444] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100445] = {
@@ -608187,6 +612468,7 @@ _G.pg.base.chapter_template[2100445] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100446] = {
@@ -609042,6 +613324,7 @@ _G.pg.base.chapter_template[2100446] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100451] = {
@@ -609759,6 +614042,7 @@ _G.pg.base.chapter_template[2100451] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100452] = {
@@ -610597,6 +614881,7 @@ _G.pg.base.chapter_template[2100452] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100453] = {
@@ -611452,6 +615737,7 @@ _G.pg.base.chapter_template[2100453] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100454] = {
@@ -612137,6 +616423,7 @@ _G.pg.base.chapter_template[2100454] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100455] = {
@@ -612865,6 +617152,7 @@ _G.pg.base.chapter_template[2100455] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100456] = {
@@ -613767,6 +618055,7 @@ _G.pg.base.chapter_template[2100456] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100461] = {
@@ -614412,6 +618701,7 @@ _G.pg.base.chapter_template[2100461] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100462] = {
@@ -615094,6 +619384,7 @@ _G.pg.base.chapter_template[2100462] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100463] = {
@@ -615891,6 +620182,7 @@ _G.pg.base.chapter_template[2100463] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100464] = {
@@ -616571,6 +620863,7 @@ _G.pg.base.chapter_template[2100464] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100465] = {
@@ -617275,6 +621568,7 @@ _G.pg.base.chapter_template[2100465] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100466] = {
@@ -618143,6 +622437,7 @@ _G.pg.base.chapter_template[2100466] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100471] = {
@@ -618830,6 +623125,7 @@ _G.pg.base.chapter_template[2100471] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100472] = {
@@ -619554,6 +623850,7 @@ _G.pg.base.chapter_template[2100472] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100473] = {
@@ -620393,6 +624690,7 @@ _G.pg.base.chapter_template[2100473] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100474] = {
@@ -621119,6 +625417,7 @@ _G.pg.base.chapter_template[2100474] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100475] = {
@@ -621871,6 +626170,7 @@ _G.pg.base.chapter_template[2100475] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100476] = {
@@ -622786,6 +627086,7 @@ _G.pg.base.chapter_template[2100476] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100481] = {
@@ -623470,6 +627771,7 @@ _G.pg.base.chapter_template[2100481] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100482] = {
@@ -624288,6 +628590,7 @@ _G.pg.base.chapter_template[2100482] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100483] = {
@@ -625024,6 +629327,7 @@ _G.pg.base.chapter_template[2100483] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100484] = {
@@ -625812,6 +630116,7 @@ _G.pg.base.chapter_template[2100484] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100485] = {
@@ -626557,6 +630862,7 @@ _G.pg.base.chapter_template[2100485] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100486] = {
@@ -627398,6 +631704,7 @@ _G.pg.base.chapter_template[2100486] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100491] = {
@@ -628124,6 +632431,7 @@ _G.pg.base.chapter_template[2100491] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100492] = {
@@ -628984,6 +633292,7 @@ _G.pg.base.chapter_template[2100492] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100493] = {
@@ -629762,6 +634071,7 @@ _G.pg.base.chapter_template[2100493] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100494] = {
@@ -630595,6 +634905,7 @@ _G.pg.base.chapter_template[2100494] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100495] = {
@@ -631387,6 +635698,7 @@ _G.pg.base.chapter_template[2100495] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100496] = {
@@ -632275,6 +636587,7 @@ _G.pg.base.chapter_template[2100496] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100501] = {
@@ -632918,6 +637231,7 @@ _G.pg.base.chapter_template[2100501] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100502] = {
@@ -633609,6 +637923,7 @@ _G.pg.base.chapter_template[2100502] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100503] = {
@@ -634413,6 +638728,7 @@ _G.pg.base.chapter_template[2100503] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100504] = {
@@ -635106,6 +639422,7 @@ _G.pg.base.chapter_template[2100504] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100505] = {
@@ -635787,6 +640104,7 @@ _G.pg.base.chapter_template[2100505] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100506] = {
@@ -636631,6 +640949,7 @@ _G.pg.base.chapter_template[2100506] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100511] = {
@@ -637316,6 +641635,7 @@ _G.pg.base.chapter_template[2100511] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100512] = {
@@ -638049,6 +642369,7 @@ _G.pg.base.chapter_template[2100512] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100513] = {
@@ -638895,6 +643216,7 @@ _G.pg.base.chapter_template[2100513] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100514] = {
@@ -639634,6 +643956,7 @@ _G.pg.base.chapter_template[2100514] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100515] = {
@@ -640363,6 +644686,7 @@ _G.pg.base.chapter_template[2100515] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100516] = {
@@ -641255,6 +645579,7 @@ _G.pg.base.chapter_template[2100516] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100521] = {
@@ -641935,6 +646260,7 @@ _G.pg.base.chapter_template[2100521] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100522] = {
@@ -642629,6 +646955,7 @@ _G.pg.base.chapter_template[2100522] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100523] = {
@@ -643310,6 +647637,7 @@ _G.pg.base.chapter_template[2100523] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100524] = {
@@ -644004,6 +648332,7 @@ _G.pg.base.chapter_template[2100524] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100525] = {
@@ -644792,6 +649121,7 @@ _G.pg.base.chapter_template[2100525] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100526] = {
@@ -645622,6 +649952,7 @@ _G.pg.base.chapter_template[2100526] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100531] = {
@@ -646344,6 +650675,7 @@ _G.pg.base.chapter_template[2100531] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100532] = {
@@ -647080,6 +651412,7 @@ _G.pg.base.chapter_template[2100532] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100533] = {
@@ -647802,6 +652135,7 @@ _G.pg.base.chapter_template[2100533] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100534] = {
@@ -648541,6 +652875,7 @@ _G.pg.base.chapter_template[2100534] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100535] = {
@@ -649376,6 +653711,7 @@ _G.pg.base.chapter_template[2100535] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100536] = {
@@ -650253,6 +654589,7 @@ _G.pg.base.chapter_template[2100536] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100541] = {
@@ -650938,6 +655275,7 @@ _G.pg.base.chapter_template[2100541] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100542] = {
@@ -651622,6 +655960,7 @@ _G.pg.base.chapter_template[2100542] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100543] = {
@@ -652367,6 +656706,7 @@ _G.pg.base.chapter_template[2100543] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100544] = {
@@ -653112,6 +657452,7 @@ _G.pg.base.chapter_template[2100544] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100545] = {
@@ -653918,6 +658259,7 @@ _G.pg.base.chapter_template[2100545] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100546] = {
@@ -654757,6 +659099,7 @@ _G.pg.base.chapter_template[2100546] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100551] = {
@@ -655483,6 +659826,7 @@ _G.pg.base.chapter_template[2100551] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100552] = {
@@ -656208,6 +660552,7 @@ _G.pg.base.chapter_template[2100552] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100553] = {
@@ -656994,6 +661339,7 @@ _G.pg.base.chapter_template[2100553] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100554] = {
@@ -657784,6 +662130,7 @@ _G.pg.base.chapter_template[2100554] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100555] = {
@@ -658637,6 +662984,7 @@ _G.pg.base.chapter_template[2100555] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2100556] = {
@@ -659523,6 +663871,7 @@ _G.pg.base.chapter_template[2100556] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200001] = {
@@ -659942,6 +664291,7 @@ _G.pg.base.chapter_template[2200001] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200002] = {
@@ -660436,6 +664786,7 @@ _G.pg.base.chapter_template[2200002] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200003] = {
@@ -660960,6 +665311,7 @@ _G.pg.base.chapter_template[2200003] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200011] = {
@@ -661553,6 +665905,7 @@ _G.pg.base.chapter_template[2200011] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200012] = {
@@ -662245,6 +666598,7 @@ _G.pg.base.chapter_template[2200012] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200013] = {
@@ -662995,6 +667349,7 @@ _G.pg.base.chapter_template[2200013] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200021] = {
@@ -663698,6 +668053,7 @@ _G.pg.base.chapter_template[2200021] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200022] = {
@@ -664414,6 +668770,7 @@ _G.pg.base.chapter_template[2200022] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200023] = {
@@ -665138,6 +669495,7 @@ _G.pg.base.chapter_template[2200023] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200031] = {
@@ -665658,6 +670016,7 @@ _G.pg.base.chapter_template[2200031] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200032] = {
@@ -666239,6 +670598,7 @@ _G.pg.base.chapter_template[2200032] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200033] = {
@@ -666858,6 +671218,7 @@ _G.pg.base.chapter_template[2200033] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200041] = {
@@ -667465,6 +671826,7 @@ _G.pg.base.chapter_template[2200041] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200042] = {
@@ -668162,6 +672524,7 @@ _G.pg.base.chapter_template[2200042] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200043] = {
@@ -668863,6 +673226,7 @@ _G.pg.base.chapter_template[2200043] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200044] = {
@@ -669562,6 +673926,7 @@ _G.pg.base.chapter_template[2200044] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200045] = {
@@ -670265,6 +674630,7 @@ _G.pg.base.chapter_template[2200045] = {
 	},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200051] = {
@@ -670806,6 +675172,7 @@ _G.pg.base.chapter_template[2200051] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200052] = {
@@ -671405,6 +675772,7 @@ _G.pg.base.chapter_template[2200052] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200053] = {
@@ -672047,6 +676415,7 @@ _G.pg.base.chapter_template[2200053] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200061] = {
@@ -672627,6 +676996,7 @@ _G.pg.base.chapter_template[2200061] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200062] = {
@@ -673308,6 +677678,7 @@ _G.pg.base.chapter_template[2200062] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200063] = {
@@ -673955,6 +678326,7 @@ _G.pg.base.chapter_template[2200063] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200071] = {
@@ -674553,6 +678925,7 @@ _G.pg.base.chapter_template[2200071] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200072] = {
@@ -675236,6 +679609,7 @@ _G.pg.base.chapter_template[2200072] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200073] = {
@@ -675926,6 +680300,7 @@ _G.pg.base.chapter_template[2200073] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200074] = {
@@ -676631,6 +681006,7 @@ _G.pg.base.chapter_template[2200074] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200075] = {
@@ -677554,6 +681930,7 @@ _G.pg.base.chapter_template[2200075] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200081] = {
@@ -678152,6 +682529,7 @@ _G.pg.base.chapter_template[2200081] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200082] = {
@@ -678899,6 +683277,7 @@ _G.pg.base.chapter_template[2200082] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200083] = {
@@ -679662,6 +684041,7 @@ _G.pg.base.chapter_template[2200083] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200084] = {
@@ -680421,6 +684801,7 @@ _G.pg.base.chapter_template[2200084] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200091] = {
@@ -681041,6 +685422,7 @@ _G.pg.base.chapter_template[2200091] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200092] = {
@@ -681721,6 +686103,7 @@ _G.pg.base.chapter_template[2200092] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200093] = {
@@ -682402,6 +686785,7 @@ _G.pg.base.chapter_template[2200093] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200101] = {
@@ -683155,6 +687539,7 @@ _G.pg.base.chapter_template[2200101] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200102] = {
@@ -683915,6 +688300,7 @@ _G.pg.base.chapter_template[2200102] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200103] = {
@@ -684676,6 +689062,7 @@ _G.pg.base.chapter_template[2200103] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200111] = {
@@ -685287,6 +689674,7 @@ _G.pg.base.chapter_template[2200111] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200112] = {
@@ -685910,6 +690298,7 @@ _G.pg.base.chapter_template[2200112] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200113] = {
@@ -686534,6 +690923,7 @@ _G.pg.base.chapter_template[2200113] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200121] = {
@@ -687160,6 +691550,7 @@ _G.pg.base.chapter_template[2200121] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200122] = {
@@ -687835,6 +692226,7 @@ _G.pg.base.chapter_template[2200122] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200123] = {
@@ -688572,6 +692964,7 @@ _G.pg.base.chapter_template[2200123] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200131] = {
@@ -689195,6 +693588,7 @@ _G.pg.base.chapter_template[2200131] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200132] = {
@@ -689882,6 +694276,7 @@ _G.pg.base.chapter_template[2200132] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200133] = {
@@ -690567,6 +694962,7 @@ _G.pg.base.chapter_template[2200133] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200134] = {
@@ -691264,6 +695660,7 @@ _G.pg.base.chapter_template[2200134] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200141] = {
@@ -691998,6 +696395,7 @@ _G.pg.base.chapter_template[2200141] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200142] = {
@@ -692732,6 +697130,7 @@ _G.pg.base.chapter_template[2200142] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200143] = {
@@ -693537,6 +697936,7 @@ _G.pg.base.chapter_template[2200143] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200144] = {
@@ -694336,6 +698736,7 @@ _G.pg.base.chapter_template[2200144] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200145] = {
@@ -695221,6 +699622,7 @@ _G.pg.base.chapter_template[2200145] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[2200146] = {
@@ -696136,6 +700538,7 @@ _G.pg.base.chapter_template[2200146] = {
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920001] = {
@@ -696699,6 +701102,7 @@ _G.pg.base.chapter_template[9920001] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920002] = {
@@ -697402,6 +701806,7 @@ _G.pg.base.chapter_template[9920002] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920003] = {
@@ -698072,6 +702477,7 @@ _G.pg.base.chapter_template[9920003] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920004] = {
@@ -698860,6 +703266,7 @@ _G.pg.base.chapter_template[9920004] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920005] = {
@@ -699443,6 +703850,7 @@ _G.pg.base.chapter_template[9920005] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920006] = {
@@ -700034,6 +704442,7 @@ _G.pg.base.chapter_template[9920006] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920007] = {
@@ -700680,6 +705089,7 @@ _G.pg.base.chapter_template[9920007] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920008] = {
@@ -701482,6 +705892,7 @@ _G.pg.base.chapter_template[9920008] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920011] = {
@@ -702086,6 +706497,7 @@ _G.pg.base.chapter_template[9920011] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920012] = {
@@ -702832,6 +707244,7 @@ _G.pg.base.chapter_template[9920012] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920013] = {
@@ -703543,6 +707956,7 @@ _G.pg.base.chapter_template[9920013] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920014] = {
@@ -704372,6 +708786,7 @@ _G.pg.base.chapter_template[9920014] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920015] = {
@@ -704996,6 +709411,7 @@ _G.pg.base.chapter_template[9920015] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920016] = {
@@ -705628,6 +710044,7 @@ _G.pg.base.chapter_template[9920016] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920017] = {
@@ -706315,6 +710732,7 @@ _G.pg.base.chapter_template[9920017] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920018] = {
@@ -707158,6 +711576,7 @@ _G.pg.base.chapter_template[9920018] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template[9920021] = {
@@ -707596,5 +712015,6 @@ _G.pg.base.chapter_template[9920021] = {
 	chapter_strategy = {},
 	alarm_cell = {},
 	weather_grids = {},
+	misc_arg = {},
 }
 

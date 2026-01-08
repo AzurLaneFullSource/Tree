@@ -72,46 +72,58 @@ function var0_0.UpdateDorm(arg0_9, arg1_9, arg2_9)
 end
 
 function var0_0.SetUpCourtYard(arg0_10)
-	local var0_10 = arg0_10.contextData.floor
+	seriesAsync({
+		function(arg0_11)
+			if (arg0_10.contextData.mode or CourtYardConst.SYSTEM_VISIT) ~= CourtYardConst.SYSTEM_VISIT then
+				arg0_11()
 
-	arg0_10:emit(CourtYardMediator.SET_UP, var0_10)
+				return
+			end
+
+			arg0_10:emit(CourtYardMediator.ON_ADD_VISITOR_SHIP, arg0_11)
+		end
+	}, function()
+		local var0_12 = arg0_10.contextData.floor
+
+		arg0_10:emit(CourtYardMediator.SET_UP, var0_12)
+	end)
 end
 
-function var0_0.FlushMainView(arg0_11, arg1_11)
-	local var0_11 = {}
+function var0_0.FlushMainView(arg0_13, arg1_13)
+	local var0_13 = {}
 
-	for iter0_11, iter1_11 in ipairs(arg0_11.panels) do
-		table.insert(var0_11, function(arg0_12)
-			iter1_11:Flush(arg0_11.dorm, arg1_11)
-			onNextTick(arg0_12)
+	for iter0_13, iter1_13 in ipairs(arg0_13.panels) do
+		table.insert(var0_13, function(arg0_14)
+			iter1_13:Flush(arg0_13.dorm, arg1_13)
+			onNextTick(arg0_14)
 		end)
 	end
 
-	seriesAsync(var0_11)
+	seriesAsync(var0_13)
 end
 
-function var0_0.SwitchFloorDone(arg0_13)
-	for iter0_13, iter1_13 in ipairs(arg0_13.panels) do
-		iter1_13:UpdateFloor(arg0_13.dorm)
+function var0_0.SwitchFloorDone(arg0_15)
+	for iter0_15, iter1_15 in ipairs(arg0_15.panels) do
+		iter1_15:UpdateFloor(arg0_15.dorm)
 	end
 end
 
-function var0_0.ShowAddFoodTip(arg0_14)
-	if arg0_14.contextData.mode ~= CourtYardConst.SYSTEM_VISIT and arg0_14.dorm.food == 0 and not arg0_14.contextData.OpenShop and not pg.NewGuideMgr.GetInstance():IsBusy() and arg0_14.dorm:GetStateShipCnt(Ship.STATE_TRAIN) > 0 and (not arg0_14.contextData.fromMediatorName or arg0_14.contextData.fromMediatorName ~= "DockyardMediator" and arg0_14.contextData.fromMediatorName ~= "ShipMainMediator") and not arg0_14.contextData.skipToCharge then
-		arg0_14.emptyFoodPage:ExecuteAction("Flush")
+function var0_0.ShowAddFoodTip(arg0_16)
+	if arg0_16.contextData.mode ~= CourtYardConst.SYSTEM_VISIT and arg0_16.dorm.food == 0 and not arg0_16.contextData.OpenShop and not pg.NewGuideMgr.GetInstance():IsBusy() and arg0_16.dorm:GetStateShipCnt(Ship.STATE_TRAIN) > 0 and (not arg0_16.contextData.fromMediatorName or arg0_16.contextData.fromMediatorName ~= "DockyardMediator" and arg0_16.contextData.fromMediatorName ~= "ShipMainMediator") and not arg0_16.contextData.skipToCharge then
+		arg0_16.emptyFoodPage:ExecuteAction("Flush")
 
-		arg0_14.contextData.fromMain = nil
+		arg0_16.contextData.fromMain = nil
 	end
 
-	arg0_14.contextData.skipToCharge = nil
+	arg0_16.contextData.skipToCharge = nil
 end
 
-function var0_0.AddVisitorShip(arg0_15)
-	if arg0_15.contextData.mode == CourtYardConst.SYSTEM_VISIT then
+function var0_0.AddVisitorShip(arg0_17)
+	if arg0_17.contextData.mode == CourtYardConst.SYSTEM_VISIT then
 		return
 	end
 
-	if arg0_15.contextData.floor ~= 1 then
+	if arg0_17.contextData.floor ~= 1 then
 		return
 	end
 
@@ -119,58 +131,62 @@ function var0_0.AddVisitorShip(arg0_15)
 		return
 	end
 
-	arg0_15:emit(CourtYardMediator.ON_ADD_VISITOR_SHIP)
+	local var0_17 = getProxy(DormProxy):GetVisitorShip()
+
+	if var0_17 then
+		_courtyard:GetController():AddVisitorShip(var0_17)
+	end
 end
 
-function var0_0.FoldPanel(arg0_16, arg1_16)
-	if arg1_16 then
-		arg0_16.animation:Play("anim_courtyard_mainui_hide")
+function var0_0.FoldPanel(arg0_18, arg1_18)
+	if arg1_18 then
+		arg0_18.animation:Play("anim_courtyard_mainui_hide")
 	else
-		arg0_16.animation:Play("anim_courtyard_mainui_in")
+		arg0_18.animation:Play("anim_courtyard_mainui_in")
 	end
 end
 
-function var0_0.OnEnterOrExitEdit(arg0_17, arg1_17)
-	for iter0_17, iter1_17 in ipairs(arg0_17.panels) do
-		iter1_17:OnEnterOrExitEdit(arg1_17)
+function var0_0.OnEnterOrExitEdit(arg0_19, arg1_19)
+	for iter0_19, iter1_19 in ipairs(arg0_19.panels) do
+		iter1_19:OnEnterOrExitEdit(arg1_19)
 	end
 
-	Input.multiTouchEnabled = not arg1_17
+	Input.multiTouchEnabled = not arg1_19
 end
 
-function var0_0.BlockEvents(arg0_18)
-	arg0_18.mainCG.blocksRaycasts = false
+function var0_0.BlockEvents(arg0_20)
+	arg0_20.mainCG.blocksRaycasts = false
 end
 
-function var0_0.UnBlockEvents(arg0_19)
-	arg0_19.mainCG.blocksRaycasts = true
+function var0_0.UnBlockEvents(arg0_21)
+	arg0_21.mainCG.blocksRaycasts = true
 end
 
-function var0_0.OnRemoveLayer(arg0_20, arg1_20)
-	for iter0_20, iter1_20 in ipairs(arg0_20.panels) do
-		iter1_20:OnRemoveLayer(arg1_20.context.mediator)
+function var0_0.OnRemoveLayer(arg0_22, arg1_22)
+	for iter0_22, iter1_22 in ipairs(arg0_22.panels) do
+		iter1_22:OnRemoveLayer(arg1_22.context.mediator)
 	end
 end
 
-function var0_0.OnReconnection(arg0_21)
+function var0_0.OnReconnection(arg0_23)
 	pg.m02:sendNotification(GAME.OPEN_ADD_EXP, 1)
 end
 
-function var0_0.OnAddFurniture(arg0_22)
-	arg0_22:GetPanel(CourtYardTopPanel):OnFlush(BackYardConst.DORM_UPDATE_TYPE_LEVEL)
+function var0_0.OnAddFurniture(arg0_24)
+	arg0_24:GetPanel(CourtYardTopPanel):OnFlush(BackYardConst.DORM_UPDATE_TYPE_LEVEL)
 end
 
-function var0_0.GetPanel(arg0_23, arg1_23)
-	for iter0_23, iter1_23 in ipairs(arg0_23.panels) do
-		if isa(iter1_23, arg1_23) then
-			return iter1_23
+function var0_0.GetPanel(arg0_25, arg1_25)
+	for iter0_25, iter1_25 in ipairs(arg0_25.panels) do
+		if isa(iter1_25, arg1_25) then
+			return iter1_25
 		end
 	end
 end
 
-function var0_0.onBackPressed(arg0_24)
-	for iter0_24, iter1_24 in ipairs(arg0_24.panels) do
-		if iter1_24:onBackPressed() then
+function var0_0.onBackPressed(arg0_26)
+	for iter0_26, iter1_26 in ipairs(arg0_26.panels) do
+		if iter1_26:onBackPressed() then
 			return
 		end
 	end
@@ -178,30 +194,30 @@ function var0_0.onBackPressed(arg0_24)
 	if _courtyard then
 		_courtyard:GetController():OnBackPressed()
 	else
-		var0_0.super.onBackPressed(arg0_24)
+		var0_0.super.onBackPressed(arg0_26)
 	end
 end
 
-function var0_0.willExit(arg0_25)
+function var0_0.willExit(arg0_27)
 	_BackyardMsgBoxMgr:Destroy()
 
 	_BackyardMsgBoxMgr = nil
 
-	for iter0_25, iter1_25 in ipairs(arg0_25.panels) do
-		iter1_25:Detach()
+	for iter0_27, iter1_27 in ipairs(arg0_27.panels) do
+		iter1_27:Detach()
 	end
 
-	arg0_25.emptyFoodPage:Destroy()
+	arg0_27.emptyFoodPage:Destroy()
 
-	arg0_25.emptyFoodPage = nil
+	arg0_27.emptyFoodPage = nil
 
-	if arg0_25.bulinTip then
-		arg0_25.bulinTip:Destroy()
+	if arg0_27.bulinTip then
+		arg0_27.bulinTip:Destroy()
 
-		arg0_25.bulinTip = nil
+		arg0_27.bulinTip = nil
 	end
 
-	if arg0_25.contextData.mode ~= CourtYardConst.SYSTEM_VISIT then
+	if arg0_27.contextData.mode ~= CourtYardConst.SYSTEM_VISIT then
 		pg.m02:sendNotification(GAME.OPEN_ADD_EXP, 0)
 	end
 

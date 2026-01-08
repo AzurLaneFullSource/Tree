@@ -54,6 +54,12 @@ function var0_0.OnLoadedPrefab(arg0_5, arg1_5, arg2_5)
 		for iter0_5 = 1, var0_5 do
 			setActive(tf(arg1_5):GetChild(iter0_5 - 1), iter0_5 == var1_5)
 		end
+	elseif arg2_5 == ChapterConst.FlagWeatherFogVisible then
+		local var2_5 = WorldConst.Pos2FogRes(arg0_5.line.row, arg0_5.line.column)
+
+		eachChild(tf(arg1_5), function(arg0_6, arg1_6)
+			setActive(arg0_6, arg0_6.name == var2_5)
+		end)
 	end
 end
 

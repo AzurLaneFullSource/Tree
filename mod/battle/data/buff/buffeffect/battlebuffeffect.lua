@@ -974,7 +974,7 @@ function var3_0.commanderRequire(arg0_130, arg1_130)
 		local var2_130
 		local var3_130 = arg1_130:GetTemplate().type
 
-		if table.contains(TeamType.SubShipType, var3_130) then
+		if table.contains(ShipType.SubShipType, var3_130) then
 			var2_130 = var1_130
 		else
 			var2_130 = var0_130

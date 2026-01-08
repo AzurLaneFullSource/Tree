@@ -101764,6 +101764,5018 @@ _G.pg.base.expedition_data_template[154015] = {
 	},
 }
 
+_G.pg.base.expedition_data_template[160001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160001,
+	effect_prefab = "",
+	exp = 831,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qz1",
+	icon_type = 1,
+	id = 160001,
+	level = 128,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55561,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[160002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160002,
+	effect_prefab = "",
+	exp = 914,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qz1",
+	icon_type = 1,
+	id = 160002,
+	level = 128,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55561,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[160003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160003,
+	effect_prefab = "",
+	exp = 997,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qz1",
+	icon_type = 1,
+	id = 160003,
+	level = 128,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55561,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[160004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160004,
+	effect_prefab = "",
+	exp = 831,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "zl1",
+	icon_type = 1,
+	id = 160004,
+	level = 128,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55561,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[160005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160005,
+	effect_prefab = "",
+	exp = 914,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "zl1",
+	icon_type = 1,
+	id = 160005,
+	level = 128,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55561,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[160006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160006,
+	effect_prefab = "",
+	exp = 997,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "zl1",
+	icon_type = 1,
+	id = 160006,
+	level = 128,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55561,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[160007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160007,
+	effect_prefab = "",
+	exp = 831,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hm1",
+	icon_type = 1,
+	id = 160007,
+	level = 128,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55561,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[160008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160008,
+	effect_prefab = "",
+	exp = 914,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hm1",
+	icon_type = 1,
+	id = 160008,
+	level = 128,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55561,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[160009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160009,
+	effect_prefab = "",
+	exp = 997,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hm1",
+	icon_type = 1,
+	id = 160009,
+	level = 128,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55561,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[160010] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160010,
+	effect_prefab = "",
+	exp = 831,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ys1",
+	icon_type = 1,
+	id = 160010,
+	level = 128,
+	limit_type = 1,
+	name = "Small Cargo Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 10,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54017,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[160011] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160011,
+	effect_prefab = "",
+	exp = 914,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ys1",
+	icon_type = 1,
+	id = 160011,
+	level = 128,
+	limit_type = 1,
+	name = "Medium Cargo Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 11,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54017,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[160012] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160012,
+	effect_prefab = "",
+	exp = 997,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ys1",
+	icon_type = 1,
+	id = 160012,
+	level = 128,
+	limit_type = 1,
+	name = "Large Cargo Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 12,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54017,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[160013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160002,
+	effect_prefab = "",
+	exp = 914,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qz1",
+	icon_type = 1,
+	id = 160013,
+	level = 128,
+	limit_type = 1,
+	name = "Ambush Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56501,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[160014] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160005,
+	effect_prefab = "",
+	exp = 914,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "zl1",
+	icon_type = 1,
+	id = 160014,
+	level = 128,
+	limit_type = 1,
+	name = "Ambush Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56501,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[160015] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160008,
+	effect_prefab = "",
+	exp = 914,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hm1",
+	icon_type = 1,
+	id = 160015,
+	level = 128,
+	limit_type = 1,
+	name = "Ambush Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56501,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[160021] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160021,
+	effect_prefab = "",
+	exp = 1251,
+	exp_commander = 4,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 160021,
+	level = 129,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55061,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[160022] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160022,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 160022,
+	level = 129,
+	limit_type = 1,
+	name = "Submarine Support Combat",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		10,
+		30,
+	},
+	objective_3 = {
+		10,
+		60,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160001,
+	effect_prefab = "",
+	exp = 834,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qz1",
+	icon_type = 1,
+	id = 161001,
+	level = 129,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55562,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160002,
+	effect_prefab = "",
+	exp = 917,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qz1",
+	icon_type = 1,
+	id = 161002,
+	level = 129,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55562,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160003,
+	effect_prefab = "",
+	exp = 1001,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qz1",
+	icon_type = 1,
+	id = 161003,
+	level = 129,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55562,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160004,
+	effect_prefab = "",
+	exp = 834,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "zl1",
+	icon_type = 1,
+	id = 161004,
+	level = 129,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55562,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160005,
+	effect_prefab = "",
+	exp = 917,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "zl1",
+	icon_type = 1,
+	id = 161005,
+	level = 129,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55562,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160006,
+	effect_prefab = "",
+	exp = 1001,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "zl1",
+	icon_type = 1,
+	id = 161006,
+	level = 129,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55562,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160007,
+	effect_prefab = "",
+	exp = 834,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hm1",
+	icon_type = 1,
+	id = 161007,
+	level = 129,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55562,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160008,
+	effect_prefab = "",
+	exp = 917,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hm1",
+	icon_type = 1,
+	id = 161008,
+	level = 129,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55562,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160009,
+	effect_prefab = "",
+	exp = 1001,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hm1",
+	icon_type = 1,
+	id = 161009,
+	level = 129,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55562,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161010] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160010,
+	effect_prefab = "",
+	exp = 834,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ys1",
+	icon_type = 1,
+	id = 161010,
+	level = 129,
+	limit_type = 1,
+	name = "Small Cargo Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 10,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54017,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161011] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160011,
+	effect_prefab = "",
+	exp = 917,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ys1",
+	icon_type = 1,
+	id = 161011,
+	level = 129,
+	limit_type = 1,
+	name = "Medium Cargo Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 11,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54017,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161012] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160012,
+	effect_prefab = "",
+	exp = 1001,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ys1",
+	icon_type = 1,
+	id = 161012,
+	level = 129,
+	limit_type = 1,
+	name = "Large Cargo Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 12,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54017,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160002,
+	effect_prefab = "",
+	exp = 917,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qz1",
+	icon_type = 1,
+	id = 161013,
+	level = 129,
+	limit_type = 1,
+	name = "Ambush Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56501,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161014] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160005,
+	effect_prefab = "",
+	exp = 917,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "zl1",
+	icon_type = 1,
+	id = 161014,
+	level = 129,
+	limit_type = 1,
+	name = "Ambush Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56501,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161015] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 160008,
+	effect_prefab = "",
+	exp = 917,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hm1",
+	icon_type = 1,
+	id = 161015,
+	level = 129,
+	limit_type = 1,
+	name = "Ambush Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56501,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161021] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 161021,
+	effect_prefab = "",
+	exp = 1256,
+	exp_commander = 4,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 161021,
+	level = 130,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55062,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[161022] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 161022,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 161022,
+	level = 130,
+	limit_type = 1,
+	name = "Submarine Support Combat",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			10012,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		10,
+		30,
+	},
+	objective_3 = {
+		10,
+		60,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[162001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162001,
+	effect_prefab = "",
+	exp = 837,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qz1",
+	icon_type = 1,
+	id = 162001,
+	level = 130,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55563,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[162002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162002,
+	effect_prefab = "",
+	exp = 921,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qz1",
+	icon_type = 1,
+	id = 162002,
+	level = 130,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55563,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[162003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162003,
+	effect_prefab = "",
+	exp = 1004,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qz1",
+	icon_type = 1,
+	id = 162003,
+	level = 130,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55563,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[162004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162004,
+	effect_prefab = "",
+	exp = 837,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "zl1",
+	icon_type = 1,
+	id = 162004,
+	level = 130,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55563,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[162005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162005,
+	effect_prefab = "",
+	exp = 921,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "zl1",
+	icon_type = 1,
+	id = 162005,
+	level = 130,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55563,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[162006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162006,
+	effect_prefab = "",
+	exp = 1004,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "zl1",
+	icon_type = 1,
+	id = 162006,
+	level = 130,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55563,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[162007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162007,
+	effect_prefab = "",
+	exp = 837,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hm1",
+	icon_type = 1,
+	id = 162007,
+	level = 130,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55563,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[162008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162008,
+	effect_prefab = "",
+	exp = 921,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hm1",
+	icon_type = 1,
+	id = 162008,
+	level = 130,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55563,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[162009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162009,
+	effect_prefab = "",
+	exp = 1004,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hm1",
+	icon_type = 1,
+	id = 162009,
+	level = 130,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55563,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[162010] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162010,
+	effect_prefab = "",
+	exp = 837,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ys1",
+	icon_type = 1,
+	id = 162010,
+	level = 130,
+	limit_type = 1,
+	name = "Small Cargo Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 10,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54017,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[162011] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162011,
+	effect_prefab = "",
+	exp = 921,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ys1",
+	icon_type = 1,
+	id = 162011,
+	level = 130,
+	limit_type = 1,
+	name = "Medium Cargo Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 11,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54017,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[162012] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162012,
+	effect_prefab = "",
+	exp = 1004,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ys1",
+	icon_type = 1,
+	id = 162012,
+	level = 130,
+	limit_type = 1,
+	name = "Large Cargo Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 12,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54017,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[162013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162002,
+	effect_prefab = "",
+	exp = 921,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qz1",
+	icon_type = 1,
+	id = 162013,
+	level = 130,
+	limit_type = 1,
+	name = "Ambush Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56501,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[162014] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162005,
+	effect_prefab = "",
+	exp = 921,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "zl1",
+	icon_type = 1,
+	id = 162014,
+	level = 130,
+	limit_type = 1,
+	name = "Ambush Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56501,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[162015] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162008,
+	effect_prefab = "",
+	exp = 921,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hm1",
+	icon_type = 1,
+	id = 162015,
+	level = 130,
+	limit_type = 1,
+	name = "Ambush Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56501,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[162021] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162021,
+	effect_prefab = "",
+	exp = 1260,
+	exp_commander = 4,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 162021,
+	level = 131,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55063,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[163001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162001,
+	effect_prefab = "",
+	exp = 840,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qz1",
+	icon_type = 1,
+	id = 163001,
+	level = 131,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55564,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[163002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162002,
+	effect_prefab = "",
+	exp = 924,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qz1",
+	icon_type = 1,
+	id = 163002,
+	level = 131,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55564,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[163003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162003,
+	effect_prefab = "",
+	exp = 1008,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qz1",
+	icon_type = 1,
+	id = 163003,
+	level = 131,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55564,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[163004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162004,
+	effect_prefab = "",
+	exp = 840,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "zl1",
+	icon_type = 1,
+	id = 163004,
+	level = 131,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55564,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[163005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162005,
+	effect_prefab = "",
+	exp = 924,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "zl1",
+	icon_type = 1,
+	id = 163005,
+	level = 131,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55564,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[163006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162006,
+	effect_prefab = "",
+	exp = 1008,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "zl1",
+	icon_type = 1,
+	id = 163006,
+	level = 131,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55564,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[163007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162007,
+	effect_prefab = "",
+	exp = 840,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hm1",
+	icon_type = 1,
+	id = 163007,
+	level = 131,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55564,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[163008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162008,
+	effect_prefab = "",
+	exp = 924,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hm1",
+	icon_type = 1,
+	id = 163008,
+	level = 131,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55564,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[163009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162009,
+	effect_prefab = "",
+	exp = 1008,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hm1",
+	icon_type = 1,
+	id = 163009,
+	level = 131,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			55564,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[163010] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162010,
+	effect_prefab = "",
+	exp = 840,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ys1",
+	icon_type = 1,
+	id = 163010,
+	level = 131,
+	limit_type = 1,
+	name = "Small Cargo Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 10,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54017,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[163011] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162011,
+	effect_prefab = "",
+	exp = 924,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ys1",
+	icon_type = 1,
+	id = 163011,
+	level = 131,
+	limit_type = 1,
+	name = "Medium Cargo Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 11,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54017,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[163012] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162012,
+	effect_prefab = "",
+	exp = 1008,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ys1",
+	icon_type = 1,
+	id = 163012,
+	level = 131,
+	limit_type = 1,
+	name = "Large Cargo Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 12,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54017,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[163013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162002,
+	effect_prefab = "",
+	exp = 924,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qz1",
+	icon_type = 1,
+	id = 163013,
+	level = 131,
+	limit_type = 1,
+	name = "Ambush Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56501,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[163014] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162005,
+	effect_prefab = "",
+	exp = 924,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "zl1",
+	icon_type = 1,
+	id = 163014,
+	level = 131,
+	limit_type = 1,
+	name = "Ambush Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56501,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[163015] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 162008,
+	effect_prefab = "",
+	exp = 924,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hm1",
+	icon_type = 1,
+	id = 163015,
+	level = 131,
+	limit_type = 1,
+	name = "Ambush Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56501,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			17003,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[163021] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "musashi-2",
+	difficulty = 1,
+	dungeon_id = 163021,
+	effect_prefab = "",
+	exp = 1265,
+	exp_commander = 4,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 163021,
+	level = 132,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			10014,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56000,
+		},
+		{
+			2,
+			55064,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
 _G.pg.base.expedition_data_template[10101010] = {
 	SLG_destroy_FX = "",
 	add_icon = "",

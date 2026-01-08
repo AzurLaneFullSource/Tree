@@ -40518,6 +40518,51 @@ _G.pg.base.ship_skin_words[301921] = {
 	couple_encourage = {},
 }
 
+_G.pg.base.ship_skin_words[301940] = {
+	battle = "Let's knock some fashion sense into these baddies!",
+	detail = "My forte is coordinating the latest fashion trends with Sakuran-style attire! Since you're already here, Commander, come bask in my brilliance!",
+	drop_descrip = "Yuugumo-class destroyer – Fujinami.",
+	expedition = "The commission team's back. Make sure to reward our girls appropriately for their hard work!",
+	feeling1 = "It's alright, Commander. I've got terrible luck to begin with, so I'm already used to these things.",
+	feeling2 = "A floral ribbon... frilly garter rings... glittery pink accessories... How should I put 'em together to make them pop? Aha! Commander, how about you decide?",
+	feeling3 = "My ribbon keeps coming loose... Say, would you mind tying it back up for me? Why? Because, like, you're lucky, aren't you? Plus, you totally looove doing stuff like this, right?",
+	feeling4 = "I feel like my luck's been on the up-and-up recently... I wonder if it's because of you? Heehee... don't take it as a compliment or anything though~♪",
+	feeling5 = "Heeey. I bought some accessories for you, Commander. ...Th-they totally aren't for couples or anything! As if I'd lower my fashion sense like that!",
+	gift_dislike = "",
+	gift_prefer = "",
+	headtouch = "My horns are pretty cute, aren't they? C'mon, give 'em a feel. Can't hurt you with them even if I tried!",
+	home = "Welcome back, Commander~ Don't worry, I've been hard at work! Sooo... got any rewards for me?",
+	hp_warning = "My clothes are in tatters... Ugh, I seriously hate it when this happens!",
+	id = 301940,
+	login = "Sup, Commander. Did I blow your mind with my fashion sense today?",
+	lose = "Ugh... I knew I needed more energy drinks!",
+	mail = "Oh my, what's this? Someone sent you a love letter? Mind if I take a gander, Commander~?",
+	main = "Commander, the socks I'm wearing today look pretty edgy, huh? Wha... you can't tell the difference from before?! Th-then, you just have to take a closer look—!|Chasing after trends is seriously lame. I've got to be the one who sets them. So, Commander, wanna come try out a new outfit I put together for you? I'm sure it'll look great on you!|Ewww... another half-rotten fruit... Next time, I'll have you pick for me. 'Cause like, I know I can trust whatever you choose!",
+	mission = "Need help with your mission? Eh? Huuh? I was just being polite! If you really left it in my hands, the whole thing would just go kaput!",
+	mission_complete = "...I actually managed to get the job done?! Commander... you really are lucky!",
+	profile = "I'm Fujinami, a destroyer from the Sakura Empire. I might be unlucky and tend to slip up from time to time, but I have absolute confidence in my fashion sense! Hehe, that's something you'd agree with too, right?",
+	propose = "Th-this is just... What? It's perfectly normal! I mean, like, you picked it out for me, so of course I'd wear it~♪ Heehee, after all, fashionable people look good no matter what they wear~♪",
+	skill = "I'll send you flying with my new kicks!",
+	touch = "The accessories I chose look spectacular, don't they? Ehehe, this is the epitome of Fujinami's unique fashion sense~♪",
+	touch2 = "Eep! Wh-what are you doing all of a sudden? W-well, I guess I could show you the coordination of my undergarments...",
+	unlock = "Ehehe~ The name's Fujinami, a nice lass blessed by everything trendy! You'd better prepare yourself – starting today, I'm gonna show you the ins and outs of TRUE fashion!",
+	upgrade = "All my hard work has finally paid off?!",
+	voice_key = 30194,
+	voice_key_2 = -1,
+	vote = "",
+	win_mvp = "Yaaay, victory! Hey, hey, did you see my cinema moment?",
+	couple_encourage = {
+		{
+			{
+				30314,
+			},
+			1,
+			" Jeez... Remember to be more careful this time!",
+			0,
+		},
+	},
+}
+
 _G.pg.base.ship_skin_words[302010] = {
 	battle = "Combat trial for new equipment... begin!",
 	detail = "Be they canisters or weaponry, my developments in them are the latest!",

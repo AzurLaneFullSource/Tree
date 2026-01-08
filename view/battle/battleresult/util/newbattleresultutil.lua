@@ -43,7 +43,7 @@ function var0_0.GetChapterName(arg0_3)
 	return var0_3 and var0_3.name or ""
 end
 
-local function var1_0(arg0_4, arg1_4)
+local function var1_0(arg0_4, arg1_4, arg2_4)
 	if arg0_4 == 1 or arg0_4 == 4 or arg0_4 == 8 then
 		return arg1_4.score > 1
 	elseif arg0_4 == 2 or arg0_4 == 3 then
@@ -54,6 +54,8 @@ local function var1_0(arg0_4, arg1_4)
 		return not arg1_4.statistics._badTime
 	elseif arg0_4 == 7 then
 		return true
+	elseif arg0_4 == 10 then
+		return arg2_4 > arg1_4.statistics._bossHP * 100
 	end
 
 	return nil
@@ -68,7 +70,9 @@ local function var2_0(arg0_5)
 		"battle_result_time_limit",
 		"battle_result_boss_destruct",
 		"battle_preCombatLayer_damage_before_end",
-		"battle_result_defeat_all_enemys"
+		"battle_result_defeat_all_enemys",
+		"",
+		"battle_result_boss_hp_lower"
 	})[arg0_5]
 end
 
@@ -101,7 +105,7 @@ function var0_0.GetObjectives(arg0_7)
 		end
 
 		local var0_8 = i18n(var2_0(arg0_8[1]), arg0_8[2])
-		local var1_8 = var1_0(arg0_8[1], arg0_7)
+		local var1_8 = var1_0(arg0_8[1], arg0_7, arg0_8[2])
 		local var2_8, var3_8 = var0_0.ColorObjective(var1_8)
 
 		table.insert(var0_7, {
@@ -149,7 +153,7 @@ function var0_0.HasSubShip(arg0_11)
 	for iter0_11, iter1_11 in ipairs(arg0_11) do
 		local var0_11 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter1_11.configId).type
 
-		if table.contains(TeamType.SubShipType, var0_11) then
+		if table.contains(ShipType.SubShipType, var0_11) then
 			return true
 		end
 	end
@@ -161,7 +165,7 @@ function var0_0.HasSurfaceShip(arg0_12)
 	for iter0_12, iter1_12 in ipairs(arg0_12) do
 		local var0_12 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter1_12.configId).type
 
-		if not table.contains(TeamType.SubShipType, var0_12) then
+		if not table.contains(ShipType.SubShipType, var0_12) then
 			return true
 		end
 	end
@@ -176,7 +180,7 @@ function var0_0.SeparateSurfaceAndSubShips(arg0_13)
 	for iter0_13, iter1_13 in ipairs(arg0_13) do
 		local var2_13 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter1_13.configId).type
 
-		if table.contains(TeamType.SubShipType, var2_13) then
+		if table.contains(ShipType.SubShipType, var2_13) then
 			table.insert(var1_13, iter1_13)
 		else
 			table.insert(var0_13, iter1_13)
@@ -199,7 +203,7 @@ function var0_0.SeparateMvpShip(arg0_14, arg1_14, arg2_14)
 	for iter0_14, iter1_14 in ipairs(arg0_14) do
 		if iter1_14.id ~= arg1_14 then
 			local var4_14 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(iter1_14.configId).type
-			local var5_14 = TeamType.GetTeamFromShipType(var4_14)
+			local var5_14 = ShipType.GetTeamFromShipType(var4_14)
 
 			if var5_14 == TeamType.Vanguard then
 				table.insert(var1_14, iter1_14)

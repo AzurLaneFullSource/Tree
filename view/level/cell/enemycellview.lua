@@ -65,9 +65,9 @@ function var0_0.RefreshEnemyTplIcons(arg0_7, arg1_7, arg2_7)
 		table.insertto(var1_7, arg1_7.bufficon)
 	end
 
-	_.each(_.filter(arg2_7:GetWeather(arg0_7.line.row, arg0_7.line.column), function(arg0_8)
+	underscore(arg2_7:GetWeather(arg0_7.line.row, arg0_7.line.column)):chain():filter(function(arg0_8)
 		return arg0_8 == ChapterConst.FlagWeatherFog
-	end), function(arg0_9)
+	end):each(function(arg0_9)
 		table.insert(var1_7, pg.weather_data_template[arg0_9].buff_icon)
 	end)
 	setActive(var0_7, true)

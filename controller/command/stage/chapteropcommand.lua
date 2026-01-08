@@ -146,6 +146,8 @@ function var0_0.execute(arg0_1, arg1_1)
 					elseif var0_1.type == ChapterConst.OpSubTeleport then
 						arg0_1:doTeleportSub()
 						arg0_1:doTeleportByPortal()
+					elseif var0_1.type == ChapterConst.OPSubStrike then
+						existCall(var0_1.callback)
 					end
 				end
 

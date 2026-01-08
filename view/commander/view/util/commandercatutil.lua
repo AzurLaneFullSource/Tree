@@ -41,9 +41,11 @@ local function var3_0(arg0_3, arg1_3)
 
 	for iter0_3, iter1_3 in pairs(var0_3:getEliteFleetCommanders()) do
 		for iter2_3, iter3_3 in pairs(iter1_3) do
-			arg1_3[iter3_3].sub = false
-			arg1_3[iter3_3].fleetId = iter0_3
-			arg1_3[iter3_3].inFleet = true
+			if iter3_3 ~= 0 then
+				arg1_3[iter3_3].sub = false
+				arg1_3[iter3_3].fleetId = iter0_3
+				arg1_3[iter3_3].inFleet = true
+			end
 		end
 	end
 end

@@ -117,6 +117,12 @@ function var4_0.Update(arg0_12, arg1_12)
 end
 
 function var4_0.Fire(arg0_13, arg1_13)
+	if arg0_13._host:IsCease() then
+		arg0_13:CancelQuickTag()
+
+		return false
+	end
+
 	if arg0_13._currentState ~= arg0_13.STATE_PRECAST then
 		return
 	end

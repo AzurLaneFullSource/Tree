@@ -9718,6 +9718,36 @@ _G.pg.base.item_data_statistics[13054] = {
 	limit = {},
 }
 
+_G.pg.base.item_data_statistics[13055] = {
+	compose_number = 0,
+	display = "Triple 25mm Type 96 AT/AA Gun Mount T0 Design",
+	display_effect = "",
+	icon = "Equips/36360",
+	id = 13055,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Triple 25mm Type 96 AT/AA Gun Mount T0 Design",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 9,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+
 _G.pg.base.item_data_statistics[14001] = {
 	compose_number = 0,
 	display = "Can be exchanged for one of the following SR gear blueprints:\nPrototype Triple 381mm Main Gun T0 Design\nPrototype Triple 410mm Mounted Gun T0 Design\nPrototype Triple 203mm Main Gun (SK C) T0 Design\nPrototype Triple 203mm Main Gun T0 Design\nPrototype Triple 152mm Main Gun T0 Design\nT0 100mm Mounted AA Gun Design",

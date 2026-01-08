@@ -97,35 +97,18 @@ function var0_0.execute(arg0_1, arg1_1)
 
 			for iter0_5, iter1_5 in ipairs(var2_1) do
 				var4_1:removeCommanderById(iter1_5)
-				arg0_1:clearHardChapterCommanders(iter1_5)
 				arg0_1:clearActivityCommanders(iter1_5)
 			end
+
+			getProxy(ChapterProxy):RemoveEliteFleetCommander(var2_1)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_play_erro", arg0_5.result))
 		end
 	end)
 end
 
-function var0_0.clearHardChapterCommanders(arg0_6, arg1_6)
-	local var0_6 = getProxy(ChapterProxy)
-	local var1_6 = var0_6:getRawData()
-
-	for iter0_6, iter1_6 in pairs(var1_6) do
-		local var2_6 = iter1_6:getEliteFleetCommanders()
-
-		for iter2_6, iter3_6 in pairs(var2_6) do
-			for iter4_6, iter5_6 in pairs(iter3_6) do
-				if iter5_6 == arg1_6 then
-					iter1_6:updateCommander(iter2_6, iter4_6, nil)
-					var0_6:updateChapter(iter1_6)
-				end
-			end
-		end
-	end
-end
-
-function var0_0.clearActivityCommanders(arg0_7, arg1_7)
-	getProxy(FleetProxy):removeActivityFleetCommander(arg1_7)
+function var0_0.clearActivityCommanders(arg0_6, arg1_6)
+	getProxy(FleetProxy):removeActivityFleetCommander(arg1_6)
 end
 
 return var0_0

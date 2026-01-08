@@ -139,7 +139,7 @@ function var0_0.CalcBattleScoreWhenDead(arg0_12, arg1_12)
 	local var0_12 = arg1_12:GetIFF()
 
 	if var0_12 == var4_0.FRIENDLY_CODE then
-		if not table.contains(TeamType.SubShipType, arg1_12:GetTemplate().type) then
+		if not table.contains(ShipType.SubShipType, arg1_12:GetTemplate().type) then
 			arg0_12:DelScoreWhenPlayerDead(arg1_12)
 		end
 	elseif var0_12 == var4_0.FOE_CODE then
@@ -584,10 +584,49 @@ function var0_0.CalcAirFightScore(arg0_45)
 	arg0_45._statistics._battleScore = var3_0.BattleScore.S
 end
 
-function var0_0.AutoStatistics(arg0_46, arg1_46)
-	if not arg0_46._statistics._autoInit then
-		arg0_46._statistics._autoInit = not arg1_46 and 1 or 0
+function var0_0.AddScenarioSubStrikeBoss(arg0_46, arg1_46)
+	arg0_46._statistics._scenarioSubStrikebossUnit = arg1_46
+end
+
+function var0_0.CalcScenarioSubStrikeScoreAtEnd(arg0_47)
+	local var0_47 = arg0_47._statistics._scenarioSubStrikebossUnit
+
+	if not var0_47 then
+		arg0_47._statistics._bossHP = 1
+		arg0_47._statistics._battleScore = var3_0.BattleScore.C
+	elseif not var0_47:IsAlive() then
+		arg0_47._statistics._battleScore = var3_0.BattleScore.S
+		arg0_47._statistics._bossHP = 0
 	else
-		arg0_46._statistics._autoCount = arg0_46._statistics._autoCount + 1
+		local var1_47 = var0_47:GetHPRate()
+		local var2_47 = arg0_47._expeditionTmp.objective_2[2] * 0.01
+		local var3_47 = arg0_47._expeditionTmp.objective_3[2] * 0.01
+
+		if var1_47 < var2_47 then
+			arg0_47._statistics._battleScore = var3_0.BattleScore.A
+		elseif var2_47 <= var1_47 and var1_47 < var3_47 then
+			arg0_47._statistics._battleScore = var3_0.BattleScore.B
+		elseif var3_47 <= var1_47 then
+			arg0_47._statistics._battleScore = var3_0.BattleScore.C
+		end
+
+		arg0_47._statistics._bossHP = var1_47
+	end
+
+	local var4_47 = 0
+
+	for iter0_47, iter1_47 in pairs(arg0_47._statistics) do
+		if type(iter1_47) == "table" and iter1_47.id and iter1_47.damage and var4_47 < iter1_47.damage then
+			var4_47 = iter1_47.damage
+			arg0_47._statistics.mvpShipID = iter1_47.id
+		end
+	end
+end
+
+function var0_0.AutoStatistics(arg0_48, arg1_48)
+	if not arg0_48._statistics._autoInit then
+		arg0_48._statistics._autoInit = not arg1_48 and 1 or 0
+	else
+		arg0_48._statistics._autoCount = arg0_48._statistics._autoCount + 1
 	end
 end

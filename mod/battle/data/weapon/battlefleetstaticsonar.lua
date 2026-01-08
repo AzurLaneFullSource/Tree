@@ -21,6 +21,7 @@ function var10_0.Ctor(arg0_1, arg1_1)
 	arg0_1:init()
 
 	arg0_1._fleetVO = arg1_1
+	arg0_1._currentState = var10_0.STATE_DISABLE
 end
 
 function var10_0.GetCurrentState(arg0_2)
@@ -147,7 +148,7 @@ function var10_0.getSonarProperty(arg0_13)
 	local var4_13 = arg0_13:GetAttrByName("sonarRange")
 	local var5_13 = 0
 
-	if table.contains(TeamType.MainShipType, var0_13) then
+	if table.contains(ShipType.MainShipType, var0_13) then
 		var5_13 = arg0_13:GetAttrByName("baseAntiSubPower")
 	end
 

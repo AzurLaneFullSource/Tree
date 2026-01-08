@@ -91,7 +91,7 @@ function var0_0.ReSortFleetShips(arg0_15)
 
 	if var6_15 ~= nil then
 		local var8_15 = ys.Battle.BattleDataFunction.GetPlayerShipTmpDataFromID(var6_15.configId).type
-		local var9_15 = TeamType.GetTeamFromShipType(var8_15)
+		local var9_15 = ShipType.GetTeamFromShipType(var8_15)
 
 		if var9_15 == TeamType.Vanguard then
 			NewBattleResultUtil.SpecialInsertItem(var7_15, var5_15, var4_15, var3_15, var6_15)

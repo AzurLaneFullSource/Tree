@@ -70,6 +70,12 @@ var0_0.DEFAULT_NAME_BOSS_SINGLE_VARIABLE_ACT = {
 	i18n("ship_formationUI_fleetName_12"),
 	(i18n("ship_formationUI_fleetName_13"))
 }
+var0_0.DEFAULT_ELITE_NAME = {
+	i18n("ship_formationUI_fleetName1"),
+	i18n("ship_formationUI_fleetName2"),
+	i18n("ship_formationUI_fleetName11"),
+	(i18n("ship_formationUI_fleetName13"))
+}
 var0_0.REGULAR_FLEET_ID = 1
 var0_0.REGULAR_FLEET_NUMS = 6
 var0_0.SUBMARINE_FLEET_ID = 11
@@ -92,6 +98,8 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.skills = {}
 
 	arg0_1:updateCommanderSkills()
+
+	arg0_1.fleetType = arg1_1.fleetType
 end
 
 function var0_0.isUnlock(arg0_2)
@@ -430,6 +438,10 @@ function var0_0.isPVPFleet(arg0_31)
 end
 
 function var0_0.getFleetType(arg0_32)
+	if arg0_32.fleetType then
+		return arg0_32.fleetType
+	end
+
 	if arg0_32.id and arg0_32.id >= var0_0.SUBMARINE_FLEET_ID and arg0_32.id < var0_0.SUBMARINE_FLEET_ID + var0_0.SUBMARINE_FLEET_NUMS then
 		return FleetType.Submarine
 	end
@@ -902,7 +914,7 @@ function var0_0.GetFleetSonarRange(arg0_59)
 				var1_59 = math.max(var1_59, Mathf.Clamp(var9_59, var8_59.minRange, var8_59.maxRange))
 			end
 
-			if table.contains(TeamType.MainShipType, var7_59) then
+			if table.contains(ShipType.MainShipType, var7_59) then
 				var4_59 = var4_59 + (var6_59:getShipProperties()[AttributeType.AntiSub] or 0)
 			end
 
@@ -953,7 +965,37 @@ function var0_0.ExistActNpcShip(arg0_62)
 end
 
 function var0_0.GetName(arg0_63)
-	return arg0_63.name == "" and var0_0.DEFAULT_NAME[arg0_63.id] or arg0_63.name
+	return noEmptyStr(arg0_63.name) or var0_0.DEFAULT_NAME[arg0_63.id]
+end
+
+function var0_0.ChangeToElite(arg0_64)
+	local var0_64 = arg0_64:getFleetType()
+	local var1_64 = {
+		id = arg0_64.id,
+		[TeamType.FormShips] = {},
+		[TeamType.FormCommander] = {
+			0,
+			0
+		}
+	}
+
+	for iter0_64, iter1_64 in ipairs(arg0_64.commanderIds) do
+		var1_64[TeamType.FormCommander][iter0_64] = iter1_64
+	end
+
+	switch(var0_64, {
+		[FleetType.Normal] = function()
+			var1_64[TeamType.FormShips] = table.mergeArray(arg0_64.mainShips, arg0_64.vanguardShips)
+		end,
+		[FleetType.Submarine] = function()
+			var1_64[TeamType.FormShips] = underscore.to_array(arg0_64.subShips)
+		end,
+		[FleetType.Support] = function()
+			var1_64[TeamType.FormShips] = underscore.to_array(arg0_64.mainShips)
+		end
+	})
+
+	return var1_64, var0_64
 end
 
 return var0_0

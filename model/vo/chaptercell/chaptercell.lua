@@ -36,9 +36,15 @@ function var0_0.GetFlagList(arg0_3)
 end
 
 function var0_0.GetWeatherFlagList(arg0_4)
-	return _.filter(arg0_4:GetFlagList(), function(arg0_5)
+	local var0_4 = underscore.filter(arg0_4:GetFlagList(), function(arg0_5)
 		return tobool(pg.weather_data_template[arg0_5])
 	end)
+
+	if not arg0_4:IsVisible() then
+		table.insert(var0_4, ChapterConst.FlagWeatherFogVisible)
+	end
+
+	return var0_4
 end
 
 function var0_0.checkHadFlag(arg0_6, arg1_6)
@@ -94,6 +100,30 @@ end
 
 function var0_0.IsWalkable(arg0_14)
 	return arg0_14.walkable
+end
+
+function var0_0.InitVisible(arg0_15)
+	arg0_15.visible = {}
+end
+
+function var0_0.UpdateVisible(arg0_16, arg1_16, arg2_16)
+	local var0_16 = table.contains(arg0_16.visible, arg1_16)
+
+	assert(arg0_16.visible and not arg2_16 == var0_16)
+
+	if arg2_16 then
+		table.insert(arg0_16.visible, arg1_16)
+	else
+		table.removebyvalue(arg0_16.visible, arg1_16)
+	end
+end
+
+function var0_0.IsVisible(arg0_17)
+	if arg0_17.visible then
+		return #arg0_17.visible > 0
+	else
+		return true
+	end
 end
 
 return var0_0

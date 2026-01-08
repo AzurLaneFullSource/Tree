@@ -37,22 +37,24 @@ function var7_0.setWeapon(arg0_2, arg1_2)
 			local var5_2 = var3_2[iter0_2]
 
 			local function var6_2(arg0_3, arg1_3, arg2_3)
-				if var1_0.GetWeaponPropertyDataFromID(arg0_3).type == var4_0.EquipmentType.INTERCEPT_AIRCRAFT then
-					local var0_3 = var1_2[iter0_2]
+				local var0_3 = var1_0.GetWeaponPropertyDataFromID(arg0_3).type
 
-					for iter0_3 = 1, var0_3 do
-						local var1_3 = arg0_2:AddWeapon(arg0_3, arg1_3, arg2_3, var4_2, iter0_2)
-						local var2_3 = var1_3:GetTemplateData().type
+				if var0_3 == var4_0.EquipmentType.INTERCEPT_AIRCRAFT or var0_3 == var4_0.EquipmentType.TORPEDO then
+					local var1_3 = var1_2[iter0_2]
+
+					for iter0_3 = 1, var1_3 do
+						local var2_3 = arg0_2:AddWeapon(arg0_3, arg1_3, arg2_3, var4_2, iter0_2)
+						local var3_3 = var2_3:GetTemplateData().type
 
 						if iter1_2.equipment then
-							var1_3:SetSrcEquipmentID(iter1_2.equipment.id)
+							var2_3:SetSrcEquipmentID(iter1_2.equipment.id)
 						end
 					end
 				end
 			end
 
 			if iter1_2.equipment and #iter1_2.equipment.weapon_id > 0 then
-				if iter1_2.equipment.type == EquipType.FighterAircraft then
+				if iter1_2.equipment.type == EquipType.FighterAircraft or iter1_2.equipment.type == EquipType.SubmarineTorpedo then
 					local var7_2 = iter1_2.equipment.weapon_id
 
 					for iter2_2, iter3_2 in ipairs(var7_2) do
@@ -68,7 +70,7 @@ function var7_0.setWeapon(arg0_2, arg1_2)
 				local var10_2 = var0_2[iter0_2]
 				local var11_2 = var1_0.GetWeaponDataFromID(var10_2)
 
-				if var11_2.type == EquipType.FighterAircraft then
+				if var11_2.type == EquipType.FighterAircraft or var11_2.type == EquipType.SubmarineTorpedo then
 					var6_2(var10_2, var11_2.label)
 				end
 			end
@@ -79,10 +81,14 @@ function var7_0.setWeapon(arg0_2, arg1_2)
 	local var13_2 = arg0_2._tmpData.fix_equip_list
 
 	for iter4_2, iter5_2 in ipairs(var13_2) do
-		if iter5_2 and iter5_2 ~= -1 and var1_0.GetWeaponPropertyDataFromID(iter5_2).type == var4_0.EquipmentType.INTERCEPT_AIRCRAFT then
-			local var14_2 = var2_2[iter4_2 + var12_2] or 1
+		if iter5_2 and iter5_2 ~= -1 then
+			local var14_2 = var1_0.GetWeaponPropertyDataFromID(iter5_2).type
 
-			arg0_2:AddWeapon(iter5_2, nil, nil, var14_2, iter4_2 + var12_2):SetFixedFlag()
+			if var14_2 == var4_0.EquipmentType.INTERCEPT_AIRCRAFT or var14_2 == var4_0.EquipmentType.TORPEDO then
+				local var15_2 = var2_2[iter4_2 + var12_2] or 1
+
+				arg0_2:AddWeapon(iter5_2, nil, nil, var15_2, iter4_2 + var12_2):SetFixedFlag()
+			end
 		end
 	end
 end
@@ -96,6 +102,7 @@ function var7_0.AddWeapon(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, arg5_4, arg6_4
 		var0_4:SetEquipmentLabel(arg2_4)
 	end
 
+	var0_4:SetSupportWeapon()
 	arg0_4:AddAutoWeapon(var0_4)
 
 	if arg3_4 and arg3_4 ~= 0 then

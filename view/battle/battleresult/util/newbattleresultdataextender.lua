@@ -19,7 +19,7 @@ function var0_0.NeedHelpMessage(arg0_3, arg1_3)
 end
 
 function var0_0.GetAutoSkipFlag(arg0_4, arg1_4)
-	if arg1_4 == SYSTEM_SCENARIO then
+	if arg1_4 == SYSTEM_SCENARIO or arg1_4 == SYSTEM_SCENARIO_SUB_STRIKE then
 		local var0_4 = getProxy(ChapterProxy):getActiveChapter()
 
 		return getProxy(ChapterProxy):GetChapterAutoFlag(var0_4.id) == 1
@@ -219,7 +219,7 @@ function var0_0.GetNewMainShips(arg0_18)
 		var1_18 = var6_0()
 	elseif var0_18 == SYSTEM_BOSS_RUSH or var0_18 == SYSTEM_BOSS_RUSH_COLLABRATE or var0_18 == SYSTEM_BOSS_RUSH_EX then
 		var1_18 = var7_0(arg0_18)
-	elseif var0_18 == SYSTEM_DODGEM or var0_18 == SYSTEM_SUBMARINE_RUN or var0_18 == SYSTEM_REWARD_PERFORM or var0_18 == SYSTEM_AIRFIGHT or var0_18 == SYSTEM_CARDPUZZLE or var0_18 == SYSTEM_CHALLENGE then
+	elseif var0_18 == SYSTEM_DODGEM or var0_18 == SYSTEM_SUBMARINE_RUN or var0_18 == SYSTEM_REWARD_PERFORM or var0_18 == SYSTEM_AIRFIGHT or var0_18 == SYSTEM_SCENARIO_SUB_STRIKE or var0_18 == SYSTEM_CARDPUZZLE or var0_18 == SYSTEM_CHALLENGE then
 		-- block empty
 	elseif var0_18 == SYSTEM_LIMIT_CHALLENGE then
 		var1_18 = var8_0(arg0_18)

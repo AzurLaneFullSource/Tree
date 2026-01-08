@@ -1,6 +1,120 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_19 = {
+	[10400020] = {
+		ship_group = 1040002,
+		name = "Elegant Kizuna AI",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 10400020,
+		group_index = 0,
+		purchase_offset = "",
+		painting = "aijiangCL",
+		l2d_drag_rate = "",
+		part_scale = "",
+		prefab = "aijiangCL",
+		shop_type_id = 0,
+		shop_dynamic_hx = 0,
+		double_char = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 0,
+		skeleton_default_skin = "",
+		bg = "",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = -1,
+		l2d_para_range = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_voice_calibrate = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Well met. I'm Kizuna AI, the new addition to your base. I will do all in my power to be at least of some use. It is a pleasure meeting you, Commander.",
+		voice_actor = 176,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.16,
+					1.01,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0.06,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.19,
+					0.98,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.42,
+							2.33,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[10400030] = {
 		ship_group = 1040003,
 		name = "Anniversary Kizuna AI",
@@ -15868,167 +15982,6 @@ pg.base.ship_skin_template_19 = {
 							0
 						}
 					}
-				}
-			}
-		}
-	},
-	[11500011] = {
-		ship_group = 1150001,
-		name = "Break Time",
-		hand_id = 13,
-		bgm = "dal-az-theme",
-		gyro = 0,
-		illustrator2 = -1,
-		id = 11500011,
-		l2d_drag_rate = "",
-		group_index = 1,
-		purchase_offset = "",
-		painting = "shixiang_2",
-		part_scale = "",
-		prefab = "shixiang_2",
-		shop_dynamic_hx = 0,
-		shop_type_id = 6,
-		double_char = 0,
-		shop_id = 71237,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		skeleton_default_skin = "",
-		illustrator = -1,
-		bg = "168",
-		l2d_voice_calibrate = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Hmm? What's the matter? Oh, this? Someone gave it to me to have as a little treat! I won't keep it all to myself, though. I'll share some with you! What would you like? Vanilla? Chocolate? Or strawberry? No, the kinako-flavored one is MINE! But you really want it? Hmm... Maybe just a little...?",
-		voice_actor = 148,
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			6,
-			2,
-			5
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		shop_offset = {
-			-138,
-			-617,
-			0,
-			0.65
-		},
-		spine_offset_profile = {
-			-72.5,
-			-612.1,
-			0,
-			0.64
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.182,
-					1.036,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.882,
-					2.436,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.681,
-							2.382,
-							0
-						}
-					}
-				}
-			}
-		},
-		spine_offset = {
-			35,
-			-917,
-			0,
-			0.84
-		},
-		get_showing = {
-			show = 1,
-			data = {
-				{
-					261,
-					240,
-					2,
-					0,
-					120,
-					2
-				},
-				{
-					-1075,
-					804,
-					2,
-					-120,
-					0,
-					2
-				},
-				{
-					-936,
-					-148,
-					2,
-					0,
-					-120,
-					2
 				}
 			}
 		}

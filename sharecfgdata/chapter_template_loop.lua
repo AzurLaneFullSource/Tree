@@ -160,6 +160,7 @@ _G.pg.base.chapter_template_loop[101] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[102] = {
@@ -429,6 +430,7 @@ _G.pg.base.chapter_template_loop[102] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[103] = {
@@ -734,6 +736,7 @@ _G.pg.base.chapter_template_loop[103] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[104] = {
@@ -1121,6 +1124,7 @@ _G.pg.base.chapter_template_loop[104] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[201] = {
@@ -1602,6 +1606,7 @@ _G.pg.base.chapter_template_loop[201] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[202] = {
@@ -2136,6 +2141,7 @@ _G.pg.base.chapter_template_loop[202] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[203] = {
@@ -2647,6 +2653,7 @@ _G.pg.base.chapter_template_loop[203] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[204] = {
@@ -3128,6 +3135,7 @@ _G.pg.base.chapter_template_loop[204] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[301] = {
@@ -3629,6 +3637,7 @@ _G.pg.base.chapter_template_loop[301] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[302] = {
@@ -4154,6 +4163,7 @@ _G.pg.base.chapter_template_loop[302] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[303] = {
@@ -4674,6 +4684,7 @@ _G.pg.base.chapter_template_loop[303] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[304] = {
@@ -5180,6 +5191,7 @@ _G.pg.base.chapter_template_loop[304] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[401] = {
@@ -5605,6 +5617,7 @@ _G.pg.base.chapter_template_loop[401] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[402] = {
@@ -6023,6 +6036,7 @@ _G.pg.base.chapter_template_loop[402] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[403] = {
@@ -6386,6 +6400,7 @@ _G.pg.base.chapter_template_loop[403] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[404] = {
@@ -6886,6 +6901,7 @@ _G.pg.base.chapter_template_loop[404] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[501] = {
@@ -7391,6 +7407,7 @@ _G.pg.base.chapter_template_loop[501] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[502] = {
@@ -7834,6 +7851,7 @@ _G.pg.base.chapter_template_loop[502] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[503] = {
@@ -8247,6 +8265,7 @@ _G.pg.base.chapter_template_loop[503] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[504] = {
@@ -8685,6 +8704,7 @@ _G.pg.base.chapter_template_loop[504] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[601] = {
@@ -9161,6 +9181,7 @@ _G.pg.base.chapter_template_loop[601] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[602] = {
@@ -9693,6 +9714,7 @@ _G.pg.base.chapter_template_loop[602] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[603] = {
@@ -10149,6 +10171,7 @@ _G.pg.base.chapter_template_loop[603] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[604] = {
@@ -10649,6 +10672,7 @@ _G.pg.base.chapter_template_loop[604] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[701] = {
@@ -10972,6 +10996,7 @@ _G.pg.base.chapter_template_loop[701] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[702] = {
@@ -11398,6 +11423,7 @@ _G.pg.base.chapter_template_loop[702] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[703] = {
@@ -11894,6 +11920,7 @@ _G.pg.base.chapter_template_loop[703] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[704] = {
@@ -12375,6 +12402,7 @@ _G.pg.base.chapter_template_loop[704] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[801] = {
@@ -12720,6 +12748,7 @@ _G.pg.base.chapter_template_loop[801] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[802] = {
@@ -13151,6 +13180,7 @@ _G.pg.base.chapter_template_loop[802] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[803] = {
@@ -13645,6 +13675,7 @@ _G.pg.base.chapter_template_loop[803] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[804] = {
@@ -14202,6 +14233,7 @@ _G.pg.base.chapter_template_loop[804] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[901] = {
@@ -14638,6 +14670,7 @@ _G.pg.base.chapter_template_loop[901] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[902] = {
@@ -15112,6 +15145,7 @@ _G.pg.base.chapter_template_loop[902] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[903] = {
@@ -15610,6 +15644,7 @@ _G.pg.base.chapter_template_loop[903] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[904] = {
@@ -16130,6 +16165,7 @@ _G.pg.base.chapter_template_loop[904] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1001] = {
@@ -16584,6 +16620,7 @@ _G.pg.base.chapter_template_loop[1001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1002] = {
@@ -17095,6 +17132,7 @@ _G.pg.base.chapter_template_loop[1002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1003] = {
@@ -17623,6 +17661,7 @@ _G.pg.base.chapter_template_loop[1003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1004] = {
@@ -18165,6 +18204,7 @@ _G.pg.base.chapter_template_loop[1004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1101] = {
@@ -18668,6 +18708,7 @@ _G.pg.base.chapter_template_loop[1101] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1102] = {
@@ -19287,6 +19328,7 @@ _G.pg.base.chapter_template_loop[1102] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1103] = {
@@ -19875,6 +19917,7 @@ _G.pg.base.chapter_template_loop[1103] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1104] = {
@@ -20573,6 +20616,7 @@ _G.pg.base.chapter_template_loop[1104] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1201] = {
@@ -21055,6 +21099,7 @@ _G.pg.base.chapter_template_loop[1201] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1202] = {
@@ -21649,6 +21694,7 @@ _G.pg.base.chapter_template_loop[1202] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1203] = {
@@ -22279,6 +22325,7 @@ _G.pg.base.chapter_template_loop[1203] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1204] = {
@@ -23025,6 +23072,7 @@ _G.pg.base.chapter_template_loop[1204] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1301] = {
@@ -23519,6 +23567,7 @@ _G.pg.base.chapter_template_loop[1301] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1302] = {
@@ -24118,6 +24167,7 @@ _G.pg.base.chapter_template_loop[1302] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1303] = {
@@ -24760,6 +24810,7 @@ _G.pg.base.chapter_template_loop[1303] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1304] = {
@@ -25512,6 +25563,7 @@ _G.pg.base.chapter_template_loop[1304] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1401] = {
@@ -26054,6 +26106,7 @@ _G.pg.base.chapter_template_loop[1401] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1402] = {
@@ -26707,6 +26760,7 @@ _G.pg.base.chapter_template_loop[1402] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1403] = {
@@ -27415,6 +27469,7 @@ _G.pg.base.chapter_template_loop[1403] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1404] = {
@@ -28243,6 +28298,7 @@ _G.pg.base.chapter_template_loop[1404] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1501] = {
@@ -28786,6 +28842,7 @@ _G.pg.base.chapter_template_loop[1501] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1502] = {
@@ -29440,6 +29497,7 @@ _G.pg.base.chapter_template_loop[1502] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1503] = {
@@ -30147,6 +30205,7 @@ _G.pg.base.chapter_template_loop[1503] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1504] = {
@@ -30969,6 +31028,7 @@ _G.pg.base.chapter_template_loop[1504] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10101] = {
@@ -31142,6 +31202,7 @@ _G.pg.base.chapter_template_loop[10101] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10102] = {
@@ -31389,6 +31450,7 @@ _G.pg.base.chapter_template_loop[10102] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10103] = {
@@ -31657,6 +31719,7 @@ _G.pg.base.chapter_template_loop[10103] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10104] = {
@@ -31942,6 +32005,7 @@ _G.pg.base.chapter_template_loop[10104] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10201] = {
@@ -32277,6 +32341,7 @@ _G.pg.base.chapter_template_loop[10201] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10202] = {
@@ -32664,6 +32729,7 @@ _G.pg.base.chapter_template_loop[10202] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10203] = {
@@ -33028,6 +33094,7 @@ _G.pg.base.chapter_template_loop[10203] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10204] = {
@@ -33362,6 +33429,7 @@ _G.pg.base.chapter_template_loop[10204] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10301] = {
@@ -33716,6 +33784,7 @@ _G.pg.base.chapter_template_loop[10301] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10302] = {
@@ -34094,6 +34163,7 @@ _G.pg.base.chapter_template_loop[10302] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10303] = {
@@ -34467,6 +34537,7 @@ _G.pg.base.chapter_template_loop[10303] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10304] = {
@@ -34826,6 +34897,7 @@ _G.pg.base.chapter_template_loop[10304] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10401] = {
@@ -35222,6 +35294,7 @@ _G.pg.base.chapter_template_loop[10401] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10402] = {
@@ -35611,6 +35684,7 @@ _G.pg.base.chapter_template_loop[10402] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10403] = {
@@ -35945,6 +36019,7 @@ _G.pg.base.chapter_template_loop[10403] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10404] = {
@@ -36415,6 +36490,7 @@ _G.pg.base.chapter_template_loop[10404] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10501] = {
@@ -36890,6 +36966,7 @@ _G.pg.base.chapter_template_loop[10501] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10502] = {
@@ -37303,6 +37380,7 @@ _G.pg.base.chapter_template_loop[10502] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10503] = {
@@ -37686,6 +37764,7 @@ _G.pg.base.chapter_template_loop[10503] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10504] = {
@@ -38094,6 +38173,7 @@ _G.pg.base.chapter_template_loop[10504] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10601] = {
@@ -38541,6 +38621,7 @@ _G.pg.base.chapter_template_loop[10601] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10602] = {
@@ -39044,6 +39125,7 @@ _G.pg.base.chapter_template_loop[10602] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10603] = {
@@ -39471,6 +39553,7 @@ _G.pg.base.chapter_template_loop[10603] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10604] = {
@@ -39942,6 +40025,7 @@ _G.pg.base.chapter_template_loop[10604] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10701] = {
@@ -40251,6 +40335,7 @@ _G.pg.base.chapter_template_loop[10701] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10702] = {
@@ -40663,6 +40748,7 @@ _G.pg.base.chapter_template_loop[10702] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10703] = {
@@ -41145,6 +41231,7 @@ _G.pg.base.chapter_template_loop[10703] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10704] = {
@@ -41612,6 +41699,7 @@ _G.pg.base.chapter_template_loop[10704] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10801] = {
@@ -41943,6 +42031,7 @@ _G.pg.base.chapter_template_loop[10801] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10802] = {
@@ -42360,6 +42449,7 @@ _G.pg.base.chapter_template_loop[10802] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10803] = {
@@ -42840,6 +42930,7 @@ _G.pg.base.chapter_template_loop[10803] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10804] = {
@@ -43383,6 +43474,7 @@ _G.pg.base.chapter_template_loop[10804] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10901] = {
@@ -43806,6 +43898,7 @@ _G.pg.base.chapter_template_loop[10901] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10902] = {
@@ -44267,6 +44360,7 @@ _G.pg.base.chapter_template_loop[10902] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10903] = {
@@ -44752,6 +44846,7 @@ _G.pg.base.chapter_template_loop[10903] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[10904] = {
@@ -45259,6 +45354,7 @@ _G.pg.base.chapter_template_loop[10904] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11001] = {
@@ -45700,6 +45796,7 @@ _G.pg.base.chapter_template_loop[11001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11002] = {
@@ -46198,6 +46295,7 @@ _G.pg.base.chapter_template_loop[11002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11003] = {
@@ -46713,6 +46811,7 @@ _G.pg.base.chapter_template_loop[11003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11004] = {
@@ -47242,6 +47341,7 @@ _G.pg.base.chapter_template_loop[11004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11101] = {
@@ -47733,6 +47833,7 @@ _G.pg.base.chapter_template_loop[11101] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11102] = {
@@ -48339,6 +48440,7 @@ _G.pg.base.chapter_template_loop[11102] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11103] = {
@@ -48914,6 +49016,7 @@ _G.pg.base.chapter_template_loop[11103] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11104] = {
@@ -49599,6 +49702,7 @@ _G.pg.base.chapter_template_loop[11104] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11201] = {
@@ -50069,6 +50173,7 @@ _G.pg.base.chapter_template_loop[11201] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11202] = {
@@ -50650,6 +50755,7 @@ _G.pg.base.chapter_template_loop[11202] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11203] = {
@@ -51267,6 +51373,7 @@ _G.pg.base.chapter_template_loop[11203] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11204] = {
@@ -52000,6 +52107,7 @@ _G.pg.base.chapter_template_loop[11204] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11301] = {
@@ -52463,6 +52571,7 @@ _G.pg.base.chapter_template_loop[11301] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11302] = {
@@ -53030,6 +53139,7 @@ _G.pg.base.chapter_template_loop[11302] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11303] = {
@@ -53640,6 +53750,7 @@ _G.pg.base.chapter_template_loop[11303] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11304] = {
@@ -54359,6 +54470,7 @@ _G.pg.base.chapter_template_loop[11304] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11401] = {
@@ -54867,6 +54979,7 @@ _G.pg.base.chapter_template_loop[11401] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11402] = {
@@ -55478,6 +55591,7 @@ _G.pg.base.chapter_template_loop[11402] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11403] = {
@@ -56151,6 +56265,7 @@ _G.pg.base.chapter_template_loop[11403] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[11404] = {
@@ -56945,6 +57060,7 @@ _G.pg.base.chapter_template_loop[11404] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1140001] = {
@@ -57396,6 +57512,7 @@ _G.pg.base.chapter_template_loop[1140001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1140003] = {
@@ -57953,6 +58070,7 @@ _G.pg.base.chapter_template_loop[1140003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1140004] = {
@@ -58622,6 +58740,7 @@ _G.pg.base.chapter_template_loop[1140004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1140005] = {
@@ -59085,6 +59204,7 @@ _G.pg.base.chapter_template_loop[1140005] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1140007] = {
@@ -59654,6 +59774,7 @@ _G.pg.base.chapter_template_loop[1140007] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1140008] = {
@@ -60352,6 +60473,7 @@ _G.pg.base.chapter_template_loop[1140008] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1140011] = {
@@ -60844,6 +60966,7 @@ _G.pg.base.chapter_template_loop[1140011] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1140013] = {
@@ -61442,6 +61565,7 @@ _G.pg.base.chapter_template_loop[1140013] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1140014] = {
@@ -62152,6 +62276,7 @@ _G.pg.base.chapter_template_loop[1140014] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1140015] = {
@@ -62658,6 +62783,7 @@ _G.pg.base.chapter_template_loop[1140015] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1140017] = {
@@ -63270,6 +63396,7 @@ _G.pg.base.chapter_template_loop[1140017] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1140018] = {
@@ -64004,6 +64131,7 @@ _G.pg.base.chapter_template_loop[1140018] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1190001] = {
@@ -64402,6 +64530,7 @@ _G.pg.base.chapter_template_loop[1190001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1190002] = {
@@ -64862,6 +64991,7 @@ _G.pg.base.chapter_template_loop[1190002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1190003] = {
@@ -65412,6 +65542,7 @@ _G.pg.base.chapter_template_loop[1190003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1190004] = {
@@ -65985,6 +66116,7 @@ _G.pg.base.chapter_template_loop[1190004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1190005] = {
@@ -66576,6 +66708,7 @@ _G.pg.base.chapter_template_loop[1190005] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1190006] = {
@@ -67342,6 +67475,7 @@ _G.pg.base.chapter_template_loop[1190006] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1190011] = {
@@ -67781,6 +67915,7 @@ _G.pg.base.chapter_template_loop[1190011] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1190012] = {
@@ -68282,6 +68417,7 @@ _G.pg.base.chapter_template_loop[1190012] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1190013] = {
@@ -68873,6 +69009,7 @@ _G.pg.base.chapter_template_loop[1190013] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1190014] = {
@@ -69487,6 +69624,7 @@ _G.pg.base.chapter_template_loop[1190014] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1190015] = {
@@ -70119,6 +70257,7 @@ _G.pg.base.chapter_template_loop[1190015] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1190016] = {
@@ -70926,6 +71065,7 @@ _G.pg.base.chapter_template_loop[1190016] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1200002] = {
@@ -71548,6 +71688,7 @@ _G.pg.base.chapter_template_loop[1200002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1200003] = {
@@ -72179,6 +72320,7 @@ _G.pg.base.chapter_template_loop[1200003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1200004] = {
@@ -72805,6 +72947,7 @@ _G.pg.base.chapter_template_loop[1200004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1210001] = {
@@ -73311,6 +73454,7 @@ _G.pg.base.chapter_template_loop[1210001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1210002] = {
@@ -73781,6 +73925,7 @@ _G.pg.base.chapter_template_loop[1210002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1210003] = {
@@ -74349,6 +74494,7 @@ _G.pg.base.chapter_template_loop[1210003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1210004] = {
@@ -74916,6 +75062,7 @@ _G.pg.base.chapter_template_loop[1210004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1210005] = {
@@ -75533,6 +75680,7 @@ _G.pg.base.chapter_template_loop[1210005] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1210006] = {
@@ -76211,6 +76359,7 @@ _G.pg.base.chapter_template_loop[1210006] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1210011] = {
@@ -76759,6 +76908,7 @@ _G.pg.base.chapter_template_loop[1210011] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1210012] = {
@@ -77271,6 +77421,7 @@ _G.pg.base.chapter_template_loop[1210012] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1210013] = {
@@ -77881,6 +78032,7 @@ _G.pg.base.chapter_template_loop[1210013] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1210014] = {
@@ -78490,6 +78642,7 @@ _G.pg.base.chapter_template_loop[1210014] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1210015] = {
@@ -79151,6 +79304,7 @@ _G.pg.base.chapter_template_loop[1210015] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1210016] = {
@@ -79873,6 +80027,7 @@ _G.pg.base.chapter_template_loop[1210016] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1220001] = {
@@ -80327,6 +80482,7 @@ _G.pg.base.chapter_template_loop[1220001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1220002] = {
@@ -80976,6 +81132,7 @@ _G.pg.base.chapter_template_loop[1220002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1220003] = {
@@ -81645,6 +81802,7 @@ _G.pg.base.chapter_template_loop[1220003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1220004] = {
@@ -82348,6 +82506,7 @@ _G.pg.base.chapter_template_loop[1220004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1230001] = {
@@ -82815,6 +82974,7 @@ _G.pg.base.chapter_template_loop[1230001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1230002] = {
@@ -83289,6 +83449,7 @@ _G.pg.base.chapter_template_loop[1230002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1230003] = {
@@ -83848,6 +84009,7 @@ _G.pg.base.chapter_template_loop[1230003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1230004] = {
@@ -84412,6 +84574,7 @@ _G.pg.base.chapter_template_loop[1230004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1230005] = {
@@ -85019,6 +85182,7 @@ _G.pg.base.chapter_template_loop[1230005] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1230006] = {
@@ -85592,6 +85756,7 @@ _G.pg.base.chapter_template_loop[1230006] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1230011] = {
@@ -86101,6 +86266,7 @@ _G.pg.base.chapter_template_loop[1230011] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1230012] = {
@@ -86617,6 +86783,7 @@ _G.pg.base.chapter_template_loop[1230012] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1230013] = {
@@ -87218,6 +87385,7 @@ _G.pg.base.chapter_template_loop[1230013] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1230014] = {
@@ -87824,6 +87992,7 @@ _G.pg.base.chapter_template_loop[1230014] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1230015] = {
@@ -88475,6 +88644,7 @@ _G.pg.base.chapter_template_loop[1230015] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1230016] = {
@@ -89092,6 +89262,7 @@ _G.pg.base.chapter_template_loop[1230016] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1230017] = {
@@ -89684,6 +89855,7 @@ _G.pg.base.chapter_template_loop[1230017] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1240001] = {
@@ -90131,6 +90303,7 @@ _G.pg.base.chapter_template_loop[1240001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1240003] = {
@@ -90684,6 +90857,7 @@ _G.pg.base.chapter_template_loop[1240003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1240004] = {
@@ -91349,6 +91523,7 @@ _G.pg.base.chapter_template_loop[1240004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1240005] = {
@@ -91808,6 +91983,7 @@ _G.pg.base.chapter_template_loop[1240005] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1240007] = {
@@ -92373,6 +92549,7 @@ _G.pg.base.chapter_template_loop[1240007] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1240008] = {
@@ -93060,6 +93237,7 @@ _G.pg.base.chapter_template_loop[1240008] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1240011] = {
@@ -93548,6 +93726,7 @@ _G.pg.base.chapter_template_loop[1240011] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1240013] = {
@@ -94142,6 +94321,7 @@ _G.pg.base.chapter_template_loop[1240013] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1240014] = {
@@ -94848,6 +95028,7 @@ _G.pg.base.chapter_template_loop[1240014] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1240015] = {
@@ -95350,6 +95531,7 @@ _G.pg.base.chapter_template_loop[1240015] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1240017] = {
@@ -95958,6 +96140,7 @@ _G.pg.base.chapter_template_loop[1240017] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1240018] = {
@@ -96688,6 +96871,7 @@ _G.pg.base.chapter_template_loop[1240018] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1250001] = {
@@ -97168,6 +97352,7 @@ _G.pg.base.chapter_template_loop[1250001] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1250002] = {
@@ -97697,6 +97882,7 @@ _G.pg.base.chapter_template_loop[1250002] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1250003] = {
@@ -98323,6 +98509,7 @@ _G.pg.base.chapter_template_loop[1250003] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1250004] = {
@@ -98846,6 +99033,7 @@ _G.pg.base.chapter_template_loop[1250004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1250005] = {
@@ -99412,6 +99600,7 @@ _G.pg.base.chapter_template_loop[1250005] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1250006] = {
@@ -99944,6 +100133,7 @@ _G.pg.base.chapter_template_loop[1250006] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1250011] = {
@@ -100466,6 +100656,7 @@ _G.pg.base.chapter_template_loop[1250011] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1250012] = {
@@ -101037,6 +101228,7 @@ _G.pg.base.chapter_template_loop[1250012] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1250013] = {
@@ -101700,6 +101892,7 @@ _G.pg.base.chapter_template_loop[1250013] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1250014] = {
@@ -102265,6 +102458,7 @@ _G.pg.base.chapter_template_loop[1250014] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1250015] = {
@@ -102875,6 +103069,7 @@ _G.pg.base.chapter_template_loop[1250015] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1250016] = {
@@ -103451,6 +103646,7 @@ _G.pg.base.chapter_template_loop[1250016] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1260001] = {
@@ -103925,6 +104121,7 @@ _G.pg.base.chapter_template_loop[1260001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1260002] = {
@@ -104419,6 +104616,7 @@ _G.pg.base.chapter_template_loop[1260002] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1260003] = {
@@ -105003,6 +105201,7 @@ _G.pg.base.chapter_template_loop[1260003] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1260006] = {
@@ -105511,6 +105710,7 @@ _G.pg.base.chapter_template_loop[1260006] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1260007] = {
@@ -106061,6 +106261,7 @@ _G.pg.base.chapter_template_loop[1260007] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1260008] = {
@@ -106570,6 +106771,7 @@ _G.pg.base.chapter_template_loop[1260008] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1260021] = {
@@ -107086,6 +107288,7 @@ _G.pg.base.chapter_template_loop[1260021] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1260022] = {
@@ -107620,6 +107823,7 @@ _G.pg.base.chapter_template_loop[1260022] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1260023] = {
@@ -108245,6 +108449,7 @@ _G.pg.base.chapter_template_loop[1260023] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1260026] = {
@@ -108794,6 +108999,7 @@ _G.pg.base.chapter_template_loop[1260026] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1260027] = {
@@ -109388,6 +109594,7 @@ _G.pg.base.chapter_template_loop[1260027] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1260028] = {
@@ -109940,6 +110147,7 @@ _G.pg.base.chapter_template_loop[1260028] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1260031] = {
@@ -110531,6 +110739,7 @@ _G.pg.base.chapter_template_loop[1260031] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1270001] = {
@@ -111003,6 +111212,7 @@ _G.pg.base.chapter_template_loop[1270001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1270002] = {
@@ -111580,6 +111790,7 @@ _G.pg.base.chapter_template_loop[1270002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1270003] = {
@@ -112116,6 +112327,7 @@ _G.pg.base.chapter_template_loop[1270003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1280001] = {
@@ -112614,6 +112826,7 @@ _G.pg.base.chapter_template_loop[1280001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1280002] = {
@@ -113204,6 +113417,7 @@ _G.pg.base.chapter_template_loop[1280002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1280003] = {
@@ -113795,6 +114009,7 @@ _G.pg.base.chapter_template_loop[1280003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1280004] = {
@@ -114387,6 +114602,7 @@ _G.pg.base.chapter_template_loop[1280004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1280005] = {
@@ -114974,6 +115190,7 @@ _G.pg.base.chapter_template_loop[1280005] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1290002] = {
@@ -115473,6 +115690,7 @@ _G.pg.base.chapter_template_loop[1290002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1290004] = {
@@ -116071,6 +116289,7 @@ _G.pg.base.chapter_template_loop[1290004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1290006] = {
@@ -116664,6 +116883,7 @@ _G.pg.base.chapter_template_loop[1290006] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1290007] = {
@@ -117263,6 +117483,7 @@ _G.pg.base.chapter_template_loop[1290007] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1290009] = {
@@ -117806,6 +118027,7 @@ _G.pg.base.chapter_template_loop[1290009] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1290011] = {
@@ -118408,6 +118630,7 @@ _G.pg.base.chapter_template_loop[1290011] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1300001] = {
@@ -118885,6 +119108,7 @@ _G.pg.base.chapter_template_loop[1300001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1300002] = {
@@ -119375,6 +119599,7 @@ _G.pg.base.chapter_template_loop[1300002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1300003] = {
@@ -119888,6 +120113,7 @@ _G.pg.base.chapter_template_loop[1300003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1300004] = {
@@ -120414,6 +120640,7 @@ _G.pg.base.chapter_template_loop[1300004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1300005] = {
@@ -120989,6 +121216,7 @@ _G.pg.base.chapter_template_loop[1300005] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1300006] = {
@@ -121523,6 +121751,7 @@ _G.pg.base.chapter_template_loop[1300006] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1300021] = {
@@ -122042,6 +122271,7 @@ _G.pg.base.chapter_template_loop[1300021] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1300022] = {
@@ -122575,6 +122805,7 @@ _G.pg.base.chapter_template_loop[1300022] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1300023] = {
@@ -123131,6 +123362,7 @@ _G.pg.base.chapter_template_loop[1300023] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1300024] = {
@@ -123699,6 +123931,7 @@ _G.pg.base.chapter_template_loop[1300024] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1300025] = {
@@ -124318,6 +124551,7 @@ _G.pg.base.chapter_template_loop[1300025] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1300026] = {
@@ -124896,6 +125130,7 @@ _G.pg.base.chapter_template_loop[1300026] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1300041] = {
@@ -125510,6 +125745,7 @@ _G.pg.base.chapter_template_loop[1300041] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1310001] = {
@@ -125995,6 +126231,7 @@ _G.pg.base.chapter_template_loop[1310001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1310002] = {
@@ -126467,6 +126704,7 @@ _G.pg.base.chapter_template_loop[1310002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1310003] = {
@@ -126977,6 +127215,7 @@ _G.pg.base.chapter_template_loop[1310003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1310004] = {
@@ -127507,6 +127746,7 @@ _G.pg.base.chapter_template_loop[1310004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1310005] = {
@@ -127982,6 +128222,7 @@ _G.pg.base.chapter_template_loop[1310005] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1310006] = {
@@ -128512,6 +128753,7 @@ _G.pg.base.chapter_template_loop[1310006] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1310021] = {
@@ -129040,6 +129282,7 @@ _G.pg.base.chapter_template_loop[1310021] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1310022] = {
@@ -129555,6 +129798,7 @@ _G.pg.base.chapter_template_loop[1310022] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1310023] = {
@@ -130107,6 +130351,7 @@ _G.pg.base.chapter_template_loop[1310023] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1310024] = {
@@ -130679,6 +130924,7 @@ _G.pg.base.chapter_template_loop[1310024] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1310025] = {
@@ -131198,6 +131444,7 @@ _G.pg.base.chapter_template_loop[1310025] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1310026] = {
@@ -131772,6 +132019,7 @@ _G.pg.base.chapter_template_loop[1310026] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1320001] = {
@@ -132202,6 +132450,7 @@ _G.pg.base.chapter_template_loop[1320001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1320002] = {
@@ -132693,6 +132942,7 @@ _G.pg.base.chapter_template_loop[1320002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1320003] = {
@@ -133223,6 +133473,7 @@ _G.pg.base.chapter_template_loop[1320003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1330001] = {
@@ -133668,6 +133919,7 @@ _G.pg.base.chapter_template_loop[1330001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1330002] = {
@@ -134142,6 +134394,7 @@ _G.pg.base.chapter_template_loop[1330002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1330003] = {
@@ -134636,6 +134889,7 @@ _G.pg.base.chapter_template_loop[1330003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1330004] = {
@@ -135167,6 +135421,7 @@ _G.pg.base.chapter_template_loop[1330004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1330005] = {
@@ -135686,6 +135941,7 @@ _G.pg.base.chapter_template_loop[1330005] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1330006] = {
@@ -136273,6 +136529,7 @@ _G.pg.base.chapter_template_loop[1330006] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1330021] = {
@@ -136760,6 +137017,7 @@ _G.pg.base.chapter_template_loop[1330021] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1330022] = {
@@ -137276,6 +137534,7 @@ _G.pg.base.chapter_template_loop[1330022] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1330023] = {
@@ -137813,6 +138072,7 @@ _G.pg.base.chapter_template_loop[1330023] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1330024] = {
@@ -138386,6 +138646,7 @@ _G.pg.base.chapter_template_loop[1330024] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1330025] = {
@@ -138949,6 +139210,7 @@ _G.pg.base.chapter_template_loop[1330025] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1330026] = {
@@ -139580,6 +139842,7 @@ _G.pg.base.chapter_template_loop[1330026] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1330041] = {
@@ -140103,6 +140366,7 @@ _G.pg.base.chapter_template_loop[1330041] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1340001] = {
@@ -140604,6 +140868,7 @@ _G.pg.base.chapter_template_loop[1340001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1340002] = {
@@ -141076,6 +141341,7 @@ _G.pg.base.chapter_template_loop[1340002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1340003] = {
@@ -141640,6 +141906,7 @@ _G.pg.base.chapter_template_loop[1340003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1340004] = {
@@ -142210,6 +142477,7 @@ _G.pg.base.chapter_template_loop[1340004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1340005] = {
@@ -142823,6 +143091,7 @@ _G.pg.base.chapter_template_loop[1340005] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1340006] = {
@@ -143402,6 +143671,7 @@ _G.pg.base.chapter_template_loop[1340006] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1340011] = {
@@ -143945,6 +144215,7 @@ _G.pg.base.chapter_template_loop[1340011] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1340012] = {
@@ -144459,6 +144730,7 @@ _G.pg.base.chapter_template_loop[1340012] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1340013] = {
@@ -145065,6 +145337,7 @@ _G.pg.base.chapter_template_loop[1340013] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1340014] = {
@@ -145677,6 +145950,7 @@ _G.pg.base.chapter_template_loop[1340014] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1340015] = {
@@ -146334,6 +146608,7 @@ _G.pg.base.chapter_template_loop[1340015] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1340016] = {
@@ -146957,6 +147232,7 @@ _G.pg.base.chapter_template_loop[1340016] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1350001] = {
@@ -147469,6 +147745,7 @@ _G.pg.base.chapter_template_loop[1350001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1350002] = {
@@ -148041,6 +148318,7 @@ _G.pg.base.chapter_template_loop[1350002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1350003] = {
@@ -148610,6 +148888,7 @@ _G.pg.base.chapter_template_loop[1350003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1360001] = {
@@ -149096,6 +149375,7 @@ _G.pg.base.chapter_template_loop[1360001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1360002] = {
@@ -149611,6 +149891,7 @@ _G.pg.base.chapter_template_loop[1360002] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1360003] = {
@@ -150138,6 +150419,7 @@ _G.pg.base.chapter_template_loop[1360003] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1360004] = {
@@ -150655,6 +150937,7 @@ _G.pg.base.chapter_template_loop[1360004] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1360005] = {
@@ -151474,6 +151757,7 @@ _G.pg.base.chapter_template_loop[1360005] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1360006] = {
@@ -152961,6 +153245,7 @@ _G.pg.base.chapter_template_loop[1360006] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1360021] = {
@@ -153489,6 +153774,7 @@ _G.pg.base.chapter_template_loop[1360021] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1360022] = {
@@ -154046,6 +154332,7 @@ _G.pg.base.chapter_template_loop[1360022] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1360023] = {
@@ -154616,6 +154903,7 @@ _G.pg.base.chapter_template_loop[1360023] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1360024] = {
@@ -155174,6 +155462,7 @@ _G.pg.base.chapter_template_loop[1360024] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1360025] = {
@@ -156036,6 +156325,7 @@ _G.pg.base.chapter_template_loop[1360025] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1360026] = {
@@ -157566,6 +157856,7 @@ _G.pg.base.chapter_template_loop[1360026] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1360041] = {
@@ -158644,6 +158935,7 @@ _G.pg.base.chapter_template_loop[1360041] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1370001] = {
@@ -159292,6 +159584,7 @@ _G.pg.base.chapter_template_loop[1370001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1370002] = {
@@ -159947,6 +160240,7 @@ _G.pg.base.chapter_template_loop[1370002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1370003] = {
@@ -160597,6 +160891,7 @@ _G.pg.base.chapter_template_loop[1370003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1380001] = {
@@ -161175,6 +161470,7 @@ _G.pg.base.chapter_template_loop[1380001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1380002] = {
@@ -161737,6 +162033,7 @@ _G.pg.base.chapter_template_loop[1380002] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1380003] = {
@@ -162320,6 +162617,7 @@ _G.pg.base.chapter_template_loop[1380003] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1380004] = {
@@ -162960,6 +163258,7 @@ _G.pg.base.chapter_template_loop[1380004] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1380005] = {
@@ -163625,6 +163924,7 @@ _G.pg.base.chapter_template_loop[1380005] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1380006] = {
@@ -164384,6 +164684,7 @@ _G.pg.base.chapter_template_loop[1380006] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1380021] = {
@@ -165003,6 +165304,7 @@ _G.pg.base.chapter_template_loop[1380021] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1380022] = {
@@ -165606,6 +165908,7 @@ _G.pg.base.chapter_template_loop[1380022] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1380023] = {
@@ -166230,6 +166533,7 @@ _G.pg.base.chapter_template_loop[1380023] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1380024] = {
@@ -166911,6 +167215,7 @@ _G.pg.base.chapter_template_loop[1380024] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1380025] = {
@@ -167619,6 +167924,7 @@ _G.pg.base.chapter_template_loop[1380025] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1380026] = {
@@ -168421,6 +168727,7 @@ _G.pg.base.chapter_template_loop[1380026] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1380041] = {
@@ -169483,6 +169790,7 @@ _G.pg.base.chapter_template_loop[1380041] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1390001] = {
@@ -169955,6 +170263,7 @@ _G.pg.base.chapter_template_loop[1390001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1390002] = {
@@ -170532,6 +170841,7 @@ _G.pg.base.chapter_template_loop[1390002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1390003] = {
@@ -171068,6 +171378,7 @@ _G.pg.base.chapter_template_loop[1390003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1400001] = {
@@ -171534,6 +171845,7 @@ _G.pg.base.chapter_template_loop[1400001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1400002] = {
@@ -172007,6 +172319,7 @@ _G.pg.base.chapter_template_loop[1400002] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1400003] = {
@@ -172565,6 +172878,7 @@ _G.pg.base.chapter_template_loop[1400003] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1400004] = {
@@ -173129,6 +173443,7 @@ _G.pg.base.chapter_template_loop[1400004] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1400005] = {
@@ -173736,6 +174051,7 @@ _G.pg.base.chapter_template_loop[1400005] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1400006] = {
@@ -174309,6 +174625,7 @@ _G.pg.base.chapter_template_loop[1400006] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1400011] = {
@@ -174817,6 +175134,7 @@ _G.pg.base.chapter_template_loop[1400011] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1400012] = {
@@ -175332,6 +175650,7 @@ _G.pg.base.chapter_template_loop[1400012] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1400013] = {
@@ -175932,6 +176251,7 @@ _G.pg.base.chapter_template_loop[1400013] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1400014] = {
@@ -176538,6 +176858,7 @@ _G.pg.base.chapter_template_loop[1400014] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1400015] = {
@@ -177189,6 +177510,7 @@ _G.pg.base.chapter_template_loop[1400015] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1400016] = {
@@ -177806,6 +178128,7 @@ _G.pg.base.chapter_template_loop[1400016] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1410001] = {
@@ -178497,6 +178820,7 @@ _G.pg.base.chapter_template_loop[1410001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1410002] = {
@@ -179047,6 +179371,7 @@ _G.pg.base.chapter_template_loop[1410002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1410003] = {
@@ -179747,6 +180072,7 @@ _G.pg.base.chapter_template_loop[1410003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1410004] = {
@@ -180599,6 +180925,7 @@ _G.pg.base.chapter_template_loop[1410004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1410005] = {
@@ -181329,6 +181656,7 @@ _G.pg.base.chapter_template_loop[1410005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1410006] = {
@@ -182247,6 +182575,7 @@ _G.pg.base.chapter_template_loop[1410006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1410021] = {
@@ -182979,6 +183308,7 @@ _G.pg.base.chapter_template_loop[1410021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1410022] = {
@@ -183571,6 +183901,7 @@ _G.pg.base.chapter_template_loop[1410022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1410023] = {
@@ -184313,6 +184644,7 @@ _G.pg.base.chapter_template_loop[1410023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1410024] = {
@@ -185206,6 +185538,7 @@ _G.pg.base.chapter_template_loop[1410024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1410025] = {
@@ -185979,6 +186312,7 @@ _G.pg.base.chapter_template_loop[1410025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1410026] = {
@@ -186941,6 +187275,7 @@ _G.pg.base.chapter_template_loop[1410026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1410041] = {
@@ -187862,6 +188197,7 @@ _G.pg.base.chapter_template_loop[1410041] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1420001] = {
@@ -188366,6 +188702,7 @@ _G.pg.base.chapter_template_loop[1420001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1420002] = {
@@ -188882,6 +189219,7 @@ _G.pg.base.chapter_template_loop[1420002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1420003] = {
@@ -189395,6 +189733,7 @@ _G.pg.base.chapter_template_loop[1420003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1430001] = {
@@ -189888,6 +190227,7 @@ _G.pg.base.chapter_template_loop[1430001] = {
 		8750,
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1430002] = {
@@ -190466,6 +190806,7 @@ _G.pg.base.chapter_template_loop[1430002] = {
 		8750,
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1430003] = {
@@ -191051,6 +191392,7 @@ _G.pg.base.chapter_template_loop[1430003] = {
 		8750,
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1430004] = {
@@ -191651,6 +191993,7 @@ _G.pg.base.chapter_template_loop[1430004] = {
 		8750,
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1430005] = {
@@ -192463,6 +192806,7 @@ _G.pg.base.chapter_template_loop[1430005] = {
 		8750,
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1430041] = {
@@ -193040,6 +193384,7 @@ _G.pg.base.chapter_template_loop[1430041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1440002] = {
@@ -193659,6 +194004,7 @@ _G.pg.base.chapter_template_loop[1440002] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1440003] = {
@@ -194294,6 +194640,7 @@ _G.pg.base.chapter_template_loop[1440003] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1440004] = {
@@ -194917,6 +195264,7 @@ _G.pg.base.chapter_template_loop[1440004] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1450001] = {
@@ -195441,6 +195789,7 @@ _G.pg.base.chapter_template_loop[1450001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1450002] = {
@@ -196021,6 +196370,7 @@ _G.pg.base.chapter_template_loop[1450002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1450003] = {
@@ -196602,6 +196952,7 @@ _G.pg.base.chapter_template_loop[1450003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1450004] = {
@@ -197260,6 +197611,7 @@ _G.pg.base.chapter_template_loop[1450004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1450041] = {
@@ -197830,6 +198182,7 @@ _G.pg.base.chapter_template_loop[1450041] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1460001] = {
@@ -198410,6 +198763,7 @@ _G.pg.base.chapter_template_loop[1460001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1460002] = {
@@ -198980,6 +199334,7 @@ _G.pg.base.chapter_template_loop[1460002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1460003] = {
@@ -199542,6 +199897,7 @@ _G.pg.base.chapter_template_loop[1460003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1460004] = {
@@ -200199,6 +200555,7 @@ _G.pg.base.chapter_template_loop[1460004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1460005] = {
@@ -200901,6 +201258,7 @@ _G.pg.base.chapter_template_loop[1460005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1460006] = {
@@ -201768,6 +202126,7 @@ _G.pg.base.chapter_template_loop[1460006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1460021] = {
@@ -202389,6 +202748,7 @@ _G.pg.base.chapter_template_loop[1460021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1460022] = {
@@ -203000,6 +203360,7 @@ _G.pg.base.chapter_template_loop[1460022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1460023] = {
@@ -203605,6 +203966,7 @@ _G.pg.base.chapter_template_loop[1460023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1460024] = {
@@ -204303,6 +204665,7 @@ _G.pg.base.chapter_template_loop[1460024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1460025] = {
@@ -205048,6 +205411,7 @@ _G.pg.base.chapter_template_loop[1460025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1460026] = {
@@ -205958,6 +206322,7 @@ _G.pg.base.chapter_template_loop[1460026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1460041] = {
@@ -207028,6 +207393,7 @@ _G.pg.base.chapter_template_loop[1460041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1470001] = {
@@ -207505,6 +207871,7 @@ _G.pg.base.chapter_template_loop[1470001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1470002] = {
@@ -208002,6 +208369,7 @@ _G.pg.base.chapter_template_loop[1470002] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1470003] = {
@@ -208589,6 +208957,7 @@ _G.pg.base.chapter_template_loop[1470003] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1470006] = {
@@ -209100,6 +209469,7 @@ _G.pg.base.chapter_template_loop[1470006] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1470007] = {
@@ -209653,6 +210023,7 @@ _G.pg.base.chapter_template_loop[1470007] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1470008] = {
@@ -210165,6 +210536,7 @@ _G.pg.base.chapter_template_loop[1470008] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1470021] = {
@@ -210684,6 +211056,7 @@ _G.pg.base.chapter_template_loop[1470021] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1470022] = {
@@ -211221,6 +211594,7 @@ _G.pg.base.chapter_template_loop[1470022] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1470023] = {
@@ -211849,6 +212223,7 @@ _G.pg.base.chapter_template_loop[1470023] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1470026] = {
@@ -212401,6 +212776,7 @@ _G.pg.base.chapter_template_loop[1470026] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1470027] = {
@@ -212998,6 +213374,7 @@ _G.pg.base.chapter_template_loop[1470027] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1470028] = {
@@ -213553,6 +213930,7 @@ _G.pg.base.chapter_template_loop[1470028] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1480001] = {
@@ -214129,6 +214507,7 @@ _G.pg.base.chapter_template_loop[1480001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1480002] = {
@@ -214719,6 +215098,7 @@ _G.pg.base.chapter_template_loop[1480002] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1480003] = {
@@ -215520,6 +215900,7 @@ _G.pg.base.chapter_template_loop[1480003] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1480004] = {
@@ -216204,6 +216585,7 @@ _G.pg.base.chapter_template_loop[1480004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1480005] = {
@@ -216911,6 +217293,7 @@ _G.pg.base.chapter_template_loop[1480005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1480006] = {
@@ -217718,6 +218101,7 @@ _G.pg.base.chapter_template_loop[1480006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1480021] = {
@@ -218336,6 +218720,7 @@ _G.pg.base.chapter_template_loop[1480021] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1480022] = {
@@ -218968,6 +219353,7 @@ _G.pg.base.chapter_template_loop[1480022] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1480023] = {
@@ -219812,6 +220198,7 @@ _G.pg.base.chapter_template_loop[1480023] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1480024] = {
@@ -220537,6 +220924,7 @@ _G.pg.base.chapter_template_loop[1480024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1480025] = {
@@ -221287,6 +221675,7 @@ _G.pg.base.chapter_template_loop[1480025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1480026] = {
@@ -222137,6 +222526,7 @@ _G.pg.base.chapter_template_loop[1480026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1480041] = {
@@ -222859,6 +223249,7 @@ _G.pg.base.chapter_template_loop[1480041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490001] = {
@@ -223342,6 +223733,7 @@ _G.pg.base.chapter_template_loop[1490001] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490002] = {
@@ -223874,6 +224266,7 @@ _G.pg.base.chapter_template_loop[1490002] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490003] = {
@@ -224503,6 +224896,7 @@ _G.pg.base.chapter_template_loop[1490003] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490004] = {
@@ -225029,6 +225423,7 @@ _G.pg.base.chapter_template_loop[1490004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490005] = {
@@ -225598,6 +225993,7 @@ _G.pg.base.chapter_template_loop[1490005] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490006] = {
@@ -226133,6 +226529,7 @@ _G.pg.base.chapter_template_loop[1490006] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490021] = {
@@ -226723,6 +227120,7 @@ _G.pg.base.chapter_template_loop[1490021] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490022] = {
@@ -227355,6 +227753,7 @@ _G.pg.base.chapter_template_loop[1490022] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490023] = {
@@ -228199,6 +228598,7 @@ _G.pg.base.chapter_template_loop[1490023] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490024] = {
@@ -228922,6 +229322,7 @@ _G.pg.base.chapter_template_loop[1490024] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490025] = {
@@ -229670,6 +230071,7 @@ _G.pg.base.chapter_template_loop[1490025] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490026] = {
@@ -230519,6 +230921,7 @@ _G.pg.base.chapter_template_loop[1490026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490011] = {
@@ -231044,6 +231447,7 @@ _G.pg.base.chapter_template_loop[1490011] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490012] = {
@@ -231618,6 +232022,7 @@ _G.pg.base.chapter_template_loop[1490012] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490013] = {
@@ -232284,6 +232689,7 @@ _G.pg.base.chapter_template_loop[1490013] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490014] = {
@@ -232852,6 +233258,7 @@ _G.pg.base.chapter_template_loop[1490014] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490015] = {
@@ -233465,6 +233872,7 @@ _G.pg.base.chapter_template_loop[1490015] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1490016] = {
@@ -234044,6 +234452,7 @@ _G.pg.base.chapter_template_loop[1490016] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1500001] = {
@@ -234613,6 +235022,7 @@ _G.pg.base.chapter_template_loop[1500001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1500002] = {
@@ -235203,6 +235613,7 @@ _G.pg.base.chapter_template_loop[1500002] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1500003] = {
@@ -235902,6 +236313,7 @@ _G.pg.base.chapter_template_loop[1500003] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1500004] = {
@@ -236631,6 +237043,7 @@ _G.pg.base.chapter_template_loop[1500004] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1500005] = {
@@ -237373,6 +237786,7 @@ _G.pg.base.chapter_template_loop[1500005] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1500006] = {
@@ -238104,6 +238518,7 @@ _G.pg.base.chapter_template_loop[1500006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1500021] = {
@@ -238715,6 +239130,7 @@ _G.pg.base.chapter_template_loop[1500021] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1500022] = {
@@ -239347,6 +239763,7 @@ _G.pg.base.chapter_template_loop[1500022] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1500023] = {
@@ -240089,6 +240506,7 @@ _G.pg.base.chapter_template_loop[1500023] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1500024] = {
@@ -240860,6 +241278,7 @@ _G.pg.base.chapter_template_loop[1500024] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1500025] = {
@@ -241646,6 +242065,7 @@ _G.pg.base.chapter_template_loop[1500025] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1500026] = {
@@ -242420,6 +242840,7 @@ _G.pg.base.chapter_template_loop[1500026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1500041] = {
@@ -243132,6 +243553,7 @@ _G.pg.base.chapter_template_loop[1500041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1520001] = {
@@ -243717,6 +244139,7 @@ _G.pg.base.chapter_template_loop[1520001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1520002] = {
@@ -244322,6 +244745,7 @@ _G.pg.base.chapter_template_loop[1520002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1520003] = {
@@ -245044,6 +245468,7 @@ _G.pg.base.chapter_template_loop[1520003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1520004] = {
@@ -245754,6 +246179,7 @@ _G.pg.base.chapter_template_loop[1520004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1520005] = {
@@ -246478,6 +246904,7 @@ _G.pg.base.chapter_template_loop[1520005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1520006] = {
@@ -247203,6 +247630,7 @@ _G.pg.base.chapter_template_loop[1520006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1520021] = {
@@ -247830,6 +248258,7 @@ _G.pg.base.chapter_template_loop[1520021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1520022] = {
@@ -248477,6 +248906,7 @@ _G.pg.base.chapter_template_loop[1520022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1520023] = {
@@ -249242,6 +249672,7 @@ _G.pg.base.chapter_template_loop[1520023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1520024] = {
@@ -249994,6 +250425,7 @@ _G.pg.base.chapter_template_loop[1520024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1520025] = {
@@ -250762,6 +251194,7 @@ _G.pg.base.chapter_template_loop[1520025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1520026] = {
@@ -251530,6 +251963,7 @@ _G.pg.base.chapter_template_loop[1520026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1520041] = {
@@ -252259,6 +252693,7 @@ _G.pg.base.chapter_template_loop[1520041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1530001] = {
@@ -252736,6 +253171,7 @@ _G.pg.base.chapter_template_loop[1530001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1530002] = {
@@ -253226,6 +253662,7 @@ _G.pg.base.chapter_template_loop[1530002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1530003] = {
@@ -253739,6 +254176,7 @@ _G.pg.base.chapter_template_loop[1530003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1530004] = {
@@ -254265,6 +254703,7 @@ _G.pg.base.chapter_template_loop[1530004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1530005] = {
@@ -254840,6 +255279,7 @@ _G.pg.base.chapter_template_loop[1530005] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1530006] = {
@@ -255374,6 +255814,7 @@ _G.pg.base.chapter_template_loop[1530006] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1530021] = {
@@ -255893,6 +256334,7 @@ _G.pg.base.chapter_template_loop[1530021] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1530022] = {
@@ -256426,6 +256868,7 @@ _G.pg.base.chapter_template_loop[1530022] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1530023] = {
@@ -256982,6 +257425,7 @@ _G.pg.base.chapter_template_loop[1530023] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1530024] = {
@@ -257550,6 +257994,7 @@ _G.pg.base.chapter_template_loop[1530024] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1530025] = {
@@ -258169,6 +258614,7 @@ _G.pg.base.chapter_template_loop[1530025] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1530026] = {
@@ -258747,6 +259193,7 @@ _G.pg.base.chapter_template_loop[1530026] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1540001] = {
@@ -259278,6 +259725,7 @@ _G.pg.base.chapter_template_loop[1540001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1540002] = {
@@ -259864,6 +260312,7 @@ _G.pg.base.chapter_template_loop[1540002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1540003] = {
@@ -260451,6 +260900,7 @@ _G.pg.base.chapter_template_loop[1540003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1540004] = {
@@ -261116,6 +261566,7 @@ _G.pg.base.chapter_template_loop[1540004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1550001] = {
@@ -261556,6 +262007,7 @@ _G.pg.base.chapter_template_loop[1550001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1550002] = {
@@ -262025,6 +262477,7 @@ _G.pg.base.chapter_template_loop[1550002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1550003] = {
@@ -262514,6 +262967,7 @@ _G.pg.base.chapter_template_loop[1550003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1550004] = {
@@ -263040,6 +263494,7 @@ _G.pg.base.chapter_template_loop[1550004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1550005] = {
@@ -263554,6 +264009,7 @@ _G.pg.base.chapter_template_loop[1550005] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1550006] = {
@@ -264136,6 +264592,7 @@ _G.pg.base.chapter_template_loop[1550006] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1550021] = {
@@ -264618,6 +265075,7 @@ _G.pg.base.chapter_template_loop[1550021] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1550022] = {
@@ -265129,6 +265587,7 @@ _G.pg.base.chapter_template_loop[1550022] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1550023] = {
@@ -265661,6 +266120,7 @@ _G.pg.base.chapter_template_loop[1550023] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1550024] = {
@@ -266229,6 +266689,7 @@ _G.pg.base.chapter_template_loop[1550024] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1550025] = {
@@ -266787,6 +267248,7 @@ _G.pg.base.chapter_template_loop[1550025] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1550026] = {
@@ -267413,6 +267875,7 @@ _G.pg.base.chapter_template_loop[1550026] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1560001] = {
@@ -267947,6 +268410,7 @@ _G.pg.base.chapter_template_loop[1560001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1560002] = {
@@ -268539,6 +269003,7 @@ _G.pg.base.chapter_template_loop[1560002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1560003] = {
@@ -269282,6 +269747,7 @@ _G.pg.base.chapter_template_loop[1560003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1560004] = {
@@ -269993,6 +270459,7 @@ _G.pg.base.chapter_template_loop[1560004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1560005] = {
@@ -270725,6 +271192,7 @@ _G.pg.base.chapter_template_loop[1560005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1560006] = {
@@ -271540,6 +272008,7 @@ _G.pg.base.chapter_template_loop[1560006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1560021] = {
@@ -272116,6 +272585,7 @@ _G.pg.base.chapter_template_loop[1560021] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1560022] = {
@@ -272750,6 +273220,7 @@ _G.pg.base.chapter_template_loop[1560022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1560023] = {
@@ -273536,6 +274007,7 @@ _G.pg.base.chapter_template_loop[1560023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1560024] = {
@@ -274289,6 +274761,7 @@ _G.pg.base.chapter_template_loop[1560024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1560025] = {
@@ -275065,6 +275538,7 @@ _G.pg.base.chapter_template_loop[1560025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1560026] = {
@@ -275923,6 +276397,7 @@ _G.pg.base.chapter_template_loop[1560026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1560041] = {
@@ -276603,6 +277078,7 @@ _G.pg.base.chapter_template_loop[1560041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1570001] = {
@@ -277089,6 +277565,7 @@ _G.pg.base.chapter_template_loop[1570001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1570002] = {
@@ -277604,6 +278081,7 @@ _G.pg.base.chapter_template_loop[1570002] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1570003] = {
@@ -278131,6 +278609,7 @@ _G.pg.base.chapter_template_loop[1570003] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1570004] = {
@@ -278648,6 +279127,7 @@ _G.pg.base.chapter_template_loop[1570004] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1570005] = {
@@ -279467,6 +279947,7 @@ _G.pg.base.chapter_template_loop[1570005] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1570006] = {
@@ -280954,6 +281435,7 @@ _G.pg.base.chapter_template_loop[1570006] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1570021] = {
@@ -281482,6 +281964,7 @@ _G.pg.base.chapter_template_loop[1570021] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1570022] = {
@@ -282039,6 +282522,7 @@ _G.pg.base.chapter_template_loop[1570022] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1570023] = {
@@ -282609,6 +283093,7 @@ _G.pg.base.chapter_template_loop[1570023] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1570024] = {
@@ -283167,6 +283652,7 @@ _G.pg.base.chapter_template_loop[1570024] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1570025] = {
@@ -284029,6 +284515,7 @@ _G.pg.base.chapter_template_loop[1570025] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1570026] = {
@@ -285559,6 +286046,7 @@ _G.pg.base.chapter_template_loop[1570026] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1580001] = {
@@ -286080,6 +286568,7 @@ _G.pg.base.chapter_template_loop[1580001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1580002] = {
@@ -286650,6 +287139,7 @@ _G.pg.base.chapter_template_loop[1580002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1580003] = {
@@ -287276,6 +287766,7 @@ _G.pg.base.chapter_template_loop[1580003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1590001] = {
@@ -287800,6 +288291,7 @@ _G.pg.base.chapter_template_loop[1590001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1590002] = {
@@ -288375,6 +288867,7 @@ _G.pg.base.chapter_template_loop[1590002] = {
 		9466,
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1590003] = {
@@ -288958,6 +289451,7 @@ _G.pg.base.chapter_template_loop[1590003] = {
 		9469,
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1590004] = {
@@ -289657,6 +290151,7 @@ _G.pg.base.chapter_template_loop[1590004] = {
 		9492,
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1590041] = {
@@ -290295,6 +290790,7 @@ _G.pg.base.chapter_template_loop[1590041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1600001] = {
@@ -290817,6 +291313,7 @@ _G.pg.base.chapter_template_loop[1600001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1600002] = {
@@ -291400,6 +291897,7 @@ _G.pg.base.chapter_template_loop[1600002] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1600003] = {
@@ -292114,6 +292612,7 @@ _G.pg.base.chapter_template_loop[1600003] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1600004] = {
@@ -292808,6 +293307,7 @@ _G.pg.base.chapter_template_loop[1600004] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1600005] = {
@@ -293522,6 +294022,7 @@ _G.pg.base.chapter_template_loop[1600005] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1600006] = {
@@ -294181,6 +294682,7 @@ _G.pg.base.chapter_template_loop[1600006] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1600021] = {
@@ -294745,6 +295247,7 @@ _G.pg.base.chapter_template_loop[1600021] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1600022] = {
@@ -295370,6 +295873,7 @@ _G.pg.base.chapter_template_loop[1600022] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1600023] = {
@@ -296126,6 +296630,7 @@ _G.pg.base.chapter_template_loop[1600023] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1600024] = {
@@ -296862,6 +297367,7 @@ _G.pg.base.chapter_template_loop[1600024] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1600025] = {
@@ -297620,6 +298126,7 @@ _G.pg.base.chapter_template_loop[1600025] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1600026] = {
@@ -298322,6 +298829,7 @@ _G.pg.base.chapter_template_loop[1600026] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1600041] = {
@@ -299050,6 +299558,7 @@ _G.pg.base.chapter_template_loop[1600041] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1610001] = {
@@ -299538,6 +300047,7 @@ _G.pg.base.chapter_template_loop[1610001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1610002] = {
@@ -300013,6 +300523,7 @@ _G.pg.base.chapter_template_loop[1610002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1610003] = {
@@ -300526,6 +301037,7 @@ _G.pg.base.chapter_template_loop[1610003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1610004] = {
@@ -301059,6 +301571,7 @@ _G.pg.base.chapter_template_loop[1610004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1610005] = {
@@ -301537,6 +302050,7 @@ _G.pg.base.chapter_template_loop[1610005] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1610006] = {
@@ -302070,6 +302584,7 @@ _G.pg.base.chapter_template_loop[1610006] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1610021] = {
@@ -302601,6 +303116,7 @@ _G.pg.base.chapter_template_loop[1610021] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1610022] = {
@@ -303119,6 +303635,7 @@ _G.pg.base.chapter_template_loop[1610022] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1610023] = {
@@ -303674,6 +304191,7 @@ _G.pg.base.chapter_template_loop[1610023] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1610024] = {
@@ -304249,6 +304767,7 @@ _G.pg.base.chapter_template_loop[1610024] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1610025] = {
@@ -304771,6 +305290,7 @@ _G.pg.base.chapter_template_loop[1610025] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1610026] = {
@@ -305348,6 +305868,7 @@ _G.pg.base.chapter_template_loop[1610026] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1620001] = {
@@ -305913,6 +306434,7 @@ _G.pg.base.chapter_template_loop[1620001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1620002] = {
@@ -306598,6 +307120,7 @@ _G.pg.base.chapter_template_loop[1620002] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1620003] = {
@@ -307303,6 +307826,7 @@ _G.pg.base.chapter_template_loop[1620003] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1620004] = {
@@ -307828,6 +308352,7 @@ _G.pg.base.chapter_template_loop[1620004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1620005] = {
@@ -308396,6 +308921,7 @@ _G.pg.base.chapter_template_loop[1620005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1620006] = {
@@ -309130,6 +309656,7 @@ _G.pg.base.chapter_template_loop[1620006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1620021] = {
@@ -309736,6 +310263,7 @@ _G.pg.base.chapter_template_loop[1620021] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1620022] = {
@@ -310462,6 +310990,7 @@ _G.pg.base.chapter_template_loop[1620022] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1620023] = {
@@ -311208,6 +311737,7 @@ _G.pg.base.chapter_template_loop[1620023] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1620024] = {
@@ -311774,6 +312304,7 @@ _G.pg.base.chapter_template_loop[1620024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1620025] = {
@@ -312385,6 +312916,7 @@ _G.pg.base.chapter_template_loop[1620025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1620026] = {
@@ -313162,6 +313694,7 @@ _G.pg.base.chapter_template_loop[1620026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1620041] = {
@@ -313945,6 +314478,7 @@ _G.pg.base.chapter_template_loop[1620041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1630001] = {
@@ -314463,6 +314997,7 @@ _G.pg.base.chapter_template_loop[1630001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1630002] = {
@@ -315043,6 +315578,7 @@ _G.pg.base.chapter_template_loop[1630002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1630003] = {
@@ -315623,6 +316159,7 @@ _G.pg.base.chapter_template_loop[1630003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1630004] = {
@@ -316211,6 +316748,7 @@ _G.pg.base.chapter_template_loop[1630004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1630041] = {
@@ -316957,6 +317495,7 @@ _G.pg.base.chapter_template_loop[1630041] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1640001] = {
@@ -317493,6 +318032,7 @@ _G.pg.base.chapter_template_loop[1640001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1640002] = {
@@ -318077,6 +318617,7 @@ _G.pg.base.chapter_template_loop[1640002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1640003] = {
@@ -318772,6 +319313,7 @@ _G.pg.base.chapter_template_loop[1640003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1640004] = {
@@ -319358,6 +319900,7 @@ _G.pg.base.chapter_template_loop[1640004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1640005] = {
@@ -319931,6 +320474,7 @@ _G.pg.base.chapter_template_loop[1640005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1640006] = {
@@ -320661,6 +321205,7 @@ _G.pg.base.chapter_template_loop[1640006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1640021] = {
@@ -321239,6 +321784,7 @@ _G.pg.base.chapter_template_loop[1640021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1640022] = {
@@ -321865,6 +322411,7 @@ _G.pg.base.chapter_template_loop[1640022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1640023] = {
@@ -322602,6 +323149,7 @@ _G.pg.base.chapter_template_loop[1640023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1640024] = {
@@ -323230,6 +323778,7 @@ _G.pg.base.chapter_template_loop[1640024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1640025] = {
@@ -323847,6 +324396,7 @@ _G.pg.base.chapter_template_loop[1640025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1640026] = {
@@ -324621,6 +325171,7 @@ _G.pg.base.chapter_template_loop[1640026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1640041] = {
@@ -325329,6 +325880,7 @@ _G.pg.base.chapter_template_loop[1640041] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1650001] = {
@@ -325865,6 +326417,7 @@ _G.pg.base.chapter_template_loop[1650001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1650002] = {
@@ -326442,6 +326995,7 @@ _G.pg.base.chapter_template_loop[1650002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1650003] = {
@@ -327130,6 +327684,7 @@ _G.pg.base.chapter_template_loop[1650003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1650004] = {
@@ -327703,6 +328258,7 @@ _G.pg.base.chapter_template_loop[1650004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1650005] = {
@@ -328297,6 +328853,7 @@ _G.pg.base.chapter_template_loop[1650005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1650006] = {
@@ -329050,6 +329607,7 @@ _G.pg.base.chapter_template_loop[1650006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1650021] = {
@@ -329628,6 +330186,7 @@ _G.pg.base.chapter_template_loop[1650021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1650022] = {
@@ -330247,6 +330806,7 @@ _G.pg.base.chapter_template_loop[1650022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1650023] = {
@@ -330977,6 +331537,7 @@ _G.pg.base.chapter_template_loop[1650023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1650024] = {
@@ -331592,6 +332153,7 @@ _G.pg.base.chapter_template_loop[1650024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1650025] = {
@@ -332230,6 +332792,7 @@ _G.pg.base.chapter_template_loop[1650025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1650026] = {
@@ -333026,6 +333589,7 @@ _G.pg.base.chapter_template_loop[1650026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1650041] = {
@@ -333711,6 +334275,7 @@ _G.pg.base.chapter_template_loop[1650041] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1660001] = {
@@ -334293,6 +334858,7 @@ _G.pg.base.chapter_template_loop[1660001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1660002] = {
@@ -335009,6 +335575,7 @@ _G.pg.base.chapter_template_loop[1660002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1660003] = {
@@ -335639,6 +336206,7 @@ _G.pg.base.chapter_template_loop[1660003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1660004] = {
@@ -336320,6 +336888,7 @@ _G.pg.base.chapter_template_loop[1660004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1660005] = {
@@ -336960,6 +337529,7 @@ _G.pg.base.chapter_template_loop[1660005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1660006] = {
@@ -337682,6 +338252,7 @@ _G.pg.base.chapter_template_loop[1660006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1660021] = {
@@ -338306,6 +338877,7 @@ _G.pg.base.chapter_template_loop[1660021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1660022] = {
@@ -339064,6 +339636,7 @@ _G.pg.base.chapter_template_loop[1660022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1660023] = {
@@ -339736,6 +340309,7 @@ _G.pg.base.chapter_template_loop[1660023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1660024] = {
@@ -340458,6 +341032,7 @@ _G.pg.base.chapter_template_loop[1660024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1660025] = {
@@ -341141,6 +341716,7 @@ _G.pg.base.chapter_template_loop[1660025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1660026] = {
@@ -341906,6 +342482,7 @@ _G.pg.base.chapter_template_loop[1660026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1660041] = {
@@ -343199,6 +343776,7 @@ _G.pg.base.chapter_template_loop[1660041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1670001] = {
@@ -343778,6 +344356,7 @@ _G.pg.base.chapter_template_loop[1670001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1670002] = {
@@ -344411,6 +344990,7 @@ _G.pg.base.chapter_template_loop[1670002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1670003] = {
@@ -344989,6 +345569,7 @@ _G.pg.base.chapter_template_loop[1670003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1670004] = {
@@ -345689,6 +346270,7 @@ _G.pg.base.chapter_template_loop[1670004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1670041] = {
@@ -346212,6 +346794,7 @@ _G.pg.base.chapter_template_loop[1670041] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1680001] = {
@@ -346783,6 +347366,7 @@ _G.pg.base.chapter_template_loop[1680001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1680002] = {
@@ -347368,6 +347952,7 @@ _G.pg.base.chapter_template_loop[1680002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1680003] = {
@@ -347940,6 +348525,7 @@ _G.pg.base.chapter_template_loop[1680003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1680004] = {
@@ -348527,6 +349113,7 @@ _G.pg.base.chapter_template_loop[1680004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1680005] = {
@@ -349206,6 +349793,7 @@ _G.pg.base.chapter_template_loop[1680005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1680006] = {
@@ -349917,6 +350505,7 @@ _G.pg.base.chapter_template_loop[1680006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1680021] = {
@@ -350530,6 +351119,7 @@ _G.pg.base.chapter_template_loop[1680021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1680022] = {
@@ -351157,6 +351747,7 @@ _G.pg.base.chapter_template_loop[1680022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1680023] = {
@@ -351770,6 +352361,7 @@ _G.pg.base.chapter_template_loop[1680023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1680024] = {
@@ -352398,6 +352990,7 @@ _G.pg.base.chapter_template_loop[1680024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1680025] = {
@@ -353120,6 +353713,7 @@ _G.pg.base.chapter_template_loop[1680025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1680026] = {
@@ -353874,6 +354468,7 @@ _G.pg.base.chapter_template_loop[1680026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1680041] = {
@@ -354567,6 +355162,7 @@ _G.pg.base.chapter_template_loop[1680041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1690001] = {
@@ -355194,6 +355790,7 @@ _G.pg.base.chapter_template_loop[1690001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1690002] = {
@@ -355761,6 +356358,7 @@ _G.pg.base.chapter_template_loop[1690002] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1690003] = {
@@ -356389,6 +356987,7 @@ _G.pg.base.chapter_template_loop[1690003] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1690004] = {
@@ -357019,6 +357618,7 @@ _G.pg.base.chapter_template_loop[1690004] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1690005] = {
@@ -357704,6 +358304,7 @@ _G.pg.base.chapter_template_loop[1690005] = {
 		44,
 		0,
 	},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1690021] = {
@@ -358336,6 +358937,7 @@ _G.pg.base.chapter_template_loop[1690021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1690022] = {
@@ -358907,6 +359509,7 @@ _G.pg.base.chapter_template_loop[1690022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1690023] = {
@@ -359539,6 +360142,7 @@ _G.pg.base.chapter_template_loop[1690023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1690024] = {
@@ -360171,6 +360775,7 @@ _G.pg.base.chapter_template_loop[1690024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1690025] = {
@@ -360755,6 +361360,7 @@ _G.pg.base.chapter_template_loop[1690025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1690041] = {
@@ -361404,6 +362010,7 @@ _G.pg.base.chapter_template_loop[1690041] = {
 		44,
 		0,
 	},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1700001] = {
@@ -361982,6 +362589,7 @@ _G.pg.base.chapter_template_loop[1700001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1700002] = {
@@ -362561,6 +363169,7 @@ _G.pg.base.chapter_template_loop[1700002] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1700003] = {
@@ -363201,6 +363810,7 @@ _G.pg.base.chapter_template_loop[1700003] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1700004] = {
@@ -363837,6 +364447,7 @@ _G.pg.base.chapter_template_loop[1700004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1700005] = {
@@ -364534,6 +365145,7 @@ _G.pg.base.chapter_template_loop[1700005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1700006] = {
@@ -365251,6 +365863,7 @@ _G.pg.base.chapter_template_loop[1700006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1700021] = {
@@ -365870,6 +366483,7 @@ _G.pg.base.chapter_template_loop[1700021] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1700022] = {
@@ -366490,6 +367104,7 @@ _G.pg.base.chapter_template_loop[1700022] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1700023] = {
@@ -367171,6 +367786,7 @@ _G.pg.base.chapter_template_loop[1700023] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1700024] = {
@@ -367848,6 +368464,7 @@ _G.pg.base.chapter_template_loop[1700024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1700025] = {
@@ -368588,6 +369205,7 @@ _G.pg.base.chapter_template_loop[1700025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1700026] = {
@@ -369348,6 +369966,7 @@ _G.pg.base.chapter_template_loop[1700026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1700041] = {
@@ -370130,6 +370749,7 @@ _G.pg.base.chapter_template_loop[1700041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1710001] = {
@@ -370716,6 +371336,7 @@ _G.pg.base.chapter_template_loop[1710001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1710002] = {
@@ -371296,6 +371917,7 @@ _G.pg.base.chapter_template_loop[1710002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1710003] = {
@@ -371923,6 +372545,7 @@ _G.pg.base.chapter_template_loop[1710003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1710004] = {
@@ -372566,6 +373189,7 @@ _G.pg.base.chapter_template_loop[1710004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1710005] = {
@@ -373257,6 +373881,7 @@ _G.pg.base.chapter_template_loop[1710005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1710006] = {
@@ -374030,6 +374655,7 @@ _G.pg.base.chapter_template_loop[1710006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1710021] = {
@@ -374657,6 +375283,7 @@ _G.pg.base.chapter_template_loop[1710021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1710022] = {
@@ -375278,6 +375905,7 @@ _G.pg.base.chapter_template_loop[1710022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1710023] = {
@@ -375946,6 +376574,7 @@ _G.pg.base.chapter_template_loop[1710023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1710024] = {
@@ -376630,6 +377259,7 @@ _G.pg.base.chapter_template_loop[1710024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1710025] = {
@@ -377365,6 +377995,7 @@ _G.pg.base.chapter_template_loop[1710025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1710026] = {
@@ -378182,6 +378813,7 @@ _G.pg.base.chapter_template_loop[1710026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1710041] = {
@@ -378933,6 +379565,7 @@ _G.pg.base.chapter_template_loop[1710041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1720001] = {
@@ -379633,6 +380266,7 @@ _G.pg.base.chapter_template_loop[1720001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1720002] = {
@@ -380321,6 +380955,7 @@ _G.pg.base.chapter_template_loop[1720002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1720003] = {
@@ -381058,6 +381693,7 @@ _G.pg.base.chapter_template_loop[1720003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1720004] = {
@@ -381755,6 +382391,7 @@ _G.pg.base.chapter_template_loop[1720004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1720005] = {
@@ -382486,6 +383123,7 @@ _G.pg.base.chapter_template_loop[1720005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1720006] = {
@@ -383176,6 +383814,7 @@ _G.pg.base.chapter_template_loop[1720006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1720021] = {
@@ -383918,6 +384557,7 @@ _G.pg.base.chapter_template_loop[1720021] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1720022] = {
@@ -384648,6 +385288,7 @@ _G.pg.base.chapter_template_loop[1720022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1720023] = {
@@ -385426,6 +386067,7 @@ _G.pg.base.chapter_template_loop[1720023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1720024] = {
@@ -386164,6 +386806,7 @@ _G.pg.base.chapter_template_loop[1720024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1720025] = {
@@ -386938,6 +387581,7 @@ _G.pg.base.chapter_template_loop[1720025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1720026] = {
@@ -387671,6 +388315,7 @@ _G.pg.base.chapter_template_loop[1720026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1720041] = {
@@ -388387,6 +389032,7 @@ _G.pg.base.chapter_template_loop[1720041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1730001] = {
@@ -388900,6 +389546,7 @@ _G.pg.base.chapter_template_loop[1730001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1730002] = {
@@ -389426,6 +390073,7 @@ _G.pg.base.chapter_template_loop[1730002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1730003] = {
@@ -390077,6 +390725,7 @@ _G.pg.base.chapter_template_loop[1730003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1740001] = {
@@ -390748,6 +391397,7 @@ _G.pg.base.chapter_template_loop[1740001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1740002] = {
@@ -391525,6 +392175,7 @@ _G.pg.base.chapter_template_loop[1740002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1740003] = {
@@ -392352,6 +393003,7 @@ _G.pg.base.chapter_template_loop[1740003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1740004] = {
@@ -392941,6 +393593,7 @@ _G.pg.base.chapter_template_loop[1740004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1740005] = {
@@ -393772,6 +394425,7 @@ _G.pg.base.chapter_template_loop[1740005] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1740006] = {
@@ -395265,6 +395919,7 @@ _G.pg.base.chapter_template_loop[1740006] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1740021] = {
@@ -395977,6 +396632,7 @@ _G.pg.base.chapter_template_loop[1740021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1740022] = {
@@ -396795,6 +397451,7 @@ _G.pg.base.chapter_template_loop[1740022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1740023] = {
@@ -397663,6 +398320,7 @@ _G.pg.base.chapter_template_loop[1740023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1740024] = {
@@ -398293,6 +398951,7 @@ _G.pg.base.chapter_template_loop[1740024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1740025] = {
@@ -399167,6 +399826,7 @@ _G.pg.base.chapter_template_loop[1740025] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1740026] = {
@@ -400703,6 +401363,7 @@ _G.pg.base.chapter_template_loop[1740026] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1740041] = {
@@ -401478,6 +402139,7 @@ _G.pg.base.chapter_template_loop[1740041] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1750001] = {
@@ -402118,6 +402780,7 @@ _G.pg.base.chapter_template_loop[1750001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1750002] = {
@@ -402657,6 +403320,7 @@ _G.pg.base.chapter_template_loop[1750002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1750003] = {
@@ -403236,6 +403900,7 @@ _G.pg.base.chapter_template_loop[1750003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1750004] = {
@@ -403809,6 +404474,7 @@ _G.pg.base.chapter_template_loop[1750004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1750005] = {
@@ -404451,6 +405117,7 @@ _G.pg.base.chapter_template_loop[1750005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1750006] = {
@@ -405305,6 +405972,7 @@ _G.pg.base.chapter_template_loop[1750006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1750021] = {
@@ -405986,6 +406654,7 @@ _G.pg.base.chapter_template_loop[1750021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1750022] = {
@@ -406566,6 +407235,7 @@ _G.pg.base.chapter_template_loop[1750022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1750023] = {
@@ -407186,6 +407856,7 @@ _G.pg.base.chapter_template_loop[1750023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1750024] = {
@@ -407801,6 +408472,7 @@ _G.pg.base.chapter_template_loop[1750024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1750025] = {
@@ -408486,6 +409158,7 @@ _G.pg.base.chapter_template_loop[1750025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1750026] = {
@@ -409383,6 +410056,7 @@ _G.pg.base.chapter_template_loop[1750026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1750041] = {
@@ -409834,6 +410508,7 @@ _G.pg.base.chapter_template_loop[1750041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1760001] = {
@@ -410463,6 +411138,7 @@ _G.pg.base.chapter_template_loop[1760001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1760002] = {
@@ -411092,6 +411768,7 @@ _G.pg.base.chapter_template_loop[1760002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1760003] = {
@@ -411792,6 +412469,7 @@ _G.pg.base.chapter_template_loop[1760003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1760004] = {
@@ -412486,6 +413164,7 @@ _G.pg.base.chapter_template_loop[1760004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1760005] = {
@@ -413260,6 +413939,7 @@ _G.pg.base.chapter_template_loop[1760005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1760006] = {
@@ -414058,6 +414738,7 @@ _G.pg.base.chapter_template_loop[1760006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1760041] = {
@@ -414617,6 +415298,7 @@ _G.pg.base.chapter_template_loop[1760041] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1770001] = {
@@ -415246,6 +415928,7 @@ _G.pg.base.chapter_template_loop[1770001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1770002] = {
@@ -415836,6 +416519,7 @@ _G.pg.base.chapter_template_loop[1770002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1770003] = {
@@ -416473,6 +417157,7 @@ _G.pg.base.chapter_template_loop[1770003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1770004] = {
@@ -417125,6 +417810,7 @@ _G.pg.base.chapter_template_loop[1770004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1770005] = {
@@ -417893,6 +418579,7 @@ _G.pg.base.chapter_template_loop[1770005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1770041] = {
@@ -418716,6 +419403,7 @@ _G.pg.base.chapter_template_loop[1770041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1780001] = {
@@ -419356,6 +420044,7 @@ _G.pg.base.chapter_template_loop[1780001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1780002] = {
@@ -419886,6 +420575,7 @@ _G.pg.base.chapter_template_loop[1780002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1780003] = {
@@ -420527,6 +421217,7 @@ _G.pg.base.chapter_template_loop[1780003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1780004] = {
@@ -421108,6 +421799,7 @@ _G.pg.base.chapter_template_loop[1780004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1780005] = {
@@ -421758,6 +422450,7 @@ _G.pg.base.chapter_template_loop[1780005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1780006] = {
@@ -422569,6 +423262,7 @@ _G.pg.base.chapter_template_loop[1780006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1780021] = {
@@ -423250,6 +423944,7 @@ _G.pg.base.chapter_template_loop[1780021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1780022] = {
@@ -423822,6 +424517,7 @@ _G.pg.base.chapter_template_loop[1780022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1780023] = {
@@ -424505,6 +425201,7 @@ _G.pg.base.chapter_template_loop[1780023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1780024] = {
@@ -425127,6 +425824,7 @@ _G.pg.base.chapter_template_loop[1780024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1780025] = {
@@ -425820,6 +426518,7 @@ _G.pg.base.chapter_template_loop[1780025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1780026] = {
@@ -426674,6 +427373,7 @@ _G.pg.base.chapter_template_loop[1780026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1780041] = {
@@ -427298,6 +427998,7 @@ _G.pg.base.chapter_template_loop[1780041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1790001] = {
@@ -427939,6 +428640,7 @@ _G.pg.base.chapter_template_loop[1790001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1790002] = {
@@ -428573,6 +429275,7 @@ _G.pg.base.chapter_template_loop[1790002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1790003] = {
@@ -429207,6 +429910,7 @@ _G.pg.base.chapter_template_loop[1790003] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1790004] = {
@@ -429849,6 +430553,7 @@ _G.pg.base.chapter_template_loop[1790004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1790005] = {
@@ -430484,6 +431189,7 @@ _G.pg.base.chapter_template_loop[1790005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1790006] = {
@@ -431313,6 +432019,7 @@ _G.pg.base.chapter_template_loop[1790006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1790021] = {
@@ -431995,6 +432702,7 @@ _G.pg.base.chapter_template_loop[1790021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1790022] = {
@@ -432670,6 +433378,7 @@ _G.pg.base.chapter_template_loop[1790022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1790023] = {
@@ -433345,6 +434054,7 @@ _G.pg.base.chapter_template_loop[1790023] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1790024] = {
@@ -434028,6 +434738,7 @@ _G.pg.base.chapter_template_loop[1790024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1790025] = {
@@ -434706,6 +435417,7 @@ _G.pg.base.chapter_template_loop[1790025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1790026] = {
@@ -435578,6 +436290,7 @@ _G.pg.base.chapter_template_loop[1790026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1790041] = {
@@ -437123,6 +437836,7 @@ _G.pg.base.chapter_template_loop[1790041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1800001] = {
@@ -437753,6 +438467,7 @@ _G.pg.base.chapter_template_loop[1800001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1800002] = {
@@ -438316,6 +439031,7 @@ _G.pg.base.chapter_template_loop[1800002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1800003] = {
@@ -438954,6 +439670,7 @@ _G.pg.base.chapter_template_loop[1800003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1800004] = {
@@ -439593,6 +440310,7 @@ _G.pg.base.chapter_template_loop[1800004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1800005] = {
@@ -440294,6 +441012,7 @@ _G.pg.base.chapter_template_loop[1800005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1800041] = {
@@ -441084,6 +441803,7 @@ _G.pg.base.chapter_template_loop[1800041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1810001] = {
@@ -441790,6 +442510,7 @@ _G.pg.base.chapter_template_loop[1810001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1810002] = {
@@ -442432,6 +443153,7 @@ _G.pg.base.chapter_template_loop[1810002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1810003] = {
@@ -443118,6 +443840,7 @@ _G.pg.base.chapter_template_loop[1810003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1810004] = {
@@ -443835,6 +444558,7 @@ _G.pg.base.chapter_template_loop[1810004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1810005] = {
@@ -444459,6 +445183,7 @@ _G.pg.base.chapter_template_loop[1810005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1810006] = {
@@ -445271,6 +445996,7 @@ _G.pg.base.chapter_template_loop[1810006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1810021] = {
@@ -446018,6 +446744,7 @@ _G.pg.base.chapter_template_loop[1810021] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1810022] = {
@@ -446701,6 +447428,7 @@ _G.pg.base.chapter_template_loop[1810022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1810023] = {
@@ -447428,6 +448156,7 @@ _G.pg.base.chapter_template_loop[1810023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1810024] = {
@@ -448186,6 +448915,7 @@ _G.pg.base.chapter_template_loop[1810024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1810025] = {
@@ -448853,6 +449583,7 @@ _G.pg.base.chapter_template_loop[1810025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1810026] = {
@@ -449708,6 +450439,7 @@ _G.pg.base.chapter_template_loop[1810026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1810041] = {
@@ -450220,6 +450952,7 @@ _G.pg.base.chapter_template_loop[1810041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1820001] = {
@@ -450788,6 +451521,7 @@ _G.pg.base.chapter_template_loop[1820001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1820002] = {
@@ -451370,6 +452104,7 @@ _G.pg.base.chapter_template_loop[1820002] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1820003] = {
@@ -452013,6 +452748,7 @@ _G.pg.base.chapter_template_loop[1820003] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1820021] = {
@@ -452623,6 +453359,7 @@ _G.pg.base.chapter_template_loop[1820021] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1820022] = {
@@ -453248,6 +453985,7 @@ _G.pg.base.chapter_template_loop[1820022] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1820023] = {
@@ -453934,6 +454672,7 @@ _G.pg.base.chapter_template_loop[1820023] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1820041] = {
@@ -454643,6 +455382,7 @@ _G.pg.base.chapter_template_loop[1820041] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1830001] = {
@@ -455269,6 +456009,7 @@ _G.pg.base.chapter_template_loop[1830001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1830002] = {
@@ -455902,6 +456643,7 @@ _G.pg.base.chapter_template_loop[1830002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1830003] = {
@@ -456574,6 +457316,7 @@ _G.pg.base.chapter_template_loop[1830003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1830004] = {
@@ -457393,6 +458136,7 @@ _G.pg.base.chapter_template_loop[1830004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1830005] = {
@@ -458091,6 +458835,7 @@ _G.pg.base.chapter_template_loop[1830005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1830006] = {
@@ -458904,6 +459649,7 @@ _G.pg.base.chapter_template_loop[1830006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1830021] = {
@@ -459572,6 +460318,7 @@ _G.pg.base.chapter_template_loop[1830021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1830022] = {
@@ -460247,6 +460994,7 @@ _G.pg.base.chapter_template_loop[1830022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1830023] = {
@@ -460961,6 +461709,7 @@ _G.pg.base.chapter_template_loop[1830023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1830024] = {
@@ -461821,6 +462570,7 @@ _G.pg.base.chapter_template_loop[1830024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1830025] = {
@@ -462562,6 +463312,7 @@ _G.pg.base.chapter_template_loop[1830025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1830026] = {
@@ -463418,6 +464169,7 @@ _G.pg.base.chapter_template_loop[1830026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1830041] = {
@@ -464181,6 +464933,7 @@ _G.pg.base.chapter_template_loop[1830041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1840001] = {
@@ -464751,6 +465504,7 @@ _G.pg.base.chapter_template_loop[1840001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1840002] = {
@@ -465385,6 +466139,7 @@ _G.pg.base.chapter_template_loop[1840002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1840003] = {
@@ -466141,6 +466896,7 @@ _G.pg.base.chapter_template_loop[1840003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1850001] = {
@@ -466708,6 +467464,7 @@ _G.pg.base.chapter_template_loop[1850001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1850002] = {
@@ -467350,6 +468107,7 @@ _G.pg.base.chapter_template_loop[1850002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1850003] = {
@@ -467924,6 +468682,7 @@ _G.pg.base.chapter_template_loop[1850003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1850004] = {
@@ -468677,6 +469436,7 @@ _G.pg.base.chapter_template_loop[1850004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1850005] = {
@@ -469437,6 +470197,7 @@ _G.pg.base.chapter_template_loop[1850005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1850006] = {
@@ -470135,6 +470896,7 @@ _G.pg.base.chapter_template_loop[1850006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1850021] = {
@@ -470743,6 +471505,7 @@ _G.pg.base.chapter_template_loop[1850021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1850022] = {
@@ -471426,6 +472189,7 @@ _G.pg.base.chapter_template_loop[1850022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1850023] = {
@@ -472041,6 +472805,7 @@ _G.pg.base.chapter_template_loop[1850023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1850024] = {
@@ -472835,6 +473600,7 @@ _G.pg.base.chapter_template_loop[1850024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1850025] = {
@@ -473638,6 +474404,7 @@ _G.pg.base.chapter_template_loop[1850025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1850026] = {
@@ -474379,6 +475146,7 @@ _G.pg.base.chapter_template_loop[1850026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1850041] = {
@@ -474929,6 +475697,7 @@ _G.pg.base.chapter_template_loop[1850041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1860001] = {
@@ -475567,6 +476336,7 @@ _G.pg.base.chapter_template_loop[1860001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1860002] = {
@@ -476206,6 +476976,7 @@ _G.pg.base.chapter_template_loop[1860002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1860003] = {
@@ -476905,6 +477676,7 @@ _G.pg.base.chapter_template_loop[1860003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1860004] = {
@@ -477563,6 +478335,7 @@ _G.pg.base.chapter_template_loop[1860004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1860005] = {
@@ -478318,6 +479091,7 @@ _G.pg.base.chapter_template_loop[1860005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1860006] = {
@@ -479173,6 +479947,7 @@ _G.pg.base.chapter_template_loop[1860006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1860041] = {
@@ -479729,6 +480504,7 @@ _G.pg.base.chapter_template_loop[1860041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1870001] = {
@@ -480349,6 +481125,7 @@ _G.pg.base.chapter_template_loop[1870001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1870002] = {
@@ -480923,6 +481700,7 @@ _G.pg.base.chapter_template_loop[1870002] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1870003] = {
@@ -481558,6 +482336,7 @@ _G.pg.base.chapter_template_loop[1870003] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1870004] = {
@@ -482194,6 +482973,7 @@ _G.pg.base.chapter_template_loop[1870004] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1870005] = {
@@ -482906,6 +483686,7 @@ _G.pg.base.chapter_template_loop[1870005] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1870041] = {
@@ -483532,6 +484313,7 @@ _G.pg.base.chapter_template_loop[1870041] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1880001] = {
@@ -484188,6 +484970,7 @@ _G.pg.base.chapter_template_loop[1880001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1880002] = {
@@ -484838,6 +485621,7 @@ _G.pg.base.chapter_template_loop[1880002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1880003] = {
@@ -485671,6 +486455,7 @@ _G.pg.base.chapter_template_loop[1880003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1880004] = {
@@ -486432,6 +487217,7 @@ _G.pg.base.chapter_template_loop[1880004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1880005] = {
@@ -487207,6 +487993,7 @@ _G.pg.base.chapter_template_loop[1880005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1880006] = {
@@ -488041,6 +488828,7 @@ _G.pg.base.chapter_template_loop[1880006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1880021] = {
@@ -488739,6 +489527,7 @@ _G.pg.base.chapter_template_loop[1880021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1880022] = {
@@ -489431,6 +490220,7 @@ _G.pg.base.chapter_template_loop[1880022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1880023] = {
@@ -490306,6 +491096,7 @@ _G.pg.base.chapter_template_loop[1880023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1880024] = {
@@ -491108,6 +491899,7 @@ _G.pg.base.chapter_template_loop[1880024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1880025] = {
@@ -491926,6 +492718,7 @@ _G.pg.base.chapter_template_loop[1880025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1880026] = {
@@ -492803,6 +493596,7 @@ _G.pg.base.chapter_template_loop[1880026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1880041] = {
@@ -493539,6 +494333,7 @@ _G.pg.base.chapter_template_loop[1880041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1890001] = {
@@ -494164,6 +494959,7 @@ _G.pg.base.chapter_template_loop[1890001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1890002] = {
@@ -494789,6 +495585,7 @@ _G.pg.base.chapter_template_loop[1890002] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1890003] = {
@@ -495485,6 +496282,7 @@ _G.pg.base.chapter_template_loop[1890003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1890004] = {
@@ -496245,6 +497043,7 @@ _G.pg.base.chapter_template_loop[1890004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1890005] = {
@@ -496976,6 +497775,7 @@ _G.pg.base.chapter_template_loop[1890005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1890006] = {
@@ -497803,6 +498603,7 @@ _G.pg.base.chapter_template_loop[1890006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1890021] = {
@@ -498469,6 +499270,7 @@ _G.pg.base.chapter_template_loop[1890021] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1890022] = {
@@ -499135,6 +499937,7 @@ _G.pg.base.chapter_template_loop[1890022] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1890023] = {
@@ -499872,6 +500675,7 @@ _G.pg.base.chapter_template_loop[1890023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1890024] = {
@@ -500673,6 +501477,7 @@ _G.pg.base.chapter_template_loop[1890024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1890025] = {
@@ -501447,6 +502252,7 @@ _G.pg.base.chapter_template_loop[1890025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1890026] = {
@@ -502317,6 +503123,7 @@ _G.pg.base.chapter_template_loop[1890026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1890041] = {
@@ -503048,6 +503855,7 @@ _G.pg.base.chapter_template_loop[1890041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1910001] = {
@@ -503625,6 +504433,7 @@ _G.pg.base.chapter_template_loop[1910001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1910002] = {
@@ -504202,6 +505011,7 @@ _G.pg.base.chapter_template_loop[1910002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1910003] = {
@@ -504841,6 +505651,7 @@ _G.pg.base.chapter_template_loop[1910003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1910021] = {
@@ -505460,6 +506271,7 @@ _G.pg.base.chapter_template_loop[1910021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1910022] = {
@@ -506080,6 +506892,7 @@ _G.pg.base.chapter_template_loop[1910022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1910023] = {
@@ -506762,6 +507575,7 @@ _G.pg.base.chapter_template_loop[1910023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1910041] = {
@@ -507423,6 +508237,7 @@ _G.pg.base.chapter_template_loop[1910041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1920001] = {
@@ -508065,6 +508880,7 @@ _G.pg.base.chapter_template_loop[1920001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1920002] = {
@@ -508707,6 +509523,7 @@ _G.pg.base.chapter_template_loop[1920002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1920003] = {
@@ -509396,6 +510213,7 @@ _G.pg.base.chapter_template_loop[1920003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1920004] = {
@@ -510156,6 +510974,7 @@ _G.pg.base.chapter_template_loop[1920004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1920005] = {
@@ -510919,6 +511738,7 @@ _G.pg.base.chapter_template_loop[1920005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1920006] = {
@@ -511708,6 +512528,7 @@ _G.pg.base.chapter_template_loop[1920006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1920021] = {
@@ -512392,6 +513213,7 @@ _G.pg.base.chapter_template_loop[1920021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1920022] = {
@@ -513076,6 +513898,7 @@ _G.pg.base.chapter_template_loop[1920022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1920023] = {
@@ -513807,6 +514630,7 @@ _G.pg.base.chapter_template_loop[1920023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1920024] = {
@@ -514608,6 +515432,7 @@ _G.pg.base.chapter_template_loop[1920024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1920025] = {
@@ -515414,6 +516239,7 @@ _G.pg.base.chapter_template_loop[1920025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1920026] = {
@@ -516246,6 +517072,7 @@ _G.pg.base.chapter_template_loop[1920026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1920041] = {
@@ -517034,6 +517861,7 @@ _G.pg.base.chapter_template_loop[1920041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1940001] = {
@@ -517669,6 +518497,7 @@ _G.pg.base.chapter_template_loop[1940001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1940002] = {
@@ -518311,6 +519140,7 @@ _G.pg.base.chapter_template_loop[1940002] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1940003] = {
@@ -518953,6 +519783,7 @@ _G.pg.base.chapter_template_loop[1940003] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1940004] = {
@@ -519596,6 +520427,7 @@ _G.pg.base.chapter_template_loop[1940004] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1940005] = {
@@ -520301,6 +521133,7 @@ _G.pg.base.chapter_template_loop[1940005] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1940021] = {
@@ -520938,6 +521771,7 @@ _G.pg.base.chapter_template_loop[1940021] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1940022] = {
@@ -521582,6 +522416,7 @@ _G.pg.base.chapter_template_loop[1940022] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1940023] = {
@@ -522226,6 +523061,7 @@ _G.pg.base.chapter_template_loop[1940023] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1940024] = {
@@ -522870,6 +523706,7 @@ _G.pg.base.chapter_template_loop[1940024] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1940025] = {
@@ -523575,6 +524412,7 @@ _G.pg.base.chapter_template_loop[1940025] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1940041] = {
@@ -524571,6 +525409,7 @@ _G.pg.base.chapter_template_loop[1940041] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1950001] = {
@@ -525143,6 +525982,7 @@ _G.pg.base.chapter_template_loop[1950001] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1950002] = {
@@ -525764,6 +526604,7 @@ _G.pg.base.chapter_template_loop[1950002] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1950003] = {
@@ -526325,6 +527166,7 @@ _G.pg.base.chapter_template_loop[1950003] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1950004] = {
@@ -527069,6 +527911,7 @@ _G.pg.base.chapter_template_loop[1950004] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1950005] = {
@@ -527708,6 +528551,7 @@ _G.pg.base.chapter_template_loop[1950005] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1950006] = {
@@ -528415,6 +529259,7 @@ _G.pg.base.chapter_template_loop[1950006] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1950021] = {
@@ -529028,6 +529873,7 @@ _G.pg.base.chapter_template_loop[1950021] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1950022] = {
@@ -529690,6 +530536,7 @@ _G.pg.base.chapter_template_loop[1950022] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1950023] = {
@@ -530292,6 +531139,7 @@ _G.pg.base.chapter_template_loop[1950023] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1950024] = {
@@ -531077,6 +531925,7 @@ _G.pg.base.chapter_template_loop[1950024] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1950025] = {
@@ -531759,6 +532608,7 @@ _G.pg.base.chapter_template_loop[1950025] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1950026] = {
@@ -532509,6 +533359,7 @@ _G.pg.base.chapter_template_loop[1950026] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1950041] = {
@@ -533245,6 +534096,7 @@ _G.pg.base.chapter_template_loop[1950041] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1960001] = {
@@ -533894,6 +534746,7 @@ _G.pg.base.chapter_template_loop[1960001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1960002] = {
@@ -534543,6 +535396,7 @@ _G.pg.base.chapter_template_loop[1960002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1960003] = {
@@ -535227,6 +536081,7 @@ _G.pg.base.chapter_template_loop[1960003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1960004] = {
@@ -535925,6 +536780,7 @@ _G.pg.base.chapter_template_loop[1960004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1960005] = {
@@ -536630,6 +537486,7 @@ _G.pg.base.chapter_template_loop[1960005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1960006] = {
@@ -537499,6 +538356,7 @@ _G.pg.base.chapter_template_loop[1960006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1960021] = {
@@ -538190,6 +539048,7 @@ _G.pg.base.chapter_template_loop[1960021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1960022] = {
@@ -538881,6 +539740,7 @@ _G.pg.base.chapter_template_loop[1960022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1960023] = {
@@ -539607,6 +540467,7 @@ _G.pg.base.chapter_template_loop[1960023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1960024] = {
@@ -540346,6 +541207,7 @@ _G.pg.base.chapter_template_loop[1960024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1960025] = {
@@ -541094,6 +541956,7 @@ _G.pg.base.chapter_template_loop[1960025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1960026] = {
@@ -542006,6 +542869,7 @@ _G.pg.base.chapter_template_loop[1960026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1960041] = {
@@ -542667,6 +543531,7 @@ _G.pg.base.chapter_template_loop[1960041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1970001] = {
@@ -543319,6 +544184,7 @@ _G.pg.base.chapter_template_loop[1970001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1970002] = {
@@ -543964,6 +544830,7 @@ _G.pg.base.chapter_template_loop[1970002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1970003] = {
@@ -544665,6 +545532,7 @@ _G.pg.base.chapter_template_loop[1970003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1970004] = {
@@ -545359,6 +546227,7 @@ _G.pg.base.chapter_template_loop[1970004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1970005] = {
@@ -546054,6 +546923,7 @@ _G.pg.base.chapter_template_loop[1970005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1970006] = {
@@ -546738,6 +547608,7 @@ _G.pg.base.chapter_template_loop[1970006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1970041] = {
@@ -547485,6 +548356,7 @@ _G.pg.base.chapter_template_loop[1970041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1990001] = {
@@ -548188,6 +549060,7 @@ _G.pg.base.chapter_template_loop[1990001] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1990002] = {
@@ -548891,6 +549764,7 @@ _G.pg.base.chapter_template_loop[1990002] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1990003] = {
@@ -549788,6 +550662,7 @@ _G.pg.base.chapter_template_loop[1990003] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1990004] = {
@@ -550535,6 +551410,7 @@ _G.pg.base.chapter_template_loop[1990004] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1990005] = {
@@ -551282,6 +552158,7 @@ _G.pg.base.chapter_template_loop[1990005] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1990006] = {
@@ -552223,6 +553100,7 @@ _G.pg.base.chapter_template_loop[1990006] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1990021] = {
@@ -552967,6 +553845,7 @@ _G.pg.base.chapter_template_loop[1990021] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1990022] = {
@@ -553711,6 +554590,7 @@ _G.pg.base.chapter_template_loop[1990022] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1990023] = {
@@ -554649,6 +555529,7 @@ _G.pg.base.chapter_template_loop[1990023] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1990024] = {
@@ -555437,6 +556318,7 @@ _G.pg.base.chapter_template_loop[1990024] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1990025] = {
@@ -556225,6 +557107,7 @@ _G.pg.base.chapter_template_loop[1990025] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1990026] = {
@@ -557207,6 +558090,7 @@ _G.pg.base.chapter_template_loop[1990026] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[1990041] = {
@@ -557915,6 +558799,7 @@ _G.pg.base.chapter_template_loop[1990041] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100001] = {
@@ -558360,6 +559245,7 @@ _G.pg.base.chapter_template_loop[2100001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100002] = {
@@ -558861,6 +559747,7 @@ _G.pg.base.chapter_template_loop[2100002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100003] = {
@@ -559430,6 +560317,7 @@ _G.pg.base.chapter_template_loop[2100003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100004] = {
@@ -559949,6 +560837,7 @@ _G.pg.base.chapter_template_loop[2100004] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100005] = {
@@ -560570,6 +561459,7 @@ _G.pg.base.chapter_template_loop[2100005] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100006] = {
@@ -561185,6 +562075,7 @@ _G.pg.base.chapter_template_loop[2100006] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100011] = {
@@ -561671,6 +562562,7 @@ _G.pg.base.chapter_template_loop[2100011] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100012] = {
@@ -562213,6 +563105,7 @@ _G.pg.base.chapter_template_loop[2100012] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100013] = {
@@ -562824,6 +563717,7 @@ _G.pg.base.chapter_template_loop[2100013] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100014] = {
@@ -563385,6 +564279,7 @@ _G.pg.base.chapter_template_loop[2100014] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100015] = {
@@ -564048,6 +564943,7 @@ _G.pg.base.chapter_template_loop[2100015] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100016] = {
@@ -564704,6 +565600,7 @@ _G.pg.base.chapter_template_loop[2100016] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100021] = {
@@ -565105,6 +566002,7 @@ _G.pg.base.chapter_template_loop[2100021] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100022] = {
@@ -565568,6 +566466,7 @@ _G.pg.base.chapter_template_loop[2100022] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100023] = {
@@ -566121,6 +567020,7 @@ _G.pg.base.chapter_template_loop[2100023] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100024] = {
@@ -566697,6 +567597,7 @@ _G.pg.base.chapter_template_loop[2100024] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100025] = {
@@ -567291,6 +568192,7 @@ _G.pg.base.chapter_template_loop[2100025] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100026] = {
@@ -568060,6 +568962,7 @@ _G.pg.base.chapter_template_loop[2100026] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100031] = {
@@ -568502,6 +569405,7 @@ _G.pg.base.chapter_template_loop[2100031] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100032] = {
@@ -569006,6 +569910,7 @@ _G.pg.base.chapter_template_loop[2100032] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100033] = {
@@ -569600,6 +570505,7 @@ _G.pg.base.chapter_template_loop[2100033] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100034] = {
@@ -570217,6 +571123,7 @@ _G.pg.base.chapter_template_loop[2100034] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100035] = {
@@ -570852,6 +571759,7 @@ _G.pg.base.chapter_template_loop[2100035] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100036] = {
@@ -571662,6 +572570,7 @@ _G.pg.base.chapter_template_loop[2100036] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100041] = {
@@ -572124,6 +573033,7 @@ _G.pg.base.chapter_template_loop[2100041] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100042] = {
@@ -572726,6 +573636,7 @@ _G.pg.base.chapter_template_loop[2100042] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100043] = {
@@ -573295,6 +574206,7 @@ _G.pg.base.chapter_template_loop[2100043] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100044] = {
@@ -573982,6 +574894,7 @@ _G.pg.base.chapter_template_loop[2100044] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100045] = {
@@ -574464,6 +575377,7 @@ _G.pg.base.chapter_template_loop[2100045] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100046] = {
@@ -574954,6 +575868,7 @@ _G.pg.base.chapter_template_loop[2100046] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100047] = {
@@ -575499,6 +576414,7 @@ _G.pg.base.chapter_template_loop[2100047] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100048] = {
@@ -576200,6 +577116,7 @@ _G.pg.base.chapter_template_loop[2100048] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100051] = {
@@ -576703,6 +577620,7 @@ _G.pg.base.chapter_template_loop[2100051] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100052] = {
@@ -577348,6 +578266,7 @@ _G.pg.base.chapter_template_loop[2100052] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100053] = {
@@ -577958,6 +578877,7 @@ _G.pg.base.chapter_template_loop[2100053] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100054] = {
@@ -578686,6 +579606,7 @@ _G.pg.base.chapter_template_loop[2100054] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100055] = {
@@ -579209,6 +580130,7 @@ _G.pg.base.chapter_template_loop[2100055] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100056] = {
@@ -579740,6 +580662,7 @@ _G.pg.base.chapter_template_loop[2100056] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100057] = {
@@ -580326,6 +581249,7 @@ _G.pg.base.chapter_template_loop[2100057] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100058] = {
@@ -581068,6 +581992,7 @@ _G.pg.base.chapter_template_loop[2100058] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100061] = {
@@ -581558,6 +582483,7 @@ _G.pg.base.chapter_template_loop[2100061] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100062] = {
@@ -582109,6 +583035,7 @@ _G.pg.base.chapter_template_loop[2100062] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100063] = {
@@ -582750,6 +583677,7 @@ _G.pg.base.chapter_template_loop[2100063] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100064] = {
@@ -583330,6 +584258,7 @@ _G.pg.base.chapter_template_loop[2100064] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100065] = {
@@ -584051,6 +584980,7 @@ _G.pg.base.chapter_template_loop[2100065] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100066] = {
@@ -584944,6 +585874,7 @@ _G.pg.base.chapter_template_loop[2100066] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100071] = {
@@ -585475,6 +586406,7 @@ _G.pg.base.chapter_template_loop[2100071] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100072] = {
@@ -586067,6 +586999,7 @@ _G.pg.base.chapter_template_loop[2100072] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100073] = {
@@ -586749,6 +587682,7 @@ _G.pg.base.chapter_template_loop[2100073] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100074] = {
@@ -587370,6 +588304,7 @@ _G.pg.base.chapter_template_loop[2100074] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100075] = {
@@ -588132,6 +589067,7 @@ _G.pg.base.chapter_template_loop[2100075] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100076] = {
@@ -589066,6 +590002,7 @@ _G.pg.base.chapter_template_loop[2100076] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100081] = {
@@ -589516,6 +590453,7 @@ _G.pg.base.chapter_template_loop[2100081] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100082] = {
@@ -590072,6 +591010,7 @@ _G.pg.base.chapter_template_loop[2100082] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100083] = {
@@ -590740,6 +591679,7 @@ _G.pg.base.chapter_template_loop[2100083] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100084] = {
@@ -591202,6 +592142,7 @@ _G.pg.base.chapter_template_loop[2100084] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100085] = {
@@ -591770,6 +592711,7 @@ _G.pg.base.chapter_template_loop[2100085] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100086] = {
@@ -592460,6 +593402,7 @@ _G.pg.base.chapter_template_loop[2100086] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100091] = {
@@ -592951,6 +593894,7 @@ _G.pg.base.chapter_template_loop[2100091] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100092] = {
@@ -593548,6 +594492,7 @@ _G.pg.base.chapter_template_loop[2100092] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100093] = {
@@ -594257,6 +595202,7 @@ _G.pg.base.chapter_template_loop[2100093] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100094] = {
@@ -594762,6 +595708,7 @@ _G.pg.base.chapter_template_loop[2100094] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100095] = {
@@ -595373,6 +596320,7 @@ _G.pg.base.chapter_template_loop[2100095] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100096] = {
@@ -596106,6 +597054,7 @@ _G.pg.base.chapter_template_loop[2100096] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100101] = {
@@ -596611,6 +597560,7 @@ _G.pg.base.chapter_template_loop[2100101] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100102] = {
@@ -597080,6 +598030,7 @@ _G.pg.base.chapter_template_loop[2100102] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100103] = {
@@ -597647,6 +598598,7 @@ _G.pg.base.chapter_template_loop[2100103] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100104] = {
@@ -598214,6 +599166,7 @@ _G.pg.base.chapter_template_loop[2100104] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100105] = {
@@ -598831,6 +599784,7 @@ _G.pg.base.chapter_template_loop[2100105] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100106] = {
@@ -599509,6 +600463,7 @@ _G.pg.base.chapter_template_loop[2100106] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100111] = {
@@ -600056,6 +601011,7 @@ _G.pg.base.chapter_template_loop[2100111] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100112] = {
@@ -600567,6 +601523,7 @@ _G.pg.base.chapter_template_loop[2100112] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100113] = {
@@ -601176,6 +602133,7 @@ _G.pg.base.chapter_template_loop[2100113] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100114] = {
@@ -601785,6 +602743,7 @@ _G.pg.base.chapter_template_loop[2100114] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100115] = {
@@ -602446,6 +603405,7 @@ _G.pg.base.chapter_template_loop[2100115] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100116] = {
@@ -603168,6 +604128,7 @@ _G.pg.base.chapter_template_loop[2100116] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100121] = {
@@ -603672,6 +604633,7 @@ _G.pg.base.chapter_template_loop[2100121] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100122] = {
@@ -604147,6 +605109,7 @@ _G.pg.base.chapter_template_loop[2100122] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100123] = {
@@ -604714,6 +605677,7 @@ _G.pg.base.chapter_template_loop[2100123] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100124] = {
@@ -605287,6 +606251,7 @@ _G.pg.base.chapter_template_loop[2100124] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100125] = {
@@ -605903,6 +606868,7 @@ _G.pg.base.chapter_template_loop[2100125] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100126] = {
@@ -606485,6 +607451,7 @@ _G.pg.base.chapter_template_loop[2100126] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100131] = {
@@ -607031,6 +607998,7 @@ _G.pg.base.chapter_template_loop[2100131] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100132] = {
@@ -607548,6 +608516,7 @@ _G.pg.base.chapter_template_loop[2100132] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100133] = {
@@ -608157,6 +609126,7 @@ _G.pg.base.chapter_template_loop[2100133] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100134] = {
@@ -608772,6 +609742,7 @@ _G.pg.base.chapter_template_loop[2100134] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100135] = {
@@ -609432,6 +610403,7 @@ _G.pg.base.chapter_template_loop[2100135] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100136] = {
@@ -610058,6 +611030,7 @@ _G.pg.base.chapter_template_loop[2100136] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100141] = {
@@ -610527,6 +611500,7 @@ _G.pg.base.chapter_template_loop[2100141] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100142] = {
@@ -611003,6 +611977,7 @@ _G.pg.base.chapter_template_loop[2100142] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100143] = {
@@ -611564,6 +612539,7 @@ _G.pg.base.chapter_template_loop[2100143] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100144] = {
@@ -612131,6 +613107,7 @@ _G.pg.base.chapter_template_loop[2100144] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100145] = {
@@ -612741,6 +613718,7 @@ _G.pg.base.chapter_template_loop[2100145] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100146] = {
@@ -613317,6 +614295,7 @@ _G.pg.base.chapter_template_loop[2100146] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100151] = {
@@ -613828,6 +614807,7 @@ _G.pg.base.chapter_template_loop[2100151] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100152] = {
@@ -614346,6 +615326,7 @@ _G.pg.base.chapter_template_loop[2100152] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100153] = {
@@ -614949,6 +615930,7 @@ _G.pg.base.chapter_template_loop[2100153] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100154] = {
@@ -615558,6 +616540,7 @@ _G.pg.base.chapter_template_loop[2100154] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100155] = {
@@ -616212,6 +617195,7 @@ _G.pg.base.chapter_template_loop[2100155] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100156] = {
@@ -616832,6 +617816,7 @@ _G.pg.base.chapter_template_loop[2100156] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100161] = {
@@ -617309,6 +618294,7 @@ _G.pg.base.chapter_template_loop[2100161] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100162] = {
@@ -617806,6 +618792,7 @@ _G.pg.base.chapter_template_loop[2100162] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100163] = {
@@ -618393,6 +619380,7 @@ _G.pg.base.chapter_template_loop[2100163] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100166] = {
@@ -618904,6 +619892,7 @@ _G.pg.base.chapter_template_loop[2100166] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100167] = {
@@ -619457,6 +620446,7 @@ _G.pg.base.chapter_template_loop[2100167] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100168] = {
@@ -619969,6 +620959,7 @@ _G.pg.base.chapter_template_loop[2100168] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100171] = {
@@ -620488,6 +621479,7 @@ _G.pg.base.chapter_template_loop[2100171] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100172] = {
@@ -621025,6 +622017,7 @@ _G.pg.base.chapter_template_loop[2100172] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100173] = {
@@ -621653,6 +622646,7 @@ _G.pg.base.chapter_template_loop[2100173] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100176] = {
@@ -622205,6 +623199,7 @@ _G.pg.base.chapter_template_loop[2100176] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100177] = {
@@ -622802,6 +623797,7 @@ _G.pg.base.chapter_template_loop[2100177] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100178] = {
@@ -623357,6 +624353,7 @@ _G.pg.base.chapter_template_loop[2100178] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100181] = {
@@ -623840,6 +624837,7 @@ _G.pg.base.chapter_template_loop[2100181] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100182] = {
@@ -624372,6 +625370,7 @@ _G.pg.base.chapter_template_loop[2100182] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100183] = {
@@ -625001,6 +626000,7 @@ _G.pg.base.chapter_template_loop[2100183] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100184] = {
@@ -625527,6 +626527,7 @@ _G.pg.base.chapter_template_loop[2100184] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100185] = {
@@ -626096,6 +627097,7 @@ _G.pg.base.chapter_template_loop[2100185] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100186] = {
@@ -626631,6 +627633,7 @@ _G.pg.base.chapter_template_loop[2100186] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100191] = {
@@ -627156,6 +628159,7 @@ _G.pg.base.chapter_template_loop[2100191] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100192] = {
@@ -627730,6 +628734,7 @@ _G.pg.base.chapter_template_loop[2100192] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100193] = {
@@ -628396,6 +629401,7 @@ _G.pg.base.chapter_template_loop[2100193] = {
 	},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100194] = {
@@ -628964,6 +629970,7 @@ _G.pg.base.chapter_template_loop[2100194] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100195] = {
@@ -629577,6 +630584,7 @@ _G.pg.base.chapter_template_loop[2100195] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100196] = {
@@ -630156,6 +631164,7 @@ _G.pg.base.chapter_template_loop[2100196] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100201] = {
@@ -630633,6 +631642,7 @@ _G.pg.base.chapter_template_loop[2100201] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100202] = {
@@ -631123,6 +632133,7 @@ _G.pg.base.chapter_template_loop[2100202] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100203] = {
@@ -631636,6 +632647,7 @@ _G.pg.base.chapter_template_loop[2100203] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100204] = {
@@ -632162,6 +633174,7 @@ _G.pg.base.chapter_template_loop[2100204] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100205] = {
@@ -632737,6 +633750,7 @@ _G.pg.base.chapter_template_loop[2100205] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100206] = {
@@ -633271,6 +634285,7 @@ _G.pg.base.chapter_template_loop[2100206] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100211] = {
@@ -633790,6 +634805,7 @@ _G.pg.base.chapter_template_loop[2100211] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100212] = {
@@ -634323,6 +635339,7 @@ _G.pg.base.chapter_template_loop[2100212] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100213] = {
@@ -634879,6 +635896,7 @@ _G.pg.base.chapter_template_loop[2100213] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100214] = {
@@ -635447,6 +636465,7 @@ _G.pg.base.chapter_template_loop[2100214] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100215] = {
@@ -636066,6 +637085,7 @@ _G.pg.base.chapter_template_loop[2100215] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100216] = {
@@ -636644,6 +637664,7 @@ _G.pg.base.chapter_template_loop[2100216] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100221] = {
@@ -637092,6 +638113,7 @@ _G.pg.base.chapter_template_loop[2100221] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100222] = {
@@ -637569,6 +638591,7 @@ _G.pg.base.chapter_template_loop[2100222] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100223] = {
@@ -638066,6 +639089,7 @@ _G.pg.base.chapter_template_loop[2100223] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100224] = {
@@ -638600,6 +639624,7 @@ _G.pg.base.chapter_template_loop[2100224] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100225] = {
@@ -639122,6 +640147,7 @@ _G.pg.base.chapter_template_loop[2100225] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100226] = {
@@ -639712,6 +640738,7 @@ _G.pg.base.chapter_template_loop[2100226] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100231] = {
@@ -640202,6 +641229,7 @@ _G.pg.base.chapter_template_loop[2100231] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100232] = {
@@ -640721,6 +641749,7 @@ _G.pg.base.chapter_template_loop[2100232] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100233] = {
@@ -641261,6 +642290,7 @@ _G.pg.base.chapter_template_loop[2100233] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100234] = {
@@ -641837,6 +642867,7 @@ _G.pg.base.chapter_template_loop[2100234] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100235] = {
@@ -642403,6 +643434,7 @@ _G.pg.base.chapter_template_loop[2100235] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100236] = {
@@ -643037,6 +644069,7 @@ _G.pg.base.chapter_template_loop[2100236] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100241] = {
@@ -643523,6 +644556,7 @@ _G.pg.base.chapter_template_loop[2100241] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100242] = {
@@ -644038,6 +645072,7 @@ _G.pg.base.chapter_template_loop[2100242] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100243] = {
@@ -644565,6 +645600,7 @@ _G.pg.base.chapter_template_loop[2100243] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100244] = {
@@ -645082,6 +646118,7 @@ _G.pg.base.chapter_template_loop[2100244] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100245] = {
@@ -645901,6 +646938,7 @@ _G.pg.base.chapter_template_loop[2100245] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100246] = {
@@ -647388,6 +648426,7 @@ _G.pg.base.chapter_template_loop[2100246] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100251] = {
@@ -647916,6 +648955,7 @@ _G.pg.base.chapter_template_loop[2100251] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100252] = {
@@ -648473,6 +649513,7 @@ _G.pg.base.chapter_template_loop[2100252] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100253] = {
@@ -649043,6 +650084,7 @@ _G.pg.base.chapter_template_loop[2100253] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100254] = {
@@ -649601,6 +650643,7 @@ _G.pg.base.chapter_template_loop[2100254] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100255] = {
@@ -650463,6 +651506,7 @@ _G.pg.base.chapter_template_loop[2100255] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100256] = {
@@ -651993,6 +653037,7 @@ _G.pg.base.chapter_template_loop[2100256] = {
 		},
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100261] = {
@@ -652481,6 +653526,7 @@ _G.pg.base.chapter_template_loop[2100261] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100262] = {
@@ -652956,6 +654002,7 @@ _G.pg.base.chapter_template_loop[2100262] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100263] = {
@@ -653469,6 +654516,7 @@ _G.pg.base.chapter_template_loop[2100263] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100264] = {
@@ -654002,6 +655050,7 @@ _G.pg.base.chapter_template_loop[2100264] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100265] = {
@@ -654480,6 +655529,7 @@ _G.pg.base.chapter_template_loop[2100265] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100266] = {
@@ -655013,6 +656063,7 @@ _G.pg.base.chapter_template_loop[2100266] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100271] = {
@@ -655544,6 +656595,7 @@ _G.pg.base.chapter_template_loop[2100271] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100272] = {
@@ -656062,6 +657114,7 @@ _G.pg.base.chapter_template_loop[2100272] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100273] = {
@@ -656617,6 +657670,7 @@ _G.pg.base.chapter_template_loop[2100273] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100274] = {
@@ -657192,6 +658246,7 @@ _G.pg.base.chapter_template_loop[2100274] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100275] = {
@@ -657714,6 +658769,7 @@ _G.pg.base.chapter_template_loop[2100275] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100276] = {
@@ -658291,6 +659347,7 @@ _G.pg.base.chapter_template_loop[2100276] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100281] = {
@@ -658869,6 +659926,7 @@ _G.pg.base.chapter_template_loop[2100281] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100282] = {
@@ -659431,6 +660489,7 @@ _G.pg.base.chapter_template_loop[2100282] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100283] = {
@@ -660014,6 +661073,7 @@ _G.pg.base.chapter_template_loop[2100283] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100284] = {
@@ -660654,6 +661714,7 @@ _G.pg.base.chapter_template_loop[2100284] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100285] = {
@@ -661319,6 +662380,7 @@ _G.pg.base.chapter_template_loop[2100285] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100286] = {
@@ -662078,6 +663140,7 @@ _G.pg.base.chapter_template_loop[2100286] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100291] = {
@@ -662697,6 +663760,7 @@ _G.pg.base.chapter_template_loop[2100291] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100292] = {
@@ -663300,6 +664364,7 @@ _G.pg.base.chapter_template_loop[2100292] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100293] = {
@@ -663924,6 +664989,7 @@ _G.pg.base.chapter_template_loop[2100293] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100294] = {
@@ -664605,6 +665671,7 @@ _G.pg.base.chapter_template_loop[2100294] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100295] = {
@@ -665313,6 +666380,7 @@ _G.pg.base.chapter_template_loop[2100295] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100296] = {
@@ -666115,6 +667183,7 @@ _G.pg.base.chapter_template_loop[2100296] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100301] = {
@@ -666695,6 +667764,7 @@ _G.pg.base.chapter_template_loop[2100301] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100302] = {
@@ -667265,6 +668335,7 @@ _G.pg.base.chapter_template_loop[2100302] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100303] = {
@@ -667827,6 +668898,7 @@ _G.pg.base.chapter_template_loop[2100303] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100304] = {
@@ -668484,6 +669556,7 @@ _G.pg.base.chapter_template_loop[2100304] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100305] = {
@@ -669186,6 +670259,7 @@ _G.pg.base.chapter_template_loop[2100305] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100306] = {
@@ -670053,6 +671127,7 @@ _G.pg.base.chapter_template_loop[2100306] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100311] = {
@@ -670674,6 +671749,7 @@ _G.pg.base.chapter_template_loop[2100311] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100312] = {
@@ -671285,6 +672361,7 @@ _G.pg.base.chapter_template_loop[2100312] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100313] = {
@@ -671890,6 +672967,7 @@ _G.pg.base.chapter_template_loop[2100313] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100314] = {
@@ -672588,6 +673666,7 @@ _G.pg.base.chapter_template_loop[2100314] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100315] = {
@@ -673333,6 +674412,7 @@ _G.pg.base.chapter_template_loop[2100315] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100316] = {
@@ -674243,6 +675323,7 @@ _G.pg.base.chapter_template_loop[2100316] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100321] = {
@@ -674934,6 +676015,7 @@ _G.pg.base.chapter_template_loop[2100321] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100322] = {
@@ -675484,6 +676566,7 @@ _G.pg.base.chapter_template_loop[2100322] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100323] = {
@@ -676184,6 +677267,7 @@ _G.pg.base.chapter_template_loop[2100323] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100324] = {
@@ -677036,6 +678120,7 @@ _G.pg.base.chapter_template_loop[2100324] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100325] = {
@@ -677766,6 +678851,7 @@ _G.pg.base.chapter_template_loop[2100325] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100326] = {
@@ -678684,6 +679770,7 @@ _G.pg.base.chapter_template_loop[2100326] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100331] = {
@@ -679416,6 +680503,7 @@ _G.pg.base.chapter_template_loop[2100331] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100332] = {
@@ -680008,6 +681096,7 @@ _G.pg.base.chapter_template_loop[2100332] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100333] = {
@@ -680750,6 +681839,7 @@ _G.pg.base.chapter_template_loop[2100333] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100334] = {
@@ -681643,6 +682733,7 @@ _G.pg.base.chapter_template_loop[2100334] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100335] = {
@@ -682416,6 +683507,7 @@ _G.pg.base.chapter_template_loop[2100335] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100336] = {
@@ -683378,6 +684470,7 @@ _G.pg.base.chapter_template_loop[2100336] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100341] = {
@@ -683963,6 +685056,7 @@ _G.pg.base.chapter_template_loop[2100341] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100342] = {
@@ -684568,6 +685662,7 @@ _G.pg.base.chapter_template_loop[2100342] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100343] = {
@@ -685290,6 +686385,7 @@ _G.pg.base.chapter_template_loop[2100343] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100344] = {
@@ -686000,6 +687096,7 @@ _G.pg.base.chapter_template_loop[2100344] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100345] = {
@@ -686724,6 +687821,7 @@ _G.pg.base.chapter_template_loop[2100345] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100346] = {
@@ -687449,6 +688547,7 @@ _G.pg.base.chapter_template_loop[2100346] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100351] = {
@@ -688076,6 +689175,7 @@ _G.pg.base.chapter_template_loop[2100351] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100352] = {
@@ -688723,6 +689823,7 @@ _G.pg.base.chapter_template_loop[2100352] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100353] = {
@@ -689488,6 +690589,7 @@ _G.pg.base.chapter_template_loop[2100353] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100354] = {
@@ -690240,6 +691342,7 @@ _G.pg.base.chapter_template_loop[2100354] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100355] = {
@@ -691008,6 +692111,7 @@ _G.pg.base.chapter_template_loop[2100355] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100356] = {
@@ -691776,6 +692880,7 @@ _G.pg.base.chapter_template_loop[2100356] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100361] = {
@@ -692352,6 +693457,7 @@ _G.pg.base.chapter_template_loop[2100361] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100362] = {
@@ -692942,6 +694048,7 @@ _G.pg.base.chapter_template_loop[2100362] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100363] = {
@@ -693743,6 +694850,7 @@ _G.pg.base.chapter_template_loop[2100363] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100364] = {
@@ -694427,6 +695535,7 @@ _G.pg.base.chapter_template_loop[2100364] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100365] = {
@@ -695134,6 +696243,7 @@ _G.pg.base.chapter_template_loop[2100365] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100366] = {
@@ -695941,6 +697051,7 @@ _G.pg.base.chapter_template_loop[2100366] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100371] = {
@@ -696559,6 +697670,7 @@ _G.pg.base.chapter_template_loop[2100371] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100372] = {
@@ -697191,6 +698303,7 @@ _G.pg.base.chapter_template_loop[2100372] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100373] = {
@@ -698035,6 +699148,7 @@ _G.pg.base.chapter_template_loop[2100373] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100374] = {
@@ -698760,6 +699874,7 @@ _G.pg.base.chapter_template_loop[2100374] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100375] = {
@@ -699510,6 +700625,7 @@ _G.pg.base.chapter_template_loop[2100375] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100376] = {
@@ -700360,6 +701476,7 @@ _G.pg.base.chapter_template_loop[2100376] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100381] = {
@@ -700894,6 +702011,7 @@ _G.pg.base.chapter_template_loop[2100381] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100382] = {
@@ -701486,6 +702604,7 @@ _G.pg.base.chapter_template_loop[2100382] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100383] = {
@@ -702229,6 +703348,7 @@ _G.pg.base.chapter_template_loop[2100383] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100384] = {
@@ -702940,6 +704060,7 @@ _G.pg.base.chapter_template_loop[2100384] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100385] = {
@@ -703672,6 +704793,7 @@ _G.pg.base.chapter_template_loop[2100385] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100386] = {
@@ -704487,6 +705609,7 @@ _G.pg.base.chapter_template_loop[2100386] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100391] = {
@@ -705063,6 +706186,7 @@ _G.pg.base.chapter_template_loop[2100391] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100392] = {
@@ -705697,6 +706821,7 @@ _G.pg.base.chapter_template_loop[2100392] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100393] = {
@@ -706483,6 +707608,7 @@ _G.pg.base.chapter_template_loop[2100393] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100394] = {
@@ -707236,6 +708362,7 @@ _G.pg.base.chapter_template_loop[2100394] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100395] = {
@@ -708012,6 +709139,7 @@ _G.pg.base.chapter_template_loop[2100395] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100396] = {
@@ -708870,6 +709998,7 @@ _G.pg.base.chapter_template_loop[2100396] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100401] = {
@@ -709439,6 +710568,7 @@ _G.pg.base.chapter_template_loop[2100401] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100402] = {
@@ -710029,6 +711159,7 @@ _G.pg.base.chapter_template_loop[2100402] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100403] = {
@@ -710728,6 +711859,7 @@ _G.pg.base.chapter_template_loop[2100403] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100404] = {
@@ -711457,6 +712589,7 @@ _G.pg.base.chapter_template_loop[2100404] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100405] = {
@@ -712199,6 +713332,7 @@ _G.pg.base.chapter_template_loop[2100405] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100406] = {
@@ -712930,6 +714064,7 @@ _G.pg.base.chapter_template_loop[2100406] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100411] = {
@@ -713541,6 +714676,7 @@ _G.pg.base.chapter_template_loop[2100411] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100412] = {
@@ -714173,6 +715309,7 @@ _G.pg.base.chapter_template_loop[2100412] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100413] = {
@@ -714915,6 +716052,7 @@ _G.pg.base.chapter_template_loop[2100413] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100414] = {
@@ -715686,6 +716824,7 @@ _G.pg.base.chapter_template_loop[2100414] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100415] = {
@@ -716472,6 +717611,7 @@ _G.pg.base.chapter_template_loop[2100415] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100416] = {
@@ -717246,6 +718386,7 @@ _G.pg.base.chapter_template_loop[2100416] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100421] = {
@@ -717768,6 +718909,7 @@ _G.pg.base.chapter_template_loop[2100421] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100422] = {
@@ -718351,6 +719493,7 @@ _G.pg.base.chapter_template_loop[2100422] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100423] = {
@@ -719065,6 +720208,7 @@ _G.pg.base.chapter_template_loop[2100423] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100424] = {
@@ -719759,6 +720903,7 @@ _G.pg.base.chapter_template_loop[2100424] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100425] = {
@@ -720473,6 +721618,7 @@ _G.pg.base.chapter_template_loop[2100425] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100427] = {
@@ -721132,6 +722278,7 @@ _G.pg.base.chapter_template_loop[2100427] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100431] = {
@@ -721696,6 +722843,7 @@ _G.pg.base.chapter_template_loop[2100431] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100432] = {
@@ -722321,6 +723469,7 @@ _G.pg.base.chapter_template_loop[2100432] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100433] = {
@@ -723077,6 +724226,7 @@ _G.pg.base.chapter_template_loop[2100433] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100434] = {
@@ -723813,6 +724963,7 @@ _G.pg.base.chapter_template_loop[2100434] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100435] = {
@@ -724571,6 +725722,7 @@ _G.pg.base.chapter_template_loop[2100435] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100437] = {
@@ -725273,6 +726425,7 @@ _G.pg.base.chapter_template_loop[2100437] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100441] = {
@@ -725838,6 +726991,7 @@ _G.pg.base.chapter_template_loop[2100441] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100442] = {
@@ -726523,6 +727677,7 @@ _G.pg.base.chapter_template_loop[2100442] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100443] = {
@@ -727228,6 +728383,7 @@ _G.pg.base.chapter_template_loop[2100443] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100444] = {
@@ -727753,6 +728909,7 @@ _G.pg.base.chapter_template_loop[2100444] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100445] = {
@@ -728321,6 +729478,7 @@ _G.pg.base.chapter_template_loop[2100445] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100446] = {
@@ -729055,6 +730213,7 @@ _G.pg.base.chapter_template_loop[2100446] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100451] = {
@@ -729661,6 +730820,7 @@ _G.pg.base.chapter_template_loop[2100451] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100452] = {
@@ -730387,6 +731547,7 @@ _G.pg.base.chapter_template_loop[2100452] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100453] = {
@@ -731133,6 +732294,7 @@ _G.pg.base.chapter_template_loop[2100453] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100454] = {
@@ -731699,6 +732861,7 @@ _G.pg.base.chapter_template_loop[2100454] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100455] = {
@@ -732310,6 +733473,7 @@ _G.pg.base.chapter_template_loop[2100455] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100456] = {
@@ -733087,6 +734251,7 @@ _G.pg.base.chapter_template_loop[2100456] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100461] = {
@@ -733623,6 +734788,7 @@ _G.pg.base.chapter_template_loop[2100461] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100462] = {
@@ -734200,6 +735366,7 @@ _G.pg.base.chapter_template_loop[2100462] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100463] = {
@@ -734888,6 +736055,7 @@ _G.pg.base.chapter_template_loop[2100463] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100464] = {
@@ -735461,6 +736629,7 @@ _G.pg.base.chapter_template_loop[2100464] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100465] = {
@@ -736055,6 +737224,7 @@ _G.pg.base.chapter_template_loop[2100465] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100466] = {
@@ -736808,6 +737978,7 @@ _G.pg.base.chapter_template_loop[2100466] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100471] = {
@@ -737386,6 +738557,7 @@ _G.pg.base.chapter_template_loop[2100471] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100472] = {
@@ -738005,6 +739177,7 @@ _G.pg.base.chapter_template_loop[2100472] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100473] = {
@@ -738735,6 +739908,7 @@ _G.pg.base.chapter_template_loop[2100473] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100474] = {
@@ -739350,6 +740524,7 @@ _G.pg.base.chapter_template_loop[2100474] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100475] = {
@@ -739988,6 +741163,7 @@ _G.pg.base.chapter_template_loop[2100475] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100476] = {
@@ -740784,6 +741960,7 @@ _G.pg.base.chapter_template_loop[2100476] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100481] = {
@@ -741366,6 +742543,7 @@ _G.pg.base.chapter_template_loop[2100481] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100482] = {
@@ -742082,6 +743260,7 @@ _G.pg.base.chapter_template_loop[2100482] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100483] = {
@@ -742712,6 +743891,7 @@ _G.pg.base.chapter_template_loop[2100483] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100484] = {
@@ -743393,6 +744573,7 @@ _G.pg.base.chapter_template_loop[2100484] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100485] = {
@@ -744033,6 +745214,7 @@ _G.pg.base.chapter_template_loop[2100485] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100486] = {
@@ -744755,6 +745937,7 @@ _G.pg.base.chapter_template_loop[2100486] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100491] = {
@@ -745379,6 +746562,7 @@ _G.pg.base.chapter_template_loop[2100491] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100492] = {
@@ -746137,6 +747321,7 @@ _G.pg.base.chapter_template_loop[2100492] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100493] = {
@@ -746809,6 +747994,7 @@ _G.pg.base.chapter_template_loop[2100493] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100494] = {
@@ -747531,6 +748717,7 @@ _G.pg.base.chapter_template_loop[2100494] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100495] = {
@@ -748214,6 +749401,7 @@ _G.pg.base.chapter_template_loop[2100495] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100496] = {
@@ -748979,6 +750167,7 @@ _G.pg.base.chapter_template_loop[2100496] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100501] = {
@@ -749515,6 +750704,7 @@ _G.pg.base.chapter_template_loop[2100501] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100502] = {
@@ -750099,6 +751289,7 @@ _G.pg.base.chapter_template_loop[2100502] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100503] = {
@@ -750794,6 +751985,7 @@ _G.pg.base.chapter_template_loop[2100503] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100504] = {
@@ -751380,6 +752572,7 @@ _G.pg.base.chapter_template_loop[2100504] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100505] = {
@@ -751953,6 +753146,7 @@ _G.pg.base.chapter_template_loop[2100505] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100506] = {
@@ -752683,6 +753877,7 @@ _G.pg.base.chapter_template_loop[2100506] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100511] = {
@@ -753261,6 +754456,7 @@ _G.pg.base.chapter_template_loop[2100511] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100512] = {
@@ -753887,6 +755083,7 @@ _G.pg.base.chapter_template_loop[2100512] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100513] = {
@@ -754624,6 +755821,7 @@ _G.pg.base.chapter_template_loop[2100513] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100514] = {
@@ -755252,6 +756450,7 @@ _G.pg.base.chapter_template_loop[2100514] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100515] = {
@@ -755869,6 +757068,7 @@ _G.pg.base.chapter_template_loop[2100515] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100516] = {
@@ -756643,6 +757843,7 @@ _G.pg.base.chapter_template_loop[2100516] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100521] = {
@@ -757214,6 +758415,7 @@ _G.pg.base.chapter_template_loop[2100521] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100522] = {
@@ -757799,6 +759001,7 @@ _G.pg.base.chapter_template_loop[2100522] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100523] = {
@@ -758371,6 +759574,7 @@ _G.pg.base.chapter_template_loop[2100523] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100524] = {
@@ -758958,6 +760162,7 @@ _G.pg.base.chapter_template_loop[2100524] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100525] = {
@@ -759637,6 +760842,7 @@ _G.pg.base.chapter_template_loop[2100525] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100526] = {
@@ -760348,6 +761554,7 @@ _G.pg.base.chapter_template_loop[2100526] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100531] = {
@@ -760961,6 +762168,7 @@ _G.pg.base.chapter_template_loop[2100531] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100532] = {
@@ -761588,6 +762796,7 @@ _G.pg.base.chapter_template_loop[2100532] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100533] = {
@@ -762201,6 +763410,7 @@ _G.pg.base.chapter_template_loop[2100533] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100534] = {
@@ -762829,6 +764039,7 @@ _G.pg.base.chapter_template_loop[2100534] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100535] = {
@@ -763551,6 +764762,7 @@ _G.pg.base.chapter_template_loop[2100535] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100536] = {
@@ -764305,6 +765517,7 @@ _G.pg.base.chapter_template_loop[2100536] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100541] = {
@@ -764883,6 +766096,7 @@ _G.pg.base.chapter_template_loop[2100541] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100542] = {
@@ -765462,6 +766676,7 @@ _G.pg.base.chapter_template_loop[2100542] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100543] = {
@@ -766102,6 +767317,7 @@ _G.pg.base.chapter_template_loop[2100543] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100544] = {
@@ -766738,6 +767954,7 @@ _G.pg.base.chapter_template_loop[2100544] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100545] = {
@@ -767435,6 +768652,7 @@ _G.pg.base.chapter_template_loop[2100545] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100546] = {
@@ -768152,6 +769370,7 @@ _G.pg.base.chapter_template_loop[2100546] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100551] = {
@@ -768771,6 +769990,7 @@ _G.pg.base.chapter_template_loop[2100551] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100552] = {
@@ -769391,6 +770611,7 @@ _G.pg.base.chapter_template_loop[2100552] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100553] = {
@@ -770072,6 +771293,7 @@ _G.pg.base.chapter_template_loop[2100553] = {
 	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100554] = {
@@ -770749,6 +771971,7 @@ _G.pg.base.chapter_template_loop[2100554] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100555] = {
@@ -771489,6 +772712,7 @@ _G.pg.base.chapter_template_loop[2100555] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2100556] = {
@@ -772249,6 +773473,7 @@ _G.pg.base.chapter_template_loop[2100556] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200001] = {
@@ -772554,6 +773779,7 @@ _G.pg.base.chapter_template_loop[2200001] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200002] = {
@@ -772942,6 +774168,7 @@ _G.pg.base.chapter_template_loop[2200002] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200003] = {
@@ -773360,6 +774587,7 @@ _G.pg.base.chapter_template_loop[2200003] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200011] = {
@@ -773852,6 +775080,7 @@ _G.pg.base.chapter_template_loop[2200011] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200012] = {
@@ -774443,6 +775672,7 @@ _G.pg.base.chapter_template_loop[2200012] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200013] = {
@@ -775092,6 +776322,7 @@ _G.pg.base.chapter_template_loop[2200013] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200021] = {
@@ -775692,6 +776923,7 @@ _G.pg.base.chapter_template_loop[2200021] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200022] = {
@@ -776307,6 +777539,7 @@ _G.pg.base.chapter_template_loop[2200022] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200023] = {
@@ -776929,6 +778162,7 @@ _G.pg.base.chapter_template_loop[2200023] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200031] = {
@@ -777347,6 +778581,7 @@ _G.pg.base.chapter_template_loop[2200031] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200032] = {
@@ -777826,6 +779061,7 @@ _G.pg.base.chapter_template_loop[2200032] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200033] = {
@@ -778344,6 +779580,7 @@ _G.pg.base.chapter_template_loop[2200033] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200041] = {
@@ -778845,6 +780082,7 @@ _G.pg.base.chapter_template_loop[2200041] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200042] = {
@@ -779438,6 +780676,7 @@ _G.pg.base.chapter_template_loop[2200042] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200043] = {
@@ -780032,6 +781271,7 @@ _G.pg.base.chapter_template_loop[2200043] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200044] = {
@@ -780627,6 +781867,7 @@ _G.pg.base.chapter_template_loop[2200044] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200045] = {
@@ -781217,6 +782458,7 @@ _G.pg.base.chapter_template_loop[2200045] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200051] = {
@@ -781650,6 +782892,7 @@ _G.pg.base.chapter_template_loop[2200051] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200052] = {
@@ -782144,6 +783387,7 @@ _G.pg.base.chapter_template_loop[2200052] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200053] = {
@@ -782677,6 +783921,7 @@ _G.pg.base.chapter_template_loop[2200053] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200061] = {
@@ -783152,6 +784397,7 @@ _G.pg.base.chapter_template_loop[2200061] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200062] = {
@@ -783732,6 +784978,7 @@ _G.pg.base.chapter_template_loop[2200062] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200063] = {
@@ -784271,6 +785518,7 @@ _G.pg.base.chapter_template_loop[2200063] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200071] = {
@@ -784764,6 +786012,7 @@ _G.pg.base.chapter_template_loop[2200071] = {
 		8750,
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200072] = {
@@ -785342,6 +786591,7 @@ _G.pg.base.chapter_template_loop[2200072] = {
 		8750,
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200073] = {
@@ -785927,6 +787177,7 @@ _G.pg.base.chapter_template_loop[2200073] = {
 		8750,
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200074] = {
@@ -786527,6 +787778,7 @@ _G.pg.base.chapter_template_loop[2200074] = {
 		8750,
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200075] = {
@@ -787339,6 +788591,7 @@ _G.pg.base.chapter_template_loop[2200075] = {
 		8750,
 	},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200082] = {
@@ -787964,6 +789217,7 @@ _G.pg.base.chapter_template_loop[2200082] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200083] = {
@@ -788598,6 +789852,7 @@ _G.pg.base.chapter_template_loop[2200083] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200084] = {
@@ -789227,6 +790482,7 @@ _G.pg.base.chapter_template_loop[2200084] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200091] = {
@@ -789742,6 +790998,7 @@ _G.pg.base.chapter_template_loop[2200091] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200092] = {
@@ -790317,6 +791574,7 @@ _G.pg.base.chapter_template_loop[2200092] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200093] = {
@@ -790889,6 +792147,7 @@ _G.pg.base.chapter_template_loop[2200093] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200101] = {
@@ -791537,6 +792796,7 @@ _G.pg.base.chapter_template_loop[2200101] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200102] = {
@@ -792192,6 +793452,7 @@ _G.pg.base.chapter_template_loop[2200102] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200103] = {
@@ -792842,6 +794103,7 @@ _G.pg.base.chapter_template_loop[2200103] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200111] = {
@@ -793346,6 +794608,7 @@ _G.pg.base.chapter_template_loop[2200111] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200112] = {
@@ -793862,6 +795125,7 @@ _G.pg.base.chapter_template_loop[2200112] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200113] = {
@@ -794375,6 +795639,7 @@ _G.pg.base.chapter_template_loop[2200113] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200121] = {
@@ -794896,6 +796161,7 @@ _G.pg.base.chapter_template_loop[2200121] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200122] = {
@@ -795466,6 +796732,7 @@ _G.pg.base.chapter_template_loop[2200122] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200123] = {
@@ -796092,6 +797359,7 @@ _G.pg.base.chapter_template_loop[2200123] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200131] = {
@@ -796610,6 +797878,7 @@ _G.pg.base.chapter_template_loop[2200131] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200132] = {
@@ -797190,6 +798459,7 @@ _G.pg.base.chapter_template_loop[2200132] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200133] = {
@@ -797770,6 +799040,7 @@ _G.pg.base.chapter_template_loop[2200133] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200134] = {
@@ -798358,6 +799629,7 @@ _G.pg.base.chapter_template_loop[2200134] = {
 	land_based = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200141] = {
@@ -798987,6 +800259,7 @@ _G.pg.base.chapter_template_loop[2200141] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200142] = {
@@ -799616,6 +800889,7 @@ _G.pg.base.chapter_template_loop[2200142] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200143] = {
@@ -800316,6 +801590,7 @@ _G.pg.base.chapter_template_loop[2200143] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200144] = {
@@ -801010,6 +802285,7 @@ _G.pg.base.chapter_template_loop[2200144] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200145] = {
@@ -801784,6 +803060,7 @@ _G.pg.base.chapter_template_loop[2200145] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[2200146] = {
@@ -802582,6 +803859,7 @@ _G.pg.base.chapter_template_loop[2200146] = {
 	},
 	wall_prefab = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[9920001] = {
@@ -803041,6 +804319,7 @@ _G.pg.base.chapter_template_loop[9920001] = {
 	npc_data = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[9920002] = {
@@ -803640,6 +804919,7 @@ _G.pg.base.chapter_template_loop[9920002] = {
 	npc_data = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[9920003] = {
@@ -804206,6 +805486,7 @@ _G.pg.base.chapter_template_loop[9920003] = {
 	npc_data = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[9920004] = {
@@ -804890,6 +806171,7 @@ _G.pg.base.chapter_template_loop[9920004] = {
 	npc_data = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[9920005] = {
@@ -805369,6 +806651,7 @@ _G.pg.base.chapter_template_loop[9920005] = {
 	npc_data = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[9920006] = {
@@ -805856,6 +807139,7 @@ _G.pg.base.chapter_template_loop[9920006] = {
 	npc_data = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[9920007] = {
@@ -806398,6 +807682,7 @@ _G.pg.base.chapter_template_loop[9920007] = {
 	npc_data = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[9920008] = {
@@ -807096,6 +808381,7 @@ _G.pg.base.chapter_template_loop[9920008] = {
 	npc_data = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[9920011] = {
@@ -807596,6 +808882,7 @@ _G.pg.base.chapter_template_loop[9920011] = {
 	npc_data = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[9920012] = {
@@ -808238,6 +809525,7 @@ _G.pg.base.chapter_template_loop[9920012] = {
 	npc_data = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[9920013] = {
@@ -808845,6 +810133,7 @@ _G.pg.base.chapter_template_loop[9920013] = {
 	npc_data = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[9920014] = {
@@ -809570,6 +810859,7 @@ _G.pg.base.chapter_template_loop[9920014] = {
 	npc_data = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[9920015] = {
@@ -810090,6 +811380,7 @@ _G.pg.base.chapter_template_loop[9920015] = {
 	npc_data = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[9920016] = {
@@ -810618,6 +811909,7 @@ _G.pg.base.chapter_template_loop[9920016] = {
 	npc_data = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[9920017] = {
@@ -811201,6 +812493,7 @@ _G.pg.base.chapter_template_loop[9920017] = {
 	npc_data = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 
 _G.pg.base.chapter_template_loop[9920018] = {
@@ -811940,5 +813233,6 @@ _G.pg.base.chapter_template_loop[9920018] = {
 	npc_data = {},
 	chapter_strategy = {},
 	alarm_cell = {},
+	misc_arg = {},
 }
 

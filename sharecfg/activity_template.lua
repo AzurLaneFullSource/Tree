@@ -43849,7 +43849,7 @@ pg.activity_template = {
 		}
 	},
 	[50293] = {
-		mark = 251218,
+		mark = 20251218,
 		title_res_tag = "",
 		page_info = "",
 		type = 13,
@@ -44102,7 +44102,7 @@ pg.activity_template = {
 		type = 63,
 		login_pop = 0,
 		config_id = 7,
-		is_show = 2,
+		is_show = 3,
 		config_client = "",
 		id = 50298,
 		page_core = "WinterFestival2025CoreActivityUI",
@@ -45680,52 +45680,6 @@ pg.activity_template = {
 					2025,
 					9,
 					3
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		},
-		page_info = {
-			class_name = "SurveyPage",
-			ui_name = "SurveyPage"
-		}
-	},
-	[7110] = {
-		mark = 20251225,
-		title_res_tag = "survey",
-		type = 101,
-		login_pop = 0,
-		config_id = 1009,
-		is_show = 35,
-		config_client = "",
-		id = 7110,
-		page_core = "",
-		config_data = {
-			1,
-			30
-		},
-		time = {
-			"timer",
-			{
-				{
-					2025,
-					12,
-					25
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					12,
-					31
 				},
 				{
 					23,
@@ -73674,8 +73628,7 @@ pg.activity_template = {
 			7106,
 			7107,
 			7108,
-			7109,
-			7110
+			7109
 		},
 		[119] = {
 			7104
@@ -74822,7 +74775,6 @@ pg.activity_template = {
 		7107,
 		7108,
 		7109,
-		7110,
 		7301,
 		7501,
 		7502,

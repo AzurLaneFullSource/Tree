@@ -300,7 +300,7 @@ function var0_0.HandleShipMissDamage(arg0_12, arg1_12, arg2_12)
 	if var3_12 then
 		local var4_12 = arg1_12:GetTemplate().type
 
-		if table.contains(TeamType.SubShipType, var4_12) then
+		if table.contains(ShipType.SubShipType, var4_12) then
 			local var5_12 = var2_0.CalculateDamageFromSubmarinToMainShip(arg1_12, var3_12)
 
 			var3_12:TriggerBuff(var3_0.BuffEffectType.ON_BE_HIT, {})

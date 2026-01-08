@@ -97,7 +97,8 @@ function var7_0.InitCharacterFactory(arg0_8)
 		[var3_0.UnitType.BOSS_UNIT] = var0_0.Battle.BattleBossCharacterFactory.GetInstance(),
 		[var3_0.UnitType.AIRCRAFT_UNIT] = var0_0.Battle.BattleAircraftCharacterFactory.GetInstance(),
 		[var3_0.UnitType.AIRFIGHTER_UNIT] = var0_0.Battle.BattleAirFighterCharacterFactory.GetInstance(),
-		[var3_0.UnitType.SUB_UNIT] = var0_0.Battle.BattleSubCharacterFactory.GetInstance()
+		[var3_0.UnitType.SUB_UNIT] = var0_0.Battle.BattleSubCharacterFactory.GetInstance(),
+		[var3_0.UnitType.SUPPORT_UNIT] = var0_0.Battle.BattleSupportCharacterFactory.GetInstance()
 	}
 end
 

@@ -391,7 +391,6 @@ var0_0.TAG_BLOCK_BACKYARD = {
 var0_0.STATE_CHANGE_OK = -1
 var0_0.STATE_CHANGE_FAIL = 0
 var0_0.STATE_CHANGE_CHECK = 1
-var0_0.STATE_CHANGE_TIP = 2
 
 local var1_0 = {
 	inFleet = {
@@ -537,8 +536,6 @@ function var0_0.ShipStatusCheck(arg0_3, arg1_3, arg2_3, arg3_3)
 		else
 			return false
 		end
-	elseif var0_3 == var0_0.STATE_CHANGE_TIP then
-		return var0_0.ChangeStatusTipBox(var1_3, arg1_3)
 	elseif var0_3 == var0_0.STATE_CHANGE_OK then
 		return true
 	else
@@ -560,12 +557,6 @@ function var0_0.ShipStatusConflict(arg0_4, arg1_4, arg2_4)
 	for iter2_4, iter3_4 in ipairs(var0_0.flagList) do
 		if var0_4[iter3_4] == var0_0.STATE_CHANGE_CHECK and arg1_4:getFlag(iter3_4, arg2_4[iter3_4]) then
 			return var0_0.STATE_CHANGE_CHECK, iter3_4
-		end
-	end
-
-	for iter4_4, iter5_4 in ipairs(var0_0.flagList) do
-		if var0_4[iter5_4] == var0_0.STATE_CHANGE_TIP and arg1_4:getFlag(iter5_4, arg2_4[iter5_4]) then
-			return var0_0.STATE_CHANGE_TIP, iter5_4
 		end
 	end
 
@@ -604,24 +595,36 @@ function var0_0.ChangeStatusCheckBox(arg0_5, arg1_5, arg2_5)
 		})
 
 		return false, nil
+	elseif arg0_5 == "inSupport" then
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			content = i18n("ship_formationMediator_request_replace_support"),
+			onYes = function()
+				pg.m02:sendNotification(GAME.REMOVE_ELITE_TARGET_SHIP, {
+					shipId = arg1_5.id,
+					callback = arg2_5
+				})
+			end
+		})
+
+		return false, nil
 	elseif arg0_5 == "inPvP" then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("shipchange_alert_inpvp"),
 			onYes = function()
-				local var0_8 = getProxy(FleetProxy):getFleetById(FleetProxy.PVP_FLEET_ID)
+				local var0_9 = getProxy(FleetProxy):getFleetById(FleetProxy.PVP_FLEET_ID)
 
-				if var0_8:canRemove(arg1_5) then
-					var0_8:removeShip(arg1_5)
+				if var0_9:canRemove(arg1_5) then
+					var0_9:removeShip(arg1_5)
 					pg.m02:sendNotification(GAME.UPDATE_FLEET, {
 						callback = arg2_5,
-						fleet = var0_8
+						fleet = var0_9
 					})
 				else
-					local var1_8 = arg1_5:getTeamType()
+					local var1_9 = arg1_5:getTeamType()
 
-					if var1_8 == TeamType.Vanguard then
+					if var1_9 == TeamType.Vanguard then
 						pg.TipsMgr.GetInstance():ShowTips(i18n("ship_vo_vanguardFleet_must_hasShip"))
-					elseif var1_8 == TeamType.Main then
+					elseif var1_9 == TeamType.Main then
 						pg.TipsMgr.GetInstance():ShowTips(i18n("ship_vo_mainFleet_must_hasShip"))
 					end
 				end
@@ -661,11 +664,11 @@ function var0_0.ChangeStatusCheckBox(arg0_5, arg1_5, arg2_5)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("tactics_lesson_cancel"),
 			onYes = function()
-				local var0_11 = getProxy(NavalAcademyProxy):getStudentIdByShipId(arg1_5.id)
+				local var0_12 = getProxy(NavalAcademyProxy):getStudentIdByShipId(arg1_5.id)
 
 				pg.m02:sendNotification(GAME.CANCEL_LEARN_TACTICS, {
 					callback = arg2_5,
-					shipId = var0_11,
+					shipId = var0_12,
 					type = Student.CANCEL_TYPE_MANUAL
 				})
 			end
@@ -676,38 +679,38 @@ function var0_0.ChangeStatusCheckBox(arg0_5, arg1_5, arg2_5)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("word_shipState_guild_boss"),
 			onYes = function()
-				local var0_12 = getProxy(GuildProxy):getRawData()
+				local var0_13 = getProxy(GuildProxy):getRawData()
 
-				if not var0_12 then
+				if not var0_13 then
 					return
 				end
 
-				local var1_12 = var0_12:GetActiveEvent()
+				local var1_13 = var0_13:GetActiveEvent()
 
-				if not var1_12 then
+				if not var1_13 then
 					return
 				end
 
-				local var2_12 = var1_12:GetBossMission()
+				local var2_13 = var1_13:GetBossMission()
 
-				if not var2_12 or not var2_12:IsActive() then
+				if not var2_13 or not var2_13:IsActive() then
 					return
 				end
 
-				local var3_12 = getProxy(PlayerProxy):getRawData().id
-				local var4_12 = var2_12:GetFleetUserId(var3_12, arg1_5.id)
+				local var3_13 = getProxy(PlayerProxy):getRawData().id
+				local var4_13 = var2_13:GetFleetUserId(var3_13, arg1_5.id)
 
-				if not var4_12 then
+				if not var4_13 then
 					return
 				end
 
-				local var5_12 = Clone(var4_12)
+				local var5_13 = Clone(var4_13)
 
-				var5_12:RemoveUserShip(var3_12, arg1_5.id)
+				var5_13:RemoveUserShip(var3_13, arg1_5.id)
 				pg.m02:sendNotification(GAME.GUILD_UPDATE_BOSS_FORMATION, {
 					force = true,
 					editFleet = {
-						[var5_12.id] = var5_12
+						[var5_13.id] = var5_13
 					},
 					callback = arg2_5
 				})
@@ -733,17 +736,6 @@ function var0_0.ChangeStatusCheckBox(arg0_5, arg1_5, arg2_5)
 				return false, nil
 			end
 		end
-	end
-
-	return true
-end
-
-function var0_0.ChangeStatusTipBox(arg0_13, arg1_13)
-	if arg0_13 == "inElite" then
-		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			hideNo = true,
-			content = i18n("ship_vo_moveout_hardFormation")
-		})
 	end
 
 	return true

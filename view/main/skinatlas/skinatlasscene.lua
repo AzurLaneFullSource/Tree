@@ -184,7 +184,7 @@ function var0_0.ToVShip(arg0_24, arg1_24)
 		end
 
 		function arg0_24.vship.getTeamType()
-			return TeamType.GetTeamFromShipType(arg0_24.vship.config.type)
+			return ShipType.GetTeamFromShipType(arg0_24.vship.config.type)
 		end
 
 		function arg0_24.vship.getRarity()

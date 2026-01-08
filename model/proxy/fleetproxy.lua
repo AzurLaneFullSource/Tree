@@ -513,11 +513,10 @@ function var0_0.recommendActivityFleet(arg0_33, arg1_33, arg2_33)
 	local var1_33 = getProxy(BayProxy)
 
 	local function var2_33(arg0_34, arg1_34)
-		local var0_34 = TeamType.GetShipTypeListFromTeam(arg0_34)
-		local var1_34 = var1_33:getActivityRecommendShips(var0_34, var0_33.ships, arg1_34, arg1_33)
+		local var0_34 = var1_33:getActivityRecommendShips(arg0_34, var0_33.ships, arg1_34, arg1_33)
 
-		for iter0_34, iter1_34 in ipairs(var1_34) do
-			var0_33:insertShip(iter1_34, nil, arg0_34)
+		for iter0_34, iter1_34 in ipairs(var0_34) do
+			var0_33:insertShip(iter1_34, nil, teamType)
 		end
 	end
 
@@ -526,17 +525,17 @@ function var0_0.recommendActivityFleet(arg0_33, arg1_33, arg2_33)
 		local var1_35 = TeamType.MainMax - #arg0_35.mainShips
 
 		if var0_35 > 0 then
-			var2_33(TeamType.Vanguard, var0_35)
+			var2_33(ShipType.VanguardShipType, var0_35)
 		end
 
 		if var1_35 > 0 then
-			var2_33(TeamType.Main, var1_35)
+			var2_33(ShipType.MainShipType, var1_35)
 		end
 	end
 
 	local function var4_33(arg0_36)
 		if not arg0_36:isFull() then
-			var2_33(TeamType.Submarine, TeamType.SubmarineMax - #arg0_36.subShips)
+			var2_33(ShipType.SubShipType, TeamType.SubmarineMax - #arg0_36.subShips)
 		end
 	end
 
