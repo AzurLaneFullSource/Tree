@@ -925,24 +925,29 @@ function var0_0.UpdateEliteInvestigation(arg0_69)
 	local var0_69 = 0
 
 	for iter0_69 = 1, 2 do
-		local var1_69 = arg0_69.eliteFleetList[iter0_69]
-		local var2_69 = {}
+		local var1_69 = 0
 
-		for iter1_69, iter2_69 in pairs(arg0_69.eliteCommanderList[iter0_69]) do
-			table.insert(var2_69, {
-				pos = iter1_69,
-				id = iter2_69
+		if iter0_69 <= arg0_69.chapter:GetNomralFleetMaxCount() then
+			local var2_69 = arg0_69.eliteFleetList[iter0_69]
+			local var3_69 = {}
+
+			for iter1_69, iter2_69 in pairs(arg0_69.eliteCommanderList[iter0_69]) do
+				table.insert(var3_69, {
+					pos = iter1_69,
+					id = iter2_69
+				})
+			end
+
+			local var4_69 = TypedFleet.New({
+				ship_list = var2_69,
+				commanders = var3_69,
+				fleetType = FleetType.Normal
 			})
+
+			var1_69 = math.floor(var4_69:getInvestSums())
 		end
 
-		local var3_69 = TypedFleet.New({
-			ship_list = var1_69,
-			commanders = var2_69,
-			fleetType = FleetType.Normal
-		})
-		local var4_69 = var3_69 and math.floor(var3_69:getInvestSums()) or 0
-
-		var0_69 = math.max(var0_69, var4_69)
+		var0_69 = math.max(var0_69, var1_69)
 	end
 
 	local var5_69 = arg0_69.chapter:getConfig("avoid_require")

@@ -67,38 +67,13 @@ pg.island_banner = {
 	{
 		id = 3,
 		pic = "temp4",
+		time = "stop",
 		type = 4,
 		param = {
 			"IslandSeasonPage",
 			{
 				{
 					target_act_id = 7110
-				}
-			}
-		},
-		time = {
-			{
-				{
-					2026,
-					1,
-					8
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					1,
-					22
-				},
-				{
-					23,
-					59,
-					59
 				}
 			}
 		}

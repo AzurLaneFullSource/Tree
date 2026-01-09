@@ -218,18 +218,34 @@ function var0_0.BundleType2CNLabel(arg0_5)
 	return var0_0.bundleLabel[arg0_5]
 end
 
-function var0_0.ContainInLimitBundle(arg0_6, arg1_6)
+function var0_0.GetShipTypesFromLimit(arg0_6)
 	if type(arg0_6) == "string" then
-		for iter0_6, iter1_6 in ipairs(var0_0.BundleList[arg0_6]) do
-			if iter1_6 == arg1_6 then
-				return true
-			end
-		end
+		return var0_0.BundleList[arg0_6]
 	elseif type(arg0_6) == "number" then
-		return arg0_6 == 0 or arg1_6 == arg0_6
-	end
+		if arg0_6 == 0 then
+			return "all"
+		else
+			return {
+				arg0_6
+			}
+		end
 
-	return false
+		return arg0_6 == 0 or shipType == arg0_6
+	else
+		assert(false)
+	end
+end
+
+function var0_0.ContainInLimitBundle(arg0_7, arg1_7)
+	local var0_7 = var0_0.GetShipTypesFromLimit(arg0_7)
+
+	if var0_7 == "all" then
+		return true
+	else
+		return underscore.any(var0_7, function(arg0_8)
+			return arg0_8 == arg1_7
+		end)
+	end
 end
 
 var0_0.CloakShipTypeList = {
@@ -238,8 +254,8 @@ var0_0.CloakShipTypeList = {
 	var0_0.DaoQuM
 }
 
-function var0_0.CloakShipType(arg0_7)
-	return table.contains(var0_0.CloakShipTypeList, arg0_7)
+function var0_0.CloakShipType(arg0_9)
+	return table.contains(var0_0.CloakShipTypeList, arg0_9)
 end
 
 var0_0.QuZhuShipType = {}
@@ -248,16 +264,16 @@ for iter0_0, iter1_0 in ipairs(var0_0.BundleList.quzhu) do
 	var0_0.QuZhuShipType[iter1_0] = true
 end
 
-function var0_0.IsTypeQuZhu(arg0_8)
-	return var0_0.QuZhuShipType[arg0_8]
+function var0_0.IsTypeQuZhu(arg0_10)
+	return var0_0.QuZhuShipType[arg0_10]
 end
 
-function var0_0.FilterOverQuZhuType(arg0_9)
-	local var0_9 = false
+function var0_0.FilterOverQuZhuType(arg0_11)
+	local var0_11 = false
 
-	return underscore.filter(arg0_9, function(arg0_10)
-		if not var0_9 or not var0_0.IsTypeQuZhu(arg0_10) then
-			var0_9 = var0_9 or var0_0.IsTypeQuZhu(arg0_10)
+	return underscore.filter(arg0_11, function(arg0_12)
+		if not var0_11 or not var0_0.IsTypeQuZhu(arg0_12) then
+			var0_11 = var0_11 or var0_0.IsTypeQuZhu(arg0_12)
 
 			return true
 		else
@@ -272,16 +288,16 @@ for iter2_0, iter3_0 in ipairs(var0_0.BundleList.fengfan) do
 	var0_0.FengFanType[iter3_0] = true
 end
 
-function var0_0.IsTypeFengFan(arg0_11)
-	return var0_0.FengFanType[arg0_11]
+function var0_0.IsTypeFengFan(arg0_13)
+	return var0_0.FengFanType[arg0_13]
 end
 
-function var0_0.FilterOverFengFanType(arg0_12)
-	local var0_12 = false
+function var0_0.FilterOverFengFanType(arg0_14)
+	local var0_14 = false
 
-	return underscore.filter(arg0_12, function(arg0_13)
-		if not var0_12 or not var0_0.IsTypeFengFan(arg0_13) then
-			var0_12 = var0_12 or var0_0.IsTypeFengFan(arg0_13)
+	return underscore.filter(arg0_14, function(arg0_15)
+		if not var0_14 or not var0_0.IsTypeFengFan(arg0_15) then
+			var0_14 = var0_14 or var0_0.IsTypeFengFan(arg0_15)
 
 			return true
 		else
@@ -290,25 +306,25 @@ function var0_0.FilterOverFengFanType(arg0_12)
 	end)
 end
 
-function var0_0.MergeFengFanType(arg0_14, arg1_14, arg2_14)
-	local var0_14 = var0_0.BundleList.fengfan[1]
+function var0_0.MergeFengFanType(arg0_16, arg1_16, arg2_16)
+	local var0_16 = var0_0.BundleList.fengfan[1]
 
-	if underscore.all(var0_0.BundleList.fengfan, function(arg0_15)
-		return arg1_14[var0_14] == arg1_14[arg0_15] and arg2_14[var0_14] == arg2_14[arg0_15]
+	if underscore.all(var0_0.BundleList.fengfan, function(arg0_17)
+		return arg1_16[var0_16] == arg1_16[arg0_17] and arg2_16[var0_16] == arg2_16[arg0_17]
 	end) then
-		local var1_14 = table.indexof(arg0_14, var0_14)
+		local var1_16 = table.indexof(arg0_16, var0_16)
 
-		arg0_14 = underscore.filter(arg0_14, function(arg0_16)
-			return not table.contains(var0_0.BundleList.fengfan, arg0_16)
+		arg0_16 = underscore.filter(arg0_16, function(arg0_18)
+			return not table.contains(var0_0.BundleList.fengfan, arg0_18)
 		end)
 
-		table.insert(arg0_14, var1_14, "fengfan")
+		table.insert(arg0_16, var1_16, "fengfan")
 
-		arg1_14.fengfan = arg1_14[var0_14]
-		arg2_14.fengfan = arg2_14[var0_14]
+		arg1_16.fengfan = arg1_16[var0_16]
+		arg2_16.fengfan = arg2_16[var0_16]
 	end
 
-	return arg0_14
+	return arg0_16
 end
 
 var0_0.VanguardShipType = {
@@ -341,22 +357,22 @@ var0_0.SubShipType = {
 
 local var1_0
 
-function var0_0.GetTeamFromShipType(arg0_17)
+function var0_0.GetTeamFromShipType(arg0_19)
 	if not var1_0 then
 		var1_0 = {}
 
-		for iter0_17, iter1_17 in pairs({
+		for iter0_19, iter1_19 in pairs({
 			[TeamType.Vanguard] = var0_0.VanguardShipType,
 			[TeamType.Main] = var0_0.MainShipType,
 			[TeamType.Submarine] = var0_0.SubShipType
 		}) do
-			for iter2_17, iter3_17 in ipairs(iter1_17) do
-				var1_0[iter3_17] = iter0_17
+			for iter2_19, iter3_19 in ipairs(iter1_19) do
+				var1_0[iter3_19] = iter0_19
 			end
 		end
 	end
 
-	return var1_0[arg0_17]
+	return var1_0[arg0_19]
 end
 
 return var0_0
