@@ -123,6 +123,7 @@ function var0_0.register(arg0_1)
 			end,
 			onQuit = function(arg0_10)
 				arg0_1:sendNotification(GAME.SELECT_ELIT_CHAPTER_COMMANDER, {
+					commanderId = 0,
 					chapterId = var1_6,
 					index = arg1_6,
 					pos = arg2_6,

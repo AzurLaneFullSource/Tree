@@ -10,7 +10,7 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var6_1 = getProxy(ChapterProxy)
 	local var7_1 = var6_1:getChapterById(var1_1)
 
-	if var4_1 then
+	if var4_1 and var4_1 ~= 0 then
 		local var8_1, var9_1 = Commander.canEquipToEliteChapter(var1_1, var2_1, var3_1, var4_1)
 
 		if not var8_1 then
