@@ -182117,7 +182117,7 @@ pg.base.skill_data_template = {
 	},
 	[901020] = {
 		desc_get = "",
-		name = "Slash Attack - Spread",
+		name = "Slash Attack - Area",
 		id = 901020,
 		type = 2,
 		max_level = 1,
