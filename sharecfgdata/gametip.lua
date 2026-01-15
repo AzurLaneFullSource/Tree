@@ -10184,7 +10184,7 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 }
 
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Get Lexington II guaranteed with every 200 event builds (can be done up to 4 times)!",
+	tip = "Get Guam guaranteed with every 200 event builds (can be done up to 4 times)!",
 }
 
 _G.pg.base.gametip.buildship_heavy_tip = {
@@ -34099,11 +34099,11 @@ _G.pg.base.gametip.island_card_no_label_tip = {
 }
 
 _G.pg.base.gametip.gift_giving_prefer = {
-	tip = "It seems she really likes your gift.",
+	tip = " really likes your gift.",
 }
 
 _G.pg.base.gametip.gift_giving_dislike = {
-	tip = "It seems she is confused by your gift.",
+	tip = " is confused by your gift.",
 }
 
 _G.pg.base.gametip.dorm3d_publicroom_unlock = {
@@ -34906,6 +34906,26 @@ _G.pg.base.gametip.island_survey_ui_award = {
 }
 
 _G.pg.base.gametip.island_survey_ui_button = {
+	tip = "",
+}
+
+_G.pg.base.gametip.ANTTFFCoreActivity_subtitle_1 = {
+	tip = "A Note Through the Firmament - Finale",
+}
+
+_G.pg.base.gametip.ANTTFFCoreActivity_title = {
+	tip = "Finale",
+}
+
+_G.pg.base.gametip.ANTTFFCoreActivity_title2 = {
+	tip = "",
+}
+
+_G.pg.base.gametip.ANTTFFCoreActivityPtpage_title = {
+	tip = "Finale",
+}
+
+_G.pg.base.gametip.ANTTFFCoreActivityPtpage_title2 = {
 	tip = "",
 }
 

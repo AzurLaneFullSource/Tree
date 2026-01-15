@@ -188,6 +188,13 @@ function var0_0.GetBannerDisplays(arg0_22)
 	return underscore(pg.island_banner.all):chain():map(function(arg0_23)
 		return pg.island_banner[arg0_23]
 	end):select(function(arg0_24)
+		local var0_24 = PLATFORM == PLATFORM_OPENHARMONY
+		local var1_24 = arg0_24.type == IslandConst.BANNER_TYPE_SURVEY
+
+		if var0_24 and var1_24 then
+			return false
+		end
+
 		return pg.TimeMgr.GetInstance():inTime(arg0_24.time)
 	end):value()
 end

@@ -161,6 +161,8 @@ function var0_0.loadOrbitUI(arg0_9, arg1_9, arg2_9, arg3_9, arg4_9, arg5_9, arg6
 
 			local var6_10 = var5_10:GetComponent("Spine.Unity.BoneFollowerGraphic")
 
+			var6_10.followSkeletonFlip = false
+
 			if arg6_9.orbit_rotate then
 				var6_10.followBoneRotation = true
 

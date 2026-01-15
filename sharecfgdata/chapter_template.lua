@@ -103,12 +103,6 @@ _G.pg.base.chapter_template[101] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		101000,
 	},
@@ -119,12 +113,6 @@ _G.pg.base.chapter_template[101] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -402,12 +390,6 @@ _G.pg.base.chapter_template[102] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		102000,
 	},
@@ -419,12 +401,6 @@ _G.pg.base.chapter_template[102] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -798,12 +774,6 @@ _G.pg.base.chapter_template[103] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		103000,
 	},
@@ -815,12 +785,6 @@ _G.pg.base.chapter_template[103] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -1278,12 +1242,6 @@ _G.pg.base.chapter_template[104] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		104000,
 	},
@@ -1295,12 +1253,6 @@ _G.pg.base.chapter_template[104] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -1834,12 +1786,6 @@ _G.pg.base.chapter_template[201] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		201000,
 	},
@@ -1852,12 +1798,6 @@ _G.pg.base.chapter_template[201] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -2421,12 +2361,6 @@ _G.pg.base.chapter_template[202] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		202000,
 	},
@@ -2440,12 +2374,6 @@ _G.pg.base.chapter_template[202] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -3059,12 +2987,6 @@ _G.pg.base.chapter_template[203] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		203000,
 	},
@@ -3078,12 +3000,6 @@ _G.pg.base.chapter_template[203] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -3678,12 +3594,6 @@ _G.pg.base.chapter_template[204] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		204000,
 	},
@@ -3697,12 +3607,6 @@ _G.pg.base.chapter_template[204] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -4267,12 +4171,6 @@ _G.pg.base.chapter_template[301] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		301000,
 	},
@@ -4286,12 +4184,6 @@ _G.pg.base.chapter_template[301] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -4875,12 +4767,6 @@ _G.pg.base.chapter_template[302] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		302000,
 	},
@@ -4894,12 +4780,6 @@ _G.pg.base.chapter_template[302] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -5507,12 +5387,6 @@ _G.pg.base.chapter_template[303] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		303000,
 	},
@@ -5526,12 +5400,6 @@ _G.pg.base.chapter_template[303] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -6134,12 +6002,6 @@ _G.pg.base.chapter_template[304] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		304000,
 	},
@@ -6153,12 +6015,6 @@ _G.pg.base.chapter_template[304] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -6621,12 +6477,6 @@ _G.pg.base.chapter_template[401] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		401000,
 	},
@@ -6642,12 +6492,6 @@ _G.pg.base.chapter_template[401] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -7153,12 +6997,6 @@ _G.pg.base.chapter_template[402] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		402000,
 	},
@@ -7174,12 +7012,6 @@ _G.pg.base.chapter_template[402] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -7678,12 +7510,6 @@ _G.pg.base.chapter_template[403] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		403000,
 	},
@@ -7699,12 +7525,6 @@ _G.pg.base.chapter_template[403] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -8148,12 +7968,6 @@ _G.pg.base.chapter_template[404] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		404000,
 	},
@@ -8170,12 +7984,6 @@ _G.pg.base.chapter_template[404] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -8755,12 +8563,6 @@ _G.pg.base.chapter_template[501] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		501000,
 	},
@@ -8777,12 +8579,6 @@ _G.pg.base.chapter_template[501] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -9367,12 +9163,6 @@ _G.pg.base.chapter_template[502] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		502000,
 	},
@@ -9389,12 +9179,6 @@ _G.pg.base.chapter_template[502] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -9917,12 +9701,6 @@ _G.pg.base.chapter_template[503] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		503000,
 	},
@@ -9939,12 +9717,6 @@ _G.pg.base.chapter_template[503] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -10437,12 +10209,6 @@ _G.pg.base.chapter_template[504] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		504000,
 	},
@@ -10459,12 +10225,6 @@ _G.pg.base.chapter_template[504] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -10982,12 +10742,6 @@ _G.pg.base.chapter_template[601] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		601000,
 	},
@@ -11004,12 +10758,6 @@ _G.pg.base.chapter_template[601] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -11565,12 +11313,6 @@ _G.pg.base.chapter_template[602] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		602000,
 	},
@@ -11587,12 +11329,6 @@ _G.pg.base.chapter_template[602] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -12204,12 +11940,6 @@ _G.pg.base.chapter_template[603] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		603000,
 	},
@@ -12226,12 +11956,6 @@ _G.pg.base.chapter_template[603] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -12767,12 +12491,6 @@ _G.pg.base.chapter_template[604] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		604000,
 	},
@@ -12789,12 +12507,6 @@ _G.pg.base.chapter_template[604] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -13359,12 +13071,6 @@ _G.pg.base.chapter_template[701] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		701000,
 	},
@@ -13381,12 +13087,6 @@ _G.pg.base.chapter_template[701] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -13789,12 +13489,6 @@ _G.pg.base.chapter_template[702] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		702000,
 	},
@@ -13811,12 +13505,6 @@ _G.pg.base.chapter_template[702] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -14322,12 +14010,6 @@ _G.pg.base.chapter_template[703] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		703000,
 	},
@@ -14344,12 +14026,6 @@ _G.pg.base.chapter_template[703] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -14926,12 +14602,6 @@ _G.pg.base.chapter_template[704] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		704000,
 	},
@@ -14948,12 +14618,6 @@ _G.pg.base.chapter_template[704] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -15514,12 +15178,6 @@ _G.pg.base.chapter_template[801] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		801000,
 	},
@@ -15536,12 +15194,6 @@ _G.pg.base.chapter_template[801] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -15966,12 +15618,6 @@ _G.pg.base.chapter_template[802] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		802000,
 	},
@@ -15988,12 +15634,6 @@ _G.pg.base.chapter_template[802] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -16504,12 +16144,6 @@ _G.pg.base.chapter_template[803] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		803000,
 	},
@@ -16526,12 +16160,6 @@ _G.pg.base.chapter_template[803] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -17105,12 +16733,6 @@ _G.pg.base.chapter_template[804] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		804000,
 	},
@@ -17127,12 +16749,6 @@ _G.pg.base.chapter_template[804] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -17769,12 +17385,6 @@ _G.pg.base.chapter_template[901] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		901000,
 	},
@@ -17793,12 +17403,6 @@ _G.pg.base.chapter_template[901] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -18319,12 +17923,6 @@ _G.pg.base.chapter_template[902] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		902000,
 	},
@@ -18343,12 +17941,6 @@ _G.pg.base.chapter_template[902] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -18907,12 +18499,6 @@ _G.pg.base.chapter_template[903] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		903000,
 	},
@@ -18931,12 +18517,6 @@ _G.pg.base.chapter_template[903] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -19519,12 +19099,6 @@ _G.pg.base.chapter_template[904] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		904000,
 	},
@@ -19543,12 +19117,6 @@ _G.pg.base.chapter_template[904] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -20152,12 +19720,6 @@ _G.pg.base.chapter_template[1001] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1001000,
 	},
@@ -20176,12 +19738,6 @@ _G.pg.base.chapter_template[1001] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -20721,12 +20277,6 @@ _G.pg.base.chapter_template[1002] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1002000,
 	},
@@ -20745,12 +20295,6 @@ _G.pg.base.chapter_template[1002] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -21347,12 +20891,6 @@ _G.pg.base.chapter_template[1003] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1003000,
 	},
@@ -21371,12 +20909,6 @@ _G.pg.base.chapter_template[1003] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -21990,12 +21522,6 @@ _G.pg.base.chapter_template[1004] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1004000,
 	},
@@ -22014,12 +21540,6 @@ _G.pg.base.chapter_template[1004] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -22644,12 +22164,6 @@ _G.pg.base.chapter_template[1101] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		1101000,
 	},
@@ -22667,12 +22181,6 @@ _G.pg.base.chapter_template[1101] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -23262,12 +22770,6 @@ _G.pg.base.chapter_template[1102] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		1102000,
 	},
@@ -23286,12 +22788,6 @@ _G.pg.base.chapter_template[1102] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -23996,12 +23492,6 @@ _G.pg.base.chapter_template[1103] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		1103000,
 	},
@@ -24020,12 +23510,6 @@ _G.pg.base.chapter_template[1103] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -24700,12 +24184,6 @@ _G.pg.base.chapter_template[1104] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		1104000,
 	},
@@ -24724,12 +24202,6 @@ _G.pg.base.chapter_template[1104] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -25510,12 +24982,6 @@ _G.pg.base.chapter_template[1201] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		1201000,
 	},
@@ -25533,12 +24999,6 @@ _G.pg.base.chapter_template[1201] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -26106,12 +25566,6 @@ _G.pg.base.chapter_template[1202] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		1202000,
 	},
@@ -26130,12 +25584,6 @@ _G.pg.base.chapter_template[1202] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -26816,12 +26264,6 @@ _G.pg.base.chapter_template[1203] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		1203000,
 	},
@@ -26840,12 +26282,6 @@ _G.pg.base.chapter_template[1203] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -27562,12 +26998,6 @@ _G.pg.base.chapter_template[1204] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		1204000,
 	},
@@ -27586,12 +27016,6 @@ _G.pg.base.chapter_template[1204] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -28435,12 +27859,6 @@ _G.pg.base.chapter_template[1301] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		1301000,
 	},
@@ -28458,12 +27876,6 @@ _G.pg.base.chapter_template[1301] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -29039,12 +28451,6 @@ _G.pg.base.chapter_template[1302] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		1302000,
 	},
@@ -29063,12 +28469,6 @@ _G.pg.base.chapter_template[1302] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -29749,12 +29149,6 @@ _G.pg.base.chapter_template[1303] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		1303000,
 	},
@@ -29773,12 +29167,6 @@ _G.pg.base.chapter_template[1303] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -30503,12 +29891,6 @@ _G.pg.base.chapter_template[1304] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		1304000,
 	},
@@ -30528,12 +29910,6 @@ _G.pg.base.chapter_template[1304] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -31346,12 +30722,6 @@ _G.pg.base.chapter_template[1401] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		1401000,
 	},
@@ -31369,12 +30739,6 @@ _G.pg.base.chapter_template[1401] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -32017,12 +31381,6 @@ _G.pg.base.chapter_template[1402] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		1402000,
 	},
@@ -32041,12 +31399,6 @@ _G.pg.base.chapter_template[1402] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -32792,12 +32144,6 @@ _G.pg.base.chapter_template[1403] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		1403000,
 	},
@@ -32816,12 +32162,6 @@ _G.pg.base.chapter_template[1403] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -33629,12 +32969,6 @@ _G.pg.base.chapter_template[1404] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		1404000,
 	},
@@ -33645,12 +32979,6 @@ _G.pg.base.chapter_template[1404] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -35106,12 +34434,6 @@ _G.pg.base.chapter_template[1501] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		151013,
 	},
@@ -35129,12 +34451,6 @@ _G.pg.base.chapter_template[1501] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -35760,12 +35076,6 @@ _G.pg.base.chapter_template[1502] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		152013,
 	},
@@ -35784,12 +35094,6 @@ _G.pg.base.chapter_template[1502] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -36525,12 +35829,6 @@ _G.pg.base.chapter_template[1503] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {},
 	enemy_refresh = {
 		0,
@@ -36547,12 +35845,6 @@ _G.pg.base.chapter_template[1503] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -37342,12 +36634,6 @@ _G.pg.base.chapter_template[1504] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {},
 	enemy_refresh = {
 		0,
@@ -37365,12 +36651,6 @@ _G.pg.base.chapter_template[1504] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -38273,12 +37553,6 @@ _G.pg.base.chapter_template[1601] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		160021,
 	},
@@ -38296,12 +37570,6 @@ _G.pg.base.chapter_template[1601] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -39153,12 +38421,6 @@ _G.pg.base.chapter_template[1602] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		161021,
 	},
@@ -39177,12 +38439,6 @@ _G.pg.base.chapter_template[1602] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -40030,12 +39286,6 @@ _G.pg.base.chapter_template[1603] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		162021,
 	},
@@ -40046,12 +39296,6 @@ _G.pg.base.chapter_template[1603] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -40786,12 +40030,6 @@ _G.pg.base.chapter_template[1604] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		163021,
 	},
@@ -40802,12 +40040,6 @@ _G.pg.base.chapter_template[1604] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -41673,12 +40905,6 @@ _G.pg.base.chapter_template[10000] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10500,
 	},
@@ -41690,12 +40916,6 @@ _G.pg.base.chapter_template[10000] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -42098,12 +41318,6 @@ _G.pg.base.chapter_template[10001] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10501,
 	},
@@ -42117,12 +41331,6 @@ _G.pg.base.chapter_template[10001] = {
 		3,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -42576,12 +41784,6 @@ _G.pg.base.chapter_template[10002] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10502,
 	},
@@ -42595,12 +41797,6 @@ _G.pg.base.chapter_template[10002] = {
 		3,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -43089,12 +42285,6 @@ _G.pg.base.chapter_template[10101] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10101000,
 	},
@@ -43105,12 +42295,6 @@ _G.pg.base.chapter_template[10101] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -43428,12 +42612,6 @@ _G.pg.base.chapter_template[10102] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10102000,
 	},
@@ -43445,12 +42623,6 @@ _G.pg.base.chapter_template[10102] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -43862,12 +43034,6 @@ _G.pg.base.chapter_template[10103] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10103000,
 	},
@@ -43879,12 +43045,6 @@ _G.pg.base.chapter_template[10103] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -44382,12 +43542,6 @@ _G.pg.base.chapter_template[10104] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10104000,
 	},
@@ -44399,12 +43553,6 @@ _G.pg.base.chapter_template[10104] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -44986,12 +44134,6 @@ _G.pg.base.chapter_template[10201] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10201000,
 	},
@@ -45004,12 +44146,6 @@ _G.pg.base.chapter_template[10201] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -45621,12 +44757,6 @@ _G.pg.base.chapter_template[10202] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10202000,
 	},
@@ -45640,12 +44770,6 @@ _G.pg.base.chapter_template[10202] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -46309,12 +45433,6 @@ _G.pg.base.chapter_template[10203] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10203000,
 	},
@@ -46328,12 +45446,6 @@ _G.pg.base.chapter_template[10203] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -46974,12 +46086,6 @@ _G.pg.base.chapter_template[10204] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10204000,
 	},
@@ -46993,12 +46099,6 @@ _G.pg.base.chapter_template[10204] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -47611,12 +46711,6 @@ _G.pg.base.chapter_template[10301] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10301000,
 	},
@@ -47630,12 +46724,6 @@ _G.pg.base.chapter_template[10301] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -48267,12 +47355,6 @@ _G.pg.base.chapter_template[10302] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10302000,
 	},
@@ -48286,12 +47368,6 @@ _G.pg.base.chapter_template[10302] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -48947,12 +48023,6 @@ _G.pg.base.chapter_template[10303] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10303000,
 	},
@@ -48966,12 +48036,6 @@ _G.pg.base.chapter_template[10303] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -49622,12 +48686,6 @@ _G.pg.base.chapter_template[10304] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10304000,
 	},
@@ -49641,12 +48699,6 @@ _G.pg.base.chapter_template[10304] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -50157,12 +49209,6 @@ _G.pg.base.chapter_template[10401] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10401000,
 	},
@@ -50176,12 +49222,6 @@ _G.pg.base.chapter_template[10401] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -50735,12 +49775,6 @@ _G.pg.base.chapter_template[10402] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10402000,
 	},
@@ -50754,12 +49788,6 @@ _G.pg.base.chapter_template[10402] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -51306,12 +50334,6 @@ _G.pg.base.chapter_template[10403] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10403000,
 	},
@@ -51325,12 +50347,6 @@ _G.pg.base.chapter_template[10403] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -51822,12 +50838,6 @@ _G.pg.base.chapter_template[10404] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10404000,
 	},
@@ -51842,12 +50852,6 @@ _G.pg.base.chapter_template[10404] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -52475,12 +51479,6 @@ _G.pg.base.chapter_template[10501] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10501000,
 	},
@@ -52495,12 +51493,6 @@ _G.pg.base.chapter_template[10501] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -53133,12 +52125,6 @@ _G.pg.base.chapter_template[10502] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10502000,
 	},
@@ -53153,12 +52139,6 @@ _G.pg.base.chapter_template[10502] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -53729,12 +52709,6 @@ _G.pg.base.chapter_template[10503] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10503000,
 	},
@@ -53749,12 +52723,6 @@ _G.pg.base.chapter_template[10503] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -54295,12 +53263,6 @@ _G.pg.base.chapter_template[10504] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10504000,
 	},
@@ -54315,12 +53277,6 @@ _G.pg.base.chapter_template[10504] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -54886,12 +53842,6 @@ _G.pg.base.chapter_template[10601] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10601000,
 	},
@@ -54906,12 +53856,6 @@ _G.pg.base.chapter_template[10601] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -55516,12 +54460,6 @@ _G.pg.base.chapter_template[10602] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10602000,
 	},
@@ -55536,12 +54474,6 @@ _G.pg.base.chapter_template[10602] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -56202,12 +55134,6 @@ _G.pg.base.chapter_template[10603] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10603000,
 	},
@@ -56222,12 +55148,6 @@ _G.pg.base.chapter_template[10603] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -56812,12 +55732,6 @@ _G.pg.base.chapter_template[10604] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10604000,
 	},
@@ -56832,12 +55746,6 @@ _G.pg.base.chapter_template[10604] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -57451,12 +56359,6 @@ _G.pg.base.chapter_template[10701] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10701000,
 	},
@@ -57473,12 +56375,6 @@ _G.pg.base.chapter_template[10701] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -57930,12 +56826,6 @@ _G.pg.base.chapter_template[10702] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10702000,
 	},
@@ -57952,12 +56842,6 @@ _G.pg.base.chapter_template[10702] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -58512,12 +57396,6 @@ _G.pg.base.chapter_template[10703] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10703000,
 	},
@@ -58534,12 +57412,6 @@ _G.pg.base.chapter_template[10703] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -59165,12 +58037,6 @@ _G.pg.base.chapter_template[10704] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10704000,
 	},
@@ -59187,12 +58053,6 @@ _G.pg.base.chapter_template[10704] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -59802,12 +58662,6 @@ _G.pg.base.chapter_template[10801] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10801000,
 	},
@@ -59824,12 +58678,6 @@ _G.pg.base.chapter_template[10801] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -60307,12 +59155,6 @@ _G.pg.base.chapter_template[10802] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10802000,
 	},
@@ -60329,12 +59171,6 @@ _G.pg.base.chapter_template[10802] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -60898,12 +59734,6 @@ _G.pg.base.chapter_template[10803] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10803000,
 	},
@@ -60920,12 +59750,6 @@ _G.pg.base.chapter_template[10803] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -61552,12 +60376,6 @@ _G.pg.base.chapter_template[10804] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10804000,
 	},
@@ -61574,12 +60392,6 @@ _G.pg.base.chapter_template[10804] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -62269,12 +61081,6 @@ _G.pg.base.chapter_template[10901] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10901000,
 	},
@@ -62293,12 +61099,6 @@ _G.pg.base.chapter_template[10901] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -62871,12 +61671,6 @@ _G.pg.base.chapter_template[10902] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10902000,
 	},
@@ -62895,12 +61689,6 @@ _G.pg.base.chapter_template[10902] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -63511,12 +62299,6 @@ _G.pg.base.chapter_template[10903] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10903000,
 	},
@@ -63535,12 +62317,6 @@ _G.pg.base.chapter_template[10903] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -64175,12 +62951,6 @@ _G.pg.base.chapter_template[10904] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10904000,
 	},
@@ -64199,12 +62969,6 @@ _G.pg.base.chapter_template[10904] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -64860,12 +63624,6 @@ _G.pg.base.chapter_template[11001] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		11001000,
 	},
@@ -64884,12 +63642,6 @@ _G.pg.base.chapter_template[11001] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -65481,12 +64233,6 @@ _G.pg.base.chapter_template[11002] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		11002000,
 	},
@@ -65505,12 +64251,6 @@ _G.pg.base.chapter_template[11002] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -66159,12 +64899,6 @@ _G.pg.base.chapter_template[11003] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		11003000,
 	},
@@ -66183,12 +64917,6 @@ _G.pg.base.chapter_template[11003] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -66854,12 +65582,6 @@ _G.pg.base.chapter_template[11004] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		11004000,
 	},
@@ -66878,12 +65600,6 @@ _G.pg.base.chapter_template[11004] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -67560,12 +66276,6 @@ _G.pg.base.chapter_template[11101] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		11101000,
 	},
@@ -67583,12 +66293,6 @@ _G.pg.base.chapter_template[11101] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -68230,12 +66934,6 @@ _G.pg.base.chapter_template[11102] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		11102000,
 	},
@@ -68254,12 +66952,6 @@ _G.pg.base.chapter_template[11102] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -69016,12 +67708,6 @@ _G.pg.base.chapter_template[11103] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		11103000,
 	},
@@ -69040,12 +67726,6 @@ _G.pg.base.chapter_template[11103] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -69772,12 +68452,6 @@ _G.pg.base.chapter_template[11104] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		11104000,
 	},
@@ -69796,12 +68470,6 @@ _G.pg.base.chapter_template[11104] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -70634,12 +69302,6 @@ _G.pg.base.chapter_template[11201] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		11201000,
 	},
@@ -70657,12 +69319,6 @@ _G.pg.base.chapter_template[11201] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -71282,12 +69938,6 @@ _G.pg.base.chapter_template[11202] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		11202000,
 	},
@@ -71306,12 +69956,6 @@ _G.pg.base.chapter_template[11202] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -72044,12 +70688,6 @@ _G.pg.base.chapter_template[11203] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		11203000,
 	},
@@ -72068,12 +70706,6 @@ _G.pg.base.chapter_template[11203] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -72842,12 +71474,6 @@ _G.pg.base.chapter_template[11204] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		11204000,
 	},
@@ -72866,12 +71492,6 @@ _G.pg.base.chapter_template[11204] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -73767,12 +72387,6 @@ _G.pg.base.chapter_template[11301] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		11301000,
 	},
@@ -73790,12 +72404,6 @@ _G.pg.base.chapter_template[11301] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -74420,12 +73028,6 @@ _G.pg.base.chapter_template[11302] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		11302000,
 	},
@@ -74444,12 +73046,6 @@ _G.pg.base.chapter_template[11302] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -75179,12 +73775,6 @@ _G.pg.base.chapter_template[11303] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		11303000,
 	},
@@ -75203,12 +73793,6 @@ _G.pg.base.chapter_template[11303] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -75982,12 +74566,6 @@ _G.pg.base.chapter_template[11304] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		11304000,
 	},
@@ -76007,12 +74585,6 @@ _G.pg.base.chapter_template[11304] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -76874,12 +75446,6 @@ _G.pg.base.chapter_template[11401] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		11401000,
 	},
@@ -76897,12 +75463,6 @@ _G.pg.base.chapter_template[11401] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -77594,12 +76154,6 @@ _G.pg.base.chapter_template[11402] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		11402000,
 	},
@@ -77618,12 +76172,6 @@ _G.pg.base.chapter_template[11402] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -78418,12 +76966,6 @@ _G.pg.base.chapter_template[11403] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		11403000,
 	},
@@ -78442,12 +76984,6 @@ _G.pg.base.chapter_template[11403] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -79304,12 +77840,6 @@ _G.pg.base.chapter_template[11404] = {
 	ai_expedition_list = {
 		0,
 	},
-	patrolai_expedition_list = {
-		0,
-	},
-	submarine_expedition_list = {
-		0,
-	},
 	boss_expedition_id = {
 		11404000,
 	},
@@ -79329,12 +77859,6 @@ _G.pg.base.chapter_template[11404] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -80785,12 +79309,6 @@ _G.pg.base.chapter_template[20001] = {
 		5000023,
 		5000024,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		0,
 	},
@@ -80804,12 +79322,6 @@ _G.pg.base.chapter_template[20001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -81276,12 +79788,6 @@ _G.pg.base.chapter_template[20002] = {
 		5000033,
 		5000034,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		0,
 	},
@@ -81296,12 +79802,6 @@ _G.pg.base.chapter_template[20002] = {
 	ai_refresh = {
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -81819,12 +80319,6 @@ _G.pg.base.chapter_template[20003] = {
 		5000043,
 		5000044,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		0,
 	},
@@ -81840,12 +80334,6 @@ _G.pg.base.chapter_template[20003] = {
 		2,
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -82453,12 +80941,6 @@ _G.pg.base.chapter_template[20004] = {
 		5000023,
 		5000024,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		0,
 	},
@@ -82472,12 +80954,6 @@ _G.pg.base.chapter_template[20004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -82938,12 +81414,6 @@ _G.pg.base.chapter_template[20005] = {
 		5000033,
 		5000034,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		0,
 	},
@@ -82958,12 +81428,6 @@ _G.pg.base.chapter_template[20005] = {
 	ai_refresh = {
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -83468,12 +81932,6 @@ _G.pg.base.chapter_template[20006] = {
 		5000043,
 		5000044,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		0,
 	},
@@ -83489,12 +81947,6 @@ _G.pg.base.chapter_template[20006] = {
 		2,
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -84090,12 +82542,6 @@ _G.pg.base.chapter_template[20007] = {
 		5000023,
 		5000024,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		0,
 	},
@@ -84109,12 +82555,6 @@ _G.pg.base.chapter_template[20007] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -84574,12 +83014,6 @@ _G.pg.base.chapter_template[20008] = {
 		5000033,
 		5000034,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		0,
 	},
@@ -84594,12 +83028,6 @@ _G.pg.base.chapter_template[20008] = {
 	ai_refresh = {
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -85109,12 +83537,6 @@ _G.pg.base.chapter_template[20009] = {
 		5000043,
 		5000044,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		0,
 	},
@@ -85130,12 +83552,6 @@ _G.pg.base.chapter_template[20009] = {
 		2,
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -85680,12 +84096,6 @@ _G.pg.base.chapter_template[20010] = {
 		5000023,
 		5000024,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		0,
 	},
@@ -85699,12 +84109,6 @@ _G.pg.base.chapter_template[20010] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -86192,12 +84596,6 @@ _G.pg.base.chapter_template[20011] = {
 		5000033,
 		5000034,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		0,
 	},
@@ -86212,12 +84610,6 @@ _G.pg.base.chapter_template[20011] = {
 	ai_refresh = {
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -86748,12 +85140,6 @@ _G.pg.base.chapter_template[20012] = {
 		5000043,
 		5000044,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		0,
 	},
@@ -86769,12 +85155,6 @@ _G.pg.base.chapter_template[20012] = {
 		2,
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -87348,12 +85728,6 @@ _G.pg.base.chapter_template[20013] = {
 		5000023,
 		5000024,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		0,
 	},
@@ -87367,12 +85741,6 @@ _G.pg.base.chapter_template[20013] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -87860,12 +86228,6 @@ _G.pg.base.chapter_template[20014] = {
 		5000033,
 		5000034,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		0,
 	},
@@ -87880,12 +86242,6 @@ _G.pg.base.chapter_template[20014] = {
 	ai_refresh = {
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -88416,12 +86772,6 @@ _G.pg.base.chapter_template[20015] = {
 		5000043,
 		5000044,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		0,
 	},
@@ -88437,12 +86787,6 @@ _G.pg.base.chapter_template[20015] = {
 		2,
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -89024,12 +87368,6 @@ _G.pg.base.chapter_template[1040001] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030016,
 	},
@@ -89048,12 +87386,6 @@ _G.pg.base.chapter_template[1040001] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -89563,12 +87895,6 @@ _G.pg.base.chapter_template[1040002] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030032,
 	},
@@ -89587,12 +87913,6 @@ _G.pg.base.chapter_template[1040002] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -90157,12 +88477,6 @@ _G.pg.base.chapter_template[1040003] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030048,
 	},
@@ -90181,12 +88495,6 @@ _G.pg.base.chapter_template[1040003] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -90820,12 +89128,6 @@ _G.pg.base.chapter_template[1040004] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030064,
 	},
@@ -90844,12 +89146,6 @@ _G.pg.base.chapter_template[1040004] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -91433,12 +89729,6 @@ _G.pg.base.chapter_template[1040005] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030080,
 	},
@@ -91457,12 +89747,6 @@ _G.pg.base.chapter_template[1040005] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -92145,12 +90429,6 @@ _G.pg.base.chapter_template[1040006] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030096,
 	},
@@ -92170,12 +90448,6 @@ _G.pg.base.chapter_template[1040006] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -92895,12 +91167,6 @@ _G.pg.base.chapter_template[1040011] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030215,
 	},
@@ -92919,12 +91185,6 @@ _G.pg.base.chapter_template[1040011] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -93475,12 +91735,6 @@ _G.pg.base.chapter_template[1040012] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030231,
 	},
@@ -93499,12 +91753,6 @@ _G.pg.base.chapter_template[1040012] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -94110,12 +92358,6 @@ _G.pg.base.chapter_template[1040013] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030247,
 	},
@@ -94135,12 +92377,6 @@ _G.pg.base.chapter_template[1040013] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -94815,12 +93051,6 @@ _G.pg.base.chapter_template[1040014] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030263,
 	},
@@ -94840,12 +93070,6 @@ _G.pg.base.chapter_template[1040014] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -95470,12 +93694,6 @@ _G.pg.base.chapter_template[1040015] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030279,
 	},
@@ -95495,12 +93713,6 @@ _G.pg.base.chapter_template[1040015] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -96224,12 +94436,6 @@ _G.pg.base.chapter_template[1040016] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030295,
 	},
@@ -96249,12 +94455,6 @@ _G.pg.base.chapter_template[1040016] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -96931,12 +95131,6 @@ _G.pg.base.chapter_template[1080001] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1081500,
 	},
@@ -96952,12 +95146,6 @@ _G.pg.base.chapter_template[1080001] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -97458,12 +95646,6 @@ _G.pg.base.chapter_template[1080002] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1082500,
 	},
@@ -97479,12 +95661,6 @@ _G.pg.base.chapter_template[1080002] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -98090,12 +96266,6 @@ _G.pg.base.chapter_template[1080003] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1083500,
 	},
@@ -98111,12 +96281,6 @@ _G.pg.base.chapter_template[1080003] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -98715,12 +96879,6 @@ _G.pg.base.chapter_template[1080004] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1084500,
 	},
@@ -98737,12 +96895,6 @@ _G.pg.base.chapter_template[1080004] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -99494,12 +97646,6 @@ _G.pg.base.chapter_template[1080005] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1085500,
 	},
@@ -99514,12 +97660,6 @@ _G.pg.base.chapter_template[1080005] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -100175,12 +98315,6 @@ _G.pg.base.chapter_template[1200001] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1210013,
 	},
@@ -100195,12 +98329,6 @@ _G.pg.base.chapter_template[1200001] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -100797,12 +98925,6 @@ _G.pg.base.chapter_template[1200002] = {
 	ai_expedition_list = {
 		1210110,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1210113,
 	},
@@ -100817,12 +98939,6 @@ _G.pg.base.chapter_template[1200002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -101545,12 +99661,6 @@ _G.pg.base.chapter_template[1200003] = {
 	ai_expedition_list = {
 		1210210,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1210213,
 	},
@@ -101565,12 +99675,6 @@ _G.pg.base.chapter_template[1200003] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -102309,12 +100413,6 @@ _G.pg.base.chapter_template[1200004] = {
 	ai_expedition_list = {
 		1210310,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1210313,
 	},
@@ -102330,12 +100428,6 @@ _G.pg.base.chapter_template[1200004] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -103096,12 +101188,6 @@ _G.pg.base.chapter_template[1210001] = {
 	ai_expedition_list = {
 		3000221,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000013,
 	},
@@ -103122,12 +101208,6 @@ _G.pg.base.chapter_template[1210001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -103708,12 +101788,6 @@ _G.pg.base.chapter_template[1210002] = {
 		3000231,
 		3000232,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000113,
 	},
@@ -103734,12 +101808,6 @@ _G.pg.base.chapter_template[1210002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -104285,12 +102353,6 @@ _G.pg.base.chapter_template[1210003] = {
 		3000242,
 		3000243,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000213,
 	},
@@ -104311,12 +102373,6 @@ _G.pg.base.chapter_template[1210003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -104957,12 +103013,6 @@ _G.pg.base.chapter_template[1210004] = {
 	ai_expedition_list = {
 		3000521,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000313,
 	},
@@ -104983,12 +103033,6 @@ _G.pg.base.chapter_template[1210004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -105630,12 +103674,6 @@ _G.pg.base.chapter_template[1210005] = {
 		3000531,
 		3000532,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000413,
 	},
@@ -105656,12 +103694,6 @@ _G.pg.base.chapter_template[1210005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -106354,12 +104386,6 @@ _G.pg.base.chapter_template[1210006] = {
 		3000542,
 		3000543,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000513,
 	},
@@ -106380,12 +104406,6 @@ _G.pg.base.chapter_template[1210006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -107176,12 +105196,6 @@ _G.pg.base.chapter_template[1210011] = {
 		3000821,
 		3000822,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000613,
 	},
@@ -107202,12 +105216,6 @@ _G.pg.base.chapter_template[1210011] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -107831,12 +105839,6 @@ _G.pg.base.chapter_template[1210012] = {
 		3000832,
 		3000833,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000713,
 	},
@@ -107857,12 +105859,6 @@ _G.pg.base.chapter_template[1210012] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -108450,12 +106446,6 @@ _G.pg.base.chapter_template[1210013] = {
 		3000843,
 		3000844,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000813,
 	},
@@ -108476,12 +106466,6 @@ _G.pg.base.chapter_template[1210013] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -109164,12 +107148,6 @@ _G.pg.base.chapter_template[1210014] = {
 		3001121,
 		3001122,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000913,
 	},
@@ -109190,12 +107168,6 @@ _G.pg.base.chapter_template[1210014] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -109879,12 +107851,6 @@ _G.pg.base.chapter_template[1210015] = {
 		3001132,
 		3001133,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3001013,
 	},
@@ -109907,12 +107873,6 @@ _G.pg.base.chapter_template[1210015] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -110647,12 +108607,6 @@ _G.pg.base.chapter_template[1210016] = {
 		3001143,
 		3001144,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3001113,
 	},
@@ -110675,12 +108629,6 @@ _G.pg.base.chapter_template[1210016] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -111397,12 +109345,6 @@ _G.pg.base.chapter_template[1210021] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3001201,
 	},
@@ -111419,12 +109361,6 @@ _G.pg.base.chapter_template[1210021] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -111853,12 +109789,6 @@ _G.pg.base.chapter_template[1240001] = {
 	ai_expedition_list = {
 		4000221,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000013,
 	},
@@ -111878,12 +109808,6 @@ _G.pg.base.chapter_template[1240001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -112410,12 +110334,6 @@ _G.pg.base.chapter_template[1240003] = {
 		4000231,
 		4000232,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000113,
 	},
@@ -112435,12 +110353,6 @@ _G.pg.base.chapter_template[1240003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -113073,12 +110985,6 @@ _G.pg.base.chapter_template[1240004] = {
 		4000242,
 		4000243,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000213,
 	},
@@ -113098,12 +111004,6 @@ _G.pg.base.chapter_template[1240004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -113846,12 +111746,6 @@ _G.pg.base.chapter_template[1240005] = {
 		4000521,
 		4000522,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000313,
 	},
@@ -113871,12 +111765,6 @@ _G.pg.base.chapter_template[1240005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -114416,12 +112304,6 @@ _G.pg.base.chapter_template[1240007] = {
 		4000532,
 		4000533,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000413,
 	},
@@ -114441,12 +112323,6 @@ _G.pg.base.chapter_template[1240007] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -115090,12 +112966,6 @@ _G.pg.base.chapter_template[1240008] = {
 		4000543,
 		4000544,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000513,
 	},
@@ -115115,12 +112985,6 @@ _G.pg.base.chapter_template[1240008] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -115930,12 +113794,6 @@ _G.pg.base.chapter_template[1240011] = {
 	ai_expedition_list = {
 		4000821,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000613,
 	},
@@ -115955,12 +113813,6 @@ _G.pg.base.chapter_template[1240011] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -116528,12 +114380,6 @@ _G.pg.base.chapter_template[1240013] = {
 		4000831,
 		4000832,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000713,
 	},
@@ -116553,12 +114399,6 @@ _G.pg.base.chapter_template[1240013] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -117232,12 +115072,6 @@ _G.pg.base.chapter_template[1240014] = {
 		4000842,
 		4000843,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000813,
 	},
@@ -117257,12 +115091,6 @@ _G.pg.base.chapter_template[1240014] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -118046,12 +115874,6 @@ _G.pg.base.chapter_template[1240015] = {
 		4001121,
 		4001122,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000913,
 	},
@@ -118073,12 +115895,6 @@ _G.pg.base.chapter_template[1240015] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -118659,12 +116475,6 @@ _G.pg.base.chapter_template[1240017] = {
 		4001132,
 		4001133,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4001013,
 	},
@@ -118686,12 +116496,6 @@ _G.pg.base.chapter_template[1240017] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -119377,12 +117181,6 @@ _G.pg.base.chapter_template[1240018] = {
 		4001143,
 		4001144,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4001113,
 	},
@@ -119404,12 +117202,6 @@ _G.pg.base.chapter_template[1240018] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -120209,12 +118001,6 @@ _G.pg.base.chapter_template[1240019] = {
 		4001153,
 		4001154,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4001313,
 	},
@@ -120237,12 +118023,6 @@ _G.pg.base.chapter_template[1240019] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -120835,12 +118615,6 @@ _G.pg.base.chapter_template[1240021] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4001201,
 	},
@@ -120852,12 +118626,6 @@ _G.pg.base.chapter_template[1240021] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -121258,12 +119026,6 @@ _G.pg.base.chapter_template[1450001] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1480013,
 	},
@@ -121279,12 +119041,6 @@ _G.pg.base.chapter_template[1450001] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -121886,12 +119642,6 @@ _G.pg.base.chapter_template[1450002] = {
 	ai_expedition_list = {
 		1481301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1481013,
 	},
@@ -121908,12 +119658,6 @@ _G.pg.base.chapter_template[1450002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -122569,12 +120313,6 @@ _G.pg.base.chapter_template[1450003] = {
 		1482301,
 		1482302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1482013,
 	},
@@ -122591,12 +120329,6 @@ _G.pg.base.chapter_template[1450003] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -123253,12 +120985,6 @@ _G.pg.base.chapter_template[1450004] = {
 		1483302,
 		1483303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1483013,
 	},
@@ -123276,12 +121002,6 @@ _G.pg.base.chapter_template[1450004] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		22,
@@ -124049,12 +121769,6 @@ _G.pg.base.chapter_template[1450041] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1484013,
 	},
@@ -124068,12 +121782,6 @@ _G.pg.base.chapter_template[1450041] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -124643,12 +122351,6 @@ _G.pg.base.chapter_template[1450051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1485001,
 	},
@@ -124659,12 +122361,6 @@ _G.pg.base.chapter_template[1450051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -125106,12 +122802,6 @@ _G.pg.base.chapter_template[1450052] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1485002,
 	},
@@ -125122,12 +122812,6 @@ _G.pg.base.chapter_template[1450052] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -125612,12 +123296,6 @@ _G.pg.base.chapter_template[1540001] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1540013,
 	},
@@ -125633,12 +123311,6 @@ _G.pg.base.chapter_template[1540001] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -126249,12 +123921,6 @@ _G.pg.base.chapter_template[1540002] = {
 	ai_expedition_list = {
 		1541301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1541013,
 	},
@@ -126271,12 +123937,6 @@ _G.pg.base.chapter_template[1540002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -126942,12 +124602,6 @@ _G.pg.base.chapter_template[1540003] = {
 		1542301,
 		1542302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1542013,
 	},
@@ -126964,12 +124618,6 @@ _G.pg.base.chapter_template[1540003] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -127640,12 +125288,6 @@ _G.pg.base.chapter_template[1540004] = {
 		1543302,
 		1543303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1543013,
 	},
@@ -127663,12 +125305,6 @@ _G.pg.base.chapter_template[1540004] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -128438,12 +126074,6 @@ _G.pg.base.chapter_template[1540041] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1544013,
 	},
@@ -128457,12 +126087,6 @@ _G.pg.base.chapter_template[1540041] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -129066,12 +126690,6 @@ _G.pg.base.chapter_template[1540051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1545001,
 	},
@@ -129082,12 +126700,6 @@ _G.pg.base.chapter_template[1540051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -129565,12 +127177,6 @@ _G.pg.base.chapter_template[1590001] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1590013,
 	},
@@ -129586,12 +127192,6 @@ _G.pg.base.chapter_template[1590001] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -130195,12 +127795,6 @@ _G.pg.base.chapter_template[1590002] = {
 	ai_expedition_list = {
 		1591301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1591013,
 	},
@@ -130217,12 +127811,6 @@ _G.pg.base.chapter_template[1590002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -130877,12 +128465,6 @@ _G.pg.base.chapter_template[1590003] = {
 		1592301,
 		1592302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1592013,
 	},
@@ -130899,12 +128481,6 @@ _G.pg.base.chapter_template[1590003] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -131573,12 +129149,6 @@ _G.pg.base.chapter_template[1590004] = {
 		1593302,
 		1593303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1593013,
 	},
@@ -131596,12 +129166,6 @@ _G.pg.base.chapter_template[1590004] = {
 	ai_refresh = {
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -132379,12 +129943,6 @@ _G.pg.base.chapter_template[1590021] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1596001,
 	},
@@ -132395,12 +129953,6 @@ _G.pg.base.chapter_template[1590021] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -132823,12 +130375,6 @@ _G.pg.base.chapter_template[1590022] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1596002,
 	},
@@ -132839,12 +130385,6 @@ _G.pg.base.chapter_template[1590022] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -133193,12 +130733,6 @@ _G.pg.base.chapter_template[1590023] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1596003,
 	},
@@ -133209,12 +130743,6 @@ _G.pg.base.chapter_template[1590023] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -133577,12 +131105,6 @@ _G.pg.base.chapter_template[1590024] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1596004,
 	},
@@ -133593,12 +131115,6 @@ _G.pg.base.chapter_template[1590024] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -134021,12 +131537,6 @@ _G.pg.base.chapter_template[1590025] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1596005,
 	},
@@ -134037,12 +131547,6 @@ _G.pg.base.chapter_template[1590025] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -134557,12 +132061,6 @@ _G.pg.base.chapter_template[1590041] = {
 		1594302,
 		1594303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1594013,
 	},
@@ -134581,12 +132079,6 @@ _G.pg.base.chapter_template[1590041] = {
 	ai_refresh = {
 		2,
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -135214,12 +132706,6 @@ _G.pg.base.chapter_template[1590051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1595001,
 	},
@@ -135230,12 +132716,6 @@ _G.pg.base.chapter_template[1590051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -135715,12 +133195,6 @@ _G.pg.base.chapter_template[1670001] = {
 		1670302,
 		1670303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1670013,
 	},
@@ -135737,12 +133211,6 @@ _G.pg.base.chapter_template[1670001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -136404,12 +133872,6 @@ _G.pg.base.chapter_template[1670002] = {
 		1671302,
 		1671303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1671013,
 	},
@@ -136426,12 +133888,6 @@ _G.pg.base.chapter_template[1670002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -137149,12 +134605,6 @@ _G.pg.base.chapter_template[1670003] = {
 		1672302,
 		1672303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1672013,
 	},
@@ -137171,12 +134621,6 @@ _G.pg.base.chapter_template[1670003] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -137837,12 +135281,6 @@ _G.pg.base.chapter_template[1670004] = {
 	ai_expedition_list = {
 		1673301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1673013,
 	},
@@ -137860,12 +135298,6 @@ _G.pg.base.chapter_template[1670004] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -138685,12 +136117,6 @@ _G.pg.base.chapter_template[1670041] = {
 		1674301,
 		1674302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1674013,
 	},
@@ -138702,12 +136128,6 @@ _G.pg.base.chapter_template[1670041] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -139232,12 +136652,6 @@ _G.pg.base.chapter_template[1670051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1675001,
 	},
@@ -139248,12 +136662,6 @@ _G.pg.base.chapter_template[1670051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -139659,12 +137067,6 @@ _G.pg.base.chapter_template[1690001] = {
 	ai_expedition_list = {
 		1690301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1690013,
 	},
@@ -139681,12 +137083,6 @@ _G.pg.base.chapter_template[1690001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -140395,12 +137791,6 @@ _G.pg.base.chapter_template[1690002] = {
 		1691301,
 		1691302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1691013,
 	},
@@ -140417,12 +137807,6 @@ _G.pg.base.chapter_template[1690002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -141070,12 +138454,6 @@ _G.pg.base.chapter_template[1690003] = {
 		1692301,
 		1692302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1692013,
 	},
@@ -141092,12 +138470,6 @@ _G.pg.base.chapter_template[1690003] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -141807,12 +139179,6 @@ _G.pg.base.chapter_template[1690004] = {
 		1693302,
 		1693303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1693013,
 	},
@@ -141830,12 +139196,6 @@ _G.pg.base.chapter_template[1690004] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -142546,12 +139906,6 @@ _G.pg.base.chapter_template[1690005] = {
 		1694301,
 		1694302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1694013,
 	},
@@ -142570,12 +139924,6 @@ _G.pg.base.chapter_template[1690005] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -143343,12 +140691,6 @@ _G.pg.base.chapter_template[1690021] = {
 		1696301,
 		1696302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1696013,
 	},
@@ -143367,12 +140709,6 @@ _G.pg.base.chapter_template[1690021] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -144095,12 +141431,6 @@ _G.pg.base.chapter_template[1690022] = {
 		1697301,
 		1697302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1697013,
 	},
@@ -144119,12 +141449,6 @@ _G.pg.base.chapter_template[1690022] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -144786,12 +142110,6 @@ _G.pg.base.chapter_template[1690023] = {
 		1698301,
 		1698302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1698013,
 	},
@@ -144810,12 +142128,6 @@ _G.pg.base.chapter_template[1690023] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -145538,12 +142850,6 @@ _G.pg.base.chapter_template[1690024] = {
 		1699301,
 		1699302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1699013,
 	},
@@ -145562,12 +142868,6 @@ _G.pg.base.chapter_template[1690024] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -146290,12 +143590,6 @@ _G.pg.base.chapter_template[1690025] = {
 		1694301,
 		1694302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1694014,
 	},
@@ -146314,12 +143608,6 @@ _G.pg.base.chapter_template[1690025] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -146995,12 +144283,6 @@ _G.pg.base.chapter_template[1690031] = {
 		1693322,
 		1693323,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1693033,
 	},
@@ -147018,12 +144300,6 @@ _G.pg.base.chapter_template[1690031] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -147574,12 +144850,6 @@ _G.pg.base.chapter_template[1690041] = {
 		1695301,
 		1695302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1695013,
 	},
@@ -147591,12 +144861,6 @@ _G.pg.base.chapter_template[1690041] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -148243,12 +145507,6 @@ _G.pg.base.chapter_template[1690051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1695500,
 	},
@@ -148259,12 +145517,6 @@ _G.pg.base.chapter_template[1690051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -148671,12 +145923,6 @@ _G.pg.base.chapter_template[1700001] = {
 		1700302,
 		1700303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1700013,
 	},
@@ -148696,12 +145942,6 @@ _G.pg.base.chapter_template[1700001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -149357,12 +146597,6 @@ _G.pg.base.chapter_template[1700002] = {
 		1700305,
 		1700306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1700113,
 	},
@@ -149382,12 +146616,6 @@ _G.pg.base.chapter_template[1700002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -150042,12 +147270,6 @@ _G.pg.base.chapter_template[1700003] = {
 		1700308,
 		1700309,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1700213,
 	},
@@ -150067,12 +147289,6 @@ _G.pg.base.chapter_template[1700003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -150788,12 +148004,6 @@ _G.pg.base.chapter_template[1700004] = {
 		1701302,
 		1701303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1701013,
 	},
@@ -150814,12 +148024,6 @@ _G.pg.base.chapter_template[1700004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -151534,12 +148738,6 @@ _G.pg.base.chapter_template[1700005] = {
 		1701305,
 		1701306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1701113,
 	},
@@ -151560,12 +148758,6 @@ _G.pg.base.chapter_template[1700005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -152340,12 +149532,6 @@ _G.pg.base.chapter_template[1700006] = {
 		1701307,
 		1701308,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1701213,
 	},
@@ -152366,12 +149552,6 @@ _G.pg.base.chapter_template[1700006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -153222,12 +150402,6 @@ _G.pg.base.chapter_template[1700021] = {
 		1702302,
 		1702303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1702013,
 	},
@@ -153247,12 +150421,6 @@ _G.pg.base.chapter_template[1700021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -153949,12 +151117,6 @@ _G.pg.base.chapter_template[1700022] = {
 		1702305,
 		1702306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1702113,
 	},
@@ -153974,12 +151136,6 @@ _G.pg.base.chapter_template[1700022] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -154675,12 +151831,6 @@ _G.pg.base.chapter_template[1700023] = {
 		1702308,
 		1702309,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1702213,
 	},
@@ -154700,12 +151850,6 @@ _G.pg.base.chapter_template[1700023] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -155462,12 +152606,6 @@ _G.pg.base.chapter_template[1700024] = {
 		1703302,
 		1703303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1703013,
 	},
@@ -155488,12 +152626,6 @@ _G.pg.base.chapter_template[1700024] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -156253,12 +153385,6 @@ _G.pg.base.chapter_template[1700025] = {
 		1703305,
 		1703306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1703113,
 	},
@@ -156281,12 +153407,6 @@ _G.pg.base.chapter_template[1700025] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -157106,12 +154226,6 @@ _G.pg.base.chapter_template[1700026] = {
 		1703307,
 		1703308,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1703213,
 	},
@@ -157134,12 +154248,6 @@ _G.pg.base.chapter_template[1700026] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -157983,12 +155091,6 @@ _G.pg.base.chapter_template[1700041] = {
 		1704301,
 		1704302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1704013,
 	},
@@ -158011,12 +155113,6 @@ _G.pg.base.chapter_template[1700041] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -158784,12 +155880,6 @@ _G.pg.base.chapter_template[1700051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1705001,
 	},
@@ -158804,12 +155894,6 @@ _G.pg.base.chapter_template[1700051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -159281,12 +156365,6 @@ _G.pg.base.chapter_template[1710001] = {
 		1710301,
 		1710302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1710013,
 	},
@@ -159306,12 +156384,6 @@ _G.pg.base.chapter_template[1710001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -159977,12 +157049,6 @@ _G.pg.base.chapter_template[1710002] = {
 		1710303,
 		1710304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1710113,
 	},
@@ -160002,12 +157068,6 @@ _G.pg.base.chapter_template[1710002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -160665,12 +157725,6 @@ _G.pg.base.chapter_template[1710003] = {
 		1710305,
 		1710306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1710213,
 	},
@@ -160690,12 +157744,6 @@ _G.pg.base.chapter_template[1710003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -161398,12 +158446,6 @@ _G.pg.base.chapter_template[1710004] = {
 		1711301,
 		1711302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1711013,
 	},
@@ -161424,12 +158466,6 @@ _G.pg.base.chapter_template[1710004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -162147,12 +159183,6 @@ _G.pg.base.chapter_template[1710005] = {
 		1711303,
 		1711304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1711113,
 	},
@@ -162173,12 +159203,6 @@ _G.pg.base.chapter_template[1710005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -162946,12 +159970,6 @@ _G.pg.base.chapter_template[1710006] = {
 		1711305,
 		1711306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1711213,
 	},
@@ -162972,12 +159990,6 @@ _G.pg.base.chapter_template[1710006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -163876,12 +160888,6 @@ _G.pg.base.chapter_template[1710021] = {
 		1712301,
 		1712302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1712013,
 	},
@@ -163901,12 +160907,6 @@ _G.pg.base.chapter_template[1710021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -164613,12 +161613,6 @@ _G.pg.base.chapter_template[1710022] = {
 		1712303,
 		1712304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1712113,
 	},
@@ -164638,12 +161632,6 @@ _G.pg.base.chapter_template[1710022] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -165342,12 +162330,6 @@ _G.pg.base.chapter_template[1710023] = {
 		1712305,
 		1712306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1712213,
 	},
@@ -165367,12 +162349,6 @@ _G.pg.base.chapter_template[1710023] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -166116,12 +163092,6 @@ _G.pg.base.chapter_template[1710024] = {
 		1713301,
 		1713302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1713013,
 	},
@@ -166142,12 +163112,6 @@ _G.pg.base.chapter_template[1710024] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -166911,12 +163875,6 @@ _G.pg.base.chapter_template[1710025] = {
 		1713304,
 		1713305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1713113,
 	},
@@ -166939,12 +163897,6 @@ _G.pg.base.chapter_template[1710025] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -167758,12 +164710,6 @@ _G.pg.base.chapter_template[1710026] = {
 		1713307,
 		1713308,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1713213,
 	},
@@ -167786,12 +164732,6 @@ _G.pg.base.chapter_template[1710026] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -168679,12 +165619,6 @@ _G.pg.base.chapter_template[1710041] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1714013,
 	},
@@ -168699,12 +165633,6 @@ _G.pg.base.chapter_template[1710041] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -169454,12 +166382,6 @@ _G.pg.base.chapter_template[1710051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1715001,
 	},
@@ -169474,12 +166396,6 @@ _G.pg.base.chapter_template[1710051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -169879,12 +166795,6 @@ _G.pg.base.chapter_template[1720001] = {
 	ai_expedition_list = {
 		1720301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1720013,
 	},
@@ -169904,12 +166814,6 @@ _G.pg.base.chapter_template[1720001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -170691,12 +167595,6 @@ _G.pg.base.chapter_template[1720002] = {
 	ai_expedition_list = {
 		1720302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1720113,
 	},
@@ -170716,12 +167614,6 @@ _G.pg.base.chapter_template[1720002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -171536,12 +168428,6 @@ _G.pg.base.chapter_template[1720003] = {
 		1720304,
 		1720305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1720213,
 	},
@@ -171561,12 +168447,6 @@ _G.pg.base.chapter_template[1720003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -172333,12 +169213,6 @@ _G.pg.base.chapter_template[1720004] = {
 		1721301,
 		1721302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1721013,
 	},
@@ -172359,12 +169233,6 @@ _G.pg.base.chapter_template[1720004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -173186,12 +170054,6 @@ _G.pg.base.chapter_template[1720005] = {
 		1721303,
 		1721304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1721113,
 	},
@@ -173212,12 +170074,6 @@ _G.pg.base.chapter_template[1720005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -173977,12 +170833,6 @@ _G.pg.base.chapter_template[1720006] = {
 		1721305,
 		1721306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1721213,
 	},
@@ -174003,12 +170853,6 @@ _G.pg.base.chapter_template[1720006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -174785,12 +171629,6 @@ _G.pg.base.chapter_template[1720007] = {
 	ai_expedition_list = {
 		1720303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1720134,
 	},
@@ -174810,12 +171648,6 @@ _G.pg.base.chapter_template[1720007] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -175580,12 +172412,6 @@ _G.pg.base.chapter_template[1720008] = {
 		1721307,
 		1721308,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1721234,
 	},
@@ -175606,12 +172432,6 @@ _G.pg.base.chapter_template[1720008] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -176424,12 +173244,6 @@ _G.pg.base.chapter_template[1720021] = {
 		1722301,
 		1722302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1722013,
 	},
@@ -176449,12 +173263,6 @@ _G.pg.base.chapter_template[1720021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -177278,12 +174086,6 @@ _G.pg.base.chapter_template[1720022] = {
 		1722303,
 		1722304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1722113,
 	},
@@ -177303,12 +174105,6 @@ _G.pg.base.chapter_template[1720022] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -178164,12 +174960,6 @@ _G.pg.base.chapter_template[1720023] = {
 		1722306,
 		1722307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1722213,
 	},
@@ -178189,12 +174979,6 @@ _G.pg.base.chapter_template[1720023] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -179002,12 +175786,6 @@ _G.pg.base.chapter_template[1720024] = {
 		1723301,
 		1723302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1723013,
 	},
@@ -179028,12 +175806,6 @@ _G.pg.base.chapter_template[1720024] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -179900,12 +176672,6 @@ _G.pg.base.chapter_template[1720025] = {
 		1723303,
 		1723304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1723113,
 	},
@@ -179928,12 +176694,6 @@ _G.pg.base.chapter_template[1720025] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -180738,12 +177498,6 @@ _G.pg.base.chapter_template[1720026] = {
 		1723305,
 		1723306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1723213,
 	},
@@ -180766,12 +177520,6 @@ _G.pg.base.chapter_template[1720026] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -181593,12 +178341,6 @@ _G.pg.base.chapter_template[1720027] = {
 	ai_expedition_list = {
 		1722305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1722134,
 	},
@@ -181618,12 +178360,6 @@ _G.pg.base.chapter_template[1720027] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -182429,12 +179165,6 @@ _G.pg.base.chapter_template[1720028] = {
 		1723307,
 		1723308,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1723234,
 	},
@@ -182457,12 +179187,6 @@ _G.pg.base.chapter_template[1720028] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -183264,12 +179988,6 @@ _G.pg.base.chapter_template[1720041] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1724013,
 	},
@@ -183288,12 +180006,6 @@ _G.pg.base.chapter_template[1720041] = {
 		4,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -184000,12 +180712,6 @@ _G.pg.base.chapter_template[1720051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1725001,
 	},
@@ -184020,12 +180726,6 @@ _G.pg.base.chapter_template[1720051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -184760,12 +181460,6 @@ _G.pg.base.chapter_template[1730001] = {
 	ai_expedition_list = {
 		1730301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1730013,
 	},
@@ -184782,12 +181476,6 @@ _G.pg.base.chapter_template[1730001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -185382,12 +182070,6 @@ _G.pg.base.chapter_template[1730002] = {
 		1731301,
 		1731302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1731013,
 	},
@@ -185404,12 +182086,6 @@ _G.pg.base.chapter_template[1730002] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -186015,12 +182691,6 @@ _G.pg.base.chapter_template[1730003] = {
 	ai_expedition_list = {
 		1732301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1732013,
 	},
@@ -186039,12 +182709,6 @@ _G.pg.base.chapter_template[1730003] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		22,
@@ -186784,12 +183448,6 @@ _G.pg.base.chapter_template[1740001] = {
 		1740301,
 		1740302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1740013,
 	},
@@ -186809,12 +183467,6 @@ _G.pg.base.chapter_template[1740001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -187562,12 +184214,6 @@ _G.pg.base.chapter_template[1740002] = {
 	ai_expedition_list = {
 		1740303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1740113,
 	},
@@ -187587,12 +184233,6 @@ _G.pg.base.chapter_template[1740002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -188490,12 +185130,6 @@ _G.pg.base.chapter_template[1740003] = {
 		1740304,
 		1740305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1740213,
 	},
@@ -188515,12 +185149,6 @@ _G.pg.base.chapter_template[1740003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -189376,12 +186004,6 @@ _G.pg.base.chapter_template[1740004] = {
 	ai_expedition_list = {
 		1741301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1741013,
 	},
@@ -189402,12 +186024,6 @@ _G.pg.base.chapter_template[1740004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -190073,12 +186689,6 @@ _G.pg.base.chapter_template[1740005] = {
 	ai_expedition_list = {
 		1741302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1741113,
 	},
@@ -190099,12 +186709,6 @@ _G.pg.base.chapter_template[1740005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -191007,12 +187611,6 @@ _G.pg.base.chapter_template[1740006] = {
 		1741303,
 		1741304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1741213,
 	},
@@ -191033,12 +187631,6 @@ _G.pg.base.chapter_template[1740006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -192663,12 +189255,6 @@ _G.pg.base.chapter_template[1740021] = {
 		1742301,
 		1742302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1742013,
 	},
@@ -192688,12 +189274,6 @@ _G.pg.base.chapter_template[1740021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -193482,12 +190062,6 @@ _G.pg.base.chapter_template[1740022] = {
 	ai_expedition_list = {
 		1742303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1742113,
 	},
@@ -193507,12 +190081,6 @@ _G.pg.base.chapter_template[1740022] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -194451,12 +191019,6 @@ _G.pg.base.chapter_template[1740023] = {
 		1742304,
 		1742305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1742213,
 	},
@@ -194476,12 +191038,6 @@ _G.pg.base.chapter_template[1740023] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -195378,12 +191934,6 @@ _G.pg.base.chapter_template[1740024] = {
 	ai_expedition_list = {
 		1743301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1743013,
 	},
@@ -195404,12 +191954,6 @@ _G.pg.base.chapter_template[1740024] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -196120,12 +192664,6 @@ _G.pg.base.chapter_template[1740025] = {
 	ai_expedition_list = {
 		1743302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1743113,
 	},
@@ -196148,12 +192686,6 @@ _G.pg.base.chapter_template[1740025] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -197101,12 +193633,6 @@ _G.pg.base.chapter_template[1740026] = {
 		1743303,
 		1743304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1743213,
 	},
@@ -197129,12 +193655,6 @@ _G.pg.base.chapter_template[1740026] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -198748,12 +195268,6 @@ _G.pg.base.chapter_template[1740041] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1744013,
 	},
@@ -198764,12 +195278,6 @@ _G.pg.base.chapter_template[1740041] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -199714,12 +196222,6 @@ _G.pg.base.chapter_template[1740051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1745001,
 	},
@@ -199734,12 +196236,6 @@ _G.pg.base.chapter_template[1740051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -200049,12 +196545,6 @@ _G.pg.base.chapter_template[1750001] = {
 	ai_expedition_list = {
 		1750301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1750013,
 	},
@@ -200074,12 +196564,6 @@ _G.pg.base.chapter_template[1750001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -200790,12 +197274,6 @@ _G.pg.base.chapter_template[1750002] = {
 		1750302,
 		1750303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1750113,
 	},
@@ -200815,12 +197293,6 @@ _G.pg.base.chapter_template[1750002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -201433,12 +197905,6 @@ _G.pg.base.chapter_template[1750003] = {
 		1750304,
 		1750305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1750213,
 	},
@@ -201458,12 +197924,6 @@ _G.pg.base.chapter_template[1750003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -202119,12 +198579,6 @@ _G.pg.base.chapter_template[1750004] = {
 	ai_expedition_list = {
 		1751301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1751013,
 	},
@@ -202145,12 +198599,6 @@ _G.pg.base.chapter_template[1750004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -202801,12 +199249,6 @@ _G.pg.base.chapter_template[1750005] = {
 		1751302,
 		1751303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1751113,
 	},
@@ -202827,12 +199269,6 @@ _G.pg.base.chapter_template[1750005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -203551,12 +199987,6 @@ _G.pg.base.chapter_template[1750006] = {
 		1751304,
 		1751305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1751213,
 	},
@@ -203577,12 +200007,6 @@ _G.pg.base.chapter_template[1750006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -204568,12 +200992,6 @@ _G.pg.base.chapter_template[1750021] = {
 	ai_expedition_list = {
 		1752301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1752013,
 	},
@@ -204593,12 +201011,6 @@ _G.pg.base.chapter_template[1750021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -205350,12 +201762,6 @@ _G.pg.base.chapter_template[1750022] = {
 		1752302,
 		1752303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1752113,
 	},
@@ -205375,12 +201781,6 @@ _G.pg.base.chapter_template[1750022] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -206034,12 +202434,6 @@ _G.pg.base.chapter_template[1750023] = {
 		1752304,
 		1752305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1752213,
 	},
@@ -206059,12 +202453,6 @@ _G.pg.base.chapter_template[1750023] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -206762,12 +203150,6 @@ _G.pg.base.chapter_template[1750024] = {
 		1753301,
 		1753302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1753013,
 	},
@@ -206788,12 +203170,6 @@ _G.pg.base.chapter_template[1750024] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -207489,12 +203865,6 @@ _G.pg.base.chapter_template[1750025] = {
 		1753303,
 		1753304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1753113,
 	},
@@ -207517,12 +203887,6 @@ _G.pg.base.chapter_template[1750025] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -208286,12 +204650,6 @@ _G.pg.base.chapter_template[1750026] = {
 		1753305,
 		1753306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1753213,
 	},
@@ -208314,12 +204672,6 @@ _G.pg.base.chapter_template[1750026] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -209295,12 +205647,6 @@ _G.pg.base.chapter_template[1750041] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1754013,
 	},
@@ -209311,12 +205657,6 @@ _G.pg.base.chapter_template[1750041] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -209769,12 +206109,6 @@ _G.pg.base.chapter_template[1750051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1755001,
 	},
@@ -209789,12 +206123,6 @@ _G.pg.base.chapter_template[1750051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -210184,12 +206512,6 @@ _G.pg.base.chapter_template[1760001] = {
 	ai_expedition_list = {
 		1760301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1760013,
 	},
@@ -210206,12 +206528,6 @@ _G.pg.base.chapter_template[1760001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -210919,12 +207235,6 @@ _G.pg.base.chapter_template[1760002] = {
 	ai_expedition_list = {
 		1761301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1761013,
 	},
@@ -210941,12 +207251,6 @@ _G.pg.base.chapter_template[1760002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -211655,12 +207959,6 @@ _G.pg.base.chapter_template[1760003] = {
 		1762301,
 		1762302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1762013,
 	},
@@ -211677,12 +207975,6 @@ _G.pg.base.chapter_template[1760003] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -212461,12 +208753,6 @@ _G.pg.base.chapter_template[1760004] = {
 		1763301,
 		1763302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1763013,
 	},
@@ -212484,12 +208770,6 @@ _G.pg.base.chapter_template[1760004] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -213260,12 +209540,6 @@ _G.pg.base.chapter_template[1760005] = {
 	ai_expedition_list = {
 		1764301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1764013,
 	},
@@ -213284,12 +209558,6 @@ _G.pg.base.chapter_template[1760005] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -214147,12 +210415,6 @@ _G.pg.base.chapter_template[1760006] = {
 		1765301,
 		1765302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1765013,
 	},
@@ -214164,12 +210426,6 @@ _G.pg.base.chapter_template[1760006] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -215095,12 +211351,6 @@ _G.pg.base.chapter_template[1760041] = {
 		1766302,
 		1766303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1766013,
 	},
@@ -215114,12 +211364,6 @@ _G.pg.base.chapter_template[1760041] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -215696,12 +211940,6 @@ _G.pg.base.chapter_template[1760051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1767001,
 	},
@@ -215712,12 +211950,6 @@ _G.pg.base.chapter_template[1760051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -216172,12 +212404,6 @@ _G.pg.base.chapter_template[1770001] = {
 		1770008,
 	},
 	ai_expedition_list = {},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1770013,
 	},
@@ -216193,12 +212419,6 @@ _G.pg.base.chapter_template[1770001] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -216903,12 +213123,6 @@ _G.pg.base.chapter_template[1770002] = {
 		1771008,
 	},
 	ai_expedition_list = {},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1771013,
 	},
@@ -216924,12 +213138,6 @@ _G.pg.base.chapter_template[1770002] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -217596,12 +213804,6 @@ _G.pg.base.chapter_template[1770003] = {
 	ai_expedition_list = {
 		1772301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1772013,
 	},
@@ -217618,12 +213820,6 @@ _G.pg.base.chapter_template[1770003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -218340,12 +214536,6 @@ _G.pg.base.chapter_template[1770004] = {
 	ai_expedition_list = {
 		1773301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1773013,
 	},
@@ -218363,12 +214553,6 @@ _G.pg.base.chapter_template[1770004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -219101,12 +215285,6 @@ _G.pg.base.chapter_template[1770005] = {
 		1774301,
 		1774302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1774013,
 	},
@@ -219124,12 +215302,6 @@ _G.pg.base.chapter_template[1770005] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -219955,12 +216127,6 @@ _G.pg.base.chapter_template[1770021] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1776001,
 	},
@@ -219971,12 +216137,6 @@ _G.pg.base.chapter_template[1770021] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -220328,12 +216488,6 @@ _G.pg.base.chapter_template[1770022] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1776002,
 	},
@@ -220344,12 +216498,6 @@ _G.pg.base.chapter_template[1770022] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -220701,12 +216849,6 @@ _G.pg.base.chapter_template[1770023] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1776003,
 	},
@@ -220717,12 +216859,6 @@ _G.pg.base.chapter_template[1770023] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -221074,12 +217210,6 @@ _G.pg.base.chapter_template[1770024] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1776004,
 	},
@@ -221090,12 +217220,6 @@ _G.pg.base.chapter_template[1770024] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -221447,12 +217571,6 @@ _G.pg.base.chapter_template[1770025] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1776005,
 	},
@@ -221463,12 +217581,6 @@ _G.pg.base.chapter_template[1770025] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -221875,12 +217987,6 @@ _G.pg.base.chapter_template[1770041] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1775013,
 	},
@@ -221891,12 +217997,6 @@ _G.pg.base.chapter_template[1770041] = {
 		4,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -222712,12 +218812,6 @@ _G.pg.base.chapter_template[1770051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1777001,
 	},
@@ -222728,12 +218822,6 @@ _G.pg.base.chapter_template[1770051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -223043,7 +219131,7 @@ _G.pg.base.chapter_template[1770051] = {
 
 _G.pg.base.chapter_template[1780001] = {
 	ItemTransformPattern = "",
-	act_id = 5131,
+	act_id = 50326,
 	air_dominance = 100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -223170,12 +219258,6 @@ _G.pg.base.chapter_template[1780001] = {
 	ai_expedition_list = {
 		1780301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1780013,
 	},
@@ -223195,12 +219277,6 @@ _G.pg.base.chapter_template[1780001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -223793,7 +219869,7 @@ _G.pg.base.chapter_template[1780001] = {
 
 _G.pg.base.chapter_template[1780002] = {
 	ItemTransformPattern = "",
-	act_id = 5131,
+	act_id = 50326,
 	air_dominance = 130,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -223920,12 +219996,6 @@ _G.pg.base.chapter_template[1780002] = {
 	ai_expedition_list = {
 		1780302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1780113,
 	},
@@ -223945,12 +220015,6 @@ _G.pg.base.chapter_template[1780002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -224431,7 +220495,7 @@ _G.pg.base.chapter_template[1780002] = {
 
 _G.pg.base.chapter_template[1780003] = {
 	ItemTransformPattern = "",
-	act_id = 5131,
+	act_id = 50326,
 	air_dominance = 165,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -224468,7 +220532,7 @@ _G.pg.base.chapter_template[1780003] = {
 	model = 2,
 	name = "Corrosive Storm",
 	num_1 = 1,
-	num_2 = 15,
+	num_2 = 11,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -224476,7 +220540,7 @@ _G.pg.base.chapter_template[1780003] = {
 	pos_y = "0.470277777",
 	pre_story = 0,
 	profiles = "Raging, churning, a black tornado tears through the simulation. An Arbiter speaks of strange things – can her words be trusted?",
-	progress_boss = 34,
+	progress_boss = 50,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -224558,12 +220622,6 @@ _G.pg.base.chapter_template[1780003] = {
 	ai_expedition_list = {
 		1780303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1780213,
 	},
@@ -224583,12 +220641,6 @@ _G.pg.base.chapter_template[1780003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -225148,7 +221200,7 @@ _G.pg.base.chapter_template[1780003] = {
 	},
 	defeat_story_count = {
 		1,
-		3,
+		2,
 	},
 	npc_data = {},
 	risk_levels = {
@@ -225182,7 +221234,7 @@ _G.pg.base.chapter_template[1780003] = {
 
 _G.pg.base.chapter_template[1780004] = {
 	ItemTransformPattern = "",
-	act_id = 5132,
+	act_id = 50327,
 	air_dominance = 210,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -225219,7 +221271,7 @@ _G.pg.base.chapter_template[1780004] = {
 	model = 2,
 	name = "What Lies Beyond",
 	num_1 = 1,
-	num_2 = 14,
+	num_2 = 10,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -225227,7 +221279,7 @@ _G.pg.base.chapter_template[1780004] = {
 	pos_y = "0.470277777",
 	pre_story = 0,
 	profiles = "Like a lighthouse, a small beacon brings the shipgirls together – to an alien world. Artificial islands, a distilled sea, and an unbelievable encounter...",
-	progress_boss = 50,
+	progress_boss = 100,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -225310,12 +221362,6 @@ _G.pg.base.chapter_template[1780004] = {
 		1781301,
 		1781302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1781013,
 	},
@@ -225336,12 +221382,6 @@ _G.pg.base.chapter_template[1780004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -225836,7 +221876,7 @@ _G.pg.base.chapter_template[1780004] = {
 		"XINGHAIZHUGUANG21",
 	},
 	defeat_story_count = {
-		2,
+		1,
 	},
 	npc_data = {},
 	risk_levels = {
@@ -225869,7 +221909,7 @@ _G.pg.base.chapter_template[1780004] = {
 
 _G.pg.base.chapter_template[1780005] = {
 	ItemTransformPattern = "",
-	act_id = 5132,
+	act_id = 50327,
 	air_dominance = 270,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -225998,12 +222038,6 @@ _G.pg.base.chapter_template[1780005] = {
 		1781304,
 		1781305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1781113,
 	},
@@ -226024,12 +222058,6 @@ _G.pg.base.chapter_template[1780005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -226627,7 +222655,7 @@ _G.pg.base.chapter_template[1780005] = {
 
 _G.pg.base.chapter_template[1780006] = {
 	ItemTransformPattern = "",
-	act_id = 5132,
+	act_id = 50327,
 	air_dominance = 330,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -226754,12 +222782,6 @@ _G.pg.base.chapter_template[1780006] = {
 	ai_expedition_list = {
 		1781306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1781213,
 	},
@@ -226780,12 +222802,6 @@ _G.pg.base.chapter_template[1780006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -227562,7 +223578,7 @@ _G.pg.base.chapter_template[1780006] = {
 
 _G.pg.base.chapter_template[1780021] = {
 	ItemTransformPattern = "",
-	act_id = 5131,
+	act_id = 50326,
 	air_dominance = 455,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -227730,12 +223746,6 @@ _G.pg.base.chapter_template[1780021] = {
 	ai_expedition_list = {
 		1782301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1782013,
 	},
@@ -227755,12 +223765,6 @@ _G.pg.base.chapter_template[1780021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -228353,7 +224357,7 @@ _G.pg.base.chapter_template[1780021] = {
 
 _G.pg.base.chapter_template[1780022] = {
 	ItemTransformPattern = "",
-	act_id = 5131,
+	act_id = 50326,
 	air_dominance = 605,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -228522,12 +224526,6 @@ _G.pg.base.chapter_template[1780022] = {
 		1782302,
 		1782303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1782113,
 	},
@@ -228547,12 +224545,6 @@ _G.pg.base.chapter_template[1780022] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -229033,7 +225025,7 @@ _G.pg.base.chapter_template[1780022] = {
 
 _G.pg.base.chapter_template[1780023] = {
 	ItemTransformPattern = "",
-	act_id = 5131,
+	act_id = 50326,
 	air_dominance = 775,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -229070,7 +225062,7 @@ _G.pg.base.chapter_template[1780023] = {
 	model = 2,
 	name = "Corrosive Storm",
 	num_1 = 1,
-	num_2 = 19,
+	num_2 = 14,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -229078,7 +225070,7 @@ _G.pg.base.chapter_template[1780023] = {
 	pos_y = "0.470277777",
 	pre_story = 0,
 	profiles = "Raging, churning, a black tornado tears through the simulation. An Arbiter speaks of strange things – can her words be trusted?",
-	progress_boss = 34,
+	progress_boss = 50,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -229202,12 +225194,6 @@ _G.pg.base.chapter_template[1780023] = {
 		1782304,
 		1782305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1782213,
 	},
@@ -229227,12 +225213,6 @@ _G.pg.base.chapter_template[1780023] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -229792,7 +225772,7 @@ _G.pg.base.chapter_template[1780023] = {
 	},
 	defeat_story_count = {
 		1,
-		3,
+		2,
 	},
 	npc_data = {},
 	risk_levels = {
@@ -229826,7 +225806,7 @@ _G.pg.base.chapter_template[1780023] = {
 
 _G.pg.base.chapter_template[1780024] = {
 	ItemTransformPattern = "",
-	act_id = 5132,
+	act_id = 50327,
 	air_dominance = 850,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -229863,7 +225843,7 @@ _G.pg.base.chapter_template[1780024] = {
 	model = 2,
 	name = "What Lies Beyond",
 	num_1 = 1,
-	num_2 = 21,
+	num_2 = 11,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -229871,7 +225851,7 @@ _G.pg.base.chapter_template[1780024] = {
 	pos_y = "0.470277777",
 	pre_story = 0,
 	profiles = "Like a lighthouse, a small beacon brings the shipgirls together – to an alien world. Artificial islands, a distilled sea, and an unbelievable encounter...",
-	progress_boss = 34,
+	progress_boss = 100,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -229995,12 +225975,6 @@ _G.pg.base.chapter_template[1780024] = {
 		1783301,
 		1783302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1783013,
 	},
@@ -230021,12 +225995,6 @@ _G.pg.base.chapter_template[1780024] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -230525,7 +226493,7 @@ _G.pg.base.chapter_template[1780024] = {
 		"XINGHAIZHUGUANG21",
 	},
 	defeat_story_count = {
-		3,
+		1,
 	},
 	npc_data = {},
 	risk_levels = {
@@ -230558,7 +226526,7 @@ _G.pg.base.chapter_template[1780024] = {
 
 _G.pg.base.chapter_template[1780025] = {
 	ItemTransformPattern = "",
-	act_id = 5132,
+	act_id = 50327,
 	air_dominance = 1100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -230595,7 +226563,7 @@ _G.pg.base.chapter_template[1780025] = {
 	model = 2,
 	name = "The Council's Fleet",
 	num_1 = 1,
-	num_2 = 24,
+	num_2 = 18,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -230603,7 +226571,7 @@ _G.pg.base.chapter_template[1780025] = {
 	pos_y = "0.201111107",
 	pre_story = 0,
 	profiles = "A fleet floats in the air, stating allegiance to a certain Council, exuding a palpable air of dominance. To challenge it would be foolhardy, but...",
-	progress_boss = 34,
+	progress_boss = 50,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -230728,12 +226696,6 @@ _G.pg.base.chapter_template[1780025] = {
 		1783304,
 		1783305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1783113,
 	},
@@ -230756,12 +226718,6 @@ _G.pg.base.chapter_template[1780025] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -231330,7 +227286,7 @@ _G.pg.base.chapter_template[1780025] = {
 	},
 	defeat_story_count = {
 		1,
-		3,
+		2,
 	},
 	npc_data = {},
 	risk_levels = {
@@ -231363,7 +227319,7 @@ _G.pg.base.chapter_template[1780025] = {
 
 _G.pg.base.chapter_template[1780026] = {
 	ItemTransformPattern = "",
-	act_id = 5132,
+	act_id = 50327,
 	air_dominance = 1410,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -231531,12 +227487,6 @@ _G.pg.base.chapter_template[1780026] = {
 	ai_expedition_list = {
 		1783306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1783213,
 	},
@@ -231559,12 +227509,6 @@ _G.pg.base.chapter_template[1780026] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -232345,7 +228289,7 @@ _G.pg.base.chapter_template[1780026] = {
 
 _G.pg.base.chapter_template[1780041] = {
 	ItemTransformPattern = "",
-	act_id = 5132,
+	act_id = 50327,
 	air_dominance = 1820,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -232499,12 +228443,6 @@ _G.pg.base.chapter_template[1780041] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1784013,
 	},
@@ -232515,12 +228453,6 @@ _G.pg.base.chapter_template[1780041] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -233057,7 +228989,7 @@ _G.pg.base.chapter_template[1780041] = {
 
 _G.pg.base.chapter_template[1780051] = {
 	ItemTransformPattern = "",
-	act_id = 5132,
+	act_id = 50327,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -233159,12 +229091,6 @@ _G.pg.base.chapter_template[1780051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1785001,
 	},
@@ -233179,12 +229105,6 @@ _G.pg.base.chapter_template[1780051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -233576,12 +229496,6 @@ _G.pg.base.chapter_template[1790001] = {
 		1790301,
 		1790302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1790013,
 	},
@@ -233601,12 +229515,6 @@ _G.pg.base.chapter_template[1790001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -234325,12 +230233,6 @@ _G.pg.base.chapter_template[1790002] = {
 		1790303,
 		1790304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1790113,
 	},
@@ -234350,12 +230252,6 @@ _G.pg.base.chapter_template[1790002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -235065,12 +230961,6 @@ _G.pg.base.chapter_template[1790003] = {
 		1790305,
 		1790306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1790213,
 	},
@@ -235090,12 +230980,6 @@ _G.pg.base.chapter_template[1790003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -235811,12 +231695,6 @@ _G.pg.base.chapter_template[1790004] = {
 		1791301,
 		1791302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1791013,
 	},
@@ -235837,12 +231715,6 @@ _G.pg.base.chapter_template[1790004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -236558,12 +232430,6 @@ _G.pg.base.chapter_template[1790005] = {
 	ai_expedition_list = {
 		1791303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1791113,
 	},
@@ -236584,12 +232450,6 @@ _G.pg.base.chapter_template[1790005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -237301,12 +233161,6 @@ _G.pg.base.chapter_template[1790006] = {
 	ai_expedition_list = {
 		1791304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1791213,
 		1791214,
@@ -237329,12 +233183,6 @@ _G.pg.base.chapter_template[1790006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -238296,12 +234144,6 @@ _G.pg.base.chapter_template[1790021] = {
 		1792301,
 		1792302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1792013,
 	},
@@ -238321,12 +234163,6 @@ _G.pg.base.chapter_template[1790021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -239086,12 +234922,6 @@ _G.pg.base.chapter_template[1790022] = {
 		1792303,
 		1792304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1792113,
 	},
@@ -239111,12 +234941,6 @@ _G.pg.base.chapter_template[1790022] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -239867,12 +235691,6 @@ _G.pg.base.chapter_template[1790023] = {
 		1792305,
 		1792306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1792213,
 	},
@@ -239892,12 +235710,6 @@ _G.pg.base.chapter_template[1790023] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -240654,12 +236466,6 @@ _G.pg.base.chapter_template[1790024] = {
 		1793301,
 		1793302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1793013,
 	},
@@ -240680,12 +236486,6 @@ _G.pg.base.chapter_template[1790024] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -241446,12 +237246,6 @@ _G.pg.base.chapter_template[1790025] = {
 	ai_expedition_list = {
 		1793303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1793113,
 	},
@@ -241474,12 +237268,6 @@ _G.pg.base.chapter_template[1790025] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -242236,12 +238024,6 @@ _G.pg.base.chapter_template[1790026] = {
 	ai_expedition_list = {
 		1793304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1793213,
 		1793214,
@@ -242266,12 +238048,6 @@ _G.pg.base.chapter_template[1790026] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -243223,12 +238999,6 @@ _G.pg.base.chapter_template[1790041] = {
 		1794301,
 		1794302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1794013,
 	},
@@ -243240,12 +239010,6 @@ _G.pg.base.chapter_template[1790041] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -244803,12 +240567,6 @@ _G.pg.base.chapter_template[1790051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1795001,
 	},
@@ -244823,12 +240581,6 @@ _G.pg.base.chapter_template[1790051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -245242,12 +240994,6 @@ _G.pg.base.chapter_template[1800001] = {
 	ai_expedition_list = {
 		1800301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1800013,
 	},
@@ -245264,12 +241010,6 @@ _G.pg.base.chapter_template[1800001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -245987,12 +241727,6 @@ _G.pg.base.chapter_template[1800002] = {
 		1801301,
 		1801302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1801013,
 	},
@@ -246009,12 +241743,6 @@ _G.pg.base.chapter_template[1800002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -246664,12 +242392,6 @@ _G.pg.base.chapter_template[1800003] = {
 		1802301,
 		1802302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1802013,
 	},
@@ -246686,12 +242408,6 @@ _G.pg.base.chapter_template[1800003] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -247416,12 +243132,6 @@ _G.pg.base.chapter_template[1800004] = {
 		1803301,
 		1803302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1803013,
 	},
@@ -247439,12 +243149,6 @@ _G.pg.base.chapter_template[1800004] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -248169,12 +243873,6 @@ _G.pg.base.chapter_template[1800005] = {
 		1804301,
 		1804302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1804013,
 	},
@@ -248193,12 +243891,6 @@ _G.pg.base.chapter_template[1800005] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -248965,12 +244657,6 @@ _G.pg.base.chapter_template[1800021] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1806001,
 	},
@@ -248981,12 +244667,6 @@ _G.pg.base.chapter_template[1800021] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -249342,12 +245022,6 @@ _G.pg.base.chapter_template[1800022] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1806002,
 	},
@@ -249358,12 +245032,6 @@ _G.pg.base.chapter_template[1800022] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -249719,12 +245387,6 @@ _G.pg.base.chapter_template[1800023] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1806003,
 	},
@@ -249735,12 +245397,6 @@ _G.pg.base.chapter_template[1800023] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -250096,12 +245752,6 @@ _G.pg.base.chapter_template[1800024] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1806004,
 	},
@@ -250112,12 +245762,6 @@ _G.pg.base.chapter_template[1800024] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -250473,12 +246117,6 @@ _G.pg.base.chapter_template[1800025] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1806005,
 	},
@@ -250489,12 +246127,6 @@ _G.pg.base.chapter_template[1800025] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -250850,12 +246482,6 @@ _G.pg.base.chapter_template[1800026] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1806006,
 	},
@@ -250866,12 +246492,6 @@ _G.pg.base.chapter_template[1800026] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -251286,12 +246906,6 @@ _G.pg.base.chapter_template[1800041] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1805013,
 	},
@@ -251302,12 +246916,6 @@ _G.pg.base.chapter_template[1800041] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -252100,12 +247708,6 @@ _G.pg.base.chapter_template[1800051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1807001,
 	},
@@ -252116,12 +247718,6 @@ _G.pg.base.chapter_template[1800051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -252581,12 +248177,6 @@ _G.pg.base.chapter_template[1810001] = {
 	ai_expedition_list = {
 		1810301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1810013,
 	},
@@ -252606,12 +248196,6 @@ _G.pg.base.chapter_template[1810001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -253396,12 +248980,6 @@ _G.pg.base.chapter_template[1810002] = {
 		1810302,
 		1810303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1810113,
 	},
@@ -253421,12 +248999,6 @@ _G.pg.base.chapter_template[1810002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -254148,12 +249720,6 @@ _G.pg.base.chapter_template[1810003] = {
 		1810304,
 		1810305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1810213,
 	},
@@ -254173,12 +249739,6 @@ _G.pg.base.chapter_template[1810003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -254942,12 +250502,6 @@ _G.pg.base.chapter_template[1810004] = {
 		1811301,
 		1811302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1811013,
 	},
@@ -254968,12 +250522,6 @@ _G.pg.base.chapter_template[1810004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -255767,12 +251315,6 @@ _G.pg.base.chapter_template[1810005] = {
 		1811303,
 		1811304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1811113,
 	},
@@ -255793,12 +251335,6 @@ _G.pg.base.chapter_template[1810005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -256500,12 +252036,6 @@ _G.pg.base.chapter_template[1810006] = {
 	ai_expedition_list = {
 		1811305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1811213,
 	},
@@ -256526,12 +252056,6 @@ _G.pg.base.chapter_template[1810006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -257475,12 +252999,6 @@ _G.pg.base.chapter_template[1810021] = {
 	ai_expedition_list = {
 		1812301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1812013,
 	},
@@ -257500,12 +253018,6 @@ _G.pg.base.chapter_template[1810021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -258331,12 +253843,6 @@ _G.pg.base.chapter_template[1810022] = {
 		1812302,
 		1812303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1812113,
 	},
@@ -258356,12 +253862,6 @@ _G.pg.base.chapter_template[1810022] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -259124,12 +254624,6 @@ _G.pg.base.chapter_template[1810023] = {
 		1812304,
 		1812305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1812213,
 	},
@@ -259149,12 +254643,6 @@ _G.pg.base.chapter_template[1810023] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -259959,12 +255447,6 @@ _G.pg.base.chapter_template[1810024] = {
 		1813301,
 		1813302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1813013,
 	},
@@ -259985,12 +255467,6 @@ _G.pg.base.chapter_template[1810024] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -260829,12 +256305,6 @@ _G.pg.base.chapter_template[1810025] = {
 		1813303,
 		1813304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1813113,
 	},
@@ -260857,12 +256327,6 @@ _G.pg.base.chapter_template[1810025] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -261609,12 +257073,6 @@ _G.pg.base.chapter_template[1810026] = {
 	ai_expedition_list = {
 		1813305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1813213,
 	},
@@ -261637,12 +257095,6 @@ _G.pg.base.chapter_template[1810026] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -262576,12 +258028,6 @@ _G.pg.base.chapter_template[1810041] = {
 	ai_expedition_list = {
 		1814301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1814013,
 	},
@@ -262593,12 +258039,6 @@ _G.pg.base.chapter_template[1810041] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -263124,12 +258564,6 @@ _G.pg.base.chapter_template[1810051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1815001,
 	},
@@ -263144,12 +258578,6 @@ _G.pg.base.chapter_template[1810051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -263679,12 +259107,6 @@ _G.pg.base.chapter_template[1820001] = {
 		1820301,
 		1820302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1820013,
 	},
@@ -263701,12 +259123,6 @@ _G.pg.base.chapter_template[1820001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -264352,12 +259768,6 @@ _G.pg.base.chapter_template[1820002] = {
 		1821301,
 		1821302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1821013,
 	},
@@ -264374,12 +259784,6 @@ _G.pg.base.chapter_template[1820002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -265039,12 +260443,6 @@ _G.pg.base.chapter_template[1820003] = {
 		1822301,
 		1822302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1822013,
 	},
@@ -265061,12 +260459,6 @@ _G.pg.base.chapter_template[1820003] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -265825,12 +261217,6 @@ _G.pg.base.chapter_template[1820021] = {
 		1827301,
 		1827302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1827013,
 	},
@@ -265848,12 +261234,6 @@ _G.pg.base.chapter_template[1820021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -266540,12 +261920,6 @@ _G.pg.base.chapter_template[1820022] = {
 		1828301,
 		1828302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1828013,
 	},
@@ -266564,12 +261938,6 @@ _G.pg.base.chapter_template[1820022] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -267274,12 +262642,6 @@ _G.pg.base.chapter_template[1820023] = {
 		1829301,
 		1829302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1829013,
 	},
@@ -267298,12 +262660,6 @@ _G.pg.base.chapter_template[1820023] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -268055,12 +263411,6 @@ _G.pg.base.chapter_template[1820041] = {
 		1823301,
 		1823302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1823013,
 	},
@@ -268072,12 +263422,6 @@ _G.pg.base.chapter_template[1820041] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -268802,12 +264146,6 @@ _G.pg.base.chapter_template[1820051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1825001,
 	},
@@ -268818,12 +264156,6 @@ _G.pg.base.chapter_template[1820051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -269329,12 +264661,6 @@ _G.pg.base.chapter_template[1830001] = {
 	ai_expedition_list = {
 		1830301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1830013,
 	},
@@ -269354,12 +264680,6 @@ _G.pg.base.chapter_template[1830001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -270063,12 +265383,6 @@ _G.pg.base.chapter_template[1830002] = {
 	ai_expedition_list = {
 		1830302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1830113,
 	},
@@ -270088,12 +265402,6 @@ _G.pg.base.chapter_template[1830002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -270804,12 +266112,6 @@ _G.pg.base.chapter_template[1830003] = {
 	ai_expedition_list = {
 		1830303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1830213,
 	},
@@ -270829,12 +266131,6 @@ _G.pg.base.chapter_template[1830003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -271584,12 +266880,6 @@ _G.pg.base.chapter_template[1830004] = {
 	ai_expedition_list = {
 		1831301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1831013,
 	},
@@ -271610,12 +266900,6 @@ _G.pg.base.chapter_template[1830004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -272514,12 +267798,6 @@ _G.pg.base.chapter_template[1830005] = {
 		1831302,
 		1831303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1831113,
 	},
@@ -272540,12 +267818,6 @@ _G.pg.base.chapter_template[1830005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -273320,12 +268592,6 @@ _G.pg.base.chapter_template[1830006] = {
 		1831304,
 		1831305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1831213,
 	},
@@ -273346,12 +268612,6 @@ _G.pg.base.chapter_template[1830006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -274292,12 +269552,6 @@ _G.pg.base.chapter_template[1830021] = {
 		1832301,
 		1832302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1832013,
 	},
@@ -274317,12 +269571,6 @@ _G.pg.base.chapter_template[1830021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -275068,12 +270316,6 @@ _G.pg.base.chapter_template[1830022] = {
 		1832303,
 		1832304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1832113,
 	},
@@ -275093,12 +270335,6 @@ _G.pg.base.chapter_template[1830022] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -275851,12 +271087,6 @@ _G.pg.base.chapter_template[1830023] = {
 		1832305,
 		1832306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1832213,
 	},
@@ -275876,12 +271106,6 @@ _G.pg.base.chapter_template[1830023] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -276672,12 +271896,6 @@ _G.pg.base.chapter_template[1830024] = {
 	ai_expedition_list = {
 		1833301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1833013,
 	},
@@ -276698,12 +271916,6 @@ _G.pg.base.chapter_template[1830024] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -277647,12 +272859,6 @@ _G.pg.base.chapter_template[1830025] = {
 		1833302,
 		1833303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1833113,
 	},
@@ -277675,12 +272881,6 @@ _G.pg.base.chapter_template[1830025] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -278500,12 +273700,6 @@ _G.pg.base.chapter_template[1830026] = {
 		1833304,
 		1833305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1833213,
 	},
@@ -278528,12 +273722,6 @@ _G.pg.base.chapter_template[1830026] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -279465,12 +274653,6 @@ _G.pg.base.chapter_template[1830041] = {
 		1834302,
 		1834303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1834013,
 	},
@@ -279482,12 +274664,6 @@ _G.pg.base.chapter_template[1830041] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -280262,12 +275438,6 @@ _G.pg.base.chapter_template[1830051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1835001,
 	},
@@ -280282,12 +275452,6 @@ _G.pg.base.chapter_template[1830051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -280908,12 +276072,6 @@ _G.pg.base.chapter_template[1840001] = {
 	ai_expedition_list = {
 		1840301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1840013,
 	},
@@ -280930,12 +276088,6 @@ _G.pg.base.chapter_template[1840001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -281581,12 +276733,6 @@ _G.pg.base.chapter_template[1840002] = {
 		1841301,
 		1841302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1841013,
 	},
@@ -281603,12 +276749,6 @@ _G.pg.base.chapter_template[1840002] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -282317,12 +277457,6 @@ _G.pg.base.chapter_template[1840003] = {
 		1842301,
 		1842302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1842013,
 	},
@@ -282341,12 +277475,6 @@ _G.pg.base.chapter_template[1840003] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		22,
@@ -283200,12 +278328,6 @@ _G.pg.base.chapter_template[1840004] = {
 		1843301,
 		1843302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1843013,
 	},
@@ -283217,12 +278339,6 @@ _G.pg.base.chapter_template[1840004] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -283966,12 +279082,6 @@ _G.pg.base.chapter_template[1850001] = {
 		1850301,
 		1850302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1850013,
 	},
@@ -283991,12 +279101,6 @@ _G.pg.base.chapter_template[1850001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -284635,12 +279739,6 @@ _G.pg.base.chapter_template[1850002] = {
 		1850303,
 		1850304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1850113,
 	},
@@ -284660,12 +279758,6 @@ _G.pg.base.chapter_template[1850002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -285379,12 +280471,6 @@ _G.pg.base.chapter_template[1850003] = {
 		1850305,
 		1850306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1850213,
 	},
@@ -285404,12 +280490,6 @@ _G.pg.base.chapter_template[1850003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -286054,12 +281134,6 @@ _G.pg.base.chapter_template[1850004] = {
 	ai_expedition_list = {
 		1851301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1851013,
 	},
@@ -286080,12 +281154,6 @@ _G.pg.base.chapter_template[1850004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -286909,12 +281977,6 @@ _G.pg.base.chapter_template[1850005] = {
 	ai_expedition_list = {
 		1851302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1851113,
 	},
@@ -286935,12 +281997,6 @@ _G.pg.base.chapter_template[1850005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -287772,12 +282828,6 @@ _G.pg.base.chapter_template[1850006] = {
 		1851303,
 		1851304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1851213,
 	},
@@ -287798,12 +282848,6 @@ _G.pg.base.chapter_template[1850006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -288613,12 +283657,6 @@ _G.pg.base.chapter_template[1850021] = {
 		1852301,
 		1852302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1852013,
 	},
@@ -288638,12 +283676,6 @@ _G.pg.base.chapter_template[1850021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -289323,12 +284355,6 @@ _G.pg.base.chapter_template[1850022] = {
 		1852303,
 		1852304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1852113,
 	},
@@ -289348,12 +284374,6 @@ _G.pg.base.chapter_template[1850022] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -290108,12 +285128,6 @@ _G.pg.base.chapter_template[1850023] = {
 		1852305,
 		1852306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1852213,
 	},
@@ -290133,12 +285147,6 @@ _G.pg.base.chapter_template[1850023] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -290824,12 +285832,6 @@ _G.pg.base.chapter_template[1850024] = {
 	ai_expedition_list = {
 		1853301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1853013,
 	},
@@ -290850,12 +285852,6 @@ _G.pg.base.chapter_template[1850024] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -291724,12 +286720,6 @@ _G.pg.base.chapter_template[1850025] = {
 	ai_expedition_list = {
 		1853302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1853113,
 	},
@@ -291752,12 +286742,6 @@ _G.pg.base.chapter_template[1850025] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -292634,12 +287618,6 @@ _G.pg.base.chapter_template[1850026] = {
 		1853303,
 		1853304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1853213,
 	},
@@ -292662,12 +287640,6 @@ _G.pg.base.chapter_template[1850026] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -293467,12 +288439,6 @@ _G.pg.base.chapter_template[1850041] = {
 		1854301,
 		1854302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1854013,
 	},
@@ -293484,12 +288450,6 @@ _G.pg.base.chapter_template[1850041] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -294052,12 +289012,6 @@ _G.pg.base.chapter_template[1850051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1855001,
 	},
@@ -294072,12 +289026,6 @@ _G.pg.base.chapter_template[1850051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -294517,12 +289465,6 @@ _G.pg.base.chapter_template[1850052] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1855002,
 	},
@@ -294537,12 +289479,6 @@ _G.pg.base.chapter_template[1850052] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -295017,12 +289953,6 @@ _G.pg.base.chapter_template[1860001] = {
 		1860301,
 		1860302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1860013,
 	},
@@ -295039,12 +289969,6 @@ _G.pg.base.chapter_template[1860001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -295766,12 +290690,6 @@ _G.pg.base.chapter_template[1860002] = {
 		1861302,
 		1861303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1861013,
 	},
@@ -295788,12 +290706,6 @@ _G.pg.base.chapter_template[1860002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -296513,12 +291425,6 @@ _G.pg.base.chapter_template[1860003] = {
 	ai_expedition_list = {
 		1862301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1862013,
 	},
@@ -296535,12 +291441,6 @@ _G.pg.base.chapter_template[1860003] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -297281,12 +292181,6 @@ _G.pg.base.chapter_template[1860004] = {
 	ai_expedition_list = {
 		1863301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1863013,
 	},
@@ -297302,12 +292196,6 @@ _G.pg.base.chapter_template[1860004] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -298041,12 +292929,6 @@ _G.pg.base.chapter_template[1860005] = {
 	ai_expedition_list = {
 		1864301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1864013,
 	},
@@ -298063,12 +292945,6 @@ _G.pg.base.chapter_template[1860005] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -298902,12 +293778,6 @@ _G.pg.base.chapter_template[1860006] = {
 	ai_expedition_list = {
 		1865301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1865013,
 	},
@@ -298919,12 +293789,6 @@ _G.pg.base.chapter_template[1860006] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -299894,12 +294758,6 @@ _G.pg.base.chapter_template[1860041] = {
 	ai_expedition_list = {
 		1866301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1866013,
 	},
@@ -299911,12 +294769,6 @@ _G.pg.base.chapter_template[1860041] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -300516,12 +295368,6 @@ _G.pg.base.chapter_template[1860051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1867001,
 	},
@@ -300532,12 +295378,6 @@ _G.pg.base.chapter_template[1860051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -300973,12 +295813,6 @@ _G.pg.base.chapter_template[1870001] = {
 	ai_expedition_list = {
 		1870301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1870013,
 	},
@@ -300995,12 +295829,6 @@ _G.pg.base.chapter_template[1870001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -301696,12 +296524,6 @@ _G.pg.base.chapter_template[1870002] = {
 		1871301,
 		1871302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1871013,
 	},
@@ -301718,12 +296540,6 @@ _G.pg.base.chapter_template[1870002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -302372,12 +297188,6 @@ _G.pg.base.chapter_template[1870003] = {
 		1872301,
 		1872302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1872013,
 	},
@@ -302394,12 +297204,6 @@ _G.pg.base.chapter_template[1870003] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -303109,12 +297913,6 @@ _G.pg.base.chapter_template[1870004] = {
 		1873301,
 		1873302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1873013,
 	},
@@ -303132,12 +297930,6 @@ _G.pg.base.chapter_template[1870004] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -303847,12 +298639,6 @@ _G.pg.base.chapter_template[1870005] = {
 		1874301,
 		1874302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1874013,
 	},
@@ -303871,12 +298657,6 @@ _G.pg.base.chapter_template[1870005] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -304640,12 +299420,6 @@ _G.pg.base.chapter_template[1870021] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1876001,
 	},
@@ -304656,12 +299430,6 @@ _G.pg.base.chapter_template[1870021] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -305013,12 +299781,6 @@ _G.pg.base.chapter_template[1870022] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1876002,
 	},
@@ -305029,12 +299791,6 @@ _G.pg.base.chapter_template[1870022] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -305386,12 +300142,6 @@ _G.pg.base.chapter_template[1870023] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1876003,
 	},
@@ -305402,12 +300152,6 @@ _G.pg.base.chapter_template[1870023] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -305759,12 +300503,6 @@ _G.pg.base.chapter_template[1870024] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1876004,
 	},
@@ -305775,12 +300513,6 @@ _G.pg.base.chapter_template[1870024] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -306132,12 +300864,6 @@ _G.pg.base.chapter_template[1870025] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1876005,
 	},
@@ -306148,12 +300874,6 @@ _G.pg.base.chapter_template[1870025] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -306558,12 +301278,6 @@ _G.pg.base.chapter_template[1870041] = {
 		1875301,
 		1875302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1875013,
 	},
@@ -306575,12 +301289,6 @@ _G.pg.base.chapter_template[1870041] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -307207,12 +301915,6 @@ _G.pg.base.chapter_template[1870051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1877001,
 	},
@@ -307223,12 +301925,6 @@ _G.pg.base.chapter_template[1870051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -307642,12 +302338,6 @@ _G.pg.base.chapter_template[1870052] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1877002,
 	},
@@ -307658,12 +302348,6 @@ _G.pg.base.chapter_template[1870052] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -308116,12 +302800,6 @@ _G.pg.base.chapter_template[1880001] = {
 	ai_expedition_list = {
 		1880301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1880013,
 	},
@@ -308141,12 +302819,6 @@ _G.pg.base.chapter_template[1880001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -308873,12 +303545,6 @@ _G.pg.base.chapter_template[1880002] = {
 	ai_expedition_list = {
 		1880302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1880113,
 	},
@@ -308898,12 +303564,6 @@ _G.pg.base.chapter_template[1880002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -309624,12 +304284,6 @@ _G.pg.base.chapter_template[1880003] = {
 	ai_expedition_list = {
 		1880303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1880213,
 	},
@@ -309649,12 +304303,6 @@ _G.pg.base.chapter_template[1880003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -310559,12 +305207,6 @@ _G.pg.base.chapter_template[1880004] = {
 		1881301,
 		1881302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1881013,
 	},
@@ -310585,12 +305227,6 @@ _G.pg.base.chapter_template[1880004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -311421,12 +306057,6 @@ _G.pg.base.chapter_template[1880005] = {
 		1881303,
 		1881304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1881113,
 	},
@@ -311447,12 +306077,6 @@ _G.pg.base.chapter_template[1880005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -312297,12 +306921,6 @@ _G.pg.base.chapter_template[1880006] = {
 		1881305,
 		1881306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1881213,
 	},
@@ -312323,12 +306941,6 @@ _G.pg.base.chapter_template[1880006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -313270,12 +307882,6 @@ _G.pg.base.chapter_template[1880021] = {
 		1882301,
 		1882302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1882013,
 	},
@@ -313295,12 +307901,6 @@ _G.pg.base.chapter_template[1880021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -314069,12 +308669,6 @@ _G.pg.base.chapter_template[1880022] = {
 		1882303,
 		1882304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1882113,
 	},
@@ -314094,12 +308688,6 @@ _G.pg.base.chapter_template[1880022] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -314862,12 +309450,6 @@ _G.pg.base.chapter_template[1880023] = {
 		1882305,
 		1882306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1882213,
 	},
@@ -314887,12 +309469,6 @@ _G.pg.base.chapter_template[1880023] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -315838,12 +310414,6 @@ _G.pg.base.chapter_template[1880024] = {
 		1883301,
 		1883302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1883013,
 	},
@@ -315864,12 +310434,6 @@ _G.pg.base.chapter_template[1880024] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -316745,12 +311309,6 @@ _G.pg.base.chapter_template[1880025] = {
 		1883303,
 		1883304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1883113,
 	},
@@ -316773,12 +311331,6 @@ _G.pg.base.chapter_template[1880025] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -317668,12 +312220,6 @@ _G.pg.base.chapter_template[1880026] = {
 		1883305,
 		1883306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1883213,
 	},
@@ -317696,12 +312242,6 @@ _G.pg.base.chapter_template[1880026] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -318633,12 +313173,6 @@ _G.pg.base.chapter_template[1880041] = {
 		1884301,
 		1884302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1884013,
 	},
@@ -318661,12 +313195,6 @@ _G.pg.base.chapter_template[1880041] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -319411,12 +313939,6 @@ _G.pg.base.chapter_template[1880051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1885001,
 	},
@@ -319431,12 +313953,6 @@ _G.pg.base.chapter_template[1880051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -319841,12 +314357,6 @@ _G.pg.base.chapter_template[1880052] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1885002,
 	},
@@ -319861,12 +314371,6 @@ _G.pg.base.chapter_template[1880052] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -320299,12 +314803,6 @@ _G.pg.base.chapter_template[1890001] = {
 		1890301,
 		1890302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1890013,
 	},
@@ -320324,12 +314822,6 @@ _G.pg.base.chapter_template[1890001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -321025,12 +315517,6 @@ _G.pg.base.chapter_template[1890002] = {
 		1890303,
 		1890304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1890113,
 	},
@@ -321050,12 +315536,6 @@ _G.pg.base.chapter_template[1890002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -321751,12 +316231,6 @@ _G.pg.base.chapter_template[1890003] = {
 		1890305,
 		1890306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1890213,
 	},
@@ -321776,12 +316250,6 @@ _G.pg.base.chapter_template[1890003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -322549,12 +317017,6 @@ _G.pg.base.chapter_template[1890004] = {
 		1891302,
 		1891303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1891013,
 	},
@@ -322575,12 +317037,6 @@ _G.pg.base.chapter_template[1890004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -323408,12 +317864,6 @@ _G.pg.base.chapter_template[1890005] = {
 	ai_expedition_list = {
 		1891304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1891113,
 	},
@@ -323434,12 +317884,6 @@ _G.pg.base.chapter_template[1890005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -324241,12 +318685,6 @@ _G.pg.base.chapter_template[1890006] = {
 		1891305,
 		1891306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1891213,
 	},
@@ -324267,12 +318705,6 @@ _G.pg.base.chapter_template[1890006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -325207,12 +319639,6 @@ _G.pg.base.chapter_template[1890021] = {
 		1892301,
 		1892302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1892013,
 	},
@@ -325232,12 +319658,6 @@ _G.pg.base.chapter_template[1890021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -325974,12 +320394,6 @@ _G.pg.base.chapter_template[1890022] = {
 		1892303,
 		1892304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1892113,
 	},
@@ -325999,12 +320413,6 @@ _G.pg.base.chapter_template[1890022] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -326741,12 +321149,6 @@ _G.pg.base.chapter_template[1890023] = {
 		1892305,
 		1892306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1892213,
 	},
@@ -326766,12 +321168,6 @@ _G.pg.base.chapter_template[1890023] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -327580,12 +321976,6 @@ _G.pg.base.chapter_template[1890024] = {
 		1893302,
 		1893303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1893013,
 	},
@@ -327606,12 +321996,6 @@ _G.pg.base.chapter_template[1890024] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -328484,12 +322868,6 @@ _G.pg.base.chapter_template[1890025] = {
 	ai_expedition_list = {
 		1893304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1893113,
 	},
@@ -328512,12 +322890,6 @@ _G.pg.base.chapter_template[1890025] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -329364,12 +323736,6 @@ _G.pg.base.chapter_template[1890026] = {
 		1893305,
 		1893306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1893213,
 	},
@@ -329392,12 +323758,6 @@ _G.pg.base.chapter_template[1890026] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -330321,12 +324681,6 @@ _G.pg.base.chapter_template[1890041] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1894013,
 	},
@@ -330337,12 +324691,6 @@ _G.pg.base.chapter_template[1890041] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -331084,12 +325432,6 @@ _G.pg.base.chapter_template[1890051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1895001,
 	},
@@ -331104,12 +325446,6 @@ _G.pg.base.chapter_template[1890051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -331535,12 +325871,6 @@ _G.pg.base.chapter_template[1890052] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1895002,
 	},
@@ -331555,12 +325885,6 @@ _G.pg.base.chapter_template[1890052] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -332014,12 +326338,6 @@ _G.pg.base.chapter_template[1910001] = {
 		1910301,
 		1910302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1910013,
 	},
@@ -332036,12 +326354,6 @@ _G.pg.base.chapter_template[1910001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -332692,12 +327004,6 @@ _G.pg.base.chapter_template[1910002] = {
 		1910303,
 		1910304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1910113,
 	},
@@ -332714,12 +327020,6 @@ _G.pg.base.chapter_template[1910002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -333369,12 +327669,6 @@ _G.pg.base.chapter_template[1910003] = {
 	ai_expedition_list = {
 		1910305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1910213,
 	},
@@ -333391,12 +327685,6 @@ _G.pg.base.chapter_template[1910003] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -334148,12 +328436,6 @@ _G.pg.base.chapter_template[1910021] = {
 		1911301,
 		1911302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1911013,
 	},
@@ -334171,12 +328453,6 @@ _G.pg.base.chapter_template[1910021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -334868,12 +329144,6 @@ _G.pg.base.chapter_template[1910022] = {
 		1911303,
 		1911304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1911113,
 	},
@@ -334892,12 +329162,6 @@ _G.pg.base.chapter_template[1910022] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -335592,12 +329856,6 @@ _G.pg.base.chapter_template[1910023] = {
 	ai_expedition_list = {
 		1911305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1911213,
 	},
@@ -335616,12 +329874,6 @@ _G.pg.base.chapter_template[1910023] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -336369,12 +330621,6 @@ _G.pg.base.chapter_template[1910041] = {
 	ai_expedition_list = {
 		1914301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1914013,
 	},
@@ -336386,12 +330632,6 @@ _G.pg.base.chapter_template[1910041] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -337083,12 +331323,6 @@ _G.pg.base.chapter_template[1920001] = {
 	ai_expedition_list = {
 		1920301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1920013,
 	},
@@ -337108,12 +331342,6 @@ _G.pg.base.chapter_template[1920001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -337826,12 +332054,6 @@ _G.pg.base.chapter_template[1920002] = {
 	ai_expedition_list = {
 		1920302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1920113,
 	},
@@ -337851,12 +332073,6 @@ _G.pg.base.chapter_template[1920002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -338569,12 +332785,6 @@ _G.pg.base.chapter_template[1920003] = {
 	ai_expedition_list = {
 		1920303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1920213,
 	},
@@ -338594,12 +332804,6 @@ _G.pg.base.chapter_template[1920003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -339360,12 +333564,6 @@ _G.pg.base.chapter_template[1920004] = {
 		1921301,
 		1921302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1921013,
 	},
@@ -339386,12 +333584,6 @@ _G.pg.base.chapter_template[1920004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -340225,12 +334417,6 @@ _G.pg.base.chapter_template[1920005] = {
 		1921303,
 		1921304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1921113,
 	},
@@ -340251,12 +334437,6 @@ _G.pg.base.chapter_template[1920005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -341093,12 +335273,6 @@ _G.pg.base.chapter_template[1920006] = {
 		1921305,
 		1921306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1921213,
 	},
@@ -341119,12 +335293,6 @@ _G.pg.base.chapter_template[1920006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -342025,12 +336193,6 @@ _G.pg.base.chapter_template[1920021] = {
 		1922301,
 		1922302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1922013,
 	},
@@ -342050,12 +336212,6 @@ _G.pg.base.chapter_template[1920021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -342810,12 +336966,6 @@ _G.pg.base.chapter_template[1920022] = {
 		1922303,
 		1922304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1922113,
 	},
@@ -342835,12 +336985,6 @@ _G.pg.base.chapter_template[1920022] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -343595,12 +337739,6 @@ _G.pg.base.chapter_template[1920023] = {
 		1922305,
 		1922306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1922213,
 	},
@@ -343620,12 +337758,6 @@ _G.pg.base.chapter_template[1920023] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -344427,12 +338559,6 @@ _G.pg.base.chapter_template[1920024] = {
 		1923301,
 		1923302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1923013,
 	},
@@ -344453,12 +338579,6 @@ _G.pg.base.chapter_template[1920024] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -345337,12 +339457,6 @@ _G.pg.base.chapter_template[1920025] = {
 		1923303,
 		1923304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1923113,
 	},
@@ -345365,12 +339479,6 @@ _G.pg.base.chapter_template[1920025] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -346252,12 +340360,6 @@ _G.pg.base.chapter_template[1920026] = {
 		1923305,
 		1923306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1923213,
 	},
@@ -346280,12 +340382,6 @@ _G.pg.base.chapter_template[1920026] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -347176,12 +341272,6 @@ _G.pg.base.chapter_template[1920041] = {
 		1924301,
 		1924302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1924013,
 	},
@@ -347193,12 +341283,6 @@ _G.pg.base.chapter_template[1920041] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -347995,12 +342079,6 @@ _G.pg.base.chapter_template[1920051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1925001,
 	},
@@ -348015,12 +342093,6 @@ _G.pg.base.chapter_template[1920051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -348453,12 +342525,6 @@ _G.pg.base.chapter_template[1920052] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1925002,
 	},
@@ -348473,12 +342539,6 @@ _G.pg.base.chapter_template[1920052] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -348938,12 +342998,6 @@ _G.pg.base.chapter_template[1940001] = {
 	ai_expedition_list = {
 		1940301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1940013,
 	},
@@ -348960,12 +343014,6 @@ _G.pg.base.chapter_template[1940001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -349675,12 +343723,6 @@ _G.pg.base.chapter_template[1940002] = {
 	ai_expedition_list = {
 		1941301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1941013,
 	},
@@ -349697,12 +343739,6 @@ _G.pg.base.chapter_template[1940002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -350419,12 +344455,6 @@ _G.pg.base.chapter_template[1940003] = {
 	ai_expedition_list = {
 		1942301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1942013,
 	},
@@ -350441,12 +344471,6 @@ _G.pg.base.chapter_template[1940003] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -351163,12 +345187,6 @@ _G.pg.base.chapter_template[1940004] = {
 	ai_expedition_list = {
 		1943301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1943013,
 	},
@@ -351186,12 +345204,6 @@ _G.pg.base.chapter_template[1940004] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -351908,12 +345920,6 @@ _G.pg.base.chapter_template[1940005] = {
 	ai_expedition_list = {
 		1944305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1944013,
 	},
@@ -351932,12 +345938,6 @@ _G.pg.base.chapter_template[1940005] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -352719,12 +346719,6 @@ _G.pg.base.chapter_template[1940021] = {
 	ai_expedition_list = {
 		1944301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1944101,
 	},
@@ -352743,12 +346737,6 @@ _G.pg.base.chapter_template[1940021] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -353480,12 +347468,6 @@ _G.pg.base.chapter_template[1940022] = {
 	ai_expedition_list = {
 		1944302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1944102,
 	},
@@ -353504,12 +347486,6 @@ _G.pg.base.chapter_template[1940022] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -354248,12 +348224,6 @@ _G.pg.base.chapter_template[1940023] = {
 	ai_expedition_list = {
 		1944303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1944103,
 	},
@@ -354272,12 +348242,6 @@ _G.pg.base.chapter_template[1940023] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -355016,12 +348980,6 @@ _G.pg.base.chapter_template[1940024] = {
 	ai_expedition_list = {
 		1944304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1944104,
 	},
@@ -355040,12 +348998,6 @@ _G.pg.base.chapter_template[1940024] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -355784,12 +349736,6 @@ _G.pg.base.chapter_template[1940025] = {
 	ai_expedition_list = {
 		1944305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1944105,
 	},
@@ -355808,12 +349754,6 @@ _G.pg.base.chapter_template[1940025] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -356642,12 +350582,6 @@ _G.pg.base.chapter_template[1940041] = {
 		1945302,
 		1945303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1945013,
 	},
@@ -356659,12 +350593,6 @@ _G.pg.base.chapter_template[1940041] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -357672,12 +351600,6 @@ _G.pg.base.chapter_template[1940051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1946001,
 	},
@@ -357688,12 +351610,6 @@ _G.pg.base.chapter_template[1940051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -358040,12 +351956,6 @@ _G.pg.base.chapter_template[1940052] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1946002,
 	},
@@ -358056,12 +351966,6 @@ _G.pg.base.chapter_template[1940052] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -358435,12 +352339,6 @@ _G.pg.base.chapter_template[1950001] = {
 		1950302,
 		1950303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1950013,
 	},
@@ -358460,12 +352358,6 @@ _G.pg.base.chapter_template[1950001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -359108,12 +353000,6 @@ _G.pg.base.chapter_template[1950002] = {
 		1950305,
 		1950306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1950113,
 	},
@@ -359133,12 +353019,6 @@ _G.pg.base.chapter_template[1950002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -359830,12 +353710,6 @@ _G.pg.base.chapter_template[1950003] = {
 		1950308,
 		1950309,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1950213,
 	},
@@ -359855,12 +353729,6 @@ _G.pg.base.chapter_template[1950003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -360492,12 +354360,6 @@ _G.pg.base.chapter_template[1950004] = {
 		1951302,
 		1951303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1951013,
 	},
@@ -360518,12 +354380,6 @@ _G.pg.base.chapter_template[1950004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -361335,12 +355191,6 @@ _G.pg.base.chapter_template[1950005] = {
 	ai_expedition_list = {
 		1951304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1951113,
 	},
@@ -361361,12 +355211,6 @@ _G.pg.base.chapter_template[1950005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -362075,12 +355919,6 @@ _G.pg.base.chapter_template[1950006] = {
 	ai_expedition_list = {
 		1951305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1951213,
 	},
@@ -362101,12 +355939,6 @@ _G.pg.base.chapter_template[1950006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -362923,12 +356755,6 @@ _G.pg.base.chapter_template[1950021] = {
 		1952302,
 		1952303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1952013,
 	},
@@ -362948,12 +356774,6 @@ _G.pg.base.chapter_template[1950021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -363637,12 +357457,6 @@ _G.pg.base.chapter_template[1950022] = {
 		1952305,
 		1952306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1952113,
 	},
@@ -363662,12 +357476,6 @@ _G.pg.base.chapter_template[1950022] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -364400,12 +358208,6 @@ _G.pg.base.chapter_template[1950023] = {
 		1952308,
 		1952309,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1952213,
 	},
@@ -364425,12 +358227,6 @@ _G.pg.base.chapter_template[1950023] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -365103,12 +358899,6 @@ _G.pg.base.chapter_template[1950024] = {
 		1953302,
 		1953303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1953013,
 	},
@@ -365129,12 +358919,6 @@ _G.pg.base.chapter_template[1950024] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -365991,12 +359775,6 @@ _G.pg.base.chapter_template[1950025] = {
 	ai_expedition_list = {
 		1953304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1953113,
 	},
@@ -366019,12 +359797,6 @@ _G.pg.base.chapter_template[1950025] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -366778,12 +360550,6 @@ _G.pg.base.chapter_template[1950026] = {
 	ai_expedition_list = {
 		1953305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1953213,
 	},
@@ -366806,12 +360572,6 @@ _G.pg.base.chapter_template[1950026] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -367616,12 +361376,6 @@ _G.pg.base.chapter_template[1950041] = {
 	ai_expedition_list = {
 		1954301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1954013,
 	},
@@ -367633,12 +361387,6 @@ _G.pg.base.chapter_template[1950041] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -368384,12 +362132,6 @@ _G.pg.base.chapter_template[1950051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1955001,
 	},
@@ -368404,12 +362146,6 @@ _G.pg.base.chapter_template[1950051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -368756,12 +362492,6 @@ _G.pg.base.chapter_template[1950052] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1955002,
 	},
@@ -368776,12 +362506,6 @@ _G.pg.base.chapter_template[1950052] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -369153,12 +362877,6 @@ _G.pg.base.chapter_template[1960001] = {
 	ai_expedition_list = {
 		1960301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1960013,
 	},
@@ -369178,12 +362896,6 @@ _G.pg.base.chapter_template[1960001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -369903,12 +363615,6 @@ _G.pg.base.chapter_template[1960002] = {
 	ai_expedition_list = {
 		1960302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1960113,
 	},
@@ -369928,12 +363634,6 @@ _G.pg.base.chapter_template[1960002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -370653,12 +364353,6 @@ _G.pg.base.chapter_template[1960003] = {
 	ai_expedition_list = {
 		1960303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1960213,
 	},
@@ -370678,12 +364372,6 @@ _G.pg.base.chapter_template[1960003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -371438,12 +365126,6 @@ _G.pg.base.chapter_template[1960004] = {
 	ai_expedition_list = {
 		1961301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1961013,
 	},
@@ -371464,12 +365146,6 @@ _G.pg.base.chapter_template[1960004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -372237,12 +365913,6 @@ _G.pg.base.chapter_template[1960005] = {
 	ai_expedition_list = {
 		1961302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1961113,
 	},
@@ -372263,12 +365933,6 @@ _G.pg.base.chapter_template[1960005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -373043,12 +366707,6 @@ _G.pg.base.chapter_template[1960006] = {
 	ai_expedition_list = {
 		1961303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1961213,
 	},
@@ -373069,12 +366727,6 @@ _G.pg.base.chapter_template[1960006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -374052,12 +367704,6 @@ _G.pg.base.chapter_template[1960021] = {
 		1962301,
 		1962302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1962013,
 	},
@@ -374077,12 +367723,6 @@ _G.pg.base.chapter_template[1960021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -374844,12 +368484,6 @@ _G.pg.base.chapter_template[1960022] = {
 		1962303,
 		1962304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1962113,
 	},
@@ -374869,12 +368503,6 @@ _G.pg.base.chapter_template[1960022] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -375636,12 +369264,6 @@ _G.pg.base.chapter_template[1960023] = {
 		1962305,
 		1962306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1962213,
 	},
@@ -375661,12 +369283,6 @@ _G.pg.base.chapter_template[1960023] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -376462,12 +370078,6 @@ _G.pg.base.chapter_template[1960024] = {
 	ai_expedition_list = {
 		1963301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1963013,
 	},
@@ -376488,12 +370098,6 @@ _G.pg.base.chapter_template[1960024] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -377306,12 +370910,6 @@ _G.pg.base.chapter_template[1960025] = {
 	ai_expedition_list = {
 		1963302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1963113,
 	},
@@ -377334,12 +370932,6 @@ _G.pg.base.chapter_template[1960025] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -378159,12 +371751,6 @@ _G.pg.base.chapter_template[1960026] = {
 	ai_expedition_list = {
 		1963303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1963213,
 	},
@@ -378187,12 +371773,6 @@ _G.pg.base.chapter_template[1960026] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -379160,12 +372740,6 @@ _G.pg.base.chapter_template[1960041] = {
 		1964301,
 		1964302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1964013,
 	},
@@ -379177,12 +372751,6 @@ _G.pg.base.chapter_template[1960041] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -379852,12 +373420,6 @@ _G.pg.base.chapter_template[1960051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1965001,
 	},
@@ -379872,12 +373434,6 @@ _G.pg.base.chapter_template[1960051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -380275,12 +373831,6 @@ _G.pg.base.chapter_template[1960052] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1965002,
 	},
@@ -380295,12 +373845,6 @@ _G.pg.base.chapter_template[1960052] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -380731,12 +374275,6 @@ _G.pg.base.chapter_template[1970001] = {
 	ai_expedition_list = {
 		1970301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1970013,
 	},
@@ -380753,12 +374291,6 @@ _G.pg.base.chapter_template[1970001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -381485,12 +375017,6 @@ _G.pg.base.chapter_template[1970002] = {
 	ai_expedition_list = {
 		1971301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1971013,
 	},
@@ -381507,12 +375033,6 @@ _G.pg.base.chapter_template[1970002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -382233,12 +375753,6 @@ _G.pg.base.chapter_template[1970003] = {
 		1972301,
 		1972302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1972013,
 	},
@@ -382255,12 +375769,6 @@ _G.pg.base.chapter_template[1970003] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -383028,12 +376536,6 @@ _G.pg.base.chapter_template[1970004] = {
 		1973301,
 		1973302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1973013,
 	},
@@ -383051,12 +376553,6 @@ _G.pg.base.chapter_template[1970004] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -383824,12 +377320,6 @@ _G.pg.base.chapter_template[1970005] = {
 		1974301,
 		1974302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1974013,
 	},
@@ -383848,12 +377338,6 @@ _G.pg.base.chapter_template[1970005] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -384625,12 +378109,6 @@ _G.pg.base.chapter_template[1970006] = {
 		1975301,
 		1975302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1975013,
 	},
@@ -384649,12 +378127,6 @@ _G.pg.base.chapter_template[1970006] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -385449,12 +378921,6 @@ _G.pg.base.chapter_template[1970041] = {
 	ai_expedition_list = {
 		1976301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1976013,
 	},
@@ -385466,12 +378932,6 @@ _G.pg.base.chapter_template[1970041] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -386224,12 +379684,6 @@ _G.pg.base.chapter_template[1970051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1977001,
 	},
@@ -386244,12 +379698,6 @@ _G.pg.base.chapter_template[1970051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -386596,12 +380044,6 @@ _G.pg.base.chapter_template[1970052] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1977002,
 	},
@@ -386616,12 +380058,6 @@ _G.pg.base.chapter_template[1970052] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -386993,12 +380429,6 @@ _G.pg.base.chapter_template[1990001] = {
 	ai_expedition_list = {
 		1990301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1990013,
 	},
@@ -387018,12 +380448,6 @@ _G.pg.base.chapter_template[1990001] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -387797,12 +381221,6 @@ _G.pg.base.chapter_template[1990002] = {
 	ai_expedition_list = {
 		1990302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1990113,
 	},
@@ -387822,12 +381240,6 @@ _G.pg.base.chapter_template[1990002] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -388601,12 +382013,6 @@ _G.pg.base.chapter_template[1990003] = {
 	ai_expedition_list = {
 		1990303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1990213,
 	},
@@ -388626,12 +382032,6 @@ _G.pg.base.chapter_template[1990003] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -389648,12 +383048,6 @@ _G.pg.base.chapter_template[1990004] = {
 		1991301,
 		1991302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1991013,
 	},
@@ -389665,12 +383059,6 @@ _G.pg.base.chapter_template[1990004] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -390496,12 +383884,6 @@ _G.pg.base.chapter_template[1990005] = {
 		1991303,
 		1991304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1991113,
 	},
@@ -390513,12 +383895,6 @@ _G.pg.base.chapter_template[1990005] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -391344,12 +384720,6 @@ _G.pg.base.chapter_template[1990006] = {
 		1991305,
 		1991306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1991213,
 	},
@@ -391361,12 +384731,6 @@ _G.pg.base.chapter_template[1990006] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -392375,12 +385739,6 @@ _G.pg.base.chapter_template[1990021] = {
 	ai_expedition_list = {
 		1992301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1992013,
 	},
@@ -392400,12 +385758,6 @@ _G.pg.base.chapter_template[1990021] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -393220,12 +386572,6 @@ _G.pg.base.chapter_template[1990022] = {
 	ai_expedition_list = {
 		1992302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1992113,
 	},
@@ -393245,12 +386591,6 @@ _G.pg.base.chapter_template[1990022] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -394065,12 +387405,6 @@ _G.pg.base.chapter_template[1990023] = {
 	ai_expedition_list = {
 		1992303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1992213,
 	},
@@ -394090,12 +387424,6 @@ _G.pg.base.chapter_template[1990023] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -395153,12 +388481,6 @@ _G.pg.base.chapter_template[1990024] = {
 		1993301,
 		1993302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1993013,
 	},
@@ -395170,12 +388492,6 @@ _G.pg.base.chapter_template[1990024] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -396046,12 +389362,6 @@ _G.pg.base.chapter_template[1990025] = {
 		1993303,
 		1993304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1993113,
 	},
@@ -396063,12 +389373,6 @@ _G.pg.base.chapter_template[1990025] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -396939,12 +390243,6 @@ _G.pg.base.chapter_template[1990026] = {
 		1993305,
 		1993306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1993213,
 	},
@@ -396956,12 +390254,6 @@ _G.pg.base.chapter_template[1990026] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -398006,12 +391298,6 @@ _G.pg.base.chapter_template[1990041] = {
 		1994302,
 		1994303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1994013,
 	},
@@ -398023,12 +391309,6 @@ _G.pg.base.chapter_template[1990041] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -398706,12 +391986,6 @@ _G.pg.base.chapter_template[1990051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1995001,
 	},
@@ -398726,12 +392000,6 @@ _G.pg.base.chapter_template[1990051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -399122,12 +392390,6 @@ _G.pg.base.chapter_template[1990052] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1995002,
 	},
@@ -399142,12 +392404,6 @@ _G.pg.base.chapter_template[1990052] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -399579,12 +392835,6 @@ _G.pg.base.chapter_template[2100001] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030016,
 	},
@@ -399603,12 +392853,6 @@ _G.pg.base.chapter_template[2100001] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -400131,12 +393375,6 @@ _G.pg.base.chapter_template[2100002] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030032,
 	},
@@ -400155,12 +393393,6 @@ _G.pg.base.chapter_template[2100002] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -400740,12 +393972,6 @@ _G.pg.base.chapter_template[2100003] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030048,
 	},
@@ -400764,12 +393990,6 @@ _G.pg.base.chapter_template[2100003] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -401416,12 +394636,6 @@ _G.pg.base.chapter_template[2100004] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030064,
 	},
@@ -401440,12 +394654,6 @@ _G.pg.base.chapter_template[2100004] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -402042,12 +395250,6 @@ _G.pg.base.chapter_template[2100005] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030080,
 	},
@@ -402066,12 +395268,6 @@ _G.pg.base.chapter_template[2100005] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -402770,12 +395966,6 @@ _G.pg.base.chapter_template[2100006] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030096,
 	},
@@ -402795,12 +395985,6 @@ _G.pg.base.chapter_template[2100006] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -403534,12 +396718,6 @@ _G.pg.base.chapter_template[2100011] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030215,
 	},
@@ -403558,12 +396736,6 @@ _G.pg.base.chapter_template[2100011] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -404127,12 +397299,6 @@ _G.pg.base.chapter_template[2100012] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030231,
 	},
@@ -404151,12 +397317,6 @@ _G.pg.base.chapter_template[2100012] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -404777,12 +397937,6 @@ _G.pg.base.chapter_template[2100013] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030247,
 	},
@@ -404802,12 +397956,6 @@ _G.pg.base.chapter_template[2100013] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -405495,12 +398643,6 @@ _G.pg.base.chapter_template[2100014] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030263,
 	},
@@ -405520,12 +398662,6 @@ _G.pg.base.chapter_template[2100014] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -406167,12 +399303,6 @@ _G.pg.base.chapter_template[2100015] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030279,
 	},
@@ -406192,12 +399322,6 @@ _G.pg.base.chapter_template[2100015] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -406941,12 +400065,6 @@ _G.pg.base.chapter_template[2100016] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1030295,
 	},
@@ -406966,12 +400084,6 @@ _G.pg.base.chapter_template[2100016] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -407663,12 +400775,6 @@ _G.pg.base.chapter_template[2100021] = {
 	ai_expedition_list = {
 		1090400,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1090016,
 	},
@@ -407687,12 +400793,6 @@ _G.pg.base.chapter_template[2100021] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -408167,12 +401267,6 @@ _G.pg.base.chapter_template[2100022] = {
 		1090401,
 		1090402,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1090032,
 	},
@@ -408192,12 +401286,6 @@ _G.pg.base.chapter_template[2100022] = {
 	ai_refresh = {
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -408732,12 +401820,6 @@ _G.pg.base.chapter_template[2100023] = {
 		1090403,
 		1090404,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1090048,
 	},
@@ -408758,12 +401840,6 @@ _G.pg.base.chapter_template[2100023] = {
 	ai_refresh = {
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -409387,12 +402463,6 @@ _G.pg.base.chapter_template[2100024] = {
 		1090405,
 		1090406,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1090064,
 	},
@@ -409412,12 +402482,6 @@ _G.pg.base.chapter_template[2100024] = {
 	ai_refresh = {
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -410066,12 +403130,6 @@ _G.pg.base.chapter_template[2100025] = {
 		1090408,
 		1090409,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1090080,
 	},
@@ -410092,12 +403150,6 @@ _G.pg.base.chapter_template[2100025] = {
 		1,
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -410763,12 +403815,6 @@ _G.pg.base.chapter_template[2100026] = {
 		1090412,
 		1090413,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1090096,
 	},
@@ -410790,12 +403836,6 @@ _G.pg.base.chapter_template[2100026] = {
 		1,
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -411672,12 +404712,6 @@ _G.pg.base.chapter_template[2100031] = {
 	ai_expedition_list = {
 		1090500,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1090215,
 	},
@@ -411696,12 +404730,6 @@ _G.pg.base.chapter_template[2100031] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -412217,12 +405245,6 @@ _G.pg.base.chapter_template[2100032] = {
 		1090501,
 		1090502,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1090231,
 	},
@@ -412242,12 +405264,6 @@ _G.pg.base.chapter_template[2100032] = {
 	ai_refresh = {
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -412823,12 +405839,6 @@ _G.pg.base.chapter_template[2100033] = {
 		1090503,
 		1090504,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1090247,
 	},
@@ -412849,12 +405859,6 @@ _G.pg.base.chapter_template[2100033] = {
 	ai_refresh = {
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -413519,12 +406523,6 @@ _G.pg.base.chapter_template[2100034] = {
 		1090505,
 		1090506,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1090263,
 	},
@@ -413544,12 +406542,6 @@ _G.pg.base.chapter_template[2100034] = {
 	ai_refresh = {
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -414243,12 +407235,6 @@ _G.pg.base.chapter_template[2100035] = {
 		1090508,
 		1090509,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1090279,
 	},
@@ -414269,12 +407255,6 @@ _G.pg.base.chapter_template[2100035] = {
 		1,
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -414985,12 +407965,6 @@ _G.pg.base.chapter_template[2100036] = {
 		1090512,
 		1090513,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1090295,
 	},
@@ -415012,12 +407986,6 @@ _G.pg.base.chapter_template[2100036] = {
 		1,
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -415861,12 +408829,6 @@ _G.pg.base.chapter_template[2100041] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000016,
 	},
@@ -415883,12 +408845,6 @@ _G.pg.base.chapter_template[2100041] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -416425,12 +409381,6 @@ _G.pg.base.chapter_template[2100042] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000032,
 	},
@@ -416447,12 +409397,6 @@ _G.pg.base.chapter_template[2100042] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -417129,12 +410073,6 @@ _G.pg.base.chapter_template[2100043] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000048,
 	},
@@ -417153,12 +410091,6 @@ _G.pg.base.chapter_template[2100043] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -417800,12 +410732,6 @@ _G.pg.base.chapter_template[2100044] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000064,
 	},
@@ -417824,12 +410750,6 @@ _G.pg.base.chapter_template[2100044] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -418589,12 +411509,6 @@ _G.pg.base.chapter_template[2100045] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000080,
 	},
@@ -418613,12 +411527,6 @@ _G.pg.base.chapter_template[2100045] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -419173,12 +412081,6 @@ _G.pg.base.chapter_template[2100046] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000096,
 	},
@@ -419197,12 +412099,6 @@ _G.pg.base.chapter_template[2100046] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -419765,12 +412661,6 @@ _G.pg.base.chapter_template[2100047] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000112,
 	},
@@ -419789,12 +412679,6 @@ _G.pg.base.chapter_template[2100047] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -420412,12 +413296,6 @@ _G.pg.base.chapter_template[2100048] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000128,
 	},
@@ -420436,12 +413314,6 @@ _G.pg.base.chapter_template[2100048] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -421256,12 +414128,6 @@ _G.pg.base.chapter_template[2100051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000215,
 	},
@@ -421278,12 +414144,6 @@ _G.pg.base.chapter_template[2100051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -421861,12 +414721,6 @@ _G.pg.base.chapter_template[2100052] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000231,
 	},
@@ -421885,12 +414739,6 @@ _G.pg.base.chapter_template[2100052] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -422608,12 +415456,6 @@ _G.pg.base.chapter_template[2100053] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000247,
 	},
@@ -422632,12 +415474,6 @@ _G.pg.base.chapter_template[2100053] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -423320,12 +416156,6 @@ _G.pg.base.chapter_template[2100054] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000263,
 	},
@@ -423344,12 +416174,6 @@ _G.pg.base.chapter_template[2100054] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -424150,12 +416974,6 @@ _G.pg.base.chapter_template[2100055] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000279,
 	},
@@ -424174,12 +416992,6 @@ _G.pg.base.chapter_template[2100055] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -424779,12 +417591,6 @@ _G.pg.base.chapter_template[2100056] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000295,
 	},
@@ -424803,12 +417609,6 @@ _G.pg.base.chapter_template[2100056] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -425416,12 +418216,6 @@ _G.pg.base.chapter_template[2100057] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000311,
 	},
@@ -425440,12 +418234,6 @@ _G.pg.base.chapter_template[2100057] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -426108,12 +418896,6 @@ _G.pg.base.chapter_template[2100058] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000327,
 	},
@@ -426132,12 +418914,6 @@ _G.pg.base.chapter_template[2100058] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -426916,12 +419692,6 @@ _G.pg.base.chapter_template[2100061] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1060016,
 	},
@@ -426940,12 +419710,6 @@ _G.pg.base.chapter_template[2100061] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -427511,12 +420275,6 @@ _G.pg.base.chapter_template[2100062] = {
 	ai_expedition_list = {
 		1060400,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1060032,
 	},
@@ -427539,12 +420297,6 @@ _G.pg.base.chapter_template[2100062] = {
 		0,
 		0,
 		0,
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -428165,12 +420917,6 @@ _G.pg.base.chapter_template[2100063] = {
 		1060401,
 		1060402,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1060048,
 	},
@@ -428193,12 +420939,6 @@ _G.pg.base.chapter_template[2100063] = {
 		0,
 		0,
 		0,
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -428909,12 +421649,6 @@ _G.pg.base.chapter_template[2100064] = {
 		1060403,
 		1060404,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1060064,
 	},
@@ -428936,12 +421670,6 @@ _G.pg.base.chapter_template[2100064] = {
 		0,
 		0,
 		0,
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -429591,12 +422319,6 @@ _G.pg.base.chapter_template[2100065] = {
 		1060405,
 		1060406,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1060080,
 	},
@@ -429618,12 +422340,6 @@ _G.pg.base.chapter_template[2100065] = {
 		0,
 		0,
 		0,
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -430415,12 +423131,6 @@ _G.pg.base.chapter_template[2100066] = {
 		1060408,
 		1060409,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1060096,
 	},
@@ -430443,12 +423153,6 @@ _G.pg.base.chapter_template[2100066] = {
 		1,
 		0,
 		0,
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -431456,12 +424160,6 @@ _G.pg.base.chapter_template[2100071] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1060215,
 	},
@@ -431480,12 +424178,6 @@ _G.pg.base.chapter_template[2100071] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -432092,12 +424784,6 @@ _G.pg.base.chapter_template[2100072] = {
 	ai_expedition_list = {
 		1060410,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1060231,
 	},
@@ -432120,12 +424806,6 @@ _G.pg.base.chapter_template[2100072] = {
 		0,
 		0,
 		0,
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -432787,12 +425467,6 @@ _G.pg.base.chapter_template[2100073] = {
 		1060411,
 		1060412,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1060247,
 	},
@@ -432815,12 +425489,6 @@ _G.pg.base.chapter_template[2100073] = {
 		0,
 		0,
 		0,
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -433572,12 +426240,6 @@ _G.pg.base.chapter_template[2100074] = {
 		1060413,
 		1060414,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1060263,
 	},
@@ -433599,12 +426261,6 @@ _G.pg.base.chapter_template[2100074] = {
 		0,
 		0,
 		0,
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -434299,12 +426955,6 @@ _G.pg.base.chapter_template[2100075] = {
 		1060415,
 		1060416,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1060279,
 	},
@@ -434326,12 +426976,6 @@ _G.pg.base.chapter_template[2100075] = {
 		0,
 		0,
 		0,
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -435168,12 +427812,6 @@ _G.pg.base.chapter_template[2100076] = {
 		1060418,
 		1060419,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1060295,
 	},
@@ -435196,12 +427834,6 @@ _G.pg.base.chapter_template[2100076] = {
 		1,
 		0,
 		0,
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -436161,12 +428793,6 @@ _G.pg.base.chapter_template[2100081] = {
 	ai_expedition_list = {
 		4000221,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000013,
 	},
@@ -436186,12 +428812,6 @@ _G.pg.base.chapter_template[2100081] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -436718,12 +429338,6 @@ _G.pg.base.chapter_template[2100082] = {
 		4000231,
 		4000232,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000113,
 	},
@@ -436743,12 +429357,6 @@ _G.pg.base.chapter_template[2100082] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -437381,12 +429989,6 @@ _G.pg.base.chapter_template[2100083] = {
 		4000242,
 		4000243,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000213,
 	},
@@ -437406,12 +430008,6 @@ _G.pg.base.chapter_template[2100083] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -438154,12 +430750,6 @@ _G.pg.base.chapter_template[2100084] = {
 		4000521,
 		4000522,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000313,
 	},
@@ -438179,12 +430769,6 @@ _G.pg.base.chapter_template[2100084] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -438724,12 +431308,6 @@ _G.pg.base.chapter_template[2100085] = {
 		4000532,
 		4000533,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000413,
 	},
@@ -438749,12 +431327,6 @@ _G.pg.base.chapter_template[2100085] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -439398,12 +431970,6 @@ _G.pg.base.chapter_template[2100086] = {
 		4000543,
 		4000544,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000513,
 	},
@@ -439423,12 +431989,6 @@ _G.pg.base.chapter_template[2100086] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -440237,12 +432797,6 @@ _G.pg.base.chapter_template[2100091] = {
 	ai_expedition_list = {
 		4000821,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000613,
 	},
@@ -440262,12 +432816,6 @@ _G.pg.base.chapter_template[2100091] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -440835,12 +433383,6 @@ _G.pg.base.chapter_template[2100092] = {
 		4000831,
 		4000832,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000713,
 	},
@@ -440860,12 +433402,6 @@ _G.pg.base.chapter_template[2100092] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -441539,12 +434075,6 @@ _G.pg.base.chapter_template[2100093] = {
 		4000842,
 		4000843,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000813,
 	},
@@ -441564,12 +434094,6 @@ _G.pg.base.chapter_template[2100093] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -442353,12 +434877,6 @@ _G.pg.base.chapter_template[2100094] = {
 		4001121,
 		4001122,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4000913,
 	},
@@ -442378,12 +434896,6 @@ _G.pg.base.chapter_template[2100094] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -442968,12 +435480,6 @@ _G.pg.base.chapter_template[2100095] = {
 		4001132,
 		4001133,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4001013,
 	},
@@ -442995,12 +435501,6 @@ _G.pg.base.chapter_template[2100095] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -443690,12 +436190,6 @@ _G.pg.base.chapter_template[2100096] = {
 		4001143,
 		4001144,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		4001113,
 	},
@@ -443717,12 +436211,6 @@ _G.pg.base.chapter_template[2100096] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -444491,12 +436979,6 @@ _G.pg.base.chapter_template[2100101] = {
 	ai_expedition_list = {
 		3000221,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000013,
 	},
@@ -444516,12 +436998,6 @@ _G.pg.base.chapter_template[2100101] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -445103,12 +437579,6 @@ _G.pg.base.chapter_template[2100102] = {
 		3000231,
 		3000232,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000113,
 	},
@@ -445128,12 +437598,6 @@ _G.pg.base.chapter_template[2100102] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -445680,12 +438144,6 @@ _G.pg.base.chapter_template[2100103] = {
 		3000242,
 		3000243,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000213,
 	},
@@ -445705,12 +438163,6 @@ _G.pg.base.chapter_template[2100103] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -446352,12 +438804,6 @@ _G.pg.base.chapter_template[2100104] = {
 	ai_expedition_list = {
 		3000521,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000313,
 	},
@@ -446378,12 +438824,6 @@ _G.pg.base.chapter_template[2100104] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -447026,12 +439466,6 @@ _G.pg.base.chapter_template[2100105] = {
 		3000531,
 		3000532,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000413,
 	},
@@ -447052,12 +439486,6 @@ _G.pg.base.chapter_template[2100105] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -447751,12 +440179,6 @@ _G.pg.base.chapter_template[2100106] = {
 		3000542,
 		3000543,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000513,
 	},
@@ -447777,12 +440199,6 @@ _G.pg.base.chapter_template[2100106] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -448576,12 +440992,6 @@ _G.pg.base.chapter_template[2100111] = {
 		3000821,
 		3000822,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000613,
 	},
@@ -448601,12 +441011,6 @@ _G.pg.base.chapter_template[2100111] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -449231,12 +441635,6 @@ _G.pg.base.chapter_template[2100112] = {
 		3000832,
 		3000833,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000713,
 	},
@@ -449256,12 +441654,6 @@ _G.pg.base.chapter_template[2100112] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -449850,12 +442242,6 @@ _G.pg.base.chapter_template[2100113] = {
 		3000843,
 		3000844,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000813,
 	},
@@ -449875,12 +442261,6 @@ _G.pg.base.chapter_template[2100113] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -450564,12 +442944,6 @@ _G.pg.base.chapter_template[2100114] = {
 		3001121,
 		3001122,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3000913,
 	},
@@ -450590,12 +442964,6 @@ _G.pg.base.chapter_template[2100114] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -451280,12 +443648,6 @@ _G.pg.base.chapter_template[2100115] = {
 		3001132,
 		3001133,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3001013,
 	},
@@ -451308,12 +443670,6 @@ _G.pg.base.chapter_template[2100115] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -452053,12 +444409,6 @@ _G.pg.base.chapter_template[2100116] = {
 		3001143,
 		3001144,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		3001113,
 	},
@@ -452081,12 +444431,6 @@ _G.pg.base.chapter_template[2100116] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -452841,12 +445185,6 @@ _G.pg.base.chapter_template[2100121] = {
 	ai_expedition_list = {
 		1370221,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1370013,
 	},
@@ -452866,12 +445204,6 @@ _G.pg.base.chapter_template[2100121] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -453448,12 +445780,6 @@ _G.pg.base.chapter_template[2100122] = {
 		1370231,
 		1370232,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1370113,
 	},
@@ -453473,12 +445799,6 @@ _G.pg.base.chapter_template[2100122] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -454026,12 +446346,6 @@ _G.pg.base.chapter_template[2100123] = {
 		1370242,
 		1370243,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1370213,
 	},
@@ -454051,12 +446365,6 @@ _G.pg.base.chapter_template[2100123] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -454697,12 +447005,6 @@ _G.pg.base.chapter_template[2100124] = {
 	ai_expedition_list = {
 		1370521,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1370313,
 	},
@@ -454723,12 +447025,6 @@ _G.pg.base.chapter_template[2100124] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -455373,12 +447669,6 @@ _G.pg.base.chapter_template[2100125] = {
 		1370531,
 		1370532,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1370413,
 	},
@@ -455399,12 +447689,6 @@ _G.pg.base.chapter_template[2100125] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -456092,12 +448376,6 @@ _G.pg.base.chapter_template[2100126] = {
 		1370542,
 		1370543,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1370513,
 	},
@@ -456118,12 +448396,6 @@ _G.pg.base.chapter_template[2100126] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -456824,12 +449096,6 @@ _G.pg.base.chapter_template[2100131] = {
 		1370821,
 		1370822,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1370613,
 	},
@@ -456849,12 +449115,6 @@ _G.pg.base.chapter_template[2100131] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -457473,12 +449733,6 @@ _G.pg.base.chapter_template[2100132] = {
 		1370832,
 		1370833,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1370713,
 	},
@@ -457498,12 +449752,6 @@ _G.pg.base.chapter_template[2100132] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -458093,12 +450341,6 @@ _G.pg.base.chapter_template[2100133] = {
 		1370843,
 		1370844,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1370813,
 	},
@@ -458118,12 +450360,6 @@ _G.pg.base.chapter_template[2100133] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -458806,12 +451042,6 @@ _G.pg.base.chapter_template[2100134] = {
 		1371121,
 		1371122,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1370913,
 	},
@@ -458832,12 +451062,6 @@ _G.pg.base.chapter_template[2100134] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -459528,12 +451752,6 @@ _G.pg.base.chapter_template[2100135] = {
 		1371132,
 		1371133,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1371013,
 	},
@@ -459556,12 +451774,6 @@ _G.pg.base.chapter_template[2100135] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -460295,12 +452507,6 @@ _G.pg.base.chapter_template[2100136] = {
 		1371143,
 		1371144,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1371113,
 	},
@@ -460323,12 +452529,6 @@ _G.pg.base.chapter_template[2100136] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -460989,12 +453189,6 @@ _G.pg.base.chapter_template[2100141] = {
 	ai_expedition_list = {
 		1230221,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1230013,
 	},
@@ -461014,12 +453208,6 @@ _G.pg.base.chapter_template[2100141] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -461566,12 +453754,6 @@ _G.pg.base.chapter_template[2100142] = {
 		1230231,
 		1230232,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1230113,
 	},
@@ -461591,12 +453773,6 @@ _G.pg.base.chapter_template[2100142] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -462145,12 +454321,6 @@ _G.pg.base.chapter_template[2100143] = {
 		1230242,
 		1230243,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1230213,
 	},
@@ -462170,12 +454340,6 @@ _G.pg.base.chapter_template[2100143] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -462806,12 +454970,6 @@ _G.pg.base.chapter_template[2100144] = {
 	ai_expedition_list = {
 		1230521,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1230313,
 	},
@@ -462832,12 +454990,6 @@ _G.pg.base.chapter_template[2100144] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -463480,12 +455632,6 @@ _G.pg.base.chapter_template[2100145] = {
 		1230531,
 		1230532,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1230413,
 	},
@@ -463506,12 +455652,6 @@ _G.pg.base.chapter_template[2100145] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -464197,12 +456337,6 @@ _G.pg.base.chapter_template[2100146] = {
 		1230542,
 		1230543,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1230513,
 	},
@@ -464223,12 +456357,6 @@ _G.pg.base.chapter_template[2100146] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -464925,12 +457053,6 @@ _G.pg.base.chapter_template[2100151] = {
 		1230821,
 		1230822,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1230613,
 	},
@@ -464950,12 +457072,6 @@ _G.pg.base.chapter_template[2100151] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -465544,12 +457660,6 @@ _G.pg.base.chapter_template[2100152] = {
 		1230832,
 		1230833,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1230713,
 	},
@@ -465569,12 +457679,6 @@ _G.pg.base.chapter_template[2100152] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -466165,12 +458269,6 @@ _G.pg.base.chapter_template[2100153] = {
 		1230843,
 		1230844,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1230813,
 	},
@@ -466190,12 +458288,6 @@ _G.pg.base.chapter_template[2100153] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -466868,12 +458960,6 @@ _G.pg.base.chapter_template[2100154] = {
 		1231221,
 		1231222,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1230913,
 	},
@@ -466894,12 +458980,6 @@ _G.pg.base.chapter_template[2100154] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -467588,12 +459668,6 @@ _G.pg.base.chapter_template[2100155] = {
 		1231232,
 		1231233,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1231013,
 	},
@@ -467616,12 +459690,6 @@ _G.pg.base.chapter_template[2100155] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -468353,12 +460421,6 @@ _G.pg.base.chapter_template[2100156] = {
 		1231243,
 		1231244,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1231113,
 	},
@@ -468381,12 +460443,6 @@ _G.pg.base.chapter_template[2100156] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -469045,12 +461101,6 @@ _G.pg.base.chapter_template[2100161] = {
 	ai_expedition_list = {
 		1250221,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1250013,
 	},
@@ -469071,12 +461121,6 @@ _G.pg.base.chapter_template[2100161] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -469627,12 +461671,6 @@ _G.pg.base.chapter_template[2100162] = {
 	ai_expedition_list = {
 		1250231,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1250113,
 	},
@@ -469650,12 +461688,6 @@ _G.pg.base.chapter_template[2100162] = {
 	ai_refresh = {
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -470231,12 +462263,6 @@ _G.pg.base.chapter_template[2100163] = {
 	ai_expedition_list = {
 		1250241,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1250213,
 	},
@@ -470259,12 +462285,6 @@ _G.pg.base.chapter_template[2100163] = {
 		2,
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -470928,12 +462948,6 @@ _G.pg.base.chapter_template[2100164] = {
 	ai_expedition_list = {
 		1250223,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1250033,
 	},
@@ -470954,12 +462968,6 @@ _G.pg.base.chapter_template[2100164] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -471475,12 +463483,6 @@ _G.pg.base.chapter_template[2100165] = {
 	ai_expedition_list = {
 		1250233,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1250133,
 	},
@@ -471501,12 +463503,6 @@ _G.pg.base.chapter_template[2100165] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -472063,12 +464059,6 @@ _G.pg.base.chapter_template[2100166] = {
 		1250521,
 		1250523,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1250313,
 	},
@@ -472089,12 +464079,6 @@ _G.pg.base.chapter_template[2100166] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -472676,12 +464660,6 @@ _G.pg.base.chapter_template[2100167] = {
 		1250531,
 		1250533,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1250413,
 	},
@@ -472702,12 +464680,6 @@ _G.pg.base.chapter_template[2100167] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -473332,12 +465304,6 @@ _G.pg.base.chapter_template[2100168] = {
 		1250542,
 		1250543,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1250513,
 	},
@@ -473358,12 +465324,6 @@ _G.pg.base.chapter_template[2100168] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -474009,12 +465969,6 @@ _G.pg.base.chapter_template[2100171] = {
 		1250821,
 		1250822,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1250613,
 	},
@@ -474035,12 +465989,6 @@ _G.pg.base.chapter_template[2100171] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -474632,12 +466580,6 @@ _G.pg.base.chapter_template[2100172] = {
 	ai_expedition_list = {
 		1250831,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1250713,
 	},
@@ -474654,12 +466596,6 @@ _G.pg.base.chapter_template[2100172] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -475276,12 +467212,6 @@ _G.pg.base.chapter_template[2100173] = {
 	ai_expedition_list = {
 		1250841,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1250813,
 	},
@@ -475304,12 +467234,6 @@ _G.pg.base.chapter_template[2100173] = {
 		2,
 		1,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -476015,12 +467939,6 @@ _G.pg.base.chapter_template[2100174] = {
 		1250825,
 		1250826,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1250633,
 	},
@@ -476041,12 +467959,6 @@ _G.pg.base.chapter_template[2100174] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -476605,12 +468517,6 @@ _G.pg.base.chapter_template[2100175] = {
 		1250834,
 		1250835,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1250733,
 	},
@@ -476631,12 +468537,6 @@ _G.pg.base.chapter_template[2100175] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -477234,12 +469134,6 @@ _G.pg.base.chapter_template[2100176] = {
 		1251221,
 		1251222,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1250913,
 	},
@@ -477260,12 +469154,6 @@ _G.pg.base.chapter_template[2100176] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -477893,12 +469781,6 @@ _G.pg.base.chapter_template[2100177] = {
 		1251232,
 		1251233,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1251013,
 	},
@@ -477921,12 +469803,6 @@ _G.pg.base.chapter_template[2100177] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -478596,12 +470472,6 @@ _G.pg.base.chapter_template[2100178] = {
 		1251242,
 		1251243,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1251113,
 	},
@@ -478624,12 +470494,6 @@ _G.pg.base.chapter_template[2100178] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -479236,12 +471100,6 @@ _G.pg.base.chapter_template[2100181] = {
 	ai_expedition_list = {
 		1240221,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240013,
 	},
@@ -479262,12 +471120,6 @@ _G.pg.base.chapter_template[2100181] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -479831,12 +471683,6 @@ _G.pg.base.chapter_template[2100182] = {
 		1240231,
 		1240232,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240113,
 	},
@@ -479857,12 +471703,6 @@ _G.pg.base.chapter_template[2100182] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -480474,12 +472314,6 @@ _G.pg.base.chapter_template[2100183] = {
 		1240242,
 		1240243,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240213,
 	},
@@ -480500,12 +472334,6 @@ _G.pg.base.chapter_template[2100183] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -481212,12 +473040,6 @@ _G.pg.base.chapter_template[2100184] = {
 		1240521,
 		1240523,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240313,
 	},
@@ -481238,12 +473060,6 @@ _G.pg.base.chapter_template[2100184] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -481845,12 +473661,6 @@ _G.pg.base.chapter_template[2100185] = {
 		1240532,
 		1240535,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240413,
 	},
@@ -481871,12 +473681,6 @@ _G.pg.base.chapter_template[2100185] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -482521,12 +474325,6 @@ _G.pg.base.chapter_template[2100186] = {
 		1240543,
 		1240547,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240513,
 	},
@@ -482547,12 +474345,6 @@ _G.pg.base.chapter_template[2100186] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -483165,12 +474957,6 @@ _G.pg.base.chapter_template[2100187] = {
 	ai_expedition_list = {
 		1240223,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240014,
 	},
@@ -483191,12 +474977,6 @@ _G.pg.base.chapter_template[2100187] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -483713,12 +475493,6 @@ _G.pg.base.chapter_template[2100188] = {
 		1240235,
 		1240236,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240114,
 	},
@@ -483739,12 +475513,6 @@ _G.pg.base.chapter_template[2100188] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -484316,12 +476084,6 @@ _G.pg.base.chapter_template[2100189] = {
 		1240525,
 		1240526,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240333,
 	},
@@ -484342,12 +476104,6 @@ _G.pg.base.chapter_template[2100189] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -484913,12 +476669,6 @@ _G.pg.base.chapter_template[2100190] = {
 		1240538,
 		1240539,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240433,
 	},
@@ -484939,12 +476689,6 @@ _G.pg.base.chapter_template[2100190] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -485606,12 +477350,6 @@ _G.pg.base.chapter_template[2100191] = {
 		1240821,
 		1240822,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240613,
 	},
@@ -485632,12 +477370,6 @@ _G.pg.base.chapter_template[2100191] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -486243,12 +477975,6 @@ _G.pg.base.chapter_template[2100192] = {
 		1240832,
 		1240833,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240713,
 	},
@@ -486269,12 +477995,6 @@ _G.pg.base.chapter_template[2100192] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -486927,12 +478647,6 @@ _G.pg.base.chapter_template[2100193] = {
 		1240843,
 		1240844,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240813,
 	},
@@ -486949,12 +478663,6 @@ _G.pg.base.chapter_template[2100193] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -487703,12 +479411,6 @@ _G.pg.base.chapter_template[2100194] = {
 		1241222,
 		1241225,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240913,
 	},
@@ -487729,12 +479431,6 @@ _G.pg.base.chapter_template[2100194] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -488382,12 +480078,6 @@ _G.pg.base.chapter_template[2100195] = {
 		1241233,
 		1241237,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1241013,
 	},
@@ -488410,12 +480100,6 @@ _G.pg.base.chapter_template[2100195] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -489106,12 +480790,6 @@ _G.pg.base.chapter_template[2100196] = {
 		1241244,
 		1241249,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1241113,
 	},
@@ -489134,12 +480812,6 @@ _G.pg.base.chapter_template[2100196] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -489798,12 +481470,6 @@ _G.pg.base.chapter_template[2100197] = {
 		1240825,
 		1240826,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240614,
 	},
@@ -489824,12 +481490,6 @@ _G.pg.base.chapter_template[2100197] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -490388,12 +482048,6 @@ _G.pg.base.chapter_template[2100198] = {
 		1240838,
 		1240839,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240714,
 	},
@@ -490414,12 +482068,6 @@ _G.pg.base.chapter_template[2100198] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -491033,12 +482681,6 @@ _G.pg.base.chapter_template[2100199] = {
 		1241228,
 		1241229,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1240933,
 	},
@@ -491059,12 +482701,6 @@ _G.pg.base.chapter_template[2100199] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -491672,12 +483308,6 @@ _G.pg.base.chapter_template[2100200] = {
 		1241258,
 		1241259,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1241033,
 	},
@@ -491700,12 +483330,6 @@ _G.pg.base.chapter_template[2100200] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -492324,12 +483948,6 @@ _G.pg.base.chapter_template[2100201] = {
 	ai_expedition_list = {
 		1310240,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1310013,
 	},
@@ -492350,12 +483968,6 @@ _G.pg.base.chapter_template[2100201] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -492903,12 +484515,6 @@ _G.pg.base.chapter_template[2100202] = {
 	ai_expedition_list = {
 		1310250,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1310113,
 	},
@@ -492929,12 +484535,6 @@ _G.pg.base.chapter_template[2100202] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -493499,12 +485099,6 @@ _G.pg.base.chapter_template[2100203] = {
 	ai_expedition_list = {
 		1310260,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1310213,
 	},
@@ -493525,12 +485119,6 @@ _G.pg.base.chapter_template[2100203] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -494119,12 +485707,6 @@ _G.pg.base.chapter_template[2100204] = {
 		1310540,
 		1310541,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1310313,
 	},
@@ -494145,12 +485727,6 @@ _G.pg.base.chapter_template[2100204] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -494754,12 +486330,6 @@ _G.pg.base.chapter_template[2100205] = {
 		1310550,
 		1310551,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1310413,
 	},
@@ -494780,12 +486350,6 @@ _G.pg.base.chapter_template[2100205] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -495436,12 +487000,6 @@ _G.pg.base.chapter_template[2100206] = {
 		1310561,
 		1310562,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1310513,
 	},
@@ -495462,12 +487020,6 @@ _G.pg.base.chapter_template[2100206] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -496120,12 +487672,6 @@ _G.pg.base.chapter_template[2100211] = {
 		1310840,
 		1310841,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1310613,
 	},
@@ -496146,12 +487692,6 @@ _G.pg.base.chapter_template[2100211] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -496742,12 +488282,6 @@ _G.pg.base.chapter_template[2100212] = {
 		1310851,
 		1310852,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1310713,
 	},
@@ -496768,12 +488302,6 @@ _G.pg.base.chapter_template[2100212] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -497381,12 +488909,6 @@ _G.pg.base.chapter_template[2100213] = {
 		1310861,
 		1310862,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1310813,
 	},
@@ -497407,12 +488929,6 @@ _G.pg.base.chapter_template[2100213] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -498043,12 +489559,6 @@ _G.pg.base.chapter_template[2100214] = {
 		1311141,
 		1311142,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1310913,
 	},
@@ -498069,12 +489579,6 @@ _G.pg.base.chapter_template[2100214] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -498724,12 +490228,6 @@ _G.pg.base.chapter_template[2100215] = {
 		1311151,
 		1311152,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1311013,
 	},
@@ -498752,12 +490250,6 @@ _G.pg.base.chapter_template[2100215] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -499454,12 +490946,6 @@ _G.pg.base.chapter_template[2100216] = {
 		1311162,
 		1311163,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1311113,
 	},
@@ -499482,12 +490968,6 @@ _G.pg.base.chapter_template[2100216] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -500111,12 +491591,6 @@ _G.pg.base.chapter_template[2100221] = {
 	ai_expedition_list = {
 		1350301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1350013,
 	},
@@ -500136,12 +491610,6 @@ _G.pg.base.chapter_template[2100221] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -500670,12 +492138,6 @@ _G.pg.base.chapter_template[2100222] = {
 	ai_expedition_list = {
 		1350303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1350113,
 	},
@@ -500695,12 +492157,6 @@ _G.pg.base.chapter_template[2100222] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -501257,12 +492713,6 @@ _G.pg.base.chapter_template[2100223] = {
 	ai_expedition_list = {
 		1350305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1350213,
 	},
@@ -501282,12 +492732,6 @@ _G.pg.base.chapter_template[2100223] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -501865,12 +493309,6 @@ _G.pg.base.chapter_template[2100224] = {
 		1351301,
 		1351303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1351013,
 	},
@@ -501891,12 +493329,6 @@ _G.pg.base.chapter_template[2100224] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -502509,12 +493941,6 @@ _G.pg.base.chapter_template[2100225] = {
 		1351305,
 		1351307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1351113,
 	},
@@ -502535,12 +493961,6 @@ _G.pg.base.chapter_template[2100225] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -503143,12 +494563,6 @@ _G.pg.base.chapter_template[2100226] = {
 		1351309,
 		1351311,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1351213,
 	},
@@ -503169,12 +494583,6 @@ _G.pg.base.chapter_template[2100226] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -503890,12 +495298,6 @@ _G.pg.base.chapter_template[2100231] = {
 		1352301,
 		1352303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1352013,
 	},
@@ -503915,12 +495317,6 @@ _G.pg.base.chapter_template[2100231] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -504491,12 +495887,6 @@ _G.pg.base.chapter_template[2100232] = {
 		1352305,
 		1352307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1352113,
 	},
@@ -504516,12 +495906,6 @@ _G.pg.base.chapter_template[2100232] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -505121,12 +496505,6 @@ _G.pg.base.chapter_template[2100233] = {
 		1352311,
 		1352313,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1352213,
 	},
@@ -505146,12 +496524,6 @@ _G.pg.base.chapter_template[2100233] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -505771,12 +497143,6 @@ _G.pg.base.chapter_template[2100234] = {
 		1353303,
 		1353305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1353013,
 	},
@@ -505797,12 +497163,6 @@ _G.pg.base.chapter_template[2100234] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -506461,12 +497821,6 @@ _G.pg.base.chapter_template[2100235] = {
 		1353309,
 		1353311,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1353113,
 	},
@@ -506489,12 +497843,6 @@ _G.pg.base.chapter_template[2100235] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -507143,12 +498491,6 @@ _G.pg.base.chapter_template[2100236] = {
 		1353315,
 		1353317,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1353213,
 	},
@@ -507171,12 +498513,6 @@ _G.pg.base.chapter_template[2100236] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -507841,12 +499177,6 @@ _G.pg.base.chapter_template[2100241] = {
 	ai_expedition_list = {
 		1390301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1390013,
 	},
@@ -507866,12 +499196,6 @@ _G.pg.base.chapter_template[2100241] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -508431,12 +499755,6 @@ _G.pg.base.chapter_template[2100242] = {
 	ai_expedition_list = {
 		1390303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1390113,
 	},
@@ -508456,12 +499774,6 @@ _G.pg.base.chapter_template[2100242] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -509052,12 +500364,6 @@ _G.pg.base.chapter_template[2100243] = {
 	ai_expedition_list = {
 		1390305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1390213,
 	},
@@ -509077,12 +500383,6 @@ _G.pg.base.chapter_template[2100243] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -509767,12 +501067,6 @@ _G.pg.base.chapter_template[2100244] = {
 		1391301,
 		1391303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1391013,
 	},
@@ -509793,12 +501087,6 @@ _G.pg.base.chapter_template[2100244] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -510471,12 +501759,6 @@ _G.pg.base.chapter_template[2100245] = {
 		1391305,
 		1391307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1391113,
 	},
@@ -510497,12 +501779,6 @@ _G.pg.base.chapter_template[2100245] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -511493,12 +502769,6 @@ _G.pg.base.chapter_template[2100246] = {
 		1391309,
 		1391311,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1391213,
 	},
@@ -511519,12 +502789,6 @@ _G.pg.base.chapter_template[2100246] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -513308,12 +504572,6 @@ _G.pg.base.chapter_template[2100251] = {
 		1392301,
 		1392303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1392013,
 	},
@@ -513333,12 +504591,6 @@ _G.pg.base.chapter_template[2100251] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -513940,12 +505192,6 @@ _G.pg.base.chapter_template[2100252] = {
 		1392305,
 		1392307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1392113,
 	},
@@ -513965,12 +505211,6 @@ _G.pg.base.chapter_template[2100252] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -514604,12 +505844,6 @@ _G.pg.base.chapter_template[2100253] = {
 		1392311,
 		1392313,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1392213,
 	},
@@ -514629,12 +505863,6 @@ _G.pg.base.chapter_template[2100253] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -515360,12 +506588,6 @@ _G.pg.base.chapter_template[2100254] = {
 		1393301,
 		1393303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1393013,
 	},
@@ -515386,12 +506608,6 @@ _G.pg.base.chapter_template[2100254] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -516109,12 +507325,6 @@ _G.pg.base.chapter_template[2100255] = {
 		1393305,
 		1393307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1393113,
 	},
@@ -516137,12 +507347,6 @@ _G.pg.base.chapter_template[2100255] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -517178,12 +508382,6 @@ _G.pg.base.chapter_template[2100256] = {
 		1393309,
 		1393311,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1393213,
 	},
@@ -517206,12 +508404,6 @@ _G.pg.base.chapter_template[2100256] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -518962,12 +510154,6 @@ _G.pg.base.chapter_template[2100261] = {
 	ai_expedition_list = {
 		1330301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1330013,
 	},
@@ -518987,12 +510173,6 @@ _G.pg.base.chapter_template[2100261] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -519558,12 +510738,6 @@ _G.pg.base.chapter_template[2100262] = {
 	ai_expedition_list = {
 		1330303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1330113,
 	},
@@ -519583,12 +510757,6 @@ _G.pg.base.chapter_template[2100262] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -520140,12 +511308,6 @@ _G.pg.base.chapter_template[2100263] = {
 		1330305,
 		1330307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1330213,
 	},
@@ -520165,12 +511327,6 @@ _G.pg.base.chapter_template[2100263] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -520766,12 +511922,6 @@ _G.pg.base.chapter_template[2100264] = {
 		1331301,
 		1331303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1331013,
 	},
@@ -520792,12 +511942,6 @@ _G.pg.base.chapter_template[2100264] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -521405,12 +512549,6 @@ _G.pg.base.chapter_template[2100265] = {
 		1331305,
 		1331307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1331113,
 	},
@@ -521431,12 +512569,6 @@ _G.pg.base.chapter_template[2100265] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -521992,12 +513124,6 @@ _G.pg.base.chapter_template[2100266] = {
 		1331309,
 		1331311,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1331213,
 	},
@@ -522018,12 +513144,6 @@ _G.pg.base.chapter_template[2100266] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -522684,12 +513804,6 @@ _G.pg.base.chapter_template[2100271] = {
 		1332303,
 		1332305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1332013,
 	},
@@ -522709,12 +513823,6 @@ _G.pg.base.chapter_template[2100271] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -523323,12 +514431,6 @@ _G.pg.base.chapter_template[2100272] = {
 		1332309,
 		1332311,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1332113,
 	},
@@ -523348,12 +514450,6 @@ _G.pg.base.chapter_template[2100272] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -523947,12 +515043,6 @@ _G.pg.base.chapter_template[2100273] = {
 		1332315,
 		1332317,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1332213,
 	},
@@ -523972,12 +515062,6 @@ _G.pg.base.chapter_template[2100273] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -524615,12 +515699,6 @@ _G.pg.base.chapter_template[2100274] = {
 		1333303,
 		1333305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1333013,
 	},
@@ -524641,12 +515719,6 @@ _G.pg.base.chapter_template[2100274] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -525300,12 +516372,6 @@ _G.pg.base.chapter_template[2100275] = {
 		1333309,
 		1333311,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1333113,
 	},
@@ -525328,12 +516394,6 @@ _G.pg.base.chapter_template[2100275] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -525935,12 +516995,6 @@ _G.pg.base.chapter_template[2100276] = {
 		1333315,
 		1333317,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1333213,
 	},
@@ -525963,12 +517017,6 @@ _G.pg.base.chapter_template[2100276] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -526589,12 +517637,6 @@ _G.pg.base.chapter_template[2100281] = {
 		1420303,
 		1420305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1420013,
 	},
@@ -526614,12 +517656,6 @@ _G.pg.base.chapter_template[2100281] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -527282,12 +518318,6 @@ _G.pg.base.chapter_template[2100282] = {
 		1420313,
 		1420315,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1420113,
 	},
@@ -527307,12 +518337,6 @@ _G.pg.base.chapter_template[2100282] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -527955,12 +518979,6 @@ _G.pg.base.chapter_template[2100283] = {
 		1420317,
 		1420319,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1420213,
 	},
@@ -527980,12 +518998,6 @@ _G.pg.base.chapter_template[2100283] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -528649,12 +519661,6 @@ _G.pg.base.chapter_template[2100284] = {
 		1421303,
 		1421305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1421013,
 	},
@@ -528675,12 +519681,6 @@ _G.pg.base.chapter_template[2100284] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -529404,12 +520404,6 @@ _G.pg.base.chapter_template[2100285] = {
 		1421313,
 		1421315,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1421113,
 	},
@@ -529430,12 +520424,6 @@ _G.pg.base.chapter_template[2100285] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -530183,12 +521171,6 @@ _G.pg.base.chapter_template[2100286] = {
 		1421321,
 		1421321,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1421213,
 	},
@@ -530209,12 +521191,6 @@ _G.pg.base.chapter_template[2100286] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -531095,12 +522071,6 @@ _G.pg.base.chapter_template[2100291] = {
 		1422303,
 		1422305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1422013,
 	},
@@ -531120,12 +522090,6 @@ _G.pg.base.chapter_template[2100291] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -531827,12 +522791,6 @@ _G.pg.base.chapter_template[2100292] = {
 		1422313,
 		1422315,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1422113,
 	},
@@ -531852,12 +522810,6 @@ _G.pg.base.chapter_template[2100292] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -532539,12 +523491,6 @@ _G.pg.base.chapter_template[2100293] = {
 		1422317,
 		1422319,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1422213,
 	},
@@ -532564,12 +523510,6 @@ _G.pg.base.chapter_template[2100293] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -533273,12 +524213,6 @@ _G.pg.base.chapter_template[2100294] = {
 		1423303,
 		1423305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1423013,
 	},
@@ -533299,12 +524233,6 @@ _G.pg.base.chapter_template[2100294] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -534072,12 +525000,6 @@ _G.pg.base.chapter_template[2100295] = {
 		1423313,
 		1423315,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1423113,
 	},
@@ -534100,12 +525022,6 @@ _G.pg.base.chapter_template[2100295] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -534898,12 +525814,6 @@ _G.pg.base.chapter_template[2100296] = {
 		1423321,
 		1423321,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1423213,
 	},
@@ -534926,12 +525836,6 @@ _G.pg.base.chapter_template[2100296] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -535774,12 +526678,6 @@ _G.pg.base.chapter_template[2100301] = {
 		1490301,
 		1490302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1490013,
 	},
@@ -535795,12 +526693,6 @@ _G.pg.base.chapter_template[2100301] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -536459,12 +527351,6 @@ _G.pg.base.chapter_template[2100302] = {
 		1490304,
 		1490305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1490113,
 	},
@@ -536480,12 +527366,6 @@ _G.pg.base.chapter_template[2100302] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -537128,12 +528008,6 @@ _G.pg.base.chapter_template[2100303] = {
 		1490306,
 		1490307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1490213,
 	},
@@ -537149,12 +528023,6 @@ _G.pg.base.chapter_template[2100303] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -537795,12 +528663,6 @@ _G.pg.base.chapter_template[2100304] = {
 		1491302,
 		1491303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1491013,
 	},
@@ -537817,12 +528679,6 @@ _G.pg.base.chapter_template[2100304] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -538553,12 +529409,6 @@ _G.pg.base.chapter_template[2100305] = {
 		1491306,
 		1491307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1491113,
 	},
@@ -538575,12 +529425,6 @@ _G.pg.base.chapter_template[2100305] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -539356,12 +530200,6 @@ _G.pg.base.chapter_template[2100306] = {
 		1491309,
 		1491310,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1491213,
 	},
@@ -539378,12 +530216,6 @@ _G.pg.base.chapter_template[2100306] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -540375,12 +531207,6 @@ _G.pg.base.chapter_template[2100311] = {
 		1492301,
 		1492302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1492013,
 	},
@@ -540396,12 +531222,6 @@ _G.pg.base.chapter_template[2100311] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -541101,12 +531921,6 @@ _G.pg.base.chapter_template[2100312] = {
 		1492304,
 		1492305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1492113,
 	},
@@ -541122,12 +531936,6 @@ _G.pg.base.chapter_template[2100312] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -541813,12 +532621,6 @@ _G.pg.base.chapter_template[2100313] = {
 		1492308,
 		1492309,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1492213,
 	},
@@ -541834,12 +532636,6 @@ _G.pg.base.chapter_template[2100313] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -542521,12 +533317,6 @@ _G.pg.base.chapter_template[2100314] = {
 		1493302,
 		1493303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1493013,
 	},
@@ -542543,12 +533333,6 @@ _G.pg.base.chapter_template[2100314] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -543324,12 +534108,6 @@ _G.pg.base.chapter_template[2100315] = {
 		1493306,
 		1493307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1493113,
 	},
@@ -543348,12 +534126,6 @@ _G.pg.base.chapter_template[2100315] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -544174,12 +534946,6 @@ _G.pg.base.chapter_template[2100316] = {
 		1493309,
 		1493310,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1493213,
 	},
@@ -544198,12 +534964,6 @@ _G.pg.base.chapter_template[2100316] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -545158,12 +535918,6 @@ _G.pg.base.chapter_template[2100321] = {
 		1440301,
 		1440303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1440013,
 	},
@@ -545183,12 +535937,6 @@ _G.pg.base.chapter_template[2100321] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -545952,12 +536700,6 @@ _G.pg.base.chapter_template[2100322] = {
 	ai_expedition_list = {
 		1440305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1440113,
 	},
@@ -545977,12 +536719,6 @@ _G.pg.base.chapter_template[2100322] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -546629,12 +537365,6 @@ _G.pg.base.chapter_template[2100323] = {
 	ai_expedition_list = {
 		1440307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1440213,
 	},
@@ -546654,12 +537384,6 @@ _G.pg.base.chapter_template[2100323] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -547487,12 +538211,6 @@ _G.pg.base.chapter_template[2100324] = {
 		1441301,
 		1441303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1441013,
 	},
@@ -547513,12 +538231,6 @@ _G.pg.base.chapter_template[2100324] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -548501,12 +539213,6 @@ _G.pg.base.chapter_template[2100325] = {
 		1441305,
 		1441307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1441113,
 	},
@@ -548527,12 +539233,6 @@ _G.pg.base.chapter_template[2100325] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -549419,12 +540119,6 @@ _G.pg.base.chapter_template[2100326] = {
 		1441309,
 		1441311,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1441213,
 	},
@@ -549445,12 +540139,6 @@ _G.pg.base.chapter_template[2100326] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -550407,12 +541095,6 @@ _G.pg.base.chapter_template[2100327] = {
 	ai_expedition_list = {
 		1446003,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1446013,
 	},
@@ -550427,12 +541109,6 @@ _G.pg.base.chapter_template[2100327] = {
 		0,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -550930,12 +541606,6 @@ _G.pg.base.chapter_template[2100328] = {
 	guarder_expedition_list = {},
 	elite_expedition_list = {},
 	ai_expedition_list = {},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {},
 	enemy_refresh = {
 		0,
@@ -550944,12 +541614,6 @@ _G.pg.base.chapter_template[2100328] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -551678,12 +542342,6 @@ _G.pg.base.chapter_template[2100331] = {
 		1442301,
 		1442303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1442013,
 	},
@@ -551703,12 +542361,6 @@ _G.pg.base.chapter_template[2100331] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -552514,12 +543166,6 @@ _G.pg.base.chapter_template[2100332] = {
 		1442305,
 		1442307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1442113,
 	},
@@ -552539,12 +543185,6 @@ _G.pg.base.chapter_template[2100332] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -553233,12 +543873,6 @@ _G.pg.base.chapter_template[2100333] = {
 		1442309,
 		1442311,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1442213,
 	},
@@ -553258,12 +543892,6 @@ _G.pg.base.chapter_template[2100333] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -554132,12 +544760,6 @@ _G.pg.base.chapter_template[2100334] = {
 		1443301,
 		1443303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1443013,
 	},
@@ -554158,12 +544780,6 @@ _G.pg.base.chapter_template[2100334] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -555191,12 +545807,6 @@ _G.pg.base.chapter_template[2100335] = {
 		1443305,
 		1443307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1443113,
 	},
@@ -555219,12 +545829,6 @@ _G.pg.base.chapter_template[2100335] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -556157,12 +546761,6 @@ _G.pg.base.chapter_template[2100336] = {
 		1443311,
 		1443313,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1443213,
 	},
@@ -556185,12 +546783,6 @@ _G.pg.base.chapter_template[2100336] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -557151,12 +547743,6 @@ _G.pg.base.chapter_template[2100337] = {
 	ai_expedition_list = {
 		1447003,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1447013,
 	},
@@ -557171,12 +547757,6 @@ _G.pg.base.chapter_template[2100337] = {
 		0,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -557674,12 +548254,6 @@ _G.pg.base.chapter_template[2100338] = {
 	guarder_expedition_list = {},
 	elite_expedition_list = {},
 	ai_expedition_list = {},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {},
 	enemy_refresh = {
 		0,
@@ -557688,12 +548262,6 @@ _G.pg.base.chapter_template[2100338] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -558380,12 +548948,6 @@ _G.pg.base.chapter_template[2100341] = {
 	ai_expedition_list = {
 		1520301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1520013,
 	},
@@ -558405,12 +548967,6 @@ _G.pg.base.chapter_template[2100341] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -559076,12 +549632,6 @@ _G.pg.base.chapter_template[2100342] = {
 	ai_expedition_list = {
 		1520302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1520113,
 	},
@@ -559101,12 +549651,6 @@ _G.pg.base.chapter_template[2100342] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -559792,12 +550336,6 @@ _G.pg.base.chapter_template[2100343] = {
 	ai_expedition_list = {
 		1520303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1520213,
 	},
@@ -559817,12 +550355,6 @@ _G.pg.base.chapter_template[2100343] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -560624,12 +551156,6 @@ _G.pg.base.chapter_template[2100344] = {
 		1521301,
 		1521302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1521013,
 	},
@@ -560650,12 +551176,6 @@ _G.pg.base.chapter_template[2100344] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -561443,12 +551963,6 @@ _G.pg.base.chapter_template[2100345] = {
 		1521303,
 		1521304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1521113,
 	},
@@ -561469,12 +551983,6 @@ _G.pg.base.chapter_template[2100345] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -562277,12 +552785,6 @@ _G.pg.base.chapter_template[2100346] = {
 		1521306,
 		1521307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1521213,
 	},
@@ -562303,12 +552805,6 @@ _G.pg.base.chapter_template[2100346] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -563157,12 +553653,6 @@ _G.pg.base.chapter_template[2100351] = {
 		1522301,
 		1522302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1522013,
 	},
@@ -563182,12 +553672,6 @@ _G.pg.base.chapter_template[2100351] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -563895,12 +554379,6 @@ _G.pg.base.chapter_template[2100352] = {
 		1522303,
 		1522304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1522113,
 	},
@@ -563920,12 +554398,6 @@ _G.pg.base.chapter_template[2100352] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -564654,12 +555126,6 @@ _G.pg.base.chapter_template[2100353] = {
 		1522306,
 		1522307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1522213,
 	},
@@ -564679,12 +555145,6 @@ _G.pg.base.chapter_template[2100353] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -565528,12 +555988,6 @@ _G.pg.base.chapter_template[2100354] = {
 		1523302,
 		1523303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1523013,
 	},
@@ -565554,12 +556008,6 @@ _G.pg.base.chapter_template[2100354] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -566393,12 +556841,6 @@ _G.pg.base.chapter_template[2100355] = {
 		1523305,
 		1523306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1523113,
 	},
@@ -566421,12 +556863,6 @@ _G.pg.base.chapter_template[2100355] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -567274,12 +557710,6 @@ _G.pg.base.chapter_template[2100356] = {
 		1523308,
 		1523309,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1523213,
 	},
@@ -567302,12 +557732,6 @@ _G.pg.base.chapter_template[2100356] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -568118,12 +558542,6 @@ _G.pg.base.chapter_template[2100361] = {
 	ai_expedition_list = {
 		1500301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1500013,
 	},
@@ -568143,12 +558561,6 @@ _G.pg.base.chapter_template[2100361] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -568800,12 +559212,6 @@ _G.pg.base.chapter_template[2100362] = {
 	ai_expedition_list = {
 		1500302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1500113,
 	},
@@ -568825,12 +559231,6 @@ _G.pg.base.chapter_template[2100362] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -569498,12 +559898,6 @@ _G.pg.base.chapter_template[2100363] = {
 	ai_expedition_list = {
 		1500303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1500213,
 	},
@@ -569523,12 +559917,6 @@ _G.pg.base.chapter_template[2100363] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -570409,12 +560797,6 @@ _G.pg.base.chapter_template[2100364] = {
 		1501301,
 		1501302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1501013,
 	},
@@ -570435,12 +560817,6 @@ _G.pg.base.chapter_template[2100364] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -571203,12 +561579,6 @@ _G.pg.base.chapter_template[2100365] = {
 		1501303,
 		1501304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1501113,
 	},
@@ -571229,12 +561599,6 @@ _G.pg.base.chapter_template[2100365] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -572023,12 +562387,6 @@ _G.pg.base.chapter_template[2100366] = {
 		1501306,
 		1501307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1501213,
 	},
@@ -572049,12 +562407,6 @@ _G.pg.base.chapter_template[2100366] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -572993,12 +563345,6 @@ _G.pg.base.chapter_template[2100371] = {
 		1502301,
 		1502302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1502013,
 	},
@@ -573018,12 +563364,6 @@ _G.pg.base.chapter_template[2100371] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -573717,12 +564057,6 @@ _G.pg.base.chapter_template[2100372] = {
 		1502303,
 		1502304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1502113,
 	},
@@ -573742,12 +564076,6 @@ _G.pg.base.chapter_template[2100372] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -574458,12 +564786,6 @@ _G.pg.base.chapter_template[2100373] = {
 		1502306,
 		1502307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1502213,
 	},
@@ -574483,12 +564805,6 @@ _G.pg.base.chapter_template[2100373] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -575410,12 +565726,6 @@ _G.pg.base.chapter_template[2100374] = {
 		1503301,
 		1503302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1503013,
 	},
@@ -575436,12 +565746,6 @@ _G.pg.base.chapter_template[2100374] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -576249,12 +566553,6 @@ _G.pg.base.chapter_template[2100375] = {
 		1503303,
 		1503304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1503113,
 	},
@@ -576277,12 +566575,6 @@ _G.pg.base.chapter_template[2100375] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -577116,12 +567408,6 @@ _G.pg.base.chapter_template[2100376] = {
 		1503306,
 		1503307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1503213,
 	},
@@ -577144,12 +567430,6 @@ _G.pg.base.chapter_template[2100376] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -578050,12 +568330,6 @@ _G.pg.base.chapter_template[2100381] = {
 	ai_expedition_list = {
 		1560301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1560013,
 	},
@@ -578075,12 +568349,6 @@ _G.pg.base.chapter_template[2100381] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -578692,12 +568960,6 @@ _G.pg.base.chapter_template[2100382] = {
 	ai_expedition_list = {
 		1560302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1560113,
 	},
@@ -578717,12 +568979,6 @@ _G.pg.base.chapter_template[2100382] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -579389,12 +569645,6 @@ _G.pg.base.chapter_template[2100383] = {
 	ai_expedition_list = {
 		1560303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1560213,
 	},
@@ -579414,12 +569664,6 @@ _G.pg.base.chapter_template[2100383] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -580240,12 +570484,6 @@ _G.pg.base.chapter_template[2100384] = {
 		1561301,
 		1561302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1561013,
 	},
@@ -580266,12 +570504,6 @@ _G.pg.base.chapter_template[2100384] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -581058,12 +571290,6 @@ _G.pg.base.chapter_template[2100385] = {
 		1561303,
 		1561304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1561113,
 	},
@@ -581084,12 +571310,6 @@ _G.pg.base.chapter_template[2100385] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -581898,12 +572118,6 @@ _G.pg.base.chapter_template[2100386] = {
 		1561306,
 		1561307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1561213,
 	},
@@ -581924,12 +572138,6 @@ _G.pg.base.chapter_template[2100386] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -582861,12 +573069,6 @@ _G.pg.base.chapter_template[2100391] = {
 		1562301,
 		1562302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1562013,
 	},
@@ -582886,12 +573088,6 @@ _G.pg.base.chapter_template[2100391] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -583545,12 +573741,6 @@ _G.pg.base.chapter_template[2100392] = {
 		1562303,
 		1562304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1562113,
 	},
@@ -583570,12 +573760,6 @@ _G.pg.base.chapter_template[2100392] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -584285,12 +574469,6 @@ _G.pg.base.chapter_template[2100393] = {
 		1562306,
 		1562307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1562213,
 	},
@@ -584310,12 +574488,6 @@ _G.pg.base.chapter_template[2100393] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -585178,12 +575350,6 @@ _G.pg.base.chapter_template[2100394] = {
 		1563302,
 		1563303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1563013,
 	},
@@ -585204,12 +575370,6 @@ _G.pg.base.chapter_template[2100394] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -586042,12 +576202,6 @@ _G.pg.base.chapter_template[2100395] = {
 		1563305,
 		1563306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1563113,
 	},
@@ -586070,12 +576224,6 @@ _G.pg.base.chapter_template[2100395] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -586929,12 +577077,6 @@ _G.pg.base.chapter_template[2100396] = {
 		1563308,
 		1563309,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1563213,
 	},
@@ -586957,12 +577099,6 @@ _G.pg.base.chapter_template[2100396] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -587856,12 +577992,6 @@ _G.pg.base.chapter_template[2100401] = {
 	ai_expedition_list = {
 		1510301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1510013,
 	},
@@ -587881,12 +578011,6 @@ _G.pg.base.chapter_template[2100401] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -588533,12 +578657,6 @@ _G.pg.base.chapter_template[2100402] = {
 	ai_expedition_list = {
 		1510302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1510113,
 	},
@@ -588558,12 +578676,6 @@ _G.pg.base.chapter_template[2100402] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -589229,12 +579341,6 @@ _G.pg.base.chapter_template[2100403] = {
 	ai_expedition_list = {
 		1510303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1510213,
 	},
@@ -589254,12 +579360,6 @@ _G.pg.base.chapter_template[2100403] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -590038,12 +580138,6 @@ _G.pg.base.chapter_template[2100404] = {
 		1511301,
 		1511302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1511013,
 	},
@@ -590064,12 +580158,6 @@ _G.pg.base.chapter_template[2100404] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -590951,12 +581039,6 @@ _G.pg.base.chapter_template[2100405] = {
 		1511303,
 		1511304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1511113,
 	},
@@ -590977,12 +581059,6 @@ _G.pg.base.chapter_template[2100405] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -591884,12 +581960,6 @@ _G.pg.base.chapter_template[2100406] = {
 		1511306,
 		1511307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1511213,
 	},
@@ -591910,12 +581980,6 @@ _G.pg.base.chapter_template[2100406] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -592873,12 +582937,6 @@ _G.pg.base.chapter_template[2100411] = {
 		1512301,
 		1512302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1512013,
 	},
@@ -592898,12 +582956,6 @@ _G.pg.base.chapter_template[2100411] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -593592,12 +583644,6 @@ _G.pg.base.chapter_template[2100412] = {
 		1512303,
 		1512304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1512113,
 	},
@@ -593617,12 +583663,6 @@ _G.pg.base.chapter_template[2100412] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -594331,12 +584371,6 @@ _G.pg.base.chapter_template[2100413] = {
 		1512306,
 		1512307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1512213,
 	},
@@ -594356,12 +584390,6 @@ _G.pg.base.chapter_template[2100413] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -595182,12 +585210,6 @@ _G.pg.base.chapter_template[2100414] = {
 		1513302,
 		1513303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1513013,
 	},
@@ -595208,12 +585230,6 @@ _G.pg.base.chapter_template[2100414] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -596141,12 +586157,6 @@ _G.pg.base.chapter_template[2100415] = {
 		1513305,
 		1513306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1513113,
 	},
@@ -596169,12 +586179,6 @@ _G.pg.base.chapter_template[2100415] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -597121,12 +587125,6 @@ _G.pg.base.chapter_template[2100416] = {
 		1513308,
 		1513309,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1513213,
 	},
@@ -597149,12 +587147,6 @@ _G.pg.base.chapter_template[2100416] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -598074,12 +588066,6 @@ _G.pg.base.chapter_template[2100421] = {
 	ai_expedition_list = {
 		1600301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1600013,
 	},
@@ -598099,12 +588085,6 @@ _G.pg.base.chapter_template[2100421] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -598706,12 +588686,6 @@ _G.pg.base.chapter_template[2100422] = {
 	ai_expedition_list = {
 		1600302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1600113,
 	},
@@ -598731,12 +588705,6 @@ _G.pg.base.chapter_template[2100422] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -599398,12 +589366,6 @@ _G.pg.base.chapter_template[2100423] = {
 		1600303,
 		1600304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1600213,
 	},
@@ -599423,12 +589385,6 @@ _G.pg.base.chapter_template[2100423] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -600222,12 +590178,6 @@ _G.pg.base.chapter_template[2100424] = {
 		1601301,
 		1601302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1601013,
 	},
@@ -600248,12 +590198,6 @@ _G.pg.base.chapter_template[2100424] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -601026,12 +590970,6 @@ _G.pg.base.chapter_template[2100425] = {
 		1601303,
 		1601304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1601113,
 	},
@@ -601052,12 +590990,6 @@ _G.pg.base.chapter_template[2100425] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -601850,12 +591782,6 @@ _G.pg.base.chapter_template[2100426] = {
 		1601306,
 		1601307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1601413,
 	},
@@ -601876,12 +591802,6 @@ _G.pg.base.chapter_template[2100426] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -602603,12 +592523,6 @@ _G.pg.base.chapter_template[2100427] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1601213,
 	},
@@ -602627,12 +592541,6 @@ _G.pg.base.chapter_template[2100427] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -603417,12 +593325,6 @@ _G.pg.base.chapter_template[2100431] = {
 		1602301,
 		1602302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1602013,
 	},
@@ -603442,12 +593344,6 @@ _G.pg.base.chapter_template[2100431] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -604091,12 +593987,6 @@ _G.pg.base.chapter_template[2100432] = {
 		1602303,
 		1602304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1602113,
 	},
@@ -604116,12 +594006,6 @@ _G.pg.base.chapter_template[2100432] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -604825,12 +594709,6 @@ _G.pg.base.chapter_template[2100433] = {
 		1602306,
 		1602307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1602213,
 	},
@@ -604850,12 +594728,6 @@ _G.pg.base.chapter_template[2100433] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -605691,12 +595563,6 @@ _G.pg.base.chapter_template[2100434] = {
 		1603302,
 		1603303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1603013,
 	},
@@ -605717,12 +595583,6 @@ _G.pg.base.chapter_template[2100434] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -606541,12 +596401,6 @@ _G.pg.base.chapter_template[2100435] = {
 		1603305,
 		1603306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1603113,
 	},
@@ -606569,12 +596423,6 @@ _G.pg.base.chapter_template[2100435] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -607413,12 +597261,6 @@ _G.pg.base.chapter_template[2100436] = {
 		1603309,
 		1603310,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1603413,
 	},
@@ -607441,12 +597283,6 @@ _G.pg.base.chapter_template[2100436] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -608209,12 +598045,6 @@ _G.pg.base.chapter_template[2100437] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1603213,
 	},
@@ -608234,12 +598064,6 @@ _G.pg.base.chapter_template[2100437] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -608986,12 +598810,6 @@ _G.pg.base.chapter_template[2100441] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1620013,
 	},
@@ -609010,12 +598828,6 @@ _G.pg.base.chapter_template[2100441] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -609663,12 +599475,6 @@ _G.pg.base.chapter_template[2100442] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1620113,
 	},
@@ -609687,12 +599493,6 @@ _G.pg.base.chapter_template[2100442] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -610461,12 +600261,6 @@ _G.pg.base.chapter_template[2100443] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1620213,
 	},
@@ -610485,12 +600279,6 @@ _G.pg.base.chapter_template[2100443] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -611276,12 +601064,6 @@ _G.pg.base.chapter_template[2100444] = {
 		1621301,
 		1621302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1621013,
 	},
@@ -611302,12 +601084,6 @@ _G.pg.base.chapter_template[2100444] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -611917,12 +601693,6 @@ _G.pg.base.chapter_template[2100445] = {
 		1621303,
 		1621304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1621113,
 		1621114,
@@ -611944,12 +601714,6 @@ _G.pg.base.chapter_template[2100445] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -612601,12 +602365,6 @@ _G.pg.base.chapter_template[2100446] = {
 		1621307,
 		1621308,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1621213,
 		1621214,
@@ -612628,12 +602386,6 @@ _G.pg.base.chapter_template[2100446] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -613496,12 +603248,6 @@ _G.pg.base.chapter_template[2100451] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1622013,
 	},
@@ -613520,12 +603266,6 @@ _G.pg.base.chapter_template[2100451] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -614214,12 +603954,6 @@ _G.pg.base.chapter_template[2100452] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1622113,
 	},
@@ -614238,12 +603972,6 @@ _G.pg.base.chapter_template[2100452] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -615053,12 +604781,6 @@ _G.pg.base.chapter_template[2100453] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1622213,
 	},
@@ -615077,12 +604799,6 @@ _G.pg.base.chapter_template[2100453] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -615909,12 +605625,6 @@ _G.pg.base.chapter_template[2100454] = {
 		1623301,
 		1623302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1623013,
 	},
@@ -615935,12 +605645,6 @@ _G.pg.base.chapter_template[2100454] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -616595,12 +606299,6 @@ _G.pg.base.chapter_template[2100455] = {
 		1623303,
 		1623304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1623113,
 		1623114,
@@ -616624,12 +606322,6 @@ _G.pg.base.chapter_template[2100455] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -617326,12 +607018,6 @@ _G.pg.base.chapter_template[2100456] = {
 		1623307,
 		1623308,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1623213,
 		1623214,
@@ -617355,12 +607041,6 @@ _G.pg.base.chapter_template[2100456] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -618186,12 +607866,6 @@ _G.pg.base.chapter_template[2100461] = {
 	ai_expedition_list = {
 		1650301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1650013,
 	},
@@ -618211,12 +607885,6 @@ _G.pg.base.chapter_template[2100461] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -618832,12 +608500,6 @@ _G.pg.base.chapter_template[2100462] = {
 	ai_expedition_list = {
 		1650302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1650113,
 	},
@@ -618857,12 +608519,6 @@ _G.pg.base.chapter_template[2100462] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -619516,12 +609172,6 @@ _G.pg.base.chapter_template[2100463] = {
 		1650303,
 		1650304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1650213,
 	},
@@ -619541,12 +609191,6 @@ _G.pg.base.chapter_template[2100463] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -620314,12 +609958,6 @@ _G.pg.base.chapter_template[2100464] = {
 		1651301,
 		1651302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1651013,
 	},
@@ -620340,12 +609978,6 @@ _G.pg.base.chapter_template[2100464] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -620995,12 +610627,6 @@ _G.pg.base.chapter_template[2100465] = {
 		1651303,
 		1651304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1651113,
 	},
@@ -621021,12 +610647,6 @@ _G.pg.base.chapter_template[2100465] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -621749,12 +611369,6 @@ _G.pg.base.chapter_template[2100466] = {
 		1651307,
 		1651308,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1651213,
 		1651214,
@@ -621776,12 +611390,6 @@ _G.pg.base.chapter_template[2100466] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -622610,12 +612218,6 @@ _G.pg.base.chapter_template[2100471] = {
 		1652301,
 		1652302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1652013,
 	},
@@ -622635,12 +612237,6 @@ _G.pg.base.chapter_template[2100471] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -623298,12 +612894,6 @@ _G.pg.base.chapter_template[2100472] = {
 		1652303,
 		1652304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1652113,
 	},
@@ -623323,12 +612913,6 @@ _G.pg.base.chapter_template[2100472] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -624024,12 +613608,6 @@ _G.pg.base.chapter_template[2100473] = {
 		1652306,
 		1652307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1652213,
 	},
@@ -624049,12 +613627,6 @@ _G.pg.base.chapter_template[2100473] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -624864,12 +614436,6 @@ _G.pg.base.chapter_template[2100474] = {
 		1653302,
 		1653303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1653013,
 	},
@@ -624890,12 +614456,6 @@ _G.pg.base.chapter_template[2100474] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -625591,12 +615151,6 @@ _G.pg.base.chapter_template[2100475] = {
 		1653305,
 		1653306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1653113,
 	},
@@ -625619,12 +615173,6 @@ _G.pg.base.chapter_template[2100475] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -626392,12 +615940,6 @@ _G.pg.base.chapter_template[2100476] = {
 		1653309,
 		1653310,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1653213,
 		1653214,
@@ -626421,12 +615963,6 @@ _G.pg.base.chapter_template[2100476] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -627217,12 +616753,6 @@ _G.pg.base.chapter_template[2100481] = {
 	ai_expedition_list = {
 		1660321,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1660033,
 	},
@@ -627242,12 +616772,6 @@ _G.pg.base.chapter_template[2100481] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -627902,12 +617426,6 @@ _G.pg.base.chapter_template[2100482] = {
 	ai_expedition_list = {
 		1660322,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1660133,
 	},
@@ -627927,12 +617445,6 @@ _G.pg.base.chapter_template[2100482] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -628721,12 +618233,6 @@ _G.pg.base.chapter_template[2100483] = {
 	ai_expedition_list = {
 		1660323,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1660233,
 	},
@@ -628746,12 +618252,6 @@ _G.pg.base.chapter_template[2100483] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -629464,12 +618964,6 @@ _G.pg.base.chapter_template[2100484] = {
 		1661301,
 		1661302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1661013,
 	},
@@ -629490,12 +618984,6 @@ _G.pg.base.chapter_template[2100484] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -630253,12 +619741,6 @@ _G.pg.base.chapter_template[2100485] = {
 		1661303,
 		1661304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1661113,
 	},
@@ -630279,12 +619761,6 @@ _G.pg.base.chapter_template[2100485] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -630999,12 +620475,6 @@ _G.pg.base.chapter_template[2100486] = {
 		1661305,
 		1661306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1661213,
 	},
@@ -631025,12 +620495,6 @@ _G.pg.base.chapter_template[2100486] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -631877,12 +621341,6 @@ _G.pg.base.chapter_template[2100491] = {
 		1662321,
 		1662322,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1662033,
 	},
@@ -631902,12 +621360,6 @@ _G.pg.base.chapter_template[2100491] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -632604,12 +622056,6 @@ _G.pg.base.chapter_template[2100492] = {
 		1662323,
 		1662324,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1662133,
 	},
@@ -632629,12 +622075,6 @@ _G.pg.base.chapter_template[2100492] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -633465,12 +622905,6 @@ _G.pg.base.chapter_template[2100493] = {
 		1662325,
 		1662326,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1662233,
 	},
@@ -633490,12 +622924,6 @@ _G.pg.base.chapter_template[2100493] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -634249,12 +623677,6 @@ _G.pg.base.chapter_template[2100494] = {
 		1663301,
 		1663302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1663013,
 	},
@@ -634275,12 +623697,6 @@ _G.pg.base.chapter_template[2100494] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -635083,12 +624499,6 @@ _G.pg.base.chapter_template[2100495] = {
 		1663303,
 		1663304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1663113,
 	},
@@ -635111,12 +624521,6 @@ _G.pg.base.chapter_template[2100495] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -635876,12 +625280,6 @@ _G.pg.base.chapter_template[2100496] = {
 		1663305,
 		1663306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1663213,
 	},
@@ -635904,12 +625302,6 @@ _G.pg.base.chapter_template[2100496] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -636718,12 +626110,6 @@ _G.pg.base.chapter_template[2100501] = {
 	ai_expedition_list = {
 		1640301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1640013,
 	},
@@ -636743,12 +626129,6 @@ _G.pg.base.chapter_template[2100501] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -637362,12 +626742,6 @@ _G.pg.base.chapter_template[2100502] = {
 	ai_expedition_list = {
 		1640302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1640113,
 	},
@@ -637387,12 +626761,6 @@ _G.pg.base.chapter_template[2100502] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -638055,12 +627423,6 @@ _G.pg.base.chapter_template[2100503] = {
 		1640303,
 		1640304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1640213,
 	},
@@ -638080,12 +627442,6 @@ _G.pg.base.chapter_template[2100503] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -638860,12 +628216,6 @@ _G.pg.base.chapter_template[2100504] = {
 		1641301,
 		1641302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1641013,
 	},
@@ -638886,12 +628236,6 @@ _G.pg.base.chapter_template[2100504] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -639554,12 +628898,6 @@ _G.pg.base.chapter_template[2100505] = {
 		1641303,
 		1641304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1641113,
 	},
@@ -639580,12 +628918,6 @@ _G.pg.base.chapter_template[2100505] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -640237,12 +629569,6 @@ _G.pg.base.chapter_template[2100506] = {
 		1641306,
 		1641307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1641213,
 	},
@@ -640262,12 +629588,6 @@ _G.pg.base.chapter_template[2100506] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -641122,12 +630442,6 @@ _G.pg.base.chapter_template[2100511] = {
 		1642301,
 		1642302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1642013,
 	},
@@ -641147,12 +630461,6 @@ _G.pg.base.chapter_template[2100511] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -641808,12 +631116,6 @@ _G.pg.base.chapter_template[2100512] = {
 		1642303,
 		1642304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1642113,
 	},
@@ -641833,12 +631135,6 @@ _G.pg.base.chapter_template[2100512] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -642543,12 +631839,6 @@ _G.pg.base.chapter_template[2100513] = {
 		1642306,
 		1642307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1642213,
 	},
@@ -642568,12 +631858,6 @@ _G.pg.base.chapter_template[2100513] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -643390,12 +632674,6 @@ _G.pg.base.chapter_template[2100514] = {
 		1643302,
 		1643303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1643013,
 	},
@@ -643416,12 +632694,6 @@ _G.pg.base.chapter_template[2100514] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -644130,12 +633402,6 @@ _G.pg.base.chapter_template[2100515] = {
 		1643305,
 		1643306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1643113,
 	},
@@ -644158,12 +633424,6 @@ _G.pg.base.chapter_template[2100515] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -644860,12 +634120,6 @@ _G.pg.base.chapter_template[2100516] = {
 		1643308,
 		1643309,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1643213,
 	},
@@ -644888,12 +634142,6 @@ _G.pg.base.chapter_template[2100516] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -645711,12 +634959,6 @@ _G.pg.base.chapter_template[2100521] = {
 		1680301,
 		1680302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1680013,
 	},
@@ -645736,12 +634978,6 @@ _G.pg.base.chapter_template[2100521] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -646392,12 +635628,6 @@ _G.pg.base.chapter_template[2100522] = {
 		1680303,
 		1680304,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1680113,
 	},
@@ -646417,12 +635647,6 @@ _G.pg.base.chapter_template[2100522] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -647088,12 +636312,6 @@ _G.pg.base.chapter_template[2100523] = {
 		1680306,
 		1680307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1680213,
 	},
@@ -647113,12 +636331,6 @@ _G.pg.base.chapter_template[2100523] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -647770,12 +636982,6 @@ _G.pg.base.chapter_template[2100524] = {
 		1681302,
 		1681303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1681013,
 	},
@@ -647796,12 +637002,6 @@ _G.pg.base.chapter_template[2100524] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -648466,12 +637666,6 @@ _G.pg.base.chapter_template[2100525] = {
 		1681306,
 		1681307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1681113,
 	},
@@ -648492,12 +637686,6 @@ _G.pg.base.chapter_template[2100525] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -649255,12 +638443,6 @@ _G.pg.base.chapter_template[2100526] = {
 		1681310,
 		1681311,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1681213,
 	},
@@ -649281,12 +638463,6 @@ _G.pg.base.chapter_template[2100526] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -650126,12 +639302,6 @@ _G.pg.base.chapter_template[2100531] = {
 		1682302,
 		1682303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1682013,
 	},
@@ -650151,12 +639321,6 @@ _G.pg.base.chapter_template[2100531] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -650849,12 +640013,6 @@ _G.pg.base.chapter_template[2100532] = {
 		1682305,
 		1682306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1682113,
 	},
@@ -650874,12 +640032,6 @@ _G.pg.base.chapter_template[2100532] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -651586,12 +640738,6 @@ _G.pg.base.chapter_template[2100533] = {
 		1682308,
 		1682309,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1682213,
 	},
@@ -651611,12 +640757,6 @@ _G.pg.base.chapter_template[2100533] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -652309,12 +641449,6 @@ _G.pg.base.chapter_template[2100534] = {
 		1683302,
 		1683303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1683013,
 	},
@@ -652335,12 +641469,6 @@ _G.pg.base.chapter_template[2100534] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -653050,12 +642178,6 @@ _G.pg.base.chapter_template[2100535] = {
 		1683306,
 		1683307,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1683113,
 	},
@@ -653078,12 +642200,6 @@ _G.pg.base.chapter_template[2100535] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -653886,12 +643002,6 @@ _G.pg.base.chapter_template[2100536] = {
 		1683310,
 		1683311,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1683213,
 	},
@@ -653914,12 +643024,6 @@ _G.pg.base.chapter_template[2100536] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -654723,12 +643827,6 @@ _G.pg.base.chapter_template[2100541] = {
 		1700302,
 		1700303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1700013,
 	},
@@ -654748,12 +643846,6 @@ _G.pg.base.chapter_template[2100541] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -655409,12 +644501,6 @@ _G.pg.base.chapter_template[2100542] = {
 		1700305,
 		1700306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1700113,
 	},
@@ -655434,12 +644520,6 @@ _G.pg.base.chapter_template[2100542] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -656094,12 +645174,6 @@ _G.pg.base.chapter_template[2100543] = {
 		1700308,
 		1700309,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1700213,
 	},
@@ -656119,12 +645193,6 @@ _G.pg.base.chapter_template[2100543] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -656840,12 +645908,6 @@ _G.pg.base.chapter_template[2100544] = {
 		1701302,
 		1701303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1701013,
 	},
@@ -656866,12 +645928,6 @@ _G.pg.base.chapter_template[2100544] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -657586,12 +646642,6 @@ _G.pg.base.chapter_template[2100545] = {
 		1701305,
 		1701306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1701113,
 	},
@@ -657612,12 +646662,6 @@ _G.pg.base.chapter_template[2100545] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -658392,12 +647436,6 @@ _G.pg.base.chapter_template[2100546] = {
 		1701307,
 		1701308,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1701213,
 	},
@@ -658418,12 +647456,6 @@ _G.pg.base.chapter_template[2100546] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -659274,12 +648306,6 @@ _G.pg.base.chapter_template[2100551] = {
 		1702302,
 		1702303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1702013,
 	},
@@ -659299,12 +648325,6 @@ _G.pg.base.chapter_template[2100551] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -660001,12 +649021,6 @@ _G.pg.base.chapter_template[2100552] = {
 		1702305,
 		1702306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1702113,
 	},
@@ -660026,12 +649040,6 @@ _G.pg.base.chapter_template[2100552] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -660727,12 +649735,6 @@ _G.pg.base.chapter_template[2100553] = {
 		1702308,
 		1702309,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1702213,
 	},
@@ -660752,12 +649754,6 @@ _G.pg.base.chapter_template[2100553] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -661514,12 +650510,6 @@ _G.pg.base.chapter_template[2100554] = {
 		1703302,
 		1703303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1703013,
 	},
@@ -661540,12 +650530,6 @@ _G.pg.base.chapter_template[2100554] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		29,
@@ -662305,12 +651289,6 @@ _G.pg.base.chapter_template[2100555] = {
 		1703305,
 		1703306,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1703113,
 	},
@@ -662333,12 +651311,6 @@ _G.pg.base.chapter_template[2100555] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -663158,12 +652130,6 @@ _G.pg.base.chapter_template[2100556] = {
 		1703307,
 		1703308,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1703213,
 	},
@@ -663186,12 +652152,6 @@ _G.pg.base.chapter_template[2100556] = {
 		2,
 		0,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		35,
@@ -663991,12 +652951,6 @@ _G.pg.base.chapter_template[2200001] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10500,
 	},
@@ -664008,12 +652962,6 @@ _G.pg.base.chapter_template[2200001] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -664423,12 +653371,6 @@ _G.pg.base.chapter_template[2200002] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10501,
 	},
@@ -664442,12 +653384,6 @@ _G.pg.base.chapter_template[2200002] = {
 		3,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -664918,12 +653854,6 @@ _G.pg.base.chapter_template[2200003] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		10502,
 	},
@@ -664937,12 +653867,6 @@ _G.pg.base.chapter_template[2200003] = {
 		3,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -665457,12 +654381,6 @@ _G.pg.base.chapter_template[2200011] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1071500,
 	},
@@ -665478,12 +654396,6 @@ _G.pg.base.chapter_template[2200011] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -666051,12 +654963,6 @@ _G.pg.base.chapter_template[2200012] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1072500,
 	},
@@ -666072,12 +654978,6 @@ _G.pg.base.chapter_template[2200012] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -666744,12 +655644,6 @@ _G.pg.base.chapter_template[2200013] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1073500,
 	},
@@ -666766,12 +655660,6 @@ _G.pg.base.chapter_template[2200013] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -667493,12 +656381,6 @@ _G.pg.base.chapter_template[2200021] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1050500,
 	},
@@ -667514,12 +656396,6 @@ _G.pg.base.chapter_template[2200021] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -668197,12 +657073,6 @@ _G.pg.base.chapter_template[2200022] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1051500,
 	},
@@ -668219,12 +657089,6 @@ _G.pg.base.chapter_template[2200022] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -668914,12 +657778,6 @@ _G.pg.base.chapter_template[2200023] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1052500,
 	},
@@ -668936,12 +657794,6 @@ _G.pg.base.chapter_template[2200023] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -669621,12 +658473,6 @@ _G.pg.base.chapter_template[2200031] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1130500,
 	},
@@ -669643,12 +658489,6 @@ _G.pg.base.chapter_template[2200031] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -670142,12 +658982,6 @@ _G.pg.base.chapter_template[2200032] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1131500,
 	},
@@ -670164,12 +658998,6 @@ _G.pg.base.chapter_template[2200032] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -670724,12 +659552,6 @@ _G.pg.base.chapter_template[2200033] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1132500,
 	},
@@ -670748,12 +659570,6 @@ _G.pg.base.chapter_template[2200033] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -671372,12 +660188,6 @@ _G.pg.base.chapter_template[2200041] = {
 	ai_expedition_list = {
 		1280021,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1280013,
 	},
@@ -671394,12 +660204,6 @@ _G.pg.base.chapter_template[2200041] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -671981,12 +660785,6 @@ _G.pg.base.chapter_template[2200042] = {
 		1280051,
 		1280053,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1280043,
 	},
@@ -672003,12 +660801,6 @@ _G.pg.base.chapter_template[2200042] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -672680,12 +661472,6 @@ _G.pg.base.chapter_template[2200043] = {
 		1280083,
 		1280085,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1280073,
 	},
@@ -672702,12 +661488,6 @@ _G.pg.base.chapter_template[2200043] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -673382,12 +662162,6 @@ _G.pg.base.chapter_template[2200044] = {
 		1280113,
 		1280115,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1280103,
 	},
@@ -673405,12 +662179,6 @@ _G.pg.base.chapter_template[2200044] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -674083,12 +662851,6 @@ _G.pg.base.chapter_template[2200045] = {
 		1280145,
 		1280147,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1280133,
 	},
@@ -674107,12 +662869,6 @@ _G.pg.base.chapter_template[2200045] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		22,
@@ -674771,12 +663527,6 @@ _G.pg.base.chapter_template[2200051] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1170101,
 	},
@@ -674793,12 +663543,6 @@ _G.pg.base.chapter_template[2200051] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -675313,12 +664057,6 @@ _G.pg.base.chapter_template[2200052] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1170102,
 	},
@@ -675335,12 +664073,6 @@ _G.pg.base.chapter_template[2200052] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -675913,12 +664645,6 @@ _G.pg.base.chapter_template[2200053] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1170103,
 	},
@@ -675937,12 +664663,6 @@ _G.pg.base.chapter_template[2200053] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -676556,12 +665276,6 @@ _G.pg.base.chapter_template[2200061] = {
 	ai_expedition_list = {
 		1430061,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1430013,
 	},
@@ -676578,12 +665292,6 @@ _G.pg.base.chapter_template[2200061] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -677138,12 +665846,6 @@ _G.pg.base.chapter_template[2200062] = {
 		1430071,
 		1430072,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1430033,
 	},
@@ -677160,12 +665862,6 @@ _G.pg.base.chapter_template[2200062] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -677819,12 +666515,6 @@ _G.pg.base.chapter_template[2200063] = {
 	ai_expedition_list = {
 		1430081,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1430053,
 	},
@@ -677843,12 +666533,6 @@ _G.pg.base.chapter_template[2200063] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -678466,12 +667150,6 @@ _G.pg.base.chapter_template[2200071] = {
 		1470301,
 		1470302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1470013,
 	},
@@ -678488,12 +667166,6 @@ _G.pg.base.chapter_template[2200071] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -679066,12 +667738,6 @@ _G.pg.base.chapter_template[2200072] = {
 		1471302,
 		1471303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1471013,
 	},
@@ -679088,12 +667754,6 @@ _G.pg.base.chapter_template[2200072] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -679750,12 +668410,6 @@ _G.pg.base.chapter_template[2200073] = {
 		1472302,
 		1472303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1472013,
 	},
@@ -679772,12 +668426,6 @@ _G.pg.base.chapter_template[2200073] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -680441,12 +669089,6 @@ _G.pg.base.chapter_template[2200074] = {
 		1473302,
 		1473303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1473013,
 	},
@@ -680464,12 +669106,6 @@ _G.pg.base.chapter_template[2200074] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -681154,12 +669790,6 @@ _G.pg.base.chapter_template[2200075] = {
 		1474302,
 		1474303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1474013,
 	},
@@ -681178,12 +669808,6 @@ _G.pg.base.chapter_template[2200075] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		22,
@@ -682013,12 +670637,6 @@ _G.pg.base.chapter_template[2200081] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1210013,
 	},
@@ -682033,12 +670651,6 @@ _G.pg.base.chapter_template[2200081] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -682635,12 +671247,6 @@ _G.pg.base.chapter_template[2200082] = {
 	ai_expedition_list = {
 		1210110,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1210113,
 	},
@@ -682655,12 +671261,6 @@ _G.pg.base.chapter_template[2200082] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -683383,12 +671983,6 @@ _G.pg.base.chapter_template[2200083] = {
 	ai_expedition_list = {
 		1210210,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1210213,
 	},
@@ -683403,12 +671997,6 @@ _G.pg.base.chapter_template[2200083] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -684147,12 +672735,6 @@ _G.pg.base.chapter_template[2200084] = {
 	ai_expedition_list = {
 		1210310,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1210313,
 	},
@@ -684168,12 +672750,6 @@ _G.pg.base.chapter_template[2200084] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		22,
@@ -684917,12 +673493,6 @@ _G.pg.base.chapter_template[2200091] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1380013,
 	},
@@ -684939,12 +673509,6 @@ _G.pg.base.chapter_template[2200091] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -685538,12 +674102,6 @@ _G.pg.base.chapter_template[2200092] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1380113,
 	},
@@ -685560,12 +674118,6 @@ _G.pg.base.chapter_template[2200092] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -686219,12 +674771,6 @@ _G.pg.base.chapter_template[2200093] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1380213,
 	},
@@ -686243,12 +674789,6 @@ _G.pg.base.chapter_template[2200093] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		22,
@@ -686886,12 +675426,6 @@ _G.pg.base.chapter_template[2200101] = {
 	ai_expedition_list = {
 		1400301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1400013,
 	},
@@ -686908,12 +675442,6 @@ _G.pg.base.chapter_template[2200101] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -687640,12 +676168,6 @@ _G.pg.base.chapter_template[2200102] = {
 	ai_expedition_list = {
 		1400303,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1400113,
 	},
@@ -687662,12 +676184,6 @@ _G.pg.base.chapter_template[2200102] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -688401,12 +676917,6 @@ _G.pg.base.chapter_template[2200103] = {
 	ai_expedition_list = {
 		1400305,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1400213,
 	},
@@ -688425,12 +676935,6 @@ _G.pg.base.chapter_template[2200103] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		22,
@@ -689188,12 +677692,6 @@ _G.pg.base.chapter_template[2200111] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1460013,
 	},
@@ -689208,12 +677706,6 @@ _G.pg.base.chapter_template[2200111] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -689800,12 +678292,6 @@ _G.pg.base.chapter_template[2200112] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1461013,
 	},
@@ -689820,12 +678306,6 @@ _G.pg.base.chapter_template[2200112] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -690424,12 +678904,6 @@ _G.pg.base.chapter_template[2200113] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1462013,
 	},
@@ -690446,12 +678920,6 @@ _G.pg.base.chapter_template[2200113] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {
@@ -691040,12 +679508,6 @@ _G.pg.base.chapter_template[2200121] = {
 		1580022,
 		1580023,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1580013,
 	},
@@ -691062,12 +679524,6 @@ _G.pg.base.chapter_template[2200121] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -691667,12 +680123,6 @@ _G.pg.base.chapter_template[2200122] = {
 		1580122,
 		1580123,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1580113,
 	},
@@ -691689,12 +680139,6 @@ _G.pg.base.chapter_template[2200122] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -692343,12 +680787,6 @@ _G.pg.base.chapter_template[2200123] = {
 		1580222,
 		1580223,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1580213,
 	},
@@ -692367,12 +680805,6 @@ _G.pg.base.chapter_template[2200123] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		22,
@@ -693096,12 +681528,6 @@ _G.pg.base.chapter_template[2200131] = {
 		1630301,
 		1630302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1630013,
 	},
@@ -693118,12 +681544,6 @@ _G.pg.base.chapter_template[2200131] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -693720,12 +682140,6 @@ _G.pg.base.chapter_template[2200132] = {
 		1631301,
 		1631302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1631013,
 	},
@@ -693742,12 +682156,6 @@ _G.pg.base.chapter_template[2200132] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -694408,12 +682816,6 @@ _G.pg.base.chapter_template[2200133] = {
 		1632301,
 		1632302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1632013,
 	},
@@ -694430,12 +682832,6 @@ _G.pg.base.chapter_template[2200133] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -695094,12 +683490,6 @@ _G.pg.base.chapter_template[2200134] = {
 		1633301,
 		1633302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1633013,
 	},
@@ -695117,12 +683507,6 @@ _G.pg.base.chapter_template[2200134] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -695791,12 +684175,6 @@ _G.pg.base.chapter_template[2200141] = {
 	ai_expedition_list = {
 		1760301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1760013,
 	},
@@ -695813,12 +684191,6 @@ _G.pg.base.chapter_template[2200141] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -696526,12 +684898,6 @@ _G.pg.base.chapter_template[2200142] = {
 	ai_expedition_list = {
 		1761301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1761013,
 	},
@@ -696548,12 +684914,6 @@ _G.pg.base.chapter_template[2200142] = {
 	},
 	ai_refresh = {
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -697262,12 +685622,6 @@ _G.pg.base.chapter_template[2200143] = {
 		1762301,
 		1762302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1762013,
 	},
@@ -697284,12 +685638,6 @@ _G.pg.base.chapter_template[2200143] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -698068,12 +686416,6 @@ _G.pg.base.chapter_template[2200144] = {
 		1763301,
 		1763302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1763013,
 	},
@@ -698091,12 +686433,6 @@ _G.pg.base.chapter_template[2200144] = {
 	},
 	ai_refresh = {
 		2,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {},
 	win_condition = {
@@ -698867,12 +687203,6 @@ _G.pg.base.chapter_template[2200145] = {
 	ai_expedition_list = {
 		1764301,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1764013,
 	},
@@ -698891,12 +687221,6 @@ _G.pg.base.chapter_template[2200145] = {
 	ai_refresh = {
 		2,
 		1,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		20,
@@ -699754,12 +688078,6 @@ _G.pg.base.chapter_template[2200146] = {
 		1765301,
 		1765302,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1765013,
 	},
@@ -699771,12 +688089,6 @@ _G.pg.base.chapter_template[2200146] = {
 	},
 	ai_refresh = {
 		3,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
-		0,
 	},
 	use_oil_limit = {
 		32,
@@ -700685,12 +688997,6 @@ _G.pg.base.chapter_template[9920001] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000016,
 	},
@@ -700707,12 +689013,6 @@ _G.pg.base.chapter_template[9920001] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -701249,12 +689549,6 @@ _G.pg.base.chapter_template[9920002] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000032,
 	},
@@ -701271,12 +689565,6 @@ _G.pg.base.chapter_template[9920002] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -701953,12 +690241,6 @@ _G.pg.base.chapter_template[9920003] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000048,
 	},
@@ -701977,12 +690259,6 @@ _G.pg.base.chapter_template[9920003] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -702624,12 +690900,6 @@ _G.pg.base.chapter_template[9920004] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000064,
 	},
@@ -702648,12 +690918,6 @@ _G.pg.base.chapter_template[9920004] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -703413,12 +691677,6 @@ _G.pg.base.chapter_template[9920005] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000080,
 	},
@@ -703437,12 +691695,6 @@ _G.pg.base.chapter_template[9920005] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -703997,12 +692249,6 @@ _G.pg.base.chapter_template[9920006] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000096,
 	},
@@ -704021,12 +692267,6 @@ _G.pg.base.chapter_template[9920006] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -704589,12 +692829,6 @@ _G.pg.base.chapter_template[9920007] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000112,
 	},
@@ -704613,12 +692847,6 @@ _G.pg.base.chapter_template[9920007] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -705236,12 +693464,6 @@ _G.pg.base.chapter_template[9920008] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000128,
 	},
@@ -705260,12 +693482,6 @@ _G.pg.base.chapter_template[9920008] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -706080,12 +694296,6 @@ _G.pg.base.chapter_template[9920011] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000215,
 	},
@@ -706102,12 +694312,6 @@ _G.pg.base.chapter_template[9920011] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -706685,12 +694889,6 @@ _G.pg.base.chapter_template[9920012] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000231,
 	},
@@ -706709,12 +694907,6 @@ _G.pg.base.chapter_template[9920012] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -707432,12 +695624,6 @@ _G.pg.base.chapter_template[9920013] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000247,
 	},
@@ -707456,12 +695642,6 @@ _G.pg.base.chapter_template[9920013] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -708144,12 +696324,6 @@ _G.pg.base.chapter_template[9920014] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000263,
 	},
@@ -708168,12 +696342,6 @@ _G.pg.base.chapter_template[9920014] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -708974,12 +697142,6 @@ _G.pg.base.chapter_template[9920015] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000279,
 	},
@@ -708998,12 +697160,6 @@ _G.pg.base.chapter_template[9920015] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -709599,12 +697755,6 @@ _G.pg.base.chapter_template[9920016] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000295,
 	},
@@ -709623,12 +697773,6 @@ _G.pg.base.chapter_template[9920016] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -710232,12 +698376,6 @@ _G.pg.base.chapter_template[9920017] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000311,
 	},
@@ -710256,12 +698394,6 @@ _G.pg.base.chapter_template[9920017] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -710920,12 +699052,6 @@ _G.pg.base.chapter_template[9920018] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000327,
 	},
@@ -710944,12 +699070,6 @@ _G.pg.base.chapter_template[9920018] = {
 		1,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},
@@ -711680,12 +699800,6 @@ _G.pg.base.chapter_template[9920021] = {
 	ai_expedition_list = {
 		1,
 	},
-	patrolai_expedition_list = {
-		1,
-	},
-	submarine_expedition_list = {
-		1,
-	},
 	boss_expedition_id = {
 		1000331,
 	},
@@ -711697,12 +699811,6 @@ _G.pg.base.chapter_template[9920021] = {
 		0,
 	},
 	ai_refresh = {
-		0,
-	},
-	patrolai_refresh = {
-		0,
-	},
-	submarine_refresh = {
 		0,
 	},
 	use_oil_limit = {},

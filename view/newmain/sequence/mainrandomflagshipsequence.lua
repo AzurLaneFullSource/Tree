@@ -66,9 +66,9 @@ local function var2_0(arg0_5, arg1_5)
 	end
 
 	if arg0_5 == SettingsRandomFlagShipAndSkinPanel.SHIP_FREQUENTLYUSED then
-		return arg1_5:GetPreferenceTag() ~= 0
+		return arg1_5.phantomId == 0 and arg1_5:GetPreferenceTag() ~= 0
 	elseif arg0_5 == SettingsRandomFlagShipAndSkinPanel.SHIP_LOCKED then
-		return arg1_5:GetLockState() ~= 0
+		return arg1_5.phantomId == 0 and arg1_5:GetLockState() ~= 0
 	elseif arg0_5 == SettingsRandomFlagShipAndSkinPanel.COUSTOM then
 		-- block empty
 	end

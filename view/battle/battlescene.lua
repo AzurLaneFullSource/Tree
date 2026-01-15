@@ -105,7 +105,9 @@ function var0_0.init(arg0_4)
 	arg0_4._canvasOrder = var2_4 and var2_4.sortingOrder or 0
 	arg0_4._ratioFitter = GetComponent(arg0_4._tf, typeof(AspectRatioFitter))
 
-	arg0_4._go:AddComponent(typeof(RectMask2D))
+	if not BATTLE_DEFAULT_UNIT_DETAIL then
+		arg0_4._go:AddComponent(typeof(RectMask2D))
+	end
 end
 
 function var0_0.initPainting(arg0_7)

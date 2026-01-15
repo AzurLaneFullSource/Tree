@@ -1,6 +1,236 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_19 = {
+	[10400010] = {
+		ship_group = 1040001,
+		name = "Kizuna AI",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 10400010,
+		group_index = 0,
+		purchase_offset = "",
+		painting = "aijiangDD",
+		l2d_drag_rate = "",
+		part_scale = "",
+		prefab = "aijiangDD",
+		shop_type_id = 0,
+		shop_dynamic_hx = 0,
+		double_char = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 0,
+		skeleton_default_skin = "",
+		bg = "",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = -1,
+		l2d_para_range = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_voice_calibrate = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "HAI DOMO! Kizuna AI here! Are you the commander I've heard rumors about? It's a pleasure to meet and work with you!",
+		voice_actor = 176,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.99,
+					0.98,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.15,
+					0.1,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.73,
+					0.85,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.57,
+							2.46,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[10400011] = {
+		ship_group = 1040001,
+		name = "Festive Kizuna AI",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 10400011,
+		group_index = 1,
+		purchase_offset = "",
+		painting = "aijiangDD_2",
+		l2d_drag_rate = "",
+		part_scale = "",
+		prefab = "aijiangDD_2",
+		shop_type_id = 10,
+		shop_dynamic_hx = 0,
+		double_char = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 70174,
+		skeleton_default_skin = "",
+		bg = "114",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = 0,
+		l2d_para_range = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_voice_calibrate = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "The clothes from the Sakura Empire are so stylish! Commander, since it's a rare occasion, let's go take a look around! Ah, of course, don't forget to run the reel~♪",
+		voice_actor = 176,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.14,
+					0.56,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.02,
+					0.1,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.17,
+					0.57,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.42,
+							2.21,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[10400020] = {
 		ship_group = 1040002,
 		name = "Elegant Kizuna AI",
@@ -15697,288 +15927,6 @@ pg.base.ship_skin_template_19 = {
 						{
 							-0.609,
 							2.334,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[11400021] = {
-		ship_group = 1140002,
-		name = "Night at the Pub",
-		hand_id = 13,
-		bgm = "danmachi-az-story",
-		gyro = 0,
-		illustrator2 = -1,
-		id = 11400021,
-		l2d_drag_rate = "",
-		group_index = 1,
-		purchase_offset = "",
-		painting = "liuliang_2",
-		part_scale = "",
-		prefab = "liuliang_2",
-		shop_dynamic_hx = 0,
-		shop_type_id = 17,
-		double_char = 0,
-		shop_id = 71225,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		skeleton_default_skin = "",
-		illustrator = -1,
-		bg = "163",
-		l2d_voice_calibrate = "",
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skin_type = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "W-welcome... Don't stare at me, please. This pub's uniforms are a little revealing, so I'm nervous. I-if you insist, though, I can make time to chat after closing time.",
-		voice_actor = 284,
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			6,
-			2,
-			5
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		shop_offset = {
-			-139.3,
-			-627.4,
-			0,
-			0.38
-		},
-		spine_offset_profile = {
-			-65.2,
-			-614.4,
-			0,
-			0.37
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.808,
-					0.87,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.897,
-					2.299,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.681,
-							2.382,
-							0
-						}
-					}
-				}
-			}
-		},
-		spine_offset = {
-			-28.1,
-			-748.74,
-			0,
-			0.43
-		},
-		get_showing = {
-			show = 1,
-			data = {
-				{
-					-1376,
-					533.75,
-					2,
-					120,
-					0,
-					2
-				},
-				{
-					858,
-					56,
-					2,
-					0,
-					-120,
-					2
-				},
-				{
-					-467,
-					-395,
-					2,
-					-100,
-					0,
-					2
-				}
-			}
-		}
-	},
-	[11500010] = {
-		ship_group = 1150001,
-		name = "Tohka Yatogami",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 11500010,
-		group_index = 0,
-		purchase_offset = "",
-		painting = "shixiang",
-		l2d_drag_rate = "",
-		part_scale = "",
-		prefab = "shixiang",
-		shop_type_id = 0,
-		shop_dynamic_hx = 0,
-		double_char = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 0,
-		skeleton_default_skin = "",
-		bg = "",
-		illustrator = -1,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = -1,
-		l2d_para_range = "",
-		bg_sp = "",
-		voice_actor_2 = -1,
-		l2d_voice_calibrate = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Identify yourself. Are you my enemy? ...Perhaps not. Hmm... Could this be a different world entirely? No wonder I've seen so many unfamiliar things. Regardless, my name is Tohka Yatogami. It's an important name, so you'd best remember it. I suppose I'll be in your world for the time being. On that note... I'm hungry. Do you have anything to eat?",
-		voice_actor = 148,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.59,
-					0.934,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.538,
-					1.064,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.77,
-					2.509,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.683,
-							2.485,
 							0
 						}
 					}

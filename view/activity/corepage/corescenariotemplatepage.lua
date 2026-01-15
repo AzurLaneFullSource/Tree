@@ -14,6 +14,7 @@ end
 function var0_0.OnInit(arg0_2)
 	arg0_2.storyLayer = arg0_2._tf:Find("Story")
 	arg0_2.top = arg0_2._tf:Find("TopPage")
+	arg0_2.bg = arg0_2._tf:Find("bg")
 	arg0_2.storyHolder = arg0_2._tf:Find("Story/Nodes")
 	arg0_2.storyContainer = arg0_2.storyHolder:Find("Viewport/Content")
 	arg0_2.nodes = {}
@@ -78,6 +79,10 @@ function var0_0.OnInit(arg0_2)
 		arg0_2.event:emit(BaseUI.ON_HOME)
 	end, SFX_PANEL)
 	setText(arg0_2._tf:Find("TopPage/Desc/Desc"), i18n("series_enemy_storyreward"))
+
+	arg0_2.mapGroup = {}
+	arg0_2.currentBG = nil
+	arg0_2.loader = AutoLoader.New()
 end
 
 function var0_0.SetCoreStoryPage(arg0_5, arg1_5)
@@ -699,9 +704,6 @@ function var0_0.UpdateStory(arg0_19, arg1_19)
 
 				PlayerPrefs.SetInt("player_" .. var0_35 .. "_activity_spStoryNodeID_" .. var20_19 .. "_unlock", 1)
 				arg0_19:UpdateView(true)
-
-				arg0_19.needFocusStory = true
-
 				arg0_19:Move2UnlockStory()
 			end)
 
@@ -773,9 +775,6 @@ function var0_0.UpdateStory(arg0_19, arg1_19)
 
 				arg0_19:PlayStory(var0_37, function()
 					arg0_19:UpdateView(true)
-
-					arg0_19.needFocusStory = true
-
 					arg0_19:Move2UnlockStory()
 				end, true)
 			end)
@@ -828,12 +827,6 @@ function var0_0.DequeItem(arg0_40, arg1_40, arg2_40)
 end
 
 function var0_0.Move2UnlockStory(arg0_41)
-	if not arg0_41.needFocusStory then
-		return
-	end
-
-	arg0_41.needFocusStory = nil
-
 	local var0_41 = arg0_41.spStoryNodes
 	local var1_41
 
@@ -883,7 +876,7 @@ function var0_0.SwitchStoryMapAndBGM(arg0_42)
 	end
 
 	if var0_42 ~= nil and var0_42 ~= "" then
-		arg0_42.coreStoryPage:SwitchBG({
+		arg0_42:SwitchBG({
 			{
 				BG = var0_42
 			}
@@ -895,94 +888,122 @@ function var0_0.SwitchStoryMapAndBGM(arg0_42)
 	end
 end
 
-function var0_0.TrySubmitTask(arg0_43)
-	local var0_43 = true
+function var0_0.SwitchBG(arg0_43, arg1_43, arg2_43, arg3_43)
+	if not arg1_43 or #arg1_43 <= 0 then
+		existCall(arg2_43)
 
-	for iter0_43, iter1_43 in ipairs(arg0_43.spStoryNodes) do
-		local var1_43 = iter1_43:GetStoryName()
+		return
+	elseif arg3_43 then
+		-- block empty
+	elseif table.equal(arg0_43.currentBG, arg1_43) then
+		return
+	end
 
-		if var1_43 and var1_43 ~= "" then
-			var0_43 = var0_43 and pg.NewStoryMgr.GetInstance():IsPlayed(var1_43)
+	arg0_43.currentBG = arg1_43
+
+	for iter0_43, iter1_43 in ipairs(arg0_43.mapGroup) do
+		arg0_43.loader:ClearRequest(iter1_43)
+	end
+
+	table.clear(arg0_43.mapGroup)
+
+	local var0_43 = arg0_43.loader:GetSpriteDirect("bg/" .. arg1_43[1].BG, "", function(arg0_44)
+		setImageSprite(arg0_43.bg, arg0_44)
+		SetActive(arg0_43.bg, true)
+	end)
+
+	table.insert(arg0_43.mapGroup, var0_43)
+end
+
+function var0_0.TrySubmitTask(arg0_45)
+	local var0_45 = true
+
+	for iter0_45, iter1_45 in ipairs(arg0_45.spStoryNodes) do
+		local var1_45 = iter1_45:GetStoryName()
+
+		if var1_45 and var1_45 ~= "" then
+			var0_45 = var0_45 and pg.NewStoryMgr.GetInstance():IsPlayed(var1_45)
 		end
 
-		if not var0_43 then
+		if not var0_45 then
 			break
 		end
 	end
 
-	if var0_43 and arg0_43.storyTask and arg0_43.storyTask:getTaskStatus() == 1 then
-		arg0_43.coreStoryPage:emit(ActivityMediator.ON_TASK_SUBMIT, arg0_43.storyTask)
+	if var0_45 and arg0_45.storyTask and arg0_45.storyTask:getTaskStatus() == 1 then
+		arg0_45.coreStoryPage:emit(ActivityMediator.ON_TASK_SUBMIT, arg0_45.storyTask)
 
 		return
 	end
 end
 
-function var0_0.PlayStory(arg0_44, arg1_44, arg2_44, arg3_44)
-	if not arg1_44 then
-		return existCall(arg2_44)
+function var0_0.PlayStory(arg0_46, arg1_46, arg2_46, arg3_46)
+	if not arg1_46 then
+		return existCall(arg2_46)
 	end
 
-	local var0_44 = pg.NewStoryMgr.GetInstance()
-	local var1_44 = var0_44:IsPlayed(arg1_44)
+	local var0_46 = pg.NewStoryMgr.GetInstance()
+	local var1_46 = var0_46:IsPlayed(arg1_46)
 
 	seriesAsync({
-		function(arg0_45)
-			if var1_44 and not arg3_44 then
-				return arg0_45()
+		function(arg0_47)
+			if var1_46 and not arg3_46 then
+				return arg0_47()
 			end
 
-			local var0_45 = tonumber(arg1_44)
+			local var0_47 = tonumber(arg1_46)
 
-			if var0_45 and var0_45 > 0 then
-				arg0_44.coreStoryPage:emit(ActivityMediator.GO_PERFORM_COMBAT, {
-					stageId = var0_45
+			if var0_47 and var0_47 > 0 then
+				arg0_46.coreStoryPage:emit(ActivityMediator.GO_PERFORM_COMBAT, {
+					stageId = var0_47,
+					exitCallback = arg2_46
 				})
 			else
-				var0_44:Play(arg1_44, arg0_45, arg3_44)
+				var0_46:Play(arg1_46, arg0_47, arg3_46)
 			end
 		end,
-		function(arg0_46, ...)
-			existCall(arg2_44, ...)
+		function(arg0_48, ...)
+			existCall(arg2_46, ...)
 		end
 	})
 end
 
-function var0_0.UpdateStoryTask(arg0_47)
-	local var0_47 = arg0_47.activity:getConfig("config_client").task_id
-	local var1_47 = getProxy(TaskProxy):getTaskVO(var0_47)
+function var0_0.UpdateStoryTask(arg0_49)
+	local var0_49 = arg0_49.activity:getConfig("config_client").task_id
+	local var1_49 = getProxy(TaskProxy):getTaskVO(var0_49)
 
-	if not var1_47 then
-		errorMsg("Missing Activity Task ID : " .. var0_47)
+	if not var1_49 then
+		errorMsg("Missing Activity Task ID : " .. var0_49)
 	end
 
-	arg0_47.storyTask = var1_47 or Task.New({
-		id = var0_47
+	arg0_49.storyTask = var1_49 or Task.New({
+		id = var0_49
 	})
 end
 
-function var0_0.OnSubmitTaskDone(arg0_48)
-	arg0_48:UpdateView()
+function var0_0.OnSubmitTaskDone(arg0_50)
+	arg0_50:UpdateView()
 end
 
-function var0_0.Show(arg0_49)
-	var0_0.super.Show(arg0_49)
-	arg0_49:OverlayPanel(arg0_49._tf)
-	arg0_49:OverlayPanel(arg0_49.topPage, {
+function var0_0.Show(arg0_51)
+	var0_0.super.Show(arg0_51)
+	arg0_51:OverlayPanel(arg0_51._tf)
+	arg0_51:OverlayPanel(arg0_51.topPage, {
 		stopTop = true
 	})
 end
 
-function var0_0.Hide(arg0_50)
-	arg0_50:UnOverlayPanel(arg0_50.topPage, arg0_50._tf)
-	arg0_50:UnOverlayPanel(arg0_50._tf, arg0_50._parentTf)
-	var0_0.super.Hide(arg0_50)
+function var0_0.Hide(arg0_52)
+	arg0_52:UnOverlayPanel(arg0_52.topPage, arg0_52._tf)
+	arg0_52:UnOverlayPanel(arg0_52._tf, arg0_52._parentTf)
+	var0_0.super.Hide(arg0_52)
 end
 
-function var0_0.OnDestroy(arg0_51)
-	arg0_51:RecyclePools()
+function var0_0.OnDestroy(arg0_53)
+	arg0_53:RecyclePools()
 
-	for iter0_51, iter1_51 in pairs(arg0_51.pools) do
-		iter1_51:Clear()
+	for iter0_53, iter1_53 in pairs(arg0_53.pools) do
+		iter1_53:Clear()
 	end
 end
 

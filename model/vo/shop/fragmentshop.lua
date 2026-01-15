@@ -56,4 +56,8 @@ function var0_0.Reset(arg0_3, arg1_3)
 	arg0_3:update(arg1_3, {}, var0_3)
 end
 
+function var0_0.IsSameKind(arg0_4, arg1_4)
+	return isa(arg1_4, FragmentShop)
+end
+
 return var0_0

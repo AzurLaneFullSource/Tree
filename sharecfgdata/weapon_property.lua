@@ -1206494,6 +1206494,277 @@ _G.pg.base.weapon_property[3347003] = {
 	},
 }
 
+_G.pg.base.weapon_property[3347004] = {
+	action_index = "",
+	aim_type = 0,
+	base = 1009,
+	damage = 500,
+	id = 3347004,
+	queue = 1,
+	range = 120,
+	reload_max = 6000,
+	suppress = 0,
+	bullet_ID = {
+		3347004,
+		3347005,
+	},
+	barrage_ID = {
+		3347005,
+		3347006,
+	},
+}
+
+_G.pg.base.weapon_property[3347005] = {
+	action_index = "",
+	aim_type = 0,
+	base = 1003,
+	damage = 500,
+	id = 3347005,
+	queue = 1,
+	range = 120,
+	reload_max = 6000,
+	suppress = 0,
+	bullet_ID = {
+		3139807,
+		3139807,
+	},
+	barrage_ID = {
+		3347007,
+		3347008,
+	},
+}
+
+_G.pg.base.weapon_property[3347006] = {
+	action_index = "",
+	aim_type = 0,
+	base = 1009,
+	damage = 500,
+	fire_sfx = "",
+	id = 3347006,
+	queue = 2,
+	range = 120,
+	reload_max = 6000,
+	suppress = 0,
+	bullet_ID = {
+		3347006,
+	},
+	barrage_ID = {
+		3347011,
+	},
+}
+
+_G.pg.base.weapon_property[3347007] = {
+	action_index = "attack",
+	aim_type = 1,
+	base = 1009,
+	damage = 50,
+	id = 3347007,
+	queue = 1,
+	range = 120,
+	reload_max = 900,
+	suppress = 1,
+	type = 19,
+	bullet_ID = {
+		3243201,
+		3243202,
+		3243203,
+		3243204,
+		3243205,
+	},
+	barrage_ID = {
+		1,
+		1,
+		1,
+		1,
+		1,
+	},
+	precast_param = {
+		alertTime = 1.25,
+		fx = "none",
+		time = 0.01,
+	},
+}
+
+_G.pg.base.weapon_property[3347008] = {
+	action_index = "",
+	aim_type = 1,
+	base = 1009,
+	damage = 20,
+	id = 3347008,
+	queue = 2,
+	range = 120,
+	reload_max = 600,
+	suppress = 1,
+	bullet_ID = {
+		3246059,
+		3246067,
+	},
+	barrage_ID = {
+		3347013,
+		3347014,
+	},
+}
+
+_G.pg.base.weapon_property[3347009] = {
+	action_index = "",
+	aim_type = 1,
+	base = 1003,
+	damage = 10,
+	id = 3347009,
+	queue = 1,
+	reload_max = 750,
+	suppress = 1,
+	bullet_ID = {
+		3246014,
+	},
+	barrage_ID = {
+		3347019,
+	},
+	precast_param = {},
+}
+
+_G.pg.base.weapon_property[3347010] = {
+	action_index = "attack",
+	aim_type = 1,
+	angle = 360,
+	attack_attribute = 2,
+	attack_attribute_ratio = 100,
+	auto_aftercast = 0,
+	axis_angle = 0,
+	charge_param = "",
+	corrected = 100,
+	damage = 50,
+	effect_move = 1,
+	expose = 0,
+	fire_fx = "",
+	fire_fx_loop_type = 1,
+	fire_sfx = "",
+	id = 3347010,
+	initial_over_heat = 1,
+	min_range = 0,
+	queue = 2,
+	range = 120,
+	recover_time = 0,
+	reload_max = 750,
+	search_type = 1,
+	shakescreen = 0,
+	spawn_bound = "cannon",
+	suppress = 1,
+	torpedo_ammo = 0,
+	type = 29,
+	bullet_ID = {
+		3241111,
+		3241111,
+	},
+	barrage_ID = {
+		3347015,
+		3347016,
+	},
+	oxy_type = {
+		1,
+	},
+	search_condition = {
+		1,
+	},
+	precast_param = {
+		alertTime = 0.5,
+		fx = "none",
+		isBound = true,
+		time = 0.01,
+	},
+}
+
+_G.pg.base.weapon_property[3347011] = {
+	action_index = "",
+	aim_type = 1,
+	base = 1009,
+	damage = 300,
+	id = 3347011,
+	queue = 1,
+	range = 120,
+	reload_max = 300,
+	suppress = 1,
+	bullet_ID = {
+		3347010,
+		3347010,
+	},
+	barrage_ID = {
+		3347017,
+		3347018,
+	},
+}
+
+_G.pg.base.weapon_property[3347012] = {
+	action_index = "",
+	aim_type = 1,
+	base = 1003,
+	damage = 500,
+	id = 3347012,
+	queue = 2,
+	range = 120,
+	reload_max = 300,
+	suppress = 1,
+	bullet_ID = {
+		3097011,
+	},
+	barrage_ID = {
+		3347020,
+	},
+}
+
+_G.pg.base.weapon_property[3347013] = {
+	action_index = "",
+	aim_type = 1,
+	base = 1009,
+	damage = 500,
+	id = 3347013,
+	queue = 3,
+	reload_max = 6000,
+	suppress = 1,
+	bullet_ID = {
+		3347011,
+	},
+	barrage_ID = {
+		3347021,
+	},
+}
+
+_G.pg.base.weapon_property[3347014] = {
+	action_index = "attack",
+	aim_type = 1,
+	attack_attribute = 2,
+	base = 1009,
+	damage = 3000,
+	id = 3347014,
+	queue = 4,
+	reload_max = 6000,
+	suppress = 1,
+	bullet_ID = {
+		3345111,
+	},
+	barrage_ID = {
+		3347022,
+	},
+}
+
+_G.pg.base.weapon_property[3347015] = {
+	action_index = "attack",
+	aim_type = 1,
+	base = 1009,
+	damage = 15000,
+	id = 3347015,
+	queue = 5,
+	reload_max = 6000,
+	suppress = 1,
+	type = 29,
+	bullet_ID = {
+		3347013,
+	},
+	barrage_ID = {
+		3347023,
+	},
+}
+
 _G.pg.base.weapon_property[3512040] = {
 	aim_type = 1,
 	angle = 180,
