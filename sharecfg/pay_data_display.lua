@@ -18091,11 +18091,11 @@ pg.base.pay_data_display = {
 		show_group = "",
 		skin_inquire_relation = 86421,
 		package_tag_open = 0,
-		id_str = "com.yostaren.azurlane.luckybag77",
+		id_str = "com.yostaren.azurlane.luckybag15v2",
 		first_pay_double = 0,
 		extra_gem = 0,
 		descrip = "Contains 1 random skin, 2026 Gems, and supplies.",
-		airijp_id = "com.yostaren.azurlane.luckybag77",
+		airijp_id = "com.yostaren.azurlane.luckybag15v2",
 		extra_service_item = {
 			{
 				2,
