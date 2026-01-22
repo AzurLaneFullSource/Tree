@@ -51,12 +51,12 @@ function var0_0.OnDestroy(arg0_5)
 end
 
 function var0_0.Show(arg0_6)
-	local var0_6 = arg0_6.chapter:getConfig("special_operation_list")
+	local var0_6 = noEmptyStr(arg0_6.chapter:getConfig("special_operation_list"))
 	local var1_6 = arg0_6.chapter:GetDailyBonusQuota()
 
 	arg0_6:initSPOPView()
 
-	if type(var0_6) == "table" and #var0_6 > 0 and not var1_6 then
+	if var0_6 and #var0_6 > 0 and not var1_6 then
 		setActive(arg0_6.btnSp, true)
 	else
 		setActive(arg0_6.btnSp, false)
@@ -1958,11 +1958,16 @@ function var0_0.initSPOPView(arg0_126)
 	elseif #var0_126 == 1 then
 		local var2_126 = var0_126[1]
 		local var3_126 = pg.benefit_buff_template[var2_126]
+		local var4_126 = ActivityBuff.GetBenefitCondition(var3_126.benefit_condition)
 
-		arg0_126:setTicketInfo(arg0_126.btnSp, var3_126.benefit_condition)
+		assert(var4_126[1] == "item")
+
+		local var5_126 = var4_126[2]
+
+		arg0_126:setTicketInfo(arg0_126.btnSp, var5_126)
 		setText(arg0_126.spDesc, var3_126.desc)
 		onButton(arg0_126, arg0_126.btnSp:Find("item"), function()
-			arg0_126:emit(BaseUI.ON_ITEM, tonumber(var3_126.benefit_condition))
+			arg0_126:emit(BaseUI.ON_ITEM, var5_126)
 		end)
 		onButton(arg0_126, arg0_126.btnSp, function()
 			local var0_128 = Chapter.GetSPOperationItemCacheKey(arg0_126.chapter.id)
@@ -1971,7 +1976,7 @@ function var0_0.initSPOPView(arg0_126)
 				PlayerPrefs.SetInt(var0_128, 0)
 				arg0_126:clearSPBuff()
 			else
-				arg0_126.spItemID = tonumber(var3_126.benefit_condition)
+				arg0_126.spItemID = var5_126
 
 				PlayerPrefs.SetInt(var0_128, arg0_126.spItemID)
 				pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_select_sp"))
@@ -1984,12 +1989,17 @@ function var0_0.initSPOPView(arg0_126)
 		setText(arg0_126.spDesc, i18n("levelScene_select_SP_OP"))
 
 		for iter0_126, iter1_126 in ipairs(var0_126) do
-			local var4_126 = cloneTplTo(arg0_126.spTpl, arg0_126.spContainer)
+			local var6_126 = ActivityBuff.GetBenefitCondition(iter1_126.benefit_condition)
 
-			setText(var4_126:Find("desc"), iter1_126.desc)
-			arg0_126:setTicketInfo(var4_126, iter1_126.benefit_condition)
-			setActive(var4_126:Find("block"), false)
-			onButton(arg0_126, var4_126, function()
+			assert(var6_126[1] == "item")
+
+			local var7_126 = var6_126[2]
+			local var8_126 = cloneTplTo(arg0_126.spTpl, arg0_126.spContainer)
+
+			setText(var8_126:Find("desc"), iter1_126.desc)
+			arg0_126:setTicketInfo(var8_126, var7_126)
+			setActive(var8_126:Find("block"), false)
+			onButton(arg0_126, var8_126, function()
 				arg0_126:setSPBuffSelected(iter1_126.id)
 				setActive(arg0_126.spPanel, false)
 			end)
@@ -2011,20 +2021,20 @@ function var0_0.initSPOPView(arg0_126)
 		end)
 
 		if var1_126 ~= 0 then
-			local var5_126
+			local var9_126
 
 			for iter2_126, iter3_126 in ipairs(var0_126) do
 				if iter3_126.id == Chapter.GetSPBuffByItem(var1_126) then
-					var5_126 = true
+					var9_126 = true
 
 					break
 				end
 			end
 
-			if var5_126 then
-				local var6_126 = Chapter.GetSPBuffByItem(var1_126)
+			if var9_126 then
+				local var10_126 = Chapter.GetSPBuffByItem(var1_126)
 
-				arg0_126:setSPBuffSelected(var6_126)
+				arg0_126:setSPBuffSelected(var10_126)
 			else
 				arg0_126:clearSPBuff()
 			end
@@ -2038,15 +2048,18 @@ end
 
 function var0_0.setSPBuffSelected(arg0_131, arg1_131)
 	local var0_131 = pg.benefit_buff_template[arg1_131]
+	local var1_131 = ActivityBuff.GetBenefitCondition(var0_131.benefit_condition)
 
-	arg0_131.spItemID = tonumber(var0_131.benefit_condition)
+	assert(var1_131[1] == "item")
+
+	arg0_131.spItemID = var1_131[2]
 
 	arg0_131:setTicketInfo(arg0_131.btnSp, arg0_131.spItemID)
 	setText(arg0_131.spDesc, var0_131.desc)
 
-	local var1_131 = Chapter.GetSPOperationItemCacheKey(arg0_131.chapter.id)
+	local var2_131 = Chapter.GetSPOperationItemCacheKey(arg0_131.chapter.id)
 
-	PlayerPrefs.SetInt(var1_131, arg0_131.spItemID)
+	PlayerPrefs.SetInt(var2_131, arg0_131.spItemID)
 end
 
 function var0_0.clearSPBuff(arg0_132)

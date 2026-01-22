@@ -9,6 +9,8 @@ function var0_0.OnLoaded(arg0_2)
 
 	arg0_2.emptyTF = arg0_2._tf:Find("info_empty")
 	arg0_2.awardTF = arg0_2._tf:Find("info_award")
+
+	setText(arg0_2._tf:Find("confirm/Text"), i18n("word_ok"))
 end
 
 function var0_0.OnShow(arg0_3)

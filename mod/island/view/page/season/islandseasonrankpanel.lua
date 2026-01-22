@@ -42,100 +42,82 @@ function var0_0.OnInit(arg0_3)
 
 	arg0_3.playerCard = IslandRankCard.New(arg0_3.playerRankTF, IslandRankCard.TYPE_SELF, arg0_3)
 	arg0_3.newestId = IslandSeasonAgency.GetCurrentSeason()
-
-	if arg0_3.newestId > 1 then
-		arg0_3.switchPanel = IslandSeasonSwitchPanel.New(arg0_3._tf, arg0_3.event, setmetatable({
-			count = arg0_3.newestId,
-			onSelected = function(arg0_6)
-				arg0_3:Flush(arg0_6)
-			end,
-			defaultSelId = arg0_3.newestId
-		}, {
-			__index = arg0_3.contextData
-		}))
-	end
 end
 
-function var0_0.OnInitItem(arg0_7, arg1_7)
-	local var0_7 = IslandRankCard.New(arg1_7, IslandRankCard.TYPE_OTHER, arg0_7)
+function var0_0.OnInitItem(arg0_6, arg1_6)
+	local var0_6 = IslandRankCard.New(arg1_6, IslandRankCard.TYPE_OTHER, arg0_6)
 
-	arg0_7.cards[arg1_7] = var0_7
+	arg0_6.cards[arg1_6] = var0_6
 end
 
-function var0_0.OnUpdateItem(arg0_8, arg1_8, arg2_8)
-	local var0_8 = arg0_8.cards[arg2_8]
+function var0_0.OnUpdateItem(arg0_7, arg1_7, arg2_7)
+	local var0_7 = arg0_7.cards[arg2_7]
 
-	if not var0_8 then
-		arg0_8:OnInitItem(arg2_8)
+	if not var0_7 then
+		arg0_7:OnInitItem(arg2_7)
 
-		var0_8 = arg0_8.cards[arg2_8]
+		var0_7 = arg0_7.cards[arg2_7]
 	end
 
-	local var1_8 = arg0_8.displayRankVOs[arg1_8 + 1]
+	local var1_7 = arg0_7.displayRankVOs[arg1_7 + 1]
 
-	var0_8:Update(var1_8, arg0_8.seasonId)
+	var0_7:Update(var1_7, arg0_7.seasonId)
 end
 
-function var0_0.Show(arg0_9)
-	arg0_9.super.Show(arg0_9)
-
-	if arg0_9.newestId == 1 then
-		arg0_9:Flush(arg0_9.newestId)
-	else
-		arg0_9.switchPanel:ExecuteAction("Show")
-	end
-
+function var0_0.Show(arg0_8)
+	arg0_8.super.Show(arg0_8)
+	arg0_8:Flush(arg0_8.newestId)
 	IslandGuideChecker.CheckGuide("ISLAND_GUIDE_17")
 end
 
-function var0_0.Flush(arg0_10, arg1_10)
-	arg0_10.seasonId = arg1_10
+function var0_0.Flush(arg0_9, arg1_9)
+	arg0_9.seasonId = arg1_9
 
-	if not arg0_10.rankVOs[arg0_10.seasonId] or getProxy(BillboardProxy):canFetch(arg0_10.rankType, arg0_10.seasonId) then
-		arg0_10:emit(IslandMediator.ON_GET_SEASON_RANK, arg0_10.rankType, arg0_10.seasonId)
+	if not arg0_9.rankVOs[arg0_9.seasonId] or getProxy(BillboardProxy):canFetch(arg0_9.rankType, arg0_9.seasonId) then
+		arg0_9:emit(IslandMediator.ON_GET_SEASON_RANK, arg0_9.rankType, arg0_9.seasonId)
 	else
-		arg0_10:UpdataRankView()
+		arg0_9:UpdataRankView()
 	end
 end
 
-function var0_0.UpdateRankVOs(arg0_11, arg1_11, arg2_11, arg3_11)
-	arg0_11.rankVOs[arg1_11] = arg2_11
-	arg0_11.playerRankVOs[arg1_11] = arg3_11
+function var0_0.UpdateRankVOs(arg0_10, arg1_10, arg2_10, arg3_10)
+	arg0_10.rankVOs[arg1_10] = arg2_10
+	arg0_10.playerRankVOs[arg1_10] = arg3_10
 end
 
-function var0_0.UpdataRankView(arg0_12)
-	arg0_12.displayRankVOs = {}
+function var0_0.UpdataRankView(arg0_11)
+	arg0_11.displayRankVOs = {}
 
-	local var0_12 = arg0_12.rankVOs[arg0_12.seasonId]
+	local var0_11 = arg0_11.rankVOs[arg0_11.seasonId]
 
-	for iter0_12, iter1_12 in ipairs(arg0_12.rankVOs[arg0_12.seasonId]) do
-		table.insert(arg0_12.displayRankVOs, iter1_12)
+	for iter0_11, iter1_11 in ipairs(arg0_11.rankVOs[arg0_11.seasonId] or {}) do
+		table.insert(arg0_11.displayRankVOs, iter1_11)
 	end
 
-	arg0_12.rankRect:SetTotalCount(#arg0_12.displayRankVOs)
-	setActive(arg0_12.listEmptyTF, #arg0_12.displayRankVOs <= 0)
+	arg0_11.rankRect:SetTotalCount(#arg0_11.displayRankVOs)
+	setActive(arg0_11.listEmptyTF, #arg0_11.displayRankVOs <= 0)
 
-	local var1_12 = arg0_12.playerRankVOs[arg0_12.seasonId]
+	local var1_11 = arg0_11.playerRankVOs[arg0_11.seasonId]
 
-	setActive(arg0_12.playerRankTF, var1_12)
+	setActive(arg0_11.playerRankTF, var1_11)
 
-	if var1_12 then
-		arg0_12.playerCard:Update(var1_12, arg0_12.seasonId)
+	if var1_11 then
+		arg0_11.playerCard:Update(var1_11, arg0_11.seasonId)
 	end
 
-	setActive(arg0_12.tipTF, arg0_12.seasonId == arg0_12.newestId)
+	setActive(arg0_11.tipTF, arg0_11.seasonId == arg0_11.newestId)
 end
 
-function var0_0.OnDestory(arg0_13)
-	ClearLScrollrect(arg0_13.rankRect)
+function var0_0.OnDestory(arg0_12)
+	ClearLScrollrect(arg0_12.rankRect)
 
-	for iter0_13, iter1_13 in ipairs(arg0_13.cards) do
-		iter1_13:Dispose()
+	for iter0_12, iter1_12 in ipairs(arg0_12.cards) do
+		iter1_12:Dispose()
 	end
 
-	arg0_13.cards = nil
+	arg0_12.cards = nil
 
-	arg0_13.playerCard:Dispose()
+	arg0_12.playerCard:Dispose()
 end
 
 return var0_0

@@ -21,6 +21,10 @@ function var0_0.execute(arg0_1, arg1_1)
 
 			if var4_2.win then
 				var0_2:AddPassSeries(var4_2.seriesId)
+
+				if var0_2:getConfig("type") ~= ActivityConst.ACTIVITY_TYPE_BOSS_RUSH_DAL_COLLAB then
+					var0_2:AddUsedBonus(var4_2.seriesId)
+				end
 			end
 
 			for iter0_2, iter1_2 in ipairs(var4_2) do

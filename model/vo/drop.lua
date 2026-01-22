@@ -235,6 +235,8 @@ function var0_0.InitSwitch()
 			return var0_59
 		end,
 		[DROP_TYPE_ITEM] = function(arg0_60)
+			warning(arg0_60.id)
+
 			local var0_60 = Item.getConfigData(arg0_60.id)
 
 			arg0_60.desc = var0_60.display

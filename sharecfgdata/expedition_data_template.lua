@@ -1031212,6 +1031212,1021 @@ _G.pg.base.expedition_data_template[1996007] = {
 	},
 }
 
+_G.pg.base.expedition_data_template[1999101] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-spycity-fashion",
+	difficulty = 2,
+	dungeon_id = 1999101,
+	effect_prefab = "",
+	exp = 169,
+	exp_commander = 0,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1999101,
+	level = 20,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50122,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			200676,
+			1,
+		},
+		{
+			2,
+			59001,
+			1,
+		},
+		{
+			2,
+			54012,
+			1,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1999201] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-spycity-fashion",
+	difficulty = 2,
+	dungeon_id = 1999201,
+	effect_prefab = "",
+	exp = 286,
+	exp_commander = 0,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1999201,
+	level = 50,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50122,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			200675,
+			1,
+		},
+		{
+			2,
+			59001,
+			1,
+		},
+		{
+			2,
+			54017,
+			1,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1999202] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-spycity-fashion",
+	difficulty = 2,
+	dungeon_id = 1999202,
+	effect_prefab = "",
+	exp = 286,
+	exp_commander = 0,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1999202,
+	level = 50,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50122,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			200675,
+			1,
+		},
+		{
+			2,
+			59001,
+			1,
+		},
+		{
+			2,
+			54017,
+			1,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1999301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-spycity-fashion",
+	difficulty = 2,
+	dungeon_id = 1999301,
+	effect_prefab = "",
+	exp = 470,
+	exp_commander = 2,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1999301,
+	level = 100,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50122,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			200674,
+			1,
+		},
+		{
+			2,
+			59001,
+			1,
+		},
+		{
+			2,
+			54017,
+			1,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1999302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-spycity-fashion",
+	difficulty = 2,
+	dungeon_id = 1999302,
+	effect_prefab = "",
+	exp = 470,
+	exp_commander = 2,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1999302,
+	level = 100,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50122,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			200674,
+			1,
+		},
+		{
+			2,
+			59001,
+			1,
+		},
+		{
+			2,
+			54017,
+			1,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1999303] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-spycity-fashion",
+	difficulty = 2,
+	dungeon_id = 1999303,
+	effect_prefab = "",
+	exp = 470,
+	exp_commander = 2,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1999303,
+	level = 100,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50122,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			200674,
+			1,
+		},
+		{
+			2,
+			59001,
+			1,
+		},
+		{
+			2,
+			54017,
+			1,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1999401] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-spycity-fashion",
+	difficulty = 2,
+	dungeon_id = 1999401,
+	effect_prefab = "",
+	exp = 500,
+	exp_commander = 4,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1999401,
+	level = 110,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50122,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			200673,
+			1,
+		},
+		{
+			2,
+			59001,
+			1,
+		},
+		{
+			2,
+			54016,
+			1,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1999402] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-spycity-fashion",
+	difficulty = 2,
+	dungeon_id = 1999402,
+	effect_prefab = "",
+	exp = 500,
+	exp_commander = 4,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1999402,
+	level = 110,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50122,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			200673,
+			1,
+		},
+		{
+			2,
+			59001,
+			1,
+		},
+		{
+			2,
+			54016,
+			1,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1999403] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-spycity-fashion",
+	difficulty = 2,
+	dungeon_id = 1999403,
+	effect_prefab = "",
+	exp = 500,
+	exp_commander = 4,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1999403,
+	level = 110,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50122,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			200673,
+			1,
+		},
+		{
+			2,
+			59001,
+			1,
+		},
+		{
+			2,
+			54016,
+			1,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1999404] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-spycity-fashion",
+	difficulty = 2,
+	dungeon_id = 1999404,
+	effect_prefab = "",
+	exp = 500,
+	exp_commander = 4,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1999404,
+	level = 110,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50122,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			200673,
+			1,
+		},
+		{
+			2,
+			59001,
+			1,
+		},
+		{
+			2,
+			54016,
+			1,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1999501] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-spycity-fashion",
+	difficulty = 2,
+	dungeon_id = 1999501,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1999501,
+	level = 125,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50122,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1999502] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-spycity-fashion",
+	difficulty = 2,
+	dungeon_id = 1999502,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1999502,
+	level = 125,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50122,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1999503] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-spycity-fashion",
+	difficulty = 2,
+	dungeon_id = 1999503,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1999503,
+	level = 125,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50122,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1999504] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-spycity-fashion",
+	difficulty = 2,
+	dungeon_id = 1999504,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1999504,
+	level = 125,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50122,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[1999505] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-spycity-fashion",
+	difficulty = 2,
+	dungeon_id = 1999505,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bossicon",
+	icon_type = 1,
+	id = 1999505,
+	level = 125,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50122,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
 _G.pg.base.expedition_data_template[5000020] = {
 	SLG_destroy_FX = "",
 	add_icon = "",

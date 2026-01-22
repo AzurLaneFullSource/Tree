@@ -247,6 +247,35 @@ function temp()
 					this = true
 				}
 			}
+		},
+		g = {
+			o = {
+				l = {
+					i = {
+						n = {
+							o = {
+								[" "] = {
+									V = {
+										i = {
+											v = {
+												a = {
+													l = {
+														d = {
+															i = {
+																this = true
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 end
@@ -4160,6 +4189,39 @@ function temp()
 								}
 							}
 						}
+					},
+					c = {
+						e = {
+							s = {
+								c = {
+									o = {
+										[" "] = {
+											C = {
+												a = {
+													r = {
+														a = {
+															c = {
+																c = {
+																	i = {
+																		o = {
+																			l = {
+																				o = {
+																					this = true
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 			},
@@ -4247,6 +4309,19 @@ function temp()
 					z = {
 						u = {
 							k = {
+								i = {
+									this = true
+								}
+							}
+						}
+					}
+				}
+			},
+			j = {
+				i = {
+					n = {
+						a = {
+							m = {
 								i = {
 									this = true
 								}
@@ -5145,6 +5220,39 @@ function temp()
 					o = {
 						n = {
 							this = true
+						}
+					}
+				},
+				e = {
+					r = {
+						t = {
+							o = {
+								[" "] = {
+									d = {
+										i = {
+											[" "] = {
+												G = {
+													i = {
+														u = {
+															s = {
+																s = {
+																	a = {
+																		n = {
+																			o = {
+																				this = true
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}
@@ -11074,20 +11182,6 @@ function temp()
 							}
 						}
 					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.拉 = {
-		菲 = {
-			I = {
-				I = {
-					this = true
 				}
 			}
 		}

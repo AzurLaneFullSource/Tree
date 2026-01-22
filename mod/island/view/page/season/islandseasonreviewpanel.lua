@@ -7,22 +7,24 @@ end
 function var0_0.OnLoaded(arg0_2)
 	local var0_2 = arg0_2._tf:Find("content")
 
-	setText(var0_2:Find("infos/left/Text"), i18n("island_first_season"))
-
-	arg0_2.contentTF = var0_2:Find("infos")
+	arg0_2.leftPanel = var0_2:Find("left")
+	arg0_2.titleImg = arg0_2._tf:Find("content/left/Image"):GetComponent(typeof(Image))
+	arg0_2.seasonNumImg = arg0_2._tf:Find("content/left/num"):GetComponent(typeof(Image))
+	arg0_2.infoPanel = var0_2:Find("infos")
 	arg0_2.emptyTF = var0_2:Find("empty")
 
-	setText(arg0_2.emptyTF, i18n("island_season_review_miss"))
-	setText(arg0_2.contentTF:Find("season/title/Text"), i18n("island_season_title"))
-	setText(arg0_2.contentTF:Find("prod/title/Text"), i18n("island_season_review_produce"))
-	setText(arg0_2.contentTF:Find("relax/title/Text"), i18n("island_season_review_relax"))
+	setText(arg0_2.emptyTF:Find("Text"), i18n("island_season_review_miss"))
+	setText(arg0_2.infoPanel:Find("season/title/Text"), i18n("island_season_title"))
+	setText(arg0_2.infoPanel:Find("prod/title/Text"), i18n("island_season_review_produce"))
+	setText(arg0_2.infoPanel:Find("relax/title/Text"), i18n("island_season_review_relax"))
 
-	arg0_2.iconTF = arg0_2.contentTF:Find("island/icon_mask/icon")
+	arg0_2.switchPanel = IslandSeasonSwitchPanel.New(arg0_2._tf)
+	arg0_2.iconTF = arg0_2.infoPanel:Find("island/icon_mask/icon")
 	arg0_2.infoTFs = {
-		arg0_2.contentTF:Find("island/list"),
-		arg0_2.contentTF:Find("season/list"),
-		arg0_2.contentTF:Find("prod/list"),
-		arg0_2.contentTF:Find("relax/list")
+		arg0_2.infoPanel:Find("island/list"),
+		arg0_2.infoPanel:Find("season/list"),
+		arg0_2.infoPanel:Find("prod/list"),
+		arg0_2.infoPanel:Find("relax/list")
 	}
 
 	for iter0_2, iter1_2 in ipairs(arg0_2.infoTFs) do
@@ -33,30 +35,28 @@ function var0_0.OnLoaded(arg0_2)
 end
 
 function var0_0.OnInit(arg0_4)
-	arg0_4.newestId = IslandSeasonAgency.GetCurrentSeason() - 1
-	arg0_4.switchPanel = IslandSeasonSwitchPanel.New(arg0_4._tf, arg0_4.event, setmetatable({
-		count = arg0_4.newestId,
-		onSelected = function(arg0_5)
-			arg0_4:Flush(arg0_5)
-		end,
-		defaultSelId = arg0_4.newestId
-	}, {
-		__index = arg0_4.contextData
-	}))
 	arg0_4.rankType = PowerRank.TYPE_ISLAND_SEASON_PT
 	arg0_4.playerRankVOs = {}
 end
 
-function var0_0.Show(arg0_6)
-	arg0_6.super.Show(arg0_6)
-	arg0_6.switchPanel:ExecuteAction("Show")
+function var0_0.Show(arg0_5)
+	var0_0.super.Show(arg0_5)
+
+	local var0_5 = IslandSeasonAgency.GetCurrentSeason() - 1
+
+	arg0_5:Flush(var0_5)
+end
+
+function var0_0.Hide(arg0_6)
+	var0_0.super.Hide(arg0_6)
+	arg0_6.switchPanel:ExecuteAction("Hide")
 end
 
 function var0_0.Flush(arg0_7, arg1_7)
 	local var0_7 = getProxy(IslandProxy):GetIsland():GetSeasonAgency():GetReviewData(arg1_7)
 
 	setActive(arg0_7.emptyTF, not var0_7)
-	setActive(arg0_7.contentTF, var0_7)
+	setActive(arg0_7.infoPanel, var0_7)
 
 	if var0_7 then
 		for iter0_7, iter1_7 in ipairs(arg0_7.infoTFs) do
@@ -73,19 +73,30 @@ function var0_0.Flush(arg0_7, arg1_7)
 	else
 		arg0_7:UpdataIcon()
 	end
+
+	arg0_7.switchPanel:ExecuteAction("Show", arg1_7, function(arg0_9)
+		arg0_7:Flush(arg0_9)
+	end)
+
+	arg0_7.titleImg.sprite = GetSpriteFromAtlas("ui/IslandSeasonTheme" .. arg1_7 .. "_atlas", "title")
+	arg0_7.seasonNumImg.sprite = GetSpriteFromAtlas("ui/IslandSeasonTheme" .. arg1_7 .. "_atlas", "num")
 end
 
-function var0_0.UpdateRankVOs(arg0_9, arg1_9, arg2_9, arg3_9)
-	arg0_9.playerRankVOs[arg1_9] = arg3_9
+function var0_0.UpdateRankVOs(arg0_10, arg1_10, arg2_10, arg3_10)
+	arg0_10.playerRankVOs[arg1_10] = arg3_10
 end
 
-function var0_0.UpdataIcon(arg0_10)
-	local var0_10 = arg0_10.playerRankVOs[arg0_10.seasonId]
+function var0_0.UpdataIcon(arg0_11)
+	if arg0_11.playerRankVOs[arg0_11.seasonId] then
+		-- block empty
+	end
+end
 
-	if var0_10 then
-		local var1_10 = "squareicon/" .. pg.ship_skin_template[var0_10.skinId].prefab
+function var0_0.OnDestroy(arg0_12)
+	if arg0_12.switchPanel then
+		arg0_12.switchPanel:Destroy()
 
-		GetImageSpriteFromAtlasAsync(var1_10, "", arg0_10.iconTF)
+		arg0_12.switchPanel = nil
 	end
 end
 

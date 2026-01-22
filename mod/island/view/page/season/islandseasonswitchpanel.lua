@@ -5,48 +5,71 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	arg0_2.titleToggle = arg0_2._tf:Find("toggle")
-	arg0_2.titleTF = arg0_2.titleToggle:Find("Text")
-	arg0_2.uiList = UIItemList.New(arg0_2._tf:Find("list"), arg0_2._tf:Find("list/tpl"))
+	arg0_2.frame = arg0_2._tf:Find("frame")
+	arg0_2.uiList = UIItemList.New(arg0_2._tf:Find("frame/filter_panel/list/content"), arg0_2._tf:Find("frame/filter_panel/list/content/tpl"))
+	arg0_2.selectorPanel = arg0_2._tf:Find("frame/filter_panel")
+	arg0_2.fliterBtn = arg0_2._tf:Find("frame/filter")
+	arg0_2.filterTxt = arg0_2.fliterBtn:Find("Text"):GetComponent(typeof(Text))
 end
 
 function var0_0.OnInit(arg0_3)
-	arg0_3.uiList:make(function(arg0_4, arg1_4, arg2_4)
-		if arg0_4 == UIItemList.EventInit then
-			arg0_3:UpdateItem(arg1_4, arg2_4)
+	onButton(arg0_3, arg0_3.fliterBtn, function()
+		arg0_3.isOpen = not arg0_3.isOpen
+
+		arg0_3:UpdateSelector()
+	end, SFX_PANEL)
+	arg0_3.uiList:make(function(arg0_5, arg1_5, arg2_5)
+		if arg0_5 == UIItemList.EventInit then
+			arg0_3:UpdateItem(arg1_5, arg2_5)
 		end
 	end)
-	arg0_3.uiList:align(arg0_3.contextData.count or 0)
 end
 
-function var0_0.Show(arg0_5)
-	var0_0.super.Show(arg0_5)
+function var0_0.Show(arg0_6, arg1_6, arg2_6)
+	var0_0.super.Show(arg0_6)
 
-	arg0_5.selectedIdx = arg0_5.contextData.defaultSelId or 1
+	arg0_6.callback = arg2_6
+	arg0_6.isOpen = false
 
-	triggerToggle(arg0_5.uiList.container:Find(tostring(arg0_5.selectedIdx)), true)
+	arg0_6:UpdateSelector()
+
+	local var0_6 = pg.island_season[arg1_6].name_short
+
+	arg0_6.filterTxt.text = var0_6
 end
 
-function var0_0.UpdateItem(arg0_6, arg1_6, arg2_6)
-	local var0_6 = arg1_6 + 1
+function var0_0.UpdateSelector(arg0_7)
+	if arg0_7.isOpen then
+		local var0_7 = IslandSeasonAgency.GetCurrentSeason() - 1
 
-	arg2_6.name = var0_6
+		arg0_7.uiList:align(var0_7 or 0)
+	end
 
-	setText(arg2_6:Find("content/Text"), var0_6)
-	onToggle(arg0_6, arg2_6, function(arg0_7)
-		if arg0_7 then
-			arg0_6.selectedIdx = var0_6
+	setActive(arg0_7.selectorPanel, arg0_7.isOpen)
+end
 
-			arg0_6:UpdateTitle()
-			existCall(arg0_6.contextData.onSelected, var0_6)
+function var0_0.Hide(arg0_8)
+	var0_0.super.Hide(arg0_8)
+
+	if arg0_8.isOpen then
+		arg0_8.isOpen = false
+
+		arg0_8:UpdateSelector()
+	end
+end
+
+function var0_0.UpdateItem(arg0_9, arg1_9, arg2_9)
+	local var0_9 = arg1_9 + 1
+	local var1_9 = pg.island_season[var0_9].name_short
+
+	setText(arg2_9, var1_9)
+	onButton(arg0_9, arg2_9, function()
+		arg0_9.filterTxt.text = var1_9
+
+		if arg0_9.callback then
+			arg0_9.callback(var0_9)
 		end
-
-		triggerToggle(arg0_6.titleToggle, false)
 	end, SFX_PANEL)
-end
-
-function var0_0.UpdateTitle(arg0_8)
-	setText(arg0_8.titleTF, string.format("第%d赛季", arg0_8.selectedIdx))
 end
 
 return var0_0

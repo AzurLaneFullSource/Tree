@@ -988,20 +988,22 @@ end
 function var0_0.GetSpItems(arg0_91)
 	local var0_91 = {}
 	local var1_91 = getProxy(BagProxy):getItemsByType(Item.SPECIAL_OPERATION_TICKET)
-	local var2_91 = arg0_91:getConfig("special_operation_list")
+	local var2_91 = noEmptyStr(arg0_91:getConfig("special_operation_list"))
 
-	if var2_91 and #var2_91 == 0 then
+	if not var2_91 or not next(var2_91) then
 		return var0_91
 	end
 
-	for iter0_91, iter1_91 in ipairs(pg.benefit_buff_template.all) do
+	for iter0_91, iter1_91 in ipairs(var2_91) do
 		local var3_91 = pg.benefit_buff_template[iter1_91]
 
-		if var3_91.benefit_type == Chapter.OPERATION_BUFF_TYPE_DESC and table.contains(var2_91, var3_91.id) then
-			local var4_91 = tonumber(var3_91.benefit_condition)
+		if var3_91 and var3_91.benefit_type == Chapter.OPERATION_BUFF_TYPE_DESC then
+			local var4_91 = ActivityBuff.GetBenefitCondition(var3_91.benefit_condition)
 
 			for iter2_91, iter3_91 in ipairs(var1_91) do
-				if var4_91 == iter3_91.configId then
+				assert(var4_91[1] == "item")
+
+				if var4_91[2] == iter3_91.configId then
 					table.insert(var0_91, iter3_91)
 
 					break
@@ -1014,10 +1016,13 @@ function var0_0.GetSpItems(arg0_91)
 end
 
 function var0_0.GetSPBuffByItem(arg0_92)
-	for iter0_92, iter1_92 in ipairs(pg.benefit_buff_template.all) do
+	for iter0_92, iter1_92 in ipairs(pg.benefit_buff_template.get_id_list_by_benefit_type[Chapter.OPERATION_BUFF_TYPE_DESC]) do
 		local var0_92 = pg.benefit_buff_template[iter1_92]
+		local var1_92 = ActivityBuff.GetBenefitCondition(var0_92.benefit_condition)
 
-		if var0_92.benefit_type == Chapter.OPERATION_BUFF_TYPE_DESC and tonumber(var0_92.benefit_condition) == arg0_92 then
+		assert(var1_92[1] == "item")
+
+		if var1_92[2] == arg0_92 then
 			return var0_92.id
 		end
 	end

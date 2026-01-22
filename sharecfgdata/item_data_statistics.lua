@@ -27525,6 +27525,130 @@ _G.pg.base.item_data_statistics[30378] = {
 	limit = {},
 }
 
+_G.pg.base.item_data_statistics[30379] = {
+	compose_number = 0,
+	display = "Contains a random Photo Vision-themed gear skin.",
+	display_effect = "",
+	icon = "Props/appearanceboxsheyingshijie",
+	id = 30379,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Gear Skin Box (Photo Vision)",
+	open_directly = 1,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 11,
+	usage = "usage_drop",
+	usage_arg = "30376",
+	virtual_type = 0,
+	display_icon = {
+		{
+			9,
+			4276,
+			1,
+		},
+		{
+			9,
+			4277,
+			1,
+		},
+		{
+			9,
+			4278,
+			1,
+		},
+		{
+			9,
+			4279,
+			1,
+		},
+		{
+			9,
+			4280,
+			1,
+		},
+		{
+			9,
+			4281,
+			1,
+		},
+		{
+			9,
+			4282,
+			1,
+		},
+		{
+			9,
+			4283,
+			1,
+		},
+		{
+			9,
+			4284,
+			1,
+		},
+		{
+			9,
+			4285,
+			1,
+		},
+		{
+			9,
+			4286,
+			1,
+		},
+		{
+			9,
+			4287,
+			1,
+		},
+		{
+			9,
+			4288,
+			1,
+		},
+		{
+			9,
+			4289,
+			1,
+		},
+		{
+			9,
+			4290,
+			1,
+		},
+		{
+			9,
+			4291,
+			1,
+		},
+		{
+			9,
+			4292,
+			1,
+		},
+		{
+			9,
+			4293,
+			1,
+		},
+	},
+	price = {
+		1,
+		7000,
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+
 _G.pg.base.item_data_statistics[30401] = {
 	compose_number = 0,
 	display = "Contains 1 random Cruise Mission gear skin.",
@@ -42301,6 +42425,218 @@ _G.pg.base.item_data_statistics[30562] = {
 		{
 			9,
 			4275,
+			1,
+		},
+	},
+	limit = {},
+}
+
+_G.pg.base.item_data_statistics[30563] = {
+	compose_number = 0,
+	display = "Can be opened to receive 1 Photo Vision-themed gear skin of your choosing.",
+	display_effect = "",
+	icon = "Props/appearanceboxsheyingshijiezixuan",
+	id = 30563,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Selection Gear Skin Box (Photo Vision)",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 13,
+	usage = "usage_drop_appointed",
+	virtual_type = 0,
+	display_icon = {
+		{
+			9,
+			4276,
+			1,
+		},
+		{
+			9,
+			4277,
+			1,
+		},
+		{
+			9,
+			4278,
+			1,
+		},
+		{
+			9,
+			4279,
+			1,
+		},
+		{
+			9,
+			4280,
+			1,
+		},
+		{
+			9,
+			4281,
+			1,
+		},
+		{
+			9,
+			4282,
+			1,
+		},
+		{
+			9,
+			4283,
+			1,
+		},
+		{
+			9,
+			4284,
+			1,
+		},
+		{
+			9,
+			4285,
+			1,
+		},
+		{
+			9,
+			4286,
+			1,
+		},
+		{
+			9,
+			4287,
+			1,
+		},
+		{
+			9,
+			4288,
+			1,
+		},
+		{
+			9,
+			4289,
+			1,
+		},
+		{
+			9,
+			4290,
+			1,
+		},
+		{
+			9,
+			4291,
+			1,
+		},
+		{
+			9,
+			4292,
+			1,
+		},
+		{
+			9,
+			4293,
+			1,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			9,
+			4276,
+			1,
+		},
+		{
+			9,
+			4277,
+			1,
+		},
+		{
+			9,
+			4278,
+			1,
+		},
+		{
+			9,
+			4279,
+			1,
+		},
+		{
+			9,
+			4280,
+			1,
+		},
+		{
+			9,
+			4281,
+			1,
+		},
+		{
+			9,
+			4282,
+			1,
+		},
+		{
+			9,
+			4283,
+			1,
+		},
+		{
+			9,
+			4284,
+			1,
+		},
+		{
+			9,
+			4285,
+			1,
+		},
+		{
+			9,
+			4286,
+			1,
+		},
+		{
+			9,
+			4287,
+			1,
+		},
+		{
+			9,
+			4288,
+			1,
+		},
+		{
+			9,
+			4289,
+			1,
+		},
+		{
+			9,
+			4290,
+			1,
+		},
+		{
+			9,
+			4291,
+			1,
+		},
+		{
+			9,
+			4292,
+			1,
+		},
+		{
+			9,
+			4293,
 			1,
 		},
 	},
@@ -109199,6 +109535,72 @@ _G.pg.base.item_data_statistics[81437] = {
 			305102,
 		},
 	},
+	limit = {},
+}
+
+_G.pg.base.item_data_statistics[81438] = {
+	compose_number = 0,
+	display = "Contains a random Photoshoot Lucky Bag skin, Special General Blueprint - Series 8 x2, Gems x2026, Cognitive Chips x50, Wisdom Cubes x20, Decor Tokens x100, and Quick Finishers x10.",
+	display_effect = "",
+	icon = "Props/fudai100",
+	id = 81438,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Photoshoot Lucky Bag",
+	open_directly = 1,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 17,
+	usage = "usage_drop",
+	usage_arg = "998570",
+	virtual_type = 0,
+	display_icon = {
+		{
+			2,
+			86421,
+			1,
+		},
+		{
+			1,
+			14,
+			2026,
+		},
+		{
+			2,
+			42076,
+			2,
+		},
+		{
+			2,
+			15008,
+			50,
+		},
+		{
+			2,
+			20001,
+			20,
+		},
+		{
+			1,
+			6,
+			100,
+		},
+		{
+			2,
+			15003,
+			10,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
 	limit = {},
 }
 

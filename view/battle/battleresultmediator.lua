@@ -194,21 +194,15 @@ function var0_0.register(arg0_1)
 		assert(var37_1)
 
 		local var38_1 = var37_1:GetStaegLevel()
-		local var39_1 = var37_1:GetFleetIds()
-		local var40_1 = var39_1[var38_1]
+		local var39_1 = var37_1:GetStageFleets(var37_1:GetMode(), var38_1)
+		local var40_1 = var1_1:getActivityFleets()[var36_1][var39_1]
 
-		if var37_1:GetMode() == BossRushSeriesData.MODE.SINGLE then
-			var40_1 = var39_1[1]
-		end
-
-		local var41_1 = var1_1:getActivityFleets()[var36_1][var40_1]
-
-		var12_1 = var2_1:getShipsByFleet(var41_1)
+		var12_1 = var2_1:getShipsByFleet(var40_1)
 	else
-		local var42_1 = arg0_1.contextData.mainFleetId
-		local var43_1 = var1_1:getFleetById(var42_1)
+		local var41_1 = arg0_1.contextData.mainFleetId
+		local var42_1 = var1_1:getFleetById(var41_1)
 
-		var12_1 = var2_1:getShipsByFleet(var43_1)
+		var12_1 = var2_1:getShipsByFleet(var42_1)
 	end
 
 	arg0_1.viewComponent:setShips(var12_1)
@@ -690,16 +684,16 @@ function var0_0.register(arg0_1)
 		})
 	end)
 
-	local var44_1 = 0
+	local var43_1 = 0
 
 	if var12_1 then
 		for iter18_1, iter19_1 in ipairs(var12_1) do
-			var44_1 = iter19_1:getBattleTotalExpend() + var44_1
+			var43_1 = iter19_1:getBattleTotalExpend() + var43_1
 		end
 	end
 
 	originalPrint("耗时：", arg0_1.contextData.statistics._totalTime, "秒")
-	originalPrint("编队基础油耗：", var44_1)
+	originalPrint("编队基础油耗：", var43_1)
 
 	if arg0_1.contextData.statistics._enemyInfoList then
 		for iter20_1, iter21_1 in pairs(arg0_1.contextData.statistics._enemyInfoList) do
@@ -707,19 +701,19 @@ function var0_0.register(arg0_1)
 		end
 	end
 
-	local var45_1 = false
+	local var44_1 = false
 
 	if var5_1 == SYSTEM_SCENARIO then
-		local var46_1 = var3_1:getActiveChapter()
+		local var45_1 = var3_1:getActiveChapter()
 
-		var45_1 = getProxy(ChapterProxy):GetChapterAutoFlag(var46_1.id) == 1
+		var44_1 = getProxy(ChapterProxy):GetChapterAutoFlag(var45_1.id) == 1
 	elseif var5_1 == SYSTEM_WORLD then
-		var45_1 = nowWorld().isAutoFight
+		var44_1 = nowWorld().isAutoFight
 	end
 
-	local var47_1 = PlayerPrefs.GetInt(AUTO_BATTLE_LABEL, 0) > 0
+	local var46_1 = PlayerPrefs.GetInt(AUTO_BATTLE_LABEL, 0) > 0
 
-	if ys.Battle.BattleState.IsAutoBotActive() and var47_1 and not var45_1 then
+	if ys.Battle.BattleState.IsAutoBotActive() and var46_1 and not var44_1 then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_AUTO_BATTLE)
 		LuaHelper.Vibrate()
 	end

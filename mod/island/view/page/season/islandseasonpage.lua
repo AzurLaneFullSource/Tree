@@ -145,7 +145,8 @@ local var1_0 = {
 	[var0_0.PAGE_PT] = 2,
 	[var0_0.PAGE_TASK] = 3,
 	[var0_0.PAGE_SHOP] = 3,
-	[var0_0.PAGE_RANK] = 3
+	[var0_0.PAGE_RANK] = 3,
+	[var0_0.PAGE_REVIEW] = 4
 }
 
 function var0_0.SwitchPage(arg0_17)
@@ -158,11 +159,11 @@ function var0_0.SwitchPage(arg0_17)
 
 		local var0_17 = var1_0[arg0_17.curPage]
 
-		SetCompomentEnabled(arg0_17.blurTF, "Image", var0_17 == 1 or var0_17 == 3)
+		SetCompomentEnabled(arg0_17.blurTF, "Image", var0_17 == 1 or var0_17 == 3 or var0_17 == 4)
 		setActive(arg0_17.ptTitleTF, var0_17 == 2)
 		setActive(arg0_17.otherTitleTF, var0_17 == 3)
 
-		if var0_17 == 1 or var0_17 == 3 then
+		if var0_17 == 1 or var0_17 == 3 or var0_17 == 4 then
 			arg0_17:OverlayPanel(arg0_17.blurTF, {
 				pbList = {
 					arg0_17.blurTF
@@ -211,6 +212,10 @@ function var0_0.OnHide(arg0_23)
 	arg0_23.pages[var0_0.PAGE_PT]:OnHide()
 	arg0_23.pages[var0_0.PAGE_ACTIVITY]:Destroy()
 	arg0_23.pages[var0_0.PAGE_ACTIVITY]:Reset()
+
+	if arg0_23.pages[var0_0.PAGE_REVIEW] then
+		arg0_23.pages[var0_0.PAGE_REVIEW]:Hide()
+	end
 end
 
 function var0_0.OnDisable(arg0_24)

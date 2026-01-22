@@ -251,6 +251,7 @@ pg.memory_group = setmetatable({
 		351,
 		352,
 		353,
+		354,
 		501,
 		502,
 		503,
@@ -6249,6 +6250,27 @@ pg.base.memory_group = {
 			4944,
 			4945,
 			4946
+		}
+	},
+	[354] = {
+		id = 354,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 50360,
+		title = "Light & Shadow Fashion Shoot!",
+		group_id = "",
+		memories = {
+			4961,
+			4962,
+			4963,
+			4964,
+			4965,
+			4966,
+			4967,
+			4968,
+			4969,
+			4970
 		}
 	},
 	[501] = {

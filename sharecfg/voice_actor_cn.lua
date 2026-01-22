@@ -1899,5 +1899,17 @@ pg.voice_actor_CN = {
 	[493] = {
 		code = 493,
 		actor_name = "Megu Umezawa"
+	},
+	[494] = {
+		code = 494,
+		actor_name = "Mariko Higashiuchi"
+	},
+	[495] = {
+		code = 495,
+		actor_name = "Akane Matsunaga"
+	},
+	[496] = {
+		code = 496,
+		actor_name = "Moe Nagamuta"
 	}
 }

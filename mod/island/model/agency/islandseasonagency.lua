@@ -12,7 +12,7 @@ function var0_0.OnInit(arg0_1, arg1_1)
 end
 
 function var0_0.NeedReset(arg0_2)
-	return arg0_2.season.id < var0_0.GetCurrentSeason()
+	return arg0_2.season.id < var0_0.GetCurrentSeason() and arg0_2.season:IsEnd()
 end
 
 function var0_0.Reset(arg0_3, arg1_3)
@@ -69,7 +69,7 @@ function var0_0.IsCurSeasonPtZero(arg0_11)
 end
 
 function var0_0.GetCurrentSeason()
-	local var0_12 = Clone(pg.island_season.all)
+	local var0_12 = pg.island_season.all
 
 	return var0_12[#var0_12]
 end

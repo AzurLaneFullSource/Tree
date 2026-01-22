@@ -82,9 +82,9 @@ function var0_0.handleNotification(arg0_6, arg1_6)
 				local var1_8 = arg0_6.contextData.seriesData
 				local var2_8 = arg0_6.contextData.system
 				local var3_8 = arg0_6.contextData.seriesData.mode
-				local var4_8 = var1_8:GetFleets()
-				local var5_8 = var4_8[#var4_8]
-				local var6_8 = _.slice(var4_8, 1, #var4_8 - 1)
+				local var4_8, var5_8 = var1_8:GetModeFleetIDs(var3_8)
+				local var6_8 = var1_8:GetFleets(var5_8)[1]
+				local var7_8 = var1_8:GetFleets(var4_8)
 
 				if (function()
 					local var0_9 = 0
@@ -107,27 +107,22 @@ function var0_0.handleNotification(arg0_6, arg1_6)
 					end
 
 					local var5_9 = #var1_8:GetExpeditionIds()
+					local var6_9 = var4_9(var6_8, var2_9[2]) * var5_9
 
-					if var3_8 == BossRushSeriesData.MODE.SINGLE then
-						var0_9 = var0_9 + var4_9(var6_8[1], var2_9[1])
-						var0_9 = var0_9 + var4_9(var5_8, var2_9[2])
-						var0_9 = var0_9 * var5_9
-					else
-						var0_9 = var4_9(var5_8, var2_9[2]) * var5_9
-
-						_.each(var6_8, function(arg0_11)
-							var0_9 = var0_9 + var4_9(arg0_11, var2_9[1])
-						end)
+					for iter0_9 = 1, var5_9 do
+						var6_9 = var6_9 + var4_9(var7_8[iter0_9] or var7_8[1], var2_9[1])
 					end
 
-					return var0_9
+					return var6_9
 				end)() > getProxy(PlayerProxy):getRawData().oil then
 					return
 				end
 
-				if var3_8 == BossRushSeriesData.MODE.SINGLE and _.any(var4_8, function(arg0_12)
-					return _.any(arg0_12:GetRawShipIds(), function(arg0_13)
-						return getProxy(BayProxy):RawGetShipById(arg0_13):getEnergy() <= pg.gameset.series_enemy_mood_limit.key_value
+				if var3_8 == BossRushSeriesData.MODE.SINGLE and underscore.any(table.mergeArray(var7_8, {
+					var6_8
+				}), function(arg0_11)
+					return _.any(arg0_11:GetRawShipIds(), function(arg0_12)
+						return getProxy(BayProxy):RawGetShipById(arg0_12):getEnergy() <= pg.gameset.series_enemy_mood_limit.key_value
 					end)
 				end) then
 					return
@@ -175,27 +170,27 @@ function var0_0.handleNotification(arg0_6, arg1_6)
 	end
 end
 
-function var0_0.ShowTotalAward(arg0_14, arg1_14)
-	local var0_14 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_RUSH_DAL_COLLAB)
-	local var1_14 = var0_14 and var0_14:getConfig("config_client").mediator or "BossRushDALCollabMediator"
-	local var2_14, var3_14 = getProxy(ContextProxy):getContextByMediator(_G[var1_14])
-	local var4_14, var5_14 = getProxy(ActivityProxy):GetContinuousTime()
+function var0_0.ShowTotalAward(arg0_13, arg1_13)
+	local var0_13 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_RUSH_DAL_COLLAB)
+	local var1_13 = var0_13 and var0_13:getConfig("config_client").mediator or "BossRushDALCollabMediator"
+	local var2_13, var3_13 = getProxy(ContextProxy):getContextByMediator(_G[var1_13])
+	local var4_13, var5_13 = getProxy(ActivityProxy):GetContinuousTime()
 
-	var3_14:addChild(Context.New({
+	var3_13:addChild(Context.New({
 		mediator = BossRushTotalRewardPanelMediator,
 		viewComponent = BossRushTotalRewardPanel,
 		data = {
 			isLayer = true,
-			rewards = arg1_14,
-			isAutoFight = arg0_14.contextData.isAutoFight,
-			totalBattleTimes = var5_14,
-			continuousBattleTimes = var4_14
+			rewards = arg1_13,
+			isAutoFight = arg0_13.contextData.isAutoFight,
+			totalBattleTimes = var5_13,
+			continuousBattleTimes = var4_13
 		}
 	}))
-	arg0_14:sendNotification(GAME.GO_BACK)
+	arg0_13:sendNotification(GAME.GO_BACK)
 end
 
-function var0_0.remove(arg0_15)
+function var0_0.remove(arg0_14)
 	return
 end
 

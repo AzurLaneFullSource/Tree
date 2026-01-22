@@ -319,14 +319,8 @@ function var0_0.Preload(arg0_6)
 			assert(var54_6)
 
 			local var55_6 = var54_6:GetStaegLevel() + 1
-			local var56_6 = var54_6:GetFleetIds()
-			local var57_6 = var56_6[var55_6]
-			local var58_6 = var56_6[#var56_6]
-
-			if var54_6:GetMode() == BossRushSeriesData.MODE.SINGLE then
-				var57_6 = var56_6[1]
-			end
-
+			local var56_6 = var54_6:GetMode()
+			local var57_6, var58_6 = var54_6:GetStageFleets(var56_6, var55_6)
 			local var59_6 = getProxy(FleetProxy):getActivityFleets()[arg0_6.contextData.actId]
 			local var60_6 = var59_6[var57_6]
 			local var61_6 = var59_6[var58_6]
@@ -351,12 +345,14 @@ function var0_0.Preload(arg0_6)
 				var0_0.addCommanderBuffRes(var61_6:buildBattleBuffList())
 			end
 
-			local var64_6 = var54_6:getConfig("aid_buff")
+			if arg0_6.contextData.system == SYSTEM_BOSS_RUSH_COLLABRATE then
+				local var64_6 = var54_6:getConfig("aid_buff")
 
-			if var54_6:GetBossHpRate() <= var64_6[1] then
-				var0_0.addChapterBuffRes({
-					var64_6[2]
-				})
+				if var54_6:GetBossHpRate() <= var64_6[1] then
+					var0_0.addChapterBuffRes({
+						var64_6[2]
+					})
+				end
 			end
 		elseif arg0_6.contextData.system == SYSTEM_LIMIT_CHALLENGE then
 			local var65_6 = FleetProxy.CHALLENGE_FLEET_ID

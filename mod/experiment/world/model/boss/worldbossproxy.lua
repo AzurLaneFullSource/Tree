@@ -275,20 +275,20 @@ end
 function var0_0.GenFleet(arg0_36)
 	local var0_36 = arg0_36:GetCacheShips(var1_0)
 
-	arg0_36.fleet = Fleet.New({
-		0,
+	arg0_36.fleet = TypedFleet.New({
 		id = 1,
 		name = i18n("world_boss_fleet"),
-		ship_list = var0_36
+		ship_list = var0_36,
+		fleetType = FleetType.Normal
 	})
 
 	local var1_36 = arg0_36:GetCacheShips(var2_0)
 
-	arg0_36.fleetForArchives = Fleet.New({
-		0,
+	arg0_36.fleetForArchives = TypedFleet.New({
 		id = 1,
 		name = i18n("world_boss_fleet"),
-		ship_list = var1_36
+		ship_list = var1_36,
+		fleetType = FleetType.Normal
 	})
 end
 
@@ -343,10 +343,10 @@ function var0_0.GetFleet(arg0_39, arg1_39)
 	end
 
 	var1_39 = var1_39 or Fleet.New({
-		0,
 		id = 1,
 		name = i18n("world_boss_fleet"),
-		ship_list = {}
+		ship_list = {},
+		fleetType = FleetType.Normal
 	})
 
 	for iter0_39 = #var1_39.ships, 1, -1 do

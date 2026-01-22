@@ -263,16 +263,13 @@ end
 
 function var0_0.UpdateSPItem(arg0_18)
 	local var0_18 = getProxy(BagProxy):getItemsByType(Item.SPECIAL_OPERATION_TICKET)
-	local var1_18 = arg0_18.contextData.chapter:getConfig("special_operation_list")
-
-	var1_18 = var1_18 == "" and {} or var1_18
-
+	local var1_18 = noEmptyStr(arg0_18.contextData.chapter:getConfig("special_operation_list")) or {}
 	local var2_18 = {}
 
-	for iter0_18, iter1_18 in ipairs(pg.benefit_buff_template.all) do
+	for iter0_18, iter1_18 in ipairs(pg.benefit_buff_template.get_id_list_by_benefit_type[Chapter.OPERATION_BUFF_TYPE_DESC]) do
 		local var3_18 = pg.benefit_buff_template[iter1_18]
 
-		if var3_18.benefit_type == Chapter.OPERATION_BUFF_TYPE_DESC and table.contains(var1_18, iter1_18) then
+		if table.contains(var1_18, iter1_18) then
 			table.insert(var2_18, var3_18)
 		end
 	end
@@ -291,19 +288,23 @@ function var0_0.UpdateSPItem(arg0_18)
 		end
 
 		local var0_19 = var2_18[arg1_19 + 1]
-		local var1_19 = tonumber(var0_19.benefit_condition)
+		local var1_19 = ActivityBuff.GetBenefitCondition(var0_19.benefit_condition)
+
+		assert(var1_19[1] == "item")
+
+		local var2_19 = var1_19[2]
 
 		setText(arg2_19:Find("Active/Desc"), var0_19.desc)
 
-		local var2_19 = _.detect(var0_18, function(arg0_20)
-			return arg0_20.configId == var1_19
+		local var3_19 = _.detect(var0_18, function(arg0_20)
+			return arg0_20.configId == var2_19
 		end)
-		local var3_19 = var2_19 and var2_19.count > 0
+		local var4_19 = var3_19 and var3_19.count > 0
 
-		setActive(arg2_19:Find("Active"), var3_19)
-		setActive(arg2_19:Find("Block"), not var3_19)
+		setActive(arg2_19:Find("Active"), var4_19)
+		setActive(arg2_19:Find("Block"), not var4_19)
 
-		if not var3_19 then
+		if not var4_19 then
 			setText(arg2_19:Find("Block"):Find("Desc"), i18n("levelScene_select_noitem"))
 
 			return
@@ -311,12 +312,12 @@ function var0_0.UpdateSPItem(arg0_18)
 
 		setActive(arg2_19:Find("Active/Item"), true)
 		updateDrop(arg2_19:Find("Active/Item/Icon"), Drop.New({
-			id = var1_19,
+			id = var2_19,
 			type = DROP_TYPE_ITEM,
-			count = var2_19 and var2_19.count or 0
+			count = var3_19 and var3_19.count or 0
 		}))
 		onButton(arg0_18, arg2_19, function()
-			arg0_18.contextData.spItemID = not arg0_18.contextData.spItemID and var1_19 or nil
+			arg0_18.contextData.spItemID = not arg0_18.contextData.spItemID and var2_19 or nil
 
 			if arg0_18.contextData.spItemID then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_select_sp"))
@@ -325,7 +326,7 @@ function var0_0.UpdateSPItem(arg0_18)
 			arg0_18:UpdateSPItem()
 		end, SFX_PANEL)
 		onButton(arg0_18, arg2_19:Find("Active/Item/Icon"), function()
-			arg0_18:emit(BaseUI.ON_ITEM, var1_19)
+			arg0_18:emit(BaseUI.ON_ITEM, var2_19)
 		end)
 		setActive(arg2_19:Find("Active/Checkbox/Mark"), tobool(arg0_18.contextData.spItemID))
 	end)

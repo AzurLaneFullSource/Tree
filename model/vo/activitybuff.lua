@@ -42,7 +42,7 @@ function var0_0.isActivate(arg0_4)
 		return false
 	end
 
-	local var2_4 = noEmptyStr(arg0_4:getConfig("benefit_condition"))
+	local var2_4 = var0_0.GetBenefitCondition(arg0_4:getConfig("benefit_condition"))
 
 	if not var2_4 then
 		return true
@@ -80,26 +80,56 @@ function var0_0.isActivate(arg0_4)
 		end,
 		chapter = function(arg0_8)
 			return true
+		end,
+		dungeon = function(arg0_9)
+			return true
 		end
 	}, function()
 		return false
 	end)
 end
 
-function var0_0.checkChaper(arg0_10, arg1_10)
-	local var0_10 = noEmptyStr(arg0_10:getConfig("benefit_condition"))
+function var0_0.checkChaper(arg0_11, arg1_11)
+	local var0_11 = var0_0.GetBenefitCondition(arg0_11:getConfig("benefit_condition"))
 
-	if not var0_10 or var0_10[1] ~= "chapter" then
+	if not var0_11 or var0_11[1] ~= "chapter" then
 		return true
 	else
-		return table.contains(var0_10[2], arg1_10)
+		return table.contains(var0_11[2], arg1_11)
 	end
 end
 
-function var0_0.getLeftTime(arg0_11)
-	local var0_11 = pg.TimeMgr.GetInstance():GetServerTime()
+function var0_0.checkDungeon(arg0_12, arg1_12)
+	local var0_12 = var0_0.GetBenefitCondition(arg0_12:getConfig("benefit_condition"))
 
-	return getProxy(ActivityProxy):getActivityById(arg0_11.activityId).stopTime - var0_11
+	if not var0_12 or var0_12[1] ~= "dungeon" then
+		return true
+	else
+		return table.contains(var0_12[2], arg1_12)
+	end
+end
+
+function var0_0.getLeftTime(arg0_13)
+	local var0_13 = pg.TimeMgr.GetInstance():GetServerTime()
+
+	return getProxy(ActivityProxy):getActivityById(arg0_13.activityId).stopTime - var0_13
+end
+
+function var0_0.GetBenefitCondition(arg0_14)
+	local var0_14 = noEmptyStr(arg0_14)
+
+	if not var0_14 then
+		return nil
+	elseif type(var0_14) == "string" then
+		return {
+			"item",
+			tonumber(var0_14)
+		}
+	elseif type(var0_14) == "table" then
+		return var0_14
+	else
+		assert(false)
+	end
 end
 
 return var0_0

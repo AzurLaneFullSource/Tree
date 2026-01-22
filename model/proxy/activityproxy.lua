@@ -451,6 +451,8 @@ function var0_0.getPanelActivities(arg0_41)
 				var1_42 = arg0_42.data2 == 0
 			elseif var0_42 == ActivityConst.ACTIVITY_TYPE_PROGRESSLOGIN then
 				var1_42 = arg0_42.data1 < 7 or not arg0_42.achieved
+			elseif var0_42 == ActivityConst.ACTIVITY_TYPE_SURVEY then
+				var1_42 = PLATFORM ~= PLATFORM_OPENHARMONY
 			end
 		end
 

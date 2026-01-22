@@ -17,14 +17,8 @@ function var0_0.Entrance(arg0_1, arg1_1)
 	local var10_1 = getProxy(ActivityProxy):getActivityById(var0_1):GetSeriesData()
 	local var11_1 = var10_1:GetStaegLevel() + 1
 	local var12_1 = var10_1:GetExpeditionIds()[var11_1]
-	local var13_1 = var10_1:GetFleetIds()
-	local var14_1 = var13_1[var11_1]
-	local var15_1 = var13_1[#var13_1]
-
-	if var10_1:GetMode() == BossRushSeriesData.MODE.SINGLE then
-		var14_1 = var13_1[1]
-	end
-
+	local var13_1 = var10_1:GetMode()
+	local var14_1, var15_1 = var10_1:GetStageFleets(var13_1, var11_1)
 	local var16_1 = var2_1:getActivityFleets()[var0_1]
 	local var17_1 = var16_1[var14_1]
 	local var18_1 = var16_1[var15_1]
@@ -98,14 +92,8 @@ function var0_0.Exit(arg0_4, arg1_4)
 		local var0_5 = arg0_4.actId
 		local var1_5 = getProxy(ActivityProxy):getActivityById(var0_5):GetSeriesData()
 		local var2_5 = var1_5:GetStaegLevel() + 1
-		local var3_5 = var1_5:GetFleetIds()
-		local var4_5 = var3_5[var2_5]
-		local var5_5 = var3_5[#var3_5]
-
-		if var1_5:GetMode() == BossRushSeriesData.MODE.SINGLE then
-			var4_5 = var3_5[1]
-		end
-
+		local var3_5 = var1_5:GetMode()
+		local var4_5, var5_5 = var1_5:GetStageFleets(var3_5, var2_5)
 		local var6_5 = var1_4:getActivityFleets()[var0_5]
 		local var7_5 = var6_5[var4_5]
 		local var8_5 = var6_5[var5_5]

@@ -2,18 +2,20 @@ pg = pg or {}
 pg.activity_banner = {
 	{
 		id = 1,
-		pic = "temp1",
+		pic = "temp7",
 		type = 2,
 		param = {
-			"scene skinshop",
-			{}
+			"scene charge",
+			{
+				wrap = 4
+			}
 		},
 		time = {
 			{
 				{
 					2026,
 					1,
-					15
+					22
 				},
 				{
 					0,
@@ -24,8 +26,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					1,
-					21
+					2,
+					4
 				},
 				{
 					23,
@@ -37,6 +39,41 @@ pg.activity_banner = {
 	},
 	{
 		id = 2,
+		pic = "temp1",
+		type = 2,
+		param = {
+			"scene skinshop",
+			{}
+		},
+		time = {
+			{
+				{
+					2026,
+					1,
+					22
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					1,
+					28
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 3,
 		pic = "temp2",
 		type = 2,
 		param = {
@@ -51,7 +88,7 @@ pg.activity_banner = {
 				{
 					2026,
 					1,
-					15
+					22
 				},
 				{
 					0,
@@ -62,40 +99,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					1,
-					21
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		param = "50326",
-		id = 3,
-		pic = "temp3",
-		type = 3,
-		time = {
-			{
-				{
-					2026,
-					1,
-					15
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					1,
-					21
+					2,
+					4
 				},
 				{
 					23,
@@ -107,6 +112,43 @@ pg.activity_banner = {
 	},
 	{
 		id = 4,
+		pic = "temp3",
+		type = 2,
+		param = {
+			"scene core activity",
+			{
+				coreName = "SardiniaSPCoreActivityUI"
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					1,
+					22
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					2,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 5,
 		pic = "temp4",
 		type = 2,
 		param = {
@@ -120,7 +162,7 @@ pg.activity_banner = {
 				{
 					2026,
 					1,
-					15
+					22
 				},
 				{
 					0,
@@ -131,8 +173,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					1,
-					21
+					2,
+					4
 				},
 				{
 					23,
@@ -143,7 +185,7 @@ pg.activity_banner = {
 		}
 	},
 	{
-		id = 5,
+		id = 6,
 		pic = "temp5",
 		type = 2,
 		param = {
@@ -157,7 +199,7 @@ pg.activity_banner = {
 				{
 					2026,
 					1,
-					15
+					22
 				},
 				{
 					0,
@@ -168,42 +210,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					1,
-					21
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		id = 6,
-		pic = "temp6",
-		type = 2,
-		param = {
-			"scene court yard"
-		},
-		time = {
-			{
-				{
-					2026,
-					1,
-					15
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					1,
-					21
+					2,
+					4
 				},
 				{
 					23,
@@ -215,11 +223,36 @@ pg.activity_banner = {
 	},
 	{
 		id = 7,
-		pic = "temp7",
-		time = "stop",
+		pic = "temp6",
 		type = 2,
 		param = {
-			"dorm 3d select"
+			"scene court yard"
+		},
+		time = {
+			{
+				{
+					2026,
+					1,
+					22
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					2,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
 		}
 	},
 	{
@@ -232,16 +265,19 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "50323",
 		id = 9,
 		pic = "temp9",
-		type = 3,
+		type = 2,
+		param = {
+			"scene Cryptolalia",
+			{}
+		},
 		time = {
 			{
 				{
 					2026,
 					1,
-					15
+					22
 				},
 				{
 					0,
@@ -253,7 +289,7 @@ pg.activity_banner = {
 				{
 					2026,
 					1,
-					21
+					28
 				},
 				{
 					23,
@@ -294,7 +330,7 @@ pg.activity_banner = {
 				{
 					2026,
 					1,
-					15
+					22
 				},
 				{
 					0,
@@ -305,8 +341,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					1,
-					21
+					2,
+					4
 				},
 				{
 					23,
@@ -412,14 +448,12 @@ pg.activity_banner = {
 		[2] = {
 			1,
 			2,
+			3,
 			4,
 			5,
 			6,
 			7,
-			8
-		},
-		[3] = {
-			3,
+			8,
 			9
 		},
 		[9] = {

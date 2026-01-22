@@ -877,9 +877,11 @@ function var0_0.getActivityRecommendShips(arg0_68, arg1_68, arg2_68, arg3_68, ar
 		var1_68[iter1_68] = iter1_68:getShipCombatPower()
 	end
 
-	table.sort(var0_68, function(arg0_69, arg1_69)
-		return var1_68[arg0_69] < var1_68[arg1_69]
-	end)
+	table.sort(var0_68, CompareFuncs({
+		function(arg0_69)
+			return var1_68[arg0_69]
+		end
+	}))
 
 	local var2_68 = {}
 

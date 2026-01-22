@@ -588,12 +588,11 @@ function var0_0.displayFleetInfo(arg0_51)
 		setActive(arg2_52:Find("Image"), var0_52)
 	end)
 
-	local var8_51 = arg0_51.contextData.fleets
-	local var9_51 = var8_51[#var8_51]
-	local var10_51 = _.slice(var8_51, 1, #var8_51 - 1)
-	local var11_51 = arg0_51.contextData.mode
-	local var12_51 = false
-	local var13_51 = (function()
+	local var8_51 = arg0_51.contextData.seriesData.mode
+	local var9_51 = underscore.to_array(arg0_51.contextData.fleets)
+	local var10_51 = table.remove(var9_51)
+	local var11_51 = false
+	local var12_51 = (function()
 		local var0_53 = 0
 		local var1_53 = pg.battle_cost_template[var4_51]
 		local var2_53 = var5_51:GetOilLimit()
@@ -607,7 +606,7 @@ function var0_0.displayFleetInfo(arg0_51)
 
 				if arg1_54 > 0 then
 					var0_54 = math.min(arg1_54, var0_54)
-					var12_51 = var12_51 and var0_54 < arg1_54
+					var11_51 = var11_51 and var0_54 < arg1_54
 				end
 			end
 
@@ -615,89 +614,75 @@ function var0_0.displayFleetInfo(arg0_51)
 		end
 
 		local var5_53 = #var5_51:GetExpeditionIds()
+		local var6_53 = var4_53(var10_51, var2_53[2]) * var5_53
 
-		if var11_51 == BossRushSeriesData.MODE.SINGLE then
-			var0_53 = var0_53 + var4_53(var10_51[1], var2_53[1])
-			var0_53 = var0_53 + var4_53(var9_51, var2_53[2])
-			var0_53 = var0_53 * var5_53
-		else
-			var0_53 = var4_53(var9_51, var2_53[2]) * var5_53
-
-			_.each(var10_51, function(arg0_55)
-				var0_53 = var0_53 + var4_53(arg0_55, var2_53[1])
-			end)
+		for iter0_53 = 1, var5_53 do
+			var6_53 = var6_53 + var4_53(var9_51[iter0_53] or var9_51[1], var2_53[1])
 		end
 
-		return var0_53
+		return var6_53
 	end)()
 
-	local function var14_51()
-		local var0_56 = 0
-		local var1_56 = pg.battle_cost_template[var4_51]
-		local var2_56 = var5_51:GetOilLimit()
-		local var3_56 = var1_56.oil_cost > 0
+	local function var13_51()
+		local var0_55 = 0
+		local var1_55 = pg.battle_cost_template[var4_51]
+		local var2_55 = var5_51:GetOilLimit()
+		local var3_55 = var1_55.oil_cost > 0
 
-		local function var4_56(arg0_57, arg1_57)
-			local var0_57 = 0
+		local function var4_55(arg0_56, arg1_56)
+			local var0_56 = 0
 
-			if var3_56 then
-				var0_57 = arg0_57:GetCostSum().oil
+			if var3_55 then
+				var0_56 = arg0_56:GetCostSum().oil
 			end
 
-			return var0_57
+			return var0_56
 		end
 
-		local var5_56 = #var5_51:GetExpeditionIds()
+		local var5_55 = #var5_51:GetExpeditionIds()
+		local var6_55 = var4_55(var10_51, var2_55[2]) * var5_55
 
-		if var11_51 == BossRushSeriesData.MODE.SINGLE then
-			var0_56 = var0_56 + var4_56(var10_51[1], var2_56[1])
-			var0_56 = var0_56 + var4_56(var9_51, var2_56[2])
-			var0_56 = var0_56 * var5_56
-		else
-			var0_56 = var4_56(var9_51, var2_56[2]) * var5_56
-
-			_.each(var10_51, function(arg0_58)
-				var0_56 = var0_56 + var4_56(arg0_58, var2_56[1])
-			end)
+		for iter0_55 = 1, var5_55 do
+			var6_55 = var6_55 + var4_55(var9_51[iter0_55] or var9_51[1], var2_55[1])
 		end
 
-		return var0_56
+		return var6_55
 	end
 
-	local var15_51 = 0
+	local var14_51 = 0
 
-	if var12_51 then
-		var15_51 = var14_51()
+	if var11_51 then
+		var14_51 = var13_51()
 	end
 
-	var1_0.tweenNumText(arg0_51._costText, var13_51)
-	setActive(arg0_51._costTip, var12_51)
+	var1_0.tweenNumText(arg0_51._costText, var12_51)
+	setActive(arg0_51._costTip, var11_51)
 
-	if var12_51 then
+	if var11_51 then
 		onButton(arg0_51, arg0_51._costTip, function()
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = true,
-				content = i18n("use_oil_limit_help", var15_51, var13_51)
+				content = i18n("use_oil_limit_help", var14_51, var12_51)
 			})
 		end)
 	end
 end
 
-function var0_0.SetFleetStepper(arg0_60)
-	SetActive(arg0_60._nextPage, arg0_60._curFleetIndex < #arg0_60._legalFleetIdList)
-	SetActive(arg0_60._prevPage, arg0_60._curFleetIndex > 1)
+function var0_0.SetFleetStepper(arg0_58)
+	SetActive(arg0_58._nextPage, arg0_58._curFleetIndex < #arg0_58._legalFleetIdList)
+	SetActive(arg0_58._prevPage, arg0_58._curFleetIndex > 1)
 end
 
-function var0_0.onBackPressed(arg0_61)
+function var0_0.onBackPressed(arg0_59)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-	triggerButton(arg0_61._backBtn)
+	triggerButton(arg0_59._backBtn)
 end
 
-function var0_0.willExit(arg0_62)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_62._tf)
-	arg0_62._formationLogic:Destroy()
+function var0_0.willExit(arg0_60)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_60._tf)
+	arg0_60._formationLogic:Destroy()
 
-	arg0_62._formationLogic = nil
+	arg0_60._formationLogic = nil
 end
 
 return var0_0

@@ -261,7 +261,7 @@ function var0_0.UpdateStoryView(arg0_17)
 					return
 				end
 
-				pg.m02:sendNotification(GAME.ACTIVITY_UNLOCKSTORYT, {
+				pg.m02:sendNotification(GAME.ACTIVITY_UNLOCKSTORY, {
 					cmd = 1,
 					activity_id = arg0_17.activity.id,
 					arg1 = var2_17

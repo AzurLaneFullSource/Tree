@@ -1,242 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_3 = {
-	[103245] = {
-		ship_group = 10324,
-		name = "Pillowed Counseling",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 103245,
-		group_index = 5,
-		purchase_offset = "",
-		painting = "bulaimodun_6",
-		l2d_drag_rate = "",
-		part_scale = "",
-		prefab = "bulaimodun_6",
-		shop_type_id = 26,
-		shop_dynamic_hx = 0,
-		double_char = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 71055,
-		skeleton_default_skin = "",
-		bg = "180",
-		illustrator = -1,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = 0,
-		l2d_para_range = "",
-		bg_sp = "",
-		voice_actor_2 = -1,
-		l2d_voice_calibrate = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Hold still, Commander! You gotta relax in this position or else I can't do my thing. Take it easy and let me handle them weary bones. Alright, from your hands to your arms, then to your neck and shoulders, time to press down!",
-		voice_actor = 134,
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			6,
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.9,
-					0.662,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.874,
-					0.639,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.367,
-							2.469,
-							0.14
-						}
-					}
-				}
-			}
-		},
-		spine_offset = {
-			2,
-			-369,
-			0,
-			0.37
-		}
-	},
-	[103248] = {
-		ship_group = 10324,
-		name = "Joyride of Love",
-		hand_id = 13,
-		bgm = "",
-		gyro = 0,
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 103248,
-		group_index = 8,
-		purchase_offset = "",
-		painting = "bulaimodun_h",
-		l2d_drag_rate = "",
-		part_scale = "",
-		prefab = "bulaimodun_h",
-		shop_type_id = 9998,
-		shop_dynamic_hx = 0,
-		double_char = 0,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 0,
-		skeleton_default_skin = "",
-		bg = "",
-		illustrator = -1,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = 1,
-		l2d_para_range = "",
-		bg_sp = "",
-		voice_actor_2 = -1,
-		l2d_voice_calibrate = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Three, two, one, go! Did you get a pic of me tossing the bouquet, Commander? Ahahah! I'm postin' this to Juustagram later, so you should do the same! It'll be like... retaking our pledge of love♪",
-		voice_actor = 134,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					0.716,
-					0.874,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.72,
-					0.875,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.361,
-							2.431,
-							0.14
-						}
-					}
-				}
-			}
-		}
-	},
 	[103250] = {
 		ship_group = 10325,
 		name = "Baltimore μ",
@@ -6903,6 +6667,173 @@ pg.base.ship_skin_template_3 = {
 							0
 						}
 					}
+				}
+			}
+		}
+	},
+	[105202] = {
+		ship_group = 10520,
+		name = "Through Your Lens, My Everything",
+		hand_id = 3,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		id = 105202,
+		l2d_drag_rate = "",
+		group_index = 2,
+		purchase_offset = "",
+		painting = "alabama_3",
+		part_scale = "",
+		prefab = "alabama_3",
+		shop_dynamic_hx = 0,
+		shop_type_id = 20,
+		double_char = 0,
+		shop_id = 71291,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		skeleton_default_skin = "",
+		illustrator = -1,
+		bg = "319",
+		l2d_voice_calibrate = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Mmh... I reckon it'll be more excitin' if I show more skin... Commander? Great timing. Could you help me press the shutter?",
+		voice_actor = 190,
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			6,
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		shop_offset = {
+			-50.5,
+			-842,
+			0,
+			0.918
+		},
+		spine_offset_profile = {
+			17.4,
+			-830.6,
+			0,
+			0.897
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.994,
+					0.824,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.413,
+					0.73,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.17,
+					0.03,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.655,
+					2.211,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.754,
+							2.34,
+							0
+						}
+					}
+				}
+			}
+		},
+		spine_offset = {
+			106.7,
+			-927.4,
+			0,
+			1.02
+		},
+		get_showing = {
+			show = 1,
+			data = {
+				{
+					995,
+					-483,
+					2,
+					0,
+					192,
+					2
+				},
+				{
+					139,
+					656,
+					2,
+					-166,
+					0,
+					2
+				},
+				{
+					-519,
+					-373,
+					2,
+					0,
+					-168,
+					2
 				}
 			}
 		}
@@ -15995,6 +15926,235 @@ pg.base.ship_skin_template_3 = {
 			plane = {
 				{
 					1.308,
+					0.955,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.573,
+							2.346,
+							-0.25
+						}
+					}
+				}
+			}
+		}
+	},
+	[107232] = {
+		ship_group = 10723,
+		name = "Lolipop Paradise",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 107232,
+		group_index = 2,
+		purchase_offset = "",
+		painting = "pulinsidun_3",
+		l2d_drag_rate = "",
+		part_scale = "",
+		prefab = "pulinsidun_3",
+		shop_type_id = 4,
+		shop_dynamic_hx = 0,
+		double_char = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 70503,
+		skeleton_default_skin = "",
+		bg = "108",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = 5,
+		l2d_para_range = "",
+		bg_sp = "1102",
+		voice_actor_2 = -1,
+		l2d_voice_calibrate = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "You're finally here? ...Ah, well, I only just got here as well, so don't worry about it. Anyway, shall we get going?",
+		voice_actor = 249,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.126,
+					0.999,
+					0
+				}
+			},
+			plane = {
+				{
+					1.14,
+					1.005,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.573,
+							2.346,
+							-0.25
+						}
+					}
+				}
+			}
+		},
+		time = {
+			{
+				2021,
+				2,
+				14
+			},
+			{
+				0,
+				0,
+				0
+			}
+		}
+	},
+	[107233] = {
+		ship_group = 10723,
+		name = "Gift-Wrapped Reindeer",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 107233,
+		group_index = 3,
+		purchase_offset = "",
+		painting = "pulinsidun_4",
+		l2d_drag_rate = "",
+		part_scale = "",
+		prefab = "pulinsidun_4",
+		shop_type_id = 1,
+		shop_dynamic_hx = 0,
+		double_char = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 70792,
+		skeleton_default_skin = "",
+		bg = "125",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = 0,
+		l2d_para_range = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_voice_calibrate = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "I'm done changing... Is this supposed to be a \"reindeer\" costume? It feels a bit too risqué... Oh, Commander, since you're already here, come get your Christmas present.",
+		voice_actor = 249,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			4
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.33,
+					1.27,
+					0
+				}
+			},
+			plane = {
+				{
+					1.439,
 					0.955,
 					0
 				}

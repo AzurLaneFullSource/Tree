@@ -235,26 +235,25 @@ function var0_0.bindEvent(arg0_2)
 		})
 	end)
 	arg0_2:bind(var0_0.SHOW_CONTINUOUS_OPERATION_WINDOW, function(arg0_30)
-		local var0_30 = arg0_2.contextData.fleets
-		local var1_30 = var0_30[#var0_30]
-		local var2_30 = _.slice(var0_30, 1, #var0_30 - 1)
-		local var3_30 = arg0_2.contextData.seriesData
-		local var4_30 = arg0_2.contextData.mode
+		local var0_30 = arg0_2.contextData.seriesData
+		local var1_30 = var0_30.mode
+		local var2_30 = underscore.to_array(arg0_2.contextData.fleets)
+		local var3_30 = table.remove(var2_30)
 
-		local function var5_30()
+		local function var4_30()
 			local var0_31 = 0
 			local var1_31
 
-			if var3_30.__cname == "CollabrateBossRushSeriesData" then
+			if var0_30.__cname == "CollabrateBossRushSeriesData" then
 				var1_31 = SYSTEM_BOSS_RUSH_COLLABRATE
-			elseif var3_30:GetType() == BossRushSeriesData.TYPE.EXTRA then
+			elseif var0_30:GetType() == BossRushSeriesData.TYPE.EXTRA then
 				var1_31 = SYSTEM_BOSS_RUSH_EX
 			else
 				var1_31 = SYSTEM_BOSS_RUSH
 			end
 
 			local var2_31 = pg.battle_cost_template[var1_31]
-			local var3_31 = var3_30:GetOilLimit()
+			local var3_31 = var0_30:GetOilLimit()
 			local var4_31 = var2_31.oil_cost > 0
 
 			local function var5_31(arg0_32, arg1_32)
@@ -271,21 +270,14 @@ function var0_0.bindEvent(arg0_2)
 				return var0_32
 			end
 
-			local var6_31 = #var3_30:GetExpeditionIds()
+			local var6_31 = #var0_30:GetExpeditionIds()
+			local var7_31 = var5_31(var3_30, var3_31[2]) * var6_31
 
-			if var4_30 == BossRushSeriesData.MODE.SINGLE then
-				var0_31 = var0_31 + var5_31(var2_30[1], var3_31[1])
-				var0_31 = var0_31 + var5_31(var1_30, var3_31[2])
-				var0_31 = var0_31 * var6_31
-			else
-				var0_31 = var5_31(var1_30, var3_31[2]) * var6_31
-
-				_.each(var2_30, function(arg0_33)
-					var0_31 = var0_31 + var5_31(arg0_33, var3_31[1])
-				end)
+			for iter0_31 = 1, var6_31 do
+				var7_31 = var7_31 + var5_31(var2_30[iter0_31] or var2_30[1], var3_31[1])
 			end
 
-			return var0_31
+			return var7_31
 		end
 
 		arg0_2:addSubLayers(Context.New({
@@ -294,76 +286,76 @@ function var0_0.bindEvent(arg0_2)
 			data = {
 				system = arg0_2.contextData.system,
 				maxCount = pg.gameset.series_enemy_multiple_limit.key_value,
-				oilCost = var5_30()
+				oilCost = var4_30()
 			}
 		}))
 	end)
-	arg0_2:bind(var0_0.BEGIN_STAGE, function(arg0_34)
-		local var0_34 = getProxy(ActivityProxy):GetContinuousTime()
+	arg0_2:bind(var0_0.BEGIN_STAGE, function(arg0_33)
+		local var0_33 = getProxy(ActivityProxy):GetContinuousTime()
 
 		arg0_2:sendNotification(GAME.BEGIN_STAGE, {
 			system = arg0_2.contextData.system,
 			actId = arg0_2.contextData.actId,
-			continuousBattleTimes = var0_34,
-			totalBattleTimes = var0_34
+			continuousBattleTimes = var0_33,
+			totalBattleTimes = var0_33
 		})
 	end)
 end
 
-function var0_0.onAutoBtn(arg0_35, arg1_35)
+function var0_0.onAutoBtn(arg0_34, arg1_34)
+	local var0_34 = arg1_34.isOn
+	local var1_34 = arg1_34.toggle
+
+	arg0_34:sendNotification(GAME.AUTO_BOT, {
+		isActiveBot = var0_34,
+		toggle = var1_34,
+		system = arg0_34.contextData.system
+	})
+end
+
+function var0_0.onAutoSubBtn(arg0_35, arg1_35)
 	local var0_35 = arg1_35.isOn
 	local var1_35 = arg1_35.toggle
 
-	arg0_35:sendNotification(GAME.AUTO_BOT, {
-		isActiveBot = var0_35,
+	arg0_35:sendNotification(GAME.AUTO_SUB, {
+		isActiveSub = var0_35,
 		toggle = var1_35,
 		system = arg0_35.contextData.system
 	})
 end
 
-function var0_0.onAutoSubBtn(arg0_36, arg1_36)
-	local var0_36 = arg1_36.isOn
-	local var1_36 = arg1_36.toggle
+function var0_0.changeFleet(arg0_36, arg1_36)
+	arg0_36.viewComponent:SetCurrentFleet(arg1_36)
+	arg0_36.viewComponent:UpdateFleetView(true)
+	arg0_36.viewComponent:SetFleetStepper()
+end
 
-	arg0_36:sendNotification(GAME.AUTO_SUB, {
-		isActiveSub = var0_36,
-		toggle = var1_36,
-		system = arg0_36.contextData.system
+function var0_0.refreshEdit(arg0_37, arg1_37)
+	local var0_37 = getProxy(FleetProxy)
+	local var1_37 = arg0_37.contextData.actId
+
+	var0_37:updateActivityFleet(var1_37, arg1_37.id, arg1_37)
+	arg0_37.viewComponent:UpdateFleetView(false)
+	arg0_37:sendNotification(var0_0.ON_FLEET_REFRESHED)
+end
+
+function var0_0.commitEdit(arg0_38)
+	_.each(arg0_38.contextData.fleets, function(arg0_39)
+		getProxy(FleetProxy):updateActivityFleet(arg0_38.contextData.actId, arg0_39.id, arg0_39)
+	end)
+
+	local var0_38 = {}
+
+	_.each(arg0_38.contextData.fleets, function(arg0_40)
+		var0_38[arg0_40.id] = arg0_40
+	end)
+	arg0_38:sendNotification(GAME.EDIT_ACTIVITY_FLEET, {
+		actID = arg0_38.contextData.actId,
+		fleets = var0_38
 	})
 end
 
-function var0_0.changeFleet(arg0_37, arg1_37)
-	arg0_37.viewComponent:SetCurrentFleet(arg1_37)
-	arg0_37.viewComponent:UpdateFleetView(true)
-	arg0_37.viewComponent:SetFleetStepper()
-end
-
-function var0_0.refreshEdit(arg0_38, arg1_38)
-	local var0_38 = getProxy(FleetProxy)
-	local var1_38 = arg0_38.contextData.actId
-
-	var0_38:updateActivityFleet(var1_38, arg1_38.id, arg1_38)
-	arg0_38.viewComponent:UpdateFleetView(false)
-	arg0_38:sendNotification(var0_0.ON_FLEET_REFRESHED)
-end
-
-function var0_0.commitEdit(arg0_39)
-	_.each(arg0_39.contextData.fleets, function(arg0_40)
-		getProxy(FleetProxy):updateActivityFleet(arg0_39.contextData.actId, arg0_40.id, arg0_40)
-	end)
-
-	local var0_39 = {}
-
-	_.each(arg0_39.contextData.fleets, function(arg0_41)
-		var0_39[arg0_41.id] = arg0_41
-	end)
-	arg0_39:sendNotification(GAME.EDIT_ACTIVITY_FLEET, {
-		actID = arg0_39.contextData.actId,
-		fleets = var0_39
-	})
-end
-
-function var0_0.listNotificationInterests(arg0_42)
+function var0_0.listNotificationInterests(arg0_41)
 	return {
 		GAME.BOSSRUSH_TRACE_DONE,
 		GAME.BEGIN_STAGE_DONE,
@@ -372,26 +364,26 @@ function var0_0.listNotificationInterests(arg0_42)
 	}
 end
 
-function var0_0.handleNotification(arg0_43, arg1_43)
-	local var0_43 = arg1_43:getName()
-	local var1_43 = arg1_43:getBody()
+function var0_0.handleNotification(arg0_42, arg1_42)
+	local var0_42 = arg1_42:getName()
+	local var1_42 = arg1_42:getBody()
 
-	if var0_43 == GAME.BEGIN_STAGE_DONE then
-		arg0_43:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1_43)
-	elseif var0_43 == GAME.BEGIN_STAGE_ERRO then
-		if var1_43 == 3 then
+	if var0_42 == GAME.BEGIN_STAGE_DONE then
+		arg0_42:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var1_42)
+	elseif var0_42 == GAME.BEGIN_STAGE_ERRO then
+		if var1_42 == 3 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = true,
 				content = i18n("battle_preCombatMediator_timeout"),
 				onYes = function()
-					arg0_43.viewComponent:emit(BaseUI.ON_CLOSE)
+					arg0_42.viewComponent:emit(BaseUI.ON_CLOSE)
 				end
 			})
 		end
-	elseif var0_43 == var0_0.CONTINUOUS_OPERATION then
-		arg0_43.viewComponent:emit(BossRushPreCombatMediator.ON_START, var1_43.battleTimes)
-	elseif var0_43 == GAME.BOSSRUSH_TRACE_DONE then
-		arg0_43.viewComponent:emit(var0_0.BEGIN_STAGE)
+	elseif var0_42 == var0_0.CONTINUOUS_OPERATION then
+		arg0_42.viewComponent:emit(BossRushPreCombatMediator.ON_START, var1_42.battleTimes)
+	elseif var0_42 == GAME.BOSSRUSH_TRACE_DONE then
+		arg0_42.viewComponent:emit(var0_0.BEGIN_STAGE)
 	end
 end
 

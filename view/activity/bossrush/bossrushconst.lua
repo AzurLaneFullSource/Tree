@@ -9,7 +9,13 @@ function var0_0.GetPassedLayer(arg0_1)
 			return BossRushVerZenkerPassedLayer
 		end
 	}, function()
-		return BossRushPassedLayer
+		local var0_4 = checkExist(pg.activity_template[arg0_1], {
+			"config_client"
+		}, {
+			"passed"
+		})
+
+		return var0_4 and _G[var0_4] or BossRushPassedLayer
 	end)
 end
 
@@ -22,7 +28,13 @@ function var0_0.GetEXBattleResultLayer(arg0_5)
 			return BossRushVerZenkerEXBattleResultLayer
 		end
 	}, function()
-		return BossRushEXBattleResultLayer
+		local var0_8 = checkExist(pg.activity_template[arg0_5], {
+			"config_client"
+		}, {
+			"result"
+		})
+
+		return var0_8 and _G[var0_8] or BossRushEXBattleResultLayer
 	end)
 end
 

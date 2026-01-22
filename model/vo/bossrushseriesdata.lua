@@ -67,101 +67,156 @@ function var0_0.GetEXScores(arg0_11)
 	return arg0_11.exScores or {}
 end
 
-function var0_0.GetFleets(arg0_12)
-	return (getProxy(FleetProxy):GetBossRushFleets(arg0_12.actId, arg0_12:GetFleetIds()))
+function var0_0.GetFleets(arg0_12, arg1_12)
+	return getProxy(FleetProxy):GetBossRushFleets(arg0_12.actId, arg1_12 or arg0_12:GetFleetIds())
 end
 
-function var0_0.GetExpeditionIds(arg0_13)
-	return arg0_13:getConfig("expedition_id")
-end
+function var0_0.CopyFleetsByOther(arg0_13, arg1_13)
+	local var0_13 = arg1_13:GetFleets()
+	local var1_13 = arg0_13:GetFleetIds()
 
-function var0_0.GetFleetIds(arg0_14)
-	if arg0_14.fleetIds then
-		return arg0_14.fleetIds
+	for iter0_13 = 1, #var0_13 - 1 do
+		assert(var1_13[iter0_13])
+		getProxy(FleetProxy):updateActivityFleet(arg0_13.actId, var1_13[iter0_13], TypedFleet.New(setmetatable({
+			id = var1_13[iter0_13]
+		}, {
+			__index = var0_13[iter0_13]:SeparateOut()
+		})))
 	end
 
-	local var0_14 = arg0_14:GetExpeditionIds()
-
-	arg0_14.fleetIds = arg0_14.StaticCalculateFleetIds(arg0_14.id, #var0_14)
-
-	return arg0_14.fleetIds
+	getProxy(FleetProxy):updateActivityFleet(arg0_13.actId, var1_13[#var1_13], TypedFleet.New(setmetatable({
+		id = var1_13[#var1_13]
+	}, {
+		__index = var0_13[#var0_13]:SeparateOut()
+	})))
+	getProxy(FleetProxy):commitActivityFleet(arg0_13.actId)
 end
 
-function var0_0.GetType(arg0_15)
-	return arg0_15:getConfig("type")
+function var0_0.IsFleetsEmpty(arg0_14)
+	return getProxy(FleetProxy):IsBossRushFleetsEmpty(arg0_14.actId, arg0_14:GetFleetIds())
 end
 
-function var0_0.GetPreSeriesId(arg0_16)
-	return arg0_16:getConfig("pre_chapter")
+function var0_0.GetExpeditionIds(arg0_15)
+	return arg0_15:getConfig("expedition_id")
 end
 
-function var0_0.IsUnlock(arg0_17, arg1_17)
-	local var0_17 = arg0_17:GetPreSeriesId()
+function var0_0.GetFleetIds(arg0_16)
+	if arg0_16.fleetIds then
+		return arg0_16.fleetIds
+	end
 
-	return var0_17 == 0 or arg1_17:HasPassSeries(var0_17)
+	local var0_16 = arg0_16:GetExpeditionIds()
+
+	arg0_16.fleetIds = arg0_16.StaticCalculateFleetIds(arg0_16.id, #var0_16)
+
+	return arg0_16.fleetIds
 end
 
-function var0_0.GetSeriesCode(arg0_18)
-	return arg0_18:getConfig("chapter_name")
+function var0_0.GetModeFleetIDs(arg0_17, arg1_17)
+	local var0_17 = arg0_17:GetFleetIds()
+	local var1_17
+	local var2_17
+
+	if arg1_17 == var0_0.MODE.SINGLE then
+		var1_17 = {
+			var0_17[1]
+		}
+		var2_17 = {
+			var0_17[#var0_17]
+		}
+	elseif arg1_17 == var0_0.MODE.MULTIPLE then
+		var1_17 = underscore.rest(var0_17)
+		var2_17 = {
+			table.remove(var1_17)
+		}
+	else
+		assert(false)
+	end
+
+	return var1_17, var2_17
 end
 
-function var0_0.GetName(arg0_19)
-	return arg0_19:getConfig("name")
+function var0_0.GetStageFleets(arg0_18, arg1_18, arg2_18)
+	local var0_18, var1_18 = arg0_18:GetModeFleetIDs(arg1_18)
+
+	return var0_18[arg2_18] or var0_18[1], var1_18[1]
 end
 
-function var0_0.GetLimitations(arg0_20)
-	return arg0_20:getConfig("limitation")
+function var0_0.GetType(arg0_19)
+	return arg0_19:getConfig("type")
 end
 
-function var0_0.GetOilCost(arg0_21)
-	return arg0_21:getConfig("oil")
+function var0_0.GetPreSeriesId(arg0_20)
+	return arg0_20:getConfig("pre_chapter")
 end
 
-function var0_0.GetDescription(arg0_22)
-	return arg0_22:getConfig("profiles")
+function var0_0.IsUnlock(arg0_21, arg1_21)
+	local var0_21 = arg0_21:GetPreSeriesId()
+
+	return var0_21 == 0 or arg1_21:HasPassSeries(var0_21)
 end
 
-function var0_0.IsSingleFight(arg0_23)
-	return arg0_23:getConfig("whether_singlefight") == 1
+function var0_0.GetSeriesCode(arg0_22)
+	return arg0_22:getConfig("chapter_name")
 end
 
-function var0_0.GetBossIcons(arg0_24)
-	return arg0_24:getConfig("boss_icon")
+function var0_0.GetName(arg0_23)
+	return arg0_23:getConfig("name")
 end
 
-function var0_0.GetPassAwards(arg0_25)
-	return arg0_25:getConfig("pass_awards_display")
+function var0_0.GetLimitations(arg0_24)
+	return arg0_24:getConfig("limitation")
 end
 
-function var0_0.GetAdditionalAwards(arg0_26)
-	return arg0_26:getConfig("additional_awards_display")
+function var0_0.GetOilCost(arg0_25)
+	return arg0_25:getConfig("oil")
 end
 
-function var0_0.GetDefeatStories(arg0_27)
-	return arg0_27:getConfig("defeat_story")
+function var0_0.GetDescription(arg0_26)
+	return arg0_26:getConfig("profiles")
 end
 
-function var0_0.GetDefeatStoriesCount(arg0_28)
-	return arg0_28:getConfig("defeat_story_count")
+function var0_0.IsSingleFight(arg0_27)
+	return arg0_27:getConfig("whether_singlefight") == 1
 end
 
-function var0_0.GetMaxBonusCount(arg0_29)
-	return arg0_29:getConfig("count")
+function var0_0.GetBossIcons(arg0_28)
+	return arg0_28:getConfig("boss_icon")
 end
 
-function var0_0.GetOilLimit(arg0_30)
-	return arg0_30:getConfig("use_oil_limit")
+function var0_0.GetPassAwards(arg0_29)
+	return arg0_29:getConfig("pass_awards_display")
 end
 
-function var0_0.GetEXParamater(arg0_31)
-	return arg0_31:getConfig("ex_count")
+function var0_0.GetAdditionalAwards(arg0_30)
+	return arg0_30:getConfig("additional_awards_display")
 end
 
-function var0_0.StaticCalculateFleetIds(arg0_32, arg1_32)
-	assert(arg1_32 <= 10, "expedition List Too long")
+function var0_0.GetDefeatStories(arg0_31)
+	return arg0_31:getConfig("defeat_story")
+end
 
-	return _.map(_.range(arg1_32 + 1), function(arg0_33)
-		return arg0_32 * 10 + arg0_33 - 1
+function var0_0.GetDefeatStoriesCount(arg0_32)
+	return arg0_32:getConfig("defeat_story_count")
+end
+
+function var0_0.GetMaxBonusCount(arg0_33)
+	return arg0_33:getConfig("count")
+end
+
+function var0_0.GetOilLimit(arg0_34)
+	return arg0_34:getConfig("use_oil_limit")
+end
+
+function var0_0.GetEXParamater(arg0_35)
+	return arg0_35:getConfig("ex_count")
+end
+
+function var0_0.StaticCalculateFleetIds(arg0_36, arg1_36)
+	assert(arg1_36 <= 10, "expedition List Too long")
+
+	return underscore.map(_.range(0, arg1_36 + 1), function(arg0_37)
+		return arg0_36 * 10 + arg0_37
 	end)
 end
 

@@ -149,6 +149,7 @@ pg.pay_data_display = setmetatable({
 		163,
 		164,
 		165,
+		166,
 		1000,
 		1001,
 		1002,
@@ -18061,6 +18062,140 @@ pg.base.pay_data_display = {
 				2,
 				86420,
 				1
+			}
+		}
+	},
+	[166] = {
+		limit_group = 0,
+		name = "Photoshoot Lucky Bag",
+		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
+		type = 1,
+		second_text = "Many Rewards",
+		type_order = 2,
+		subject = "Photoshoot Lucky Bag",
+		first_text = "Random Skin & Abundant Gems",
+		limit_arg = 1,
+		tip = "",
+		money = 2999,
+		tip_open = 0,
+		tag = 2,
+		id = 166,
+		gem = 0,
+		name_display = "Photoshoot Lucky Bag",
+		package_sort_id = 0,
+		limit_type = 2,
+		akashi_pick = 1,
+		extra_service = 3,
+		package_tag = "",
+		picture = "fudai100",
+		show_group = "",
+		skin_inquire_relation = 86421,
+		package_tag_open = 0,
+		id_str = "com.yostaren.azurlane.luckybag77",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains 1 random skin, 2026 Gems, and supplies.",
+		airijp_id = "com.yostaren.azurlane.luckybag77",
+		extra_service_item = {
+			{
+				2,
+				86421,
+				1
+			},
+			{
+				1,
+				14,
+				2026
+			},
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				1,
+				6,
+				100
+			},
+			{
+				2,
+				15003,
+				10
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					1,
+					22
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					2,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81438,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86421,
+				1
+			},
+			{
+				1,
+				14,
+				2026
 			}
 		}
 	},

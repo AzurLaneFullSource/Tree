@@ -1,5 +1,8 @@
 local var0_0 = class("MedalDetailPanel")
 
+var0_0.setColorstateText = "#73757f"
+var0_0.setColorstate = "#ed4646"
+
 function var0_0.SetIconScale(arg0_1, arg1_1)
 	arg0_1._iconScale = Vector2.New(arg1_1, arg1_1)
 end
@@ -105,9 +108,9 @@ function var0_0.UpdateMedal(arg0_11)
 	local var3_11 = arg0_11._medalGroup:GetMedalGroupState()
 
 	if var3_11 == ActivityMedalGroup.STATE_EXPIRE then
-		setText(arg0_11._stateText, setColorStr(i18n("word_cant_gain_anymore"), "#73757f"))
+		setText(arg0_11._stateText, setColorStr(i18n("word_cant_gain_anymore"), arg0_11._parent.setColorstateText or arg0_11.setColorstateText))
 	elseif var3_11 == ActivityMedalGroup.STATE_CLOSE then
-		setText(arg0_11._stateText, setColorStr(i18n("word_activity_not_open"), "#ed4646"))
+		setText(arg0_11._stateText, setColorStr(i18n("word_activity_not_open"), arg0_11._parent.setColorstate or arg0_11.setColorstate))
 	end
 
 	SetActive(arg0_11._stateText, var3_11 ~= ActivityMedalGroup.STATE_ACTIVE)

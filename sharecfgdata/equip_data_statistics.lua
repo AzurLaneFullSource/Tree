@@ -127190,7 +127190,7 @@ _G.pg.base.equip_data_statistics[75111] = {
 	descrip = "Barrage",
 	icon = "1",
 	id = 75111,
-	name = "全弹发射-朱萨诺级I",
+	name = "全弹发射-朱塞诺级I",
 	nationality = 0,
 	rarity = 1,
 	speciality = "<[NA]>",
@@ -127231,7 +127231,7 @@ _G.pg.base.equip_data_statistics[75111] = {
 _G.pg.base.equip_data_statistics[75112] = {
 	base = 75111,
 	id = 75112,
-	name = "全弹发射-朱萨诺级II",
+	name = "全弹发射-朱塞诺级II",
 	weapon_id = {
 		61732,
 	},

@@ -1991,6 +1991,328 @@ pg.activity_series_enemy = {
 			16
 		}
 	},
+	[5001] = {
+		pre_chapter = 0,
+		name = "Butterfly Dance's Promise",
+		chapter_name = "Easy",
+		type = 1,
+		pos_x = "0",
+		count = 0,
+		additional_awards_display = "",
+		pos_y = "0",
+		whether_singlefight = 0,
+		id = 5001,
+		ex_count = "",
+		oil = 0,
+		profiles = "Tulle's airy romance,\na honey-sweet invitation.\nBetween constraint and freedom,\nthe butterfly dances.",
+		limitation = {},
+		expedition_id = {
+			1999101
+		},
+		boss_icon = {
+			{
+				"aerbeituo_2",
+				2
+			}
+		},
+		pass_awards_display = {
+			{
+				1,
+				616,
+				40
+			},
+			{
+				2,
+				200676,
+				0
+			},
+			{
+				2,
+				59001,
+				0
+			},
+			{
+				2,
+				54012,
+				0
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			0,
+			0
+		}
+	},
+	[5002] = {
+		pre_chapter = 5001,
+		name = "Warm Velvet's Wonderland",
+		chapter_name = "Normal",
+		type = 1,
+		pos_x = "0",
+		count = 0,
+		id = 5002,
+		pos_y = "0",
+		whether_singlefight = 1,
+		ex_count = "",
+		oil = 0,
+		profiles = "Velvet drapes fall;\nIn this warm, wondrous realm,\na gentle beauty unfolds,\ncreating its own realm.",
+		limitation = {},
+		expedition_id = {
+			1999201,
+			1999202
+		},
+		boss_icon = {
+			{
+				"alabama_3",
+				5
+			},
+			{
+				"wugelini_2",
+				1
+			}
+		},
+		pass_awards_display = {
+			{
+				1,
+				616,
+				140
+			},
+			{
+				2,
+				200675,
+				0
+			},
+			{
+				2,
+				59001,
+				0
+			},
+			{
+				2,
+				54017,
+				0
+			}
+		},
+		additional_awards_display = {
+			{
+				1,
+				616,
+				25
+			},
+			{
+				1,
+				1,
+				0
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			0,
+			0
+		}
+	},
+	[5003] = {
+		pre_chapter = 5002,
+		name = "Window of the Heart",
+		chapter_name = "Hard",
+		type = 1,
+		pos_x = "0",
+		count = 0,
+		id = 5003,
+		pos_y = "0",
+		whether_singlefight = 1,
+		ex_count = "",
+		oil = 0,
+		profiles = "Black, flowing lines\ncut through white curtains,\nbecoming a window\nthrough which light shines.",
+		limitation = {},
+		expedition_id = {
+			1999301,
+			1999302,
+			1999303
+		},
+		boss_icon = {
+			{
+				"aerbeituo_2",
+				2
+			},
+			{
+				"gaoxiong_7",
+				3
+			},
+			{
+				"fulangxisike_2",
+				5
+			}
+		},
+		pass_awards_display = {
+			{
+				1,
+				616,
+				360
+			},
+			{
+				2,
+				200674,
+				0
+			},
+			{
+				2,
+				59001,
+				0
+			},
+			{
+				2,
+				54017,
+				0
+			}
+		},
+		additional_awards_display = {
+			{
+				1,
+				616,
+				60
+			},
+			{
+				1,
+				1,
+				0
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			25,
+			16
+		}
+	},
+	[5004] = {
+		pre_chapter = 5003,
+		name = "Pure White Heart",
+		chapter_name = "S.P",
+		type = 2,
+		pos_x = "0",
+		count = 1,
+		additional_awards_display = "",
+		pos_y = "0",
+		whether_singlefight = 0,
+		id = 5004,
+		ex_count = "",
+		oil = 0,
+		profiles = "In the interstices\nbetween concealment and revelation,\na melody of purity and enchantment resounds.",
+		limitation = {},
+		expedition_id = {
+			1999401,
+			1999402,
+			1999403,
+			1999404
+		},
+		boss_icon = {
+			{
+				"aerbeituo_2",
+				2
+			},
+			{
+				"wugelini_2",
+				1
+			},
+			{
+				"fulangxisike_2",
+				5
+			},
+			{
+				"alabama_3",
+				5
+			}
+		},
+		pass_awards_display = {
+			{
+				1,
+				616,
+				800
+			},
+			{
+				2,
+				200673,
+				0
+			},
+			{
+				2,
+				59001,
+				0
+			},
+			{
+				2,
+				54016,
+				0
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			40,
+			16
+		}
+	},
+	[5005] = {
+		pre_chapter = 5004,
+		name = "Whispers in the Dead of Night",
+		chapter_name = "E.X",
+		type = 3,
+		pos_x = "0",
+		count = 0,
+		additional_awards_display = "",
+		pos_y = "0",
+		whether_singlefight = 0,
+		pass_awards_display = "",
+		id = 5005,
+		oil = 0,
+		profiles = "In the silence of the night,\nsatin burns and interweaves,\nwavering between restraint and abandon.",
+		limitation = {},
+		expedition_id = {
+			1999501,
+			1999502,
+			1999503,
+			1999504,
+			1999505
+		},
+		boss_icon = {
+			{
+				"aerbeituo_2",
+				2
+			},
+			{
+				"wugelini_2",
+				1
+			},
+			{
+				"fulangxisike_2",
+				5
+			},
+			{
+				"alabama_3",
+				5
+			},
+			{
+				"gaoxiong_7",
+				3
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			0,
+			0
+		},
+		ex_count = {
+			8000,
+			20,
+			0.2,
+			1000,
+			0.8
+		}
+	},
 	all = {
 		1001,
 		1002,
@@ -2018,6 +2340,11 @@ pg.activity_series_enemy = {
 		4041,
 		4042,
 		4051,
-		4052
+		4052,
+		5001,
+		5002,
+		5003,
+		5004,
+		5005
 	}
 }
