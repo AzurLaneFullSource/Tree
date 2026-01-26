@@ -77,11 +77,18 @@ function var0_0.CopyFleetsByOther(arg0_13, arg1_13)
 
 	for iter0_13 = 1, #var0_13 - 1 do
 		assert(var1_13[iter0_13])
-		getProxy(FleetProxy):updateActivityFleet(arg0_13.actId, var1_13[iter0_13], TypedFleet.New(setmetatable({
+
+		local var2_13 = TypedFleet.New(setmetatable({
 			id = var1_13[iter0_13]
 		}, {
 			__index = var0_13[iter0_13]:SeparateOut()
-		})))
+		}))
+
+		if iter0_13 == 1 and not arg0_13:IsSingleFight() then
+			var2_13:allClear()
+		end
+
+		getProxy(FleetProxy):updateActivityFleet(arg0_13.actId, var1_13[iter0_13], var2_13)
 	end
 
 	getProxy(FleetProxy):updateActivityFleet(arg0_13.actId, var1_13[#var1_13], TypedFleet.New(setmetatable({
