@@ -244,6 +244,7 @@ pg.furniture_data_template = setmetatable({
 			100067,
 			100068,
 			100070,
+			100071,
 			100072,
 			100073,
 			100074,
@@ -3865,6 +3866,7 @@ pg.furniture_data_template = setmetatable({
 			100067,
 			100068,
 			100070,
+			100071,
 			100072,
 			100073,
 			100074,
@@ -9593,6 +9595,7 @@ pg.furniture_data_template = setmetatable({
 			100063,
 			100064,
 			100066,
+			100071,
 			100073,
 			30123,
 			35128,
@@ -10889,6 +10892,7 @@ pg.furniture_data_template = setmetatable({
 		100067,
 		100068,
 		100070,
+		100071,
 		100072,
 		100073,
 		100074,
@@ -27640,6 +27644,87 @@ pg.base.furniture_data_template = {
 		canputonGrid = {},
 		can_trigger = {
 			0
+		},
+		interAction_group = {}
+	},
+	[100071] = {
+		gain_by = "",
+		name = "Manjuu Sickbed",
+		count = 1,
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		comfortable = 0,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "jiuhucheicon",
+		deblocking = 1,
+		level = 1,
+		describe = "Get well soon!",
+		rarity = 4,
+		can_rotate = 0,
+		tag = 6,
+		spine_action_replace = "",
+		belong = 1,
+		spine_extra = "",
+		canputon = 0,
+		id = 100071,
+		advice = 0,
+		size = {
+			2,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"jiuhucheB",
+				"normal",
+				nil,
+				true
+			},
+			{
+				"jiuhucheT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sleep"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			},
+			0.8
+		},
+		followBone = {
+			"char",
+			-1
 		},
 		interAction_group = {}
 	},

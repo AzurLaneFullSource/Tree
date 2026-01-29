@@ -69,9 +69,7 @@ function var0_0.IsCurSeasonPtZero(arg0_11)
 end
 
 function var0_0.GetCurrentSeason()
-	local var0_12 = pg.island_season.all
-
-	return var0_12[#var0_12]
+	return pg.island_set.season_now.key_value_int
 end
 
 return var0_0

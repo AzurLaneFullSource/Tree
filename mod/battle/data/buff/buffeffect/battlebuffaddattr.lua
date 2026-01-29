@@ -8,7 +8,7 @@ var1_0.__name = "BattleBuffAddAttr"
 var1_0.FX_TYPE = var0_0.Battle.BattleBuffEffect.FX_TYPE_MOD_ATTR
 
 function var1_0.Ctor(arg0_1, arg1_1)
-	var0_0.Battle.BattleBuffAddAttr.super.Ctor(arg0_1, arg1_1)
+	var1_0.super.Ctor(arg0_1, arg1_1)
 end
 
 function var1_0.GetEffectType(arg0_2)
@@ -160,60 +160,4 @@ function var1_0.UpdateAttrAdd(arg0_11, arg1_11)
 
 	arg1_11._move:ImmuneAreaLimit(var0_0.Battle.BattleAttr.IsImmuneAreaLimit(arg1_11))
 	arg1_11._move:ImmuneMaxAreaLimit(var0_0.Battle.BattleAttr.IsImmuneMaxAreaLimit(arg1_11))
-end
-
-function var1_0.UpdateAttrHybrid(arg0_12, arg1_12)
-	local var0_12 = arg1_12:GetBuffList()
-	local var1_12 = {}
-	local var2_12 = {}
-
-	for iter0_12, iter1_12 in pairs(var0_12) do
-		for iter2_12, iter3_12 in ipairs(iter1_12._effectList) do
-			if iter3_12:GetEffectType() == var1_0.FX_TYPE and iter3_12:IsSameAttr(arg0_12._attr) then
-				local var3_12 = iter3_12._number
-				local var4_12 = iter3_12._group
-				local var5_12 = iter3_12._attrID or 0
-
-				if var3_12 > 0 then
-					local var6_12 = var1_12[var4_12] or {
-						value = 0,
-						attrGroup = var5_12
-					}
-
-					var6_12.value = math.max(var6_12.value, var3_12)
-					var1_12[var4_12] = var6_12
-				elseif var3_12 < 0 then
-					local var7_12 = var2_12[var4_12] or {
-						value = 0,
-						attrGroup = var5_12
-					}
-
-					var7_12.value = math.min(var7_12.value, var3_12)
-					var2_12[var4_12] = var7_12
-				end
-			end
-		end
-	end
-
-	local function var8_12(arg0_13)
-		local var0_13 = {}
-		local var1_13
-
-		for iter0_13, iter1_13 in pairs(arg0_13) do
-			local var2_13 = iter1_13.attrGroup
-
-			var0_13[var2_13] = (var0_13[var2_13] or 0) + iter1_13.value
-		end
-
-		for iter2_13, iter3_13 in pairs(var0_13) do
-			var1_13 = (var1_13 or 1) * iter3_13
-		end
-
-		return var1_13
-	end
-
-	local var9_12 = var8_12(var1_12) or 0
-	local var10_12 = var8_12(var2_12) or 0
-
-	var0_0.Battle.BattleAttr.FlashByBuff(arg1_12, arg0_12._attr, var9_12 + var10_12)
 end

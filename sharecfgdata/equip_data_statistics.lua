@@ -136043,6 +136043,59 @@ _G.pg.base.equip_data_statistics[80572] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[80581] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 80581,
+	name = "专属弹幕-龙骑兵META I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170951,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80582] = {
+	base = 80571,
+	id = 80582,
+	name = "专属弹幕-龙骑兵META II",
+	weapon_id = {
+		170952,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[85000] = {
 	ammo = 3,
 	attribute_2 = "cannon",
@@ -166211,7 +166264,7 @@ _G.pg.base.equip_data_statistics[150240] = {
 	ammo = 10,
 	attribute_1 = "hit",
 	attribute_2 = "cannon",
-	descrip = "",
+	descrip = "Be patient and prepare for the changes bound to come. Bear in mind this key principle: Never rush.",
 	icon = "150240",
 	id = 150240,
 	name = "Huan Ch'ang's Fishing Rod",

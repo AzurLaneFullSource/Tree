@@ -330,6 +330,8 @@ function var0_0.SetPlayerAttrFromOutBattle(arg0_34, arg1_34, arg2_34)
 	var0_34.aimBiasDecaySpeed = 0
 	var0_34.aimBiasDecaySpeedRatio = 0
 	var0_34.aimBiasExtraACC = 0
+	var0_34.baseScale = arg1_34.scale / 50
+	var0_34.modelScale = var0_34.baseScale
 	var0_34.healingRate = 1
 	var0_34.DMG_TAG_EHC_N_99 = arg1_34[AttributeType.AntiSiren] or 0
 	var0_34.comboTag = "combo_" .. var0_34.battleUID
@@ -402,6 +404,8 @@ function var0_0.SetEnemyAttr(arg0_37, arg1_37)
 	var2_37.repressReduce = 1
 	var2_37.healingRate = 1
 	var2_37.comboTag = "combo_" .. var2_37.battleUID
+	var2_37.baseScale = var0_37.scale / 50
+	var2_37.modelScale = var2_37.baseScale
 	var2_37.labelTag = {}
 	var2_37.TargetChoise = {}
 	var2_37.guardian = {}
@@ -468,6 +472,8 @@ function var0_0.SetMinionAttr(arg0_39, arg1_39)
 	var4_39.id = var1_39.id
 	var4_39.level = var3_39
 	var4_39.formulaLevel = var3_39
+	var4_39.baseScale = var2_39.scale / 50
+	var4_39.modelScale = var4_39.baseScale
 
 	local function var5_39(arg0_40, arg1_40)
 		local var0_40 = var2_39[arg0_40 .. "_growth"]

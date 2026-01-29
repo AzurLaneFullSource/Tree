@@ -178,6 +178,21 @@ pg.item_data_battleui = {
 			1
 		}
 	},
+	[113] = {
+		key = "SkinNormal_20260129",
+		name = "Ancient Dynasty",
+		desc = "Adorn your interface with towering stone pillars, their worn patterns telling tales of a lost order and filling your battles with a solemn and tragic atmosphere that transcends time.",
+		display_icon = "ui_113",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "Cruise Missions S27",
+		id = 113,
+		icon = "113",
+		scene = {},
+		rare_display = {
+			1
+		}
+	},
 	[201] = {
 		key = "SkinNormal_20241209",
 		name = "Christmas",
@@ -293,6 +308,7 @@ pg.item_data_battleui = {
 		109,
 		110,
 		111,
+		113,
 		201,
 		202,
 		203,

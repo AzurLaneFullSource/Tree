@@ -42,6 +42,10 @@ pg.ship_meta_breakout = setmetatable({
 		9701102,
 		9701103,
 		9701104,
+		9701111,
+		9701112,
+		9701113,
+		9701114,
 		9702011,
 		9702012,
 		9702013,
@@ -854,6 +858,69 @@ pg.base.ship_meta_breakout = {
 		id = 9701104,
 		item1 = 21052,
 		pre_id = 9701103,
+		weapon_ids = {}
+	},
+	[9701111] = {
+		breakout_view = "Unlock Cinders of Hope - Carabiniere/Main gun efficiency +5%",
+		gold = 500,
+		breakout_id = 9701112,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9701111,
+		item1 = 21056,
+		pre_id = 0,
+		weapon_ids = {
+			80581
+		}
+	},
+	[9701112] = {
+		breakout_view = "Torpedo base +1/Torpedo preload +1/Main gun efficiency +10%",
+		gold = 1500,
+		breakout_id = 9701113,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9701112,
+		item1 = 21056,
+		pre_id = 9701111,
+		weapon_ids = {
+			106,
+			106
+		}
+	},
+	[9701113] = {
+		breakout_view = "Improve Cinders of Hope - Carabiniere/All weapons' efficiency +5%",
+		gold = 2500,
+		breakout_id = 9701114,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9701113,
+		item1 = 21056,
+		pre_id = 9701112,
+		weapon_ids = {
+			80582
+		}
+	},
+	[9701114] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9701114,
+		item1 = 21056,
+		pre_id = 9701113,
 		weapon_ids = {}
 	},
 	[9702011] = {

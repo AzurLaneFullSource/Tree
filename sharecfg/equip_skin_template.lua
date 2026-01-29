@@ -56342,6 +56342,187 @@ pg.equip_skin_template = {
 			"wash"
 		}
 	},
+	[2113] = {
+		hit_sfx = "",
+		bullet_name = "zidan_gudianbishou",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		name = "Ancient Dagger Shell",
+		themeid = 109,
+		desc = "As long as your resolve stays sharp, so, too, shall your blade.",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		double_char_bone = "",
+		orbit_combat = "",
+		orbit_combat_anima_change = "",
+		icon = "96837",
+		miss_sfx = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		orbit_rotate = "",
+		orbit_ui = "",
+		orbit_ui_back = 0,
+		orbit_combat_bound = "",
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "zidan_gudianbishou_hit",
+		id = 2113,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			1,
+			2,
+			3
+		},
+		weapon_ids = {
+			101,
+			101
+		}
+	},
+	[2114] = {
+		hit_sfx = "",
+		bullet_name = "yulei_luomazhu",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		name = "Worn Pillar Torpedo",
+		themeid = 109,
+		desc = "Its heyday has long since passed, yet still it stands.",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		double_char_bone = "",
+		orbit_combat = "",
+		orbit_combat_anima_change = "",
+		icon = "96838",
+		miss_sfx = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		orbit_rotate = "",
+		orbit_ui = "",
+		orbit_ui_back = 0,
+		orbit_combat_bound = "",
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "yulei_luomazhu_hit",
+		id = 2114,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			5,
+			13
+		},
+		weapon_ids = {
+			107,
+			107
+		}
+	},
+	[2115] = {
+		hit_sfx = "",
+		bullet_name = "paodan_huangjidiaoxiang",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		name = "Petrified Manjuu Shell",
+		themeid = 109,
+		desc = "An unlucky soul frozen in time!",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		double_char_bone = "",
+		orbit_combat = "",
+		orbit_combat_anima_change = "",
+		icon = "96839",
+		miss_sfx = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		orbit_rotate = "",
+		orbit_ui = "",
+		orbit_ui_back = 0,
+		orbit_combat_bound = "",
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "paodan_huangjidiaoxiang_hit",
+		id = 2115,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	},
+	[2116] = {
+		hit_sfx = "",
+		bullet_name = "",
+		name = "Arch of a Lost Dynasty",
+		type = 1,
+		preview_hit_distance = 0,
+		themeid = 109,
+		orbit_combat = "shebei_gongmenyiji",
+		desc = "What awaits you on the other side? Glory, or demise?",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_ui = "shebei_gongmenyijiui",
+		miss_sfx = "",
+		orbit_combat_anima_change = "",
+		icon = "96840",
+		orbit_rotate = false,
+		orbit_ui_back = 1,
+		mirror = 0,
+		rarity = 4,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 2116,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		double_char_bone = {
+			1,
+			0,
+			1
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				-0.28,
+				-1.5,
+				-0.91
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				-12,
+				70
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	},
 	[3002] = {
 		hit_sfx = "",
 		bullet_name = "",
@@ -59782,6 +59963,10 @@ pg.equip_skin_template = {
 		2110,
 		2111,
 		2112,
+		2113,
+		2114,
+		2115,
+		2116,
 		3002,
 		3004,
 		3005,
