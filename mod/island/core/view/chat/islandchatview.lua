@@ -268,32 +268,41 @@ function var0_0.OnInitItem(arg0_36, arg1_36)
 
 		arg0_36:NotifiyMeditor(IslandBaseMediator.OPEN_FRIEND_INFO, var0_37, var1_37, var2_37)
 	end)
+	onButton(arg0_36, var0_36.otherBubble.tf:Find("chat_fram"), function()
+		local var0_38 = var0_36.sender.id
+
+		if var0_36:IsTradeLink() then
+			arg0_36:NotifiyMeditor(IslandMediator.ENTER_ISLAND, var0_38)
+		else
+			triggerButton(var0_36.otherBubble.tf)
+		end
+	end)
 
 	arg0_36.cards[arg1_36] = var0_36
 end
 
-function var0_0.OnUpdateItem(arg0_38, arg1_38, arg2_38)
-	local var0_38 = arg0_38.cards[arg2_38]
+function var0_0.OnUpdateItem(arg0_39, arg1_39, arg2_39)
+	local var0_39 = arg0_39.cards[arg2_39]
 
-	if not var0_38 then
-		arg0_38:OnInitItem(arg2_38)
+	if not var0_39 then
+		arg0_39:OnInitItem(arg2_39)
 
-		var0_38 = arg0_38.cards[arg2_38]
+		var0_39 = arg0_39.cards[arg2_39]
 	end
 
-	local var1_38 = arg0_38.displays[arg1_38 + 1]
+	local var1_39 = arg0_39.displays[arg1_39 + 1]
 
-	var0_38:Update(var1_38)
+	var0_39:Update(var1_39)
 end
 
-function var0_0.OnDispose(arg0_39)
-	var0_0.super.OnDispose(arg0_39)
-	ClearLScrollrect(arg0_39.scrollrect)
+function var0_0.OnDispose(arg0_40)
+	var0_0.super.OnDispose(arg0_40)
+	ClearLScrollrect(arg0_40.scrollrect)
 
-	if arg0_39.emojiAdaptor then
-		arg0_39.emojiAdaptor:Dispose()
+	if arg0_40.emojiAdaptor then
+		arg0_40.emojiAdaptor:Dispose()
 
-		arg0_39.emojiAdaptor = nil
+		arg0_40.emojiAdaptor = nil
 	end
 end
 

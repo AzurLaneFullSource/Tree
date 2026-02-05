@@ -48,10 +48,7 @@ function var0_0.UpdateActivity(arg0_6, arg1_6)
 				})
 
 				IslandShopDrawAwardPage.ShowDropInfo(var3_8, arg2_8:Find("mask/Image"))
-				setText(arg2_8:Find("name/Text"), var3_8:getName())
-				onNextTick(function()
-					changeToScrollText(arg2_8:Find("name/Text"), var3_8:getName())
-				end)
+				setScrollText(arg2_8:Find("name/Text"), var3_8:getName())
 				setText(arg2_8:Find("got/got/Text"), i18n("island_draw_get"))
 				setActive(arg2_8:Find("got"), not var1_8)
 			end

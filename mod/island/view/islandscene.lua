@@ -472,11 +472,7 @@ function var0_0.SequenceCheck(arg0_66)
 			end
 		end,
 		function(arg0_68)
-			if arg0_66:GetIsland():GetSeasonAgency():NeedReset() then
-				arg0_66:emit(IslandMediator.ON_RESET_SEASON, arg0_68)
-			else
-				arg0_68()
-			end
+			arg0_66:SeasonResetCheck(arg0_68)
 		end,
 		function(arg0_69)
 			local var0_69, var1_69, var2_69 = arg0_66:GetIsland():GetSeasonAgency():IsShowResetTip()
@@ -538,51 +534,76 @@ function var0_0.SequenceCheck(arg0_66)
 	end)
 end
 
-function var0_0.UpdateVisitorBtn(arg0_77)
-	setText(arg0_77.visitorBtn:Find("num"), arg0_77:GetIsland():GetVisitorAgency():GetVisitorCnt())
-	setText(arg0_77.visitorBtn:Find("Text"), i18n("island_visitor_button"))
+function var0_0.SeasonResetCheck(arg0_77, arg1_77)
+	local var0_77, var1_77 = IslandSeasonAgency.CheckReset()
+
+	if var0_77 then
+		seriesAsync({
+			function(arg0_78)
+				arg0_77:ShowMsgbox({
+					hideNo = true,
+					type = IslandMsgBox.TYPE_COMMON,
+					content = i18n("island_season_reset"),
+					onHide = arg0_78
+				})
+			end
+		}, function()
+			arg0_77:ShowMsgbox({
+				type = IslandMsgBox.TYPE_SEASON_RESET,
+				body = var1_77,
+				onHide = arg1_77
+			})
+		end)
+	else
+		arg1_77()
+	end
 end
 
-function var0_0.UpdateMainAwardReward(arg0_78, arg1_78)
-	arg0_78.awardDisplayPanel:ExecuteAction("ShowAwards", arg1_78)
+function var0_0.UpdateVisitorBtn(arg0_80)
+	setText(arg0_80.visitorBtn:Find("num"), arg0_80:GetIsland():GetVisitorAgency():GetVisitorCnt())
+	setText(arg0_80.visitorBtn:Find("Text"), i18n("island_visitor_button"))
 end
 
-function var0_0.OnUnloadScene(arg0_79)
+function var0_0.UpdateMainAwardReward(arg0_81, arg1_81)
+	arg0_81.awardDisplayPanel:ExecuteAction("ShowAwards", arg1_81)
+end
+
+function var0_0.OnUnloadScene(arg0_82)
 	return
 end
 
-function var0_0.OnVisible(arg0_80)
-	arg0_80:UpdateTaskInfo()
-	arg0_80.btnContainer:Flush()
+function var0_0.OnVisible(arg0_83)
+	arg0_83:UpdateTaskInfo()
+	arg0_83.btnContainer:Flush()
 
-	if not arg0_80:GetSubView(IslandStoryMgr):IsRunning() and not arg0_80.poppingQueue:AnyPlayerIsRunning() then
-		IslandGuideChecker.CheckOnLoaded(arg0_80:GetIsland():GetMapId())
+	if not arg0_83:GetSubView(IslandStoryMgr):IsRunning() and not arg0_83.poppingQueue:AnyPlayerIsRunning() then
+		IslandGuideChecker.CheckOnLoaded(arg0_83:GetIsland():GetMapId())
 	end
 end
 
-function var0_0.willExit(arg0_81)
-	if arg0_81.btnContainer then
-		arg0_81.btnContainer:Dispose()
+function var0_0.willExit(arg0_84)
+	if arg0_84.btnContainer then
+		arg0_84.btnContainer:Dispose()
 
-		arg0_81.btnContainer = nil
+		arg0_84.btnContainer = nil
 	end
 
-	if arg0_81.levelPanel then
-		arg0_81.levelPanel:Destroy()
+	if arg0_84.levelPanel then
+		arg0_84.levelPanel:Destroy()
 
-		arg0_81.levelPanel = nil
+		arg0_84.levelPanel = nil
 	end
 
-	if arg0_81.taskTrackPanel then
-		arg0_81.taskTrackPanel:Destroy()
+	if arg0_84.taskTrackPanel then
+		arg0_84.taskTrackPanel:Destroy()
 
-		arg0_81.taskTrackPanel = nil
+		arg0_84.taskTrackPanel = nil
 	end
 
-	if arg0_81.awardDisplayPanel then
-		arg0_81.awardDisplayPanel:Destroy()
+	if arg0_84.awardDisplayPanel then
+		arg0_84.awardDisplayPanel:Destroy()
 
-		arg0_81.awardDisplayPanel = nil
+		arg0_84.awardDisplayPanel = nil
 	end
 end
 

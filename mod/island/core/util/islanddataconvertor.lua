@@ -72,10 +72,6 @@ function var0_0.SystemData2IslandUnits(arg0_4, arg1_4, arg2_4, arg3_4, arg4_4, a
 end
 
 function var0_0.CollectFishPointUnits(arg0_5, arg1_5, arg2_5)
-	if not pg.island_fish_point then
-		return
-	end
-
 	for iter0_5, iter1_5 in ipairs(pg.island_fish_point.all) do
 		local var0_5 = pg.island_fish_point[iter1_5]
 

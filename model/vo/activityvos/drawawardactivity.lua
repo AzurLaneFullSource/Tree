@@ -151,7 +151,7 @@ function var0_0.ResultDraw(arg0_17, arg1_17)
 			if #arg0_17.data1_list == 0 or arg0_17.data1_list[1] == iter1_17 then
 				table.remove(arg0_17.data1_list, 1)
 			else
-				assert(false, string.format("error SList drop %d in {%s}", iter1_17, table.concat(arg0_17.data1_list)))
+				assert(false, string.format("error SList drop %d in %s", iter1_17, PrintTable(arg0_17.data1_list)))
 			end
 		end
 	end

@@ -39,179 +39,187 @@ function var0_0.GetIsland(arg0_7)
 	return arg0_7.islandScene:GetIsland()
 end
 
-function var0_0.GetPoolMgr(arg0_8)
-	return arg0_8.islandScene.poolMgr
+function var0_0.GetSelfIsland(arg0_8)
+	return getProxy(IslandProxy):GetIsland()
 end
 
-function var0_0.Show(arg0_9, ...)
-	arg0_9:AddListeners()
-	arg0_9.islandUIController:Show(true)
-	arg0_9:OnShow(...)
+function var0_0.IsSelfIsland(arg0_9)
+	return arg0_9:GetIsland().id == arg0_9:GetSelfIsland().id
 end
 
-function var0_0.Hide(arg0_10, arg1_10, arg2_10)
-	local var0_10 = defaultValue(arg1_10, true)
-	local var1_10 = {}
+function var0_0.GetPoolMgr(arg0_10)
+	return arg0_10.islandScene.poolMgr
+end
 
-	if var0_10 then
-		table.insert(var1_10, function(arg0_11)
-			arg0_10.islandUIController:Hide(true, arg0_11)
+function var0_0.Show(arg0_11, ...)
+	arg0_11:AddListeners()
+	arg0_11.islandUIController:Show(true)
+	arg0_11:OnShow(...)
+end
+
+function var0_0.Hide(arg0_12, arg1_12, arg2_12)
+	local var0_12 = defaultValue(arg1_12, true)
+	local var1_12 = {}
+
+	if var0_12 then
+		table.insert(var1_12, function(arg0_13)
+			arg0_12.islandUIController:Hide(true, arg0_13)
 		end)
 	end
 
-	seriesAsync(var1_10, function()
-		arg0_10:RemoveListeners()
-		arg0_10:OnHide()
-		arg0_10:ClosePage(arg0_10)
+	seriesAsync(var1_12, function()
+		arg0_12:RemoveListeners()
+		arg0_12:OnHide()
+		arg0_12:ClosePage(arg0_12)
 
-		if not arg2_10 then
-			arg0_10:OnExit()
+		if not arg2_12 then
+			arg0_12:OnExit()
 		end
 	end)
 end
 
-function var0_0.Enable(arg0_13)
-	arg0_13.islandUIController:Show(true)
+function var0_0.Enable(arg0_15)
+	arg0_15.islandUIController:Show(true)
 
-	arg0_13.isVisible = true
+	arg0_15.isVisible = true
 
-	arg0_13:OnEnable()
+	arg0_15:OnEnable()
 end
 
-function var0_0.Disable(arg0_14, arg1_14)
-	arg0_14.islandUIController:Hide(true, arg1_14)
+function var0_0.Disable(arg0_16, arg1_16)
+	arg0_16.islandUIController:Hide(true, arg1_16)
 
-	arg0_14.isVisible = false
+	arg0_16.isVisible = false
 
-	arg0_14:OnDisable()
+	arg0_16:OnDisable()
 end
 
-function var0_0.BlurPanel(arg0_15)
-	arg0_15.isBluring = true
+function var0_0.BlurPanel(arg0_17)
+	arg0_17.isBluring = true
 
-	arg0_15.viewComponent:BlurPanel(arg0_15._tf)
+	arg0_17.viewComponent:BlurPanel(arg0_17._tf)
 end
 
-function var0_0.UnBlurPanel(arg0_16)
-	if arg0_16.isBluring then
-		arg0_16.viewComponent:UnOverlayPanel(arg0_16._tf, arg0_16._parentTf)
+function var0_0.UnBlurPanel(arg0_18)
+	if arg0_18.isBluring then
+		arg0_18.viewComponent:UnOverlayPanel(arg0_18._tf, arg0_18._parentTf)
 
-		arg0_16.isBluring = false
+		arg0_18.isBluring = false
 	end
 end
 
-function var0_0.ShowMsgBox(arg0_17, arg1_17)
-	return arg0_17.islandScene:ShowMsgbox(arg1_17)
+function var0_0.ShowMsgBox(arg0_19, arg1_19)
+	return arg0_19.islandScene:ShowMsgbox(arg1_19)
 end
 
-function var0_0.PlayStory(arg0_18, arg1_18)
-	return arg0_18.islandScene:PlayStory(arg1_18)
+function var0_0.PlayStory(arg0_20, arg1_20)
+	return arg0_20.islandScene:PlayStory(arg1_20)
 end
 
-function var0_0.PlayGetShipTimeline(arg0_19, arg1_19, arg2_19)
-	arg0_19.islandScene:PlayGetShipTimeline(arg1_19, arg2_19)
+function var0_0.PlayGetShipTimeline(arg0_21, arg1_21, arg2_21)
+	arg0_21.islandScene:PlayGetShipTimeline(arg1_21, arg2_21)
 end
 
-function var0_0.OpenPage(arg0_20, arg1_20, ...)
-	IslandGuideChecker.CheckOnOpenPage(arg1_20.__cname)
+function var0_0.OpenPage(arg0_22, arg1_22, ...)
+	IslandGuideChecker.CheckOnOpenPage(arg1_22.__cname)
 
-	return arg0_20.islandScene.sceneMgr:OpenPage(arg0_20, arg1_20, ...)
+	return arg0_22.islandScene.sceneMgr:OpenPage(arg0_22, arg1_22, ...)
 end
 
-function var0_0.OpenScenePage(arg0_21, arg1_21, ...)
-	return arg0_21.islandScene:OpenPage(arg1_21, ...)
+function var0_0.OpenScenePage(arg0_23, arg1_23, ...)
+	return arg0_23.islandScene:OpenPage(arg1_23, ...)
 end
 
-function var0_0.ClosePage(arg0_22, arg1_22)
-	arg0_22.islandScene.sceneMgr:ClosePage(arg1_22)
+function var0_0.ClosePage(arg0_24, arg1_24)
+	arg0_24.islandScene.sceneMgr:ClosePage(arg1_24)
 end
 
-function var0_0.AddListener(arg0_23, arg1_23, arg2_23)
-	local function var0_23(arg0_24, ...)
-		arg2_23(arg0_23, ...)
+function var0_0.AddListener(arg0_25, arg1_25, arg2_25)
+	local function var0_25(arg0_26, ...)
+		arg2_25(arg0_25, ...)
 	end
 
-	local var1_23 = arg0_23:bind(arg1_23, var0_23)
+	local var1_25 = arg0_25:bind(arg1_25, var0_25)
 
-	arg0_23.__callbacks__[arg1_23] = var1_23
+	arg0_25.__callbacks__[arg1_25] = var1_25
 
-	arg0_23:GetIsland():AddListener(arg1_23, var0_23)
+	arg0_25:GetIsland():AddListener(arg1_25, var0_25)
 end
 
-function var0_0.RemoveListener(arg0_25, arg1_25, arg2_25)
-	local var0_25 = arg0_25.__callbacks__[arg1_25]
+function var0_0.RemoveListener(arg0_27, arg1_27, arg2_27)
+	local var0_27 = arg0_27.__callbacks__[arg1_27]
 
-	if var0_25 then
-		local var1_25 = arg0_25.eventStore[var0_25]
+	if var0_27 then
+		local var1_27 = arg0_27.eventStore[var0_27]
 
-		arg0_25:GetIsland():RemoveListener(arg1_25, var1_25.callback)
-		arg0_25:disconnect(var0_25)
+		arg0_27:GetIsland():RemoveListener(arg1_27, var1_27.callback)
+		arg0_27:disconnect(var0_27)
 
-		arg0_25.__callbacks__[arg1_25] = nil
-	end
-end
-
-function var0_0.Destroy(arg0_26, arg1_26)
-	if arg0_26:isShowing() then
-		arg0_26:Hide(false, arg1_26)
-	end
-
-	arg0_26.__callbacks__ = {}
-
-	var0_0.super.Destroy(arg0_26)
-	arg0_26:Reset()
-end
-
-function var0_0.SetVisible(arg0_27, arg1_27, arg2_27)
-	local var0_27 = GetOrAddComponent(arg1_27, typeof(CanvasGroup))
-
-	var0_27.alpha = arg2_27 and 1 or 0
-	var0_27.blocksRaycasts = arg2_27
-end
-
-function var0_0.ActiveOrDisactive(arg0_28, arg1_28)
-	if not IsNil(arg0_28._tf) then
-		setActive(arg0_28._tf, arg1_28)
+		arg0_27.__callbacks__[arg1_27] = nil
 	end
 end
 
-function var0_0.AddListeners(arg0_29)
+function var0_0.Destroy(arg0_28, arg1_28)
+	if arg0_28:isShowing() then
+		arg0_28:Hide(false, arg1_28)
+	end
+
+	arg0_28.__callbacks__ = {}
+
+	var0_0.super.Destroy(arg0_28)
+	arg0_28:Reset()
+end
+
+function var0_0.SetVisible(arg0_29, arg1_29, arg2_29)
+	local var0_29 = GetOrAddComponent(arg1_29, typeof(CanvasGroup))
+
+	var0_29.alpha = arg2_29 and 1 or 0
+	var0_29.blocksRaycasts = arg2_29
+end
+
+function var0_0.ActiveOrDisactive(arg0_30, arg1_30)
+	if not IsNil(arg0_30._tf) then
+		setActive(arg0_30._tf, arg1_30)
+	end
+end
+
+function var0_0.AddListeners(arg0_31)
 	return
 end
 
-function var0_0.RemoveListeners(arg0_30)
+function var0_0.RemoveListeners(arg0_32)
 	return
 end
 
-function var0_0.Preload(arg0_31, arg1_31)
-	arg1_31()
+function var0_0.Preload(arg0_33, arg1_33)
+	arg1_33()
 end
 
-function var0_0.OnShow(arg0_32)
+function var0_0.OnShow(arg0_34)
 	return
 end
 
-function var0_0.OnHide(arg0_33)
+function var0_0.OnHide(arg0_35)
 	return
 end
 
-function var0_0.OnExit(arg0_34)
+function var0_0.OnExit(arg0_36)
 	return
 end
 
-function var0_0.OnEnable(arg0_35)
+function var0_0.OnEnable(arg0_37)
 	return
 end
 
-function var0_0.OnDisable(arg0_36)
+function var0_0.OnDisable(arg0_38)
 	return
 end
 
-function var0_0.GetEnterAnimationName(arg0_37)
+function var0_0.GetEnterAnimationName(arg0_39)
 	return ""
 end
 
-function var0_0.GetExitAnimationName(arg0_38)
+function var0_0.GetExitAnimationName(arg0_40)
 	return ""
 end
 

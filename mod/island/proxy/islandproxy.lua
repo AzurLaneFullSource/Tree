@@ -153,7 +153,20 @@ function var0_0.timeCall(arg0_22)
 
 			arg0_22.sharedIsland:UpdatePerSecond()
 		end,
-		[ProxyRegister.DayCall] = function(arg0_24)
+		[ProxyRegister.HourCall] = function(arg0_24)
+			if not arg0_22.island then
+				return
+			end
+
+			arg0_22.island:UpdatePerHour(arg0_24)
+
+			if not arg0_22.sharedIsland then
+				return
+			end
+
+			arg0_22.sharedIsland:UpdatePerHour(arg0_24)
+		end,
+		[ProxyRegister.DayCall] = function(arg0_25)
 			if not arg0_22.island then
 				return
 			end
@@ -163,38 +176,38 @@ function var0_0.timeCall(arg0_22)
 	}
 end
 
-function var0_0.RecordEnterTime(arg0_25)
-	arg0_25.enterTimeStamp = pg.TimeMgr.GetInstance():GetServerTime()
+function var0_0.RecordEnterTime(arg0_26)
+	arg0_26.enterTimeStamp = pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function var0_0.GetEnterTime(arg0_26)
-	return arg0_26.enterTimeStamp
+function var0_0.GetEnterTime(arg0_27)
+	return arg0_27.enterTimeStamp
 end
 
-function var0_0.RecordTempPlayerPosition(arg0_27, arg1_27, arg2_27, arg3_27)
-	arg0_27.tempPlayerPosition = {
-		arg1_27,
-		arg2_27,
-		arg3_27
+function var0_0.RecordTempPlayerPosition(arg0_28, arg1_28, arg2_28, arg3_28)
+	arg0_28.tempPlayerPosition = {
+		arg1_28,
+		arg2_28,
+		arg3_28
 	}
 end
 
-function var0_0.GetTempPlayerPosition(arg0_28)
-	return arg0_28.tempPlayerPosition
+function var0_0.GetTempPlayerPosition(arg0_29)
+	return arg0_29.tempPlayerPosition
 end
 
-function var0_0.EnterIsland(arg0_29, arg1_29)
-	arg0_29.islandHeartBeatMgr:EnterIsland(arg1_29)
+function var0_0.EnterIsland(arg0_30, arg1_30)
+	arg0_30.islandHeartBeatMgr:EnterIsland(arg1_30)
 end
 
-function var0_0.ExitIsland(arg0_30)
-	arg0_30.islandHeartBeatMgr:ExitIsland()
+function var0_0.ExitIsland(arg0_31)
+	arg0_31.islandHeartBeatMgr:ExitIsland()
 end
 
-function var0_0.remove(arg0_31)
-	arg0_31.islandHeartBeatMgr:Dispose()
+function var0_0.remove(arg0_32)
+	arg0_32.islandHeartBeatMgr:Dispose()
 
-	arg0_31.islandHeartBeatMgr = nil
+	arg0_32.islandHeartBeatMgr = nil
 end
 
 return var0_0

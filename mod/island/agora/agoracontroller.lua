@@ -544,43 +544,45 @@ function var0_0.RotationItem(arg0_47)
 	arg0_47.agora:GetPlaceableItem(arg0_47.selectedData.id):Rotation()
 end
 
-function var0_0.InterAction(arg0_48, arg1_48, arg2_48)
-	local var0_48 = 1
-	local var1_48 = arg0_48.agora:GetVirtualInteractUnitData(arg1_48)
-	local var2_48 = var1_48:GetEmptySlot()
+function var0_0.AgoraVirtualInterAction(arg0_48, arg1_48, arg2_48, arg3_48)
+	arg3_48 = arg3_48 or 1
 
-	if not var2_48 then
+	local var0_48 = arg0_48.agora:GetVirtualInteractUnitData(arg1_48)
+	local var1_48 = var0_48:GetEmptySlot()
+
+	if not var1_48 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("island_agora_no_interact_point"))
 
 		return
 	end
 
-	local function var3_48()
-		var2_48:Lock(arg2_48)
-		arg0_48:NotifiyAgora(ISLAND_AGORA_EVT.START_INTERACTION, var1_48, var2_48, var0_48)
+	local function var2_48()
+		var1_48:Lock(arg2_48)
+		arg0_48:NotifiyAgora(ISLAND_AGORA_EVT.START_INTERACTION, var0_48, var1_48, arg3_48)
 	end
 
-	arg0_48.islandSyncMgr:TryControlUnit(IslandConst.SYNC_TYPE_AGORA, arg1_48, var2_48.id, var0_48, function(arg0_50)
+	arg0_48.islandSyncMgr:TryControlUnit(IslandConst.SYNC_TYPE_AGORA, arg1_48, var1_48.id, arg3_48, function(arg0_50)
 		if arg0_50 then
-			var3_48()
+			var2_48()
 		end
 	end)
 end
 
-function var0_0.InterActionSync(arg0_51, arg1_51, arg2_51, arg3_51)
+function var0_0.AgoraVirtualInterActionSync(arg0_51, arg1_51, arg2_51, arg3_51, arg4_51)
 	if arg0_51.isEditing then
 		return
 	end
 
-	local var0_51 = 1
-	local var1_51 = arg0_51.agora:GetVirtualInteractUnitData(arg1_51)
-	local var2_51 = var1_51:GetSlotById(arg3_51)
+	arg3_51 = arg3_51 or 1
 
-	var2_51:Lock(arg2_51)
-	arg0_51:NotifiyAgora(ISLAND_AGORA_EVT.START_INTERACTION, var1_51, var2_51, var0_51)
+	local var0_51 = arg0_51.agora:GetVirtualInteractUnitData(arg1_51)
+	local var1_51 = var0_51:GetSlotById(arg4_51)
+
+	var1_51:Lock(arg2_51)
+	arg0_51:NotifiyAgora(ISLAND_AGORA_EVT.START_INTERACTION, var0_51, var1_51, arg3_51)
 end
 
-function var0_0.InterActionEnd(arg0_52, arg1_52, arg2_52)
+function var0_0.AgoraVirtualInterActionEnd(arg0_52, arg1_52, arg2_52)
 	local var0_52 = arg0_52.agora:GetVirtualInteractUnitData(arg1_52)
 	local var1_52 = var0_52:GetUsingSlot(arg2_52)
 
@@ -598,7 +600,7 @@ function var0_0.InterActionEnd(arg0_52, arg1_52, arg2_52)
 	end)
 end
 
-function var0_0.InterActionEndSync(arg0_55, arg1_55, arg2_55)
+function var0_0.AgoraVirtualInterActionEndSync(arg0_55, arg1_55, arg2_55)
 	if arg0_55.isEditing then
 		return
 	end
@@ -611,94 +613,87 @@ function var0_0.InterActionEndSync(arg0_55, arg1_55, arg2_55)
 	arg0_55:NotifiyAgora(ISLAND_AGORA_EVT.END_INTERACTION, var0_55, var2_55)
 end
 
-function var0_0.PlaceItemRandonPosition(arg0_56, arg1_56)
-	local var0_56 = arg0_56.agora:GetPlaceableItem(arg1_56)
-	local var1_56 = var0_56:GetCost()
+function var0_0.AgoraVirtualInitStatus(arg0_56, arg1_56, arg2_56)
+	local var0_56 = arg0_56.agora:GetVirtualInteractUnitData(arg1_56)
 
-	if arg0_56.agora:IsMaxCapacityWhenAdd(var1_56) then
+	if not var0_56 then
+		return
+	end
+
+	arg0_56:NotifiyCore(ISLAND_EVT.WORLD_OBJECT_INIT_STATUS, var0_56, arg2_56)
+end
+
+function var0_0.PlaceItemRandonPosition(arg0_57, arg1_57)
+	local var0_57 = arg0_57.agora:GetPlaceableItem(arg1_57)
+	local var1_57 = var0_57:GetCost()
+
+	if arg0_57.agora:IsMaxCapacityWhenAdd(var1_57) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("island_agora_max_capacity"))
 
 		return
 	end
 
-	local var2_56 = AgoraCalc.GetCenterMapPos()
+	local var2_57 = AgoraCalc.GetCenterMapPos()
 
-	if not var2_56 then
+	if not var2_57 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("island_agora_no_size"))
 
 		return
 	end
 
-	if arg0_56:AnySelected() then
-		arg0_56:UnSelectedItem()
+	if arg0_57:AnySelected() then
+		arg0_57:UnSelectedItem()
 	end
 
-	var0_56:Clear()
+	var0_57:Clear()
 
-	local var3_56 = arg0_56.agora:FindEmptyArea4Item(var2_56, var0_56)
+	local var3_57 = arg0_57.agora:FindEmptyArea4Item(var2_57, var0_57)
 
-	if not var3_56 then
+	if not var3_57 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("island_agora_no_size"))
 
 		return
 	end
 
-	arg0_56:PlaceItem(arg1_56, var3_56, Vector3.zero)
-	arg0_56:SelectItem(var0_56)
+	arg0_57:PlaceItem(arg1_57, var3_57, Vector3.zero)
+	arg0_57:SelectItem(var0_57)
 end
 
-function var0_0.PlaceItem(arg0_57, arg1_57, arg2_57, arg3_57, arg4_57)
-	arg0_57.agora:PlaceItem(arg1_57, arg2_57, arg3_57, arg4_57)
+function var0_0.PlaceItem(arg0_58, arg1_58, arg2_58, arg3_58, arg4_58)
+	arg0_58.agora:PlaceItem(arg1_58, arg2_58, arg3_58, arg4_58)
 end
 
-function var0_0.RemovePlaceItem(arg0_58, arg1_58)
-	arg0_58:UnPlaceItem(arg1_58)
-	arg0_58:NotifiyAgora(ISLAND_AGORA_EVT.UNPLACE_ITEM)
+function var0_0.RemovePlaceItem(arg0_59, arg1_59)
+	arg0_59:UnPlaceItem(arg1_59)
+	arg0_59:NotifiyAgora(ISLAND_AGORA_EVT.UNPLACE_ITEM)
 end
 
-function var0_0.UnPlaceItem(arg0_59, arg1_59, arg2_59)
-	local var0_59 = arg1_59 or arg0_59.selectedData and arg0_59.selectedData.id
+function var0_0.UnPlaceItem(arg0_60, arg1_60, arg2_60)
+	local var0_60 = arg1_60 or arg0_60.selectedData and arg0_60.selectedData.id
 
-	if not var0_59 then
+	if not var0_60 then
 		return
 	end
 
-	local var1_59 = arg0_59.agora:GetPlaceableItem(var0_59)
+	local var1_60 = arg0_60.agora:GetPlaceableItem(var0_60)
 
-	if arg0_59:AnySelected() and arg0_59.selectedData.id == var0_59 then
-		arg0_59:UnSelectedItem()
-	end
-
-	if not var1_59:CanOp() and not arg2_59 then
-		return
-	end
-
-	arg0_59.agora:UnPlaceItem(var0_59)
-end
-
-function var0_0.ReplaceBuilding(arg0_60, arg1_60)
-	if arg0_60:AnySelected() and arg0_60.agora:IsBuilding(arg0_60.selectedData.id) then
+	if arg0_60:AnySelected() and arg0_60.selectedData.id == var0_60 then
 		arg0_60:UnSelectedItem()
 	end
 
-	local var0_60 = arg0_60.agora:GetBuilding()
-	local var1_60 = Vector2.zero
-
-	if var0_60 then
-		var1_60 = var0_60:GetPosition()
-
-		arg0_60:UnPlaceItem(var0_60.id, true)
+	if not var1_60:CanOp() and not arg2_60 then
+		return
 	end
 
-	arg0_60:PlaceItem(arg1_60, var1_60, Vector3.zero)
+	arg0_60.agora:UnPlaceItem(var0_60)
 end
 
-function var0_0.ReplaceFoundation(arg0_61, arg1_61)
-	if arg0_61:AnySelected() and arg0_61.agora:IsFoundation(arg0_61.selectedData.id) then
+function var0_0.ReplaceBuilding(arg0_61, arg1_61)
+	if arg0_61:AnySelected() and arg0_61.agora:IsBuilding(arg0_61.selectedData.id) then
 		arg0_61:UnSelectedItem()
 	end
 
-	local var0_61 = arg0_61.agora:GetFoundation()
+	local var0_61 = arg0_61.agora:GetBuilding()
 	local var1_61 = Vector2.zero
 
 	if var0_61 then
@@ -710,363 +705,380 @@ function var0_0.ReplaceFoundation(arg0_61, arg1_61)
 	arg0_61:PlaceItem(arg1_61, var1_61, Vector3.zero)
 end
 
-function var0_0.SelectedPaveItem(arg0_62, arg1_62, arg2_62)
-	if arg0_62:AnySelected() then
+function var0_0.ReplaceFoundation(arg0_62, arg1_62)
+	if arg0_62:AnySelected() and arg0_62.agora:IsFoundation(arg0_62.selectedData.id) then
 		arg0_62:UnSelectedItem()
 	end
 
-	arg0_62.toUpdateTileList = {}
-	arg0_62.selectedPaveItemId = arg1_62
-	arg0_62.paveItemShapeId = arg2_62
-	arg0_62.isCleanLayerMode = false
+	local var0_62 = arg0_62.agora:GetFoundation()
+	local var1_62 = Vector2.zero
+
+	if var0_62 then
+		var1_62 = var0_62:GetPosition()
+
+		arg0_62:UnPlaceItem(var0_62.id, true)
+	end
+
+	arg0_62:PlaceItem(arg1_62, var1_62, Vector3.zero)
 end
 
-function var0_0.UnSelectedPaveItem(arg0_63)
+function var0_0.SelectedPaveItem(arg0_63, arg1_63, arg2_63)
+	if arg0_63:AnySelected() then
+		arg0_63:UnSelectedItem()
+	end
+
 	arg0_63.toUpdateTileList = {}
-	arg0_63.selectedPaveItemId = nil
-	arg0_63.paveItemShapeId = nil
+	arg0_63.selectedPaveItemId = arg1_63
+	arg0_63.paveItemShapeId = arg2_63
 	arg0_63.isCleanLayerMode = false
 end
 
-function var0_0.ChangeSelectedShape(arg0_64, arg1_64)
-	if not arg0_64.selectedPaveItemId then
-		return
-	end
-
-	arg0_64.paveItemShapeId = arg1_64
+function var0_0.UnSelectedPaveItem(arg0_64)
+	arg0_64.toUpdateTileList = {}
+	arg0_64.selectedPaveItemId = nil
+	arg0_64.paveItemShapeId = nil
+	arg0_64.isCleanLayerMode = false
 end
 
-function var0_0.ChangePaveMode(arg0_65, arg1_65)
-	arg0_65.isCleanLayerMode = arg1_65
+function var0_0.ChangeSelectedShape(arg0_65, arg1_65)
+	if not arg0_65.selectedPaveItemId then
+		return
+	end
+
+	arg0_65.paveItemShapeId = arg1_65
 end
 
-function var0_0.OpLayer(arg0_66, arg1_66)
-	if not arg0_66.selectedPaveItemId then
+function var0_0.ChangePaveMode(arg0_66, arg1_66)
+	arg0_66.isCleanLayerMode = arg1_66
+end
+
+function var0_0.OpLayer(arg0_67, arg1_67)
+	if not arg0_67.selectedPaveItemId then
 		return
 	end
 
-	local var0_66 = arg0_66.agora:GetPlaceableItem(arg0_66.selectedPaveItemId)
+	local var0_67 = arg0_67.agora:GetPlaceableItem(arg0_67.selectedPaveItemId)
 
-	if not var0_66 then
+	if not var0_67 then
 		return
 	end
 
-	if not arg0_66.agora:InRange(arg1_66.x, arg1_66.y) then
+	if not arg0_67.agora:InRange(arg1_67.x, arg1_67.y) then
 		return
 	end
 
-	if not var0_66:IsOptionalShapeType() then
+	if not var0_67:IsOptionalShapeType() then
 		return
 	end
 
-	if arg0_66.isCleanLayerMode then
-		arg0_66:UnPaveLayer(var0_66, arg1_66)
+	if arg0_67.isCleanLayerMode then
+		arg0_67:UnPaveLayer(var0_67, arg1_67)
 	else
-		arg0_66:PaveLayer(var0_66, arg1_66)
+		arg0_67:PaveLayer(var0_67, arg1_67)
 	end
 end
 
-function var0_0.PaveLayer(arg0_67, arg1_67, arg2_67)
-	local var0_67 = arg1_67.id
-	local var1_67 = arg0_67.paveItemShapeId
+function var0_0.PaveLayer(arg0_68, arg1_68, arg2_68)
+	local var0_68 = arg1_68.id
+	local var1_68 = arg0_68.paveItemShapeId
 
-	arg0_67:RecordLayer(arg1_67, arg2_67)
+	arg0_68:RecordLayer(arg1_68, arg2_68)
 
-	if arg1_67:IsFloor() then
-		arg0_67:PaveFloorLayer(var0_67, var1_67, arg2_67)
-	elseif arg1_67:IsTile() then
-		arg0_67:PaveTileLayer(var0_67, var1_67, arg2_67)
+	if arg1_68:IsFloor() then
+		arg0_68:PaveFloorLayer(var0_68, var1_68, arg2_68)
+	elseif arg1_68:IsTile() then
+		arg0_68:PaveTileLayer(var0_68, var1_68, arg2_68)
 	end
 end
 
-function var0_0.RecordLayer(arg0_68, arg1_68, arg2_68)
-	if not arg0_68.toUpdateTileList[arg2_68.x] or not arg0_68.toUpdateTileList[arg2_68.x][arg2_68.y] then
-		local var0_68
+function var0_0.RecordLayer(arg0_69, arg1_69, arg2_69)
+	if not arg0_69.toUpdateTileList[arg2_69.x] or not arg0_69.toUpdateTileList[arg2_69.x][arg2_69.y] then
+		local var0_69
 
-		if arg1_68:IsFloor() then
-			var0_68 = arg0_68.agora:GetFloorCell(arg2_68)
-		elseif arg1_68:IsTile() then
-			var0_68 = arg0_68.agora:GetTileCell(arg2_68)
+		if arg1_69:IsFloor() then
+			var0_69 = arg0_69.agora:GetFloorCell(arg2_69)
+		elseif arg1_69:IsTile() then
+			var0_69 = arg0_69.agora:GetTileCell(arg2_69)
 		end
 
-		if var0_68 then
-			if not arg0_68.toUpdateTileList[arg2_68.x] then
-				arg0_68.toUpdateTileList[arg2_68.x] = {}
+		if var0_69 then
+			if not arg0_69.toUpdateTileList[arg2_69.x] then
+				arg0_69.toUpdateTileList[arg2_69.x] = {}
 			end
 
-			arg0_68.toUpdateTileList[arg2_68.x][arg2_68.y] = var0_68:GetShapeId()
+			arg0_69.toUpdateTileList[arg2_69.x][arg2_69.y] = var0_69:GetShapeId()
 		end
 	end
 end
 
-function var0_0.UnPaveLayer(arg0_69, arg1_69, arg2_69)
-	if arg1_69:IsFloor() and not arg0_69.agora:HasFloorCell(arg2_69) or arg1_69:IsTile() and not arg0_69.agora:HasTileCell(arg2_69) then
+function var0_0.UnPaveLayer(arg0_70, arg1_70, arg2_70)
+	if arg1_70:IsFloor() and not arg0_70.agora:HasFloorCell(arg2_70) or arg1_70:IsTile() and not arg0_70.agora:HasTileCell(arg2_70) then
 		return
 	end
 
-	arg0_69:RecordLayer(arg1_69, arg2_69)
+	arg0_70:RecordLayer(arg1_70, arg2_70)
 
-	if arg1_69:IsFloor() then
-		arg0_69:UnPaveFloorLayer(arg2_69)
-	elseif arg1_69:IsTile() then
-		arg0_69:UnPaveTileLayer(arg2_69)
+	if arg1_70:IsFloor() then
+		arg0_70:UnPaveFloorLayer(arg2_70)
+	elseif arg1_70:IsTile() then
+		arg0_70:UnPaveTileLayer(arg2_70)
 	end
 end
 
-function var0_0.PaveFloorLayer(arg0_70, arg1_70, arg2_70, arg3_70)
-	arg0_70.agora:PlaceFloor(arg1_70, arg2_70, arg3_70)
+function var0_0.PaveFloorLayer(arg0_71, arg1_71, arg2_71, arg3_71)
+	arg0_71.agora:PlaceFloor(arg1_71, arg2_71, arg3_71)
 end
 
-function var0_0.PaveTileLayer(arg0_71, arg1_71, arg2_71, arg3_71)
-	arg0_71.agora:PlaceTile(arg1_71, arg2_71, arg3_71)
+function var0_0.PaveTileLayer(arg0_72, arg1_72, arg2_72, arg3_72)
+	arg0_72.agora:PlaceTile(arg1_72, arg2_72, arg3_72)
 end
 
-function var0_0.RevertPaveLayer(arg0_72)
-	local function var0_72(arg0_73, arg1_73, arg2_73, arg3_73)
-		if arg0_73 then
-			arg0_72:UnPaveFloorLayer(arg2_73)
-
-			return
-		end
-
-		arg0_72:PaveFloorLayer(arg1_73, arg3_73, arg2_73)
-	end
-
-	local function var1_72(arg0_74, arg1_74, arg2_74, arg3_74)
+function var0_0.RevertPaveLayer(arg0_73)
+	local function var0_73(arg0_74, arg1_74, arg2_74, arg3_74)
 		if arg0_74 then
-			arg0_72:UnPaveTileLayer(arg2_74)
+			arg0_73:UnPaveFloorLayer(arg2_74)
 
 			return
 		end
 
-		arg0_72:PaveTileLayer(arg1_74, arg3_74, arg2_74)
+		arg0_73:PaveFloorLayer(arg1_74, arg3_74, arg2_74)
 	end
 
-	local var2_72 = arg0_72.agora:GetPlaceableItem(arg0_72.selectedPaveItemId)
+	local function var1_73(arg0_75, arg1_75, arg2_75, arg3_75)
+		if arg0_75 then
+			arg0_73:UnPaveTileLayer(arg2_75)
 
-	if not var2_72 then
+			return
+		end
+
+		arg0_73:PaveTileLayer(arg1_75, arg3_75, arg2_75)
+	end
+
+	local var2_73 = arg0_73.agora:GetPlaceableItem(arg0_73.selectedPaveItemId)
+
+	if not var2_73 then
 		return
 	end
 
-	local var3_72 = var2_72.id
+	local var3_73 = var2_73.id
 
-	for iter0_72, iter1_72 in pairs(arg0_72.toUpdateTileList) do
-		for iter2_72, iter3_72 in pairs(iter1_72) do
-			local var4_72 = Vector2(iter0_72, iter2_72)
-			local var5_72 = iter3_72 < 0
+	for iter0_73, iter1_73 in pairs(arg0_73.toUpdateTileList) do
+		for iter2_73, iter3_73 in pairs(iter1_73) do
+			local var4_73 = Vector2(iter0_73, iter2_73)
+			local var5_73 = iter3_73 < 0
 
-			if var2_72:IsFloor() then
-				var0_72(var5_72, var3_72, var4_72, iter3_72)
-			elseif var2_72:IsTile() then
-				var1_72(var5_72, var3_72, var4_72, iter3_72)
+			if var2_73:IsFloor() then
+				var0_73(var5_73, var3_73, var4_73, iter3_73)
+			elseif var2_73:IsTile() then
+				var1_73(var5_73, var3_73, var4_73, iter3_73)
 			end
 		end
 	end
 
-	arg0_72.toUpdateTileList = {}
+	arg0_73.toUpdateTileList = {}
 end
 
-function var0_0.UnPaveFloorLayer(arg0_75, arg1_75)
-	arg0_75.agora:UnPlaceFloor(arg1_75)
+function var0_0.UnPaveFloorLayer(arg0_76, arg1_76)
+	arg0_76.agora:UnPlaceFloor(arg1_76)
 end
 
-function var0_0.UnPaveTileLayer(arg0_76, arg1_76)
-	arg0_76.agora:UnPlaceTile(arg1_76)
+function var0_0.UnPaveTileLayer(arg0_77, arg1_77)
+	arg0_77.agora:UnPlaceTile(arg1_77)
 end
 
-function var0_0.AddListeners(arg0_77)
-	var0_0.super.AddListeners(arg0_77)
-	arg0_77:AddIslandListener(IslandAgoraAgency.AGORA_UPGRADE, arg0_77.OnAgoraUpdate)
-	arg0_77:AddIslandListener(IslandSignInAgency.GIFT_CNT_UPDATE, arg0_77.OnSignInGiftCntUpdate)
-	arg0_77:AddIslandListener(IslandSignInAgency.SIGN_CNT_UPDATE, arg0_77.OnSignCntUpdate)
-	arg0_77:AddIslandListener(IslandAgoraAgency.ADD_THEME, arg0_77.OnThemeAdded)
-	arg0_77:AddIslandListener(IslandAgoraAgency.DEL_THEME, arg0_77.OnThemeDeleted)
-	arg0_77:AddIslandListener(IslandAgoraAgency.PLACEMENT_UPDATE, arg0_77.OnPlacementUpdate)
-	arg0_77:AddIslandListener(IslandAgoraAgency.ADD_FURNITURE, arg0_77.OnFurnitureAdded)
+function var0_0.AddListeners(arg0_78)
+	var0_0.super.AddListeners(arg0_78)
+	arg0_78:AddIslandListener(IslandAgoraAgency.AGORA_UPGRADE, arg0_78.OnAgoraUpdate)
+	arg0_78:AddIslandListener(IslandSignInAgency.GIFT_CNT_UPDATE, arg0_78.OnSignInGiftCntUpdate)
+	arg0_78:AddIslandListener(IslandSignInAgency.SIGN_CNT_UPDATE, arg0_78.OnSignCntUpdate)
+	arg0_78:AddIslandListener(IslandAgoraAgency.ADD_THEME, arg0_78.OnThemeAdded)
+	arg0_78:AddIslandListener(IslandAgoraAgency.DEL_THEME, arg0_78.OnThemeDeleted)
+	arg0_78:AddIslandListener(IslandAgoraAgency.PLACEMENT_UPDATE, arg0_78.OnPlacementUpdate)
+	arg0_78:AddIslandListener(IslandAgoraAgency.ADD_FURNITURE, arg0_78.OnFurnitureAdded)
 end
 
-function var0_0.RemoveListeners(arg0_78)
-	var0_0.super.RemoveListeners(arg0_78)
-	arg0_78:RemoveIslandListener(IslandAgoraAgency.AGORA_UPGRADE, arg0_78.OnAgoraUpdate)
-	arg0_78:RemoveIslandListener(IslandSignInAgency.GIFT_CNT_UPDATE, arg0_78.OnSignInGiftCntUpdate)
-	arg0_78:RemoveIslandListener(IslandSignInAgency.SIGN_CNT_UPDATE, arg0_78.OnSignCntUpdate)
-	arg0_78:RemoveIslandListener(IslandAgoraAgency.ADD_THEME, arg0_78.OnThemeAdded)
-	arg0_78:RemoveIslandListener(IslandAgoraAgency.DEL_THEME, arg0_78.OnThemeDeleted)
-	arg0_78:RemoveIslandListener(IslandAgoraAgency.PLACEMENT_UPDATE, arg0_78.OnPlacementUpdate)
-	arg0_78:RemoveIslandListener(IslandAgoraAgency.ADD_FURNITURE, arg0_78.OnFurnitureAdded)
+function var0_0.RemoveListeners(arg0_79)
+	var0_0.super.RemoveListeners(arg0_79)
+	arg0_79:RemoveIslandListener(IslandAgoraAgency.AGORA_UPGRADE, arg0_79.OnAgoraUpdate)
+	arg0_79:RemoveIslandListener(IslandSignInAgency.GIFT_CNT_UPDATE, arg0_79.OnSignInGiftCntUpdate)
+	arg0_79:RemoveIslandListener(IslandSignInAgency.SIGN_CNT_UPDATE, arg0_79.OnSignCntUpdate)
+	arg0_79:RemoveIslandListener(IslandAgoraAgency.ADD_THEME, arg0_79.OnThemeAdded)
+	arg0_79:RemoveIslandListener(IslandAgoraAgency.DEL_THEME, arg0_79.OnThemeDeleted)
+	arg0_79:RemoveIslandListener(IslandAgoraAgency.PLACEMENT_UPDATE, arg0_79.OnPlacementUpdate)
+	arg0_79:RemoveIslandListener(IslandAgoraAgency.ADD_FURNITURE, arg0_79.OnFurnitureAdded)
 end
 
-function var0_0.ClearNew(arg0_79, arg1_79)
-	local var0_79 = arg0_79.agora:GetPlaceableItem(arg1_79)
+function var0_0.ClearNew(arg0_80, arg1_80)
+	local var0_80 = arg0_80.agora:GetPlaceableItem(arg1_80)
 
-	if not var0_79 then
+	if not var0_80 then
 		return
 	end
 
-	var0_79:ClearNew()
-	arg0_79:GetIsland():GetAgoraAgency():ClearNew(var0_79.configId)
+	var0_80:ClearNew()
+	arg0_80:GetIsland():GetAgoraAgency():ClearNew(var0_80.configId)
 end
 
-function var0_0.ClearAllNew(arg0_80)
-	local var0_80 = arg0_80.agora:GetPlaceableList()
+function var0_0.ClearAllNew(arg0_81)
+	local var0_81 = arg0_81.agora:GetPlaceableList()
 
-	for iter0_80, iter1_80 in pairs(var0_80) do
-		iter1_80:ClearNew()
+	for iter0_81, iter1_81 in pairs(var0_81) do
+		iter1_81:ClearNew()
 	end
 
-	arg0_80:GetIsland():GetAgoraAgency():ClearAllNew()
+	arg0_81:GetIsland():GetAgoraAgency():ClearAllNew()
 end
 
-function var0_0.OnFurnitureAdded(arg0_81, arg1_81)
-	for iter0_81 = 1, arg1_81.count do
-		local var0_81 = AgoraCalc.GetUniqueId(arg1_81.id, iter0_81)
-		local var1_81 = AgoraFurniture.New({
-			id = var0_81,
-			configId = arg1_81.id,
-			time = arg1_81.time,
-			isNew = arg1_81.isNew
+function var0_0.OnFurnitureAdded(arg0_82, arg1_82)
+	for iter0_82 = 1, arg1_82.count do
+		local var0_82 = AgoraCalc.GetUniqueId(arg1_82.id, iter0_82)
+		local var1_82 = AgoraFurniture.New({
+			id = var0_82,
+			configId = arg1_82.id,
+			time = arg1_82.time,
+			isNew = arg1_82.isNew
 		})
 
-		arg0_81.agora:AddPlaceable(var1_81)
+		arg0_82.agora:AddPlaceable(var1_82)
 	end
 end
 
-function var0_0.OnPlacementUpdate(arg0_82, arg1_82)
-	arg0_82.islandSyncMgr:CancelAgoraInteract()
-	arg0_82.islandSyncMgr:ClearAgoraInteractData()
+function var0_0.OnPlacementUpdate(arg0_83, arg1_83)
+	arg0_83.islandSyncMgr:CancelAgoraInteract()
+	arg0_83.islandSyncMgr:ClearAgoraInteractData()
 
-	local var0_82 = AgoraTheme.New(arg1_82, arg0_82.agora.placeableList)
-	local var1_82, var2_82, var3_82 = var0_82:GetSeparatedPlacedData()
-	local var4_82 = arg0_82.agora:GetFoundation()
-
-	if var2_82 and var4_82.id ~= var2_82.id then
-		arg0_82:ReplaceFoundation(var2_82.id)
-	end
-
-	local var5_82 = arg0_82.agora:GetBuilding()
-
-	if var3_82 and var5_82.id ~= var3_82.id then
-		arg0_82:ReplaceBuilding(var3_82.id)
-	end
-
-	local var6_82 = arg0_82.agora:GetPlacedListWithoutFoundationAndBuilding()
-	local var7_82, var8_82, var9_82 = AgoraCalc.GetChangePlacementList(var1_82, var6_82)
-
-	for iter0_82, iter1_82 in ipairs(var8_82) do
-		arg0_82.agora:UnPlaceItem(iter1_82.id)
-	end
-
-	for iter2_82, iter3_82 in ipairs(var9_82) do
-		arg0_82.agora:PlaceItem(iter3_82.id, iter3_82:GetPosition(), iter3_82:GetRotation())
-	end
-
-	for iter4_82, iter5_82 in ipairs(var7_82) do
-		arg0_82.agora:UnPlaceItem(iter5_82.id)
-		arg0_82.agora:PlaceItem(iter5_82.id, iter5_82:GetPosition(), iter5_82:GetRotation())
-	end
-
-	arg0_82:ClearLayers()
-
-	local var10_82 = var0_82:GetFloorData()
-	local var11_82 = var0_82:GetTileData()
-
-	arg0_82:PaveLayers(var10_82, var11_82)
-
-	arg0_82.reloading = true
-	arg0_82.nextReloadingEndTime = pg.TimeMgr.GetInstance():GetServerTime() + arg0_82.baseReloadingCd
-
-	arg0_82:NotifiyAgora(ISLAND_AGORA_EVT.RELOADING)
-
-	if (#var9_82 > 0 or #var7_82 > 0) and not arg0_82:IsSelfIsland() then
-		arg0_82:ResetPlayerPosition()
-	end
-
-	arg0_82.islandSyncMgr:InitAgora(arg0_82.agora:GetAllVirtualInteractUnitData())
-end
-
-function var0_0.OnThemeAdded(arg0_83, arg1_83)
 	local var0_83 = AgoraTheme.New(arg1_83, arg0_83.agora.placeableList)
+	local var1_83, var2_83, var3_83 = var0_83:GetSeparatedPlacedData()
+	local var4_83 = arg0_83.agora:GetFoundation()
 
-	arg0_83.agora:AddTheme(var0_83)
+	if var2_83 and var4_83.id ~= var2_83.id then
+		arg0_83:ReplaceFoundation(var2_83.id)
+	end
+
+	local var5_83 = arg0_83.agora:GetBuilding()
+
+	if var3_83 and var5_83.id ~= var3_83.id then
+		arg0_83:ReplaceBuilding(var3_83.id)
+	end
+
+	local var6_83 = arg0_83.agora:GetPlacedListWithoutFoundationAndBuilding()
+	local var7_83, var8_83, var9_83 = AgoraCalc.GetChangePlacementList(var1_83, var6_83)
+
+	for iter0_83, iter1_83 in ipairs(var8_83) do
+		arg0_83.agora:UnPlaceItem(iter1_83.id)
+	end
+
+	for iter2_83, iter3_83 in ipairs(var9_83) do
+		arg0_83.agora:PlaceItem(iter3_83.id, iter3_83:GetPosition(), iter3_83:GetRotation())
+	end
+
+	for iter4_83, iter5_83 in ipairs(var7_83) do
+		arg0_83.agora:UnPlaceItem(iter5_83.id)
+		arg0_83.agora:PlaceItem(iter5_83.id, iter5_83:GetPosition(), iter5_83:GetRotation())
+	end
+
+	arg0_83:ClearLayers()
+
+	local var10_83 = var0_83:GetFloorData()
+	local var11_83 = var0_83:GetTileData()
+
+	arg0_83:PaveLayers(var10_83, var11_83)
+
+	arg0_83.reloading = true
+	arg0_83.nextReloadingEndTime = pg.TimeMgr.GetInstance():GetServerTime() + arg0_83.baseReloadingCd
+
+	arg0_83:NotifiyAgora(ISLAND_AGORA_EVT.RELOADING)
+
+	if (#var9_83 > 0 or #var7_83 > 0) and not arg0_83:IsSelfIsland() then
+		arg0_83:ResetPlayerPosition()
+	end
+
+	arg0_83.islandSyncMgr:InitAgora(arg0_83.agora:GetAllVirtualInteractUnitData())
 end
 
-function var0_0.OnThemeDeleted(arg0_84, arg1_84)
-	arg0_84.agora:DeleteTheme(arg1_84)
+function var0_0.OnThemeAdded(arg0_84, arg1_84)
+	local var0_84 = AgoraTheme.New(arg1_84, arg0_84.agora.placeableList)
+
+	arg0_84.agora:AddTheme(var0_84)
 end
 
-function var0_0.OnSignCntUpdate(arg0_85, arg1_85)
-	local var0_85 = arg0_85:GetIsland():GetSignInAgency()
-
-	arg0_85:NotifiyCore(ISLAND_EVT.REFRESH_INTERACTION)
-	arg0_85:NotifiyAgora(ISLAND_AGORA_EVT.SIGN_IN_CNT_UPDATE, arg1_85)
+function var0_0.OnThemeDeleted(arg0_85, arg1_85)
+	arg0_85.agora:DeleteTheme(arg1_85)
 end
 
-function var0_0.OnSignInGiftCntUpdate(arg0_86, arg1_86)
-	arg0_86.giftAllocator:Flush()
+function var0_0.OnSignCntUpdate(arg0_86, arg1_86)
+	local var0_86 = arg0_86:GetIsland():GetSignInAgency()
+
+	arg0_86:NotifiyCore(ISLAND_EVT.REFRESH_INTERACTION)
+	arg0_86:NotifiyAgora(ISLAND_AGORA_EVT.SIGN_IN_CNT_UPDATE, arg1_86)
 end
 
-function var0_0.OnAgoraUpdate(arg0_87, arg1_87, arg2_87)
-	local var0_87 = IslandConst.AGORA_LEVEL_2_SIZE[arg1_87]
-
-	arg0_87.agora:UpdateSize(Vector2(var0_87, var0_87))
-	arg0_87.agora:UpdateCapacity(arg2_87)
+function var0_0.OnSignInGiftCntUpdate(arg0_87, arg1_87)
+	arg0_87.giftAllocator:Flush()
 end
 
-function var0_0.CreateAgora(arg0_88, arg1_88)
-	local var0_88 = arg1_88:GetAgoraAgency()
-	local var1_88 = {}
+function var0_0.OnAgoraUpdate(arg0_88, arg1_88, arg2_88)
+	local var0_88 = IslandConst.AGORA_LEVEL_2_SIZE[arg1_88]
 
-	for iter0_88, iter1_88 in ipairs(var0_88:GetFurnitures()) do
-		for iter2_88 = 1, iter1_88.count do
-			local var2_88 = AgoraCalc.GetUniqueId(iter1_88.id, iter2_88)
-			local var3_88 = AgoraFurniture.New({
-				id = var2_88,
-				configId = iter1_88.id,
-				time = iter1_88.time,
-				isNew = iter1_88.isNew
+	arg0_88.agora:UpdateSize(Vector2(var0_88, var0_88))
+	arg0_88.agora:UpdateCapacity(arg2_88)
+end
+
+function var0_0.CreateAgora(arg0_89, arg1_89)
+	local var0_89 = arg1_89:GetAgoraAgency()
+	local var1_89 = {}
+
+	for iter0_89, iter1_89 in ipairs(var0_89:GetFurnitures()) do
+		for iter2_89 = 1, iter1_89.count do
+			local var2_89 = AgoraCalc.GetUniqueId(iter1_89.id, iter2_89)
+			local var3_89 = AgoraFurniture.New({
+				id = var2_89,
+				configId = iter1_89.id,
+				time = iter1_89.time,
+				isNew = iter1_89.isNew
 			})
 
-			var1_88[var3_88.id] = var3_88
+			var1_89[var3_89.id] = var3_89
 		end
 	end
 
-	local var4_88 = AgoraTheme.New(var0_88:GetPlacedData(), var1_88)
-	local var5_88, var6_88, var7_88 = var4_88:GetSeparatedPlacedData()
-	local var8_88 = var4_88:GetFloorData()
-	local var9_88 = var4_88:GetTileData()
-	local var10_88 = {}
+	local var4_89 = AgoraTheme.New(var0_89:GetPlacedData(), var1_89)
+	local var5_89, var6_89, var7_89 = var4_89:GetSeparatedPlacedData()
+	local var8_89 = var4_89:GetFloorData()
+	local var9_89 = var4_89:GetTileData()
+	local var10_89 = {}
 
-	for iter3_88, iter4_88 in ipairs(var0_88:GetThemes()) do
-		local var11_88 = AgoraTheme.New(iter4_88, var1_88)
+	for iter3_89, iter4_89 in ipairs(var0_89:GetThemes()) do
+		local var11_89 = AgoraTheme.New(iter4_89, var1_89)
 
-		table.insert(var10_88, var11_88)
+		table.insert(var10_89, var11_89)
 	end
 
-	local var12_88 = {}
+	local var12_89 = {}
 
-	for iter5_88, iter6_88 in ipairs(var0_88:GetSystemThemes()) do
-		local var13_88 = AgoraSystemTheme.New(iter6_88)
+	for iter5_89, iter6_89 in ipairs(var0_89:GetSystemThemes()) do
+		local var13_89 = AgoraSystemTheme.New(iter6_89)
 
-		table.insert(var12_88, var13_88)
+		table.insert(var12_89, var13_89)
 	end
 
-	local var14_88 = var0_88:GetLevel()
-	local var15_88 = math.clamp(var14_88, 1, #IslandConst.AGORA_LEVEL_2_SIZE)
-	local var16_88 = IslandConst.AGORA_LEVEL_2_SIZE[var15_88]
-	local var17_88 = var0_88:GetCapacity()
+	local var14_89 = var0_89:GetLevel()
+	local var15_89 = math.clamp(var14_89, 1, #IslandConst.AGORA_LEVEL_2_SIZE)
+	local var16_89 = IslandConst.AGORA_LEVEL_2_SIZE[var15_89]
+	local var17_89 = var0_89:GetCapacity()
 
 	return Agora.New({
-		size = Vector2(var16_88, var16_88),
-		placeableList = var1_88,
-		capacity = var17_88,
-		themes = var10_88,
-		systemThemes = var12_88
+		size = Vector2(var16_89, var16_89),
+		placeableList = var1_89,
+		capacity = var17_89,
+		themes = var10_89,
+		systemThemes = var12_89
 	}), {
-		placedlist = var5_88,
-		foundation = var6_88,
-		building = var7_88,
-		placedFloor = var8_88,
-		placedTile = var9_88
+		placedlist = var5_89,
+		foundation = var6_89,
+		building = var7_89,
+		placedFloor = var8_89,
+		placedTile = var9_89
 	}
 end
 

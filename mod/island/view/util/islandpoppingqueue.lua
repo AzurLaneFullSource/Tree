@@ -69,7 +69,9 @@ function var0_0.ProcessNextOne(arg0_6)
 		table.remove(arg0_6.schedule, 1)
 
 		if #arg0_6.schedule > 0 then
-			arg0_6:ProcessNextOne()
+			onNextTick(function()
+				arg0_6:ProcessNextOne()
+			end)
 		end
 	end
 
@@ -88,150 +90,150 @@ function var0_0.ProcessNextOne(arg0_6)
 	end
 end
 
-function var0_0.ExecuteStory(arg0_8, arg1_8, arg2_8, arg3_8)
-	arg0_8:GetSceneView():TryDisVisible()
-	arg0_8:GetSceneView():GetSubView(IslandStoryMgr):ExecuteAction("Play", arg2_8, arg3_8, function()
-		arg0_8:GetSceneView():TryVisible()
-		arg1_8()
+function var0_0.ExecuteStory(arg0_9, arg1_9, arg2_9, arg3_9)
+	arg0_9:GetSceneView():TryDisVisible()
+	arg0_9:GetSceneView():GetSubView(IslandStoryMgr):ExecuteAction("Play", arg2_9, arg3_9, function()
+		arg0_9:GetSceneView():TryVisible()
+		arg1_9()
 	end)
 end
 
-function var0_0.ExecuteMsgbox(arg0_10, arg1_10, arg2_10)
-	arg0_10:GetSceneView():GetSubView(IslandMsgBox):ExecuteAction("Show", arg2_10, arg1_10)
+function var0_0.ExecuteMsgbox(arg0_11, arg1_11, arg2_11)
+	arg0_11:GetSceneView():GetSubView(IslandMsgBox):ExecuteAction("Show", arg2_11, arg1_11)
 end
 
-function var0_0.ExecutePerformer(arg0_11, arg1_11, arg2_11)
-	local var0_11 = pg.NewStoryMgr.GetInstance():GetScript(arg2_11)
+function var0_0.ExecutePerformer(arg0_12, arg1_12, arg2_12)
+	local var0_12 = pg.NewStoryMgr.GetInstance():GetScript(arg2_12)
 
-	if not var0_11 or #var0_11 <= 0 then
-		arg1_11()
+	if not var0_12 or #var0_12 <= 0 then
+		arg1_12()
 
 		return
 	end
 
-	for iter0_11, iter1_11 in ipairs(var0_11) do
-		if iter1_11.type == IslandPerformancePerformer.TYPE_STORY then
-			table.insert(arg0_11.ignoringStoryList, iter1_11.name)
+	for iter0_12, iter1_12 in ipairs(var0_12) do
+		if iter1_12.type == IslandPerformancePerformer.TYPE_STORY then
+			table.insert(arg0_12.ignoringStoryList, iter1_12.name)
 		end
 	end
 
-	local var1_11 = IslandPerformancePerformer.New(arg0_11:GetSceneView().event)
+	local var1_12 = IslandPerformancePerformer.New(arg0_12:GetSceneView().event)
 
-	var1_11:Play(arg2_11, var0_11, function()
-		var1_11:Dispose()
-		table.removebyvalue(arg0_11.playerList, var1_11)
-		arg1_11()
+	var1_12:Play(arg2_12, var0_12, function()
+		var1_12:Dispose()
+		table.removebyvalue(arg0_12.playerList, var1_12)
+		arg1_12()
 	end)
-	table.insert(arg0_11.playerList, var1_11)
+	table.insert(arg0_12.playerList, var1_12)
 end
 
-function var0_0.ExecuteAwardDisplay(arg0_13, arg1_13, arg2_13, arg3_13)
+function var0_0.ExecuteAwardDisplay(arg0_14, arg1_14, arg2_14, arg3_14)
 	seriesAsync({
-		function(arg0_14)
-			if not arg2_13.drops or #arg2_13.drops <= 0 then
-				arg0_14()
+		function(arg0_15)
+			if not arg2_14.drops or #arg2_14.drops <= 0 then
+				arg0_15()
 
 				return
 			end
 
-			arg0_13:GetSceneView():emit(BaseUI.ON_ACHIEVE, arg2_13.drops, arg0_14)
-		end,
-		function(arg0_15)
-			onNextTick(arg0_15)
+			arg0_14:GetSceneView():emit(BaseUI.ON_ACHIEVE, arg2_14.drops, arg0_15)
 		end,
 		function(arg0_16)
-			if not arg2_13.awards or #arg2_13.awards <= 0 then
-				arg0_16()
-
-				return
-			end
-
-			arg0_13:GetSceneView():DisplayAward({
-				type = arg3_13,
-				title = i18n("island_get_item_tip"),
-				awards = arg2_13.awards,
-				callback = arg0_16
-			})
+			onNextTick(arg0_16)
 		end,
 		function(arg0_17)
-			onNextTick(arg0_17)
+			if not arg2_14.awards or #arg2_14.awards <= 0 then
+				arg0_17()
+
+				return
+			end
+
+			arg0_14:GetSceneView():DisplayAward({
+				type = arg3_14,
+				title = i18n("island_get_item_tip"),
+				awards = arg2_14.awards,
+				callback = arg0_17
+			})
 		end,
 		function(arg0_18)
-			if not arg2_13.exp or arg2_13.exp <= 0 then
-				arg0_18()
-
-				return
-			end
-
-			arg0_13:GetSceneView():ShowExpAdd(arg2_13.exp, arg0_18)
+			onNextTick(arg0_18)
 		end,
 		function(arg0_19)
-			onNextTick(arg0_19)
-		end,
-		function(arg0_20)
-			arg0_13:GetSceneView():DisplaySystemUnlock(arg2_13.abilitys, arg0_20)
-		end,
-		function(arg0_21)
-			onNextTick(arg0_21)
-		end,
-		function(arg0_22)
-			pg.m02:sendNotification(GAME.ISLAND_UPGRADE, {
-				callback = arg0_22
-			})
-		end,
-		function(arg0_23)
-			onNextTick(arg0_23)
-		end,
-		function(arg0_24)
-			if not arg2_13.overflowAwards or #arg2_13.overflowAwards == 0 then
-				arg0_24()
+			if not arg2_14.exp or arg2_14.exp <= 0 then
+				arg0_19()
 
 				return
 			end
 
-			arg0_13:GetSceneView():DisplayAward({
-				titleColor = "#ab4734",
-				title = i18n("island_add_temp_bag"),
-				awards = arg2_13.overflowAwards,
-				callback = arg0_24
+			arg0_14:GetSceneView():ShowExpAdd(arg2_14.exp, arg0_19)
+		end,
+		function(arg0_20)
+			onNextTick(arg0_20)
+		end,
+		function(arg0_21)
+			arg0_14:GetSceneView():DisplaySystemUnlock(arg2_14.abilitys, arg0_21)
+		end,
+		function(arg0_22)
+			onNextTick(arg0_22)
+		end,
+		function(arg0_23)
+			pg.m02:sendNotification(GAME.ISLAND_UPGRADE, {
+				callback = arg0_23
 			})
 		end,
+		function(arg0_24)
+			onNextTick(arg0_24)
+		end,
 		function(arg0_25)
-			if not arg2_13.overflowAwards or #arg2_13.overflowAwards == 0 then
+			if not arg2_14.overflowAwards or #arg2_14.overflowAwards == 0 then
 				arg0_25()
 
 				return
 			end
 
-			arg0_13:GetSceneView():OpenPage(IslandInventoryPage)
-			arg0_25()
+			arg0_14:GetSceneView():DisplayAward({
+				titleColor = "#ab4734",
+				title = i18n("island_add_temp_bag"),
+				awards = arg2_14.overflowAwards,
+				callback = arg0_25
+			})
+		end,
+		function(arg0_26)
+			if not arg2_14.overflowAwards or #arg2_14.overflowAwards == 0 then
+				arg0_26()
+
+				return
+			end
+
+			arg0_14:GetSceneView():OpenPage(IslandInventoryPage)
+			arg0_26()
 		end
-	}, arg1_13)
+	}, arg1_14)
 end
 
-function var0_0.ExecuteTaskAcceptWin(arg0_26, arg1_26, arg2_26)
-	arg0_26:GetSceneView():emitCore(ISLAND_EVT.DISABLE_INPUT)
+function var0_0.ExecuteTaskAcceptWin(arg0_27, arg1_27, arg2_27)
+	arg0_27:GetSceneView():emitCore(ISLAND_EVT.DISABLE_INPUT)
 
-	local function var0_26()
-		arg0_26:GetSceneView():emitCore(ISLAND_EVT.ENABLE_INPUT)
-		arg1_26()
+	local function var0_27()
+		arg0_27:GetSceneView():emitCore(ISLAND_EVT.ENABLE_INPUT)
+		arg1_27()
 	end
 
-	arg0_26:GetSceneView():GetSubView(Island3dTaskAcceptPage):ExecuteAction("Show", arg2_26, var0_26)
+	arg0_27:GetSceneView():GetSubView(Island3dTaskAcceptPage):ExecuteAction("Show", arg2_27, var0_27)
 end
 
-function var0_0.AnyPlayerIsRunning(arg0_28)
-	return #arg0_28.playerList > 0
+function var0_0.AnyPlayerIsRunning(arg0_29)
+	return #arg0_29.playerList > 0
 end
 
-function var0_0.Dispose(arg0_29)
-	arg0_29.schedule = nil
+function var0_0.Dispose(arg0_30)
+	arg0_30.schedule = nil
 
-	for iter0_29, iter1_29 in ipairs(arg0_29.playerList or {}) do
-		iter1_29:Dispose()
+	for iter0_30, iter1_30 in ipairs(arg0_30.playerList or {}) do
+		iter1_30:Dispose()
 	end
 
-	arg0_29.playerList = nil
+	arg0_30.playerList = nil
 end
 
 return var0_0

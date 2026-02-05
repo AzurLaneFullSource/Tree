@@ -72,4 +72,27 @@ function var0_0.GetCurrentSeason()
 	return pg.island_set.season_now.key_value_int
 end
 
+var0_0.seasonResetData = nil
+
+function var0_0.AddResetData(arg0_13)
+	var0_0.seasonResetData = {
+		awards = arg0_13.awards,
+		pt = arg0_13.pt,
+		seasonId = arg0_13.seasonId,
+		rank = arg0_13.rank
+	}
+end
+
+function var0_0.CheckReset()
+	if var0_0.seasonResetData then
+		local var0_14 = Clone(var0_0.seasonResetData)
+
+		var0_0.seasonResetData = nil
+
+		return true, var0_14
+	else
+		return false, nil
+	end
+end
+
 return var0_0

@@ -23,6 +23,13 @@ function var0_0.OnAttach(arg0_1, arg1_1)
 	end)
 
 	arg0_1.objTfList = {}
+
+	if arg0_1.behaviourTreeOwner then
+		local var0_1, var1_1 = arg0_1:GetDataVO():GetPersonality()
+
+		LuaHelper.NodeCanvasSetIntVariableValue(arg0_1.behaviourTreeOwner, "personality", var0_1)
+		LuaHelper.NodeCanvasSetIntVariableValue(arg0_1.behaviourTreeOwner, "proactive", var1_1)
+	end
 end
 
 function var0_0.StateEnterHandle(arg0_6, arg1_6, arg2_6)

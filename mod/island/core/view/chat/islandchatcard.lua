@@ -44,12 +44,16 @@ function var0_0.Update(arg0_2, arg1_2)
 	end
 end
 
-function var0_0.Dispose(arg0_3)
-	arg0_3.selfBubble:dispose()
-	arg0_3.otherBubble:dispose()
+function var0_0.IsTradeLink(arg0_3)
+	return arg0_3.otherBubble.isTradeLink or arg0_3.selfBubble.isTradeLink
+end
 
-	arg0_3.selfBubble = nil
-	arg0_3.otherBubble = nil
+function var0_0.Dispose(arg0_4)
+	arg0_4.selfBubble:dispose()
+	arg0_4.otherBubble:dispose()
+
+	arg0_4.selfBubble = nil
+	arg0_4.otherBubble = nil
 end
 
 return var0_0

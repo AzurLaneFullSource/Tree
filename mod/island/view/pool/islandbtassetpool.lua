@@ -10,7 +10,7 @@ end
 
 function var0_0.DequeueAsyn(arg0_3, arg1_3)
 	assert(arg0_3:Isloaded(), "call load first")
-	arg1_3(arg0_3.asset)
+	arg1_3(Object.Instantiate(arg0_3.asset))
 end
 
 function var0_0.Enqueue(arg0_4, arg1_4)

@@ -654,7 +654,6 @@ function var0_0._listNotificationInterests(arg0_95)
 		GAME.ISLAND_REMOVE_EXPIRED_TICKET_DONE,
 		GAME.ISLAND_USE_TICKET_DONE,
 		GAME.ISLAND_EXCHANGE_ITEM_DONE,
-		GAME.ISLAND_RESET_SEASON_DONE,
 		GAME.ISLAND_GET_SEASON_PT_AWARD_DONE,
 		GAME.ISLAND_CONVERT_SEASON_PT_DONE,
 		GAME.ISLAND_GET_SEASON_RANK_DONE,
@@ -693,6 +692,9 @@ function var0_0._listNotificationInterests(arg0_95)
 		GAME.ISLAND_EXCHANGE_SHIP_ORDER_DONE,
 		GAME.ISLAND_RESET_SHIP_ORDER_DONE,
 		GAME.ACTIVITY_DRAW_AWARD_OPERATION_DONE,
+		NotificationProxy.FRIEND_REQUEST_REMOVED,
+		NotificationProxy.FRIEND_REQUEST_ADDED,
+		PlayerProxy.UPDATED,
 		GAME.ISLAND_SHOP_OP_DONE,
 		GAME.ISLAND_DROPMAIN_AWARD,
 		GAME.ISLAND_CHANGE_COMMANDER_DRESS_DONE,
@@ -794,23 +796,6 @@ function var0_0._handleNotification(arg0_96, arg1_96)
 		end)
 	elseif var0_96 == GAME.ISLAND_SET_TRACE_TASK_DONE then
 		arg0_96.viewComponent:OnUpdateTrackTask(var1_96.traceId, var1_96.type)
-	elseif var0_96 == GAME.ISLAND_RESET_SEASON_DONE then
-		seriesAsync({
-			function(arg0_104)
-				arg0_96.viewComponent:ShowMsgbox({
-					hideNo = true,
-					type = IslandMsgBox.TYPE_COMMON,
-					content = i18n("island_season_reset"),
-					onHide = arg0_104
-				})
-			end
-		}, function()
-			arg0_96.viewComponent:ShowMsgbox({
-				type = IslandMsgBox.TYPE_SEASON_RESET,
-				body = var1_96,
-				onHide = var1_96.callback
-			})
-		end)
 	elseif var0_96 == GAME.ISLAND_REMOVE_EXPIRED_TICKET_DONE then
 		arg0_96.viewComponent:ShowMsgbox({
 			hideNo = true,
@@ -823,15 +808,19 @@ function var0_0._handleNotification(arg0_96, arg1_96)
 		})
 	elseif var0_96 == GAME.ISLAND_CLOSE_RESTAURANT_DONE then
 		seriesAsync({
-			function(arg0_106)
+			function(arg0_104)
 				if var1_96.isUpgrade then
-					arg0_96.viewComponent:OpenPage(IslandRestaurantUpgradePage, var1_96, arg0_106)
+					arg0_96.viewComponent:OpenPage(IslandRestaurantUpgradePage, var1_96, arg0_104)
 				else
-					arg0_106()
+					arg0_104()
 				end
 			end,
-			function(arg0_107)
-				arg0_96.viewComponent:OpenPage(IslandRestaurantSettlePage, var1_96, arg0_107)
+			function(arg0_105)
+				if var1_96.isSpEvent then
+					arg0_96.viewComponent:OpenPage(IslandRestaurantSettlePage4Event, var1_96, arg0_105)
+				else
+					arg0_96.viewComponent:OpenPage(IslandRestaurantSettlePage, var1_96, arg0_105)
+				end
 			end
 		}, function()
 			arg0_96.viewComponent:HandleAwardDisplay(var1_96.dropData)
@@ -854,80 +843,80 @@ function var0_0._handleNotification(arg0_96, arg1_96)
 	end
 end
 
-function var0_0.HandleTaskAccepted(arg0_110, arg1_110)
-	local var0_110 = {}
-	local var1_110 = getProxy(IslandProxy):GetIsland():GetTaskAgency()
+function var0_0.HandleTaskAccepted(arg0_108, arg1_108)
+	local var0_108 = {}
+	local var1_108 = getProxy(IslandProxy):GetIsland():GetTaskAgency()
 
-	for iter0_110, iter1_110 in ipairs(arg1_110.taskIds) do
-		local var2_110 = pg.island_task[iter1_110]
+	for iter0_108, iter1_108 in ipairs(arg1_108.taskIds) do
+		local var2_108 = pg.island_task[iter1_108]
 
-		if var2_110.rec_perform ~= "" then
-			table.insert(var0_110, function(arg0_111)
-				arg0_110.viewComponent:PlayStory({
-					name = var2_110.rec_perform,
-					callback = arg0_111
+		if var2_108.rec_perform ~= "" then
+			table.insert(var0_108, function(arg0_109)
+				arg0_108.viewComponent:PlayStory({
+					name = var2_108.rec_perform,
+					callback = arg0_109
 				})
 			end)
 		end
 
-		if var2_110.trigger_tips == 1 then
-			table.insert(var0_110, function(arg0_112)
-				arg0_110.viewComponent:ShowTaskAcceptPage({
-					taskId = iter1_110,
-					callback = arg0_112
+		if var2_108.trigger_tips == 1 then
+			table.insert(var0_108, function(arg0_110)
+				arg0_108.viewComponent:ShowTaskAcceptPage({
+					taskId = iter1_108,
+					callback = arg0_110
 				})
 			end)
 		end
 
-		local var3_110 = var1_110:GetTask(iter1_110)
+		local var3_108 = var1_108:GetTask(iter1_108)
 
-		if var3_110:IsFinish() and var3_110:IsSubmitImmediately() then
-			table.insert(var0_110, function(arg0_113)
+		if var3_108:IsFinish() and var3_108:IsSubmitImmediately() then
+			table.insert(var0_108, function(arg0_111)
 				pg.m02:sendNotification(GAME.ISLAND_SUBMIT_TASK, {
-					taskId = iter1_110,
-					callback = arg0_113
+					taskId = iter1_108,
+					callback = arg0_111
 				})
 			end)
 		end
 	end
 
-	seriesAsync(var0_110, function()
-		existCall(arg1_110.callback)
+	seriesAsync(var0_108, function()
+		existCall(arg1_108.callback)
 	end)
 end
 
-function var0_0.HandleShipBreakOutAwardDisplay(arg0_115, arg1_115)
+function var0_0.HandleShipBreakOutAwardDisplay(arg0_113, arg1_113)
 	seriesAsync({
-		function(arg0_116)
-			arg0_115.viewComponent:DisplayAward({
+		function(arg0_114)
+			arg0_113.viewComponent:DisplayAward({
 				type = IslandAwardDisplayPage.TYPE_SHIP_BREAK,
-				newShip = arg1_115.newShip,
-				oldShip = arg1_115.oldShip,
-				callback = arg0_116
+				newShip = arg1_113.newShip,
+				oldShip = arg1_113.oldShip,
+				callback = arg0_114
 			})
 		end,
-		function(arg0_117)
-			onNextTick(arg0_117)
+		function(arg0_115)
+			onNextTick(arg0_115)
 		end,
-		function(arg0_118)
-			if not arg1_115.isUnlockSkill then
-				arg0_118()
+		function(arg0_116)
+			if not arg1_113.isUnlockSkill then
+				arg0_116()
 
 				return
 			end
 
-			arg0_115.viewComponent:DisplayAward({
+			arg0_113.viewComponent:DisplayAward({
 				type = IslandAwardDisplayPage.TYPE_SHIP_SKILL,
-				skill = arg1_115.newShip:GetSkill(),
-				ship = arg1_115.newShip,
-				callback = arg0_118
+				skill = arg1_113.newShip:GetSkill(),
+				ship = arg1_113.newShip,
+				callback = arg0_116
 			})
 		end
 	})
 end
 
-function var0_0.HandleShipDisplay(arg0_119, arg1_119)
-	arg0_119.viewComponent:OpenPage(IslandGetShipPage, arg1_119)
+function var0_0.HandleShipDisplay(arg0_117, arg1_117)
+	arg0_117.viewComponent:OpenPage(IslandGetShipPage, arg1_117)
 end
 
 return var0_0

@@ -12,6 +12,10 @@ function var0_0.OnExecute(arg0_1)
 end
 
 function var0_0.DoAction(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
+	if arg1_3 == "0" then
+		return
+	end
+
 	if not _IslandCore then
 		return
 	end

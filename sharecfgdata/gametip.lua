@@ -25660,7 +25660,7 @@ _G.pg.base.gametip.adventure_record_grade_title = {
 }
 
 _G.pg.base.gametip.adventure_award_end_tip = {
-	tip = "*Claimable until 4/17 23:59:59 (UTC-7)",
+	tip = "* Claimable until Feb. 18th",
 }
 
 _G.pg.base.gametip.guardian_select_title = {
@@ -31016,7 +31016,7 @@ _G.pg.base.gametip.island_season_charts_out = {
 }
 
 _G.pg.base.gametip.island_season_review_lv = {
-	tip = "岛屿开发等级",
+	tip = "Island Dev Lv",
 }
 
 _G.pg.base.gametip.island_season_review_charnum = {
@@ -31024,11 +31024,11 @@ _G.pg.base.gametip.island_season_review_charnum = {
 }
 
 _G.pg.base.gametip.island_season_review_projuctnum = {
-	tip = "Research Technology",
+	tip = "Research Slots",
 }
 
 _G.pg.base.gametip.island_season_review_titleone = {
-	tip = "开发季",
+	tip = "Season",
 }
 
 _G.pg.base.gametip.island_season_review_ptnum = {
@@ -31040,43 +31040,43 @@ _G.pg.base.gametip.island_season_review_ptrank = {
 }
 
 _G.pg.base.gametip.island_season_review_produce = {
-	tip = "Island Production",
+	tip = "Production Statistics",
 }
 
 _G.pg.base.gametip.island_season_review_ordernum = {
-	tip = "Resources Delivered",
+	tip = "Order Count",
 }
 
 _G.pg.base.gametip.island_season_review_formulanum = {
-	tip = "Dishes Produced",
+	tip = "Produced",
 }
 
 _G.pg.base.gametip.island_season_review_relax = {
-	tip = "Minigame",
+	tip = "Achievement",
 }
 
 _G.pg.base.gametip.island_season_review_fishnum = {
-	tip = "Fish Obtained",
+	tip = "Achieved",
 }
 
 _G.pg.base.gametip.island_season_review_gamenum = {
-	tip = "Events Done",
+	tip = "Collection Pt.",
 }
 
 _G.pg.base.gametip.island_season_review_achi = {
-	tip = "成就",
+	tip = "Achievement",
 }
 
 _G.pg.base.gametip.island_season_review_achinum = {
-	tip = "成就数量",
+	tip = "Achieved",
 }
 
 _G.pg.base.gametip.island_season_review_guidenum = {
-	tip = "总收集点",
+	tip = "Collection Pt.",
 }
 
 _G.pg.base.gametip.island_season_review_blank = {
-	tip = "未参与该开发季",
+	tip = "No participation in this season",
 }
 
 _G.pg.base.gametip.island_season_window_end = {
@@ -31096,7 +31096,7 @@ _G.pg.base.gametip.island_season_window_transformtip = {
 }
 
 _G.pg.base.gametip.island_season_window_pt = {
-	tip = "Obtained Through $1 Resource Conversion",
+	tip = "Obtained Through $1 \nResource Conversion",
 }
 
 _G.pg.base.gametip.island_season_window_ranking = {
@@ -31647,6 +31647,44 @@ _G.pg.base.gametip.island_help_character_info = {
 	},
 }
 
+_G.pg.base.gametip.island_help_fish = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/island_help_fish1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_help_fish2",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_help_fish3",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
+
 _G.pg.base.gametip.island_skin_original_desc = {
 	tip = "Default",
 }
@@ -31897,6 +31935,10 @@ _G.pg.base.gametip.island_log_exit = {
 
 _G.pg.base.gametip.island_log_gift = {
 	tip = "has invited you to collect resources.",
+}
+
+_G.pg.base.gametip.island_log_trade = {
+	tip = "has invited you to trade pearls",
 }
 
 _G.pg.base.gametip.island_item_type_res = {
@@ -32752,7 +32794,7 @@ _G.pg.base.gametip.island_queue_display = {
 }
 
 _G.pg.base.gametip.island_season_label = {
-	tip = "开发季$1",
+	tip = "Season $1",
 }
 
 _G.pg.base.gametip.island_first_season = {
@@ -33343,6 +33385,46 @@ _G.pg.base.gametip.island_spoperation_item_2509_4 = {
 	tip = "Matsutake",
 }
 
+_G.pg.base.gametip.island_spoperation_tip_2602_1 = {
+	tip = "During the event, Peary will issue requests for specialty products. Complete these orders to earn rewards such as Season Points.\nNote: Specialty products do not count toward your request completion limit, and they do not affect your rating level.",
+}
+
+_G.pg.base.gametip.island_spoperation_tip_2602_2 = {
+	tip = "During the event, unique items will appear within specific areas. Search the areas and gather the items quickly!",
+}
+
+_G.pg.base.gametip.island_spoperation_tip_2602_3 = {
+	tip = "During the event, you can produce corresponding specialty products at Newsprout Nursery, the Golden Koi Restaurant, the Polar Bear Teahouse, and the Base Factory.",
+}
+
+_G.pg.base.gametip.island_spoperation_btn_2602_1 = {
+	tip = "Gather Specialty Products",
+}
+
+_G.pg.base.gametip.island_spoperation_btn_2602_2 = {
+	tip = "Make Specialty Products",
+}
+
+_G.pg.base.gametip.island_spoperation_btn_2602_3 = {
+	tip = "Event Manager",
+}
+
+_G.pg.base.gametip.island_spoperation_item_2602_1 = {
+	tip = "Spring Bamboo Shoots",
+}
+
+_G.pg.base.gametip.island_spoperation_item_2602_2 = {
+	tip = "Shepherd's Purse",
+}
+
+_G.pg.base.gametip.island_spoperation_item_2602_3 = {
+	tip = "Winter Jasmine",
+}
+
+_G.pg.base.gametip.island_spoperation_item_2602_4 = {
+	tip = "Hyacinth",
+}
+
 _G.pg.base.gametip.island_follow_success = {
 	tip = "Followed",
 }
@@ -33583,6 +33665,10 @@ _G.pg.base.gametip.island_guide_help_item = {
 	tip = "Unlocking resource-related content on the island gives you Collection Points. Once you accumulate enough points, your Collection Level will increase, and you'll receive the corresponding Collection Rewards: \n\n1. <color=#39bfff>Unlocking</color> Resources: Unlocking a resource in the Collection gives you <color=#39bfff>20</color> Collection points. \n2. <color=#39bfff>Obtaining</color> Resources: Getting a specific amount of a resource gives you Collection points. You can view the reward stages and the required amounts of each resource in the Collection.",
 }
 
+_G.pg.base.gametip.island_guide_help_fish = {
+	tip = "Unlocking fishing content on the island gives you Collection Points. Once you accumulate enough points, your Collection Level will increase, and you'll receive the corresponding Collection Rewards:\n\n1. When you <color=#39bfff>unlock a fish in the Fish Collection</color>, you'll receive <color=#39bfff>10</color> Collection Points per fish.\n2. <color=#39bfff>Achieving the biggest catch</color>: When you catch a fish that meets the weight requirement for its species, you'll receive additional Collection Points. The weight requirement differs from species to species.",
+}
+
 _G.pg.base.gametip.island_guide_character_help = {
 	tip = "Info",
 }
@@ -33617,6 +33703,14 @@ _G.pg.base.gametip.island_guide_item_en = {
 
 _G.pg.base.gametip.island_guide_collectionpoint = {
 	tip = "Get Collection Points",
+}
+
+_G.pg.base.gametip.island_guide_fish_min_weight = {
+	tip = "Min. Amount",
+}
+
+_G.pg.base.gametip.island_guide_fish_max_weight = {
+	tip = "Max Amount",
 }
 
 _G.pg.base.gametip.island_get_collect_point_success = {
@@ -33749,6 +33843,30 @@ _G.pg.base.gametip.island_3Dshop_lack_res = {
 
 _G.pg.base.gametip.island_photo_fur_lock = {
 	tip = "You cannot use the camera right now.",
+}
+
+_G.pg.base.gametip.island_exchange_title = {
+	tip = "Crafting",
+}
+
+_G.pg.base.gametip.island_exchange_title_en = {
+	tip = "Crafting",
+}
+
+_G.pg.base.gametip.island_exchange_own_count = {
+	tip = "Amt. Owned",
+}
+
+_G.pg.base.gametip.island_exchange_btn_text = {
+	tip = "Crafting",
+}
+
+_G.pg.base.gametip.island_exchange_sure_tip = {
+	tip = "Craft this item?",
+}
+
+_G.pg.base.gametip.island_bag_max_tip = {
+	tip = "Your Island Warehouse is full",
 }
 
 _G.pg.base.gametip.graphi_api_switch_opengl = {
@@ -34466,8 +34584,28 @@ _G.pg.base.gametip.island_order_ship_btn_replace = {
 	tip = "Change Jobs",
 }
 
+_G.pg.base.gametip.island_fishing_tip_hooked = {
+	tip = "A fish is on the hook!",
+}
+
+_G.pg.base.gametip.island_fishing_tip_escape = {
+	tip = "The fish got away...",
+}
+
+_G.pg.base.gametip.island_fishing_exit = {
+	tip = "Do you want to stop fishing?",
+}
+
+_G.pg.base.gametip.island_fishing_lure_empty = {
+	tip = "Select rarity",
+}
+
 _G.pg.base.gametip.island_order_ship_exchange_tip_2 = {
 	tip = "Insufficient number of transport job attempts",
+}
+
+_G.pg.base.gametip.island_follower_exiting_tip = {
+	tip = "The character is leaving...",
 }
 
 _G.pg.base.gametip.island_order_ship_exchange_tip_1 = {
@@ -35015,5 +35153,225 @@ _G.pg.base.gametip.SardiniaSPCoreActivityUI_help = {
 			info = "- Overview -\nLight & Shadow Fashion Shoot! is available between <color=#92fc63>January 22nd and February 4th</color>!\nComplete missions, dispatch your fleets, and clear event stages to collect Camera Films and receive rewards!\n\n1. Tap the button in the bottom left corner to switch between Story Mode and Battle Mode.\n2. Battle Mode presents a series of stages which you can challenge with your fleets to earn Camera Films.\nBefore going into battle, you can decide whether you\\'d like to fight in a joint sortie or a solo sortie.\n· In a solo sortie, you will challenge each stage with only a single fleet. In this mode, all your shipgirls recover all their health at the start of the battle.\n· In a joint sortie, you will instead send out multiple fleets to battle on each stage. Completing the challenge in this mode will grant you additional rewards.\n3. You will receive rewards for collecting enough Camera Films, including <color=#92fc63>Elite DD Ugolino Vivaldi</color> and a <color=#92fc63>Prototype Triple 406mm Model 1940 Main Gun</color>.\n4. There are special missions available during the event. Complete these to receive additional rewards.\n5. There is a special story available in Story Mode. Read it in its entirety to receive a commemorative gear skin.\n",
 		},
 	},
+}
+
+_G.pg.base.gametip.island_post_event_label = {
+	tip = "Business Event",
+}
+
+_G.pg.base.gametip.island_post_event_close_label = {
+	tip = "Return",
+}
+
+_G.pg.base.gametip.island_post_event_open_label = {
+	tip = "Confirm",
+}
+
+_G.pg.base.gametip.island_post_event_addition_label = {
+	tip = "The following dishes receive a buff:",
+}
+
+_G.pg.base.gametip.island_addition_influence = {
+	tip = "Customer Appeal",
+}
+
+_G.pg.base.gametip.island_addition_sale = {
+	tip = "Price",
+}
+
+_G.pg.base.gametip.island_trade_title = {
+	tip = "Pearl Trade Spot",
+}
+
+_G.pg.base.gametip.island_trade_title2 = {
+	tip = "Pearl Trade Spot",
+}
+
+_G.pg.base.gametip.island_trade_sell_label = {
+	tip = "Pearl Trade",
+}
+
+_G.pg.base.gametip.island_trade_trend_label = {
+	tip = "Price Changes",
+}
+
+_G.pg.base.gametip.island_trade_purchase_label = {
+	tip = "Buy Pearls",
+}
+
+_G.pg.base.gametip.island_trade_rank_label = {
+	tip = "Friend Rankings",
+}
+
+_G.pg.base.gametip.island_trade_purchase_sub_label = {
+	tip = "Buy",
+}
+
+_G.pg.base.gametip.island_trade_sell_sub_label = {
+	tip = "Sell",
+}
+
+_G.pg.base.gametip.island_trade_rank_num_label = {
+	tip = "Development Rank",
+}
+
+_G.pg.base.gametip.island_trade_rank_info_label = {
+	tip = "Island Info",
+}
+
+_G.pg.base.gametip.island_trade_rank_price_label = {
+	tip = "Current Price",
+}
+
+_G.pg.base.gametip.island_trade_rank_level_label = {
+	tip = "Island Lv.",
+}
+
+_G.pg.base.gametip.island_trade_invite_label = {
+	tip = "Invite Player",
+}
+
+_G.pg.base.gametip.island_trade_tip_label = {
+	tip = "The selling price is updated at 03:00 every day",
+}
+
+_G.pg.base.gametip.island_trade_tip_label2 = {
+	tip = "The purchase price is updated at 03:00 every day",
+}
+
+_G.pg.base.gametip.island_trade_limit_label = {
+	tip = "$1 purchase chance(s) left this week",
+}
+
+_G.pg.base.gametip.island_trade_send_msg_label = {
+	tip = "<material=underline c=#006400 ><color=#006400>Today's Price: $2</color></material>",
+}
+
+_G.pg.base.gametip.island_trade_send_msg_match_label = {
+	tip = "Mystery Trader",
+}
+
+_G.pg.base.gametip.island_trade_sell_tip_label = {
+	tip = "$1 sell chance(s) left today on this island",
+}
+
+_G.pg.base.gametip.island_trade_purchase_failed_label = {
+	tip = "You have reached your weekly purchase limit",
+}
+
+_G.pg.base.gametip.island_trade_sell_failed_label = {
+	tip = "Cannot complete sale; amount owned is insufficient",
+}
+
+_G.pg.base.gametip.island_trade_sell_failed_label2 = {
+	tip = "Pearls are sold out on this island today.",
+}
+
+_G.pg.base.gametip.island_trade_bag_full_label = {
+	tip = "Cannot complete purchase; Warehouse space is insufficient",
+}
+
+_G.pg.base.gametip.island_trade_reset_label = {
+	tip = "The price has been updated",
+}
+
+_G.pg.base.gametip.island_trade_help_1 = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/island_trade_help4",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
+
+_G.pg.base.gametip.island_trade_help_2 = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/island_trade_help1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_trade_help2",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_trade_help3",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
+
+_G.pg.base.gametip.island_trade_price_unrefresh = {
+	tip = "Cannot complete purchase; this island's price hasn't yet updated",
+}
+
+_G.pg.base.gametip.island_trade_msg_pop = {
+	tip = "You've received an invitation from $1. Their island's pearl selling price is $3",
+}
+
+_G.pg.base.gametip.island_trade_invite_success = {
+	tip = "Invitation successful",
+}
+
+_G.pg.base.gametip.island_trade_share_success = {
+	tip = "Invitation successful",
+}
+
+_G.pg.base.gametip.island_trade_activity_desc_1 = {
+	tip = "During the event, you can sell pearls to the mysterious trader who appears on Get-Together Island.",
+}
+
+_G.pg.base.gametip.island_trade_activity_desc_2 = {
+	tip = "Pearls can be bought from Peary. The selling and purchase price of pearls changes every day.",
+}
+
+_G.pg.base.gametip.island_trade_activity_unlock = {
+	tip = "Requirement: Reach Island Development Lv. 22",
+}
+
+_G.pg.base.gametip.island_bar_quick_game = {
+	tip = "Quick Game",
+}
+
+_G.pg.base.gametip.island_trade_cnt_inadequate = {
+	tip = "Insufficient Amount",
 }
 

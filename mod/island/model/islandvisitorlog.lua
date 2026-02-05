@@ -5,6 +5,8 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.name = arg1_1.name or ""
 	arg0_1.time = arg1_1.time or 0
 	arg0_1.cmd = arg1_1.cmd or 1
+	arg0_1.mapId = arg1_1.mapId
+	arg0_1.extraInfo = arg1_1.extraInfo
 end
 
 function var0_0.IsSelf(arg0_2)
@@ -34,6 +36,8 @@ function var0_0.GetOpDesc(arg0_7)
 		return i18n("island_log_exit")
 	elseif arg0_7.cmd == IslandConst.VISITOR_LOG_CMD_GIFT then
 		return i18n("island_log_gift")
+	elseif arg0_7.cmd == IslandConst.VISITOR_LOG_CMD_TRADE then
+		return i18n("island_log_trade")
 	end
 
 	return ""
@@ -48,6 +52,10 @@ function var0_0._Build(arg0_8, arg1_8)
 		var0_8 = arg1_8 .. " " .. arg0_8.name .. i18n("island_log_exit")
 	elseif arg0_8.cmd == IslandConst.VISITOR_LOG_CMD_GIFT then
 		var0_8 = arg1_8 .. " " .. arg0_8.name .. i18n("island_log_gift")
+	elseif arg0_8.cmd == IslandConst.VISITOR_LOG_CMD_TRADE then
+		local var1_8 = pg.island_map[arg0_8.mapId].name
+
+		var0_8 = arg1_8 .. " " .. i18n("island_trade_msg_pop", arg0_8.name, var1_8, arg0_8.extraInfo)
 	end
 
 	return var0_8

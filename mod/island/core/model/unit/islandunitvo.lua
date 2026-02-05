@@ -41,56 +41,77 @@ function var0_0.Interactable(arg0_7)
 	return arg0_7.type == IslandConst.UNIT_TYPE_ITEM_INTERACT
 end
 
-function var0_0.GetAssetPath(arg0_8)
-	local var0_8
+function var0_0.IsNpcType(arg0_8)
+	return arg0_8.type == IslandConst.UNIT_TYPE_CHAR or arg0_8.type == IslandConst.UNIT_TYPE_PLAYER or arg0_8.type == IslandConst.UNIT_TYPE_VISITOR or arg0_8.type == IslandConst.UNIT_TYPE_SYSTEM or arg0_8.type == IslandConst.UNIT_TYPE_STROLL or arg0_8.type == IslandConst.UNIT_TYPE_MANAGE_CHARA or arg0_8.type == IslandConst.UNIT_TYPE_MANAGE_CUSTOMER or arg0_8.type == IslandConst.UNIT_TYPE_SYSTEM_DELEAGTION or arg0_8.type == IslandConst.UNIT_TYPE_SYSTEM_DELEAGTION_ANIMATION or arg0_8.type == IslandConst.UNIT_TYPE_FOLLOWER or arg0_8.type == IslandConst.UNIT_TYPE_DELEGATE_FISH
+end
 
-	if arg0_8.type == IslandConst.UNIT_TYPE_CHAR or arg0_8.type == IslandConst.UNIT_TYPE_PLAYER or arg0_8.type == IslandConst.UNIT_TYPE_VISITOR or arg0_8.type == IslandConst.UNIT_TYPE_SYSTEM or arg0_8.type == IslandConst.UNIT_TYPE_STROLL or arg0_8.type == IslandConst.UNIT_TYPE_MANAGE_CHARA or arg0_8.type == IslandConst.UNIT_TYPE_MANAGE_CUSTOMER or arg0_8.type == IslandConst.UNIT_TYPE_SYSTEM_DELEAGTION or arg0_8.type == IslandConst.UNIT_TYPE_SYSTEM_DELEAGTION_ANIMATION or arg0_8.type == IslandConst.UNIT_TYPE_FOLLOWER or arg0_8.type == IslandConst.UNIT_TYPE_DELEGATE_FISH then
-		assert(pg.island_unit_character[arg0_8.modelId], arg0_8.modelId)
+function var0_0.IsItemType(arg0_9)
+	return arg0_9.type == IslandConst.UNIT_TYPE_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_HANDLE_COLLECT or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_HANDLE_PLANTING or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_PRODUCT_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_GATHER_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_WILD_COLLECT_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_MANAGE_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_DELAY_RECYCLE or arg0_9.type == IslandConst.UNIT_TYPE_FIRST_TAKE_PHOTO_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_FISH_POINT
+end
 
-		var0_8 = pg.island_unit_character[arg0_8.modelId].model
-	elseif arg0_8.type == IslandConst.UNIT_TYPE_ITEM or arg0_8.type == IslandConst.UNIT_TYPE_ITEM_HANDLE_COLLECT or arg0_8.type == IslandConst.UNIT_TYPE_ITEM_HANDLE_PLANTING or arg0_8.type == IslandConst.UNIT_TYPE_ITEM_PRODUCT_ITEM or arg0_8.type == IslandConst.UNIT_TYPE_ITEM_GATHER_ITEM or arg0_8.type == IslandConst.UNIT_TYPE_ITEM_WILD_COLLECT_ITEM or arg0_8.type == IslandConst.UNIT_TYPE_MANAGE_ITEM or arg0_8.type == IslandConst.UNIT_TYPE_ITEM_DELAY_RECYCLE or arg0_8.type == IslandConst.UNIT_TYPE_FIRST_TAKE_PHOTO_ITEM or arg0_8.type == IslandConst.UNIT_TYPE_FISH_POINT then
-		var0_8 = pg.island_unit_item[arg0_8.modelId].model
-	elseif arg0_8.type == IslandConst.UNIT_TYPE_ITEM_INTERACT then
-		var0_8 = pg.island_unit_interactive_item[arg0_8.modelId].model
+function var0_0.GetPersonality(arg0_10)
+	local var0_10 = 0
+	local var1_10 = 0
+
+	if arg0_10:IsNpcType() then
+		local var2_10 = pg.island_unit_character[arg0_10.modelId]
+
+		var0_10, var1_10 = var2_10.personality or 0, var2_10.is_active or 0
 	end
 
-	assert(var0_8)
-
-	return string.lower(var0_8)
+	return var0_10, var1_10
 end
 
-function var0_0.GetBehaviourTree(arg0_9)
-	return arg0_9.behaviourTree
+function var0_0.GetAssetPath(arg0_11)
+	local var0_11
+
+	if arg0_11:IsNpcType() then
+		assert(pg.island_unit_character[arg0_11.modelId], arg0_11.modelId)
+
+		var0_11 = pg.island_unit_character[arg0_11.modelId].model
+	elseif arg0_11:IsItemType() then
+		var0_11 = pg.island_unit_item[arg0_11.modelId].model
+	elseif arg0_11:Interactable() then
+		var0_11 = pg.island_unit_interactive_item[arg0_11.modelId].model
+	end
+
+	assert(var0_11)
+
+	return string.lower(var0_11)
 end
 
-function var0_0.GetAnimator(arg0_10)
-	if arg0_10.type == IslandConst.UNIT_TYPE_PLAYER or arg0_10.type == IslandConst.UNIT_TYPE_VISITOR or arg0_10.type == IslandConst.UNIT_TYPE_CHAR or arg0_10.type == IslandConst.UNIT_TYPE_STROLL or arg0_10.type == IslandConst.UNIT_TYPE_MANAGE_CHARA or arg0_10.type == IslandConst.UNIT_TYPE_MANAGE_CUSTOMER or arg0_10.type == IslandConst.UNIT_TYPE_SYSTEM_DELEAGTION or arg0_10.type == IslandConst.UNIT_TYPE_SYSTEM_DELEAGTION_ANIMATION or arg0_10.type == IslandConst.UNIT_TYPE_FOLLOWER or arg0_10.type == IslandConst.UNIT_TYPE_DELEGATE_FISH then
-		return pg.island_unit_character[arg0_10.modelId].animator
-	elseif arg0_10.type == IslandConst.UNIT_TYPE_SYSTEM then
-		return pg.island_unit_character[arg0_10.modelId].animator
+function var0_0.GetBehaviourTree(arg0_12)
+	return arg0_12.behaviourTree
+end
+
+function var0_0.GetAnimator(arg0_13)
+	if arg0_13.type == IslandConst.UNIT_TYPE_PLAYER or arg0_13.type == IslandConst.UNIT_TYPE_VISITOR or arg0_13.type == IslandConst.UNIT_TYPE_CHAR or arg0_13.type == IslandConst.UNIT_TYPE_STROLL or arg0_13.type == IslandConst.UNIT_TYPE_MANAGE_CHARA or arg0_13.type == IslandConst.UNIT_TYPE_MANAGE_CUSTOMER or arg0_13.type == IslandConst.UNIT_TYPE_SYSTEM_DELEAGTION or arg0_13.type == IslandConst.UNIT_TYPE_SYSTEM_DELEAGTION_ANIMATION or arg0_13.type == IslandConst.UNIT_TYPE_FOLLOWER or arg0_13.type == IslandConst.UNIT_TYPE_DELEGATE_FISH then
+		return pg.island_unit_character[arg0_13.modelId].animator
+	elseif arg0_13.type == IslandConst.UNIT_TYPE_SYSTEM then
+		return pg.island_unit_character[arg0_13.modelId].animator
 	end
 
 	warning("目前只有角色需要动态获取动画状态机")
 end
 
-function var0_0.GetShowCondition(arg0_11)
-	local var0_11 = {}
+function var0_0.GetShowCondition(arg0_14)
+	local var0_14 = {}
 
-	for iter0_11, iter1_11 in ipairs(arg0_11.showCondition) do
-		table.insert(var0_11, iter1_11)
+	for iter0_14, iter1_14 in ipairs(arg0_14.showCondition) do
+		table.insert(var0_14, iter1_14)
 	end
 
-	return var0_11
+	return var0_14
 end
 
-function var0_0.GetHideCondition(arg0_12)
-	local var0_12 = {}
+function var0_0.GetHideCondition(arg0_15)
+	local var0_15 = {}
 
-	for iter0_12, iter1_12 in ipairs(arg0_12.hideCondition) do
-		table.insert(var0_12, iter1_12)
+	for iter0_15, iter1_15 in ipairs(arg0_15.hideCondition) do
+		table.insert(var0_15, iter1_15)
 	end
 
-	return var0_12
+	return var0_15
 end
 
 return var0_0

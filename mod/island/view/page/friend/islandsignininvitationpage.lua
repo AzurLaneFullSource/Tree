@@ -44,22 +44,10 @@ function var0_0.OnInit(arg0_5)
 		arg0_5:Hide()
 	end, SFX_PANEL)
 	onButton(arg0_5, arg0_5.shareBtn, function()
-		if arg0_5:GetIsland():GetAccessAgency():HasOpenFlag(IslandConst.OPEN_SIGNIN) then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("island_public_invitation_1"))
-
-			return
-		end
-
-		arg0_5:emit(IslandMediator.SHARE_SIGNIN)
+		arg0_5:DoShare()
 	end, SFX_PANEL)
 	onButton(arg0_5, arg0_5.onkeyBtn, function()
-		local var0_9 = {}
-
-		for iter0_9, iter1_9 in ipairs(arg0_5.displays) do
-			table.insert(var0_9, iter1_9.id)
-		end
-
-		arg0_5:emit(IslandMediator.SIGN_IN_INVITATION, var0_9)
+		arg0_5:OnOneKey()
 	end, SFX_PANEL)
 
 	arg0_5.cards = {}
@@ -80,90 +68,115 @@ function var0_0.OnInit(arg0_5)
 	end
 end
 
-function var0_0.AddListeners(arg0_11)
-	arg0_11:AddListener(GAME.ISLAND_SIGN_IN_INVITATION_DONE, arg0_11.OnInvitation)
-	arg0_11:AddListener(GAME.ISLAND_SIGN_SHARE_SIGNIN_DONE, arg0_11.OnShare)
+function var0_0.DoShare(arg0_11)
+	if arg0_11:GetIsland():GetAccessAgency():HasOpenFlag(IslandConst.OPEN_SIGNIN) then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("island_public_invitation_1"))
+
+		return
+	end
+
+	arg0_11:emit(IslandMediator.SHARE_SIGNIN)
 end
 
-function var0_0.RemoveListeners(arg0_12)
-	arg0_12:RemoveListener(GAME.ISLAND_SIGN_IN_INVITATION_DONE, arg0_12.OnInvitation)
-	arg0_12:RemoveListener(GAME.ISLAND_SIGN_SHARE_SIGNIN_DONE, arg0_12.OnShare)
+function var0_0.OnOneKey(arg0_12)
+	local var0_12 = {}
+
+	for iter0_12, iter1_12 in ipairs(arg0_12.displays) do
+		table.insert(var0_12, iter1_12.id)
+	end
+
+	arg0_12:emit(IslandMediator.SIGN_IN_INVITATION, var0_12)
 end
 
-function var0_0.OnInvitation(arg0_13)
-	arg0_13:FlushList()
+function var0_0.AddListeners(arg0_13)
+	arg0_13:AddListener(GAME.ISLAND_SIGN_IN_INVITATION_DONE, arg0_13.OnInvitation)
+	arg0_13:AddListener(GAME.ISLAND_SIGN_SHARE_SIGNIN_DONE, arg0_13.OnShare)
 end
 
-function var0_0.OnShare(arg0_14)
+function var0_0.RemoveListeners(arg0_14)
+	arg0_14:RemoveListener(GAME.ISLAND_SIGN_IN_INVITATION_DONE, arg0_14.OnInvitation)
+	arg0_14:RemoveListener(GAME.ISLAND_SIGN_SHARE_SIGNIN_DONE, arg0_14.OnShare)
+end
+
+function var0_0.OnInvitation(arg0_15)
+	arg0_15:FlushList()
+end
+
+function var0_0.OnShare(arg0_16)
 	return
 end
 
-function var0_0.GetDisplayData(arg0_15, arg1_15)
-	local var0_15 = {}
+function var0_0.GetDisplayData(arg0_17, arg1_17)
+	local var0_17 = {}
 
-	if arg1_15 == var1_0 then
-		var0_15 = getProxy(FriendProxy):getAllFriends()
-	elseif arg1_15 == var2_0 then
-		local var1_15 = getProxy(GuildProxy):getRawData()
+	if arg1_17 == var1_0 then
+		var0_17 = getProxy(FriendProxy):getAllFriends()
+	elseif arg1_17 == var2_0 then
+		local var1_17 = getProxy(GuildProxy):getRawData()
 
-		var0_15 = var1_15 and var1_15:getSortMemberWithoutSelf() or {}
+		var0_17 = var1_17 and var1_17:getSortMemberWithoutSelf() or {}
 	end
 
-	return var0_15
+	return var0_17
 end
 
-function var0_0.SwitchPage(arg0_16, arg1_16)
-	arg0_16.pageIndex = arg1_16
+function var0_0.SwitchPage(arg0_18, arg1_18)
+	arg0_18.pageIndex = arg1_18
 
-	arg0_16:FlushList()
+	arg0_18:FlushList()
 end
 
-function var0_0.OnInitItem(arg0_17, arg1_17)
-	local var0_17 = IslandSignInInvitationCard.New(arg1_17)
+function var0_0.OnInitItem(arg0_19, arg1_19)
+	local var0_19 = IslandSignInInvitationCard.New(arg1_19)
 
-	onButton(arg0_17, var0_17.btn, function()
-		arg0_17:emit(IslandMediator.SIGN_IN_INVITATION, {
-			var0_17.player.id
-		})
+	onButton(arg0_19, var0_19.btn, function()
+		arg0_19:DoInvitation(var0_19)
 	end, SFX_PANEL)
 
-	arg0_17.cards[arg1_17] = var0_17
+	arg0_19.cards[arg1_19] = var0_19
 end
 
-function var0_0.OnUpdateItem(arg0_19, arg1_19, arg2_19)
-	local var0_19 = arg0_19.cards[arg2_19]
+function var0_0.DoInvitation(arg0_21, arg1_21)
+	arg0_21:emit(IslandMediator.SIGN_IN_INVITATION, {
+		arg1_21.player.id
+	})
+end
 
-	if not var0_19 then
-		arg0_19:OnInitItem(arg2_19)
+function var0_0.OnUpdateItem(arg0_22, arg1_22, arg2_22)
+	local var0_22 = arg0_22.cards[arg2_22]
 
-		var0_19 = arg0_19.cards[arg2_19]
+	if not var0_22 then
+		arg0_22:OnInitItem(arg2_22)
+
+		var0_22 = arg0_22.cards[arg2_22]
 	end
 
-	local var1_19 = arg0_19:GetIsland()
-	local var2_19 = arg0_19.displays[arg1_19 + 1]
+	local var1_22 = arg0_22:GetIsland()
+	local var2_22 = arg0_22.displays[arg1_22 + 1]
+	local var3_22 = var1_22:GetSignInAgency():IsInvited(var2_22.id)
 
-	var0_19:Update(var2_19, var1_19)
+	var0_22:Update(var2_22, var3_22)
 end
 
-function var0_0.Show(arg0_20)
-	var0_0.super.Show(arg0_20)
-	triggerToggle(arg0_20.toggles[var1_0], true)
+function var0_0.Show(arg0_23)
+	var0_0.super.Show(arg0_23)
+	triggerToggle(arg0_23.toggles[var1_0], true)
 end
 
-function var0_0.FlushList(arg0_21)
-	arg0_21.displays = arg0_21:GetDisplayData(arg0_21.pageIndex)
+function var0_0.FlushList(arg0_24)
+	arg0_24.displays = arg0_24:GetDisplayData(arg0_24.pageIndex)
 
-	arg0_21._scrollrect:SetTotalCount(#arg0_21.displays)
+	arg0_24._scrollrect:SetTotalCount(#arg0_24.displays)
 end
 
-function var0_0.OnDestroy(arg0_22)
-	ClearLScrollrect(arg0_22._scrollrect)
+function var0_0.OnDestroy(arg0_25)
+	ClearLScrollrect(arg0_25._scrollrect)
 
-	for iter0_22, iter1_22 in pairs(arg0_22.cards) do
-		iter1_22:Dispose()
+	for iter0_25, iter1_25 in pairs(arg0_25.cards) do
+		iter1_25:Dispose()
 	end
 
-	arg0_22.cards = nil
+	arg0_25.cards = nil
 end
 
 return var0_0

@@ -19,12 +19,6 @@ function var0_0.Execute(arg0_3, arg1_3, arg2_3)
 
 	local var0_3 = arg0_3:GetView():GetUnitListByKey(IslandConst.UNIT_LIST_FOLLOW)
 
-	if #var0_3 <= 1 then
-		onNextTick(arg2_3)
-
-		return
-	end
-
 	arg0_3.callback = arg2_3
 
 	local var1_3 = arg0_3:CollectWords(arg1_3, var0_3)
@@ -58,8 +52,8 @@ function var0_0.CollectWords(arg0_6, arg1_6, arg2_6)
 
 		if var1_6.type == 1 and arg0_6:CheckShipCouple(var1_6.param, arg1_6) and arg0_6:IsHappen(var1_6.weight) and arg0_6:CoupleShipInTeam(var1_6.param, arg2_6) then
 			table.insert(var0_6, var1_6.story)
-		elseif var1_6.type ~= 1 then
-			assert(false, "type not support")
+		elseif var1_6.type == 2 and table.contains(var1_6.param, arg1_6) and arg0_6:IsHappen(var1_6.weight) then
+			table.insert(var0_6, var1_6.story)
 		end
 	end
 
@@ -128,11 +122,8 @@ end
 function var0_0.IsVaildStory(arg0_16, arg1_16)
 	for iter0_16, iter1_16 in ipairs(arg1_16.steps) do
 		local var0_16 = iter1_16:GetUnitData()
-		local var1_16 = arg0_16:GetView():GetUnitModuleWithType(var0_16.type, var0_16.id)
 
-		assert(var1_16, var0_16.type .. " - " .. var0_16.id)
-
-		if not var1_16 then
+		if not arg0_16:GetView():GetUnitModuleWithType(var0_16.type, var0_16.id) then
 			return false
 		end
 	end

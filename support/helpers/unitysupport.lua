@@ -515,7 +515,11 @@ function onNextTick(arg0_60)
 end
 
 function onDelayTick(arg0_61, arg1_61)
-	Timer.New(arg0_61, arg1_61, 1):Start()
+	local var0_61 = Timer.New(arg0_61, arg1_61, 1)
+
+	var0_61:Start()
+
+	return var0_61
 end
 
 function seriesAsync(arg0_62, arg1_62, ...)

@@ -76,7 +76,7 @@ function var0_0.OnInit(arg0_3)
 			arg0_3:ShowMsgBox({
 				content = i18n("island_cancel_follow_tip"),
 				onYes = function()
-					arg0_3:emit(IslandMediator.DEL_FOLLOWER, arg0_3.ship.id)
+					arg0_3:emitCore(ISLAND_EVT.WILL_DEL_FOLLOWER, arg0_3.ship.id)
 				end
 			})
 		else

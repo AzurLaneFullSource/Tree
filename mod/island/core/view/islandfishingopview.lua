@@ -1,13 +1,10 @@
 local var0_0 = class("IslandFishingOPView", import("Mod.Island.Core.View.IslandASynLoadAndCacheSubView"))
-local var1_0 = 1
-local var2_0 = 2
-local var3_0 = 3
-local var4_0 = 0
-local var5_0 = 1
-local var6_0 = 2
-local var7_0 = 3
-local var8_0 = 4
-local var9_0 = 5
+local var1_0 = 0
+local var2_0 = 1
+local var3_0 = 2
+local var4_0 = 3
+local var5_0 = 4
+local var6_0 = 5
 
 function var0_0.GetUIName(arg0_1)
 	return "IslandFishingOpUI"
@@ -46,13 +43,13 @@ function var0_0.FirstFlush(arg0_2)
 		})
 	end, SFX_PANEL)
 
-	arg0_2.state = var4_0
+	arg0_2.state = var1_0
 end
 
 function var0_0.Flush(arg0_6, arg1_6, arg2_6)
 	arg0_6.fishPointId = arg1_6
 	arg0_6.opBtnLocalPosition = arg2_6
-	arg0_6.state = var5_0
+	arg0_6.state = var2_0
 
 	arg0_6:StartGame(arg1_6, baitId)
 
@@ -155,7 +152,7 @@ function var0_0.GetFishFromServer(arg0_24, arg1_24, arg2_24)
 		if arg0_25 == 0 and arg1_25 == 0 then
 			arg0_24:UnBlockEvent()
 
-			arg0_24.state = var7_0
+			arg0_24.state = var4_0
 		else
 			arg0_24.fishId = arg0_25
 			arg0_24.weight = arg1_25
@@ -420,15 +417,15 @@ function var0_0.NotifyServerResultCancel(arg0_63, arg1_63)
 end
 
 function var0_0.IsRunning(arg0_64)
-	return arg0_64.state == var5_0
+	return arg0_64.state == var2_0
 end
 
 function var0_0.IsPausing(arg0_65)
-	return arg0_65.state == var9_0
+	return arg0_65.state == var6_0
 end
 
 function var0_0.PauseGame(arg0_66)
-	arg0_66.state = var9_0
+	arg0_66.state = var6_0
 
 	if arg0_66.fishingSliderDriver then
 		arg0_66.fishingSliderDriver:Pause()
@@ -436,7 +433,7 @@ function var0_0.PauseGame(arg0_66)
 end
 
 function var0_0.ResumeGame(arg0_67)
-	arg0_67.state = var5_0
+	arg0_67.state = var2_0
 
 	if arg0_67.fishingSliderDriver then
 		arg0_67.fishingSliderDriver:Reseume()
@@ -460,7 +457,7 @@ function var0_0.BuildResultData(arg0_68, arg1_68)
 end
 
 function var0_0.OnQteSuccess(arg0_69)
-	arg0_69.state = var6_0
+	arg0_69.state = var3_0
 
 	arg0_69:BuildResultData(1)
 	arg0_69:BlockEvent()
@@ -522,7 +519,7 @@ function var0_0.OnQteFailed(arg0_81)
 	arg0_81:BuildResultData(0)
 	arg0_81:PlayEffect(IslandFishingEffectMgr.EFFECT_NORMAL)
 
-	arg0_81.state = var7_0
+	arg0_81.state = var4_0
 
 	arg0_81:ShowTip(arg0_81.escapeTip)
 	arg0_81:BlockEvent()
@@ -570,12 +567,12 @@ function var0_0.OnHit(arg0_87, arg1_87)
 end
 
 function var0_0.OnCancel(arg0_89, arg1_89)
-	if arg0_89.state == var5_0 or arg0_89.state == var4_0 then
+	if arg0_89.state == var2_0 or arg0_89.state == var1_0 then
 		arg0_89:BuildResultData(2)
 		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandFishingCancel(arg0_89.fishPointId, IsNil(arg0_89.qteTr) and 1 or 2))
 		arg0_89:PlayEffect(IslandFishingEffectMgr.EFFECT_NORMAL)
 
-		arg0_89.state = var8_0
+		arg0_89.state = var5_0
 
 		parallelAsync({
 			function(arg0_90)
@@ -591,7 +588,7 @@ function var0_0.OnCancel(arg0_89, arg1_89)
 			arg1_89()
 		end)
 	else
-		arg0_89.state = var8_0
+		arg0_89.state = var5_0
 
 		arg0_89:Dispose()
 	end
@@ -601,8 +598,8 @@ function var0_0.DisplayResult(arg0_94)
 	arg0_94.resultTxt.text = arg0_94.fishName .. "   " .. arg0_94.fishWeight / 1000 .. "KG"
 
 	setActive(arg0_94.resultNewTr, arg0_94.isNew)
-	setActive(arg0_94.resultCupMaxTr, arg0_94.cupType == var3_0)
-	setActive(arg0_94.resultCupMinTr, arg0_94.cupType == var2_0)
+	setActive(arg0_94.resultCupMaxTr, arg0_94.cupType == IslandFish.CUP_STATE_MAX)
+	setActive(arg0_94.resultCupMinTr, arg0_94.cupType == IslandFish.CUP_STATE_MIN)
 	setActive(arg0_94.resultRecordTr, arg0_94.isNewRecord)
 	arg0_94:ShowTip(arg0_94.resultTr)
 end
@@ -707,7 +704,7 @@ function var0_0.Clear(arg0_104)
 		arg0_104.fishingPlayer = nil
 	end
 
-	arg0_104.state = var4_0
+	arg0_104.state = var1_0
 
 	local var0_104 = pg.TimeMgr.GetInstance():GetServerTime() - arg0_104.startTime
 

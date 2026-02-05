@@ -178,7 +178,7 @@ function var0_0.ClickDressCardItem(arg0_9, arg1_9)
 
 		local var5_9 = #arg0_9.dressList
 
-		arg0_9.dressRect:SetTotalCount(var5_9, 0)
+		arg0_9.dressRect:SetTotalCount(var5_9)
 
 		return
 	end
@@ -223,7 +223,7 @@ function var0_0.ClickDressCardItem(arg0_9, arg1_9)
 
 	local var10_9 = #arg0_9.dressList
 
-	arg0_9.dressRect:SetTotalCount(var10_9, 0)
+	arg0_9.dressRect:SetTotalCount(var10_9)
 	arg0_9:UpdateHatDisplay()
 	arg0_9:UpdateColorList(true)
 end
@@ -390,18 +390,17 @@ end
 function var0_0.ChangeModelBySkinAndSkinColor(arg0_21)
 	local var0_21 = arg0_21.characterAgency:GetShipById(arg0_21.shipId)
 	local var1_21 = {}
+	local var2_21 = {
+		IslandShipDressHelperNew.DressType.BackDecorate,
+		IslandShipDressHelperNew.DressType.Flotage,
+		IslandShipDressHelperNew.DressType.Footprint
+	}
 
-	if arg0_21.curSkinId ~= 0 then
-		local var2_21 = {
-			IslandShipDressHelperNew.DressType.BackDecorate,
-			IslandShipDressHelperNew.DressType.Flotage,
-			IslandShipDressHelperNew.DressType.Footprint
-		}
+	for iter0_21, iter1_21 in ipairs(var2_21) do
+		local var3_21 = arg0_21.curShipDressTypeDataDic[iter1_21]
 
-		for iter0_21, iter1_21 in ipairs(var2_21) do
-			local var3_21 = arg0_21.curShipDressTypeDataDic[iter1_21]
-
-			if var3_21 and var3_21.dress_id and var3_21.dress_id ~= 0 then
+		if var3_21 and var3_21.dress_id and var3_21.dress_id ~= 0 then
+			if arg0_21.curSkinId ~= 0 then
 				local var4_21 = pg.island_dress_template[var3_21.dress_id].exclusive_skin
 				local var5_21 = var4_21 == "" and {} or var4_21
 
@@ -411,32 +410,44 @@ function var0_0.ChangeModelBySkinAndSkinColor(arg0_21)
 						var3_21:SetShipAndDressId(nil, nil)
 					end
 				end
-			end
-		end
+			else
+				local var6_21 = pg.island_dress_template[var3_21.dress_id].exclusive_default_skin
+				local var7_21 = var6_21 == "" and {} or var6_21
 
-		if #var1_21 > 0 then
-			local var6_21 = ""
-
-			for iter4_21, iter5_21 in ipairs(var1_21) do
-				local var7_21 = pg.island_dress_template[iter5_21].name
-
-				if iter4_21 > 1 then
-					var7_21 = "," .. var7_21
+				for iter4_21, iter5_21 in ipairs(var7_21) do
+					if iter5_21 == arg0_21.shipId then
+						table.insert(var1_21, var3_21.dress_id)
+						var3_21:SetShipAndDressId(nil, nil)
+					end
 				end
-
-				var6_21 = var6_21 .. var7_21
 			end
-
-			pg.TipsMgr.GetInstance():ShowTips(i18n("island_dress_mutually_exclusive", var6_21))
 		end
 	end
 
-	local var8_21 = var0_21:GetModelBySkinAndColorId(arg0_21.curSkinId, arg0_21.curskinColorId)
+	if #var1_21 > 0 then
+		local var8_21 = ""
+
+		for iter6_21, iter7_21 in ipairs(var1_21) do
+			local var9_21 = pg.island_dress_template[iter7_21].name
+
+			if iter6_21 > 1 then
+				var9_21 = "," .. var9_21
+			end
+
+			var8_21 = var8_21 .. var9_21
+		end
+
+		pg.TipsMgr.GetInstance():ShowTips(i18n("island_dress_mutually_exclusive", var8_21))
+	end
+
+	arg0_21:emit(IslandShipMainPage.CLEAR_ITEM_ANIMATOR)
+
+	local var10_21 = var0_21:GetModelBySkinAndColorId(arg0_21.curSkinId, arg0_21.curskinColorId)
 
 	if #var1_21 > 0 then
-		arg0_21.shipDressHelper:ChangeModelTransfromByUnitIdAndChangeDress(var8_21, var1_21, nil, nil, true)
+		arg0_21.shipDressHelper:ChangeModelTransfromByUnitIdAndChangeDress(var10_21, var1_21, nil, nil, true)
 	else
-		arg0_21.shipDressHelper:ChangeModelTransfromByUnitId(var8_21, nil, true)
+		arg0_21.shipDressHelper:ChangeModelTransfromByUnitId(var10_21, nil, true)
 	end
 end
 
@@ -665,6 +676,10 @@ function var0_0.UpdateSkinList(arg0_47)
 end
 
 function var0_0.UpdateDressUpList(arg0_48)
+	if arg0_48.currentToggleIndex == 4 then
+		return
+	end
+
 	local var0_48 = #arg0_48.dressList
 
 	setActive(arg0_48.dressRectTF, var0_48 ~= 0)
@@ -673,7 +688,7 @@ function var0_0.UpdateDressUpList(arg0_48)
 	setActive(arg0_48.sortBtn, false)
 
 	if var0_48 ~= 0 then
-		arg0_48.dressRect:SetTotalCount(var0_48, 0)
+		arg0_48.dressRect:SetTotalCount(var0_48)
 	end
 end
 

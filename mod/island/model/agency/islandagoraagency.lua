@@ -111,7 +111,7 @@ function var0_0.AddFurniture(arg0_8, arg1_8, arg2_8)
 	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandFurnitureAdd(arg1_8.id, arg2_8 or ""))
 
 	if var0_8 then
-		var0_8.count = var0_8.count + 1
+		var0_8.count = var0_8.count + (arg1_8.count or 1)
 
 		arg0_8:DispatchEvent(var0_0.ADD_FURNITURE, var0_8)
 	else

@@ -3,6 +3,7 @@ local var0_0 = class("IslandShipMainPage", import(".IslandBaseShipDisplayPage"))
 var0_0.OPEN_PAGE = "IslandShipMainPage:OPEN_PAGE"
 var0_0.SELECT_SHIP = "IslandShipMainPage:SELECT_SHIP"
 var0_0.CLOSE_DOCK = "IslandShipMainPage:CLOSE_DOCK"
+var0_0.CLEAR_ITEM_ANIMATOR = "IslandShipMainPage:CLEAR_ITEM_ANIMATOR"
 var0_0.PAGE_DRESS = 1
 var0_0.PAGE_INFO = 2
 var0_0.PAGE_STATUS = 3
@@ -58,6 +59,7 @@ function var0_0.AddListeners(arg0_6)
 	arg0_6:AddListener(IslandShipMainPage.SELECT_SHIP, arg0_6.OnSelectShip)
 	arg0_6:AddListener(IslandCharacterAgency.ADD_SHIP, arg0_6.OnAddShip)
 	arg0_6:AddListener(GAME.ISLAND_UPGRADE_SKILL_DONE, arg0_6.OnSkillUpgrade)
+	arg0_6:AddListener(var0_0.CLEAR_ITEM_ANIMATOR, arg0_6.OnClearItemAnimator)
 end
 
 function var0_0.RemoveListeners(arg0_7)
@@ -66,6 +68,7 @@ function var0_0.RemoveListeners(arg0_7)
 	arg0_7:RemoveListener(IslandShipMainPage.SELECT_SHIP, arg0_7.OnSelectShip)
 	arg0_7:RemoveListener(IslandCharacterAgency.ADD_SHIP, arg0_7.OnAddShip)
 	arg0_7:RemoveListener(GAME.ISLAND_UPGRADE_SKILL_DONE, arg0_7.OnSkillUpgrade)
+	arg0_7:RemoveListener(var0_0.CLEAR_ITEM_ANIMATOR, arg0_7.OnClearItemAnimator)
 end
 
 function var0_0.OnCloseDock(arg0_8)

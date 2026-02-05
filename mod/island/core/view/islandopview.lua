@@ -167,7 +167,7 @@ function var0_0.ShowFollowerList(arg0_14)
 
 			GetImageSpriteFromAtlasAsync("island/IslandShipIcon/" .. var2_15, "", arg2_15:Find("icon"))
 			onButton(arg0_14, arg2_15, function()
-				arg0_14:NotifiyMeditor(IslandMediator.DEL_FOLLOWER, var1_15.id)
+				arg0_14:NotifiyCore(ISLAND_EVT.WILL_DEL_FOLLOWER, var1_15.id)
 			end, SFX_PANEL)
 		end
 	end)
@@ -420,6 +420,8 @@ function var0_0.UpdateOperationButtonDisplay(arg0_23)
 			var1_23()
 		end,
 		[var0_0.OperationType.Fishing] = function()
+			IslandGuideChecker.CheckGuide("ISLAND_GUIDE_33")
+			arg0_23:UpdateLureBtn()
 			OptionBtnDisplay(arg0_23.operationType)
 			setActive(arg0_23.lureBtn, true)
 			onButton(arg0_23, arg0_23.opBtn, function()

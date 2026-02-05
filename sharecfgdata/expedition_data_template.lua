@@ -859148,10 +859148,6 @@ _G.pg.base.expedition_data_template[1799001] = {
 			2,
 			54012,
 		},
-		{
-			2,
-			59536,
-		},
 	},
 	objective_1 = {
 		1,
@@ -859226,10 +859222,6 @@ _G.pg.base.expedition_data_template[1799002] = {
 			2,
 			54017,
 		},
-		{
-			2,
-			59536,
-		},
 	},
 	objective_1 = {
 		1,
@@ -859303,10 +859295,6 @@ _G.pg.base.expedition_data_template[1799003] = {
 		{
 			2,
 			54017,
-		},
-		{
-			2,
-			59536,
 		},
 	},
 	objective_1 = {
@@ -859386,10 +859374,6 @@ _G.pg.base.expedition_data_template[1799004] = {
 			2,
 			54017,
 		},
-		{
-			2,
-			59536,
-		},
 	},
 	objective_1 = {
 		1,
@@ -859463,10 +859447,6 @@ _G.pg.base.expedition_data_template[1799005] = {
 		{
 			2,
 			54017,
-		},
-		{
-			2,
-			59536,
 		},
 	},
 	objective_1 = {

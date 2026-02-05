@@ -109,7 +109,7 @@ function var0_0.SetShopList(arg0_10)
 
 			if var0_11 then
 				setActive(arg2_11:Find("shop2List"), false)
-				LoadImageSpriteAsync(var0_11.tag_icon[3], arg2_11:Find("shop1Tg/selected/icon"), false)
+				GetImageSpriteFromAtlasAsync("island/islandshopicon", var0_11.tag_icon[3], arg2_11:Find("shop1Tg/selected/icon"), false)
 				setText(arg2_11:Find("shop1Tg/name"), var0_11.tag_icon[1])
 				setText(arg2_11:Find("shop1Tg/name/en"), var0_11.tag_icon[2])
 				onToggle(arg0_10, arg2_11:Find("shop1Tg"), function(arg0_12)
@@ -1244,6 +1244,8 @@ function var0_0.LoadCharacter(arg0_81, arg1_81, arg2_81)
 
 		var3_82.rotationSpeed = pg.island_set.character_detail_camera_speed.key_value_int
 
+		arg0_81.displayUnit:OnAttach(arg0_82, arg0_81.toolContainer)
+
 		local var4_82 = arg0_81.modelData and arg0_81.modelData.personal_ani
 
 		if var4_82 and var4_82 ~= "" then
@@ -1272,6 +1274,7 @@ function var0_0.UnloadCharacter(arg0_85)
 	arg0_85.islandShipDressHelper:Destroy()
 
 	if arg0_85.role then
+		arg0_85.displayUnit:OnDetach()
 		pg.ViewUtils.SetLayer(arg0_85.role.transform, Layer.Default)
 
 		if arg0_85.isCommander then

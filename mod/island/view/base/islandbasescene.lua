@@ -150,6 +150,10 @@ function var0_0.onUILoaded(arg0_23, arg1_23)
 
 	arg0_23:AddCommonListeners()
 	arg0_23:AddListeners()
+
+	for iter0_23, iter1_23 in pairs(arg0_23.subViews) do
+		iter1_23:RegisterView(arg0_23)
+	end
 end
 
 function var0_0.AddCommonListeners(arg0_24)

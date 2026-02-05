@@ -65,7 +65,7 @@ function var0_0.Play(arg0_6, arg1_6)
 	end
 
 	if arg1_6 == var0_0.EFFECT_ENTER then
-		arg0_6:UpdatePositions()
+		-- block empty
 	end
 end
 

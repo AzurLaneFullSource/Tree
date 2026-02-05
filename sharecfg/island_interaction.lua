@@ -405,7 +405,29 @@ pg.island_interaction = setmetatable({
 			5819,
 			5820,
 			5821,
-			5822
+			5822,
+			5823,
+			5824,
+			5825,
+			5826,
+			5827,
+			5828,
+			5829,
+			5830,
+			5831,
+			5832,
+			5833,
+			5834,
+			5835,
+			5836,
+			5837,
+			5838,
+			5839,
+			5840,
+			5841,
+			5842,
+			5843,
+			5844
 		},
 		[59] = {
 			5901,
@@ -501,6 +523,30 @@ pg.island_interaction = setmetatable({
 			7902,
 			7903,
 			7904
+		},
+		[80] = {
+			8001,
+			8002,
+			8003,
+			8004,
+			8005,
+			8006
+		},
+		[81] = {
+			8101
+		},
+		[82] = {
+			8201,
+			8202
+		},
+		[83] = {
+			8301
+		},
+		[84] = {
+			8401
+		},
+		[85] = {
+			8501
 		}
 	},
 	all = {
@@ -791,6 +837,28 @@ pg.island_interaction = setmetatable({
 		5820,
 		5821,
 		5822,
+		5823,
+		5824,
+		5825,
+		5826,
+		5827,
+		5828,
+		5829,
+		5830,
+		5831,
+		5832,
+		5833,
+		5834,
+		5835,
+		5836,
+		5837,
+		5838,
+		5839,
+		5840,
+		5841,
+		5842,
+		5843,
+		5844,
 		5901,
 		5902,
 		6001,
@@ -843,7 +911,19 @@ pg.island_interaction = setmetatable({
 		7901,
 		7902,
 		7903,
-		7904
+		7904,
+		8001,
+		8002,
+		8003,
+		8004,
+		8005,
+		8006,
+		8101,
+		8201,
+		8202,
+		8301,
+		8401,
+		8501
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -905,7 +985,7 @@ pg.base.island_interaction = {
 		type = 4,
 		groupId = 4,
 		icon = 5,
-		param = "",
+		param = "1",
 		show_condition = {}
 	},
 	[501] = {
@@ -929,7 +1009,7 @@ pg.base.island_interaction = {
 		show_condition = {}
 	},
 	[801] = {
-		text = "Talk",
+		text = "Interact",
 		id = 801,
 		only_self = 0,
 		type = 1,
@@ -1175,7 +1255,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[1201] = {
-		text = "Talk",
+		text = "Interact",
 		id = 1201,
 		only_self = 0,
 		type = 1,
@@ -1593,7 +1673,7 @@ pg.base.island_interaction = {
 		show_condition = {}
 	},
 	[1701] = {
-		text = "Talk",
+		text = "Interact",
 		id = 1701,
 		only_self = 0,
 		type = 1,
@@ -1850,7 +1930,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[1901] = {
-		text = "Talk",
+		text = "Interact",
 		id = 1901,
 		only_self = 0,
 		type = 1,
@@ -2310,7 +2390,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[2301] = {
-		text = "Talk",
+		text = "Interact",
 		id = 2301,
 		only_self = 0,
 		type = 1,
@@ -2532,7 +2612,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[2501] = {
-		text = "Talk",
+		text = "Interact",
 		id = 2501,
 		only_self = 0,
 		type = 1,
@@ -2637,7 +2717,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[2701] = {
-		text = "Talk",
+		text = "Interact",
 		id = 2701,
 		only_self = 0,
 		type = 1,
@@ -2853,7 +2933,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[2801] = {
-		text = "Talk",
+		text = "Interact",
 		id = 2801,
 		only_self = 0,
 		type = 1,
@@ -2966,7 +3046,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[2901] = {
-		text = "Talk",
+		text = "Interact",
 		id = 2901,
 		only_self = 0,
 		type = 1,
@@ -3175,7 +3255,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[3001] = {
-		text = "Talk",
+		text = "Interact",
 		id = 3001,
 		only_self = 0,
 		type = 1,
@@ -3760,7 +3840,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[4501] = {
-		text = "Talk",
+		text = "Interact",
 		id = 4501,
 		only_self = 0,
 		type = 1,
@@ -4232,7 +4312,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[5300] = {
-		text = "Talk",
+		text = "Interact",
 		id = 5300,
 		only_self = 0,
 		type = 1,
@@ -4530,7 +4610,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[5700] = {
-		text = "Talk",
+		text = "Interact",
 		id = 5700,
 		only_self = 0,
 		type = 1,
@@ -4783,7 +4863,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[5800] = {
-		text = "Talk",
+		text = "Interact",
 		id = 5800,
 		only_self = 0,
 		type = 1,
@@ -5185,6 +5265,399 @@ pg.base.island_interaction = {
 			}
 		}
 	},
+	[5823] = {
+		text = "Buy Pearls",
+		id = 5823,
+		only_self = 1,
+		type = 6,
+		groupId = 58,
+		icon = 15,
+		param = {
+			"IslandTradePage",
+			2
+		},
+		show_condition = {
+			{
+				13,
+				50
+			}
+		}
+	},
+	[5824] = {
+		text = "Peary...",
+		id = 5824,
+		only_self = 0,
+		type = 1,
+		groupId = 58,
+		icon = 9,
+		param = "ISLANDSIDE01607",
+		show_condition = {
+			{
+				2,
+				20017001
+			}
+		}
+	},
+	[5825] = {
+		text = "Peary...",
+		id = 5825,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 9,
+		param = "20017002",
+		show_condition = {
+			{
+				3,
+				20017002
+			}
+		}
+	},
+	[5826] = {
+		text = "About the new season...",
+		id = 5826,
+		only_self = 0,
+		type = 1,
+		groupId = 58,
+		icon = 9,
+		param = "ISLANDSIDE01606",
+		show_condition = {
+			{
+				2,
+				50000002
+			}
+		}
+	},
+	[5827] = {
+		text = "Gather Spring Specialties (1/7)",
+		id = 5827,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50001008",
+		show_condition = {
+			{
+				3,
+				50001008
+			}
+		}
+	},
+	[5828] = {
+		text = "Gather Spring Specialties (2/7)",
+		id = 5828,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50001009",
+		show_condition = {
+			{
+				3,
+				50001009
+			},
+			{
+				4,
+				50001008
+			}
+		}
+	},
+	[5829] = {
+		text = "Gather Spring Specialties (3/7)",
+		id = 5829,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50001010",
+		show_condition = {
+			{
+				3,
+				50001010
+			},
+			{
+				4,
+				50001009
+			}
+		}
+	},
+	[5830] = {
+		text = "Gather Spring Specialties (4/7)",
+		id = 5830,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50001011",
+		show_condition = {
+			{
+				3,
+				50001011
+			},
+			{
+				4,
+				50001010
+			}
+		}
+	},
+	[5831] = {
+		text = "Gather Spring Specialties (5/7)",
+		id = 5831,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50001012",
+		show_condition = {
+			{
+				3,
+				50001012
+			},
+			{
+				4,
+				50001011
+			}
+		}
+	},
+	[5832] = {
+		text = "Gather Spring Specialties (6/7)",
+		id = 5832,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50001013",
+		show_condition = {
+			{
+				3,
+				50001013
+			},
+			{
+				4,
+				50001012
+			}
+		}
+	},
+	[5833] = {
+		text = "Gather Spring Specialties (7/7)",
+		id = 5833,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50001014",
+		show_condition = {
+			{
+				3,
+				50001014
+			},
+			{
+				4,
+				50001013
+			}
+		}
+	},
+	[5834] = {
+		text = "Make Spring Specialties (1/7)",
+		id = 5834,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50002008",
+		show_condition = {
+			{
+				3,
+				50002008
+			}
+		}
+	},
+	[5835] = {
+		text = "Make Spring Specialties (2/7)",
+		id = 5835,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50002009",
+		show_condition = {
+			{
+				3,
+				50002009
+			},
+			{
+				4,
+				50002008
+			}
+		}
+	},
+	[5836] = {
+		text = "Make Spring Specialties (3/7)",
+		id = 5836,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50002010",
+		show_condition = {
+			{
+				3,
+				50002010
+			},
+			{
+				4,
+				50002009
+			}
+		}
+	},
+	[5837] = {
+		text = "Make Spring Specialties (4/7)",
+		id = 5837,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50002011",
+		show_condition = {
+			{
+				3,
+				50002011
+			},
+			{
+				4,
+				50002010
+			}
+		}
+	},
+	[5838] = {
+		text = "Make Spring Specialties (5/7)",
+		id = 5838,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50002012",
+		show_condition = {
+			{
+				3,
+				50002012
+			},
+			{
+				4,
+				50002011
+			}
+		}
+	},
+	[5839] = {
+		text = "Make Spring Specialties (6/7)",
+		id = 5839,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50002013",
+		show_condition = {
+			{
+				3,
+				50002013
+			},
+			{
+				4,
+				50002012
+			}
+		}
+	},
+	[5840] = {
+		text = "Make Spring Specialties (7/7)",
+		id = 5840,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50002014",
+		show_condition = {
+			{
+				3,
+				50002014
+			},
+			{
+				4,
+				50002013
+			}
+		}
+	},
+	[5841] = {
+		text = "Spring Specialty Order (1/4)",
+		id = 5841,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50003005",
+		show_condition = {
+			{
+				3,
+				50003005
+			}
+		}
+	},
+	[5842] = {
+		text = "Spring Specialty Order (2/4)",
+		id = 5842,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50003006",
+		show_condition = {
+			{
+				3,
+				50003006
+			},
+			{
+				4,
+				50003005
+			}
+		}
+	},
+	[5843] = {
+		text = "Spring Specialty Order (3/4)",
+		id = 5843,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50003007",
+		show_condition = {
+			{
+				3,
+				50003007
+			},
+			{
+				4,
+				50003006
+			}
+		}
+	},
+	[5844] = {
+		text = "Spring Specialty Order (4/4)",
+		id = 5844,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50003008",
+		show_condition = {
+			{
+				3,
+				50003008
+			},
+			{
+				4,
+				50003007
+			}
+		}
+	},
 	[5901] = {
 		text = "What's the scam this time?",
 		id = 5901,
@@ -5216,7 +5689,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[6001] = {
-		text = "Talk",
+		text = "Interact",
 		id = 6001,
 		only_self = 0,
 		type = 1,
@@ -5895,7 +6368,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[7801] = {
-		text = "Talk",
+		text = "Interact",
 		id = 7801,
 		only_self = 0,
 		type = 1,
@@ -5955,7 +6428,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[7901] = {
-		text = "Talk",
+		text = "Interact",
 		id = 7901,
 		only_self = 0,
 		type = 1,
@@ -6013,5 +6486,183 @@ pg.base.island_interaction = {
 				10002290
 			}
 		}
+	},
+	[8001] = {
+		text = "Interact",
+		id = 8001,
+		only_self = 0,
+		type = 1,
+		groupId = 80,
+		icon = 1,
+		param = "ISLANDTALK10181",
+		show_condition = {}
+	},
+	[8002] = {
+		text = "Manage Fish Hatchery",
+		id = 8002,
+		only_self = 0,
+		type = 6,
+		groupId = 80,
+		icon = 15,
+		param = {
+			"IslandRoleDelegationPage",
+			201
+		},
+		show_condition = {
+			{
+				4,
+				20016003
+			}
+		}
+	},
+	[8003] = {
+		text = "Process Fish Meat",
+		id = 8003,
+		only_self = 0,
+		type = 6,
+		groupId = 80,
+		icon = 15,
+		param = {
+			"IslandExchangePage",
+			{
+				1
+			}
+		},
+		show_condition = {
+			{
+				4,
+				20016003
+			}
+		}
+	},
+	[8004] = {
+		text = "Fishing Gear Shop",
+		id = 8004,
+		only_self = 0,
+		type = 6,
+		groupId = 80,
+		icon = 15,
+		param = {
+			"IslandShopPage",
+			{
+				1,
+				2,
+				3,
+				4,
+				5
+			},
+			{
+				10031
+			}
+		},
+		show_condition = {
+			{
+				4,
+				20016003
+			}
+		}
+	},
+	[8005] = {
+		text = "Britain?",
+		id = 8005,
+		only_self = 0,
+		type = 1,
+		groupId = 80,
+		icon = 9,
+		param = "ISLANDSIDE01604",
+		show_condition = {
+			{
+				2,
+				20016001
+			}
+		}
+	},
+	[8006] = {
+		text = "Britain!",
+		id = 8006,
+		only_self = 0,
+		type = 12,
+		groupId = 80,
+		icon = 9,
+		param = "20016002",
+		show_condition = {
+			{
+				3,
+				20016002
+			}
+		}
+	},
+	[8101] = {
+		text = "Unlock Fish Hatchery",
+		id = 8101,
+		only_self = 0,
+		type = 12,
+		groupId = 81,
+		icon = 9,
+		param = "20016003",
+		show_condition = {
+			{
+				3,
+				20016003
+			}
+		}
+	},
+	[8201] = {
+		text = "Interact",
+		id = 8201,
+		only_self = 0,
+		type = 1,
+		groupId = 82,
+		icon = 1,
+		param = "ISLANDTALK10151",
+		show_condition = {}
+	},
+	[8202] = {
+		text = "Sell Pearls",
+		id = 8202,
+		only_self = 1,
+		type = 6,
+		groupId = 82,
+		icon = 15,
+		param = {
+			"IslandTradePage",
+			1
+		},
+		show_condition = {
+			{
+				13,
+				50
+			}
+		}
+	},
+	[8301] = {
+		text = "Interact",
+		id = 8301,
+		only_self = 1,
+		type = 4,
+		groupId = 83,
+		icon = 5,
+		param = "1",
+		show_condition = {}
+	},
+	[8401] = {
+		text = "Interact",
+		id = 8401,
+		only_self = 1,
+		type = 4,
+		groupId = 84,
+		icon = 5,
+		param = "2",
+		show_condition = {}
+	},
+	[8501] = {
+		text = "Interact",
+		id = 8501,
+		only_self = 1,
+		type = 4,
+		groupId = 85,
+		icon = 5,
+		param = "3",
+		show_condition = {}
 	}
 }

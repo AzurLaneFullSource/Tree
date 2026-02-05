@@ -66,7 +66,7 @@ function var0_0.Update(arg0_2, arg1_2, arg2_2, arg3_2, arg4_2)
 
 	local var5_2 = arg0_2.ship:GetName()
 
-	setText(arg0_2.nameTF, arg0_2.ship:GetName())
+	setText(arg0_2.nameTF, shortenString(arg0_2.ship:GetName(), 5))
 
 	local var6_2 = arg0_2.ship:GetCurrentEnergy()
 	local var7_2 = arg0_2.ship:GetMaxEnergy()

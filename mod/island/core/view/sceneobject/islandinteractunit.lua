@@ -7,8 +7,6 @@ function var0_0.OnAttach(arg0_1, arg1_1)
 
 	arg0_1.signalReceiver:SetCommonEvent(function(arg0_2)
 		if arg0_1.ignoreSignal then
-			arg0_1.ignoreSignal = false
-
 			return
 		end
 
@@ -27,8 +25,8 @@ function var0_0.SetTimelineDic(arg0_4, arg1_4)
 	arg0_4.timelineDic = arg1_4
 end
 
-function var0_0.OnUpdate(arg0_5)
-	return
+function var0_0.GetTargetRoot(arg0_5)
+	return arg0_5._go.transform
 end
 
 function var0_0.StartInteract(arg0_6, arg1_6, arg2_6, arg3_6, arg4_6, arg5_6, arg6_6, arg7_6)
@@ -40,16 +38,20 @@ function var0_0.StartInteract(arg0_6, arg1_6, arg2_6, arg3_6, arg4_6, arg5_6, ar
 
 	if arg7_6 then
 		arg0_6.behaviourTreeOwner.graph.blackboard:SetVariableValue("inProgress", true)
+
+		arg0_6.ignoreSignal = false
+	else
+		arg0_6.ignoreSignal = true
 	end
 
-	arg0_6:SetPlayerTransform(arg1_6, arg0_6._go.transform)
+	arg0_6:SetPlayerTransform(arg1_6, arg0_6:GetTargetRoot())
 
 	if arg5_6 and #arg5_6 > 1 then
 		arg0_6.behaviourTreeOwner.graph.blackboard:SetVariableValue(arg5_6[1], arg5_6[2])
 	end
 
 	arg0_6.director.playableAsset = arg0_6.timelineDic[arg3_6]
-	arg0_6.director.extrapolationMode = arg4_6.is_loop and UnityEngine.Playables.DirectorWrapMode.Loop or UnityEngine.Playables.DirectorWrapMode.None
+	arg0_6.director.extrapolationMode = arg4_6.is_loop == 1 and UnityEngine.Playables.DirectorWrapMode.Loop or UnityEngine.Playables.DirectorWrapMode.None
 
 	arg0_6:BindPlayer(arg2_6, arg1_6)
 	arg0_6:BindSelf(arg4_6)
@@ -61,16 +63,19 @@ end
 
 function var0_0.EndInteract(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
 	if arg3_7 then
-		arg0_7.director.time = 0
+		arg0_7.director.time = arg0_7.director.extrapolationMode == UnityEngine.Playables.DirectorWrapMode.None and arg0_7.director.duration or 0
 
 		arg0_7.director:Evaluate()
 		arg0_7.director:Stop()
 
-		arg0_7.director.enabled = true
+		arg0_7.director.enabled = false
 	end
 
 	arg0_7:BindPlayer(arg2_7, nil)
-	arg1_7:ActiveOrDisactive(true)
+
+	if arg1_7 then
+		arg1_7:ActiveOrDisactive(true)
+	end
 
 	if arg4_7 then
 		arg0_7.behaviourTreeOwner.graph.blackboard:SetVariableValue("inProgress", false)
@@ -115,7 +120,7 @@ function var0_0.BindSelf(arg0_10, arg1_10)
 
 			if var3_10 ~= nil then
 				local var4_10 = arg1_10.binding_path[var3_10]
-				local var5_10 = arg0_10._go.transform:Find(var4_10)
+				local var5_10 = var4_10 == "" and arg0_10:GetTargetRoot() or arg0_10:GetTargetRoot():Find(var4_10)
 
 				if var5_10 then
 					TimelineHelper.SetAutoBinding(arg0_10.director, iter1_10, go(var5_10))
@@ -157,7 +162,7 @@ function var0_0.SetPlayerTransform(arg0_13, arg1_13, arg2_13)
 end
 
 function var0_0.RevertPlayerTransform(arg0_14, arg1_14)
-	if not arg0_14.cachePlayerTransformInfoDic[arg1_14.id] then
+	if not arg1_14 or not arg0_14.cachePlayerTransformInfoDic[arg1_14.id] then
 		return
 	end
 

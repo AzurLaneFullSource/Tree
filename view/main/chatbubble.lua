@@ -188,11 +188,16 @@ function var0_0.update(arg0_3, arg1_3)
 					var6_7 = SwitchSpecialChar(arg1_3.content)
 				end
 
-				var0_7.text = string.gsub(var6_7, ChatConst.EmojiIconCodeMatch, function(arg0_10)
+				local var7_7 = string.gsub(var6_7, ChatConst.EmojiIconCodeMatch, function(arg0_10)
 					if table.contains(pg.emoji_small_template.all, tonumber(arg0_10)) then
 						return string.format("<icon name=%s w=1 h=1/>", arg0_10)
 					end
 				end)
+
+				var0_7.text = var7_7
+
+				arg0_3:UpdateContent(var0_7, var7_7)
+
 				arg0_3.isLoadChatBg = true
 				arg0_7:GetComponent(typeof(LayoutElement)).preferredWidth = arg0_3.chatBgWidth
 				arg0_7.name = var14_3
@@ -210,51 +215,55 @@ function var0_0.update(arg0_3, arg1_3)
 	setActive(arg0_3.face.parent, arg1_3.emojiId)
 end
 
-function var0_0.GetAttireFrameRes(arg0_11, arg1_11, arg2_11, arg3_11)
-	return (AttireFrame.attireFrameRes(arg1_11, arg2_11, AttireConst.TYPE_CHAT_FRAME, arg3_11))
+function var0_0.UpdateContent(arg0_11, arg1_11, arg2_11)
+	arg1_11.text = arg2_11
 end
 
-function var0_0.UpdateDuty(arg0_12, arg1_12)
-	setActive(arg0_12.dutyTF, arg1_12.duty)
+function var0_0.GetAttireFrameRes(arg0_12, arg1_12, arg2_12, arg3_12)
+	return (AttireFrame.attireFrameRes(arg1_12, arg2_12, AttireConst.TYPE_CHAT_FRAME, arg3_12))
+end
 
-	if arg1_12.duty then
-		local var0_12 = GetSpriteFromAtlas("dutyicon", arg1_12.duty)
+function var0_0.UpdateDuty(arg0_13, arg1_13)
+	setActive(arg0_13.dutyTF, arg1_13.duty)
 
-		setImageSprite(arg0_12.dutyTF, var0_12, true)
+	if arg1_13.duty then
+		local var0_13 = GetSpriteFromAtlas("dutyicon", arg1_13.duty)
+
+		setImageSprite(arg0_13.dutyTF, var0_13, true)
 	end
 end
 
-function var0_0.UpdateChannel(arg0_13, arg1_13)
-	local var0_13 = GetSpriteFromAtlas("channel", ChatConst.GetChannelSprite(arg1_13.type) .. "_1920")
+function var0_0.UpdateChannel(arg0_14, arg1_14)
+	local var0_14 = GetSpriteFromAtlas("channel", ChatConst.GetChannelSprite(arg1_14.type) .. "_1920")
 
-	setImageSprite(arg0_13.channel, var0_13, true)
+	setImageSprite(arg0_14.channel, var0_14, true)
 end
 
-function var0_0.dispose(arg0_14)
-	if arg0_14.face.childCount > 0 then
-		local var0_14 = arg0_14.face:GetChild(0).gameObject
+function var0_0.dispose(arg0_15)
+	if arg0_15.face.childCount > 0 then
+		local var0_15 = arg0_15.face:GetChild(0).gameObject
 
-		PoolMgr.GetInstance():ReturnPrefab("emoji/" .. var0_14.name, var0_14.name, var0_14)
+		PoolMgr.GetInstance():ReturnPrefab("emoji/" .. var0_15.name, var0_15.name, var0_15)
 	end
 
-	if arg0_14.circle.childCount > 0 then
-		local var1_14 = arg0_14.circle:GetChild(0).gameObject
+	if arg0_15.circle.childCount > 0 then
+		local var1_15 = arg0_15.circle:GetChild(0).gameObject
 
-		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var1_14.name, var1_14.name, var1_14)
+		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var1_15.name, var1_15.name, var1_15)
 	end
 
-	if arg0_14.isLoadChatBg then
-		local var2_14 = arg0_14.chatFrameTr:GetChild(0).gameObject
+	if arg0_15.isLoadChatBg then
+		local var2_15 = arg0_15.chatFrameTr:GetChild(0).gameObject
 
-		PoolMgr.GetInstance():ReturnPrefab("ChatFrame/" .. var2_14.name, var2_14.name, var2_14)
+		PoolMgr.GetInstance():ReturnPrefab("ChatFrame/" .. var2_15.name, var2_15.name, var2_15)
 
-		arg0_14.isLoadChatBg = false
+		arg0_15.isLoadChatBg = false
 	end
 
-	arg0_14.data = nil
+	arg0_15.data = nil
 end
 
-function var0_0.OnChatFrameLoaded(arg0_15, arg1_15)
+function var0_0.OnChatFrameLoaded(arg0_16, arg1_16)
 	return
 end
 

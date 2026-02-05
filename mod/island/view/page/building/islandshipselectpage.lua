@@ -112,7 +112,7 @@ function var0_0.OnInit(arg0_4)
 				content = i18n("island_cancel_follow_tip"),
 				onYes = function()
 					for iter0_8, iter1_8 in ipairs(var1_7) do
-						arg0_4:emit(IslandMediator.DEL_FOLLOWER, iter1_8)
+						arg0_4:emitCore(ISLAND_EVT.WILL_DEL_FOLLOWER, iter1_8)
 					end
 
 					arg0_4:Hide()

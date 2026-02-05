@@ -54,6 +54,8 @@ function var0_0.UnloadUI(arg0_7)
 
 		arg0_7.insId = nil
 	end
+
+	arg0_7.exited = true
 end
 
 function var0_0.ShowMsgbox(arg0_8, arg1_8)

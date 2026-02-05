@@ -191,4 +191,22 @@ function var0_0.GetBuffIdsByStageId(arg0_21, arg1_21)
 	end)
 end
 
+function var0_0.IsShowExpTagDaily(arg0_23, arg1_23)
+	if not arg0_23:IsUnlockByEnemyId(arg1_23.id) then
+		return false
+	end
+
+	if not arg1_23:InTime() then
+		return false
+	end
+
+	local var0_23 = arg1_23:GetFleetIdx()
+
+	if (arg0_23:GetDailyCounts()[var0_23] or 0) >= 1 then
+		return false
+	end
+
+	return true
+end
+
 return var0_0
