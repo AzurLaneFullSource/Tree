@@ -1568,6 +1568,21 @@ function var0_0.InitSwitch()
 				var0_238:addVitemNumber(arg0_238.id, arg0_238.count)
 				getProxy(ActivityProxy):updateActivity(var0_238)
 			end
+		elseif arg0_238.type >= DROP_TYPE_ISLAND_ITEM and arg0_238.type <= DROP_TYPE_ISLAND_CARD_DIY then
+			if not getProxy(IslandProxy):GetIsland() then
+				return
+			end
+
+			local var1_238 = {}
+
+			table.insert(var1_238, {
+				type = arg0_238.type,
+				id = arg0_238.id,
+				number = arg0_238.count
+			})
+			IslandDropHelper.AddItems({
+				drop_list = var1_238
+			})
 		else
 			print("can not handle this type>>" .. arg0_238.type)
 		end

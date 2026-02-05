@@ -74552,43 +74552,17 @@ pg.activity_template = {
 	},
 	[999901] = {
 		mark = 20250929,
-		title_res_tag = "",
+		time = "stop",
 		page_info = "",
 		type = 800,
 		login_pop = 0,
 		config_id = 0,
 		is_show = 0,
+		title_res_tag = "",
 		config_client = "",
 		id = 999901,
 		page_core = "",
-		config_data = {},
-		time = {
-			"timer",
-			{
-				{
-					2025,
-					9,
-					29
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					2,
-					5
-				},
-				{
-					12,
-					0,
-					0
-				}
-			}
-		}
+		config_data = {}
 	},
 	get_id_list_by_type = {
 		{

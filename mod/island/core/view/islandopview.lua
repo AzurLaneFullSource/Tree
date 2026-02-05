@@ -543,11 +543,13 @@ function var0_0.EnableInput(arg0_50)
 	arg0_50.playerInputManager:EnableInput()
 end
 
-function var0_0.ChangeTakePhotoModel(arg0_51, arg1_51)
+function var0_0.ChangeTakePhotoModel(arg0_51, arg1_51, arg2_51)
 	if arg1_51 == IslandConst.TakePhotoModel.None then
-		arg0_51:ShowOrHideMoveBtn(false)
-		arg0_51.playerInputManager:DisableInput()
-		arg0_51:GetView().player:ActiveOrDisactive(false)
+		if not arg2_51 then
+			arg0_51:ShowOrHideMoveBtn(false)
+			arg0_51.playerInputManager:DisableInput()
+			arg0_51:GetView().player:ActiveOrDisactive(false)
+		end
 	elseif arg1_51 == IslandConst.TakePhotoModel.First then
 		arg0_51:ShowOrHideMoveBtn(true)
 		arg0_51.playerInputManager:EnableInput()
