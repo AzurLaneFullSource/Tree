@@ -45,7 +45,7 @@ return {
 		{
 			subName = "Manager of the Fish Hatchery",
 			characterId = 101800,
-			say = "Meow?! Ah, it's you, Commander. I'm observing the fish, you see!",
+			say = "See that spot over there, with all those swimming fish? Aren't they beautiful?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
