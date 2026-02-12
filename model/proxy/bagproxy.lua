@@ -339,22 +339,21 @@ end
 
 function var0_0.GetAllLoveLetterItem(arg0_28)
 	local var0_28 = {}
-	local var1_28, var2_28, var3_28 = getProxy(LoveLetterProxy):GetLoveLetterItemDic()
+	local var1_28 = getProxy(LoveLetterProxy):GetLoveLetterItemDic()
 
 	for iter0_28, iter1_28 in pairs(arg0_28.data) do
 		assert(not arg0_28.extraItemData[iter0_28] or iter1_28.count == #arg0_28.extraItemData[iter0_28])
 
 		for iter2_28 = 1, iter1_28.count do
-			local var4_28 = arg0_28.extraItemData[iter0_28] and arg0_28.extraItemData[iter0_28][iter2_28] or nil
-			local var5_28 = var4_28 and var3_28[var4_28] or var4_28 or 0
+			local var2_28 = arg0_28.extraItemData[iter0_28] and arg0_28.extraItemData[iter0_28][iter2_28] or nil
 
-			if not var1_28[iter0_28 .. "_" .. var5_28] then
+			if not var1_28[iter0_28 .. "_" .. (var2_28 or 0)] then
 				break
 			end
 
 			table.insert(var0_28, {
 				iter0_28,
-				var4_28
+				var2_28
 			})
 		end
 	end

@@ -105442,7 +105442,7 @@ _G.pg.base.item_data_statistics[60573] = {
 
 _G.pg.base.item_data_statistics[60574] = {
 	compose_number = 0,
-	display = "New Year's greetings (LNY '25) given to you by Taihou.",
+	display = "New Year's greetings (LNY '26) given to you by Taihou.",
 	display_effect = "",
 	icon = "Props/henianka2026",
 	id = 60574,

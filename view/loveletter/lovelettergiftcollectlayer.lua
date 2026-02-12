@@ -108,31 +108,29 @@ function var0_0.InitGift(arg0_10)
 	arg0_10.giftItemList = underscore.to_array(arg0_10.contextData.items)
 	arg0_10.giftGroupList = {}
 
-	local var0_10, var1_10, var2_10 = getProxy(LoveLetterProxy):GetLoveLetterItemDic()
-	local var3_10 = {}
+	local var0_10 = getProxy(LoveLetterProxy):GetLoveLetterItemDic()
+	local var1_10 = {}
 
 	for iter0_10, iter1_10 in ipairs(arg0_10.giftItemList) do
-		local var4_10, var5_10 = unpack(iter1_10)
+		local var2_10, var3_10 = unpack(iter1_10)
 
-		assert(tobool(var5_10) == (pg.item_data_statistics[var4_10].type == Item.LOVE_LETTER_TYPE))
+		assert(tobool(var3_10) == (pg.item_data_statistics[var2_10].type == Item.LOVE_LETTER_TYPE))
 
-		local var6_10 = var5_10 and var2_10[var5_10] or var5_10 or 0
-
-		for iter2_10, iter3_10 in pairs(var0_10[var4_10 .. "_" .. var6_10]) do
+		for iter2_10, iter3_10 in pairs(var0_10[var2_10 .. "_" .. (var3_10 or 0)]) do
 			assert(not arg0_10.giftGroupList[iter0_10] or arg0_10.giftGroupList[iter0_10] == iter3_10)
 
 			arg0_10.giftGroupList[iter0_10] = iter3_10
-			var3_10[iter2_10] = var3_10[iter2_10] or {}
+			var1_10[iter2_10] = var1_10[iter2_10] or {}
 
-			table.insert(var3_10[iter2_10], iter0_10)
+			table.insert(var1_10[iter2_10], iter0_10)
 		end
 	end
 
 	arg0_10.itemDic = var0_10
-	arg0_10.yearDic = var3_10
+	arg0_10.yearDic = var1_10
 	arg0_10.confirmDic = {}
-	arg0_10.heap = Heap.New(underscore.keys(var3_10), function(arg0_11)
-		return #var3_10[arg0_11]
+	arg0_10.heap = Heap.New(underscore.keys(var1_10), function(arg0_11)
+		return #var1_10[arg0_11]
 	end)
 	arg0_10.tempList = underscore(arg0_10.yearDic):chain():keys():sort():value()
 
