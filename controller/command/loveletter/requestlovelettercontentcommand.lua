@@ -8,7 +8,9 @@ function var0_0.execute(arg0_1, arg1_1)
 	pg.ConnectionMgr.GetInstance():Send(12410, {
 		letter_id = var1_1
 	}, 12411, function(arg0_2)
-		getProxy(LoveLetterProxy):RecordLoveLetterContent(var1_1, arg0_2.content)
+		local var0_2 = string.gsub(arg0_2.content, "\\", "")
+
+		getProxy(LoveLetterProxy):RecordLoveLetterContent(var1_1, var0_2)
 		existCall(var2_1)
 		pg.m02:sendNotification(GAME.REQUEST_LOVE_LETTER_TEXT_DONE, {
 			letterId = var1_1
