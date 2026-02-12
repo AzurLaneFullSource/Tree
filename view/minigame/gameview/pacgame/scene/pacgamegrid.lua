@@ -14,12 +14,15 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 
 	setActive(arg0_1._selectTF, false)
 
-	if arg0_1._data.score then
-		arg0_1._scoreTF = findTF(arg1_1, "ad/score")
+	arg0_1._scoreTF = findTF(arg1_1, "ad/score")
 
+	if arg0_1._scoreTF then
 		setActive(arg0_1._scoreTF, false)
+	end
 
-		arg0_1._scoreFlag = false
+	arg0_1._scoreFlag = false
+
+	if arg0_1._data.score then
 		arg0_1._score = arg0_1._data.score
 	end
 end
@@ -49,11 +52,9 @@ function var0_0.HasScore(arg0_7)
 end
 
 function var0_0.SetScoreFlag(arg0_8, arg1_8)
-	if arg0_8:HasScore() then
-		setActive(arg0_8._scoreTF, arg1_8)
+	setActive(arg0_8._scoreTF, arg1_8)
 
-		arg0_8._scoreFlag = arg1_8
-	end
+	arg0_8._scoreFlag = arg1_8
 end
 
 function var0_0.SetVH(arg0_9, arg1_9, arg2_9)
@@ -66,11 +67,11 @@ function var0_0.GetVH(arg0_10)
 end
 
 function var0_0.GetScoreFlag(arg0_11)
-	return arg0_11._scoreFlag
+	return arg0_11._scoreFlag and isActive(arg0_11._scoreTF)
 end
 
 function var0_0.GetScore(arg0_12)
-	return arg0_12._score
+	return arg0_12._score and arg0_12._score or 0
 end
 
 function var0_0.SetActive(arg0_13, arg1_13)

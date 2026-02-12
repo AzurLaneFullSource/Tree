@@ -283,7 +283,7 @@ function var0_0.GetPreloadList(arg0_13)
 		end
 	end
 
-	local var7_13 = var5_13:buildBattleBuffList()
+	local var7_13 = var5_13:BuildBattleBuffList()
 	local var8_13 = var4_13:GetSubFleet()
 	local var9_13 = var8_13:GetShips()
 
@@ -305,6 +305,8 @@ function var0_0.GetPreloadList(arg0_13)
 	for iter6_13, iter7_13 in ipairs(var13_13) do
 		table.insert(var11_13, iter7_13)
 	end
+
+	return var11_13, var12_13
 end
 
 return var0_0

@@ -44,7 +44,8 @@ function var0_0.InitBtns(arg0_2)
 		MainActDelegationBtn.New(arg0_2._tf, arg0_2.event),
 		MainIslandActDelegationBtn.New(arg0_2._tf, arg0_2.event),
 		MainVoteEntranceBtn.New(arg0_2._tf, arg0_2.event),
-		MainActCompensatBtn.New(arg0_2._tf, arg0_2.event)
+		MainActCompensatBtn.New(arg0_2._tf, arg0_2.event),
+		MainLoveLetterDelegationBtn.New(arg0_2._tf, arg0_2.event)
 	}
 
 	if pg.SdkMgr.GetInstance():CheckAudit() then
