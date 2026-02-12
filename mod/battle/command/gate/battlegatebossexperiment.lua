@@ -32,4 +32,10 @@ function var0_0.Exit(arg0_2, arg1_2)
 	arg1_2:sendNotification(GAME.FINISH_STAGE_DONE, var1_2)
 end
 
+function var0_0.GetPreloadList(arg0_3)
+	local var0_3, var1_3 = ys.Battle.BattleGateActBoss.GetPreloadList(arg0_3)
+
+	return var0_3, var1_3
+end
+
 return var0_0

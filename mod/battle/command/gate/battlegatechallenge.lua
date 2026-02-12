@@ -146,4 +146,38 @@ function var0_0.Exit(arg0_4, arg1_4)
 	arg1_4:SendRequest(var12_4, var13_4)
 end
 
+function var0_0.GetPreloadList(arg0_7)
+	local var0_7 = {}
+	local var1_7
+	local var2_7 = ys.Battle.BattleResourceManager.GetInstance()
+	local var3_7 = getProxy(ChallengeProxy):getUserChallengeInfo(arg0_7.mode)
+	local var4_7 = var3_7:getRegularFleet()
+	local var5_7 = var4_7:getShips(false)
+
+	for iter0_7, iter1_7 in ipairs(var5_7) do
+		table.insert(var0_7, iter1_7)
+	end
+
+	local var6_7 = var4_7:buildBattleBuffList()
+	local var7_7 = var3_7:getSubmarineFleet()
+	local var8_7 = var7_7:getShips(false)
+
+	for iter2_7, iter3_7 in ipairs(var8_7) do
+		table.insert(var0_7, iter3_7)
+	end
+
+	for iter4_7, iter5_7 in ipairs(var7_7:buildBattleBuffList()) do
+		table.insert(var6_7, iter5_7)
+	end
+
+	local var9_7, var10_7 = var2_7.GetPlayerShipResource(var0_7, arg0_7.system)
+	local var11_7 = var2_7.GetCommanderBuffRes(var6_7)
+
+	for iter6_7, iter7_7 in ipairs(var11_7) do
+		table.insert(var9_7, iter7_7)
+	end
+
+	return var9_7, var10_7
+end
+
 return var0_0

@@ -1911,5 +1911,13 @@ pg.voice_actor_CN = {
 	[496] = {
 		code = 496,
 		actor_name = "Moe Nagamuta"
+	},
+	[497] = {
+		code = 497,
+		actor_name = "Karin Nanami"
+	},
+	[498] = {
+		code = 498,
+		actor_name = "Mirei Kumagai"
 	}
 }

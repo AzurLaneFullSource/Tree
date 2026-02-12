@@ -29,12 +29,21 @@ end
 
 function var0_0.IsShowTip(arg0_5)
 	local var0_5 = arg0_5:GetActivityID()
-	local var1_5 = arg0_5:GetActivity():getConfig("type")
+	local var1_5 = arg0_5:GetActivity()
+	local var2_5 = var1_5:getConfig("type")
 
 	if var0_5 == ActivityConst.OTHER_WORLD_TERMINAL_BATTLE_ID then
 		return OtherworldMapScene.IsShowTip()
-	elseif var1_5 == ActivityConst.ACTIVITY_TYPE_BOSSRUSH or var1_5 == ActivityConst.ACTIVITY_TYPE_BOSS_RUSH_DAL_COLLAB then
+	elseif var2_5 == ActivityConst.ACTIVITY_TYPE_BOSSRUSH or var2_5 == ActivityConst.ACTIVITY_TYPE_BOSS_RUSH_DAL_COLLAB then
 		return false
+	elseif var2_5 == ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2 then
+		local var3_5 = getProxy(ActivityProxy):getActivityById(var1_5:GetBindPtActID())
+
+		if not var3_5 then
+			return false
+		end
+
+		return ActivityBossPtData.New(var3_5):CanGetAward()
 	end
 
 	return getProxy(ChapterProxy):IsActivitySPChapterActive(var0_5) and SettingsProxy.IsShowActivityMapSPTip()

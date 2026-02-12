@@ -74,6 +74,8 @@ function var0_0.execute(arg0_1, arg1_1)
 			seriesAsync(var5_1, function()
 				arg0_1:sendNotification(GAME.GO_SCENE, SCENE[var2_1[1]], var2_1[2])
 			end)
+		elseif var2_1[1] == "MINI_GAME" and var2_1[2] then
+			arg0_1:sendNotification(GAME.GO_MINI_GAME, var2_1[2])
 		else
 			arg0_1:sendNotification(GAME.GO_SCENE, SCENE[var2_1[1]], var2_1[2])
 		end

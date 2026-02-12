@@ -148,4 +148,22 @@ function var0_0.Exit(arg0_4, arg1_4)
 	arg1_4:SendRequest(var8_4, var9_4)
 end
 
+function var0_0.GetPreloadList(arg0_8)
+	local var0_8, var1_8 = ys.Battle.BattleGateBossRush.GetPreloadList(arg0_8)
+	local var2_8 = getProxy(ActivityProxy):getActivityById(arg0_8.actId):GetSeriesData()
+	local var3_8 = var2_8:getConfig("aid_buff")
+
+	if var2_8:GetBossHpRate() <= var3_8[1] then
+		t = resMgr.GetResFromBuffIDList({
+			var3_8[2]
+		})
+
+		for iter0_8, iter1_8 in ipairs(t) do
+			table.insert(var0_8, iter1_8)
+		end
+	end
+
+	return var0_8, var1_8
+end
+
 return var0_0

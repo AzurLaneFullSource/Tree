@@ -39,8 +39,8 @@ function var0_0.updateStudent(arg0_6, arg1_6)
 	setActive(arg0_6._go, true)
 
 	if arg0_6.prefabName ~= arg1_6 then
-		if not IsNil(arg0_6.model) then
-			PoolMgr.GetInstance():ReturnSpineChar(arg0_6.prefab, arg0_6.model)
+		if arg0_6.model then
+			arg0_6.model:Dispose()
 		end
 
 		arg0_6.prefab = arg1_6
@@ -57,22 +57,20 @@ function var0_0.updateStudent(arg0_6, arg1_6)
 
 		local var1_6 = arg0_6.prefab
 
-		PoolMgr.GetInstance():GetSpineChar(var1_6, true, function(arg0_7)
+		arg0_6.model = SpineAnimChar.New()
+
+		arg0_6.model:SetPaint(var1_6)
+		arg0_6.model:Load(true, function(arg0_7)
 			if var1_6 ~= arg0_6.prefab then
-				PoolMgr.GetInstance():ReturnSpineChar(var1_6, arg0_7)
+				arg0_7:Dispose()
 
 				return
 			end
 
-			arg0_6.model = arg0_7
-			arg0_6.model.transform.localScale = Vector3.one
-			arg0_6.model.transform.localPosition = Vector3.zero
-
-			arg0_6.model.transform:SetParent(arg0_6._tf, false)
-
-			arg0_6.anim = arg0_6.model:GetComponent(typeof(SpineAnimUI))
-
-			arg0_6:updateState(var0_0.ShipState.Walk)
+			arg0_6.model:SetLocalScale(Vector3(0.5, 0.5, 1))
+			arg0_6.model:SetLocalPosition(Vector3.zero)
+			arg0_6.model:SetParent(arg0_6._tf)
+			arg0_6:updateState(var0_0.ShipState.Idle)
 		end)
 	end
 

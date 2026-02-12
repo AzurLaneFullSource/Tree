@@ -153,4 +153,75 @@ function var0_0.Exit(arg0_4, arg1_4)
 	arg1_4:SendRequest(var14_4, var15_4)
 end
 
+function var0_0.GetPreloadList(arg0_6)
+	local var0_6 = {}
+	local var1_6
+	local var2_6 = ys.Battle.BattleResourceManager.GetInstance()
+	local var3_6 = nowWorld()
+	local var4_6 = var3_6:GetActiveMap()
+	local var5_6 = var4_6:GetFleet()
+
+	for iter0_6, iter1_6 in ipairs(var5_6:GetShipVOs(true)) do
+		table.insert(var0_6, iter1_6)
+	end
+
+	local var6_6, var7_6 = var4_6:getFleetBattleBuffs(var5_6)
+
+	if var3_6:GetSubAidFlag() == true then
+		local var8_6 = var4_6:GetSubmarineFleet()
+		local var9_6 = var8_6:GetTeamShipVOs(TeamType.Submarine, false)
+
+		for iter2_6, iter3_6 in ipairs(var9_6) do
+			table.insert(var0_6, iter3_6)
+		end
+
+		local var10_6, var11_6 = var4_6:getFleetBattleBuffs(var8_6)
+
+		for iter4_6, iter5_6 in ipairs(var10_6) do
+			table.insert(var6_6, iter5_6)
+		end
+
+		for iter6_6, iter7_6 in ipairs(var11_6) do
+			table.insert(var7_6, iter7_6)
+		end
+	end
+
+	local var12_6, var13_6 = var2_6.GetPlayerShipResource(var0_6, arg0_6.system)
+	local var14_6 = var4_6:GetChapterAuraBuffs()
+	local var15_6 = var4_6:GetChapterAidBuffs()
+
+	for iter8_6, iter9_6 in pairs(var15_6) do
+		for iter10_6, iter11_6 in ipairs(iter9_6) do
+			table.insert(var14_6, iter11_6)
+		end
+	end
+
+	local var16_6 = var2_6.GetResFromBuffList(var14_6)
+
+	for iter12_6, iter13_6 in ipairs(var16_6) do
+		table.insert(var12_6, iter13_6)
+	end
+
+	local var17_6 = var4_6:GetCell(var5_6.row, var5_6.column):GetStageEnemy()
+	local var18_6 = table.mergeArray(var17_6:GetBattleLuaBuffs(), var4_6:GetBattleLuaBuffs(WorldMap.FactionEnemy, var17_6))
+
+	for iter14_6, iter15_6 in ipairs(var18_6) do
+		table.insert(var6_6, iter15_6)
+	end
+
+	local var19_6 = var2_6.GetResFromBuffIDList(var6_6)
+
+	for iter16_6, iter17_6 in ipairs(var19_6) do
+		table.insert(var12_6, iter17_6)
+	end
+
+	local var20_6 = var2_6.GetCommanderBuffRes(var7_6)
+
+	for iter18_6, iter19_6 in ipairs(var20_6) do
+		table.insert(var12_6, iter19_6)
+	end
+
+	return var12_6, var13_6
+end
+
 return var0_0

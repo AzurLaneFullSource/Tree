@@ -138,6 +138,7 @@ function var0_0.getDataAndTrophys(arg0_4, arg1_4)
 	end
 
 	var0_4.trophys = getProxy(CollectionProxy):getTrophys()
+	var0_4.loveTrophys = getProxy(LoveLetterProxy):GetTrophyList()
 
 	return var0_4
 end

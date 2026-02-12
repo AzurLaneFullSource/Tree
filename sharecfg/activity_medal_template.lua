@@ -1236,6 +1236,102 @@ pg.activity_medal_template = {
 		id = 5035908,
 		activity_medal_desc = "Capture every moment, even when the subject isn't looking at the camera!"
 	},
+	[5040501] = {
+		prefab_node = "1",
+		next_medal = 0,
+		item = 65849,
+		remake_task_id = 0,
+		group = 50405,
+		task_id = 21893,
+		medal_asset = "ActivityMedal/5040501",
+		activity_medal_name = "Sticker: Spring Jade of Recollection",
+		id = 5040501,
+		activity_medal_desc = "The Gentleman's Fine Pendant. To whom does the eponymous man's heart belong?"
+	},
+	[5040502] = {
+		prefab_node = "2",
+		next_medal = 0,
+		item = 65850,
+		remake_task_id = 0,
+		group = 50405,
+		task_id = 21894,
+		medal_asset = "ActivityMedal/5040502",
+		activity_medal_name = "Sticker: Flying Lantern",
+		id = 5040502,
+		activity_medal_desc = "All their gazes fell upon me."
+	},
+	[5040503] = {
+		prefab_node = "3",
+		next_medal = 0,
+		item = 65851,
+		remake_task_id = 0,
+		group = 50405,
+		task_id = 21895,
+		medal_asset = "ActivityMedal/5040503",
+		activity_medal_name = "Sticker: Moonlit Fragrance",
+		id = 5040503,
+		activity_medal_desc = "Moonlight envelops the valley, a fine aroma tugging on one's heartstrings."
+	},
+	[5040504] = {
+		prefab_node = "4",
+		next_medal = 0,
+		item = 65852,
+		remake_task_id = 0,
+		group = 50405,
+		task_id = 21896,
+		medal_asset = "ActivityMedal/5040504",
+		activity_medal_name = "Sticker: Auction Gavel",
+		id = 5040504,
+		activity_medal_desc = "Bam! Sold!"
+	},
+	[5040505] = {
+		prefab_node = "5",
+		next_medal = 0,
+		item = 65853,
+		remake_task_id = 0,
+		group = 50405,
+		task_id = 21897,
+		medal_asset = "ActivityMedal/5040505",
+		activity_medal_name = "Sticker: Censer",
+		id = 5040505,
+		activity_medal_desc = "A lingering fragrance quietly speaks the answer."
+	},
+	[5040506] = {
+		prefab_node = "6",
+		next_medal = 0,
+		item = 65854,
+		remake_task_id = 0,
+		group = 50405,
+		task_id = 21898,
+		medal_asset = "ActivityMedal/5040506",
+		activity_medal_name = "Sticker: The Trio",
+		id = 5040506,
+		activity_medal_desc = "Come on, it's time for an adventure!"
+	},
+	[5040507] = {
+		prefab_node = "7",
+		next_medal = 0,
+		item = 65855,
+		remake_task_id = 0,
+		group = 50405,
+		task_id = 21899,
+		medal_asset = "ActivityMedal/5040507",
+		activity_medal_name = "Sticker: Tanghulu",
+		id = 5040507,
+		activity_medal_desc = "Sweet, sour, and delicious. You finish eating one, only to immediately want another."
+	},
+	[5040508] = {
+		prefab_node = "8",
+		next_medal = 0,
+		item = 65856,
+		remake_task_id = 0,
+		group = 50405,
+		task_id = 21900,
+		medal_asset = "ActivityMedal/5040508",
+		activity_medal_name = "Sticker: Stunning Jade Pendant",
+		id = 5040508,
+		activity_medal_desc = "The Gentleman's Cherished Pendant, warm and lustrous."
+	},
 	get_id_list_by_group = {
 		[5711] = {
 			571101,
@@ -1365,6 +1461,16 @@ pg.activity_medal_template = {
 			5035906,
 			5035907,
 			5035908
+		},
+		[50405] = {
+			5040501,
+			5040502,
+			5040503,
+			5040504,
+			5040505,
+			5040506,
+			5040507,
+			5040508
 		}
 	},
 	all = {
@@ -1470,6 +1576,14 @@ pg.activity_medal_template = {
 		5035905,
 		5035906,
 		5035907,
-		5035908
+		5035908,
+		5040501,
+		5040502,
+		5040503,
+		5040504,
+		5040505,
+		5040506,
+		5040507,
+		5040508
 	}
 }

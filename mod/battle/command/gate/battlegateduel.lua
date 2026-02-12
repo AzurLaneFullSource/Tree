@@ -142,4 +142,27 @@ function var0_0.Exit(arg0_4, arg1_4)
 	arg1_4:SendRequest(var9_4, var10_4)
 end
 
+function var0_0.GetPreloadList(arg0_6)
+	local var0_6 = {}
+	local var1_6
+	local var2_6 = getProxy(FleetProxy)
+	local var3_6 = getProxy(BayProxy)
+	local var4_6 = var2_6:getFleetById(arg0_6.mainFleetId)
+	local var5_6 = var3_6:getShipsByFleet(var4_6)
+
+	for iter0_6, iter1_6 in ipairs(var5_6) do
+		table.insert(var0_6, iter1_6)
+	end
+
+	local var6_6 = getProxy(MilitaryExerciseProxy):getRivalById(arg0_6.rivalId):getShips()
+
+	for iter2_6, iter3_6 in ipairs(var6_6) do
+		table.insert(var0_6, iter3_6)
+	end
+
+	local var7_6, var8_6 = ys.Battle.BattleResourceManager.GetInstance().GetPlayerShipResource(var0_6, arg0_6.system)
+
+	return var7_6, var8_6
+end
+
 return var0_0

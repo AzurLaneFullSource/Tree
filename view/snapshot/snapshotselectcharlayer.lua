@@ -78,8 +78,6 @@ function var0_0.back(arg0_4)
 	end
 
 	arg0_4:emit(var0_0.ON_CLOSE)
-
-	arg0_4.scrollValue = 0
 end
 
 function var0_0.init(arg0_5)
@@ -252,7 +250,6 @@ function var0_0.updateCardList(arg0_18)
 	arg0_18.cardInfos = var0_18
 
 	arg0_18.cardList:SetTotalCount(#arg0_18.cardInfos, -1)
-	arg0_18.cardList:ScrollTo(arg0_18.scrollValue or 0)
 end
 
 local function var2_0(arg0_20)

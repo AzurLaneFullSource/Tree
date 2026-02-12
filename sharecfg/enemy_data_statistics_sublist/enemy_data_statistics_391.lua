@@ -1,5 +1,262 @@
 pg = pg or {}
 pg.enemy_data_statistics_391 = {
+	[295238] = {
+		cannon = 367,
+		name = "Nagato META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 67,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 286,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 95,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 950000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295238
+	},
+	[295239] = {
+		cannon = 386,
+		name = "Nagato META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 71,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 301,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 100,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 1170000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295239
+	},
+	[295240] = {
+		cannon = 406,
+		name = "Nagato META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 75,
+		base = 90983,
+		durability_growth = 0,
+		antiaircraft = 317,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 110,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 1420000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295240
+	},
+	[295241] = {
+		cannon = 80,
+		name = "Taihou META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 164,
+		hit_growth = 0,
+		dodge = 25,
+		base = 91025,
+		durability_growth = 0,
+		antiaircraft = 115,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 35,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 54000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295241,
+		buff_list = {
+			{
+				ID = 201171,
+				LV = 1
+			},
+			{
+				ID = 201175,
+				LV = 1
+			}
+		}
+	},
+	[295242] = {
+		cannon = 92,
+		name = "Taihou META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 187,
+		hit_growth = 0,
+		dodge = 28,
+		base = 91025,
+		durability_growth = 0,
+		antiaircraft = 131,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 40,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 58000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295242,
+		buff_list = {
+			{
+				ID = 201171,
+				LV = 2
+			},
+			{
+				ID = 201175,
+				LV = 1
+			}
+		}
+	},
+	[295243] = {
+		cannon = 103,
+		name = "Taihou META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 210,
+		hit_growth = 0,
+		dodge = 32,
+		base = 91025,
+		durability_growth = 0,
+		antiaircraft = 148,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 45,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 62000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295243,
+		buff_list = {
+			{
+				ID = 201171,
+				LV = 3
+			},
+			{
+				ID = 201175,
+				LV = 1
+			}
+		}
+	},
+	[295244] = {
+		cannon = 115,
+		name = "Taihou META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 234,
+		hit_growth = 0,
+		dodge = 35,
+		base = 91025,
+		durability_growth = 0,
+		antiaircraft = 164,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 50,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 75000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295244,
+		buff_list = {
+			{
+				ID = 201171,
+				LV = 4
+			},
+			{
+				ID = 201175,
+				LV = 1
+			}
+		}
+	},
 	[295245] = {
 		cannon = 126,
 		name = "Taihou META",
@@ -915,355 +1172,5 @@ pg.enemy_data_statistics_391 = {
 		fog_fx = "",
 		antisub = 0,
 		id = 295270
-	},
-	[295271] = {
-		cannon = 78,
-		name = "Kawakaze META (Tier.1)",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 25,
-		base = 91099,
-		antiaircraft = 101,
-		speed = 30,
-		reload_growth = 0,
-		dodge_growth = 0,
-		luck = 50,
-		battle_unit_type = 90,
-		hit = 35,
-		antisub_growth = 0,
-		air_growth = 0,
-		torpedo_growth = 0,
-		torpedo = 121,
-		durability = 54000,
-		armor_growth = 0,
-		durability_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295271,
-		equipment_list = {
-			2981000,
-			2981001,
-			2981005
-		},
-		buff_list = {
-			{
-				ID = 201420,
-				LV = 1
-			},
-			{
-				ID = 201425,
-				LV = 1
-			},
-			{
-				ID = 201428,
-				LV = 1
-			}
-		}
-	},
-	[295272] = {
-		cannon = 89,
-		name = "Kawakaze META (Tier.2)",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 28,
-		base = 91099,
-		antiaircraft = 116,
-		speed = 30,
-		reload_growth = 0,
-		dodge_growth = 0,
-		luck = 50,
-		battle_unit_type = 90,
-		hit = 40,
-		antisub_growth = 0,
-		air_growth = 0,
-		torpedo_growth = 0,
-		torpedo = 139,
-		durability = 58000,
-		armor_growth = 0,
-		durability_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295272,
-		equipment_list = {
-			2981000,
-			2981001,
-			2981005
-		},
-		buff_list = {
-			{
-				ID = 201420,
-				LV = 1
-			},
-			{
-				ID = 201425,
-				LV = 1
-			},
-			{
-				ID = 201429,
-				LV = 1
-			}
-		}
-	},
-	[295273] = {
-		cannon = 100,
-		name = "Kawakaze META (Tier.3)",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 32,
-		base = 91099,
-		antiaircraft = 130,
-		speed = 30,
-		reload_growth = 0,
-		dodge_growth = 0,
-		luck = 50,
-		battle_unit_type = 90,
-		hit = 45,
-		antisub_growth = 0,
-		air_growth = 0,
-		torpedo_growth = 0,
-		torpedo = 156,
-		durability = 62000,
-		armor_growth = 0,
-		durability_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295273,
-		equipment_list = {
-			2981000,
-			2981001,
-			2981005
-		},
-		buff_list = {
-			{
-				ID = 201420,
-				LV = 1
-			},
-			{
-				ID = 201425,
-				LV = 1
-			},
-			{
-				ID = 201430,
-				LV = 1
-			}
-		}
-	},
-	[295274] = {
-		cannon = 111,
-		name = "Kawakaze META (Tier.4)",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 35,
-		base = 91099,
-		antiaircraft = 145,
-		speed = 30,
-		reload_growth = 0,
-		dodge_growth = 0,
-		luck = 50,
-		battle_unit_type = 90,
-		hit = 50,
-		antisub_growth = 0,
-		air_growth = 0,
-		torpedo_growth = 0,
-		torpedo = 173,
-		durability = 75000,
-		armor_growth = 0,
-		durability_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295274,
-		equipment_list = {
-			2981000,
-			2981001,
-			2981006
-		},
-		buff_list = {
-			{
-				ID = 201420,
-				LV = 1
-			},
-			{
-				ID = 201425,
-				LV = 1
-			},
-			{
-				ID = 201431,
-				LV = 1
-			}
-		}
-	},
-	[295275] = {
-		cannon = 123,
-		name = "Kawakaze META (Tier.5)",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 39,
-		base = 91099,
-		antiaircraft = 159,
-		speed = 30,
-		reload_growth = 0,
-		dodge_growth = 0,
-		luck = 50,
-		battle_unit_type = 90,
-		hit = 55,
-		antisub_growth = 0,
-		air_growth = 0,
-		torpedo_growth = 0,
-		torpedo = 191,
-		durability = 118000,
-		armor_growth = 0,
-		durability_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295275,
-		equipment_list = {
-			2981000,
-			2981001,
-			2981006
-		},
-		buff_list = {
-			{
-				ID = 201420,
-				LV = 1
-			},
-			{
-				ID = 201425,
-				LV = 1
-			},
-			{
-				ID = 201432,
-				LV = 1
-			}
-		}
-	},
-	[295276] = {
-		cannon = 134,
-		name = "Kawakaze META (Tier.6)",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 42,
-		base = 91099,
-		antiaircraft = 174,
-		speed = 30,
-		reload_growth = 0,
-		dodge_growth = 0,
-		luck = 50,
-		battle_unit_type = 90,
-		hit = 60,
-		antisub_growth = 0,
-		air_growth = 0,
-		torpedo_growth = 0,
-		torpedo = 208,
-		durability = 162000,
-		armor_growth = 0,
-		durability_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295276,
-		equipment_list = {
-			2981000,
-			2981001,
-			2981006
-		},
-		buff_list = {
-			{
-				ID = 201420,
-				LV = 1
-			},
-			{
-				ID = 201425,
-				LV = 1
-			},
-			{
-				ID = 201433,
-				LV = 1
-			}
-		}
-	},
-	[295277] = {
-		cannon = 145,
-		name = "Kawakaze META (Tier.7)",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 46,
-		base = 91099,
-		antiaircraft = 188,
-		speed = 30,
-		reload_growth = 0,
-		dodge_growth = 0,
-		luck = 50,
-		battle_unit_type = 90,
-		hit = 65,
-		antisub_growth = 0,
-		air_growth = 0,
-		torpedo_growth = 0,
-		torpedo = 225,
-		durability = 248000,
-		armor_growth = 0,
-		durability_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295277,
-		equipment_list = {
-			2981000,
-			2981001,
-			2981007
-		},
-		buff_list = {
-			{
-				ID = 201420,
-				LV = 1
-			},
-			{
-				ID = 201425,
-				LV = 1
-			},
-			{
-				ID = 201434,
-				LV = 1
-			}
-		}
 	}
 }

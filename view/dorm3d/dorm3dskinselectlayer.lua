@@ -174,7 +174,7 @@ function var0_0.OnclickSkin(arg0_16, arg1_16, arg2_16)
 			arg0_16.contextData.onSwitchSkin(var0_16, var1_16, arg0_16.selectedSkinId)
 		else
 			var0_16:SwitchCharacterSkin(var1_16, arg0_16.selectedSkinId, function()
-				var0_16:HideCharacterPart(arg0_16.selectedSkinId, arg0_16.hiddenList)
+				Dorm3dHxHelper.HideCharacterPart(var0_16.lady, arg0_16.hiddenList)
 
 				local var0_17 = arg0_16.skinDic[arg0_16.selectedSkinId]:GetSwitchAnim()
 
@@ -260,7 +260,7 @@ function var0_0.FlushSkinPartOptions(arg0_19)
 
 				setActive(arg2_20:Find("open"), not var1_21)
 				setActive(arg2_20:Find("close"), var1_21)
-				arg0_19.contextData.ladyEnv:HideCharacterPart(arg0_19.selectedSkinId, arg0_19.hiddenList)
+				Dorm3dHxHelper.HideCharacterPart(arg0_19.contextData.ladyEnv.lady, arg0_19.hiddenList)
 				arg0_19:FlushBtns()
 			end, SFX_PANEL)
 		end
@@ -297,10 +297,10 @@ function var0_0.willExit(arg0_25)
 
 	if arg0_25.contextData.ladyEnv.skinId ~= var0_25 then
 		arg0_25.contextData.ladyEnv:SwitchCharacterSkin(arg0_25.contextData.groupId, var0_25, function()
-			arg0_25.contextData.ladyEnv:HideCharacterPart(var0_25, arg0_25.apartment:GetHiddenParts(var0_25))
+			Dorm3dHxHelper.HideCharacterPart(arg0_25.contextData.ladyEnv.lady, arg0_25.apartment:GetHiddenParts(var0_25))
 		end)
 	else
-		arg0_25.contextData.ladyEnv:HideCharacterPart(var0_25, arg0_25.apartment:GetHiddenParts(var0_25))
+		Dorm3dHxHelper.HideCharacterPart(arg0_25.contextData.ladyEnv.lady, arg0_25.apartment:GetHiddenParts(var0_25))
 	end
 end
 

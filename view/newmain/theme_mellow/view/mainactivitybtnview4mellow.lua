@@ -9,6 +9,8 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.mapSubBtn = MainActivityBtnMellowAdapt.New(MainActSubMapBtn.New(arg0_1.mapSubEventTr, arg0_1.event, true, true))
 	arg0_1.voteEventTr = arg1_1:Find("right/1/act/act_vote")
 	arg0_1.voteBtn = MainActivityBtnMellowAdapt.New(NewMainVoteEntranceBtn.New(arg0_1.voteEventTr, arg0_1.event))
+	arg0_1.subActEventTr = arg1_1:Find("right/1/act/act_sub")
+	arg0_1.subActBtn = MainActivityBtnMellowAdapt.New(MainSubActBtn.New(arg0_1.subActEventTr, arg0_1.event, true, true))
 end
 
 function var0_0.InitBtns(arg0_2)
@@ -84,6 +86,12 @@ function var0_0.Flush(arg0_7)
 	else
 		arg0_7.voteBtn:Hide()
 	end
+
+	if arg0_7.subActBtn:InShowTime() then
+		arg0_7.subActBtn:Init()
+	else
+		arg0_7.subActBtn:Clear()
+	end
 end
 
 function var0_0.GetDirection(arg0_8)
@@ -103,6 +111,10 @@ function var0_0.Dispose(arg0_9)
 	arg0_9.voteBtn:Dispose()
 
 	arg0_9.voteBtn = nil
+
+	arg0_9.subActBtn:Dispose()
+
+	arg0_9.subActBtn = nil
 end
 
 return var0_0

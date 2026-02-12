@@ -6574,7 +6574,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3114] = {
-		pt_num = 0,
+		pt_num = 30,
 		name = "Fish & Chips",
 		group_max = 0,
 		type = 1,
@@ -6609,7 +6609,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3115] = {
-		pt_num = 0,
+		pt_num = 60,
 		name = "Lemon Shrimp",
 		group_max = 0,
 		type = 1,
@@ -7778,7 +7778,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5001] = {
-		pt_num = 12,
+		pt_num = 1,
 		name = "Shellfish",
 		group_max = 0,
 		type = 1,
@@ -7810,7 +7810,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5002] = {
-		pt_num = 16,
+		pt_num = 2,
 		name = "Catfish",
 		group_max = 0,
 		type = 1,
@@ -7842,7 +7842,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5003] = {
-		pt_num = 1,
+		pt_num = 16,
 		name = "Koi Carp",
 		group_max = 0,
 		type = 1,
@@ -7874,7 +7874,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5004] = {
-		pt_num = 13,
+		pt_num = 11,
 		name = "Common Carp",
 		group_max = 0,
 		type = 1,
@@ -7906,7 +7906,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5005] = {
-		pt_num = 45,
+		pt_num = 12,
 		name = "Freshwater Shrimp",
 		group_max = 0,
 		type = 1,
@@ -7938,7 +7938,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5006] = {
-		pt_num = 162,
+		pt_num = 13,
 		name = "Crayfish",
 		group_max = 0,
 		type = 1,
@@ -7970,7 +7970,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5007] = {
-		pt_num = 1,
+		pt_num = 16,
 		name = "Sea Bass",
 		group_max = 0,
 		type = 1,
@@ -8034,7 +8034,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5101] = {
-		pt_num = 27,
+		pt_num = 1,
 		name = "Squid",
 		group_max = 0,
 		type = 1,
@@ -8066,7 +8066,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5102] = {
-		pt_num = 104,
+		pt_num = 27,
 		name = "Mackerel",
 		group_max = 0,
 		type = 1,
@@ -8098,7 +8098,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5103] = {
-		pt_num = 198,
+		pt_num = 104,
 		name = "Tuna",
 		group_max = 0,
 		type = 1,
@@ -8130,7 +8130,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5104] = {
-		pt_num = 2,
+		pt_num = 45,
 		name = "Salmon",
 		group_max = 0,
 		type = 1,
@@ -8162,7 +8162,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5105] = {
-		pt_num = 11,
+		pt_num = 1,
 		name = "Red Sea Bream",
 		group_max = 0,
 		type = 1,
@@ -8194,7 +8194,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5106] = {
-		pt_num = 16,
+		pt_num = 24,
 		name = "Black Porgy",
 		group_max = 0,
 		type = 1,
@@ -8226,7 +8226,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5107] = {
-		pt_num = 1,
+		pt_num = 198,
 		name = "Yellowfin Tuna",
 		group_max = 0,
 		type = 1,
@@ -8258,7 +8258,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5108] = {
-		pt_num = 24,
+		pt_num = 162,
 		name = "Sea Cucumber",
 		group_max = 0,
 		type = 1,

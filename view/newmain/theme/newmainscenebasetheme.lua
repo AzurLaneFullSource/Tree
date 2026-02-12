@@ -199,6 +199,12 @@ function var0_0.OnDestroy(arg0_13)
 		arg0_13.changeView = nil
 	end
 
+	if arg0_13.asmrChatView then
+		arg0_13.asmrChatView:Dispose()
+
+		arg0_13.asmrChatView = nil
+	end
+
 	pg.redDotHelper:Clear()
 end
 

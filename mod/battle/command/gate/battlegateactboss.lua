@@ -207,4 +207,54 @@ function var0_0.Exit(arg0_4, arg1_4)
 	arg1_4:SendRequest(var16_4, var17_4)
 end
 
+function var0_0.GetPreloadList(arg0_8)
+	local var0_8 = {}
+	local var1_8 = {}
+	local var2_8
+	local var3_8 = ys.Battle.BattleResourceManager.GetInstance()
+	local var4_8 = getProxy(FleetProxy)
+	local var5_8 = getProxy(BayProxy)
+	local var6_8 = var4_8:getActivityFleets()[arg0_8.actId]
+	local var7_8 = var6_8[arg0_8.mainFleetId]
+
+	if var7_8 then
+		local var8_8 = var7_8.ships
+
+		for iter0_8, iter1_8 in ipairs(var8_8) do
+			table.insert(var0_8, var5_8:getShipById(iter1_8))
+		end
+
+		local var9_8 = var7_8:buildBattleBuffList()
+
+		for iter2_8, iter3_8 in ipairs(var9_8) do
+			table.insert(var1_8, iter3_8)
+		end
+	end
+
+	local var10_8 = var6_8[arg0_8.mainFleetId + 10]
+
+	if var10_8 then
+		local var11_8 = var10_8:getTeamByName(TeamType.Submarine)
+
+		for iter4_8, iter5_8 in ipairs(var11_8) do
+			table.insert(var0_8, var5_8:getShipById(iter5_8))
+		end
+
+		local var12_8 = var10_8:buildBattleBuffList()
+
+		for iter6_8, iter7_8 in ipairs(var12_8) do
+			table.insert(var1_8, iter7_8)
+		end
+	end
+
+	local var13_8, var14_8 = var3_8.GetPlayerShipResource(var0_8, arg0_8.system)
+	local var15_8 = var3_8.GetCommanderBuffRes(var1_8)
+
+	for iter8_8, iter9_8 in ipairs(var15_8) do
+		table.insert(var13_8, iter9_8)
+	end
+
+	return var13_8, var14_8
+end
+
 return var0_0

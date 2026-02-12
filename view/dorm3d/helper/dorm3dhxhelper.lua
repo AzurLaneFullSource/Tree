@@ -130,4 +130,35 @@ function var0_0.GetHolyLightScreenShotInfo(arg0_9)
 	return var1_9, var0_9
 end
 
+function var0_0.HideCharacterPart(arg0_10, arg1_10, arg2_10)
+	local var0_10 = var0_0.GetSkinIdByModelName(arg0_10.name)
+
+	warning("HideCharacterPart skinId", var0_10)
+
+	if not var0_10 then
+		return
+	end
+
+	local var1_10 = Dorm3dSkin.New({
+		configId = var0_10
+	})
+
+	if arg2_10 and not var1_10:ShouldApplyHiddenPartInTimeline() then
+		return
+	end
+
+	local var2_10 = var1_10:GetGroupId()
+
+	arg1_10 = arg1_10 or getProxy(ApartmentProxy):getApartment(var2_10):GetHiddenParts(var0_10)
+
+	local var3_10, var4_10 = var1_10:GetActiveAndHiddenPartNames(arg1_10)
+
+	_.each(var3_10, function(arg0_11)
+		setActive(arg0_10:Find(arg0_11), true)
+	end)
+	_.each(var4_10, function(arg0_12)
+		setActive(arg0_10:Find(arg0_12), false)
+	end)
+end
+
 return var0_0

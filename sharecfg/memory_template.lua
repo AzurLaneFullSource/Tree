@@ -3929,6 +3929,20 @@ pg.memory_template = setmetatable({
 		4975,
 		4976,
 		4977,
+		4981,
+		4982,
+		4983,
+		4984,
+		4985,
+		4986,
+		4987,
+		4991,
+		4992,
+		4993,
+		5001,
+		5002,
+		5003,
+		5004,
 		10011,
 		10012,
 		10013,
@@ -63046,6 +63060,216 @@ pg.base.memory_template = {
 		is_open = 0,
 		unlock_pre = {
 			"DINGAN7"
+		}
+	},
+	[4981] = {
+		type = 1,
+		subtitle = "",
+		story = "CHUNYANHUAIYUXIANGMANTING1",
+		mask = "bg/bg_memory",
+		title = "The New Year Auction",
+		condition = "Go to the event page",
+		number = 0,
+		id = 4981,
+		icon = "memory_chunyanhuaiyuxiangmanting1",
+		is_open = 0,
+		unlock_pre = {
+			"CHUNYANHUAIYUXIANGMANTING1"
+		}
+	},
+	[4982] = {
+		type = 1,
+		subtitle = "",
+		story = "CHUNYANHUAIYUXIANGMANTING2",
+		mask = "bg/bg_memory",
+		title = "Once-in-a-Lifetime Find",
+		condition = "Reach 15% progress in Spring Auction Adventure",
+		number = 0,
+		id = 4982,
+		icon = "memory_chunyanhuaiyuxiangmanting1",
+		is_open = 0,
+		unlock_pre = {
+			"CHUNYANHUAIYUXIANGMANTING2"
+		}
+	},
+	[4983] = {
+		type = 1,
+		subtitle = "",
+		story = "CHUNYANHUAIYUXIANGMANTING3",
+		mask = "bg/bg_memory",
+		title = "Commence the Plan!",
+		condition = "Reach 30% progress in Spring Auction Adventure",
+		number = 0,
+		id = 4983,
+		icon = "memory_chunyanhuaiyuxiangmanting1",
+		is_open = 0,
+		unlock_pre = {
+			"CHUNYANHUAIYUXIANGMANTING3"
+		}
+	},
+	[4984] = {
+		type = 1,
+		subtitle = "",
+		story = "CHUNYANHUAIYUXIANGMANTING4",
+		mask = "bg/bg_memory",
+		title = "Trouble Swoops Down",
+		condition = "Reach 45% progress in Spring Auction Adventure",
+		number = 0,
+		id = 4984,
+		icon = "memory_chunyanhuaiyuxiangmanting1",
+		is_open = 0,
+		unlock_pre = {
+			"CHUNYANHUAIYUXIANGMANTING4"
+		}
+	},
+	[4985] = {
+		type = 1,
+		subtitle = "",
+		story = "CHUNYANHUAIYUXIANGMANTING5",
+		mask = "bg/bg_memory",
+		title = "Auction Time!",
+		condition = "Reach 60% progress in Spring Auction Adventure",
+		number = 0,
+		id = 4985,
+		icon = "memory_chunyanhuaiyuxiangmanting1",
+		is_open = 0,
+		unlock_pre = {
+			"CHUNYANHUAIYUXIANGMANTING5"
+		}
+	},
+	[4986] = {
+		type = 1,
+		subtitle = "",
+		story = "CHUNYANHUAIYUXIANGMANTING6",
+		mask = "bg/bg_memory",
+		title = "Tracking by Aroma",
+		condition = "Reach 75% progress in Spring Auction Adventure",
+		number = 0,
+		id = 4986,
+		icon = "memory_chunyanhuaiyuxiangmanting1",
+		is_open = 0,
+		unlock_pre = {
+			"CHUNYANHUAIYUXIANGMANTING6"
+		}
+	},
+	[4987] = {
+		type = 1,
+		subtitle = "",
+		story = "CHUNYANHUAIYUXIANGMANTING7",
+		mask = "bg/bg_memory",
+		title = "Payback is a Sweet and Sour Dessert",
+		condition = "Reach 100% progress in Spring Auction Adventure",
+		number = 0,
+		id = 4987,
+		icon = "memory_chunyanhuaiyuxiangmanting2",
+		is_open = 0,
+		unlock_pre = {
+			"CHUNYANHUAIYUXIANGMANTING7"
+		}
+	},
+	[4991] = {
+		type = 1,
+		subtitle = "",
+		story = "QINGRENJIE1",
+		mask = "bg/bg_memory",
+		title = "Chocolate Crisis!",
+		condition = "Participate in Operation Valentine",
+		number = 0,
+		id = 4991,
+		icon = "memory_qingrenjie",
+		is_open = 0,
+		unlock_pre = {
+			"QINGRENJIE1"
+		}
+	},
+	[4992] = {
+		type = 1,
+		subtitle = "",
+		story = "QINGRENJIE2",
+		mask = "bg/bg_memory",
+		title = "13-Feb",
+		condition = "Participate in Operation Valentine",
+		number = 0,
+		id = 4992,
+		icon = "memory_qingrenjie",
+		is_open = 0,
+		unlock_pre = {
+			"QINGRENJIE2"
+		}
+	},
+	[4993] = {
+		type = 1,
+		subtitle = "",
+		story = "QINGRENJIE3",
+		mask = "bg/bg_memory",
+		title = "Sweet Problem",
+		condition = "Participate in Operation Valentine",
+		number = 0,
+		id = 4993,
+		icon = "memory_qingrenjie",
+		is_open = 0,
+		unlock_pre = {
+			"QINGRENJIE3"
+		}
+	},
+	[5001] = {
+		type = 1,
+		subtitle = "",
+		story = "SHISHANGTEKANHONGXIAOZHANGNUAN1",
+		mask = "bg/bg_memory",
+		title = "In Full Glory, Spring's Branch Blooms",
+		condition = "Unlock Chang Wu's story in Port Fashion Collection: Silken-Red Embrace",
+		number = 0,
+		id = 5001,
+		icon = "memory_gangqushishangtekan",
+		is_open = 0,
+		unlock_pre = {
+			"SHISHANGTEKANHONGXIAOZHANGNUAN1"
+		}
+	},
+	[5002] = {
+		type = 1,
+		subtitle = "",
+		story = "SHISHANGTEKANHONGXIAOZHANGNUAN2",
+		mask = "bg/bg_memory",
+		title = "Boudoir's Lingering Flame",
+		condition = "Unlock Friedrich der Große's story in Port Fashion Collection: Silken-Red Embrace",
+		number = 0,
+		id = 5002,
+		icon = "memory_gangqushishangtekan",
+		is_open = 0,
+		unlock_pre = {
+			"SHISHANGTEKANHONGXIAOZHANGNUAN2"
+		}
+	},
+	[5003] = {
+		type = 1,
+		subtitle = "",
+		story = "SHISHANGTEKANHONGXIAOZHANGNUAN3",
+		mask = "bg/bg_memory",
+		title = "Aroma of Awakening",
+		condition = "Unlock Hai Chou's story in Port Fashion Collection: Silken-Red Embrace",
+		number = 0,
+		id = 5003,
+		icon = "memory_gangqushishangtekan",
+		is_open = 0,
+		unlock_pre = {
+			"SHISHANGTEKANHONGXIAOZHANGNUAN3"
+		}
+	},
+	[5004] = {
+		type = 1,
+		subtitle = "",
+		story = "SHISHANGTEKANHONGXIAOZHANGNUAN4",
+		mask = "bg/bg_memory",
+		title = "Embrace Upon A Melted Dream",
+		condition = "Unlock Shinano's story in Port Fashion Collection: Silken-Red Embrace",
+		number = 0,
+		id = 5004,
+		icon = "memory_gangqushishangtekan",
+		is_open = 0,
+		unlock_pre = {
+			"SHISHANGTEKANHONGXIAOZHANGNUAN4"
 		}
 	},
 	[10011] = {

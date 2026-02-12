@@ -73,7 +73,7 @@ function var0_0.OnInit(arg0_6)
 	onButton(arg0_6, arg0_6.attireBtn, function()
 		arg0_6:emit(PlayerVitaeMediator.ON_ATTIRE)
 	end, SFX_PANEL)
-	setActive(arg0_6.attireBtnTip, _.any(getProxy(AttireProxy):needTip(), function(arg0_11)
+	setActive(arg0_6.attireBtnTip, underscore.any(getProxy(AttireProxy):needTip(), function(arg0_11)
 		return arg0_11 == true
 	end))
 	onInputEndEdit(arg0_6, arg0_6.inputField, function(arg0_12)
@@ -128,28 +128,34 @@ function var0_0.UpdateMedals(arg0_15)
 	local var2_15 = 353
 	local var3_15 = 30
 
-	for iter0_15 = 1, var1_15 do
-		local var4_15 = iter0_15 == 1 and arg0_15.medalTpl or cloneTplTo(arg0_15.medalTpl, arg0_15.medalTpl.parent)
-		local var5_15 = pg.medal_template[var0_15[var1_15 - iter0_15 + 1]]
+	UIItemList.StaticAlign(arg0_15.medalTpl.parent, arg0_15.medalTpl, var1_15, function(arg0_16, arg1_16, arg2_16)
+		arg1_16 = arg1_16 + 1
 
-		LoadSpriteAsync("medal/s_" .. var5_15.icon, function(arg0_16)
-			if arg0_15.exited then
-				return
+		if arg0_16 == UIItemList.EventUpdate then
+			local var0_16 = var0_15[arg1_16]
+			local var1_16 = var0_16 > 1000000000 and LoveLetterTrophy.New({
+				id = var0_16
+			}) or Trophy.New({
+				id = var0_16
+			})
+			local var2_16 = arg2_16:Find("icon")
+			local var3_16 = arg2_16:Find("now")
+			local var4_16 = var1_16:isLoverLetter()
+
+			setActive(var2_16, not var4_16)
+			setActive(var3_16, var4_16)
+
+			if var4_16 then
+				setLoveLetterMedal(var3_16:Find("medal"), var1_16)
+			else
+				LoadImageSpriteAsync("medal/s_" .. var1_16:getConfig("icon"), var2_16, true)
 			end
 
-			local var0_16 = var4_15:Find("icon"):GetComponent(typeof(Image))
+			local var5_16 = var2_15 - (arg1_16 - 1) * (var3_15 + arg2_16.sizeDelta.x)
 
-			var0_16.sprite = arg0_16
-
-			var0_16:SetNativeSize()
-		end)
-
-		local var6_15 = var2_15 - (iter0_15 - 1) * (var3_15 + var4_15.sizeDelta.x)
-
-		var4_15.anchoredPosition = Vector2(var6_15, var4_15.anchoredPosition.y)
-	end
-
-	setActive(arg0_15.medalTpl, var1_15 ~= 0)
+			arg2_16.anchoredPosition = Vector2(var5_16, arg2_16.anchoredPosition.y)
+		end
+	end)
 end
 
 function var0_0.UpdatePower(arg0_17)
@@ -264,6 +270,12 @@ function var0_0.OnDestroy(arg0_24)
 			LeanTween.cancel(iter1_24.gameObject)
 		end
 	end
+
+	eachChild(arg0_24.medalTpl.parent, function(arg0_25, arg1_25)
+		if arg0_25:Find("now/medal").childCount > 0 then
+			returnLoveLetterMedal(arg0_25:Find("now/medal"):GetChild(0))
+		end
+	end)
 
 	arg0_24.exited = true
 end

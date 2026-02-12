@@ -2695,6 +2695,27 @@ pg.medal_template = {
 		target_num = 8,
 		target_id = "50359"
 	},
+	[200131] = {
+		explain1 = "Spring Auction Adventure",
+		name = "Spring Auction Medal",
+		explain2 = "Event",
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "This warm, masterfully cut jade rests in its case, its faint aroma filling the whole garden. All these lucky encounters are merely waiting for your arrival. \nSince you've come here, surely you must have a discerning eye for good jade?",
+		next = 0,
+		icon = "9131",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9131",
+		condition = "Collect 8 stickers in the Spring Auction Adventure event.",
+		rank = 1,
+		id = 200131,
+		target_num = 8,
+		target_id = "50405"
+	},
 	all = {
 		10011,
 		10012,
@@ -2818,6 +2839,7 @@ pg.medal_template = {
 		200091,
 		200101,
 		200111,
-		200121
+		200121,
+		200131
 	}
 }

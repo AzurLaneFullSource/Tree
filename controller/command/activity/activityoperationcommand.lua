@@ -8,57 +8,62 @@ function var0_0.execute(arg0_1, arg1_1)
 
 	local var2_1 = var1_1:getConfig("type")
 
-	if var2_1 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1 or var2_1 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_PRAY or var2_1 == ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD then
-		local var3_1, var4_1, var5_1 = BuildShip.canBuildShipByBuildId(var0_1.buildId, var0_1.arg1, var0_1.arg2 == 1)
+	switch(var2_1, {
+		[ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1] = function()
+			local var0_2, var1_2, var2_2 = BuildShip.canBuildShipByBuildId(var0_1.buildId, var0_1.arg1, var0_1.arg2 == 1)
 
-		if not var3_1 then
-			if var5_1 then
-				GoShoppingMsgBox(i18n("switch_to_shop_tip_1"), ChargeScene.TYPE_ITEM, var5_1)
-			else
-				pg.TipsMgr.GetInstance():ShowTips(var4_1)
+			if not var0_2 then
+				if var2_2 then
+					GoShoppingMsgBox(i18n("switch_to_shop_tip_1"), ChargeScene.TYPE_ITEM, var2_2)
+				else
+					pg.TipsMgr.GetInstance():ShowTips(var1_2)
+				end
+
+				return
 			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_BUILDSHIP_PRAY] = ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1,
+		[ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD] = ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1,
+		[ActivityConst.ACTIVITY_TYPE_SHOP] = function()
+			local var0_3 = getProxy(PlayerProxy):getData()
+			local var1_3 = getProxy(ShopsProxy):getActivityShopById(var1_1.id):bindConfigTable()[var0_1.arg1]
+			local var2_3 = var0_1.arg2 or 1
 
-			return
-		end
-	elseif var2_1 == ActivityConst.ACTIVITY_TYPE_SHOP then
-		local var6_1 = getProxy(PlayerProxy):getData()
-		local var7_1 = getProxy(ShopsProxy):getActivityShopById(var1_1.id):bindConfigTable()[var0_1.arg1]
-		local var8_1 = var0_1.arg2 or 1
-
-		if var6_1[id2res(var7_1.resource_type)] < var7_1.resource_num * var8_1 then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
-
-			return
-		end
-
-		if var7_1.commodity_type == 1 then
-			if var7_1.commodity_id == 1 and var6_1:GoldMax(var7_1.num * var8_1) then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
+			if var0_3[id2res(var1_3.resource_type)] < var1_3.resource_num * var2_3 then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 				return
 			end
 
-			if var7_1.commodity_id == 2 and var6_1:OilMax(var7_1.num * var8_1) then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
+			if var1_3.commodity_type == 1 then
+				if var1_3.commodity_id == 1 and var0_3:GoldMax(var1_3.num * var2_3) then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
+
+					return
+				end
+
+				if var1_3.commodity_id == 2 and var0_3:OilMax(var1_3.num * var2_3) then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
+
+					return
+				end
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2] = function()
+			if var0_1.cmd == 2 and not var1_1:CanRequest() then
+				return
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_SKIN_FAKE_PACKAGE] = function()
+			local var0_5 = var0_1.costDrop
+
+			if var0_5.count > var0_5:getOwnedCount() then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 				return
 			end
 		end
-	elseif var2_1 == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
-		if var0_1.cmd == 2 and not var1_1:CanRequest() then
-			return
-		end
-	elseif var2_1 == ActivityConst.ACTIVITY_TYPE_SKIN_FAKE_PACKAGE then
-		local var9_1 = var0_1.costDrop
-
-		if var9_1.count > var9_1:getOwnedCount() then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
-
-			return
-		end
-	end
-
-	print(var0_1.activity_id, var0_1.cmd, var0_1.arg1, var0_1.arg2)
+	})
 	pg.ConnectionMgr.GetInstance():Send(11202, {
 		activity_id = var0_1.activity_id,
 		cmd = var0_1.cmd,
@@ -66,799 +71,884 @@ function var0_0.execute(arg0_1, arg1_1)
 		arg2 = var0_1.arg2,
 		arg_list = var0_1.arg_list or {},
 		kvargs1 = var0_1.kvargs1
-	}, 11203, function(arg0_2)
-		if arg0_2.result == 0 then
-			local var0_2 = PlayerConst.GetTranAwards(var0_1, arg0_2)
-			local var1_2 = arg0_1:updateActivityData(var0_1, arg0_2, var1_1, var0_2)
+	}, 11203, function(arg0_6)
+		if arg0_6.result == 0 then
+			local var0_6 = PlayerConst.GetTranAwards(var0_1, arg0_6)
+			local var1_6 = arg0_1:updateActivityData(var0_1, arg0_6, var1_1, var0_6)
 
 			getProxy(ActivityTaskProxy):checkAutoSubmit()
-			arg0_1:performance(var0_1, arg0_2, var1_2, var0_2)
+			arg0_1:performance(var0_1, arg0_6, var1_6, var0_6)
 		else
-			originalPrint("activity op ret code: " .. arg0_2.result)
-			print("activity op ret code: " .. arg0_2.result, var0_1.cmd, var0_1.arg1)
+			originalPrint("activity op ret code: " .. arg0_6.result)
 
 			if var2_1 == ActivityConst.ACTIVITY_TYPE_7DAYSLOGIN or var2_1 == ActivityConst.ACTIVITY_TYPE_PROGRESSLOGIN or var2_1 == ActivityConst.ACTIVITY_TYPE_MONTHSIGN or var2_1 == ActivityConst.ACTIVITY_TYPE_REFLUX then
 				var1_1.autoActionForbidden = true
 
 				getProxy(ActivityProxy):updateActivity(var1_1)
 			elseif var2_1 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1 or var2_1 == ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD then
-				if arg0_2.result == 1 then
+				if arg0_6.result == 1 then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("activity_build_end_tip"))
 				end
 			elseif var2_1 == 17 then
-				pg.TipsMgr.GetInstance():ShowTips("错误!:" .. arg0_2.result)
+				pg.TipsMgr.GetInstance():ShowTips("错误!:" .. arg0_6.result)
 			elseif var2_1 == ActivityConst.ACTIVITY_TYPE_FRESH_TEC_CATCHUP then
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("activity_op_error", arg0_2.result))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("activity_op_error", arg0_6.result))
 			elseif var2_1 == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF then
 				if var1_1:getConfig("config_client").resource_ID == BossRushDALUpgradeView.RES_ID then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("DAL_upgrade_not_enough"))
 				end
-			elseif arg0_2.result == 3 or arg0_2.result == 4 then
+			elseif arg0_6.result == 3 or arg0_6.result == 4 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("activity_op_error", arg0_2.result))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("activity_op_error", arg0_6.result))
 			end
 
 			arg0_1:sendNotification(ActivityProxy.ACTIVITY_OPERATION_ERRO, {
 				actId = var0_1.activity_id,
-				code = arg0_2.result
+				code = arg0_6.result
 			})
 		end
 	end)
 end
 
-function var0_0.updateActivityData(arg0_3, arg1_3, arg2_3, arg3_3, arg4_3)
-	local var0_3 = arg3_3:getConfig("type")
-	local var1_3 = getProxy(PlayerProxy)
-	local var2_3 = getProxy(TaskProxy)
+function var0_0.updateActivityData(arg0_7, arg1_7, arg2_7, arg3_7, arg4_7)
+	local var0_7 = arg3_7:getConfig("type")
+	local var1_7 = getProxy(PlayerProxy)
+	local var2_7 = getProxy(TaskProxy)
 
-	if var0_3 == ActivityConst.ACTIVITY_TYPE_7DAYSLOGIN then
-		arg3_3.data1 = arg3_3.data1 + 1
-		arg3_3.data2 = pg.TimeMgr.GetInstance():GetServerTime()
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_PROGRESSLOGIN then
-		if arg1_3.cmd == 1 then
-			arg3_3.data1 = arg3_3.data1 + 1
-			arg3_3.data2 = pg.TimeMgr.GetInstance():GetServerTime()
-		elseif arg1_3.cmd == 2 then
-			arg3_3.achieved = true
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_LEVELAWARD then
-		table.insert(arg3_3.data1_list, arg1_3.arg1)
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_STORY_AWARD then
-		table.insert(arg3_3.data1_list, arg1_3.arg1)
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_LEVELPLAN then
-		if arg1_3.cmd == 1 then
-			arg3_3.data1 = true
-		elseif arg1_3.cmd == 2 then
-			table.insert(arg3_3.data1_list, arg1_3.arg1)
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_MONTHSIGN then
-		local var3_3 = pg.TimeMgr.GetInstance():GetServerTime()
-		local var4_3 = pg.TimeMgr.GetInstance():STimeDescS(var3_3, "*t")
-		local var5_3
-
-		if arg3_3:getSpecialData("reMonthSignDay") ~= nil then
-			var5_3 = arg3_3:getSpecialData("reMonthSignDay")
-			arg3_3.data3 = arg3_3.data3 and arg3_3.data3 + 1 or 1
-		else
-			var5_3 = var4_3.day
-		end
-
-		getProxy(ActivityProxy):updateActivity(arg3_3)
-		table.insert(arg3_3.data1_list, var5_3)
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_CHARGEAWARD then
-		arg3_3.data2 = 1
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1 or var0_3 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_PRAY or var0_3 == ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD then
-		pg.TrackerMgr.GetInstance():Tracking(TRACKING_BUILD_SHIP, arg1_3.arg1)
-
-		local var6_3 = pg.ship_data_create_material[arg1_3.buildId]
-
-		if arg1_3.arg2 == 1 then
-			local var7_3 = getProxy(ActivityProxy)
-			local var8_3 = var7_3:getBuildFreeActivityByBuildId(arg1_3.buildId)
-
-			var8_3.data1 = var8_3.data1 - arg1_3.arg1
-
-			var7_3:updateActivity(var8_3)
-		else
-			getProxy(BagProxy):removeItemById(var6_3.use_item, var6_3.number_1 * arg1_3.arg1)
-
-			local var9_3 = var1_3:getData()
-
-			var9_3:consume({
-				gold = var6_3.use_gold * arg1_3.arg1
-			})
-			var1_3:updatePlayer(var9_3)
-		end
-
-		local var10_3 = getProxy(BuildShipProxy)
-
-		if var6_3.exchange_count > 0 then
-			var10_3:changeRegularExchangeCount(arg1_3.arg1 * var6_3.exchange_count)
-		end
-
-		for iter0_3, iter1_3 in ipairs(arg2_3.build) do
-			local var11_3 = BuildShip.New(iter1_3)
-
-			var10_3:addBuildShip(var11_3)
-		end
-
-		arg3_3.data1 = arg3_3.data1 + arg1_3.arg1
-
-		arg0_3:sendNotification(GAME.BUILD_SHIP_DONE)
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_SHOP then
-		local var12_3 = getProxy(ShopsProxy)
-		local var13_3 = var12_3:getActivityShopById(arg3_3.id)
-
-		var12_3:UpdateActivityGoods(arg3_3.id, arg1_3.arg1, arg1_3.arg2)
-
-		if table.contains(arg3_3.data1_list, arg1_3.arg1) then
-			for iter2_3, iter3_3 in ipairs(arg3_3.data1_list) do
-				if iter3_3 == arg1_3.arg1 then
-					arg3_3.data2_list[iter2_3] = arg3_3.data2_list[iter2_3] + arg1_3.arg2
-
-					break
-				end
+	switch(var0_7, {
+		[ActivityConst.ACTIVITY_TYPE_7DAYSLOGIN] = function()
+			arg3_7.data1 = arg3_7.data1 + 1
+			arg3_7.data2 = pg.TimeMgr.GetInstance():GetServerTime()
+		end,
+		[ActivityConst.ACTIVITY_TYPE_PROGRESSLOGIN] = function()
+			if arg1_7.cmd == 1 then
+				arg3_7.data1 = arg3_7.data1 + 1
+				arg3_7.data2 = pg.TimeMgr.GetInstance():GetServerTime()
+			elseif arg1_7.cmd == 2 then
+				arg3_7.achieved = true
 			end
-		else
-			table.insert(arg3_3.data1_list, arg1_3.arg1)
-			table.insert(arg3_3.data2_list, arg1_3.arg2)
-		end
-
-		local var14_3 = var13_3:bindConfigTable()[arg1_3.arg1]
-		local var15_3 = var14_3.resource_num * arg1_3.arg2
-		local var16_3 = var1_3:getData()
-
-		var16_3:consume({
-			[id2res(var14_3.resource_type)] = var15_3
-		})
-		var1_3:updatePlayer(var16_3)
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_ZPROJECT then
-		-- block empty
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_TASK_LIST then
-		if arg1_3.cmd == 1 then
-			local var17_3, var18_3 = getActivityTask(arg3_3)
-
-			if var18_3 and not var18_3:isReceive() then
-				local var19_3 = arg3_3:getConfig("config_data")
-
-				for iter4_3, iter5_3 in ipairs(var19_3) do
-					local var20_3 = _.flatten({
-						iter5_3
-					})
-
-					if table.contains(var20_3, var17_3) then
-						arg3_3.data3 = iter4_3
-
-						break
-					end
-				end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_LEVELAWARD] = function()
+			table.insert(arg3_7.data1_list, arg1_7.arg1)
+		end,
+		[ActivityConst.ACTIVITY_TYPE_STORY_AWARD] = function()
+			table.insert(arg3_7.data1_list, arg1_7.arg1)
+		end,
+		[ActivityConst.ACTIVITY_TYPE_LEVELPLAN] = function()
+			if arg1_7.cmd == 1 then
+				arg3_7.data1 = true
+			elseif arg1_7.cmd == 2 then
+				table.insert(arg3_7.data1_list, arg1_7.arg1)
 			end
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_TASK_RES then
-		if arg1_3.cmd == 1 then
-			local var21_3, var22_3 = getActivityTask(arg3_3)
+		end,
+		[ActivityConst.ACTIVITY_TYPE_MONTHSIGN] = function()
+			local var0_13 = pg.TimeMgr.GetInstance():GetServerTime()
+			local var1_13 = pg.TimeMgr.GetInstance():STimeDescS(var0_13, "*t")
+			local var2_13
 
-			if var22_3 and not var22_3:isReceive() then
-				local var23_3 = arg3_3:getConfig("config_data")
-
-				for iter6_3, iter7_3 in ipairs(var23_3) do
-					local var24_3 = _.flatten({
-						iter7_3
-					})
-
-					if table.contains(var24_3, var21_3) then
-						arg3_3.data3 = iter6_3
-
-						break
-					end
-				end
-			end
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_PUZZLA then
-		if arg1_3.cmd == PuzzleActivity.CMD_COMPLETE then
-			arg3_3.data1 = 1
-		elseif arg1_3.cmd == PuzzleActivity.CMD_EARN_EXTRA then
-			arg3_3.data1 = 2
-		elseif arg1_3.cmd == PuzzleActivity.CMD_ACTIVATE then
-			table.insert(arg3_3.data2_list, arg1_3.arg1)
-		end
-
-		getProxy(ActivityProxy):updateActivity(arg3_3)
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_BB then
-		arg3_3.data1 = arg3_3.data1 + 1
-		arg3_3.data2 = arg3_3.data2 - 1
-		arg3_3.data1_list = arg2_3.number
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_LOTTERY then
-		if arg1_3.cmd == 1 then
-			local var25_3 = ActivityItemPool.New({
-				id = arg1_3.arg2
-			})
-			local var26_3 = var25_3:getComsume()
-			local var27_3 = arg1_3.arg1 * var26_3.count
-
-			if var26_3.type == DROP_TYPE_RESOURCE then
-				local var28_3 = var1_3:getData()
-
-				var28_3:consume({
-					[id2res(var26_3.id)] = var27_3
-				})
-				var1_3:updatePlayer(var28_3)
-			elseif var26_3.type == DROP_TYPE_ITEM then
-				getProxy(BagProxy):removeItemById(var26_3.id, var27_3)
-			end
-
-			arg3_3:updateData(var25_3.id, arg2_3.number)
-		elseif arg1_3.cmd == 2 then
-			arg3_3.data1 = arg1_3.arg1
-		elseif arg1_3.cmd == 3 then
-			arg3_3.data2_list = _.map(arg1_3.arg_list, function(arg0_4)
-				return arg0_4
-			end)
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_CARD_PAIRS or var0_3 == ActivityConst.ACTIVITY_TYPE_LINK_LINK then
-		if arg1_3.cmd == 1 then
-			local var29_3 = arg3_3:getConfig("config_data")[4]
-
-			if #arg4_3 > 0 then
-				arg3_3.data2 = arg3_3.data2 + 1
-
-				if var29_3 <= arg3_3.data2 then
-					arg3_3.data1 = 1
-				end
-			end
-
-			if arg3_3.data4 == 0 then
-				arg3_3.data4 = arg1_3.arg2
-			elseif arg1_3.arg2 < arg3_3.data4 then
-				arg3_3.data4 = arg1_3.arg2
-			end
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_REFLUX then
-		if arg1_3.cmd == 1 then
-			arg3_3.data1_list[1] = pg.TimeMgr.GetInstance():GetServerTime()
-			arg3_3.data1_list[2] = arg3_3.data1_list[2] + 1
-		elseif arg1_3.cmd == 2 then
-			arg3_3.data4 = arg1_3.arg1
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_LOTTERY_AWARD then
-		if arg1_3.cmd == 1 then
-			arg3_3.data1 = arg3_3.data1 + 1
-			arg3_3.data2 = arg2_3.number[1]
-		elseif arg1_3.cmd == 2 then
-			table.insert(arg3_3.data1_list, arg3_3.data1)
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_DODGEM then
-		if arg1_3.cmd == 1 then
-			arg0_3:sendNotification(GAME.FINISH_STAGE_DONE, {
-				statistics = arg1_3.statistics,
-				score = arg1_3.statistics._battleScore,
-				system = SYSTEM_DODGEM
-			})
-
-			arg3_3.data1_list[1] = math.max(arg3_3.data1_list[1], arg1_3.arg2)
-			arg3_3.data2_list[1] = arg2_3.number[1]
-			arg3_3.data2_list[2] = arg2_3.number[2]
-		elseif arg1_3.cmd == 2 then
-			arg3_3.data2 = arg2_3.number[1]
-			arg3_3.data3 = arg2_3.number[2]
-			arg3_3.data2_list[1] = 0
-			arg3_3.data2_list[2] = 0
-		elseif arg1_3.cmd == 3 then
-			arg3_3.data4 = defaultValue(arg3_3.data4, 0) + 1
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_SUBMARINE_RUN then
-		if arg1_3.cmd == 1 then
-			arg0_3:sendNotification(GAME.FINISH_STAGE_DONE, {
-				statistics = arg1_3.statistics,
-				score = arg1_3.statistics._battleScore,
-				system = SYSTEM_SUBMARINE_RUN
-			})
-
-			arg3_3.data1_list[1] = math.max(arg3_3.data1_list[1], arg1_3.arg2)
-			arg3_3.data2_list[1] = arg2_3.number[1]
-			arg3_3.data2_list[2] = arg2_3.number[2]
-		elseif arg1_3.cmd == 2 then
-			arg3_3.data2 = arg2_3.number[1]
-			arg3_3.data3 = arg2_3.number[2]
-			arg3_3.data2_list[1] = 0
-			arg3_3.data2_list[2] = 0
-		elseif arg1_3.cmd == 3 then
-			arg3_3.data4 = defaultValue(arg3_3.data4, 0) + 1
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_TURNTABLE then
-		if arg1_3.cmd == 2 then
-			arg3_3.data4 = 0
-		elseif arg1_3.cmd == 1 then
-			local var30_3 = arg3_3:getConfig("config_id")
-			local var31_3 = pg.activity_event_turning[var30_3].total_num
-
-			if arg3_3.data3 == var31_3 then
-				arg3_3.data2 = 1
-				arg3_3.data3 = arg3_3.data3 + 1
+			if arg3_7:getSpecialData("reMonthSignDay") ~= nil then
+				var2_13 = arg3_7:getSpecialData("reMonthSignDay")
+				arg3_7.data3 = arg3_7.data3 and arg3_7.data3 + 1 or 1
 			else
-				arg3_3.data3 = arg3_3.data3 + 1
-				arg3_3.data4 = arg2_3.number[1]
-				arg3_3.data1_list[arg1_3.arg1] = arg3_3.data4
+				var2_13 = var1_13.day
 			end
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_SHRINE then
-		arg3_3.data1 = 1
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_RED_PACKETS then
-		arg3_3.data1 = arg3_3.data1 - 1
 
-		if arg3_3.data2 > 0 then
-			arg3_3.data2 = arg3_3.data2 - 1
-		end
+			getProxy(ActivityProxy):updateActivity(arg3_7)
+			table.insert(arg3_7.data1_list, var2_13)
+		end,
+		[ActivityConst.ACTIVITY_TYPE_CHARGEAWARD] = function()
+			arg3_7.data2 = 1
+		end,
+		[ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1] = function()
+			pg.TrackerMgr.GetInstance():Tracking(TRACKING_BUILD_SHIP, arg1_7.arg1)
 
-		arg3_3.data1_list[2] = arg3_3.data1_list[2] + 1
+			local var0_15 = pg.ship_data_create_material[arg1_7.buildId]
 
-		local var32_3 = getProxy(ActivityProxy)
-		local var33_3 = var32_3:getActivityByType(ActivityConst.ACTIVITY_TYPE_MONOPOLY)
+			if arg1_7.arg2 == 1 then
+				local var1_15 = getProxy(ActivityProxy)
+				local var2_15 = var1_15:getBuildFreeActivityByBuildId(arg1_7.buildId)
 
-		if var33_3 and not var33_3:isEnd() and var33_3.data2_list[1] > var33_3.data2_list[2] then
-			var33_3.data2_list[2] = var33_3.data2_list[2] + 1
+				var2_15.data1 = var2_15.data1 - arg1_7.arg1
 
-			var32_3:updateActivity(var33_3)
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_RED_PACKET_LOTTER then
-		arg3_3.data1 = arg3_3.data1 + 1
+				var1_15:updateActivity(var2_15)
+			else
+				getProxy(BagProxy):removeItemById(var0_15.use_item, var0_15.number_1 * arg1_7.arg1)
 
-		if not table.contains(arg3_3.data2_list, arg1_3.arg1) then
-			table.insert(arg3_3.data2_list, arg1_3.arg1)
-		end
+				local var3_15 = var1_7:getData()
 
-		if not table.contains(arg3_3.data1_list, arg2_3.number[1]) then
-			table.insert(arg3_3.data1_list, arg2_3.number[1])
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF or var0_3 == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
-		if arg1_3.cmd == 1 then
-			local var34_3 = pg.activity_event_building[arg1_3.arg1]
-			local var35_3 = arg3_3:GetBuildingLevel(arg1_3.arg1)
+				var3_15:consume({
+					gold = var0_15.use_gold * arg1_7.arg1
+				})
+				var1_7:updatePlayer(var3_15)
+			end
 
-			arg3_3:SetBuildingLevel(arg1_3.arg1, var35_3 + 1)
+			local var4_15 = getProxy(BuildShipProxy)
 
-			if var35_3 < #var34_3.buff then
-				_.each(var34_3.material[var35_3], function(arg0_5)
-					local var0_5 = arg0_5[1]
-					local var1_5 = arg0_5[2]
-					local var2_5 = arg0_5[3]
-					local var3_5
+			if var0_15.exchange_count > 0 then
+				var4_15:changeRegularExchangeCount(arg1_7.arg1 * var0_15.exchange_count)
+			end
 
-					if var0_5 == DROP_TYPE_VITEM then
-						local var4_5 = AcessWithinNull(Item.getConfigData(var1_5), "link_id")
+			for iter0_15, iter1_15 in ipairs(arg2_7.build) do
+				local var5_15 = BuildShip.New(iter1_15)
 
-						assert(var4_5 == arg3_3.id)
+				var4_15:addBuildShip(var5_15)
+			end
 
-						var3_5 = arg3_3
-					elseif var0_5 > DROP_TYPE_USE_ACTIVITY_DROP then
-						local var5_5 = AcessWithinNull(pg.activity_drop_type[var0_5], "activity_id")
+			arg3_7.data1 = arg3_7.data1 + arg1_7.arg1
 
-						var3_5 = getProxy(ActivityProxy):getActivityById(var5_5)
+			arg0_7:sendNotification(GAME.BUILD_SHIP_DONE)
+		end,
+		[ActivityConst.ACTIVITY_TYPE_BUILDSHIP_PRAY] = ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1,
+		[ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD] = ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1,
+		[ActivityConst.ACTIVITY_TYPE_SHOP] = function()
+			local var0_16 = getProxy(ShopsProxy)
+			local var1_16 = var0_16:getActivityShopById(arg3_7.id)
+
+			var0_16:UpdateActivityGoods(arg3_7.id, arg1_7.arg1, arg1_7.arg2)
+
+			if table.contains(arg3_7.data1_list, arg1_7.arg1) then
+				for iter0_16, iter1_16 in ipairs(arg3_7.data1_list) do
+					if iter1_16 == arg1_7.arg1 then
+						arg3_7.data2_list[iter0_16] = arg3_7.data2_list[iter0_16] + arg1_7.arg2
+
+						break
 					end
+				end
+			else
+				table.insert(arg3_7.data1_list, arg1_7.arg1)
+				table.insert(arg3_7.data2_list, arg1_7.arg2)
+			end
 
-					local var6_5 = var3_5.data1KeyValueList[1][var1_5] or 0
-					local var7_5 = math.max(0, var6_5 - var2_5)
+			local var2_16 = var1_16:bindConfigTable()[arg1_7.arg1]
+			local var3_16 = var2_16.resource_num * arg1_7.arg2
+			local var4_16 = var1_7:getData()
 
-					var3_5.data1KeyValueList[1][var1_5] = var7_5
+			var4_16:consume({
+				[id2res(var2_16.resource_type)] = var3_16
+			})
+			var1_7:updatePlayer(var4_16)
+		end,
+		[ActivityConst.ACTIVITY_TYPE_TASK_LIST] = function()
+			if arg1_7.cmd == 1 then
+				local var0_17, var1_17 = getActivityTask(arg3_7)
 
-					if var0_5 > DROP_TYPE_USE_ACTIVITY_DROP then
-						getProxy(ActivityProxy):updateActivity(var3_5)
+				if var1_17 and not var1_17:isReceive() then
+					local var2_17 = arg3_7:getConfig("config_data")
+
+					for iter0_17, iter1_17 in ipairs(var2_17) do
+						local var3_17 = _.flatten({
+							iter1_17
+						})
+
+						if table.contains(var3_17, var0_17) then
+							arg3_7.data3 = iter0_17
+
+							break
+						end
 					end
+				end
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_TASK_RES] = function()
+			if arg1_7.cmd == 1 then
+				local var0_18, var1_18 = getActivityTask(arg3_7)
+
+				if var1_18 and not var1_18:isReceive() then
+					local var2_18 = arg3_7:getConfig("config_data")
+
+					for iter0_18, iter1_18 in ipairs(var2_18) do
+						local var3_18 = _.flatten({
+							iter1_18
+						})
+
+						if table.contains(var3_18, var0_18) then
+							arg3_7.data3 = iter0_18
+
+							break
+						end
+					end
+				end
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_PUZZLA] = function()
+			if arg1_7.cmd == PuzzleActivity.CMD_COMPLETE then
+				arg3_7.data1 = 1
+			elseif arg1_7.cmd == PuzzleActivity.CMD_EARN_EXTRA then
+				arg3_7.data1 = 2
+			elseif arg1_7.cmd == PuzzleActivity.CMD_ACTIVATE then
+				table.insert(arg3_7.data2_list, arg1_7.arg1)
+			end
+
+			getProxy(ActivityProxy):updateActivity(arg3_7)
+		end,
+		[ActivityConst.ACTIVITY_TYPE_BB] = function()
+			arg3_7.data1 = arg3_7.data1 + 1
+			arg3_7.data2 = arg3_7.data2 - 1
+			arg3_7.data1_list = arg2_7.number
+		end,
+		[ActivityConst.ACTIVITY_TYPE_LOTTERY] = function()
+			if arg1_7.cmd == 1 then
+				local var0_21 = ActivityItemPool.New({
+					id = arg1_7.arg2
+				})
+				local var1_21 = var0_21:getComsume()
+				local var2_21 = arg1_7.arg1 * var1_21.count
+
+				if var1_21.type == DROP_TYPE_RESOURCE then
+					local var3_21 = var1_7:getData()
+
+					var3_21:consume({
+						[id2res(var1_21.id)] = var2_21
+					})
+					var1_7:updatePlayer(var3_21)
+				elseif var1_21.type == DROP_TYPE_ITEM then
+					getProxy(BagProxy):removeItemById(var1_21.id, var2_21)
+				end
+
+				arg3_7:updateData(var0_21.id, arg2_7.number)
+			elseif arg1_7.cmd == 2 then
+				arg3_7.data1 = arg1_7.arg1
+			elseif arg1_7.cmd == 3 then
+				arg3_7.data2_list = _.map(arg1_7.arg_list, function(arg0_22)
+					return arg0_22
 				end)
 			end
-		elseif arg1_3.cmd == 2 and var0_3 == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
-			arg3_3:RecordLastRequestTime()
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE then
-		if arg1_3.cmd == 2 then
-			table.insert(arg3_3.data2_list, arg1_3.arg1)
-			arg0_3:sendNotification(GAME.FINISH_STAGE_DONE, {
-				statistics = arg1_3.statistics,
-				score = arg1_3.statistics._battleScore,
-				system = SYSTEM_REWARD_PERFORM
-			})
+		end,
+		[ActivityConst.ACTIVITY_TYPE_CARD_PAIRS] = function()
+			if arg1_7.cmd == 1 then
+				local var0_23 = arg3_7:getConfig("config_data")[4]
 
-			return arg3_3
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_EXPEDITION then
-		if arg1_3.cmd == 0 then
-			return arg3_3
-		end
+				if #arg4_7 > 0 then
+					arg3_7.data2 = arg3_7.data2 + 1
 
-		if arg1_3.cmd == 3 then
-			arg0_3:sendNotification(GAME.FINISH_STAGE_DONE, {
-				statistics = arg1_3.statistics,
-				score = arg1_3.statistics._battleScore,
-				system = SYSTEM_REWARD_PERFORM
-			})
-
-			return arg3_3
-		end
-
-		if arg1_3.cmd == 4 then
-			arg3_3.data2_list[1] = arg3_3.data2_list[1] + 1
-
-			return arg3_3
-		end
-
-		if arg1_3.cmd == 1 then
-			arg3_3.data3 = arg3_3.data3 - 1
-		end
-
-		local var36_3 = arg1_3.arg1
-
-		if arg1_3.cmd ~= 2 then
-			arg3_3.data2 = var36_3
-		end
-
-		local var37_3 = arg2_3.number[1]
-
-		arg3_3.data1_list[var36_3] = var37_3
-
-		print("格子:" .. var36_3 .. " 值:" .. arg2_3.number[1])
-
-		if arg2_3.number[2] and arg3_3.data1 ~= arg2_3.number[2] then
-			print("关卡变更" .. arg2_3.number[2])
-
-			arg3_3.data1 = arg3_3.data1 + 1
-			arg3_3.data2 = 0
-
-			for iter8_3 = 1, #arg3_3.data1_list do
-				arg3_3.data1_list[iter8_3] = 0
-			end
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE then
-		if arg1_3.cmd == 1 then
-			arg0_3:sendNotification(GAME.FINISH_STAGE_DONE, {
-				statistics = arg1_3.statistics,
-				score = arg1_3.statistics._battleScore,
-				system = SYSTEM_AIRFIGHT
-			})
-
-			arg3_3.data1KeyValueList[1] = arg3_3.data1KeyValueList[1] or {}
-			arg3_3.data1KeyValueList[1][arg1_3.arg1] = (arg3_3.data1KeyValueList[1][arg1_3.arg1] or 0) + 1
-		elseif arg1_3.cmd == 2 then
-			arg3_3.data1KeyValueList[2] = arg3_3.data1KeyValueList[2] or {}
-			arg3_3.data1KeyValueList[2][arg1_3.arg1] = 1
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_SHAKE_BEADS then
-		if arg1_3.cmd == 1 then
-			arg3_3.data1 = arg3_3.data1 - 1
-
-			local var38_3 = arg2_3.number[1]
-
-			arg3_3.data1KeyValueList[1][var38_3] = arg3_3.data1KeyValueList[1][var38_3] + 1
-		elseif arg1_3.cmd == 2 then
-			arg3_3.data2 = 1
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_PT_OTHER then
-		if arg1_3.cmd == 1 then
-			arg3_3.data2 = 1
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_HOTSPRING then
-		if arg1_3.cmd == SpringActivity.OPERATION_UNLOCK then
-			arg3_3:AddSlotCount()
-		elseif arg1_3.cmd == SpringActivity.OPERATION_SETSHIP then
-			arg3_3:SetShipIds(arg1_3.kvargs1)
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_HOTSPRING_2 then
-		if arg1_3.cmd == Spring2Activity.OPERATION_SETSHIP then
-			arg3_3:SetShipIds(arg1_3.kvargs1)
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_FIREWORK then
-		if arg1_3.cmd == 1 then
-			arg3_3.data1 = arg3_3.data1 - 1
-
-			if not table.contains(arg3_3.data1_list, arg1_3.arg1) then
-				table.insert(arg3_3.data1_list, arg1_3.arg1)
-			end
-
-			local var39_3 = Item.getConfigData(arg1_3.arg1).link_id
-
-			if var39_3 > 0 then
-				local var40_3 = getProxy(ActivityProxy)
-				local var41_3 = var40_3:getActivityById(var39_3)
-
-				if var41_3 and not var41_3:isEnd() then
-					var41_3.data1 = var41_3.data1 + 1
-
-					var40_3:updateActivity(var41_3)
-				end
-			end
-
-			local var42_3 = getProxy(PlayerProxy)
-			local var43_3 = var42_3:getRawData()
-			local var44_3 = arg3_3:getConfig("config_data")[2][1]
-			local var45_3 = arg3_3:getConfig("config_data")[2][2]
-
-			var43_3:consume({
-				[id2res(var44_3)] = var45_3
-			})
-			var42_3:updatePlayer(var43_3)
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_CARD_PUZZLE then
-		if not table.contains(arg3_3.data1_list, arg1_3.arg1) then
-			table.insert(arg3_3.data1_list, arg1_3.arg1)
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_ZUMA then
-		if arg1_3.cmd == 1 then
-			if arg1_3.arg1 == LaunchBallGameConst.round_type_juqing then
-				arg3_3.data1 = arg3_3.data1 + 1
-			elseif arg1_3.arg1 == 2 then
-				if not arg3_3.data1_list then
-					arg3_3.data1_list = {}
+					if var0_23 <= arg3_7.data2 then
+						arg3_7.data1 = 1
+					end
 				end
 
-				table.insert(arg3_3.data1_list, arg1_3.arg2)
-			elseif arg1_3.arg1 == 3 then
-				arg3_3.data2 = arg1_3.arg2
+				if arg3_7.data4 == 0 then
+					arg3_7.data4 = arg1_7.arg2
+				elseif arg1_7.arg2 < arg3_7.data4 then
+					arg3_7.data4 = arg1_7.arg2
+				end
 			end
-		elseif arg1_3.cmd == 2 then
-			arg3_3.data3 = 1
-		end
-
-		getProxy(ActivityProxy):updateActivity(arg3_3)
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_PUZZLE_CONNECT then
-		local var46_3 = getProxy(ActivityProxy)
-		local var47_3 = arg3_3.data1_list
-		local var48_3 = arg3_3.data2_list
-		local var49_3 = arg3_3.data3_list
-
-		if arg1_3.cmd == 1 then
-			local var50_3 = pg.activity_tolove_jigsaw[arg1_3.arg1].need[2]
-			local var51_3 = pg.player_resource[var50_3].name
-			local var52_3 = pg.activity_tolove_jigsaw[arg1_3.arg1].need[3]
-			local var53_3 = var1_3:getData()
-
-			var53_3:consume({
-				[var51_3] = var52_3
-			})
-			var1_3:updatePlayer(var53_3)
-			table.insert(var47_3, arg1_3.arg1)
-		elseif arg1_3.cmd == 2 then
-			table.insert(var48_3, arg1_3.arg1)
-		elseif arg1_3.cmd == 3 then
-			table.insert(var49_3, arg1_3.arg1)
-		end
-
-		var46_3:updateActivity(arg3_3)
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_SKIN_COUPON_COUNTING then
-		local var54_3 = getProxy(ActivityProxy)
-
-		arg3_3.data2 = arg3_3.data2 + arg3_3.data1
-		arg3_3.data1 = 0
-
-		var54_3:updateActivity(arg3_3)
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_FRESH_TEC_CATCHUP then
-		if arg1_3.cmd == 1 then
-			if not table.contains(arg3_3.data1_list, arg3_3.data1) then
-				table.insert(arg3_3.data1_list, arg3_3.data1)
+		end,
+		[ActivityConst.ACTIVITY_TYPE_LINK_LINK] = ActivityConst.ACTIVITY_TYPE_CARD_PAIRS,
+		[ActivityConst.ACTIVITY_TYPE_REFLUX] = function()
+			if arg1_7.cmd == 1 then
+				arg3_7.data1_list[1] = pg.TimeMgr.GetInstance():GetServerTime()
+				arg3_7.data1_list[2] = arg3_7.data1_list[2] + 1
+			elseif arg1_7.cmd == 2 then
+				arg3_7.data4 = arg1_7.arg1
 			end
-
-			arg3_3.data1 = arg1_3.arg1
-		elseif arg1_3.cmd == 2 then
-			-- block empty
-		elseif arg1_3.cmd == 3 then
-			if not table.contains(arg3_3.data1_list, arg3_3.data1) then
-				table.insert(arg3_3.data1_list, arg3_3.data1)
+		end,
+		[ActivityConst.ACTIVITY_TYPE_LOTTERY_AWARD] = function()
+			if arg1_7.cmd == 1 then
+				arg3_7.data1 = arg3_7.data1 + 1
+				arg3_7.data2 = arg2_7.number[1]
+			elseif arg1_7.cmd == 2 then
+				table.insert(arg3_7.data1_list, arg3_7.data1)
 			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_DODGEM] = function()
+			if arg1_7.cmd == 1 then
+				arg0_7:sendNotification(GAME.FINISH_STAGE_DONE, {
+					statistics = arg1_7.statistics,
+					score = arg1_7.statistics._battleScore,
+					system = SYSTEM_DODGEM
+				})
 
-			arg3_3.data1 = 1
-			arg3_3.data2 = 1
+				arg3_7.data1_list[1] = math.max(arg3_7.data1_list[1], arg1_7.arg2)
+				arg3_7.data2_list[1] = arg2_7.number[1]
+				arg3_7.data2_list[2] = arg2_7.number[2]
+			elseif arg1_7.cmd == 2 then
+				arg3_7.data2 = arg2_7.number[1]
+				arg3_7.data3 = arg2_7.number[2]
+				arg3_7.data2_list[1] = 0
+				arg3_7.data2_list[2] = 0
+			elseif arg1_7.cmd == 3 then
+				arg3_7.data4 = defaultValue(arg3_7.data4, 0) + 1
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_SUBMARINE_RUN] = function()
+			if arg1_7.cmd == 1 then
+				arg0_7:sendNotification(GAME.FINISH_STAGE_DONE, {
+					statistics = arg1_7.statistics,
+					score = arg1_7.statistics._battleScore,
+					system = SYSTEM_SUBMARINE_RUN
+				})
 
-			getProxy(TaskProxy):removeFinishTaskById(arg3_3:getConfig("config_data")[3][1][2])
-		else
-			assert(false)
-		end
+				arg3_7.data1_list[1] = math.max(arg3_7.data1_list[1], arg1_7.arg2)
+				arg3_7.data2_list[1] = arg2_7.number[1]
+				arg3_7.data2_list[2] = arg2_7.number[2]
+			elseif arg1_7.cmd == 2 then
+				arg3_7.data2 = arg2_7.number[1]
+				arg3_7.data3 = arg2_7.number[2]
+				arg3_7.data2_list[1] = 0
+				arg3_7.data2_list[2] = 0
+			elseif arg1_7.cmd == 3 then
+				arg3_7.data4 = defaultValue(arg3_7.data4, 0) + 1
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_TURNTABLE] = function()
+			if arg1_7.cmd == 2 then
+				arg3_7.data4 = 0
+			elseif arg1_7.cmd == 1 then
+				local var0_28 = arg3_7:getConfig("config_id")
+				local var1_28 = pg.activity_event_turning[var0_28].total_num
 
-		getProxy(ActivityProxy):updateActivity(arg3_3)
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_HOLIDAY_VILLA then
-		if arg1_3.cmd == 1 then
-			arg3_3.data1 = 1
-
-			arg3_3:setVitemNumber(66001, 0)
-			arg3_3:setVitemNumber(66002, 0)
-			arg3_3:setVitemNumber(66003, 0)
-			arg3_3:setVitemNumber(66004, 0)
-			arg3_3:addVitemNumber(66005, arg2_3.number[1])
-			getProxy(ActivityProxy):updateActivity(arg3_3)
-			arg0_3:sendNotification(ActivityProxy.ACTIVITY_EXCHANGE_RESOURCES, arg1_3.activity_id)
-		elseif arg1_3.cmd == 2 then
-			arg3_3:updateDataList(arg1_3.arg1)
-			getProxy(ActivityProxy):updateActivity(arg3_3)
-		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_STRONGHOLD then
-		if arg1_3.cmd == 1 then
-			arg3_3:updateDataList(arg1_3.arg1)
-
-			local var55_3 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
-
-			for iter9_3, iter10_3 in ipairs(arg1_3.consumes) do
-				local var56_3 = iter10_3[2]
-				local var57_3 = iter10_3[3]
-
-				if var56_3 == 6 then
-					local var58_3 = var1_3:getData()
-
-					var58_3:consume({
-						[id2res(var56_3)] = var57_3
-					})
-					var1_3:updatePlayer(var58_3)
+				if arg3_7.data3 == var1_28 then
+					arg3_7.data2 = 1
+					arg3_7.data3 = arg3_7.data3 + 1
 				else
-					var55_3:subItemCount(var56_3, var57_3)
+					arg3_7.data3 = arg3_7.data3 + 1
+					arg3_7.data4 = arg2_7.number[1]
+					arg3_7.data1_list[arg1_7.arg1] = arg3_7.data4
 				end
 			end
-		elseif arg1_3.cmd == 2 then
-			arg3_3:updateKVPList(1, arg1_3.arg1, arg1_3.canGetIndex)
+		end,
+		[ActivityConst.ACTIVITY_TYPE_SHRINE] = function()
+			arg3_7.data1 = 1
+		end,
+		[ActivityConst.ACTIVITY_TYPE_RED_PACKETS] = function()
+			arg3_7.data1 = arg3_7.data1 - 1
+
+			if arg3_7.data2 > 0 then
+				arg3_7.data2 = arg3_7.data2 - 1
+			end
+
+			arg3_7.data1_list[2] = arg3_7.data1_list[2] + 1
+
+			local var0_30 = getProxy(ActivityProxy)
+			local var1_30 = var0_30:getActivityByType(ActivityConst.ACTIVITY_TYPE_MONOPOLY)
+
+			if var1_30 and not var1_30:isEnd() and var1_30.data2_list[1] > var1_30.data2_list[2] then
+				var1_30.data2_list[2] = var1_30.data2_list[2] + 1
+
+				var0_30:updateActivity(var1_30)
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_RED_PACKET_LOTTER] = function()
+			arg3_7.data1 = arg3_7.data1 + 1
+
+			if not table.contains(arg3_7.data2_list, arg1_7.arg1) then
+				table.insert(arg3_7.data2_list, arg1_7.arg1)
+			end
+
+			if not table.contains(arg3_7.data1_list, arg2_7.number[1]) then
+				table.insert(arg3_7.data1_list, arg2_7.number[1])
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF] = function()
+			if arg1_7.cmd == 1 then
+				local var0_32 = pg.activity_event_building[arg1_7.arg1]
+				local var1_32 = arg3_7:GetBuildingLevel(arg1_7.arg1)
+
+				arg3_7:SetBuildingLevel(arg1_7.arg1, var1_32 + 1)
+
+				if var1_32 < #var0_32.buff then
+					_.each(var0_32.material[var1_32], function(arg0_33)
+						local var0_33 = arg0_33[1]
+						local var1_33 = arg0_33[2]
+						local var2_33 = arg0_33[3]
+						local var3_33
+
+						if var0_33 == DROP_TYPE_VITEM then
+							local var4_33 = AcessWithinNull(Item.getConfigData(var1_33), "link_id")
+
+							assert(var4_33 == arg3_7.id)
+
+							var3_33 = arg3_7
+						elseif var0_33 > DROP_TYPE_USE_ACTIVITY_DROP then
+							local var5_33 = AcessWithinNull(pg.activity_drop_type[var0_33], "activity_id")
+
+							var3_33 = getProxy(ActivityProxy):getActivityById(var5_33)
+						end
+
+						local var6_33 = var3_33.data1KeyValueList[1][var1_33] or 0
+						local var7_33 = math.max(0, var6_33 - var2_33)
+
+						var3_33.data1KeyValueList[1][var1_33] = var7_33
+
+						if var0_33 > DROP_TYPE_USE_ACTIVITY_DROP then
+							getProxy(ActivityProxy):updateActivity(var3_33)
+						end
+					end)
+				end
+			elseif arg1_7.cmd == 2 and var0_7 == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
+				arg3_7:RecordLastRequestTime()
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2] = ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF,
+		[ActivityConst.ACTIVITY_TYPE_BOSSSINGLE] = function()
+			if arg1_7.cmd == 2 then
+				table.insert(arg3_7.data2_list, arg1_7.arg1)
+				arg0_7:sendNotification(GAME.FINISH_STAGE_DONE, {
+					statistics = arg1_7.statistics,
+					score = arg1_7.statistics._battleScore,
+					system = SYSTEM_REWARD_PERFORM
+				})
+
+				return arg3_7
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_EXPEDITION] = function()
+			if arg1_7.cmd == 0 then
+				return arg3_7
+			end
+
+			if arg1_7.cmd == 3 then
+				arg0_7:sendNotification(GAME.FINISH_STAGE_DONE, {
+					statistics = arg1_7.statistics,
+					score = arg1_7.statistics._battleScore,
+					system = SYSTEM_REWARD_PERFORM
+				})
+
+				return arg3_7
+			end
+
+			if arg1_7.cmd == 4 then
+				arg3_7.data2_list[1] = arg3_7.data2_list[1] + 1
+
+				return arg3_7
+			end
+
+			if arg1_7.cmd == 1 then
+				arg3_7.data3 = arg3_7.data3 - 1
+			end
+
+			local var0_35 = arg1_7.arg1
+
+			if arg1_7.cmd ~= 2 then
+				arg3_7.data2 = var0_35
+			end
+
+			local var1_35 = arg2_7.number[1]
+
+			arg3_7.data1_list[var0_35] = var1_35
+
+			print("格子:" .. var0_35 .. " 值:" .. arg2_7.number[1])
+
+			if arg2_7.number[2] and arg3_7.data1 ~= arg2_7.number[2] then
+				print("关卡变更" .. arg2_7.number[2])
+
+				arg3_7.data1 = arg3_7.data1 + 1
+				arg3_7.data2 = 0
+
+				for iter0_35 = 1, #arg3_7.data1_list do
+					arg3_7.data1_list[iter0_35] = 0
+				end
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE] = function()
+			if arg1_7.cmd == 1 then
+				arg0_7:sendNotification(GAME.FINISH_STAGE_DONE, {
+					statistics = arg1_7.statistics,
+					score = arg1_7.statistics._battleScore,
+					system = SYSTEM_AIRFIGHT
+				})
+
+				arg3_7.data1KeyValueList[1] = arg3_7.data1KeyValueList[1] or {}
+				arg3_7.data1KeyValueList[1][arg1_7.arg1] = (arg3_7.data1KeyValueList[1][arg1_7.arg1] or 0) + 1
+			elseif arg1_7.cmd == 2 then
+				arg3_7.data1KeyValueList[2] = arg3_7.data1KeyValueList[2] or {}
+				arg3_7.data1KeyValueList[2][arg1_7.arg1] = 1
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_SHAKE_BEADS] = function()
+			if arg1_7.cmd == 1 then
+				arg3_7.data1 = arg3_7.data1 - 1
+
+				local var0_37 = arg2_7.number[1]
+
+				arg3_7.data1KeyValueList[1][var0_37] = arg3_7.data1KeyValueList[1][var0_37] + 1
+			elseif arg1_7.cmd == 2 then
+				arg3_7.data2 = 1
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_PT_OTHER] = function()
+			if arg1_7.cmd == 1 then
+				arg3_7.data2 = 1
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_HOTSPRING] = function()
+			if arg1_7.cmd == SpringActivity.OPERATION_UNLOCK then
+				arg3_7:AddSlotCount()
+			elseif arg1_7.cmd == SpringActivity.OPERATION_SETSHIP then
+				arg3_7:SetShipIds(arg1_7.kvargs1)
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_HOTSPRING_2] = function()
+			if arg1_7.cmd == Spring2Activity.OPERATION_SETSHIP then
+				arg3_7:SetShipIds(arg1_7.kvargs1)
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_FIREWORK] = function()
+			if arg1_7.cmd == 1 then
+				arg3_7.data1 = arg3_7.data1 - 1
+
+				if not table.contains(arg3_7.data1_list, arg1_7.arg1) then
+					table.insert(arg3_7.data1_list, arg1_7.arg1)
+				end
+
+				local var0_41 = Item.getConfigData(arg1_7.arg1).link_id
+
+				if var0_41 > 0 then
+					local var1_41 = getProxy(ActivityProxy)
+					local var2_41 = var1_41:getActivityById(var0_41)
+
+					if var2_41 and not var2_41:isEnd() then
+						var2_41.data1 = var2_41.data1 + 1
+
+						var1_41:updateActivity(var2_41)
+					end
+				end
+
+				local var3_41 = getProxy(PlayerProxy)
+				local var4_41 = var3_41:getRawData()
+				local var5_41 = arg3_7:getConfig("config_data")[2][1]
+				local var6_41 = arg3_7:getConfig("config_data")[2][2]
+
+				var4_41:consume({
+					[id2res(var5_41)] = var6_41
+				})
+				var3_41:updatePlayer(var4_41)
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_CARD_PUZZLE] = function()
+			if not table.contains(arg3_7.data1_list, arg1_7.arg1) then
+				table.insert(arg3_7.data1_list, arg1_7.arg1)
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_ZUMA] = function()
+			if arg1_7.cmd == 1 then
+				if arg1_7.arg1 == LaunchBallGameConst.round_type_juqing then
+					arg3_7.data1 = arg3_7.data1 + 1
+				elseif arg1_7.arg1 == 2 then
+					if not arg3_7.data1_list then
+						arg3_7.data1_list = {}
+					end
+
+					table.insert(arg3_7.data1_list, arg1_7.arg2)
+				elseif arg1_7.arg1 == 3 then
+					arg3_7.data2 = arg1_7.arg2
+				end
+			elseif arg1_7.cmd == 2 then
+				arg3_7.data3 = 1
+			end
+
+			getProxy(ActivityProxy):updateActivity(arg3_7)
+		end,
+		[ActivityConst.ACTIVITY_TYPE_PUZZLE_CONNECT] = function()
+			local var0_44 = getProxy(ActivityProxy)
+			local var1_44 = arg3_7.data1_list
+			local var2_44 = arg3_7.data2_list
+			local var3_44 = arg3_7.data3_list
+
+			if arg1_7.cmd == 1 then
+				local var4_44 = pg.activity_tolove_jigsaw[arg1_7.arg1].need[2]
+				local var5_44 = pg.player_resource[var4_44].name
+				local var6_44 = pg.activity_tolove_jigsaw[arg1_7.arg1].need[3]
+				local var7_44 = var1_7:getData()
+
+				var7_44:consume({
+					[var5_44] = var6_44
+				})
+				var1_7:updatePlayer(var7_44)
+				table.insert(var1_44, arg1_7.arg1)
+			elseif arg1_7.cmd == 2 then
+				table.insert(var2_44, arg1_7.arg1)
+			elseif arg1_7.cmd == 3 then
+				table.insert(var3_44, arg1_7.arg1)
+			end
+
+			var0_44:updateActivity(arg3_7)
+		end,
+		[ActivityConst.ACTIVITY_TYPE_SKIN_COUPON_COUNTING] = function()
+			local var0_45 = getProxy(ActivityProxy)
+
+			arg3_7.data2 = arg3_7.data2 + arg3_7.data1
+			arg3_7.data1 = 0
+
+			var0_45:updateActivity(arg3_7)
+		end,
+		[ActivityConst.ACTIVITY_TYPE_FRESH_TEC_CATCHUP] = function()
+			if arg1_7.cmd == 1 then
+				if not table.contains(arg3_7.data1_list, arg3_7.data1) then
+					table.insert(arg3_7.data1_list, arg3_7.data1)
+				end
+
+				arg3_7.data1 = arg1_7.arg1
+			elseif arg1_7.cmd == 2 then
+				-- block empty
+			elseif arg1_7.cmd == 3 then
+				if not table.contains(arg3_7.data1_list, arg3_7.data1) then
+					table.insert(arg3_7.data1_list, arg3_7.data1)
+				end
+
+				arg3_7.data1 = 1
+				arg3_7.data2 = 1
+
+				getProxy(TaskProxy):removeFinishTaskById(arg3_7:getConfig("config_data")[3][1][2])
+			else
+				assert(false)
+			end
+
+			getProxy(ActivityProxy):updateActivity(arg3_7)
+		end,
+		[ActivityConst.ACTIVITY_TYPE_HOLIDAY_VILLA] = function()
+			if arg1_7.cmd == 1 then
+				arg3_7.data1 = 1
+
+				arg3_7:setVitemNumber(66001, 0)
+				arg3_7:setVitemNumber(66002, 0)
+				arg3_7:setVitemNumber(66003, 0)
+				arg3_7:setVitemNumber(66004, 0)
+				arg3_7:addVitemNumber(66005, arg2_7.number[1])
+				getProxy(ActivityProxy):updateActivity(arg3_7)
+				arg0_7:sendNotification(ActivityProxy.ACTIVITY_EXCHANGE_RESOURCES, arg1_7.activity_id)
+			elseif arg1_7.cmd == 2 then
+				arg3_7:updateDataList(arg1_7.arg1)
+				getProxy(ActivityProxy):updateActivity(arg3_7)
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_STRONGHOLD] = function()
+			if arg1_7.cmd == 1 then
+				arg3_7:updateDataList(arg1_7.arg1)
+
+				local var0_48 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+
+				for iter0_48, iter1_48 in ipairs(arg1_7.consumes) do
+					local var1_48 = iter1_48[2]
+					local var2_48 = iter1_48[3]
+
+					if var1_48 == 6 then
+						local var3_48 = var1_7:getData()
+
+						var3_48:consume({
+							[id2res(var1_48)] = var2_48
+						})
+						var1_7:updatePlayer(var3_48)
+					else
+						var0_48:subItemCount(var1_48, var2_48)
+					end
+				end
+			elseif arg1_7.cmd == 2 then
+				arg3_7:updateKVPList(1, arg1_7.arg1, arg1_7.canGetIndex)
+			end
+		end,
+		[ActivityConst.ACTIVITY_TYPE_SKIN_FAKE_PACKAGE] = function()
+			assert(arg3_7.data1 == 0)
+
+			arg3_7.data1 = 1
+
+			reducePlayerOwn(arg1_7.costDrop)
+		end,
+		[ActivityConst.ACTIVITY_TYPE_LOVE_LETTER_UP] = function()
+			arg3_7:SetTargetGroupId(arg1_7.arg1)
+			arg3_7:AddChangeCount()
 		end
-	elseif var0_3 == ActivityConst.ACTIVITY_TYPE_SKIN_FAKE_PACKAGE then
-		assert(arg3_3.data1 == 0)
+	})
 
-		arg3_3.data1 = 1
-
-		reducePlayerOwn(arg1_3.costDrop)
-	end
-
-	return arg3_3
+	return arg3_7
 end
 
-function var0_0.performance(arg0_6, arg1_6, arg2_6, arg3_6, arg4_6)
-	local var0_6 = arg3_6:getConfig("type")
-	local var1_6
+function var0_0.performance(arg0_51, arg1_51, arg2_51, arg3_51, arg4_51)
+	local var0_51 = arg3_51:getConfig("type")
+	local var1_51
 
-	local function var2_6()
-		if var1_6 and coroutine.status(var1_6) == "suspended" then
-			local var0_7, var1_7 = coroutine.resume(var1_6)
+	local function var2_51()
+		if var1_51 and coroutine.status(var1_51) == "suspended" then
+			local var0_52, var1_52 = coroutine.resume(var1_51)
 
-			assert(var0_7, var1_7)
+			assert(var0_52, var1_52)
 		end
 	end
 
-	var1_6 = coroutine.create(function()
-		if var0_6 == ActivityConst.ACTIVITY_TYPE_7DAYSLOGIN then
-			local var0_8 = arg3_6:getConfig("config_client").story
+	var1_51 = coroutine.create(function()
+		switch(var0_51, {
+			[ActivityConst.ACTIVITY_TYPE_7DAYSLOGIN] = function()
+				local var0_54 = arg3_51:getConfig("config_client").story
 
-			if var0_8 and var0_8[arg3_6.data1] and var0_8[arg3_6.data1][1] then
-				pg.NewStoryMgr.GetInstance():Play(var0_8[arg3_6.data1][1], var2_6)
-				coroutine.yield()
-			end
-		elseif var0_6 == ActivityConst.ACTIVITY_TYPE_BB then
-			local var1_8 = pg.gameset.bobing_memory.description[arg3_6.data1]
+				if var0_54 and var0_54[arg3_51.data1] and var0_54[arg3_51.data1][1] then
+					pg.NewStoryMgr.GetInstance():Play(var0_54[arg3_51.data1][1], var2_51)
+					coroutine.yield()
+				end
+			end,
+			[ActivityConst.ACTIVITY_TYPE_BB] = function()
+				local var0_55 = pg.gameset.bobing_memory.description[arg3_51.data1]
 
-			if var1_8 and #var1_8 > 0 then
-				pg.NewStoryMgr.GetInstance():Play(var1_8, var2_6)
-				coroutine.yield()
-			end
-
-			arg0_6:sendNotification(ActivityProxy.ACTIVITY_SHOW_BB_RESULT, {
-				numbers = arg2_6.number,
-				callback = var2_6,
-				awards = arg4_6
-			})
-			coroutine.yield()
-		elseif var0_6 == ActivityConst.ACTIVITY_TYPE_LOTTERY_AWARD then
-			if arg1_6.cmd == 1 then
-				local var2_8 = arg3_6:getConfig("config_client").story
-
-				if var2_8 and var2_8[arg3_6.data1] and var2_8[arg3_6.data1][1] then
-					pg.NewStoryMgr.GetInstance():Play(var2_8[arg3_6.data1][1], var2_6)
+				if var0_55 and #var0_55 > 0 then
+					pg.NewStoryMgr.GetInstance():Play(var0_55, var2_51)
 					coroutine.yield()
 				end
 
-				arg0_6:sendNotification(ActivityProxy.ACTIVITY_SHOW_LOTTERY_AWARD_RESULT, {
-					activityID = arg3_6.id,
-					awards = arg4_6,
-					number = arg2_6.number[1],
-					callback = var2_6
+				arg0_51:sendNotification(ActivityProxy.ACTIVITY_SHOW_BB_RESULT, {
+					numbers = arg2_51.number,
+					callback = var2_51,
+					awards = arg4_51
 				})
-
-				arg4_6 = {}
-
 				coroutine.yield()
-			end
-		elseif var0_6 == ActivityConst.ACTIVITY_TYPE_CARD_PAIRS or var0_6 == ActivityConst.ACTIVITY_TYPE_LINK_LINK then
-			if arg3_6:getConfig("config_client")[1] then
-				local var3_8 = arg3_6:getConfig("config_client")[1][arg3_6.data2 + 1]
+			end,
+			[ActivityConst.ACTIVITY_TYPE_LOTTERY_AWARD] = function()
+				if arg1_51.cmd == 1 then
+					local var0_56 = arg3_51:getConfig("config_client").story
 
-				if var3_8 then
-					pg.NewStoryMgr.GetInstance():Play(var3_8, var2_6)
+					if var0_56 and var0_56[arg3_51.data1] and var0_56[arg3_51.data1][1] then
+						pg.NewStoryMgr.GetInstance():Play(var0_56[arg3_51.data1][1], var2_51)
+						coroutine.yield()
+					end
+
+					arg0_51:sendNotification(ActivityProxy.ACTIVITY_SHOW_LOTTERY_AWARD_RESULT, {
+						activityID = arg3_51.id,
+						awards = arg4_51,
+						number = arg2_51.number[1],
+						callback = var2_51
+					})
+
+					arg4_51 = {}
+
 					coroutine.yield()
 				end
-			end
-		elseif var0_6 == ActivityConst.ACTIVITY_TYPE_DODGEM or var0_6 == ActivityConst.ACTIVITY_TYPE_SUBMARINE_RUN then
-			if arg1_6.cmd == 2 and arg2_6.number[3] > 0 then
-				local var4_8 = arg3_6:getConfig("config_client")[1]
-				local var5_8 = {
-					type = var4_8[1],
-					id = var4_8[2],
-					count = var4_8[3]
-				}
+			end,
+			[ActivityConst.ACTIVITY_TYPE_CARD_PAIRS] = function()
+				if arg3_51:getConfig("config_client")[1] then
+					local var0_57 = arg3_51:getConfig("config_client")[1][arg3_51.data2 + 1]
 
-				table.insert(arg4_6, var5_8)
-			end
-		elseif var0_6 == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF or var0_6 == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
-			if arg1_6.cmd == 1 then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("building_complete_tip"))
-			end
-		elseif var0_6 == ActivityConst.ACTIVITY_TYPE_MONTHSIGN then
-			if arg1_6.cmd == 3 then
-				local var6_8 = arg3_6:getSpecialData("month_sign_awards") or {}
-
-				for iter0_8 = 1, #arg4_6 do
-					table.insert(var6_8, arg4_6[iter0_8])
-				end
-
-				arg3_6:setSpecialData("month_sign_awards", var6_8)
-
-				arg4_6 = {}
-			end
-		elseif var0_6 == ActivityConst.ACTIVITY_TYPE_SHAKE_BEADS then
-			if arg1_6.cmd == 1 then
-				arg0_6:sendNotification(ActivityProxy.ACTIVITY_SHOW_SHAKE_BEADS_RESULT, {
-					number = arg2_6.number[1],
-					callback = var2_6,
-					awards = arg4_6
-				})
-				coroutine.yield()
-			end
-		elseif var0_6 == ActivityConst.ACTIVITY_TYPE_APRIL_REWARD then
-			if arg1_6.cmd == 1 then
-				arg3_6.data1 = arg1_6.arg1
-			elseif arg1_6.cmd == 2 then
-				arg3_6.data2 = 1
-			end
-		elseif var0_6 == ActivityConst.ACTIVITY_TYPE_FIREWORK then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("activity_yanhua_tip8"))
-
-			local var7_8 = #arg3_6:getData1List()
-			local var8_8 = arg3_6:getConfig("config_client").story
-
-			if var8_8 and type(var8_8) == "table" then
-				for iter1_8, iter2_8 in ipairs(var8_8) do
-					if var7_8 == iter2_8[1] then
-						pg.NewStoryMgr.GetInstance():Play(iter2_8[2], var2_6)
+					if var0_57 then
+						pg.NewStoryMgr.GetInstance():Play(var0_57, var2_51)
 						coroutine.yield()
 					end
 				end
-			end
+			end,
+			[ActivityConst.ACTIVITY_TYPE_LINK_LINK] = function()
+				if arg3_51:getConfig("config_client")[1] then
+					local var0_58 = arg3_51:getConfig("config_client")[1][arg3_51.data2 + 1]
 
-			local var9_8 = getProxy(ActivityProxy)
-
-			var9_8:updateActivity(arg3_6)
-
-			local var10_8 = arg3_6:getConfig("config_client").ActID
-
-			if var10_8 then
-				local var11_8 = var9_8:getActivityById(var10_8)
-
-				if var11_8 then
-					var9_8:updateActivity(var11_8)
+					if var0_58 then
+						pg.NewStoryMgr.GetInstance():Play(var0_58, var2_51)
+						coroutine.yield()
+					end
 				end
-			end
-		elseif var0_6 == ActivityConst.ACTIVITY_TYPE_SKIN_FAKE_PACKAGE then
-			getProxy(ActivityProxy):updateActivity(arg3_6)
-			arg0_6:sendNotification(NewShopMainMediator.NOTI_UPDATE_CURRENT)
-		end
+			end,
+			[ActivityConst.ACTIVITY_TYPE_DODGEM] = function()
+				if arg1_51.cmd == 2 and arg2_51.number[3] > 0 then
+					local var0_59 = arg3_51:getConfig("config_client")[1]
+					local var1_59 = {
+						type = var0_59[1],
+						id = var0_59[2],
+						count = var0_59[3]
+					}
 
-		if #arg4_6 > 0 then
-			arg0_6:sendNotification(arg3_6:getNotificationMsg(), {
-				activityId = arg1_6.activity_id,
-				awards = arg4_6,
-				callback = var2_6
+					table.insert(arg4_51, var1_59)
+				end
+			end,
+			[ActivityConst.ACTIVITY_TYPE_SUBMARINE_RUN] = function()
+				if arg1_51.cmd == 2 and arg2_51.number[3] > 0 then
+					local var0_60 = arg3_51:getConfig("config_client")[1]
+					local var1_60 = {
+						type = var0_60[1],
+						id = var0_60[2],
+						count = var0_60[3]
+					}
+
+					table.insert(arg4_51, var1_60)
+				end
+			end,
+			[ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF] = function()
+				if arg1_51.cmd == 1 then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("building_complete_tip"))
+				end
+			end,
+			[ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2] = function()
+				if arg1_51.cmd == 1 then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("building_complete_tip"))
+				end
+			end,
+			[ActivityConst.ACTIVITY_TYPE_MONTHSIGN] = function()
+				if arg1_51.cmd == 3 then
+					local var0_63 = arg3_51:getSpecialData("month_sign_awards") or {}
+
+					for iter0_63 = 1, #arg4_51 do
+						table.insert(var0_63, arg4_51[iter0_63])
+					end
+
+					arg3_51:setSpecialData("month_sign_awards", var0_63)
+
+					arg4_51 = {}
+				end
+			end,
+			[ActivityConst.ACTIVITY_TYPE_SHAKE_BEADS] = function()
+				if arg1_51.cmd == 1 then
+					arg0_51:sendNotification(ActivityProxy.ACTIVITY_SHOW_SHAKE_BEADS_RESULT, {
+						number = arg2_51.number[1],
+						callback = var2_51,
+						awards = arg4_51
+					})
+					coroutine.yield()
+				end
+			end,
+			[ActivityConst.ACTIVITY_TYPE_APRIL_REWARD] = function()
+				if arg1_51.cmd == 1 then
+					arg3_51.data1 = arg1_51.arg1
+				elseif arg1_51.cmd == 2 then
+					arg3_51.data2 = 1
+				end
+			end,
+			[ActivityConst.ACTIVITY_TYPE_FIREWORK] = function()
+				pg.TipsMgr.GetInstance():ShowTips(i18n("activity_yanhua_tip8"))
+
+				local var0_66 = #arg3_51:getData1List()
+				local var1_66 = arg3_51:getConfig("config_client").story
+
+				if var1_66 and type(var1_66) == "table" then
+					for iter0_66, iter1_66 in ipairs(var1_66) do
+						if var0_66 == iter1_66[1] then
+							pg.NewStoryMgr.GetInstance():Play(iter1_66[2], var2_51)
+							coroutine.yield()
+						end
+					end
+				end
+
+				local var2_66 = getProxy(ActivityProxy)
+
+				var2_66:updateActivity(arg3_51)
+
+				local var3_66 = arg3_51:getConfig("config_client").ActID
+
+				if var3_66 then
+					local var4_66 = var2_66:getActivityById(var3_66)
+
+					if var4_66 then
+						var2_66:updateActivity(var4_66)
+					end
+				end
+			end,
+			[ActivityConst.ACTIVITY_TYPE_SKIN_FAKE_PACKAGE] = function()
+				getProxy(ActivityProxy):updateActivity(arg3_51)
+				arg0_51:sendNotification(NewShopMainMediator.NOTI_UPDATE_CURRENT)
+			end
+		})
+
+		if #arg4_51 > 0 then
+			arg0_51:sendNotification(arg3_51:getNotificationMsg(), {
+				activityId = arg1_51.activity_id,
+				awards = arg4_51,
+				callback = var2_51
 			})
 			coroutine.yield()
 		end
 
-		if var0_6 == 17 and arg1_6.cmd and arg1_6.cmd == 2 then
+		if var0_51 == 17 and arg1_51.cmd and arg1_51.cmd == 2 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("mingshi_get_tip"))
 		end
 
-		getProxy(ActivityProxy):updateActivity(arg3_6)
-		arg0_6:sendNotification(ActivityProxy.ACTIVITY_OPERATION_DONE, arg1_6.activity_id)
+		getProxy(ActivityProxy):updateActivity(arg3_51)
+		arg0_51:sendNotification(ActivityProxy.ACTIVITY_OPERATION_DONE, arg1_51.activity_id)
 	end)
 
-	var2_6()
+	var2_51()
 end
 
 return var0_0

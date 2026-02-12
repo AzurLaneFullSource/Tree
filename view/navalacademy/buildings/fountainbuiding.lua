@@ -13,7 +13,13 @@ function var0_0.OnClick(arg0_3)
 end
 
 function var0_0.IsTip(arg0_4)
-	return getProxy(CollectionProxy):unclaimTrophyCount() > 0
+	if getProxy(CollectionProxy):unclaimTrophyCount() > 0 then
+		return true
+	else
+		local var0_4 = getProxy(LoveLetterProxy)
+
+		return var0_4:IsTipLevelUp() or var0_4:IsTipAllLevelReward()
+	end
 end
 
 return var0_0

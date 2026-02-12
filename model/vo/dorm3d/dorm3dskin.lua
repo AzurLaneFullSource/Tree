@@ -44,45 +44,53 @@ function var0_0.GetRemarks(arg0_11)
 	return arg0_11:getConfig("remarks")
 end
 
-function var0_0.GetHiddenPartIcons(arg0_12, arg1_12)
-	local var0_12 = arg0_12:getConfig("hidden_part")
-	local var1_12 = {}
-
-	for iter0_12, iter1_12 in ipairs(arg1_12) do
-		local var2_12 = iter0_12.find(var0_12, function(arg0_13)
-			return arg0_13[1] == iter1_12
-		end)
-
-		if var2_12 then
-			table.insert(var1_12, var2_12[2])
-		end
-	end
-
-	return var1_12
+function var0_0.GetGroupId(arg0_12)
+	return arg0_12:getConfig("ship_group")
 end
 
-function var0_0.GetActiveAndHiddenPartNames(arg0_14, arg1_14)
+function var0_0.ShouldApplyHiddenPartInTimeline(arg0_13)
+	return arg0_13:getConfig("hidden_part_apply_in_timeline") == 1
+end
+
+function var0_0.GetHiddenPartIcons(arg0_14, arg1_14)
 	local var0_14 = arg0_14:getConfig("hidden_part")
 	local var1_14 = {}
-	local var2_14 = {}
 
-	for iter0_14, iter1_14 in ipairs(var0_14) do
-		if table.contains(arg1_14, iter1_14[1]) then
-			table.insert(var2_14, iter1_14[3])
-		else
-			table.insert(var1_14, iter1_14[3])
+	for iter0_14, iter1_14 in ipairs(arg1_14) do
+		local var2_14 = iter0_14.find(var0_14, function(arg0_15)
+			return arg0_15[1] == iter1_14
+		end)
+
+		if var2_14 then
+			table.insert(var1_14, var2_14[2])
 		end
 	end
 
-	return var1_14, var2_14
+	return var1_14
 end
 
-function var0_0.GetRarity(arg0_15)
+function var0_0.GetActiveAndHiddenPartNames(arg0_16, arg1_16)
+	local var0_16 = arg0_16:getConfig("hidden_part")
+	local var1_16 = {}
+	local var2_16 = {}
+
+	for iter0_16, iter1_16 in ipairs(var0_16) do
+		if table.contains(arg1_16, iter1_16[1]) then
+			table.insert(var2_16, iter1_16[3])
+		else
+			table.insert(var1_16, iter1_16[3])
+		end
+	end
+
+	return var1_16, var2_16
+end
+
+function var0_0.GetRarity(arg0_17)
 	return 5
 end
 
-function var0_0.GetModelName(arg0_16)
-	return arg0_16:getConfig("model_id")
+function var0_0.GetModelName(arg0_18)
+	return arg0_18:getConfig("model_id")
 end
 
 return var0_0

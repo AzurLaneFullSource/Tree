@@ -26,12 +26,14 @@ function var0_0.execute(arg0_1, arg1_1)
 
 	pg.ConnectionMgr.GetInstance():Send(17401, {
 		fixed_const = 1,
-		medal_id = var4_1
+		medal_id = var0_1
 	}, 17402, function(arg0_2)
 		if arg0_2.result == 0 then
 			var1_1:updatePlayerMedalDisplay(var0_1)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("change_display_medal_success"))
 			arg0_1:sendNotification(GAME.CHANGE_PLAYER_MEDAL_DISPLAY_DONE)
+		else
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_2.result] .. arg0_2.result)
 		end
 	end)
 end

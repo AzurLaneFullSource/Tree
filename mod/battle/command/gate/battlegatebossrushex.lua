@@ -149,4 +149,10 @@ function var0_0.Exit(arg0_4, arg1_4)
 	})
 end
 
+function var0_0.GetPreloadList(arg0_11)
+	local var0_11, var1_11 = ys.Battle.BattleGateBossRush.GetPreloadList(arg0_11)
+
+	return var0_11, var1_11
+end
+
 return var0_0

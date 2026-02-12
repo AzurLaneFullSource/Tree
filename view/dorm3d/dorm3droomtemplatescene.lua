@@ -135,17 +135,15 @@ function var0_0.init(arg0_12)
 
 	if arg0_12.room:isPersonalRoom() then
 		local var0_12 = arg0_12.contextData.groupIds[1]
-		local var1_12 = getProxy(ApartmentProxy):getApartment(var0_12)
-		local var2_12 = var1_12:GetCurSkinId()
-		local var3_12 = arg0_12.ladyDict[var0_12]
+		local var1_12 = getProxy(ApartmentProxy):getApartment(var0_12):GetCurSkinId()
+		local var2_12 = arg0_12.ladyDict[var0_12]
 
-		setActive(var3_12.ladyGameObject, false)
+		setActive(var2_12.ladyGameObject, false)
 
-		var3_12.skinId = var2_12
-		var3_12.ladyGameObject = arg0_12.skinDict[var2_12].ladyGameObject
+		var2_12.skinId = var1_12
+		var2_12.ladyGameObject = arg0_12.skinDict[var1_12].ladyGameObject
 
-		setActive(var3_12.ladyGameObject, true)
-		var3_12:HideCharacterPart(var2_12, var1_12:GetHiddenParts(var2_12))
+		setActive(var2_12.ladyGameObject, true)
 	end
 
 	for iter0_12, iter1_12 in pairs(arg0_12.ladyDict) do
@@ -153,12 +151,12 @@ function var0_0.init(arg0_12)
 	end
 
 	if not arg0_12.room:isPersonalRoom() then
-		local var4_12 = underscore.detect(arg0_12.contextData.groupIds, function(arg0_13)
+		local var3_12 = underscore.detect(arg0_12.contextData.groupIds, function(arg0_13)
 			return arg0_12.contextData.ladyZone[arg0_13] == arg0_12.contextData.inFurnitureName
 		end) or arg0_12.contextData.groupIds[1]
 
-		if var4_12 then
-			arg0_12:SyncInterestTransform(arg0_12.ladyDict[var4_12])
+		if var3_12 then
+			arg0_12:SyncInterestTransform(arg0_12.ladyDict[var3_12])
 		end
 
 		if SlideExtraSystem.IsOpen(arg0_12.room) and arg0_12.contextData.inFurnitureName == SlideConst.SLIDE_ZONE then
@@ -897,6 +895,7 @@ end
 
 function var0_0.InitCharacter(arg0_77, arg1_77, arg2_77)
 	arg1_77:InitCharacter(arg2_77)
+	Dorm3dHxHelper.HideCharacterPart(arg1_77.lady)
 	arg0_77:HXCharacter(arg1_77.lady)
 	arg1_77:SetZone(arg0_77.contextData.ladyZone[arg2_77])
 	arg0_77:ChangeCharacterPosition(arg1_77)
@@ -3672,6 +3671,7 @@ function var0_0.LoadTimelineScene(arg0_359, arg1_359, arg2_359, arg3_359, arg4_3
 		loadSceneFunc = function(arg0_360, arg1_360)
 			local var0_360 = Dorm3dHxHelper.GetTimelineMainCharacter()
 
+			Dorm3dHxHelper.HideCharacterPart(var0_360)
 			arg0_359:HXCharacter(var0_360)
 		end
 	}, arg4_359)

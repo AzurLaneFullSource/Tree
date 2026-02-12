@@ -1502,6 +1502,10 @@ function var0_0.registerActBtn(arg0_100)
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.OTHERWORLD_MAP)
 
 				return
+			elseif var0_102 == ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2 then
+				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.ZHANG_WU_BOSS)
+
+				return
 			end
 		end
 

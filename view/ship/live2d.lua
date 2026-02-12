@@ -793,16 +793,6 @@ local function var20_0(arg0_34, arg1_34)
 	end)
 	arg0_34.liveCom:SetTouchParts(var4_0.assistantTouchParts)
 
-	if arg0_34.live2dData and arg0_34.live2dData.ship and arg0_34.live2dData.ship.propose then
-		arg0_34:changeParamaterValue("Paramring", 1)
-	else
-		arg0_34:changeParamaterValue("Paramring", 0)
-	end
-
-	if HXSet.isHx() then
-		arg0_34:changeParamaterValue("l2d_hx", 1)
-	end
-
 	if not arg0_34._physics then
 		arg0_34._physics = GetComponent(arg0_34._tf, "CubismPhysicsController")
 	end
@@ -838,6 +828,18 @@ local function var20_0(arg0_34, arg1_34)
 	end
 
 	arg0_34.state = var0_0.STATE_INITED
+
+	if arg0_34.live2dData and arg0_34.live2dData.ship and arg0_34.live2dData.ship.propose then
+		arg0_34:changeParamaterValue("Paramring", 1)
+	else
+		arg0_34:changeParamaterValue("Paramring", 0)
+	end
+
+	if HXSet.isHx() then
+		arg0_34:changeParamaterValue("l2d_hx", 1)
+	else
+		arg0_34:changeParamaterValue("l2d_hx", 0)
+	end
 
 	if arg0_34.delayChangeParamater and #arg0_34.delayChangeParamater > 0 then
 		for iter2_34 = 1, #arg0_34.delayChangeParamater do

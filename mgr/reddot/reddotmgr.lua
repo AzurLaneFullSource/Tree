@@ -125,13 +125,14 @@ function var0_0.BindConditions(arg0_3)
 	arg0_3:BindCondition(var0_0.TYPES.MEMORY_REVIEW, function()
 		local var0_21 = getProxy(PlayerProxy):getRawData()
 
-		if var0_21 then
-			local var1_21 = var0_21.id
+		if var0_21 and _.any(pg.memory_group.all, function(arg0_22)
+			return PlayerPrefs.GetInt("MEMORY_GROUP_NOTIFICATION" .. var0_21.id .. " " .. arg0_22, 0) == 1
+		end) then
+			return true
+		end
 
-			do return _.any(pg.memory_group.all, function(arg0_22)
-				return PlayerPrefs.GetInt("MEMORY_GROUP_NOTIFICATION" .. var1_21 .. " " .. arg0_22, 0) == 1
-			end) end
-			return
+		if getProxy(LoveLetterProxy):getRawData() and getProxy(LoveLetterProxy):IsTipUnlockLetter() then
+			return true
 		end
 
 		return false

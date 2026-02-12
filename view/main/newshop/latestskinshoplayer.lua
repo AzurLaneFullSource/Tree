@@ -816,21 +816,24 @@ function var0_0.FlushChangeSkin(arg0_46, arg1_46)
 	local var0_46 = ShipSkin.GetChangeSkinGroupId(arg0_46.skinId)
 	local var1_46 = ShipSkin.GetChangeSkinCustomDataId(arg0_46.skinId, "hide_shop")
 	local var2_46 = pg.gameset.changeskin_switch_block
+	local var3_46 = false
+	local var4_46 = false
+	local var5_46 = arg0_46.changeSkinToggle:IsAsmrSkin() and true or false
 
 	if var2_46 and var2_46.description then
-		local var3_46 = var2_46.description
+		local var6_46 = var2_46.description
 
-		if table.contains(var3_46, var0_46) then
-			local var4_46 = HXSet.isHx()
+		if table.contains(var6_46, var0_46) then
+			local var7_46 = HXSet.isHx()
 
-			if arg1_46.buyCount <= 0 and var4_46 then
-				setActive(arg0_46.changeSkin, false)
+			if arg1_46.buyCount <= 0 and var7_46 then
+				var4_46 = true
 			end
 		end
 	end
 
 	if var1_46 and var1_46 == 1 then
-		setActive(arg0_46.changeSkin, false)
+		var3_46 = true
 	end
 
 	if not arg0_46.changeSkinId then
@@ -842,7 +845,12 @@ function var0_0.FlushChangeSkin(arg0_46, arg1_46)
 	end
 
 	arg0_46.changeSkinToggle:setSkinData(arg0_46.skinId)
-	setActive(arg0_46.changeSkin, not arg0_46.changeSkinToggle:IsAsmrSkin())
+
+	if var3_46 or var4_46 or var5_46 then
+		setActive(arg0_46.changeSkin, false)
+	else
+		setActive(arg0_46.changeSkin, true)
+	end
 end
 
 function var0_0.GCHandle(arg0_47)

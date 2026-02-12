@@ -11,9 +11,11 @@ var0_0.SHOW_RULE = "SimpleMGEvent: show rule"
 var0_0.READY_START = "SimpleMGEvent: ready start"
 var0_0.COUNT_DOWN = "SimpleMGEvent: count down"
 var0_0.STORE_SERVER = "SimpleMGEvent: store server"
+var0_0.ON_HOME = "SimpleMGEvent: on home"
 var0_0.SUBMIT_GAME_SUCCESS = "SimpleMGEvent: submit game success"
 var0_0.ADD_SCORE = "SimpleMGEvent: add score"
 var0_0.GAME_OVER = "SimpleMGEvent: game over"
 var0_0.USE_SKILL = "SimpleMGEvent: use skill"
+var0_0.SHOW_RANK = "SimpleMGEvent: show rank"
 
 return var0_0

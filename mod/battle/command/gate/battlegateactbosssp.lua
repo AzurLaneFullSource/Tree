@@ -167,4 +167,22 @@ function var0_0.Exit(arg0_4, arg1_4)
 	arg1_4:SendRequest(var15_4, var16_4)
 end
 
+function var0_0.GetPreloadList(arg0_7)
+	local var0_7, var1_7 = ys.Battle.BattleGateActBoss.GetPreloadList(arg0_7)
+	local var2_7 = ys.Battle.BattleResourceManager.GetInstance()
+	local var3_7 = getProxy(ActivityProxy):GetActivityBossRuntime(arg0_7.actId).buffIds
+	local var4_7 = _.map(var3_7, function(arg0_8)
+		return ActivityBossBuff.New({
+			configId = arg0_8
+		}):GetBuffID()
+	end)
+	local var5_7 = var2_7.GetResFromBuffIDList(var4_7)
+
+	for iter0_7, iter1_7 in ipairs(var5_7) do
+		table.insert(var0_7, iter1_7)
+	end
+
+	return var0_7, var1_7
+end
+
 return var0_0

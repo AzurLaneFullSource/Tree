@@ -7,6 +7,7 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 	arg0_1.spTF = findTF(arg1_1, "spinePainting")
 	arg0_1.spBg = findTF(arg3_1, "spinePainting")
 	arg0_1.uiCam = GameObject.Find("UICamera"):GetComponent("Camera")
+	arg0_1._initCallback = {}
 end
 
 function var0_0.GetCenterPos(arg0_2)
@@ -28,11 +29,13 @@ function var0_0.OnLoad(arg0_3, arg1_3)
 		arg0_3:InitSpecialTouch()
 		arg1_3()
 
-		if arg0_3._initTriggerEvent then
-			arg0_3:TriggerEvent(arg0_3._initTriggerEvent)
+		for iter0_4, iter1_4 in ipairs(arg0_3._initCallback) do
+			iter1_4()
+		end
 
-			arg0_3._initTriggerEvent = nil
-		elseif getProxy(PlayerProxy):getFlag("login") then
+		arg0_3._initCallback = {}
+
+		if getProxy(PlayerProxy):getFlag("login") then
 			getProxy(PlayerProxy):setFlag("login", nil)
 			arg0_3:TriggerEvent("event_login")
 		end
@@ -214,13 +217,15 @@ function var0_0.PrepareTriggerAction(arg0_15, arg1_15)
 
 	local var0_15
 	local var1_15 = false
+	local var2_15 = ""
 
 	if pg.AssistantInfo.assistantEvents[arg1_15] then
 		var0_15 = pg.AssistantInfo.assistantEvents[arg1_15].action
 		var1_15 = arg0_15.spinePainting:getAnimationExist(var0_15)
+		var2_15 = arg0_15.spinePainting:getIdleName()
 	end
 
-	if var1_15 then
+	if var1_15 and var2_15 == "normal" then
 		arg0_15.spinePainting:SetOnceAction(var0_15, nil, function()
 			arg0_15:TryToTriggerEvent(arg1_15)
 		end, true)
@@ -229,139 +234,175 @@ function var0_0.PrepareTriggerAction(arg0_15, arg1_15)
 	end
 end
 
-function var0_0.TryToTriggerEvent(arg0_17, arg1_17)
-	arg0_17:_TriggerEvent(arg1_17)
+function var0_0.GetEventExit(arg0_17, arg1_17)
+	local var0_17 = false
+
+	if pg.AssistantInfo.assistantEvents[arg1_17] then
+		local var1_17 = pg.AssistantInfo.assistantEvents[arg1_17].action
+
+		var0_17 = arg0_17.spinePainting:getAnimationExist(var1_17)
+	end
+
+	return var0_17
 end
 
-function var0_0.onSpinePaintingEvent(arg0_18, arg1_18)
-	arg0_18:TryToTriggerEvent(arg1_18)
-	arg0_18:TriggerPersonalTask(arg0_18.ship.groupId)
+function var0_0.TryToTriggerEvent(arg0_18, arg1_18)
+	arg0_18:_TriggerEvent(arg1_18)
 end
 
-function var0_0.GetPaintingTransform(arg0_19)
-	if arg0_19.spinePainting then
-		return arg0_19.spinePainting:GetSpineTrasform()
+function var0_0.onSpinePaintingEvent(arg0_19, arg1_19)
+	arg0_19:TryToTriggerEvent(arg1_19)
+	arg0_19:TriggerPersonalTask(arg0_19.ship.groupId)
+end
+
+function var0_0.GetPaintingTransform(arg0_20)
+	if arg0_20.spinePainting then
+		return arg0_20.spinePainting:GetSpineTrasform()
 	end
 
 	return nil
 end
 
-function var0_0.GetPartScaleData(arg0_20)
-	return pg.ship_skin_template[arg0_20.ship:getSkinId()].part_scale.spine
+function var0_0.GetPartScaleData(arg0_21)
+	return pg.ship_skin_template[arg0_21.ship:getSkinId()].part_scale.spine
 end
 
-function var0_0.GetPartStateType(arg0_21)
+function var0_0.GetPartStateType(arg0_22)
 	return MainPaintingView.STATE_SPINE_PAINTING
 end
 
-function var0_0.getDragTouchAble(arg0_22, arg1_22, arg2_22, arg3_22)
-	local var0_22 = SpinePaintingConst.ship_drag_datas[arg2_22]
+function var0_0.getDragTouchAble(arg0_23, arg1_23, arg2_23, arg3_23)
+	local var0_23 = SpinePaintingConst.ship_drag_datas[arg2_23]
 
-	if not var0_22 then
+	if not var0_23 then
 		return false
 	end
 
-	if var0_22.drag_data and var0_22.click_trigger ~= arg3_22 then
+	if var0_23.drag_data and var0_23.click_trigger ~= arg3_23 then
 		return false
 	end
 
-	if var0_22.hit_area then
-		return table.contains(var0_22.hit_area, arg1_22)
+	if var0_23.hit_area then
+		return table.contains(var0_23.hit_area, arg1_23)
 	end
 
 	return false
 end
 
-function var0_0.OnDisplayWorld(arg0_23, arg1_23)
-	local var0_23 = arg0_23.ship:getCVIntimacy()
-	local var1_23 = ShipExpressionHelper.GetExpression(arg0_23.paintingName, arg1_23, var0_23, arg0_23.ship:getSkinId())
+function var0_0.OnDisplayWorld(arg0_24, arg1_24)
+	local var0_24 = arg0_24.ship:getCVIntimacy()
+	local var1_24 = ShipExpressionHelper.GetExpression(arg0_24.paintingName, arg1_24, var0_24, arg0_24.ship:getSkinId())
 
-	if var1_23 and var1_23 ~= "" then
-		arg0_23.spinePainting:SetAction(var1_23, 1)
-		arg0_23.spinePainting:displayWord(true)
+	if var1_24 and var1_24 ~= "" then
+		arg0_24.spinePainting:SetAction(var1_24, 1)
+		arg0_24.spinePainting:displayWord(true)
 	end
 end
 
-function var0_0.OnDisplayWordEnd(arg0_24)
-	var0_0.super.OnDisplayWordEnd(arg0_24)
-	arg0_24.spinePainting:SetEmptyAction(1)
-	arg0_24.spinePainting:displayWord(false)
+function var0_0.OnDisplayWordEnd(arg0_25)
+	var0_0.super.OnDisplayWordEnd(arg0_25)
+	arg0_25.spinePainting:SetEmptyAction(1)
+	arg0_25.spinePainting:displayWord(false)
 end
 
-function var0_0.OnLongPress(arg0_25)
-	if arg0_25.isFoldState then
+function var0_0.OnLongPress(arg0_26)
+	if arg0_26.isFoldState then
 		return
 	end
 
 	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
-		shipId = arg0_25.ship.id
+		shipId = arg0_26.ship.id
 	})
 end
 
-function var0_0.PlayChangeSkinActionIn(arg0_26, arg1_26)
-	if arg0_26.spinePainting and arg0_26.spinePainting:getInitFlag() then
-		arg0_26:TriggerEvent("event_login")
-	else
-		arg0_26._initTriggerEvent = "event_login"
-	end
+function var0_0.PlayChangeSkinActionIn(arg0_27, arg1_27)
+	if arg0_27.spinePainting then
+		local function var0_27()
+			if arg1_27 and arg1_27.callback then
+				arg1_27.callback({
+					flag = true
+				})
+			end
+		end
 
-	if arg1_26 and arg1_26.callback then
-		arg1_26.callback({
-			flag = true
-		})
+		local function var1_27()
+			local var0_29 = arg0_27.spinePainting:GetDragDataConfig("change_in_hit")
+
+			if var0_29 and #var0_29 > 0 then
+				arg0_27.spinePainting:readyDragAction(var0_29)
+				var0_27()
+			elseif arg0_27.spinePainting:getAnimationExist("change_in") and arg0_27.spinePainting:ablePlayAction("change_in", false, 0) then
+				arg0_27.spinePainting:SetOnceAction("change_in", nil, function()
+					var0_27()
+				end, true)
+			else
+				arg0_27:TriggerEvent("event_login")
+				var0_27()
+			end
+		end
+
+		if arg0_27.spinePainting:getInitFlag() then
+			var1_27()
+		else
+			arg0_27:pullInitCallback(var1_27)
+		end
 	end
 end
 
-function var0_0.PlayChangeSkinActionOut(arg0_27, arg1_27)
-	if arg0_27.spinePainting and arg0_27.spinePainting:getAnimationExist("change_out") then
-		if arg0_27.spinePainting:ablePlayAction("change_out", false, 0) then
-			arg0_27.spinePainting:SetOnceAction("change_out", function()
+function var0_0.pullInitCallback(arg0_31, arg1_31)
+	table.insert(arg0_31._initCallback, arg1_31)
+end
+
+function var0_0.PlayChangeSkinActionOut(arg0_32, arg1_32)
+	if arg0_32.spinePainting and arg0_32.spinePainting:getAnimationExist("change_out") then
+		if arg0_32.spinePainting:ablePlayAction("change_out", false, 0) then
+			arg0_32.spinePainting:SetOnceAction("change_out", function()
 				return
 			end, function()
-				if arg1_27 and arg1_27.callback then
-					arg1_27.callback({
+				if arg1_32 and arg1_32.callback then
+					arg1_32.callback({
 						flag = true
 					})
 				end
 			end, true)
-		elseif arg1_27 and arg1_27.callback then
-			arg1_27.callback({
+		elseif arg1_32 and arg1_32.callback then
+			arg1_32.callback({
 				flag = true
 			})
 		end
-	elseif arg1_27 and arg1_27.callback then
-		arg1_27.callback({
+	elseif arg1_32 and arg1_32.callback then
+		arg1_32.callback({
 			flag = true
 		})
 	end
 end
 
-function var0_0.OnUnload(arg0_30)
-	if arg0_30.spinePainting then
-		arg0_30.spinePainting:Dispose()
+function var0_0.OnUnload(arg0_35)
+	if arg0_35.spinePainting then
+		arg0_35.spinePainting:Dispose()
 
-		arg0_30.spinePainting = nil
+		arg0_35.spinePainting = nil
 	end
 
-	if arg0_30.dragEvent then
-		ClearEventTrigger(arg0_30.dragEvent)
-	end
-end
-
-function var0_0.GetOffset(arg0_31)
-	return arg0_31.spTF.localPosition.x
-end
-
-function var0_0.OnPause(arg0_32)
-	if arg0_32.spinePainting then
-		arg0_32.spinePainting:SetVisible(false)
+	if arg0_35.dragEvent then
+		ClearEventTrigger(arg0_35.dragEvent)
 	end
 end
 
-function var0_0.OnResume(arg0_33)
-	if arg0_33.spinePainting then
-		arg0_33.spinePainting:SetVisible(true)
-		arg0_33.spinePainting:SetEmptyAction(1)
+function var0_0.GetOffset(arg0_36)
+	return arg0_36.spTF.localPosition.x
+end
+
+function var0_0.OnPause(arg0_37)
+	if arg0_37.spinePainting then
+		arg0_37.spinePainting:SetVisible(false)
+	end
+end
+
+function var0_0.OnResume(arg0_38)
+	if arg0_38.spinePainting then
+		arg0_38.spinePainting:SetVisible(true)
+		arg0_38.spinePainting:SetEmptyAction(1)
 	end
 end
 

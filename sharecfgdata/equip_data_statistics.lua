@@ -136096,6 +136096,59 @@ _G.pg.base.equip_data_statistics[80582] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[80591] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 80591,
+	name = "All Out Assault I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170961,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80592] = {
+	base = 80591,
+	id = 80592,
+	name = "All Out Assault II",
+	weapon_id = {
+		170962,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[85000] = {
 	ammo = 3,
 	attribute_2 = "cannon",
@@ -171020,6 +171073,369 @@ _G.pg.base.equip_data_statistics[150951] = {
 	id = 150951,
 	value_1 = "475",
 	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150960] = {
+	ammo = 10,
+	attribute_1 = "cannon",
+	attribute_2 = "durability",
+	descrip = "",
+	icon = "150960",
+	id = 150960,
+	name = "Auction Invitation",
+	nationality = 5,
+	rarity = 4,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "10",
+	value_2 = 100,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			61010,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"PRAN",
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150961] = {
+	base = 150960,
+	id = 150961,
+	value_1 = "11",
+	value_2 = 105,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150962] = {
+	base = 150960,
+	id = 150962,
+	value_1 = "12",
+	value_2 = 110,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150963] = {
+	base = 150960,
+	id = 150963,
+	value_1 = "13",
+	value_2 = 115,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150964] = {
+	base = 150960,
+	id = 150964,
+	value_1 = "14",
+	value_2 = 120,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150965] = {
+	base = 150960,
+	id = 150965,
+	value_1 = "15",
+	value_2 = 125,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150966] = {
+	base = 150960,
+	id = 150966,
+	value_1 = "16",
+	value_2 = 135,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150967] = {
+	base = 150960,
+	id = 150967,
+	value_1 = "17",
+	value_2 = 150,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150968] = {
+	base = 150960,
+	id = 150968,
+	value_1 = "18",
+	value_2 = 160,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150969] = {
+	base = 150960,
+	id = 150969,
+	value_1 = "19",
+	value_2 = 170,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150970] = {
+	base = 150960,
+	id = 150970,
+	value_1 = "20",
+	value_2 = 180,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150971] = {
+	anti_siren = 100,
+	base = 150960,
+	id = 150971,
+	value_1 = "21",
+	value_2 = 190,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150980] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	descrip = "",
+	icon = "150980",
+	id = 150980,
+	name = "Butterflies Playing with Bamboo",
+	nationality = 5,
+	rarity = 4,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "200",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			61020,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"PRAN",
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[150981] = {
+	base = 150980,
+	id = 150981,
+	value_1 = "230",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150982] = {
+	base = 150980,
+	id = 150982,
+	value_1 = "260",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150983] = {
+	base = 150980,
+	id = 150983,
+	value_1 = "290",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150984] = {
+	base = 150980,
+	id = 150984,
+	value_1 = "320",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150985] = {
+	base = 150980,
+	id = 150985,
+	value_1 = "350",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150986] = {
+	base = 150980,
+	id = 150986,
+	value_1 = "380",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150987] = {
+	base = 150980,
+	id = 150987,
+	value_1 = "410",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150988] = {
+	base = 150980,
+	id = 150988,
+	value_1 = "440",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150989] = {
+	base = 150980,
+	id = 150989,
+	value_1 = "470",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150990] = {
+	base = 150980,
+	id = 150990,
+	value_1 = "500",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[150991] = {
+	anti_siren = 100,
+	base = 150980,
+	id = 150991,
+	value_1 = "530",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151000] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	descrip = "",
+	icon = "151000",
+	id = 151000,
+	name = "Butterflies Fluttering Among Plums",
+	nationality = 5,
+	rarity = 4,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "200",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			61030,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"PRAN",
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[151001] = {
+	base = 151000,
+	id = 151001,
+	value_1 = "230",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151002] = {
+	base = 151000,
+	id = 151002,
+	value_1 = "260",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151003] = {
+	base = 151000,
+	id = 151003,
+	value_1 = "290",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151004] = {
+	base = 151000,
+	id = 151004,
+	value_1 = "320",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151005] = {
+	base = 151000,
+	id = 151005,
+	value_1 = "350",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151006] = {
+	base = 151000,
+	id = 151006,
+	value_1 = "380",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151007] = {
+	base = 151000,
+	id = 151007,
+	value_1 = "410",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151008] = {
+	base = 151000,
+	id = 151008,
+	value_1 = "440",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151009] = {
+	base = 151000,
+	id = 151009,
+	value_1 = "470",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151010] = {
+	base = 151000,
+	id = 151010,
+	value_1 = "500",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151011] = {
+	anti_siren = 100,
+	base = 151000,
+	id = 151011,
+	value_1 = "530",
 	hidden_skill_id = {},
 }
 

@@ -22,7 +22,6 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 		end
 
 		setActive(arg0_1._tf, true)
-		print("start Time" .. arg1_3 + arg2_3)
 
 		arg0_1._chatTimer = Timer.New(function()
 			if arg0_1._chatTimer then
@@ -66,6 +65,10 @@ function var0_0.SetVisible(arg0_9, arg1_9)
 		setText(arg0_9._textTF, "")
 		setActive(arg0_9._tf, arg1_9)
 	end
+end
+
+function var0_0.Dispose(arg0_10)
+	var0_0.super.Dispose(arg0_10)
 end
 
 return var0_0

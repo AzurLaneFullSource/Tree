@@ -2354,6 +2354,11 @@ function temp()
 										}
 									}
 								}
+							},
+							W = {
+								u = {
+									this = true
+								}
 							}
 						}
 					}
@@ -2362,7 +2367,30 @@ function temp()
 					[" "] = {
 						H = {
 							o = {
-								this = true
+								this = true,
+								[" "] = {
+									["("] = {
+										R = {
+											e = {
+												t = {
+													r = {
+														o = {
+															f = {
+																i = {
+																	t = {
+																		[")"] = {
+																			this = true
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
 							}
 						}
 					}
@@ -7511,6 +7539,11 @@ function temp()
 						h = {
 							i = {
 								this = true
+							},
+							o = {
+								u = {
+									this = true
+								}
 							}
 						}
 					},
@@ -10820,7 +10853,30 @@ function temp()
 							w = {
 								e = {
 									i = {
-										this = true
+										this = true,
+										[" "] = {
+											["("] = {
+												R = {
+													e = {
+														t = {
+															r = {
+																o = {
+																	f = {
+																		i = {
+																			t = {
+																				[")"] = {
+																					this = true
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
 									}
 								}
 							}

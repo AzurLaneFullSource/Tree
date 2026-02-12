@@ -79,9 +79,7 @@ function var0_0.GetCanGetAwardIndexList(arg0_11)
 		return {}
 	end
 
-	table.sort(arg0_11.data2_list, function(arg0_12, arg1_12)
-		return arg0_12 < arg1_12
-	end)
+	table.sort(arg0_11.data2_list)
 
 	local var2_11 = var0_11 == 0 and 0 or arg0_11.data2_list[var0_11]
 	local var3_11 = arg0_11:GetTotalDayCnt()
@@ -95,50 +93,50 @@ function var0_0.GetCanGetAwardIndexList(arg0_11)
 	return var5_11
 end
 
-function var0_0.GetAwardState(arg0_13, arg1_13)
-	local var0_13 = arg0_13:GetCanGetAwardIndexList()
+function var0_0.GetAwardState(arg0_12, arg1_12)
+	local var0_12 = arg0_12:GetCanGetAwardIndexList()
 
-	if table.contains(var0_13, arg1_13) then
+	if table.contains(var0_12, arg1_12) then
 		return var0_0.STATE_CAN_GET
-	elseif table.contains(arg0_13.data2_list, arg1_13) then
+	elseif table.contains(arg0_12.data2_list, arg1_12) then
 		return var0_0.STATE_GOT
 	else
 		return var0_0.STATE_EMPTY
 	end
 end
 
-function var0_0.GetGetAwardCnt(arg0_14)
-	return #arg0_14.data2_list
+function var0_0.GetGetAwardCnt(arg0_13)
+	return #arg0_13.data2_list
 end
 
-function var0_0.GetAllAwards(arg0_15)
-	local var0_15 = arg0_15:GetCanGetAwardIndexList()
+function var0_0.GetAllAwards(arg0_14)
+	local var0_14 = arg0_14:GetCanGetAwardIndexList()
 
-	for iter0_15, iter1_15 in ipairs(var0_15) do
-		arg0_15:GetIndexAward(iter1_15)
+	for iter0_14, iter1_14 in ipairs(var0_14) do
+		arg0_14:GetIndexAward(iter1_14)
 	end
 end
 
-function var0_0.GetIndexAward(arg0_16, arg1_16)
-	if not table.contains(arg0_16.data2_list, arg1_16) then
-		arg0_16.data2 = arg0_16.data2 + 1
+function var0_0.GetIndexAward(arg0_15, arg1_15)
+	if not table.contains(arg0_15.data2_list, arg1_15) then
+		arg0_15.data2 = arg0_15.data2 + 1
 
-		table.insert(arg0_16.data2_list, arg1_16)
+		table.insert(arg0_15.data2_list, arg1_15)
 	end
 end
 
-function var0_0.IsManualSignActAndAnyAwardCanGet(arg0_17)
-	local var0_17 = getProxy(ActivityProxy):getActivityById(arg0_17)
+function var0_0.IsManualSignActAndAnyAwardCanGet(arg0_16)
+	local var0_16 = getProxy(ActivityProxy):getActivityById(arg0_16)
 
-	if not var0_17 or var0_17:isEnd() then
+	if not var0_16 or var0_16:isEnd() then
 		return false
 	end
 
-	if not isa(var0_17, ManualSignActivity) then
+	if not isa(var0_16, ManualSignActivity) then
 		return false
 	end
 
-	return var0_17:AnyAwardCanGet()
+	return var0_16:AnyAwardCanGet()
 end
 
 return var0_0

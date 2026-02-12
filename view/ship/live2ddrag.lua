@@ -211,7 +211,11 @@ function var0_0.onListenerEvent(arg0_2, arg1_2, arg2_2)
 end
 
 function var0_0.onListenerTrigger(arg0_3, arg1_3, arg2_3)
-	if arg0_3.actionTrigger.click_cd and arg1_3 == Live2D.ON_ACTION_DRAG_CLICK and table.contains(arg0_3.actionTrigger.click_cd, arg2_3.draw_able_name) then
+	if arg1_3 == Live2D.ON_ACTION_DRAG_CLICK then
+		if arg0_3.actionTrigger.click_cd and table.contains(arg0_3.actionTrigger.click_cd, arg2_3.draw_able_name) then
+			arg0_3.nextTriggerTime = arg0_3.limitTime
+		end
+	elseif arg1_3 == Live2D.ON_ACTION_PLAY then
 		arg0_3.nextTriggerTime = arg0_3.limitTime
 	end
 end

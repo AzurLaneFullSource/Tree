@@ -41,8 +41,22 @@ function var0_0.IsPaintingNeedCheck()
 	return true
 end
 
-function var0_0.AddPaintingNameWithFilteMap(arg0_5, arg1_5)
-	arg1_5 = string.lower(arg1_5)
+function var0_0.FiltePaintingRes(arg0_5)
+	local var0_5 = {}
+
+	for iter0_5, iter1_5 in ipairs(arg0_5) do
+		iter1_5 = string.lower(iter1_5)
+
+		if string.match(iter1_5, "^painting/") then
+			table.insert(var0_5, iter1_5)
+		end
+	end
+
+	return var0_5
+end
+
+function var0_0.AddPaintingNameWithFilteMap(arg0_6, arg1_6)
+	arg1_6 = string.lower(arg1_6)
 
 	if not pg.painting_filte_map then
 		warning("painting_filte_map not exist")
@@ -50,208 +64,208 @@ function var0_0.AddPaintingNameWithFilteMap(arg0_5, arg1_5)
 		return
 	end
 
-	if not pg.painting_filte_map[arg1_5] then
-		warning("painting_filte_map not exist key: " .. arg1_5)
+	if not pg.painting_filte_map[arg1_6] then
+		warning("painting_filte_map not exist key: " .. arg1_6)
 
 		return
 	end
 
-	local var0_5 = pg.painting_filte_map[arg1_5].res_list
+	local var0_6 = pg.painting_filte_map[arg1_6].res_list
 
-	for iter0_5, iter1_5 in ipairs(var0_5) do
-		if not table.contains(arg0_5, iter1_5) and var0_0.VerifyPaintingFileName(iter1_5) then
-			table.insert(arg0_5, iter1_5)
+	for iter0_6, iter1_6 in ipairs(var0_6) do
+		if not table.contains(arg0_6, iter1_6) and var0_0.VerifyPaintingFileName(iter1_6) then
+			table.insert(arg0_6, iter1_6)
 		end
 	end
 end
 
-function var0_0.AddPaintingNameByShipGroupID(arg0_6, arg1_6)
+function var0_0.AddPaintingNameByShipGroupID(arg0_7, arg1_7)
 	if var0_0.IsPaintingNeedCheck() then
-		local var0_6 = ShipGroup.getDefaultSkin(arg1_6).painting
+		local var0_7 = ShipGroup.getDefaultSkin(arg1_7).painting
 
-		var0_0.AddPaintingNameWithFilteMap(arg0_6, var0_6)
+		var0_0.AddPaintingNameWithFilteMap(arg0_7, var0_7)
 	end
 end
 
-function var0_0.AddPaintingNameByShipConfigID(arg0_7, arg1_7)
-	if var0_0.IsPaintingNeedCheck() then
-		local var0_7 = {
-			configId = arg1_7
-		}
-		local var1_7 = Ship.getGroupId(var0_7)
-
-		var0_0.AddPaintingNameByShipGroupID(arg0_7, var1_7)
-	end
-end
-
-function var0_0.AddPaintingNameBySkinID(arg0_8, arg1_8)
+function var0_0.AddPaintingNameByShipConfigID(arg0_8, arg1_8)
 	if var0_0.IsPaintingNeedCheck() then
 		local var0_8 = {
-			arg1_8
+			configId = arg1_8
+		}
+		local var1_8 = Ship.getGroupId(var0_8)
+
+		var0_0.AddPaintingNameByShipGroupID(arg0_8, var1_8)
+	end
+end
+
+function var0_0.AddPaintingNameBySkinID(arg0_9, arg1_9)
+	if var0_0.IsPaintingNeedCheck() then
+		local var0_9 = {
+			arg1_9
 		}
 
-		if ShipSkin.IsChangeSkin(arg1_8) then
-			local var1_8 = ShipSkin.GetAllChangeSkinIds(arg1_8)
+		if ShipSkin.IsChangeSkin(arg1_9) then
+			local var1_9 = ShipSkin.GetAllChangeSkinIds(arg1_9)
 
-			for iter0_8, iter1_8 in ipairs(var1_8) do
-				if not table.contains(var0_8, iter1_8) then
-					table.insert(var0_8, iter1_8)
+			for iter0_9, iter1_9 in ipairs(var1_9) do
+				if not table.contains(var0_9, iter1_9) then
+					table.insert(var0_9, iter1_9)
 				end
 			end
 		end
 
-		for iter2_8, iter3_8 in ipairs(var0_8) do
-			local var2_8 = pg.ship_skin_template[iter3_8].painting
+		for iter2_9, iter3_9 in ipairs(var0_9) do
+			local var2_9 = pg.ship_skin_template[iter3_9].painting
 
-			if #var2_8 > 0 then
-				var0_0.AddPaintingNameWithFilteMap(arg0_8, var2_8)
+			if #var2_9 > 0 then
+				var0_0.AddPaintingNameWithFilteMap(arg0_9, var2_9)
 			end
 		end
 	end
 end
 
 function var0_0.GetPaintingNameListInLogin()
-	local var0_9 = {}
-	local var1_9 = var0_0.GetPaintingMgr()
-	local var2_9 = getProxy(ShipSkinProxy)
-
-	if var2_9 then
-		local var3_9 = var2_9:GetOwnAndShareSkins()
-
-		for iter0_9, iter1_9 in pairs(var3_9) do
-			var0_0.AddPaintingNameBySkinID(var0_9, iter1_9.id)
-		end
-	end
-
-	local var4_9 = getProxy(CollectionProxy)
-
-	if var4_9 then
-		local var5_9 = var4_9:getGroups()
-
-		for iter2_9, iter3_9 in pairs(var5_9) do
-			var0_0.AddPaintingNameByShipGroupID(var0_9, iter3_9.id)
-		end
-	end
-
-	local var6_9 = getProxy(BayProxy)
-
-	if var6_9 then
-		local var7_9 = var6_9.activityNPCShipIds
-
-		for iter4_9, iter5_9 in ipairs(var7_9) do
-			local var8_9 = var6_9:getShipById(iter5_9)
-
-			var0_0.AddPaintingNameByShipGroupID(var0_9, var8_9.groupId)
-		end
-	end
-
-	return var0_9
-end
-
-function var0_0.GetPaintingNameListForTec()
 	local var0_10 = {}
+	local var1_10 = var0_0.GetPaintingMgr()
+	local var2_10 = getProxy(ShipSkinProxy)
 
-	for iter0_10, iter1_10 in ipairs(pg.ship_data_blueprint.all) do
-		var0_0.AddPaintingNameByShipGroupID(var0_10, iter1_10)
+	if var2_10 then
+		local var3_10 = var2_10:GetOwnAndShareSkins()
+
+		for iter0_10, iter1_10 in pairs(var3_10) do
+			var0_0.AddPaintingNameBySkinID(var0_10, iter1_10.id)
+		end
+	end
+
+	local var4_10 = getProxy(CollectionProxy)
+
+	if var4_10 then
+		local var5_10 = var4_10:getGroups()
+
+		for iter2_10, iter3_10 in pairs(var5_10) do
+			var0_0.AddPaintingNameByShipGroupID(var0_10, iter3_10.id)
+		end
+	end
+
+	local var6_10 = getProxy(BayProxy)
+
+	if var6_10 then
+		local var7_10 = var6_10.activityNPCShipIds
+
+		for iter4_10, iter5_10 in ipairs(var7_10) do
+			local var8_10 = var6_10:getShipById(iter5_10)
+
+			var0_0.AddPaintingNameByShipGroupID(var0_10, var8_10.groupId)
+		end
 	end
 
 	return var0_10
 end
 
-function var0_0.GetPaintingNameListForAwardList(arg0_11)
+function var0_0.GetPaintingNameListForTec()
 	local var0_11 = {}
 
-	for iter0_11 = 1, #arg0_11 do
-		local var1_11 = arg0_11[iter0_11]
-		local var2_11 = var1_11.type
-
-		if var2_11 == DROP_TYPE_SHIP then
-			local var3_11 = var1_11.id
-
-			var0_0.AddPaintingNameByShipConfigID(var0_11, var3_11)
-		elseif var2_11 == DROP_TYPE_NPC_SHIP then
-			local var4_11 = getProxy(BayProxy):getShipById(var1_11.id)
-
-			var0_0.AddPaintingNameByShipConfigID(var0_11, var4_11.configId)
-		elseif var2_11 == DROP_TYPE_SKIN then
-			local var5_11 = var1_11.id
-
-			var0_0.AddPaintingNameBySkinID(var0_11, var5_11)
-		end
+	for iter0_11, iter1_11 in ipairs(pg.ship_data_blueprint.all) do
+		var0_0.AddPaintingNameByShipGroupID(var0_11, iter1_11)
 	end
 
 	return var0_11
 end
 
-function var0_0.GetPaintingNameListByShipVO(arg0_12)
+function var0_0.GetPaintingNameListForAwardList(arg0_12)
 	local var0_12 = {}
-	local var1_12 = getProxy(ShipSkinProxy)
-	local var2_12 = var1_12:GetAllSkinForShip(arg0_12)
 
-	for iter0_12, iter1_12 in ipairs(var2_12) do
-		var0_0.AddPaintingNameBySkinID(var0_12, iter1_12.id)
-	end
+	for iter0_12 = 1, #arg0_12 do
+		local var1_12 = arg0_12[iter0_12]
+		local var2_12 = var1_12.type
 
-	local var3_12 = var1_12:GetShareSkinsForShip(arg0_12)
+		if var2_12 == DROP_TYPE_SHIP then
+			local var3_12 = var1_12.id
 
-	for iter2_12, iter3_12 in ipairs(var3_12) do
-		var0_0.AddPaintingNameBySkinID(var0_12, iter3_12.id)
+			var0_0.AddPaintingNameByShipConfigID(var0_12, var3_12)
+		elseif var2_12 == DROP_TYPE_NPC_SHIP then
+			local var4_12 = getProxy(BayProxy):getShipById(var1_12.id)
+
+			var0_0.AddPaintingNameByShipConfigID(var0_12, var4_12.configId)
+		elseif var2_12 == DROP_TYPE_SKIN then
+			local var5_12 = var1_12.id
+
+			var0_0.AddPaintingNameBySkinID(var0_12, var5_12)
+		end
 	end
 
 	return var0_12
 end
 
-function var0_0.PaintingDownload(arg0_13)
+function var0_0.GetPaintingNameListByShipVO(arg0_13)
 	local var0_13 = {}
+	local var1_13 = getProxy(ShipSkinProxy)
+	local var2_13 = var1_13:GetAllSkinForShip(arg0_13)
+
+	for iter0_13, iter1_13 in ipairs(var2_13) do
+		var0_0.AddPaintingNameBySkinID(var0_13, iter1_13.id)
+	end
+
+	local var3_13 = var1_13:GetShareSkinsForShip(arg0_13)
+
+	for iter2_13, iter3_13 in ipairs(var3_13) do
+		var0_0.AddPaintingNameBySkinID(var0_13, iter3_13.id)
+	end
+
+	return var0_13
+end
+
+function var0_0.PaintingDownload(arg0_14)
+	local var0_14 = {}
 
 	if var0_0.IsPaintingNeedCheck() then
-		local var1_13 = arg0_13.isShowBox
-		local var2_13 = pg.FileDownloadMgr.GetInstance():IsNeedRemind()
-		local var3_13 = IsUsingWifi()
-		local var4_13 = var1_13 and var2_13
-		local var5_13 = arg0_13.paintingNameList
+		local var1_14 = arg0_14.isShowBox
+		local var2_14 = pg.FileDownloadMgr.GetInstance():IsNeedRemind()
+		local var3_14 = IsUsingWifi()
+		local var4_14 = var1_14 and var2_14
+		local var5_14 = arg0_14.paintingNameList
 
-		if #var5_13 > 0 then
-			if not var3_13 and var4_13 then
-				local var6_13, var7_13 = var0_0.CalcPaintingListSize(var5_13)
+		if #var5_14 > 0 then
+			if not var3_14 and var4_14 then
+				local var6_14, var7_14 = var0_0.CalcPaintingListSize(var5_14)
 
-				if var6_13 > 0 then
-					table.insert(var0_13, function(arg0_14)
+				if var6_14 > 0 then
+					table.insert(var0_14, function(arg0_15)
 						pg.MsgboxMgr.GetInstance():ShowMsgBox({
 							modal = true,
 							locked = true,
 							type = MSGBOX_TYPE_FILE_DOWNLOAD,
-							content = string.format(i18n("file_down_msgbox", var7_13)),
-							onYes = arg0_14,
-							onNo = arg0_13.onNo,
-							onClose = arg0_13.onClose
+							content = string.format(i18n("file_down_msgbox", var7_14)),
+							onYes = arg0_15,
+							onNo = arg0_14.onNo,
+							onClose = arg0_14.onClose
 						})
 					end)
 				end
 			end
 
-			table.insert(var0_13, function(arg0_15)
-				local var0_15 = {
+			table.insert(var0_14, function(arg0_16)
+				local var0_16 = {
 					groupName = var0_0.PaintingGroupName,
-					fileNameList = var5_13
+					fileNameList = var5_14
 				}
-				local var1_15 = {
+				local var1_16 = {
 					dataList = {
-						var0_15
+						var0_16
 					},
-					onFinish = arg0_15
+					onFinish = arg0_16
 				}
 
-				pg.FileDownloadMgr.GetInstance():Main(var1_15)
+				pg.FileDownloadMgr.GetInstance():Main(var1_16)
 			end)
-			table.insert(var0_13, function(arg0_16)
+			table.insert(var0_14, function(arg0_17)
 				pg.m02:sendNotification(var0_0.NotifyPaintingDownloadFinish)
-				arg0_16()
+				arg0_17()
 			end)
 		end
 	end
 
-	seriesAsync(var0_13, arg0_13.finishFunc)
+	seriesAsync(var0_14, arg0_14.finishFunc)
 end
 
 return var0_0
