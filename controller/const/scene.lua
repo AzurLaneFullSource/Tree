@@ -462,8 +462,8 @@ local var0_0 = {
 		arg0_54.viewComponent = CommanderCatScene
 	end,
 	[SCENE.COLORING] = function(arg0_55, arg1_55)
-		arg0_55.mediator = ColoringMediator
-		arg0_55.viewComponent = ColoringScene
+		arg0_55.mediator = SpringFestival2026ColoringAnshanMediator
+		arg0_55.viewComponent = SpringFestival2026ColoringAnshanscene
 	end,
 	[SCENE.CARD_PAIRS] = function(arg0_56, arg1_56)
 		arg0_56.mediator = CardPairsMediator

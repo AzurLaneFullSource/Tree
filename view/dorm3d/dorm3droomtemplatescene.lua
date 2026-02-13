@@ -2248,6 +2248,14 @@ end
 function var0_0.ExitIKStatus(arg0_211, arg1_211, arg2_211, arg3_211, arg4_211)
 	arg0_211.enableIKTip = false
 
+	if arg0_211.ikSwitchSkinId then
+		local var0_211 = arg0_211.apartment:GetConfigID()
+
+		arg1_211:SwitchCharacterSkin(var0_211, arg0_211.ikSwitchSkinId)
+
+		arg0_211.ikSwitchSkinId = nil
+	end
+
 	setActive(arg1_211.ladyCollider, true)
 	_.each(arg1_211.ladyTouchColliders, function(arg0_212)
 		setActive(arg0_212, false)

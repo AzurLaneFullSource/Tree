@@ -153,30 +153,42 @@ function var0_0.display(arg0_6, arg1_6)
 		if iter2_6 <= #arg1_6.displayTrophyList then
 			setActive(var8_6:Find("icon"), true)
 
-			local var9_6 = pg.medal_template[arg1_6.displayTrophyList[iter2_6]]
+			local var9_6 = arg1_6.displayTrophyList[iter2_6]
 
-			LoadImageSpriteAsync("medal/" .. var9_6.icon, var8_6:Find("icon"), true)
+			if Trophy.IsLoveLetterID(var9_6) then
+				local var10_6 = LoveLetterTrophy.New({
+					id = var9_6
+				})
+
+				setLoveLetterMedal(var8_6, var10_6, {
+					hideMark = true
+				})
+			else
+				local var11_6 = pg.medal_template[arg1_6.displayTrophyList[iter2_6]]
+
+				LoadImageSpriteAsync("medal/" .. var11_6.icon, var8_6:Find("icon"), true)
+			end
 		end
 	end
 
 	for iter3_6, iter4_6 in ipairs(var1_0) do
-		local var10_6 = arg0_6.resumeInfo:GetChild(iter3_6 - 1)
+		local var12_6 = arg0_6.resumeInfo:GetChild(iter3_6 - 1)
 
-		setText(var10_6:Find("tag"), iter4_6.tag)
+		setText(var12_6:Find("tag"), iter4_6.tag)
 
-		local var11_6 = var10_6:Find("value")
+		local var13_6 = var12_6:Find("value")
 
 		if iter4_6.type == 1 then
-			setText(var11_6, arg0_6.player[iter4_6.value])
+			setText(var13_6, arg0_6.player[iter4_6.value])
 		elseif iter4_6.type == 2 then
-			local var12_6 = math.max(arg0_6.player[iter4_6.value[1]], 1)
-			local var13_6 = math.max(arg0_6.player[iter4_6.value[2]], 0)
+			local var14_6 = math.max(arg0_6.player[iter4_6.value[1]], 1)
+			local var15_6 = math.max(arg0_6.player[iter4_6.value[2]], 0)
 
-			setText(var11_6, string.format("%0.2f", var13_6 / var12_6 * 100) .. "%")
+			setText(var13_6, string.format("%0.2f", var15_6 / var14_6 * 100) .. "%")
 		elseif iter4_6.type == 3 then
-			local var14_6 = arg0_6.player[iter4_6.value[1]] or 1
+			local var16_6 = arg0_6.player[iter4_6.value[1]] or 1
 
-			setText(var11_6, string.format("%0.2f", var14_6 / getProxy(CollectionProxy):getCollectionTotal() * 100) .. "%")
+			setText(var13_6, string.format("%0.2f", var16_6 / getProxy(CollectionProxy):getCollectionTotal() * 100) .. "%")
 		end
 	end
 end

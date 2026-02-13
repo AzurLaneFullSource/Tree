@@ -30,7 +30,9 @@ local function var1_0(arg0_1)
 			setActive(arg0_3.now, var0_3)
 
 			if var0_3 then
-				setLoveLetterMedal(arg0_3.now:Find("medal"), arg0_3.trophy)
+				setLoveLetterMedal(arg0_3.now:Find("medal"), arg0_3.trophy, {
+					hideMark = true
+				})
 				setText(arg0_3.nameTxt, arg1_3:getName())
 			else
 				LoadImageSpriteAsync("medal/" .. arg1_3:getConfig("icon"), arg0_3.icon, true)
@@ -88,7 +90,9 @@ local function var2_0(arg0_6)
 				setActive(var3_9, var4_9)
 
 				if var4_9 then
-					setLoveLetterMedal(var3_9:Find("medal"), var1_9)
+					setLoveLetterMedal(var3_9:Find("medal"), var1_9, {
+						hideMark = true
+					})
 				else
 					LoadImageSpriteAsync("medal/s_" .. var1_9:getConfig("icon"), var2_9, true)
 				end

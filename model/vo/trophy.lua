@@ -130,4 +130,8 @@ function var0_0.isLoverLetter(arg0_21)
 	return arg0_21.id > 1000000000
 end
 
+function var0_0.IsLoveLetterID(arg0_22)
+	return arg0_22 > 1000000000
+end
+
 return var0_0

@@ -35456,7 +35456,19 @@ _G.pg.base.gametip.loveactivity_ui_3 = {
 }
 
 _G.pg.base.gametip.loveactivity_ui_4 = {
-	tip = "Give Sweet Memories to $1?",
+	tip = "Give Sweet Memories to $1?\nOnce given, this cannot be changed.",
+}
+
+_G.pg.base.gametip.loveactivity_ui_4_1 = {
+	tip = "Give <color=#3DC6FFFF>$1</color> an additional <color=#3DC6FFFF>500</color> Sweet Memories?\nOnce given, this <color=#FF5C5CFF>cannot be changed</color>. Make sure you've selected the correct shipgirl.",
+}
+
+_G.pg.base.gametip.loveactivity_ui_4_2 = {
+	tip = "Give <color=#3DC6FFFF>$1</color> an additional <color=#3DC6FFFF>800</color> Sweet Memories?\nOnce given, this <color=#FF5C5CFF>cannot be changed</color>. Make sure you've selected the correct shipgirl.",
+}
+
+_G.pg.base.gametip.loveactivity_ui_4_3 = {
+	tip = "Give <color=#3DC6FFFF>$1</color> an additional <color=#3DC6FFFF>1500</color> Sweet Memories?\nOnce given, this <color=#FF5C5CFF>cannot be changed</color>. Make sure you've selected the correct shipgirl.",
 }
 
 _G.pg.base.gametip.loveactivity_ui_5 = {
@@ -35537,5 +35549,49 @@ _G.pg.base.gametip.island_trade_cnt_inadequate = {
 
 _G.pg.base.gametip.drawdiary_ui_2026 = {
 	tip = "Drawing Book",
+}
+
+_G.pg.base.gametip.loveactivity_help_tips = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/love_help_1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/love_help_2",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/love_help_3",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/love_help_4",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
 }
 

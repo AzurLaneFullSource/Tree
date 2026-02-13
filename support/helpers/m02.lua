@@ -1655,6 +1655,11 @@ function setLoveLetterMedal(arg0_127, arg1_127, arg2_127)
 		GetImageSpriteFromAtlasAsync("SquareIcon/" .. var0_131, "", var0_127:Find("mask/icon"))
 		setText(var0_127:Find("front/mark/Text"), arg1_127:GetDisplayLevelMark())
 		setActive(var0_127:Find("pick_up"), arg2_127 and arg2_127.showPickUp)
+		setActive(var0_127:Find("front/mark"), true)
+
+		if arg2_127 and arg2_127.hideMark then
+			setActive(var0_127:Find("front/mark"), false)
+		end
 	end)
 end
 

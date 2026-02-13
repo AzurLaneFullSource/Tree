@@ -953,10 +953,18 @@ function var0_0.IsShowTipById(arg0_84)
 			return HelenaScenarioPage:IsShowRed(arg0_93)
 		end,
 		[ActivityConst.LOVE_LETTER_LOGIN_ID] = function(arg0_94)
-			local var0_94 = arg0_94:getConfig("config_data")[arg0_94:getNDay()]
-			local var1_94 = var0_94 and getProxy(TaskProxy):getTaskVO(var0_94) or nil
+			local var0_94 = arg0_94:getNDay()
 
-			return var1_94 and var1_94:getTaskStatus() == 1
+			for iter0_94 = 1, var0_94 do
+				local var1_94 = arg0_94:getConfig("config_data")[iter0_94]
+				local var2_94 = var1_94 and getProxy(TaskProxy):getTaskVO(var1_94) or nil
+
+				if var2_94 and var2_94:getTaskStatus() == 1 then
+					return true
+				end
+			end
+
+			return false
 		end
 	}
 

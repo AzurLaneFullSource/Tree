@@ -115,10 +115,12 @@ function var0_0.FlushSkinList(arg0_10)
 	local var2_10 = {}
 
 	_.each(var0_10, function(arg0_11)
-		if ApartmentProxy.CheckUnlockConfig(arg0_10.skinDic[arg0_11]:GetUnlock()) then
-			table.insert(var1_10, arg0_11)
-		else
-			table.insert(var2_10, arg0_11)
+		if arg0_11 ~= 199033 then
+			if ApartmentProxy.CheckUnlockConfig(arg0_10.skinDic[arg0_11]:GetUnlock()) then
+				table.insert(var1_10, arg0_11)
+			else
+				table.insert(var2_10, arg0_11)
+			end
 		end
 	end)
 
