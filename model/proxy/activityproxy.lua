@@ -1210,4 +1210,10 @@ function var0_0.CheckDailyEventRequest(arg0_117, arg1_117)
 	end
 end
 
+function var0_0.IsTipLoveLetterMail(arg0_118)
+	local var0_118 = arg0_118:getActivityByType(ActivityConst.ACTIVITY_TYPE_LOVE_LETTER_MAIL)
+
+	return var0_118 and not var0_118:isEnd() and var0_118:readyToAchieve()
+end
+
 return var0_0

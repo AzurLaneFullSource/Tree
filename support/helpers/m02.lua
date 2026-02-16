@@ -1167,6 +1167,8 @@ function updateItem(arg0_103, arg1_103, arg2_103)
 		var1_103 = "frame_design"
 	elseif arg1_103:getConfig("type") == 100 then
 		var1_103 = "frame_dorm"
+	elseif arg1_103.id == 44004 then
+		var1_103 = "frame8_1"
 	elseif arg2_103.frame then
 		var1_103 = arg2_103.frame
 	end

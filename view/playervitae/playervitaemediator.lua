@@ -11,6 +11,7 @@ var0_0.GO_SCENE = "PlayerVitaeMediator:GO_SCENE"
 var0_0.ON_SWITCH_RANDOM_FLAG_SHIP_BTN = "PlayerVitaeMediator:ON_SWITCH_RANDOM_FLAG_SHIP_BTN"
 var0_0.OPEN_CRYPTOLALIA = "PlayerVitaeMediator:OPEN_CRYPTOLALIA"
 var0_0.ON_SEL_EDUCATE_CHAR = "PlayerVitaeMediator:ON_SEL_EDUCATE_CHAR"
+var0_0.ON_GET_LOVE_LETTER_MAIL = "PlayerVitaeMediator.ON_GET_LOVE_LETTER_MAIL"
 
 function var0_0.register(arg0_1)
 	arg0_1:bind(var0_0.ON_SEL_EDUCATE_CHAR, function(arg0_2)
@@ -26,79 +27,84 @@ function var0_0.register(arg0_1)
 			}
 		}))
 	end)
-	arg0_1:bind(var0_0.OPEN_CRYPTOLALIA, function(arg0_4, arg1_4)
+	arg0_1:bind(var0_0.ON_GET_LOVE_LETTER_MAIL, function(arg0_4, arg1_4)
+		arg0_1:sendNotification(GAME.ACCEPT_LOVE_LETTER_MAIL, {
+			activity_id = arg1_4
+		})
+	end)
+	arg0_1:bind(var0_0.OPEN_CRYPTOLALIA, function(arg0_5, arg1_5)
 		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.CRYPTOLALIA, {
-			groupId = arg1_4
+			groupId = arg1_5
 		})
 	end)
-	arg0_1:bind(var0_0.ON_SWITCH_RANDOM_FLAG_SHIP_BTN, function(arg0_5, arg1_5)
+	arg0_1:bind(var0_0.ON_SWITCH_RANDOM_FLAG_SHIP_BTN, function(arg0_6, arg1_6)
 		arg0_1:sendNotification(GAME.RANDOM_FLAG_SHIP, {
-			isOn = arg1_5
+			isOn = arg1_6
 		})
 	end)
-	arg0_1:bind(var0_0.GO_SCENE, function(arg0_6, arg1_6, arg2_6)
-		arg0_1:sendNotification(GAME.GO_SCENE, arg1_6, arg2_6)
+	arg0_1:bind(var0_0.GO_SCENE, function(arg0_7, arg1_7, arg2_7)
+		arg0_1:sendNotification(GAME.GO_SCENE, arg1_7, arg2_7)
 	end)
-	arg0_1:bind(var0_0.CHANGE_RANDOM_SETTING, function(arg0_7, arg1_7)
-		arg0_1:sendNotification(GAME.CHANGE_RANDOM_SHIP_AND_SKIN_SETTING, arg1_7)
+	arg0_1:bind(var0_0.CHANGE_RANDOM_SETTING, function(arg0_8, arg1_8)
+		arg0_1:sendNotification(GAME.CHANGE_RANDOM_SHIP_AND_SKIN_SETTING, arg1_8)
 	end)
-	arg0_1:bind(var0_0.CHANGE_SKIN, function(arg0_8, arg1_8)
+	arg0_1:bind(var0_0.CHANGE_SKIN, function(arg0_9, arg1_9)
 		arg0_1:addSubLayers(Context.New({
 			mediator = SwitchSkinMediator,
 			viewComponent = SwitchSkinLayer,
 			data = {
-				shipVO = arg1_8
+				shipVO = arg1_9
 			}
 		}))
 	end)
-	arg0_1:bind(var0_0.CHANGE_PAINTS, function(arg0_9, arg1_9, arg2_9)
+	arg0_1:bind(var0_0.CHANGE_PAINTS, function(arg0_10, arg1_10, arg2_10)
 		arg0_1:sendNotification(GAME.CHANGE_PLAYER_ICON, {
-			after = arg1_9,
-			callback = arg2_9
+			after = arg1_10,
+			callback = arg2_10
 		})
 	end)
-	arg0_1:bind(var0_0.ON_CHANGE_PLAYER_NAME, function(arg0_10, arg1_10)
+	arg0_1:bind(var0_0.ON_CHANGE_PLAYER_NAME, function(arg0_11, arg1_11)
 		arg0_1:sendNotification(GAME.CHANGE_PLAYER_NAME, {
-			name = arg1_10
+			name = arg1_11
 		})
 	end)
 	arg0_1:bind(var0_0.ON_ATTIRE, function()
 		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.ATTIRE)
 	end)
-	arg0_1:bind(var0_0.CHANGE_MANIFESTO, function(arg0_12, arg1_12)
+	arg0_1:bind(var0_0.CHANGE_MANIFESTO, function(arg0_13, arg1_13)
 		arg0_1:sendNotification(GAME.CHANGE_PLAYER_MANIFESTO, {
-			manifesto = arg1_12
+			manifesto = arg1_13
 		})
 	end)
-	arg0_1:bind(var0_0.CHANGE_PAINT, function(arg0_13, arg1_13)
-		local var0_13 = {}
-		local var1_13 = getProxy(PlayerProxy):getRawData()
-		local var2_13 = var1_13:GetShipPhantomMarks()
+	arg0_1:bind(var0_0.CHANGE_PAINT, function(arg0_14, arg1_14)
+		local var0_14 = {}
+		local var1_14 = getProxy(PlayerProxy):getRawData()
+		local var2_14 = var1_14:GetShipPhantomMarks()
 
-		if arg1_13 then
-			table.removebyvalue(var2_13, arg1_13:GetShipPhantomMark())
+		if arg1_14 then
+			table.removebyvalue(var2_14, arg1_14:GetShipPhantomMark())
 		end
 
 		arg0_1.contextData.showSelectCharacters = true
 
-		local var3_13, var4_13 = PlayerVitaeShipsPage.GetSlotMaxCnt()
-		local var5_13 = {
+		local var3_14, var4_14 = PlayerVitaeShipsPage.GetSlotMaxCnt()
+		local var5_14 = {
 			callbackQuit = true,
-			selectedMax = var4_13,
+			selectedMax = var4_14,
 			hideTagFlags = ShipStatus.TAG_HIDE_ADMIRAL,
-			selectedIds = var0_13,
-			selectedMarks = var2_13,
+			selectedIds = var0_14,
+			selectedMarks = var2_14,
 			ignoredIds = pg.ShipFlagMgr.GetInstance():FilterShips({
 				isActivityNpc = true
 			}),
-			onSelected = function(arg0_14, arg1_14)
-				local var0_14 = arg0_1:ReSortShipIds(var1_13:GetShipPhantomMarks(), arg0_14)
+			onSelected = function(arg0_15, arg1_15)
+				local var0_15 = arg0_1:ReSortShipIds(var1_14:GetShipPhantomMarks(), arg0_15)
 
 				arg0_1.contextData.showSelectCharacters = false
 
 				arg0_1:sendNotification(GAME.CHANGE_PLAYER_ICON, {
-					after = var0_14,
-					callback = arg1_14
+					after = var0_15,
+					callback = arg1_15
 				})
 			end
 		}
@@ -106,59 +112,59 @@ function var0_0.register(arg0_1)
 		arg0_1:addSubLayers(Context.New({
 			viewComponent = PlayerVitaeDockyardScene,
 			mediator = DockyardMediator,
-			data = var5_13
+			data = var5_14
 		}))
 	end)
 end
 
-function var0_0.ReSortShipIds(arg0_15, arg1_15, arg2_15)
-	local var0_15 = {}
+function var0_0.ReSortShipIds(arg0_16, arg1_16, arg2_16)
+	local var0_16 = {}
 
-	for iter0_15, iter1_15 in ipairs({
+	for iter0_16, iter1_16 in ipairs({
 		{
-			arg1_15,
+			arg1_16,
 			-1
 		},
 		{
-			arg2_15,
+			arg2_16,
 			1
 		}
 	}) do
-		local var1_15, var2_15 = unpack(iter1_15)
+		local var1_16, var2_16 = unpack(iter1_16)
 
-		for iter2_15, iter3_15 in ipairs(var1_15) do
-			var0_15[iter3_15] = defaultValue(var0_15[iter3_15], 0) + var2_15
+		for iter2_16, iter3_16 in ipairs(var1_16) do
+			var0_16[iter3_16] = defaultValue(var0_16[iter3_16], 0) + var2_16
 		end
 	end
 
-	local var3_15 = {}
-	local var4_15 = 1
-	local var5_15 = 1
+	local var3_16 = {}
+	local var4_16 = 1
+	local var5_16 = 1
 
-	while #var3_15 < #arg2_15 do
-		while var4_15 <= #arg1_15 and var0_15[arg1_15[var4_15]] == 0 do
-			table.insert(var3_15, arg1_15[var4_15])
+	while #var3_16 < #arg2_16 do
+		while var4_16 <= #arg1_16 and var0_16[arg1_16[var4_16]] == 0 do
+			table.insert(var3_16, arg1_16[var4_16])
 
-			var4_15 = var4_15 + 1
+			var4_16 = var4_16 + 1
 		end
 
-		var4_15 = var4_15 + 1
+		var4_16 = var4_16 + 1
 
-		while var5_15 <= #arg2_15 and var0_15[arg2_15[var5_15]] == 0 do
-			var5_15 = var5_15 + 1
+		while var5_16 <= #arg2_16 and var0_16[arg2_16[var5_16]] == 0 do
+			var5_16 = var5_16 + 1
 		end
 
-		if arg2_15[var5_15] then
-			table.insert(var3_15, arg2_15[var5_15])
+		if arg2_16[var5_16] then
+			table.insert(var3_16, arg2_16[var5_16])
 
-			var5_15 = var5_15 + 1
+			var5_16 = var5_16 + 1
 		end
 	end
 
-	return var3_15
+	return var3_16
 end
 
-function var0_0.listNotificationInterests(arg0_16)
+function var0_0.listNotificationInterests(arg0_17)
 	return {
 		GAME.CHANGE_PLAYER_NAME_DONE,
 		SetShipSkinCommand.SKIN_UPDATED,
@@ -167,42 +173,45 @@ function var0_0.listNotificationInterests(arg0_16)
 		PaintingGroupConst.NotifyPaintingDownloadFinish,
 		GAME.CHANGE_EDUCATE_DONE,
 		GAME.CLEAR_EDUCATE_TIP,
-		GAME.CHANGE_SKIN_UPDATE
+		GAME.CHANGE_SKIN_UPDATE,
+		GAME.ACCEPT_LOVE_LETTER_MAIL_DONE
 	}
 end
 
-function var0_0.handleNotification(arg0_17, arg1_17)
-	local var0_17 = arg1_17:getName()
-	local var1_17 = arg1_17:getBody()
+function var0_0.handleNotification(arg0_18, arg1_18)
+	local var0_18 = arg1_18:getName()
+	local var1_18 = arg1_18:getBody()
 
-	if var0_17 == GAME.CHANGE_PLAYER_NAME_DONE then
-		arg0_17.viewComponent:OnPlayerNameChange()
-	elseif var0_17 == SetShipSkinCommand.SKIN_UPDATED then
-		arg0_17.viewComponent:OnShipSkinChanged(var1_17.ship:GetShipPhantomMark())
-	elseif var0_17 == GAME.UPDATE_SKINCONFIG then
-		arg0_17.viewComponent:ReloadPanting(var1_17.skinId)
-	elseif var0_17 == GAME.CHANGE_PLAYER_ICON_DONE then
-		arg0_17.viewComponent:RefreshShips()
-	elseif var0_17 == PaintingGroupConst.NotifyPaintingDownloadFinish then
-		arg0_17.viewComponent:updateSwitchSkinBtnTag()
+	if var0_18 == GAME.CHANGE_PLAYER_NAME_DONE then
+		arg0_18.viewComponent:OnPlayerNameChange()
+	elseif var0_18 == SetShipSkinCommand.SKIN_UPDATED then
+		arg0_18.viewComponent:OnShipSkinChanged(var1_18.ship:GetShipPhantomMark())
+	elseif var0_18 == GAME.UPDATE_SKINCONFIG then
+		arg0_18.viewComponent:ReloadPanting(var1_18.skinId)
+	elseif var0_18 == GAME.CHANGE_PLAYER_ICON_DONE then
+		arg0_18.viewComponent:RefreshShips()
+	elseif var0_18 == PaintingGroupConst.NotifyPaintingDownloadFinish then
+		arg0_18.viewComponent:updateSwitchSkinBtnTag()
 
-		if arg0_17.viewComponent.shipsPage and arg0_17.viewComponent.shipsPage:GetLoaded() then
-			arg0_17.viewComponent.shipsPage:UpdateCardPaintingTag()
+		if arg0_18.viewComponent.shipsPage and arg0_18.viewComponent.shipsPage:GetLoaded() then
+			arg0_18.viewComponent.shipsPage:UpdateCardPaintingTag()
 		end
-	elseif var0_17 == GAME.CHANGE_EDUCATE_DONE then
-		arg0_17.viewComponent:UpdatePainting(true)
+	elseif var0_18 == GAME.CHANGE_EDUCATE_DONE then
+		arg0_18.viewComponent:UpdatePainting(true)
 
-		if arg0_17.viewComponent.shipsPage and arg0_17.viewComponent.shipsPage:GetLoaded() then
-			arg0_17.viewComponent.shipsPage:UpdateEducateChar()
+		if arg0_18.viewComponent.shipsPage and arg0_18.viewComponent.shipsPage:GetLoaded() then
+			arg0_18.viewComponent.shipsPage:UpdateEducateChar()
 		end
-	elseif var0_17 == GAME.CLEAR_EDUCATE_TIP then
-		if arg0_17.viewComponent.shipsPage and arg0_17.viewComponent.shipsPage:GetLoaded() then
-			arg0_17.viewComponent.shipsPage:UpdateEducateCharTrTip()
+	elseif var0_18 == GAME.CLEAR_EDUCATE_TIP then
+		if arg0_18.viewComponent.shipsPage and arg0_18.viewComponent.shipsPage:GetLoaded() then
+			arg0_18.viewComponent.shipsPage:UpdateEducateCharTrTip()
 		end
-	elseif var0_17 == GAME.CHANGE_SKIN_UPDATE then
-		arg0_17.viewComponent:OnShipSkinChanged(var1_17)
-		arg0_17.viewComponent:RefreshShips()
-		arg0_17.viewComponent:UpdatePainting(true)
+	elseif var0_18 == GAME.CHANGE_SKIN_UPDATE then
+		arg0_18.viewComponent:OnShipSkinChanged(var1_18)
+		arg0_18.viewComponent:RefreshShips()
+		arg0_18.viewComponent:UpdatePainting(true)
+	elseif var0_18 == GAME.ACCEPT_LOVE_LETTER_MAIL_DONE and arg0_18.viewComponent.shipsPage and arg0_18.viewComponent.shipsPage:GetLoaded() then
+		arg0_18.viewComponent.shipsPage:UpdateGetMailBtn()
 	end
 end
 

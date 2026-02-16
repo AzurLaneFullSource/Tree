@@ -176,7 +176,9 @@ function var0_0.updateCardList(arg0_15)
 			local var5_15 = false
 
 			if var3_15 then
-				var4_15 = arg0_15.shipGroups[var3_15.group_type]
+				var4_15 = arg0_15.shipGroups[var3_15.group_type] or ShipGroup.New({
+					id = var3_15.group_type
+				})
 				var5_15 = Nation.IsLinkType(ShipGroup.getDefaultShipConfig(var3_15.group_type).nationality)
 			end
 
