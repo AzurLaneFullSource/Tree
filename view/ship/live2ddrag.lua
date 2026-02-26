@@ -216,7 +216,7 @@ function var0_0.onListenerTrigger(arg0_3, arg1_3, arg2_3)
 			arg0_3.nextTriggerTime = arg0_3.limitTime
 		end
 	elseif arg1_3 == Live2D.ON_ACTION_PLAY then
-		arg0_3.nextTriggerTime = arg0_3.limitTime
+		arg0_3.nextTriggerTime = arg0_3.limitTime <= 1 and arg0_3.limitTime or 1
 	end
 end
 
@@ -932,12 +932,18 @@ function var0_0.updateRelationValue(arg0_46)
 		else
 			local var8_46 = arg0_46:fixRelationParameter(var4_46, var0_46)
 			local var9_46 = iter1_46.value or arg0_46.startValue
-			local var10_46 = iter1_46.parameterSmooth or 0
-			local var11_46 = var0_46.smooth and var0_46.smooth / 1000 or arg0_46.smooth
 
-			var6_46, var7_46 = Mathf.SmoothDamp(var9_46, var8_46, var10_46, var11_46)
+			if math.abs(var8_46 - var9_46) <= 0.01 then
+				var6_46 = var8_46
+			else
+				local var10_46 = iter1_46.parameterSmooth or 0
+				local var11_46 = var0_46.smooth and var0_46.smooth / 1000 or arg0_46.smooth
+
+				var6_46, var7_46 = Mathf.SmoothDamp(var9_46, var8_46, var10_46, var11_46)
+			end
 		end
 
+		iter1_46.target = var4_46
 		iter1_46.value = var6_46
 		iter1_46.parameterSmooth = var7_46
 		iter1_46.enable = var5_46
@@ -1083,7 +1089,7 @@ function var0_0.updateTrigger(arg0_52)
 				print("获取到数值 " .. var4_52 .. " = " .. arg0_55)
 
 				if arg0_55 >= var5_52[1] and arg0_55 < var5_52[2] then
-					print("数值范围内，开始触发")
+					print("数值范围内，开始触发动作  = " .. tostring(arg0_52.id))
 					arg0_52:onEventCallback(Live2D.EVENT_ACTION_APPLY, nil, function(arg0_56)
 						arg0_52:onEventNotice(Live2D.ON_ACTION_DRAG_CLICK)
 					end)
@@ -1470,29 +1476,23 @@ function var0_0.checkClickAction(arg0_79)
 		if not arg0_79.actionTrigger.down and var0_79 and var1_79 then
 			if arg0_79.actionTrigger.focus == 1 and arg0_79.l2dIsPlaying then
 				if arg0_79.l2dPlayActionName == arg0_79.actionTrigger.action then
-					arg0_79.clickTriggerTime = 0.01
-					arg0_79.clickApplyFlag = true
+					arg0_79.clickTriggerTime = Time.realtimeSinceStartup + 0.1
 				end
 			elseif not arg0_79.l2dIsPlaying then
-				arg0_79.clickTriggerTime = 0.01
-				arg0_79.clickApplyFlag = true
+				arg0_79.clickTriggerTime = Time.realtimeSinceStartup + 0.1
 			end
 		else
 			arg0_79:setAbleWithFlag(false)
 		end
-	elseif arg0_79.clickTriggerTime and arg0_79.clickTriggerTime > 0 then
-		arg0_79.clickTriggerTime = arg0_79.clickTriggerTime - Time.deltaTime
+	elseif arg0_79.clickTriggerTime and arg0_79.clickTriggerTime > 0 and Time.realtimeSinceStartup >= arg0_79.clickTriggerTime then
+		arg0_79:setAbleWithFlag(false)
 
-		if arg0_79.clickTriggerTime <= 0 then
+		if Time.realtimeSinceStartup - arg0_79.clickTriggerTime <= 0.1 then
+			print("点击成功" .. arg0_79.id)
+
 			arg0_79.clickTriggerTime = nil
 
-			arg0_79:setAbleWithFlag(false)
-
-			if arg0_79.clickApplyFlag then
-				arg0_79.clickApplyFlag = false
-
-				return true
-			end
+			return true
 		end
 	end
 

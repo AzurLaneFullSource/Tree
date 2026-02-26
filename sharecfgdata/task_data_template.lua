@@ -294299,7 +294299,7 @@ _G.pg.base.task_data_template[25194] = {
 	task_fold = 0,
 	tutorial_handbook_pic = "",
 	type = 36,
-	visibility = 1,
+	visibility = 0,
 	open_need = {},
 	award_display = {
 		{
@@ -294340,7 +294340,7 @@ _G.pg.base.task_data_template[25195] = {
 	task_fold = 0,
 	tutorial_handbook_pic = "",
 	type = 36,
-	visibility = 1,
+	visibility = 0,
 	open_need = {},
 	award_display = {
 		{
@@ -294381,7 +294381,7 @@ _G.pg.base.task_data_template[25196] = {
 	task_fold = 0,
 	tutorial_handbook_pic = "",
 	type = 36,
-	visibility = 1,
+	visibility = 0,
 	open_need = {},
 	award_display = {
 		{
@@ -294420,7 +294420,7 @@ _G.pg.base.task_data_template[25197] = {
 	task_fold = 0,
 	tutorial_handbook_pic = "",
 	type = 36,
-	visibility = 1,
+	visibility = 0,
 	target_id = {
 		1999901,
 		1999902,
@@ -294469,7 +294469,7 @@ _G.pg.base.task_data_template[25198] = {
 	task_fold = 0,
 	tutorial_handbook_pic = "",
 	type = 36,
-	visibility = 1,
+	visibility = 0,
 	target_id = {
 		1999901,
 		1999902,
@@ -294519,7 +294519,7 @@ _G.pg.base.task_data_template[25199] = {
 	task_fold = 0,
 	tutorial_handbook_pic = "",
 	type = 6,
-	visibility = 1,
+	visibility = 0,
 	open_need = {},
 	award_display = {
 		{
