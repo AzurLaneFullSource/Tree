@@ -29,6 +29,7 @@ var0_0.TYPE_DRESS_WEAR_CONFIRE = 26
 var0_0.TYPE_COMMON_DROP_DESCRIBE = 27
 var0_0.TYPE_ISLAND_POST_EVENT = 28
 var0_0.TYPE_TRADE_CONFRIM = 29
+var0_0.TYPE_COMMON_AUTO_CONFIRM = 30
 
 function var0_0.getUIName(arg0_1)
 	return "IslandMsgboxUI"
@@ -67,7 +68,8 @@ function var0_0.OnLoaded(arg0_2)
 		[var0_0.TYPE_DRESS_WEAR_CONFIRE] = IslandDressWearMsgboxWindow,
 		[var0_0.TYPE_COMMON_DROP_DESCRIBE] = IslandMsgBoxSingleDropWindow,
 		[var0_0.TYPE_ISLAND_POST_EVENT] = IslandPostEventWindow,
-		[var0_0.TYPE_TRADE_CONFRIM] = IslandTradeConfirmWindow
+		[var0_0.TYPE_TRADE_CONFRIM] = IslandTradeConfirmWindow,
+		[var0_0.TYPE_COMMON_AUTO_CONFIRM] = IslandMsgBoxAutoCollectionWindow
 	}
 end
 

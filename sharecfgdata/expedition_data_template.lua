@@ -859148,10 +859148,6 @@ _G.pg.base.expedition_data_template[1799001] = {
 			2,
 			54012,
 		},
-		{
-			2,
-			59536,
-		},
 	},
 	objective_1 = {
 		1,
@@ -859226,10 +859222,6 @@ _G.pg.base.expedition_data_template[1799002] = {
 			2,
 			54017,
 		},
-		{
-			2,
-			59536,
-		},
 	},
 	objective_1 = {
 		1,
@@ -859303,10 +859295,6 @@ _G.pg.base.expedition_data_template[1799003] = {
 		{
 			2,
 			54017,
-		},
-		{
-			2,
-			59536,
 		},
 	},
 	objective_1 = {
@@ -859386,10 +859374,6 @@ _G.pg.base.expedition_data_template[1799004] = {
 			2,
 			54017,
 		},
-		{
-			2,
-			59536,
-		},
 	},
 	objective_1 = {
 		1,
@@ -859463,10 +859447,6 @@ _G.pg.base.expedition_data_template[1799005] = {
 		{
 			2,
 			54017,
-		},
-		{
-			2,
-			59536,
 		},
 	},
 	objective_1 = {
@@ -1032562,6 +1032542,11768 @@ _G.pg.base.expedition_data_template[1999905] = {
 	map_id = {
 		{
 			7001,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		150,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000001,
+	effect_prefab = "",
+	exp = 105,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2000001,
+	level = 21,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200690,
+		},
+		{
+			2,
+			17021,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000002,
+	effect_prefab = "",
+	exp = 121,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2000002,
+	level = 22,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200690,
+		},
+		{
+			2,
+			17021,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000003,
+	effect_prefab = "",
+	exp = 138,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2000003,
+	level = 23,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200690,
+		},
+		{
+			2,
+			17021,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000004,
+	effect_prefab = "",
+	exp = 105,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2000004,
+	level = 21,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200690,
+		},
+		{
+			2,
+			17011,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000005,
+	effect_prefab = "",
+	exp = 121,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2000005,
+	level = 22,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200690,
+		},
+		{
+			2,
+			17011,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000006,
+	effect_prefab = "",
+	exp = 138,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2000006,
+	level = 23,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200690,
+		},
+		{
+			2,
+			17011,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000007,
+	effect_prefab = "",
+	exp = 105,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2000007,
+	level = 21,
+	limit_type = 1,
+	name = "Small Air Formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200690,
+		},
+		{
+			2,
+			17041,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000008,
+	effect_prefab = "",
+	exp = 121,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2000008,
+	level = 22,
+	limit_type = 1,
+	name = "Medium Air Formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200690,
+		},
+		{
+			2,
+			17041,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000009,
+	effect_prefab = "",
+	exp = 138,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2000009,
+	level = 23,
+	limit_type = 1,
+	name = "Large Air Formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200690,
+		},
+		{
+			2,
+			17041,
+		},
+		{
+			2,
+			17031,
+		},
+		{
+			2,
+			17001,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-donghuang-static",
+	difficulty = 2,
+	dungeon_id = 2000013,
+	effect_prefab = "",
+	exp = 181,
+	exp_commander = 0,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "pinghai_8",
+	icon_type = 2,
+	id = 2000013,
+	level = 25,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200677,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000101] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000001,
+	effect_prefab = "",
+	exp = 130,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2000101,
+	level = 26,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200691,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000102] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000002,
+	effect_prefab = "",
+	exp = 148,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2000102,
+	level = 27,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200691,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000103] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000003,
+	effect_prefab = "",
+	exp = 168,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2000103,
+	level = 28,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200691,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000104] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000004,
+	effect_prefab = "",
+	exp = 130,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2000104,
+	level = 26,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200691,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000105] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000005,
+	effect_prefab = "",
+	exp = 148,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2000105,
+	level = 27,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200691,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000106] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000006,
+	effect_prefab = "",
+	exp = 168,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2000106,
+	level = 28,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200691,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000107] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000007,
+	effect_prefab = "",
+	exp = 130,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2000107,
+	level = 26,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200691,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000108] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000008,
+	effect_prefab = "",
+	exp = 148,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2000108,
+	level = 27,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200691,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000109] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000009,
+	effect_prefab = "",
+	exp = 168,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2000109,
+	level = 28,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200691,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000113] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-donghuang-static",
+	difficulty = 2,
+	dungeon_id = 2000113,
+	effect_prefab = "",
+	exp = 217,
+	exp_commander = 0,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ninghai_8",
+	icon_type = 2,
+	id = 2000113,
+	level = 30,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200678,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000201] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000001,
+	effect_prefab = "",
+	exp = 155,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2000201,
+	level = 31,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200692,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000202] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000002,
+	effect_prefab = "",
+	exp = 176,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2000202,
+	level = 32,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200692,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000203] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000003,
+	effect_prefab = "",
+	exp = 198,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2000203,
+	level = 33,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200692,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000204] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000004,
+	effect_prefab = "",
+	exp = 155,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2000204,
+	level = 31,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200692,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000205] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000005,
+	effect_prefab = "",
+	exp = 176,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2000205,
+	level = 32,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200692,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000206] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000006,
+	effect_prefab = "",
+	exp = 198,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2000206,
+	level = 33,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200692,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000207] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000007,
+	effect_prefab = "",
+	exp = 155,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2000207,
+	level = 31,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200692,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000208] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000008,
+	effect_prefab = "",
+	exp = 176,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2000208,
+	level = 32,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200692,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000209] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000009,
+	effect_prefab = "",
+	exp = 198,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2000209,
+	level = 33,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200692,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000213] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-donghuang-static",
+	difficulty = 2,
+	dungeon_id = 2000213,
+	effect_prefab = "",
+	exp = 254,
+	exp_commander = 0,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hongseshanmai_2",
+	icon_type = 2,
+	id = 2000213,
+	level = 35,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200679,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000301,
+	effect_prefab = "",
+	exp = 162,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2000301,
+	level = 24,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200677,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000302,
+	effect_prefab = "",
+	exp = 196,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2000302,
+	level = 29,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200678,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2000303] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2000303,
+	effect_prefab = "",
+	exp = 229,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2000303,
+	level = 34,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200679,
+		},
+		{
+			2,
+			54022,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001001,
+	effect_prefab = "",
+	exp = 205,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2001001,
+	level = 41,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200693,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001002,
+	effect_prefab = "",
+	exp = 231,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2001002,
+	level = 42,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200693,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001003,
+	effect_prefab = "",
+	exp = 258,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2001003,
+	level = 43,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200693,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001004,
+	effect_prefab = "",
+	exp = 205,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2001004,
+	level = 41,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200693,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001005,
+	effect_prefab = "",
+	exp = 231,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2001005,
+	level = 42,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200693,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001006,
+	effect_prefab = "",
+	exp = 258,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2001006,
+	level = 43,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200693,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001007,
+	effect_prefab = "",
+	exp = 205,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2001007,
+	level = 41,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200693,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001008,
+	effect_prefab = "",
+	exp = 231,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2001008,
+	level = 42,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200693,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001009,
+	effect_prefab = "",
+	exp = 258,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2001009,
+	level = 43,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200693,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-donghuang-static",
+	difficulty = 2,
+	dungeon_id = 2001013,
+	effect_prefab = "",
+	exp = 326,
+	exp_commander = 0,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kelalunsi",
+	icon_type = 2,
+	id = 2001013,
+	level = 45,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200680,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001101] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001001,
+	effect_prefab = "",
+	exp = 255,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2001101,
+	level = 51,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200694,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001102] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001002,
+	effect_prefab = "",
+	exp = 286,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2001102,
+	level = 52,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200694,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001103] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001003,
+	effect_prefab = "",
+	exp = 318,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2001103,
+	level = 53,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200694,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001104] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001004,
+	effect_prefab = "",
+	exp = 255,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2001104,
+	level = 51,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200694,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001105] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001005,
+	effect_prefab = "",
+	exp = 286,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2001105,
+	level = 52,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200694,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001106] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001006,
+	effect_prefab = "",
+	exp = 318,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2001106,
+	level = 53,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200694,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001107] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001007,
+	effect_prefab = "",
+	exp = 255,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2001107,
+	level = 51,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200694,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001108] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001008,
+	effect_prefab = "",
+	exp = 286,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2001108,
+	level = 52,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200694,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001109] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001009,
+	effect_prefab = "",
+	exp = 318,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2001109,
+	level = 53,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200694,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001113] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-donghuang-static",
+	difficulty = 2,
+	dungeon_id = 2001113,
+	effect_prefab = "",
+	exp = 399,
+	exp_commander = 1,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bojiateli_2",
+	icon_type = 2,
+	id = 2001113,
+	level = 55,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200716,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001201] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001001,
+	effect_prefab = "",
+	exp = 280,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2001201,
+	level = 56,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200695,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001202] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001002,
+	effect_prefab = "",
+	exp = 313,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2001202,
+	level = 57,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200695,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001203] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001003,
+	effect_prefab = "",
+	exp = 348,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2001203,
+	level = 58,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200695,
+		},
+		{
+			2,
+			17022,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001204] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001004,
+	effect_prefab = "",
+	exp = 280,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2001204,
+	level = 56,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200695,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001205] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001005,
+	effect_prefab = "",
+	exp = 313,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2001205,
+	level = 57,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200695,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001206] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001006,
+	effect_prefab = "",
+	exp = 348,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2001206,
+	level = 58,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200695,
+		},
+		{
+			2,
+			17012,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001207] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001007,
+	effect_prefab = "",
+	exp = 280,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2001207,
+	level = 56,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200695,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001208] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001008,
+	effect_prefab = "",
+	exp = 313,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2001208,
+	level = 57,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200695,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001209] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001009,
+	effect_prefab = "",
+	exp = 348,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2001209,
+	level = 58,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200695,
+		},
+		{
+			2,
+			17042,
+		},
+		{
+			2,
+			17032,
+		},
+		{
+			2,
+			17002,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001213] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-donghuang-static",
+	difficulty = 2,
+	dungeon_id = 2001213,
+	effect_prefab = "",
+	exp = 435,
+	exp_commander = 1,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qiershazhi_3",
+	icon_type = 2,
+	id = 2001213,
+	level = 60,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56000,
+		},
+		{
+			2,
+			200717,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001301,
+	effect_prefab = "",
+	exp = 297,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2001301,
+	level = 44,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200680,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001302,
+	effect_prefab = "",
+	exp = 297,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2001302,
+	level = 44,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200680,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001303] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001303,
+	effect_prefab = "",
+	exp = 364,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2001303,
+	level = 54,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200716,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001304] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001304,
+	effect_prefab = "",
+	exp = 364,
+	exp_commander = 0,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2001304,
+	level = 54,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200716,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001305] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001305,
+	effect_prefab = "",
+	exp = 398,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2001305,
+	level = 59,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200717,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2001306] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2001306,
+	effect_prefab = "",
+	exp = 398,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2001306,
+	level = 59,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200717,
+		},
+		{
+			2,
+			54023,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54015,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002001,
+	effect_prefab = "",
+	exp = 355,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2002001,
+	level = 71,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200696,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002002,
+	effect_prefab = "",
+	exp = 396,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2002002,
+	level = 72,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200696,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002003,
+	effect_prefab = "",
+	exp = 438,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2002003,
+	level = 73,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200696,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002004,
+	effect_prefab = "",
+	exp = 355,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2002004,
+	level = 71,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200696,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002005,
+	effect_prefab = "",
+	exp = 396,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2002005,
+	level = 72,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200696,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002006,
+	effect_prefab = "",
+	exp = 438,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2002006,
+	level = 73,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200696,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002007,
+	effect_prefab = "",
+	exp = 355,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2002007,
+	level = 71,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200696,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002008,
+	effect_prefab = "",
+	exp = 396,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2002008,
+	level = 72,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200696,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002009,
+	effect_prefab = "",
+	exp = 438,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2002009,
+	level = 73,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200696,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-donghuang-static",
+	difficulty = 2,
+	dungeon_id = 2002013,
+	effect_prefab = "",
+	exp = 544,
+	exp_commander = 1,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "pinghai_8",
+	icon_type = 2,
+	id = 2002013,
+	level = 75,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200718,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002101] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002001,
+	effect_prefab = "",
+	exp = 380,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2002101,
+	level = 76,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200697,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002102] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002002,
+	effect_prefab = "",
+	exp = 423,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2002102,
+	level = 77,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200697,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002103] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002003,
+	effect_prefab = "",
+	exp = 468,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2002103,
+	level = 78,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200697,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002104] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002004,
+	effect_prefab = "",
+	exp = 380,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2002104,
+	level = 76,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200697,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002105] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002005,
+	effect_prefab = "",
+	exp = 423,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2002105,
+	level = 77,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200697,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002106] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002006,
+	effect_prefab = "",
+	exp = 468,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2002106,
+	level = 78,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200697,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002107] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002007,
+	effect_prefab = "",
+	exp = 380,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2002107,
+	level = 76,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200697,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002108] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002008,
+	effect_prefab = "",
+	exp = 423,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2002108,
+	level = 77,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200697,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002109] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002009,
+	effect_prefab = "",
+	exp = 468,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2002109,
+	level = 78,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200697,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002113] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-donghuang-static",
+	difficulty = 2,
+	dungeon_id = 2002113,
+	effect_prefab = "",
+	exp = 580,
+	exp_commander = 1,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "ninghai_8",
+	icon_type = 2,
+	id = 2002113,
+	level = 80,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200684,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002201] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002001,
+	effect_prefab = "",
+	exp = 405,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2002201,
+	level = 81,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200698,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002202] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002002,
+	effect_prefab = "",
+	exp = 451,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2002202,
+	level = 82,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200698,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002203] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002003,
+	effect_prefab = "",
+	exp = 498,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2002203,
+	level = 83,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200698,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002204] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002004,
+	effect_prefab = "",
+	exp = 405,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2002204,
+	level = 81,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200698,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002205] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002005,
+	effect_prefab = "",
+	exp = 451,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2002205,
+	level = 82,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200698,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002206] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002006,
+	effect_prefab = "",
+	exp = 498,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2002206,
+	level = 83,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200698,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002207] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002007,
+	effect_prefab = "",
+	exp = 405,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2002207,
+	level = 81,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200698,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002208] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002008,
+	effect_prefab = "",
+	exp = 451,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2002208,
+	level = 82,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200698,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002209] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002009,
+	effect_prefab = "",
+	exp = 498,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2002209,
+	level = 83,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200698,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002213] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-donghuang-static",
+	difficulty = 2,
+	dungeon_id = 2002213,
+	effect_prefab = "",
+	exp = 616,
+	exp_commander = 2,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "hongseshanmai_2",
+	icon_type = 2,
+	id = 2002213,
+	level = 85,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200685,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002301,
+	effect_prefab = "",
+	exp = 499,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2002301,
+	level = 74,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200718,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002302,
+	effect_prefab = "",
+	exp = 533,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2002302,
+	level = 79,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200684,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2002303] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2002303,
+	effect_prefab = "",
+	exp = 567,
+	exp_commander = 1,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2002303,
+	level = 84,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50217,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200685,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003001,
+	effect_prefab = "",
+	exp = 455,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2003001,
+	level = 91,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200699,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003002,
+	effect_prefab = "",
+	exp = 506,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2003002,
+	level = 92,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200699,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003003,
+	effect_prefab = "",
+	exp = 558,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2003003,
+	level = 93,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200699,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003004,
+	effect_prefab = "",
+	exp = 455,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2003004,
+	level = 91,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200699,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003005,
+	effect_prefab = "",
+	exp = 506,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2003005,
+	level = 92,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200699,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003006,
+	effect_prefab = "",
+	exp = 558,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2003006,
+	level = 93,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200699,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003007,
+	effect_prefab = "",
+	exp = 455,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2003007,
+	level = 91,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200699,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003008,
+	effect_prefab = "",
+	exp = 506,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2003008,
+	level = 92,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200699,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003009,
+	effect_prefab = "",
+	exp = 558,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2003009,
+	level = 93,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200699,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-donghuang-static",
+	difficulty = 2,
+	dungeon_id = 2003013,
+	effect_prefab = "",
+	exp = 689,
+	exp_commander = 2,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kelalunsi",
+	icon_type = 2,
+	id = 2003013,
+	level = 95,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200686,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003101] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003001,
+	effect_prefab = "",
+	exp = 480,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2003101,
+	level = 96,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200700,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003102] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003002,
+	effect_prefab = "",
+	exp = 533,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2003102,
+	level = 97,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200700,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003103] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003003,
+	effect_prefab = "",
+	exp = 588,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2003103,
+	level = 98,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200700,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003104] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003004,
+	effect_prefab = "",
+	exp = 480,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2003104,
+	level = 96,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200700,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003105] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003005,
+	effect_prefab = "",
+	exp = 533,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2003105,
+	level = 97,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200700,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003106] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003006,
+	effect_prefab = "",
+	exp = 588,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2003106,
+	level = 98,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200700,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003107] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003007,
+	effect_prefab = "",
+	exp = 480,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2003107,
+	level = 96,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200700,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003108] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003008,
+	effect_prefab = "",
+	exp = 533,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2003108,
+	level = 97,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200700,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003109] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003009,
+	effect_prefab = "",
+	exp = 588,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2003109,
+	level = 98,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200700,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003113] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-donghuang-static",
+	difficulty = 2,
+	dungeon_id = 2003113,
+	effect_prefab = "",
+	exp = 725,
+	exp_commander = 2,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "bojiateli_2",
+	icon_type = 2,
+	id = 2003113,
+	level = 100,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200687,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003201] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003001,
+	effect_prefab = "",
+	exp = 505,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2003201,
+	level = 101,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200701,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003202] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003002,
+	effect_prefab = "",
+	exp = 561,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2003202,
+	level = 102,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200701,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003203] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003003,
+	effect_prefab = "",
+	exp = 618,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2003203,
+	level = 103,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200701,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003204] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003004,
+	effect_prefab = "",
+	exp = 505,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2003204,
+	level = 101,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200701,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003205] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003005,
+	effect_prefab = "",
+	exp = 561,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2003205,
+	level = 102,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200701,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003206] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003006,
+	effect_prefab = "",
+	exp = 618,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2003206,
+	level = 103,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200701,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003207] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003007,
+	effect_prefab = "",
+	exp = 505,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2003207,
+	level = 101,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200701,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003208] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003008,
+	effect_prefab = "",
+	exp = 561,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2003208,
+	level = 102,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200701,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003209] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003009,
+	effect_prefab = "",
+	exp = 618,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2003209,
+	level = 103,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200701,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003213] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-donghuang-static",
+	difficulty = 2,
+	dungeon_id = 2003213,
+	effect_prefab = "",
+	exp = 761,
+	exp_commander = 3,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "qiershazhi_3",
+	icon_type = 2,
+	id = 2003213,
+	level = 105,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56000,
+		},
+		{
+			2,
+			200688,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003301,
+	effect_prefab = "",
+	exp = 634,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2003301,
+	level = 94,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200686,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003302,
+	effect_prefab = "",
+	exp = 634,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2003302,
+	level = 94,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200686,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003303] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003303,
+	effect_prefab = "",
+	exp = 668,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2003303,
+	level = 99,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200687,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003304] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003304,
+	effect_prefab = "",
+	exp = 668,
+	exp_commander = 2,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2003304,
+	level = 99,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200687,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003305] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003305,
+	effect_prefab = "",
+	exp = 702,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2003305,
+	level = 104,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200688,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2003306] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "story-kezhan-china",
+	difficulty = 2,
+	dungeon_id = 2003306,
+	effect_prefab = "",
+	exp = 702,
+	exp_commander = 3,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2003306,
+	level = 104,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50218,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200688,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2004001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-china-jianwu",
+	difficulty = 2,
+	dungeon_id = 2004001,
+	effect_prefab = "",
+	exp = 550,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2004001,
+	level = 110,
+	limit_type = 1,
+	name = "Small Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 1,
+	map_id = {
+		{
+			50219,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200702,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2004002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-china-jianwu",
+	difficulty = 2,
+	dungeon_id = 2004002,
+	effect_prefab = "",
+	exp = 605,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2004002,
+	level = 110,
+	limit_type = 1,
+	name = "Medium Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 2,
+	map_id = {
+		{
+			50219,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200702,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2004003] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-china-jianwu",
+	difficulty = 2,
+	dungeon_id = 2004003,
+	effect_prefab = "",
+	exp = 660,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_qz",
+	icon_type = 1,
+	id = 2004003,
+	level = 110,
+	limit_type = 1,
+	name = "Large Reconnaissance Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 3,
+	map_id = {
+		{
+			50219,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200702,
+		},
+		{
+			2,
+			17023,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2004004] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-china-jianwu",
+	difficulty = 2,
+	dungeon_id = 2004004,
+	effect_prefab = "",
+	exp = 550,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2004004,
+	level = 110,
+	limit_type = 1,
+	name = "Small Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 4,
+	map_id = {
+		{
+			50219,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200702,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2004005] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-china-jianwu",
+	difficulty = 2,
+	dungeon_id = 2004005,
+	effect_prefab = "",
+	exp = 605,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2004005,
+	level = 110,
+	limit_type = 1,
+	name = "Medium Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 5,
+	map_id = {
+		{
+			50219,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200702,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2004006] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-china-jianwu",
+	difficulty = 2,
+	dungeon_id = 2004006,
+	effect_prefab = "",
+	exp = 660,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2004006,
+	level = 110,
+	limit_type = 1,
+	name = "Large Main Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 6,
+	map_id = {
+		{
+			50219,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200702,
+		},
+		{
+			2,
+			17013,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2004007] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-china-jianwu",
+	difficulty = 2,
+	dungeon_id = 2004007,
+	effect_prefab = "",
+	exp = 550,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2004007,
+	level = 110,
+	limit_type = 1,
+	name = "Small Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 7,
+	map_id = {
+		{
+			50219,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200702,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2004008] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-china-jianwu",
+	difficulty = 2,
+	dungeon_id = 2004008,
+	effect_prefab = "",
+	exp = 605,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2004008,
+	level = 110,
+	limit_type = 1,
+	name = "Medium Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 8,
+	map_id = {
+		{
+			50219,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200702,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2004009] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "theme-china-jianwu",
+	difficulty = 2,
+	dungeon_id = 2004009,
+	effect_prefab = "",
+	exp = 660,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2004009,
+	level = 110,
+	limit_type = 1,
+	name = "Large Air formation",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 9,
+	map_id = {
+		{
+			50219,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200702,
+		},
+		{
+			2,
+			17043,
+		},
+		{
+			2,
+			17033,
+		},
+		{
+			2,
+			17003,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2004013] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-donghuang-static",
+	difficulty = 2,
+	dungeon_id = 2004013,
+	effect_prefab = "",
+	exp = 797,
+	exp_commander = 4,
+	exp_commander_ratio = 50,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "wanpi_2",
+	icon_type = 2,
+	id = 2004013,
+	level = 110,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 99,
+	map_id = {
+		{
+			50219,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56000,
+		},
+		{
+			2,
+			200689,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2004301] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "theme-china-jianwu",
+	difficulty = 2,
+	dungeon_id = 2004301,
+	effect_prefab = "",
+	exp = 742,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_zl",
+	icon_type = 1,
+	id = 2004301,
+	level = 110,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50219,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200689,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2004302] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 3,
+	ai_mov = 2,
+	bgm = "theme-china-jianwu",
+	difficulty = 2,
+	dungeon_id = 2004302,
+	effect_prefab = "",
+	exp = 742,
+	exp_commander = 4,
+	exp_commander_ratio = 30,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "kezhan_hm",
+	icon_type = 1,
+	id = 2004302,
+	level = 110,
+	limit_type = 1,
+	name = "Elite Fleet",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 120,
+	type = 95,
+	map_id = {
+		{
+			50219,
+			1,
+		},
+	},
+	award_display = {
+		{
+			2,
+			56500,
+		},
+		{
+			2,
+			200689,
+		},
+		{
+			2,
+			54024,
+		},
+		{
+			2,
+			59001,
+		},
+		{
+			2,
+			54016,
+		},
+	},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		120,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2005001] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-donghuang-static",
+	difficulty = 2,
+	dungeon_id = 2005001,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "mosike_2",
+	icon_type = 2,
+	id = 2005001,
+	level = 125,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 150,
+	type = 99,
+	map_id = {
+		{
+			50219,
+			1,
+		},
+	},
+	award_display = {},
+	objective_1 = {
+		1,
+	},
+	objective_2 = {
+		2,
+	},
+	objective_3 = {
+		5,
+		150,
+	},
+	bufficon = {},
+	expose_line = {},
+	horizon_line = {
+		[1] = -50,
+	},
+	aircraft_expose = {
+		15,
+		10,
+	},
+	ship_expose = {
+		30,
+		10,
+	},
+}
+
+_G.pg.base.expedition_data_template[2005002] = {
+	SLG_destroy_FX = "",
+	add_icon = "",
+	ai = 0,
+	ai_mov = 0,
+	bgm = "battle-donghuang-static",
+	difficulty = 2,
+	dungeon_id = 2005002,
+	effect_prefab = "",
+	exp = 0,
+	exp_commander = 0,
+	exp_commander_ratio = 0,
+	expose_speed = 15,
+	guide_desc = "",
+	icon = "mosike_2",
+	icon_type = 2,
+	id = 2005002,
+	level = 125,
+	limit_type = 1,
+	name = "Enemy Flagship",
+	plot_type = 0,
+	scale = 100,
+	sink_limit = 1,
+	time_limit = 150,
+	type = 99,
+	map_id = {
+		{
+			50219,
 			1,
 		},
 	},

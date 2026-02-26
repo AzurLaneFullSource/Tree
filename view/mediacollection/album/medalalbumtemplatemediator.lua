@@ -33,11 +33,16 @@ function var0_0.BindEvent(arg0_2)
 					act_id = arg1_4:getActId(),
 					task_ids = {
 						arg1_4.id
-					}
-				}, arg2_4)
+					},
+					callback = arg0_5
+				})
 			end
 		}, function()
-			return
+			local var0_6 = getProxy(PlayerProxy):getRawData():getActivityMedalGroup()
+
+			arg0_2.viewComponent:SetMedalGroupData(var0_6)
+			arg0_2.viewComponent:UpdateView()
+			existCall(arg2_4)
 		end)
 	end)
 end

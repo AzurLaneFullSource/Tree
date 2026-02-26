@@ -44,6 +44,8 @@ function var0_0.IsShowTip(arg0_5)
 		end
 
 		return ActivityBossPtData.New(var3_5):CanGetAward()
+	elseif var2_5 == ActivityConst.ACTIVITY_TYPE_TOWN2 then
+		return false
 	end
 
 	return getProxy(ChapterProxy):IsActivitySPChapterActive(var0_5) and SettingsProxy.IsShowActivityMapSPTip()

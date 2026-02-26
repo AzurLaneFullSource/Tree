@@ -80,91 +80,95 @@ function var0_0.UpdateGetCollectNum(arg0_8, arg1_8)
 	end
 end
 
-function var0_0.UpdateCollectDataBySlotId(arg0_9, arg1_9, arg2_9)
-	local var0_9 = arg1_9.id
-	local var1_9 = arg0_9.collectionSlotData[var0_9]
+function var0_0.SetAllTakeColelct(arg0_9)
+	arg0_9.get_num = #arg0_9.recoverQueue
+end
 
-	if not var1_9 then
+function var0_0.UpdateCollectDataBySlotId(arg0_10, arg1_10, arg2_10)
+	local var0_10 = arg1_10.id
+	local var1_10 = arg0_10.collectionSlotData[var0_10]
+
+	if not var1_10 then
 		return
 	end
 
-	if arg2_9 == var0_0.slotType.Task then
-		var1_9:UpdateCollectData(arg1_9, arg2_9)
+	if arg2_10 == var0_0.slotType.Task then
+		var1_10:UpdateCollectData(arg1_10, arg2_10)
 
-		arg0_9.collectionSlotData[var0_9] = nil
+		arg0_10.collectionSlotData[var0_10] = nil
 	else
-		arg0_9:RefreshRecoverQueue(var0_9)
-		var1_9:UpdateCollectData(arg1_9, arg2_9)
+		arg0_10:RefreshRecoverQueue(var0_10)
+		var1_10:UpdateCollectData(arg1_10, arg2_10)
 	end
 end
 
-function var0_0.RefreshRecoverQueue(arg0_10, arg1_10)
-	local var0_10 = -1
+function var0_0.RefreshRecoverQueue(arg0_11, arg1_11)
+	local var0_11 = -1
 
-	for iter0_10, iter1_10 in ipairs(arg0_10.recoverQueue) do
-		if iter1_10 == arg1_10 then
-			var0_10 = iter0_10
+	for iter0_11, iter1_11 in ipairs(arg0_11.recoverQueue) do
+		if iter1_11 == arg1_11 then
+			var0_11 = iter0_11
 		end
 	end
 
-	if var0_10 ~= -1 then
-		table.remove(arg0_10.recoverQueue, var0_10)
+	if var0_11 ~= -1 then
+		table.remove(arg0_11.recoverQueue, var0_11)
 	end
 
-	table.insert(arg0_10.recoverQueue, arg1_10)
+	table.insert(arg0_11.recoverQueue, arg1_11)
 end
 
-function var0_0.GetCollectSlotData(arg0_11, arg1_11)
-	return arg0_11.collectionSlotData[arg1_11]
+function var0_0.GetCollectSlotData(arg0_12, arg1_12)
+	return arg0_12.collectionSlotData[arg1_12]
 end
 
-function var0_0.InitHandSlotData(arg0_12, arg1_12)
-	local var0_12 = arg1_12.id
+function var0_0.InitHandSlotData(arg0_13, arg1_13)
+	local var0_13 = arg1_13.id
 
-	if arg0_12.collectionSlotData[var0_12] then
+	if arg0_13.collectionSlotData[var0_13] then
 		warning("已经存在当前槽位的信息了")
 
 		return
 	end
 
-	local var1_12 = arg0_12.taskPointDic[var0_12] and var0_0.slotType.Task or var0_0.slotType.Normal
+	local var1_13 = arg0_13.taskPointDic[var0_13] and var0_0.slotType.Task or var0_0.slotType.Normal
 
-	if var1_12 == var0_0.slotType.Normal then
-		table.insert(arg0_12.recoverQueue, 1, var0_12)
+	if var1_13 == var0_0.slotType.Normal then
+		table.insert(arg0_13.recoverQueue, 1, var0_13)
 	end
 
-	local var2_12 = IslandCollectSlotNew.New(arg0_12.configId, arg1_12, var1_12)
+	local var2_13 = IslandCollectSlotNew.New(arg0_13.configId, arg1_13, var1_13)
 
-	arg0_12.collectionSlotData[arg1_12.id] = var2_12
+	arg0_13.collectionSlotData[arg1_13.id] = var2_13
 
 	getProxy(IslandProxy):GetIsland():DispatchEvent(IslandBuildingAgency.COLLECT_SlOT_UNIT_INIT, {
-		slotId = arg1_12.id
+		slotId = arg1_13.id
 	})
 end
 
-function var0_0.UpdatePerSecond(arg0_13)
-	local var0_13 = pg.TimeMgr.GetInstance():GetServerTime()
+function var0_0.UpdatePerSecond(arg0_14)
+	local var0_14 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	if arg0_13.needRefresh and var0_13 >= arg0_13.refresh_time then
-		arg0_13.needRefresh = false
+	if arg0_14.needRefresh and var0_14 >= arg0_14.refresh_time then
+		arg0_14.needRefresh = false
 
-		local var1_13 = #arg0_13.recoverQueue - arg0_13.get_num + 1
+		local var1_14 = #arg0_14.recoverQueue - arg0_14.get_num + 1
 
-		arg0_13.get_num = 0
+		arg0_14.get_num = 0
 
-		local var2_13 = getProxy(IslandProxy):GetIsland()
-		local var3_13 = math.max(1, var1_13)
+		local var2_14 = getProxy(IslandProxy):GetIsland()
+		local var3_14 = math.max(1, var1_14)
 
-		for iter0_13 = #arg0_13.recoverQueue, var3_13, -1 do
-			local var4_13 = arg0_13.recoverQueue[iter0_13]
+		for iter0_14 = #arg0_14.recoverQueue, var3_14, -1 do
+			local var4_14 = arg0_14.recoverQueue[iter0_14]
 
-			if arg0_13.placeId == IslandProductConst.MinePlaceId then
-				var2_13:DispatchEvent(IslandBuildingAgency.COLLECT_SlOT_UNIT_INIT, {
-					slotId = var4_13
+			if arg0_14.placeId == IslandProductConst.MinePlaceId then
+				var2_14:DispatchEvent(IslandBuildingAgency.COLLECT_SlOT_UNIT_INIT, {
+					slotId = var4_14
 				})
 			else
-				var2_13:DispatchEvent(IslandBuildingAgency.COLLECT_SlOT_UNIT_UPDATE, {
-					slotId = var4_13
+				var2_14:DispatchEvent(IslandBuildingAgency.COLLECT_SlOT_UNIT_UPDATE, {
+					slotId = var4_14
 				})
 			end
 		end

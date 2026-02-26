@@ -434,7 +434,7 @@ function var2_0.SetSkillButtonPreferences(arg0_36, arg1_36)
 	local var3_36 = PlayerPrefs.GetFloat("skill_" .. arg1_36 .. "_anchorY", var0_36.y)
 	local var4_36 = arg0_36.transform
 
-	var4_36.localScale = Vector3(var1_36, var1_36, 0)
+	var4_36.localScale = Vector3(var1_36, var1_36, 1)
 	var4_36.anchorMin = Vector2(var2_36, var3_36)
 	var4_36.anchorMax = Vector2(var2_36, var3_36)
 end

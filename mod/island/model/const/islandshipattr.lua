@@ -1,6 +1,7 @@
 local var0_0 = class("IslandShipAttr")
 
 var0_0.MANAGE_KEY = 5
+var0_0.COLLECT_KEY = 2
 var0_0.ATTRS = {
 	"plant",
 	"collect",

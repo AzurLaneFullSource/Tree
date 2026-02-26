@@ -46,7 +46,7 @@ function var0_0.FormatContent(arg0_5, arg1_5)
 	local var0_5 = {
 		"<size=%d+>",
 		"</size>",
-		"<color=%w+>",
+		"<color=#%w+>",
 		"</color>"
 	}
 	local var1_5 = arg1_5

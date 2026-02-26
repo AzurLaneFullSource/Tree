@@ -85,7 +85,7 @@ function var0_0.OnInit(arg0_4)
 	arg0_4:bind(LevelUIConst.SWITCH_SPCHAPTER_DIFFICULTY, function(arg0_5, arg1_5)
 		arg0_4:SwitchChapter(arg1_5)
 	end)
-	onButton(arg0_4, arg0_4.battleLayer:Find("Story/Switch"), function()
+	onButton(arg0_4, arg0_4.battleLayer:Find("Mask/Story/Switch"), function()
 		arg0_4:SetDisplayMode(var0_0.DISPLAY.STORY)
 
 		arg0_4.needFocusStory = true
@@ -281,8 +281,15 @@ function var0_0.UpdateView(arg0_24)
 
 	local var3_24 = getProxy(ChapterProxy):IsActivitySPChapterActive(arg0_24.contextData.map:getConfig("on_activity")) and SettingsProxy.IsShowActivityMapSPTip()
 
-	setActive(arg0_24.battleLayer:Find("Story/BattleTip"), false)
+	setActive(arg0_24.battleLayer:Find("Mask/Story/BattleTip"), false)
 	setActive(arg0_24.storyLayer:Find("Battle/BattleTip"), var3_24)
+
+	local var4_24 = arg0_24.battleLayer:Find("Mask"):GetComponent(typeof(RectMask2D))
+
+	if type(arg0_24.spStoryIDs) ~= "table" or #arg0_24.spStoryIDs == 0 then
+		var4_24.enabled = true
+	end
+
 	arg0_24:UpdateStoryTask()
 
 	if var2_24 then
@@ -1276,6 +1283,11 @@ end
 
 function var0_0.UpdateStoryTask(arg0_67)
 	local var0_67 = arg0_67.activity:getConfig("config_client").task_id
+
+	if not var0_67 then
+		return
+	end
+
 	local var1_67 = getProxy(TaskProxy):getTaskVO(var0_67)
 
 	if not var1_67 then

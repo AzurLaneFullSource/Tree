@@ -24,23 +24,47 @@ function var0_0.execute(arg0_1, arg1_1)
 
 			var3_1 = var2_1:getActivityById(var0_1.activity_id)
 
-			switch(var0_1.cmd, {
-				[TownActivity.OPERATION.UPGRADE_TOWN] = function()
-					var3_1:OnUpgradeTown(arg0_2.number[1])
-				end,
-				[TownActivity.OPERATION.UPGRADE_PLACE] = function()
-					var3_1:OnUpgradePlace(var0_1.arg1, arg0_2.number[1])
-				end,
-				[TownActivity.OPERATION.CHANGE_SHIPS] = function()
-					var3_1:OnChangeShips(var0_1.kvargs1)
-				end,
-				[TownActivity.OPERATION.CLICK_BUBBLE] = function()
-					var3_1:OnGetBubbleAward(var0_1.arg_list, arg0_2.number)
-				end,
-				[TownActivity.OPERATION.SETTLE_GOLD] = function()
-					var3_1:OnSettleGold(arg0_2.number[1])
-				end
-			})
+			if var3_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TOWN2 then
+				switch(var0_1.cmd, {
+					[TownActivity2.OPERATION.UPGRADE_TOWN] = function()
+						return
+					end,
+					[TownActivity2.OPERATION.UPGRADE_PLACE] = function()
+						var3_1:OnUpgradePlace(var0_1.arg1, arg0_2.number[1])
+					end,
+					[TownActivity2.OPERATION.CHANGE_SHIPS] = function()
+						var3_1:OnChangeShips(var0_1.kvargs1)
+					end,
+					[TownActivity2.OPERATION.CLICK_BUBBLE] = function()
+						var3_1:OnGetBubbleAward(var0_1.arg_list, arg0_2.number)
+					end,
+					[TownActivity2.OPERATION.SETTLE_GOLD] = function()
+						var3_1:OnGatherPlaceGold(var0_1.arg1, arg0_2.number[2])
+					end,
+					[TownActivity2.OPERATION.ALL_GOLD] = function()
+						var3_1:OnAllGatherPlaceGold(arg0_2.number)
+					end
+				})
+			else
+				switch(var0_1.cmd, {
+					[TownActivity.OPERATION.UPGRADE_TOWN] = function()
+						var3_1:OnUpgradeTown(arg0_2.number[1])
+					end,
+					[TownActivity.OPERATION.UPGRADE_PLACE] = function()
+						var3_1:OnUpgradePlace(var0_1.arg1, arg0_2.number[1])
+					end,
+					[TownActivity.OPERATION.CHANGE_SHIPS] = function()
+						var3_1:OnChangeShips(var0_1.kvargs1)
+					end,
+					[TownActivity.OPERATION.CLICK_BUBBLE] = function()
+						var3_1:OnGetBubbleAward(var0_1.arg_list, arg0_2.number)
+					end,
+					[TownActivity.OPERATION.SETTLE_GOLD] = function()
+						var3_1:OnSettleGold(arg0_2.number[2])
+					end
+				})
+			end
+
 			var2_1:updateActivity(var3_1)
 
 			if var1_1 then

@@ -51,17 +51,20 @@ function var0_0.execute(arg0_1, arg1_1)
 
 			local var9_2 = var5_1:GetShipById(arg0_2.ship_id)
 
-			var9_2:UpdateEnergy(arg0_2.cur_energy)
-			var9_2:UpdateEnergyBeginRecoverTime(arg0_2.recover_time)
 			var9_2:AddExp(arg0_2.add_exp)
 
 			local var10_2
 
-			if #arg0_2.award == 0 and arg0_2.add_exp > 0 then
-				var10_2 = {
-					addShipId = arg0_2.ship_id,
-					addExp = arg0_2.add_exp
-				}
+			if #arg0_2.award == 0 then
+				if arg0_2.add_exp > 0 then
+					var10_2 = {
+						addShipId = arg0_2.ship_id,
+						addExp = arg0_2.add_exp
+					}
+				end
+
+				var9_2:UpdateEnergy(arg0_2.cur_energy)
+				var9_2:UpdateEnergyBeginRecoverTime(arg0_2.recover_time)
 			end
 
 			var3_1:DispatchEvent(var0_0.END_DELEGATION, {

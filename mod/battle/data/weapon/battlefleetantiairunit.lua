@@ -84,27 +84,30 @@ function var8_0.flush(arg0_9)
 
 	local var0_9 = {}
 	local var1_9 = 0
+	local var2_9 = 0
 
 	for iter0_9, iter1_9 in pairs(arg0_9._crewUnitList) do
+		var2_9 = var2_9 + iter0_9:GetAttrByName("extraAntiAirRange")
+
 		for iter2_9, iter3_9 in ipairs(iter1_9) do
 			var1_9 = var1_9 + 1
 			arg0_9._interval = arg0_9._interval + iter3_9:GetReloadTime()
 
-			local var2_9 = iter3_9:GetTemplateData()
+			local var3_9 = iter3_9:GetTemplateData()
 
-			arg0_9._range = arg0_9._range + var2_9.range
-			arg0_9._hitFXResIDList[iter3_9] = var0_0.Battle.BattleDataFunction.GetBulletTmpDataFromID(var2_9.bullet_ID[1]).hit_fx
-			arg0_9._SFXID = var2_9.fire_sfx
+			arg0_9._range = arg0_9._range + var3_9.range
+			arg0_9._hitFXResIDList[iter3_9] = var0_0.Battle.BattleDataFunction.GetBulletTmpDataFromID(var3_9.bullet_ID[1]).hit_fx
+			arg0_9._SFXID = var3_9.fire_sfx
 		end
 
-		local var3_9 = iter0_9:GetAttrByName("antiAirPower")
-		local var4_9 = var2_0.AntiAirPowerWeight(var3_9)
-		local var5_9 = {
-			weight = var4_9,
+		local var4_9 = iter0_9:GetAttrByName("antiAirPower")
+		local var5_9 = var2_0.AntiAirPowerWeight(var4_9)
+		local var6_9 = {
+			weight = var5_9,
 			rst = iter0_9
 		}
 
-		var0_9[#var0_9 + 1] = var5_9
+		var0_9[#var0_9 + 1] = var6_9
 	end
 
 	if var1_9 == 0 then
@@ -114,7 +117,7 @@ function var8_0.flush(arg0_9)
 			arg0_9:RemovePrecastTimer()
 		end
 	else
-		arg0_9._range = arg0_9._range / var1_9
+		arg0_9._range = arg0_9._range / var1_9 + var2_9
 		arg0_9._interval = arg0_9._interval / var1_9 + 0.5
 		arg0_9._weightList, arg0_9._totalWeight = var2_0.GenerateWeightList(var0_9)
 	end

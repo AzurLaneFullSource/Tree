@@ -43,4 +43,8 @@ function var0_0.OnInit(arg0_9, arg1_9)
 	return
 end
 
+function var0_0.UpdatePerDay(arg0_10)
+	return
+end
+
 return var0_0

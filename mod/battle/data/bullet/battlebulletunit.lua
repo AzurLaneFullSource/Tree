@@ -951,3 +951,7 @@ end
 function var10_0.SetImmuneCLS(arg0_114, arg1_114)
 	arg0_114._immuneCLS = arg1_114
 end
+
+function var10_0.IsSpectreBullet(arg0_115)
+	return arg0_115:GetTemplate().extra_param.spectre
+end

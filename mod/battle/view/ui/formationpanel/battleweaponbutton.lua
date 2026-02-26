@@ -99,8 +99,8 @@ function var1_0.ConfigSkin(arg0_7, arg1_7)
 
 	arg0_7._animtor = arg1_7:GetComponent(typeof(Animator))
 	arg0_7._bgEff = arg1_7:Find("ActCtl/bg_eff")
-	arg0_7._chargeEff = arg1_7:Find("ActCtl/gizmos_1")
-	arg0_7._fullChargeEff = arg1_7:Find("ActCtl/gizmos_xue")
+	arg0_7._gizmos1 = arg1_7:Find("ActCtl/gizmos_1")
+	arg0_7._gizmosXue = arg1_7:Find("ActCtl/gizmos_xue")
 end
 
 function var1_0.GetSkin(arg0_9)
@@ -217,9 +217,9 @@ function var1_0.OnCountChange(arg0_21)
 		arg0_21:SwitchIconEffect(var2_21)
 	end
 
-	if arg0_21._chargeEff then
-		SetActive(arg0_21._chargeEff, var0_21 > 0)
-		SetActive(arg0_21._fullChargeEff, var0_21 == var1_21)
+	if arg0_21._gizmos1 then
+		SetActive(arg0_21._gizmos1, var0_21 > 0)
+		SetActive(arg0_21._gizmosXue, var0_21 == var1_21)
 	end
 end
 
@@ -336,9 +336,9 @@ function var1_0.SetToCombatUIPreview(arg0_30, arg1_30)
 
 		arg0_30._countTxt.text = "1/1"
 
-		if arg0_30._chargeEff then
-			SetActive(arg0_30._chargeEff, true)
-			SetActive(arg0_30._fullChargeEff, true)
+		if arg0_30._gizmos1 then
+			SetActive(arg0_30._gizmos1, true)
+			SetActive(arg0_30._gizmosXue, true)
 		end
 	else
 		SetActive(arg0_30._unfill, true)
@@ -352,9 +352,9 @@ function var1_0.SetToCombatUIPreview(arg0_30, arg1_30)
 
 		arg0_30._countTxt.text = "0/0"
 
-		if arg0_30._chargeEff then
-			SetActive(arg0_30._chargeEff, false)
-			SetActive(arg0_30._fullChargeEff, false)
+		if arg0_30._gizmos1 then
+			SetActive(arg0_30._gizmos1, false)
+			SetActive(arg0_30._gizmosXue, false)
 		end
 	end
 end
