@@ -174260,7 +174260,7 @@ _G.pg.base.item_virtual_data_statistics[65871] = {
 	is_world = 0,
 	link_id = 0,
 	max_num = 0,
-	name = "Rental Outfit Voucher ",
+	name = "Rental Outfit Voucher",
 	order = 0,
 	rarity = 4,
 	replace_item = 0,
@@ -174276,7 +174276,7 @@ _G.pg.base.item_virtual_data_statistics[65871] = {
 }
 
 _G.pg.base.item_virtual_data_statistics[65872] = {
-	display = "用于「雪境迷踪」复刻活动兑换，活动结束后将会消失",
+	display = "Used to exchange for items in \"Snowrealm Peregrination\" rerun event. Will be removed after the event ends.",
 	drop_gold_max = 0,
 	drop_oil_max = 0,
 	icon = "Props/tongmeng_pt",
@@ -174300,7 +174300,7 @@ _G.pg.base.item_virtual_data_statistics[65872] = {
 }
 
 _G.pg.base.item_virtual_data_statistics[65873] = {
-	display = "于「雪境迷踪」活动限时复刻中获取，可以免费进行一次期间限定建造（活动结束后消失）",
+	display = "A limited construction ticket for use during the \"Snowrealm Peregrination\" rerun event. Removed after the event ends.",
 	drop_gold_max = 0,
 	drop_oil_max = 0,
 	icon = "Props/buildTicket",
@@ -174332,7 +174332,7 @@ _G.pg.base.item_virtual_data_statistics[65874] = {
 	is_world = 0,
 	link_id = 0,
 	max_num = 0,
-	name = "Training Points",
+	name = "Training Pts",
 	order = 0,
 	rarity = 2,
 	replace_item = 0,
@@ -174356,7 +174356,7 @@ _G.pg.base.item_virtual_data_statistics[65875] = {
 	is_world = 0,
 	link_id = 0,
 	max_num = 0,
-	name = "Rental Outfit Voucher ",
+	name = "Rental Outfit Voucher",
 	order = 0,
 	rarity = 4,
 	replace_item = 0,

@@ -573,13 +573,14 @@ return {
 			}
 		},
 		{
-			oldPhoto = true,
+			expression = 0,
 			side = 2,
 			bgName = "star_level_bg_170",
-			nameColor = "#A9F548FF",
+			oldPhoto = true,
 			dir = 1,
-			actor = 900407,
 			actorName = "???",
+			actor = 900407,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "He's not the only wild one. You're using your private jet to implement said plan, Dr. Anzeel.",
 			painting = {
@@ -728,13 +729,14 @@ return {
 			}
 		},
 		{
+			expression = 0,
+			side = 2,
+			bgName = "star_level_bg_170",
+			oldPhoto = true,
+			actorName = "???",
 			actor = 900407,
 			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_170",
 			hidePaintObj = true,
-			side = 2,
-			actorName = "???",
-			oldPhoto = true,
 			say = "We have around two hours until we're out of signal range.",
 			typewriter = {
 				speed = 0.05,
