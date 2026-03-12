@@ -1,5 +1,42 @@
 pg = pg or {}
 pg.enemy_data_statistics_394 = {
+	[295222] = {
+		cannon = 301,
+		name = "Wichita META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 64,
+		base = 90941,
+		durability_growth = 0,
+		antiaircraft = 258,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 50,
+		hit = 90,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 711000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295222,
+		buff_list = {
+			{
+				ID = 200956,
+				LV = 1
+			}
+		}
+	},
 	[295223] = {
 		cannon = 318,
 		name = "Wichita META",
@@ -1143,47 +1180,6 @@ pg.enemy_data_statistics_394 = {
 			{
 				ID = 201171,
 				LV = 14
-			},
-			{
-				ID = 201175,
-				LV = 1
-			}
-		}
-	},
-	[295255] = {
-		cannon = 242,
-		name = "Taihou META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 492,
-		hit_growth = 0,
-		dodge = 75,
-		base = 91025,
-		durability_growth = 0,
-		antiaircraft = 346,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 20,
-		luck = 50,
-		hit = 110,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 1600000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295255,
-		buff_list = {
-			{
-				ID = 201171,
-				LV = 15
 			},
 			{
 				ID = 201175,

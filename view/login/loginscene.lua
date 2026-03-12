@@ -230,6 +230,14 @@ function var0_0.setServerAccountData(arg0_14, arg1_14)
 		setText(findTF(var2_14, "mark/level"), setColorStr("lv." .. arg1_14.level, "#ffffffff"))
 
 		var1_14.level = arg1_14.level
+	elseif arg1_14 and arg1_14.isFail then
+		setActive(findTF(var2_14, "mark/level"), true)
+		setActive(findTF(var2_14, "mark/searching"), false)
+		setActive(findTF(var2_14, "mark/charactor"), false)
+
+		var1_14.level = 0
+
+		setText(findTF(var2_14, "mark/level"), setColorStr(i18n("query_role_fail"), "#ff9c00ff"))
 	else
 		setActive(findTF(var2_14, "mark/level"), true)
 		setActive(findTF(var2_14, "mark/searching"), false)

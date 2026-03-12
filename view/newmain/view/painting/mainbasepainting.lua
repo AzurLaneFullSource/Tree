@@ -286,6 +286,7 @@ function var0_0.DisplayWord(arg0_34, arg1_34)
 
 	if not var2_34 or var2_34 == nil or var2_34 == "" or var2_34 == "nil" then
 		arg0_34:OnEndChatting()
+		arg0_34:OnDisplayWordEnd()
 
 		return
 	end

@@ -589,6 +589,7 @@ function var0_0.getCommonNoticeData(arg0_28)
 end
 
 function var0_0.setTargetValue(arg0_29, arg1_29)
+	arg0_29.parameterSmooth = 0
 	arg0_29.parameterTargetValue = arg1_29
 end
 
@@ -850,7 +851,7 @@ function var0_0.updateParameterValue(arg0_44)
 	end
 
 	if arg0_44._parameterUpdateFlag and arg0_44.parameterValue ~= arg0_44.parameterTargetValue then
-		if math.abs(arg0_44.parameterValue - arg0_44.parameterTargetValue) < 0.01 then
+		if math.abs(arg0_44.parameterValue - arg0_44.parameterTargetValue) < 0.05 then
 			arg0_44:setParameterValue(arg0_44.parameterTargetValue)
 		elseif arg0_44.parameterSmoothTime and arg0_44.parameterSmoothTime > 0 then
 			local var0_44 = arg0_44.parameterValue

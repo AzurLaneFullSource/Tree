@@ -17,6 +17,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			end
 
 			if _IslandCore then
+				getProxy(IslandProxy):SetReconnectProcessing(true)
 				pg.NewGuideMgr.GetInstance():Stop()
 				pg.m02:sendNotification(GAME.ISLAND_ON_RECONNECT, {
 					reconnect = true,

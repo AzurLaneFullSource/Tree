@@ -3963,6 +3963,13 @@ pg.memory_template = setmetatable({
 		5028,
 		5029,
 		5030,
+		5031,
+		5032,
+		5033,
+		5034,
+		5035,
+		5036,
+		5037,
 		10011,
 		10012,
 		10013,
@@ -63590,6 +63597,111 @@ pg.base.memory_template = {
 		is_open = 0,
 		unlock_pre = {
 			"CHUNMANKEZHAN20"
+		}
+	},
+	[5031] = {
+		type = 1,
+		subtitle = "",
+		story = "AERBIEN1",
+		mask = "bg/bg_memory",
+		title = "The Forest's Invitation",
+		condition = "Begin \"Forest Breeze and the Compass of the Heart\" Chapter 1",
+		number = 0,
+		id = 5031,
+		icon = "memory_aerbien",
+		is_open = 0,
+		unlock_pre = {
+			"AERBIEN1"
+		}
+	},
+	[5032] = {
+		type = 1,
+		subtitle = "",
+		story = "AERBIEN2",
+		mask = "bg/bg_memory",
+		title = "Creatures of the Forest",
+		condition = "Begin \"Forest Breeze and the Compass of the Heart\" Chapter 2",
+		number = 0,
+		id = 5032,
+		icon = "memory_aerbien",
+		is_open = 0,
+		unlock_pre = {
+			"AERBIEN2"
+		}
+	},
+	[5033] = {
+		type = 1,
+		subtitle = "",
+		story = "AERBIEN3",
+		mask = "bg/bg_memory",
+		title = "Tea Party in the Sun",
+		condition = "Begin \"Forest Breeze and the Compass of the Heart\" Chapter 3",
+		number = 0,
+		id = 5033,
+		icon = "memory_aerbien",
+		is_open = 0,
+		unlock_pre = {
+			"AERBIEN3"
+		}
+	},
+	[5034] = {
+		type = 1,
+		subtitle = "",
+		story = "AERBIEN4",
+		mask = "bg/bg_memory",
+		title = "Voice of the Lost",
+		condition = "Begin \"Forest Breeze and the Compass of the Heart\" Chapter 4",
+		number = 0,
+		id = 5034,
+		icon = "memory_aerbien",
+		is_open = 0,
+		unlock_pre = {
+			"AERBIEN4"
+		}
+	},
+	[5035] = {
+		type = 1,
+		subtitle = "",
+		story = "AERBIEN5",
+		mask = "bg/bg_memory",
+		title = "Where the Fireflies Are",
+		condition = "Begin \"Forest Breeze and the Compass of the Heart\" Chapter 5",
+		number = 0,
+		id = 5035,
+		icon = "memory_aerbien",
+		is_open = 0,
+		unlock_pre = {
+			"AERBIEN5"
+		}
+	},
+	[5036] = {
+		type = 1,
+		subtitle = "",
+		story = "AERBIEN6",
+		mask = "bg/bg_memory",
+		title = "Soothing Winds",
+		condition = "Begin \"Forest Breeze and the Compass of the Heart\" Chapter 6",
+		number = 0,
+		id = 5036,
+		icon = "memory_aerbien",
+		is_open = 0,
+		unlock_pre = {
+			"AERBIEN6"
+		}
+	},
+	[5037] = {
+		type = 1,
+		subtitle = "",
+		story = "AERBIEN7",
+		mask = "bg/bg_memory",
+		title = "Albion's Feelings",
+		condition = "Begin \"Forest Breeze and the Compass of the Heart\" Chapter 7",
+		number = 0,
+		id = 5037,
+		icon = "memory_aerbien",
+		is_open = 0,
+		unlock_pre = {
+			"AERBIEN7"
 		}
 	},
 	[10011] = {

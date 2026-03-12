@@ -4775,7 +4775,7 @@ _G.pg.base.gametip.world_consume_carry_tips = {
 _G.pg.base.gametip.world_boss_help_meta = {
 	tip = {
 		{
-			info = "- META Showdown Overview -\n\nFrom <color=#92fc63>12/11/2025 to 3/11/2026</color>, challenge Yorktown META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Yorktown META</color> as well as other great rewards.\n<color=#ff5c5c>Note: Sync Points will expire after the event period ends.</color>\n\n- Acquiring and Analyzing META Coordinates -\n· META Coordinates can be earned by playing Operation Siren. Sufficient amounts of META Coordinates can be analyzed to begin a META Showdown.\n· You may perform Analysis <color=#92fc63>2 times</color> per day, resetting every day at midnight. Unused META Coordinates will be retained.\n· You need <color=#92fc63>100</color> META Coordinates to begin a META Showdown.\n\n- Fighting Your Bosses -\n· Your first time challenging a META boss that you spawned will not require Oil. From the second attempt onwards, cost of each attempt will gradually drop from <color=#92fc63>40</color> Oil to <color=#92fc63>0</color> Oil. (Will not consume a challenge attempt).\n· When a META Showdown boss reaches 0 HP, they will be defeated. Participants will be able to collect rewards, including a large amount of Sync Points.\n· Each META Showdown will only last for <color=#92fc63>24 hours</color>, after which it will disappear. Use Request Support if you need help.\n· After defeating a META boss, the difficulty of subsequent META Showdowns will increase by 1 level, up to a maximum of 15.\n\n- Fighting Others' Bosses -\n· In the Boss List menu, you can see requests that other Commanders have sent. When fighting another Commander's boss, you will immediately gain Sync Points based upon the <color=#92fc63>amount of DMG</color> you dealt.\n· Each attempt uses 1 Challenge Attempt, but uses no Oil.\n· You can have up to <color=#92fc63>3</color> Challenge attempts, resetting each day at midnight.\nEach META Showdown can have up to 30 participants.\n\n- Combat Instructions -\n· You cannot bring Meowfficers or submarines.\n· At the end of battle, no EXP is gained, and Morale will not be affected.\n· You cannot quit during an META Showdown. If connection is lost due to unstable network conditions, the following will occur:\na. If challenging a boss you discovered, you will spend 40 Oil (the first battle is still free), and any damage done will not count.\nb. If challenging someone else's boss, a challenge attempt will be used, but no rewards will be granted.\n<color=#92fc63>Please make sure your network conditions are stable before attempting an META Showdown!</color>\n\n- Artillery Support -\nFrom the 31st day of this META Showdown season onwards, whenever you begin an META Showdown, your fleet will gain an additional wave of artillery support. This artillery support will deal damage to the enemy and apply a special debuff that inflicts damage over time (this damage cannot be amplified by any bonus effects).\nThe later in the META Showdown season it is, the greater the damage inflicted by this artillery support.\n*Artillery Support will only appear during META Showdown battles you discover, and will trigger with each challenge attempt.",
+			info = "- META Showdown Overview -\n\nFrom <color=#92fc63>3/12/26 to 6/5/26</color>, challenge Regensburg META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Regensburg META</color> as well as other great rewards.\n<color=#ff5c5c>Note: Sync Points will expire after the event period ends.</color>\n\n- Acquiring and Analyzing META Coordinates -\n· META Coordinates can be earned by playing Operation Siren. Sufficient amounts of META Coordinates can be analyzed to begin a META Showdown.\n· You may perform Analysis <color=#92fc63>2 times</color> per day, resetting every day at midnight. Unused META Coordinates will be retained.\n· You need <color=#92fc63>100</color> META Coordinates to begin a META Showdown.\n\n- Fighting Your Bosses -\n· Your first time challenging a META boss that you spawned will not require Oil. From the second attempt onwards, the cost of each attempt will gradually drop from <color=#92fc63>40</color> Oil to <color=#92fc63>0</color> Oil. (Will not consume a challenge attempt).\n· When a META Showdown boss reaches 0 HP, they will be defeated. Participants will be able to collect rewards, including a large amount of Sync Points.\n· Each META Showdown will only last for <color=#92fc63>24 hours</color>, after which it will disappear. Use Request Support if you need help.\n· After defeating a META boss, the difficulty of subsequent META Showdowns will increase by 1 level, up to a maximum of 15.\n\n- Fighting Others' Bosses -\n· In the Boss List menu, you can see requests that other Commanders have sent. When fighting another Commander's boss, you will immediately gain Sync Points based upon the <color=#92fc63>amount of DMG</color> you dealt.\n· Each attempt uses 1 Challenge Attempt, but uses no Oil.\n· You can have up to <color=#92fc63>3</color> Challenge Attempts, resetting each day at midnight.\nEach META Showdown can have up to 30 participants.\n\n- Combat Instructions -\n· You cannot bring Meowfficers or submarines.\n· At the end of battle, no EXP is gained, and Morale will not be affected.\n· You cannot quit during an META Showdown. If connection is lost due to unstable network conditions, the following will occur:\na. If challenging a boss you discovered, you will spend 40 Oil (the first battle is still free), and any damage done will not count.\nb. If challenging someone else's boss, a challenge attempt will be used, but no rewards will be granted.\n<color=#92fc63>Please make sure your network conditions are stable before attempting an META Showdown!</color>\n\n- Artillery Support -\nFrom the 31st day of this META Showdown season onwards, whenever you begin an META Showdown, your fleet will gain an additional wave of artillery support. This artillery support will deal damage to the enemy and apply a special debuff that inflicts damage over time (this damage cannot be amplified by any bonus effects).\nThe later in the META Showdown season it is, the greater the damage inflicted by this artillery support.\n*Artillery Support will only appear during META Showdown battles you discover, and will trigger with each challenge attempt.",
 		},
 	},
 }
@@ -10184,7 +10184,7 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 }
 
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Get Moskva guaranteed with every 200 event builds (can be done up to 4 times)!",
+	tip = "Get Sovetsky Soyuz guaranteed with every 200 event builds (can be done up to 4 times)!",
 }
 
 _G.pg.base.gametip.buildship_heavy_tip = {
@@ -16234,6 +16234,10 @@ _G.pg.base.gametip.query_role_fail = {
 	tip = "Search failed.",
 }
 
+_G.pg.base.gametip.query_role_fail_and_retry = {
+	tip = "Failed to fetch data from some servers. Please try again.",
+}
+
 _G.pg.base.gametip.cumulative_victory_target_tip = {
 	tip = "Total Victories:",
 }
@@ -16621,7 +16625,7 @@ _G.pg.base.gametip.meta_help = {
 			info = "Obtainable rewards from accumulating Sync Points can be viewed and claimed on each corresponding META ship's tab in the META Lab. Furthermore, upon obtaining enough Sync Points, you'll be able to recruit a META ship.\n\n",
 		},
 		{
-			info = "From <color=#92fc63>12/11/2025 to 3/11/2026</color>, challenge Yorktown META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Yorktown META</color> as well as other great rewards.\n\n",
+			info = "From <color=#92fc63>3/12/26 to 6/5/26</color>, challenge Regensburg META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Regensburg META</color> as well as other great rewards.\n\n",
 		},
 		{
 			info = "2. About Rigging Fortification:",
@@ -35551,6 +35555,102 @@ _G.pg.base.gametip.help_chunjie_jiulou_2026 = {
 	},
 }
 
+_G.pg.base.gametip.LiquorFloorTaskUI_title = {
+	tip = "Business Missions",
+}
+
+_G.pg.base.gametip.LiquorFloorTaskUI_go = {
+	tip = "Confirm",
+}
+
+_G.pg.base.gametip.LiquorFloorTaskUI_get = {
+	tip = "Accept",
+}
+
+_G.pg.base.gametip.LiquorFloorTaskUI_got = {
+	tip = "Claimed",
+}
+
+_G.pg.base.gametip.LiquorFloor_gold_get = {
+	tip = "Collect Old Coins",
+}
+
+_G.pg.base.gametip.MoscowURCoreActivity_subtitle_1 = {
+	tip = "Springtide Inn Online",
+}
+
+_G.pg.base.gametip.MoscowURCoreActivity_subtitle_2 = {
+	tip = "Supply Station",
+}
+
+_G.pg.base.gametip.loveactivity_help_tips = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/love_help_1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/love_help_2",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/love_help_3",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/love_help_4",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
+
+_G.pg.base.gametip.spring_present_tips_btn = {
+	tip = "New Year's Warmth",
+}
+
+_G.pg.base.gametip.spring_present_tips_time = {
+	tip = "Event Period: 00:00, February 17 - 23:59, March 3",
+}
+
+_G.pg.base.gametip.spring_present_tips0 = {
+	tip = "Please disable the Random Secretary feature and try again.",
+}
+
+_G.pg.base.gametip.spring_present_tips1 = {
+	tip = "The leftmost secretary shipgirl in your list will send a message to your mailbox. Continue?",
+}
+
+_G.pg.base.gametip.spring_present_tips2 = {
+	tip = "This shipgirl cannot send you a New Year gift. Please change your Secretary shipgirl and try again.",
+}
+
+_G.pg.base.gametip.spring_present_tips3 = {
+	tip = "A gift has been sent to your mailbox!",
+}
+
 _G.pg.base.gametip.island_gift_tip_title = {
 	tip = "Stamina",
 }
@@ -35697,101 +35797,5 @@ _G.pg.base.gametip.LiquorFloor_tip = {
 			info = "- Event Overview -\nDuring the Springtide Inn Online event, manage your inn facilities, host guests, and unlock content based on the success of your management to earn rewards.\n\n1. Attached to the inn are various facilities with a range of effects that can be improved by leveling the facilities. Some level-ups require Sycees, a resource gained by completing event missions.\n2. The Restaurant, the Gazebo, the Garden, and the Pond automatically generate Old Coins, an event resource, which you can manually claim. Additionally, leveling up these facilities makes them produce more Old Coins. Each facility can store up to 6 hours' worth of Old Coins.\n3. Leveling up the Warehouse increases your maximum Old Coins capacity.\n4. You can assign your shipgirls to the Parlor. This will give you additional Old Coins at regular intervals. Furthermore, shipgirls assigned to the Parlor gain more Affinity from sorties. Leveling up the Parlor gives you more slots to assign shipgirls to.\n5. When you have enough Old Coins to reach certain thresholds, your Inn Level will go up.\n6. Once your Inn and its facilities reach certain levels, you will unlock additional content such as new story chapters.\n7. You can complete Business Missions to earn various rewards, including more Old Coins, a portrait frame, event-exclusive furniture, and more.",
 		},
 	},
-}
-
-_G.pg.base.gametip.LiquorFloorTaskUI_title = {
-	tip = "Business Missions",
-}
-
-_G.pg.base.gametip.LiquorFloorTaskUI_go = {
-	tip = "Confirm",
-}
-
-_G.pg.base.gametip.LiquorFloorTaskUI_get = {
-	tip = "Accept",
-}
-
-_G.pg.base.gametip.LiquorFloorTaskUI_got = {
-	tip = "Claimed",
-}
-
-_G.pg.base.gametip.LiquorFloor_gold_get = {
-	tip = "Collect Old Coins",
-}
-
-_G.pg.base.gametip.MoscowURCoreActivity_subtitle_1 = {
-	tip = "Springtide Inn Online",
-}
-
-_G.pg.base.gametip.MoscowURCoreActivity_subtitle_2 = {
-	tip = "Supply Station",
-}
-
-_G.pg.base.gametip.loveactivity_help_tips = {
-	tip = {
-		{
-			icon = {
-				atlas = "helpbg/love_help_1",
-				path = "",
-			},
-		},
-		{
-			icon = {
-				atlas = "helpbg/love_help_2",
-				path = "",
-			},
-		},
-		{
-			icon = {
-				atlas = "helpbg/love_help_3",
-				path = "",
-			},
-		},
-		{
-			icon = {
-				atlas = "helpbg/love_help_4",
-				path = "",
-			},
-		},
-		ImageMode = true,
-		defaultpage = 1,
-		disableScroll = true,
-		pageMode = true,
-		windowSize = {
-			x = 1263,
-			y = 873,
-		},
-		windowPos = {
-			y = -70,
-		},
-		helpSize = {
-			x = 1176,
-			y = 1024,
-		},
-	},
-}
-
-_G.pg.base.gametip.spring_present_tips_btn = {
-	tip = "New Year's Warmth",
-}
-
-_G.pg.base.gametip.spring_present_tips_time = {
-	tip = "Event Period: 00:00, February 17 - 23:59, March 3",
-}
-
-_G.pg.base.gametip.spring_present_tips0 = {
-	tip = "Please disable the Random Secretary feature and try again.",
-}
-
-_G.pg.base.gametip.spring_present_tips1 = {
-	tip = "The leftmost secretary shipgirl in your list will send a message to your mailbox. Continue?",
-}
-
-_G.pg.base.gametip.spring_present_tips2 = {
-	tip = "This shipgirl cannot send you a New Year gift. Please change your Secretary shipgirl and try again.",
-}
-
-_G.pg.base.gametip.spring_present_tips3 = {
-	tip = "A gift has been sent to your mailbox!",
 }
 

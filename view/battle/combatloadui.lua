@@ -124,7 +124,7 @@ function var0_0.Preload(arg0_6)
 			table.insert(var9_6, var1_6:getShipById(iter15_6))
 		end
 
-		local var12_6, var13_6 = var0_6.GetPlayerShipResource(var9_6, contextData.system)
+		local var12_6, var13_6 = var0_6.GetPlayerShipResource(var9_6, arg0_6.contextData.system)
 
 		for iter16_6, iter17_6 in ipairs(var12_6) do
 			var0_6:AddPreloadResource(iter17_6)

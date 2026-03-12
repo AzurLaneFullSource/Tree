@@ -229368,7 +229368,7 @@ _G.pg.base.chapter_template[1780051] = {
 
 _G.pg.base.chapter_template[1790001] = {
 	ItemTransformPattern = "",
-	act_id = 5221,
+	act_id = 50461,
 	air_dominance = 100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -229405,7 +229405,7 @@ _G.pg.base.chapter_template[1790001] = {
 	model = 2,
 	name = "Distant Voyage",
 	num_1 = 1,
-	num_2 = 10,
+	num_2 = 7,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -229413,7 +229413,7 @@ _G.pg.base.chapter_template[1790001] = {
 	pos_y = "0.470277777",
 	pre_story = 0,
 	profiles = "Soyuz leads a fleet to Antarctica in pursuit of a crystal with rigging resonance properties. A surprise guest joins them.",
-	progress_boss = 50,
+	progress_boss = 100,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -230105,7 +230105,7 @@ _G.pg.base.chapter_template[1790001] = {
 
 _G.pg.base.chapter_template[1790002] = {
 	ItemTransformPattern = "",
-	act_id = 5221,
+	act_id = 50461,
 	air_dominance = 130,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -230142,7 +230142,7 @@ _G.pg.base.chapter_template[1790002] = {
 	model = 2,
 	name = "Snowmelt Area",
 	num_1 = 1,
-	num_2 = 11,
+	num_2 = 7,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -230150,7 +230150,7 @@ _G.pg.base.chapter_template[1790002] = {
 	pos_y = "0.201111107",
 	pre_story = 0,
 	profiles = "Unusually rapid snowmelt has been observed around the crystal mining site. Suspecting something, Soyuz orders further investigation.",
-	progress_boss = 50,
+	progress_boss = 100,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -230800,7 +230800,7 @@ _G.pg.base.chapter_template[1790002] = {
 		"XUEJINGMIZONG8",
 	},
 	defeat_story_count = {
-		2,
+		1,
 	},
 	npc_data = {},
 	risk_levels = {
@@ -230833,7 +230833,7 @@ _G.pg.base.chapter_template[1790002] = {
 
 _G.pg.base.chapter_template[1790003] = {
 	ItemTransformPattern = "",
-	act_id = 5221,
+	act_id = 50461,
 	air_dominance = 165,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -230870,7 +230870,7 @@ _G.pg.base.chapter_template[1790003] = {
 	model = 2,
 	name = "Ring of the Wise",
 	num_1 = 1,
-	num_2 = 15,
+	num_2 = 11,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -230878,7 +230878,7 @@ _G.pg.base.chapter_template[1790003] = {
 	pos_y = "0.470277777",
 	pre_story = 0,
 	profiles = "The team forges on into a secret bunker built to survive doomsday. Signs say an invader was here first and tampered with something.",
-	progress_boss = 34,
+	progress_boss = 50,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -231534,7 +231534,7 @@ _G.pg.base.chapter_template[1790003] = {
 	},
 	defeat_story_count = {
 		1,
-		3,
+		2,
 	},
 	npc_data = {},
 	risk_levels = {
@@ -231567,7 +231567,7 @@ _G.pg.base.chapter_template[1790003] = {
 
 _G.pg.base.chapter_template[1790004] = {
 	ItemTransformPattern = "",
-	act_id = 5222,
+	act_id = 50462,
 	air_dominance = 210,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -231604,7 +231604,7 @@ _G.pg.base.chapter_template[1790004] = {
 	model = 2,
 	name = "Eternal Imperiya",
 	num_1 = 1,
-	num_2 = 14,
+	num_2 = 10,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -231612,7 +231612,7 @@ _G.pg.base.chapter_template[1790004] = {
 	pos_y = "0.470277777",
 	pre_story = 0,
 	profiles = "Inside an illusory palace, Soyuz confronts Pamiat', who isn't quite who she thought. What is behind her mask, and what did she come here to do?",
-	progress_boss = 50,
+	progress_boss = 100,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -232303,7 +232303,7 @@ _G.pg.base.chapter_template[1790004] = {
 
 _G.pg.base.chapter_template[1790005] = {
 	ItemTransformPattern = "",
-	act_id = 5222,
+	act_id = 50462,
 	air_dominance = 270,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -233034,7 +233034,7 @@ _G.pg.base.chapter_template[1790005] = {
 
 _G.pg.base.chapter_template[1790006] = {
 	ItemTransformPattern = "",
-	act_id = 5222,
+	act_id = 50462,
 	air_dominance = 330,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -233975,7 +233975,7 @@ _G.pg.base.chapter_template[1790006] = {
 
 _G.pg.base.chapter_template[1790021] = {
 	ItemTransformPattern = "",
-	act_id = 5221,
+	act_id = 50461,
 	air_dominance = 455,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -234012,7 +234012,7 @@ _G.pg.base.chapter_template[1790021] = {
 	model = 2,
 	name = "Distant Voyage",
 	num_1 = 1,
-	num_2 = 13,
+	num_2 = 9,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -234020,7 +234020,7 @@ _G.pg.base.chapter_template[1790021] = {
 	pos_y = "0.470277777",
 	pre_story = 0,
 	profiles = "Soyuz leads a fleet to Antarctica in pursuit of a crystal with rigging resonance properties. A surprise guest joins them.",
-	progress_boss = 50,
+	progress_boss = 100,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -234753,7 +234753,7 @@ _G.pg.base.chapter_template[1790021] = {
 
 _G.pg.base.chapter_template[1790022] = {
 	ItemTransformPattern = "",
-	act_id = 5221,
+	act_id = 50461,
 	air_dominance = 605,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -234790,7 +234790,7 @@ _G.pg.base.chapter_template[1790022] = {
 	model = 2,
 	name = "Snowmelt Area",
 	num_1 = 1,
-	num_2 = 13,
+	num_2 = 9,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -234798,7 +234798,7 @@ _G.pg.base.chapter_template[1790022] = {
 	pos_y = "0.201111107",
 	pre_story = 0,
 	profiles = "Unusually rapid snowmelt has been observed around the crystal mining site. Suspecting something, Soyuz orders further investigation.",
-	progress_boss = 50,
+	progress_boss = 100,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -235489,7 +235489,7 @@ _G.pg.base.chapter_template[1790022] = {
 		"XUEJINGMIZONG8",
 	},
 	defeat_story_count = {
-		2,
+		1,
 	},
 	npc_data = {},
 	risk_levels = {
@@ -235522,7 +235522,7 @@ _G.pg.base.chapter_template[1790022] = {
 
 _G.pg.base.chapter_template[1790023] = {
 	ItemTransformPattern = "",
-	act_id = 5221,
+	act_id = 50461,
 	air_dominance = 775,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -235559,7 +235559,7 @@ _G.pg.base.chapter_template[1790023] = {
 	model = 2,
 	name = "Ring of the Wise",
 	num_1 = 1,
-	num_2 = 19,
+	num_2 = 14,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -235567,7 +235567,7 @@ _G.pg.base.chapter_template[1790023] = {
 	pos_y = "0.470277777",
 	pre_story = 0,
 	profiles = "The team forges on into a secret bunker built to survive doomsday. Signs say an invader was here first and tampered with something.",
-	progress_boss = 34,
+	progress_boss = 50,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -236264,7 +236264,7 @@ _G.pg.base.chapter_template[1790023] = {
 	},
 	defeat_story_count = {
 		1,
-		3,
+		2,
 	},
 	npc_data = {},
 	risk_levels = {
@@ -236297,7 +236297,7 @@ _G.pg.base.chapter_template[1790023] = {
 
 _G.pg.base.chapter_template[1790024] = {
 	ItemTransformPattern = "",
-	act_id = 5222,
+	act_id = 50462,
 	air_dominance = 850,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -236334,7 +236334,7 @@ _G.pg.base.chapter_template[1790024] = {
 	model = 2,
 	name = "Eternal Imperiya",
 	num_1 = 1,
-	num_2 = 21,
+	num_2 = 11,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -236342,7 +236342,7 @@ _G.pg.base.chapter_template[1790024] = {
 	pos_y = "0.470277777",
 	pre_story = 0,
 	profiles = "Inside an illusory palace, Soyuz confronts Pamiat', who isn't quite who she thought. What is behind her mask, and what did she come here to do?",
-	progress_boss = 34,
+	progress_boss = 100,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -237078,7 +237078,7 @@ _G.pg.base.chapter_template[1790024] = {
 
 _G.pg.base.chapter_template[1790025] = {
 	ItemTransformPattern = "",
-	act_id = 5222,
+	act_id = 50462,
 	air_dominance = 1100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -237115,7 +237115,7 @@ _G.pg.base.chapter_template[1790025] = {
 	model = 2,
 	name = "Commander, Engaging",
 	num_1 = 1,
-	num_2 = 24,
+	num_2 = 18,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -237123,7 +237123,7 @@ _G.pg.base.chapter_template[1790025] = {
 	pos_y = "0.201111107",
 	pre_story = 0,
 	profiles = "The Commander is informed of the crisis in Antarctica, and so intervenes and unifies all forces on site. How will this battle be coordinated from thousands of kilometers away?",
-	progress_boss = 34,
+	progress_boss = 50,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -237822,7 +237822,7 @@ _G.pg.base.chapter_template[1790025] = {
 	},
 	defeat_story_count = {
 		1,
-		3,
+		2,
 	},
 	npc_data = {},
 	risk_levels = {
@@ -237856,7 +237856,7 @@ _G.pg.base.chapter_template[1790025] = {
 
 _G.pg.base.chapter_template[1790026] = {
 	ItemTransformPattern = "",
-	act_id = 5222,
+	act_id = 50462,
 	air_dominance = 1410,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -238844,7 +238844,7 @@ _G.pg.base.chapter_template[1790026] = {
 
 _G.pg.base.chapter_template[1790041] = {
 	ItemTransformPattern = "",
-	act_id = 5222,
+	act_id = 50462,
 	air_dominance = 1820,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -240465,7 +240465,7 @@ _G.pg.base.chapter_template[1790041] = {
 
 _G.pg.base.chapter_template[1790051] = {
 	ItemTransformPattern = "",
-	act_id = 5222,
+	act_id = 50462,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,

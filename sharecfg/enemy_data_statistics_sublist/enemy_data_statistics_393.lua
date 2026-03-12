@@ -1,5 +1,42 @@
 pg = pg or {}
 pg.enemy_data_statistics_393 = {
+	[295189] = {
+		cannon = 237,
+		name = "Kirov META",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 53,
+		base = 90871,
+		durability_growth = 0,
+		antiaircraft = 247,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 30,
+		luck = 50,
+		hit = 75,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 229,
+		durability = 390000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295189,
+		buff_list = {
+			{
+				ID = 200701,
+				LV = 9
+			}
+		}
+	},
 	[295190] = {
 		cannon = 252,
 		name = "Kirov META",
@@ -1237,43 +1274,6 @@ pg.enemy_data_statistics_393 = {
 		antisub = 0,
 		fog_fx = "",
 		id = 295221,
-		buff_list = {
-			{
-				ID = 200956,
-				LV = 1
-			}
-		}
-	},
-	[295222] = {
-		cannon = 301,
-		name = "Wichita META",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 0,
-		hit_growth = 0,
-		dodge = 64,
-		base = 90941,
-		durability_growth = 0,
-		antiaircraft = 258,
-		reload_growth = 0,
-		dodge_growth = 0,
-		speed = 30,
-		luck = 50,
-		hit = 90,
-		antisub_growth = 0,
-		air_growth = 0,
-		battle_unit_type = 90,
-		torpedo = 0,
-		durability = 711000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295222,
 		buff_list = {
 			{
 				ID = 200956,

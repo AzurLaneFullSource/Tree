@@ -1754,6 +1754,40 @@ pg.dorm3d_furniture_template = {
 			"no_bake_pay_prop/bedroom"
 		}
 	},
+	[1462] = {
+		name = "Quiet Contemplation",
+		rarity = 4,
+		is_special = 0,
+		type = 6,
+		icon = "dorm3dIcon/3Ddrom_aijier_PremiumFurniture2",
+		room_id = 14,
+		desc = "A desk with a classic design and smooth surface. Its sturdy frame provides plenty of storage space, making it ideal for study and work.",
+		acesses = "",
+		model = "Pay_Aijierhostel/pre_db_aijier_study01",
+		id = 1462,
+		is_exclusive = 0,
+		target_slots = {
+			1140201
+		},
+		touch_id = {
+			{
+				49905,
+				4990550
+			}
+		},
+		shop_id = {
+			270602
+		},
+		unlock_tips = {
+			3
+		},
+		unlock_banners = {
+			"banner_furniture1461"
+		},
+		scene_hides = {
+			"no_bake_pay_prop/study"
+		}
+	},
 	get_id_list_by_room_id = {
 		{
 			1,
@@ -1834,7 +1868,8 @@ pg.dorm3d_furniture_template = {
 			1413,
 			1414,
 			1415,
-			1461
+			1461,
+			1462
 		}
 	},
 	all = {
@@ -1904,6 +1939,7 @@ pg.dorm3d_furniture_template = {
 		1413,
 		1414,
 		1415,
-		1461
+		1461,
+		1462
 	}
 }

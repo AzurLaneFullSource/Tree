@@ -25,9 +25,13 @@ end
 function var0_0.SetActivity(arg0_6, arg1_6)
 	arg0_6.activity = getProxy(ActivityProxy):getActivityById(arg1_6)
 
-	local var0_6, var1_6 = arg0_6.activity:GetChangeCount()
+	if arg0_6.contextData.isRepair then
+		setText(arg0_6.textHelp, i18n("loveletter2018_ui_3"))
+	else
+		local var0_6, var1_6 = arg0_6.activity:GetChangeCount()
 
-	setText(arg0_6.textHelp, i18n("loveactivity_ui_12", var1_6 - var0_6, var1_6))
+		setText(arg0_6.textHelp, i18n("loveactivity_ui_12", var1_6 - var0_6, var1_6))
+	end
 end
 
 function var0_0.didEnter(arg0_7)
@@ -36,7 +40,12 @@ end
 
 function var0_0.UpdateDisplay(arg0_8)
 	arg0_8:UpdatePainting()
-	setText(arg0_8.textInfo, i18n("loveactivity_ui_11", setColorStr(arg0_8.ll:GetName(), "#f3709e")))
+
+	if arg0_8.contextData.isRepair then
+		setText(arg0_8.textInfo, i18n("loveletter2018_ui_2", arg0_8.ll:GetName()))
+	else
+		setText(arg0_8.textInfo, i18n("loveactivity_ui_11", setColorStr(arg0_8.ll:GetName(), "#f3709e")))
+	end
 end
 
 function var0_0.UpdatePainting(arg0_9)

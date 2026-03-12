@@ -136308,6 +136308,59 @@ _G.pg.base.equip_data_statistics[80592] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[80611] = {
+	ammo = 10,
+	descrip = "技能弹幕",
+	icon = "1",
+	id = 80611,
+	name = "专属弹幕-雷根斯堡METAI",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 2,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61831,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80612] = {
+	base = 80611,
+	id = 80612,
+	name = "专属弹幕-雷根斯堡METAII",
+	weapon_id = {
+		61832,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[85000] = {
 	ammo = 3,
 	attribute_2 = "cannon",

@@ -356,40 +356,47 @@ function var0_0.setNoticeDetail(arg0_18, arg1_18)
 			return string.sub(arg0_23, var2_23 + 1, var3_23 - 1)
 		end
 
-		arg0_18._contentInfo = {}
+		local function var3_18(arg0_24)
+			_.each(string.split(arg0_24, "<segment/>"), function(arg0_25)
+				local var0_25 = var2_18(arg0_25)
 
-		local var3_18 = 1
-
-		for iter0_18 in string.gmatch(arg1_18.content, "<banner>%S-</banner>") do
-			local var4_18, var5_18 = string.find(iter0_18, "<banner>")
-			local var6_18, var7_18 = string.find(iter0_18, "</banner>")
-			local var8_18 = string.sub(iter0_18, var5_18 + 1, var6_18 - 1)
-			local var9_18, var10_18 = string.find(arg1_18.content, iter0_18, var3_18, true)
-
-			if var9_18 ~= nil then
-				local var11_18 = var2_18(string.sub(arg1_18.content, var3_18, var9_18 - 1))
-
-				if #var11_18 > 0 then
+				if #var0_25 > 0 then
 					table.insert(arg0_18._contentInfo, {
 						type = var0_0.CONTENT_TYPE.RICHTEXT,
-						text = var11_18
+						text = var0_25
 					})
+				end
+			end)
+		end
+
+		arg0_18._contentInfo = {}
+
+		local var4_18 = 1
+
+		for iter0_18 in string.gmatch(arg1_18.content, "<banner>%S-</banner>") do
+			local var5_18, var6_18 = string.find(iter0_18, "<banner>")
+			local var7_18, var8_18 = string.find(iter0_18, "</banner>")
+			local var9_18 = string.sub(iter0_18, var6_18 + 1, var7_18 - 1)
+			local var10_18, var11_18 = string.find(arg1_18.content, iter0_18, var4_18, true)
+
+			if var10_18 ~= nil then
+				local var12_18 = var2_18(string.sub(arg1_18.content, var4_18, var10_18 - 1))
+
+				if #var12_18 > 0 then
+					var3_18(var12_18)
 				end
 			end
 
 			table.insert(arg0_18._contentInfo, {
 				type = var0_0.CONTENT_TYPE.BANNER,
-				text = var8_18
+				text = var9_18
 			})
 
-			var3_18 = var10_18 + 1
+			var4_18 = var11_18 + 1
 		end
 
-		if var3_18 < #arg1_18.content then
-			table.insert(arg0_18._contentInfo, {
-				type = var0_0.CONTENT_TYPE.RICHTEXT,
-				text = var2_18(string.sub(arg1_18.content, var3_18, #arg1_18.content))
-			})
+		if var4_18 < #arg1_18.content then
+			var3_18(string.sub(arg1_18.content, var4_18, #arg1_18.content))
 		end
 
 		for iter1_18, iter2_18 in pairs(arg0_18._contentInfo) do
@@ -404,58 +411,58 @@ function var0_0.setNoticeDetail(arg0_18, arg1_18)
 	end
 end
 
-function var0_0.bannerRotate(arg0_24)
-	for iter0_24, iter1_24 in pairs(arg0_24._contentList) do
-		local var0_24 = iter1_24:Find("loading/Image")
+function var0_0.bannerRotate(arg0_26)
+	for iter0_26, iter1_26 in pairs(arg0_26._contentList) do
+		local var0_26 = iter1_26:Find("loading/Image")
 
-		if var0_24 then
-			table.insert(arg0_24.LTList, LeanTween.rotateAroundLocal(rtf(var0_24), Vector3(0, 0, -1), 360, 5):setLoopClamp().uniqueId)
+		if var0_26 then
+			table.insert(arg0_26.LTList, LeanTween.rotateAroundLocal(rtf(var0_26), Vector3(0, 0, -1), 360, 5):setLoopClamp().uniqueId)
 		end
 	end
 end
 
-function var0_0.clearLeanTween(arg0_25)
-	for iter0_25, iter1_25 in pairs(arg0_25.LTList or {}) do
-		LeanTween.cancel(iter1_25)
+function var0_0.clearLeanTween(arg0_27)
+	for iter0_27, iter1_27 in pairs(arg0_27.LTList or {}) do
+		LeanTween.cancel(iter1_27)
 	end
 end
 
-function var0_0.clearContent(arg0_26)
-	for iter0_26, iter1_26 in pairs(arg0_26._contentList) do
-		Destroy(iter1_26)
+function var0_0.clearContent(arg0_28)
+	for iter0_28, iter1_28 in pairs(arg0_28._contentList) do
+		Destroy(iter1_28)
 	end
 
-	arg0_26._contentList = {}
+	arg0_28._contentList = {}
 end
 
-function var0_0.clearTab(arg0_27)
-	if arg0_27.subTabLT then
-		LeanTween.cancel(arg0_27.subTabLT)
+function var0_0.clearTab(arg0_29)
+	if arg0_29.subTabLT then
+		LeanTween.cancel(arg0_29.subTabLT)
 
-		arg0_27.subTabLT = nil
+		arg0_29.subTabLT = nil
 	end
 
-	arg0_27.currentSubTab = nil
+	arg0_29.currentSubTab = nil
 
-	for iter0_27, iter1_27 in pairs(arg0_27._subTabList) do
-		Destroy(iter1_27)
+	for iter0_29, iter1_29 in pairs(arg0_29._subTabList) do
+		Destroy(iter1_29)
 	end
 
-	arg0_27._subTabList = {}
-	arg0_27._subTabAnims = {}
+	arg0_29._subTabList = {}
+	arg0_29._subTabAnims = {}
 end
 
-function var0_0.clearLoadingPic(arg0_28)
-	for iter0_28, iter1_28 in pairs(arg0_28._loadingFlag) do
-		BulletinBoardMgr.Inst:StopLoader(iter0_28)
+function var0_0.clearLoadingPic(arg0_30)
+	for iter0_30, iter1_30 in pairs(arg0_30._loadingFlag) do
+		BulletinBoardMgr.Inst:StopLoader(iter0_30)
 
-		arg0_28._loadingFlag[iter0_28] = nil
+		arg0_30._loadingFlag[iter0_30] = nil
 	end
 end
 
-function var0_0.willExit(arg0_29)
-	arg0_29:clearLoadingPic()
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_29._tf)
+function var0_0.willExit(arg0_31)
+	arg0_31:clearLoadingPic()
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_31._tf)
 end
 
 return var0_0

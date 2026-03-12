@@ -150,20 +150,29 @@ end
 function var0_0.updateCardList(arg0_15)
 	local var0_15 = {}
 	local var1_15 = {}
+	local var2_15
 
-	for iter0_15, iter1_15 in ipairs(pg.lover_character_template.all) do
-		local var2_15 = pg.ship_data_group.get_id_list_by_group_type[iter1_15]
+	if arg0_15.contextData.isRepair then
+		var2_15 = underscore.map(pg.lover_letter_content.get_id_list_by_year[2018], function(arg0_16)
+			return pg.lover_letter_content[arg0_16].ship_group
+		end)
+	else
+		var2_15 = pg.lover_character_template.all
+	end
 
-		assert(not var2_15 or #var2_15 == 1)
+	for iter0_15, iter1_15 in ipairs(var2_15) do
+		local var3_15 = pg.ship_data_group.get_id_list_by_group_type[iter1_15]
 
-		if not var2_15 then
+		assert(not var3_15 or #var3_15 == 1)
+
+		if not var3_15 then
 			warning(iter1_15)
 		elseif underscore.any(table.insertto({
 			iter1_15
-		}, pg.lover_character_template[iter1_15].relate_group_id), function(arg0_16)
-			return arg0_15.shipGroups[arg0_16]
+		}, pg.lover_character_template[iter1_15].relate_group_id), function(arg0_17)
+			return arg0_15.shipGroups[arg0_17]
 		end) then
-			table.insert(var1_15, var2_15[1])
+			table.insert(var1_15, var3_15[1])
 		end
 	end
 
@@ -171,47 +180,47 @@ function var0_0.updateCardList(arg0_15)
 
 	if var0_0.ShipIndex.typeIndex == ShipIndexConst.TypeAll and var0_0.ShipIndex.rarityIndex == ShipIndexConst.RarityAll and var0_0.ShipIndex.campIndex == ShipIndexConst.CampAll then
 		for iter2_15, iter3_15 in ipairs(var1_15) do
-			local var3_15 = pg.ship_data_group[iter3_15]
-			local var4_15
-			local var5_15 = false
+			local var4_15 = pg.ship_data_group[iter3_15]
+			local var5_15
+			local var6_15 = false
 
-			if var3_15 then
-				var4_15 = arg0_15.shipGroups[var3_15.group_type] or ShipGroup.New({
-					id = var3_15.group_type
+			if var4_15 then
+				var5_15 = arg0_15.shipGroups[var4_15.group_type] or ShipGroup.New({
+					id = var4_15.group_type
 				})
-				var5_15 = Nation.IsLinkType(ShipGroup.getDefaultShipConfig(var3_15.group_type).nationality)
+				var6_15 = Nation.IsLinkType(ShipGroup.getDefaultShipConfig(var4_15.group_type).nationality)
 			end
 
-			local var6_15 = var3_15.handbook_type
-			local var7_15 = var1_0(var6_15, var5_15, iter3_15)
+			local var7_15 = var4_15.handbook_type
+			local var8_15 = var1_0(var7_15, var6_15, iter3_15)
 
-			if var7_15 ~= -1 then
+			if var8_15 ~= -1 then
 				var0_15[iter2_15] = {
 					showTrans = false,
-					code = var7_15,
-					group = var4_15
+					code = var8_15,
+					group = var5_15
 				}
 			end
 		end
 	else
 		for iter4_15, iter5_15 in ipairs(var1_15) do
-			local var8_15 = pg.ship_data_group[iter5_15]
+			local var9_15 = pg.ship_data_group[iter5_15]
 
-			if var8_15 then
-				local var9_15 = ShipGroup.New({
-					id = var8_15.group_type
+			if var9_15 then
+				local var10_15 = ShipGroup.New({
+					id = var9_15.group_type
 				})
-				local var10_15 = arg0_15.shipGroups[var8_15.group_type]
+				local var11_15 = arg0_15.shipGroups[var9_15.group_type]
 
-				if var9_15 and ShipIndexConst.filterByType(var9_15, var0_0.ShipIndex.typeIndex) and ShipIndexConst.filterByRarity(var9_15, var0_0.ShipIndex.rarityIndex) then
-					local var11_15 = Nation.IsLinkType(var9_15:getNation())
-					local var12_15 = var8_15.handbook_type
+				if var10_15 and ShipIndexConst.filterByType(var10_15, var0_0.ShipIndex.typeIndex) and ShipIndexConst.filterByRarity(var10_15, var0_0.ShipIndex.rarityIndex) then
+					local var12_15 = Nation.IsLinkType(var10_15:getNation())
+					local var13_15 = var9_15.handbook_type
 
-					if ShipIndexConst.filterByCamp(var9_15, var0_0.ShipIndex.campIndex) then
+					if ShipIndexConst.filterByCamp(var10_15, var0_0.ShipIndex.campIndex) then
 						var0_15[#var0_15 + 1] = {
 							showTrans = false,
-							code = var1_0(var12_15, var11_15, iter5_15),
-							group = var10_15
+							code = var1_0(var13_15, var12_15, iter5_15),
+							group = var11_15
 						}
 					end
 				end
@@ -224,78 +233,78 @@ function var0_0.updateCardList(arg0_15)
 	arg0_15.cardList:SetTotalCount(#arg0_15.cardInfos, -1)
 end
 
-local function var2_0(arg0_17)
-	return getProxy(ShipSkinProxy):GetAllSkinForARCamera(arg0_17)
+local function var2_0(arg0_18)
+	return getProxy(ShipSkinProxy):GetAllSkinForARCamera(arg0_18)
 end
 
-local function var3_0(arg0_18)
-	local var0_18 = {}
-	local var1_18 = getProxy(ShipSkinProxy)
-	local var2_18 = var1_18:getSkinList()
-	local var3_18 = getProxy(CollectionProxy):getShipGroup(arg0_18)
+local function var3_0(arg0_19)
+	local var0_19 = {}
+	local var1_19 = getProxy(ShipSkinProxy)
+	local var2_19 = var1_19:getSkinList()
+	local var3_19 = getProxy(CollectionProxy):getShipGroup(arg0_19)
 
-	if var3_18 then
-		local var4_18 = ShipGroup.getSkinList(arg0_18)
+	if var3_19 then
+		local var4_19 = ShipGroup.getSkinList(arg0_19)
 
-		for iter0_18, iter1_18 in ipairs(var4_18) do
-			if iter1_18.skin_type == ShipSkin.SKIN_TYPE_DEFAULT or table.contains(var2_18, iter1_18.id) or iter1_18.skin_type == ShipSkin.SKIN_TYPE_REMAKE and var3_18.trans or iter1_18.skin_type == ShipSkin.SKIN_TYPE_PROPOSE and var3_18.married == 1 or var1_18:hasSkin(iter1_18.id) then
-				var0_18[iter1_18.id] = true
+		for iter0_19, iter1_19 in ipairs(var4_19) do
+			if iter1_19.skin_type == ShipSkin.SKIN_TYPE_DEFAULT or table.contains(var2_19, iter1_19.id) or iter1_19.skin_type == ShipSkin.SKIN_TYPE_REMAKE and var3_19.trans or iter1_19.skin_type == ShipSkin.SKIN_TYPE_PROPOSE and var3_19.married == 1 or var1_19:hasSkin(iter1_19.id) then
+				var0_19[iter1_19.id] = true
 			end
 		end
 	end
 
-	return var0_18
+	return var0_19
 end
 
-function var0_0.onInitCard(arg0_19, arg1_19)
-	local var0_19 = LoveLetterShipCard.New(arg1_19)
+function var0_0.onInitCard(arg0_20, arg1_20)
+	local var0_20 = LoveLetterShipCard.New(arg1_20)
 
-	onButton(arg0_19, var0_19.go, function()
-		if var0_19.shipGroup then
-			arg0_19:emit(var0_0.SELECT_CHAR, var0_19.shipGroup.id)
+	onButton(arg0_20, var0_20.go, function()
+		if var0_20.shipGroup then
+			arg0_20:emit(var0_0.SELECT_CHAR, var0_20.shipGroup.id)
 		end
 	end)
 
-	arg0_19.cardItems[arg1_19] = var0_19
+	arg0_20.cardItems[arg1_20] = var0_20
 end
 
-function var0_0.onUpdateCard(arg0_21, arg1_21, arg2_21)
-	local var0_21 = arg0_21.cardItems[arg2_21]
-
-	if not var0_21 then
-		arg0_21:onInitCard(arg2_21)
-
-		var0_21 = arg0_21.cardItems[arg2_21]
-	end
-
-	local var1_21 = arg1_21 + 1
-	local var2_21 = arg0_21.cardInfos[var1_21]
-
-	if not var2_21 then
-		return
-	end
-
-	local var3_21
-
-	if var2_21.group then
-		local var4_21 = arg0_21.proposeList[var2_21.group.id]
-	end
-
-	var0_21:update(var2_21.group)
-end
-
-function var0_0.onReturnCard(arg0_22, arg1_22, arg2_22)
-	if arg0_22.exited then
-		return
-	end
-
+function var0_0.onUpdateCard(arg0_22, arg1_22, arg2_22)
 	local var0_22 = arg0_22.cardItems[arg2_22]
 
-	if var0_22 then
-		var0_22:clear()
+	if not var0_22 then
+		arg0_22:onInitCard(arg2_22)
+
+		var0_22 = arg0_22.cardItems[arg2_22]
 	end
 
-	arg0_22.cardItems[arg2_22] = nil
+	local var1_22 = arg1_22 + 1
+	local var2_22 = arg0_22.cardInfos[var1_22]
+
+	if not var2_22 then
+		return
+	end
+
+	local var3_22
+
+	if var2_22.group then
+		local var4_22 = arg0_22.proposeList[var2_22.group.id]
+	end
+
+	var0_22:update(var2_22.group)
+end
+
+function var0_0.onReturnCard(arg0_23, arg1_23, arg2_23)
+	if arg0_23.exited then
+		return
+	end
+
+	local var0_23 = arg0_23.cardItems[arg2_23]
+
+	if var0_23 then
+		var0_23:clear()
+	end
+
+	arg0_23.cardItems[arg2_23] = nil
 end
 
 return var0_0

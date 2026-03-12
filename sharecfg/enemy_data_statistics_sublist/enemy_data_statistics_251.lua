@@ -1,5 +1,48 @@
 pg = pg or {}
 pg.enemy_data_statistics_251 = {
+	[16500005] = {
+		cannon = 0,
+		reload = 150,
+		speed_growth = 0,
+		cannon_growth = 0,
+		battle_unit_type = 65,
+		air = 35,
+		base = 90747,
+		dodge = 0,
+		durability_growth = 27200,
+		antiaircraft = 40,
+		speed = 10,
+		reload_growth = 0,
+		dodge_growth = 0,
+		luck = 0,
+		antisub = 0,
+		hit = 10,
+		antisub_growth = 0,
+		air_growth = 1800,
+		antiaircraft_growth = 1200,
+		torpedo = 0,
+		durability = 560,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		hit_growth = 144,
+		armor = 0,
+		fog_fx = "",
+		id = 16500005,
+		specific_fx_scale = {
+			yuanchou_gongjian = 0.04
+		},
+		appear_fx = {
+			"appearsmall",
+			"yuanchou_gongjian"
+		},
+		equipment_list = {
+			1100050,
+			1100385,
+			1100930,
+			1100935
+		}
+	},
 	[16500006] = {
 		cannon = 45,
 		reload = 150,
@@ -1412,54 +1455,6 @@ pg.enemy_data_statistics_251 = {
 			1101075,
 			1101080,
 			1101085
-		}
-	},
-	[16500202] = {
-		cannon = 30,
-		name = "Joffre Mechanicus Pawn - Defender",
-		type = 2,
-		speed_growth = 0,
-		pilot_ai_template_id = 10001,
-		air = 0,
-		fog_fx = "",
-		dodge = 14,
-		speed = 20,
-		luck = 0,
-		antisub = 0,
-		reload_growth = 0,
-		dodge_growth = 198,
-		antiaircraft_growth = 3600,
-		reload = 150,
-		hit = 14,
-		antisub_growth = 0,
-		air_growth = 0,
-		cannon_growth = 1600,
-		base = 90648,
-		icon_type = 2,
-		armor_growth = 0,
-		torpedo_growth = 2000,
-		antiaircraft = 115,
-		hit_growth = 210,
-		armor = 0,
-		durability = 1000,
-		torpedo = 50,
-		id = 16500202,
-		durability_growth = 123200,
-		luck_growth = 0,
-		battle_unit_type = 90,
-		specific_fx_scale = {
-			yuanchou_gongjian = 0.04
-		},
-		appear_fx = {
-			"appearQ",
-			"yuanchou_gongjian"
-		},
-		equipment_list = {
-			1101070,
-			1101075,
-			1101080,
-			1101085,
-			769000
 		}
 	}
 }

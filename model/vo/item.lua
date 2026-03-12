@@ -358,4 +358,14 @@ function var0_0.IsLoveLetterCheckItem(arg0_42)
 	return var1_0[arg0_42]
 end
 
+function var0_0.IsRepairLoveLetterItem(arg0_43)
+	for iter0_43, iter1_43 in ipairs(getGameset("loveletter2018_item")[2]) do
+		if arg0_43.id == iter1_43 then
+			return true
+		end
+	end
+
+	return false
+end
+
 return var0_0

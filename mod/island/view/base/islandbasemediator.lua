@@ -266,10 +266,14 @@ function var0_0.handleNotification(arg0_19, arg1_19)
 	elseif var0_19 == GAME.ISLAND_SELECT_GIFT_DONE then
 		arg0_19.viewComponent:HandleAwardDisplay(var1_19.dropData, var1_19.callback, IslandAwardDisplayPage.TYPE_SIGN_GIFT)
 	elseif var0_19 == GAME.ISLAND_CORE_STATE_CHANGED then
-		if var1_19 == IslandCore.STATE_INIT_FINISH and arg0_19.coreInitCallback then
-			arg0_19.coreInitCallback()
+		if var1_19 == IslandCore.STATE_INIT_FINISH then
+			getProxy(IslandProxy):SetReconnectProcessing(false)
 
-			arg0_19.coreInitCallback = nil
+			if arg0_19.coreInitCallback then
+				arg0_19.coreInitCallback()
+
+				arg0_19.coreInitCallback = nil
+			end
 		end
 	elseif var0_19 == GAME.ISLAND_TRADE_DONE then
 		arg0_19.viewComponent:HandleAwardDisplay(var1_19.dropData, var1_19.callback)

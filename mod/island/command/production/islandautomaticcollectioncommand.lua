@@ -44,22 +44,23 @@ function var0_0.execute(arg0_1, arg1_1)
 			end
 
 			for iter4_3, iter5_3 in ipairs(arg0_3.build_refresh or {}) do
-				local var2_3 = var6_1:GetBuilding(iter5_3.build_id):GetBuildingCollectData()
+				local var2_3 = var6_1:GetBuilding(iter5_3.build_id)
+				local var3_3 = var2_3:GetBuildingCollectData()
 
-				for iter6_3, iter7_3 in pairs(var2_3:GetCollectSlotDatasDic()) do
-					var5_1:DispatchEvent(IslandBuildingAgency.COLLECT_SLOT_UNIT_REMOVE, {
-						slotId = iter7_3.id
-					})
+				var3_3:SetAllTakeColelct()
+				var3_3:UpdateCollectRefreshtTime(iter5_3.refresh_time)
+
+				for iter6_3, iter7_3 in pairs(var3_3:GetCollectSlotDatasDic()) do
+					var2_3:UpdateCollectDataBySlotId({
+						id = iter7_3.id
+					}, 1)
 				end
-
-				var2_3:SetAllTakeColelct()
-				var2_3:UpdateCollectRefreshtTime(iter5_3.refresh_time)
 			end
 
-			local var3_3 = IslandDropHelper.AddItems(arg0_3)
+			local var4_3 = IslandDropHelper.AddItems(arg0_3)
 
 			arg0_1:sendNotification(GAME.ISLAND_TAKE_AUTO_COLLECTION_DONE, {
-				dropData = var3_3,
+				dropData = var4_3,
 				selectType = var1_1
 			})
 			var7_1:RemoveItem(1, arg0_3.cost_gold)
