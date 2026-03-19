@@ -80982,7 +80982,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 5
 	},
 	[8159] = {
-		param = "Elder Commander, regarding your previous request to organize the exercise data.",
+		param = "指挥官前辈，您之前提到想整理演习数据的事情",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -80990,7 +80990,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8160] = {
-		param = "I have finished organizing it.",
+		param = "阿尔比恩已经处理好了哦",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -80998,7 +80998,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8161] = {
-		param = "I've left the related documents on your desk.",
+		param = "文件已经放在指挥官前辈的桌上了",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81006,7 +81006,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8162] = {
-		param = "If you require any specific data, please contact me at your leisure.",
+		param = "如果有什么必要的数据，请随时呼唤阿尔比恩吧~",
 		ship_group = 20607,
 		flag = 0,
 		type = 1,
@@ -81014,12 +81014,12 @@ pg.base.activity_ins_chat_language = {
 		option = {
 			{
 				1,
-				"Thank you."
+				"多谢了"
 			}
 		}
 	},
 	[8163] = {
-		param = "Thank you.",
+		param = "多谢了",
 		ship_group = 0,
 		type = 1,
 		option = "",
@@ -81027,7 +81027,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8164] = {
-		param = "By the way, I notice you seem to address people as Elder a lot.",
+		param = "说起来，阿尔比恩好像总是称呼其他同伴为“前辈”？",
 		ship_group = 0,
 		type = 1,
 		option = "",
@@ -81035,7 +81035,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8165] = {
-		param = "Yes.",
+		param = "是呢",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81043,7 +81043,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8166] = {
-		param = "I consider everyone at this port experienced and worthy of respect.",
+		param = "对阿尔比恩来说，港区的大家都是经验丰富、值得尊敬的同伴",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81051,7 +81051,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8167] = {
-		param = "Especially you, Elder Commander...",
+		param = "尤其是指挥官前辈",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81059,7 +81059,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8168] = {
-		param = "There are still so many things I have left to learn from you.",
+		param = "阿尔比恩还有很多想从前辈您身上学习的哦",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81067,7 +81067,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8169] = {
-		param = "But lately, I have been struggling over this term of address.",
+		param = "不过，在这件事上……最近确实感觉有些困扰呢",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81075,7 +81075,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8170] = {
-		param = "Calling you an Elder, well...",
+		param = "用“前辈”来称呼指挥官……",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81083,7 +81083,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8171] = {
-		param = "It feels too stiff to communicate the gratitude I feel for your daily guidance and care.",
+		param = "似乎显得太过生硬，缺乏对您的指导和关照的感激之情……",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81091,7 +81091,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8172] = {
-		param = "Commander...",
+		param = "唔……对于这件事",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81099,7 +81099,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8173] = {
-		param = "What do you think about this problem?",
+		param = "您是怎么想的呢？",
 		ship_group = 20607,
 		flag = 1,
 		type = 1,
@@ -81107,12 +81107,12 @@ pg.base.activity_ins_chat_language = {
 		option = {
 			{
 				2,
-				"Don't worry about it too much..."
+				"不用那么拘束"
 			}
 		}
 	},
 	[8174] = {
-		param = "Don't worry about it too much. Call me whatever you want.",
+		param = "不用那么拘束，选择你喜欢的称呼就好",
 		ship_group = 0,
 		type = 1,
 		option = "",
@@ -81120,7 +81120,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8175] = {
-		param = "Oh? In that case...",
+		param = "咦？那……那……",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81128,7 +81128,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8176] = {
-		param = "May I just call you... Commander, then?",
+		param = "我可以……直接称呼您为“指挥官”嘛？",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81136,7 +81136,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8177] = {
-		param = "To be honest, you're the most worthy of being called my Elder...",
+		param = "其实……阿尔比恩虽然知道，“前辈”会更符合礼仪……",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81144,7 +81144,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8178] = {
-		param = "But deep down, I can't help but want to be closer to you.",
+		param = "但心里，又忍不住想和指挥官更亲近一些",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81152,7 +81152,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8179] = {
-		param = "So...",
+		param = "所以……",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81160,7 +81160,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8180] = {
-		param = "May I?",
+		param = "可以吗，指挥官……？",
 		ship_group = 20607,
 		flag = 2,
 		type = 1,
@@ -81168,12 +81168,12 @@ pg.base.activity_ins_chat_language = {
 		option = {
 			{
 				3,
-				"Of course you may."
+				"当然没问题"
 			}
 		}
 	},
 	[8181] = {
-		param = "Of course you may.",
+		param = "当然没问题",
 		ship_group = 0,
 		type = 1,
 		option = "",
@@ -81181,7 +81181,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 3
 	},
 	[8182] = {
-		param = "Okay...",
+		param = "嘿嘿……那么……",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81189,7 +81189,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 3
 	},
 	[8183] = {
-		param = "Commander... Commander.",
+		param = "指挥官……指挥官~",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81197,7 +81197,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 3
 	},
 	[8184] = {
-		param = "I'm sorry. I may have gotten a little carried away...",
+		param = "哇！阿尔比恩不小心有些飘飘然了……",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81213,7 +81213,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 3
 	},
 	[8186] = {
-		param = "Thank you, Commander.",
+		param = "谢谢您，指挥官~",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81221,7 +81221,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 3
 	},
 	[8187] = {
-		param = "Commander, I've discovered that plant life around the port is wonderfully diverse.",
+		param = "指挥官，我发现港区附近的植物种类相当丰富呢",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81229,7 +81229,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8188] = {
-		param = "I brought back some fallen flowers and leaves.",
+		param = "所以带回来了一些落花和树叶",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81237,7 +81237,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8189] = {
-		param = "The plan is to make an encyclopedia of flowers common to this area.",
+		param = "打算制作一份《港区常见春季花卉图谱》",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81245,7 +81245,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8190] = {
-		param = "Today, I completed my first round of samples.",
+		param = "今天已经制作好了第一批标本",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81253,7 +81253,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8191] = {
-		param = "It includes pansies, daisies, and oddly-shaped orchids.",
+		param = "有三色堇、雏菊、还有……形状很有趣的蝴蝶兰",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81261,7 +81261,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8192] = {
-		param = "As I was pressing them into the pages of my notebook, I found myself oddly calmed...",
+		param = "把它们夹进手账本里的时候，心情不知不觉变得很平静",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81269,7 +81269,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8193] = {
-		param = "Maybe this is one special way of connecting with nature.",
+		param = "或许这也是某种特殊形式的“森林浴”？",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81277,7 +81277,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8194] = {
-		param = "At any rate...",
+		param = "不管怎么说 ",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81285,7 +81285,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8195] = {
-		param = "I think it's very meaningful to systematically record and preserve such beautiful things.",
+		param = "能系统地记录和保存这些美好事物，是很有意义的事呢",
 		ship_group = 20607,
 		flag = 0,
 		type = 1,
@@ -81293,12 +81293,12 @@ pg.base.activity_ins_chat_language = {
 		option = {
 			{
 				1,
-				"How many do you plan to collect?"
+				"打算收集多少种植物？"
 			}
 		}
 	},
 	[8196] = {
-		param = "How many do you plan to collect?",
+		param = "阿尔比恩打算收集多少种植物？",
 		ship_group = 0,
 		type = 1,
 		option = "",
@@ -81306,7 +81306,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8197] = {
-		param = "I'd like to set a starting goal of 120 species.",
+		param = "初步计划是120种…… ",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81314,7 +81314,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8198] = {
-		param = "There may be hundreds of species of flowers just in the forested mountains nearby.",
+		param = "港区后山的森林里，可能就藏着数百种开花植物呢",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81322,7 +81322,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8199] = {
-		param = "However, some of them may be difficult to collect.",
+		param = "不过，有些种类的植物很难采集",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81330,7 +81330,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8200] = {
-		param = "Others may have inconvenient flowering seasons...",
+		param = "还有的，很容易错过花期……",
 		ship_group = 20607,
 		flag = 1,
 		type = 1,
@@ -81338,12 +81338,12 @@ pg.base.activity_ins_chat_language = {
 		option = {
 			{
 				2,
-				"If you need help, I'm game."
+				"我可以帮忙"
 			}
 		}
 	},
 	[8201] = {
-		param = "If you need help, I'm game.",
+		param = "需要帮忙的话，可以随时叫我",
 		ship_group = 0,
 		type = 1,
 		option = "",
@@ -81351,7 +81351,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8202] = {
-		param = "Thank you very much, Commander.",
+		param = "嘿嘿，谢谢指挥官~",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81359,7 +81359,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8203] = {
-		param = "Let's have fun collecting flowers together.",
+		param = "那我们就一起，享受这个收集的过程吧？",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81367,7 +81367,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8204] = {
-		param = "Speaking of which...",
+		param = "呀……说起来",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81375,7 +81375,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8205] = {
-		param = "I just finished putting the first batch into my encyclopedia, but there's an issue.",
+		param = "刚刚把制作好的第一批标本放进手账本了",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81383,7 +81383,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8206] = {
-		param = "I'm already struggling to close it...",
+		param = "感觉本子已经快要合不上了呢",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81391,7 +81391,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8207] = {
-		param = "If you're going to help me from here on out, I'll have so many more samples in no time.",
+		param = "之后指挥官也会帮我一起的话……大概会收集到更多标本吧",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81399,7 +81399,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8208] = {
-		param = "It sounds like I'm going to need a bigger notebook!",
+		param = "看来，得换个更厚的本子了~",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81407,7 +81407,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8209] = {
-		param = "Commander, do you remember the book you lent me?",
+		param = "指挥官，还记得您上次借给我的那本书吗？",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81415,7 +81415,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8210] = {
-		param = "I've already read half of it.",
+		param = "我已经读到一半了",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81423,7 +81423,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8211] = {
-		param = "There are some parts I don't quite understand yet...",
+		param = "虽然有些地方还不太明白",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81431,7 +81431,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8212] = {
-		param = "But it's so wonderfully descriptive. Every word conjures up new images in my mind.",
+		param = "但看着文字的描述，眼前却会自然浮现出对应的画面……",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81439,7 +81439,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8213] = {
-		param = "No wonder you love it so much.",
+		param = "不愧是指挥官喜欢的书呢",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81447,7 +81447,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8214] = {
-		param = "Could we read it together whenever you have time?",
+		param = "如果您有空的话……能来陪我一起读书嘛？",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81455,7 +81455,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8215] = {
-		param = "I'm sure I could understand it so much better with you around.",
+		param = "和您一起的话，阿尔比恩一定能更好地理解这本书",
 		ship_group = 20607,
 		flag = 0,
 		type = 1,
@@ -81463,12 +81463,12 @@ pg.base.activity_ins_chat_language = {
 		option = {
 			{
 				1,
-				"Let's do it."
+				"好，我陪你"
 			}
 		}
 	},
 	[8216] = {
-		param = "Let's do it.",
+		param = "好，我陪你",
 		ship_group = 0,
 		type = 1,
 		option = "",
@@ -81476,7 +81476,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8217] = {
-		param = "Great! Right now, I'm reading this part...",
+		param = "嗯~我现在读到这一句",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81484,7 +81484,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8218] = {
-		param = "\"His gaze caresses her cheek as a summer breeze.\"",
+		param = "“他的目光像夏日的微风，拂过她的脸颊。”",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81492,7 +81492,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8219] = {
-		param = "How should I interpret this?",
+		param = "这究竟是什么意思呢？",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81500,7 +81500,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8220] = {
-		param = "I understand that it's a simile, of course.",
+		param = "虽然我能看出这是个比喻",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81508,7 +81508,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8221] = {
-		param = "The thing is, you can feel wind.",
+		param = "但是……风是可以真切感受到的",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81516,7 +81516,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 1
 	},
 	[8222] = {
-		param = "But can you feel someone's gaze?",
+		param = "而目光——似乎不一样呢？",
 		ship_group = 20607,
 		flag = 1,
 		type = 1,
@@ -81524,16 +81524,16 @@ pg.base.activity_ins_chat_language = {
 		option = {
 			{
 				2,
-				"It describes the thrill she's experiencing."
+				"这是在形容一种心动的感觉"
 			},
 			{
 				3,
-				"It depicts the gentle atmosphere."
+				"这是在描绘一种温柔的氛围"
 			}
 		}
 	},
 	[8223] = {
-		param = "It describes the thrill she's experiencing.",
+		param = "这是在形容一种心动的感觉",
 		ship_group = 0,
 		type = 1,
 		option = "",
@@ -81541,7 +81541,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8224] = {
-		param = "Thrill...",
+		param = "心动？",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81549,7 +81549,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8225] = {
-		param = "I think I understand that feeling.",
+		param = "这么说的话，我好像有点明白了……",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81557,7 +81557,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8226] = {
-		param = "When you look at me, I feel both thrilled and warmed...",
+		param = "被指挥官注视着的时候，阿尔比恩感觉既紧张，又温暖……",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81565,7 +81565,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8227] = {
-		param = "That is like a summer breeze, isn't it?",
+		param = "的确很像被温柔的风轻轻拂过了呢",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81573,7 +81573,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 2
 	},
 	[8228] = {
-		param = "It depicts the gentle atmosphere.",
+		param = "这是在描绘一种温柔的氛围",
 		ship_group = 0,
 		type = 1,
 		option = "",
@@ -81581,7 +81581,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 3
 	},
 	[8229] = {
-		param = "The gentle atmosphere?",
+		param = "温柔的氛围……？",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81589,7 +81589,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 3
 	},
 	[8230] = {
-		param = "Like what I feel when you look at me?",
+		param = "就像指挥官看着我的时候那样吗？",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81597,7 +81597,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 3
 	},
 	[8231] = {
-		param = "I think I understand...",
+		param = "好像能理解了呢……",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81605,7 +81605,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 3
 	},
 	[8232] = {
-		param = "There are a lot of similar expressions in this book.",
+		param = "这本书里还有很多类似的词句",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81613,7 +81613,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8233] = {
-		param = "I'll think about them carefully as I read.",
+		param = "我会试着慢慢理解",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81621,7 +81621,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8234] = {
-		param = "Also, I've noticed something lately.",
+		param = "而且我最近发现",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81629,7 +81629,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8235] = {
-		param = "When I can't sleep... reading a few pages is enough to lull me into peaceful rest.",
+		param = "在失眠的时候读上几页书，就能安心入睡",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81637,7 +81637,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8236] = {
-		param = "Not because the book you so kindly lent me is boring, of course...",
+		param = "啊！我不是说您借我的书会让人犯困",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81645,7 +81645,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8237] = {
-		param = "It's just that the scent of the pages reminds me of you.",
+		param = "是因为书页间散发的淡淡气息，和指挥官身上的味道很像……",
 		ship_group = 20607,
 		type = 1,
 		option = "",
@@ -81653,7 +81653,7 @@ pg.base.activity_ins_chat_language = {
 		flag = 0
 	},
 	[8238] = {
-		param = "It's like you're soothing me to sleep, Commander.",
+		param = "感觉，就这么被指挥官治愈了呢~",
 		ship_group = 20607,
 		type = 1,
 		option = "",

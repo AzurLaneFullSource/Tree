@@ -17,7 +17,7 @@ return {
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "It's too late to apologize.",
+			say = "你就算现在求饶，也已经晚了哦~",
 			voice = "event:/dorm/drom3d_aegir_ik_gfit1_tone8/drom3d_aegir_ik_gfit1_tone8",
 			typewriter = {
 				speed = 0.05,

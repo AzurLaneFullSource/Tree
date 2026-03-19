@@ -2,8 +2,11 @@ return {
 	id = "tb2_11",
 	events = {
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "You have unlocked the random event feature.",
 				mode = 2,
@@ -15,8 +18,11 @@ return {
 			}
 		},
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "Tapping the Go Outside button lets you view what random events you may run into.",
 				mode = 2,
@@ -42,8 +48,11 @@ return {
 			}
 		},
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "Here you can view what random events there are and choose whether to spend action points and start or not.",
 				mode = 2,
@@ -55,8 +64,11 @@ return {
 			}
 		},
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "Random events may yield buffs.",
 				mode = 2,
@@ -68,8 +80,11 @@ return {
 			}
 		},
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "You can always tap here to view more info about any buffs you've acquired.",
 				mode = 2,
@@ -91,8 +106,11 @@ return {
 			}
 		},
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "Their duration and an explanation of their effect are also shown here.",
 				mode = 2,
@@ -107,6 +125,100 @@ return {
 						pathIndex = -1
 					}
 				}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
+			style = {
+				text = "You have unlocked the random event feature.",
+				mode = 2,
+				dir = 1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
+			style = {
+				text = "Tapping the Go Outside button lets you view what random events you may run into.",
+				mode = 2,
+				dir = 1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {
+					{
+						lineMode = 2,
+						path = "UICamera/Canvas/UIMain/NewEducateMainUI(Clone)/root/adapt/normal/map",
+						pathIndex = -1
+					}
+				}
+			},
+			ui = {
+				path = "UICamera/Canvas/UIMain/NewEducateMainUI(Clone)/root/adapt/normal/map",
+				pathIndex = -1,
+				fingerPos = {
+					posY = 50,
+					posX = -100
+				}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
+			style = {
+				text = "Here you can view what random events there are and choose whether to spend action points and start or not.",
+				mode = 2,
+				dir = 1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
+			style = {
+				text = "Random events are a chance to gain more Tarot Cards and Readings.",
+				mode = 2,
+				dir = 1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
+			style = {
+				text = "Select Tarot Cards and Readings to receive buffs.",
+				mode = 2,
+				dir = 1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {}
 			}
 		}
 	}

@@ -17,7 +17,9 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.init(arg0_2)
-	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg0_2._tf, {
+		groupDelta = 3
+	})
 
 	arg0_2.anim = arg0_2._tf:Find("anim_root"):GetComponent(typeof(Animation))
 	arg0_2.animEvent = arg0_2._tf:Find("anim_root"):GetComponent(typeof(DftAniEvent))
@@ -35,6 +37,9 @@ function var0_0.init(arg0_2)
 	arg0_2._closeBtn = arg0_2._top:Find("btnBack")
 	arg0_2._msgPanel = arg0_2._window:Find("msg_panel")
 	arg0_2.contentText = arg0_2._msgPanel:Find("content"):GetComponent("RichText")
+
+	arg0_2.contentText:AddSprite("gold", arg0_2._tf:Find("res/gold"):GetComponent(typeof(Image)).sprite)
+
 	arg0_2._sigleItemPanel = arg0_2._window:Find("single_item_panel")
 	arg0_2.singleItemTF = arg0_2._sigleItemPanel:Find("item")
 	arg0_2.singleItemOwn = arg0_2._sigleItemPanel:Find("own")

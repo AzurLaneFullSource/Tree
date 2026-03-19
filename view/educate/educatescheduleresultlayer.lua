@@ -38,33 +38,51 @@ function var0_0.didEnter(arg0_5)
 
 	arg0_5.result = {}
 	arg0_5.resResult = {}
+	arg0_5.resultEvent = {}
+	arg0_5.resResultEvent = {}
 	arg0_5.drops = {}
 
-	local function var1_5(arg0_7)
+	local function var1_5(arg0_7, arg1_7)
 		for iter0_7, iter1_7 in ipairs(arg0_7) do
 			table.insert(arg0_5.drops, iter1_7)
 
 			if iter1_7.type == EducateConst.DROP_TYPE_ATTR then
-				if not arg0_5.result[iter1_7.id] then
-					arg0_5.result[iter1_7.id] = 0
-				end
+				if arg1_7 then
+					if not arg0_5.resultEvent[iter1_7.id] then
+						arg0_5.resultEvent[iter1_7.id] = 0
+					end
 
-				arg0_5.result[iter1_7.id] = arg0_5.result[iter1_7.id] + iter1_7.number
+					arg0_5.resultEvent[iter1_7.id] = arg0_5.resultEvent[iter1_7.id] + iter1_7.number
+				else
+					if not arg0_5.result[iter1_7.id] then
+						arg0_5.result[iter1_7.id] = 0
+					end
+
+					arg0_5.result[iter1_7.id] = arg0_5.result[iter1_7.id] + iter1_7.number
+				end
 			end
 
 			if iter1_7.type == EducateConst.DROP_TYPE_RES then
-				if not arg0_5.resResult[iter1_7.id] then
-					arg0_5.resResult[iter1_7.id] = 0
-				end
+				if arg1_7 then
+					if not arg0_5.resResultEvent[iter1_7.id] then
+						arg0_5.resResultEvent[iter1_7.id] = 0
+					end
 
-				arg0_5.resResult[iter1_7.id] = arg0_5.resResult[iter1_7.id] + iter1_7.number
+					arg0_5.resResultEvent[iter1_7.id] = arg0_5.resResultEvent[iter1_7.id] + iter1_7.number
+				else
+					if not arg0_5.resResult[iter1_7.id] then
+						arg0_5.resResult[iter1_7.id] = 0
+					end
+
+					arg0_5.resResult[iter1_7.id] = arg0_5.resResult[iter1_7.id] + iter1_7.number
+				end
 			end
 		end
 	end
 
 	for iter0_5, iter1_5 in ipairs(var0_5) do
 		var1_5(iter1_5.plan_drops)
-		var1_5(iter1_5.event_drops)
+		var1_5(iter1_5.event_drops, true)
 		var1_5(iter1_5.spec_event_drops)
 	end
 
@@ -152,16 +170,29 @@ function var0_0.updateMinorPanel(arg0_10)
 
 		local var2_10 = arg0_10.char:GetAttrById(var1_10)
 
-		setText(var0_10:Find("value_add/value_old"), var2_10)
+		setText(var0_10:Find("value/value/old"), var2_10)
 
 		local var3_10 = arg0_10.result[var1_10] or 0
 
-		setActive(var0_10:Find("VX"), var3_10 ~= 0)
-		setText(var0_10:Find("value_add"), "")
+		setText(var0_10:Find("value/value/add"), "")
 
-		if var3_10 ~= 0 then
+		local var4_10 = arg0_10.resultEvent[var1_10] or 0
+
+		setText(var0_10:Find("value/event_add"), "")
+
+		local var5_10 = var3_10 ~= 0 or var4_10 ~= 0
+
+		setActive(var0_10:Find("VX"), var5_10)
+
+		if var5_10 then
 			onDelayTick(function()
-				setText(var0_10:Find("value_add"), "+" .. var3_10)
+				if var3_10 > 0 then
+					setText(var0_10:Find("value/value/add"), "+" .. var3_10)
+				end
+
+				if var4_10 > 0 then
+					setText(var0_10:Find("value/event_add"), "+" .. var4_10)
+				end
 			end, 0.891)
 		end
 	end
@@ -181,12 +212,17 @@ function var0_0.updateResPanel(arg0_12)
 			var2_12 = 0
 		end
 
-		setText(var0_12:Find("value_add/value_old"), var2_12)
+		setText(var0_12:Find("value/value/old"), var2_12)
 
 		local var3_12 = arg0_12.resResult[var1_12] or 0
 		local var4_12 = var3_12 == 0 and "" or "+" .. var3_12
 
-		setText(var0_12:Find("value_add"), var4_12)
+		setText(var0_12:Find("value/value/add"), var4_12)
+
+		local var5_12 = arg0_12.resResultEvent[var1_12] or 0
+		local var6_12 = var5_12 == 0 and "" or "+" .. var5_12
+
+		setText(var0_12:Find("value/event_add"), var6_12)
 	end
 end
 

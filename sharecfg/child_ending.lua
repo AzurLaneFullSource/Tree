@@ -3,11 +3,15 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg26",
 		name = "Busy Fashion Model",
-		id = 1,
-		pic_preview = "tb_ending1",
+		unlock_desc = "可解锁",
+		child_cg_basic_price = 2000,
 		group = 1,
+		lock_name = "平面模特",
 		polaroid_condition = 201,
 		level = 1,
+		id = 1,
+		pic_preview = "tb_ending1",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -36,11 +40,15 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg27",
 		name = "Skilled Painter",
-		id = 2,
-		pic_preview = "tb_ending2",
+		unlock_desc = "可解锁",
+		child_cg_basic_price = 2000,
 		group = 2,
+		lock_name = "艺术家",
 		polaroid_condition = 201,
 		level = 1,
+		id = 2,
+		pic_preview = "tb_ending2",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -74,11 +82,15 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg28",
 		name = "Popular Musician",
-		id = 3,
-		pic_preview = "tb_ending3",
+		unlock_desc = "可解锁",
+		child_cg_basic_price = 2000,
 		group = 3,
+		lock_name = "音乐人",
 		polaroid_condition = 201,
 		level = 1,
+		id = 3,
+		pic_preview = "tb_ending3",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -102,11 +114,15 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg29",
 		name = "Stellar Actor",
-		id = 4,
-		pic_preview = "tb_ending4",
+		unlock_desc = "可解锁",
+		child_cg_basic_price = 2000,
 		group = 4,
+		lock_name = "瞩目新星",
 		polaroid_condition = 203,
 		level = 1,
+		id = 4,
+		pic_preview = "tb_ending4",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -140,11 +156,15 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg30",
 		name = "Talented Cook",
-		id = 5,
-		pic_preview = "tb_ending5",
+		unlock_desc = "可解锁",
+		child_cg_basic_price = 2000,
 		group = 5,
+		lock_name = "烘焙达人",
 		polaroid_condition = 203,
 		level = 1,
+		id = 5,
+		pic_preview = "tb_ending5",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -173,11 +193,15 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg31",
 		name = "Up-and-Coming Writer",
-		id = 6,
-		pic_preview = "tb_ending6",
+		unlock_desc = "可解锁",
+		child_cg_basic_price = 2000,
 		group = 6,
+		lock_name = "小说作家",
 		polaroid_condition = 203,
 		level = 1,
+		id = 6,
+		pic_preview = "tb_ending6",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -206,11 +230,15 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg32",
 		name = "Amazing Athlete",
-		id = 7,
-		pic_preview = "tb_ending7",
+		unlock_desc = "可解锁",
+		child_cg_basic_price = 2000,
 		group = 7,
+		lock_name = "赛场新秀",
 		polaroid_condition = 202,
 		level = 1,
+		id = 7,
+		pic_preview = "tb_ending7",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -234,11 +262,15 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg33",
 		name = "Big Shot Businesswoman",
-		id = 8,
-		pic_preview = "tb_ending8",
+		unlock_desc = "可解锁",
+		child_cg_basic_price = 2000,
 		group = 8,
+		lock_name = "商业奇才",
 		polaroid_condition = 202,
 		level = 1,
+		id = 8,
+		pic_preview = "tb_ending8",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -267,11 +299,15 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg34",
 		name = "Lively Farm Owner",
-		id = 9,
-		pic_preview = "tb_ending9",
+		unlock_desc = "可解锁",
+		child_cg_basic_price = 2000,
 		group = 9,
+		lock_name = "农场能手",
 		polaroid_condition = 202,
 		level = 1,
+		id = 9,
+		pic_preview = "tb_ending9",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -305,11 +341,15 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg35",
 		name = "Repetitive Everyday",
-		id = 10,
-		pic_preview = "tb_ending10",
+		unlock_desc = "可解锁",
+		child_cg_basic_price = 2000,
 		group = 10,
+		lock_name = "日复一日",
 		polaroid_condition = 0,
 		level = 1,
+		id = 10,
+		pic_preview = "tb_ending10",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -339,11 +379,15 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg36",
 		name = "Shut-In Life",
-		id = 11,
-		pic_preview = "tb_ending11",
+		unlock_desc = "可解锁",
+		child_cg_basic_price = 2000,
 		group = 11,
+		lock_name = "足不出户",
 		polaroid_condition = 0,
 		level = 1,
+		id = 11,
+		pic_preview = "tb_ending11",
+		sp_bg = 2,
 		condition = {},
 		performance = {
 			143

@@ -841,7 +841,1205 @@ pg.child2_word = setmetatable({
 		4146012,
 		4405001,
 		4405002,
-		4405003
+		4405003,
+		90001,
+		90002,
+		90003,
+		90004,
+		90005,
+		90006,
+		90101,
+		90102,
+		90103,
+		3000000,
+		3000001,
+		3000002,
+		3000003,
+		3000004,
+		3000005,
+		3000006,
+		3000007,
+		3000008,
+		3000009,
+		3000010,
+		3000011,
+		3000012,
+		3000013,
+		3000014,
+		3000015,
+		3000016,
+		3000017,
+		3000018,
+		3000019,
+		3000020,
+		3000021,
+		3000022,
+		3000023,
+		3000024,
+		3000025,
+		3100101,
+		3100102,
+		3100103,
+		3100104,
+		3100105,
+		3100106,
+		3100201,
+		3100202,
+		3100203,
+		3100204,
+		3100301,
+		3100302,
+		3100303,
+		3100304,
+		3100305,
+		3100306,
+		3100401,
+		3100402,
+		3100403,
+		3100404,
+		3100405,
+		3100406,
+		3100501,
+		3100502,
+		3100503,
+		3100504,
+		3100505,
+		3100601,
+		3100602,
+		3100603,
+		3100604,
+		3100605,
+		3100701,
+		3100702,
+		3100703,
+		3100704,
+		3100801,
+		3100802,
+		3100803,
+		3100804,
+		3100901,
+		3100902,
+		3100903,
+		3100904,
+		3101001,
+		3101002,
+		3101003,
+		3101004,
+		3101005,
+		3101101,
+		3101102,
+		3101103,
+		3101104,
+		3101105,
+		3101201,
+		3101202,
+		3101203,
+		3101204,
+		3101301,
+		3101302,
+		3101303,
+		3101304,
+		3101305,
+		3101401,
+		3101402,
+		3101403,
+		3101404,
+		3101405,
+		3101501,
+		3101502,
+		3101503,
+		3101504,
+		3101505,
+		3101601,
+		3101602,
+		3101603,
+		3101604,
+		3101605,
+		3101701,
+		3101702,
+		3101703,
+		3101704,
+		3101705,
+		3101801,
+		3101802,
+		3101803,
+		3101804,
+		3101805,
+		3101806,
+		3101901,
+		3101902,
+		3101903,
+		3101904,
+		3101905,
+		3102001,
+		3102002,
+		3102003,
+		3102004,
+		3102005,
+		3102006,
+		3102101,
+		3102102,
+		3102103,
+		3102104,
+		3102105,
+		3102106,
+		3102201,
+		3102202,
+		3102203,
+		3102204,
+		3102205,
+		3102301,
+		3102302,
+		3102303,
+		3102304,
+		3102305,
+		3102401,
+		3102402,
+		3102403,
+		3102404,
+		3102405,
+		3102406,
+		3102501,
+		3102502,
+		3102503,
+		3102504,
+		3102505,
+		3102506,
+		3102601,
+		3102602,
+		3102603,
+		3102604,
+		3102605,
+		3102701,
+		3102702,
+		3102703,
+		3102704,
+		3102705,
+		3102801,
+		3102802,
+		3102803,
+		3102804,
+		3102805,
+		3102806,
+		3102901,
+		3102902,
+		3102903,
+		3102904,
+		3103001,
+		3103002,
+		3103003,
+		3103004,
+		3103005,
+		3103006,
+		3103101,
+		3103102,
+		3103103,
+		3103104,
+		3103105,
+		3103201,
+		3103202,
+		3103203,
+		3103204,
+		3103205,
+		3103301,
+		3103302,
+		3103303,
+		3103304,
+		3103305,
+		3103401,
+		3103402,
+		3103403,
+		3103404,
+		3103405,
+		3103501,
+		3103502,
+		3103503,
+		3103504,
+		3103505,
+		3103506,
+		3103601,
+		3103602,
+		3103603,
+		3103604,
+		3103605,
+		3103606,
+		3103701,
+		3103702,
+		3103703,
+		3103704,
+		3103801,
+		3103802,
+		3103803,
+		3103804,
+		3103805,
+		3103901,
+		3103902,
+		3103903,
+		3103904,
+		3103905,
+		3104001,
+		3104002,
+		3104003,
+		3104004,
+		3104005,
+		3104101,
+		3104102,
+		3104103,
+		3104104,
+		3104105,
+		3104106,
+		3104107,
+		3104108,
+		3104109,
+		3104201,
+		3104202,
+		3104203,
+		3104204,
+		3104205,
+		3104206,
+		3104207,
+		3104208,
+		3104209,
+		3104301,
+		3104302,
+		3104303,
+		3104304,
+		3104305,
+		3104306,
+		3104307,
+		3104308,
+		3104309,
+		3104401,
+		3104402,
+		3104403,
+		3104404,
+		3104405,
+		3104406,
+		3104407,
+		3104408,
+		3104409,
+		3104410,
+		3104411,
+		3104501,
+		3104502,
+		3104503,
+		3104504,
+		3104505,
+		3104506,
+		3104507,
+		3104508,
+		3104509,
+		3104510,
+		3104511,
+		3104512,
+		3104601,
+		3104602,
+		3104603,
+		3104604,
+		3104605,
+		3104606,
+		3104607,
+		3104608,
+		3104609,
+		3104610,
+		3104701,
+		3104702,
+		3104703,
+		3104704,
+		3104705,
+		3104706,
+		3104707,
+		3104708,
+		3104801,
+		3104802,
+		3104803,
+		3104804,
+		3104805,
+		3104806,
+		3104807,
+		3104808,
+		3104809,
+		3104901,
+		3104902,
+		3104903,
+		3104904,
+		3104905,
+		3104906,
+		3104907,
+		3104908,
+		3104909,
+		3104910,
+		3105001,
+		3105002,
+		3105003,
+		3105004,
+		3105005,
+		3105006,
+		3105007,
+		3105008,
+		3105009,
+		3105010,
+		3200101,
+		3200102,
+		3200103,
+		3200201,
+		3200202,
+		3200203,
+		3200205,
+		3200206,
+		3200208,
+		3200209,
+		3200301,
+		3200302,
+		3200303,
+		3200305,
+		3200306,
+		3200308,
+		3200309,
+		3200311,
+		3200312,
+		3200401,
+		3200402,
+		3200403,
+		3200404,
+		3200406,
+		3200407,
+		3200408,
+		3200410,
+		3200411,
+		3200413,
+		3200414,
+		3200415,
+		3200417,
+		3200418,
+		3200420,
+		3200421,
+		3200422,
+		3200501,
+		3200502,
+		3200503,
+		3200505,
+		3200506,
+		3200508,
+		3200509,
+		3200511,
+		3200512,
+		3200601,
+		3200602,
+		3200603,
+		3200605,
+		3200606,
+		3200608,
+		3200609,
+		3200701,
+		3200702,
+		3200703,
+		3200705,
+		3200706,
+		3200801,
+		3200802,
+		3200803,
+		3200805,
+		3200806,
+		3200808,
+		3200809,
+		3200901,
+		3200902,
+		3200903,
+		3200905,
+		3200906,
+		3200908,
+		3200909,
+		3200911,
+		3200912,
+		3201001,
+		3201002,
+		3201003,
+		3201005,
+		3201006,
+		3201008,
+		3201009,
+		3201101,
+		3201102,
+		3201103,
+		3201105,
+		3201106,
+		3201108,
+		3201109,
+		3201111,
+		3201112,
+		3201201,
+		3201202,
+		3201203,
+		3201204,
+		3201206,
+		3201207,
+		3201301,
+		3201302,
+		3201303,
+		3201305,
+		3201306,
+		3201401,
+		3201402,
+		3201403,
+		3201405,
+		3201406,
+		3201408,
+		3201409,
+		3201501,
+		3201502,
+		3201503,
+		3201505,
+		3201506,
+		3201508,
+		3201509,
+		3201601,
+		3201602,
+		3201603,
+		3201605,
+		3201606,
+		3201608,
+		3201609,
+		3201611,
+		3201612,
+		3201701,
+		3201702,
+		3201703,
+		3201705,
+		3201706,
+		3201708,
+		3201709,
+		3201711,
+		3201712,
+		3201801,
+		3201802,
+		3201803,
+		3201805,
+		3201806,
+		3201808,
+		3201809,
+		3201901,
+		3201902,
+		3201903,
+		3201905,
+		3201906,
+		3201908,
+		3201909,
+		3201911,
+		3201912,
+		3202001,
+		3202002,
+		3202003,
+		3202005,
+		3202006,
+		3202008,
+		3202009,
+		3202101,
+		3202102,
+		3202103,
+		3202105,
+		3202106,
+		3202108,
+		3202109,
+		3202201,
+		3202202,
+		3202203,
+		3202205,
+		3202206,
+		3202208,
+		3202209,
+		3202211,
+		3202212,
+		3202301,
+		3202302,
+		3202303,
+		3202305,
+		3202306,
+		3202308,
+		3202309,
+		3202311,
+		3202312,
+		3202401,
+		3202402,
+		3202403,
+		3202405,
+		3202406,
+		3202408,
+		3202409,
+		3202411,
+		3202412,
+		3202413,
+		3202414,
+		3202416,
+		3202417,
+		3202501,
+		3202502,
+		3202503,
+		3202505,
+		3202506,
+		3202601,
+		3202602,
+		3202603,
+		3202605,
+		3202606,
+		3202608,
+		3202609,
+		3202611,
+		3202612,
+		3202701,
+		3202702,
+		3202704,
+		3202705,
+		3202801,
+		3202802,
+		3202803,
+		3202805,
+		3202806,
+		3202808,
+		3202809,
+		3202901,
+		3202902,
+		3202903,
+		3202905,
+		3202906,
+		3203001,
+		3203002,
+		3203003,
+		3203005,
+		3203006,
+		3203008,
+		3203009,
+		3203101,
+		3203102,
+		3203103,
+		3203105,
+		3203107,
+		3203108,
+		3203201,
+		3203202,
+		3203203,
+		3203205,
+		3203206,
+		3203208,
+		3203209,
+		3203211,
+		3203212,
+		3203301,
+		3203302,
+		3203303,
+		3203304,
+		3203306,
+		3203307,
+		3203309,
+		3203310,
+		3203401,
+		3203402,
+		3203403,
+		3203405,
+		3203406,
+		3203408,
+		3203409,
+		3203501,
+		3203502,
+		3203503,
+		3203505,
+		3203507,
+		3203508,
+		3203601,
+		3203602,
+		3203603,
+		3203605,
+		3203606,
+		3203701,
+		3203702,
+		3203703,
+		3203705,
+		3203706,
+		3203708,
+		3203709,
+		3203801,
+		3203802,
+		3203803,
+		3203805,
+		3203806,
+		3203808,
+		3203809,
+		3203901,
+		3203902,
+		3203903,
+		3203905,
+		3203906,
+		3203908,
+		3203909,
+		3203911,
+		3203912,
+		3204001,
+		3204002,
+		3204003,
+		3204005,
+		3204006,
+		3204101,
+		3204102,
+		3204103,
+		3204105,
+		3204106,
+		3204201,
+		3204202,
+		3204203,
+		3204205,
+		3204206,
+		3204208,
+		3204209,
+		3204211,
+		3204212,
+		3204301,
+		3204302,
+		3204303,
+		3204304,
+		3204306,
+		3204307,
+		3204308,
+		3204309,
+		3204401,
+		3204402,
+		3204403,
+		3204405,
+		3204406,
+		3204408,
+		3204409,
+		3204501,
+		3204502,
+		3204503,
+		3204505,
+		3204506,
+		3204601,
+		3204602,
+		3204603,
+		3204605,
+		3204606,
+		3204608,
+		3204609,
+		3204611,
+		3204612,
+		3204701,
+		3204702,
+		3204703,
+		3204705,
+		3204706,
+		3204708,
+		3204709,
+		3204711,
+		3204712,
+		3204801,
+		3204802,
+		3204803,
+		3204804,
+		3204806,
+		3204807,
+		3204809,
+		3204810,
+		3204812,
+		3204814,
+		3204901,
+		3204902,
+		3204903,
+		3204905,
+		3204906,
+		3205001,
+		3205002,
+		3205003,
+		3205005,
+		3205006,
+		3205008,
+		3205009,
+		3205101,
+		3205102,
+		3205103,
+		3205105,
+		3205106,
+		3205108,
+		3205109,
+		3205201,
+		3205202,
+		3205203,
+		3205205,
+		3205206,
+		3205301,
+		3205302,
+		3205303,
+		3205305,
+		3205306,
+		3205308,
+		3205309,
+		3205401,
+		3205402,
+		3205403,
+		3205405,
+		3205406,
+		3205408,
+		3205409,
+		3205411,
+		3205412,
+		3205501,
+		3205502,
+		3205503,
+		3205505,
+		3205507,
+		3205509,
+		3205510,
+		3205512,
+		3205513,
+		3205601,
+		3205602,
+		3205603,
+		3205605,
+		3205606,
+		3205608,
+		3205609,
+		3205701,
+		3205702,
+		3205703,
+		3205705,
+		3205706,
+		3205708,
+		3205709,
+		3205711,
+		3205712,
+		3205801,
+		3205802,
+		3205803,
+		3205805,
+		3205806,
+		3205808,
+		3205809,
+		3205901,
+		3205902,
+		3205903,
+		3205905,
+		3205906,
+		3205908,
+		3205909,
+		3205911,
+		3205912,
+		3206001,
+		3206002,
+		3206003,
+		3206005,
+		3206006,
+		3206008,
+		3206009,
+		3206101,
+		3206102,
+		3206103,
+		3206105,
+		3206106,
+		3206201,
+		3206202,
+		3206203,
+		3206205,
+		3206206,
+		3206208,
+		3206209,
+		3206301,
+		3206302,
+		3206303,
+		3206305,
+		3206306,
+		3206308,
+		3206309,
+		3206401,
+		3206402,
+		3206403,
+		3206405,
+		3206406,
+		3206501,
+		3206502,
+		3206503,
+		3206505,
+		3206506,
+		3206508,
+		3206509,
+		3206601,
+		3206602,
+		3206603,
+		3206605,
+		3206606,
+		3206608,
+		3206609,
+		3206611,
+		3206612,
+		3206701,
+		3206702,
+		3206703,
+		3206705,
+		3206706,
+		3206708,
+		3206709,
+		3206801,
+		3206802,
+		3206803,
+		3206805,
+		3206806,
+		3206808,
+		3206809,
+		3206901,
+		3206902,
+		3206903,
+		3206905,
+		3206906,
+		3206908,
+		3206909,
+		3207001,
+		3207002,
+		3207003,
+		3207005,
+		3207006,
+		3207008,
+		3207009,
+		3207101,
+		3207102,
+		3207103,
+		3207105,
+		3207106,
+		3207108,
+		3207109,
+		3207111,
+		3207112,
+		3207201,
+		3207202,
+		3207203,
+		3207205,
+		3207206,
+		3207301,
+		3207302,
+		3207303,
+		3207305,
+		3207306,
+		3207308,
+		3207309,
+		3207311,
+		3207312,
+		3207401,
+		3207402,
+		3207403,
+		3207405,
+		3207406,
+		3207408,
+		3207409,
+		3207501,
+		3207502,
+		3207503,
+		3207505,
+		3207506,
+		3207508,
+		3207509,
+		3207601,
+		3207602,
+		3207603,
+		3207605,
+		3207606,
+		3207608,
+		3207609,
+		3207701,
+		3207702,
+		3207703,
+		3207705,
+		3207706,
+		3207708,
+		3207709,
+		3207801,
+		3207802,
+		3207803,
+		3207805,
+		3207806,
+		3207808,
+		3207809,
+		3207811,
+		3207812,
+		3207901,
+		3207902,
+		3207903,
+		3207905,
+		3207906,
+		3207908,
+		3207909,
+		3208001,
+		3208002,
+		3208003,
+		3208005,
+		3208006,
+		3208008,
+		3208009,
+		3208101,
+		3208102,
+		3208103,
+		3208105,
+		3208106,
+		3208108,
+		3208109,
+		3208201,
+		3208202,
+		3208203,
+		3208205,
+		3208206,
+		3208208,
+		3208209,
+		3208301,
+		3208302,
+		3208303,
+		3208305,
+		3208306,
+		3208401,
+		3208402,
+		3208403,
+		3208405,
+		3208406,
+		3208501,
+		3208502,
+		3208503,
+		3208505,
+		3208506,
+		3208601,
+		3208602,
+		3208603,
+		3208605,
+		3208606,
+		3208608,
+		3208609,
+		3208701,
+		3208702,
+		3208703,
+		3208705,
+		3208706,
+		3208708,
+		3208709,
+		3208801,
+		3208802,
+		3208803,
+		3208805,
+		3208806,
+		3208808,
+		3208809,
+		3208811,
+		3208812,
+		3208901,
+		3208902,
+		3208903,
+		3208904,
+		3208905,
+		3208906,
+		3208907,
+		3208908,
+		3208910,
+		3208911,
+		3208912,
+		3209001,
+		3209002,
+		3209003,
+		3209004,
+		3209005,
+		3209006,
+		3209007,
+		3209008,
+		3209010,
+		3209011,
+		3209012,
+		3209101,
+		3209102,
+		3209103,
+		3209104,
+		3209105,
+		3209106,
+		3209107,
+		3209108,
+		3209110,
+		3209111,
+		3209201,
+		3209202,
+		3209203,
+		3209204,
+		3209205,
+		3209207,
+		3209208,
+		3209301,
+		3209302,
+		3209303,
+		3209304,
+		3209305,
+		3209306,
+		3209307,
+		3209309,
+		3209310,
+		3209401,
+		3209402,
+		3209403,
+		3209404,
+		3209405,
+		3209406,
+		3209408,
+		3209409,
+		3209501,
+		3209502,
+		3209503,
+		3209505,
+		3209507,
+		3209509,
+		3209510,
+		3209512,
+		3209514,
+		3209516,
+		3209517,
+		3238901,
+		3239001,
+		3239101,
+		3239201,
+		3239301,
+		3239401,
+		3240101,
+		3240102,
+		3240105,
+		3240201,
+		3240202,
+		3240203,
+		3240205,
+		3240301,
+		3240302,
+		3240303,
+		3240305,
+		3241101,
+		3241102,
+		3241105,
+		3241201,
+		3241202,
+		3241203,
+		3241205,
+		3241301,
+		3241302,
+		3241303,
+		3241305,
+		3242101,
+		3242102,
+		3242105,
+		3242201,
+		3242202,
+		3242203,
+		3242205,
+		3242301,
+		3242302,
+		3242303,
+		3242305,
+		3243101,
+		3243102,
+		3243105,
+		3243201,
+		3243202,
+		3243203,
+		3243205,
+		3243301,
+		3243302,
+		3243303,
+		3243305,
+		3244101,
+		3244102,
+		3244105,
+		3244201,
+		3244202,
+		3244203,
+		3244205,
+		3244301,
+		3244302,
+		3244303,
+		3244305,
+		3245101,
+		3245102,
+		3245105,
+		3245201,
+		3245202,
+		3245203,
+		3245205,
+		3245301,
+		3245302,
+		3245303,
+		3245305,
+		3500001,
+		3500003,
+		3500005,
+		3500007,
+		3600101,
+		3600102,
+		3600201,
+		3600202,
+		3600301,
+		3600302,
+		3600401,
+		3600402,
+		3600501,
+		3600502,
+		3600601,
+		3600602,
+		3600701,
+		3600702,
+		3600801,
+		3600802,
+		3600901,
+		3600902,
+		3601001,
+		3601002,
+		3601101,
+		3601102,
+		3601201,
+		3601202,
+		3601301,
+		3601302,
+		3601401,
+		3601402,
+		3601501,
+		3601502,
+		3601601,
+		3601602,
+		3601701,
+		3601702,
+		3601801,
+		3601802,
+		3700002,
+		3700004,
+		3700006,
+		3700008,
+		3700010,
+		3700012,
+		3700014,
+		3700016,
+		3700018,
+		3700020,
+		3700022,
+		3700024,
+		3700026,
+		3700028,
+		3700030,
+		3700032,
+		3700034,
+		3700036,
+		3700038,
+		3700040,
+		3700501,
+		3700514,
+		3700516,
+		3700518,
+		3700520,
+		3700522,
+		3700524,
+		3700526,
+		3700528,
+		3700530,
+		3700532,
+		3700534,
+		3700536,
+		3700801,
+		3700802,
+		3700803,
+		3700804,
+		3700805,
+		3700806
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -2775,7 +3973,7 @@ pg.base.child2_word = {
 	{
 		id = 322,
 		main_character_face = 8,
-		word = "That's so great!",
+		word = "Wonderful...",
 		char_type = 6
 	},
 	{
@@ -5885,5 +7083,7193 @@ pg.base.child2_word = {
 		main_character_face = 0,
 		word = "Looking at the strange contents of the letter, something silently changed inside Navi.",
 		char_type = 0
+	},
+	[90001] = {
+		id = 90001,
+		main_character_face = 0,
+		word = "V3测试事件开始",
+		char_type = 0
+	},
+	[90002] = {
+		id = 90002,
+		main_character_face = 0,
+		word = "掉1个N选1",
+		char_type = 0
+	},
+	[90003] = {
+		id = 90003,
+		main_character_face = 0,
+		word = "掉1个塔罗牌",
+		char_type = 0
+	},
+	[90004] = {
+		id = 90004,
+		main_character_face = 0,
+		word = "连掉2个N选1",
+		char_type = 0
+	},
+	[90005] = {
+		id = 90005,
+		main_character_face = 0,
+		word = "掉1个升级次数",
+		char_type = 0
+	},
+	[90006] = {
+		id = 90006,
+		main_character_face = 0,
+		word = "连掉2个升级次数",
+		char_type = 0
+	},
+	[90101] = {
+		id = 90101,
+		main_character_face = 0,
+		word = "给我整个刮刮卡",
+		char_type = 0
+	},
+	[90102] = {
+		id = 90102,
+		main_character_face = 0,
+		word = "给我整个砸钉子",
+		char_type = 0
+	},
+	[90103] = {
+		id = 90103,
+		main_character_face = 0,
+		word = "来个小游戏",
+		char_type = 0
+	},
+	[3000000] = {
+		id = 3000000,
+		main_character_face = 0,
+		word = "3000000+开始是三期的内容，30：主界面台词， 31:主界面聊天和性格验证聊天，32:大地图随机事件，33:心之絮语",
+		char_type = 0
+	},
+	[3000001] = {
+		id = 3000001,
+		main_character_face = 0,
+		word = "Hmm... Thse leaves all have different shapes... I-I'll go with this one! It looks like a gold fan! There... I'll put it in your notebook...",
+		char_type = 1
+	},
+	[3000002] = {
+		id = 3000002,
+		main_character_face = 0,
+		word = "G-guardian... Did you make this shark-shaped apple just for me? I-I suddenly feel like it's too pretty to eat...",
+		char_type = 1
+	},
+	[3000003] = {
+		id = 3000003,
+		main_character_face = 0,
+		word = "That milk you're drinking smells really yummy... C-can I have a sip?",
+		char_type = 1
+	},
+	[3000004] = {
+		id = 3000004,
+		main_character_face = 0,
+		word = "It's nice and sunny today... Ms. Sunflower needs to drink plenty of water and bask in the warm sun. G-guardian, could you move the flowerpot to a sunny spot?",
+		char_type = 1
+	},
+	[3000005] = {
+		id = 3000005,
+		main_character_face = 0,
+		word = "When I got scared... I-I used to hide behind my plushie... but now when I hide behind you, I'm not so scared anymore...",
+		char_type = 1
+	},
+	[3000006] = {
+		id = 3000006,
+		main_character_face = 0,
+		word = "These books are so heavy... I can't carry them... G-guardian, could you give me a hand? Bwuh...",
+		char_type = 1
+	},
+	[3000007] = {
+		id = 3000007,
+		main_character_face = 0,
+		word = "This stuffed animal is bigger than I am... I could hide inside it and nobody would realize...",
+		char_type = 1
+	},
+	[3000008] = {
+		id = 3000008,
+		main_character_face = 0,
+		word = "I'm always one pair of socks short... Under the bed? H-how did my socks end up in my secret base?",
+		char_type = 1
+	},
+	[3000009] = {
+		id = 3000009,
+		main_character_face = 0,
+		word = "Those mushrooms there – they're not safe to eat. If you do eat them, you might turn into a mushroom yourself...",
+		char_type = 1
+	},
+	[3000010] = {
+		id = 3000010,
+		main_character_face = 0,
+		word = "I wish I could hide behind my plushie... But then my guardian won't be able to find me... Just have to bear this a little longer...",
+		char_type = 1
+	},
+	[3000011] = {
+		id = 3000011,
+		main_character_face = 0,
+		word = "Guardian! Today's putting has rainbow sprinkles on it! It tastes really good! You can have half of mine – open wide and I'll feed you!",
+		char_type = 1
+	},
+	[3000012] = {
+		id = 3000012,
+		main_character_face = 0,
+		word = "Guardian! I had a ton of fun today, and I want to tell you all about it! But first, let me go and make something sweet!",
+		char_type = 1
+	},
+	[3000013] = {
+		id = 3000013,
+		main_character_face = 0,
+		word = "You look kind of worn out... Have you been overworking yourself?! Forget everything else, it's time for you to go outside and bask in the sun! Come with me!",
+		char_type = 1
+	},
+	[3000014] = {
+		id = 3000014,
+		main_character_face = 0,
+		word = "This homework is so hard... D-don't worry, I'll manage! Studying will make me better at helping you, and thinking about that really motivates me!",
+		char_type = 1
+	},
+	[3000015] = {
+		id = 3000015,
+		main_character_face = 0,
+		word = "Guardian, isn't it about time for our date? And by \"date,\" I obviously mean \"time for you to take this cutie out into the city and buy some adorable accessories\"!",
+		char_type = 1
+	},
+	[3000016] = {
+		id = 3000016,
+		main_character_face = 0,
+		word = "It's time for a diary entry! My guardian and I had another ordinary day together... How come I still feel so happy even though it was ordinary?",
+		char_type = 1
+	},
+	[3000017] = {
+		id = 3000017,
+		main_character_face = 0,
+		word = "G-guardian, you really mustn't stay up any longer... I'm concerned about your health... VERY concerned...",
+		char_type = 1
+	},
+	[3000018] = {
+		id = 3000018,
+		main_character_face = 0,
+		word = "Tap to upload homework... Okay, I'll go back to sleep now... G-guardian? Please, I did do my lessons. Don't look so concerned...",
+		char_type = 1
+	},
+	[3000019] = {
+		id = 3000019,
+		main_character_face = 0,
+		word = "...I'm feigning death here, so please stop poking me! (Oh no! I let that slip... Wh-wh-what do I do now? I doubt I'll be able to hide like this again...)",
+		char_type = 1
+	},
+	[3000020] = {
+		id = 3000020,
+		main_character_face = 0,
+		word = "I, uhh... I made some dried meat as food for the cats... but the cats seem more interested in my tail than the food...",
+		char_type = 1
+	},
+	[3000021] = {
+		id = 3000021,
+		main_character_face = 0,
+		word = "Your feet are hurting already? But it was you who said \"let's tour all the souvenir shops at the amusement park,\" and we're only halfway done! Fine, sit down! I'll give you a leg massage!",
+		char_type = 1
+	},
+	[3000022] = {
+		id = 3000022,
+		main_character_face = 0,
+		word = "I want to wear high heels when I go on dates with you, but if we're going to play dance games... I suppose I'd better bring a spare pair of shoes, right?",
+		char_type = 1
+	},
+	[3000023] = {
+		id = 3000023,
+		main_character_face = 0,
+		word = "I've noticed it, you know – how you've been working overtime more and more lately! From tonight and onward, I'll be doing surprise visits on you with a blanket and milk in hand!",
+		char_type = 1
+	},
+	[3000024] = {
+		id = 3000024,
+		main_character_face = 0,
+		word = "I just made sunflower cookies, and they're so crunchy and tasty! Oh, the oven timer went ding again. Now I have a whole plate ready! Let's bring these to your office and share them with everyone else!",
+		char_type = 1
+	},
+	[3000025] = {
+		id = 3000025,
+		main_character_face = 0,
+		word = "Why do I always bring you to busy places? Gee, I wonder why! Come on, don't make a girl spell it out for you... It's because I want to flaunt our relationship to people!",
+		char_type = 1
+	},
+	[3100101] = {
+		id = 3100101,
+		main_character_face = 5,
+		word = "$1, look! I made cookies shaped like bears!",
+		char_type = 6
+	},
+	[3100102] = {
+		id = 3100102,
+		main_character_face = 3,
+		word = "Although, I feel like they're not cute enough...",
+		char_type = 6
+	},
+	[3100103] = {
+		id = 3100103,
+		main_character_face = 6,
+		word = "Should I give them faces using icing? Or use chocolate chips?",
+		char_type = 6
+	},
+	[3100104] = {
+		id = 3100104,
+		main_character_face = 0,
+		word = "They're plenty cute just the way they are.",
+		char_type = 2
+	},
+	[3100105] = {
+		id = 3100105,
+		main_character_face = 10,
+		word = "You think so? Heehee. Since you like them, you can have all of them!",
+		char_type = 6
+	},
+	[3100106] = {
+		id = 3100106,
+		main_character_face = 5,
+		word = "Just give me a minute and I'll make some tea to go with them!",
+		char_type = 6
+	},
+	[3100201] = {
+		id = 3100201,
+		main_character_face = 2,
+		word = "$1, I borrowed a book on flower arrangement from the library. It has so much detailed information!",
+		char_type = 6
+	},
+	[3100202] = {
+		id = 3100202,
+		main_character_face = 2,
+		word = "I'm thinking... I might have figured out the trick to flower arrangement now!",
+		char_type = 6
+	},
+	[3100203] = {
+		id = 3100203,
+		main_character_face = 5,
+		word = "Let's give it a shot together later!",
+		char_type = 6
+	},
+	[3100204] = {
+		id = 3100204,
+		main_character_face = 10,
+		word = "Ah, but first, we'd better pick out a couple of flowers!",
+		char_type = 6
+	},
+	[3100301] = {
+		id = 3100301,
+		main_character_face = 3,
+		word = "Which one should I go with...",
+		char_type = 6
+	},
+	[3100302] = {
+		id = 3100302,
+		main_character_face = 0,
+		word = "What's the matter? You've been standing at the closet for a while now.",
+		char_type = 2
+	},
+	[3100303] = {
+		id = 3100303,
+		main_character_face = 3,
+		word = "Well, I can't make up my mind between this old-school leather jacket and this sports jacket...",
+		char_type = 6
+	},
+	[3100304] = {
+		id = 3100304,
+		main_character_face = 6,
+		word = "Hmm... Wait, I've got it!",
+		char_type = 6
+	},
+	[3100305] = {
+		id = 3100305,
+		main_character_face = 1,
+		word = "$1, you can decide what clothes I'll wear today!",
+		char_type = 6
+	},
+	[3100306] = {
+		id = 3100306,
+		main_character_face = 10,
+		word = "Please be sure to pick something that looks good on me!",
+		char_type = 6
+	},
+	[3100401] = {
+		id = 3100401,
+		main_character_face = 15,
+		word = "$1! What do you think about this star bracelet?",
+		char_type = 6
+	},
+	[3100402] = {
+		id = 3100402,
+		main_character_face = 0,
+		word = "It suits you really well.",
+		char_type = 2
+	},
+	[3100403] = {
+		id = 3100403,
+		main_character_face = 15,
+		word = "Heehee. Fun fact: This bracelet is actually one of a pair! And the second one I'm giving to you!",
+		char_type = 6
+	},
+	[3100404] = {
+		id = 3100404,
+		main_character_face = 1,
+		word = "Give me your arm and I'll put it on for you!",
+		char_type = 6
+	},
+	[3100405] = {
+		id = 3100405,
+		main_character_face = 1,
+		word = "This was your plan from the start, wasn't it?",
+		char_type = 2
+	},
+	[3100406] = {
+		id = 3100406,
+		main_character_face = 10,
+		word = "Nuh-uh! It was just a coincidence! The stars are telling us we should never be apart!",
+		char_type = 6
+	},
+	[3100501] = {
+		id = 3100501,
+		main_character_face = 10,
+		word = "I bought a co-op game that's received rave reviews! Do you want to play it with me, guardian?",
+		char_type = 6
+	},
+	[3100502] = {
+		id = 3100502,
+		main_character_face = 0,
+		word = "You sure this is co-op? It's a fighting game.",
+		char_type = 2
+	},
+	[3100503] = {
+		id = 3100503,
+		main_character_face = 9,
+		word = "What?! But the cover shows two people holding hands...",
+		char_type = 6
+	},
+	[3100504] = {
+		id = 3100504,
+		main_character_face = 8,
+		word = "But now that I look at it again... they're arm wrestling!",
+		char_type = 6
+	},
+	[3100505] = {
+		id = 3100505,
+		main_character_face = 7,
+		word = "Well, anyway... I'm just starting out, so please thoroughly show me the ropes of how to play!",
+		char_type = 6
+	},
+	[3100601] = {
+		id = 3100601,
+		main_character_face = 4,
+		word = "$1... I feel like I've put on a bit of weight lately!",
+		char_type = 6
+	},
+	[3100602] = {
+		id = 3100602,
+		main_character_face = 1,
+		word = "On the bright side, it seems luck is on my side!",
+		char_type = 6
+	},
+	[3100603] = {
+		id = 3100603,
+		main_character_face = 5,
+		word = "This book says that massages can help you lose weight! Would you mind giving me one, please?",
+		char_type = 6
+	},
+	[3100604] = {
+		id = 3100604,
+		main_character_face = 0,
+		word = "Sure thing.",
+		char_type = 2
+	},
+	[3100605] = {
+		id = 3100605,
+		main_character_face = 10,
+		word = "Yay! You're the best!",
+		char_type = 6
+	},
+	[3100701] = {
+		id = 3100701,
+		main_character_face = 1,
+		word = "$1, could you come here for a moment?",
+		char_type = 6
+	},
+	[3100702] = {
+		id = 3100702,
+		main_character_face = 10,
+		word = "Alright, now just rest your head in my lap, please.",
+		char_type = 6
+	},
+	[3100703] = {
+		id = 3100703,
+		main_character_face = 10,
+		word = "You've always cleaned my ears for me, and it felt really nice when you did it...",
+		char_type = 6
+	},
+	[3100704] = {
+		id = 3100704,
+		main_character_face = 10,
+		word = "So this time, I'm going to clean YOUR ears for you! Heehee.",
+		char_type = 6
+	},
+	[3100801] = {
+		id = 3100801,
+		main_character_face = 9,
+		word = "I don't really understand this explanation on how to swim...",
+		char_type = 6
+	},
+	[3100802] = {
+		id = 3100802,
+		main_character_face = 9,
+		word = "How exactly am I supposed to apply force in the water?",
+		char_type = 6
+	},
+	[3100803] = {
+		id = 3100803,
+		main_character_face = 5,
+		word = "$1, are you free this weekend? If you are, I want to go to the pool with you!",
+		char_type = 6
+	},
+	[3100804] = {
+		id = 3100804,
+		main_character_face = 10,
+		word = "With you teaching me, I'm sure to get the hang of it quickly!",
+		char_type = 6
+	},
+	[3100901] = {
+		id = 3100901,
+		main_character_face = 1,
+		word = "$1, can you lower your head for me?",
+		char_type = 6
+	},
+	[3100902] = {
+		id = 3100902,
+		main_character_face = 1,
+		word = "Sure, but why?",
+		char_type = 2
+	},
+	[3100903] = {
+		id = 3100903,
+		main_character_face = 11,
+		word = "Your hat's made a mess of your hair, and I want to fix it!",
+		char_type = 6
+	},
+	[3100904] = {
+		id = 3100904,
+		main_character_face = 15,
+		word = "There we go. Much better!",
+		char_type = 6
+	},
+	[3101001] = {
+		id = 3101001,
+		main_character_face = 10,
+		word = "$1, when is the next time you're free for a good while?",
+		char_type = 6
+	},
+	[3101002] = {
+		id = 3101002,
+		main_character_face = 0,
+		word = "Not until the holidays.",
+		char_type = 2
+	},
+	[3101003] = {
+		id = 3101003,
+		main_character_face = 1,
+		word = "The holidays... Okay.",
+		char_type = 6
+	},
+	[3101004] = {
+		id = 3101004,
+		main_character_face = 10,
+		word = "When that time comes, do you want to go traveling with me? I'll sketch out a travel plan.",
+		char_type = 6
+	},
+	[3101005] = {
+		id = 3101005,
+		main_character_face = 1,
+		word = "I promise we'll go somewhere with some stunning scenery!",
+		char_type = 6
+	},
+	[3101101] = {
+		id = 3101101,
+		main_character_face = 2,
+		word = "The manjuu plushie in that claw machine is adorable... I want it...",
+		char_type = 6
+	},
+	[3101102] = {
+		id = 3101102,
+		main_character_face = 7,
+		word = "It's a shame I've used almost all of my allowance, so I can't get it... *sigh*...",
+		char_type = 6
+	},
+	[3101103] = {
+		id = 3101103,
+		main_character_face = 3,
+		word = "All I can do is ask you and pray you'll help me get it! Please?",
+		char_type = 6
+	},
+	[3101104] = {
+		id = 3101104,
+		main_character_face = 0,
+		word = "I'll get it for you.",
+		char_type = 2
+	},
+	[3101105] = {
+		id = 3101105,
+		main_character_face = 5,
+		word = "Hooray! Knowing how skilled you are, you'll nab it easily!",
+		char_type = 6
+	},
+	[3101201] = {
+		id = 3101201,
+		main_character_face = 8,
+		word = "Nooo! I was buying us tickets for the amusement park, and I only meant to buy two...",
+		char_type = 6
+	},
+	[3101202] = {
+		id = 3101202,
+		main_character_face = 8,
+		word = "But then my hand slipped!",
+		char_type = 6
+	},
+	[3101203] = {
+		id = 3101203,
+		main_character_face = 9,
+		word = "I ended up adding a 0 and buying 20 of them!",
+		char_type = 6
+	},
+	[3101204] = {
+		id = 3101204,
+		main_character_face = 10,
+		word = "I have an idea, though... Why don't we go to the amusement park every day for this month? Heehee...",
+		char_type = 6
+	},
+	[3101301] = {
+		id = 3101301,
+		main_character_face = 9,
+		word = "Either we go eat pizza today, or we could get fried chicken...",
+		char_type = 6
+	},
+	[3101302] = {
+		id = 3101302,
+		main_character_face = 12,
+		word = "Wait... We had this same conversation yesterday, didn't we, $1?",
+		char_type = 6
+	},
+	[3101303] = {
+		id = 3101303,
+		main_character_face = 2,
+		word = "Let's go with something else instead... Actually, we have some fresh ingredients left in the fridge, don't we?",
+		char_type = 6
+	},
+	[3101304] = {
+		id = 3101304,
+		main_character_face = 6,
+		word = "Guardian, how about we eat at home today?",
+		char_type = 6
+	},
+	[3101305] = {
+		id = 3101305,
+		main_character_face = 10,
+		word = "You know, I like your home cooking more than anything else!",
+		char_type = 6
+	},
+	[3101401] = {
+		id = 3101401,
+		main_character_face = 1,
+		word = "$1, did you find the present I made for you?",
+		char_type = 6
+	},
+	[3101402] = {
+		id = 3101402,
+		main_character_face = 10,
+		word = "I hid it under your pillow!",
+		char_type = 6
+	},
+	[3101403] = {
+		id = 3101403,
+		main_character_face = 10,
+		word = "It's actually a protective charm that I sewed! I made one each for you and myself.",
+		char_type = 6
+	},
+	[3101404] = {
+		id = 3101404,
+		main_character_face = 7,
+		word = "The stitches might be a little crooked, but I practiced a lot to make them!",
+		char_type = 6
+	},
+	[3101405] = {
+		id = 3101405,
+		main_character_face = 10,
+		word = "Be sure to always keep it on you... Promise me!",
+		char_type = 6
+	},
+	[3101501] = {
+		id = 3101501,
+		main_character_face = 10,
+		word = "Tadah! Look! Doesn't our home look sparkling clean now?",
+		char_type = 6
+	},
+	[3101502] = {
+		id = 3101502,
+		main_character_face = 0,
+		word = "It does. It looks brand new.",
+		char_type = 2
+	},
+	[3101503] = {
+		id = 3101503,
+		main_character_face = 6,
+		word = "I spent the whole afternoon cleaning the place! It's even sparkling clean under the couch!",
+		char_type = 6
+	},
+	[3101504] = {
+		id = 3101504,
+		main_character_face = 10,
+		word = "Wouldn't you say I'm pretty dang capable, $1?",
+		char_type = 6
+	},
+	[3101505] = {
+		id = 3101505,
+		main_character_face = 1,
+		word = "Then let me hear some praise, please! A little bit goes a long way!",
+		char_type = 6
+	},
+	[3101601] = {
+		id = 3101601,
+		main_character_face = 10,
+		word = "I tried my hand at creative cooking today!",
+		char_type = 6
+	},
+	[3101602] = {
+		id = 3101602,
+		main_character_face = 6,
+		word = "My inspiration came from the idea that everything can be turned into something else.",
+		char_type = 6
+	},
+	[3101603] = {
+		id = 3101603,
+		main_character_face = 10,
+		word = "So, what I made is this – a little rabbit and her dinosaur friend!",
+		char_type = 6
+	},
+	[3101604] = {
+		id = 3101604,
+		main_character_face = 1,
+		word = "They're not just pretty, but also delicious! The rabbit is a sweet jelly roll, and the dinosaur is a mix of mashed potatoes and broccoli!",
+		char_type = 6
+	},
+	[3101605] = {
+		id = 3101605,
+		main_character_face = 10,
+		word = "Have a taste, $1! You won't believe something so cute tastes so good!",
+		char_type = 6
+	},
+	[3101701] = {
+		id = 3101701,
+		main_character_face = 2,
+		word = "The world of fairy tales is such a mystical thing...",
+		char_type = 6
+	},
+	[3101702] = {
+		id = 3101702,
+		main_character_face = 0,
+		word = "Thinking about that book you just read, huh?",
+		char_type = 2
+	},
+	[3101703] = {
+		id = 3101703,
+		main_character_face = 9,
+		word = "Yeah. I finished it, and the princess got together with the prince she met halfway through the story...",
+		char_type = 6
+	},
+	[3101704] = {
+		id = 3101704,
+		main_character_face = 3,
+		word = "But it was the little animals who were with the princess from the start, you know? All the prince did was dance with her...",
+		char_type = 6
+	},
+	[3101705] = {
+		id = 3101705,
+		main_character_face = 12,
+		word = "Hmm... Maybe I just don't get it. Guardian, can we read it together sometime?",
+		char_type = 6
+	},
+	[3101801] = {
+		id = 3101801,
+		main_character_face = 2,
+		word = "Guardian, I've come up with a plan – a plan for disassembling the refrigerator!",
+		char_type = 6
+	},
+	[3101802] = {
+		id = 3101802,
+		main_character_face = 0,
+		word = "Talk about a bold plan. Do you need me to take out all the food and ingredients inside first?",
+		char_type = 2
+	},
+	[3101803] = {
+		id = 3101803,
+		main_character_face = 10,
+		word = "Yes, please!",
+		char_type = 6
+	},
+	[3101804] = {
+		id = 3101804,
+		main_character_face = 7,
+		word = "I'm just really curious to see the internal structure of a refrigerator...",
+		char_type = 6
+	},
+	[3101805] = {
+		id = 3101805,
+		main_character_face = 6,
+		word = "If I can get a grasp on how it works, I might even be able to tune it to make it preserve food for longer...",
+		char_type = 6
+	},
+	[3101806] = {
+		id = 3101806,
+		main_character_face = 10,
+		word = "That way, you can stock up on all your favorite foods, guardian!",
+		char_type = 6
+	},
+	[3101901] = {
+		id = 3101901,
+		main_character_face = 2,
+		word = "Ahh... That's how it is... You've been flying for a long time, so your wings hurt... Oh, you're hungry, too?",
+		char_type = 6
+	},
+	[3101902] = {
+		id = 3101902,
+		main_character_face = 0,
+		word = "Who are you talking to?",
+		char_type = 2
+	},
+	[3101903] = {
+		id = 3101903,
+		main_character_face = 14,
+		word = "The chubby little bird outside the window! It's saying its wings hurt and it's hungry!",
+		char_type = 6
+	},
+	[3101904] = {
+		id = 3101904,
+		main_character_face = 1,
+		word = "It looks really troubled... I want to help it. Maybe talking to it is the best way...",
+		char_type = 6
+	},
+	[3101905] = {
+		id = 3101905,
+		main_character_face = 1,
+		word = "Or maybe I should chirp instead, just like it does?",
+		char_type = 6
+	},
+	[3102001] = {
+		id = 3102001,
+		main_character_face = 5,
+		word = "$1... $1... It's time to take a break!",
+		char_type = 6
+	},
+	[3102002] = {
+		id = 3102002,
+		main_character_face = 6,
+		word = "Put your work on hold for a bit and let's relax! How about we go out and have some fun?",
+		char_type = 6
+	},
+	[3102003] = {
+		id = 3102003,
+		main_character_face = 0,
+		word = "Sure thing. Where do you wanna go?",
+		char_type = 2
+	},
+	[3102004] = {
+		id = 3102004,
+		main_character_face = 10,
+		word = "The arcade! I want to go to the arcade!",
+		char_type = 6
+	},
+	[3102005] = {
+		id = 3102005,
+		main_character_face = 8,
+		word = "I practiced my skills a lot this afternoon, so I want to go while I still have my muscle memory...",
+		char_type = 6
+	},
+	[3102006] = {
+		id = 3102006,
+		main_character_face = 8,
+		word = "I might even reach a new high score!",
+		char_type = 6
+	},
+	[3102101] = {
+		id = 3102101,
+		main_character_face = 1,
+		word = "Here... Have this.",
+		char_type = 6
+	},
+	[3102102] = {
+		id = 3102102,
+		main_character_face = 1,
+		word = "What is it?",
+		char_type = 2
+	},
+	[3102103] = {
+		id = 3102103,
+		main_character_face = 1,
+		word = "A spare key to my room...",
+		char_type = 6
+	},
+	[3102104] = {
+		id = 3102104,
+		main_character_face = 9,
+		word = "If I lock myself inside... or if you ever need me...",
+		char_type = 6
+	},
+	[3102105] = {
+		id = 3102105,
+		main_character_face = 5,
+		word = "Then please come and see me...",
+		char_type = 6
+	},
+	[3102106] = {
+		id = 3102106,
+		main_character_face = 1,
+		word = "This is only for you, so please don't lose it...",
+		char_type = 6
+	},
+	[3102201] = {
+		id = 3102201,
+		main_character_face = 5,
+		word = "Um, $1... Could you stay where you are for a bit?",
+		char_type = 6
+	},
+	[3102202] = {
+		id = 3102202,
+		main_character_face = 0,
+		word = "Sure, but why?",
+		char_type = 2
+	},
+	[3102203] = {
+		id = 3102203,
+		main_character_face = 7,
+		word = "Well, um... I need a model to... practice human anatomy...",
+		char_type = 6
+	},
+	[3102204] = {
+		id = 3102204,
+		main_character_face = 7,
+		word = "Also... I want to draw myself next to you...",
+		char_type = 6
+	},
+	[3102205] = {
+		id = 3102205,
+		main_character_face = 1,
+		word = "That way, my drawing will be just like us... Always together...",
+		char_type = 6
+	},
+	[3102301] = {
+		id = 3102301,
+		main_character_face = 5,
+		word = "I... I made omelette rice for dinner...",
+		char_type = 6
+	},
+	[3102302] = {
+		id = 3102302,
+		main_character_face = 0,
+		word = "Thanks. I can tell you put a lot of love into it.",
+		char_type = 2
+	},
+	[3102303] = {
+		id = 3102303,
+		main_character_face = 3,
+		word = "Ah, well... I turned up the heat too high and burned the edges a bit...",
+		char_type = 6
+	},
+	[3102304] = {
+		id = 3102304,
+		main_character_face = 7,
+		word = "You can't eat it like this... L-let me make another one!",
+		char_type = 6
+	},
+	[3102305] = {
+		id = 3102305,
+		main_character_face = 1,
+		word = "...Y-you're fine with it? Really? Th-then you have to promise me something... If it tastes bad, tell me, okay?",
+		char_type = 6
+	},
+	[3102401] = {
+		id = 3102401,
+		main_character_face = 0,
+		word = "You're still up, Lora?",
+		char_type = 2
+	},
+	[3102402] = {
+		id = 3102402,
+		main_character_face = 4,
+		word = "Ah... The thing is... I can't sleep...",
+		char_type = 6
+	},
+	[3102403] = {
+		id = 3102403,
+		main_character_face = 14,
+		word = "They broadcast a... a ghost story on the radio...",
+		char_type = 6
+	},
+	[3102404] = {
+		id = 3102404,
+		main_character_face = 0,
+		word = "Guessing it scared you.",
+		char_type = 2
+	},
+	[3102405] = {
+		id = 3102405,
+		main_character_face = 7,
+		word = "G-guardian... could you stay here for a while?",
+		char_type = 6
+	},
+	[3102406] = {
+		id = 3102406,
+		main_character_face = 7,
+		word = "Please... just long enough for me to... stop feeling scared...",
+		char_type = 6
+	},
+	[3102501] = {
+		id = 3102501,
+		main_character_face = 4,
+		word = "Oh no... The leaves don't seem to be doing so well...",
+		char_type = 6
+	},
+	[3102502] = {
+		id = 3102502,
+		main_character_face = 7,
+		word = "I don't get it... I water it every day...",
+		char_type = 6
+	},
+	[3102503] = {
+		id = 3102503,
+		main_character_face = 0,
+		word = "Something wrong with your plant?",
+		char_type = 2
+	},
+	[3102504] = {
+		id = 3102504,
+		main_character_face = 7,
+		word = "$1... is my golden pothos going to wither? I don't want it to die...",
+		char_type = 6
+	},
+	[3102505] = {
+		id = 3102505,
+		main_character_face = 0,
+		word = "It'll be fine. You just watered it too much. Cut down on the watering and it'll spring right back.",
+		char_type = 2
+	},
+	[3102506] = {
+		id = 3102506,
+		main_character_face = 1,
+		word = "Will it? Wow, you're so knowledgeable, $1... It's such a relief that I have you to count on...",
+		char_type = 6
+	},
+	[3102601] = {
+		id = 3102601,
+		main_character_face = 0,
+		word = "What're you playing there, Lora?",
+		char_type = 2
+	},
+	[3102602] = {
+		id = 3102602,
+		main_character_face = 7,
+		word = "A game I just bought... I heard the story is really good.",
+		char_type = 6
+	},
+	[3102603] = {
+		id = 3102603,
+		main_character_face = 8,
+		word = "B-but it's also pretty scary... I can't play it past this point...",
+		char_type = 6
+	},
+	[3102604] = {
+		id = 3102604,
+		main_character_face = 7,
+		word = "Hey, um... $1, can you please play it with me?",
+		char_type = 6
+	},
+	[3102605] = {
+		id = 3102605,
+		main_character_face = 1,
+		word = "If you're with me, it won't be so scary...",
+		char_type = 6
+	},
+	[3102701] = {
+		id = 3102701,
+		main_character_face = 15,
+		word = "I came up with a really fun idea!",
+		char_type = 6
+	},
+	[3102702] = {
+		id = 3102702,
+		main_character_face = 0,
+		word = "Oh yeah? What?",
+		char_type = 2
+	},
+	[3102703] = {
+		id = 3102703,
+		main_character_face = 12,
+		word = "If you take this plastic sheet... and run it all the way down the stairs...",
+		char_type = 6
+	},
+	[3102704] = {
+		id = 3102704,
+		main_character_face = 15,
+		word = "Then you can make a really long slide! Whenever we're going downstairs, we can just slide down instead...",
+		char_type = 6
+	},
+	[3102705] = {
+		id = 3102705,
+		main_character_face = 15,
+		word = "Do you want to... give it a try, $1?",
+		char_type = 6
+	},
+	[3102801] = {
+		id = 3102801,
+		main_character_face = 0,
+		word = "What do you say we go outside? The weather's great.",
+		char_type = 2
+	},
+	[3102802] = {
+		id = 3102802,
+		main_character_face = 1,
+		word = "Sure... In fact, there's a place I want to visit...",
+		char_type = 6
+	},
+	[3102803] = {
+		id = 3102803,
+		main_character_face = 2,
+		word = "A new plushie store set up shop... I saw it on TV...",
+		char_type = 6
+	},
+	[3102804] = {
+		id = 3102804,
+		main_character_face = 6,
+		word = "Although, I'm not after any plushies...",
+		char_type = 6
+	},
+	[3102805] = {
+		id = 3102805,
+		main_character_face = 5,
+		word = "The actual reason I want to go is that that store has a photo booth...",
+		char_type = 6
+	},
+	[3102806] = {
+		id = 3102806,
+		main_character_face = 5,
+		word = "I want to take some pictures with you... Just you and me, together... Heheh...",
+		char_type = 6
+	},
+	[3102901] = {
+		id = 3102901,
+		main_character_face = 0,
+		word = "Lora, it's time for dinner.",
+		char_type = 2
+	},
+	[3102902] = {
+		id = 3102902,
+		main_character_face = 5,
+		word = "I-I'll be there in a bit... I just want to finish this anime episode...",
+		char_type = 6
+	},
+	[3102903] = {
+		id = 3102903,
+		main_character_face = 12,
+		word = "J-just five more minutes... I'm almost at the climactic transformation scene...",
+		char_type = 6
+	},
+	[3102904] = {
+		id = 3102904,
+		main_character_face = 8,
+		word = "The episode will be done when that scene's over, I promise...",
+		char_type = 6
+	},
+	[3103001] = {
+		id = 3103001,
+		main_character_face = 10,
+		word = "Ding! You've triggered a story event. Please choose one of the following options...",
+		char_type = 6
+	},
+	[3103002] = {
+		id = 3103002,
+		main_character_face = 10,
+		word = "One: Count stars with Lora on the rooftop...",
+		char_type = 6
+	},
+	[3103003] = {
+		id = 3103003,
+		main_character_face = 10,
+		word = "Two: Make Lora's favorite food...",
+		char_type = 6
+	},
+	[3103004] = {
+		id = 3103004,
+		main_character_face = 0,
+		word = "What's this about? You doing a visual novel bit?",
+		char_type = 2
+	},
+	[3103005] = {
+		id = 3103005,
+		main_character_face = 6,
+		word = "Yeah... I picked it up from my games... Although, it's the same no matter which you pick...",
+		char_type = 6
+	},
+	[3103006] = {
+		id = 3103006,
+		main_character_face = 10,
+		word = "Because both options will make me happy...",
+		char_type = 6
+	},
+	[3103101] = {
+		id = 3103101,
+		main_character_face = 5,
+		word = "$1... I-I made some tea... I'm just not sure if it's warm enough...",
+		char_type = 6
+	},
+	[3103102] = {
+		id = 3103102,
+		main_character_face = 0,
+		word = "It smells pretty nice. Did you make this just for me?",
+		char_type = 2
+	},
+	[3103103] = {
+		id = 3103103,
+		main_character_face = 6,
+		word = "Y-yes... I tried it a few times, and I think I've got the temperature just right this time...",
+		char_type = 6
+	},
+	[3103104] = {
+		id = 3103104,
+		main_character_face = 0,
+		word = "Yep, the temperature's perfect. Tastes wonderful, too. Thanks, Lora.",
+		char_type = 2
+	},
+	[3103105] = {
+		id = 3103105,
+		main_character_face = 1,
+		word = "Oh! Thank goodness!",
+		char_type = 6
+	},
+	[3103201] = {
+		id = 3103201,
+		main_character_face = 2,
+		word = "Um... H-hang on a minute...",
+		char_type = 6
+	},
+	[3103202] = {
+		id = 3103202,
+		main_character_face = 2,
+		word = "Th-the sky is starting to turn dark... It might rain in the evening...",
+		char_type = 6
+	},
+	[3103203] = {
+		id = 3103203,
+		main_character_face = 1,
+		word = "Also... I left the umbrella by the rack next to the door, so...",
+		char_type = 6
+	},
+	[3103204] = {
+		id = 3103204,
+		main_character_face = 0,
+		word = "Thanks. That's quite considerate of you.",
+		char_type = 2
+	},
+	[3103205] = {
+		id = 3103205,
+		main_character_face = 1,
+		word = "Let's... Heheh...",
+		char_type = 6
+	},
+	[3103301] = {
+		id = 3103301,
+		main_character_face = 2,
+		word = "Oh! $1...",
+		char_type = 6
+	},
+	[3103302] = {
+		id = 3103302,
+		main_character_face = 1,
+		word = "Th-the collar of your jacket... seems to be a little loose...",
+		char_type = 6
+	},
+	[3103303] = {
+		id = 3103303,
+		main_character_face = 1,
+		word = "Would you like me to... restitch it? It'll only take a second...",
+		char_type = 6
+	},
+	[3103304] = {
+		id = 3103304,
+		main_character_face = 0,
+		word = "That'd be great. Go ahead, Lora.",
+		char_type = 2
+	},
+	[3103305] = {
+		id = 3103305,
+		main_character_face = 1,
+		word = "It's my pleasure... to be of assistance...",
+		char_type = 6
+	},
+	[3103401] = {
+		id = 3103401,
+		main_character_face = 3,
+		word = "$1... Are you still working?",
+		char_type = 6
+	},
+	[3103402] = {
+		id = 3103402,
+		main_character_face = 0,
+		word = "Yeah. Still got a couple of documents to fill out. Shouldn't you get some rest?",
+		char_type = 2
+	},
+	[3103403] = {
+		id = 3103403,
+		main_character_face = 1,
+		word = "I... Would you mind if I... used the couch for a while? Just a little while... I promise I won't disrupt your work.",
+		char_type = 6
+	},
+	[3103404] = {
+		id = 3103404,
+		main_character_face = 0,
+		word = "Go ahead. Having you around would make my work a lot less boring.",
+		char_type = 2
+	},
+	[3103405] = {
+		id = 3103405,
+		main_character_face = 5,
+		word = "I'm glad to hear that... I will always, always be by your side!",
+		char_type = 6
+	},
+	[3103501] = {
+		id = 3103501,
+		main_character_face = 15,
+		word = "$1... Take a look at this.",
+		char_type = 6
+	},
+	[3103502] = {
+		id = 3103502,
+		main_character_face = 0,
+		word = "Oh, a bookmark? Kind of resembles a small folding fan.",
+		char_type = 2
+	},
+	[3103503] = {
+		id = 3103503,
+		main_character_face = 12,
+		word = "It does... I found it under a tree earlier today... It looked really pretty, so I brought it with me...",
+		char_type = 6
+	},
+	[3103504] = {
+		id = 3103504,
+		main_character_face = 5,
+		word = "I want you to have it, as a gift... Will you take it?",
+		char_type = 6
+	},
+	[3103505] = {
+		id = 3103505,
+		main_character_face = 0,
+		word = "Of course. I'll cherish it.",
+		char_type = 2
+	},
+	[3103506] = {
+		id = 3103506,
+		main_character_face = 15,
+		word = "Wonderful...",
+		char_type = 6
+	},
+	[3103601] = {
+		id = 3103601,
+		main_character_face = 2,
+		word = "$1... L-look at the bushes over there...",
+		char_type = 6
+	},
+	[3103602] = {
+		id = 3103602,
+		main_character_face = 5,
+		word = "There's a little bird in there... and it looks like it's injured its wing... The poor thing is trembling...",
+		char_type = 6
+	},
+	[3103603] = {
+		id = 3103603,
+		main_character_face = 0,
+		word = "Let's go have a look.",
+		char_type = 2
+	},
+	[3103604] = {
+		id = 3103604,
+		main_character_face = 5,
+		word = "R-right! Can I... Can I bring it home and keep it? At least until its wing heals...",
+		char_type = 6
+	},
+	[3103605] = {
+		id = 3103605,
+		main_character_face = 0,
+		word = "Sure you can. We'll look after it together.",
+		char_type = 2
+	},
+	[3103606] = {
+		id = 3103606,
+		main_character_face = 1,
+		word = "Okay! I'll be gentle with it...",
+		char_type = 6
+	},
+	[3103701] = {
+		id = 3103701,
+		main_character_face = 10,
+		word = "$1... Can you guess... where I'm hiding?",
+		char_type = 6
+	},
+	[3103702] = {
+		id = 3103702,
+		main_character_face = 10,
+		word = "Heehee... I'm hiding under this pile of plushies...",
+		char_type = 6
+	},
+	[3103703] = {
+		id = 3103703,
+		main_character_face = 0,
+		word = "Is it comfy in there?",
+		char_type = 2
+	},
+	[3103704] = {
+		id = 3103704,
+		main_character_face = 10,
+		word = "Yes, very comfy and relaxing... Would you like to join me?",
+		char_type = 6
+	},
+	[3103801] = {
+		id = 3103801,
+		main_character_face = 2,
+		word = "$1... Have a look...",
+		char_type = 6
+	},
+	[3103802] = {
+		id = 3103802,
+		main_character_face = 0,
+		word = "What're these? Mushrooms?",
+		char_type = 2
+	},
+	[3103803] = {
+		id = 3103803,
+		main_character_face = 1,
+		word = "Yeah... I found them on some damp wood behind the storehouse... I've been going there every day to check on them...",
+		char_type = 6
+	},
+	[3103804] = {
+		id = 3103804,
+		main_character_face = 1,
+		word = "I made sure to surround them with rocks... so nobody would accidentally step on them...",
+		char_type = 6
+	},
+	[3103805] = {
+		id = 3103805,
+		main_character_face = 6,
+		word = "Seeing these mushrooms grow little by little... brings me a strange sense of happiness...",
+		char_type = 6
+	},
+	[3103901] = {
+		id = 3103901,
+		main_character_face = 6,
+		word = "The sound of the rain is so soothing...",
+		char_type = 6
+	},
+	[3103902] = {
+		id = 3103902,
+		main_character_face = 6,
+		word = "This is the perfect weather for getting comfy in bed...",
+		char_type = 6
+	},
+	[3103903] = {
+		id = 3103903,
+		main_character_face = 1,
+		word = "Would you... like to rest with me, $1?",
+		char_type = 6
+	},
+	[3103904] = {
+		id = 3103904,
+		main_character_face = 0,
+		word = "Sure, why not? Let's get comfortable.",
+		char_type = 2
+	},
+	[3103905] = {
+		id = 3103905,
+		main_character_face = 10,
+		word = "Let's... Heheh...",
+		char_type = 6
+	},
+	[3104001] = {
+		id = 3104001,
+		main_character_face = 3,
+		word = "The hallway is a little too dark if you ask me...",
+		char_type = 6
+	},
+	[3104002] = {
+		id = 3104002,
+		main_character_face = 10,
+		word = "So... I installed a small lamp...",
+		char_type = 6
+	},
+	[3104003] = {
+		id = 3104003,
+		main_character_face = 1,
+		word = "That way you won't be scared if you wake up in the middle of the night...",
+		char_type = 6
+	},
+	[3104004] = {
+		id = 3104004,
+		main_character_face = 0,
+		word = "Thanks. That's really thoughtful of you. Sleep tight.",
+		char_type = 2
+	},
+	[3104005] = {
+		id = 3104005,
+		main_character_face = 10,
+		word = "Good night, $1!",
+		char_type = 6
+	},
+	[3104101] = {
+		id = 3104101,
+		main_character_face = 6,
+		word = "$1, while we were out today, I wore a headband with the same color as your necktie!",
+		char_type = 6
+	},
+	[3104102] = {
+		id = 3104102,
+		main_character_face = 1,
+		word = "It was just a small detail that you won't really notice unless you point it out...",
+		char_type = 6
+	},
+	[3104103] = {
+		id = 3104103,
+		main_character_face = 10,
+		word = "But, to me, it was like a little secret between us. Viewing it that way made me really happy.",
+		char_type = 6
+	},
+	[3104104] = {
+		id = 3104104,
+		main_character_face = 0,
+		word = "I noticed. You looked really cute.",
+		char_type = 3
+	},
+	[3104105] = {
+		id = 3104105,
+		main_character_face = 10,
+		word = "Oh! You actually noticed!",
+		char_type = 6
+	},
+	[3104106] = {
+		id = 3104106,
+		main_character_face = 10,
+		word = "Heehee. I'll take that to mean I have your tactic approval!",
+		char_type = 6
+	},
+	[3104107] = {
+		id = 3104107,
+		main_character_face = 0,
+		word = "Yeah, that is a pretty easy-to-miss detail.",
+		char_type = 3
+	},
+	[3104108] = {
+		id = 3104108,
+		main_character_face = 5,
+		word = "So you think it was too subtle?",
+		char_type = 6
+	},
+	[3104109] = {
+		id = 3104109,
+		main_character_face = 7,
+		word = "Hrmh... Alright. Next time, I'll pick out a more eye-catching accessory!",
+		char_type = 6
+	},
+	[3104201] = {
+		id = 3104201,
+		main_character_face = 1,
+		word = "I planted sunflowers in the garden and made a little mini-field, and I've been watering and fertilizing them every day.",
+		char_type = 6
+	},
+	[3104202] = {
+		id = 3104202,
+		main_character_face = 10,
+		word = "And now, the flowers have bloomed!",
+		char_type = 6
+	},
+	[3104203] = {
+		id = 3104203,
+		main_character_face = 10,
+		word = "I placed two chairs there so we can sit and enjoy the sunflowers in full bloom later.",
+		char_type = 6
+	},
+	[3104204] = {
+		id = 3104204,
+		main_character_face = 1,
+		word = "Actually, do you want to go see them now? I can make tea and some snacks for us.",
+		char_type = 6
+	},
+	[3104205] = {
+		id = 3104205,
+		main_character_face = 1,
+		word = "That's lovely. It'll be like our secret little garden.",
+		char_type = 3
+	},
+	[3104206] = {
+		id = 3104206,
+		main_character_face = 10,
+		word = "Exactly! It's a place just for us, where nobody can bother us!",
+		char_type = 6
+	},
+	[3104207] = {
+		id = 3104207,
+		main_character_face = 1,
+		word = "I saw it earlier. They're so pretty when they bloom.",
+		char_type = 3
+	},
+	[3104208] = {
+		id = 3104208,
+		main_character_face = 1,
+		word = "Heehee – thank you! I'll keep taking good care of it.",
+		char_type = 6
+	},
+	[3104209] = {
+		id = 3104209,
+		main_character_face = 10,
+		word = "It'd be nice if we could go and look at it again the next time you're free!",
+		char_type = 6
+	},
+	[3104301] = {
+		id = 3104301,
+		main_character_face = 1,
+		word = "I checked the weather forecast and they said tomorrow night will be perfect for gazing at the stars!",
+		char_type = 6
+	},
+	[3104302] = {
+		id = 3104302,
+		main_character_face = 10,
+		word = "I'll have everything ready. A telescope, a constellation chart, a blanket, and even hot chocolate!",
+		char_type = 6
+	},
+	[3104303] = {
+		id = 3104303,
+		main_character_face = 1,
+		word = "They said there's even going to be a meteor shower. I'd love to chat with you while we count the shooting stars!",
+		char_type = 6
+	},
+	[3104304] = {
+		id = 3104304,
+		main_character_face = 1,
+		word = "To be honest, I've actually been planning for this day for two weeks now!",
+		char_type = 6
+	},
+	[3104305] = {
+		id = 3104305,
+		main_character_face = 1,
+		word = "Stargazing together – that sounds romantic.",
+		char_type = 3
+	},
+	[3104306] = {
+		id = 3104306,
+		main_character_face = 1,
+		word = "I know, right? That's what I was thinking! Heehee.",
+		char_type = 6
+	},
+	[3104307] = {
+		id = 3104307,
+		main_character_face = 10,
+		word = "I'd better bake some constellation cookies, too! Let's find our lucky constellation!",
+		char_type = 6
+	},
+	[3104308] = {
+		id = 3104308,
+		main_character_face = 1,
+		word = "Don't you think stargazing is a little boring?",
+		char_type = 3
+	},
+	[3104309] = {
+		id = 3104309,
+		main_character_face = 7,
+		word = "Boring? Well... In that case, I'll think of something else!",
+		char_type = 6
+	},
+	[3104401] = {
+		id = 3104401,
+		main_character_face = 2,
+		word = "$1, would you like to come with me on a morning run?",
+		char_type = 6
+	},
+	[3104402] = {
+		id = 3104402,
+		main_character_face = 1,
+		word = "I've come up with a new route! It takes you around the most stunning spots in the neighborhood.",
+		char_type = 6
+	},
+	[3104403] = {
+		id = 3104403,
+		main_character_face = 10,
+		word = "I prepared water and snacks at each rest stop, and even marked down the best places for taking photos!",
+		char_type = 6
+	},
+	[3104404] = {
+		id = 3104404,
+		main_character_face = 10,
+		word = "If we run on time, we'll reach the viewing platform just as the sunrise is at its most beautiful!",
+		char_type = 6
+	},
+	[3104405] = {
+		id = 3104405,
+		main_character_face = 1,
+		word = "So, with that in mind... Do you want to be my running partner starting from tomorrow?",
+		char_type = 6
+	},
+	[3104406] = {
+		id = 3104406,
+		main_character_face = 0,
+		word = "Sure. Let's see that nice sunrise.",
+		char_type = 3
+	},
+	[3104407] = {
+		id = 3104407,
+		main_character_face = 10,
+		word = "Hooray! It's settled, then!",
+		char_type = 6
+	},
+	[3104408] = {
+		id = 3104408,
+		main_character_face = 10,
+		word = "I can't wait to take a selfie with you with the sun behind our backs!",
+		char_type = 6
+	},
+	[3104409] = {
+		id = 3104409,
+		main_character_face = 0,
+		word = "That sounds exhausting to do every morning...",
+		char_type = 3
+	},
+	[3104410] = {
+		id = 3104410,
+		main_character_face = 7,
+		word = "Umm... Yeah, I suppose that might take a toll on you...",
+		char_type = 6
+	},
+	[3104411] = {
+		id = 3104411,
+		main_character_face = 5,
+		word = "Okay, then how about two... no, three times a week? *sigh*...",
+		char_type = 6
+	},
+	[3104501] = {
+		id = 3104501,
+		main_character_face = 2,
+		word = "The arcade is so much more lively and fun than I thought it'd be.",
+		char_type = 6
+	},
+	[3104502] = {
+		id = 3104502,
+		main_character_face = 2,
+		word = "Ooh, look! They've got the latest rhythm games over there! And there are huge claw machines in that corner.",
+		char_type = 6
+	},
+	[3104503] = {
+		id = 3104503,
+		main_character_face = 1,
+		word = "I've exchanged for coins already, so how about we start with that two-player shooting game over there?",
+		char_type = 6
+	},
+	[3104504] = {
+		id = 3104504,
+		main_character_face = 10,
+		word = "I have a secret – I've actually been practicing these games lately!",
+		char_type = 6
+	},
+	[3104505] = {
+		id = 3104505,
+		main_character_face = 6,
+		word = "Oh gosh... All these games look so fun that I'm not sure which one to choose...",
+		char_type = 6
+	},
+	[3104506] = {
+		id = 3104506,
+		main_character_face = 10,
+		word = "I'd honestly love to play every two-player game with you today... Are you down for that?",
+		char_type = 6
+	},
+	[3104507] = {
+		id = 3104507,
+		main_character_face = 0,
+		word = "You bet!",
+		char_type = 3
+	},
+	[3104508] = {
+		id = 3104508,
+		main_character_face = 1,
+		word = "Awesome!",
+		char_type = 6
+	},
+	[3104509] = {
+		id = 3104509,
+		main_character_face = 10,
+		word = "Let's go in and show the world that we're the best two-person team there is!",
+		char_type = 6
+	},
+	[3104510] = {
+		id = 3104510,
+		main_character_face = 0,
+		word = "I want to try some single-player games, too.",
+		char_type = 3
+	},
+	[3104511] = {
+		id = 3104511,
+		main_character_face = 7,
+		word = "Oh, single-player?",
+		char_type = 6
+	},
+	[3104512] = {
+		id = 3104512,
+		main_character_face = 5,
+		word = "Well, then I'll be cheering you on from the side!",
+		char_type = 6
+	},
+	[3104601] = {
+		id = 3104601,
+		main_character_face = 6,
+		word = "*whimper*... You're just a book today... Just a book...",
+		char_type = 6
+	},
+	[3104602] = {
+		id = 3104602,
+		main_character_face = 6,
+		word = "Hold your breath...",
+		char_type = 6
+	},
+	[3104603] = {
+		id = 3104603,
+		main_character_face = 6,
+		word = "Keep quiet, so nobody will find you...",
+		char_type = 6
+	},
+	[3104604] = {
+		id = 3104604,
+		main_character_face = 6,
+		word = "This way, you're safe...",
+		char_type = 6
+	},
+	[3104605] = {
+		id = 3104605,
+		main_character_face = 0,
+		word = "(Pretend not to notice her).",
+		char_type = 3
+	},
+	[3104606] = {
+		id = 3104606,
+		main_character_face = 6,
+		word = "$1... is playing along...",
+		char_type = 6
+	},
+	[3104607] = {
+		id = 3104607,
+		main_character_face = 6,
+		word = "That means... I'm safe...",
+		char_type = 6
+	},
+	[3104608] = {
+		id = 3104608,
+		main_character_face = 0,
+		word = "Found you!",
+		char_type = 3
+	},
+	[3104609] = {
+		id = 3104609,
+		main_character_face = 9,
+		word = "No... You can't see me... You can't see me...",
+		char_type = 6
+	},
+	[3104610] = {
+		id = 3104610,
+		main_character_face = 9,
+		word = "You can't see me... because I'm a mushroom...",
+		char_type = 6
+	},
+	[3104701] = {
+		id = 3104701,
+		main_character_face = 2,
+		word = "How lucky... There's no one watching the movie this late...",
+		char_type = 6
+	},
+	[3104702] = {
+		id = 3104702,
+		main_character_face = 1,
+		word = "Except for me... and you...",
+		char_type = 6
+	},
+	[3104703] = {
+		id = 3104703,
+		main_character_face = 6,
+		word = "That means we can take the backmost seats...",
+		char_type = 6
+	},
+	[3104704] = {
+		id = 3104704,
+		main_character_face = 10,
+		word = "I even brought a blanket... so you and I can hide under it...",
+		char_type = 6
+	},
+	[3104705] = {
+		id = 3104705,
+		main_character_face = 0,
+		word = "This is a comfy way to watch a movie.",
+		char_type = 3
+	},
+	[3104706] = {
+		id = 3104706,
+		main_character_face = 10,
+		word = "It is! It's nice... being huddled up with you...",
+		char_type = 6
+	},
+	[3104707] = {
+		id = 3104707,
+		main_character_face = 0,
+		word = "The blanket might make me doze off.",
+		char_type = 3
+	},
+	[3104708] = {
+		id = 3104708,
+		main_character_face = 4,
+		word = "Oh, well... We can skip the blanket, then...",
+		char_type = 6
+	},
+	[3104801] = {
+		id = 3104801,
+		main_character_face = 2,
+		word = "$1... I came up with a fun idea...",
+		char_type = 6
+	},
+	[3104802] = {
+		id = 3104802,
+		main_character_face = 1,
+		word = "How about... we each pick a book?",
+		char_type = 6
+	},
+	[3104803] = {
+		id = 3104803,
+		main_character_face = 1,
+		word = "Not to read it ourselves... I mean you give me a book you think is perfect for me, and I'll do the same for you...",
+		char_type = 6
+	},
+	[3104804] = {
+		id = 3104804,
+		main_character_face = 1,
+		word = "Using books to guess each other's feelings? Sounds interesting.",
+		char_type = 3
+	},
+	[3104805] = {
+		id = 3104805,
+		main_character_face = 1,
+		word = "I'll try to find just the right book for you...",
+		char_type = 6
+	},
+	[3104806] = {
+		id = 3104806,
+		main_character_face = 10,
+		word = "One that makes you smile every time you turn the page...",
+		char_type = 6
+	},
+	[3104807] = {
+		id = 3104807,
+		main_character_face = 0,
+		word = "But what if I pick a genre you don't like?",
+		char_type = 3
+	},
+	[3104808] = {
+		id = 3104808,
+		main_character_face = 6,
+		word = "Well, if that happens...",
+		char_type = 6
+	},
+	[3104809] = {
+		id = 3104809,
+		main_character_face = 10,
+		word = "At least I'll know... what you think of me...",
+		char_type = 6
+	},
+	[3104901] = {
+		id = 3104901,
+		main_character_face = 1,
+		word = "So... I made a new friend a while back...",
+		char_type = 6
+	},
+	[3104902] = {
+		id = 3104902,
+		main_character_face = 10,
+		word = "It always walks quietly, just like me... I like it a lot...",
+		char_type = 6
+	},
+	[3104903] = {
+		id = 3104903,
+		main_character_face = 6,
+		word = "I brought it its favorite food today... Dried sardines...",
+		char_type = 6
+	},
+	[3104904] = {
+		id = 3104904,
+		main_character_face = 10,
+		word = "I think it remembers me... Because it nuzzled up my feet after it was done eating...",
+		char_type = 6
+	},
+	[3104905] = {
+		id = 3104905,
+		main_character_face = 7,
+		word = "But then, something made a noise, and it ran to hide... so I hid with it...",
+		char_type = 6
+	},
+	[3104906] = {
+		id = 3104906,
+		main_character_face = 0,
+		word = "Is your new friend a cat?",
+		char_type = 3
+	},
+	[3104907] = {
+		id = 3104907,
+		main_character_face = 1,
+		word = "Y-yes! It is...",
+		char_type = 6
+	},
+	[3104908] = {
+		id = 3104908,
+		main_character_face = 0,
+		word = "Something tells me your new friend isn't a person...",
+		char_type = 3
+	},
+	[3104909] = {
+		id = 3104909,
+		main_character_face = 7,
+		word = "I-it's a cat...",
+		char_type = 6
+	},
+	[3104910] = {
+		id = 3104910,
+		main_character_face = 8,
+		word = "S-sorry... I should've explained that better...",
+		char_type = 6
+	},
+	[3105001] = {
+		id = 3105001,
+		main_character_face = 2,
+		word = "Next Thursday... there's going to be a group reading...",
+		char_type = 6
+	},
+	[3105002] = {
+		id = 3105002,
+		main_character_face = 1,
+		word = "I wrote a speech on my reading experience... which I've rewritten three times by now...",
+		char_type = 6
+	},
+	[3105003] = {
+		id = 3105003,
+		main_character_face = 8,
+		word = "I'm just... so scared to speak in front of a crowd...",
+		char_type = 6
+	},
+	[3105004] = {
+		id = 3105004,
+		main_character_face = 9,
+		word = "$1... will you come with me?",
+		char_type = 6
+	},
+	[3105005] = {
+		id = 3105005,
+		main_character_face = 0,
+		word = "I'll support you from the front seats.",
+		char_type = 3
+	},
+	[3105006] = {
+		id = 3105006,
+		main_character_face = 7,
+		word = "Th-then... I think I'll have the courage to read it to the end!",
+		char_type = 6
+	},
+	[3105007] = {
+		id = 3105007,
+		main_character_face = 7,
+		word = "Your support... helps me more than anything else!",
+		char_type = 6
+	},
+	[3105008] = {
+		id = 3105008,
+		main_character_face = 0,
+		word = "Reading isn't really my thing.",
+		char_type = 3
+	},
+	[3105009] = {
+		id = 3105009,
+		main_character_face = 4,
+		word = "S-sorry... It was an unreasonable request...",
+		char_type = 6
+	},
+	[3105010] = {
+		id = 3105010,
+		main_character_face = 8,
+		word = "I'll just... practice by myself a little more...",
+		char_type = 6
+	},
+	[3200101] = {
+		id = 3200101,
+		main_character_face = 0,
+		word = "You come across a small flower bed in a corner of the town. There are signs someone was tending to it just a moment ago.",
+		char_type = 0
+	},
+	[3200102] = {
+		id = 3200102,
+		main_character_face = 0,
+		word = "[Sow Seeds]",
+		char_type = 2
+	},
+	[3200103] = {
+		id = 3200103,
+		main_character_face = 0,
+		word = "As this forgotten place is tended to, there are certain changes quietly taking place.",
+		char_type = 0
+	},
+	[3200201] = {
+		id = 3200201,
+		main_character_face = 0,
+		word = "While checking out at the holiday hotel, Lora notices that the bill is exorbitantly large. It seems the manjuu steward has made a mistake.",
+		char_type = 0
+	},
+	[3200202] = {
+		id = 3200202,
+		main_character_face = 0,
+		word = "[Point Out the Mistake]",
+		char_type = 2
+	},
+	[3200203] = {
+		id = 3200203,
+		main_character_face = 0,
+		word = "You calmly present the correct details, and the steward immediately revises the sum and offers an apology. As compensation, they even give you a small discount.",
+		char_type = 0
+	},
+	[3200205] = {
+		id = 3200205,
+		main_character_face = 0,
+		word = "[Voice Your Discontent]",
+		char_type = 2
+	},
+	[3200206] = {
+		id = 3200206,
+		main_character_face = 0,
+		word = "You voice your discontent while paying, and the steward realizes that you're upset. Flustered, they take another look at the sum and correct the mistake. Although the issue was resolved, you're left with a lingering sense of discomfort.",
+		char_type = 0
+	},
+	[3200208] = {
+		id = 3200208,
+		main_character_face = 0,
+		word = "[Pay Up Anyway]",
+		char_type = 2
+	},
+	[3200209] = {
+		id = 3200209,
+		main_character_face = 0,
+		word = "Not wanting to cause a scene, you paid the outrageous sum anyway, which left Lora in a bad mood the whole way home.",
+		char_type = 0
+	},
+	[3200301] = {
+		id = 3200301,
+		main_character_face = 0,
+		word = "A treasure hunt is being hosted at the manor. While the rewards are generous, it's a time-consuming endeavor.",
+		char_type = 0
+	},
+	[3200302] = {
+		id = 3200302,
+		main_character_face = 0,
+		word = "[Attend and Search Thoroughly]",
+		char_type = 2
+	},
+	[3200303] = {
+		id = 3200303,
+		main_character_face = 0,
+		word = "After a long while of searching, you finally found the treasure!",
+		char_type = 0
+	},
+	[3200305] = {
+		id = 3200305,
+		main_character_face = 0,
+		word = "[Logically Deduce Where It Is]",
+		char_type = 2
+	},
+	[3200306] = {
+		id = 3200306,
+		main_character_face = 0,
+		word = "You quickly identified where the treasure is, saving you a lot of time.",
+		char_type = 0
+	},
+	[3200308] = {
+		id = 3200308,
+		main_character_face = 0,
+		word = "[Call It Quits]",
+		char_type = 2
+	},
+	[3200309] = {
+		id = 3200309,
+		main_character_face = 0,
+		word = "You have better things to do, so you can't waste too much time.",
+		char_type = 0
+	},
+	[3200311] = {
+		id = 3200311,
+		main_character_face = 0,
+		word = "[Follow Another Participant]",
+		char_type = 2
+	},
+	[3200312] = {
+		id = 3200312,
+		main_character_face = 0,
+		word = "They realized you were following someone else, so you were disqualified.",
+		char_type = 0
+	},
+	[3200401] = {
+		id = 3200401,
+		main_character_face = 0,
+		word = "There is a maze quietly hidden away deep in the green hedges... ",
+		char_type = 0
+	},
+	[3200402] = {
+		id = 3200402,
+		main_character_face = 0,
+		word = "There is an eye-catching feature – a fork in the road surrounded by patches of fourwing evening primrose. The question is, will you go left or right?",
+		char_type = 0
+	},
+	[3200403] = {
+		id = 3200403,
+		main_character_face = 0,
+		word = "[Go Right]",
+		char_type = 2
+	},
+	[3200404] = {
+		id = 3200404,
+		main_character_face = 0,
+		word = "The patches here are overgrown and pretty messy... Something doesn't feel right.",
+		char_type = 0
+	},
+	[3200406] = {
+		id = 3200406,
+		main_character_face = 0,
+		word = "[Go Left]",
+		char_type = 2
+	},
+	[3200407] = {
+		id = 3200407,
+		main_character_face = 0,
+		word = "The path is neatly paved with stone stiles. This seems to be the right way!",
+		char_type = 0
+	},
+	[3200408] = {
+		id = 3200408,
+		main_character_face = 0,
+		word = "A pond's mirror surface reflects through a trellis adorned with flowers. Another fork in the road has appeared…",
+		char_type = 0
+	},
+	[3200410] = {
+		id = 3200410,
+		main_character_face = 0,
+		word = "[Go Right]",
+		char_type = 2
+	},
+	[3200411] = {
+		id = 3200411,
+		main_character_face = 0,
+		word = "Layers of vines overlap, making it almost impossible to see the way forward…",
+		char_type = 0
+	},
+	[3200413] = {
+		id = 3200413,
+		main_character_face = 0,
+		word = "[Go Left]",
+		char_type = 2
+	},
+	[3200414] = {
+		id = 3200414,
+		main_character_face = 0,
+		word = "The smell of flowers hangs in the air. Seems this path is the right one!",
+		char_type = 0
+	},
+	[3200415] = {
+		id = 3200415,
+		main_character_face = 0,
+		word = "The wind carries a clean fragrance. Once again, the path splits in two…",
+		char_type = 0
+	},
+	[3200417] = {
+		id = 3200417,
+		main_character_face = 0,
+		word = "[Go Right]",
+		char_type = 2
+	},
+	[3200418] = {
+		id = 3200418,
+		main_character_face = 0,
+		word = "The path suddenly expands, and you arrive at a viewing platform which offers a complete view of the whole garden and the pond.",
+		char_type = 0
+	},
+	[3200420] = {
+		id = 3200420,
+		main_character_face = 0,
+		word = "[Go Left]",
+		char_type = 2
+	},
+	[3200421] = {
+		id = 3200421,
+		main_character_face = 0,
+		word = "The path comes to a sudden stop... Seems there's no choice but to turn back.",
+		char_type = 0
+	},
+	[3200422] = {
+		id = 3200422,
+		main_character_face = 0,
+		word = "走对路线触发奖励，走错路线会根据分支给到不同惩罚、不同文本。",
+		char_type = 0
+	},
+	[3200501] = {
+		id = 3200501,
+		main_character_face = 0,
+		word = "A manjuu steward is offering a meal combo at a time-limited discount. Will you buy it?",
+		char_type = 0
+	},
+	[3200502] = {
+		id = 3200502,
+		main_character_face = 0,
+		word = "[Buy It, Go Wild With It]",
+		char_type = 2
+	},
+	[3200503] = {
+		id = 3200503,
+		main_character_face = 0,
+		word = "You enjoyed this feast of a meal to the last crumb!",
+		char_type = 0
+	},
+	[3200505] = {
+		id = 3200505,
+		main_character_face = 0,
+		word = "[Don't Buy It; Not Hungry]",
+		char_type = 2
+	},
+	[3200506] = {
+		id = 3200506,
+		main_character_face = 0,
+		word = "As soon as you decline, you're suddenly ravaged by hunger. Unfortunately, the combo has sold out…",
+		char_type = 0
+	},
+	[3200508] = {
+		id = 3200508,
+		main_character_face = 0,
+		word = "[Buy It, Study the Recipe]",
+		char_type = 2
+	},
+	[3200509] = {
+		id = 3200509,
+		main_character_face = 0,
+		word = "You figured out the special recipe! Now you can replicate it at home!",
+		char_type = 0
+	},
+	[3200511] = {
+		id = 3200511,
+		main_character_face = 0,
+		word = "[Don't Buy It; Too Expensive]",
+		char_type = 2
+	},
+	[3200512] = {
+		id = 3200512,
+		main_character_face = 0,
+		word = "It's better to get something that's easier on the wallet, isn't it?",
+		char_type = 0
+	},
+	[3200601] = {
+		id = 3200601,
+		main_character_face = 0,
+		word = "A mysterious customer quietly approaches you at a seaside restaurant and whispers these words to you: \"If you input the code 'up-down-left-right-left-right-B-A' on the self-service machine, you'll get a surprise.\"",
+		char_type = 0
+	},
+	[3200602] = {
+		id = 3200602,
+		main_character_face = 0,
+		word = "[Input the Code]",
+		char_type = 2
+	},
+	[3200603] = {
+		id = 3200603,
+		main_character_face = 0,
+		word = "The self-service machine's screen started flickering, and it revealed a secret menu item: Legendary Golden Fried Chicken Combo. Its flavor was like nothing you've ever had!",
+		char_type = 0
+	},
+	[3200605] = {
+		id = 3200605,
+		main_character_face = 0,
+		word = "[Order Like Normal]",
+		char_type = 2
+	},
+	[3200606] = {
+		id = 3200606,
+		main_character_face = 0,
+		word = "Sticking to the regular menu is the safe choice. You and Lora enjoyed a satisfying dinner.",
+		char_type = 0
+	},
+	[3200608] = {
+		id = 3200608,
+		main_character_face = 0,
+		word = "[Notify Owners About the Code]",
+		char_type = 2
+	},
+	[3200609] = {
+		id = 3200609,
+		main_character_face = 0,
+		word = "As a show of gratitude, the restaurant owners gave Lora a free dessert. They also told you that the code was for internal testing, and that it wouldn't cause any problems.",
+		char_type = 0
+	},
+	[3200701] = {
+		id = 3200701,
+		main_character_face = 0,
+		word = "While walking along the beach, you find a message in a bottle that has washed up.",
+		char_type = 0
+	},
+	[3200702] = {
+		id = 3200702,
+		main_character_face = 0,
+		word = "[Carefully Open It]",
+		char_type = 2
+	},
+	[3200703] = {
+		id = 3200703,
+		main_character_face = 0,
+		word = "There was a treasure map inside! ",
+		char_type = 0
+	},
+	[3200705] = {
+		id = 3200705,
+		main_character_face = 0,
+		word = "[Throw Back Into the Sea]",
+		char_type = 2
+	},
+	[3200706] = {
+		id = 3200706,
+		main_character_face = 0,
+		word = "You wished the bottled message good luck on its continued journey and felt satisfied with your good deed.",
+		char_type = 0
+	},
+	[3200801] = {
+		id = 3200801,
+		main_character_face = 0,
+		word = "There is a treasure-hunting competition being hosted at the beach! The entry fee is a mere 5 coins! With some luck, you might find valuable rewards. Will you participate?",
+		char_type = 0
+	},
+	[3200802] = {
+		id = 3200802,
+		main_character_face = 0,
+		word = "[Participate] [Unlocks Choice]",
+		char_type = 2
+	},
+	[3200803] = {
+		id = 3200803,
+		main_character_face = 0,
+		word = "You found treasure beyond your wildest imagination!",
+		char_type = 0
+	},
+	[3200805] = {
+		id = 3200805,
+		main_character_face = 0,
+		word = "[Don't Participate]",
+		char_type = 2
+	},
+	[3200806] = {
+		id = 3200806,
+		main_character_face = 0,
+		word = "Sounds fishy. Better not.",
+		char_type = 0
+	},
+	[3200808] = {
+		id = 3200808,
+		main_character_face = 0,
+		word = "[Sneak In] [Unlocks Choice]",
+		char_type = 2
+	},
+	[3200809] = {
+		id = 3200809,
+		main_character_face = 0,
+		word = "You were caught almost immediately and politely escorted out.",
+		char_type = 0
+	},
+	[3200901] = {
+		id = 3200901,
+		main_character_face = 0,
+		word = "The seaside park is potentially being developed into a waterfront commercial district. This idea has sparked a fierce conflict between those in favor and those against.",
+		char_type = 0
+	},
+	[3200902] = {
+		id = 3200902,
+		main_character_face = 0,
+		word = "[Support the Development]",
+		char_type = 2
+	},
+	[3200903] = {
+		id = 3200903,
+		main_character_face = 0,
+		word = "This will create massive economic benefits!",
+		char_type = 0
+	},
+	[3200905] = {
+		id = 3200905,
+		main_character_face = 0,
+		word = "[Oppose the Development]",
+		char_type = 2
+	},
+	[3200906] = {
+		id = 3200906,
+		main_character_face = 0,
+		word = "The environment is more important than money.",
+		char_type = 0
+	},
+	[3200908] = {
+		id = 3200908,
+		main_character_face = 0,
+		word = "[Strike a Compromise]",
+		char_type = 2
+	},
+	[3200909] = {
+		id = 3200909,
+		main_character_face = 0,
+		word = "You tried to strike a nice balance between economic development and environmental protection. However, this meant you faced pressure from both sides.",
+		char_type = 0
+	},
+	[3200911] = {
+		id = 3200911,
+		main_character_face = 0,
+		word = "[Dodge the Subject]",
+		char_type = 2
+	},
+	[3200912] = {
+		id = 3200912,
+		main_character_face = 0,
+		word = "Both sides make good arguments... but you're more concerned with what you'll have for dinner tonight.",
+		char_type = 0
+	},
+	[3201001] = {
+		id = 3201001,
+		main_character_face = 0,
+		word = "Lora found an ancient recipe! It describes how to make a legendary dessert, but it leaves out two key details – what temperature to set the oven to, and how long to bake for.",
+		char_type = 0
+	},
+	[3201002] = {
+		id = 3201002,
+		main_character_face = 0,
+		word = "[Reference a Contemporary Recipe]",
+		char_type = 2
+	},
+	[3201003] = {
+		id = 3201003,
+		main_character_face = 0,
+		word = "You compared it with a recipe from the same period, filled in the gaps, and successfully recreated a taste lost to time!",
+		char_type = 0
+	},
+	[3201005] = {
+		id = 3201005,
+		main_character_face = 0,
+		word = "[Trial-and-Error It] ",
+		char_type = 2
+	},
+	[3201006] = {
+		id = 3201006,
+		main_character_face = 0,
+		word = "Practice makes perfect! An acrid smell leaks out from the oven. It didn't work out... But as they say, success is built on failure.",
+		char_type = 0
+	},
+	[3201008] = {
+		id = 3201008,
+		main_character_face = 0,
+		word = "[Ask for Help]",
+		char_type = 2
+	},
+	[3201009] = {
+		id = 3201009,
+		main_character_face = 0,
+		word = "You spent some money to find the full version of the old recipe and finished the dessert. It was baked to perfection!",
+		char_type = 0
+	},
+	[3201101] = {
+		id = 3201101,
+		main_character_face = 0,
+		word = "A chef-droid's programming has gone haywire, and it's baking cakes like there's no tomorrow. The kitchen is nearing cake supercriticality!",
+		char_type = 0
+	},
+	[3201102] = {
+		id = 3201102,
+		main_character_face = 0,
+		word = "[Cut the Power]",
+		char_type = 2
+	},
+	[3201103] = {
+		id = 3201103,
+		main_character_face = 0,
+		word = "The chef-droid shut down, but not without making a mess of the whole kitchen.",
+		char_type = 0
+	},
+	[3201105] = {
+		id = 3201105,
+		main_character_face = 0,
+		word = "[Try to Reset It]",
+		char_type = 2
+	},
+	[3201106] = {
+		id = 3201106,
+		main_character_face = 0,
+		word = "You input the chef-droid's reset code and successfully averted a disaster!",
+		char_type = 0
+	},
+	[3201108] = {
+		id = 3201108,
+		main_character_face = 0,
+		word = "[Eat the Cakes]",
+		char_type = 2
+	},
+	[3201109] = {
+		id = 3201109,
+		main_character_face = 0,
+		word = "The more cake you ate, the worse you started to feel.",
+		char_type = 0
+	},
+	[3201111] = {
+		id = 3201111,
+		main_character_face = 0,
+		word = "[Have it Make Another Food]",
+		char_type = 2
+	},
+	[3201112] = {
+		id = 3201112,
+		main_character_face = 0,
+		word = "You turned a potential disaster into a grand feast!",
+		char_type = 0
+	},
+	[3201201] = {
+		id = 3201201,
+		main_character_face = 0,
+		word = "There's an odd vending machine at the end of an alley. The items are packed in opaque boxes, and the button is flickering eerily. Will you put money in?",
+		char_type = 0
+	},
+	[3201202] = {
+		id = 3201202,
+		main_character_face = 0,
+		word = "[Insert Money]",
+		char_type = 2
+	},
+	[3201203] = {
+		id = 3201203,
+		main_character_face = 0,
+		word = "Twing... Clunk... Pop... Thud! The vending machine spat out something.",
+		char_type = 0
+	},
+	[3201204] = {
+		id = 3201204,
+		main_character_face = 0,
+		word = "The screen displays a pixelated message: \"You gained a lucky blessing. Use it well!\"",
+		char_type = 0
+	},
+	[3201206] = {
+		id = 3201206,
+		main_character_face = 0,
+		word = "[Leave]",
+		char_type = 2
+	},
+	[3201207] = {
+		id = 3201207,
+		main_character_face = 0,
+		word = "It looks super suspicious. Better not.",
+		char_type = 0
+	},
+	[3201301] = {
+		id = 3201301,
+		main_character_face = 0,
+		word = "There is a \"culinary art contest\" being held at the restaurant. Lora seems especially interested in a dish drawn using a sauce.",
+		char_type = 0
+	},
+	[3201302] = {
+		id = 3201302,
+		main_character_face = 0,
+		word = "[Analyze Its Composition]",
+		char_type = 2
+	},
+	[3201303] = {
+		id = 3201303,
+		main_character_face = 0,
+		word = "This light and shadow... The color... The composition... There's an endless amount to learn from.",
+		char_type = 0
+	},
+	[3201305] = {
+		id = 3201305,
+		main_character_face = 0,
+		word = "[Try to Imitate It]",
+		char_type = 2
+	},
+	[3201306] = {
+		id = 3201306,
+		main_character_face = 0,
+		word = "With sauce bottles in hand, you and Lora improvised and made a wonderful sauce painting.",
+		char_type = 0
+	},
+	[3201401] = {
+		id = 3201401,
+		main_character_face = 0,
+		word = "Your goal today is to conquer the Tranquil Summit towering at the edge of the city! The path is winding, and mist envelops the mountain's peak. They say the view from the top is breathtaking.",
+		char_type = 0
+	},
+	[3201402] = {
+		id = 3201402,
+		main_character_face = 0,
+		word = "[Take the Regular Mountain Trail]",
+		char_type = 2
+	},
+	[3201403] = {
+		id = 3201403,
+		main_character_face = 0,
+		word = "You steadily climbed the well-maintained stone steps. It was a little tiring, but the views along the way were stunning. You felt refreshed and invigorated once you reached the top.",
+		char_type = 0
+	},
+	[3201405] = {
+		id = 3201405,
+		main_character_face = 0,
+		word = "[Take the Wooded \"Shortcut\"]",
+		char_type = 2
+	},
+	[3201406] = {
+		id = 3201406,
+		main_character_face = 0,
+		word = "ou decided to take the path vaguely described as a \"shortcut\" on the map. The trail was severely overgrown, but thanks to your teamwork, you reached the summit in no time.",
+		char_type = 0
+	},
+	[3201408] = {
+		id = 3201408,
+		main_character_face = 0,
+		word = "[Take the Sightseeing Cable Car] ",
+		char_type = 2
+	},
+	[3201409] = {
+		id = 3201409,
+		main_character_face = 0,
+		word = "You and Lora took the pleasant cable car ride to the summit. Not only were you in time to witness the fleeting blue hour after sunset, but you also got to see the mountain range surrounded by a sea of clouds – something you wouldn't have seen if you went on foot. ",
+		char_type = 0
+	},
+	[3201501] = {
+		id = 3201501,
+		main_character_face = 0,
+		word = "The mountain trail is getting more and more rugged, and your stamina is rapidly depleting. You look up and see there's still a long way to go until the summit.",
+		char_type = 0
+	},
+	[3201502] = {
+		id = 3201502,
+		main_character_face = 0,
+		word = "[Keep Climbing!]",
+		char_type = 2
+	},
+	[3201503] = {
+		id = 3201503,
+		main_character_face = 0,
+		word = "Encouraging and supporting each other, you overcame your fatigue. After marching on for a while, Lora discovered a rainbow-covered shortcut, and found that it connected to the summit. ",
+		char_type = 0
+	},
+	[3201505] = {
+		id = 3201505,
+		main_character_face = 0,
+		word = "[Rest and Observe the Surroundings] ",
+		char_type = 2
+	},
+	[3201506] = {
+		id = 3201506,
+		main_character_face = 0,
+		word = "You stopped in front of a cave, drank some water, and scanned your surroundings. Lora found some information inscribed on an old guidepost in the rock face. It pointed to a less strenuous and more scenic route.",
+		char_type = 0
+	},
+	[3201508] = {
+		id = 3201508,
+		main_character_face = 0,
+		word = "[Give Up and Climb Back Down]",
+		char_type = 2
+	},
+	[3201509] = {
+		id = 3201509,
+		main_character_face = 0,
+		word = "After discussing it with Lora, you decided to call it there. Unfortunately, on the way back down, you were caught in a downpour and were completely drenched once you made it back to the starting point. ",
+		char_type = 0
+	},
+	[3201601] = {
+		id = 3201601,
+		main_character_face = 0,
+		word = "There are plans to set up monitoring equipment in the quiet mountains, which has raised concerns about environmental safety.",
+		char_type = 0
+	},
+	[3201602] = {
+		id = 3201602,
+		main_character_face = 0,
+		word = "[Explain the Scientific Value]",
+		char_type = 2
+	},
+	[3201603] = {
+		id = 3201603,
+		main_character_face = 0,
+		word = "Explaining the scientific significance of this project gradually quelled the opposition, allowing it to proceed.",
+		char_type = 0
+	},
+	[3201605] = {
+		id = 3201605,
+		main_character_face = 0,
+		word = "[Emphasize Nature's Beauty]",
+		char_type = 2
+	},
+	[3201606] = {
+		id = 3201606,
+		main_character_face = 0,
+		word = "The people were moved by your descriptions of a pristine landscape, and the project was ultimately withdrawn. As a gesture of thanks, they introduced you to a rarely visited but beautiful location.",
+		char_type = 0
+	},
+	[3201608] = {
+		id = 3201608,
+		main_character_face = 0,
+		word = "[Look for a Compromise]",
+		char_type = 2
+	},
+	[3201609] = {
+		id = 3201609,
+		main_character_face = 0,
+		word = "After some survey work, you found a compromise that both met the observation needs and preserved the landscape as much as possible, satisfying everyone.",
+		char_type = 0
+	},
+	[3201611] = {
+		id = 3201611,
+		main_character_face = 0,
+		word = "[Ignore the Subject]",
+		char_type = 2
+	},
+	[3201612] = {
+		id = 3201612,
+		main_character_face = 0,
+		word = "The enduring debate has ruined the tranquility of the mountains, ultimately leaving no involved party satisfied.",
+		char_type = 0
+	},
+	[3201701] = {
+		id = 3201701,
+		main_character_face = 0,
+		word = "A manjuu scientist has requested you to collect a rare plant found in the mountains.",
+		char_type = 0
+	},
+	[3201702] = {
+		id = 3201702,
+		main_character_face = 0,
+		word = "[Give It Your All]",
+		char_type = 2
+	},
+	[3201703] = {
+		id = 3201703,
+		main_character_face = 0,
+		word = "You reached the rugged summit, where you managed to collect the rare plant.",
+		char_type = 0
+	},
+	[3201705] = {
+		id = 3201705,
+		main_character_face = 0,
+		word = "[Refuse the Request]",
+		char_type = 2
+	},
+	[3201706] = {
+		id = 3201706,
+		main_character_face = 0,
+		word = "In light of the danger, you ultimately decided to turn the scientist down.",
+		char_type = 0
+	},
+	[3201708] = {
+		id = 3201708,
+		main_character_face = 0,
+		word = "[Search for a Substitute Plant]",
+		char_type = 2
+	},
+	[3201709] = {
+		id = 3201709,
+		main_character_face = 0,
+		word = "You looked for a plant in the mountainsides that resembled the rare one to at least try to partially satisfy the request.",
+		char_type = 0
+	},
+	[3201711] = {
+		id = 3201711,
+		main_character_face = 0,
+		word = "[Accompany the Scientist]",
+		char_type = 2
+	},
+	[3201712] = {
+		id = 3201712,
+		main_character_face = 0,
+		word = "You explored the mountain together with the manjuu scientist and gained a lot of botanical knowledge.",
+		char_type = 0
+	},
+	[3201801] = {
+		id = 3201801,
+		main_character_face = 0,
+		word = "There is an ocean-inspired vending machine offering various marine souvenirs, and they're all tempting. Lora leans closer to examine them, her eyes twinkling like stars.",
+		char_type = 0
+	},
+	[3201802] = {
+		id = 3201802,
+		main_character_face = 0,
+		word = "[Buy the Starfish Lamp]",
+		char_type = 2
+	},
+	[3201803] = {
+		id = 3201803,
+		main_character_face = 0,
+		word = "You put the starfish lamp at Lora's bedside, where it glowed with the soft blue light of the sea. Lora hugged her pillow and stared at it for a long while, her smile never leaving her face. ",
+		char_type = 0
+	},
+	[3201805] = {
+		id = 3201805,
+		main_character_face = 0,
+		word = "[Buy the Magic Conch Shell]",
+		char_type = 2
+	},
+	[3201806] = {
+		id = 3201806,
+		main_character_face = 0,
+		word = "The manual said the magic conch shell \"can answer any and all questions.\" Lora put it to her ear and asked what tomorrow's weather would be, but the only answer she got was the clear sound of the waves…",
+		char_type = 0
+	},
+	[3201808] = {
+		id = 3201808,
+		main_character_face = 0,
+		word = "[Buy the Beach Album]",
+		char_type = 2
+	},
+	[3201809] = {
+		id = 3201809,
+		main_character_face = 0,
+		word = "The album came empty, so you and Lora filled it with pictures you took together at the beach, transforming it into your personal memoir.",
+		char_type = 0
+	},
+	[3201901] = {
+		id = 3201901,
+		main_character_face = 0,
+		word = "Shops line the street in the commercial area. Your time to buy things is limited, so Lora has decided to pick only one store to visit seriously.",
+		char_type = 0
+	},
+	[3201902] = {
+		id = 3201902,
+		main_character_face = 0,
+		word = "[Enter the Future Technology Experience Store]",
+		char_type = 2
+	},
+	[3201903] = {
+		id = 3201903,
+		main_character_face = 0,
+		word = "The store's shelves are filled with many products incorporating new concepts. ",
+		char_type = 0
+	},
+	[3201905] = {
+		id = 3201905,
+		main_character_face = 0,
+		word = "[Enter the Retro General Store]",
+		char_type = 2
+	},
+	[3201906] = {
+		id = 3201906,
+		main_character_face = 0,
+		word = "The items on display are brimming with history. ",
+		char_type = 0
+	},
+	[3201908] = {
+		id = 3201908,
+		main_character_face = 0,
+		word = "[Enter the Self-Service Parts Workshop]",
+		char_type = 2
+	},
+	[3201909] = {
+		id = 3201909,
+		main_character_face = 0,
+		word = "This place lets you construct a one-of-a-kind device with your own hands.",
+		char_type = 0
+	},
+	[3201911] = {
+		id = 3201911,
+		main_character_face = 0,
+		word = "[Enter the Souvenir Shop]",
+		char_type = 2
+	},
+	[3201912] = {
+		id = 3201912,
+		main_character_face = 0,
+		word = "The shelves are packed with souvenirs in all kinds of colors. ",
+		char_type = 0
+	},
+	[3202001] = {
+		id = 3202001,
+		main_character_face = 0,
+		word = "The Omniclean Cloth is now on sale! Get one for 5 coins, or buy 20 for a mere 60 coins!",
+		char_type = 0
+	},
+	[3202002] = {
+		id = 3202002,
+		main_character_face = 0,
+		word = "[Buy One as a Sample] ",
+		char_type = 2
+	},
+	[3202003] = {
+		id = 3202003,
+		main_character_face = 0,
+		word = "You bought only what you needed. While you couldn't take advantage of the discount, you did avoid wasting any money.",
+		char_type = 0
+	},
+	[3202005] = {
+		id = 3202005,
+		main_character_face = 0,
+		word = "[Get the Discount Deal]",
+		char_type = 2
+	},
+	[3202006] = {
+		id = 3202006,
+		main_character_face = 0,
+		word = "You decided to buy a bunch of them. While they were effective, you only used them a handful of times and left them in the storage, forgotten.",
+		char_type = 0
+	},
+	[3202008] = {
+		id = 3202008,
+		main_character_face = 0,
+		word = "[Make a Group Purchase]",
+		char_type = 2
+	},
+	[3202009] = {
+		id = 3202009,
+		main_character_face = 0,
+		word = "A group of you pooled your cash together and got the amount you needed at a discounted price, saving you a lot of money.",
+		char_type = 0
+	},
+	[3202101] = {
+		id = 3202101,
+		main_character_face = 0,
+		word = "You come across a discount goods trader in a corner of the commercial area. Things like damaged paintings and toys missing arms and legs are on display.",
+		char_type = 0
+	},
+	[3202102] = {
+		id = 3202102,
+		main_character_face = 0,
+		word = "[Buy a Painting and Try Restoring It]",
+		char_type = 2
+	},
+	[3202103] = {
+		id = 3202103,
+		main_character_face = 0,
+		word = "Lora picked an artwork with paint peeling off of it. She carefully restored and breathed new life into it, doubling its value!",
+		char_type = 0
+	},
+	[3202105] = {
+		id = 3202105,
+		main_character_face = 0,
+		word = "[Buy a Transformable Manjuu Toy]",
+		char_type = 2
+	},
+	[3202106] = {
+		id = 3202106,
+		main_character_face = 0,
+		word = "The manjuu toy has suffered serious damage, which Lora tried and failed to repair. All it can do now is serve as a decoration.",
+		char_type = 0
+	},
+	[3202108] = {
+		id = 3202108,
+		main_character_face = 0,
+		word = "[Nothing Looks Worth It; Leave]",
+		char_type = 2
+	},
+	[3202109] = {
+		id = 3202109,
+		main_character_face = 0,
+		word = "After window-shopping for a while, you turned around and left. Money doesn't grow on trees, after all.",
+		char_type = 0
+	},
+	[3202201] = {
+		id = 3202201,
+		main_character_face = 0,
+		word = "A rare collector's item is being vied for at the auction, and the bidding is extremely fierce. Will you keep bidding?",
+		char_type = 0
+	},
+	[3202202] = {
+		id = 3202202,
+		main_character_face = 0,
+		word = "[Keep Bidding] [Unlocks choice]",
+		char_type = 2
+	},
+	[3202203] = {
+		id = 3202203,
+		main_character_face = 0,
+		word = "You won the bid for a rare item, but it cost a boatload of money.",
+		char_type = 0
+	},
+	[3202205] = {
+		id = 3202205,
+		main_character_face = 0,
+		word = "[Withdraw at a Suitable Point]",
+		char_type = 2
+	},
+	[3202206] = {
+		id = 3202206,
+		main_character_face = 0,
+		word = "You wisely chose to withdraw before the price reached its maximum.",
+		char_type = 0
+	},
+	[3202208] = {
+		id = 3202208,
+		main_character_face = 0,
+		word = "[Make a Group Bid]",
+		char_type = 2
+	},
+	[3202209] = {
+		id = 3202209,
+		main_character_face = 0,
+		word = "A group of you decided to share both the bill and the item, building a friendship.",
+		char_type = 0
+	},
+	[3202211] = {
+		id = 3202211,
+		main_character_face = 0,
+		word = "[Manipulate the Price]",
+		char_type = 2
+	},
+	[3202212] = {
+		id = 3202212,
+		main_character_face = 0,
+		word = "Due to your inappropriate bidding conduct, you were temporarily expelled from the auction hall.",
+		char_type = 0
+	},
+	[3202301] = {
+		id = 3202301,
+		main_character_face = 0,
+		word = "The park's loudspeakers always play a broken, noisy song. It gets on people's nerves.",
+		char_type = 0
+	},
+	[3202302] = {
+		id = 3202302,
+		main_character_face = 0,
+		word = "[Try to Repair Them]",
+		char_type = 2
+	},
+	[3202303] = {
+		id = 3202303,
+		main_character_face = 0,
+		word = "Some recalibration did the trick, and now its high notes are sweet, its mediums precise, and its lows deep. Lora was amazed by this repair work.",
+		char_type = 0
+	},
+	[3202305] = {
+		id = 3202305,
+		main_character_face = 0,
+		word = "[Turn Them Off]",
+		char_type = 2
+	},
+	[3202306] = {
+		id = 3202306,
+		main_character_face = 0,
+		word = "The world is quiet once more.",
+		char_type = 0
+	},
+	[3202308] = {
+		id = 3202308,
+		main_character_face = 0,
+		word = "[Analyze the Recording]",
+		char_type = 2
+	},
+	[3202309] = {
+		id = 3202309,
+		main_character_face = 0,
+		word = "There might be encrypted data in the sound. Will you analyze it? ",
+		char_type = 0
+	},
+	[3202311] = {
+		id = 3202311,
+		main_character_face = 0,
+		word = "[Put Up with the Noise]",
+		char_type = 2
+	},
+	[3202312] = {
+		id = 3202312,
+		main_character_face = 0,
+		word = "The annoying song still rings in your ears.",
+		char_type = 0
+	},
+	[3202401] = {
+		id = 3202401,
+		main_character_face = 0,
+		word = "Questions have been raised about food safety at Restaurant Manjuu lately. Since you're already here, what will you order?",
+		char_type = 0
+	},
+	[3202402] = {
+		id = 3202402,
+		main_character_face = 0,
+		word = "[Buy the Signature Dish (The Restaurant Seems Fairly Proud of It)] ",
+		char_type = 2
+	},
+	[3202403] = {
+		id = 3202403,
+		main_character_face = 0,
+		word = "It's the signature dish for a good reason! Lora's happy expression suggested she found it delicious. ",
+		char_type = 0
+	},
+	[3202405] = {
+		id = 3202405,
+		main_character_face = 0,
+		word = "[Buy a Popular Dish (Can't Go Wrong with Something Popular)] ",
+		char_type = 2
+	},
+	[3202406] = {
+		id = 3202406,
+		main_character_face = 0,
+		word = "There's a good reason why this dish is popular! Lora's happy expression suggested she found it delicious.",
+		char_type = 0
+	},
+	[3202408] = {
+		id = 3202408,
+		main_character_face = 0,
+		word = "[Get a Free, Less Popular Dish (It's Free and Doesn't Look Bad, So Why is it Less Popular?)]",
+		char_type = 2
+	},
+	[3202409] = {
+		id = 3202409,
+		main_character_face = 0,
+		word = "It tasted better than expected! Lora's happy expression suggested she found it delicious.",
+		char_type = 0
+	},
+	[3202411] = {
+		id = 3202411,
+		main_character_face = 0,
+		word = "Lora suddenly stops eating. When you ask her why, you spot a shrimp in her dish that has turned green. You need to complain to the manager about this!",
+		char_type = 0
+	},
+	[3202412] = {
+		id = 3202412,
+		main_character_face = 0,
+		word = "After telling the manager about the situation, they swiftly take a bite of the rotten food. They assert that there is nothing wrong with it, but they can offer a refund. You decide to…",
+		char_type = 0
+	},
+	[3202413] = {
+		id = 3202413,
+		main_character_face = 0,
+		word = "[Accept the Refund]",
+		char_type = 2
+	},
+	[3202414] = {
+		id = 3202414,
+		main_character_face = 0,
+		word = "After leaving the restaurant, Lora got a bad stomachache and was taken to the hospital, where she was diagnosed with food poisoning. ",
+		char_type = 0
+	},
+	[3202416] = {
+		id = 3202416,
+		main_character_face = 0,
+		word = "[Report the Restaurant and Demand Compensation]",
+		char_type = 2
+	},
+	[3202417] = {
+		id = 3202417,
+		main_character_face = 0,
+		word = "Some say that justice is dead, but not you. In the end, the stubborn manager suddenly collapsed right in front of the police. They were taken to the hospital, where they were diagnosed with food poisoning.",
+		char_type = 0
+	},
+	[3202501] = {
+		id = 3202501,
+		main_character_face = 0,
+		word = "A new product launch event is being held in a corner of the food court. \"Come try my latest dish! It uses a variety of glowing ingredients!\"",
+		char_type = 0
+	},
+	[3202502] = {
+		id = 3202502,
+		main_character_face = 0,
+		word = "[Take a Reluctant Bite]",
+		char_type = 2
+	},
+	[3202503] = {
+		id = 3202503,
+		main_character_face = 0,
+		word = "Lora shook her head and refused to eat much at all. She must've been scared that her stomach would start glowing.",
+		char_type = 0
+	},
+	[3202505] = {
+		id = 3202505,
+		main_character_face = 0,
+		word = "[Eat a Lot]",
+		char_type = 2
+	},
+	[3202506] = {
+		id = 3202506,
+		main_character_face = 0,
+		word = "After wolfing down the whole dish, you were pretty sure that you saw tiny people dancing on the ground... ",
+		char_type = 0
+	},
+	[3202601] = {
+		id = 3202601,
+		main_character_face = 0,
+		word = "The drink vending machine is malfunctioning. You can get all the drinks you want for just 1 coin.",
+		char_type = 0
+	},
+	[3202602] = {
+		id = 3202602,
+		main_character_face = 0,
+		word = "[Get an Energy Soda]",
+		char_type = 2
+	},
+	[3202603] = {
+		id = 3202603,
+		main_character_face = 0,
+		word = "You gained a temporary boost of energy!",
+		char_type = 0
+	},
+	[3202605] = {
+		id = 3202605,
+		main_character_face = 0,
+		word = "[Get a Still Green Tea]",
+		char_type = 2
+	},
+	[3202606] = {
+		id = 3202606,
+		main_character_face = 0,
+		word = "Your mind was cleared, and your focus improved.",
+		char_type = 0
+	},
+	[3202608] = {
+		id = 3202608,
+		main_character_face = 0,
+		word = "[Report the Malfunction]",
+		char_type = 2
+	},
+	[3202609] = {
+		id = 3202609,
+		main_character_face = 0,
+		word = "After reporting the issue, Lora got a small gift as a gesture of gratitude.",
+		char_type = 0
+	},
+	[3202611] = {
+		id = 3202611,
+		main_character_face = 0,
+		word = "[Sell the Drinks Yourself]",
+		char_type = 2
+	},
+	[3202612] = {
+		id = 3202612,
+		main_character_face = 0,
+		word = "You did make a bit of money, but you were also issued a formal warning.",
+		char_type = 0
+	},
+	[3202701] = {
+		id = 3202701,
+		main_character_face = 0,
+		word = "There's an odd vending machine at the end of an alley. The items are packed in opaque boxes, and the button is flickering eerily. Will you put money in?",
+		char_type = 0
+	},
+	[3202702] = {
+		id = 3202702,
+		main_character_face = 0,
+		word = "[Insert Money]",
+		char_type = 2
+	},
+	[3202704] = {
+		id = 3202704,
+		main_character_face = 0,
+		word = "[Leave]",
+		char_type = 2
+	},
+	[3202705] = {
+		id = 3202705,
+		main_character_face = 0,
+		word = "It looks super suspicious. Better not.",
+		char_type = 0
+	},
+	[3202801] = {
+		id = 3202801,
+		main_character_face = 0,
+		word = "You've found a quiet lake. Sunshine glimmers on the water's surface. They say there are rare, glowing fish in the water. Will you try your luck?",
+		char_type = 0
+	},
+	[3202802] = {
+		id = 3202802,
+		main_character_face = 0,
+		word = "[Fish Quietly]",
+		char_type = 2
+	},
+	[3202803] = {
+		id = 3202803,
+		main_character_face = 0,
+		word = "You sat quietly by the lakeside, waiting patiently. The moment the bobber twitched, Lora swiftly raised the rod. A fish with a glowing silver color leaped out of the water! ",
+		char_type = 0
+	},
+	[3202805] = {
+		id = 3202805,
+		main_character_face = 0,
+		word = "[Use a Hi-Tech Sonar Rod]",
+		char_type = 2
+	},
+	[3202806] = {
+		id = 3202806,
+		main_character_face = 0,
+		word = "The sonar fishfinder can detect the movements of nearby groups of fish. It reeled in a lot of fish, but there was little charm or surprise to it.",
+		char_type = 0
+	},
+	[3202808] = {
+		id = 3202808,
+		main_character_face = 0,
+		word = "[Scatter Breadcrumbs] ",
+		char_type = 2
+	},
+	[3202809] = {
+		id = 3202809,
+		main_character_face = 0,
+		word = "The fish swarmed around the breadcrumbs scattered on the surface, splashing water everywhere. The fish became vigorously active, but also frightened, making them harder to catch.",
+		char_type = 0
+	},
+	[3202901] = {
+		id = 3202901,
+		main_character_face = 0,
+		word = "There is an abandoned mansion by the lakeside, and you've found a yellowed map of the estate hidden in a secret drawer inside the old study. There is an X symbol scribbled over the lakeside garden.",
+		char_type = 0
+	},
+	[3202902] = {
+		id = 3202902,
+		main_character_face = 0,
+		word = "[Go There and Start Digging] ",
+		char_type = 2
+	},
+	[3202903] = {
+		id = 3202903,
+		main_character_face = 0,
+		word = "You dug up the ground using a hoe, and some shockingly lively and plump earthworms leaped out. This is the perfect fishing bait! ",
+		char_type = 0
+	},
+	[3202905] = {
+		id = 3202905,
+		main_character_face = 0,
+		word = "[Closely Examine the Map]",
+		char_type = 2
+	},
+	[3202906] = {
+		id = 3202906,
+		main_character_face = 0,
+		word = "This parchment paper looks older than the mansion you found it in... Could the map itself be the real treasure?",
+		char_type = 0
+	},
+	[3203001] = {
+		id = 3203001,
+		main_character_face = 0,
+		word = "A dazzling golden light flashes across the pond from beneath the water – it comes from an extremely rare golden koi! Lora immediately tugs at your sleeve, excitedly pointing toward it.",
+		char_type = 0
+	},
+	[3203002] = {
+		id = 3203002,
+		main_character_face = 0,
+		word = "[Prepare Thoroughly to Catch It]",
+		char_type = 2
+	},
+	[3203003] = {
+		id = 3203003,
+		main_character_face = 0,
+		word = "With premium bait and a lot of patience, you finally managed to catch the golden koi. The aquarium paid you a hefty sum for it. ",
+		char_type = 0
+	},
+	[3203005] = {
+		id = 3203005,
+		main_character_face = 0,
+		word = "[Jump Right Into the Water]",
+		char_type = 2
+	},
+	[3203006] = {
+		id = 3203006,
+		main_character_face = 0,
+		word = "You leaped right into the pond to catch it with your bare hands, but this startled the golden koi, and it fled deeper. You returned to the bank dripping wet with nothing to show for it.",
+		char_type = 0
+	},
+	[3203008] = {
+		id = 3203008,
+		main_character_face = 0,
+		word = "[Call in Support to Catch it Together]",
+		char_type = 2
+	},
+	[3203009] = {
+		id = 3203009,
+		main_character_face = 0,
+		word = "Since your splashing caused such a disturbance, you ultimately couldn't figure out who – if anyone – caught the golden koi.",
+		char_type = 0
+	},
+	[3203101] = {
+		id = 3203101,
+		main_character_face = 0,
+		word = "You found a huge lotus leaf by the pond. Will you try to ride it like they do in cartoons?",
+		char_type = 0
+	},
+	[3203102] = {
+		id = 3203102,
+		main_character_face = 0,
+		word = "[Get on It]",
+		char_type = 2
+	},
+	[3203103] = {
+		id = 3203103,
+		main_character_face = 0,
+		word = "Success: The lotus leaf was surprisingly sturdy, and it could hold both your weights without issue. Lora got excited and gently hopped on the leaf twice.",
+		char_type = 0
+	},
+	[3203105] = {
+		id = 3203105,
+		main_character_face = 0,
+		word = "Failure: The lotus leaf was weaker than you expected, and it collapsed the moment you stepped on it. After some effort, you and Lora made it back to the shore.",
+		char_type = 0
+	},
+	[3203107] = {
+		id = 3203107,
+		main_character_face = 0,
+		word = "[Test it Cautiously]",
+		char_type = 2
+	},
+	[3203108] = {
+		id = 3203108,
+		main_character_face = 0,
+		word = "The lotus flower sank below the surface, but you managed to avoid getting wet.",
+		char_type = 0
+	},
+	[3203201] = {
+		id = 3203201,
+		main_character_face = 0,
+		word = "There is a log bridge spanning the pond. Will you dare to cross it?",
+		char_type = 0
+	},
+	[3203202] = {
+		id = 3203202,
+		main_character_face = 0,
+		word = "[Run Across It]",
+		char_type = 2
+	},
+	[3203203] = {
+		id = 3203203,
+		main_character_face = 0,
+		word = "Thanks to your quick movements, you made it across to the other side.",
+		char_type = 0
+	},
+	[3203205] = {
+		id = 3203205,
+		main_character_face = 0,
+		word = "[Cross It Carefully]",
+		char_type = 2
+	},
+	[3203206] = {
+		id = 3203206,
+		main_character_face = 0,
+		word = "With bated breaths, you advanced one step at a time... and just about managed to make it to the other side.",
+		char_type = 0
+	},
+	[3203208] = {
+		id = 3203208,
+		main_character_face = 0,
+		word = "[Take a Detour]",
+		char_type = 2
+	},
+	[3203209] = {
+		id = 3203209,
+		main_character_face = 0,
+		word = "You promptly took a big detour around the pond. It was the safe choice, but it wore out your feet a bit.",
+		char_type = 0
+	},
+	[3203211] = {
+		id = 3203211,
+		main_character_face = 0,
+		word = "[Test Its Carrying Capacity]",
+		char_type = 2
+	},
+	[3203212] = {
+		id = 3203212,
+		main_character_face = 0,
+		word = "Driven by curiosity, you got on the bridge and jumped. You found out how much weight it could bear, and it only took you getting wet from head to toe... Why did you do that?",
+		char_type = 0
+	},
+	[3203301] = {
+		id = 3203301,
+		main_character_face = 0,
+		word = "The old lottery machine on the street corner seems to be malfunctioning. Every time you press the test button, it dispenses a \"test ticket\" with an illustration of the top prize!",
+		char_type = 0
+	},
+	[3203302] = {
+		id = 3203302,
+		main_character_face = 0,
+		word = "That said, there is a notice on the side of the machine that says, \"Broken, please don't use\"…",
+		char_type = 0
+	},
+	[3203303] = {
+		id = 3203303,
+		main_character_face = 0,
+		word = "[Buy One Ticket]",
+		char_type = 2
+	},
+	[3203304] = {
+		id = 3203304,
+		main_character_face = 0,
+		word = "You tried your luck and inserted a coin, and sure enough, it dispensed a top-prize ticket! But, when you tried to redeem it, you were informed that it was a test ticket and thus invalid.",
+		char_type = 0
+	},
+	[3203306] = {
+		id = 3203306,
+		main_character_face = 0,
+		word = "[Follow the Rules; Don't Cave In]",
+		char_type = 2
+	},
+	[3203307] = {
+		id = 3203307,
+		main_character_face = 0,
+		word = "Although you missed out on a windfall, you have no regrets. ",
+		char_type = 0
+	},
+	[3203309] = {
+		id = 3203309,
+		main_character_face = 0,
+		word = "[Call the Repair Number]",
+		char_type = 2
+	},
+	[3203310] = {
+		id = 3203310,
+		main_character_face = 0,
+		word = "Lora called the repair number. As thanks for her act of honesty, they gave you two legitimate lottery tickets.",
+		char_type = 0
+	},
+	[3203401] = {
+		id = 3203401,
+		main_character_face = 0,
+		word = "An eye-catching banner hangs from a street stall. \"Buy more, save more!\" it says. They just so happen to sell things that Lora wants…",
+		char_type = 0
+	},
+	[3203402] = {
+		id = 3203402,
+		main_character_face = 0,
+		word = "[Buy 1 Product]",
+		char_type = 2
+	},
+	[3203403] = {
+		id = 3203403,
+		main_character_face = 0,
+		word = "You bought one item at the regular price. You were a little disappointed that you got no discount from the salesmanjuu.",
+		char_type = 0
+	},
+	[3203405] = {
+		id = 3203405,
+		main_character_face = 0,
+		word = "[Buy 3 Products]",
+		char_type = 2
+	},
+	[3203406] = {
+		id = 3203406,
+		main_character_face = 0,
+		word = "You bought a handful of practical tools and got a 10% discount. The manjuu clerks gladly wrapped up your items. (Gain 3 practical tools ",
+		char_type = 0
+	},
+	[3203408] = {
+		id = 3203408,
+		main_character_face = 0,
+		word = "[Buy 10 Products]",
+		char_type = 2
+	},
+	[3203409] = {
+		id = 3203409,
+		main_character_face = 0,
+		word = "50% off! Wow! On the other hand, nearly half of what you bought was useless. ",
+		char_type = 0
+	},
+	[3203501] = {
+		id = 3203501,
+		main_character_face = 0,
+		word = "The supermarket is hosting a shopping lottery! You just got one lottery ticket from your last purchase. Will you participate in the lottery?",
+		char_type = 0
+	},
+	[3203502] = {
+		id = 3203502,
+		main_character_face = 0,
+		word = "[Give It a Try]",
+		char_type = 2
+	},
+	[3203503] = {
+		id = 3203503,
+		main_character_face = 0,
+		word = "Success: Holy cow! You hit the jackpot on your first try!",
+		char_type = 0
+	},
+	[3203505] = {
+		id = 3203505,
+		main_character_face = 0,
+		word = "Failure: The roulette wheel spins, and the ball lands on \"nothing.\" If you want to try again, you'll need to buy something else…",
+		char_type = 0
+	},
+	[3203507] = {
+		id = 3203507,
+		main_character_face = 0,
+		word = "[Call It Quits]",
+		char_type = 2
+	},
+	[3203508] = {
+		id = 3203508,
+		main_character_face = 0,
+		word = "There's no chance of winning anyway. Better to just watch the other lottery participants reach their highs and lows.",
+		char_type = 0
+	},
+	[3203601] = {
+		id = 3203601,
+		main_character_face = 0,
+		word = "There is an antiques vendor on the street. They're doing a clearance sale of various items that seem useless at a glance.",
+		char_type = 0
+	},
+	[3203602] = {
+		id = 3203602,
+		main_character_face = 0,
+		word = "[Buy Some Second-Hand Parts]",
+		char_type = 2
+	},
+	[3203603] = {
+		id = 3203603,
+		main_character_face = 0,
+		word = "These could be put together to create a useful tool.",
+		char_type = 0
+	},
+	[3203605] = {
+		id = 3203605,
+		main_character_face = 0,
+		word = "[Buy a Damaged Painting]",
+		char_type = 2
+	},
+	[3203606] = {
+		id = 3203606,
+		main_character_face = 0,
+		word = "This one is actually an authentic work by a famous artist! What a discerning eye!",
+		char_type = 0
+	},
+	[3203701] = {
+		id = 3203701,
+		main_character_face = 0,
+		word = "As you walk through the aquarium's deep-blue tunnels, fish in all kinds of shapes swim overhead. Lora gazes at them with particular interest. Next, you decide to…",
+		char_type = 0
+	},
+	[3203702] = {
+		id = 3203702,
+		main_character_face = 0,
+		word = "[Look For Interesting Creatures]",
+		char_type = 2
+	},
+	[3203703] = {
+		id = 3203703,
+		main_character_face = 0,
+		word = "Lora spotted some bioluminescent jellyfish in the dimly lit exhibit. Like stars, they slowly swelled and moved around as she marveled at them, utterly captivated.",
+		char_type = 0
+	},
+	[3203705] = {
+		id = 3203705,
+		main_character_face = 0,
+		word = "[Record Fish Data]",
+		char_type = 2
+	},
+	[3203706] = {
+		id = 3203706,
+		main_character_face = 0,
+		word = "You and Lora recorded the appearance and habits of several endangered species, and learned a great deal about marine life. ",
+		char_type = 0
+	},
+	[3203708] = {
+		id = 3203708,
+		main_character_face = 0,
+		word = "[Feed the Fish]",
+		char_type = 2
+	},
+	[3203709] = {
+		id = 3203709,
+		main_character_face = 0,
+		word = "You bought some fish feed and fed it to them. Seeing the fish vying for it was a spectacular sight.",
+		char_type = 0
+	},
+	[3203801] = {
+		id = 3203801,
+		main_character_face = 0,
+		word = "A captivating electronic voice emanates from a glowing clam. \"Insert a coin and seize fortune! Your first try comes with a bonus surprise!\" it says.",
+		char_type = 0
+	},
+	[3203802] = {
+		id = 3203802,
+		main_character_face = 0,
+		word = "[Insert a Few Coins]",
+		char_type = 2
+	},
+	[3203803] = {
+		id = 3203803,
+		main_character_face = 0,
+		word = "The clam produced a small, dull pearl.",
+		char_type = 0
+	},
+	[3203805] = {
+		id = 3203805,
+		main_character_face = 0,
+		word = "[Insert a Lot of Coins] ",
+		char_type = 2
+	},
+	[3203806] = {
+		id = 3203806,
+		main_character_face = 0,
+		word = "The clam glowed, and it produced a big, glowing pearl, promising that it would \"bring you immensely good luck!\"",
+		char_type = 0
+	},
+	[3203808] = {
+		id = 3203808,
+		main_character_face = 0,
+		word = "[Don't Give it Any Coins]",
+		char_type = 2
+	},
+	[3203809] = {
+		id = 3203809,
+		main_character_face = 0,
+		word = "Say no to wicked temptations! Later on, you heard that some manjuus have lost everything in their pursuit of bigger pearls. You're glad you dodged that bullet.",
+		char_type = 0
+	},
+	[3203901] = {
+		id = 3203901,
+		main_character_face = 0,
+		word = "A fish you've never seen before was released into the river near the aquarium…",
+		char_type = 0
+	},
+	[3203902] = {
+		id = 3203902,
+		main_character_face = 0,
+		word = "[Support the Release]",
+		char_type = 2
+	},
+	[3203903] = {
+		id = 3203903,
+		main_character_face = 0,
+		word = "A while later, you heard on the news that an invasive species of carnivorous fish had become rampant in the local waters, disrupting the balance of the ecosystem.",
+		char_type = 0
+	},
+	[3203905] = {
+		id = 3203905,
+		main_character_face = 0,
+		word = "[Buy and Keep It As a Pet]",
+		char_type = 2
+	},
+	[3203906] = {
+		id = 3203906,
+		main_character_face = 0,
+		word = "In the process of raising the fish, you observed its unique habits and learned a lot about it.",
+		char_type = 0
+	},
+	[3203908] = {
+		id = 3203908,
+		main_character_face = 0,
+		word = "[Report It to the Authorities]",
+		char_type = 2
+	},
+	[3203909] = {
+		id = 3203909,
+		main_character_face = 0,
+		word = "What if it's an invasive species? Just to be safe, you reported it. A later investigation confirmed that this fish did have the potential to disrupt the ecosystem.",
+		char_type = 0
+	},
+	[3203911] = {
+		id = 3203911,
+		main_character_face = 0,
+		word = "[Ignore It]",
+		char_type = 2
+	},
+	[3203912] = {
+		id = 3203912,
+		main_character_face = 0,
+		word = "A while later, you heard on the news that an invasive species of carnivorous fish had become rampant in the local waters, disrupting the balance of the ecosystem.",
+		char_type = 0
+	},
+	[3204001] = {
+		id = 3204001,
+		main_character_face = 0,
+		word = "Several long lines have formed at the entrance to the exhibit building, and they're moving pretty slowly.",
+		char_type = 0
+	},
+	[3204002] = {
+		id = 3204002,
+		main_character_face = 0,
+		word = "[Stand in Line Obediently]",
+		char_type = 2
+	},
+	[3204003] = {
+		id = 3204003,
+		main_character_face = 0,
+		word = "This took quite a lot of time.",
+		char_type = 0
+	},
+	[3204005] = {
+		id = 3204005,
+		main_character_face = 0,
+		word = "[Observe and Switch to a Faster Queue]",
+		char_type = 2
+	},
+	[3204006] = {
+		id = 3204006,
+		main_character_face = 0,
+		word = "As soon as you switched lines, your original line suddenly started to move forward.",
+		char_type = 0
+	},
+	[3204101] = {
+		id = 3204101,
+		main_character_face = 0,
+		word = "The cleaning manjuu at the gymnasium never adheres to its cleaning manual. It makes seemingly meaningless movements on the job, which gets misunderstood as slacking off. Lora is the only one who has noticed that the equipment failure rate drops significantly wherever the manjuu goes.",
+		char_type = 0
+	},
+	[3204102] = {
+		id = 3204102,
+		main_character_face = 0,
+		word = "[Clear the Cleaning Manjuu's Name]",
+		char_type = 2
+	},
+	[3204103] = {
+		id = 3204103,
+		main_character_face = 0,
+		word = "Using concrete data, you proved the superiority of the cleaning manjuu's working method.",
+		char_type = 0
+	},
+	[3204105] = {
+		id = 3204105,
+		main_character_face = 0,
+		word = "[Improve the Cleaning Manjuu's Working Methods]",
+		char_type = 2
+	},
+	[3204106] = {
+		id = 3204106,
+		main_character_face = 0,
+		word = "You sneakily optimized the cleaning manjuu's work, adding many pragmatic actions to its regular cleaning methods. Now everyone sees clearly that the manjuu is working very diligently.",
+		char_type = 0
+	},
+	[3204201] = {
+		id = 3204201,
+		main_character_face = 0,
+		word = "As you're training, Lora performs a high-intensity workout without properly warming up first, and she gets muscle pains. You decide to…",
+		char_type = 0
+	},
+	[3204202] = {
+		id = 3204202,
+		main_character_face = 0,
+		word = "[Get Some Rest]",
+		char_type = 2
+	},
+	[3204203] = {
+		id = 3204203,
+		main_character_face = 0,
+		word = "Lora refrained from doing her intensive workout for a while. While it did impact her fitness, it's better to be safe than sorry.",
+		char_type = 0
+	},
+	[3204205] = {
+		id = 3204205,
+		main_character_face = 0,
+		word = "[Keep Training]",
+		char_type = 2
+	},
+	[3204206] = {
+		id = 3204206,
+		main_character_face = 0,
+		word = "While she did become fitter in the end, the strain on her muscles got even worse.",
+		char_type = 0
+	},
+	[3204208] = {
+		id = 3204208,
+		main_character_face = 0,
+		word = "[Apply a Quick-Acting Treatment]",
+		char_type = 2
+	},
+	[3204209] = {
+		id = 3204209,
+		main_character_face = 0,
+		word = "You paid some money to get immediate relief from a specialist, and Lora recovered right away.",
+		char_type = 0
+	},
+	[3204211] = {
+		id = 3204211,
+		main_character_face = 0,
+		word = "[Research a Scientific Training Method]",
+		char_type = 2
+	},
+	[3204212] = {
+		id = 3204212,
+		main_character_face = 0,
+		word = "You learned a more efficient and safer training method, and worked hard to not repeat the same mistake while her injuries recovered.",
+		char_type = 0
+	},
+	[3204301] = {
+		id = 3204301,
+		main_character_face = 0,
+		word = "here is a lottery stand at the entrance to the amusement park. You feel like you've seen the manjuu storeowner before, though... Will you participate in the lottery?",
+		char_type = 0
+	},
+	[3204302] = {
+		id = 3204302,
+		main_character_face = 0,
+		word = "[All Or Nothing (20% chance of winning; costs money)]",
+		char_type = 2
+	},
+	[3204303] = {
+		id = 3204303,
+		main_character_face = 0,
+		word = "-> It's a blank. Try again? ",
+		char_type = 0
+	},
+	[3204304] = {
+		id = 3204304,
+		main_character_face = 0,
+		word = "Better to cut your losses.",
+		char_type = 2
+	},
+	[3204306] = {
+		id = 3204306,
+		main_character_face = 0,
+		word = "[Keep Trying; 40% Chance of Winning]",
+		char_type = 2
+	},
+	[3204307] = {
+		id = 3204307,
+		main_character_face = 0,
+		word = "[Keep Trying; 60% Chance of Winning]",
+		char_type = 2
+	},
+	[3204308] = {
+		id = 3204308,
+		main_character_face = 0,
+		word = "[Keep Trying; 80% Chance of Winning]",
+		char_type = 2
+	},
+	[3204309] = {
+		id = 3204309,
+		main_character_face = 0,
+		word = "Suddenly, a celebratory tune began playing as a horizontal banner appeared with the words \"Congratulations! You won!\" on it.",
+		char_type = 0
+	},
+	[3204401] = {
+		id = 3204401,
+		main_character_face = 0,
+		word = "You've come on a field trip to Little Academy. Where will you go first?",
+		char_type = 0
+	},
+	[3204402] = {
+		id = 3204402,
+		main_character_face = 0,
+		word = "[Main School Building]",
+		char_type = 2
+	},
+	[3204403] = {
+		id = 3204403,
+		main_character_face = 0,
+		word = "As you walked through the spacious classrooms, Lora's curiosity was piqued by a complicated mathematical formula left on the blackboard. ",
+		char_type = 0
+	},
+	[3204405] = {
+		id = 3204405,
+		main_character_face = 0,
+		word = "[Athletic Field]",
+		char_type = 2
+	},
+	[3204406] = {
+		id = 3204406,
+		main_character_face = 0,
+		word = "The wind soothed your body and spirit. ",
+		char_type = 0
+	},
+	[3204408] = {
+		id = 3204408,
+		main_character_face = 0,
+		word = "[Admin Building]",
+		char_type = 2
+	},
+	[3204409] = {
+		id = 3204409,
+		main_character_face = 0,
+		word = "As soon as you enter, you feel like all your sensitivity was sucked out of you. Strange…",
+		char_type = 0
+	},
+	[3204501] = {
+		id = 3204501,
+		main_character_face = 0,
+		word = "News that World of Wonder might be rebuilt into a high-efficiency study center has spread like wildfire. They say it's because of all the noise the kids make there.",
+		char_type = 0
+	},
+	[3204502] = {
+		id = 3204502,
+		main_character_face = 0,
+		word = "[Support the Rebuilding]",
+		char_type = 2
+	},
+	[3204503] = {
+		id = 3204503,
+		main_character_face = 0,
+		word = "Noise that disrupts the peace? Not in YOUR neighborhood!",
+		char_type = 0
+	},
+	[3204505] = {
+		id = 3204505,
+		main_character_face = 0,
+		word = "[Oppose the Rebuilding]",
+		char_type = 2
+	},
+	[3204506] = {
+		id = 3204506,
+		main_character_face = 0,
+		word = "\"This won't do! Where are the kids supposed to play if World of Wonder disappears?!\"",
+		char_type = 0
+	},
+	[3204601] = {
+		id = 3204601,
+		main_character_face = 0,
+		word = "The school festival is about to begin. What kind of stall will you set up?",
+		char_type = 0
+	},
+	[3204602] = {
+		id = 3204602,
+		main_character_face = 0,
+		word = "[Food Stall]",
+		char_type = 2
+	},
+	[3204603] = {
+		id = 3204603,
+		main_character_face = 0,
+		word = "You finally got the chance to flex your cooking muscles!",
+		char_type = 0
+	},
+	[3204605] = {
+		id = 3204605,
+		main_character_face = 0,
+		word = "[Game Stall]",
+		char_type = 2
+	},
+	[3204606] = {
+		id = 3204606,
+		main_character_face = 0,
+		word = "By cleverly rigging the odds in your favor, you earned quite a lot of money.",
+		char_type = 0
+	},
+	[3204608] = {
+		id = 3204608,
+		main_character_face = 0,
+		word = "[Community Service Stall]",
+		char_type = 2
+	},
+	[3204609] = {
+		id = 3204609,
+		main_character_face = 0,
+		word = "Your service to the people earned you a lot of gratitude and praise.",
+		char_type = 0
+	},
+	[3204611] = {
+		id = 3204611,
+		main_character_face = 0,
+		word = "[Souvenir Stall]",
+		char_type = 2
+	},
+	[3204612] = {
+		id = 3204612,
+		main_character_face = 0,
+		word = "Every handmade souvenir embodied the creator's creativity and passion.",
+		char_type = 0
+	},
+	[3204701] = {
+		id = 3204701,
+		main_character_face = 0,
+		word = "It's self-study time. Where will you do it?",
+		char_type = 0
+	},
+	[3204702] = {
+		id = 3204702,
+		main_character_face = 0,
+		word = "[Knowledge Class]",
+		char_type = 2
+	},
+	[3204703] = {
+		id = 3204703,
+		main_character_face = 0,
+		word = "This will be a boost to your knowledge!",
+		char_type = 0
+	},
+	[3204705] = {
+		id = 3204705,
+		main_character_face = 0,
+		word = "[Dexterity Class]",
+		char_type = 2
+	},
+	[3204706] = {
+		id = 3204706,
+		main_character_face = 0,
+		word = "This will be a boost to your dexterity!",
+		char_type = 0
+	},
+	[3204708] = {
+		id = 3204708,
+		main_character_face = 0,
+		word = "[Arts Class]",
+		char_type = 2
+	},
+	[3204709] = {
+		id = 3204709,
+		main_character_face = 0,
+		word = "This will be a boost to your creativity!",
+		char_type = 0
+	},
+	[3204711] = {
+		id = 3204711,
+		main_character_face = 0,
+		word = "[Take a Rest]",
+		char_type = 2
+	},
+	[3204712] = {
+		id = 3204712,
+		main_character_face = 0,
+		word = "You recovered your strength to study another day!",
+		char_type = 0
+	},
+	[3204801] = {
+		id = 3204801,
+		main_character_face = 0,
+		word = "Water keeps leaking from the pipe. You and Lora searched every nook and cranny of the toolbox, and you're still one crucial connector short.",
+		char_type = 0
+	},
+	[3204802] = {
+		id = 3204802,
+		main_character_face = 0,
+		word = "You have no choice but to go to the hardware store – but what was the name of that threaded thing that screws onto pipes called again?",
+		char_type = 0
+	},
+	[3204803] = {
+		id = 3204803,
+		main_character_face = 0,
+		word = "[Metal Pipe Fitting]",
+		char_type = 2
+	},
+	[3204804] = {
+		id = 3204804,
+		main_character_face = 0,
+		word = "You returned home with a standard metal fitting, fumbled around to tighten it, and the leak stopped immediately. ",
+		char_type = 0
+	},
+	[3204806] = {
+		id = 3204806,
+		main_character_face = 0,
+		word = "[\"All-Purpose\" Gum]",
+		char_type = 2
+	},
+	[3204807] = {
+		id = 3204807,
+		main_character_face = 0,
+		word = "On a whim, you bought some extremely sticky gum. If you stick it to the crack, it should fix the leak.",
+		char_type = 0
+	},
+	[3204809] = {
+		id = 3204809,
+		main_character_face = 0,
+		word = "[Classic Brass Stop Valve]",
+		char_type = 2
+	},
+	[3204810] = {
+		id = 3204810,
+		main_character_face = 0,
+		word = "You chose a brass valve that looked pretty reliable at the cost of being a bit expensive. It took some skill to install, but it not only fixed the leak issue, but also added a touch of vintage style to your kitchen. ",
+		char_type = 0
+	},
+	[3204812] = {
+		id = 3204812,
+		main_character_face = 0,
+		word = "Wait, it actually worked?",
+		char_type = 0
+	},
+	[3204814] = {
+		id = 3204814,
+		main_character_face = 0,
+		word = "The leak looked to be fixed at first, but after a few seconds, there was a popping sound and the gum was washed away by a stream of water. Water splashed onto Lora's face.",
+		char_type = 0
+	},
+	[3204901] = {
+		id = 3204901,
+		main_character_face = 0,
+		word = "There is a stall on the roadside with a sign that says, \"Clearance sale! 3 days left! I'll take anything!\" hanging above it. They're selling a pile of items that seem practical at a glance but are actually useless trinkets.",
+		char_type = 0
+	},
+	[3204902] = {
+		id = 3204902,
+		main_character_face = 0,
+		word = "[Buy a \"Guaranteed Win\" Scratch Ticket] ",
+		char_type = 2
+	},
+	[3204903] = {
+		id = 3204903,
+		main_character_face = 0,
+		word = "You bought the scratch ticket and scratched it there and then. The result was exactly as you expected.",
+		char_type = 0
+	},
+	[3204905] = {
+		id = 3204905,
+		main_character_face = 0,
+		word = "[Ignore Them]",
+		char_type = 2
+	},
+	[3204906] = {
+		id = 3204906,
+		main_character_face = 0,
+		word = "You took one glance at the stall, and then left.",
+		char_type = 0
+	},
+	[3205001] = {
+		id = 3205001,
+		main_character_face = 0,
+		word = "While cleaning out the warehouse, a hardware manjuu found an old, rusty, dust-covered multifunctional wrench. The manjuu offers it to Lora…",
+		char_type = 0
+	},
+	[3205002] = {
+		id = 3205002,
+		main_character_face = 0,
+		word = "[Gratefully Accept It]",
+		char_type = 2
+	},
+	[3205003] = {
+		id = 3205003,
+		main_character_face = 0,
+		word = "After using it, you discovered that the wrench could adapt to screws of all shapes and sizes. Its design was far superior to the wrenches you can find on the modern market. ",
+		char_type = 0
+	},
+	[3205005] = {
+		id = 3205005,
+		main_character_face = 0,
+		word = "[Decline It]",
+		char_type = 2
+	},
+	[3205006] = {
+		id = 3205006,
+		main_character_face = 0,
+		word = "The wrench was ultimately sent to the recycling center, never to be seen again.",
+		char_type = 0
+	},
+	[3205008] = {
+		id = 3205008,
+		main_character_face = 0,
+		word = "[Accept and Sell as Scrap]",
+		char_type = 2
+	},
+	[3205009] = {
+		id = 3205009,
+		main_character_face = 0,
+		word = "A while later, you found the same model of wrench being sold at a second-hand market for a high price, and you regretted your decision.",
+		char_type = 0
+	},
+	[3205101] = {
+		id = 3205101,
+		main_character_face = 0,
+		word = "A social worker manjuu has asked to borrow Lora's watering tools so it can tend to the plants in the residential area.",
+		char_type = 0
+	},
+	[3205102] = {
+		id = 3205102,
+		main_character_face = 0,
+		word = "[Readily Lend It]",
+		char_type = 2
+	},
+	[3205103] = {
+		id = 3205103,
+		main_character_face = 0,
+		word = "The plants were quickly given plenty of water, restoring life to the residential area.",
+		char_type = 0
+	},
+	[3205105] = {
+		id = 3205105,
+		main_character_face = 0,
+		word = "[Offer to Help Water with Lora]",
+		char_type = 2
+	},
+	[3205106] = {
+		id = 3205106,
+		main_character_face = 0,
+		word = "The watering got done shockingly quickly, and the residential area earned the title of an \"eco-friendly community\" in no time.",
+		char_type = 0
+	},
+	[3205108] = {
+		id = 3205108,
+		main_character_face = 0,
+		word = "[Don't Lend It]",
+		char_type = 2
+	},
+	[3205109] = {
+		id = 3205109,
+		main_character_face = 0,
+		word = "The manjuu left. A few days later, the plants around the residential area had noticeably withered.",
+		char_type = 0
+	},
+	[3205201] = {
+		id = 3205201,
+		main_character_face = 0,
+		word = "The 3rd Endless Toolmaking Contest has begun. As a solo entrant, Lora will need to plan rationally and work quickly to assemble the parts into tools. However, looking at the mess on her table, she has no idea where to start. You advise her by telling her to…",
+		char_type = 0
+	},
+	[3205202] = {
+		id = 3205202,
+		main_character_face = 0,
+		word = "[Follow the Assembly Manual's Instructions]",
+		char_type = 2
+	},
+	[3205203] = {
+		id = 3205203,
+		main_character_face = 0,
+		word = "It wasn't quick, but it ensured steady progress. She ultimately finished her work and secured a good placement.",
+		char_type = 0
+	},
+	[3205205] = {
+		id = 3205205,
+		main_character_face = 0,
+		word = "[Assemble By Trusting Her Gut]",
+		char_type = 2
+	},
+	[3205206] = {
+		id = 3205206,
+		main_character_face = 0,
+		word = "It was a miracle – it's uncertain how exactly she used the parts of an electric screwdriver to assemble a dynamo, but what's sure is that she did it!",
+		char_type = 0
+	},
+	[3205301] = {
+		id = 3205301,
+		main_character_face = 0,
+		word = "This store sells two kinds of wrenches.",
+		char_type = 0
+	},
+	[3205302] = {
+		id = 3205302,
+		main_character_face = 0,
+		word = "[Buy a Soft Metal Wrench]",
+		char_type = 2
+	},
+	[3205303] = {
+		id = 3205303,
+		main_character_face = 0,
+		word = "How can metal be this soft?",
+		char_type = 0
+	},
+	[3205305] = {
+		id = 3205305,
+		main_character_face = 0,
+		word = "[Buy a Regular Wrench]",
+		char_type = 2
+	},
+	[3205306] = {
+		id = 3205306,
+		main_character_face = 0,
+		word = "Perfectly suited for regular work.",
+		char_type = 0
+	},
+	[3205308] = {
+		id = 3205308,
+		main_character_face = 0,
+		word = "[Buy Nothing]",
+		char_type = 2
+	},
+	[3205309] = {
+		id = 3205309,
+		main_character_face = 0,
+		word = "Plan your purchases!",
+		char_type = 0
+	},
+	[3205401] = {
+		id = 3205401,
+		main_character_face = 0,
+		word = "You enter the café, and the menu says the following: \"A different, wonderful experience awaits in each drink.\"",
+		char_type = 0
+	},
+	[3205402] = {
+		id = 3205402,
+		main_character_face = 0,
+		word = "[Get the Prodigy's Latte]",
+		char_type = 2
+	},
+	[3205403] = {
+		id = 3205403,
+		main_character_face = 0,
+		word = "Will drinking this make you smarter?",
+		char_type = 0
+	},
+	[3205405] = {
+		id = 3205405,
+		main_character_face = 0,
+		word = "[Get the Adventurer's Mocha]",
+		char_type = 2
+	},
+	[3205406] = {
+		id = 3205406,
+		main_character_face = 0,
+		word = "For some reason, drinking that made you want to go on a grand adventure!",
+		char_type = 0
+	},
+	[3205408] = {
+		id = 3205408,
+		main_character_face = 0,
+		word = "[Manjuu Iced Coffee]",
+		char_type = 2
+	},
+	[3205409] = {
+		id = 3205409,
+		main_character_face = 0,
+		word = "Motivation started coursing through your veins!",
+		char_type = 0
+	},
+	[3205411] = {
+		id = 3205411,
+		main_character_face = 0,
+		word = "[Manjuu Milk]",
+		char_type = 2
+	},
+	[3205412] = {
+		id = 3205412,
+		main_character_face = 0,
+		word = "Motivation started coursing through your veins!",
+		char_type = 0
+	},
+	[3205501] = {
+		id = 3205501,
+		main_character_face = 0,
+		word = "A latte art machine capable of telling fortunes has appeared. \"Let coffee predict the path of your destiny,\" it says…",
+		char_type = 0
+	},
+	[3205502] = {
+		id = 3205502,
+		main_character_face = 0,
+		word = "[Order a Destiny's Latte]",
+		char_type = 2
+	},
+	[3205503] = {
+		id = 3205503,
+		main_character_face = 0,
+		word = "Interpretation: \"Today is a good day for adventure.\"",
+		char_type = 0
+	},
+	[3205505] = {
+		id = 3205505,
+		main_character_face = 0,
+		word = "Interpretation: \"Today is a good day for learning.\"",
+		char_type = 0
+	},
+	[3205507] = {
+		id = 3205507,
+		main_character_face = 0,
+		word = "Interpretation: \"Today is a good day to start a business venture.\"",
+		char_type = 0
+	},
+	[3205509] = {
+		id = 3205509,
+		main_character_face = 0,
+		word = "[\"Predict Whether I'll Order or Not\"]",
+		char_type = 2
+	},
+	[3205510] = {
+		id = 3205510,
+		main_character_face = 0,
+		word = "In response to your attempt to test the machine's predictive ability, it simply said: \"Today's fortune... cannot be revealed.\"",
+		char_type = 0
+	},
+	[3205512] = {
+		id = 3205512,
+		main_character_face = 0,
+		word = "[Examine the Coffee Machine]",
+		char_type = 2
+	},
+	[3205513] = {
+		id = 3205513,
+		main_character_face = 0,
+		word = "After inspecting the coffee machine's programming, you determined that its so-called \"fortunes\" are simply made from a random selection of predetermined templates.",
+		char_type = 0
+	},
+	[3205601] = {
+		id = 3205601,
+		main_character_face = 0,
+		word = "There is a banner above the café that reads: \"New Super Energy Coffee Beans for sale at a temporary 50% discount! Twice as energizing as other coffee beans!\"",
+		char_type = 0
+	},
+	[3205602] = {
+		id = 3205602,
+		main_character_face = 0,
+		word = "[Buy Some and Make a Cup At Once]",
+		char_type = 2
+	},
+	[3205603] = {
+		id = 3205603,
+		main_character_face = 0,
+		word = "The coffee had a very rich aroma. You were filled with energy after just one sip, and you recovered 1 AP! ",
+		char_type = 0
+	},
+	[3205605] = {
+		id = 3205605,
+		main_character_face = 0,
+		word = "[Buy a Whole Bag] ",
+		char_type = 2
+	},
+	[3205606] = {
+		id = 3205606,
+		main_character_face = 0,
+		word = "You bought a whole bag. Unfortunately, when you got home, you realized that the expiration date was in just three days.",
+		char_type = 0
+	},
+	[3205608] = {
+		id = 3205608,
+		main_character_face = 0,
+		word = "[Doubt Its Efficacy, Choose Regular Coffee]",
+		char_type = 2
+	},
+	[3205609] = {
+		id = 3205609,
+		main_character_face = 0,
+		word = "You went with regular old coffee in the end. Its taste was consistent and reliable, and it lifted your mood.",
+		char_type = 0
+	},
+	[3205701] = {
+		id = 3205701,
+		main_character_face = 0,
+		word = "A manjuu has lost its honey cocktail recipe that's \"been with the family for generations,\" and it needs help!",
+		char_type = 0
+	},
+	[3205702] = {
+		id = 3205702,
+		main_character_face = 0,
+		word = "[Search the Bookshelf]",
+		char_type = 2
+	},
+	[3205703] = {
+		id = 3205703,
+		main_character_face = 0,
+		word = "You found an old notebook that was used as a bookmark!",
+		char_type = 0
+	},
+	[3205705] = {
+		id = 3205705,
+		main_character_face = 0,
+		word = "[Search the Kitchen Corner]",
+		char_type = 2
+	},
+	[3205706] = {
+		id = 3205706,
+		main_character_face = 0,
+		word = "You only found some scattered sugar granules and nothing else.",
+		char_type = 0
+	},
+	[3205708] = {
+		id = 3205708,
+		main_character_face = 0,
+		word = "[Attempt to Recreate It from Memory]",
+		char_type = 2
+	},
+	[3205709] = {
+		id = 3205709,
+		main_character_face = 0,
+		word = "The drink you made tasted fine, but the manjuu told you it was nothing like it remembered.",
+		char_type = 0
+	},
+	[3205711] = {
+		id = 3205711,
+		main_character_face = 0,
+		word = "[Ask Other Manjuus]",
+		char_type = 2
+	},
+	[3205712] = {
+		id = 3205712,
+		main_character_face = 0,
+		word = "All clues point to a locked cabinet.",
+		char_type = 0
+	},
+	[3205801] = {
+		id = 3205801,
+		main_character_face = 0,
+		word = "Lora has been invited to taste and offer feedback on a nonalcoholic drink that's in development. However, since she's bad at expressing herself, she asks you for advice…",
+		char_type = 0
+	},
+	[3205802] = {
+		id = 3205802,
+		main_character_face = 0,
+		word = "[Concentrate on the Taste]",
+		char_type = 2
+	},
+	[3205803] = {
+		id = 3205803,
+		main_character_face = 0,
+		word = "Lora focused on the flavor and the mouthfeel, which allowed her to provide key suggestions. The drink was adjusted accordingly and became hugely popular.",
+		char_type = 0
+	},
+	[3205805] = {
+		id = 3205805,
+		main_character_face = 0,
+		word = "[Stick to the Basics]",
+		char_type = 2
+	},
+	[3205806] = {
+		id = 3205806,
+		main_character_face = 0,
+		word = "\"It tastes good\" – Lora's feedback was sincere, but she didn't have much else to contribute.",
+		char_type = 0
+	},
+	[3205808] = {
+		id = 3205808,
+		main_character_face = 0,
+		word = "[Recommend It to Other Customers]",
+		char_type = 2
+	},
+	[3205809] = {
+		id = 3205809,
+		main_character_face = 0,
+		word = "Since a larger number of people tested it, they were able to gather more diverse feedback.",
+		char_type = 0
+	},
+	[3205901] = {
+		id = 3205901,
+		main_character_face = 0,
+		word = "There are all kinds of study materials in front of you. You need to pick a starting point among these.",
+		char_type = 0
+	},
+	[3205902] = {
+		id = 3205902,
+		main_character_face = 0,
+		word = "[\"Supply Acquisition Guide – Unorthodox Edition\"]",
+		char_type = 2
+	},
+	[3205903] = {
+		id = 3205903,
+		main_character_face = 0,
+		word = "What's such an esoteric book doing in the school library?",
+		char_type = 0
+	},
+	[3205905] = {
+		id = 3205905,
+		main_character_face = 0,
+		word = "[\"The Secretary Shipgirl's Self-Betterment\"]",
+		char_type = 2
+	},
+	[3205906] = {
+		id = 3205906,
+		main_character_face = 0,
+		word = "Lora seemed really interested in this one. She read it with great zeal.",
+		char_type = 0
+	},
+	[3205908] = {
+		id = 3205908,
+		main_character_face = 0,
+		word = "[\"The Famous Commander is in Love with Me\"]",
+		char_type = 2
+	},
+	[3205909] = {
+		id = 3205909,
+		main_character_face = 0,
+		word = "Lora blushed and pretended to be uninterested, yet secretly borrowed the book. She didn't return it until much later.",
+		char_type = 0
+	},
+	[3205911] = {
+		id = 3205911,
+		main_character_face = 0,
+		word = "[\"What I Talk About When I Talk About Sorties\"]",
+		char_type = 2
+	},
+	[3205912] = {
+		id = 3205912,
+		main_character_face = 0,
+		word = "While Lora seemed to be reading the book quite intently, you realized upon drawing closer that the book was actually upside down.",
+		char_type = 0
+	},
+	[3206001] = {
+		id = 3206001,
+		main_character_face = 0,
+		word = "In the library's rest area, there are several books on the shelf with eye-catching titles.",
+		char_type = 0
+	},
+	[3206002] = {
+		id = 3206002,
+		main_character_face = 0,
+		word = "[\"Onto the Other Side of the Sea\"]",
+		char_type = 2
+	},
+	[3206003] = {
+		id = 3206003,
+		main_character_face = 0,
+		word = "The book inspired a desire for adventure in you. You felt driven to see it for yourself one day. ",
+		char_type = 0
+	},
+	[3206005] = {
+		id = 3206005,
+		main_character_face = 0,
+		word = "[\"The Fatal Programming Error of a Simulated Town\"]",
+		char_type = 2
+	},
+	[3206006] = {
+		id = 3206006,
+		main_character_face = 0,
+		word = "The book was very thought-provoking. You hope that you yourself don't live inside a game.",
+		char_type = 0
+	},
+	[3206008] = {
+		id = 3206008,
+		main_character_face = 0,
+		word = "[\"The Millionaire Manjuu's Guide to Asset Management\"]",
+		char_type = 2
+	},
+	[3206009] = {
+		id = 3206009,
+		main_character_face = 0,
+		word = "While it was an interesting book, it doesn't seem very reliable.",
+		char_type = 0
+	},
+	[3206101] = {
+		id = 3206101,
+		main_character_face = 0,
+		word = "The library plans to develop a portable hard drive that contains \"unlimited knowledge.\" Supposedly, whoever can read all of its contents will become the smartest person in the world. Lora has been invited for a trial run, and she seems somewhat hesitant. You decide to…",
+		char_type = 0
+	},
+	[3206102] = {
+		id = 3206102,
+		main_character_face = 0,
+		word = "[Absorb the Knowledge!]",
+		char_type = 2
+	},
+	[3206103] = {
+		id = 3206103,
+		main_character_face = 0,
+		word = "A huge torrent of knowledge flooded into Lora's brain, and her face soon turned deep red. All that knowledge at once must've been too much for her.",
+		char_type = 0
+	},
+	[3206105] = {
+		id = 3206105,
+		main_character_face = 0,
+		word = "[Try Selective Learning]",
+		char_type = 2
+	},
+	[3206106] = {
+		id = 3206106,
+		main_character_face = 0,
+		word = "With your help, Lora selectively learned bits and pieces of the information while retaining mental clarity.",
+		char_type = 0
+	},
+	[3206201] = {
+		id = 3206201,
+		main_character_face = 0,
+		word = "As you and Lora pass by an open stage, a sign that reads, \"Let the world hear you sing!\" catches your attention. Lora expresses interest in it.",
+		char_type = 0
+	},
+	[3206202] = {
+		id = 3206202,
+		main_character_face = 0,
+		word = "[Nudge Her to Go Up on Stage]",
+		char_type = 2
+	},
+	[3206203] = {
+		id = 3206203,
+		main_character_face = 0,
+		word = "With your encouragement, Lora gets up on stage and performs a beautiful song. Her unique singing voice earned her a large applause. ",
+		char_type = 0
+	},
+	[3206205] = {
+		id = 3206205,
+		main_character_face = 0,
+		word = "[Perform a Duet with Her]",
+		char_type = 2
+	},
+	[3206206] = {
+		id = 3206206,
+		main_character_face = 0,
+		word = "You sang a song that both of you know. Although you went off-tune a few times, your impeccable harmony made the pursuit a fun endeavor.",
+		char_type = 0
+	},
+	[3206208] = {
+		id = 3206208,
+		main_character_face = 0,
+		word = "[Request a Really Hard Song]",
+		char_type = 2
+	},
+	[3206209] = {
+		id = 3206209,
+		main_character_face = 0,
+		word = "You asked her to perform a famous song sung in soprano. Lora gave it her best, almost cracking her voice, but still impressively finishing the song.",
+		char_type = 0
+	},
+	[3206301] = {
+		id = 3206301,
+		main_character_face = 0,
+		word = "A talent scout manjuu presented a shiny contract to Lora. \"Sign this and you'll become a star! All the gains will be yours!\" it said, yet the fine print at the end concerning the revenue share tells a different story.",
+		char_type = 0
+	},
+	[3206302] = {
+		id = 3206302,
+		main_character_face = 0,
+		word = "[Refuse]",
+		char_type = 2
+	},
+	[3206303] = {
+		id = 3206303,
+		main_character_face = 0,
+		word = "The path ahead will be difficult, but you'll be free. All of Lora's achievements will belong to her.",
+		char_type = 0
+	},
+	[3206305] = {
+		id = 3206305,
+		main_character_face = 0,
+		word = "[Accept]",
+		char_type = 2
+	},
+	[3206306] = {
+		id = 3206306,
+		main_character_face = 0,
+		word = "Lora became an overnight sensation, and large sums began pouring into her bank account. Following this, however, a large portion of her subsequent earnings went into the company's account.",
+		char_type = 0
+	},
+	[3206308] = {
+		id = 3206308,
+		main_character_face = 0,
+		word = "[Try to Negotiate]",
+		char_type = 2
+	},
+	[3206309] = {
+		id = 3206309,
+		main_character_face = 0,
+		word = "You diligently studied the legal terms and found some negotiating leverage. The other party ultimately agreed to your profit-sharing rate. It's not the most money in the world, but it's better for a long-term income.",
+		char_type = 0
+	},
+	[3206401] = {
+		id = 3206401,
+		main_character_face = 0,
+		word = "Lora found a dusty machine in the laboratory. Its nameplate reads, \"The Knowledge Injector – Lets you gain knowledge effortlessly. In exchange...\" and the rest is unreadable. Lora shows great curiosity. Will you take the risk and use it?",
+		char_type = 0
+	},
+	[3206402] = {
+		id = 3206402,
+		main_character_face = 0,
+		word = "[Endorse Using It]",
+		char_type = 2
+	},
+	[3206403] = {
+		id = 3206403,
+		main_character_face = 0,
+		word = "Lora said she felt the knowledge flooding into her, but she immediately forgot it before it could reach her brain.",
+		char_type = 0
+	},
+	[3206405] = {
+		id = 3206405,
+		main_character_face = 0,
+		word = "[Study How It Works]",
+		char_type = 2
+	},
+	[3206406] = {
+		id = 3206406,
+		main_character_face = 0,
+		word = "After analyzing the machine as well as its instruction manual, Lora's intellect developed in a different sense.",
+		char_type = 0
+	},
+	[3206501] = {
+		id = 3206501,
+		main_character_face = 0,
+		word = "The academy intends to dispose of old books that have been digitized, including some out-of-print paper literature. Lora's gaze fixates on the pile of books, reluctance evident in her eyes.",
+		char_type = 0
+	},
+	[3206502] = {
+		id = 3206502,
+		main_character_face = 0,
+		word = "[Interrupt the Disposal Process]",
+		char_type = 2
+	},
+	[3206503] = {
+		id = 3206503,
+		main_character_face = 0,
+		word = "After a discussion, the historic value of these publications was recognized. The disposal process was stopped, and the works were ultimately transferred to a separate storage room.",
+		char_type = 0
+	},
+	[3206505] = {
+		id = 3206505,
+		main_character_face = 0,
+		word = "[Seize the Chance to Save Some Books]",
+		char_type = 2
+	},
+	[3206506] = {
+		id = 3206506,
+		main_character_face = 0,
+		word = "You quickly saved a handful of rare books in good condition, and Lora was deeply grateful for it. These books proved their unexpected value later on.",
+		char_type = 0
+	},
+	[3206508] = {
+		id = 3206508,
+		main_character_face = 0,
+		word = "[Approve of the Disposal]",
+		char_type = 2
+	},
+	[3206509] = {
+		id = 3206509,
+		main_character_face = 0,
+		word = "The medium isn't what's important – the knowledge itself is. Hearing you say this, Lora seemed a little disheartened…",
+		char_type = 0
+	},
+	[3206601] = {
+		id = 3206601,
+		main_character_face = 0,
+		word = "Lora lost in the school's sports competition. In light of this, you decide to…",
+		char_type = 0
+	},
+	[3206602] = {
+		id = 3206602,
+		main_character_face = 0,
+		word = "[Reflect on Her Performance Together]",
+		char_type = 2
+	},
+	[3206603] = {
+		id = 3206603,
+		main_character_face = 0,
+		word = "Lora deeply recognized the importance of well-rounded development.",
+		char_type = 0
+	},
+	[3206605] = {
+		id = 3206605,
+		main_character_face = 0,
+		word = "[Double Her Training]",
+		char_type = 2
+	},
+	[3206606] = {
+		id = 3206606,
+		main_character_face = 0,
+		word = "Lora began to feel her body reaching its limit after such high-intensity training.",
+		char_type = 0
+	},
+	[3206608] = {
+		id = 3206608,
+		main_character_face = 0,
+		word = "[Learn From the Winner]",
+		char_type = 2
+	},
+	[3206609] = {
+		id = 3206609,
+		main_character_face = 0,
+		word = "Lora gained valuable and pragmatic knowledge.",
+		char_type = 0
+	},
+	[3206611] = {
+		id = 3206611,
+		main_character_face = 0,
+		word = "[Assert That the Competition Was Rigged]",
+		char_type = 2
+	},
+	[3206612] = {
+		id = 3206612,
+		main_character_face = 0,
+		word = "Following an inquiry, no evidence supporting this claim could be found, and Lora was dejected.",
+		char_type = 0
+	},
+	[3206701] = {
+		id = 3206701,
+		main_character_face = 0,
+		word = "The 3rd Manjuu Quiz Contest has begun! Lora is eager to participate.",
+		char_type = 0
+	},
+	[3206702] = {
+		id = 3206702,
+		main_character_face = 0,
+		word = "[Support Her Fully]",
+		char_type = 2
+	},
+	[3206703] = {
+		id = 3206703,
+		main_character_face = 0,
+		word = "You gave Lora your full support both academically and in day-to-day life.",
+		char_type = 0
+	},
+	[3206705] = {
+		id = 3206705,
+		main_character_face = 0,
+		word = "[Help Her Practice]",
+		char_type = 2
+	},
+	[3206706] = {
+		id = 3206706,
+		main_character_face = 0,
+		word = "You decided to teach her your way of learning. She listened closely and took notes.",
+		char_type = 0
+	},
+	[3206708] = {
+		id = 3206708,
+		main_character_face = 0,
+		word = "[Give Her Mental Support]",
+		char_type = 2
+	},
+	[3206709] = {
+		id = 3206709,
+		main_character_face = 0,
+		word = "Lora is brimming with determination!",
+		char_type = 0
+	},
+	[3206801] = {
+		id = 3206801,
+		main_character_face = 0,
+		word = "There is a vending machine with an unusual shape by the roadside. The words, \"Surprise 2.0! Try Your Luck!\" are written on its front.",
+		char_type = 0
+	},
+	[3206802] = {
+		id = 3206802,
+		main_character_face = 0,
+		word = "[Insert a Coin and Buy the \"Mystery Drink\"]",
+		char_type = 2
+	},
+	[3206803] = {
+		id = 3206803,
+		main_character_face = 0,
+		word = "You got a can filled with a liquid that kept changing color. Lora took a cautious sip, and her expression changed from confused to surprised – then she was filled with a strange vitality!",
+		char_type = 0
+	},
+	[3206805] = {
+		id = 3206805,
+		main_character_face = 0,
+		word = "[Buy the \"Next-Gen Hi-Tech Toy\"] ",
+		char_type = 2
+	},
+	[3206806] = {
+		id = 3206806,
+		main_character_face = 0,
+		word = "You obtained a pair of colored contact lenses... that supposedly break the law of causality? You put them in, and all they did was dye your vision slightly blue.",
+		char_type = 0
+	},
+	[3206808] = {
+		id = 3206808,
+		main_character_face = 0,
+		word = "[Get the \"Complimentary Sticker Set\"]",
+		char_type = 2
+	},
+	[3206809] = {
+		id = 3206809,
+		main_character_face = 0,
+		word = "You got an elaborate sticker set featuring local sights. You put the stickers in your commemorative notebook and created some wonderful memories.",
+		char_type = 0
+	},
+	[3206901] = {
+		id = 3206901,
+		main_character_face = 0,
+		word = "The trendy market is as busy and loud as ever. Lora cups her ear, trying as hard as she can to hear you, but she can only make out a few fragmented words.",
+		char_type = 0
+	},
+	[3206902] = {
+		id = 3206902,
+		main_character_face = 0,
+		word = "[Turn Down the Volume]",
+		char_type = 2
+	},
+	[3206903] = {
+		id = 3206903,
+		main_character_face = 0,
+		word = "After some discussion, you turned down the volume of the stage's speakers. The mood was slightly dampened, but it was easier on your ears.",
+		char_type = 0
+	},
+	[3206905] = {
+		id = 3206905,
+		main_character_face = 0,
+		word = "[Employ Lip Reading]",
+		char_type = 2
+	},
+	[3206906] = {
+		id = 3206906,
+		main_character_face = 0,
+		word = "You brought your faces closer together so you could more easily read each other's lips.",
+		char_type = 0
+	},
+	[3206908] = {
+		id = 3206908,
+		main_character_face = 0,
+		word = "[Leave Quickly]",
+		char_type = 2
+	},
+	[3206909] = {
+		id = 3206909,
+		main_character_face = 0,
+		word = "You decided to leave at once to protect your hearing.",
+		char_type = 0
+	},
+	[3207001] = {
+		id = 3207001,
+		main_character_face = 0,
+		word = "There is a street stall selling retro merchandise, and a record with a dull cover catches Lora's eye. A label next to the record reads, \"Special Stuff.\"",
+		char_type = 0
+	},
+	[3207002] = {
+		id = 3207002,
+		main_character_face = 0,
+		word = "[Buy and Play It] ",
+		char_type = 2
+	},
+	[3207003] = {
+		id = 3207003,
+		main_character_face = 0,
+		word = "The record player played a vacant, fantastical melody. Lora's thoughts drifted off to an unknown dimension, and a spark of creativity quietly took root in her.",
+		char_type = 0
+	},
+	[3207005] = {
+		id = 3207005,
+		main_character_face = 0,
+		word = "[Dismiss It As a Scam]",
+		char_type = 2
+	},
+	[3207006] = {
+		id = 3207006,
+		main_character_face = 0,
+		word = "You thought it was probably just a sales pitch, but later on, you heard that this melody had inspired a masterpiece that took the world by storm. ",
+		char_type = 0
+	},
+	[3207008] = {
+		id = 3207008,
+		main_character_face = 0,
+		word = "[Listen Just a Bit]",
+		char_type = 2
+	},
+	[3207009] = {
+		id = 3207009,
+		main_character_face = 0,
+		word = "You listened to a 30-second preview. It certainly had a unique melody, but it wasn't anything that aroused deep inspiration.",
+		char_type = 0
+	},
+	[3207101] = {
+		id = 3207101,
+		main_character_face = 0,
+		word = "Tickets to the music festival are expensive, but the artist lineup is to die for.",
+		char_type = 0
+	},
+	[3207102] = {
+		id = 3207102,
+		main_character_face = 0,
+		word = "[Buy Tickets and Attend]",
+		char_type = 2
+	},
+	[3207103] = {
+		id = 3207103,
+		main_character_face = 0,
+		word = "You got to enjoy the best listening experience, and even brought home a few souvenirs.",
+		char_type = 0
+	},
+	[3207105] = {
+		id = 3207105,
+		main_character_face = 0,
+		word = "[Listen in from Outside the Venue]",
+		char_type = 2
+	},
+	[3207106] = {
+		id = 3207106,
+		main_character_face = 0,
+		word = "The sound quality was far from good, but it had its own unique charm.",
+		char_type = 0
+	},
+	[3207108] = {
+		id = 3207108,
+		main_character_face = 0,
+		word = "[Attend as a Volunteer]",
+		char_type = 2
+	},
+	[3207109] = {
+		id = 3207109,
+		main_character_face = 0,
+		word = "In addition to the free entrance, you also received rewards for your volunteer work!",
+		char_type = 0
+	},
+	[3207111] = {
+		id = 3207111,
+		main_character_face = 0,
+		word = "[Decide It's Not Worth It and Wander Somewhere Else]",
+		char_type = 2
+	},
+	[3207112] = {
+		id = 3207112,
+		main_character_face = 0,
+		word = "While you did save some money, you felt like you missed out on something.",
+		char_type = 0
+	},
+	[3207201] = {
+		id = 3207201,
+		main_character_face = 0,
+		word = "A musician manjuu you met at the trendy market has asked Lora to come up with a title for a new song…",
+		char_type = 0
+	},
+	[3207202] = {
+		id = 3207202,
+		main_character_face = 0,
+		word = "[\"Unbearable Feel\"]",
+		char_type = 2
+	},
+	[3207203] = {
+		id = 3207203,
+		main_character_face = 0,
+		word = "♪ Because you can't say – this unbearable feel is okay ♪",
+		char_type = 0
+	},
+	[3207205] = {
+		id = 3207205,
+		main_character_face = 0,
+		word = "[\"Lonesome Days\"]",
+		char_type = 2
+	},
+	[3207206] = {
+		id = 3207206,
+		main_character_face = 0,
+		word = "♪ My days of growing up – these little chicky thoughts – they made me who I was ♪",
+		char_type = 0
+	},
+	[3207301] = {
+		id = 3207301,
+		main_character_face = 0,
+		word = "A singer manjuu you met at the trendy market has asked Lora to come up with the lyrics for a new song…",
+		char_type = 0
+	},
+	[3207302] = {
+		id = 3207302,
+		main_character_face = 0,
+		word = "[Literature Motif]",
+		char_type = 2
+	},
+	[3207303] = {
+		id = 3207303,
+		main_character_face = 0,
+		word = "A poetic outlook! Now that's classy!",
+		char_type = 0
+	},
+	[3207305] = {
+		id = 3207305,
+		main_character_face = 0,
+		word = "[Pop Motif]",
+		char_type = 2
+	},
+	[3207306] = {
+		id = 3207306,
+		main_character_face = 0,
+		word = "A catchy melody! Aw yeah!",
+		char_type = 0
+	},
+	[3207308] = {
+		id = 3207308,
+		main_character_face = 0,
+		word = "[Underground Motif]",
+		char_type = 2
+	},
+	[3207309] = {
+		id = 3207309,
+		main_character_face = 0,
+		word = "A never-before-seen pioneering attitude! Blaze that trail!",
+		char_type = 0
+	},
+	[3207311] = {
+		id = 3207311,
+		main_character_face = 0,
+		word = "[Mixed Motif]",
+		char_type = 2
+	},
+	[3207312] = {
+		id = 3207312,
+		main_character_face = 0,
+		word = "A fusion of all styles! Something to please everyone!",
+		char_type = 0
+	},
+	[3207401] = {
+		id = 3207401,
+		main_character_face = 0,
+		word = "The two dominant cliques of the music class – the strict classical music enthusiasts and the free hip-hop enjoyers – both welcome Lora.",
+		char_type = 0
+	},
+	[3207402] = {
+		id = 3207402,
+		main_character_face = 0,
+		word = "[Join the Classical Music Enthusiasts]",
+		char_type = 2
+	},
+	[3207403] = {
+		id = 3207403,
+		main_character_face = 0,
+		word = "Rigorous and repeated practice solidifies the foundation. Although boring, it's a necessary process.",
+		char_type = 0
+	},
+	[3207405] = {
+		id = 3207405,
+		main_character_face = 0,
+		word = "[Join the Free Hip-Hop Enjoyers]",
+		char_type = 2
+	},
+	[3207406] = {
+		id = 3207406,
+		main_character_face = 0,
+		word = "What freestyle playing lacks in structure, it more than makes up for with pure joy.",
+		char_type = 0
+	},
+	[3207408] = {
+		id = 3207408,
+		main_character_face = 0,
+		word = "[Try to Fuse the Two Styles] ",
+		char_type = 2
+	},
+	[3207409] = {
+		id = 3207409,
+		main_character_face = 0,
+		word = "You struck a balance between structure and spontaneity, and created novel and harmonious expressions.",
+		char_type = 0
+	},
+	[3207501] = {
+		id = 3207501,
+		main_character_face = 0,
+		word = "Lora's public performance is approaching, and she desperately needs a suitable instrument. You've found a shop that rents out instruments with a sign that reads, \"Master-grade instruments for rent at bargain prices! Amp up your performance instantly!\"",
+		char_type = 0
+	},
+	[3207502] = {
+		id = 3207502,
+		main_character_face = 0,
+		word = "[Rent a \"Master-Grade\" Instrument]",
+		char_type = 2
+	},
+	[3207503] = {
+		id = 3207503,
+		main_character_face = 0,
+		word = "The strings produced an elegant sound, making Lora's performance sound more wonderful than ever before. She received lots of tips from listeners.",
+		char_type = 0
+	},
+	[3207505] = {
+		id = 3207505,
+		main_character_face = 0,
+		word = "[Rent a \"High-Grade\" Instrument]",
+		char_type = 2
+	},
+	[3207506] = {
+		id = 3207506,
+		main_character_face = 0,
+		word = "Although her pitch wasn't flawless, Lora's outstanding playing skills nonetheless invoked cheering.",
+		char_type = 0
+	},
+	[3207508] = {
+		id = 3207508,
+		main_character_face = 0,
+		word = "[Rent a \"Regular\" Instrument]",
+		char_type = 2
+	},
+	[3207509] = {
+		id = 3207509,
+		main_character_face = 0,
+		word = "While the instrument had a limited impact, it still added some charm to Lora's performance.",
+		char_type = 0
+	},
+	[3207601] = {
+		id = 3207601,
+		main_character_face = 0,
+		word = "With Lora's concert just around the corner, how will you prepare her for the stage?",
+		char_type = 0
+	},
+	[3207602] = {
+		id = 3207602,
+		main_character_face = 0,
+		word = "[Diligent Practice]",
+		char_type = 2
+	},
+	[3207603] = {
+		id = 3207603,
+		main_character_face = 0,
+		word = "Your days upon days of diligent rehearsals resulted in a smooth, moving performance.",
+		char_type = 0
+	},
+	[3207605] = {
+		id = 3207605,
+		main_character_face = 0,
+		word = "[Cram It at the Last Minute]",
+		char_type = 2
+	},
+	[3207606] = {
+		id = 3207606,
+		main_character_face = 0,
+		word = "Unsurprisingly, Lora missed a few notes during the performance, but the audience's applause was fortunately forgiving.",
+		char_type = 0
+	},
+	[3207608] = {
+		id = 3207608,
+		main_character_face = 0,
+		word = "[Give Up on the Performance]",
+		char_type = 2
+	},
+	[3207609] = {
+		id = 3207609,
+		main_character_face = 0,
+		word = "You went the risk-free route, but in return, you missed an opportunity.",
+		char_type = 0
+	},
+	[3207701] = {
+		id = 3207701,
+		main_character_face = 0,
+		word = "Lora wants to discuss the idea of whether it's possible to make a program that creates all possible combinations of musical notes, thus exploring every song there will ever be.",
+		char_type = 0
+	},
+	[3207702] = {
+		id = 3207702,
+		main_character_face = 0,
+		word = "[It's Probably Possible]",
+		char_type = 2
+	},
+	[3207703] = {
+		id = 3207703,
+		main_character_face = 0,
+		word = "Theoretically, it's possible. There is, after all, only a finite number of ways you can combine melodies. Hearing this, Lora nodded, a glimmer of logic in her eyes.",
+		char_type = 0
+	},
+	[3207705] = {
+		id = 3207705,
+		main_character_face = 0,
+		word = "[It's Probably Not Possible]",
+		char_type = 2
+	},
+	[3207706] = {
+		id = 3207706,
+		main_character_face = 0,
+		word = "Even if it's theoretically possible, that doesn't mean it's feasible in reality. Besides, music is about expressing the musician's feelings and state of mind in the moment. Hearing this, Lora thought about it for a bit, a hint of longing in her eyes.",
+		char_type = 0
+	},
+	[3207708] = {
+		id = 3207708,
+		main_character_face = 0,
+		word = "[End the Discussion]",
+		char_type = 2
+	},
+	[3207709] = {
+		id = 3207709,
+		main_character_face = 0,
+		word = "You gently put the subject on hold for another time.",
+		char_type = 0
+	},
+	[3207801] = {
+		id = 3207801,
+		main_character_face = 0,
+		word = "What instrument will you practice today?",
+		char_type = 0
+	},
+	[3207802] = {
+		id = 3207802,
+		main_character_face = 0,
+		word = "[A String Instrument]",
+		char_type = 2
+	},
+	[3207803] = {
+		id = 3207803,
+		main_character_face = 0,
+		word = "The strings vibrated, producing a beautiful and harmonious tone.",
+		char_type = 0
+	},
+	[3207805] = {
+		id = 3207805,
+		main_character_face = 0,
+		word = "[A Percussion Instrument]",
+		char_type = 2
+	},
+	[3207806] = {
+		id = 3207806,
+		main_character_face = 0,
+		word = "The drum produces a beat both powerful and rhythmic.",
+		char_type = 0
+	},
+	[3207808] = {
+		id = 3207808,
+		main_character_face = 0,
+		word = "[Electronic Music]",
+		char_type = 2
+	},
+	[3207809] = {
+		id = 3207809,
+		main_character_face = 0,
+		word = "Its sound is avant-garde and offers a peek into the future.",
+		char_type = 0
+	},
+	[3207811] = {
+		id = 3207811,
+		main_character_face = 0,
+		word = "[A Wind Instrument]",
+		char_type = 2
+	},
+	[3207812] = {
+		id = 3207812,
+		main_character_face = 0,
+		word = "A melodious sound flows forth, its tune long and lingering.",
+		char_type = 0
+	},
+	[3207901] = {
+		id = 3207901,
+		main_character_face = 0,
+		word = "On a tour to the photo studio, Lora expresses a slight interest in filming. Since the music and script are in place, you decide to discuss in-practice cinematography with her…",
+		char_type = 0
+	},
+	[3207902] = {
+		id = 3207902,
+		main_character_face = 0,
+		word = "[On-Location Filming with Realistic Lighting]",
+		char_type = 2
+	},
+	[3207903] = {
+		id = 3207903,
+		main_character_face = 0,
+		word = "You brought Lora to several outdoor filming locations, chasing sunrises and sunsets. It was an exhausting process, but the final product was a shockingly realistic film, every frame brimming with storytelling.",
+		char_type = 0
+	},
+	[3207905] = {
+		id = 3207905,
+		main_character_face = 0,
+		word = "[Greenscreen Filming with Post-Production Compositing]",
+		char_type = 2
+	},
+	[3207906] = {
+		id = 3207906,
+		main_character_face = 0,
+		word = "You directed Lora to complete all her performances in front of an indoor greenscreen, leaving the post-production to the special effects team. You saved some time going to a real location, but this approach demands more creativity for the performance.",
+		char_type = 0
+	},
+	[3207908] = {
+		id = 3207908,
+		main_character_face = 0,
+		word = "[Attempt a One-Take Shoot]",
+		char_type = 2
+	},
+	[3207909] = {
+		id = 3207909,
+		main_character_face = 0,
+		word = "You took on the highly difficult challenge of transitioning from indoors to outdoors with no cuts. After several reshoots, you finally did it. The sense of accomplishment and visual impact you gained from this challenge was unlike anything else.",
+		char_type = 0
+	},
+	[3208001] = {
+		id = 3208001,
+		main_character_face = 0,
+		word = "A manjuu is enthusiastically snapping many beautiful pictures of Lora. Once it finishes, it presents a price list – \"1 Fund per negative, or 10 for the whole lot. If you don't pay me, I'll get you canceled!\"",
+		char_type = 0
+	},
+	[3208002] = {
+		id = 3208002,
+		main_character_face = 0,
+		word = "[Pay to Avoid Trouble]",
+		char_type = 2
+	},
+	[3208003] = {
+		id = 3208003,
+		main_character_face = 0,
+		word = "The pictures did look really good, but when receiving the album from the manjuu, both you and Lora looked exasperated.",
+		char_type = 0
+	},
+	[3208005] = {
+		id = 3208005,
+		main_character_face = 0,
+		word = "[Refuse to Pay]",
+		char_type = 2
+	},
+	[3208006] = {
+		id = 3208006,
+		main_character_face = 0,
+		word = "You would never give in to blackmail. Seeing your bravery, Lora straightened her back, a look of resolution in her eyes.",
+		char_type = 0
+	},
+	[3208008] = {
+		id = 3208008,
+		main_character_face = 0,
+		word = "[Call the Police]",
+		char_type = 2
+	},
+	[3208009] = {
+		id = 3208009,
+		main_character_face = 0,
+		word = "You pretended to call the police, and the manjuu immediately backed down. You ultimately got two photos for free and recovered all the negatives.",
+		char_type = 0
+	},
+	[3208101] = {
+		id = 3208101,
+		main_character_face = 0,
+		word = "You've received an offer from a party wishing to make an advertisement for an energy drink using pictures of Lora.",
+		char_type = 0
+	},
+	[3208102] = {
+		id = 3208102,
+		main_character_face = 0,
+		word = "[Accept and Get the Rewards]",
+		char_type = 2
+	},
+	[3208103] = {
+		id = 3208103,
+		main_character_face = 0,
+		word = "You received a reward for leasing the rights to Lora's likeness. Ever since, Lora has also sometimes been recognized on account of the ads, which she doesn't mind.",
+		char_type = 0
+	},
+	[3208105] = {
+		id = 3208105,
+		main_character_face = 0,
+		word = "[Test the Product First]",
+		char_type = 2
+	},
+	[3208106] = {
+		id = 3208106,
+		main_character_face = 0,
+		word = "The energy drink tasted very mediocre, so you politely declined the offer.",
+		char_type = 0
+	},
+	[3208108] = {
+		id = 3208108,
+		main_character_face = 0,
+		word = "[Reject the Offer]",
+		char_type = 2
+	},
+	[3208109] = {
+		id = 3208109,
+		main_character_face = 0,
+		word = "You adequately protected Lora's privacy.",
+		char_type = 0
+	},
+	[3208201] = {
+		id = 3208201,
+		main_character_face = 0,
+		word = "You and Lora are here to take a picture with just the two of you. What kind of pose should Lora strike?",
+		char_type = 0
+	},
+	[3208202] = {
+		id = 3208202,
+		main_character_face = 0,
+		word = "[Both Arms Behind Her Back]",
+		char_type = 2
+	},
+	[3208203] = {
+		id = 3208203,
+		main_character_face = 0,
+		word = "Lora tried her best to look mature, but there was still a hint of childishness to it.",
+		char_type = 0
+	},
+	[3208205] = {
+		id = 3208205,
+		main_character_face = 0,
+		word = "[Peace Sign]",
+		char_type = 2
+	},
+	[3208206] = {
+		id = 3208206,
+		main_character_face = 0,
+		word = "Lora gleefully made a classic peace sign. She looked very comfortable.",
+		char_type = 0
+	},
+	[3208208] = {
+		id = 3208208,
+		main_character_face = 0,
+		word = "[Manjuu Stand]",
+		char_type = 2
+	},
+	[3208209] = {
+		id = 3208209,
+		main_character_face = 0,
+		word = "Lora imitated an exaggerated pose. It was a little wobbly, but it made a big impact.",
+		char_type = 0
+	},
+	[3208301] = {
+		id = 3208301,
+		main_character_face = 0,
+		word = "Your photoshoot is finished! What photo editing tool will you use?",
+		char_type = 0
+	},
+	[3208302] = {
+		id = 3208302,
+		main_character_face = 0,
+		word = "[Professional Tools]",
+		char_type = 2
+	},
+	[3208303] = {
+		id = 3208303,
+		main_character_face = 0,
+		word = "You guided Lora through the post-production work one step at a time. The final result looked professional and perfect!",
+		char_type = 0
+	},
+	[3208305] = {
+		id = 3208305,
+		main_character_face = 0,
+		word = "[Automated Tools]",
+		char_type = 2
+	},
+	[3208306] = {
+		id = 3208306,
+		main_character_face = 0,
+		word = "All you had to do was import and then export the images. They looked decent, but you felt they lacked character.",
+		char_type = 0
+	},
+	[3208401] = {
+		id = 3208401,
+		main_character_face = 0,
+		word = "The lights and shadows inside the house of mirrors are dazzling, and even your manjuu guide has lost the way, constantly bumping into mirrors and stumbling.",
+		char_type = 0
+	},
+	[3208402] = {
+		id = 3208402,
+		main_character_face = 0,
+		word = "[Guide the Manjuu Out]",
+		char_type = 2
+	},
+	[3208403] = {
+		id = 3208403,
+		main_character_face = 0,
+		word = "Using your geometric knowledge and excellent sense of direction, you managed to lead the manjuu out after a lot of twists and turns. You were filled with a great sense of achievement.",
+		char_type = 0
+	},
+	[3208405] = {
+		id = 3208405,
+		main_character_face = 0,
+		word = "[Seek Help]",
+		char_type = 2
+	},
+	[3208406] = {
+		id = 3208406,
+		main_character_face = 0,
+		word = "When you got lost, you shouted for help to the security camera. Another manjuu guide came along and helped you get out.",
+		char_type = 0
+	},
+	[3208501] = {
+		id = 3208501,
+		main_character_face = 0,
+		word = "Lora signed up for a two-person challenge at the amusement park. As the rules dictate, you need to guide her from a fixed location to the goal.",
+		char_type = 0
+	},
+	[3208502] = {
+		id = 3208502,
+		main_character_face = 0,
+		word = "[Guide Her Past the Traps]",
+		char_type = 2
+	},
+	[3208503] = {
+		id = 3208503,
+		main_character_face = 0,
+		word = "Lora successfully avoided all the nefarious traps and completed the challenge!",
+		char_type = 0
+	},
+	[3208505] = {
+		id = 3208505,
+		main_character_face = 0,
+		word = "[Brute-Force Your Way Through]",
+		char_type = 2
+	},
+	[3208506] = {
+		id = 3208506,
+		main_character_face = 0,
+		word = "When faced with difficulties, you need to tackle them directly. It wasn't exactly straightforward, but you did manage to complete the challenge in the end!",
+		char_type = 0
+	},
+	[3208601] = {
+		id = 3208601,
+		main_character_face = 0,
+		word = "Lora has found a small manjuu who has gotten lost from its family at the amusement park.",
+		char_type = 0
+	},
+	[3208602] = {
+		id = 3208602,
+		main_character_face = 0,
+		word = "[Inform Them Over the Loudspeakers]",
+		char_type = 2
+	},
+	[3208603] = {
+		id = 3208603,
+		main_character_face = 0,
+		word = "Shortly after your broadcast, the manjuu's family arrived and gave Lora a thank-you flag.",
+		char_type = 0
+	},
+	[3208605] = {
+		id = 3208605,
+		main_character_face = 0,
+		word = "[Let the Manjuu Police Handle It]",
+		char_type = 2
+	},
+	[3208606] = {
+		id = 3208606,
+		main_character_face = 0,
+		word = "The manjuu police quickly found the little one's parents, who gave Lora a thank-you flag.",
+		char_type = 0
+	},
+	[3208608] = {
+		id = 3208608,
+		main_character_face = 0,
+		word = "[Bring It Along and Look for Its Family]",
+		char_type = 2
+	},
+	[3208609] = {
+		id = 3208609,
+		main_character_face = 0,
+		word = "After walking for a while and asking around, you finally found the little one's parents, and you received a thank-you flag.",
+		char_type = 0
+	},
+	[3208701] = {
+		id = 3208701,
+		main_character_face = 0,
+		word = "The bookstore is hosting a reading marathon, challenging the limits of concentrated reading. Lora comes to you, asking for advice on participating…",
+		char_type = 0
+	},
+	[3208702] = {
+		id = 3208702,
+		main_character_face = 0,
+		word = "[Immerse Yourself in Novel Reading]",
+		char_type = 2
+	},
+	[3208703] = {
+		id = 3208703,
+		main_character_face = 0,
+		word = "Lora got really immersed in the wonderful world of the story, and she felt the time fly by.",
+		char_type = 0
+	},
+	[3208705] = {
+		id = 3208705,
+		main_character_face = 0,
+		word = "[Read Difficult Academic Literature]",
+		char_type = 2
+	},
+	[3208706] = {
+		id = 3208706,
+		main_character_face = 0,
+		word = "Deciphering the book's prose was like climbing a steep hill, yet this actually improved Lora's comprehension rapidly.",
+		char_type = 0
+	},
+	[3208708] = {
+		id = 3208708,
+		main_character_face = 0,
+		word = "[Leave in the Middle of It]",
+		char_type = 2
+	},
+	[3208709] = {
+		id = 3208709,
+		main_character_face = 0,
+		word = "Although she was disqualified, she looked very at ease when she breathed in the fresh air outside.",
+		char_type = 0
+	},
+	[3208801] = {
+		id = 3208801,
+		main_character_face = 0,
+		word = "Lora happened to find a faded book with an old cover. You decide to…",
+		char_type = 0
+	},
+	[3208802] = {
+		id = 3208802,
+		main_character_face = 0,
+		word = "[Read It Earnestly]",
+		char_type = 2
+	},
+	[3208803] = {
+		id = 3208803,
+		main_character_face = 0,
+		word = "You opened the book, and knowledge flowed gently into you across the river of time...",
+		char_type = 0
+	},
+	[3208805] = {
+		id = 3208805,
+		main_character_face = 0,
+		word = "[Quickly Skim It]",
+		char_type = 2
+	},
+	[3208806] = {
+		id = 3208806,
+		main_character_face = 0,
+		word = "You flipped through a few pages. The entries were simply too esoteric to understand, so there was no need to think about them too hard.",
+		char_type = 0
+	},
+	[3208808] = {
+		id = 3208808,
+		main_character_face = 0,
+		word = "[Make a Book Collection]",
+		char_type = 2
+	},
+	[3208809] = {
+		id = 3208809,
+		main_character_face = 0,
+		word = "Buying a book is just like reading it! Of course, Lora will absolutely read it... Won't she?",
+		char_type = 0
+	},
+	[3208811] = {
+		id = 3208811,
+		main_character_face = 0,
+		word = "[Ignore It]",
+		char_type = 2
+	},
+	[3208812] = {
+		id = 3208812,
+		main_character_face = 0,
+		word = "You closed the book, letting it return to its slumber.",
+		char_type = 0
+	},
+	[3208901] = {
+		id = 3208901,
+		main_character_face = 0,
+		word = "Outside the musical instrument store in the afternoon, a grand piano stands silently in the display window. Like a taciturn lady, it exudes a silent elegance…",
+		char_type = 0
+	},
+	[3208902] = {
+		id = 3208902,
+		main_character_face = 0,
+		word = "As you and Lora wander through the commercial area, she comes to a stop in front of the instrument store.",
+		char_type = 0
+	},
+	[3208903] = {
+		id = 3208903,
+		main_character_face = 0,
+		word = "Through the glass, you see the snow-white grand piano standing there in the warm light. Its cover has been left open, and its black and white keys shine with a mild luster.",
+		char_type = 0
+	},
+	[3208904] = {
+		id = 3208904,
+		main_character_face = 0,
+		word = "Lora gazes at the piano for a long while, her eyes brimming with curiosity.",
+		char_type = 0
+	},
+	[3208905] = {
+		id = 3208905,
+		main_character_face = 0,
+		word = "[Play It Inside the Store]",
+		char_type = 2
+	},
+	[3208906] = {
+		id = 3208906,
+		main_character_face = 0,
+		word = "After a quick exchange, you got permission to test-play it for a little bit.",
+		char_type = 0
+	},
+	[3208907] = {
+		id = 3208907,
+		main_character_face = 0,
+		word = "Lora slowly sat down on the stool, extended her hands, and softly hit the keys. She was caught by surprise by the sound they made.",
+		char_type = 0
+	},
+	[3208908] = {
+		id = 3208908,
+		main_character_face = 0,
+		word = "Her look of surprise quickly changed into one of joy. Once her test-play time ran out, she was reluctant to leave.",
+		char_type = 0
+	},
+	[3208910] = {
+		id = 3208910,
+		main_character_face = 0,
+		word = "[Leave]",
+		char_type = 2
+	},
+	[3208911] = {
+		id = 3208911,
+		main_character_face = 0,
+		word = "You told her that it was getting late.",
+		char_type = 0
+	},
+	[3208912] = {
+		id = 3208912,
+		main_character_face = 0,
+		word = "Lora obediently nodded and looked behind at the display window one more time before the two of you left.",
+		char_type = 0
+	},
+	[3209001] = {
+		id = 3209001,
+		main_character_face = 0,
+		word = "Intermittent piano notes escape through the gap in the music room door…",
+		char_type = 0
+	},
+	[3209002] = {
+		id = 3209002,
+		main_character_face = 0,
+		word = "As you walk past the music room, you hear a melody inside being practiced over and over. They are the first notes of \"Für Elise.\"",
+		char_type = 0
+	},
+	[3209003] = {
+		id = 3209003,
+		main_character_face = 0,
+		word = "The door is slightly ajar, and you can see Lora sitting in front of the digital piano. Her back is straight, and she presses the keys somewhat awkwardly…",
+		char_type = 0
+	},
+	[3209004] = {
+		id = 3209004,
+		main_character_face = 0,
+		word = "It seems that she has difficulty with several rhythmic shifts.",
+		char_type = 0
+	},
+	[3209005] = {
+		id = 3209005,
+		main_character_face = 0,
+		word = "[Offer Advice]",
+		char_type = 2
+	},
+	[3209006] = {
+		id = 3209006,
+		main_character_face = 0,
+		word = "While you aren't a skilled pianist, there are plenty of tutorials available in modern society.",
+		char_type = 0
+	},
+	[3209007] = {
+		id = 3209007,
+		main_character_face = 0,
+		word = "With a soft knock, you went inside. Lora looked somewhat surprised and shy, but her eyes lit up when she heard your advice.",
+		char_type = 0
+	},
+	[3209008] = {
+		id = 3209008,
+		main_character_face = 0,
+		word = "Following this, her playing got considerably smoother.",
+		char_type = 0
+	},
+	[3209010] = {
+		id = 3209010,
+		main_character_face = 0,
+		word = "[Wait Outside]",
+		char_type = 2
+	},
+	[3209011] = {
+		id = 3209011,
+		main_character_face = 0,
+		word = "Rather than disturb her, you stood quietly outside and listened.",
+		char_type = 0
+	},
+	[3209012] = {
+		id = 3209012,
+		main_character_face = 0,
+		word = "The melody repeated two more times, then stopped, and you heard a faint sigh coupled with the rustling of music sheets being put away.",
+		char_type = 0
+	},
+	[3209101] = {
+		id = 3209101,
+		main_character_face = 0,
+		word = "A community cultural festival program has been posted on the bulletin board, and Lora's name is on it…",
+		char_type = 0
+	},
+	[3209102] = {
+		id = 3209102,
+		main_character_face = 0,
+		word = "Backstage at the festival, Lora sits on a folding chair, her hands clasped and an anxious look on her face.",
+		char_type = 0
+	},
+	[3209103] = {
+		id = 3209103,
+		main_character_face = 0,
+		word = "The edges of the sheet music in her hands have been rolled into circles, various symbols drawn all over them with a highlighter.",
+		char_type = 0
+	},
+	[3209104] = {
+		id = 3209104,
+		main_character_face = 0,
+		word = "The light from the makeup mirror is blinding – the lips of her reflection look pale, and she's taking deep breaths in and out... She's taking it like a huge moment that will determine her fate.",
+		char_type = 0
+	},
+	[3209105] = {
+		id = 3209105,
+		main_character_face = 0,
+		word = "[Offer Comforting Words]",
+		char_type = 2
+	},
+	[3209106] = {
+		id = 3209106,
+		main_character_face = 0,
+		word = "You gently placed your hand on her trembling shoulder, and told her that it's okay to make mistakes – this is her song; her stage.",
+		char_type = 0
+	},
+	[3209107] = {
+		id = 3209107,
+		main_character_face = 0,
+		word = "What matters most is that she enjoys the moment.",
+		char_type = 0
+	},
+	[3209108] = {
+		id = 3209108,
+		main_character_face = 0,
+		word = "These words restored the gleam in her eyes. Following this, her remarkable performance on her debut appearance garnered vast coverage in the media, and her name became widely known.",
+		char_type = 0
+	},
+	[3209110] = {
+		id = 3209110,
+		main_character_face = 0,
+		word = "[Support Her in Silence]",
+		char_type = 2
+	},
+	[3209111] = {
+		id = 3209111,
+		main_character_face = 0,
+		word = "In the end, her debut performance ended in failure. That unspoken dream, too, faded away like dust in the wind…",
+		char_type = 0
+	},
+	[3209201] = {
+		id = 3209201,
+		main_character_face = 0,
+		word = "On the top shelf of a locker in science class lies a thick science book that is seldom read…",
+		char_type = 0
+	},
+	[3209202] = {
+		id = 3209202,
+		main_character_face = 0,
+		word = "The faint smell of ethanol mixed with hay and specimens hangs in the classroom's air.",
+		char_type = 0
+	},
+	[3209203] = {
+		id = 3209203,
+		main_character_face = 0,
+		word = "Lora stands on her tiptoes and tries several times to reach the book, but it's just out of her reach.",
+		char_type = 0
+	},
+	[3209204] = {
+		id = 3209204,
+		main_character_face = 0,
+		word = "[Get It For Her]",
+		char_type = 2
+	},
+	[3209205] = {
+		id = 3209205,
+		main_character_face = 0,
+		word = "You reached up and easily picked up the book, and then handed it to her. She hugged the heavy thing tightly, making a shy yet delighted expression.",
+		char_type = 0
+	},
+	[3209207] = {
+		id = 3209207,
+		main_character_face = 0,
+		word = "[Read Another Book For Her]",
+		char_type = 2
+	},
+	[3209208] = {
+		id = 3209208,
+		main_character_face = 0,
+		word = "You went and fetched a book that she would like from another classroom. She quietly thanked you and accepted it, but her gaze kept drifting back to that top shelf.",
+		char_type = 0
+	},
+	[3209301] = {
+		id = 3209301,
+		main_character_face = 0,
+		word = "The air in the garden is filled with a fresh scent after rainfall…",
+		char_type = 0
+	},
+	[3209302] = {
+		id = 3209302,
+		main_character_face = 0,
+		word = "Lora crouches next to a patch of grass, quietly observing something.",
+		char_type = 0
+	},
+	[3209303] = {
+		id = 3209303,
+		main_character_face = 0,
+		word = "Spotting a ladybug crawling on the back of a leaf, she holds her breath and waits until it spreads its wings and flies off. She lets out a soft sigh.",
+		char_type = 0
+	},
+	[3209304] = {
+		id = 3209304,
+		main_character_face = 0,
+		word = "Her backpack is left on the bench beside her, and from its open compartment, you see a nature encyclopedia peeking out…",
+		char_type = 0
+	},
+	[3209305] = {
+		id = 3209305,
+		main_character_face = 0,
+		word = "[Stand Beside Her]",
+		char_type = 2
+	},
+	[3209306] = {
+		id = 3209306,
+		main_character_face = 0,
+		word = "Lora happily showed you a flawless wutong leaf she just found.",
+		char_type = 0
+	},
+	[3209307] = {
+		id = 3209307,
+		main_character_face = 0,
+		word = "The leaf's veins branch out like rivers on a map... The structure it forms is truly a fascinating thing.",
+		char_type = 0
+	},
+	[3209309] = {
+		id = 3209309,
+		main_character_face = 0,
+		word = "[Sweep Fallen Leaves]",
+		char_type = 2
+	},
+	[3209310] = {
+		id = 3209310,
+		main_character_face = 0,
+		word = "The fallen leaves on the ground were an eyesore. Lora even helped you sweep them up, but she looked somewhat sad while doing it.",
+		char_type = 0
+	},
+	[3209401] = {
+		id = 3209401,
+		main_character_face = 0,
+		word = "On the bench in the laboratory lie absorbent paper and tweezers…",
+		char_type = 0
+	},
+	[3209402] = {
+		id = 3209402,
+		main_character_face = 0,
+		word = "Lora, wearing rubber gloves, carefully transfers a dried cornflower into a specimen frame.",
+		char_type = 0
+	},
+	[3209403] = {
+		id = 3209403,
+		main_character_face = 0,
+		word = "Once she's done, she lets out a deep sigh, and the stiffness of her back from standing bent over for so long finally hits her.",
+		char_type = 0
+	},
+	[3209404] = {
+		id = 3209404,
+		main_character_face = 0,
+		word = "There is a label stuck to the edge of the frame, her beautiful handwriting inscribed on it – \"Cornflower, collected from the hills.\"",
+		char_type = 0
+	},
+	[3209405] = {
+		id = 3209405,
+		main_character_face = 0,
+		word = "[Praise Her]",
+		char_type = 2
+	},
+	[3209406] = {
+		id = 3209406,
+		main_character_face = 0,
+		word = "Your words of praise made her turn slightly red in the ears, and her confidence in this interest of hers grew deeper.",
+		char_type = 0
+	},
+	[3209408] = {
+		id = 3209408,
+		main_character_face = 0,
+		word = "[Suggest Taking a Break]",
+		char_type = 2
+	},
+	[3209409] = {
+		id = 3209409,
+		main_character_face = 0,
+		word = "Although it seemed like she wanted to prepare another specimen, she ultimately sighed softly and gave in to your words.",
+		char_type = 0
+	},
+	[3209501] = {
+		id = 3209501,
+		main_character_face = 0,
+		word = "You and Lora have come to the amusement park. What will you play?",
+		char_type = 0
+	},
+	[3209502] = {
+		id = 3209502,
+		main_character_face = 0,
+		word = "[Manjuu Scratchcard]",
+		char_type = 2
+	},
+	[3209503] = {
+		id = 3209503,
+		main_character_face = 0,
+		word = "It's the grand prize! Lora leaped with sheer joy.",
+		char_type = 0
+	},
+	[3209505] = {
+		id = 3209505,
+		main_character_face = 0,
+		word = "It's a win! Lora was really delighted.",
+		char_type = 0
+	},
+	[3209507] = {
+		id = 3209507,
+		main_character_face = 0,
+		word = "Nothing... You did get a consolation prize, but Lora was very disappointed.",
+		char_type = 0
+	},
+	[3209509] = {
+		id = 3209509,
+		main_character_face = 0,
+		word = "[Manjuu Hammer Crew]",
+		char_type = 2
+	},
+	[3209510] = {
+		id = 3209510,
+		main_character_face = 0,
+		word = "A new record! You swung the hammer with perfect timing and set a new high score!",
+		char_type = 0
+	},
+	[3209512] = {
+		id = 3209512,
+		main_character_face = 0,
+		word = "A score within expectations! Lora was thrilled over the result.",
+		char_type = 0
+	},
+	[3209514] = {
+		id = 3209514,
+		main_character_face = 0,
+		word = "Despite your familiarity with the game, the results weren't what you hoped. You did get a consolation prize, but Lora was very disappointed.",
+		char_type = 0
+	},
+	[3209516] = {
+		id = 3209516,
+		main_character_face = 0,
+		word = "[Go Home and Study]",
+		char_type = 2
+	},
+	[3209517] = {
+		id = 3209517,
+		main_character_face = 0,
+		word = "Lora seemed extremely disappointed.",
+		char_type = 0
+	},
+	[3238901] = {
+		id = 3238901,
+		main_character_face = 0,
+		word = "Outside the musical instrument store in the afternoon, a grand piano stands silently in the display window. Like a taciturn lady, it exudes a silent elegance...",
+		char_type = 0
+	},
+	[3239001] = {
+		id = 3239001,
+		main_character_face = 0,
+		word = "Intermittent piano notes escape through the gap in the music room door...",
+		char_type = 0
+	},
+	[3239101] = {
+		id = 3239101,
+		main_character_face = 0,
+		word = "A community cultural festival program has been posted on the bulletin board, and Lora's name is on it...",
+		char_type = 0
+	},
+	[3239201] = {
+		id = 3239201,
+		main_character_face = 0,
+		word = "On the top shelf of a locker in science class lies a thick science book that is seldom read...",
+		char_type = 0
+	},
+	[3239301] = {
+		id = 3239301,
+		main_character_face = 0,
+		word = "The air in the garden is filled with a fresh scent after rainfall...",
+		char_type = 0
+	},
+	[3239401] = {
+		id = 3239401,
+		main_character_face = 0,
+		word = "On the bench in the laboratory lie absorbent paper and tweezers...",
+		char_type = 0
+	},
+	[3240101] = {
+		id = 3240101,
+		main_character_face = 0,
+		word = "New Jersey leisurely sits down on a park bench, a confident smile on her face.",
+		char_type = 0
+	},
+	[3240102] = {
+		id = 3240102,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3240105] = {
+		id = 3240105,
+		main_character_face = 0,
+		word = "(Go have a look.)",
+		char_type = 2
+	},
+	[3240201] = {
+		id = 3240201,
+		main_character_face = 0,
+		word = "New Jersey is inspecting her gear. She looks to be having a ton of fun.",
+		char_type = 0
+	},
+	[3240202] = {
+		id = 3240202,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3240203] = {
+		id = 3240203,
+		main_character_face = 0,
+		word = "After a chat with New Jersey, Lora seemed to ponder something.",
+		char_type = 0
+	},
+	[3240205] = {
+		id = 3240205,
+		main_character_face = 0,
+		word = "(Leave her be.)",
+		char_type = 2
+	},
+	[3240301] = {
+		id = 3240301,
+		main_character_face = 0,
+		word = "You've run into New Jersey at the beach. Do you want to talk to her?",
+		char_type = 0
+	},
+	[3240302] = {
+		id = 3240302,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3240303] = {
+		id = 3240303,
+		main_character_face = 0,
+		word = "After a chat with New Jersey, Lora seemed to ponder something.",
+		char_type = 0
+	},
+	[3240305] = {
+		id = 3240305,
+		main_character_face = 0,
+		word = "(Leave her be.)",
+		char_type = 2
+	},
+	[3241101] = {
+		id = 3241101,
+		main_character_face = 0,
+		word = "De Zeven Provinciën is in the garden, carefully adjusting the support pole of a tulip.",
+		char_type = 0
+	},
+	[3241102] = {
+		id = 3241102,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3241105] = {
+		id = 3241105,
+		main_character_face = 0,
+		word = "(Go have a look.)",
+		char_type = 2
+	},
+	[3241201] = {
+		id = 3241201,
+		main_character_face = 0,
+		word = "De Zeven Provinciën is transplanting some seedlings that just arrived. Her hands move with both grace and mastery.",
+		char_type = 0
+	},
+	[3241202] = {
+		id = 3241202,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3241203] = {
+		id = 3241203,
+		main_character_face = 0,
+		word = "After a chat with De Zeven Provinciën, Lora seemed to ponder something.",
+		char_type = 0
+	},
+	[3241205] = {
+		id = 3241205,
+		main_character_face = 0,
+		word = "(Leave her be.)",
+		char_type = 2
+	},
+	[3241301] = {
+		id = 3241301,
+		main_character_face = 0,
+		word = "De Zeven Provinciën is in the greenhouse, logging the growth data of some plants. Do you want to talk to her?",
+		char_type = 0
+	},
+	[3241302] = {
+		id = 3241302,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3241303] = {
+		id = 3241303,
+		main_character_face = 0,
+		word = "After a chat with De Zeven Provinciën, Lora seemed to ponder something.",
+		char_type = 0
+	},
+	[3241305] = {
+		id = 3241305,
+		main_character_face = 0,
+		word = "(Leave her be.)",
+		char_type = 2
+	},
+	[3242101] = {
+		id = 3242101,
+		main_character_face = 0,
+		word = "Tashkent stands in the shade, casually rolling a piece of fruit candy in her hand.",
+		char_type = 0
+	},
+	[3242102] = {
+		id = 3242102,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3242105] = {
+		id = 3242105,
+		main_character_face = 0,
+		word = "(Go have a look.)",
+		char_type = 2
+	},
+	[3242201] = {
+		id = 3242201,
+		main_character_face = 0,
+		word = "Tashkent stands in front of a vending machine, looking at the selection of drinks.",
+		char_type = 0
+	},
+	[3242202] = {
+		id = 3242202,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3242203] = {
+		id = 3242203,
+		main_character_face = 0,
+		word = "After a chat with Tashkent, Lora seemed to ponder something.",
+		char_type = 0
+	},
+	[3242205] = {
+		id = 3242205,
+		main_character_face = 0,
+		word = "(Leave her be.)",
+		char_type = 2
+	},
+	[3242301] = {
+		id = 3242301,
+		main_character_face = 0,
+		word = "You find Tashkent sitting in a corner of the library, reading a book. Do you want to talk to her?",
+		char_type = 0
+	},
+	[3242302] = {
+		id = 3242302,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3242303] = {
+		id = 3242303,
+		main_character_face = 0,
+		word = "After a chat with Tashkent, Lora seemed to ponder something.",
+		char_type = 0
+	},
+	[3242305] = {
+		id = 3242305,
+		main_character_face = 0,
+		word = "(Leave her be.)",
+		char_type = 2
+	},
+	[3243101] = {
+		id = 3243101,
+		main_character_face = 0,
+		word = "You find Sirius standing in front of a glass window, carefully adjusting the cuffs of her maid uniform.",
+		char_type = 0
+	},
+	[3243102] = {
+		id = 3243102,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3243105] = {
+		id = 3243105,
+		main_character_face = 0,
+		word = "(Go have a look.)",
+		char_type = 2
+	},
+	[3243201] = {
+		id = 3243201,
+		main_character_face = 0,
+		word = "Sirius is in the break room, seemingly deep in thought as she prepares tea and snacks.",
+		char_type = 0
+	},
+	[3243202] = {
+		id = 3243202,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3243203] = {
+		id = 3243203,
+		main_character_face = 0,
+		word = "After a simple conversation with Sirius, Lora seemed to ponder something.",
+		char_type = 0
+	},
+	[3243205] = {
+		id = 3243205,
+		main_character_face = 0,
+		word = "(Leave her be.)",
+		char_type = 2
+	},
+	[3243301] = {
+		id = 3243301,
+		main_character_face = 0,
+		word = "You find Sirius on a quiet patrol mission at the end of the corridor. Do you want to talk to her?",
+		char_type = 0
+	},
+	[3243302] = {
+		id = 3243302,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3243303] = {
+		id = 3243303,
+		main_character_face = 0,
+		word = "After observing Sirius at work, Lora seemed to ponder something.",
+		char_type = 0
+	},
+	[3243305] = {
+		id = 3243305,
+		main_character_face = 0,
+		word = "(Leave her be.)",
+		char_type = 2
+	},
+	[3244101] = {
+		id = 3244101,
+		main_character_face = 0,
+		word = "Épée is in the break room, practicing uniform folding with rather crude technique.",
+		char_type = 0
+	},
+	[3244102] = {
+		id = 3244102,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3244105] = {
+		id = 3244105,
+		main_character_face = 0,
+		word = "(Go have a look.)",
+		char_type = 2
+	},
+	[3244201] = {
+		id = 3244201,
+		main_character_face = 0,
+		word = "Épée is in the laundry room, practicing her clothes-folding technique using dry garments.",
+		char_type = 0
+	},
+	[3244202] = {
+		id = 3244202,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3244203] = {
+		id = 3244203,
+		main_character_face = 0,
+		word = "After observing Épée's practice, Lora seemed to ponder something.",
+		char_type = 0
+	},
+	[3244205] = {
+		id = 3244205,
+		main_character_face = 0,
+		word = "(Leave her be.)",
+		char_type = 2
+	},
+	[3244301] = {
+		id = 3244301,
+		main_character_face = 0,
+		word = "Épée is in the break room with a sewing kit, earnestly practicing her sewing skill.",
+		char_type = 0
+	},
+	[3244302] = {
+		id = 3244302,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3244303] = {
+		id = 3244303,
+		main_character_face = 0,
+		word = "After speaking to Épée for a while, Lora seemed to have learned a lot.",
+		char_type = 0
+	},
+	[3244305] = {
+		id = 3244305,
+		main_character_face = 0,
+		word = "(Leave her be.)",
+		char_type = 2
+	},
+	[3245101] = {
+		id = 3245101,
+		main_character_face = 0,
+		word = "Noshiro stands in front of a whiteboard in the office, working out the training schedule for the next week.",
+		char_type = 0
+	},
+	[3245102] = {
+		id = 3245102,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3245105] = {
+		id = 3245105,
+		main_character_face = 0,
+		word = "(Go have a look.)",
+		char_type = 2
+	},
+	[3245201] = {
+		id = 3245201,
+		main_character_face = 0,
+		word = "Noshiro is in the archives, carefully organizing combat records by order of date.",
+		char_type = 0
+	},
+	[3245202] = {
+		id = 3245202,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3245203] = {
+		id = 3245203,
+		main_character_face = 0,
+		word = "After studying how Noshiro handles work, Lora seemed to ponder something.",
+		char_type = 0
+	},
+	[3245205] = {
+		id = 3245205,
+		main_character_face = 0,
+		word = "(Leave her be.)",
+		char_type = 2
+	},
+	[3245301] = {
+		id = 3245301,
+		main_character_face = 0,
+		word = "Noshiro is in the conference room, preparing files for a naval exercise. Do you want to talk to her?",
+		char_type = 0
+	},
+	[3245302] = {
+		id = 3245302,
+		main_character_face = 0,
+		word = "(Go and talk to her.)",
+		char_type = 2
+	},
+	[3245303] = {
+		id = 3245303,
+		main_character_face = 0,
+		word = "After hearing Noshiro's explanation, Lora seemed to have learned a lot.",
+		char_type = 0
+	},
+	[3245305] = {
+		id = 3245305,
+		main_character_face = 0,
+		word = "(Leave her be.)",
+		char_type = 2
+	},
+	[3500001] = {
+		id = 3500001,
+		main_character_face = 0,
+		word = "Lora isn't used to doing Assessments yet. She needs to practice more.",
+		char_type = 3
+	},
+	[3500003] = {
+		id = 3500003,
+		main_character_face = 0,
+		word = "Lora achieved the basic goals of her Assessment, but she still needs to improve in some regards.",
+		char_type = 3
+	},
+	[3500005] = {
+		id = 3500005,
+		main_character_face = 0,
+		word = "Lora is making good use of her abilities. Let's keep this up!",
+		char_type = 3
+	},
+	[3500007] = {
+		id = 3500007,
+		main_character_face = 0,
+		word = "Lora demonstrated incredible overall skill. Her performance was very impressive!",
+		char_type = 3
+	},
+	[3600101] = {
+		id = 3600101,
+		main_character_face = 0,
+		word = "Lora and I joined a fun handicrafts class.",
+		char_type = 0
+	},
+	[3600102] = {
+		id = 3600102,
+		main_character_face = 0,
+		word = "Lora gently placed the small boat we made into the water, careful so as to not disturb its little voyage.",
+		char_type = 0
+	},
+	[3600201] = {
+		id = 3600201,
+		main_character_face = 0,
+		word = "Lora and I went on a small stone bridge spanning both sides of the garden's pond.",
+		char_type = 0
+	},
+	[3600202] = {
+		id = 3600202,
+		main_character_face = 0,
+		word = "Lora stared at the multicolored koi in the pond, wondering what wish to make to them.",
+		char_type = 0
+	},
+	[3600301] = {
+		id = 3600301,
+		main_character_face = 0,
+		word = "Lora and I ran across a puddle on the country road.",
+		char_type = 0
+	},
+	[3600302] = {
+		id = 3600302,
+		main_character_face = 0,
+		word = "Lora gazed at the reflection of her different-looking self in the water.",
+		char_type = 0
+	},
+	[3600401] = {
+		id = 3600401,
+		main_character_face = 0,
+		word = "Lora and I went to the rest area at the beach.",
+		char_type = 0
+	},
+	[3600402] = {
+		id = 3600402,
+		main_character_face = 0,
+		word = "Lora saw a flock of seagulls gliding in the sea breeze. She quietly approached them, hoping for something fun to happen.",
+		char_type = 0
+	},
+	[3600501] = {
+		id = 3600501,
+		main_character_face = 0,
+		word = "Lora and I went to a quiet lakeside.",
+		char_type = 0
+	},
+	[3600502] = {
+		id = 3600502,
+		main_character_face = 0,
+		word = "Lora leaned forward by the shore and stared at the water's sparkling reflection. It was like she was greeting a quiet world beneath the surface.",
+		char_type = 0
+	},
+	[3600601] = {
+		id = 3600601,
+		main_character_face = 0,
+		word = "Lora and I boarded a shaky little boat.",
+		char_type = 0
+	},
+	[3600602] = {
+		id = 3600602,
+		main_character_face = 0,
+		word = "Lora sat at the side of the boat, soaking her feet in the cold lake water while joyously kicking up splashes.",
+		char_type = 0
+	},
+	[3600701] = {
+		id = 3600701,
+		main_character_face = 0,
+		word = "Lora and I went to the observation deck near the beach.",
+		char_type = 0
+	},
+	[3600702] = {
+		id = 3600702,
+		main_character_face = 0,
+		word = "As a breeze blew through her hair, she shut her eyes and felt this greeting carried by the wind from afar.",
+		char_type = 0
+	},
+	[3600801] = {
+		id = 3600801,
+		main_character_face = 0,
+		word = "Lora and I came across a puddle glistening in the sunlight.",
+		char_type = 0
+	},
+	[3600802] = {
+		id = 3600802,
+		main_character_face = 0,
+		word = "Lora was captivated by the light reflecting off of the water. She stared at it with a confused yet adorable expression.",
+		char_type = 0
+	},
+	[3600901] = {
+		id = 3600901,
+		main_character_face = 0,
+		word = "Lora and I went to an open field at night.",
+		char_type = 0
+	},
+	[3600902] = {
+		id = 3600902,
+		main_character_face = 0,
+		word = "Lora looked up at the night sky, full of stars, and listened to the stories that their distant light told.",
+		char_type = 0
+	},
+	[3601001] = {
+		id = 3601001,
+		main_character_face = 0,
+		word = "Lora and I went under a quiet curtain fig in the garden.",
+		char_type = 0
+	},
+	[3601002] = {
+		id = 3601002,
+		main_character_face = 0,
+		word = "Lora sat on a bench and got lost in a book, immersing herself in the peaceful story's world.",
+		char_type = 0
+	},
+	[3601101] = {
+		id = 3601101,
+		main_character_face = 0,
+		word = "Lora and I walked in the middle of the road, which had been covered in puddles after the rainfall.",
+		char_type = 0
+	},
+	[3601102] = {
+		id = 3601102,
+		main_character_face = 0,
+		word = "Holding her umbrella, Lora squatted by a puddle, closely staring at the ripples her fingers drew on the surface.",
+		char_type = 0
+	},
+	[3601201] = {
+		id = 3601201,
+		main_character_face = 0,
+		word = "Lora and I went to a stretch of the beach with loads of stones.",
+		char_type = 0
+	},
+	[3601202] = {
+		id = 3601202,
+		main_character_face = 0,
+		word = "Lora carefully built a stack out of the stones she'd picked up, as though carrying out an important task known only to her.",
+		char_type = 0
+	},
+	[3601301] = {
+		id = 3601301,
+		main_character_face = 0,
+		word = "Lora and I saw a seal playing close to the stone steps.",
+		char_type = 0
+	},
+	[3601302] = {
+		id = 3601302,
+		main_character_face = 0,
+		word = "Lora presented her hand to the seal, and it nuzzled her palm with its nose.",
+		char_type = 0
+	},
+	[3601401] = {
+		id = 3601401,
+		main_character_face = 0,
+		word = "Lora and I went to a really sunny beach.",
+		char_type = 0
+	},
+	[3601402] = {
+		id = 3601402,
+		main_character_face = 0,
+		word = "Lora found a message in a bottle and crouched down before it, weighing the question of whether to open it or not.",
+		char_type = 0
+	},
+	[3601501] = {
+		id = 3601501,
+		main_character_face = 0,
+		word = "Lora and I walked the trail by a scenic riverside.",
+		char_type = 0
+	},
+	[3601502] = {
+		id = 3601502,
+		main_character_face = 0,
+		word = "The path was annoying to tread, owing to the stones and fallen leaves, but she enjoyed herself nevertheless.",
+		char_type = 0
+	},
+	[3601601] = {
+		id = 3601601,
+		main_character_face = 0,
+		word = "Lora and I went to the lake by the park.",
+		char_type = 0
+	},
+	[3601602] = {
+		id = 3601602,
+		main_character_face = 0,
+		word = "Seeing the boulder standing in the middle of the lake, Lora suddenly felt like playing a water spirit, and she lightly leaped into it.",
+		char_type = 0
+	},
+	[3601701] = {
+		id = 3601701,
+		main_character_face = 0,
+		word = "Lora and I admired the snow-covered landscape.",
+		char_type = 0
+	},
+	[3601702] = {
+		id = 3601702,
+		main_character_face = 0,
+		word = "Lora happily took my hand and showed me the trees, all wearing overcoats of snow.",
+		char_type = 0
+	},
+	[3601801] = {
+		id = 3601801,
+		main_character_face = 0,
+		word = "Lora and I found a massive lake.",
+		char_type = 0
+	},
+	[3601802] = {
+		id = 3601802,
+		main_character_face = 0,
+		word = "She pointed to the distant mountains across the water, telling me about it eagerly as though she'd found some treasure.",
+		char_type = 0
+	},
+	[3700002] = {
+		id = 3700002,
+		main_character_face = 0,
+		word = "I played a fun ball game and worked up quite a sweat!",
+		char_type = 3
+	},
+	[3700004] = {
+		id = 3700004,
+		main_character_face = 0,
+		word = "I completed a block puzzle flawlessly! I'm the best!",
+		char_type = 3
+	},
+	[3700006] = {
+		id = 3700006,
+		main_character_face = 0,
+		word = "I attentively read a story to the end and learned something new!",
+		char_type = 3
+	},
+	[3700008] = {
+		id = 3700008,
+		main_character_face = 0,
+		word = "I let my imagination run wild and came up with lots of cool ideas!",
+		char_type = 3
+	},
+	[3700010] = {
+		id = 3700010,
+		main_character_face = 0,
+		word = "Dancing to the rhythm is so fun. My moves are getting better, too!",
+		char_type = 3
+	},
+	[3700012] = {
+		id = 3700012,
+		main_character_face = 0,
+		word = "I cleaned the small room so it's nice and tidy now! Hooray!",
+		char_type = 3
+	},
+	[3700014] = {
+		id = 3700014,
+		main_character_face = 0,
+		word = "I tried extra hard during gym class and I feel proud of my fitness!",
+		char_type = 3
+	},
+	[3700016] = {
+		id = 3700016,
+		main_character_face = 0,
+		word = "I tried extra hard during gym class and I feel proud of my fitness!",
+		char_type = 3
+	},
+	[3700018] = {
+		id = 3700018,
+		main_character_face = 0,
+		word = "I tried extra hard during gym class and I feel proud of my fitness!",
+		char_type = 3
+	},
+	[3700020] = {
+		id = 3700020,
+		main_character_face = 0,
+		word = "I was diligent in my transport work. It was satisfying!",
+		char_type = 3
+	},
+	[3700022] = {
+		id = 3700022,
+		main_character_face = 0,
+		word = "I was diligent in my transport work. It was satisfying!",
+		char_type = 3
+	},
+	[3700024] = {
+		id = 3700024,
+		main_character_face = 0,
+		word = "I was diligent in my transport work. It was satisfying!",
+		char_type = 3
+	},
+	[3700026] = {
+		id = 3700026,
+		main_character_face = 0,
+		word = "I quietly read a book in the classroom and felt the joy of learning!",
+		char_type = 3
+	},
+	[3700028] = {
+		id = 3700028,
+		main_character_face = 0,
+		word = "I quietly read a book in the classroom and felt the joy of learning!",
+		char_type = 3
+	},
+	[3700030] = {
+		id = 3700030,
+		main_character_face = 0,
+		word = "I quietly read a book in the classroom and felt the joy of learning!",
+		char_type = 3
+	},
+	[3700032] = {
+		id = 3700032,
+		main_character_face = 0,
+		word = "After observing the flowers and plants, I made a new discovery!",
+		char_type = 3
+	},
+	[3700034] = {
+		id = 3700034,
+		main_character_face = 0,
+		word = "After observing the flowers and plants, I made a new discovery!",
+		char_type = 3
+	},
+	[3700036] = {
+		id = 3700036,
+		main_character_face = 0,
+		word = "After observing the flowers and plants, I made a new discovery!",
+		char_type = 3
+	},
+	[3700038] = {
+		id = 3700038,
+		main_character_face = 0,
+		word = "I practiced dancing and feel more flexible now!",
+		char_type = 3
+	},
+	[3700040] = {
+		id = 3700040,
+		main_character_face = 0,
+		word = "It was a busy time at the garden. I gained some nice rewards!",
+		char_type = 3
+	},
+	[3700501] = {
+		id = 3700501,
+		main_character_face = 0,
+		word = "I had a walk outside school. The fresh air was nice, and I got something unexpected!",
+		char_type = 3
+	},
+	[3700514] = {
+		id = 3700514,
+		main_character_face = 0,
+		word = "I tried extra hard during gym class and I feel proud of my fitness! Way to go, me!",
+		char_type = 3
+	},
+	[3700516] = {
+		id = 3700516,
+		main_character_face = 0,
+		word = "I tried extra hard during gym class and I feel proud of my fitness! Way to go, me!",
+		char_type = 3
+	},
+	[3700518] = {
+		id = 3700518,
+		main_character_face = 0,
+		word = "I tried extra hard during gym class and I feel proud of my fitness! Way to go, me!",
+		char_type = 3
+	},
+	[3700520] = {
+		id = 3700520,
+		main_character_face = 0,
+		word = "I was diligent in my work. It was satisfying and I feel amazing!",
+		char_type = 3
+	},
+	[3700522] = {
+		id = 3700522,
+		main_character_face = 0,
+		word = "I was diligent in my work. It was satisfying and I feel amazing!",
+		char_type = 3
+	},
+	[3700524] = {
+		id = 3700524,
+		main_character_face = 0,
+		word = "I was diligent in my work. It was satisfying and I feel amazing!",
+		char_type = 3
+	},
+	[3700526] = {
+		id = 3700526,
+		main_character_face = 0,
+		word = "I quietly read a book in the classroom and felt the joy of learning! Thinking is fun!",
+		char_type = 3
+	},
+	[3700528] = {
+		id = 3700528,
+		main_character_face = 0,
+		word = "I quietly read a book in the classroom and felt the joy of learning! Thinking is fun!",
+		char_type = 3
+	},
+	[3700530] = {
+		id = 3700530,
+		main_character_face = 0,
+		word = "I quietly read a book in the classroom and felt the joy of learning! Thinking is fun!",
+		char_type = 3
+	},
+	[3700532] = {
+		id = 3700532,
+		main_character_face = 0,
+		word = "After observing the flowers and plants, I made lots of new discoveries!",
+		char_type = 3
+	},
+	[3700534] = {
+		id = 3700534,
+		main_character_face = 0,
+		word = "After observing the flowers and plants, I made lots of new discoveries!",
+		char_type = 3
+	},
+	[3700536] = {
+		id = 3700536,
+		main_character_face = 0,
+		word = "After observing the flowers and plants, I made lots of new discoveries!",
+		char_type = 3
+	},
+	[3700801] = {
+		id = 3700801,
+		main_character_face = 0,
+		word = "I had a busy time and was well rewarded for it!",
+		char_type = 3
+	},
+	[3700802] = {
+		id = 3700802,
+		main_character_face = 0,
+		word = "I had a busy time and was well rewarded for it!",
+		char_type = 3
+	},
+	[3700803] = {
+		id = 3700803,
+		main_character_face = 0,
+		word = "I had a busy time and was well rewarded for it!",
+		char_type = 3
+	},
+	[3700804] = {
+		id = 3700804,
+		main_character_face = 0,
+		word = "I saw some new sights on my journey, which cheered me up!",
+		char_type = 3
+	},
+	[3700805] = {
+		id = 3700805,
+		main_character_face = 0,
+		word = "I saw some new sights on my journey, which cheered me up!",
+		char_type = 3
+	},
+	[3700806] = {
+		id = 3700806,
+		main_character_face = 0,
+		word = "I saw some new sights on my journey, which cheered me up!",
+		char_type = 3
 	}
 }

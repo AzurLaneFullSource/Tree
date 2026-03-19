@@ -17,7 +17,7 @@ return {
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "Give me your hand... Why? Just do it, and you'll find out.",
+			say = "把手伸出来……我想干什么？你先把手伸出来如何？",
 			voice = "event:/dorm/drom3d_aegir_ik_gfit1_tone3/drom3d_aegir_ik_gfit1_tone3",
 			typewriter = {
 				speed = 0.05,

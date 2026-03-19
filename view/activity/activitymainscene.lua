@@ -139,6 +139,14 @@ function var0_0.didEnter(arg0_10)
 	end, SOUND_BACK)
 	arg0_10:updateEntrances()
 	arg0_10:emit(ActivityMediator.SHOW_NEXT_ACTIVITY)
+
+	if arg0_10.contextData.event then
+		arg0_10:emit(arg0_10.contextData.event, arg0_10.contextData.data)
+
+		arg0_10.contextData.event = nil
+		arg0_10.contextData.data = nil
+	end
+
 	pg.CameraFixMgr.GetInstance():Adapt()
 end
 

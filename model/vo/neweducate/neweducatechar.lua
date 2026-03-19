@@ -1,14 +1,20 @@
 local var0_0 = class("NewEducateChar", import("model.vo.BaseVO"))
 
 var0_0.RES_TYPE = {
-	FAVOR = 4,
+	REFRESH_SHOP = 5,
 	MONEY = 1,
 	ACTION = 3,
-	MOOD = 2
+	MOOD = 2,
+	FAVOR = 4,
+	REFRESH_CHOICE = 6
 }
 var0_0.ATTR_TYPE = {
 	ATTR = 1,
 	PERSONALITY = 2
+}
+var0_0.DIFFICULTY = {
+	EASY = 0,
+	HARD = 1
 }
 
 function var0_0.bindConfigTable(arg0_1)
@@ -18,7 +24,8 @@ end
 function var0_0.Ctor(arg0_2, arg1_2)
 	arg0_2.id = arg1_2.id
 	arg0_2.configId = arg0_2.id
-	arg0_2.roundData = NewEducateRound.New(arg0_2.id, arg1_2.round)
+	arg0_2.difficulty = arg1_2.difficulty or var0_0.DIFFICULTY.EASY
+	arg0_2.roundData = NewEducateRound.New(arg1_2)
 
 	arg0_2:SetResources(arg1_2.res.resource)
 	arg0_2:SetAttrs(arg1_2.res.attrs)
@@ -41,7 +48,7 @@ function var0_0.Ctor(arg0_2, arg1_2)
 
 	arg0_2.callName = arg1_2.name or ""
 	arg0_2.gotFavorLv = arg1_2.favor_lv or 0
-	arg0_2.benefitData = NewEducateBenefit.New(arg1_2.benefit)
+	arg0_2.benefitData = NewEducateBenefit.New(arg1_2.benefit, arg1_2.display)
 
 	arg0_2:BuildSiteIdMap()
 end
@@ -63,7 +70,7 @@ function var0_0.GetGameCnt(arg0_6)
 end
 
 function var0_0.InitFSM(arg0_7, arg1_7)
-	arg0_7.fsm = NewEducateFSM.New(arg0_7.id, arg1_7)
+	arg0_7.fsm = NewEducateStateMgr.New(arg0_7.id, arg1_7)
 end
 
 function var0_0.InitSiteData(arg0_8, arg1_8)
@@ -80,7 +87,7 @@ function var0_0.InitSiteData(arg0_8, arg1_8)
 
 	for iter2_8, iter3_8 in pairs(NewEducateConst.SITE_NORMAL_TYPE) do
 		if not arg0_8.normalType2Id[iter3_8] then
-			arg0_8.normalType2Id[iter3_8] = underscore.detect(var1_8, function(arg0_9)
+			arg0_8.normalType2Id[iter3_8] = underscore.detect(var1_8 or {}, function(arg0_9)
 				local var0_9 = pg.child2_site_normal[arg0_9]
 
 				return var0_9.type == iter3_8 and var0_9.site_lv == 1
@@ -106,7 +113,9 @@ function var0_0.GetSelectInfo(arg0_10)
 		bg = arg0_10.roundData:getConfig("main_background"),
 		name = arg0_10:getConfig("name2"),
 		gameCnt = arg0_10:GetGameCnt(),
-		progressStr = i18n("child2_cur_round", arg0_10.roundData.round)
+		progressStr = arg0_10.roundData:IsEndless() and i18n("child2_game_endless_cnt", arg0_10.roundData:GetWave()) or i18n("child2_cur_round", arg0_10.roundData.round),
+		isHard = arg0_10.difficulty == var0_0.DIFFICULTY.HARD,
+		isEndless = arg0_10.roundData:IsEndless()
 	}
 end
 
@@ -139,538 +148,593 @@ function var0_0.BuildSiteIdMap(arg0_14)
 				end)
 			end,
 			[NewEducateConst.SITE_TYPE.SHOP] = function()
-				arg0_14.siteIdMap[iter1_14] = var0_14
+				arg0_14.siteIdMap[iter1_14] = {}
+
+				underscore.each(var0_14, function(arg0_18)
+					if pg.child2_site_display[arg0_18].character == arg0_14.id then
+						table.insert(arg0_14.siteIdMap[iter1_14], arg0_18)
+					end
+				end)
 			end,
 			[NewEducateConst.SITE_TYPE.WORK] = function()
-				arg0_14.siteIdMap[iter1_14] = var0_14
+				arg0_14.siteIdMap[iter1_14] = {}
+
+				underscore.each(var0_14, function(arg0_20)
+					if pg.child2_site_display[arg0_20].character == arg0_14.id then
+						table.insert(arg0_14.siteIdMap[iter1_14], arg0_20)
+					end
+				end)
 			end,
 			[NewEducateConst.SITE_TYPE.TRAVEL] = function()
-				arg0_14.siteIdMap[iter1_14] = var0_14
+				arg0_14.siteIdMap[iter1_14] = {}
+
+				underscore.each(var0_14, function(arg0_22)
+					if pg.child2_site_display[arg0_22].character == arg0_14.id then
+						table.insert(arg0_14.siteIdMap[iter1_14], arg0_22)
+					end
+				end)
 			end,
 			[NewEducateConst.SITE_TYPE.EVENT] = function()
-				underscore.each(var0_14, function(arg0_21)
-					local var0_21 = pg.child2_site_display[arg0_21].param
+				underscore.each(var0_14, function(arg0_24)
+					local var0_24 = pg.child2_site_display[arg0_24].param
 
-					arg0_14.siteIdMap[iter1_14][var0_21] = arg0_21
+					arg0_14.siteIdMap[iter1_14][var0_24] = arg0_24
 				end)
 			end
 		})
 	end
 end
 
-function var0_0.GetSiteId(arg0_22, arg1_22, arg2_22)
-	local var0_22 = arg2_22 or 1
+function var0_0.GetSiteId(arg0_25, arg1_25, arg2_25)
+	local var0_25 = arg2_25 or 1
 
-	return arg0_22.siteIdMap[arg1_22][var0_22]
+	return arg0_25.siteIdMap[arg1_25][var0_25]
 end
 
-function var0_0.GetNormalIdByType(arg0_23, arg1_23)
-	return arg0_23.normalType2Id[arg1_23]
+function var0_0.GetNormalIdByType(arg0_26, arg1_26)
+	return arg0_26.normalType2Id[arg1_26]
 end
 
-function var0_0.UpdateNormalType2Id(arg0_24, arg1_24, arg2_24)
-	arg0_24.normalType2Id[arg1_24] = arg2_24
+function var0_0.UpdateNormalType2Id(arg0_27, arg1_27, arg2_27)
+	arg0_27.normalType2Id[arg1_27] = arg2_27
 end
 
-function var0_0.AddNormalRecord(arg0_25, arg1_25)
-	arg0_25.normalRecords[arg1_25] = (arg0_25.normalRecords[arg1_25] or 0) + 1
+function var0_0.AddNormalRecord(arg0_28, arg1_28)
+	arg0_28.normalRecords[arg1_28] = (arg0_28.normalRecords[arg1_28] or 0) + 1
 end
 
-function var0_0.GetNormalCnt(arg0_26, arg1_26)
-	return arg0_26.normalRecords[arg1_26] or 0
+function var0_0.GetNormalCnt(arg0_29, arg1_29)
+	return arg0_29.normalRecords[arg1_29] or 0
 end
 
-function var0_0.AddEventRecord(arg0_27, arg1_27)
-	arg0_27.eventRecords[arg1_27] = (arg0_27.eventRecords[arg1_27] or 0) + 1
+function var0_0.AddEventRecord(arg0_30, arg1_30)
+	arg0_30.eventRecords[arg1_30] = (arg0_30.eventRecords[arg1_30] or 0) + 1
 end
 
-function var0_0.GetEventCnt(arg0_28, arg1_28)
-	return arg0_28.eventRecords[arg1_28] or 0
+function var0_0.GetEventCnt(arg0_31, arg1_31)
+	return arg0_31.eventRecords[arg1_31] or 0
 end
 
-function var0_0.SetShipIds(arg0_29, arg1_29)
-	arg0_29.siteShips = arg1_29
+function var0_0.SetShipIds(arg0_32, arg1_32)
+	arg0_32.siteShips = arg1_32
 end
 
-function var0_0.GetShipIds(arg0_30)
-	return arg0_30.siteShips
+function var0_0.GetShipIds(arg0_33)
+	return arg0_33.siteShips
 end
 
-function var0_0.UpdateShipId(arg0_31, arg1_31, arg2_31)
-	table.removebyvalue(arg0_31.siteShips, arg1_31)
-	table.insert(arg0_31.siteShips, arg2_31)
+function var0_0.UpdateShipId(arg0_34, arg1_34, arg2_34)
+	table.removebyvalue(arg0_34.siteShips, arg1_34)
+	table.insert(arg0_34.siteShips, arg2_34)
 end
 
-function var0_0.AddAssessRecord(arg0_32, arg1_32, arg2_32)
-	arg0_32.assessRecords[arg1_32] = arg2_32
+function var0_0.AddAssessRecord(arg0_35, arg1_35, arg2_35)
+	arg0_35.assessRecords[arg1_35] = arg2_35
 end
 
-function var0_0.GetResources(arg0_33)
-	return Clone(arg0_33.resources)
+function var0_0.GetResources(arg0_36)
+	return Clone(arg0_36.resources)
 end
 
-function var0_0.SetResources(arg0_34, arg1_34)
-	arg0_34.resources = {}
+function var0_0.SetResources(arg0_37, arg1_37)
+	arg0_37.resources = {}
 
-	for iter0_34, iter1_34 in ipairs(arg1_34) do
-		arg0_34.resources[iter1_34.key] = iter1_34.value
-		arg0_34.resources[iter1_34.key] = math.max(pg.child2_resource[iter1_34.key].min_value, arg0_34.resources[iter1_34.key])
-		arg0_34.resources[iter1_34.key] = math.min(pg.child2_resource[iter1_34.key].max_value, arg0_34.resources[iter1_34.key])
+	for iter0_37, iter1_37 in ipairs(arg1_37) do
+		arg0_37.resources[iter1_37.key] = iter1_37.value
+		arg0_37.resources[iter1_37.key] = math.max(pg.child2_resource[iter1_37.key].min_value, arg0_37.resources[iter1_37.key])
+		arg0_37.resources[iter1_37.key] = math.min(pg.child2_resource[iter1_37.key].max_value, arg0_37.resources[iter1_37.key])
 	end
 end
 
-function var0_0.GetRes(arg0_35, arg1_35)
-	return arg0_35.resources[arg1_35]
+function var0_0.GetRes(arg0_38, arg1_38)
+	return arg0_38.resources[arg1_38] or 0
 end
 
-function var0_0.GetPoint(arg0_36)
-	return arg0_36:GetResByType(var0_0.RES_TYPE.ACTION)
+function var0_0.GetPoint(arg0_39)
+	return arg0_39:GetResByType(var0_0.RES_TYPE.ACTION)
 end
 
-function var0_0.GetResByType(arg0_37, arg1_37)
-	return arg0_37.resources[arg0_37:GetResIdByType(arg1_37)]
+function var0_0.GetResByType(arg0_40, arg1_40)
+	return arg0_40.resources[arg0_40:GetResIdByType(arg1_40)] or 0
 end
 
-function var0_0.GetResPanelIds(arg0_38)
-	return underscore.select(underscore.keys(arg0_38.resources), function(arg0_39)
-		return pg.child2_resource[arg0_39].type ~= var0_0.RES_TYPE.FAVOR
+function var0_0.GetResIdByType(arg0_41, arg1_41)
+	return underscore.detect(underscore.keys(arg0_41.resources), function(arg0_42)
+		return pg.child2_resource[arg0_42].type == arg1_41
 	end)
 end
 
-function var0_0.GetResIdByType(arg0_40, arg1_40)
-	return underscore.detect(underscore.keys(arg0_40.resources), function(arg0_41)
-		return pg.child2_resource[arg0_41].type == arg1_40
-	end)
-end
+function var0_0.UpdateRes(arg0_43, arg1_43, arg2_43)
+	if not arg0_43.resources[arg1_43] then
+		warning("不符合当前角色的资源更新！！！")
 
-function var0_0.UpdateRes(arg0_42, arg1_42, arg2_42)
-	arg0_42.resources[arg1_42] = arg0_42.resources[arg1_42] + arg2_42
-	arg0_42.resources[arg1_42] = math.max(pg.child2_resource[arg1_42].min_value, arg0_42.resources[arg1_42])
-	arg0_42.resources[arg1_42] = math.min(pg.child2_resource[arg1_42].max_value, arg0_42.resources[arg1_42])
-end
-
-function var0_0.GetMoodStage(arg0_43, arg1_43)
-	local var0_43 = pg.gameset.child_emotion.description
-	local var1_43 = arg1_43 or arg0_43:GetResByType(var0_0.RES_TYPE.MOOD)
-
-	if var1_43 <= var0_43[1][1][1] then
-		return 1
+		arg0_43.resources[arg1_43] = 0
 	end
 
-	if var1_43 >= var0_43[#var0_43][1][2] then
-		return #var0_43
+	arg0_43.resources[arg1_43] = arg0_43.resources[arg1_43] + arg2_43
+	arg0_43.resources[arg1_43] = math.max(pg.child2_resource[arg1_43].min_value, arg0_43.resources[arg1_43])
+	arg0_43.resources[arg1_43] = math.min(pg.child2_resource[arg1_43].max_value, arg0_43.resources[arg1_43])
+end
+
+function var0_0.GetMoodStage(arg0_44, arg1_44)
+	local var0_44 = pg.gameset.child_emotion.description
+	local var1_44 = arg1_44 or arg0_44:GetResByType(var0_0.RES_TYPE.MOOD)
+
+	if var1_44 <= var0_44[1][1][1] then
+		return 1, var0_44[1][2]
 	end
 
-	for iter0_43, iter1_43 in ipairs(var0_43) do
-		if var1_43 >= iter1_43[1][1] and var1_43 < iter1_43[1][2] then
-			return iter0_43
+	if var1_44 >= var0_44[#var0_44][1][2] then
+		return #var0_44, var0_44[#var0_44][2]
+	end
+
+	for iter0_44, iter1_44 in ipairs(var0_44) do
+		if var1_44 >= iter1_44[1][1] and var1_44 < iter1_44[1][2] then
+			return iter0_44, iter1_44[2]
 		end
 	end
 end
 
-function var0_0.UpgradeFavor(arg0_44)
-	arg0_44.gotFavorLv = arg0_44.gotFavorLv + 1
+function var0_0.UpgradeFavor(arg0_45)
+	arg0_45.gotFavorLv = arg0_45.gotFavorLv + 1
 end
 
-function var0_0.CheckFavor(arg0_45)
-	local var0_45 = arg0_45:GetFavorInfo()
-	local var1_45 = arg0_45:getConfig("favor_exp")[var0_45.lv]
+function var0_0.CheckFavor(arg0_46)
+	local var0_46 = arg0_46:GetFavorInfo()
+	local var1_46 = arg0_46:getConfig("favor_exp")[var0_46.lv]
 
-	if not var1_45 then
+	if not var1_46 then
 		return false
 	end
 
-	return var1_45 <= var0_45.value
+	return var1_46 <= var0_46.value
 end
 
-function var0_0.GetFavorInfo(arg0_46)
-	local var0_46 = arg0_46:GetResByType(var0_0.RES_TYPE.FAVOR)
-	local var1_46 = math.min(arg0_46.gotFavorLv + 1, arg0_46:getConfig("favor_level"))
-	local var2_46 = 0
+function var0_0.GetFavorInfo(arg0_47)
+	local var0_47 = arg0_47:GetResByType(var0_0.RES_TYPE.FAVOR)
+	local var1_47 = math.min(arg0_47.gotFavorLv + 1, arg0_47:getConfig("favor_level"))
+	local var2_47 = 0
 
-	if arg0_46.gotFavorLv > 0 then
-		for iter0_46 = 1, arg0_46.gotFavorLv do
-			var2_46 = var2_46 + arg0_46:getConfig("favor_exp")[iter0_46]
+	if arg0_47.gotFavorLv > 0 then
+		for iter0_47 = 1, arg0_47.gotFavorLv do
+			var2_47 = var2_47 + arg0_47:getConfig("favor_exp")[iter0_47]
 		end
 	end
 
 	return {
-		lv = var1_46,
-		value = var0_46 - var2_46
+		lv = var1_47,
+		value = var0_47 - var2_47
 	}
 end
 
-function var0_0.GetAttrs(arg0_47)
-	return Clone(arg0_47.attrs)
+function var0_0.GetAttrs(arg0_48)
+	return Clone(arg0_48.attrs)
 end
 
-function var0_0.SetAttrs(arg0_48, arg1_48)
-	arg0_48.attrs = {}
+function var0_0.SetAttrs(arg0_49, arg1_49)
+	arg0_49.attrs = {}
 
-	for iter0_48, iter1_48 in ipairs(arg1_48) do
-		arg0_48.attrs[iter1_48.key] = iter1_48.value
-		arg0_48.attrs[iter1_48.key] = math.max(pg.child2_attr[iter1_48.key].min_value, arg0_48.attrs[iter1_48.key])
-		arg0_48.attrs[iter1_48.key] = math.min(pg.child2_attr[iter1_48.key].max_value, arg0_48.attrs[iter1_48.key])
+	for iter0_49, iter1_49 in ipairs(arg1_49) do
+		arg0_49.attrs[iter1_49.key] = iter1_49.value
+		arg0_49.attrs[iter1_49.key] = math.max(pg.child2_attr[iter1_49.key].min_value, arg0_49.attrs[iter1_49.key])
+		arg0_49.attrs[iter1_49.key] = math.min(pg.child2_attr[iter1_49.key].max_value, arg0_49.attrs[iter1_49.key])
 	end
 end
 
-function var0_0.GetAttr(arg0_49, arg1_49)
-	return arg0_49.attrs[arg1_49]
+function var0_0.GetAttr(arg0_50, arg1_50)
+	return arg0_50.attrs[arg1_50]
 end
 
-function var0_0.GetAttrIds(arg0_50, arg1_50)
-	local var0_50 = underscore.select(underscore.keys(arg0_50.attrs), function(arg0_51)
-		return pg.child2_attr[arg0_51].type == var0_0.ATTR_TYPE.ATTR
+function var0_0.GetAttrIds(arg0_51)
+	local var0_51 = underscore.select(underscore.keys(arg0_51.attrs), function(arg0_52)
+		return pg.child2_attr[arg0_52].type == var0_0.ATTR_TYPE.ATTR
 	end)
 
-	table.sort(var0_50)
+	table.sort(var0_51)
 
-	return var0_50
+	return var0_51
 end
 
-function var0_0.GetAttrSum(arg0_52)
-	return underscore.reduce(arg0_52:GetAttrIds(), 0, function(arg0_53, arg1_53)
-		return arg0_53 + arg0_52.attrs[arg1_53]
-	end)
-end
-
-function var0_0.GetPersonalityId(arg0_54)
-	return underscore.detect(underscore.keys(arg0_54.attrs), function(arg0_55)
-		return pg.child2_attr[arg0_55].type == var0_0.ATTR_TYPE.PERSONALITY
+function var0_0.GetAttrSum(arg0_53)
+	return underscore.reduce(arg0_53:GetAttrIds(), 0, function(arg0_54, arg1_54)
+		return arg0_54 + arg0_53.attrs[arg1_54]
 	end)
 end
 
-function var0_0.GetPersonality(arg0_56)
-	return arg0_56.attrs[arg0_56:GetPersonalityId()]
+function var0_0.GetPersonalityId(arg0_55)
+	return underscore.detect(underscore.keys(arg0_55.attrs), function(arg0_56)
+		return pg.child2_attr[arg0_56].type == var0_0.ATTR_TYPE.PERSONALITY
+	end)
 end
 
-function var0_0.GetPersonalityMiddle(arg0_57)
-	local var0_57 = arg0_57:GetPersonalityId()
-	local var1_57 = pg.child2_attr[var0_57]
-
-	return math.floor((var1_57.min_value + var1_57.max_value) / 2)
+function var0_0.GetPersonality(arg0_57)
+	return arg0_57.attrs[arg0_57:GetPersonalityId()]
 end
 
-function var0_0.GetPersonalityTag(arg0_58, arg1_58)
-	local var0_58 = arg1_58 or arg0_58:GetPersonality()
+function var0_0.GetPersonalityMiddle(arg0_58)
+	local var0_58 = arg0_58:GetPersonalityId()
+	local var1_58 = pg.child2_attr[var0_58]
 
-	return (switch(arg0_58:getConfig("personality_type"), {
+	return math.floor((var1_58.min_value + var1_58.max_value) / 2)
+end
+
+function var0_0.GetPersonalityTag(arg0_59, arg1_59)
+	local var0_59 = arg1_59 or arg0_59:GetPersonality()
+
+	return (switch(arg0_59:getConfig("personality_type"), {
 		function()
-			for iter0_59, iter1_59 in ipairs(arg0_58:getConfig("personality_param")) do
-				if var0_58 >= iter1_59[2][1] and var0_58 <= iter1_59[2][2] then
-					return iter1_59[1]
+			for iter0_60, iter1_60 in ipairs(arg0_59:getConfig("personality_param")) do
+				if var0_59 >= iter1_60[2][1] and var0_59 <= iter1_60[2][2] then
+					return iter1_60[1]
 				end
 			end
 
-			return arg0_58:getConfig("personality_param")[1][1]
+			return arg0_59:getConfig("personality_param")[1][1]
 		end
 	}, function()
 		assert(false, "不合法的personality_type")
 	end))
 end
 
-function var0_0.UpdateAttr(arg0_61, arg1_61, arg2_61)
-	arg0_61.attrs[arg1_61] = arg0_61.attrs[arg1_61] + arg2_61
-	arg0_61.attrs[arg1_61] = math.max(pg.child2_attr[arg1_61].min_value, arg0_61.attrs[arg1_61])
-	arg0_61.attrs[arg1_61] = math.min(pg.child2_attr[arg1_61].max_value, arg0_61.attrs[arg1_61])
+function var0_0.GetPersonalityTagTip(arg0_62, arg1_62)
+	return i18n("child2_personal_id" .. arg0_62.id .. "_tag" .. arg1_62)
 end
 
-function var0_0.GetAssessRankIdx(arg0_62)
-	local var0_62 = arg0_62.roundData:getConfig("target_id")
+function var0_0.GetPersonalityTagOptionBg(arg0_63, arg1_63)
+	local var0_63 = arg0_63:getConfig("personality_tag_icon")
 
-	if var0_62 == 0 then
+	return underscore.detect(var0_63, function(arg0_64)
+		return arg0_64[1] == "tag" .. arg1_63
+	end)[3]
+end
+
+function var0_0.UpdateAttr(arg0_65, arg1_65, arg2_65)
+	if not arg0_65.attrs[arg1_65] then
+		warning("不符合当前角色的属性更新！！！")
+
+		arg0_65.attrs[arg1_65] = 0
+	end
+
+	arg0_65.attrs[arg1_65] = arg0_65.attrs[arg1_65] + arg2_65
+	arg0_65.attrs[arg1_65] = math.max(pg.child2_attr[arg1_65].min_value, arg0_65.attrs[arg1_65])
+	arg0_65.attrs[arg1_65] = math.min(pg.child2_attr[arg1_65].max_value, arg0_65.attrs[arg1_65])
+end
+
+function var0_0.GetAssessRankIdx(arg0_66)
+	local var0_66 = arg0_66.roundData:getConfig("target_id")
+
+	if var0_66 == 0 or arg0_66.roundData:IsTemp() then
 		return 0
 	end
 
-	local var1_62 = arg0_62:GetAttrSum()
-	local var2_62 = pg.child2_target[var0_62].attr_sum_level
+	local var1_66 = arg0_66.roundData:GetExtraFactor()
+	local var2_66 = arg0_66:GetAttrSum()
+	local var3_66 = pg.child2_target[var0_66].attr_sum_level
 
-	for iter0_62, iter1_62 in ipairs(var2_62) do
-		if var1_62 >= iter1_62[1] and var1_62 <= iter1_62[2] then
-			return iter0_62
+	for iter0_66, iter1_66 in ipairs(var3_66) do
+		if var2_66 >= iter1_66[1] * var1_66 and var2_66 <= iter1_66[2] * var1_66 then
+			return iter0_66
 		end
 	end
 
-	return #var2_62
+	return #var3_66
 end
 
-function var0_0.GetAssessPreStory(arg0_63)
-	local var0_63 = arg0_63.roundData:getConfig("target_id")
+function var0_0.GetAssessPreStory(arg0_67)
+	local var0_67 = arg0_67.roundData:getConfig("target_id")
 
-	if var0_63 == 0 then
+	if var0_67 == 0 then
 		return nil
 	end
 
-	return pg.child2_target[var0_63].pre_perform
+	return pg.child2_target[var0_67].pre_perform
 end
 
-function var0_0.GetRoundData(arg0_64)
-	return arg0_64.roundData
+function var0_0.GetRoundData(arg0_68)
+	return arg0_68.roundData
 end
 
-function var0_0.GetFSM(arg0_65)
-	return arg0_65.fsm
+function var0_0.GetFSM(arg0_69)
+	return arg0_69.fsm
 end
 
-function var0_0.GetBgm(arg0_66)
-	local var0_66 = arg0_66:GetPersonalityTag()
+function var0_0.GetBgm(arg0_70)
+	local var0_70 = arg0_70:GetPersonalityTag()
 
-	return underscore.detect(arg0_66:getConfig("bgm"), function(arg0_67)
-		return arg0_67[1] == var0_66
+	return underscore.detect(arg0_70:getConfig("bgm"), function(arg0_71)
+		return arg0_71[1] == var0_70
 	end)[2]
 end
 
-function var0_0.GetPaintingName(arg0_68)
-	local var0_68 = arg0_68:GetPersonalityTag()
+function var0_0.GetPaintingName(arg0_72)
+	local var0_72 = arg0_72:GetPersonalityTag()
 
-	return underscore.detect(arg0_68.roundData:getConfig("main_painting"), function(arg0_69)
-		return arg0_69[1] == var0_68
+	return underscore.detect(arg0_72.roundData:getConfig("main_painting"), function(arg0_73)
+		return arg0_73[1] == var0_72
 	end)[2]
 end
 
-function var0_0.GetBGName(arg0_70)
-	return arg0_70.roundData:getConfig("main_background")
+function var0_0.GetBGName(arg0_74)
+	return arg0_74.roundData:getConfig("main_background")
 end
 
-function var0_0.GetMainDialogueInfo(arg0_71)
-	local var0_71 = arg0_71:GetPersonalityTag()
-	local var1_71 = underscore.detect(arg0_71.roundData:getConfig("main_word"), function(arg0_72)
-		return arg0_72[1] == var0_71
+function var0_0.GetMainDialogueInfo(arg0_75)
+	local var0_75 = arg0_75:GetPersonalityTag()
+	local var1_75 = underscore.detect(arg0_75.roundData:getConfig("main_word"), function(arg0_76)
+		return arg0_76[1] == var0_75
 	end)
-	local var2_71 = underscore.detect(arg0_71.roundData:getConfig("main_word_expression"), function(arg0_73)
-		return arg0_73[1] == var0_71
+	local var2_75 = underscore.detect(arg0_75.roundData:getConfig("main_word_expression"), function(arg0_77)
+		return arg0_77[1] == var0_75
 	end)
 
-	return var1_71[2], var2_71[2]
+	return var1_75[2], var2_75[2]
 end
 
-function var0_0.OnUpgradedPlan(arg0_74, arg1_74)
-	local var0_74 = pg.child2_plan[arg1_74].group_id
+function var0_0.OnUpgradedPlan(arg0_78, arg1_78)
+	local var0_78 = pg.child2_plan[arg1_78].group_id
 
-	arg0_74.group2Plan[var0_74] = arg1_74
+	arg0_78.group2Plan[var0_78] = arg1_78
 end
 
-function var0_0.GetPlanList(arg0_75)
-	local var0_75 = {}
-	local var1_75 = arg0_75.roundData:getConfig("plan_group")
+function var0_0.GetPlanList(arg0_79)
+	local var0_79 = {}
+	local var1_79 = arg0_79.roundData:getConfig("plan_group")
 
-	for iter0_75, iter1_75 in ipairs(var1_75) do
-		local var2_75 = pg.child2_plan.get_id_list_by_group_id[iter1_75]
+	for iter0_79, iter1_79 in ipairs(var1_79) do
+		local var2_79 = pg.child2_plan.get_id_list_by_group_id[iter1_79]
 
-		if #var2_75 == 1 then
-			table.insert(var0_75, NewEducatePlan.New(var2_75[1]))
-		elseif arg0_75.group2Plan[iter1_75] then
-			table.insert(var0_75, NewEducatePlan.New(arg0_75.group2Plan[iter1_75]))
+		if #var2_79 == 1 then
+			table.insert(var0_79, NewEducatePlan.New(var2_79[1]))
+		elseif arg0_79.group2Plan[iter1_79] then
+			table.insert(var0_79, NewEducatePlan.New(arg0_79.group2Plan[iter1_79]))
 		else
-			table.sort(var2_75, function(arg0_76, arg1_76)
-				return pg.child2_plan[arg0_76].level < pg.child2_plan[arg1_76].level
+			table.sort(var2_79, function(arg0_80, arg1_80)
+				return pg.child2_plan[arg0_80].level < pg.child2_plan[arg1_80].level
 			end)
-			table.insert(var0_75, NewEducatePlan.New(var2_75[1]))
+			table.insert(var0_79, NewEducatePlan.New(var2_79[1]))
 		end
 	end
 
-	for iter2_75, iter3_75 in ipairs(arg0_75.benefitData:GetExtraPlan(arg0_75)) do
-		table.insert(var0_75, NewEducatePlan.New(iter3_75, true))
+	for iter2_79, iter3_79 in ipairs(arg0_79.benefitData:GetExtraPlan(arg0_79)) do
+		table.insert(var0_79, NewEducatePlan.New(iter3_79, true))
 	end
 
-	return var0_75
+	return var0_79
 end
 
-function var0_0.OnNextRound(arg0_77)
-	arg0_77.siteShips = {}
+function var0_0.OnNextRound(arg0_81)
+	arg0_81.siteShips = {}
 
-	arg0_77.fsm:Reset()
-	arg0_77.roundData:OnNextRound()
+	arg0_81.fsm:Reset()
+	arg0_81.roundData:OnNextRound()
 
-	arg0_77.resources[arg0_77:GetResIdByType(NewEducateChar.RES_TYPE.ACTION)] = arg0_77.roundData:getConfig("map_mobility")
+	arg0_81.resources[arg0_81:GetResIdByType(NewEducateChar.RES_TYPE.ACTION)] = arg0_81.roundData:getConfig("map_mobility")
 
-	arg0_77.benefitData:OnNextRound(arg0_77.roundData.round)
+	if arg0_81.resources[arg0_81:GetResIdByType(NewEducateChar.RES_TYPE.REFRESH_SHOP)] then
+		arg0_81.resources[arg0_81:GetResIdByType(NewEducateChar.RES_TYPE.REFRESH_SHOP)] = arg0_81.roundData:getConfig("refresh_refill")
+	end
+
+	arg0_81.benefitData:OnNextRound(arg0_81.roundData.round)
+	arg0_81.permanentData:OnNextRound(arg0_81.roundData.round)
 end
 
-function var0_0.GetBenefitData(arg0_78)
-	return arg0_78.benefitData
+function var0_0.GetBenefitData(arg0_82)
+	return arg0_82.benefitData
 end
 
-function var0_0.AddBuff(arg0_79, arg1_79, arg2_79)
-	if arg2_79 > 0 then
-		if arg0_79.fsm:IsImmediateBenefit() then
-			arg0_79.benefitData:AddActiveBuff(arg1_79, arg0_79.roundData.round)
-		else
-			arg0_79.benefitData:AddPendingBuff(arg1_79)
-		end
+function var0_0.AddBuff(arg0_83, arg1_83, arg2_83)
+	arg0_83.permanentData:CheckBuffRecord(arg1_83)
+
+	if arg2_83 > 0 then
+		local var0_83 = not arg0_83.fsm:IsImmediateBenefit()
+		local var1_83 = {
+			id = arg1_83,
+			round = arg0_83.roundData.round,
+			is_pending = var0_83
+		}
+
+		arg0_83.benefitData:AddBuff(var1_83)
 	else
-		arg0_79.benefitData:RemoveBuff(arg1_79)
+		arg0_83.benefitData:RemoveBuff(arg1_83)
 	end
 end
 
-function var0_0.GetTalentList(arg0_80)
-	return arg0_80.benefitData:GetListByType(NewEducateBuff.TYPE.TALENT)
+function var0_0.GetTalentList(arg0_84)
+	return arg0_84.benefitData:GetListByType(NewEducateBuff.TYPE.TALENT)
 end
 
-function var0_0.GetTalent(arg0_81, arg1_81)
-	return arg0_81.benefitData:GetBuff(arg1_81)
+function var0_0.GetTalent(arg0_85, arg1_85)
+	return arg0_85.benefitData:GetBuff(arg1_85)
 end
 
-function var0_0.GetStatusList(arg0_82)
-	return arg0_82.benefitData:GetListByType(NewEducateBuff.TYPE.STATUS)
+function var0_0.GetStatusList(arg0_86)
+	return arg0_86.benefitData:GetListByType(NewEducateBuff.TYPE.STATUS)
 end
 
-function var0_0.GetStatus(arg0_83, arg1_83)
-	return arg0_83.benefitData:GetBuff(arg1_83)
+function var0_0.GetStatus(arg0_87, arg1_87)
+	return arg0_87.benefitData:GetBuff(arg1_87)
 end
 
-function var0_0.GetGoodsDiscountInfos(arg0_84)
-	return arg0_84.benefitData:GetGoodsDiscountInfos(arg0_84)
+function var0_0.GetTarotId(arg0_88)
+	local var0_88 = arg0_88.benefitData:GetListByType(NewEducateBuff.TYPE.TAROT)[1]
+
+	return var0_88 and var0_88.id
 end
 
-function var0_0.GetPlanDiscountInfos(arg0_85)
-	return arg0_85.benefitData:GetPlanDiscountInfos(arg0_85)
+function var0_0.GetGoodsDiscountInfos(arg0_89)
+	return arg0_89.benefitData:GetGoodsDiscountInfos(arg0_89)
 end
 
-function var0_0.IsUnlock(arg0_86, arg1_86)
-	local var0_86 = underscore.detect(arg0_86:getConfig("unlock"), function(arg0_87)
-		return arg0_87[1] == arg1_86
+function var0_0.GetPlanDiscountInfos(arg0_90)
+	return arg0_90.benefitData:GetPlanDiscountInfos(arg0_90)
+end
+
+function var0_0.IsUnlock(arg0_91, arg1_91)
+	local var0_91 = underscore.detect(arg0_91:getConfig("unlock"), function(arg0_92)
+		return arg0_92[1] == arg1_91
 	end)
 
-	return (var0_86 and var0_86[2] or 1) <= arg0_86.roundData.round
+	return (var0_91 and var0_91[2] or 1) <= arg0_91.roundData.round
 end
 
-function var0_0.GetOwnCnt(arg0_88, arg1_88)
-	return switch(arg1_88.type, {
+function var0_0.GetOwnCnt(arg0_93, arg1_93)
+	return switch(arg1_93.type, {
 		[NewEducateConst.DROP_TYPE.ATTR] = function()
-			return arg0_88:GetAttr(arg1_88.id)
+			return arg0_93:GetAttr(arg1_93.id)
 		end,
 		[NewEducateConst.DROP_TYPE.RES] = function()
-			return arg0_88:GetRes(arg1_88.id)
+			return arg0_93:GetRes(arg1_93.id)
 		end,
 		[NewEducateConst.DROP_TYPE.BUFF] = function()
-			return arg0_88.benefitData:ExistBuff(arg1_88.id) and 1 or 0
+			return arg0_93.benefitData:ExistBuff(arg1_93.id) and 1 or 0
 		end
-	})
-end
-
-function var0_0.IsMatch(arg0_92, arg1_92)
-	return compareNumber(arg0_92:GetOwnCnt(arg1_92), arg1_92.operator, arg1_92.number)
-end
-
-function var0_0.IsMatchs(arg0_93, arg1_93)
-	return underscore.all(arg1_93, function(arg0_94)
-		return arg0_93:IsMatch(arg0_94)
+	}, function()
+		return 0
 	end)
 end
 
-function var0_0.IsMatchCondition(arg0_95, arg1_95)
-	local var0_95 = pg.child2_condition[arg1_95]
+function var0_0.IsMatch(arg0_98, arg1_98)
+	return compareNumber(arg0_98:GetOwnCnt(arg1_98), arg1_98.operator, arg1_98.number)
+end
 
-	return (switch(var0_95.type, {
+function var0_0.IsMatchs(arg0_99, arg1_99)
+	return underscore.all(arg1_99, function(arg0_100)
+		return arg0_99:IsMatch(arg0_100)
+	end)
+end
+
+function var0_0.IsMatchCondition(arg0_101, arg1_101)
+	local var0_101 = pg.child2_condition[arg1_101]
+
+	return (switch(var0_101.type, {
 		[NewEducateConst.CONDITION_TYPE.DROP] = function()
-			local var0_96 = {
-				type = var0_95.param[1],
-				id = var0_95.param[2],
-				number = var0_95.param[4]
+			local var0_102 = {
+				type = var0_101.param[1],
+				id = var0_101.param[2],
+				number = var0_101.param[4]
 			}
 
-			return compareNumber(arg0_95:GetOwnCnt(var0_96), var0_95.param[3], var0_95.param[4])
+			return compareNumber(arg0_101:GetOwnCnt(var0_102), var0_101.param[3], var0_101.param[4])
 		end,
 		[NewEducateConst.CONDITION_TYPE.ATTR_SUM] = function()
-			return compareNumber(arg0_95:GetAttrSum(), var0_95.param[1], var0_95.param[2])
+			return compareNumber(arg0_101:GetAttrSum(), var0_101.param[1], var0_101.param[2])
 		end,
 		[NewEducateConst.CONDITION_TYPE.EVENT_SITE_CNT] = function()
-			return compareNumber(arg0_95:GetEventCnt(var0_95.param[1]), var0_95.param[2], var0_95.param[3])
+			return compareNumber(arg0_101:GetEventCnt(var0_101.param[1]), var0_101.param[2], var0_101.param[3])
 		end,
 		[NewEducateConst.CONDITION_TYPE.ROUND] = function()
-			return compareNumber(arg0_95.roundData.round, var0_95.param[1], var0_95.param[2])
+			return compareNumber(arg0_101.roundData.round, var0_101.param[1], var0_101.param[2])
 		end,
 		[NewEducateConst.CONDITION_TYPE.NORMAL_SITE_CNT] = function()
-			local var0_100 = underscore.reduce(var0_95.param[1], 0, function(arg0_101, arg1_101)
-				return arg0_101 + arg0_95:GetNormalCnt(arg1_101)
+			local var0_106 = underscore.reduce(var0_101.param[1], 0, function(arg0_107, arg1_107)
+				return arg0_107 + arg0_101:GetNormalCnt(arg1_107)
 			end)
 
-			return compareNumber(var0_100, var0_95.param[2], var0_95.param[3])
+			return compareNumber(var0_106, var0_101.param[2], var0_101.param[3])
 		end
 	}, function()
-		assert(false, "非法condition type" .. var0_95.type)
+		assert(false, "非法condition type" .. var0_101.type)
 	end))
 end
 
-function var0_0.LogicalOperator(arg0_103, arg1_103)
-	if type(arg1_103) == "number" then
-		return arg0_103:IsMatchCondition(arg1_103)
-	end
-
-	local var0_103 = arg1_103.operator
-
-	if var0_103 == "||" then
-		if arg1_103.conditions.operator then
-			return underscore.any(arg1_103.conditions, function(arg0_104)
-				return arg0_103:LogicalOperator(arg0_104)
-			end)
-		else
-			return underscore.any(arg1_103.conditions, function(arg0_105)
-				return arg0_103:IsMatchCondition(arg0_105)
-			end)
-		end
-	elseif var0_103 == "&&" then
-		if arg1_103.conditions.operator then
-			return underscore.all(arg1_103.conditions, function(arg0_106)
-				return arg0_103:LogicalOperator(arg0_106)
-			end)
-		else
-			return underscore.all(arg1_103.conditions, function(arg0_107)
-				return arg0_103:IsMatchCondition(arg0_107)
-			end)
-		end
-	end
-end
-
-function var0_0.IsFormatCondition(arg0_108, arg1_108)
-	return (arg1_108[1] == "||" or arg1_108[1] == "&&") and type(arg1_108[2]) == "table" and type(arg1_108[2][1]) == "number"
-end
-
-function var0_0.GetFormatCondition(arg0_109, arg1_109)
+function var0_0.LogicalOperator(arg0_109, arg1_109)
 	if type(arg1_109) == "number" then
-		return arg1_109
+		return arg0_109:IsMatchCondition(arg1_109)
 	end
 
-	if arg0_109:IsFormatCondition(arg1_109) then
+	local var0_109 = arg1_109.operator
+
+	if var0_109 == "||" then
+		if arg1_109.conditions.operator then
+			return underscore.any(arg1_109.conditions, function(arg0_110)
+				return arg0_109:LogicalOperator(arg0_110)
+			end)
+		else
+			return underscore.any(arg1_109.conditions, function(arg0_111)
+				return arg0_109:IsMatchCondition(arg0_111)
+			end)
+		end
+	elseif var0_109 == "&&" then
+		if arg1_109.conditions.operator then
+			return underscore.all(arg1_109.conditions, function(arg0_112)
+				return arg0_109:LogicalOperator(arg0_112)
+			end)
+		else
+			return underscore.all(arg1_109.conditions, function(arg0_113)
+				return arg0_109:IsMatchCondition(arg0_113)
+			end)
+		end
+	end
+end
+
+function var0_0.IsFormatCondition(arg0_114, arg1_114)
+	return (arg1_114[1] == "||" or arg1_114[1] == "&&") and type(arg1_114[2]) == "table" and type(arg1_114[2][1]) == "number"
+end
+
+function var0_0.GetFormatCondition(arg0_115, arg1_115)
+	if type(arg1_115) == "number" then
+		return arg1_115
+	end
+
+	if arg0_115:IsFormatCondition(arg1_115) then
 		return {
-			operator = arg1_109[1],
-			conditions = arg1_109[2]
+			operator = arg1_115[1],
+			conditions = arg1_115[2]
 		}
-	elseif arg0_109:IsFormatCondition(arg1_109[2]) then
+	elseif arg0_115:IsFormatCondition(arg1_115[2]) then
 		return {
-			operator = arg1_109[1],
-			conditions = underscore.map(arg1_109[2], function(arg0_110)
-				arg0_109:GetFormatCondition(arg0_110)
+			operator = arg1_115[1],
+			conditions = underscore.map(arg1_115[2], function(arg0_116)
+				arg0_115:GetFormatCondition(arg0_116)
 			end)
 		}
 	end
 end
 
-function var0_0.IsMatchComplex(arg0_111, arg1_111)
-	if #arg1_111 == 0 then
+function var0_0.IsMatchComplex(arg0_117, arg1_117)
+	if #arg1_117 == 0 then
 		return true
 	end
 
-	return arg0_111:LogicalOperator(arg0_111:GetFormatCondition(arg1_111))
+	return arg0_117:LogicalOperator(arg0_117:GetFormatCondition(arg1_117))
 end
 
-function var0_0.GetConditionIdsFromComplex(arg0_112, arg1_112)
-	if type(arg1_112) == "number" then
+function var0_0.GetConditionIdsFromComplex(arg0_118, arg1_118)
+	if type(arg1_118) == "number" then
 		return {
-			arg1_112
+			arg1_118
 		}
 	end
 
-	if type(arg1_112) == "table" and #arg1_112 == 0 then
-		return arg1_112
+	if type(arg1_118) == "table" and #arg1_118 == 0 then
+		return arg1_118
 	end
 
-	if arg0_112:IsFormatCondition(arg1_112) then
-		return arg1_112[2]
-	elseif arg0_112:IsFormatCondition(arg1_112[2]) then
-		return underscore.map(arg1_112[2], function(arg0_113)
-			arg0_112:GetConditionIdsFromComplex(arg0_113)
+	if arg0_118:IsFormatCondition(arg1_118) then
+		return arg1_118[2]
+	elseif arg0_118:IsFormatCondition(arg1_118[2]) then
+		return underscore.map(arg1_118[2], function(arg0_119)
+			arg0_118:GetConditionIdsFromComplex(arg0_119)
 		end)
 	end
 end

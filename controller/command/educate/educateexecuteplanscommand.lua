@@ -19,7 +19,8 @@ function var0_0.execute(arg0_1, arg1_1)
 					gridData = var0_2,
 					plan_results = arg0_2.plan_results,
 					events = arg0_2.events,
-					isSkip = var0_1.isSkip
+					isSkip = var0_1.isSkip,
+					isSkipEvent = var0_1.isSkipEvent
 				})
 			end
 

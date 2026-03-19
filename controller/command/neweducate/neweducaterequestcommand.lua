@@ -12,7 +12,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			getProxy(NewEducateProxy):UpdateChar(arg0_2.tb, arg0_2.permanent)
 			existCall(var1_1)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("NewEducate_Request", arg0_2.result))
+			pg.TipsMgr.GetInstance():ShowTips("NewEducate_Request: " .. arg0_2.result)
 		end
 	end)
 end

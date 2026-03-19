@@ -9,7 +9,7 @@ return {
 			asideType = 1,
 			sequence = {
 				{
-					"Forest Breeze and the Compass of the Heart\n\n<size=45>Voice of the Lost</size>",
+					"林间风与心之罗盘\n\n<size=45>四 迷途之声</size>",
 					1
 				}
 			}
@@ -19,7 +19,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_520",
 			hidePaintObj = true,
-			say = "Forest - Depths",
+			say = "后山·森林深处",
 			bgm = "story-richang-9",
 			typewriter = {
 				speed = 0.05,
@@ -40,7 +40,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_520",
 			hidePaintObj = true,
-			say = "After packing up the tea set, we continued deeper into the forest together. The trees became taller and denser as we went, and the trail was markedly less manicured.",
+			say = "收拾好茶具，我们继续向森林深处前行。树木越发高大茂密，脚下的路也渐渐模糊，变成了动物踏出的隐约小径。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -53,7 +53,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "Commander, the path ahead might be hard to navigate... but don't worry. I remember it perfectly.",
+			say = "指挥官，接下来的路可能会有点难认……不过不用担心，我记得很清楚。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -67,7 +67,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "But each time I come here, I make new discoveries.",
+			say = "虽然每次来这里，都能发现一些新的细节——",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -80,7 +80,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "How the light filters in differently, or some new sounds... Or perhaps little flowers I didn't notice the last time.",
+			say = "不同的光线，不同的声音……或者……以前没注意到的小花。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -93,7 +93,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "Either way, I'm at ease as long as I can follow you.",
+			say = "看来我只要跟紧你就好了。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -107,7 +107,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "Of course... See, that forked oak tree over there is our first landmark.",
+			say = "当然……您看，那棵分叉的橡树就是第一个标记。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -120,7 +120,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "If we go left, we'll see a rock that looks like a sleeping bear.",
+			say = "从它左边过去，会看到一块长得像在打盹的熊的石头。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -131,7 +131,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_520",
 			hidePaintObj = true,
-			say = "We cross the narrow path beside the oak tree, but no matter where I look, I see no such thing.",
+			say = "我们穿过橡树旁的窄径。但左右张望，却只看到茂密的蕨丛和盘结的树根。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -145,7 +145,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "Oh... That's odd. We may have wandered off the path at some point.",
+			say = "咦……奇怪？好像出现了一点偏差……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -158,7 +158,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "Didn't we just pass these purple flowers before?",
+			say = "阿尔比恩，我们刚才是不是有路过这丛紫色的野花？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -172,7 +172,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "Now that you mention it, they do look familiar.",
+			say = "这么说的话……这丛花很眼熟。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -183,7 +183,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_520",
 			hidePaintObj = true,
-			say = "Albion stops and gazes at the wildflowers with confusion in her eyes.",
+			say = "阿尔比恩停下脚步，仔细看了看那丛在幽暗处格外显眼的野花，眼睛里浮现出些许困惑。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -197,7 +197,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "But the sleeping bear rock should be around here...",
+			say = "可是“睡熊石头”明明就应该在这附近……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -208,21 +208,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_520",
 			hidePaintObj = true,
-			say = "She looks up at the sky hidden by leaves and then at the trees around us, her brow furrowed slightly.",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			expression = 1,
-			side = 2,
-			bgName = "star_level_bg_520",
-			hidePaintObj = true,
-			dir = 1,
-			nameColor = "#A9F548FF",
-			actor = 206070,
-			say = "How strange... It seems different from the last few times I came here.",
+			say = "她抬头看看被树冠切割得支离破碎的天空，又看看四周几乎一模一样的树木，眉头轻轻蹙了起来。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -236,7 +222,21 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "Even the wind sounds different...",
+			say = "奇怪……感觉和之前来的几次，有点不一样。",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			expression = 1,
+			side = 2,
+			bgName = "star_level_bg_520",
+			hidePaintObj = true,
+			dir = 1,
+			nameColor = "#A9F548FF",
+			actor = 206070,
+			say = "就连风的声音……也好像变了调子。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -249,7 +249,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "Do you think we missed a landmark?",
+			say = "会不会是错过了什么标记？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -263,7 +263,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "No... Wait a moment, please.",
+			say = "不……等等……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -274,7 +274,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_520",
 			hidePaintObj = true,
-			say = "She scans our surroundings once more and compares them to her memories.",
+			say = "阿尔比恩环顾四周，似乎在寻找着不同的迹象。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -288,7 +288,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "This tree... The bark has gotten darker. The moss over there wasn't so long last time, either.",
+			say = "这棵树……树皮的颜色比我印象中深。那边的苔藓长得也太旺盛了，之前明明没有这么多……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -301,7 +301,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "Oh, I get it...",
+			say = "我知道了……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -314,21 +314,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "If I compare the sound of the wind and the angle of the light...",
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			}
-		},
-		{
-			expression = 5,
-			side = 2,
-			bgName = "star_level_bg_520",
-			hidePaintObj = true,
-			dir = 1,
-			nameColor = "#A9F548FF",
-			actor = 206070,
-			say = "I have bad news, Commander. The soothing winds seem to have moved.",
+			say = "结合风的声音……还有光线的角度……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -342,7 +328,21 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "Worse, I can't feel which direction they've gone...",
+			say = "糟了，指挥官……是“治愈之风”的气息……好像偏移了。",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			expression = 5,
+			side = 2,
+			bgName = "star_level_bg_520",
+			hidePaintObj = true,
+			dir = 1,
+			nameColor = "#A9F548FF",
+			actor = 206070,
+			say = "我……我有点感觉不到它的方向了……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -355,7 +355,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "Don't worry. We can search for it any time, even if we don't find it today.",
+			say = "没关系的，时间还早，我们可以慢慢找。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -369,7 +369,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "But if I miss this chance, I don't know when you'll be able to come again...",
+			say = "可是……如果错过今天最好的时机，下次不知道什么时候才能带指挥官来了……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -383,7 +383,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "I'll keep searching. It must be around here.",
+			say = "得再找找看，应该就在这附近才对……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -394,7 +394,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_520",
 			hidePaintObj = true,
-			say = "Pulling me by the arm, Albion runs through the forest, weaving past countless similar trees.",
+			say = "她牵着我几乎小跑起来，穿过一片又一片相似的树影。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -407,7 +407,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "Hey, there's no need to rush.",
+			say = "阿尔比恩，别着急——",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -421,7 +421,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "This is such an important date. I can't bear the thought that I would fail to guide you...",
+			say = "今天明明是和指挥官重要的约会……我却连路都没带好……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -435,7 +435,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "No... I have to find it...",
+			say = "不行，一定得找到才行……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -446,7 +446,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_520",
 			hidePaintObj = true,
-			say = "Her breathing intensifies, and her palm starts to get damp with sweat.",
+			say = "我能感觉到她的手心微微出汗，呼吸也急促了几分。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

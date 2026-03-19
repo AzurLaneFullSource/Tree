@@ -44,17 +44,24 @@ function var0_0.init(arg0_2)
 	arg0_2.moneyTF = arg0_2.rightTF:Find("money")
 	arg0_2.moodTF = arg0_2.rightTF:Find("mood")
 
-	setText(arg0_2.rightTF:Find("attr_title/Text"), i18n("child2_attr_title"))
+	setText(arg0_2.rightTF:Find("attrs/attr_title/Text"), i18n("child2_attr_title"))
 
-	arg0_2.attrsTF = arg0_2.rightTF:Find("attrs")
+	arg0_2.attrsTF = arg0_2.rightTF:Find("attrs/attrs")
 
-	setText(arg0_2.rightTF:Find("talent_title/Text"), i18n("child2_talent_title"))
+	setText(arg0_2.rightTF:Find("talent/talent_title/Text"), i18n("child2_talent_title"))
 
-	arg0_2.talentsTF = arg0_2.rightTF:Find("talents")
-
-	setText(arg0_2.rightTF:Find("status_title/Text"), i18n("child2_status_title"))
-
+	arg0_2.talentsTF = arg0_2.rightTF:Find("talent/talents")
 	arg0_2.statusTF = arg0_2.rightTF:Find("status")
+
+	setText(arg0_2.statusTF:Find("status_title/Text"), i18n("child2_status_title"))
+
+	arg0_2.tarotTF = arg0_2.rightTF:Find("tarot")
+
+	setText(arg0_2.tarotTF:Find("title/Text"), i18n("child2_tarot_title"))
+
+	arg0_2.tarotIconTF = arg0_2.tarotTF:Find("bg/icon")
+	arg0_2.tarotNameTF = arg0_2.tarotTF:Find("bg/name")
+	arg0_2.tarotEntryTF = arg0_2.tarotTF:Find("bg/entry")
 
 	arg0_2:InitRightPanel()
 
@@ -64,6 +71,7 @@ function var0_0.init(arg0_2)
 
 	arg0_2.skipToggleCom = arg0_2.skipToggle:GetComponent(typeof(Toggle))
 	arg0_2.nextBtn = arg0_2.rightTF:Find("next")
+	arg0_2.nextTempBtn = arg0_2.rightTF:Find("next_temp")
 end
 
 function var0_0.GetSkipLocalKey(arg0_3)
@@ -92,43 +100,28 @@ function var0_0.didEnter(arg0_5)
 	onButton(arg0_5, arg0_5.mainTF:Find("top/return_btn"), function()
 		arg0_5:onBackPressed()
 	end, SFX_PANEL)
-	onToggle(arg0_5, arg0_5.skipToggle, function(arg0_7)
-		PlayerPrefs.SetInt(arg0_5:GetSkipLocalKey(), arg0_7 and 1 or 0)
+	onButton(arg0_5, arg0_5.tarotTF:Find("bg"), function()
+		arg0_5:emit(var0_0.GO_SUBLAYER, Context.New({
+			mediator = NewEducateTarotEntryMediator,
+			viewComponent = NewEducateTarotEntryLayer
+		}))
+	end, SFX_PANEL)
+	onToggle(arg0_5, arg0_5.skipToggle, function(arg0_8)
+		PlayerPrefs.SetInt(arg0_5:GetSkipLocalKey(), arg0_8 and 1 or 0)
 	end, SFX_PANEL)
 	onButton(arg0_5, arg0_5.nextBtn, function()
-		local var0_8 = {}
-		local var1_8 = ""
-		local var2_8 = false
-
-		if arg0_5.selectedCnt < arg0_5.unlockPlanNum then
-			var1_8 = i18n("child2_schedule_sure_tip")
-			var2_8 = true
-		end
-
-		if arg0_5.contextData.char:GetPoint() > 0 then
-			var1_8 = var2_8 and i18n("child2_schedule_sure_tip3") or i18n("child2_schedule_sure_tip2")
-		end
-
-		table.insert(var0_8, function(arg0_9)
-			if var1_8 ~= "" then
-				arg0_5:emit(var0_0.ON_BOX, {
-					content = var1_8,
-					onYes = arg0_9
-				})
-			else
-				arg0_9()
-			end
-		end)
-		seriesAsync(var0_8, function()
-			arg0_5:emit(NewEducateScheduleMediator.ON_SELECTED_PLANS, arg0_5.skipToggleCom.isOn, arg0_5.cells)
-		end)
+		arg0_5:OnClickNextBtn()
 	end, SFX_PANEL)
-	onScroll(arg0_5, arg0_5.statusTF, function(arg0_11)
+	onButton(arg0_5, arg0_5.nextTempBtn, function()
+		arg0_5:OnClickNextBtn()
+	end, SFX_PANEL)
+	onScroll(arg0_5, arg0_5.statusTF:Find("status"), function(arg0_11)
 		eachChild(arg0_5.statusUIList.container, function(arg0_12)
 			triggerToggle(arg0_12, false)
 		end)
 	end)
 	arg0_5:SetData()
+	setActive(arg0_5.nextTempBtn, arg0_5.contextData.char:GetRoundData():NextIsTemp())
 
 	local var0_5 = PlayerPrefs.GetInt(arg0_5:GetSkipLocalKey())
 
@@ -136,7 +129,16 @@ function var0_0.didEnter(arg0_5)
 	arg0_5:UpdateTitle()
 	arg0_5:FlushPlanView()
 	arg0_5:UpdateCells()
-	arg0_5.talentUIList:align(var0_0.TALENT_CNT)
+
+	arg0_5.isTarotChar = arg0_5.contextData.char:GetPermanentData():IsTarotType()
+
+	setActive(arg0_5.tarotTF, arg0_5.isTarotChar)
+	setActive(arg0_5.statusTF, not arg0_5.isTarotChar)
+	arg0_5:FlushTarot()
+
+	arg0_5.talentRoundIds = arg0_5.contextData.char:GetRoundData():GetTalentRoundIds()
+
+	arg0_5.talentUIList:align(#arg0_5.talentRoundIds)
 	arg0_5.statusUIList:align(#arg0_5.status)
 	arg0_5:UpdateReuslt()
 	arg0_5:CheckUpgradePlans()
@@ -191,6 +193,24 @@ function var0_0.InitRightPanel(arg0_19)
 
 			LoadImageSpriteAsync("neweducateicon/" .. var1_20.icon, arg2_20:Find("icon_bg/icon"))
 			setScrollText(arg2_20:Find("name_mask/name"), var1_20.name)
+			setToggleEnabled(arg2_20, arg0_19.isTarotChar)
+
+			if arg0_19.isTarotChar then
+				setText(arg2_20:Find("info/content/name"), var1_20.name)
+
+				local var2_20 = arg0_19.contextData.char:GetAttr(var0_20)
+				local var3_20, var4_20 = NewEducateInfoPanel.GetArrtInfo(var1_20.rank, var2_20)
+
+				setText(arg2_20:Find("info/content/value"), var4_20)
+
+				local var5_20, var6_20 = arg0_19.contextData.char:GetBenefitData():GetDisplayPctByDrop({
+					type = NewEducateConst.DROP_TYPE.ATTR,
+					id = var0_20
+				})
+				local var7_20 = i18n("child2_benefit_summary") .. var5_20 .. "%" .. "\n" .. i18n("child2_benefit_summary2") .. var6_20 .. "%"
+
+				setText(arg2_20:Find("info/content/desc"), var7_20)
+			end
 		elseif arg0_20 == UIItemList.EventUpdate then
 			arg0_19:UpdateAttr(arg1_20, arg2_20)
 		end
@@ -204,7 +224,7 @@ function var0_0.InitRightPanel(arg0_19)
 		end
 	end)
 
-	local var0_19 = arg0_19.statusTF:Find("content/content")
+	local var0_19 = arg0_19.statusTF:Find("status/content/content")
 
 	arg0_19.statusUIList = UIItemList.New(var0_19, var0_19:Find("tpl"))
 
@@ -216,345 +236,410 @@ function var0_0.InitRightPanel(arg0_19)
 end
 
 function var0_0.UpdateTitle(arg0_23)
-	local var0_23, var1_23, var2_23 = arg0_23.contextData.char:GetRoundData():GetProgressInfo()
+	if arg0_23.contextData.char:GetRoundData():IsEndless() then
+		arg0_23:UpdateEndlessTitle()
+	else
+		arg0_23:UpdateNormalTitle()
+	end
 
-	setText(arg0_23.titleRoundTF, var0_23)
-	setText(arg0_23.targetTF:Find("round"), i18n("child2_assess_round", var1_23))
+	local var0_23 = arg0_23.contextData.char:GetRoundData():getConfig("main_background")
 
-	local var3_23 = arg0_23.contextData.char:GetAttrSum()
-
-	setText(arg0_23.targetTF:Find("target"), i18n("child2_schedule_target", var3_23, var2_23))
-	setText(arg0_23.targetTF:Find("value"), (var3_23 < var2_23 and setColorStr(var3_23, "#ff6767") or var3_23) .. "/" .. var2_23)
-
-	local var4_23 = arg0_23.contextData.char:GetRoundData():getConfig("main_background")
-
-	setImageSprite(arg0_23.bgTF, LoadSprite("bg/" .. var4_23), false)
+	setImageSprite(arg0_23.bgTF, LoadSprite("bg/" .. var0_23), false)
 end
 
-function var0_0.UpdateCells(arg0_24)
-	for iter0_24, iter1_24 in ipairs(arg0_24.cells) do
-		arg0_24:UpdateCell(iter0_24)
+function var0_0.UpdateNormalTitle(arg0_24)
+	local var0_24, var1_24, var2_24 = arg0_24.contextData.char:GetRoundData():GetProgressInfo()
+
+	setText(arg0_24.titleRoundTF, var0_24)
+	setText(arg0_24.targetTF:Find("round"), i18n("child2_assess_round", var1_24))
+
+	local var3_24 = arg0_24.contextData.char:GetAttrSum()
+
+	setText(arg0_24.targetTF:Find("target"), i18n("child2_schedule_target", var3_24, var2_24))
+	setText(arg0_24.targetTF:Find("value"), (var3_24 < var2_24 and setColorStr(var3_24, "#ff6767") or var3_24) .. "/" .. var2_24)
+end
+
+function var0_0.UpdateEndlessTitle(arg0_25)
+	local var0_25, var1_25, var2_25 = arg0_25.contextData.char:GetRoundData():GetEndlessProgressInfos()
+
+	setText(arg0_25.titleRoundTF, var0_25)
+	setText(arg0_25.targetTF:Find("round"), i18n("child2_assess_round", 0))
+
+	local var3_25 = arg0_25.contextData.char:GetAttrSum()
+
+	setText(arg0_25.targetTF:Find("target"), i18n("child2_schedule_target", var3_25, var2_25))
+	setText(arg0_25.targetTF:Find("value"), (var3_25 < var2_25 and setColorStr(var3_25, "#ff6767") or var3_25) .. "/" .. var2_25)
+end
+
+function var0_0.UpdateCells(arg0_26)
+	for iter0_26, iter1_26 in ipairs(arg0_26.cells) do
+		arg0_26:UpdateCell(iter0_26)
 	end
 end
 
-function var0_0.UpdateCellReduce(arg0_25)
-	for iter0_25, iter1_25 in ipairs(arg0_25.cells) do
-		local var0_25 = arg0_25.cells[iter0_25].tf
+function var0_0.UpdateCellReduce(arg0_27)
+	for iter0_27, iter1_27 in ipairs(arg0_27.cells) do
+		local var0_27 = arg0_27.cells[iter0_27].tf
 
-		setActive(var0_25:Find("unlock/reduce"), arg0_25.cells[iter0_25].plan and iter0_25 + 1 == arg0_25.selectedCellIdx)
+		setActive(var0_27:Find("unlock/reduce"), arg0_27.cells[iter0_27].plan and iter0_27 + 1 == arg0_27.selectedCellIdx)
 	end
 end
 
-function var0_0.UpdateCell(arg0_26, arg1_26)
-	local var0_26 = arg0_26.cells[arg1_26].tf
-	local var1_26 = arg0_26.cells[arg1_26].plan
+function var0_0.UpdateCell(arg0_28, arg1_28)
+	local var0_28 = arg0_28.cells[arg1_28].tf
+	local var1_28 = arg0_28.cells[arg1_28].plan
 
-	var0_26.name = arg1_26
+	var0_28.name = arg1_28
 
-	local var2_26 = arg1_26 <= arg0_26.unlockPlanNum
+	local var2_28 = arg1_28 <= arg0_28.unlockPlanNum
 
-	setActive(var0_26:Find("unlock"), var2_26)
-	setActive(var0_26:Find("lock"), not var2_26)
+	setActive(var0_28:Find("unlock"), var2_28)
+	setActive(var0_28:Find("lock"), not var2_28)
 
-	if var2_26 then
-		setActive(var0_26:Find("unlock/arrows"), false)
-		setActive(var0_26:Find("unlock/icon"), var1_26)
-		setActive(var0_26:Find("unlock/reduce"), var1_26 and arg1_26 + 1 == arg0_26.selectedCellIdx)
+	if var2_28 then
+		setActive(var0_28:Find("unlock/arrows"), false)
+		setActive(var0_28:Find("unlock/icon"), var1_28)
+		setActive(var0_28:Find("unlock/reduce"), var1_28 and arg1_28 + 1 == arg0_28.selectedCellIdx)
 
-		if var1_26 then
-			LoadImageSpriteAsync("neweducateicon/" .. var1_26:getConfig("icon_square"), var0_26:Find("unlock/icon"))
+		if var1_28 then
+			LoadImageSpriteAsync("neweducateicon/" .. var1_28:getConfig("icon_square"), var0_28:Find("unlock/icon"))
 		end
 	end
 
-	onButton(arg0_26, var0_26, function()
-		if var1_26 and arg1_26 + 1 == arg0_26.selectedCellIdx then
-			arg0_26.cells[arg1_26].plan = nil
-			arg0_26.selectedCellIdx = math.max(arg0_26.selectedCellIdx - 1, 1)
+	onButton(arg0_28, var0_28, function()
+		if var1_28 and arg1_28 + 1 == arg0_28.selectedCellIdx then
+			arg0_28.cells[arg1_28].plan = nil
+			arg0_28.selectedCellIdx = math.max(arg0_28.selectedCellIdx - 1, 1)
 
-			arg0_26:UpdateCell(arg1_26)
-			arg0_26:UpdateCellReduce()
-			arg0_26:UpdateReuslt()
+			arg0_28:UpdateCell(arg1_28)
+			arg0_28:UpdateCellReduce()
+			arg0_28:UpdateReuslt()
 		end
 	end, SFX_PANEL)
 end
 
-function var0_0.UpdatePlan(arg0_28, arg1_28, arg2_28)
-	local var0_28 = arg0_28.showList[arg1_28 + 1]
-	local var1_28 = var0_28:GetNextId()
+function var0_0.UpdatePlan(arg0_30, arg1_30, arg2_30)
+	local var0_30 = arg0_30.showList[arg1_30 + 1]
+	local var1_30 = var0_30:GetNextId()
 
-	setText(arg2_28:Find("name"), var0_28:getConfig("name"))
-	onButton(arg0_28, arg2_28, function()
-		arg0_28:OnClickPlan(var0_28)
+	setText(arg2_30:Find("name"), var0_30:getConfig("name"))
+	onButton(arg0_30, arg2_30, function()
+		arg0_30:OnClickPlan(var0_30)
 	end, SFX_PANEL)
-	LoadImageSpriteAsync("neweducateicon/" .. var0_28:getConfig("icon_rectangle"), arg2_28:Find("icon"))
+	LoadImageSpriteAsync("neweducateicon/" .. var0_30:getConfig("icon_rectangle"), arg2_30:Find("icon"))
 
-	local var2_28 = var0_28:GetCostShowInfos()
-	local var3_28 = var0_28:GetCostWithBenefit(arg0_28.discountInfos)
-	local var4_28 = UIItemList.New(arg2_28:Find("normal/cost"), arg2_28:Find("normal/cost/tpl"))
+	local var2_30 = var0_30:GetCostShowInfos()
+	local var3_30 = var0_30:GetCostWithBenefit(arg0_30.discountInfos)
+	local var4_30 = UIItemList.New(arg2_30:Find("normal/cost"), arg2_30:Find("normal/cost/tpl"))
 
-	var4_28:make(function(arg0_30, arg1_30, arg2_30)
-		if arg0_30 == UIItemList.EventUpdate then
-			local var0_30 = var2_28[arg1_30 + 1]
+	var4_30:make(function(arg0_32, arg1_32, arg2_32)
+		if arg0_32 == UIItemList.EventUpdate then
+			local var0_32 = var2_30[arg1_32 + 1]
 
-			NewEducateHelper.UpdateVectorItem(arg2_30, var0_30, "-")
+			NewEducateHelper.UpdateVectorItem(arg2_32, var0_32, "-")
 
-			local var1_30 = var3_28[arg1_30 + 1]
+			local var1_32 = var3_30[arg1_32 + 1]
 
-			if var1_30.number ~= var0_30.number then
-				local var2_30 = "(" .. var1_30.number .. ")"
+			if var1_32.number ~= var0_32.number then
+				local var2_32 = "(" .. var1_32.number .. ")"
 
-				setText(arg2_30:Find("value"), "-" .. var0_30.number .. var2_30)
+				setText(arg2_32:Find("value"), "-" .. var0_32.number .. var2_32)
 			end
 		end
 	end)
-	var4_28:align(#var2_28)
-	LoadImageSpriteAtlasAsync("ui/neweducatescheduleui_atlas", var0_28:GetAwardBg(), arg2_28:Find("normal/award"))
+	var4_30:align(#var2_30)
+	LoadImageSpriteAtlasAsync("ui/neweducatescheduleui_atlas", var0_30:GetAwardBg(), arg2_30:Find("normal/award"))
 
-	local var5_28 = var0_28:GetAwardShowInfos()
-	local var6_28 = UIItemList.New(arg2_28:Find("normal/award"), arg2_28:Find("normal/award/tpl"))
+	local var5_30 = var0_30:GetAwardShowInfos()
+	local var6_30 = UIItemList.New(arg2_30:Find("normal/award"), arg2_30:Find("normal/award/tpl"))
 
-	var6_28:make(function(arg0_31, arg1_31, arg2_31)
-		if arg0_31 == UIItemList.EventUpdate then
-			local var0_31 = var5_28[arg1_31 + 1]
+	var6_30:make(function(arg0_33, arg1_33, arg2_33)
+		if arg0_33 == UIItemList.EventUpdate then
+			local var0_33 = var5_30[arg1_33 + 1]
 
-			NewEducateHelper.UpdateVectorItem(arg2_31, var0_31, var0_31.number > 0 and "+" or "")
+			NewEducateHelper.UpdateVectorItem(arg2_33, var0_33, var0_33.number > 0 and "+" or "")
 		end
 	end)
-	var6_28:align(#var5_28)
-	setActive(arg2_28:Find("toggle"), var1_28)
+	var6_30:align(#var5_30)
+	setActive(arg2_30:Find("toggle"), var1_30)
 
-	if var1_28 then
-		local var7_28 = var0_28:getConfig("condition_desc")
-		local var8_28 = UIItemList.New(arg2_28:Find("condition/conditions"), arg2_28:Find("condition/conditions/tpl"))
+	if var1_30 then
+		local var7_30 = var0_30:getConfig("condition_desc")
+		local var8_30 = UIItemList.New(arg2_30:Find("condition/conditions"), arg2_30:Find("condition/conditions/tpl"))
 
-		var8_28:make(function(arg0_32, arg1_32, arg2_32)
-			if arg0_32 == UIItemList.EventUpdate then
-				local var0_32 = var7_28[arg1_32 + 1]
-				local var1_32 = arg0_28.contextData.char:LogicalOperator({
+		var8_30:make(function(arg0_34, arg1_34, arg2_34)
+			if arg0_34 == UIItemList.EventUpdate then
+				local var0_34 = var7_30[arg1_34 + 1]
+				local var1_34 = arg0_30.contextData.char:LogicalOperator({
 					operator = "||",
-					conditions = var0_32[1]
+					conditions = var0_34[1]
 				})
-				local var2_32 = var0_32[2]
+				local var2_34 = var0_34[2]
 
-				if not var1_32 then
-					var2_32 = string.gsub(var2_32, "f7f7f7", "ff6767")
+				if not var1_34 then
+					var2_34 = string.gsub(var2_34, "f7f7f7", "ff6767")
 				end
 
-				setText(arg2_32:Find("name"), var2_32)
-				setActive(arg2_32:Find("icon"), false)
-				setActive(arg2_32:Find("value"), false)
+				setText(arg2_34:Find("name"), var2_34)
+				setActive(arg2_34:Find("icon"), false)
+				setActive(arg2_34:Find("value"), false)
 			end
 		end)
-		var8_28:align(#var7_28)
+		var8_30:align(#var7_30)
 	end
 end
 
-function var0_0.OnClickPlan(arg0_33, arg1_33)
-	if arg0_33.selectedCellIdx > arg0_33.unlockPlanNum then
+function var0_0.OnClickPlan(arg0_35, arg1_35)
+	if arg0_35.selectedCellIdx > arg0_35.unlockPlanNum then
 		return
 	end
 
 	seriesAsync({
-		function(arg0_34)
-			local var0_34, var1_34, var2_34 = arg0_33:CalcPlanResult(arg1_33)
+		function(arg0_36)
+			local var0_36, var1_36, var2_36 = arg0_35:CalcPlanResult(arg1_35)
 
-			if arg0_33.contextData.char:GetRes(arg0_33.moneyResId) + arg0_33.moneyResult + var0_34 < 0 then
+			if arg0_35.contextData.char:GetRes(arg0_35.moneyResId) + arg0_35.moneyResult + var0_36 < 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("child_plan_check_tip4"))
 
 				return
 			end
 
-			arg0_34()
+			arg0_36()
 		end
 	}, function()
-		arg0_33.cells[arg0_33.selectedCellIdx].plan = arg1_33
+		arg0_35.cells[arg0_35.selectedCellIdx].plan = arg1_35
 
-		arg0_33:UpdateCell(arg0_33.selectedCellIdx)
+		arg0_35:UpdateCell(arg0_35.selectedCellIdx)
 
-		arg0_33.selectedCellIdx = arg0_33.selectedCellIdx + 1
+		arg0_35.selectedCellIdx = arg0_35.selectedCellIdx + 1
 
-		arg0_33:UpdateCellReduce()
-		arg0_33:UpdateReuslt()
+		arg0_35:UpdateCellReduce()
+		arg0_35:UpdateReuslt()
 	end)
 end
 
-function var0_0.FlushPlanView(arg0_36)
-	arg0_36.showList = underscore.select(arg0_36.planList, function(arg0_37)
-		return arg0_37:IsShow()
+function var0_0.FlushPlanView(arg0_38)
+	arg0_38.showList = underscore.select(arg0_38.planList, function(arg0_39)
+		return arg0_39:IsShow()
 	end)
 
-	arg0_36.planUIList:align(#arg0_36.showList)
+	arg0_38.planUIList:align(#arg0_38.showList)
 end
 
-function var0_0.UpdateEffect(arg0_38, arg1_38)
-	local var0_38 = arg0_38.contextData.char:GetMoodStage(arg1_38)
+function var0_0.FlushTarot(arg0_40)
+	arg0_40.tarotId = arg0_40.contextData.char:GetTarotId()
 
-	setText(arg0_38.effectTF, string.gsub("$1", "$1", i18n("child2_mood_desc" .. var0_38)))
+	setActive(arg0_40.tarotIconTF, arg0_40.tarotId)
+
+	if arg0_40.tarotId then
+		LoadImageSpriteAsync("neweducateicon/" .. pg.child2_benefit_list[arg0_40.tarotId].item_icon_little, arg0_40.tarotIconTF)
+	end
+
+	setText(arg0_40.tarotNameTF, arg0_40.tarotId and pg.child2_benefit_list[arg0_40.tarotId].name or "EMPTY")
+
+	arg0_40.entries = arg0_40.contextData.char:GetBenefitData():GetListByType(NewEducateBuff.TYPE.ENTRY)
+
+	setText(arg0_40.tarotEntryTF, i18n("child2_entry_summary") .. #arg0_40.entries)
 end
 
-function var0_0.UpdateTalent(arg0_39, arg1_39, arg2_39)
-	local var0_39 = arg0_39.talents[arg1_39 + 1]
+function var0_0.UpdateEffect(arg0_41, arg1_41)
+	local var0_41 = arg0_41.contextData.char:GetMoodStage(arg1_41)
 
-	setActive(arg2_39:Find("unlock"), var0_39)
-	setActive(arg2_39:Find("lock"), not var0_39)
-	setImageAlpha(arg2_39, var0_39 and 1 or 0.4)
+	setText(arg0_41.effectTF, string.gsub("$1", "$1", i18n("child2_mood_desc" .. var0_41)))
+end
 
-	if var0_39 then
-		LoadImageSpriteAsync("neweducateicon/" .. var0_39:getConfig("item_icon_little"), arg2_39:Find("unlock/icon"))
-		setText(arg2_39:Find("unlock/name"), shortenString(var0_39:getConfig("name"), 5))
-		setText(arg2_39:Find("unlock/info/content/name"), var0_39:getConfig("name"))
-		setText(arg2_39:Find("unlock/info/content/desc"), var0_39:getConfig("desc"))
+function var0_0.UpdateTalent(arg0_42, arg1_42, arg2_42)
+	local var0_42 = arg0_42.talents[arg1_42 + 1]
+
+	setActive(arg2_42:Find("unlock"), var0_42)
+	setActive(arg2_42:Find("lock"), not var0_42)
+	setImageAlpha(arg2_42, var0_42 and 1 or 0.4)
+
+	if var0_42 then
+		LoadImageSpriteAsync("neweducateicon/" .. var0_42:getConfig("item_icon_little"), arg2_42:Find("unlock/icon"))
+		setText(arg2_42:Find("unlock/name"), shortenString(var0_42:getConfig("name"), 5))
+		setText(arg2_42:Find("unlock/info/content/name"), var0_42:getConfig("name"))
+		setText(arg2_42:Find("unlock/info/content/desc"), var0_42:getConfig("desc"))
 	end
 end
 
-function var0_0.UpdateStatus(arg0_40, arg1_40, arg2_40)
-	local var0_40 = arg0_40.status[arg1_40 + 1]
+function var0_0.UpdateStatus(arg0_43, arg1_43, arg2_43)
+	local var0_43 = arg0_43.status[arg1_43 + 1]
 
-	LoadImageSpriteAsync("neweducateicon/" .. var0_40:getConfig("item_icon"), arg2_40:Find("icon"))
+	LoadImageSpriteAsync("neweducateicon/" .. var0_43:getConfig("item_icon"), arg2_43:Find("icon"))
 
-	local var1_40 = var0_40:getConfig("during_time")
-	local var2_40 = var0_40:GetEndRound() - arg0_40.contextData.char:GetRoundData().round
-	local var3_40 = var1_40 == -1 and i18n("child2_status_time2") or i18n("child2_status_time1", var2_40)
+	local var1_43 = var0_43:getConfig("during_time")
+	local var2_43 = var0_43:GetEndRound() - arg0_43.contextData.char:GetRoundData().round
+	local var3_43 = var1_43 == -1 and i18n("child2_status_time2") or i18n("child2_status_time1", var2_43)
 
-	setText(arg2_40:Find("time/Text"), var3_40)
-	setText(arg2_40:Find("info/content/name"), var0_40:getConfig("name"))
-	setText(arg2_40:Find("info/content/desc"), var0_40:getConfig("desc"))
+	setText(arg2_43:Find("time/Text"), var3_43)
+	setText(arg2_43:Find("info/content/name"), var0_43:getConfig("name"))
+	setText(arg2_43:Find("info/content/desc"), var0_43:getConfig("desc"))
 end
 
-function var0_0.CalcPlanResult(arg0_41, arg1_41)
-	local var0_41 = 0
-	local var1_41 = 0
+function var0_0.CalcPlanResult(arg0_44, arg1_44)
+	local var0_44 = 0
+	local var1_44 = 0
 
-	underscore.each(arg1_41:GetCostWithBenefit(arg0_41.discountInfos), function(arg0_42)
-		switch(arg0_42.type, {
+	underscore.each(arg1_44:GetCostWithBenefit(arg0_44.discountInfos), function(arg0_45)
+		switch(arg0_45.type, {
 			[NewEducateConst.DROP_TYPE.RES] = function()
-				if arg0_42.id == arg0_41.moneyResId then
-					var0_41 = var0_41 + arg0_42.number
-				elseif arg0_42.id == arg0_41.moodResId then
-					var1_41 = var1_41 + arg0_42.number
+				if arg0_45.id == arg0_44.moneyResId then
+					var0_44 = var0_44 + arg0_45.number
+				elseif arg0_45.id == arg0_44.moodResId then
+					var1_44 = var1_44 + arg0_45.number
 				end
 			end
 		})
 	end)
 
-	local var2_41 = 0
-	local var3_41 = 0
-	local var4_41 = {}
+	local var2_44 = 0
+	local var3_44 = 0
+	local var4_44 = {}
 
-	underscore.each(arg1_41:GetAwardShowInfos(), function(arg0_44)
-		switch(arg0_44.type, {
+	underscore.each(arg1_44:GetAwardShowInfos(), function(arg0_47)
+		switch(arg0_47.type, {
 			[NewEducateConst.DROP_TYPE.RES] = function()
-				if arg0_44.id == arg0_41.moneyResId then
-					var2_41 = var2_41 + arg0_44.number
-				elseif arg0_44.id == arg0_41.moodResId then
-					var3_41 = var3_41 + arg0_44.number
+				if arg0_47.id == arg0_44.moneyResId then
+					var2_44 = var2_44 + arg0_47.number
+				elseif arg0_47.id == arg0_44.moodResId then
+					var3_44 = var3_44 + arg0_47.number
 				end
 			end,
 			[NewEducateConst.DROP_TYPE.ATTR] = function()
-				if not var4_41[arg0_44.id] then
-					var4_41[arg0_44.id] = 0
+				if not var4_44[arg0_47.id] then
+					var4_44[arg0_47.id] = 0
 				end
 
-				var4_41[arg0_44.id] = var4_41[arg0_44.id] + arg0_44.number
+				var4_44[arg0_47.id] = var4_44[arg0_47.id] + arg0_47.number
 			end
 		})
 	end)
 
-	return var2_41 - var0_41, var3_41 - var1_41, var4_41
+	return var2_44 - var0_44, var3_44 - var1_44, var4_44
 end
 
-function var0_0.CalcCurResult(arg0_47)
-	arg0_47.attrResult = {}
-	arg0_47.moneyResult = 0
-	arg0_47.moodResult = 0
+function var0_0.CalcCurResult(arg0_50)
+	arg0_50.attrResult = {}
+	arg0_50.moneyResult = 0
+	arg0_50.moodResult = 0
 
-	underscore.each(arg0_47.cells, function(arg0_48)
-		if arg0_48.plan then
-			local var0_48, var1_48, var2_48 = arg0_47:CalcPlanResult(arg0_48.plan)
+	underscore.each(arg0_50.cells, function(arg0_51)
+		if arg0_51.plan then
+			local var0_51, var1_51, var2_51 = arg0_50:CalcPlanResult(arg0_51.plan)
 
-			arg0_47.moneyResult = arg0_47.moneyResult + var0_48
-			arg0_47.moodResult = arg0_47.moodResult + var1_48
+			arg0_50.moneyResult = arg0_50.moneyResult + var0_51
+			arg0_50.moodResult = arg0_50.moodResult + var1_51
 
-			for iter0_48, iter1_48 in pairs(var2_48) do
-				if not arg0_47.attrResult[iter0_48] then
-					arg0_47.attrResult[iter0_48] = 0
+			for iter0_51, iter1_51 in pairs(var2_51) do
+				if not arg0_50.attrResult[iter0_51] then
+					arg0_50.attrResult[iter0_51] = 0
 				end
 
-				arg0_47.attrResult[iter0_48] = arg0_47.attrResult[iter0_48] + iter1_48
+				arg0_50.attrResult[iter0_51] = arg0_50.attrResult[iter0_51] + iter1_51
 			end
 		end
 	end)
 end
 
-function var0_0.GetColor(arg0_49, arg1_49)
-	if arg1_49 == 0 then
+function var0_0.GetColor(arg0_52, arg1_52)
+	if arg1_52 == 0 then
 		return "ffffff"
 	else
-		return arg1_49 > 0 and "2df7bc" or "ff6767"
+		return arg1_52 > 0 and "2df7bc" or "ff6767"
 	end
 end
 
-function var0_0.UpdateAttr(arg0_50, arg1_50, arg2_50)
-	local var0_50 = arg0_50.attrIds[arg1_50 + 1]
-	local var1_50 = arg0_50.contextData.char:GetAttr(var0_50)
-	local var2_50, var3_50 = NewEducateInfoPanel.GetArrtInfo(pg.child2_attr[var0_50].rank, var1_50)
+function var0_0.UpdateAttr(arg0_53, arg1_53, arg2_53)
+	local var0_53 = arg0_53.attrIds[arg1_53 + 1]
+	local var1_53 = arg0_53.contextData.char:GetAttr(var0_53)
+	local var2_53, var3_53 = NewEducateInfoPanel.GetArrtInfo(pg.child2_attr[var0_53].rank, var1_53)
 
-	setText(arg2_50:Find("rank/Text"), var2_50)
-	setImageColor(arg2_50:Find("rank"), Color.NewHex(EducateConst.GRADE_2_COLOR[var2_50][2]))
-	setText(arg2_50:Find("before_value"), var1_50)
+	setText(arg2_53:Find("rank/Text"), var2_53)
+	setImageColor(arg2_53:Find("rank"), Color.NewHex(EducateConst.GRADE_2_COLOR[var2_53][2]))
+	setText(arg2_53:Find("before_value"), var1_53)
 
-	local var4_50 = arg0_50.attrResult[var0_50] or 0
+	local var4_53 = arg0_53.attrResult[var0_53] or 0
 
-	setText(arg2_50:Find("after_value"), var1_50 + var4_50)
+	setText(arg2_53:Find("after_value"), var1_53 + var4_53)
 
-	local var5_50 = arg0_50:GetColor(var4_50)
+	local var5_53 = arg0_53:GetColor(var4_53)
 
-	setImageColor(arg2_50:Find("arrow"), Color.NewHex(var5_50))
-	setTextColor(arg2_50:Find("after_value"), Color.NewHex(var5_50))
+	setImageColor(arg2_53:Find("arrow"), Color.NewHex(var5_53))
+	setTextColor(arg2_53:Find("after_value"), Color.NewHex(var5_53))
 end
 
-function var0_0.UpdateReuslt(arg0_51)
-	arg0_51.selectedCnt = underscore.reduce(arg0_51.cells, 0, function(arg0_52, arg1_52)
-		return arg0_52 + (arg1_52.plan and 1 or 0)
+function var0_0.UpdateReuslt(arg0_54)
+	arg0_54.selectedCnt = underscore.reduce(arg0_54.cells, 0, function(arg0_55, arg1_55)
+		return arg0_55 + (arg1_55.plan and 1 or 0)
 	end)
 
-	setText(arg0_51.planCountTF, arg0_51.selectedCnt .. "/" .. arg0_51.unlockPlanNum)
-	arg0_51:CalcCurResult()
+	setText(arg0_54.planCountTF, arg0_54.selectedCnt .. "/" .. arg0_54.unlockPlanNum)
+	arg0_54:CalcCurResult()
 
-	local var0_51 = arg0_51.contextData.char:GetRes(arg0_51.moneyResId)
+	local var0_54 = arg0_54.contextData.char:GetRes(arg0_54.moneyResId)
 
-	setText(arg0_51.moneyTF:Find("before_value"), var0_51)
-	setText(arg0_51.moneyTF:Find("after_value"), var0_51 + arg0_51.moneyResult)
+	setText(arg0_54.moneyTF:Find("before_value"), var0_54)
+	setText(arg0_54.moneyTF:Find("after_value"), var0_54 + arg0_54.moneyResult)
 
-	local var1_51 = arg0_51:GetColor(arg0_51.moneyResult)
+	local var1_54 = arg0_54:GetColor(arg0_54.moneyResult)
 
-	setImageColor(arg0_51.moneyTF:Find("arrow"), Color.NewHex(var1_51))
-	setTextColor(arg0_51.moneyTF:Find("after_value"), Color.NewHex(var1_51))
+	setImageColor(arg0_54.moneyTF:Find("arrow"), Color.NewHex(var1_54))
+	setTextColor(arg0_54.moneyTF:Find("after_value"), Color.NewHex(var1_54))
 
-	local var2_51 = arg0_51.contextData.char:GetRes(arg0_51.moodResId)
+	local var2_54 = arg0_54.contextData.char:GetRes(arg0_54.moodResId)
 
-	setText(arg0_51.moodTF:Find("before_value"), var2_51)
+	setText(arg0_54.moodTF:Find("before_value"), var2_54)
 
-	local var3_51 = var2_51 + arg0_51.moodResult
-	local var4_51 = math.max(pg.child_resource[arg0_51.moodResId].min_value, var3_51)
-	local var5_51 = math.min(pg.child_resource[arg0_51.moodResId].max_value, var4_51)
+	local var3_54 = var2_54 + arg0_54.moodResult
+	local var4_54 = math.max(pg.child2_resource[arg0_54.moodResId].min_value, var3_54)
+	local var5_54 = math.min(pg.child2_resource[arg0_54.moodResId].max_value, var4_54)
 
-	setText(arg0_51.moodTF:Find("after_value"), var5_51)
+	setText(arg0_54.moodTF:Find("after_value"), var5_54)
 
-	local var6_51 = arg0_51:GetColor(arg0_51.moodResult)
+	local var6_54 = arg0_54:GetColor(arg0_54.moodResult)
 
-	setImageColor(arg0_51.moodTF:Find("arrow"), Color.NewHex(var6_51))
-	setTextColor(arg0_51.moodTF:Find("after_value"), Color.NewHex(var6_51))
-	arg0_51:UpdateEffect(var5_51)
-	arg0_51.attrUIList:align(#arg0_51.attrIds)
+	setImageColor(arg0_54.moodTF:Find("arrow"), Color.NewHex(var6_54))
+	setTextColor(arg0_54.moodTF:Find("after_value"), Color.NewHex(var6_54))
+	arg0_54:UpdateEffect(var5_54)
+	arg0_54.attrUIList:align(#arg0_54.attrIds)
 end
 
-function var0_0.SetScheduleData(arg0_53, arg1_53)
-	arg0_53.contextData.scheduleDataTable.OnScheduleDone = arg1_53
+function var0_0.SetScheduleData(arg0_56, arg1_56)
+	arg0_56.contextData.scheduleDataTable.OnScheduleDone = arg1_56
 end
 
-function var0_0.willExit(arg0_54)
-	arg0_54:UnOverlayPanel(arg0_54.mainTF, arg0_54.rootTF)
+function var0_0.OnClickNextBtn(arg0_57)
+	local var0_57 = {}
+	local var1_57 = ""
+	local var2_57 = false
+
+	if arg0_57.selectedCnt < arg0_57.unlockPlanNum then
+		var1_57 = i18n("child2_schedule_sure_tip")
+		var2_57 = true
+	end
+
+	if arg0_57.contextData.char:GetPoint() > 0 then
+		var1_57 = var2_57 and i18n("child2_schedule_sure_tip3") or i18n("child2_schedule_sure_tip2")
+	end
+
+	table.insert(var0_57, function(arg0_58)
+		if var1_57 ~= "" then
+			arg0_57:emit(var0_0.ON_BOX, {
+				content = var1_57,
+				onYes = arg0_58
+			})
+		else
+			arg0_58()
+		end
+	end)
+	seriesAsync(var0_57, function()
+		arg0_57:emit(NewEducateScheduleMediator.ON_SELECTED_PLANS, arg0_57.skipToggleCom.isOn, arg0_57.cells)
+	end)
+end
+
+function var0_0.willExit(arg0_60)
+	arg0_60:UnOverlayPanel(arg0_60.mainTF, arg0_60.rootTF)
 end
 
 return var0_0

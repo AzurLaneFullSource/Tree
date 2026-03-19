@@ -1,9 +1,11 @@
 local var0_0 = class("DialoguePerformPlayer", import(".BasePerformPlayer"))
 
 var0_0.TYPEWRITE_SPEED = 0.05
+var0_0.TYPEWRITE_SPEED_UP = 0.01
 
 function var0_0.Ctor(arg0_1, arg1_1)
 	var0_0.super.Ctor(arg0_1, arg1_1)
+	pg.DelegateInfo.New(arg0_1)
 
 	arg0_1.eventTipBig = arg0_1._tf:Find("event_tip")
 	arg0_1.content = arg0_1._tf:Find("content")
@@ -16,9 +18,11 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.text2 = arg0_1.content:Find("Text2")
 	arg0_1.resultTF = arg0_1.content:Find("result")
 	arg0_1.resultTpl = arg0_1.content:Find("tpl")
+	arg0_1.nextClickTF = arg0_1._tf:Find("click")
 end
 
 function var0_0.Play(arg0_2, arg1_2, arg2_2)
+	setActive(arg0_2.nextClickTF, true)
 	arg0_2:checkName()
 	arg0_2:Show()
 
@@ -48,6 +52,8 @@ function var0_0.Play(arg0_2, arg1_2, arg2_2)
 end
 
 function var0_0._play(arg0_4, arg1_4, arg2_4, arg3_4)
+	arg0_4.speed = var0_0.TYPEWRITE_SPEED
+
 	setActive(arg0_4.eventTipSmall, arg1_4.show_event == 1)
 	setActive(arg0_4.next, arg1_4.show_next == 1)
 
@@ -121,7 +127,7 @@ function var0_0._play(arg0_4, arg1_4, arg2_4, arg3_4)
 		end
 
 		seriesAsync(var0_5, function()
-			onDelayTick(function()
+			arg0_4.twId = LeanTween.delayedCall(1, System.Action(function()
 				setActive(arg0_4.resultTF, false)
 				eachChild(arg0_4.resultTF, function(arg0_10)
 					setActive(arg0_10, false)
@@ -130,34 +136,66 @@ function var0_0._play(arg0_4, arg1_4, arg2_4, arg3_4)
 				if arg3_4 then
 					arg3_4()
 				end
-			end, 1)
+			end)).uniqueId
 		end)
 	end
 
-	var6_4:setSpeed(var0_0.TYPEWRITE_SPEED)
+	var6_4:setSpeed(arg0_4.speed)
 	var6_4:Play()
+	onButton(arg0_4, arg0_4.nextClickTF, function()
+		if arg0_4.speed == var0_0.TYPEWRITE_SPEED_UP then
+			if arg0_4.twId then
+				LeanTween.cancel(arg0_4.twId)
+
+				arg0_4.twId = nil
+			end
+
+			setActive(arg0_4.resultTF, false)
+			eachChild(arg0_4.resultTF, function(arg0_12)
+				setActive(arg0_12, false)
+			end)
+
+			if arg3_4 then
+				arg3_4()
+			end
+		else
+			arg0_4.speed = var0_0.TYPEWRITE_SPEED_UP
+
+			var6_4:setSpeed(arg0_4.speed)
+		end
+	end)
 end
 
-function var0_0.checkName(arg0_11)
-	if not arg0_11.callName then
-		arg0_11.callName = getProxy(EducateProxy):GetCharData():GetCallName()
+function var0_0.checkName(arg0_13)
+	if not arg0_13.callName then
+		arg0_13.callName = getProxy(EducateProxy):GetCharData():GetCallName()
 	end
 
-	if not arg0_11.name then
-		arg0_11.name = getProxy(EducateProxy):GetCharData():GetName()
+	if not arg0_13.name then
+		arg0_13.name = getProxy(EducateProxy):GetCharData():GetName()
 	end
 
-	if not arg0_11.playerName then
-		arg0_11.playerName = getProxy(PlayerProxy):getRawData():GetName()
+	if not arg0_13.playerName then
+		arg0_13.playerName = getProxy(PlayerProxy):getRawData():GetName()
 	end
 end
 
-function var0_0.Clear(arg0_12)
-	setText(arg0_12.text, "")
-	setText(arg0_12.text2, "")
-	setActive(arg0_12.eventTipBig, false)
-	setActive(arg0_12.eventTipSmall, false)
-	arg0_12:Hide()
+function var0_0.Clear(arg0_14)
+	setText(arg0_14.text, "")
+	setText(arg0_14.text2, "")
+	setActive(arg0_14.eventTipBig, false)
+	setActive(arg0_14.eventTipSmall, false)
+	arg0_14:Hide()
+end
+
+function var0_0.Dispose(arg0_15)
+	if arg0_15.twId then
+		LeanTween.cancel(arg0_15.twId)
+
+		arg0_15.twId = nil
+	end
+
+	pg.DelegateInfo.Dispose(arg0_15)
 end
 
 return var0_0

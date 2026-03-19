@@ -414,6 +414,388 @@ pg.child2_ending = {
 			}
 		}
 	},
+	[101] = {
+		pic = "bg_project_explorer_cg32",
+		name = "Going to University",
+		character = 2,
+		performance = "TANSUOZHEYANGCHENGJIHUA31",
+		id = 101,
+		pic_preview = "explorer_ending1",
+		condition_desc = {
+			{
+				{
+					99801
+				},
+				"Growth Complete"
+			}
+		},
+		condition = {
+			"&&",
+			{
+				3800101
+			}
+		}
+	},
+	[102] = {
+		pic = "bg_project_explorer_cg15",
+		name = "A Homemaker at Heart",
+		character = 2,
+		performance = "TANSUOZHEYANGCHENGJIHUA32",
+		id = 102,
+		pic_preview = "explorer_ending2",
+		condition_desc = {
+			{
+				{
+					99801
+				},
+				"Stat Total >3,000"
+			}
+		},
+		condition = {
+			"&&",
+			{
+				3800201
+			}
+		}
+	},
+	[103] = {
+		pic = "bg_project_explorer_cg14",
+		name = "Haute Couture Designer",
+		character = 2,
+		performance = "TANSUOZHEYANGCHENGJIHUA33",
+		id = 103,
+		pic_preview = "explorer_ending3",
+		condition_desc = {
+			{
+				{
+					99801
+				},
+				"Stat Total >6,000"
+			}
+		},
+		condition = {
+			"&&",
+			{
+				3800301
+			}
+		}
+	},
+	[104] = {
+		pic = "bg_project_explorer_cg20",
+		name = "Food Influencer",
+		character = 2,
+		performance = "TANSUOZHEYANGCHENGJIHUA34",
+		id = 104,
+		pic_preview = "explorer_ending4",
+		condition_desc = {
+			{
+				{
+					99801
+				},
+				"Personality - Outgoing"
+			},
+			{
+				{
+					99801
+				},
+				"Stat Total >4,000"
+			}
+		},
+		condition = {
+			"&&",
+			{
+				3800401,
+				3800402
+			}
+		}
+	},
+	[105] = {
+		pic = "bg_project_explorer_cg23",
+		name = "Light Novelist",
+		character = 2,
+		performance = "TANSUOZHEYANGCHENGJIHUA35",
+		id = 105,
+		pic_preview = "explorer_ending5",
+		condition_desc = {
+			{
+				{
+					99801
+				},
+				"Personality - Shy"
+			},
+			{
+				{
+					99801
+				},
+				"Stat Total >4,000"
+			}
+		},
+		condition = {
+			"&&",
+			{
+				3800501,
+				3800502
+			}
+		}
+	},
+	[106] = {
+		pic = "bg_project_explorer_cg18",
+		name = "Newspaper Journalist",
+		character = 2,
+		performance = "TANSUOZHEYANGCHENGJIHUA36",
+		id = 106,
+		pic_preview = "explorer_ending14",
+		condition_desc = {
+			{
+				{
+					99801
+				},
+				"Personality - Outgoing >80"
+			}
+		},
+		condition = {
+			"&&",
+			{
+				3800601
+			}
+		}
+	},
+	[107] = {
+		pic = "bg_project_explorer_cg11",
+		name = "Mascot Costume Actor",
+		character = 2,
+		performance = "TANSUOZHEYANGCHENGJIHUA37",
+		id = 107,
+		pic_preview = "explorer_ending15",
+		condition_desc = {
+			{
+				{
+					99801
+				},
+				"Personality - Shy >80"
+			}
+		},
+		condition = {
+			"&&",
+			{
+				3800701
+			}
+		}
+	},
+	[108] = {
+		pic = "bg_project_explorer_cg16",
+		name = "Flower Shop Manager",
+		character = 2,
+		performance = "TANSUOZHEYANGCHENGJIHUA38",
+		id = 108,
+		pic_preview = "explorer_ending6",
+		condition_desc = {
+			{
+				{
+					99801
+				},
+				"Knowledge >4,000"
+			},
+			{
+				{
+					99801
+				},
+				"Stat Total >12,000"
+			}
+		},
+		condition = {
+			"&&",
+			{
+				3800801,
+				3800802
+			}
+		}
+	},
+	[109] = {
+		pic = "bg_project_explorer_cg19",
+		name = "Traveler",
+		character = 2,
+		performance = "TANSUOZHEYANGCHENGJIHUA39",
+		id = 109,
+		pic_preview = "explorer_ending11",
+		condition_desc = {
+			{
+				{
+					99801
+				},
+				"Go Sightseeing 20+ Times"
+			}
+		},
+		condition = {
+			"&&",
+			{
+				3800901
+			}
+		}
+	},
+	[110] = {
+		pic = "bg_project_explorer_cg17",
+		name = "Fishing Expert",
+		character = 2,
+		performance = "TANSUOZHEYANGCHENGJIHUA40",
+		id = 110,
+		pic_preview = "explorer_ending8",
+		condition_desc = {
+			{
+				{
+					99801
+				},
+				"Fitness >4,000"
+			},
+			{
+				{
+					99801
+				},
+				"Stat Total >12,000"
+			}
+		},
+		condition = {
+			"&&",
+			{
+				3801001,
+				3801002
+			}
+		}
+	},
+	[111] = {
+		pic = "bg_project_explorer_cg22",
+		name = "Barista",
+		character = 2,
+		performance = "TANSUOZHEYANGCHENGJIHUA41",
+		id = 111,
+		pic_preview = "explorer_ending7",
+		condition_desc = {
+			{
+				{
+					99801
+				},
+				"Dexterity >4,000"
+			},
+			{
+				{
+					99801
+				},
+				"Stat Total >12,000"
+			}
+		},
+		condition = {
+			"&&",
+			{
+				3801101,
+				3801102
+			}
+		}
+	},
+	[112] = {
+		pic = "bg_project_explorer_cg21",
+		name = "Fortune-Teller",
+		character = 2,
+		performance = "TANSUOZHEYANGCHENGJIHUA42",
+		id = 112,
+		pic_preview = "explorer_ending9",
+		condition_desc = {
+			{
+				{
+					99801
+				},
+				"Sensitivity >4,000"
+			},
+			{
+				{
+					99801
+				},
+				"Stat Total >12,000"
+			}
+		},
+		condition = {
+			"&&",
+			{
+				3801201,
+				3801202
+			}
+		}
+	},
+	[113] = {
+		pic = "bg_project_explorer_cg12",
+		name = "Bookstore Employee",
+		character = 2,
+		performance = "TANSUOZHEYANGCHENGJIHUA43",
+		id = 113,
+		pic_preview = "explorer_ending10",
+		condition_desc = {
+			{
+				{
+					99801
+				},
+				"Have 20+ Experiences"
+			}
+		},
+		condition = {
+			"&&",
+			{
+				3801301
+			}
+		}
+	},
+	[114] = {
+		pic = "bg_project_explorer_cg13",
+		name = "Pianist",
+		character = 2,
+		performance = "TANSUOZHEYANGCHENGJIHUA44",
+		id = 114,
+		pic_preview = "explorer_ending12",
+		condition_desc = {
+			{
+				{
+					99801
+				},
+				"Unlock 3 Special Endings"
+			}
+		},
+		condition = {
+			"||",
+			{
+				3801401,
+				3801402,
+				3801403,
+				3801404,
+				3801405,
+				3801406
+			}
+		}
+	},
+	[115] = {
+		pic = "bg_project_explorer_cg10",
+		name = "Botanist",
+		character = 2,
+		performance = "TANSUOZHEYANGCHENGJIHUA45",
+		id = 115,
+		pic_preview = "explorer_ending13",
+		condition_desc = {
+			{
+				{
+					99801
+				},
+				"Unlock 3 Special Endings"
+			}
+		},
+		condition = {
+			"||",
+			{
+				3801501,
+				3801502,
+				3801503,
+				3801504,
+				3801505,
+				3801506
+			}
+		}
+	},
 	get_id_list_by_character = {
 		{
 			1,
@@ -431,6 +813,23 @@ pg.child2_ending = {
 			13,
 			14,
 			15
+		},
+		{
+			101,
+			102,
+			103,
+			104,
+			105,
+			106,
+			107,
+			108,
+			109,
+			110,
+			111,
+			112,
+			113,
+			114,
+			115
 		}
 	},
 	all = {
@@ -448,6 +847,21 @@ pg.child2_ending = {
 		12,
 		13,
 		14,
-		15
+		15,
+		101,
+		102,
+		103,
+		104,
+		105,
+		106,
+		107,
+		108,
+		109,
+		110,
+		111,
+		112,
+		113,
+		114,
+		115
 	}
 }

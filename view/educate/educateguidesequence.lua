@@ -294,6 +294,8 @@ function var0_0.CheckGuide(arg0_45, arg1_45)
 
 			var0_0.PlayNextOne(var0_47, var1_47)
 		end
+
+		arg1_45()
 	end, arg1_45)
 end
 

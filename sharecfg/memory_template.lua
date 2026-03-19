@@ -4175,7 +4175,75 @@ pg.memory_template = setmetatable({
 		20146,
 		20147,
 		20148,
-		20149
+		20149,
+		20150,
+		20151,
+		20152,
+		20153,
+		20154,
+		20155,
+		20156,
+		20157,
+		20158,
+		20159,
+		20160,
+		20161,
+		20162,
+		20163,
+		20164,
+		20165,
+		20166,
+		20167,
+		20168,
+		20169,
+		20170,
+		20171,
+		20172,
+		20173,
+		20174,
+		20175,
+		20176,
+		20177,
+		20178,
+		20179,
+		20180,
+		20181,
+		20182,
+		20183,
+		20184,
+		20185,
+		20186,
+		20187,
+		20188,
+		20189,
+		20190,
+		20191,
+		20192,
+		20193,
+		20194,
+		20195,
+		20196,
+		20197,
+		20198,
+		20199,
+		20200,
+		20201,
+		20202,
+		20203,
+		20204,
+		20205,
+		20206,
+		20207,
+		20208,
+		20209,
+		20210,
+		20211,
+		20212,
+		20213,
+		20214,
+		20215,
+		20216,
+		20217
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -63604,8 +63672,8 @@ pg.base.memory_template = {
 		subtitle = "",
 		story = "AERBIEN1",
 		mask = "bg/bg_memory",
-		title = "The Forest's Invitation",
-		condition = "Begin \"Forest Breeze and the Compass of the Heart\" Chapter 1",
+		title = "森林的邀约",
+		condition = "解锁「林间风与心之罗盘」任务1",
 		number = 0,
 		id = 5031,
 		icon = "memory_aerbien",
@@ -63619,8 +63687,8 @@ pg.base.memory_template = {
 		subtitle = "",
 		story = "AERBIEN2",
 		mask = "bg/bg_memory",
-		title = "Creatures of the Forest",
-		condition = "Begin \"Forest Breeze and the Compass of the Heart\" Chapter 2",
+		title = "林间生灵",
+		condition = "解锁「林间风与心之罗盘」任务2",
 		number = 0,
 		id = 5032,
 		icon = "memory_aerbien",
@@ -63634,8 +63702,8 @@ pg.base.memory_template = {
 		subtitle = "",
 		story = "AERBIEN3",
 		mask = "bg/bg_memory",
-		title = "Tea Party in the Sun",
-		condition = "Begin \"Forest Breeze and the Compass of the Heart\" Chapter 3",
+		title = "日光下的茶会",
+		condition = "解锁「林间风与心之罗盘」任务3",
 		number = 0,
 		id = 5033,
 		icon = "memory_aerbien",
@@ -63649,8 +63717,8 @@ pg.base.memory_template = {
 		subtitle = "",
 		story = "AERBIEN4",
 		mask = "bg/bg_memory",
-		title = "Voice of the Lost",
-		condition = "Begin \"Forest Breeze and the Compass of the Heart\" Chapter 4",
+		title = "迷途之声",
+		condition = "解锁「林间风与心之罗盘」任务4",
 		number = 0,
 		id = 5034,
 		icon = "memory_aerbien",
@@ -63664,8 +63732,8 @@ pg.base.memory_template = {
 		subtitle = "",
 		story = "AERBIEN5",
 		mask = "bg/bg_memory",
-		title = "Where the Fireflies Are",
-		condition = "Begin \"Forest Breeze and the Compass of the Heart\" Chapter 5",
+		title = "萤火所在之处",
+		condition = "解锁「林间风与心之罗盘」任务5",
 		number = 0,
 		id = 5035,
 		icon = "memory_aerbien",
@@ -63679,8 +63747,8 @@ pg.base.memory_template = {
 		subtitle = "",
 		story = "AERBIEN6",
 		mask = "bg/bg_memory",
-		title = "Soothing Winds",
-		condition = "Begin \"Forest Breeze and the Compass of the Heart\" Chapter 6",
+		title = "治愈之风",
+		condition = "解锁「林间风与心之罗盘」任务6",
 		number = 0,
 		id = 5036,
 		icon = "memory_aerbien",
@@ -63694,8 +63762,8 @@ pg.base.memory_template = {
 		subtitle = "",
 		story = "AERBIEN7",
 		mask = "bg/bg_memory",
-		title = "Albion's Feelings",
-		condition = "Begin \"Forest Breeze and the Compass of the Heart\" Chapter 7",
+		title = "阿尔比恩的心声",
+		condition = "解锁「林间风与心之罗盘」任务7",
 		number = 0,
 		id = 5037,
 		icon = "memory_aerbien",
@@ -66792,6 +66860,1026 @@ pg.base.memory_template = {
 		is_open = 0,
 		unlock_pre = {
 			"LINGYANGZHELAIFANGJISHI12"
+		}
+	},
+	[20150] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA1",
+		mask = "bg/bg_memory",
+		title = "Commence Project Identity: Explorer!",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20150,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA1"
+		}
+	},
+	[20151] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA2",
+		mask = "bg/bg_memory",
+		title = "A Timid First Day of School",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20151,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA2"
+		}
+	},
+	[20152] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA3",
+		mask = "bg/bg_memory",
+		title = "A Timid First Day of School",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20152,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA3"
+		}
+	},
+	[20153] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA4",
+		mask = "bg/bg_memory",
+		title = "Merry-Go-Round",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20153,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA4"
+		}
+	},
+	[20154] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA5",
+		mask = "bg/bg_memory",
+		title = "Warmth in the Winter",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20154,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA5"
+		}
+	},
+	[20155] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA6",
+		mask = "bg/bg_memory",
+		title = "A Day with the Rabbits",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20155,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA6"
+		}
+	},
+	[20156] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA7",
+		mask = "bg/bg_memory",
+		title = "Beneath the Blooms",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20156,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA7"
+		}
+	},
+	[20157] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA8",
+		mask = "bg/bg_memory",
+		title = "A Promise on the Swing",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20157,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA8"
+		}
+	},
+	[20158] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA9",
+		mask = "bg/bg_memory",
+		title = "Lighthearted Expectation",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20158,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA9"
+		}
+	},
+	[20159] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA10",
+		mask = "bg/bg_memory",
+		title = "Lighthearted Expectation",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20159,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA10"
+		}
+	},
+	[20160] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA11",
+		mask = "bg/bg_memory",
+		title = "Splash Fight!",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20160,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA11"
+		}
+	},
+	[20161] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA12",
+		mask = "bg/bg_memory",
+		title = "The Taste of Rhino Beetles",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20161,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA12"
+		}
+	},
+	[20162] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA13",
+		mask = "bg/bg_memory",
+		title = "Late-Night Repairs",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20162,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA13"
+		}
+	},
+	[20163] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA14",
+		mask = "bg/bg_memory",
+		title = "What's in a Painting",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20163,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA14"
+		}
+	},
+	[20164] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA15",
+		mask = "bg/bg_memory",
+		title = "A Moment in the Rain",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20164,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA15"
+		}
+	},
+	[20165] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA16",
+		mask = "bg/bg_memory",
+		title = "Preserving a Beautiful Winter",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20165,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA16"
+		}
+	},
+	[20166] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA17",
+		mask = "bg/bg_memory",
+		title = "First Mate's Maiden Voyage",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20166,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA17"
+		}
+	},
+	[20167] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA18",
+		mask = "bg/bg_memory",
+		title = "Toward the Future with My Dearest",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20167,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA18"
+		}
+	},
+	[20168] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA19",
+		mask = "bg/bg_memory",
+		title = "Toward the Future with My Dearest",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20168,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA19"
+		}
+	},
+	[20169] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA20",
+		mask = "bg/bg_memory",
+		title = "The First Step to Looking Fashionable",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20169,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA20"
+		}
+	},
+	[20170] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA21",
+		mask = "bg/bg_memory",
+		title = "The First Step to Looking Fashionable",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20170,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA21"
+		}
+	},
+	[20171] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA22",
+		mask = "bg/bg_memory",
+		title = "A Girl's Secrets",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20171,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA22"
+		}
+	},
+	[20172] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA23",
+		mask = "bg/bg_memory",
+		title = "The Reflections of a Heart",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20172,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA23"
+		}
+	},
+	[20173] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA24",
+		mask = "bg/bg_memory",
+		title = "The Feelings Behind the Strings",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20173,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA24"
+		}
+	},
+	[20174] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA25",
+		mask = "bg/bg_memory",
+		title = "This Sweetness is for You",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20174,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA25"
+		}
+	},
+	[20175] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA26",
+		mask = "bg/bg_memory",
+		title = "Spring, Preserved in Pictures",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20175,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA26"
+		}
+	},
+	[20176] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA27",
+		mask = "bg/bg_memory",
+		title = "Her First Reading",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20176,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA27"
+		}
+	},
+	[20177] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA28",
+		mask = "bg/bg_memory",
+		title = "A Future Together",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20177,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA28"
+		}
+	},
+	[20178] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA29",
+		mask = "bg/bg_memory",
+		title = "A Future Together",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20178,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA29"
+		}
+	},
+	[20179] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA30",
+		mask = "bg/bg_memory",
+		title = "A Fresh Start",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20179,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA30"
+		}
+	},
+	[20180] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA31",
+		mask = "bg/bg_memory",
+		title = "Going to University",
+		condition = "Unlock an ending in Project Identity: Explorer.",
+		number = 0,
+		id = 20180,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA31"
+		}
+	},
+	[20181] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA32",
+		mask = "bg/bg_memory",
+		title = "A Homemaker at Heart",
+		condition = "Unlock an ending in Project Identity: Explorer.",
+		number = 0,
+		id = 20181,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA32"
+		}
+	},
+	[20182] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA33",
+		mask = "bg/bg_memory",
+		title = "Haute Couture Designer",
+		condition = "Unlock an ending in Project Identity: Explorer.",
+		number = 0,
+		id = 20182,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA33"
+		}
+	},
+	[20183] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA34",
+		mask = "bg/bg_memory",
+		title = "Food Influencer",
+		condition = "Unlock an ending in Project Identity: Explorer.",
+		number = 0,
+		id = 20183,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA34"
+		}
+	},
+	[20184] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA35",
+		mask = "bg/bg_memory",
+		title = "Light Novelist",
+		condition = "Unlock an ending in Project Identity: Explorer.",
+		number = 0,
+		id = 20184,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA35"
+		}
+	},
+	[20185] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA36",
+		mask = "bg/bg_memory",
+		title = "Newspaper Journalist",
+		condition = "Unlock an ending in Project Identity: Explorer.",
+		number = 0,
+		id = 20185,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA36"
+		}
+	},
+	[20186] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA37",
+		mask = "bg/bg_memory",
+		title = "Mascot Costume Actor",
+		condition = "Unlock an ending in Project Identity: Explorer.",
+		number = 0,
+		id = 20186,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA37"
+		}
+	},
+	[20187] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA38",
+		mask = "bg/bg_memory",
+		title = "Flower Shop Manager",
+		condition = "Unlock an ending in Project Identity: Explorer.",
+		number = 0,
+		id = 20187,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA38"
+		}
+	},
+	[20188] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA39",
+		mask = "bg/bg_memory",
+		title = "Traveler",
+		condition = "Unlock an ending in Project Identity: Explorer.",
+		number = 0,
+		id = 20188,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA39"
+		}
+	},
+	[20189] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA40",
+		mask = "bg/bg_memory",
+		title = "Fishing Expert",
+		condition = "Unlock an ending in Project Identity: Explorer.",
+		number = 0,
+		id = 20189,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA40"
+		}
+	},
+	[20190] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA41",
+		mask = "bg/bg_memory",
+		title = "Barista",
+		condition = "Unlock an ending in Project Identity: Explorer.",
+		number = 0,
+		id = 20190,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA41"
+		}
+	},
+	[20191] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA42",
+		mask = "bg/bg_memory",
+		title = "Fortune-Teller",
+		condition = "Unlock an ending in Project Identity: Explorer.",
+		number = 0,
+		id = 20191,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA42"
+		}
+	},
+	[20192] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA43",
+		mask = "bg/bg_memory",
+		title = "Bookstore Employee",
+		condition = "Unlock an ending in Project Identity: Explorer.",
+		number = 0,
+		id = 20192,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA43"
+		}
+	},
+	[20193] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA44",
+		mask = "bg/bg_memory",
+		title = "Pianist",
+		condition = "Unlock an ending in Project Identity: Explorer.",
+		number = 0,
+		id = 20193,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA44"
+		}
+	},
+	[20194] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA45",
+		mask = "bg/bg_memory",
+		title = "Botanist",
+		condition = "Unlock an ending in Project Identity: Explorer.",
+		number = 0,
+		id = 20194,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA45"
+		}
+	},
+	[20195] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEYANGCHENGJIHUA46",
+		mask = "bg/bg_memory",
+		title = "Reunion",
+		condition = "Complete the main story in Project Identity: Explorer.",
+		number = 0,
+		id = 20195,
+		icon = "tb_zhuxian",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEYANGCHENGJIHUA46"
+		}
+	},
+	[20196] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEXINZHIXUYU1",
+		mask = "bg/bg_memory",
+		title = "Walk on a Rainy Day",
+		condition = "Unlock conversations in Project Identity: Explorer.",
+		number = 0,
+		id = 20196,
+		icon = "oceana_tanxin",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEXINZHIXUYU1"
+		}
+	},
+	[20197] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEXINZHIXUYU2",
+		mask = "bg/bg_memory",
+		title = "Afternoon Tea",
+		condition = "Unlock conversations in Project Identity: Explorer.",
+		number = 0,
+		id = 20197,
+		icon = "oceana_tanxin",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEXINZHIXUYU2"
+		}
+	},
+	[20198] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEXINZHIXUYU3",
+		mask = "bg/bg_memory",
+		title = "Filing Paperwork",
+		condition = "Unlock conversations in Project Identity: Explorer.",
+		number = 0,
+		id = 20198,
+		icon = "oceana_tanxin",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEXINZHIXUYU3"
+		}
+	},
+	[20199] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEXINZHIXUYU4",
+		mask = "bg/bg_memory",
+		title = "Choosing a Gift",
+		condition = "Unlock conversations in Project Identity: Explorer.",
+		number = 0,
+		id = 20199,
+		icon = "oceana_tanxin",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEXINZHIXUYU4"
+		}
+	},
+	[20200] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEXINZHIXUYU5",
+		mask = "bg/bg_memory",
+		title = "Curiosity",
+		condition = "Unlock conversations in Project Identity: Explorer.",
+		number = 0,
+		id = 20200,
+		icon = "oceana_tanxin",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEXINZHIXUYU5"
+		}
+	},
+	[20201] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEXINZHIXUYU6",
+		mask = "bg/bg_memory",
+		title = "Making an Album",
+		condition = "Unlock conversations in Project Identity: Explorer.",
+		number = 0,
+		id = 20201,
+		icon = "oceana_tanxin",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEXINZHIXUYU6"
+		}
+	},
+	[20202] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEXINZHIXUYU7",
+		mask = "bg/bg_memory",
+		title = "Invitation to the Amusement Park",
+		condition = "Unlock conversations in Project Identity: Explorer.",
+		number = 0,
+		id = 20202,
+		icon = "oceana_tanxin",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEXINZHIXUYU7"
+		}
+	},
+	[20203] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEXINZHIXUYU8",
+		mask = "bg/bg_memory",
+		title = "Treasure Hunting in the Storehouse",
+		condition = "Unlock conversations in Project Identity: Explorer.",
+		number = 0,
+		id = 20203,
+		icon = "oceana_tanxin",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEXINZHIXUYU8"
+		}
+	},
+	[20204] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEXINZHIXUYU9",
+		mask = "bg/bg_memory",
+		title = "Managing Your Health",
+		condition = "Unlock conversations in Project Identity: Explorer.",
+		number = 0,
+		id = 20204,
+		icon = "oceana_tanxin",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEXINZHIXUYU9"
+		}
+	},
+	[20205] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHEXINZHIXUYU10",
+		mask = "bg/bg_memory",
+		title = "Decoration Plan",
+		condition = "Unlock conversations in Project Identity: Explorer.",
+		number = 0,
+		id = 20205,
+		icon = "oceana_tanxin",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHEXINZHIXUYU10"
+		}
+	},
+	[20206] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHELAIFANGJISHI1",
+		mask = "bg/bg_memory",
+		title = "The Secret to Being Dazzling 1",
+		condition = "Interact with a shipgirl in Project Identity: Explorer.",
+		number = 0,
+		id = 20206,
+		icon = "explorer_baifang1",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHELAIFANGJISHI1"
+		}
+	},
+	[20207] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHELAIFANGJISHI2",
+		mask = "bg/bg_memory",
+		title = "The Flower Garden 1",
+		condition = "Interact with a shipgirl in Project Identity: Explorer.",
+		number = 0,
+		id = 20207,
+		icon = "explorer_baifang2",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHELAIFANGJISHI2"
+		}
+	},
+	[20208] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHELAIFANGJISHI3",
+		mask = "bg/bg_memory",
+		title = "It's Fine to Be Frank 1",
+		condition = "Interact with a shipgirl in Project Identity: Explorer.",
+		number = 0,
+		id = 20208,
+		icon = "explorer_baifang3",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHELAIFANGJISHI3"
+		}
+	},
+	[20209] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHELAIFANGJISHI4",
+		mask = "bg/bg_memory",
+		title = "Aprons and Glory 1",
+		condition = "Interact with a shipgirl in Project Identity: Explorer.",
+		number = 0,
+		id = 20209,
+		icon = "explorer_baifang4",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHELAIFANGJISHI4"
+		}
+	},
+	[20210] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHELAIFANGJISHI5",
+		mask = "bg/bg_memory",
+		title = "Crude Aspirations 1",
+		condition = "Interact with a shipgirl in Project Identity: Explorer.",
+		number = 0,
+		id = 20210,
+		icon = "explorer_baifang5",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHELAIFANGJISHI5"
+		}
+	},
+	[20211] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHELAIFANGJISHI6",
+		mask = "bg/bg_memory",
+		title = "An Orderly Day 1",
+		condition = "Interact with a shipgirl in Project Identity: Explorer.",
+		number = 0,
+		id = 20211,
+		icon = "explorer_baifang6",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHELAIFANGJISHI6"
+		}
+	},
+	[20212] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHELAIFANGJISHI7",
+		mask = "bg/bg_memory",
+		title = "The Secret to Being Dazzling 2",
+		condition = "Interact with a shipgirl in Project Identity: Explorer.",
+		number = 0,
+		id = 20212,
+		icon = "explorer_baifang1",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHELAIFANGJISHI7"
+		}
+	},
+	[20213] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHELAIFANGJISHI8",
+		mask = "bg/bg_memory",
+		title = "The Flower Garden 2",
+		condition = "Interact with a shipgirl in Project Identity: Explorer.",
+		number = 0,
+		id = 20213,
+		icon = "explorer_baifang2",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHELAIFANGJISHI8"
+		}
+	},
+	[20214] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHELAIFANGJISHI9",
+		mask = "bg/bg_memory",
+		title = "It's Fine to Be Frank 2",
+		condition = "Interact with a shipgirl in Project Identity: Explorer.",
+		number = 0,
+		id = 20214,
+		icon = "explorer_baifang3",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHELAIFANGJISHI9"
+		}
+	},
+	[20215] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHELAIFANGJISHI10",
+		mask = "bg/bg_memory",
+		title = "Aprons and Glory 2",
+		condition = "Interact with a shipgirl in Project Identity: Explorer.",
+		number = 0,
+		id = 20215,
+		icon = "explorer_baifang4",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHELAIFANGJISHI10"
+		}
+	},
+	[20216] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHELAIFANGJISHI11",
+		mask = "bg/bg_memory",
+		title = "Crude Aspirations 2",
+		condition = "Interact with a shipgirl in Project Identity: Explorer.",
+		number = 0,
+		id = 20216,
+		icon = "explorer_baifang5",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHELAIFANGJISHI11"
+		}
+	},
+	[20217] = {
+		type = 1,
+		subtitle = "",
+		story = "TANSUOZHELAIFANGJISHI12",
+		mask = "bg/bg_memory",
+		title = "An Orderly Day 2",
+		condition = "Interact with a shipgirl in Project Identity: Explorer.",
+		number = 0,
+		id = 20217,
+		icon = "explorer_baifang6",
+		is_open = 0,
+		unlock_pre = {
+			"TANSUOZHELAIFANGJISHI12"
 		}
 	}
 }

@@ -39,11 +39,24 @@ function var0_0.Show(arg0_5, arg1_5)
 	})
 
 	local var0_5 = arg0_5.contextData.char:GetRoundData()
-	local var1_5, var2_5, var3_5 = var0_5:GetProgressInfo()
+	local var1_5 = var0_5.round
+	local var2_5 = 0
+	local var3_5 = 0
+
+	if var0_5:IsEndless() then
+		local var4_5, var5_5, var6_5 = var0_5:GetEndlessProgressInfos()
+
+		var3_5 = var6_5
+	else
+		var1_5, var2_5, var3_5 = var0_5:GetProgressInfo()
+	end
 
 	setText(arg0_5.assessTF, i18n("child2_assess_tip", var2_5))
 	setText(arg0_5.targetTF, i18n("child2_assess_tip_target", var3_5))
-	setText(arg0_5.roundTF, i18n("child2_cur_round", var1_5 - 1))
+
+	local var7_5 = var0_5:IsTemp()
+
+	setText(arg0_5.roundTF, i18n("child2_cur_round", var7_5 and var1_5 or var1_5 - 1))
 	seriesAsync({
 		function(arg0_6)
 			arg0_5.roundAnimEvent:SetEndEvent(function()
@@ -53,7 +66,10 @@ function var0_0.Show(arg0_5, arg1_5)
 			end)
 			arg0_5.roundAnimEvent:SetTriggerEvent(function()
 				arg0_5.roundAnimEvent:SetTriggerEvent(nil)
-				setText(arg0_5.roundTF, i18n("child2_cur_round", var1_5))
+
+				local var0_8 = var7_5 and i18n("child2_cur_round_temp") or i18n("child2_cur_round", var1_5)
+
+				setText(arg0_5.roundTF, var0_8)
 			end)
 			setActive(arg0_5.roundWindow, true)
 		end,

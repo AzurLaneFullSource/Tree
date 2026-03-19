@@ -1499,7 +1499,7 @@ pg.base.ship_meta_breakout = {
 		weapon_ids = {}
 	},
 	[9702111] = {
-		breakout_view = "Unlock Cinders of Hope - Regensburg/Main gun efficiency +5%",
+		breakout_view = "习得技能【逐光之焰·{namecode:516}】/主炮效率提高5%",
 		gold = 1000,
 		breakout_id = 9702112,
 		repair = 0,
@@ -1515,7 +1515,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9702112] = {
-		breakout_view = "Torpedo base +1/Torpedo preload +1/Main gun efficiency +10%",
+		breakout_view = "鱼雷底座+1/鱼雷预装填+1/主炮效率提高10%",
 		gold = 3000,
 		breakout_id = 9702113,
 		repair = 0,
@@ -1532,7 +1532,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9702113] = {
-		breakout_view = "Improve Cinders of Hope - Regensburg/All weapons' efficiency +5%",
+		breakout_view = "【逐光之焰·{namecode:516}】升级/全武器效率提高5%",
 		gold = 10000,
 		breakout_id = 9702114,
 		repair = 0,
@@ -1548,7 +1548,7 @@ pg.base.ship_meta_breakout = {
 		}
 	},
 	[9702114] = {
-		breakout_view = "None",
+		breakout_view = "无",
 		gold = 0,
 		breakout_id = 0,
 		repair = 0,

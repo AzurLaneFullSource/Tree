@@ -658,429 +658,449 @@ function var0_0.UpdateOptionTxt(arg0_61, arg1_61, arg2_61, arg3_61, arg4_61)
 		var0_61.preferredHeight = var1_61.rect.height
 	end
 
-	if var1_61:Find("type1") then
-		setActive(var1_61:Find("type1"), arg4_61 and arg4_61 == 1)
+	arg0_61:UpdateOptionBGWithTB(var1_61, arg4_61)
+end
+
+function var0_0.UpdateOptionBGWithTB(arg0_62, arg1_62, arg2_62)
+	local var0_62 = getProxy(NewEducateProxy):GetCurChar()
+	local var1_62 = arg1_62:Find("type1")
+	local var2_62 = arg1_62:Find("type2")
+
+	if var1_62 then
+		setActive(var1_62, false)
 	end
 
-	if var1_61:Find("type2") then
-		setActive(var1_61:Find("type2"), arg4_61 and arg4_61 == 2)
+	if var2_62 then
+		setActive(var2_62, false)
+	end
+
+	if var0_62 and var1_62 then
+		local var3_62 = arg2_62 and arg2_62 == 1
+
+		if var3_62 then
+			local var4_62 = var0_62:GetPersonalityTagOptionBg(arg2_62)
+
+			LoadImageSpriteAsync("neweducateicon/" .. var4_62, var1_62)
+		end
+
+		setActive(var1_62, var3_62)
+	end
+
+	if var0_62 and var2_62 then
+		local var5_62 = arg2_62 and arg2_62 == 2
+
+		if var5_62 then
+			local var6_62 = var0_62:GetPersonalityTagOptionBg(arg2_62)
+
+			LoadImageSpriteAsync("neweducateicon/" .. var6_62, var2_62)
+		end
+
+		setActive(var2_62, var5_62)
 	end
 end
 
-function var0_0.InitBranches(arg0_62, arg1_62, arg2_62, arg3_62, arg4_62)
-	local var0_62 = false
-	local var1_62 = arg2_62:GetOptions()
-	local var2_62, var3_62 = arg0_62:GetOptionContainer(arg2_62)
-	local var4_62 = arg2_62:GetId()
-	local var5_62 = arg0_62.branchCodeList[var4_62] or {}
-	local var6_62 = GetOrAddComponent(var2_62.container, typeof(CanvasGroup))
+function var0_0.InitBranches(arg0_63, arg1_63, arg2_63, arg3_63, arg4_63)
+	local var0_63 = false
+	local var1_63 = arg2_63:GetOptions()
+	local var2_63, var3_63 = arg0_63:GetOptionContainer(arg2_63)
+	local var4_63 = arg2_63:GetId()
+	local var5_63 = arg0_63.branchCodeList[var4_63] or {}
+	local var6_63 = GetOrAddComponent(var2_63.container, typeof(CanvasGroup))
 
-	var6_62.blocksRaycasts = true
-	arg0_62.selectedBranchID = nil
+	var6_63.blocksRaycasts = true
+	arg0_63.selectedBranchID = nil
 
-	var2_62:make(function(arg0_63, arg1_63, arg2_63)
-		if arg0_63 == UIItemList.EventUpdate then
-			local var0_63 = arg2_63
-			local var1_63 = var1_62[arg1_63 + 1][1]
-			local var2_63 = var1_62[arg1_63 + 1][2]
-			local var3_63 = var1_62[arg1_63 + 1][3]
-			local var4_63 = table.contains(var5_62, var2_63)
+	var2_63:make(function(arg0_64, arg1_64, arg2_64)
+		if arg0_64 == UIItemList.EventUpdate then
+			local var0_64 = arg2_64
+			local var1_64 = var1_63[arg1_64 + 1][1]
+			local var2_64 = var1_63[arg1_64 + 1][2]
+			local var3_64 = var1_63[arg1_64 + 1][3]
+			local var4_64 = table.contains(var5_63, var2_64)
 
-			onButton(arg0_62, var0_63, function()
-				if arg0_62.pause or arg0_62.stop then
+			onButton(arg0_63, var0_64, function()
+				if arg0_63.pause or arg0_63.stop then
 					return
 				end
 
-				if not var0_62 then
+				if not var0_63 then
 					return
 				end
 
-				arg0_62.selectedBranchID = arg1_63
+				arg0_63.selectedBranchID = arg1_64
 
-				arg0_62:SetBranchCode(arg1_62, arg2_62, var2_63)
-				pg.NewStoryMgr.GetInstance():TrackingOption(arg2_62:GetOptionIndex(), var2_63)
+				arg0_63:SetBranchCode(arg1_63, arg2_63, var2_64)
+				pg.NewStoryMgr.GetInstance():TrackingOption(arg2_63:GetOptionIndex(), var2_64)
 
-				local var0_64 = arg2_63:GetComponent(typeof(Animation))
+				local var0_65 = arg2_64:GetComponent(typeof(Animation))
 
-				if var0_64 then
-					var6_62.blocksRaycasts = false
+				if var0_65 then
+					var6_63.blocksRaycasts = false
 
-					var0_64:Play(arg0_62.script:GetAnimPrefix() .. "confirm")
-					arg2_63:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-						setActive(arg0_62.optionsCg.gameObject, false)
+					var0_65:Play(arg0_63.script:GetAnimPrefix() .. "confirm")
+					arg2_64:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+						setActive(arg0_63.optionsCg.gameObject, false)
 
-						var6_62.blocksRaycasts = true
+						var6_63.blocksRaycasts = true
 
-						arg3_62(var1_63)
+						arg3_63(var1_64)
 					end)
 				else
-					setActive(arg0_62.optionsCg.gameObject, false)
-					arg3_62(var1_63)
+					setActive(arg0_63.optionsCg.gameObject, false)
+					arg3_63(var1_64)
 				end
 
-				arg0_62:HideBranchesWithoutSelected(arg2_62)
+				arg0_63:HideBranchesWithoutSelected(arg2_63)
 			end, SFX_PANEL)
-			setButtonEnabled(var0_63, not var4_63)
+			setButtonEnabled(var0_64, not var4_64)
 
-			GetOrAddComponent(arg2_63, typeof(CanvasGroup)).alpha = var4_63 and 0.5 or 1
+			GetOrAddComponent(arg2_64, typeof(CanvasGroup)).alpha = var4_64 and 0.5 or 1
 
-			arg0_62:UpdateOptionTxt(var3_62, var0_63, var1_63, var3_63)
+			arg0_63:UpdateOptionTxt(var3_63, var0_64, var1_64, var3_64)
 
-			if arg0_62.script:IsDialogueStyle2() then
-				setActive(var0_63, arg1_63 == 0)
+			if arg0_63.script:IsDialogueStyle2() then
+				setActive(var0_64, arg1_64 == 0)
 
-				if arg1_63 > 0 then
-					LeanTween.delayedCall(0.066 * arg1_63, System.Action(function()
-						setActive(var0_63, true)
+				if arg1_64 > 0 then
+					LeanTween.delayedCall(0.066 * arg1_64, System.Action(function()
+						setActive(var0_64, true)
 					end))
 				end
 			end
 		end
 	end)
-	var2_62:align(#var1_62)
-	arg0_62:ShowBranches(arg2_62, function()
-		var0_62 = true
+	var2_63:align(#var1_63)
+	arg0_63:ShowBranches(arg2_63, function()
+		var0_63 = true
 
-		if arg4_62 then
-			arg4_62()
+		if arg4_63 then
+			arg4_63()
 		end
 	end)
 end
 
-function var0_0.SetBranchCode(arg0_68, arg1_68, arg2_68, arg3_68)
-	arg2_68:SetBranchCode(arg3_68)
-	arg1_68:SetBranchCode(arg3_68)
+function var0_0.SetBranchCode(arg0_69, arg1_69, arg2_69, arg3_69)
+	arg2_69:SetBranchCode(arg3_69)
+	arg1_69:SetBranchCode(arg3_69)
 
-	local var0_68 = arg2_68:GetId()
+	local var0_69 = arg2_69:GetId()
 
-	if not arg0_68.branchCodeList[var0_68] then
-		arg0_68.branchCodeList[var0_68] = {}
+	if not arg0_69.branchCodeList[var0_69] then
+		arg0_69.branchCodeList[var0_69] = {}
 	end
 
-	table.insert(arg0_68.branchCodeList[var0_68], arg3_68)
+	table.insert(arg0_69.branchCodeList[var0_69], arg3_69)
 end
 
-function var0_0.ShowBranches(arg0_69, arg1_69, arg2_69)
-	setActive(arg0_69.optionsCg.gameObject, true)
+function var0_0.ShowBranches(arg0_70, arg1_70, arg2_70)
+	setActive(arg0_70.optionsCg.gameObject, true)
 
-	local var0_69 = arg0_69:GetOptionContainer(arg1_69)
-
-	for iter0_69 = 0, var0_69.container.childCount - 1 do
-		local var1_69 = var0_69.container:GetChild(iter0_69):GetComponent(typeof(Animation))
-
-		if var1_69 then
-			var1_69:Play(arg0_69.script:GetAnimPrefix() .. "in")
-		end
-	end
-
-	arg2_69()
-end
-
-function var0_0.HideBranchesWithoutSelected(arg0_70, arg1_70)
 	local var0_70 = arg0_70:GetOptionContainer(arg1_70)
 
 	for iter0_70 = 0, var0_70.container.childCount - 1 do
-		if iter0_70 ~= arg0_70.selectedBranchID then
-			local var1_70 = var0_70.container:GetChild(iter0_70):GetComponent(typeof(Animation))
+		local var1_70 = var0_70.container:GetChild(iter0_70):GetComponent(typeof(Animation))
 
-			if var1_70 then
-				var1_70:Play(arg0_70.script:GetAnimPrefix() .. "unselected")
+		if var1_70 then
+			var1_70:Play(arg0_70.script:GetAnimPrefix() .. "in")
+		end
+	end
+
+	arg2_70()
+end
+
+function var0_0.HideBranchesWithoutSelected(arg0_71, arg1_71)
+	local var0_71 = arg0_71:GetOptionContainer(arg1_71)
+
+	for iter0_71 = 0, var0_71.container.childCount - 1 do
+		if iter0_71 ~= arg0_71.selectedBranchID then
+			local var1_71 = var0_71.container:GetChild(iter0_71):GetComponent(typeof(Animation))
+
+			if var1_71 then
+				var1_71:Play(arg0_71.script:GetAnimPrefix() .. "unselected")
 			end
 		end
 	end
 end
 
-function var0_0.StartMoveNode(arg0_71, arg1_71, arg2_71)
-	if not arg1_71:ExistMovableNode() then
-		arg2_71()
+function var0_0.StartMoveNode(arg0_72, arg1_72, arg2_72)
+	if not arg1_72:ExistMovableNode() then
+		arg2_72()
 
 		return
 	end
 
-	local var0_71 = arg1_71:GetMovableNode()
-	local var1_71 = {}
-	local var2_71 = {}
+	local var0_72 = arg1_72:GetMovableNode()
+	local var1_72 = {}
+	local var2_72 = {}
 
-	for iter0_71, iter1_71 in pairs(var0_71) do
-		table.insert(var1_71, function(arg0_72)
-			arg0_71:LoadMovableNode(iter1_71, function(arg0_73)
-				var2_71[iter0_71] = arg0_73
+	for iter0_72, iter1_72 in pairs(var0_72) do
+		table.insert(var1_72, function(arg0_73)
+			arg0_72:LoadMovableNode(iter1_72, function(arg0_74)
+				var2_72[iter0_72] = arg0_74
 
-				arg0_72()
+				arg0_73()
 			end)
 		end)
 	end
 
-	parallelAsync(var1_71, function()
-		arg0_71:MoveAllNode(arg1_71, var2_71, var0_71)
-		arg2_71()
+	parallelAsync(var1_72, function()
+		arg0_72:MoveAllNode(arg1_72, var2_72, var0_72)
+		arg2_72()
 	end)
 end
 
-function var0_0.MoveAllNode(arg0_75, arg1_75, arg2_75, arg3_75)
-	local var0_75 = {}
+function var0_0.MoveAllNode(arg0_76, arg1_76, arg2_76, arg3_76)
+	local var0_76 = {}
 
-	for iter0_75, iter1_75 in pairs(arg2_75) do
-		table.insert(var0_75, function(arg0_76)
-			local var0_76 = arg3_75[iter0_75]
-			local var1_76 = var0_76.path
-			local var2_76 = var0_76.time
-			local var3_76 = var0_76.easeType
-			local var4_76 = var0_76.delay
+	for iter0_76, iter1_76 in pairs(arg2_76) do
+		table.insert(var0_76, function(arg0_77)
+			local var0_77 = arg3_76[iter0_76]
+			local var1_77 = var0_77.path
+			local var2_77 = var0_77.time
+			local var3_77 = var0_77.easeType
+			local var4_77 = var0_77.delay
 
-			arg0_75:moveLocalPath(iter1_75, var1_76, var2_76, var4_76, var3_76, arg0_76)
+			arg0_76:moveLocalPath(iter1_76, var1_77, var2_77, var4_77, var3_77, arg0_77)
 		end)
 	end
 
-	arg0_75.moveTargets = arg2_75
+	arg0_76.moveTargets = arg2_76
 
-	parallelAsync(var0_75, function()
-		arg0_75:ClearMoveNodes(arg1_75)
+	parallelAsync(var0_76, function()
+		arg0_76:ClearMoveNodes(arg1_76)
 	end)
 end
 
-local function var12_0(arg0_78, arg1_78, arg2_78, arg3_78, arg4_78)
-	arg0_78.spineChar = SpineAnimChar.New()
+local function var12_0(arg0_79, arg1_79, arg2_79, arg3_79, arg4_79)
+	arg0_79.spineChar = SpineAnimChar.New()
 
-	arg0_78.spineChar:SetPaint(arg1_78)
-	arg0_78.spineChar:Load(true, function(arg0_79)
-		arg0_79:SetParent(arg0_78.movePanel)
-		arg0_79:SetLocalScale(Vector3(arg2_78.scale, arg2_78.scale, 0))
-		arg0_79:SetLocalPosition(arg3_78)
-		arg0_79:SetAction(arg2_78.action, 0)
-		arg0_79:SetName(arg1_78)
+	arg0_79.spineChar:SetPaint(arg1_79)
+	arg0_79.spineChar:Load(true, function(arg0_80)
+		arg0_80:SetParent(arg0_79.movePanel)
+		arg0_80:SetLocalScale(Vector3(arg2_79.scale, arg2_79.scale, 0))
+		arg0_80:SetLocalPosition(arg3_79)
+		arg0_80:SetAction(arg2_79.action, 0)
+		arg0_80:SetName(arg1_79)
 
-		if arg4_78 then
-			arg4_78(arg0_78.spineChar:GetModel())
+		if arg4_79 then
+			arg4_79(arg0_79.spineChar:GetModel())
 		end
 	end)
 end
 
-local function var13_0(arg0_80, arg1_80, arg2_80, arg3_80)
-	local var0_80 = GameObject.New("movable")
+local function var13_0(arg0_81, arg1_81, arg2_81, arg3_81)
+	local var0_81 = GameObject.New("movable")
 
-	var0_80.transform:SetParent(arg0_80.movePanel)
+	var0_81.transform:SetParent(arg0_81.movePanel)
 
-	var0_80.transform.localScale = Vector3.zero
+	var0_81.transform.localScale = Vector3.zero
 
-	local var1_80 = GetOrAddComponent(var0_80, typeof(RectTransform))
-	local var2_80 = GetOrAddComponent(var0_80, typeof(Image))
+	local var1_81 = GetOrAddComponent(var0_81, typeof(RectTransform))
+	local var2_81 = GetOrAddComponent(var0_81, typeof(Image))
 
-	LoadSpriteAsync(arg1_80, function(arg0_81)
-		var2_80.sprite = arg0_81
+	LoadSpriteAsync(arg1_81, function(arg0_82)
+		var2_81.sprite = arg0_82
 
-		var2_80:SetNativeSize()
+		var2_81:SetNativeSize()
 
-		var1_80.localScale = Vector3.one
-		var1_80.localPosition = arg2_80
+		var1_81.localScale = Vector3.one
+		var1_81.localPosition = arg2_81
 
-		arg3_80(var1_80.gameObject)
+		arg3_81(var1_81.gameObject)
 	end)
 end
 
-function var0_0.LoadMovableNode(arg0_82, arg1_82, arg2_82)
-	local var0_82 = arg1_82.path[1] or Vector3.zero
+function var0_0.LoadMovableNode(arg0_83, arg1_83, arg2_83)
+	local var0_83 = arg1_83.path[1] or Vector3.zero
 
-	if arg1_82.isSpine then
-		var12_0(arg0_82, arg1_82.name, arg1_82.spineData, var0_82, arg2_82)
+	if arg1_83.isSpine then
+		var12_0(arg0_83, arg1_83.name, arg1_83.spineData, var0_83, arg2_83)
 	else
-		var13_0(arg0_82, arg1_82.name, var0_82, arg2_82)
+		var13_0(arg0_83, arg1_83.name, var0_83, arg2_83)
 	end
 end
 
-function var0_0.ClearMoveNodes(arg0_83, arg1_83)
-	if not arg1_83:ExistMovableNode() then
+function var0_0.ClearMoveNodes(arg0_84, arg1_84)
+	if not arg1_84:ExistMovableNode() then
 		return
 	end
 
-	if arg0_83.movePanel.childCount <= 0 then
+	if arg0_84.movePanel.childCount <= 0 then
 		return
 	end
 
-	for iter0_83, iter1_83 in ipairs(arg0_83.moveTargets or {}) do
-		if iter1_83:GetComponent(typeof(SpineAnimUI)) ~= nil then
-			PoolMgr.GetInstance():ReturnSpineChar(iter1_83.name, iter1_83.gameObject)
+	for iter0_84, iter1_84 in ipairs(arg0_84.moveTargets or {}) do
+		if iter1_84:GetComponent(typeof(SpineAnimUI)) ~= nil then
+			PoolMgr.GetInstance():ReturnSpineChar(iter1_84.name, iter1_84.gameObject)
 		else
-			Destroy(arg0_83.movePanel:GetChild(iter0_83 - 1))
+			Destroy(arg0_84.movePanel:GetChild(iter0_84 - 1))
 		end
 	end
 
-	arg0_83.moveTargets = {}
+	arg0_84.moveTargets = {}
 end
 
-function var0_0.FadeOutStory(arg0_84, arg1_84, arg2_84)
-	if not arg1_84:ShouldFadeout() then
-		arg2_84()
+function var0_0.FadeOutStory(arg0_85, arg1_85, arg2_85)
+	if not arg1_85:ShouldFadeout() then
+		arg2_85()
 
 		return
 	end
 
-	local var0_84 = arg1_84:GetFadeoutTime()
+	local var0_85 = arg1_85:GetFadeoutTime()
 
-	if not arg1_84:ShouldWaitFadeout() then
-		arg0_84:fadeTransform(arg0_84._go, 1, 0.3, var0_84, true)
-		arg2_84()
+	if not arg1_85:ShouldWaitFadeout() then
+		arg0_85:fadeTransform(arg0_85._go, 1, 0.3, var0_85, true)
+		arg2_85()
 	else
-		arg0_84:fadeTransform(arg0_84._go, 1, 0.3, var0_84, true, arg2_84)
+		arg0_85:fadeTransform(arg0_85._go, 1, 0.3, var0_85, true, arg2_85)
 	end
 end
 
-function var0_0.GetFadeColor(arg0_85, arg1_85)
-	local var0_85 = {}
-	local var1_85 = {}
-	local var2_85 = arg1_85:GetComponentsInChildren(typeof(Image)):ToTable()
+function var0_0.GetFadeColor(arg0_86, arg1_86)
+	local var0_86 = {}
+	local var1_86 = {}
+	local var2_86 = arg1_86:GetComponentsInChildren(typeof(Image)):ToTable()
 
-	for iter0_85, iter1_85 in ipairs(var2_85) do
-		local var3_85 = {
+	for iter0_86, iter1_86 in ipairs(var2_86) do
+		local var3_86 = {
 			name = "_Color",
 			color = Color.white
 		}
 
-		if iter1_85.material.shader.name == "UI/GrayScale" then
-			var3_85 = {
+		if iter1_86.material.shader.name == "UI/GrayScale" then
+			var3_86 = {
 				name = "_GrayScale",
 				color = Color.New(0.211764705882353, 0.713725490196078, 0.0705882352941176)
 			}
-		elseif iter1_85.material.shader.name == "UI/Line_Add_Blue" then
-			var3_85 = {
+		elseif iter1_86.material.shader.name == "UI/Line_Add_Blue" then
+			var3_86 = {
 				name = "_GrayScale",
 				color = Color.New(1, 1, 1, 0.588235294117647)
 			}
 		end
 
-		table.insert(var1_85, var3_85)
+		table.insert(var1_86, var3_86)
 
-		if iter1_85.material == iter1_85.defaultGraphicMaterial then
-			iter1_85.material = Material.Instantiate(iter1_85.defaultGraphicMaterial)
+		if iter1_86.material == iter1_86.defaultGraphicMaterial then
+			iter1_86.material = Material.Instantiate(iter1_86.defaultGraphicMaterial)
 		end
 
-		table.insert(var0_85, iter1_85.material)
+		table.insert(var0_86, iter1_86.material)
 	end
 
-	return var0_85, var1_85
+	return var0_86, var1_86
 end
 
-function var0_0._SetFadeColor(arg0_86, arg1_86, arg2_86, arg3_86)
-	for iter0_86, iter1_86 in ipairs(arg1_86) do
-		if not IsNil(iter1_86) then
-			iter1_86:SetColor(arg2_86[iter0_86].name, arg2_86[iter0_86].color * Color.New(arg3_86, arg3_86, arg3_86))
+function var0_0._SetFadeColor(arg0_87, arg1_87, arg2_87, arg3_87)
+	for iter0_87, iter1_87 in ipairs(arg1_87) do
+		if not IsNil(iter1_87) then
+			iter1_87:SetColor(arg2_87[iter0_87].name, arg2_87[iter0_87].color * Color.New(arg3_87, arg3_87, arg3_87))
 		end
 	end
 end
 
-function var0_0.SetFadeColor(arg0_87, arg1_87, arg2_87)
-	local var0_87, var1_87 = arg0_87:GetFadeColor(arg1_87)
+function var0_0.SetFadeColor(arg0_88, arg1_88, arg2_88)
+	local var0_88, var1_88 = arg0_88:GetFadeColor(arg1_88)
 
-	arg0_87:_SetFadeColor(var0_87, var1_87, arg2_87)
+	arg0_88:_SetFadeColor(var0_88, var1_88, arg2_88)
 end
 
-function var0_0._RevertFadeColor(arg0_88, arg1_88, arg2_88)
-	arg0_88:_SetFadeColor(arg1_88, arg2_88, 1)
+function var0_0._RevertFadeColor(arg0_89, arg1_89, arg2_89)
+	arg0_89:_SetFadeColor(arg1_89, arg2_89, 1)
 end
 
-function var0_0.RevertFadeColor(arg0_89, arg1_89)
-	local var0_89, var1_89 = arg0_89:GetFadeColor(arg1_89)
+function var0_0.RevertFadeColor(arg0_90, arg1_90)
+	local var0_90, var1_90 = arg0_90:GetFadeColor(arg1_90)
 
-	arg0_89:_RevertFadeColor(var0_89, var1_89)
+	arg0_90:_RevertFadeColor(var0_90, var1_90)
 end
 
-function var0_0.fadeTransform(arg0_90, arg1_90, arg2_90, arg3_90, arg4_90, arg5_90, arg6_90)
-	if arg4_90 <= 0 then
-		if arg6_90 then
-			arg6_90()
+function var0_0.fadeTransform(arg0_91, arg1_91, arg2_91, arg3_91, arg4_91, arg5_91, arg6_91)
+	if arg4_91 <= 0 then
+		if arg6_91 then
+			arg6_91()
 		end
 
 		return
 	end
 
-	local var0_90, var1_90 = arg0_90:GetFadeColor(arg1_90)
+	local var0_91, var1_91 = arg0_91:GetFadeColor(arg1_91)
 
-	LeanTween.value(go(arg1_90), arg2_90, arg3_90, arg4_90):setOnUpdate(System.Action_float(function(arg0_91)
-		arg0_90:_SetFadeColor(var0_90, var1_90, arg0_91)
+	LeanTween.value(go(arg1_91), arg2_91, arg3_91, arg4_91):setOnUpdate(System.Action_float(function(arg0_92)
+		arg0_91:_SetFadeColor(var0_91, var1_91, arg0_92)
 	end)):setOnComplete(System.Action(function()
-		if arg5_90 then
-			arg0_90:_RevertFadeColor(var0_90, var1_90)
+		if arg5_91 then
+			arg0_91:_RevertFadeColor(var0_91, var1_91)
 		end
 
-		if arg6_90 then
-			arg6_90()
+		if arg6_91 then
+			arg6_91()
 		end
 	end))
 end
 
-function var0_0.setPaintingAlpha(arg0_93, arg1_93, arg2_93)
-	local var0_93 = {}
-	local var1_93 = {}
-	local var2_93 = arg1_93:GetComponentsInChildren(typeof(Image)):ToTable()
+function var0_0.setPaintingAlpha(arg0_94, arg1_94, arg2_94)
+	local var0_94 = {}
+	local var1_94 = {}
+	local var2_94 = arg1_94:GetComponentsInChildren(typeof(Image)):ToTable()
 
-	for iter0_93, iter1_93 in ipairs(var2_93) do
-		local var3_93 = {
+	for iter0_94, iter1_94 in ipairs(var2_94) do
+		local var3_94 = {
 			name = "_Color",
 			color = Color.white
 		}
 
-		if iter1_93.material.shader.name == "UI/GrayScale" then
-			var3_93 = {
+		if iter1_94.material.shader.name == "UI/GrayScale" then
+			var3_94 = {
 				name = "_GrayScale",
 				color = Color.New(0.211764705882353, 0.713725490196078, 0.0705882352941176)
 			}
-		elseif iter1_93.material.shader.name == "UI/Line_Add_Blue" then
-			var3_93 = {
+		elseif iter1_94.material.shader.name == "UI/Line_Add_Blue" then
+			var3_94 = {
 				name = "_GrayScale",
 				color = Color.New(1, 1, 1, 0.588235294117647)
 			}
 		end
 
-		table.insert(var1_93, var3_93)
+		table.insert(var1_94, var3_94)
 
-		if iter1_93.material == iter1_93.defaultGraphicMaterial then
-			iter1_93.material = Material.Instantiate(iter1_93.defaultGraphicMaterial)
+		if iter1_94.material == iter1_94.defaultGraphicMaterial then
+			iter1_94.material = Material.Instantiate(iter1_94.defaultGraphicMaterial)
 		end
 
-		table.insert(var0_93, iter1_93.material)
+		table.insert(var0_94, iter1_94.material)
 	end
 
-	for iter2_93, iter3_93 in ipairs(var0_93) do
-		if not IsNil(iter3_93) then
-			iter3_93:SetColor(var1_93[iter2_93].name, var1_93[iter2_93].color * Color.New(arg2_93, arg2_93, arg2_93))
+	for iter2_94, iter3_94 in ipairs(var0_94) do
+		if not IsNil(iter3_94) then
+			iter3_94:SetColor(var1_94[iter2_94].name, var1_94[iter2_94].color * Color.New(arg2_94, arg2_94, arg2_94))
 		end
 	end
 end
 
-function var0_0.RegisetEvent(arg0_94, arg1_94, arg2_94)
-	setButtonEnabled(arg0_94._go, not arg0_94.autoNext)
-	onButton(arg0_94, arg0_94._go, function()
-		if arg0_94.pause or arg0_94.stop then
+function var0_0.RegisetEvent(arg0_95, arg1_95, arg2_95)
+	setButtonEnabled(arg0_95._go, not arg0_95.autoNext)
+	onButton(arg0_95, arg0_95._go, function()
+		if arg0_95.pause or arg0_95.stop then
 			return
 		end
 
-		removeOnButton(arg0_94._go)
-		arg2_94()
+		removeOnButton(arg0_95._go)
+		arg2_95()
 	end, SFX_PANEL)
 end
 
-function var0_0.flashEffect(arg0_96, arg1_96, arg2_96, arg3_96, arg4_96, arg5_96, arg6_96)
-	arg0_96.flashImg.color = arg4_96 and Color(0, 0, 0) or Color(1, 1, 1)
-	arg0_96.flashCg.alpha = arg1_96
+function var0_0.flashEffect(arg0_97, arg1_97, arg2_97, arg3_97, arg4_97, arg5_97, arg6_97)
+	arg0_97.flashImg.color = arg4_97 and Color(0, 0, 0) or Color(1, 1, 1)
+	arg0_97.flashCg.alpha = arg1_97
 
-	setActive(arg0_96.flash, true)
-	arg0_96:TweenValueForcanvasGroup(arg0_96.flashCg, arg1_96, arg2_96, arg3_96, arg5_96, arg6_96)
+	setActive(arg0_97.flash, true)
+	arg0_97:TweenValueForcanvasGroup(arg0_97.flashCg, arg1_97, arg2_97, arg3_97, arg5_97, arg6_97)
 end
 
-function var0_0.Flashout(arg0_97, arg1_97, arg2_97)
-	local var0_97, var1_97, var2_97, var3_97 = arg1_97:GetFlashoutData()
-
-	if not var0_97 then
-		arg2_97()
-
-		return
-	end
-
-	arg0_97:flashEffect(var0_97, var1_97, var2_97, var3_97, 0, arg2_97)
-end
-
-function var0_0.flashin(arg0_98, arg1_98, arg2_98)
-	local var0_98, var1_98, var2_98, var3_98, var4_98 = arg1_98:GetFlashinData()
+function var0_0.Flashout(arg0_98, arg1_98, arg2_98)
+	local var0_98, var1_98, var2_98, var3_98 = arg1_98:GetFlashoutData()
 
 	if not var0_98 then
 		arg2_98()
@@ -1088,516 +1108,528 @@ function var0_0.flashin(arg0_98, arg1_98, arg2_98)
 		return
 	end
 
-	arg0_98:flashEffect(var0_98, var1_98, var2_98, var3_98, var4_98, arg2_98)
+	arg0_98:flashEffect(var0_98, var1_98, var2_98, var3_98, 0, arg2_98)
 end
 
-function var0_0.UpdateBg(arg0_99, arg1_99)
-	if arg1_99:ShouldBgGlitchArt() then
-		arg0_99:SetBgGlitchArt(arg1_99)
-	else
-		local var0_99 = arg1_99:GetBgName()
+function var0_0.flashin(arg0_99, arg1_99, arg2_99)
+	local var0_99, var1_99, var2_99, var3_99, var4_99 = arg1_99:GetFlashinData()
 
-		if var0_99 then
-			setActive(arg0_99.bgPanel, true)
-
-			arg0_99.bgPanelCg.alpha = 1
-
-			local var1_99 = arg0_99.bgImage
-
-			var1_99.color = Color.New(1, 1, 1)
-			var1_99.sprite = arg0_99:GetBg(var0_99)
-		end
-
-		local var2_99 = arg1_99:GetBgShadow()
-
-		if var2_99 then
-			local var3_99 = arg0_99.bgImage
-
-			arg0_99:TweenValue(var3_99, var2_99[1], var2_99[2], var2_99[3], 0, function(arg0_100)
-				var3_99.color = Color.New(arg0_100, arg0_100, arg0_100)
-			end, nil)
-		end
-
-		if arg1_99:IsBlackBg() then
-			setActive(arg0_99.curtain, true)
-
-			arg0_99.curtainCg.alpha = 1
-		end
-
-		local var4_99, var5_99 = arg1_99:IsBlackFrontGround()
-
-		if var4_99 then
-			arg0_99.curtainFCg.alpha = var5_99
-		end
-
-		setActive(arg0_99.curtainF, var4_99)
-	end
-
-	arg0_99:ApplyOldPhotoEffect(arg1_99)
-	arg0_99:OnBgUpdate(arg1_99)
-
-	local var6_99 = arg1_99:GetBgColor()
-
-	arg0_99.curtain:GetComponent(typeof(Image)).color = var6_99
-end
-
-function var0_0.ApplyOldPhotoEffect(arg0_101, arg1_101)
-	local var0_101 = arg1_101:OldPhotoEffect()
-	local var1_101 = var0_101 ~= nil
-
-	setActive(arg0_101.oldPhoto.gameObject, var1_101)
-
-	if var1_101 then
-		if type(var0_101) == "table" then
-			arg0_101.oldPhoto.color = Color.New(var0_101[1], var0_101[2], var0_101[3], var0_101[4])
-		else
-			arg0_101.oldPhoto.color = Color.New(0.62, 0.58, 0.14, 0.36)
-		end
-	end
-end
-
-function var0_0.SetBgGlitchArt(arg0_102, arg1_102)
-	setActive(arg0_102.bgPanel, false)
-	setActive(arg0_102.bgGlitch, true)
-end
-
-function var0_0.GetBg(arg0_103, arg1_103)
-	if not arg0_103.bgs[arg1_103] then
-		arg0_103.bgs[arg1_103] = LoadSprite("bg/" .. arg1_103)
-	end
-
-	return arg0_103.bgs[arg1_103]
-end
-
-function var0_0.LoadEffects(arg0_104, arg1_104, arg2_104)
-	local var0_104 = arg1_104:GetEffects()
-
-	if #var0_104 <= 0 then
-		arg2_104()
+	if not var0_99 then
+		arg2_99()
 
 		return
 	end
 
-	local var1_104 = {}
+	arg0_99:flashEffect(var0_99, var1_99, var2_99, var3_99, var4_99, arg2_99)
+end
 
-	for iter0_104, iter1_104 in ipairs(var0_104) do
-		local var2_104 = iter1_104.name
-		local var3_104 = iter1_104.active
-		local var4_104 = iter1_104.interlayer
-		local var5_104 = iter1_104.center
-		local var6_104 = iter1_104.adapt
-		local var7_104 = arg0_104.effectPanel:Find(var2_104) or arg0_104.centerPanel:Find(var2_104)
+function var0_0.UpdateBg(arg0_100, arg1_100)
+	if arg1_100:ShouldBgGlitchArt() then
+		arg0_100:SetBgGlitchArt(arg1_100)
+	else
+		local var0_100 = arg1_100:GetBgName()
 
-		if var7_104 then
-			setActive(var7_104, var3_104)
-			setParent(var7_104, var5_104 and arg0_104.centerPanel or arg0_104.effectPanel.transform)
+		if var0_100 then
+			setActive(arg0_100.bgPanel, true)
 
-			if var4_104 then
-				arg0_104:UpdateEffectInterLayer(var2_104, var7_104)
+			arg0_100.bgPanelCg.alpha = 1
+
+			local var1_100 = arg0_100.bgImage
+
+			var1_100.color = Color.New(1, 1, 1)
+			var1_100.sprite = arg0_100:GetBg(var0_100)
+		end
+
+		local var2_100 = arg1_100:GetBgShadow()
+
+		if var2_100 then
+			local var3_100 = arg0_100.bgImage
+
+			arg0_100:TweenValue(var3_100, var2_100[1], var2_100[2], var2_100[3], 0, function(arg0_101)
+				var3_100.color = Color.New(arg0_101, arg0_101, arg0_101)
+			end, nil)
+		end
+
+		if arg1_100:IsBlackBg() then
+			setActive(arg0_100.curtain, true)
+
+			arg0_100.curtainCg.alpha = 1
+		end
+
+		local var4_100, var5_100 = arg1_100:IsBlackFrontGround()
+
+		if var4_100 then
+			arg0_100.curtainFCg.alpha = var5_100
+		end
+
+		setActive(arg0_100.curtainF, var4_100)
+	end
+
+	arg0_100:ApplyOldPhotoEffect(arg1_100)
+	arg0_100:OnBgUpdate(arg1_100)
+
+	local var6_100 = arg1_100:GetBgColor()
+
+	arg0_100.curtain:GetComponent(typeof(Image)).color = var6_100
+end
+
+function var0_0.ApplyOldPhotoEffect(arg0_102, arg1_102)
+	local var0_102 = arg1_102:OldPhotoEffect()
+	local var1_102 = var0_102 ~= nil
+
+	setActive(arg0_102.oldPhoto.gameObject, var1_102)
+
+	if var1_102 then
+		if type(var0_102) == "table" then
+			arg0_102.oldPhoto.color = Color.New(var0_102[1], var0_102[2], var0_102[3], var0_102[4])
+		else
+			arg0_102.oldPhoto.color = Color.New(0.62, 0.58, 0.14, 0.36)
+		end
+	end
+end
+
+function var0_0.SetBgGlitchArt(arg0_103, arg1_103)
+	setActive(arg0_103.bgPanel, false)
+	setActive(arg0_103.bgGlitch, true)
+end
+
+function var0_0.GetBg(arg0_104, arg1_104)
+	if not arg0_104.bgs[arg1_104] then
+		arg0_104.bgs[arg1_104] = LoadSprite("bg/" .. arg1_104)
+	end
+
+	return arg0_104.bgs[arg1_104]
+end
+
+function var0_0.LoadEffects(arg0_105, arg1_105, arg2_105)
+	local var0_105 = arg1_105:GetEffects()
+
+	if #var0_105 <= 0 then
+		arg2_105()
+
+		return
+	end
+
+	local var1_105 = {}
+
+	for iter0_105, iter1_105 in ipairs(var0_105) do
+		local var2_105 = iter1_105.name
+		local var3_105 = iter1_105.active
+		local var4_105 = iter1_105.interlayer
+		local var5_105 = iter1_105.center
+		local var6_105 = iter1_105.adapt
+		local var7_105 = arg0_105.effectPanel:Find(var2_105) or arg0_105.centerPanel:Find(var2_105)
+
+		if var7_105 then
+			setActive(var7_105, var3_105)
+			setParent(var7_105, var5_105 and arg0_105.centerPanel or arg0_105.effectPanel.transform)
+
+			if var4_105 then
+				arg0_105:UpdateEffectInterLayer(var2_105, var7_105)
 			end
 
-			if not var3_104 then
-				arg0_104:ClearEffectInterlayer(var2_104)
-			elseif isActive(var7_104) then
-				setActive(var7_104, false)
-				setActive(var7_104, true)
+			if not var3_105 then
+				arg0_105:ClearEffectInterlayer(var2_105)
+			elseif isActive(var7_105) then
+				setActive(var7_105, false)
+				setActive(var7_105, true)
 			end
 
-			if var6_104 then
-				arg0_104:AdaptEffect(var7_104)
+			if var6_105 then
+				arg0_105:AdaptEffect(var7_105)
 			end
 		else
-			local var8_104 = ""
+			local var8_105 = ""
 
-			if checkABExist("ui/" .. var2_104) then
-				var8_104 = "ui"
-			elseif checkABExist("effect/" .. var2_104) then
-				var8_104 = "effect"
+			if checkABExist("ui/" .. var2_105) then
+				var8_105 = "ui"
+			elseif checkABExist("effect/" .. var2_105) then
+				var8_105 = "effect"
 			end
 
-			if var8_104 and var8_104 ~= "" then
-				table.insert(var1_104, function(arg0_105)
-					LoadAndInstantiateAsync(var8_104, var2_104, function(arg0_106)
-						setParent(arg0_106, var5_104 and arg0_104.centerPanel or arg0_104.effectPanel.transform)
+			if var8_105 and var8_105 ~= "" then
+				table.insert(var1_105, function(arg0_106)
+					LoadAndInstantiateAsync(var8_105, var2_105, function(arg0_107)
+						setParent(arg0_107, var5_105 and arg0_105.centerPanel or arg0_105.effectPanel.transform)
 
-						arg0_106.transform.localScale = Vector3.one
+						arg0_107.transform.localScale = Vector3.one
 
-						setActive(arg0_106, var3_104)
+						setActive(arg0_107, var3_105)
 
-						arg0_106.name = var2_104
+						arg0_107.name = var2_105
 
-						if var4_104 then
-							arg0_104:UpdateEffectInterLayer(var2_104, arg0_106)
+						if var4_105 then
+							arg0_105:UpdateEffectInterLayer(var2_105, arg0_107)
 						end
 
-						if var3_104 == false then
-							arg0_104:ClearEffectInterlayer(var2_104)
+						if var3_105 == false then
+							arg0_105:ClearEffectInterlayer(var2_105)
 						end
 
-						if var6_104 then
-							arg0_104:AdaptEffect(arg0_106)
+						if var6_105 then
+							arg0_105:AdaptEffect(arg0_107)
 						end
 
-						arg0_105()
+						arg0_106()
 					end)
 				end)
 			else
-				originalPrint("not found effect", var2_104)
+				originalPrint("not found effect", var2_105)
 			end
 		end
 	end
 
-	parallelAsync(var1_104, arg2_104)
+	parallelAsync(var1_105, arg2_105)
 end
 
-function var0_0.AdaptEffect(arg0_107, arg1_107)
-	local var0_107 = 1.77777777777778
-	local var1_107 = pg.UIMgr.GetInstance().OverlayMain.parent.sizeDelta
-	local var2_107 = var1_107.x / var1_107.y
-	local var3_107 = 1
+function var0_0.AdaptEffect(arg0_108, arg1_108)
+	local var0_108 = 1.77777777777778
+	local var1_108 = pg.UIMgr.GetInstance().OverlayMain.parent.sizeDelta
+	local var2_108 = var1_108.x / var1_108.y
+	local var3_108 = 1
 
-	if var0_107 < var2_107 then
-		var3_107 = var2_107 / var0_107
+	if var0_108 < var2_108 then
+		var3_108 = var2_108 / var0_108
 	else
-		var3_107 = var0_107 / var2_107
+		var3_108 = var0_108 / var2_108
 	end
 
-	tf(arg1_107).localScale = Vector3(var3_107, var3_107, var3_107)
+	tf(arg1_108).localScale = Vector3(var3_108, var3_108, var3_108)
 end
 
-function var0_0.UpdateEffectInterLayer(arg0_108, arg1_108, arg2_108)
-	local var0_108 = arg0_108._go:GetComponent(typeof(Canvas)).sortingOrder
-	local var1_108 = arg2_108:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer")):ToTable()
+function var0_0.UpdateEffectInterLayer(arg0_109, arg1_109, arg2_109)
+	local var0_109 = arg0_109._go:GetComponent(typeof(Canvas)).sortingOrder
+	local var1_109 = arg2_109:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer")):ToTable()
 
-	for iter0_108, iter1_108 in ipairs(var1_108) do
-		local var2_108 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", iter1_108)
+	for iter0_109, iter1_109 in ipairs(var1_109) do
+		local var2_109 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", iter1_109)
 
-		if var0_108 < var2_108 then
-			var0_108 = var2_108
+		if var0_109 < var2_109 then
+			var0_109 = var2_109
 		end
 	end
 
-	local var3_108 = var0_108 + 1
-	local var4_108 = GetOrAddComponent(arg0_108.actorTr, typeof(Canvas))
+	local var3_109 = var0_109 + 1
+	local var4_109 = GetOrAddComponent(arg0_109.actorTr, typeof(Canvas))
 
-	var4_108.overrideSorting = true
-	var4_108.sortingOrder = var3_108
+	var4_109.overrideSorting = true
+	var4_109.sortingOrder = var3_109
 
-	local var5_108 = GetOrAddComponent(arg0_108.frontTr, typeof(Canvas))
+	local var5_109 = GetOrAddComponent(arg0_109.frontTr, typeof(Canvas))
 
-	var5_108.overrideSorting = true
-	var5_108.sortingOrder = var3_108 + 1
-	arg0_108.activeInterLayer = arg1_108
+	var5_109.overrideSorting = true
+	var5_109.sortingOrder = var3_109 + 1
+	arg0_109.activeInterLayer = arg1_109
 
-	GetOrAddComponent(arg0_108.frontTr, typeof(GraphicRaycaster))
+	GetOrAddComponent(arg0_109.frontTr, typeof(GraphicRaycaster))
 end
 
-function var0_0.ClearEffectInterlayer(arg0_109, arg1_109)
-	if arg0_109.activeInterLayer == arg1_109 then
-		RemoveComponent(arg0_109.frontTr, "GraphicRaycaster")
-		RemoveComponent(arg0_109.actorTr, "Canvas")
-		RemoveComponent(arg0_109.frontTr, "Canvas")
+function var0_0.ClearEffectInterlayer(arg0_110, arg1_110)
+	if arg0_110.activeInterLayer == arg1_110 then
+		RemoveComponent(arg0_110.frontTr, "GraphicRaycaster")
+		RemoveComponent(arg0_110.actorTr, "Canvas")
+		RemoveComponent(arg0_110.frontTr, "Canvas")
 
-		arg0_109.activeInterLayer = nil
+		arg0_110.activeInterLayer = nil
 	end
 end
 
-function var0_0.ClearEffects(arg0_110)
-	removeAllChildren(arg0_110.effectPanel)
-	removeAllChildren(arg0_110.centerPanel)
+function var0_0.ClearEffects(arg0_111)
+	removeAllChildren(arg0_111.effectPanel)
+	removeAllChildren(arg0_111.centerPanel)
 
-	if arg0_110.activeInterLayer ~= nil then
-		arg0_110:ClearEffectInterlayer(arg0_110.activeInterLayer)
+	if arg0_111.activeInterLayer ~= nil then
+		arg0_111:ClearEffectInterlayer(arg0_111.activeInterLayer)
 	end
 end
 
-function var0_0.PlaySoundEffect(arg0_111, arg1_111)
-	if arg1_111:ShouldPlaySoundEffect() then
-		local var0_111, var1_111 = arg1_111:GetSoundeffect()
+function var0_0.PlaySoundEffect(arg0_112, arg1_112)
+	if arg1_112:ShouldPlaySoundEffect() then
+		local var0_112, var1_112 = arg1_112:GetSoundeffect()
 
-		arg0_111:DelayCall(var1_111, function()
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var0_111)
+		arg0_112:DelayCall(var1_112, function()
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var0_112)
 		end)
 	end
 
-	if arg1_111:ShouldPlayVoice() then
-		arg0_111:PlayVoice(arg1_111)
-	elseif arg1_111:ShouldStopVoice() then
-		arg0_111:StopVoice()
+	if arg1_112:ShouldPlayVoice() then
+		arg0_112:PlayVoice(arg1_112)
+	elseif arg1_112:ShouldStopVoice() then
+		arg0_112:StopVoice()
 	end
 end
 
-function var0_0.StopVoice(arg0_113)
-	if arg0_113.currentVoice then
-		arg0_113.currentVoice:Stop(true)
+function var0_0.StopVoice(arg0_114)
+	if arg0_114.currentVoice then
+		arg0_114.currentVoice:Stop(true)
 
-		arg0_113.currentVoice = nil
+		arg0_114.currentVoice = nil
 	end
 end
 
-function var0_0.PlayVoice(arg0_114, arg1_114)
-	if arg0_114.voiceDelayTimer then
-		arg0_114.voiceDelayTimer:Stop()
+function var0_0.PlayVoice(arg0_115, arg1_115)
+	if arg0_115.voiceDelayTimer then
+		arg0_115.voiceDelayTimer:Stop()
 
-		arg0_114.voiceDelayTimer = nil
+		arg0_115.voiceDelayTimer = nil
 	end
 
-	arg0_114:StopVoice()
+	arg0_115:StopVoice()
 
-	local var0_114, var1_114 = arg1_114:GetVoice()
-	local var2_114
+	local var0_115, var1_115 = arg1_115:GetVoice()
+	local var2_115
 
-	var2_114 = arg0_114:CreateDelayTimer(var1_114, function()
-		if var2_114 then
-			var2_114:Stop()
+	var2_115 = arg0_115:CreateDelayTimer(var1_115, function()
+		if var2_115 then
+			var2_115:Stop()
 		end
 
-		if arg0_114.voiceDelayTimer then
-			arg0_114.voiceDelayTimer = nil
+		if arg0_115.voiceDelayTimer then
+			arg0_115.voiceDelayTimer = nil
 		end
 
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var0_114, function(arg0_116)
-			if arg0_116 then
-				arg0_114.currentVoice = arg0_116.playback
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var0_115, function(arg0_117)
+			if arg0_117 then
+				arg0_115.currentVoice = arg0_117.playback
 			end
 		end)
 	end)
-	arg0_114.voiceDelayTimer = var2_114
+	arg0_115.voiceDelayTimer = var2_115
 end
 
-function var0_0.Reset(arg0_117, arg1_117, arg2_117, arg3_117)
-	setActive(arg0_117.spAnimPanel, false)
-	setActive(arg0_117.castPanel, false)
-	setActive(arg0_117.bgPanel, false)
+function var0_0.Reset(arg0_118, arg1_118, arg2_118, arg3_118)
+	setActive(arg0_118.spAnimPanel, false)
+	setActive(arg0_118.castPanel, false)
+	setActive(arg0_118.bgPanel, false)
 
-	if arg1_117 and arg1_117:IsDialogueMode() and arg2_117 and arg2_117:IsDialogueMode() then
+	if arg1_118 and arg1_118:IsDialogueMode() and arg2_118 and arg2_118:IsDialogueMode() then
 		-- block empty
 	else
-		setActive(arg0_117.dialoguePanel, false)
+		setActive(arg0_118.dialoguePanel, false)
 	end
 
-	setActive(arg0_117.asidePanel, false)
-	setActive(arg0_117.curtain, false)
-	setActive(arg0_117.flash, false)
-	setActive(arg0_117.optionsCg.gameObject, false)
-	setActive(arg0_117.bgGlitch, false)
-	setActive(arg0_117.locationTr, false)
+	setActive(arg0_118.asidePanel, false)
+	setActive(arg0_118.curtain, false)
+	setActive(arg0_118.flash, false)
+	setActive(arg0_118.optionsCg.gameObject, false)
+	setActive(arg0_118.bgGlitch, false)
+	setActive(arg0_118.locationTr, false)
 
-	arg0_117.locationTr.localPosition = arg0_117.locationTrPos
-	arg0_117.locationStatus = var9_0
-	arg0_117.flashCg.alpha = 1
-	arg0_117.goCG.alpha = 1
-
-	arg0_117.animationPlayer:Stop()
-	arg0_117:OnReset(arg1_117, arg2_117, arg3_117)
-end
-
-function var0_0.Clear(arg0_118, arg1_118)
-	if arg0_118.step then
-		arg0_118:ClearMoveNodes(arg0_118.step)
-	end
-
-	arg0_118.bgs = {}
-	arg0_118.skipOption = nil
-	arg0_118.step = nil
+	arg0_118.locationTr.localPosition = arg0_118.locationTrPos
+	arg0_118.locationStatus = var9_0
+	arg0_118.flashCg.alpha = 1
 	arg0_118.goCG.alpha = 1
-	arg0_118.callback = nil
-	arg0_118.autoNext = nil
-	arg0_118.script = nil
-	arg0_118.bgImage.sprite = nil
 
-	arg0_118:OnClear()
-
-	if arg1_118 then
-		arg1_118()
-	end
-
-	pg.DelegateInfo.New(arg0_118)
+	arg0_118.animationPlayer:Stop()
+	arg0_118:OnReset(arg1_118, arg2_118, arg3_118)
 end
 
-function var0_0.StoryEnd(arg0_119, arg1_119)
-	setActive(arg0_119.iconImage.gameObject, false)
-
-	arg0_119.iconImage.sprite = nil
-	arg0_119.branchCodeList = {}
-	arg0_119.stop = false
-	arg0_119.pause = false
-
-	if arg0_119.voiceDelayTimer then
-		arg0_119.voiceDelayTimer:Stop()
-
-		arg0_119.voiceDelayTimer = nil
+function var0_0.Clear(arg0_119, arg1_119)
+	if arg0_119.step then
+		arg0_119:ClearMoveNodes(arg0_119.step)
 	end
 
-	if arg0_119.currentVoice then
-		arg0_119.currentVoice:Stop(true)
+	arg0_119.bgs = {}
+	arg0_119.skipOption = nil
+	arg0_119.step = nil
+	arg0_119.goCG.alpha = 1
+	arg0_119.callback = nil
+	arg0_119.autoNext = nil
+	arg0_119.script = nil
+	arg0_119.bgImage.sprite = nil
 
-		arg0_119.currentVoice = nil
+	arg0_119:OnClear()
+
+	if arg1_119 then
+		arg1_119()
 	end
 
-	arg0_119:ClearCheckDispatcher()
-	arg0_119:ClearEffects()
-	arg0_119:Clear()
-	arg0_119:OnEnd(arg1_119)
+	pg.DelegateInfo.New(arg0_119)
 end
 
-function var0_0.PlayBgm(arg0_120, arg1_120)
-	if arg1_120:ShouldStopBgm() then
-		arg0_120:StopBgm()
+function var0_0.StoryEnd(arg0_120, arg1_120)
+	setActive(arg0_120.iconImage.gameObject, false)
+
+	arg0_120.iconImage.sprite = nil
+	arg0_120.branchCodeList = {}
+	arg0_120.stop = false
+	arg0_120.pause = false
+
+	if arg0_120.voiceDelayTimer then
+		arg0_120.voiceDelayTimer:Stop()
+
+		arg0_120.voiceDelayTimer = nil
 	end
 
-	if arg1_120:ShoulePlayBgm() then
-		local var0_120, var1_120, var2_120 = arg1_120:GetBgmData()
+	if arg0_120.currentVoice then
+		arg0_120.currentVoice:Stop(true)
 
-		arg0_120:DelayCall(var1_120, function()
-			arg0_120:RevertBgmVolume()
-			pg.BgmMgr.GetInstance():TempPlay(var0_120)
+		arg0_120.currentVoice = nil
+	end
+
+	arg0_120:ClearCheckDispatcher()
+	arg0_120:ClearEffects()
+	arg0_120:Clear()
+	arg0_120:OnEnd(arg1_120)
+end
+
+function var0_0.PlayBgm(arg0_121, arg1_121)
+	if arg1_121:ShouldStopBgm() then
+		arg0_121:StopBgm()
+	end
+
+	if arg1_121:ShoulePlayBgm() then
+		local var0_121, var1_121, var2_121 = arg1_121:GetBgmData()
+
+		arg0_121:DelayCall(var1_121, function()
+			arg0_121:RevertBgmVolume()
+			pg.BgmMgr.GetInstance():TempPlay(var0_121)
 		end)
 
-		if var2_120 and var2_120 > 0 then
-			arg0_120.defaultBgmVolume = pg.CriMgr.GetInstance():getBGMVolume()
+		if var2_121 and var2_121 > 0 then
+			arg0_121.defaultBgmVolume = pg.CriMgr.GetInstance():getBGMVolume()
 
-			pg.CriMgr.GetInstance():setBGMVolume(var2_120)
+			pg.CriMgr.GetInstance():setBGMVolume(var2_121)
 		end
 	end
 end
 
-function var0_0.StopBgm(arg0_122, arg1_122)
-	arg0_122:RevertBgmVolume()
+function var0_0.StopBgm(arg0_123, arg1_123)
+	arg0_123:RevertBgmVolume()
 	pg.BgmMgr.GetInstance():StopPlay()
 end
 
-function var0_0.RevertBgmVolume(arg0_123)
-	if arg0_123.defaultBgmVolume then
-		pg.CriMgr.GetInstance():setBGMVolume(arg0_123.defaultBgmVolume)
+function var0_0.RevertBgmVolume(arg0_124)
+	if arg0_124.defaultBgmVolume then
+		pg.CriMgr.GetInstance():setBGMVolume(arg0_124.defaultBgmVolume)
 
-		arg0_123.defaultBgmVolume = nil
+		arg0_124.defaultBgmVolume = nil
 	end
 end
 
-function var0_0.StartUIAnimations(arg0_124, arg1_124, arg2_124)
+function var0_0.StartUIAnimations(arg0_125, arg1_125, arg2_125)
 	parallelAsync({
-		function(arg0_125)
-			arg0_124:StartBlinkAnimation(arg1_124, arg0_125)
-		end,
 		function(arg0_126)
-			arg0_124:StartBlinkWithColorAnimation(arg1_124, arg0_126)
+			arg0_125:StartBlinkAnimation(arg1_125, arg0_126)
 		end,
 		function(arg0_127)
-			arg0_124:OnStartUIAnimations(arg1_124, arg0_127)
+			arg0_125:StartBlinkWithColorAnimation(arg1_125, arg0_127)
+		end,
+		function(arg0_128)
+			arg0_125:OnStartUIAnimations(arg1_125, arg0_128)
 		end
-	}, arg2_124)
+	}, arg2_125)
 end
 
-function var0_0.StartBlinkAnimation(arg0_128, arg1_128, arg2_128)
-	if arg1_128:ShouldBlink() then
-		local var0_128 = arg1_128:GetBlinkData()
-		local var1_128 = var0_128.black
-		local var2_128 = var0_128.number
-		local var3_128 = var0_128.dur
-		local var4_128 = var0_128.delay
-		local var5_128 = var0_128.alpha[1]
-		local var6_128 = var0_128.alpha[2]
-		local var7_128 = var0_128.wait
+function var0_0.StartBlinkAnimation(arg0_129, arg1_129, arg2_129)
+	if arg1_129:ShouldBlink() then
+		local var0_129 = arg1_129:GetBlinkData()
+		local var1_129 = var0_129.black
+		local var2_129 = var0_129.number
+		local var3_129 = var0_129.dur
+		local var4_129 = var0_129.delay
+		local var5_129 = var0_129.alpha[1]
+		local var6_129 = var0_129.alpha[2]
+		local var7_129 = var0_129.wait
 
-		arg0_128.flashImg.color = var1_128 and Color(0, 0, 0) or Color(1, 1, 1)
+		arg0_129.flashImg.color = var1_129 and Color(0, 0, 0) or Color(1, 1, 1)
 
-		setActive(arg0_128.flash, true)
+		setActive(arg0_129.flash, true)
 
-		local var8_128 = {}
+		local var8_129 = {}
 
-		for iter0_128 = 1, var2_128 do
-			table.insert(var8_128, function(arg0_129)
-				arg0_128:TweenAlpha(arg0_128.flash, var5_128, var6_128, var3_128 / 2, 0, function()
-					arg0_128:TweenAlpha(arg0_128.flash, var6_128, var5_128, var3_128 / 2, var7_128, arg0_129)
+		for iter0_129 = 1, var2_129 do
+			table.insert(var8_129, function(arg0_130)
+				arg0_129:TweenAlpha(arg0_129.flash, var5_129, var6_129, var3_129 / 2, 0, function()
+					arg0_129:TweenAlpha(arg0_129.flash, var6_129, var5_129, var3_129 / 2, var7_129, arg0_130)
 				end)
 			end)
 		end
 
-		seriesAsync(var8_128, function()
-			setActive(arg0_128.flash, false)
+		seriesAsync(var8_129, function()
+			setActive(arg0_129.flash, false)
 		end)
 	end
 
-	arg2_128()
+	arg2_129()
 end
 
-function var0_0.StartBlinkWithColorAnimation(arg0_132, arg1_132, arg2_132)
-	if arg1_132:ShouldBlinkWithColor() then
-		local var0_132 = arg1_132:GetBlinkWithColorData()
-		local var1_132 = var0_132.color
-		local var2_132 = var0_132.alpha
+function var0_0.StartBlinkWithColorAnimation(arg0_133, arg1_133, arg2_133)
+	if arg1_133:ShouldBlinkWithColor() then
+		local var0_133 = arg1_133:GetBlinkWithColorData()
+		local var1_133 = var0_133.color
+		local var2_133 = var0_133.alpha
 
-		arg0_132.flashImg.color = Color(var1_132[1], var1_132[2], var1_132[3], var1_132[4])
+		arg0_133.flashImg.color = Color(var1_133[1], var1_133[2], var1_133[3], var1_133[4])
 
-		setActive(arg0_132.flash, true)
+		setActive(arg0_133.flash, true)
 
-		local var3_132 = {}
+		local var3_133 = {}
 
-		for iter0_132, iter1_132 in ipairs(var2_132) do
-			local var4_132 = iter1_132[1]
-			local var5_132 = iter1_132[2]
-			local var6_132 = iter1_132[3]
-			local var7_132 = iter1_132[4]
+		for iter0_133, iter1_133 in ipairs(var2_133) do
+			local var4_133 = iter1_133[1]
+			local var5_133 = iter1_133[2]
+			local var6_133 = iter1_133[3]
+			local var7_133 = iter1_133[4]
 
-			table.insert(var3_132, function(arg0_133)
-				arg0_132:TweenValue(arg0_132.flash, var4_132, var5_132, var6_132, var7_132, function(arg0_134)
-					arg0_132.flashCg.alpha = arg0_134
-				end, arg0_133)
+			table.insert(var3_133, function(arg0_134)
+				arg0_133:TweenValue(arg0_133.flash, var4_133, var5_133, var6_133, var7_133, function(arg0_135)
+					arg0_133.flashCg.alpha = arg0_135
+				end, arg0_134)
 			end)
 		end
 
-		parallelAsync(var3_132, function()
-			setActive(arg0_132.flash, false)
+		parallelAsync(var3_133, function()
+			setActive(arg0_133.flash, false)
 		end)
 	end
 
-	arg2_132()
+	arg2_133()
 end
 
-function var0_0.OnStart(arg0_136, arg1_136)
+function var0_0.OnStart(arg0_137, arg1_137)
 	return
 end
 
-function var0_0.OnReset(arg0_137, arg1_137, arg2_137, arg3_137)
-	arg3_137()
+function var0_0.OnReset(arg0_138, arg1_138, arg2_138, arg3_138)
+	arg3_138()
 end
 
-function var0_0.OnBgUpdate(arg0_138, arg1_138)
+function var0_0.OnBgUpdate(arg0_139, arg1_139)
 	return
 end
 
-function var0_0.OnInit(arg0_139, arg1_139, arg2_139, arg3_139)
-	if arg3_139 then
-		arg3_139()
+function var0_0.OnInit(arg0_140, arg1_140, arg2_140, arg3_140)
+	if arg3_140 then
+		arg3_140()
 	end
 end
 
-function var0_0.OnStartUIAnimations(arg0_140, arg1_140, arg2_140)
-	if arg2_140 then
-		arg2_140()
+function var0_0.OnStartUIAnimations(arg0_141, arg1_141, arg2_141)
+	if arg2_141 then
+		arg2_141()
 	end
 end
 
-function var0_0.OnEnter(arg0_141, arg1_141, arg2_141, arg3_141)
-	if arg3_141 then
-		arg3_141()
+function var0_0.OnEnter(arg0_142, arg1_142, arg2_142, arg3_142)
+	if arg3_142 then
+		arg3_142()
 	end
 end
 
-function var0_0.OnWillExit(arg0_142, arg1_142, arg2_142, arg3_142)
-	arg3_142()
+function var0_0.OnWillExit(arg0_143, arg1_143, arg2_143, arg3_143)
+	arg3_143()
 end
 
-function var0_0.OnWillClear(arg0_143, arg1_143)
+function var0_0.OnWillClear(arg0_144, arg1_144)
 	return
 end
 
-function var0_0.OnClear(arg0_144)
+function var0_0.OnClear(arg0_145)
 	return
 end
 
-function var0_0.OnEnd(arg0_145, arg1_145)
+function var0_0.OnEnd(arg0_146, arg1_146)
 	return
 end
 

@@ -11,7 +11,9 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.rootTF = arg0_2._tf:Find("root")
 	arg0_2.assessTF = arg0_2.rootTF:Find("assess")
 	arg0_2.bgTF = arg0_2.assessTF:Find("bg")
+	arg0_2.endlessTF = arg0_2.assessTF:Find("endless")
 	arg0_2.damageBlood = arg0_2.assessTF:Find("content/blood/red")
+	arg0_2.bloodText = arg0_2.assessTF:Find("content/blood/Text"):GetComponent(typeof(Text))
 	arg0_2.bossTF = arg0_2.assessTF:Find("content/boss")
 	arg0_2.roleTF = arg0_2.assessTF:Find("content/role")
 	arg0_2.damageTF = arg0_2.assessTF:Find("content/damage")
@@ -24,6 +26,9 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.rankTF = arg0_2.resultTF:Find("rank")
 	arg0_2.tipTF = arg0_2.rootTF:Find("tip")
 	arg0_2.assessTextTF = arg0_2.tipTF:Find("content/assess/Text")
+
+	setText(arg0_2.assessTextTF, i18n("child2_assess_start_tip"))
+
 	arg0_2.targetTextTF = arg0_2.tipTF:Find("content/target/Text")
 end
 
@@ -71,10 +76,14 @@ function var0_0.InitData(arg0_7)
 	arg0_7.speed = 1
 
 	local var0_7 = arg0_7.contextData.char:GetRoundData()
+
+	arg0_7.isEndless = var0_7:IsEndless()
+
 	local var1_7 = pg.child2_target[var0_7:getConfig("target_id")]
 
 	arg0_7.rank = var1_7.display[arg0_7.contextData.char:GetAssessRankIdx()]
-	arg0_7.totolHP = var1_7.attr_sum
+	arg0_7.totolHP = var1_7.attr_sum * var0_7:GetExtraFactor()
+	arg0_7.isFail = arg0_7.contextData.char:GetAttrSum() < arg0_7.totolHP
 	arg0_7.damageHP = 0
 	arg0_7.attrIds = arg0_7.contextData.char:GetAttrIds()
 	arg0_7.curAttrIdx = 1
@@ -98,10 +107,15 @@ function var0_0.InitData(arg0_7)
 		end
 	}))
 
-	local var3_7, var4_7, var5_7 = var0_7:GetProgressInfo()
+	if arg0_7.isEndless then
+		local var3_7, var4_7, var5_7 = var0_7:GetEndlessProgressInfos()
 
-	setText(arg0_7.assessTextTF, i18n("child2_assess_start_tip"))
-	setText(arg0_7.targetTextTF, i18n("child2_assess_tip_target", var5_7))
+		setText(arg0_7.targetTextTF, i18n("child2_assess_tip_target", var5_7))
+	else
+		local var6_7, var7_7, var8_7 = var0_7:GetProgressInfo()
+
+		setText(arg0_7.targetTextTF, i18n("child2_assess_tip_target", var8_7))
+	end
 end
 
 function var0_0.GetAtkActionName(arg0_10, arg1_10)
@@ -115,6 +129,19 @@ function var0_0.GetAtkActionName(arg0_10, arg1_10)
 end
 
 function var0_0.InitStaticUI(arg0_11)
+	local var0_11 = arg0_11.contextData.char:GetRoundData()
+	local var1_11 = var0_11:IsEndless()
+
+	setActive(arg0_11.endlessTF, var1_11)
+
+	if var1_11 then
+		local var2_11 = var0_11:GetWave()
+		local var3_11 = var0_11:GetHeighestWave()
+
+		setText(arg0_11.endlessTF:Find("Text"), i18n("child2_endless_assest_wave", var2_11))
+		setActive(arg0_11.endlessTF:Find("new"), var3_11 < var2_11)
+	end
+
 	LoadImageSpriteAtlasAsync("ui/neweducateassesspanel_atlas", "bg_" .. arg0_11.tag, arg0_11.bgTF)
 	removeAllChildren(arg0_11.bossTF)
 	removeAllChildren(arg0_11.roleTF)
@@ -125,6 +152,9 @@ function var0_0.InitStaticUI(arg0_11)
 	setActive(arg0_11.resultTF:Find("title_red"), arg0_11.rank ~= "S")
 	LoadImageSpriteAtlasAsync("ui/neweducateassesspanel_atlas", arg0_11.rank, arg0_11.rankTF)
 	setFillAmount(arg0_11.damageBlood, 0)
+
+	arg0_11.bloodText.text = arg0_11.totolHP - arg0_11.damageHP .. "/" .. arg0_11.totolHP
+
 	table.sort(arg0_11.attrIds)
 	arg0_11.attrUIList:align(#arg0_11.attrIds)
 end
@@ -133,8 +163,9 @@ function var0_0.ShowResult(arg0_12)
 	setActive(arg0_12.resultTF, true)
 
 	local var0_12 = arg0_12.contextData.char:GetAssessRankIdx()
+	local var1_12 = arg0_12.isEndless and arg0_12.isFail
 
-	arg0_12:emit(NewEducateMainMediator.ON_SET_ASSESS_RANK, var0_12, function()
+	arg0_12:emit(NewEducateMainMediator.ON_SET_ASSESS_RANK, var0_12, var1_12, function()
 		existCall(arg0_12.callback)
 	end)
 end
@@ -170,12 +201,14 @@ end
 
 function var0_0.CheckGuide(arg0_22, arg1_22)
 	if pg.NewStoryMgr.GetInstance():IsPlayed("tb2_12") then
-		arg1_22(arg1_22)
+		arg1_22()
 	else
 		pg.m02:sendNotification(GAME.STORY_UPDATE, {
 			storyId = "tb2_12"
 		})
-		pg.NewGuideMgr.GetInstance():Play("tb2_12", {}, arg1_22, arg1_22)
+		pg.NewGuideMgr.GetInstance():Play("tb2_12", {
+			arg0_22.contextData.char.id
+		}, arg1_22, arg1_22)
 	end
 end
 
@@ -183,8 +216,10 @@ function var0_0.LoadChar(arg0_23, arg1_23)
 	pg.UIMgr.GetInstance():LoadingOn()
 	seriesAsync({
 		function(arg0_24)
-			PoolMgr.GetInstance():GetSpineChar(arg0_23.charConfig.boss, true, function(arg0_25)
-				arg0_23.bossName = arg0_23.charConfig.boss
+			local var0_24 = arg0_23.isEndless and arg0_23.charConfig.endless_boss or arg0_23.charConfig.boss
+
+			PoolMgr.GetInstance():GetSpineChar(var0_24, true, function(arg0_25)
+				arg0_23.bossName = var0_24
 				arg0_23.bossModel = arg0_25
 				tf(arg0_25).localScale = Vector3(1, 1, 1)
 
@@ -223,7 +258,6 @@ function var0_0.PlayOneATK(arg0_29, arg1_29)
 
 	local var4_29 = arg0_29.bossModel:GetComponent(typeof(SpineAnimUI))
 
-	var4_29:Resume()
 	var4_29:SetAction("child2_boss_normal", 0)
 
 	local var5_29 = arg0_29.roleModel:GetComponent(typeof(SpineAnimUI))
@@ -250,6 +284,8 @@ function var0_0.PlayOneATK(arg0_29, arg1_29)
 		function(arg0_34)
 			setActive(var3_29, true)
 			setFillAmount(arg0_29.damageBlood, math.min(arg0_29.damageHP / arg0_29.totolHP, 1))
+
+			arg0_29.bloodText.text = math.max(0, arg0_29.totolHP - arg0_29.damageHP) .. "/" .. arg0_29.totolHP
 
 			if arg0_29.damageHP < arg0_29.totolHP then
 				var4_29:SetActionCallBack(function(arg0_35)
@@ -327,7 +363,7 @@ function var0_0.Hide(arg0_41)
 end
 
 function var0_0.OnDestroy(arg0_42)
-	return
+	arg0_42:Hide()
 end
 
 return var0_0

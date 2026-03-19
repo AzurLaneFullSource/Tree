@@ -34,7 +34,7 @@ function var0_0.handleNotification(arg0_5, arg1_5)
 	if var0_5 == GAME.NEW_EDUCATE_REFRESH_TALENT_DONE then
 		arg0_5.viewComponent:OnRefreshTalent(var1_5.idx, var1_5.newId)
 	elseif var0_5 == GAME.NEW_EDUCATE_SEL_TALENT_DONE then
-		arg0_5.viewComponent:OnSelectedDone(var1_5.idx)
+		arg0_5.viewComponent:OnSelectedDone(var1_5)
 	end
 end
 

@@ -19,6 +19,21 @@ pg.island_task_target = setmetatable({
 		40005,
 		500000011,
 		500000021,
+		510010001,
+		510010011,
+		510010012,
+		510010013,
+		510010014,
+		510020001,
+		510020011,
+		510020012,
+		510020013,
+		510020014,
+		510030001,
+		510030011,
+		510030012,
+		510030013,
+		510030014,
 		50001001,
 		50001002,
 		50001003,
@@ -602,6 +617,165 @@ pg.base.island_task_target = {
 		target_param = {
 			5826
 		}
+	},
+	[510010001] = {
+		tips = "",
+		jump_ui = "",
+		name = "Island Authority Permit: TB",
+		type = 4,
+		id = 510010001,
+		target_num = 1,
+		target_param = {
+			12
+		}
+	},
+	[510010011] = {
+		tips = "",
+		jump_ui = "",
+		name = "Manually collect any lumber.",
+		type = 49,
+		id = 510010011,
+		target_num = 3,
+		target_param = {
+			402
+		}
+	},
+	[510010012] = {
+		tips = "10090008",
+		jump_ui = "",
+		name = "Assign a character to make Omelettes.",
+		type = 7,
+		id = 510010012,
+		target_num = 3,
+		target_param = {
+			901001
+		}
+	},
+	[510010013] = {
+		tips = "10010003",
+		jump_ui = "",
+		name = "Assign a character to produce Milk.",
+		type = 7,
+		id = 510010013,
+		target_num = 3,
+		target_param = {
+			101016
+		}
+	},
+	[510010014] = {
+		tips = "10060002",
+		jump_ui = "",
+		name = "Earn money with your stores.",
+		type = 29,
+		id = 510010014,
+		target_num = 500,
+		target_param = {
+			0
+		}
+	},
+	[510020001] = {
+		tips = "",
+		jump_ui = "",
+		name = "Island Authority Permit: Navi",
+		type = 4,
+		id = 510020001,
+		target_num = 1,
+		target_param = {
+			11
+		}
+	},
+	[510020011] = {
+		tips = "10010040",
+		jump_ui = "",
+		name = "Manually collect any agricultural produce.",
+		type = 47,
+		id = 510020011,
+		target_num = 3,
+		target_param = {
+			101
+		}
+	},
+	[510020012] = {
+		tips = "10050003",
+		jump_ui = "",
+		name = "Assign a character to make Strawberries.",
+		type = 7,
+		id = 510020012,
+		target_num = 3,
+		target_param = {
+			502002
+		}
+	},
+	[510020013] = {
+		tips = "",
+		jump_ui = "",
+		name = "Pet a cat.",
+		type = 1,
+		id = 510020013,
+		target_num = 1,
+		target_param = {
+			6201
+		}
+	},
+	[510020014] = {
+		tips = "",
+		jump_ui = "",
+		name = "Research the project Unlock: Manufactured Items.",
+		type = 8,
+		id = 510020014,
+		target_num = 1,
+		target_param = {
+			640001
+		}
+	},
+	[510030001] = {
+		tips = "",
+		jump_ui = "",
+		name = "Island Authority Permit: Lora",
+		type = 4,
+		id = 510030001,
+		target_num = 1,
+		target_param = {
+			13
+		}
+	},
+	[510030011] = {
+		tips = "10020009",
+		jump_ui = "",
+		name = "Complete island requests.",
+		type = 3,
+		id = 510030011,
+		target_num = 3,
+		target_param = ""
+	},
+	[510030012] = {
+		tips = "10010003",
+		jump_ui = "",
+		name = "Assign a character to make any ranch product.",
+		type = 48,
+		id = 510030012,
+		target_num = 3,
+		target_param = {
+			102
+		}
+	},
+	[510030013] = {
+		tips = "10020085",
+		jump_ui = "",
+		name = "Go fishing.",
+		type = 58,
+		id = 510030013,
+		target_num = 1,
+		target_param = ""
+	},
+	[510030014] = {
+		tips = "10060002",
+		jump_ui = "",
+		name = "Run your businesses.",
+		type = 31,
+		id = 510030014,
+		target_num = 1,
+		target_param = ""
 	},
 	[50001001] = {
 		tips = "",
@@ -4294,7 +4468,7 @@ pg.base.island_task_target = {
 	[301010011] = {
 		tips = "",
 		jump_ui = "",
-		name = "Gather lumber or minerals.",
+		name = "Collect lumber or minerals manually.",
 		type = 53,
 		id = 301010011,
 		target_num = 4,
@@ -4328,7 +4502,7 @@ pg.base.island_task_target = {
 	[304010011] = {
 		tips = "",
 		jump_ui = "6",
-		name = "Complete any Island Request.",
+		name = "Complete island requests.",
 		type = 54,
 		id = 304010011,
 		target_num = 1,
@@ -4811,7 +4985,7 @@ pg.base.island_task_target = {
 	[300000021] = {
 		tips = "10040080",
 		jump_ui = "",
-		name = "Gather any lumber resource.",
+		name = "Manually collect any lumber.",
 		type = 49,
 		id = 300000021,
 		target_num = 4,
@@ -4822,7 +4996,7 @@ pg.base.island_task_target = {
 	[300000031] = {
 		tips = "",
 		jump_ui = "6",
-		name = "Complete any Island Request.",
+		name = "Complete island requests.",
 		type = 54,
 		id = 300000031,
 		target_num = 1,

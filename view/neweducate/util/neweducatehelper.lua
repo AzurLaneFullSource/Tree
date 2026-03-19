@@ -66,47 +66,66 @@ function var0_0.GetDropConfig(arg0_7)
 			assert(var0_11, "找不到child2_benefit_list配置, id: " .. arg0_7.id)
 
 			return var0_11
+		end,
+		[NewEducateConst.DROP_TYPE.TAROT] = function()
+			local var0_12 = pg.child2_benefit_list[arg0_7.id]
+
+			assert(var0_12, "找不到child2_benefit_list配置, id: " .. arg0_7.id)
+
+			return var0_12
 		end
 	}, function()
 		assert(false, "养成二期非法掉落类型:" .. arg0_7.type)
 	end)
 end
 
-function var0_0.UpdateVectorItem(arg0_13, arg1_13, arg2_13)
-	if arg1_13.type ~= NewEducateConst.DROP_TYPE.ATTR and arg1_13.type ~= NewEducateConst.DROP_TYPE.RES then
-		pg.TipsMgr.GetInstance():ShowTips("不支持的掉落展示for Vector,请检查配置！" .. arg1_13.type)
+function var0_0.GetDropIcon(arg0_14)
+	local var0_14 = var0_0.GetDropConfig(arg0_14)
+
+	return switch(arg0_14.type, {
+		[NewEducateConst.DROP_TYPE.TAROT] = function()
+			return var0_14.item_icon_little
+		end
+	}, function()
+		return var0_14.item_icon
+	end)
+end
+
+function var0_0.UpdateVectorItem(arg0_17, arg1_17, arg2_17)
+	if arg1_17.type ~= NewEducateConst.DROP_TYPE.ATTR and arg1_17.type ~= NewEducateConst.DROP_TYPE.RES then
+		pg.TipsMgr.GetInstance():ShowTips("不支持的掉落展示for Vector,请检查配置！" .. arg1_17.type)
 
 		return
 	end
 
-	local var0_13 = arg2_13 or ""
-	local var1_13 = var0_0.GetDropConfig(arg1_13)
+	local var0_17 = arg2_17 or ""
+	local var1_17 = var0_0.GetDropConfig(arg1_17)
 
-	LoadImageSpriteAsync("neweducateicon/" .. var1_13.icon, arg0_13:Find("icon"))
-	setText(arg0_13:Find("name"), var1_13.name)
-	setText(arg0_13:Find("value"), var0_13 .. arg1_13.number)
+	LoadImageSpriteAsync("neweducateicon/" .. var1_17.icon, arg0_17:Find("icon"))
+	setText(arg0_17:Find("name"), var1_17.name)
+	setText(arg0_17:Find("value"), var0_17 .. arg1_17.number)
 
-	if arg0_13:Find("benefit") then
-		setActive(arg0_13:Find("benefit"), arg1_13.isBenefit)
-		setActive(arg0_13:Find("benefit/add"), arg1_13.number > 0)
-		setActive(arg0_13:Find("benefit/reduce"), arg1_13.number < 0)
+	if arg0_17:Find("benefit") then
+		setActive(arg0_17:Find("benefit"), arg1_17.isBenefit)
+		setActive(arg0_17:Find("benefit/add"), arg1_17.number > 0)
+		setActive(arg0_17:Find("benefit/reduce"), arg1_17.number < 0)
 	end
 end
 
-function var0_0.UpdateItem(arg0_14, arg1_14)
-	local var0_14 = var0_0.GetDropConfig(arg1_14)
+function var0_0.UpdateItem(arg0_18, arg1_18)
+	local var0_18 = var0_0.GetDropConfig(arg1_18)
 
-	LoadImageSpriteAsync("neweducateicon/" .. var0_14.item_icon, arg0_14:Find("frame/icon"))
-	setText(arg0_14:Find("frame/count_bg/count"), "x" .. arg1_14.number)
-	setText(arg0_14:Find("name_bg/name"), shortenString(var0_14.name, 5))
+	LoadImageSpriteAsync("neweducateicon/" .. var0_0.GetDropIcon(arg1_18), arg0_18:Find("frame/icon"))
+	setText(arg0_18:Find("frame/count_bg/count"), arg1_18.number)
+	setText(arg0_18:Find("name_bg/name"), shortenString(var0_18.name, 5))
 
-	if arg0_14:Find("frame/benefit") then
-		setActive(arg0_14:Find("frame/benefit"), arg1_14.isBenefit)
+	if arg0_18:Find("frame/benefit") then
+		setActive(arg0_18:Find("frame/benefit"), arg1_18.isBenefit)
 	end
 end
 
-function var0_0.NormalType2SiteType(arg0_15)
-	return switch(arg0_15, {
+function var0_0.NormalType2SiteType(arg0_19)
+	return switch(arg0_19, {
 		[NewEducateConst.SITE_NORMAL_TYPE.WORK] = function()
 			return NewEducateConst.SITE_TYPE.WORK
 		end,
@@ -116,72 +135,42 @@ function var0_0.NormalType2SiteType(arg0_15)
 	})
 end
 
-function var0_0.UpdateDropsData(arg0_18)
-	local var0_18 = {}
-	local var1_18 = getProxy(NewEducateProxy)
+function var0_0.FilterBenefit(arg0_22)
+	return underscore.select(arg0_22, function(arg0_23)
+		return arg0_23.type ~= NewEducateConst.DROP_TYPE.BUFF or arg0_23.type == NewEducateConst.DROP_TYPE.BUFF and pg.child2_benefit_list[arg0_23.id].is_show == 1 and arg0_23.number > 0
+	end)
+end
 
-	for iter0_18, iter1_18 in ipairs(arg0_18) do
-		switch(iter1_18.type, {
-			[NewEducateConst.DROP_TYPE.ATTR] = function()
-				var1_18:UpdateAttr(iter1_18.id, iter1_18.number)
-				table.insert(var0_18, iter1_18)
-			end,
-			[NewEducateConst.DROP_TYPE.RES] = function()
-				local var0_20 = var1_18:GetCurChar():GetRes(iter1_18.id) + iter1_18.number - pg.child2_resource[iter1_18.id].max_value
+function var0_0.MergeDrops(arg0_24)
+	local var0_24 = {}
 
-				if var0_20 > 0 then
-					table.insert(var0_18, setmetatable({
-						overflow = var0_20
-					}, {
-						__index = iter1_18
-					}))
-				else
-					table.insert(var0_18, iter1_18)
-				end
+	for iter0_24, iter1_24 in ipairs(arg0_24) do
+		if not var0_24[iter1_24.type] then
+			var0_24[iter1_24.type] = {}
+		end
 
-				var1_18:UpdateRes(iter1_18.id, iter1_18.number)
-			end,
-			[NewEducateConst.DROP_TYPE.POLAROID] = function()
-				var1_18:AddPolaroid(iter1_18.id, iter1_18.number)
-				table.insert(var0_18, iter1_18)
-			end,
-			[NewEducateConst.DROP_TYPE.BUFF] = function()
-				var1_18:AddBuff(iter1_18.id, iter1_18.number)
-				table.insert(var0_18, iter1_18)
-			end
-		})
+		var0_24[iter1_24.type][iter1_24.id] = (var0_24[iter1_24.type][iter1_24.id] or 0) + iter1_24.number
 	end
 
-	return var0_18
+	local var1_24 = {}
+
+	for iter2_24, iter3_24 in pairs(var0_24) do
+		for iter4_24, iter5_24 in pairs(iter3_24) do
+			table.insert(var1_24, {
+				type = iter2_24,
+				id = iter4_24,
+				number = iter5_24
+			})
+		end
+	end
+
+	return var1_24
 end
 
-function var0_0.MergeDrops(arg0_23)
-	local var0_23 = {}
+function var0_0.GetSiteColors(arg0_25)
+	local var0_25 = pg.child2_site_display[arg0_25]
 
-	underscore.each(arg0_23.base_drop, function(arg0_24)
-		table.insert(var0_23, arg0_24)
-	end)
-	underscore.each(arg0_23.benefit_drop, function(arg0_25)
-		table.insert(var0_23, setmetatable({
-			isBenefit = true
-		}, {
-			__index = arg0_25
-		}))
-	end)
-
-	return var0_23
-end
-
-function var0_0.FilterBenefit(arg0_26)
-	return underscore.select(arg0_26, function(arg0_27)
-		return arg0_27.type ~= NewEducateConst.DROP_TYPE.BUFF or arg0_27.type == NewEducateConst.DROP_TYPE.BUFF and pg.child2_benefit_list[arg0_27.id].is_show == 1 and arg0_27.number > 0
-	end)
-end
-
-function var0_0.GetSiteColors(arg0_28)
-	local var0_28 = pg.child2_site_display[arg0_28]
-
-	return switch(var0_28.type, {
+	return switch(var0_25.type, {
 		[NewEducateConst.SITE_TYPE.WORK] = function()
 			return Color.NewHex("f6bb56"), Color.NewHex("eea221")
 		end,
@@ -192,55 +181,70 @@ function var0_0.GetSiteColors(arg0_28)
 			return Color.NewHex("887af2"), Color.NewHex("7668e2")
 		end,
 		[NewEducateConst.SITE_TYPE.SHIP] = function()
-			if var0_28.bg == "red" then
+			if var0_25.bg == "red" then
 				return Color.NewHex("d96964"), Color.NewHex("d96964")
-			elseif var0_28.bg == "blue" then
+			elseif var0_25.bg == "blue" then
 				return Color.NewHex("39bfff"), Color.NewHex("26b1f3")
 			end
 		end
 	})
 end
 
-function var0_0.PlaySpecialStory(arg0_33, arg1_33)
-	local var0_33 = getProxy(NewEducateProxy):GetCurChar()
-	local var1_33 = var0_33.id .. "_" .. var0_33:GetPersonalityTag()
-	local var2_33 = not pg.NewStoryMgr.GetInstance():IsPlayed(arg0_33)
+function var0_0.PlaySpecialStory(arg0_30, arg1_30)
+	local var0_30 = getProxy(NewEducateProxy):GetCurChar()
+	local var1_30 = var0_30.id .. "_" .. var0_30:GetPersonalityTag()
+	local var2_30 = not pg.NewStoryMgr.GetInstance():IsPlayed(arg0_30)
 
-	pg.NewStoryMgr.GetInstance():PlayForTb(arg0_33, var1_33, function(arg0_34, arg1_34)
-		existCall(arg1_33(arg0_34, arg1_34))
+	pg.NewStoryMgr.GetInstance():PlayForTb(arg0_30, var1_30, function(arg0_31, arg1_31)
+		existCall(arg1_30(arg0_31, arg1_31))
 	end, true)
 
-	if var2_33 then
+	if var2_30 then
 		getProxy(NewEducateProxy):UpdateUnlock()
 
-		local var3_33 = var0_33:GetPermanentData():GetMemoryIdByName(arg0_33)
+		local var3_30 = var0_30:GetPermanentData():GetMemoryIdByName(arg0_30)
 
-		if var3_33 then
-			pg.m02:sendNotification(GAME.NEW_EDUCATE_TRACK, NewEducateTrackCommand.BuildDataMemory(var0_33:GetGameCnt(), var0_33:GetRoundData().round, var3_33))
+		if var3_30 then
+			pg.m02:sendNotification(GAME.NEW_EDUCATE_TRACK, NewEducateTrackCommand.BuildDataMemory(var0_30:GetGameCnt(), var0_30:GetRoundData().round, var3_30))
 		end
 	end
 end
 
-function var0_0.PlaySpecialStoryList(arg0_35, arg1_35)
-	local var0_35 = {}
+function var0_0.PlaySpecialStoryList(arg0_32, arg1_32)
+	local var0_32 = {}
 
-	for iter0_35, iter1_35 in ipairs(arg0_35) do
-		table.insert(var0_35, function(arg0_36)
-			var0_0.PlaySpecialStory(iter1_35, arg0_36)
+	for iter0_32, iter1_32 in ipairs(arg0_32) do
+		table.insert(var0_32, function(arg0_33)
+			var0_0.PlaySpecialStory(iter1_32, arg0_33)
 		end)
 	end
 
-	seriesAsync(var0_35, function()
-		existCall(arg1_35)
+	seriesAsync(var0_32, function()
+		existCall(arg1_32)
 	end)
 end
 
-function var0_0.IsPersonalDrop(arg0_38)
-	return arg0_38.type == NewEducateConst.DROP_TYPE.ATTR and pg.child2_attr[arg0_38.id].type == NewEducateChar.ATTR_TYPE.PERSONALITY
+function var0_0.IsPersonalDrop(arg0_35)
+	return arg0_35.type == NewEducateConst.DROP_TYPE.ATTR and pg.child2_attr[arg0_35.id].type == NewEducateChar.ATTR_TYPE.PERSONALITY
 end
 
-function var0_0.GetBenefitValue(arg0_39, arg1_39)
-	return math.max(0, math.floor(arg0_39 * (1 + arg1_39.ratio / 10000) + arg1_39.value))
+function var0_0.GetBenefitValue(arg0_36, arg1_36)
+	return math.max(0, math.floor(arg0_36 * (1 + arg1_36.ratio / 10000) + arg1_36.value))
+end
+
+function var0_0.GetTarotDetailDescKey()
+	local var0_37 = getProxy(PlayerProxy):getRawData().id
+	local var1_37 = getProxy(NewEducateProxy):GetCurChar().id
+
+	return NewEducateConst.NEW_EDUCATE_TAROT_DETAIL_DESC .. "_" .. var0_37 .. "_" .. var1_37
+end
+
+function var0_0.IsShowTarotDeatilDesc()
+	return PlayerPrefs.GetInt(var0_0.GetTarotDetailDescKey()) == 1
+end
+
+function var0_0.SetTarotDeatilDescData(arg0_39)
+	PlayerPrefs.SetInt(var0_0:GetTarotDetailDescKey(), arg0_39 and 1 or 0)
 end
 
 function var0_0.GetNewTipKey()
@@ -269,16 +273,15 @@ function var0_0.ClearShowNewChildTip()
 	PlayerPrefs.SetInt(var0_0.GetNewTipKey(), 1)
 end
 
-function var0_0.ClearEventPerformance()
+function var0_0.ClearEventPerformance(arg0_43)
 	local var0_43 = getProxy(PlayerProxy):getRawData().id
-	local var1_43 = getProxy(NewEducateProxy):GetCurChar()
-	local var2_43 = NewEducateConst.NEW_EDUCATE_EVENT_TIP .. "_" .. var0_43 .. "_" .. var1_43.id .. "_" .. var1_43:GetGameCnt() .. "_"
-	local var3_43 = underscore.select(pg.child2_site_event_group.all, function(arg0_44)
+	local var1_43 = NewEducateConst.NEW_EDUCATE_EVENT_TIP .. "_" .. var0_43 .. "_" .. arg0_43.id .. "_" .. arg0_43:GetGameCnt() .. "_"
+	local var2_43 = underscore.select(pg.child2_site_event_group.all, function(arg0_44)
 		return #pg.child2_site_event_group[arg0_44].performance > 0
 	end)
 
-	underscore.each(var3_43, function(arg0_45)
-		PlayerPrefs.SetInt(var2_43 .. arg0_45, 0)
+	underscore.each(var2_43, function(arg0_45)
+		PlayerPrefs.SetInt(var1_43 .. arg0_45, 0)
 	end)
 end
 

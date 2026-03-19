@@ -17,7 +17,7 @@ return {
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "Hehe, was that all it took to satisfy you?",
+			say = "呵~仅仅只是这种程度就满足了？",
 			voice = "event:/dorm/drom3d_aegir_ik_gfit2_tone3/drom3d_aegir_ik_gfit2_tone3",
 			typewriter = {
 				speed = 0.05,

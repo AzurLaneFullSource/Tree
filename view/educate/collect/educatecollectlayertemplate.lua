@@ -53,47 +53,53 @@ function var0_0.init(arg0_3)
 	arg0_3:OverlayPanel(arg0_3._tf, {
 		groupDelta = 2
 	})
+	eachChild(arg0_3.pageTF, function(arg0_8)
+		local var0_8 = arg0_8:Find("lock/unlock_btn/Text")
+
+		var0_8:GetComponent("RichText"):AddSprite("gold", arg0_3._tf:Find("res/gold"):GetComponent(typeof(Image)).sprite)
+		setText(var0_8, i18n("child_could_buy"))
+	end)
 end
 
-function var0_0.updatePage(arg0_8)
-	setActive(arg0_8.nextBtn, arg0_8.pages ~= 1 and arg0_8.curPageIndex < arg0_8.pages)
-	setActive(arg0_8.lastBtn, arg0_8.pages ~= 1 and arg0_8.curPageIndex > 1)
-	setText(arg0_8.paginationTF, arg0_8.curPageIndex .. "/" .. arg0_8.pages)
+function var0_0.updatePage(arg0_9)
+	setActive(arg0_9.nextBtn, arg0_9.pages ~= 1 and arg0_9.curPageIndex < arg0_9.pages)
+	setActive(arg0_9.lastBtn, arg0_9.pages ~= 1 and arg0_9.curPageIndex > 1)
+	setText(arg0_9.paginationTF, arg0_9.curPageIndex .. "/" .. arg0_9.pages)
 
-	local var0_8 = (arg0_8.curPageIndex - 1) * arg0_8.onePageCnt
+	local var0_9 = (arg0_9.curPageIndex - 1) * arg0_9.onePageCnt
 
-	for iter0_8 = 1, arg0_8.onePageCnt do
-		local var1_8 = arg0_8.pageTF:Find("frame_" .. iter0_8)
-		local var2_8 = arg0_8.config[arg0_8.config.all[var0_8 + iter0_8]]
+	for iter0_9 = 1, arg0_9.onePageCnt do
+		local var1_9 = arg0_9.pageTF:Find("frame_" .. iter0_9)
+		local var2_9 = arg0_9.config[arg0_9.config.all[var0_9 + iter0_9]]
 
-		if var2_8 then
-			setActive(var1_8, true)
-			arg0_8:updateItem(var2_8, var1_8)
+		if var2_9 then
+			setActive(var1_9, true)
+			arg0_9:updateItem(var2_9, var1_9)
 		else
-			setActive(var1_8, false)
+			setActive(var1_9, false)
 		end
 	end
 end
 
-function var0_0.updateItem(arg0_9, arg1_9, arg2_9)
+function var0_0.updateItem(arg0_10, arg1_10, arg2_10)
 	assert(nil, "updateItem方法必须由子类实现")
 end
 
-function var0_0.playAnimChange(arg0_10)
+function var0_0.playAnimChange(arg0_11)
 	assert(nil, "playAnimClose方法必须由子类实现")
 end
 
-function var0_0.playAnimClose(arg0_11)
+function var0_0.playAnimClose(arg0_12)
 	assert(nil, "playAnimClose方法必须由子类实现")
 end
 
-function var0_0.onBackPressed(arg0_12)
-	arg0_12:playAnimClose()
+function var0_0.onBackPressed(arg0_13)
+	arg0_13:playAnimClose()
 end
 
-function var0_0.willExit(arg0_13)
-	arg0_13.animEvent:SetEndEvent(nil)
-	arg0_13:UnOverlayPanel(arg0_13._tf)
+function var0_0.willExit(arg0_14)
+	arg0_14.animEvent:SetEndEvent(nil)
+	arg0_14:UnOverlayPanel(arg0_14._tf)
 end
 
 return var0_0

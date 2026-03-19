@@ -59,6 +59,9 @@ function var0_0.init(arg0_3)
 	arg0_3.detailPanel = NewEducateSiteDetailPanel.New(arg0_3.uiTF, arg0_3.event, setmetatable({
 		onHide = function()
 			arg0_3:OnDetailHide()
+		end,
+		onClickUpEntryGood = function(arg0_5)
+			arg0_3:onClickUpEntryGood(arg0_5)
 		end
 	}, {
 		__index = arg0_3.contextData
@@ -77,7 +80,8 @@ function var0_0.init(arg0_3)
 		onNormal = function()
 			arg0_3.infoPanel:ExecuteAction("HidePanel", true)
 			arg0_3.topPanel:ExecuteAction("Hide")
-		end
+		end,
+		view = arg0_3
 	}, {
 		__index = arg0_3.contextData
 	}))
@@ -90,430 +94,469 @@ function var0_0.init(arg0_3)
 	arg0_3.playerID = getProxy(PlayerProxy):getRawData().id
 end
 
-function var0_0.didEnter(arg0_8)
-	arg0_8:SetData()
-	arg0_8.topPanel:Load()
-	arg0_8.infoPanel:Load()
-	onButton(arg0_8, arg0_8.travelTF, function()
-		arg0_8:FocusTF(arg0_8.travelTF)
+function var0_0.didEnter(arg0_9)
+	arg0_9:SetData()
+	arg0_9.topPanel:Load()
+	arg0_9.infoPanel:Load()
+	onButton(arg0_9, arg0_9.travelTF, function()
+		arg0_9:FocusTF(arg0_9.travelTF)
 
-		arg0_8.curSiteId = arg0_8.travelSiteId
+		arg0_9.curSiteId = arg0_9.travelSiteId
 
-		arg0_8.detailPanel:ExecuteAction("Show", arg0_8.travelSiteId)
-		arg0_8:ShowInfoUI()
+		arg0_9.detailPanel:ExecuteAction("Show", arg0_9.travelSiteId)
+		arg0_9:ShowInfoUI()
 	end, SFX_PANEL)
+	onButton(arg0_9, arg0_9.workTF, function()
+		arg0_9:FocusTF(arg0_9.workTF)
 
-	local var0_8 = pg.child2_site_display[arg0_8.travelSiteId].position
+		arg0_9.curSiteId = arg0_9.workSiteId
 
-	setAnchoredPosition(arg0_8.travelTF, {
-		x = var0_8[1],
-		y = var0_8[2]
-	})
-	onButton(arg0_8, arg0_8.workTF, function()
-		arg0_8:FocusTF(arg0_8.workTF)
-
-		arg0_8.curSiteId = arg0_8.workSiteId
-
-		arg0_8.detailPanel:ExecuteAction("Show", arg0_8.workSiteId)
-		arg0_8:ShowInfoUI()
+		arg0_9.detailPanel:ExecuteAction("Show", arg0_9.workSiteId)
+		arg0_9:ShowInfoUI()
 	end, SFX_PANEL)
+	onButton(arg0_9, arg0_9.shopTF, function()
+		arg0_9:FocusTF(arg0_9.shopTF)
 
-	local var1_8 = pg.child2_site_display[arg0_8.workSiteId].position
+		arg0_9.curSiteId = arg0_9.shopSiteId
 
-	setAnchoredPosition(arg0_8.workTF, {
-		x = var1_8[1],
-		y = var1_8[2]
-	})
-	onButton(arg0_8, arg0_8.shopTF, function()
-		arg0_8:FocusTF(arg0_8.shopTF)
-
-		arg0_8.curSiteId = arg0_8.shopSiteId
-
-		arg0_8.detailPanel:ExecuteAction("Show", arg0_8.shopSiteId)
-		arg0_8:ShowInfoUI()
+		arg0_9.detailPanel:ExecuteAction("Show", arg0_9.shopSiteId)
+		arg0_9:ShowInfoUI()
+		arg0_9.infoPanel:ExecuteAction("SetShopOpen", true)
 	end, SFX_PANEL)
+	arg0_9.eventUIList:make(function(arg0_13, arg1_13, arg2_13)
+		if arg0_13 == UIItemList.EventUpdate then
+			local var0_13 = arg0_9.eventSiteIds[arg1_13 + 1]
 
-	local var2_8 = pg.child2_site_display[arg0_8.shopSiteId].position
+			arg2_13.name = var0_13
 
-	setAnchoredPosition(arg0_8.shopTF, {
-		x = var2_8[1],
-		y = var2_8[2]
-	})
-	arg0_8.eventUIList:make(function(arg0_12, arg1_12, arg2_12)
-		if arg0_12 == UIItemList.EventUpdate then
-			local var0_12 = arg0_8.eventSiteIds[arg1_12 + 1]
+			local var1_13 = pg.child2_site_display[var0_13]
 
-			arg2_12.name = var0_12
-
-			local var1_12 = pg.child2_site_display[var0_12]
-
-			LoadImageSpriteAsync("neweducateicon/" .. var1_12.event_icon, arg2_12, true)
-			LoadImageSpriteAsync("neweducateicon/" .. var1_12.event_title, arg2_12:Find("name"), true)
-			setAnchoredPosition(arg2_12, {
-				x = var1_12.position[1],
-				y = var1_12.position[2]
+			LoadImageSpriteAsync("neweducateicon/" .. var1_13.event_icon, arg2_13, true)
+			LoadImageSpriteAsync("neweducateicon/" .. var1_13.event_title, arg2_13:Find("name"), true)
+			setAnchoredPosition(arg2_13, {
+				x = var1_13.position[1],
+				y = var1_13.position[2]
 			})
-			onButton(arg0_8, arg2_12, function()
-				arg0_8:FocusTF(arg2_12)
+			onButton(arg0_9, arg2_13, function()
+				arg0_9:FocusTF(arg2_13)
 
-				arg0_8.curSiteId = var0_12
+				arg0_9.curSiteId = var0_13
 
-				arg0_8.detailPanel:ExecuteAction("Show", var0_12)
-				arg0_8:ShowInfoUI()
+				arg0_9.detailPanel:ExecuteAction("Show", var0_13)
+				arg0_9:ShowInfoUI()
 			end, SFX_PANEL)
 		end
 	end)
-	arg0_8.shipUIList:make(function(arg0_14, arg1_14, arg2_14)
-		if arg0_14 == UIItemList.EventUpdate then
-			arg0_8:UpdateShipSite(arg1_14, arg2_14)
+	arg0_9.shipUIList:make(function(arg0_15, arg1_15, arg2_15)
+		if arg0_15 == UIItemList.EventUpdate then
+			arg0_9:UpdateShipSite(arg1_15, arg2_15)
 		end
 	end)
-	arg0_8:FlushView()
+	arg0_9:FlushView()
 
-	if arg0_8.contextData.char:GetFSM():GetCurNode() ~= 0 then
-		arg0_8.curSiteId = arg0_8.contextData.char:GetFSM():GetState(NewEducateFSM.STYSTEM.MAP):GetCurSiteId()
+	if arg0_9.contextData.char:GetFSM():GetCurNode() ~= 0 then
+		arg0_9.curSiteId = arg0_9.contextData.char:GetFSM():GetState(NewEducateFSM.SYSTEM.MAP):GetCurSiteId()
 
-		arg0_8:ShowInfoUI()
-		arg0_8:OnNodeStart(arg0_8.contextData.char:GetFSM():GetCurNode())
+		arg0_9:ShowInfoUI()
+		arg0_9:OnNodeStart(arg0_9.contextData.char:GetFSM():GetCurNode())
 	else
-		arg0_8:CheckEventPerformance()
+		arg0_9:CheckEventPerformance()
+
+		if arg0_9.contextData.openShop then
+			triggerButton(arg0_9.shopTF)
+		end
 	end
 end
 
-function var0_0.CheckEventPerformance(arg0_15)
-	local var0_15 = {}
+function var0_0.CheckEventPerformance(arg0_16)
+	local var0_16 = {}
 
-	for iter0_15, iter1_15 in ipairs(arg0_15.eventSiteIds) do
-		local var1_15 = pg.child2_site_display[iter1_15].param
-		local var2_15 = pg.child2_site_event_group[var1_15].performance
+	for iter0_16, iter1_16 in ipairs(arg0_16.eventSiteIds) do
+		local var1_16 = pg.child2_site_display[iter1_16].param
+		local var2_16 = pg.child2_site_event_group[var1_16].performance
 
-		if #var2_15 > 0 and PlayerPrefs.GetInt(arg0_15:GetEventLocalKey(var1_15)) ~= 1 then
-			table.insert(var0_15, function(arg0_16)
-				arg0_15.nodePanel:ExecuteAction("PlayWordIds", var2_15, arg0_16)
-				PlayerPrefs.SetInt(arg0_15:GetEventLocalKey(var1_15), 1)
+		if #var2_16 > 0 and PlayerPrefs.GetInt(arg0_16:GetEventLocalKey(var1_16)) ~= 1 then
+			table.insert(var0_16, function(arg0_17)
+				arg0_16.nodePanel:ExecuteAction("PlayWordIds", var2_16, arg0_17)
+				PlayerPrefs.SetInt(arg0_16:GetEventLocalKey(var1_16), 1)
 			end)
 		end
 	end
 
-	seriesAsync(var0_15, function()
+	seriesAsync(var0_16, function()
 		return
 	end)
 end
 
-function var0_0.GetEventLocalKey(arg0_18, arg1_18)
-	return NewEducateConst.NEW_EDUCATE_EVENT_TIP .. "_" .. arg0_18.playerID .. "_" .. arg0_18.contextData.char.id .. "_" .. arg0_18.contextData.char:GetGameCnt() .. "_" .. arg1_18
+function var0_0.GetEventLocalKey(arg0_19, arg1_19)
+	return NewEducateConst.NEW_EDUCATE_EVENT_TIP .. "_" .. arg0_19.playerID .. "_" .. arg0_19.contextData.char.id .. "_" .. arg0_19.contextData.char:GetGameCnt() .. "_" .. arg1_19
 end
 
-function var0_0.ShowInfoUI(arg0_19, arg1_19)
-	arg0_19.infoPanel:ExecuteAction("ShowPanel")
-	arg0_19.topPanel:ExecuteAction("ShowDetail")
+function var0_0.ShowInfoUI(arg0_20, arg1_20)
+	arg0_20.infoPanel:ExecuteAction("ShowPanel")
+	arg0_20.topPanel:ExecuteAction("Flush")
 
-	if arg1_19 then
+	if arg1_20 then
 		return
 	end
 
-	arg0_19.hideTFList = {}
+	arg0_20.hideTFList = {}
 
-	local var0_19 = pg.child2_site_display[arg0_19.curSiteId].type
+	local var0_20 = pg.child2_site_display[arg0_20.curSiteId].type
 
-	if var0_19 ~= NewEducateConst.SITE_TYPE.WORK then
-		table.insert(arg0_19.hideTFList, arg0_19.workTF)
+	if var0_20 ~= NewEducateConst.SITE_TYPE.WORK then
+		table.insert(arg0_20.hideTFList, arg0_20.workTF)
 	end
 
-	if var0_19 ~= NewEducateConst.SITE_TYPE.TRAVEL then
-		table.insert(arg0_19.hideTFList, arg0_19.travelTF)
+	if var0_20 ~= NewEducateConst.SITE_TYPE.TRAVEL then
+		table.insert(arg0_20.hideTFList, arg0_20.travelTF)
 	end
 
-	if var0_19 ~= NewEducateConst.SITE_TYPE.SHOP then
-		table.insert(arg0_19.hideTFList, arg0_19.shopTF)
+	if var0_20 ~= NewEducateConst.SITE_TYPE.SHOP then
+		table.insert(arg0_20.hideTFList, arg0_20.shopTF)
 	end
 
-	eachChild(arg0_19.eventUIList.container, function(arg0_20)
-		if arg0_19.curSiteId ~= tonumber(arg0_20.name) then
-			table.insert(arg0_19.hideTFList, arg0_20)
+	eachChild(arg0_20.eventUIList.container, function(arg0_21)
+		if arg0_20.curSiteId ~= tonumber(arg0_21.name) then
+			table.insert(arg0_20.hideTFList, arg0_21)
 		end
 	end)
-	eachChild(arg0_19.shipUIList.container, function(arg0_21)
-		if arg0_19.curSiteId ~= tonumber(arg0_21.name) then
-			table.insert(arg0_19.hideTFList, arg0_21)
+	eachChild(arg0_20.shipUIList.container, function(arg0_22)
+		if arg0_20.curSiteId ~= tonumber(arg0_22.name) then
+			table.insert(arg0_20.hideTFList, arg0_22)
 		end
 	end)
 
-	for iter0_19, iter1_19 in ipairs(arg0_19.hideTFList) do
-		arg0_19:managedTween(LeanTween.value, nil, go(iter1_19), 1, 0, var0_0.ALPHA_TIME):setOnUpdate(System.Action_float(function(arg0_22)
-			GetOrAddComponent(iter1_19, "CanvasGroup").alpha = arg0_22
+	for iter0_20, iter1_20 in ipairs(arg0_20.hideTFList) do
+		arg0_20:managedTween(LeanTween.value, nil, go(iter1_20), 1, 0, var0_0.ALPHA_TIME):setOnUpdate(System.Action_float(function(arg0_23)
+			GetOrAddComponent(iter1_20, "CanvasGroup").alpha = arg0_23
 		end))
 	end
 end
 
-function var0_0.OnDetailHide(arg0_23)
-	arg0_23.infoPanel:ExecuteAction("HidePanel")
-	arg0_23.topPanel:ExecuteAction("ShowBack")
-	arg0_23:managedTween(LeanTween.value, nil, go(arg0_23.mapTF), var0_0.SCALE, var0_0.DEFAULT_SCALE, arg0_23.duration):setOnUpdate(System.Action_float(function(arg0_24)
-		setLocalScale(arg0_23.mapTF, {
-			x = arg0_24,
-			y = arg0_24,
-			z = arg0_24
+function var0_0.OnDetailHide(arg0_24)
+	arg0_24.infoPanel:ExecuteAction("HidePanel")
+	arg0_24.infoPanel:ExecuteAction("SetShopOpen", false)
+	arg0_24.topPanel:ExecuteAction("Flush")
+	arg0_24.topPanel:ExecuteAction("Show")
+	arg0_24:managedTween(LeanTween.value, nil, go(arg0_24.mapTF), var0_0.SCALE, var0_0.DEFAULT_SCALE, arg0_24.duration):setOnUpdate(System.Action_float(function(arg0_25)
+		setLocalScale(arg0_24.mapTF, {
+			x = arg0_25,
+			y = arg0_25,
+			z = arg0_25
 		})
 	end))
-	SetCompomentEnabled(arg0_23.mapTF, typeof(ScrollRect), false)
+	SetCompomentEnabled(arg0_24.mapTF, typeof(ScrollRect), false)
 
-	arg0_23.twFocusId = LeanTween.move(arg0_23.mapTF, Vector3(0, 0, 0), arg0_23.duration):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(function()
-		setSizeDelta(arg0_23.mapTF, Vector2(2400, 1478))
-		SetCompomentEnabled(arg0_23.mapTF, typeof(ScrollRect), true)
+	arg0_24.twFocusId = LeanTween.move(arg0_24.mapTF, Vector3(0, 0, 0), arg0_24.duration):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(function()
+		setSizeDelta(arg0_24.mapTF, Vector2(2400, 1478))
+		SetCompomentEnabled(arg0_24.mapTF, typeof(ScrollRect), true)
 	end)).uniqueId
 
-	for iter0_23, iter1_23 in ipairs(arg0_23.hideTFList or {}) do
-		arg0_23:managedTween(LeanTween.value, nil, go(iter1_23), 0, 1, var0_0.ALPHA_TIME):setOnUpdate(System.Action_float(function(arg0_26)
-			GetOrAddComponent(iter1_23, "CanvasGroup").alpha = arg0_26
+	for iter0_24, iter1_24 in ipairs(arg0_24.hideTFList or {}) do
+		arg0_24:managedTween(LeanTween.value, nil, go(iter1_24), 0, 1, var0_0.ALPHA_TIME):setOnUpdate(System.Action_float(function(arg0_27)
+			GetOrAddComponent(iter1_24, "CanvasGroup").alpha = arg0_27
 		end))
 	end
 end
 
-function var0_0.FlushView(arg0_27)
-	local var0_27 = arg0_27.contextData.char:GetFSM():GetState(NewEducateFSM.STYSTEM.MAP)
+function var0_0.onClickUpEntryGood(arg0_28, arg1_28)
+	arg0_28:emit(var0_0.GO_SUBLAYER, Context.New({
+		mediator = NewEducateTarotEntryMediator,
+		viewComponent = NewEducateTarotEntryLayer,
+		data = {
+			goodId = arg1_28.id,
+			type = NewEducateTarotEntryLayer.TYPE.SHOP,
+			cost = arg1_28:getConfig("resource_num")
+		}
+	}))
+end
 
-	arg0_27.eventSiteIds = underscore.map(var0_27:GetEvents(), function(arg0_28)
-		return arg0_27.contextData.char:GetSiteId(NewEducateConst.SITE_TYPE.EVENT, arg0_28)
+function var0_0.FlushView(arg0_29)
+	local var0_29 = arg0_29.contextData.char:GetFSM():GetState(NewEducateFSM.SYSTEM.MAP)
+
+	arg0_29.eventSiteIds = underscore.map(var0_29:GetEvents(), function(arg0_30)
+		return arg0_29.contextData.char:GetSiteId(NewEducateConst.SITE_TYPE.EVENT, arg0_30)
 	end)
 
-	table.sort(arg0_27.eventSiteIds, CompareFuncs({
-		function(arg0_29)
-			return pg.child2_site_display[arg0_29].position[1]
+	table.sort(arg0_29.eventSiteIds, CompareFuncs({
+		function(arg0_31)
+			return pg.child2_site_display[arg0_31].position[1]
 		end
 	}))
 
-	local var1_27 = arg0_27.contextData.char:GetShipIds()
-	local var2_27 = underscore.select(var1_27, function(arg0_30)
-		return not arg0_27:IsMaxShip(arg0_30) and not var0_27:IsSelectedShip(arg0_30)
+	local var1_29 = arg0_29.contextData.char:GetShipIds()
+	local var2_29 = underscore.select(var1_29, function(arg0_32)
+		return not arg0_29:IsMaxShip(arg0_32) and not var0_29:IsSelectedShip(arg0_32)
 	end)
 
-	arg0_27.shipSiteIds = underscore.map(var2_27, function(arg0_31)
-		return arg0_27.contextData.char:GetSiteId(NewEducateConst.SITE_TYPE.SHIP, arg0_31)
+	arg0_29.shipSiteIds = underscore.map(var2_29, function(arg0_33)
+		return arg0_29.contextData.char:GetSiteId(NewEducateConst.SITE_TYPE.SHIP, arg0_33)
 	end)
 
-	arg0_27.eventUIList:align(#arg0_27.eventSiteIds)
-	arg0_27.shipUIList:align(#arg0_27.shipSiteIds)
-	setActive(arg0_27.shopTF, arg0_27.contextData.char:IsUnlock("shop"))
-	arg0_27:CheckUpgradeNormalSite()
+	arg0_29.eventUIList:align(#arg0_29.eventSiteIds)
+	arg0_29.shipUIList:align(#arg0_29.shipSiteIds)
+	arg0_29:InitPermanentNodes()
+	setActive(arg0_29.shopTF, arg0_29.contextData.char:IsUnlock("shop"))
+	arg0_29:CheckUpgradeNormalSite()
 end
 
-function var0_0.IsMaxShip(arg0_32, arg1_32)
-	local var0_32 = pg.child2_site_character[arg1_32]
-	local var1_32 = pg.child2_site_character.get_id_list_by_group[var0_32.group]
+function var0_0.InitPermanentNodes(arg0_34)
+	if arg0_34.travelSiteId then
+		arg0_34:InitPermanent(arg0_34.travelSiteId, arg0_34.travelTF)
+	end
 
-	return not underscore.detect(var1_32, function(arg0_33)
-		return pg.child2_site_character[arg0_33].level == var0_32.level + 1
+	if arg0_34.workSiteId then
+		arg0_34:InitPermanent(arg0_34.workSiteId, arg0_34.workTF)
+	end
+
+	if arg0_34.shopSiteId then
+		arg0_34:InitPermanent(arg0_34.shopSiteId, arg0_34.shopTF)
+	end
+end
+
+function var0_0.InitPermanent(arg0_35, arg1_35, arg2_35)
+	local var0_35 = pg.child2_site_display[arg1_35]
+
+	LoadImageSpriteAsync("neweducateicon/" .. var0_35.event_icon, arg2_35, true)
+	LoadImageSpriteAsync("neweducateicon/" .. var0_35.event_title, arg2_35:Find("name"), true)
+	setAnchoredPosition(arg2_35, {
+		x = var0_35.position[1],
+		y = var0_35.position[2]
+	})
+end
+
+function var0_0.IsMaxShip(arg0_36, arg1_36)
+	local var0_36 = pg.child2_site_character[arg1_36]
+	local var1_36 = pg.child2_site_character.get_id_list_by_group[var0_36.group]
+
+	return not underscore.detect(var1_36, function(arg0_37)
+		return pg.child2_site_character[arg0_37].level == var0_36.level + 1
 	end)
 end
 
-function var0_0.IsMaxNormal(arg0_34, arg1_34)
-	local var0_34 = pg.child2_site_normal[arg1_34]
-	local var1_34 = pg.child2_site_normal.get_id_list_by_character[arg0_34.contextData.char.id]
+function var0_0.IsMaxNormal(arg0_38, arg1_38)
+	local var0_38 = pg.child2_site_normal[arg1_38]
+	local var1_38 = pg.child2_site_normal.get_id_list_by_character[arg0_38.contextData.char.id]
 
-	return not underscore.detect(var1_34, function(arg0_35)
-		local var0_35 = pg.child2_site_normal[arg0_35]
+	return not underscore.detect(var1_38, function(arg0_39)
+		local var0_39 = pg.child2_site_normal[arg0_39]
 
-		return var0_35.type == var0_34.type and var0_35.site_lv == var0_34.site_lv + 1
+		return var0_39.type == var0_38.type and var0_39.site_lv == var0_38.site_lv + 1
 	end)
 end
 
-function var0_0.CheckUpgradeNormalSite(arg0_36)
-	local var0_36 = {}
+function var0_0.CheckUpgradeNormalSite(arg0_40)
+	local var0_40 = {}
 
-	for iter0_36, iter1_36 in pairs(NewEducateConst.SITE_NORMAL_TYPE) do
-		local var1_36 = arg0_36.contextData.char:GetNormalIdByType(iter1_36)
-		local var2_36 = pg.child2_site_normal[var1_36].special_args
-		local var3_36 = arg0_36.contextData.char:IsMatchComplex(var2_36)
+	for iter0_40, iter1_40 in pairs(NewEducateConst.SITE_NORMAL_TYPE) do
+		local var1_40 = arg0_40.contextData.char:GetNormalIdByType(iter1_40)
+		local var2_40 = pg.child2_site_normal[var1_40].special_args
+		local var3_40 = arg0_40.contextData.char:IsMatchComplex(var2_40)
 
-		if not arg0_36:IsMaxNormal(var1_36) and var3_36 then
-			table.insert(var0_36, var1_36)
+		if not arg0_40:IsMaxNormal(var1_40) and var3_40 then
+			table.insert(var0_40, var1_40)
 		end
 	end
 
-	if #var0_36 > 0 then
-		local var4_36 = {}
+	if #var0_40 > 0 then
+		local var4_40 = {}
 
-		for iter2_36, iter3_36 in ipairs(var0_36) do
-			table.insert(var4_36, function(arg0_37)
-				arg0_36:emit(NewEducateMapMediator.ON_UPGRADE_NORMAL, iter3_36, arg0_37)
+		for iter2_40, iter3_40 in ipairs(var0_40) do
+			table.insert(var4_40, function(arg0_41)
+				arg0_40:emit(NewEducateMapMediator.ON_UPGRADE_NORMAL, iter3_40, arg0_41)
 			end)
 		end
 
-		seriesAsync(var4_36, function()
-			if arg0_36.detailPanel:isShowing() then
-				arg0_36.detailPanel:ExecuteAction("Flush")
+		seriesAsync(var4_40, function()
+			if arg0_40.detailPanel:isShowing() then
+				arg0_40.detailPanel:ExecuteAction("Flush")
 			end
 		end)
 	end
 end
 
-function var0_0.UpdateShipSite(arg0_39, arg1_39, arg2_39)
-	local var0_39 = arg0_39.shipSiteIds[arg1_39 + 1]
+function var0_0.UpdateShipSite(arg0_43, arg1_43, arg2_43)
+	local var0_43 = arg0_43.shipSiteIds[arg1_43 + 1]
 
-	arg2_39.name = var0_39
+	arg2_43.name = var0_43
 
-	local var1_39 = pg.child2_site_display[var0_39]
-	local var2_39 = arg2_39:Find("bottom/name_mask/name")
+	local var1_43 = pg.child2_site_display[var0_43]
+	local var2_43 = arg2_43:Find("bottom/name_mask/name")
 
-	setScrollText(var2_39, var1_39.name)
-	setAnchoredPosition(arg2_39, {
-		x = var1_39.position[1],
-		y = var1_39.position[2]
+	setScrollText(var2_43, var1_43.name)
+	setAnchoredPosition(arg2_43, {
+		x = var1_43.position[1],
+		y = var1_43.position[2]
 	})
-	LoadImageSpriteAsync("squareicon/" .. var1_39.icon, arg2_39:Find("top/mask/icon"), true)
+	LoadImageSpriteAsync("squareicon/" .. var1_43.icon, arg2_43:Find("top/mask/icon"), true)
 
-	local var3_39 = pg.child2_site_character[var1_39.param].level
+	local var3_43 = pg.child2_site_character[var1_43.param].level
 
-	eachChild(arg2_39:Find("top/lv"), function(arg0_40)
-		setActive(arg0_40, tonumber(arg0_40.name) <= var3_39)
+	eachChild(arg2_43:Find("top/lv"), function(arg0_44)
+		setActive(arg0_44, tonumber(arg0_44.name) <= var3_43)
 	end)
-	setActive(arg2_39:Find("top/red"), var1_39.bg == "red")
-	setActive(arg2_39:Find("top/blue"), var1_39.bg == "blue")
-	setActive(arg2_39:Find("bottom/red"), var1_39.bg == "red")
-	setActive(arg2_39:Find("bottom/blue"), var1_39.bg == "blue")
-	setActive(arg2_39:Find("bottom/grey"), false)
-	onButton(arg0_39, arg2_39, function()
-		arg0_39:FocusTF(arg2_39)
+	setActive(arg2_43:Find("top/red"), var1_43.bg == "red")
+	setActive(arg2_43:Find("top/blue"), var1_43.bg == "blue")
+	setActive(arg2_43:Find("bottom/red"), var1_43.bg == "red")
+	setActive(arg2_43:Find("bottom/blue"), var1_43.bg == "blue")
+	setActive(arg2_43:Find("bottom/grey"), false)
+	onButton(arg0_43, arg2_43, function()
+		if arg0_43.contextData.char:GetFSM():CheckPriorityStystem() then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("child2_priority_tip"))
 
-		arg0_39.curSiteId = var0_39
+			return
+		end
 
-		arg0_39.detailPanel:ExecuteAction("Show", var0_39)
-		arg0_39:ShowInfoUI()
+		arg0_43:FocusTF(arg2_43)
+
+		arg0_43.curSiteId = var0_43
+
+		arg0_43.detailPanel:ExecuteAction("Show", var0_43)
+		arg0_43:ShowInfoUI()
 	end, SFX_PANEL)
 end
 
-function var0_0.UpdateShipLv(arg0_42)
-	eachChild(arg0_42.shipUIList.container, function(arg0_43)
-		if tonumber(arg0_43.name) == arg0_42.curSiteId then
-			local var0_43 = pg.child2_site_display[arg0_42.curSiteId]
-			local var1_43 = pg.child2_site_character[var0_43.param].level + 1
+function var0_0.UpdateShipLv(arg0_46)
+	eachChild(arg0_46.shipUIList.container, function(arg0_47)
+		if tonumber(arg0_47.name) == arg0_46.curSiteId then
+			local var0_47 = pg.child2_site_display[arg0_46.curSiteId]
+			local var1_47 = pg.child2_site_character[var0_47.param].level + 1
 
-			eachChild(arg0_43:Find("top/lv"), function(arg0_44)
-				setActive(arg0_44, tonumber(arg0_44.name) <= var1_43)
+			eachChild(arg0_47:Find("top/lv"), function(arg0_48)
+				setActive(arg0_48, tonumber(arg0_48.name) <= var1_47)
 			end)
 		end
 	end)
 end
 
-function var0_0.OnShoppingDone(arg0_45)
-	arg0_45.detailPanel:ExecuteAction("FlushShop")
+function var0_0.OnShoppingDone(arg0_49)
+	arg0_49.detailPanel:ExecuteAction("FlushShop")
+	arg0_49:emit(var0_0.ON_PRIORITY_STATE)
 end
 
-function var0_0.OnResUpdate(arg0_46)
-	arg0_46.topPanel:ExecuteAction("FlushRes")
+function var0_0.OnRefreshShopDone(arg0_50)
+	arg0_50.detailPanel:ExecuteAction("FlushShop")
 end
 
-function var0_0.OnAttrUpdate(arg0_47)
-	arg0_47.infoPanel:ExecuteAction("FlushAttrs")
-	arg0_47.topPanel:ExecuteAction("FlushProgress")
+function var0_0.OnResUpdate(arg0_51)
+	arg0_51.topPanel:ExecuteAction("FlushRes")
 end
 
-function var0_0.OnPersonalityUpdate(arg0_48, arg1_48, arg2_48)
-	arg0_48.personalityTipPanel:ExecuteAction("FlushPersonality", arg1_48, arg2_48)
+function var0_0.OnAttrUpdate(arg0_52)
+	arg0_52.infoPanel:ExecuteAction("FlushAttrs")
+	arg0_52.topPanel:ExecuteAction("FlushProgress")
 end
 
-function var0_0.OnTalentUpdate(arg0_49)
-	arg0_49.infoPanel:ExecuteAction("FlushTalents")
+function var0_0.OnPersonalityUpdate(arg0_53, arg1_53, arg2_53)
+	arg0_53.personalityTipPanel:ExecuteAction("FlushPersonality", arg1_53, arg2_53)
 end
 
-function var0_0.OnStatusUpdate(arg0_50)
-	arg0_50.infoPanel:ExecuteAction("FlushStatus")
+function var0_0.OnTalentUpdate(arg0_54)
+	arg0_54.infoPanel:ExecuteAction("FlushTalents")
 end
 
-function var0_0.OnNodeStart(arg0_51, arg1_51)
-	arg0_51.nodePanel:ExecuteAction("StartNode", arg1_51)
+function var0_0.OnStatusUpdate(arg0_55)
+	arg0_55.infoPanel:ExecuteAction("FlushStatus")
 end
 
-function var0_0.OnNextNode(arg0_52, arg1_52)
-	arg0_52.nodePanel:ExecuteAction("ProceedNode", arg1_52.node, arg1_52.drop, arg1_52.noNextCb)
+function var0_0.OnTarotUpdate(arg0_56)
+	arg0_56.infoPanel:ExecuteAction("FlushTarot")
 end
 
-function var0_0.FocusTF(arg0_53, arg1_53, arg2_53)
-	setSizeDelta(arg0_53.mapTF, Vector2(3280, 2038))
+function var0_0.OnNodeStart(arg0_57, arg1_57)
+	arg0_57.nodePanel:ExecuteAction("StartNode", arg1_57)
+end
 
-	arg0_53.extendLimit = Vector2(arg0_53.mapTF.rect.width * var0_0.SCALE - arg0_53._tf.rect.width, arg0_53.mapTF.rect.height * var0_0.SCALE - arg0_53._tf.rect.height) / 2
+function var0_0.OnNextNode(arg0_58, arg1_58)
+	arg0_58.nodePanel:ExecuteAction("ProceedNode", arg1_58.node, arg1_58.drop, arg1_58.noNextCb)
+end
 
-	local var0_53 = arg1_53.anchoredPosition * -1
+function var0_0.FocusTF(arg0_59, arg1_59, arg2_59)
+	setSizeDelta(arg0_59.mapTF, Vector2(3280, 2038))
 
-	var0_53.x = math.clamp(var0_53.x, -arg0_53.extendLimit.x, arg0_53.extendLimit.x) * var0_0.SCALE
-	var0_53.y = math.clamp(var0_53.y, -arg0_53.extendLimit.y, arg0_53.extendLimit.y) * var0_0.SCALE
+	arg0_59.extendLimit = Vector2(arg0_59.mapTF.rect.width * var0_0.SCALE - arg0_59._tf.rect.width, arg0_59.mapTF.rect.height * var0_0.SCALE - arg0_59._tf.rect.height) / 2
 
-	if arg0_53.twFocusId then
-		LeanTween.cancel(arg0_53.twFocusId)
+	local var0_59 = arg1_59.anchoredPosition * -1
 
-		arg0_53.twFocusId = nil
+	var0_59.x = math.clamp(var0_59.x, -arg0_59.extendLimit.x, arg0_59.extendLimit.x) * var0_0.SCALE
+	var0_59.y = math.clamp(var0_59.y, -arg0_59.extendLimit.y, arg0_59.extendLimit.y) * var0_0.SCALE
+
+	if arg0_59.twFocusId then
+		LeanTween.cancel(arg0_59.twFocusId)
+
+		arg0_59.twFocusId = nil
 	end
 
-	local var1_53 = {}
+	local var1_59 = {}
 
-	table.insert(var1_53, function(arg0_54)
-		SetCompomentEnabled(arg0_53.mapTF, typeof(ScrollRect), false)
+	table.insert(var1_59, function(arg0_60)
+		SetCompomentEnabled(arg0_59.mapTF, typeof(ScrollRect), false)
 
-		local var0_54 = (arg0_53.mapTF.anchoredPosition - var0_53).magnitude
+		local var0_60 = (arg0_59.mapTF.anchoredPosition - var0_59).magnitude
 
-		arg0_53.duration = var0_54 > 0 and var0_54 / (var0_0.SPEED * math.sqrt(var0_54)) or 0
+		arg0_59.duration = var0_60 > 0 and var0_60 / (var0_0.SPEED * math.sqrt(var0_60)) or 0
 
-		arg0_53:managedTween(LeanTween.value, nil, go(arg0_53.mapTF), var0_0.DEFAULT_SCALE, var0_0.SCALE, arg0_53.duration):setOnUpdate(System.Action_float(function(arg0_55)
-			setLocalScale(arg0_53.mapTF, {
-				x = arg0_55,
-				y = arg0_55,
-				z = arg0_55
+		arg0_59:managedTween(LeanTween.value, nil, go(arg0_59.mapTF), var0_0.DEFAULT_SCALE, var0_0.SCALE, arg0_59.duration):setOnUpdate(System.Action_float(function(arg0_61)
+			setLocalScale(arg0_59.mapTF, {
+				x = arg0_61,
+				y = arg0_61,
+				z = arg0_61
 			})
 		end))
 
-		arg0_53.twFocusId = LeanTween.move(arg0_53.mapTF, Vector3(var0_53.x, var0_53.y, 0), arg0_53.duration):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(arg0_54)).uniqueId
+		arg0_59.twFocusId = LeanTween.move(arg0_59.mapTF, Vector3(var0_59.x, var0_59.y, 0), arg0_59.duration):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(arg0_60)).uniqueId
 	end)
-	seriesAsync(var1_53, function()
-		SetCompomentEnabled(arg0_53.mapTF, typeof(ScrollRect), true)
+	seriesAsync(var1_59, function()
+		SetCompomentEnabled(arg0_59.mapTF, typeof(ScrollRect), true)
 
-		if arg2_53 then
-			arg2_53()
+		if arg2_59 then
+			arg2_59()
 		end
 	end)
 end
 
-function var0_0.onBackPressed(arg0_57)
-	if arg0_57.nodePanel:isShowing() then
+function var0_0.onBackPressed(arg0_63)
+	if arg0_63.nodePanel:isShowing() then
 		return
 	end
 
-	if arg0_57.detailPanel:isShowing() then
-		arg0_57.detailPanel:Hide()
+	if arg0_63.detailPanel:isShowing() then
+		arg0_63.detailPanel:Hide()
 	else
-		arg0_57.super.onBackPressed(arg0_57)
+		arg0_63.super.onBackPressed(arg0_63)
 	end
 end
 
-function var0_0.willExit(arg0_58)
-	if arg0_58.topPanel then
-		arg0_58.topPanel:Destroy()
+function var0_0.willExit(arg0_64)
+	if arg0_64.topPanel then
+		arg0_64.topPanel:Destroy()
 
-		arg0_58.topPanel = nil
+		arg0_64.topPanel = nil
 	end
 
-	if arg0_58.infoPanel then
-		arg0_58.infoPanel:Destroy()
+	if arg0_64.infoPanel then
+		arg0_64.infoPanel:Destroy()
 
-		arg0_58.infoPanel = nil
+		arg0_64.infoPanel = nil
 	end
 
-	if arg0_58.detailPanel then
-		arg0_58.detailPanel:Destroy()
+	if arg0_64.detailPanel then
+		arg0_64.detailPanel:Destroy()
 
-		arg0_58.detailPanel = nil
+		arg0_64.detailPanel = nil
 	end
 
-	if arg0_58.personalityTipPanel then
-		arg0_58.personalityTipPanel:Destroy()
+	if arg0_64.personalityTipPanel then
+		arg0_64.personalityTipPanel:Destroy()
 
-		arg0_58.personalityTipPanel = nil
+		arg0_64.personalityTipPanel = nil
 	end
 
-	if arg0_58.nodePanel then
-		arg0_58.nodePanel:Destroy()
+	if arg0_64.nodePanel then
+		arg0_64.nodePanel:Destroy()
 
-		arg0_58.nodePanel = nil
+		arg0_64.nodePanel = nil
 	end
 end
 

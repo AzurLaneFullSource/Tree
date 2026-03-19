@@ -176,6 +176,182 @@ pg.child2_site_normal = {
 			"oceana_lvyou_3"
 		}
 	},
+	{
+		character = 2,
+		site_lv = 1,
+		type = 1,
+		id = 7,
+		title = "Experience Lv. 1 (Gain 80 Funds)",
+		node_id = 3700801,
+		cost = {
+			2,
+			303,
+			1
+		},
+		drop_display = {
+			{
+				2,
+				301,
+				80
+			}
+		},
+		special_args = {
+			"&&",
+			{
+				3600101
+			}
+		},
+		cpk = {
+			"explorer_ditudagong_1",
+			"explorer_ditudagong_2",
+			"explorer_ditudagong_3"
+		}
+	},
+	{
+		character = 2,
+		site_lv = 2,
+		type = 1,
+		id = 8,
+		title = "Experience Lv. 2 (Gain 120 Funds)",
+		node_id = 3700802,
+		cost = {
+			2,
+			303,
+			1
+		},
+		drop_display = {
+			{
+				2,
+				301,
+				120
+			}
+		},
+		special_args = {
+			"&&",
+			{
+				3600102
+			}
+		},
+		cpk = {
+			"explorer_ditudagong_1",
+			"explorer_ditudagong_2",
+			"explorer_ditudagong_3"
+		}
+	},
+	{
+		character = 2,
+		site_lv = 3,
+		type = 1,
+		id = 9,
+		title = "Experience Lv. 3 (Gain 200 Funds)",
+		node_id = 3700803,
+		cost = {
+			2,
+			303,
+			1
+		},
+		drop_display = {
+			{
+				2,
+				301,
+				200
+			}
+		},
+		special_args = {},
+		cpk = {
+			"explorer_ditudagong_1",
+			"explorer_ditudagong_2",
+			"explorer_ditudagong_3"
+		}
+	},
+	{
+		character = 2,
+		site_lv = 1,
+		type = 2,
+		id = 10,
+		title = "Sightseeing Lv. 1 (Gain 6 Mood)",
+		node_id = 3700804,
+		cost = {
+			2,
+			303,
+			1
+		},
+		drop_display = {
+			{
+				2,
+				302,
+				6
+			}
+		},
+		special_args = {
+			"&&",
+			{
+				3600101
+			}
+		},
+		cpk = {
+			"explorer_ditulvyou_1",
+			"explorer_ditulvyou_2",
+			"explorer_ditulvyou_3"
+		}
+	},
+	{
+		character = 2,
+		site_lv = 2,
+		type = 2,
+		id = 11,
+		title = "Sightseeing Lv. 2 (Gain 10 Mood)",
+		node_id = 3700805,
+		cost = {
+			2,
+			303,
+			1
+		},
+		drop_display = {
+			{
+				2,
+				302,
+				10
+			}
+		},
+		special_args = {
+			"&&",
+			{
+				3600102
+			}
+		},
+		cpk = {
+			"explorer_ditulvyou_1",
+			"explorer_ditulvyou_2",
+			"explorer_ditulvyou_3"
+		}
+	},
+	{
+		character = 2,
+		site_lv = 3,
+		type = 2,
+		id = 12,
+		title = "Sightseeing Lv. 3 (Gain 18 Mood)",
+		node_id = 3700806,
+		cost = {
+			2,
+			303,
+			1
+		},
+		drop_display = {
+			{
+				2,
+				302,
+				18
+			}
+		},
+		special_args = {},
+		cpk = {
+			"explorer_ditulvyou_1",
+			"explorer_ditulvyou_2",
+			"explorer_ditulvyou_3"
+		}
+	},
 	get_id_list_by_character = {
 		{
 			1,
@@ -184,6 +360,14 @@ pg.child2_site_normal = {
 			4,
 			5,
 			6
+		},
+		{
+			7,
+			8,
+			9,
+			10,
+			11,
+			12
 		}
 	},
 	all = {
@@ -192,6 +376,12 @@ pg.child2_site_normal = {
 		3,
 		4,
 		5,
-		6
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12
 	}
 }

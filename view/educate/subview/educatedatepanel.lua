@@ -33,7 +33,13 @@ function var0_0.OnInit(arg0_2)
 		}))
 	end, SFX_PANEL)
 	onButton(arg0_2, arg0_2._tf:Find("content/back"), function()
-		arg0_2:emit(EducateBaseUI.ON_BACK)
+		if arg0_2.contextData and arg0_2.contextData.isMain then
+			arg0_2:emit(EducateBaseUI.EDUCATE_GO_SCENE, SCENE.NEW_EDUCATE_SELECT, {
+				isTb1 = true
+			})
+		else
+			arg0_2:emit(EducateBaseUI.ON_BACK)
+		end
 	end, SFX_PANEL)
 
 	arg0_2.targetSetDays = getProxy(EducateProxy):GetTaskProxy():GetTargetSetDays()

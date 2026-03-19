@@ -4,11 +4,15 @@ function var0_0.Ctor(arg0_1)
 	return
 end
 
-function var0_0.IsFinish(arg0_2)
+function var0_0.IsPriorityType(arg0_2)
+	return false
+end
+
+function var0_0.IsFinish(arg0_3)
 	return true
 end
 
-function var0_0.Reset(arg0_3)
+function var0_0.Reset(arg0_4)
 	return
 end
 

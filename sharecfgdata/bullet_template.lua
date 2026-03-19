@@ -740609,7 +740609,7 @@ _G.pg.base.bullet_template[3002101] = {
 	random_damage_rate = 0,
 	range = 70,
 	range_offset = 0,
-	type = 5,
+	type = 1,
 	velocity = 8,
 	damage_type = {
 		1.1,

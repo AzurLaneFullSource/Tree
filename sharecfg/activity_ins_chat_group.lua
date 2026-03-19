@@ -11276,10 +11276,10 @@ pg.activity_ins_chat_group = {
 	},
 	{
 		ship_group = 20607,
-		name = "Respect for My Elders",
+		name = "关于称呼",
 		group_ii = 0,
 		id = 269,
-		unlock_desc = "Obtain the character.",
+		unlock_desc = "获得角色",
 		trigger_param = "",
 		trigger_type = 1,
 		content = {
@@ -11315,10 +11315,10 @@ pg.activity_ins_chat_group = {
 	},
 	{
 		ship_group = 20607,
-		name = "Connecting with Nature",
+		name = "另一种森林浴",
 		group_ii = 0,
 		id = 270,
-		unlock_desc = "Raise the character's Affinity to 100.",
+		unlock_desc = "角色好感度达到100",
 		trigger_param = "100",
 		trigger_type = 2,
 		content = {
@@ -11348,10 +11348,10 @@ pg.activity_ins_chat_group = {
 	},
 	{
 		ship_group = 20607,
-		name = "A Summer Breeze",
+		name = "日的微风",
 		group_ii = 0,
 		id = 271,
-		unlock_desc = "Raise the character's Affinity to 150.",
+		unlock_desc = "角色好感度达到150",
 		trigger_param = "150",
 		trigger_type = 2,
 		content = {
@@ -11815,10 +11815,10 @@ pg.activity_ins_chat_group = {
 	},
 	{
 		ship_group = 30116,
-		name = "Suffering From Success",
+		name = "好运的苦恼",
 		group_ii = 0,
 		id = 284,
-		unlock_desc = "Obtain the character.",
+		unlock_desc = "获得角色",
 		trigger_param = "",
 		trigger_type = 1,
 		content = {
@@ -11851,10 +11851,10 @@ pg.activity_ins_chat_group = {
 	},
 	{
 		ship_group = 30116,
-		name = "Solo Hot Spring Trip",
+		name = "单人温泉旅行？",
 		group_ii = 0,
 		id = 285,
-		unlock_desc = "Raise the character's Affinity to 100.",
+		unlock_desc = "角色好感度达到100",
 		trigger_param = "100",
 		trigger_type = 2,
 		content = {
@@ -11889,10 +11889,10 @@ pg.activity_ins_chat_group = {
 	},
 	{
 		ship_group = 30116,
-		name = "The Ecstasy of Gems",
+		name = "寻找红尖尖",
 		group_ii = 0,
 		id = 286,
-		unlock_desc = "Raise the character's Affinity to 150.",
+		unlock_desc = "角色好感度达到150",
 		trigger_param = "150",
 		trigger_type = 2,
 		content = {
@@ -11925,10 +11925,10 @@ pg.activity_ins_chat_group = {
 	},
 	{
 		ship_group = 107,
-		name = "Midnight Stories",
+		name = "深夜故事会",
 		group_ii = 0,
 		id = 287,
-		unlock_desc = "Unlocked at a specific time.",
+		unlock_desc = "时间解锁",
 		trigger_type = 3,
 		trigger_param = {
 			{

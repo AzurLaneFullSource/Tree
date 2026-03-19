@@ -2,6 +2,7 @@ local var0_0 = class("EducateCharDockMediator", import("view.base.ContextMediato
 
 var0_0.GO_PROFILE = "EducateCharDockMediator:GO_PROFILE"
 var0_0.ON_SELECTED = "EducateCharDockMediator:ON_SELECTED"
+var0_0.ON_SKIN_SHOP = "EducateCharDockMediator.ON_SKIN_SHOP"
 
 function var0_0.register(arg0_1)
 	arg0_1:bind(var0_0.ON_SELECTED, function(arg0_2, arg1_2)
@@ -14,20 +15,25 @@ function var0_0.register(arg0_1)
 			selectedCharacterId = arg1_3
 		})
 	end)
+	arg0_1:bind(var0_0.ON_SKIN_SHOP, function(arg0_4)
+		arg0_1:sendNotification(GAME.GO_SCENE, SCENE.SKINSHOP, {
+			skinId = arg0_4
+		})
+	end)
 end
 
-function var0_0.listNotificationInterests(arg0_4)
+function var0_0.listNotificationInterests(arg0_5)
 	return {
 		GAME.CLEAR_EDUCATE_TIP
 	}
 end
 
-function var0_0.handleNotification(arg0_5, arg1_5)
-	local var0_5 = arg1_5:getName()
-	local var1_5 = arg1_5:getBody()
+function var0_0.handleNotification(arg0_6, arg1_6)
+	local var0_6 = arg1_6:getName()
+	local var1_6 = arg1_6:getBody()
 
-	if var0_5 == GAME.CLEAR_EDUCATE_TIP then
-		arg0_5.viewComponent:emit(EducateCharDockScene.MSG_CLEAR_TIP, var1_5.id)
+	if var0_6 == GAME.CLEAR_EDUCATE_TIP then
+		arg0_6.viewComponent:emit(EducateCharDockScene.MSG_CLEAR_TIP, var1_6.id)
 	end
 end
 

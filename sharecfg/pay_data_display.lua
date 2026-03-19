@@ -87,6 +87,7 @@ pg.pay_data_display = setmetatable({
 		9012,
 		9013,
 		9014,
+		9015,
 		100,
 		101,
 		102,
@@ -10648,6 +10649,120 @@ pg.base.pay_data_display = {
 				1,
 				14,
 				2025
+			}
+		}
+	},
+	[9015] = {
+		limit_group = 0,
+		name = "Party Dress Return Lucky Box",
+		descrip_extra = "* The Lucky Box will be sent to your ingame Mail.\n* If you already own all the listed skins, you will receive Gems x680 instead.",
+		type = 1,
+		second_text = "Many Rewards",
+		type_order = 2,
+		subject = "Party Dress Return Lucky Box",
+		first_text = "Random Skin & Abundant Gems",
+		limit_arg = 2,
+		tip = "",
+		money = 699,
+		tip_open = 0,
+		tag = 2,
+		id = 9015,
+		gem = 0,
+		name_display = "Party Dress Return Lucky Box",
+		package_sort_id = 0,
+		limit_type = 2,
+		akashi_pick = 1,
+		extra_service = 3,
+		package_tag = "",
+		picture = "fudai34",
+		show_group = "",
+		skin_inquire_relation = 86226,
+		package_tag_open = 0,
+		id_str = "com.yostaren.azurlane.luckybag84",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains 1 of the following skins you do not yet own, chosen at random (if you already own all the listed skins, you will receive Gems instead), as well as other items.",
+		airijp_id = "com.yostaren.azurlane.luckybag84",
+		extra_service_item = {
+			{
+				2,
+				86226,
+				1
+			},
+			{
+				1,
+				1,
+				2000
+			},
+			{
+				1,
+				2,
+				1000
+			},
+			{
+				2,
+				15008,
+				20
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					3,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					4,
+					8
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				1,
+				1,
+				2000
+			},
+			{
+				1,
+				2,
+				1000
+			},
+			{
+				2,
+				15008,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81234,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86226,
+				1
 			}
 		}
 	},

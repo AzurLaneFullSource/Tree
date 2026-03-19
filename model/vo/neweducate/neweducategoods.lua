@@ -3,7 +3,15 @@ local var0_0 = class("NewEducateGoods", import("model.vo.BaseVO"))
 var0_0.TYPE = {
 	ATTR = 2,
 	RES = 3,
-	BENEFIT = 1
+	UP_ENTRY = 5,
+	BENEFIT = 1,
+	CHOOSE = 4
+}
+var0_0.COST_TYPE = {
+	GOLD = 1
+}
+var0_0.COST_TYPE_2_RES_TYPE = {
+	[var0_0.COST_TYPE.GOLD] = NewEducateChar.RES_TYPE.MONEY
 }
 
 function var0_0.bindConfigTable(arg0_1)
@@ -33,10 +41,12 @@ function var0_0.GetRemainCnt(arg0_6)
 end
 
 function var0_0.GetCostCondition(arg0_7)
+	local var0_7 = getProxy(NewEducateProxy):GetCurChar():GetResIdByType(var0_0.COST_TYPE_2_RES_TYPE[arg0_7:getConfig("resource_type")])
+
 	return {
 		operator = ">=",
 		type = NewEducateConst.DROP_TYPE.RES,
-		id = arg0_7:getConfig("resource_type"),
+		id = var0_7,
 		number = arg0_7:getConfig("resource_num")
 	}
 end

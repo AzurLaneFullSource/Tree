@@ -635,11 +635,8 @@ function var0_0.SetFireWorkPanel(arg0_49)
 				setActive(arg2_51:Find("firework/lock"), false)
 				setActive(arg2_51:Find("firework/get"), true)
 				onButton(arg0_49, arg2_51, function()
-					arg0_49:emit(ActivityMediator.EVENT_OPERATION, {
-						arg0_49.fireworkActId,
-						PuzzleActivity.CMD_ACTIVATE,
-						var0_51
-					})
+					warning("       self.fireworkActI         ", arg0_49.fireworkActId, PuzzleActivity.CMD_ACTIVATE, var0_51)
+					arg0_49:emit(ActivityMediator.ACTIVITY_OPERATION, arg0_49.fireworkActId, PuzzleActivity.CMD_ACTIVATE, var0_51)
 				end, SFX_PANEL)
 			else
 				setActive(arg2_51:Find("firework/lock"), false)

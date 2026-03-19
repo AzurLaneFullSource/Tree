@@ -28,7 +28,6 @@ function var0_0.getUIName(arg0_1)
 end
 
 function var0_0.OnLoaded(arg0_2)
-	warning("onloaded")
 	eachChild(arg0_2._tf, function(arg0_3)
 		setActive(arg0_3, false)
 	end)
@@ -45,6 +44,7 @@ function var0_0.OnLoaded(arg0_2)
 	arg0_2.dropHandler = NewEducateDropHandler.New(arg0_2._tf:Find("drop"))
 	arg0_2.siteHandler = NewEducateSiteHandler.New(arg0_2._tf:Find("site"))
 	arg0_2.optionsHandler = NewEducateOptionsHandler.New(arg0_2._tf:Find("options"))
+	arg0_2.minigameHandler = NewEducateMinigameHandler.New(arg0_2._tf:Find("minigame"), arg0_2.contextData.view)
 	arg0_2.scheduleTF = arg0_2._tf:Find("scheduleBg")
 
 	setText(arg0_2.scheduleTF:Find("root/window/left/title/Text"), i18n("child_plan_perform_title"))
@@ -115,15 +115,14 @@ function var0_0.StopLoopCpk(arg0_9)
 end
 
 function var0_0.StartNode(arg0_10, arg1_10)
-	warning("startnode")
 	arg0_10:Show()
 
-	arg0_10.stystemNo = arg0_10.contextData.char:GetFSM():GetStystemNo()
+	arg0_10.stystemNo = arg0_10.contextData.char:GetFSM():GetSystemNo()
 
-	setActive(arg0_10.scheduleTF, arg0_10.stystemNo == NewEducateFSM.STYSTEM.PLAN)
+	setActive(arg0_10.scheduleTF, arg0_10.stystemNo == NewEducateFSM.SYSTEM.PLAN)
 
-	if arg0_10.stystemNo == NewEducateFSM.STYSTEM.MAP then
-		local var0_10 = arg0_10.contextData.char:GetFSM():GetState(NewEducateFSM.STYSTEM.MAP):GetCurSiteId()
+	if arg0_10.stystemNo == NewEducateFSM.SYSTEM.MAP then
+		local var0_10 = arg0_10.contextData.char:GetFSM():GetState(NewEducateFSM.SYSTEM.MAP):GetCurSiteId()
 
 		arg0_10.siteHandler:SetSite(var0_10)
 
@@ -149,14 +148,15 @@ end
 function var0_0.OnNodeChainEnd(arg0_11)
 	setActive(arg0_11.loopCpkTF, false)
 
-	if arg0_11.stystemNo == NewEducateFSM.STYSTEM.MAP then
+	if arg0_11.stystemNo == NewEducateFSM.SYSTEM.MAP then
 		arg0_11.cpkHandler:Reset()
 		arg0_11.pictureHandler:Reset()
 		arg0_11.wordHandler:Reset()
 		arg0_11.dropHandler:Reset()
+		arg0_11.minigameHandler:Reset()
 		arg0_11.siteHandler:OnEventEnd()
-	elseif arg0_11.stystemNo == NewEducateFSM.STYSTEM.PLAN then
-		if arg0_11.contextData.char:GetFSM():GetState(NewEducateFSM.STYSTEM.PLAN):IsFinish() then
+	elseif arg0_11.stystemNo == NewEducateFSM.SYSTEM.PLAN then
+		if arg0_11.contextData.char:GetFSM():GetState(NewEducateFSM.SYSTEM.PLAN):IsFinish() then
 			arg0_11:Hide()
 		end
 	else
@@ -205,8 +205,8 @@ function var0_0.InitCallback(arg0_12, arg1_12)
 end
 
 function var0_0.CheckSchedule(arg0_22)
-	if arg0_22.stystemNo == NewEducateFSM.STYSTEM.PLAN then
-		local var0_22 = arg0_22.contextData.char:GetFSM():GetState(NewEducateFSM.STYSTEM.PLAN)
+	if arg0_22.stystemNo == NewEducateFSM.SYSTEM.PLAN then
+		local var0_22 = arg0_22.contextData.char:GetFSM():GetState(NewEducateFSM.SYSTEM.PLAN)
 
 		arg0_22.unlockPlanNum = arg0_22.contextData.char:GetRoundData():getConfig("plan_num")
 		arg0_22.plans = var0_22:GetPlans()
@@ -225,8 +225,8 @@ function var0_0.CheckLastDrops(arg0_23, arg1_23, arg2_23)
 
 		switch(var1_23, {
 			[var0_0.DROP_TYPE.WORD_PERFORMANCE] = function()
-				if arg0_23.stystemNo == NewEducateFSM.STYSTEM.PLAN then
-					arg0_23.contextData.char:GetFSM():GetState(NewEducateFSM.STYSTEM.PLAN):AddDrops(arg1_23)
+				if arg0_23.stystemNo == NewEducateFSM.SYSTEM.PLAN then
+					arg0_23.contextData.char:GetFSM():GetState(NewEducateFSM.SYSTEM.PLAN):AddDrops(arg1_23)
 				end
 
 				arg0_23.wordHandler:Play(var0_23.performance_param[1], arg2_23, arg1_23, false)
@@ -293,10 +293,14 @@ function var0_0.CheckLastDrops(arg0_23, arg1_23, arg2_23)
 				})
 			end
 		}, function()
-			assert(false, "node表非法drop_type_client: " .. var1_23 .. ",node:" .. arg0_23.curNodeId)
+			warning("node表非法drop_type_client: " .. var1_23 .. ",node:" .. arg0_23.curNodeId)
+			arg0_23:emit(NewEducateBaseUI.ON_DROP, {
+				items = arg1_23,
+				removeFunc = arg2_23
+			})
 		end)
 
-		if arg0_23.stystemNo == NewEducateFSM.STYSTEM.MAP and var1_23 == var0_0.DROP_TYPE.WORD_PERFORMANCE then
+		if arg0_23.stystemNo == NewEducateFSM.SYSTEM.MAP and var1_23 == var0_0.DROP_TYPE.WORD_PERFORMANCE then
 			arg0_23.siteHandler:AddDropRecords(arg1_23)
 		end
 	end
@@ -326,8 +330,8 @@ function var0_0._ProceedNode(arg0_39, arg1_39, arg2_39, arg3_39)
 
 	local var0_39 = pg.child2_node[arg1_39]
 
-	arg0_39:InitCallback(var0_39.next_type)
 	originalPrint("ProceedNode", arg1_39)
+	arg0_39:InitCallback(var0_39.next_type)
 	switch(var0_39.type, {
 		[var0_0.NODE_TYPE.PERFORMANCE] = function()
 			arg0_39:PlayPerformances(var0_39.performance_type, var0_39.performance_param, arg0_39.callback)
@@ -389,13 +393,13 @@ function var0_0.PlayPerformances(arg0_51, arg1_51, arg2_51, arg3_51)
 			local var0_52 = arg0_51.contextData.char:GetRoundData():getConfig("stage")
 			local var1_52 = ""
 
-			if arg0_51.stystemNo == NewEducateFSM.STYSTEM.PLAN then
+			if arg0_51.stystemNo == NewEducateFSM.SYSTEM.PLAN then
 				local var2_52 = arg0_51.plans[arg0_51.curPlanIdx]
 
 				var1_52 = pg.child2_plan[var2_52].name
 			end
 
-			arg0_51.cpkHandler:SetUIParam(arg0_51.stystemNo == NewEducateFSM.STYSTEM.PLAN)
+			arg0_51.cpkHandler:SetUIParam(arg0_51.stystemNo == NewEducateFSM.SYSTEM.PLAN)
 			arg0_51.cpkHandler:Play(arg2_51[var0_52], arg3_51, var1_52)
 		end,
 		[NewEducateConst.PERFORM_TYPE.PICTURE] = function()
@@ -411,82 +415,81 @@ function var0_0.PlayPerformances(arg0_51, arg1_51, arg2_51, arg3_51)
 			NewEducateHelper.PlaySpecialStory(arg2_51, function(arg0_56, arg1_56)
 				arg3_51(arg1_56)
 			end, true)
+		end,
+		[NewEducateConst.PERFORM_TYPE.MINIGAME] = function()
+			arg0_51.minigameHandler:Play(tonumber(arg2_51), function(arg0_58)
+				arg3_51(arg0_58)
+				arg0_51.minigameHandler:Reset()
+			end)
 		end
 	}, function()
 		assert(false, "node表非法performance_type: " .. arg1_51)
 	end)
 end
 
-function var0_0.PlayStoryBranch(arg0_58, arg1_58, arg2_58)
-	NewEducateHelper.PlaySpecialStory(arg1_58, function(arg0_59, arg1_59)
-		arg2_58(arg1_59)
+function var0_0.PlayStoryBranch(arg0_60, arg1_60, arg2_60)
+	NewEducateHelper.PlaySpecialStory(arg1_60, function(arg0_61, arg1_61)
+		arg2_60(arg1_61)
 	end, true)
 end
 
-function var0_0.PlayWordIds(arg0_60, arg1_60, arg2_60)
-	arg0_60:Show()
-	arg0_60.wordHandler:PlayWordIds(arg1_60, function()
-		arg0_60.wordHandler:Reset()
-		arg0_60.super.Hide(arg0_60)
-		existCall(arg2_60)
+function var0_0.PlayWordIds(arg0_62, arg1_62, arg2_62)
+	arg0_62:Show()
+	arg0_62.wordHandler:PlayWordIds(arg1_62, function()
+		arg0_62.wordHandler:Reset()
+		arg0_62.super.Hide(arg0_62)
+		existCall(arg2_62)
 	end)
 end
 
-function var0_0.UpdateCallName(arg0_62)
-	arg0_62.wordHandler:UpdateCallName()
-	arg0_62.siteHandler:UpdateCallName()
-	arg0_62.optionsHandler:UpdateCallName()
+function var0_0.UpdateCallName(arg0_64)
+	arg0_64.wordHandler:UpdateCallName()
+	arg0_64.siteHandler:UpdateCallName()
+	arg0_64.optionsHandler:UpdateCallName()
 end
 
-function var0_0.Hide(arg0_63)
-	existCall(arg0_63.contextData.onHide)
-	arg0_63:StopLoopCpk()
-	arg0_63.cpkHandler:Reset()
-	arg0_63.pictureHandler:Reset()
-	arg0_63.wordHandler:Reset()
-	arg0_63.dropHandler:Reset()
-	arg0_63.siteHandler:Reset()
-	arg0_63.optionsHandler:Reset()
-	arg0_63.super.Hide(arg0_63)
+function var0_0.Hide(arg0_65)
+	existCall(arg0_65.contextData.onHide)
+	arg0_65:StopLoopCpk()
+	arg0_65.cpkHandler:Reset()
+	arg0_65.pictureHandler:Reset()
+	arg0_65.wordHandler:Reset()
+	arg0_65.dropHandler:Reset()
+	arg0_65.siteHandler:Reset()
+	arg0_65.optionsHandler:Reset()
+	arg0_65.minigameHandler:Reset()
+	arg0_65.super.Hide(arg0_65)
 end
 
-function var0_0.OnDestroy(arg0_64)
-	arg0_64:UnOverlayPanel(arg0_64._tf, arg0_64._parentTf)
+function var0_0.OnDestroy(arg0_66)
+	arg0_66:UnOverlayPanel(arg0_66._tf, arg0_66._parentTf)
 
-	if arg0_64.cpkHandler then
-		arg0_64.cpkHandler:Destroy()
-	else
-		warning("not exist self.cpkHandler")
+	if arg0_66.cpkHandler then
+		arg0_66.cpkHandler:Destroy()
 	end
 
-	if arg0_64.pictureHandler then
-		arg0_64.pictureHandler:Destroy()
-	else
-		warning("not exist self.pictureHandler")
+	if arg0_66.pictureHandler then
+		arg0_66.pictureHandler:Destroy()
 	end
 
-	if arg0_64.wordHandler then
-		arg0_64.wordHandler:Destroy()
-	else
-		warning("not exist self.wordHandler")
+	if arg0_66.wordHandler then
+		arg0_66.wordHandler:Destroy()
 	end
 
-	if arg0_64.dropHandler then
-		arg0_64.dropHandler:Destroy()
-	else
-		warning("not exist self.dropHandler")
+	if arg0_66.dropHandler then
+		arg0_66.dropHandler:Destroy()
 	end
 
-	if arg0_64.siteHandler then
-		arg0_64.siteHandler:Destroy()
-	else
-		warning("not exist self.siteHandler")
+	if arg0_66.siteHandler then
+		arg0_66.siteHandler:Destroy()
 	end
 
-	if arg0_64.optionsHandler then
-		arg0_64.optionsHandler:Destroy()
-	else
-		warning("not exist self.optionsHandler")
+	if arg0_66.optionsHandler then
+		arg0_66.optionsHandler:Destroy()
+	end
+
+	if arg0_66.minigameHandler then
+		arg0_66.minigameHandler:Destroy()
 	end
 end
 

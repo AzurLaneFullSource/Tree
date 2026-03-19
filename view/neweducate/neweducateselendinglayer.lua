@@ -58,7 +58,7 @@ function var0_0.InitItem(arg0_6, arg1_6, arg2_6)
 end
 
 function var0_0.RefreshView(arg0_8)
-	arg0_8.endingList = arg0_8.contextData.char:GetFSM():GetState(NewEducateFSM.STYSTEM.ENDING):GetEndings()
+	arg0_8.endingList = arg0_8.contextData.char:GetFSM():GetState(NewEducateFSM.SYSTEM.ENDING):GetEndings()
 	arg0_8.completeList = arg0_8.contextData.char:GetPermanentData():GetFinishedEndings()
 
 	table.sort(arg0_8.endingList, CompareFuncs({

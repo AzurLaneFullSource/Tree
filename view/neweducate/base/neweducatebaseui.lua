@@ -7,6 +7,7 @@ var0_0.ON_DROP = "NewEducateBaseUI.ON_DROP"
 var0_0.ON_ITEM = "NewEducateBaseUI.ON_ITEM"
 var0_0.ON_BOX = "NewEducateBaseUI.ON_BOX"
 var0_0.ON_SHOP = "NewEducateBaseUI.ON_SHOP"
+var0_0.ON_PRIORITY_STATE = "NewEducateBaseUI.ON_PRIORITY_STATE"
 
 function var0_0.getGroupName(arg0_1)
 	return "NewEducateBaseUI"

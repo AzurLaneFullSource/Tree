@@ -420,5 +420,18 @@ return {
 
 			return Activity.IsActivityReady(var0_37)
 		end
+	},
+	{
+		banner = "cultivating_plant",
+		event = ActivityMediator.OPEN_CULTIVATING_PLANT,
+		data = {},
+		isShow = function()
+			local var0_38 = getProxy(ActivityProxy):getActivityById(ActivityConst.CULTIVATING_PLANT_ID)
+
+			return var0_38 and not var0_38:isEnd()
+		end,
+		isTip = function()
+			return CultivatingPlantTools.NeedShowRedPoint()
+		end
 	}
 }

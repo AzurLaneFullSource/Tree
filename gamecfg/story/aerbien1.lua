@@ -9,7 +9,7 @@ return {
 			asideType = 1,
 			sequence = {
 				{
-					"Forest Breeze and the Compass of the Heart\n\n<size=45>The Forest's Invitation</size>",
+					"林间风与心之罗盘\n\n<size=45>一 森林的邀约</size>",
 					1
 				}
 			}
@@ -19,7 +19,7 @@ return {
 			side = 2,
 			bgName = "bg_story_task_2",
 			hidePaintObj = true,
-			say = "Port - Office",
+			say = "港区·指挥室",
 			bgm = "story-richang-1",
 			typewriter = {
 				speed = 0.05,
@@ -40,7 +40,7 @@ return {
 			side = 2,
 			bgName = "bg_story_task_2",
 			hidePaintObj = true,
-			say = "After finishing this morning's paperwork, I decide to take a little break. Right on cue, someone knocks on my office door.",
+			say = "处理完上午的最后一份文件，我正打算稍作休息，门口就响起了节奏略显急促的轻响。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -53,7 +53,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "Come on in.",
+			say = "请进。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -64,7 +64,7 @@ return {
 			side = 2,
 			bgName = "bg_story_task_2",
 			hidePaintObj = true,
-			say = "Albion enters, bearing a lovely woven picnic basket.",
+			say = "门被小心推开，阿尔比恩抱着一个精巧的藤编野餐篮走了进来。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -77,7 +77,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "Thank goodness you're here, Commander!",
+			say = "指挥官……太好了，您果然在呢……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -88,7 +88,7 @@ return {
 			side = 2,
 			bgName = "bg_story_task_2",
 			hidePaintObj = true,
-			say = "I sense a hint of excitement in her voice.",
+			say = "她的声音比平时轻快一些，带着掩饰不住的期待。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -101,7 +101,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "Albion? What's got you in such a hurry?",
+			say = "阿尔比恩？怎么了，这么匆忙？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -112,7 +112,7 @@ return {
 			side = 2,
 			bgName = "bg_story_task_2",
 			hidePaintObj = true,
-			say = "She pinches the hem of her skirt nervously, blushing and fidgeting as she speaks.",
+			say = "将篮子轻放在茶几上后，她有些紧张地捏着裙角，脸颊泛着浅浅的红晕。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -126,7 +126,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "Well... I recently found this lovely spot for relaxation in the forested mountains.",
+			say = "那个……其实最近我在后山的森林里发现了一个特别适合放松的地方。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -140,7 +140,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "Just by standing there, you can hear the soothing winds...",
+			say = "只要站在那里……就能听见很温柔的“治愈之风”",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -153,7 +153,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "Soothing winds, you say?",
+			say = "治愈之风？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -166,7 +166,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "Umm, I don't mean a specific natural phenomenon. Rather, it's more of a harmonious resonance, of sorts, that the forest achieves under the perfect conditions.",
+			say = "嗯，不是气象意义上的风……更像是森林在特定条件下，达成的一种……和谐的共鸣。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -179,7 +179,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "I see. That does sound soothing.",
+			say = "听起来就很舒服。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -193,7 +193,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "It is! The weather is great today, so the sound is especially clear...",
+			say = "嗯！今天天气这么好，风的声音也格外清晰……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -207,7 +207,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "I would love to listen to it together with you.",
+			say = "所以我就想……如果指挥官也能一起去听听看，该有多好。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -221,7 +221,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "Umm... May I ask you to join me?",
+			say = "您……愿意和我一起去吗？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -234,7 +234,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "I'd be happy to. Should I bring anything?",
+			say = "当然，我很乐意。需要做什么准备？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -248,7 +248,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "Wonderful! Ah, you don't have to do anything special.",
+			say = "太好了！啊，您什么都不用准备——",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -259,7 +259,7 @@ return {
 			side = 2,
 			bgName = "bg_story_task_2",
 			hidePaintObj = true,
-			say = "She opens the picnic basket and shows me the contents: some snacks, and a hand-drawn map.",
+			say = "阿尔比恩开心地松了口气，然后掀开一旁的野餐篮，露出了里面精致的点心和一张手绘地图。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -272,7 +272,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "I've already drawn the route I usually take on the map.",
+			say = "我已经提前规划好了最熟悉的路线，备好了简易的地图。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -286,7 +286,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "I made snacks, too... I was hoping we could have some together.",
+			say = "另外，我还准备了一些茶点……是我试着做的，因为想和指挥官一起尝尝看。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -299,7 +299,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "We could even eat them along the way, if you'd like.",
+			say = "如果指挥官不嫌弃的话……我们可以一起在路上享用。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -312,7 +312,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "They look delicious. Thank you for doing all that.",
+			say = "看起来就很美味，你准备得很周到。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -326,7 +326,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "I only did what was natural as your junior... No, as the person inviting you.",
+			say = "因为……这是作为后辈……不，作为邀请者应该做的。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -340,7 +340,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "Please come with me, Commander.",
+			say = "那么，请跟我来，指挥官。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -351,7 +351,7 @@ return {
 			side = 2,
 			bgName = "bg_story_task_2",
 			hidePaintObj = true,
-			say = "With the basket in hand, Albion stops in front of the door and turns to me expectantly.",
+			say = "她提起野餐篮，步伐轻快地走到门边，然后停下来回头看着我，眼中满是期待。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -364,7 +364,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "The wind today will surely be a gentle caress.",
+			say = "我们出发吧？今天的风……一定会很温柔。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -375,7 +375,7 @@ return {
 			side = 2,
 			bgName = "bg_story_task_2",
 			hidePaintObj = true,
-			say = "I follow her out of my office. When I close the door, I hear her murmuring what sounds like a prayer.",
+			say = "我跟着她走出指挥室。门关上前，似乎听见她像许愿般呢喃了一句。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -389,7 +389,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "May today's wind convey my feelings for the Commander...",
+			say = "希望今天的风……能把我的心情好好传达给您。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

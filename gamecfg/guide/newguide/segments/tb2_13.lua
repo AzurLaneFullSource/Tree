@@ -2,8 +2,11 @@ return {
 	id = "tb2_13",
 	events = {
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "You have unlocked the Shipgirl Interactions function.",
 				mode = 2,
@@ -15,8 +18,11 @@ return {
 			}
 		},
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "You can tap the Go Outside button to see what interactions you may come across.",
 				mode = 2,
@@ -42,8 +48,11 @@ return {
 			}
 		},
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "You may bring Navi along and interact with various friends.",
 				mode = 2,
@@ -61,8 +70,11 @@ return {
 			}
 		},
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "Every shipgirl has her own events that may influence Navi's personality development based on how they unfold.",
 				mode = 2,
@@ -74,8 +86,11 @@ return {
 			}
 		},
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "Each shipgirl has up to 3 interactions. They will remain in the town for up to 5 turns.",
 				mode = 2,
@@ -87,10 +102,107 @@ return {
 			}
 		},
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "Interacting with a shipgirl costs 1 action point. Make good time of your use together with your companions.",
+				mode = 2,
+				dir = 1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
+			style = {
+				text = "You have unlocked the Shipgirl Interactions function.",
+				mode = 2,
+				dir = 1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
+			style = {
+				text = "You can tap the Go Outside button to see what interactions you may come across.",
+				mode = 2,
+				dir = 1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {
+					{
+						lineMode = 2,
+						path = "UICamera/Canvas/UIMain/NewEducateMainUI(Clone)/root/adapt/normal/map",
+						pathIndex = -1
+					}
+				}
+			},
+			ui = {
+				path = "UICamera/Canvas/UIMain/NewEducateMainUI(Clone)/root/adapt/normal/map",
+				pathIndex = -1,
+				fingerPos = {
+					posY = 50,
+					posX = -100
+				}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
+			style = {
+				text = "You may bring Lora along and interact with various friends.",
+				mode = 2,
+				dir = 1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
+			style = {
+				text = "Every shipgirl has her own events that may influence Lora's personality development based on how they unfold.",
+				mode = 2,
+				dir = 1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
+			style = {
+				text = "Each shipgirl has up to 3 interactions. They will remain in the town for up to 5 turns.",
 				mode = 2,
 				dir = 1,
 				char = 1,

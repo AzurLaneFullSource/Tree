@@ -1231,7 +1231,7 @@ pg.enemy_data_statistics_396 = {
 	},
 	[295316] = {
 		cannon = 100,
-		name = "Regensburg META (Tier.1)",
+		name = "瑞吉娜·META(Tier.1)",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
@@ -1277,7 +1277,7 @@ pg.enemy_data_statistics_396 = {
 	},
 	[295317] = {
 		cannon = 115,
-		name = "Regensburg META (Tier.2)",
+		name = "瑞吉娜·META(Tier.2)",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
@@ -1323,7 +1323,7 @@ pg.enemy_data_statistics_396 = {
 	},
 	[295318] = {
 		cannon = 129,
-		name = "Regensburg META (Tier.3)",
+		name = "瑞吉娜·META(Tier.3)",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
@@ -1369,7 +1369,7 @@ pg.enemy_data_statistics_396 = {
 	},
 	[295319] = {
 		cannon = 143,
-		name = "Regensburg META (Tier.4)",
+		name = "瑞吉娜·META(Tier.4)",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
@@ -1415,7 +1415,7 @@ pg.enemy_data_statistics_396 = {
 	},
 	[295320] = {
 		cannon = 158,
-		name = "Regensburg META (Tier.5)",
+		name = "瑞吉娜·META(Tier.5)",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,

@@ -26,6 +26,7 @@ function var0_0.initData(arg0_3)
 	arg0_3.events = arg0_3.contextData.events
 	arg0_3.drops = {}
 	arg0_3.isSkip = arg0_3.contextData.skip
+	arg0_3.isSkipEvent = arg0_3.contextData.skipEvent
 
 	underscore.each(arg0_3.contextData.plan_results, function(arg0_4)
 		if not arg0_3.drops[arg0_4.day] then
@@ -154,20 +155,23 @@ function var0_0.playWeek(arg0_12, arg1_12)
 					setText(arg0_12.planNameTF, var3_12:GetName())
 
 					local var0_13 = var3_12:IsPlan() and var1_12.plan_drops or var1_12.spec_event_drops
+					local var1_13 = not var3_12:IsPlan() or var2_12
 
 					if arg0_12.isSkip then
-						if not var3_12:IsPlan() or var2_12 then
+						if var1_13 and not arg0_12.isSkipEvent then
 							pg.PerformMgr.GetInstance():PlayGroupNoHide(var3_12:GetPerformance(), arg0_13, var0_13 or {})
 						else
 							arg0_13()
 						end
+					elseif not var3_12:IsPlan() and arg0_12.isSkipEvent then
+						arg0_13()
 					else
 						pg.PerformMgr.GetInstance():PlayGroupNoHide(var3_12:GetPerformance(), arg0_13, var0_13 or {})
 					end
 				end)
 			end
 
-			if var2_12 then
+			if var2_12 and not arg0_12.isSkipEvent then
 				local var4_12 = arg0_12.showEventIds[iter0_12][iter1_12]
 
 				table.insert(var0_12, function(arg0_14)

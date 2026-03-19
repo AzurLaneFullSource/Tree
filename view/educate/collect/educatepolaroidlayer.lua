@@ -23,7 +23,7 @@ end
 
 function var0_0.initUnlockAttr(arg0_4)
 	arg0_4.unlockAttrs = {}
-	arg0_4.endings = getProxy(EducateProxy):GetFinishEndings()
+	arg0_4.endings = getProxy(EducateProxy):GetAllEndings()
 
 	underscore.each(arg0_4.endings, function(arg0_5)
 		local var0_5 = pg.child_ending[arg0_5].polaroid_condition
@@ -35,24 +35,27 @@ function var0_0.initUnlockAttr(arg0_4)
 end
 
 function var0_0.didEnter(arg0_6)
-	arg0_6:initUnlockAttr()
 	arg0_6:initGroups()
-
-	arg0_6.polaroidData = getProxy(EducateProxy):GetPolaroidData()
-
-	local var0_6, var1_6 = getProxy(EducateProxy):GetPolaroidGroupCnt()
-
-	setText(arg0_6.curCntTF, var0_6)
-	setText(arg0_6.allCntTF, "/" .. var1_6)
+	arg0_6:initShowList()
 	onButton(arg0_6, arg0_6.performTF, function()
 		setActive(arg0_6.performTF, false)
 	end, SFX_PANEL)
-	arg0_6:initShowList()
 
 	arg0_6.pages = math.ceil(#arg0_6.groupIds / arg0_6.onePageCnt)
 
-	arg0_6:updatePage()
 	EducateTipHelper.ClearNewTip(EducateTipHelper.NEW_POLAROID)
+
+	local var0_6 = arg0_6.performTF:Find("bg/lock/unlock_btn/Text")
+
+	var0_6:GetComponent("RichText"):AddSprite("gold", arg0_6._tf:Find("res/gold"):GetComponent(typeof(Image)).sprite)
+	setText(var0_6, i18n("child_could_buy"))
+	setText(arg0_6.windowTF:Find("tip"), i18n("child_buy_polaroid_tip"))
+
+	arg0_6.basePrice = pg.gameset.child_polaroid_basic_price.key_value
+	arg0_6.addPrice = pg.gameset.child_polaroid_add_price.key_value
+	arg0_6.maxPrice = pg.gameset.child_polaroid_max_price.key_value
+
+	arg0_6:Flush()
 end
 
 function var0_0.initShowList(arg0_8)
@@ -73,12 +76,12 @@ function var0_0.initShowList(arg0_8)
 			setActive(arg2_9:Find("unlock/selected"), arg0_8.selectedIndex == arg1_9 + 1)
 			setActive(arg2_9:Find("unlock/unselected"), arg0_8.selectedIndex ~= arg1_9 + 1)
 			onButton(arg0_8, arg2_9, function(arg0_10)
-				if var1_9 then
-					arg0_8.selectedIndex = arg1_9 + 1
+				arg0_8.selectedIndex = arg1_9 + 1
 
-					arg0_8:updatePerform(var0_9)
-					arg0_8.showList:align(#arg0_8.showIds)
-				else
+				arg0_8:updatePerform(var0_9, var1_9)
+				arg0_8.showList:align(#arg0_8.showIds)
+
+				if not var1_9 then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("child_polaroid_lock_tip"))
 				end
 			end)
@@ -106,83 +109,147 @@ function var0_0.IsUnlock(arg0_11, arg1_11)
 	return false
 end
 
-function var0_0.updatePage(arg0_12)
-	setActive(arg0_12.nextBtn, arg0_12.pages ~= 1 and arg0_12.curPageIndex < arg0_12.pages)
-	setActive(arg0_12.lastBtn, arg0_12.pages ~= 1 and arg0_12.curPageIndex > 1)
-	setText(arg0_12.paginationTF, arg0_12.curPageIndex .. "/" .. arg0_12.pages)
+function var0_0.SetData(arg0_12)
+	local var0_12 = getProxy(EducateProxy)
 
-	local var0_12 = (arg0_12.curPageIndex - 1) * arg0_12.onePageCnt
+	arg0_12.polaroidData = var0_12:GetPolaroidData()
+	arg0_12.gameCnt = var0_12:GetGameCnt()
+	arg0_12.bugCnt = var0_12:GetPolaroidBuyCnt()
 
-	for iter0_12 = 1, arg0_12.onePageCnt do
-		local var1_12 = arg0_12.pageTF:Find("frame_" .. iter0_12)
-		local var2_12 = arg0_12.groupIds[var0_12 + iter0_12]
+	arg0_12:initUnlockAttr()
+end
 
-		if var2_12 then
-			setActive(var1_12, true)
-			arg0_12:updateItem(var2_12, var1_12)
+function var0_0.Flush(arg0_13)
+	arg0_13:SetData()
+
+	local var0_13, var1_13 = getProxy(EducateProxy):GetPolaroidGroupCnt()
+
+	setText(arg0_13.curCntTF, var0_13)
+	setText(arg0_13.allCntTF, "/" .. var1_13)
+	arg0_13:updatePage()
+
+	if isActive(arg0_13.performTF) then
+		local var2_13 = arg0_13.showIds[arg0_13.selectedIndex]
+		local var3_13 = arg0_13:IsUnlock(var2_13)
+
+		arg0_13:updatePerform(var2_13, var3_13)
+		arg0_13.showList:align(#arg0_13.showIds)
+	end
+end
+
+function var0_0.updatePage(arg0_14)
+	setActive(arg0_14.nextBtn, arg0_14.pages ~= 1 and arg0_14.curPageIndex < arg0_14.pages)
+	setActive(arg0_14.lastBtn, arg0_14.pages ~= 1 and arg0_14.curPageIndex > 1)
+	setText(arg0_14.paginationTF, arg0_14.curPageIndex .. "/" .. arg0_14.pages)
+
+	local var0_14 = (arg0_14.curPageIndex - 1) * arg0_14.onePageCnt
+
+	for iter0_14 = 1, arg0_14.onePageCnt do
+		local var1_14 = arg0_14.pageTF:Find("frame_" .. iter0_14)
+		local var2_14 = arg0_14.groupIds[var0_14 + iter0_14]
+
+		if var2_14 then
+			setActive(var1_14, true)
+			arg0_14:updateItem(var2_14, var1_14)
 		else
-			setActive(var1_12, false)
+			setActive(var1_14, false)
 		end
 	end
 end
 
-function var0_0.updateItem(arg0_13, arg1_13, arg2_13)
-	local var0_13 = arg0_13.group2polaroidIds[arg1_13]
+function var0_0.updateItem(arg0_15, arg1_15, arg2_15)
+	local var0_15 = arg0_15.group2polaroidIds[arg1_15]
 
-	table.sort(var0_13, CompareFuncs({
-		function(arg0_14)
-			return arg0_13.polaroidData[arg0_14] and 0 or 1
-		end,
-		function(arg0_15)
-			return arg0_13.polaroidData[arg0_15] and arg0_13.polaroidData[arg0_15]:GetTimeWeight() or 1
-		end,
+	table.sort(var0_15, CompareFuncs({
 		function(arg0_16)
-			return arg0_16
+			return arg0_15.polaroidData[arg0_16] and 0 or 1
+		end,
+		function(arg0_17)
+			return arg0_15.polaroidData[arg0_17] and arg0_15.polaroidData[arg0_17]:GetTimeWeight() or 1
+		end,
+		function(arg0_18)
+			return arg0_18
 		end
 	}))
 
-	local var1_13 = arg0_13.config[var0_13[1]]
-	local var2_13 = arg0_13.polaroidData[var0_13[1]]
+	local var1_15 = arg0_15.config[var0_15[1]]
+	local var2_15 = arg0_15.polaroidData[var0_15[1]]
 
-	setActive(arg2_13:Find("lock"), not var2_13)
-	setActive(arg2_13:Find("unlock"), var2_13)
+	setActive(arg2_15:Find("lock"), not var2_15)
+	setActive(arg2_15:Find("unlock"), var2_15)
 
-	if var2_13 then
-		local var3_13 = arg0_13.polaroidData[var0_13[1]]
+	if var2_15 then
+		local var3_15 = arg0_15.polaroidData[var0_15[1]]
 
-		LoadImageSpriteAsync("educatepolaroid/" .. var1_13.pic, arg2_13:Find("unlock/mask/Image"))
-		setText(arg2_13:Find("unlock/name"), var1_13.title)
-		onButton(arg0_13, arg2_13, function()
-			arg0_13:showPerformWindow(var0_13)
+		LoadImageSpriteAsync("educatepolaroid/" .. var1_15.pic, arg2_15:Find("unlock/mask/Image"))
+		setText(arg2_15:Find("unlock/name"), var1_15.title)
+		onButton(arg0_15, arg2_15, function()
+			arg0_15:showPerformWindow(var0_15)
 		end, SFX_PANEL)
 	else
-		removeOnButton(arg2_13)
-		setText(arg2_13:Find("lock/Text"), var1_13.condition)
+		removeOnButton(arg2_15)
+		setText(arg2_15:Find("lock/desc/Text"), var1_15.condition)
+
+		local var4_15 = arg2_15:Find("lock/unlock_btn")
+
+		setActive(var4_15, arg0_15.gameCnt > 1)
+		onButton(arg0_15, var4_15, function()
+			arg0_15:OnClickBuyBtn(var1_15)
+		end, SFX_PANEL)
 	end
 end
 
-function var0_0.showPerformWindow(arg0_18, arg1_18, arg2_18)
-	arg0_18.showIds = arg1_18
+function var0_0.showPerformWindow(arg0_21, arg1_21, arg2_21)
+	arg0_21.showIds = arg1_21
 
-	arg0_18.showList:align(#arg0_18.showIds)
-	triggerButton(arg0_18.groupsTF:GetChild(0))
-	setActive(arg0_18.performTF, true)
+	arg0_21.showList:align(#arg0_21.showIds)
+	triggerButton(arg0_21.groupsTF:GetChild(0))
+	setActive(arg0_21.performTF, true)
 end
 
-function var0_0.updatePerform(arg0_19, arg1_19)
-	local var0_19 = arg0_19.config[arg1_19]
+function var0_0.updatePerform(arg0_22, arg1_22, arg2_22)
+	local var0_22 = arg0_22.config[arg1_22]
 
-	LoadImageSpriteAsync("educatepolaroid/" .. var0_19.pic, arg0_19.performTF:Find("bg/mask/Image"))
-	setText(arg0_19.performTF:Find("bg/Text"), var0_19.title)
+	LoadImageSpriteAsync("educatepolaroid/" .. var0_22.pic, arg0_22.performTF:Find("bg/icon/Image"))
+	setActive(arg0_22.performTF:Find("bg/icon/lock"), not arg2_22)
+	setText(arg0_22.performTF:Find("bg/Text"), arg2_22 and var0_22.title or "")
+	setActive(arg0_22.performTF:Find("bg/lock"), not arg2_22)
+
+	if not arg2_22 then
+		setText(arg0_22.performTF:Find("bg/lock/desc/Text"), var0_22.condition)
+
+		local var1_22 = arg0_22.performTF:Find("bg/lock/unlock_btn")
+
+		setActive(var1_22, arg0_22.gameCnt > 1)
+		onButton(arg0_22, var1_22, function()
+			arg0_22:OnClickBuyBtn(var0_22)
+		end, SFX_PANEL)
+	end
 end
 
-function var0_0.playAnimChange(arg0_20)
-	arg0_20.anim:Stop()
-	arg0_20.anim:Play("anim_educate_Polaroid_change")
+function var0_0.OnClickBuyBtn(arg0_24, arg1_24)
+	local var0_24 = arg1_24.title
+	local var1_24 = math.min(arg0_24.maxPrice, arg0_24.basePrice + arg0_24.bugCnt * arg0_24.addPrice)
+
+	arg0_24:emit(EducateBaseUI.EDUCATE_ON_MSG_TIP, {
+		content = i18n("child_polaroid_buy", var1_24, var0_24),
+		onYes = function()
+			arg0_24:emit(EducateCollectMediatorTemplate.UNLOCK, {
+				type = EducateBuyCollectCommand.TYPE.POLAROID,
+				id = arg1_24.id,
+				cost = var1_24
+			})
+		end
+	})
 end
 
-function var0_0.playAnimClose(arg0_21)
-	arg0_21.anim:Play("anim_educate_Polaroid_out")
+function var0_0.playAnimChange(arg0_26)
+	arg0_26.anim:Stop()
+	arg0_26.anim:Play("anim_educate_Polaroid_change")
+end
+
+function var0_0.playAnimClose(arg0_27)
+	arg0_27.anim:Play("anim_educate_Polaroid_out")
 end
 
 return var0_0

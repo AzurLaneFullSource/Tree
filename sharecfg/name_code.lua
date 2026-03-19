@@ -2990,10 +2990,10 @@ pg.name_code = {
 		nation = 0
 	},
 	[552] = {
-		name = "Regensburg META",
+		name = "雷根斯堡·META",
 		type = 1,
 		id = 552,
-		code = "Regensburg META",
+		code = "瑞吉娜·META",
 		nation = 0
 	},
 	[10000] = {

@@ -12,6 +12,12 @@ function var0_0.onRegister(arg0_1)
 		arg0_1:addSubLayers(arg1_4, nil, arg2_4)
 	end)
 	arg0_1:bind(NewEducateBaseUI.ON_DROP, function(arg0_5, arg1_5)
+		if #arg1_5.items == 0 then
+			existCall(arg1_5.removeFunc)
+
+			return
+		end
+
 		arg0_1:addSubLayers(Context.New({
 			mediator = NewEducateDropMediator,
 			viewComponent = NewEducateDropLayer,
@@ -51,8 +57,74 @@ function var0_0.onRegister(arg0_1)
 			})
 		}))
 	end)
+	arg0_1:bind(NewEducateBaseUI.ON_PRIORITY_STATE, function(arg0_9, arg1_9)
+		arg0_1:CheckPriorityState(arg1_9)
+	end)
 
 	arg0_1.contextData.char = getProxy(NewEducateProxy):GetCurChar()
+end
+
+function var0_0.CheckPriorityState(arg0_10, arg1_10)
+	local var0_10 = arg0_10.contextData.char:GetFSM()
+
+	if not var0_10:CheckPriorityStystem() then
+		arg0_10:sendNotification(GAME.NEW_EDUCATE_CHECK_FSM)
+
+		return
+	end
+
+	local var1_10 = var0_10:GetPriorityState()
+
+	switch(var1_10:GetSystemNo(), {
+		[NewEducatePriorityFSM.SYSTEM.CHOOSE] = function()
+			arg0_10:PriorityChooseHandler(arg1_10)
+		end,
+		[NewEducatePriorityFSM.SYSTEM.UPGRADE_ENTRY] = function()
+			arg0_10:PriorityUpEntryHandler(arg1_10)
+		end,
+		[NewEducatePriorityFSM.SYSTEM.REPLACE_TAROT] = function()
+			arg0_10:PriorityReplaceTarotHandler(arg1_10)
+		end
+	}, function()
+		assert(false, "不合法PriorityFSM状态")
+	end)
+end
+
+function var0_0.PriorityChooseHandler(arg0_15, arg1_15)
+	arg0_15:addSubLayers(Context.New({
+		viewComponent = NewEducateChooseLayer,
+		mediator = NewEducateChooseMediator,
+		data = {
+			onExit = function()
+				arg0_15:CheckPriorityState()
+			end
+		}
+	}))
+end
+
+function var0_0.PriorityUpEntryHandler(arg0_17, arg1_17)
+	arg0_17:addSubLayers(Context.New({
+		viewComponent = NewEducateTarotEntryLayer,
+		mediator = NewEducateTarotEntryMediator,
+		data = {
+			type = arg1_17 and arg1_17.type or NewEducateTarotEntryLayer.TYPE.DROP,
+			onExit = function()
+				arg0_17:CheckPriorityState()
+			end
+		}
+	}))
+end
+
+function var0_0.PriorityReplaceTarotHandler(arg0_19, arg1_19)
+	arg0_19:addSubLayers(Context.New({
+		viewComponent = NewEducateReplaceTarotLayer,
+		mediator = NewEducateReplaceTarotMediator,
+		data = {
+			onExit = function()
+				arg0_19:CheckPriorityState()
+			end
+		}
+	}))
 end
 
 return var0_0

@@ -543,7 +543,7 @@ _G.pg.base.gametip.word_backyardMoney = {
 }
 
 _G.pg.base.gametip.word_cancel = {
-	tip = "Cancel",
+	tip = "Return",
 }
 
 _G.pg.base.gametip.word_cmdClose = {
@@ -1499,7 +1499,7 @@ _G.pg.base.gametip.common_limit_equip = {
 }
 
 _G.pg.base.gametip.common_buy_success = {
-	tip = "Purchased!",
+	tip = "Unlocked!",
 }
 
 _G.pg.base.gametip.common_limit_level = {
@@ -2820,7 +2820,7 @@ _G.pg.base.gametip.mail_box_confirm = {
 }
 
 _G.pg.base.gametip.mail_box_cancel = {
-	tip = "Cancel",
+	tip = "Return",
 }
 
 _G.pg.base.gametip.mail_title_English = {
@@ -4775,7 +4775,7 @@ _G.pg.base.gametip.world_consume_carry_tips = {
 _G.pg.base.gametip.world_boss_help_meta = {
 	tip = {
 		{
-			info = "- META Showdown Overview -\n\nFrom <color=#92fc63>3/12/26 to 6/5/26</color>, challenge Regensburg META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Regensburg META</color> as well as other great rewards.\n<color=#ff5c5c>Note: Sync Points will expire after the event period ends.</color>\n\n- Acquiring and Analyzing META Coordinates -\n· META Coordinates can be earned by playing Operation Siren. Sufficient amounts of META Coordinates can be analyzed to begin a META Showdown.\n· You may perform Analysis <color=#92fc63>2 times</color> per day, resetting every day at midnight. Unused META Coordinates will be retained.\n· You need <color=#92fc63>100</color> META Coordinates to begin a META Showdown.\n\n- Fighting Your Bosses -\n· Your first time challenging a META boss that you spawned will not require Oil. From the second attempt onwards, the cost of each attempt will gradually drop from <color=#92fc63>40</color> Oil to <color=#92fc63>0</color> Oil. (Will not consume a challenge attempt).\n· When a META Showdown boss reaches 0 HP, they will be defeated. Participants will be able to collect rewards, including a large amount of Sync Points.\n· Each META Showdown will only last for <color=#92fc63>24 hours</color>, after which it will disappear. Use Request Support if you need help.\n· After defeating a META boss, the difficulty of subsequent META Showdowns will increase by 1 level, up to a maximum of 15.\n\n- Fighting Others' Bosses -\n· In the Boss List menu, you can see requests that other Commanders have sent. When fighting another Commander's boss, you will immediately gain Sync Points based upon the <color=#92fc63>amount of DMG</color> you dealt.\n· Each attempt uses 1 Challenge Attempt, but uses no Oil.\n· You can have up to <color=#92fc63>3</color> Challenge Attempts, resetting each day at midnight.\nEach META Showdown can have up to 30 participants.\n\n- Combat Instructions -\n· You cannot bring Meowfficers or submarines.\n· At the end of battle, no EXP is gained, and Morale will not be affected.\n· You cannot quit during an META Showdown. If connection is lost due to unstable network conditions, the following will occur:\na. If challenging a boss you discovered, you will spend 40 Oil (the first battle is still free), and any damage done will not count.\nb. If challenging someone else's boss, a challenge attempt will be used, but no rewards will be granted.\n<color=#92fc63>Please make sure your network conditions are stable before attempting an META Showdown!</color>\n\n- Artillery Support -\nFrom the 31st day of this META Showdown season onwards, whenever you begin an META Showdown, your fleet will gain an additional wave of artillery support. This artillery support will deal damage to the enemy and apply a special debuff that inflicts damage over time (this damage cannot be amplified by any bonus effects).\nThe later in the META Showdown season it is, the greater the damage inflicted by this artillery support.\n*Artillery Support will only appear during META Showdown battles you discover, and will trigger with each challenge attempt.",
+			info = "- META Showdown Overview -\n\nFrom <color=#92fc63>12/11/2025 to 3/11/2026</color>, challenge Yorktown META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Yorktown META</color> as well as other great rewards.\n<color=#ff5c5c>Note: Sync Points will expire after the event period ends.</color>\n\n- Acquiring and Analyzing META Coordinates -\n· META Coordinates can be earned by playing Operation Siren. Sufficient amounts of META Coordinates can be analyzed to begin a META Showdown.\n· You may perform Analysis <color=#92fc63>2 times</color> per day, resetting every day at midnight. Unused META Coordinates will be retained.\n· You need <color=#92fc63>100</color> META Coordinates to begin a META Showdown.\n\n- Fighting Your Bosses -\n· Your first time challenging a META boss that you spawned will not require Oil. From the second attempt onwards, cost of each attempt will gradually drop from <color=#92fc63>40</color> Oil to <color=#92fc63>0</color> Oil. (Will not consume a challenge attempt).\n· When a META Showdown boss reaches 0 HP, they will be defeated. Participants will be able to collect rewards, including a large amount of Sync Points.\n· Each META Showdown will only last for <color=#92fc63>24 hours</color>, after which it will disappear. Use Request Support if you need help.\n· After defeating a META boss, the difficulty of subsequent META Showdowns will increase by 1 level, up to a maximum of 15.\n\n- Fighting Others' Bosses -\n· In the Boss List menu, you can see requests that other Commanders have sent. When fighting another Commander's boss, you will immediately gain Sync Points based upon the <color=#92fc63>amount of DMG</color> you dealt.\n· Each attempt uses 1 Challenge Attempt, but uses no Oil.\n· You can have up to <color=#92fc63>3</color> Challenge attempts, resetting each day at midnight.\nEach META Showdown can have up to 30 participants.\n\n- Combat Instructions -\n· You cannot bring Meowfficers or submarines.\n· At the end of battle, no EXP is gained, and Morale will not be affected.\n· You cannot quit during an META Showdown. If connection is lost due to unstable network conditions, the following will occur:\na. If challenging a boss you discovered, you will spend 40 Oil (the first battle is still free), and any damage done will not count.\nb. If challenging someone else's boss, a challenge attempt will be used, but no rewards will be granted.\n<color=#92fc63>Please make sure your network conditions are stable before attempting an META Showdown!</color>\n\n- Artillery Support -\nFrom the 31st day of this META Showdown season onwards, whenever you begin an META Showdown, your fleet will gain an additional wave of artillery support. This artillery support will deal damage to the enemy and apply a special debuff that inflicts damage over time (this damage cannot be amplified by any bonus effects).\nThe later in the META Showdown season it is, the greater the damage inflicted by this artillery support.\n*Artillery Support will only appear during META Showdown battles you discover, and will trigger with each challenge attempt.",
 		},
 	},
 }
@@ -9001,7 +9001,7 @@ _G.pg.base.gametip.activity_switch_award_pool_failed = {
 }
 
 _G.pg.base.gametip.shop_street_activity_tip = {
-	tip = "※<color=#2E852C>Gear Skins</color> are purchasable during(<color=#2E852C>$1</COLOR>)!",
+	tip = "Gear Skin Box (Spring Festival Auction) & (Spring Auspices) are purchasable during (<color=#539b2c>02.12-03.04</COLOR>)\nGear Skin Box (Springtide Inn) are purchasable during (<color=#539b2c>02.26-03.11</COLOR>)",
 }
 
 _G.pg.base.gametip.shop_street_Equipment_skin_box_help = {
@@ -10184,15 +10184,15 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 }
 
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Get Sovetsky Soyuz guaranteed with every 200 event builds (can be done up to 4 times)!",
+	tip = "Get Moskva guaranteed with every 200 event builds (can be done up to 4 times)!",
 }
 
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "Chien Wu added to standard build pool!",
+	tip = "Gorizia and Andrea Doria added to standard build pool!",
 }
 
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "Hai Yung and Chang Feng added to standard build pool!",
+	tip = "Attilio Regolo added to standard build pool!",
 }
 
 _G.pg.base.gametip.buildship_special_tip = {
@@ -10805,7 +10805,7 @@ _G.pg.base.gametip.ranking_word_4 = {
 }
 
 _G.pg.base.gametip.ranking_word_5 = {
-	tip = "Rank",
+	tip = "Leaderboard",
 }
 
 _G.pg.base.gametip.ranking_word_6 = {
@@ -16625,7 +16625,7 @@ _G.pg.base.gametip.meta_help = {
 			info = "Obtainable rewards from accumulating Sync Points can be viewed and claimed on each corresponding META ship's tab in the META Lab. Furthermore, upon obtaining enough Sync Points, you'll be able to recruit a META ship.\n\n",
 		},
 		{
-			info = "From <color=#92fc63>3/12/26 to 6/5/26</color>, challenge Regensburg META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Regensburg META</color> as well as other great rewards.\n\n",
+			info = "From <color=#92fc63>12/11/2025 to 3/11/2026</color>, challenge Yorktown META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Yorktown META</color> as well as other great rewards.\n\n",
 		},
 		{
 			info = "2. About Rigging Fortification:",
@@ -16800,7 +16800,7 @@ _G.pg.base.gametip.world_automode_treasure_3 = {
 }
 
 _G.pg.base.gametip.world_automode_cancel = {
-	tip = "Cancel",
+	tip = "Return",
 }
 
 _G.pg.base.gametip.world_automode_confirm = {
@@ -18746,7 +18746,7 @@ _G.pg.base.gametip.tactics_class_start = {
 }
 
 _G.pg.base.gametip.tactics_class_cancel = {
-	tip = "Cancel",
+	tip = "Return",
 }
 
 _G.pg.base.gametip.tactics_class_get_exp = {
@@ -19809,7 +19809,7 @@ _G.pg.base.gametip.event_ui_start = {
 }
 
 _G.pg.base.gametip.event_ui_giveup = {
-	tip = "Cancel",
+	tip = "Return",
 }
 
 _G.pg.base.gametip.event_ui_finish = {
@@ -21046,7 +21046,7 @@ _G.pg.base.gametip.ryza_task_confirm = {
 }
 
 _G.pg.base.gametip.ryza_task_cancel = {
-	tip = "Cancel",
+	tip = "Return",
 }
 
 _G.pg.base.gametip.ryza_task_level_num = {
@@ -24881,7 +24881,7 @@ _G.pg.base.gametip.commander_selected_max = {
 }
 
 _G.pg.base.gametip.word_talent = {
-	tip = "Talent",
+	tip = "Ability",
 }
 
 _G.pg.base.gametip.word_click_to_close = {
@@ -25336,7 +25336,7 @@ _G.pg.base.gametip.vote_label_rank = {
 }
 
 _G.pg.base.gametip.vote_label_rank_fresh_time_tip = {
-	tip = "The ranking is updated every 30 minutes.",
+	tip = "The leaderboard is updated every 30 min.",
 }
 
 _G.pg.base.gametip.vote_tip_area_closed = {
@@ -27472,7 +27472,7 @@ _G.pg.base.gametip.child2_attr_title = {
 }
 
 _G.pg.base.gametip.child2_talent_title = {
-	tip = "Abilities",
+	tip = "Ability",
 }
 
 _G.pg.base.gametip.child2_status_title = {
@@ -27523,11 +27523,11 @@ _G.pg.base.gametip.child2_site_drop_item = {
 	tip = "Acquired Status [$1]",
 }
 
-_G.pg.base.gametip.child2_personal_tag1 = {
+_G.pg.base.gametip.child2_personal_id1_tag1 = {
 	tip = "Mild",
 }
 
-_G.pg.base.gametip.child2_personal_tag2 = {
+_G.pg.base.gametip.child2_personal_id1_tag2 = {
 	tip = "Rebellious",
 }
 
@@ -27536,7 +27536,7 @@ _G.pg.base.gametip.child2_personal_change = {
 }
 
 _G.pg.base.gametip.child2_ship_upgrade_favor = {
-	tip = "Your event progress with $1 went up to $2.",
+	tip = "Your Affection with $1 has increased to $2",
 }
 
 _G.pg.base.gametip.child2_plan_title_front = {
@@ -29761,7 +29761,7 @@ _G.pg.base.gametip.grapihcs3d_setting_bloom_optionname1 = {
 _G.pg.base.gametip.SkinDiscountHelp_Carnival = {
 	tip = {
 		{
-			info = "1. During the campaign, if you purchase a Sports Time or Race Queen series skin rerun in this campaign <color=#92fc63>without using a coupon</color> or purchase the Sports & Race Return Lucky Box, you may claim a <color=#92fc63>Skin Coupon (Sports & Race)</color> from the campaign page.\n2. The <color=#92fc63>Skin Coupon (Sports & Race)</color> gives you a discount of 300 Gems when purchasing a Sports Time or Race Queen series skin. This discount is not applicable to item packs.\n3. If you have not used this coupon before the campaign ends (at the server reset on October 22nd, 2025), it will be removed automatically.",
+			info = "1. During the campaign, after purchasing an eligible Party Dress skin <color=#92fc63>without using a coupon</color>, or after purchasing the Party Dress Return Lucky Box, you can claim a <color=#92fc63>Skin Coupon (Party Dress)</color> from the campaign page.\n2. The <color=#92fc63>Skin Coupon (Party Dress)</color> can be used to receive a 300 Gem discount when buying an eligible Party Dress skin during the campaign. It cannot be used when purchasing a pack deal.\n3. When the campaign ends (on 23:59, 2026/4/8), any unused <color=#92fc63>Skin Coupons (Party Dress)</color> will be deleted.",
 		},
 	},
 }
@@ -31020,7 +31020,7 @@ _G.pg.base.gametip.island_season_charts_refresh = {
 }
 
 _G.pg.base.gametip.island_season_charts_out = {
-	tip = "Not in Rank",
+	tip = "Unranked",
 }
 
 _G.pg.base.gametip.island_season_review_lv = {
@@ -35519,6 +35519,18 @@ _G.pg.base.gametip.loveactivity_ui_13 = {
 	tip = "Valentine's Day message has been unlocked",
 }
 
+_G.pg.base.gametip.child_cg_buy = {
+	tip = "Do you want to spend <icon name=gold w=0.4 h=0.4/>$1 Coins to unlock $2?",
+}
+
+_G.pg.base.gametip.child_polaroid_buy = {
+	tip = "Do you want to spend <icon name=gold w=0.4 h=0.4/>$1 Coins to unlock $2?",
+}
+
+_G.pg.base.gametip.child_could_buy = {
+	tip = "Spend <icon name=gold w=0.4 h=0.4/> to Unlock",
+}
+
 _G.pg.base.gametip.loveactivity_ui_14 = {
 	tip = "$1's Sweet Memories Medal",
 }
@@ -35711,6 +35723,34 @@ _G.pg.base.gametip.island_quick_delegation_notenough_onduty = {
 	tip = "$1 can't be assigned due to being busy with other work",
 }
 
+_G.pg.base.gametip.child_plan_skip_event = {
+	tip = "Skip Random Event Effects",
+}
+
+_G.pg.base.gametip.child_buy_memory_tip = {
+	tip = "Finish first playthrough and spend Coins to unlock a Memory",
+}
+
+_G.pg.base.gametip.child_buy_polaroid_tip = {
+	tip = "Finish first playthrough and spend Coins to unlock a Moment",
+}
+
+_G.pg.base.gametip.child_buy_ending_tip = {
+	tip = "Finish first playthrough and spend Coins to unlock an Ending",
+}
+
+_G.pg.base.gametip.child_buy_collect_success = {
+	tip = "Unlocked!",
+}
+
+_G.pg.base.gametip.loveletter2018_ui_4 = {
+	tip = "确认将$1礼物切换$2礼物么？",
+}
+
+_G.pg.base.gametip.loveletter2018_ui_5 = {
+	tip = "※切换次数仅一次,2018礼物已兑换勋章等级同时切换。",
+}
+
 _G.pg.base.gametip.LiquorFloor_title = {
 	tip = "Springtide Inn Online",
 }
@@ -35795,6 +35835,402 @@ _G.pg.base.gametip.LiquorFloor_tip = {
 	tip = {
 		{
 			info = "- Event Overview -\nDuring the Springtide Inn Online event, manage your inn facilities, host guests, and unlock content based on the success of your management to earn rewards.\n\n1. Attached to the inn are various facilities with a range of effects that can be improved by leveling the facilities. Some level-ups require Sycees, a resource gained by completing event missions.\n2. The Restaurant, the Gazebo, the Garden, and the Pond automatically generate Old Coins, an event resource, which you can manually claim. Additionally, leveling up these facilities makes them produce more Old Coins. Each facility can store up to 6 hours' worth of Old Coins.\n3. Leveling up the Warehouse increases your maximum Old Coins capacity.\n4. You can assign your shipgirls to the Parlor. This will give you additional Old Coins at regular intervals. Furthermore, shipgirls assigned to the Parlor gain more Affinity from sorties. Leveling up the Parlor gives you more slots to assign shipgirls to.\n5. When you have enough Old Coins to reach certain thresholds, your Inn Level will go up.\n6. Once your Inn and its facilities reach certain levels, you will unlock additional content such as new story chapters.\n7. You can complete Business Missions to earn various rewards, including more Old Coins, a portrait frame, event-exclusive furniture, and more.",
+		},
+	},
+}
+
+_G.pg.base.gametip.loveletter2018_ui_1 = {
+	tip = "是否切换为其他角色的情人节礼物？\n切换次数仅一次，已兑换勋章等级将与2018年情人节礼物同时切换",
+}
+
+_G.pg.base.gametip.loveletter2018_ui_2 = {
+	tip = "确认要切换为<color=#92fc63>$1</color>的礼物么？",
+}
+
+_G.pg.base.gametip.loveletter2018_ui_3 = {
+	tip = "注意：切换次数仅一次，切换后不可更改",
+}
+
+_G.pg.base.gametip.loveletter2018_ui_tips = {
+	tip = "情人节礼物切换成功",
+}
+
+_G.pg.base.gametip.child2_choose_title = {
+	tip = "Fate Tarot",
+}
+
+_G.pg.base.gametip.child2_choose_help = {
+	tip = {
+		{
+			info = "- Fate Tarot -\nLora can gain various buffs by using the Tarot Cards and Tarot Readings you've obtained. Use a Tarot Card in conjunction with Tarot Readings to reach even more powerful buffs.\nOnly one Tarot Card can be possessed at a time. When you receive a new one, you can choose to discard your current one. If you choose to keep your current card instead of replacing it, you'll receive Funds instead.\nRedraws can be used to redraw both Tarot Cards and Tarot Readings. While each Tarot Card can only be redrawn once, Tarot Readings can be redrawn multiple times.\nAlthough you can only gain the effects of a Tarot Card if you possess it, you will retain all Tarot Readings that you've done, even for discarded cards.\nEach Tarot Card has several Readings associated with it. The names of these Readings will include the name of the Tarot Card they belong to. Generally, collecting the specific Readings that match your current Tarot Card will grant much stronger effects.\n\n· You can view your currently active Tarot Card and Readings on the bottom half of the Tarot screen.\n· <color=#ff5c5c>Minimum Bonus</color>: Displays the minimum stat values received unconditionally from Tarot Cards and Readings.\n· <color=#ff5c5c>Maximum Bonus</color>: Displays the maximum theoretical stat values received with the buffs of all Tarot Cards and Readings active.\n(During calculations, only the base value of each type of effect is taken into account.)\n",
+		},
+	},
+}
+
+_G.pg.base.gametip.child2_show_detail_desc = {
+	tip = "View Details",
+}
+
+_G.pg.base.gametip.child2_tarot_empty = {
+	tip = "You don't have any Tarot Cards",
+}
+
+_G.pg.base.gametip.child2_refresh_title = {
+	tip = "Redraws Left:",
+}
+
+_G.pg.base.gametip.child2_choose_hide = {
+	tip = "Hide",
+}
+
+_G.pg.base.gametip.child2_choose_giveup = {
+	tip = "Give Up",
+}
+
+_G.pg.base.gametip.child2_tarot_tag_current = {
+	tip = "Active Card",
+}
+
+_G.pg.base.gametip.child2_all_entry_title = {
+	tip = "Active Reading:",
+}
+
+_G.pg.base.gametip.child2_benefit_moeny_effect = {
+	tip = "Funds Gain Bonus:",
+}
+
+_G.pg.base.gametip.child2_benefit_mood_effect = {
+	tip = "Stats Gain Bonus:",
+}
+
+_G.pg.base.gametip.child2_replace_sure_tip = {
+	tip = "Accept the new Tarot Card?",
+}
+
+_G.pg.base.gametip.child2_tarot_title = {
+	tip = "Manjuu Tarot",
+}
+
+_G.pg.base.gametip.child2_entry_summary = {
+	tip = "Readings Obtained:",
+}
+
+_G.pg.base.gametip.child2_benefit_result = {
+	tip = "Bonus Obtained:",
+}
+
+_G.pg.base.gametip.child2_mood_benefit = {
+	tip = "Bonus Obtained:",
+}
+
+_G.pg.base.gametip.child2_mood_stage1 = {
+	tip = "Current Mood: Depressed",
+}
+
+_G.pg.base.gametip.child2_mood_stage2 = {
+	tip = "Current Mood: Sad",
+}
+
+_G.pg.base.gametip.child2_mood_stage3 = {
+	tip = "Current Mood: Normal",
+}
+
+_G.pg.base.gametip.child2_mood_stage4 = {
+	tip = "Current Mood: Happy",
+}
+
+_G.pg.base.gametip.child2_mood_stage5 = {
+	tip = "Current Mood: Happy",
+}
+
+_G.pg.base.gametip.child2_entry_activated = {
+	tip = "Effects Applied:",
+}
+
+_G.pg.base.gametip.child2_collect_tarot_progress = {
+	tip = "Cards Collected:",
+}
+
+_G.pg.base.gametip.child2_collect_tarot = {
+	tip = "Manjuu Tarot",
+}
+
+_G.pg.base.gametip.child2_collect_entry = {
+	tip = "Reading",
+}
+
+_G.pg.base.gametip.child2_collect_talent = {
+	tip = "Ability",
+}
+
+_G.pg.base.gametip.child2_rank_toggle_attr = {
+	tip = "Normal",
+}
+
+_G.pg.base.gametip.child2_rank_toggle_endless = {
+	tip = "Endless Mode",
+}
+
+_G.pg.base.gametip.child2_rank_not_on = {
+	tip = "Unranked",
+}
+
+_G.pg.base.gametip.child2_rank_refresh_tip = {
+	tip = "The leaderboard is updated every 30 min.",
+}
+
+_G.pg.base.gametip.child2_rank_header_rank = {
+	tip = "Leaderboard",
+}
+
+_G.pg.base.gametip.child2_rank_header_info = {
+	tip = "Name",
+}
+
+_G.pg.base.gametip.child2_rank_header_attr = {
+	tip = "Finishing Stats",
+}
+
+_G.pg.base.gametip.child2_replace_title = {
+	tip = "Accept the new Tarot Card?",
+}
+
+_G.pg.base.gametip.child2_replace_tip = {
+	tip = "You can only have one Tarot Card at a time. When you accept a new card, your old one will be replaced. \nThe effects of your active Tarot Readings will not be affected.",
+}
+
+_G.pg.base.gametip.child2_tarot_tag_replace = {
+	tip = "New Tarot",
+}
+
+_G.pg.base.gametip.child2_replace_cancel = {
+	tip = "Return",
+}
+
+_G.pg.base.gametip.child2_replace_sure = {
+	tip = "Confirm",
+}
+
+_G.pg.base.gametip.child2_nailing_game_tip = {
+	tip = "Press the button at the right timing to hammer the black nail in!",
+}
+
+_G.pg.base.gametip.child2_nailing_game_count = {
+	tip = "Tries Left:",
+}
+
+_G.pg.base.gametip.child2_nailing_game_score = {
+	tip = "Score:",
+}
+
+_G.pg.base.gametip.child2_benefit_summary = {
+	tip = "Minimum Bonus:",
+}
+
+_G.pg.base.gametip.child2_word_giveup = {
+	tip = "Stop Leveling Up",
+}
+
+_G.pg.base.gametip.child2_rank_header_wave = {
+	tip = "Endless Mode Record",
+}
+
+_G.pg.base.gametip.child2_personal_id2_tag1 = {
+	tip = "Shy",
+}
+
+_G.pg.base.gametip.child2_personal_id2_tag2 = {
+	tip = "Outgoing",
+}
+
+_G.pg.base.gametip.child2_go_shop = {
+	tip = "Visit Fortune Teller",
+}
+
+_G.pg.base.gametip.child2_scratch_minigame_help = {
+	tip = {
+		{
+			info = "Scratch the scratchcard to win rewards!\nYou may win prizes like Tarot Readings and stat increases!\nThe following prizes are available:\n\n· 1st Prize (1 of the following):\nTarot Card, Tarot Reading, large stat boost, large Funds, AP, or Mood\n\n· 2nd Prize (1 of the following):\nTarot Reading, medium stat boost, medium Funds, AP, or Mood\n\n· 3rd Prize (1 of the following):\nSmall stat boost or small Funds",
+		},
+	},
+}
+
+_G.pg.base.gametip.child2_endless_sure_tip = {
+	tip = "Endless Mode allows you to continue living in the virtual town with Lora.\nThe frequency and difficulty of assessments are increased in this mode. Your run will end when Lora fails an Assessment, and you'll receive a ranking based on how many turns you lasted.",
+}
+
+_G.pg.base.gametip.child2_endless_stage = {
+	tip = "Endless Mode",
+}
+
+_G.pg.base.gametip.child2_cur_wave = {
+	tip = "Turn $1",
+}
+
+_G.pg.base.gametip.child2_endless_attrs_value = {
+	tip = "Total Stats: $1",
+}
+
+_G.pg.base.gametip.child2_endless_boss_value = {
+	tip = "Needed for Assessment: $1",
+}
+
+_G.pg.base.gametip.child2_endless_assest_wave = {
+	tip = "Endless Mode - Turn $1",
+}
+
+_G.pg.base.gametip.child2_endless_history_wave = {
+	tip = "Endless Mode Record: $1 Turns",
+}
+
+_G.pg.base.gametip.child2_endless_current_wave = {
+	tip = "Endless Mode - Turn $1",
+}
+
+_G.pg.base.gametip.child2_endless_reset_tip = {
+	tip = "Your current turn number has been recorded. Do you want to restart the growth process?",
+}
+
+_G.pg.base.gametip.child2_hard = {
+	tip = "Hard Mode",
+}
+
+_G.pg.base.gametip.child2_hard_enter = {
+	tip = "Start Hard Mode",
+}
+
+_G.pg.base.gametip.child2_switch_sure = {
+	tip = "Hard Mode introduces more Tarot Cards and Tarot Readings, but also raises the goals of your Assessments. Do you want to switch modes?\n<color=#f37a86>Your current mode progress will be lost, but your data listed on the leaderboard won't be reset.</color>",
+}
+
+_G.pg.base.gametip.child2_collect_entry_progress = {
+	tip = "Readings Obtained",
+}
+
+_G.pg.base.gametip.child2_collect_talent_progress = {
+	tip = "Abilities Obtained",
+}
+
+_G.pg.base.gametip.child2_word_upgrade = {
+	tip = "Level Up",
+}
+
+_G.pg.base.gametip.child2_nailing_minigame_help = {
+	tip = {
+		{
+			info = "Press the \"\"Hit!\"\" button when the hammer is above the black nails to drive them into the board! Be careful of hitting the red nails!\n1 attempt is spent each time you swing the hammer. Each black nail you drive in earns you 1 point, while doing the same with a red nail will subtract 1 point. The game ends when you run out of swing attempts.\nFinish the minigame to earn rewards such as Tarot Readings, stat boosts, and other rewards.\nThe rewards are as follows:\n· 1st Prize (1 of the following):\nTarot Card, Tarot Reading, large stat boost, large Funds, AP, or Mood\n\n· 2nd Prize (1 of the following):\nTarot Reading, medium stat boost, medium Funds, AP, or Mood\n\n· 3rd Prize (1 of the following):\nSmall stat boost or small Funds",
+		},
+	},
+}
+
+_G.pg.base.gametip.child2_nailing_game_result2 = {
+	tip = "Score:",
+}
+
+_G.pg.base.gametip.child2_game_endless_cnt = {
+	tip = "Endless: Turn $1",
+}
+
+_G.pg.base.gametip.cultivating_plant_task_title = {
+	tip = "Finish First Playthrough",
+}
+
+_G.pg.base.gametip.cultivating_plant_island_task = {
+	tip = "Complete the Island Planner Mission",
+}
+
+_G.pg.base.gametip.cultivating_plant_part_1 = {
+	tip = "Go to Project Identity: TB",
+}
+
+_G.pg.base.gametip.cultivating_plant_part_2 = {
+	tip = "Go to Project Identity: Oceana",
+}
+
+_G.pg.base.gametip.cultivating_plant_part_3 = {
+	tip = "Go to Project Identity: Explorer",
+}
+
+_G.pg.base.gametip.child2_priority_tip = {
+	tip = "Please select a Tarot Card/Reading",
+}
+
+_G.pg.base.gametip.child2_cur_round_temp = {
+	tip = "Extra Turn",
+}
+
+_G.pg.base.gametip.child2_nailing_game_result = {
+	tip = "Score:",
+}
+
+_G.pg.base.gametip.child2_benefit_summary2 = {
+	tip = "Maximum Bonus:",
+}
+
+_G.pg.base.gametip.child2_pool_exhausted = {
+	tip = "There are no cards/readings to redraw",
+}
+
+_G.pg.base.gametip.child2_secretary_skin_confirm = {
+	tip = "尚未获得换装，前往换装商店购买？",
+}
+
+_G.pg.base.gametip.child2_secretary_skin_expire = {
+	tip = "This item is not currently available",
+}
+
+_G.pg.base.gametip.child2_explorer_main_help = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help13",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help14",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help15",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help16",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help17",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help18",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
 		},
 	},
 }

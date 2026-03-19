@@ -902,7 +902,7 @@ pg.base.dorm3d_shop_template = {
 		}
 	},
 	{
-		name = "Quiet Contemplation",
+		name = "知韵沉思 ",
 		rarity = 4,
 		type = 1,
 		room_id = 49905,
