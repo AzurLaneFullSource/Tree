@@ -17779,39 +17779,39 @@ pg.base.skill_data_display = {
 	},
 	[802111] = {
 		id = 802111,
-		name = "狩猎开始！"
+		name = "The Hunt Begins"
 	},
 	[802112] = {
 		id = 802112,
-		name = "狩猎开始！"
+		name = "The Hunt Begins"
 	},
 	[802121] = {
 		id = 802121,
-		name = "集群猎杀"
+		name = "The Hunters Gather"
 	},
 	[802131] = {
 		id = 802131,
-		name = "狩猎者的警觉"
+		name = "The Hunter's Vigilance"
 	},
 	[802132] = {
 		id = 802132,
-		name = "狩猎者的警觉"
+		name = "The Hunter's Vigilance"
 	},
 	[802141] = {
 		id = 802141,
-		name = "逐光之焰·{namecode:516}I"
+		name = "Cinders of Hope - Regensburg I"
 	},
 	[802142] = {
 		id = 802142,
-		name = "逐光之焰·{namecode:516}II"
+		name = "Cinders of Hope - Regensburg II"
 	},
 	[802145] = {
 		id = 802145,
-		name = "逐光之焰·{namecode:516}I"
+		name = "Cinders of Hope - Regensburg I"
 	},
 	[802147] = {
 		id = 802147,
-		name = "逐光之焰·{namecode:516}II"
+		name = "Cinders of Hope - Regensburg II"
 	},
 	[902201] = {
 		id = 902201,
@@ -19455,7 +19455,7 @@ pg.base.skill_data_display = {
 	},
 	[1013471] = {
 		id = 1013471,
-		name = "砥柱下的应援 +"
+		name = "Supporting Role+"
 	},
 	[1013473] = {
 		id = 1013473,
@@ -19499,35 +19499,35 @@ pg.base.skill_data_display = {
 	},
 	[1012912] = {
 		id = 1012912,
-		name = "不死鸟之羽"
+		name = "Phoenix's Plumage!"
 	},
 	[1012913] = {
 		id = 1012913,
-		name = "不死的鬼怪"
+		name = "Undying Demon"
 	},
 	[1012914] = {
 		id = 1012914,
-		name = "不死鸟之羽"
+		name = "Phoenix's Plumage!"
 	},
 	[1012915] = {
 		id = 1012915,
-		name = "不死的鬼怪"
+		name = "Undying Demon"
 	},
 	[1014140] = {
 		id = 1014140,
-		name = "调皮的小雪球 +"
+		name = "Scalawaggish Little Snowball+"
 	},
 	[1019261] = {
 		id = 1019261,
-		name = "精密操作协议 +"
+		name = "Precision Salvo Protocol+"
 	},
 	[1019262] = {
 		id = 1019262,
-		name = "精密操作协议 +"
+		name = "Precision Salvo Protocol+"
 	},
 	[1019263] = {
 		id = 1019263,
-		name = "精密操作协议 +"
+		name = "Precision Salvo Protocol+"
 	},
 	[1090020] = {
 		id = 1090020,
@@ -19835,10 +19835,10 @@ pg.base.skill_data_display = {
 	},
 	[1090441] = {
 		id = 1090441,
-		name = "穿甲弹精通·{namecode:405}"
+		name = "Piercing Shells - Z19"
 	},
 	[1090442] = {
 		id = 1090442,
-		name = "穿甲弹精通·{namecode:405}"
+		name = "Piercing Shells - Z19"
 	}
 }

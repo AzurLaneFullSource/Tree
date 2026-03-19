@@ -9,7 +9,7 @@ return {
 			asideType = 1,
 			sequence = {
 				{
-					"林间风与心之罗盘\n\n<size=45>五 萤火所在之处</size>",
+					"Forest Breeze and the Compass of the Heart\n\n<size=45>Where the Fireflies Are</size>",
 					1
 				}
 			}
@@ -19,7 +19,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_520",
 			hidePaintObj = true,
-			say = "后山·森林深处",
+			say = "Forest - Depths",
 			bgm = "story-richang-10",
 			typewriter = {
 				speed = 0.05,
@@ -40,7 +40,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_520",
 			hidePaintObj = true,
-			say = "在微暗的林间又走了一会儿，我们依然没有找到明确的方向。阿尔比恩的脚步慢了下来，肩膀低垂。",
+			say = "We walked through the dim woods for a while longer. However, we failed to find our destination, leaving Albion dejected.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -53,7 +53,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "阿尔比恩，我们先停一下，好吗？",
+			say = "Let's stop for a while.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -67,7 +67,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "指挥官……？",
+			say = "Commander?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -80,7 +80,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "我想告诉你，就算今天找不到那个特别的地方，我也已经非常开心了。",
+			say = "Even if we don't find the place, I had fun today.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -93,7 +93,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "能像这样和你一起在森林里散步，听着风声，看着阳光透过树叶的样子……这就足够了。",
+			say = "Walking through the forest with you, listening to the wind, and relaxing in the sunlight has been a wonderful experience for me.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -107,7 +107,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "呜……可是……",
+			say = "Oh, but...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -120,7 +120,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "还记得你教我的方法吗？",
+			say = "Remember how you taught me to listen to the voice of the forest.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -133,7 +133,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "“不需要刻意去做什么……只要静静地站着，闭上眼睛，让森林的声音自然流进心里就好。”",
+			say = "\"You don't have to do anything yourself. Just stop, close your eyes, and let the forest air flow through you.\"",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -147,7 +147,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "您……都记得呢……",
+			say = "You really remembered...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -160,7 +160,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "所以现在，我们也像刚才那样，闭上眼睛听听看？",
+			say = "Let's close our eyes and listen, just like before.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -173,7 +173,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "说不定风一直都在为我们指路。",
+			say = "Maybe then the wind will guide us to where we need to go.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -184,7 +184,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_520",
 			hidePaintObj = true,
-			say = "阿尔比恩看着我，轻轻点了点头。我们站在林间的微光里，一同闭上了眼睛。",
+			say = "She nods, and we close our eyes together.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -197,7 +197,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "怎么样？有听到什么？",
+			say = "Do you hear anything?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -211,7 +211,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "嗯……虫鸣变密了……有落叶轻轻滚下山坡……还有……",
+			say = "Yes... The hum of insects... Fallen leaves fluttering to the ground, and...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -225,7 +225,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "是水流的声音！虽然很远，但风把它带来了……",
+			say = "I hear water! It's far, but the wind brought its sound to us...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -239,7 +239,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "指挥官，您说得对……风真的在为我们指路呢！",
+			say = "You were right, Commander. The wind really is guiding us!",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -250,7 +250,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_520",
 			hidePaintObj = true,
-			say = "阿尔比恩忍不住轻轻握住我的双手，原地转了个小圈，脸上终于露出了开心的笑容。",
+			say = "Smiling now, she takes my hands and jumps happily.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -264,7 +264,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "谢谢您……刚才我太慌张了，连自己最相信的“风之耳语”都没好好去听……",
+			say = "Thank you so much... I was so panicked that I didn't even listen to the voice of the wind that I so trusted.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -278,18 +278,18 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "明明准备了那么久，想给您最好的体验，却因为太着急反而迷了路……",
+			say = "I spent all that time preparing so that you'd have a good time, but here I am, rushing things and getting lost... What a failure.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			},
 			options = {
 				{
-					content = "你没有搞砸",
+					content = "You didn't fail at all.",
 					flag = 1
 				},
 				{
-					content = "就算搞砸也没关系",
+					content = "What's wrong with failure?",
 					flag = 2
 				}
 			}
@@ -302,7 +302,7 @@ return {
 			nameColor = "#A9F548FF",
 			optionFlag = 1,
 			actor = 0,
-			say = "阿尔比恩没有搞砸，你用心准备的每一件事，我都有感受到。",
+			say = "You didn't fail at all, Albion. I can feel all of the heart that you put into this.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -317,7 +317,7 @@ return {
 			actor = 206070,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "指挥官……",
+			say = "Commander...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -331,7 +331,7 @@ return {
 			nameColor = "#A9F548FF",
 			optionFlag = 2,
 			actor = 0,
-			say = "就算真的搞砸也没关系，能和阿尔比恩这样牵着手在森林里走，也很开心的。",
+			say = "What's wrong with failure? Walking around in the woods with you, hand-in-hand, is already enjoyable on its own.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -346,7 +346,7 @@ return {
 			actor = 206070,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
-			say = "我、我也是！能和指挥官在一起……怎样都很开心。",
+			say = "I-it is for me, too! Being with you... has been a lot of fun!",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -357,7 +357,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_520",
 			hidePaintObj = true,
-			say = "阿尔比恩的神情终于松弛下来，像放下了肩上的重担。",
+			say = "She finally relaxes, as if freed from a heavy burden.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -371,7 +371,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "其实我知道……是我太想让您觉得“和阿尔比恩一起的时光真美好”了。",
+			say = "All I wanted was for you to think that spending time with me was fun.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -385,7 +385,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "怀着这种想法，反而让我连平时最擅长的事都做不好了……",
+			say = "My fixation on that made me mess up what I'm normally so good at...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -398,7 +398,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "但对我来说，今天发生的每一件事……包括现在的迷路，都是很美好的回忆。",
+			say = "Everything today, even the fact that we got lost, will be a beautiful memory.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -412,7 +412,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "连迷路……也是吗？",
+			say = "Even us getting lost...? Really?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -425,7 +425,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "当然。这样漫无目的地跟着风声散步的感觉，平时难有机会体验的。",
+			say = "Of course. Wandering around and trying to follow the wind isn't something I get to do every day.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -438,7 +438,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "所以现在，我们就继续这样……安心地向前走，如何？",
+			say = "So let's relax and keep moving, alright?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -452,7 +452,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "嗯！",
+			say = "Okay!",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -463,7 +463,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_521",
 			hidePaintObj = true,
-			say = "循着风带来的水声，我们在林间穿行。不知何时，天色已悄悄暗了下来。",
+			say = "We walked on through the forest, following the sound of rushing water. Before we knew it, the sun had begun to set.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -494,7 +494,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "指挥官……天好像黑了……",
+			say = "It's getting dark out...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -508,7 +508,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "我从来没有在这么晚的时候来过森林深处……虽然不害怕，但总觉得……四周的声音都不一样了。",
+			say = "I've never been in the forest this late. I'm not afraid, but... all of the sounds around us suddenly seem so different.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -519,7 +519,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_521",
 			hidePaintObj = true,
-			say = "暮色中的森林确实换了一副模样，熟悉的窸窣声在昏暗里变得有些陌生，阿尔比恩不自觉地贴近了我。",
+			say = "The forest shows different colors at twilight. Albion quietly sidles closer to me.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -532,7 +532,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "害怕了？",
+			say = "You sure you're not afraid?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -546,7 +546,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "不……不会！",
+			say = "I-I'm fine!",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -559,7 +559,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "有指挥官在身边，我一点都不怕。",
+			say = "You're here, so I have nothing to fear.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -573,7 +573,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "只是……",
+			say = "It's just...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -584,7 +584,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_521",
 			hidePaintObj = true,
-			say = "或许是夜晚气温逐渐降低，阿尔比恩轻轻地颤抖了起来。",
+			say = "Perhaps due to the falling temperatures, she trembles slightly.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -595,7 +595,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_521",
 			hidePaintObj = true,
-			say = "我将外套脱下，披在阿尔比恩身上。",
+			say = "I take my jacket off and drape it over her shoulders.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -609,7 +609,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "啊……那指挥官您……不会冷吗？",
+			say = "Ah... Won't you be cold, though?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -622,7 +622,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "我没事，你穿着就好。",
+			say = "I'm fine. You wear it.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -636,7 +636,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "那……",
+			say = "Then...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -647,7 +647,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_521",
 			hidePaintObj = true,
-			say = "阿尔比恩沉默了一下，突然紧紧地贴住了我。隔着衣服，我感觉到了少女微微升高的体温。",
+			say = "After a moment's silence, she suddenly leans in. Even through her clothes, I can feel her slightly elevated body temperature.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -660,7 +660,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "那……这样两个人都会暖和一些吧？",
+			say = "Now we can both be warm.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -674,7 +674,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "虽然……可能不太好走路……",
+			say = "It just might be a little difficult to walk like this...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -687,7 +687,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "确实有点不好走了。",
+			say = "Just a little.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -701,7 +701,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "不过——这样很暖和呢……比任何时候……都要暖……",
+			say = "I feel so warm now... Warmer than I've ever felt, perhaps.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -712,7 +712,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_521",
 			hidePaintObj = true,
-			say = "就在我们说话时，一点微弱的莹绿色亮光，忽然从身侧的草丛里悠悠升起。",
+			say = "As we walk on, a faint speck of light rises from a nearby patch of brush.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -725,7 +725,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "啊……指挥官，您看……",
+			say = "Ah... Commander, look.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -736,7 +736,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_521",
 			hidePaintObj = true,
-			say = "接着是第二点、第三点……星星点点的暖光在林间陆续浮现，像被夜色唤醒的梦境。",
+			say = "It's followed by another, and then another... Many specks of light rise between the trees, like a dream amidst the night.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -750,7 +750,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "是萤火虫……！",
+			say = "Fireflies!",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -764,7 +764,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "有萤火虫的话，就说明附近一定有干净的水源……",
+			say = "If there are fireflies around, then there must be a source of clean water nearby.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -778,7 +778,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "我们跟着它们走吧？这次一定……能走到想去的地方。",
+			say = "Let's follow them. This time, we're sure to reach our destination!",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

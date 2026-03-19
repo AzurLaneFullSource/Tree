@@ -4146,7 +4146,7 @@ pg.fleet_tech_ship_class = {
 	},
 	[970211] = {
 		shiptype = 2,
-		name = "雷根斯堡·META",
+		name = "Regensburg META",
 		nation = 97,
 		id = 970211,
 		t_level_1 = 20,

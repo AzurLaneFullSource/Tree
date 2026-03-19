@@ -2592,9 +2592,9 @@ pg.island_chara_skill = {
 	},
 	[1020] = {
 		id = 1020,
-		name = "采集技艺",
+		name = "Collection Skill",
 		icon = "chara_all_skill_2",
-		desc = "在翠土林场、沉石矿山工作时，工作速度提高$1%",
+		desc = "When performing work in Verdant Woods or Rockheap Mine, working speed increases by $1%.",
 		desc_add = {
 			{
 				{
@@ -2720,9 +2720,9 @@ pg.island_chara_skill = {
 	},
 	[1021] = {
 		id = 1021,
-		name = "加速回复",
+		name = "Stamina Recovery",
 		icon = "chara_all_skill_8",
-		desc = "体力恢复速度提高$1%",
+		desc = "Stamina recovery is increased by $1%.",
 		desc_add = {
 			{
 				{
@@ -2848,9 +2848,9 @@ pg.island_chara_skill = {
 	},
 	[1022] = {
 		id = 1022,
-		name = "农作技艺",
+		name = "Farming Skill",
 		icon = "chara_all_skill_5",
-		desc = "在丰壤农田、坠香果园、青芽苗圃工作时，工作速度提高$1%",
+		desc = "When performing work in Faircrop Fields, Sweetscent Orchard, or Newsprout Nursery, working speed increases by $1%.",
 		desc_add = {
 			{
 				{

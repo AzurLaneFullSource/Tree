@@ -543,7 +543,7 @@ _G.pg.base.gametip.word_backyardMoney = {
 }
 
 _G.pg.base.gametip.word_cancel = {
-	tip = "Return",
+	tip = "Cancel",
 }
 
 _G.pg.base.gametip.word_cmdClose = {
@@ -1499,7 +1499,7 @@ _G.pg.base.gametip.common_limit_equip = {
 }
 
 _G.pg.base.gametip.common_buy_success = {
-	tip = "Unlocked!",
+	tip = "Purchased!",
 }
 
 _G.pg.base.gametip.common_limit_level = {
@@ -1539,7 +1539,7 @@ _G.pg.base.gametip.common_no_open = {
 }
 
 _G.pg.base.gametip["common_already owned"] = {
-	tip = "Owned",
+	tip = "Have",
 }
 
 _G.pg.base.gametip.common_not_get_ship = {
@@ -2820,7 +2820,7 @@ _G.pg.base.gametip.mail_box_confirm = {
 }
 
 _G.pg.base.gametip.mail_box_cancel = {
-	tip = "Return",
+	tip = "Cancel",
 }
 
 _G.pg.base.gametip.mail_title_English = {
@@ -4775,7 +4775,7 @@ _G.pg.base.gametip.world_consume_carry_tips = {
 _G.pg.base.gametip.world_boss_help_meta = {
 	tip = {
 		{
-			info = "- META Showdown Overview -\n\nFrom <color=#92fc63>12/11/2025 to 3/11/2026</color>, challenge Yorktown META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Yorktown META</color> as well as other great rewards.\n<color=#ff5c5c>Note: Sync Points will expire after the event period ends.</color>\n\n- Acquiring and Analyzing META Coordinates -\n· META Coordinates can be earned by playing Operation Siren. Sufficient amounts of META Coordinates can be analyzed to begin a META Showdown.\n· You may perform Analysis <color=#92fc63>2 times</color> per day, resetting every day at midnight. Unused META Coordinates will be retained.\n· You need <color=#92fc63>100</color> META Coordinates to begin a META Showdown.\n\n- Fighting Your Bosses -\n· Your first time challenging a META boss that you spawned will not require Oil. From the second attempt onwards, cost of each attempt will gradually drop from <color=#92fc63>40</color> Oil to <color=#92fc63>0</color> Oil. (Will not consume a challenge attempt).\n· When a META Showdown boss reaches 0 HP, they will be defeated. Participants will be able to collect rewards, including a large amount of Sync Points.\n· Each META Showdown will only last for <color=#92fc63>24 hours</color>, after which it will disappear. Use Request Support if you need help.\n· After defeating a META boss, the difficulty of subsequent META Showdowns will increase by 1 level, up to a maximum of 15.\n\n- Fighting Others' Bosses -\n· In the Boss List menu, you can see requests that other Commanders have sent. When fighting another Commander's boss, you will immediately gain Sync Points based upon the <color=#92fc63>amount of DMG</color> you dealt.\n· Each attempt uses 1 Challenge Attempt, but uses no Oil.\n· You can have up to <color=#92fc63>3</color> Challenge attempts, resetting each day at midnight.\nEach META Showdown can have up to 30 participants.\n\n- Combat Instructions -\n· You cannot bring Meowfficers or submarines.\n· At the end of battle, no EXP is gained, and Morale will not be affected.\n· You cannot quit during an META Showdown. If connection is lost due to unstable network conditions, the following will occur:\na. If challenging a boss you discovered, you will spend 40 Oil (the first battle is still free), and any damage done will not count.\nb. If challenging someone else's boss, a challenge attempt will be used, but no rewards will be granted.\n<color=#92fc63>Please make sure your network conditions are stable before attempting an META Showdown!</color>\n\n- Artillery Support -\nFrom the 31st day of this META Showdown season onwards, whenever you begin an META Showdown, your fleet will gain an additional wave of artillery support. This artillery support will deal damage to the enemy and apply a special debuff that inflicts damage over time (this damage cannot be amplified by any bonus effects).\nThe later in the META Showdown season it is, the greater the damage inflicted by this artillery support.\n*Artillery Support will only appear during META Showdown battles you discover, and will trigger with each challenge attempt.",
+			info = "- META Showdown Overview -\n\nFrom <color=#92fc63>3/12/26 to 6/4/26</color>, challenge Regensburg META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Regensburg META</color> as well as other great rewards.\n<color=#ff5c5c>Note: Sync Points will expire after the event period ends.</color>\n\n- Acquiring and Analyzing META Coordinates -\n· META Coordinates can be earned by playing Operation Siren. Sufficient amounts of META Coordinates can be analyzed to begin a META Showdown.\n· You may perform Analysis <color=#92fc63>2 times</color> per day, resetting every day at midnight. Unused META Coordinates will be retained.\n· You need <color=#92fc63>100</color> META Coordinates to begin a META Showdown.\n\n- Fighting Your Bosses -\n· Your first time challenging a META boss that you spawned will not require Oil. From the second attempt onwards, the cost of each attempt will gradually drop from <color=#92fc63>40</color> Oil to <color=#92fc63>0</color> Oil. (Will not consume a challenge attempt).\n· When a META Showdown boss reaches 0 HP, they will be defeated. Participants will be able to collect rewards, including a large amount of Sync Points.\n· Each META Showdown will only last for <color=#92fc63>24 hours</color>, after which it will disappear. Use Request Support if you need help.\n· After defeating a META boss, the difficulty of subsequent META Showdowns will increase by 1 level, up to a maximum of 15.\n\n- Fighting Others' Bosses -\n· In the Boss List menu, you can see requests that other Commanders have sent. When fighting another Commander's boss, you will immediately gain Sync Points based upon the <color=#92fc63>amount of DMG</color> you dealt.\n· Each attempt uses 1 Challenge Attempt, but uses no Oil.\n· You can have up to <color=#92fc63>3</color> Challenge Attempts, resetting each day at midnight.\nEach META Showdown can have up to 30 participants.\n\n- Combat Instructions -\n· You cannot bring Meowfficers or submarines.\n· At the end of battle, no EXP is gained, and Morale will not be affected.\n· You cannot quit during an META Showdown. If connection is lost due to unstable network conditions, the following will occur:\na. If challenging a boss you discovered, you will spend 40 Oil (the first battle is still free), and any damage done will not count.\nb. If challenging someone else's boss, a challenge attempt will be used, but no rewards will be granted.\n<color=#92fc63>Please make sure your network conditions are stable before attempting an META Showdown!</color>\n\n- Artillery Support -\nFrom the 31st day of this META Showdown season onwards, whenever you begin an META Showdown, your fleet will gain an additional wave of artillery support. This artillery support will deal damage to the enemy and apply a special debuff that inflicts damage over time (this damage cannot be amplified by any bonus effects).\nThe later in the META Showdown season it is, the greater the damage inflicted by this artillery support.\n*Artillery Support will only appear during META Showdown battles you discover, and will trigger with each challenge attempt.",
 		},
 	},
 }
@@ -9001,7 +9001,7 @@ _G.pg.base.gametip.activity_switch_award_pool_failed = {
 }
 
 _G.pg.base.gametip.shop_street_activity_tip = {
-	tip = "Gear Skin Box (Spring Festival Auction) & (Spring Auspices) are purchasable during (<color=#539b2c>02.12-03.04</COLOR>)\nGear Skin Box (Springtide Inn) are purchasable during (<color=#539b2c>02.26-03.11</COLOR>)",
+	tip = "※<color=#2E852C>Gear Skins</color> are purchasable during(<color=#2E852C>$1</COLOR>)!",
 }
 
 _G.pg.base.gametip.shop_street_Equipment_skin_box_help = {
@@ -10805,7 +10805,7 @@ _G.pg.base.gametip.ranking_word_4 = {
 }
 
 _G.pg.base.gametip.ranking_word_5 = {
-	tip = "Leaderboard",
+	tip = "Rank",
 }
 
 _G.pg.base.gametip.ranking_word_6 = {
@@ -16625,7 +16625,7 @@ _G.pg.base.gametip.meta_help = {
 			info = "Obtainable rewards from accumulating Sync Points can be viewed and claimed on each corresponding META ship's tab in the META Lab. Furthermore, upon obtaining enough Sync Points, you'll be able to recruit a META ship.\n\n",
 		},
 		{
-			info = "From <color=#92fc63>12/11/2025 to 3/11/2026</color>, challenge Yorktown META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Yorktown META</color> as well as other great rewards.\n\n",
+			info = "From <color=#92fc63>3/12/26 to 6/4/26</color>, challenge Regensburg META to earn Sync Points. Sync Points can be used to obtain the limited character, <color=#92fc63>Regensburg META</color> as well as other great rewards.\n\n",
 		},
 		{
 			info = "2. About Rigging Fortification:",
@@ -16800,7 +16800,7 @@ _G.pg.base.gametip.world_automode_treasure_3 = {
 }
 
 _G.pg.base.gametip.world_automode_cancel = {
-	tip = "Return",
+	tip = "Cancel",
 }
 
 _G.pg.base.gametip.world_automode_confirm = {
@@ -18746,7 +18746,7 @@ _G.pg.base.gametip.tactics_class_start = {
 }
 
 _G.pg.base.gametip.tactics_class_cancel = {
-	tip = "Return",
+	tip = "Cancel",
 }
 
 _G.pg.base.gametip.tactics_class_get_exp = {
@@ -19809,7 +19809,7 @@ _G.pg.base.gametip.event_ui_start = {
 }
 
 _G.pg.base.gametip.event_ui_giveup = {
-	tip = "Return",
+	tip = "Cancel",
 }
 
 _G.pg.base.gametip.event_ui_finish = {
@@ -21046,7 +21046,7 @@ _G.pg.base.gametip.ryza_task_confirm = {
 }
 
 _G.pg.base.gametip.ryza_task_cancel = {
-	tip = "Return",
+	tip = "Cancel",
 }
 
 _G.pg.base.gametip.ryza_task_level_num = {
@@ -24881,7 +24881,7 @@ _G.pg.base.gametip.commander_selected_max = {
 }
 
 _G.pg.base.gametip.word_talent = {
-	tip = "Ability",
+	tip = "Talent",
 }
 
 _G.pg.base.gametip.word_click_to_close = {
@@ -25336,7 +25336,7 @@ _G.pg.base.gametip.vote_label_rank = {
 }
 
 _G.pg.base.gametip.vote_label_rank_fresh_time_tip = {
-	tip = "The leaderboard is updated every 30 min.",
+	tip = "The ranking is updated every 30 minutes.",
 }
 
 _G.pg.base.gametip.vote_tip_area_closed = {
@@ -31020,7 +31020,7 @@ _G.pg.base.gametip.island_season_charts_refresh = {
 }
 
 _G.pg.base.gametip.island_season_charts_out = {
-	tip = "Unranked",
+	tip = "Not in Rank",
 }
 
 _G.pg.base.gametip.island_season_review_lv = {
@@ -36172,7 +36172,7 @@ _G.pg.base.gametip.child2_pool_exhausted = {
 }
 
 _G.pg.base.gametip.child2_secretary_skin_confirm = {
-	tip = "尚未获得换装，前往换装商店购买？",
+	tip = "You haven't unlocked this outfit. Go to the Outfits Shop to buy it?",
 }
 
 _G.pg.base.gametip.child2_secretary_skin_expire = {

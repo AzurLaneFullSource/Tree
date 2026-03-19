@@ -2,7 +2,7 @@ pg = pg or {}
 pg.enemy_data_statistics_397 = {
 	[295321] = {
 		cannon = 172,
-		name = "瑞吉娜·META(Tier.6)",
+		name = "Regensburg META (Tier.6)",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
@@ -48,7 +48,7 @@ pg.enemy_data_statistics_397 = {
 	},
 	[295322] = {
 		cannon = 186,
-		name = "瑞吉娜·META(Tier.7)",
+		name = "Regensburg META (Tier.7)",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
@@ -94,7 +94,7 @@ pg.enemy_data_statistics_397 = {
 	},
 	[295323] = {
 		cannon = 201,
-		name = "瑞吉娜·META(Tier.8)",
+		name = "Regensburg META (Tier.8)",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
@@ -140,7 +140,7 @@ pg.enemy_data_statistics_397 = {
 	},
 	[295324] = {
 		cannon = 215,
-		name = "瑞吉娜·META(Tier.9)",
+		name = "Regensburg META (Tier.9)",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
@@ -186,7 +186,7 @@ pg.enemy_data_statistics_397 = {
 	},
 	[295325] = {
 		cannon = 230,
-		name = "瑞吉娜·META(Tier.10)",
+		name = "Regensburg META (Tier.10)",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
@@ -232,7 +232,7 @@ pg.enemy_data_statistics_397 = {
 	},
 	[295326] = {
 		cannon = 244,
-		name = "瑞吉娜·META(Tier.11)",
+		name = "Regensburg META (Tier.11)",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
@@ -278,7 +278,7 @@ pg.enemy_data_statistics_397 = {
 	},
 	[295327] = {
 		cannon = 258,
-		name = "瑞吉娜·META(Tier.12)",
+		name = "Regensburg META (Tier.12)",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
@@ -324,7 +324,7 @@ pg.enemy_data_statistics_397 = {
 	},
 	[295328] = {
 		cannon = 273,
-		name = "瑞吉娜·META(Tier.13)",
+		name = "Regensburg META (Tier.13)",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
@@ -370,7 +370,7 @@ pg.enemy_data_statistics_397 = {
 	},
 	[295329] = {
 		cannon = 287,
-		name = "瑞吉娜·META(Tier.14)",
+		name = "Regensburg META (Tier.14)",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
@@ -416,7 +416,7 @@ pg.enemy_data_statistics_397 = {
 	},
 	[295330] = {
 		cannon = 302,
-		name = "瑞吉娜·META(Tier.15)",
+		name = "Regensburg META (Tier.15)",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,

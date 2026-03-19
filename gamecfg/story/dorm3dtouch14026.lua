@@ -17,7 +17,7 @@ return {
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "唔？！说过多少次不准……算了随你。",
+			say = "Ah?! How many times have I told you not to... Oh, who even cares...",
 			voice = "event:/dorm/drom3d_aegir_ik_gfit3_tone5/drom3d_aegir_ik_gfit3_tone5",
 			typewriter = {
 				speed = 0.05,

@@ -3072,7 +3072,7 @@ pg.skill_world_display = {
 	[1019260] = {
 		desc_get = "",
 		id = 1019260,
-		desc = "【大型作战效果】\n战斗中，自身炮击、命中属性提高$1，暴击率提高$2，每次主炮射击均可独立瞄准【该效果不受舰只破损状态影响】，手动进行瞄准时，手动发射带来的跨射伤害增幅效果提高到$4；战斗开始时，及之后每15秒，有$3概率发射强力弹幕(威力随技能等级提升)",
+		desc = "[Operation Siren]\nIncreases this ship's FP and ACC by $1 and Crit Rate by $2. Each Main Gun reload gives this ship 2 Salvoes that can be fired independently, with each Salvo consisting of 1 Volley (this effect is not affected by the Tolls of War debuff). This ship's DMG bonus with manually aimed Salvoes becomes $4. When the battle starts, and every 15s: $3 chance to fire a powerful special barrage (DMG is based on the skill's level).",
 		desc_get_add = {
 			{
 				"5.0%",
@@ -3921,7 +3921,7 @@ pg.skill_world_display = {
 	[802142] = {
 		desc_get = "",
 		id = 802142,
-		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高8%",
+		desc = "[Operation Siren]\nEvery 8 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 8.0%.",
 		desc_get_add = {},
 		desc_add = {}
 	},

@@ -9009,7 +9009,7 @@ pg.base.memory_group = {
 		icon = "title_event",
 		type = 2,
 		link_event = 0,
-		title = "Navi's Thoughts",
+		title = "Lora's Thoughts",
 		group_id = "",
 		memories = {
 			20196,

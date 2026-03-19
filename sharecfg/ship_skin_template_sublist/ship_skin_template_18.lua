@@ -10779,7 +10779,7 @@ pg.base.ship_skin_template_18 = {
 	},
 	[9702110] = {
 		ship_group = 970211,
-		name = "{namecode:516}·META",
+		name = "Regensburg META",
 		hand_id = 1,
 		lover_kiss = "",
 		bgm = "",
@@ -10816,7 +10816,7 @@ pg.base.ship_skin_template_18 = {
 		l2d_voice_calibrate = "",
 		main_UI_FX = "",
 		special_effects = "",
-		desc = "我是神圣联合帝国选侯之一的{namecode:516}。指挥官，希望你能比那些笼中的野兽更有趣些，毕竟，驯服你这样的存在，才配得上我的闲暇时光。 ",
+		desc = "I am Regensburg, an elector of the Holy Unitas Empire. Hmph, I hope you're not as tedious as those caged beasts, Commander. Taming someone like you is a far better use of my time.",
 		voice_actor = 362,
 		spine_offset = "",
 		change_skin = "",

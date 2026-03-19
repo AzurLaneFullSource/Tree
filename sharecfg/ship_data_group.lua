@@ -27137,6 +27137,16 @@ pg.base.ship_data_group = {
 					""
 				},
 				0
+			},
+			{
+				"Guild Shop",
+				{
+					"SHOP",
+					{
+						warp = "guild"
+					}
+				},
+				0
 			}
 		}
 	},
@@ -27174,6 +27184,16 @@ pg.base.ship_data_group = {
 				"Event: Adventure - Fushun",
 				{
 					""
+				},
+				0
+			},
+			{
+				"Guild Shop",
+				{
+					"SHOP",
+					{
+						warp = "guild"
+					}
 				},
 				0
 			}
@@ -39278,7 +39298,7 @@ pg.base.ship_data_group = {
 		trans_skill = {},
 		description = {
 			{
-				"限时活动：META研究室-资讯同步",
+				"META Lab - Coordinate Analysis",
 				{
 					"METACHARACTER",
 					{

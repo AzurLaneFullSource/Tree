@@ -9,7 +9,7 @@ return {
 			asideType = 1,
 			sequence = {
 				{
-					"林间风与心之罗盘\n\n<size=45>三 日光下的茶会</size>",
+					"Forest Breeze and the Compass of the Heart\n\n<size=45>Tea Party in the Sun</size>",
 					1
 				}
 			}
@@ -19,7 +19,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_559",
 			hidePaintObj = true,
-			say = "后山·林间空地",
+			say = "Forest - Clearing",
 			bgm = "story-richang-7",
 			typewriter = {
 				speed = 0.05,
@@ -40,7 +40,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_559",
 			hidePaintObj = true,
-			say = "跟着阿尔比恩穿过一片茂密的树丛，眼前忽然明亮起来——",
+			say = "We continue through the woods until, suddenly, we arrive at a clearing.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -51,7 +51,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_559",
 			hidePaintObj = true,
-			say = "一片浇着阳光的草坪展现在眼前，细碎的野花点缀在青草间，像是自然铺就的地毯。",
+			say = "Sunlight washes over the grass, which is dotted with wild flowers like a natural carpet.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -65,7 +65,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "我们到啦。这里就是我说的……最适合享受午后阳光的地方。",
+			say = "We've made it. This is the place that I told you about... the perfect spot for basking in the afternoon sunlight.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -78,7 +78,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "只要在这里坐一会儿，听听风声，心情就会像被梳理过的羽毛……慢慢放松下来。",
+			say = "Just sit and listen to the sounds of the forest for a while, and you'll feel calmer than ever... as if your heart has taken flight.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -91,7 +91,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "是很美的景色……感觉整个人都很舒服。",
+			say = "What a view. I already feel relaxed.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -105,7 +105,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "呵呵，请稍等一下，让我把“茶会场地”布置起来~",
+			say = "Hehe. Wait just a moment, and I'll set up our little tea party.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -118,7 +118,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "我很期待。",
+			say = "Great. I can't wait.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -129,7 +129,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_559",
 			hidePaintObj = true,
-			say = "她跪坐在草地中央，从篮中取出一块米白色的亚麻餐布。风轻轻吹过，布料像波浪般起伏。",
+			say = "She kneels down on the grass and takes a cream-colored picnic sheet from the basket. Despite her attempts to lay it down, however, the wind stops her.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -143,7 +143,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "指挥官，可以请您帮忙按住那个角吗？今天的风……好像特别活泼呢。",
+			say = "Commander, could you hold this corner down for me? The wind is a little mischievous today, it seems.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -156,7 +156,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "好。",
+			say = "Sure.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -167,7 +167,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_559",
 			hidePaintObj = true,
-			say = "我帮她稳住餐布一角，她熟练地摆出茶具和几个精巧的食盒，掀开盒盖时，清甜的气息飘散开来。",
+			say = "She quickly brings out the tea set and lunch box, placing them atop the blanket. As soon as she opens the box, a sweet aroma wafts forth.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -180,7 +180,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "今天的茶点，我用了很多从森林里汲取的灵感哦~",
+			say = "Today's snacks are inspired by the forest.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -194,7 +194,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "比如这个莓果塔，用的就是森林里摘的野莓和接骨木花蜜……我想试着做出花瓣上晨露的那种清甜感。",
+			say = "This berry tart is made with wild berries I picked. I also used elderflower nectar to recreate the image of morning dew on flower petals.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -208,7 +208,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "还有这个司康，我加了一点薄荷碎，尝起来会有走过薄荷丛时那种凉丝丝的感觉……",
+			say = "I've added flakes of mint to the scones, too, to reflect the cooling breath of the forest.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -221,7 +221,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "看来这不只是美味，还藏着你对森林的理解。",
+			say = "They aren't just delicious – you infused a real love and understanding of the forest in them, too.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -234,7 +234,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "因为森林教给我太多东西了……",
+			say = "That's right. The forest has taught me so many things...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -247,7 +247,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "虽然可能有点笨拙，但我还是想试试看——让指挥官也尝到一点点，我所感受到的森林的心情。",
+			say = "While my efforts may be awkward, I wanted to communicate the feelings of the forest that I've experienced... on my own terms.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -261,7 +261,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "这大概是我能想到的……最直接的分享方式了，呵呵。",
+			say = "I thought that this would be the most direct way to communicate. Heehee.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -272,7 +272,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_559",
 			hidePaintObj = true,
-			say = "她双手捧起茶杯递给我，眼神发亮，等待着我的评价。",
+			say = "She offers me a teacup. Her eyes sparkle expectantly, as if awaiting my thoughts.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -286,7 +286,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "请用茶~我试着用了一点柠檬草和甘菊……",
+			say = "Do you like the tea? I tried putting lemongrass and chamomile in it...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -299,7 +299,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "很清爽，确实有阳光晒过草叶的味道。",
+			say = "It's very refreshing. And it smells kind of like sun-dried grass...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -313,7 +313,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "那、那点心呢？",
+			say = "A-and the snacks?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -326,7 +326,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "酸甜平衡得刚刚好……很温柔的味道。",
+			say = "Hmm... You balanced sweet and sour just right for this one. The flavor is so gentle.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -340,7 +340,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "有没有一点点……像阳光透过树叶，落在手心的那种暖洋洋的感觉？",
+			say = "Do you feel that... warmth? As if the sunlight passing through the trees is hitting your palm?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -351,7 +351,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_559",
 			hidePaintObj = true,
-			say = "我试着认真感受了一下。",
+			say = "At her urging, I try to feel it.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -364,7 +364,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "嗯……被你一说，好像真的有一点。",
+			say = "Yeah... Now that you mention it, I think I do feel it.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -378,7 +378,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "太好了……",
+			say = "Good...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -391,7 +391,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "其实指挥官就算感受不到也没关系的。",
+			say = "It's fine even if you can't feel it.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -405,7 +405,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "我只是……想和您分享我所看到的、听到的、尝到的这片森林的样子。",
+			say = "I simply... wanted to share with you what I've seen, heard, and tasted of the forest.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -419,7 +419,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "就算只有一点点能传达到，我也会很开心的。",
+			say = "If any of that has gotten through to you, then I'm happy enough.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -432,7 +432,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "不过比起味道，我感受到更清楚的……是你准备这些时的心意。",
+			say = "Taste aside, what I'm really feeling is the thought you put into preparing all of this.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -443,7 +443,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_559",
 			hidePaintObj = true,
-			say = "阿尔比恩的脸更红了，手指无意识地摩挲着茶杯边缘。",
+			say = "Albion blushes and traces her fingers over the rim of her teacup.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -457,7 +457,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "谢谢您……",
+			say = "Thank you very much...",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -471,7 +471,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "不过，等我们到了“治愈之风”所在的地方，那种被自然温柔包围的感觉，一定会更清晰的。",
+			say = "When we reach the place where the soothing winds blow, I'm sure you'll feel the gentle warmth of nature even more clearly.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -482,7 +482,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_559",
 			hidePaintObj = true,
-			say = "她说完，有些不好意思地笑了笑，将一缕被风吹乱的发丝别到耳后。",
+			say = "She smiles bashfully and tucks her slightly wind-ruffled hair behind her ear.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -495,7 +495,7 @@ return {
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "阿尔比恩好像对那个地方很有信心。",
+			say = "It must be an amazing place.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -509,7 +509,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "当然……因为那种感觉是真实存在的哦，呵呵。",
+			say = "Of course it is... That feeling is real, you know. Heehee.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -522,7 +522,7 @@ return {
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			say = "就像遇到指挥官之前，我也不相信……世界上会有如此温柔的风环绕着我。",
+			say = "Before I met you, Commander, I never believed that such a warming breeze could exist anywhere in the world.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -533,7 +533,7 @@ return {
 			side = 2,
 			bgName = "star_level_bg_559",
 			hidePaintObj = true,
-			say = "阿尔比恩脸上绽开一个有些羞涩的笑容。",
+			say = "She smiles up at me again.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -547,7 +547,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "那么，茶会差不多该结束了……我们出发吧？",
+			say = "I'd say our tea party is nearly over... Shall we go?",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -561,7 +561,7 @@ return {
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 206070,
-			say = "我想在光线最好的时候，带您到那个地方去。",
+			say = "We'll get there right when the light is at its best.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
