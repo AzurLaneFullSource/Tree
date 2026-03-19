@@ -302,77 +302,77 @@ pg.child2_memory = {
 		lua = "TANSUOZHEYANGCHENGJIHUA19"
 	},
 	[219] = {
-		desc = "The First Step to Looking Fashionable",
+		desc = "The First Step to Looking Fashionable I",
 		character = 2,
 		id = 219,
 		pic = "bg_project_explorer_cg30",
 		lua = "TANSUOZHEYANGCHENGJIHUA20"
 	},
 	[220] = {
-		desc = "A Girl's Secrets",
+		desc = "The First Step to Looking Fashionable II",
 		character = 2,
 		id = 220,
 		pic = "bg_project_explorer_cg30",
 		lua = "TANSUOZHEYANGCHENGJIHUA21"
 	},
 	[221] = {
-		desc = "The Reflections of a Heart",
+		desc = "A Girl's Secrets",
 		character = 2,
 		id = 221,
 		pic = "bg_project_explorer_cg27",
 		lua = "TANSUOZHEYANGCHENGJIHUA22"
 	},
 	[222] = {
-		desc = "The Feelings Behind the Strings",
+		desc = "The Reflections of a Heart",
 		character = 2,
 		id = 222,
 		pic = "bg_project_explorer_cg29",
 		lua = "TANSUOZHEYANGCHENGJIHUA23"
 	},
 	[223] = {
-		desc = "This Sweetness Is for You",
+		desc = "The Feelings Behind the Strings",
 		character = 2,
 		id = 223,
 		pic = "bg_project_explorer_cg28",
 		lua = "TANSUOZHEYANGCHENGJIHUA24"
 	},
 	[224] = {
-		desc = "Spring, Preserved in Pictures",
+		desc = "This Sweetness Is for You",
 		character = 2,
 		id = 224,
 		pic = "bg_project_explorer_cg24",
 		lua = "TANSUOZHEYANGCHENGJIHUA25"
 	},
 	[225] = {
-		desc = "Her First Reading",
+		desc = "Spring, Preserved in Pictures",
 		character = 2,
 		id = 225,
 		pic = "bg_project_explorer_cg25",
 		lua = "TANSUOZHEYANGCHENGJIHUA26"
 	},
 	[226] = {
-		desc = "A Future Together",
+		desc = "Her First Reading",
 		character = 2,
 		id = 226,
 		pic = "bg_project_explorer_cg26",
 		lua = "TANSUOZHEYANGCHENGJIHUA27"
 	},
 	[227] = {
-		desc = "A Fresh Start",
+		desc = "A Future Together I",
 		character = 2,
 		id = 227,
 		pic = "bg_project_explorer_cg31",
 		lua = "TANSUOZHEYANGCHENGJIHUA28"
 	},
 	[228] = {
-		desc = "A Fresh Start",
+		desc = "A Future Together II",
 		character = 2,
 		id = 228,
 		pic = "bg_project_explorer_cg31",
 		lua = "TANSUOZHEYANGCHENGJIHUA29"
 	},
 	[229] = {
-		desc = "新的起点",
+		desc = "A Fresh Start",
 		character = 2,
 		id = 229,
 		pic = "bg_project_explorer_cg32",

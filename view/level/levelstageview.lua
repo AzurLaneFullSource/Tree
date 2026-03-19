@@ -2355,17 +2355,37 @@ function var0_0.TryAutoFight(arg0_165)
 				return ChapterConst.EnemyPreference[var1_173.type]
 			end
 
-			table.sort(var5_165, CompareFuncs({
-				function(arg0_174)
-					return arg0_174.priority < PathFinding.PrioObstacle and 0 or 1
-				end,
-				function(arg0_175)
-					return -var13_165(arg0_175)
-				end,
-				function(arg0_176)
-					return arg0_176.priority
-				end
-			}))
+			if var0_165.id == 1604 then
+				table.sort(var5_165, CompareFuncs({
+					function(arg0_174)
+						return arg0_174.priority < PathFinding.PrioObstacle and 0 or 1
+					end,
+					function(arg0_175)
+						return -var13_165(arg0_175)
+					end,
+					function(arg0_176)
+						return arg0_176.priority
+					end,
+					function(arg0_177)
+						return arg0_177.target.row
+					end,
+					function(arg0_178)
+						return -arg0_178.target.column
+					end
+				}))
+			else
+				table.sort(var5_165, CompareFuncs({
+					function(arg0_179)
+						return arg0_179.priority < PathFinding.PrioObstacle and 0 or 1
+					end,
+					function(arg0_180)
+						return -var13_165(arg0_180)
+					end,
+					function(arg0_181)
+						return arg0_181.priority
+					end
+				}))
+			end
 		end
 	end
 
@@ -2384,80 +2404,80 @@ function var0_0.TryAutoFight(arg0_165)
 	end
 end
 
-function var0_0.popStageStrategy(arg0_177)
-	local var0_177 = arg0_177.rightStage:Find("event/collapse")
+function var0_0.popStageStrategy(arg0_182)
+	local var0_182 = arg0_182.rightStage:Find("event/collapse")
 
-	if var0_177.anchoredPosition.x <= 1 then
-		triggerButton(var0_177)
+	if var0_182.anchoredPosition.x <= 1 then
+		triggerButton(var0_182)
 	end
 end
 
-function var0_0.UpdateAutoFightPanel(arg0_178)
-	if arg0_178.contextData.chapterVO:CanActivateAutoFight() then
-		if not arg0_178.autoFightPanel then
-			arg0_178.autoFightPanel = LevelStageAutoFightPanel.New(arg0_178.rightStage:Find("event/collapse"), arg0_178.event, arg0_178.contextData)
+function var0_0.UpdateAutoFightPanel(arg0_183)
+	if arg0_183.contextData.chapterVO:CanActivateAutoFight() then
+		if not arg0_183.autoFightPanel then
+			arg0_183.autoFightPanel = LevelStageAutoFightPanel.New(arg0_183.rightStage:Find("event/collapse"), arg0_183.event, arg0_183.contextData)
 
-			arg0_178.autoFightPanel:Load()
+			arg0_183.autoFightPanel:Load()
 
-			arg0_178.autoFightPanel.isFrozen = arg0_178.isFrozen
+			arg0_183.autoFightPanel.isFrozen = arg0_183.isFrozen
 		end
 
-		arg0_178.autoFightPanel.buffer:Show()
-	elseif arg0_178.autoFightPanel then
-		arg0_178.autoFightPanel.buffer:Hide()
+		arg0_183.autoFightPanel.buffer:Show()
+	elseif arg0_183.autoFightPanel then
+		arg0_183.autoFightPanel.buffer:Hide()
 	end
 end
 
-function var0_0.UpdateAutoFightMark(arg0_179)
-	if not arg0_179.autoFightPanel then
+function var0_0.UpdateAutoFightMark(arg0_184)
+	if not arg0_184.autoFightPanel then
 		return
 	end
 
-	arg0_179.autoFightPanel.buffer:UpdateAutoFightMark()
+	arg0_184.autoFightPanel.buffer:UpdateAutoFightMark()
 end
 
-function var0_0.DestroyAutoFightPanel(arg0_180)
-	if not arg0_180.autoFightPanel then
+function var0_0.DestroyAutoFightPanel(arg0_185)
+	if not arg0_185.autoFightPanel then
 		return
 	end
 
-	arg0_180.autoFightPanel:Destroy()
+	arg0_185.autoFightPanel:Destroy()
 
-	arg0_180.autoFightPanel = nil
+	arg0_185.autoFightPanel = nil
 end
 
-function var0_0.DestroyToast(arg0_181)
-	if not arg0_181.toastPanel then
+function var0_0.DestroyToast(arg0_186)
+	if not arg0_186.toastPanel then
 		return
 	end
 
-	arg0_181.toastPanel:Destroy()
+	arg0_186.toastPanel:Destroy()
 
-	arg0_181.toastPanel = nil
+	arg0_186.toastPanel = nil
 end
 
-function var0_0.Toast(arg0_182)
-	arg0_182:DestroyToast()
+function var0_0.Toast(arg0_187)
+	arg0_187:DestroyToast()
 
-	local var0_182 = table.remove(arg0_182.toastQueue, 1)
+	local var0_187 = table.remove(arg0_187.toastQueue, 1)
 
-	if not var0_182 then
+	if not var0_187 then
 		return
 	end
 
-	arg0_182.toastPanel = var0_182.Class.New(arg0_182)
+	arg0_187.toastPanel = var0_187.Class.New(arg0_187)
 
-	arg0_182.toastPanel:Load()
+	arg0_187.toastPanel:Load()
 
-	arg0_182.toastPanel.contextData.settings = var0_182
+	arg0_187.toastPanel.contextData.settings = var0_187
 
-	arg0_182.toastPanel.buffer:Play(function()
-		arg0_182:Toast()
+	arg0_187.toastPanel.buffer:Play(function()
+		arg0_187:Toast()
 	end)
 end
 
-function var0_0.HandleShowMsgBox(arg0_184, arg1_184)
-	pg.MsgboxMgr.GetInstance():ShowMsgBox(arg1_184)
+function var0_0.HandleShowMsgBox(arg0_189, arg1_189)
+	pg.MsgboxMgr.GetInstance():ShowMsgBox(arg1_189)
 end
 
 return var0_0

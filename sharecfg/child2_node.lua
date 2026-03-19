@@ -58292,11 +58292,13 @@ pg.child2_node = {
 		drop_type_client = 0,
 		type = 1,
 		performance_param = "1",
-		next_type = 1,
+		next_type = 2,
 		﻿id = 3209503,
 		text = 0,
-		next = "",
 		option_condition_show = 0,
+		next = {
+			3209504
+		},
 		option_condition = {},
 		option_cost = {}
 	},
@@ -58390,11 +58392,13 @@ pg.child2_node = {
 		drop_type_client = 0,
 		type = 1,
 		performance_param = "2",
-		next_type = 1,
+		next_type = 2,
 		﻿id = 3209510,
 		text = 0,
-		next = "",
 		option_condition_show = 0,
+		next = {
+			3209504
+		},
 		option_condition = {},
 		option_cost = {}
 	},

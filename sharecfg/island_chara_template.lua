@@ -4531,7 +4531,7 @@ pg.base.island_chara_template = {
 	},
 	[990001] = {
 		skill_unlock = 2,
-		name = "领洋者-娜比娅",
+		name = "Oceana",
 		unit_id = 99000100,
 		id = 990001,
 		invite_item = 200021,
@@ -4745,7 +4745,7 @@ pg.base.island_chara_template = {
 	},
 	[990002] = {
 		skill_unlock = 2,
-		name = "领航员-TB",
+		name = "TB",
 		unit_id = 99000200,
 		id = 990002,
 		invite_item = 200022,
@@ -4959,7 +4959,7 @@ pg.base.island_chara_template = {
 	},
 	[990003] = {
 		skill_unlock = 2,
-		name = "探索者-艾普洛",
+		name = "Explorer",
 		unit_id = 99000300,
 		id = 990003,
 		invite_item = 200023,

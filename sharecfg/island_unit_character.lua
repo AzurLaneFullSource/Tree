@@ -2014,9 +2014,9 @@ pg.base.island_unit_character = {
 		personality = 2
 	},
 	[99000100] = {
-		describe_illustrated_guid = "呐——笨蛋指挥官还在按部就班吗？真没劲~！要不要跟我来点刺激的？比如……在岛屿上举办一场冒险比赛？输的人可要听赢家的话哦！",
+		describe_illustrated_guid = "Hey, dweeb, are you still taking this stuff seriously? That's sooo lame! You should do something fun with me instead! Like seeing who can explore the most of the development area! And the loser has to do anything the winner says!",
 		english_name = "Oceana",
-		name = "领洋者-娜比娅",
+		name = "Oceana",
 		IslandShipIcon = "lingyangzhe32_1",
 		group = 990001,
 		animator = "island/animator/ani_role_all_01_01",
@@ -2065,9 +2065,9 @@ pg.base.island_unit_character = {
 		personality = 1
 	},
 	[99000200] = {
-		describe_illustrated_guid = "正在扫描岛屿生态……判断当前环境适宜度：优。切换至休闲模式……指挥官，我的数据库可辅助规划最优日程，要现在生成方案吗？",
+		describe_illustrated_guid = "Scanning island ecosystem... Environmental livability: Excellent. Initiating leisure mode... My database can assist in devising an optimized schedule. Would you like me to generate one for you?",
 		english_name = "Navigator",
-		name = "领航员-TB",
+		name = "TB",
 		IslandShipIcon = "linghangyuan32_1",
 		group = 990002,
 		animator = "island/animator/ani_role_all_01_02",
@@ -2116,9 +2116,9 @@ pg.base.island_unit_character = {
 		personality = 2
 	},
 	[99000300] = {
-		describe_illustrated_guid = "家长大人，您看……这片叶子的形状很特别。是我在一处很漂亮的花园中发现的，如果您喜欢，我可以带您去看哦~",
+		describe_illustrated_guid = "Guardian, look at this leaf... It has a very unusual shape, doesn't it? I found it in the garden. Heehee – if you want to check it out, I can take you to it later.",
 		english_name = "Explorer",
-		name = "探索者-艾普洛",
+		name = "Explorer",
 		IslandShipIcon = "tansuozhe21_1",
 		group = 990003,
 		animator = "island/animator/ani_role_all_01_02",

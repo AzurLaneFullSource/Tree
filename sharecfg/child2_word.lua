@@ -9457,7 +9457,7 @@ pg.base.child2_word = {
 	[3200802] = {
 		id = 3200802,
 		main_character_face = 0,
-		word = "[Participate] [Unlocks Choice]",
+		word = "[Participate]",
 		char_type = 2
 	},
 	[3200803] = {
@@ -9481,7 +9481,7 @@ pg.base.child2_word = {
 	[3200808] = {
 		id = 3200808,
 		main_character_face = 0,
-		word = "[Sneak In] [Unlocks Choice]",
+		word = "[Sneak In]",
 		char_type = 2
 	},
 	[3200809] = {
@@ -10087,7 +10087,7 @@ pg.base.child2_word = {
 	[3202202] = {
 		id = 3202202,
 		main_character_face = 0,
-		word = "[Keep Bidding] [Unlocks choice]",
+		word = "[Keep Bidding]",
 		char_type = 2
 	},
 	[3202203] = {
@@ -10195,7 +10195,7 @@ pg.base.child2_word = {
 	[3202402] = {
 		id = 3202402,
 		main_character_face = 0,
-		word = "[Buy the Signature Dish (The Restaurant Seems Fairly Proud of It)] ",
+		word = "[Buy the Signature Dish] ",
 		char_type = 2
 	},
 	[3202403] = {
@@ -10207,7 +10207,7 @@ pg.base.child2_word = {
 	[3202405] = {
 		id = 3202405,
 		main_character_face = 0,
-		word = "[Buy a Popular Dish (Can't Go Wrong with Something Popular)] ",
+		word = "[Buy a Popular Dish] ",
 		char_type = 2
 	},
 	[3202406] = {
@@ -10219,7 +10219,7 @@ pg.base.child2_word = {
 	[3202408] = {
 		id = 3202408,
 		main_character_face = 0,
-		word = "[Get a Free, Less Popular Dish (It's Free and Doesn't Look Bad, So Why is it Less Popular?)]",
+		word = "[Get a Free, Less Popular Dish]",
 		char_type = 2
 	},
 	[3202409] = {

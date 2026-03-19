@@ -168551,7 +168551,7 @@ _G.pg.base.item_virtual_data_statistics[65554] = {
 }
 
 _G.pg.base.item_virtual_data_statistics[65557] = {
-	display = "Can be used to get a 300 Gem discount when buying a rerunning Party Dress skin during the eligible period.\nExpires after maintenance on 2026/4/8.",
+	display = "During the campaign, this coupon can used to gain a discount of 300 Gems when buying a Party Dress series skin in the Shop.\nValid until 2026.4.8 23:59:59 (UTC-7).",
 	drop_gold_max = 0,
 	drop_oil_max = 0,
 	icon = "Props/skin_300_school",
@@ -174300,7 +174300,7 @@ _G.pg.base.item_virtual_data_statistics[65871] = {
 }
 
 _G.pg.base.item_virtual_data_statistics[65872] = {
-	display = "用于「雪境迷踪」复刻活动兑换，活动结束后将会消失",
+	display = "Used to exchange for items in \"Snowrealm Peregrination\" rerun event. Will be removed after the event ends.",
 	drop_gold_max = 0,
 	drop_oil_max = 0,
 	icon = "Props/tongmeng_pt",
@@ -174324,7 +174324,7 @@ _G.pg.base.item_virtual_data_statistics[65872] = {
 }
 
 _G.pg.base.item_virtual_data_statistics[65873] = {
-	display = "于「雪境迷踪」活动限时复刻中获取，可以免费进行一次期间限定建造（活动结束后消失）",
+	display = "A limited construction ticket for use during the \"Snowrealm Peregrination\" rerun event. Removed after the event ends.",
 	drop_gold_max = 0,
 	drop_oil_max = 0,
 	icon = "Props/buildTicket",

@@ -1539,7 +1539,7 @@ _G.pg.base.gametip.common_no_open = {
 }
 
 _G.pg.base.gametip["common_already owned"] = {
-	tip = "Have",
+	tip = "Owned",
 }
 
 _G.pg.base.gametip.common_not_get_ship = {

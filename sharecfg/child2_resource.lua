@@ -74,12 +74,12 @@ pg.child2_resource = {
 	},
 	[303] = {
 		default_value = 3,
-		name = "Action points",
+		name = "Action Points",
 		icon = "res_xingdongli",
 		type = 3,
 		max_value = 99,
 		min_value = 0,
-		desc = "Used for going outside. Automatically recovers every turn.",
+		desc = "AP, used for going outside. Automatically recovers every turn.",
 		character = 2,
 		id = 303,
 		item_icon = "res_xingdongli2"

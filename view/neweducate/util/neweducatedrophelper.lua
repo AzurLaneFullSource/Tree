@@ -122,7 +122,9 @@ function var0_0.AddBuffDrop(arg0_13)
 	else
 		getProxy(NewEducateProxy):AddBuff(arg0_13.id, arg0_13.number)
 
-		return arg0_13.number > 0 and pg.child2_benefit_list[arg0_13.id].is_show == 1 and arg0_13 or nil
+		local var0_13 = pg.child2_benefit_list[arg0_13.id]
+
+		return arg0_13.number > 0 and var0_13.is_show == 1 and var0_13.type ~= NewEducateBuff.TYPE.TALENT and arg0_13 or nil
 	end
 end
 

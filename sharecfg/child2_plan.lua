@@ -1560,13 +1560,13 @@ pg.child2_plan = {
 				{
 					3700010
 				},
-				"体能<color=#f7f7f7>>=300</color>"
+				"Fitness<color=#f7f7f7>>=300</color>"
 			},
 			{
 				{
 					3700050
 				},
-				"总属性<color=#f7f7f7>>=600</color>"
+				"Stat Total<color=#f7f7f7>>=600</color>"
 			}
 		},
 		result_display = {
@@ -1617,13 +1617,13 @@ pg.child2_plan = {
 				{
 					3700011
 				},
-				"体能<color=#f7f7f7>>=1000</color>"
+				"Fitness<color=#f7f7f7>>=1,000</color>"
 			},
 			{
 				{
 					3700051
 				},
-				"总属性<color=#f7f7f7>>=1800</color>"
+				"Stat Total<color=#f7f7f7>>=1,800</color>"
 			}
 		},
 		result_display = {
@@ -1712,13 +1712,13 @@ pg.child2_plan = {
 				{
 					3700020
 				},
-				"实践<color=#f7f7f7>>=300</color>"
+				"Dexterity<color=#f7f7f7>>=300</color>"
 			},
 			{
 				{
 					3700050
 				},
-				"总属性<color=#f7f7f7>>=600</color>"
+				"Stat All<color=#f7f7f7>>=600</color>"
 			}
 		},
 		result_display = {
@@ -1769,13 +1769,13 @@ pg.child2_plan = {
 				{
 					3700021
 				},
-				"实践<color=#f7f7f7>>=1000</color>"
+				"Dexterity<color=#f7f7f7>>=1,000</color>"
 			},
 			{
 				{
 					3700051
 				},
-				"总属性<color=#f7f7f7>>=1800</color>"
+				"Stat Total<color=#f7f7f7>>=1,800</color>"
 			}
 		},
 		result_display = {
@@ -1864,13 +1864,13 @@ pg.child2_plan = {
 				{
 					3700040
 				},
-				"知识<color=#f7f7f7>>=300</color>"
+				"Knowledge<color=#f7f7f7>>=300</color>"
 			},
 			{
 				{
 					3700050
 				},
-				"总属性<color=#f7f7f7>>=600</color>"
+				"Stat Total<color=#f7f7f7>>=600</color>"
 			}
 		},
 		result_display = {
@@ -1921,13 +1921,13 @@ pg.child2_plan = {
 				{
 					3700041
 				},
-				"知识<color=#f7f7f7>>=1000</color>"
+				"Knowledge<color=#f7f7f7>>=1,000</color>"
 			},
 			{
 				{
 					3700051
 				},
-				"总属性<color=#f7f7f7>>=1800</color>"
+				"Stat Total<color=#f7f7f7>>=1,800</color>"
 			}
 		},
 		result_display = {
@@ -2016,13 +2016,13 @@ pg.child2_plan = {
 				{
 					3700030
 				},
-				"感知<color=#f7f7f7>>=300</color>"
+				"Sensitivity<color=#f7f7f7>>=300</color>"
 			},
 			{
 				{
 					3700050
 				},
-				"总属性<color=#f7f7f7>>=600</color>"
+				"Stat Total<color=#f7f7f7>>=600</color>"
 			}
 		},
 		result_display = {
@@ -2073,13 +2073,13 @@ pg.child2_plan = {
 				{
 					3700031
 				},
-				"感知<color=#f7f7f7>>=1000</color>"
+				"Sensitivity<color=#f7f7f7>>=1,000</color>"
 			},
 			{
 				{
 					3700051
 				},
-				"总属性<color=#f7f7f7>>=1800</color>"
+				"Stat Total<color=#f7f7f7>>=1,800</color>"
 			}
 		},
 		result_display = {
@@ -2182,13 +2182,13 @@ pg.child2_plan = {
 	},
 	[1223] = {
 		type = 1,
-		name = "随心探索 ",
+		name = "Free Exploration",
 		replace_type_show = 2,
 		icon_rectangle = "plan_explorer_rectangle_15",
 		result_node = 3700501,
 		is_show = 1,
 		icon_square = "plan_explorer_square_15",
-		name_2 = "随心探索 ",
+		name_2 = "Free Exploration",
 		id = 1223,
 		group_id = 130,
 		level = 1,
@@ -2206,13 +2206,13 @@ pg.child2_plan = {
 	},
 	[1224] = {
 		type = 1,
-		name = "随心探索 ",
+		name = "Free Exploration",
 		replace_type_show = 2,
 		icon_rectangle = "plan_explorer_rectangle_15",
 		result_node = 3700503,
 		is_show = 1,
 		icon_square = "plan_explorer_square_15",
-		name_2 = "随心探索 ",
+		name_2 = "Free Exploration",
 		id = 1224,
 		group_id = 130,
 		level = 2,
@@ -2230,13 +2230,13 @@ pg.child2_plan = {
 	},
 	[1225] = {
 		type = 1,
-		name = "随心探索 ",
+		name = "Free Exploration",
 		replace_type_show = 2,
 		icon_rectangle = "plan_explorer_rectangle_15",
 		result_node = 3700505,
 		is_show = 1,
 		icon_square = "plan_explorer_square_15",
-		name_2 = "随心探索 ",
+		name_2 = "Free Exploration",
 		id = 1225,
 		group_id = 130,
 		level = 3,
