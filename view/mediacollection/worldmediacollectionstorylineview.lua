@@ -317,7 +317,7 @@ function var0_0.ShowNodeDetail(arg0_22, arg1_22)
 	setActive(arg0_22.detailView, true)
 	quickPlayAnimation(arg0_22.detailView, "anim_WorldMediaCollectionMemoryGroupUI_NodeDetail_enter")
 	setText(arg0_22.detailView:Find("info/title"), var1_22:GetName())
-	setText(arg0_22.detailView:Find("info/desc"), var1_22:GetDesc())
+	setText(arg0_22.detailView:Find("info/desc/content"), var1_22:GetDesc())
 	LoadImageSpriteAsync("memorystoryline/" .. var1_22:GetIcon(), arg0_22.detailView:Find("info/icon"), true)
 	LoadImageSpriteAtlasAsync("ui/worldmediacollectionmemoryui_atlas", var1_22:GetMark(), arg0_22.detailView:Find("info/icon/mark"), true)
 

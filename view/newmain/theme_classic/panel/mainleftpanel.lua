@@ -6,7 +6,8 @@ function var0_0.GetBtns(arg0_1)
 		MainHideBtn.New(findTF(arg0_1._tf, "hideButton"), arg0_1.event),
 		MainCameraBtn.New(findTF(arg0_1._tf, "cameraButton"), arg0_1.event),
 		MainWordBtn.New(findTF(arg0_1._tf, "wordBtn"), arg0_1.event),
-		MainChangeSkinBtn.New(findTF(arg0_1._tf, "changeBtn"), arg0_1.event)
+		MainChangeSkinBtn.New(findTF(arg0_1._tf, "changeBtn"), arg0_1.event),
+		MainL2dBoundBtn.New(findTF(arg0_1._tf, "l2d_bound"), arg0_1.event)
 	}
 end
 

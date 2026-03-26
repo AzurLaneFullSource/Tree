@@ -58,6 +58,7 @@ function var0_0.Ctor(arg0_2, arg1_2)
 	arg0_2.subActorNameColor = arg1_2.factiontagColor or "#FFFFFF"
 	arg0_2.withoutActorName = arg1_2.withoutActorName
 	arg0_2.say = arg1_2.say
+	arg0_2.sayColor = arg1_2.sayColor or COLOR_WHITE
 	arg0_2.dynamicBgType = arg1_2.dynamicBgType
 	arg0_2.fontSize = arg1_2.fontsize
 	arg0_2.side = arg1_2.side
@@ -410,395 +411,399 @@ function var0_0.GetContent(arg0_38)
 	return var0_38
 end
 
-function var0_0.GetNameWithColor(arg0_39)
-	local var0_39 = arg0_39:GetName()
+function var0_0.GetContentColor(arg0_39)
+	return arg0_39.sayColor or COLOR_WHITE
+end
 
-	if not var0_39 then
+function var0_0.GetNameWithColor(arg0_40)
+	local var0_40 = arg0_40:GetName()
+
+	if not var0_40 then
 		return nil
 	end
 
-	local var1_39 = arg0_39:GetNameColor()
+	local var1_40 = arg0_40:GetNameColor()
 
-	return setColorStr(var0_39, var1_39)
+	return setColorStr(var0_40, var1_40)
 end
 
-function var0_0.GetNameColor(arg0_40)
-	return arg0_40.nameColor or COLOR_WHITE
+function var0_0.GetNameColor(arg0_41)
+	return arg0_41.nameColor or COLOR_WHITE
 end
 
-function var0_0.GetNameColorCode(arg0_41)
-	local var0_41 = arg0_41:GetNameColor()
+function var0_0.GetNameColorCode(arg0_42)
+	local var0_42 = arg0_42:GetNameColor()
 
-	return string.gsub(var0_41, "#", "")
+	return string.gsub(var0_42, "#", "")
 end
 
-function var0_0.GetCustomActorName(arg0_42)
-	if type(arg0_42.actorName) == "number" and arg0_42.actorName == 0 and getProxy(PlayerProxy) then
+function var0_0.GetCustomActorName(arg0_43)
+	if type(arg0_43.actorName) == "number" and arg0_43.actorName == 0 and getProxy(PlayerProxy) then
 		return getProxy(PlayerProxy):getRawData().name
-	elseif type(arg0_42.actorName) == "number" then
-		return ShipGroup.getDefaultShipNameByGroupID(arg0_42.actorName)
-	elseif type(arg0_42.actorName) == "string" then
-		return arg0_42.actorName
+	elseif type(arg0_43.actorName) == "number" then
+		return ShipGroup.getDefaultShipNameByGroupID(arg0_43.actorName)
+	elseif type(arg0_43.actorName) == "string" then
+		return arg0_43.actorName
 	else
 		return ""
 	end
 end
 
-function var0_0.GetPortraitName(arg0_43)
-	if not arg0_43:ExistPortrait() then
+function var0_0.GetPortraitName(arg0_44)
+	if not arg0_44:ExistPortrait() then
 		return ""
 	end
 
-	if type(arg0_43.portrait) ~= "number" then
+	if type(arg0_44.portrait) ~= "number" then
 		return ""
 	end
 
-	local var0_43 = var1_0[arg0_43.portrait]
+	local var0_44 = var1_0[arg0_44.portrait]
 
-	if not var0_43 then
+	if not var0_44 then
 		return ""
 	end
 
-	local var1_43 = ""
-	local var2_43 = var0_43.ship_group
-	local var3_43 = ShipGroup.getDefaultShipConfig(var2_43)
+	local var1_44 = ""
+	local var2_44 = var0_44.ship_group
+	local var3_44 = ShipGroup.getDefaultShipConfig(var2_44)
 
-	if not var3_43 then
-		var1_43 = var0_43.name
+	if not var3_44 then
+		var1_44 = var0_44.name
 	else
-		var1_43 = Ship.getShipName(var3_43.id)
+		var1_44 = Ship.getShipName(var3_44.id)
 	end
 
-	return var1_43
+	return var1_44
 end
 
-function var0_0.GetName(arg0_44)
-	local var0_44 = arg0_44.actorName and arg0_44:GetCustomActorName() or arg0_44:GetPaintingAndName() or ""
+function var0_0.GetName(arg0_45)
+	local var0_45 = arg0_45.actorName and arg0_45:GetCustomActorName() or arg0_45:GetPaintingAndName() or ""
 
-	if not var0_44 or var0_44 == "" then
-		var0_44 = arg0_44:GetPortraitName()
+	if not var0_45 or var0_45 == "" then
+		var0_45 = arg0_45:GetPortraitName()
 	end
 
-	if not var0_44 or var0_44 == "" or arg0_44.withoutActorName then
+	if not var0_45 or var0_45 == "" or arg0_45.withoutActorName then
 		return nil
 	end
 
-	if arg0_44:ShouldReplacePlayer() then
-		var0_44 = arg0_44:ReplacePlayerName(var0_44)
+	if arg0_45:ShouldReplacePlayer() then
+		var0_45 = arg0_45:ReplacePlayerName(var0_45)
 	end
 
-	if arg0_44:ShouldReplaceTb() then
-		var0_44 = arg0_44:ReplaceTbName(var0_44)
+	if arg0_45:ShouldReplaceTb() then
+		var0_45 = arg0_45:ReplaceTbName(var0_45)
 	end
 
-	return (HXSet.hxLan(var0_44))
+	return (HXSet.hxLan(var0_45))
 end
 
-function var0_0.GetPainting(arg0_45)
-	local var0_45, var1_45 = arg0_45:GetPaintingAndName()
+function var0_0.GetPainting(arg0_46)
+	local var0_46, var1_46 = arg0_46:GetPaintingAndName()
 
-	return var1_45
+	return var1_46
 end
 
-function var0_0.ExistPainting(arg0_46)
-	return arg0_46:GetPainting() ~= nil
+function var0_0.ExistPainting(arg0_47)
+	return arg0_47:GetPainting() ~= nil
 end
 
-function var0_0.ShouldShakeDailogue(arg0_47)
-	return arg0_47.dialogShake ~= nil
+function var0_0.ShouldShakeDailogue(arg0_48)
+	return arg0_48.dialogShake ~= nil
 end
 
-function var0_0.GetShakeDailogueData(arg0_48)
-	return arg0_48.dialogShake
+function var0_0.GetShakeDailogueData(arg0_49)
+	return arg0_49.dialogShake
 end
 
-function var0_0.IsSameSide(arg0_49, arg1_49)
-	local var0_49 = arg0_49:GetPrevSide(arg1_49)
-	local var1_49 = arg0_49:GetSide()
+function var0_0.IsSameSide(arg0_50, arg1_50)
+	local var0_50 = arg0_50:GetPrevSide(arg1_50)
+	local var1_50 = arg0_50:GetSide()
 
-	return var0_49 ~= nil and var1_49 ~= nil and var0_49 == var1_49
+	return var0_50 ~= nil and var1_50 ~= nil and var0_50 == var1_50
 end
 
-function var0_0.GetPrevSide(arg0_50, arg1_50)
-	local var0_50 = arg1_50:GetSide()
+function var0_0.GetPrevSide(arg0_51, arg1_51)
+	local var0_51 = arg1_51:GetSide()
 
-	if arg0_50.moveSideData then
-		var0_50 = arg0_50.moveSideData.side
-	end
-
-	return var0_50
-end
-
-function var0_0.GetPaintingIcon(arg0_51)
-	local var0_51
-
-	if arg0_51.actor == var0_0.ACTOR_TYPE_FLAGSHIP then
-		local var1_51 = getProxy(PlayerProxy):getRawData().character
-
-		var0_51 = getProxy(BayProxy):getShipById(var1_51):getPrefab()
-	else
-		var0_51 = (arg0_51.actor ~= var0_0.ACTOR_TYPE_PLAYER or nil) and (arg0_51.actor ~= var0_0.ACTOR_TYPE_TB or nil) and (arg0_51.actor or nil) and (not arg0_51.hideRecordIco or nil) and var1_0[arg0_51.actor].prefab
-	end
-
-	if var0_51 == nil and arg0_51:ExistPortrait() and not arg0_51.hideRecordIco then
-		var0_51 = arg0_51:GetPortrait()
+	if arg0_51.moveSideData then
+		var0_51 = arg0_51.moveSideData.side
 	end
 
 	return var0_51
 end
 
-function var0_0.GetPaintingAndName(arg0_52)
+function var0_0.GetPaintingIcon(arg0_52)
 	local var0_52
-	local var1_52
 
-	if not UnGamePlayState and arg0_52.actor == var0_0.ACTOR_TYPE_FLAGSHIP then
-		local var2_52 = getProxy(PlayerProxy):getRawData().character
-		local var3_52 = getProxy(BayProxy):getShipById(var2_52)
+	if arg0_52.actor == var0_0.ACTOR_TYPE_FLAGSHIP then
+		local var1_52 = getProxy(PlayerProxy):getRawData().character
 
-		var0_52 = var3_52:getName()
-		var1_52 = var3_52:getPainting()
-	elseif not UnGamePlayState and arg0_52.actor == var0_0.ACTOR_TYPE_PLAYER then
+		var0_52 = getProxy(BayProxy):getShipById(var1_52):getPrefab()
+	else
+		var0_52 = (arg0_52.actor ~= var0_0.ACTOR_TYPE_PLAYER or nil) and (arg0_52.actor ~= var0_0.ACTOR_TYPE_TB or nil) and (arg0_52.actor or nil) and (not arg0_52.hideRecordIco or nil) and var1_0[arg0_52.actor].prefab
+	end
+
+	if var0_52 == nil and arg0_52:ExistPortrait() and not arg0_52.hideRecordIco then
+		var0_52 = arg0_52:GetPortrait()
+	end
+
+	return var0_52
+end
+
+function var0_0.GetPaintingAndName(arg0_53)
+	local var0_53
+	local var1_53
+
+	if not UnGamePlayState and arg0_53.actor == var0_0.ACTOR_TYPE_FLAGSHIP then
+		local var2_53 = getProxy(PlayerProxy):getRawData().character
+		local var3_53 = getProxy(BayProxy):getShipById(var2_53)
+
+		var0_53 = var3_53:getName()
+		var1_53 = var3_53:getPainting()
+	elseif not UnGamePlayState and arg0_53.actor == var0_0.ACTOR_TYPE_PLAYER then
 		if getProxy(PlayerProxy) then
-			var0_52 = getProxy(PlayerProxy):getRawData().name
+			var0_53 = getProxy(PlayerProxy):getRawData().name
 		else
-			var0_52 = ""
+			var0_53 = ""
 		end
-	elseif not UnGamePlayState and arg0_52.actor == var0_0.ACTOR_TYPE_TB then
+	elseif not UnGamePlayState and arg0_53.actor == var0_0.ACTOR_TYPE_TB then
 		if pg.NewStoryMgr.GetInstance():IsReView() then
-			assert(arg0_52.defaultTb and arg0_52.defaultTb > 0, "<<< defaultTb is nil >>>")
+			assert(arg0_53.defaultTb and arg0_53.defaultTb > 0, "<<< defaultTb is nil >>>")
 
-			local var4_52 = pg.secretary_special_ship[arg0_52.defaultTb]
+			local var4_53 = pg.secretary_special_ship[arg0_53.defaultTb]
 
-			var0_52 = var4_52.name or ""
-			var1_52 = var4_52.prefab
-		elseif arg0_52.specialTbId then
-			local var5_52 = pg.secretary_special_ship[arg0_52.specialTbId]
+			var0_53 = var4_53.name or ""
+			var1_53 = var4_53.prefab
+		elseif arg0_53.specialTbId then
+			local var5_53 = pg.secretary_special_ship[arg0_53.specialTbId]
 
-			assert(var5_52)
+			assert(var5_53)
 
-			var0_52 = var5_52.name or ""
-			var1_52 = var5_52.prefab
+			var0_53 = var5_53.name or ""
+			var1_53 = var5_53.prefab
 		elseif getProxy(NewEducateProxy) and getProxy(NewEducateProxy):GetCurChar() then
-			var1_52, var0_52 = getProxy(NewEducateProxy):GetStoryInfo()
+			var1_53, var0_53 = getProxy(NewEducateProxy):GetStoryInfo()
 		elseif EducateProxy and getProxy(EducateProxy) then
-			var1_52, var0_52 = getProxy(EducateProxy):GetStoryInfo()
+			var1_53, var0_53 = getProxy(EducateProxy):GetStoryInfo()
 		else
-			var0_52 = ""
+			var0_53 = ""
 		end
-	elseif not arg0_52.actor or var1_0[arg0_52.actor] == nil then
-		var0_52, var1_52 = nil
+	elseif not arg0_53.actor or var1_0[arg0_53.actor] == nil then
+		var0_53, var1_53 = nil
 	else
-		local var6_52 = var1_0[arg0_52.actor]
-		local var7_52 = var6_52.ship_group
-		local var8_52 = ShipGroup.getDefaultShipConfig(var7_52)
+		local var6_53 = var1_0[arg0_53.actor]
+		local var7_53 = var6_53.ship_group
+		local var8_53 = ShipGroup.getDefaultShipConfig(var7_53)
 
-		if not var8_52 then
-			var0_52 = var6_52.name
+		if not var8_53 then
+			var0_53 = var6_53.name
 		else
-			var0_52 = Ship.getShipName(var8_52.id)
+			var0_53 = Ship.getShipName(var8_53.id)
 		end
 
-		var1_52 = var6_52.painting
+		var1_53 = var6_53.painting
 	end
 
-	return HXSet.hxLan(var0_52), var1_52
+	return HXSet.hxLan(var0_53), var1_53
 end
 
-function var0_0.GetShipSkinId(arg0_53)
-	if arg0_53.actor == var0_0.ACTOR_TYPE_FLAGSHIP then
-		local var0_53 = getProxy(PlayerProxy):getRawData()
+function var0_0.GetShipSkinId(arg0_54)
+	if arg0_54.actor == var0_0.ACTOR_TYPE_FLAGSHIP then
+		local var0_54 = getProxy(PlayerProxy):getRawData()
 
-		return getProxy(BayProxy):GetShipPhantom(var0_53:GetFlagShipPhantomMark()):getSkinId()
-	elseif arg0_53.actor == var0_0.ACTOR_TYPE_PLAYER then
+		return getProxy(BayProxy):GetShipPhantom(var0_54:GetFlagShipPhantomMark()):getSkinId()
+	elseif arg0_54.actor == var0_0.ACTOR_TYPE_PLAYER then
 		return nil
-	elseif not arg0_53.actor then
+	elseif not arg0_54.actor then
 		return nil
 	else
-		return arg0_53.actor
+		return arg0_54.actor
 	end
 end
 
-function var0_0.IsShowNPainting(arg0_54)
-	return arg0_54.showNPainting
+function var0_0.IsShowNPainting(arg0_55)
+	return arg0_55.showNPainting
 end
 
-function var0_0.IsShowWJZPainting(arg0_55)
-	return arg0_55.showWJZPainting
+function var0_0.IsShowWJZPainting(arg0_56)
+	return arg0_56.showWJZPainting
 end
 
-function var0_0.ShouldGrayPainting(arg0_56)
-	return arg0_56.paingtingGray
+function var0_0.ShouldGrayPainting(arg0_57)
+	return arg0_57.paingtingGray
 end
 
-function var0_0.ShouldAddGlitchArtEffect(arg0_57)
-	return arg0_57.glitchArt
+function var0_0.ShouldAddGlitchArtEffect(arg0_58)
+	return arg0_58.glitchArt
 end
 
-function var0_0.HideOtherPainting(arg0_58)
-	return arg0_58.hideOtherPainting
+function var0_0.HideOtherPainting(arg0_59)
+	return arg0_59.hideOtherPainting
 end
 
-function var0_0.GetSubPaintings(arg0_59)
-	return _.map(arg0_59.subPaintings or {}, function(arg0_60)
-		local var0_60 = pg.ship_skin_template[arg0_60.actor]
+function var0_0.GetSubPaintings(arg0_60)
+	return _.map(arg0_60.subPaintings or {}, function(arg0_61)
+		local var0_61 = pg.ship_skin_template[arg0_61.actor]
 
-		assert(var0_60)
+		assert(var0_61)
 
 		return {
-			actor = arg0_60.actor,
-			name = var0_60.painting,
-			expression = arg0_60.expression,
-			pos = arg0_60.pos,
-			dir = arg0_60.dir or 1,
-			paintingNoise = arg0_60.paintingNoise or false,
-			showNPainting = arg0_60.hidePaintObj or false
+			actor = arg0_61.actor,
+			name = var0_61.painting,
+			expression = arg0_61.expression,
+			pos = arg0_61.pos,
+			dir = arg0_61.dir or 1,
+			paintingNoise = arg0_61.paintingNoise or false,
+			showNPainting = arg0_61.hidePaintObj or false
 		}
 	end)
 end
 
-function var0_0.NeedDispppearSubPainting(arg0_61)
-	return #arg0_61.disappearSeq > 0
+function var0_0.NeedDispppearSubPainting(arg0_62)
+	return #arg0_62.disappearSeq > 0
 end
 
-function var0_0.GetDisappearSeq(arg0_62)
-	return arg0_62.disappearSeq
+function var0_0.GetDisappearSeq(arg0_63)
+	return arg0_63.disappearSeq
 end
 
-function var0_0.GetDisappearTime(arg0_63)
-	return arg0_63.disappearTime[1], arg0_63.disappearTime[2]
+function var0_0.GetDisappearTime(arg0_64)
+	return arg0_64.disappearTime[1], arg0_64.disappearTime[2]
 end
 
-function var0_0.IsNoHeadPainting(arg0_64)
-	return arg0_64.nohead
+function var0_0.IsNoHeadPainting(arg0_65)
+	return arg0_65.nohead
 end
 
-function var0_0.GetFontSize(arg0_65)
-	return arg0_65.fontSize
+function var0_0.GetFontSize(arg0_66)
+	return arg0_66.fontSize
 end
 
-function var0_0.IsSpinePainting(arg0_66)
+function var0_0.IsSpinePainting(arg0_67)
 	if PLATFORM_CODE == PLATFORM_CH and HXSet.isHx() then
 		return false
 	end
 
-	local var0_66 = arg0_66:GetPainting()
+	local var0_67 = arg0_67:GetPainting()
 
-	return tobool(var0_66 ~= nil and arg0_66.spine)
+	return tobool(var0_67 ~= nil and arg0_67.spine)
 end
 
-function var0_0.IsHideSpineBg(arg0_67)
-	return arg0_67.spine == 1
+function var0_0.IsHideSpineBg(arg0_68)
+	return arg0_68.spine == 1
 end
 
-function var0_0.GetSpineOrderIndex(arg0_68)
-	if arg0_68:IsSpinePainting() then
-		return arg0_68.spineOrderIndex
+function var0_0.GetSpineOrderIndex(arg0_69)
+	if arg0_69:IsSpinePainting() then
+		return arg0_69.spineOrderIndex
 	else
 		return nil
 	end
 end
 
-function var0_0.IsLive2dPainting(arg0_69)
+function var0_0.IsLive2dPainting(arg0_70)
 	if PLATFORM_CODE == PLATFORM_CH and HXSet.isHx() then
 		return false
 	end
 
-	local var0_69 = arg0_69:GetPainting()
+	local var0_70 = arg0_70:GetPainting()
 
-	return tobool(var0_69 ~= nil and arg0_69.live2d)
+	return tobool(var0_70 ~= nil and arg0_70.live2d)
 end
 
-function var0_0.GetLive2dPos(arg0_70)
-	if arg0_70.live2dOffset then
-		return Vector3(arg0_70.live2dOffset[1], arg0_70.live2dOffset[2], arg0_70.live2dOffset[3])
+function var0_0.GetLive2dPos(arg0_71)
+	if arg0_71.live2dOffset then
+		return Vector3(arg0_71.live2dOffset[1], arg0_71.live2dOffset[2], arg0_71.live2dOffset[3])
 	end
 end
 
-function var0_0.GetVirtualShip(arg0_71)
-	local var0_71 = arg0_71:GetShipSkinId()
-	local var1_71 = pg.ship_skin_template[var0_71].ship_group
+function var0_0.GetVirtualShip(arg0_72)
+	local var0_72 = arg0_72:GetShipSkinId()
+	local var1_72 = pg.ship_skin_template[var0_72].ship_group
 
 	return StoryShip.New({
-		skin_id = var0_71
+		skin_id = var0_72
 	})
 end
 
-function var0_0.GetLive2dAction(arg0_72)
-	if type(arg0_72.live2d) == "string" then
-		local var0_72 = pg.character_voice[arg0_72.live2d]
+function var0_0.GetLive2dAction(arg0_73)
+	if type(arg0_73.live2d) == "string" then
+		local var0_73 = pg.character_voice[arg0_73.live2d]
 
-		if var0_72 then
-			return var0_72.l2d_action
+		if var0_73 then
+			return var0_73.l2d_action
 		end
 
-		return arg0_72.live2d
+		return arg0_73.live2d
 	else
 		return nil
 	end
 end
 
-function var0_0.GetL2dIdleIndex(arg0_73)
-	return arg0_73.live2dIdleIndex
+function var0_0.GetL2dIdleIndex(arg0_74)
+	return arg0_74.live2dIdleIndex
 end
 
-function var0_0.GetSubActorName(arg0_74)
-	if arg0_74.subActorName and arg0_74.subActorName ~= "" then
-		local var0_74 = HXSet.hxLan(arg0_74.subActorName)
+function var0_0.GetSubActorName(arg0_75)
+	if arg0_75.subActorName and arg0_75.subActorName ~= "" then
+		local var0_75 = HXSet.hxLan(arg0_75.subActorName)
 
-		return " " .. setColorStr(var0_74, arg0_74.subActorNameColor)
+		return " " .. setColorStr(var0_75, arg0_75.subActorNameColor)
 	else
 		return ""
 	end
 end
 
-function var0_0.IsSamePainting(arg0_75, arg1_75)
-	local function var0_75()
-		return arg1_75:ShouldAddGlitchArtEffect() or arg0_75:ShouldAddGlitchArtEffect()
+function var0_0.IsSamePainting(arg0_76, arg1_76)
+	local function var0_76()
+		return arg1_76:ShouldAddGlitchArtEffect() or arg0_76:ShouldAddGlitchArtEffect()
 	end
 
 	return (function()
-		return arg0_75:GetPainting() == arg1_75:GetPainting() and arg0_75:IsShowNPainting() == arg1_75:IsShowNPainting() and arg0_75:IsShowWJZPainting() == arg1_75:IsShowWJZPainting()
-	end)() and arg0_75:IsLive2dPainting() == arg1_75:IsLive2dPainting() and arg0_75:IsSpinePainting() == arg1_75:IsSpinePainting() and not var0_75()
+		return arg0_76:GetPainting() == arg1_76:GetPainting() and arg0_76:IsShowNPainting() == arg1_76:IsShowNPainting() and arg0_76:IsShowWJZPainting() == arg1_76:IsShowWJZPainting()
+	end)() and arg0_76:IsLive2dPainting() == arg1_76:IsLive2dPainting() and arg0_76:IsSpinePainting() == arg1_76:IsSpinePainting() and not var0_76()
 end
 
-function var0_0.ExistCanMarkNode(arg0_78)
-	return arg0_78.canMarkNode ~= nil and type(arg0_78.canMarkNode) == "table" and arg0_78.canMarkNode[1] and arg0_78.canMarkNode[1] ~= "" and arg0_78.canMarkNode[2] and type(arg0_78.canMarkNode[2]) == "table"
+function var0_0.ExistCanMarkNode(arg0_79)
+	return arg0_79.canMarkNode ~= nil and type(arg0_79.canMarkNode) == "table" and arg0_79.canMarkNode[1] and arg0_79.canMarkNode[1] ~= "" and arg0_79.canMarkNode[2] and type(arg0_79.canMarkNode[2]) == "table"
 end
 
-function var0_0.GetCanMarkNodeData(arg0_79)
-	local var0_79 = {}
+function var0_0.GetCanMarkNodeData(arg0_80)
+	local var0_80 = {}
 
-	for iter0_79, iter1_79 in ipairs(arg0_79.canMarkNode[2] or {}) do
-		table.insert(var0_79, iter1_79 .. "")
+	for iter0_80, iter1_80 in ipairs(arg0_80.canMarkNode[2] or {}) do
+		table.insert(var0_80, iter1_80 .. "")
 	end
 
 	return {
-		name = arg0_79.canMarkNode[1],
-		marks = var0_79
+		name = arg0_80.canMarkNode[1],
+		marks = var0_80
 	}
 end
 
-function var0_0.OnClear(arg0_80)
+function var0_0.OnClear(arg0_81)
 	return
 end
 
-function var0_0.GetUsingPaintingNames(arg0_81)
-	local var0_81 = {}
-	local var1_81 = arg0_81:GetPainting()
+function var0_0.GetUsingPaintingNames(arg0_82)
+	local var0_82 = {}
+	local var1_82 = arg0_82:GetPainting()
 
-	if var1_81 ~= nil then
-		table.insert(var0_81, var1_81)
+	if var1_82 ~= nil then
+		table.insert(var0_82, var1_82)
 	end
 
-	local var2_81 = arg0_81:GetSubPaintings()
+	local var2_82 = arg0_82:GetSubPaintings()
 
-	for iter0_81, iter1_81 in ipairs(var2_81) do
-		local var3_81 = iter1_81.name
+	for iter0_82, iter1_82 in ipairs(var2_82) do
+		local var3_82 = iter1_82.name
 
-		table.insert(var0_81, var3_81)
+		table.insert(var0_82, var3_82)
 	end
 
-	return var0_81
+	return var0_82
 end
 
 return var0_0

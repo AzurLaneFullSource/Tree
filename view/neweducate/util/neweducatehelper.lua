@@ -401,4 +401,30 @@ function var0_0.GetEducateCharSlotMaxCnt()
 	end
 end
 
+function var0_0.ReqDataForServer()
+	local var0_59 = {}
+
+	if not LOCK_EDUCATE_SYSTEM then
+		table.insert(var0_59, function(arg0_60)
+			pg.ConnectionMgr.GetInstance():Send(27000, {
+				type = 1
+			}, 27001, arg0_60)
+		end)
+	end
+
+	if not LOCK_NEW_EDUCATE_SYSTEM then
+		for iter0_59, iter1_59 in ipairs(pg.child2_data.all) do
+			table.insert(var0_59, function(arg0_61)
+				pg.ConnectionMgr.GetInstance():Send(29001, {
+					id = iter1_59
+				}, 29002, arg0_61)
+			end)
+		end
+	end
+
+	seriesAsync(var0_59, function()
+		return
+	end)
+end
+
 return var0_0

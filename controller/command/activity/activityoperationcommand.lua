@@ -8,7 +8,7 @@ function var0_0.execute(arg0_1, arg1_1)
 
 	local var2_1 = var1_1:getConfig("type")
 
-	switch(var2_1, {
+	if switch(var2_1, {
 		[ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1] = function()
 			local var0_2, var1_2, var2_2 = BuildShip.canBuildShipByBuildId(var0_1.buildId, var0_1.arg1, var0_1.arg2 == 1)
 
@@ -19,7 +19,7 @@ function var0_0.execute(arg0_1, arg1_1)
 					pg.TipsMgr.GetInstance():ShowTips(var1_2)
 				end
 
-				return
+				return true
 			end
 		end,
 		[ActivityConst.ACTIVITY_TYPE_BUILDSHIP_PRAY] = ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1,
@@ -32,26 +32,26 @@ function var0_0.execute(arg0_1, arg1_1)
 			if var0_3[id2res(var1_3.resource_type)] < var1_3.resource_num * var2_3 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
-				return
+				return true
 			end
 
 			if var1_3.commodity_type == 1 then
 				if var1_3.commodity_id == 1 and var0_3:GoldMax(var1_3.num * var2_3) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
 
-					return
+					return true
 				end
 
 				if var1_3.commodity_id == 2 and var0_3:OilMax(var1_3.num * var2_3) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
 
-					return
+					return true
 				end
 			end
 		end,
 		[ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2] = function()
 			if var0_1.cmd == 2 and not var1_1:CanRequest() then
-				return
+				return true
 			end
 		end,
 		[ActivityConst.ACTIVITY_TYPE_SKIN_FAKE_PACKAGE] = function()
@@ -60,10 +60,13 @@ function var0_0.execute(arg0_1, arg1_1)
 			if var0_5.count > var0_5:getOwnedCount() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
-				return
+				return true
 			end
 		end
-	})
+	}) then
+		return
+	end
+
 	pg.ConnectionMgr.GetInstance():Send(11202, {
 		activity_id = var0_1.activity_id,
 		cmd = var0_1.cmd,

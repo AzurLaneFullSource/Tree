@@ -136361,6 +136361,59 @@ _G.pg.base.equip_data_statistics[80612] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[80621] = {
+	ammo = 10,
+	descrip = "Barrage",
+	icon = "1",
+	id = 80621,
+	name = "All Out Assault - Köln META I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		170991,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[80622] = {
+	base = 80621,
+	id = 80622,
+	name = "All Out Assault - Köln META II",
+	weapon_id = {
+		170992,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[85000] = {
 	ammo = 3,
 	attribute_2 = "cannon",
@@ -171842,6 +171895,419 @@ _G.pg.base.equip_data_statistics[151011] = {
 	base = 151000,
 	id = 151011,
 	value_1 = "530",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151020] = {
+	ammo = 10,
+	attribute_1 = "hit",
+	attribute_2 = "dodge",
+	descrip = "A role tag not recorded in the system. The only way for Vagabonds to confirm each other's identity.",
+	icon = "151020",
+	id = 151020,
+	name = "The Vagabond",
+	nationality = 0,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "15",
+	value_2 = 6,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			61040,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[151021] = {
+	base = 151020,
+	id = 151021,
+	value_1 = "17",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151022] = {
+	base = 151020,
+	id = 151022,
+	value_1 = "19",
+	value_2 = 7,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151023] = {
+	base = 151020,
+	id = 151023,
+	value_1 = "21",
+	value_2 = 8,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151024] = {
+	base = 151020,
+	id = 151024,
+	value_1 = "23",
+	value_2 = 9,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151025] = {
+	base = 151020,
+	id = 151025,
+	value_1 = "25",
+	value_2 = 10,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151026] = {
+	base = 151020,
+	id = 151026,
+	value_1 = "27",
+	value_2 = 11,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151027] = {
+	base = 151020,
+	id = 151027,
+	value_1 = "29",
+	value_2 = 12,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151028] = {
+	base = 151020,
+	id = 151028,
+	value_1 = "31",
+	value_2 = 13,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151029] = {
+	base = 151020,
+	id = 151029,
+	value_1 = "33",
+	value_2 = 14,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151030] = {
+	base = 151020,
+	id = 151030,
+	value_1 = "36",
+	value_2 = 15,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151031] = {
+	anti_siren = 100,
+	base = 151020,
+	id = 151031,
+	value_1 = "39",
+	value_2 = 16,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151032] = {
+	anti_siren = 200,
+	base = 151020,
+	id = 151032,
+	value_1 = "42",
+	value_2 = 17,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151033] = {
+	anti_siren = 300,
+	base = 151020,
+	id = 151033,
+	value_1 = "45",
+	value_2 = 18,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151040] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	attribute_2 = "speed",
+	descrip = "Upon stepping out into the open, those marked by the system will automatically have their position revealed to all pursuers.",
+	icon = "151040",
+	id = 151040,
+	name = "Systemwide Bounty",
+	nationality = 0,
+	rarity = 4,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "140",
+	value_2 = 1,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			61050,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[151041] = {
+	base = 151040,
+	id = 151041,
+	value_1 = "161",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151042] = {
+	base = 151040,
+	id = 151042,
+	value_1 = "182",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151043] = {
+	base = 151040,
+	id = 151043,
+	value_1 = "203",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151044] = {
+	base = 151040,
+	id = 151044,
+	value_1 = "224",
+	value_2 = 2,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151045] = {
+	base = 151040,
+	id = 151045,
+	value_1 = "245",
+	value_2 = 2,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151046] = {
+	base = 151040,
+	id = 151046,
+	value_1 = "266",
+	value_2 = 2,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151047] = {
+	base = 151040,
+	id = 151047,
+	value_1 = "287",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151048] = {
+	base = 151040,
+	id = 151048,
+	value_1 = "308",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151049] = {
+	base = 151040,
+	id = 151049,
+	value_1 = "329",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151050] = {
+	base = 151040,
+	id = 151050,
+	value_1 = "350",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151051] = {
+	anti_siren = 100,
+	base = 151040,
+	id = 151051,
+	value_1 = "371",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151060] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	attribute_2 = "speed",
+	descrip = "A chip with the power to reset the virtual world. It is both your last resort and your final lifeline.",
+	icon = "151060",
+	id = 151060,
+	name = "Protocol Zero Key",
+	nationality = 0,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "100",
+	value_2 = 1,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			61060,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[151061] = {
+	base = 151060,
+	id = 151061,
+	value_1 = "130",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151062] = {
+	base = 151060,
+	id = 151062,
+	value_1 = "160",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151063] = {
+	base = 151060,
+	id = 151063,
+	value_1 = "190",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151064] = {
+	base = 151060,
+	id = 151064,
+	value_1 = "220",
+	value_2 = 2,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151065] = {
+	base = 151060,
+	id = 151065,
+	value_1 = "250",
+	value_2 = 2,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151066] = {
+	base = 151060,
+	id = 151066,
+	value_1 = "280",
+	value_2 = 2,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151067] = {
+	base = 151060,
+	id = 151067,
+	value_1 = "310",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151068] = {
+	base = 151060,
+	id = 151068,
+	value_1 = "340",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151069] = {
+	base = 151060,
+	id = 151069,
+	value_1 = "370",
+	value_2 = 3,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151070] = {
+	base = 151060,
+	id = 151070,
+	value_1 = "400",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151071] = {
+	anti_siren = 100,
+	base = 151060,
+	id = 151071,
+	value_1 = "424",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151072] = {
+	anti_siren = 200,
+	base = 151060,
+	id = 151072,
+	value_1 = "448",
+	value_2 = 4,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151073] = {
+	anti_siren = 300,
+	base = 151060,
+	id = 151073,
+	value_1 = "472",
+	value_2 = 4,
 	hidden_skill_id = {},
 }
 

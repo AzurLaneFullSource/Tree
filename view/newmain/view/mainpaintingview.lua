@@ -287,94 +287,100 @@ function var0_0.GetAssistantStatus(arg0_30)
 	end
 end
 
-function var0_0.Live2dIsDownload(arg0_31)
-	local var0_31 = GroupHelper.GetGroupMgrByName("L2D"):CheckF(arg0_31)
-
-	return var0_31 == DownloadState.None or var0_31 == DownloadState.UpdateSuccess
+function var0_0.OnBoundChange(arg0_31)
+	if arg0_31.painting then
+		arg0_31.painting:UpdateBound()
+	end
 end
 
-function var0_0.Fold(arg0_32, arg1_32, arg2_32)
-	LeanTween.cancel(arg0_32._tf.gameObject)
-	LeanTween.cancel(arg0_32._bgTf.gameObject)
+function var0_0.Live2dIsDownload(arg0_32)
+	local var0_32 = GroupHelper.GetGroupMgrByName("L2D"):CheckF(arg0_32)
 
-	if arg1_32 and not arg0_32.silentFlag then
-		local var0_32 = arg0_32._tf.localPosition - arg0_32._bgTf.localPosition
-		local var1_32 = arg0_32.shift:GetMeshImageShift()
-		local var2_32 = Vector3(0 - arg0_32.painting:GetOffset(), var1_32.y, 0)
+	return var0_32 == DownloadState.None or var0_32 == DownloadState.UpdateSuccess
+end
 
-		LeanTween.moveLocal(arg0_32._tf.gameObject, var2_32, arg2_32):setEase(LeanTweenType.easeInOutExpo)
+function var0_0.Fold(arg0_33, arg1_33, arg2_33)
+	LeanTween.cancel(arg0_33._tf.gameObject)
+	LeanTween.cancel(arg0_33._bgTf.gameObject)
 
-		local var3_32 = var2_32 - var0_32
+	if arg1_33 and not arg0_33.silentFlag then
+		local var0_33 = arg0_33._tf.localPosition - arg0_33._bgTf.localPosition
+		local var1_33 = arg0_33.shift:GetMeshImageShift()
+		local var2_33 = Vector3(0 - arg0_33.painting:GetOffset(), var1_33.y, 0)
 
-		LeanTween.moveLocal(arg0_32._bgTf.gameObject, var3_32, arg2_32):setEase(LeanTweenType.easeInOutExpo):setOnComplete(System.Action(function()
-			arg0_32.painting:Fold(arg1_32, arg2_32)
+		LeanTween.moveLocal(arg0_33._tf.gameObject, var2_33, arg2_33):setEase(LeanTweenType.easeInOutExpo)
+
+		local var3_33 = var2_33 - var0_33
+
+		LeanTween.moveLocal(arg0_33._bgTf.gameObject, var3_33, arg2_33):setEase(LeanTweenType.easeInOutExpo):setOnComplete(System.Action(function()
+			arg0_33.painting:Fold(arg1_33, arg2_33)
 		end))
-	elseif arg0_32.ship then
-		local var4_32 = arg0_32:GetPositionAndScale(arg0_32.ship)
+	elseif arg0_33.ship then
+		local var4_33 = arg0_33:GetPositionAndScale(arg0_33.ship)
 
-		LeanTween.moveLocal(arg0_32._tf.gameObject, var4_32, arg2_32):setEase(LeanTweenType.easeInOutExpo)
-		LeanTween.moveLocal(arg0_32._bgTf.gameObject, var4_32, arg2_32):setEase(LeanTweenType.easeInOutExpo):setOnComplete(System.Action(function()
-			if arg0_32.exited then
+		LeanTween.moveLocal(arg0_33._tf.gameObject, var4_33, arg2_33):setEase(LeanTweenType.easeInOutExpo)
+		LeanTween.moveLocal(arg0_33._bgTf.gameObject, var4_33, arg2_33):setEase(LeanTweenType.easeInOutExpo):setOnComplete(System.Action(function()
+			if arg0_33.exited then
 				return
 			end
 
-			arg0_32.painting:Fold(arg1_32, arg2_32)
+			arg0_33.painting:Fold(arg1_33, arg2_33)
 		end))
 	end
 end
 
-function var0_0.EnableOrDisableScale(arg0_35, arg1_35)
-	arg0_35.painting:EnableOrDisableMove(arg1_35)
-	arg0_35.painting:OnEnablePartScale(arg1_35)
-end
-
-function var0_0.EnableOrDisableMove(arg0_36, arg1_36)
+function var0_0.EnableOrDisableScale(arg0_36, arg1_36)
 	arg0_36.painting:EnableOrDisableMove(arg1_36)
+	arg0_36.painting:OnEnablePartScale(arg1_36)
+end
 
-	if arg1_36 then
-		arg0_36:EnableDragAndZoom()
+function var0_0.EnableOrDisableMove(arg0_37, arg1_37)
+	arg0_37.painting:EnableOrDisableMove(arg1_37)
+
+	if arg1_37 then
+		arg0_37:EnableDragAndZoom()
 	else
-		arg0_36:DisableDragAndZoom()
+		arg0_37:DisableDragAndZoom()
 	end
 end
 
-function var0_0.OnAsmrTurnning(arg0_37, arg1_37)
-	arg0_37.painting:OnAsmrTurnning(arg1_37)
+function var0_0.OnAsmrTurnning(arg0_38, arg1_38)
+	arg0_38.painting:OnAsmrTurnning(arg1_38)
 end
 
-function var0_0.EnableDragAndZoom(arg0_38)
-	arg0_38.isEnableDrag = true
+function var0_0.EnableDragAndZoom(arg0_39)
+	arg0_39.isEnableDrag = true
 
-	local var0_38 = arg0_38._tf.parent.gameObject
-	local var1_38 = GetOrAddComponent(var0_38, typeof(PinchZoom))
-	local var2_38 = GetOrAddComponent(var0_38, typeof(EventTriggerListener))
-	local var3_38 = Vector3(0, 0, 0)
+	local var0_39 = arg0_39._tf.parent.gameObject
+	local var1_39 = GetOrAddComponent(var0_39, typeof(PinchZoom))
+	local var2_39 = GetOrAddComponent(var0_39, typeof(EventTriggerListener))
+	local var3_39 = Vector3(0, 0, 0)
 
-	var2_38:AddBeginDragFunc(function(arg0_39, arg1_39)
+	var2_39:AddBeginDragFunc(function(arg0_40, arg1_40)
 		if Application.isEditor and Input.GetMouseButton(2) then
 			return
 		end
 
-		if var1_38.processing then
+		if var1_39.processing then
 			return
 		end
 
-		setButtonEnabled(var0_38, false)
+		setButtonEnabled(var0_39, false)
 
 		if Input.touchCount > 1 then
 			return
 		end
 
-		local var0_39 = var0_0.Screen2Local(var0_38.transform.parent, arg1_39.position)
+		local var0_40 = var0_0.Screen2Local(var0_39.transform.parent, arg1_40.position)
 
-		var3_38 = arg0_38._tf.localPosition - var0_39
+		var3_39 = arg0_39._tf.localPosition - var0_40
 	end)
-	var2_38:AddDragFunc(function(arg0_40, arg1_40)
+	var2_39:AddDragFunc(function(arg0_41, arg1_41)
 		if Application.isEditor and Input.GetMouseButton(2) then
 			return
 		end
 
-		if var1_38.processing then
+		if var1_39.processing then
 			return
 		end
 
@@ -382,71 +388,71 @@ function var0_0.EnableDragAndZoom(arg0_38)
 			return
 		end
 
-		local var0_40 = var0_0.Screen2Local(var0_38.transform.parent, arg1_40.position)
-		local var1_40
+		local var0_41 = var0_0.Screen2Local(var0_39.transform.parent, arg1_41.position)
+		local var1_41
 
-		if arg0_38.painting:IslimitYPos() then
-			var1_40 = Vector3(var0_40.x, arg0_38._tf.localPosition.y, 0) + Vector3(var3_38.x, 0, 0)
+		if arg0_39.painting:IslimitYPos() then
+			var1_41 = Vector3(var0_41.x, arg0_39._tf.localPosition.y, 0) + Vector3(var3_39.x, 0, 0)
 		else
-			var1_40 = Vector3(var0_40.x, var0_40.y, 0) + var3_38
+			var1_41 = Vector3(var0_41.x, var0_41.y, 0) + var3_39
 		end
 
-		arg0_38._tf.localPosition = var1_40
-		arg0_38._bgTf.localPosition = arg0_38.bgOffset + arg0_38._tf.localPosition
+		arg0_39._tf.localPosition = var1_41
+		arg0_39._bgTf.localPosition = arg0_39.bgOffset + arg0_39._tf.localPosition
 	end)
-	var2_38:AddDragEndFunc(function()
-		setButtonEnabled(var0_38, true)
+	var2_39:AddDragEndFunc(function()
+		setButtonEnabled(var0_39, true)
 	end)
 
-	if not arg0_38.painting:IslimitYPos() then
-		var1_38.enabled = true
+	if not arg0_39.painting:IslimitYPos() then
+		var1_39.enabled = true
 	end
 
-	var2_38.enabled = true
+	var2_39.enabled = true
 	Input.multiTouchEnabled = true
-	arg0_38.cg.blocksRaycasts = false
+	arg0_39.cg.blocksRaycasts = false
 
-	arg0_38:AdjustPosition(arg0_38.ship)
+	arg0_39:AdjustPosition(arg0_39.ship)
 end
 
-function var0_0.DisableDragAndZoom(arg0_42)
-	if arg0_42.isEnableDrag then
-		local var0_42 = arg0_42._tf.parent:GetComponent(typeof(EventTriggerListener))
+function var0_0.DisableDragAndZoom(arg0_43)
+	if arg0_43.isEnableDrag then
+		local var0_43 = arg0_43._tf.parent:GetComponent(typeof(EventTriggerListener))
 
-		ClearEventTrigger(var0_42)
+		ClearEventTrigger(var0_43)
 
-		var0_42.enabled = false
-		arg0_42._tf.parent:GetComponent(typeof(PinchZoom)).enabled = false
-		arg0_42.cg.blocksRaycasts = true
-		arg0_42.isEnableDrag = false
+		var0_43.enabled = false
+		arg0_43._tf.parent:GetComponent(typeof(PinchZoom)).enabled = false
+		arg0_43.cg.blocksRaycasts = true
+		arg0_43.isEnableDrag = false
 	end
 
-	arg0_42:AdjustPosition(arg0_42.ship)
+	arg0_43:AdjustPosition(arg0_43.ship)
 end
 
-function var0_0.Dispose(arg0_43)
-	var0_0.super.Dispose(arg0_43)
-	arg0_43:DisableDragAndZoom()
+function var0_0.Dispose(arg0_44)
+	var0_0.super.Dispose(arg0_44)
+	arg0_44:DisableDragAndZoom()
 
-	if arg0_43.painting then
-		arg0_43.painting:Unload()
+	if arg0_44.painting then
+		arg0_44.painting:Unload()
 	end
 
-	arg0_43.painting = nil
+	arg0_44.painting = nil
 
-	for iter0_43, iter1_43 in ipairs(arg0_43.paintings) do
-		iter1_43:Dispose()
+	for iter0_44, iter1_44 in ipairs(arg0_44.paintings) do
+		iter1_44:Dispose()
 	end
 
-	arg0_43.paintings = nil
+	arg0_44.paintings = nil
 end
 
-function var0_0.Screen2Local(arg0_44, arg1_44)
-	local var0_44 = GameObject.Find("UICamera"):GetComponent("Camera")
-	local var1_44 = arg0_44:GetComponent("RectTransform")
-	local var2_44 = LuaHelper.ScreenToLocal(var1_44, arg1_44, var0_44)
+function var0_0.Screen2Local(arg0_45, arg1_45)
+	local var0_45 = GameObject.Find("UICamera"):GetComponent("Camera")
+	local var1_45 = arg0_45:GetComponent("RectTransform")
+	local var2_45 = LuaHelper.ScreenToLocal(var1_45, arg1_45, var0_45)
 
-	return Vector3(var2_44.x, var2_44.y, 0)
+	return Vector3(var2_45.x, var2_45.y, 0)
 end
 
 return var0_0

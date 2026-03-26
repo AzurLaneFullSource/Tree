@@ -2737,6 +2737,27 @@ pg.medal_template = {
 		target_num = 8,
 		target_id = "50441"
 	},
+	[200151] = {
+		explain1 = "The Vagabond's Recruitment Plan",
+		name = "Vagabond City Medal",
+		explain2 = "Event",
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "Neon signs flash above, a rainbow road flows below. Oh, vagabond souls wandering through the sleepless streets, feel the rhythm and melody of the night.\nWelcome to Thorn City!",
+		next = 0,
+		icon = "9151",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9151",
+		condition = "Collect 8 stickers in The Vagabond's Recruitment Plan event.",
+		rank = 1,
+		id = 200151,
+		target_num = 8,
+		target_id = "50482"
+	},
 	all = {
 		10011,
 		10012,
@@ -2862,6 +2883,7 @@ pg.medal_template = {
 		200111,
 		200121,
 		200131,
-		200141
+		200141,
+		200151
 	}
 }

@@ -212,6 +212,12 @@ function var0_0.loadShowPaint(arg0_14, arg1_14, arg2_14, arg3_14)
 				end
 			end
 
+			if arg0_15:getAnimationExist("get") then
+				arg0_15:SetOnceAction("get", nil, function()
+					arg0_15:SetAction(arg0_15:getIdleName(), 0)
+				end, true)
+			end
+
 			arg0_14.loading = false
 
 			arg3_14()
@@ -237,9 +243,9 @@ function var0_0.loadShowPaint(arg0_14, arg1_14, arg2_14, arg3_14)
 			parent = arg0_14.l2dContainner
 		})
 
-		arg0_14.live2dChar = Live2D.New(var6_14, function(arg0_17)
-			arg0_14:updateL2dSortMode(arg0_17)
-			arg0_17:IgonreReactPos(true)
+		arg0_14.live2dChar = Live2D.New(var6_14, function(arg0_18)
+			arg0_14:updateL2dSortMode(arg0_18)
+			arg0_18:IgonreReactPos(true)
 
 			arg0_14.loading = false
 
@@ -260,84 +266,84 @@ function var0_0.loadShowPaint(arg0_14, arg1_14, arg2_14, arg3_14)
 	end
 end
 
-function var0_0.updateL2dSortMode(arg0_19, arg1_19)
-	local var0_19 = arg1_19._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
-	local var1_19 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
-	local var2_19 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontOrder", nil)
+function var0_0.updateL2dSortMode(arg0_20, arg1_20)
+	local var0_20 = arg1_20._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
+	local var1_20 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
+	local var2_20 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontOrder", nil)
 
-	ReflectionHelp.RefSetProperty(var1_19, "SortingMode", var0_19, var2_19)
+	ReflectionHelp.RefSetProperty(var1_20, "SortingMode", var0_20, var2_20)
 end
 
-function var0_0.StaticGetPaintingName(arg0_20)
-	local var0_20 = arg0_20
+function var0_0.StaticGetPaintingName(arg0_21)
+	local var0_21 = arg0_21
 
 	if HXSet.isHx() then
-		return var0_20
+		return var0_21
 	end
 
-	local var1_20 = getProxy(SettingsProxy):GetMainPaintingVariantFlag(arg0_20) == var0_0.PAINTING_VARIANT_EX
+	local var1_21 = getProxy(SettingsProxy):GetMainPaintingVariantFlag(arg0_21) == var0_0.PAINTING_VARIANT_EX
 
-	if var1_20 and not checkABExist("painting/" .. var0_20 .. "_ex") then
-		return var0_20
+	if var1_21 and not checkABExist("painting/" .. var0_21 .. "_ex") then
+		return var0_21
 	end
 
-	return var1_20 and var0_20 .. "_ex" or var0_20
+	return var1_21 and var0_21 .. "_ex" or var0_21
 end
 
-function var0_0.closeView(arg0_21)
-	if arg0_21.loading then
-		return
-	end
-
-	var0_0.super.closeView(arg0_21)
-end
-
-function var0_0.onBackPressed(arg0_22)
+function var0_0.closeView(arg0_22)
 	if arg0_22.loading then
 		return
 	end
 
-	var0_0.super.onBackPressed(arg0_22)
+	var0_0.super.closeView(arg0_22)
 end
 
-function var0_0.GetSkinShowAble(arg0_23)
-	local var0_23 = pg.ship_skin_template[arg0_23]
-	local var1_23 = false
-
-	if var0_23.get_showing.show and var0_23.get_showing.show == 1 then
-		var1_23 = true
+function var0_0.onBackPressed(arg0_23)
+	if arg0_23.loading then
+		return
 	end
 
-	return var1_23
+	var0_0.super.onBackPressed(arg0_23)
 end
 
-function var0_0.willExit(arg0_24)
-	arg0_24.flushEevent:SetTriggerEvent(nil)
-	arg0_24.flushEevent:SetEndEvent(nil)
+function var0_0.GetSkinShowAble(arg0_24)
+	local var0_24 = pg.ship_skin_template[arg0_24]
+	local var1_24 = false
 
-	if LeanTween.isTweening(go(arg0_24.paintingContainer)) then
-		LeanTween.cancel(go(arg0_24.paintingContainer))
+	if var0_24.get_showing.show and var0_24.get_showing.show == 1 then
+		var1_24 = true
 	end
 
-	if arg0_24.live2dChar then
-		arg0_24.live2dChar:Dispose()
+	return var1_24
+end
 
-		arg0_24.live2dChar = nil
+function var0_0.willExit(arg0_25)
+	arg0_25.flushEevent:SetTriggerEvent(nil)
+	arg0_25.flushEevent:SetEndEvent(nil)
+
+	if LeanTween.isTweening(go(arg0_25.paintingContainer)) then
+		LeanTween.cancel(go(arg0_25.paintingContainer))
 	end
 
-	if arg0_24.spinePainting then
-		arg0_24.spinePainting:Dispose()
+	if arg0_25.live2dChar then
+		arg0_25.live2dChar:Dispose()
 
-		arg0_24.spinePainting = nil
+		arg0_25.live2dChar = nil
 	end
 
-	if arg0_24.closeCallBack then
-		arg0_24.closeCallBack()
+	if arg0_25.spinePainting then
+		arg0_25.spinePainting:Dispose()
 
-		arg0_24.closeCallBack = nil
+		arg0_25.spinePainting = nil
 	end
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_24.ad, arg0_24._tf)
+	if arg0_25.closeCallBack then
+		arg0_25.closeCallBack()
+
+		arg0_25.closeCallBack = nil
+	end
+
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_25.ad, arg0_25._tf)
 end
 
 return var0_0

@@ -1407,6 +1407,7 @@ function var0_0.UpdateContent(arg0_102, arg1_102, arg2_102)
 	local var1_102 = arg1_102:GetContent()
 
 	arg0_102.conentTxt.text = var1_102
+	arg0_102.conentTxt.color = Color.NewHex(arg1_102:GetContentColor())
 
 	local var2_102 = 999
 

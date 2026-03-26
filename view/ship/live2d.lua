@@ -1134,485 +1134,529 @@ function var0_0.ResetL2dData(arg0_59)
 	arg0_59.ableFlag = nil
 end
 
-function var0_0.setPurchaseOffset(arg0_60, arg1_60)
-	local var0_60 = arg0_60.live2dData.ship:GetSkinConfig().purchase_offset
+function var0_0.IsPlaying(arg0_60)
+	return arg0_60.isPlaying
+end
 
-	if not var0_60 or #var0_60 < 3 then
+function var0_0.SetLive2dPlayingCallback(arg0_61, arg1_61)
+	arg0_61.live2dPlayingCallback = arg1_61
+end
+
+function var0_0.setPurchaseOffset(arg0_62, arg1_62)
+	local var0_62 = arg0_62.live2dData.ship:GetSkinConfig().purchase_offset
+
+	if not var0_62 or #var0_62 < 3 then
 		return
 	end
 
-	if arg1_60 then
-		if var0_60 and #var0_60 >= 3 then
-			arg0_60._tf.localPosition = Vector3(var0_60[1], var0_60[2], var0_60[3])
+	if arg1_62 then
+		if var0_62 and #var0_62 >= 3 then
+			arg0_62._tf.localPosition = Vector3(var0_62[1], var0_62[2], var0_62[3])
 		end
 
-		if var0_60 and #var0_60 >= 4 then
-			arg0_60._tf.localScale = Vector3(var0_60[4], var0_60[4], var0_60[4])
+		if var0_62 and #var0_62 >= 4 then
+			arg0_62._tf.localScale = Vector3(var0_62[4], var0_62[4], var0_62[4])
 		end
 	else
-		arg0_60._tf.localScale = arg0_60.live2dData.scale
-		arg0_60._tf.localPosition = arg0_60.live2dData.position
+		arg0_62._tf.localScale = arg0_62.live2dData.scale
+		arg0_62._tf.localPosition = arg0_62.live2dData.position
 	end
 end
 
-function var0_0.offsetL2dPositonDelay(arg0_61, arg1_61, arg2_61, arg3_61)
-	if arg0_61._tf and LeanTween.isTweening(go(arg0_61._tf)) then
-		LeanTween.cancel(go(arg0_61._tf))
+function var0_0.offsetL2dPositonDelay(arg0_63, arg1_63, arg2_63, arg3_63)
+	if arg0_63._tf and LeanTween.isTweening(go(arg0_63._tf)) then
+		LeanTween.cancel(go(arg0_63._tf))
 	end
 
-	arg0_61._tf.localPosition = Vector3(30000, 0, 0)
-	arg0_61._animator.speed = arg2_61
+	arg0_63._tf.localPosition = Vector3(30000, 0, 0)
+	arg0_63._animator.speed = arg2_63
 
-	LeanTween.delayedCall(go(arg0_61._tf), arg1_61, System.Action(function()
-		if arg0_61._tf then
-			arg0_61:resetPosition()
+	LeanTween.delayedCall(go(arg0_63._tf), arg1_63, System.Action(function()
+		if arg0_63._tf then
+			arg0_63:resetPosition()
 
-			arg0_61._animator.speed = 1
+			arg0_63._animator.speed = 1
 		end
 
-		if arg3_61 then
-			arg3_61()
+		if arg3_63 then
+			arg3_63()
 		end
 	end))
 end
 
-function var0_0.resumeSpeed(arg0_63)
-	if arg0_63._animator then
-		arg0_63._animator.speed = 1
+function var0_0.resumeSpeed(arg0_65)
+	if arg0_65._animator then
+		arg0_65._animator.speed = 1
 	end
 end
 
-function var0_0.resetL2dData(arg0_64)
-	if not arg0_64._tf then
+function var0_0.resetL2dData(arg0_66)
+	if not arg0_66._tf then
 		return
 	end
 
-	if LeanTween.isTweening(go(arg0_64._tf)) then
+	if LeanTween.isTweening(go(arg0_66._tf)) then
 		return
 	end
 
-	arg0_64:offsetL2dPositonDelay(0.3, 5)
-	Live2dConst.ClearLive2dSave(arg0_64.live2dData.ship:getSkinId(), arg0_64.live2dData.ship.id)
-	arg0_64:ResetL2dData()
-	arg0_64:changeIdleIndex(0)
-	arg0_64:loadLive2dData()
-	var14_0(arg0_64, "idle", true)
+	arg0_66:offsetL2dPositonDelay(0.3, 5)
+	Live2dConst.ClearLive2dSave(arg0_66.live2dData.ship:getSkinId(), arg0_66.live2dData.ship.id)
+	arg0_66:ResetL2dData()
+	arg0_66:changeIdleIndex(0)
+	arg0_66:loadLive2dData()
+	var14_0(arg0_66, "idle", true)
 end
 
-function var0_0.applyActiveData(arg0_65, arg1_65)
-	if not arg1_65 then
+function var0_0.applyActiveData(arg0_67, arg1_67)
+	if not arg1_67 then
 		return
 	end
 
-	local var0_65 = arg1_65.activeData
-	local var1_65 = var0_65.enable
-	local var2_65 = var0_65.idle_enable
-	local var3_65 = var0_65.idle_ignore
-	local var4_65 = var0_65.ignore
-	local var5_65 = var0_65.idle and var0_65.idle or arg1_65.idle
-	local var6_65 = var0_65.repeatFlag
-	local var7_65
+	local var0_67 = arg1_67.activeData
+	local var1_67 = var0_67.enable
+	local var2_67 = var0_67.idle_enable
+	local var3_67 = var0_67.idle_ignore
+	local var4_67 = var0_67.ignore
+	local var5_67 = var0_67.idle and var0_67.idle or arg1_67.idle
+	local var6_67 = var0_67.repeatFlag
+	local var7_67
 
-	if var0_65.fold ~= nil then
-		var7_65 = var0_65.fold == 1 and true or false
+	if var0_67.fold ~= nil then
+		var7_67 = var0_67.fold == 1 and true or false
 	end
 
-	if var1_65 and #var1_65 >= 0 then
-		arg0_65:setEnableActions(var1_65)
-	elseif var2_65 and #var2_65 > 0 then
-		for iter0_65, iter1_65 in ipairs(var2_65) do
-			if iter1_65[1] == var5_65 then
-				arg0_65:setEnableActions(iter1_65[2])
+	if var1_67 and #var1_67 >= 0 then
+		arg0_67:setEnableActions(var1_67)
+	elseif var2_67 and #var2_67 > 0 then
+		for iter0_67, iter1_67 in ipairs(var2_67) do
+			if iter1_67[1] == var5_67 then
+				arg0_67:setEnableActions(iter1_67[2])
 			end
 		end
 	end
 
-	if var4_65 and #var4_65 >= 0 then
-		arg0_65:setIgnoreActions(var4_65)
-	elseif var3_65 and #var3_65 > 0 then
-		for iter2_65, iter3_65 in ipairs(var3_65) do
-			if iter3_65[1] == var5_65 then
-				arg0_65:setIgnoreActions(iter3_65[2])
+	if var4_67 and #var4_67 >= 0 then
+		arg0_67:setIgnoreActions(var4_67)
+	elseif var3_67 and #var3_67 > 0 then
+		for iter2_67, iter3_67 in ipairs(var3_67) do
+			if iter3_67[1] == var5_67 then
+				arg0_67:setIgnoreActions(iter3_67[2])
 			end
 		end
 	end
 
-	if var5_65 and var5_65 ~= arg0_65.indexIndex then
-		arg0_65.saveActionAbleId = arg1_65.id
+	if var5_67 and var5_67 ~= arg0_67.indexIndex then
+		arg0_67.saveActionAbleId = arg1_67.id
 	end
 
-	if var5_65 then
-		local var8_65
+	if var5_67 then
+		local var8_67
 
-		if type(var5_65) == "number" and var5_65 >= 0 then
-			var8_65 = var5_65
-		elseif type(var5_65) == "table" then
-			local var9_65 = {}
+		if type(var5_67) == "number" and var5_67 >= 0 then
+			var8_67 = var5_67
+		elseif type(var5_67) == "table" then
+			local var9_67 = {}
 
-			for iter4_65, iter5_65 in ipairs(var5_65) do
-				if iter5_65 == arg0_65.idleIndex then
-					if var6_65 then
-						table.insert(var9_65, iter5_65)
+			for iter4_67, iter5_67 in ipairs(var5_67) do
+				if iter5_67 == arg0_67.idleIndex then
+					if var6_67 then
+						table.insert(var9_67, iter5_67)
 					end
 				else
-					table.insert(var9_65, iter5_65)
+					table.insert(var9_67, iter5_67)
 				end
 			end
 
-			var8_65 = var9_65[math.random(1, #var9_65)]
+			var8_67 = var9_67[math.random(1, #var9_67)]
 		end
 
-		if var8_65 then
-			arg0_65:changeIdleIndex(var8_65)
+		if var8_67 then
+			arg0_67:changeIdleIndex(var8_67)
 		end
 
-		arg0_65:saveLive2dData()
+		arg0_67:saveLive2dData()
 	end
 
-	if var7_65 ~= nil then
-		arg0_65.foldAble = true
+	if var7_67 ~= nil then
+		arg0_67.foldAble = true
 
-		pg.m02:sendNotification(NewMainMediator.HIDE_PANEL, var7_65)
+		pg.m02:sendNotification(NewMainMediator.HIDE_PANEL, var7_67)
 	end
 end
 
-function var0_0.setIgnoreActions(arg0_66, arg1_66)
-	arg0_66.ignorePlayActions = arg1_66 and arg1_66 or {}
+function var0_0.setIgnoreActions(arg0_68, arg1_68)
+	arg0_68.ignorePlayActions = arg1_68 and arg1_68 or {}
 end
 
-function var0_0.setEnableActions(arg0_67, arg1_67)
-	arg0_67.enablePlayActions = arg1_67 and arg1_67 or {}
+function var0_0.setEnableActions(arg0_69, arg1_69)
+	arg0_69.enablePlayActions = arg1_69 and arg1_69 or {}
 end
 
-function var0_0.changeIdleIndex(arg0_68, arg1_68)
-	local var0_68 = false
+function var0_0.changeIdleIndex(arg0_70, arg1_70)
+	local var0_70 = false
 
-	if arg0_68.idleIndex ~= arg1_68 then
-		local var1_68 = arg0_68._animator:GetInteger("idle")
+	if arg0_70.idleIndex ~= arg1_70 then
+		local var1_70 = arg0_70._animator:GetInteger("idle")
 
-		if var1_68 and var1_68 >= 0 then
-			arg0_68._animator:SetInteger("idle", arg1_68)
+		if var1_70 and var1_70 >= 0 then
+			arg0_70._animator:SetInteger("idle", arg1_70)
 
-			var0_68 = true
+			var0_70 = true
 		end
 	end
 
-	print("live2d 待机动作设置为 = " .. arg1_68)
+	print("live2d 待机动作设置为 = " .. arg1_70)
 
-	arg0_68.idleIndex = arg1_68
+	arg0_70.idleIndex = arg1_70
 
-	arg0_68:onListenerHandle(Live2D.ON_ACTION_CHANGE_IDLE, {
-		idle = arg0_68.idleIndex,
-		idle_change = var0_68
+	arg0_70:onListenerHandle(Live2D.ON_ACTION_CHANGE_IDLE, {
+		idle = arg0_70.idleIndex,
+		idle_change = var0_70
 	})
-	arg0_68:updateDragsSateData()
+	arg0_70:updateDragsSateData()
 end
 
-function var0_0.live2dActionChange(arg0_69, arg1_69)
-	arg0_69.isPlaying = arg1_69
+function var0_0.live2dActionChange(arg0_71, arg1_71)
+	arg0_71.isPlaying = arg1_71
 
-	arg0_69:updateDragsSateData()
+	arg0_71:updateDragsSateData()
+
+	if arg0_71.live2dPlayingCallback then
+		arg0_71.live2dPlayingCallback(arg1_71)
+	end
 end
 
-function var0_0.setPosition(arg0_70, arg1_70)
-	arg0_70._tf.localPosition = arg1_70
+function var0_0.setPosition(arg0_72, arg1_72)
+	arg0_72._tf.localPosition = arg1_72
 end
 
-function var0_0.resetPosition(arg0_71)
-	arg0_71._tf.localPosition = arg0_71.live2dData.position
+function var0_0.resetPosition(arg0_73)
+	arg0_73._tf.localPosition = arg0_73.live2dData.position
 end
 
-function var0_0.updateDragsSateData(arg0_72)
-	local var0_72 = {
-		idleIndex = arg0_72.idleIndex,
-		isPlaying = arg0_72.isPlaying,
-		ignoreReact = arg0_72.ignoreReact,
-		actionName = arg0_72.playActionName
+function var0_0.updateDragsSateData(arg0_74)
+	local var0_74 = {
+		idleIndex = arg0_74.idleIndex,
+		isPlaying = arg0_74.isPlaying,
+		ignoreReact = arg0_74.ignoreReact,
+		actionName = arg0_74.playActionName
 	}
 
-	if arg0_72.drags then
-		for iter0_72 = 1, #arg0_72.drags do
-			arg0_72.drags[iter0_72]:updateStateData(var0_72)
+	if arg0_74.drags then
+		for iter0_74 = 1, #arg0_74.drags do
+			arg0_74.drags[iter0_74]:updateStateData(var0_74)
 		end
 	end
 end
 
-function var0_0.CheckStopDrag(arg0_73)
-	local var0_73 = arg0_73.live2dData:GetShipSkinConfig()
+function var0_0.GetLive2DStateData(arg0_75)
+	return {
+		idleIndex = arg0_75.idleIndex,
+		isPlaying = arg0_75.isPlaying,
+		ignoreReact = arg0_75.ignoreReact,
+		actionName = arg0_75.playActionName
+	}
+end
 
-	if var0_73.l2d_ignore_drag and var0_73.l2d_ignore_drag == 1 then
-		arg0_73.liveCom.ResponseClick = false
-		arg0_73.liveCom.inDrag = false
+function var0_0.CheckStopDrag(arg0_76)
+	local var0_76 = arg0_76.live2dData:GetShipSkinConfig()
+
+	if var0_76.l2d_ignore_drag and var0_76.l2d_ignore_drag == 1 then
+		arg0_76.liveCom.ResponseClick = false
+		arg0_76.liveCom.inDrag = false
 	end
 end
 
-function var0_0.changeParamaterValue(arg0_74, arg1_74, arg2_74)
-	if arg0_74:IsLoaded() then
-		if not arg1_74 or string.len(arg1_74) == 0 then
+function var0_0.changeParamaterValue(arg0_77, arg1_77, arg2_77)
+	if arg0_77:IsLoaded() then
+		if not arg1_77 or string.len(arg1_77) == 0 then
 			return
 		end
 
-		local var0_74 = arg0_74.liveCom:GetCubismParameter(arg1_74)
+		local var0_77 = arg0_77.liveCom:GetCubismParameter(arg1_77)
 
-		if not var0_74 then
+		if not var0_77 then
 			return
 		end
 
-		arg0_74.liveCom:AddParameterValue(var0_74, arg2_74, var9_0[1])
+		arg0_77.liveCom:AddParameterValue(var0_77, arg2_77, var9_0[1])
 	else
-		if not arg0_74.delayChangeParamater then
-			arg0_74.delayChangeParamater = {}
+		if not arg0_77.delayChangeParamater then
+			arg0_77.delayChangeParamater = {}
 		end
 
-		table.insert(arg0_74.delayChangeParamater, {
-			arg1_74,
-			arg2_74
+		table.insert(arg0_77.delayChangeParamater, {
+			arg1_77,
+			arg2_77
 		})
 	end
 end
 
-function var0_0.changeDragParameter(arg0_75, arg1_75, arg2_75)
-	if arg0_75:IsLoaded() and arg0_75.drags then
-		for iter0_75 = 1, #arg0_75.drags do
-			if arg0_75.drags[iter0_75].parameterName and arg0_75.drags[iter0_75].parameterName == arg1_75 then
-				arg0_75.drags[iter0_75]:setTargetValue(arg2_75)
+function var0_0.changeDragParameter(arg0_78, arg1_78, arg2_78)
+	if arg0_78:IsLoaded() and arg0_78.drags then
+		for iter0_78 = 1, #arg0_78.drags do
+			if arg0_78.drags[iter0_78].parameterName and arg0_78.drags[iter0_78].parameterName == arg1_78 then
+				arg0_78.drags[iter0_78]:setTargetValue(arg2_78)
 			end
 		end
 	end
 end
 
-function var0_0.setSortingLayer(arg0_76, arg1_76)
-	arg1_76 = arg1_76 or LayerWeightConst.L2D_DEFAULT_LAYER
+function var0_0.GetDragBounds(arg0_79)
+	if not arg0_79.dragRenders or #arg0_79.dragRenders == 0 then
+		arg0_79.dragRenders = {}
 
-	arg0_76:updateL2dSortMode()
+		if arg0_79.drags then
+			for iter0_79 = 1, #arg0_79.drags do
+				local var0_79 = arg0_79.liveCom:GetDrawablePart(arg0_79.drags[iter0_79].drawAbleName)
 
-	local var0_76 = arg0_76._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
-	local var1_76 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
+				if var0_79 then
+					arg0_79.drags[iter0_79]:IsTouchAble()
 
-	ReflectionHelp.RefSetProperty(var1_76, "SortingOrder", var0_76, arg1_76)
+					local var1_79 = GetComponent(var0_79, typeof(MeshRenderer))
+
+					table.insert(arg0_79.dragRenders, var1_79)
+				end
+			end
+		end
+	end
+
+	return arg0_79.dragRenders
 end
 
-function var0_0.updateL2dSortMode(arg0_77)
-	local var0_77 = arg0_77._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
-	local var1_77 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
-	local var2_77 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontOrder", nil)
+function var0_0.setSortingLayer(arg0_80, arg1_80)
+	arg1_80 = arg1_80 or LayerWeightConst.L2D_DEFAULT_LAYER
 
-	ReflectionHelp.RefSetProperty(var1_77, "SortingMode", var0_77, var2_77)
+	arg0_80:updateL2dSortMode()
+
+	local var0_80 = arg0_80._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
+	local var1_80 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
+
+	ReflectionHelp.RefSetProperty(var1_80, "SortingOrder", var0_80, arg1_80)
 end
 
-function var0_0.setSortingModeFrontZ(arg0_78)
-	local var0_78 = arg0_78._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
-	local var1_78 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
-	local var2_78 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontZ", nil)
+function var0_0.updateL2dSortMode(arg0_81)
+	local var0_81 = arg0_81._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
+	local var1_81 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
+	local var2_81 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontOrder", nil)
 
-	ReflectionHelp.RefSetProperty(var1_78, "SortingMode", var0_78, var2_78)
+	ReflectionHelp.RefSetProperty(var1_81, "SortingMode", var0_81, var2_81)
 end
 
-function var0_0.Dispose(arg0_79)
-	if arg0_79.state == var0_0.STATE_DISPOSE then
+function var0_0.setSortingModeFrontZ(arg0_82)
+	local var0_82 = arg0_82._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
+	local var1_82 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
+	local var2_82 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontZ", nil)
+
+	ReflectionHelp.RefSetProperty(var1_82, "SortingMode", var0_82, var2_82)
+end
+
+function var0_0.Dispose(arg0_83)
+	if arg0_83.state == var0_0.STATE_DISPOSE then
 		return
 	end
 
-	if table.contains(ChangeSkinLink.L2D_SAVE_TEMPLATE_DISPOSE, arg0_79.live2dData.skinId) then
-		local var0_79 = arg0_79:getParameterDic()
+	if table.contains(ChangeSkinLink.L2D_SAVE_TEMPLATE_DISPOSE, arg0_83.live2dData.skinId) then
+		local var0_83 = arg0_83:getParameterDic()
 
-		if arg0_79.live2dData.ship and arg0_79.live2dData.ship.id and arg0_79.live2dData.ship.id > 0 then
-			ChangeSkinLink.L2D_PARAMETER_DIC[arg0_79.live2dData.ship.id] = var0_79
+		if arg0_83.live2dData.ship and arg0_83.live2dData.ship.id and arg0_83.live2dData.ship.id > 0 then
+			ChangeSkinLink.L2D_PARAMETER_DIC[arg0_83.live2dData.ship.id] = var0_83
 		end
 	end
 
-	if arg0_79.state == var0_0.STATE_INITED then
-		arg0_79.liveCom.FinishAction = nil
-		arg0_79.liveCom.EventAction = nil
+	if arg0_83.state == var0_0.STATE_INITED then
+		arg0_83.liveCom.FinishAction = nil
+		arg0_83.liveCom.EventAction = nil
 
-		arg0_79.liveCom:SetMouseInputActions(nil, nil)
+		arg0_83.liveCom:SetMouseInputActions(nil, nil)
 	end
 
-	if arg0_79.dftCom then
-		arg0_79.dftCom:SetCommonEvent(nil)
+	if arg0_83.dftCom then
+		arg0_83.dftCom:SetCommonEvent(nil)
 	end
 
-	arg0_79:stopVoice()
-	arg0_79:unloadCueSheet()
+	arg0_83:stopVoice()
+	arg0_83:unloadCueSheet()
 
-	if arg0_79._tf and LeanTween.isTweening(go(arg0_79._tf)) then
-		LeanTween.cancel(go(arg0_79._tf))
+	if arg0_83._tf and LeanTween.isTweening(go(arg0_83._tf)) then
+		LeanTween.cancel(go(arg0_83._tf))
 	end
 
-	arg0_79:saveLive2dData()
+	arg0_83:saveLive2dData()
 
-	arg0_79._readlyToStop = false
+	arg0_83._readlyToStop = false
 
-	if arg0_79.live2dRequestId then
-		pg.Live2DMgr.GetInstance():StopLoadingLive2d(arg0_79.live2dRequestId)
+	if arg0_83.live2dRequestId then
+		pg.Live2DMgr.GetInstance():StopLoadingLive2d(arg0_83.live2dRequestId)
 
-		arg0_79.live2dRequestId = nil
+		arg0_83.live2dRequestId = nil
 	end
 
-	if arg0_79.drags then
-		for iter0_79 = 1, #arg0_79.drags do
-			arg0_79.drags[iter0_79]:dispose()
+	if arg0_83.drags then
+		for iter0_83 = 1, #arg0_83.drags do
+			arg0_83.drags[iter0_83]:dispose()
 		end
 
-		arg0_79.drags = {}
+		arg0_83.drags = {}
 	end
 
-	if arg0_79.live2dData and arg0_79.live2dData.gyro == 1 then
+	if arg0_83.live2dData and arg0_83.live2dData.gyro == 1 then
 		Input.gyro.enabled = false
 	end
 
-	if arg0_79.live2dData then
-		arg0_79.live2dData:Clear()
+	if arg0_83.live2dData then
+		arg0_83.live2dData:Clear()
 
-		arg0_79.live2dData = nil
+		arg0_83.live2dData = nil
 	end
 
-	if arg0_79.timer then
-		arg0_79.timer:Stop()
+	if arg0_83.timer then
+		arg0_83.timer:Stop()
 
-		arg0_79.timer = nil
+		arg0_83.timer = nil
 	end
 
-	if arg0_79._go and arg0_79.state == var0_0.STATE_INITED then
-		arg0_79:clearMaskTexture(arg0_79._go)
-		pg.Live2DMgr.GetInstance():ReturnLive2DModel(arg0_79.modelName, arg0_79._go)
+	if arg0_83._go and arg0_83.state == var0_0.STATE_INITED then
+		arg0_83:clearMaskTexture(arg0_83._go)
+		pg.Live2DMgr.GetInstance():ReturnLive2DModel(arg0_83.modelName, arg0_83._go)
 
-		arg0_79.modelName = nil
-		arg0_79._go = nil
+		arg0_83.modelName = nil
+		arg0_83._go = nil
 	end
 
-	arg0_79.state = var0_0.STATE_DISPOSE
+	arg0_83.live2dPlayingCallback = nil
+	arg0_83.state = var0_0.STATE_DISPOSE
 end
 
-function var0_0.clearMaskTexture(arg0_80, arg1_80)
-	if not arg1_80 then
+function var0_0.clearMaskTexture(arg0_84, arg1_84)
+	if not arg1_84 then
 		return
 	end
 
-	local var0_80 = GetComponent(arg1_80, "CubismMaskController")
+	local var0_84 = GetComponent(arg1_84, "CubismMaskController")
 
-	if var0_80 then
-		local var1_80 = ReflectionHelp.RefGetProperty(typeof("Live2D.Cubism.Rendering.Masking.CubismMaskController"), "MaskTexture", var0_80)
+	if var0_84 then
+		local var1_84 = ReflectionHelp.RefGetProperty(typeof("Live2D.Cubism.Rendering.Masking.CubismMaskController"), "MaskTexture", var0_84)
 
-		if var1_80 then
-			local var2_80 = ReflectionHelp.RefGetProperty(typeof("Live2D.Cubism.Rendering.Masking.CubismMaskTexture"), "RenderTextures", var1_80)
+		if var1_84 then
+			local var2_84 = ReflectionHelp.RefGetProperty(typeof("Live2D.Cubism.Rendering.Masking.CubismMaskTexture"), "RenderTextures", var1_84)
 
-			for iter0_80 = 0, var2_80.Length - 1 do
-				local var3_80 = var2_80[iter0_80]
+			for iter0_84 = 0, var2_84.Length - 1 do
+				local var3_84 = var2_84[iter0_84]
 
-				var3_80:Release()
-				Object.DestroyImmediate(var3_80)
+				var3_84:Release()
+				Object.DestroyImmediate(var3_84)
 			end
 
-			ReflectionHelp.RefSetProperty(typeof("Live2D.Cubism.Rendering.Masking.CubismMaskTexture"), "RenderTextures", var1_80, nil)
+			ReflectionHelp.RefSetProperty(typeof("Live2D.Cubism.Rendering.Masking.CubismMaskTexture"), "RenderTextures", var1_84, nil)
 
-			local var4_80 = ReflectionHelp.RefGetProperty(typeof("Live2D.Cubism.Rendering.Masking.CubismMaskTexture"), "RenderTexture", var1_80)
+			local var4_84 = ReflectionHelp.RefGetProperty(typeof("Live2D.Cubism.Rendering.Masking.CubismMaskTexture"), "RenderTexture", var1_84)
 
-			var4_80:Release()
-			Object.DestroyImmediate(var4_80)
-			ReflectionHelp.RefSetProperty(typeof("Live2D.Cubism.Rendering.Masking.CubismMaskTexture"), "RenderTexture", var1_80, nil)
+			var4_84:Release()
+			Object.DestroyImmediate(var4_84)
+			ReflectionHelp.RefSetProperty(typeof("Live2D.Cubism.Rendering.Masking.CubismMaskTexture"), "RenderTexture", var1_84, nil)
 		end
 	end
 end
 
-function var0_0.settempOffsetPosTime(arg0_81, arg1_81)
-	arg0_81.tempOffsetPosTime = arg1_81
+function var0_0.settempOffsetPosTime(arg0_85, arg1_85)
+	arg0_85.tempOffsetPosTime = arg1_85
 end
 
-function var0_0.getParameterDic(arg0_82)
-	local var0_82 = {}
+function var0_0.getParameterDic(arg0_86)
+	local var0_86 = {}
 
-	if arg0_82.drags and #arg0_82.drags > 0 then
-		for iter0_82, iter1_82 in ipairs(arg0_82.drags) do
-			local var1_82 = iter1_82:getParameterName()
-			local var2_82 = iter1_82:getParameter()
+	if arg0_86.drags and #arg0_86.drags > 0 then
+		for iter0_86, iter1_86 in ipairs(arg0_86.drags) do
+			local var1_86 = iter1_86:getParameterName()
+			local var2_86 = iter1_86:getParameter()
 
-			if var1_82 and #var1_82 > 0 and var2_82 then
-				var0_82[var1_82] = var2_82
+			if var1_86 and #var1_86 > 0 and var2_86 then
+				var0_86[var1_86] = var2_86
 			end
 		end
 	end
 
-	return var0_82
+	return var0_86
 end
 
-function var0_0.unloadCueSheet(arg0_83)
-	if not arg0_83.loadSheets then
+function var0_0.unloadCueSheet(arg0_87)
+	if not arg0_87.loadSheets then
 		return
 	end
 
-	for iter0_83, iter1_83 in ipairs(arg0_83.loadSheets) do
-		pg.CriMgr.GetInstance():UnloadCueSheet(iter1_83)
+	for iter0_87, iter1_87 in ipairs(arg0_87.loadSheets) do
+		pg.CriMgr.GetInstance():UnloadCueSheet(iter1_87)
 	end
 
-	arg0_83.loadSheets = {}
+	arg0_87.loadSheets = {}
 end
 
-function var0_0.stopVoice(arg0_84)
-	if not arg0_84.playingSheetInfo then
+function var0_0.stopVoice(arg0_88)
+	if not arg0_88.playingSheetInfo then
 		return
 	end
 
-	for iter0_84, iter1_84 in ipairs(arg0_84.playingSheetInfo) do
-		if iter1_84 then
-			iter1_84:PlaybackStop()
+	for iter0_88, iter1_88 in ipairs(arg0_88.playingSheetInfo) do
+		if iter1_88 then
+			iter1_88:PlaybackStop()
 		end
 	end
 
-	arg0_84.playingSheetInfo = {}
+	arg0_88.playingSheetInfo = {}
 end
 
-function var0_0.playL2dVoice(arg0_85, arg1_85, arg2_85, arg3_85)
-	if not table.contains(arg0_85.loadSheets, arg1_85) then
-		table.insert(arg0_85.loadSheets, arg1_85)
+function var0_0.playL2dVoice(arg0_89, arg1_89, arg2_89, arg3_89)
+	if not table.contains(arg0_89.loadSheets, arg1_89) then
+		table.insert(arg0_89.loadSheets, arg1_89)
 	end
 
-	pg.CriMgr.GetInstance():playCueSheetVoice(arg1_85, arg2_85, arg3_85, function(arg0_86)
-		if arg0_86 then
-			print("播放的语音长度为 = " .. arg0_86:GetLength())
-			table.insert(arg0_85.playingSheetInfo, arg0_86)
+	pg.CriMgr.GetInstance():playCueSheetVoice(arg1_89, arg2_89, arg3_89, function(arg0_90)
+		if arg0_90 then
+			print("播放的语音长度为 = " .. arg0_90:GetLength())
+			table.insert(arg0_89.playingSheetInfo, arg0_90)
 		end
 	end)
 end
 
-function var0_0.UpdateAtomSource(arg0_87)
-	arg0_87.updateAtom = true
+function var0_0.UpdateAtomSource(arg0_91)
+	arg0_91.updateAtom = true
 end
 
-function var0_0.AtomSouceFresh(arg0_88)
-	local var0_88 = pg.CriMgr.GetInstance():getAtomSource(pg.CriMgr.C_VOICE)
-	local var1_88 = arg0_88._go:GetComponent("CubismCriSrcMouthInput").Analyzer
+function var0_0.AtomSouceFresh(arg0_92)
+	local var0_92 = pg.CriMgr.GetInstance():getAtomSource(pg.CriMgr.C_VOICE)
+	local var1_92 = arg0_92._go:GetComponent("CubismCriSrcMouthInput").Analyzer
 
-	var0_88:AttachToAnalyzer(var1_88)
+	var0_92:AttachToAnalyzer(var1_92)
 
-	if arg0_88.updateAtom then
-		arg0_88.updateAtom = false
+	if arg0_92.updateAtom then
+		arg0_92.updateAtom = false
 	end
 end
 
-function var0_0.SetL2dSortingLayer(arg0_89, arg1_89)
-	var0_0.UpdateL2dSortMode(arg0_89)
+function var0_0.SetL2dSortingLayer(arg0_93, arg1_93)
+	var0_0.UpdateL2dSortMode(arg0_93)
 
-	local var0_89 = arg0_89:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
-	local var1_89 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
+	local var0_93 = arg0_93:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
+	local var1_93 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
 
-	ReflectionHelp.RefSetProperty(var1_89, "SortingOrder", var0_89, arg1_89)
+	ReflectionHelp.RefSetProperty(var1_93, "SortingOrder", var0_93, arg1_93)
 end
 
-function var0_0.UpdateL2dSortMode(arg0_90)
-	local var0_90 = arg0_90:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
-	local var1_90 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
-	local var2_90 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontOrder", nil)
+function var0_0.UpdateL2dSortMode(arg0_94)
+	local var0_94 = arg0_94:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
+	local var1_94 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
+	local var2_94 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontOrder", nil)
 
-	ReflectionHelp.RefSetProperty(var1_90, "SortingMode", var0_90, var2_90)
+	ReflectionHelp.RefSetProperty(var1_94, "SortingMode", var0_94, var2_94)
 end
 
-function var0_0.SetSortingModeFrontZ(arg0_91)
-	local var0_91 = arg0_91:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
-	local var1_91 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
-	local var2_91 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontZ", nil)
+function var0_0.SetSortingModeFrontZ(arg0_95)
+	local var0_95 = arg0_95:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
+	local var1_95 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
+	local var2_95 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontZ", nil)
 
-	ReflectionHelp.RefSetProperty(var1_91, "SortingMode", var0_91, var2_91)
+	ReflectionHelp.RefSetProperty(var1_95, "SortingMode", var0_95, var2_95)
 end
 
 return var0_0

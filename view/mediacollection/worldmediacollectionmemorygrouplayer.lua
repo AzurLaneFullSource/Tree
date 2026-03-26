@@ -331,138 +331,185 @@ function var0_0.onUpdateMemoryGroup(arg0_28, arg1_28, arg2_28)
 
 		return arg0_29
 	end)
+	local var5_28 = false
+	local var6_28 = {}
 
-	setText(tf(arg2_28):Find("count"), var4_28 .. "/" .. var3_28)
+	if type(var0_28.auto_unlock) == "table" then
+		local var7_28 = getProxy(ActivityProxy):getActivityById(var0_28.link_event)
+		local var8_28 = pg.NewStoryMgr.GetInstance()
+
+		if not var7_28 or var7_28:isEnd() then
+			local var9_28 = var0_28.auto_unlock
+			local var10_28 = {}
+
+			for iter0_28, iter1_28 in ipairs(var9_28) do
+				local var11_28 = var8_28:StoryName2StoryId(pg.memory_template[iter1_28].story)
+
+				if var8_28:GetPlayedFlag(var11_28) then
+					table.insert(var10_28, var11_28)
+				else
+					table.insert(var6_28, var11_28)
+				end
+			end
+
+			if #var10_28 > 0 and #var6_28 > 0 then
+				var5_28 = true
+			end
+		end
+	end
+
+	if var5_28 then
+		function cb()
+			local var0_30 = _.reduce(var0_28.memories, 0, function(arg0_31, arg1_31)
+				local var0_31 = pg.memory_template[arg1_31]
+
+				if var0_31.is_open == 1 or pg.NewStoryMgr.GetInstance():IsPlayed(var0_31.unlock_pre, true) then
+					arg0_31 = arg0_31 + 1
+				end
+
+				return arg0_31
+			end)
+
+			setText(tf(arg2_28):Find("count"), var0_30 .. "/" .. var3_28)
+		end
+
+		pg.m02:sendNotification(GAME.STORY_UPDATE_LIST, {
+			storyIds = var6_28,
+			callback = cb
+		})
+	else
+		setText(tf(arg2_28):Find("count"), var4_28 .. "/" .. var3_28)
+	end
 end
 
-function var0_0.Return2MemoryGroup(arg0_30)
-	local var0_30 = arg0_30.contextData.memoryGroup
+function var0_0.Return2MemoryGroup(arg0_32)
+	local var0_32 = arg0_32.contextData.memoryGroup
 
-	if not var0_30 or arg0_30:GetCurrentMode() == var0_0.LINE_MODE then
+	if not var0_32 or arg0_32:GetCurrentMode() == var0_0.LINE_MODE then
 		return
 	end
 
-	local var1_30 = 0
+	local var1_32 = 0
 
-	for iter0_30, iter1_30 in ipairs(arg0_30.memoryGroups) do
-		if iter1_30.id == var0_30 then
-			var1_30 = iter0_30
+	for iter0_32, iter1_32 in ipairs(arg0_32.memoryGroups) do
+		if iter1_32.id == var0_32 then
+			var1_32 = iter0_32
 
 			break
 		end
 	end
 
-	local var2_30 = arg0_30:GetIndexRatio(var1_30)
+	local var2_32 = arg0_32:GetIndexRatio(var1_32)
 
-	arg0_30.memoryGroupList:SetTotalCount(#arg0_30.memoryGroups, var2_30)
+	arg0_32.memoryGroupList:SetTotalCount(#arg0_32.memoryGroups, var2_32)
 end
 
-function var0_0.SwitchReddotMemory(arg0_31)
-	local var0_31 = 0
-	local var1_31 = getProxy(PlayerProxy):getRawData().id
+function var0_0.SwitchReddotMemory(arg0_33)
+	local var0_33 = 0
+	local var1_33 = getProxy(PlayerProxy):getRawData().id
 
-	for iter0_31, iter1_31 in ipairs(arg0_31.memoryGroups) do
-		if PlayerPrefs.GetInt("MEMORY_GROUP_NOTIFICATION" .. var1_31 .. " " .. iter1_31.id, 0) == 1 then
-			var0_31 = iter0_31
+	for iter0_33, iter1_33 in ipairs(arg0_33.memoryGroups) do
+		if PlayerPrefs.GetInt("MEMORY_GROUP_NOTIFICATION" .. var1_33 .. " " .. iter1_33.id, 0) == 1 then
+			var0_33 = iter0_33
 
 			break
 		end
 	end
 
-	if var0_31 == 0 then
+	if var0_33 == 0 then
 		return
 	end
 
-	local var2_31 = arg0_31:GetIndexRatio(var0_31)
+	local var2_33 = arg0_33:GetIndexRatio(var0_33)
 
-	arg0_31.memoryGroupList:SetTotalCount(#arg0_31.memoryGroups, var2_31)
+	arg0_33.memoryGroupList:SetTotalCount(#arg0_33.memoryGroups, var2_33)
 end
 
-function var0_0.GetIndexRatio(arg0_32, arg1_32)
-	local var0_32 = 0
+function var0_0.GetIndexRatio(arg0_34, arg1_34)
+	local var0_34 = 0
 
-	if arg1_32 > 0 then
-		local var1_32 = arg0_32.memoryGroupList
-		local var2_32 = arg0_32.memoryGroupsGrid.cellSize.y + arg0_32.memoryGroupsGrid.spacing.y
-		local var3_32 = arg0_32.memoryGroupsGrid.constraintCount
-		local var4_32 = var2_32 * math.ceil(#arg0_32.memoryGroups / var3_32)
+	if arg1_34 > 0 then
+		local var1_34 = arg0_34.memoryGroupList
+		local var2_34 = arg0_34.memoryGroupsGrid.cellSize.y + arg0_34.memoryGroupsGrid.spacing.y
+		local var3_34 = arg0_34.memoryGroupsGrid.constraintCount
+		local var4_34 = var2_34 * math.ceil(#arg0_34.memoryGroups / var3_34)
 
-		var0_32 = (var2_32 * math.floor((arg1_32 - 1) / var3_32) + var1_32.paddingFront) / (var4_32 - arg0_32.memoryGroupViewport.rect.height)
-		var0_32 = Mathf.Clamp01(var0_32)
+		var0_34 = (var2_34 * math.floor((arg1_34 - 1) / var3_34) + var1_34.paddingFront) / (var4_34 - arg0_34.memoryGroupViewport.rect.height)
+		var0_34 = Mathf.Clamp01(var0_34)
 	end
 
-	return var0_32
+	return var0_34
 end
 
-function var0_0.UpdateView(arg0_33)
-	local var0_33 = WorldMediaCollectionScene.WorldRecordLock()
+function var0_0.UpdateView(arg0_35)
+	local var0_35 = WorldMediaCollectionScene.WorldRecordLock()
 
-	setAnchoredPosition(arg0_33._tf:Find("GroupRect"), {
-		x = var0_33 and 0 or arg0_33.rectAnchorX
+	setAnchoredPosition(arg0_35._tf:Find("GroupRect"), {
+		x = var0_35 and 0 or arg0_35.rectAnchorX
 	})
 
-	for iter0_33, iter1_33 in ipairs(arg0_33.memoryActivityToggles) do
-		setActive(iter1_33, _.any(pg.memory_group.all, function(arg0_34)
-			return pg.memory_group[arg0_34].subtype == iter0_33
+	for iter0_35, iter1_35 in ipairs(arg0_35.memoryActivityToggles) do
+		setActive(iter1_35, _.any(pg.memory_group.all, function(arg0_36)
+			return pg.memory_group[arg0_36].subtype == iter0_35
 		end))
 	end
 end
 
-function var0_0.UpdateActivityBar(arg0_35)
-	for iter0_35, iter1_35 in ipairs(arg0_35.memoryActivityToggles) do
-		local var0_35 = arg0_35.activityFilter == iter0_35
+function var0_0.UpdateActivityBar(arg0_37)
+	for iter0_37, iter1_37 in ipairs(arg0_37.memoryActivityToggles) do
+		local var0_37 = arg0_37.activityFilter == iter0_37
 
-		setActive(iter1_35:Find("Image1"), not var0_35)
-		setActive(iter1_35:Find("Image2"), var0_35)
+		setActive(iter1_37:Find("Image1"), not var0_37)
+		setActive(iter1_37:Find("Image2"), var0_37)
 	end
 end
 
-function var0_0.OnDestroy(arg0_36)
-	var0_0.super.OnDestroy(arg0_36)
-	arg0_36.storyLineView:Dispose()
-	arg0_36:UnOverlayPanel(arg0_36.memoryTogGroup, arg0_36._tf)
+function var0_0.OnDestroy(arg0_38)
+	var0_0.super.OnDestroy(arg0_38)
+	arg0_38.storyLineView:Dispose()
+	arg0_38:UnOverlayPanel(arg0_38.memoryTogGroup, arg0_38._tf)
 end
 
-function var0_0.GetMatchGroupList(arg0_37, arg1_37, arg2_37)
-	arg1_37 = string.lower(string.gsub(arg1_37, "%.", "%%."))
+function var0_0.GetMatchGroupList(arg0_39, arg1_39, arg2_39)
+	arg1_39 = string.lower(string.gsub(arg1_39, "%.", "%%."))
 
-	local var0_37 = {}
+	local var0_39 = {}
 
-	for iter0_37, iter1_37 in pairs(arg0_37.memoryGroups) do
-		if string.find(string.lower(iter1_37.title), arg1_37) then
-			table.insert(var0_37, iter1_37)
+	for iter0_39, iter1_39 in pairs(arg0_39.memoryGroups) do
+		if string.find(string.lower(iter1_39.title), arg1_39) then
+			table.insert(var0_39, iter1_39)
 		end
 	end
 
-	if arg0_37.shipNameSearchFlag then
-		local var1_37 = {}
+	if arg0_39.shipNameSearchFlag then
+		local var1_39 = {}
 
-		for iter2_37, iter3_37 in pairs(pg.ship_data_statistics) do
-			if string.find(string.lower(iter3_37.name), arg1_37) then
-				table.insert(var1_37, iter2_37)
+		for iter2_39, iter3_39 in pairs(pg.ship_data_statistics) do
+			if string.find(string.lower(iter3_39.name), arg1_39) then
+				table.insert(var1_39, iter2_39)
 			end
 		end
 
-		local var2_37 = {}
+		local var2_39 = {}
 
-		for iter4_37, iter5_37 in ipairs(var1_37) do
-			local var3_37 = tostring(iter5_37)
+		for iter4_39, iter5_39 in ipairs(var1_39) do
+			local var3_39 = tostring(iter5_39)
 
-			var2_37[tonumber(string.sub(var3_37, 1, #var3_37 - 1))] = true
+			var2_39[tonumber(string.sub(var3_39, 1, #var3_39 - 1))] = true
 		end
 
-		for iter6_37, iter7_37 in pairs(arg0_37.memoryGroups) do
-			if type(iter7_37.group_id) == "table" then
-				for iter8_37, iter9_37 in ipairs(iter7_37.group_id) do
-					if var2_37[iter9_37] and not table.contains(var0_37, iter7_37) then
-						table.insert(var0_37, iter7_37)
+		for iter6_39, iter7_39 in pairs(arg0_39.memoryGroups) do
+			if type(iter7_39.group_id) == "table" then
+				for iter8_39, iter9_39 in ipairs(iter7_39.group_id) do
+					if var2_39[iter9_39] and not table.contains(var0_39, iter7_39) then
+						table.insert(var0_39, iter7_39)
 					end
 				end
 			end
 		end
 	end
 
-	return var0_37
+	return var0_39
 end
 
 return var0_0

@@ -1931,5 +1931,9 @@ pg.voice_actor_CN = {
 	[501] = {
 		code = 501,
 		actor_name = "Yu-ri Yoshida"
+	},
+	[502] = {
+		code = 502,
+		actor_name = "Kanako Nomura"
 	}
 }

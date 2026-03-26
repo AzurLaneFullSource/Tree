@@ -101,9 +101,9 @@ function var0_0.initUI(arg0_6)
 	local var2_6 = arg0_6._tf:Find("Ratio")
 
 	for iter0_6 = 2, 6 do
-		local var3_6 = getImageSprite(arg0_6._tf:Find(tostring(iter0_6), var0_6))
-		local var4_6 = getImageSprite(arg0_6._tf:Find(tostring(iter0_6), var1_6))
-		local var5_6 = getImageSprite(arg0_6._tf:Find(tostring(iter0_6), var2_6))
+		local var3_6 = getImageSprite(var0_6:Find(tostring(iter0_6)))
+		local var4_6 = getImageSprite(var1_6:Find(tostring(iter0_6)))
+		local var5_6 = getImageSprite(var2_6:Find(tostring(iter0_6)))
 
 		arg0_6.minRaritySpriteMap[iter0_6] = var3_6
 		arg0_6.maxRaritySpriteMap[iter0_6] = var4_6
@@ -115,7 +115,7 @@ function var0_0.initUI(arg0_6)
 	local var6_6 = arg0_6._tf:Find("Pool")
 
 	for iter1_6 = 1, 3 do
-		local var7_6 = getImageSprite(arg0_6._tf:Find(tostring(iter1_6), var6_6))
+		local var7_6 = getImageSprite(var6_6:Find(tostring(iter1_6)))
 
 		arg0_6.poolSpriteMap[iter1_6] = var7_6
 	end
@@ -446,6 +446,9 @@ function var0_0.updateShipList(arg0_19, arg1_19)
 
 	function arg0_19.shipListSC.onUpdateItem(arg0_20, arg1_20)
 		local var0_20 = arg1_19[arg0_20 + 1]
+
+		arg1_20 = tf(arg1_20)
+
 		local var1_20 = arg1_20:Find("BG/Icon")
 
 		GetImageSpriteFromAtlasAsync("SquareIcon/" .. Ship.getPaintingName(var0_20), "", var1_20)

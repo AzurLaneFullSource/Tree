@@ -5270,6 +5270,42 @@ pg.backyard_theme_template = {
 			335302
 		}
 	},
+	[136] = {
+		Cfg_1 = 5,
+		name = "Data Command Center",
+		hot = 1,
+		is_view = 1,
+		id = 136,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "Immerse yourself in the command center's data stream as you gaze down on the city.",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "tgthemeicon",
+		deblocking = 1,
+		order = 136,
+		ids = {
+			336001,
+			336002,
+			336101,
+			336102,
+			336103,
+			336104,
+			336105,
+			336106,
+			336107,
+			336108,
+			336109,
+			336110,
+			336111,
+			336112,
+			336113,
+			336114,
+			336301,
+			336302
+		}
+	},
 	all = {
 		1,
 		2,
@@ -5392,6 +5428,7 @@ pg.backyard_theme_template = {
 		132,
 		133,
 		134,
-		135
+		135,
+		136
 	}
 }

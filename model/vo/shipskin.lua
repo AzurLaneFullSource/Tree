@@ -451,10 +451,10 @@ end
 
 function var0_0.GetShareGroupIds(arg0_50)
 	local var0_50 = arg0_50:getConfig("ship_group")
-	local var1_50 = pg.ship_data_group.get_id_list_by_group_type[var0_50][1]
-	local var2_50 = pg.ship_data_group[var1_50]
+	local var1_50 = pg.ship_data_group.get_id_list_by_group_type[var0_50]
+	local var2_50 = var1_50 and var1_50[1] or nil
 
-	return var0_50, underscore.to_array(var2_50.share_group_id)
+	return var0_50, underscore.to_array(var2_50 and pg.ship_data_group[var2_50].share_group_id or {})
 end
 
 function var0_0.GetAllChangeSkinIds(arg0_51)

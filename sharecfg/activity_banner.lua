@@ -13,7 +13,7 @@ pg.activity_banner = {
 				{
 					2026,
 					3,
-					19
+					26
 				},
 				{
 					0,
@@ -24,8 +24,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					3,
-					25
+					4,
+					8
 				},
 				{
 					23,
@@ -38,7 +38,6 @@ pg.activity_banner = {
 	{
 		id = 2,
 		pic = "temp2",
-		time = "stop",
 		type = 2,
 		param = {
 			"scene get boat",
@@ -46,25 +45,13 @@ pg.activity_banner = {
 				projectName = "new",
 				page = 1
 			}
-		}
-	},
-	{
-		id = 3,
-		pic = "temp3",
-		type = 2,
-		param = {
-			"scene activity",
-			{
-				event = "ActivityMediator.OPEN_CULTIVATING_PLANT",
-				data = {}
-			}
 		},
 		time = {
 			{
 				{
 					2026,
 					3,
-					19
+					26
 				},
 				{
 					0,
@@ -75,8 +62,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					3,
-					25
+					4,
+					8
 				},
 				{
 					23,
@@ -87,16 +74,21 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "50479",
-		id = 4,
-		pic = "temp4",
-		type = 3,
+		id = 3,
+		pic = "temp3",
+		type = 2,
+		param = {
+			"scene core activity",
+			{
+				coreName = "YunLongSPCoreActivityUI"
+			}
+		},
 		time = {
 			{
 				{
 					2026,
 					3,
-					19
+					26
 				},
 				{
 					0,
@@ -107,8 +99,45 @@ pg.activity_banner = {
 			{
 				{
 					2026,
+					4,
+					8
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 4,
+		pic = "temp4",
+		type = 2,
+		param = {
+			"scene charge",
+			{
+				wrap = 4
+			}
+		},
+		time = {
+			{
+				{
+					2026,
 					3,
-					25
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					4,
+					8
 				},
 				{
 					23,
@@ -121,42 +150,19 @@ pg.activity_banner = {
 	{
 		id = 5,
 		pic = "temp5",
-		time = "stop",
 		type = 2,
 		param = {
 			"scene shop",
 			{
 				warp = "shopstreet"
 			}
-		}
-	},
-	{
-		param = "50448",
-		time = "stop",
-		type = 3,
-		id = 6,
-		pic = "temp6"
-	},
-	{
-		id = 7,
-		pic = "temp7",
-		time = "stop",
-		type = 2,
-		param = {
-			"dorm 3d select"
-		}
-	},
-	{
-		param = "50501",
-		id = 8,
-		pic = "temp8",
-		type = 3,
+		},
 		time = {
 			{
 				{
 					2026,
 					3,
-					19
+					26
 				},
 				{
 					0,
@@ -167,8 +173,110 @@ pg.activity_banner = {
 			{
 				{
 					2026,
+					4,
+					8
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 6,
+		pic = "temp6",
+		type = 2,
+		param = {
+			"scene court yard"
+		},
+		time = {
+			{
+				{
+					2026,
 					3,
-					25
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					4,
+					8
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 7,
+		pic = "temp7",
+		type = 2,
+		param = {
+			"dorm 3d select"
+		},
+		time = {
+			{
+				{
+					2026,
+					3,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					4,
+					8
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		id = 8,
+		pic = "temp8",
+		type = 2,
+		param = {
+			"crusing"
+		},
+		time = {
+			{
+				{
+					2026,
+					4,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					4,
+					8
 				},
 				{
 					23,
@@ -182,13 +290,9 @@ pg.activity_banner = {
 		id = 9,
 		pic = "temp9",
 		time = "stop",
-		type = 3,
+		type = 2,
 		param = {
-			"scene level",
-			{
-				open_remaster = true,
-				isSP = true
-			}
+			"LiquorFloor"
 		}
 	},
 	[90] = {
@@ -214,10 +318,35 @@ pg.activity_banner = {
 	},
 	[99] = {
 		param = "",
-		time = "stop",
-		type = 12,
 		id = 99,
-		pic = "limit_skin"
+		pic = "limit_skin",
+		type = 12,
+		time = {
+			{
+				{
+					2026,
+					3,
+					26
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					4,
+					8
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
 	},
 	[100] = {
 		param = "Dumplings|A world-famous delight from the Dragon Empery! <color=#92fc63>(Increases EXP gained by 5% for 60 minutes.)</color>",
@@ -266,12 +395,10 @@ pg.activity_banner = {
 			1,
 			2,
 			3,
-			5,
-			7
-		},
-		[3] = {
 			4,
+			5,
 			6,
+			7,
 			8,
 			9
 		},

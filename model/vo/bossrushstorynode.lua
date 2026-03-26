@@ -12,6 +12,7 @@ var0_0.NODE_TYPE = {
 	LOCATION = 4,
 	BATTLE = 3
 }
+var0_0.REPEATABLE_KEY = "repeatable"
 
 function var0_0.bindConfigTable(arg0_1)
 	return pg.activity_series_enemy_story
@@ -130,6 +131,22 @@ function var0_0.GetParams(arg0_21, arg1_21)
 	end
 
 	return nil
+end
+
+function var0_0.IsRecrew(arg0_22)
+	local var0_22 = arg0_22:getConfig("label_key")
+
+	if type(var0_22) ~= "table" then
+		return nil
+	end
+
+	local var1_22 = StoryStep.GetGlobalFlagKey(var0_22.flagID) .. var0_22.flagIndex
+
+	if not PlayerPrefs.HasKey(var1_22) then
+		return nil
+	end
+
+	return PlayerPrefs.GetInt(var1_22) > 0
 end
 
 return var0_0

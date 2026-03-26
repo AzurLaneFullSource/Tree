@@ -589,7 +589,6 @@ function var0_0.getCommonNoticeData(arg0_28)
 end
 
 function var0_0.setTargetValue(arg0_29, arg1_29)
-	arg0_29.parameterSmooth = 0
 	arg0_29.parameterTargetValue = arg1_29
 end
 
@@ -1338,160 +1337,164 @@ function var0_0.updateTrigger(arg0_52)
 	end
 end
 
-function var0_0.setCommonData(arg0_71, arg1_71, arg2_71)
-	arg0_71.commonData[arg1_71] = arg2_71
+function var0_0.IsTouchAble(arg0_71)
+	return true
 end
 
-function var0_0.getExtendAction(arg0_72)
-	return arg0_72.extendActionFlag
+function var0_0.setCommonData(arg0_72, arg1_72, arg2_72)
+	arg0_72.commonData[arg1_72] = arg2_72
 end
 
-function var0_0.checkActionInExtendFlag(arg0_73, arg1_73)
-	local var0_73 = false
-	local var1_73 = false
+function var0_0.getExtendAction(arg0_73)
+	return arg0_73.extendActionFlag
+end
 
-	if not arg0_73.extendActionFlag then
-		return var0_73, var1_73
+function var0_0.checkActionInExtendFlag(arg0_74, arg1_74)
+	local var0_74 = false
+	local var1_74 = false
+
+	if not arg0_74.extendActionFlag then
+		return var0_74, var1_74
 	end
 
-	local var2_73 = arg0_73.actionTrigger.parameter
-	local var3_73 = arg0_73.actionTrigger.num
-	local var4_73 = false
+	local var2_74 = arg0_74.actionTrigger.parameter
+	local var3_74 = arg0_74.actionTrigger.num
+	local var4_74 = false
 
-	arg0_73:onEventCallback(Live2D.EVENT_GET_DRAG_PARAMETER, {
-		name = var2_73
-	}, function(arg0_74)
-		if arg0_74 > var3_73[1] and arg0_74 <= var3_73[2] then
-			var4_73 = true
+	arg0_74:onEventCallback(Live2D.EVENT_GET_DRAG_PARAMETER, {
+		name = var2_74
+	}, function(arg0_75)
+		if arg0_75 > var3_74[1] and arg0_75 <= var3_74[2] then
+			var4_74 = true
 		end
 	end)
 
-	if not var4_73 then
-		return var0_73, var0_73
+	if not var4_74 then
+		return var0_74, var0_74
 	end
 
-	local var5_73 = arg0_73.actionTriggerActive.ignore
-	local var6_73 = arg0_73.actionTriggerActive.enable
+	local var5_74 = arg0_74.actionTriggerActive.ignore
+	local var6_74 = arg0_74.actionTriggerActive.enable
 
-	if var5_73 and table.contains(var5_73, arg1_73) then
-		var0_73 = true
+	if var5_74 and table.contains(var5_74, arg1_74) then
+		var0_74 = true
 	end
 
-	if var6_73 and table.contains(var6_73, arg1_73) then
-		var1_73 = true
+	if var6_74 and table.contains(var6_74, arg1_74) then
+		var1_74 = true
 	end
 
-	return var0_73, var1_73
+	return var0_74, var1_74
 end
 
-function var0_0.setAbleWithFlag(arg0_75, arg1_75)
-	if arg0_75.ableFlag ~= arg1_75 then
-		arg0_75.ableFlag = arg1_75
+function var0_0.setAbleWithFlag(arg0_76, arg1_76)
+	if arg0_76.ableFlag ~= arg1_76 then
+		arg0_76.ableFlag = arg1_76
 
-		arg0_75:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
-			ableFlag = arg1_75
+		arg0_76:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
+			ableFlag = arg1_76
 		})
 	end
 end
 
-function var0_0.triggerAction(arg0_76)
-	arg0_76.nextTriggerTime = arg0_76.limitTime
+function var0_0.triggerAction(arg0_77)
+	arg0_77.nextTriggerTime = arg0_77.limitTime
 
-	arg0_76:setTriggerActionFlag(true)
+	arg0_77:setTriggerActionFlag(true)
 end
 
-function var0_0.isActionTriggerAble(arg0_77)
-	if arg0_77.actionTrigger.type == nil then
+function var0_0.isActionTriggerAble(arg0_78)
+	if arg0_78.actionTrigger.type == nil then
 		return false
 	end
 
-	if not arg0_77.actionTrigger or arg0_77.actionTrigger == "" then
+	if not arg0_78.actionTrigger or arg0_78.actionTrigger == "" then
 		return false
 	end
 
-	if arg0_77.nextTriggerTime - Time.deltaTime >= 0 then
-		arg0_77.nextTriggerTime = arg0_77.nextTriggerTime - Time.deltaTime
+	if arg0_78.nextTriggerTime - Time.deltaTime >= 0 then
+		arg0_78.nextTriggerTime = arg0_78.nextTriggerTime - Time.deltaTime
 
 		return false
 	end
 
-	if arg0_77.isTriggerAtion then
+	if arg0_78.isTriggerAtion then
 		return false
 	end
 
 	return true
 end
 
-function var0_0.updateStateData(arg0_78, arg1_78)
-	if arg0_78.l2dIdleIndex ~= arg1_78.idleIndex then
-		if type(arg0_78.revertIdleIndex) == "boolean" and arg0_78.revertIdleIndex == true then
-			arg0_78:setTargetValue(arg0_78.startValue)
-		elseif type(arg0_78.revertIdleIndex) == "table" and table.contains(arg0_78.revertIdleIndex, arg1_78.idleIndex) then
-			arg0_78:setTargetValue(arg0_78.startValue)
+function var0_0.updateStateData(arg0_79, arg1_79)
+	if arg0_79.l2dIdleIndex ~= arg1_79.idleIndex then
+		if type(arg0_79.revertIdleIndex) == "boolean" and arg0_79.revertIdleIndex == true then
+			arg0_79:setTargetValue(arg0_79.startValue)
+		elseif type(arg0_79.revertIdleIndex) == "table" and table.contains(arg0_79.revertIdleIndex, arg1_79.idleIndex) then
+			arg0_79:setTargetValue(arg0_79.startValue)
 		end
 	end
 
-	arg0_78.lastActionIndex = arg0_78.actionListIndex
+	arg0_79.lastActionIndex = arg0_79.actionListIndex
 
-	if arg1_78.isPlaying and arg0_78.actionTrigger.reset_index_action and arg1_78.actionName and table.contains(arg0_78.actionTrigger.reset_index_action, arg1_78.actionName) then
-		arg0_78.actionListIndex = 1
+	if arg1_79.isPlaying and arg0_79.actionTrigger.reset_index_action and arg1_79.actionName and table.contains(arg0_79.actionTrigger.reset_index_action, arg1_79.actionName) then
+		arg0_79.actionListIndex = 1
 	end
 
-	if arg0_78.revertActionIndex and arg0_78.lastActionIndex ~= arg0_78.actionListIndex then
-		arg0_78:setTargetValue(arg0_78.startValue)
+	if arg0_79.revertActionIndex and arg0_79.lastActionIndex ~= arg0_79.actionListIndex then
+		arg0_79:setTargetValue(arg0_79.startValue)
 	end
 
-	arg0_78.l2dIdleIndex = arg1_78.idleIndex
-	arg0_78.l2dIsPlaying = arg1_78.isPlaying
-	arg0_78.l2dIgnoreReact = arg1_78.ignoreReact
-	arg0_78.l2dPlayActionName = arg1_78.actionName
+	arg0_79.l2dIdleIndex = arg1_79.idleIndex
+	arg0_79.l2dIsPlaying = arg1_79.isPlaying
+	arg0_79.l2dIgnoreReact = arg1_79.ignoreReact
+	arg0_79.l2dPlayActionName = arg1_79.actionName
 
-	if not arg0_78.l2dIsPlaying and arg0_78.isTriggerAtion then
-		arg0_78:setTriggerActionFlag(false)
+	if not arg0_79.l2dIsPlaying and arg0_79.isTriggerAtion then
+		arg0_79:setTriggerActionFlag(false)
 	end
 
-	if arg0_78.l2dIdleIndex and arg0_78.idleOn and #arg0_78.idleOn > 0 then
-		arg0_78.reactConditionFlag = not table.contains(arg0_78.idleOn, arg0_78.l2dIdleIndex)
+	if arg0_79.l2dIdleIndex and arg0_79.idleOn and #arg0_79.idleOn > 0 then
+		arg0_79.reactConditionFlag = not table.contains(arg0_79.idleOn, arg0_79.l2dIdleIndex)
 	end
 
-	if arg0_78.l2dIdleIndex and arg0_78.idleOff and #arg0_78.idleOff > 0 then
-		arg0_78.reactConditionFlag = table.contains(arg0_78.idleOff, arg0_78.l2dIdleIndex)
+	if arg0_79.l2dIdleIndex and arg0_79.idleOff and #arg0_79.idleOff > 0 then
+		arg0_79.reactConditionFlag = table.contains(arg0_79.idleOff, arg0_79.l2dIdleIndex)
 	end
 end
 
-function var0_0.checkClickAction(arg0_79)
-	if arg0_79.firstActive then
-		if arg0_79.actionTrigger.down then
-			if arg0_79.actionTrigger.focus == 1 and arg0_79.l2dIsPlaying then
+function var0_0.checkClickAction(arg0_80)
+	if arg0_80.firstActive then
+		if arg0_80.actionTrigger.down then
+			if arg0_80.actionTrigger.focus == 1 and arg0_80.l2dIsPlaying then
 				return true
-			elseif not arg0_79.l2dIsPlaying then
+			elseif not arg0_80.l2dIsPlaying then
 				return true
 			end
 		else
-			arg0_79:setAbleWithFlag(true)
+			arg0_80:setAbleWithFlag(true)
 		end
-	elseif arg0_79.firstStop then
-		local var0_79 = math.abs(arg0_79.mouseInputUp.x - arg0_79.mouseInputDown.x) < 30 and math.abs(arg0_79.mouseInputUp.y - arg0_79.mouseInputDown.y) < 30
-		local var1_79 = arg0_79.mouseInputUpTime - arg0_79.mouseInputDownTime < 0.5
+	elseif arg0_80.firstStop then
+		local var0_80 = math.abs(arg0_80.mouseInputUp.x - arg0_80.mouseInputDown.x) < 30 and math.abs(arg0_80.mouseInputUp.y - arg0_80.mouseInputDown.y) < 30
+		local var1_80 = arg0_80.mouseInputUpTime - arg0_80.mouseInputDownTime < 0.5
 
-		if not arg0_79.actionTrigger.down and var0_79 and var1_79 then
-			if arg0_79.actionTrigger.focus == 1 and arg0_79.l2dIsPlaying then
-				if arg0_79.l2dPlayActionName == arg0_79.actionTrigger.action then
-					arg0_79.clickTriggerTime = Time.realtimeSinceStartup + 0.1
+		if not arg0_80.actionTrigger.down and var0_80 and var1_80 then
+			if arg0_80.actionTrigger.focus == 1 and arg0_80.l2dIsPlaying then
+				if arg0_80.l2dPlayActionName == arg0_80.actionTrigger.action then
+					arg0_80.clickTriggerTime = Time.realtimeSinceStartup + 0.1
 				end
-			elseif not arg0_79.l2dIsPlaying then
-				arg0_79.clickTriggerTime = Time.realtimeSinceStartup + 0.1
+			elseif not arg0_80.l2dIsPlaying then
+				arg0_80.clickTriggerTime = Time.realtimeSinceStartup + 0.1
 			end
 		else
-			arg0_79:setAbleWithFlag(false)
+			arg0_80:setAbleWithFlag(false)
 		end
-	elseif arg0_79.clickTriggerTime and arg0_79.clickTriggerTime > 0 and Time.realtimeSinceStartup >= arg0_79.clickTriggerTime then
-		arg0_79:setAbleWithFlag(false)
+	elseif arg0_80.clickTriggerTime and arg0_80.clickTriggerTime > 0 and Time.realtimeSinceStartup >= arg0_80.clickTriggerTime then
+		arg0_80:setAbleWithFlag(false)
 
-		if Time.realtimeSinceStartup - arg0_79.clickTriggerTime <= 0.1 then
-			print("点击成功" .. arg0_79.id)
+		if Time.realtimeSinceStartup - arg0_80.clickTriggerTime <= 0.1 then
+			print("点击成功" .. arg0_80.id)
 
-			arg0_79.clickTriggerTime = nil
+			arg0_80.clickTriggerTime = nil
 
 			return true
 		end
@@ -1500,113 +1503,113 @@ function var0_0.checkClickAction(arg0_79)
 	return false
 end
 
-function var0_0.saveData(arg0_80)
-	local var0_80 = arg0_80.id
-	local var1_80 = arg0_80.live2dData.skinId
-	local var2_80 = arg0_80.live2dData.ship.id
+function var0_0.saveData(arg0_81)
+	local var0_81 = arg0_81.id
+	local var1_81 = arg0_81.live2dData.skinId
+	local var2_81 = arg0_81.live2dData.ship.id
 
-	if arg0_80.revert == -1 and arg0_80.saveParameterFlag then
-		Live2dConst.SaveDragData(var0_80, var1_80, var2_80, arg0_80.parameterTargetValue)
+	if arg0_81.revert == -1 and arg0_81.saveParameterFlag then
+		Live2dConst.SaveDragData(var0_81, var1_81, var2_81, arg0_81.parameterTargetValue)
 	end
 
-	if arg0_80.actionTrigger.type == Live2D.DRAG_CLICK_MANY then
-		Live2dConst.SetDragActionIndex(var0_80, var1_80, var2_80, arg0_80.actionListIndex)
+	if arg0_81.actionTrigger.type == Live2D.DRAG_CLICK_MANY then
+		Live2dConst.SetDragActionIndex(var0_81, var1_81, var2_81, arg0_81.actionListIndex)
 	end
 
-	if arg0_80._relationFlag then
-		Live2dConst.SetRelationData(var0_80, var1_80, var2_80, arg0_80:getRelationSaveData())
+	if arg0_81._relationFlag then
+		Live2dConst.SetRelationData(var0_81, var1_81, var2_81, arg0_81:getRelationSaveData())
 	end
 end
 
-function var0_0.getActionTriggerType(arg0_81)
-	if arg0_81.actionTrigger and arg0_81.actionTrigger.type then
-		return arg0_81.actionTrigger.type
+function var0_0.getActionTriggerType(arg0_82)
+	if arg0_82.actionTrigger and arg0_82.actionTrigger.type then
+		return arg0_82.actionTrigger.type
 	end
 
 	return nil
 end
 
-function var0_0.loadData(arg0_82)
-	local var0_82 = arg0_82.id
-	local var1_82 = arg0_82.live2dData:GetShipSkinConfig().id
-	local var2_82 = arg0_82.live2dData.ship.id
+function var0_0.loadData(arg0_83)
+	local var0_83 = arg0_83.id
+	local var1_83 = arg0_83.live2dData:GetShipSkinConfig().id
+	local var2_83 = arg0_83.live2dData.ship.id
 
-	if arg0_82.revert == -1 and arg0_82.saveParameterFlag then
-		local var3_82 = Live2dConst.GetDragData(arg0_82.id, arg0_82.live2dData:GetShipSkinConfig().id, arg0_82.live2dData.ship.id)
+	if arg0_83.revert == -1 and arg0_83.saveParameterFlag then
+		local var3_83 = Live2dConst.GetDragData(arg0_83.id, arg0_83.live2dData:GetShipSkinConfig().id, arg0_83.live2dData.ship.id)
 
-		if var3_82 then
-			arg0_82:setParameterValue(var3_82)
-			arg0_82:setTargetValue(var3_82)
+		if var3_83 then
+			arg0_83:setParameterValue(var3_83)
+			arg0_83:setTargetValue(var3_83)
 		end
 
-		if var3_82 == arg0_82.startValue and arg0_82._relationParameterList and #arg0_82._relationParameterList > 0 then
-			arg0_82:clearRelationValue()
+		if var3_83 == arg0_83.startValue and arg0_83._relationParameterList and #arg0_83._relationParameterList > 0 then
+			arg0_83:clearRelationValue()
 		end
 	end
 
-	if arg0_82.actionTrigger.type == Live2D.DRAG_CLICK_MANY then
-		arg0_82.actionListIndex = Live2dConst.GetDragActionIndex(arg0_82.id, arg0_82.live2dData:GetShipSkinConfig().id, arg0_82.live2dData.ship.id) or 1
+	if arg0_83.actionTrigger.type == Live2D.DRAG_CLICK_MANY then
+		arg0_83.actionListIndex = Live2dConst.GetDragActionIndex(arg0_83.id, arg0_83.live2dData:GetShipSkinConfig().id, arg0_83.live2dData.ship.id) or 1
 	end
 
-	if arg0_82._relationFlag then
-		local var4_82 = Live2dConst.GetRelationData(var0_82, var1_82, var2_82)
+	if arg0_83._relationFlag then
+		local var4_83 = Live2dConst.GetRelationData(var0_83, var1_83, var2_83)
 
-		arg0_82.offsetDragX = var4_82.drag_x and var4_82.drag_x or arg0_82.startValue
-		arg0_82.offsetDragY = var4_82.drag_y and var4_82.drag_y or arg0_82.startValue
+		arg0_83.offsetDragX = var4_83.drag_x and var4_83.drag_x or arg0_83.startValue
+		arg0_83.offsetDragY = var4_83.drag_y and var4_83.drag_y or arg0_83.startValue
 	end
 end
 
-function var0_0.getRelationSaveData(arg0_83)
+function var0_0.getRelationSaveData(arg0_84)
 	return {
-		[Live2dConst.RELATION_DRAG_X] = arg0_83.offsetDragX,
-		[Live2dConst.RELATION_DRAG_Y] = arg0_83.offsetDragY
+		[Live2dConst.RELATION_DRAG_X] = arg0_84.offsetDragX,
+		[Live2dConst.RELATION_DRAG_Y] = arg0_84.offsetDragY
 	}
 end
 
-function var0_0.clearRelationValue(arg0_84)
-	if arg0_84._relationParameterList and #arg0_84._relationParameterList > 0 then
-		for iter0_84 = 1, #arg0_84._relationParameterList do
-			local var0_84 = arg0_84._relationParameterList[iter0_84]
+function var0_0.clearRelationValue(arg0_85)
+	if arg0_85._relationParameterList and #arg0_85._relationParameterList > 0 then
+		for iter0_85 = 1, #arg0_85._relationParameterList do
+			local var0_85 = arg0_85._relationParameterList[iter0_85]
 
-			if var0_84.data.type == Live2D.relation_type_drag_x or var0_84.data.type == Live2D.relation_type_drag_y then
-				var0_84.value = var0_84.start or arg0_84.startValue or 0
-				var0_84.enable = true
+			if var0_85.data.type == Live2D.relation_type_drag_x or var0_85.data.type == Live2D.relation_type_drag_y then
+				var0_85.value = var0_85.start or arg0_85.startValue or 0
+				var0_85.enable = true
 			end
 
-			arg0_84.offsetDragX, arg0_84.offsetDragY = arg0_84.startValue, arg0_84.startValue
+			arg0_85.offsetDragX, arg0_85.offsetDragY = arg0_85.startValue, arg0_85.startValue
 		end
 	end
 end
 
-function var0_0.loadL2dFinal(arg0_85)
-	arg0_85.loadL2dStep = true
+function var0_0.loadL2dFinal(arg0_86)
+	arg0_86.loadL2dStep = true
 end
 
-function var0_0.clearData(arg0_86)
-	if arg0_86.revert == -1 then
-		arg0_86.actionListIndex = 1
-		arg0_86.delayTargetTime = nil
+function var0_0.clearData(arg0_87)
+	if arg0_87.revert == -1 then
+		arg0_87.actionListIndex = 1
+		arg0_87.delayTargetTime = nil
 
-		arg0_86:setParameterValue(arg0_86.startValue)
-		arg0_86:setTargetValue(arg0_86.startValue)
-		arg0_86:clearRelationValue()
+		arg0_87:setParameterValue(arg0_87.startValue)
+		arg0_87:setTargetValue(arg0_87.startValue)
+		arg0_87:clearRelationValue()
 	end
 end
 
-function var0_0.setTriggerActionFlag(arg0_87, arg1_87)
-	arg0_87.isTriggerAtion = arg1_87
+function var0_0.setTriggerActionFlag(arg0_88, arg1_88)
+	arg0_88.isTriggerAtion = arg1_88
 end
 
-function var0_0.dispose(arg0_88)
-	arg0_88._active = false
-	arg0_88._parameterCom = nil
-	arg0_88.parameterValue = arg0_88.startValue
-	arg0_88.parameterTargetValue = 0
-	arg0_88.parameterSmooth = 0
-	arg0_88.mouseInputDown = Vector2(0, 0)
-	arg0_88.data = nil
-	arg0_88.live2dData = nil
-	arg0_88.commonData = nil
+function var0_0.dispose(arg0_89)
+	arg0_89._active = false
+	arg0_89._parameterCom = nil
+	arg0_89.parameterValue = arg0_89.startValue
+	arg0_89.parameterTargetValue = 0
+	arg0_89.parameterSmooth = 0
+	arg0_89.mouseInputDown = Vector2(0, 0)
+	arg0_89.data = nil
+	arg0_89.live2dData = nil
+	arg0_89.commonData = nil
 end
 
 return var0_0

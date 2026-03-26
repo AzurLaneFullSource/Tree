@@ -40,7 +40,7 @@ function var0_0.UpdateStory(arg0_8)
 
 	for iter0_8, iter1_8 in pairs(arg0_8.storyNodesDict) do
 		local var4_8 = arg0_8.storyHolder:Find(tostring(iter1_8.id))
-		local var5_8 = iter1_8:IsActive(arg0_8.activity, arg0_8.ptActivity)
+		local var5_8 = iter1_8:IsActive(arg0_8.activity, arg0_8.sceneParent.ptActivity)
 		local var6_8 = iter1_8:IsReaded()
 
 		if not _G.isActive(var4_8) and var5_8 then

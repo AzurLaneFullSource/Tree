@@ -159,6 +159,8 @@ function var1_0.Reconnect(arg0_5, arg1_5)
 					if var0_7 and var0_7.type ~= World.TypeBase then
 						WorldConst.ReqWorldForServer()
 					end
+
+					NewEducateHelper.ReqDataForServer()
 				elseif arg0_5.needStartSend then
 					arg0_5.needStartSend = false
 

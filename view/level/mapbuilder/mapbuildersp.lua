@@ -1117,6 +1117,19 @@ function var0_0.UpdateStory(arg0_40)
 		local var24_40 = var20_40 == var4_0
 
 		setActive(var21_40:Find("circle/progress"), var24_40)
+
+		local var25_40 = var18_40:IsRecrew()
+
+		if var25_40 == nil then
+			setActive(var21_40:Find("recrew"), false)
+		else
+			setActive(var21_40:Find("recrew"), true)
+			setActive(var21_40:Find("recrew/recrewed"), var25_40)
+			setActive(var21_40:Find("recrew/not_recrew"), not var25_40)
+			setText(var21_40:Find("recrew/recrewed/label"), i18n("story_recrewed"))
+			setText(var21_40:Find("recrew/not_recrew/label"), i18n("story_not_recrew"))
+		end
+
 		onButton(arg0_40, var21_40, function()
 			if var20_40 == var2_0 then
 				return
@@ -1134,28 +1147,28 @@ function var0_0.UpdateStory(arg0_40)
 		end)
 	end
 
-	local var25_40 = arg0_40.storyReadCount
-	local var26_40 = arg0_40.storyReadMax
+	local var26_40 = arg0_40.storyReadCount
+	local var27_40 = arg0_40.storyReadMax
 
-	setText(arg0_40.progressText, var25_40 .. "/" .. var26_40)
+	setText(arg0_40.progressText, var26_40 .. "/" .. var27_40)
 	setActive(arg0_40.storyAward, tobool(arg0_40.storyTask))
 
 	if arg0_40.storyTask then
-		local var27_40 = arg0_40.storyTask:getConfig("award_display")
-		local var28_40 = Drop.New({
-			type = var27_40[1][1],
-			id = var27_40[1][2],
-			count = var27_40[1][3]
+		local var28_40 = arg0_40.storyTask:getConfig("award_display")
+		local var29_40 = Drop.New({
+			type = var28_40[1][1],
+			id = var28_40[1][2],
+			count = var28_40[1][3]
 		})
 
-		updateDrop(arg0_40.storyAward:GetChild(0), var28_40)
+		updateDrop(arg0_40.storyAward:GetChild(0), var29_40)
 
-		local var29_40 = arg0_40.storyTask:getTaskStatus()
+		local var30_40 = arg0_40.storyTask:getTaskStatus()
 
-		setActive(arg0_40.storyAward:Find("get"), var29_40 == 1)
-		setActive(arg0_40.storyAward:Find("got"), var29_40 == 2)
+		setActive(arg0_40.storyAward:Find("get"), var30_40 == 1)
+		setActive(arg0_40.storyAward:Find("got"), var30_40 == 2)
 		onButton(arg0_40, arg0_40.storyAward, function()
-			arg0_40:emit(BaseUI.ON_DROP, var28_40)
+			arg0_40:emit(BaseUI.ON_DROP, var29_40)
 		end)
 	end
 end

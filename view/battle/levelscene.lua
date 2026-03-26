@@ -1726,7 +1726,8 @@ local var6_0 = {
 	[var5_0.TYPESPSERIES] = "MapBuilderSPSeries",
 	[var5_0.TYPESPSERIESFULL] = "MapBuilderSPSeriesFull",
 	[var5_0.TYPEATELIERYUMIA] = "MapBuilderAtelierYumia",
-	[var5_0.TYPEEXSP] = "MapBuilderEXSP"
+	[var5_0.TYPEEXSP] = "MapBuilderEXSP",
+	[var5_0.TYPESPSERIESRECREW] = "MapBuilderSPSeriesRecrew"
 }
 
 function var0_0.SwitchMapBuilder(arg0_124, arg1_124)

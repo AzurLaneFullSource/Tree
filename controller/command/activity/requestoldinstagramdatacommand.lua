@@ -18,11 +18,14 @@ function var0_0.execute(arg0_1, arg1_1)
 	local var4_1 = math.ceil(#var2_1 / var1_0)
 
 	for iter0_1 = 1, var4_1 do
-		local var5_1 = (iter0_1 - 1) * var1_0 + 1
-		local var6_1 = math.min(iter0_1 * var1_0, #var2_1)
+		local var5_1 = {}
+
+		for iter1_1 = 1 + (iter0_1 - 1) * var1_0, iter0_1 * var1_0 do
+			table.insert(var5_1, var2_1[iter1_1])
+		end
 
 		table.insert(var3_1, function(arg0_2)
-			arg0_1:Send(var2_1[var5_1], var2_1[var6_1], arg0_2)
+			arg0_1:Send(var5_1, arg0_2)
 		end)
 	end
 
@@ -36,12 +39,11 @@ function var0_0.execute(arg0_1, arg1_1)
 	end)
 end
 
-function var0_0.Send(arg0_4, arg1_4, arg2_4, arg3_4)
+function var0_0.Send(arg0_4, arg1_4, arg2_4)
 	local var0_4 = getProxy(InstagramProxy)
 
 	pg.ConnectionMgr.GetInstance():Send(11705, {
-		index_begin = arg1_4,
-		index_end = arg2_4
+		id_list = arg1_4
 	}, 11706, function(arg0_5)
 		for iter0_5, iter1_5 in ipairs(arg0_5.ins_message_list) do
 			local var0_5 = Instagram.New(iter1_5)
@@ -49,7 +51,7 @@ function var0_0.Send(arg0_4, arg1_4, arg2_4, arg3_4)
 			var0_4:AddInstagram(var0_5)
 		end
 
-		arg3_4()
+		arg2_4()
 	end)
 end
 

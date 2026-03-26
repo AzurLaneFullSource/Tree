@@ -41,6 +41,8 @@ function var0_0.execute(arg0_1, arg1_1)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("friend_sendFriendRequest_success"))
 		elseif arg0_2.result == 1 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("friend_sendFriendRequest_success"))
+		elseif arg0_2.result == 9 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("add_friend_fail_tip9"))
 		else
 			pg.TipsMgr.GetInstance():ShowTips(errorTip("friend_sendFriendRequest", arg0_2.result))
 		end

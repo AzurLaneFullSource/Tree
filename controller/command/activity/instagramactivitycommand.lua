@@ -2,9 +2,6 @@ local var0_0 = class("InstagramActivityCommand", pm.SimpleCommand)
 
 function var0_0.execute(arg0_1, arg1_1)
 	local var0_1 = arg1_1:getBody()
-
-	print("cmd:", var0_1.cmd, "arg1:", var0_1.arg1, "arg2:", var0_1.arg2, "activity_id:", var0_1.activity_id)
-
 	local var1_1 = getProxy(InstagramProxy)
 
 	if ActivityConst.INSTAGRAM_OP_ACTIVE == var0_1.cmd then
@@ -36,7 +33,13 @@ function var0_0.execute(arg0_1, arg1_1)
 		}, 11702, function(arg0_3)
 			if arg0_3.result == 0 then
 				if ActivityConst.INSTAGRAM_OP_MARK_READ == var0_1.cmd then
-					local var0_3 = var1_1:GetMessageById(var0_1.arg1)
+					local var0_3
+
+					if pg.activity_ins_template[var0_1.arg1].type == InstagramConst.INSTAGRAM_TYPE.OFFICIAL_ACCOUNT then
+						var0_3 = var1_1:GetOfficialAccounts()[var0_1.arg1]
+					else
+						var0_3 = var1_1:GetMessageById(var0_1.arg1)
+					end
 
 					var0_3.isRead = true
 

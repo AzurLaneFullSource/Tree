@@ -3,7 +3,7 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg26",
 		name = "Busy Fashion Model",
-		unlock_desc = "Unlockable ",
+		unlock_desc = "Unlockable",
 		child_cg_basic_price = 2000,
 		group = 1,
 		lock_name = "Busy Fashion Model",
@@ -40,7 +40,7 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg27",
 		name = "Skilled Painter",
-		unlock_desc = "Unlockable ",
+		unlock_desc = "Unlockable",
 		child_cg_basic_price = 2000,
 		group = 2,
 		lock_name = "Skilled Painter",
@@ -82,7 +82,7 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg28",
 		name = "Popular Musician",
-		unlock_desc = "Unlockable ",
+		unlock_desc = "Unlockable",
 		child_cg_basic_price = 2000,
 		group = 3,
 		lock_name = "Popular Musician",
@@ -114,7 +114,7 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg29",
 		name = "Stellar Actor",
-		unlock_desc = "Unlockable ",
+		unlock_desc = "Unlockable",
 		child_cg_basic_price = 2000,
 		group = 4,
 		lock_name = "Stellar Actor",
@@ -156,7 +156,7 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg30",
 		name = "Talented Cook",
-		unlock_desc = "Unlockable ",
+		unlock_desc = "Unlockable",
 		child_cg_basic_price = 2000,
 		group = 5,
 		lock_name = "Talented Cook",
@@ -193,7 +193,7 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg31",
 		name = "Up-and-Coming Writer",
-		unlock_desc = "Unlockable ",
+		unlock_desc = "Unlockable",
 		child_cg_basic_price = 2000,
 		group = 6,
 		lock_name = "Up-and-Coming Writer",
@@ -230,7 +230,7 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg32",
 		name = "Amazing Athlete",
-		unlock_desc = "Unlockable ",
+		unlock_desc = "Unlockable",
 		child_cg_basic_price = 2000,
 		group = 7,
 		lock_name = "Amazing Athlete",
@@ -262,7 +262,7 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg33",
 		name = "Big Shot Businesswoman",
-		unlock_desc = "Unlockable ",
+		unlock_desc = "Unlockable",
 		child_cg_basic_price = 2000,
 		group = 8,
 		lock_name = "Big Shot Businesswoman",
@@ -299,7 +299,7 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg34",
 		name = "Lively Farm Owner",
-		unlock_desc = "Unlockable ",
+		unlock_desc = "Unlockable",
 		child_cg_basic_price = 2000,
 		group = 9,
 		lock_name = "Lively Farm Owner",
@@ -341,7 +341,7 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg35",
 		name = "Repetitive Everyday",
-		unlock_desc = "Unlockable ",
+		unlock_desc = "Unlockable",
 		child_cg_basic_price = 2000,
 		group = 10,
 		lock_name = "Repetitive Everyday",
@@ -379,7 +379,7 @@ pg.child_ending = {
 	{
 		pic = "bg_project_tb_cg36",
 		name = "Shut-In Life",
-		unlock_desc = "Unlockable ",
+		unlock_desc = "Unlockable",
 		child_cg_basic_price = 2000,
 		group = 11,
 		lock_name = "Shut-In Life",
