@@ -28434,7 +28434,7 @@ pg.base.furniture_data_template = {
 	},
 	[100075] = {
 		effect = "",
-		name = "神秘沙漏",
+		name = "Mysterious Hourglass ",
 		gain_by = "",
 		type = 7,
 		dir = 0,
@@ -28442,7 +28442,7 @@ pg.base.furniture_data_template = {
 		picture = "",
 		is_get_time_note = 0,
 		count = 1,
-		describe = "填充有神秘材料的神秘沙漏，倒过来试试看吧~",
+		describe = "A mysterious hourglass filled with mysterious contents – turn it over and see what happens. ",
 		is_3d_obj = 0,
 		spine_combine_action_replace = "",
 		themeId = 0,
