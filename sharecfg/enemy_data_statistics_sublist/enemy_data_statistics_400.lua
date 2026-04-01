@@ -1,5 +1,419 @@
 pg = pg or {}
 pg.enemy_data_statistics_400 = {
+	[295322] = {
+		cannon = 186,
+		name = "Regensburg META (Tier.7)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 46,
+		base = 91217,
+		antiaircraft = 216,
+		speed = 30,
+		reload_growth = 0,
+		dodge_growth = 0,
+		luck = 50,
+		battle_unit_type = 90,
+		hit = 65,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo_growth = 0,
+		torpedo = 193,
+		durability = 276000,
+		armor_growth = 0,
+		durability_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295322,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201721,
+				LV = 7
+			},
+			{
+				ID = 200280,
+				LV = 1
+			},
+			{
+				ID = 201735,
+				LV = 1
+			}
+		}
+	},
+	[295323] = {
+		cannon = 201,
+		name = "Regensburg META (Tier.8)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 50,
+		base = 91217,
+		antiaircraft = 233,
+		speed = 30,
+		reload_growth = 0,
+		dodge_growth = 0,
+		luck = 50,
+		battle_unit_type = 90,
+		hit = 70,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo_growth = 0,
+		torpedo = 208,
+		durability = 372000,
+		armor_growth = 0,
+		durability_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295323,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201721,
+				LV = 8
+			},
+			{
+				ID = 200280,
+				LV = 1
+			},
+			{
+				ID = 201735,
+				LV = 1
+			}
+		}
+	},
+	[295324] = {
+		cannon = 215,
+		name = "Regensburg META (Tier.9)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 53,
+		base = 91217,
+		antiaircraft = 250,
+		speed = 30,
+		reload_growth = 0,
+		dodge_growth = 0,
+		luck = 50,
+		battle_unit_type = 90,
+		hit = 75,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo_growth = 0,
+		torpedo = 222,
+		durability = 469000,
+		armor_growth = 0,
+		durability_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295324,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201721,
+				LV = 9
+			},
+			{
+				ID = 200280,
+				LV = 1
+			},
+			{
+				ID = 201735,
+				LV = 1
+			}
+		}
+	},
+	[295325] = {
+		cannon = 230,
+		name = "Regensburg META (Tier.10)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 57,
+		base = 91217,
+		antiaircraft = 266,
+		speed = 30,
+		reload_growth = 0,
+		dodge_growth = 0,
+		luck = 50,
+		battle_unit_type = 90,
+		hit = 80,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo_growth = 0,
+		torpedo = 237,
+		durability = 577000,
+		armor_growth = 0,
+		durability_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295325,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201721,
+				LV = 10
+			},
+			{
+				ID = 200280,
+				LV = 1
+			},
+			{
+				ID = 201735,
+				LV = 1
+			}
+		}
+	},
+	[295326] = {
+		cannon = 244,
+		name = "Regensburg META (Tier.11)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 60,
+		base = 91217,
+		antiaircraft = 283,
+		speed = 30,
+		reload_growth = 0,
+		dodge_growth = 0,
+		luck = 50,
+		battle_unit_type = 90,
+		hit = 85,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo_growth = 0,
+		torpedo = 252,
+		durability = 721000,
+		armor_growth = 0,
+		durability_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295326,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201721,
+				LV = 11
+			},
+			{
+				ID = 200280,
+				LV = 1
+			},
+			{
+				ID = 201735,
+				LV = 1
+			}
+		}
+	},
+	[295327] = {
+		cannon = 258,
+		name = "Regensburg META (Tier.12)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 64,
+		base = 91217,
+		antiaircraft = 300,
+		speed = 30,
+		reload_growth = 0,
+		dodge_growth = 0,
+		luck = 50,
+		battle_unit_type = 90,
+		hit = 90,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo_growth = 0,
+		torpedo = 267,
+		durability = 938000,
+		armor_growth = 0,
+		durability_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295327,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201721,
+				LV = 12
+			},
+			{
+				ID = 200280,
+				LV = 1
+			},
+			{
+				ID = 201735,
+				LV = 1
+			}
+		}
+	},
+	[295328] = {
+		cannon = 273,
+		name = "Regensburg META (Tier.13)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 67,
+		base = 91217,
+		antiaircraft = 316,
+		speed = 30,
+		reload_growth = 0,
+		dodge_growth = 0,
+		luck = 50,
+		battle_unit_type = 90,
+		hit = 95,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo_growth = 0,
+		torpedo = 282,
+		durability = 1202000,
+		armor_growth = 0,
+		durability_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295328,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201721,
+				LV = 13
+			},
+			{
+				ID = 200280,
+				LV = 1
+			},
+			{
+				ID = 201735,
+				LV = 1
+			}
+		}
+	},
+	[295329] = {
+		cannon = 287,
+		name = "Regensburg META (Tier.14)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 71,
+		base = 91217,
+		antiaircraft = 333,
+		speed = 30,
+		reload_growth = 0,
+		dodge_growth = 0,
+		luck = 50,
+		battle_unit_type = 90,
+		hit = 100,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo_growth = 0,
+		torpedo = 297,
+		durability = 1491000,
+		armor_growth = 0,
+		durability_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295329,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201721,
+				LV = 14
+			},
+			{
+				ID = 200280,
+				LV = 1
+			},
+			{
+				ID = 201735,
+				LV = 1
+			}
+		}
+	},
+	[295330] = {
+		cannon = 302,
+		name = "Regensburg META (Tier.15)",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 75,
+		base = 91217,
+		antiaircraft = 350,
+		speed = 30,
+		reload_growth = 0,
+		dodge_growth = 0,
+		luck = 50,
+		battle_unit_type = 90,
+		hit = 110,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo_growth = 0,
+		torpedo = 312,
+		durability = 1780000,
+		armor_growth = 0,
+		durability_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295330,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201721,
+				LV = 15
+			},
+			{
+				ID = 200280,
+				LV = 1
+			},
+			{
+				ID = 201735,
+				LV = 1
+			}
+		}
+	},
 	[295901] = {
 		cannon = 115,
 		reload = 150,

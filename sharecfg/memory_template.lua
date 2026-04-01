@@ -3987,6 +3987,9 @@ pg.memory_template = setmetatable({
 		5055,
 		5056,
 		5057,
+		5061,
+		5062,
+		5063,
 		10011,
 		10012,
 		10013,
@@ -64041,6 +64044,51 @@ pg.base.memory_template = {
 		is_open = 0,
 		unlock_pre = {
 			"MANYOUZHEZHAOMUJIHUA17"
+		}
+	},
+	[5061] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOBULIDAZUOZHAN1",
+		mask = "bg/bg_memory",
+		title = "The Omni-Cube",
+		condition = "Begin \"Operation: Shining Bulin\" event.",
+		number = 0,
+		id = 5061,
+		icon = "memory_shanyaobulidazuozhan",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOBULIDAZUOZHAN1"
+		}
+	},
+	[5062] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOBULIDAZUOZHAN2",
+		mask = "bg/bg_memory",
+		title = "The Justice League",
+		condition = "Unlock all clues.",
+		number = 0,
+		id = 5062,
+		icon = "memory_shanyaobulidazuozhan",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOBULIDAZUOZHAN2"
+		}
+	},
+	[5063] = {
+		type = 2,
+		subtitle = "",
+		story = "1360007",
+		mask = "bg/bg_memory",
+		title = "The Final Battle",
+		condition = "Challenge the special stage.",
+		number = 0,
+		id = 5063,
+		icon = "memory_shanyaobulidazuozhan",
+		is_open = 0,
+		unlock_pre = {
+			"1360007"
 		}
 	},
 	[10011] = {
