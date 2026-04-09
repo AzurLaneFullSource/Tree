@@ -627,4 +627,42 @@ function var0_0.BuildJuusOfficialAccountsClick(arg0_67)
 	}, {})
 end
 
+function var0_0.BuildPlayRoomInvate(arg0_68, arg1_68, arg2_68)
+	return var3_0(30076, {
+		arg1_68,
+		arg2_68
+	}, {
+		arg0_68
+	})
+end
+
+function var0_0.BuildPlayRoomMatch(arg0_69, arg1_69, arg2_69, arg3_69, arg4_69)
+	return var3_0(30074, {
+		arg1_69,
+		arg2_69,
+		arg3_69,
+		arg4_69
+	}, {
+		arg0_69
+	})
+end
+
+function var0_0.BuildCheaterTavernGame(arg0_70, arg1_70)
+	return var3_0(30072, {
+		arg0_70,
+		arg1_70
+	}, {})
+end
+
+function var0_0.BuildCheaterTavernResult(arg0_71, arg1_71, arg2_71, arg3_71, arg4_71, arg5_71)
+	return var3_0(30073, {
+		arg0_71,
+		arg1_71,
+		arg2_71,
+		arg3_71,
+		arg4_71,
+		arg5_71
+	}, {})
+end
+
 return var0_0

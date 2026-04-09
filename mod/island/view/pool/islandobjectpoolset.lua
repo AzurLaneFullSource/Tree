@@ -52,8 +52,11 @@ function var0_0.GetObject(arg0_5, arg1_5, arg2_5, arg3_5)
 		arg0_5:CheckOverFlow(var0_5)
 
 		local var0_7 = {}
+		local var1_7 = Clone(arg0_5.loadingCallbacks[var0_5.key])
 
-		for iter0_7, iter1_7 in ipairs(arg0_5.loadingCallbacks[var0_5.key]) do
+		arg0_5.loadingCallbacks[var0_5.key] = {}
+
+		for iter0_7, iter1_7 in ipairs(var1_7) do
 			table.insert(var0_7, function(arg0_8)
 				var0_5:DequeueAsyn(function(arg0_9)
 					iter1_7(arg0_9)
@@ -63,8 +66,6 @@ function var0_0.GetObject(arg0_5, arg1_5, arg2_5, arg3_5)
 		end
 
 		parallelAsync(var0_7)
-
-		arg0_5.loadingCallbacks[var0_5.key] = {}
 	end)
 end
 

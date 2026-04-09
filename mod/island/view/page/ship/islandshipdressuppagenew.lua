@@ -497,6 +497,15 @@ end
 function var0_0.OnInit(arg0_27)
 	onButton(arg0_27, arg0_27.saveBtn, function()
 		if not arg0_27:CheckDressIsDirty() then
+			if arg0_27.changeDressType then
+				pg.m02:sendNotification(GAME.ISLAND_CHEATER_CHANGE_VIEW_DRESSID, {
+					type = arg0_27.changeDressType,
+					game_type = PlayRoomTools.GetGameTypeID(),
+					ship_id = arg0_27.shipId
+				})
+				pg.m02:sendNotification(GAME.PLAY_ROOM_REFRESH_ROOM_INFO)
+			end
+
 			pg.TipsMgr.GetInstance():ShowTips(i18n("island_dress_save1"))
 
 			return
@@ -691,7 +700,8 @@ function var0_0.UpdateDressUpList(arg0_48)
 	end
 end
 
-function var0_0.OnShow(arg0_49, arg1_49, arg2_49, arg3_49, arg4_49)
+function var0_0.OnShow(arg0_49, arg1_49, arg2_49, arg3_49, arg4_49, arg5_49)
+	arg0_49.changeDressType = arg5_49
 	arg0_49.SmoothFunc = arg4_49
 	arg0_49.isFirstDressUp = arg2_49
 
@@ -722,6 +732,16 @@ function var0_0.OnShow(arg0_49, arg1_49, arg2_49, arg3_49, arg4_49)
 	else
 		setActive(arg0_49.toggles[4], true)
 		triggerToggle(arg0_49.toggles[4], true)
+	end
+
+	if arg0_49.changeDressType then
+		for iter0_49, iter1_49 in ipairs(pg.gameset.bar_not_display_dress_type.description) do
+			for iter2_49, iter3_49 in pairs(var1_0) do
+				if iter3_49 == iter1_49 then
+					setActive(arg0_49.toggles[iter2_49], false)
+				end
+			end
+		end
 	end
 
 	setActive(arg0_49.toggles[1], arg1_49 == 0)
@@ -991,6 +1011,14 @@ function var0_0.SaveDressUpData(arg0_56, arg1_56)
 				skin_id = arg0_56.curSkinId,
 				color_id = arg0_56.curskinColorId
 			})
+
+			if arg0_56.changeDressType then
+				pg.m02:sendNotification(GAME.ISLAND_CHEATER_CHANGE_VIEW_DRESSID, {
+					type = arg0_56.changeDressType,
+					game_type = PlayRoomTools.GetGameTypeID(),
+					ship_id = arg0_56.shipId
+				})
+			end
 		end
 
 		if #var4_56 == 0 then

@@ -16,14 +16,15 @@ function var0_0.OnHide(arg0_4)
 	arg0_4:RemoveSubLayers(arg0_4:GetContext())
 end
 
-function var0_0.AddSubLayers(arg0_5, arg1_5)
+function var0_0.AddSubLayers(arg0_5, arg1_5, arg2_5)
 	local var0_5 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(IslandMediator)
 
 	arg1_5.data = {
 		container = arg0_5._tf,
 		onClose = function()
 			arg0_5:Hide()
-		end
+		end,
+		params = arg2_5
 	}
 
 	pg.m02:sendNotification(GAME.LOAD_LAYERS, {

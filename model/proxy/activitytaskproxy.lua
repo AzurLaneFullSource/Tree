@@ -86,21 +86,13 @@ function var0_0.updateActList(arg0_5, arg1_5, arg2_5)
 	arg0_5:checkAutoSubmit()
 end
 
-function var0_0.addActList(arg0_6, arg1_6, arg2_6)
-	for iter0_6, iter1_6 in ipairs(arg2_6) do
-		for iter2_6 = 1, #arg0_6.actTasks do
-			if arg0_6.actTasks[iter2_6].actId == arg1_6 then
-				local var0_6 = arg0_6.actTasks[iter2_6].tasks
-
-				for iter3_6 = #var0_6, 1, -1 do
-					if var0_6[iter3_6].id == iter1_6.id then
-						table.remove(var0_6, iter3_6)
-					end
+function var0_0.updateProgressBySubType(arg0_6, arg1_6, arg2_6, arg3_6)
+	for iter0_6 = 1, #arg0_6.actTasks do
+		if arg0_6.actTasks[iter0_6].actId == arg1_6 then
+			for iter1_6, iter2_6 in ipairs(arg0_6.actTasks[iter0_6].tasks) do
+				if iter2_6:getConfig("sub_type") == arg2_6 then
+					iter2_6:updateProgress(arg3_6)
 				end
-
-				local var1_6 = arg0_6:createTask(arg1_6, iter1_6)
-
-				table.insert(var0_6, var1_6)
 			end
 		end
 	end
@@ -108,50 +100,72 @@ function var0_0.addActList(arg0_6, arg1_6, arg2_6)
 	arg0_6:checkAutoSubmit()
 end
 
-function var0_0.checkAutoSubmit(arg0_7)
-	if not arg0_7.actTasks or #arg0_7.actTasks == 0 then
+function var0_0.addActList(arg0_7, arg1_7, arg2_7)
+	for iter0_7, iter1_7 in ipairs(arg2_7) do
+		for iter2_7 = 1, #arg0_7.actTasks do
+			if arg0_7.actTasks[iter2_7].actId == arg1_7 then
+				local var0_7 = arg0_7.actTasks[iter2_7].tasks
+
+				for iter3_7 = #var0_7, 1, -1 do
+					if var0_7[iter3_7].id == iter1_7.id then
+						table.remove(var0_7, iter3_7)
+					end
+				end
+
+				local var1_7 = arg0_7:createTask(arg1_7, iter1_7)
+
+				table.insert(var0_7, var1_7)
+			end
+		end
+	end
+
+	arg0_7:checkAutoSubmit()
+end
+
+function var0_0.checkAutoSubmit(arg0_8)
+	if not arg0_8.actTasks or #arg0_8.actTasks == 0 then
 		return
 	end
 
-	for iter0_7 = 1, #arg0_7.actTasks do
-		local var0_7 = arg0_7.actTasks[iter0_7].actId
-		local var1_7 = arg0_7.actTasks[iter0_7].tasks
-		local var2_7 = {}
+	for iter0_8 = 1, #arg0_8.actTasks do
+		local var0_8 = arg0_8.actTasks[iter0_8].actId
+		local var1_8 = arg0_8.actTasks[iter0_8].tasks
+		local var2_8 = {}
 
-		for iter1_7, iter2_7 in ipairs(var1_7) do
-			if iter2_7.autoCommit and iter2_7:isFinish() then
-				if not table.contains(arg0_7.autoSubmitTasks, iter2_7.id) then
-					table.insert(var2_7, iter2_7.id)
-					table.insert(arg0_7.autoSubmitTasks, iter2_7.id)
+		for iter1_8, iter2_8 in ipairs(var1_8) do
+			if iter2_8.autoCommit and iter2_8:isFinish() then
+				if not table.contains(arg0_8.autoSubmitTasks, iter2_8.id) then
+					table.insert(var2_8, iter2_8.id)
+					table.insert(arg0_8.autoSubmitTasks, iter2_8.id)
 				else
-					warning("task_id" .. iter2_7.id .. "已经存在于提交列表中，无需重复提交")
+					warning("task_id" .. iter2_8.id .. "已经存在于提交列表中，无需重复提交")
 				end
 			end
 		end
 
-		if #var2_7 > 0 then
-			arg0_7:sendNotification(GAME.SUBMIT_ACTIVITY_TASK, {
-				act_id = var0_7,
-				task_ids = var2_7
+		if #var2_8 > 0 then
+			arg0_8:sendNotification(GAME.SUBMIT_ACTIVITY_TASK, {
+				act_id = var0_8,
+				task_ids = var2_8
 			})
 		end
 	end
 end
 
-function var0_0.removeActList(arg0_8, arg1_8, arg2_8)
-	for iter0_8, iter1_8 in ipairs(arg2_8) do
-		for iter2_8 = 1, #arg0_8.actTasks do
-			if arg0_8.actTasks[iter2_8].actId == arg1_8 then
-				local var0_8 = arg0_8.actTasks[iter2_8].tasks
+function var0_0.removeActList(arg0_9, arg1_9, arg2_9)
+	for iter0_9, iter1_9 in ipairs(arg2_9) do
+		for iter2_9 = 1, #arg0_9.actTasks do
+			if arg0_9.actTasks[iter2_9].actId == arg1_9 then
+				local var0_9 = arg0_9.actTasks[iter2_9].tasks
 
-				for iter3_8 = #var0_8, 1, -1 do
-					if var0_8[iter3_8].id == iter1_8.id then
-						if var0_8[iter3_8]:isCircle() then
-							var0_8[iter3_8]:updateProgress(0)
+				for iter3_9 = #var0_9, 1, -1 do
+					if var0_9[iter3_9].id == iter1_9.id then
+						if var0_9[iter3_9]:isCircle() then
+							var0_9[iter3_9]:updateProgress(0)
 						else
-							local var1_8 = table.remove(var0_8, iter3_8)
+							local var1_9 = table.remove(var0_9, iter3_9)
 
-							arg0_8:finishActTask(arg1_8, var1_8.id)
+							arg0_9:finishActTask(arg1_9, var1_9.id)
 						end
 					end
 				end
@@ -160,119 +174,119 @@ function var0_0.removeActList(arg0_8, arg1_8, arg2_8)
 	end
 end
 
-function var0_0.getTaskById(arg0_9, arg1_9)
-	for iter0_9, iter1_9 in ipairs(arg0_9.actTasks) do
-		if iter1_9.actId == arg1_9 then
-			return Clone(iter1_9.tasks)
-		end
-	end
-
-	return {}
-end
-
-function var0_0.getFinishTaskById(arg0_10, arg1_10)
+function var0_0.getTaskById(arg0_10, arg1_10)
 	for iter0_10, iter1_10 in ipairs(arg0_10.actTasks) do
 		if iter1_10.actId == arg1_10 then
-			local var0_10 = Clone(iter1_10.finish_tasks)
-
-			_.each(var0_10, function(arg0_11)
-				arg0_11:setOver()
-			end)
-
-			return var0_10
+			return Clone(iter1_10.tasks)
 		end
 	end
 
 	return {}
 end
 
-function var0_0.getFinishTasksByActId(arg0_12, arg1_12)
-	local var0_12 = getProxy(ActivityProxy):getActivityById(arg1_12)
+function var0_0.getFinishTaskById(arg0_11, arg1_11)
+	for iter0_11, iter1_11 in ipairs(arg0_11.actTasks) do
+		if iter1_11.actId == arg1_11 then
+			local var0_11 = Clone(iter1_11.finish_tasks)
 
-	if not var0_12 then
+			_.each(var0_11, function(arg0_12)
+				arg0_12:setOver()
+			end)
+
+			return var0_11
+		end
+	end
+
+	return {}
+end
+
+function var0_0.getFinishTasksByActId(arg0_13, arg1_13)
+	local var0_13 = getProxy(ActivityProxy):getActivityById(arg1_13)
+
+	if not var0_13 then
 		return {}
 	end
 
-	local var1_12 = var0_12:GetFinishedTaskIds()
+	local var1_13 = var0_13:GetFinishedTaskIds()
 
-	return _.map(var1_12, function(arg0_13)
-		local var0_13 = ActivityTask.New(arg1_12, {
-			id = arg0_13
+	return _.map(var1_13, function(arg0_14)
+		local var0_14 = ActivityTask.New(arg1_13, {
+			id = arg0_14
 		})
 
-		var0_13:setOver()
+		var0_14:setOver()
 
-		return var0_13
+		return var0_14
 	end)
 end
 
-function var0_0.checkTasksFinish(arg0_14, arg1_14, arg2_14)
-	local var0_14 = {}
+function var0_0.checkTasksFinish(arg0_15, arg1_15, arg2_15)
+	local var0_15 = {}
 
-	for iter0_14, iter1_14 in ipairs(arg0_14:getFinishTasksByActId(arg1_14)) do
-		var0_14[iter1_14.id] = true
+	for iter0_15, iter1_15 in ipairs(arg0_15:getFinishTasksByActId(arg1_15)) do
+		var0_15[iter1_15.id] = true
 	end
 
-	return underscore.all(arg2_14, function(arg0_15)
-		return var0_14[arg0_15.id]
+	return underscore.all(arg2_15, function(arg0_16)
+		return var0_15[arg0_16.id]
 	end)
 end
 
-function var0_0.getTaskVOsByActId(arg0_16, arg1_16)
-	local var0_16 = arg0_16:getTaskById(arg1_16)
+function var0_0.getTaskVOsByActId(arg0_17, arg1_17)
+	local var0_17 = arg0_17:getTaskById(arg1_17)
 
-	table.insertto(var0_16, arg0_16:getFinishTasksByActId(arg1_16))
+	table.insertto(var0_17, arg0_17:getFinishTasksByActId(arg1_17))
 
-	return var0_16
+	return var0_17
 end
 
-function var0_0.getActTaskTip(arg0_17, arg1_17)
-	local var0_17 = {}
+function var0_0.getActTaskTip(arg0_18, arg1_18)
+	local var0_18 = {}
 
-	for iter0_17, iter1_17 in ipairs(arg0_17.actTasks) do
-		if iter1_17.actId == arg1_17 then
-			var0_17 = iter1_17.tasks
+	for iter0_18, iter1_18 in ipairs(arg0_18.actTasks) do
+		if iter1_18.actId == arg1_18 then
+			var0_18 = iter1_18.tasks
 		end
 	end
 
-	local var1_17 = 0
+	local var1_18 = 0
 
-	for iter2_17, iter3_17 in ipairs(var0_17) do
-		if not iter3_17:isCircle() and not iter3_17:isOver() and iter3_17:isFinish() and not iter3_17.autoCommit then
-			var1_17 = var1_17 + 1
+	for iter2_18, iter3_18 in ipairs(var0_18) do
+		if not iter3_18:isCircle() and not iter3_18:isOver() and iter3_18:isFinish() and not iter3_18.autoCommit then
+			var1_18 = var1_18 + 1
 		end
 	end
 
-	return var1_17 > 0
+	return var1_18 > 0
 end
 
-function var0_0.getTaskVo(arg0_18, arg1_18, arg2_18)
-	local var0_18 = arg0_18:getTaskById(arg1_18)
+function var0_0.getTaskVo(arg0_19, arg1_19, arg2_19)
+	local var0_19 = arg0_19:getTaskById(arg1_19)
 
-	for iter0_18 = 1, #var0_18 do
-		if var0_18[iter0_18].id == arg2_18 then
-			return Clone(var0_18[iter0_18])
+	for iter0_19 = 1, #var0_19 do
+		if var0_19[iter0_19].id == arg2_19 then
+			return Clone(var0_19[iter0_19])
 		end
 	end
 
 	return nil
 end
 
-function var0_0.createTask(arg0_19, arg1_19, arg2_19)
-	return (ActivityTask.New(arg1_19, arg2_19))
+function var0_0.createTask(arg0_20, arg1_20, arg2_20)
+	return (ActivityTask.New(arg1_20, arg2_20))
 end
 
-function var0_0.getFinishTasks(arg0_20)
-	local var0_20 = getProxy(ActivityProxy):GetTaskActivities()
-	local var1_20 = {}
+function var0_0.getFinishTasks(arg0_21)
+	local var0_21 = getProxy(ActivityProxy):GetTaskActivities()
+	local var1_21 = {}
 
-	_.each(_.map(var0_20, function(arg0_21)
-		return arg0_20:getFinishTasksByActId(arg0_21.id)
-	end), function(arg0_22)
-		table.insertto(var1_20, arg0_22)
+	_.each(_.map(var0_21, function(arg0_22)
+		return arg0_21:getFinishTasksByActId(arg0_22.id)
+	end), function(arg0_23)
+		table.insertto(var1_21, arg0_23)
 	end)
 
-	return var1_20
+	return var1_21
 end
 
 return var0_0

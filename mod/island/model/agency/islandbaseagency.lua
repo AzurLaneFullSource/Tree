@@ -47,4 +47,12 @@ function var0_0.UpdatePerDay(arg0_10)
 	return
 end
 
+function var0_0.UpdatePerDay(arg0_11)
+	return
+end
+
+function var0_0.UpdatePerSecond(arg0_12)
+	return
+end
+
 return var0_0

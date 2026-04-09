@@ -289,6 +289,10 @@ function var0_0.execute(arg0_1, arg1_1)
 		{
 			LoveLetterProxy,
 			true
+		},
+		{
+			PlayRoomProxy,
+			true
 		}
 	})
 	pg.ConnectionMgr.GetInstance():setPacketIdx(1)

@@ -8,6 +8,7 @@ function var0_0.Execute(arg0_1, arg1_1)
 	arg0_1:RequestManualSignAct()
 	arg0_1:RequestRandomDailyTask()
 	arg0_1:RequestDALDailyTask()
+	arg0_1:RequestStoryAutoUnlock()
 	arg1_1()
 end
 
@@ -116,6 +117,45 @@ function var0_0.RequestDALDailyTask(arg0_10)
 	pg.m02:sendNotification(GAME.COLLABRATE_BOSS_RUSH_REQUEST_DATA, {
 		actId = var0_10.id
 	})
+end
+
+function var0_0.RequestStoryAutoUnlock(arg0_11)
+	local var0_11 = false
+	local var1_11 = {}
+
+	for iter0_11, iter1_11 in ipairs(pg.memory_group.all) do
+		local var2_11 = pg.memory_group[iter1_11]
+
+		if type(var2_11.auto_unlock) == "table" then
+			local var3_11 = getProxy(ActivityProxy):getActivityById(var2_11.link_event)
+			local var4_11 = pg.NewStoryMgr.GetInstance()
+
+			if not var3_11 or var3_11:isEnd() then
+				local var5_11 = var2_11.auto_unlock
+				local var6_11 = {}
+
+				for iter2_11, iter3_11 in ipairs(var5_11) do
+					local var7_11 = var4_11:StoryName2StoryId(pg.memory_template[iter3_11].story)
+
+					if var4_11:GetPlayedFlag(var7_11) then
+						table.insert(var6_11, var7_11)
+					else
+						table.insert(var1_11, var7_11)
+					end
+				end
+
+				if #var6_11 > 0 and #var1_11 > 0 then
+					var0_11 = true
+				end
+			end
+		end
+	end
+
+	if var0_11 then
+		pg.m02:sendNotification(GAME.STORY_UPDATE_LIST, {
+			storyIds = var1_11
+		})
+	end
 end
 
 return var0_0

@@ -99,6 +99,12 @@ function var0_0.LoadNavigationMesh(arg0_18, arg1_18, arg2_18)
 		return
 	end
 
+	if arg1_18 == IslandConst.CheaterTavernMapId then
+		arg2_18()
+
+		return
+	end
+
 	arg0_18.navMeshLoadingId = IslandAssetLoadDispatcher.Instance:Enqueue("island/Navmesh/" .. arg1_18, "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_19)
 		assert(arg0_19, "导航网格不能为空>>>>>" .. arg1_18)
 
@@ -118,9 +124,8 @@ function var0_0.UnLoad(arg0_21, arg1_21)
 		return
 	end
 
-	pg.UIMgr.GetInstance():LoadingOn()
 	SceneOpMgr.Inst:UnloadSceneAsync(var0_21, var1_21, function()
-		pg.UIMgr.GetInstance():LoadingOff()
+		return
 	end)
 
 	arg0_21.scenePath = nil

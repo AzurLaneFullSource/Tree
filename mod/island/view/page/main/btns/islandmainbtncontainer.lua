@@ -1,6 +1,7 @@
 local var0_0 = class("IslandMainBtnContainer")
 
 var0_0.SPECIAL_BTN = {
+	season = "IslandMainSeasonBtn",
 	technology = "IslandMainTechnologyBtn"
 }
 

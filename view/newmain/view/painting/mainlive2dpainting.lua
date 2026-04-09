@@ -126,7 +126,9 @@ function var0_0.CreateL2dDragBound(arg0_10, arg1_10)
 	end)
 	arg0_10._dragBoundsUI:InitUI(nil, function()
 		if arg0_10._dragBoundsUI and arg1_10 then
-			arg0_10._dragBoundsUI:SetData(arg1_10:GetDragBounds(), arg0_10.ship:getSkinId())
+			local var0_12 = arg1_10:GetDragBounds()
+
+			arg0_10._dragBoundsUI:SetData(var0_12, arg0_10.ship:getSkinId())
 			arg0_10._dragBoundsUI:SetParent(arg0_10.container)
 			arg0_10._dragBoundsUI:ActionChange(arg1_10:GetLive2DStateData())
 		end
@@ -366,6 +368,12 @@ function var0_0.UpdateBound(arg0_27)
 		arg0_27:CreateL2dDragBound(arg0_27.live2dChar)
 		arg0_27._dragBoundsUI:SetVisible(Live2dConst.l2d_bound_open)
 	elseif arg0_27._dragBoundsUI then
+		if arg0_27._dragBoundsUI:GetDragsCount() == 0 then
+			local var0_27 = arg0_27.live2dChar:GetDragBounds()
+
+			arg0_27._dragBoundsUI:SetData(var0_27, arg0_27.ship:getSkinId())
+		end
+
 		arg0_27._dragBoundsUI:SetVisible(Live2dConst.l2d_bound_open)
 	end
 end

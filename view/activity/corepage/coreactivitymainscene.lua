@@ -202,8 +202,8 @@ function var0_0.selectActivity(arg0_23, arg1_23)
 
 		local var0_28 = arg0_23.pageDic[arg0_23.activity.id]
 
-		var0_28:ActionInvoke("Flush", arg0_23.activity)
 		var0_28:ActionInvoke("ShowOrHide", true)
+		var0_28:ActionInvoke("Flush", arg0_23.activity)
 	end)
 end
 

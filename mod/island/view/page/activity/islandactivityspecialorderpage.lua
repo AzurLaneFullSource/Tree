@@ -81,6 +81,10 @@ function var0_0.OnFirstFlush(arg0_5)
 					end)
 				end
 			end, SFX_PANEL)
+
+			if arg1_6 == 1 then
+				triggerToggle(arg2_6, true)
+			end
 		end
 	end)
 	setText(arg0_5.rtTitle:Find("level/Text"), i18n("island_spoperation_level_2509_1"))

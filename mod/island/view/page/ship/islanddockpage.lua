@@ -84,7 +84,9 @@ function var0_0.OnFilter(arg0_14, arg1_14)
 	arg0_14:FlushShips()
 end
 
-function var0_0.Show(arg0_15)
+function var0_0.Show(arg0_15, arg1_15)
+	arg0_15.hideUnlockShip = arg1_15
+
 	var0_0.super.Show(arg0_15)
 	pg.UIMgr.GetInstance():OverlayPanel(arg0_15.frameTr, {
 		pbList = {
@@ -223,6 +225,16 @@ function var0_0.GetShips(arg0_29)
 
 	for iter2_29, iter3_29 in ipairs(var1_29) do
 		table.insert(var0_29, iter3_29.configId)
+	end
+
+	if arg0_29.hideUnlockShip then
+		for iter4_29 = #var0_29, 1, -1 do
+			local var5_29 = var0_29[iter4_29]
+
+			if var5_29 and getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipById(var5_29) == nil then
+				table.remove(var0_29, iter4_29)
+			end
+		end
 	end
 
 	return var0_29

@@ -22,6 +22,11 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.port = arg1_1.port
 	arg0_1.proxyHost = arg1_1.proxy_host
 	arg0_1.proxyPort = arg1_1.proxy_port
+	arg0_1.ids = {}
+
+	for iter0_1, iter1_1 in ipairs(arg1_1.ids) do
+		table.insert(arg0_1.ids, iter1_1)
+	end
 end
 
 function var0_0.getHost(arg0_2)

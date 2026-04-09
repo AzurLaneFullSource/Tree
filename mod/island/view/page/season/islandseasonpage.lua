@@ -84,10 +84,15 @@ function var0_0.OnLoaded(arg0_3)
 	var2_3(arg0_3.togglesTF:Find("shop"), i18n("island_season_shop"))
 	var2_3(arg0_3.togglesTF:Find("rank"), i18n("island_season_charts"))
 	var2_3(arg0_3.togglesTF:Find("review"), i18n("island_season_review"))
+
+	arg0_3.playRoomPop = PlayRoomPop.New(arg0_3.blurTF:Find("playRoomPop"), arg0_3)
+
+	arg0_3.playRoomPop:didEnter()
 end
 
 function var0_0.OnInit(arg0_9)
 	onButton(arg0_9, arg0_9.blurTF:Find("top/back"), function()
+		arg0_9:emit(IslandMediator.PLAY_ROOM_MATCH_STOP)
 		arg0_9:Hide()
 	end, SFX_PANEL)
 	onButton(arg0_9, arg0_9.blurTF:Find("top/help"), function()
@@ -111,8 +116,8 @@ function var0_0.AddListeners(arg0_14)
 	arg0_14:AddListener(ActivityProxy.ACTIVITY_UPDATED, arg0_14.FlushActivityPage)
 	arg0_14:AddListener(IslandSeasonAgency.ADD_PT, arg0_14.FlushPtPage)
 	arg0_14:AddListener(GAME.ISLAND_GET_SEASON_PT_AWARD_DONE, arg0_14.FlushPtPage)
-	arg0_14:AddListener(GAME.ISLAND_SUBMIT_TASK_DONE, arg0_14.FlushTaskPage)
-	arg0_14:AddListener(GAME.ISLAND_SUBMIT_TASK_ONE_STEP_DONE, arg0_14.FlushTaskPage)
+	arg0_14:AddListener(GAME.ISLAND_SUBMIT_TASK_DONE, arg0_14.OnSubmitTaskDone)
+	arg0_14:AddListener(GAME.ISLAND_SUBMIT_TASK_ONE_STEP_DONE, arg0_14.OnSubmitTaskDone)
 	arg0_14:AddListener(GAME.ISLAND_SHOP_OP_DONE, arg0_14.FlushShopPage)
 	arg0_14:AddListener(GAME.ISLAND_GET_SEASON_RANK_DONE, arg0_14.OnGetRankData)
 end
@@ -121,8 +126,8 @@ function var0_0.RemoveListeners(arg0_15)
 	arg0_15:RemoveListener(ActivityProxy.ACTIVITY_UPDATED, arg0_15.FlushActivityPage)
 	arg0_15:RemoveListener(IslandSeasonAgency.ADD_PT, arg0_15.FlushPtPage)
 	arg0_15:RemoveListener(GAME.ISLAND_GET_SEASON_PT_AWARD_DONE, arg0_15.FlushPtPage)
-	arg0_15:RemoveListener(GAME.ISLAND_SUBMIT_TASK_DONE, arg0_15.FlushTaskPage)
-	arg0_15:RemoveListener(GAME.ISLAND_SUBMIT_TASK_ONE_STEP_DONE, arg0_15.FlushTaskPage)
+	arg0_15:RemoveListener(GAME.ISLAND_SUBMIT_TASK_DONE, arg0_15.OnSubmitTaskDone)
+	arg0_15:RemoveListener(GAME.ISLAND_SUBMIT_TASK_ONE_STEP_DONE, arg0_15.OnSubmitTaskDone)
 	arg0_15:RemoveListener(GAME.ISLAND_SHOP_OP_DONE, arg0_15.FlushShopPage)
 	arg0_15:RemoveListener(GAME.ISLAND_GET_SEASON_RANK_DONE, arg0_15.OnGetRankData)
 end
@@ -138,6 +143,8 @@ function var0_0.OnShow(arg0_16, arg1_16)
 	else
 		triggerToggle(arg0_16.togglesTF:Find(var0_0.PAGE_ACTIVITY), true)
 	end
+
+	arg0_16.playRoomPop:Show(true)
 end
 
 local var1_0 = {
@@ -185,53 +192,65 @@ function var0_0.FlushPtPage(arg0_19)
 	arg0_19.pages[var0_0.PAGE_PT]:ExecuteAction("Flush")
 end
 
-function var0_0.FlushTaskPage(arg0_20)
-	arg0_20.pages[var0_0.PAGE_TASK]:ExecuteAction("Flush")
+function var0_0.OnSubmitTaskDone(arg0_20)
+	arg0_20:FlushTaskPage()
+	arg0_20.pages[var0_0.PAGE_ACTIVITY]:ExecuteAction("flushTabs")
 end
 
-function var0_0.FlushShopPage(arg0_21, arg1_21)
-	arg0_21.pages[var0_0.PAGE_SHOP]:ExecuteAction("Flush")
+function var0_0.FlushTaskPage(arg0_21)
+	arg0_21.pages[var0_0.PAGE_TASK]:ExecuteAction("Flush")
+end
 
-	if arg1_21.operation == IslandConst.SHOP_BUY_COMMODITY then
-		arg0_21:OpenPage(IslandShopBuySuccessLayer, arg1_21.awards)
+function var0_0.FlushShopPage(arg0_22, arg1_22)
+	arg0_22.pages[var0_0.PAGE_SHOP]:ExecuteAction("Flush")
+
+	if arg1_22.operation == IslandConst.SHOP_BUY_COMMODITY then
+		arg0_22:OpenPage(IslandShopBuySuccessLayer, arg1_22.awards)
 	end
 end
 
-function var0_0.OnGetRankData(arg0_22, arg1_22)
-	arg0_22.pages[var0_0.PAGE_RANK]:ExecuteAction("UpdateRankVOs", arg1_22.seasonId, arg1_22.list, arg1_22.playerInfo)
-	arg0_22.pages[var0_0.PAGE_RANK]:ExecuteAction("UpdataRankView")
-
-	if arg0_22.pages[var0_0.PAGE_REVIEW] then
-		arg0_22.pages[var0_0.PAGE_REVIEW]:ExecuteAction("UpdateRankVOs", arg1_22.seasonId, arg1_22.list, arg1_22.playerInfo)
-		arg0_22.pages[var0_0.PAGE_REVIEW]:ExecuteAction("UpdataIcon")
-	end
-end
-
-function var0_0.OnHide(arg0_23)
-	arg0_23:UnOverlayPanel(arg0_23.blurTF, arg0_23._tf)
-	arg0_23.pages[var0_0.PAGE_PT]:OnHide()
-	arg0_23.pages[var0_0.PAGE_ACTIVITY]:Destroy()
-	arg0_23.pages[var0_0.PAGE_ACTIVITY]:Reset()
+function var0_0.OnGetRankData(arg0_23, arg1_23)
+	arg0_23.pages[var0_0.PAGE_RANK]:ExecuteAction("UpdateRankVOs", arg1_23.seasonId, arg1_23.list, arg1_23.playerInfo)
+	arg0_23.pages[var0_0.PAGE_RANK]:ExecuteAction("UpdataRankView")
 
 	if arg0_23.pages[var0_0.PAGE_REVIEW] then
-		arg0_23.pages[var0_0.PAGE_REVIEW]:Hide()
+		arg0_23.pages[var0_0.PAGE_REVIEW]:ExecuteAction("UpdateRankVOs", arg1_23.seasonId, arg1_23.list, arg1_23.playerInfo)
+		arg0_23.pages[var0_0.PAGE_REVIEW]:ExecuteAction("UpdataIcon")
 	end
 end
 
-function var0_0.OnDisable(arg0_24)
-	arg0_24:OnHide()
+function var0_0.OnHide(arg0_24)
+	arg0_24.playRoomPop:Show(false)
+	arg0_24:UnOverlayPanel(arg0_24.blurTF, arg0_24._tf)
+	arg0_24.pages[var0_0.PAGE_PT]:OnHide()
+	arg0_24.pages[var0_0.PAGE_ACTIVITY]:OnHide()
+
+	if arg0_24.pages[var0_0.PAGE_REVIEW] then
+		arg0_24.pages[var0_0.PAGE_REVIEW]:Hide()
+	end
 end
 
-function var0_0.OnDestroy(arg0_25)
+function var0_0.OnDisable(arg0_25)
 	arg0_25:OnHide()
+end
 
-	for iter0_25, iter1_25 in pairs(arg0_25.pages) do
-		if iter1_25 then
-			iter1_25:Destroy()
+function var0_0.OnDestroy(arg0_26)
+	arg0_26:OnHide()
+	arg0_26.playRoomPop:willExit()
 
-			iter1_25 = nil
+	arg0_26.playRoomPop = nil
+
+	for iter0_26, iter1_26 in pairs(arg0_26.pages) do
+		if iter1_26 then
+			iter1_26:Destroy()
+
+			iter1_26 = nil
 		end
 	end
+end
+
+function var0_0.OnEnable(arg0_27)
+	arg0_27:OnShow()
 end
 
 return var0_0

@@ -391,6 +391,10 @@ function var0_0.SceneData2IslandUnits(arg0_22, arg1_22, arg2_22, arg3_22, arg4_2
 		end
 	end
 
+	if arg3_22 == IslandConst.CheaterTavernMapId then
+		return
+	end
+
 	for iter2_22, iter3_22 in pairs(arg2_22) do
 		if iter3_22:IsSelf() then
 			local var4_22 = var0_0.PlayerData2IslandUnit(iter3_22, arg3_22, arg6_22, arg4_22, arg5_22)
@@ -564,72 +568,107 @@ function var0_0.TakePhotoData2IslandUnit(arg0_27)
 	}))
 end
 
-function var0_0.GenDelayRecycleIslandUnit(arg0_28)
-	local var0_28 = pg.island_world_objects[arg0_28.id]
-	local var1_28 = {
+function var0_0.IslandCheaterTavernPlayerDataToUnit(arg0_28)
+	local var0_28 = CheaterTavernHelper.GetModelDataByViewData(arg0_28.user_view)
+	local var1_28 = 10110000 + arg0_28.seat
+	local var2_28 = pg.island_world_objects[var1_28]
+	local var3_28 = {
 		id = arg0_28.id,
-		unitId = arg0_28.unitId,
-		position = {
-			arg0_28.position.x,
-			arg0_28.position.y,
-			arg0_28.position.z
-		},
-		rotation = {
-			arg0_28.rotation.x,
-			arg0_28.rotation.y,
-			arg0_28.rotation.z
-		},
-		behaviourTree = arg0_28.behaviourTree,
-		recycleAssetType = arg0_28.recycleAssetType,
-		delayRecycleTime = arg0_28.delayRecycleTime
+		unitId = var0_28.unitId,
+		typ = IslandConst.UNIT_TYPE_CHEATERTAVERN_PLAYER
 	}
 
-	return var0_0.WorldObj2IslandDelayRecycleUnit(var0_28, var1_28)
-end
-
-function var0_0.WorldObj2IslandDelayRecycleUnit(arg0_29, arg1_29)
-	arg1_29 = arg1_29 or {}
-
-	return (IslandDelayRecycleUnitVO.New({
-		id = arg1_29.id or arg0_29.id,
-		modelId = arg1_29.unitId or arg0_29.unitId,
-		type = IslandConst.UNIT_TYPE_ITEM_DELAY_RECYCLE,
-		name = arg0_29.name .. "delay",
-		position = arg1_29.position or arg0_29.param.position,
-		rotation = arg1_29.rotation or arg0_29.param.rotation,
-		scale = arg0_29.param.scale or {
+	return (IslandUnitVO.New({
+		index = 0,
+		behaviourTree = "",
+		genType = 1,
+		id = var3_28.id,
+		modelId = var3_28.unitId,
+		type = var3_28.typ,
+		name = arg0_28.id,
+		position = var3_28.position or var2_28.param.position,
+		rotation = var3_28.rotation or var2_28.param.rotation,
+		scale = var2_28.param.scale or {
 			1,
 			1,
 			1
 		},
-		behaviourTree = arg1_29.behaviourTree or arg0_29.behaviourTree,
-		genType = arg0_29.gen_type,
-		showCondition = arg0_29.show_param or {},
-		hideCondition = arg0_29.hide_param or {},
-		index = arg1_29.index or 0,
-		delayRecycleTime = arg1_29.delayRecycleTime,
-		recycleAssetType = arg1_29.recycleAssetType
+		scale = {
+			1,
+			1,
+			1
+		},
+		showCondition = {},
+		hideCondition = {}
 	}))
 end
 
-function var0_0.GenWildGatherUnit(arg0_30)
-	local var0_30 = pg.island_world_objects[arg0_30.unitId]
+function var0_0.GenDelayRecycleIslandUnit(arg0_29)
+	local var0_29 = pg.island_world_objects[arg0_29.id]
+	local var1_29 = {
+		id = arg0_29.id,
+		unitId = arg0_29.unitId,
+		position = {
+			arg0_29.position.x,
+			arg0_29.position.y,
+			arg0_29.position.z
+		},
+		rotation = {
+			arg0_29.rotation.x,
+			arg0_29.rotation.y,
+			arg0_29.rotation.z
+		},
+		behaviourTree = arg0_29.behaviourTree,
+		recycleAssetType = arg0_29.recycleAssetType,
+		delayRecycleTime = arg0_29.delayRecycleTime
+	}
 
-	return (var0_0.WorldObj2IslandUnit(var0_30, {
-		index = arg0_30.islandId,
-		typ = arg0_30.gatherType
+	return var0_0.WorldObj2IslandDelayRecycleUnit(var0_29, var1_29)
+end
+
+function var0_0.WorldObj2IslandDelayRecycleUnit(arg0_30, arg1_30)
+	arg1_30 = arg1_30 or {}
+
+	return (IslandDelayRecycleUnitVO.New({
+		id = arg1_30.id or arg0_30.id,
+		modelId = arg1_30.unitId or arg0_30.unitId,
+		type = IslandConst.UNIT_TYPE_ITEM_DELAY_RECYCLE,
+		name = arg0_30.name .. "delay",
+		position = arg1_30.position or arg0_30.param.position,
+		rotation = arg1_30.rotation or arg0_30.param.rotation,
+		scale = arg0_30.param.scale or {
+			1,
+			1,
+			1
+		},
+		behaviourTree = arg1_30.behaviourTree or arg0_30.behaviourTree,
+		genType = arg0_30.gen_type,
+		showCondition = arg0_30.show_param or {},
+		hideCondition = arg0_30.hide_param or {},
+		index = arg1_30.index or 0,
+		delayRecycleTime = arg1_30.delayRecycleTime,
+		recycleAssetType = arg1_30.recycleAssetType
 	}))
 end
 
-function var0_0.GenInteractUnitByAgoraFurniture(arg0_31)
+function var0_0.GenWildGatherUnit(arg0_31)
+	local var0_31 = pg.island_world_objects[arg0_31.unitId]
+
+	return (var0_0.WorldObj2IslandUnit(var0_31, {
+		index = arg0_31.islandId,
+		typ = arg0_31.gatherType
+	}))
+end
+
+function var0_0.GenInteractUnitByAgoraFurniture(arg0_32)
 	return (IslandVirtualInteractUnitVO.New({
 		index = 0,
-		id = arg0_31.id,
-		modelId = arg0_31.pointId,
+		id = arg0_32.id,
+		modelId = arg0_32.pointId,
 		type = IslandConst.UNIT_TYPE_VIRTUAL_INTERACT,
-		name = "AgoraInteract" .. arg0_31.id,
-		position = arg0_31.position,
-		rotation = arg0_31.rotation,
+		name = "AgoraInteract" .. arg0_32.id,
+		position = arg0_32.position,
+		rotation = arg0_32.rotation,
 		scale = {
 			1,
 			1,

@@ -3990,6 +3990,13 @@ pg.memory_template = setmetatable({
 		5061,
 		5062,
 		5063,
+		5071,
+		5072,
+		5073,
+		5074,
+		5075,
+		5076,
+		5077,
 		10011,
 		10012,
 		10013,
@@ -64089,6 +64096,111 @@ pg.base.memory_template = {
 		is_open = 0,
 		unlock_pre = {
 			"1360007"
+		}
+	},
+	[5071] = {
+		type = 1,
+		subtitle = "",
+		story = "DEWENJUN1",
+		mask = "bg/bg_memory",
+		title = "A Sudden Invitation",
+		condition = "Begin \"The Facts and Fictions of Devonshire\" Chapter 1",
+		number = 0,
+		id = 5071,
+		icon = "memory_dewenjun",
+		is_open = 0,
+		unlock_pre = {
+			"DEWENJUN1"
+		}
+	},
+	[5072] = {
+		type = 1,
+		subtitle = "",
+		story = "DEWENJUN2",
+		mask = "bg/bg_memory",
+		title = "The Call of Icing",
+		condition = "Begin \"The Facts and Fictions of Devonshire\" Chapter 2",
+		number = 0,
+		id = 5072,
+		icon = "memory_dewenjun",
+		is_open = 0,
+		unlock_pre = {
+			"DEWENJUN2"
+		}
+	},
+	[5073] = {
+		type = 1,
+		subtitle = "",
+		story = "DEWENJUN3",
+		mask = "bg/bg_memory",
+		title = "Time-Limited Magic",
+		condition = "Begin \"The Facts and Fictions of Devonshire\" Chapter 3",
+		number = 0,
+		id = 5073,
+		icon = "memory_dewenjun",
+		is_open = 0,
+		unlock_pre = {
+			"DEWENJUN3"
+		}
+	},
+	[5074] = {
+		type = 1,
+		subtitle = "",
+		story = "DEWENJUN4",
+		mask = "bg/bg_memory",
+		title = "Mystery of the Tarot",
+		condition = "Begin \"The Facts and Fictions of Devonshire\" Chapter 4",
+		number = 0,
+		id = 5074,
+		icon = "memory_dewenjun",
+		is_open = 0,
+		unlock_pre = {
+			"DEWENJUN4"
+		}
+	},
+	[5075] = {
+		type = 1,
+		subtitle = "",
+		story = "DEWENJUN5",
+		mask = "bg/bg_memory",
+		title = "Where the Date Goes",
+		condition = "Begin \"The Facts and Fictions of Devonshire\" Chapter 5",
+		number = 0,
+		id = 5075,
+		icon = "memory_dewenjun",
+		is_open = 0,
+		unlock_pre = {
+			"DEWENJUN5"
+		}
+	},
+	[5076] = {
+		type = 1,
+		subtitle = "",
+		story = "DEWENJUN6",
+		mask = "bg/bg_memory",
+		title = "The True Devonshire",
+		condition = "Begin \"The Facts and Fictions of Devonshire\" Chapter 6",
+		number = 0,
+		id = 5076,
+		icon = "memory_dewenjun",
+		is_open = 0,
+		unlock_pre = {
+			"DEWENJUN6"
+		}
+	},
+	[5077] = {
+		type = 1,
+		subtitle = "",
+		story = "DEWENJUN7",
+		mask = "bg/bg_memory",
+		title = "The Real Punishment",
+		condition = "Begin \"The Facts and Fictions of Devonshire\" Chapter 7",
+		number = 0,
+		id = 5077,
+		icon = "memory_dewenjun",
+		is_open = 0,
+		unlock_pre = {
+			"DEWENJUN7"
 		}
 	},
 	[10011] = {

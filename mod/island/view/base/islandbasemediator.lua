@@ -123,7 +123,7 @@ function var0_0.register(arg0_1)
 	arg0_1:bind(var0_0.SWITCH_MAP, function(arg0_14, arg1_14, arg2_14)
 		local var0_14 = arg0_1.viewComponent:GetIsland()
 
-		if not var0_14:GetAblityAgency():IsUnlockMap(arg1_14) then
+		if not var0_14:GetAblityAgency():IsUnlockMap(arg1_14) and arg1_14 ~= IslandConst.CheaterTavernMapId then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("island_lock_map_tip"))
 
 			return
@@ -193,11 +193,16 @@ function var0_0.listNotificationInterests(arg0_18)
 		GAME.ON_APPLICATION_PAUSE,
 		GAME.ISLAND_ON_HOME,
 		GAME.ISLAND_ON_RECONNECT,
-		GAME.ISLAND_SELECT_GIFT_DONE,
 		GAME.ISLAND_CORE_STATE_CHANGED,
 		GAME.ISLAND_TRADE_DONE,
 		IslandTradegency.WEEK_NUM_UPDATE,
-		IslandTradegency.INVITE_LIST_UPDATE
+		IslandTradegency.INVITE_LIST_UPDATE,
+		GAME.ISLAND_SELECT_GIFT_DONE,
+		GAME.PLAY_ROOM_LOAD_MINIGAME_SCENE,
+		GAME.PLAY_ROOM_ALL_LOAD_OVER,
+		GAME.PLAY_ROOM_ENTER_LOAD,
+		PlayRoomProxy.CHAT_MSG_UPDATE,
+		GAME.OPEN_FRIEND_INFO_DONE
 	}
 	local var1_18 = arg0_18:_listNotificationInterests()
 
@@ -222,6 +227,8 @@ function var0_0.handleNotification(arg0_19, arg1_19)
 		end
 	elseif var0_19 == GAME.CHANGE_CHAT_ROOM_DONE then
 		arg0_19.viewComponent:emitCore(ISLAND_EVT.CHAT_ROOM_UPDATE)
+	elseif var0_19 == GAME.OPEN_FRIEND_INFO_DONE then
+		arg0_19.friendInfoPosition = var1_19
 	elseif var0_19 == GAME.FRIEND_SEARCH_DONE and var1_19.list[1] and var1_19.type == SearchFriendCommand.SEARCH_TYPE_RESUME then
 		arg0_19:addSubLayers(Context.New({
 			viewComponent = IslandFriendInfoLayer,
@@ -277,72 +284,125 @@ function var0_0.handleNotification(arg0_19, arg1_19)
 		end
 	elseif var0_19 == GAME.ISLAND_TRADE_DONE then
 		arg0_19.viewComponent:HandleAwardDisplay(var1_19.dropData, var1_19.callback)
+	elseif var0_19 == GAME.PLAY_ROOM_LOAD_MINIGAME_SCENE then
+		local var3_19 = var1_19.mapId
+		local var4_19 = arg0_19.viewComponent:GetIsland():GetMapId()
+
+		arg0_19.isReconected = var1_19.isReconecting
+
+		if var4_19 ~= var3_19 then
+			arg0_19:LoadMiniGameScene(var3_19)
+
+			arg0_19.needChangeMap = true
+		else
+			arg0_19.needChangeMap = false
+
+			Timer.New(function()
+				pg.m02:sendNotification(GAME.PLAY_ROOM_LOAD_SCENE_COMPLETE)
+			end, 2, 0):Start()
+		end
+	elseif var0_19 == GAME.PLAY_ROOM_ALL_LOAD_OVER then
+		arg0_19:ChangeMiniGameScene()
 	end
 
 	arg0_19:_handleNotification(arg1_19)
 	arg0_19.viewComponent:emit(var0_19, var1_19)
 end
 
-function var0_0.SetUp(arg0_22, arg1_22)
-	local var0_22 = arg0_22.viewComponent:GetIsland()
-	local var1_22 = var0_22.mapID
-	local var2_22 = var0_22.spawnPointId
-
-	_IslandCore = IslandCore.New(arg0_22.viewComponent:GetPoolMgr(), var0_22, arg1_22)
-
-	arg0_22.viewComponent:OnSetUpCore(var1_22, var2_22)
-end
-
-function var0_0.SwitchScene(arg0_23, arg1_23, arg2_23)
+function var0_0.LoadMiniGameScene(arg0_23, arg1_23)
 	local var0_23 = arg0_23.viewComponent:GetIsland()
 
 	var0_23:SetMapId(arg1_23)
 
-	if arg2_23 then
-		var0_23:SetSpawnPointId(arg2_23)
-	end
+	local var1_23 = _IslandCore:GetView():GetSubView(IslandOpView)
+	local var2_23 = var1_23 and var1_23.showBalance or 0
 
-	local var1_23 = arg0_23:UnloadScene()
+	arg0_23.miniGameCore = IslandMinigameCore.New(arg0_23.viewComponent:GetPoolMgr(), var0_23, var2_23)
 
-	arg0_23:SetUp(var1_23)
+	arg0_23.miniGameCore:SetIslandViewCoponent(arg0_23.viewComponent)
+	arg0_23.miniGameCore:SetIsReconected(arg0_23.isReconected)
 end
 
-function var0_0.UnloadScene(arg0_24, arg1_24)
-	arg0_24.viewComponent:OnUnloadScene()
+function var0_0.ChangeMiniGameScene(arg0_24)
+	if arg0_24.needChangeMap then
+		arg0_24:UnloadScene()
+
+		_IslandCore = arg0_24.miniGameCore
+	end
+
+	_IslandCore:OnChangeMiniGameScene(arg0_24.needChangeMap, arg0_24.isReConnected)
+end
+
+function var0_0.SetUp(arg0_25, arg1_25)
+	local var0_25 = arg0_25.viewComponent:GetIsland()
+	local var1_25 = var0_25.mapID
+	local var2_25 = var0_25.spawnPointId
+
+	_IslandCore = IslandCore.New(arg0_25.viewComponent:GetPoolMgr(), var0_25, arg1_25)
+
+	arg0_25.viewComponent:OnSetUpCore(var1_25, var2_25)
+end
+
+function var0_0.SwitchScene(arg0_26, arg1_26, arg2_26)
+	local var0_26 = arg0_26.viewComponent:GetIsland()
+
+	var0_26:SetMapId(arg1_26)
+
+	if arg2_26 then
+		var0_26:SetSpawnPointId(arg2_26)
+	end
+
+	local var1_26 = arg0_26:UnloadScene()
+
+	arg0_26:SetUp(var1_26)
+end
+
+function var0_0.UnloadScene(arg0_27, arg1_27)
+	arg0_27.viewComponent:OnUnloadScene()
 
 	if _IslandCore then
-		local var0_24 = _IslandCore:GetView():GetSubView(IslandOpView)
-		local var1_24 = var0_24 and var0_24.showBalance or 1
+		if isa(_IslandCore, IslandMinigameCore) then
+			local var0_27 = _IslandCore.showBalance
 
-		_IslandCore:Dispose(arg1_24)
+			_IslandCore:Dispose(arg1_27)
 
-		_IslandCore = nil
+			_IslandCore = nil
 
-		return var1_24
+			return var0_27
+		else
+			local var1_27 = _IslandCore:GetView():GetSubView(IslandOpView)
+			local var2_27 = var1_27 and var1_27.showBalance or 1
+
+			_IslandCore:Dispose(arg1_27)
+
+			_IslandCore = nil
+
+			return var2_27
+		end
 	end
 
 	return 1
 end
 
-function var0_0.remove(arg0_25)
-	arg0_25:UnloadScene(true)
-	arg0_25:_remove()
+function var0_0.remove(arg0_28)
+	arg0_28:UnloadScene(true)
+	arg0_28:_remove()
 	IslandHelper.RunGC(true)
 end
 
-function var0_0._register(arg0_26)
+function var0_0._register(arg0_29)
 	return
 end
 
-function var0_0._listNotificationInterests(arg0_27)
+function var0_0._listNotificationInterests(arg0_30)
 	return {}
 end
 
-function var0_0._handleNotification(arg0_28, arg1_28)
+function var0_0._handleNotification(arg0_31, arg1_31)
 	return
 end
 
-function var0_0._remove(arg0_29)
+function var0_0._remove(arg0_32)
 	return
 end
 

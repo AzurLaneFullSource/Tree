@@ -118,147 +118,163 @@ function var0_0.setActivities(arg0_10, arg1_10)
 end
 
 function var0_0.updateActivity(arg0_13, arg1_13)
-	if arg1_13:isIslandShow() and not arg1_13:isEnd() then
-		arg0_13.activities[arg0_13:getActivityIndex(arg1_13.id) or #arg0_13.activities + 1] = arg1_13
+	local var0_13 = ActivityConst.IslandPageIdLinks[arg1_13.id]
 
-		table.sort(arg0_13.activities, CompareFuncs({
-			function(arg0_14)
-				return -arg0_14:getIslandConfig("is_show")
-			end,
+	if var0_13 then
+		for iter0_13, iter1_13 in ipairs(var0_13) do
+			arg0_13:_updateActivity(getProxy(ActivityProxy):getActivityById(iter1_13))
+		end
+	else
+		arg0_13:_updateActivity(arg1_13)
+	end
+end
+
+function var0_0._updateActivity(arg0_14, arg1_14)
+	if arg1_14:isIslandShow() and not arg1_14:isEnd() then
+		arg0_14.activities[arg0_14:getActivityIndex(arg1_14.id) or #arg0_14.activities + 1] = arg1_14
+
+		table.sort(arg0_14.activities, CompareFuncs({
 			function(arg0_15)
-				return -arg0_15.id
+				return -arg0_15:getIslandConfig("is_show")
+			end,
+			function(arg0_16)
+				return -arg0_16.id
 			end
 		}))
 
-		if not arg0_13.pageDic[arg1_13.id] then
-			arg0_13:instanceActivityPage(arg1_13)
+		if not arg0_14.pageDic[arg1_14.id] then
+			arg0_14:instanceActivityPage(arg1_14)
 		end
 
-		arg0_13:flushTabs()
+		arg0_14:flushTabs()
 
-		if arg0_13:isShowing() and arg0_13.activity and arg0_13.activity.id == arg1_13.id then
-			arg0_13.activity = arg1_13
+		if arg0_14:isShowing() and arg0_14.activity and arg0_14.activity.id == arg1_14.id then
+			arg0_14.activity = arg1_14
 
-			arg0_13.pageDic[arg1_13.id]:ActionInvoke("Flush", arg1_13)
-		end
-	end
-end
-
-function var0_0.removeActivity(arg0_16, arg1_16)
-	local var0_16 = arg0_16:getActivityIndex(arg1_16)
-
-	if var0_16 then
-		table.remove(arg0_16.activities, var0_16)
-		arg0_16.pageDic[arg1_16]:Destroy()
-
-		arg0_16.pageDic[arg1_16] = nil
-
-		arg0_16:flushTabs()
-
-		if arg0_16.activity and arg0_16.activity.id == arg1_16 then
-			arg0_16.activity = nil
-
-			arg0_16:verifyTabs()
+			arg0_14.pageDic[arg1_14.id]:ActionInvoke("Flush", arg1_14)
 		end
 	end
 end
 
-function var0_0.getActClass(arg0_17, arg1_17)
-	return import("Mod.Island.View.page.activity." .. arg1_17)
+function var0_0.removeActivity(arg0_17, arg1_17)
+	local var0_17 = arg0_17:getActivityIndex(arg1_17)
+
+	if var0_17 then
+		table.remove(arg0_17.activities, var0_17)
+		arg0_17.pageDic[arg1_17]:Destroy()
+
+		arg0_17.pageDic[arg1_17] = nil
+
+		arg0_17:flushTabs()
+
+		if arg0_17.activity and arg0_17.activity.id == arg1_17 then
+			arg0_17.activity = nil
+
+			arg0_17:verifyTabs()
+		end
+	end
 end
 
-function var0_0.instanceActivityPage(arg0_18, arg1_18)
-	local var0_18 = arg1_18:getIslandConfig("page_info")
+function var0_0.getActClass(arg0_18, arg1_18)
+	return import("Mod.Island.View.page.activity." .. arg1_18)
+end
 
-	if var0_18.class_name and not arg0_18.pageDic[arg1_18.id] and not arg1_18:isEnd() then
-		local var1_18 = arg0_18:getActClass(var0_18.class_name).New(arg0_18.rtPages, arg0_18.event, arg0_18.contextData)
+function var0_0.instanceActivityPage(arg0_19, arg1_19)
+	local var0_19 = arg1_19:getIslandConfig("page_info")
 
-		if var1_18:UseSecondPage(arg1_18) then
-			var1_18:SetUIName(var0_18.ui_name2)
+	if var0_19.class_name and not arg0_19.pageDic[arg1_19.id] and not arg1_19:isEnd() then
+		local var1_19 = arg0_19:getActClass(var0_19.class_name).New(arg0_19.rtPages, arg0_19.event, arg0_19.contextData)
+
+		if var1_19:UseSecondPage(arg1_19) then
+			var1_19:SetUIName(var0_19.ui_name2)
 		else
-			var1_18:SetUIName(var0_18.ui_name)
+			var1_19:SetUIName(var0_19.ui_name)
 		end
 
-		var1_18:SetShareData(arg0_18.shareData)
+		var1_19:SetShareData(arg0_19.shareData)
 
-		arg0_18.pageDic[arg1_18.id] = var1_18
+		arg0_19.pageDic[arg1_19.id] = var1_19
 	end
 end
 
-function var0_0.flushTabs(arg0_19)
-	setActive(arg0_19.rtPagesEmpty, #arg0_19.activities == 0)
-	arg0_19.tabsList:align(math.max(#arg0_19.activities, 1))
+function var0_0.flushTabs(arg0_20)
+	setActive(arg0_20.rtPagesEmpty, #arg0_20.activities == 0)
+	arg0_20.tabsList:align(math.max(#arg0_20.activities, 1))
 end
 
-function var0_0.selectActivity(arg0_20, arg1_20)
-	if arg0_20.nextActivity == arg1_20 or not arg0_20.nextActivity and arg0_20.activity and arg1_20.id == arg0_20.activity.id then
+function var0_0.selectActivity(arg0_21, arg1_21)
+	if arg0_21.nextActivity == arg1_21 or not arg0_21.nextActivity and arg0_21.activity and arg1_21.id == arg0_21.activity.id then
 		return
 	end
 
-	local var0_20 = {}
+	local var0_21 = {}
 
-	if arg0_20.activity and not arg0_20.nextActivity then
-		arg0_20.switchCount = arg0_20.switchCount + 1
+	if arg0_21.activity and not arg0_21.nextActivity then
+		arg0_21.switchCount = arg0_21.switchCount + 1
 
-		table.insert(var0_20, function(arg0_21)
-			arg0_20.pageDic[arg0_20.activity.id]:ActionInvoke("SwitchOut", function()
-				arg0_20.switchCount = arg0_20.switchCount - 1
+		table.insert(var0_21, function(arg0_22)
+			arg0_21.pageDic[arg0_21.activity.id]:ActionInvoke("SwitchOut", function()
+				arg0_21.switchCount = arg0_21.switchCount - 1
 
-				arg0_21()
+				arg0_22()
 			end)
 		end)
 	end
 
-	if not arg0_20.activity or arg0_20.activity.id ~= arg1_20.id then
-		local var1_20 = arg0_20.pageDic[arg1_20.id]
+	if not arg0_21.activity or arg0_21.activity.id ~= arg1_21.id then
+		local var1_21 = arg0_21.pageDic[arg1_21.id]
 
-		assert(var1_20, "找不到id:" .. arg1_20.id .. "的活动页，请检查")
+		assert(var1_21, "找不到id:" .. arg1_21.id .. "的活动页，请检查")
 
-		arg0_20.switchCount = arg0_20.switchCount + 1
+		arg0_21.switchCount = arg0_21.switchCount + 1
 
-		table.insert(var0_20, function(arg0_23)
-			var1_20:Load()
-			var1_20:ActionInvoke("ShowOrHide", false)
-			var1_20:CallbackInvoke(function()
-				arg0_20.switchCount = arg0_20.switchCount - 1
+		table.insert(var0_21, function(arg0_24)
+			var1_21:Load()
+			var1_21:ActionInvoke("ShowOrHide", false)
+			var1_21:CallbackInvoke(function()
+				arg0_21.switchCount = arg0_21.switchCount - 1
 
-				arg0_23()
+				arg0_24()
 			end)
 		end)
 	end
 
-	arg0_20.nextActivity = arg1_20
+	arg0_21.nextActivity = arg1_21
 
-	parallelAsync(var0_20, function()
-		if arg0_20.switchCount > 0 then
+	parallelAsync(var0_21, function()
+		if arg0_21.switchCount > 0 then
 			return
 		end
 
-		if arg0_20.activity then
-			arg0_20.pageDic[arg0_20.activity.id]:ActionInvoke("ShowOrHide", false)
+		if arg0_21.activity then
+			arg0_21.pageDic[arg0_21.activity.id]:ActionInvoke("ShowOrHide", false)
 		end
 
-		arg0_20.activity = arg0_20.nextActivity
-		arg0_20.contextData.id = arg0_20.nextActivity.id
-		arg0_20.nextActivity = nil
+		arg0_21.activity = arg0_21.nextActivity
+		arg0_21.contextData.id = arg0_21.nextActivity.id
+		arg0_21.nextActivity = nil
 
-		local var0_25 = arg0_20.pageDic[arg0_20.activity.id]
+		local var0_26 = arg0_21.pageDic[arg0_21.activity.id]
 
-		var0_25:ActionInvoke("Flush", arg0_20.activity)
-		var0_25:ActionInvoke("ShowOrHide", true)
+		var0_26:ActionInvoke("ShowOrHide", true)
+		var0_26:ActionInvoke("Flush", arg0_21.activity)
 	end)
 end
 
-function var0_0.OnDestroy(arg0_26)
-	arg0_26.shareData = nil
+function var0_0.OnDestroy(arg0_27)
+	arg0_27.shareData = nil
 
-	for iter0_26, iter1_26 in pairs(arg0_26.pageDic) do
-		iter1_26:Destroy()
+	for iter0_27, iter1_27 in pairs(arg0_27.pageDic) do
+		iter1_27:Destroy()
 	end
 
-	arg0_26.pageDic = nil
-	arg0_26.activities = nil
-	arg0_26.switchCount = nil
+	arg0_27.pageDic = nil
+	arg0_27.activities = nil
+	arg0_27.switchCount = nil
+end
+
+function var0_0.OnHide(arg0_28)
+	arg0_28:UnOverlayPanel(arg0_28._tf, arg0_28._parentTf)
 end
 
 return var0_0

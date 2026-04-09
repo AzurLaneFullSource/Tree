@@ -23,6 +23,7 @@ function var0_0.execute(arg0_1, arg1_1)
 			}
 		}
 	})
+	getProxy(IslandProxy):GetIsland():SetLastExitPosition(var2_1, var3_1, var4_1)
 end
 
 return var0_0

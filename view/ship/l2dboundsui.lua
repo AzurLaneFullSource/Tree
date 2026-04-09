@@ -254,45 +254,53 @@ function var0_0.getDragBoundUI(arg0_16, arg1_16, arg2_16)
 	end)
 end
 
-function var0_0.ActionChange(arg0_18, arg1_18)
-	arg0_18._state = arg1_18
+function var0_0.GetDragsCount(arg0_18)
+	if arg0_18._dragsUI then
+		return #arg0_18._dragsUI
+	end
+
+	return 0
 end
 
-function var0_0.SetVisible(arg0_19, arg1_19)
-	arg0_19.visible = arg1_19
+function var0_0.ActionChange(arg0_19, arg1_19)
+	arg0_19._state = arg1_19
 end
 
-function var0_0.clearDrags(arg0_20)
-	if arg0_20._dragsUI and #arg0_20._dragsUI > 0 then
-		for iter0_20 = 1, #arg0_20._dragsUI do
-			ClearEventTrigger(GetComponent(arg0_20._dragsUI[iter0_20], typeof(EventTriggerListener)))
-			Destroy(arg0_20._dragsUI[iter0_20])
+function var0_0.SetVisible(arg0_20, arg1_20)
+	arg0_20.visible = arg1_20
+end
+
+function var0_0.clearDrags(arg0_21)
+	if arg0_21._dragsUI and #arg0_21._dragsUI > 0 then
+		for iter0_21 = 1, #arg0_21._dragsUI do
+			ClearEventTrigger(GetComponent(arg0_21._dragsUI[iter0_21], typeof(EventTriggerListener)))
+			Destroy(arg0_21._dragsUI[iter0_21])
 		end
 
-		arg0_20._dragsUI = {}
+		arg0_21._dragsUI = {}
 	end
 end
 
-function var0_0.Dispose(arg0_21)
-	arg0_21._isDispose = true
+function var0_0.Dispose(arg0_22)
+	arg0_22._isDispose = true
 
-	if arg0_21._timer then
-		arg0_21._timer:Stop()
+	if arg0_22._timer then
+		arg0_22._timer:Stop()
 
-		arg0_21._timer = nil
+		arg0_22._timer = nil
 	end
 
-	if arg0_21._bounds then
-		arg0_21._bounds = nil
+	if arg0_22._bounds then
+		arg0_22._bounds = nil
 	end
 
-	if arg0_21._tf then
-		Destroy(arg0_21._tf)
+	if arg0_22._tf then
+		Destroy(arg0_22._tf)
 
-		arg0_21._tf = nil
+		arg0_22._tf = nil
 	end
 
-	arg0_21:clearDrags()
+	arg0_22:clearDrags()
 end
 
 return var0_0

@@ -6424,162 +6424,162 @@ _G.pg.base.gametip.help_shipinfo_attr = {
 			info = "2. Stats Details:",
 		},
 		{
-			info = " HP: The ship's Health Points stat. Determines how much damage she can take before sinking.",
+			info = "       HP: The ship's Health Points stat. Determines how much damage she can take before sinking.",
 			icon = {
 				atlas = "attricon",
 				path = "durability",
 				posX = 0,
-				posY = -6,
+				posY = 3,
 				scale = 0.6,
 			},
 		},
 		{
-			info = " FP: The ship's Firepower stat. Increases her damage dealt with artillery and cannon-based attacks.",
+			info = "       FP: The ship's Firepower stat. Increases her damage dealt with artillery and cannon-based attacks.",
 			icon = {
 				atlas = "attricon",
 				path = "cannon",
 				posX = 0,
-				posY = -6,
+				posY = 3,
 				scale = 0.6,
 			},
 		},
 		{
-			info = " AA: The ship's Anti-Air stat. Increases her damage dealt with Anti-Air Guns.",
+			info = "       AA: The ship's Anti-Air stat. Increases her damage dealt with Anti-Air Guns.",
 			icon = {
 				atlas = "attricon",
 				path = "antiaircraft",
 				posX = 0,
-				posY = -6,
+				posY = 3,
 				scale = 0.6,
 			},
 		},
 		{
-			info = " Armor Type: The ship's Armor thickness. Affects how much damage she takes from varying sources. (In general, in terms of protection, Heavy > Medium > Light.) Each weapon has a different effectiveness against each armor type, so carefully consider the combination of ships and gear to bring to each battle to maximize your fleet's effectiveness.",
+			info = "       Armor Type: The ship's Armor thickness. Affects how much damage she takes from varying sources. (In general, in terms of protection, Heavy > Medium > Light.) Each weapon has a different effectiveness against each armor type, so carefully consider the combination of ships and gear to bring to each battle to maximize your fleet's effectiveness.",
 			icon = {
 				atlas = "attricon",
 				path = "armor",
 				posX = 0,
-				posY = -6,
+				posY = 3,
 				scale = 0.6,
 			},
 		},
 		{
-			info = " TRP: The ship's Torpedo stat. Increases her damage dealt with torpedo weapons. ",
+			info = "       TRP: The ship's Torpedo stat. Increases her damage dealt with torpedo weapons. ",
 			icon = {
 				atlas = "attricon",
 				path = "torpedo",
 				posX = 0,
-				posY = -6,
+				posY = 3,
 				scale = 0.6,
 			},
 		},
 		{
-			info = " AVI: The ship's Aviation stat. Increases her damage dealt with aircraft.",
+			info = "       AVI: The ship's Aviation stat. Increases her damage dealt with aircraft.",
 			icon = {
 				atlas = "attricon",
 				path = "air",
 				posX = 0,
-				posY = -6,
+				posY = 3,
 				scale = 0.6,
 			},
 		},
 		{
-			info = " RLD: The ship's Reload stat. Affects how long her weapons take to load.",
+			info = "       RLD: The ship's Reload stat. Affects how long her weapons take to load.",
 			icon = {
 				atlas = "attricon",
 				path = "reload",
 				posX = 0,
-				posY = -6,
+				posY = 3,
 				scale = 0.6,
 			},
 		},
 		{
-			info = " EVA: The ship's Evasion stat. Affects her probability to evade incoming attacks and the likelihood of being critically hit.",
+			info = "       EVA: The ship's Evasion stat. Affects her probability to evade incoming attacks and the likelihood of being critically hit.",
 			icon = {
 				atlas = "attricon",
 				path = "dodge",
 				posX = 0,
-				posY = -6,
+				posY = 3,
 				scale = 0.6,
 			},
 		},
 		{
-			info = " ACC: The ship's Accuracy stat. Affects her probability to land hits and score Critical Hits.",
+			info = "       ACC: The ship's Accuracy stat. Affects her probability to land hits and score Critical Hits.",
 			icon = {
 				atlas = "attricon",
 				path = "hit",
 				posX = 0,
-				posY = 0,
+				posY = 2,
 				scale = 0.3,
 			},
 		},
 		{
-			info = " SPD: The ship's Speed stat. Affects her movement speed on the battlefield and influences how many tiles your fleet can move in one turn on certain maps. \n ",
+			info = "       SPD: The ship's Speed stat. Affects her movement speed on the battlefield and influences how many tiles your fleet can move in one turn on certain maps. \n ",
 			icon = {
 				atlas = "attricon",
 				path = "attr_speed",
 				posX = 0,
-				posY = 0,
+				posY = 3,
 				scale = 0.6,
 			},
 		},
 		{
-			info = " Cost: The amount of Oil the ship consumes per battle.",
+			info = "       Cost: The amount of Oil the ship consumes per battle.",
 			icon = {
 				atlas = "attricon",
 				path = "expend",
 				posX = 0,
-				posY = -6,
+				posY = 3,
 				scale = 0.6,
 			},
 		},
 		{
-			info = " ASW: The ship's Anti-Submarine Warfare stat. Increases her damage dealt with Anti-Sub weapons and affects her sonar detection range.",
+			info = "       ASW: The ship's Anti-Submarine Warfare stat. Increases her damage dealt with Anti-Sub weapons and affects her sonar detection range.",
 			icon = {
 				atlas = "attricon",
 				path = "antisub",
 				posX = 0,
-				posY = -6,
+				posY = 3,
 				scale = 0.6,
 			},
 		},
 		{
-			info = " OXY: The boat's Oxygen stat. Determines how long she can stay underwater before she must resurface.",
+			info = "       OXY: The boat's Oxygen stat. Determines how long she can stay underwater before she must resurface.",
 			icon = {
 				atlas = "attricon",
 				path = "oxy_max",
 				posX = 0,
-				posY = -6,
+				posY = 3,
 				scale = 0.6,
 			},
 		},
 		{
-			info = " AMO: The boat's Ammunition stat. Determines how many times a Submarine Fleet can attack and/or provide support. The total number of times is equal to the Submarine Fleet's combined AMO stat.",
+			info = "       AMO: The boat's Ammunition stat. Determines how many times a Submarine Fleet can attack and/or provide support. The total number of times is equal to the Submarine Fleet's combined AMO stat.",
 			icon = {
 				atlas = "attricon",
 				path = "ammo",
 				posX = 0,
-				posY = -6,
+				posY = 3,
 				scale = 0.6,
 			},
 		},
 		{
-			info = " ASR: The boat's Attack/Support Range. Determines how far the Submarine Fleet can move from its starting location to attack or provide support.",
+			info = "       ASR: The boat's Attack/Support Range. Determines how far the Submarine Fleet can move from its starting location to attack or provide support.",
 			icon = {
 				atlas = "attricon",
 				path = "hunt_range",
 				posX = 0,
-				posY = -6,
+				posY = 3,
 				scale = 0.6,
 			},
 		},
 		{
-			info = " LCK: The ship's Luck stat. Affects the ship's probability of landing and avoiding regular hits and Critical Hits.",
+			info = "       LCK: The ship's Luck stat. Affects the ship's probability of landing and avoiding regular hits and Critical Hits.",
 			icon = {
 				atlas = "attricon",
 				path = "luck",
 				posX = 0,
-				posY = -6,
+				posY = 2,
 				scale = 1,
 			},
 		},
@@ -10188,11 +10188,11 @@ _G.pg.base.gametip.buildship_new_tip = {
 }
 
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "Gorizia and Andrea Doria added to standard build pool!",
+	tip = "Brünhilde and Blücher added to standard build pool!",
 }
 
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "Attilio Regolo added to standard build pool!",
+	tip = "Z16 added to standard build pool!",
 }
 
 _G.pg.base.gametip.buildship_special_tip = {
@@ -31701,6 +31701,50 @@ _G.pg.base.gametip.island_help_fish = {
 	},
 }
 
+_G.pg.base.gametip.island_help_bar = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/island_help_bar1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_help_bar2",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_help_bar3",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_help_bar4",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
+
 _G.pg.base.gametip.island_skin_original_desc = {
 	tip = "Default",
 }
@@ -33663,6 +33707,38 @@ _G.pg.base.gametip.island_dress_replace_tip = {
 
 _G.pg.base.gametip.island_activity_expired = {
 	tip = "Event Has Ended",
+}
+
+_G.pg.base.gametip.island_activity_pt_point = {
+	tip = "Total Score",
+}
+
+_G.pg.base.gametip.island_activity_pt_get_oneclick = {
+	tip = "Collect All",
+}
+
+_G.pg.base.gametip.island_activity_pt_jump_1 = {
+	tip = "Confirm",
+}
+
+_G.pg.base.gametip.island_activity_pt_task_reward_tip_1 = {
+	tip = "Obtained by reaching Simulation Novice IV.",
+}
+
+_G.pg.base.gametip.island_activity_pt_task_reward_tip_2 = {
+	tip = "Obtained by reaching Simulation Adept IV.",
+}
+
+_G.pg.base.gametip.island_activity_pt_task_reward_tip_3 = {
+	tip = "Obtained by reaching Simulation Expert IV.",
+}
+
+_G.pg.base.gametip.island_activity_pt_task_reward_tip_4 = {
+	tip = "Obtained by reaching Simulation Master.",
+}
+
+_G.pg.base.gametip.island_activity_pt_got_all = {
+	tip = "All rewards have been claimed.",
 }
 
 _G.pg.base.gametip.island_guide = {
@@ -36317,5 +36393,305 @@ _G.pg.base.gametip.l2d_tip_on = {
 
 _G.pg.base.gametip.l2d_tip_off = {
 	tip = "L2D interaction tips disabled.",
+}
+
+_G.pg.base.gametip.play_room_season = {
+	tip = "Season",
+}
+
+_G.pg.base.gametip.play_room_season_en = {
+	tip = "Season",
+}
+
+_G.pg.base.gametip.play_room_viewer_tip = {
+	tip = "Spectators: $1/$2",
+}
+
+_G.pg.base.gametip.play_room_switch_viewer = {
+	tip = "Spectate",
+}
+
+_G.pg.base.gametip.play_room_switch_player = {
+	tip = "Spectating",
+}
+
+_G.pg.base.gametip.play_room_switch_tip = {
+	tip = "Change this room's privacy settings?",
+}
+
+_G.pg.base.gametip.island_bar_quick_tip = {
+	tip = "No rooms found. Would you like to host a room?",
+}
+
+_G.pg.base.gametip.island_bar_quick_addbot = {
+	tip = "Would you like to start a CPU match?",
+}
+
+_G.pg.base.gametip.match_exit = {
+	tip = "Player $1 withdrew from matchmaking. Returning to matchmaking in $2 seconds.",
+}
+
+_G.pg.base.gametip.match_point_gap = {
+	tip = "Unable to begin matchmaking: Total Score difference is too large.",
+}
+
+_G.pg.base.gametip.match_room_num_full1 = {
+	tip = "Unable to host room: room limit exceeded.",
+}
+
+_G.pg.base.gametip.match_room_full2 = {
+	tip = "The room you tried to join is full.",
+}
+
+_G.pg.base.gametip.match_no_search_room = {
+	tip = "Unable to find room.",
+}
+
+_G.pg.base.gametip.match_ui_room_name = {
+	tip = "$1's Room",
+}
+
+_G.pg.base.gametip.match_ui_room_create = {
+	tip = "Host Room",
+}
+
+_G.pg.base.gametip.match_ui_room_search = {
+	tip = "Search",
+}
+
+_G.pg.base.gametip.match_ui_room_type1 = {
+	tip = "In Game",
+}
+
+_G.pg.base.gametip.match_ui_room_type2 = {
+	tip = "Join",
+}
+
+_G.pg.base.gametip.match_ui_room_type3 = {
+	tip = "Full",
+}
+
+_G.pg.base.gametip.match_ui_room_type4 = {
+	tip = "Private",
+}
+
+_G.pg.base.gametip.match_ui_room_filtertitle1 = {
+	tip = "Sort",
+}
+
+_G.pg.base.gametip.match_ui_room_filtertitle2 = {
+	tip = "Room",
+}
+
+_G.pg.base.gametip.match_ui_room_filtertitle3 = {
+	tip = "Status",
+}
+
+_G.pg.base.gametip.match_ui_room_filter1 = {
+	tip = "Players",
+}
+
+_G.pg.base.gametip.match_ui_room_filter2 = {
+	tip = "Spectators",
+}
+
+_G.pg.base.gametip.match_ui_room_filter3 = {
+	tip = "Host Time",
+}
+
+_G.pg.base.gametip.match_ui_room_filter4 = {
+	tip = "All Rooms",
+}
+
+_G.pg.base.gametip.match_ui_room_filter5 = {
+	tip = "Public",
+}
+
+_G.pg.base.gametip.match_ui_room_filter6 = {
+	tip = "Private",
+}
+
+_G.pg.base.gametip.match_ui_room_filter7 = {
+	tip = "Any Status",
+}
+
+_G.pg.base.gametip.match_ui_room_filter8 = {
+	tip = "Waiting",
+}
+
+_G.pg.base.gametip.match_ui_room_filter9 = {
+	tip = "In Progress",
+}
+
+_G.pg.base.gametip.match_ui_room_out = {
+	tip = "You were kicked from the room.",
+}
+
+_G.pg.base.gametip.match_ui_room_homeowner = {
+	tip = "Host",
+}
+
+_G.pg.base.gametip.match_ui_room_send = {
+	tip = "Send",
+}
+
+_G.pg.base.gametip.match_ui_room_ready1 = {
+	tip = "Ready",
+}
+
+_G.pg.base.gametip.match_ui_room_ready2 = {
+	tip = "Ready",
+}
+
+_G.pg.base.gametip.match_ui_room_startgame = {
+	tip = "Start",
+}
+
+_G.pg.base.gametip.match_ui_matching_invitation = {
+	tip = "Match Invitation",
+}
+
+_G.pg.base.gametip.match_ui_matching_consent = {
+	tip = "Accept",
+}
+
+_G.pg.base.gametip.match_ui_matching_waiting1 = {
+	tip = "Wait Time: $1s",
+}
+
+_G.pg.base.gametip.match_ui_matching_waiting2 = {
+	tip = "Matching...",
+}
+
+_G.pg.base.gametip.match_ui_matching_loading = {
+	tip = "Loading...",
+}
+
+_G.pg.base.gametip.match_ui_ranking_list1 = {
+	tip = "Friends",
+}
+
+_G.pg.base.gametip.match_ui_ranking_list2 = {
+	tip = "Fleet",
+}
+
+_G.pg.base.gametip.match_ui_ranking_list3 = {
+	tip = "All",
+}
+
+_G.pg.base.gametip.match_ui_ranking_list4 = {
+	tip = "Unranked",
+}
+
+_G.pg.base.gametip.match_ui_punishment1 = {
+	tip = "Please wait $1 seconds before matchmaking again.",
+}
+
+_G.pg.base.gametip.match_ui_punishment2 = {
+	tip = "Confirm",
+}
+
+_G.pg.base.gametip.match_ui_chat = {
+	tip = "Room",
+}
+
+_G.pg.base.gametip.match_ui_point_match = {
+	tip = "Ranked Matchmaking",
+}
+
+_G.pg.base.gametip.match_ui_accept = {
+	tip = "Confirm",
+}
+
+_G.pg.base.gametip.match_ui_matching = {
+	tip = "Matching...",
+}
+
+_G.pg.base.gametip.match_ui_point = {
+	tip = "Total Score",
+}
+
+_G.pg.base.gametip.match_ui_room_list = {
+	tip = "Room List",
+}
+
+_G.pg.base.gametip.match_ui_matching2 = {
+	tip = "Matching...",
+}
+
+_G.pg.base.gametip.match_ui_server_unkonw = {
+	tip = "Unknown",
+}
+
+_G.pg.base.gametip.match_ui_window_out = {
+	tip = "Unranked",
+}
+
+_G.pg.base.gametip.match_ui_matching_fail = {
+	tip = "No players available for matchmaking.",
+}
+
+_G.pg.base.gametip.bar_ui_start1 = {
+	tip = "Effective Tactic",
+}
+
+_G.pg.base.gametip.bar_ui_start2 = {
+	tip = "Effective Tactic",
+}
+
+_G.pg.base.gametip.bar_ui_check1 = {
+	tip = "Play",
+}
+
+_G.pg.base.gametip.bar_ui_check2 = {
+	tip = "Total Score",
+}
+
+_G.pg.base.gametip.bar_ui_game1 = {
+	tip = "Eliminated",
+}
+
+_G.pg.base.gametip.bar_ui_game3 = {
+	tip = "Score",
+}
+
+_G.pg.base.gametip.bar_ui_game4 = {
+	tip = "Swipe to spin the Penalty Roulette",
+}
+
+_G.pg.base.gametip.bar_ui_end1 = {
+	tip = "Quit",
+}
+
+_G.pg.base.gametip.bar_ui_end2 = {
+	tip = "Resume spectating",
+}
+
+_G.pg.base.gametip.bar_tips_game1 = {
+	tip = "$1: Challenge successful!",
+}
+
+_G.pg.base.gametip.bar_tips_game2 = {
+	tip = "$1: Challenge failed!",
+}
+
+_G.pg.base.gametip.bar_tips_game3 = {
+	tip = "$1 has been eliminated by the Penalty Roulette.",
+}
+
+_G.pg.base.gametip.bar_tips_game4 = {
+	tip = "$1 has survived the Penalty Roulette.",
+}
+
+_G.pg.base.gametip.bar_tips_game5 = {
+	tip = "$1 has been punished by the Penalty Roulette.",
+}
+
+_G.pg.base.gametip.bar_tips_game6 = {
+	tip = "Would you like to quit the match?\nYou will be eliminated and will not receive any points.",
+}
+
+_G.pg.base.gametip.bar_tips_game7 = {
+	tip = "Would you like to quit the match?",
 }
 

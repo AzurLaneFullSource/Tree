@@ -142,25 +142,31 @@ function var0_0.IsBookTip()
 	})
 end
 
-function var0_0.IsUnlock(arg0_25)
-	local var0_25 = underscore.detect(pg.island_main_btns.all, function(arg0_26)
-		return pg.island_main_btns[arg0_26].btn_name == arg0_25
+function var0_0.IsSeasonTip()
+	return (_.any(getProxy(ActivityProxy):getIslandPanelActivities(), function(arg0_26)
+		return arg0_26:readyToAchieve()
+	end))
+end
+
+function var0_0.IsUnlock(arg0_27)
+	local var0_27 = underscore.detect(pg.island_main_btns.all, function(arg0_28)
+		return pg.island_main_btns[arg0_28].btn_name == arg0_27
 	end)
 
-	if not var0_25 then
+	if not var0_27 then
 		return false
 	end
 
-	local var1_25 = pg.island_main_btns[var0_25].ability_id
+	local var1_27 = pg.island_main_btns[var0_27].ability_id
 
-	return getProxy(IslandProxy):GetIsland():GetAblityAgency():HasAbility(var1_25)
+	return getProxy(IslandProxy):GetIsland():GetAblityAgency():HasAbility(var1_27)
 end
 
 function var0_0.IsSeasonTip()
-	local var0_27 = getProxy(ActivityProxy):getIslandPanelActivities()
+	local var0_29 = getProxy(ActivityProxy):getIslandPanelActivities()
 
-	return _.any(var0_27, function(arg0_28)
-		return arg0_28:readyToAchieve()
+	return _.any(var0_29, function(arg0_30)
+		return arg0_30:readyToAchieve()
 	end)
 end
 

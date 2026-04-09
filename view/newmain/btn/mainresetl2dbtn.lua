@@ -22,7 +22,7 @@ function var0_0.FlushL2d(arg0_5)
 		return
 	end
 
-	local var0_5 = getProxy(PlayerProxy):getRawData():GetFlagShip()
+	local var0_5 = getProxy(PlayerProxy):getRawData():GetCurrentFlagShip()
 	local var1_5 = MainPaintingView.GetAssistantStatus(var0_5) == MainPaintingView.STATE_L2D
 
 	setActive(arg0_5._tf, var1_5)

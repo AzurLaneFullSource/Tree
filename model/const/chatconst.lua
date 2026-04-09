@@ -9,6 +9,7 @@ var0_0.ChannelFriend = 4
 var0_0.ChannelGuild = 5
 var0_0.ChannelWorldBoss = 6
 var0_0.ChannelIsland = 7
+var0_0.ChannelPlayRoom = 8
 var0_0.SendChannels = {
 	var0_0.ChannelWorld,
 	var0_0.ChannelGuild
@@ -27,23 +28,34 @@ function var0_0.GetChannelName(arg0_1)
 end
 
 function var0_0.GetChannelSprite(arg0_2)
-	if arg0_2 == var0_0.ChannelWorld then
-		return "world"
-	elseif arg0_2 == var0_0.ChannelPublic then
-		return "public"
-	elseif arg0_2 == var0_0.ChannelFriend then
-		return "friend"
-	elseif arg0_2 == var0_0.ChannelGuild then
-		return "guild"
-	elseif arg0_2 == var0_0.ChannelAll then
-		return "total"
-	elseif arg0_2 == var0_0.ChannelWorldBoss then
-		return "worldboss"
-	elseif arg0_2 == var0_0.ChannelIsland then
-		return "island"
-	end
-
-	assert(false)
+	return switch(arg0_2, {
+		[var0_0.ChannelWorld] = function()
+			return "world"
+		end,
+		[var0_0.ChannelPublic] = function()
+			return "public"
+		end,
+		[var0_0.ChannelFriend] = function()
+			return "friend"
+		end,
+		[var0_0.ChannelGuild] = function()
+			return "guild"
+		end,
+		[var0_0.ChannelAll] = function()
+			return "total"
+		end,
+		[var0_0.ChannelWorldBoss] = function()
+			return "worldboss"
+		end,
+		[var0_0.ChannelIsland] = function()
+			return "island"
+		end,
+		[var0_0.ChannelPlayRoom] = function()
+			return "room"
+		end
+	}, function()
+		assert(false)
+	end)
 end
 
 var0_0.EmojiCommon = 0
@@ -59,14 +71,14 @@ var0_0.EmojiTypes = {
 	var0_0.EmojiIcon
 }
 
-function var0_0.GetEmojiSprite(arg0_3)
-	if arg0_3 == var0_0.EmojiCommon then
+function var0_0.GetEmojiSprite(arg0_12)
+	if arg0_12 == var0_0.EmojiCommon then
 		return "tab_casual"
-	elseif arg0_3 == var0_0.EmojiDefault then
+	elseif arg0_12 == var0_0.EmojiDefault then
 		return "tab_default"
-	elseif arg0_3 == var0_0.EmojiAnimate then
+	elseif arg0_12 == var0_0.EmojiAnimate then
 		return "tab_motive"
-	elseif arg0_3 == var0_0.EmojiPixel then
+	elseif arg0_12 == var0_0.EmojiPixel then
 		return "tab_pixel"
 	end
 

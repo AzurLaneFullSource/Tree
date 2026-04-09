@@ -248,7 +248,20 @@ pg.island_task = setmetatable({
 			51001000,
 			51002000,
 			51003000,
-			20013000
+			20013000,
+			90001001,
+			90001002,
+			90001003,
+			90001004,
+			90001005,
+			90001006,
+			90001007,
+			90001008,
+			90001009,
+			90001010,
+			90001011,
+			90001012,
+			90001020
 		},
 		[8] = {
 			80001001,
@@ -783,7 +796,20 @@ pg.island_task = setmetatable({
 		40301001,
 		40401001,
 		40501001,
-		40601001
+		40601001,
+		90001001,
+		90001002,
+		90001003,
+		90001004,
+		90001005,
+		90001006,
+		90001007,
+		90001008,
+		90001009,
+		90001010,
+		90001011,
+		90001012,
+		90001020
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -18254,6 +18280,799 @@ pg.base.island_task = {
 				41,
 				100103,
 				3
+			}
+		}
+	},
+	[90001001] = {
+		name = "Simulation Novice I",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "",
+		series_name = "",
+		id = 90001001,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					4,
+					9
+				},
+				{
+					3,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900010011
+		},
+		reward_show = {
+			{
+				45,
+				30001,
+				10
+			}
+		}
+	},
+	[90001002] = {
+		name = "Simulation Novice II",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "",
+		series_name = "",
+		id = 90001002,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					4,
+					9
+				},
+				{
+					3,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900010021
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				5
+			}
+		}
+	},
+	[90001003] = {
+		name = "Simulation Novice III",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "",
+		series_name = "",
+		id = 90001003,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					4,
+					9
+				},
+				{
+					3,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900010031
+		},
+		reward_show = {
+			{
+				45,
+				30003,
+				8
+			}
+		}
+	},
+	[90001004] = {
+		name = "Simulation Novice IV",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "",
+		series_name = "",
+		id = 90001004,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					4,
+					9
+				},
+				{
+					3,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900010041
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				5
+			}
+		}
+	},
+	[90001005] = {
+		name = "Simulation Adept I",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "",
+		series_name = "",
+		id = 90001005,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					4,
+					9
+				},
+				{
+					3,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900010051
+		},
+		reward_show = {
+			{
+				41,
+				100041,
+				3
+			}
+		}
+	},
+	[90001006] = {
+		name = "Simulation Adept II",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "",
+		series_name = "",
+		id = 90001006,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					4,
+					9
+				},
+				{
+					3,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900010061
+		},
+		reward_show = {
+			{
+				41,
+				100051,
+				3
+			}
+		}
+	},
+	[90001007] = {
+		name = "Simulation Adept III",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "",
+		series_name = "",
+		id = 90001007,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					4,
+					9
+				},
+				{
+					3,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900010071
+		},
+		reward_show = {
+			{
+				41,
+				100031,
+				3
+			}
+		}
+	},
+	[90001008] = {
+		name = "Simulation Adept IV",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "",
+		series_name = "",
+		id = 90001008,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					4,
+					9
+				},
+				{
+					3,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900010081
+		},
+		reward_show = {
+			{
+				46,
+				1020010,
+				1
+			}
+		}
+	},
+	[90001009] = {
+		name = "Simulation Expert I",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "",
+		series_name = "",
+		id = 90001009,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					4,
+					9
+				},
+				{
+					3,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900010091
+		},
+		reward_show = {
+			{
+				41,
+				100021,
+				3
+			}
+		}
+	},
+	[90001010] = {
+		name = "Simulation Expert II",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "",
+		series_name = "",
+		id = 90001010,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					4,
+					9
+				},
+				{
+					3,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900010101
+		},
+		reward_show = {
+			{
+				41,
+				100061,
+				3
+			}
+		}
+	},
+	[90001011] = {
+		name = "Simulation Expert III",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "",
+		series_name = "",
+		id = 90001011,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					4,
+					9
+				},
+				{
+					3,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900010111
+		},
+		reward_show = {
+			{
+				41,
+				100011,
+				3
+			}
+		}
+	},
+	[90001012] = {
+		name = "Simulation Expert IV",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "",
+		series_name = "",
+		id = 90001012,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					4,
+					9
+				},
+				{
+					3,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900010121
+		},
+		reward_show = {
+			{
+				52,
+				4017,
+				1
+			}
+		}
+	},
+	[90001020] = {
+		name = "Simulation Master",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "",
+		series_name = "",
+		id = 90001020,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					4,
+					9
+				},
+				{
+					3,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900010201
+		},
+		reward_show = {
+			{
+				52,
+				4018,
+				1
 			}
 		}
 	}

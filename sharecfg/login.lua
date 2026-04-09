@@ -559,6 +559,7 @@ pg.login = {
 			}
 		},
 		op_time = {
+			"timer",
 			{
 				{
 					2023,
@@ -783,6 +784,7 @@ pg.login = {
 			}
 		},
 		op_time = {
+			"timer",
 			{
 				{
 					2023,
@@ -817,6 +819,7 @@ pg.login = {
 		login_cri = "",
 		bgm = "",
 		op_time = {
+			"timer",
 			{
 				{
 					2023,
@@ -851,6 +854,7 @@ pg.login = {
 		login_cri = "",
 		bgm = "",
 		op_time = {
+			"timer",
 			{
 				{
 					2023,
@@ -911,6 +915,7 @@ pg.login = {
 			}
 		},
 		op_time = {
+			"timer",
 			{
 				{
 					2023,
@@ -1704,6 +1709,7 @@ pg.login = {
 			}
 		},
 		op_time = {
+			"timer",
 			{
 				{
 					2024,
@@ -2879,63 +2885,12 @@ pg.login = {
 	},
 	[88] = {
 		id = 88,
-		op_play = 1,
-		login_static = "login_20260401us",
-		login_cri = "login_20260401us",
-		bgm = "login-20260401us",
-		date = {
-			"timer",
-			{
-				{
-					2026,
-					4,
-					1
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					4,
-					1
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		},
-		op_time = {
-			{
-				{
-					2026,
-					3,
-					26
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					4,
-					9
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
+		login_static = "login_0401",
+		date = "stop",
+		op_play = 0,
+		op_time = "stop",
+		login_cri = "",
+		bgm = "login_us_0401"
 	},
 	[89] = {
 		id = 89,

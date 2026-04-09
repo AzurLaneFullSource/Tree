@@ -7,6 +7,7 @@ function var0_0.Ctor(arg0_1, arg1_1, ...)
 	arg0_1.__visible = true
 	arg0_1.__openPrevWhenClose = true
 	arg0_1.__delRecordWhenClose = true
+	arg0_1.level = -1
 end
 
 function var0_0.DisabelOpenPrevWhenClose(arg0_2)
@@ -33,7 +34,7 @@ function var0_0.GetOpenPrevWhenClose(arg0_5)
 	return var0_5
 end
 
-function var0_0.AddSubPage(arg0_6, arg1_6, ...)
+function var0_0.AddSubPage(arg0_6, arg1_6, arg2_6, arg3_6, ...)
 	local var0_6 = _.detect(arg0_6.subpages, function(arg0_7)
 		return arg1_6.__cname == arg0_7.class.__cname
 	end)
@@ -46,15 +47,33 @@ function var0_0.AddSubPage(arg0_6, arg1_6, ...)
 
 	local var1_6 = IslandSceneContext.New(arg1_6, ...)
 
+	var1_6:SetSubPageParentName(arg3_6)
+	var1_6:SetLevel(arg2_6)
 	table.insert(arg0_6.subpages, var1_6)
 end
 
-function var0_0.GetSubPages(arg0_8)
-	return arg0_8.subpages
+function var0_0.SetSubPageParentName(arg0_8, arg1_8)
+	arg0_8.parentName = arg1_8
 end
 
-function var0_0.GetData(arg0_9)
-	return arg0_9.args
+function var0_0.GetSubPageParentName(arg0_9)
+	return arg0_9.parentName
+end
+
+function var0_0.SetLevel(arg0_10, arg1_10)
+	arg0_10.level = arg1_10
+end
+
+function var0_0.GetLevel(arg0_11)
+	return arg0_11.level
+end
+
+function var0_0.GetSubPages(arg0_12)
+	return arg0_12.subpages
+end
+
+function var0_0.GetData(arg0_13)
+	return arg0_13.args
 end
 
 return var0_0

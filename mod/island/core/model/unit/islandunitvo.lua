@@ -42,11 +42,11 @@ function var0_0.Interactable(arg0_7)
 end
 
 function var0_0.IsNpcType(arg0_8)
-	return arg0_8.type == IslandConst.UNIT_TYPE_CHAR or arg0_8.type == IslandConst.UNIT_TYPE_PLAYER or arg0_8.type == IslandConst.UNIT_TYPE_VISITOR or arg0_8.type == IslandConst.UNIT_TYPE_SYSTEM or arg0_8.type == IslandConst.UNIT_TYPE_STROLL or arg0_8.type == IslandConst.UNIT_TYPE_MANAGE_CHARA or arg0_8.type == IslandConst.UNIT_TYPE_MANAGE_CUSTOMER or arg0_8.type == IslandConst.UNIT_TYPE_SYSTEM_DELEAGTION or arg0_8.type == IslandConst.UNIT_TYPE_SYSTEM_DELEAGTION_ANIMATION or arg0_8.type == IslandConst.UNIT_TYPE_FOLLOWER or arg0_8.type == IslandConst.UNIT_TYPE_DELEGATE_FISH
+	return arg0_8.type == IslandConst.UNIT_TYPE_CHAR or arg0_8.type == IslandConst.UNIT_TYPE_PLAYER or arg0_8.type == IslandConst.UNIT_TYPE_VISITOR or arg0_8.type == IslandConst.UNIT_TYPE_SYSTEM or arg0_8.type == IslandConst.UNIT_TYPE_STROLL or arg0_8.type == IslandConst.UNIT_TYPE_MANAGE_CHARA or arg0_8.type == IslandConst.UNIT_TYPE_MANAGE_CUSTOMER or arg0_8.type == IslandConst.UNIT_TYPE_SYSTEM_DELEAGTION or arg0_8.type == IslandConst.UNIT_TYPE_SYSTEM_DELEAGTION_ANIMATION or arg0_8.type == IslandConst.UNIT_TYPE_FOLLOWER or arg0_8.type == IslandConst.UNIT_TYPE_DELEGATE_FISH or arg0_8.type == IslandConst.UNIT_TYPE_CHEATERTAVERN_PLAYER
 end
 
 function var0_0.IsItemType(arg0_9)
-	return arg0_9.type == IslandConst.UNIT_TYPE_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_HANDLE_COLLECT or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_HANDLE_PLANTING or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_PRODUCT_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_GATHER_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_WILD_COLLECT_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_MANAGE_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_DELAY_RECYCLE or arg0_9.type == IslandConst.UNIT_TYPE_FIRST_TAKE_PHOTO_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_FISH_POINT
+	return arg0_9.type == IslandConst.UNIT_TYPE_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_HANDLE_COLLECT or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_HANDLE_PLANTING or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_PRODUCT_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_GATHER_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_WILD_COLLECT_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_MANAGE_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_ITEM_DELAY_RECYCLE or arg0_9.type == IslandConst.UNIT_TYPE_FIRST_TAKE_PHOTO_ITEM or arg0_9.type == IslandConst.UNIT_TYPE_CHEATERTAVERN_TABLE or arg0_9.type == IslandConst.UNIT_TYPE_CHEATERTAVERN_CHAIR or arg0_9.type == IslandConst.UNIT_TYPE_FISH_POINT
 end
 
 function var0_0.GetPersonality(arg0_10)
@@ -66,6 +66,7 @@ function var0_0.GetAssetPath(arg0_11)
 	local var0_11
 
 	if arg0_11:IsNpcType() then
+		warning(arg0_11.type)
 		assert(pg.island_unit_character[arg0_11.modelId], arg0_11.modelId)
 
 		var0_11 = pg.island_unit_character[arg0_11.modelId].model
@@ -89,6 +90,8 @@ function var0_0.GetAnimator(arg0_13)
 		return pg.island_unit_character[arg0_13.modelId].animator
 	elseif arg0_13.type == IslandConst.UNIT_TYPE_SYSTEM then
 		return pg.island_unit_character[arg0_13.modelId].animator
+	elseif arg0_13.type == IslandConst.UNIT_TYPE_CHEATERTAVERN_PLAYER then
+		return "island/animator/ani_role_all_cheatertavern_01"
 	end
 
 	warning("目前只有角色需要动态获取动画状态机")
