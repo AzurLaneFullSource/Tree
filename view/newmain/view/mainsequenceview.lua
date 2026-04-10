@@ -65,12 +65,6 @@ function var0_0.Execute(arg0_4, arg1_4)
 		return
 	end
 
-	if getProxy(IslandProxy):IsReconnectProcessing() then
-		arg1_4()
-
-		return
-	end
-
 	if not arg0_4.executable then
 		arg0_4.executable = arg0_4:MapSequence(arg0_4.sequence)
 	end

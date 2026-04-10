@@ -55,4 +55,10 @@ function var0_0.OnInit(arg0_7)
 	return
 end
 
+function var0_0.OnHide(arg0_8)
+	if arg0_8._tf.parent ~= arg0_8.uiParent_ then
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg0_8._tf, arg0_8.uiParent_)
+	end
+end
+
 return var0_0

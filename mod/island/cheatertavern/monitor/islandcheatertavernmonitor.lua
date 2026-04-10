@@ -7,7 +7,7 @@ function var0_0.register(arg0_1)
 	arg0_1.cheaterTavernAgency = arg0_1:GetIsland():GetCheaterTavernAgency()
 
 	arg0_1:on(23101, function(arg0_2)
-		arg0_1.cheaterTavernAgency:SetIsConnecting()
+		arg0_1.cheaterTavernAgency:SetIsConnecting(true)
 
 		if IslandCheaterTavernConst.changeSeat then
 			local var0_2

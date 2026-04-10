@@ -29,9 +29,14 @@ function var0_0.GetCardGameObjectById(arg0_2, arg1_2, arg2_2, arg3_2)
 	else
 		local var4_2 = arg0_2.poolDic[arg1_2][1]
 
-		setActive(var4_2.transform, true)
-		arg2_2(var4_2)
-		table.remove(arg0_2.poolDic[arg1_2], 1)
+		if IsNil(var4_2) then
+			table.remove(arg0_2.poolDic[arg1_2], 1)
+			arg0_2:GetCardGameObjectById(arg1_2, arg2_2, arg3_2)
+		else
+			setActive(var4_2.transform, true)
+			table.remove(arg0_2.poolDic[arg1_2], 1)
+			arg2_2(var4_2)
+		end
 	end
 end
 

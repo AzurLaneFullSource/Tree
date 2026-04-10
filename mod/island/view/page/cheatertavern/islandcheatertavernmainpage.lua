@@ -265,6 +265,7 @@ function var0_0.Flush(arg0_32)
 end
 
 function var0_0.OnDestroy(arg0_33)
+	arg0_33:OnHide()
 	var0_0.super.OnDestroy(arg0_33)
 end
 

@@ -83,31 +83,25 @@ function var0_0.Send(arg0_2, arg1_2, arg2_2, arg3_2)
 				})
 				getProxy(IslandProxy):EnterIsland(arg0_3.island_id)
 			end)
+		elseif arg0_3.result == 6 then
+			arg0_2:sendNotification(GAME.ISLAND_QUEUE_UP, {
+				pos = arg0_3.pos,
+				id = arg0_3.island_id
+			})
+		elseif arg0_3.result == 19 then
+			local var3_3 = pg.TimeMgr.GetInstance():GetServerTime()
+			local var4_3 = arg0_3.cd - var3_3
+			local var5_3 = pg.TimeMgr.GetInstance():DescCDTime(var4_3)
+
+			pg.TipsMgr.GetInstance():ShowTips(i18n("island_visit_tip5", var5_3))
+		elseif arg0_3.result == 1 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("island_visit_tip1"))
+		elseif arg0_3.result == 20 or arg0_3.result == 40 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("island_visit_tip2"))
+		elseif arg0_3.result == 9 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("island_visit_tip3"))
 		else
-			if arg3_2 then
-				getProxy(IslandProxy):SetReconnectProcessing(false)
-			end
-
-			if arg0_3.result == 6 then
-				arg0_2:sendNotification(GAME.ISLAND_QUEUE_UP, {
-					pos = arg0_3.pos,
-					id = arg0_3.island_id
-				})
-			elseif arg0_3.result == 19 then
-				local var3_3 = pg.TimeMgr.GetInstance():GetServerTime()
-				local var4_3 = arg0_3.cd - var3_3
-				local var5_3 = pg.TimeMgr.GetInstance():DescCDTime(var4_3)
-
-				pg.TipsMgr.GetInstance():ShowTips(i18n("island_visit_tip5", var5_3))
-			elseif arg0_3.result == 1 then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("island_visit_tip1"))
-			elseif arg0_3.result == 20 or arg0_3.result == 40 then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("island_visit_tip2"))
-			elseif arg0_3.result == 9 then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("island_visit_tip3"))
-			else
-				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_3.result] .. arg0_3.result)
-			end
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg0_3.result] .. arg0_3.result)
 		end
 	end)
 end
