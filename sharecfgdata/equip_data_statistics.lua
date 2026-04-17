@@ -121249,6 +121249,56 @@ _G.pg.base.equip_data_statistics[61173] = {
 	hidden_skill_id = {},
 }
 
+_G.pg.base.equip_data_statistics[61181] = {
+	ammo = 10,
+	descrip = "Aircraft Carrier Airstrike",
+	icon = "1",
+	id = 61181,
+	name = "航空攻击展示-伊莉丝I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 99,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61181,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {},
+}
+
+_G.pg.base.equip_data_statistics[61182] = {
+	base = 61181,
+	id = 61182,
+	name = "航空攻击展示-伊莉丝II",
+	weapon_id = {
+		61182,
+	},
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[61183] = {
+	base = 61181,
+	id = 61183,
+	name = "航空攻击展示-伊莉丝III",
+	weapon_id = {
+		61183,
+	},
+	hidden_skill_id = {},
+}
+
 _G.pg.base.equip_data_statistics[61501] = {
 	ammo = 10,
 	descrip = "Used during airstrikes",
@@ -172309,6 +172359,408 @@ _G.pg.base.equip_data_statistics[151073] = {
 	value_1 = "472",
 	value_2 = 4,
 	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151080] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	descrip = "Put your feelings down onto the photocard and let the beach's melody change to your color!",
+	icon = "151080",
+	id = 151080,
+	name = "Electrifying Deco-Pen",
+	nationality = 106,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "250",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			61070,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[151081] = {
+	base = 151080,
+	id = 151081,
+	value_1 = "280",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151082] = {
+	base = 151080,
+	id = 151082,
+	value_1 = "310",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151083] = {
+	base = 151080,
+	id = 151083,
+	value_1 = "340",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151084] = {
+	base = 151080,
+	id = 151084,
+	value_1 = "370",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151085] = {
+	base = 151080,
+	id = 151085,
+	value_1 = "400",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151086] = {
+	base = 151080,
+	id = 151086,
+	value_1 = "430",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151087] = {
+	base = 151080,
+	id = 151087,
+	value_1 = "460",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151088] = {
+	base = 151080,
+	id = 151088,
+	value_1 = "490",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151089] = {
+	base = 151080,
+	id = 151089,
+	value_1 = "520",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151090] = {
+	base = 151080,
+	id = 151090,
+	value_1 = "550",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151091] = {
+	anti_siren = 100,
+	base = 151080,
+	id = 151091,
+	value_1 = "580",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151092] = {
+	anti_siren = 200,
+	base = 151080,
+	id = 151092,
+	value_1 = "610",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151093] = {
+	anti_siren = 300,
+	base = 151080,
+	id = 151093,
+	value_1 = "640",
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151100] = {
+	ammo = 10,
+	attribute_1 = "antiaircraft",
+	attribute_2 = "hit",
+	descrip = "The secret to being a fan is to make sure that you're ready to record every key moment!",
+	icon = "151100",
+	id = 151100,
+	name = "Gravure Photocard",
+	nationality = 106,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "14",
+	value_2 = 15,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			61080,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[151101] = {
+	base = 151100,
+	id = 151101,
+	value_1 = "16",
+	value_2 = 16,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151102] = {
+	base = 151100,
+	id = 151102,
+	value_1 = "18",
+	value_2 = 17,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151103] = {
+	base = 151100,
+	id = 151103,
+	value_1 = "20",
+	value_2 = 18,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151104] = {
+	base = 151100,
+	id = 151104,
+	value_1 = "22",
+	value_2 = 19,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151105] = {
+	base = 151100,
+	id = 151105,
+	value_1 = "24",
+	value_2 = 20,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151106] = {
+	base = 151100,
+	id = 151106,
+	value_1 = "26",
+	value_2 = 22,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151107] = {
+	base = 151100,
+	id = 151107,
+	value_1 = "28",
+	value_2 = 24,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151108] = {
+	base = 151100,
+	id = 151108,
+	value_1 = "30",
+	value_2 = 26,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151109] = {
+	base = 151100,
+	id = 151109,
+	value_1 = "32",
+	value_2 = 28,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151110] = {
+	base = 151100,
+	id = 151110,
+	value_1 = "35",
+	value_2 = 30,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151111] = {
+	anti_siren = 100,
+	base = 151100,
+	id = 151111,
+	value_1 = "38",
+	value_2 = 32,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151112] = {
+	anti_siren = 200,
+	base = 151100,
+	id = 151112,
+	value_1 = "41",
+	value_2 = 34,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151113] = {
+	anti_siren = 300,
+	base = 151100,
+	id = 151113,
+	value_1 = "44",
+	value_2 = 36,
+	hidden_skill_id = {},
+}
+
+_G.pg.base.equip_data_statistics[151120] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	attribute_2 = "luck",
+	descrip = "Hold it in your hands, and good fortune might just come your way!",
+	icon = "151120",
+	id = 151120,
+	name = "Clover of Happiness",
+	nationality = 106,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "200",
+	value_2 = 1,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			61090,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+
+_G.pg.base.equip_data_statistics[151121] = {
+	base = 151120,
+	id = 151121,
+	value_1 = "230",
+}
+
+_G.pg.base.equip_data_statistics[151122] = {
+	base = 151120,
+	id = 151122,
+	value_1 = "260",
+}
+
+_G.pg.base.equip_data_statistics[151123] = {
+	base = 151120,
+	id = 151123,
+	value_1 = "290",
+}
+
+_G.pg.base.equip_data_statistics[151124] = {
+	base = 151120,
+	id = 151124,
+	value_1 = "320",
+}
+
+_G.pg.base.equip_data_statistics[151125] = {
+	base = 151120,
+	id = 151125,
+	value_1 = "350",
+}
+
+_G.pg.base.equip_data_statistics[151126] = {
+	base = 151120,
+	id = 151126,
+	value_1 = "380",
+}
+
+_G.pg.base.equip_data_statistics[151127] = {
+	base = 151120,
+	id = 151127,
+	value_1 = "410",
+}
+
+_G.pg.base.equip_data_statistics[151128] = {
+	base = 151120,
+	id = 151128,
+	value_1 = "440",
+}
+
+_G.pg.base.equip_data_statistics[151129] = {
+	base = 151120,
+	id = 151129,
+	value_1 = "470",
+}
+
+_G.pg.base.equip_data_statistics[151130] = {
+	base = 151120,
+	id = 151130,
+	value_1 = "500",
+	value_2 = 2,
+}
+
+_G.pg.base.equip_data_statistics[151131] = {
+	anti_siren = 100,
+	base = 151120,
+	id = 151131,
+	value_1 = "530",
+	value_2 = 2,
+}
+
+_G.pg.base.equip_data_statistics[151132] = {
+	anti_siren = 200,
+	base = 151120,
+	id = 151132,
+	value_1 = "560",
+	value_2 = 2,
+}
+
+_G.pg.base.equip_data_statistics[151133] = {
+	anti_siren = 300,
+	base = 151120,
+	id = 151133,
+	value_1 = "590",
+	value_2 = 2,
 }
 
 _G.pg.base.equip_data_statistics[170001] = {

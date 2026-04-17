@@ -40,44 +40,57 @@ function var0_0.LoadSceneWithProgress(arg0_7, arg1_7, arg2_7)
 
 	SceneOpBackgroundMgr.Inst:LoadSceneAsyncWithProgress(var2_7, var1_7, LoadSceneMode.Additive, function(arg0_8)
 		if arg0_8 == 1 then
-			-- block empty
+			onNextTick(function()
+				SceneOpBackgroundMgr.Inst:ActivatePendingScene()
+				onNextTick(function()
+					if CheatTavernCameraMgr.instance then
+						CheatTavernCameraMgr.instance._mainCamera.enabled = false
+					end
+				end)
+			end)
 		end
 
 		arg2_7(arg0_8)
 	end)
 end
 
-function var0_0.LoadScene(arg0_9, arg1_9, arg2_9)
-	arg0_9:LoadSceneWithProgress(arg1_9, function(arg0_10)
-		if arg0_10 == 1 then
-			existCall(arg2_9)
+function var0_0.LoadScene(arg0_11, arg1_11, arg2_11)
+	arg0_11:LoadSceneWithProgress(arg1_11, function(arg0_12)
+		if arg0_12 == 1 then
+			existCall(arg2_11)
 		end
 	end)
 end
 
-function var0_0.UnLoad(arg0_11, arg1_11)
-	local var0_11 = arg0_11.scenePath
-	local var1_11 = arg0_11.sceneName
+function var0_0.UnLoad(arg0_13, arg1_13)
+	local var0_13 = arg0_13.scenePath
+	local var1_13 = arg0_13.sceneName
 
-	if not var0_11 or not var1_11 then
+	if not var0_13 or not var1_13 then
 		return
 	end
 
-	pg.UIMgr.GetInstance():LoadingOn()
-	SceneOpMgr.Inst:UnloadSceneAsync(var0_11, var1_11, function()
-		pg.UIMgr.GetInstance():LoadingOff()
-	end)
+	if not arg1_13 then
+		pg.UIMgr.GetInstance():LoadingOn()
+		SceneOpMgr.Inst:UnloadSceneAsync(var0_13, var1_13, function()
+			pg.UIMgr.GetInstance():LoadingOff()
+		end)
+	else
+		SceneOpMgr.Inst:UnloadSceneAsync(var0_13, var1_13, function()
+			return
+		end)
+	end
 
-	arg0_11.scenePath = nil
-	arg0_11.sceneName = nil
+	arg0_13.scenePath = nil
+	arg0_13.sceneName = nil
 end
 
-function var0_0.ActivatePendingScene(arg0_13)
-	SceneOpBackgroundMgr.Inst:ActivatePendingScene()
+function var0_0.ActivatePendingScene(arg0_16)
+	return
 end
 
-function var0_0.Dispose(arg0_14, arg1_14)
-	arg0_14:UnLoad(arg1_14)
+function var0_0.Dispose(arg0_17, arg1_17)
+	arg0_17:UnLoad(arg1_17)
 end
 
 return var0_0

@@ -13,7 +13,7 @@ pg.activity_banner = {
 				{
 					2026,
 					4,
-					9
+					17
 				},
 				{
 					0,
@@ -25,7 +25,7 @@ pg.activity_banner = {
 				{
 					2026,
 					4,
-					15
+					30
 				},
 				{
 					23,
@@ -38,7 +38,6 @@ pg.activity_banner = {
 	{
 		id = 2,
 		pic = "temp2",
-		time = "stop",
 		type = 2,
 		param = {
 			"scene get boat",
@@ -46,17 +45,68 @@ pg.activity_banner = {
 				projectName = "new",
 				page = 1
 			}
+		},
+		time = {
+			{
+				{
+					2026,
+					4,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
 		}
 	},
 	{
 		id = 3,
 		pic = "temp3",
-		time = "stop",
 		type = 2,
 		param = {
 			"scene core activity",
 			{
-				coreName = "YunLongSPCoreActivityUI"
+				coreName = "DOACoreActivityUI"
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					4,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
 			}
 		}
 	},
@@ -75,7 +125,7 @@ pg.activity_banner = {
 				{
 					2026,
 					4,
-					9
+					17
 				},
 				{
 					0,
@@ -86,8 +136,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					4,
-					15
+					5,
+					1
 				},
 				{
 					23,
@@ -100,22 +150,72 @@ pg.activity_banner = {
 	{
 		id = 5,
 		pic = "temp5",
-		time = "stop",
 		type = 2,
 		param = {
 			"scene shop",
 			{
 				warp = "shopstreet"
 			}
+		},
+		time = {
+			{
+				{
+					2026,
+					4,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
 		}
 	},
 	{
 		id = 6,
 		pic = "temp6",
-		time = "stop",
 		type = 2,
 		param = {
 			"scene court yard"
+		},
+		time = {
+			{
+				{
+					2026,
+					4,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
 		}
 	},
 	{
@@ -130,6 +230,15 @@ pg.activity_banner = {
 	{
 		id = 8,
 		pic = "temp8",
+		time = "stop",
+		type = 2,
+		param = {
+			"crusing"
+		}
+	},
+	{
+		id = 9,
+		pic = "temp9",
 		type = 2,
 		param = {
 			"scene equip",
@@ -143,7 +252,7 @@ pg.activity_banner = {
 				{
 					2026,
 					4,
-					9
+					17
 				},
 				{
 					0,
@@ -154,51 +263,13 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					4,
-					15
+					5,
+					1
 				},
 				{
-					12,
-					0,
-					0
-				}
-			}
-		}
-	},
-	{
-		id = 9,
-		pic = "temp9",
-		type = 2,
-		param = {
-			"scene level",
-			{
-				open_remaster = true,
-				isSP = true
-			}
-		},
-		time = {
-			{
-				{
-					2026,
-					4,
-					9
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					4,
-					15
-				},
-				{
-					12,
-					0,
-					0
+					23,
+					59,
+					59
 				}
 			}
 		}
@@ -226,10 +297,35 @@ pg.activity_banner = {
 	},
 	[99] = {
 		param = "",
-		time = "stop",
-		type = 12,
 		id = 99,
-		pic = "limit_skin"
+		pic = "limit_skin",
+		type = 12,
+		time = {
+			{
+				{
+					2026,
+					4,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					4,
+					30
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
 	},
 	[100] = {
 		param = "Dumplings|A world-famous delight from the Dragon Empery! <color=#92fc63>(Increases EXP gained by 5% for 60 minutes.)</color>",

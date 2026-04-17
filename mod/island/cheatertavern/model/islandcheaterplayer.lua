@@ -12,6 +12,8 @@ function var0_0.Ctor(arg0_1, arg1_1)
 
 	arg0_1.state = 0
 	arg0_1.player_info = arg1_1.player_info
+	arg0_1.rank = 0
+	arg0_1.addScore = 0
 end
 
 function var0_0.SetGameData(arg0_2, arg1_2, arg2_2)

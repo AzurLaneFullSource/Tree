@@ -228,6 +228,8 @@ function var0_0.OtherPlayerCardDestroy(arg0_11, arg1_11)
 	for iter0_11, iter1_11 in pairs(var0_11) do
 		iter1_11:Destroy()
 	end
+
+	arg0_11.otherPlayerCardDic[arg1_11] = {}
 end
 
 function var0_0.PlayerCardSetActive(arg0_12, arg1_12, arg2_12)

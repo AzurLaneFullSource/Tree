@@ -28286,6 +28286,130 @@ _G.pg.base.item_data_statistics[30382] = {
 	limit = {},
 }
 
+_G.pg.base.item_data_statistics[30383] = {
+	compose_number = 0,
+	display = "Contains a random Beachside Brilliance-themed gear skin.",
+	display_effect = "",
+	icon = "Props/appearanceboxshanyaohaibin",
+	id = 30383,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Gear Skin Box (Beachside Brilliance)",
+	open_directly = 1,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 11,
+	usage = "usage_drop",
+	usage_arg = "30380",
+	virtual_type = 0,
+	display_icon = {
+		{
+			9,
+			4348,
+			1,
+		},
+		{
+			9,
+			4349,
+			1,
+		},
+		{
+			9,
+			4350,
+			1,
+		},
+		{
+			9,
+			4351,
+			1,
+		},
+		{
+			9,
+			4352,
+			1,
+		},
+		{
+			9,
+			4353,
+			1,
+		},
+		{
+			9,
+			4354,
+			1,
+		},
+		{
+			9,
+			4355,
+			1,
+		},
+		{
+			9,
+			4356,
+			1,
+		},
+		{
+			9,
+			4357,
+			1,
+		},
+		{
+			9,
+			4358,
+			1,
+		},
+		{
+			9,
+			4359,
+			1,
+		},
+		{
+			9,
+			4360,
+			1,
+		},
+		{
+			9,
+			4361,
+			1,
+		},
+		{
+			9,
+			4362,
+			1,
+		},
+		{
+			9,
+			4363,
+			1,
+		},
+		{
+			9,
+			4364,
+			1,
+		},
+		{
+			9,
+			4365,
+			1,
+		},
+	},
+	price = {
+		1,
+		7000,
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+
 _G.pg.base.item_data_statistics[30401] = {
 	compose_number = 0,
 	display = "Contains 1 random Cruise Mission gear skin.",
@@ -44012,6 +44136,218 @@ _G.pg.base.item_data_statistics[30566] = {
 		{
 			9,
 			4347,
+			1,
+		},
+	},
+	limit = {},
+}
+
+_G.pg.base.item_data_statistics[30567] = {
+	compose_number = 0,
+	display = "Can be opened to receive 1 Beachside Brilliance-themed gear skin of your choosing.",
+	display_effect = "",
+	icon = "Props/appearanceboxshanyaohaibinzixuan",
+	id = 30567,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Selection Gear Skin Box (Beachside Brilliance)",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 13,
+	usage = "usage_drop_appointed",
+	virtual_type = 0,
+	display_icon = {
+		{
+			9,
+			4348,
+			1,
+		},
+		{
+			9,
+			4349,
+			1,
+		},
+		{
+			9,
+			4350,
+			1,
+		},
+		{
+			9,
+			4351,
+			1,
+		},
+		{
+			9,
+			4352,
+			1,
+		},
+		{
+			9,
+			4353,
+			1,
+		},
+		{
+			9,
+			4354,
+			1,
+		},
+		{
+			9,
+			4355,
+			1,
+		},
+		{
+			9,
+			4356,
+			1,
+		},
+		{
+			9,
+			4357,
+			1,
+		},
+		{
+			9,
+			4358,
+			1,
+		},
+		{
+			9,
+			4359,
+			1,
+		},
+		{
+			9,
+			4360,
+			1,
+		},
+		{
+			9,
+			4361,
+			1,
+		},
+		{
+			9,
+			4362,
+			1,
+		},
+		{
+			9,
+			4363,
+			1,
+		},
+		{
+			9,
+			4364,
+			1,
+		},
+		{
+			9,
+			4365,
+			1,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			9,
+			4348,
+			1,
+		},
+		{
+			9,
+			4349,
+			1,
+		},
+		{
+			9,
+			4350,
+			1,
+		},
+		{
+			9,
+			4351,
+			1,
+		},
+		{
+			9,
+			4352,
+			1,
+		},
+		{
+			9,
+			4353,
+			1,
+		},
+		{
+			9,
+			4354,
+			1,
+		},
+		{
+			9,
+			4355,
+			1,
+		},
+		{
+			9,
+			4356,
+			1,
+		},
+		{
+			9,
+			4357,
+			1,
+		},
+		{
+			9,
+			4358,
+			1,
+		},
+		{
+			9,
+			4359,
+			1,
+		},
+		{
+			9,
+			4360,
+			1,
+		},
+		{
+			9,
+			4361,
+			1,
+		},
+		{
+			9,
+			4362,
+			1,
+		},
+		{
+			9,
+			4363,
+			1,
+		},
+		{
+			9,
+			4364,
+			1,
+		},
+		{
+			9,
+			4365,
 			1,
 		},
 	},

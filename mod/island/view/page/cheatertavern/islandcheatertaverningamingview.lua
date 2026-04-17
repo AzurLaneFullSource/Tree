@@ -116,6 +116,7 @@ function var0_0.Init(arg0_2)
 	setText(arg0_2.uiOutText, i18n("bar_ui_game1"))
 	setActive(arg0_2.uiTipsTf, false)
 	setParent(arg0_2.uiTipsTf, pg.UIMgr.GetInstance().OverlayToast)
+	arg0_2.cheaterTavernAgency:SetUILoadOver(true)
 end
 
 function var0_0.OnCheaterOperateDone(arg0_11, arg1_11)

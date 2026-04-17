@@ -286,6 +286,8 @@ function var0_0.Destroy(arg0_18)
 	arg0_18.unSelectedCardTf = nil
 
 	arg0_18.cardPoolMgr:ReturnGameObjectById(arg0_18.id, arg0_18.tf.gameObject)
+
+	arg0_18.tf = nil
 end
 
 return var0_0

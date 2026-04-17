@@ -3997,6 +3997,26 @@ pg.memory_template = setmetatable({
 		5075,
 		5076,
 		5077,
+		5081,
+		5082,
+		5083,
+		5084,
+		5085,
+		5086,
+		5087,
+		5088,
+		5089,
+		5090,
+		5091,
+		5092,
+		5093,
+		5101,
+		5102,
+		5103,
+		5104,
+		5105,
+		5106,
+		5107,
 		10011,
 		10012,
 		10013,
@@ -64201,6 +64221,306 @@ pg.base.memory_template = {
 		is_open = 0,
 		unlock_pre = {
 			"DEWENJUN7"
+		}
+	},
+	[5081] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA1",
+		mask = "bg/bg_memory",
+		title = "The Venuses Return",
+		condition = "Unlock EPS-1",
+		number = 0,
+		id = 5081,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA1"
+		}
+	},
+	[5082] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA2",
+		mask = "bg/bg_memory",
+		title = "Tournament Prep",
+		condition = "Unlock EPS-2",
+		number = 0,
+		id = 5082,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA2"
+		}
+	},
+	[5083] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA3",
+		mask = "bg/bg_memory",
+		title = "To a T",
+		condition = "Unlock EPS-3",
+		number = 0,
+		id = 5083,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA3"
+		}
+	},
+	[5084] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA4",
+		mask = "bg/bg_memory",
+		title = "Cosplayer?",
+		condition = "Unlock EPS-4",
+		number = 0,
+		id = 5084,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA4"
+		}
+	},
+	[5085] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA5",
+		mask = "bg/bg_memory",
+		title = "Deadly Charms",
+		condition = "Unlock EPS-5",
+		number = 0,
+		id = 5085,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA5"
+		}
+	},
+	[5086] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA6",
+		mask = "bg/bg_memory",
+		title = "Always Be Capturing",
+		condition = "Unlock EPS-6",
+		number = 0,
+		id = 5086,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA6"
+		}
+	},
+	[5087] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA7",
+		mask = "bg/bg_memory",
+		title = "The Great Treasure Hunting Team",
+		condition = "Unlock EPS-7",
+		number = 0,
+		id = 5087,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA7"
+		}
+	},
+	[5088] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA8",
+		mask = "bg/bg_memory",
+		title = "Fashion Trends",
+		condition = "Unlock EPS-8",
+		number = 0,
+		id = 5088,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA8"
+		}
+	},
+	[5089] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA9",
+		mask = "bg/bg_memory",
+		title = "Style Showcase",
+		condition = "Unlock EPS-9",
+		number = 0,
+		id = 5089,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA9"
+		}
+	},
+	[5090] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA10",
+		mask = "bg/bg_memory",
+		title = "All About Hot Springs",
+		condition = "Unlock EPS-10",
+		number = 0,
+		id = 5090,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA10"
+		}
+	},
+	[5091] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA11",
+		mask = "bg/bg_memory",
+		title = "The Recording Team",
+		condition = "Unlock EPS-11",
+		number = 0,
+		id = 5091,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA11"
+		}
+	},
+	[5092] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA12",
+		mask = "bg/bg_memory",
+		title = "The Livestream Team",
+		condition = "Unlock EPS-12",
+		number = 0,
+		id = 5092,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA12"
+		}
+	},
+	[5093] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA13",
+		mask = "bg/bg_memory",
+		title = "The Tournament Begins!",
+		condition = "Unlock EPS-13",
+		number = 0,
+		id = 5093,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA13"
+		}
+	},
+	[5101] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINRICHANG1",
+		mask = "bg/bg_memory",
+		title = "Devotion to One's Work",
+		condition = "Unlock Elise's story in Vacation Lane - Beachside Brilliance ~Venus~.",
+		number = 0,
+		id = 5101,
+		icon = "memory_shanyaohaibin2",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINRICHANG1"
+		}
+	},
+	[5102] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINRICHANG2",
+		mask = "bg/bg_memory",
+		title = "Seaside Afternoon Nap",
+		condition = "Unlock Shizuku's story in Vacation Lane - Beachside Brilliance ~Venus~.",
+		number = 0,
+		id = 5102,
+		icon = "memory_shanyaohaibin2",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINRICHANG2"
+		}
+	},
+	[5103] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINRICHANG3",
+		mask = "bg/bg_memory",
+		title = "A Bewitching Recipe",
+		condition = "Unlock Shandy's story in Vacation Lane - Beachside Brilliance ~Venus~.",
+		number = 0,
+		id = 5103,
+		icon = "memory_shanyaohaibin2",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINRICHANG3"
+		}
+	},
+	[5104] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINRICHANG4",
+		mask = "bg/bg_memory",
+		title = "The Immersive Mangaka",
+		condition = "Unlock Tsukushi's story in Vacation Lane - Beachside Brilliance ~Venus~.",
+		number = 0,
+		id = 5104,
+		icon = "memory_shanyaohaibin2",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINRICHANG4"
+		}
+	},
+	[5105] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINRICHANG5",
+		mask = "bg/bg_memory",
+		title = "Your Lucky Bunny",
+		condition = "Unlock Patty's story in Vacation Lane - Beachside Brilliance ~Venus~.",
+		number = 0,
+		id = 5105,
+		icon = "memory_shanyaohaibin2",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINRICHANG5"
+		}
+	},
+	[5106] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINRICHANG6",
+		mask = "bg/bg_memory",
+		title = "Beware of Beasts!",
+		condition = "Unlock Yukino's story in Vacation Lane - Beachside Brilliance ~Venus~.",
+		number = 0,
+		id = 5106,
+		icon = "memory_shanyaohaibin2",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINRICHANG6"
+		}
+	},
+	[5107] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINRICHANG7",
+		mask = "bg/bg_memory",
+		title = "Fireworks for Two",
+		condition = "Unlock Misaki's story in Vacation Lane - Beachside Brilliance ~Venus~.",
+		number = 0,
+		id = 5107,
+		icon = "memory_shanyaohaibin2",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINRICHANG7"
 		}
 	},
 	[10011] = {

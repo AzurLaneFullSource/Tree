@@ -34659,6 +34659,915 @@ _G.pg.base.spweapon_data_statistics[15130] = {
 	},
 }
 
+_G.pg.base.spweapon_data_statistics[15200] = {
+	attribute_1 = "air",
+	attribute_2 = "hit",
+	descrip = "Elise's Augment Module.",
+	effect_id = 106520,
+	effect_id_display = 106520,
+	icon = "15200",
+	id = 15200,
+	important = 2,
+	level = 1,
+	name = "Stollen",
+	next = 15201,
+	prev = 0,
+	rarity = 4,
+	tech = 0,
+	type = 7,
+	uncraftable = 1,
+	unique = 1060010,
+	upgrade_id = 10001,
+	value_1 = 27,
+	value_1_random = 0,
+	value_2 = 16,
+	value_2_random = 0,
+	usability = {
+		7,
+	},
+	skill_upgrade = {
+		{
+			0,
+			106510,
+		},
+	},
+	hide_buff_upgrade = {},
+	label = {},
+}
+
+_G.pg.base.spweapon_data_statistics[15201] = {
+	base = 15200,
+	id = 15201,
+	level = 2,
+	next = 15202,
+	prev = 15200,
+	upgrade_id = 10002,
+	value_2 = 17,
+}
+
+_G.pg.base.spweapon_data_statistics[15202] = {
+	base = 15200,
+	id = 15202,
+	level = 3,
+	next = 15203,
+	prev = 15201,
+	upgrade_id = 10003,
+	value_1 = 28,
+	value_2 = 17,
+}
+
+_G.pg.base.spweapon_data_statistics[15203] = {
+	base = 15200,
+	id = 15203,
+	level = 4,
+	next = 15204,
+	prev = 15202,
+	upgrade_id = 10004,
+	value_1 = 28,
+	value_2 = 18,
+}
+
+_G.pg.base.spweapon_data_statistics[15204] = {
+	base = 15200,
+	id = 15204,
+	level = 5,
+	next = 15205,
+	prev = 15203,
+	upgrade_id = 10005,
+	value_1 = 29,
+	value_2 = 18,
+}
+
+_G.pg.base.spweapon_data_statistics[15205] = {
+	base = 15200,
+	id = 15205,
+	level = 6,
+	next = 15206,
+	prev = 15204,
+	upgrade_id = 10006,
+	value_1 = 30,
+	value_2 = 19,
+}
+
+_G.pg.base.spweapon_data_statistics[15206] = {
+	base = 15200,
+	id = 15206,
+	level = 7,
+	next = 15207,
+	prev = 15205,
+	upgrade_id = 10007,
+	value_1 = 31,
+	value_2 = 19,
+}
+
+_G.pg.base.spweapon_data_statistics[15207] = {
+	base = 15200,
+	id = 15207,
+	level = 8,
+	next = 15208,
+	prev = 15206,
+	upgrade_id = 10008,
+	value_1 = 32,
+	value_2 = 20,
+}
+
+_G.pg.base.spweapon_data_statistics[15208] = {
+	base = 15200,
+	id = 15208,
+	level = 9,
+	next = 15209,
+	prev = 15207,
+	upgrade_id = 10009,
+	value_1 = 33,
+	value_2 = 20,
+}
+
+_G.pg.base.spweapon_data_statistics[15209] = {
+	base = 15200,
+	id = 15209,
+	level = 10,
+	next = 15210,
+	prev = 15208,
+	upgrade_id = 10010,
+	value_1 = 34,
+	value_2 = 21,
+}
+
+_G.pg.base.spweapon_data_statistics[15210] = {
+	base = 15200,
+	id = 15210,
+	level = 11,
+	next = 0,
+	prev = 15209,
+	upgrade_id = 10011,
+	value_1 = 35,
+	value_2 = 22,
+	skill_upgrade = {
+		{
+			106500,
+			106510,
+		},
+	},
+}
+
+_G.pg.base.spweapon_data_statistics[15220] = {
+	attribute_1 = "cannon",
+	attribute_2 = "hit",
+	descrip = "Shizuku's Augment Module.",
+	effect_id = 106400,
+	effect_id_display = 106400,
+	icon = "15220",
+	id = 15220,
+	important = 2,
+	level = 1,
+	name = "Shishamo Tempura",
+	next = 15221,
+	prev = 0,
+	rarity = 4,
+	tech = 0,
+	type = 6,
+	uncraftable = 1,
+	unique = 1060011,
+	upgrade_id = 10001,
+	value_1 = 25,
+	value_1_random = 0,
+	value_2 = 7,
+	value_2_random = 0,
+	usability = {
+		5,
+	},
+	skill_upgrade = {
+		{
+			0,
+			106390,
+		},
+	},
+	hide_buff_upgrade = {},
+	label = {},
+}
+
+_G.pg.base.spweapon_data_statistics[15221] = {
+	base = 15220,
+	id = 15221,
+	level = 2,
+	next = 15222,
+	prev = 15220,
+	upgrade_id = 10002,
+	value_1 = 26,
+	value_2 = 8,
+}
+
+_G.pg.base.spweapon_data_statistics[15222] = {
+	base = 15220,
+	id = 15222,
+	level = 3,
+	next = 15223,
+	prev = 15221,
+	upgrade_id = 10003,
+	value_1 = 27,
+	value_2 = 9,
+}
+
+_G.pg.base.spweapon_data_statistics[15223] = {
+	base = 15220,
+	id = 15223,
+	level = 4,
+	next = 15224,
+	prev = 15222,
+	upgrade_id = 10004,
+	value_1 = 28,
+	value_2 = 9,
+}
+
+_G.pg.base.spweapon_data_statistics[15224] = {
+	base = 15220,
+	id = 15224,
+	level = 5,
+	next = 15225,
+	prev = 15223,
+	upgrade_id = 10005,
+	value_1 = 29,
+	value_2 = 10,
+}
+
+_G.pg.base.spweapon_data_statistics[15225] = {
+	base = 15220,
+	id = 15225,
+	level = 6,
+	next = 15226,
+	prev = 15224,
+	upgrade_id = 10006,
+	value_1 = 30,
+	value_2 = 10,
+}
+
+_G.pg.base.spweapon_data_statistics[15226] = {
+	base = 15220,
+	id = 15226,
+	level = 7,
+	next = 15227,
+	prev = 15225,
+	upgrade_id = 10007,
+	value_1 = 31,
+	value_2 = 11,
+}
+
+_G.pg.base.spweapon_data_statistics[15227] = {
+	base = 15220,
+	id = 15227,
+	level = 8,
+	next = 15228,
+	prev = 15226,
+	upgrade_id = 10008,
+	value_1 = 32,
+	value_2 = 11,
+}
+
+_G.pg.base.spweapon_data_statistics[15228] = {
+	base = 15220,
+	id = 15228,
+	level = 9,
+	next = 15229,
+	prev = 15227,
+	upgrade_id = 10009,
+	value_1 = 33,
+	value_2 = 11,
+}
+
+_G.pg.base.spweapon_data_statistics[15229] = {
+	base = 15220,
+	id = 15229,
+	level = 10,
+	next = 15230,
+	prev = 15228,
+	upgrade_id = 10010,
+	value_1 = 34,
+	value_2 = 12,
+}
+
+_G.pg.base.spweapon_data_statistics[15230] = {
+	base = 15220,
+	id = 15230,
+	level = 11,
+	next = 0,
+	prev = 15229,
+	upgrade_id = 10011,
+	value_1 = 35,
+	value_2 = 12,
+	skill_upgrade = {
+		{
+			106380,
+			106390,
+		},
+	},
+}
+
+_G.pg.base.spweapon_data_statistics[15240] = {
+	attribute_1 = "cannon",
+	attribute_2 = "hit",
+	descrip = "Shandy's Augment Module.",
+	effect_id = 106560,
+	effect_id_display = 106560,
+	icon = "15240",
+	id = 15240,
+	important = 2,
+	level = 1,
+	name = "Chili Crab",
+	next = 15241,
+	prev = 0,
+	rarity = 4,
+	tech = 0,
+	type = 4,
+	uncraftable = 1,
+	unique = 1060012,
+	upgrade_id = 10001,
+	value_1 = 25,
+	value_1_random = 0,
+	value_2 = 5,
+	value_2_random = 0,
+	usability = {
+		3,
+	},
+	skill_upgrade = {
+		{
+			0,
+			106550,
+		},
+	},
+	hide_buff_upgrade = {},
+	label = {},
+}
+
+_G.pg.base.spweapon_data_statistics[15241] = {
+	base = 15240,
+	id = 15241,
+	level = 2,
+	next = 15242,
+	prev = 15240,
+	upgrade_id = 10002,
+	value_1 = 26,
+	value_2 = 6,
+}
+
+_G.pg.base.spweapon_data_statistics[15242] = {
+	base = 15240,
+	id = 15242,
+	level = 3,
+	next = 15243,
+	prev = 15241,
+	upgrade_id = 10003,
+	value_1 = 27,
+	value_2 = 7,
+}
+
+_G.pg.base.spweapon_data_statistics[15243] = {
+	base = 15240,
+	id = 15243,
+	level = 4,
+	next = 15244,
+	prev = 15242,
+	upgrade_id = 10004,
+	value_1 = 28,
+	value_2 = 8,
+}
+
+_G.pg.base.spweapon_data_statistics[15244] = {
+	base = 15240,
+	id = 15244,
+	level = 5,
+	next = 15245,
+	prev = 15243,
+	upgrade_id = 10005,
+	value_1 = 29,
+	value_2 = 9,
+}
+
+_G.pg.base.spweapon_data_statistics[15245] = {
+	base = 15240,
+	id = 15245,
+	level = 6,
+	next = 15246,
+	prev = 15244,
+	upgrade_id = 10006,
+	value_1 = 30,
+	value_2 = 10,
+}
+
+_G.pg.base.spweapon_data_statistics[15246] = {
+	base = 15240,
+	id = 15246,
+	level = 7,
+	next = 15247,
+	prev = 15245,
+	upgrade_id = 10007,
+	value_1 = 31,
+	value_2 = 11,
+}
+
+_G.pg.base.spweapon_data_statistics[15247] = {
+	base = 15240,
+	id = 15247,
+	level = 8,
+	next = 15248,
+	prev = 15246,
+	upgrade_id = 10008,
+	value_1 = 32,
+	value_2 = 12,
+}
+
+_G.pg.base.spweapon_data_statistics[15248] = {
+	base = 15240,
+	id = 15248,
+	level = 9,
+	next = 15249,
+	prev = 15247,
+	upgrade_id = 10009,
+	value_1 = 33,
+	value_2 = 13,
+}
+
+_G.pg.base.spweapon_data_statistics[15249] = {
+	base = 15240,
+	id = 15249,
+	level = 10,
+	next = 15250,
+	prev = 15248,
+	upgrade_id = 10010,
+	value_1 = 34,
+	value_2 = 14,
+}
+
+_G.pg.base.spweapon_data_statistics[15250] = {
+	base = 15240,
+	id = 15250,
+	level = 11,
+	next = 0,
+	prev = 15249,
+	upgrade_id = 10011,
+	value_1 = 35,
+	value_2 = 15,
+	skill_upgrade = {
+		{
+			106540,
+			106550,
+		},
+	},
+}
+
+_G.pg.base.spweapon_data_statistics[15260] = {
+	attribute_1 = "torpedo",
+	attribute_2 = "cannon",
+	descrip = "Tsukushi's Augment Module.",
+	effect_id = 106600,
+	effect_id_display = 106600,
+	icon = "15260",
+	id = 15260,
+	important = 2,
+	level = 1,
+	name = "Cup Ramen",
+	next = 15261,
+	prev = 0,
+	rarity = 4,
+	tech = 0,
+	type = 1,
+	uncraftable = 1,
+	unique = 1060013,
+	upgrade_id = 10001,
+	value_1 = 20,
+	value_1_random = 0,
+	value_2 = 8,
+	value_2_random = 0,
+	usability = {
+		1,
+	},
+	skill_upgrade = {
+		{
+			0,
+			106580,
+		},
+	},
+	hide_buff_upgrade = {},
+	label = {},
+}
+
+_G.pg.base.spweapon_data_statistics[15261] = {
+	base = 15260,
+	id = 15261,
+	level = 2,
+	next = 15262,
+	prev = 15260,
+	upgrade_id = 10002,
+	value_1 = 22,
+	value_2 = 9,
+}
+
+_G.pg.base.spweapon_data_statistics[15262] = {
+	base = 15260,
+	id = 15262,
+	level = 3,
+	next = 15263,
+	prev = 15261,
+	upgrade_id = 10003,
+	value_1 = 24,
+	value_2 = 10,
+}
+
+_G.pg.base.spweapon_data_statistics[15263] = {
+	base = 15260,
+	id = 15263,
+	level = 4,
+	next = 15264,
+	prev = 15262,
+	upgrade_id = 10004,
+	value_1 = 26,
+	value_2 = 11,
+}
+
+_G.pg.base.spweapon_data_statistics[15264] = {
+	base = 15260,
+	id = 15264,
+	level = 5,
+	next = 15265,
+	prev = 15263,
+	upgrade_id = 10005,
+	value_1 = 28,
+	value_2 = 12,
+}
+
+_G.pg.base.spweapon_data_statistics[15265] = {
+	base = 15260,
+	id = 15265,
+	level = 6,
+	next = 15266,
+	prev = 15264,
+	upgrade_id = 10006,
+	value_1 = 30,
+	value_2 = 13,
+}
+
+_G.pg.base.spweapon_data_statistics[15266] = {
+	base = 15260,
+	id = 15266,
+	level = 7,
+	next = 15267,
+	prev = 15265,
+	upgrade_id = 10007,
+	value_1 = 32,
+	value_2 = 14,
+}
+
+_G.pg.base.spweapon_data_statistics[15267] = {
+	base = 15260,
+	id = 15267,
+	level = 8,
+	next = 15268,
+	prev = 15266,
+	upgrade_id = 10008,
+	value_1 = 34,
+	value_2 = 15,
+}
+
+_G.pg.base.spweapon_data_statistics[15268] = {
+	base = 15260,
+	id = 15268,
+	level = 9,
+	next = 15269,
+	prev = 15267,
+	upgrade_id = 10009,
+	value_1 = 36,
+	value_2 = 16,
+}
+
+_G.pg.base.spweapon_data_statistics[15269] = {
+	base = 15260,
+	id = 15269,
+	level = 10,
+	next = 15270,
+	prev = 15268,
+	upgrade_id = 10010,
+	value_1 = 38,
+	value_2 = 17,
+}
+
+_G.pg.base.spweapon_data_statistics[15270] = {
+	base = 15260,
+	id = 15270,
+	level = 11,
+	next = 0,
+	prev = 15269,
+	upgrade_id = 10011,
+	value_1 = 40,
+	value_2 = 18,
+	skill_upgrade = {
+		{
+			106570,
+			106580,
+		},
+	},
+}
+
+_G.pg.base.spweapon_data_statistics[15280] = {
+	attribute_1 = "torpedo",
+	attribute_2 = "hit",
+	descrip = "Patty's Augment Module.",
+	effect_id = 106480,
+	effect_id_display = 106480,
+	icon = "15280",
+	id = 15280,
+	important = 2,
+	level = 1,
+	name = "Hamburger",
+	next = 15281,
+	prev = 0,
+	rarity = 4,
+	tech = 0,
+	type = 8,
+	uncraftable = 1,
+	unique = 1060014,
+	upgrade_id = 10001,
+	value_1 = 27,
+	value_1_random = 0,
+	value_2 = 10,
+	value_2_random = 0,
+	usability = {
+		8,
+	},
+	skill_upgrade = {
+		{
+			0,
+			106460,
+		},
+	},
+	hide_buff_upgrade = {},
+	label = {},
+}
+
+_G.pg.base.spweapon_data_statistics[15281] = {
+	base = 15280,
+	id = 15281,
+	level = 2,
+	next = 15282,
+	prev = 15280,
+	upgrade_id = 10002,
+	value_2 = 11,
+}
+
+_G.pg.base.spweapon_data_statistics[15282] = {
+	base = 15280,
+	id = 15282,
+	level = 3,
+	next = 15283,
+	prev = 15281,
+	upgrade_id = 10003,
+	value_1 = 28,
+	value_2 = 12,
+}
+
+_G.pg.base.spweapon_data_statistics[15283] = {
+	base = 15280,
+	id = 15283,
+	level = 4,
+	next = 15284,
+	prev = 15282,
+	upgrade_id = 10004,
+	value_1 = 28,
+	value_2 = 13,
+}
+
+_G.pg.base.spweapon_data_statistics[15284] = {
+	base = 15280,
+	id = 15284,
+	level = 5,
+	next = 15285,
+	prev = 15283,
+	upgrade_id = 10005,
+	value_1 = 29,
+	value_2 = 14,
+}
+
+_G.pg.base.spweapon_data_statistics[15285] = {
+	base = 15280,
+	id = 15285,
+	level = 6,
+	next = 15286,
+	prev = 15284,
+	upgrade_id = 10006,
+	value_1 = 30,
+	value_2 = 15,
+}
+
+_G.pg.base.spweapon_data_statistics[15286] = {
+	base = 15280,
+	id = 15286,
+	level = 7,
+	next = 15287,
+	prev = 15285,
+	upgrade_id = 10007,
+	value_1 = 31,
+	value_2 = 16,
+}
+
+_G.pg.base.spweapon_data_statistics[15287] = {
+	base = 15280,
+	id = 15287,
+	level = 8,
+	next = 15288,
+	prev = 15286,
+	upgrade_id = 10008,
+	value_1 = 32,
+	value_2 = 17,
+}
+
+_G.pg.base.spweapon_data_statistics[15288] = {
+	base = 15280,
+	id = 15288,
+	level = 9,
+	next = 15289,
+	prev = 15287,
+	upgrade_id = 10009,
+	value_1 = 33,
+	value_2 = 18,
+}
+
+_G.pg.base.spweapon_data_statistics[15289] = {
+	base = 15280,
+	id = 15289,
+	level = 10,
+	next = 15290,
+	prev = 15288,
+	upgrade_id = 10010,
+	value_1 = 34,
+	value_2 = 19,
+}
+
+_G.pg.base.spweapon_data_statistics[15290] = {
+	base = 15280,
+	id = 15290,
+	level = 11,
+	next = 0,
+	prev = 15289,
+	upgrade_id = 10011,
+	value_1 = 35,
+	value_2 = 20,
+	skill_upgrade = {
+		{
+			106450,
+			106460,
+		},
+	},
+}
+
+_G.pg.base.spweapon_data_statistics[15300] = {
+	attribute_1 = "cannon",
+	attribute_2 = "antiaircraft",
+	descrip = "Yukino's Augment Module.",
+	effect_id = 106440,
+	effect_id_display = 106440,
+	icon = "15300",
+	id = 15300,
+	important = 2,
+	level = 1,
+	name = "Matcha Ice Cream",
+	next = 15301,
+	prev = 0,
+	rarity = 4,
+	tech = 0,
+	type = 2,
+	uncraftable = 1,
+	unique = 1060015,
+	upgrade_id = 10001,
+	value_1 = 27,
+	value_1_random = 0,
+	value_2 = 13,
+	value_2_random = 0,
+	usability = {
+		2,
+	},
+	skill_upgrade = {
+		{
+			0,
+			106420,
+		},
+	},
+	hide_buff_upgrade = {},
+	label = {},
+}
+
+_G.pg.base.spweapon_data_statistics[15301] = {
+	base = 15300,
+	id = 15301,
+	level = 2,
+	next = 15302,
+	prev = 15300,
+	upgrade_id = 10002,
+	value_2 = 14,
+}
+
+_G.pg.base.spweapon_data_statistics[15302] = {
+	base = 15300,
+	id = 15302,
+	level = 3,
+	next = 15303,
+	prev = 15301,
+	upgrade_id = 10003,
+	value_1 = 28,
+	value_2 = 14,
+}
+
+_G.pg.base.spweapon_data_statistics[15303] = {
+	base = 15300,
+	id = 15303,
+	level = 4,
+	next = 15304,
+	prev = 15302,
+	upgrade_id = 10004,
+	value_1 = 28,
+	value_2 = 15,
+}
+
+_G.pg.base.spweapon_data_statistics[15304] = {
+	base = 15300,
+	id = 15304,
+	level = 5,
+	next = 15305,
+	prev = 15303,
+	upgrade_id = 10005,
+	value_1 = 29,
+	value_2 = 15,
+}
+
+_G.pg.base.spweapon_data_statistics[15305] = {
+	base = 15300,
+	id = 15305,
+	level = 6,
+	next = 15306,
+	prev = 15304,
+	upgrade_id = 10006,
+	value_1 = 30,
+	value_2 = 16,
+}
+
+_G.pg.base.spweapon_data_statistics[15306] = {
+	base = 15300,
+	id = 15306,
+	level = 7,
+	next = 15307,
+	prev = 15305,
+	upgrade_id = 10007,
+	value_1 = 31,
+	value_2 = 16,
+}
+
+_G.pg.base.spweapon_data_statistics[15307] = {
+	base = 15300,
+	id = 15307,
+	level = 8,
+	next = 15308,
+	prev = 15306,
+	upgrade_id = 10008,
+	value_1 = 32,
+	value_2 = 17,
+}
+
+_G.pg.base.spweapon_data_statistics[15308] = {
+	base = 15300,
+	id = 15308,
+	level = 9,
+	next = 15309,
+	prev = 15307,
+	upgrade_id = 10009,
+	value_1 = 33,
+	value_2 = 18,
+}
+
+_G.pg.base.spweapon_data_statistics[15309] = {
+	base = 15300,
+	id = 15309,
+	level = 10,
+	next = 15310,
+	prev = 15308,
+	upgrade_id = 10010,
+	value_1 = 34,
+	value_2 = 19,
+}
+
+_G.pg.base.spweapon_data_statistics[15310] = {
+	base = 15300,
+	id = 15310,
+	level = 11,
+	next = 0,
+	prev = 15309,
+	upgrade_id = 10011,
+	value_1 = 35,
+	value_2 = 20,
+	skill_upgrade = {
+		{
+			106410,
+			106420,
+		},
+	},
+}
+
 _G.pg.base.spweapon_data_statistics[15160] = {
 	attribute_1 = "cannon",
 	attribute_2 = "reload",

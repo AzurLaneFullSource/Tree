@@ -187,6 +187,7 @@ pg.furniture_data_template = setmetatable({
 			330,
 			331,
 			332,
+			333,
 			100002,
 			100003,
 			100004,
@@ -3748,6 +3749,25 @@ pg.furniture_data_template = setmetatable({
 			336115,
 			336301,
 			336302
+		},
+		[137] = {
+			337001,
+			337002,
+			337101,
+			337102,
+			337104,
+			337105,
+			337106,
+			337107,
+			337108,
+			337109,
+			337110,
+			337111,
+			337112,
+			337113,
+			337114,
+			337115,
+			337116
 		}
 	},
 	get_id_list_by_tag = {
@@ -4010,7 +4030,8 @@ pg.furniture_data_template = setmetatable({
 			321,
 			323,
 			331,
-			332
+			332,
+			333
 		},
 		[7] = {
 			211,
@@ -4351,7 +4372,8 @@ pg.furniture_data_template = setmetatable({
 			333001,
 			334001,
 			335001,
-			336001
+			336001,
+			337001
 		},
 		[3] = {
 			1002,
@@ -4476,7 +4498,8 @@ pg.furniture_data_template = setmetatable({
 			333002,
 			334002,
 			335002,
-			336002
+			336002,
+			337002
 		},
 		{
 			1101,
@@ -6711,7 +6734,22 @@ pg.furniture_data_template = setmetatable({
 			336111,
 			336112,
 			336113,
-			336114
+			336114,
+			337101,
+			337102,
+			337104,
+			337105,
+			337106,
+			337107,
+			337108,
+			337109,
+			337110,
+			337111,
+			337112,
+			337113,
+			337114,
+			337115,
+			337116
 		},
 		{
 			1108,
@@ -7430,6 +7468,7 @@ pg.furniture_data_template = setmetatable({
 			330,
 			331,
 			332,
+			333,
 			100002,
 			100004,
 			100005,
@@ -9717,7 +9756,22 @@ pg.furniture_data_template = setmetatable({
 			336112,
 			336113,
 			336114,
-			336115
+			336115,
+			337101,
+			337102,
+			337104,
+			337105,
+			337106,
+			337107,
+			337108,
+			337109,
+			337110,
+			337111,
+			337112,
+			337113,
+			337114,
+			337115,
+			337116
 		},
 		[11] = {
 			131,
@@ -9923,7 +9977,8 @@ pg.furniture_data_template = setmetatable({
 			333001,
 			334001,
 			335001,
-			336001
+			336001,
+			337001
 		},
 		{
 			1002,
@@ -10048,7 +10103,8 @@ pg.furniture_data_template = setmetatable({
 			333002,
 			334002,
 			335002,
-			336002
+			336002,
+			337002
 		},
 		[5] = {
 			1101,
@@ -10989,6 +11045,7 @@ pg.furniture_data_template = setmetatable({
 		330,
 		331,
 		332,
+		333,
 		100002,
 		100003,
 		100004,
@@ -14303,7 +14360,24 @@ pg.furniture_data_template = setmetatable({
 		336114,
 		336115,
 		336301,
-		336302
+		336302,
+		337001,
+		337002,
+		337101,
+		337102,
+		337104,
+		337105,
+		337106,
+		337107,
+		337108,
+		337109,
+		337110,
+		337111,
+		337112,
+		337113,
+		337114,
+		337115,
+		337116
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -23577,6 +23651,44 @@ pg.base.furniture_data_template = {
 				"tegongdushixunzhang",
 				"normal"
 			}
+		},
+		interAction_group = {}
+	},
+	[333] = {
+		effect = "",
+		name = "Beachside Brilliance Commemoration",
+		gain_by = "Vacation Lane - Beachside Brilliance",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		picture = "chuanmo/shanyaohaibinxunzhang",
+		is_get_time_note = 1,
+		count = 1,
+		describe = "A clear blue sky stretches over the azure sea. Let's enjoy our brilliant beachside vacation!\n– Vacation Lane - Beachside Brilliance commemorative item.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "shanyaohaibinxunzhangicon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 5,
+		tag = 8,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 0,
+		canputon = 0,
+		id = 333,
+		can_rotate = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
 		},
 		interAction_group = {}
 	},
@@ -175222,6 +175334,756 @@ pg.base.furniture_data_template = {
 				"tongjilingtg",
 				"normal"
 			}
+		},
+		interAction_group = {}
+	},
+	[337001] = {
+		icon = "dibandoa2icon",
+		name = "Beachside Flooring",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "doa2/dibandoa2",
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		size = "",
+		spine_extra = "",
+		level = 1,
+		describe = "May brilliant waves and shimmering sunlight illuminate your perfect vacation!",
+		rarity = 4,
+		advice = 0,
+		tag = 4,
+		spine_action_replace = "",
+		belong = 0,
+		deblocking = 1,
+		canputon = 0,
+		comfortable = 4,
+		id = 337001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[337002] = {
+		icon = "qiangbidoa2icon",
+		name = "Beachside Wallpaper",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		size = "",
+		spine_extra = "",
+		level = 5,
+		describe = "May brilliant waves and shimmering sunlight illuminate your perfect vacation!",
+		rarity = 4,
+		advice = 0,
+		tag = 3,
+		spine_action_replace = "",
+		belong = 0,
+		comfortable = 4,
+		canputon = 0,
+		deblocking = 1,
+		id = 337002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbidoa2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[337101] = {
+		effect = "",
+		name = "Beachside Bar Counter",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "doa2/bataidoa2",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Grab a drink mixed just for you, then chat to your heart's content with friends!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		icon = "bataidoa2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 3,
+		canputon = 0,
+		id = 337101,
+		can_rotate = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[337102] = {
+		effect = "",
+		name = "Beachside Barstool",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "doa2/bataiyizidoa2",
+		is_get_time_note = 0,
+		count = 4,
+		describe = "Take a seat, sip your drink, and admire the view!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		icon = "bataiyizidoa2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		tag = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 337102,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					12.9,
+					64.7
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[337104] = {
+		effect = "",
+		name = "Azure Beach Chair",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "doa2/shatanyi1doa2",
+		is_get_time_note = 0,
+		count = 2,
+		describe = "Lie down in a sea of blue so comfy that you might never want to get up.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		icon = "shatanyi1doa2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		tag = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 337104,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					28.2,
+					16
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[337105] = {
+		effect = "",
+		name = "White Beach Chair",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "doa2/shatanyi2doa2",
+		is_get_time_note = 0,
+		count = 2,
+		describe = "A pure-white design. Essential for sunbathing.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		icon = "shatanyi2doa2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		tag = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 337105,
+		can_rotate = 0,
+		size = {
+			2,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sleep",
+				{
+					9.1,
+					22.1
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[337106] = {
+		effect = "",
+		name = "Beachside Stone 1",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "doa2/shitou1doa2",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A stone half-buried in the sand. Be sure to watch where you step!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		icon = "shitou1doa2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 1,
+		canputon = 0,
+		id = 337106,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[337107] = {
+		effect = "",
+		name = "Beachside Stone 2",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "doa2/shitou2doa2",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A stone half-buried in the sand. Be sure to watch where you step!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		icon = "shitou2doa2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 1,
+		canputon = 0,
+		id = 337107,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[337108] = {
+		effect = "",
+		name = "Beachside Stone 3",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "doa2/shitou3doa2",
+		is_get_time_note = 0,
+		count = 2,
+		describe = "A stone half-buried in the sand. Be sure to watch where you step!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		icon = "shitou3doa2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 1,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 1,
+		canputon = 0,
+		id = 337108,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[337109] = {
+		effect = "",
+		name = "Beachside Blue Parasol",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "doa2/suliaosandoa2",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Let this refreshing shade of blue offer some personal protection from the scorching sun.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		icon = "suliaosandoa2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 2,
+		canputon = 0,
+		id = 337109,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[337110] = {
+		effect = "",
+		name = "Beachside Wooden Barrier",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "doa2/zhalandoa2",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Let this lightweight wooden partition help you create a calming space you can call your own.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		icon = "zhalandoa2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 2,
+		canputon = 0,
+		id = 337110,
+		can_rotate = 0,
+		size = {
+			1,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[337111] = {
+		effect = "",
+		name = "Palm Leaf Parasol",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "doa2/zheyangsandoa2",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "A sun-blocking parasol woven from palm leaves. Totally tropical AND practical!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		icon = "zheyangsandoa2ico",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 2,
+		canputon = 0,
+		id = 337111,
+		can_rotate = 0,
+		size = {
+			4,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[337112] = {
+		effect = "",
+		name = "Beachside Wooden Lantern",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "doa2/zhuangshidoa2",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Let's light the lanterns along the beach and envelop the night party with their warm, gentle glow!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		icon = "zhuangshidoa2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		deblocking = 1,
+		spine_action_replace = "",
+		belong = 1,
+		comfortable = 2,
+		canputon = 0,
+		id = 337112,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[337113] = {
+		effect = "",
+		name = "Beachside Relaxation Table Set 1",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "doa2/zhuoyi1doa2",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Table and chairs adorned with fresh flowers, perfect for enjoying a delicious meal.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		icon = "zhuoyi1doa2",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 3,
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 337113,
+		can_rotate = 0,
+		size = {
+			6,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-66,
+					-17
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[337114] = {
+		effect = "",
+		name = "Beachside Relaxation Table Set 2",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "doa2/zhuoyi2doa2",
+		is_get_time_note = 0,
+		count = 1,
+		describe = "Table and chairs adorned with fresh flowers, perfect for enjoying a delicious meal.",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		icon = "zhuoyi2doa2",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 337114,
+		can_rotate = 0,
+		size = {
+			4,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-27,
+					5
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[337115] = {
+		effect = "",
+		name = "Beachside Palm Tree",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		picture = "",
+		is_get_time_note = 0,
+		count = 4,
+		describe = "Lush green palm trees bring a splash of life to the sandy beach!",
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		icon = "zonglvshudoa2icon",
+		spine_extra = "",
+		level = 1,
+		advice = 0,
+		rarity = 2,
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		belong = 1,
+		deblocking = 1,
+		canputon = 0,
+		id = 337115,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zonglvshudoa2",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[337116] = {
+		gain_by = "",
+		name = "Beachside Hammock",
+		count = 1,
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		effect = "",
+		is_get_time_note = 0,
+		picture = "",
+		comfortable = 3,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 137,
+		icon = "diaochuangdoa2icon",
+		deblocking = 1,
+		level = 1,
+		describe = "A hammock tied between two trees. Perfect for a relaxing nap while you're gently cradled in nature's embrace.",
+		rarity = 3,
+		can_rotate = 0,
+		tag = 1,
+		spine_action_replace = "",
+		belong = 1,
+		spine_extra = "",
+		canputon = 0,
+		id = 337116,
+		advice = 0,
+		size = {
+			2,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"diaochuangdoa2B",
+				"normal"
+			},
+			{
+				"diaochuangdoa2T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sleep"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			-1
 		},
 		interAction_group = {}
 	}

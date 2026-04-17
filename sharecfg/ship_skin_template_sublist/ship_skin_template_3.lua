@@ -1,249 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_3 = {
-	[103262] = {
-		ship_group = 10326,
-		name = "Comfy Crane Amidst the Clouds",
-		hand_id = 3,
-		lover_kiss = "lip03",
-		bgm = "",
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 103262,
-		group_index = 2,
-		purchase_offset = "",
-		painting = "beianpudunII_3",
-		lover_hand = "hand_1_01",
-		gyro = 0,
-		l2d_drag_rate = "",
-		shop_type_id = 3,
-		prefab = "beianpudunII_3",
-		part_scale = "",
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 70961,
-		shop_dynamic_hx = 0,
-		bg = "157",
-		illustrator = -1,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = 0,
-		double_char = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		skeleton_default_skin = "",
-		voice_lang = "",
-		l2d_para_range = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		l2d_voice_calibrate = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Phew... This getup does help me get into the festival mood. It looks nice, and it's supremely comfortable, but I can't shake this embarrassment... Huh? Commander? When did you get here?",
-		voice_actor = 27,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.57,
-					0.82,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.56,
-					0.82,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.49,
-							2.34,
-							0.14
-						}
-					}
-				}
-			}
-		}
-	},
-	[103270] = {
-		ship_group = 10327,
-		name = "Louisville",
-		hand_id = 1,
-		lover_kiss = "lip03",
-		bgm = "",
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 103270,
-		group_index = 0,
-		purchase_offset = "",
-		painting = "luyisiweier",
-		lover_hand = "hand_1_02",
-		gyro = 0,
-		l2d_drag_rate = "",
-		shop_type_id = 0,
-		prefab = "luyisiweier",
-		part_scale = "",
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 0,
-		shop_dynamic_hx = 0,
-		bg = "",
-		illustrator = -1,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = -1,
-		double_char = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		skeleton_default_skin = "",
-		voice_lang = "",
-		l2d_para_range = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		l2d_voice_calibrate = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Northampton-class heavy cruiser – Louisville, Hull Number CA-28.",
-		voice_actor = 393,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					2.059,
-					0.999,
-					0
-				}
-			},
-			torpedo = {
-				{
-					-0.052,
-					0.061,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					2.058,
-					1.038,
-					0
-				}
-			},
-			vicegun = {
-				{
-					2.134,
-					1.089,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.261,
-							2.531,
-							0.14
-						}
-					}
-				}
-			}
-		}
-	},
 	[103271] = {
 		ship_group = 10327,
 		name = "An Order of Dreams",
@@ -4119,6 +3876,169 @@ pg.base.ship_skin_template_3 = {
 		},
 		l2d_voice_calibrate = {
 			use_event = true
+		}
+	},
+	[105122] = {
+		ship_group = 10512,
+		name = "Unique Sunshine",
+		hand_id = 1,
+		lover_kiss = "lip03",
+		bgm = "",
+		illustrator2 = -1,
+		id = 105122,
+		gyro = 0,
+		group_index = 2,
+		purchase_offset = "",
+		painting = "beikaluolaina_3",
+		lover_hand = "hand_1_02",
+		l2d_drag_rate = "",
+		prefab = "beikaluolaina_3",
+		shop_type_id = 6,
+		part_scale = "",
+		shop_id = 71333,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_dynamic_hx = 0,
+		illustrator = -1,
+		bg = "701",
+		double_char = 0,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skeleton_default_skin = "",
+		skin_type = 0,
+		voice_lang = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_voice_calibrate = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Commander, today I'm in a bunny swimsuit, see? You don't see how it's a bunny swimsuit...? Come closer and get a better look, then. Heheheh.",
+		voice_actor = 39,
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			6,
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		shop_offset = {
+			7,
+			-180,
+			0,
+			0.53
+		},
+		spine_offset_profile = {
+			70.61,
+			-178.7,
+			0,
+			0.52
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.079,
+					0.941,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.11,
+					1.36,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.859,
+					2.289,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.534,
+							2.375,
+							0
+						}
+					}
+				}
+			}
+		},
+		spine_offset = {
+			179.9,
+			-296.6,
+			0,
+			0.66
+		},
+		get_showing = {
+			show = 1,
+			data = {
+				{
+					-1885,
+					-324,
+					2,
+					0,
+					153,
+					2
+				},
+				{
+					-1234,
+					839,
+					2,
+					128,
+					0,
+					2
+				},
+				{
+					-332,
+					76,
+					2,
+					0,
+					-163,
+					2
+				}
+			}
 		}
 	},
 	[105130] = {
@@ -16867,6 +16787,228 @@ pg.base.ship_skin_template_3 = {
 						"smoke",
 						{
 							-0.43,
+							2.225,
+							-0.25
+						}
+					}
+				}
+			}
+		}
+	},
+	[107290] = {
+		ship_group = 10729,
+		name = "Bataan",
+		hand_id = 1,
+		lover_kiss = "lip03",
+		bgm = "",
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 107290,
+		group_index = 0,
+		purchase_offset = "",
+		painting = "badan",
+		lover_hand = "hand_1_02",
+		gyro = 0,
+		l2d_drag_rate = "",
+		shop_type_id = 0,
+		prefab = "badan",
+		part_scale = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 0,
+		shop_dynamic_hx = 0,
+		bg = "",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = -1,
+		double_char = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		skeleton_default_skin = "",
+		voice_lang = "",
+		l2d_para_range = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		l2d_voice_calibrate = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Independence-class light aircraft carrier – Bataan, Hull Number CVL-29.",
+		voice_actor = 161,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					0.941,
+					0.721,
+					0
+				}
+			},
+			plane = {
+				{
+					0.06,
+					0.019,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.647,
+							2.225,
+							-0.25
+						}
+					}
+				}
+			}
+		}
+	},
+	[107291] = {
+		ship_group = 10729,
+		name = "Comfy Cotton Jammies",
+		hand_id = 1,
+		lover_kiss = "lip03",
+		bgm = "",
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 107291,
+		group_index = 1,
+		purchase_offset = "",
+		painting = "badan_2",
+		lover_hand = "hand_1_02",
+		gyro = 0,
+		l2d_drag_rate = "",
+		shop_type_id = 20,
+		prefab = "badan_2",
+		part_scale = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 70210,
+		shop_dynamic_hx = 0,
+		bg = "109",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = 0,
+		double_char = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		skeleton_default_skin = "",
+		voice_lang = "",
+		l2d_para_range = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		l2d_voice_calibrate = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Yaaaaawn... Huh!? Commander!? You scared me... I was just going to lie down and... Um, yes, with little Hellcat here... Goodnight...",
+		voice_actor = 161,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					0.868,
+					0.877,
+					0
+				}
+			},
+			plane = {
+				{
+					0.06,
+					0.019,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.647,
 							2.225,
 							-0.25
 						}

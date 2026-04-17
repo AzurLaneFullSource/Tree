@@ -114,7 +114,7 @@ function var0_0.closeView(arg0_14)
 end
 
 function var0_0.onBackPressed(arg0_15)
-	return
+	arg0_15:closeView()
 end
 
 return var0_0

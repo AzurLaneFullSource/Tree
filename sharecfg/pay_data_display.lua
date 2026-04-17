@@ -250,6 +250,7 @@ pg.pay_data_display = setmetatable({
 		2074,
 		2075,
 		2076,
+		2078,
 		5011,
 		5012,
 		5013,
@@ -27103,6 +27104,124 @@ pg.base.pay_data_display = {
 			{
 				2,
 				40078,
+				1
+			}
+		}
+	},
+	[2078] = {
+		limit_group = 0,
+		name = "Skill Book Pack",
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 0,
+		subject = "Skill Book Pack",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 4,
+		money = 299,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 2078,
+		name_display = "Skill Book Pack",
+		limit_type = 2,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "boxSkill",
+		extra_service = 3,
+		skin_inquire_relation = 0,
+		show_group = "",
+		id_str = "com.yostaren.azurlane.pack40",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Buy to receive a large amount of Skill Books.",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.pack40",
+		extra_service_item = {
+			{
+				2,
+				16004,
+				1
+			},
+			{
+				2,
+				16014,
+				1
+			},
+			{
+				2,
+				16024,
+				1
+			},
+			{
+				2,
+				16003,
+				3
+			},
+			{
+				2,
+				16013,
+				3
+			},
+			{
+				2,
+				16023,
+				3
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					4,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					18
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				16004,
+				1
+			},
+			{
+				2,
+				16014,
+				1
+			},
+			{
+				2,
+				16024,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40023,
 				1
 			}
 		}

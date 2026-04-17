@@ -355,7 +355,7 @@ function var0_0.RefreshCanStart(arg0_29)
 	local function var1_29()
 		local var0_31 = arg0_29.addDelegateFormulaTimes and arg0_29.curSelectCount - arg0_29.addDelegateFormulaTimes or arg0_29.curSelectCount
 
-		if arg0_29.formulaCfg.stamina_cost * var0_31 > arg0_29.selectedShip:GetCurrentEnergy() then
+		if math.floor(arg0_29.formulaCfg.stamina_cost * (1 - IslandProductCostHelper.GetReducePercentInPlace(arg0_29.selectedShipId, arg0_29.placeId))) * var0_31 > arg0_29.selectedShip:GetCurrentEnergy() then
 			return false
 		end
 

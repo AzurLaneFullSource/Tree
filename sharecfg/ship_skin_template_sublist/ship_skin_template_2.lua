@@ -1,123 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_2 = {
-	[102059] = {
-		ship_group = 10205,
-		name = "Helena (Retrofit)",
-		hand_id = 13,
-		lover_kiss = "lip02",
-		bgm = "",
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 102059,
-		group_index = 9,
-		purchase_offset = "",
-		painting = "hailunna_g",
-		lover_hand = "hand_2_02",
-		gyro = 0,
-		l2d_drag_rate = "",
-		shop_type_id = 9997,
-		prefab = "hailunna_g",
-		part_scale = "",
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 0,
-		shop_dynamic_hx = 0,
-		bg = "",
-		illustrator = 7,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = 2,
-		double_char = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		skeleton_default_skin = "",
-		voice_lang = "",
-		l2d_para_range = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		l2d_voice_calibrate = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "This new equipment... might take some time to get used to... N-no, I'm sure I can handle it now! Commander, Helena will... meet your expectations!",
-		voice_actor = 34,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.315,
-					1.072,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.32,
-					1.085,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.34,
-					1.091,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.53,
-							2.289,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
 	[102060] = {
 		ship_group = 10206,
 		name = "Atlanta",
@@ -16943,6 +16826,249 @@ pg.base.ship_skin_template_2 = {
 		},
 		ship_l2d_id = {
 			1032611
+		}
+	},
+	[103262] = {
+		ship_group = 10326,
+		name = "Comfy Crane Amidst the Clouds",
+		hand_id = 3,
+		lover_kiss = "lip03",
+		bgm = "",
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 103262,
+		group_index = 2,
+		purchase_offset = "",
+		painting = "beianpudunII_3",
+		lover_hand = "hand_1_01",
+		gyro = 0,
+		l2d_drag_rate = "",
+		shop_type_id = 3,
+		prefab = "beianpudunII_3",
+		part_scale = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 70961,
+		shop_dynamic_hx = 0,
+		bg = "157",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = 0,
+		double_char = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		skeleton_default_skin = "",
+		voice_lang = "",
+		l2d_para_range = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		l2d_voice_calibrate = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Phew... This getup does help me get into the festival mood. It looks nice, and it's supremely comfortable, but I can't shake this embarrassment... Huh? Commander? When did you get here?",
+		voice_actor = 27,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.57,
+					0.82,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.56,
+					0.82,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.49,
+							2.34,
+							0.14
+						}
+					}
+				}
+			}
+		}
+	},
+	[103270] = {
+		ship_group = 10327,
+		name = "Louisville",
+		hand_id = 1,
+		lover_kiss = "lip03",
+		bgm = "",
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 103270,
+		group_index = 0,
+		purchase_offset = "",
+		painting = "luyisiweier",
+		lover_hand = "hand_1_02",
+		gyro = 0,
+		l2d_drag_rate = "",
+		shop_type_id = 0,
+		prefab = "luyisiweier",
+		part_scale = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 0,
+		shop_dynamic_hx = 0,
+		bg = "",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = -1,
+		double_char = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		skeleton_default_skin = "",
+		voice_lang = "",
+		l2d_para_range = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		l2d_voice_calibrate = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Northampton-class heavy cruiser – Louisville, Hull Number CA-28.",
+		voice_actor = 393,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					2.059,
+					0.999,
+					0
+				}
+			},
+			torpedo = {
+				{
+					-0.052,
+					0.061,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					2.058,
+					1.038,
+					0
+				}
+			},
+			vicegun = {
+				{
+					2.134,
+					1.089,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.261,
+							2.531,
+							0.14
+						}
+					}
+				}
+			}
 		}
 	}
 }

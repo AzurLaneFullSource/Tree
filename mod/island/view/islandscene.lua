@@ -607,4 +607,14 @@ function var0_0.willExit(arg0_84)
 	end
 end
 
+function var0_0.onBackPressed(arg0_85)
+	if arg0_85.sceneMgr:GetPage(IslandCheaterTavernMainPage) then
+		pg.m02:sendNotification(IslandProxy.PRESS_BACK)
+
+		return
+	end
+
+	var0_0.super.onBackPressed(arg0_85)
+end
+
 return var0_0

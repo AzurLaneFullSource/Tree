@@ -12,6 +12,7 @@ var0_0.GEN_RECYCLEITEM = "IslandProxy:GEN_RECYCLEITEM"
 var0_0.LOCK_NPC_REFRESH = "IslandProxy:LOCK_NPC_REFRESH"
 var0_0.RELEASE_NPC_REFRESH = "IslandProxy:RELEASE_NPC_REFRESH"
 var0_0.RESET_SP = "IslandProxy:RESET_SP"
+var0_0.PRESS_BACK = "IslandProxy:PRESS_BACK"
 var0_0.CHAT_MSG_UPDATE = "IslandProxy:CHAT_MSG_UPDATE"
 
 function var0_0.register(arg0_1)

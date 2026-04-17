@@ -253,27 +253,31 @@ function var0_0.updateCharDirect(arg0_31)
 	end
 end
 
-function var0_0.getDirectActonName(arg0_32, arg1_32)
-	if not arg0_32.direct then
-		arg0_32.direct = math.sign(tf(arg0_32._model).localScale.x)
-	end
-
-	local var0_32 = arg0_32.direct == 1 and "_R" or "_L"
-	local var1_32 = arg1_32 .. var0_32
-
-	if arg0_32._skeletonGraphic.SkeletonData:FindAnimation(var1_32) then
-		return var1_32, true
-	end
-
-	return arg1_32, false
+function var0_0.GetActionName(arg0_32)
+	return arg0_32.actionName
 end
 
-function var0_0.isComplete(arg0_33)
-	return arg0_33.state == var0_0.state_complete
+function var0_0.getDirectActonName(arg0_33, arg1_33)
+	if not arg0_33.direct then
+		arg0_33.direct = math.sign(tf(arg0_33._model).localScale.x)
+	end
+
+	local var0_33 = arg0_33.direct == 1 and "_R" or "_L"
+	local var1_33 = arg1_33 .. var0_33
+
+	if arg0_33._skeletonGraphic.SkeletonData:FindAnimation(var1_33) then
+		return var1_33, true
+	end
+
+	return arg1_33, false
 end
 
-function var0_0.isDispose(arg0_34)
-	return arg0_34.state == var0_0.state_dispose
+function var0_0.isComplete(arg0_34)
+	return arg0_34.state == var0_0.state_complete
+end
+
+function var0_0.isDispose(arg0_35)
+	return arg0_35.state == var0_0.state_dispose
 end
 
 return var0_0

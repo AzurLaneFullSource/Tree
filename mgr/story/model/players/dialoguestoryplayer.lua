@@ -839,7 +839,7 @@ local function var8_0(arg0_58, arg1_58, arg2_58)
 
 		ReflectionHelp.RefSetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", iter7_58, var9_58)
 
-		if var9_58 < var6_58 then
+		if var6_58 < var9_58 then
 			var6_58 = var9_58
 		end
 	end

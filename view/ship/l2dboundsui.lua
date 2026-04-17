@@ -19,6 +19,8 @@ function var0_0.InitUI(arg0_3, arg1_3, arg2_3)
 	PoolMgr.GetInstance():GetUI(arg1_3, true, function(arg0_4)
 		if arg0_3._isDispose then
 			Destroy(arg0_4)
+
+			return
 		end
 
 		arg0_3:onLoaded(arg0_4)
@@ -117,6 +119,10 @@ function var0_0.setUIVisible(arg0_9, arg1_9, arg2_9)
 end
 
 function var0_0.createDrags(arg0_10)
+	if arg0_10._isDispose or not arg0_10._boundsTpl then
+		return
+	end
+
 	arg0_10:clearDrags()
 
 	for iter0_10 = 1, #arg0_10._bounds do
@@ -299,6 +305,8 @@ function var0_0.Dispose(arg0_22)
 
 		arg0_22._tf = nil
 	end
+
+	arg0_22._boundsTpl = nil
 
 	arg0_22:clearDrags()
 end

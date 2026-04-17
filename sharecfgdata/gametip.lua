@@ -10184,7 +10184,7 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 }
 
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Get Moskva guaranteed with every 200 event builds (can be done up to 4 times)!",
+	tip = "Rate UP for Elise, Shandy, and Yukino!",
 }
 
 _G.pg.base.gametip.buildship_heavy_tip = {
@@ -21275,19 +21275,19 @@ _G.pg.base.gametip.hotspring_tip1 = {
 }
 
 _G.pg.base.gametip.hotspring_tip2 = {
-	tip = "Insufficient Resort Coins.",
+	tip = "Insufficient Hot Springs Passes.",
 }
 
 _G.pg.base.gametip.hotspring_help = {
 	tip = {
 		{
-			info = "- Overview - \nThe Open-Air Onsen in the Youkai Resort campaign is available between <color=#92fc63>September 14th and October 4th, 23:59</color>.\n1. Add your shipgirls to the onsen's bathing slots to let them recover mood more quickly.\n2. You can drag and drop shipgirls in the water to change their position.\n3. Play The Spiriting-Away Incident? minigame to receive <color=#92fc63>Onsen Notes</color>. You can get 4 in total.\n4. Use these notes at the onsen to expand it, unlocking additional bathing slots for your shipgirls.",
+			info = "How to Play:\nFrom <color=#92fc63>4/17 to 5/1</color>, the Manjuu Hot Springs are open for business!\n1. Invite your favorite shipgirls! Shipgirls bathing in the hot springs will restore Morale more quickly.\n2. Drag and drop characters to change their position inside the hot springs.\n3. Play through Vacation Lane - Beachside Brilliance stages to get 4 <color=#92fc63>Hot Springs Passes</color>. Use them to unlock additional slots in the hot springs facility!",
 		},
 	},
 }
 
 _G.pg.base.gametip.hotspring_expand = {
-	tip = "Do you want to use $1 Onsen Resort Coins to expand the hot spring?",
+	tip = "Would you like to use Hot Springs Pass<icon name=wenquanshoupai w=0.7 h=0.7/> x$1 to unlock additional slots?",
 }
 
 _G.pg.base.gametip.hotspring_shop_help = {
@@ -23105,7 +23105,7 @@ _G.pg.base.gametip.activityboss_sp_score_not_update = {
 }
 
 _G.pg.base.gametip.collect_page_got = {
-	tip = "Obtained:",
+	tip = "Obtained:    ",
 }
 
 _G.pg.base.gametip.charge_menu_month_tip = {
@@ -35278,7 +35278,7 @@ _G.pg.base.gametip.mini_game_over_game = {
 _G.pg.base.gametip.pac_minigame_help = {
 	tip = {
 		{
-			info = "- Overview -\nTake control of Fei Yuen, run away from other characters, and collect Dragon Empery food to earn points.\nA new stage will be unlocked every day until February 26th. Complete the minigame over 7 days to receive various rewards, including the DD Fei Yuen.\n\nHow to Play:\n1. Control Fei Yuen and help her escape the clutches of incoming characters!\n2. Pick up items to gain different effects:\n· Gold Drops - Increases your score\n· Hawthorn Tanghulu - Increases your movement speed, and when you bump into other characters, banishes them to the starting point with the sourness of the tanghulu.\n3. The game ends either when you're caught by another character or when you quit the game.",
+			info = "How to Play:\n1. Until <color=#92fc63>5//1</color>, <color=#92fc63>1</color> new challenge round will be added every day (total of <color=#92fc63>7</color>).Play through the challenge stages at any point after they are unlocked to earn the corresponding rewards.\nRules:\n1. You have 60 seconds for each round. Enter the correct input to approach a watermelon to try to split it.\n2. If you enter the wrong input, your character will be stalled.\n3. The game ends when you successfully split the watermelon.",
 		},
 	},
 }
@@ -36371,6 +36371,42 @@ _G.pg.base.gametip.juusoa_title = {
 	tip = "Juu Port Updates",
 }
 
+_G.pg.base.gametip.doa3_activityPageUI_1 = {
+	tip = "Brilliant Memories",
+}
+
+_G.pg.base.gametip.doa3_activityPageUI_2 = {
+	tip = "Read the story\nto get rewards",
+}
+
+_G.pg.base.gametip.doa3_activityPageUI_3 = {
+	tip = "Go",
+}
+
+_G.pg.base.gametip.doa3_activityPageUI_4 = {
+	tip = "Read the stories to get limited collab gear skins!",
+}
+
+_G.pg.base.gametip.doa3_activityPageUI_5 = {
+	tip = "Read the story to obtain",
+}
+
+_G.pg.base.gametip.doa3_activityPageUI_6 = {
+	tip = "Check\nRewards",
+}
+
+_G.pg.base.gametip.doa3_activityPageUI_7 = {
+	tip = "Trust",
+}
+
+_G.pg.base.gametip.cut_fruit_minigame_help = {
+	tip = {
+		{
+			info = "How to Play:\n1. Until <color=#92fc63>4/23</color>, <color=#92fc63>1</color> new challenge round will be added every day (total of <color=#92fc63>7</color>). Play through the challenge stages at any point after they are unlocked to earn the corresponding rewards.\nRules:\n1. You have 60 seconds for each round. Enter the correct inputs to approach and split the watermelon.\n2. If you enter the wrong input, your character will be temporarily stalled.\n3. The game ends when you successfully split the watermelon or the time limit runs out.",
+		},
+	},
+}
+
 _G.pg.base.gametip.story_recrewed = {
 	tip = "Recruited",
 }
@@ -36548,7 +36584,7 @@ _G.pg.base.gametip.match_ui_room_startgame = {
 }
 
 _G.pg.base.gametip.match_ui_matching_invitation = {
-	tip = "Match Invitation",
+	tip = "Matchmaking Invite",
 }
 
 _G.pg.base.gametip.match_ui_matching_consent = {
@@ -36584,7 +36620,7 @@ _G.pg.base.gametip.match_ui_ranking_list4 = {
 }
 
 _G.pg.base.gametip.match_ui_punishment1 = {
-	tip = "Please wait $1 seconds before matchmaking again.",
+	tip = "Matchmaking will continue after $1.",
 }
 
 _G.pg.base.gametip.match_ui_punishment2 = {

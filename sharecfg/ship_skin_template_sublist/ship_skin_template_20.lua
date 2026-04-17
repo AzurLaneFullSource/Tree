@@ -1,582 +1,6 @@
 pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_20 = {
-	[11500010] = {
-		ship_group = 1150001,
-		name = "Tohka Yatogami",
-		hand_id = 13,
-		lover_kiss = "lip02",
-		bgm = "",
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 11500010,
-		group_index = 0,
-		purchase_offset = "",
-		painting = "shixiang",
-		lover_hand = "hand_2_02",
-		gyro = 0,
-		l2d_drag_rate = "",
-		shop_type_id = 0,
-		prefab = "shixiang",
-		part_scale = "",
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 0,
-		shop_dynamic_hx = 0,
-		bg = "",
-		illustrator = -1,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = -1,
-		double_char = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		skeleton_default_skin = "",
-		voice_lang = "",
-		l2d_para_range = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		l2d_voice_calibrate = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Identify yourself. Are you my enemy? ...Perhaps not. Hmm... Could this be a different world entirely? No wonder I've seen so many unfamiliar things. Regardless, my name is Tohka Yatogami. It's an important name, so you'd best remember it. I suppose I'll be in your world for the time being. On that note... I'm hungry. Do you have anything to eat?",
-		voice_actor = 148,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.59,
-					0.934,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.538,
-					1.064,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.77,
-					2.509,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.683,
-							2.485,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[11500011] = {
-		ship_group = 1150001,
-		name = "Break Time",
-		hand_id = 13,
-		lover_kiss = "lip02",
-		bgm = "dal-az-theme",
-		illustrator2 = -1,
-		id = 11500011,
-		gyro = 0,
-		group_index = 1,
-		purchase_offset = "",
-		painting = "shixiang_2",
-		lover_hand = "hand_2_02",
-		l2d_drag_rate = "",
-		prefab = "shixiang_2",
-		shop_type_id = 6,
-		part_scale = "",
-		shop_id = 71237,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_dynamic_hx = 0,
-		illustrator = -1,
-		bg = "168",
-		double_char = 0,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skeleton_default_skin = "",
-		skin_type = 0,
-		voice_lang = "",
-		bg_sp = "",
-		voice_actor_2 = -1,
-		l2d_voice_calibrate = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Hmm? What's the matter? Oh, this? Someone gave it to me to have as a little treat! I won't keep it all to myself, though. I'll share some with you! What would you like? Vanilla? Chocolate? Or strawberry? No, the kinako-flavored one is MINE! But you really want it? Hmm... Maybe just a little...?",
-		voice_actor = 148,
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			6,
-			2,
-			5
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		shop_offset = {
-			-138,
-			-617,
-			0,
-			0.65
-		},
-		spine_offset_profile = {
-			-72.5,
-			-612.1,
-			0,
-			0.64
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.182,
-					1.036,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.882,
-					2.436,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.681,
-							2.382,
-							0
-						}
-					}
-				}
-			}
-		},
-		spine_offset = {
-			35,
-			-917,
-			0,
-			0.84
-		},
-		get_showing = {
-			show = 1,
-			data = {
-				{
-					261,
-					240,
-					2,
-					0,
-					120,
-					2
-				},
-				{
-					-1075,
-					804,
-					2,
-					-120,
-					0,
-					2
-				},
-				{
-					-936,
-					-148,
-					2,
-					0,
-					-120,
-					2
-				}
-			}
-		}
-	},
-	[11500020] = {
-		ship_group = 1150002,
-		name = "Origami Tobiichi",
-		hand_id = 13,
-		lover_kiss = "lip02",
-		bgm = "",
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 11500020,
-		group_index = 0,
-		purchase_offset = "",
-		painting = "zhezhi",
-		lover_hand = "hand_2_02",
-		gyro = 0,
-		l2d_drag_rate = "",
-		shop_type_id = 0,
-		prefab = "zhezhi",
-		part_scale = "",
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 0,
-		shop_dynamic_hx = 0,
-		bg = "",
-		illustrator = -1,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = -1,
-		double_char = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		skeleton_default_skin = "",
-		voice_lang = "",
-		l2d_para_range = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		l2d_voice_calibrate = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "Is this... a different world from the one I came from? ...Understood. Panic accomplishes nothing. I will do my utmost to resolve this situation. I am Origami Tobiichi, former AST Master Sergeant. May I ask you to state your affiliation and rank?",
-		voice_actor = 483,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.405,
-					0.776,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.346,
-					1.013,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.725,
-					2.498,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.83,
-							2.402,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[11500021] = {
-		ship_group = 1150002,
-		name = "The Spirit of Allure",
-		hand_id = 13,
-		lover_kiss = "lip02",
-		bgm = "dal-az-theme",
-		illustrator2 = -1,
-		id = 11500021,
-		gyro = 0,
-		group_index = 1,
-		purchase_offset = "",
-		painting = "zhezhi_2",
-		lover_hand = "hand_2_02",
-		l2d_drag_rate = "",
-		prefab = "zhezhi_2",
-		shop_type_id = 6,
-		part_scale = "",
-		shop_id = 71238,
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_dynamic_hx = 0,
-		illustrator = -1,
-		bg = "106",
-		double_char = 0,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		skeleton_default_skin = "",
-		skin_type = 0,
-		voice_lang = "",
-		bg_sp = "",
-		voice_actor_2 = -1,
-		l2d_voice_calibrate = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "What do you think about my swimsuit? As long as you like it, that's all that matters. It is a masterpiece that incorporates the opinions of many different shipgirls. During that time, I was advised that it would be better for it to include *** and ***, but I reluctantly excluded them due to my high levels of situational awareness.",
-		voice_actor = 483,
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		l2d_para_range = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			6,
-			2,
-			5
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		shop_offset = {
-			-200.1,
-			-542.8,
-			0,
-			0.457
-		},
-		spine_offset_profile = {
-			-127.1,
-			-527.2,
-			0,
-			0.445
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.344,
-					1.07,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.578,
-					2.483,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.681,
-							2.382,
-							0
-						}
-					}
-				}
-			}
-		},
-		spine_offset = {
-			-124.8,
-			-745,
-			0,
-			0.62
-		},
-		get_showing = {
-			show = 1,
-			data = {
-				{
-					111,
-					-735,
-					2,
-					0,
-					120,
-					2
-				},
-				{
-					-204,
-					267,
-					2,
-					-160,
-					0,
-					2
-				},
-				{
-					-1401,
-					-267,
-					2,
-					0,
-					-120,
-					2
-				}
-			}
-		}
-	},
 	[11500030] = {
 		ship_group = 1150003,
 		name = "Kotori Itsuka",
@@ -3539,6 +2963,169 @@ pg.base.ship_skin_template_20 = {
 							0
 						}
 					}
+				}
+			}
+		}
+	},
+	[399015] = {
+		ship_group = 39901,
+		name = "Traces of Summery Love",
+		hand_id = 2,
+		lover_kiss = "lip03",
+		bgm = "",
+		illustrator2 = -1,
+		id = 399015,
+		gyro = 0,
+		group_index = 5,
+		purchase_offset = "",
+		painting = "yichui_7",
+		lover_hand = "hand_1_02",
+		l2d_drag_rate = "",
+		prefab = "yichui_7",
+		shop_type_id = 6,
+		part_scale = "",
+		shop_id = 71334,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_dynamic_hx = 0,
+		illustrator = 1,
+		bg = "164",
+		double_char = 0,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skeleton_default_skin = "",
+		skin_type = 0,
+		voice_lang = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_voice_calibrate = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "Thank you for accepting my invitation... The sea breeze blows pleasantly here, but if it's still too hot for you, allow Ibuki to present you with some cold ramune... Milord, if you would like some... Wh-what's drawn in the sand behind me? I-it's nothing...!",
+		voice_actor = 107,
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			6,
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		shop_offset = {
+			88,
+			-774,
+			0,
+			0.47
+		},
+		spine_offset_profile = {
+			152.8,
+			-778.1,
+			0,
+			0.468
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.99,
+					0.7,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.006,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.803,
+					2.184,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.49,
+							2.446,
+							0
+						}
+					}
+				}
+			}
+		},
+		spine_offset = {
+			4.8,
+			-719.62,
+			0,
+			0.455
+		},
+		get_showing = {
+			show = 1,
+			data = {
+				{
+					-1408,
+					65,
+					2,
+					0,
+					149,
+					2
+				},
+				{
+					-1002,
+					748,
+					2,
+					112,
+					0,
+					2
+				},
+				{
+					26,
+					-253,
+					2,
+					0,
+					-135,
+					2
 				}
 			}
 		}

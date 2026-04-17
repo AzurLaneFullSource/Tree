@@ -258,6 +258,8 @@ pg.memory_group = setmetatable({
 		358,
 		359,
 		360,
+		361,
+		362,
 		501,
 		502,
 		503,
@@ -6667,6 +6669,50 @@ pg.base.memory_group = {
 			5061,
 			5062,
 			5063
+		}
+	},
+	[361] = {
+		auto_unlock = "",
+		subtype = 2,
+		title = "Beachside Brilliance ~Stages~",
+		type = 2,
+		link_event = 6025,
+		icon = "title_event",
+		id = 361,
+		group_id = "",
+		memories = {
+			5081,
+			5082,
+			5083,
+			5084,
+			5085,
+			5086,
+			5087,
+			5088,
+			5089,
+			5090,
+			5091,
+			5092,
+			5093
+		}
+	},
+	[362] = {
+		auto_unlock = "",
+		subtype = 2,
+		title = "Beachside Brilliance ~Venus~",
+		type = 2,
+		link_event = 6028,
+		icon = "title_event",
+		id = 362,
+		group_id = "",
+		memories = {
+			5101,
+			5102,
+			5103,
+			5104,
+			5105,
+			5106,
+			5107
 		}
 	},
 	[501] = {

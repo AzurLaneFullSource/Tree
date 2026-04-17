@@ -49,15 +49,15 @@ function var0_0.execute(arg0_1, arg1_1)
 						if pg.SdkMgr.GetInstance():CheckAudit() then
 							originalPrint("serverTag:audit 请求购买物品")
 							pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "audit", arg0_2.pay_id)
+						elseif pg.SdkMgr.GetInstance():CheckGoogleSimulator() then
+							originalPrint("serverTag:test 请求购买物品")
+							pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "test", arg0_2.pay_id)
 						elseif pg.SdkMgr.GetInstance():CheckPreAudit() then
 							originalPrint("serverTag:preAudit 请求购买物品")
 							pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "preAudit", arg0_2.pay_id)
 						elseif pg.SdkMgr.GetInstance():CheckPretest() then
 							originalPrint("serverTag:preTest 请求购买物品")
 							pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "preAudit", arg0_2.pay_id)
-						elseif pg.SdkMgr.GetInstance():CheckGoogleSimulator() then
-							originalPrint("serverTag:test 请求购买物品")
-							pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "test", arg0_2.pay_id)
 						else
 							originalPrint("serverTag:production 请求购买物品")
 							pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "production", arg0_2.pay_id)

@@ -454,22 +454,44 @@ function SpecialFilteForActStory()
 	return pg.NewStoryMgr.GetInstance():GetStoryPaintingsByNameList(var3_35)
 end
 
+function SpecialFilteForShopSkinPrefab()
+	local var0_36 = {}
+
+	for iter0_36, iter1_36 in ipairs(pg.activity_template.all) do
+		local var1_36 = pg.activity_template[iter1_36]
+
+		if PaintingfilteConst.IsActMatchTime(iter1_36) and var1_36.config_client and type(var1_36.config_client) == "table" and var1_36.config_client.painting then
+			if type(var1_36.config_client.painting) == "string" then
+				table.insert(var0_36, var1_36.config_client.painting)
+			end
+
+			if type(var1_36.config_client.painting) == "table" then
+				for iter2_36, iter3_36 in ipairs(var1_36.config_client.painting) do
+					table.insert(var0_36, iter3_36)
+				end
+			end
+		end
+	end
+
+	return table.concat(var0_36, ";")
+end
+
 PLATFORM_CH = 1
 PLATFORM_JP = 2
 PLATFORM_KR = 3
 PLATFORM_US = 4
 PLATFORM_CHT = 5
 
-function SetPlatform(arg0_36)
-	if arg0_36 == "zh" then
+function SetPlatform(arg0_37)
+	if arg0_37 == "zh" then
 		PLATFORM_CODE = PLATFORM_CH
-	elseif arg0_36 == "jp" then
+	elseif arg0_37 == "jp" then
 		PLATFORM_CODE = PLATFORM_JP
-	elseif arg0_36 == "us" then
+	elseif arg0_37 == "us" then
 		PLATFORM_CODE = PLATFORM_US
-	elseif arg0_36 == "tw" then
+	elseif arg0_37 == "tw" then
 		PLATFORM_CODE = PLATFORM_CHT
-	elseif arg0_36 == "kr" then
+	elseif arg0_37 == "kr" then
 		PLATFORM_CODE = PLATFORM_KR
 	else
 		return false

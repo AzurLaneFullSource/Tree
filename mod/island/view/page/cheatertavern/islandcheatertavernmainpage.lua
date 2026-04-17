@@ -95,6 +95,7 @@ function var0_0.AddListeners(arg0_12)
 	arg0_12:AddListener(GuildProxy.NEW_MSG_ADDED, arg0_12.RefreshMessage)
 	arg0_12:AddListener(PlayRoomProxy.CHAT_MSG_UPDATE, arg0_12.RefreshMessage)
 	arg0_12:AddListener(GAME.CHANGE_CHAT_ROOM_DONE, arg0_12.RefreshMessage)
+	arg0_12:AddListener(IslandProxy.PRESS_BACK, arg0_12.OnPressBack)
 end
 
 function var0_0.RemoveListeners(arg0_13)
@@ -115,6 +116,7 @@ function var0_0.RemoveListeners(arg0_13)
 	arg0_13:RemoveListener(GuildProxy.NEW_MSG_ADDED, arg0_13.RefreshMessage)
 	arg0_13:RemoveListener(PlayRoomProxy.CHAT_MSG_UPDATE, arg0_13.RefreshMessage)
 	arg0_13:RemoveListener(GAME.CHANGE_CHAT_ROOM_DONE, arg0_13.RefreshMessage)
+	arg0_13:RemoveListener(IslandProxy.PRESS_BACK, arg0_13.OnPressBack)
 end
 
 function var0_0.OnCheaterFinishQuit(arg0_14)
@@ -198,33 +200,7 @@ end
 
 function var0_0.OnInit(arg0_24)
 	onButton(arg0_24, arg0_24.uicloseBtn, function()
-		local var0_25 = {}
-		local var1_25 = getProxy(PlayRoomProxy):GetRoomData()
-
-		if not arg0_24.isFinish then
-			if var1_25.roomType == PlayRoomConst.PLAY_ROOM_TYPE.MATCH then
-				table.insert(var0_25, function(arg0_26)
-					pg.MsgboxMgr.GetInstance():ShowMsgBox({
-						content = i18n("bar_tips_game6"),
-						onYes = arg0_26
-					})
-				end)
-			else
-				table.insert(var0_25, function(arg0_27)
-					pg.MsgboxMgr.GetInstance():ShowMsgBox({
-						content = i18n("bar_tips_game7"),
-						onYes = arg0_27
-					})
-				end)
-			end
-		end
-
-		seriesAsync(var0_25, function()
-			arg0_24:Hide()
-			arg0_24:emit(IslandMediator.PLAY_ROOM_MATCH_STOP)
-			getProxy(PlayRoomProxy):SetPlayingGameState(false)
-			IslandCheaterTavernRecordTools.RecordResult(IslandCheaterTavernRecordTools.LEAVE)
-		end)
+		arg0_24:OnClickCloseBtn()
 	end, SFX_PANEL)
 	onButton(arg0_24, arg0_24.uiSenderPanel, function()
 		arg0_24:emit(BaseUI.ON_ADD_SUBLAYER, Context.New({
@@ -245,144 +221,178 @@ function var0_0.OnInit(arg0_24)
 	arg0_24.animation = arg0_24.uiAdapt:GetComponent(typeof(Animation))
 end
 
-function var0_0.OnShow(arg0_31, arg1_31, arg2_31)
-	arg0_31.isFinish = false
+function var0_0.OnShow(arg0_28, arg1_28, arg2_28)
+	arg0_28.isFinish = false
 
-	arg0_31:CreateViews()
+	arg0_28:CreateViews()
+	arg0_28:GetSubView(IslandCheaterTavernInGamingView):SetActiveState(false)
+	arg0_28:GetSubView(IslandCheaterTavernStartGameView):SetActiveState(false)
+	arg0_28:Flush()
+	arg0_28:RefreshMessage()
 
-	for iter0_31, iter1_31 in ipairs(arg0_31.views) do
-		iter1_31:Init()
+	for iter0_28, iter1_28 in ipairs(arg0_28.views) do
+		iter1_28:Init()
 	end
-
-	arg0_31:GetSubView(IslandCheaterTavernInGamingView):SetActiveState(false)
-	arg0_31:GetSubView(IslandCheaterTavernStartGameView):SetActiveState(false)
-	arg0_31:Flush()
-	arg0_31:RefreshMessage()
 end
 
-function var0_0.Flush(arg0_32)
+function var0_0.Flush(arg0_29)
 	return
 end
 
-function var0_0.OnDestroy(arg0_33)
-	arg0_33:OnHide()
-	var0_0.super.OnDestroy(arg0_33)
+function var0_0.OnDestroy(arg0_30)
+	arg0_30:OnHide()
+	var0_0.super.OnDestroy(arg0_30)
 end
 
-function var0_0.OnHide(arg0_34)
-	arg0_34:RemoveEveryRondStartTimer()
+function var0_0.OnHide(arg0_31)
+	arg0_31:GetIsland():GetCheaterTavernAgency():SetUILoadOver(false)
+	arg0_31:RemoveEveryRondStartTimer()
 
-	for iter0_34, iter1_34 in ipairs(arg0_34.views) do
-		iter1_34:Hide()
+	for iter0_31, iter1_31 in ipairs(arg0_31.views) do
+		iter1_31:Hide()
 	end
 end
 
-function var0_0.RefreshMessage(arg0_35)
-	arg0_35:GetMessages()
+function var0_0.RefreshMessage(arg0_32)
+	arg0_32:GetMessages()
 
-	local var0_35 = arg0_35.displays
+	local var0_32 = arg0_32.displays
 
-	setActive(arg0_35.uiChatItemGo, #var0_35 > 0)
+	setActive(arg0_32.uiChatItemGo, #var0_32 > 0)
 
-	if #var0_35 <= 0 then
+	if #var0_32 <= 0 then
 		return
 	end
 
-	local var1_35 = var0_35[#var0_35]
+	local var1_32 = var0_32[#var0_32]
 
-	arg0_35.uiChannelImage.sprite = GetSpriteFromAtlas("channel", ChatConst.GetChannelSprite(var1_35.type) .. "_mel")
+	arg0_32.uiChannelImage.sprite = GetSpriteFromAtlas("channel", ChatConst.GetChannelSprite(var1_32.type) .. "_mel")
 
-	local var2_35 = arg0_35.uiChatText:GetComponent("RichText")
+	local var2_32 = arg0_32.uiChatText:GetComponent("RichText")
 
-	if var1_35.type == ChatConst.ChannelPublic then
-		var2_35.supportRichText = true
+	if var1_32.type == ChatConst.ChannelPublic then
+		var2_32.supportRichText = true
 
-		ChatProxy.InjectPublic(var2_35, var1_35, true)
-	elseif var1_35:IsWorldBossNotify() then
-		var2_35.supportRichText = true
+		ChatProxy.InjectPublic(var2_32, var1_32, true)
+	elseif var1_32:IsWorldBossNotify() then
+		var2_32.supportRichText = true
 
-		local var3_35 = var1_35.args.playerName
-		local var4_35 = var1_35.args.bossName
-		local var5_35 = GetPerceptualSize(var3_35 .. var4_35) - 18
+		local var3_32 = var1_32.args.playerName
+		local var4_32 = var1_32.args.bossName
+		local var5_32 = GetPerceptualSize(var3_32 .. var4_32) - 18
 
-		if var5_35 > 0 then
-			local var6_35 = GetPerceptualSize(var4_35) - var5_35
+		if var5_32 > 0 then
+			local var6_32 = GetPerceptualSize(var4_32) - var5_32
 
-			var4_35 = shortenString(var4_35, var6_35)
+			var4_32 = shortenString(var4_32, var6_32)
 		end
 
-		var2_35.text = i18n("ad_4", var1_35.args.supportType, var3_35, var4_35, var1_35.args.level)
+		var2_32.text = i18n("ad_4", var1_32.args.supportType, var3_32, var4_32, var1_32.args.level)
 	else
-		var2_35.supportRichText = var1_35.emojiId ~= nil
-		var2_35.text = arg0_35:MatchEmoji(var2_35, var1_35)
+		var2_32.supportRichText = var1_32.emojiId ~= nil
+		var2_32.text = arg0_32:MatchEmoji(var2_32, var1_32)
 	end
 end
 
-function var0_0.MatchEmoji(arg0_36, arg1_36, arg2_36)
-	local var0_36 = false
-	local var1_36 = arg2_36.player.name .. ": " .. arg2_36.content
-	local var2_36 = false
+function var0_0.MatchEmoji(arg0_33, arg1_33, arg2_33)
+	local var0_33 = false
+	local var1_33 = arg2_33.player.name .. ": " .. arg2_33.content
+	local var2_33 = false
 
-	for iter0_36 in string.gmatch(var1_36, ChatConst.EmojiIconCodeMatch) do
-		if table.contains(pg.emoji_small_template.all, tonumber(iter0_36)) then
-			var2_36 = true
+	for iter0_33 in string.gmatch(var1_33, ChatConst.EmojiIconCodeMatch) do
+		if table.contains(pg.emoji_small_template.all, tonumber(iter0_33)) then
+			var2_33 = true
 
-			local var3_36 = pg.emoji_small_template[tonumber(iter0_36)]
-			local var4_36 = LoadSprite("emoji/" .. var3_36.pic .. "_small", nil)
+			local var3_33 = pg.emoji_small_template[tonumber(iter0_33)]
+			local var4_33 = LoadSprite("emoji/" .. var3_33.pic .. "_small", nil)
 
-			arg1_36:AddSprite(iter0_36, var4_36)
+			arg1_33:AddSprite(iter0_33, var4_33)
 		end
 	end
 
-	if not arg2_36.emojiId then
-		var1_36 = var2_36 and shortenString(var1_36, 16) or shortenString(var1_36, 20)
+	if not arg2_33.emojiId then
+		var1_33 = var2_33 and shortenString(var1_33, 16) or shortenString(var1_33, 20)
 	end
 
-	return (string.gsub(var1_36, ChatConst.EmojiIconCodeMatch, function(arg0_37)
-		if table.contains(pg.emoji_small_template.all, tonumber(arg0_37)) then
-			return string.format("<icon name=%s w=0.7 h=0.7/>", arg0_37)
+	return (string.gsub(var1_33, ChatConst.EmojiIconCodeMatch, function(arg0_34)
+		if table.contains(pg.emoji_small_template.all, tonumber(arg0_34)) then
+			return string.format("<icon name=%s w=0.7 h=0.7/>", arg0_34)
 		end
 	end))
 end
 
-function var0_0.GetMessages(arg0_38)
-	arg0_38.displays = {}
+function var0_0.GetMessages(arg0_35)
+	arg0_35.displays = {}
 
-	local var0_38 = getProxy(ChatProxy)
+	local var0_35 = getProxy(ChatProxy)
 
-	_.each(var0_38:getRawData(), function(arg0_39)
-		arg0_38:InsertMsg(arg0_38.displays, arg0_39)
+	_.each(var0_35:getRawData(), function(arg0_36)
+		arg0_35:InsertMsg(arg0_35.displays, arg0_36)
 	end)
 
-	local var1_38 = getProxy(GuildProxy)
+	local var1_35 = getProxy(GuildProxy)
 
-	if var1_38:getRawData() then
-		_.each(var1_38:getChatMsgs(), function(arg0_40)
-			arg0_38:InsertMsg(arg0_38.displays, arg0_40)
+	if var1_35:getRawData() then
+		_.each(var1_35:getChatMsgs(), function(arg0_37)
+			arg0_35:InsertMsg(arg0_35.displays, arg0_37)
 		end)
 	end
 
-	local var2_38 = getProxy(FriendProxy)
+	local var2_35 = getProxy(FriendProxy)
 
-	_.each(var2_38:getCacheMsgList(), function(arg0_41)
-		arg0_38:InsertMsg(arg0_38.displays, arg0_41)
+	_.each(var2_35:getCacheMsgList(), function(arg0_38)
+		arg0_35:InsertMsg(arg0_35.displays, arg0_38)
 	end)
-	_.each(getProxy(PlayRoomProxy):GetChatMsgs(), function(arg0_42)
-		arg0_38:InsertMsg(arg0_38.displays, arg0_42)
+	_.each(getProxy(PlayRoomProxy):GetChatMsgs(), function(arg0_39)
+		arg0_35:InsertMsg(arg0_35.displays, arg0_39)
 	end)
-	table.sort(arg0_38.displays, function(arg0_43, arg1_43)
-		return arg0_43.timestamp < arg1_43.timestamp
+	table.sort(arg0_35.displays, function(arg0_40, arg1_40)
+		return arg0_40.timestamp < arg1_40.timestamp
 	end)
 end
 
-function var0_0.InsertMsg(arg0_44, arg1_44, arg2_44)
-	if getProxy(FriendProxy):isInBlackList(arg2_44.playerId) then
+function var0_0.InsertMsg(arg0_41, arg1_41, arg2_41)
+	if getProxy(FriendProxy):isInBlackList(arg2_41.playerId) then
 		return
 	end
 
-	if arg2_44.player and arg2_44.content then
-		table.insert(arg1_44, arg2_44)
+	if arg2_41.player and arg2_41.content then
+		table.insert(arg1_41, arg2_41)
 	end
+end
+
+function var0_0.OnClickCloseBtn(arg0_42)
+	local var0_42 = {}
+	local var1_42 = getProxy(PlayRoomProxy):GetRoomData()
+
+	if not arg0_42.isFinish then
+		if var1_42.roomType == PlayRoomConst.PLAY_ROOM_TYPE.MATCH then
+			table.insert(var0_42, function(arg0_43)
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					content = i18n("bar_tips_game6"),
+					onYes = arg0_43
+				})
+			end)
+		else
+			table.insert(var0_42, function(arg0_44)
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					content = i18n("bar_tips_game7"),
+					onYes = arg0_44
+				})
+			end)
+		end
+	end
+
+	seriesAsync(var0_42, function()
+		arg0_42:Hide()
+		arg0_42:emit(IslandMediator.PLAY_ROOM_MATCH_STOP)
+		getProxy(PlayRoomProxy):SetPlayingGameState(false)
+		IslandCheaterTavernRecordTools.RecordResult(IslandCheaterTavernRecordTools.LEAVE)
+	end)
+end
+
+function var0_0.OnPressBack(arg0_46)
+	arg0_46:OnClickCloseBtn()
 end
 
 return var0_0

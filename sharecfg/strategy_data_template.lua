@@ -364,6 +364,8 @@ pg.strategy_data_template = setmetatable({
 		201705,
 		201706,
 		201707,
+		201741,
+		201742,
 		205001,
 		205002,
 		205003,
@@ -4418,6 +4420,28 @@ pg.base.strategy_data_template = {
 		icon = "200908",
 		buff_type = 0,
 		desc = "During battle, the boss fires large amounts of Go stones which cannot be destroyed.\nWhen one of your ships touches a Go stone, <color=#92fc63>she is inflicted with the Color Marking status</color> if she does not already have it; <color=#92fc63>if the Color Marking status she has is of a different color to the Go stone she touched,</color> her Color Marking status will change to match that Go stone's color; <color=#92fc63>if her Color Marking status is of the same color as the Go stone</color>, she will take <color=#ffc038>extremely high fixed DMG</color>. This fixed DMG can be taken once every 0.5 seconds.\nWhen your fleet launches an airstrike, all Color Marking statuses are removed.\n\n- Hard Mode Details -\nEnemies <color=#ffc038>deal significantly more DMG.</color> Their large shells cannot be negated by shields or by launching an airstrike.\n<color=#92fc63>Your Vanguard's hitbox is substantially smaller than usual, and only the frontmost ship in your Vanguard possesses a hitbox.</color>\nYour ships become briefly invulnerable after taking DMG.\n\n· The skills \"Operation Rainbow,\" \"Fiercer When Cornered,\" and \"Eleventh Hour\" are rendered ineffective.",
+		arg = {}
+	},
+	[201741] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 201741,
+		icon = "200908",
+		buff_type = 0,
+		desc = "The boss takes reduced DMG from ships more than 20 units away <color=#92fc63>(1.0% reduced DMG taken for every 1 unit greater than 20, up to 50.0%)</color> and deals increased DMG to ships more than 20 units away <color=#92fc63>(2.0% increased DMG dealt for every 1 unit greater than 20, up to 100.0%)</color>.\nThe boss takes <color=#92fc63>100.0% increased shelling DMG and 50.0% increased torpedo DMG from your Vanguard fleet</color>.\nThe boss is able to shoot down bombers easily.\n<color=#ddf700>Hint: The distance between the boss's initial position and the left-most range of your Vanguard fleet's movement is approximately 70 units.</color>",
+		arg = {}
+	},
+	[201742] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 201742,
+		icon = "200908",
+		buff_type = 0,
+		desc = "The boss takes reduced DMG from ships more than 20 units away <color=#92fc63>(1.0% reduced DMG taken for every 1 unit greater than 20, up to 50.0%)</color> and deals increased DMG to ships more than 20 units away <color=#92fc63>(2.0% increased DMG dealt for every 1 unit greater than 20, up to 100.0%)</color>.\nThe boss takes <color=#92fc63>100.0% increased shelling DMG and 50.0% increased torpedo DMG from your Vanguard fleet</color>.\nThe boss is able to shoot down bombers easily.\n<color=#ddf700>Hint: The distance between the boss's initial position and the left-most range of your Vanguard fleet's movement is approximately 70 units</color>.\n\n- Hard Mode Details -\nEnemy DMG dealt is <color=#ffc038>significantly increased</color>. Large enemy shells cannot be nullified by airstrikes or shields.\nThe hitbox of your Vanguard fleet is <color=#92fc63>limited to only the frontmost ship, and the size of the hitbox is also significantly reduced</color>.\nWhen your ship is hit, it will become invulnerable for a short period of time.\n\nThe following gear or skills are rendered ineffective:\n[Fiercer When Cornered], [Operation Rainbow], [Eleventh Hour], [I Will Not Yield!]",
 		arg = {}
 	},
 	[205001] = {
