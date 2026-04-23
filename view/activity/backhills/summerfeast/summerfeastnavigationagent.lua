@@ -1,7 +1,8 @@
 local var0_0 = class("SummerFeastNavigationAgent", require("view.main.NavalAcademyStudent"))
 
-function var0_0.Ctor(arg0_1, arg1_1)
+function var0_0.Ctor(arg0_1, arg1_1, arg2_1)
 	arg0_1.onTransEdge = nil
+	arg0_1.needOneScale = arg2_1
 
 	var0_0.super.Ctor(arg0_1, arg1_1)
 end
@@ -12,6 +13,7 @@ end
 
 var0_0.normalSpeed = 15
 var0_0.normalScale = 0.5
+var0_0.oneScale = 1
 
 function var0_0.SetOnTransEdge(arg0_3, arg1_3)
 	arg0_3.onTransEdge = arg1_3
@@ -90,15 +92,21 @@ function var0_0.updateLogic(arg0_8)
 			arg0_8.posTable[arg0_8.currentPoint.id] = nil
 		end
 
-		arg0_8._tf.localScale = (var0_8.scale or var0_0.normalScale) * Vector2.one
+		local var4_8 = var0_8.scale or var0_0.normalScale
 
-		local var4_8 = arg0_8.pathFinder:getEdge(var0_8, var1_8)
+		if arg0_8.needOneScale then
+			var4_8 = arg0_8.oneScale
+		end
+
+		arg0_8._tf.localScale = var4_8 * Vector2.one
+
+		local var5_8 = arg0_8.pathFinder:getEdge(var0_8, var1_8)
 
 		LeanTween.value(arg0_8._go, 0, 1, var3_8):setOnUpdate(System.Action_float(function(arg0_9)
 			local var0_9
 
-			if var4_8 and var4_8.bezier_control_point then
-				local var1_9 = arg0_8.pathFinder:getPoint(var4_8.bezier_control_point)
+			if var5_8 and var5_8.bezier_control_point then
+				local var1_9 = arg0_8.pathFinder:getPoint(var5_8.bezier_control_point)
 
 				var0_9 = var0_0.GetBeziersPoints(var0_8, var1_8, var1_9, arg0_9)
 			else
@@ -116,6 +124,10 @@ function var0_0.updateLogic(arg0_8)
 
 			if var0_8.fixedDirection then
 				var3_9 = math.sign(var0_8.fixedDirection)
+			end
+
+			if arg0_8.needOneScale then
+				var2_9 = arg0_8.oneScale * Vector2.one
 			end
 
 			var2_9.x = math.abs(var2_9.x) * var3_9
@@ -150,11 +162,11 @@ function var0_0.updateLogic(arg0_8)
 			return
 		end
 
-		local var5_8 = math.random(10, 20)
+		local var6_8 = math.random(10, 20)
 
 		arg0_8.idleTimer = Timer.New(function()
 			arg0_8:updateState(var0_0.ShipState.Walk)
-		end, var5_8, 1)
+		end, var6_8, 1)
 
 		arg0_8.idleTimer:Start()
 	elseif arg0_8.state == var0_0.ShipState.Touch then

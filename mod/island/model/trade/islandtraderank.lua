@@ -8,14 +8,18 @@ function var0_0.Ctor(arg0_1, arg1_1)
 	arg0_1.name = arg1_1.name
 end
 
-function var0_0.IsSelf(arg0_2)
-	local var0_2 = getProxy(PlayerProxy):getRawData()
-
-	return arg0_2.id == var0_2.id
+function var0_0.IsVaild(arg0_2)
+	return arg0_2.value > 0
 end
 
-function var0_0.SetValue(arg0_3, arg1_3)
-	arg0_3.value = arg1_3
+function var0_0.IsSelf(arg0_3)
+	local var0_3 = getProxy(PlayerProxy):getRawData()
+
+	return arg0_3.id == var0_3.id
+end
+
+function var0_0.SetValue(arg0_4, arg1_4)
+	arg0_4.value = arg1_4
 end
 
 return var0_0

@@ -18,6 +18,8 @@ function var0_0.execute(arg0_1, arg1_1)
 				content = i18n("exchangecode_use_ok")
 			})
 			pg.m02:sendNotification(GAME.EXCHANGECODE_USE_SUCCESS)
+		elseif pg.gametip["exchange_code_error_" .. arg0_2.result] then
+			pg.TipsMgr.GetInstance():ShowTips(pg.gametip["exchange_code_error_" .. arg0_2.result].tip)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(errorTip("exchangecode_use", arg0_2.result))
 		end

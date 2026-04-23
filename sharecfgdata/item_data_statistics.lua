@@ -107415,6 +107415,98 @@ _G.pg.base.item_data_statistics[69959] = {
 	limit = {},
 }
 
+_G.pg.base.item_data_statistics[70219] = {
+	compose_number = 0,
+	display = "<color=#ff5c5c>This item can no longer be used after 5/14.</color> You may select one character from the following list: Marie Rose, Honoka, Kasumi, Misaki, Nagisa, or Monica.",
+	display_effect = "",
+	icon = "Props/70144",
+	id = 70219,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "Venus Exchange Ticket",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 1,
+	type = 13,
+	usage = "usage_drop_appointed",
+	virtual_type = 0,
+	display_icon = {
+		{
+			4,
+			10600011,
+			1,
+		},
+		{
+			4,
+			10600021,
+			1,
+		},
+		{
+			4,
+			10600031,
+			1,
+		},
+		{
+			4,
+			10600041,
+			1,
+		},
+		{
+			4,
+			10600051,
+			1,
+		},
+		{
+			4,
+			10600071,
+			1,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			4,
+			10600011,
+			1,
+		},
+		{
+			4,
+			10600021,
+			1,
+		},
+		{
+			4,
+			10600031,
+			1,
+		},
+		{
+			4,
+			10600041,
+			1,
+		},
+		{
+			4,
+			10600051,
+			1,
+		},
+		{
+			4,
+			10600071,
+			1,
+		},
+	},
+	limit = {},
+}
+
 _G.pg.base.item_data_statistics[81200] = {
 	compose_number = 0,
 	display = "Contains 1x random skin (Resplendent Night I), 2x Special General Blueprints - Series 6, 2024x Gems, 50x Cognitive Chips, 20x Wisdom Cubes, 100x Decor Tokens, and 10x Quick Finishers.",

@@ -21486,12 +21486,12 @@ pg.base.pay_data_display = {
 		extra_service = 3,
 		skin_inquire_relation = 0,
 		show_group = "tech",
-		id_str = "com.yostaren.azurlane.diamond158",
+		id_str = "",
 		first_pay_double = 0,
 		extra_gem = 0,
 		descrip = "Contains one PR Voucher - Series 1 and 343 General Blueprints - Series 1.",
 		package_tag_open = 0,
-		airijp_id = "com.yostaren.azurlane.diamond158",
+		airijp_id = "",
 		extra_service_item = {
 			{
 				2,
@@ -21753,12 +21753,12 @@ pg.base.pay_data_display = {
 		extra_service = 3,
 		skin_inquire_relation = 0,
 		show_group = "tech",
-		id_str = "com.yostaren.azurlane.diamond161",
+		id_str = "",
 		first_pay_double = 0,
 		extra_gem = 0,
 		descrip = "Contains one PR Voucher - Series 2 and 343 General Blueprints - Series 2.",
 		package_tag_open = 0,
-		airijp_id = "com.yostaren.azurlane.diamond161",
+		airijp_id = "",
 		extra_service_item = {
 			{
 				2,
@@ -22468,12 +22468,12 @@ pg.base.pay_data_display = {
 		extra_service = 3,
 		skin_inquire_relation = 0,
 		show_group = "tech",
-		id_str = "com.yostaren.azurlane.pack4",
+		id_str = "",
 		first_pay_double = 0,
 		extra_gem = 0,
 		descrip = "Contains one PR Voucher - Series 3 and 343 General Blueprints - Series 3.",
 		package_tag_open = 0,
-		airijp_id = "com.yostaren.azurlane.pack4",
+		airijp_id = "",
 		extra_service_item = {
 			{
 				2,
@@ -23406,12 +23406,12 @@ pg.base.pay_data_display = {
 		extra_service = 3,
 		skin_inquire_relation = 0,
 		show_group = "tech",
-		id_str = "com.yostaren.azurlane.pack9",
+		id_str = "",
 		first_pay_double = 0,
 		extra_gem = 0,
 		descrip = "Contains one PR Voucher - Series 4 and 343 General Blueprints - Series 4.",
 		package_tag_open = 0,
-		airijp_id = "com.yostaren.azurlane.pack9",
+		airijp_id = "",
 		extra_service_item = {
 			{
 				2,
@@ -23781,12 +23781,12 @@ pg.base.pay_data_display = {
 		extra_service = 3,
 		skin_inquire_relation = 0,
 		show_group = "uigift",
-		id_str = "com.yostaren.azurlane.pack12",
+		id_str = "",
 		first_pay_double = 0,
 		extra_gem = 0,
 		descrip = "Contains a new combat UI theme.",
 		package_tag_open = 0,
-		airijp_id = "com.yostaren.azurlane.pack12",
+		airijp_id = "",
 		extra_service_item = {
 			{
 				31,
@@ -24260,12 +24260,12 @@ pg.base.pay_data_display = {
 		extra_service = 3,
 		skin_inquire_relation = 0,
 		show_group = "uigift",
-		id_str = "com.yostaren.azurlane.pack17",
+		id_str = "",
 		first_pay_double = 0,
 		extra_gem = 0,
 		descrip = "Contains a new combat UI theme.",
 		package_tag_open = 0,
-		airijp_id = "com.yostaren.azurlane.pack17",
+		airijp_id = "",
 		extra_service_item = {
 			{
 				31,
@@ -24739,12 +24739,12 @@ pg.base.pay_data_display = {
 		extra_service = 3,
 		skin_inquire_relation = 0,
 		show_group = "uigift",
-		id_str = "com.yostaren.azurlane.pack20",
+		id_str = "",
 		first_pay_double = 0,
 		extra_gem = 0,
 		descrip = "Contains a new combat UI theme.",
 		package_tag_open = 0,
-		airijp_id = "com.yostaren.azurlane.pack20",
+		airijp_id = "",
 		extra_service_item = {
 			{
 				31,
@@ -24992,12 +24992,12 @@ pg.base.pay_data_display = {
 		extra_service = 3,
 		skin_inquire_relation = 0,
 		show_group = "uigift",
-		id_str = "com.yostaren.azurlane.pack22",
+		id_str = "",
 		first_pay_double = 0,
 		extra_gem = 0,
 		descrip = "Contains a new combat UI theme.",
 		package_tag_open = 0,
-		airijp_id = "com.yostaren.azurlane.pack22",
+		airijp_id = "",
 		extra_service_item = {
 			{
 				31,
@@ -25471,12 +25471,12 @@ pg.base.pay_data_display = {
 		extra_service = 3,
 		skin_inquire_relation = 0,
 		show_group = "uigift",
-		id_str = "com.yostaren.azurlane.pack26",
+		id_str = "",
 		first_pay_double = 0,
 		extra_gem = 0,
 		descrip = "Contains a new combat UI theme.",
 		package_tag_open = 0,
-		airijp_id = "com.yostaren.azurlane.pack26",
+		airijp_id = "",
 		extra_service_item = {
 			{
 				31,
@@ -25734,12 +25734,12 @@ pg.base.pay_data_display = {
 		extra_service = 3,
 		skin_inquire_relation = 0,
 		show_group = "tech",
-		id_str = "com.yostaren.azurlane.pack30",
+		id_str = "",
 		first_pay_double = 0,
 		extra_gem = 0,
 		descrip = "Contains one PR Voucher - Series 5 and 343 General Blueprints - Series 5.",
 		package_tag_open = 0,
-		airijp_id = "com.yostaren.azurlane.pack30",
+		airijp_id = "",
 		extra_service_item = {
 			{
 				2,
@@ -26001,12 +26001,12 @@ pg.base.pay_data_display = {
 		extra_service = 3,
 		skin_inquire_relation = 0,
 		show_group = "uigift",
-		id_str = "com.yostaren.azurlane.pack31",
+		id_str = "",
 		first_pay_double = 0,
 		extra_gem = 0,
 		descrip = "Contains a new combat UI theme.",
 		package_tag_open = 0,
-		airijp_id = "com.yostaren.azurlane.pack31",
+		airijp_id = "",
 		extra_service_item = {
 			{
 				31,
@@ -26490,12 +26490,12 @@ pg.base.pay_data_display = {
 		extra_service = 3,
 		skin_inquire_relation = 0,
 		show_group = "uigift",
-		id_str = "com.yostaren.azurlane.pack36",
+		id_str = "",
 		first_pay_double = 0,
 		extra_gem = 0,
 		descrip = "Contains a new combat UI theme.",
 		package_tag_open = 0,
-		airijp_id = "com.yostaren.azurlane.pack36",
+		airijp_id = "",
 		extra_service_item = {
 			{
 				31,
@@ -26871,12 +26871,12 @@ pg.base.pay_data_display = {
 		extra_service = 3,
 		skin_inquire_relation = 0,
 		show_group = "uigift",
-		id_str = "com.yostaren.azurlane.pack38",
+		id_str = "",
 		first_pay_double = 0,
 		extra_gem = 0,
 		descrip = "Contains a new combat UI theme.",
 		package_tag_open = 0,
-		airijp_id = "com.yostaren.azurlane.pack38",
+		airijp_id = "",
 		extra_service_item = {
 			{
 				31,

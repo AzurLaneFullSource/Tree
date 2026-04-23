@@ -689786,7 +689786,7 @@ _G.pg.base.weapon_property[743107] = {
 	spawn_bound = "cannon",
 	suppress = 1,
 	torpedo_ammo = 0,
-	type = 1,
+	type = 2,
 	bullet_ID = {
 		20001,
 		20001,
@@ -690430,7 +690430,7 @@ _G.pg.base.weapon_property[745001] = {
 	action_index = "",
 	aim_type = 1,
 	base = 1000,
-	damage = 25,
+	damage = 12,
 	id = 745001,
 	queue = 1,
 	range = 120,
@@ -690471,7 +690471,7 @@ _G.pg.base.weapon_property[745002] = {
 	action_index = "",
 	aim_type = 1,
 	base = 1000,
-	damage = 25,
+	damage = 12,
 	id = 745002,
 	queue = 2,
 	range = 120,
@@ -690548,7 +690548,7 @@ _G.pg.base.weapon_property[745006] = {
 	angle = 180,
 	attack_attribute = 4,
 	base = 1000,
-	damage = 400,
+	damage = 100,
 	fire_fx = "fangkongpaohuoshe2",
 	fire_sfx = "battle/air-atk",
 	id = 745006,
@@ -690567,7 +690567,7 @@ _G.pg.base.weapon_property[745007] = {
 	action_index = "",
 	attack_attribute = 4,
 	base = 1000,
-	damage = 250,
+	damage = 60,
 	fire_fx = "fangkongpaohuoshe2",
 	fire_sfx = "battle/air-atk",
 	id = 745007,
@@ -690588,7 +690588,7 @@ _G.pg.base.weapon_property[745008] = {
 	action_index = "",
 	aim_type = 1,
 	base = 1000,
-	damage = 20,
+	damage = 12,
 	fire_sfx = "battle/cannon-main",
 	id = 745008,
 	queue = 1,
@@ -690621,7 +690621,7 @@ _G.pg.base.weapon_property[745009] = {
 	action_index = "",
 	aim_type = 1,
 	base = 1000,
-	damage = 50,
+	damage = 20,
 	fire_sfx = "battle/cannon-main",
 	id = 745009,
 	queue = 2,
@@ -690642,13 +690642,12 @@ _G.pg.base.weapon_property[745009] = {
 
 _G.pg.base.weapon_property[745010] = {
 	base = 1000,
-	damage = 20,
+	damage = 12,
 	fire_sfx = "",
 	id = 745010,
 	queue = 1,
 	range = 120,
 	reload_max = 1200,
-	type = 2,
 	bullet_ID = {
 		800042,
 		800043,
@@ -690673,13 +690672,12 @@ _G.pg.base.weapon_property[745010] = {
 
 _G.pg.base.weapon_property[745011] = {
 	base = 1000,
-	damage = 50,
+	damage = 30,
 	fire_sfx = "",
 	id = 745011,
 	queue = 2,
 	range = 120,
 	reload_max = 6000,
-	type = 2,
 	bullet_ID = {
 		800085,
 		800085,
@@ -690699,14 +690697,13 @@ _G.pg.base.weapon_property[745011] = {
 _G.pg.base.weapon_property[746001] = {
 	action_index = "",
 	aim_type = 1,
-	base = 1000,
-	damage = 40,
+	base = 1009,
+	damage = 15,
 	id = 746001,
 	queue = 1,
 	range = 120,
 	reload_max = 6000,
 	suppress = 1,
-	type = 2,
 	bullet_ID = {
 		801001,
 	},
@@ -690718,14 +690715,13 @@ _G.pg.base.weapon_property[746001] = {
 _G.pg.base.weapon_property[746002] = {
 	action_index = "",
 	aim_type = 1,
-	base = 1000,
-	damage = 30,
+	base = 1009,
+	damage = 10,
 	id = 746002,
 	queue = 2,
 	range = 120,
 	reload_max = 6000,
 	suppress = 1,
-	type = 2,
 	bullet_ID = {
 		801003,
 	},
@@ -690737,14 +690733,13 @@ _G.pg.base.weapon_property[746002] = {
 _G.pg.base.weapon_property[746003] = {
 	action_index = "",
 	aim_type = 1,
-	base = 1000,
-	damage = 20,
+	base = 1009,
+	damage = 10,
 	id = 746003,
 	queue = 1,
 	range = 120,
 	reload_max = 6000,
 	suppress = 1,
-	type = 2,
 	bullet_ID = {
 		801004,
 	},
@@ -690756,14 +690751,13 @@ _G.pg.base.weapon_property[746003] = {
 _G.pg.base.weapon_property[746004] = {
 	action_index = "",
 	aim_type = 1,
-	base = 1000,
-	damage = 30,
+	base = 1009,
+	damage = 12,
 	id = 746004,
 	queue = 2,
 	range = 120,
 	reload_max = 6000,
 	suppress = 1,
-	type = 2,
 	bullet_ID = {
 		801010,
 	},
@@ -690773,14 +690767,13 @@ _G.pg.base.weapon_property[746004] = {
 }
 
 _G.pg.base.weapon_property[746005] = {
-	base = 1000,
-	damage = 10,
+	base = 1009,
+	damage = 12,
 	fire_sfx = "",
 	id = 746005,
 	queue = 1,
 	range = 120,
 	reload_max = 1200,
-	type = 2,
 	bullet_ID = {
 		801015,
 		801015,
@@ -690796,14 +690789,13 @@ _G.pg.base.weapon_property[746005] = {
 }
 
 _G.pg.base.weapon_property[746006] = {
-	base = 1000,
-	damage = 120,
+	base = 1009,
+	damage = 60,
 	fire_sfx = "",
 	id = 746006,
 	queue = 2,
 	range = 120,
 	reload_max = 6000,
-	type = 2,
 	bullet_ID = {
 		801023,
 		801023,
@@ -690821,14 +690813,13 @@ _G.pg.base.weapon_property[746006] = {
 }
 
 _G.pg.base.weapon_property[746007] = {
-	base = 1000,
-	damage = 10,
+	base = 1009,
+	damage = 12,
 	fire_sfx = "",
 	id = 746007,
 	queue = 1,
 	range = 120,
 	reload_max = 1200,
-	type = 2,
 	bullet_ID = {
 		801016,
 		801016,
@@ -690844,14 +690835,13 @@ _G.pg.base.weapon_property[746007] = {
 }
 
 _G.pg.base.weapon_property[746008] = {
-	base = 1000,
-	damage = 120,
+	base = 1009,
+	damage = 60,
 	fire_sfx = "",
 	id = 746008,
 	queue = 2,
 	range = 120,
 	reload_max = 6000,
-	type = 2,
 	bullet_ID = {
 		801026,
 		801026,
@@ -690878,7 +690868,7 @@ _G.pg.base.weapon_property[746009] = {
 	axis_angle = 0,
 	charge_param = "",
 	corrected = 100,
-	damage = 40,
+	damage = 30,
 	effect_move = 1,
 	expose = 0,
 	fire_fx = "CLFire",
@@ -690936,14 +690926,13 @@ _G.pg.base.weapon_property[746009] = {
 _G.pg.base.weapon_property[746010] = {
 	action_index = "",
 	aim_type = 1,
-	base = 1000,
-	damage = 40,
+	base = 1009,
+	damage = 10,
 	id = 746010,
 	queue = 1,
 	range = 120,
 	reload_max = 6000,
 	suppress = 1,
-	type = 2,
 	bullet_ID = {
 		801034,
 	},
@@ -690962,7 +690951,7 @@ _G.pg.base.weapon_property[746011] = {
 	axis_angle = 0,
 	charge_param = "",
 	corrected = 100,
-	damage = 40,
+	damage = 30,
 	effect_move = 1,
 	expose = 0,
 	fire_fx = "CLFire",
@@ -691020,14 +691009,13 @@ _G.pg.base.weapon_property[746011] = {
 _G.pg.base.weapon_property[746012] = {
 	action_index = "",
 	aim_type = 1,
-	base = 1000,
-	damage = 40,
+	base = 1009,
+	damage = 10,
 	id = 746012,
 	queue = 2,
 	range = 120,
 	reload_max = 6000,
 	suppress = 1,
-	type = 2,
 	bullet_ID = {
 		801040,
 	},
@@ -691037,14 +691025,13 @@ _G.pg.base.weapon_property[746012] = {
 }
 
 _G.pg.base.weapon_property[746013] = {
-	base = 1000,
-	damage = 20,
+	base = 1009,
+	damage = 50,
 	fire_sfx = "",
 	id = 746013,
 	queue = 1,
 	range = 120,
 	reload_max = 1200,
-	type = 2,
 	bullet_ID = {
 		801015,
 		801016,
@@ -691068,14 +691055,13 @@ _G.pg.base.weapon_property[746013] = {
 }
 
 _G.pg.base.weapon_property[746014] = {
-	base = 1000,
-	damage = 80,
+	base = 1009,
+	damage = 150,
 	fire_sfx = "",
 	id = 746014,
 	queue = 2,
 	range = 120,
 	reload_max = 6000,
-	type = 2,
 	bullet_ID = {
 		801023,
 		801026,
@@ -691088,8 +691074,8 @@ _G.pg.base.weapon_property[746014] = {
 
 _G.pg.base.weapon_property[746015] = {
 	aim_type = 1,
-	base = 1000,
-	damage = 80,
+	base = 1009,
+	damage = 120,
 	fire_fx = "CAFire",
 	fire_sfx = "battle/cannon-main",
 	id = 746015,
@@ -691118,14 +691104,13 @@ _G.pg.base.weapon_property[746015] = {
 _G.pg.base.weapon_property[746016] = {
 	action_index = "",
 	aim_type = 0,
-	base = 1000,
-	damage = 50,
+	base = 1009,
+	damage = 60,
 	id = 746016,
 	queue = 3,
 	range = 120,
 	reload_max = 6000,
 	suppress = 0,
-	type = 2,
 	bullet_ID = {
 		801041,
 		801042,
@@ -691141,14 +691126,13 @@ _G.pg.base.weapon_property[746016] = {
 _G.pg.base.weapon_property[746017] = {
 	action_index = "",
 	aim_type = 1,
-	base = 1000,
-	damage = 50,
+	base = 1009,
+	damage = 60,
 	id = 746017,
 	queue = 4,
 	range = 120,
 	reload_max = 6000,
 	suppress = 1,
-	type = 2,
 	bullet_ID = {
 		801052,
 	},
@@ -691167,7 +691151,7 @@ _G.pg.base.weapon_property[746018] = {
 	axis_angle = 0,
 	charge_param = "",
 	corrected = 100,
-	damage = 80,
+	damage = 100,
 	effect_move = 1,
 	expose = 0,
 	fire_fx = "CLFire",
@@ -691232,7 +691216,7 @@ _G.pg.base.weapon_property[746019] = {
 	axis_angle = 0,
 	charge_param = "",
 	corrected = 100,
-	damage = 80,
+	damage = 100,
 	effect_move = 1,
 	expose = 0,
 	fire_fx = "CLFire",

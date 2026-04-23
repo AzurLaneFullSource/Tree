@@ -11,17 +11,7 @@ function var0_0.GetGroupConfig(arg0_1)
 end
 
 function var0_0.getDefaultShipConfig(arg0_2)
-	local var0_2
-
-	for iter0_2 = 4, 1, -1 do
-		var0_2 = pg.ship_data_statistics[tonumber(arg0_2 .. iter0_2)]
-
-		if var0_2 then
-			break
-		end
-	end
-
-	return var0_2
+	return pg.ship_data_statistics[arg0_2 * 10 + 1]
 end
 
 function var0_0.getDefaultShipNameByGroupID(arg0_3)

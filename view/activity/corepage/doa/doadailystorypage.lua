@@ -119,8 +119,11 @@ end
 function var0_0.UpdataBtnInv(arg0_11, arg1_11, arg2_11)
 	onButton(arg0_11, arg0_11.playShowBtn, function()
 		pg.NewStoryMgr.GetInstance():Play(arg0_11.config_client[arg1_11][1], function()
-			arg0_11:emit(ActivityMediator.ON_TASK_SUBMIT, arg2_11)
-			arg0_11:OnUpdata(arg1_11)
+			arg0_11:emit(ActivityMediator.ON_TASK_SUBMIT, arg2_11, function(arg0_14)
+				if arg0_14 then
+					arg0_11:OnUpdata(arg1_11)
+				end
+			end)
 		end, true)
 	end, SFX_PANEL)
 	onButton(arg0_11, arg0_11.playClose, function()
@@ -128,27 +131,27 @@ function var0_0.UpdataBtnInv(arg0_11, arg1_11, arg2_11)
 	end, SFX_PANEL)
 end
 
-function var0_0.UpdateUI(arg0_15, arg1_15, arg2_15)
-	local var0_15 = arg2_15:getTaskStatus()
-	local var1_15 = 0
-	local var2_15 = 0
-	local var3_15 = arg2_15:getProgress()
-	local var4_15 = arg2_15:getConfig("target_num")
+function var0_0.UpdateUI(arg0_16, arg1_16, arg2_16)
+	local var0_16 = arg2_16:getTaskStatus()
+	local var1_16 = 0
+	local var2_16 = 0
+	local var3_16 = arg2_16:getProgress()
+	local var4_16 = arg2_16:getConfig("target_num")
 
-	setImageSprite(arg0_15.Image, LoadSprite("ui/DOADailyStoryPage_atlas", "page_img" .. arg1_15), true)
-	setActive(arg0_15.pageLock, var0_15 == 0)
+	setImageSprite(arg0_16.Image, LoadSprite("ui/DOADailyStoryPage_atlas", "page_img" .. arg1_16), true)
+	setActive(arg0_16.pageLock, var0_16 == 0)
 
-	arg0_15.lockTxt.text = string.format("%s<icon name=%s /> %d/%d", i18n("doa3_activityPageUI_1"), var1_0, var3_15, var4_15)
+	arg0_16.lockTxt.text = string.format("%s<icon name=%s /> %d/%d", i18n("doa3_activityPageUI_1"), var1_0, var3_16, var4_16)
 
-	setActive(arg0_15.playShow, var0_15 ~= 0)
+	setActive(arg0_16.playShow, var0_16 ~= 0)
 
-	local var5_15 = pg.NewStoryMgr.GetInstance():IsPlayed(arg0_15.config_client[arg1_15][1])
+	local var5_16 = pg.NewStoryMgr.GetInstance():IsPlayed(arg0_16.config_client[arg1_16][1])
 
-	setActive(arg0_15.playShowBtn, var0_15 == 1 and not var5_15)
-	setActive(arg0_15.playClose, var0_15 == 0)
-	setText(arg0_15.titleTxt1, "0" .. arg1_15 .. arg2_15:getConfig("name"))
-	setActive(arg0_15.gotAward, var0_15 == 2 or var5_15)
-	setActive(arg0_15.lockAward, var0_15 == 0)
+	setActive(arg0_16.playShowBtn, var0_16 == 1)
+	setActive(arg0_16.playClose, var0_16 == 0)
+	setText(arg0_16.titleTxt1, "0" .. arg1_16 .. arg2_16:getConfig("name"))
+	setActive(arg0_16.gotAward, var0_16 == 2 or var5_16)
+	setActive(arg0_16.lockAward, var0_16 == 0)
 end
 
 return var0_0

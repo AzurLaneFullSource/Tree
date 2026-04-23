@@ -60,7 +60,7 @@ function var0_0.updateUI(arg0_3)
 		})
 	end)
 	onButton(arg0_3, arg0_3.fight, function()
-		arg0_3:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+		arg0_3:emit(ActivityMediator.SKIP_ACTIVITY_MAP, 6036)
 	end)
 end
 

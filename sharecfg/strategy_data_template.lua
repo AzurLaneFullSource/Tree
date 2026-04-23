@@ -366,6 +366,7 @@ pg.strategy_data_template = setmetatable({
 		201707,
 		201741,
 		201742,
+		201743,
 		205001,
 		205002,
 		205003,
@@ -4442,6 +4443,17 @@ pg.base.strategy_data_template = {
 		icon = "200908",
 		buff_type = 0,
 		desc = "The boss takes reduced DMG from ships more than 20 units away <color=#92fc63>(1.0% reduced DMG taken for every 1 unit greater than 20, up to 50.0%)</color> and deals increased DMG to ships more than 20 units away <color=#92fc63>(2.0% increased DMG dealt for every 1 unit greater than 20, up to 100.0%)</color>.\nThe boss takes <color=#92fc63>100.0% increased shelling DMG and 50.0% increased torpedo DMG from your Vanguard fleet</color>.\nThe boss is able to shoot down bombers easily.\n<color=#ddf700>Hint: The distance between the boss's initial position and the left-most range of your Vanguard fleet's movement is approximately 70 units</color>.\n\n- Hard Mode Details -\nEnemy DMG dealt is <color=#ffc038>significantly increased</color>. Large enemy shells cannot be nullified by airstrikes or shields.\nThe hitbox of your Vanguard fleet is <color=#92fc63>limited to only the frontmost ship, and the size of the hitbox is also significantly reduced</color>.\nWhen your ship is hit, it will become invulnerable for a short period of time.\n\nThe following gear or skills are rendered ineffective:\n[Fiercer When Cornered], [Operation Rainbow], [Eleventh Hour], [I Will Not Yield!]",
+		arg = {}
+	},
+	[201743] = {
+		buff_id = 0,
+		name = "Challenge Mode",
+		iconSize = "",
+		type = 10,
+		id = 201743,
+		icon = "200908",
+		buff_type = 0,
+		desc = "When any boss is defeated, the other will enter Fever status, <color=#ffc038>altering its attack patterns and significantly increasing its DMG dealt</color>.\n- Hard Mode Details -\nEnemy DMG dealt is <color=#ffc038>significantly increased</color>. Large enemy shells cannot be nullified by airstrikes or shields.\nThe hitbox of your Vanguard fleet is <color=#92fc63>limited to only the frontmost ship, and the size of the hitbox is also significantly reduced</color>.\nWhen your ship is hit, it will become invulnerable for a short period of time.\n\nThe following gear or skills are rendered ineffective:\n[Fiercer When Cornered], [Operation Rainbow], [Eleventh Hour], [I Will Not Yield!]",
 		arg = {}
 	},
 	[205001] = {

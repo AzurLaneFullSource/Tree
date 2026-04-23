@@ -60,10 +60,12 @@ function var0_0.CollectFirends(arg0_5)
 end
 
 function var0_0.Send(arg0_7, arg1_7, arg2_7)
+	local var0_7 = pg.TimeMgr.GetInstance():GetServerTime()
+
 	pg.ConnectionMgr.GetInstance():Send(21243, {
 		island_id = arg1_7
 	}, 21244, function(arg0_8)
-		local var0_8 = arg0_8.today_price.price
+		local var0_8 = arg0_8.today_price.timestamp <= var0_7 and 0 or arg0_8.today_price.price
 		local var1_8 = getProxy(FriendProxy):getFriend(arg1_7)
 		local var2_8 = IslandTradeRank.New({
 			id = arg1_7,

@@ -25,22 +25,28 @@ function var0_0.GetCollectionList(arg0_3)
 	local var0_3 = arg0_3:getConfig("config_data")
 	local var1_3 = arg0_3:getDayIndex()
 
-	if #arg0_3.collections > 0 and var1_3 > table.indexof(var0_3, arg0_3.collections[1].id) then
-		table.remove(arg0_3.collections, 1)
-	end
-
-	if #arg0_3.collections == 0 and var1_3 > 0 and var1_3 <= #var0_3 then
-		local var2_3 = var0_3[var1_3]
-
-		if not table.contains(arg0_3.data1_list, var2_3) then
-			table.insert(arg0_3.collections, EventInfo.New({
-				finish_time = 0,
-				over_time = 0,
-				id = var2_3,
-				ship_id_list = {},
-				activity_id = arg0_3.id
-			}))
+	arg0_3.collections = underscore.filter(arg0_3.collections, function(arg0_4)
+		if table.contains(arg0_3:getData1List(), arg0_4.id) then
+			return false
 		end
+
+		if table.indexof(var0_3, arg0_4.id) < var1_3 and arg0_4:GetState() < EventInfo.StateActive then
+			return false
+		end
+
+		return true
+	end)
+
+	if #arg0_3.collections == 0 and var0_3[var1_3] and not table.contains(arg0_3:getData1List(), var0_3[var1_3]) then
+		local var2_3 = EventInfo.New({
+			finish_time = 0,
+			over_time = 0,
+			id = var0_3[var1_3],
+			ship_id_list = {},
+			activity_id = arg0_3.id
+		})
+
+		table.insert(arg0_3.collections, var2_3)
 	end
 
 	return arg0_3.collections
