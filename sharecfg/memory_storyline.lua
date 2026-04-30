@@ -1,6 +1,108 @@
 pg = pg or {}
-pg.memory_storyline = {
-	{
+pg.memory_storyline = rawget(pg, "memory_storyline") or setmetatable({
+	__name = "memory_storyline"
+}, confNEO)
+pg.memory_storyline.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22,
+	23,
+	24,
+	25,
+	26,
+	27,
+	28,
+	29,
+	30,
+	31,
+	32,
+	33,
+	34,
+	35,
+	36,
+	37,
+	38,
+	39,
+	40,
+	41,
+	42,
+	43,
+	44,
+	45,
+	46,
+	47,
+	48,
+	49,
+	50,
+	51,
+	52,
+	53,
+	54,
+	55,
+	56,
+	57,
+	58,
+	59,
+	60,
+	61,
+	62,
+	63,
+	64,
+	65,
+	66,
+	67,
+	68,
+	69,
+	70,
+	71,
+	72,
+	73,
+	74,
+	75,
+	76,
+	77,
+	78,
+	79,
+	80,
+	81,
+	82,
+	83,
+	84,
+	85,
+	86,
+	87,
+	88,
+	89,
+	90,
+	91,
+	92,
+	93,
+	94
+}
+pg.base = pg.base or {}
+pg.base.memory_storyline = {}
+
+;(function()
+	pg.base.memory_storyline[1] = {
 		description = "A battle of wits and courage will intersect in this upcoming grand exercise. The general's path is blocked by soldiers – who do they serve?",
 		name = "Crimson Echoes - Part 1",
 		world_id = "",
@@ -45,8 +147,8 @@ pg.memory_storyline = {
 			3,
 			4
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[2] = {
 		description = "Bishops of opposite color – two beings forbidden to ever touch, existing as reflections of a mirror.",
 		name = "Divergent Chessboard",
 		world_id = "",
@@ -66,8 +168,8 @@ pg.memory_storyline = {
 		shipnation = {
 			4
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[3] = {
 		description = "\"O, Holy Iris, we thank you for watching over us today. I pray we will have your protection tomorrow and the day after as well. Please grace us with your blessings so we may live in peace forever more.\"",
 		name = "Angel of the Iris",
 		world_id = "",
@@ -88,8 +190,8 @@ pg.memory_storyline = {
 			10,
 			2
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[4] = {
 		description = "A team of Northern Parliament shipgirls set out to investigate a mystery resting at the bottom of a distant sea.",
 		name = "Abyssal Refrain - Part 1",
 		world_id = "",
@@ -137,8 +239,8 @@ pg.memory_storyline = {
 		shipnation = {
 			7
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[5] = {
 		description = "\"I hope we will meet again, Friedrich.\" – \"Let us march for the future, Bismarck. Together.\"",
 		name = "Operation Convergence - Part 1",
 		world_id = "",
@@ -162,8 +264,8 @@ pg.memory_storyline = {
 		link_event = {
 			2
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[6] = {
 		description = "\"May our flag fly victoriously over every battlefield. May our might bring peace to the land. Even should we be engulfed in flames... we will continue to tread forth dauntlessly.\"",
 		name = "The Flame-Touched Dagger",
 		world_id = "",
@@ -186,8 +288,8 @@ pg.memory_storyline = {
 		link_event = {
 			5
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[7] = {
 		description = "In the middle of their search for a Vichya Dominion force, the Royal Navy's fleet encounters Sirens. Thus, a battle unfolds.",
 		name = "Iris of Light and Dark - Part 1",
 		world_id = "",
@@ -215,8 +317,8 @@ pg.memory_storyline = {
 		link_event = {
 			6
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[8] = {
 		description = "A holy play, equal parts comedic and tragic. An old empire, shaking in the storm. A radiant gem, still glowing with an eternal light.",
 		name = "Empyreal Tragicomedy",
 		world_id = "",
@@ -238,8 +340,8 @@ pg.memory_storyline = {
 		link_event = {
 			7
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[9] = {
 		description = "From this point onwards, we will pay no heed to deception, debate, and other such cheap parlor tricks! We shall expand our lands with the might of our black iron and the courage of our crimson blood!",
 		name = "Scherzo of Iron and Blood - Part 1",
 		world_id = "",
@@ -264,8 +366,8 @@ pg.memory_storyline = {
 		link_event = {
 			8
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[10] = {
 		description = "<<SysLog>> Experiment participants have entered the perimeter. Creating Pawns for use by combatants.",
 		name = "Operation Convergence - Part 2",
 		world_id = "",
@@ -297,8 +399,8 @@ pg.memory_storyline = {
 		link_event = {
 			8
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[11] = {
 		description = "When the world starts to crumble, the mighty will rise and stand against the waves of history. Power will contend with power, oblivious that this will cause even bigger ripples.",
 		name = "Campaign Story",
 		world_id = "",
@@ -324,8 +426,8 @@ pg.memory_storyline = {
 			13,
 			14
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[12] = {
 		description = "\"I, U-556, hereby declare that I will provide any desired assistance to my ally and Lord, battleship Bismarck, at any place on the water, under water, on land, or in the air.\"",
 		name = "One Small Promise",
 		world_id = "",
@@ -345,8 +447,8 @@ pg.memory_storyline = {
 		shipnation = {
 			4
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[13] = {
 		description = "Bismarck is limping, barely able to keep fighting. For retribution, and for the Queen, we shall seize victory here and now!",
 		name = "Scherzo of Iron and Blood - Part 2",
 		world_id = "",
@@ -389,8 +491,8 @@ pg.memory_storyline = {
 		link_event = {
 			15
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[14] = {
 		description = "<<SysLog>> Instructions received. Operation Convergence has completed beyond the mirror boundary. End of log.",
 		name = "Operation Convergence - Part 3",
 		world_id = "",
@@ -417,8 +519,8 @@ pg.memory_storyline = {
 		shipnation = {
 			4
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[15] = {
 		description = "PH received an emergency report, then the harbor was attacked by an unidentified enemy. The whole fleet anchored there is already ablaze in a sea of fire... What in the world happened?",
 		name = "Campaign Story",
 		world_id = "",
@@ -441,8 +543,8 @@ pg.memory_storyline = {
 		link_event = {
 			13
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[16] = {
 		description = "Hold your positions and do not fire unless you're fired upon. However, if the enemy wants to force us into a war, then a war they shall have!",
 		name = "Campaign Story",
 		world_id = "",
@@ -468,8 +570,8 @@ pg.memory_storyline = {
 			18,
 			19
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[17] = {
 		description = "\"We may be short on water. Attacking force should bring plenty of drinking water.\" Looks like we have a big one on the hook.",
 		name = "Campaign Story",
 		world_id = "",
@@ -492,8 +594,8 @@ pg.memory_storyline = {
 		link_event = {
 			20
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[18] = {
 		description = "The old archives shoulder a heavy past. We may never be able to forget some things, but even so, we must muster our courage to head toward tomorrow.",
 		name = "Silver Archives",
 		world_id = "",
@@ -513,8 +615,8 @@ pg.memory_storyline = {
 		shipnation = {
 			1
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[19] = {
 		description = "\"Amagi, if you were here, what would you do...?\"",
 		name = "Crimson Echoes - Part 2",
 		world_id = "",
@@ -539,8 +641,8 @@ pg.memory_storyline = {
 		link_event = {
 			20
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[20] = {
 		description = "After going through a storm and getting separated from her allies, Zuikaku sets foot in unknown waters. Is this the Sanctuary she's been searching for?",
 		name = "Visitors Dyed in Red",
 		world_id = "",
@@ -560,8 +662,8 @@ pg.memory_storyline = {
 		shipnation = {
 			3
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[21] = {
 		description = "Younglings, let us fight once more! Reborn Combined Fleet, full speed ahead!",
 		name = "The Return of the War God",
 		world_id = "",
@@ -585,8 +687,8 @@ pg.memory_storyline = {
 			22,
 			23
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[22] = {
 		description = "After sustaining injuries at Mers-el-Kébir, Dunkerque and the group of little knights escorting her embark on their home voyage.",
 		name = "The Way Home in the Dark",
 		world_id = "",
@@ -607,8 +709,8 @@ pg.memory_storyline = {
 			2,
 			10
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[23] = {
 		description = "On both sides of a great ocean, there were two shipgirls. Both had their own brand of justice and a claim to the title of \"the strongest battleship.\" Now, they finally face each other.",
 		name = "Iris of Light and Dark - Part 2",
 		world_id = "",
@@ -638,8 +740,8 @@ pg.memory_storyline = {
 			1,
 			2
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[24] = {
 		description = "I thought by defeating all of my enemies, I'd finally get some peace, but this world's future has betrayed us. Even if the steel of my body creaks, this war will not end.",
 		name = "Fallen Wings",
 		world_id = "",
@@ -661,8 +763,8 @@ pg.memory_storyline = {
 		link_event = {
 			23
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[25] = {
 		description = "In the remote Arctic Ocean, a Royal Navy fleet that just concluded its escort mission is attacked by never-before-seen Sirens and Iron Blood... Could it all be a coincidence?",
 		name = "Winter's Crown",
 		world_id = "",
@@ -685,8 +787,8 @@ pg.memory_storyline = {
 		link_event = {
 			24
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[26] = {
 		description = "The brave Sakuran warriors sail homeward to rescue their comrades. Unbeknownst to them, Sirens are lying in ambush en route.",
 		name = "Ink-Stained Steel Sakura",
 		world_id = "",
@@ -710,8 +812,8 @@ pg.memory_storyline = {
 			27,
 			28
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[27] = {
 		description = "The shipgirls are making preparations to welcome the Commander in NY City. They are oblivious to the storm just out of view that is forming.",
 		name = "Approaching Storm",
 		world_id = "",
@@ -734,8 +836,8 @@ pg.memory_storyline = {
 		link_event = {
 			28
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[28] = {
 		description = "A preplanned mishap, and two arranged stages. The open sandbox, and the confined subject. Only by confronting the past can one face the future.",
 		name = "Ashen Simulacrum",
 		world_id = "",
@@ -758,8 +860,8 @@ pg.memory_storyline = {
 		link_event = {
 			29
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[29] = {
 		description = "A sacred stone, known as the Watatsumi, rests enshrined on a distant island in the Sakura Empire. As seekers of power, keepers of faith, and schemers all gather in one place, a new battle draws near.",
 		name = "Swirling Cherry Blossoms",
 		world_id = "",
@@ -784,8 +886,8 @@ pg.memory_storyline = {
 			31,
 			32
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[30] = {
 		description = "As a fleet traverses the Panama Canal, it unwittingly wanders into a strange mist.",
 		name = "Under the Mist",
 		world_id = "",
@@ -807,8 +909,8 @@ pg.memory_storyline = {
 		link_event = {
 			31
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[31] = {
 		description = "A fleet has gone missing inside a mist of unexplained origin. Enterprise's fleet mobilizes to find its source and rescue its allies. New Sirens arrive to block their path – while eyes gaze at them from the abyss.",
 		name = "Microlayer Medley",
 		world_id = "",
@@ -830,8 +932,8 @@ pg.memory_storyline = {
 		link_event = {
 			33
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[32] = {
 		description = "Like water are we – you may liquefy us, freeze us, or even vaporize us to fade into the cold winter air. However, whatever form we take, our hearts will never change. Comrades! Unite and build an unbreakable alliance!",
 		name = "Northern Overture",
 		world_id = "",
@@ -852,8 +954,8 @@ pg.memory_storyline = {
 			7
 		},
 		link_event = {}
-	},
-	{
+	}
+	pg.base.memory_storyline[33] = {
 		description = "Furious shocks tainted with darkness. A golden, holy wall woven of hope. Once more, with resolve, strike at Heaven.",
 		name = "Skybound Oratorio",
 		world_id = "",
@@ -877,8 +979,8 @@ pg.memory_storyline = {
 		link_event = {
 			34
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[34] = {
 		description = "A merchant fleet loaded with cargo sails through the Barents Sea. While nobody desired to sail through this frigid sea that hardly ever sees the sun, the Northern Parliament's request came first.",
 		name = "Aurora Noctis",
 		world_id = "",
@@ -902,8 +1004,8 @@ pg.memory_storyline = {
 		link_event = {
 			35
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[35] = {
 		description = "Once, Zhuang Zhou dreamed he was a carefree butterfly, not knowing that he was Zhuang Zhou. When suddenly he awoke, he was certain that he was Zhuang Zhou, but did not know if he was Zhuang Zhou who had dreamt he was a butterfly, or a butterfly dreaming that he was Zhuang Zhou.",
 		name = "Dreamwaker's Butterfly",
 		world_id = "",
@@ -925,8 +1027,8 @@ pg.memory_storyline = {
 		link_event = {
 			36
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[36] = {
 		description = "O warriors, wielders of the piercing cold, become the furious storm of daybreak that dispels the darkness of night!",
 		name = "Khorovod of Dawn's Rime",
 		world_id = "",
@@ -949,8 +1051,8 @@ pg.memory_storyline = {
 			37,
 			38
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[37] = {
 		description = "A large-scale operation against the Sirens has begun in the NA Ocean. Give your orders, Commander!",
 		name = "Operation Siren - Trails of Ashen Wings",
 		memory_lock = 0,
@@ -974,8 +1076,8 @@ pg.memory_storyline = {
 			39,
 			40
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[38] = {
 		description = "<<SysLog>> Data entry of Mirror Sea T2-XI-N002 complete. Test site established. Beginning experiment.",
 		name = "Inverted Orthant",
 		world_id = "",
@@ -997,8 +1099,8 @@ pg.memory_storyline = {
 			6
 		},
 		link_event = {}
-	},
-	{
+	}
+	pg.base.memory_storyline[39] = {
 		description = "The operation area is divided into four Zones. Royal Navy, set sail for Zone B!",
 		name = "Operation Siren - Queen's Orders",
 		memory_lock = 0,
@@ -1023,8 +1125,8 @@ pg.memory_storyline = {
 			41,
 			42
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[40] = {
 		description = "Intense battles are unfolding across numerous fronts. Eagle Union, show the Sirens your newfound strength!",
 		name = "Operation Siren - Labyrinthine Sea",
 		memory_lock = 0,
@@ -1044,8 +1146,8 @@ pg.memory_storyline = {
 			1
 		},
 		link_event = {}
-	},
-	{
+	}
+	pg.base.memory_storyline[41] = {
 		description = "In a corner of the NA Ocean, a Sakuran fleet has begun a voyage of its own...",
 		name = "Operation Siren - Upon Crimson Winds",
 		memory_lock = 0,
@@ -1070,8 +1172,8 @@ pg.memory_storyline = {
 		link_event = {
 			43
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[42] = {
 		description = "A gust, flower petals, and a hoisted banner. Upon their army's triumph, glory shall be theirs once more.",
 		name = "Daedalian Hymn",
 		world_id = "",
@@ -1091,8 +1193,8 @@ pg.memory_storyline = {
 			6
 		},
 		link_event = {}
-	},
-	{
+	}
+	pg.base.memory_storyline[43] = {
 		description = "Amidst beguiling mist, the horn of war is blown. Upon a single point, they converge: The Sirens, the Ashes, the Azur Lane, the Crimson Axis, and the Arbiters – their goal, the secret in the storm's eye.",
 		name = "Operation Siren - Glimmers of Rekindling",
 		memory_lock = 0,
@@ -1118,8 +1220,8 @@ pg.memory_storyline = {
 			44,
 			45
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[44] = {
 		description = "Should one adhere to the old way of things, or adapt to changing times? What awaits at the end of the spiral – hope, or despair?",
 		name = "Mirror Involution",
 		world_id = "",
@@ -1141,8 +1243,8 @@ pg.memory_storyline = {
 		link_event = {
 			46
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[45] = {
 		description = "An unexpected journey with unexpected gains. A gust from the sea sets fate into motion. Has the hidden answer dawned on you?",
 		name = "Upon the Shimmering Blue",
 		world_id = "",
@@ -1165,8 +1267,8 @@ pg.memory_storyline = {
 		link_event = {
 			46
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[46] = {
 		description = "The operation would test the things that the Iron Blood prided themselves in – chief of which, their audacity to transcend God.",
 		name = "Tower of Transcendence",
 		world_id = "",
@@ -1189,8 +1291,8 @@ pg.memory_storyline = {
 			47,
 			48
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[47] = {
 		description = "A vignette from the distant past brought to light by intel. It is always darkest before the dawn.",
 		name = "Darkness Within Dawn",
 		world_id = "",
@@ -1212,8 +1314,8 @@ pg.memory_storyline = {
 		link_event = {
 			48
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[48] = {
 		description = "\"I will complete the mission and bring my comrades home safely – that is my promise and my vow to my motherland!\"",
 		name = "Abyssal Refrain - Part 2",
 		world_id = "",
@@ -1246,8 +1348,8 @@ pg.memory_storyline = {
 		link_event = {
 			49
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[49] = {
 		description = "\"Put the Rainbow Tower in reverse and play the final melody. Die götter sind tot.\"",
 		name = "Rondo at Rainbow's End",
 		world_id = "",
@@ -1273,8 +1375,8 @@ pg.memory_storyline = {
 			50,
 			51
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[50] = {
 		description = "Monarch steeles her resolve to protect the glory of the Royal Navy...",
 		name = "Letters and Travels",
 		world_id = "",
@@ -1296,8 +1398,8 @@ pg.memory_storyline = {
 		link_event = {
 			51
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[51] = {
 		description = "\"Gentle like the summer breeze, cool like the spring river. The coquettishness of a young lady, the strictness of a royal guard. A radiant pledge, a castle of golden light.\"",
 		name = "Pledge of the Radiant Court",
 		world_id = "",
@@ -1320,8 +1422,8 @@ pg.memory_storyline = {
 			52,
 			53
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[52] = {
 		description = "A World Expo is being held in the Sardegna Empire, and invitations are sent to all the world's factions...",
 		name = "Where All Roads Lead",
 		world_id = "",
@@ -1350,8 +1452,8 @@ pg.memory_storyline = {
 		link_event = {
 			53
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[53] = {
 		description = "Just as all empires are bound to collapse, all epic poems are bound to end. Until that time comes, however, the eagle will remain in the vast sky, its wings spread wide and its song reaching far.",
 		name = "Aquilifer's Ballade",
 		world_id = "",
@@ -1382,8 +1484,8 @@ pg.memory_storyline = {
 			56,
 			58
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[54] = {
 		description = "\"To save the weak, you must first empower them. To vanquish evil, you must first bolster your ranks. This is the way to temper the firm with the soft and overcome the strong with the weak.\"",
 		name = "Tranquil Sea, Distant Thunder",
 		world_id = "",
@@ -1405,8 +1507,8 @@ pg.memory_storyline = {
 		link_event = {
 			55
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[55] = {
 		description = "On high in a tower in the Sanctuary, a grand game of shogi unfolds. May the greatest tactician with the strongest resolve win.",
 		name = "Violet Tempest, Blooming Lycoris",
 		world_id = "",
@@ -1430,8 +1532,8 @@ pg.memory_storyline = {
 			61,
 			62
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[56] = {
 		description = "\"The butterfly has flapped its wings. Whereto will the storm go?\"",
 		name = "Causality Transposition",
 		world_id = "",
@@ -1453,8 +1555,8 @@ pg.memory_storyline = {
 		link_event = {
 			57
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[57] = {
 		description = "\"From randomness to exactness, from infinite to finite, the present status folds. The butterfly is both over here and over there.\"",
 		name = "Parallel Superimposition",
 		world_id = "",
@@ -1474,8 +1576,8 @@ pg.memory_storyline = {
 			1
 		},
 		link_event = {}
-	},
-	{
+	}
+	pg.base.memory_storyline[58] = {
 		description = "A day's plans start in the morning. As the sun's light peers through the curtains, the queen's grand day is about to begin.",
 		name = "The Queen's Ordinary Day",
 		world_id = "",
@@ -1497,8 +1599,8 @@ pg.memory_storyline = {
 		link_event = {
 			59
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[59] = {
 		description = "Transient proof turns to dust in the sands of time, and the truth is forever sealed away in the ruins.",
 		name = "Revelations of Dust",
 		world_id = "",
@@ -1519,8 +1621,8 @@ pg.memory_storyline = {
 			10
 		},
 		link_event = {}
-	},
-	{
+	}
+	pg.base.memory_storyline[60] = {
 		description = "A sage in deliberation. A spider committed to weaving. The stars above, the sea... the web has already ensnared everything.",
 		name = "The Weaver's Omen",
 		world_id = "",
@@ -1545,8 +1647,8 @@ pg.memory_storyline = {
 		link_event = {
 			61
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[61] = {
 		description = "\"Where will the phaseless stars converge on the astrolabe?\"",
 		name = "Confluence of Nothingness",
 		world_id = "",
@@ -1570,8 +1672,8 @@ pg.memory_storyline = {
 			63,
 			64
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[62] = {
 		description = "Operation Frostfall will begin at 0100 hours. Move to your positions swiftly and stand by for battle. That is all, comrades. Good luck.",
 		name = "Frostfall",
 		world_id = "",
@@ -1591,8 +1693,8 @@ pg.memory_storyline = {
 			7
 		},
 		link_event = {}
-	},
-	{
+	}
+	pg.base.memory_storyline[63] = {
 		description = "The oasis has turned into an isolated island amidst a sandstorm. Since there's nothing else to do, let's share old stories!",
 		name = "Reflections of the Oasis",
 		world_id = "",
@@ -1612,8 +1714,8 @@ pg.memory_storyline = {
 			6
 		},
 		link_event = {}
-	},
-	{
+	}
+	pg.base.memory_storyline[64] = {
 		description = "Richelieu and her party set out to save their comrades and reclaim the Crown of the Holy See. However, the journey ahead of them is fraught with danger.",
 		name = "Anthem of Remembrance",
 		world_id = "",
@@ -1635,8 +1737,8 @@ pg.memory_storyline = {
 		link_event = {
 			65
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[65] = {
 		description = "Whatever plans and schemes have been laid out, they end tonight. Tomorrow, judgment will come. Tomorrow, He will come.",
 		name = "Eventide's Eve",
 		world_id = "",
@@ -1664,8 +1766,8 @@ pg.memory_storyline = {
 		link_event = {
 			66
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[66] = {
 		description = "\"Who is the eponymous fool in this performance called 'The Fool's Scales,' and what are the scales?\"",
 		name = "The Fool's Scales",
 		world_id = "",
@@ -1695,8 +1797,8 @@ pg.memory_storyline = {
 			67,
 			68
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[67] = {
 		description = "As the curtain of night falls, the Sakurans recollect a great battle of many years ago.",
 		name = "Waxing Moonlight",
 		world_id = "",
@@ -1718,8 +1820,8 @@ pg.memory_storyline = {
 		link_event = {
 			68
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[68] = {
 		description = "In a blink under the moonlight, in a corner of the garden, who was it that plucked her heartstrings?",
 		name = "Effulgence Before Eclipse",
 		world_id = "",
@@ -1742,8 +1844,8 @@ pg.memory_storyline = {
 			69,
 			70
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[69] = {
 		description = "The near-superimposition event had been terminated safely, and clear skies enveloped the world.",
 		name = "Beneath Clear, Starry Skies",
 		world_id = "",
@@ -1770,8 +1872,8 @@ pg.memory_storyline = {
 		link_event = {
 			70
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[70] = {
 		description = "\"Chasing the light in the sea of stars, where is the path that leads home?\"",
 		name = "Light-Chasing Sea of Stars",
 		world_id = "",
@@ -1794,8 +1896,8 @@ pg.memory_storyline = {
 			71,
 			72
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[71] = {
 		description = "Why do you ascend the mountain? Because the mountain is there.",
 		name = "Mist Upon Silver Summits",
 		world_id = "",
@@ -1822,8 +1924,8 @@ pg.memory_storyline = {
 		link_event = {
 			72
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[72] = {
 		description = "Soyuz leads a Northern Parliament fleet to the Antarctic for a unique crystal that resonates with riggings, yet someone in their midst has other motives…",
 		name = "Snowrealm Peregrination",
 		world_id = "",
@@ -1849,8 +1951,8 @@ pg.memory_storyline = {
 		link_event = {
 			73
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[73] = {
 		description = "Lycoris radiata, the red spider lily – beautiful, garish, and poisonous. It has already lured you in before it blooms.",
 		name = "Spider Lily's Redolence",
 		world_id = "",
@@ -1877,8 +1979,8 @@ pg.memory_storyline = {
 			74,
 			75
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[74] = {
 		description = "Did you hear it – the distant sound echoing among the stars that transcends reality and dreams?",
 		name = "Echoes From Afar",
 		world_id = "",
@@ -1903,8 +2005,8 @@ pg.memory_storyline = {
 		link_event = {
 			75
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[75] = {
 		description = "\"In the glorious Martyrium, you will witness death, accept death, and be extolled in death.\"",
 		name = "Light of the Martyrium",
 		world_id = "",
@@ -1928,8 +2030,8 @@ pg.memory_storyline = {
 		link_event = {
 			76
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[76] = {
 		description = "\"It is both an interlude and a dream. You cannot open your eyes, and the music keeps playing.\"",
 		name = "Interlude of Illusions",
 		world_id = "",
@@ -1959,8 +2061,8 @@ pg.memory_storyline = {
 			78,
 			79
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[77] = {
 		description = "\"The impostor is the effect, the original is the cause. It's only logical.\"",
 		name = "Crimson Prelusion",
 		world_id = "",
@@ -1988,8 +2090,8 @@ pg.memory_storyline = {
 		link_event = {
 			78
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[78] = {
 		description = "\"Wings of freedom, body of steel. They flap their wings and break the waves!\"",
 		name = "Windborne Steel Wings",
 		world_id = "",
@@ -2014,8 +2116,8 @@ pg.memory_storyline = {
 		link_event = {
 			80
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[79] = {
 		description = "\"A soul has departed, leaving behind a flower. Lingering sentiment scatters into the depths.\"",
 		name = "Whence Flowers Bear No Fruit",
 		world_id = "",
@@ -2037,8 +2139,8 @@ pg.memory_storyline = {
 		link_event = {
 			80
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[80] = {
 		description = "\"Even the dust carried by the winds, if brought enough of, can build a tower. Let it become your weapon for fighting destiny.\"",
 		name = "Whence the Dust Settles",
 		world_id = "",
@@ -2063,8 +2165,8 @@ pg.memory_storyline = {
 		link_event = {
 			81
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[81] = {
 		description = "\"Founded on reality, built into fantasy. Attachment is not obsession, and will is the construction of the soul. In the flames of rebirth, the Watatsumi grants a hull. A new life – a singular life – shall be made manifest here.\"",
 		name = "Ode of Everblooming Crimson",
 		world_id = "",
@@ -2094,8 +2196,8 @@ pg.memory_storyline = {
 			82,
 			83
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[82] = {
 		description = "Returns are not always smooth sailing. This is true within the realm, and even more so beyond it.",
 		name = "Return From the Beyond",
 		world_id = "",
@@ -2119,8 +2221,8 @@ pg.memory_storyline = {
 		link_event = {
 			83
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[83] = {
 		description = "\"Before the glimmer of evening fades, let us search under the stars for the hints hidden by the day and the truth concealed by the night.\"",
 		name = "Substellar Crepuscule",
 		world_id = "",
@@ -2146,8 +2248,8 @@ pg.memory_storyline = {
 			84,
 			85
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[84] = {
 		description = "\"I am Hierophant. Upholder of harmony, advocate for diplomacy. O chosen one, come to me. Accept my principles and sing praises of my name.\"",
 		name = "Path of the Chosen",
 		world_id = "",
@@ -2172,8 +2274,8 @@ pg.memory_storyline = {
 		link_event = {
 			85
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[85] = {
 		description = "\"With the world as the enclosure and faith as its lock, let there be God's light within the cage.\"",
 		name = "Paradiso of Shackled Light",
 		world_id = "",
@@ -2196,8 +2298,8 @@ pg.memory_storyline = {
 		link_event = {
 			86
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[86] = {
 		description = "In the scorched earth, new buds spring forth. Raise the Tulipan banner and set sail for the glimmering horizon of hope.",
 		name = "Toward Tulipa's Seas",
 		world_id = "",
@@ -2222,8 +2324,8 @@ pg.memory_storyline = {
 			87,
 			88
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[87] = {
 		description = "May the sun never set on the empire, and may it remain mighty forevermore...",
 		name = "March of the Neversetting Sun",
 		world_id = "",
@@ -2246,8 +2348,8 @@ pg.memory_storyline = {
 		link_event = {
 			88
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[88] = {
 		description = "\"Heed me, Rose Tower: I will be your protector. Together... we will protect the Royal Islands.\"",
 		name = "A Rose on the High Tower",
 		world_id = "",
@@ -2270,8 +2372,8 @@ pg.memory_storyline = {
 		link_event = {
 			89
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[89] = {
 		description = "The cannon salute and the band are ready.\nOkay, let's begin the rehearsal.\nCommander, welcome to the Sakura Empire!",
 		name = "Summons From the Sakura Empire",
 		world_id = "",
@@ -2293,8 +2395,8 @@ pg.memory_storyline = {
 		link_event = {
 			90
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[90] = {
 		description = "\"Amaiki – it formeth a wall against the world beyond; it is the Sky Realm. Amahara – it is defined by Amaiki; it is the Sky Field. Even should the earth collapse and the mountains crumble, a great disaster is inevitable—forevermore must the Sky Realm Amahara last.\"",
 		name = "A Dance for Amahara Above ",
 		world_id = "",
@@ -2320,8 +2422,8 @@ pg.memory_storyline = {
 			89,
 			91
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[91] = {
 		description = "\"I'm soon going to go on a journey.\n\"So, today, I'm going to be more frank and casual with you.\"\n\"I'm going to simply tell you things as they come to mind.\"\n\"Let's begin.\"",
 		name = "Memories in Echo",
 		world_id = "",
@@ -2343,8 +2445,8 @@ pg.memory_storyline = {
 		link_event = {
 			92
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[92] = {
 		description = "\"The war with the Sirens has ended.\"\n\"As have the meetings to discuss the Azur Lane's reformation.\"\n\"It's a brighter world.\"\n\"A new world.\"",
 		name = "To a Brighter World",
 		world_id = "",
@@ -2375,8 +2477,8 @@ pg.memory_storyline = {
 			91,
 			93
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[93] = {
 		description = "\"Our past is not perfect, and our future harbors hardships.\"\n\"In this moment, however...\"\n\"We are united and trying to move forward together.\"\n\"To all our past, present, and future allies...\"\n\"Let us perform a majestic ensemble together.\"",
 		name = "A Note Through the Firmament",
 		world_id = "",
@@ -2403,8 +2505,8 @@ pg.memory_storyline = {
 		link_event = {
 			94
 		}
-	},
-	{
+	}
+	pg.base.memory_storyline[94] = {
 		description = "Stay Tuned",
 		name = "Stay Tuned",
 		column = 59,
@@ -2419,101 +2521,5 @@ pg.memory_storyline = {
 		id = 94,
 		icon = "",
 		sort = 0
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19,
-		20,
-		21,
-		22,
-		23,
-		24,
-		25,
-		26,
-		27,
-		28,
-		29,
-		30,
-		31,
-		32,
-		33,
-		34,
-		35,
-		36,
-		37,
-		38,
-		39,
-		40,
-		41,
-		42,
-		43,
-		44,
-		45,
-		46,
-		47,
-		48,
-		49,
-		50,
-		51,
-		52,
-		53,
-		54,
-		55,
-		56,
-		57,
-		58,
-		59,
-		60,
-		61,
-		62,
-		63,
-		64,
-		65,
-		66,
-		67,
-		68,
-		69,
-		70,
-		71,
-		72,
-		73,
-		74,
-		75,
-		76,
-		77,
-		78,
-		79,
-		80,
-		81,
-		82,
-		83,
-		84,
-		85,
-		86,
-		87,
-		88,
-		89,
-		90,
-		91,
-		92,
-		93,
-		94
 	}
-}
+end)()

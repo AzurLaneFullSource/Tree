@@ -452,12 +452,13 @@ function var0_0.getEnergy(arg0_29)
 end
 
 function var0_0.getEnergeConfig(arg0_30)
-	local var0_30 = pg.energy_template
-	local var1_30 = arg0_30:getEnergy()
+	local var0_30 = arg0_30:getEnergy()
 
-	for iter0_30, iter1_30 in pairs(var0_30) do
-		if type(iter0_30) == "number" and var1_30 >= iter1_30.lower_bound and var1_30 <= iter1_30.upper_bound then
-			return iter1_30
+	for iter0_30, iter1_30 in ipairs(pg.energy_template.all) do
+		local var1_30 = pg.energy_template[iter1_30]
+
+		if type(iter1_30) == "number" and var0_30 >= var1_30.lower_bound and var0_30 <= var1_30.upper_bound then
+			return var1_30
 		end
 	end
 
@@ -523,11 +524,12 @@ end
 
 function var0_0.getIntimacyLevel(arg0_40)
 	local var0_40 = 0
-	local var1_40 = pg.intimacy_template
 
-	for iter0_40, iter1_40 in pairs(var1_40) do
-		if type(iter0_40) == "number" and arg0_40:getIntimacy() >= iter1_40.lower_bound and arg0_40:getIntimacy() <= iter1_40.upper_bound then
-			var0_40 = iter0_40
+	for iter0_40, iter1_40 in pairs(pg.intimacy_template.all) do
+		local var1_40 = pg.intimacy_template[iter1_40]
+
+		if type(iter1_40) == "number" and arg0_40:getIntimacy() >= var1_40.lower_bound and arg0_40:getIntimacy() <= var1_40.upper_bound then
+			var0_40 = iter1_40
 
 			break
 		end

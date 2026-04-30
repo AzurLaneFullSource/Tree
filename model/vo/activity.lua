@@ -1425,4 +1425,8 @@ function var0_0.GetConfigClientSetting(arg0_131, arg1_131)
 	return arg0_131:getConfig("config_client")[arg1_131]
 end
 
+function var0_0.IsMaintenanceFinish(arg0_132)
+	return not arg0_132:GetConfigClientSetting("no_maintenance")
+end
+
 return var0_0

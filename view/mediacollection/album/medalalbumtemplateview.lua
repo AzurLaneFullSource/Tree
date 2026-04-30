@@ -148,30 +148,62 @@ function var0_0.UpdateView(arg0_17)
 		end
 	end
 
-	local var4_17 = arg0_17.currentMedalGroup:getConfig("activity_link")[1][3][1]
-	local var5_17 = getProxy(TaskProxy):getTaskById(var4_17)
-
 	if arg0_17.trophyLock then
-		arg0_17.trophyLock:GetComponent(typeof(Image)).enabled = var5_17 ~= nil
+		arg0_17.trophyLock:GetComponent(typeof(Image)).enabled = not arg0_17:OwnTrophy()
 	end
 
-	arg0_17.medalLock:GetComponent(typeof(Image)).enabled = var5_17 ~= nil
+	arg0_17.medalLock:GetComponent(typeof(Image)).enabled = not arg0_17:OwnMedal()
 
 	setActive(arg0_17.taskBtn, arg0_17.currentMedalGroup:GetMedalGroupState() == ActivityMedalGroup.STATE_ACTIVE)
 end
 
-function var0_0.FlushTaskPanel(arg0_18)
-	arg0_18.medalTaskView:SetMedalGroup(arg0_18.currentMedalGroup)
-	arg0_18.medalTaskView:ShowMedalTask()
+function var0_0.OwnTrophy(arg0_18)
+	local var0_18 = arg0_18.currentMedalGroup:getConfig("task_show")
+	local var1_18 = -1
+
+	if var0_18 and type(var0_18) == "table" then
+		var1_18 = var0_18[1]
+	end
+
+	if var1_18 <= 0 then
+		return false
+	end
+
+	local var2_18 = pg.task_data_template[var1_18].award_display[1]
+
+	return Task.OwnSpAward(var2_18)
 end
 
-function var0_0.willExit(arg0_19)
-	arg0_19.medalDetailView:SetActive(false)
-	arg0_19.medalTaskView:SetActive(false)
-	arg0_19.medalDetailView:Dispose()
-	arg0_19.medalTaskView:Dispose()
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_19._tf)
-	arg0_19.loader:Clear()
+function var0_0.OwnMedal(arg0_19)
+	local var0_19 = arg0_19.currentMedalGroup:getConfig("task_show")
+	local var1_19 = -1
+
+	if var0_19 and type(var0_19) == "table" then
+		var1_19 = var0_19[2]
+	end
+
+	if var1_19 <= 0 then
+		return true
+	end
+
+	local var2_19 = pg.task_data_template[var1_19].award_display
+	local var3_19 = var2_19[#var2_19]
+
+	return Task.OwnSpAward(var3_19)
+end
+
+function var0_0.FlushTaskPanel(arg0_20)
+	arg0_20.medalTaskView:SetMedalGroup(arg0_20.currentMedalGroup)
+	arg0_20.medalTaskView:ShowMedalTask()
+end
+
+function var0_0.willExit(arg0_21)
+	arg0_21.medalDetailView:SetActive(false)
+	arg0_21.medalTaskView:SetActive(false)
+	arg0_21.medalDetailView:Dispose()
+	arg0_21.medalTaskView:Dispose()
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_21._tf)
+	arg0_21.loader:Clear()
 end
 
 return var0_0

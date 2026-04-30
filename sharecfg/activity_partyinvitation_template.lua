@@ -1,6 +1,21 @@
 pg = pg or {}
-pg.activity_partyinvitation_template = {
-	{
+pg.activity_partyinvitation_template = rawget(pg, "activity_partyinvitation_template") or setmetatable({
+	__name = "activity_partyinvitation_template"
+}, confNEO)
+pg.activity_partyinvitation_template.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7
+}
+pg.base = pg.base or {}
+pg.base.activity_partyinvitation_template = {}
+
+;(function()
+	pg.base.activity_partyinvitation_template[1] = {
 		groupid = 10706,
 		ungift = "Things sure are lively at this banquet, Commander.\nIt feels like ages ago when you and I had a private moment...\nHm? What's this? A present, for me?",
 		skinId = 107065,
@@ -36,8 +51,8 @@ pg.activity_partyinvitation_template = {
 			"You wanna dance? Sure. Just give me orders... I mean, instructions, on what to do.",
 			"I need to work on my dancing skills."
 		}
-	},
-	{
+	}
+	pg.base.activity_partyinvitation_template[2] = {
 		groupid = 10709,
 		ungift = "What's the matter, Commander? Is there something on my clothes?\nOh! No way... I've wanted one of these for so long!\nJust kidding. There's no way you'd get me exactly what I wanted, right?",
 		skinId = 107092,
@@ -73,8 +88,8 @@ pg.activity_partyinvitation_template = {
 			"A dance? You sound pretty confident in yourself~",
 			"One step to the right, one to the left... Okay, I still remember it."
 		}
-	},
-	{
+	}
+	pg.base.activity_partyinvitation_template[3] = {
 		groupid = 30510,
 		ungift = "What is it? You seem a bit absent-minded.\nYou didn't call for me just for nothing, did you?\nGo on, speak your desire. You've no reason to hesitate with me.",
 		skinId = 305101,
@@ -110,8 +125,8 @@ pg.activity_partyinvitation_template = {
 			"If it's a dance you want, I suggest we do a slow one.",
 			"There is no avoiding physical contact when it comes to dancing."
 		}
-	},
-	{
+	}
+	pg.base.activity_partyinvitation_template[4] = {
 		groupid = 90501,
 		ungift = "I've not done anything to deserve a present.\nAll I hope is you're enjoyin' the party, that's all...\nYou picked it out just for me? Man...",
 		skinId = 905011,
@@ -147,8 +162,8 @@ pg.activity_partyinvitation_template = {
 			"A dance, eh... I'm not one to turn down an offer from you.",
 			"Just lettin' you know – I ain't the best dancer. Might step on your toes by accident..."
 		}
-	},
-	{
+	}
+	pg.base.activity_partyinvitation_template[5] = {
 		groupid = 70201,
 		ungift = "Whew... You make this banquet so enjoyable, Commander.\nHmm? What are you looking for?\nIs this a present for me? Heehee. I'm curious to see what's inside.",
 		skinId = 702010,
@@ -184,8 +199,8 @@ pg.activity_partyinvitation_template = {
 			"I'm honored that you'd like to dance. Shall we?",
 			"You can come closer if you'd like, Commander. This IS a dance."
 		}
-	},
-	{
+	}
+	pg.base.activity_partyinvitation_template[6] = {
 		groupid = 20501,
 		ungift = "Trying to be stealthy? You have a present for me, don't you?\nI know the tells of a gift-giver because I receive plenty of presents every single day!\nAdmittedly... I'm more excited than usual to receive one from you. Slightly.",
 		skinId = 205011,
@@ -221,8 +236,8 @@ pg.activity_partyinvitation_template = {
 			"Well, well. Let's see how much you've improved.",
 			"Servant! Try to keep up with my steps!"
 		}
-	},
-	{
+	}
+	pg.base.activity_partyinvitation_template[7] = {
 		groupid = 40501,
 		ungift = "I thank you for showing me how to enjoy this banquet, Commander.\nPreparing a present for me, though, is really going above and beyond.\nWhat a perfect end to a wonderful day. Heehee.",
 		skinId = 405011,
@@ -258,14 +273,5 @@ pg.activity_partyinvitation_template = {
 			"You're asking me to dance? Heehee. Then I leave myself in your capable hands.",
 			"I was like a different person when we danced, you say? Heehee."
 		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7
 	}
-}
+end)()

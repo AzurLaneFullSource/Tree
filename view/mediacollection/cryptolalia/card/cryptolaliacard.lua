@@ -29,7 +29,14 @@ function var0_0.Update(arg0_2, arg1_2, arg2_2, arg3_2)
 	local var1_2 = arg0_2:GetColor(arg3_2)
 
 	arg0_2.nameTxt.text = setColorStr(arg1_2:GetName(), var1_2)
-	arg0_2.shipNameTxt.text = setColorStr(arg1_2:GetShipName(), var1_2)
+
+	local var2_2 = arg1_2:GetShipName()
+
+	if utf8.len(var2_2) >= 11 then
+		var2_2 = utf8.sub(var2_2, 1, 11) .. "..."
+	end
+
+	arg0_2.shipNameTxt.text = setColorStr(var2_2, var1_2)
 	arg0_2.timeCG.alpha = arg3_2 and 1 or 0.7
 
 	if not arg1_2:IsForever() and arg1_2:IsLock() then
@@ -40,20 +47,20 @@ function var0_0.Update(arg0_2, arg1_2, arg2_2, arg3_2)
 
 	setActive(arg0_2.selected, arg3_2)
 
-	local var2_2 = arg1_2:IsLock()
-	local var3_2 = var2_2 or not arg1_2:IsDownloadAllRes()
+	local var3_2 = arg1_2:IsLock()
+	local var4_2 = var3_2 or not arg1_2:IsDownloadAllRes()
 
-	setActive(arg0_2.stateBtn, var3_2)
+	setActive(arg0_2.stateBtn, var4_2)
 
-	if var3_2 then
-		local var4_2 = arg0_2:_GetColor(arg3_2)
+	if var4_2 then
+		local var5_2 = arg0_2:_GetColor(arg3_2)
 
-		arg0_2.stateBtn.color = var4_2
-		arg0_2.stateIcon.color = var4_2
+		arg0_2.stateBtn.color = var5_2
+		arg0_2.stateIcon.color = var5_2
 
-		local var5_2 = var2_2 and "list_panel_lock" or "list_panel_download"
+		local var6_2 = var3_2 and "list_panel_lock" or "list_panel_download"
 
-		arg0_2.stateIcon.sprite = GetSpriteFromAtlas("ui/CryptolaliaUI_atlas", var5_2)
+		arg0_2.stateIcon.sprite = GetSpriteFromAtlas("ui/CryptolaliaUI_atlas", var6_2)
 	end
 end
 

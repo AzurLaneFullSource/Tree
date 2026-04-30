@@ -1,6 +1,25 @@
 pg = pg or {}
-pg.guild_boss_event = {
-	[90001] = {
+pg.guild_boss_event = rawget(pg, "guild_boss_event") or setmetatable({
+	__name = "guild_boss_event"
+}, confNEO)
+pg.guild_boss_event.all = {
+	90001,
+	90002,
+	90003,
+	90004,
+	90005,
+	90006,
+	90007,
+	90008,
+	90009,
+	90010,
+	90011
+}
+pg.base = pg.base or {}
+pg.base.guild_boss_event = {}
+
+;(function()
+	pg.base.guild_boss_event[90001] = {
 		pic = "b1_1",
 		name = "Shadow Over the North Sea",
 		painting = "",
@@ -47,8 +66,8 @@ pg.guild_boss_event = {
 				6
 			}
 		}
-	},
-	[90002] = {
+	}
+	pg.base.guild_boss_event[90002] = {
 		pic = "b1_1",
 		name = "Looming Threat to the Atoll",
 		painting = "",
@@ -95,8 +114,8 @@ pg.guild_boss_event = {
 				8
 			}
 		}
-	},
-	[90003] = {
+	}
+	pg.base.guild_boss_event[90003] = {
 		pic = "b2_1",
 		name = "Specter in the North Atlantic",
 		painting = "",
@@ -143,8 +162,8 @@ pg.guild_boss_event = {
 				7
 			}
 		}
-	},
-	[90004] = {
+	}
+	pg.base.guild_boss_event[90004] = {
 		pic = "b2_1",
 		name = "Behemoth from the Icy Deep",
 		painting = "",
@@ -191,8 +210,8 @@ pg.guild_boss_event = {
 				9
 			}
 		}
-	},
-	[90005] = {
+	}
+	pg.base.guild_boss_event[90005] = {
 		pic = "b2_1",
 		name = "Ambusher upon the North Routes",
 		painting = "guild_event_boss_2",
@@ -239,8 +258,8 @@ pg.guild_boss_event = {
 				12
 			}
 		}
-	},
-	[90006] = {
+	}
+	pg.base.guild_boss_event[90006] = {
 		pic = "b3_1",
 		name = "Crystalline Beast of the Fjord",
 		painting = "",
@@ -287,8 +306,8 @@ pg.guild_boss_event = {
 				8
 			}
 		}
-	},
-	[90007] = {
+	}
+	pg.base.guild_boss_event[90007] = {
 		pic = "b3_1",
 		name = "Horror from the Royal Channel",
 		painting = "",
@@ -335,8 +354,8 @@ pg.guild_boss_event = {
 				11
 			}
 		}
-	},
-	[90008] = {
+	}
+	pg.base.guild_boss_event[90008] = {
 		pic = "b3_1",
 		name = "Ghost of the White Sea",
 		painting = "guild_event_boss_3",
@@ -383,8 +402,8 @@ pg.guild_boss_event = {
 				15
 			}
 		}
-	},
-	[90009] = {
+	}
+	pg.base.guild_boss_event[90009] = {
 		pic = "b4_1",
 		name = "Northern Island Night Battle",
 		painting = "",
@@ -431,8 +450,8 @@ pg.guild_boss_event = {
 				10
 			}
 		}
-	},
-	[90010] = {
+	}
+	pg.base.guild_boss_event[90010] = {
 		pic = "b4_1",
 		name = "Remote Island Coastal Offensive",
 		painting = "",
@@ -479,8 +498,8 @@ pg.guild_boss_event = {
 				14
 			}
 		}
-	},
-	[90011] = {
+	}
+	pg.base.guild_boss_event[90011] = {
 		pic = "b4_1",
 		name = "Ironbottom Maritime Defense",
 		painting = "guild_event_boss_4",
@@ -527,18 +546,5 @@ pg.guild_boss_event = {
 				18
 			}
 		}
-	},
-	all = {
-		90001,
-		90002,
-		90003,
-		90004,
-		90005,
-		90006,
-		90007,
-		90008,
-		90009,
-		90010,
-		90011
 	}
-}
+end)()

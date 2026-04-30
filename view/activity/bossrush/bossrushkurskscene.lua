@@ -81,9 +81,6 @@ end
 
 function var0_0.SetPtActivity(arg0_9, arg1_9)
 	arg0_9.ptActivity = arg1_9
-
-	print(arg1_9)
-
 	arg0_9.ptData = ActivityPtData.New(arg0_9.ptActivity)
 end
 
@@ -278,7 +275,6 @@ function var0_0.UpdateBattle(arg0_27)
 			arg0_27:emit(BossRushKurskMediator.ON_FLEET_SELECT, var1_28)
 		end, SFX_PANEL)
 	end)
-	print(var0_27.id)
 	setActive(arg0_27._tf:Find("Battle/Reward/Tip"), arg0_27.ptData:CanGetAward())
 	setText(arg0_27.ptText, arg0_27.ptActivity.data1)
 end

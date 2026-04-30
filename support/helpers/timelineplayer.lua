@@ -74,6 +74,8 @@ end
 
 function var0_0.RawSetTime(arg0_13, arg1_13)
 	arg0_13.comDirector.time = arg1_13
+
+	arg0_13.comDirector:Evaluate()
 end
 
 function var0_0.Dispose(arg0_14)

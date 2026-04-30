@@ -1,47 +1,50 @@
 pg = pg or {}
-pg.activity_clue_group = setmetatable({
-	__name = "activity_clue_group",
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19,
-		20,
-		21,
-		22,
-		23,
-		24,
-		25,
-		26,
-		27,
-		28,
-		29,
-		30,
-		31,
-		32,
-		33,
-		34,
-		35
-	}
-}, confHX)
+pg.activity_clue_group = rawget(pg, "activity_clue_group") or setmetatable({
+	__name = "activity_clue_group"
+}, confNEO)
+pg.activity_clue_group.__namecode__ = true
+pg.activity_clue_group.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22,
+	23,
+	24,
+	25,
+	26,
+	27,
+	28,
+	29,
+	30,
+	31,
+	32,
+	33,
+	34,
+	35
+}
 pg.base = pg.base or {}
-pg.base.activity_clue_group = {
-	{
+pg.base.activity_clue_group = {}
+
+;(function()
+	pg.base.activity_clue_group[1] = {
 		title = "Valley Hospital \n(Part 1)",
 		type = 1,
 		id = 1,
@@ -53,8 +56,8 @@ pg.base.activity_clue_group = {
 			},
 			{}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[2] = {
 		title = "Valley Hospital \n(Part 2)",
 		type = 1,
 		id = 2,
@@ -66,8 +69,8 @@ pg.base.activity_clue_group = {
 			},
 			{}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[3] = {
 		title = "Medical Center",
 		type = 1,
 		id = 3,
@@ -79,8 +82,8 @@ pg.base.activity_clue_group = {
 			},
 			{}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[4] = {
 		title = "Office",
 		type = 1,
 		id = 4,
@@ -97,8 +100,8 @@ pg.base.activity_clue_group = {
 				201319
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[5] = {
 		title = "Medical Center \n(Underground)",
 		type = 1,
 		id = 5,
@@ -115,8 +118,8 @@ pg.base.activity_clue_group = {
 				201309
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[6] = {
 		title = "Inpatient Building",
 		type = 1,
 		id = 6,
@@ -131,8 +134,8 @@ pg.base.activity_clue_group = {
 				201304
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[7] = {
 		title = "Nurses' Station",
 		type = 1,
 		id = 7,
@@ -148,8 +151,8 @@ pg.base.activity_clue_group = {
 				201310
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[8] = {
 		title = "Patient Room",
 		type = 1,
 		id = 8,
@@ -165,8 +168,8 @@ pg.base.activity_clue_group = {
 				201311
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[9] = {
 		title = "Inpatient Building \n(Underground)",
 		type = 1,
 		id = 9,
@@ -182,8 +185,8 @@ pg.base.activity_clue_group = {
 				201309
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[10] = {
 		title = "Research\nCenter",
 		type = 1,
 		id = 10,
@@ -198,8 +201,8 @@ pg.base.activity_clue_group = {
 				201307
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[11] = {
 		title = "Research Center \n(Underground)",
 		type = 1,
 		id = 11,
@@ -216,8 +219,8 @@ pg.base.activity_clue_group = {
 				201314
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[12] = {
 		title = "Recuperation Center",
 		type = 1,
 		id = 12,
@@ -232,8 +235,8 @@ pg.base.activity_clue_group = {
 				201305
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[13] = {
 		title = "Recuperation Center \n(Underground)",
 		type = 1,
 		id = 13,
@@ -250,8 +253,8 @@ pg.base.activity_clue_group = {
 				201309
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[14] = {
 		title = "Logistics Center",
 		type = 1,
 		id = 14,
@@ -266,8 +269,8 @@ pg.base.activity_clue_group = {
 				201303
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[15] = {
 		title = "Logistics Center \n(Underground)",
 		type = 1,
 		id = 15,
@@ -282,8 +285,8 @@ pg.base.activity_clue_group = {
 				201309
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[16] = {
 		title = "Parking Lot",
 		type = 1,
 		id = 16,
@@ -299,8 +302,8 @@ pg.base.activity_clue_group = {
 				201316
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[17] = {
 		title = "Parking Lot \n(Underground)",
 		type = 1,
 		id = 17,
@@ -317,8 +320,8 @@ pg.base.activity_clue_group = {
 				201317
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[18] = {
 		title = "Guard Booth",
 		type = 1,
 		id = 18,
@@ -334,8 +337,8 @@ pg.base.activity_clue_group = {
 				201318
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[19] = {
 		title = "Corridor",
 		type = 1,
 		id = 19,
@@ -352,8 +355,8 @@ pg.base.activity_clue_group = {
 				201308
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[20] = {
 		title = "Garden",
 		type = 1,
 		id = 20,
@@ -370,8 +373,8 @@ pg.base.activity_clue_group = {
 				201313
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[21] = {
 		title = "Cherry Tree",
 		type = 1,
 		id = 21,
@@ -388,8 +391,8 @@ pg.base.activity_clue_group = {
 				201306
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[22] = {
 		title = "Small Forest",
 		type = 1,
 		id = 22,
@@ -406,8 +409,8 @@ pg.base.activity_clue_group = {
 				201312
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[23] = {
 		title = "Main Entrance",
 		type = 1,
 		id = 23,
@@ -422,8 +425,8 @@ pg.base.activity_clue_group = {
 				201315
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[24] = {
 		title = "Rear Entrance",
 		type = 1,
 		id = 24,
@@ -440,8 +443,8 @@ pg.base.activity_clue_group = {
 				201320
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[25] = {
 		title = "Mogador",
 		type = 2,
 		id = 25,
@@ -453,8 +456,8 @@ pg.base.activity_clue_group = {
 			},
 			{}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[26] = {
 		title = "Franklin",
 		type = 2,
 		id = 26,
@@ -468,8 +471,8 @@ pg.base.activity_clue_group = {
 				201301
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[27] = {
 		title = "Washington",
 		type = 2,
 		id = 27,
@@ -486,8 +489,8 @@ pg.base.activity_clue_group = {
 				201304
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[28] = {
 		title = "Suzuya",
 		type = 2,
 		id = 28,
@@ -501,8 +504,8 @@ pg.base.activity_clue_group = {
 				201301
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[29] = {
 		title = "Voroshilov",
 		type = 2,
 		id = 29,
@@ -519,8 +522,8 @@ pg.base.activity_clue_group = {
 				201305
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[30] = {
 		title = "Eagle",
 		type = 2,
 		id = 30,
@@ -535,8 +538,8 @@ pg.base.activity_clue_group = {
 				201303
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[31] = {
 		title = "Stremitelny",
 		type = 2,
 		id = 31,
@@ -550,8 +553,8 @@ pg.base.activity_clue_group = {
 				201301
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[32] = {
 		title = "Santa Fe",
 		type = 2,
 		id = 32,
@@ -565,8 +568,8 @@ pg.base.activity_clue_group = {
 				201307
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[33] = {
 		title = "Miller",
 		type = 2,
 		id = 33,
@@ -583,8 +586,8 @@ pg.base.activity_clue_group = {
 				201303
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[34] = {
 		title = "Halford",
 		type = 2,
 		id = 34,
@@ -596,8 +599,8 @@ pg.base.activity_clue_group = {
 			},
 			{}
 		}
-	},
-	{
+	}
+	pg.base.activity_clue_group[35] = {
 		title = "Akagi",
 		type = 2,
 		id = 35,
@@ -610,4 +613,4 @@ pg.base.activity_clue_group = {
 			{}
 		}
 	}
-}
+end)()

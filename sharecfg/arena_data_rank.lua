@@ -1,6 +1,28 @@
 pg = pg or {}
-pg.arena_data_rank = {
-	{
+pg.arena_data_rank = rawget(pg, "arena_data_rank") or setmetatable({
+	__name = "arena_data_rank"
+}, confNEO)
+pg.arena_data_rank.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14
+}
+pg.base = pg.base or {}
+pg.base.arena_data_rank = {}
+
+;(function()
+	pg.base.arena_data_rank[1] = {
 		battle_award = 50,
 		name = "Seaman",
 		point = 0,
@@ -12,8 +34,8 @@ pg.arena_data_rank = {
 		refresh_price = {
 			0
 		}
-	},
-	{
+	}
+	pg.base.arena_data_rank[2] = {
 		battle_award = 60,
 		name = "Petty Officer",
 		point = 100,
@@ -31,8 +53,8 @@ pg.arena_data_rank = {
 		refresh_price = {
 			0
 		}
-	},
-	{
+	}
+	pg.base.arena_data_rank[3] = {
 		battle_award = 70,
 		name = "Ensign",
 		point = 200,
@@ -50,8 +72,8 @@ pg.arena_data_rank = {
 		refresh_price = {
 			0
 		}
-	},
-	{
+	}
+	pg.base.arena_data_rank[4] = {
 		battle_award = 70,
 		name = "Lieutenant Junior Grade",
 		point = 300,
@@ -69,8 +91,8 @@ pg.arena_data_rank = {
 		refresh_price = {
 			0
 		}
-	},
-	{
+	}
+	pg.base.arena_data_rank[5] = {
 		battle_award = 70,
 		name = "Lieutenant",
 		point = 400,
@@ -88,8 +110,8 @@ pg.arena_data_rank = {
 		refresh_price = {
 			0
 		}
-	},
-	{
+	}
+	pg.base.arena_data_rank[6] = {
 		battle_award = 80,
 		name = "Lieutenant Commander",
 		point = 550,
@@ -107,8 +129,8 @@ pg.arena_data_rank = {
 		refresh_price = {
 			0
 		}
-	},
-	{
+	}
+	pg.base.arena_data_rank[7] = {
 		battle_award = 80,
 		name = "Commander",
 		point = 700,
@@ -126,8 +148,8 @@ pg.arena_data_rank = {
 		refresh_price = {
 			0
 		}
-	},
-	{
+	}
+	pg.base.arena_data_rank[8] = {
 		battle_award = 80,
 		name = "Captain",
 		point = 850,
@@ -145,8 +167,8 @@ pg.arena_data_rank = {
 		refresh_price = {
 			0
 		}
-	},
-	{
+	}
+	pg.base.arena_data_rank[9] = {
 		battle_award = 90,
 		name = "Rear Admiral Lower Half",
 		point = 1050,
@@ -164,8 +186,8 @@ pg.arena_data_rank = {
 		refresh_price = {
 			0
 		}
-	},
-	{
+	}
+	pg.base.arena_data_rank[10] = {
 		battle_award = 90,
 		name = "Rear Admiral",
 		point = 1250,
@@ -183,8 +205,8 @@ pg.arena_data_rank = {
 		refresh_price = {
 			0
 		}
-	},
-	{
+	}
+	pg.base.arena_data_rank[11] = {
 		battle_award = 90,
 		name = "Vice Admiral",
 		point = 1450,
@@ -202,8 +224,8 @@ pg.arena_data_rank = {
 		refresh_price = {
 			0
 		}
-	},
-	{
+	}
+	pg.base.arena_data_rank[12] = {
 		battle_award = 90,
 		name = "Admiral",
 		point = 1650,
@@ -221,8 +243,8 @@ pg.arena_data_rank = {
 		refresh_price = {
 			0
 		}
-	},
-	{
+	}
+	pg.base.arena_data_rank[13] = {
 		battle_award = 90,
 		name = "Fleet Admiral",
 		point = 1900,
@@ -240,8 +262,8 @@ pg.arena_data_rank = {
 		refresh_price = {
 			0
 		}
-	},
-	{
+	}
+	pg.base.arena_data_rank[14] = {
 		battle_award = 100,
 		name = "Admiral of the Navy",
 		point = 2200,
@@ -259,21 +281,5 @@ pg.arena_data_rank = {
 		refresh_price = {
 			0
 		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14
 	}
-}
+end)()

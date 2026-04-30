@@ -1,221 +1,212 @@
 pg = pg or {}
-pg.island_technology_template = setmetatable({
-	__name = "island_technology_template",
-	get_id_list_by_tech_belong = {
-		{
-			100001,
-			100002,
-			110001,
-			110002,
-			110101,
-			110102,
-			110301,
-			110302,
-			100301,
-			110303,
-			120001,
-			100003,
-			140101,
-			110103,
-			110304,
-			100302,
-			100004,
-			100303,
-			110305,
-			130301,
-			120003,
-			100304,
-			130302,
-			110306,
-			100305,
-			110307,
-			100306,
-			120004,
-			110308,
-			100307,
-			100308,
-			110309,
-			120005,
-			110310,
-			120006,
-			120007
-		},
-		{
-			210101,
-			220101,
-			220501,
-			210401,
-			220201,
-			220401,
-			210102,
-			210201,
-			220202,
-			210501,
-			220502,
-			220102,
-			220203,
-			210202,
-			210502,
-			220103,
-			220204,
-			210103,
-			210203,
-			210104,
-			220104,
-			210601,
-			220601
-		},
-		{
-			310301,
-			310201,
-			310302,
-			320301,
-			310101,
-			310202,
-			330301,
-			310303,
-			310304,
-			330101,
-			310305,
-			320202,
-			320101,
-			320302,
-			330302,
-			310306,
-			330102,
-			310102,
-			320303,
-			330201,
-			310001,
-			310307,
-			320205,
-			310308,
-			330303,
-			310103,
-			330103,
-			310309,
-			320304,
-			320102,
-			330104,
-			310104
-		},
-		{
-			410301,
-			420301,
-			410302,
-			420302,
-			400001,
-			430301,
-			430302,
-			440301,
-			440302,
-			420303,
-			410303,
-			430303,
-			410304,
-			440303,
-			410305,
-			420304,
-			430304,
-			450301,
-			440304,
-			450302,
-			460001,
-			460002,
-			460101,
-			460301,
-			460102,
-			460302,
-			460201,
-			460202,
-			460203,
-			460204,
-			460205,
-			460206
-		},
-		{
-			500211,
-			500212,
-			500231,
-			550201,
-			500213,
-			500215,
-			520001,
-			500214,
-			500232,
-			550202,
-			500001,
-			510201,
-			510202,
-			510203,
-			550203,
-			320201,
-			500233,
-			500234,
-			510204,
-			500235,
-			520201,
-			520202,
-			530001,
-			320203,
-			520203,
-			500236,
-			530205,
-			520205,
-			530206,
-			530202,
-			320204,
-			550204,
-			540001,
-			540201,
-			520204,
-			530203,
-			320206,
-			540202,
-			530204,
-			540204,
-			510101,
-			540205,
-			520101,
-			530101,
-			540101
-		},
-		{
-			610101,
-			610401,
-			610102,
-			630201,
-			610402,
-			630202,
-			620101,
-			640001,
-			630101,
-			610403,
-			640201,
-			660001,
-			630203,
-			640101,
-			640202,
-			660201,
-			640203,
-			660202,
-			660203,
-			650001,
-			630205,
-			630204,
-			660204,
-			640204,
-			650201,
-			660101,
-			640205,
-			660205,
-			650101,
-			660206,
-			650202,
-			650203
-		}
-	},
-	all = {
+pg.island_technology_template = rawget(pg, "island_technology_template") or setmetatable({
+	__name = "island_technology_template"
+}, confNEO)
+pg.island_technology_template.__namecode__ = true
+pg.island_technology_template.all = {
+	100001,
+	100002,
+	110001,
+	110002,
+	110101,
+	110102,
+	110301,
+	110302,
+	100301,
+	110303,
+	120001,
+	100003,
+	140101,
+	110103,
+	110304,
+	100302,
+	100004,
+	100303,
+	110305,
+	130301,
+	120003,
+	100304,
+	130302,
+	110306,
+	100305,
+	110307,
+	100306,
+	120004,
+	110308,
+	100307,
+	100308,
+	110309,
+	120005,
+	110310,
+	120006,
+	120007,
+	210101,
+	220101,
+	220501,
+	210401,
+	220201,
+	220401,
+	210102,
+	210201,
+	220202,
+	210501,
+	220502,
+	220102,
+	220203,
+	210202,
+	210502,
+	220103,
+	220204,
+	210103,
+	210203,
+	210104,
+	220104,
+	210601,
+	220601,
+	310301,
+	310201,
+	310302,
+	320301,
+	310101,
+	310202,
+	330301,
+	310303,
+	310304,
+	330101,
+	310305,
+	320202,
+	320101,
+	320302,
+	330302,
+	310306,
+	330102,
+	310102,
+	320303,
+	330201,
+	310001,
+	310307,
+	320205,
+	310308,
+	330303,
+	310103,
+	330103,
+	310309,
+	320304,
+	320102,
+	330104,
+	310104,
+	410301,
+	420301,
+	410302,
+	420302,
+	400001,
+	430301,
+	430302,
+	440301,
+	440302,
+	420303,
+	410303,
+	430303,
+	410304,
+	440303,
+	410305,
+	420304,
+	430304,
+	450301,
+	440304,
+	450302,
+	460001,
+	460002,
+	460101,
+	460301,
+	460102,
+	460302,
+	460201,
+	460202,
+	460203,
+	460204,
+	460205,
+	460206,
+	500211,
+	500212,
+	500231,
+	550201,
+	500213,
+	500215,
+	520001,
+	500214,
+	500232,
+	550202,
+	500001,
+	510201,
+	510202,
+	510203,
+	550203,
+	320201,
+	500233,
+	500234,
+	510204,
+	500235,
+	520201,
+	520202,
+	530001,
+	320203,
+	520203,
+	500236,
+	530205,
+	520205,
+	530206,
+	530202,
+	320204,
+	550204,
+	540001,
+	540201,
+	520204,
+	530203,
+	320206,
+	540202,
+	530204,
+	540204,
+	510101,
+	540205,
+	520101,
+	530101,
+	540101,
+	610101,
+	610401,
+	610102,
+	630201,
+	610402,
+	630202,
+	620101,
+	640001,
+	630101,
+	610403,
+	640201,
+	660001,
+	630203,
+	640101,
+	640202,
+	660201,
+	640203,
+	660202,
+	660203,
+	650001,
+	630205,
+	630204,
+	660204,
+	640204,
+	650201,
+	660101,
+	640205,
+	660205,
+	650101,
+	660206,
+	650202,
+	650203
+}
+pg.island_technology_template.get_id_list_by_tech_belong = {
+	{
 		100001,
 		100002,
 		110001,
@@ -251,7 +242,9 @@ pg.island_technology_template = setmetatable({
 		120005,
 		110310,
 		120006,
-		120007,
+		120007
+	},
+	{
 		210101,
 		220101,
 		220501,
@@ -274,7 +267,9 @@ pg.island_technology_template = setmetatable({
 		210104,
 		220104,
 		210601,
-		220601,
+		220601
+	},
+	{
 		310301,
 		310201,
 		310302,
@@ -306,7 +301,9 @@ pg.island_technology_template = setmetatable({
 		320304,
 		320102,
 		330104,
-		310104,
+		310104
+	},
+	{
 		410301,
 		420301,
 		410302,
@@ -338,7 +335,9 @@ pg.island_technology_template = setmetatable({
 		460203,
 		460204,
 		460205,
-		460206,
+		460206
+	},
+	{
 		500211,
 		500212,
 		500231,
@@ -383,7 +382,9 @@ pg.island_technology_template = setmetatable({
 		540205,
 		520101,
 		530101,
-		540101,
+		540101
+	},
+	{
 		610101,
 		610401,
 		610102,
@@ -417,10 +418,12 @@ pg.island_technology_template = setmetatable({
 		650202,
 		650203
 	}
-}, confHX)
+}
 pg.base = pg.base or {}
-pg.base.island_technology_template = {
-	[100001] = {
+pg.base.island_technology_template = {}
+
+;(function()
+	pg.base.island_technology_template[100001] = {
 		tech_desc = "A device that gives a friend permission to come and go to the island. The permit is valid forever once they've gone through the process!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -444,8 +447,8 @@ pg.base.island_technology_template = {
 			1,
 			1
 		}
-	},
-	[100002] = {
+	}
+	pg.base.island_technology_template[100002] = {
 		tech_desc = "Unlocks a map of the island. Makes exploring and getting around the island easier.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -474,8 +477,8 @@ pg.base.island_technology_template = {
 			2,
 			1
 		}
-	},
-	[110001] = {
+	}
+	pg.base.island_technology_template[110001] = {
 		tech_desc = "Makes it possible for urgent requests to appear. Urgent requests often yield more rewards than regular ones do.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -510,8 +513,8 @@ pg.base.island_technology_template = {
 			2,
 			2
 		}
-	},
-	[110002] = {
+	}
+	pg.base.island_technology_template[110002] = {
 		tech_desc = "Completing island requests can now increase your rating level.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -546,8 +549,8 @@ pg.base.island_technology_template = {
 			2,
 			3
 		}
-	},
-	[110101] = {
+	}
+	pg.base.island_technology_template[110101] = {
 		tech_desc = "Increases the number of requests that can be accepted at a time. Makes task management more efficient.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -582,8 +585,8 @@ pg.base.island_technology_template = {
 			2,
 			4
 		}
-	},
-	[110102] = {
+	}
+	pg.base.island_technology_template[110102] = {
 		tech_desc = "Increases the number of requests that can be accepted at a time. Makes task management more efficient.",
 		tech_chara = 1,
 		tech_level = "2",
@@ -626,8 +629,8 @@ pg.base.island_technology_template = {
 			3,
 			1
 		}
-	},
-	[110301] = {
+	}
+	pg.base.island_technology_template[110301] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -658,8 +661,8 @@ pg.base.island_technology_template = {
 			4,
 			1
 		}
-	},
-	[110302] = {
+	}
+	pg.base.island_technology_template[110302] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
 		tech_chara = 1,
 		tech_level = "2",
@@ -690,8 +693,8 @@ pg.base.island_technology_template = {
 			5,
 			1
 		}
-	},
-	[100301] = {
+	}
+	pg.base.island_technology_template[100301] = {
 		tech_desc = "Increases the warehouse's capacity. Now you can put more things there!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -720,8 +723,8 @@ pg.base.island_technology_template = {
 			6,
 			1
 		}
-	},
-	[110303] = {
+	}
+	pg.base.island_technology_template[110303] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
 		tech_chara = 1,
 		tech_level = "3",
@@ -752,8 +755,8 @@ pg.base.island_technology_template = {
 			7,
 			1
 		}
-	},
-	[120001] = {
+	}
+	pg.base.island_technology_template[120001] = {
 		tech_desc = "Produces an Island Authority Authenticator for New Jersey. Go and recruit some new friends!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -782,8 +785,8 @@ pg.base.island_technology_template = {
 			7,
 			2
 		}
-	},
-	[100003] = {
+	}
+	pg.base.island_technology_template[100003] = {
 		tech_desc = "Business events may now appear when managing shops. If you change your sales lineup to the items called for by the event, you may earn a large amount of rewards.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -820,8 +823,8 @@ pg.base.island_technology_template = {
 			8,
 			1
 		}
-	},
-	[140101] = {
+	}
+	pg.base.island_technology_template[140101] = {
 		tech_desc = "Add more slots for research at the base, doubling the efficiency.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -850,8 +853,8 @@ pg.base.island_technology_template = {
 			9,
 			1
 		}
-	},
-	[110103] = {
+	}
+	pg.base.island_technology_template[110103] = {
 		tech_desc = "Increases the number of requests that can be accepted at a time. Makes task management more efficient.",
 		tech_chara = 1,
 		tech_level = "3",
@@ -882,8 +885,8 @@ pg.base.island_technology_template = {
 			10,
 			1
 		}
-	},
-	[110304] = {
+	}
+	pg.base.island_technology_template[110304] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
 		tech_chara = 1,
 		tech_level = "4",
@@ -914,8 +917,8 @@ pg.base.island_technology_template = {
 			12,
 			1
 		}
-	},
-	[100302] = {
+	}
+	pg.base.island_technology_template[100302] = {
 		tech_desc = "Increases the warehouse's capacity. Now you can put more things there!",
 		tech_chara = 1,
 		tech_level = "2",
@@ -944,8 +947,8 @@ pg.base.island_technology_template = {
 			12,
 			2
 		}
-	},
-	[100004] = {
+	}
+	pg.base.island_technology_template[100004] = {
 		tech_desc = "Unlocks the centralized management function, powered by holographic integration technology. This intelligent hub helps you coordinate job assignments, facility construction, and materials management with a single click, significantly improving the efficiency of your island planning.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -978,8 +981,8 @@ pg.base.island_technology_template = {
 			13,
 			1
 		}
-	},
-	[100303] = {
+	}
+	pg.base.island_technology_template[100303] = {
 		tech_desc = "Increases the warehouse's capacity. Now you can put more things there!",
 		tech_chara = 1,
 		tech_level = "3",
@@ -1012,8 +1015,8 @@ pg.base.island_technology_template = {
 			13,
 			2
 		}
-	},
-	[110305] = {
+	}
+	pg.base.island_technology_template[110305] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
 		tech_chara = 1,
 		tech_level = "5",
@@ -1048,8 +1051,8 @@ pg.base.island_technology_template = {
 			14,
 			1
 		}
-	},
-	[130301] = {
+	}
+	pg.base.island_technology_template[130301] = {
 		tech_desc = "Increases the max number of daily friend supplies you can get by 1. Let's see what new surprises are in store for us!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1086,8 +1089,8 @@ pg.base.island_technology_template = {
 			14,
 			2
 		}
-	},
-	[120003] = {
+	}
+	pg.base.island_technology_template[120003] = {
 		tech_desc = "Produces an Island Authority Authenticator for Tashkent. Go and recruit some new friends!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1120,8 +1123,8 @@ pg.base.island_technology_template = {
 			15,
 			1
 		}
-	},
-	[100304] = {
+	}
+	pg.base.island_technology_template[100304] = {
 		tech_desc = "Increases the warehouse's capacity. Now you can put more things there!",
 		tech_chara = 1,
 		tech_level = "4",
@@ -1150,8 +1153,8 @@ pg.base.island_technology_template = {
 			16,
 			1
 		}
-	},
-	[130302] = {
+	}
+	pg.base.island_technology_template[130302] = {
 		tech_desc = "Increases the max number of daily friend supplies you can get by 1. Let's see what new surprises are in store for us!",
 		tech_chara = 1,
 		tech_level = "2",
@@ -1184,8 +1187,8 @@ pg.base.island_technology_template = {
 			17,
 			1
 		}
-	},
-	[110306] = {
+	}
+	pg.base.island_technology_template[110306] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
 		tech_chara = 1,
 		tech_level = "6",
@@ -1216,8 +1219,8 @@ pg.base.island_technology_template = {
 			18,
 			1
 		}
-	},
-	[100305] = {
+	}
+	pg.base.island_technology_template[100305] = {
 		tech_desc = "Increases the warehouse's capacity. Now you can put more things there!",
 		tech_chara = 1,
 		tech_level = "5",
@@ -1246,8 +1249,8 @@ pg.base.island_technology_template = {
 			19,
 			1
 		}
-	},
-	[110307] = {
+	}
+	pg.base.island_technology_template[110307] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
 		tech_chara = 1,
 		tech_level = "7",
@@ -1278,8 +1281,8 @@ pg.base.island_technology_template = {
 			20,
 			1
 		}
-	},
-	[100306] = {
+	}
+	pg.base.island_technology_template[100306] = {
 		tech_desc = "Increases the warehouse's capacity. Now you can put more things there!",
 		tech_chara = 1,
 		tech_level = "6",
@@ -1308,8 +1311,8 @@ pg.base.island_technology_template = {
 			21,
 			1
 		}
-	},
-	[120004] = {
+	}
+	pg.base.island_technology_template[120004] = {
 		tech_desc = "Produces an Island Authority Authenticator for Ying Swei. Go and recruit some new friends!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1338,8 +1341,8 @@ pg.base.island_technology_template = {
 			22,
 			1
 		}
-	},
-	[110308] = {
+	}
+	pg.base.island_technology_template[110308] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
 		tech_chara = 1,
 		tech_level = "8",
@@ -1370,8 +1373,8 @@ pg.base.island_technology_template = {
 			23,
 			1
 		}
-	},
-	[100307] = {
+	}
+	pg.base.island_technology_template[100307] = {
 		tech_desc = "Increases the warehouse's capacity. Now you can put more things there!",
 		tech_chara = 1,
 		tech_level = "7",
@@ -1400,8 +1403,8 @@ pg.base.island_technology_template = {
 			23,
 			2
 		}
-	},
-	[100308] = {
+	}
+	pg.base.island_technology_template[100308] = {
 		tech_desc = "Increases the warehouse's capacity. Now you can put more things there!",
 		tech_chara = 1,
 		tech_level = "8",
@@ -1434,8 +1437,8 @@ pg.base.island_technology_template = {
 			24,
 			1
 		}
-	},
-	[110309] = {
+	}
+	pg.base.island_technology_template[110309] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
 		tech_chara = 1,
 		tech_level = "9",
@@ -1466,8 +1469,8 @@ pg.base.island_technology_template = {
 			25,
 			1
 		}
-	},
-	[120005] = {
+	}
+	pg.base.island_technology_template[120005] = {
 		tech_desc = "Produces an Island Authority Authenticator for Chao Ho. Go and recruit some new friends!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1496,8 +1499,8 @@ pg.base.island_technology_template = {
 			26,
 			1
 		}
-	},
-	[110310] = {
+	}
+	pg.base.island_technology_template[110310] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
 		tech_chara = 1,
 		tech_level = "10",
@@ -1528,8 +1531,8 @@ pg.base.island_technology_template = {
 			27,
 			1
 		}
-	},
-	[120006] = {
+	}
+	pg.base.island_technology_template[120006] = {
 		tech_desc = "Produces an Island Authority Authenticator for Hood. Go and recruit some new friends!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1558,8 +1561,8 @@ pg.base.island_technology_template = {
 			28,
 			1
 		}
-	},
-	[120007] = {
+	}
+	pg.base.island_technology_template[120007] = {
 		tech_desc = "Produces an Island Authority Authenticator for Prinz Eugen. Go and recruit some new friends!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1592,8 +1595,8 @@ pg.base.island_technology_template = {
 			28,
 			2
 		}
-	},
-	[210101] = {
+	}
+	pg.base.island_technology_template[210101] = {
 		tech_desc = "Unlocks a logging slot in the Verdant Woods. Helps keep a steady flow of lumber going to the harbor.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1624,8 +1627,8 @@ pg.base.island_technology_template = {
 			1,
 			1
 		}
-	},
-	[220101] = {
+	}
+	pg.base.island_technology_template[220101] = {
 		tech_desc = "Unlocks a mining slot in Rockheap Mine. Time to accumulate heaps of minerals!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1656,8 +1659,8 @@ pg.base.island_technology_template = {
 			1,
 			6.5
 		}
-	},
-	[220501] = {
+	}
+	pg.base.island_technology_template[220501] = {
 		tech_desc = "Increases manual mining efficiency. Allows for quicker extraction of resources.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1686,8 +1689,8 @@ pg.base.island_technology_template = {
 			3,
 			10
 		}
-	},
-	[210401] = {
+	}
+	pg.base.island_technology_template[210401] = {
 		tech_desc = "Decreases resource recovery time when logging manually. Enjoy the more frequent resources!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1716,8 +1719,8 @@ pg.base.island_technology_template = {
 			3.5,
 			4.5
 		}
-	},
-	[220201] = {
+	}
+	pg.base.island_technology_template[220201] = {
 		tech_desc = "Gives access to new probing techniques that allow for mining Bauxite buried under the ground.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1748,8 +1751,8 @@ pg.base.island_technology_template = {
 			4,
 			8.5
 		}
-	},
-	[220401] = {
+	}
+	pg.base.island_technology_template[220401] = {
 		tech_desc = "Decreases resource recovery time when mining manually. Enjoy the more frequent resources!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1778,8 +1781,8 @@ pg.base.island_technology_template = {
 			6,
 			10
 		}
-	},
-	[210102] = {
+	}
+	pg.base.island_technology_template[210102] = {
 		tech_desc = "Increases the number of logging slots in the Verdant Woods. A straightforward increase to your lumber production output.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1810,8 +1813,8 @@ pg.base.island_technology_template = {
 			5,
 			1
 		}
-	},
-	[210201] = {
+	}
+	pg.base.island_technology_template[210201] = {
 		tech_desc = "Gives access to new logging techniques that allow for logging Workable Wood in the forest.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1842,8 +1845,8 @@ pg.base.island_technology_template = {
 			4,
 			3
 		}
-	},
-	[220202] = {
+	}
+	pg.base.island_technology_template[220202] = {
 		tech_desc = "Gives access to new probing techniques that allow for mining Iron Ore buried under the ground.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1874,8 +1877,8 @@ pg.base.island_technology_template = {
 			8,
 			8.5
 		}
-	},
-	[210501] = {
+	}
+	pg.base.island_technology_template[210501] = {
 		tech_desc = "Increases manual logging efficiency. Allows for quicker extraction of resources.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1904,8 +1907,8 @@ pg.base.island_technology_template = {
 			6.5,
 			4.5
 		}
-	},
-	[220502] = {
+	}
+	pg.base.island_technology_template[220502] = {
 		tech_desc = "Increases manual mining efficiency. Allows for quicker extraction of resources.",
 		tech_chara = 1,
 		tech_level = "2",
@@ -1934,8 +1937,8 @@ pg.base.island_technology_template = {
 			9,
 			10
 		}
-	},
-	[220102] = {
+	}
+	pg.base.island_technology_template[220102] = {
 		tech_desc = "Increases the number of mining slots in Rockheap Mine. A straightforward increase to your mineral production output.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1966,8 +1969,8 @@ pg.base.island_technology_template = {
 			9,
 			6.5
 		}
-	},
-	[220203] = {
+	}
+	pg.base.island_technology_template[220203] = {
 		tech_desc = "Gives access to new probing techniques that allow for mining Sulfur buried under the ground.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -1998,8 +2001,8 @@ pg.base.island_technology_template = {
 			11,
 			8.5
 		}
-	},
-	[210202] = {
+	}
+	pg.base.island_technology_template[210202] = {
 		tech_desc = "Gives access to new logging techniques that allow for logging Premium Wood in the forest.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2030,8 +2033,8 @@ pg.base.island_technology_template = {
 			9,
 			3
 		}
-	},
-	[210502] = {
+	}
+	pg.base.island_technology_template[210502] = {
 		tech_desc = "Increases manual logging efficiency. Allows for quicker extraction of resources.",
 		tech_chara = 1,
 		tech_level = "2",
@@ -2060,8 +2063,8 @@ pg.base.island_technology_template = {
 			11.5,
 			4.5
 		}
-	},
-	[220103] = {
+	}
+	pg.base.island_technology_template[220103] = {
 		tech_desc = "Increases the number of mining slots in Rockheap Mine. A straightforward increase to your mineral production output.",
 		tech_chara = 1,
 		tech_level = "2",
@@ -2092,8 +2095,8 @@ pg.base.island_technology_template = {
 			14,
 			6.5
 		}
-	},
-	[220204] = {
+	}
+	pg.base.island_technology_template[220204] = {
 		tech_desc = "Gives access to new probing techniques that allow for mining Silver Ore buried under the ground.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2124,8 +2127,8 @@ pg.base.island_technology_template = {
 			14,
 			8.5
 		}
-	},
-	[210103] = {
+	}
+	pg.base.island_technology_template[210103] = {
 		tech_desc = "Increases the number of logging slots in the Verdant Woods. A straightforward increase to your lumber production output.",
 		tech_chara = 1,
 		tech_level = "2",
@@ -2156,8 +2159,8 @@ pg.base.island_technology_template = {
 			14,
 			1
 		}
-	},
-	[210203] = {
+	}
+	pg.base.island_technology_template[210203] = {
 		tech_desc = "Gives access to new logging techniques that allow for logging Elegant Wood in the forest.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2188,8 +2191,8 @@ pg.base.island_technology_template = {
 			14,
 			3
 		}
-	},
-	[210104] = {
+	}
+	pg.base.island_technology_template[210104] = {
 		tech_desc = "Increases the number of logging slots in the Verdant Woods. A straightforward increase to your lumber production output.",
 		tech_chara = 1,
 		tech_level = "3",
@@ -2220,8 +2223,8 @@ pg.base.island_technology_template = {
 			17,
 			1
 		}
-	},
-	[220104] = {
+	}
+	pg.base.island_technology_template[220104] = {
 		tech_desc = "Increases the number of mining slots in Rockheap Mine. A straightforward increase to your mineral production output.",
 		tech_chara = 1,
 		tech_level = "3",
@@ -2252,8 +2255,8 @@ pg.base.island_technology_template = {
 			17,
 			6.5
 		}
-	},
-	[210601] = {
+	}
+	pg.base.island_technology_template[210601] = {
 		tech_desc = "Increases logging slot efficiency in the Verdant Woods. Allows for quicker extraction of resources.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2284,8 +2287,8 @@ pg.base.island_technology_template = {
 			20,
 			4.5
 		}
-	},
-	[220601] = {
+	}
+	pg.base.island_technology_template[220601] = {
 		tech_desc = "Increases mining slot efficiency in Rockheap Mine. Allows for quicker extraction of resources.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2316,8 +2319,8 @@ pg.base.island_technology_template = {
 			20,
 			10
 		}
-	},
-	[310301] = {
+	}
+	pg.base.island_technology_template[310301] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2346,8 +2349,8 @@ pg.base.island_technology_template = {
 			1,
 			1
 		}
-	},
-	[310201] = {
+	}
+	pg.base.island_technology_template[310201] = {
 		tech_desc = "Gives access to advanced growing techniques that make grass able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2378,8 +2381,8 @@ pg.base.island_technology_template = {
 			1,
 			9
 		}
-	},
-	[310302] = {
+	}
+	pg.base.island_technology_template[310302] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
 		tech_chara = 1,
 		tech_level = "2",
@@ -2408,8 +2411,8 @@ pg.base.island_technology_template = {
 			4,
 			1
 		}
-	},
-	[320301] = {
+	}
+	pg.base.island_technology_template[320301] = {
 		tech_desc = "Expands Newsprout Nursery's cultivation area. Bring more vitality to the whole island!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2438,8 +2441,8 @@ pg.base.island_technology_template = {
 			4,
 			5
 		}
-	},
-	[310101] = {
+	}
+	pg.base.island_technology_template[310101] = {
 		tech_desc = "Unlocks a management slot on Morningdew Farm. Contributes to a steady supply of ingredients!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2470,8 +2473,8 @@ pg.base.island_technology_template = {
 			7,
 			3
 		}
-	},
-	[310202] = {
+	}
+	pg.base.island_technology_template[310202] = {
 		tech_desc = "Gives access to advanced harvesting techniques that make Upland Rice able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2502,8 +2505,8 @@ pg.base.island_technology_template = {
 			4,
 			9
 		}
-	},
-	[330301] = {
+	}
+	pg.base.island_technology_template[330301] = {
 		tech_desc = "Expands Sweetscent Orchard's cultivation area. Bring more fruity fragrance to the whole island!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2532,8 +2535,8 @@ pg.base.island_technology_template = {
 			7,
 			7
 		}
-	},
-	[310303] = {
+	}
+	pg.base.island_technology_template[310303] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
 		tech_chara = 1,
 		tech_level = "3",
@@ -2562,8 +2565,8 @@ pg.base.island_technology_template = {
 			7,
 			1
 		}
-	},
-	[310304] = {
+	}
+	pg.base.island_technology_template[310304] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
 		tech_chara = 1,
 		tech_level = "4",
@@ -2592,8 +2595,8 @@ pg.base.island_technology_template = {
 			10,
 			1
 		}
-	},
-	[330101] = {
+	}
+	pg.base.island_technology_template[330101] = {
 		tech_desc = "Unlocks a management slot in Sweetscent Orchard. Makes harvesting fruit easier.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2624,8 +2627,8 @@ pg.base.island_technology_template = {
 			10,
 			7
 		}
-	},
-	[310305] = {
+	}
+	pg.base.island_technology_template[310305] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
 		tech_chara = 1,
 		tech_level = "5",
@@ -2654,8 +2657,8 @@ pg.base.island_technology_template = {
 			13,
 			1
 		}
-	},
-	[320202] = {
+	}
+	pg.base.island_technology_template[320202] = {
 		tech_desc = "Gives access to advanced growing techniques that make Cotton able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2690,8 +2693,8 @@ pg.base.island_technology_template = {
 			10,
 			9
 		}
-	},
-	[320101] = {
+	}
+	pg.base.island_technology_template[320101] = {
 		tech_desc = "Unlocks a management slot in Newsprout Nursery. Makes the nursery's output more stable and efficient.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2722,8 +2725,8 @@ pg.base.island_technology_template = {
 			10,
 			5
 		}
-	},
-	[320302] = {
+	}
+	pg.base.island_technology_template[320302] = {
 		tech_desc = "Expands Newsprout Nursery's cultivation area. Bring more vitality to the whole island!",
 		tech_chara = 1,
 		tech_level = "2",
@@ -2752,8 +2755,8 @@ pg.base.island_technology_template = {
 			13,
 			5
 		}
-	},
-	[330302] = {
+	}
+	pg.base.island_technology_template[330302] = {
 		tech_desc = "Expands Sweetscent Orchard's cultivation area. Bring more fruity fragrance to the whole island!",
 		tech_chara = 1,
 		tech_level = "2",
@@ -2782,8 +2785,8 @@ pg.base.island_technology_template = {
 			13,
 			7
 		}
-	},
-	[310306] = {
+	}
+	pg.base.island_technology_template[310306] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
 		tech_chara = 1,
 		tech_level = "6",
@@ -2812,8 +2815,8 @@ pg.base.island_technology_template = {
 			16,
 			1
 		}
-	},
-	[330102] = {
+	}
+	pg.base.island_technology_template[330102] = {
 		tech_desc = "Increases the number of management slots on Sweetscent Orchard. A straightforward increase to your fruit production output.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2844,8 +2847,8 @@ pg.base.island_technology_template = {
 			16,
 			7
 		}
-	},
-	[310102] = {
+	}
+	pg.base.island_technology_template[310102] = {
 		tech_desc = "Increases the number of management slots on Morningdew Farm. A straightforward increase to your produce production output.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2876,8 +2879,8 @@ pg.base.island_technology_template = {
 			16,
 			3
 		}
-	},
-	[320303] = {
+	}
+	pg.base.island_technology_template[320303] = {
 		tech_desc = "Expands Newsprout Nursery's cultivation area. Bring more vitality to the whole island!",
 		tech_chara = 1,
 		tech_level = "3",
@@ -2906,8 +2909,8 @@ pg.base.island_technology_template = {
 			16,
 			5
 		}
-	},
-	[330201] = {
+	}
+	pg.base.island_technology_template[330201] = {
 		tech_desc = "Gives access to advanced growing techniques that make Rubber Trees able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2942,8 +2945,8 @@ pg.base.island_technology_template = {
 			16,
 			9
 		}
-	},
-	[310001] = {
+	}
+	pg.base.island_technology_template[310001] = {
 		tech_desc = "Increases your manual sowing range. Allows for more efficient sowing.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -2972,8 +2975,8 @@ pg.base.island_technology_template = {
 			19,
 			3
 		}
-	},
-	[310307] = {
+	}
+	pg.base.island_technology_template[310307] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
 		tech_chara = 1,
 		tech_level = "7",
@@ -3002,8 +3005,8 @@ pg.base.island_technology_template = {
 			19,
 			1
 		}
-	},
-	[320205] = {
+	}
+	pg.base.island_technology_template[320205] = {
 		tech_desc = "Gives access to advanced growing techniques that make Lavender able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -3034,8 +3037,8 @@ pg.base.island_technology_template = {
 			22,
 			9
 		}
-	},
-	[310308] = {
+	}
+	pg.base.island_technology_template[310308] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
 		tech_chara = 1,
 		tech_level = "8",
@@ -3064,8 +3067,8 @@ pg.base.island_technology_template = {
 			22,
 			1
 		}
-	},
-	[330303] = {
+	}
+	pg.base.island_technology_template[330303] = {
 		tech_desc = "Expands Sweetscent Orchard's cultivation area. Bring more fruity fragrance to the whole island!",
 		tech_chara = 1,
 		tech_level = "3",
@@ -3094,8 +3097,8 @@ pg.base.island_technology_template = {
 			19,
 			7
 		}
-	},
-	[310103] = {
+	}
+	pg.base.island_technology_template[310103] = {
 		tech_desc = "Increases the number of management slots on Morningdew Farm. A straightforward increase to your produce production output.",
 		tech_chara = 1,
 		tech_level = "2",
@@ -3126,8 +3129,8 @@ pg.base.island_technology_template = {
 			25,
 			3
 		}
-	},
-	[330103] = {
+	}
+	pg.base.island_technology_template[330103] = {
 		tech_desc = "Increases the number of management slots on Sweetscent Orchard. A straightforward increase to your fruit production output.",
 		tech_chara = 1,
 		tech_level = "2",
@@ -3158,8 +3161,8 @@ pg.base.island_technology_template = {
 			25,
 			7
 		}
-	},
-	[310309] = {
+	}
+	pg.base.island_technology_template[310309] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
 		tech_chara = 1,
 		tech_level = "9",
@@ -3188,8 +3191,8 @@ pg.base.island_technology_template = {
 			25,
 			1
 		}
-	},
-	[320304] = {
+	}
+	pg.base.island_technology_template[320304] = {
 		tech_desc = "Expands Newsprout Nursery's cultivation area. Bring more vitality to the whole island!",
 		tech_chara = 1,
 		tech_level = "4",
@@ -3218,8 +3221,8 @@ pg.base.island_technology_template = {
 			25,
 			5
 		}
-	},
-	[320102] = {
+	}
+	pg.base.island_technology_template[320102] = {
 		tech_desc = "Increases the number of management slots in Newsprout Nursery. A straightforward increase to your seedling production output.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -3248,8 +3251,8 @@ pg.base.island_technology_template = {
 			28,
 			5
 		}
-	},
-	[330104] = {
+	}
+	pg.base.island_technology_template[330104] = {
 		tech_desc = "Increases the number of management slots on Sweetscent Orchard. A straightforward increase to your fruit production output.",
 		tech_chara = 1,
 		tech_level = "3",
@@ -3280,8 +3283,8 @@ pg.base.island_technology_template = {
 			28,
 			7
 		}
-	},
-	[310104] = {
+	}
+	pg.base.island_technology_template[310104] = {
 		tech_desc = "Increases the number of management slots on Morningdew Farm. A straightforward increase to your produce production output.",
 		tech_chara = 1,
 		tech_level = "3",
@@ -3312,8 +3315,8 @@ pg.base.island_technology_template = {
 			28,
 			3
 		}
-	},
-	[410301] = {
+	}
+	pg.base.island_technology_template[410301] = {
 		tech_desc = "Increases the number of Clucky Clucky Birds at Laidback Ranch.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -3344,8 +3347,8 @@ pg.base.island_technology_template = {
 			1,
 			1
 		}
-	},
-	[420301] = {
+	}
+	pg.base.island_technology_template[420301] = {
 		tech_desc = "Introduces Oinky Oinky Pigs to Laidback Ranch, giving it more vitality and increasing its range of products.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -3376,8 +3379,8 @@ pg.base.island_technology_template = {
 			1,
 			3
 		}
-	},
-	[410302] = {
+	}
+	pg.base.island_technology_template[410302] = {
 		tech_desc = "Increases the number of Clucky Clucky Birds at Laidback Ranch.",
 		tech_chara = 1,
 		tech_level = "2",
@@ -3408,8 +3411,8 @@ pg.base.island_technology_template = {
 			4,
 			1
 		}
-	},
-	[420302] = {
+	}
+	pg.base.island_technology_template[420302] = {
 		tech_desc = "Increases the number of Oinky Oinky Pigs at Laidback Ranch.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -3440,8 +3443,8 @@ pg.base.island_technology_template = {
 			4,
 			3
 		}
-	},
-	[400001] = {
+	}
+	pg.base.island_technology_template[400001] = {
 		tech_desc = "Increases Laidback Ranch's range of products. More diversity for everyone's dinner tables!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -3472,8 +3475,8 @@ pg.base.island_technology_template = {
 			1,
 			6
 		}
-	},
-	[430301] = {
+	}
+	pg.base.island_technology_template[430301] = {
 		tech_desc = "Introduces Moo Moo Cows to Laidback Ranch, giving it more vitality and increasing its range of products.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -3504,8 +3507,8 @@ pg.base.island_technology_template = {
 			6,
 			4.5
 		}
-	},
-	[430302] = {
+	}
+	pg.base.island_technology_template[430302] = {
 		tech_desc = "Increases the number of Moo Moo Cows at Laidback Ranch.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -3536,8 +3539,8 @@ pg.base.island_technology_template = {
 			9,
 			4.5
 		}
-	},
-	[440301] = {
+	}
+	pg.base.island_technology_template[440301] = {
 		tech_desc = "Introduces Baa Baa Sheep to Laidback Ranch, giving it more vitality and increasing its range of products.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -3568,8 +3571,8 @@ pg.base.island_technology_template = {
 			4,
 			6
 		}
-	},
-	[440302] = {
+	}
+	pg.base.island_technology_template[440302] = {
 		tech_desc = "Increases the number of Baa Baa Sheep at Laidback Ranch.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -3600,8 +3603,10 @@ pg.base.island_technology_template = {
 			7,
 			6
 		}
-	},
-	[420303] = {
+	}
+end)()
+;(function()
+	pg.base.island_technology_template[420303] = {
 		tech_desc = "Increases the number of Oinky Oinky Pigs at Laidback Ranch.",
 		tech_chara = 1,
 		tech_level = "2",
@@ -3632,8 +3637,8 @@ pg.base.island_technology_template = {
 			11,
 			3
 		}
-	},
-	[410303] = {
+	}
+	pg.base.island_technology_template[410303] = {
 		tech_desc = "Increases the number of Clucky Clucky Birds at Laidback Ranch.",
 		tech_chara = 1,
 		tech_level = "3",
@@ -3664,8 +3669,8 @@ pg.base.island_technology_template = {
 			11,
 			1
 		}
-	},
-	[430303] = {
+	}
+	pg.base.island_technology_template[430303] = {
 		tech_desc = "Increases the number of Moo Moo Cows at Laidback Ranch.",
 		tech_chara = 1,
 		tech_level = "2",
@@ -3696,8 +3701,8 @@ pg.base.island_technology_template = {
 			13,
 			4.5
 		}
-	},
-	[410304] = {
+	}
+	pg.base.island_technology_template[410304] = {
 		tech_desc = "Increases the number of Clucky Clucky Birds at Laidback Ranch.",
 		tech_chara = 1,
 		tech_level = "4",
@@ -3728,8 +3733,8 @@ pg.base.island_technology_template = {
 			14,
 			1
 		}
-	},
-	[440303] = {
+	}
+	pg.base.island_technology_template[440303] = {
 		tech_desc = "Increases the number of Baa Baa Sheep at Laidback Ranch.",
 		tech_chara = 1,
 		tech_level = "2",
@@ -3760,8 +3765,8 @@ pg.base.island_technology_template = {
 			10,
 			6
 		}
-	},
-	[410305] = {
+	}
+	pg.base.island_technology_template[410305] = {
 		tech_desc = "Increases the number of Clucky Clucky Birds at Laidback Ranch.",
 		tech_chara = 1,
 		tech_level = "5",
@@ -3792,8 +3797,8 @@ pg.base.island_technology_template = {
 			17,
 			1
 		}
-	},
-	[420304] = {
+	}
+	pg.base.island_technology_template[420304] = {
 		tech_desc = "Increases the number of Oinky Oinky Pigs at Laidback Ranch.",
 		tech_chara = 1,
 		tech_level = "3",
@@ -3824,8 +3829,8 @@ pg.base.island_technology_template = {
 			17,
 			3
 		}
-	},
-	[430304] = {
+	}
+	pg.base.island_technology_template[430304] = {
 		tech_desc = "Increases the number of Moo Moo Cows at Laidback Ranch.",
 		tech_chara = 1,
 		tech_level = "3",
@@ -3856,8 +3861,8 @@ pg.base.island_technology_template = {
 			19,
 			4.5
 		}
-	},
-	[450301] = {
+	}
+	pg.base.island_technology_template[450301] = {
 		tech_desc = "Increases the number of honey gathering sites. Honeybees are your loyal workers!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -3881,8 +3886,8 @@ pg.base.island_technology_template = {
 			16,
 			6
 		}
-	},
-	[440304] = {
+	}
+	pg.base.island_technology_template[440304] = {
 		tech_desc = "Increases the number of Baa Baa Sheep at Laidback Ranch.",
 		tech_chara = 1,
 		tech_level = "3",
@@ -3913,8 +3918,8 @@ pg.base.island_technology_template = {
 			13,
 			6
 		}
-	},
-	[450302] = {
+	}
+	pg.base.island_technology_template[450302] = {
 		tech_desc = "Increases the number of honey gathering sites. Honeybees are your loyal workers!",
 		tech_chara = 1,
 		tech_level = "2",
@@ -3943,8 +3948,8 @@ pg.base.island_technology_template = {
 			19,
 			6
 		}
-	},
-	[460001] = {
+	}
+	pg.base.island_technology_template[460001] = {
 		tech_desc = "Upgrades your fishing rod so you can catch even rarer fish!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -3975,8 +3980,8 @@ pg.base.island_technology_template = {
 			1,
 			8
 		}
-	},
-	[460002] = {
+	}
+	pg.base.island_technology_template[460002] = {
 		tech_desc = "Upgrades your fishing rod so you can catch even rarer fish!",
 		tech_chara = 1,
 		tech_level = "2",
@@ -4007,8 +4012,8 @@ pg.base.island_technology_template = {
 			4,
 			8
 		}
-	},
-	[460101] = {
+	}
+	pg.base.island_technology_template[460101] = {
 		tech_desc = "Increases the number of fish hatchery slots, raising the production output of marine products.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4039,8 +4044,8 @@ pg.base.island_technology_template = {
 			7,
 			8
 		}
-	},
-	[460301] = {
+	}
+	pg.base.island_technology_template[460301] = {
 		tech_desc = "Increases the cultivation efficiency of the fish hatchery, making resource acquisition quicker.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4071,8 +4076,8 @@ pg.base.island_technology_template = {
 			10,
 			8
 		}
-	},
-	[460102] = {
+	}
+	pg.base.island_technology_template[460102] = {
 		tech_desc = "Increases the number of fish hatchery slots, raising the production output of marine products.",
 		tech_chara = 1,
 		tech_level = "2",
@@ -4103,8 +4108,8 @@ pg.base.island_technology_template = {
 			13,
 			8
 		}
-	},
-	[460302] = {
+	}
+	pg.base.island_technology_template[460302] = {
 		tech_desc = "Increases the cultivation efficiency of the fish hatchery, making resource acquisition quicker.",
 		tech_chara = 1,
 		tech_level = "2",
@@ -4135,8 +4140,8 @@ pg.base.island_technology_template = {
 			16,
 			8
 		}
-	},
-	[460201] = {
+	}
+	pg.base.island_technology_template[460201] = {
 		tech_desc = "Fish & Chips Recipe",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4171,8 +4176,8 @@ pg.base.island_technology_template = {
 			1,
 			9.5
 		}
-	},
-	[460202] = {
+	}
+	pg.base.island_technology_template[460202] = {
 		tech_desc = "Steamed Fish with Onions Recipe",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4207,8 +4212,8 @@ pg.base.island_technology_template = {
 			4,
 			9.5
 		}
-	},
-	[460203] = {
+	}
+	pg.base.island_technology_template[460203] = {
 		tech_desc = "Lemon Shrimp Recipe",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4243,8 +4248,8 @@ pg.base.island_technology_template = {
 			7,
 			9.5
 		}
-	},
-	[460204] = {
+	}
+	pg.base.island_technology_template[460204] = {
 		tech_desc = "Crayfish Stir-Fry Recipe",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4279,8 +4284,8 @@ pg.base.island_technology_template = {
 			10,
 			9.5
 		}
-	},
-	[460205] = {
+	}
+	pg.base.island_technology_template[460205] = {
 		tech_desc = "Paella Recipe",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4315,8 +4320,8 @@ pg.base.island_technology_template = {
 			13,
 			9.5
 		}
-	},
-	[460206] = {
+	}
+	pg.base.island_technology_template[460206] = {
 		tech_desc = "Buddha's Temptation Recipe",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4351,8 +4356,8 @@ pg.base.island_technology_template = {
 			16,
 			9.5
 		}
-	},
-	[500211] = {
+	}
+	pg.base.island_technology_template[500211] = {
 		tech_desc = "Gives access to advanced harvesting techniques that make Coffee Trees able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4383,8 +4388,8 @@ pg.base.island_technology_template = {
 			1,
 			1
 		}
-	},
-	[500212] = {
+	}
+	pg.base.island_technology_template[500212] = {
 		tech_desc = "Gives access to advanced harvesting techniques that make Corn able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4415,8 +4420,8 @@ pg.base.island_technology_template = {
 			1,
 			5
 		}
-	},
-	[500231] = {
+	}
+	pg.base.island_technology_template[500231] = {
 		tech_desc = "Gives access to advanced growing techniques that make Apple Trees able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4447,8 +4452,8 @@ pg.base.island_technology_template = {
 			1,
 			3
 		}
-	},
-	[550201] = {
+	}
+	pg.base.island_technology_template[550201] = {
 		tech_desc = "Allows for the production of protein-rich and fatty Cheese.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4483,8 +4488,8 @@ pg.base.island_technology_template = {
 			4,
 			1
 		}
-	},
-	[500213] = {
+	}
+	pg.base.island_technology_template[500213] = {
 		tech_desc = "Gives access to advanced harvesting techniques that make Soy Beans able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4515,8 +4520,8 @@ pg.base.island_technology_template = {
 			4,
 			8
 		}
-	},
-	[500215] = {
+	}
+	pg.base.island_technology_template[500215] = {
 		tech_desc = "Gives access to advanced harvesting techniques that make Napa Cabbage able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4547,8 +4552,8 @@ pg.base.island_technology_template = {
 			7,
 			5
 		}
-	},
-	[520001] = {
+	}
+	pg.base.island_technology_template[520001] = {
 		tech_desc = "Sweet drinks that fill you with happiness after just one sip!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4583,8 +4588,8 @@ pg.base.island_technology_template = {
 			4,
 			3
 		}
-	},
-	[500214] = {
+	}
+	pg.base.island_technology_template[500214] = {
 		tech_desc = "Gives access to advanced harvesting techniques that make Potatoes able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4615,8 +4620,8 @@ pg.base.island_technology_template = {
 			6,
 			10
 		}
-	},
-	[500232] = {
+	}
+	pg.base.island_technology_template[500232] = {
 		tech_desc = "Gives access to advanced growing techniques that make Citrus Trees able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4647,8 +4652,8 @@ pg.base.island_technology_template = {
 			7,
 			3
 		}
-	},
-	[550202] = {
+	}
+	pg.base.island_technology_template[550202] = {
 		tech_desc = "Allows for the production of aromatic and smooth Lattes.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4679,8 +4684,8 @@ pg.base.island_technology_template = {
 			7,
 			1
 		}
-	},
-	[500001] = {
+	}
+	pg.base.island_technology_template[500001] = {
 		tech_desc = "Unlocks combinations of dishes that can be sold as a set.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4709,8 +4714,8 @@ pg.base.island_technology_template = {
 			1,
 			10
 		}
-	},
-	[510201] = {
+	}
+	pg.base.island_technology_template[510201] = {
 		tech_desc = "Allows for the production of velvety Tofu with Minced Meat with a rich soup.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4745,8 +4750,8 @@ pg.base.island_technology_template = {
 			7,
 			8
 		}
-	},
-	[510202] = {
+	}
+	pg.base.island_technology_template[510202] = {
 		tech_desc = "Allows for the production of golden and fluffy Omurice.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4777,8 +4782,8 @@ pg.base.island_technology_template = {
 			10,
 			9
 		}
-	},
-	[510203] = {
+	}
+	pg.base.island_technology_template[510203] = {
 		tech_desc = "Allows for the production of mild and healthy Cabbage and Tofu Soup.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4813,8 +4818,8 @@ pg.base.island_technology_template = {
 			10,
 			7
 		}
-	},
-	[550203] = {
+	}
+	pg.base.island_technology_template[550203] = {
 		tech_desc = "Allows for the production of fresh and uniquely flavored Citrus Coffee.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4845,8 +4850,8 @@ pg.base.island_technology_template = {
 			16,
 			1
 		}
-	},
-	[320201] = {
+	}
+	pg.base.island_technology_template[320201] = {
 		tech_desc = "Gives access to advanced growing techniques that make Strawberries able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4881,8 +4886,8 @@ pg.base.island_technology_template = {
 			10,
 			1
 		}
-	},
-	[500233] = {
+	}
+	pg.base.island_technology_template[500233] = {
 		tech_desc = "Gives access to advanced growing techniques that make Banana Trees able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4913,8 +4918,8 @@ pg.base.island_technology_template = {
 			10,
 			3
 		}
-	},
-	[500234] = {
+	}
+	pg.base.island_technology_template[500234] = {
 		tech_desc = "Gives access to advanced growing techniques that make Mango Trees able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4949,8 +4954,8 @@ pg.base.island_technology_template = {
 			10,
 			5
 		}
-	},
-	[510204] = {
+	}
+	pg.base.island_technology_template[510204] = {
 		tech_desc = "Allows for the production of delightful and delicious Vegetable Salads.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -4985,8 +4990,8 @@ pg.base.island_technology_template = {
 			13,
 			8
 		}
-	},
-	[500235] = {
+	}
+	pg.base.island_technology_template[500235] = {
 		tech_desc = "Gives access to advanced growing techniques that make Lemon Trees able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5021,8 +5026,8 @@ pg.base.island_technology_template = {
 			13,
 			2
 		}
-	},
-	[520201] = {
+	}
+	pg.base.island_technology_template[520201] = {
 		tech_desc = "Allows for the production of rich and sweet Banana and Mango Juice.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5061,8 +5066,8 @@ pg.base.island_technology_template = {
 			13,
 			4
 		}
-	},
-	[520202] = {
+	}
+	pg.base.island_technology_template[520202] = {
 		tech_desc = "Allows for the production of refreshing, sweet, and sour Honey and Lemon Water.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5097,8 +5102,8 @@ pg.base.island_technology_template = {
 			16,
 			3
 		}
-	},
-	[530001] = {
+	}
+	pg.base.island_technology_template[530001] = {
 		tech_desc = "Offers light meals to readily solve your daily food needs!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5133,8 +5138,8 @@ pg.base.island_technology_template = {
 			16,
 			5
 		}
-	},
-	[320203] = {
+	}
+	pg.base.island_technology_template[320203] = {
 		tech_desc = "Gives access to advanced growing techniques that make Tea Trees able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5165,8 +5170,8 @@ pg.base.island_technology_template = {
 			22,
 			1
 		}
-	},
-	[520203] = {
+	}
+	pg.base.island_technology_template[520203] = {
 		tech_desc = "Allows for the production of cool and sweet Strawberry Honey Frappés.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5197,8 +5202,8 @@ pg.base.island_technology_template = {
 			19,
 			3
 		}
-	},
-	[500236] = {
+	}
+	pg.base.island_technology_template[500236] = {
 		tech_desc = "Gives access to advanced growing techniques that make Avocado Trees able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5233,8 +5238,8 @@ pg.base.island_technology_template = {
 			13,
 			10
 		}
-	},
-	[530205] = {
+	}
+	pg.base.island_technology_template[530205] = {
 		tech_desc = "Allows for the production of aromatic, crunchy, and sweet Apple Pie.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5265,8 +5270,8 @@ pg.base.island_technology_template = {
 			19,
 			5
 		}
-	},
-	[520205] = {
+	}
+	pg.base.island_technology_template[520205] = {
 		tech_desc = "Allows for the production of sweet and delicious Strawberry Lemon Drinks.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5297,8 +5302,8 @@ pg.base.island_technology_template = {
 			22,
 			3
 		}
-	},
-	[530206] = {
+	}
+	pg.base.island_technology_template[530206] = {
 		tech_desc = "Allows for the production of sweet, sour, and crunchy Orange Pie.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5329,8 +5334,8 @@ pg.base.island_technology_template = {
 			19,
 			7
 		}
-	},
-	[530202] = {
+	}
+	pg.base.island_technology_template[530202] = {
 		tech_desc = "Allows for the production of sweet and doughy Sticky Rice with Mango.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5365,8 +5370,8 @@ pg.base.island_technology_template = {
 			22,
 			5
 		}
-	},
-	[320204] = {
+	}
+	pg.base.island_technology_template[320204] = {
 		tech_desc = "Gives access to advanced harvesting techniques that make Carrots able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5397,8 +5402,8 @@ pg.base.island_technology_template = {
 			16,
 			10
 		}
-	},
-	[550204] = {
+	}
+	pg.base.island_technology_template[550204] = {
 		tech_desc = "Allows for the production of invigorating and mellow Strawberry Milkshakes.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5429,8 +5434,8 @@ pg.base.island_technology_template = {
 			25,
 			1
 		}
-	},
-	[540001] = {
+	}
+	pg.base.island_technology_template[540001] = {
 		tech_desc = "Oh yeah, it's barbecue time!",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5465,8 +5470,8 @@ pg.base.island_technology_template = {
 			19,
 			10
 		}
-	},
-	[540201] = {
+	}
+	pg.base.island_technology_template[540201] = {
 		tech_desc = "Allows for the production of simple and tasty Chicken and Potato Hors d'Oeuvres.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5497,8 +5502,8 @@ pg.base.island_technology_template = {
 			22,
 			10
 		}
-	},
-	[520204] = {
+	}
+	pg.base.island_technology_template[520204] = {
 		tech_desc = "Allows for the production of soothing and relaxing Lavender Tea.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5533,8 +5538,8 @@ pg.base.island_technology_template = {
 			25,
 			3
 		}
-	},
-	[530203] = {
+	}
+	pg.base.island_technology_template[530203] = {
 		tech_desc = "Allows for the production of soft and sweet Banana Crêpes.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5569,8 +5574,8 @@ pg.base.island_technology_template = {
 			28,
 			5
 		}
-	},
-	[320206] = {
+	}
+	pg.base.island_technology_template[320206] = {
 		tech_desc = "Gives access to advanced harvesting techniques that make Onions able to grow rapidly in the island's environment.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5601,8 +5606,8 @@ pg.base.island_technology_template = {
 			25,
 			10
 		}
-	},
-	[540202] = {
+	}
+	pg.base.island_technology_template[540202] = {
 		tech_desc = "Allows for the production of abundantly fragrant Stir-Fried Chicken.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5633,8 +5638,8 @@ pg.base.island_technology_template = {
 			28,
 			10
 		}
-	},
-	[530204] = {
+	}
+	pg.base.island_technology_template[530204] = {
 		tech_desc = "Allows for the production of mildly flavored Strawberry Charlottes.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5665,8 +5670,8 @@ pg.base.island_technology_template = {
 			31,
 			5
 		}
-	},
-	[540204] = {
+	}
+	pg.base.island_technology_template[540204] = {
 		tech_desc = "Allows for the production of texture-rich Rolled Carrot Omelettes.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5697,8 +5702,8 @@ pg.base.island_technology_template = {
 			31,
 			10
 		}
-	},
-	[510101] = {
+	}
+	pg.base.island_technology_template[510101] = {
 		tech_desc = "Increases the number of staff slots at the Golden Koi Restaurant. Increases your food production speed.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5733,8 +5738,8 @@ pg.base.island_technology_template = {
 			29,
 			8
 		}
-	},
-	[540205] = {
+	}
+	pg.base.island_technology_template[540205] = {
 		tech_desc = "Allows for the production of delicious and convenient Steak Bowls.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5765,8 +5770,8 @@ pg.base.island_technology_template = {
 			34,
 			10
 		}
-	},
-	[520101] = {
+	}
+	pg.base.island_technology_template[520101] = {
 		tech_desc = "Increases the number of staff slots at the Polar Bear Teahouse. Increases your food production speed.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5797,8 +5802,8 @@ pg.base.island_technology_template = {
 			34,
 			3
 		}
-	},
-	[530101] = {
+	}
+	pg.base.island_technology_template[530101] = {
 		tech_desc = "Increases the number of staff slots at the Manjuu Eatery. Increases your food production speed.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5829,8 +5834,8 @@ pg.base.island_technology_template = {
 			37,
 			5
 		}
-	},
-	[540101] = {
+	}
+	pg.base.island_technology_template[540101] = {
 		tech_desc = "Increases the number of staff slots at the Fin-'n'-Feather Grill. Increases your food production speed.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5861,8 +5866,8 @@ pg.base.island_technology_template = {
 			37,
 			10
 		}
-	},
-	[610101] = {
+	}
+	pg.base.island_technology_template[610101] = {
 		tech_desc = "Increases the number of transport jobs that can be accepted. This will let you acquire resources from different places more easily.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5893,8 +5898,8 @@ pg.base.island_technology_template = {
 			1,
 			1
 		}
-	},
-	[610401] = {
+	}
+	pg.base.island_technology_template[610401] = {
 		tech_desc = "Shortens the transport time of transport jobs, making goods flow more efficiently.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5925,8 +5930,8 @@ pg.base.island_technology_template = {
 			4,
 			1
 		}
-	},
-	[610102] = {
+	}
+	pg.base.island_technology_template[610102] = {
 		tech_desc = "Increases the number of transport jobs that can be accepted. This will let you acquire resources from different places more easily.",
 		tech_chara = 1,
 		tech_level = "2",
@@ -5957,8 +5962,8 @@ pg.base.island_technology_template = {
 			7,
 			1
 		}
-	},
-	[630201] = {
+	}
+	pg.base.island_technology_template[630201] = {
 		tech_desc = "Allows for the production of practical record-keeping Notebooks.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -5989,8 +5994,8 @@ pg.base.island_technology_template = {
 			4,
 			3
 		}
-	},
-	[610402] = {
+	}
+	pg.base.island_technology_template[610402] = {
 		tech_desc = "Shortens the transport time of transport jobs, making goods flow more efficiently.",
 		tech_chara = 1,
 		tech_level = "2",
@@ -6021,8 +6026,8 @@ pg.base.island_technology_template = {
 			10,
 			1
 		}
-	},
-	[630202] = {
+	}
+	pg.base.island_technology_template[630202] = {
 		tech_desc = "Allows for the production of a place to rest and work in the form of Chairs and Desks.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6053,8 +6058,8 @@ pg.base.island_technology_template = {
 			7,
 			3
 		}
-	},
-	[620101] = {
+	}
+	pg.base.island_technology_template[620101] = {
 		tech_desc = "Increases the number of staff slots at Café Manjuu. Increases your food production speed.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6085,8 +6090,8 @@ pg.base.island_technology_template = {
 			1,
 			9
 		}
-	},
-	[640001] = {
+	}
+	pg.base.island_technology_template[640001] = {
 		tech_desc = "Unlocks the production of manufactured items.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6117,8 +6122,8 @@ pg.base.island_technology_template = {
 			4,
 			5
 		}
-	},
-	[630101] = {
+	}
+	pg.base.island_technology_template[630101] = {
 		tech_desc = "Increases the number of staff slots for lumber processing. Increases your production speed of wooden items.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6149,8 +6154,8 @@ pg.base.island_technology_template = {
 			13,
 			3
 		}
-	},
-	[610403] = {
+	}
+	pg.base.island_technology_template[610403] = {
 		tech_desc = "Shortens the transport time of transport jobs, making goods flow more efficiently.",
 		tech_chara = 1,
 		tech_level = "3",
@@ -6181,8 +6186,8 @@ pg.base.island_technology_template = {
 			13,
 			1
 		}
-	},
-	[640201] = {
+	}
+	pg.base.island_technology_template[640201] = {
 		tech_desc = "Allows for the production of metallic Nails to keep things pinned down.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6213,8 +6218,8 @@ pg.base.island_technology_template = {
 			7,
 			5
 		}
-	},
-	[660001] = {
+	}
+	pg.base.island_technology_template[660001] = {
 		tech_desc = "Unlocks the production of arts & crafts items.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6245,8 +6250,8 @@ pg.base.island_technology_template = {
 			4,
 			7
 		}
-	},
-	[630203] = {
+	}
+	pg.base.island_technology_template[630203] = {
 		tech_desc = "Allows for the production of tightly sealed Choice Wooden Barrels for preservation.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6277,8 +6282,8 @@ pg.base.island_technology_template = {
 			16,
 			3
 		}
-	},
-	[640101] = {
+	}
+	pg.base.island_technology_template[640101] = {
 		tech_desc = "Increases the number of staff slots for industrial production. Increases your production speed of manufactured items.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6309,8 +6314,8 @@ pg.base.island_technology_template = {
 			13,
 			5
 		}
-	},
-	[640202] = {
+	}
+	pg.base.island_technology_template[640202] = {
 		tech_desc = "Allows for the production of insulated Cables for routing electricity and signals.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6341,8 +6346,8 @@ pg.base.island_technology_template = {
 			10,
 			5
 		}
-	},
-	[660201] = {
+	}
+	pg.base.island_technology_template[660201] = {
 		tech_desc = "Allows for the production of Leather suited for all kinds of manufacturing.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6373,8 +6378,8 @@ pg.base.island_technology_template = {
 			7,
 			7
 		}
-	},
-	[640203] = {
+	}
+	pg.base.island_technology_template[640203] = {
 		tech_desc = "Allows for the production of Chemicals for industrial and scientific applications.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6405,8 +6410,8 @@ pg.base.island_technology_template = {
 			16,
 			5
 		}
-	},
-	[660202] = {
+	}
+	pg.base.island_technology_template[660202] = {
 		tech_desc = "Allows for the production of Rope with highly durable fibers.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6437,8 +6442,8 @@ pg.base.island_technology_template = {
 			10,
 			7
 		}
-	},
-	[660203] = {
+	}
+	pg.base.island_technology_template[660203] = {
 		tech_desc = "Allows for the production of Gloves for keeping one's hands protected and warm.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6469,8 +6474,8 @@ pg.base.island_technology_template = {
 			13,
 			7
 		}
-	},
-	[650001] = {
+	}
+	pg.base.island_technology_template[650001] = {
 		tech_desc = "Unlocks the production of electronic items.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6501,8 +6506,8 @@ pg.base.island_technology_template = {
 			10,
 			9
 		}
-	},
-	[630205] = {
+	}
+	pg.base.island_technology_template[630205] = {
 		tech_desc = "Allows you to make an ornamental painting that adds an artistic vibe.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6533,8 +6538,8 @@ pg.base.island_technology_template = {
 			19,
 			3
 		}
-	},
-	[630204] = {
+	}
+	pg.base.island_technology_template[630204] = {
 		tech_desc = "Allows for the production of metallic Filing Cabinets to store documents.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6565,8 +6570,8 @@ pg.base.island_technology_template = {
 			22,
 			3
 		}
-	},
-	[660204] = {
+	}
+	pg.base.island_technology_template[660204] = {
 		tech_desc = "Allows for the production of Aroma Sachets that release a pleasant scent.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6597,8 +6602,8 @@ pg.base.island_technology_template = {
 			16,
 			7
 		}
-	},
-	[640204] = {
+	}
+	pg.base.island_technology_template[640204] = {
 		tech_desc = "Allows for the production of granular Gunpowder for explosive and propulsive applications.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6629,8 +6634,8 @@ pg.base.island_technology_template = {
 			19,
 			5
 		}
-	},
-	[650201] = {
+	}
+	pg.base.island_technology_template[650201] = {
 		tech_desc = "Allows for the production of Clocks to accurately tell the time.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6661,8 +6666,8 @@ pg.base.island_technology_template = {
 			16,
 			9
 		}
-	},
-	[660101] = {
+	}
+	pg.base.island_technology_template[660101] = {
 		tech_desc = "Increases the number of staff slots for arts & crafts production. Increases your production speed of artisanal items.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6693,8 +6698,8 @@ pg.base.island_technology_template = {
 			19,
 			7
 		}
-	},
-	[640205] = {
+	}
+	pg.base.island_technology_template[640205] = {
 		tech_desc = "Allows for the production of metallic Utensils for eating with.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6725,8 +6730,8 @@ pg.base.island_technology_template = {
 			22,
 			5
 		}
-	},
-	[660205] = {
+	}
+	pg.base.island_technology_template[660205] = {
 		tech_desc = "Allows for the production of Shoes that suit one's needs in everyday scenarios.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6757,8 +6762,8 @@ pg.base.island_technology_template = {
 			22,
 			7
 		}
-	},
-	[650101] = {
+	}
+	pg.base.island_technology_template[650101] = {
 		tech_desc = "Increases the number of staff slots for electronics production. Increases your production speed of electronic items.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6789,8 +6794,8 @@ pg.base.island_technology_template = {
 			22,
 			9
 		}
-	},
-	[660206] = {
+	}
+	pg.base.island_technology_template[660206] = {
 		tech_desc = "Allows for the production of sterile Wound Dressings as a first aid solution.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6821,8 +6826,8 @@ pg.base.island_technology_template = {
 			25,
 			7
 		}
-	},
-	[650202] = {
+	}
+	pg.base.island_technology_template[650202] = {
 		tech_desc = "Allows for the production of energy-storing Batteries.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6853,8 +6858,8 @@ pg.base.island_technology_template = {
 			25,
 			9
 		}
-	},
-	[650203] = {
+	}
+	pg.base.island_technology_template[650203] = {
 		tech_desc = "Allows for the production of Water Filter cores that make water potable.",
 		tech_chara = 1,
 		tech_level = "1",
@@ -6886,4 +6891,4 @@ pg.base.island_technology_template = {
 			9
 		}
 	}
-}
+end)()

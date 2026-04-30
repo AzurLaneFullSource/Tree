@@ -1,6 +1,17 @@
 pg = pg or {}
-pg.island_collection = {
-	{
+pg.island_collection = rawget(pg, "island_collection") or setmetatable({
+	__name = "island_collection"
+}, confNEO)
+pg.island_collection.all = {
+	1,
+	2,
+	3
+}
+pg.base = pg.base or {}
+pg.base.island_collection = {}
+
+;(function()
+	pg.base.island_collection[1] = {
 		desc = "Aircraft – Harbor",
 		name = "Aircraft",
 		tech_id = 0,
@@ -28,8 +39,8 @@ pg.island_collection = {
 		},
 		award = {},
 		jump_page = {}
-	},
-	{
+	}
+	pg.base.island_collection[2] = {
 		desc = "Aircraft – Wilderness",
 		name = "Aircraft",
 		tech_id = 0,
@@ -58,8 +69,8 @@ pg.island_collection = {
 		},
 		award = {},
 		jump_page = {}
-	},
-	{
+	}
+	pg.base.island_collection[3] = {
 		desc = "Aircraft – Farm",
 		name = "Aircraft",
 		tech_id = 0,
@@ -89,10 +100,5 @@ pg.island_collection = {
 		},
 		award = {},
 		jump_page = {}
-	},
-	all = {
-		1,
-		2,
-		3
 	}
-}
+end)()

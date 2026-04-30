@@ -18,7 +18,7 @@ function var0_0.Update(arg0_2, arg1_2)
 	end
 
 	arg0_2.level = arg1_2
-	arg0_2.nextLevel = math.min(arg1_2 + 1, #arg0_2.config)
+	arg0_2.nextLevel = math.min(arg1_2 + 1, #arg0_2.config.all)
 
 	arg0_2:ReCalcValue()
 end
@@ -26,7 +26,7 @@ end
 function var0_0.ReCalcValue(arg0_3)
 	arg0_3.value = arg0_3.config[arg0_3.level][arg0_3.attrName]
 	arg0_3.nextValue = arg0_3.config[arg0_3.nextLevel][arg0_3.attrName]
-	arg0_3.maxValue = arg0_3.config[#arg0_3.config][arg0_3.attrName]
+	arg0_3.maxValue = arg0_3.config[#arg0_3.config.all][arg0_3.attrName]
 	arg0_3.addition = arg0_3.nextValue - arg0_3.value
 end
 

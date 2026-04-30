@@ -353,24 +353,17 @@ function var0_0.sortFunc(arg0_2, arg1_2)
 			if not arg0_4.isSkin then
 				return 0
 			else
-				return (arg1_2 and -1 or 1) * (pg.equip_skin_template[arg0_4.id][arg0_2.value] or 0)
-			end
-		end,
-		function(arg0_5)
-			if not arg0_5.isSkin then
-				return 0
-			else
-				return (arg1_2 and -1 or 1) * -arg0_5.id
+				return (arg1_2 and -1 or 1) * -arg0_4.id
 			end
 		end
 	}
 
 	for iter0_2, iter1_2 in ipairs(arg0_2.values) do
-		table.insert(var0_2, function(arg0_6)
-			if arg0_6.isSkin then
+		table.insert(var0_2, function(arg0_5)
+			if arg0_5.isSkin then
 				return 0
 			else
-				return (arg1_2 and -1 or 1) * -var0_0.getWeight(arg0_6, iter1_2)
+				return (arg1_2 and -1 or 1) * -var0_0.getWeight(arg0_5, iter1_2)
 			end
 		end)
 	end

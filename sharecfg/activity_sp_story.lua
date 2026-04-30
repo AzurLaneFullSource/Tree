@@ -1,6 +1,386 @@
 pg = pg or {}
-pg.activity_sp_story = {
-	{
+pg.activity_sp_story = rawget(pg, "activity_sp_story") or setmetatable({
+	__name = "activity_sp_story"
+}, confNEO)
+pg.activity_sp_story.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22,
+	23,
+	31,
+	32,
+	33,
+	34,
+	35,
+	36,
+	37,
+	38,
+	39,
+	40,
+	41,
+	42,
+	43,
+	44,
+	45,
+	46,
+	47,
+	48,
+	49,
+	50,
+	51,
+	52,
+	53,
+	54,
+	55,
+	56,
+	57,
+	58,
+	59,
+	60,
+	61,
+	62,
+	63,
+	64,
+	65,
+	66,
+	67,
+	68,
+	69,
+	70,
+	71,
+	72,
+	73,
+	74,
+	75,
+	76,
+	77,
+	78,
+	79,
+	80,
+	81,
+	82,
+	83,
+	84,
+	85,
+	86,
+	87,
+	88,
+	89,
+	90,
+	91,
+	92,
+	93,
+	94,
+	95,
+	96,
+	97,
+	98,
+	99,
+	100,
+	101,
+	102,
+	103,
+	104,
+	105,
+	106,
+	107,
+	108,
+	109,
+	110,
+	111,
+	112,
+	113,
+	114,
+	115,
+	116,
+	117,
+	118,
+	119,
+	120,
+	121,
+	122,
+	123,
+	124,
+	125,
+	126,
+	127,
+	128,
+	129,
+	130,
+	131,
+	132,
+	133,
+	134,
+	135,
+	136,
+	137,
+	138,
+	139,
+	141,
+	142,
+	143,
+	144,
+	145,
+	146,
+	147,
+	148,
+	149,
+	150,
+	151,
+	152,
+	153,
+	154,
+	155,
+	156,
+	157,
+	158,
+	159,
+	160,
+	161,
+	162,
+	163,
+	164,
+	165,
+	166,
+	167,
+	168,
+	169,
+	170,
+	171,
+	172,
+	173,
+	174,
+	175,
+	176,
+	181,
+	182,
+	183,
+	184,
+	185,
+	186,
+	187,
+	188,
+	191,
+	192,
+	193,
+	194,
+	195,
+	196,
+	197,
+	198,
+	199,
+	200,
+	201,
+	202,
+	203,
+	204,
+	205,
+	206,
+	207,
+	208,
+	209,
+	210,
+	211,
+	212,
+	213,
+	214,
+	215,
+	216,
+	217,
+	218,
+	219,
+	220,
+	221,
+	222,
+	223,
+	224,
+	225,
+	226,
+	231,
+	232,
+	233,
+	234,
+	235,
+	236,
+	237,
+	238,
+	239,
+	240,
+	241,
+	242,
+	243,
+	244,
+	245,
+	246,
+	247,
+	248,
+	249,
+	250,
+	251,
+	252,
+	253,
+	254,
+	255,
+	256,
+	257,
+	258,
+	259,
+	260,
+	261,
+	262,
+	263,
+	264,
+	265,
+	266,
+	267,
+	268,
+	269,
+	271,
+	272,
+	273,
+	274,
+	275,
+	276,
+	277,
+	278,
+	279,
+	280,
+	281,
+	282,
+	283,
+	284,
+	285,
+	291,
+	292,
+	293,
+	294,
+	295,
+	296,
+	297,
+	298,
+	299,
+	300,
+	301,
+	302,
+	303,
+	304,
+	305,
+	306,
+	307,
+	308,
+	309,
+	310,
+	311,
+	312,
+	313,
+	314,
+	315,
+	316,
+	317,
+	318,
+	319,
+	321,
+	322,
+	323,
+	324,
+	325,
+	326,
+	327,
+	328,
+	329,
+	330,
+	331,
+	332,
+	333,
+	334,
+	335,
+	336,
+	337,
+	338,
+	339,
+	341,
+	342,
+	343,
+	344,
+	345,
+	346,
+	347,
+	348,
+	349,
+	350,
+	351,
+	352,
+	353,
+	354,
+	355,
+	356,
+	357,
+	358,
+	359,
+	360,
+	361,
+	362,
+	363,
+	364,
+	365,
+	366,
+	371,
+	372,
+	373,
+	374,
+	375,
+	376,
+	377,
+	378,
+	379,
+	380,
+	381,
+	382,
+	383,
+	384,
+	385,
+	386,
+	387,
+	388,
+	389,
+	390,
+	391,
+	392,
+	393,
+	394,
+	395,
+	396,
+	397,
+	398,
+	399,
+	400,
+	401,
+	402
+}
+pg.base = pg.base or {}
+pg.base.activity_sp_story = {}
+
+;(function()
+	pg.base.activity_sp_story[1] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -12,8 +392,8 @@ pg.activity_sp_story = {
 		change_bgm = "story-richang-light",
 		id = 1,
 		lock = ""
-	},
-	{
+	}
+	pg.base.activity_sp_story[2] = {
 		story_type = 1,
 		name = "EPS-2A Formal Invitation",
 		label_key = "",
@@ -32,8 +412,8 @@ pg.activity_sp_story = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[3] = {
 		story_type = 1,
 		name = "EPS-3 A Casual Meal",
 		label_key = "",
@@ -52,8 +432,8 @@ pg.activity_sp_story = {
 				2
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[4] = {
 		story_type = 2,
 		name = "EPS-4 Peace Interlude",
 		label_key = "",
@@ -72,8 +452,8 @@ pg.activity_sp_story = {
 				3
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[5] = {
 		story_type = 1,
 		name = "EPS-5 Face to Face",
 		label_key = "",
@@ -92,8 +472,8 @@ pg.activity_sp_story = {
 				4
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[6] = {
 		story_type = 1,
 		name = "EPS-6 Music in the Night",
 		label_key = "",
@@ -112,8 +492,8 @@ pg.activity_sp_story = {
 				5
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[7] = {
 		story_type = 1,
 		name = "EPS-7 The Secret of the Basilica",
 		label_key = "",
@@ -132,8 +512,8 @@ pg.activity_sp_story = {
 				6
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[8] = {
 		story_type = 1,
 		name = "EPS-8 The Dream of HER",
 		label_key = "",
@@ -152,8 +532,8 @@ pg.activity_sp_story = {
 				7
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[9] = {
 		story_type = 1,
 		name = "EPS-9 A Fine Day",
 		label_key = "",
@@ -172,8 +552,8 @@ pg.activity_sp_story = {
 				8
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[10] = {
 		story_type = 1,
 		name = "EPS-10 Another Fine Day",
 		label_key = "",
@@ -192,8 +572,8 @@ pg.activity_sp_story = {
 				9
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[11] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -205,8 +585,8 @@ pg.activity_sp_story = {
 		change_bgm = "map-longgong",
 		id = 11,
 		lock = ""
-	},
-	{
+	}
+	pg.base.activity_sp_story[12] = {
 		story_type = 1,
 		name = "EPS-2 Trailing the Mountains",
 		label_key = "",
@@ -225,8 +605,8 @@ pg.activity_sp_story = {
 				11
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[13] = {
 		story_type = 1,
 		name = "EPS-3 The Prime Barrier",
 		label_key = "",
@@ -245,8 +625,8 @@ pg.activity_sp_story = {
 				12
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[14] = {
 		story_type = 1,
 		name = "EPS-4 Ink-Stained Dream",
 		label_key = "",
@@ -265,8 +645,8 @@ pg.activity_sp_story = {
 				13
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[15] = {
 		story_type = 1,
 		name = "EPS-5 Misfortune Arriveth",
 		label_key = "",
@@ -285,8 +665,8 @@ pg.activity_sp_story = {
 				14
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[16] = {
 		story_type = 1,
 		name = "EPS-6 Obsession Rooted in the Past",
 		label_key = "",
@@ -305,8 +685,8 @@ pg.activity_sp_story = {
 				15
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[17] = {
 		story_type = 1,
 		name = "EPS-7 Planning Interference",
 		label_key = "",
@@ -325,8 +705,8 @@ pg.activity_sp_story = {
 				16
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[18] = {
 		story_type = 1,
 		name = "EPS-8 Decisive Weapon",
 		label_key = "",
@@ -345,8 +725,8 @@ pg.activity_sp_story = {
 				17
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[19] = {
 		story_type = 1,
 		name = "EPS-9 Retreat",
 		label_key = "",
@@ -365,8 +745,8 @@ pg.activity_sp_story = {
 				18
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[20] = {
 		story_type = 1,
 		name = "EPS-10 Scattering Thunder",
 		label_key = "",
@@ -385,8 +765,8 @@ pg.activity_sp_story = {
 				19
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[21] = {
 		story_type = 1,
 		name = "EPS-11 Entrusted Will",
 		label_key = "",
@@ -405,8 +785,8 @@ pg.activity_sp_story = {
 				20
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[22] = {
 		story_type = 1,
 		name = "EPS-12 Fallen Petals",
 		label_key = "",
@@ -426,8 +806,8 @@ pg.activity_sp_story = {
 				21
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_sp_story[23] = {
 		story_type = 1,
 		name = "EPS-13 Our Commander",
 		label_key = "",
@@ -446,8 +826,8 @@ pg.activity_sp_story = {
 				22
 			}
 		}
-	},
-	[31] = {
+	}
+	pg.base.activity_sp_story[31] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -459,8 +839,8 @@ pg.activity_sp_story = {
 		change_bgm = "battle-eagleunion",
 		id = 31,
 		lock = ""
-	},
-	[32] = {
+	}
+	pg.base.activity_sp_story[32] = {
 		story_type = 1,
 		name = "EP1-2 Tester's Destruction",
 		label_key = "",
@@ -479,8 +859,8 @@ pg.activity_sp_story = {
 				31
 			}
 		}
-	},
-	[33] = {
+	}
+	pg.base.activity_sp_story[33] = {
 		story_type = 1,
 		name = "EP1-3 Omitter's Destruction",
 		label_key = "",
@@ -499,8 +879,8 @@ pg.activity_sp_story = {
 				32
 			}
 		}
-	},
-	[34] = {
+	}
+	pg.base.activity_sp_story[34] = {
 		story_type = 1,
 		name = "EP1-4 Purifier's Destruction",
 		label_key = "",
@@ -519,8 +899,8 @@ pg.activity_sp_story = {
 				33
 			}
 		}
-	},
-	[35] = {
+	}
+	pg.base.activity_sp_story[35] = {
 		story_type = 1,
 		name = "EP2-1 To the Singularity",
 		label_key = "",
@@ -541,8 +921,8 @@ pg.activity_sp_story = {
 				34
 			}
 		}
-	},
-	[36] = {
+	}
+	pg.base.activity_sp_story[36] = {
 		story_type = 1,
 		name = "EP2-2 Making of a World Segment",
 		label_key = "",
@@ -561,8 +941,8 @@ pg.activity_sp_story = {
 				35
 			}
 		}
-	},
-	[37] = {
+	}
+	pg.base.activity_sp_story[37] = {
 		story_type = 1,
 		name = "EP2-3 Departure",
 		label_key = "",
@@ -581,8 +961,8 @@ pg.activity_sp_story = {
 				36
 			}
 		}
-	},
-	[38] = {
+	}
+	pg.base.activity_sp_story[38] = {
 		story_type = 1,
 		name = "EP3-1 Europa's Fight",
 		label_key = "",
@@ -601,8 +981,8 @@ pg.activity_sp_story = {
 				37
 			}
 		}
-	},
-	[39] = {
+	}
+	pg.base.activity_sp_story[39] = {
 		story_type = 1,
 		name = "EP3-2 The Floating Dock Returns",
 		label_key = "",
@@ -621,8 +1001,8 @@ pg.activity_sp_story = {
 				38
 			}
 		}
-	},
-	[40] = {
+	}
+	pg.base.activity_sp_story[40] = {
 		story_type = 1,
 		name = "EP4-1 Divergent METAmorphosis",
 		label_key = "",
@@ -641,8 +1021,8 @@ pg.activity_sp_story = {
 				39
 			}
 		}
-	},
-	[41] = {
+	}
+	pg.base.activity_sp_story[41] = {
 		story_type = 2,
 		name = "EP4-2 A Meeting in the Mist",
 		label_key = "",
@@ -661,8 +1041,8 @@ pg.activity_sp_story = {
 				40
 			}
 		}
-	},
-	[42] = {
+	}
+	pg.base.activity_sp_story[42] = {
 		story_type = 1,
 		name = "EP4-3 As Thanks",
 		label_key = "",
@@ -681,8 +1061,8 @@ pg.activity_sp_story = {
 				41
 			}
 		}
-	},
-	[43] = {
+	}
+	pg.base.activity_sp_story[43] = {
 		story_type = 1,
 		name = "EPS-1 The Way Cleared",
 		label_key = "",
@@ -702,8 +1082,8 @@ pg.activity_sp_story = {
 				42
 			}
 		}
-	},
-	[44] = {
+	}
+	pg.base.activity_sp_story[44] = {
 		story_type = 1,
 		name = "EPS-2 Amagi's Dream",
 		label_key = "",
@@ -722,8 +1102,8 @@ pg.activity_sp_story = {
 				43
 			}
 		}
-	},
-	[45] = {
+	}
+	pg.base.activity_sp_story[45] = {
 		story_type = 1,
 		name = "EP5-1 Homecoming",
 		label_key = "",
@@ -742,8 +1122,8 @@ pg.activity_sp_story = {
 				44
 			}
 		}
-	},
-	[46] = {
+	}
+	pg.base.activity_sp_story[46] = {
 		story_type = 1,
 		name = "EP5-2 Reunion",
 		label_key = "",
@@ -762,8 +1142,8 @@ pg.activity_sp_story = {
 				45
 			}
 		}
-	},
-	[47] = {
+	}
+	pg.base.activity_sp_story[47] = {
 		story_type = 1,
 		name = "EP5-3 Face to Face",
 		label_key = "",
@@ -782,8 +1162,8 @@ pg.activity_sp_story = {
 				46
 			}
 		}
-	},
-	[48] = {
+	}
+	pg.base.activity_sp_story[48] = {
 		story_type = 2,
 		name = "EP5-4 When Least Expected",
 		label_key = "",
@@ -802,8 +1182,8 @@ pg.activity_sp_story = {
 				47
 			}
 		}
-	},
-	[49] = {
+	}
+	pg.base.activity_sp_story[49] = {
 		story_type = 1,
 		name = "EP5-5 Fighting Back",
 		label_key = "",
@@ -822,8 +1202,8 @@ pg.activity_sp_story = {
 				53
 			}
 		}
-	},
-	[50] = {
+	}
+	pg.base.activity_sp_story[50] = {
 		story_type = 1,
 		name = "EP5-6 Turning the Tables",
 		label_key = "",
@@ -842,8 +1222,8 @@ pg.activity_sp_story = {
 				49
 			}
 		}
-	},
-	[51] = {
+	}
+	pg.base.activity_sp_story[51] = {
 		story_type = 1,
 		name = "EP6-1 Scanning the Singularity",
 		label_key = "",
@@ -862,8 +1242,8 @@ pg.activity_sp_story = {
 				48
 			}
 		}
-	},
-	[52] = {
+	}
+	pg.base.activity_sp_story[52] = {
 		story_type = 2,
 		name = "EP6-2 Obsession's True Form",
 		label_key = "",
@@ -882,8 +1262,8 @@ pg.activity_sp_story = {
 				51
 			}
 		}
-	},
-	[53] = {
+	}
+	pg.base.activity_sp_story[53] = {
 		story_type = 1,
 		name = "EP6-3 Purification",
 		label_key = "",
@@ -902,8 +1282,8 @@ pg.activity_sp_story = {
 				52
 			}
 		}
-	},
-	[54] = {
+	}
+	pg.base.activity_sp_story[54] = {
 		story_type = 1,
 		name = "EPS-3 Heart and Feelings",
 		label_key = "",
@@ -923,8 +1303,8 @@ pg.activity_sp_story = {
 				50
 			}
 		}
-	},
-	[55] = {
+	}
+	pg.base.activity_sp_story[55] = {
 		story_type = 1,
 		name = "EP7-1 Fragmented",
 		label_key = "",
@@ -943,8 +1323,8 @@ pg.activity_sp_story = {
 				59
 			}
 		}
-	},
-	[56] = {
+	}
+	pg.base.activity_sp_story[56] = {
 		story_type = 2,
 		name = "EP7-2 Seething Heart",
 		label_key = "",
@@ -963,8 +1343,8 @@ pg.activity_sp_story = {
 				55
 			}
 		}
-	},
-	[57] = {
+	}
+	pg.base.activity_sp_story[57] = {
 		story_type = 1,
 		name = "EP7-3 Melting",
 		label_key = "",
@@ -983,8 +1363,8 @@ pg.activity_sp_story = {
 				56
 			}
 		}
-	},
-	[58] = {
+	}
+	pg.base.activity_sp_story[58] = {
 		story_type = 1,
 		name = "EP7-4 Reunion",
 		label_key = "",
@@ -1003,8 +1383,8 @@ pg.activity_sp_story = {
 				60
 			}
 		}
-	},
-	[59] = {
+	}
+	pg.base.activity_sp_story[59] = {
 		story_type = 1,
 		name = "EP8-1 Suppressing Naraka",
 		label_key = "",
@@ -1023,8 +1403,8 @@ pg.activity_sp_story = {
 				54
 			}
 		}
-	},
-	[60] = {
+	}
+	pg.base.activity_sp_story[60] = {
 		story_type = 1,
 		name = "EP8-2 Core Sector Operation",
 		label_key = "",
@@ -1043,8 +1423,8 @@ pg.activity_sp_story = {
 				57
 			}
 		}
-	},
-	[61] = {
+	}
+	pg.base.activity_sp_story[61] = {
 		story_type = 1,
 		name = "EP8-3 Moment of Truth",
 		label_key = "",
@@ -1063,8 +1443,8 @@ pg.activity_sp_story = {
 				58
 			}
 		}
-	},
-	[62] = {
+	}
+	pg.base.activity_sp_story[62] = {
 		story_type = 1,
 		name = "EP9-1 The Long Road Home",
 		label_key = "",
@@ -1084,8 +1464,8 @@ pg.activity_sp_story = {
 				61
 			}
 		}
-	},
-	[63] = {
+	}
+	pg.base.activity_sp_story[63] = {
 		story_type = 1,
 		name = "EX-1 Contingency Plan F",
 		label_key = "",
@@ -1104,8 +1484,8 @@ pg.activity_sp_story = {
 				62
 			}
 		}
-	},
-	[64] = {
+	}
+	pg.base.activity_sp_story[64] = {
 		story_type = 1,
 		name = "EX-2 Error",
 		label_key = "",
@@ -1124,8 +1504,8 @@ pg.activity_sp_story = {
 				63
 			}
 		}
-	},
-	[65] = {
+	}
+	pg.base.activity_sp_story[65] = {
 		story_type = 1,
 		name = "EX-3 Thus Spake The Tower",
 		label_key = "",
@@ -1144,8 +1524,8 @@ pg.activity_sp_story = {
 				64
 			}
 		}
-	},
-	[66] = {
+	}
+	pg.base.activity_sp_story[66] = {
 		story_type = 1,
 		name = "EX-4 I, Observer",
 		label_key = "",
@@ -1164,8 +1544,8 @@ pg.activity_sp_story = {
 				65
 			}
 		}
-	},
-	[67] = {
+	}
+	pg.base.activity_sp_story[67] = {
 		story_type = 1,
 		name = "EX-5 Illusory World",
 		label_key = "",
@@ -1184,8 +1564,8 @@ pg.activity_sp_story = {
 				66
 			}
 		}
-	},
-	[68] = {
+	}
+	pg.base.activity_sp_story[68] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -1197,8 +1577,8 @@ pg.activity_sp_story = {
 		change_bgm = "theme-tempest-up",
 		id = 68,
 		lock = ""
-	},
-	[69] = {
+	}
+	pg.base.activity_sp_story[69] = {
 		story_type = 1,
 		name = "EP1-2 Pirate Reunion",
 		label_key = "",
@@ -1217,8 +1597,8 @@ pg.activity_sp_story = {
 				68
 			}
 		}
-	},
-	[70] = {
+	}
+	pg.base.activity_sp_story[70] = {
 		story_type = 1,
 		name = "EP1-3 The Gang's All Here",
 		label_key = "",
@@ -1237,8 +1617,8 @@ pg.activity_sp_story = {
 				69
 			}
 		}
-	},
-	[71] = {
+	}
+	pg.base.activity_sp_story[71] = {
 		story_type = 2,
 		name = "EP1-4 The Treasure Hunters",
 		label_key = "",
@@ -1257,8 +1637,8 @@ pg.activity_sp_story = {
 				70
 			}
 		}
-	},
-	[72] = {
+	}
+	pg.base.activity_sp_story[72] = {
 		story_type = 1,
 		name = "EP2-1 Rebirth and Eternal Life",
 		label_key = "",
@@ -1277,8 +1657,8 @@ pg.activity_sp_story = {
 				71
 			}
 		}
-	},
-	[73] = {
+	}
+	pg.base.activity_sp_story[73] = {
 		story_type = 2,
 		name = "EP2-2 The Treasure Ship Cruises By",
 		label_key = "",
@@ -1297,8 +1677,8 @@ pg.activity_sp_story = {
 				72
 			}
 		}
-	},
-	[74] = {
+	}
+	pg.base.activity_sp_story[74] = {
 		story_type = 1,
 		name = "EP2-3 A New Face",
 		label_key = "",
@@ -1317,8 +1697,8 @@ pg.activity_sp_story = {
 				73
 			}
 		}
-	},
-	[75] = {
+	}
+	pg.base.activity_sp_story[75] = {
 		story_type = 1,
 		name = "EP2-4 Crawling Around",
 		label_key = "",
@@ -1337,8 +1717,8 @@ pg.activity_sp_story = {
 				74
 			}
 		}
-	},
-	[76] = {
+	}
+	pg.base.activity_sp_story[76] = {
 		story_type = 1,
 		name = "EP3-1 Promising Lead",
 		label_key = "",
@@ -1357,8 +1737,8 @@ pg.activity_sp_story = {
 				75
 			}
 		}
-	},
-	[77] = {
+	}
+	pg.base.activity_sp_story[77] = {
 		story_type = 1,
 		name = "EP3-2 The Sleeping Sea",
 		label_key = "",
@@ -1377,8 +1757,8 @@ pg.activity_sp_story = {
 				76
 			}
 		}
-	},
-	[78] = {
+	}
+	pg.base.activity_sp_story[78] = {
 		story_type = 2,
 		name = "EP3-3 The Priest of Wind and Rain",
 		label_key = "",
@@ -1397,8 +1777,8 @@ pg.activity_sp_story = {
 				77
 			}
 		}
-	},
-	[79] = {
+	}
+	pg.base.activity_sp_story[79] = {
 		story_type = 1,
 		name = "EP3-4 The Storm and the Temple",
 		label_key = "",
@@ -1417,8 +1797,8 @@ pg.activity_sp_story = {
 				78
 			}
 		}
-	},
-	[80] = {
+	}
+	pg.base.activity_sp_story[80] = {
 		story_type = 1,
 		name = "EP4-1 The Abyssal Being",
 		label_key = "",
@@ -1437,8 +1817,8 @@ pg.activity_sp_story = {
 				79
 			}
 		}
-	},
-	[81] = {
+	}
+	pg.base.activity_sp_story[81] = {
 		story_type = 2,
 		name = "EP4-2 Silent Souls",
 		label_key = "",
@@ -1457,8 +1837,8 @@ pg.activity_sp_story = {
 				80
 			}
 		}
-	},
-	[82] = {
+	}
+	pg.base.activity_sp_story[82] = {
 		story_type = 1,
 		name = "EP4-3 Central Unit of the Goddess",
 		label_key = "",
@@ -1477,8 +1857,8 @@ pg.activity_sp_story = {
 				81
 			}
 		}
-	},
-	[83] = {
+	}
+	pg.base.activity_sp_story[83] = {
 		story_type = 1,
 		name = "EP4-4 The Choice is Tempesta's",
 		label_key = "",
@@ -1497,8 +1877,8 @@ pg.activity_sp_story = {
 				82
 			}
 		}
-	},
-	[84] = {
+	}
+	pg.base.activity_sp_story[84] = {
 		story_type = 1,
 		name = "EP5-1 The Storm Approaches",
 		label_key = "",
@@ -1517,8 +1897,8 @@ pg.activity_sp_story = {
 				83
 			}
 		}
-	},
-	[85] = {
+	}
+	pg.base.activity_sp_story[85] = {
 		story_type = 1,
 		name = "EP5-2 Echoes of the Wind and Rain",
 		label_key = "",
@@ -1537,8 +1917,8 @@ pg.activity_sp_story = {
 				84
 			}
 		}
-	},
-	[86] = {
+	}
+	pg.base.activity_sp_story[86] = {
 		story_type = 1,
 		name = "EP5-3 Back in My Hand",
 		label_key = "",
@@ -1557,8 +1937,8 @@ pg.activity_sp_story = {
 				85
 			}
 		}
-	},
-	[87] = {
+	}
+	pg.base.activity_sp_story[87] = {
 		story_type = 1,
 		name = "EX-1 The Tale of the Sleeping Sea",
 		label_key = "",
@@ -1577,8 +1957,8 @@ pg.activity_sp_story = {
 				86
 			}
 		}
-	},
-	[88] = {
+	}
+	pg.base.activity_sp_story[88] = {
 		story_type = 1,
 		name = "EX-2 Tempesta's Messenger",
 		label_key = "",
@@ -1597,8 +1977,8 @@ pg.activity_sp_story = {
 				87
 			}
 		}
-	},
-	[89] = {
+	}
+	pg.base.activity_sp_story[89] = {
 		story_type = 1,
 		name = "EX-3 A Priest and The Servant",
 		label_key = "",
@@ -1617,8 +1997,8 @@ pg.activity_sp_story = {
 				88
 			}
 		}
-	},
-	[90] = {
+	}
+	pg.base.activity_sp_story[90] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -1630,8 +2010,8 @@ pg.activity_sp_story = {
 		change_bgm = "story-richang-refreshing",
 		id = 90,
 		lock = ""
-	},
-	[91] = {
+	}
+	pg.base.activity_sp_story[91] = {
 		story_type = 1,
 		name = "EP1-1 Questy MacGuffin",
 		label_key = "",
@@ -1650,8 +2030,8 @@ pg.activity_sp_story = {
 				90
 			}
 		}
-	},
-	[92] = {
+	}
+	pg.base.activity_sp_story[92] = {
 		story_type = 1,
 		name = "EP1-2 A Rigging Test Drive",
 		label_key = "",
@@ -1670,8 +2050,8 @@ pg.activity_sp_story = {
 				91
 			}
 		}
-	},
-	[93] = {
+	}
+	pg.base.activity_sp_story[93] = {
 		story_type = 2,
 		name = "EP1-3 The Royal Navy Strikes",
 		label_key = "",
@@ -1690,8 +2070,8 @@ pg.activity_sp_story = {
 				92
 			}
 		}
-	},
-	[94] = {
+	}
+	pg.base.activity_sp_story[94] = {
 		story_type = 1,
 		name = "EP1-4 A Queen's Invitation",
 		label_key = "",
@@ -1710,8 +2090,8 @@ pg.activity_sp_story = {
 				93
 			}
 		}
-	},
-	[95] = {
+	}
+	pg.base.activity_sp_story[95] = {
 		story_type = 1,
 		name = "EP2-1 They Return",
 		label_key = "",
@@ -1730,8 +2110,8 @@ pg.activity_sp_story = {
 				94
 			}
 		}
-	},
-	[96] = {
+	}
+	pg.base.activity_sp_story[96] = {
 		story_type = 2,
 		name = "EP2-2 The Doppelganger's Challenge",
 		label_key = "",
@@ -1750,8 +2130,8 @@ pg.activity_sp_story = {
 				95
 			}
 		}
-	},
-	[97] = {
+	}
+	pg.base.activity_sp_story[97] = {
 		story_type = 1,
 		name = "EP2-3 Tea Time",
 		label_key = "",
@@ -1770,8 +2150,8 @@ pg.activity_sp_story = {
 				96
 			}
 		}
-	},
-	[98] = {
+	}
+	pg.base.activity_sp_story[98] = {
 		story_type = 1,
 		name = "EPS-2 The Next Step",
 		label_key = "",
@@ -1790,8 +2170,8 @@ pg.activity_sp_story = {
 				97
 			}
 		}
-	},
-	[99] = {
+	}
+	pg.base.activity_sp_story[99] = {
 		story_type = 1,
 		name = "EP3-1 First Checkpoint",
 		label_key = "",
@@ -1810,8 +2190,8 @@ pg.activity_sp_story = {
 				98
 			}
 		}
-	},
-	[100] = {
+	}
+	pg.base.activity_sp_story[100] = {
 		story_type = 1,
 		name = "EP3-2 Second Checkpoint",
 		label_key = "",
@@ -1830,8 +2210,8 @@ pg.activity_sp_story = {
 				99
 			}
 		}
-	},
-	[101] = {
+	}
+	pg.base.activity_sp_story[101] = {
 		story_type = 1,
 		name = "EP3-3 Third Checkpoint",
 		label_key = "",
@@ -1850,8 +2230,8 @@ pg.activity_sp_story = {
 				100
 			}
 		}
-	},
-	[102] = {
+	}
+	pg.base.activity_sp_story[102] = {
 		story_type = 2,
 		name = "EP3-4 Balance Update",
 		label_key = "",
@@ -1872,8 +2252,8 @@ pg.activity_sp_story = {
 				101
 			}
 		}
-	},
-	[103] = {
+	}
+	pg.base.activity_sp_story[103] = {
 		story_type = 1,
 		name = "EP4-1 Back at Sea",
 		label_key = "",
@@ -1892,8 +2272,8 @@ pg.activity_sp_story = {
 				102
 			}
 		}
-	},
-	[104] = {
+	}
+	pg.base.activity_sp_story[104] = {
 		story_type = 2,
 		name = "EP4-2 Turning the Tables",
 		label_key = "",
@@ -1912,8 +2292,8 @@ pg.activity_sp_story = {
 				103
 			}
 		}
-	},
-	[105] = {
+	}
+	pg.base.activity_sp_story[105] = {
 		story_type = 2,
 		name = "EP5-1 The Final Challenge",
 		label_key = "",
@@ -1932,8 +2312,8 @@ pg.activity_sp_story = {
 				104
 			}
 		}
-	},
-	[106] = {
+	}
+	pg.base.activity_sp_story[106] = {
 		story_type = 1,
 		name = "EPS-3 The Epilogue's Only Just Begun",
 		label_key = "",
@@ -1952,8 +2332,8 @@ pg.activity_sp_story = {
 				105
 			}
 		}
-	},
-	[107] = {
+	}
+	pg.base.activity_sp_story[107] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -1965,8 +2345,10 @@ pg.activity_sp_story = {
 		change_bgm = "story-ironblood-light",
 		id = 107,
 		lock = ""
-	},
-	[108] = {
+	}
+end)()
+;(function()
+	pg.base.activity_sp_story[108] = {
 		story_type = 1,
 		name = "EP1-2 Building Rapport",
 		label_key = "",
@@ -1985,8 +2367,8 @@ pg.activity_sp_story = {
 				107
 			}
 		}
-	},
-	[109] = {
+	}
+	pg.base.activity_sp_story[109] = {
 		story_type = 1,
 		name = "EP1-3 The Resistance",
 		label_key = "",
@@ -2005,8 +2387,8 @@ pg.activity_sp_story = {
 				108
 			}
 		}
-	},
-	[110] = {
+	}
+	pg.base.activity_sp_story[110] = {
 		story_type = 1,
 		name = "EP1-4 The Base at Sunset",
 		label_key = "",
@@ -2025,8 +2407,8 @@ pg.activity_sp_story = {
 				109
 			}
 		}
-	},
-	[111] = {
+	}
+	pg.base.activity_sp_story[111] = {
 		story_type = 2,
 		name = "EP1-5 That Sinking Feeling",
 		label_key = "",
@@ -2045,8 +2427,8 @@ pg.activity_sp_story = {
 				110
 			}
 		}
-	},
-	[112] = {
+	}
+	pg.base.activity_sp_story[112] = {
 		story_type = 1,
 		name = "EPS1-1 A Distant Bout",
 		label_key = "",
@@ -2065,8 +2447,8 @@ pg.activity_sp_story = {
 				111
 			}
 		}
-	},
-	[113] = {
+	}
+	pg.base.activity_sp_story[113] = {
 		story_type = 1,
 		name = "EPS1-2 In the Sakura Pavilion",
 		label_key = "",
@@ -2085,8 +2467,8 @@ pg.activity_sp_story = {
 				112
 			}
 		}
-	},
-	[114] = {
+	}
+	pg.base.activity_sp_story[114] = {
 		story_type = 1,
 		name = "EPS1-3 An Old Friend",
 		label_key = "",
@@ -2105,8 +2487,8 @@ pg.activity_sp_story = {
 				113
 			}
 		}
-	},
-	[115] = {
+	}
+	pg.base.activity_sp_story[115] = {
 		story_type = 1,
 		name = "EP2-1 A Second Chance",
 		label_key = "",
@@ -2127,8 +2509,8 @@ pg.activity_sp_story = {
 				114
 			}
 		}
-	},
-	[116] = {
+	}
+	pg.base.activity_sp_story[116] = {
 		story_type = 1,
 		name = "EP2-2 Restoring the Eternal Stars",
 		label_key = "",
@@ -2147,8 +2529,8 @@ pg.activity_sp_story = {
 				115
 			}
 		}
-	},
-	[117] = {
+	}
+	pg.base.activity_sp_story[117] = {
 		story_type = 1,
 		name = "EP2-3 Crystallized Power",
 		label_key = "",
@@ -2167,8 +2549,8 @@ pg.activity_sp_story = {
 				116
 			}
 		}
-	},
-	[118] = {
+	}
+	pg.base.activity_sp_story[118] = {
 		story_type = 2,
 		name = "EP2-4 Sacrificial Hunt",
 		label_key = "",
@@ -2187,8 +2569,8 @@ pg.activity_sp_story = {
 				117
 			}
 		}
-	},
-	[119] = {
+	}
+	pg.base.activity_sp_story[119] = {
 		story_type = 1,
 		name = "EPS2-1 Indirect Positioning",
 		label_key = "",
@@ -2207,8 +2589,8 @@ pg.activity_sp_story = {
 				118
 			}
 		}
-	},
-	[120] = {
+	}
+	pg.base.activity_sp_story[120] = {
 		story_type = 1,
 		name = "EPS2-2 About the Commander",
 		label_key = "",
@@ -2227,8 +2609,8 @@ pg.activity_sp_story = {
 				119
 			}
 		}
-	},
-	[121] = {
+	}
+	pg.base.activity_sp_story[121] = {
 		story_type = 1,
 		name = "EPS2-3 Deliberation and Discussion",
 		label_key = "",
@@ -2247,8 +2629,8 @@ pg.activity_sp_story = {
 				120
 			}
 		}
-	},
-	[122] = {
+	}
+	pg.base.activity_sp_story[122] = {
 		story_type = 1,
 		name = "EP3-1 Preparations",
 		label_key = "",
@@ -2269,8 +2651,8 @@ pg.activity_sp_story = {
 				121
 			}
 		}
-	},
-	[123] = {
+	}
+	pg.base.activity_sp_story[123] = {
 		story_type = 1,
 		name = "EP3-2 To the Headquarters' Defense",
 		label_key = "",
@@ -2289,8 +2671,8 @@ pg.activity_sp_story = {
 				122
 			}
 		}
-	},
-	[124] = {
+	}
+	pg.base.activity_sp_story[124] = {
 		story_type = 2,
 		name = "EP3-3 Ruler of the Stars",
 		label_key = "",
@@ -2309,8 +2691,8 @@ pg.activity_sp_story = {
 				123
 			}
 		}
-	},
-	[125] = {
+	}
+	pg.base.activity_sp_story[125] = {
 		story_type = 1,
 		name = "EPS3-1 Within the Magic Circle",
 		label_key = "",
@@ -2329,8 +2711,8 @@ pg.activity_sp_story = {
 				124
 			}
 		}
-	},
-	[126] = {
+	}
+	pg.base.activity_sp_story[126] = {
 		story_type = 1,
 		name = "EPS3-2 The Limits of Possibility",
 		label_key = "",
@@ -2349,8 +2731,8 @@ pg.activity_sp_story = {
 				125
 			}
 		}
-	},
-	[127] = {
+	}
+	pg.base.activity_sp_story[127] = {
 		story_type = 1,
 		name = "EP4-1 Prepare for the Showdown",
 		label_key = "",
@@ -2370,8 +2752,8 @@ pg.activity_sp_story = {
 				126
 			}
 		}
-	},
-	[128] = {
+	}
+	pg.base.activity_sp_story[128] = {
 		story_type = 2,
 		name = "EP4-2 Vanish in the Mist",
 		label_key = "",
@@ -2390,8 +2772,8 @@ pg.activity_sp_story = {
 				127
 			}
 		}
-	},
-	[129] = {
+	}
+	pg.base.activity_sp_story[129] = {
 		story_type = 1,
 		name = "EPS4-1 Recollection",
 		label_key = "",
@@ -2410,8 +2792,8 @@ pg.activity_sp_story = {
 				128
 			}
 		}
-	},
-	[130] = {
+	}
+	pg.base.activity_sp_story[130] = {
 		story_type = 1,
 		name = "EPS4-2 United as One",
 		label_key = "",
@@ -2430,8 +2812,8 @@ pg.activity_sp_story = {
 				129
 			}
 		}
-	},
-	[131] = {
+	}
+	pg.base.activity_sp_story[131] = {
 		story_type = 1,
 		name = "EP5-1 Another Plan",
 		label_key = "",
@@ -2451,8 +2833,8 @@ pg.activity_sp_story = {
 				130
 			}
 		}
-	},
-	[132] = {
+	}
+	pg.base.activity_sp_story[132] = {
 		story_type = 1,
 		name = "EP5-2 Emotion Given Form",
 		label_key = "",
@@ -2471,8 +2853,8 @@ pg.activity_sp_story = {
 				131
 			}
 		}
-	},
-	[133] = {
+	}
+	pg.base.activity_sp_story[133] = {
 		story_type = 2,
 		name = "EP5-3 Side by Side",
 		label_key = "",
@@ -2491,8 +2873,8 @@ pg.activity_sp_story = {
 				132
 			}
 		}
-	},
-	[134] = {
+	}
+	pg.base.activity_sp_story[134] = {
 		story_type = 1,
 		name = "EP5-4 The Magician's Divination",
 		label_key = "",
@@ -2511,8 +2893,8 @@ pg.activity_sp_story = {
 				133
 			}
 		}
-	},
-	[135] = {
+	}
+	pg.base.activity_sp_story[135] = {
 		story_type = 1,
 		name = "EP5-5 Epilogue",
 		label_key = "",
@@ -2531,8 +2913,8 @@ pg.activity_sp_story = {
 				134
 			}
 		}
-	},
-	[136] = {
+	}
+	pg.base.activity_sp_story[136] = {
 		story_type = 1,
 		name = "EX-1 The Tip of the Iceberg",
 		label_key = "",
@@ -2551,8 +2933,8 @@ pg.activity_sp_story = {
 				135
 			}
 		}
-	},
-	[137] = {
+	}
+	pg.base.activity_sp_story[137] = {
 		story_type = 1,
 		name = "EX-2 Onwards to the Future",
 		label_key = "",
@@ -2571,8 +2953,8 @@ pg.activity_sp_story = {
 				136
 			}
 		}
-	},
-	[138] = {
+	}
+	pg.base.activity_sp_story[138] = {
 		story_type = 1,
 		name = "EX-3 Her New Toy",
 		label_key = "",
@@ -2591,8 +2973,8 @@ pg.activity_sp_story = {
 				137
 			}
 		}
-	},
-	[139] = {
+	}
+	pg.base.activity_sp_story[139] = {
 		story_type = 1,
 		name = "EX-4 The Chosen Few",
 		label_key = "",
@@ -2611,8 +2993,8 @@ pg.activity_sp_story = {
 				138
 			}
 		}
-	},
-	[141] = {
+	}
+	pg.base.activity_sp_story[141] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -2624,8 +3006,8 @@ pg.activity_sp_story = {
 		change_bgm = "story-theme-sardinia",
 		id = 141,
 		lock = ""
-	},
-	[142] = {
+	}
+	pg.base.activity_sp_story[142] = {
 		story_type = 1,
 		name = "EP1-2 The Sardegnia League",
 		label_key = "",
@@ -2644,8 +3026,8 @@ pg.activity_sp_story = {
 				141
 			}
 		}
-	},
-	[143] = {
+	}
+	pg.base.activity_sp_story[143] = {
 		story_type = 1,
 		name = "EP1-3 Belief or Conceptualization?",
 		label_key = "",
@@ -2664,8 +3046,8 @@ pg.activity_sp_story = {
 				142
 			}
 		}
-	},
-	[144] = {
+	}
+	pg.base.activity_sp_story[144] = {
 		story_type = 1,
 		name = "EP1-4 Gate of the Chosen One",
 		label_key = "",
@@ -2684,8 +3066,8 @@ pg.activity_sp_story = {
 				143
 			}
 		}
-	},
-	[145] = {
+	}
+	pg.base.activity_sp_story[145] = {
 		story_type = 1,
 		name = "EPS1-1 First Step Into Night",
 		label_key = "",
@@ -2704,8 +3086,8 @@ pg.activity_sp_story = {
 				144
 			}
 		}
-	},
-	[146] = {
+	}
+	pg.base.activity_sp_story[146] = {
 		story_type = 1,
 		name = "EPS1-2 Gate II",
 		label_key = "",
@@ -2724,8 +3106,8 @@ pg.activity_sp_story = {
 				145
 			}
 		}
-	},
-	[147] = {
+	}
+	pg.base.activity_sp_story[147] = {
 		story_type = 1,
 		name = "EP2-1 Marco Polo's Dream",
 		label_key = "",
@@ -2745,8 +3127,8 @@ pg.activity_sp_story = {
 				146
 			}
 		}
-	},
-	[148] = {
+	}
+	pg.base.activity_sp_story[148] = {
 		story_type = 1,
 		name = "EPS2-1 Gate III",
 		label_key = "",
@@ -2765,8 +3147,8 @@ pg.activity_sp_story = {
 				147
 			}
 		}
-	},
-	[149] = {
+	}
+	pg.base.activity_sp_story[149] = {
 		story_type = 1,
 		name = "EP2-2 The Apostle's Afternoon",
 		label_key = "",
@@ -2785,8 +3167,8 @@ pg.activity_sp_story = {
 				148
 			}
 		}
-	},
-	[150] = {
+	}
+	pg.base.activity_sp_story[150] = {
 		story_type = 1,
 		name = "EP2-3 Destroyer of Darkness",
 		label_key = "",
@@ -2806,8 +3188,8 @@ pg.activity_sp_story = {
 				149
 			}
 		}
-	},
-	[151] = {
+	}
+	pg.base.activity_sp_story[151] = {
 		story_type = 1,
 		name = "EPS2-2 Second Step Into Night",
 		label_key = "",
@@ -2826,8 +3208,8 @@ pg.activity_sp_story = {
 				150
 			}
 		}
-	},
-	[152] = {
+	}
+	pg.base.activity_sp_story[152] = {
 		story_type = 1,
 		name = "EPS2-3 Gate IV",
 		label_key = "",
@@ -2846,8 +3228,8 @@ pg.activity_sp_story = {
 				151
 			}
 		}
-	},
-	[153] = {
+	}
+	pg.base.activity_sp_story[153] = {
 		story_type = 1,
 		name = "EP2-4 Declaration of War",
 		label_key = "",
@@ -2866,8 +3248,8 @@ pg.activity_sp_story = {
 				152
 			}
 		}
-	},
-	[154] = {
+	}
+	pg.base.activity_sp_story[154] = {
 		story_type = 2,
 		name = "EP3-1 Ambush on the Arno River",
 		label_key = "",
@@ -2888,8 +3270,8 @@ pg.activity_sp_story = {
 				153
 			}
 		}
-	},
-	[155] = {
+	}
+	pg.base.activity_sp_story[155] = {
 		story_type = 1,
 		name = "EPS3-1 Third Step Into Night",
 		label_key = "",
@@ -2908,8 +3290,8 @@ pg.activity_sp_story = {
 				154
 			}
 		}
-	},
-	[156] = {
+	}
+	pg.base.activity_sp_story[156] = {
 		story_type = 1,
 		name = "EP3-2 Rite of the Final Judgment",
 		label_key = "",
@@ -2928,8 +3310,8 @@ pg.activity_sp_story = {
 				155
 			}
 		}
-	},
-	[157] = {
+	}
+	pg.base.activity_sp_story[157] = {
 		story_type = 1,
 		name = "EPS3-2 Gate V-VI",
 		label_key = "",
@@ -2948,8 +3330,8 @@ pg.activity_sp_story = {
 				156
 			}
 		}
-	},
-	[158] = {
+	}
+	pg.base.activity_sp_story[158] = {
 		story_type = 1,
 		name = "EP3-3 A Bold Plan",
 		label_key = "",
@@ -2970,8 +3352,8 @@ pg.activity_sp_story = {
 				157
 			}
 		}
-	},
-	[159] = {
+	}
+	pg.base.activity_sp_story[159] = {
 		story_type = 2,
 		name = "EP3-4 Showdown Between Light and Dark?",
 		label_key = "",
@@ -2990,8 +3372,8 @@ pg.activity_sp_story = {
 				158
 			}
 		}
-	},
-	[160] = {
+	}
+	pg.base.activity_sp_story[160] = {
 		story_type = 1,
 		name = "EP3-5 The Silent Statue",
 		label_key = "",
@@ -3010,8 +3392,8 @@ pg.activity_sp_story = {
 				159
 			}
 		}
-	},
-	[161] = {
+	}
+	pg.base.activity_sp_story[161] = {
 		story_type = 1,
 		name = "EP4-1 Unforeseen Development",
 		label_key = "",
@@ -3031,8 +3413,8 @@ pg.activity_sp_story = {
 				160
 			}
 		}
-	},
-	[162] = {
+	}
+	pg.base.activity_sp_story[162] = {
 		story_type = 1,
 		name = "EPS4-1 Gate VII",
 		label_key = "",
@@ -3051,8 +3433,8 @@ pg.activity_sp_story = {
 				161
 			}
 		}
-	},
-	[163] = {
+	}
+	pg.base.activity_sp_story[163] = {
 		story_type = 1,
 		name = "EP4-2 Two-Way Interference",
 		label_key = "",
@@ -3071,8 +3453,8 @@ pg.activity_sp_story = {
 				162
 			}
 		}
-	},
-	[164] = {
+	}
+	pg.base.activity_sp_story[164] = {
 		story_type = 1,
 		name = "EP4-3 Gate VIII-X",
 		label_key = "",
@@ -3091,8 +3473,8 @@ pg.activity_sp_story = {
 				163
 			}
 		}
-	},
-	[165] = {
+	}
+	pg.base.activity_sp_story[165] = {
 		story_type = 1,
 		name = "EP5-1 Baiting the Enemy",
 		label_key = "",
@@ -3111,8 +3493,8 @@ pg.activity_sp_story = {
 				164
 			}
 		}
-	},
-	[166] = {
+	}
+	pg.base.activity_sp_story[166] = {
 		story_type = 1,
 		name = "EP5-2 Gate XI",
 		label_key = "",
@@ -3131,8 +3513,8 @@ pg.activity_sp_story = {
 				165
 			}
 		}
-	},
-	[167] = {
+	}
+	pg.base.activity_sp_story[167] = {
 		story_type = 2,
 		name = "EP5-3 Final Battle - Part 1",
 		label_key = "",
@@ -3151,8 +3533,8 @@ pg.activity_sp_story = {
 				166
 			}
 		}
-	},
-	[168] = {
+	}
+	pg.base.activity_sp_story[168] = {
 		story_type = 2,
 		name = "EPS5-1 Final Battle - Part 2",
 		label_key = "",
@@ -3171,8 +3553,8 @@ pg.activity_sp_story = {
 				167
 			}
 		}
-	},
-	[169] = {
+	}
+	pg.base.activity_sp_story[169] = {
 		story_type = 2,
 		name = "EP6-1 Final Battle - Part 3",
 		label_key = "",
@@ -3191,8 +3573,8 @@ pg.activity_sp_story = {
 				168
 			}
 		}
-	},
-	[170] = {
+	}
+	pg.base.activity_sp_story[170] = {
 		story_type = 1,
 		name = "EP6-2 With God By My Side",
 		label_key = "",
@@ -3211,8 +3593,8 @@ pg.activity_sp_story = {
 				169
 			}
 		}
-	},
-	[171] = {
+	}
+	pg.base.activity_sp_story[171] = {
 		story_type = 1,
 		name = "EP6-3 Epilogue",
 		label_key = "",
@@ -3231,8 +3613,8 @@ pg.activity_sp_story = {
 				170
 			}
 		}
-	},
-	[172] = {
+	}
+	pg.base.activity_sp_story[172] = {
 		story_type = 1,
 		name = "EX-1 Continuation",
 		label_key = "",
@@ -3251,8 +3633,8 @@ pg.activity_sp_story = {
 				171
 			}
 		}
-	},
-	[173] = {
+	}
+	pg.base.activity_sp_story[173] = {
 		story_type = 1,
 		name = "EX-2 We Will Meet Again",
 		label_key = "",
@@ -3271,8 +3653,8 @@ pg.activity_sp_story = {
 				172
 			}
 		}
-	},
-	[174] = {
+	}
+	pg.base.activity_sp_story[174] = {
 		story_type = 1,
 		name = "EX-3 The Sprout of Tulipa",
 		label_key = "",
@@ -3291,8 +3673,8 @@ pg.activity_sp_story = {
 				173
 			}
 		}
-	},
-	[175] = {
+	}
+	pg.base.activity_sp_story[175] = {
 		story_type = 1,
 		name = "EX-4 Trouble on the Horizon",
 		label_key = "",
@@ -3311,8 +3693,8 @@ pg.activity_sp_story = {
 				174
 			}
 		}
-	},
-	[176] = {
+	}
+	pg.base.activity_sp_story[176] = {
 		story_type = 1,
 		name = "EX-5 Her",
 		label_key = "",
@@ -3331,8 +3713,8 @@ pg.activity_sp_story = {
 				175
 			}
 		}
-	},
-	[181] = {
+	}
+	pg.base.activity_sp_story[181] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -3344,8 +3726,8 @@ pg.activity_sp_story = {
 		change_bgm = "story-richang-light",
 		id = 181,
 		lock = ""
-	},
-	[182] = {
+	}
+	pg.base.activity_sp_story[182] = {
 		story_type = 1,
 		name = "EPS-2 The NA Ocean Purification Campaign",
 		label_key = "",
@@ -3364,8 +3746,8 @@ pg.activity_sp_story = {
 				181
 			}
 		}
-	},
-	[183] = {
+	}
+	pg.base.activity_sp_story[183] = {
 		story_type = 1,
 		name = "EPS-3 Nieuwe Haven",
 		label_key = "",
@@ -3384,8 +3766,8 @@ pg.activity_sp_story = {
 				182
 			}
 		}
-	},
-	[184] = {
+	}
+	pg.base.activity_sp_story[184] = {
 		story_type = 1,
 		name = "EPS-4 Supplementary Intel",
 		label_key = "",
@@ -3404,8 +3786,8 @@ pg.activity_sp_story = {
 				183
 			}
 		}
-	},
-	[185] = {
+	}
+	pg.base.activity_sp_story[185] = {
 		story_type = 1,
 		name = "EPS-5 Setting Sail",
 		label_key = "",
@@ -3424,8 +3806,8 @@ pg.activity_sp_story = {
 				184
 			}
 		}
-	},
-	[186] = {
+	}
+	pg.base.activity_sp_story[186] = {
 		story_type = 2,
 		name = "EPS-6 The Tulipans' First Battle – 1",
 		label_key = "",
@@ -3444,8 +3826,8 @@ pg.activity_sp_story = {
 				185
 			}
 		}
-	},
-	[187] = {
+	}
+	pg.base.activity_sp_story[187] = {
 		story_type = 2,
 		name = "EPS-7 The Tulipans' First Battle – 2",
 		label_key = "",
@@ -3464,8 +3846,8 @@ pg.activity_sp_story = {
 				186
 			}
 		}
-	},
-	[188] = {
+	}
+	pg.base.activity_sp_story[188] = {
 		story_type = 1,
 		name = "EPS-8 Flames and Sprouts",
 		label_key = "",
@@ -3484,8 +3866,8 @@ pg.activity_sp_story = {
 				187
 			}
 		}
-	},
-	[191] = {
+	}
+	pg.base.activity_sp_story[191] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -3497,8 +3879,8 @@ pg.activity_sp_story = {
 		change_bgm = "theme-brokenworld-sad",
 		id = 191,
 		lock = ""
-	},
-	[192] = {
+	}
+	pg.base.activity_sp_story[192] = {
 		story_type = 1,
 		name = "EP1-1 The Dead Land",
 		label_key = "",
@@ -3517,8 +3899,8 @@ pg.activity_sp_story = {
 				191
 			}
 		}
-	},
-	[193] = {
+	}
+	pg.base.activity_sp_story[193] = {
 		story_type = 1,
 		name = "EP2-1 The Mesektet",
 		label_key = "",
@@ -3537,8 +3919,8 @@ pg.activity_sp_story = {
 				192
 			}
 		}
-	},
-	[194] = {
+	}
+	pg.base.activity_sp_story[194] = {
 		story_type = 1,
 		name = "EP2-2 Rising Tide",
 		label_key = "",
@@ -3557,8 +3939,8 @@ pg.activity_sp_story = {
 				193
 			}
 		}
-	},
-	[195] = {
+	}
+	pg.base.activity_sp_story[195] = {
 		story_type = 1,
 		name = "EP1-2 Time-Flow Differentials",
 		label_key = "",
@@ -3577,8 +3959,8 @@ pg.activity_sp_story = {
 				194
 			}
 		}
-	},
-	[196] = {
+	}
+	pg.base.activity_sp_story[196] = {
 		story_type = 1,
 		name = "EP2-3 Landfall and Adversaries",
 		label_key = "",
@@ -3597,8 +3979,8 @@ pg.activity_sp_story = {
 				195
 			}
 		}
-	},
-	[197] = {
+	}
+	pg.base.activity_sp_story[197] = {
 		story_type = 1,
 		name = "EPS-2 Eyes on the Battle",
 		label_key = "",
@@ -3618,8 +4000,8 @@ pg.activity_sp_story = {
 				196
 			}
 		}
-	},
-	[198] = {
+	}
+	pg.base.activity_sp_story[198] = {
 		story_type = 2,
 		name = "EP3-1 The Train and the Barque",
 		label_key = "",
@@ -3638,8 +4020,8 @@ pg.activity_sp_story = {
 				197
 			}
 		}
-	},
-	[199] = {
+	}
+	pg.base.activity_sp_story[199] = {
 		story_type = 1,
 		name = "EP3-2 Survivors of the Rose Tower",
 		label_key = "",
@@ -3658,8 +4040,8 @@ pg.activity_sp_story = {
 				198
 			}
 		}
-	},
-	[200] = {
+	}
+	pg.base.activity_sp_story[200] = {
 		story_type = 1,
 		name = "EP3-3 A World Without Elizabeth",
 		label_key = "",
@@ -3678,8 +4060,8 @@ pg.activity_sp_story = {
 				199
 			}
 		}
-	},
-	[201] = {
+	}
+	pg.base.activity_sp_story[201] = {
 		story_type = 1,
 		name = "EP3-4 Buds of the New Moon",
 		label_key = "",
@@ -3698,8 +4080,8 @@ pg.activity_sp_story = {
 				200
 			}
 		}
-	},
-	[202] = {
+	}
+	pg.base.activity_sp_story[202] = {
 		story_type = 1,
 		name = "EPS-3 Inspecting the Whale",
 		label_key = "",
@@ -3718,8 +4100,8 @@ pg.activity_sp_story = {
 				201
 			}
 		}
-	},
-	[203] = {
+	}
+	pg.base.activity_sp_story[203] = {
 		story_type = 1,
 		name = "EP4-1 Danger Intensifies",
 		label_key = "",
@@ -3738,8 +4120,8 @@ pg.activity_sp_story = {
 				202
 			}
 		}
-	},
-	[204] = {
+	}
+	pg.base.activity_sp_story[204] = {
 		story_type = 1,
 		name = "EP5-1 Exploring the Unknown",
 		label_key = "",
@@ -3758,8 +4140,8 @@ pg.activity_sp_story = {
 				203
 			}
 		}
-	},
-	[205] = {
+	}
+	pg.base.activity_sp_story[205] = {
 		story_type = 1,
 		name = "EP4-2 Transcendental Insight",
 		label_key = "",
@@ -3778,8 +4160,8 @@ pg.activity_sp_story = {
 				204
 			}
 		}
-	},
-	[206] = {
+	}
+	pg.base.activity_sp_story[206] = {
 		story_type = 1,
 		name = "EP5-2 Compiler the Reliable",
 		label_key = "",
@@ -3798,8 +4180,8 @@ pg.activity_sp_story = {
 				205
 			}
 		}
-	},
-	[207] = {
+	}
+	pg.base.activity_sp_story[207] = {
 		story_type = 1,
 		name = "EP4-3 A Different Royal Navy",
 		label_key = "",
@@ -3818,8 +4200,8 @@ pg.activity_sp_story = {
 				206
 			}
 		}
-	},
-	[208] = {
+	}
+	pg.base.activity_sp_story[208] = {
 		story_type = 2,
 		name = "EPS-4 Compiler the Overly Reliable",
 		label_key = "",
@@ -3839,8 +4221,8 @@ pg.activity_sp_story = {
 				207
 			}
 		}
-	},
-	[209] = {
+	}
+	pg.base.activity_sp_story[209] = {
 		story_type = 1,
 		name = "EP6-1 Invasion Plan",
 		label_key = "",
@@ -3859,8 +4241,8 @@ pg.activity_sp_story = {
 				208
 			}
 		}
-	},
-	[210] = {
+	}
+	pg.base.activity_sp_story[210] = {
 		story_type = 1,
 		name = "EP6-2 In the Name of the Eternal Sun",
 		label_key = "",
@@ -3879,8 +4261,8 @@ pg.activity_sp_story = {
 				209
 			}
 		}
-	},
-	[211] = {
+	}
+	pg.base.activity_sp_story[211] = {
 		story_type = 1,
 		name = "EP6-3 Bridge to the Beyond",
 		label_key = "",
@@ -3899,8 +4281,8 @@ pg.activity_sp_story = {
 				210
 			}
 		}
-	},
-	[212] = {
+	}
+	pg.base.activity_sp_story[212] = {
 		story_type = 1,
 		name = "EP7-1 Greater Plans",
 		label_key = "",
@@ -3919,8 +4301,8 @@ pg.activity_sp_story = {
 				211
 			}
 		}
-	},
-	[213] = {
+	}
+	pg.base.activity_sp_story[213] = {
 		story_type = 1,
 		name = "EP7-2 Admiral Mikhail",
 		label_key = "",
@@ -3939,8 +4321,8 @@ pg.activity_sp_story = {
 				212
 			}
 		}
-	},
-	[214] = {
+	}
+	pg.base.activity_sp_story[214] = {
 		story_type = 1,
 		name = "EP7-3 Tea Party with Glorious",
 		label_key = "",
@@ -3959,8 +4341,10 @@ pg.activity_sp_story = {
 				213
 			}
 		}
-	},
-	[215] = {
+	}
+end)()
+;(function()
+	pg.base.activity_sp_story[215] = {
 		story_type = 1,
 		name = "EP8-1 Preparing for War",
 		label_key = "",
@@ -3979,8 +4363,8 @@ pg.activity_sp_story = {
 				214
 			}
 		}
-	},
-	[216] = {
+	}
+	pg.base.activity_sp_story[216] = {
 		story_type = 2,
 		name = "EP8-2 Class II Mimic Entities",
 		label_key = "",
@@ -3999,8 +4383,8 @@ pg.activity_sp_story = {
 				215
 			}
 		}
-	},
-	[217] = {
+	}
+	pg.base.activity_sp_story[217] = {
 		story_type = 1,
 		name = "EP8-3 By a Hair",
 		label_key = "",
@@ -4019,8 +4403,8 @@ pg.activity_sp_story = {
 				216
 			}
 		}
-	},
-	[218] = {
+	}
+	pg.base.activity_sp_story[218] = {
 		story_type = 1,
 		name = "EP8-4 Glorious' Choice",
 		label_key = "",
@@ -4039,8 +4423,8 @@ pg.activity_sp_story = {
 				217
 			}
 		}
-	},
-	[219] = {
+	}
+	pg.base.activity_sp_story[219] = {
 		story_type = 1,
 		name = "EP9-1 Impending Decision",
 		label_key = "",
@@ -4059,8 +4443,8 @@ pg.activity_sp_story = {
 				218
 			}
 		}
-	},
-	[220] = {
+	}
+	pg.base.activity_sp_story[220] = {
 		story_type = 1,
 		name = "EP9-2 A Miracle for Me, a Miracle for Thee",
 		label_key = "",
@@ -4079,8 +4463,8 @@ pg.activity_sp_story = {
 				219
 			}
 		}
-	},
-	[221] = {
+	}
+	pg.base.activity_sp_story[221] = {
 		story_type = 1,
 		name = "EP9-3 The Grand Finale",
 		label_key = "",
@@ -4099,8 +4483,8 @@ pg.activity_sp_story = {
 				220
 			}
 		}
-	},
-	[222] = {
+	}
+	pg.base.activity_sp_story[222] = {
 		story_type = 1,
 		name = "EX-1 The Price of Victory",
 		label_key = "",
@@ -4119,8 +4503,8 @@ pg.activity_sp_story = {
 				221
 			}
 		}
-	},
-	[223] = {
+	}
+	pg.base.activity_sp_story[223] = {
 		story_type = 1,
 		name = "EX-2 Transboundary Experiment",
 		label_key = "",
@@ -4139,8 +4523,8 @@ pg.activity_sp_story = {
 				222
 			}
 		}
-	},
-	[224] = {
+	}
+	pg.base.activity_sp_story[224] = {
 		story_type = 1,
 		name = "EX-3 All Set",
 		label_key = "",
@@ -4159,8 +4543,8 @@ pg.activity_sp_story = {
 				223
 			}
 		}
-	},
-	[225] = {
+	}
+	pg.base.activity_sp_story[225] = {
 		story_type = 1,
 		name = "EX-4 Changing the Ashes",
 		label_key = "",
@@ -4179,8 +4563,8 @@ pg.activity_sp_story = {
 				224
 			}
 		}
-	},
-	[226] = {
+	}
+	pg.base.activity_sp_story[226] = {
 		story_type = 1,
 		name = "EX-5 Tower the Guiltless",
 		label_key = "",
@@ -4199,8 +4583,8 @@ pg.activity_sp_story = {
 				225
 			}
 		}
-	},
-	[231] = {
+	}
+	pg.base.activity_sp_story[231] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -4212,8 +4596,8 @@ pg.activity_sp_story = {
 		change_bgm = "story-amahara-stage2",
 		id = 231,
 		lock = ""
-	},
-	[232] = {
+	}
+	pg.base.activity_sp_story[232] = {
 		story_type = 1,
 		name = "EP1-1 Ama no Tobira",
 		label_key = "",
@@ -4232,8 +4616,8 @@ pg.activity_sp_story = {
 				231
 			}
 		}
-	},
-	[233] = {
+	}
+	pg.base.activity_sp_story[233] = {
 		story_type = 1,
 		name = "EP1-2 Ride the Clouds",
 		label_key = "",
@@ -4252,8 +4636,8 @@ pg.activity_sp_story = {
 				232
 			}
 		}
-	},
-	[234] = {
+	}
+	pg.base.activity_sp_story[234] = {
 		story_type = 1,
 		name = "EP1-3 A Table in the Sea of Clouds",
 		label_key = "",
@@ -4272,8 +4656,8 @@ pg.activity_sp_story = {
 				233
 			}
 		}
-	},
-	[235] = {
+	}
+	pg.base.activity_sp_story[235] = {
 		story_type = 1,
 		name = "EP1-4 Amahara's Scenery",
 		label_key = "",
@@ -4292,8 +4676,8 @@ pg.activity_sp_story = {
 				234
 			}
 		}
-	},
-	[236] = {
+	}
+	pg.base.activity_sp_story[236] = {
 		story_type = 1,
 		name = "EP1-5 Dream Stones",
 		label_key = "",
@@ -4312,8 +4696,8 @@ pg.activity_sp_story = {
 				235
 			}
 		}
-	},
-	[237] = {
+	}
+	pg.base.activity_sp_story[237] = {
 		story_type = 1,
 		name = "EP2-1 Cloudsea Wine",
 		label_key = "",
@@ -4332,8 +4716,8 @@ pg.activity_sp_story = {
 				236
 			}
 		}
-	},
-	[238] = {
+	}
+	pg.base.activity_sp_story[238] = {
 		story_type = 1,
 		name = "EP2-2 Weaving Dreams",
 		label_key = "",
@@ -4352,8 +4736,8 @@ pg.activity_sp_story = {
 				237
 			}
 		}
-	},
-	[239] = {
+	}
+	pg.base.activity_sp_story[239] = {
 		story_type = 1,
 		name = "EP2-3 Peace?",
 		label_key = "",
@@ -4372,8 +4756,8 @@ pg.activity_sp_story = {
 				238
 			}
 		}
-	},
-	[240] = {
+	}
+	pg.base.activity_sp_story[240] = {
 		story_type = 1,
 		name = "EP2-4 Unfolding?",
 		label_key = "",
@@ -4392,8 +4776,8 @@ pg.activity_sp_story = {
 				239
 			}
 		}
-	},
-	[241] = {
+	}
+	pg.base.activity_sp_story[241] = {
 		story_type = 1,
 		name = "EP2-5 Anxiety?",
 		label_key = "",
@@ -4412,8 +4796,8 @@ pg.activity_sp_story = {
 				240
 			}
 		}
-	},
-	[242] = {
+	}
+	pg.base.activity_sp_story[242] = {
 		story_type = 1,
 		name = "EPS-2 All-Out Invasion",
 		label_key = "",
@@ -4432,8 +4816,8 @@ pg.activity_sp_story = {
 				241
 			}
 		}
-	},
-	[243] = {
+	}
+	pg.base.activity_sp_story[243] = {
 		story_type = 1,
 		name = "EPS-3 The Web of a Bygone Day",
 		label_key = "",
@@ -4452,8 +4836,8 @@ pg.activity_sp_story = {
 				242
 			}
 		}
-	},
-	[244] = {
+	}
+	pg.base.activity_sp_story[244] = {
 		story_type = 2,
 		name = "EP3-1 Push Through the Dark Tide",
 		label_key = "",
@@ -4473,8 +4857,8 @@ pg.activity_sp_story = {
 				243
 			}
 		}
-	},
-	[245] = {
+	}
+	pg.base.activity_sp_story[245] = {
 		story_type = 1,
 		name = "EP3-2 Phase Shift",
 		label_key = "",
@@ -4493,8 +4877,8 @@ pg.activity_sp_story = {
 				244
 			}
 		}
-	},
-	[246] = {
+	}
+	pg.base.activity_sp_story[246] = {
 		story_type = 1,
 		name = "EP3-3 The Depths",
 		label_key = "",
@@ -4513,8 +4897,8 @@ pg.activity_sp_story = {
 				245
 			}
 		}
-	},
-	[247] = {
+	}
+	pg.base.activity_sp_story[247] = {
 		story_type = 1,
 		name = "EP-? Stepping Into Amahara - Part 1",
 		label_key = "",
@@ -4533,8 +4917,8 @@ pg.activity_sp_story = {
 				246
 			}
 		}
-	},
-	[248] = {
+	}
+	pg.base.activity_sp_story[248] = {
 		story_type = 1,
 		name = "EP-? Stepping Into Amahara - Part 2",
 		label_key = "",
@@ -4553,8 +4937,8 @@ pg.activity_sp_story = {
 				247
 			}
 		}
-	},
-	[249] = {
+	}
+	pg.base.activity_sp_story[249] = {
 		story_type = 1,
 		name = "EP4-1 The Long Island Defense Line, Again",
 		label_key = "",
@@ -4573,8 +4957,8 @@ pg.activity_sp_story = {
 				248
 			}
 		}
-	},
-	[250] = {
+	}
+	pg.base.activity_sp_story[250] = {
 		story_type = 1,
 		name = "EP4-2 Operation: Rescue Anzeel",
 		label_key = "",
@@ -4593,8 +4977,8 @@ pg.activity_sp_story = {
 				249
 			}
 		}
-	},
-	[251] = {
+	}
+	pg.base.activity_sp_story[251] = {
 		story_type = 1,
 		name = "EP4-3 A Glimmer in the Strings",
 		label_key = "",
@@ -4613,8 +4997,8 @@ pg.activity_sp_story = {
 				250
 			}
 		}
-	},
-	[252] = {
+	}
+	pg.base.activity_sp_story[252] = {
 		story_type = 1,
 		name = "EP4-4 Operation: Rescue Anzeel 2.0",
 		label_key = "",
@@ -4633,8 +5017,8 @@ pg.activity_sp_story = {
 				251
 			}
 		}
-	},
-	[253] = {
+	}
+	pg.base.activity_sp_story[253] = {
 		story_type = 1,
 		name = "EP4-5 Preliminary Prep",
 		label_key = "",
@@ -4653,8 +5037,8 @@ pg.activity_sp_story = {
 				252
 			}
 		}
-	},
-	[254] = {
+	}
+	pg.base.activity_sp_story[254] = {
 		story_type = 1,
 		name = "EP4-6 Imprisoned",
 		label_key = "",
@@ -4673,8 +5057,8 @@ pg.activity_sp_story = {
 				253
 			}
 		}
-	},
-	[255] = {
+	}
+	pg.base.activity_sp_story[255] = {
 		story_type = 1,
 		name = "EP5-1 Preliminary Prep 2.0",
 		label_key = "",
@@ -4693,8 +5077,8 @@ pg.activity_sp_story = {
 				254
 			}
 		}
-	},
-	[256] = {
+	}
+	pg.base.activity_sp_story[256] = {
 		story_type = 1,
 		name = "EP5-2 Defensive Area A",
 		label_key = "",
@@ -4713,8 +5097,8 @@ pg.activity_sp_story = {
 				255
 			}
 		}
-	},
-	[257] = {
+	}
+	pg.base.activity_sp_story[257] = {
 		story_type = 1,
 		name = "EP5-3 Defensive Area B",
 		label_key = "",
@@ -4733,8 +5117,8 @@ pg.activity_sp_story = {
 				256
 			}
 		}
-	},
-	[258] = {
+	}
+	pg.base.activity_sp_story[258] = {
 		story_type = 1,
 		name = "EP5-4 Defensive Area C",
 		label_key = "",
@@ -4753,8 +5137,8 @@ pg.activity_sp_story = {
 				257
 			}
 		}
-	},
-	[259] = {
+	}
+	pg.base.activity_sp_story[259] = {
 		story_type = 1,
 		name = "EP5-5 A Dash of Crimson",
 		label_key = "",
@@ -4775,8 +5159,8 @@ pg.activity_sp_story = {
 				258
 			}
 		}
-	},
-	[260] = {
+	}
+	pg.base.activity_sp_story[260] = {
 		story_type = 1,
 		name = "EP6-1 The Black Wall",
 		label_key = "",
@@ -4795,8 +5179,8 @@ pg.activity_sp_story = {
 				259
 			}
 		}
-	},
-	[261] = {
+	}
+	pg.base.activity_sp_story[261] = {
 		story_type = 1,
 		name = "EP6-2 Not a Moment Too Soon",
 		label_key = "",
@@ -4815,8 +5199,8 @@ pg.activity_sp_story = {
 				260
 			}
 		}
-	},
-	[262] = {
+	}
+	pg.base.activity_sp_story[262] = {
 		story_type = 1,
 		name = "EP6-3 As Blue as the Sea",
 		label_key = "",
@@ -4835,8 +5219,8 @@ pg.activity_sp_story = {
 				261
 			}
 		}
-	},
-	[263] = {
+	}
+	pg.base.activity_sp_story[263] = {
 		story_type = 1,
 		name = "EP6-4 Farewell",
 		label_key = "",
@@ -4855,8 +5239,8 @@ pg.activity_sp_story = {
 				262
 			}
 		}
-	},
-	[264] = {
+	}
+	pg.base.activity_sp_story[264] = {
 		story_type = 1,
 		name = "EP6-5 Epilogue",
 		label_key = "",
@@ -4875,8 +5259,8 @@ pg.activity_sp_story = {
 				263
 			}
 		}
-	},
-	[265] = {
+	}
+	pg.base.activity_sp_story[265] = {
 		story_type = 1,
 		name = "EX-1 Amahara Forevermore",
 		label_key = "",
@@ -4895,8 +5279,8 @@ pg.activity_sp_story = {
 				264
 			}
 		}
-	},
-	[266] = {
+	}
+	pg.base.activity_sp_story[266] = {
 		story_type = 1,
 		name = "EX-2 A Crimson Farewell",
 		label_key = "",
@@ -4915,8 +5299,8 @@ pg.activity_sp_story = {
 				265
 			}
 		}
-	},
-	[267] = {
+	}
+	pg.base.activity_sp_story[267] = {
 		story_type = 1,
 		name = "EX-3 Helena's Resolve",
 		label_key = "",
@@ -4935,8 +5319,8 @@ pg.activity_sp_story = {
 				266
 			}
 		}
-	},
-	[268] = {
+	}
+	pg.base.activity_sp_story[268] = {
 		story_type = 1,
 		name = "EX-4 Everything Will Be Fine",
 		label_key = "",
@@ -4955,8 +5339,8 @@ pg.activity_sp_story = {
 				267
 			}
 		}
-	},
-	[269] = {
+	}
+	pg.base.activity_sp_story[269] = {
 		story_type = 1,
 		name = "EX-5 Sweet Bait",
 		label_key = "",
@@ -4975,8 +5359,8 @@ pg.activity_sp_story = {
 				268
 			}
 		}
-	},
-	[271] = {
+	}
+	pg.base.activity_sp_story[271] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -4988,8 +5372,8 @@ pg.activity_sp_story = {
 		change_bgm = "",
 		id = 271,
 		lock = ""
-	},
-	[272] = {
+	}
+	pg.base.activity_sp_story[272] = {
 		story_type = 1,
 		name = "EP1-1 Hestia's Visit",
 		label_key = "",
@@ -5008,8 +5392,8 @@ pg.activity_sp_story = {
 				271
 			}
 		}
-	},
-	[273] = {
+	}
+	pg.base.activity_sp_story[273] = {
 		story_type = 1,
 		name = "EP1-2 The God and the Dungeon",
 		label_key = "",
@@ -5028,8 +5412,8 @@ pg.activity_sp_story = {
 				272
 			}
 		}
-	},
-	[274] = {
+	}
+	pg.base.activity_sp_story[274] = {
 		story_type = 1,
 		name = "EP1-3 Confluence",
 		label_key = "",
@@ -5048,8 +5432,8 @@ pg.activity_sp_story = {
 				273
 			}
 		}
-	},
-	[275] = {
+	}
+	pg.base.activity_sp_story[275] = {
 		story_type = 1,
 		name = "EP2-1 Ryu's Story",
 		label_key = "",
@@ -5068,8 +5452,8 @@ pg.activity_sp_story = {
 				274
 			}
 		}
-	},
-	[276] = {
+	}
+	pg.base.activity_sp_story[276] = {
 		story_type = 1,
 		name = "EP2-2 The God and the Adventurer",
 		label_key = "",
@@ -5088,8 +5472,8 @@ pg.activity_sp_story = {
 				275
 			}
 		}
-	},
-	[277] = {
+	}
+	pg.base.activity_sp_story[277] = {
 		story_type = 1,
 		name = "EP2-3 Supply Issue",
 		label_key = "",
@@ -5108,8 +5492,8 @@ pg.activity_sp_story = {
 				276
 			}
 		}
-	},
-	[278] = {
+	}
+	pg.base.activity_sp_story[278] = {
 		story_type = 1,
 		name = "EP3-1 Cooking",
 		label_key = "",
@@ -5129,8 +5513,8 @@ pg.activity_sp_story = {
 				277
 			}
 		}
-	},
-	[279] = {
+	}
+	pg.base.activity_sp_story[279] = {
 		story_type = 1,
 		name = "EP3-2 Adventurer's Magic",
 		label_key = "",
@@ -5149,8 +5533,8 @@ pg.activity_sp_story = {
 				278
 			}
 		}
-	},
-	[280] = {
+	}
+	pg.base.activity_sp_story[280] = {
 		story_type = 1,
 		name = "EP3-3 Drops",
 		label_key = "",
@@ -5169,8 +5553,8 @@ pg.activity_sp_story = {
 				279
 			}
 		}
-	},
-	[281] = {
+	}
+	pg.base.activity_sp_story[281] = {
 		story_type = 1,
 		name = "EP4-1 Riggings",
 		label_key = "",
@@ -5189,8 +5573,8 @@ pg.activity_sp_story = {
 				280
 			}
 		}
-	},
-	[282] = {
+	}
+	pg.base.activity_sp_story[282] = {
 		story_type = 1,
 		name = "EP4-2 Freely Speeding Across the Sea",
 		label_key = "",
@@ -5209,8 +5593,8 @@ pg.activity_sp_story = {
 				281
 			}
 		}
-	},
-	[283] = {
+	}
+	pg.base.activity_sp_story[283] = {
 		story_type = 2,
 		name = "EP4-3 First Real Battle",
 		label_key = "",
@@ -5229,8 +5613,8 @@ pg.activity_sp_story = {
 				282
 			}
 		}
-	},
-	[284] = {
+	}
+	pg.base.activity_sp_story[284] = {
 		story_type = 1,
 		name = "EP4-4 A Seasoned Adventurer",
 		label_key = "",
@@ -5249,8 +5633,8 @@ pg.activity_sp_story = {
 				283
 			}
 		}
-	},
-	[285] = {
+	}
+	pg.base.activity_sp_story[285] = {
 		story_type = 1,
 		name = "EP4-5 Welcome to the Port",
 		label_key = "",
@@ -5269,8 +5653,8 @@ pg.activity_sp_story = {
 				284
 			}
 		}
-	},
-	[291] = {
+	}
+	pg.base.activity_sp_story[291] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -5282,8 +5666,8 @@ pg.activity_sp_story = {
 		change_bgm = "theme-SeaAndSun-image",
 		id = 291,
 		lock = ""
-	},
-	[292] = {
+	}
+	pg.base.activity_sp_story[292] = {
 		story_type = 1,
 		name = "EP1-1 You Are Invited",
 		label_key = "",
@@ -5302,8 +5686,8 @@ pg.activity_sp_story = {
 				291
 			}
 		}
-	},
-	[293] = {
+	}
+	pg.base.activity_sp_story[293] = {
 		story_type = 1,
 		name = "EP1-2 The Wooden Compass",
 		label_key = "",
@@ -5322,8 +5706,8 @@ pg.activity_sp_story = {
 				292
 			}
 		}
-	},
-	[294] = {
+	}
+	pg.base.activity_sp_story[294] = {
 		story_type = 1,
 		name = "EP1-3 Limestone Island",
 		label_key = "",
@@ -5342,8 +5726,8 @@ pg.activity_sp_story = {
 				293
 			}
 		}
-	},
-	[295] = {
+	}
+	pg.base.activity_sp_story[295] = {
 		story_type = 1,
 		name = "EP2-1 Tempestuous Dreams",
 		label_key = "",
@@ -5362,8 +5746,8 @@ pg.activity_sp_story = {
 				294
 			}
 		}
-	},
-	[296] = {
+	}
+	pg.base.activity_sp_story[296] = {
 		story_type = 1,
 		name = "EP2-2 Veil of the Night Sky",
 		label_key = "",
@@ -5382,8 +5766,8 @@ pg.activity_sp_story = {
 				295
 			}
 		}
-	},
-	[297] = {
+	}
+	pg.base.activity_sp_story[297] = {
 		story_type = 1,
 		name = "EP2-3 Arrival on the Isles",
 		label_key = "",
@@ -5402,8 +5786,8 @@ pg.activity_sp_story = {
 				296
 			}
 		}
-	},
-	[298] = {
+	}
+	pg.base.activity_sp_story[298] = {
 		story_type = 1,
 		name = "EP2-4 Prepping for the Treasure Hunt",
 		label_key = "",
@@ -5422,8 +5806,8 @@ pg.activity_sp_story = {
 				297
 			}
 		}
-	},
-	[299] = {
+	}
+	pg.base.activity_sp_story[299] = {
 		story_type = 1,
 		name = "EP3-1 The Hunters in Mar del Demonios",
 		label_key = "",
@@ -5442,8 +5826,8 @@ pg.activity_sp_story = {
 				298
 			}
 		}
-	},
-	[300] = {
+	}
+	pg.base.activity_sp_story[300] = {
 		story_type = 1,
 		name = "EP3-2 Snatch Everything Up!",
 		label_key = "",
@@ -5462,8 +5846,8 @@ pg.activity_sp_story = {
 				299
 			}
 		}
-	},
-	[301] = {
+	}
+	pg.base.activity_sp_story[301] = {
 		story_type = 1,
 		name = "EP3-3 Visit From Old Friends",
 		label_key = "",
@@ -5483,8 +5867,8 @@ pg.activity_sp_story = {
 				300
 			}
 		}
-	},
-	[302] = {
+	}
+	pg.base.activity_sp_story[302] = {
 		story_type = 1,
 		name = "EP4-1 Searching the Lighthouse",
 		label_key = "",
@@ -5503,8 +5887,8 @@ pg.activity_sp_story = {
 				301
 			}
 		}
-	},
-	[303] = {
+	}
+	pg.base.activity_sp_story[303] = {
 		story_type = 1,
 		name = "EP4-2 Uninvited Guests",
 		label_key = "",
@@ -5523,8 +5907,8 @@ pg.activity_sp_story = {
 				302
 			}
 		}
-	},
-	[304] = {
+	}
+	pg.base.activity_sp_story[304] = {
 		story_type = 1,
 		name = "EP4-3 São Martinho's Concern",
 		label_key = "",
@@ -5543,8 +5927,8 @@ pg.activity_sp_story = {
 				303
 			}
 		}
-	},
-	[305] = {
+	}
+	pg.base.activity_sp_story[305] = {
 		story_type = 1,
 		name = "EP5-1 Uninvited Guests II",
 		label_key = "",
@@ -5563,8 +5947,8 @@ pg.activity_sp_story = {
 				304
 			}
 		}
-	},
-	[306] = {
+	}
+	pg.base.activity_sp_story[306] = {
 		story_type = 1,
 		name = "EP5-2 Early Morning Wreckages",
 		label_key = "",
@@ -5583,8 +5967,8 @@ pg.activity_sp_story = {
 				305
 			}
 		}
-	},
-	[307] = {
+	}
+	pg.base.activity_sp_story[307] = {
 		story_type = 2,
 		name = "EP5-3 Impromptu Response",
 		label_key = "",
@@ -5603,8 +5987,8 @@ pg.activity_sp_story = {
 				306
 			}
 		}
-	},
-	[308] = {
+	}
+	pg.base.activity_sp_story[308] = {
 		story_type = 1,
 		name = "EP6-1 Doubts",
 		label_key = "",
@@ -5623,8 +6007,8 @@ pg.activity_sp_story = {
 				307
 			}
 		}
-	},
-	[309] = {
+	}
+	pg.base.activity_sp_story[309] = {
 		story_type = 1,
 		name = "EP6-2 Searching the Ancient Temple",
 		label_key = "",
@@ -5643,8 +6027,8 @@ pg.activity_sp_story = {
 				308
 			}
 		}
-	},
-	[310] = {
+	}
+	pg.base.activity_sp_story[310] = {
 		story_type = 1,
 		name = "EPS-2 Tempestuous Dreams II",
 		label_key = "",
@@ -5663,8 +6047,8 @@ pg.activity_sp_story = {
 				309
 			}
 		}
-	},
-	[311] = {
+	}
+	pg.base.activity_sp_story[311] = {
 		story_type = 1,
 		name = "EPS-3 Reunion",
 		label_key = "",
@@ -5683,8 +6067,8 @@ pg.activity_sp_story = {
 				310
 			}
 		}
-	},
-	[312] = {
+	}
+	pg.base.activity_sp_story[312] = {
 		story_type = 1,
 		name = "EP7-1 Exploring the Metallic Cave",
 		label_key = "",
@@ -5703,8 +6087,8 @@ pg.activity_sp_story = {
 				311
 			}
 		}
-	},
-	[313] = {
+	}
+	pg.base.activity_sp_story[313] = {
 		story_type = 1,
 		name = "EP7-2 Tempestuous Dreams III",
 		label_key = "",
@@ -5723,8 +6107,8 @@ pg.activity_sp_story = {
 				312
 			}
 		}
-	},
-	[314] = {
+	}
+	pg.base.activity_sp_story[314] = {
 		story_type = 1,
 		name = "EP7-3 Searching the Lighthouse II",
 		label_key = "",
@@ -5743,8 +6127,8 @@ pg.activity_sp_story = {
 				313
 			}
 		}
-	},
-	[315] = {
+	}
+	pg.base.activity_sp_story[315] = {
 		story_type = 2,
 		name = "EP7-4 One Strike to Seize Victory",
 		label_key = "",
@@ -5763,8 +6147,8 @@ pg.activity_sp_story = {
 				314
 			}
 		}
-	},
-	[316] = {
+	}
+	pg.base.activity_sp_story[316] = {
 		story_type = 1,
 		name = "EP7-5 Libertypolis",
 		label_key = "",
@@ -5783,8 +6167,8 @@ pg.activity_sp_story = {
 				315
 			}
 		}
-	},
-	[317] = {
+	}
+	pg.base.activity_sp_story[317] = {
 		story_type = 1,
 		name = "EX-1 A Priest and The Servant II",
 		label_key = "",
@@ -5803,8 +6187,8 @@ pg.activity_sp_story = {
 				316
 			}
 		}
-	},
-	[318] = {
+	}
+	pg.base.activity_sp_story[318] = {
 		story_type = 1,
 		name = "EX-2 Unresolved Questions",
 		label_key = "",
@@ -5823,8 +6207,8 @@ pg.activity_sp_story = {
 				317
 			}
 		}
-	},
-	[319] = {
+	}
+	pg.base.activity_sp_story[319] = {
 		story_type = 1,
 		name = "EX-3 Boundary of Our World",
 		label_key = "",
@@ -5843,8 +6227,8 @@ pg.activity_sp_story = {
 				318
 			}
 		}
-	},
-	[321] = {
+	}
+	pg.base.activity_sp_story[321] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -5856,8 +6240,8 @@ pg.activity_sp_story = {
 		change_bgm = "bgm-waterwave",
 		id = 321,
 		lock = ""
-	},
-	[322] = {
+	}
+	pg.base.activity_sp_story[322] = {
 		story_type = 1,
 		name = "EP1-1 VOICE#2",
 		label_key = "",
@@ -5884,8 +6268,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[323] = {
+	}
+	pg.base.activity_sp_story[323] = {
 		story_type = 1,
 		name = "EP1-2 VOICE#3",
 		label_key = "",
@@ -5912,8 +6296,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[324] = {
+	}
+	pg.base.activity_sp_story[324] = {
 		story_type = 1,
 		name = "EP1-3 VOICE#4",
 		label_key = "",
@@ -5940,8 +6324,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[325] = {
+	}
+	pg.base.activity_sp_story[325] = {
 		story_type = 1,
 		name = "EP1-4 VOICE#5",
 		label_key = "",
@@ -5968,8 +6352,10 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[326] = {
+	}
+end)()
+;(function()
+	pg.base.activity_sp_story[326] = {
 		story_type = 1,
 		name = "EPS-2 VOICE#6",
 		label_key = "",
@@ -5996,8 +6382,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[327] = {
+	}
+	pg.base.activity_sp_story[327] = {
 		story_type = 1,
 		name = "EP2-1 VOICE#7",
 		label_key = "",
@@ -6024,8 +6410,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[328] = {
+	}
+	pg.base.activity_sp_story[328] = {
 		story_type = 1,
 		name = "EP3-1 VOICE#8",
 		label_key = "",
@@ -6052,8 +6438,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[329] = {
+	}
+	pg.base.activity_sp_story[329] = {
 		story_type = 1,
 		name = "EP2-2 VOICE#9",
 		label_key = "",
@@ -6080,8 +6466,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[330] = {
+	}
+	pg.base.activity_sp_story[330] = {
 		story_type = 1,
 		name = "EP3-2 VOICE#10",
 		label_key = "",
@@ -6108,8 +6494,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[331] = {
+	}
+	pg.base.activity_sp_story[331] = {
 		story_type = 1,
 		name = "EP2-3 VOICE#11",
 		label_key = "",
@@ -6136,8 +6522,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[332] = {
+	}
+	pg.base.activity_sp_story[332] = {
 		story_type = 1,
 		name = "EP3-3 VOICE#12",
 		label_key = "",
@@ -6164,8 +6550,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[333] = {
+	}
+	pg.base.activity_sp_story[333] = {
 		story_type = 1,
 		name = "EP2-4 VOICE#13",
 		label_key = "",
@@ -6192,8 +6578,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[334] = {
+	}
+	pg.base.activity_sp_story[334] = {
 		story_type = 1,
 		name = "EP3-4 VOICE#14",
 		label_key = "",
@@ -6220,8 +6606,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[335] = {
+	}
+	pg.base.activity_sp_story[335] = {
 		story_type = 1,
 		name = "EP2-5 VOICE#15",
 		label_key = "",
@@ -6248,8 +6634,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[336] = {
+	}
+	pg.base.activity_sp_story[336] = {
 		story_type = 1,
 		name = "EP3-5 VOICE#16",
 		label_key = "",
@@ -6276,8 +6662,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[337] = {
+	}
+	pg.base.activity_sp_story[337] = {
 		story_type = 1,
 		name = "EPS-3 VOICE#17",
 		label_key = "",
@@ -6305,8 +6691,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[338] = {
+	}
+	pg.base.activity_sp_story[338] = {
 		story_type = 1,
 		name = "EPS-4 VOICE#18",
 		label_key = "",
@@ -6333,8 +6719,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[339] = {
+	}
+	pg.base.activity_sp_story[339] = {
 		story_type = 1,
 		name = "EPS-5 VOICE#19",
 		label_key = "",
@@ -6361,8 +6747,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[341] = {
+	}
+	pg.base.activity_sp_story[341] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -6374,8 +6760,8 @@ pg.activity_sp_story = {
 		change_bgm = "story-memory-grief",
 		id = 341,
 		lock = ""
-	},
-	[342] = {
+	}
+	pg.base.activity_sp_story[342] = {
 		story_type = 1,
 		name = "EP1-2 A Sudden Turn",
 		label_key = "",
@@ -6394,8 +6780,8 @@ pg.activity_sp_story = {
 				341
 			}
 		}
-	},
-	[343] = {
+	}
+	pg.base.activity_sp_story[343] = {
 		story_type = 1,
 		name = "EP2-1 An Old City, an Old Dream",
 		label_key = "",
@@ -6414,8 +6800,8 @@ pg.activity_sp_story = {
 				342
 			}
 		}
-	},
-	[344] = {
+	}
+	pg.base.activity_sp_story[344] = {
 		story_type = 1,
 		name = "EP3-1 Calculated",
 		label_key = "",
@@ -6434,8 +6820,8 @@ pg.activity_sp_story = {
 				343
 			}
 		}
-	},
-	[345] = {
+	}
+	pg.base.activity_sp_story[345] = {
 		story_type = 1,
 		name = "EP2-2 Mass Syncope",
 		label_key = "",
@@ -6454,8 +6840,8 @@ pg.activity_sp_story = {
 				344
 			}
 		}
-	},
-	[346] = {
+	}
+	pg.base.activity_sp_story[346] = {
 		story_type = 1,
 		name = "EP3-2 The 7th Task Force",
 		label_key = "",
@@ -6474,8 +6860,8 @@ pg.activity_sp_story = {
 				345
 			}
 		}
-	},
-	[347] = {
+	}
+	pg.base.activity_sp_story[347] = {
 		story_type = 1,
 		name = "EP2-3 Familiar Flavors",
 		label_key = "",
@@ -6494,8 +6880,8 @@ pg.activity_sp_story = {
 				346
 			}
 		}
-	},
-	[348] = {
+	}
+	pg.base.activity_sp_story[348] = {
 		story_type = 1,
 		name = "EP3-3 The Leader of the Ashes",
 		label_key = "",
@@ -6514,8 +6900,8 @@ pg.activity_sp_story = {
 				347
 			}
 		}
-	},
-	[349] = {
+	}
+	pg.base.activity_sp_story[349] = {
 		story_type = 1,
 		name = "EP2-4 One Step at a Time",
 		label_key = "",
@@ -6534,8 +6920,8 @@ pg.activity_sp_story = {
 				348
 			}
 		}
-	},
-	[350] = {
+	}
+	pg.base.activity_sp_story[350] = {
 		story_type = 1,
 		name = "EP3-4 The Test Site of the Arbiters",
 		label_key = "",
@@ -6554,8 +6940,8 @@ pg.activity_sp_story = {
 				349
 			}
 		}
-	},
-	[351] = {
+	}
+	pg.base.activity_sp_story[351] = {
 		story_type = 1,
 		name = "EP2-5 TORCH",
 		label_key = "",
@@ -6574,8 +6960,8 @@ pg.activity_sp_story = {
 				350
 			}
 		}
-	},
-	[352] = {
+	}
+	pg.base.activity_sp_story[352] = {
 		story_type = 2,
 		name = "EP3-5 Anomalous Area Investigation",
 		label_key = "",
@@ -6594,8 +6980,8 @@ pg.activity_sp_story = {
 				351
 			}
 		}
-	},
-	[353] = {
+	}
+	pg.base.activity_sp_story[353] = {
 		story_type = 1,
 		name = "EPS-1 Transboundary Experiment #3",
 		label_key = "",
@@ -6615,8 +7001,8 @@ pg.activity_sp_story = {
 				352
 			}
 		}
-	},
-	[354] = {
+	}
+	pg.base.activity_sp_story[354] = {
 		story_type = 1,
 		name = "EP4-1 Journey",
 		label_key = "",
@@ -6635,8 +7021,8 @@ pg.activity_sp_story = {
 				353
 			}
 		}
-	},
-	[355] = {
+	}
+	pg.base.activity_sp_story[355] = {
 		story_type = 1,
 		name = "EP4-2 Colette",
 		label_key = "",
@@ -6655,8 +7041,8 @@ pg.activity_sp_story = {
 				354
 			}
 		}
-	},
-	[356] = {
+	}
+	pg.base.activity_sp_story[356] = {
 		story_type = 1,
 		name = "EP4-3 Aoste and Eutopia",
 		label_key = "",
@@ -6675,8 +7061,8 @@ pg.activity_sp_story = {
 				355
 			}
 		}
-	},
-	[357] = {
+	}
+	pg.base.activity_sp_story[357] = {
 		story_type = 1,
 		name = "EP4-4 Ryouko Amahara",
 		label_key = "",
@@ -6695,8 +7081,8 @@ pg.activity_sp_story = {
 				356
 			}
 		}
-	},
-	[358] = {
+	}
+	pg.base.activity_sp_story[358] = {
 		story_type = 1,
 		name = "EP4-5 Anzeel",
 		label_key = "",
@@ -6715,8 +7101,8 @@ pg.activity_sp_story = {
 				357
 			}
 		}
-	},
-	[359] = {
+	}
+	pg.base.activity_sp_story[359] = {
 		story_type = 1,
 		name = "EP4-6 Sophia",
 		label_key = "",
@@ -6735,8 +7121,8 @@ pg.activity_sp_story = {
 				358
 			}
 		}
-	},
-	[360] = {
+	}
+	pg.base.activity_sp_story[360] = {
 		story_type = 1,
 		name = "EP4-7 Resolve",
 		label_key = "",
@@ -6755,8 +7141,8 @@ pg.activity_sp_story = {
 				359
 			}
 		}
-	},
-	[361] = {
+	}
+	pg.base.activity_sp_story[361] = {
 		story_type = 1,
 		name = "EP4-8 The Council's Meeting",
 		label_key = "",
@@ -6775,8 +7161,8 @@ pg.activity_sp_story = {
 				360
 			}
 		}
-	},
-	[362] = {
+	}
+	pg.base.activity_sp_story[362] = {
 		story_type = 1,
 		name = "EP4-9 Frequency",
 		label_key = "",
@@ -6795,8 +7181,8 @@ pg.activity_sp_story = {
 				361
 			}
 		}
-	},
-	[363] = {
+	}
+	pg.base.activity_sp_story[363] = {
 		story_type = 1,
 		name = "EPS-2 A Decision Made",
 		label_key = "",
@@ -6815,8 +7201,8 @@ pg.activity_sp_story = {
 				362
 			}
 		}
-	},
-	[364] = {
+	}
+	pg.base.activity_sp_story[364] = {
 		story_type = 3,
 		name = "EPS-2-A Choice - Perfect Future",
 		label_key = "",
@@ -6836,8 +7222,8 @@ pg.activity_sp_story = {
 				100
 			}
 		}
-	},
-	[365] = {
+	}
+	pg.base.activity_sp_story[365] = {
 		story_type = 3,
 		name = "EPS-2-B Choice - Wake Up",
 		label_key = "",
@@ -6857,8 +7243,8 @@ pg.activity_sp_story = {
 				200
 			}
 		}
-	},
-	[366] = {
+	}
+	pg.base.activity_sp_story[366] = {
 		story_type = 1,
 		name = "EP5-1 Back to Normal?",
 		label_key = "",
@@ -6877,8 +7263,8 @@ pg.activity_sp_story = {
 				365
 			}
 		}
-	},
-	[371] = {
+	}
+	pg.base.activity_sp_story[371] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -6890,8 +7276,8 @@ pg.activity_sp_story = {
 		change_bgm = "story-commander-up",
 		id = 371,
 		lock = ""
-	},
-	[372] = {
+	}
+	pg.base.activity_sp_story[372] = {
 		story_type = 1,
 		name = "EP6-1 Gathering of Allies",
 		label_key = "",
@@ -6918,8 +7304,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[373] = {
+	}
+	pg.base.activity_sp_story[373] = {
 		story_type = 1,
 		name = "EP6-2 Rescue from the Flames",
 		label_key = "",
@@ -6946,8 +7332,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[374] = {
+	}
+	pg.base.activity_sp_story[374] = {
 		story_type = 1,
 		name = "EP6-3 Together We Stand",
 		label_key = "",
@@ -6974,8 +7360,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[375] = {
+	}
+	pg.base.activity_sp_story[375] = {
 		story_type = 1,
 		name = "EP6-4 Mysterious Support",
 		label_key = "",
@@ -7002,8 +7388,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[376] = {
+	}
+	pg.base.activity_sp_story[376] = {
 		story_type = 1,
 		name = "EP6-5 The Reset Protocol",
 		label_key = "",
@@ -7030,8 +7416,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[377] = {
+	}
+	pg.base.activity_sp_story[377] = {
 		story_type = 1,
 		name = "EP7-1 Commence Operation",
 		label_key = "",
@@ -7059,8 +7445,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[378] = {
+	}
+	pg.base.activity_sp_story[378] = {
 		story_type = 2,
 		name = "EP7-2 The Framework's Battle",
 		label_key = "",
@@ -7087,8 +7473,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[379] = {
+	}
+	pg.base.activity_sp_story[379] = {
 		story_type = 2,
 		name = "EP7-3 The Ashes of the Present",
 		label_key = "",
@@ -7115,8 +7501,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[380] = {
+	}
+	pg.base.activity_sp_story[380] = {
 		story_type = 2,
 		name = "EP7-4 Blueprint Shipgirls",
 		label_key = "",
@@ -7143,8 +7529,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[381] = {
+	}
+	pg.base.activity_sp_story[381] = {
 		story_type = 2,
 		name = "EP7-5 Crossing Thoughts",
 		label_key = "",
@@ -7173,8 +7559,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[382] = {
+	}
+	pg.base.activity_sp_story[382] = {
 		story_type = 2,
 		name = "EP7-6 Something Not So Important",
 		label_key = "",
@@ -7201,8 +7587,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[383] = {
+	}
+	pg.base.activity_sp_story[383] = {
 		story_type = 2,
 		name = "EP7-7 The Battle Within the Veil",
 		label_key = "",
@@ -7229,8 +7615,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[384] = {
+	}
+	pg.base.activity_sp_story[384] = {
 		story_type = 1,
 		name = "EP8-1 A Note Through the Firmament",
 		label_key = "",
@@ -7258,8 +7644,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[385] = {
+	}
+	pg.base.activity_sp_story[385] = {
 		story_type = 1,
 		name = "EP8-2 The Second Parting",
 		label_key = "",
@@ -7286,8 +7672,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[386] = {
+	}
+	pg.base.activity_sp_story[386] = {
 		story_type = 1,
 		name = "EP8-3 Past, Present, and Future",
 		label_key = "",
@@ -7314,8 +7700,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[387] = {
+	}
+	pg.base.activity_sp_story[387] = {
 		story_type = 1,
 		name = "EX-1 The Tower, Reversed",
 		label_key = "",
@@ -7342,8 +7728,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[388] = {
+	}
+	pg.base.activity_sp_story[388] = {
 		story_type = 1,
 		name = "EX-2 A New Era",
 		label_key = "",
@@ -7370,8 +7756,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[389] = {
+	}
+	pg.base.activity_sp_story[389] = {
 		story_type = 1,
 		name = "EX-3 Ripples",
 		label_key = "",
@@ -7398,8 +7784,8 @@ pg.activity_sp_story = {
 				}
 			}
 		}
-	},
-	[390] = {
+	}
+	pg.base.activity_sp_story[390] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -7411,8 +7797,8 @@ pg.activity_sp_story = {
 		change_bgm = "doa_guanqia",
 		id = 390,
 		lock = ""
-	},
-	[391] = {
+	}
+	pg.base.activity_sp_story[391] = {
 		story_type = 1,
 		name = "EPS-2 Tournament Prep",
 		label_key = "",
@@ -7431,8 +7817,8 @@ pg.activity_sp_story = {
 				390
 			}
 		}
-	},
-	[392] = {
+	}
+	pg.base.activity_sp_story[392] = {
 		story_type = 1,
 		name = "EPS-3 To a T",
 		label_key = "",
@@ -7451,8 +7837,8 @@ pg.activity_sp_story = {
 				391
 			}
 		}
-	},
-	[393] = {
+	}
+	pg.base.activity_sp_story[393] = {
 		story_type = 1,
 		name = "EPS-4 Cosplayer？",
 		label_key = "",
@@ -7471,8 +7857,8 @@ pg.activity_sp_story = {
 				392
 			}
 		}
-	},
-	[394] = {
+	}
+	pg.base.activity_sp_story[394] = {
 		story_type = 1,
 		name = "EPS-5 Deadly Charms",
 		label_key = "",
@@ -7491,8 +7877,8 @@ pg.activity_sp_story = {
 				393
 			}
 		}
-	},
-	[395] = {
+	}
+	pg.base.activity_sp_story[395] = {
 		story_type = 1,
 		name = "EPS-6 Always Be Capturing",
 		label_key = "",
@@ -7511,8 +7897,8 @@ pg.activity_sp_story = {
 				394
 			}
 		}
-	},
-	[396] = {
+	}
+	pg.base.activity_sp_story[396] = {
 		story_type = 1,
 		name = "EPS-7 The Great Treasure Hunting Team",
 		label_key = "",
@@ -7531,8 +7917,8 @@ pg.activity_sp_story = {
 				395
 			}
 		}
-	},
-	[397] = {
+	}
+	pg.base.activity_sp_story[397] = {
 		story_type = 1,
 		name = "EPS-8 Fashion Trends",
 		label_key = "",
@@ -7551,8 +7937,8 @@ pg.activity_sp_story = {
 				396
 			}
 		}
-	},
-	[398] = {
+	}
+	pg.base.activity_sp_story[398] = {
 		story_type = 1,
 		name = "EPS-9 Style Showcase",
 		label_key = "",
@@ -7571,8 +7957,8 @@ pg.activity_sp_story = {
 				397
 			}
 		}
-	},
-	[399] = {
+	}
+	pg.base.activity_sp_story[399] = {
 		story_type = 1,
 		name = "EPS-10 All About Hot Springs",
 		label_key = "",
@@ -7591,8 +7977,8 @@ pg.activity_sp_story = {
 				398
 			}
 		}
-	},
-	[400] = {
+	}
+	pg.base.activity_sp_story[400] = {
 		story_type = 1,
 		name = "EPS-11 The Recording Team",
 		label_key = "",
@@ -7611,8 +7997,8 @@ pg.activity_sp_story = {
 				399
 			}
 		}
-	},
-	[401] = {
+	}
+	pg.base.activity_sp_story[401] = {
 		story_type = 1,
 		name = "EPS-12 The Livestream Team",
 		label_key = "",
@@ -7631,8 +8017,8 @@ pg.activity_sp_story = {
 				400
 			}
 		}
-	},
-	[402] = {
+	}
+	pg.base.activity_sp_story[402] = {
 		story_type = 1,
 		name = "EPS-13 The Tournament Begins!",
 		label_key = "",
@@ -7651,379 +8037,5 @@ pg.activity_sp_story = {
 				401
 			}
 		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19,
-		20,
-		21,
-		22,
-		23,
-		31,
-		32,
-		33,
-		34,
-		35,
-		36,
-		37,
-		38,
-		39,
-		40,
-		41,
-		42,
-		43,
-		44,
-		45,
-		46,
-		47,
-		48,
-		49,
-		50,
-		51,
-		52,
-		53,
-		54,
-		55,
-		56,
-		57,
-		58,
-		59,
-		60,
-		61,
-		62,
-		63,
-		64,
-		65,
-		66,
-		67,
-		68,
-		69,
-		70,
-		71,
-		72,
-		73,
-		74,
-		75,
-		76,
-		77,
-		78,
-		79,
-		80,
-		81,
-		82,
-		83,
-		84,
-		85,
-		86,
-		87,
-		88,
-		89,
-		90,
-		91,
-		92,
-		93,
-		94,
-		95,
-		96,
-		97,
-		98,
-		99,
-		100,
-		101,
-		102,
-		103,
-		104,
-		105,
-		106,
-		107,
-		108,
-		109,
-		110,
-		111,
-		112,
-		113,
-		114,
-		115,
-		116,
-		117,
-		118,
-		119,
-		120,
-		121,
-		122,
-		123,
-		124,
-		125,
-		126,
-		127,
-		128,
-		129,
-		130,
-		131,
-		132,
-		133,
-		134,
-		135,
-		136,
-		137,
-		138,
-		139,
-		141,
-		142,
-		143,
-		144,
-		145,
-		146,
-		147,
-		148,
-		149,
-		150,
-		151,
-		152,
-		153,
-		154,
-		155,
-		156,
-		157,
-		158,
-		159,
-		160,
-		161,
-		162,
-		163,
-		164,
-		165,
-		166,
-		167,
-		168,
-		169,
-		170,
-		171,
-		172,
-		173,
-		174,
-		175,
-		176,
-		181,
-		182,
-		183,
-		184,
-		185,
-		186,
-		187,
-		188,
-		191,
-		192,
-		193,
-		194,
-		195,
-		196,
-		197,
-		198,
-		199,
-		200,
-		201,
-		202,
-		203,
-		204,
-		205,
-		206,
-		207,
-		208,
-		209,
-		210,
-		211,
-		212,
-		213,
-		214,
-		215,
-		216,
-		217,
-		218,
-		219,
-		220,
-		221,
-		222,
-		223,
-		224,
-		225,
-		226,
-		231,
-		232,
-		233,
-		234,
-		235,
-		236,
-		237,
-		238,
-		239,
-		240,
-		241,
-		242,
-		243,
-		244,
-		245,
-		246,
-		247,
-		248,
-		249,
-		250,
-		251,
-		252,
-		253,
-		254,
-		255,
-		256,
-		257,
-		258,
-		259,
-		260,
-		261,
-		262,
-		263,
-		264,
-		265,
-		266,
-		267,
-		268,
-		269,
-		271,
-		272,
-		273,
-		274,
-		275,
-		276,
-		277,
-		278,
-		279,
-		280,
-		281,
-		282,
-		283,
-		284,
-		285,
-		291,
-		292,
-		293,
-		294,
-		295,
-		296,
-		297,
-		298,
-		299,
-		300,
-		301,
-		302,
-		303,
-		304,
-		305,
-		306,
-		307,
-		308,
-		309,
-		310,
-		311,
-		312,
-		313,
-		314,
-		315,
-		316,
-		317,
-		318,
-		319,
-		321,
-		322,
-		323,
-		324,
-		325,
-		326,
-		327,
-		328,
-		329,
-		330,
-		331,
-		332,
-		333,
-		334,
-		335,
-		336,
-		337,
-		338,
-		339,
-		341,
-		342,
-		343,
-		344,
-		345,
-		346,
-		347,
-		348,
-		349,
-		350,
-		351,
-		352,
-		353,
-		354,
-		355,
-		356,
-		357,
-		358,
-		359,
-		360,
-		361,
-		362,
-		363,
-		364,
-		365,
-		366,
-		371,
-		372,
-		373,
-		374,
-		375,
-		376,
-		377,
-		378,
-		379,
-		380,
-		381,
-		382,
-		383,
-		384,
-		385,
-		386,
-		387,
-		388,
-		389,
-		390,
-		391,
-		392,
-		393,
-		394,
-		395,
-		396,
-		397,
-		398,
-		399,
-		400,
-		401,
-		402
 	}
-}
+end)()

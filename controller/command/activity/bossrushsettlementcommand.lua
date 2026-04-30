@@ -68,13 +68,15 @@ function var0_0.ConcludeEXP(arg0_5, arg1_5, arg2_5)
 	local var2_5
 
 	if var0_5 == SYSTEM_BOSS_RUSH_COLLABRATE then
-		for iter0_5, iter1_5 in pairs(pg.extraenemy_series_template) do
-			if table.contains(iter1_5.activity_series_enemy_id, var1_5) then
+		for iter0_5, iter1_5 in ipairs(pg.extraenemy_series_template) do
+			local var3_5 = pg.extraenemy_series_template[iter1_5]
+
+			if table.contains(var3_5.activity_series_enemy_id, var1_5) then
 				var2_5 = CollabrateBossRushSeriesData.New({
-					id = iter0_5,
+					id = iter1_5,
 					actId = arg1_5.id
 				})
-				var1_5 = iter0_5
+				var1_5 = iter1_5
 
 				break
 			end
@@ -85,41 +87,41 @@ function var0_0.ConcludeEXP(arg0_5, arg1_5, arg2_5)
 		})
 	end
 
-	local var3_5 = {
+	local var4_5 = {
 		seriesId = var1_5
 	}
-	local var4_5 = true
-	local var5_5 = arg2_5 and arg2_5[#arg0_5.re40004]
+	local var5_5 = true
+	local var6_5 = arg2_5 and arg2_5[#arg0_5.re40004]
 
-	if var5_5 then
-		var4_5 = var5_5.statistics._battleScore > ys.Battle.BattleConst.BattleScore.C
+	if var6_5 then
+		var5_5 = var6_5.statistics._battleScore > ys.Battle.BattleConst.BattleScore.C
 	end
 
-	var3_5.win = var4_5
+	var4_5.win = var5_5
 
 	for iter2_5, iter3_5 in ipairs(arg0_5.re40004) do
-		var3_5[iter2_5] = {}
+		var4_5[iter2_5] = {}
 
-		local var6_5, var7_5 = var0_0.addShipsExp(iter3_5.ship_exp_list, var0_5 == SYSTEM_BOSS_RUSH or var0_5 == SYSTEM_BOSS_RUSH_COLLABRATE)
+		local var7_5, var8_5 = var0_0.addShipsExp(iter3_5.ship_exp_list, var0_5 == SYSTEM_BOSS_RUSH or var0_5 == SYSTEM_BOSS_RUSH_COLLABRATE)
 
-		var3_5[iter2_5].oldShips = var6_5
-		var3_5[iter2_5].newShips = var7_5
+		var4_5[iter2_5].oldShips = var7_5
+		var4_5[iter2_5].newShips = var8_5
 
-		local var8_5, var9_5 = var0_0.GenerateCommanderExp(iter3_5.commander_exp)
+		local var9_5, var10_5 = var0_0.GenerateCommanderExp(iter3_5.commander_exp)
 
-		var3_5[iter2_5].oldCmds = var8_5
-		var3_5[iter2_5].newCmds = var9_5
-		var3_5[iter2_5].mvp = iter3_5.mvp
+		var4_5[iter2_5].oldCmds = var9_5
+		var4_5[iter2_5].newCmds = var10_5
+		var4_5[iter2_5].mvp = iter3_5.mvp
 
-		local var10_5, var11_5 = var0_0.GeneralLoot(iter3_5)
+		local var11_5, var12_5 = var0_0.GeneralLoot(iter3_5)
 
-		var3_5[iter2_5].drops = var10_5
-		var3_5[iter2_5].extraDrops = var11_5
+		var4_5[iter2_5].drops = var11_5
+		var4_5[iter2_5].extraDrops = var12_5
 
-		local var12_5 = 0
+		local var13_5 = 0
 
 		if pg.battle_cost_template[var0_5].oil_cost > 0 then
-			local var13_5 = {
+			local var14_5 = {
 				{
 					0,
 					0
@@ -130,35 +132,35 @@ function var0_0.ConcludeEXP(arg0_5, arg1_5, arg2_5)
 				}
 			}
 
-			table.Foreach(var6_5, function(arg0_6, arg1_6)
+			table.Foreach(var7_5, function(arg0_6, arg1_6)
 				local var0_6 = arg1_6:getStartBattleExpend()
 				local var1_6 = arg1_6:getEndBattleExpend()
 				local var2_6 = arg1_6:getTeamType() == TeamType.Submarine and 2 or 1
 
-				var13_5[var2_6][1] = var13_5[var2_6][1] + var0_6
-				var13_5[var2_6][2] = var13_5[var2_6][2] + var1_6
+				var14_5[var2_6][1] = var14_5[var2_6][1] + var0_6
+				var14_5[var2_6][2] = var14_5[var2_6][2] + var1_6
 			end)
 
-			local var14_5 = var2_5:GetOilLimit()
-			local var15_5 = var13_5[1][2]
+			local var15_5 = var2_5:GetOilLimit()
+			local var16_5 = var14_5[1][2]
 
-			if var14_5[1] > 0 then
-				var15_5 = math.clamp(var14_5[1] - var13_5[1][1], 0, var13_5[1][2])
+			if var15_5[1] > 0 then
+				var16_5 = math.clamp(var15_5[1] - var14_5[1][1], 0, var14_5[1][2])
 			end
 
-			local var16_5 = var13_5[2][2]
+			local var17_5 = var14_5[2][2]
 
-			if var14_5[1] > 0 then
-				var16_5 = math.clamp(var14_5[2] - var13_5[2][1], 0, var13_5[2][2])
+			if var15_5[1] > 0 then
+				var17_5 = math.clamp(var15_5[2] - var14_5[2][1], 0, var14_5[2][2])
 			end
 
-			var12_5 = var15_5 + var16_5
+			var13_5 = var16_5 + var17_5
 		end
 
-		var3_5[iter2_5].playerExp = var0_0.GeneralPlayerCosume(var0_5, var4_5, var12_5, iter3_5.player_exp)
+		var4_5[iter2_5].playerExp = var0_0.GeneralPlayerCosume(var0_5, var5_5, var13_5, iter3_5.player_exp)
 	end
 
-	return var3_5
+	return var4_5
 end
 
 function var0_0.addShipsExp(arg0_7, arg1_7)

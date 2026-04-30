@@ -263,81 +263,85 @@ function var0_0.getTrophys(arg0_27)
 	return var0_27
 end
 
-function var0_0.hiddenTrophyAutoClaim(arg0_28)
-	for iter0_28, iter1_28 in pairs(arg0_28.trophy) do
-		if iter1_28:getHideType() ~= Trophy.ALWAYS_SHOW and iter1_28:getHideType() ~= Trophy.COMING_SOON and iter1_28:canClaimed() and not iter1_28:isClaimed() then
-			arg0_28:sendNotification(GAME.TROPHY_CLAIM, {
-				trophyID = iter0_28
+function var0_0.GetTrophyById(arg0_28, arg1_28)
+	return arg0_28.trophy[arg1_28]
+end
+
+function var0_0.hiddenTrophyAutoClaim(arg0_29)
+	for iter0_29, iter1_29 in pairs(arg0_29.trophy) do
+		if iter1_29:getHideType() ~= Trophy.ALWAYS_SHOW and iter1_29:getHideType() ~= Trophy.COMING_SOON and iter1_29:canClaimed() and not iter1_29:isClaimed() then
+			arg0_29:sendNotification(GAME.TROPHY_CLAIM, {
+				trophyID = iter0_29
 			})
 		end
 	end
 end
 
-function var0_0.unclaimTrophyCount(arg0_29)
-	local var0_29 = 0
+function var0_0.unclaimTrophyCount(arg0_30)
+	local var0_30 = 0
 
-	for iter0_29, iter1_29 in pairs(arg0_29.trophy) do
-		if iter1_29:getHideType() == Trophy.ALWAYS_SHOW and iter1_29:canClaimed() and not iter1_29:isClaimed() then
-			var0_29 = var0_29 + 1
+	for iter0_30, iter1_30 in pairs(arg0_30.trophy) do
+		if iter1_30:getHideType() == Trophy.ALWAYS_SHOW and iter1_30:canClaimed() and not iter1_30:isClaimed() then
+			var0_30 = var0_30 + 1
 		end
 	end
 
-	return var0_29
+	return var0_30
 end
 
-function var0_0.updateTrophy(arg0_30)
-	arg0_30:sendNotification(var0_0.TROPHY_UPDATE, Clone(arg0_30.trophy))
+function var0_0.updateTrophy(arg0_31)
+	arg0_31:sendNotification(var0_0.TROPHY_UPDATE, Clone(arg0_31.trophy))
 end
 
-function var0_0.dispatchClaimRemind(arg0_31, arg1_31)
+function var0_0.dispatchClaimRemind(arg0_32, arg1_32)
 	pg.ToastMgr.GetInstance():ShowToast(pg.ToastMgr.TYPE_TROPHY, {
-		id = arg1_31
+		id = arg1_32
 	})
 end
 
-function var0_0.bindComplexTrophy(arg0_32)
-	for iter0_32, iter1_32 in pairs(arg0_32.trophyGroup) do
-		local var0_32 = iter1_32:getTrophyList()
+function var0_0.bindComplexTrophy(arg0_33)
+	for iter0_33, iter1_33 in pairs(arg0_33.trophyGroup) do
+		local var0_33 = iter1_33:getTrophyList()
 
-		for iter2_32, iter3_32 in pairs(var0_32) do
-			if iter3_32:isComplexTrophy() then
-				for iter4_32, iter5_32 in ipairs(iter3_32:getTargetID()) do
-					local var1_32 = arg0_32.trophy[iter5_32] or Trophy.generateDummyTrophy(iter5_32)
+		for iter2_33, iter3_33 in pairs(var0_33) do
+			if iter3_33:isComplexTrophy() then
+				for iter4_33, iter5_33 in ipairs(iter3_33:getTargetID()) do
+					local var1_33 = arg0_33.trophy[iter5_33] or Trophy.generateDummyTrophy(iter5_33)
 
-					iter3_32:bindTrophys(var1_32)
+					iter3_33:bindTrophys(var1_33)
 				end
 			end
 		end
 	end
 end
 
-function var0_0.bindTrophyGroup(arg0_33)
-	local var0_33 = pg.medal_template
+function var0_0.bindTrophyGroup(arg0_34)
+	local var0_34 = pg.medal_template
 
-	for iter0_33, iter1_33 in ipairs(var0_33.all) do
-		if var0_33[iter1_33].hide == Trophy.ALWAYS_SHOW then
-			local var1_33 = math.floor(iter1_33 / 10)
+	for iter0_34, iter1_34 in ipairs(var0_34.all) do
+		if var0_34[iter1_34].hide == Trophy.ALWAYS_SHOW then
+			local var1_34 = math.floor(iter1_34 / 10)
 
-			if not arg0_33.trophyGroup[var1_33] then
-				arg0_33.trophyGroup[var1_33] = TrophyGroup.New(var1_33)
+			if not arg0_34.trophyGroup[var1_34] then
+				arg0_34.trophyGroup[var1_34] = TrophyGroup.New(var1_34)
 			end
 
-			local var2_33 = arg0_33.trophyGroup[var1_33]
+			local var2_34 = arg0_34.trophyGroup[var1_34]
 
-			if arg0_33.trophy[iter1_33] then
-				var2_33:addTrophy(arg0_33.trophy[iter1_33])
+			if arg0_34.trophy[iter1_34] then
+				var2_34:addTrophy(arg0_34.trophy[iter1_34])
 			else
-				var2_33:addDummyTrophy(iter1_33)
+				var2_34:addDummyTrophy(iter1_34)
 			end
 		end
 	end
 
-	for iter2_33, iter3_33 in pairs(arg0_33.trophyGroup) do
-		iter3_33:sortGroup()
+	for iter2_34, iter3_34 in pairs(arg0_34.trophyGroup) do
+		iter3_34:sortGroup()
 	end
 
-	table.sort(arg0_33.trophyGroup, function(arg0_34, arg1_34)
-		return arg0_34:getGroupID() < arg1_34:getGroupID()
+	table.sort(arg0_34.trophyGroup, function(arg0_35, arg1_35)
+		return arg0_35:getGroupID() < arg1_35:getGroupID()
 	end)
 end
 

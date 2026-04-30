@@ -1,6 +1,40 @@
 pg = pg or {}
-pg.blackfriday_shop_template = {
-	{
+pg.blackfriday_shop_template = rawget(pg, "blackfriday_shop_template") or setmetatable({
+	__name = "blackfriday_shop_template"
+}, confNEO)
+pg.blackfriday_shop_template.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22,
+	23,
+	24,
+	25,
+	26
+}
+pg.base = pg.base or {}
+pg.base.blackfriday_shop_template = {}
+
+;(function()
+	pg.base.blackfriday_shop_template[1] = {
 		goods_purchase_limit = 1,
 		resource_category = 1,
 		goods_type = 1,
@@ -16,8 +50,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			608
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[2] = {
 		goods_purchase_limit = 1,
 		resource_category = 1,
 		goods_type = 1,
@@ -33,8 +67,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			3018
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[3] = {
 		goods_purchase_limit = 1,
 		resource_category = 1,
 		goods_type = 1,
@@ -50,8 +84,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			3019
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[4] = {
 		goods_purchase_limit = 1,
 		resource_category = 1,
 		goods_type = 1,
@@ -67,8 +101,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			3020
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[5] = {
 		goods_purchase_limit = 1,
 		resource_category = 1,
 		goods_type = 1,
@@ -84,8 +118,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			3021
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[6] = {
 		goods_purchase_limit = 1,
 		resource_category = 1,
 		goods_type = 1,
@@ -101,8 +135,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			3022
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[7] = {
 		goods_purchase_limit = 1,
 		resource_category = 1,
 		goods_type = 1,
@@ -118,8 +152,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			3023
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[8] = {
 		goods_purchase_limit = 20,
 		resource_category = 1,
 		goods_type = 1,
@@ -135,8 +169,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			42060
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[9] = {
 		goods_purchase_limit = 5,
 		resource_category = 1,
 		goods_type = 1,
@@ -152,8 +186,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			42066
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[10] = {
 		goods_purchase_limit = 5,
 		resource_category = 1,
 		goods_type = 1,
@@ -169,8 +203,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			50006
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[11] = {
 		goods_purchase_limit = 2,
 		resource_category = 1,
 		goods_type = 1,
@@ -186,8 +220,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			100011
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[12] = {
 		goods_purchase_limit = 2,
 		resource_category = 1,
 		goods_type = 1,
@@ -203,8 +237,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			20013
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[13] = {
 		goods_purchase_limit = 10,
 		resource_category = 1,
 		goods_type = 1,
@@ -220,8 +254,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			59010
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[14] = {
 		goods_purchase_limit = 4,
 		resource_category = 1,
 		goods_type = 1,
@@ -237,8 +271,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			20001
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[15] = {
 		goods_purchase_limit = 4,
 		resource_category = 1,
 		goods_type = 1,
@@ -254,8 +288,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			15003
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[16] = {
 		goods_purchase_limit = 1,
 		resource_category = 1,
 		goods_type = 1,
@@ -271,8 +305,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			15009
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[17] = {
 		goods_purchase_limit = 10,
 		resource_category = 1,
 		goods_type = 1,
@@ -288,8 +322,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			30114
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[18] = {
 		goods_purchase_limit = 5,
 		resource_category = 1,
 		goods_type = 1,
@@ -305,8 +339,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			16502
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[19] = {
 		goods_purchase_limit = 10,
 		resource_category = 1,
 		goods_type = 1,
@@ -322,8 +356,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			30113
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[20] = {
 		goods_purchase_limit = 10,
 		resource_category = 1,
 		goods_type = 2,
@@ -341,8 +375,8 @@ pg.blackfriday_shop_template = {
 			16013,
 			16023
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[21] = {
 		goods_purchase_limit = 20,
 		resource_category = 1,
 		goods_type = 1,
@@ -358,8 +392,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			16501
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[22] = {
 		goods_purchase_limit = 2,
 		resource_category = 1,
 		goods_type = 1,
@@ -375,8 +409,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			30014
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[23] = {
 		goods_purchase_limit = 2,
 		resource_category = 1,
 		goods_type = 1,
@@ -392,8 +426,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			30024
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[24] = {
 		goods_purchase_limit = 2,
 		resource_category = 1,
 		goods_type = 1,
@@ -409,8 +443,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			30034
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[25] = {
 		goods_purchase_limit = 2,
 		resource_category = 1,
 		goods_type = 1,
@@ -426,8 +460,8 @@ pg.blackfriday_shop_template = {
 		goods = {
 			30044
 		}
-	},
-	{
+	}
+	pg.base.blackfriday_shop_template[26] = {
 		goods_purchase_limit = 5,
 		resource_category = 1,
 		goods_type = 1,
@@ -443,33 +477,5 @@ pg.blackfriday_shop_template = {
 		goods = {
 			50005
 		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19,
-		20,
-		21,
-		22,
-		23,
-		24,
-		25,
-		26
 	}
-}
+end)()

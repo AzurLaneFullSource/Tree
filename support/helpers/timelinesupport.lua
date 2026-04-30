@@ -31,9 +31,11 @@ function var0_0.EachGroupTrack(arg0_6, arg1_6)
 end
 
 function var0_0.DynamicBinding(arg0_8)
-	local var0_8 = _.reduce(pg.dorm3d_timeline_dynamic_binding, {}, function(arg0_9, arg1_9)
-		if arg1_9.track_name then
-			arg0_9[arg1_9.track_name] = arg1_9.object_name
+	local var0_8 = _.reduce(pg.dorm3d_timeline_dynamic_binding.all, {}, function(arg0_9, arg1_9)
+		local var0_9 = pg.dorm3d_timeline_dynamic_binding[arg1_9]
+
+		if var0_9.track_name then
+			arg0_9[var0_9.track_name] = var0_9.object_name
 		end
 
 		return arg0_9

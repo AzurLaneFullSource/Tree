@@ -1,6 +1,46 @@
 pg = pg or {}
-pg.activity_series_enemy = {
-	[1001] = {
+pg.activity_series_enemy = rawget(pg, "activity_series_enemy") or setmetatable({
+	__name = "activity_series_enemy"
+}, confNEO)
+pg.activity_series_enemy.all = {
+	1001,
+	1002,
+	1003,
+	1004,
+	1005,
+	2001,
+	2002,
+	2003,
+	2004,
+	2005,
+	3001,
+	3002,
+	3003,
+	3004,
+	3005,
+	4001,
+	4002,
+	4011,
+	4012,
+	4021,
+	4022,
+	4031,
+	4032,
+	4041,
+	4042,
+	4051,
+	4052,
+	5001,
+	5002,
+	5003,
+	5004,
+	5005
+}
+pg.base = pg.base or {}
+pg.base.activity_series_enemy = {}
+
+;(function()
+	pg.base.activity_series_enemy[1001] = {
 		pre_chapter = 0,
 		name = "EASY: Jamming Breakthrough",
 		chapter_name = "TC1",
@@ -55,8 +95,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[1002] = {
+	}
+	pg.base.activity_series_enemy[1002] = {
 		pre_chapter = 1001,
 		name = "NORMAL: Anomaly Disruption",
 		chapter_name = "TC2",
@@ -126,8 +166,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[1003] = {
+	}
+	pg.base.activity_series_enemy[1003] = {
 		pre_chapter = 1002,
 		name = "HARD: Research Base Recapture",
 		chapter_name = "TC3",
@@ -202,8 +242,8 @@ pg.activity_series_enemy = {
 			25,
 			16
 		}
-	},
-	[1004] = {
+	}
+	pg.base.activity_series_enemy[1004] = {
 		pre_chapter = 1003,
 		name = "SP: Full-Scale Reconnaissance",
 		chapter_name = "SP",
@@ -273,8 +313,8 @@ pg.activity_series_enemy = {
 			40,
 			16
 		}
-	},
-	[1005] = {
+	}
+	pg.base.activity_series_enemy[1005] = {
 		pre_chapter = 1004,
 		name = "EX: Singularity Diversion Operation",
 		chapter_name = "EX",
@@ -332,8 +372,8 @@ pg.activity_series_enemy = {
 			1000,
 			0.8
 		}
-	},
-	[2001] = {
+	}
+	pg.base.activity_series_enemy[2001] = {
 		pre_chapter = 0,
 		name = "Admin Building",
 		chapter_name = "Easy",
@@ -386,8 +426,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[2002] = {
+	}
+	pg.base.activity_series_enemy[2002] = {
 		pre_chapter = 2001,
 		name = "School Building",
 		chapter_name = "Normal",
@@ -456,8 +496,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[2003] = {
+	}
+	pg.base.activity_series_enemy[2003] = {
 		pre_chapter = 2002,
 		name = "Arts Building",
 		chapter_name = "Hard",
@@ -531,8 +571,8 @@ pg.activity_series_enemy = {
 			25,
 			16
 		}
-	},
-	[2004] = {
+	}
+	pg.base.activity_series_enemy[2004] = {
 		pre_chapter = 2003,
 		name = "Athletic Field",
 		chapter_name = "SP",
@@ -611,8 +651,8 @@ pg.activity_series_enemy = {
 			40,
 			16
 		}
-	},
-	[2005] = {
+	}
+	pg.base.activity_series_enemy[2005] = {
 		pre_chapter = 2004,
 		name = "Academy Forest",
 		chapter_name = "EX",
@@ -670,8 +710,8 @@ pg.activity_series_enemy = {
 			1000,
 			0.8
 		}
-	},
-	[3001] = {
+	}
+	pg.base.activity_series_enemy[3001] = {
 		pre_chapter = 0,
 		name = "Filming Location: Main Road",
 		chapter_name = "Easy",
@@ -724,8 +764,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[3002] = {
+	}
+	pg.base.activity_series_enemy[3002] = {
 		pre_chapter = 3001,
 		name = "Filming Location: Downtown",
 		chapter_name = "Normal",
@@ -794,8 +834,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[3003] = {
+	}
+	pg.base.activity_series_enemy[3003] = {
 		pre_chapter = 3002,
 		name = "Filming Location: Railcar",
 		chapter_name = "Hard",
@@ -869,8 +909,8 @@ pg.activity_series_enemy = {
 			25,
 			16
 		}
-	},
-	[3004] = {
+	}
+	pg.base.activity_series_enemy[3004] = {
 		pre_chapter = 3003,
 		name = "Filming Location: Business District",
 		chapter_name = "S.P",
@@ -938,8 +978,8 @@ pg.activity_series_enemy = {
 			40,
 			16
 		}
-	},
-	[3005] = {
+	}
+	pg.base.activity_series_enemy[3005] = {
 		pre_chapter = 3004,
 		name = "Filming Location: Police Station",
 		chapter_name = "E.X",
@@ -997,8 +1037,8 @@ pg.activity_series_enemy = {
 			1000,
 			0.8
 		}
-	},
-	[4001] = {
+	}
+	pg.base.activity_series_enemy[4001] = {
 		pre_chapter = 0,
 		name = "Normal (Lv. 20)",
 		chapter_name = "无用",
@@ -1077,8 +1117,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[4002] = {
+	}
+	pg.base.activity_series_enemy[4002] = {
 		pre_chapter = 0,
 		name = "Hard (Lv. 35)",
 		chapter_name = "无用",
@@ -1157,8 +1197,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[4011] = {
+	}
+	pg.base.activity_series_enemy[4011] = {
 		pre_chapter = 0,
 		name = "Normal (Lv. 50)",
 		chapter_name = "无用",
@@ -1242,8 +1282,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[4012] = {
+	}
+	pg.base.activity_series_enemy[4012] = {
 		pre_chapter = 0,
 		name = "Hard (Lv. 65)",
 		chapter_name = "无用",
@@ -1327,8 +1367,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[4021] = {
+	}
+	pg.base.activity_series_enemy[4021] = {
 		pre_chapter = 0,
 		name = "Normal (Lv. 50)",
 		chapter_name = "无用",
@@ -1412,8 +1452,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[4022] = {
+	}
+	pg.base.activity_series_enemy[4022] = {
 		pre_chapter = 0,
 		name = "Hard (Lv. 65)",
 		chapter_name = "无用",
@@ -1497,8 +1537,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[4031] = {
+	}
+	pg.base.activity_series_enemy[4031] = {
 		pre_chapter = 0,
 		name = "Normal (Lv. 50)",
 		chapter_name = "无用",
@@ -1582,8 +1622,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[4032] = {
+	}
+	pg.base.activity_series_enemy[4032] = {
 		pre_chapter = 0,
 		name = "Hard (Lv. 65)",
 		chapter_name = "无用",
@@ -1667,8 +1707,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[4041] = {
+	}
+	pg.base.activity_series_enemy[4041] = {
 		pre_chapter = 0,
 		name = "Normal (Lv. 50)",
 		chapter_name = "无用",
@@ -1752,8 +1792,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[4042] = {
+	}
+	pg.base.activity_series_enemy[4042] = {
 		pre_chapter = 0,
 		name = "Hard (Lv. 65)",
 		chapter_name = "无用",
@@ -1837,8 +1877,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[4051] = {
+	}
+	pg.base.activity_series_enemy[4051] = {
 		pre_chapter = 0,
 		name = "Normal (Lv. 80)",
 		chapter_name = "无用",
@@ -1927,8 +1967,8 @@ pg.activity_series_enemy = {
 			22,
 			15
 		}
-	},
-	[4052] = {
+	}
+	pg.base.activity_series_enemy[4052] = {
 		pre_chapter = 0,
 		name = "Hard (Lv. 100)",
 		chapter_name = "无用",
@@ -2017,8 +2057,8 @@ pg.activity_series_enemy = {
 			25,
 			16
 		}
-	},
-	[5001] = {
+	}
+	pg.base.activity_series_enemy[5001] = {
 		pre_chapter = 0,
 		name = "Butterfly Dance's Promise",
 		chapter_name = "Easy",
@@ -2071,8 +2111,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[5002] = {
+	}
+	pg.base.activity_series_enemy[5002] = {
 		pre_chapter = 5001,
 		name = "Warm Velvet's Wonderland",
 		chapter_name = "Normal",
@@ -2141,8 +2181,8 @@ pg.activity_series_enemy = {
 			0,
 			0
 		}
-	},
-	[5003] = {
+	}
+	pg.base.activity_series_enemy[5003] = {
 		pre_chapter = 5002,
 		name = "Window of the Heart",
 		chapter_name = "Hard",
@@ -2216,8 +2256,8 @@ pg.activity_series_enemy = {
 			25,
 			16
 		}
-	},
-	[5004] = {
+	}
+	pg.base.activity_series_enemy[5004] = {
 		pre_chapter = 5003,
 		name = "Pure White Heart",
 		chapter_name = "S.P",
@@ -2285,8 +2325,8 @@ pg.activity_series_enemy = {
 			40,
 			16
 		}
-	},
-	[5005] = {
+	}
+	pg.base.activity_series_enemy[5005] = {
 		pre_chapter = 5004,
 		name = "Whispers in the Dead of Night",
 		chapter_name = "E.X",
@@ -2344,39 +2384,5 @@ pg.activity_series_enemy = {
 			1000,
 			0.8
 		}
-	},
-	all = {
-		1001,
-		1002,
-		1003,
-		1004,
-		1005,
-		2001,
-		2002,
-		2003,
-		2004,
-		2005,
-		3001,
-		3002,
-		3003,
-		3004,
-		3005,
-		4001,
-		4002,
-		4011,
-		4012,
-		4021,
-		4022,
-		4031,
-		4032,
-		4041,
-		4042,
-		4051,
-		4052,
-		5001,
-		5002,
-		5003,
-		5004,
-		5005
 	}
-}
+end)()

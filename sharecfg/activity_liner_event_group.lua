@@ -1,6 +1,18 @@
 pg = pg or {}
-pg.activity_liner_event_group = {
-	{
+pg.activity_liner_event_group = rawget(pg, "activity_liner_event_group") or setmetatable({
+	__name = "activity_liner_event_group"
+}, confNEO)
+pg.activity_liner_event_group.all = {
+	1,
+	2,
+	3,
+	4
+}
+pg.base = pg.base or {}
+pg.base.activity_liner_event_group = {}
+
+;(function()
+	pg.base.activity_liner_event_group[1] = {
 		id = 1,
 		title = "Mysterious Note",
 		ids = {
@@ -18,8 +30,8 @@ pg.activity_liner_event_group = {
 			1,
 			2000
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_event_group[2] = {
 		id = 2,
 		title = "Case of the Disappearing Food",
 		ids = {
@@ -37,8 +49,8 @@ pg.activity_liner_event_group = {
 			15008,
 			200
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_event_group[3] = {
 		id = 3,
 		title = "Ghost of the Stateroom",
 		ids = {
@@ -56,8 +68,8 @@ pg.activity_liner_event_group = {
 			42050,
 			10
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_event_group[4] = {
 		id = 4,
 		title = "Night of Merriment",
 		ids = {
@@ -75,11 +87,5 @@ pg.activity_liner_event_group = {
 			606,
 			1
 		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4
 	}
-}
+end)()

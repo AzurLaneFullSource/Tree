@@ -1,268 +1,271 @@
 pg = pg or {}
-pg.pay_data_display = setmetatable({
-	__name = "pay_data_display",
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		24,
-		25,
-		26,
-		27,
-		28,
-		29,
-		30,
-		31,
-		32,
-		33,
-		34,
-		35,
-		36,
-		37,
-		38,
-		39,
-		42,
-		43,
-		44,
-		45,
-		46,
-		47,
-		48,
-		49,
-		50,
-		51,
-		52,
-		53,
-		55,
-		56,
-		57,
-		61,
-		62,
-		63,
-		64,
-		65,
-		66,
-		67,
-		68,
-		69,
-		70,
-		71,
-		72,
-		73,
-		74,
-		75,
-		76,
-		77,
-		78,
-		79,
-		82,
-		83,
-		84,
-		85,
-		86,
-		87,
-		88,
-		89,
-		90,
-		91,
-		92,
-		93,
-		94,
-		95,
-		96,
-		97,
-		98,
-		99,
-		9001,
-		9007,
-		9008,
-		9009,
-		9010,
-		9011,
-		9012,
-		9013,
-		9014,
-		9015,
-		100,
-		101,
-		102,
-		103,
-		104,
-		105,
-		106,
-		107,
-		108,
-		109,
-		110,
-		111,
-		112,
-		113,
-		114,
-		115,
-		116,
-		117,
-		118,
-		119,
-		120,
-		121,
-		122,
-		123,
-		124,
-		125,
-		126,
-		127,
-		128,
-		129,
-		130,
-		131,
-		132,
-		133,
-		134,
-		135,
-		136,
-		137,
-		138,
-		139,
-		140,
-		141,
-		142,
-		143,
-		144,
-		145,
-		146,
-		147,
-		148,
-		149,
-		150,
-		151,
-		152,
-		153,
-		154,
-		155,
-		156,
-		157,
-		158,
-		159,
-		160,
-		161,
-		162,
-		163,
-		164,
-		165,
-		166,
-		167,
-		1000,
-		1001,
-		1002,
-		1003,
-		1004,
-		1005,
-		1006,
-		1007,
-		1008,
-		1009,
-		1010,
-		1011,
-		1012,
-		1013,
-		1014,
-		1015,
-		1016,
-		1017,
-		1018,
-		1019,
-		1020,
-		1021,
-		1022,
-		1023,
-		1024,
-		1025,
-		1026,
-		1027,
-		1301,
-		2001,
-		2002,
-		2003,
-		2004,
-		2005,
-		2006,
-		2007,
-		2008,
-		2009,
-		2010,
-		2011,
-		2014,
-		2015,
-		2016,
-		2017,
-		2018,
-		2019,
-		2020,
-		2022,
-		2023,
-		2024,
-		2025,
-		2026,
-		2027,
-		2028,
-		2029,
-		2030,
-		2031,
-		2032,
-		2033,
-		2034,
-		2035,
-		2036,
-		2037,
-		2038,
-		2039,
-		2040,
-		2041,
-		2042,
-		2043,
-		2044,
-		2045,
-		2046,
-		2047,
-		2048,
-		2049,
-		2050,
-		2051,
-		2052,
-		2053,
-		2054,
-		2055,
-		2056,
-		2057,
-		2058,
-		2059,
-		2063,
-		2064,
-		2068,
-		2069,
-		2070,
-		2071,
-		2074,
-		2075,
-		2076,
-		2078,
-		5011,
-		5012,
-		5013,
-		5014,
-		5015,
-		5016,
-		5017
-	}
-}, confHX)
+pg.pay_data_display = rawget(pg, "pay_data_display") or setmetatable({
+	__name = "pay_data_display"
+}, confNEO)
+pg.pay_data_display.__namecode__ = true
+pg.pay_data_display.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	24,
+	25,
+	26,
+	27,
+	28,
+	29,
+	30,
+	31,
+	32,
+	33,
+	34,
+	35,
+	36,
+	37,
+	38,
+	39,
+	42,
+	43,
+	44,
+	45,
+	46,
+	47,
+	48,
+	49,
+	50,
+	51,
+	52,
+	53,
+	55,
+	56,
+	57,
+	61,
+	62,
+	63,
+	64,
+	65,
+	66,
+	67,
+	68,
+	69,
+	70,
+	71,
+	72,
+	73,
+	74,
+	75,
+	76,
+	77,
+	78,
+	79,
+	82,
+	83,
+	84,
+	85,
+	86,
+	87,
+	88,
+	89,
+	90,
+	91,
+	92,
+	93,
+	94,
+	95,
+	96,
+	97,
+	98,
+	99,
+	9001,
+	9007,
+	9008,
+	9009,
+	9010,
+	9011,
+	9012,
+	9013,
+	9014,
+	9015,
+	100,
+	101,
+	102,
+	103,
+	104,
+	105,
+	106,
+	107,
+	108,
+	109,
+	110,
+	111,
+	112,
+	113,
+	114,
+	115,
+	116,
+	117,
+	118,
+	119,
+	120,
+	121,
+	122,
+	123,
+	124,
+	125,
+	126,
+	127,
+	128,
+	129,
+	130,
+	131,
+	132,
+	133,
+	134,
+	135,
+	136,
+	137,
+	138,
+	139,
+	140,
+	141,
+	142,
+	143,
+	144,
+	145,
+	146,
+	147,
+	148,
+	149,
+	150,
+	151,
+	152,
+	153,
+	154,
+	155,
+	156,
+	157,
+	158,
+	159,
+	160,
+	161,
+	162,
+	163,
+	164,
+	165,
+	166,
+	167,
+	1000,
+	1001,
+	1002,
+	1003,
+	1004,
+	1005,
+	1006,
+	1007,
+	1008,
+	1009,
+	1010,
+	1011,
+	1012,
+	1013,
+	1014,
+	1015,
+	1016,
+	1017,
+	1018,
+	1019,
+	1020,
+	1021,
+	1022,
+	1023,
+	1024,
+	1025,
+	1026,
+	1027,
+	1301,
+	2001,
+	2002,
+	2003,
+	2004,
+	2005,
+	2006,
+	2007,
+	2008,
+	2009,
+	2010,
+	2011,
+	2014,
+	2015,
+	2016,
+	2017,
+	2018,
+	2019,
+	2020,
+	2022,
+	2023,
+	2024,
+	2025,
+	2026,
+	2027,
+	2028,
+	2029,
+	2030,
+	2031,
+	2032,
+	2033,
+	2034,
+	2035,
+	2036,
+	2037,
+	2038,
+	2039,
+	2040,
+	2041,
+	2042,
+	2043,
+	2044,
+	2045,
+	2046,
+	2047,
+	2048,
+	2049,
+	2050,
+	2051,
+	2052,
+	2053,
+	2054,
+	2055,
+	2056,
+	2057,
+	2058,
+	2059,
+	2063,
+	2064,
+	2068,
+	2069,
+	2070,
+	2071,
+	2074,
+	2075,
+	2076,
+	2078,
+	5011,
+	5012,
+	5013,
+	5014,
+	5015,
+	5016,
+	5017
+}
 pg.base = pg.base or {}
-pg.base.pay_data_display = {
-	{
+pg.base.pay_data_display = {}
+
+;(function()
+	pg.base.pay_data_display[1] = {
 		limit_group = 0,
 		name = "Trade License (30 days)",
 		descrip_extra = "",
@@ -355,8 +358,8 @@ pg.base.pay_data_display = {
 				500
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[2] = {
 		limit_group = 0,
 		name = "Novice sailing supplies",
 		descrip_extra = "",
@@ -438,8 +441,8 @@ pg.base.pay_data_display = {
 				2
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[3] = {
 		limit_group = 0,
 		name = "Handful of Gems",
 		descrip_extra = "",
@@ -478,8 +481,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	{
+	}
+	pg.base.pay_data_display[4] = {
 		limit_group = 0,
 		name = "Pile of Gems",
 		descrip_extra = "",
@@ -518,8 +521,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	{
+	}
+	pg.base.pay_data_display[5] = {
 		limit_group = 0,
 		name = "Sack of Gems",
 		descrip_extra = "",
@@ -558,8 +561,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	{
+	}
+	pg.base.pay_data_display[6] = {
 		limit_group = 0,
 		name = "Box of Gems",
 		descrip_extra = "",
@@ -598,8 +601,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	{
+	}
+	pg.base.pay_data_display[7] = {
 		limit_group = 0,
 		name = "Chest of Gems",
 		descrip_extra = "",
@@ -638,8 +641,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	{
+	}
+	pg.base.pay_data_display[8] = {
 		limit_group = 0,
 		name = "Ship of Gems",
 		descrip_extra = "",
@@ -678,8 +681,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[24] = {
+	}
+	pg.base.pay_data_display[24] = {
 		limit_group = 0,
 		name = "2020 Party Dress Lucky Bag",
 		descrip_extra = "*After your purchase, the Lucky Bag will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -801,8 +804,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[25] = {
+	}
+	pg.base.pay_data_display[25] = {
 		limit_group = 0,
 		name = "Shougatsu Lucky Bag 2021 ",
 		descrip_extra = "*After your purchase, the Lucky Bag will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -924,8 +927,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[26] = {
+	}
+	pg.base.pay_data_display[26] = {
 		limit_group = 0,
 		name = "Shougatsu Lucky Bag 2020 ",
 		descrip_extra = "*After your purchase, the Lucky Bag will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -1047,8 +1050,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[27] = {
+	}
+	pg.base.pay_data_display[27] = {
 		limit_group = 0,
 		name = "Lunar New Year Lucky Bag (2021)",
 		descrip_extra = "*After your purchase, the Lucky Bag will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -1170,8 +1173,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[28] = {
+	}
+	pg.base.pay_data_display[28] = {
 		limit_group = 0,
 		name = "Lunar New Year Lucky Bag (2020)",
 		descrip_extra = "*After your purchase, the Lucky Bag will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -1293,8 +1296,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[29] = {
+	}
+	pg.base.pay_data_display[29] = {
 		limit_group = 0,
 		name = "Exquisite Lucky Box 2021 ",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -1416,8 +1419,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[30] = {
+	}
+	pg.base.pay_data_display[30] = {
 		limit_group = 0,
 		name = "Exquisite Lucky Bag 2020 ",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -1539,8 +1542,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[31] = {
+	}
+	pg.base.pay_data_display[31] = {
 		limit_group = 0,
 		name = "New Commanders Support Pack IV ",
 		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack. ",
@@ -1668,8 +1671,8 @@ pg.base.pay_data_display = {
 				1980
 			}
 		}
-	},
-	[32] = {
+	}
+	pg.base.pay_data_display[32] = {
 		limit_group = 0,
 		name = "2021 Party Dress Lucky Box",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -1791,8 +1794,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[33] = {
+	}
+	pg.base.pay_data_display[33] = {
 		limit_group = 0,
 		name = "2020 Party Dress Lucky Box",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -1914,8 +1917,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[34] = {
+	}
+	pg.base.pay_data_display[34] = {
 		limit_group = 0,
 		name = "Shougatsu Lucky Box 2022 ",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -2037,8 +2040,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[35] = {
+	}
+	pg.base.pay_data_display[35] = {
 		limit_group = 0,
 		name = "Shougatsu Lucky Bag 2021 ",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -2160,8 +2163,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[36] = {
+	}
+	pg.base.pay_data_display[36] = {
 		limit_group = 0,
 		name = "Lunar New Year Lucky Bag (2022)",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -2283,8 +2286,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[37] = {
+	}
+	pg.base.pay_data_display[37] = {
 		limit_group = 0,
 		name = "Lunar New Year Lucky Bag (2021)",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -2406,8 +2409,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[38] = {
+	}
+	pg.base.pay_data_display[38] = {
 		limit_group = 0,
 		name = "Exquisite Lucky Box 2022 ",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -2529,8 +2532,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[39] = {
+	}
+	pg.base.pay_data_display[39] = {
 		limit_group = 0,
 		name = "Exquisite Lucky Box 2021 ",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -2652,8 +2655,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[42] = {
+	}
+	pg.base.pay_data_display[42] = {
 		limit_group = 0,
 		name = "Party Dress Lucky Box 2021 Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -2775,8 +2778,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[43] = {
+	}
+	pg.base.pay_data_display[43] = {
 		limit_group = 0,
 		name = "Party Dress Lucky Box 2022",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -2898,8 +2901,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[44] = {
+	}
+	pg.base.pay_data_display[44] = {
 		limit_group = 0,
 		name = "Welcome Back Pack",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -3061,8 +3064,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[45] = {
+	}
+	pg.base.pay_data_display[45] = {
 		limit_group = 0,
 		name = "Winter Swimsuit Lucky Bag 2022 A",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -3184,8 +3187,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[46] = {
+	}
+	pg.base.pay_data_display[46] = {
 		limit_group = 0,
 		name = "Winter Swimsuit Lucky Bag 2022 B",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -3307,8 +3310,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[47] = {
+	}
+	pg.base.pay_data_display[47] = {
 		limit_group = 0,
 		name = "Shougatsu Lucky Box 2022 Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -3430,8 +3433,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[48] = {
+	}
+	pg.base.pay_data_display[48] = {
 		limit_group = 0,
 		name = "Spring Lucky Bag 2023 A",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -3553,8 +3556,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[49] = {
+	}
+	pg.base.pay_data_display[49] = {
 		limit_group = 0,
 		name = "Spring Lucky Bag 2023 B",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -3676,8 +3679,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[50] = {
+	}
+	pg.base.pay_data_display[50] = {
 		limit_group = 0,
 		name = "Lunar New Year Lucky Bag 2022 Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -3799,8 +3802,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[51] = {
+	}
+	pg.base.pay_data_display[51] = {
 		limit_group = 0,
 		name = "Swimsuit Lucky Bag 2023",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -3933,8 +3936,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[52] = {
+	}
+	pg.base.pay_data_display[52] = {
 		limit_group = 0,
 		name = "Exquisite Lucky Box 2023",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -4067,8 +4070,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[53] = {
+	}
+	pg.base.pay_data_display[53] = {
 		limit_group = 0,
 		name = "Exquisite Lucky Box 2022 Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -4201,8 +4204,8 @@ pg.base.pay_data_display = {
 				2022
 			}
 		}
-	},
-	[55] = {
+	}
+	pg.base.pay_data_display[55] = {
 		limit_group = 0,
 		name = "Autumn Classics Lucky Box ",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -4335,8 +4338,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[56] = {
+	}
+	pg.base.pay_data_display[56] = {
 		limit_group = 0,
 		name = "Party Dress Lucky Box 2022 Rerun ",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -4469,8 +4472,8 @@ pg.base.pay_data_display = {
 				2022
 			}
 		}
-	},
-	[57] = {
+	}
+	pg.base.pay_data_display[57] = {
 		limit_group = 0,
 		name = "Fashion Collection Lucky Bag ",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -4603,8 +4606,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[61] = {
+	}
+	pg.base.pay_data_display[61] = {
 		limit_group = 0,
 		name = "Resplendent Night Lucky Bag I",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -4737,8 +4740,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[62] = {
+	}
+	pg.base.pay_data_display[62] = {
 		limit_group = 0,
 		name = "Winter Swimsuit Lucky Bag 2022 A Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -4871,8 +4874,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[63] = {
+	}
+	pg.base.pay_data_display[63] = {
 		limit_group = 0,
 		name = "Resplendent Night Lucky Bag II",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -5005,8 +5008,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[64] = {
+	}
+	pg.base.pay_data_display[64] = {
 		limit_group = 0,
 		name = "Winter Swimsuit Lucky Bag 2022 B Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -5139,8 +5142,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[65] = {
+	}
+	pg.base.pay_data_display[65] = {
 		limit_group = 0,
 		name = "Spring Lucky Box 2024 A",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -5273,8 +5276,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[66] = {
+	}
+	pg.base.pay_data_display[66] = {
 		limit_group = 0,
 		name = "Spring Lucky Bag 2023 A Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -5407,8 +5410,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[67] = {
+	}
+	pg.base.pay_data_display[67] = {
 		limit_group = 0,
 		name = "Spring Lucky Box 2024 B",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -5541,8 +5544,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[68] = {
+	}
+	pg.base.pay_data_display[68] = {
 		limit_group = 0,
 		name = "Spring Lucky Bag 2023 B Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -5675,8 +5678,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[69] = {
+	}
+	pg.base.pay_data_display[69] = {
 		limit_group = 0,
 		name = "Swimsuit Lucky Bag 2024",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -5809,8 +5812,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[70] = {
+	}
+	pg.base.pay_data_display[70] = {
 		limit_group = 0,
 		name = "Swimsuit Lucky Bag 2023 Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -5943,8 +5946,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[71] = {
+	}
+	pg.base.pay_data_display[71] = {
 		limit_group = 0,
 		name = "Exquisite Lucky Envelope 2024",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -6077,8 +6080,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[72] = {
+	}
+	pg.base.pay_data_display[72] = {
 		limit_group = 0,
 		name = "Exquisite Lucky Box 2023 Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -6211,8 +6214,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[73] = {
+	}
+	pg.base.pay_data_display[73] = {
 		limit_group = 0,
 		name = "Dreamland Lucky Bag A",
 		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack.",
@@ -6345,8 +6348,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[74] = {
+	}
+	pg.base.pay_data_display[74] = {
 		limit_group = 0,
 		name = "Fashion Collection Lucky Bag Rerun",
 		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack.",
@@ -6479,8 +6482,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[75] = {
+	}
+	pg.base.pay_data_display[75] = {
 		limit_group = 0,
 		name = "Dreamland Lucky Bag B",
 		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack.",
@@ -6613,8 +6616,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[76] = {
+	}
+	pg.base.pay_data_display[76] = {
 		limit_group = 0,
 		name = "Autumn Classics Lucky Box Rerun",
 		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack.",
@@ -6747,8 +6750,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[77] = {
+	}
+	pg.base.pay_data_display[77] = {
 		limit_group = 0,
 		name = "Choose-Your-Own Gift Pack I",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -6855,8 +6858,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[78] = {
+	}
+	pg.base.pay_data_display[78] = {
 		limit_group = 0,
 		name = "Choose-Your-Own Gift Pack II",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -6968,8 +6971,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[79] = {
+	}
+	pg.base.pay_data_display[79] = {
 		limit_group = 0,
 		name = "Choose-Your-Own Gift Pack III",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -7096,8 +7099,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[82] = {
+	}
+	pg.base.pay_data_display[82] = {
 		limit_group = 0,
 		name = "Game Night Lucky Bag A",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -7230,8 +7233,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[83] = {
+	}
+	pg.base.pay_data_display[83] = {
 		limit_group = 0,
 		name = "Resplendent Night Lucky Bag I Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -7364,8 +7367,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[84] = {
+	}
+	pg.base.pay_data_display[84] = {
 		limit_group = 0,
 		name = "Game Night Lucky Bag B",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -7498,8 +7501,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[85] = {
+	}
+	pg.base.pay_data_display[85] = {
 		limit_group = 0,
 		name = "Resplendent Night Lucky Bag II Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -7632,8 +7635,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[86] = {
+	}
+	pg.base.pay_data_display[86] = {
 		limit_group = 0,
 		name = "Spring Lucky Bag 2025 A",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -7766,8 +7769,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[87] = {
+	}
+	pg.base.pay_data_display[87] = {
 		limit_group = 0,
 		name = "Spring Lucky Bag 2025 B",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -7900,8 +7903,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[88] = {
+	}
+	pg.base.pay_data_display[88] = {
 		limit_group = 0,
 		name = "Spring Lucky Box 2024 A (Rerun)",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -8034,8 +8037,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[89] = {
+	}
+	pg.base.pay_data_display[89] = {
 		limit_group = 0,
 		name = "Spring Lucky Box 2024 B (Rerun)",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -8168,8 +8171,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[90] = {
+	}
+	pg.base.pay_data_display[90] = {
 		limit_group = 0,
 		name = "School Return Lucky Box",
 		descrip_extra = "* The Lucky Box will be sent to your ingame Mail.\n* If you already own all the listed skins, you will receive Gems x680 instead.",
@@ -8282,8 +8285,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[91] = {
+	}
+	pg.base.pay_data_display[91] = {
 		limit_group = 0,
 		name = "Swimsuit Lucky Bag 2025 A",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -8416,8 +8419,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[92] = {
+	}
+	pg.base.pay_data_display[92] = {
 		limit_group = 0,
 		name = "Swimsuit Lucky Bag 2024 Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -8550,8 +8553,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[93] = {
+	}
+	pg.base.pay_data_display[93] = {
 		limit_group = 0,
 		name = "Swimsuit Lucky Bag 2025 B",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -8684,8 +8687,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[94] = {
+	}
+	pg.base.pay_data_display[94] = {
 		limit_group = 0,
 		name = "Exquisite Lucky Envelope 2024 Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -8818,8 +8821,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[95] = {
+	}
+	pg.base.pay_data_display[95] = {
 		limit_group = 0,
 		name = "Bunny Girl Return Lucky Box",
 		descrip_extra = "* The Lucky Box will be sent to your ingame Mail.\n* If you already own all the listed skins, you will receive Gems x680 instead.",
@@ -8932,8 +8935,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[96] = {
+	}
+	pg.base.pay_data_display[96] = {
 		limit_group = 0,
 		name = "Ninja Castle Lucky Box A",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -9066,8 +9069,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[97] = {
+	}
+	pg.base.pay_data_display[97] = {
 		limit_group = 0,
 		name = "Dreamland Lucky Bag A Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -9200,8 +9203,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[98] = {
+	}
+	pg.base.pay_data_display[98] = {
 		limit_group = 0,
 		name = "Ninja Castle Lucky Box B",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -9334,8 +9337,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[99] = {
+	}
+	pg.base.pay_data_display[99] = {
 		limit_group = 0,
 		name = "Dreamland Lucky Bag B Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -9468,8 +9471,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[9001] = {
+	}
+	pg.base.pay_data_display[9001] = {
 		limit_group = 0,
 		name = "Sports & Race Return Lucky Box",
 		descrip_extra = "* The Lucky Box will be sent to your ingame Mail.\n* If you already own all the listed skins, you will receive Gems x680 instead.",
@@ -9582,8 +9585,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[9007] = {
+	}
+	pg.base.pay_data_display[9007] = {
 		limit_group = 0,
 		name = "Maidly Service Lucky Box A",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -9716,8 +9719,8 @@ pg.base.pay_data_display = {
 				2026
 			}
 		}
-	},
-	[9008] = {
+	}
+	pg.base.pay_data_display[9008] = {
 		limit_group = 0,
 		name = "Game Night Lucky Bag A Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -9850,8 +9853,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[9009] = {
+	}
+	pg.base.pay_data_display[9009] = {
 		limit_group = 0,
 		name = "Maidly Service Lucky Box B",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -9984,8 +9987,8 @@ pg.base.pay_data_display = {
 				2026
 			}
 		}
-	},
-	[9010] = {
+	}
+	pg.base.pay_data_display[9010] = {
 		limit_group = 0,
 		name = "Game Night Lucky Bag B Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -10118,8 +10121,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[9011] = {
+	}
+	pg.base.pay_data_display[9011] = {
 		limit_group = 0,
 		name = "Spring Lucky Box 2026 A",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -10252,8 +10255,8 @@ pg.base.pay_data_display = {
 				2026
 			}
 		}
-	},
-	[9012] = {
+	}
+	pg.base.pay_data_display[9012] = {
 		limit_group = 0,
 		name = "Spring Lucky Bag 2025 A Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -10386,8 +10389,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[9013] = {
+	}
+	pg.base.pay_data_display[9013] = {
 		limit_group = 0,
 		name = "Spring Lucky Box 2026 B",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -10520,8 +10523,8 @@ pg.base.pay_data_display = {
 				2026
 			}
 		}
-	},
-	[9014] = {
+	}
+	pg.base.pay_data_display[9014] = {
 		limit_group = 0,
 		name = "Spring Lucky Box 2025 B Rerun",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -10654,8 +10657,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[9015] = {
+	}
+	pg.base.pay_data_display[9015] = {
 		limit_group = 0,
 		name = "Party Dress Return Lucky Box",
 		descrip_extra = "* The Lucky Box will be sent to your ingame Mail.\n* If you already own all the listed skins, you will receive Gems x680 instead.",
@@ -10768,8 +10771,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[100] = {
+	}
+	pg.base.pay_data_display[100] = {
 		limit_group = 0,
 		name = "Nep's Lucky Bag ",
 		descrip_extra = "*Nep's Lucky Bag will appear in your mailbox. \n* If you draw an already owned ship skin, you will be refunded 80% of the gem cost.",
@@ -10880,8 +10883,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[101] = {
+	}
+	pg.base.pay_data_display[101] = {
 		limit_group = 0,
 		name = "Black Friday Lucky Bag ",
 		descrip_extra = "*Black Friday Lucky Bag will appear in your mailbox. \n* If you draw an already owned ship skin, you will be refunded 100% of the gem cost.",
@@ -11002,8 +11005,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[102] = {
+	}
+	pg.base.pay_data_display[102] = {
 		limit_group = 0,
 		name = "Christmas Lucky Bag ",
 		descrip_extra = "*Christmas Lucky Bag will appear in your mailbox. \n* If you drew a ship skin that you already have, you will be refunded 80% of the gem cost. ",
@@ -11114,8 +11117,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[103] = {
+	}
+	pg.base.pay_data_display[103] = {
 		limit_group = 0,
 		name = "Heartthrob Pack",
 		descrip_extra = "*The pack contains 1 x Promise Ring, 1 x Universal Bulin, 10 x Quick Finishers, and 5 x Full Courses",
@@ -11216,8 +11219,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[104] = {
+	}
+	pg.base.pay_data_display[104] = {
 		limit_group = 0,
 		name = "Santa's Lucky Sack (Daily)",
 		descrip_extra = "*The sack contains 1 x Mystery T4 Tech Pack, 6 x Wisdom Cubes, 3 x Quick Finishers, 100 x Gems, and 3000 x Coins",
@@ -11323,8 +11326,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[105] = {
+	}
+	pg.base.pay_data_display[105] = {
 		limit_group = 0,
 		name = "Shougatsu Lucky Bag (2019)",
 		descrip_extra = "*After your purchase, the Lucky Bag will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -11435,8 +11438,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[106] = {
+	}
+	pg.base.pay_data_display[106] = {
 		limit_group = 0,
 		name = "Lunar New Year Lucky Bag (2019)",
 		descrip_extra = "*After your purchase, the Lucky Bag will be sent to your mailbox. \n*If you’ve received a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -11552,8 +11555,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[107] = {
+	}
+	pg.base.pay_data_display[107] = {
 		limit_group = 0,
 		name = "Glacier Blast ",
 		descrip_extra = "*After your purchase, the Lucky Bag will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -11664,8 +11667,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[108] = {
+	}
+	pg.base.pay_data_display[108] = {
 		limit_group = 0,
 		name = "Hanami Lucky Bag ",
 		descrip_extra = "*After your purchase, the Lucky Bag will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems.",
@@ -11776,8 +11779,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[109] = {
+	}
+	pg.base.pay_data_display[109] = {
 		limit_group = 0,
 		name = "Research Supply (daily) ",
 		descrip_extra = "*After your purchase, the Lucky Bag will be sent to your mailbox.",
@@ -11883,8 +11886,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[110] = {
+	}
+	pg.base.pay_data_display[110] = {
 		limit_group = 0,
 		name = "Scherzo Lucky Box ",
 		descrip_extra = "*After your purchase, the Lucky Box will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -11995,8 +11998,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[111] = {
+	}
+	pg.base.pay_data_display[111] = {
 		limit_group = 0,
 		name = "1st Anniversary Lucky Bag ",
 		descrip_extra = "*After your purchase, the Lucky Box will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's on sale value in Gems. ",
@@ -12107,8 +12110,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[112] = {
+	}
+	pg.base.pay_data_display[112] = {
 		limit_group = 0,
 		name = "Yukata Lucky Bag",
 		descrip_extra = "*After your purchase, the Lucky Box will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -12219,8 +12222,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[113] = {
+	}
+	pg.base.pay_data_display[113] = {
 		limit_group = 0,
 		name = "Full Dress Lucky Bag ",
 		descrip_extra = "*After your purchase, the Lucky Box will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -12331,8 +12334,10 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[114] = {
+	}
+end)()
+;(function()
+	pg.base.pay_data_display[114] = {
 		limit_group = 0,
 		name = "Black Friday Lucky Box ",
 		descrip_extra = "*After your purchase, the Lucky Box will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -12448,8 +12453,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[115] = {
+	}
+	pg.base.pay_data_display[115] = {
 		limit_group = 0,
 		name = "Christmas Lucky Bag ",
 		descrip_extra = "*After your purchase, the Lucky Bag will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -12560,8 +12565,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[116] = {
+	}
+	pg.base.pay_data_display[116] = {
 		limit_group = 0,
 		name = "Shougatsu Lucky Bag (2020)",
 		descrip_extra = "*After your purchase, the Lucky Bag will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -12677,8 +12682,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[117] = {
+	}
+	pg.base.pay_data_display[117] = {
 		limit_group = 0,
 		name = "Shougatsu Lucky Bag (2019)",
 		descrip_extra = "*After your purchase, the Lucky Bag will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -12789,8 +12794,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[118] = {
+	}
+	pg.base.pay_data_display[118] = {
 		limit_group = 0,
 		name = "Lunar New Year Lucky Bag (2020)",
 		descrip_extra = "*After your purchase, the Lucky Bag will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -12906,8 +12911,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[119] = {
+	}
+	pg.base.pay_data_display[119] = {
 		limit_group = 0,
 		name = "Lunar New Year Lucky Bag (2019)",
 		descrip_extra = "*After your purchase, the Lucky Bag will be sent to your mailbox. \n*If you receive a ship skin that you already own, you will instead be given the corresponding skin's value in Gems. ",
@@ -13018,8 +13023,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[120] = {
+	}
+	pg.base.pay_data_display[120] = {
 		limit_group = 0,
 		name = "New Commanders Support Pack I",
 		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack. ",
@@ -13121,8 +13126,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[121] = {
+	}
+	pg.base.pay_data_display[121] = {
 		limit_group = 0,
 		name = "New Commanders Support Pack II",
 		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack. ",
@@ -13249,8 +13254,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[122] = {
+	}
+	pg.base.pay_data_display[122] = {
 		limit_group = 0,
 		name = "New Commanders Support Pack III",
 		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack. ",
@@ -13382,8 +13387,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[123] = {
+	}
+	pg.base.pay_data_display[123] = {
 		limit_group = 0,
 		name = "Crimson Echoes' Lucky Bag",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -13494,8 +13499,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[124] = {
+	}
+	pg.base.pay_data_display[124] = {
 		limit_group = 0,
 		name = "Night Out Lucky Bag ",
 		descrip_extra = "The pack includes lots of material rewards. The Startup Pack will be sent to you via in-game mail, please check your mailbox to claim the pack. ",
@@ -13611,8 +13616,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[125] = {
+	}
+	pg.base.pay_data_display[125] = {
 		limit_group = 0,
 		name = "Skybound Oratorio Lucky Bag",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -13723,8 +13728,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[126] = {
+	}
+	pg.base.pay_data_display[126] = {
 		limit_group = 0,
 		name = "Aurora Noctis Lucky Bag ",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -13835,8 +13840,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[127] = {
+	}
+	pg.base.pay_data_display[127] = {
 		limit_group = 0,
 		name = "Summer Scherzo Lucky Bag ",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -13947,8 +13952,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[128] = {
+	}
+	pg.base.pay_data_display[128] = {
 		limit_group = 0,
 		name = "Shining Star Lucky Bag ",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -14064,8 +14069,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[129] = {
+	}
+	pg.base.pay_data_display[129] = {
 		limit_group = 0,
 		name = "Azur Black Friday Lucky Box ",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -14181,8 +14186,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[130] = {
+	}
+	pg.base.pay_data_display[130] = {
 		limit_group = 0,
 		name = "Crimson Black Friday Lucky Box ",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -14298,8 +14303,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[131] = {
+	}
+	pg.base.pay_data_display[131] = {
 		limit_group = 0,
 		name = "Dawn's Rime Lucky Pack",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -14415,8 +14420,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[132] = {
+	}
+	pg.base.pay_data_display[132] = {
 		limit_group = 0,
 		name = "Daedalian Hymn's Lucky Bag",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -14532,8 +14537,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[133] = {
+	}
+	pg.base.pay_data_display[133] = {
 		limit_group = 0,
 		name = "Microlayer Medley Lucky Box 2021",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -14649,8 +14654,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[134] = {
+	}
+	pg.base.pay_data_display[134] = {
 		limit_group = 0,
 		name = "Black Friday Lucky Music Box",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -14766,8 +14771,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[135] = {
+	}
+	pg.base.pay_data_display[135] = {
 		limit_group = 0,
 		name = "Abyssal Refrain Lucky Pack",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -14883,8 +14888,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[136] = {
+	}
+	pg.base.pay_data_display[136] = {
 		limit_group = 0,
 		name = "Crimson Offering Lucky Chalice",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -15000,8 +15005,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[137] = {
+	}
+	pg.base.pay_data_display[137] = {
 		limit_group = 0,
 		name = "Aquilifer's Ballade Lucky Box",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -15117,8 +15122,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[138] = {
+	}
+	pg.base.pay_data_display[138] = {
 		limit_group = 0,
 		name = "4th Anniversary Lucky Box",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -15234,8 +15239,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[139] = {
+	}
+	pg.base.pay_data_display[139] = {
 		limit_group = 0,
 		name = "Black Friday Lucky Bag (2022)",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -15357,8 +15362,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[140] = {
+	}
+	pg.base.pay_data_display[140] = {
 		limit_group = 0,
 		name = "New Semester Lucky Pack",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -15480,8 +15485,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[141] = {
+	}
+	pg.base.pay_data_display[141] = {
 		limit_group = 0,
 		name = "Onsen Souvenir Lucky Bag",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -15603,8 +15608,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[142] = {
+	}
+	pg.base.pay_data_display[142] = {
 		limit_group = 0,
 		name = "Office Hour Lucky Box",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -15737,8 +15742,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[143] = {
+	}
+	pg.base.pay_data_display[143] = {
 		limit_group = 0,
 		name = "5th Anniversary Lucky Box",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -15871,8 +15876,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[144] = {
+	}
+	pg.base.pay_data_display[144] = {
 		limit_group = 0,
 		name = "Halloween Lucky Box 2023",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -16005,8 +16010,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[145] = {
+	}
+	pg.base.pay_data_display[145] = {
 		limit_group = 0,
 		name = "Black Friday Lucky Bag (2023)",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -16139,8 +16144,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[146] = {
+	}
+	pg.base.pay_data_display[146] = {
 		limit_group = 0,
 		name = "Cyber City Lucky Box",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -16273,8 +16278,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[147] = {
+	}
+	pg.base.pay_data_display[147] = {
 		limit_group = 0,
 		name = "Adventurer's Lucky Chest",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -16407,8 +16412,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[148] = {
+	}
+	pg.base.pay_data_display[148] = {
 		limit_group = 0,
 		name = "Lavish Lucky Boombox",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -16541,8 +16546,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[149] = {
+	}
+	pg.base.pay_data_display[149] = {
 		limit_group = 0,
 		name = "School Time Lucky Bag",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -16675,8 +16680,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[150] = {
+	}
+	pg.base.pay_data_display[150] = {
 		limit_group = 0,
 		name = "High Speed Lucky Bag",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -16809,8 +16814,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[151] = {
+	}
+	pg.base.pay_data_display[151] = {
 		limit_group = 0,
 		name = "6th Anniversary Lucky Barrel",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -16943,8 +16948,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[152] = {
+	}
+	pg.base.pay_data_display[152] = {
 		limit_group = 0,
 		name = "Halloween Lucky Box 2024",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -17077,8 +17082,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[153] = {
+	}
+	pg.base.pay_data_display[153] = {
 		limit_group = 0,
 		name = "Live2D Surprise Lucky Bag (2024)",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -17191,8 +17196,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[154] = {
+	}
+	pg.base.pay_data_display[154] = {
 		limit_group = 0,
 		name = "Black Friday Lucky Bag (2024)",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -17325,8 +17330,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[155] = {
+	}
+	pg.base.pay_data_display[155] = {
 		limit_group = 0,
 		name = "Nile Colors Lucky Box",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -17459,8 +17464,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[156] = {
+	}
+	pg.base.pay_data_display[156] = {
 		limit_group = 0,
 		name = "Hospital Adventure Lucky Bag",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -17593,8 +17598,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[157] = {
+	}
+	pg.base.pay_data_display[157] = {
 		limit_group = 0,
 		name = "Pajama Party Lucky Bag",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -17727,8 +17732,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[158] = {
+	}
+	pg.base.pay_data_display[158] = {
 		limit_group = 0,
 		name = "Office Cabinet Lucky Box",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -17861,8 +17866,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[159] = {
+	}
+	pg.base.pay_data_display[159] = {
 		limit_group = 0,
 		name = "7th Anniversary Lucky bag",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -17995,8 +18000,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[160] = {
+	}
+	pg.base.pay_data_display[160] = {
 		limit_group = 0,
 		name = "Halloween Lucky Box 2025",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -18129,8 +18134,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[161] = {
+	}
+	pg.base.pay_data_display[161] = {
 		limit_group = 0,
 		name = "Choose-Your-Own Gift Pack I 2025",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -18237,8 +18242,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[162] = {
+	}
+	pg.base.pay_data_display[162] = {
 		limit_group = 0,
 		name = "Choose-Your-Own Gift Pack II 2025",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -18350,8 +18355,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[163] = {
+	}
+	pg.base.pay_data_display[163] = {
 		limit_group = 0,
 		name = "Choose-Your-Own Gift Pack III 2025",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -18478,8 +18483,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[164] = {
+	}
+	pg.base.pay_data_display[164] = {
 		limit_group = 0,
 		name = "Black Friday Lucky Bag (2025)",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -18612,8 +18617,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[165] = {
+	}
+	pg.base.pay_data_display[165] = {
 		limit_group = 0,
 		name = "Live2D Surprise Lucky Bag (2025)",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -18726,8 +18731,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[166] = {
+	}
+	pg.base.pay_data_display[166] = {
 		limit_group = 0,
 		name = "Photoshoot Lucky Bag",
 		descrip_extra = "*The contents of the Lucky Bag will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit.",
@@ -18860,8 +18865,8 @@ pg.base.pay_data_display = {
 				2026
 			}
 		}
-	},
-	[167] = {
+	}
+	pg.base.pay_data_display[167] = {
 		limit_group = 0,
 		name = "Night City Lucky Box",
 		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
@@ -18994,8 +18999,8 @@ pg.base.pay_data_display = {
 				2026
 			}
 		}
-	},
-	[1000] = {
+	}
+	pg.base.pay_data_display[1000] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass",
 		descrip_extra = "You must complete certain missions to obtain these rewards. ",
@@ -19079,8 +19084,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1001] = {
+	}
+	pg.base.pay_data_display[1001] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass",
 		descrip_extra = "You must complete certain missions to obtain these rewards. ",
@@ -19164,8 +19169,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1002] = {
+	}
+	pg.base.pay_data_display[1002] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass",
 		descrip_extra = "You must complete certain missions to obtain these rewards. ",
@@ -19249,8 +19254,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1003] = {
+	}
+	pg.base.pay_data_display[1003] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass",
 		descrip_extra = "You must complete certain missions to obtain these rewards. ",
@@ -19334,8 +19339,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1004] = {
+	}
+	pg.base.pay_data_display[1004] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass",
 		descrip_extra = "You must complete certain missions to obtain these rewards. ",
@@ -19419,8 +19424,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1005] = {
+	}
+	pg.base.pay_data_display[1005] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass",
 		descrip_extra = "You must complete certain missions to obtain these rewards. ",
@@ -19504,8 +19509,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1006] = {
+	}
+	pg.base.pay_data_display[1006] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -19589,8 +19594,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1007] = {
+	}
+	pg.base.pay_data_display[1007] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -19674,8 +19679,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1008] = {
+	}
+	pg.base.pay_data_display[1008] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -19759,8 +19764,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1009] = {
+	}
+	pg.base.pay_data_display[1009] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -19844,8 +19849,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1010] = {
+	}
+	pg.base.pay_data_display[1010] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2023.6)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -19929,8 +19934,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1011] = {
+	}
+	pg.base.pay_data_display[1011] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2023.8)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -20014,8 +20019,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1012] = {
+	}
+	pg.base.pay_data_display[1012] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2023.10)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -20099,8 +20104,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1013] = {
+	}
+	pg.base.pay_data_display[1013] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2023.12)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -20184,8 +20189,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1014] = {
+	}
+	pg.base.pay_data_display[1014] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2024.2)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -20269,8 +20274,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1015] = {
+	}
+	pg.base.pay_data_display[1015] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2024.4)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -20354,8 +20359,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1016] = {
+	}
+	pg.base.pay_data_display[1016] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2024.6)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -20439,8 +20444,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1017] = {
+	}
+	pg.base.pay_data_display[1017] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2024.8)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -20524,8 +20529,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1018] = {
+	}
+	pg.base.pay_data_display[1018] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2024.10)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -20609,8 +20614,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1019] = {
+	}
+	pg.base.pay_data_display[1019] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2024.12)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -20694,8 +20699,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1020] = {
+	}
+	pg.base.pay_data_display[1020] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2025.2)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -20779,8 +20784,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1021] = {
+	}
+	pg.base.pay_data_display[1021] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass 2025.4",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -20864,8 +20869,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1022] = {
+	}
+	pg.base.pay_data_display[1022] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2025.6)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -20949,8 +20954,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1023] = {
+	}
+	pg.base.pay_data_display[1023] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2025.8)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -21034,8 +21039,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1024] = {
+	}
+	pg.base.pay_data_display[1024] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2025.10)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -21119,8 +21124,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1025] = {
+	}
+	pg.base.pay_data_display[1025] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2025.12)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -21204,8 +21209,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1026] = {
+	}
+	pg.base.pay_data_display[1026] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2026.2)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -21289,8 +21294,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1027] = {
+	}
+	pg.base.pay_data_display[1027] = {
 		limit_group = 0,
 		name = "Fair Winds Cruise Pass (2026.4)",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -21374,8 +21379,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1301] = {
+	}
+	pg.base.pay_data_display[1301] = {
 		limit_group = 0,
 		name = "Black Friday Cruise Pass",
 		descrip_extra = "You must complete certain missions to obtain these rewards.",
@@ -21459,8 +21464,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2001] = {
+	}
+	pg.base.pay_data_display[2001] = {
 		limit_group = 1,
 		name = "PR Construction Pack - Series 1",
 		descrip_extra = "",
@@ -21527,8 +21532,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2002] = {
+	}
+	pg.base.pay_data_display[2002] = {
 		limit_group = 1,
 		name = "PR Voucher & Blueprint Bundle - Series 1",
 		descrip_extra = "If you've already built all Series 1 PRs, the contents will be exchanged for other items. Tap the icon to view the item table.",
@@ -21600,8 +21605,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2003] = {
+	}
+	pg.base.pay_data_display[2003] = {
 		limit_group = 1,
 		name = "PR Voucher - Series 1",
 		descrip_extra = "If you've already built all Series 1 PRs, the contents will be exchanged for other items. Tap the icon to view the item table.",
@@ -21663,8 +21668,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2004] = {
+	}
+	pg.base.pay_data_display[2004] = {
 		limit_group = 1,
 		name = "PR Blueprint Pack - Series 1",
 		descrip_extra = "Buy to receive 343 General Blueprints - Series 1.",
@@ -21726,8 +21731,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2005] = {
+	}
+	pg.base.pay_data_display[2005] = {
 		limit_group = 2,
 		name = "PR Construction Pack - Series 2",
 		descrip_extra = "",
@@ -21794,8 +21799,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2006] = {
+	}
+	pg.base.pay_data_display[2006] = {
 		limit_group = 2,
 		name = "PR Voucher & Blueprint Bundle - Series 2",
 		descrip_extra = "If you've already built all Series 2 PRs, the contents will be exchanged for other items. Tap the icon to view the item table.",
@@ -21867,8 +21872,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2007] = {
+	}
+	pg.base.pay_data_display[2007] = {
 		limit_group = 2,
 		name = "PR Voucher - Series 2",
 		descrip_extra = "If you've already built all Series 2 PRs, the contents will be exchanged for other items. Tap the icon to view the item table.",
@@ -21930,8 +21935,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2008] = {
+	}
+	pg.base.pay_data_display[2008] = {
 		limit_group = 2,
 		name = "PR Blueprint Pack - Series 2",
 		descrip_extra = "Buy to receive 343 General Blueprints - Series 2.",
@@ -21993,8 +21998,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2009] = {
+	}
+	pg.base.pay_data_display[2009] = {
 		limit_group = 0,
 		name = "Commander Level Boost Pack",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -22087,8 +22092,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2010] = {
+	}
+	pg.base.pay_data_display[2010] = {
 		limit_group = 0,
 		name = "Skill Book Pack",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -22205,8 +22210,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2011] = {
+	}
+	pg.base.pay_data_display[2011] = {
 		limit_group = 0,
 		name = "Skill Book Pack",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -22323,8 +22328,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2014] = {
+	}
+	pg.base.pay_data_display[2014] = {
 		limit_group = 0,
 		name = "Skill Book Pack",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -22441,8 +22446,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2015] = {
+	}
+	pg.base.pay_data_display[2015] = {
 		limit_group = 3,
 		name = "PR Construction Pack - Series 3",
 		descrip_extra = "",
@@ -22509,8 +22514,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2016] = {
+	}
+	pg.base.pay_data_display[2016] = {
 		limit_group = 3,
 		name = "PR Voucher & Blueprint Bundle - Series 3",
 		descrip_extra = "If you've already built all Series 3 PRs, the contents will be exchanged for other items. Tap the icon to view the item table.",
@@ -22582,8 +22587,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2017] = {
+	}
+	pg.base.pay_data_display[2017] = {
 		limit_group = 3,
 		name = "PR Voucher Pack - Series 3",
 		descrip_extra = "If you've already built all Series 3 PRs, the contents will be exchanged for other items. Tap the icon to view the item table.",
@@ -22645,8 +22650,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2018] = {
+	}
+	pg.base.pay_data_display[2018] = {
 		limit_group = 3,
 		name = "PR Blueprint Pack - Series 3",
 		descrip_extra = "Buy to receive 343 General Blueprints - Series 3.",
@@ -22708,8 +22713,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2019] = {
+	}
+	pg.base.pay_data_display[2019] = {
 		limit_group = 0,
 		name = "Skill Book Pack",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -22826,8 +22831,10 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2020] = {
+	}
+end)()
+;(function()
+	pg.base.pay_data_display[2020] = {
 		limit_group = 0,
 		name = "Premium Winter Gift Pack",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -22944,8 +22951,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2022] = {
+	}
+	pg.base.pay_data_display[2022] = {
 		limit_group = 0,
 		name = "Wisdom Cube Supply Pack I",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -23027,8 +23034,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2023] = {
+	}
+	pg.base.pay_data_display[2023] = {
 		limit_group = 0,
 		name = "Wisdom Cube Supply Pack II",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -23110,8 +23117,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2024] = {
+	}
+	pg.base.pay_data_display[2024] = {
 		limit_group = 0,
 		name = "Wisdom Cube Supply Pack III",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -23193,8 +23200,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2025] = {
+	}
+	pg.base.pay_data_display[2025] = {
 		limit_group = 0,
 		name = "Daily Sortie Refuel Pack",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -23261,8 +23268,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2026] = {
+	}
+	pg.base.pay_data_display[2026] = {
 		limit_group = 0,
 		name = "Skill Book Pack",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -23379,8 +23386,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2027] = {
+	}
+	pg.base.pay_data_display[2027] = {
 		limit_group = 4,
 		name = "PR Construction Pack - Series 4",
 		descrip_extra = "",
@@ -23447,8 +23454,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2028] = {
+	}
+	pg.base.pay_data_display[2028] = {
 		limit_group = 4,
 		name = "PR Voucher & Blueprint Bundle - Series 4",
 		descrip_extra = "If you've already built all Series 4 PRs, the contents will be exchanged for other items. Tap the icon to view the item table.",
@@ -23520,8 +23527,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2029] = {
+	}
+	pg.base.pay_data_display[2029] = {
 		limit_group = 4,
 		name = "PR Voucher - Series 4",
 		descrip_extra = "If you've already built all Series 4 PRs, the contents will be exchanged for other items. Tap the icon to view the item table.",
@@ -23583,8 +23590,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2030] = {
+	}
+	pg.base.pay_data_display[2030] = {
 		limit_group = 4,
 		name = "PR Blueprint Pack - Series 4",
 		descrip_extra = "Buy to receive 343 General Blueprints - Series 4.",
@@ -23646,8 +23653,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2031] = {
+	}
+	pg.base.pay_data_display[2031] = {
 		limit_group = 0,
 		name = "Outfit Selection Pack (Shimakaze)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -23754,8 +23761,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2032] = {
+	}
+	pg.base.pay_data_display[2032] = {
 		limit_group = 101,
 		name = "Iridescent Fantasy Pack",
 		descrip_extra = "",
@@ -23831,8 +23838,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2033] = {
+	}
+	pg.base.pay_data_display[2033] = {
 		limit_group = 101,
 		name = "Iridescent Fantasy Pack (Basic)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -23914,8 +23921,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2034] = {
+	}
+	pg.base.pay_data_display[2034] = {
 		limit_group = 101,
 		name = "Iridescent Fantasy Pack (Premium)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -24007,8 +24014,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2035] = {
+	}
+	pg.base.pay_data_display[2035] = {
 		limit_group = 0,
 		name = "Outfit Selection Pack (Ulrich von Hutten)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -24115,8 +24122,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2036] = {
+	}
+	pg.base.pay_data_display[2036] = {
 		limit_group = 0,
 		name = "Skill Book Pack (2024.11)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -24233,8 +24240,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2037] = {
+	}
+	pg.base.pay_data_display[2037] = {
 		limit_group = 102,
 		name = "Battle UI Pack - Christmas",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -24310,8 +24317,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2038] = {
+	}
+	pg.base.pay_data_display[2038] = {
 		limit_group = 102,
 		name = "Battle UI Pack - Christmas (Basic)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -24393,8 +24400,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2039] = {
+	}
+	pg.base.pay_data_display[2039] = {
 		limit_group = 102,
 		name = "Battle UI Pack - Christmas (Premium)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -24486,8 +24493,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2040] = {
+	}
+	pg.base.pay_data_display[2040] = {
 		limit_group = 0,
 		name = "Premium Winter Gift Pack",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -24604,8 +24611,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2041] = {
+	}
+	pg.base.pay_data_display[2041] = {
 		limit_group = 0,
 		name = "Outfit Pack (Kronshtadt)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -24712,8 +24719,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2042] = {
+	}
+	pg.base.pay_data_display[2042] = {
 		limit_group = 103,
 		name = "Battle UI Pack – Pharaoh",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -24789,8 +24796,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2043] = {
+	}
+	pg.base.pay_data_display[2043] = {
 		limit_group = 103,
 		name = "Battle UI Pack - Pharaoh (Basic)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -24872,8 +24879,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2044] = {
+	}
+	pg.base.pay_data_display[2044] = {
 		limit_group = 103,
 		name = "Battle UI Pack - Pharaoh (Premium)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -24965,8 +24972,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2045] = {
+	}
+	pg.base.pay_data_display[2045] = {
 		limit_group = 104,
 		name = "Battle UI Pack - Genetic Origin",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -25042,8 +25049,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2046] = {
+	}
+	pg.base.pay_data_display[2046] = {
 		limit_group = 104,
 		name = "Battle UI Pack - Genetic Origin (Basic)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -25125,8 +25132,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2047] = {
+	}
+	pg.base.pay_data_display[2047] = {
 		limit_group = 104,
 		name = "Battle UI Pack - Genetic Origin (Premium)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -25218,8 +25225,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2048] = {
+	}
+	pg.base.pay_data_display[2048] = {
 		limit_group = 0,
 		name = "Outfit Pack (Vanguard)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -25326,8 +25333,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2049] = {
+	}
+	pg.base.pay_data_display[2049] = {
 		limit_group = 0,
 		name = "Skill Book Pack",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -25444,8 +25451,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2050] = {
+	}
+	pg.base.pay_data_display[2050] = {
 		limit_group = 105,
 		name = "Battle UI Pack - Seaside Splash",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -25521,8 +25528,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2051] = {
+	}
+	pg.base.pay_data_display[2051] = {
 		limit_group = 105,
 		name = "Battle UI Pack - Seaside Splash (Basic)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -25614,8 +25621,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2052] = {
+	}
+	pg.base.pay_data_display[2052] = {
 		limit_group = 105,
 		name = "Battle UI Pack - Seaside Splash (Premium)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -25707,8 +25714,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2053] = {
+	}
+	pg.base.pay_data_display[2053] = {
 		limit_group = 5,
 		name = "PR Construction Pack - Series 5",
 		descrip_extra = "",
@@ -25775,8 +25782,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2054] = {
+	}
+	pg.base.pay_data_display[2054] = {
 		limit_group = 5,
 		name = "PR Voucher & Blueprint Bundle - Series 5",
 		descrip_extra = "If you've already built all Series 5 PRs, the contents will be exchanged for other items. Tap the icon to view the item table.",
@@ -25848,8 +25855,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2055] = {
+	}
+	pg.base.pay_data_display[2055] = {
 		limit_group = 5,
 		name = "PR Voucher - Series 5",
 		descrip_extra = "If you've already built all Series 5 PRs, the contents will be exchanged for other items. Tap the icon to view the item table.",
@@ -25911,8 +25918,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2056] = {
+	}
+	pg.base.pay_data_display[2056] = {
 		limit_group = 5,
 		name = "PR Blueprint Pack - Series 5",
 		descrip_extra = "Buy to receive 343 General Blueprints - Series 5.",
@@ -25974,8 +25981,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2057] = {
+	}
+	pg.base.pay_data_display[2057] = {
 		limit_group = 106,
 		name = "Battle UI Pack - Ninja Castle",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -26051,8 +26058,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2058] = {
+	}
+	pg.base.pay_data_display[2058] = {
 		limit_group = 106,
 		name = "Battle UI Pack - Ninja Castle (Basic)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -26144,8 +26151,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2059] = {
+	}
+	pg.base.pay_data_display[2059] = {
 		limit_group = 106,
 		name = "Battle UI Pack - Ninja Castle (Premium)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -26237,8 +26244,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2063] = {
+	}
+	pg.base.pay_data_display[2063] = {
 		limit_group = 0,
 		name = "Outfit Selection Pack (Musashi)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -26345,8 +26352,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2064] = {
+	}
+	pg.base.pay_data_display[2064] = {
 		limit_group = 0,
 		name = "Skill Book Pack",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -26463,8 +26470,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2068] = {
+	}
+	pg.base.pay_data_display[2068] = {
 		limit_group = 107,
 		name = "Battle UI Pack – Maid Café",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -26540,8 +26547,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2069] = {
+	}
+	pg.base.pay_data_display[2069] = {
 		limit_group = 107,
 		name = "Battle UI Pack – Maid Café (Basic)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -26633,8 +26640,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2070] = {
+	}
+	pg.base.pay_data_display[2070] = {
 		limit_group = 107,
 		name = "Battle UI Pack – Maid Café (Premium)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -26726,8 +26733,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2071] = {
+	}
+	pg.base.pay_data_display[2071] = {
 		limit_group = 0,
 		name = "Premium Winter Gift Pack",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -26844,8 +26851,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2074] = {
+	}
+	pg.base.pay_data_display[2074] = {
 		limit_group = 108,
 		name = "Battle UI Pack - Springtide Inn",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -26921,8 +26928,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2075] = {
+	}
+	pg.base.pay_data_display[2075] = {
 		limit_group = 108,
 		name = "Battle UI Pack – Springtide Inn (Basic)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -27014,8 +27021,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2076] = {
+	}
+	pg.base.pay_data_display[2076] = {
 		limit_group = 108,
 		name = "Battle UI Pack – Springtide Inn (Premium)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -27107,8 +27114,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2078] = {
+	}
+	pg.base.pay_data_display[2078] = {
 		limit_group = 0,
 		name = "Skill Book Pack",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -27225,8 +27232,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5011] = {
+	}
+	pg.base.pay_data_display[5011] = {
 		limit_group = 0,
 		name = "Daily Paid Pack (Day 1)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -27318,8 +27325,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5012] = {
+	}
+	pg.base.pay_data_display[5012] = {
 		limit_group = 0,
 		name = "Daily Paid Pack (Day 2)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -27401,8 +27408,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5013] = {
+	}
+	pg.base.pay_data_display[5013] = {
 		limit_group = 0,
 		name = "Daily Paid Pack (Day 3)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -27494,8 +27501,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5014] = {
+	}
+	pg.base.pay_data_display[5014] = {
 		limit_group = 0,
 		name = "Daily Paid Pack (Day 4)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -27587,8 +27594,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5015] = {
+	}
+	pg.base.pay_data_display[5015] = {
 		limit_group = 0,
 		name = "Daily Paid Pack (Day 5)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -27670,8 +27677,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5016] = {
+	}
+	pg.base.pay_data_display[5016] = {
 		limit_group = 0,
 		name = "Daily Paid Pack (Day 6)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -27763,8 +27770,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5017] = {
+	}
+	pg.base.pay_data_display[5017] = {
 		limit_group = 0,
 		name = "Daily Paid Pack (Day 7)",
 		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
@@ -27857,4 +27864,4 @@ pg.base.pay_data_display = {
 			}
 		}
 	}
-}
+end)()

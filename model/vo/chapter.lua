@@ -975,35 +975,60 @@ function var0_0.GetDailyBonusQuota(arg0_89)
 	return arg0_89:GetRestDailyBonus() > 0
 end
 
+function var0_0.GetDailyBonusRate(arg0_90)
+	local var0_90 = 0
+	local var1_90 = arg0_90:getConfig("boss_expedition_id")
+
+	for iter0_90, iter1_90 in ipairs(var1_90) do
+		local var2_90 = pg.expedition_activity_template[iter1_90]
+
+		var0_90 = math.max(var0_90, var2_90 and var2_90.bonus_rate or 0)
+	end
+
+	local var3_90 = pg.chapter_defense[arg0_90.id]
+
+	if var3_90 then
+		var0_90 = math.max(var0_90, var3_90.bonus_rate or 0)
+	end
+
+	return var0_90 > 0 and var0_90 or nil
+end
+
+function var0_0.GetDailyBonusIconName(arg0_91)
+	local var0_91 = arg0_91:GetDailyBonusRate()
+
+	return var0_91 and "bonusX" .. tostring(var0_91) or "bonusX5"
+end
+
 var0_0.OPERATION_BUFF_TYPE_COST = "more_oil"
 var0_0.OPERATION_BUFF_TYPE_REWARD = "extra_drop"
 var0_0.OPERATION_BUFF_TYPE_EXP = "chapter_up"
 var0_0.OPERATION_BUFF_TYPE_DESC = "desc"
 
-function var0_0.GetSPOperationItemCacheKey(arg0_90)
-	return "specialOPItem_" .. arg0_90
+function var0_0.GetSPOperationItemCacheKey(arg0_92)
+	return "specialOPItem_" .. arg0_92
 end
 
-function var0_0.GetSpItems(arg0_91)
-	local var0_91 = {}
-	local var1_91 = getProxy(BagProxy):getItemsByType(Item.SPECIAL_OPERATION_TICKET)
-	local var2_91 = noEmptyStr(arg0_91:getConfig("special_operation_list"))
+function var0_0.GetSpItems(arg0_93)
+	local var0_93 = {}
+	local var1_93 = getProxy(BagProxy):getItemsByType(Item.SPECIAL_OPERATION_TICKET)
+	local var2_93 = noEmptyStr(arg0_93:getConfig("special_operation_list"))
 
-	if not var2_91 or not next(var2_91) then
-		return var0_91
+	if not var2_93 or not next(var2_93) then
+		return var0_93
 	end
 
-	for iter0_91, iter1_91 in ipairs(var2_91) do
-		local var3_91 = pg.benefit_buff_template[iter1_91]
+	for iter0_93, iter1_93 in ipairs(var2_93) do
+		local var3_93 = pg.benefit_buff_template[iter1_93]
 
-		if var3_91 and var3_91.benefit_type == Chapter.OPERATION_BUFF_TYPE_DESC then
-			local var4_91 = ActivityBuff.GetBenefitCondition(var3_91.benefit_condition)
+		if var3_93 and var3_93.benefit_type == Chapter.OPERATION_BUFF_TYPE_DESC then
+			local var4_93 = ActivityBuff.GetBenefitCondition(var3_93.benefit_condition)
 
-			for iter2_91, iter3_91 in ipairs(var1_91) do
-				assert(var4_91[1] == "item")
+			for iter2_93, iter3_93 in ipairs(var1_93) do
+				assert(var4_93[1] == "item")
 
-				if var4_91[2] == iter3_91.configId then
-					table.insert(var0_91, iter3_91)
+				if var4_93[2] == iter3_93.configId then
+					table.insert(var0_93, iter3_93)
 
 					break
 				end
@@ -1011,105 +1036,105 @@ function var0_0.GetSpItems(arg0_91)
 		end
 	end
 
-	return var0_91
+	return var0_93
 end
 
-function var0_0.GetSPBuffByItem(arg0_92)
-	for iter0_92, iter1_92 in ipairs(pg.benefit_buff_template.get_id_list_by_benefit_type[Chapter.OPERATION_BUFF_TYPE_DESC]) do
-		local var0_92 = pg.benefit_buff_template[iter1_92]
-		local var1_92 = ActivityBuff.GetBenefitCondition(var0_92.benefit_condition)
+function var0_0.GetSPBuffByItem(arg0_94)
+	for iter0_94, iter1_94 in ipairs(pg.benefit_buff_template.get_id_list_by_benefit_type[Chapter.OPERATION_BUFF_TYPE_DESC]) do
+		local var0_94 = pg.benefit_buff_template[iter1_94]
+		local var1_94 = ActivityBuff.GetBenefitCondition(var0_94.benefit_condition)
 
-		assert(var1_92[1] == "item")
+		assert(var1_94[1] == "item")
 
-		if var1_92[2] == arg0_92 then
-			return var0_92.id
+		if var1_94[2] == arg0_94 then
+			return var0_94.id
 		end
 	end
 end
 
-function var0_0.GetActiveSPItemID(arg0_93)
-	local var0_93 = Chapter.GetSPOperationItemCacheKey(arg0_93.id)
-	local var1_93 = PlayerPrefs.GetInt(var0_93, 0)
+function var0_0.GetActiveSPItemID(arg0_95)
+	local var0_95 = Chapter.GetSPOperationItemCacheKey(arg0_95.id)
+	local var1_95 = PlayerPrefs.GetInt(var0_95, 0)
 
-	if var1_93 == 0 then
+	if var1_95 == 0 then
 		return 0
 	end
 
-	if arg0_93:GetRestDailyBonus() > 0 then
+	if arg0_95:GetRestDailyBonus() > 0 then
 		return 0
 	end
 
-	local var2_93 = arg0_93:GetSpItems()
+	local var2_95 = arg0_95:GetSpItems()
 
-	if _.detect(var2_93, function(arg0_94)
-		return arg0_94:GetConfigID() == var1_93
+	if _.detect(var2_95, function(arg0_96)
+		return arg0_96:GetConfigID() == var1_95
 	end) then
-		return var1_93
+		return var1_95
 	end
 
 	return 0
 end
 
-function var0_0.GetLimitOilCost(arg0_95, arg1_95, arg2_95)
-	if not arg0_95:isLoop() then
+function var0_0.GetLimitOilCost(arg0_97, arg1_97, arg2_97)
+	if not arg0_97:isLoop() then
 		return 9999
 	end
 
-	local var0_95
-	local var1_95
+	local var0_97
+	local var1_97
 
-	if arg1_95 then
-		var1_95 = 3
+	if arg1_97 then
+		var1_97 = 3
 	else
-		local var2_95 = pg.expedition_data_template[arg2_95]
+		local var2_97 = pg.expedition_data_template[arg2_97]
 
-		var1_95 = (var2_95.type == ChapterConst.ExpeditionTypeBoss or var2_95.type == ChapterConst.ExpeditionTypeMulBoss) and 2 or 1
+		var1_97 = (var2_97.type == ChapterConst.ExpeditionTypeBoss or var2_97.type == ChapterConst.ExpeditionTypeMulBoss) and 2 or 1
 	end
 
-	return arg0_95:getConfig("use_oil_limit")[var1_95] or 9999
+	return arg0_97:getConfig("use_oil_limit")[var1_97] or 9999
 end
 
-function var0_0.IsRemaster(arg0_96)
-	local var0_96 = getProxy(ChapterProxy):getMapById(arg0_96:getConfig("map"))
+function var0_0.IsRemaster(arg0_98)
+	local var0_98 = getProxy(ChapterProxy):getMapById(arg0_98:getConfig("map"))
 
-	return var0_96 and var0_96:isRemaster()
+	return var0_98 and var0_98:isRemaster()
 end
 
-function var0_0.GetBindActID(arg0_97)
-	return arg0_97:getConfig("act_id")
+function var0_0.GetBindActID(arg0_99)
+	return arg0_99:getConfig("act_id")
 end
 
-function var0_0.GetMaxBattleCount(arg0_98)
-	local var0_98 = 0
-	local var1_98 = getProxy(ChapterProxy):getMapById(arg0_98:getConfig("map"))
+function var0_0.GetMaxBattleCount(arg0_100)
+	local var0_100 = 0
+	local var1_100 = getProxy(ChapterProxy):getMapById(arg0_100:getConfig("map"))
 
-	if var1_98:getMapType() == Map.ELITE then
-		var0_98 = pg.gameset.hard_level_multiple_sorties_times.key_value
-		var0_98 = math.clamp(var0_98, 0, getProxy(DailyLevelProxy):GetRestEliteCount())
-	elseif var1_98:isRemaster() then
-		var0_98 = pg.gameset.archives_level_multiple_sorties_times.key_value
-		var0_98 = math.clamp(var0_98, 0, getProxy(ChapterProxy).remasterTickets)
-	elseif var1_98:isActivity() then
-		var0_98 = pg.gameset.activity_level_multiple_sorties_times.key_value
+	if var1_100:getMapType() == Map.ELITE then
+		var0_100 = pg.gameset.hard_level_multiple_sorties_times.key_value
+		var0_100 = math.clamp(var0_100, 0, getProxy(DailyLevelProxy):GetRestEliteCount())
+	elseif var1_100:isRemaster() then
+		var0_100 = pg.gameset.archives_level_multiple_sorties_times.key_value
+		var0_100 = math.clamp(var0_100, 0, getProxy(ChapterProxy).remasterTickets)
+	elseif var1_100:isActivity() then
+		var0_100 = pg.gameset.activity_level_multiple_sorties_times.key_value
 	else
-		var0_98 = pg.gameset.main_level_multiple_sorties_times.key_value
+		var0_100 = pg.gameset.main_level_multiple_sorties_times.key_value
 	end
 
-	if arg0_98:isTriesLimit() then
-		local var2_98 = arg0_98:getConfig("count") - arg0_98:getTodayDefeatCount()
+	if arg0_100:isTriesLimit() then
+		local var2_100 = arg0_100:getConfig("count") - arg0_100:getTodayDefeatCount()
 
-		var0_98 = math.clamp(var0_98, 0, var2_98)
+		var0_100 = math.clamp(var0_100, 0, var2_100)
 	end
 
-	return var0_98
+	return var0_100
 end
 
-function var0_0.IsSupportSubmarineStage(arg0_99)
-	return arg0_99:GetSupportFleetMaxCount() > 0 and tobool(arg0_99:getConfigMiscArg("submarine_support"))
+function var0_0.IsSupportSubmarineStage(arg0_101)
+	return arg0_101:GetSupportFleetMaxCount() > 0 and tobool(arg0_101:getConfigMiscArg("submarine_support"))
 end
 
-function var0_0.IsFogStage(arg0_100)
-	return tobool(arg0_100:getConfigMiscArg("fog"))
+function var0_0.IsFogStage(arg0_102)
+	return tobool(arg0_102:getConfigMiscArg("fog"))
 end
 
 return var0_0

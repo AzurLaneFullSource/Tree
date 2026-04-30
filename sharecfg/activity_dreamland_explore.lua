@@ -1,6 +1,96 @@
 pg = pg or {}
-pg.activity_dreamland_explore = {
+pg.activity_dreamland_explore = rawget(pg, "activity_dreamland_explore") or setmetatable({
+	__name = "activity_dreamland_explore"
+}, confNEO)
+pg.activity_dreamland_explore.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22,
+	23,
+	24,
+	25,
+	27,
+	28,
+	29
+}
+pg.activity_dreamland_explore.get_id_list_by_group = {
 	{
+		1,
+		2,
+		3
+	},
+	{
+		4
+	},
+	{
+		5,
+		6,
+		7
+	},
+	{
+		8,
+		9,
+		10,
+		11,
+		12,
+		13
+	},
+	{
+		14,
+		15,
+		16
+	},
+	{
+		17
+	},
+	{
+		18,
+		19,
+		20
+	},
+	{
+		21,
+		22
+	},
+	{
+		23,
+		24,
+		25
+	},
+	{
+		27
+	},
+	{
+		28
+	},
+	{
+		29
+	}
+}
+pg.base = pg.base or {}
+pg.base.activity_dreamland_explore = {}
+
+;(function()
+	pg.base.activity_dreamland_explore[1] = {
 		dispaly_desc = "You went to the castle and found that a cuckoo clock wasn't working.\nAccording to Sheffield, the clock refused to tell the time when there were people around.\nShe fired her guns, and the clock somehow went back to normal.\nYou wondered how they made a clock work like that.",
 		id = 1,
 		tip_special_effect = "",
@@ -25,8 +115,8 @@ pg.activity_dreamland_explore = {
 				"You wondered how they made a clock work like that."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[2] = {
 		dispaly_desc = "You went to the castle and found that a cuckoo clock wasn't working.\nAccording to Sheffield, the clock refused to tell the time when there were people around.\nShe fired her guns, and the clock somehow went back to normal.\nYou wondered how they made a clock work like that.",
 		id = 2,
 		tip_special_effect = "",
@@ -51,8 +141,8 @@ pg.activity_dreamland_explore = {
 				"You wondered how they made a clock work like that."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[3] = {
 		dispaly_desc = "You went to the castle and found that a cuckoo clock wasn't working.\nAccording to Sheffield, the clock refused to tell the time when there were people around.\nShe fired her guns, and the clock somehow went back to normal.\nYou wondered how they made a clock work like that.",
 		id = 3,
 		tip_special_effect = "",
@@ -77,8 +167,8 @@ pg.activity_dreamland_explore = {
 				"You wondered how they made a clock work like that."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[4] = {
 		dispaly_desc = "Some fireworks that weren't part of the show went off in the sky.\nAfter the display was over, you all inspected how the fireworks were made and the order they were launched in, and failed to find anything unusual.\nAmagi explained it thusly: \"Strange things happening in a dream is to be expected. It's nothing to worry about.\"",
 		id = 4,
 		tip_special_effect = "",
@@ -102,8 +192,8 @@ pg.activity_dreamland_explore = {
 				"Amagi explained it thusly: \"Strange things happening in a dream is to be expected. It's nothing to worry about.\""
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[5] = {
 		dispaly_desc = "You ran into Ryuuhou at the fountain, where she was making a wish.\nShe said that she's been trying to throw coins in, but as soon as she did, they vanished in the water without a trace.\nLiverpool walked by, saw the glittering fountain, and excitedly explained that, \"That must be a sign that your wish is going to come true.\"",
 		id = 5,
 		tip_special_effect = "",
@@ -125,8 +215,8 @@ pg.activity_dreamland_explore = {
 				"Liverpool walked by, saw the glittering fountain, and excitedly explained that, \"That must be a sign that your wish is going to come true.\""
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[6] = {
 		dispaly_desc = "You ran into Ryuuhou at the fountain, where she was making a wish.\nShe said that she's been trying to throw coins in, but as soon as she did, they vanished in the water without a trace.\nLiverpool walked by, saw the glittering fountain, and excitedly explained that, \"That must be a sign that your wish is going to come true.\"",
 		id = 6,
 		tip_special_effect = "",
@@ -148,8 +238,8 @@ pg.activity_dreamland_explore = {
 				"Liverpool walked by, saw the glittering fountain, and excitedly explained that, \"That must be a sign that your wish is going to come true.\""
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[7] = {
 		dispaly_desc = "You ran into Ryuuhou at the fountain, where she was making a wish.\nShe said that she's been trying to throw coins in, but as soon as she did, they vanished in the water without a trace.\nLiverpool walked by, saw the glittering fountain, and excitedly explained that, \"That must be a sign that your wish is going to come true.\"",
 		id = 7,
 		tip_special_effect = "",
@@ -171,8 +261,8 @@ pg.activity_dreamland_explore = {
 				"Liverpool walked by, saw the glittering fountain, and excitedly explained that, \"That must be a sign that your wish is going to come true.\""
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[8] = {
 		dispaly_desc = "You spotted Reno near the parasol, looking amazed.\nThe parasol was opening and closing entirely by itself.\nShe proclaimed that latent hero powers had awakened inside her, and this was her doing, dubbing herself \"the Parasol Paladin.\"\nYou decided to let her have her fun. This is a dream, after all.",
 		id = 8,
 		tip_special_effect = "",
@@ -197,8 +287,8 @@ pg.activity_dreamland_explore = {
 				"You decided to let her have her fun. This is a dream, after all."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[9] = {
 		dispaly_desc = "You spotted Reno near the parasol, looking amazed.\nThe parasol was opening and closing entirely by itself.\nShe proclaimed that latent hero powers had awakened inside her, and this was her doing, dubbing herself \"the Parasol Paladin.\"\nYou decided to let her have her fun. This is a dream, after all.",
 		id = 9,
 		tip_special_effect = "",
@@ -223,8 +313,8 @@ pg.activity_dreamland_explore = {
 				"You decided to let her have her fun. This is a dream, after all."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[10] = {
 		dispaly_desc = "You spotted Reno near the parasol, looking amazed.\nThe parasol was opening and closing entirely by itself.\nShe proclaimed that latent hero powers had awakened inside her, and this was her doing, dubbing herself \"the Parasol Paladin.\"\nYou decided to let her have her fun. This is a dream, after all.",
 		id = 10,
 		tip_special_effect = "",
@@ -249,8 +339,8 @@ pg.activity_dreamland_explore = {
 				"You decided to let her have her fun. This is a dream, after all."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[11] = {
 		dispaly_desc = "You spotted Reno near the parasol, looking amazed.\nThe parasol was opening and closing entirely by itself.\nShe proclaimed that latent hero powers had awakened inside her, and this was her doing, dubbing herself \"the Parasol Paladin.\"\nYou decided to let her have her fun. This is a dream, after all.",
 		id = 11,
 		tip_special_effect = "",
@@ -275,8 +365,8 @@ pg.activity_dreamland_explore = {
 				"You decided to let her have her fun. This is a dream, after all."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[12] = {
 		dispaly_desc = "You spotted Reno near the parasol, looking amazed.\nThe parasol was opening and closing entirely by itself.\nShe proclaimed that latent hero powers had awakened inside her, and this was her doing, dubbing herself \"the Parasol Paladin.\"\nYou decided to let her have her fun. This is a dream, after all.",
 		id = 12,
 		tip_special_effect = "",
@@ -301,8 +391,8 @@ pg.activity_dreamland_explore = {
 				"You decided to let her have her fun. This is a dream, after all."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[13] = {
 		dispaly_desc = "You spotted Reno near the parasol, looking amazed.\nThe parasol was opening and closing entirely by itself.\nShe proclaimed that latent hero powers had awakened inside her, and this was her doing, dubbing herself \"the Parasol Paladin.\"\nYou decided to let her have her fun. This is a dream, after all.",
 		id = 13,
 		tip_special_effect = "",
@@ -327,8 +417,8 @@ pg.activity_dreamland_explore = {
 				"You decided to let her have her fun. This is a dream, after all."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[14] = {
 		dispaly_desc = "Zuihou was at the Ferris wheel, looking troubled, so you spoke to her.\nShe said the Ferris wheel would stop turning if a balloon flew up near it.\nYou asked Yuubari about it, who explained that it's a safety mechanism – the Ferris wheel mistook the balloon for an aircraft.\nAfter finding out it wasn't the balloon's fault, she chirped happily and gave a lucky balloon to Yuubari as thanks.",
 		id = 14,
 		tip_special_effect = "",
@@ -353,8 +443,8 @@ pg.activity_dreamland_explore = {
 				"After finding out it wasn't the balloon's fault, she chirped happily and gave a lucky balloon to Yuubari as thanks."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[15] = {
 		dispaly_desc = "Zuihou was at the Ferris wheel, looking troubled, so you spoke to her.\nShe said the Ferris wheel would stop turning if a balloon flew up near it.\nYou asked Yuubari about it, who explained that it's a safety mechanism – the Ferris wheel mistook the balloon for an aircraft.\nAfter finding out it wasn't the balloon's fault, she chirped happily and gave a lucky balloon to Yuubari as thanks.",
 		id = 15,
 		tip_special_effect = "",
@@ -379,8 +469,8 @@ pg.activity_dreamland_explore = {
 				"After finding out it wasn't the balloon's fault, she chirped happily and gave a lucky balloon to Yuubari as thanks."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[16] = {
 		dispaly_desc = "Zuihou was at the Ferris wheel, looking troubled, so you spoke to her.\nShe said the Ferris wheel would stop turning if a balloon flew up near it.\nYou asked Yuubari about it, who explained that it's a safety mechanism – the Ferris wheel mistook the balloon for an aircraft.\nAfter finding out it wasn't the balloon's fault, she chirped happily and gave a lucky balloon to Yuubari as thanks.",
 		id = 16,
 		tip_special_effect = "",
@@ -405,8 +495,8 @@ pg.activity_dreamland_explore = {
 				"After finding out it wasn't the balloon's fault, she chirped happily and gave a lucky balloon to Yuubari as thanks."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[17] = {
 		dispaly_desc = "You can into Ark Royal at the stalls.\nMutsuki was upset over someone stealing her cotton candy. Ark Royal claimed nobody was near her when it happened.\nExcitedly, Bristol speculated: \"It was a ghost! A ghost stole her cotton candy!\"\nYou looked all around, but failed to find any traces of a ghost.",
 		id = 17,
 		tip_special_effect = "",
@@ -431,8 +521,8 @@ pg.activity_dreamland_explore = {
 				"You looked all around, but failed to find any traces of a ghost."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[18] = {
 		dispaly_desc = "You found Taihou at the exit of the slide, looking confused.\nApparently, the slide was getting slimier and she was going faster each time she went down.\nYou investigated, and it turned out the sunscreen she'd applied to herself was the cause.\nHow much sunscreen does one girl need?",
 		id = 18,
 		tip_special_effect = "",
@@ -457,8 +547,8 @@ pg.activity_dreamland_explore = {
 				"How much sunscreen does one girl need?"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[19] = {
 		dispaly_desc = "You found Taihou at the exit of the slide, looking confused.\nApparently, the slide was getting slimier and she was going faster each time she went down.\nYou investigated, and it turned out the sunscreen she'd applied to herself was the cause.\nHow much sunscreen does one girl need?",
 		id = 19,
 		tip_special_effect = "",
@@ -483,8 +573,8 @@ pg.activity_dreamland_explore = {
 				"How much sunscreen does one girl need?"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[20] = {
 		dispaly_desc = "You found Taihou at the exit of the slide, looking confused.\nApparently, the slide was getting slimier and she was going faster each time she went down.\nYou investigated, and it turned out the sunscreen she'd applied to herself was the cause.\nHow much sunscreen does one girl need?",
 		id = 20,
 		tip_special_effect = "",
@@ -509,8 +599,8 @@ pg.activity_dreamland_explore = {
 				"How much sunscreen does one girl need?"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[21] = {
 		dispaly_desc = "Rainbows appeared over the water area in the afternoon.\nAlfredo said this wasn't the first rainbow she'd seen here, but one rainbow's colors appeared in the inverse order of what they should be.\nThe photojournalist waited for it to reappear, but the only pictures she got were of regular rainbows.\nShe was a bit grumpy about this. Still, she insisted on her certainty in what she saw.",
 		id = 21,
 		tip_special_effect = "",
@@ -536,8 +626,8 @@ pg.activity_dreamland_explore = {
 				"She was a bit grumpy about this. Still, she insisted on her certainty in what she saw."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[22] = {
 		dispaly_desc = "Rainbows appeared over the water area in the afternoon.\nAlfredo said this wasn't the first rainbow she'd seen here, but one rainbow's colors appeared in the inverse order of what they should be.\nThe photojournalist waited for it to reappear, but the only pictures she got were of regular rainbows.\nShe was a bit grumpy about this. Still, she insisted on her certainty in what she saw.",
 		id = 22,
 		tip_special_effect = "",
@@ -562,8 +652,8 @@ pg.activity_dreamland_explore = {
 				"She was a bit grumpy about this. Still, she insisted on her certainty in what she saw."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[23] = {
 		dispaly_desc = "As you passed by the circus tent, you spotted Hatsuzuki, observing the tent with marked interest.\nShe said that the clownjuu's expression changes from time to time... but it goes back to normal when people realize it.\nIt sounded like she's been watching too many horror movies lately.",
 		id = 23,
 		tip_special_effect = "",
@@ -585,8 +675,8 @@ pg.activity_dreamland_explore = {
 				"It sounded like she's been watching too many horror movies lately."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[24] = {
 		dispaly_desc = "As you passed by the circus tent, you spotted Hatsuzuki, observing the tent with marked interest.\nShe said that the clownjuu's expression changes from time to time... but it goes back to normal when people realize it.\nIt sounded like she's been watching too many horror movies lately.",
 		id = 24,
 		tip_special_effect = "",
@@ -608,8 +698,8 @@ pg.activity_dreamland_explore = {
 				"It sounded like she's been watching too many horror movies lately."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[25] = {
 		dispaly_desc = "As you passed by the circus tent, you spotted Hatsuzuki, observing the tent with marked interest.\nShe said that the clownjuu's expression changes from time to time... but it goes back to normal when people realize it.\nIt sounded like she's been watching too many horror movies lately.",
 		id = 25,
 		tip_special_effect = "",
@@ -631,8 +721,8 @@ pg.activity_dreamland_explore = {
 				"It sounded like she's been watching too many horror movies lately."
 			}
 		}
-	},
-	[27] = {
+	}
+	pg.base.activity_dreamland_explore[27] = {
 		dispaly_desc = "You found Yuubari near the stage, stunned by what she was seeing.\nThe LED sign was working without any power – strange yet, the text on it was changing by itself.\nShe tried to figure out what was happening and not only failed, but also was unable to screw the lights back in.\nYou told her to talk to Amagi about it.",
 		id = 27,
 		tip_special_effect = "",
@@ -657,8 +747,8 @@ pg.activity_dreamland_explore = {
 				"You told her to talk to Amagi about it."
 			}
 		}
-	},
-	[28] = {
+	}
+	pg.base.activity_dreamland_explore[28] = {
 		dispaly_desc = "You went to the foggy maze and found Kasumi, standing around idly.\nShe explained: \"Foo said there are friends in the woods... Over there.\"\nYou looked to where she pointed. There was nothing there.",
 		id = 28,
 		tip_special_effect = "",
@@ -680,8 +770,8 @@ pg.activity_dreamland_explore = {
 				"You looked to where she pointed. There was nothing there."
 			}
 		}
-	},
-	[29] = {
+	}
+	pg.base.activity_dreamland_explore[29] = {
 		dispaly_desc = "You arrived at the haunted house, where you found Fu Shun, scared to go inside.\nShe claimed that every time she tried to open the door, her hand felt strange and she couldn't do it.\nShe exclaimed: \"It's some sort of curse! I've been cursed!\"\nAmagi pointed out that the strange sensation Fu Shun felt was simply static electricity.",
 		id = 29,
 		tip_special_effect = "",
@@ -706,89 +796,5 @@ pg.activity_dreamland_explore = {
 				"Amagi pointed out that the strange sensation Fu Shun felt was simply static electricity."
 			}
 		}
-	},
-	get_id_list_by_group = {
-		{
-			1,
-			2,
-			3
-		},
-		{
-			4
-		},
-		{
-			5,
-			6,
-			7
-		},
-		{
-			8,
-			9,
-			10,
-			11,
-			12,
-			13
-		},
-		{
-			14,
-			15,
-			16
-		},
-		{
-			17
-		},
-		{
-			18,
-			19,
-			20
-		},
-		{
-			21,
-			22
-		},
-		{
-			23,
-			24,
-			25
-		},
-		{
-			27
-		},
-		{
-			28
-		},
-		{
-			29
-		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19,
-		20,
-		21,
-		22,
-		23,
-		24,
-		25,
-		27,
-		28,
-		29
 	}
-}
+end)()

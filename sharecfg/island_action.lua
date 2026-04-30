@@ -1,6 +1,66 @@
 pg = pg or {}
-pg.island_action = {
-	[1000] = {
+pg.island_action = rawget(pg, "island_action") or setmetatable({
+	__name = "island_action"
+}, confNEO)
+pg.island_action.all = {
+	1000,
+	1001,
+	1002,
+	1003,
+	1004,
+	1005,
+	1006,
+	1007,
+	1008,
+	1009,
+	1011,
+	1012,
+	1013,
+	1014,
+	1015,
+	1016,
+	1017,
+	1018,
+	2000,
+	2001,
+	2002,
+	2003,
+	2004
+}
+pg.island_action.get_id_list_by_type = {
+	{
+		1000,
+		1001,
+		1002,
+		1003,
+		1004,
+		1005,
+		1006,
+		1007,
+		1008,
+		1009,
+		1011,
+		1012,
+		1013,
+		1014,
+		1015,
+		1016,
+		1017,
+		1018
+	},
+	{
+		2000,
+		2001,
+		2002,
+		2003,
+		2004
+	}
+}
+pg.base = pg.base or {}
+pg.base.island_action = {}
+
+;(function()
+	pg.base.island_action[1000] = {
 		sigle_action_reply_type = 2,
 		name = "Greet",
 		respond_point = "",
@@ -17,8 +77,8 @@ pg.island_action = {
 			104
 		},
 		jump_page = {}
-	},
-	[1001] = {
+	}
+	pg.base.island_action[1001] = {
 		sigle_action_reply_type = 2,
 		name = "Goodbye",
 		respond_point = "",
@@ -33,8 +93,8 @@ pg.island_action = {
 			101
 		},
 		jump_page = {}
-	},
-	[1002] = {
+	}
+	pg.base.island_action[1002] = {
 		sigle_action_reply_type = 2,
 		name = "Nod",
 		respond_point = "",
@@ -50,8 +110,8 @@ pg.island_action = {
 			105
 		},
 		jump_page = {}
-	},
-	[1003] = {
+	}
+	pg.base.island_action[1003] = {
 		sigle_action_reply_type = 2,
 		name = "Shake Head",
 		respond_point = "",
@@ -67,8 +127,8 @@ pg.island_action = {
 			207
 		},
 		jump_page = {}
-	},
-	[1004] = {
+	}
+	pg.base.island_action[1004] = {
 		sigle_action_reply_type = 2,
 		name = "Clap",
 		respond_point = "",
@@ -84,8 +144,8 @@ pg.island_action = {
 			105
 		},
 		jump_page = {}
-	},
-	[1005] = {
+	}
+	pg.base.island_action[1005] = {
 		sigle_action_reply_type = 2,
 		name = "Praise the Sun",
 		respond_point = "",
@@ -106,8 +166,8 @@ pg.island_action = {
 				{}
 			}
 		}
-	},
-	[1006] = {
+	}
+	pg.base.island_action[1006] = {
 		sigle_action_reply_type = 2,
 		name = "Hands on Hips",
 		respond_point = "",
@@ -122,8 +182,8 @@ pg.island_action = {
 			106
 		},
 		jump_page = {}
-	},
-	[1007] = {
+	}
+	pg.base.island_action[1007] = {
 		sigle_action_reply_type = 2,
 		name = "Bow",
 		respond_point = "",
@@ -144,8 +204,8 @@ pg.island_action = {
 				{}
 			}
 		}
-	},
-	[1008] = {
+	}
+	pg.base.island_action[1008] = {
 		sigle_action_reply_type = 2,
 		name = "Excited Jump",
 		respond_point = "",
@@ -166,8 +226,8 @@ pg.island_action = {
 				{}
 			}
 		}
-	},
-	[1009] = {
+	}
+	pg.base.island_action[1009] = {
 		sigle_action_reply_type = 2,
 		name = "Stamp Feet",
 		respond_point = "",
@@ -183,8 +243,8 @@ pg.island_action = {
 			207
 		},
 		jump_page = {}
-	},
-	[1011] = {
+	}
+	pg.base.island_action[1011] = {
 		sigle_action_reply_type = 2,
 		name = "Flaunt Muscles",
 		respond_point = "",
@@ -205,8 +265,8 @@ pg.island_action = {
 				{}
 			}
 		}
-	},
-	[1012] = {
+	}
+	pg.base.island_action[1012] = {
 		sigle_action_reply_type = 2,
 		name = "Dance",
 		respond_point = "",
@@ -227,8 +287,8 @@ pg.island_action = {
 				{}
 			}
 		}
-	},
-	[1013] = {
+	}
+	pg.base.island_action[1013] = {
 		sigle_action_reply_type = 2,
 		name = "The Hero is Here",
 		respond_point = "",
@@ -249,8 +309,8 @@ pg.island_action = {
 				{}
 			}
 		}
-	},
-	[1014] = {
+	}
+	pg.base.island_action[1014] = {
 		sigle_action_reply_type = 2,
 		name = "Stretch",
 		respond_point = "",
@@ -270,8 +330,8 @@ pg.island_action = {
 				{}
 			}
 		}
-	},
-	[1015] = {
+	}
+	pg.base.island_action[1015] = {
 		sigle_action_reply_type = 2,
 		name = "Cower",
 		respond_point = "",
@@ -292,8 +352,8 @@ pg.island_action = {
 				{}
 			}
 		}
-	},
-	[1016] = {
+	}
+	pg.base.island_action[1016] = {
 		sigle_action_reply_type = 2,
 		name = "Clench Fists",
 		respond_point = "",
@@ -314,8 +374,8 @@ pg.island_action = {
 				{}
 			}
 		}
-	},
-	[1017] = {
+	}
+	pg.base.island_action[1017] = {
 		sigle_action_reply_type = 2,
 		name = "Smug",
 		respond_point = "",
@@ -336,8 +396,8 @@ pg.island_action = {
 				{}
 			}
 		}
-	},
-	[1018] = {
+	}
+	pg.base.island_action[1018] = {
 		sigle_action_reply_type = 2,
 		name = "Meditate",
 		respond_point = "",
@@ -358,8 +418,8 @@ pg.island_action = {
 				{}
 			}
 		}
-	},
-	[2000] = {
+	}
+	pg.base.island_action[2000] = {
 		chara_sigle_action_reply = "",
 		name = "High Five",
 		sigle_action_reply_type = 0,
@@ -376,8 +436,8 @@ pg.island_action = {
 			1.28364
 		},
 		jump_page = {}
-	},
-	[2001] = {
+	}
+	pg.base.island_action[2001] = {
 		chara_sigle_action_reply = "",
 		name = "Shake Hands",
 		sigle_action_reply_type = 0,
@@ -399,8 +459,8 @@ pg.island_action = {
 				{}
 			}
 		}
-	},
-	[2002] = {
+	}
+	pg.base.island_action[2002] = {
 		chara_sigle_action_reply = "",
 		name = "Hug",
 		sigle_action_reply_type = 0,
@@ -422,8 +482,8 @@ pg.island_action = {
 				{}
 			}
 		}
-	},
-	[2003] = {
+	}
+	pg.base.island_action[2003] = {
 		chara_sigle_action_reply = "",
 		name = "Celebrate",
 		sigle_action_reply_type = 0,
@@ -445,8 +505,8 @@ pg.island_action = {
 				{}
 			}
 		}
-	},
-	[2004] = {
+	}
+	pg.base.island_action[2004] = {
 		chara_sigle_action_reply = "",
 		name = "Hand Heart",
 		sigle_action_reply_type = 0,
@@ -468,59 +528,5 @@ pg.island_action = {
 				{}
 			}
 		}
-	},
-	get_id_list_by_type = {
-		{
-			1000,
-			1001,
-			1002,
-			1003,
-			1004,
-			1005,
-			1006,
-			1007,
-			1008,
-			1009,
-			1011,
-			1012,
-			1013,
-			1014,
-			1015,
-			1016,
-			1017,
-			1018
-		},
-		{
-			2000,
-			2001,
-			2002,
-			2003,
-			2004
-		}
-	},
-	all = {
-		1000,
-		1001,
-		1002,
-		1003,
-		1004,
-		1005,
-		1006,
-		1007,
-		1008,
-		1009,
-		1011,
-		1012,
-		1013,
-		1014,
-		1015,
-		1016,
-		1017,
-		1018,
-		2000,
-		2001,
-		2002,
-		2003,
-		2004
 	}
-}
+end)()

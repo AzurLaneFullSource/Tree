@@ -1,6 +1,35 @@
 pg = pg or {}
-pg.item_data_battleui = {
-	[0] = {
+pg.item_data_battleui = rawget(pg, "item_data_battleui") or setmetatable({
+	__name = "item_data_battleui"
+}, confNEO)
+pg.item_data_battleui.all = {
+	0,
+	101,
+	102,
+	103,
+	104,
+	105,
+	106,
+	107,
+	108,
+	109,
+	110,
+	111,
+	113,
+	114,
+	201,
+	202,
+	203,
+	204,
+	205,
+	206,
+	207
+}
+pg.base = pg.base or {}
+pg.base.item_data_battleui = {}
+
+;(function()
+	pg.base.item_data_battleui[0] = {
 		key = "Standard",
 		name = "Original",
 		desc = "The nostalgic, original combat UI. Practical and has weathered countless battles with us.",
@@ -12,8 +41,8 @@ pg.item_data_battleui = {
 		icon = "0",
 		scene = {},
 		rare_display = {}
-	},
-	[101] = {
+	}
+	pg.base.item_data_battleui[101] = {
 		key = "SkinNormal_20240701",
 		name = "New",
 		desc = "A redesigned and recolored UI, providing you with a more dynamic visual experience.",
@@ -25,8 +54,8 @@ pg.item_data_battleui = {
 		icon = "101",
 		scene = {},
 		rare_display = {}
-	},
-	[102] = {
+	}
+	pg.base.item_data_battleui[102] = {
 		key = "SkinNormal_20240912",
 		name = "Cyber",
 		desc = "A UI for enthusiasts of science-fiction. Features some animations and light effects in places.",
@@ -40,8 +69,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[103] = {
+	}
+	pg.base.item_data_battleui[103] = {
 		key = "SkinNormal_20240913",
 		name = "Iridescent Fantasy",
 		desc = "An expressive UI featuring all the colors of the rainbow. Perfect for those who like to swing to the rhythm and fans of pop aesthetics.",
@@ -57,8 +86,8 @@ pg.item_data_battleui = {
 			2,
 			3
 		}
-	},
-	[104] = {
+	}
+	pg.base.item_data_battleui[104] = {
 		key = "SkinNormal_20241107",
 		name = "Neon",
 		desc = "Augment your combat experience with neon lights and rhythmic light beams.",
@@ -72,8 +101,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[105] = {
+	}
+	pg.base.item_data_battleui[105] = {
 		key = "SkinNormal_20250123",
 		name = "Holy Light",
 		desc = "Sacred, profound, glorious. May all your battles be etched into the annals of history.",
@@ -87,8 +116,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[106] = {
+	}
+	pg.base.item_data_battleui[106] = {
 		key = "SkinNormal_20250327",
 		name = "Deal with the Devil",
 		desc = "A command interface with a devilish vibe. Its blood-red frame and magic circles beckon you to a dark and dangerous world.",
@@ -102,8 +131,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[107] = {
+	}
+	pg.base.item_data_battleui[107] = {
 		key = "SkinNormal_20250529",
 		name = "Radiant Stars",
 		desc = "Brightly do the stars glow, projecting their mysterious patterns across the galaxy, their each and every detail speaking to a longing for space and adventure.",
@@ -117,8 +146,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[108] = {
+	}
+	pg.base.item_data_battleui[108] = {
 		key = "SkinNormal_20250724",
 		name = "Natural Flow",
 		desc = "Listen to Mother Nature's vivid tune, performed by running water and birdsong.",
@@ -132,8 +161,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[109] = {
+	}
+	pg.base.item_data_battleui[109] = {
 		key = "SkinNormal_20250925",
 		name = "Ink and Bamboo",
 		desc = "An interface in the style of an ink painting. Ink brushstrokes unfold between black and white, whilst the bamboo seems to sway in the wind, creating an elegant atmosphere.",
@@ -147,8 +176,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[110] = {
+	}
+	pg.base.item_data_battleui[110] = {
 		key = "SkinNormal_20251113",
 		name = "Black Friday",
 		desc = "This Battle UI is designed for shopping-loving Commanders. While enjoying the thrill of shopping, overwhelm your opponents with a deluge of gifts.",
@@ -162,8 +191,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[111] = {
+	}
+	pg.base.item_data_battleui[111] = {
 		key = "SkinNormal_20251120",
 		name = "Shadow Pictures",
 		desc = "Simple shadow pictures evoke boundless imagination, and modest stories abound with wonderful hopes.",
@@ -177,8 +206,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[113] = {
+	}
+	pg.base.item_data_battleui[113] = {
 		key = "SkinNormal_20260129",
 		name = "Ancient Dynasty",
 		desc = "Adorn your interface with towering stone pillars, their worn patterns telling tales of a lost order and filling your battles with a solemn and tragic atmosphere that transcends time.",
@@ -192,8 +221,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[114] = {
+	}
+	pg.base.item_data_battleui[114] = {
 		key = "SkinNormal_20260326",
 		name = "Elderwood Ivy",
 		desc = "A mystical glow filters through the gaps of the ancient ivy growing around your screen. Grace each battle with the enchantment and vitality of the deep forest.",
@@ -207,8 +236,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[201] = {
+	}
+	pg.base.item_data_battleui[201] = {
 		key = "SkinNormal_20241209",
 		name = "Christmas",
 		desc = "An interface for those who adore the atmosphere of winter. Embrace the holiday spirit and watch the snowflakes fall while you take command of the battle.",
@@ -224,8 +253,8 @@ pg.item_data_battleui = {
 			2,
 			3
 		}
-	},
-	[202] = {
+	}
+	pg.base.item_data_battleui[202] = {
 		key = "SkinNormal_20250227",
 		name = "Pharaoh",
 		desc = "Hieroglyphs and gold emblazonings. They retell the legends of the Nile culture from time immemorial.",
@@ -241,8 +270,8 @@ pg.item_data_battleui = {
 			2,
 			3
 		}
-	},
-	[203] = {
+	}
+	pg.base.item_data_battleui[203] = {
 		key = "SkinElite_20250327",
 		name = "Genetic Origin",
 		desc = "A futuristic command interface. The white panels and blood-red highlights provide a clinical and suspenseful atmosphere.",
@@ -258,8 +287,8 @@ pg.item_data_battleui = {
 			2,
 			3
 		}
-	},
-	[204] = {
+	}
+	pg.base.item_data_battleui[204] = {
 		key = "SkinElite_20250520",
 		name = "Battle UI - Seaside Splash",
 		desc = "Planks placed in the sand and white-crested waves adorned with seashells. A leisurely vacation on the beach.",
@@ -275,8 +304,8 @@ pg.item_data_battleui = {
 			2,
 			3
 		}
-	},
-	[205] = {
+	}
+	pg.base.item_data_battleui[205] = {
 		key = "SkinElite_20250912",
 		name = "Ninja Castle",
 		desc = "For the Commander who just can't get enough of ninjas. Take your shuriken and kunai and wreak some havoc in the ninja castle!",
@@ -292,8 +321,8 @@ pg.item_data_battleui = {
 			2,
 			3
 		}
-	},
-	[206] = {
+	}
+	pg.base.item_data_battleui[206] = {
 		key = "SkinElite_20251218",
 		name = "Maid Café",
 		desc = "Indulge in sweet snacks made by a loving maid and take on new and sugary challenges!",
@@ -309,8 +338,8 @@ pg.item_data_battleui = {
 			2,
 			3
 		}
-	},
-	[207] = {
+	}
+	pg.base.item_data_battleui[207] = {
 		key = "SkinElite_20260226",
 		name = "Springtide Inn",
 		desc = "Bask in the lively atmosphere at Springtide Inn, see the fireworks and the lanterns, and listen to the pop-pop-pop of firecrackers. Welcome spring with a bang!",
@@ -326,28 +355,5 @@ pg.item_data_battleui = {
 			2,
 			3
 		}
-	},
-	all = {
-		0,
-		101,
-		102,
-		103,
-		104,
-		105,
-		106,
-		107,
-		108,
-		109,
-		110,
-		111,
-		113,
-		114,
-		201,
-		202,
-		203,
-		204,
-		205,
-		206,
-		207
 	}
-}
+end)()

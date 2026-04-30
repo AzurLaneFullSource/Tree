@@ -1,31 +1,34 @@
 pg = pg or {}
-pg.livingarea_cover = setmetatable({
-	__name = "livingarea_cover",
-	all = {
-		0,
-		100101,
-		100102,
-		100103,
-		100201,
-		100202,
-		100203,
-		100301,
-		100302,
-		100303,
-		101101,
-		101102,
-		101103,
-		101201,
-		101202,
-		101203,
-		101401,
-		101402,
-		101403
-	}
-}, confHX)
+pg.livingarea_cover = rawget(pg, "livingarea_cover") or setmetatable({
+	__name = "livingarea_cover"
+}, confNEO)
+pg.livingarea_cover.__namecode__ = true
+pg.livingarea_cover.all = {
+	0,
+	100101,
+	100102,
+	100103,
+	100201,
+	100202,
+	100203,
+	100301,
+	100302,
+	100303,
+	101101,
+	101102,
+	101103,
+	101201,
+	101202,
+	101203,
+	101401,
+	101402,
+	101403
+}
 pg.base = pg.base or {}
-pg.base.livingarea_cover = {
-	[0] = {
+pg.base.livingarea_cover = {}
+
+;(function()
+	pg.base.livingarea_cover[0] = {
 		rarity = 2,
 		name = "Default",
 		nighttime_res = "0_bg_night",
@@ -36,8 +39,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "0_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = ""
-	},
-	[100101] = {
+	}
+	pg.base.livingarea_cover[100101] = {
 		rarity = 3,
 		name = "Welcome",
 		nighttime_res = "100101_bg_night",
@@ -48,8 +51,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "100101_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[100102] = {
+	}
+	pg.base.livingarea_cover[100102] = {
 		rarity = 3,
 		name = "Chitchat",
 		nighttime_res = "100102_bg_night",
@@ -60,8 +63,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "100102_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[100103] = {
+	}
+	pg.base.livingarea_cover[100103] = {
 		rarity = 3,
 		name = "Cleaning the Bed",
 		nighttime_res = "100103_bg_night",
@@ -72,8 +75,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "100103_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[100201] = {
+	}
+	pg.base.livingarea_cover[100201] = {
 		rarity = 3,
 		name = "Waiting by the Window",
 		nighttime_res = "100201_bg_night",
@@ -84,8 +87,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "100201_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[100202] = {
+	}
+	pg.base.livingarea_cover[100202] = {
 		rarity = 3,
 		name = "Invitation to Afternoon Tea",
 		nighttime_res = "100202_bg_night",
@@ -96,8 +99,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "100202_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[100203] = {
+	}
+	pg.base.livingarea_cover[100203] = {
 		rarity = 3,
 		name = "A Moment of Respite",
 		nighttime_res = "100203_bg_night",
@@ -108,8 +111,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "100203_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[100301] = {
+	}
+	pg.base.livingarea_cover[100301] = {
 		rarity = 3,
 		name = "Delicious Amusement",
 		nighttime_res = "100301_bg_night",
@@ -120,8 +123,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "100301_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[100302] = {
+	}
+	pg.base.livingarea_cover[100302] = {
 		rarity = 3,
 		name = "Story Time",
 		nighttime_res = "100302_bg_night",
@@ -132,8 +135,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "100302_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[100303] = {
+	}
+	pg.base.livingarea_cover[100303] = {
 		rarity = 3,
 		name = "World of Drawing",
 		nighttime_res = "100303_bg_night",
@@ -144,8 +147,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "100303_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[101101] = {
+	}
+	pg.base.livingarea_cover[101101] = {
 		rarity = 3,
 		name = "Leisure in Peace",
 		nighttime_res = "101101_bg_night",
@@ -156,8 +159,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "101101_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[101102] = {
+	}
+	pg.base.livingarea_cover[101102] = {
 		rarity = 3,
 		name = "Sunny Smiles",
 		nighttime_res = "101102_bg_night",
@@ -168,8 +171,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "101102_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[101103] = {
+	}
+	pg.base.livingarea_cover[101103] = {
 		rarity = 3,
 		name = "Sweet Whispers",
 		nighttime_res = "101103_bg_night",
@@ -180,8 +183,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "101103_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[101201] = {
+	}
+	pg.base.livingarea_cover[101201] = {
 		rarity = 3,
 		name = "Invitation to Obsession",
 		nighttime_res = "101201_bg_night",
@@ -192,8 +195,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "101201_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[101202] = {
+	}
+	pg.base.livingarea_cover[101202] = {
 		rarity = 3,
 		name = "Mutual Codependence",
 		nighttime_res = "101202_bg_night",
@@ -204,8 +207,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "101202_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[101203] = {
+	}
+	pg.base.livingarea_cover[101203] = {
 		rarity = 3,
 		name = "Passion at Your Fingertips",
 		nighttime_res = "101203_bg_night",
@@ -216,8 +219,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "101203_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[101401] = {
+	}
+	pg.base.livingarea_cover[101401] = {
 		rarity = 3,
 		name = "Sweet Murmurings",
 		nighttime_res = "101401_bg_night",
@@ -228,8 +231,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "101401_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[101402] = {
+	}
+	pg.base.livingarea_cover[101402] = {
 		rarity = 3,
 		name = "Peaceful Relaxation",
 		nighttime_res = "101402_bg_night",
@@ -240,8 +243,8 @@ pg.base.livingarea_cover = {
 		daytime_res = "101402_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
-	},
-	[101403] = {
+	}
+	pg.base.livingarea_cover[101403] = {
 		rarity = 3,
 		name = "Bedside Invitation",
 		nighttime_res = "101403_bg_night",
@@ -253,4 +256,4 @@ pg.base.livingarea_cover = {
 		icon = "Props/drom3d_camera1003",
 		get_tips = "You obtained an Intimacy wallpaper."
 	}
-}
+end)()

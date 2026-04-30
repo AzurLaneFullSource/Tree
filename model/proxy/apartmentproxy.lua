@@ -74,7 +74,7 @@ end
 function var0_0.InitGiftDaily(arg0_7)
 	pg.m02:sendNotification(GAME.GET_CHARGE_LIST, {
 		callback = function()
-			for iter0_8, iter1_8 in pairs(pg.dorm3d_gift.all) do
+			for iter0_8, iter1_8 in ipairs(pg.dorm3d_gift.all) do
 				local var0_8 = pg.dorm3d_gift[iter1_8]
 
 				if #var0_8.shop_id > 0 then
@@ -425,7 +425,7 @@ function var0_0.PendingRandom(arg0_53, arg1_53)
 end
 
 function var0_0.RefreshGiftDailyTip()
-	for iter0_55, iter1_55 in pairs(pg.dorm3d_shop_template.all) do
+	for iter0_55, iter1_55 in ipairs(pg.dorm3d_shop_template.all) do
 		local var0_55 = pg.dorm3d_shop_template[iter1_55]
 
 		if pg.shop_template[var0_55.shop_id[1]].group ~= 0 then

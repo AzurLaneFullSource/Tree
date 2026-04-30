@@ -19,18 +19,19 @@ var0_0.nameCodeMap_EN = {
 }
 
 function var0_0.init()
-	for iter0_1, iter1_1 in pairs(pg.name_code) do
-		local var0_1
+	for iter0_1, iter1_1 in ipairs(pg.name_code.all) do
+		local var0_1 = pg.name_code[iter1_1]
+		local var1_1
 
-		if iter1_1.type == 1 then
-			var0_1 = var0_0.nameCodeMap
-		elseif iter1_1.type == 2 then
-			var0_1 = var0_0.nameEquipCodeMap
+		if var0_1.type == 1 then
+			var1_1 = var0_0.nameCodeMap
+		elseif var0_1.type == 2 then
+			var1_1 = var0_0.nameEquipCodeMap
 		else
 			assert(false)
 		end
 
-		var0_1[iter1_1.name] = iter1_1.code
+		var1_1[var0_1.name] = var0_1.code
 	end
 
 	if pg.gameset.code_switch.key_value == 1 and PlayerPrefs.HasKey(var0_0.codeModeKey) then
@@ -38,37 +39,37 @@ function var0_0.init()
 	end
 
 	if PLATFORM_CODE == PLATFORM_CH then
-		local var1_1
+		local var2_1
 
 		if IsUnityEditor then
-			var1_1 = PathMgr.getAssetBundle("../localization.txt")
+			var2_1 = PathMgr.getAssetBundle("../localization.txt")
 		else
-			var1_1 = Application.persistentDataPath .. "/localization.txt"
+			var2_1 = Application.persistentDataPath .. "/localization.txt"
 		end
 
-		if PathMgr.FileExists(var1_1) then
-			local var2_1 = PathMgr.ReadAllLines(var1_1)
+		if PathMgr.FileExists(var2_1) then
+			local var3_1 = PathMgr.ReadAllLines(var2_1)
 
-			if string.gsub(var2_1[0], "%w+%s*=%s*", "") == "true" then
+			if string.gsub(var3_1[0], "%w+%s*=%s*", "") == "true" then
 				var0_0.codeMode = true
 			end
 
-			local var3_1 = "Localization_skin = false"
+			local var4_1 = "Localization_skin = false"
 
-			if var2_1.Length <= 1 then
-				local var4_1 = {
-					var2_1[0],
-					var3_1
+			if var3_1.Length <= 1 then
+				local var5_1 = {
+					var3_1[0],
+					var4_1
 				}
 			else
-				var3_1 = var2_1[1]
+				var4_1 = var3_1[1]
 			end
 
-			if string.gsub(var3_1, "[_%w]+%s*=%s*", "") == "true" then
+			if string.gsub(var4_1, "[_%w]+%s*=%s*", "") == "true" then
 				var0_0.antiSkinMode = true
 			end
 		else
-			System.IO.File.WriteAllText(var1_1, "Localization = false\nLocalization_skin = false")
+			System.IO.File.WriteAllText(var2_1, "Localization = false\nLocalization_skin = false")
 		end
 	end
 

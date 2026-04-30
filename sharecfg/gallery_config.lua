@@ -1,6 +1,69 @@
 pg = pg or {}
-pg.gallery_config = {
-	{
+pg.gallery_config = rawget(pg, "gallery_config") or setmetatable({
+	__name = "gallery_config"
+}, confNEO)
+pg.gallery_config.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22,
+	23,
+	24,
+	25,
+	26,
+	27,
+	28,
+	29,
+	30,
+	31,
+	32,
+	33,
+	34,
+	35,
+	36,
+	37,
+	38,
+	39,
+	40,
+	41,
+	42,
+	43,
+	44,
+	45,
+	46,
+	47,
+	48,
+	49,
+	50,
+	51,
+	52,
+	53,
+	54,
+	55
+}
+pg.base = pg.base or {}
+pg.base.gallery_config = {}
+
+;(function()
+	pg.base.gallery_config[1] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -12,8 +75,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[2] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -25,8 +88,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[3] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -38,8 +101,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[4] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -51,8 +114,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[5] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -64,8 +127,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[6] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -77,8 +140,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[7] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -90,8 +153,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[8] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -103,8 +166,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[9] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -116,8 +179,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[10] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -129,8 +192,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[11] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -142,8 +205,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[12] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -155,8 +218,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[13] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -168,8 +231,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[14] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -181,8 +244,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[15] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -194,8 +257,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[16] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -207,8 +270,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[17] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -220,8 +283,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[18] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -233,8 +296,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[19] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -246,8 +309,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[20] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -259,8 +322,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[21] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -272,8 +335,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[22] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -285,8 +348,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[23] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -298,8 +361,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[24] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -311,8 +374,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[25] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -324,8 +387,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[26] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -337,8 +400,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[27] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -350,8 +413,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[28] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -363,8 +426,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[29] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -376,8 +439,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[30] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -389,8 +452,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[31] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -402,8 +465,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[32] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -415,8 +478,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[33] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -428,8 +491,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[34] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -441,8 +504,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[35] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -454,8 +517,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[36] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -467,8 +530,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[37] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -480,8 +543,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[38] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -493,8 +556,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[39] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -506,8 +569,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[40] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -519,8 +582,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[41] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -532,8 +595,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[42] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -545,8 +608,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[43] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -558,8 +621,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[44] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -571,8 +634,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[45] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -584,8 +647,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[46] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -597,8 +660,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[47] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -610,8 +673,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[48] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -623,8 +686,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[49] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -636,8 +699,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[50] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -649,8 +712,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[51] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -662,8 +725,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[52] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -675,8 +738,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[53] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -688,8 +751,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[54] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -701,8 +764,8 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	{
+	}
+	pg.base.gallery_config[55] = {
 		year = 1,
 		name = "",
 		unlock_other = 0,
@@ -714,62 +777,5 @@ pg.gallery_config = {
 			0
 		},
 		unlock_cost = {}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19,
-		20,
-		21,
-		22,
-		23,
-		24,
-		25,
-		26,
-		27,
-		28,
-		29,
-		30,
-		31,
-		32,
-		33,
-		34,
-		35,
-		36,
-		37,
-		38,
-		39,
-		40,
-		41,
-		42,
-		43,
-		44,
-		45,
-		46,
-		47,
-		48,
-		49,
-		50,
-		51,
-		52,
-		53,
-		54,
-		55
 	}
-}
+end)()

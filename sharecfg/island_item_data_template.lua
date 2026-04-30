@@ -1,581 +1,303 @@
 pg = pg or {}
-pg.island_item_data_template = setmetatable({
-	__name = "island_item_data_template",
-	get_id_list_by_usage = {
-		usage_undefined = {
-			1,
-			2,
-			3,
-			4,
-			5,
-			6,
-			7,
-			8,
-			9,
-			10,
-			11,
-			12,
-			13,
-			14,
-			1000,
-			1001,
-			1002,
-			1003,
-			1004,
-			1005,
-			1006,
-			1007,
-			1008,
-			1009,
-			1010,
-			1011,
-			1012,
-			1014,
-			1015,
-			1016,
-			1017,
-			1018,
-			1019,
-			1020,
-			1021,
-			1022,
-			1101,
-			1102,
-			1103,
-			1104,
-			1105,
-			1106,
-			1107,
-			1108,
-			1201,
-			1202,
-			1203,
-			1204,
-			1205,
-			1206,
-			1207,
-			1208,
-			2000,
-			2001,
-			2002,
-			2003,
-			2004,
-			2005,
-			2006,
-			2007,
-			2008,
-			2009,
-			2010,
-			2011,
-			2012,
-			2014,
-			2015,
-			2016,
-			2017,
-			2018,
-			2019,
-			2020,
-			2021,
-			2022,
-			2521,
-			2522,
-			2600,
-			2601,
-			2602,
-			2603,
-			2604,
-			2605,
-			2606,
-			2700,
-			2701,
-			2702,
-			2703,
-			2704,
-			2705,
-			2800,
-			2801,
-			2802,
-			2803,
-			3000,
-			3001,
-			3002,
-			3003,
-			3004,
-			3005,
-			3006,
-			3007,
-			3008,
-			3009,
-			3010,
-			3011,
-			3012,
-			3013,
-			3014,
-			3015,
-			3017,
-			3018,
-			3019,
-			3020,
-			3021,
-			3022,
-			3023,
-			3024,
-			3025,
-			3026,
-			3028,
-			3029,
-			3030,
-			3032,
-			3033,
-			3034,
-			3035,
-			3036,
-			3037,
-			3038,
-			3039,
-			3040,
-			3041,
-			3042,
-			3043,
-			3044,
-			3045,
-			3046,
-			3047,
-			3048,
-			3049,
-			3050,
-			3051,
-			3052,
-			3053,
-			3054,
-			3055,
-			3056,
-			3059,
-			3101,
-			3102,
-			3103,
-			3104,
-			3105,
-			3106,
-			3107,
-			3108,
-			3109,
-			3110,
-			3111,
-			3112,
-			3113,
-			3114,
-			3115,
-			3116,
-			3117,
-			3118,
-			3119,
-			3120,
-			4001,
-			4002,
-			4003,
-			4004,
-			4005,
-			4006,
-			4007,
-			4008,
-			4009,
-			4010,
-			4011,
-			4012,
-			4013,
-			4014,
-			4015,
-			4016,
-			4017,
-			4018,
-			4019,
-			4020,
-			4021,
-			4022,
-			4023,
-			4024,
-			4025,
-			4026,
-			4027,
-			4028,
-			5001,
-			5002,
-			5003,
-			5004,
-			5005,
-			5006,
-			5007,
-			5008,
-			5101,
-			5102,
-			5103,
-			5104,
-			5105,
-			5106,
-			5107,
-			5108,
-			9900,
-			100001,
-			100002,
-			100003,
-			100011,
-			100012,
-			100013,
-			100021,
-			100022,
-			100023,
-			100031,
-			100032,
-			100033,
-			100041,
-			100042,
-			100043,
-			100051,
-			100052,
-			100053,
-			100061,
-			100062,
-			100063,
-			100101,
-			100102,
-			100103,
-			100201,
-			200001,
-			200002,
-			200003,
-			200004,
-			200005,
-			200006,
-			200007,
-			200008,
-			200009,
-			200010,
-			200011,
-			200012,
-			200013,
-			200014,
-			200015,
-			200016,
-			200017,
-			200018,
-			200019,
-			200020,
-			200021,
-			200022,
-			200023,
-			300001,
-			300002,
-			300003,
-			300004,
-			300005,
-			300006
-		},
-		usage_fish = {
-			1500,
-			1501,
-			1502,
-			1503
-		},
-		usage_island_gift = {
-			110001,
-			110002,
-			110003,
-			110004,
-			110005,
-			110006
-		}
+pg.island_item_data_template = rawget(pg, "island_item_data_template") or setmetatable({
+	__name = "island_item_data_template"
+}, confNEO)
+pg.island_item_data_template.__namecode__ = true
+pg.island_item_data_template.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	1000,
+	1001,
+	1002,
+	1003,
+	1004,
+	1005,
+	1006,
+	1007,
+	1008,
+	1009,
+	1010,
+	1011,
+	1012,
+	1014,
+	1015,
+	1016,
+	1017,
+	1018,
+	1019,
+	1020,
+	1021,
+	1022,
+	1101,
+	1102,
+	1103,
+	1104,
+	1105,
+	1106,
+	1107,
+	1108,
+	1201,
+	1202,
+	1203,
+	1204,
+	1205,
+	1206,
+	1207,
+	1208,
+	1500,
+	1501,
+	1502,
+	1503,
+	2000,
+	2001,
+	2002,
+	2003,
+	2004,
+	2005,
+	2006,
+	2007,
+	2008,
+	2009,
+	2010,
+	2011,
+	2012,
+	2014,
+	2015,
+	2016,
+	2017,
+	2018,
+	2019,
+	2020,
+	2021,
+	2022,
+	2521,
+	2522,
+	2600,
+	2601,
+	2602,
+	2603,
+	2604,
+	2605,
+	2606,
+	2700,
+	2701,
+	2702,
+	2703,
+	2704,
+	2705,
+	2800,
+	2801,
+	2802,
+	2803,
+	3000,
+	3001,
+	3002,
+	3003,
+	3004,
+	3005,
+	3006,
+	3007,
+	3008,
+	3009,
+	3010,
+	3011,
+	3012,
+	3013,
+	3014,
+	3015,
+	3017,
+	3018,
+	3019,
+	3020,
+	3021,
+	3022,
+	3023,
+	3024,
+	3025,
+	3026,
+	3028,
+	3029,
+	3030,
+	3032,
+	3033,
+	3034,
+	3035,
+	3036,
+	3037,
+	3038,
+	3039,
+	3040,
+	3041,
+	3042,
+	3043,
+	3044,
+	3045,
+	3046,
+	3047,
+	3048,
+	3049,
+	3050,
+	3051,
+	3052,
+	3053,
+	3054,
+	3055,
+	3056,
+	3059,
+	3101,
+	3102,
+	3103,
+	3104,
+	3105,
+	3106,
+	3107,
+	3108,
+	3109,
+	3110,
+	3111,
+	3112,
+	3113,
+	3114,
+	3115,
+	3116,
+	3117,
+	3118,
+	3119,
+	3120,
+	4001,
+	4002,
+	4003,
+	4004,
+	4005,
+	4006,
+	4007,
+	4008,
+	4009,
+	4010,
+	4011,
+	4012,
+	4013,
+	4014,
+	4015,
+	4016,
+	4017,
+	4018,
+	4019,
+	4020,
+	4021,
+	4022,
+	4023,
+	4024,
+	4025,
+	4026,
+	4027,
+	4028,
+	5001,
+	5002,
+	5003,
+	5004,
+	5005,
+	5006,
+	5007,
+	5008,
+	5101,
+	5102,
+	5103,
+	5104,
+	5105,
+	5106,
+	5107,
+	5108,
+	9900,
+	100001,
+	100002,
+	100003,
+	100011,
+	100012,
+	100013,
+	100021,
+	100022,
+	100023,
+	100031,
+	100032,
+	100033,
+	100041,
+	100042,
+	100043,
+	100051,
+	100052,
+	100053,
+	100061,
+	100062,
+	100063,
+	100101,
+	100102,
+	100103,
+	100201,
+	110001,
+	110002,
+	110003,
+	110004,
+	110005,
+	110006,
+	200001,
+	200002,
+	200003,
+	200004,
+	200005,
+	200006,
+	200007,
+	200008,
+	200009,
+	200010,
+	200011,
+	200012,
+	200013,
+	200014,
+	200015,
+	200016,
+	200017,
+	200018,
+	200019,
+	200020,
+	200021,
+	200022,
+	200023,
+	300001,
+	300002,
+	300003,
+	300004,
+	300005,
+	300006
+}
+pg.island_item_data_template.get_id_list_by_usage = {
+	usage_fish = {
+		1500,
+		1501,
+		1502,
+		1503
 	},
-	get_id_list_by_type = {
-		[3] = {
-			1,
-			5,
-			6,
-			7,
-			8,
-			9,
-			11,
-			12,
-			13,
-			1500,
-			1501,
-			1502,
-			1503
-		},
-		[4] = {
-			2
-		},
-		[2] = {
-			3,
-			4,
-			100011,
-			100012,
-			100013,
-			100021,
-			100022,
-			100023,
-			100031,
-			100032,
-			100033,
-			100041,
-			100042,
-			100043,
-			100051,
-			100052,
-			100053,
-			100061,
-			100062,
-			100063,
-			100101,
-			100102,
-			100103,
-			100201,
-			110001,
-			110002,
-			110003,
-			110004,
-			110005,
-			110006,
-			200001,
-			200002,
-			200003,
-			200004,
-			200005,
-			200006,
-			200007,
-			200008,
-			200009,
-			200010,
-			200011,
-			200012,
-			200013,
-			200014,
-			200015,
-			200016,
-			200017,
-			200018,
-			200019,
-			200020,
-			200021,
-			200022,
-			200023,
-			300001,
-			300002,
-			300003,
-			300004,
-			300005,
-			300006
-		},
-		{
-			10,
-			14,
-			1000,
-			1001,
-			1002,
-			1003,
-			1004,
-			1005,
-			1006,
-			1007,
-			1008,
-			1009,
-			1010,
-			1011,
-			1012,
-			1014,
-			1015,
-			1016,
-			1017,
-			1018,
-			1019,
-			1020,
-			1021,
-			1022,
-			1101,
-			1102,
-			1103,
-			1104,
-			1105,
-			1106,
-			1107,
-			1108,
-			1201,
-			1202,
-			1203,
-			1204,
-			1205,
-			1206,
-			1207,
-			1208,
-			2000,
-			2001,
-			2002,
-			2003,
-			2004,
-			2005,
-			2006,
-			2007,
-			2008,
-			2009,
-			2010,
-			2011,
-			2012,
-			2014,
-			2015,
-			2016,
-			2017,
-			2018,
-			2019,
-			2020,
-			2021,
-			2022,
-			2521,
-			2522,
-			2600,
-			2601,
-			2602,
-			2603,
-			2604,
-			2605,
-			2606,
-			2700,
-			2701,
-			2702,
-			2703,
-			2704,
-			2705,
-			2800,
-			2801,
-			2802,
-			2803,
-			3000,
-			3001,
-			3002,
-			3003,
-			3004,
-			3005,
-			3006,
-			3007,
-			3008,
-			3009,
-			3010,
-			3011,
-			3012,
-			3013,
-			3014,
-			3015,
-			3017,
-			3018,
-			3019,
-			3020,
-			3021,
-			3022,
-			3023,
-			3024,
-			3025,
-			3026,
-			3028,
-			3029,
-			3030,
-			3032,
-			3033,
-			3034,
-			3035,
-			3036,
-			3037,
-			3038,
-			3039,
-			3040,
-			3041,
-			3042,
-			3043,
-			3044,
-			3045,
-			3046,
-			3047,
-			3048,
-			3049,
-			3050,
-			3051,
-			3052,
-			3053,
-			3054,
-			3055,
-			3056,
-			3059,
-			3101,
-			3102,
-			3103,
-			3104,
-			3105,
-			3106,
-			3107,
-			3108,
-			3109,
-			3110,
-			3111,
-			3112,
-			3113,
-			3114,
-			3115,
-			3116,
-			3117,
-			3118,
-			3119,
-			3120,
-			4001,
-			4002,
-			4003,
-			4004,
-			4005,
-			4006,
-			4007,
-			4008,
-			4009,
-			4010,
-			4011,
-			4012,
-			4013,
-			4014,
-			4015,
-			4016,
-			4017,
-			4018,
-			4019,
-			4020,
-			4021,
-			4022,
-			4023,
-			4024,
-			4025,
-			4026,
-			4027,
-			4028,
-			5001,
-			5002,
-			5003,
-			5004,
-			5005,
-			5006,
-			5007,
-			5008,
-			5101,
-			5102,
-			5103,
-			5104,
-			5105,
-			5106,
-			5107,
-			5108,
-			9900
-		},
-		[5] = {
-			100001,
-			100002,
-			100003
-		}
+	usage_island_gift = {
+		110001,
+		110002,
+		110003,
+		110004,
+		110005,
+		110006
 	},
-	all = {
+	usage_undefined = {
 		1,
 		2,
 		3,
@@ -628,10 +350,6 @@ pg.island_item_data_template = setmetatable({
 		1206,
 		1207,
 		1208,
-		1500,
-		1501,
-		1502,
-		1503,
 		2000,
 		2001,
 		2002,
@@ -818,6 +536,266 @@ pg.island_item_data_template = setmetatable({
 		100102,
 		100103,
 		100201,
+		200001,
+		200002,
+		200003,
+		200004,
+		200005,
+		200006,
+		200007,
+		200008,
+		200009,
+		200010,
+		200011,
+		200012,
+		200013,
+		200014,
+		200015,
+		200016,
+		200017,
+		200018,
+		200019,
+		200020,
+		200021,
+		200022,
+		200023,
+		300001,
+		300002,
+		300003,
+		300004,
+		300005,
+		300006
+	}
+}
+pg.island_item_data_template.get_id_list_by_type = {
+	{
+		10,
+		14,
+		1000,
+		1001,
+		1002,
+		1003,
+		1004,
+		1005,
+		1006,
+		1007,
+		1008,
+		1009,
+		1010,
+		1011,
+		1012,
+		1014,
+		1015,
+		1016,
+		1017,
+		1018,
+		1019,
+		1020,
+		1021,
+		1022,
+		1101,
+		1102,
+		1103,
+		1104,
+		1105,
+		1106,
+		1107,
+		1108,
+		1201,
+		1202,
+		1203,
+		1204,
+		1205,
+		1206,
+		1207,
+		1208,
+		2000,
+		2001,
+		2002,
+		2003,
+		2004,
+		2005,
+		2006,
+		2007,
+		2008,
+		2009,
+		2010,
+		2011,
+		2012,
+		2014,
+		2015,
+		2016,
+		2017,
+		2018,
+		2019,
+		2020,
+		2021,
+		2022,
+		2521,
+		2522,
+		2600,
+		2601,
+		2602,
+		2603,
+		2604,
+		2605,
+		2606,
+		2700,
+		2701,
+		2702,
+		2703,
+		2704,
+		2705,
+		2800,
+		2801,
+		2802,
+		2803,
+		3000,
+		3001,
+		3002,
+		3003,
+		3004,
+		3005,
+		3006,
+		3007,
+		3008,
+		3009,
+		3010,
+		3011,
+		3012,
+		3013,
+		3014,
+		3015,
+		3017,
+		3018,
+		3019,
+		3020,
+		3021,
+		3022,
+		3023,
+		3024,
+		3025,
+		3026,
+		3028,
+		3029,
+		3030,
+		3032,
+		3033,
+		3034,
+		3035,
+		3036,
+		3037,
+		3038,
+		3039,
+		3040,
+		3041,
+		3042,
+		3043,
+		3044,
+		3045,
+		3046,
+		3047,
+		3048,
+		3049,
+		3050,
+		3051,
+		3052,
+		3053,
+		3054,
+		3055,
+		3056,
+		3059,
+		3101,
+		3102,
+		3103,
+		3104,
+		3105,
+		3106,
+		3107,
+		3108,
+		3109,
+		3110,
+		3111,
+		3112,
+		3113,
+		3114,
+		3115,
+		3116,
+		3117,
+		3118,
+		3119,
+		3120,
+		4001,
+		4002,
+		4003,
+		4004,
+		4005,
+		4006,
+		4007,
+		4008,
+		4009,
+		4010,
+		4011,
+		4012,
+		4013,
+		4014,
+		4015,
+		4016,
+		4017,
+		4018,
+		4019,
+		4020,
+		4021,
+		4022,
+		4023,
+		4024,
+		4025,
+		4026,
+		4027,
+		4028,
+		5001,
+		5002,
+		5003,
+		5004,
+		5005,
+		5006,
+		5007,
+		5008,
+		5101,
+		5102,
+		5103,
+		5104,
+		5105,
+		5106,
+		5107,
+		5108,
+		9900
+	},
+	{
+		3,
+		4,
+		100011,
+		100012,
+		100013,
+		100021,
+		100022,
+		100023,
+		100031,
+		100032,
+		100033,
+		100041,
+		100042,
+		100043,
+		100051,
+		100052,
+		100053,
+		100061,
+		100062,
+		100063,
+		100101,
+		100102,
+		100103,
+		100201,
 		110001,
 		110002,
 		110003,
@@ -853,11 +831,36 @@ pg.island_item_data_template = setmetatable({
 		300004,
 		300005,
 		300006
-	}
-}, confHX)
-pg.base = pg.base or {}
-pg.base.island_item_data_template = {
+	},
 	{
+		1,
+		5,
+		6,
+		7,
+		8,
+		9,
+		11,
+		12,
+		13,
+		1500,
+		1501,
+		1502,
+		1503
+	},
+	{
+		2
+	},
+	{
+		100001,
+		100002,
+		100003
+	}
+}
+pg.base = pg.base or {}
+pg.base.island_item_data_template = {}
+
+;(function()
+	pg.base.island_item_data_template[1] = {
 		pt_num = 0,
 		name = "Development Funds",
 		group_max = 0,
@@ -891,8 +894,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	{
+	}
+	pg.base.island_item_data_template[2] = {
 		pt_num = 0,
 		name = "Development EXP",
 		group_max = 0,
@@ -926,8 +929,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	{
+	}
+	pg.base.island_item_data_template[3] = {
 		pt_num = 0,
 		name = "Outfit Colors",
 		group_max = 0,
@@ -961,8 +964,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	{
+	}
+	pg.base.island_item_data_template[4] = {
 		pt_num = 0,
 		name = "Building Permit",
 		group_max = 0,
@@ -987,8 +990,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	{
+	}
+	pg.base.island_item_data_template[5] = {
 		pt_num = 0,
 		name = "Map Fragment - 1",
 		group_max = 0,
@@ -1013,8 +1016,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	{
+	}
+	pg.base.island_item_data_template[6] = {
 		pt_num = 0,
 		name = "Map Fragment - 2",
 		group_max = 0,
@@ -1039,8 +1042,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	{
+	}
+	pg.base.island_item_data_template[7] = {
 		pt_num = 0,
 		name = "Map Fragment - 3",
 		group_max = 0,
@@ -1065,8 +1068,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	{
+	}
+	pg.base.island_item_data_template[8] = {
 		pt_num = 0,
 		name = "Map Fragment - 4",
 		group_max = 0,
@@ -1091,8 +1094,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	{
+	}
+	pg.base.island_item_data_template[9] = {
 		pt_num = 0,
 		name = "Map Fragment - 5",
 		group_max = 0,
@@ -1117,8 +1120,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	{
+	}
+	pg.base.island_item_data_template[10] = {
 		pt_num = 1,
 		name = "Island Seasonal PT Exchange Ticket",
 		group_max = 0,
@@ -1143,8 +1146,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	{
+	}
+	pg.base.island_item_data_template[11] = {
 		pt_num = 0,
 		name = "Oceana",
 		group_max = 0,
@@ -1167,8 +1170,8 @@ pg.base.island_item_data_template = {
 		filter = {},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	{
+	}
+	pg.base.island_item_data_template[12] = {
 		pt_num = 0,
 		name = "TB",
 		group_max = 0,
@@ -1191,8 +1194,8 @@ pg.base.island_item_data_template = {
 		filter = {},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	{
+	}
+	pg.base.island_item_data_template[13] = {
 		pt_num = 0,
 		name = "Explorer",
 		group_max = 0,
@@ -1215,8 +1218,8 @@ pg.base.island_item_data_template = {
 		filter = {},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	{
+	}
+	pg.base.island_item_data_template[14] = {
 		pt_num = 0,
 		name = "Island Development Points",
 		group_max = 0,
@@ -1241,8 +1244,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	[1000] = {
+	}
+	pg.base.island_item_data_template[1000] = {
 		pt_num = 1,
 		name = "Wheat Seeds",
 		group_max = 0,
@@ -1285,8 +1288,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1001] = {
+	}
+	pg.base.island_item_data_template[1001] = {
 		pt_num = 1,
 		name = "Corn Seeds",
 		group_max = 0,
@@ -1329,8 +1332,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1002] = {
+	}
+	pg.base.island_item_data_template[1002] = {
 		pt_num = 1,
 		name = "Upland Rice Seeds",
 		group_max = 0,
@@ -1373,8 +1376,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1003] = {
+	}
+	pg.base.island_item_data_template[1003] = {
 		pt_num = 1,
 		name = "Napa Cabbage Seeds",
 		group_max = 0,
@@ -1417,8 +1420,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1004] = {
+	}
+	pg.base.island_item_data_template[1004] = {
 		pt_num = 1,
 		name = "Carrot Seeds",
 		group_max = 0,
@@ -1461,8 +1464,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1005] = {
+	}
+	pg.base.island_item_data_template[1005] = {
 		pt_num = 1,
 		name = "Potato Seeds",
 		group_max = 0,
@@ -1505,8 +1508,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1006] = {
+	}
+	pg.base.island_item_data_template[1006] = {
 		pt_num = 1,
 		name = "Soy Bean Seeds",
 		group_max = 0,
@@ -1549,8 +1552,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1007] = {
+	}
+	pg.base.island_item_data_template[1007] = {
 		pt_num = 1,
 		name = "Onion Seeds",
 		group_max = 0,
@@ -1593,8 +1596,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1008] = {
+	}
+	pg.base.island_item_data_template[1008] = {
 		pt_num = 1,
 		name = "Grass Seeds",
 		group_max = 0,
@@ -1637,8 +1640,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1009] = {
+	}
+	pg.base.island_item_data_template[1009] = {
 		pt_num = 1,
 		name = "Coffee Tree Seeds",
 		group_max = 0,
@@ -1681,8 +1684,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1010] = {
+	}
+	pg.base.island_item_data_template[1010] = {
 		pt_num = 1,
 		name = "Flax Seeds",
 		group_max = 0,
@@ -1725,8 +1728,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1011] = {
+	}
+	pg.base.island_item_data_template[1011] = {
 		pt_num = 1,
 		name = "Strawberry Seeds",
 		group_max = 0,
@@ -1769,8 +1772,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1012] = {
+	}
+	pg.base.island_item_data_template[1012] = {
 		pt_num = 1,
 		name = "Cotton Seeds",
 		group_max = 0,
@@ -1813,8 +1816,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1014] = {
+	}
+	pg.base.island_item_data_template[1014] = {
 		pt_num = 1,
 		name = "Tea Tree Seeds",
 		group_max = 0,
@@ -1857,8 +1860,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1015] = {
+	}
+	pg.base.island_item_data_template[1015] = {
 		pt_num = 1,
 		name = "Lavender Seeds",
 		group_max = 0,
@@ -1901,8 +1904,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1016] = {
+	}
+	pg.base.island_item_data_template[1016] = {
 		pt_num = 1,
 		name = "Apple Tree Seeds",
 		group_max = 0,
@@ -1945,8 +1948,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1017] = {
+	}
+	pg.base.island_item_data_template[1017] = {
 		pt_num = 1,
 		name = "Citrus Fruit Tree Seeds",
 		group_max = 0,
@@ -1989,8 +1992,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1018] = {
+	}
+	pg.base.island_item_data_template[1018] = {
 		pt_num = 1,
 		name = "Banana Tree Seed",
 		group_max = 0,
@@ -2033,8 +2036,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1019] = {
+	}
+	pg.base.island_item_data_template[1019] = {
 		pt_num = 1,
 		name = "Mango Tree Seeds",
 		group_max = 0,
@@ -2077,8 +2080,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1020] = {
+	}
+	pg.base.island_item_data_template[1020] = {
 		pt_num = 1,
 		name = "Lemon Tree Seed",
 		group_max = 0,
@@ -2121,8 +2124,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1021] = {
+	}
+	pg.base.island_item_data_template[1021] = {
 		pt_num = 1,
 		name = "Avocado Tree Seeds",
 		group_max = 0,
@@ -2165,8 +2168,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1022] = {
+	}
+	pg.base.island_item_data_template[1022] = {
 		pt_num = 1,
 		name = "Rubber Tree Seeds",
 		group_max = 0,
@@ -2209,8 +2212,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1101] = {
+	}
+	pg.base.island_item_data_template[1101] = {
 		pt_num = 1,
 		name = "Shellfish Spat",
 		group_max = 0,
@@ -2253,8 +2256,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1102] = {
+	}
+	pg.base.island_item_data_template[1102] = {
 		pt_num = 1,
 		name = "Catfish Fry",
 		group_max = 0,
@@ -2297,8 +2300,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1103] = {
+	}
+	pg.base.island_item_data_template[1103] = {
 		pt_num = 1,
 		name = "Koi Carp Fry",
 		group_max = 0,
@@ -2341,8 +2344,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1104] = {
+	}
+	pg.base.island_item_data_template[1104] = {
 		pt_num = 1,
 		name = "Common Carp Fry",
 		group_max = 0,
@@ -2385,8 +2388,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1105] = {
+	}
+	pg.base.island_item_data_template[1105] = {
 		pt_num = 1,
 		name = "Freshwater Shrimp Fry",
 		group_max = 0,
@@ -2429,8 +2432,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1106] = {
+	}
+	pg.base.island_item_data_template[1106] = {
 		pt_num = 1,
 		name = "Crayfish Fry",
 		group_max = 0,
@@ -2473,8 +2476,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1107] = {
+	}
+	pg.base.island_item_data_template[1107] = {
 		pt_num = 1,
 		name = "Sea Bass Fry",
 		group_max = 0,
@@ -2517,8 +2520,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1108] = {
+	}
+	pg.base.island_item_data_template[1108] = {
 		pt_num = 1,
 		name = "Juvenile Crab",
 		group_max = 0,
@@ -2561,8 +2564,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1201] = {
+	}
+	pg.base.island_item_data_template[1201] = {
 		pt_num = 1,
 		name = "Squid Fry",
 		group_max = 0,
@@ -2605,8 +2608,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1202] = {
+	}
+	pg.base.island_item_data_template[1202] = {
 		pt_num = 1,
 		name = "Mackerel Fry",
 		group_max = 0,
@@ -2649,8 +2652,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1203] = {
+	}
+	pg.base.island_item_data_template[1203] = {
 		pt_num = 1,
 		name = "Tuna Fry",
 		group_max = 0,
@@ -2693,8 +2696,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1204] = {
+	}
+	pg.base.island_item_data_template[1204] = {
 		pt_num = 1,
 		name = "Salmon Fry",
 		group_max = 0,
@@ -2737,8 +2740,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1205] = {
+	}
+	pg.base.island_item_data_template[1205] = {
 		pt_num = 1,
 		name = "Red Sea Bream Fry",
 		group_max = 0,
@@ -2781,8 +2784,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1206] = {
+	}
+	pg.base.island_item_data_template[1206] = {
 		pt_num = 1,
 		name = "Black Porgy Fry",
 		group_max = 0,
@@ -2825,8 +2828,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1207] = {
+	}
+	pg.base.island_item_data_template[1207] = {
 		pt_num = 1,
 		name = "Yellowfin Tuna Fry",
 		group_max = 0,
@@ -2869,8 +2872,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1208] = {
+	}
+	pg.base.island_item_data_template[1208] = {
 		pt_num = 1,
 		name = "Sea Cucumber Fry",
 		group_max = 0,
@@ -2913,8 +2916,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[1500] = {
+	}
+	pg.base.island_item_data_template[1500] = {
 		pt_num = 0,
 		name = "Earthworm",
 		group_max = 0,
@@ -2944,8 +2947,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[1501] = {
+	}
+	pg.base.island_item_data_template[1501] = {
 		pt_num = 0,
 		name = "Corn",
 		group_max = 0,
@@ -2970,8 +2973,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	[1502] = {
+	}
+	pg.base.island_item_data_template[1502] = {
 		pt_num = 0,
 		name = "Shelled Shrimp",
 		group_max = 0,
@@ -3001,8 +3004,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[1503] = {
+	}
+	pg.base.island_item_data_template[1503] = {
 		pt_num = 0,
 		name = "Octopus Arm",
 		group_max = 0,
@@ -3032,8 +3035,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2000] = {
+	}
+	pg.base.island_item_data_template[2000] = {
 		pt_num = 1,
 		name = "Wheat",
 		group_max = 0,
@@ -3064,8 +3067,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2001] = {
+	}
+	pg.base.island_item_data_template[2001] = {
 		pt_num = 1,
 		name = "Corn",
 		group_max = 0,
@@ -3096,8 +3099,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2002] = {
+	}
+	pg.base.island_item_data_template[2002] = {
 		pt_num = 1,
 		name = "Rice",
 		group_max = 0,
@@ -3128,8 +3131,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2003] = {
+	}
+	pg.base.island_item_data_template[2003] = {
 		pt_num = 1,
 		name = "Napa Cabbage",
 		group_max = 0,
@@ -3160,8 +3163,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2004] = {
+	}
+	pg.base.island_item_data_template[2004] = {
 		pt_num = 1,
 		name = "Carrot",
 		group_max = 0,
@@ -3192,8 +3195,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2005] = {
+	}
+	pg.base.island_item_data_template[2005] = {
 		pt_num = 1,
 		name = "Potato",
 		group_max = 0,
@@ -3224,8 +3227,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2006] = {
+	}
+	pg.base.island_item_data_template[2006] = {
 		pt_num = 1,
 		name = "Soy Beans",
 		group_max = 0,
@@ -3256,8 +3259,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2007] = {
+	}
+	pg.base.island_item_data_template[2007] = {
 		pt_num = 24,
 		name = "Onion",
 		group_max = 0,
@@ -3288,8 +3291,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2008] = {
+	}
+	pg.base.island_item_data_template[2008] = {
 		pt_num = 1,
 		name = "Grass",
 		group_max = 0,
@@ -3320,8 +3323,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2009] = {
+	}
+	pg.base.island_item_data_template[2009] = {
 		pt_num = 6,
 		name = "Coffee Beans",
 		group_max = 0,
@@ -3352,8 +3355,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2010] = {
+	}
+	pg.base.island_item_data_template[2010] = {
 		pt_num = 6,
 		name = "Flax",
 		group_max = 0,
@@ -3384,8 +3387,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2011] = {
+	}
+	pg.base.island_item_data_template[2011] = {
 		pt_num = 5,
 		name = "Strawberries",
 		group_max = 0,
@@ -3416,8 +3419,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2012] = {
+	}
+	pg.base.island_item_data_template[2012] = {
 		pt_num = 6,
 		name = "Cotton",
 		group_max = 0,
@@ -3448,8 +3451,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2014] = {
+	}
+	pg.base.island_item_data_template[2014] = {
 		pt_num = 14,
 		name = "Tea Leaves",
 		group_max = 0,
@@ -3480,8 +3483,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2015] = {
+	}
+	pg.base.island_item_data_template[2015] = {
 		pt_num = 35,
 		name = "Lavender",
 		group_max = 0,
@@ -3512,8 +3515,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2016] = {
+	}
+	pg.base.island_item_data_template[2016] = {
 		pt_num = 1,
 		name = "Apple",
 		group_max = 0,
@@ -3544,8 +3547,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2017] = {
+	}
+	pg.base.island_item_data_template[2017] = {
 		pt_num = 1,
 		name = "Citrus Fruit",
 		group_max = 0,
@@ -3576,8 +3579,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2018] = {
+	}
+	pg.base.island_item_data_template[2018] = {
 		pt_num = 1,
 		name = "Banana",
 		group_max = 0,
@@ -3608,8 +3611,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2019] = {
+	}
+	pg.base.island_item_data_template[2019] = {
 		pt_num = 18,
 		name = "Mango",
 		group_max = 0,
@@ -3640,8 +3643,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2020] = {
+	}
+	pg.base.island_item_data_template[2020] = {
 		pt_num = 3,
 		name = "Lemon",
 		group_max = 0,
@@ -3672,8 +3675,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2021] = {
+	}
+	pg.base.island_item_data_template[2021] = {
 		pt_num = 45,
 		name = "Avocado",
 		group_max = 0,
@@ -3704,8 +3707,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2022] = {
+	}
+	pg.base.island_item_data_template[2022] = {
 		pt_num = 30,
 		name = "Rubber",
 		group_max = 0,
@@ -3736,8 +3739,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2521] = {
+	}
+	pg.base.island_item_data_template[2521] = {
 		pt_num = 18,
 		name = "Freshwater Fish Meat",
 		group_max = 0,
@@ -3768,8 +3771,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2522] = {
+	}
+	pg.base.island_item_data_template[2522] = {
 		pt_num = 48,
 		name = "Saltwater Fish Meat",
 		group_max = 0,
@@ -3800,8 +3803,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2600] = {
+	}
+	pg.base.island_item_data_template[2600] = {
 		pt_num = 2,
 		name = "Fresh Meat",
 		group_max = 0,
@@ -3832,8 +3835,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2601] = {
+	}
+	pg.base.island_item_data_template[2601] = {
 		pt_num = 1,
 		name = "Eggs",
 		group_max = 0,
@@ -3864,8 +3867,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2602] = {
+	}
+	pg.base.island_item_data_template[2602] = {
 		pt_num = 1,
 		name = "Poultry",
 		group_max = 0,
@@ -3896,8 +3899,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2603] = {
+	}
+	pg.base.island_item_data_template[2603] = {
 		pt_num = 1,
 		name = "Milk",
 		group_max = 0,
@@ -3928,8 +3931,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2604] = {
+	}
+	pg.base.island_item_data_template[2604] = {
 		pt_num = 10,
 		name = "Pelt",
 		group_max = 0,
@@ -3960,8 +3963,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2605] = {
+	}
+	pg.base.island_item_data_template[2605] = {
 		pt_num = 72,
 		name = "Wool",
 		group_max = 0,
@@ -3992,8 +3995,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2606] = {
+	}
+	pg.base.island_item_data_template[2606] = {
 		pt_num = 2,
 		name = "Fresh Honey",
 		group_max = 0,
@@ -4024,8 +4027,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2700] = {
+	}
+	pg.base.island_item_data_template[2700] = {
 		pt_num = 1,
 		name = "Coal",
 		group_max = 0,
@@ -4056,8 +4059,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2701] = {
+	}
+	pg.base.island_item_data_template[2701] = {
 		pt_num = 1,
 		name = "Copper Ore",
 		group_max = 0,
@@ -4088,8 +4091,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2702] = {
+	}
+	pg.base.island_item_data_template[2702] = {
 		pt_num = 30,
 		name = "Bauxite Ore",
 		group_max = 0,
@@ -4120,8 +4123,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2703] = {
+	}
+	pg.base.island_item_data_template[2703] = {
 		pt_num = 18,
 		name = "Iron Ore",
 		group_max = 0,
@@ -4152,8 +4155,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2704] = {
+	}
+	pg.base.island_item_data_template[2704] = {
 		pt_num = 80,
 		name = "Sulfur",
 		group_max = 0,
@@ -4184,8 +4187,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2705] = {
+	}
+	pg.base.island_item_data_template[2705] = {
 		pt_num = 240,
 		name = "Silver Ore",
 		group_max = 0,
@@ -4216,8 +4219,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2800] = {
+	}
+	pg.base.island_item_data_template[2800] = {
 		pt_num = 1,
 		name = "Raw Timber",
 		group_max = 0,
@@ -4248,8 +4251,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2801] = {
+	}
+	pg.base.island_item_data_template[2801] = {
 		pt_num = 1,
 		name = "Workable Wood",
 		group_max = 0,
@@ -4280,8 +4283,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2802] = {
+	}
+	pg.base.island_item_data_template[2802] = {
 		pt_num = 36,
 		name = "Premium Wood",
 		group_max = 0,
@@ -4312,8 +4315,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[2803] = {
+	}
+	pg.base.island_item_data_template[2803] = {
 		pt_num = 180,
 		name = "Elegant Wood",
 		group_max = 0,
@@ -4344,8 +4347,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3000] = {
+	}
+	pg.base.island_item_data_template[3000] = {
 		pt_num = 3,
 		name = "Clucky Clucky Bird Feed",
 		group_max = 0,
@@ -4388,8 +4391,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[3001] = {
+	}
+	pg.base.island_item_data_template[3001] = {
 		pt_num = 3,
 		name = "Oinky Oinky Pig Feed",
 		group_max = 0,
@@ -4432,8 +4435,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[3002] = {
+	}
+	pg.base.island_item_data_template[3002] = {
 		pt_num = 4,
 		name = "Moo Moo Cow Feed",
 		group_max = 0,
@@ -4476,8 +4479,10 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[3003] = {
+	}
+end)()
+;(function()
+	pg.base.island_item_data_template[3003] = {
 		pt_num = 4,
 		name = "Baa Baa Sheep Feed",
 		group_max = 0,
@@ -4520,8 +4525,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[3004] = {
+	}
+	pg.base.island_item_data_template[3004] = {
 		pt_num = 6,
 		name = "Flour",
 		group_max = 0,
@@ -4552,8 +4557,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3005] = {
+	}
+	pg.base.island_item_data_template[3005] = {
 		pt_num = 15,
 		name = "Iced Coffee",
 		group_max = 0,
@@ -4587,8 +4592,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3006] = {
+	}
+	pg.base.island_item_data_template[3006] = {
 		pt_num = 55,
 		name = "Cheese",
 		group_max = 0,
@@ -4622,8 +4627,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3007] = {
+	}
+	pg.base.island_item_data_template[3007] = {
 		pt_num = 25,
 		name = "Latte",
 		group_max = 0,
@@ -4657,8 +4662,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3008] = {
+	}
+	pg.base.island_item_data_template[3008] = {
 		pt_num = 25,
 		name = "Citrus Coffee",
 		group_max = 0,
@@ -4692,8 +4697,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3009] = {
+	}
+	pg.base.island_item_data_template[3009] = {
 		pt_num = 35,
 		name = "Apple Pie",
 		group_max = 0,
@@ -4727,8 +4732,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3010] = {
+	}
+	pg.base.island_item_data_template[3010] = {
 		pt_num = 60,
 		name = "Strawberry Milkshake",
 		group_max = 0,
@@ -4762,8 +4767,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3011] = {
+	}
+	pg.base.island_item_data_template[3011] = {
 		pt_num = 35,
 		name = "Tofu",
 		group_max = 0,
@@ -4797,8 +4802,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3012] = {
+	}
+	pg.base.island_item_data_template[3012] = {
 		pt_num = 155,
 		name = "Tofu with Minced Meat",
 		group_max = 0,
@@ -4832,8 +4837,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3013] = {
+	}
+	pg.base.island_item_data_template[3013] = {
 		pt_num = 35,
 		name = "Omurice",
 		group_max = 0,
@@ -4867,8 +4872,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3014] = {
+	}
+	pg.base.island_item_data_template[3014] = {
 		pt_num = 65,
 		name = "Cabbage and Tofu Soup",
 		group_max = 0,
@@ -4902,8 +4907,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3015] = {
+	}
+	pg.base.island_item_data_template[3015] = {
 		pt_num = 10,
 		name = "Vegetable Salad",
 		group_max = 0,
@@ -4937,8 +4942,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3017] = {
+	}
+	pg.base.island_item_data_template[3017] = {
 		pt_num = 10,
 		name = "Apple Juice",
 		group_max = 0,
@@ -4972,8 +4977,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3018] = {
+	}
+	pg.base.island_item_data_template[3018] = {
 		pt_num = 25,
 		name = "Banana and Mango Juice",
 		group_max = 0,
@@ -5007,8 +5012,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3019] = {
+	}
+	pg.base.island_item_data_template[3019] = {
 		pt_num = 15,
 		name = "Honey and Lemon Water",
 		group_max = 0,
@@ -5042,8 +5047,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3020] = {
+	}
+	pg.base.island_item_data_template[3020] = {
 		pt_num = 50,
 		name = "Strawberry Lemon Drink",
 		group_max = 0,
@@ -5077,8 +5082,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3021] = {
+	}
+	pg.base.island_item_data_template[3021] = {
 		pt_num = 240,
 		name = "Lavender Tea",
 		group_max = 0,
@@ -5112,8 +5117,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3022] = {
+	}
+	pg.base.island_item_data_template[3022] = {
 		pt_num = 95,
 		name = "Strawberry Honey Frappé",
 		group_max = 0,
@@ -5147,8 +5152,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3023] = {
+	}
+	pg.base.island_item_data_template[3023] = {
 		pt_num = 7,
 		name = "Corn Cup",
 		group_max = 0,
@@ -5182,8 +5187,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3024] = {
+	}
+	pg.base.island_item_data_template[3024] = {
 		pt_num = 35,
 		name = "Orange Pie",
 		group_max = 0,
@@ -5217,8 +5222,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3025] = {
+	}
+	pg.base.island_item_data_template[3025] = {
 		pt_num = 60,
 		name = "Sticky Rice with Mango",
 		group_max = 0,
@@ -5252,8 +5257,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3026] = {
+	}
+	pg.base.island_item_data_template[3026] = {
 		pt_num = 30,
 		name = "Banana Crêpe",
 		group_max = 0,
@@ -5287,8 +5292,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3028] = {
+	}
+	pg.base.island_item_data_template[3028] = {
 		pt_num = 200,
 		name = "Strawberry Charlotte",
 		group_max = 0,
@@ -5322,8 +5327,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3029] = {
+	}
+	pg.base.island_item_data_template[3029] = {
 		pt_num = 40,
 		name = "Coal-Roasted Skewer",
 		group_max = 0,
@@ -5357,8 +5362,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3030] = {
+	}
+	pg.base.island_item_data_template[3030] = {
 		pt_num = 36,
 		name = "Chicken and Potato Hors d'Oeuvre",
 		group_max = 0,
@@ -5392,8 +5397,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3032] = {
+	}
+	pg.base.island_item_data_template[3032] = {
 		pt_num = 70,
 		name = "Stir-Fried Chicken",
 		group_max = 0,
@@ -5427,8 +5432,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3033] = {
+	}
+	pg.base.island_item_data_template[3033] = {
 		pt_num = 16,
 		name = "Rolled Carrot Omelette",
 		group_max = 0,
@@ -5462,8 +5467,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3034] = {
+	}
+	pg.base.island_item_data_template[3034] = {
 		pt_num = 100,
 		name = "Steak Bowl",
 		group_max = 0,
@@ -5497,8 +5502,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3035] = {
+	}
+	pg.base.island_item_data_template[3035] = {
 		pt_num = 34,
 		name = "Cloth",
 		group_max = 0,
@@ -5529,8 +5534,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3036] = {
+	}
+	pg.base.island_item_data_template[3036] = {
 		pt_num = 60,
 		name = "Leather",
 		group_max = 0,
@@ -5561,8 +5566,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3037] = {
+	}
+	pg.base.island_item_data_template[3037] = {
 		pt_num = 72,
 		name = "Rope",
 		group_max = 0,
@@ -5593,8 +5598,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3038] = {
+	}
+	pg.base.island_item_data_template[3038] = {
 		pt_num = 105,
 		name = "Gloves",
 		group_max = 0,
@@ -5625,8 +5630,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3039] = {
+	}
+	pg.base.island_item_data_template[3039] = {
 		pt_num = 130,
 		name = "Aroma Sachet",
 		group_max = 0,
@@ -5657,8 +5662,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3040] = {
+	}
+	pg.base.island_item_data_template[3040] = {
 		pt_num = 350,
 		name = "Shoes",
 		group_max = 0,
@@ -5689,8 +5694,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3041] = {
+	}
+	pg.base.island_item_data_template[3041] = {
 		pt_num = 350,
 		name = "Wound Dressings",
 		group_max = 0,
@@ -5721,8 +5726,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3042] = {
+	}
+	pg.base.island_item_data_template[3042] = {
 		pt_num = 30,
 		name = "Charcoal Brush",
 		group_max = 0,
@@ -5753,8 +5758,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3043] = {
+	}
+	pg.base.island_item_data_template[3043] = {
 		pt_num = 92,
 		name = "Cable",
 		group_max = 0,
@@ -5785,8 +5790,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3044] = {
+	}
+	pg.base.island_item_data_template[3044] = {
 		pt_num = 66,
 		name = "Nails",
 		group_max = 0,
@@ -5817,8 +5822,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3045] = {
+	}
+	pg.base.island_item_data_template[3045] = {
 		pt_num = 84,
 		name = "Chemicals",
 		group_max = 0,
@@ -5849,8 +5854,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3046] = {
+	}
+	pg.base.island_item_data_template[3046] = {
 		pt_num = 150,
 		name = "Gunpowder",
 		group_max = 0,
@@ -5881,8 +5886,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3047] = {
+	}
+	pg.base.island_item_data_template[3047] = {
 		pt_num = 380,
 		name = "Utensils",
 		group_max = 0,
@@ -5913,8 +5918,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3048] = {
+	}
+	pg.base.island_item_data_template[3048] = {
 		pt_num = 6,
 		name = "Paper",
 		group_max = 0,
@@ -5945,8 +5950,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3049] = {
+	}
+	pg.base.island_item_data_template[3049] = {
 		pt_num = 120,
 		name = "Notebook",
 		group_max = 0,
@@ -5977,8 +5982,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3050] = {
+	}
+	pg.base.island_item_data_template[3050] = {
 		pt_num = 80,
 		name = "Chair and Desk",
 		group_max = 0,
@@ -6009,8 +6014,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3051] = {
+	}
+	pg.base.island_item_data_template[3051] = {
 		pt_num = 190,
 		name = "Choice Wooden Barrel",
 		group_max = 0,
@@ -6041,8 +6046,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3052] = {
+	}
+	pg.base.island_item_data_template[3052] = {
 		pt_num = 430,
 		name = "Filing Cabinet",
 		group_max = 0,
@@ -6073,8 +6078,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3053] = {
+	}
+	pg.base.island_item_data_template[3053] = {
 		pt_num = 55,
 		name = "Ink Cartridge",
 		group_max = 0,
@@ -6105,8 +6110,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3054] = {
+	}
+	pg.base.island_item_data_template[3054] = {
 		pt_num = 310,
 		name = "Clock",
 		group_max = 0,
@@ -6137,8 +6142,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3055] = {
+	}
+	pg.base.island_item_data_template[3055] = {
 		pt_num = 210,
 		name = "Battery",
 		group_max = 0,
@@ -6169,8 +6174,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3056] = {
+	}
+	pg.base.island_item_data_template[3056] = {
 		pt_num = 360,
 		name = "Water Filter",
 		group_max = 0,
@@ -6201,8 +6206,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3059] = {
+	}
+	pg.base.island_item_data_template[3059] = {
 		pt_num = 2,
 		name = "Omelette",
 		group_max = 0,
@@ -6236,8 +6241,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3101] = {
+	}
+	pg.base.island_item_data_template[3101] = {
 		pt_num = 230,
 		name = "Classic Tofu Combo",
 		group_max = 0,
@@ -6271,8 +6276,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3102] = {
+	}
+	pg.base.island_item_data_template[3102] = {
 		pt_num = 100,
 		name = "Hearty Meal",
 		group_max = 0,
@@ -6306,8 +6311,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3103] = {
+	}
+	pg.base.island_item_data_template[3103] = {
 		pt_num = 250,
 		name = "Floral and Fruity",
 		group_max = 0,
@@ -6341,8 +6346,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3104] = {
+	}
+	pg.base.island_item_data_template[3104] = {
 		pt_num = 120,
 		name = "Colorful Fruit Paradise",
 		group_max = 0,
@@ -6376,8 +6381,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3105] = {
+	}
+	pg.base.island_item_data_template[3105] = {
 		pt_num = 70,
 		name = "Sunny Honey",
 		group_max = 0,
@@ -6411,8 +6416,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3106] = {
+	}
+	pg.base.island_item_data_template[3106] = {
 		pt_num = 70,
 		name = "Succulently Sweet",
 		group_max = 0,
@@ -6446,8 +6451,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3107] = {
+	}
+	pg.base.island_item_data_template[3107] = {
 		pt_num = 70,
 		name = "Orchard Duo",
 		group_max = 0,
@@ -6481,8 +6486,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3108] = {
+	}
+	pg.base.island_item_data_template[3108] = {
 		pt_num = 260,
 		name = "Berry and Orange Dessert",
 		group_max = 0,
@@ -6516,8 +6521,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3109] = {
+	}
+	pg.base.island_item_data_template[3109] = {
 		pt_num = 90,
 		name = "The Carne-val",
 		group_max = 0,
@@ -6551,8 +6556,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3110] = {
+	}
+	pg.base.island_item_data_template[3110] = {
 		pt_num = 210,
 		name = "Double Energy Combo",
 		group_max = 0,
@@ -6586,8 +6591,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3111] = {
+	}
+	pg.base.island_item_data_template[3111] = {
 		pt_num = 36,
 		name = "Morning Light Energy Combo",
 		group_max = 0,
@@ -6621,8 +6626,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3112] = {
+	}
+	pg.base.island_item_data_template[3112] = {
 		pt_num = 80,
 		name = "The Wake-Up Call",
 		group_max = 0,
@@ -6656,8 +6661,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3113] = {
+	}
+	pg.base.island_item_data_template[3113] = {
 		pt_num = 90,
 		name = "Fruity & Fruitier",
 		group_max = 0,
@@ -6691,8 +6696,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3114] = {
+	}
+	pg.base.island_item_data_template[3114] = {
 		pt_num = 30,
 		name = "Fish & Chips",
 		group_max = 0,
@@ -6726,8 +6731,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3115] = {
+	}
+	pg.base.island_item_data_template[3115] = {
 		pt_num = 60,
 		name = "Lemon Shrimp",
 		group_max = 0,
@@ -6761,8 +6766,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3116] = {
+	}
+	pg.base.island_item_data_template[3116] = {
 		pt_num = 57,
 		name = "Steamed Fish with Onions",
 		group_max = 0,
@@ -6796,8 +6801,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3117] = {
+	}
+	pg.base.island_item_data_template[3117] = {
 		pt_num = 82,
 		name = "Ornamental Painting",
 		group_max = 0,
@@ -6828,8 +6833,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3118] = {
+	}
+	pg.base.island_item_data_template[3118] = {
 		pt_num = 187,
 		name = "Paella",
 		group_max = 0,
@@ -6863,8 +6868,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3119] = {
+	}
+	pg.base.island_item_data_template[3119] = {
 		pt_num = 152,
 		name = "Crayfish Stir-Fry",
 		group_max = 0,
@@ -6898,8 +6903,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[3120] = {
+	}
+	pg.base.island_item_data_template[3120] = {
 		pt_num = 381,
 		name = "Buddha's Temptation",
 		group_max = 0,
@@ -6933,8 +6938,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4001] = {
+	}
+	pg.base.island_item_data_template[4001] = {
 		pt_num = 40,
 		name = "Autumn Chrysanthemum",
 		group_max = 0,
@@ -6964,8 +6969,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4002] = {
+	}
+	pg.base.island_item_data_template[4002] = {
 		pt_num = 2,
 		name = "Reed Flowers",
 		group_max = 0,
@@ -6995,8 +7000,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4003] = {
+	}
+	pg.base.island_item_data_template[4003] = {
 		pt_num = 1,
 		name = "Peanuts",
 		group_max = 0,
@@ -7026,8 +7031,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4004] = {
+	}
+	pg.base.island_item_data_template[4004] = {
 		pt_num = 95,
 		name = "Matsutake",
 		group_max = 0,
@@ -7057,8 +7062,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4005] = {
+	}
+	pg.base.island_item_data_template[4005] = {
 		pt_num = 5,
 		name = "Yoizuki Pear",
 		group_max = 0,
@@ -7089,8 +7094,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4006] = {
+	}
+	pg.base.island_item_data_template[4006] = {
 		pt_num = 1,
 		name = "Yoizuki Pear Seeds",
 		group_max = 0,
@@ -7132,8 +7137,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[4007] = {
+	}
+	pg.base.island_item_data_template[4007] = {
 		pt_num = 24,
 		name = "Kaki Persimmon",
 		group_max = 0,
@@ -7164,8 +7169,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4008] = {
+	}
+	pg.base.island_item_data_template[4008] = {
 		pt_num = 1,
 		name = "Kaki Persimmon Seeds",
 		group_max = 0,
@@ -7207,8 +7212,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[4009] = {
+	}
+	pg.base.island_item_data_template[4009] = {
 		pt_num = 25,
 		name = "Dried Persimmon",
 		group_max = 0,
@@ -7242,8 +7247,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4010] = {
+	}
+	pg.base.island_item_data_template[4010] = {
 		pt_num = 135,
 		name = "Matsutake and Chicken Soup",
 		group_max = 0,
@@ -7277,8 +7282,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4011] = {
+	}
+	pg.base.island_item_data_template[4011] = {
 		pt_num = 70,
 		name = "Autumn Bouquet",
 		group_max = 0,
@@ -7312,8 +7317,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4012] = {
+	}
+	pg.base.island_item_data_template[4012] = {
 		pt_num = 100,
 		name = "Peanut Oil",
 		group_max = 0,
@@ -7347,8 +7352,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4013] = {
+	}
+	pg.base.island_item_data_template[4013] = {
 		pt_num = 20,
 		name = "Carrot and Pear Juice",
 		group_max = 0,
@@ -7382,8 +7387,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4014] = {
+	}
+	pg.base.island_item_data_template[4014] = {
 		pt_num = 100,
 		name = "Chrysanthemum Tea",
 		group_max = 0,
@@ -7417,8 +7422,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4015] = {
+	}
+	pg.base.island_item_data_template[4015] = {
 		pt_num = 75,
 		name = "Spring Bamboo Shoots",
 		group_max = 0,
@@ -7448,8 +7453,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4016] = {
+	}
+	pg.base.island_item_data_template[4016] = {
 		pt_num = 2,
 		name = "Shepherd's Purse",
 		group_max = 0,
@@ -7479,8 +7484,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4017] = {
+	}
+	pg.base.island_item_data_template[4017] = {
 		pt_num = 18,
 		name = "Winter Jasmine",
 		group_max = 0,
@@ -7510,8 +7515,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4018] = {
+	}
+	pg.base.island_item_data_template[4018] = {
 		pt_num = 54,
 		name = "Hyacinth",
 		group_max = 0,
@@ -7541,8 +7546,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4019] = {
+	}
+	pg.base.island_item_data_template[4019] = {
 		pt_num = 5,
 		name = "Asparagus",
 		group_max = 0,
@@ -7573,8 +7578,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4020] = {
+	}
+	pg.base.island_item_data_template[4020] = {
 		pt_num = 1,
 		name = "Asparagus Seeds",
 		group_max = 0,
@@ -7616,8 +7621,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[4021] = {
+	}
+	pg.base.island_item_data_template[4021] = {
 		pt_num = 11,
 		name = "Pineapple",
 		group_max = 0,
@@ -7648,8 +7653,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4022] = {
+	}
+	pg.base.island_item_data_template[4022] = {
 		pt_num = 1,
 		name = "Pineapple Seeds",
 		group_max = 0,
@@ -7691,8 +7696,8 @@ pg.base.island_item_data_template = {
 				}
 			}
 		}
-	},
-	[4023] = {
+	}
+	pg.base.island_item_data_template[4023] = {
 		pt_num = 18,
 		name = "Fresh Pineapple Juice",
 		group_max = 0,
@@ -7726,8 +7731,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4024] = {
+	}
+	pg.base.island_item_data_template[4024] = {
 		pt_num = 112,
 		name = "Winter Jasmine Tea",
 		group_max = 0,
@@ -7761,8 +7766,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4025] = {
+	}
+	pg.base.island_item_data_template[4025] = {
 		pt_num = 72,
 		name = "Cold Mixed Bamboo Shoots and Asparagus",
 		group_max = 0,
@@ -7796,8 +7801,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4026] = {
+	}
+	pg.base.island_item_data_template[4026] = {
 		pt_num = 180,
 		name = "Shrimp and Asparagus Stir-Fry",
 		group_max = 0,
@@ -7831,8 +7836,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4027] = {
+	}
+	pg.base.island_item_data_template[4027] = {
 		pt_num = 72,
 		name = "Dried Shepherd's Purse",
 		group_max = 0,
@@ -7863,8 +7868,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[4028] = {
+	}
+	pg.base.island_item_data_template[4028] = {
 		pt_num = 108,
 		name = "Spring Bouquet",
 		group_max = 0,
@@ -7895,8 +7900,10 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[5001] = {
+	}
+end)()
+;(function()
+	pg.base.island_item_data_template[5001] = {
 		pt_num = 1,
 		name = "Shellfish",
 		group_max = 0,
@@ -7927,8 +7934,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[5002] = {
+	}
+	pg.base.island_item_data_template[5002] = {
 		pt_num = 2,
 		name = "Catfish",
 		group_max = 0,
@@ -7959,8 +7966,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[5003] = {
+	}
+	pg.base.island_item_data_template[5003] = {
 		pt_num = 16,
 		name = "Koi Carp",
 		group_max = 0,
@@ -7991,8 +7998,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[5004] = {
+	}
+	pg.base.island_item_data_template[5004] = {
 		pt_num = 11,
 		name = "Common Carp",
 		group_max = 0,
@@ -8023,8 +8030,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[5005] = {
+	}
+	pg.base.island_item_data_template[5005] = {
 		pt_num = 12,
 		name = "Freshwater Shrimp",
 		group_max = 0,
@@ -8055,8 +8062,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[5006] = {
+	}
+	pg.base.island_item_data_template[5006] = {
 		pt_num = 13,
 		name = "Crayfish",
 		group_max = 0,
@@ -8087,8 +8094,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[5007] = {
+	}
+	pg.base.island_item_data_template[5007] = {
 		pt_num = 16,
 		name = "Sea Bass",
 		group_max = 0,
@@ -8119,8 +8126,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[5008] = {
+	}
+	pg.base.island_item_data_template[5008] = {
 		pt_num = 58,
 		name = "Crab",
 		group_max = 0,
@@ -8151,8 +8158,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[5101] = {
+	}
+	pg.base.island_item_data_template[5101] = {
 		pt_num = 1,
 		name = "Squid",
 		group_max = 0,
@@ -8183,8 +8190,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[5102] = {
+	}
+	pg.base.island_item_data_template[5102] = {
 		pt_num = 27,
 		name = "Mackerel",
 		group_max = 0,
@@ -8215,8 +8222,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[5103] = {
+	}
+	pg.base.island_item_data_template[5103] = {
 		pt_num = 104,
 		name = "Tuna",
 		group_max = 0,
@@ -8247,8 +8254,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[5104] = {
+	}
+	pg.base.island_item_data_template[5104] = {
 		pt_num = 45,
 		name = "Salmon",
 		group_max = 0,
@@ -8279,8 +8286,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[5105] = {
+	}
+	pg.base.island_item_data_template[5105] = {
 		pt_num = 1,
 		name = "Red Sea Bream",
 		group_max = 0,
@@ -8311,8 +8318,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[5106] = {
+	}
+	pg.base.island_item_data_template[5106] = {
 		pt_num = 24,
 		name = "Black Porgy",
 		group_max = 0,
@@ -8343,8 +8350,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[5107] = {
+	}
+	pg.base.island_item_data_template[5107] = {
 		pt_num = 198,
 		name = "Yellowfin Tuna",
 		group_max = 0,
@@ -8375,8 +8382,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[5108] = {
+	}
+	pg.base.island_item_data_template[5108] = {
 		pt_num = 162,
 		name = "Sea Cucumber",
 		group_max = 0,
@@ -8407,8 +8414,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[9900] = {
+	}
+	pg.base.island_item_data_template[9900] = {
 		pt_num = 0,
 		name = "Pearl",
 		group_max = 0,
@@ -8438,8 +8445,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100001] = {
+	}
+	pg.base.island_item_data_template[100001] = {
 		pt_num = 0,
 		name = "Island EXP Textbook T1",
 		group_max = 0,
@@ -8477,8 +8484,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100002] = {
+	}
+	pg.base.island_item_data_template[100002] = {
 		pt_num = 0,
 		name = "Island EXP Textbook T2",
 		group_max = 0,
@@ -8516,8 +8523,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100003] = {
+	}
+	pg.base.island_item_data_template[100003] = {
 		pt_num = 0,
 		name = "Island EXP Textbook T3",
 		group_max = 0,
@@ -8555,8 +8562,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100011] = {
+	}
+	pg.base.island_item_data_template[100011] = {
 		pt_num = 0,
 		name = "Management Textbook T1",
 		group_max = 0,
@@ -8594,8 +8601,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100012] = {
+	}
+	pg.base.island_item_data_template[100012] = {
 		pt_num = 0,
 		name = "Management Textbook T2",
 		group_max = 0,
@@ -8625,8 +8632,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100013] = {
+	}
+	pg.base.island_item_data_template[100013] = {
 		pt_num = 0,
 		name = "Management Textbook T3",
 		group_max = 0,
@@ -8651,8 +8658,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	[100021] = {
+	}
+	pg.base.island_item_data_template[100021] = {
 		pt_num = 0,
 		name = "Farming Textbook T1",
 		group_max = 0,
@@ -8690,8 +8697,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100022] = {
+	}
+	pg.base.island_item_data_template[100022] = {
 		pt_num = 0,
 		name = "Farming Textbook T2",
 		group_max = 0,
@@ -8721,8 +8728,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100023] = {
+	}
+	pg.base.island_item_data_template[100023] = {
 		pt_num = 0,
 		name = "Farming Textbook T3",
 		group_max = 0,
@@ -8747,8 +8754,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	[100031] = {
+	}
+	pg.base.island_item_data_template[100031] = {
 		pt_num = 0,
 		name = "Manufacturing Textbook T1",
 		group_max = 0,
@@ -8786,8 +8793,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100032] = {
+	}
+	pg.base.island_item_data_template[100032] = {
 		pt_num = 0,
 		name = "Manufacturing Textbook T2",
 		group_max = 0,
@@ -8817,8 +8824,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100033] = {
+	}
+	pg.base.island_item_data_template[100033] = {
 		pt_num = 0,
 		name = "Manufacturing Textbook T3",
 		group_max = 0,
@@ -8843,8 +8850,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	[100041] = {
+	}
+	pg.base.island_item_data_template[100041] = {
 		pt_num = 0,
 		name = "Gathering Textbook T1",
 		group_max = 0,
@@ -8882,8 +8889,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100042] = {
+	}
+	pg.base.island_item_data_template[100042] = {
 		pt_num = 0,
 		name = "Gathering Textbook T2",
 		group_max = 0,
@@ -8913,8 +8920,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100043] = {
+	}
+	pg.base.island_item_data_template[100043] = {
 		pt_num = 0,
 		name = "Gathering Textbook T3",
 		group_max = 0,
@@ -8939,8 +8946,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	[100051] = {
+	}
+	pg.base.island_item_data_template[100051] = {
 		pt_num = 0,
 		name = "Husbandry Textbook T1",
 		group_max = 0,
@@ -8978,8 +8985,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100052] = {
+	}
+	pg.base.island_item_data_template[100052] = {
 		pt_num = 0,
 		name = "Husbandry Textbook T2",
 		group_max = 0,
@@ -9009,8 +9016,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100053] = {
+	}
+	pg.base.island_item_data_template[100053] = {
 		pt_num = 0,
 		name = "Husbandry Textbook T3",
 		group_max = 0,
@@ -9035,8 +9042,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	[100061] = {
+	}
+	pg.base.island_item_data_template[100061] = {
 		pt_num = 0,
 		name = "Cooking Textbook T1",
 		group_max = 0,
@@ -9074,8 +9081,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100062] = {
+	}
+	pg.base.island_item_data_template[100062] = {
 		pt_num = 0,
 		name = "Cooking Textbook T2",
 		group_max = 0,
@@ -9105,8 +9112,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100063] = {
+	}
+	pg.base.island_item_data_template[100063] = {
 		pt_num = 0,
 		name = "Cooking Textbook T3",
 		group_max = 0,
@@ -9131,8 +9138,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	[100101] = {
+	}
+	pg.base.island_item_data_template[100101] = {
 		pt_num = 0,
 		name = "Production Textbook T1",
 		group_max = 0,
@@ -9170,8 +9177,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100102] = {
+	}
+	pg.base.island_item_data_template[100102] = {
 		pt_num = 0,
 		name = "Production Textbook T2",
 		group_max = 0,
@@ -9209,8 +9216,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100103] = {
+	}
+	pg.base.island_item_data_template[100103] = {
 		pt_num = 0,
 		name = "Production Textbook T3",
 		group_max = 0,
@@ -9248,8 +9255,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[100201] = {
+	}
+	pg.base.island_item_data_template[100201] = {
 		pt_num = 0,
 		name = "Island Development Gem",
 		group_max = 0,
@@ -9279,8 +9286,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[110001] = {
+	}
+	pg.base.island_item_data_template[110001] = {
 		pt_num = 0,
 		name = "Sea Salt Drink",
 		group_max = 0,
@@ -9323,8 +9330,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[110002] = {
+	}
+	pg.base.island_item_data_template[110002] = {
 		pt_num = 0,
 		name = "Green Verdure Drink",
 		group_max = 0,
@@ -9365,8 +9372,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[110003] = {
+	}
+	pg.base.island_item_data_template[110003] = {
 		pt_num = 0,
 		name = "Strawberry Drink",
 		group_max = 0,
@@ -9407,8 +9414,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[110004] = {
+	}
+	pg.base.island_item_data_template[110004] = {
 		pt_num = 0,
 		name = "Kumquat Drink",
 		group_max = 0,
@@ -9449,8 +9456,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[110005] = {
+	}
+	pg.base.island_item_data_template[110005] = {
 		pt_num = 0,
 		name = "Berry Drink",
 		group_max = 0,
@@ -9491,8 +9498,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[110006] = {
+	}
+	pg.base.island_item_data_template[110006] = {
 		pt_num = 0,
 		name = "Grape Drink",
 		group_max = 0,
@@ -9533,8 +9540,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200001] = {
+	}
+	pg.base.island_item_data_template[200001] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Cheshire",
 		group_max = 0,
@@ -9564,8 +9571,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200002] = {
+	}
+	pg.base.island_item_data_template[200002] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Saratoga",
 		group_max = 0,
@@ -9590,8 +9597,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	[200003] = {
+	}
+	pg.base.island_item_data_template[200003] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Akashi",
 		group_max = 0,
@@ -9621,8 +9628,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200004] = {
+	}
+	pg.base.island_item_data_template[200004] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Taihou",
 		group_max = 0,
@@ -9647,8 +9654,8 @@ pg.base.island_item_data_template = {
 		},
 		sub_attribute = {},
 		jump_page = {}
-	},
-	[200005] = {
+	}
+	pg.base.island_item_data_template[200005] = {
 		pt_num = 0,
 		name = "Island Authority Permit: New Jersey",
 		group_max = 0,
@@ -9678,8 +9685,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200006] = {
+	}
+	pg.base.island_item_data_template[200006] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Shimakaze",
 		group_max = 0,
@@ -9709,8 +9716,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200007] = {
+	}
+	pg.base.island_item_data_template[200007] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Ying Swei",
 		group_max = 0,
@@ -9740,8 +9747,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200008] = {
+	}
+	pg.base.island_item_data_template[200008] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Le Malin",
 		group_max = 0,
@@ -9771,8 +9778,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200009] = {
+	}
+	pg.base.island_item_data_template[200009] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Unicorn",
 		group_max = 0,
@@ -9802,8 +9809,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200010] = {
+	}
+	pg.base.island_item_data_template[200010] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Tashkent",
 		group_max = 0,
@@ -9833,8 +9840,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200011] = {
+	}
+	pg.base.island_item_data_template[200011] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Hood",
 		group_max = 0,
@@ -9864,8 +9871,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200012] = {
+	}
+	pg.base.island_item_data_template[200012] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Amagi-chan",
 		group_max = 0,
@@ -9895,8 +9902,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200013] = {
+	}
+	pg.base.island_item_data_template[200013] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Prinz Eugen",
 		group_max = 0,
@@ -9926,8 +9933,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200014] = {
+	}
+	pg.base.island_item_data_template[200014] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Chao Ho",
 		group_max = 0,
@@ -9957,8 +9964,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200015] = {
+	}
+	pg.base.island_item_data_template[200015] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Leonardo da Vinci",
 		group_max = 0,
@@ -9988,8 +9995,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200016] = {
+	}
+	pg.base.island_item_data_template[200016] = {
 		pt_num = 0,
 		name = "Island Authority Permit: William D. Porter",
 		group_max = 0,
@@ -10019,8 +10026,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200017] = {
+	}
+	pg.base.island_item_data_template[200017] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Chen Hai",
 		group_max = 0,
@@ -10050,8 +10057,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200018] = {
+	}
+	pg.base.island_item_data_template[200018] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Atago",
 		group_max = 0,
@@ -10081,8 +10088,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200019] = {
+	}
+	pg.base.island_item_data_template[200019] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Helena",
 		group_max = 0,
@@ -10112,8 +10119,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200020] = {
+	}
+	pg.base.island_item_data_template[200020] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Friedrich der Große",
 		group_max = 0,
@@ -10143,8 +10150,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200021] = {
+	}
+	pg.base.island_item_data_template[200021] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Oceana",
 		group_max = 0,
@@ -10174,8 +10181,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200022] = {
+	}
+	pg.base.island_item_data_template[200022] = {
 		pt_num = 0,
 		name = "Island Authority Permit: TB",
 		group_max = 0,
@@ -10205,8 +10212,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[200023] = {
+	}
+	pg.base.island_item_data_template[200023] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Explorer",
 		group_max = 0,
@@ -10236,8 +10243,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[300001] = {
+	}
+	pg.base.island_item_data_template[300001] = {
 		pt_num = 0,
 		name = "Working Efficiency at Faircrop Fields +4%",
 		group_max = 0,
@@ -10265,8 +10272,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[300002] = {
+	}
+	pg.base.island_item_data_template[300002] = {
 		pt_num = 0,
 		name = "Working Efficiency at Sweetscent Orchard +4%",
 		group_max = 0,
@@ -10294,8 +10301,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[300003] = {
+	}
+	pg.base.island_item_data_template[300003] = {
 		pt_num = 0,
 		name = "Working Efficiency at Newsprout Nursery +4%",
 		group_max = 0,
@@ -10323,8 +10330,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[300004] = {
+	}
+	pg.base.island_item_data_template[300004] = {
 		pt_num = 0,
 		name = "Working Efficiency at Faircrop Fields +8%",
 		group_max = 0,
@@ -10352,8 +10359,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[300005] = {
+	}
+	pg.base.island_item_data_template[300005] = {
 		pt_num = 0,
 		name = "Working Efficiency at Sweetscent Orchard +8%",
 		group_max = 0,
@@ -10381,8 +10388,8 @@ pg.base.island_item_data_template = {
 				{}
 			}
 		}
-	},
-	[300006] = {
+	}
+	pg.base.island_item_data_template[300006] = {
 		pt_num = 0,
 		name = "Working Efficiency at Newsprout Nursery +8%",
 		group_max = 0,
@@ -10411,4 +10418,4 @@ pg.base.island_item_data_template = {
 			}
 		}
 	}
-}
+end)()

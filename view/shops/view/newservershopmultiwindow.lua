@@ -12,32 +12,35 @@ function var0_0.InitWindow(arg0_1, arg1_1, arg2_1)
 
 	if var1_1 and var2_1 then
 		local var4_1 = getProxy(ActivityProxy):getActivityById(Item.getConfigData(var0_1.id).link_id)
-		local var5_1 = pg.TimeMgr.GetInstance():STimeDescC(var4_1.stopTime, "%m.%d")
+		local var5_1 = pg.TimeMgr.GetInstance():STimeDescS(var4_1.stopTime, "%m.%d")
+		local var6_1
 
-		setText(arg0_1.timeLimitTF:Find("Text"), i18n("eventshop_time_hint", var5_1))
+		var6_1 = var4_1:IsMaintenanceFinish() and "eventshop_time_hint" or "eventshop_time_hint2"
+
+		setText(arg0_1.timeLimitTF:Find("Text"), i18n("tip", var5_1))
 	end
 
-	local var6_1 = Drop.New({
+	local var7_1 = Drop.New({
 		type = arg1_1:getConfig("resource_category"),
 		id = arg1_1:getConfig("resource_type")
 	}):getOwnedCount()
-	local var7_1 = math.max(math.floor(var6_1 / arg1_1:getConfig("resource_num")), 1)
+	local var8_1 = math.max(math.floor(var7_1 / arg1_1:getConfig("resource_num")), 1)
 
 	if arg1_1:getConfig("goods_purchase_limit") ~= 0 then
-		local var8_1 = arg1_1:GetPurchasableCnt()
+		local var9_1 = arg1_1:GetPurchasableCnt()
 
-		var7_1 = math.min(var7_1, math.max(0, var8_1))
+		var8_1 = math.min(var8_1, math.max(0, var9_1))
 	end
 
-	local function var9_1(arg0_2)
+	local function var10_1(arg0_2)
 		arg0_2 = math.max(arg0_2, 1)
-		arg0_2 = math.min(arg0_2, var7_1)
+		arg0_2 = math.min(arg0_2, var8_1)
 		arg0_1.countTF.text = arg0_2
 		arg0_1.curCount = arg0_2
 		arg0_1.itemCountTF.text = arg0_2 * arg1_1:getConfig("num")
 	end
 
-	var9_1(1)
+	var10_1(1)
 	updateDrop(arg0_1.topItem:Find("left/IconTpl"), var0_1)
 	UpdateOwnDisplay(arg0_1.ownerTF, var0_1)
 	RegisterDetailButton(arg0_1, arg0_1.detailTF, var0_1)
@@ -54,13 +57,13 @@ function var0_0.InitWindow(arg0_1, arg1_1, arg2_1)
 		arg0_1:Close()
 	end, SFX_PANEL)
 	onButton(arg0_1, arg0_1.leftBtn, function()
-		var9_1(arg0_1.curCount - 1)
+		var10_1(arg0_1.curCount - 1)
 	end)
 	onButton(arg0_1, arg0_1.rightBtn, function()
-		var9_1(arg0_1.curCount + 1)
+		var10_1(arg0_1.curCount + 1)
 	end)
 	onButton(arg0_1, arg0_1.maxBtn, function()
-		var9_1(var7_1)
+		var10_1(var8_1)
 	end)
 end
 

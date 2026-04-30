@@ -1,6 +1,222 @@
 pg = pg or {}
-pg.secretary_special_ship = {
+pg.secretary_special_ship = rawget(pg, "secretary_special_ship") or setmetatable({
+	__name = "secretary_special_ship"
+}, confNEO)
+pg.secretary_special_ship.all = {
+	1000,
+	1001,
+	1002,
+	1003,
+	1004,
+	1005,
+	1006,
+	1007,
+	1008,
+	1009,
+	1010,
+	1011,
+	1100,
+	1101,
+	1200,
+	1201,
+	1300,
+	1301,
+	1310,
+	2000,
+	2001,
+	2002,
+	2003,
+	2100,
+	2101,
+	2102,
+	2200,
+	2201,
+	2202,
+	2300,
+	3000,
+	3001,
+	3002,
+	3003,
+	3100,
+	3101,
+	3102,
+	3200,
+	3201,
+	3202,
+	3300
+}
+pg.secretary_special_ship.get_id_list_by_group = {
 	[1000] = {
+		1000,
+		1001,
+		1002,
+		1003,
+		1004,
+		1005,
+		1006,
+		1007,
+		1008,
+		1009,
+		1010,
+		1011
+	},
+	[1100] = {
+		1100,
+		1101
+	},
+	[1200] = {
+		1200,
+		1201
+	},
+	[1300] = {
+		1300,
+		1301
+	},
+	[1310] = {
+		1310
+	},
+	[2000] = {
+		2000,
+		2001,
+		2002,
+		2003
+	},
+	[2100] = {
+		2100,
+		2101,
+		2102
+	},
+	[2200] = {
+		2200,
+		2201,
+		2202
+	},
+	[2300] = {
+		2300
+	},
+	[3000] = {
+		3000,
+		3001,
+		3002,
+		3003
+	},
+	[3100] = {
+		3100,
+		3101,
+		3102
+	},
+	[3200] = {
+		3200,
+		3201,
+		3202
+	},
+	[3300] = {
+		3300
+	}
+}
+pg.secretary_special_ship.get_id_list_by_character_id = {
+	[1000] = {
+		1000,
+		1001,
+		1002,
+		1003,
+		1004,
+		1005,
+		1006,
+		1007,
+		1008,
+		1009,
+		1010,
+		1011,
+		1100,
+		1101,
+		1200,
+		1201,
+		1300,
+		1301,
+		1310
+	},
+	[2000] = {
+		2000,
+		2001,
+		2002,
+		2003,
+		2100,
+		2101,
+		2102,
+		2200,
+		2201,
+		2202,
+		2300
+	},
+	[3000] = {
+		3000,
+		3001,
+		3002,
+		3003,
+		3100,
+		3101,
+		3102,
+		3200,
+		3201,
+		3202,
+		3300
+	}
+}
+pg.secretary_special_ship.get_id_list_by_tb_id = {
+	[0] = {
+		1000,
+		1001,
+		1002,
+		1003,
+		1004,
+		1005,
+		1006,
+		1007,
+		1008,
+		1009,
+		1010,
+		1011,
+		1100,
+		1101,
+		1200,
+		1201,
+		1300,
+		1301,
+		1310
+	},
+	{
+		2000,
+		2001,
+		2002,
+		2003,
+		2100,
+		2101,
+		2102,
+		2200,
+		2201,
+		2202,
+		2300
+	},
+	{
+		3000,
+		3001,
+		3002,
+		3003,
+		3100,
+		3101,
+		3102,
+		3200,
+		3201,
+		3202,
+		3300
+	}
+}
+pg.base = pg.base or {}
+pg.base.secretary_special_ship = {}
+
+;(function()
+	pg.base.secretary_special_ship[1000] = {
 		mail = "Incoming letters have been categorized. Please remember to read them, Commander.",
 		name = "TB",
 		chuxi = "Fetching data. In the Dragon Empery, the day of the year's final night is known as \"Chúxī\" – meaning \"eve of divide\" – signifying the changing of years. It is a big day when families all get together. Happy Chúxī, Commander. Shall we hang up some fai chun decorations?",
@@ -58,8 +274,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			101
 		}
-	},
-	[1001] = {
+	}
+	pg.base.secretary_special_ship[1001] = {
 		mail = "Incoming letters have been categorized. Please remember to read them, Commander.",
 		name = "TB",
 		chuxi = "Fetching data. In the Dragon Empery, the day of the year's final night is known as \"Chúxī\" – meaning \"eve of divide\" – signifying the changing of years. It is a big day when families all get together. Happy Chúxī, Commander. Shall we hang up some fai chun decorations?",
@@ -117,8 +333,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			5
 		}
-	},
-	[1002] = {
+	}
+	pg.base.secretary_special_ship[1002] = {
 		mail = "Incoming letters have been categorized. Please remember to read them, Commander.",
 		name = "TB",
 		chuxi = "Fetching data. In the Dragon Empery, the day of the year's final night is known as \"Chúxī\" – meaning \"eve of divide\" – signifying the changing of years. It is a big day when families all get together. Happy Chúxī, Commander. Shall we hang up some fai chun decorations?",
@@ -176,8 +392,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			10
 		}
-	},
-	[1003] = {
+	}
+	pg.base.secretary_special_ship[1003] = {
 		mail = "Incoming letters have been categorized. Please remember to read them, Commander.",
 		name = "TB",
 		chuxi = "Fetching data. In the Dragon Empery, the day of the year's final night is known as \"Chúxī\" – meaning \"eve of divide\" – signifying the changing of years. It is a big day when families all get together. Happy Chúxī, Commander. Shall we hang up some fai chun decorations?",
@@ -235,8 +451,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			20
 		}
-	},
-	[1004] = {
+	}
+	pg.base.secretary_special_ship[1004] = {
 		mail = "Incoming letters have been categorized. Please remember to read them, Commander.",
 		name = "TB",
 		chuxi = "Fetching data. In the Dragon Empery, the day of the year's final night is known as \"Chúxī\" – meaning \"eve of divide\" – signifying the changing of years. It is a big day when families all get together. Happy Chúxī, Commander. Shall we hang up some fai chun decorations?",
@@ -294,8 +510,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			15
 		}
-	},
-	[1005] = {
+	}
+	pg.base.secretary_special_ship[1005] = {
 		mail = "Incoming letters have been categorized. Please remember to read them, Commander.",
 		name = "TB",
 		chuxi = "Fetching data. In the Dragon Empery, the day of the year's final night is known as \"Chúxī\" – meaning \"eve of divide\" – signifying the changing of years. It is a big day when families all get together. Happy Chúxī, Commander. Shall we hang up some fai chun decorations?",
@@ -353,8 +569,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			10
 		}
-	},
-	[1006] = {
+	}
+	pg.base.secretary_special_ship[1006] = {
 		mail = "Incoming letters have been categorized. Please remember to read them, Commander.",
 		name = "TB",
 		chuxi = "Fetching data. In the Dragon Empery, the day of the year's final night is known as \"Chúxī\" – meaning \"eve of divide\" – signifying the changing of years. It is a big day when families all get together. Happy Chúxī, Commander. Shall we hang up some fai chun decorations?",
@@ -412,8 +628,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			15
 		}
-	},
-	[1007] = {
+	}
+	pg.base.secretary_special_ship[1007] = {
 		mail = "Incoming letters have been categorized. Please remember to read them, Commander.",
 		name = "TB",
 		chuxi = "Fetching data. In the Dragon Empery, the day of the year's final night is known as \"Chúxī\" – meaning \"eve of divide\" – signifying the changing of years. It is a big day when families all get together. Happy Chúxī, Commander. Shall we hang up some fai chun decorations?",
@@ -471,8 +687,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			25
 		}
-	},
-	[1008] = {
+	}
+	pg.base.secretary_special_ship[1008] = {
 		mail = "Incoming letters have been categorized. Please remember to read them, Commander.",
 		name = "TB",
 		chuxi = "Fetching data. In the Dragon Empery, the day of the year's final night is known as \"Chúxī\" – meaning \"eve of divide\" – signifying the changing of years. It is a big day when families all get together. Happy Chúxī, Commander. Shall we hang up some fai chun decorations?",
@@ -530,8 +746,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			30
 		}
-	},
-	[1009] = {
+	}
+	pg.base.secretary_special_ship[1009] = {
 		mail = "Incoming letters have been categorized. Please remember to read them, Commander.",
 		name = "TB",
 		chuxi = "Fetching data. In the Dragon Empery, the day of the year's final night is known as \"Chúxī\" – meaning \"eve of divide\" – signifying the changing of years. It is a big day when families all get together. Happy Chúxī, Commander. Shall we hang up some fai chun decorations?",
@@ -589,8 +805,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			999
 		}
-	},
-	[1010] = {
+	}
+	pg.base.secretary_special_ship[1010] = {
 		mail = "Incoming letters have been categorized. Please remember to read them, Commander.",
 		name = "TB",
 		chuxi = "Fetching data. In the Dragon Empery, the day of the year's final night is known as \"Chúxī\" – meaning \"eve of divide\" – signifying the changing of years. It is a big day when families all get together. Happy Chúxī, Commander. Shall we hang up some fai chun decorations?",
@@ -648,8 +864,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			25
 		}
-	},
-	[1011] = {
+	}
+	pg.base.secretary_special_ship[1011] = {
 		mail = "Incoming letters have been categorized. Please remember to read them, Commander.",
 		name = "TB",
 		chuxi = "Fetching data. In the Dragon Empery, the day of the year's final night is known as \"Chúxī\" – meaning \"eve of divide\" – signifying the changing of years. It is a big day when families all get together. Happy Chúxī, Commander. Shall we hang up some fai chun decorations?",
@@ -707,8 +923,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			30
 		}
-	},
-	[1100] = {
+	}
+	pg.base.secretary_special_ship[1100] = {
 		mail = "Hmm. Looks like you have a new letter. Do remember to open it.",
 		name = "TB",
 		chuxi = "My acquaintances in the Dragon Empery call this day \"Chúxī.\" They meet with their near and dear and celebrate New Year. You can certainly feel the festive mood in the air, heehee. Shall we celebrate it, too, Commander? Starting with the greeting... Happy Chúxī!",
@@ -774,8 +990,8 @@ pg.secretary_special_ship = {
 				6
 			}
 		}
-	},
-	[1101] = {
+	}
+	pg.base.secretary_special_ship[1101] = {
 		mail = "Hmm. Looks like you have a new letter. Do remember to open it.",
 		name = "TB",
 		chuxi = "My acquaintances in the Dragon Empery call this day \"Chúxī.\" They meet with their near and dear and celebrate New Year. You can certainly feel the festive mood in the air, heehee. Shall we celebrate it, too, Commander? Starting with the greeting... Happy Chúxī!",
@@ -833,8 +1049,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			35
 		}
-	},
-	[1200] = {
+	}
+	pg.base.secretary_special_ship[1200] = {
 		mail = "Commander, I finished sorting your letters. Don't forget to read them.",
 		name = "TB",
 		chuxi = "Seems like this \"Chúxī\" is a day of hustle and bustle and family get-togethers. Getting together with you, even if we're not family, isn't bad either. By the way, what am I supposed to say on this day? \"Happy Chúxī\" or \"Happy New Year\"?",
@@ -900,8 +1116,8 @@ pg.secretary_special_ship = {
 				3
 			}
 		}
-	},
-	[1201] = {
+	}
+	pg.base.secretary_special_ship[1201] = {
 		mail = "Commander, I finished sorting your letters. Don't forget to read them.",
 		name = "TB",
 		chuxi = "Seems like this \"Chúxī\" is a day of hustle and bustle and family get-togethers. Getting together with you, even if we're not family, isn't bad either. By the way, what am I supposed to say on this day? \"Happy Chúxī\" or \"Happy New Year\"?",
@@ -959,8 +1175,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			35
 		}
-	},
-	[1300] = {
+	}
+	pg.base.secretary_special_ship[1300] = {
 		mail = "Let me have a look... Oh! There's a bunch of letters addressed to you. I'll rearrange them in alphabetic order by sender's name!",
 		name = "TB",
 		chuxi = "Commander! Commaaander! Let's go set off some firecrackers! Oh, and hang up fai chun decor, too! ...Hm? I'm awfully excited today? Well, yeah, 'cause today is Chúxī! Now c'mon! Let's go have a fun-filled, unforgettable New Year's Eve!",
@@ -1026,8 +1242,8 @@ pg.secretary_special_ship = {
 				9
 			}
 		}
-	},
-	[1301] = {
+	}
+	pg.base.secretary_special_ship[1301] = {
 		mail = "Let me have a look... Oh! There's a bunch of letters addressed to you. I'll rearrange them in alphabetic order by sender's name!",
 		name = "TB",
 		chuxi = "Commander! Commaaander! Let's go set off some firecrackers! Oh, and hang up fai chun decor, too! ...Hm? I'm awfully excited today? Well, yeah, 'cause today is Chúxī! Now c'mon! Let's go have a fun-filled, unforgettable New Year's Eve!",
@@ -1085,8 +1301,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			35
 		}
-	},
-	[1310] = {
+	}
+	pg.base.secretary_special_ship[1310] = {
 		mail = "Your mail has been received and sorted. Do you need me to read it aloud for you, Commander?",
 		name = "TB",
 		chuxi = "Notice: The New Year is approaching. Commander, would you like to spend New Year's Eve with me? The system indicates that this is what My Countless Selves desire.",
@@ -1144,8 +1360,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			9900021
 		}
-	},
-	[2000] = {
+	}
+	pg.base.secretary_special_ship[2000] = {
 		mail = "Another letter? You'd be buried under a pile of those by now if I hadn't helped with them. You need to get it together!",
 		name = "Navi",
 		chuxi = "Really? You have to stay up on New Year's Eve, so no going to bed early? Fine, I'll be generous and stay with you. But if you fall asleep before me, be ready to face the consequences!",
@@ -1203,8 +1419,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			2000084
 		}
-	},
-	[2001] = {
+	}
+	pg.base.secretary_special_ship[2001] = {
 		mail = "Another letter? You'd be buried under a pile of those by now if I hadn't helped with them. You need to get it together!",
 		name = "Navi",
 		chuxi = "Really? You have to stay up on New Year's Eve, so no going to bed early? Fine, I'll be generous and stay with you. But if you fall asleep before me, be ready to face the consequences!",
@@ -1262,8 +1478,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			5
 		}
-	},
-	[2002] = {
+	}
+	pg.base.secretary_special_ship[2002] = {
 		mail = "Another letter? You'd be buried under a pile of those by now if I hadn't helped with them. You need to get it together!",
 		name = "Navi",
 		chuxi = "Really? You have to stay up on New Year's Eve, so no going to bed early? Fine, I'll be generous and stay with you. But if you fall asleep before me, be ready to face the consequences!",
@@ -1321,8 +1537,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			8
 		}
-	},
-	[2003] = {
+	}
+	pg.base.secretary_special_ship[2003] = {
 		mail = "Another letter? You'd be buried under a pile of those by now if I hadn't helped with them. You need to get it together!",
 		name = "Navi",
 		chuxi = "Really? You have to stay up on New Year's Eve, so no going to bed early? Fine, I'll be generous and stay with you. But if you fall asleep before me, be ready to face the consequences!",
@@ -1380,8 +1596,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			15
 		}
-	},
-	[2100] = {
+	}
+	pg.base.secretary_special_ship[2100] = {
 		mail = "Commander, you've got a new letter. Don't forget to read it.",
 		name = "Navi",
 		chuxi = "New Year's Eve sure is a day brimming with excitement. There's also the countdown until the New Year... Let's go out, Commander. Oh, wait, first I should say – have a Happy New Year!",
@@ -1439,8 +1655,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			2
 		}
-	},
-	[2101] = {
+	}
+	pg.base.secretary_special_ship[2101] = {
 		mail = "Commander, you've got a new letter. Don't forget to read it.",
 		name = "Navi",
 		chuxi = "New Year's Eve sure is a day brimming with excitement. There's also the countdown until the New Year... Let's go out, Commander. Oh, wait, first I should say – have a Happy New Year!",
@@ -1498,8 +1714,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			10
 		}
-	},
-	[2102] = {
+	}
+	pg.base.secretary_special_ship[2102] = {
 		mail = "Commander, you've got a new letter. Don't forget to read it.",
 		name = "Navi",
 		chuxi = "New Year's Eve sure is a day brimming with excitement. There's also the countdown until the New Year... Let's go out, Commander. Oh, wait, first I should say – have a Happy New Year!",
@@ -1557,8 +1773,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			4
 		}
-	},
-	[2200] = {
+	}
+	pg.base.secretary_special_ship[2200] = {
 		mail = "Commander, there's a new letter. Do you want my help with it? Then you've gotta beg in earnest for it♪",
 		name = "Navi",
 		chuxi = "Oh, it's New Year's Day tomorrow? Maybe I'll stay up while I organize my notebook of your mistakes. Hmm? You wanna read it? Well, blame yourself if reading it makes you cry! Heehee♪",
@@ -1616,8 +1832,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			3
 		}
-	},
-	[2201] = {
+	}
+	pg.base.secretary_special_ship[2201] = {
 		mail = "Commander, there's a new letter. Do you want my help with it? Then you've gotta beg in earnest for it♪",
 		name = "Navi",
 		chuxi = "Oh, it's New Year's Day tomorrow? Maybe I'll stay up while I organize my notebook of your mistakes. Hmm? You wanna read it? Well, blame yourself if reading it makes you cry! Heehee♪",
@@ -1675,8 +1891,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			12
 		}
-	},
-	[2202] = {
+	}
+	pg.base.secretary_special_ship[2202] = {
 		mail = "Commander, there's a new letter. Do you want my help with it? Then you've gotta beg in earnest for it♪",
 		name = "Navi",
 		chuxi = "Oh, it's New Year's Day tomorrow? Maybe I'll stay up while I organize my notebook of your mistakes. Hmm? You wanna read it? Well, blame yourself if reading it makes you cry! Heehee♪",
@@ -1734,8 +1950,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			5
 		}
-	},
-	[2300] = {
+	}
+	pg.base.secretary_special_ship[2300] = {
 		mail = "If you wanna read your mail, go do it in the corner. Otherwise, I'll nab it and read it myself.",
 		name = "Navi",
 		chuxi = "It's almost New Year's. You got any wishes? Me? Obviously, I'm hoping your dweeb ass gets stronger. 'Cause if you don't, I'm gonna have to coddle you for all eternity, aren't I?",
@@ -1793,8 +2009,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			9900011
 		}
-	},
-	[3000] = {
+	}
+	pg.base.secretary_special_ship[3000] = {
 		mail = "A new letter has arrived... If I'm to reply, I need to consider the opening and how to address the sender... Ugh, this is so hard...",
 		name = "Explorer",
 		chuxi = "Guardian, are you staying up late for the switch to the new year? In that case... I'm staying up, too! If I happen to, um, doze off, then please do wake me up!",
@@ -1852,8 +2068,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			2000175
 		}
-	},
-	[3001] = {
+	}
+	pg.base.secretary_special_ship[3001] = {
 		mail = "A new letter has arrived... If I'm to reply, I need to consider the opening and how to address the sender... Ugh, this is so hard...",
 		name = "Explorer",
 		chuxi = "Guardian, are you staying up late for the switch to the new year? In that case... I'm staying up, too! If I happen to, um, doze off, then please do wake me up!",
@@ -1911,8 +2127,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			5
 		}
-	},
-	[3002] = {
+	}
+	pg.base.secretary_special_ship[3002] = {
 		mail = "A new letter has arrived... If I'm to reply, I need to consider the opening and how to address the sender... Ugh, this is so hard...",
 		name = "Explorer",
 		chuxi = "Guardian, are you staying up late for the switch to the new year? In that case... I'm staying up, too! If I happen to, um, doze off, then please do wake me up!",
@@ -1970,8 +2186,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			8
 		}
-	},
-	[3003] = {
+	}
+	pg.base.secretary_special_ship[3003] = {
 		mail = "A new letter has arrived... If I'm to reply, I need to consider the opening and how to address the sender... Ugh, this is so hard...",
 		name = "Explorer",
 		chuxi = "Guardian, are you staying up late for the switch to the new year? In that case... I'm staying up, too! If I happen to, um, doze off, then please do wake me up!",
@@ -2029,8 +2245,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			15
 		}
-	},
-	[3100] = {
+	}
+	pg.base.secretary_special_ship[3100] = {
 		mail = "Mail is so convenient... You can learn new information without even going outside!",
 		name = "Explorer",
 		chuxi = "Um... I've been hearing a lot of booms and crackles outside... It's making me a bit nervous... Oh, those were fireworks? Wait... A red envelope, for me? Thank you! Suddenly I feel a lot less tense...",
@@ -2088,8 +2304,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			105
 		}
-	},
-	[3101] = {
+	}
+	pg.base.secretary_special_ship[3101] = {
 		mail = "Mail is so convenient... You can learn new information without even going outside!",
 		name = "Explorer",
 		chuxi = "Um... I've been hearing a lot of booms and crackles outside... It's making me a bit nervous... Oh, those were fireworks? Wait... A red envelope, for me? Thank you! Suddenly I feel a lot less tense...",
@@ -2147,8 +2363,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			10
 		}
-	},
-	[3102] = {
+	}
+	pg.base.secretary_special_ship[3102] = {
 		mail = "Mail is so convenient... You can learn new information without even going outside!",
 		name = "Explorer",
 		chuxi = "Um... I've been hearing a lot of booms and crackles outside... It's making me a bit nervous... Oh, those were fireworks? Wait... A red envelope, for me? Thank you! Suddenly I feel a lot less tense...",
@@ -2206,8 +2422,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			107
 		}
-	},
-	[3200] = {
+	}
+	pg.base.secretary_special_ship[3200] = {
 		mail = "I've brought your mail! And not JUST mail, but also a rainbow cake, donuts, and honeyed waffles! I made them all myself. Hope you enjoy!",
 		name = "Explorer",
 		chuxi = "Guardian, today's a very special day, so why don't we drop all our work and spend New Year's Eve together? Yep-yep, that's your sole and most important duty, I say!",
@@ -2265,8 +2481,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			104
 		}
-	},
-	[3201] = {
+	}
+	pg.base.secretary_special_ship[3201] = {
 		mail = "I've brought your mail! And not JUST mail, but also a rainbow cake, donuts, and honeyed waffles! I made them all myself. Hope you enjoy!",
 		name = "Explorer",
 		chuxi = "Guardian, today's a very special day, so why don't we drop all our work and spend New Year's Eve together? Yep-yep, that's your sole and most important duty, I say!",
@@ -2324,8 +2540,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			12
 		}
-	},
-	[3202] = {
+	}
+	pg.base.secretary_special_ship[3202] = {
 		mail = "I've brought your mail! And not JUST mail, but also a rainbow cake, donuts, and honeyed waffles! I made them all myself. Hope you enjoy!",
 		name = "Explorer",
 		chuxi = "Guardian, today's a very special day, so why don't we drop all our work and spend New Year's Eve together? Yep-yep, that's your sole and most important duty, I say!",
@@ -2383,8 +2599,8 @@ pg.secretary_special_ship = {
 		unlock = {
 			106
 		}
-	},
-	[3300] = {
+	}
+	pg.base.secretary_special_ship[3300] = {
 		mail = "Huh? Got a new email on my phone... Y-you want to rest? Oh, you want me to read it out to you? Umm... Okay. Ahem...",
 		name = "Explorer",
 		chuxi = "Guardian, I've made a New Year's feast for you. I've heard that if you share a meal with someone you love as the year changes, you'll never be apart for the coming year... and I always want to be with you!",
@@ -2442,215 +2658,5 @@ pg.secretary_special_ship = {
 		unlock = {
 			9900031
 		}
-	},
-	get_id_list_by_group = {
-		[1000] = {
-			1000,
-			1001,
-			1002,
-			1003,
-			1004,
-			1005,
-			1006,
-			1007,
-			1008,
-			1009,
-			1010,
-			1011
-		},
-		[1100] = {
-			1100,
-			1101
-		},
-		[1200] = {
-			1200,
-			1201
-		},
-		[1300] = {
-			1300,
-			1301
-		},
-		[1310] = {
-			1310
-		},
-		[2000] = {
-			2000,
-			2001,
-			2002,
-			2003
-		},
-		[2100] = {
-			2100,
-			2101,
-			2102
-		},
-		[2200] = {
-			2200,
-			2201,
-			2202
-		},
-		[2300] = {
-			2300
-		},
-		[3000] = {
-			3000,
-			3001,
-			3002,
-			3003
-		},
-		[3100] = {
-			3100,
-			3101,
-			3102
-		},
-		[3200] = {
-			3200,
-			3201,
-			3202
-		},
-		[3300] = {
-			3300
-		}
-	},
-	get_id_list_by_character_id = {
-		[1000] = {
-			1000,
-			1001,
-			1002,
-			1003,
-			1004,
-			1005,
-			1006,
-			1007,
-			1008,
-			1009,
-			1010,
-			1011,
-			1100,
-			1101,
-			1200,
-			1201,
-			1300,
-			1301,
-			1310
-		},
-		[2000] = {
-			2000,
-			2001,
-			2002,
-			2003,
-			2100,
-			2101,
-			2102,
-			2200,
-			2201,
-			2202,
-			2300
-		},
-		[3000] = {
-			3000,
-			3001,
-			3002,
-			3003,
-			3100,
-			3101,
-			3102,
-			3200,
-			3201,
-			3202,
-			3300
-		}
-	},
-	get_id_list_by_tb_id = {
-		[0] = {
-			1000,
-			1001,
-			1002,
-			1003,
-			1004,
-			1005,
-			1006,
-			1007,
-			1008,
-			1009,
-			1010,
-			1011,
-			1100,
-			1101,
-			1200,
-			1201,
-			1300,
-			1301,
-			1310
-		},
-		{
-			2000,
-			2001,
-			2002,
-			2003,
-			2100,
-			2101,
-			2102,
-			2200,
-			2201,
-			2202,
-			2300
-		},
-		{
-			3000,
-			3001,
-			3002,
-			3003,
-			3100,
-			3101,
-			3102,
-			3200,
-			3201,
-			3202,
-			3300
-		}
-	},
-	all = {
-		1000,
-		1001,
-		1002,
-		1003,
-		1004,
-		1005,
-		1006,
-		1007,
-		1008,
-		1009,
-		1010,
-		1011,
-		1100,
-		1101,
-		1200,
-		1201,
-		1300,
-		1301,
-		1310,
-		2000,
-		2001,
-		2002,
-		2003,
-		2100,
-		2101,
-		2102,
-		2200,
-		2201,
-		2202,
-		2300,
-		3000,
-		3001,
-		3002,
-		3003,
-		3100,
-		3101,
-		3102,
-		3200,
-		3201,
-		3202,
-		3300
 	}
-}
+end)()

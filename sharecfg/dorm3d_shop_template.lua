@@ -1,53 +1,57 @@
 pg = pg or {}
-pg.dorm3d_shop_template = setmetatable({
-	__name = "dorm3d_shop_template",
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19,
-		20,
-		21,
-		22,
-		23,
-		24,
-		25,
-		26,
-		27,
-		28,
-		29,
-		30,
-		31,
-		32,
-		33,
-		34,
-		35,
-		36,
-		37,
-		38,
-		39,
-		40,
-		41
-	}
-}, confHX)
+pg.dorm3d_shop_template = rawget(pg, "dorm3d_shop_template") or setmetatable({
+	__name = "dorm3d_shop_template"
+}, confNEO)
+pg.dorm3d_shop_template.__namecode__ = true
+pg.dorm3d_shop_template.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22,
+	23,
+	24,
+	25,
+	26,
+	27,
+	28,
+	29,
+	30,
+	31,
+	32,
+	33,
+	34,
+	35,
+	36,
+	37,
+	38,
+	39,
+	40,
+	41,
+	42
+}
 pg.base = pg.base or {}
-pg.base.dorm3d_shop_template = {
-	{
+pg.base.dorm3d_shop_template = {}
+
+;(function()
+	pg.base.dorm3d_shop_template[1] = {
 		name = "Sweet Secret",
 		rarity = 4,
 		type = 1,
@@ -68,8 +72,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture121"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[2] = {
 		name = "Afternoon Dreamhome",
 		rarity = 4,
 		type = 1,
@@ -90,8 +94,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture122"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[3] = {
 		name = "Tanuki Cushion",
 		rarity = 4,
 		type = 1,
@@ -113,8 +117,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture221"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[4] = {
 		name = "Podcast Table",
 		rarity = 4,
 		type = 1,
@@ -136,8 +140,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture222"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[5] = {
 		name = "Christmas Eve Sleigh Sofa",
 		rarity = 5,
 		type = 1,
@@ -156,8 +160,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture151"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[6] = {
 		name = "Where Warmth Lingers",
 		rarity = 5,
 		type = 1,
@@ -176,8 +180,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture251"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[7] = {
 		name = "Teatime Indulgence",
 		rarity = 4,
 		type = 1,
@@ -199,8 +203,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture321"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[8] = {
 		name = "Boat of the Starry Night",
 		rarity = 4,
 		type = 1,
@@ -222,8 +226,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture322"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[9] = {
 		name = "Cleaning Supplies Toolbox",
 		rarity = 4,
 		type = 2,
@@ -244,8 +248,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_gift2022001"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[10] = {
 		name = "Royal Tea Set",
 		rarity = 4,
 		type = 2,
@@ -266,8 +270,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_gift2022002"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[11] = {
 		name = "Sincere Loafers",
 		rarity = 4,
 		type = 2,
@@ -288,8 +292,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_gift3022101"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[12] = {
 		name = "Heart in Crayon",
 		rarity = 4,
 		type = 2,
@@ -310,8 +314,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_gift1990301"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[13] = {
 		name = "Romantic's Bouquet",
 		rarity = 3,
 		type = 2,
@@ -334,8 +338,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_test"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[14] = {
 		name = "Cake Gift Box",
 		rarity = 3,
 		type = 2,
@@ -355,8 +359,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_test"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[15] = {
 		name = "Sirius - Beach Invitation",
 		rarity = 4,
 		type = 3,
@@ -376,8 +380,8 @@ pg.base.dorm3d_shop_template = {
 			"banner_beach1",
 			"banner_beach2"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[16] = {
 		name = "Noshiro - Beach Invitation",
 		rarity = 4,
 		type = 3,
@@ -396,8 +400,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_beach3"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[17] = {
 		name = "Anchorage - Beach Invitation",
 		rarity = 4,
 		type = 3,
@@ -416,8 +420,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_beach4"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[18] = {
 		name = "Foot Massager",
 		rarity = 4,
 		type = 2,
@@ -438,8 +442,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_gift3022102"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[19] = {
 		name = "Starry Corner",
 		rarity = 4,
 		type = 1,
@@ -461,8 +465,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture1151"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[20] = {
 		name = "Crystal Candy",
 		rarity = 4,
 		type = 2,
@@ -483,8 +487,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_gift1051701"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[21] = {
 		name = "New Jersey's Café Invitation",
 		rarity = 4,
 		type = 3,
@@ -503,8 +507,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_cafe1"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[22] = {
 		name = "Serene Moment",
 		rarity = 4,
 		type = 1,
@@ -526,8 +530,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture223"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[23] = {
 		name = "Exercise Bike",
 		rarity = 4,
 		type = 1,
@@ -549,8 +553,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture1152"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[24] = {
 		name = "Elegant Frame",
 		rarity = 4,
 		type = 2,
@@ -571,8 +575,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_gift1990302"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[25] = {
 		name = "Seaside Slide",
 		rarity = 5,
 		type = 1,
@@ -591,8 +595,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture401"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[26] = {
 		name = "Dream in the Clouds",
 		rarity = 4,
 		type = 1,
@@ -614,8 +618,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture323"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[27] = {
 		name = "Love Nest",
 		rarity = 4,
 		type = 1,
@@ -637,8 +641,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture1221"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[28] = {
 		name = "Love Enshackled",
 		rarity = 4,
 		type = 2,
@@ -659,8 +663,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_gift3070701"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[29] = {
 		name = "Taihou's Café Invitation",
 		rarity = 4,
 		type = 3,
@@ -679,8 +683,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_cafe2"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[30] = {
 		name = "Sanctuary Beyond Heavens",
 		rarity = 4,
 		type = 1,
@@ -702,8 +706,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture1153"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[31] = {
 		name = "Floralized Rhythm",
 		rarity = 5,
 		type = 1,
@@ -725,8 +729,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture1222"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[32] = {
 		name = "The Perfect Maid's Guidebook",
 		rarity = 4,
 		type = 2,
@@ -747,8 +751,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_gift2022003"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[33] = {
 		name = "Crimson Tranquility",
 		rarity = 4,
 		type = 1,
@@ -770,8 +774,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture1461"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[34] = {
 		name = "Tulip Glass",
 		rarity = 4,
 		type = 2,
@@ -792,8 +796,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_gift4990501"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[35] = {
 		name = "Ägir's Café Invitation",
 		rarity = 4,
 		type = 3,
@@ -812,8 +816,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_cafe3"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[36] = {
 		name = "Sirius's Café Invitation",
 		rarity = 4,
 		type = 3,
@@ -832,8 +836,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_cafe4"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[37] = {
 		name = "IB-7 Smart Refrigerator",
 		rarity = 4,
 		type = 1,
@@ -842,7 +846,7 @@ pg.base.dorm3d_shop_template = {
 		item_id = 1154,
 		id = 37,
 		realroom_id = 0,
-		order = "4",
+		order = "5",
 		panel = {
 			1,
 			2,
@@ -855,8 +859,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture1154"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[38] = {
 		name = "Elegant Cherry Blossom Seating",
 		rarity = 4,
 		type = 1,
@@ -865,7 +869,7 @@ pg.base.dorm3d_shop_template = {
 		item_id = 1223,
 		id = 38,
 		realroom_id = 0,
-		order = "4",
+		order = "5",
 		panel = {
 			1,
 			2,
@@ -878,8 +882,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture1223"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[39] = {
 		name = "Haven of Innocence",
 		rarity = 4,
 		type = 1,
@@ -888,7 +892,7 @@ pg.base.dorm3d_shop_template = {
 		item_id = 324,
 		id = 39,
 		realroom_id = 0,
-		order = "4",
+		order = "5",
 		panel = {
 			1,
 			2,
@@ -901,8 +905,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture324"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[40] = {
 		name = "Quiet Contemplation",
 		rarity = 4,
 		type = 1,
@@ -911,7 +915,7 @@ pg.base.dorm3d_shop_template = {
 		item_id = 1462,
 		id = 40,
 		realroom_id = 0,
-		order = "3",
+		order = "4",
 		panel = {
 			1,
 			2,
@@ -924,8 +928,8 @@ pg.base.dorm3d_shop_template = {
 		banners = {
 			"banner_furniture1462"
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_shop_template[41] = {
 		name = "Gamepad",
 		rarity = 4,
 		type = 2,
@@ -934,7 +938,7 @@ pg.base.dorm3d_shop_template = {
 		item_id = 1051702,
 		id = 41,
 		realroom_id = 0,
-		order = "2",
+		order = "4",
 		panel = {
 			2,
 			3,
@@ -947,4 +951,26 @@ pg.base.dorm3d_shop_template = {
 			"banner_gift1051702"
 		}
 	}
-}
+	pg.base.dorm3d_shop_template[42] = {
+		name = "Scarlet Invite",
+		rarity = 4,
+		type = 2,
+		room_id = 30707,
+		unlock = "",
+		item_id = 3070702,
+		id = 42,
+		realroom_id = 0,
+		order = "2",
+		panel = {
+			2,
+			3,
+			4
+		},
+		shop_id = {
+			260502
+		},
+		banners = {
+			"banner_gift3070702"
+		}
+	}
+end)()

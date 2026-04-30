@@ -57,32 +57,33 @@ function var0_0.InitWindow(arg0_7, arg1_7, arg2_7)
 
 		if var1_7 and var2_7 then
 			local var4_7 = getProxy(ActivityProxy):getActivityById(Item.getConfigData(var0_7.id).link_id)
+			local var5_7 = var4_7:IsMaintenanceFinish() and "eventshop_time_hint" or "eventshop_time_hint2"
 
-			setText(arg0_7.timeLimitTF:Find("Text"), i18n("eventshop_time_hint", pg.TimeMgr.GetInstance():STimeDescC(var4_7.stopTime, "%m.%d")))
+			setText(arg0_7.timeLimitTF:Find("Text"), i18n(var5_7, pg.TimeMgr.GetInstance():STimeDescS(var4_7.stopTime, "%m.%d")))
 		end
 	end
 
-	local var5_7 = Drop.New({
+	local var6_7 = Drop.New({
 		type = arg1_7:getConfig("resource_category"),
 		id = arg1_7:getConfig("resource_type")
 	}):getOwnedCount()
-	local var6_7 = math.max(math.floor(var5_7 / arg1_7:getConfig("resource_num")), 1)
+	local var7_7 = math.max(math.floor(var6_7 / arg1_7:getConfig("resource_num")), 1)
 
 	if arg1_7:getConfig("num_limit") ~= 0 or isa(arg1_7, QuotaCommodity) then
-		local var7_7 = arg1_7:GetPurchasableCnt()
+		local var8_7 = arg1_7:GetPurchasableCnt()
 
-		var6_7 = math.min(var6_7, math.max(0, var7_7))
+		var7_7 = math.min(var7_7, math.max(0, var8_7))
 	end
 
-	local function var8_7(arg0_8)
+	local function var9_7(arg0_8)
 		arg0_8 = math.max(arg0_8, 1)
-		arg0_8 = math.min(arg0_8, var6_7)
+		arg0_8 = math.min(arg0_8, var7_7)
 		arg0_7.countTF.text = arg0_8
 		arg0_7.curCount = arg0_8
 		arg0_7.itemCountTF.text = arg0_8 * arg1_7:getConfig("num")
 	end
 
-	var8_7(1)
+	var9_7(1)
 	updateDrop(arg0_7.topItem:Find("left/IconTpl"), var0_7)
 	UpdateOwnDisplay(arg0_7.ownerTF, var0_7)
 	RegisterDetailButton(arg0_7, arg0_7.detailTF, var0_7)
@@ -99,13 +100,13 @@ function var0_0.InitWindow(arg0_7, arg1_7, arg2_7)
 		arg0_7:Close()
 	end, SFX_PANEL)
 	onButton(arg0_7, arg0_7.leftBtn, function()
-		var8_7(arg0_7.curCount - 1)
+		var9_7(arg0_7.curCount - 1)
 	end)
 	onButton(arg0_7, arg0_7.rightBtn, function()
-		var8_7(arg0_7.curCount + 1)
+		var9_7(arg0_7.curCount + 1)
 	end)
 	onButton(arg0_7, arg0_7.maxBtn, function()
-		var8_7(var6_7)
+		var9_7(var7_7)
 	end)
 end
 

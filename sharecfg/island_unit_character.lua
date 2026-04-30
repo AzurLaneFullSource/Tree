@@ -1,130 +1,133 @@
 pg = pg or {}
-pg.island_unit_character = setmetatable({
-	__name = "island_unit_character",
-	all = {
-		0,
-		100100,
-		100200,
-		100300,
-		100400,
-		100500,
-		100600,
-		100700,
-		100800,
-		100900,
-		101000,
-		101100,
-		101200,
-		101300,
-		101400,
-		101500,
-		101600,
-		101800,
-		300200,
-		300300,
-		300400,
-		300500,
-		300600,
-		300700,
-		300800,
-		300900,
-		300901,
-		300902,
-		300903,
-		301000,
-		301100,
-		301200,
-		301300,
-		302000,
-		302300,
-		302400,
-		302500,
-		302600,
-		302700,
-		302800,
-		302900,
-		303000,
-		303100,
-		303300,
-		303400,
-		303500,
-		303600,
-		303700,
-		303800,
-		303900,
-		900100,
-		900102,
-		900103,
-		900104,
-		900110,
-		900120,
-		900112,
-		900122,
-		900113,
-		900123,
-		900114,
-		900124,
-		1011000,
-		1011001,
-		1011002,
-		1020500,
-		1020501,
-		1020502,
-		1051700,
-		1051701,
-		1051702,
-		1070300,
-		1070301,
-		1070302,
-		2060300,
-		2060301,
-		2060302,
-		2040300,
-		2990300,
-		2990301,
-		2990302,
-		3012900,
-		3012901,
-		3012902,
-		3031200,
-		3031201,
-		3031202,
-		3040700,
-		3040701,
-		3040702,
-		3070700,
-		3120100,
-		3120101,
-		3120102,
-		3120199,
-		4030300,
-		4030301,
-		4030302,
-		4990200,
-		4990201,
-		4990202,
-		5020400,
-		5020500,
-		5060100,
-		5060101,
-		5060102,
-		6080200,
-		7010400,
-		9011100,
-		99000100,
-		99000101,
-		99000102,
-		99000200,
-		99000201,
-		99000202,
-		99000300,
-		99000301,
-		99000302
-	}
-}, confHX)
+pg.island_unit_character = rawget(pg, "island_unit_character") or setmetatable({
+	__name = "island_unit_character"
+}, confNEO)
+pg.island_unit_character.__namecode__ = true
+pg.island_unit_character.all = {
+	0,
+	100100,
+	100200,
+	100300,
+	100400,
+	100500,
+	100600,
+	100700,
+	100800,
+	100900,
+	101000,
+	101100,
+	101200,
+	101300,
+	101400,
+	101500,
+	101600,
+	101800,
+	300200,
+	300300,
+	300400,
+	300500,
+	300600,
+	300700,
+	300800,
+	300900,
+	300901,
+	300902,
+	300903,
+	301000,
+	301100,
+	301200,
+	301300,
+	302000,
+	302300,
+	302400,
+	302500,
+	302600,
+	302700,
+	302800,
+	302900,
+	303000,
+	303100,
+	303300,
+	303400,
+	303500,
+	303600,
+	303700,
+	303800,
+	303900,
+	900100,
+	900102,
+	900103,
+	900104,
+	900110,
+	900120,
+	900112,
+	900122,
+	900113,
+	900123,
+	900114,
+	900124,
+	1011000,
+	1011001,
+	1011002,
+	1020500,
+	1020501,
+	1020502,
+	1051700,
+	1051701,
+	1051702,
+	1070300,
+	1070301,
+	1070302,
+	2060300,
+	2060301,
+	2060302,
+	2040300,
+	2990300,
+	2990301,
+	2990302,
+	3012900,
+	3012901,
+	3012902,
+	3031200,
+	3031201,
+	3031202,
+	3040700,
+	3040701,
+	3040702,
+	3070700,
+	3120100,
+	3120101,
+	3120102,
+	3120199,
+	4030300,
+	4030301,
+	4030302,
+	4990200,
+	4990201,
+	4990202,
+	5020400,
+	5020500,
+	5060100,
+	5060101,
+	5060102,
+	6080200,
+	7010400,
+	9011100,
+	99000100,
+	99000101,
+	99000102,
+	99000200,
+	99000201,
+	99000202,
+	99000300,
+	99000301,
+	99000302
+}
 pg.base = pg.base or {}
-pg.base.island_unit_character = {
-	[0] = {
+pg.base.island_unit_character = {}
+
+;(function()
+	pg.base.island_unit_character[0] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -140,8 +143,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[100100] = {
+	}
+	pg.base.island_unit_character[100100] = {
 		describe_illustrated_guid = "I'm Olympic... I'm in charge of the island's flour mill.\nIt always smells like wheat flour here, and the turning of the mill is like a lullaby... It makes it so easy to doze off. If you want some flour, just bring me some wheat... Mmh... Zzz...",
 		english_name = "R.M.S. Olympic",
 		name = "Olympic",
@@ -157,8 +160,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[100200] = {
+	}
+	pg.base.island_unit_character[100200] = {
 		describe_illustrated_guid = "I'm Patrick, manager of the logistics center.\nBe it harbor requests, managing the cargo ship schedule, or keeping our trade ledger up to date, I'm your girl.\nI guarantee your resources will move around as smooth as the sea breeze blows!",
 		english_name = "SS Patrick Henry",
 		name = "Patrick",
@@ -174,8 +177,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[100300] = {
+	}
+	pg.base.island_unit_character[100300] = {
 		describe_illustrated_guid = "Hey there! I'm Stephen!\nI miiight hide behind a shipping container and slack off sometimes, but don't worry!\nI'll handle anything you need, whether it's building materials or crops!\nBe sure to give me a call the next time you come to the harbor!",
 		english_name = "SS Stephen Hopkins",
 		name = "Stephen",
@@ -191,8 +194,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[100400] = {
+	}
+	pg.base.island_unit_character[100400] = {
 		describe_illustrated_guid = "Commander, I'm Homeric. The seeds on the farm are growing quietly, nourished by rain and sunshine. All we have to do is wait patiently for the land to bless us with its gifts.",
 		english_name = "RMS Homeric",
 		name = "Homeric",
@@ -208,8 +211,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[100500] = {
+	}
+	pg.base.island_unit_character[100500] = {
 		describe_illustrated_guid = "Baa! Moo! I'm Amerigo, the island's happy-go-lucky rancher!\nI spend my days surrounded by fluffy li'l critters, collecting eggs, milking cows, and chasing after runaway lambs. It's hectic, but I love it!\nWhenever you've got a moment to spare, you should totally drop by the ranch!",
 		english_name = "Amerigo Vespucci",
 		name = "Amerigo",
@@ -225,8 +228,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[100600] = {
+	}
+	pg.base.island_unit_character[100600] = {
 		describe_illustrated_guid = "Commander, over here! I'm John, and I'll show you around the place!\nThis mine is so fascinating, and well worth exploring! Once you're ready, let's ride the minecart in and have a look around!\nAlso, I'm gonna sing you a special song dedicated to the mine opening, so look forward to that!",
 		english_name = "SS John W. Brown",
 		name = "John",
@@ -242,8 +245,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[100700] = {
+	}
+	pg.base.island_unit_character[100700] = {
 		describe_illustrated_guid = "I'm O'Brien, and I'm fighting tooth and nail for the island's development.\nYou probably don't know this, but whenever work's left me feeling exhausted, I secretly think of you. It makes me happy, no matter how tough the logging gets.",
 		english_name = "Jeremiah O'Brien",
 		name = "O'Brien",
@@ -259,8 +262,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[100800] = {
+	}
+	pg.base.island_unit_character[100800] = {
 		describe_illustrated_guid = "Commander, I am Am-Mer-Mar. I oversee the harbor's commercial area.\nI'm detail-oriented, and I do everything from daily balance checks, optimizing the store displays, and analyzing customer trends. There is no sense of accomplishment quite like seeing the commercial area prosper.",
 		english_name = "SS Am-Mer-Mar",
 		name = "Am-Mer-Mar",
@@ -276,8 +279,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[100900] = {
+	}
+	pg.base.island_unit_character[100900] = {
 		describe_illustrated_guid = "What's up, Commander? I'm Russell! I run the development area's factory!\nTo my ears, there's no better music than the mechanical rumble of a running assembly line!\nAlthough the wrenches tend to go missing here and progress often gets delayed, I'll run the machinery at full power whenever you need it!",
 		english_name = "SS Brigadier General Clinton W. Russell",
 		name = "Russell",
@@ -293,8 +296,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[101000] = {
+	}
+	pg.base.island_unit_character[101000] = {
 		describe_illustrated_guid = "I am Elizabeth, the receptionist of Get-Together Island.\nFor the time being, I will be your guide around the island as well as your assistant in development.\nI shall assist you as best as I can with construction so that this can be a safe, comfortable place for all the islanders to flourish.",
 		english_name = "R.M.S Queen Elizabeth",
 		name = "Elizabeth",
@@ -310,8 +313,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[101100] = {
+	}
+	pg.base.island_unit_character[101100] = {
 		describe_illustrated_guid = "Rays of the sun♪ Dew on the leaves♪ Succulent fruit, grow and grow big♪ I'm Lusitania, the manager of the orchard!\nSeeing the fruit ripen and change color little by little just makes me think, \"Wow, the world's such a wonderful place!\"",
 		english_name = "RMS Lusitania",
 		name = "Lusitania",
@@ -327,8 +330,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[101200] = {
+	}
+	pg.base.island_unit_character[101200] = {
 		describe_illustrated_guid = "Hi, Commander. I'm Bremen. I work at Café Manjuu by the harbor.\nI love the air in here – and the smell of coffee in it. Just watching the vapor slowly rise into the air every day makes me feel at ease.\nAnd, um, whenever you drop by, I'll have a seat ready for you to enjoy some quiet.",
 		english_name = "SS Bremen",
 		name = "Bremen",
@@ -344,8 +347,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[101300] = {
+	}
+	pg.base.island_unit_character[101300] = {
 		describe_illustrated_guid = "Testing, testing... I'm Mary, your cutest and most energetic guide on Get-Together Island!\nI show all visitors around with a bright smile, and give them a taste of all the fun and enthusiasm this island has to offer!",
 		english_name = "R.M.S Queen Mary",
 		name = "Mary",
@@ -361,8 +364,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[101400] = {
+	}
+	pg.base.island_unit_character[101400] = {
 		describe_illustrated_guid = "I'm Laconia... I look after the plant nursery and the bees on the island.\nWhen the sun shines, it's dead quiet in the nursery, and the only thing you can hear are the bees... That's what I really like.\nCommander, I just harvested some honey... Want a taste? It's really sweet.",
 		english_name = "RMS Laconia",
 		name = "Laconia",
@@ -378,8 +381,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[101500] = {
+	}
+	pg.base.island_unit_character[101500] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Canteen",
@@ -395,8 +398,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[101600] = {
+	}
+	pg.base.island_unit_character[101600] = {
 		describe_illustrated_guid = "I'm Peary, the seasonal manager. I'm currently putting together a list of materials needed for development.\nLately, I've been thinking about the new development plan, and I'd love to hear some of your thoughts. Although the island still has a long way to develop, we will follow the path slowly and steadily.",
 		english_name = "SS Robert E. Peary",
 		name = "Peary",
@@ -412,8 +415,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[101800] = {
+	}
+	pg.base.island_unit_character[101800] = {
 		describe_illustrated_guid = "Hiya, Commander! I'm Britain, and I run this hatchery, meow!\nI know the tides and the fish around here like the back of my hand. All it takes is one listen to the current, and I can tell if a big catch is nearby!\nI'll let you in on a little secret, Commander: I've got a few special fishing tricks up my sleeve. If you ever want to learn them, just come find me anytime! Meow!",
 		english_name = "RMS Empress of Britain",
 		name = "Britain",
@@ -429,8 +432,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[300200] = {
+	}
+	pg.base.island_unit_character[300200] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Workerjuu",
@@ -446,8 +449,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[300300] = {
+	}
+	pg.base.island_unit_character[300300] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Pilotjuu",
@@ -463,8 +466,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[300400] = {
+	}
+	pg.base.island_unit_character[300400] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Roadblockjuu",
@@ -480,8 +483,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[300500] = {
+	}
+	pg.base.island_unit_character[300500] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Pinkjuu",
@@ -497,8 +500,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[300600] = {
+	}
+	pg.base.island_unit_character[300600] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Hatjuu",
@@ -514,8 +517,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[300700] = {
+	}
+	pg.base.island_unit_character[300700] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Sparrow",
@@ -531,8 +534,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[300800] = {
+	}
+	pg.base.island_unit_character[300800] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Seagull",
@@ -548,8 +551,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[300900] = {
+	}
+	pg.base.island_unit_character[300900] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -569,8 +572,8 @@ pg.base.island_unit_character = {
 			0.2,
 			0.25
 		}
-	},
-	[300901] = {
+	}
+	pg.base.island_unit_character[300901] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -590,8 +593,8 @@ pg.base.island_unit_character = {
 			0.2,
 			0.25
 		}
-	},
-	[300902] = {
+	}
+	pg.base.island_unit_character[300902] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -611,8 +614,8 @@ pg.base.island_unit_character = {
 			0.2,
 			0.25
 		}
-	},
-	[300903] = {
+	}
+	pg.base.island_unit_character[300903] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -632,8 +635,8 @@ pg.base.island_unit_character = {
 			0.2,
 			0.25
 		}
-	},
-	[301000] = {
+	}
+	pg.base.island_unit_character[301000] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Oinky Oinky Pig",
@@ -653,8 +656,8 @@ pg.base.island_unit_character = {
 			0.5,
 			1
 		}
-	},
-	[301100] = {
+	}
+	pg.base.island_unit_character[301100] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Cow (Ranch)",
@@ -674,8 +677,8 @@ pg.base.island_unit_character = {
 			0.8,
 			1
 		}
-	},
-	[301200] = {
+	}
+	pg.base.island_unit_character[301200] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Ox (Ranch)",
@@ -695,8 +698,8 @@ pg.base.island_unit_character = {
 			0.8,
 			1
 		}
-	},
-	[301300] = {
+	}
+	pg.base.island_unit_character[301300] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Sheep (Ranch)",
@@ -716,8 +719,8 @@ pg.base.island_unit_character = {
 			0.5,
 			1
 		}
-	},
-	[302000] = {
+	}
+	pg.base.island_unit_character[302000] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Clucky Clucky Bird",
@@ -737,8 +740,8 @@ pg.base.island_unit_character = {
 			0.3,
 			0.5
 		}
-	},
-	[302300] = {
+	}
+	pg.base.island_unit_character[302300] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Freshwater Shrimp",
@@ -754,8 +757,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[302400] = {
+	}
+	pg.base.island_unit_character[302400] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Koi Carp",
@@ -771,8 +774,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[302500] = {
+	}
+	pg.base.island_unit_character[302500] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Shellfish",
@@ -788,8 +791,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[302600] = {
+	}
+	pg.base.island_unit_character[302600] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Crayfish",
@@ -805,8 +808,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[302700] = {
+	}
+	pg.base.island_unit_character[302700] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Salmon",
@@ -822,8 +825,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[302800] = {
+	}
+	pg.base.island_unit_character[302800] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Sea Cucumber",
@@ -839,8 +842,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[302900] = {
+	}
+	pg.base.island_unit_character[302900] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Squid",
@@ -856,8 +859,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[303000] = {
+	}
+	pg.base.island_unit_character[303000] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Tuna",
@@ -873,8 +876,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[303100] = {
+	}
+	pg.base.island_unit_character[303100] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Crab",
@@ -890,8 +893,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[303300] = {
+	}
+	pg.base.island_unit_character[303300] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Catfish",
@@ -907,8 +910,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[303400] = {
+	}
+	pg.base.island_unit_character[303400] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Common Carp",
@@ -924,8 +927,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[303500] = {
+	}
+	pg.base.island_unit_character[303500] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Mackerel",
@@ -941,8 +944,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[303600] = {
+	}
+	pg.base.island_unit_character[303600] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Red Sea Bream",
@@ -958,8 +961,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[303700] = {
+	}
+	pg.base.island_unit_character[303700] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Yellowfin Tuna",
@@ -975,8 +978,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[303800] = {
+	}
+	pg.base.island_unit_character[303800] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Sea Bass",
@@ -992,8 +995,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[303900] = {
+	}
+	pg.base.island_unit_character[303900] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "Black Porgy",
@@ -1009,8 +1012,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[900100] = {
+	}
+	pg.base.island_unit_character[900100] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -1026,8 +1029,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[900102] = {
+	}
+	pg.base.island_unit_character[900102] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -1043,8 +1046,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[900103] = {
+	}
+	pg.base.island_unit_character[900103] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -1060,8 +1063,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[900104] = {
+	}
+	pg.base.island_unit_character[900104] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -1077,8 +1080,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[900110] = {
+	}
+	pg.base.island_unit_character[900110] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -1094,8 +1097,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[900120] = {
+	}
+	pg.base.island_unit_character[900120] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -1111,8 +1114,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[900112] = {
+	}
+	pg.base.island_unit_character[900112] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -1128,8 +1131,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[900122] = {
+	}
+	pg.base.island_unit_character[900122] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -1145,8 +1148,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[900113] = {
+	}
+	pg.base.island_unit_character[900113] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -1162,8 +1165,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[900123] = {
+	}
+	pg.base.island_unit_character[900123] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -1179,8 +1182,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[900114] = {
+	}
+	pg.base.island_unit_character[900114] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -1196,8 +1199,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[900124] = {
+	}
+	pg.base.island_unit_character[900124] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "",
@@ -1213,8 +1216,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[1011000] = {
+	}
+	pg.base.island_unit_character[1011000] = {
 		describe_illustrated_guid = "Commander! I drew an exploration map of the island! Sure, it's a little rough, but I promise it'll lead you to treasure this time! Believe me!",
 		english_name = "USS William D. Porter",
 		name = "William D. Porter",
@@ -1230,8 +1233,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[1011001] = {
+	}
+	pg.base.island_unit_character[1011001] = {
 		describe_illustrated_guid = "",
 		english_name = "USS William D. Porter",
 		name = "William D. Porter",
@@ -1247,8 +1250,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[1011002] = {
+	}
+	pg.base.island_unit_character[1011002] = {
 		describe_illustrated_guid = "",
 		english_name = "USS William D. Porter",
 		name = "William D. Porter",
@@ -1264,8 +1267,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[1020500] = {
+	}
+	pg.base.island_unit_character[1020500] = {
 		describe_illustrated_guid = "The breeze is calm and the sun is shining... You know, I just poured some new afternoon tea. Why don't you stay for a while and have a drink?",
 		english_name = "USS Helena",
 		name = "Helena",
@@ -1281,8 +1284,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[1020501] = {
+	}
+	pg.base.island_unit_character[1020501] = {
 		describe_illustrated_guid = "",
 		english_name = "USS Helena",
 		name = "Helena",
@@ -1298,8 +1301,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[1020502] = {
+	}
+	pg.base.island_unit_character[1020502] = {
 		describe_illustrated_guid = "",
 		english_name = "USS Helena",
 		name = "Helena",
@@ -1315,8 +1318,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[1051700] = {
+	}
+	pg.base.island_unit_character[1051700] = {
 		describe_illustrated_guid = "Whether on the battlefields or out in the woods, the Indomitable Black Dragon is the strongest! Honey, come with me as we rise to the top of the world!",
 		english_name = "USS New Jersey",
 		name = "New Jersey",
@@ -1332,8 +1335,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[1051701] = {
+	}
+	pg.base.island_unit_character[1051701] = {
 		describe_illustrated_guid = "",
 		english_name = "USS New Jersey",
 		name = "New Jersey",
@@ -1349,8 +1352,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[1051702] = {
+	}
+	pg.base.island_unit_character[1051702] = {
 		describe_illustrated_guid = "",
 		english_name = "USS New Jersey",
 		name = "New Jersey",
@@ -1366,8 +1369,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[1070300] = {
+	}
+	pg.base.island_unit_character[1070300] = {
 		describe_illustrated_guid = "Sister Sara is here with the bounties of sky and earth! Commander, would you like to try some of the veggies I grew myself? I promise you, they're delicious AND nutritious!",
 		english_name = "USS Saratoga",
 		name = "Saratoga",
@@ -1383,8 +1386,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[1070301] = {
+	}
+	pg.base.island_unit_character[1070301] = {
 		describe_illustrated_guid = "",
 		english_name = "USS Saratoga",
 		name = "Saratoga",
@@ -1400,8 +1403,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[1070302] = {
+	}
+	pg.base.island_unit_character[1070302] = {
 		describe_illustrated_guid = "",
 		english_name = "USS Saratoga",
 		name = "Saratoga",
@@ -1417,8 +1420,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[2060300] = {
+	}
+	pg.base.island_unit_character[2060300] = {
 		describe_illustrated_guid = "B-Big Brother, I-I'm really happy to be able to help out like this! I'll keep w-working hard, because... I-I love you the most!",
 		english_name = "HMS Unicorn",
 		name = "Unicorn",
@@ -1434,8 +1437,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[2060301] = {
+	}
+	pg.base.island_unit_character[2060301] = {
 		describe_illustrated_guid = "",
 		english_name = "HMS Unicorn",
 		name = "Unicorn",
@@ -1451,8 +1454,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[2060302] = {
+	}
+	pg.base.island_unit_character[2060302] = {
 		describe_illustrated_guid = "",
 		english_name = "HMS Unicorn",
 		name = "Unicorn",
@@ -1468,8 +1471,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[2040300] = {
+	}
+	pg.base.island_unit_character[2040300] = {
 		describe_illustrated_guid = "The Royal Navy's elegance is one thing that shall never be tarnished by the passage of time. Commander, would you like to share in the whispers of our coming victories over a cup of tea?",
 		english_name = "HMS Hood",
 		name = "Hood",
@@ -1485,8 +1488,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[2990300] = {
+	}
+	pg.base.island_unit_character[2990300] = {
 		describe_illustrated_guid = "Ownerrr~ I can feel your passionate gaze lingering on Cheshire again... and I love it! Look at me as much as you want, and only at me! Meow~♡",
 		english_name = "HMS Cheshire",
 		name = "Cheshire",
@@ -1502,8 +1505,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[2990301] = {
+	}
+	pg.base.island_unit_character[2990301] = {
 		describe_illustrated_guid = "",
 		english_name = "HMS Cheshire",
 		name = "Cheshire",
@@ -1519,8 +1522,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[2990302] = {
+	}
+	pg.base.island_unit_character[2990302] = {
 		describe_illustrated_guid = "",
 		english_name = "HMS Cheshire",
 		name = "Cheshire",
@@ -1536,8 +1539,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[3012900] = {
+	}
+	pg.base.island_unit_character[3012900] = {
 		describe_illustrated_guid = "Whether it comes to delivering goods, harvesting crops, or providing support, speed is always key! That's why you should leave it to me, your speed-star Shimakaze! It's just that easy!",
 		english_name = "IJN Shimakaze",
 		name = "Shimakaze",
@@ -1553,8 +1556,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[3012901] = {
+	}
+	pg.base.island_unit_character[3012901] = {
 		describe_illustrated_guid = "",
 		english_name = "IJN Shimakaze",
 		name = "Shimakaze",
@@ -1570,8 +1573,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[3012902] = {
+	}
+	pg.base.island_unit_character[3012902] = {
 		describe_illustrated_guid = "",
 		english_name = "IJN Shimakaze",
 		name = "Shimakaze",
@@ -1587,8 +1590,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[3031200] = {
+	}
+	pg.base.island_unit_character[3031200] = {
 		describe_illustrated_guid = "Work? Missions? Who cares! Those can wait, but my lap pillow is only available here and now. Come, enjoy a little afternoon nap with me.",
 		english_name = "IJN Atago",
 		name = "{namecode:67}",
@@ -1604,8 +1607,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[3031201] = {
+	}
+	pg.base.island_unit_character[3031201] = {
 		describe_illustrated_guid = "",
 		english_name = "IJN Atago",
 		name = "{namecode:67}",
@@ -1621,8 +1624,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[3031202] = {
+	}
+	pg.base.island_unit_character[3031202] = {
 		describe_illustrated_guid = "",
 		english_name = "IJN Atago",
 		name = "{namecode:67}",
@@ -1638,8 +1641,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[3040700] = {
+	}
+	pg.base.island_unit_character[3040700] = {
 		describe_illustrated_guid = "Caring for every little tree on this island... is how I protect my loved ones now! Commander, please watch as these fruit trees grow strong and ripe!",
 		english_name = "IJN Amagi",
 		name = "Amagi-chan",
@@ -1655,8 +1658,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[3040701] = {
+	}
+	pg.base.island_unit_character[3040701] = {
 		describe_illustrated_guid = "",
 		english_name = "IJN Amagi",
 		name = "Amagi-chan",
@@ -1672,8 +1675,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[3040702] = {
+	}
+	pg.base.island_unit_character[3040702] = {
 		describe_illustrated_guid = "",
 		english_name = "IJN Amagi",
 		name = "Amagi-chan",
@@ -1689,8 +1692,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[3070700] = {
+	}
+	pg.base.island_unit_character[3070700] = {
 		describe_illustrated_guid = "My Commander~ No matter where we are, I will always be yours, and yours alone. So, be sure to cherish that, okay? ❤",
 		english_name = "IJN Taihō",
 		name = "Taihou",
@@ -1706,8 +1709,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[3120100] = {
+	}
+	pg.base.island_unit_character[3120100] = {
 		describe_illustrated_guid = "Nyahaha~ The all-capable Akashi can use all the latest technology to upgrade your tools, nya! All it requires is a bit of compensation for the R&D costs and the materials~ Quite the good deal, nya?",
 		english_name = "IJN Akashi",
 		name = "Akashi",
@@ -1723,8 +1726,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[3120101] = {
+	}
+	pg.base.island_unit_character[3120101] = {
 		describe_illustrated_guid = "",
 		english_name = "IJN Akashi",
 		name = "Akashi",
@@ -1740,8 +1743,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[3120102] = {
+	}
+	pg.base.island_unit_character[3120102] = {
 		describe_illustrated_guid = "",
 		english_name = "IJN Akashi",
 		name = "Akashi",
@@ -1757,8 +1760,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[3120199] = {
+	}
+	pg.base.island_unit_character[3120199] = {
 		describe_illustrated_guid = "",
 		english_name = "",
 		name = "？？？",
@@ -1774,8 +1777,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 0
-	},
-	[4030300] = {
+	}
+	pg.base.island_unit_character[4030300] = {
 		describe_illustrated_guid = "Commander, would you like to try this special cocktail I prepared just for you? ...Heehee, don't worry. It has a unique flavor that will leave you with an... unforgettable aftertaste.",
 		english_name = "KMS Prinz Eugen",
 		name = "Prinz Eugen",
@@ -1791,8 +1794,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[4030301] = {
+	}
+	pg.base.island_unit_character[4030301] = {
 		describe_illustrated_guid = "",
 		english_name = "KMS Prinz Eugen",
 		name = "{namecode:427}",
@@ -1808,8 +1811,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[4030302] = {
+	}
+	pg.base.island_unit_character[4030302] = {
 		describe_illustrated_guid = "",
 		english_name = "KMS Prinz Eugen",
 		name = "{namecode:427}",
@@ -1825,8 +1828,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[4990200] = {
+	}
+	pg.base.island_unit_character[4990200] = {
 		describe_illustrated_guid = "Turning our positions on the battlefield into a courtyard layout... This place is our new world, my child. All you need to do is bask in the stillness, while I'll handle everything else.",
 		english_name = "KMS Friedrich der Grosse",
 		name = "{namecode:440}",
@@ -1842,8 +1845,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[4990201] = {
+	}
+	pg.base.island_unit_character[4990201] = {
 		describe_illustrated_guid = "",
 		english_name = "KMS Friedrich der Grosse",
 		name = "{namecode:440}",
@@ -1859,8 +1862,10 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[4990202] = {
+	}
+end)()
+;(function()
+	pg.base.island_unit_character[4990202] = {
 		describe_illustrated_guid = "",
 		english_name = "KMS Friedrich der Grosse",
 		name = "{namecode:440}",
@@ -1876,8 +1881,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[5020400] = {
+	}
+	pg.base.island_unit_character[5020400] = {
 		describe_illustrated_guid = "The tea is ready, and the inkstick has been ground. Commander, could I bother you to set aside your work for a moment and come appreciate this work-in-progress painting with me?",
 		english_name = "Ying Swei",
 		name = "Ying Swei",
@@ -1893,8 +1898,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[5020500] = {
+	}
+	pg.base.island_unit_character[5020500] = {
 		describe_illustrated_guid = "Ugh! How many times do I have to remind you... I'M the big sister here! You better remember it, Commander, or I'll get mad!",
 		english_name = "Chao Ho",
 		name = "Chao Ho",
@@ -1910,8 +1915,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[5060100] = {
+	}
+	pg.base.island_unit_character[5060100] = {
 		describe_illustrated_guid = "The pieces have come to a halt, yet this small patch of grassland has its own charms. Why not treat managing the island as a game of Go unto itself? For now, I wish simply to drink tea with you and gaze at the flowers.",
 		english_name = "Chen Hai",
 		name = "Chen Hai",
@@ -1927,8 +1932,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[5060101] = {
+	}
+	pg.base.island_unit_character[5060101] = {
 		describe_illustrated_guid = "",
 		english_name = "Chen Hai",
 		name = "Chen Hai",
@@ -1944,8 +1949,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[5060102] = {
+	}
+	pg.base.island_unit_character[5060102] = {
 		describe_illustrated_guid = "",
 		english_name = "Chen Hai",
 		name = "Chen Hai",
@@ -1961,8 +1966,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[6080200] = {
+	}
+	pg.base.island_unit_character[6080200] = {
 		describe_illustrated_guid = "Commander, this place is chock-full of inspiration and my brain's already firing on all cylinders! If there's anything you need doing, I'm your girl!",
 		english_name = "RN Leonardo da Vinci",
 		name = "Leonardo da Vinci",
@@ -1978,8 +1983,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[7010400] = {
+	}
+	pg.base.island_unit_character[7010400] = {
 		describe_illustrated_guid = "The sky-blue trail ever continues to stretch into the distant horizon. But rather than traveling alone, I now look forward to being able to share this moment of tranquility with my comrades.",
 		english_name = "SN Tashkent",
 		name = "Tashkent",
@@ -1995,8 +2000,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[9011100] = {
+	}
+	pg.base.island_unit_character[9011100] = {
 		describe_illustrated_guid = "I know I said \"I'll do whatever,\" but the scope of this work is a bit too much... *yaaawn*... Commander, just lemme nap for five minutes... Just five... more minutes...",
 		english_name = "MNF Le Malin",
 		name = "Le Malin",
@@ -2012,8 +2017,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[99000100] = {
+	}
+	pg.base.island_unit_character[99000100] = {
 		describe_illustrated_guid = "Hey, dweeb, are you still taking this stuff seriously? That's sooo lame! You should do something fun with me instead! Like seeing who can explore the most of the development area! And the loser has to do anything the winner says!",
 		english_name = "Oceana",
 		name = "Oceana",
@@ -2029,8 +2034,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[99000101] = {
+	}
+	pg.base.island_unit_character[99000101] = {
 		describe_illustrated_guid = "",
 		english_name = "Oceana",
 		name = "Oceana",
@@ -2046,8 +2051,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[99000102] = {
+	}
+	pg.base.island_unit_character[99000102] = {
 		describe_illustrated_guid = "",
 		english_name = "Oceana",
 		name = "Oceana",
@@ -2063,8 +2068,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
-	},
-	[99000200] = {
+	}
+	pg.base.island_unit_character[99000200] = {
 		describe_illustrated_guid = "Scanning island ecosystem... Environmental livability: Excellent. Initiating leisure mode... My database can assist in devising an optimized schedule. Would you like me to generate one for you?",
 		english_name = "Navigator",
 		name = "TB",
@@ -2080,8 +2085,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[99000201] = {
+	}
+	pg.base.island_unit_character[99000201] = {
 		describe_illustrated_guid = "",
 		english_name = "Navigator",
 		name = "TB",
@@ -2097,8 +2102,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[99000202] = {
+	}
+	pg.base.island_unit_character[99000202] = {
 		describe_illustrated_guid = "",
 		english_name = "Navigator",
 		name = "TB",
@@ -2114,8 +2119,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[99000300] = {
+	}
+	pg.base.island_unit_character[99000300] = {
 		describe_illustrated_guid = "Guardian, look at this leaf... It has a very unusual shape, doesn't it? I found it in the garden. Heehee – if you want to check it out, I can take you to it later.",
 		english_name = "Explorer",
 		name = "Explorer",
@@ -2131,8 +2136,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[99000301] = {
+	}
+	pg.base.island_unit_character[99000301] = {
 		describe_illustrated_guid = "",
 		english_name = "Explorer",
 		name = "Explorer",
@@ -2148,8 +2153,8 @@ pg.base.island_unit_character = {
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
-	},
-	[99000302] = {
+	}
+	pg.base.island_unit_character[99000302] = {
 		describe_illustrated_guid = "",
 		english_name = "Explorer",
 		name = "Explorer",
@@ -2166,4 +2171,4 @@ pg.base.island_unit_character = {
 		CollisionParam = "",
 		personality = 2
 	}
-}
+end)()

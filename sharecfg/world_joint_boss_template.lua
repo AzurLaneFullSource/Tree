@@ -1,6 +1,36 @@
 pg = pg or {}
-pg.world_joint_boss_template = {
-	{
+pg.world_joint_boss_template = rawget(pg, "world_joint_boss_template") or setmetatable({
+	__name = "world_joint_boss_template"
+}, confNEO)
+pg.world_joint_boss_template.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22
+}
+pg.base = pg.base or {}
+pg.base.world_joint_boss_template = {}
+
+;(function()
+	pg.base.world_joint_boss_template[1] = {
 		state = "always",
 		name = "Hiryuu META",
 		painting = "feilong",
@@ -28,8 +58,8 @@ pg.world_joint_boss_template = {
 			411,
 			777
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[2] = {
 		state = "always",
 		name = "Ark Royal META",
 		painting = "huangjiafangzhou",
@@ -57,8 +87,8 @@ pg.world_joint_boss_template = {
 			411,
 			574
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[3] = {
 		state = "always",
 		name = "Helena META",
 		painting = "hailunna",
@@ -90,8 +120,8 @@ pg.world_joint_boss_template = {
 			0.95,
 			0.95
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[4] = {
 		state = "always",
 		name = "Souryuu META",
 		painting = "canglong",
@@ -123,8 +153,8 @@ pg.world_joint_boss_template = {
 			0.95,
 			0.95
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[5] = {
 		state = "always",
 		name = "Gneisenau META",
 		painting = "genaisennao",
@@ -152,8 +182,8 @@ pg.world_joint_boss_template = {
 			480,
 			635
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[6] = {
 		state = "always",
 		name = "Scharnhorst META",
 		painting = "shaenhuosite",
@@ -181,8 +211,8 @@ pg.world_joint_boss_template = {
 			480,
 			635
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[7] = {
 		state = "always",
 		name = "Repulse META",
 		painting = "fanji",
@@ -219,8 +249,8 @@ pg.world_joint_boss_template = {
 			0.95,
 			0.95
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[8] = {
 		state = "always",
 		name = "Renown META",
 		painting = "shengwang",
@@ -262,8 +292,8 @@ pg.world_joint_boss_template = {
 			0.9,
 			0.9
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[9] = {
 		state = "always",
 		name = "Arizona META",
 		painting = "yalisangna",
@@ -295,8 +325,8 @@ pg.world_joint_boss_template = {
 			0.9,
 			0.9
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[10] = {
 		state = "always",
 		name = "Queen Elizabeth META",
 		painting = "yilishabainvwang",
@@ -328,8 +358,8 @@ pg.world_joint_boss_template = {
 			0.9,
 			0.9
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[11] = {
 		state = "always",
 		name = "Algérie META",
 		painting = "aerjiliya",
@@ -361,8 +391,8 @@ pg.world_joint_boss_template = {
 			0.9,
 			0.9
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[12] = {
 		state = "always",
 		name = "Jintsuu META",
 		painting = "shentong",
@@ -399,8 +429,8 @@ pg.world_joint_boss_template = {
 			0.8,
 			0.8
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[13] = {
 		state = "always",
 		name = "Kirov META",
 		painting = "jiluofu",
@@ -432,8 +462,8 @@ pg.world_joint_boss_template = {
 			0.8,
 			0.8
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[14] = {
 		state = "always",
 		name = "Rodney META",
 		painting = "luodeni",
@@ -470,8 +500,8 @@ pg.world_joint_boss_template = {
 			1,
 			1
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[15] = {
 		state = "always",
 		name = "Wichita META",
 		painting = "weiqita",
@@ -508,8 +538,8 @@ pg.world_joint_boss_template = {
 			1,
 			1
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[16] = {
 		state = "always",
 		name = "Nagato META",
 		painting = "changmen",
@@ -541,8 +571,8 @@ pg.world_joint_boss_template = {
 			1,
 			1
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[17] = {
 		state = "stop",
 		name = "Taihou META",
 		painting = "dafeng",
@@ -574,8 +604,8 @@ pg.world_joint_boss_template = {
 			1,
 			1
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[18] = {
 		item_id = 100000,
 		name = "Hornet META",
 		painting = "dahuangfeng",
@@ -632,8 +662,8 @@ pg.world_joint_boss_template = {
 			0.9,
 			0.9
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[19] = {
 		item_id = 100000,
 		name = "Kawakaze META",
 		painting = "jiangfeng",
@@ -690,8 +720,8 @@ pg.world_joint_boss_template = {
 			0.68,
 			0.68
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[20] = {
 		item_id = 100000,
 		name = "Yuudachi META",
 		painting = "xili",
@@ -748,8 +778,8 @@ pg.world_joint_boss_template = {
 			0.68,
 			0.68
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[21] = {
 		item_id = 100000,
 		name = "Yorktown META",
 		painting = "yuekecheng",
@@ -811,8 +841,8 @@ pg.world_joint_boss_template = {
 			0.65,
 			0.65
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[22] = {
 		item_id = 100000,
 		name = "Regensburg META",
 		painting = "leigensibao",
@@ -869,29 +899,5 @@ pg.world_joint_boss_template = {
 			0.65,
 			0.65
 		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19,
-		20,
-		21,
-		22
 	}
-}
+end)()

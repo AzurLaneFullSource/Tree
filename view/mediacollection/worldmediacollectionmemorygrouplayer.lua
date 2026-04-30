@@ -352,6 +352,8 @@ function var0_0.Return2MemoryGroup(arg0_30)
 		end
 	end
 
+	setInputText(arg0_30.nameSearchInput, "")
+
 	local var2_30 = arg0_30:GetIndexRatio(var1_30)
 
 	arg0_30.memoryGroupList:SetTotalCount(#arg0_30.memoryGroups, var2_30)
@@ -372,6 +374,8 @@ function var0_0.SwitchReddotMemory(arg0_31)
 	if var0_31 == 0 then
 		return
 	end
+
+	setInputText(arg0_31.nameSearchInput, "")
 
 	local var2_31 = arg0_31:GetIndexRatio(var0_31)
 
@@ -435,27 +439,15 @@ function var0_0.GetMatchGroupList(arg0_37, arg1_37, arg2_37)
 	end
 
 	if arg0_37.shipNameSearchFlag then
-		local var1_37 = {}
+		for iter2_37, iter3_37 in pairs(arg0_37.memoryGroups) do
+			if type(iter3_37.group_id) == "table" then
+				for iter4_37, iter5_37 in ipairs(iter3_37.group_id) do
+					for iter6_37, iter7_37 in ipairs(pg.ship_data_template.get_id_list_by_group_type[iter5_37]) do
+						if string.find(string.lower(pg.ship_data_statistics[iter7_37].name), arg1_37) then
+							table.insert(var0_37, iter3_37)
 
-		for iter2_37, iter3_37 in pairs(pg.ship_data_statistics) do
-			if string.find(string.lower(iter3_37.name), arg1_37) then
-				table.insert(var1_37, iter2_37)
-			end
-		end
-
-		local var2_37 = {}
-
-		for iter4_37, iter5_37 in ipairs(var1_37) do
-			local var3_37 = tostring(iter5_37)
-
-			var2_37[tonumber(string.sub(var3_37, 1, #var3_37 - 1))] = true
-		end
-
-		for iter6_37, iter7_37 in pairs(arg0_37.memoryGroups) do
-			if type(iter7_37.group_id) == "table" then
-				for iter8_37, iter9_37 in ipairs(iter7_37.group_id) do
-					if var2_37[iter9_37] and not table.contains(var0_37, iter7_37) then
-						table.insert(var0_37, iter7_37)
+							break
+						end
 					end
 				end
 			end

@@ -1,6 +1,399 @@
 pg = pg or {}
-pg.fleet_tech_ship_class = {
-	[10101] = {
+pg.fleet_tech_ship_class = rawget(pg, "fleet_tech_ship_class") or setmetatable({
+	__name = "fleet_tech_ship_class"
+}, confNEO)
+pg.fleet_tech_ship_class.all = {
+	10101,
+	10102,
+	10103,
+	10104,
+	10105,
+	10106,
+	10107,
+	10108,
+	10109,
+	10201,
+	10202,
+	10203,
+	10204,
+	10205,
+	10206,
+	10301,
+	10302,
+	10303,
+	10304,
+	10305,
+	10306,
+	10307,
+	10308,
+	10401,
+	10501,
+	10502,
+	10503,
+	10504,
+	10505,
+	10506,
+	10507,
+	10508,
+	10509,
+	10601,
+	10602,
+	10604,
+	10605,
+	10606,
+	10607,
+	10701,
+	10702,
+	10703,
+	10705,
+	10801,
+	10802,
+	10803,
+	11001,
+	11201,
+	11801,
+	20101,
+	20102,
+	20103,
+	20104,
+	20105,
+	20106,
+	20107,
+	20108,
+	20109,
+	20110,
+	20111,
+	20112,
+	20113,
+	20114,
+	20201,
+	20202,
+	20203,
+	20204,
+	20205,
+	20206,
+	20207,
+	20208,
+	20209,
+	20210,
+	20211,
+	20212,
+	20301,
+	20302,
+	20303,
+	20304,
+	20305,
+	20306,
+	20401,
+	20402,
+	20501,
+	20502,
+	20503,
+	20504,
+	20505,
+	20506,
+	20507,
+	20601,
+	20602,
+	20603,
+	20604,
+	20605,
+	20607,
+	20701,
+	20702,
+	20703,
+	20704,
+	20705,
+	21301,
+	21302,
+	30101,
+	30102,
+	30103,
+	30104,
+	30105,
+	30106,
+	30107,
+	30108,
+	30109,
+	30110,
+	30111,
+	30112,
+	30113,
+	30201,
+	30202,
+	30203,
+	30204,
+	30205,
+	30206,
+	30207,
+	30301,
+	30302,
+	30303,
+	30304,
+	30305,
+	30306,
+	30307,
+	30401,
+	30402,
+	30501,
+	30502,
+	30503,
+	30504,
+	30505,
+	30506,
+	30507,
+	30508,
+	30509,
+	30601,
+	30602,
+	30603,
+	30604,
+	30605,
+	30701,
+	30702,
+	30703,
+	30704,
+	30705,
+	30706,
+	30707,
+	30708,
+	30709,
+	30710,
+	30711,
+	30801,
+	30802,
+	31201,
+	31701,
+	31702,
+	31801,
+	31901,
+	40101,
+	40102,
+	40103,
+	40104,
+	40105,
+	40106,
+	40107,
+	40108,
+	40109,
+	40201,
+	40202,
+	40203,
+	40204,
+	40205,
+	40206,
+	40301,
+	40302,
+	40303,
+	40304,
+	40305,
+	40306,
+	40401,
+	40402,
+	40403,
+	40404,
+	40405,
+	40406,
+	40407,
+	40501,
+	40502,
+	40503,
+	40504,
+	40505,
+	40506,
+	40601,
+	40602,
+	40701,
+	40702,
+	40703,
+	40801,
+	40802,
+	40803,
+	40804,
+	40805,
+	40806,
+	41801,
+	50101,
+	50102,
+	50103,
+	50201,
+	50202,
+	50203,
+	50204,
+	50205,
+	50206,
+	50207,
+	50301,
+	50302,
+	50401,
+	50601,
+	50602,
+	51901,
+	60101,
+	60102,
+	60103,
+	60104,
+	60105,
+	60106,
+	60201,
+	60202,
+	60301,
+	60302,
+	60303,
+	60304,
+	60501,
+	60502,
+	60503,
+	60504,
+	60505,
+	60506,
+	60701,
+	60702,
+	60801,
+	60802,
+	70101,
+	70102,
+	70103,
+	70104,
+	70105,
+	70106,
+	70201,
+	70202,
+	70203,
+	70204,
+	70205,
+	70206,
+	70207,
+	70301,
+	70302,
+	70303,
+	70501,
+	70502,
+	70503,
+	70504,
+	70701,
+	70702,
+	70703,
+	71801,
+	80101,
+	80102,
+	80103,
+	80104,
+	80201,
+	80202,
+	80203,
+	80204,
+	80205,
+	80301,
+	80302,
+	80303,
+	80304,
+	80401,
+	80501,
+	80502,
+	80503,
+	80504,
+	80601,
+	80701,
+	80702,
+	80801,
+	81801,
+	90101,
+	90103,
+	90104,
+	90105,
+	90106,
+	90201,
+	90301,
+	90302,
+	90401,
+	90501,
+	90502,
+	90701,
+	110101,
+	110201,
+	110301,
+	960001,
+	960002,
+	960003,
+	960004,
+	960005,
+	960006,
+	960007,
+	960008,
+	960009,
+	960010,
+	960011,
+	960012,
+	960013,
+	960014,
+	960015,
+	960016,
+	970101,
+	970102,
+	970103,
+	970104,
+	970105,
+	970106,
+	970107,
+	970108,
+	970109,
+	970110,
+	970111,
+	970201,
+	970202,
+	970203,
+	970204,
+	970205,
+	970206,
+	970207,
+	970208,
+	970209,
+	970210,
+	970211,
+	970301,
+	970302,
+	970303,
+	970304,
+	970305,
+	970306,
+	970401,
+	970402,
+	970403,
+	970404,
+	970405,
+	970406,
+	970501,
+	970502,
+	970503,
+	970504,
+	970505,
+	970506,
+	970507,
+	970508,
+	970509,
+	970510,
+	970601,
+	970602,
+	970603,
+	970604,
+	970701,
+	970702,
+	970703,
+	970704,
+	970705,
+	970706,
+	970707,
+	970708,
+	970801,
+	971201,
+	971301
+}
+pg.base = pg.base or {}
+pg.base.fleet_tech_ship_class = {}
+
+;(function()
+	pg.base.fleet_tech_ship_class[10101] = {
 		shiptype = 1,
 		name = "Farragut Class",
 		nation = 1,
@@ -11,8 +404,8 @@ pg.fleet_tech_ship_class = {
 			10102,
 			10140
 		}
-	},
-	[10102] = {
+	}
+	pg.base.fleet_tech_ship_class[10102] = {
 		shiptype = 1,
 		name = "Mahan Class",
 		nation = 1,
@@ -23,8 +416,8 @@ pg.fleet_tech_ship_class = {
 			10103,
 			10104
 		}
-	},
-	[10103] = {
+	}
+	pg.base.fleet_tech_ship_class[10103] = {
 		shiptype = 1,
 		name = "Gridley Class",
 		nation = 1,
@@ -37,8 +430,8 @@ pg.fleet_tech_ship_class = {
 			10107,
 			10108
 		}
-	},
-	[10104] = {
+	}
+	pg.base.fleet_tech_ship_class[10104] = {
 		shiptype = 1,
 		name = "Fletcher Class",
 		nation = 1,
@@ -71,8 +464,8 @@ pg.fleet_tech_ship_class = {
 			19905,
 			10110
 		}
-	},
-	[10105] = {
+	}
+	pg.base.fleet_tech_ship_class[10105] = {
 		shiptype = 1,
 		name = "Benson Class",
 		nation = 1,
@@ -86,8 +479,8 @@ pg.fleet_tech_ship_class = {
 			10136,
 			10137
 		}
-	},
-	[10106] = {
+	}
+	pg.base.fleet_tech_ship_class[10106] = {
 		shiptype = 1,
 		name = "Sims Class",
 		nation = 1,
@@ -98,8 +491,8 @@ pg.fleet_tech_ship_class = {
 			10124,
 			10125
 		}
-	},
-	[10107] = {
+	}
+	pg.base.fleet_tech_ship_class[10107] = {
 		shiptype = 1,
 		name = "Cannon Class",
 		nation = 1,
@@ -109,8 +502,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			10126
 		}
-	},
-	[10108] = {
+	}
+	pg.base.fleet_tech_ship_class[10108] = {
 		shiptype = 1,
 		name = "Allen M. Sumner Class ",
 		nation = 1,
@@ -124,8 +517,8 @@ pg.fleet_tech_ship_class = {
 			10149,
 			10151
 		}
-	},
-	[10109] = {
+	}
+	pg.base.fleet_tech_ship_class[10109] = {
 		shiptype = 1,
 		name = "Edsall Class",
 		nation = 1,
@@ -135,8 +528,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			10150
 		}
-	},
-	[10201] = {
+	}
+	pg.base.fleet_tech_ship_class[10201] = {
 		shiptype = 2,
 		name = "Atlanta Class",
 		nation = 1,
@@ -150,8 +543,8 @@ pg.fleet_tech_ship_class = {
 			10222,
 			10226
 		}
-	},
-	[10202] = {
+	}
+	pg.base.fleet_tech_ship_class[10202] = {
 		shiptype = 2,
 		name = "Cleveland Class",
 		nation = 1,
@@ -169,8 +562,8 @@ pg.fleet_tech_ship_class = {
 			10234,
 			10235
 		}
-	},
-	[10203] = {
+	}
+	pg.base.fleet_tech_ship_class[10203] = {
 		shiptype = 2,
 		name = "Omaha Class",
 		nation = 1,
@@ -185,8 +578,8 @@ pg.fleet_tech_ship_class = {
 			10216,
 			10227
 		}
-	},
-	[10204] = {
+	}
+	pg.base.fleet_tech_ship_class[10204] = {
 		shiptype = 2,
 		name = "Brooklyn Class",
 		nation = 1,
@@ -201,8 +594,8 @@ pg.fleet_tech_ship_class = {
 			10213,
 			10205
 		}
-	},
-	[10205] = {
+	}
+	pg.base.fleet_tech_ship_class[10205] = {
 		shiptype = 2,
 		name = "Seattle Class",
 		nation = 1,
@@ -212,8 +605,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			19901
 		}
-	},
-	[10206] = {
+	}
+	pg.base.fleet_tech_ship_class[10206] = {
 		shiptype = 2,
 		name = "Fargo-class",
 		nation = 1,
@@ -223,8 +616,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			10233
 		}
-	},
-	[10301] = {
+	}
+	pg.base.fleet_tech_ship_class[10301] = {
 		shiptype = 3,
 		name = "Pensacola Class",
 		nation = 1,
@@ -235,8 +628,8 @@ pg.fleet_tech_ship_class = {
 			10301,
 			10302
 		}
-	},
-	[10302] = {
+	}
+	pg.base.fleet_tech_ship_class[10302] = {
 		shiptype = 3,
 		name = "Northampton Class",
 		nation = 1,
@@ -249,8 +642,8 @@ pg.fleet_tech_ship_class = {
 			10305,
 			10327
 		}
-	},
-	[10303] = {
+	}
+	pg.base.fleet_tech_ship_class[10303] = {
 		shiptype = 3,
 		name = "Portland Class",
 		nation = 1,
@@ -261,8 +654,8 @@ pg.fleet_tech_ship_class = {
 			10306,
 			10307
 		}
-	},
-	[10304] = {
+	}
+	pg.base.fleet_tech_ship_class[10304] = {
 		shiptype = 3,
 		name = "Wichita Class",
 		nation = 1,
@@ -272,8 +665,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			10311
 		}
-	},
-	[10305] = {
+	}
+	pg.base.fleet_tech_ship_class[10305] = {
 		shiptype = 3,
 		name = "New Orleans Class",
 		nation = 1,
@@ -288,8 +681,8 @@ pg.fleet_tech_ship_class = {
 			10310,
 			10312
 		}
-	},
-	[10306] = {
+	}
+	pg.base.fleet_tech_ship_class[10306] = {
 		shiptype = 3,
 		name = "Baltimore Class ",
 		nation = 1,
@@ -301,8 +694,8 @@ pg.fleet_tech_ship_class = {
 			10324,
 			10328
 		}
-	},
-	[10307] = {
+	}
+	pg.base.fleet_tech_ship_class[10307] = {
 		shiptype = 3,
 		name = "Anchorage Class",
 		nation = 1,
@@ -312,8 +705,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			19903
 		}
-	},
-	[10308] = {
+	}
+	pg.base.fleet_tech_ship_class[10308] = {
 		shiptype = 3,
 		name = "Oregon City Class",
 		nation = 1,
@@ -323,8 +716,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			10326
 		}
-	},
-	[10401] = {
+	}
+	pg.base.fleet_tech_ship_class[10401] = {
 		shiptype = 4,
 		name = "Lexington Class",
 		nation = 1,
@@ -334,8 +727,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			10401
 		}
-	},
-	[10501] = {
+	}
+	pg.base.fleet_tech_ship_class[10501] = {
 		shiptype = 5,
 		name = "Nevada Class",
 		nation = 1,
@@ -346,8 +739,8 @@ pg.fleet_tech_ship_class = {
 			10501,
 			10502
 		}
-	},
-	[10502] = {
+	}
+	pg.base.fleet_tech_ship_class[10502] = {
 		shiptype = 5,
 		name = "Pennsylvania Class",
 		nation = 1,
@@ -358,8 +751,8 @@ pg.fleet_tech_ship_class = {
 			10503,
 			10504
 		}
-	},
-	[10503] = {
+	}
+	pg.base.fleet_tech_ship_class[10503] = {
 		shiptype = 5,
 		name = "Tennessee Class",
 		nation = 1,
@@ -370,8 +763,8 @@ pg.fleet_tech_ship_class = {
 			10507,
 			10508
 		}
-	},
-	[10504] = {
+	}
+	pg.base.fleet_tech_ship_class[10504] = {
 		shiptype = 5,
 		name = "Colorado Class",
 		nation = 1,
@@ -383,8 +776,8 @@ pg.fleet_tech_ship_class = {
 			10510,
 			10511
 		}
-	},
-	[10505] = {
+	}
+	pg.base.fleet_tech_ship_class[10505] = {
 		shiptype = 5,
 		name = "North Carolina Class",
 		nation = 1,
@@ -395,8 +788,8 @@ pg.fleet_tech_ship_class = {
 			10512,
 			10513
 		}
-	},
-	[10506] = {
+	}
+	pg.base.fleet_tech_ship_class[10506] = {
 		shiptype = 5,
 		name = "South Dakota Class",
 		nation = 1,
@@ -409,8 +802,8 @@ pg.fleet_tech_ship_class = {
 			10519,
 			10520
 		}
-	},
-	[10507] = {
+	}
+	pg.base.fleet_tech_ship_class[10507] = {
 		shiptype = 5,
 		name = "Georgia Class",
 		nation = 1,
@@ -420,8 +813,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			19902
 		}
-	},
-	[10508] = {
+	}
+	pg.base.fleet_tech_ship_class[10508] = {
 		shiptype = 5,
 		name = "Iowa Class",
 		nation = 1,
@@ -431,8 +824,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			10517
 		}
-	},
-	[10509] = {
+	}
+	pg.base.fleet_tech_ship_class[10509] = {
 		shiptype = 5,
 		name = "Kansas",
 		nation = 1,
@@ -442,8 +835,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			19906
 		}
-	},
-	[10601] = {
+	}
+	pg.base.fleet_tech_ship_class[10601] = {
 		shiptype = 6,
 		name = "Long Island Class",
 		nation = 1,
@@ -453,8 +846,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			10601
 		}
-	},
-	[10602] = {
+	}
+	pg.base.fleet_tech_ship_class[10602] = {
 		shiptype = 6,
 		name = "Bogue Class",
 		nation = 1,
@@ -464,8 +857,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			10602
 		}
-	},
-	[10604] = {
+	}
+	pg.base.fleet_tech_ship_class[10604] = {
 		shiptype = 6,
 		name = "Langley Class",
 		nation = 1,
@@ -475,8 +868,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			10701
 		}
-	},
-	[10605] = {
+	}
+	pg.base.fleet_tech_ship_class[10605] = {
 		shiptype = 6,
 		name = "Ranger Class",
 		nation = 1,
@@ -486,8 +879,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			10704
 		}
-	},
-	[10606] = {
+	}
+	pg.base.fleet_tech_ship_class[10606] = {
 		shiptype = 6,
 		name = "Independence Class",
 		nation = 1,
@@ -502,8 +895,8 @@ pg.fleet_tech_ship_class = {
 			10727,
 			10730
 		}
-	},
-	[10607] = {
+	}
+	pg.base.fleet_tech_ship_class[10607] = {
 		shiptype = 6,
 		name = "Casablanca Class ",
 		nation = 1,
@@ -513,8 +906,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			10655
 		}
-	},
-	[10701] = {
+	}
+	pg.base.fleet_tech_ship_class[10701] = {
 		shiptype = 7,
 		name = "Lexington Class",
 		nation = 1,
@@ -525,8 +918,8 @@ pg.fleet_tech_ship_class = {
 			10702,
 			10703
 		}
-	},
-	[10702] = {
+	}
+	pg.base.fleet_tech_ship_class[10702] = {
 		shiptype = 7,
 		name = "Yorktown Class",
 		nation = 1,
@@ -538,8 +931,8 @@ pg.fleet_tech_ship_class = {
 			10706,
 			10707
 		}
-	},
-	[10703] = {
+	}
+	pg.base.fleet_tech_ship_class[10703] = {
 		shiptype = 7,
 		name = "Wasp Class",
 		nation = 1,
@@ -549,8 +942,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			10708
 		}
-	},
-	[10705] = {
+	}
+	pg.base.fleet_tech_ship_class[10705] = {
 		shiptype = 7,
 		name = "Essex Class",
 		nation = 1,
@@ -568,8 +961,8 @@ pg.fleet_tech_ship_class = {
 			10717,
 			10738
 		}
-	},
-	[10801] = {
+	}
+	pg.base.fleet_tech_ship_class[10801] = {
 		shiptype = 8,
 		name = "Gato Class",
 		nation = 1,
@@ -584,8 +977,8 @@ pg.fleet_tech_ship_class = {
 			10801,
 			10808
 		}
-	},
-	[10802] = {
+	}
+	pg.base.fleet_tech_ship_class[10802] = {
 		shiptype = 8,
 		name = "Balao Class",
 		nation = 1,
@@ -595,8 +988,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			10806
 		}
-	},
-	[10803] = {
+	}
+	pg.base.fleet_tech_ship_class[10803] = {
 		shiptype = 8,
 		name = "Narwhal Class",
 		nation = 1,
@@ -606,8 +999,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			10807
 		}
-	},
-	[11001] = {
+	}
+	pg.base.fleet_tech_ship_class[11001] = {
 		shiptype = 10,
 		name = "Kearsarge",
 		nation = 1,
@@ -617,8 +1010,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			19904
 		}
-	},
-	[11201] = {
+	}
+	pg.base.fleet_tech_ship_class[11201] = {
 		shiptype = 12,
 		name = "Vestal Class",
 		nation = 1,
@@ -628,8 +1021,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			11201
 		}
-	},
-	[11801] = {
+	}
+	pg.base.fleet_tech_ship_class[11801] = {
 		shiptype = 18,
 		name = "Alaska Class",
 		nation = 1,
@@ -639,8 +1032,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			11802
 		}
-	},
-	[20101] = {
+	}
+	pg.base.fleet_tech_ship_class[20101] = {
 		shiptype = 1,
 		name = "A Class",
 		nation = 2,
@@ -651,8 +1044,8 @@ pg.fleet_tech_ship_class = {
 			20102,
 			20103
 		}
-	},
-	[20102] = {
+	}
+	pg.base.fleet_tech_ship_class[20102] = {
 		shiptype = 1,
 		name = "B Class",
 		nation = 2,
@@ -663,8 +1056,8 @@ pg.fleet_tech_ship_class = {
 			20106,
 			20107
 		}
-	},
-	[20103] = {
+	}
+	pg.base.fleet_tech_ship_class[20103] = {
 		shiptype = 1,
 		name = "C Class",
 		nation = 2,
@@ -676,8 +1069,8 @@ pg.fleet_tech_ship_class = {
 			20109,
 			20110
 		}
-	},
-	[20104] = {
+	}
+	pg.base.fleet_tech_ship_class[20104] = {
 		shiptype = 1,
 		name = "F Class",
 		nation = 2,
@@ -688,8 +1081,8 @@ pg.fleet_tech_ship_class = {
 			20111,
 			20112
 		}
-	},
-	[20105] = {
+	}
+	pg.base.fleet_tech_ship_class[20105] = {
 		shiptype = 1,
 		name = "G Class",
 		nation = 2,
@@ -701,8 +1094,8 @@ pg.fleet_tech_ship_class = {
 			20114,
 			20139
 		}
-	},
-	[20106] = {
+	}
+	pg.base.fleet_tech_ship_class[20106] = {
 		shiptype = 1,
 		name = "H Class",
 		nation = 2,
@@ -714,8 +1107,8 @@ pg.fleet_tech_ship_class = {
 			20120,
 			20136
 		}
-	},
-	[20107] = {
+	}
+	pg.base.fleet_tech_ship_class[20107] = {
 		shiptype = 1,
 		name = "V Class",
 		nation = 2,
@@ -725,8 +1118,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20123
 		}
-	},
-	[20108] = {
+	}
+	pg.base.fleet_tech_ship_class[20108] = {
 		shiptype = 1,
 		name = "J Class",
 		nation = 2,
@@ -741,8 +1134,8 @@ pg.fleet_tech_ship_class = {
 			20134,
 			20135
 		}
-	},
-	[20109] = {
+	}
+	pg.base.fleet_tech_ship_class[20109] = {
 		shiptype = 1,
 		name = "M Class",
 		nation = 2,
@@ -753,8 +1146,8 @@ pg.fleet_tech_ship_class = {
 			20126,
 			20127
 		}
-	},
-	[20110] = {
+	}
+	pg.base.fleet_tech_ship_class[20110] = {
 		shiptype = 1,
 		name = "Amazon Class",
 		nation = 2,
@@ -764,8 +1157,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20101
 		}
-	},
-	[20111] = {
+	}
+	pg.base.fleet_tech_ship_class[20111] = {
 		shiptype = 1,
 		name = "E Class",
 		nation = 2,
@@ -775,8 +1168,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20129
 		}
-	},
-	[20112] = {
+	}
+	pg.base.fleet_tech_ship_class[20112] = {
 		shiptype = 1,
 		name = "Tribal Class ",
 		nation = 2,
@@ -787,8 +1180,8 @@ pg.fleet_tech_ship_class = {
 			20132,
 			20137
 		}
-	},
-	[20113] = {
+	}
+	pg.base.fleet_tech_ship_class[20113] = {
 		shiptype = 1,
 		name = "I Class",
 		nation = 2,
@@ -798,8 +1191,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20133
 		}
-	},
-	[20114] = {
+	}
+	pg.base.fleet_tech_ship_class[20114] = {
 		shiptype = 1,
 		name = "Battle Class",
 		nation = 2,
@@ -809,8 +1202,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20138
 		}
-	},
-	[20201] = {
+	}
+	pg.base.fleet_tech_ship_class[20201] = {
 		shiptype = 2,
 		name = "Leander Class",
 		nation = 2,
@@ -822,8 +1215,8 @@ pg.fleet_tech_ship_class = {
 			20202,
 			20203
 		}
-	},
-	[20202] = {
+	}
+	pg.base.fleet_tech_ship_class[20202] = {
 		shiptype = 2,
 		name = "Southampton Class ",
 		nation = 2,
@@ -836,8 +1229,8 @@ pg.fleet_tech_ship_class = {
 			20208,
 			20226
 		}
-	},
-	[20203] = {
+	}
+	pg.base.fleet_tech_ship_class[20203] = {
 		shiptype = 2,
 		name = "Arethusa Class",
 		nation = 2,
@@ -850,8 +1243,8 @@ pg.fleet_tech_ship_class = {
 			20215,
 			20229
 		}
-	},
-	[20204] = {
+	}
+	pg.base.fleet_tech_ship_class[20204] = {
 		shiptype = 2,
 		name = "Fiji Class",
 		nation = 2,
@@ -863,8 +1256,8 @@ pg.fleet_tech_ship_class = {
 			20217,
 			20236
 		}
-	},
-	[20205] = {
+	}
+	pg.base.fleet_tech_ship_class[20205] = {
 		shiptype = 2,
 		name = "Edinburgh Class",
 		nation = 2,
@@ -875,8 +1268,8 @@ pg.fleet_tech_ship_class = {
 			20211,
 			20212
 		}
-	},
-	[20206] = {
+	}
+	pg.base.fleet_tech_ship_class[20206] = {
 		shiptype = 2,
 		name = "Dido Class",
 		nation = 2,
@@ -893,8 +1286,8 @@ pg.fleet_tech_ship_class = {
 			20231,
 			20235
 		}
-	},
-	[20207] = {
+	}
+	pg.base.fleet_tech_ship_class[20207] = {
 		shiptype = 2,
 		name = "Ceres Class",
 		nation = 2,
@@ -905,8 +1298,8 @@ pg.fleet_tech_ship_class = {
 			20221,
 			20222
 		}
-	},
-	[20208] = {
+	}
+	pg.base.fleet_tech_ship_class[20208] = {
 		shiptype = 2,
 		name = "Neptune Class",
 		nation = 2,
@@ -916,8 +1309,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			29901
 		}
-	},
-	[20209] = {
+	}
+	pg.base.fleet_tech_ship_class[20209] = {
 		shiptype = 2,
 		name = "Swiftsure Class ",
 		nation = 2,
@@ -927,8 +1320,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20223
 		}
-	},
-	[20210] = {
+	}
+	pg.base.fleet_tech_ship_class[20210] = {
 		shiptype = 2,
 		name = "Gloucester Class",
 		nation = 2,
@@ -940,8 +1333,8 @@ pg.fleet_tech_ship_class = {
 			20210,
 			20234
 		}
-	},
-	[20211] = {
+	}
+	pg.base.fleet_tech_ship_class[20211] = {
 		shiptype = 2,
 		name = "Emerald Class",
 		nation = 2,
@@ -951,8 +1344,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20232
 		}
-	},
-	[20212] = {
+	}
+	pg.base.fleet_tech_ship_class[20212] = {
 		shiptype = 2,
 		name = "Plymouth",
 		nation = 2,
@@ -962,8 +1355,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			29905
 		}
-	},
-	[20301] = {
+	}
+	pg.base.fleet_tech_ship_class[20301] = {
 		shiptype = 3,
 		name = "London Class",
 		nation = 2,
@@ -976,8 +1369,8 @@ pg.fleet_tech_ship_class = {
 			20309,
 			20313
 		}
-	},
-	[20302] = {
+	}
+	pg.base.fleet_tech_ship_class[20302] = {
 		shiptype = 3,
 		name = "Kent Class",
 		nation = 2,
@@ -988,8 +1381,8 @@ pg.fleet_tech_ship_class = {
 			20303,
 			20304
 		}
-	},
-	[20303] = {
+	}
+	pg.base.fleet_tech_ship_class[20303] = {
 		shiptype = 3,
 		name = "Norfolk Class",
 		nation = 2,
@@ -1000,8 +1393,8 @@ pg.fleet_tech_ship_class = {
 			20305,
 			20306
 		}
-	},
-	[20304] = {
+	}
+	pg.base.fleet_tech_ship_class[20304] = {
 		shiptype = 3,
 		name = "York Class",
 		nation = 2,
@@ -1012,8 +1405,8 @@ pg.fleet_tech_ship_class = {
 			20307,
 			20308
 		}
-	},
-	[20305] = {
+	}
+	pg.base.fleet_tech_ship_class[20305] = {
 		shiptype = 3,
 		name = "Cheshire Class",
 		nation = 2,
@@ -1023,8 +1416,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			29903
 		}
-	},
-	[20306] = {
+	}
+	pg.base.fleet_tech_ship_class[20306] = {
 		shiptype = 3,
 		name = "Drake Class",
 		nation = 2,
@@ -1034,8 +1427,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			29904
 		}
-	},
-	[20401] = {
+	}
+	pg.base.fleet_tech_ship_class[20401] = {
 		shiptype = 4,
 		name = "Renown Class",
 		nation = 2,
@@ -1046,8 +1439,8 @@ pg.fleet_tech_ship_class = {
 			20401,
 			20402
 		}
-	},
-	[20402] = {
+	}
+	pg.base.fleet_tech_ship_class[20402] = {
 		shiptype = 4,
 		name = "Admiral Class",
 		nation = 2,
@@ -1057,8 +1450,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20403
 		}
-	},
-	[20501] = {
+	}
+	pg.base.fleet_tech_ship_class[20501] = {
 		shiptype = 5,
 		name = "Queen Elizabeth Class",
 		nation = 2,
@@ -1070,8 +1463,8 @@ pg.fleet_tech_ship_class = {
 			20502,
 			20510
 		}
-	},
-	[20502] = {
+	}
+	pg.base.fleet_tech_ship_class[20502] = {
 		shiptype = 5,
 		name = "Nelson Class",
 		nation = 2,
@@ -1082,8 +1475,8 @@ pg.fleet_tech_ship_class = {
 			20503,
 			20504
 		}
-	},
-	[20503] = {
+	}
+	pg.base.fleet_tech_ship_class[20503] = {
 		shiptype = 5,
 		name = "King George V Class",
 		nation = 2,
@@ -1096,8 +1489,8 @@ pg.fleet_tech_ship_class = {
 			20507,
 			20509
 		}
-	},
-	[20504] = {
+	}
+	pg.base.fleet_tech_ship_class[20504] = {
 		shiptype = 5,
 		name = "Monarch Class",
 		nation = 2,
@@ -1107,8 +1500,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			29902
 		}
-	},
-	[20505] = {
+	}
+	pg.base.fleet_tech_ship_class[20505] = {
 		shiptype = 5,
 		name = "Revenge Class",
 		nation = 2,
@@ -1119,8 +1512,8 @@ pg.fleet_tech_ship_class = {
 			20511,
 			20514
 		}
-	},
-	[20506] = {
+	}
+	pg.base.fleet_tech_ship_class[20506] = {
 		shiptype = 5,
 		name = "Vanguard",
 		nation = 2,
@@ -1130,8 +1523,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20513
 		}
-	},
-	[20507] = {
+	}
+	pg.base.fleet_tech_ship_class[20507] = {
 		shiptype = 5,
 		name = "Lion Class",
 		nation = 2,
@@ -1141,8 +1534,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20516
 		}
-	},
-	[20601] = {
+	}
+	pg.base.fleet_tech_ship_class[20601] = {
 		shiptype = 6,
 		name = "Hermes Class",
 		nation = 2,
@@ -1152,8 +1545,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20601
 		}
-	},
-	[20602] = {
+	}
+	pg.base.fleet_tech_ship_class[20602] = {
 		shiptype = 6,
 		name = "Unicorn Class",
 		nation = 2,
@@ -1163,8 +1556,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20603
 		}
-	},
-	[20603] = {
+	}
+	pg.base.fleet_tech_ship_class[20603] = {
 		shiptype = 6,
 		name = "Attacker Class",
 		nation = 2,
@@ -1174,8 +1567,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20605
 		}
-	},
-	[20604] = {
+	}
+	pg.base.fleet_tech_ship_class[20604] = {
 		shiptype = 6,
 		name = "Centaur Class",
 		nation = 2,
@@ -1186,8 +1579,8 @@ pg.fleet_tech_ship_class = {
 			20604,
 			20607
 		}
-	},
-	[20605] = {
+	}
+	pg.base.fleet_tech_ship_class[20605] = {
 		shiptype = 6,
 		name = "Colossus Class ",
 		nation = 2,
@@ -1198,8 +1591,8 @@ pg.fleet_tech_ship_class = {
 			20606,
 			20608
 		}
-	},
-	[20607] = {
+	}
+	pg.base.fleet_tech_ship_class[20607] = {
 		shiptype = 6,
 		name = "Argus",
 		nation = 2,
@@ -1209,8 +1602,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20602
 		}
-	},
-	[20701] = {
+	}
+	pg.base.fleet_tech_ship_class[20701] = {
 		shiptype = 7,
 		name = "Illustrious Class",
 		nation = 2,
@@ -1223,8 +1616,8 @@ pg.fleet_tech_ship_class = {
 			20705,
 			20712
 		}
-	},
-	[20702] = {
+	}
+	pg.base.fleet_tech_ship_class[20702] = {
 		shiptype = 7,
 		name = "Courageous Class",
 		nation = 2,
@@ -1234,8 +1627,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20706
 		}
-	},
-	[20703] = {
+	}
+	pg.base.fleet_tech_ship_class[20703] = {
 		shiptype = 7,
 		name = "Ark Royal Class",
 		nation = 2,
@@ -1245,8 +1638,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20702
 		}
-	},
-	[20704] = {
+	}
+	pg.base.fleet_tech_ship_class[20704] = {
 		shiptype = 7,
 		name = "Eagle Class",
 		nation = 2,
@@ -1256,8 +1649,10 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20701
 		}
-	},
-	[20705] = {
+	}
+end)()
+;(function()
+	pg.base.fleet_tech_ship_class[20705] = {
 		shiptype = 7,
 		name = "Implacable Class",
 		nation = 2,
@@ -1267,8 +1662,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			20707
 		}
-	},
-	[21301] = {
+	}
+	pg.base.fleet_tech_ship_class[21301] = {
 		shiptype = 13,
 		name = "Erebus Class",
 		nation = 2,
@@ -1279,8 +1674,8 @@ pg.fleet_tech_ship_class = {
 			21301,
 			21302
 		}
-	},
-	[21302] = {
+	}
+	pg.base.fleet_tech_ship_class[21302] = {
 		shiptype = 13,
 		name = "Roberts Class",
 		nation = 2,
@@ -1290,8 +1685,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			21304
 		}
-	},
-	[30101] = {
+	}
+	pg.base.fleet_tech_ship_class[30101] = {
 		shiptype = 1,
 		name = "Fubuki Class Type I (Fubuki)",
 		nation = 3,
@@ -1304,8 +1699,8 @@ pg.fleet_tech_ship_class = {
 			30172,
 			30104
 		}
-	},
-	[30102] = {
+	}
+	pg.base.fleet_tech_ship_class[30102] = {
 		shiptype = 1,
 		name = "Fubuki Class Type II (Ayanami)",
 		nation = 3,
@@ -1315,8 +1710,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30105
 		}
-	},
-	[30103] = {
+	}
+	pg.base.fleet_tech_ship_class[30103] = {
 		shiptype = 1,
 		name = "Fubuki Class Type III (Akatsuki)",
 		nation = 3,
@@ -1329,8 +1724,8 @@ pg.fleet_tech_ship_class = {
 			30111,
 			30112
 		}
-	},
-	[30104] = {
+	}
+	pg.base.fleet_tech_ship_class[30104] = {
 		shiptype = 1,
 		name = "Shiratsuyu Class",
 		nation = 3,
@@ -1345,8 +1740,8 @@ pg.fleet_tech_ship_class = {
 			30147,
 			30148
 		}
-	},
-	[30105] = {
+	}
+	pg.base.fleet_tech_ship_class[30105] = {
 		shiptype = 1,
 		name = "Kagerou Class",
 		nation = 3,
@@ -1365,8 +1760,8 @@ pg.fleet_tech_ship_class = {
 			30162,
 			30120
 		}
-	},
-	[30106] = {
+	}
+	pg.base.fleet_tech_ship_class[30106] = {
 		shiptype = 1,
 		name = "Hatsuharu Class",
 		nation = 3,
@@ -1380,8 +1775,8 @@ pg.fleet_tech_ship_class = {
 			30125,
 			30126
 		}
-	},
-	[30107] = {
+	}
+	pg.base.fleet_tech_ship_class[30107] = {
 		shiptype = 1,
 		name = "Kamikaze Class",
 		nation = 3,
@@ -1395,8 +1790,8 @@ pg.fleet_tech_ship_class = {
 			30185,
 			30190
 		}
-	},
-	[30108] = {
+	}
+	pg.base.fleet_tech_ship_class[30108] = {
 		shiptype = 1,
 		name = "Mutsuki Class",
 		nation = 3,
@@ -1412,8 +1807,8 @@ pg.fleet_tech_ship_class = {
 			30139,
 			30141
 		}
-	},
-	[30109] = {
+	}
+	pg.base.fleet_tech_ship_class[30109] = {
 		shiptype = 1,
 		name = "Akizuki Class",
 		nation = 3,
@@ -1429,8 +1824,8 @@ pg.fleet_tech_ship_class = {
 			30188,
 			30189
 		}
-	},
-	[30110] = {
+	}
+	pg.base.fleet_tech_ship_class[30110] = {
 		shiptype = 1,
 		name = "Asashio Class",
 		nation = 3,
@@ -1444,8 +1839,8 @@ pg.fleet_tech_ship_class = {
 			30166,
 			30181
 		}
-	},
-	[30111] = {
+	}
+	pg.base.fleet_tech_ship_class[30111] = {
 		shiptype = 1,
 		name = "Yuugumo Class",
 		nation = 3,
@@ -1461,8 +1856,8 @@ pg.fleet_tech_ship_class = {
 			30194,
 			30192
 		}
-	},
-	[30112] = {
+	}
+	pg.base.fleet_tech_ship_class[30112] = {
 		shiptype = 1,
 		name = "Kitakaze Class",
 		nation = 3,
@@ -1472,8 +1867,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			39903
 		}
-	},
-	[30113] = {
+	}
+	pg.base.fleet_tech_ship_class[30113] = {
 		shiptype = 1,
 		name = "Shimakaze Class",
 		nation = 3,
@@ -1483,8 +1878,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30129
 		}
-	},
-	[30201] = {
+	}
+	pg.base.fleet_tech_ship_class[30201] = {
 		shiptype = 2,
 		name = "Yuubari Class",
 		nation = 3,
@@ -1494,8 +1889,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30201
 		}
-	},
-	[30202] = {
+	}
+	pg.base.fleet_tech_ship_class[30202] = {
 		shiptype = 2,
 		name = "Nagara Class",
 		nation = 3,
@@ -1510,8 +1905,8 @@ pg.fleet_tech_ship_class = {
 			30208,
 			30209
 		}
-	},
-	[30203] = {
+	}
+	pg.base.fleet_tech_ship_class[30203] = {
 		shiptype = 2,
 		name = "Mogami Class",
 		nation = 3,
@@ -1524,8 +1919,8 @@ pg.fleet_tech_ship_class = {
 			30317,
 			30318
 		}
-	},
-	[30204] = {
+	}
+	pg.base.fleet_tech_ship_class[30204] = {
 		shiptype = 2,
 		name = "Sendai Class",
 		nation = 3,
@@ -1541,8 +1936,8 @@ pg.fleet_tech_ship_class = {
 			30228,
 			30229
 		}
-	},
-	[30205] = {
+	}
+	pg.base.fleet_tech_ship_class[30205] = {
 		shiptype = 2,
 		name = "Agano Class",
 		nation = 3,
@@ -1554,8 +1949,8 @@ pg.fleet_tech_ship_class = {
 			30221,
 			30223
 		}
-	},
-	[30206] = {
+	}
+	pg.base.fleet_tech_ship_class[30206] = {
 		shiptype = 2,
 		name = "Shimanto",
 		nation = 3,
@@ -1565,8 +1960,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			39906
 		}
-	},
-	[30207] = {
+	}
+	pg.base.fleet_tech_ship_class[30207] = {
 		shiptype = 2,
 		name = "Watarase",
 		nation = 3,
@@ -1576,8 +1971,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30225
 		}
-	},
-	[30301] = {
+	}
+	pg.base.fleet_tech_ship_class[30301] = {
 		shiptype = 3,
 		name = "Furutaka Class",
 		nation = 3,
@@ -1588,8 +1983,8 @@ pg.fleet_tech_ship_class = {
 			30301,
 			30302
 		}
-	},
-	[30302] = {
+	}
+	pg.base.fleet_tech_ship_class[30302] = {
 		shiptype = 3,
 		name = "Aoba Class",
 		nation = 3,
@@ -1600,8 +1995,8 @@ pg.fleet_tech_ship_class = {
 			30303,
 			30304
 		}
-	},
-	[30303] = {
+	}
+	pg.base.fleet_tech_ship_class[30303] = {
 		shiptype = 3,
 		name = "Myoukou Class",
 		nation = 3,
@@ -1614,8 +2009,8 @@ pg.fleet_tech_ship_class = {
 			30309,
 			30310
 		}
-	},
-	[30304] = {
+	}
+	pg.base.fleet_tech_ship_class[30304] = {
 		shiptype = 3,
 		name = "Takao Class",
 		nation = 3,
@@ -1628,8 +2023,8 @@ pg.fleet_tech_ship_class = {
 			30313,
 			30314
 		}
-	},
-	[30305] = {
+	}
+	pg.base.fleet_tech_ship_class[30305] = {
 		shiptype = 3,
 		name = "Ibuki Class",
 		nation = 3,
@@ -1640,8 +2035,8 @@ pg.fleet_tech_ship_class = {
 			39901,
 			30320
 		}
-	},
-	[30306] = {
+	}
+	pg.base.fleet_tech_ship_class[30306] = {
 		shiptype = 3,
 		name = "Tone Class",
 		nation = 3,
@@ -1651,8 +2046,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30306
 		}
-	},
-	[30307] = {
+	}
+	pg.base.fleet_tech_ship_class[30307] = {
 		shiptype = 3,
 		name = "Unzen Class",
 		nation = 3,
@@ -1662,8 +2057,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30319
 		}
-	},
-	[30401] = {
+	}
+	pg.base.fleet_tech_ship_class[30401] = {
 		shiptype = 4,
 		name = "Kongou Class",
 		nation = 3,
@@ -1676,8 +2071,8 @@ pg.fleet_tech_ship_class = {
 			30403,
 			30404
 		}
-	},
-	[30402] = {
+	}
+	pg.base.fleet_tech_ship_class[30402] = {
 		shiptype = 4,
 		name = "Amagi Class",
 		nation = 3,
@@ -1687,8 +2082,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30405
 		}
-	},
-	[30501] = {
+	}
+	pg.base.fleet_tech_ship_class[30501] = {
 		shiptype = 5,
 		name = "Fusou Class",
 		nation = 3,
@@ -1699,8 +2094,8 @@ pg.fleet_tech_ship_class = {
 			30501,
 			30502
 		}
-	},
-	[30502] = {
+	}
+	pg.base.fleet_tech_ship_class[30502] = {
 		shiptype = 5,
 		name = "Ise Class",
 		nation = 3,
@@ -1711,8 +2106,8 @@ pg.fleet_tech_ship_class = {
 			30503,
 			30504
 		}
-	},
-	[30503] = {
+	}
+	pg.base.fleet_tech_ship_class[30503] = {
 		shiptype = 5,
 		name = "Nagato Class",
 		nation = 3,
@@ -1723,8 +2118,8 @@ pg.fleet_tech_ship_class = {
 			30505,
 			30506
 		}
-	},
-	[30504] = {
+	}
+	pg.base.fleet_tech_ship_class[30504] = {
 		shiptype = 5,
 		name = "Tosa Class",
 		nation = 3,
@@ -1735,8 +2130,8 @@ pg.fleet_tech_ship_class = {
 			30507,
 			30508
 		}
-	},
-	[30505] = {
+	}
+	pg.base.fleet_tech_ship_class[30505] = {
 		shiptype = 5,
 		name = "Mikasa Class",
 		nation = 3,
@@ -1746,8 +2141,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30511
 		}
-	},
-	[30506] = {
+	}
+	pg.base.fleet_tech_ship_class[30506] = {
 		shiptype = 5,
 		name = "Izumo Class",
 		nation = 3,
@@ -1757,8 +2152,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			39902
 		}
-	},
-	[30507] = {
+	}
+	pg.base.fleet_tech_ship_class[30507] = {
 		shiptype = 5,
 		name = "Kii Class ",
 		nation = 3,
@@ -1771,8 +2166,8 @@ pg.fleet_tech_ship_class = {
 			30513,
 			30516
 		}
-	},
-	[30508] = {
+	}
+	pg.base.fleet_tech_ship_class[30508] = {
 		shiptype = 5,
 		name = "Yamato Class",
 		nation = 3,
@@ -1782,8 +2177,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30510
 		}
-	},
-	[30509] = {
+	}
+	pg.base.fleet_tech_ship_class[30509] = {
 		shiptype = 5,
 		name = "Daisen",
 		nation = 3,
@@ -1793,8 +2188,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			39907
 		}
-	},
-	[30601] = {
+	}
+	pg.base.fleet_tech_ship_class[30601] = {
 		shiptype = 6,
 		name = "Hiyou Class",
 		nation = 3,
@@ -1805,8 +2200,8 @@ pg.fleet_tech_ship_class = {
 			30601,
 			30602
 		}
-	},
-	[30602] = {
+	}
+	pg.base.fleet_tech_ship_class[30602] = {
 		shiptype = 6,
 		name = "Shouhou Class",
 		nation = 3,
@@ -1816,8 +2211,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30605
 		}
-	},
-	[30603] = {
+	}
+	pg.base.fleet_tech_ship_class[30603] = {
 		shiptype = 6,
 		name = "Houshou Class",
 		nation = 3,
@@ -1827,8 +2222,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30603
 		}
-	},
-	[30604] = {
+	}
+	pg.base.fleet_tech_ship_class[30604] = {
 		shiptype = 6,
 		name = "Ryuujou Class",
 		nation = 3,
@@ -1838,8 +2233,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30606
 		}
-	},
-	[30605] = {
+	}
+	pg.base.fleet_tech_ship_class[30605] = {
 		shiptype = 6,
 		name = "Zuihou Class ",
 		nation = 3,
@@ -1852,8 +2247,8 @@ pg.fleet_tech_ship_class = {
 			30608,
 			30609
 		}
-	},
-	[30701] = {
+	}
+	pg.base.fleet_tech_ship_class[30701] = {
 		shiptype = 7,
 		name = "Akagi Class",
 		nation = 3,
@@ -1863,8 +2258,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30701
 		}
-	},
-	[30702] = {
+	}
+	pg.base.fleet_tech_ship_class[30702] = {
 		shiptype = 7,
 		name = "Kaga Class",
 		nation = 3,
@@ -1874,8 +2269,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30702
 		}
-	},
-	[30703] = {
+	}
+	pg.base.fleet_tech_ship_class[30703] = {
 		shiptype = 7,
 		name = "Souryuu Class",
 		nation = 3,
@@ -1885,8 +2280,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30703
 		}
-	},
-	[30704] = {
+	}
+	pg.base.fleet_tech_ship_class[30704] = {
 		shiptype = 7,
 		name = "Hiryuu Class",
 		nation = 3,
@@ -1896,8 +2291,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30704
 		}
-	},
-	[30705] = {
+	}
+	pg.base.fleet_tech_ship_class[30705] = {
 		shiptype = 7,
 		name = "Shoukaku Class",
 		nation = 3,
@@ -1908,8 +2303,8 @@ pg.fleet_tech_ship_class = {
 			30705,
 			30706
 		}
-	},
-	[30706] = {
+	}
+	pg.base.fleet_tech_ship_class[30706] = {
 		shiptype = 7,
 		name = "Taihou Class",
 		nation = 3,
@@ -1919,8 +2314,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30707
 		}
-	},
-	[30707] = {
+	}
+	pg.base.fleet_tech_ship_class[30707] = {
 		shiptype = 7,
 		name = "Yamato Class ",
 		nation = 3,
@@ -1930,8 +2325,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30708
 		}
-	},
-	[30708] = {
+	}
+	pg.base.fleet_tech_ship_class[30708] = {
 		shiptype = 7,
 		name = "Hakuryuu Class",
 		nation = 3,
@@ -1941,8 +2336,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			39905
 		}
-	},
-	[30709] = {
+	}
+	pg.base.fleet_tech_ship_class[30709] = {
 		shiptype = 7,
 		name = "Unryuu Class",
 		nation = 3,
@@ -1953,8 +2348,8 @@ pg.fleet_tech_ship_class = {
 			30717,
 			30712
 		}
-	},
-	[30710] = {
+	}
+	pg.base.fleet_tech_ship_class[30710] = {
 		shiptype = 7,
 		name = "Amagi(CV)",
 		nation = 3,
@@ -1964,8 +2359,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30715
 		}
-	},
-	[30711] = {
+	}
+	pg.base.fleet_tech_ship_class[30711] = {
 		shiptype = 7,
 		name = "Hakuhou",
 		nation = 3,
@@ -1975,8 +2370,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30716
 		}
-	},
-	[30801] = {
+	}
+	pg.base.fleet_tech_ship_class[30801] = {
 		shiptype = 8,
 		name = "Type B1",
 		nation = 3,
@@ -1990,8 +2385,8 @@ pg.fleet_tech_ship_class = {
 			30804,
 			30805
 		}
-	},
-	[30802] = {
+	}
+	pg.base.fleet_tech_ship_class[30802] = {
 		shiptype = 8,
 		name = "Kaidai Type ",
 		nation = 3,
@@ -2001,8 +2396,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			30806
 		}
-	},
-	[31201] = {
+	}
+	pg.base.fleet_tech_ship_class[31201] = {
 		shiptype = 12,
 		name = "Akashi Class",
 		nation = 3,
@@ -2012,8 +2407,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			31201
 		}
-	},
-	[31701] = {
+	}
+	pg.base.fleet_tech_ship_class[31701] = {
 		shiptype = 17,
 		name = "Type A Mod. 2",
 		nation = 3,
@@ -2023,8 +2418,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			31701
 		}
-	},
-	[31702] = {
+	}
+	pg.base.fleet_tech_ship_class[31702] = {
 		shiptype = 17,
 		name = "Sentoku Type",
 		nation = 3,
@@ -2034,8 +2429,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			31702
 		}
-	},
-	[31801] = {
+	}
+	pg.base.fleet_tech_ship_class[31801] = {
 		shiptype = 18,
 		name = "Azuma Class",
 		nation = 3,
@@ -2045,8 +2440,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			39904
 		}
-	},
-	[31901] = {
+	}
+	pg.base.fleet_tech_ship_class[31901] = {
 		shiptype = 19,
 		name = "Kashino Class",
 		nation = 3,
@@ -2056,8 +2451,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			31901
 		}
-	},
-	[40101] = {
+	}
+	pg.base.fleet_tech_ship_class[40101] = {
 		shiptype = 1,
 		name = "Type 1934",
 		nation = 4,
@@ -2068,8 +2463,8 @@ pg.fleet_tech_ship_class = {
 			40101,
 			40102
 		}
-	},
-	[40102] = {
+	}
+	pg.base.fleet_tech_ship_class[40102] = {
 		shiptype = 1,
 		name = "Type 1936",
 		nation = 4,
@@ -2082,8 +2477,8 @@ pg.fleet_tech_ship_class = {
 			40120,
 			40121
 		}
-	},
-	[40103] = {
+	}
+	pg.base.fleet_tech_ship_class[40103] = {
 		shiptype = 1,
 		name = "Type 1936A",
 		nation = 4,
@@ -2097,8 +2492,8 @@ pg.fleet_tech_ship_class = {
 			40126,
 			40128
 		}
-	},
-	[40104] = {
+	}
+	pg.base.fleet_tech_ship_class[40104] = {
 		shiptype = 1,
 		name = "Type 1936B",
 		nation = 4,
@@ -2110,8 +2505,8 @@ pg.fleet_tech_ship_class = {
 			40136,
 			40143
 		}
-	},
-	[40105] = {
+	}
+	pg.base.fleet_tech_ship_class[40105] = {
 		shiptype = 1,
 		name = "Type 1936C",
 		nation = 4,
@@ -2122,8 +2517,8 @@ pg.fleet_tech_ship_class = {
 			40146,
 			40147
 		}
-	},
-	[40106] = {
+	}
+	pg.base.fleet_tech_ship_class[40106] = {
 		shiptype = 1,
 		name = "Type 1934A",
 		nation = 4,
@@ -2136,8 +2531,8 @@ pg.fleet_tech_ship_class = {
 			40113,
 			40116
 		}
-	},
-	[40107] = {
+	}
+	pg.base.fleet_tech_ship_class[40107] = {
 		shiptype = 1,
 		name = "Type 1937J Class",
 		nation = 4,
@@ -2147,8 +2542,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40199
 		}
-	},
-	[40108] = {
+	}
+	pg.base.fleet_tech_ship_class[40108] = {
 		shiptype = 1,
 		name = "Felix Schultz",
 		nation = 4,
@@ -2158,8 +2553,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			49908
 		}
-	},
-	[40109] = {
+	}
+	pg.base.fleet_tech_ship_class[40109] = {
 		shiptype = 1,
 		name = "Type 1944",
 		nation = 4,
@@ -2169,8 +2564,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40152
 		}
-	},
-	[40201] = {
+	}
+	pg.base.fleet_tech_ship_class[40201] = {
 		shiptype = 2,
 		name = "Konigsberg Class",
 		nation = 4,
@@ -2182,8 +2577,8 @@ pg.fleet_tech_ship_class = {
 			40202,
 			40203
 		}
-	},
-	[40202] = {
+	}
+	pg.base.fleet_tech_ship_class[40202] = {
 		shiptype = 2,
 		name = "Leipzig Class",
 		nation = 4,
@@ -2194,8 +2589,8 @@ pg.fleet_tech_ship_class = {
 			40204,
 			40205
 		}
-	},
-	[40203] = {
+	}
+	pg.base.fleet_tech_ship_class[40203] = {
 		shiptype = 2,
 		name = "Mainz Class",
 		nation = 4,
@@ -2205,8 +2600,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			49903
 		}
-	},
-	[40204] = {
+	}
+	pg.base.fleet_tech_ship_class[40204] = {
 		shiptype = 2,
 		name = "M Class",
 		nation = 4,
@@ -2218,8 +2613,8 @@ pg.fleet_tech_ship_class = {
 			40210,
 			40211
 		}
-	},
-	[40205] = {
+	}
+	pg.base.fleet_tech_ship_class[40205] = {
 		shiptype = 2,
 		name = "Dresden-class & Königsberg Class",
 		nation = 4,
@@ -2229,8 +2624,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40207
 		}
-	},
-	[40206] = {
+	}
+	pg.base.fleet_tech_ship_class[40206] = {
 		shiptype = 2,
 		name = "Pillau Class",
 		nation = 4,
@@ -2240,8 +2635,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40208
 		}
-	},
-	[40301] = {
+	}
+	pg.base.fleet_tech_ship_class[40301] = {
 		shiptype = 3,
 		name = "Admiral Hipper Class",
 		nation = 4,
@@ -2253,8 +2648,8 @@ pg.fleet_tech_ship_class = {
 			40303,
 			40302
 		}
-	},
-	[40302] = {
+	}
+	pg.base.fleet_tech_ship_class[40302] = {
 		shiptype = 3,
 		name = "Deutschland Class",
 		nation = 4,
@@ -2265,8 +2660,8 @@ pg.fleet_tech_ship_class = {
 			40304,
 			40305
 		}
-	},
-	[40303] = {
+	}
+	pg.base.fleet_tech_ship_class[40303] = {
 		shiptype = 3,
 		name = "Roon Class",
 		nation = 4,
@@ -2276,8 +2671,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			49901
 		}
-	},
-	[40304] = {
+	}
+	pg.base.fleet_tech_ship_class[40304] = {
 		shiptype = 3,
 		name = "P Class ",
 		nation = 4,
@@ -2289,8 +2684,8 @@ pg.fleet_tech_ship_class = {
 			40310,
 			40314
 		}
-	},
-	[40305] = {
+	}
+	pg.base.fleet_tech_ship_class[40305] = {
 		shiptype = 3,
 		name = "Roon Class",
 		nation = 4,
@@ -2300,8 +2695,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40311
 		}
-	},
-	[40306] = {
+	}
+	pg.base.fleet_tech_ship_class[40306] = {
 		shiptype = 3,
 		name = "Hindenburg",
 		nation = 4,
@@ -2311,8 +2706,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			49909
 		}
-	},
-	[40401] = {
+	}
+	pg.base.fleet_tech_ship_class[40401] = {
 		shiptype = 4,
 		name = "Scharnhorst Class",
 		nation = 4,
@@ -2323,8 +2718,8 @@ pg.fleet_tech_ship_class = {
 			40401,
 			40402
 		}
-	},
-	[40402] = {
+	}
+	pg.base.fleet_tech_ship_class[40402] = {
 		shiptype = 4,
 		name = "Odin Class",
 		nation = 4,
@@ -2334,8 +2729,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			49904
 		}
-	},
-	[40403] = {
+	}
+	pg.base.fleet_tech_ship_class[40403] = {
 		shiptype = 4,
 		name = "Seydlitz",
 		nation = 4,
@@ -2345,8 +2740,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40403
 		}
-	},
-	[40404] = {
+	}
+	pg.base.fleet_tech_ship_class[40404] = {
 		shiptype = 4,
 		name = "Derfflinger Class",
 		nation = 4,
@@ -2356,8 +2751,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40404
 		}
-	},
-	[40405] = {
+	}
+	pg.base.fleet_tech_ship_class[40405] = {
 		shiptype = 4,
 		name = "Prinz Rupprecht",
 		nation = 4,
@@ -2367,8 +2762,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			49907
 		}
-	},
-	[40406] = {
+	}
+	pg.base.fleet_tech_ship_class[40406] = {
 		shiptype = 4,
 		name = "O Class",
 		nation = 4,
@@ -2379,8 +2774,8 @@ pg.fleet_tech_ship_class = {
 			40405,
 			40406
 		}
-	},
-	[40407] = {
+	}
+	pg.base.fleet_tech_ship_class[40407] = {
 		shiptype = 4,
 		name = "Admiral Zenker",
 		nation = 4,
@@ -2390,8 +2785,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40407
 		}
-	},
-	[40501] = {
+	}
+	pg.base.fleet_tech_ship_class[40501] = {
 		shiptype = 5,
 		name = "Bismarck Class",
 		nation = 4,
@@ -2402,8 +2797,8 @@ pg.fleet_tech_ship_class = {
 			40501,
 			40502
 		}
-	},
-	[40502] = {
+	}
+	pg.base.fleet_tech_ship_class[40502] = {
 		shiptype = 5,
 		name = "Friedrich der Große Class",
 		nation = 4,
@@ -2413,8 +2808,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			49902
 		}
-	},
-	[40503] = {
+	}
+	pg.base.fleet_tech_ship_class[40503] = {
 		shiptype = 5,
 		name = "Ulrich von Hutten",
 		nation = 4,
@@ -2424,8 +2819,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40503
 		}
-	},
-	[40504] = {
+	}
+	pg.base.fleet_tech_ship_class[40504] = {
 		shiptype = 5,
 		name = "Helgoland Class",
 		nation = 4,
@@ -2435,8 +2830,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40504
 		}
-	},
-	[40505] = {
+	}
+	pg.base.fleet_tech_ship_class[40505] = {
 		shiptype = 5,
 		name = "Bismarck Zwei",
 		nation = 4,
@@ -2446,8 +2841,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40505
 		}
-	},
-	[40506] = {
+	}
+	pg.base.fleet_tech_ship_class[40506] = {
 		shiptype = 5,
 		name = "Mecklenburg",
 		nation = 4,
@@ -2457,8 +2852,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			49910
 		}
-	},
-	[40601] = {
+	}
+	pg.base.fleet_tech_ship_class[40601] = {
 		shiptype = 6,
 		name = "Weser Class",
 		nation = 4,
@@ -2468,8 +2863,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40601
 		}
-	},
-	[40602] = {
+	}
+	pg.base.fleet_tech_ship_class[40602] = {
 		shiptype = 6,
 		name = "Jade Class",
 		nation = 4,
@@ -2480,8 +2875,10 @@ pg.fleet_tech_ship_class = {
 			40602,
 			40603
 		}
-	},
-	[40701] = {
+	}
+end)()
+;(function()
+	pg.base.fleet_tech_ship_class[40701] = {
 		shiptype = 7,
 		name = "Graf Zeppelin Class",
 		nation = 4,
@@ -2492,8 +2889,8 @@ pg.fleet_tech_ship_class = {
 			40701,
 			40703
 		}
-	},
-	[40702] = {
+	}
+	pg.base.fleet_tech_ship_class[40702] = {
 		shiptype = 7,
 		name = "August von Parseval Class",
 		nation = 4,
@@ -2503,8 +2900,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			49906
 		}
-	},
-	[40703] = {
+	}
+	pg.base.fleet_tech_ship_class[40703] = {
 		shiptype = 7,
 		name = "Fritz Rumey",
 		nation = 4,
@@ -2514,8 +2911,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40704
 		}
-	},
-	[40801] = {
+	}
+	pg.base.fleet_tech_ship_class[40801] = {
 		shiptype = 8,
 		name = "Type VIIB",
 		nation = 4,
@@ -2527,8 +2924,8 @@ pg.fleet_tech_ship_class = {
 			40805,
 			40806
 		}
-	},
-	[40802] = {
+	}
+	pg.base.fleet_tech_ship_class[40802] = {
 		shiptype = 8,
 		name = "Type VIIC",
 		nation = 4,
@@ -2544,8 +2941,8 @@ pg.fleet_tech_ship_class = {
 			40812,
 			40814
 		}
-	},
-	[40803] = {
+	}
+	pg.base.fleet_tech_ship_class[40803] = {
 		shiptype = 8,
 		name = "Type IXC",
 		nation = 4,
@@ -2555,8 +2952,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40807
 		}
-	},
-	[40804] = {
+	}
+	pg.base.fleet_tech_ship_class[40804] = {
 		shiptype = 8,
 		name = "Type IXB",
 		nation = 4,
@@ -2566,8 +2963,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40808
 		}
-	},
-	[40805] = {
+	}
+	pg.base.fleet_tech_ship_class[40805] = {
 		shiptype = 8,
 		name = "Type IXA",
 		nation = 4,
@@ -2577,8 +2974,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40810
 		}
-	},
-	[40806] = {
+	}
+	pg.base.fleet_tech_ship_class[40806] = {
 		shiptype = 8,
 		name = "Type VIIA",
 		nation = 4,
@@ -2588,8 +2985,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			40813
 		}
-	},
-	[41801] = {
+	}
+	pg.base.fleet_tech_ship_class[41801] = {
 		shiptype = 18,
 		name = "Ägir Class",
 		nation = 4,
@@ -2599,8 +2996,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			49905
 		}
-	},
-	[50101] = {
+	}
+	pg.base.fleet_tech_ship_class[50101] = {
 		shiptype = 1,
 		name = "An Shan Class",
 		nation = 5,
@@ -2613,8 +3010,8 @@ pg.fleet_tech_ship_class = {
 			50103,
 			50104
 		}
-	},
-	[50102] = {
+	}
+	pg.base.fleet_tech_ship_class[50102] = {
 		shiptype = 1,
 		name = "Chang Feng Class",
 		nation = 5,
@@ -2626,8 +3023,8 @@ pg.fleet_tech_ship_class = {
 			50109,
 			50107
 		}
-	},
-	[50103] = {
+	}
+	pg.base.fleet_tech_ship_class[50103] = {
 		shiptype = 1,
 		name = "Lung Wu Class",
 		nation = 5,
@@ -2638,8 +3035,8 @@ pg.fleet_tech_ship_class = {
 			50105,
 			50106
 		}
-	},
-	[50201] = {
+	}
+	pg.base.fleet_tech_ship_class[50201] = {
 		shiptype = 2,
 		name = "Ning Hai Class",
 		nation = 5,
@@ -2650,8 +3047,8 @@ pg.fleet_tech_ship_class = {
 			50202,
 			50203
 		}
-	},
-	[50202] = {
+	}
+	pg.base.fleet_tech_ship_class[50202] = {
 		shiptype = 2,
 		name = "Yat Sen Class",
 		nation = 5,
@@ -2661,8 +3058,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			50201
 		}
-	},
-	[50203] = {
+	}
+	pg.base.fleet_tech_ship_class[50203] = {
 		shiptype = 2,
 		name = "Chao Ho Class ",
 		nation = 5,
@@ -2673,8 +3070,8 @@ pg.fleet_tech_ship_class = {
 			50205,
 			50204
 		}
-	},
-	[50204] = {
+	}
+	pg.base.fleet_tech_ship_class[50204] = {
 		shiptype = 2,
 		name = "Hai Tien-class",
 		nation = 5,
@@ -2685,8 +3082,8 @@ pg.fleet_tech_ship_class = {
 			50207,
 			50208
 		}
-	},
-	[50205] = {
+	}
+	pg.base.fleet_tech_ship_class[50205] = {
 		shiptype = 2,
 		name = "Harbin",
 		nation = 5,
@@ -2696,8 +3093,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			59901
 		}
-	},
-	[50206] = {
+	}
+	pg.base.fleet_tech_ship_class[50206] = {
 		shiptype = 2,
 		name = "Chi An",
 		nation = 5,
@@ -2707,8 +3104,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			50209
 		}
-	},
-	[50207] = {
+	}
+	pg.base.fleet_tech_ship_class[50207] = {
 		shiptype = 2,
 		name = "Hai Yung Class",
 		nation = 5,
@@ -2719,8 +3116,8 @@ pg.fleet_tech_ship_class = {
 			50210,
 			50212
 		}
-	},
-	[50301] = {
+	}
+	pg.base.fleet_tech_ship_class[50301] = {
 		shiptype = 3,
 		name = "Chien Wu",
 		nation = 5,
@@ -2730,8 +3127,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			50301
 		}
-	},
-	[50302] = {
+	}
+	pg.base.fleet_tech_ship_class[50302] = {
 		shiptype = 3,
 		name = "Chang Wu",
 		nation = 5,
@@ -2741,8 +3138,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			50302
 		}
-	},
-	[50401] = {
+	}
+	pg.base.fleet_tech_ship_class[50401] = {
 		shiptype = 4,
 		name = "Huan Ch'ang",
 		nation = 5,
@@ -2752,8 +3149,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			50401
 		}
-	},
-	[50601] = {
+	}
+	pg.base.fleet_tech_ship_class[50601] = {
 		shiptype = 6,
 		name = "Chen Hai",
 		nation = 5,
@@ -2763,8 +3160,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			50601
 		}
-	},
-	[50602] = {
+	}
+	pg.base.fleet_tech_ship_class[50602] = {
 		shiptype = 6,
 		name = "Hwah Jah",
 		nation = 5,
@@ -2774,8 +3171,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			50602
 		}
-	},
-	[51901] = {
+	}
+	pg.base.fleet_tech_ship_class[51901] = {
 		shiptype = 19,
 		name = "Ting An",
 		nation = 5,
@@ -2785,8 +3182,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			51901
 		}
-	},
-	[60101] = {
+	}
+	pg.base.fleet_tech_ship_class[60101] = {
 		shiptype = 1,
 		name = "Soldati Class",
 		nation = 6,
@@ -2796,8 +3193,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			60102
 		}
-	},
-	[60102] = {
+	}
+	pg.base.fleet_tech_ship_class[60102] = {
 		shiptype = 1,
 		name = "Alfredo Oriani Class",
 		nation = 6,
@@ -2809,8 +3206,8 @@ pg.fleet_tech_ship_class = {
 			60108,
 			60111
 		}
-	},
-	[60103] = {
+	}
+	pg.base.fleet_tech_ship_class[60103] = {
 		shiptype = 1,
 		name = "Maestrale Class",
 		nation = 6,
@@ -2821,8 +3218,8 @@ pg.fleet_tech_ship_class = {
 			60104,
 			60105
 		}
-	},
-	[60104] = {
+	}
+	pg.base.fleet_tech_ship_class[60104] = {
 		shiptype = 1,
 		name = "Navigatori Class",
 		nation = 6,
@@ -2834,8 +3231,8 @@ pg.fleet_tech_ship_class = {
 			60109,
 			60112
 		}
-	},
-	[60105] = {
+	}
+	pg.base.fleet_tech_ship_class[60105] = {
 		shiptype = 1,
 		name = "Capitani Romani Class",
 		nation = 6,
@@ -2846,8 +3243,8 @@ pg.fleet_tech_ship_class = {
 			60107,
 			60110
 		}
-	},
-	[60106] = {
+	}
+	pg.base.fleet_tech_ship_class[60106] = {
 		shiptype = 1,
 		name = "Vittorio Cuniberti",
 		nation = 6,
@@ -2857,8 +3254,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			69903
 		}
-	},
-	[60201] = {
+	}
+	pg.base.fleet_tech_ship_class[60201] = {
 		shiptype = 2,
 		name = "Duca degli Abruzzi Class",
 		nation = 6,
@@ -2869,8 +3266,8 @@ pg.fleet_tech_ship_class = {
 			60201,
 			60202
 		}
-	},
-	[60202] = {
+	}
+	pg.base.fleet_tech_ship_class[60202] = {
 		shiptype = 2,
 		name = "Giussano Class",
 		nation = 6,
@@ -2881,8 +3278,8 @@ pg.fleet_tech_ship_class = {
 			60203,
 			60204
 		}
-	},
-	[60301] = {
+	}
+	pg.base.fleet_tech_ship_class[60301] = {
 		shiptype = 3,
 		name = "Zara Class",
 		nation = 6,
@@ -2894,8 +3291,8 @@ pg.fleet_tech_ship_class = {
 			60303,
 			60306
 		}
-	},
-	[60302] = {
+	}
+	pg.base.fleet_tech_ship_class[60302] = {
 		shiptype = 3,
 		name = "Trento Class",
 		nation = 6,
@@ -2906,8 +3303,8 @@ pg.fleet_tech_ship_class = {
 			60301,
 			60304
 		}
-	},
-	[60303] = {
+	}
+	pg.base.fleet_tech_ship_class[60303] = {
 		shiptype = 3,
 		name = "Bolzano",
 		nation = 6,
@@ -2917,8 +3314,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			60305
 		}
-	},
-	[60304] = {
+	}
+	pg.base.fleet_tech_ship_class[60304] = {
 		shiptype = 3,
 		name = "Napoli",
 		nation = 6,
@@ -2928,8 +3325,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			69902
 		}
-	},
-	[60501] = {
+	}
+	pg.base.fleet_tech_ship_class[60501] = {
 		shiptype = 5,
 		name = "Vittorio Veneto Class",
 		nation = 6,
@@ -2941,8 +3338,8 @@ pg.fleet_tech_ship_class = {
 			60502,
 			60503
 		}
-	},
-	[60502] = {
+	}
+	pg.base.fleet_tech_ship_class[60502] = {
 		shiptype = 5,
 		name = "Conte di Cavour Class",
 		nation = 6,
@@ -2953,8 +3350,8 @@ pg.fleet_tech_ship_class = {
 			60505,
 			60506
 		}
-	},
-	[60503] = {
+	}
+	pg.base.fleet_tech_ship_class[60503] = {
 		shiptype = 5,
 		name = "Marco Polo Class",
 		nation = 6,
@@ -2964,8 +3361,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			69901
 		}
-	},
-	[60504] = {
+	}
+	pg.base.fleet_tech_ship_class[60504] = {
 		shiptype = 5,
 		name = "Andrea Doria-class",
 		nation = 6,
@@ -2975,8 +3372,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			60507
 		}
-	},
-	[60505] = {
+	}
+	pg.base.fleet_tech_ship_class[60505] = {
 		shiptype = 5,
 		name = "Raffaello",
 		nation = 6,
@@ -2986,8 +3383,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			60508
 		}
-	},
-	[60506] = {
+	}
+	pg.base.fleet_tech_ship_class[60506] = {
 		shiptype = 5,
 		name = "Francesco Caracciolo-class battleship – Francesco Caracciolo.",
 		nation = 6,
@@ -2997,8 +3394,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			60509
 		}
-	},
-	[60701] = {
+	}
+	pg.base.fleet_tech_ship_class[60701] = {
 		shiptype = 7,
 		name = "Aquila Class",
 		nation = 6,
@@ -3008,8 +3405,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			60701
 		}
-	},
-	[60702] = {
+	}
+	pg.base.fleet_tech_ship_class[60702] = {
 		shiptype = 7,
 		name = "Vittorio Veneto Class",
 		nation = 6,
@@ -3019,8 +3416,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			60702
 		}
-	},
-	[60801] = {
+	}
+	pg.base.fleet_tech_ship_class[60801] = {
 		shiptype = 8,
 		name = "Brin Class",
 		nation = 6,
@@ -3030,8 +3427,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			60801
 		}
-	},
-	[60802] = {
+	}
+	pg.base.fleet_tech_ship_class[60802] = {
 		shiptype = 8,
 		name = "Marconi Class",
 		nation = 6,
@@ -3042,8 +3439,8 @@ pg.fleet_tech_ship_class = {
 			60802,
 			60803
 		}
-	},
-	[70101] = {
+	}
+	pg.base.fleet_tech_ship_class[70101] = {
 		shiptype = 1,
 		name = "Gnevny Class",
 		nation = 7,
@@ -3056,8 +3453,8 @@ pg.fleet_tech_ship_class = {
 			70107,
 			70108
 		}
-	},
-	[70102] = {
+	}
+	pg.base.fleet_tech_ship_class[70102] = {
 		shiptype = 1,
 		name = "Leningrad Class",
 		nation = 7,
@@ -3067,8 +3464,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			70103
 		}
-	},
-	[70103] = {
+	}
+	pg.base.fleet_tech_ship_class[70103] = {
 		shiptype = 1,
 		name = "Tashkent Class",
 		nation = 7,
@@ -3078,8 +3475,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			70104
 		}
-	},
-	[70104] = {
+	}
+	pg.base.fleet_tech_ship_class[70104] = {
 		shiptype = 1,
 		name = "Kiev-Class",
 		nation = 7,
@@ -3089,8 +3486,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			70110
 		}
-	},
-	[70105] = {
+	}
+	pg.base.fleet_tech_ship_class[70105] = {
 		shiptype = 1,
 		name = "Storozhevoy-Class",
 		nation = 7,
@@ -3101,8 +3498,8 @@ pg.fleet_tech_ship_class = {
 			70109,
 			70112
 		}
-	},
-	[70106] = {
+	}
+	pg.base.fleet_tech_ship_class[70106] = {
 		shiptype = 1,
 		name = "Ognevoy-Class",
 		nation = 7,
@@ -3113,8 +3510,8 @@ pg.fleet_tech_ship_class = {
 			70111,
 			70113
 		}
-	},
-	[70201] = {
+	}
+	pg.base.fleet_tech_ship_class[70201] = {
 		shiptype = 2,
 		name = "Pallada Class",
 		nation = 7,
@@ -3124,8 +3521,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			70201
 		}
-	},
-	[70202] = {
+	}
+	pg.base.fleet_tech_ship_class[70202] = {
 		shiptype = 2,
 		name = "Bogatyr Class",
 		nation = 7,
@@ -3137,8 +3534,8 @@ pg.fleet_tech_ship_class = {
 			70202,
 			70208
 		}
-	},
-	[70203] = {
+	}
+	pg.base.fleet_tech_ship_class[70203] = {
 		shiptype = 2,
 		name = "Chapayev Class",
 		nation = 7,
@@ -3149,8 +3546,8 @@ pg.fleet_tech_ship_class = {
 			70203,
 			70205
 		}
-	},
-	[70204] = {
+	}
+	pg.base.fleet_tech_ship_class[70204] = {
 		shiptype = 2,
 		name = "Kirov Class",
 		nation = 7,
@@ -3161,8 +3558,8 @@ pg.fleet_tech_ship_class = {
 			70204,
 			70207
 		}
-	},
-	[70205] = {
+	}
+	pg.base.fleet_tech_ship_class[70205] = {
 		shiptype = 2,
 		name = "Omaha Class",
 		nation = 7,
@@ -3172,8 +3569,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			70206
 		}
-	},
-	[70206] = {
+	}
+	pg.base.fleet_tech_ship_class[70206] = {
 		shiptype = 2,
 		name = "Dmitri Donskoi",
 		nation = 7,
@@ -3183,8 +3580,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			79903
 		}
-	},
-	[70207] = {
+	}
+	pg.base.fleet_tech_ship_class[70207] = {
 		shiptype = 2,
 		name = "Admiral Nakhimov-class",
 		nation = 7,
@@ -3194,8 +3591,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			70209
 		}
-	},
-	[70301] = {
+	}
+	pg.base.fleet_tech_ship_class[70301] = {
 		shiptype = 3,
 		name = "Tallinn Class",
 		nation = 7,
@@ -3205,8 +3602,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			70301
 		}
-	},
-	[70302] = {
+	}
+	pg.base.fleet_tech_ship_class[70302] = {
 		shiptype = 3,
 		name = "Kursk",
 		nation = 7,
@@ -3216,8 +3613,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			70302
 		}
-	},
-	[70303] = {
+	}
+	pg.base.fleet_tech_ship_class[70303] = {
 		shiptype = 3,
 		name = "Moskva",
 		nation = 7,
@@ -3227,8 +3624,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			70303
 		}
-	},
-	[70501] = {
+	}
+	pg.base.fleet_tech_ship_class[70501] = {
 		shiptype = 5,
 		name = "Gangut Class",
 		nation = 7,
@@ -3240,8 +3637,8 @@ pg.fleet_tech_ship_class = {
 			70507,
 			70508
 		}
-	},
-	[70502] = {
+	}
+	pg.base.fleet_tech_ship_class[70502] = {
 		shiptype = 5,
 		name = "Sovetsky Soyuz Class",
 		nation = 7,
@@ -3253,8 +3650,8 @@ pg.fleet_tech_ship_class = {
 			70504,
 			70505
 		}
-	},
-	[70503] = {
+	}
+	pg.base.fleet_tech_ship_class[70503] = {
 		shiptype = 5,
 		name = "R-class battleship – Arkhangelsk.",
 		nation = 7,
@@ -3264,8 +3661,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			70506
 		}
-	},
-	[70504] = {
+	}
+	pg.base.fleet_tech_ship_class[70504] = {
 		shiptype = 5,
 		name = "Kazan",
 		nation = 7,
@@ -3275,8 +3672,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			70509
 		}
-	},
-	[70701] = {
+	}
+	pg.base.fleet_tech_ship_class[70701] = {
 		shiptype = 7,
 		name = "Volga.",
 		nation = 7,
@@ -3286,8 +3683,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			70701
 		}
-	},
-	[70702] = {
+	}
+	pg.base.fleet_tech_ship_class[70702] = {
 		shiptype = 7,
 		name = "Chkalov",
 		nation = 7,
@@ -3297,8 +3694,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			79901
 		}
-	},
-	[70703] = {
+	}
+	pg.base.fleet_tech_ship_class[70703] = {
 		shiptype = 7,
 		name = "Admiral Nakhimov",
 		nation = 7,
@@ -3308,8 +3705,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			79902
 		}
-	},
-	[71801] = {
+	}
+	pg.base.fleet_tech_ship_class[71801] = {
 		shiptype = 18,
 		name = "Kronshtadt",
 		nation = 7,
@@ -3319,8 +3716,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			71801
 		}
-	},
-	[80101] = {
+	}
+	pg.base.fleet_tech_ship_class[80101] = {
 		shiptype = 1,
 		name = "Le Fantasque Class",
 		nation = 8,
@@ -3331,8 +3728,8 @@ pg.fleet_tech_ship_class = {
 			80101,
 			80107
 		}
-	},
-	[80102] = {
+	}
+	pg.base.fleet_tech_ship_class[80102] = {
 		shiptype = 1,
 		name = "L'Intrépide Class",
 		nation = 8,
@@ -3344,8 +3741,8 @@ pg.fleet_tech_ship_class = {
 			80104,
 			80105
 		}
-	},
-	[80103] = {
+	}
+	pg.base.fleet_tech_ship_class[80103] = {
 		shiptype = 1,
 		name = "L'Adroit Class",
 		nation = 8,
@@ -3355,8 +3752,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80102
 		}
-	},
-	[80104] = {
+	}
+	pg.base.fleet_tech_ship_class[80104] = {
 		shiptype = 1,
 		name = "Vauquelin Class ",
 		nation = 8,
@@ -3366,8 +3763,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80108
 		}
-	},
-	[80201] = {
+	}
+	pg.base.fleet_tech_ship_class[80201] = {
 		shiptype = 2,
 		name = "Émile Bertin Class",
 		nation = 8,
@@ -3377,8 +3774,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80201
 		}
-	},
-	[80202] = {
+	}
+	pg.base.fleet_tech_ship_class[80202] = {
 		shiptype = 2,
 		name = "Jeanne d'Arc Class",
 		nation = 8,
@@ -3388,8 +3785,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80202
 		}
-	},
-	[80203] = {
+	}
+	pg.base.fleet_tech_ship_class[80203] = {
 		shiptype = 2,
 		name = "De Grasse Class",
 		nation = 8,
@@ -3399,8 +3796,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80203
 		}
-	},
-	[80204] = {
+	}
+	pg.base.fleet_tech_ship_class[80204] = {
 		shiptype = 2,
 		name = "Bayard",
 		nation = 8,
@@ -3410,8 +3807,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			89904
 		}
-	},
-	[80205] = {
+	}
+	pg.base.fleet_tech_ship_class[80205] = {
 		shiptype = 2,
 		name = "Duguay-Trouin-class",
 		nation = 8,
@@ -3421,8 +3818,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80204
 		}
-	},
-	[80301] = {
+	}
+	pg.base.fleet_tech_ship_class[80301] = {
 		shiptype = 3,
 		name = "Saint Louis Class",
 		nation = 8,
@@ -3432,8 +3829,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			89901
 		}
-	},
-	[80302] = {
+	}
+	pg.base.fleet_tech_ship_class[80302] = {
 		shiptype = 3,
 		name = "Suffren Class",
 		nation = 8,
@@ -3443,8 +3840,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80301
 		}
-	},
-	[80303] = {
+	}
+	pg.base.fleet_tech_ship_class[80303] = {
 		shiptype = 3,
 		name = "Brennus",
 		nation = 8,
@@ -3454,8 +3851,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80302
 		}
-	},
-	[80304] = {
+	}
+	pg.base.fleet_tech_ship_class[80304] = {
 		shiptype = 3,
 		name = "Duquesne-class",
 		nation = 8,
@@ -3465,8 +3862,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80303
 		}
-	},
-	[80401] = {
+	}
+	pg.base.fleet_tech_ship_class[80401] = {
 		shiptype = 4,
 		name = "Masséna",
 		nation = 8,
@@ -3476,8 +3873,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80401
 		}
-	},
-	[80501] = {
+	}
+	pg.base.fleet_tech_ship_class[80501] = {
 		shiptype = 5,
 		name = "Richelieu Class",
 		nation = 8,
@@ -3487,8 +3884,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80501
 		}
-	},
-	[80502] = {
+	}
+	pg.base.fleet_tech_ship_class[80502] = {
 		shiptype = 5,
 		name = "Champagne Class",
 		nation = 8,
@@ -3498,8 +3895,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			89902
 		}
-	},
-	[80503] = {
+	}
+	pg.base.fleet_tech_ship_class[80503] = {
 		shiptype = 5,
 		name = "Lyon Class",
 		nation = 8,
@@ -3509,8 +3906,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80502
 		}
-	},
-	[80504] = {
+	}
+	pg.base.fleet_tech_ship_class[80504] = {
 		shiptype = 5,
 		name = "Alsace Class",
 		nation = 8,
@@ -3520,8 +3917,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80503
 		}
-	},
-	[80601] = {
+	}
+	pg.base.fleet_tech_ship_class[80601] = {
 		shiptype = 6,
 		name = "Bois Belleau",
 		nation = 8,
@@ -3531,8 +3928,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80601
 		}
-	},
-	[80701] = {
+	}
+	pg.base.fleet_tech_ship_class[80701] = {
 		shiptype = 7,
 		name = "Béarn Class",
 		nation = 8,
@@ -3542,8 +3939,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80701
 		}
-	},
-	[80702] = {
+	}
+	pg.base.fleet_tech_ship_class[80702] = {
 		shiptype = 7,
 		name = "Joffre Class",
 		nation = 8,
@@ -3553,8 +3950,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80702
 		}
-	},
-	[80801] = {
+	}
+	pg.base.fleet_tech_ship_class[80801] = {
 		shiptype = 8,
 		name = "Surcouf Class",
 		nation = 8,
@@ -3564,8 +3961,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			80801
 		}
-	},
-	[81801] = {
+	}
+	pg.base.fleet_tech_ship_class[81801] = {
 		shiptype = 18,
 		name = "Brest",
 		nation = 8,
@@ -3575,8 +3972,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			89903
 		}
-	},
-	[90101] = {
+	}
+	pg.base.fleet_tech_ship_class[90101] = {
 		shiptype = 1,
 		name = "Le Fantasque Class ",
 		nation = 9,
@@ -3588,8 +3985,8 @@ pg.fleet_tech_ship_class = {
 			90113,
 			90114
 		}
-	},
-	[90103] = {
+	}
+	pg.base.fleet_tech_ship_class[90103] = {
 		shiptype = 1,
 		name = "L'Adroit Class",
 		nation = 9,
@@ -3599,8 +3996,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			90101
 		}
-	},
-	[90104] = {
+	}
+	pg.base.fleet_tech_ship_class[90104] = {
 		shiptype = 1,
 		name = "Vauquelin Class ",
 		nation = 9,
@@ -3612,8 +4009,8 @@ pg.fleet_tech_ship_class = {
 			90103,
 			90104
 		}
-	},
-	[90105] = {
+	}
+	pg.base.fleet_tech_ship_class[90105] = {
 		shiptype = 1,
 		name = "Mogador Class",
 		nation = 9,
@@ -3623,8 +4020,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			90107
 		}
-	},
-	[90106] = {
+	}
+	pg.base.fleet_tech_ship_class[90106] = {
 		shiptype = 1,
 		name = "Le Hardi Class",
 		nation = 9,
@@ -3635,8 +4032,10 @@ pg.fleet_tech_ship_class = {
 			90105,
 			90106
 		}
-	},
-	[90201] = {
+	}
+end)()
+;(function()
+	pg.base.fleet_tech_ship_class[90201] = {
 		shiptype = 2,
 		name = "La Galissonnière Class",
 		nation = 9,
@@ -3647,8 +4046,8 @@ pg.fleet_tech_ship_class = {
 			90201,
 			90202
 		}
-	},
-	[90301] = {
+	}
+	pg.base.fleet_tech_ship_class[90301] = {
 		shiptype = 3,
 		name = "Algérie Class",
 		nation = 9,
@@ -3658,8 +4057,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			90302
 		}
-	},
-	[90302] = {
+	}
+	pg.base.fleet_tech_ship_class[90302] = {
 		shiptype = 3,
 		name = "Suffren-Class",
 		nation = 9,
@@ -3670,8 +4069,8 @@ pg.fleet_tech_ship_class = {
 			90301,
 			90303
 		}
-	},
-	[90401] = {
+	}
+	pg.base.fleet_tech_ship_class[90401] = {
 		shiptype = 4,
 		name = "Dunkerque Class",
 		nation = 9,
@@ -3682,8 +4081,8 @@ pg.fleet_tech_ship_class = {
 			90401,
 			90402
 		}
-	},
-	[90501] = {
+	}
+	pg.base.fleet_tech_ship_class[90501] = {
 		shiptype = 5,
 		name = "Richelieu Class",
 		nation = 9,
@@ -3695,8 +4094,8 @@ pg.fleet_tech_ship_class = {
 			90502,
 			99901
 		}
-	},
-	[90502] = {
+	}
+	pg.base.fleet_tech_ship_class[90502] = {
 		shiptype = 5,
 		name = "Alsace Class",
 		nation = 9,
@@ -3706,8 +4105,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			99902
 		}
-	},
-	[90701] = {
+	}
+	pg.base.fleet_tech_ship_class[90701] = {
 		shiptype = 7,
 		name = "Joffre Class",
 		nation = 9,
@@ -3717,8 +4116,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			90701
 		}
-	},
-	[110101] = {
+	}
+	pg.base.fleet_tech_ship_class[110101] = {
 		shiptype = 1,
 		name = "Admiralen Class",
 		nation = 11,
@@ -3728,8 +4127,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			110101
 		}
-	},
-	[110201] = {
+	}
+	pg.base.fleet_tech_ship_class[110201] = {
 		shiptype = 2,
 		name = "De Zeven Provinciën Class",
 		nation = 11,
@@ -3739,8 +4138,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			110201
 		}
-	},
-	[110301] = {
+	}
+	pg.base.fleet_tech_ship_class[110301] = {
 		shiptype = 3,
 		name = "Gouden Leeuw",
 		nation = 11,
@@ -3750,8 +4149,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			119901
 		}
-	},
-	[960001] = {
+	}
+	pg.base.fleet_tech_ship_class[960001] = {
 		shiptype = 22,
 		name = "Royal Fortune",
 		nation = 96,
@@ -3761,8 +4160,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			960001
 		}
-	},
-	[960002] = {
+	}
+	pg.base.fleet_tech_ship_class[960002] = {
 		shiptype = 24,
 		name = "São Martinho",
 		nation = 96,
@@ -3772,8 +4171,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			960002
 		}
-	},
-	[960003] = {
+	}
+	pg.base.fleet_tech_ship_class[960003] = {
 		shiptype = 23,
 		name = "Golden Hind",
 		nation = 96,
@@ -3783,8 +4182,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			960003
 		}
-	},
-	[960004] = {
+	}
+	pg.base.fleet_tech_ship_class[960004] = {
 		shiptype = 22,
 		name = "Mary Celeste",
 		nation = 96,
@@ -3794,8 +4193,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			960004
 		}
-	},
-	[960005] = {
+	}
+	pg.base.fleet_tech_ship_class[960005] = {
 		shiptype = 22,
 		name = "Whydah",
 		nation = 96,
@@ -3805,8 +4204,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			960005
 		}
-	},
-	[960006] = {
+	}
+	pg.base.fleet_tech_ship_class[960006] = {
 		shiptype = 23,
 		name = "Adventure Galley",
 		nation = 96,
@@ -3816,8 +4215,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			960006
 		}
-	},
-	[960007] = {
+	}
+	pg.base.fleet_tech_ship_class[960007] = {
 		shiptype = 24,
 		name = "Ganj-i-Sawai",
 		nation = 96,
@@ -3827,8 +4226,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			960007
 		}
-	},
-	[960008] = {
+	}
+	pg.base.fleet_tech_ship_class[960008] = {
 		shiptype = 23,
 		name = "Fancy",
 		nation = 96,
@@ -3838,8 +4237,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			960008
 		}
-	},
-	[960009] = {
+	}
+	pg.base.fleet_tech_ship_class[960009] = {
 		shiptype = 22,
 		name = "Amity",
 		nation = 96,
@@ -3849,8 +4248,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			960009
 		}
-	},
-	[960010] = {
+	}
+	pg.base.fleet_tech_ship_class[960010] = {
 		shiptype = 23,
 		name = "Portsmouth Adventure",
 		nation = 96,
@@ -3860,8 +4259,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			960010
 		}
-	},
-	[960011] = {
+	}
+	pg.base.fleet_tech_ship_class[960011] = {
 		shiptype = 22,
 		name = "Dolphin",
 		nation = 96,
@@ -3871,8 +4270,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			960011
 		}
-	},
-	[960012] = {
+	}
+	pg.base.fleet_tech_ship_class[960012] = {
 		shiptype = 24,
 		name = "Queen Anne's Revenge",
 		nation = 96,
@@ -3882,8 +4281,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			960012
 		}
-	},
-	[960013] = {
+	}
+	pg.base.fleet_tech_ship_class[960013] = {
 		shiptype = 23,
 		name = "Lyme",
 		nation = 96,
@@ -3893,8 +4292,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			960013
 		}
-	},
-	[960014] = {
+	}
+	pg.base.fleet_tech_ship_class[960014] = {
 		shiptype = 24,
 		name = "Pearl",
 		nation = 96,
@@ -3904,8 +4303,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			960014
 		}
-	},
-	[960015] = {
+	}
+	pg.base.fleet_tech_ship_class[960015] = {
 		shiptype = 23,
 		name = "Royal James",
 		nation = 96,
@@ -3915,8 +4314,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			960015
 		}
-	},
-	[960016] = {
+	}
+	pg.base.fleet_tech_ship_class[960016] = {
 		shiptype = 22,
 		name = "Adventure",
 		nation = 96,
@@ -3926,8 +4325,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			960016
 		}
-	},
-	[970101] = {
+	}
+	pg.base.fleet_tech_ship_class[970101] = {
 		shiptype = 1,
 		name = "Hunter META",
 		nation = 97,
@@ -3937,8 +4336,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970101
 		}
-	},
-	[970102] = {
+	}
+	pg.base.fleet_tech_ship_class[970102] = {
 		shiptype = 1,
 		name = "Fortune META",
 		nation = 97,
@@ -3948,8 +4347,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970102
 		}
-	},
-	[970103] = {
+	}
+	pg.base.fleet_tech_ship_class[970103] = {
 		shiptype = 1,
 		name = "Hatakaze META",
 		nation = 97,
@@ -3959,8 +4358,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970103
 		}
-	},
-	[970104] = {
+	}
+	pg.base.fleet_tech_ship_class[970104] = {
 		shiptype = 1,
 		name = "Kimberly META",
 		nation = 97,
@@ -3970,8 +4369,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970104
 		}
-	},
-	[970105] = {
+	}
+	pg.base.fleet_tech_ship_class[970105] = {
 		shiptype = 1,
 		name = "Vampire META",
 		nation = 97,
@@ -3981,8 +4380,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970105
 		}
-	},
-	[970106] = {
+	}
+	pg.base.fleet_tech_ship_class[970106] = {
 		shiptype = 1,
 		name = "Kasumi META",
 		nation = 97,
@@ -3992,8 +4391,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970106
 		}
-	},
-	[970107] = {
+	}
+	pg.base.fleet_tech_ship_class[970107] = {
 		shiptype = 1,
 		name = "Grenville META",
 		nation = 97,
@@ -4003,8 +4402,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970107
 		}
-	},
-	[970108] = {
+	}
+	pg.base.fleet_tech_ship_class[970108] = {
 		shiptype = 1,
 		name = "Kawakaze META",
 		nation = 97,
@@ -4014,8 +4413,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970108
 		}
-	},
-	[970109] = {
+	}
+	pg.base.fleet_tech_ship_class[970109] = {
 		shiptype = 1,
 		name = "Yuudachi META",
 		nation = 97,
@@ -4025,8 +4424,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970109
 		}
-	},
-	[970110] = {
+	}
+	pg.base.fleet_tech_ship_class[970110] = {
 		shiptype = 1,
 		name = "Dewey META",
 		nation = 97,
@@ -4036,8 +4435,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970110
 		}
-	},
-	[970111] = {
+	}
+	pg.base.fleet_tech_ship_class[970111] = {
 		shiptype = 1,
 		name = "Carabiniere META",
 		nation = 97,
@@ -4047,8 +4446,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970111
 		}
-	},
-	[970201] = {
+	}
+	pg.base.fleet_tech_ship_class[970201] = {
 		shiptype = 2,
 		name = "Helena META",
 		nation = 97,
@@ -4058,8 +4457,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970201
 		}
-	},
-	[970202] = {
+	}
+	pg.base.fleet_tech_ship_class[970202] = {
 		shiptype = 2,
 		name = "Memphis META",
 		nation = 97,
@@ -4069,8 +4468,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970202
 		}
-	},
-	[970203] = {
+	}
+	pg.base.fleet_tech_ship_class[970203] = {
 		shiptype = 2,
 		name = "Sheffield META",
 		nation = 97,
@@ -4080,8 +4479,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970203
 		}
-	},
-	[970204] = {
+	}
+	pg.base.fleet_tech_ship_class[970204] = {
 		shiptype = 2,
 		name = "La Galissonnière META",
 		nation = 97,
@@ -4091,8 +4490,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970204
 		}
-	},
-	[970205] = {
+	}
+	pg.base.fleet_tech_ship_class[970205] = {
 		shiptype = 2,
 		name = "Jintsuu META",
 		nation = 97,
@@ -4102,8 +4501,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970205
 		}
-	},
-	[970206] = {
+	}
+	pg.base.fleet_tech_ship_class[970206] = {
 		shiptype = 2,
 		name = "Kirov META",
 		nation = 97,
@@ -4113,8 +4512,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970206
 		}
-	},
-	[970207] = {
+	}
+	pg.base.fleet_tech_ship_class[970207] = {
 		shiptype = 2,
 		name = "Pamiat' Merkuria META",
 		nation = 97,
@@ -4124,8 +4523,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970207
 		}
-	},
-	[970208] = {
+	}
+	pg.base.fleet_tech_ship_class[970208] = {
 		shiptype = 2,
 		name = "Boise META",
 		nation = 97,
@@ -4135,8 +4534,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970208
 		}
-	},
-	[970209] = {
+	}
+	pg.base.fleet_tech_ship_class[970209] = {
 		shiptype = 2,
 		name = "Cleveland META",
 		nation = 97,
@@ -4146,8 +4545,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970209
 		}
-	},
-	[970210] = {
+	}
+	pg.base.fleet_tech_ship_class[970210] = {
 		shiptype = 2,
 		name = "Köln META",
 		nation = 97,
@@ -4157,8 +4556,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970210
 		}
-	},
-	[970211] = {
+	}
+	pg.base.fleet_tech_ship_class[970211] = {
 		shiptype = 2,
 		name = "Regensburg META",
 		nation = 97,
@@ -4168,8 +4567,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970211
 		}
-	},
-	[970301] = {
+	}
+	pg.base.fleet_tech_ship_class[970301] = {
 		shiptype = 3,
 		name = "Trento META",
 		nation = 97,
@@ -4179,8 +4578,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970301
 		}
-	},
-	[970302] = {
+	}
+	pg.base.fleet_tech_ship_class[970302] = {
 		shiptype = 3,
 		name = "Algérie META",
 		nation = 97,
@@ -4190,8 +4589,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970302
 		}
-	},
-	[970303] = {
+	}
+	pg.base.fleet_tech_ship_class[970303] = {
 		shiptype = 3,
 		name = "Foch META",
 		nation = 97,
@@ -4201,8 +4600,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970303
 		}
-	},
-	[970304] = {
+	}
+	pg.base.fleet_tech_ship_class[970304] = {
 		shiptype = 3,
 		name = "Wichita META",
 		nation = 97,
@@ -4212,8 +4611,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970304
 		}
-	},
-	[970305] = {
+	}
+	pg.base.fleet_tech_ship_class[970305] = {
 		shiptype = 3,
 		name = "Admiral Hipper META",
 		nation = 97,
@@ -4223,8 +4622,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970305
 		}
-	},
-	[970306] = {
+	}
+	pg.base.fleet_tech_ship_class[970306] = {
 		shiptype = 3,
 		name = "Bolzano META",
 		nation = 97,
@@ -4234,8 +4633,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970306
 		}
-	},
-	[970401] = {
+	}
+	pg.base.fleet_tech_ship_class[970401] = {
 		shiptype = 4,
 		name = "Gneisenau META",
 		nation = 97,
@@ -4245,8 +4644,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970401
 		}
-	},
-	[970402] = {
+	}
+	pg.base.fleet_tech_ship_class[970402] = {
 		shiptype = 4,
 		name = "Scharnhorst META",
 		nation = 97,
@@ -4256,8 +4655,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970402
 		}
-	},
-	[970403] = {
+	}
+	pg.base.fleet_tech_ship_class[970403] = {
 		shiptype = 4,
 		name = "Repulse META",
 		nation = 97,
@@ -4267,8 +4666,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970403
 		}
-	},
-	[970404] = {
+	}
+	pg.base.fleet_tech_ship_class[970404] = {
 		shiptype = 4,
 		name = "Renown META",
 		nation = 97,
@@ -4278,8 +4677,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970404
 		}
-	},
-	[970405] = {
+	}
+	pg.base.fleet_tech_ship_class[970405] = {
 		shiptype = 4,
 		name = "Hiei META",
 		nation = 97,
@@ -4289,8 +4688,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970405
 		}
-	},
-	[970406] = {
+	}
+	pg.base.fleet_tech_ship_class[970406] = {
 		shiptype = 4,
 		name = "Dunkerque META",
 		nation = 97,
@@ -4300,8 +4699,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970406
 		}
-	},
-	[970501] = {
+	}
+	pg.base.fleet_tech_ship_class[970501] = {
 		shiptype = 5,
 		name = "Fusou META",
 		nation = 97,
@@ -4311,8 +4710,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970501
 		}
-	},
-	[970502] = {
+	}
+	pg.base.fleet_tech_ship_class[970502] = {
 		shiptype = 5,
 		name = "Yamashiro META",
 		nation = 97,
@@ -4322,8 +4721,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970502
 		}
-	},
-	[970503] = {
+	}
+	pg.base.fleet_tech_ship_class[970503] = {
 		shiptype = 5,
 		name = "Arizona META",
 		nation = 97,
@@ -4333,8 +4732,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970503
 		}
-	},
-	[970504] = {
+	}
+	pg.base.fleet_tech_ship_class[970504] = {
 		shiptype = 5,
 		name = "Queen Elizabeth META",
 		nation = 97,
@@ -4344,8 +4743,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970504
 		}
-	},
-	[970505] = {
+	}
+	pg.base.fleet_tech_ship_class[970505] = {
 		shiptype = 5,
 		name = "Rodney META",
 		nation = 97,
@@ -4355,8 +4754,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970505
 		}
-	},
-	[970506] = {
+	}
+	pg.base.fleet_tech_ship_class[970506] = {
 		shiptype = 5,
 		name = "Nagato META",
 		nation = 97,
@@ -4366,8 +4765,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970506
 		}
-	},
-	[970507] = {
+	}
+	pg.base.fleet_tech_ship_class[970507] = {
 		shiptype = 5,
 		name = "Giulio Cesare META",
 		nation = 97,
@@ -4377,8 +4776,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970507
 		}
-	},
-	[970508] = {
+	}
+	pg.base.fleet_tech_ship_class[970508] = {
 		shiptype = 5,
 		name = "Andrea Doria META",
 		nation = 97,
@@ -4388,8 +4787,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970508
 		}
-	},
-	[970509] = {
+	}
+	pg.base.fleet_tech_ship_class[970509] = {
 		shiptype = 5,
 		name = "Nevada META",
 		nation = 97,
@@ -4399,8 +4798,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970509
 		}
-	},
-	[970510] = {
+	}
+	pg.base.fleet_tech_ship_class[970510] = {
 		shiptype = 5,
 		name = "Gangut META",
 		nation = 97,
@@ -4410,8 +4809,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970510
 		}
-	},
-	[970601] = {
+	}
+	pg.base.fleet_tech_ship_class[970601] = {
 		shiptype = 6,
 		name = "Hiyou META",
 		nation = 97,
@@ -4421,8 +4820,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970601
 		}
-	},
-	[970602] = {
+	}
+	pg.base.fleet_tech_ship_class[970602] = {
 		shiptype = 6,
 		name = "Junyou META",
 		nation = 97,
@@ -4432,8 +4831,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970602
 		}
-	},
-	[970603] = {
+	}
+	pg.base.fleet_tech_ship_class[970603] = {
 		shiptype = 6,
 		name = "Princeton META",
 		nation = 97,
@@ -4443,8 +4842,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970603
 		}
-	},
-	[970604] = {
+	}
+	pg.base.fleet_tech_ship_class[970604] = {
 		shiptype = 6,
 		name = "Houshou META",
 		nation = 97,
@@ -4454,8 +4853,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970604
 		}
-	},
-	[970701] = {
+	}
+	pg.base.fleet_tech_ship_class[970701] = {
 		shiptype = 7,
 		name = "Hiryuu META",
 		nation = 97,
@@ -4465,8 +4864,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970701
 		}
-	},
-	[970702] = {
+	}
+	pg.base.fleet_tech_ship_class[970702] = {
 		shiptype = 7,
 		name = "Ark Royal META",
 		nation = 97,
@@ -4476,8 +4875,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970702
 		}
-	},
-	[970703] = {
+	}
+	pg.base.fleet_tech_ship_class[970703] = {
 		shiptype = 7,
 		name = "Souryuu META",
 		nation = 97,
@@ -4487,8 +4886,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970703
 		}
-	},
-	[970704] = {
+	}
+	pg.base.fleet_tech_ship_class[970704] = {
 		shiptype = 7,
 		name = "Béarn META",
 		nation = 97,
@@ -4498,8 +4897,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970704
 		}
-	},
-	[970705] = {
+	}
+	pg.base.fleet_tech_ship_class[970705] = {
 		shiptype = 7,
 		name = "Taihou META",
 		nation = 97,
@@ -4509,8 +4908,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970705
 		}
-	},
-	[970706] = {
+	}
+	pg.base.fleet_tech_ship_class[970706] = {
 		shiptype = 7,
 		name = "Hornet META",
 		nation = 97,
@@ -4520,8 +4919,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970706
 		}
-	},
-	[970707] = {
+	}
+	pg.base.fleet_tech_ship_class[970707] = {
 		shiptype = 7,
 		name = "Glorious META",
 		nation = 97,
@@ -4531,8 +4930,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970707
 		}
-	},
-	[970708] = {
+	}
+	pg.base.fleet_tech_ship_class[970708] = {
 		shiptype = 7,
 		name = "Yorktown META",
 		nation = 97,
@@ -4542,8 +4941,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970708
 		}
-	},
-	[970801] = {
+	}
+	pg.base.fleet_tech_ship_class[970801] = {
 		shiptype = 8,
 		name = "U-556 META",
 		nation = 97,
@@ -4553,8 +4952,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			970801
 		}
-	},
-	[971201] = {
+	}
+	pg.base.fleet_tech_ship_class[971201] = {
 		shiptype = 12,
 		name = "Vestal META",
 		nation = 97,
@@ -4564,8 +4963,8 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			971201
 		}
-	},
-	[971301] = {
+	}
+	pg.base.fleet_tech_ship_class[971301] = {
 		shiptype = 13,
 		name = "Erebus META",
 		nation = 97,
@@ -4575,392 +4974,5 @@ pg.fleet_tech_ship_class = {
 		ships = {
 			971301
 		}
-	},
-	all = {
-		10101,
-		10102,
-		10103,
-		10104,
-		10105,
-		10106,
-		10107,
-		10108,
-		10109,
-		10201,
-		10202,
-		10203,
-		10204,
-		10205,
-		10206,
-		10301,
-		10302,
-		10303,
-		10304,
-		10305,
-		10306,
-		10307,
-		10308,
-		10401,
-		10501,
-		10502,
-		10503,
-		10504,
-		10505,
-		10506,
-		10507,
-		10508,
-		10509,
-		10601,
-		10602,
-		10604,
-		10605,
-		10606,
-		10607,
-		10701,
-		10702,
-		10703,
-		10705,
-		10801,
-		10802,
-		10803,
-		11001,
-		11201,
-		11801,
-		20101,
-		20102,
-		20103,
-		20104,
-		20105,
-		20106,
-		20107,
-		20108,
-		20109,
-		20110,
-		20111,
-		20112,
-		20113,
-		20114,
-		20201,
-		20202,
-		20203,
-		20204,
-		20205,
-		20206,
-		20207,
-		20208,
-		20209,
-		20210,
-		20211,
-		20212,
-		20301,
-		20302,
-		20303,
-		20304,
-		20305,
-		20306,
-		20401,
-		20402,
-		20501,
-		20502,
-		20503,
-		20504,
-		20505,
-		20506,
-		20507,
-		20601,
-		20602,
-		20603,
-		20604,
-		20605,
-		20607,
-		20701,
-		20702,
-		20703,
-		20704,
-		20705,
-		21301,
-		21302,
-		30101,
-		30102,
-		30103,
-		30104,
-		30105,
-		30106,
-		30107,
-		30108,
-		30109,
-		30110,
-		30111,
-		30112,
-		30113,
-		30201,
-		30202,
-		30203,
-		30204,
-		30205,
-		30206,
-		30207,
-		30301,
-		30302,
-		30303,
-		30304,
-		30305,
-		30306,
-		30307,
-		30401,
-		30402,
-		30501,
-		30502,
-		30503,
-		30504,
-		30505,
-		30506,
-		30507,
-		30508,
-		30509,
-		30601,
-		30602,
-		30603,
-		30604,
-		30605,
-		30701,
-		30702,
-		30703,
-		30704,
-		30705,
-		30706,
-		30707,
-		30708,
-		30709,
-		30710,
-		30711,
-		30801,
-		30802,
-		31201,
-		31701,
-		31702,
-		31801,
-		31901,
-		40101,
-		40102,
-		40103,
-		40104,
-		40105,
-		40106,
-		40107,
-		40108,
-		40109,
-		40201,
-		40202,
-		40203,
-		40204,
-		40205,
-		40206,
-		40301,
-		40302,
-		40303,
-		40304,
-		40305,
-		40306,
-		40401,
-		40402,
-		40403,
-		40404,
-		40405,
-		40406,
-		40407,
-		40501,
-		40502,
-		40503,
-		40504,
-		40505,
-		40506,
-		40601,
-		40602,
-		40701,
-		40702,
-		40703,
-		40801,
-		40802,
-		40803,
-		40804,
-		40805,
-		40806,
-		41801,
-		50101,
-		50102,
-		50103,
-		50201,
-		50202,
-		50203,
-		50204,
-		50205,
-		50206,
-		50207,
-		50301,
-		50302,
-		50401,
-		50601,
-		50602,
-		51901,
-		60101,
-		60102,
-		60103,
-		60104,
-		60105,
-		60106,
-		60201,
-		60202,
-		60301,
-		60302,
-		60303,
-		60304,
-		60501,
-		60502,
-		60503,
-		60504,
-		60505,
-		60506,
-		60701,
-		60702,
-		60801,
-		60802,
-		70101,
-		70102,
-		70103,
-		70104,
-		70105,
-		70106,
-		70201,
-		70202,
-		70203,
-		70204,
-		70205,
-		70206,
-		70207,
-		70301,
-		70302,
-		70303,
-		70501,
-		70502,
-		70503,
-		70504,
-		70701,
-		70702,
-		70703,
-		71801,
-		80101,
-		80102,
-		80103,
-		80104,
-		80201,
-		80202,
-		80203,
-		80204,
-		80205,
-		80301,
-		80302,
-		80303,
-		80304,
-		80401,
-		80501,
-		80502,
-		80503,
-		80504,
-		80601,
-		80701,
-		80702,
-		80801,
-		81801,
-		90101,
-		90103,
-		90104,
-		90105,
-		90106,
-		90201,
-		90301,
-		90302,
-		90401,
-		90501,
-		90502,
-		90701,
-		110101,
-		110201,
-		110301,
-		960001,
-		960002,
-		960003,
-		960004,
-		960005,
-		960006,
-		960007,
-		960008,
-		960009,
-		960010,
-		960011,
-		960012,
-		960013,
-		960014,
-		960015,
-		960016,
-		970101,
-		970102,
-		970103,
-		970104,
-		970105,
-		970106,
-		970107,
-		970108,
-		970109,
-		970110,
-		970111,
-		970201,
-		970202,
-		970203,
-		970204,
-		970205,
-		970206,
-		970207,
-		970208,
-		970209,
-		970210,
-		970211,
-		970301,
-		970302,
-		970303,
-		970304,
-		970305,
-		970306,
-		970401,
-		970402,
-		970403,
-		970404,
-		970405,
-		970406,
-		970501,
-		970502,
-		970503,
-		970504,
-		970505,
-		970506,
-		970507,
-		970508,
-		970509,
-		970510,
-		970601,
-		970602,
-		970603,
-		970604,
-		970701,
-		970702,
-		970703,
-		970704,
-		970705,
-		970706,
-		970707,
-		970708,
-		970801,
-		971201,
-		971301
 	}
-}
+end)()

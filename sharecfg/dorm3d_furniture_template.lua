@@ -1,6 +1,166 @@
 pg = pg or {}
-pg.dorm3d_furniture_template = {
+pg.dorm3d_furniture_template = rawget(pg, "dorm3d_furniture_template") or setmetatable({
+	__name = "dorm3d_furniture_template"
+}, confNEO)
+pg.dorm3d_furniture_template.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	121,
+	122,
+	201,
+	202,
+	203,
+	204,
+	205,
+	206,
+	207,
+	208,
+	209,
+	210,
+	221,
+	222,
+	223,
+	151,
+	251,
+	301,
+	302,
+	303,
+	304,
+	305,
+	306,
+	307,
+	321,
+	322,
+	401,
+	323,
+	324,
+	1101,
+	1102,
+	1103,
+	1104,
+	1105,
+	1106,
+	1107,
+	1108,
+	1151,
+	1152,
+	1153,
+	1154,
+	1201,
+	1202,
+	1203,
+	1211,
+	1212,
+	1213,
+	1214,
+	1215,
+	1221,
+	1222,
+	1223,
+	1401,
+	1402,
+	1403,
+	1411,
+	1412,
+	1413,
+	1414,
+	1415,
+	1461,
+	1462
+}
+pg.dorm3d_furniture_template.get_id_list_by_room_id = {
 	{
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		121,
+		122,
+		151
+	},
+	{
+		201,
+		202,
+		203,
+		204,
+		205,
+		206,
+		207,
+		208,
+		209,
+		210,
+		221,
+		222,
+		223,
+		251
+	},
+	{
+		301,
+		302,
+		303,
+		304,
+		305,
+		306,
+		307,
+		321,
+		322,
+		323,
+		324
+	},
+	{
+		401
+	},
+	[11] = {
+		1101,
+		1102,
+		1103,
+		1104,
+		1105,
+		1106,
+		1107,
+		1108,
+		1151,
+		1152,
+		1153,
+		1154
+	},
+	[12] = {
+		1201,
+		1202,
+		1203,
+		1211,
+		1212,
+		1213,
+		1214,
+		1215,
+		1221,
+		1222,
+		1223
+	},
+	[14] = {
+		1401,
+		1402,
+		1403,
+		1411,
+		1412,
+		1413,
+		1414,
+		1415,
+		1461,
+		1462
+	}
+}
+pg.base = pg.base or {}
+pg.base.dorm3d_furniture_template = {}
+
+;(function()
+	pg.base.dorm3d_furniture_template[1] = {
 		name = "Bar Stool",
 		rarity = 3,
 		unlock_tips = "",
@@ -25,8 +185,8 @@ pg.dorm3d_furniture_template = {
 			}
 		},
 		shop_id = {}
-	},
-	{
+	}
+	pg.base.dorm3d_furniture_template[2] = {
 		name = "Juicer",
 		rarity = 2,
 		unlock_tips = "",
@@ -46,8 +206,8 @@ pg.dorm3d_furniture_template = {
 			100201
 		},
 		shop_id = {}
-	},
-	{
+	}
+	pg.base.dorm3d_furniture_template[3] = {
 		name = "Classic Sofa",
 		rarity = 3,
 		unlock_tips = "",
@@ -72,8 +232,8 @@ pg.dorm3d_furniture_template = {
 			}
 		},
 		shop_id = {}
-	},
-	{
+	}
+	pg.base.dorm3d_furniture_template[4] = {
 		name = "Simple Bed",
 		rarity = 3,
 		unlock_tips = "",
@@ -98,8 +258,8 @@ pg.dorm3d_furniture_template = {
 			}
 		},
 		shop_id = {}
-	},
-	{
+	}
+	pg.base.dorm3d_furniture_template[5] = {
 		name = "Desk Lamp",
 		rarity = 2,
 		unlock_tips = "",
@@ -119,8 +279,8 @@ pg.dorm3d_furniture_template = {
 			100101
 		},
 		shop_id = {}
-	},
-	{
+	}
+	pg.base.dorm3d_furniture_template[6] = {
 		name = "Model Cruise Liner",
 		rarity = 2,
 		unlock_tips = "",
@@ -140,8 +300,8 @@ pg.dorm3d_furniture_template = {
 			100402
 		},
 		shop_id = {}
-	},
-	[121] = {
+	}
+	pg.base.dorm3d_furniture_template[121] = {
 		name = "Sweet Secret",
 		rarity = 4,
 		is_special = 0,
@@ -172,8 +332,8 @@ pg.dorm3d_furniture_template = {
 		unlock_banners = {
 			"banner_furniture121"
 		}
-	},
-	[122] = {
+	}
+	pg.base.dorm3d_furniture_template[122] = {
 		name = "Afternoon Dreamhome",
 		rarity = 4,
 		is_special = 0,
@@ -204,8 +364,8 @@ pg.dorm3d_furniture_template = {
 		unlock_banners = {
 			"banner_furniture122"
 		}
-	},
-	[201] = {
+	}
+	pg.base.dorm3d_furniture_template[201] = {
 		name = "Fluffy Futon",
 		rarity = 3,
 		unlock_tips = "",
@@ -230,8 +390,8 @@ pg.dorm3d_furniture_template = {
 			}
 		},
 		shop_id = {}
-	},
-	[202] = {
+	}
+	pg.base.dorm3d_furniture_template[202] = {
 		name = "Gentle Snack Time",
 		rarity = 3,
 		unlock_tips = "",
@@ -256,8 +416,8 @@ pg.dorm3d_furniture_template = {
 			}
 		},
 		shop_id = {}
-	},
-	[203] = {
+	}
+	pg.base.dorm3d_furniture_template[203] = {
 		name = "Breezy Leisure",
 		rarity = 3,
 		unlock_tips = "",
@@ -282,8 +442,8 @@ pg.dorm3d_furniture_template = {
 			}
 		},
 		shop_id = {}
-	},
-	[204] = {
+	}
+	pg.base.dorm3d_furniture_template[204] = {
 		name = "A Branch of Spring",
 		rarity = 2,
 		unlock_tips = "",
@@ -303,8 +463,8 @@ pg.dorm3d_furniture_template = {
 			120101
 		},
 		shop_id = {}
-	},
-	[205] = {
+	}
+	pg.base.dorm3d_furniture_template[205] = {
 		name = "Manjuu Plushie",
 		rarity = 2,
 		unlock_tips = "",
@@ -324,8 +484,8 @@ pg.dorm3d_furniture_template = {
 			120102
 		},
 		shop_id = {}
-	},
-	[206] = {
+	}
+	pg.base.dorm3d_furniture_template[206] = {
 		name = "Tea for the Pinkish Bloom",
 		rarity = 2,
 		unlock_tips = "",
@@ -345,8 +505,8 @@ pg.dorm3d_furniture_template = {
 			120201
 		},
 		shop_id = {}
-	},
-	[207] = {
+	}
+	pg.base.dorm3d_furniture_template[207] = {
 		name = "Blue Skies, Stout Pine",
 		rarity = 2,
 		unlock_tips = "",
@@ -366,8 +526,8 @@ pg.dorm3d_furniture_template = {
 			120202
 		},
 		shop_id = {}
-	},
-	[208] = {
+	}
+	pg.base.dorm3d_furniture_template[208] = {
 		name = "Tranquil Pause",
 		rarity = 2,
 		unlock_tips = "",
@@ -387,8 +547,8 @@ pg.dorm3d_furniture_template = {
 			120301
 		},
 		shop_id = {}
-	},
-	[209] = {
+	}
+	pg.base.dorm3d_furniture_template[209] = {
 		name = "Vernal Vase",
 		rarity = 2,
 		unlock_tips = "",
@@ -408,8 +568,8 @@ pg.dorm3d_furniture_template = {
 			120302
 		},
 		shop_id = {}
-	},
-	[210] = {
+	}
+	pg.base.dorm3d_furniture_template[210] = {
 		name = "Good Fortjuune Hanging Scroll",
 		rarity = 2,
 		unlock_tips = "",
@@ -429,8 +589,8 @@ pg.dorm3d_furniture_template = {
 			120202
 		},
 		shop_id = {}
-	},
-	[221] = {
+	}
+	pg.base.dorm3d_furniture_template[221] = {
 		name = "Tanuki Cushion",
 		rarity = 4,
 		is_special = 0,
@@ -461,8 +621,8 @@ pg.dorm3d_furniture_template = {
 		unlock_banners = {
 			"banner_furniture221"
 		}
-	},
-	[222] = {
+	}
+	pg.base.dorm3d_furniture_template[222] = {
 		name = "Table for Two",
 		rarity = 3,
 		is_special = 0,
@@ -495,8 +655,8 @@ pg.dorm3d_furniture_template = {
 		scene_hides = {
 			"fbx/no_bake_pay_prop/diningroom"
 		}
-	},
-	[223] = {
+	}
+	pg.base.dorm3d_furniture_template[223] = {
 		name = "Serene Moment",
 		rarity = 4,
 		is_special = 0,
@@ -529,8 +689,8 @@ pg.dorm3d_furniture_template = {
 		scene_hides = {
 			"fbx/no_bake_pay_prop/livingroom"
 		}
-	},
-	[151] = {
+	}
+	pg.base.dorm3d_furniture_template[151] = {
 		name = "Christmas Eve Sleigh Sofa",
 		rarity = 5,
 		is_special = 1,
@@ -567,8 +727,8 @@ pg.dorm3d_furniture_template = {
 			"fbx/litmap_03/pre_db_ceram01b (1)",
 			"fbx/litmap_03/pre_db_book01"
 		}
-	},
-	[251] = {
+	}
+	pg.base.dorm3d_furniture_template[251] = {
 		name = "Where Warmth Lingers",
 		rarity = 5,
 		is_special = 1,
@@ -601,8 +761,8 @@ pg.dorm3d_furniture_template = {
 		scene_hides = {
 			"fbx/no_bake_pay_prop/livingroom"
 		}
-	},
-	[301] = {
+	}
+	pg.base.dorm3d_furniture_template[301] = {
 		name = "Beary Comfy Bed",
 		rarity = 3,
 		unlock_tips = "",
@@ -627,8 +787,8 @@ pg.dorm3d_furniture_template = {
 			}
 		},
 		shop_id = {}
-	},
-	[302] = {
+	}
+	pg.base.dorm3d_furniture_template[302] = {
 		name = "Blue Corner",
 		rarity = 3,
 		unlock_tips = "",
@@ -653,8 +813,8 @@ pg.dorm3d_furniture_template = {
 			}
 		},
 		shop_id = {}
-	},
-	[303] = {
+	}
+	pg.base.dorm3d_furniture_template[303] = {
 		name = "Warm Sofa",
 		rarity = 3,
 		unlock_tips = "",
@@ -679,8 +839,8 @@ pg.dorm3d_furniture_template = {
 			}
 		},
 		shop_id = {}
-	},
-	[304] = {
+	}
+	pg.base.dorm3d_furniture_template[304] = {
 		name = "Sacabambaspis Plushies",
 		rarity = 2,
 		unlock_tips = "",
@@ -700,8 +860,8 @@ pg.dorm3d_furniture_template = {
 			130101
 		},
 		shop_id = {}
-	},
-	[305] = {
+	}
+	pg.base.dorm3d_furniture_template[305] = {
 		name = "Breath of Fresh Air",
 		rarity = 2,
 		unlock_tips = "",
@@ -721,8 +881,8 @@ pg.dorm3d_furniture_template = {
 			130102
 		},
 		shop_id = {}
-	},
-	[306] = {
+	}
+	pg.base.dorm3d_furniture_template[306] = {
 		name = "Records of Time",
 		rarity = 2,
 		unlock_tips = "",
@@ -742,8 +902,8 @@ pg.dorm3d_furniture_template = {
 			130201
 		},
 		shop_id = {}
-	},
-	[307] = {
+	}
+	pg.base.dorm3d_furniture_template[307] = {
 		name = "Marine Adventure",
 		rarity = 2,
 		unlock_tips = "",
@@ -763,8 +923,8 @@ pg.dorm3d_furniture_template = {
 			130301
 		},
 		shop_id = {}
-	},
-	[321] = {
+	}
+	pg.base.dorm3d_furniture_template[321] = {
 		name = "Teatime Indulgence",
 		rarity = 4,
 		is_special = 0,
@@ -797,8 +957,8 @@ pg.dorm3d_furniture_template = {
 		scene_hides = {
 			"fbx/no_bake_pay_prop/entertainmentarea"
 		}
-	},
-	[322] = {
+	}
+	pg.base.dorm3d_furniture_template[322] = {
 		name = "Boat of the Starry Night",
 		rarity = 4,
 		is_special = 0,
@@ -831,8 +991,8 @@ pg.dorm3d_furniture_template = {
 		scene_hides = {
 			"fbx/no_bake_pay_prop/bedroom"
 		}
-	},
-	[401] = {
+	}
+	pg.base.dorm3d_furniture_template[401] = {
 		name = "Seaside Slide",
 		rarity = 5,
 		is_exclusive = 0,
@@ -858,8 +1018,8 @@ pg.dorm3d_furniture_template = {
 		unlock_banners = {
 			"banner_furniture401"
 		}
-	},
-	[323] = {
+	}
+	pg.base.dorm3d_furniture_template[323] = {
 		name = "Dream in the Clouds",
 		rarity = 4,
 		is_special = 0,
@@ -892,8 +1052,8 @@ pg.dorm3d_furniture_template = {
 		scene_hides = {
 			"fbx/no_bake_pay_prop/livingroom"
 		}
-	},
-	[324] = {
+	}
+	pg.base.dorm3d_furniture_template[324] = {
 		name = "Haven of Innocence",
 		rarity = 5,
 		is_special = 1,
@@ -928,8 +1088,8 @@ pg.dorm3d_furniture_template = {
 			"fbx/no_bake/pre_db_anchoragehostel01_lamp01",
 			"fbx/no_bake/pre_db_anchoragehostel01_lamp01_night"
 		}
-	},
-	[1101] = {
+	}
+	pg.base.dorm3d_furniture_template[1101] = {
 		name = "Rabbit's Cradle",
 		rarity = 3,
 		unlock_tips = "",
@@ -954,8 +1114,8 @@ pg.dorm3d_furniture_template = {
 			}
 		},
 		shop_id = {}
-	},
-	[1102] = {
+	}
+	pg.base.dorm3d_furniture_template[1102] = {
 		name = "Ice Age",
 		rarity = 3,
 		unlock_tips = "",
@@ -980,8 +1140,8 @@ pg.dorm3d_furniture_template = {
 			}
 		},
 		shop_id = {}
-	},
-	[1103] = {
+	}
+	pg.base.dorm3d_furniture_template[1103] = {
 		name = "Sunlight Island",
 		rarity = 3,
 		unlock_tips = "",
@@ -1006,8 +1166,8 @@ pg.dorm3d_furniture_template = {
 			}
 		},
 		shop_id = {}
-	},
-	[1104] = {
+	}
+	pg.base.dorm3d_furniture_template[1104] = {
 		name = "Planet Nightlight",
 		rarity = 2,
 		unlock_tips = "",
@@ -1027,8 +1187,8 @@ pg.dorm3d_furniture_template = {
 			1110101
 		},
 		shop_id = {}
-	},
-	[1105] = {
+	}
+	pg.base.dorm3d_furniture_template[1105] = {
 		name = "Decorative Art",
 		rarity = 2,
 		unlock_tips = "",
@@ -1048,8 +1208,8 @@ pg.dorm3d_furniture_template = {
 			1110301
 		},
 		shop_id = {}
-	},
-	[1106] = {
+	}
+	pg.base.dorm3d_furniture_template[1106] = {
 		name = "Silent Blue",
 		rarity = 2,
 		unlock_tips = "",
@@ -1069,8 +1229,8 @@ pg.dorm3d_furniture_template = {
 			1110302
 		},
 		shop_id = {}
-	},
-	[1107] = {
+	}
+	pg.base.dorm3d_furniture_template[1107] = {
 		name = "Microwave",
 		rarity = 2,
 		unlock_tips = "",
@@ -1090,8 +1250,8 @@ pg.dorm3d_furniture_template = {
 			1110201
 		},
 		shop_id = {}
-	},
-	[1108] = {
+	}
+	pg.base.dorm3d_furniture_template[1108] = {
 		name = "Potted Plant",
 		rarity = 2,
 		unlock_tips = "",
@@ -1111,8 +1271,8 @@ pg.dorm3d_furniture_template = {
 			1110202
 		},
 		shop_id = {}
-	},
-	[1151] = {
+	}
+	pg.base.dorm3d_furniture_template[1151] = {
 		name = "Starry Corner",
 		rarity = 4,
 		is_special = 0,
@@ -1145,8 +1305,8 @@ pg.dorm3d_furniture_template = {
 		scene_hides = {
 			"no_bake_pay_prop/livingroom"
 		}
-	},
-	[1152] = {
+	}
+	pg.base.dorm3d_furniture_template[1152] = {
 		name = "Exercise Bike",
 		rarity = 5,
 		is_special = 1,
@@ -1179,8 +1339,8 @@ pg.dorm3d_furniture_template = {
 		scene_hides = {
 			"no_bake_pay_prop/livingroom"
 		}
-	},
-	[1153] = {
+	}
+	pg.base.dorm3d_furniture_template[1153] = {
 		name = "Sanctuary Beyond Heavens",
 		rarity = 4,
 		is_special = 0,
@@ -1213,8 +1373,8 @@ pg.dorm3d_furniture_template = {
 		scene_hides = {
 			"no_bake_pay_prop/bedroom"
 		}
-	},
-	[1154] = {
+	}
+	pg.base.dorm3d_furniture_template[1154] = {
 		name = "IB-7 Smart Refrigerator",
 		rarity = 4,
 		is_special = 0,
@@ -1245,8 +1405,8 @@ pg.dorm3d_furniture_template = {
 		unlock_banners = {
 			"banner_furniture1154"
 		}
-	},
-	[1201] = {
+	}
+	pg.base.dorm3d_furniture_template[1201] = {
 		name = "Fluffy Bed",
 		rarity = 3,
 		unlock_tips = "",
@@ -1273,8 +1433,8 @@ pg.dorm3d_furniture_template = {
 		unlock_banners = {
 			"banner_furniture1151"
 		}
-	},
-	[1202] = {
+	}
+	pg.base.dorm3d_furniture_template[1202] = {
 		name = "Wooden Dining Table",
 		rarity = 3,
 		unlock_tips = "",
@@ -1301,8 +1461,8 @@ pg.dorm3d_furniture_template = {
 		unlock_banners = {
 			"banner_furniture1151"
 		}
-	},
-	[1203] = {
+	}
+	pg.base.dorm3d_furniture_template[1203] = {
 		name = "Comfy Chair",
 		rarity = 3,
 		unlock_tips = "",
@@ -1329,8 +1489,8 @@ pg.dorm3d_furniture_template = {
 		unlock_banners = {
 			"banner_furniture1152"
 		}
-	},
-	[1211] = {
+	}
+	pg.base.dorm3d_furniture_template[1211] = {
 		name = "Classical Wall Scroll",
 		rarity = 2,
 		unlock_tips = "",
@@ -1350,8 +1510,8 @@ pg.dorm3d_furniture_template = {
 			1120301
 		},
 		shop_id = {}
-	},
-	[1212] = {
+	}
+	pg.base.dorm3d_furniture_template[1212] = {
 		name = "Beloved Companion",
 		rarity = 2,
 		unlock_tips = "",
@@ -1371,8 +1531,8 @@ pg.dorm3d_furniture_template = {
 			1120101
 		},
 		shop_id = {}
-	},
-	[1213] = {
+	}
+	pg.base.dorm3d_furniture_template[1213] = {
 		name = "Floor Lamp",
 		rarity = 2,
 		unlock_tips = "",
@@ -1392,8 +1552,8 @@ pg.dorm3d_furniture_template = {
 			1120302
 		},
 		shop_id = {}
-	},
-	[1214] = {
+	}
+	pg.base.dorm3d_furniture_template[1214] = {
 		name = "Translucent Screen",
 		rarity = 2,
 		unlock_tips = "",
@@ -1415,8 +1575,8 @@ pg.dorm3d_furniture_template = {
 		scene_hides = {
 			"no_bake_prop_substitute/pre_db_frame32"
 		}
-	},
-	[1215] = {
+	}
+	pg.base.dorm3d_furniture_template[1215] = {
 		name = "Night Light",
 		rarity = 2,
 		unlock_tips = "",
@@ -1436,8 +1596,8 @@ pg.dorm3d_furniture_template = {
 			1120104
 		},
 		shop_id = {}
-	},
-	[1221] = {
+	}
+	pg.base.dorm3d_furniture_template[1221] = {
 		name = "Love Nest",
 		rarity = 4,
 		unlock_tips = "",
@@ -1468,8 +1628,8 @@ pg.dorm3d_furniture_template = {
 		scene_hides = {
 			"no_bake_pay_prop/bedroom"
 		}
-	},
-	[1222] = {
+	}
+	pg.base.dorm3d_furniture_template[1222] = {
 		name = "Floralized Rhythm",
 		rarity = 5,
 		is_special = 1,
@@ -1502,8 +1662,8 @@ pg.dorm3d_furniture_template = {
 		scene_hides = {
 			"no_bake_pay_prop/entertainment"
 		}
-	},
-	[1223] = {
+	}
+	pg.base.dorm3d_furniture_template[1223] = {
 		name = "Elegant Cherry Blossom Seating",
 		rarity = 4,
 		is_special = 0,
@@ -1536,8 +1696,8 @@ pg.dorm3d_furniture_template = {
 		scene_hides = {
 			"no_bake_pay_prop/livingroom"
 		}
-	},
-	[1401] = {
+	}
+	pg.base.dorm3d_furniture_template[1401] = {
 		name = "Velvet Bed",
 		rarity = 3,
 		unlock_tips = "",
@@ -1562,8 +1722,8 @@ pg.dorm3d_furniture_template = {
 			}
 		},
 		shop_id = {}
-	},
-	[1402] = {
+	}
+	pg.base.dorm3d_furniture_template[1402] = {
 		name = "Ebony Desk",
 		rarity = 3,
 		unlock_tips = "",
@@ -1588,8 +1748,8 @@ pg.dorm3d_furniture_template = {
 			}
 		},
 		shop_id = {}
-	},
-	[1403] = {
+	}
+	pg.base.dorm3d_furniture_template[1403] = {
 		name = "Leather Chair",
 		rarity = 3,
 		unlock_tips = "",
@@ -1614,8 +1774,8 @@ pg.dorm3d_furniture_template = {
 			}
 		},
 		shop_id = {}
-	},
-	[1411] = {
+	}
+	pg.base.dorm3d_furniture_template[1411] = {
 		name = "Long Candles",
 		rarity = 2,
 		unlock_tips = "",
@@ -1635,8 +1795,8 @@ pg.dorm3d_furniture_template = {
 			1140303
 		},
 		shop_id = {}
-	},
-	[1412] = {
+	}
+	pg.base.dorm3d_furniture_template[1412] = {
 		name = "Large Plant",
 		rarity = 2,
 		unlock_tips = "",
@@ -1656,8 +1816,8 @@ pg.dorm3d_furniture_template = {
 			1140202
 		},
 		shop_id = {}
-	},
-	[1413] = {
+	}
+	pg.base.dorm3d_furniture_template[1413] = {
 		name = "Elegant Desk Lamp",
 		rarity = 2,
 		unlock_tips = "",
@@ -1677,8 +1837,8 @@ pg.dorm3d_furniture_template = {
 			1140103
 		},
 		shop_id = {}
-	},
-	[1414] = {
+	}
+	pg.base.dorm3d_furniture_template[1414] = {
 		name = "Vintage Camera",
 		rarity = 2,
 		unlock_tips = "",
@@ -1698,8 +1858,8 @@ pg.dorm3d_furniture_template = {
 			1140102
 		},
 		shop_id = {}
-	},
-	[1415] = {
+	}
+	pg.base.dorm3d_furniture_template[1415] = {
 		name = "Portrait",
 		rarity = 2,
 		unlock_tips = "",
@@ -1719,8 +1879,8 @@ pg.dorm3d_furniture_template = {
 			1140302
 		},
 		shop_id = {}
-	},
-	[1461] = {
+	}
+	pg.base.dorm3d_furniture_template[1461] = {
 		name = "Crimson Tranquility",
 		rarity = 4,
 		is_special = 0,
@@ -1753,8 +1913,8 @@ pg.dorm3d_furniture_template = {
 		scene_hides = {
 			"no_bake_pay_prop/bedroom"
 		}
-	},
-	[1462] = {
+	}
+	pg.base.dorm3d_furniture_template[1462] = {
 		name = "Quiet Contemplation",
 		rarity = 4,
 		is_special = 0,
@@ -1787,159 +1947,5 @@ pg.dorm3d_furniture_template = {
 		scene_hides = {
 			"no_bake_pay_prop/study"
 		}
-	},
-	get_id_list_by_room_id = {
-		{
-			1,
-			2,
-			3,
-			4,
-			5,
-			6,
-			121,
-			122,
-			151
-		},
-		{
-			201,
-			202,
-			203,
-			204,
-			205,
-			206,
-			207,
-			208,
-			209,
-			210,
-			221,
-			222,
-			223,
-			251
-		},
-		{
-			301,
-			302,
-			303,
-			304,
-			305,
-			306,
-			307,
-			321,
-			322,
-			323,
-			324
-		},
-		{
-			401
-		},
-		[11] = {
-			1101,
-			1102,
-			1103,
-			1104,
-			1105,
-			1106,
-			1107,
-			1108,
-			1151,
-			1152,
-			1153,
-			1154
-		},
-		[12] = {
-			1201,
-			1202,
-			1203,
-			1211,
-			1212,
-			1213,
-			1214,
-			1215,
-			1221,
-			1222,
-			1223
-		},
-		[14] = {
-			1401,
-			1402,
-			1403,
-			1411,
-			1412,
-			1413,
-			1414,
-			1415,
-			1461,
-			1462
-		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		121,
-		122,
-		201,
-		202,
-		203,
-		204,
-		205,
-		206,
-		207,
-		208,
-		209,
-		210,
-		221,
-		222,
-		223,
-		151,
-		251,
-		301,
-		302,
-		303,
-		304,
-		305,
-		306,
-		307,
-		321,
-		322,
-		401,
-		323,
-		324,
-		1101,
-		1102,
-		1103,
-		1104,
-		1105,
-		1106,
-		1107,
-		1108,
-		1151,
-		1152,
-		1153,
-		1154,
-		1201,
-		1202,
-		1203,
-		1211,
-		1212,
-		1213,
-		1214,
-		1215,
-		1221,
-		1222,
-		1223,
-		1401,
-		1402,
-		1403,
-		1411,
-		1412,
-		1413,
-		1414,
-		1415,
-		1461,
-		1462
 	}
-}
+end)()

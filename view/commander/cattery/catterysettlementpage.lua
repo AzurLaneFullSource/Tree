@@ -50,7 +50,7 @@ function var0_0.Hide(arg0_7)
 	pg.UIMgr.GetInstance():UnOverlayPanel(arg0_7._tf, pg.UIMgr.GetInstance()._normalUIMain)
 end
 
-function var0_0.GetCurrentFlagship(arg0_8)
+function var0_0.GetFlagShip(arg0_8)
 	return Ship.New({
 		id = 999,
 		configId = 312011
@@ -60,7 +60,7 @@ end
 function var0_0.SetPainting(arg0_9)
 	arg0_9:ReturnPainting()
 
-	local var0_9 = arg0_9:GetCurrentFlagship():getPainting()
+	local var0_9 = arg0_9:GetFlagShip():getPainting()
 
 	arg0_9.paintingName = var0_9
 

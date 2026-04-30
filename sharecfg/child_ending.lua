@@ -1,6 +1,25 @@
 pg = pg or {}
-pg.child_ending = {
-	{
+pg.child_ending = rawget(pg, "child_ending") or setmetatable({
+	__name = "child_ending"
+}, confNEO)
+pg.child_ending.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11
+}
+pg.base = pg.base or {}
+pg.base.child_ending = {}
+
+;(function()
+	pg.base.child_ending[1] = {
 		pic = "bg_project_tb_cg26",
 		name = "Busy Fashion Model",
 		unlock_desc = "Unlockable",
@@ -36,8 +55,8 @@ pg.child_ending = {
 		performance = {
 			133
 		}
-	},
-	{
+	}
+	pg.base.child_ending[2] = {
 		pic = "bg_project_tb_cg27",
 		name = "Skilled Painter",
 		unlock_desc = "Unlockable",
@@ -78,8 +97,8 @@ pg.child_ending = {
 		performance = {
 			134
 		}
-	},
-	{
+	}
+	pg.base.child_ending[3] = {
 		pic = "bg_project_tb_cg28",
 		name = "Popular Musician",
 		unlock_desc = "Unlockable",
@@ -110,8 +129,8 @@ pg.child_ending = {
 		performance = {
 			135
 		}
-	},
-	{
+	}
+	pg.base.child_ending[4] = {
 		pic = "bg_project_tb_cg29",
 		name = "Stellar Actor",
 		unlock_desc = "Unlockable",
@@ -152,8 +171,8 @@ pg.child_ending = {
 		performance = {
 			136
 		}
-	},
-	{
+	}
+	pg.base.child_ending[5] = {
 		pic = "bg_project_tb_cg30",
 		name = "Talented Cook",
 		unlock_desc = "Unlockable",
@@ -189,8 +208,8 @@ pg.child_ending = {
 		performance = {
 			137
 		}
-	},
-	{
+	}
+	pg.base.child_ending[6] = {
 		pic = "bg_project_tb_cg31",
 		name = "Up-and-Coming Writer",
 		unlock_desc = "Unlockable",
@@ -226,8 +245,8 @@ pg.child_ending = {
 		performance = {
 			138
 		}
-	},
-	{
+	}
+	pg.base.child_ending[7] = {
 		pic = "bg_project_tb_cg32",
 		name = "Amazing Athlete",
 		unlock_desc = "Unlockable",
@@ -258,8 +277,8 @@ pg.child_ending = {
 		performance = {
 			139
 		}
-	},
-	{
+	}
+	pg.base.child_ending[8] = {
 		pic = "bg_project_tb_cg33",
 		name = "Big Shot Businesswoman",
 		unlock_desc = "Unlockable",
@@ -295,8 +314,8 @@ pg.child_ending = {
 		performance = {
 			140
 		}
-	},
-	{
+	}
+	pg.base.child_ending[9] = {
 		pic = "bg_project_tb_cg34",
 		name = "Lively Farm Owner",
 		unlock_desc = "Unlockable",
@@ -337,8 +356,8 @@ pg.child_ending = {
 		performance = {
 			141
 		}
-	},
-	{
+	}
+	pg.base.child_ending[10] = {
 		pic = "bg_project_tb_cg35",
 		name = "Repetitive Everyday",
 		unlock_desc = "Unlockable",
@@ -375,8 +394,8 @@ pg.child_ending = {
 		performance = {
 			142
 		}
-	},
-	{
+	}
+	pg.base.child_ending[11] = {
 		pic = "bg_project_tb_cg36",
 		name = "Shut-In Life",
 		unlock_desc = "Unlockable",
@@ -392,18 +411,5 @@ pg.child_ending = {
 		performance = {
 			143
 		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11
 	}
-}
+end)()

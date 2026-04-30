@@ -1,6 +1,40 @@
 pg = pg or {}
-pg.activity_single_enemy = {
-	[1001] = {
+pg.activity_single_enemy = rawget(pg, "activity_single_enemy") or setmetatable({
+	__name = "activity_single_enemy"
+}, confNEO)
+pg.activity_single_enemy.all = {
+	1001,
+	1002,
+	1003,
+	1004,
+	1005,
+	2001,
+	2002,
+	2003,
+	2004,
+	2005,
+	2006,
+	2007,
+	2008,
+	2009,
+	2010,
+	2011,
+	2012,
+	2013,
+	3001,
+	3002,
+	3003,
+	1000001,
+	1000002,
+	1000003,
+	1000004,
+	1000005
+}
+pg.base = pg.base or {}
+pg.base.activity_single_enemy = {}
+
+;(function()
+	pg.base.activity_single_enemy[1001] = {
 		expedition_id = 0,
 		pre_chapter = 0,
 		count = 0,
@@ -48,8 +82,8 @@ pg.activity_single_enemy = {
 		},
 		limitation = {},
 		property_limitation = {}
-	},
-	[1002] = {
+	}
+	pg.base.activity_single_enemy[1002] = {
 		expedition_id = 0,
 		pre_chapter = 1001,
 		count = 0,
@@ -97,8 +131,8 @@ pg.activity_single_enemy = {
 		},
 		limitation = {},
 		property_limitation = {}
-	},
-	[1003] = {
+	}
+	pg.base.activity_single_enemy[1003] = {
 		expedition_id = 0,
 		pre_chapter = 1002,
 		count = 0,
@@ -146,8 +180,8 @@ pg.activity_single_enemy = {
 		},
 		limitation = {},
 		property_limitation = {}
-	},
-	[1004] = {
+	}
+	pg.base.activity_single_enemy[1004] = {
 		expedition_id = 0,
 		pre_chapter = 1003,
 		count = 1,
@@ -201,8 +235,8 @@ pg.activity_single_enemy = {
 				110
 			}
 		}
-	},
-	[1005] = {
+	}
+	pg.base.activity_single_enemy[1005] = {
 		expedition_id = 0,
 		pre_chapter = 1003,
 		count = 0,
@@ -256,8 +290,8 @@ pg.activity_single_enemy = {
 				105
 			}
 		}
-	},
-	[2001] = {
+	}
+	pg.base.activity_single_enemy[2001] = {
 		expedition_id = 1901001,
 		pre_chapter = 0,
 		count = 0,
@@ -297,8 +331,8 @@ pg.activity_single_enemy = {
 			201310,
 			201311
 		}
-	},
-	[2002] = {
+	}
+	pg.base.activity_single_enemy[2002] = {
 		expedition_id = 1901002,
 		pre_chapter = 0,
 		count = 0,
@@ -337,8 +371,8 @@ pg.activity_single_enemy = {
 			201309,
 			201312
 		}
-	},
-	[2003] = {
+	}
+	pg.base.activity_single_enemy[2003] = {
 		expedition_id = 1901003,
 		pre_chapter = 0,
 		count = 0,
@@ -377,8 +411,8 @@ pg.activity_single_enemy = {
 			201309,
 			201313
 		}
-	},
-	[2004] = {
+	}
+	pg.base.activity_single_enemy[2004] = {
 		expedition_id = 1901004,
 		pre_chapter = 0,
 		count = 0,
@@ -420,8 +454,8 @@ pg.activity_single_enemy = {
 			201317,
 			201318
 		}
-	},
-	[2005] = {
+	}
+	pg.base.activity_single_enemy[2005] = {
 		expedition_id = 1902001,
 		pre_chapter = 0,
 		count = 0,
@@ -465,8 +499,8 @@ pg.activity_single_enemy = {
 			201310,
 			201311
 		}
-	},
-	[2006] = {
+	}
+	pg.base.activity_single_enemy[2006] = {
 		expedition_id = 1902002,
 		pre_chapter = 0,
 		count = 0,
@@ -509,8 +543,8 @@ pg.activity_single_enemy = {
 			201309,
 			201312
 		}
-	},
-	[2007] = {
+	}
+	pg.base.activity_single_enemy[2007] = {
 		expedition_id = 1902003,
 		pre_chapter = 0,
 		count = 0,
@@ -553,8 +587,8 @@ pg.activity_single_enemy = {
 			201309,
 			201313
 		}
-	},
-	[2008] = {
+	}
+	pg.base.activity_single_enemy[2008] = {
 		expedition_id = 1902004,
 		pre_chapter = 0,
 		count = 0,
@@ -600,8 +634,8 @@ pg.activity_single_enemy = {
 			201317,
 			201318
 		}
-	},
-	[2009] = {
+	}
+	pg.base.activity_single_enemy[2009] = {
 		expedition_id = 1903001,
 		pre_chapter = 0,
 		count = 0,
@@ -649,8 +683,8 @@ pg.activity_single_enemy = {
 			201310,
 			201311
 		}
-	},
-	[2010] = {
+	}
+	pg.base.activity_single_enemy[2010] = {
 		expedition_id = 1903002,
 		pre_chapter = 0,
 		count = 0,
@@ -697,8 +731,8 @@ pg.activity_single_enemy = {
 			201309,
 			201312
 		}
-	},
-	[2011] = {
+	}
+	pg.base.activity_single_enemy[2011] = {
 		expedition_id = 1903003,
 		pre_chapter = 0,
 		count = 0,
@@ -745,8 +779,8 @@ pg.activity_single_enemy = {
 			201309,
 			201313
 		}
-	},
-	[2012] = {
+	}
+	pg.base.activity_single_enemy[2012] = {
 		expedition_id = 1903004,
 		pre_chapter = 0,
 		count = 0,
@@ -796,8 +830,8 @@ pg.activity_single_enemy = {
 			201317,
 			201318
 		}
-	},
-	[2013] = {
+	}
+	pg.base.activity_single_enemy[2013] = {
 		expedition_id = 1904001,
 		pre_chapter = 0,
 		count = 0,
@@ -845,8 +879,8 @@ pg.activity_single_enemy = {
 			201319,
 			201320
 		}
-	},
-	[3001] = {
+	}
+	pg.base.activity_single_enemy[3001] = {
 		expedition_id = 1929001,
 		pre_chapter = 0,
 		count = 0,
@@ -869,8 +903,8 @@ pg.activity_single_enemy = {
 		},
 		limitation = {},
 		property_limitation = {}
-	},
-	[3002] = {
+	}
+	pg.base.activity_single_enemy[3002] = {
 		expedition_id = 1929002,
 		pre_chapter = 3001,
 		count = 0,
@@ -893,8 +927,8 @@ pg.activity_single_enemy = {
 		},
 		limitation = {},
 		property_limitation = {}
-	},
-	[3003] = {
+	}
+	pg.base.activity_single_enemy[3003] = {
 		expedition_id = 1929003,
 		pre_chapter = 3002,
 		count = 0,
@@ -917,8 +951,8 @@ pg.activity_single_enemy = {
 		},
 		limitation = {},
 		property_limitation = {}
-	},
-	[1000001] = {
+	}
+	pg.base.activity_single_enemy[1000001] = {
 		expedition_id = 1799001,
 		pre_chapter = 0,
 		count = 0,
@@ -941,8 +975,8 @@ pg.activity_single_enemy = {
 		},
 		limitation = {},
 		property_limitation = {}
-	},
-	[1000002] = {
+	}
+	pg.base.activity_single_enemy[1000002] = {
 		expedition_id = 1799002,
 		pre_chapter = 1000001,
 		count = 0,
@@ -965,8 +999,8 @@ pg.activity_single_enemy = {
 		},
 		limitation = {},
 		property_limitation = {}
-	},
-	[1000003] = {
+	}
+	pg.base.activity_single_enemy[1000003] = {
 		expedition_id = 1799003,
 		pre_chapter = 1000002,
 		count = 0,
@@ -989,8 +1023,8 @@ pg.activity_single_enemy = {
 		},
 		limitation = {},
 		property_limitation = {}
-	},
-	[1000004] = {
+	}
+	pg.base.activity_single_enemy[1000004] = {
 		expedition_id = 1799004,
 		pre_chapter = 1000003,
 		count = 1,
@@ -1019,8 +1053,8 @@ pg.activity_single_enemy = {
 				110
 			}
 		}
-	},
-	[1000005] = {
+	}
+	pg.base.activity_single_enemy[1000005] = {
 		expedition_id = 1799005,
 		pre_chapter = 1000003,
 		count = 0,
@@ -1049,33 +1083,5 @@ pg.activity_single_enemy = {
 				105
 			}
 		}
-	},
-	all = {
-		1001,
-		1002,
-		1003,
-		1004,
-		1005,
-		2001,
-		2002,
-		2003,
-		2004,
-		2005,
-		2006,
-		2007,
-		2008,
-		2009,
-		2010,
-		2011,
-		2012,
-		2013,
-		3001,
-		3002,
-		3003,
-		1000001,
-		1000002,
-		1000003,
-		1000004,
-		1000005
 	}
-}
+end)()

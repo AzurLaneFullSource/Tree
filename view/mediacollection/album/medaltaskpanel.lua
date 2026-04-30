@@ -152,6 +152,7 @@ function var0_0.updateAwards(arg0_16, arg1_16, arg2_16, arg3_16)
 			onButton(arg0_16, var2_16, function()
 				arg0_16._parent:emit(BaseUI.ON_DROP, var5_16)
 			end, SFX_PANEL)
+			setActive(findTF(var2_16, "got"), Task.OwnSpAward(var4_16))
 		end
 	end
 end

@@ -1,6 +1,87 @@
 pg = pg or {}
-pg.child_buff = {
-	[1001] = {
+pg.child_buff = rawget(pg, "child_buff") or setmetatable({
+	__name = "child_buff"
+}, confNEO)
+pg.child_buff.all = {
+	1001,
+	1002,
+	1003,
+	1004,
+	1005,
+	1006,
+	1011,
+	1012,
+	1013,
+	1014,
+	1015,
+	1016,
+	1021,
+	1022,
+	1023,
+	1024,
+	1025,
+	1026,
+	1031,
+	1032,
+	1033,
+	1034,
+	1035,
+	1036,
+	1041,
+	1042,
+	1043,
+	1044,
+	1045,
+	1046,
+	1051,
+	1052,
+	1053,
+	1054,
+	1055,
+	1056,
+	1061,
+	1062,
+	1063,
+	1064,
+	1065,
+	1066,
+	1071,
+	1072,
+	1073,
+	1074,
+	1075,
+	1076,
+	1081,
+	1082,
+	1083,
+	1084,
+	1085,
+	1086,
+	1091,
+	1092,
+	1093,
+	1094,
+	1095,
+	1096,
+	1101,
+	1102,
+	1103,
+	1104,
+	1105,
+	1106,
+	1111,
+	1112,
+	1113,
+	1114,
+	1115,
+	1116,
+	1121
+}
+pg.base = pg.base or {}
+pg.base.child_buff = {}
+
+;(function()
+	pg.base.child_buff[1001] = {
 		desc = "Mood cost +1",
 		name = "Worrywart - Average",
 		id = 1001,
@@ -14,8 +95,8 @@ pg.child_buff = {
 				1
 			}
 		}
-	},
-	[1002] = {
+	}
+	pg.base.child_buff[1002] = {
 		desc = "Mood cost +2",
 		name = "Worrywart - Moderate",
 		id = 1002,
@@ -29,8 +110,8 @@ pg.child_buff = {
 				2
 			}
 		}
-	},
-	[1003] = {
+	}
+	pg.base.child_buff[1003] = {
 		desc = "Mood cost +3",
 		name = "Worrywart - Severe",
 		id = 1003,
@@ -44,8 +125,8 @@ pg.child_buff = {
 				3
 			}
 		}
-	},
-	[1004] = {
+	}
+	pg.base.child_buff[1004] = {
 		desc = "Mood cost -1",
 		name = "Carefree - Good",
 		id = 1004,
@@ -59,8 +140,8 @@ pg.child_buff = {
 				-1
 			}
 		}
-	},
-	[1005] = {
+	}
+	pg.base.child_buff[1005] = {
 		desc = "Mood cost -2",
 		name = "Carefree - Great",
 		id = 1005,
@@ -74,8 +155,8 @@ pg.child_buff = {
 				-2
 			}
 		}
-	},
-	[1006] = {
+	}
+	pg.base.child_buff[1006] = {
 		desc = "Mood cost -3",
 		name = "Carefree - Excellent",
 		id = 1006,
@@ -89,8 +170,8 @@ pg.child_buff = {
 				-3
 			}
 		}
-	},
-	[1011] = {
+	}
+	pg.base.child_buff[1011] = {
 		desc = "Spending cost -1",
 		name = "Loose Pockets - Average",
 		id = 1011,
@@ -104,8 +185,8 @@ pg.child_buff = {
 				-1
 			}
 		}
-	},
-	[1012] = {
+	}
+	pg.base.child_buff[1012] = {
 		desc = "Spending cost -2",
 		name = "Loose Pockets - Moderate",
 		id = 1012,
@@ -119,8 +200,8 @@ pg.child_buff = {
 				-2
 			}
 		}
-	},
-	[1013] = {
+	}
+	pg.base.child_buff[1013] = {
 		desc = "Spending cost -3",
 		name = "Loose Pockets - Severe",
 		id = 1013,
@@ -134,8 +215,8 @@ pg.child_buff = {
 				-3
 			}
 		}
-	},
-	[1014] = {
+	}
+	pg.base.child_buff[1014] = {
 		desc = "Spending cost +1",
 		name = "Thrifty Spender - Good",
 		id = 1014,
@@ -149,8 +230,8 @@ pg.child_buff = {
 				1
 			}
 		}
-	},
-	[1015] = {
+	}
+	pg.base.child_buff[1015] = {
 		desc = "Spending cost +2",
 		name = "Thrifty Spender - Great",
 		id = 1015,
@@ -164,8 +245,8 @@ pg.child_buff = {
 				1
 			}
 		}
-	},
-	[1016] = {
+	}
+	pg.base.child_buff[1016] = {
 		desc = "Spending cost +3",
 		name = "Thrifty Spender - Excellent",
 		id = 1016,
@@ -179,8 +260,8 @@ pg.child_buff = {
 				1
 			}
 		}
-	},
-	[1021] = {
+	}
+	pg.base.child_buff[1021] = {
 		desc = "Fitness gained -1",
 		name = "Out of Shape - Average",
 		id = 1021,
@@ -194,8 +275,8 @@ pg.child_buff = {
 				-1
 			}
 		}
-	},
-	[1022] = {
+	}
+	pg.base.child_buff[1022] = {
 		desc = "Fitness gained -2",
 		name = "Out of Shape - Moderate",
 		id = 1022,
@@ -209,8 +290,8 @@ pg.child_buff = {
 				-2
 			}
 		}
-	},
-	[1023] = {
+	}
+	pg.base.child_buff[1023] = {
 		desc = "Fitness gained -3",
 		name = "Out of Shape - Severe",
 		id = 1023,
@@ -224,8 +305,8 @@ pg.child_buff = {
 				-3
 			}
 		}
-	},
-	[1024] = {
+	}
+	pg.base.child_buff[1024] = {
 		desc = "Fitness gained +1",
 		name = "Peak Form - Good",
 		id = 1024,
@@ -239,8 +320,8 @@ pg.child_buff = {
 				1
 			}
 		}
-	},
-	[1025] = {
+	}
+	pg.base.child_buff[1025] = {
 		desc = "Fitness gained +2",
 		name = "Peak Form - Great",
 		id = 1025,
@@ -254,8 +335,8 @@ pg.child_buff = {
 				2
 			}
 		}
-	},
-	[1026] = {
+	}
+	pg.base.child_buff[1026] = {
 		desc = "Fitness gained +3",
 		name = "Peak Form - Excellent",
 		id = 1026,
@@ -269,8 +350,8 @@ pg.child_buff = {
 				3
 			}
 		}
-	},
-	[1031] = {
+	}
+	pg.base.child_buff[1031] = {
 		desc = "Knowledge gained -1",
 		name = "Wandering Mind - Average",
 		id = 1031,
@@ -284,8 +365,8 @@ pg.child_buff = {
 				-1
 			}
 		}
-	},
-	[1032] = {
+	}
+	pg.base.child_buff[1032] = {
 		desc = "Knowledge gained -2",
 		name = "Wandering Mind - Moderate",
 		id = 1032,
@@ -299,8 +380,8 @@ pg.child_buff = {
 				-2
 			}
 		}
-	},
-	[1033] = {
+	}
+	pg.base.child_buff[1033] = {
 		desc = "Knowledge gained -3",
 		name = "Wandering Mind - Severe",
 		id = 1033,
@@ -314,8 +395,8 @@ pg.child_buff = {
 				-3
 			}
 		}
-	},
-	[1034] = {
+	}
+	pg.base.child_buff[1034] = {
 		desc = "Knowledge gained +1",
 		name = "Sharp Focus - Good",
 		id = 1034,
@@ -329,8 +410,8 @@ pg.child_buff = {
 				1
 			}
 		}
-	},
-	[1035] = {
+	}
+	pg.base.child_buff[1035] = {
 		desc = "Knowledge gained +2",
 		name = "Sharp Focus - Great",
 		id = 1035,
@@ -344,8 +425,8 @@ pg.child_buff = {
 				2
 			}
 		}
-	},
-	[1036] = {
+	}
+	pg.base.child_buff[1036] = {
 		desc = "Knowledge gained +3",
 		name = "Sharp Focus - Excellent",
 		id = 1036,
@@ -359,8 +440,8 @@ pg.child_buff = {
 				3
 			}
 		}
-	},
-	[1041] = {
+	}
+	pg.base.child_buff[1041] = {
 		desc = "Charisma gained -1",
 		name = "Social Anxiety - Average",
 		id = 1041,
@@ -374,8 +455,8 @@ pg.child_buff = {
 				-1
 			}
 		}
-	},
-	[1042] = {
+	}
+	pg.base.child_buff[1042] = {
 		desc = "Charisma gained -2",
 		name = "Social Anxiety - Moderate",
 		id = 1042,
@@ -389,8 +470,8 @@ pg.child_buff = {
 				-2
 			}
 		}
-	},
-	[1043] = {
+	}
+	pg.base.child_buff[1043] = {
 		desc = "Charisma gained -3",
 		name = "Social Anxiety - Severe",
 		id = 1043,
@@ -404,8 +485,8 @@ pg.child_buff = {
 				-3
 			}
 		}
-	},
-	[1044] = {
+	}
+	pg.base.child_buff[1044] = {
 		desc = "Charisma gained +1",
 		name = "People Person - Good",
 		id = 1044,
@@ -419,8 +500,8 @@ pg.child_buff = {
 				1
 			}
 		}
-	},
-	[1045] = {
+	}
+	pg.base.child_buff[1045] = {
 		desc = "Charisma gained +2",
 		name = "People Person - Great",
 		id = 1045,
@@ -434,8 +515,8 @@ pg.child_buff = {
 				2
 			}
 		}
-	},
-	[1046] = {
+	}
+	pg.base.child_buff[1046] = {
 		desc = "Charisma gained +3",
 		name = "People Person - Excellent",
 		id = 1046,
@@ -449,8 +530,8 @@ pg.child_buff = {
 				3
 			}
 		}
-	},
-	[1051] = {
+	}
+	pg.base.child_buff[1051] = {
 		desc = "Sensitivity gained -1",
 		name = "Stick in the Mud - Average",
 		id = 1051,
@@ -464,8 +545,8 @@ pg.child_buff = {
 				-1
 			}
 		}
-	},
-	[1052] = {
+	}
+	pg.base.child_buff[1052] = {
 		desc = "Sensitivity gained -2",
 		name = "Stick in the Mud - Moderate",
 		id = 1052,
@@ -479,8 +560,8 @@ pg.child_buff = {
 				-2
 			}
 		}
-	},
-	[1053] = {
+	}
+	pg.base.child_buff[1053] = {
 		desc = "Sensitivity gained -3",
 		name = "Stick in the Mud - Severe",
 		id = 1053,
@@ -494,8 +575,8 @@ pg.child_buff = {
 				-3
 			}
 		}
-	},
-	[1054] = {
+	}
+	pg.base.child_buff[1054] = {
 		desc = "Sensitivity gained +1",
 		name = "Flowing Inspiration - Good",
 		id = 1054,
@@ -509,8 +590,8 @@ pg.child_buff = {
 				1
 			}
 		}
-	},
-	[1055] = {
+	}
+	pg.base.child_buff[1055] = {
 		desc = "Sensitivity gained +2",
 		name = "Flowing Inspiration - Great",
 		id = 1055,
@@ -524,8 +605,8 @@ pg.child_buff = {
 				2
 			}
 		}
-	},
-	[1056] = {
+	}
+	pg.base.child_buff[1056] = {
 		desc = "Sensitivity gained +3",
 		name = "Flowing Inspiration - Excellent",
 		id = 1056,
@@ -539,8 +620,8 @@ pg.child_buff = {
 				3
 			}
 		}
-	},
-	[1061] = {
+	}
+	pg.base.child_buff[1061] = {
 		desc = "Expression gained -1",
 		name = "Ham Actor - Average",
 		id = 1061,
@@ -554,8 +635,8 @@ pg.child_buff = {
 				-1
 			}
 		}
-	},
-	[1062] = {
+	}
+	pg.base.child_buff[1062] = {
 		desc = "Expression gained -2",
 		name = "Ham Actor - Moderate",
 		id = 1062,
@@ -569,8 +650,8 @@ pg.child_buff = {
 				-2
 			}
 		}
-	},
-	[1063] = {
+	}
+	pg.base.child_buff[1063] = {
 		desc = "Expression gained -3",
 		name = "Ham Actor - Severe",
 		id = 1063,
@@ -584,8 +665,8 @@ pg.child_buff = {
 				-3
 			}
 		}
-	},
-	[1064] = {
+	}
+	pg.base.child_buff[1064] = {
 		desc = "Expression gained +1",
 		name = "Born Thespian - Good",
 		id = 1064,
@@ -599,8 +680,8 @@ pg.child_buff = {
 				1
 			}
 		}
-	},
-	[1065] = {
+	}
+	pg.base.child_buff[1065] = {
 		desc = "Expression gained +2",
 		name = "Born Thespian - Great",
 		id = 1065,
@@ -614,8 +695,8 @@ pg.child_buff = {
 				2
 			}
 		}
-	},
-	[1066] = {
+	}
+	pg.base.child_buff[1066] = {
 		desc = "Expression gained +3",
 		name = "Born Thespian - Excellent",
 		id = 1066,
@@ -629,8 +710,8 @@ pg.child_buff = {
 				3
 			}
 		}
-	},
-	[1071] = {
+	}
+	pg.base.child_buff[1071] = {
 		desc = "Musicality gained -1",
 		name = "Tone Deaf - Average",
 		id = 1071,
@@ -644,8 +725,8 @@ pg.child_buff = {
 				-1
 			}
 		}
-	},
-	[1072] = {
+	}
+	pg.base.child_buff[1072] = {
 		desc = "Musicality gained -2",
 		name = "Tone Deaf - Moderate",
 		id = 1072,
@@ -659,8 +740,8 @@ pg.child_buff = {
 				-2
 			}
 		}
-	},
-	[1073] = {
+	}
+	pg.base.child_buff[1073] = {
 		desc = "Musicality gained -3",
 		name = "Tone Deaf - Severe",
 		id = 1073,
@@ -674,8 +755,8 @@ pg.child_buff = {
 				-3
 			}
 		}
-	},
-	[1074] = {
+	}
+	pg.base.child_buff[1074] = {
 		desc = "Musicality gained +1",
 		name = "Golden Voice - Good",
 		id = 1074,
@@ -689,8 +770,8 @@ pg.child_buff = {
 				1
 			}
 		}
-	},
-	[1075] = {
+	}
+	pg.base.child_buff[1075] = {
 		desc = "Musicality gained +2",
 		name = "Golden Voice - Great",
 		id = 1075,
@@ -704,8 +785,8 @@ pg.child_buff = {
 				2
 			}
 		}
-	},
-	[1076] = {
+	}
+	pg.base.child_buff[1076] = {
 		desc = "Musicality gained +3",
 		name = "Golden Voice - Excellent",
 		id = 1076,
@@ -719,8 +800,8 @@ pg.child_buff = {
 				3
 			}
 		}
-	},
-	[1081] = {
+	}
+	pg.base.child_buff[1081] = {
 		desc = "Caring gained -1",
 		name = "Tactless - Average",
 		id = 1081,
@@ -734,8 +815,8 @@ pg.child_buff = {
 				-1
 			}
 		}
-	},
-	[1082] = {
+	}
+	pg.base.child_buff[1082] = {
 		desc = "Caring gained -2",
 		name = "Tactless - Moderate",
 		id = 1082,
@@ -749,8 +830,8 @@ pg.child_buff = {
 				-2
 			}
 		}
-	},
-	[1083] = {
+	}
+	pg.base.child_buff[1083] = {
 		desc = "Caring gained -3",
 		name = "Tactless - Severe",
 		id = 1083,
@@ -764,8 +845,8 @@ pg.child_buff = {
 				-3
 			}
 		}
-	},
-	[1084] = {
+	}
+	pg.base.child_buff[1084] = {
 		desc = "Caring gained +1",
 		name = "In Touch - Good",
 		id = 1084,
@@ -779,8 +860,8 @@ pg.child_buff = {
 				1
 			}
 		}
-	},
-	[1085] = {
+	}
+	pg.base.child_buff[1085] = {
 		desc = "Caring gained +2",
 		name = "In Touch - Great",
 		id = 1085,
@@ -794,8 +875,8 @@ pg.child_buff = {
 				2
 			}
 		}
-	},
-	[1086] = {
+	}
+	pg.base.child_buff[1086] = {
 		desc = "Caring gained +3",
 		name = "In Touch - Excellent",
 		id = 1086,
@@ -809,8 +890,8 @@ pg.child_buff = {
 				3
 			}
 		}
-	},
-	[1091] = {
+	}
+	pg.base.child_buff[1091] = {
 		desc = "Creativity gained -1",
 		name = "Head Empty - Average",
 		id = 1091,
@@ -824,8 +905,8 @@ pg.child_buff = {
 				-1
 			}
 		}
-	},
-	[1092] = {
+	}
+	pg.base.child_buff[1092] = {
 		desc = "Creativity gained -2",
 		name = "Head Empty - Moderate",
 		id = 1092,
@@ -839,8 +920,8 @@ pg.child_buff = {
 				-2
 			}
 		}
-	},
-	[1093] = {
+	}
+	pg.base.child_buff[1093] = {
 		desc = "Creativity gained -3",
 		name = "Head Empty - Severe",
 		id = 1093,
@@ -854,8 +935,8 @@ pg.child_buff = {
 				-3
 			}
 		}
-	},
-	[1094] = {
+	}
+	pg.base.child_buff[1094] = {
 		desc = "Creativity gained +1",
 		name = "Free Spirit - Good",
 		id = 1094,
@@ -869,8 +950,8 @@ pg.child_buff = {
 				1
 			}
 		}
-	},
-	[1095] = {
+	}
+	pg.base.child_buff[1095] = {
 		desc = "Creativity gained +2",
 		name = "Free Spirit - Great",
 		id = 1095,
@@ -884,8 +965,8 @@ pg.child_buff = {
 				2
 			}
 		}
-	},
-	[1096] = {
+	}
+	pg.base.child_buff[1096] = {
 		desc = "Creativity gained +3",
 		name = "Free Spirit - Excellent",
 		id = 1096,
@@ -899,8 +980,8 @@ pg.child_buff = {
 				3
 			}
 		}
-	},
-	[1101] = {
+	}
+	pg.base.child_buff[1101] = {
 		desc = "Fitness gained -1",
 		name = "Couch Potato - Average",
 		id = 1101,
@@ -914,8 +995,8 @@ pg.child_buff = {
 				-1
 			}
 		}
-	},
-	[1102] = {
+	}
+	pg.base.child_buff[1102] = {
 		desc = "Fitness gained -2",
 		name = "Couch Potato - Moderate",
 		id = 1102,
@@ -929,8 +1010,8 @@ pg.child_buff = {
 				-2
 			}
 		}
-	},
-	[1103] = {
+	}
+	pg.base.child_buff[1103] = {
 		desc = "Fitness gained -3",
 		name = "Couch Potato - Severe",
 		id = 1103,
@@ -944,8 +1025,8 @@ pg.child_buff = {
 				-3
 			}
 		}
-	},
-	[1104] = {
+	}
+	pg.base.child_buff[1104] = {
 		desc = "Fitness gained +1",
 		name = "Athletic Inclination - Good",
 		id = 1104,
@@ -959,8 +1040,8 @@ pg.child_buff = {
 				1
 			}
 		}
-	},
-	[1105] = {
+	}
+	pg.base.child_buff[1105] = {
 		desc = "Fitness gained +2",
 		name = "Athletic Inclination - Great",
 		id = 1105,
@@ -974,8 +1055,8 @@ pg.child_buff = {
 				2
 			}
 		}
-	},
-	[1106] = {
+	}
+	pg.base.child_buff[1106] = {
 		desc = "Fitness gained +3",
 		name = "Athletic Inclination - Excellent",
 		id = 1106,
@@ -989,8 +1070,8 @@ pg.child_buff = {
 				3
 			}
 		}
-	},
-	[1111] = {
+	}
+	pg.base.child_buff[1111] = {
 		desc = "Dexterity gained -1",
 		name = "Butterfingers - Average",
 		id = 1111,
@@ -1004,8 +1085,8 @@ pg.child_buff = {
 				-1
 			}
 		}
-	},
-	[1112] = {
+	}
+	pg.base.child_buff[1112] = {
 		desc = "Dexterity gained -2",
 		name = "Butterfingers - Moderate",
 		id = 1112,
@@ -1019,8 +1100,8 @@ pg.child_buff = {
 				-2
 			}
 		}
-	},
-	[1113] = {
+	}
+	pg.base.child_buff[1113] = {
 		desc = "Dexterity gained -3",
 		name = "Butterfingers - Severe",
 		id = 1113,
@@ -1034,8 +1115,8 @@ pg.child_buff = {
 				-3
 			}
 		}
-	},
-	[1114] = {
+	}
+	pg.base.child_buff[1114] = {
 		desc = "Dexterity gained +1",
 		name = "Muscle Memory - Good",
 		id = 1114,
@@ -1049,8 +1130,8 @@ pg.child_buff = {
 				1
 			}
 		}
-	},
-	[1115] = {
+	}
+	pg.base.child_buff[1115] = {
 		desc = "Dexterity gained +2",
 		name = "Muscle Memory - Great",
 		id = 1115,
@@ -1064,8 +1145,8 @@ pg.child_buff = {
 				2
 			}
 		}
-	},
-	[1116] = {
+	}
+	pg.base.child_buff[1116] = {
 		desc = "Dexterity gained +3",
 		name = "Muscle Memory - Excellent",
 		id = 1116,
@@ -1079,8 +1160,8 @@ pg.child_buff = {
 				3
 			}
 		}
-	},
-	[1121] = {
+	}
+	pg.base.child_buff[1121] = {
 		desc = "All stats +1",
 		name = "All stats",
 		id = 1121,
@@ -1112,80 +1193,5 @@ pg.child_buff = {
 				1
 			}
 		}
-	},
-	all = {
-		1001,
-		1002,
-		1003,
-		1004,
-		1005,
-		1006,
-		1011,
-		1012,
-		1013,
-		1014,
-		1015,
-		1016,
-		1021,
-		1022,
-		1023,
-		1024,
-		1025,
-		1026,
-		1031,
-		1032,
-		1033,
-		1034,
-		1035,
-		1036,
-		1041,
-		1042,
-		1043,
-		1044,
-		1045,
-		1046,
-		1051,
-		1052,
-		1053,
-		1054,
-		1055,
-		1056,
-		1061,
-		1062,
-		1063,
-		1064,
-		1065,
-		1066,
-		1071,
-		1072,
-		1073,
-		1074,
-		1075,
-		1076,
-		1081,
-		1082,
-		1083,
-		1084,
-		1085,
-		1086,
-		1091,
-		1092,
-		1093,
-		1094,
-		1095,
-		1096,
-		1101,
-		1102,
-		1103,
-		1104,
-		1105,
-		1106,
-		1111,
-		1112,
-		1113,
-		1114,
-		1115,
-		1116,
-		1121
 	}
-}
+end)()

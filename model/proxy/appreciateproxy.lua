@@ -49,7 +49,7 @@ function var0_0.checkMusicFileState(arg0_4)
 	local var0_4
 	local var1_4
 
-	for iter0_4, iter1_4 in pairs(pg.music_collect_config.all) do
+	for iter0_4, iter1_4 in ipairs(pg.music_collect_config.all) do
 		local var2_4 = pg.music_collect_config[iter1_4].music
 		local var3_4 = MusicCollectionConst.MUSIC_SONG_PATH_PREFIX .. var2_4 .. ".b"
 		local var4_4 = checkABExist(var3_4)

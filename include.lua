@@ -10,93 +10,89 @@ local function var0_0(arg0_1)
 	end)
 end
 
-local function var1_0(arg0_3, arg1_3)
-	return function(arg0_4, arg1_4)
-		local var0_4 = arg0_4.__name
+confNEO = confNEO or {
+	__index = function(arg0_3, arg1_3)
+		local var0_3 = rawget(arg0_3, "__name")
+		local var1_3
+		local var2_3 = rawget(arg0_3, "__sub__") or {
+			var0_3
+		}
+		local var3_3 = rawget(arg0_3, "__stream__")
 
-		if arg0_3 == 1 and cs[var0_4][arg1_4] and not pg.base[var0_4][arg1_4] then
-			LuaHelper.SetConfVal(var0_4, cs[var0_4][arg1_4][1], cs[var0_4][arg1_4][2])
-		end
-
-		if arg0_3 == 2 and cs[var0_4].indexs[arg1_4] then
-			local var1_4 = cs[var0_4].subList[cs[var0_4].indexs[arg1_4]]
-
-			if pg.base[var1_4] == nil then
-				require("ShareCfg." .. cs[var0_4].subFolderName .. "." .. var1_4)
+		for iter0_3, iter1_3 in ipairs(var2_3) do
+			if var3_3 and cs[iter1_3][arg1_3] and not pg.base[iter1_3][arg1_3] then
+				LuaHelper.SetConfVal(iter1_3, cs[iter1_3][arg1_3][1], cs[iter1_3][arg1_3][2])
 			end
 
-			var0_4 = var1_4
+			var1_3 = pg.base[iter1_3][arg1_3]
+
+			if var1_3 then
+				break
+			end
 		end
 
-		local var2_4 = pg.base[var0_4][arg1_4]
-
-		if not var2_4 then
+		if var1_3 == nil then
 			return nil
 		end
 
-		local var3_4 = {}
+		local var4_3 = rawget(arg0_3, "__namecode__")
+		local var5_3 = rawget(var1_3, "base") or nil
 
-		for iter0_4, iter1_4 in pairs(var2_4) do
-			if type(iter1_4) == "string" then
-				var3_4[iter0_4] = var0_0(iter1_4)
+		arg0_3[arg1_3] = setmetatable({}, {
+			__index = function(arg0_4, arg1_4)
+				local var0_4 = var1_3[arg1_4]
 
-				if arg1_3 then
-					var3_4[iter0_4] = HXSet.hxLan(var3_4[iter0_4])
+				if var0_4 == nil and var5_3 then
+					var0_4 = arg0_3[var5_3][arg1_4]
 				end
-			end
-		end
 
-		local var4_4 = rawget(var2_4, "base")
+				if type(var0_4) == "string" then
+					if var0_3 == "equip_data_statistics" then
+						var0_4 = var0_0(var0_4)
+					end
 
-		if var4_4 ~= nil then
-			arg0_4[arg1_4] = setmetatable(var3_4, {
-				__index = function(arg0_5, arg1_5)
-					if var2_4[arg1_5] == nil then
-						return arg0_4[var4_4][arg1_5]
-					else
-						return var2_4[arg1_5]
+					if var4_3 then
+						var0_4 = HXSet.hxLan(var0_4)
 					end
 				end
-			})
-		else
-			arg0_4[arg1_4] = setmetatable(var3_4, {
-				__index = var2_4
-			})
-		end
 
-		return arg0_4[arg1_4]
+				arg0_4[arg1_4] = var0_4
+
+				return var0_4
+			end
+		})
+
+		return arg0_3[arg1_3]
 	end
-end
-
-confSP = confSP or {
-	__index = var1_0(2, true)
-}
-confMT = confMT or {
-	__index = var1_0(1, true)
-}
-confHX = confHX or {
-	__index = var1_0(0, true)
 }
 
 require("localConfig")
 require("const")
 require("config")
 setmetatable(pg, {
-	__index = function(arg0_6, arg1_6)
-		local var0_6 = "ShareCfg." .. arg1_6
+	__index = function(arg0_5, arg1_5)
+		local var0_5 = "ShareCfg." .. arg1_5
 
-		if ShareCfg[var0_6] then
-			require(var0_6)
+		if ShareCfg[var0_5] then
+			require(var0_5)
+		else
+			local var1_5 = 1
 
-			return rawget(pg, arg1_6)
+			while ShareCfg[var0_5 .. "_" .. var1_5] do
+				require(var0_5 .. "_" .. var1_5)
+
+				var1_5 = var1_5 + 1
+			end
 		end
+
+		return rawget(pg, arg1_5)
 	end
 })
 
 ERROR_MESSAGE = setmetatable({}, {
-	__index = function(arg0_7, arg1_7)
-		if pg.error_message[arg1_7] then
-			return pg.error_message[arg1_7].desc
+	__index = function(arg0_6, arg1_6)
+		if pg.error_message[arg1_6] then
+			return pg.error_message[arg1_6].desc
 		else
 			return "none"
 		end

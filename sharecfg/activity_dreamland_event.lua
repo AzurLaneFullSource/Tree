@@ -1,6 +1,33 @@
 pg = pg or {}
-pg.activity_dreamland_event = {
-	{
+pg.activity_dreamland_event = rawget(pg, "activity_dreamland_event") or setmetatable({
+	__name = "activity_dreamland_event"
+}, confNEO)
+pg.activity_dreamland_event.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19
+}
+pg.base = pg.base or {}
+pg.base.activity_dreamland_event = {}
+
+;(function()
+	pg.base.activity_dreamland_event[1] = {
 		icon = "tag_story_main",
 		name = "At the Dream's Entrance",
 		id = 1,
@@ -10,8 +37,8 @@ pg.activity_dreamland_event = {
 			x = 184,
 			y = 268
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[2] = {
 		icon = "tag_story_main",
 		name = "Nice and Cold Milk",
 		id = 2,
@@ -21,8 +48,8 @@ pg.activity_dreamland_event = {
 			x = 1487,
 			y = 293
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[3] = {
 		icon = "tag_story_main",
 		name = "Most Important Meal of the Day",
 		id = 3,
@@ -32,8 +59,8 @@ pg.activity_dreamland_event = {
 			x = 1211,
 			y = 139
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[4] = {
 		icon = "tag_story_main",
 		name = "Key to the Heart",
 		id = 4,
@@ -43,8 +70,8 @@ pg.activity_dreamland_event = {
 			x = 74,
 			y = 97
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[5] = {
 		icon = "tag_story_main",
 		name = "Magical Performance",
 		id = 5,
@@ -54,8 +81,8 @@ pg.activity_dreamland_event = {
 			x = 1097,
 			y = -603
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[6] = {
 		icon = "tag_story_main",
 		name = "The Maid, the Drink, and Her Tricks",
 		id = 6,
@@ -65,8 +92,8 @@ pg.activity_dreamland_event = {
 			x = 1261,
 			y = -505
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[7] = {
 		icon = "tag_story_main",
 		name = "The Fantastic Parade",
 		id = 7,
@@ -76,8 +103,8 @@ pg.activity_dreamland_event = {
 			x = -1961,
 			y = -537
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[8] = {
 		icon = "tag_story_main",
 		name = "Bullseye Wager",
 		id = 8,
@@ -87,8 +114,8 @@ pg.activity_dreamland_event = {
 			x = -1197,
 			y = -63
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[9] = {
 		icon = "tag_story_main",
 		name = "Dressing for the Banquet",
 		id = 9,
@@ -98,8 +125,8 @@ pg.activity_dreamland_event = {
 			x = -34,
 			y = 151
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[10] = {
 		icon = "tag_story_main",
 		name = "Ominous Twilight",
 		id = 10,
@@ -109,8 +136,8 @@ pg.activity_dreamland_event = {
 			x = -151,
 			y = 148
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[11] = {
 		icon = "tag_story_main",
 		name = "In the Maze",
 		id = 11,
@@ -120,8 +147,8 @@ pg.activity_dreamland_event = {
 			x = -1522,
 			y = 140
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[12] = {
 		icon = "tag_story_main",
 		name = "Entwining Darkness",
 		id = 12,
@@ -131,8 +158,8 @@ pg.activity_dreamland_event = {
 			x = 1122,
 			y = 33
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[13] = {
 		icon = "tag_story_main",
 		name = "A Special Time",
 		id = 13,
@@ -142,8 +169,8 @@ pg.activity_dreamland_event = {
 			x = 1511,
 			y = 452
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[14] = {
 		icon = "tag_story_main",
 		name = "Nighttime Merrymaking",
 		id = 14,
@@ -153,8 +180,8 @@ pg.activity_dreamland_event = {
 			x = 1324,
 			y = -309
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[15] = {
 		icon = "tag_story_main",
 		name = "Fireworks and Memories",
 		id = 15,
@@ -164,8 +191,8 @@ pg.activity_dreamland_event = {
 			x = -273,
 			y = 6
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[16] = {
 		icon = "tag_story_main",
 		name = "Sweet Dreams 'til the End",
 		id = 16,
@@ -175,8 +202,8 @@ pg.activity_dreamland_event = {
 			x = 1383,
 			y = 103
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[17] = {
 		icon = "tag_story_main",
 		name = "Dreamlike Fireworks",
 		id = 17,
@@ -186,8 +213,8 @@ pg.activity_dreamland_event = {
 			x = 5,
 			y = -103
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[18] = {
 		icon = "tag_story_main",
 		name = "A Massage Before Bedtime",
 		id = 18,
@@ -197,8 +224,8 @@ pg.activity_dreamland_event = {
 			x = -2140,
 			y = -357
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_event[19] = {
 		icon = "tag_story_main",
 		name = "Epilogue",
 		id = 19,
@@ -208,26 +235,5 @@ pg.activity_dreamland_event = {
 			x = -68,
 			y = -456
 		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19
 	}
-}
+end)()

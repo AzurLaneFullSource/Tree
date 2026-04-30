@@ -7,33 +7,9 @@ var0_0.word_template_95 = {}
 local var1_0 = var0_0.word_template_95
 
 function temp()
-	var1_0.方 = {
-		励 = {
-			之 = {
-				this = true
-			}
-		},
-		勵 = {
-			之 = {
-				this = true
-			}
-		},
-		政 = {
+	var1_0.铣 = {
+		法 = {
 			this = true
-		},
-		方 = {
-			日 = {
-				记 = {
-					this = true
-				}
-			}
-		},
-		芳 = {
-			日 = {
-				记 = {
-					this = true
-				}
-			}
 		}
 	}
 end
@@ -41,85 +17,24 @@ end
 temp()
 
 function temp()
-	var1_0.芳 = {
-		兰 = {
-			的 = {
-				堕 = {
-					落 = {
-						this = true
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var1_0.防 = {
-		暴 = {
-			器 = {
-				this = true
-			},
+	var1_0.梨 = {
+		可 = {
 			枪 = {
 				this = true
 			}
 		},
-		护 = {
-			具 = {
-				this = true
-			}
-		},
-		拍 = {
-			器 = {
-				this = true
-			}
-		},
-		身 = {
-			器 = {
-				this = true
-			}
-		},
-		卫 = {
-			电 = {
-				棍 = {
-					this = true
-				}
-			},
-			器 = {
-				this = true
-			}
-		},
-		衛 = {
-			指 = {
-				揮 = {
-					官 = {
-						this = true
+		克 = {
+			q = {
+				this = true,
+				i = {
+					a = {
+						n = {
+							["9"] = {
+								this = true
+							}
+						}
 					}
 				}
-			}
-		},
-		泄 = {
-			膏 = {
-				this = true
-			}
-		},
-		疫 = {
-			媛 = {
-				this = true
-			},
-			放 = {
-				飞 = {
-					区 = {
-						this = true
-					}
-				}
-			}
-		},
-		范 = {
-			区 = {
-				this = true
 			}
 		}
 	}
@@ -128,14 +43,31 @@ end
 temp()
 
 function temp()
-	var1_0.房 = {
-		产 = {
-			改 = {
-				革 = {
-					口 = {
-						袋 = {
-							掏 = {
-								空 = {
+	var1_0.备 = {
+		胎 = {
+			敏 = {
+				尔 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.圈 = {
+		宗 = {
+			this = true
+		},
+		出 = {
+			深 = {
+				圳 = {
+					的 = {
+						设 = {
+							计 = {
+								师 = {
 									this = true
 								}
 							}
@@ -143,63 +75,388 @@ function temp()
 					}
 				}
 			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.继 = {
+		续 = {
+			当 = {
+				领 = {
+					x = {
+						i = {
+							u = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.Ⅹ = {
+		刂 = {
+			i = {
+				n = {
+					this = true
+				}
+			}
 		},
-		峰 = {
-			辉 = {
+		哩 = {
+			山 = {
+				麓 = {
+					不 = {
+						换 = {
+							件 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.刈 = {
+		i = {
+			n = {
 				this = true
 			}
 		},
-		价 = {
-			却 = {
-				要 = {
-					赶 = {
-						超 = {
-							欧 = {
-								美 = {
-									this = true
-								}
+		ı = {
+			и = {
+				p = {
+					i = {
+						n = {
+							q = {
+								this = true
 							}
 						}
 					}
 				}
 			}
-		},
-		價 = {
-			漲 = {
-				了 = {
-					this = true
-				}
-			}
-		},
-		奴 = {
-			如 = {
-				潮 = {
-					this = true
-				}
-			},
-			滔 = {
-				滔 = {
-					this = true
-				}
-			}
-		},
-		事 = {
-			this = true,
-			体 = {
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.傀 = {
+		儡 = {
+			上 = {
 				位 = {
 					this = true
 				}
 			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.驸 = {
+		马 = {
+			爷 = {
+				上 = {
+					台 = {
+						this = true
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.珊 = {
+		露 = {
+			不 = {
+				幻 = {
+					尖 = {
+						this = true
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.Z = {
+		O = {
+			D = {
+				会 = {
+					this = true
+				}
+			},
+			d = {
+				a = {
+					this = true
+				}
+			},
+			大 = {
+				this = true
+			}
 		},
+		["0"] = {
+			大 = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.兔 = {
 		子 = {
-			是 = {
-				土 = {
-					地 = {
-						的 = {
-							一 = {
-								部 = {
-									分 = {
-										this = true
+			开 = {
+				D = {
+					会 = {
+						this = true
+					}
+				}
+			},
+			老 = {
+				大 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.② = {
+		時 = {
+			大 = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0["="] = {
+		["+"] = {
+			大 = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.贰 = {
+		零 = {
+			大 = {
+				this = true
+			}
+		},
+		佮 = {
+			仈 = {
+				画 = {
+					生 = {
+						this = true
+					}
+				}
+			}
+		},
+		会 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.悉 = {
+		数 = {
+			尽 = {
+				核 = {
+					平 = {
+						this = true
+					}
+				}
+			}
+		},
+		尼 = {
+			奶 = {
+				爸 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.时 = {
+		俊 = {
+			萍 = {
+				this = true
+			}
+		},
+		理 = {
+			珊 = {
+				鹿 = {
+					不 = {
+						幻 = {
+							间 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		间 = {
+			要 = {
+				一 = {
+					秒 = {
+						一 = {
+							秒 = {
+								["["] = {
+									的 = {
+										地 = {
+											["]"] = {
+												加 = {
+													this = true
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		代 = {
+			革 = {
+				命 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.岿 = {
+		然 = {
+			不 = {
+				动 = {
+					的 = {
+						熊 = {
+							this = true
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.撸 = {
+		管 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.庐 = {
+		山 = {
+			会 = {
+				议 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.捕 = {
+		鼠 = {
+			理 = {
+				论 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.溜 = {
+		贺 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.粽 = {
+		鲤 = {
+			this = true
+		},
+		["\\"] = {
+			x = {
+				["{"] = {
+					["1"] = {
+						F = {
+							["4"] = {
+								D = {
+									["6"] = {
+										["}"] = {
+											j = {
+												this = true
+											}
+										}
 									}
 								}
 							}
@@ -214,132 +471,14 @@ end
 temp()
 
 function temp()
-	var1_0.仿 = {
-		旧 = {
-			流 = {
-				通 = {
-					币 = {
-						this = true
-					}
-				}
-			}
-		},
-		牌 = {
-			香 = {
-				烟 = {
+	var1_0.约 = {
+		德 = {
+			尔 = {
+				凳 = {
 					this = true
-				}
-			}
-		},
-		真 = {
-			狗 = {
-				this = true
-			},
-			气 = {
-				枪 = {
-					q = {
-						q = {
-							this = true
-						}
-					},
-					出 = {
-						货 = {
-							this = true
-						},
-						售 = {
-							this = true
-						}
-					},
-					到 = {
-						货 = {
-							this = true
-						}
-					},
-					电 = {
-						话 = {
-							this = true
-						}
-					},
-					订 = {
-						购 = {
-							this = true
-						}
-					},
-					技 = {
-						术 = {
-							转 = {
-								让 = {
-									this = true
-								}
-							}
-						}
-					},
-					销 = {
-						售 = {
-							this = true
-						}
-					},
-					制 = {
-						造 = {
-							图 = {
-								纸 = {
-									this = true
-								}
-							}
-						}
-					}
-				}
-			},
-			枪 = {
-				this = true,
-				出 = {
-					售 = {
-						this = true
-					}
-				}
-			},
-			槍 = {
-				出 = {
-					售 = {
-						this = true
-					}
 				},
-				销 = {
-					售 = {
-						this = true
-					}
-				}
-			},
-			抢 = {
-				this = true
-			},
-			人 = {
-				民 = {
-					币 = {
-						this = true
-					}
-				}
-			},
-			香 = {
-				烟 = {
+				邓 = {
 					this = true
-				}
-			},
-			烟 = {
-				this = true
-			},
-			震 = {
-				棒 = {
-					this = true
-				}
-			}
-		},
-		造 = {
-			荣 = {
-				国 = {
-					府 = {
-						this = true
-					}
 				}
 			}
 		}
@@ -349,40 +488,57 @@ end
 temp()
 
 function temp()
-	var1_0.访 = {
-		民 = {
-			this = true
-		},
-		问 = {
-			被 = {
-				屏 = {
-					蔽 = {
-						的 = {
-							网 = {
-								站 = {
-									this = true
-								}
-							}
-						},
-						掉 = {
-							的 = {
-								网 = {
-									站 = {
-										this = true
-									}
-								}
+	var1_0.氘 = {
+		熵 = {
+			飞 = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.糕 = {
+		力 = {
+			先 = {
+				生 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.枷 = {
+		一 = {
+			秒 = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var1_0.禾 = {
+		舀 = {
+			学 = {
+				拯 = {
+					救 = {
+						中 = {
+							国 = {
+								this = true
 							}
 						}
 					}
 				}
 			}
-		},
-		专 = {
-			四 = {
-				六 = {
-					this = true
-				}
-			}
 		}
 	}
 end
@@ -390,9 +546,11 @@ end
 temp()
 
 function temp()
-	var1_0.訪 = {
-		民 = {
-			this = true
+	var1_0.裆 = {
+		仲 = {
+			央 = {
+				this = true
+			}
 		}
 	}
 end

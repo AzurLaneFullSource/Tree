@@ -1,6 +1,50 @@
 pg = pg or {}
-pg.activity_event_building = {
-	{
+pg.activity_event_building = rawget(pg, "activity_event_building") or setmetatable({
+	__name = "activity_event_building"
+}, confNEO)
+pg.activity_event_building.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22,
+	23,
+	24,
+	25,
+	26,
+	27,
+	31,
+	32,
+	33,
+	34,
+	35,
+	36,
+	37,
+	38,
+	39
+}
+pg.base = pg.base or {}
+pg.base.activity_event_building = {}
+
+;(function()
+	pg.base.activity_event_building[1] = {
 		id = 1,
 		name = "Manjuu Café",
 		desc = "A café with tastes from around the world: coffee from the Royal Navy, bread from the Northern Parliament, and pizza from Sardegna.",
@@ -25,8 +69,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[2] = {
 		id = 2,
 		name = "Dumpling House",
 		desc = "Piping-hot soup dumplings, bursting with authentic Dragon Empery flavors. Step right up and get a basket!",
@@ -51,8 +95,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[3] = {
 		id = 3,
 		name = "Burger Joint",
 		desc = "The trifecta of happiness: a tasty hamburger, ice-cold cola, and crispy fries.",
@@ -77,8 +121,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[4] = {
 		id = 4,
 		name = "Dango Shop",
 		desc = "These commemorative dangos from the Sakura Empire almost look too beautiful to eat.",
@@ -103,8 +147,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[5] = {
 		id = 5,
 		name = "Manjuu Bookstore",
 		desc = "My friend asked me to pick something up! S-seriously, I'm not into this kind of literature...",
@@ -129,8 +173,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[6] = {
 		id = 6,
 		name = "Manjuju Game Shop",
 		desc = "Wow, what a spectacular array of games they have this month... This ghost's wallet isn't going to survive...",
@@ -155,8 +199,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[7] = {
 		id = 7,
 		name = "Manjuu Capsule Shop",
 		desc = "No longer shall the gacha gods deny me!!!",
@@ -181,8 +225,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[8] = {
 		id = 8,
 		name = "Juju Café",
 		desc = "Slightly rebranded, same delicious flavors.",
@@ -207,8 +251,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[9] = {
 		id = 9,
 		name = "Dizzy Manjuu",
 		desc = "It's a need for speed, not a need for angular velocity! Arrrrgh...!",
@@ -233,8 +277,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[10] = {
 		id = 10,
 		name = "Cloud-Chasing Manjuu",
 		desc = "Manjuus may be flightless, but roller coasters have given them a taste of their true potential.",
@@ -259,8 +303,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[11] = {
 		id = 11,
 		name = "Xtreme Bunjuu",
 		desc = "I fear no heights. But gachas? Those scare me...",
@@ -285,8 +329,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[12] = {
 		id = 12,
 		name = "Manjuu Pirate Ship",
 		desc = "C'mon, you should know by now that this game is all about the booty.",
@@ -311,8 +355,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[13] = {
 		id = 13,
 		name = "Manjuu Waverider",
 		desc = "The wildest and wettest ride of your life!",
@@ -337,8 +381,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[14] = {
 		id = 14,
 		name = "Manjuu Diver",
 		desc = "Remember to shout \"Geronimooooo\"!",
@@ -363,8 +407,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[15] = {
 		id = 15,
 		name = "Slippy Slide",
 		desc = "High speeds and crazy turns with a splashing climax!",
@@ -389,8 +433,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[16] = {
 		id = 16,
 		name = "Mini Waterfall",
 		desc = "Will you take the plunge?",
@@ -415,8 +459,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[17] = {
 		id = 17,
 		name = "Royal Navy Teahouse",
 		desc = "A teahouse with a classy atmosphere. It beckons you inside with the scent of fragrant herbs and creamy pastries.",
@@ -457,8 +501,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[18] = {
 		id = 18,
 		name = "Iron Blood Café",
 		desc = "A café with a laid-back atmosphere. It tempts you with the promise of hot coffee and savory food.",
@@ -499,8 +543,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[19] = {
 		id = 19,
 		name = "Manjuu Schoolhouse",
 		desc = "\"Myoukou, how many times do I have to tell you not to run in the hallway...?\" – Upgrade this facility to improve its benefits.",
@@ -525,8 +569,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[20] = {
 		id = 20,
 		name = "Manjuu Fortune Teller",
 		desc = "\"Hey, stop flipping over the tarot cards without me telling you to!\" – Upgrade this facility to improve its benefits.",
@@ -551,8 +595,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[21] = {
 		id = 21,
 		name = "Manjuu Stage",
 		desc = "\"Stop it, Cygnet! You can't go to the stalls until AFTER the concert!\" – Upgrade this facility to improve its benefits.",
@@ -577,8 +621,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[22] = {
 		id = 22,
 		name = "Manjuu School Shops",
 		desc = "\"Thank you for your patronyage. Heh heh heh.\" – Upgrade this facility to improve its benefits.",
@@ -603,8 +647,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[23] = {
 		id = 23,
 		name = "Living Quarters",
 		desc = "",
@@ -637,8 +681,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[24] = {
 		id = 24,
 		name = "Crafting Station",
 		desc = "",
@@ -671,8 +715,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[25] = {
 		id = 25,
 		name = "Expedition Squad",
 		desc = "",
@@ -705,8 +749,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[26] = {
 		id = 26,
 		name = "Dining Area",
 		desc = "",
@@ -739,8 +783,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[27] = {
 		id = 27,
 		name = "Base Camp",
 		desc = "",
@@ -768,8 +812,8 @@ pg.activity_event_building = {
 			8,
 			12
 		}
-	},
-	[31] = {
+	}
+	pg.base.activity_event_building[31] = {
 		id = 31,
 		name = "Eagle Union Tech Module",
 		buff = {
@@ -806,8 +850,8 @@ pg.activity_event_building = {
 			"During battle, when an ally has taken DMG totalling to 30% of her max HP: restores 3% of her max HP (once per ally per battle).",
 			"During battle, when an ally has taken DMG totalling to 20% of her max HP: restores 3% of her max HP (once per ally per battle)."
 		}
-	},
-	[32] = {
+	}
+	pg.base.activity_event_building[32] = {
 		id = 32,
 		name = "Royal Navy Tech Module",
 		buff = {
@@ -844,8 +888,8 @@ pg.activity_event_building = {
 			"Increases your allies' AVI by 4%.",
 			"Increases your allies' AVI by 6%."
 		}
-	},
-	[33] = {
+	}
+	pg.base.activity_event_building[33] = {
 		id = 33,
 		name = "Iris Orthodoxy Tech Module",
 		buff = {
@@ -882,8 +926,8 @@ pg.activity_event_building = {
 			"Decreases your allies' DMG taken by 2%.",
 			"Decreases your allies' DMG taken by 3%."
 		}
-	},
-	[34] = {
+	}
+	pg.base.activity_event_building[34] = {
 		id = 34,
 		name = "Iron Blood Tech Module",
 		buff = {
@@ -920,8 +964,8 @@ pg.activity_event_building = {
 			"Increases your allies' FP by 4%.",
 			"Increases your allies' FP by 6%."
 		}
-	},
-	[35] = {
+	}
+	pg.base.activity_event_building[35] = {
 		id = 35,
 		name = "Dragon Empery Tech Module",
 		buff = {
@@ -958,8 +1002,8 @@ pg.activity_event_building = {
 			"Increases your allies' ACC by 4%.",
 			"Increases your allies' ACC by 6%."
 		}
-	},
-	[36] = {
+	}
+	pg.base.activity_event_building[36] = {
 		id = 36,
 		name = "Sardegna Empire Tech Module",
 		buff = {
@@ -996,8 +1040,8 @@ pg.activity_event_building = {
 			"When the battle starts: increases your allies' RLD by 15% for 15s.",
 			"When the battle starts: increases your allies' RLD by 15% for 20s."
 		}
-	},
-	[37] = {
+	}
+	pg.base.activity_event_building[37] = {
 		id = 37,
 		name = "Kingdom of Tulipa Tech Module",
 		buff = {
@@ -1034,8 +1078,8 @@ pg.activity_event_building = {
 			"Increases your allies' SPD by 4.",
 			"Increases your allies' SPD by 6."
 		}
-	},
-	[38] = {
+	}
+	pg.base.activity_event_building[38] = {
 		id = 38,
 		name = "Northern Parliament Tech Module",
 		buff = {
@@ -1072,8 +1116,8 @@ pg.activity_event_building = {
 			"Increases your allies' DMG dealt by 2%.",
 			"Increases your allies' DMG dealt by 3%."
 		}
-	},
-	[39] = {
+	}
+	pg.base.activity_event_building[39] = {
 		id = 39,
 		name = "Sakura Empire Tech Module",
 		buff = {
@@ -1110,43 +1154,5 @@ pg.activity_event_building = {
 			"Increases your allies' TRP by 4%.",
 			"Increases your allies' TRP by 6%."
 		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19,
-		20,
-		21,
-		22,
-		23,
-		24,
-		25,
-		26,
-		27,
-		31,
-		32,
-		33,
-		34,
-		35,
-		36,
-		37,
-		38,
-		39
 	}
-}
+end)()

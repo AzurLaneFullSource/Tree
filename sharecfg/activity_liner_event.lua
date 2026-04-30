@@ -1,6 +1,26 @@
 pg = pg or {}
-pg.activity_liner_event = {
-	{
+pg.activity_liner_event = rawget(pg, "activity_liner_event") or setmetatable({
+	__name = "activity_liner_event"
+}, confNEO)
+pg.activity_liner_event.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12
+}
+pg.base = pg.base or {}
+pg.base.activity_liner_event = {}
+
+;(function()
+	pg.base.activity_liner_event[1] = {
 		option_desc = "Prinz Eugen messaged me to come to the maid café.\nToday, before closing time, Nürnberg found a strange slip of paper under a tray on a table.\nThe paper was wet and the writing stained, but you could just about make out the words, \"come\" and \"afar.\"\nEssex, who arrived on the scene, determined based on the ink's splotchiness that it was written sometime after the ship's departure today.\nHow she reached this conclusion, I'm not sure... but her detective outfit strangely lends her an air of credibility.",
 		option_desc_2 = "A wet note was found under a tray in the maid café. The only legible words on it were \"come\" and \"afar.\"",
 		option = "(Speak to her.)",
@@ -26,8 +46,8 @@ pg.activity_liner_event = {
 				"There are no more clues to be gained here. It's time to go somewhere else."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_event[2] = {
 		option_desc = "In the onboard garden, I spotted Bristol looking around.\nI looked thoroughly under her light, and she was right – someone left some conspicuous footprints here.\nBristol also pointed out how the soil's humidity was different from the rest and insisted on investigating further.",
 		option_desc_2 = "Something left a roughly 30 centimeter big imprint on a bush in the onboard garden.",
 		option = "(Speak to her.)",
@@ -56,8 +76,8 @@ pg.activity_liner_event = {
 				"There are no more clues to be gained here. It's time to go somewhere else."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_event[3] = {
 		option_desc = "As I was passing by the gym, I heard the scraping of a heavy object being dragged along the floor.\nJust as I considered leaving, I heard the sound again. Upon closer inspection, it was coming from further inside the gym.\nI immediately ran in to check and nearly slipped on a puddle. Then I turned a corner and literally bumped into Essex.\nWe decided to clean up the place so nobody else would slip.\nI offered her a drink at the balcony bar for her hard work, but she politely turned me down, citing wanting to focus on her investigation.",
 		option_desc_2 = "Strange sounds like a heavy object being dragged have been in various places around the gym.",
 		option = "(Investigate.)",
@@ -92,8 +112,8 @@ pg.activity_liner_event = {
 				"That's enough for one day. It's time to rest."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_event[4] = {
 		option_desc = "I got a message from Lung Wu to come to the central kitchen.\nApparently, she and her Empery friends were making breakfast baozis when they noticed the container with the stuffing inside had disappeared.\nI called the security room and got the surveillance camera footage. It turned out that the container was placed just out of sight of the camera.\nSomehow I'm not surprised at all.",
 		option_desc_2 = "A container full of freshly-cut meat stuffing vanished in the blink of an eye from the kitchen.",
 		option = "(Ask Lung Wu about her report.)",
@@ -122,8 +142,8 @@ pg.activity_liner_event = {
 				"That's all the clues I'm getting out of this place. It's time to visit a different location."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_event[5] = {
 		option_desc = "Newcastle contacted me, urging me to come to the banquet hall's food storage.\nShe told me that the food to be served at tomorrow's Royal Maid tea party had been stolen.\nThe extent of the damage wasn't that severe, but the perpetrator clearly had very particular targets in mind.\nEverything with meat in it was missing, so were some things without meat, but everything with vegetables in it was still here.\nI called the security room and got the surveillance camera footage. The camera there malfunctioned at the time of the crime, leaving a gap of about 10 seconds.\nThis didn't come as a surprise to me whatsoever.",
 		option_desc_2 = "The food storage in the banquet hall was looted. Primarily food that contains meat was stolen.",
 		option = "(Ask Newcastle about her report.)",
@@ -149,8 +169,8 @@ pg.activity_liner_event = {
 				"That's all the clues I'm getting out of this place. It's time to visit a different location."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_event[6] = {
 		option_desc = "Both the previous two incidents involved food. The place with the most food on board is without a doubt the warehouse.\nThe door was still sealed shut and the lock was intact. There was no sign that anyone used an unlawful method to get in.\nI called the security room and got the surveillance camera footage. This time, there was no blind spot or temporary outage.\nThe cameras perfectly covered each and every angle of the warehouse, and there was no sign of any theft.",
 		option_desc_2 = "The warehouse, despite having more food than anywhere else on the ship, has gone completely unscathed.",
 		option = "(Examine the warehouse door.)",
@@ -176,8 +196,8 @@ pg.activity_liner_event = {
 				"Then, Bristol shoots me a message. I decide to head to the mystery room and meet up with the other investigators."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_event[7] = {
 		option_desc = "Fu Shun and I came to cabin quarter A in order to investigate a lead she had found.\nAccording to her info, one can hear a perfectly disciplined set of footsteps as midnight approaches. Nobody has ever seen the cause of these footsteps.\nTime passed by little by little. We waited with bated breath.\nThen, we heard the tapping of footsteps from in the corridor.\nFu Shun screamed before rushing in the direction of the sound, but nobody was in the corridor. The footsteps faded, too.\nWe contacted security to check the surveillance cameras, and there was no footage of anyone else going through the corridor.",
 		option_desc_2 = "Mysterious footsteps can be heard from a corridor near the cabins late at night.",
 		option = "(Begin investigation.)",
@@ -209,8 +229,8 @@ pg.activity_liner_event = {
 				"Could it really be a ghost, after all?"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_event[8] = {
 		option_desc = "Detective-journalist Alfredo Oriani contacted me, and we met up at cabin quarter B.\nShe excitedly showed off a photo. The background was dark, save for a single pale figure looming in the corner.\nBased on the room numbers in the background, it must have been taken in cabin quarter A. The pale figure definitely looked realistic, too.\nThis is an extremely valuable clue. It might be related to the footsteps that have been heard in the corridor at night.\nAfter giving Alfredo my sincere compliments, I deposit the photo in my file.",
 		option_desc_2 = "Alfredo Oriani got a picture of a ghost in one corridor.",
 		option = "(Ask about the situation.)",
@@ -236,8 +256,8 @@ pg.activity_liner_event = {
 				"There don't seem to be any more clues around. Time to check elsewhere."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_event[9] = {
 		option_desc = "When I went through the corridor of cabin quarter C, I saw Essex skulking around.\nShe claimed that she was just in the middle of investigating rumors of an inescapable corridor.\nThe rumors say that when two people enter the corridor late at night, they may never leave again.\nShe pulled me by the hand and ran toward the corridor, yet we couldn't go through. When I checked the room numbers, we'd been returned to where we came from.\nIn the end, we manage to get out of the corridor just fine. I think the rumors were a little exaggerated.",
 		option_desc_2 = "In one corridor, a thick fog appears and disorients people passing through.",
 		option = "(Prepare for combat.)",
@@ -272,8 +292,8 @@ pg.activity_liner_event = {
 				"In the end, we manage to get out of the corridor just fine. I think the rumors were a little exaggerated."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_event[10] = {
 		option_desc = "When I passed by the movie theater, I heard a scream followed by several small explosions.\nI went inside and found three people: Elizabeth curled up in a ball and quivering, Belfast trying to console her, and Sheffield on alert.\nI investigated and found that the projector had been destroyed by gunfire, stopping the movie.\nDetective Essex said the film was from Casablanca's precious collection, so Bristol asserted that Casablanca was the perpetrator.\nHowever, she was outnumbered four to one, and was forced to give up on her theory.",
 		option_desc_2 = "When Elizabeth was watching a comedy movie, it suddenly turned into a horror movie.",
 		option = "(Enter the movie theater.)",
@@ -305,8 +325,8 @@ pg.activity_liner_event = {
 				"No more clues here. Time to check elsewhere."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_event[11] = {
 		option_desc = "Emanuele Pessagno called me about a serious crisis that unfolded at the Sardegnian bath party.\nA short while ago, the Sardegnian shipgirls found that the pizzas they'd made for their party had pineapple slices on it.\n\"All of the pizzas we made for tonight! Every single one! All pineappled!\" Trieste emotionally added.\n\"Umm... I think pineapple on pizza is pretty good,\" said Detective Essex, who took a bite of pizza and clearly liked it.\nI dragged her out of the baths before things could escalate further.",
 		option_desc_2 = "When the Sardegnian girls were partying, their pizzas all had pineapples on them.",
 		option = "(Strike while the iron is hot. Barge in.)",
@@ -332,8 +352,8 @@ pg.activity_liner_event = {
 				"After making the excuse that we have more important things to investigate, I drag Detective Essex out of the baths before things can escalate further."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_event[12] = {
 		option_desc = "As we walked by the mall, Essex suddenly said she wanted to go in and buy souvenirs.\nAs soon as we went in, Essex found her mark – a giant octopus plushie.\nWhen we finished paying, the automatic cash register spat out money – the exact price of the plushie. Seeing this, Essex gleefully grabbed the biggest shopping bag in sight.\nI tried to stop her from taking advantage of an obvious mistake, but Essex pointed at the store's sign, which said, \"Akashi's Holiday Toy Store.\"\nIn the end, Essex did much \"shopping.\"",
 		option_desc_2 = "When I went shopping with Essex, the register started giving us money.",
 		option = "(Go in.)",
@@ -359,19 +379,5 @@ pg.activity_liner_event = {
 				"In the end, Essex did much \"shopping.\""
 			}
 		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12
 	}
-}
+end)()

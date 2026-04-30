@@ -1,6 +1,69 @@
 pg = pg or {}
-pg.activity_liner_time = {
-	{
+pg.activity_liner_time = rawget(pg, "activity_liner_time") or setmetatable({
+	__name = "activity_liner_time"
+}, confNEO)
+pg.activity_liner_time.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22,
+	23,
+	24,
+	25,
+	26,
+	27,
+	28,
+	29,
+	30,
+	31,
+	32,
+	33,
+	34,
+	35,
+	36,
+	37,
+	38,
+	39,
+	40,
+	41,
+	42,
+	43,
+	44,
+	45,
+	46,
+	47,
+	48,
+	49,
+	50,
+	51,
+	52,
+	53,
+	54,
+	55
+}
+pg.base = pg.base or {}
+pg.base.activity_liner_time = {}
+
+;(function()
+	pg.base.activity_liner_time[1] = {
 		type = 4,
 		desc_before = "Rest time.",
 		id = 1,
@@ -14,8 +77,8 @@ pg.activity_liner_time = {
 			4,
 			"JIARIXINTIAODAYOULUN2"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[2] = {
 		type = 1,
 		desc_before = "Attend the maiden voyage banquet.",
 		id = 2,
@@ -29,8 +92,8 @@ pg.activity_liner_time = {
 			10,
 			"JIARIXINTIAODAYOULUN17"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[3] = {
 		type = 1,
 		desc_before = "Go to the gym and exercise.",
 		id = 3,
@@ -44,8 +107,8 @@ pg.activity_liner_time = {
 			8,
 			"JIARIXINTIAODAYOULUN25"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[4] = {
 		type = 1,
 		desc_before = "Check out the aquarium.",
 		id = 4,
@@ -59,8 +122,8 @@ pg.activity_liner_time = {
 			22,
 			"JIARIXINTIAODAYOULUN26"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[5] = {
 		type = 1,
 		desc_before = "Have a drink at the balcony bar.",
 		id = 5,
@@ -74,8 +137,8 @@ pg.activity_liner_time = {
 			12,
 			"JIARIXINTIAODAYOULUN38"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[6] = {
 		param = "4",
 		type = 2,
 		desc_before = "Free time.",
@@ -86,8 +149,8 @@ pg.activity_liner_time = {
 			20,
 			1
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[7] = {
 		type = 3,
 		desc_before = "Go to the mystery room.",
 		id = 7,
@@ -105,8 +168,8 @@ pg.activity_liner_time = {
 				{}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[8] = {
 		type = 4,
 		desc_before = "Rest time.",
 		id = 8,
@@ -120,8 +183,8 @@ pg.activity_liner_time = {
 			4,
 			"JIARIXINTIAODAYOULUN3"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[9] = {
 		type = 1,
 		desc_before = "Check out the deck pool.",
 		id = 9,
@@ -135,8 +198,8 @@ pg.activity_liner_time = {
 			2,
 			"JIARIXINTIAODAYOULUN39"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[10] = {
 		type = 1,
 		desc_before = "Have a stroll through the cabin areas.",
 		id = 10,
@@ -150,8 +213,8 @@ pg.activity_liner_time = {
 			17,
 			"JIARIXINTIAODAYOULUN28"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[11] = {
 		type = 1,
 		desc_before = "Play in the water park tournament.",
 		id = 11,
@@ -165,8 +228,8 @@ pg.activity_liner_time = {
 			14,
 			"JIARIXINTIAODAYOULUN18"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[12] = {
 		type = 1,
 		desc_before = "Check out the classroom.",
 		id = 12,
@@ -180,8 +243,8 @@ pg.activity_liner_time = {
 			16,
 			"JIARIXINTIAODAYOULUN27"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[13] = {
 		param = "4",
 		type = 2,
 		desc_before = "Free time.",
@@ -192,8 +255,8 @@ pg.activity_liner_time = {
 			20,
 			1
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[14] = {
 		type = 3,
 		desc_before = "Investigate a mystery.",
 		id = 14,
@@ -229,8 +292,8 @@ pg.activity_liner_time = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[15] = {
 		type = 4,
 		desc_before = "Rest time.",
 		id = 15,
@@ -244,8 +307,8 @@ pg.activity_liner_time = {
 			4,
 			"JIARIXINTIAODAYOULUN4"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[16] = {
 		type = 1,
 		desc_before = "Have a break at the garden.",
 		id = 16,
@@ -259,8 +322,8 @@ pg.activity_liner_time = {
 			6,
 			"JIARIXINTIAODAYOULUN29"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[17] = {
 		id = 17,
 		bg_name = "day",
 		type = 1,
@@ -298,8 +361,8 @@ pg.activity_liner_time = {
 			{},
 			{}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[18] = {
 		type = 1,
 		desc_before = "Visit the thermae with Mogador.",
 		id = 18,
@@ -313,8 +376,8 @@ pg.activity_liner_time = {
 			21,
 			"JIARIXINTIAODAYOULUN40"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[19] = {
 		param = "4",
 		type = 2,
 		desc_before = "Free time.",
@@ -325,8 +388,8 @@ pg.activity_liner_time = {
 			20,
 			1
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[20] = {
 		type = 3,
 		desc_before = "Investigate a mystery.",
 		id = 20,
@@ -368,8 +431,8 @@ pg.activity_liner_time = {
 				{}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[21] = {
 		type = 4,
 		desc_before = "Rest time.",
 		id = 21,
@@ -383,8 +446,8 @@ pg.activity_liner_time = {
 			4,
 			"JIARIXINTIAODAYOULUN5"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[22] = {
 		type = 1,
 		desc_before = "Participate in the security drill.",
 		id = 22,
@@ -398,8 +461,8 @@ pg.activity_liner_time = {
 			27,
 			"JIARIXINTIAODAYOULUN20"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[23] = {
 		type = 1,
 		desc_before = "Investigate the commotion at the cargo unloading area.",
 		id = 23,
@@ -413,8 +476,8 @@ pg.activity_liner_time = {
 			13,
 			"JIARIXINTIAODAYOULUN30"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[24] = {
 		type = 1,
 		desc_before = "Speak to St. Louis at the deck pool.",
 		id = 24,
@@ -428,8 +491,8 @@ pg.activity_liner_time = {
 			2,
 			"JIARIXINTIAODAYOULUN41"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[25] = {
 		type = 1,
 		desc_before = "Visit the central kitchen.",
 		id = 25,
@@ -443,8 +506,8 @@ pg.activity_liner_time = {
 			25,
 			"JIARIXINTIAODAYOULUN31"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[26] = {
 		param = "4",
 		type = 2,
 		desc_before = "Free time.",
@@ -455,8 +518,8 @@ pg.activity_liner_time = {
 			20,
 			1
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[27] = {
 		type = 3,
 		desc_before = "Investigate a mystery.",
 		id = 27,
@@ -492,8 +555,8 @@ pg.activity_liner_time = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[28] = {
 		id = 28,
 		bg_name = "night",
 		type = 4,
@@ -551,8 +614,8 @@ pg.activity_liner_time = {
 				"You've been \"kidnapped\" by pirates."
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[29] = {
 		type = 4,
 		desc_before = "Rest time.",
 		id = 29,
@@ -566,8 +629,8 @@ pg.activity_liner_time = {
 			4,
 			"JIARIXINTIAODAYOULUN7"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[30] = {
 		type = 1,
 		desc_before = "It's a perfect day to sunbathe.",
 		id = 30,
@@ -581,8 +644,8 @@ pg.activity_liner_time = {
 			2,
 			"JIARIXINTIAODAYOULUN43"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[31] = {
 		type = 1,
 		desc_before = "Tour Tempesta's base.",
 		id = 31,
@@ -596,8 +659,8 @@ pg.activity_liner_time = {
 			13,
 			"JIARIXINTIAODAYOULUN32"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[32] = {
 		type = 1,
 		desc_before = "Meet Tosa at the cabin area.",
 		id = 32,
@@ -611,8 +674,8 @@ pg.activity_liner_time = {
 			19,
 			"JIARIXINTIAODAYOULUN42"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[33] = {
 		type = 1,
 		desc_before = "Attend the masquerade ball.",
 		id = 33,
@@ -626,8 +689,8 @@ pg.activity_liner_time = {
 			9,
 			"JIARIXINTIAODAYOULUN21"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[34] = {
 		param = "4",
 		type = 2,
 		desc_before = "Free time.",
@@ -638,8 +701,8 @@ pg.activity_liner_time = {
 			20,
 			1
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[35] = {
 		type = 3,
 		desc_before = "Check out the food storage.",
 		id = 35,
@@ -657,8 +720,8 @@ pg.activity_liner_time = {
 				{}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[36] = {
 		type = 4,
 		desc_before = "Rest time.",
 		id = 36,
@@ -672,8 +735,8 @@ pg.activity_liner_time = {
 			4,
 			"JIARIXINTIAODAYOULUN8"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[37] = {
 		type = 1,
 		desc_before = "Watch for icebergs on the bridge.",
 		id = 37,
@@ -687,8 +750,8 @@ pg.activity_liner_time = {
 			1,
 			"JIARIXINTIAODAYOULUN33"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[38] = {
 		type = 1,
 		desc_before = "See what the maid competition is about.",
 		id = 38,
@@ -702,8 +765,8 @@ pg.activity_liner_time = {
 			7,
 			"JIARIXINTIAODAYOULUN22"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[39] = {
 		type = 1,
 		desc_before = "Play with cats at the cat lodge.",
 		id = 39,
@@ -717,8 +780,8 @@ pg.activity_liner_time = {
 			20,
 			"JIARIXINTIAODAYOULUN34"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[40] = {
 		type = 1,
 		desc_before = "Visit Adalbert in her cabin.",
 		id = 40,
@@ -732,8 +795,8 @@ pg.activity_liner_time = {
 			18,
 			"JIARIXINTIAODAYOULUN44"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[41] = {
 		param = "4",
 		type = 2,
 		desc_before = "Free time.",
@@ -744,8 +807,8 @@ pg.activity_liner_time = {
 			20,
 			1
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[42] = {
 		type = 3,
 		desc_before = "Rendezvous at the mystery room.",
 		id = 42,
@@ -763,8 +826,8 @@ pg.activity_liner_time = {
 				{}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[43] = {
 		type = 4,
 		desc_before = "Rest time.",
 		id = 43,
@@ -778,8 +841,8 @@ pg.activity_liner_time = {
 			4,
 			"JIARIXINTIAODAYOULUN9"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[44] = {
 		type = 1,
 		desc_before = "Go shopping at the mall.",
 		id = 44,
@@ -793,8 +856,8 @@ pg.activity_liner_time = {
 			24,
 			"JIARIXINTIAODAYOULUN35"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[45] = {
 		type = 1,
 		desc_before = "Have a stroll through the cabin areas.",
 		id = 45,
@@ -808,8 +871,8 @@ pg.activity_liner_time = {
 			18,
 			"JIARIXINTIAODAYOULUN36"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[46] = {
 		type = 1,
 		desc_before = "Game it up at the arcade.",
 		id = 46,
@@ -823,8 +886,8 @@ pg.activity_liner_time = {
 			11,
 			"JIARIXINTIAODAYOULUN45"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[47] = {
 		type = 1,
 		desc_before = "Game night time.",
 		id = 47,
@@ -838,8 +901,8 @@ pg.activity_liner_time = {
 			11,
 			"JIARIXINTIAODAYOULUN23"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[48] = {
 		param = "4",
 		type = 2,
 		desc_before = "Free time.",
@@ -850,8 +913,8 @@ pg.activity_liner_time = {
 			20,
 			1
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[49] = {
 		type = 3,
 		desc_before = "Investigate a mystery.",
 		id = 49,
@@ -887,8 +950,8 @@ pg.activity_liner_time = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[50] = {
 		type = 4,
 		desc_before = "Rest time.",
 		id = 50,
@@ -902,8 +965,8 @@ pg.activity_liner_time = {
 			4,
 			"JIARIXINTIAODAYOULUN10"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[51] = {
 		type = 1,
 		desc_before = "Have a breather on the balcony.",
 		id = 51,
@@ -917,8 +980,8 @@ pg.activity_liner_time = {
 			5,
 			"JIARIXINTIAODAYOULUN46"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[52] = {
 		type = 1,
 		desc_before = "Attend the open-air barbecue.",
 		id = 52,
@@ -932,8 +995,8 @@ pg.activity_liner_time = {
 			6,
 			"JIARIXINTIAODAYOULUN24"
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[53] = {
 		id = 53,
 		bg_name = "aurora",
 		type = 1,
@@ -971,8 +1034,8 @@ pg.activity_liner_time = {
 			{},
 			{}
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[54] = {
 		param = "3",
 		type = 2,
 		desc_before = "Free time.",
@@ -983,8 +1046,8 @@ pg.activity_liner_time = {
 			20,
 			1
 		}
-	},
-	{
+	}
+	pg.base.activity_liner_time[55] = {
 		type = 3,
 		desc_before = "Investigate a mystery.",
 		id = 55,
@@ -1002,62 +1065,5 @@ pg.activity_liner_time = {
 				{}
 			}
 		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19,
-		20,
-		21,
-		22,
-		23,
-		24,
-		25,
-		26,
-		27,
-		28,
-		29,
-		30,
-		31,
-		32,
-		33,
-		34,
-		35,
-		36,
-		37,
-		38,
-		39,
-		40,
-		41,
-		42,
-		43,
-		44,
-		45,
-		46,
-		47,
-		48,
-		49,
-		50,
-		51,
-		52,
-		53,
-		54,
-		55
 	}
-}
+end)()
