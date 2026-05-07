@@ -97,7 +97,7 @@ function var0_0.GetOptionContainer(arg0_6, arg1_6)
 		return arg0_6.optionLUIlist, true
 	end
 
-	if var0_6 <= 3 then
+	if var0_6 <= 3 or arg1_6:IsOptionForceCenter() then
 		setActive(arg0_6.optionLUIlist.container, false)
 		setActive(arg0_6.optionCUIlist.container, true)
 
@@ -769,14 +769,14 @@ function var0_0.InitBranches(arg0_63, arg1_63, arg2_63, arg3_63, arg4_63)
 
 						var6_63.blocksRaycasts = true
 
+						arg0_63:HideBranchesWithoutSelected(arg2_63)
 						arg3_63(var1_64)
 					end)
 				else
 					setActive(arg0_63.optionsCg.gameObject, false)
+					arg0_63:HideBranchesWithoutSelected(arg2_63)
 					arg3_63(var1_64)
 				end
-
-				arg0_63:HideBranchesWithoutSelected(arg2_63)
 			end, SFX_PANEL)
 			setButtonEnabled(var0_64, not var5_64)
 

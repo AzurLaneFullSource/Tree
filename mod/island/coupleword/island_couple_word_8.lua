@@ -1,7 +1,7 @@
 return {
 	{
 		characterId = 90111,
-		say = "欸？已经到工作时间了吗？好困……"
+		say = "Fweh? Time for work already? But I wanna sleep..."
 	},
 	{
 		emoji = 12,

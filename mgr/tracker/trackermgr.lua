@@ -64,7 +64,7 @@ function var0_0.Ctor(arg0_1)
 	elseif PLATFORM_CODE == PLATFORM_JP then
 		var0_1 = require("Mgr.Tracker.YoStarJPTracker")
 	elseif PLATFORM_CODE == PLATFORM_US then
-		var0_1 = require("Mgr.Tracker.AiriUSTracker")
+		var0_1 = require("Mgr.Tracker.YoStarUSTracker")
 	elseif PLATFORM_CODE == PLATFORM_KR then
 		var0_1 = require("Mgr.Tracker.KwxyKrTracker")
 	elseif PLATFORM_CODE == PLATFORM_CHT then

@@ -19,14 +19,14 @@ function var0_0.Init(arg0_2, arg1_2)
 
 	setActive(arg0_2.live2dContainer, true)
 
-	local var1_2 = Live2D.GenerateData({
+	local var1_2 = Live2DPainting.GenerateData({
 		ship = var0_2,
 		position = Vector3(0, 0, -100),
 		parent = arg0_2.live2dContainer,
 		offset = var0_2:GetSkinConfig().shop_offset
 	})
 
-	arg0_2.live2dChar = Live2D.New(var1_2, function(arg0_3)
+	arg0_2.live2dChar = Live2DPainting.New(var1_2, function(arg0_3)
 		arg0_2.inited = true
 
 		if arg1_2 then
@@ -52,7 +52,7 @@ end
 function var0_0.OnClick(arg0_7)
 	local var0_7
 
-	if arg0_7.live2dChar and arg0_7.live2dChar.state == Live2D.STATE_INITED then
+	if arg0_7.live2dChar and arg0_7.live2dChar.state == Live2DPainting.STATE_INITED then
 		if not Input.mousePosition then
 			return
 		end

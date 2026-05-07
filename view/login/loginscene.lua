@@ -148,13 +148,7 @@ function var0_0.init(arg0_7)
 
 	arg0_7.loginPanelView:SetShareData(arg0_7.shareData)
 
-	arg0_7.airiLoginPanelView = nil
-
-	if PLATFORM_CODE == PLATFORM_US then
-		arg0_7.airiLoginPanelView = AiriUSLoginPanelView.New(arg0_7._tf, arg0_7.event, arg0_7.contextData)
-	else
-		arg0_7.airiLoginPanelView = AiriLoginPanelView.New(arg0_7._tf, arg0_7.event, arg0_7.contextData)
-	end
+	arg0_7.airiLoginPanelView = AiriLoginPanelView.New(arg0_7._tf, arg0_7.event, arg0_7.contextData)
 
 	arg0_7.loginPanelView:SetShareData(arg0_7.shareData)
 
@@ -956,6 +950,10 @@ function var0_0.onLoadDataDone(arg0_76)
 			isFromLogin = true
 		})
 	end
+end
+
+function var0_0.onLoginWait(arg0_77, arg1_77)
+	arg0_77.subViewList[LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW]:RefreshUI(arg1_77)
 end
 
 return var0_0

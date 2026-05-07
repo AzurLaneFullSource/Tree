@@ -137,4 +137,23 @@ function var0_0.BuildAssetNameDic(arg0_17, arg1_17)
 	var0_0.bundleDic[arg0_17] = var0_17
 end
 
+function var0_0.GetTotalRefList(arg0_18)
+	if not arg0_18 or #arg0_18 == 0 then
+		return {}
+	end
+
+	local var0_18 = ResourceMgr.Inst:GetFullDependencies(arg0_18)
+	local var1_18 = {}
+
+	for iter0_18 = 0, var0_18.Length - 1 do
+		local var2_18 = var0_18[iter0_18]
+
+		if not table.contains(var1_18, var2_18) then
+			table.insert(var1_18, var0_18[iter0_18])
+		end
+	end
+
+	return var1_18
+end
+
 return var0_0

@@ -16,6 +16,7 @@ var0_0.SDK_PID_TEST = "JP-AZURLANE-TEST"
 var0_0.SDK_PID_RELEASE = "JP-AZURLANE"
 var0_0.SDK_SERVER_URL = "https://jp-sdk-api.yostarplat.com"
 var0_0.SDK_TRANS_URL = "https://migration.yostar.co.jp?pid=JP-AZURLANE"
+var0_0.LOGIN_RET = nil
 
 function var0_0.InitJP()
 	var0_0.isAudit = NetConst.GATEWAY_PORT == 20001 and NetConst.GATEWAY_HOST == "blhxjpauditapi.azurlane.jp"
@@ -37,10 +38,10 @@ function var0_0.InitUS()
 	var0_0.isGoogleSimulator = NetConst.GATEWAY_PORT == 50001 and NetConst.GATEWAY_HOST == "audit.us.yo-star.com"
 	var0_0.isRelease = NetConst.GATEWAY_PORT == 80 and NetConst.GATEWAY_HOST == "blhxusgate.yo-star.com"
 	var0_0.LoginPlatform = PLATFORM_YOSTARUS
-	var0_0.SDK_PID_TEST = ""
-	var0_0.SDK_PID_RELEASE = ""
-	var0_0.SDK_SERVER_URL = ""
-	var0_0.SDK_TRANS_URL = ""
+	var0_0.SDK_PID_TEST = "US-AZURLANE-TEST"
+	var0_0.SDK_PID_RELEASE = "US-AZURLANE"
+	var0_0.SDK_SERVER_URL = "http://en-sdk-api.yostarplat.com"
+	var0_0.SDK_TRANS_URL = "https://migration.yo-star.com/?pid=US-AZURLANE"
 end
 
 function var0_0.CheckAudit()
@@ -161,6 +162,23 @@ end
 
 	function var0_0.Login()
 		if var0_0.GetIsPlatform() then
+			if var0_0.LoginPlatform == PLATFORM_YOSTARUS and var0_0.LOGIN_RET ~= nil and var0_0.YoStarRetCodeHandler(var0_0.LOGIN_RET) then
+				local var0_25 = User.New({
+					type = 1,
+					arg1 = var0_0.LoginPlatform,
+					arg2 = var0_0.LOGIN_RET.LOGIN_UID,
+					arg3 = var0_0.LOGIN_RET.LOGIN_TOKEN
+				})
+
+				pg.m02:sendNotification(GAME.PLATFORM_LOGIN_DONE, {
+					user = var0_25
+				})
+
+				var0_0.LOGIN_RET = nil
+
+				return
+			end
+
 			pg.UIMgr.GetInstance():LoadingOn()
 			var1_0:Login()
 		end
@@ -336,22 +354,59 @@ end)()
 	function onLogin_YoStar(arg0_51)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		if var0_0.YoStarRetCodeHandler(arg0_51) then
-			local var0_51 = User.New({
-				type = 1,
-				arg1 = var0_0.LoginPlatform,
-				arg2 = arg0_51.LOGIN_UID,
-				arg3 = arg0_51.LOGIN_TOKEN
-			})
+		if var0_0.LoginPlatform == PLATFORM_YOSTARJP then
+			if var0_0.YoStarRetCodeHandler(arg0_51) then
+				local var0_51 = User.New({
+					type = 1,
+					arg1 = var0_0.LoginPlatform,
+					arg2 = arg0_51.LOGIN_UID,
+					arg3 = arg0_51.LOGIN_TOKEN
+				})
 
-			pg.m02:sendNotification(GAME.PLATFORM_LOGIN_DONE, {
-				user = var0_51
-			})
+				pg.m02:sendNotification(GAME.PLATFORM_LOGIN_DONE, {
+					user = var0_51
+				})
+			end
+		elseif var0_0.LoginPlatform == PLATFORM_YOSTARUS then
+			if var0_0.LOGIN_RET == nil then
+				var0_0.LOGIN_RET = arg0_51
+
+				pg.m02:sendNotification(GAME.PLATFORM_LOGIN_WAIT_DONE, {
+					isLoginSuccess = var0_0.YoStarRetCodeHandler(arg0_51)
+				})
+			else
+				var0_0.LOGIN_RET = arg0_51
+
+				if var0_0.YoStarRetCodeHandler(arg0_51) then
+					local var1_51 = User.New({
+						type = 1,
+						arg1 = var0_0.LoginPlatform,
+						arg2 = arg0_51.LOGIN_UID,
+						arg3 = arg0_51.LOGIN_TOKEN
+					})
+
+					pg.m02:sendNotification(GAME.PLATFORM_LOGIN_DONE, {
+						user = var1_51
+					})
+
+					var0_0.LOGIN_RET = nil
+				end
+			end
 		end
 	end
 
 	function onLogout_YoStar(arg0_52)
 		if var0_0.YoStarRetCodeHandler(arg0_52) then
+			var0_0.LOGIN_RET = nil
+
+			if not pg.proxyRegister then
+				pg.m02:sendNotification(GAME.PLATFORM_LOGIN_WAIT_DONE, {
+					isLoginSuccess = false
+				})
+
+				return
+			end
+
 			pg.m02:sendNotification(GAME.LOGOUT, {
 				code = 0
 			})

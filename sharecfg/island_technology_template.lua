@@ -40,6 +40,7 @@ pg.island_technology_template.all = {
 	110310,
 	120006,
 	120007,
+	120008,
 	210101,
 	220101,
 	220501,
@@ -242,7 +243,8 @@ pg.island_technology_template.get_id_list_by_tech_belong = {
 		120005,
 		110310,
 		120006,
-		120007
+		120007,
+		120008
 	},
 	{
 		210101,
@@ -1594,6 +1596,40 @@ pg.base.island_technology_template = {}
 		axis = {
 			28,
 			2
+		}
+	}
+	pg.base.island_technology_template[120008] = {
+		tech_desc = "Produces an Island Authority Permit for Takao. Go and recruit some new friends!",
+		tech_chara = 1,
+		tech_level = "1",
+		complete_character_id = "",
+		tech_icon = "tech_120001",
+		auto_finish = 1,
+		tech_name = "Additional Permit",
+		complete_tips = "You can now activate an <color=#1E8FFE>Island Authority Permit</color> at the <color=#1E8FFE>Island Base</color>.",
+		formula_id = 7120008,
+		complete_title = "You can now activate an <color=#1E8FFE>Island Authority Permit</color> at the <color=#1E8FFE>Island Base</color>.",
+		tech_belong = 1,
+		id = 120008,
+		island_level = 50,
+		complete_map_id = 1007,
+		sys_unlock = {
+			{
+				3,
+				110310
+			},
+			{
+				3,
+				120007
+			}
+		},
+		tech_repeat = {
+			0,
+			0
+		},
+		axis = {
+			28,
+			3
 		}
 	}
 	pg.base.island_technology_template[210101] = {
@@ -3572,6 +3608,8 @@ pg.base.island_technology_template = {}
 			6
 		}
 	}
+end)()
+;(function()
 	pg.base.island_technology_template[440302] = {
 		tech_desc = "Increases the number of Baa Baa Sheep at Laidback Ranch.",
 		tech_chara = 1,
@@ -3604,8 +3642,6 @@ pg.base.island_technology_template = {}
 			6
 		}
 	}
-end)()
-;(function()
 	pg.base.island_technology_template[420303] = {
 		tech_desc = "Increases the number of Oinky Oinky Pigs at Laidback Ranch.",
 		tech_chara = 1,
@@ -6859,6 +6895,8 @@ end)()
 			9
 		}
 	}
+end)()
+;(function()
 	pg.base.island_technology_template[650203] = {
 		tech_desc = "Allows for the production of Water Filter cores that make water potable.",
 		tech_chara = 1,

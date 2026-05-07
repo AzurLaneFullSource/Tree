@@ -17,9 +17,9 @@ function var0_0.LoadShip(arg0_2, arg1_2, arg2_2, arg3_2)
 			arg0_2.live2dClass = nil
 		end
 
-		local var3_2 = Live2D.GenerateData(arg2_2)
+		local var3_2 = Live2DPainting.GenerateData(arg2_2)
 
-		arg0_2.live2dClass = Live2D.New(var3_2, function(arg0_3)
+		arg0_2.live2dClass = Live2DPainting.New(var3_2, function(arg0_3)
 			if arg0_2.exit == true then
 				return
 			end

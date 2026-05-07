@@ -26,6 +26,7 @@ var0_0.EventUpdateBuff = "WorldMapFleet.EventUpdateBuff"
 var0_0.EventUpdateDamageLevel = "WorldMapFleet.EventUpdateDamageLevel"
 var0_0.EventUpdateDefeat = "WorldMapFleet.EventUpdateDefeat"
 var0_0.EventUpdateCatSalvage = "WorldMapFleet.EventUpdateCatSalvage"
+var0_0.EventUpdateFlashTips = "WorldMapFleet.EventUpdateFlashTips"
 
 function var0_0.GetName(arg0_1)
 	return "fleet_" .. arg0_1
@@ -481,17 +482,11 @@ end
 
 function var0_0.UpdateBuffs(arg0_51, arg1_51)
 	if arg0_51.buffs ~= arg1_51 then
-		local var0_51 = nowWorld()
+		local var0_51 = nowWorld():GetActiveMap()
 
-		if not var0_51.isAutoFight then
-			local var1_51 = var0_51:GetActiveMap()
-
-			for iter0_51, iter1_51 in pairs(WorldConst.CompareBuffs(arg0_51.buffs, arg1_51).add) do
-				if #iter1_51.config.trap_lua > 0 then
-					var1_51:AddPhaseDisplay({
-						story = iter1_51.config.trap_lua
-					})
-				end
+		for iter0_51, iter1_51 in pairs(WorldConst.CompareBuffs(arg0_51.buffs, arg1_51).add) do
+			if noEmptyStr(iter1_51.config.trap_lua) then
+				arg0_51:DispatchEvent(var0_0.EventUpdateFlashTips, iter1_51.config.trap_lua)
 			end
 		end
 

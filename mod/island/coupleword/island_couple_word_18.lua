@@ -1,7 +1,7 @@
 return {
 	{
 		characterId = 10205,
-		say = "指挥官，需要我陪你在岛屿上转转吗？"
+		say = "Commander, would you like to go for a walk?"
 	},
 	{
 		emoji = 10,

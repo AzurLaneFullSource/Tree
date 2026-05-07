@@ -1,7 +1,7 @@
 return {
 	{
 		characterId = 30407,
-		say = "主上……今天，能多陪{namecode:161}一会儿吗？"
+		say = "Commander... would you mind keeping me company a bit longer?"
 	},
 	{
 		emoji = 10,

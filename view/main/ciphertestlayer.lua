@@ -50,7 +50,7 @@ end
 function var0_0.LoadL2dPainting(arg0_8, arg1_8)
 	local var0_8 = pg.ship_skin_template[arg1_8].ship_group
 	local var1_8 = ShipGroup.getDefaultShipConfig(var0_8)
-	local var2_8 = Live2D.GenerateData({
+	local var2_8 = Live2DPainting.GenerateData({
 		ship = Ship.New({
 			id = 999,
 			configId = var1_8.id,
@@ -66,7 +66,7 @@ function var0_0.LoadL2dPainting(arg0_8, arg1_8)
 
 	local var3_8
 
-	var3_8 = Live2D.New(var2_8, function(arg0_9)
+	var3_8 = Live2DPainting.New(var2_8, function(arg0_9)
 		arg0_9:IgonreReactPos(true)
 		arg0_8:ClearL2dPainting()
 		pg.UIMgr.GetInstance():LoadingOff()

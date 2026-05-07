@@ -150,8 +150,6 @@ function var1_0.createDownloadFileInfo(arg0_23)
 	local var0_23 = BundleWizardUpdateInfo.New()
 	local var1_23 = {}
 
-	assert(#arg0_23 < 2)
-
 	for iter0_23, iter1_23 in ipairs(arg0_23) do
 		var0_23:AddGroup(iter1_23.groupName, iter1_23.fileNameList)
 		table.insert(var1_23, iter1_23.groupName)

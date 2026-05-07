@@ -1338,7 +1338,7 @@ function var0_0.LoadL2dPainting(arg0_76, arg1_76)
 		})
 	end
 
-	local var5_76 = Live2D.GenerateData({
+	local var5_76 = Live2DPainting.GenerateData({
 		ship = var2_76,
 		position = Vector3(0, 0, -1),
 		parent = arg0_76.live2dContainer,
@@ -1349,7 +1349,7 @@ function var0_0.LoadL2dPainting(arg0_76, arg1_76)
 
 	pg.UIMgr.GetInstance():LoadingOn()
 
-	arg0_76.live2dChar = Live2D.New(var5_76, function(arg0_77)
+	arg0_76.live2dChar = Live2DPainting.New(var5_76, function(arg0_77)
 		arg0_77:IgonreReactPos(true)
 		arg0_76:CheckShowShopHxForL2d(arg0_77, arg1_76)
 

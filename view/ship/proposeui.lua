@@ -1213,7 +1213,7 @@ function var0_0.createLive2D(arg0_109, arg1_109)
 			var2_110 = arg0_109.shipVO:getSkinId()
 		end
 
-		Live2D.SetL2dSortingLayer(arg0_110, LayerWeightConst.L2D_DEFAULT_LAYER)
+		Live2DPainting.SetL2dSortingLayer(arg0_110, LayerWeightConst.L2D_DEFAULT_LAYER)
 
 		var0_110.localPosition = BuildVector3(pg.ship_skin_template[var2_110].live2d_offset) + Vector3(0, 0, 100)
 

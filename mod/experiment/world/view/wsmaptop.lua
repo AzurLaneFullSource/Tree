@@ -10,10 +10,12 @@ var0_0.Fields = {
 	cmdSkills = "table",
 	rtFleetBuffs = "userdata",
 	rtCmdSkills = "userdata",
-	entrance = "table",
 	fleet = "table",
-	rtPoisonRate = "userdata",
 	rtMapName = "userdata",
+	rtFlashTipWord = "userdata",
+	rtPoisonRate = "userdata",
+	entrance = "table",
+	rtMoveLimit = "userdata",
 	cmdSkillFunc = "function",
 	fleetBuffItemList = "table",
 	world = "table",
@@ -23,13 +25,14 @@ var0_0.Fields = {
 	globalBuffs = "table",
 	poisonFunc = "function",
 	fleetBuffs = "table",
-	rtMoveLimit = "userdata"
+	flashTimer = "table"
 }
 var0_0.Listeners = {
 	onUpdateFleetBuff = "OnUpdateFleetBuff",
 	onUpdateGlobalBuff = "OnUpdateGlobalBuff",
+	onUpdateSelectedFleet = "OnUpdateSelectedFleet",
 	onUpdateCmdSkill = "OnUpdateCmdSkill",
-	onUpdateSelectedFleet = "OnUpdateSelectedFleet"
+	onUpdateFlashTips = "OnUpdateFlashTips"
 }
 
 function var0_0.Setup(arg0_1)
@@ -42,6 +45,10 @@ function var0_0.Setup(arg0_1)
 end
 
 function var0_0.Dispose(arg0_2)
+	if arg0_2.flashTimer then
+		arg0_2.flashTimer.func()
+	end
+
 	local var0_2 = nowWorld()
 
 	var0_2:RemoveListener(World.EventUpdateGlobalBuff, arg0_2.onUpdateGlobalBuff)
@@ -93,7 +100,9 @@ function var0_0.Init(arg0_5)
 	arg0_5.rtPoisonRate = var0_5:Find("features/status_field/poison_rate")
 	arg0_5.rtFleetBuffs = var0_5:Find("features/fleet_field/fleet_buffs")
 	arg0_5.rtCmdSkills = var0_5:Find("features/fleet_field/cmd_skills")
+	arg0_5.rtFlashTipWord = var0_5:Find("flash_tip_word")
 
+	setActive(arg0_5.rtFlashTipWord, false)
 	setText(arg0_5.rtMapName, "")
 	setText(arg0_5.rtTime, "")
 
@@ -164,6 +173,7 @@ function var0_0.AddFleetListener(arg0_13, arg1_13)
 		arg1_13:AddListener(WorldMapFleet.EventUpdateBuff, arg0_13.onUpdateFleetBuff)
 		arg1_13:AddListener(WorldMapFleet.EventUpdateDamageLevel, arg0_13.onUpdateFleetBuff)
 		arg1_13:AddListener(WorldMapFleet.EventUpdateCatSalvage, arg0_13.onUpdateCmdSkill)
+		arg1_13:AddListener(WorldMapFleet.EventUpdateFlashTips, arg0_13.onUpdateFlashTips)
 	end
 end
 
@@ -172,6 +182,7 @@ function var0_0.RemoveFleetListener(arg0_14, arg1_14)
 		arg1_14:RemoveListener(WorldMapFleet.EventUpdateBuff, arg0_14.onUpdateFleetBuff)
 		arg1_14:RemoveListener(WorldMapFleet.EventUpdateDamageLevel, arg0_14.onUpdateFleetBuff)
 		arg1_14:RemoveListener(WorldMapFleet.EventUpdateCatSalvage, arg0_14.onUpdateCmdSkill)
+		arg1_14:RemoveListener(WorldMapFleet.EventUpdateFlashTips, arg0_14.onUpdateFlashTips)
 	end
 end
 
@@ -269,6 +280,48 @@ function var0_0.OnUpdateCmdSkill(arg0_23)
 
 	arg0_23.cmdSkillItemList:align(#arg0_23.cmdSkills)
 	setActive(arg0_23.rtCmdSkills, #arg0_23.cmdSkills > 0)
+end
+
+function var0_0.OnUpdateFlashTips(arg0_25, arg1_25, arg2_25, arg3_25)
+	if arg0_25.flashTimer then
+		arg0_25.flashTimer.func()
+	end
+
+	setActive(arg0_25.rtFlashTipWord, true)
+	quickPlayAnimation(arg0_25.rtFlashTipWord, "anim_flash_tip_word_in")
+	setText(arg0_25.rtFlashTipWord:Find("Text"), HXSet.hxLan(arg3_25))
+
+	local var0_25 = GetOrAddComponent(arg0_25.rtFlashTipWord:Find("Text"), typeof(Typewriter))
+
+	arg0_25.flashTimer = Timer.New(function()
+		if arg0_25.flashTimer then
+			arg0_25.flashTimer:Stop()
+
+			arg0_25.flashTimer = nil
+		end
+
+		local var0_26
+
+		local function var1_26()
+			var1_26 = nil
+
+			setActive(arg0_25.rtFlashTipWord, false)
+		end
+
+		arg0_25.rtFlashTipWord:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+			existCall(var1_26)
+		end)
+		quickPlayAnimation(arg0_25.rtFlashTipWord, "anim_flash_tip_word_out")
+	end, getGameset("world_tip_last")[1])
+
+	function var0_25.endFunc()
+		if arg0_25.flashTimer then
+			arg0_25.flashTimer:Start()
+		end
+	end
+
+	var0_25:setSpeed(getGameset("world_tip_typewriter")[2][1])
+	var0_25:Play()
 end
 
 return var0_0

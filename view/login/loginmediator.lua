@@ -175,7 +175,8 @@ function var0_0.listNotificationInterests(arg0_18)
 		GAME.SERVER_LOGIN_WAIT,
 		GAME.BEGIN_STAGE_DONE,
 		GAME.SERVER_LOGIN_FAILED_USER_BANNED,
-		GAME.ON_SOCIAL_LINKED
+		GAME.ON_SOCIAL_LINKED,
+		GAME.PLATFORM_LOGIN_WAIT_DONE
 	}
 end
 
@@ -312,6 +313,8 @@ function var0_0.handleNotification(arg0_19, arg1_19)
 		end
 	elseif var0_19 == GAME.ON_SOCIAL_LINKED then
 		arg0_19.viewComponent:closeYostarAlertView()
+	elseif var0_19 == GAME.PLATFORM_LOGIN_WAIT_DONE then
+		arg0_19.viewComponent:onLoginWait(var1_19.isLoginSuccess)
 	end
 end
 

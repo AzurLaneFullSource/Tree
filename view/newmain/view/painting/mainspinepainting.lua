@@ -75,9 +75,7 @@ function var0_0.AdJustOrderInLayer(arg0_6, arg1_6)
 		local var5_6 = arg0_6.spBg:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer")):ToTable()
 
 		for iter4_6, iter5_6 in ipairs(var5_6) do
-			local var6_6 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", iter5_6) - var0_6
-
-			ReflectionHelp.RefSetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", iter5_6, var6_6)
+			iter5_6.sortingOrder = iter5_6.sortingOrder - var0_6
 		end
 	end
 end

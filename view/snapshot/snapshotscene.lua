@@ -522,7 +522,7 @@ function var0_0.updateSkin(arg0_48)
 				end
 			end
 
-			Live2D.SetL2dSortingLayer(arg0_49, LayerWeightConst.L2D_DEFAULT_LAYER)
+			Live2DPainting.SetL2dSortingLayer(arg0_49, LayerWeightConst.L2D_DEFAULT_LAYER)
 
 			arg0_48.live2dCom = var1_49
 			arg0_48.live2dCom.name = arg0_48.paintSkin

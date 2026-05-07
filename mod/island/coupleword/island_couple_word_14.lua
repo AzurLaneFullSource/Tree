@@ -1,7 +1,7 @@
 return {
 	{
 		characterId = 60802,
-		say = "指挥官！我正需要个助手来测试我的新发明呢~"
+		say = "Ooh! Commander! I was just looking for a new assistant to test out today's invention-of-the-day!"
 	},
 	{
 		emoji = 2,

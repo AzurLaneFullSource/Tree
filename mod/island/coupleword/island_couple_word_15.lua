@@ -1,10 +1,10 @@
 return {
 	{
 		characterId = 10110,
-		say = "我有一个点子！我们去找传说中的深海秘宝吧！"
+		say = "I just got a great idea! Let's go search for the legendary deep-sea treasure!"
 	},
 	{
 		characterId = 90111,
-		say = "欸……听起来好麻烦的样子……"
+		say = "Ehhh? That sounds like a pain in the butt..."
 	}
 }

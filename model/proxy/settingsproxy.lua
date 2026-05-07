@@ -15,7 +15,6 @@ function var0_0.onRegister(arg0_1)
 	arg0_1._screenRatio = PlayerPrefs.GetFloat("SetScreenRatio", ADAPT_TARGET)
 	arg0_1.storyAutoPlayCode = PlayerPrefs.GetInt("story_autoplay_flag", 0)
 	NotchAdapt.CheckNotchRatio = arg0_1._screenRatio
-	NewNotchAdapt.CheckNotchRatio = arg0_1._screenRatio
 	arg0_1._nextTipActBossTime = PlayerPrefs.GetInt("ActBossTipLastTime", 0)
 
 	if GetZeroTime() <= arg0_1._nextTipActBossTime then

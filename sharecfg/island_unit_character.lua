@@ -69,6 +69,9 @@ pg.island_unit_character.all = {
 	1011000,
 	1011001,
 	1011002,
+	1011700,
+	1011701,
+	1011702,
 	1020500,
 	1020501,
 	1020502,
@@ -78,6 +81,9 @@ pg.island_unit_character.all = {
 	1070300,
 	1070301,
 	1070302,
+	2012100,
+	2012101,
+	2012102,
 	2060300,
 	2060301,
 	2060302,
@@ -88,6 +94,9 @@ pg.island_unit_character.all = {
 	3012900,
 	3012901,
 	3012902,
+	3031100,
+	3031101,
+	3031102,
 	3031200,
 	3031201,
 	3031202,
@@ -105,6 +114,15 @@ pg.island_unit_character.all = {
 	4990200,
 	4990201,
 	4990202,
+	4990600,
+	4990601,
+	4990602,
+	5010700,
+	5010701,
+	5010702,
+	5020100,
+	5020101,
+	5020102,
 	5020400,
 	5020500,
 	5060100,
@@ -1268,6 +1286,57 @@ pg.base.island_unit_character = {}
 		CollisionParam = "",
 		personality = 1
 	}
+	pg.base.island_unit_character[1011700] = {
+		describe_illustrated_guid = "Phew... The air here... is so clean. And the grass... is really soft. Commander, do you want to... take a nap with Laffey? We can lie down right here for a bit... together...",
+		english_name = "USS Laffey",
+		name = "Laffey",
+		IslandShipIcon = "lafei",
+		group = 10117,
+		animator = "island/animator/ani_role_all_01_02",
+		model = "island/character/10117/10117_00/prefab/pre_char_10117_00",
+		is_active = 0,
+		navAgentParam = "",
+		id = 1011700,
+		rendering = "1011700",
+		personal_ani = "",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 2
+	}
+	pg.base.island_unit_character[1011701] = {
+		describe_illustrated_guid = "",
+		english_name = "USS Laffey",
+		name = "Laffey",
+		IslandShipIcon = "lafei",
+		group = 10117,
+		animator = "island/animator/ani_role_all_01_02",
+		model = "island/character/10117/10117_01/prefab/pre_char_10117_01",
+		is_active = 0,
+		navAgentParam = "",
+		id = 1011701,
+		rendering = "1011701",
+		personal_ani = "personal_10117_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 2
+	}
+	pg.base.island_unit_character[1011702] = {
+		describe_illustrated_guid = "",
+		english_name = "USS Laffey",
+		name = "Laffey",
+		IslandShipIcon = "lafei",
+		group = 10117,
+		animator = "island/animator/ani_role_all_01_02",
+		model = "island/character/10117/10117_02/prefab/pre_char_10117_02",
+		is_active = 0,
+		navAgentParam = "",
+		id = 1011702,
+		rendering = "1011702",
+		personal_ani = "personal_10117_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 2
+	}
 	pg.base.island_unit_character[1020500] = {
 		describe_illustrated_guid = "The breeze is calm and the sun is shining... You know, I just poured some new afternoon tea. Why don't you stay for a while and have a drink?",
 		english_name = "USS Helena",
@@ -1417,6 +1486,57 @@ pg.base.island_unit_character = {}
 		id = 1070302,
 		rendering = "1070302",
 		personal_ani = "personal_10703_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
+	pg.base.island_unit_character[2012100] = {
+		describe_illustrated_guid = "Woahhh, the view here is faaantastic! Not to mention, it's warm and sunny, and the weather's perfect as well! I want to throw a picnic now... and of course you're invited too, Commander!",
+		english_name = "HMS Javelin",
+		name = "Javelin",
+		IslandShipIcon = "biaoqiang",
+		group = 20121,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/20121/20121_00/prefab/pre_char_20121_00",
+		is_active = 0,
+		navAgentParam = "",
+		id = 2012100,
+		rendering = "2012100",
+		personal_ani = "",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
+	pg.base.island_unit_character[2012101] = {
+		describe_illustrated_guid = "",
+		english_name = "HMS Javelin",
+		name = "Javelin",
+		IslandShipIcon = "biaoqiang",
+		group = 20121,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/20121/20121_01/prefab/pre_char_20121_01",
+		is_active = 0,
+		navAgentParam = "",
+		id = 2012101,
+		rendering = "2012101",
+		personal_ani = "personal_20121_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
+	pg.base.island_unit_character[2012102] = {
+		describe_illustrated_guid = "",
+		english_name = "HMS Javelin",
+		name = "Javelin",
+		IslandShipIcon = "biaoqiang",
+		group = 20121,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/20121/20121_02/prefab/pre_char_20121_02",
+		is_active = 0,
+		navAgentParam = "",
+		id = 2012102,
+		rendering = "2012102",
+		personal_ani = "personal_20121_1",
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
@@ -1591,6 +1711,57 @@ pg.base.island_unit_character = {}
 		CollisionParam = "",
 		personality = 1
 	}
+	pg.base.island_unit_character[3031100] = {
+		describe_illustrated_guid = "I have a general understanding of this island's topography. Call me if you need additional patrols or training. ...Relaxation plans? Maybe watching the sunrise on the beach wouldn't be a bad idea...",
+		english_name = "IJN Takao",
+		name = "{namecode:66}",
+		IslandShipIcon = "gaoxiong",
+		group = 30311,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/30311/30311_00/prefab/pre_char_30311_00",
+		is_active = 0,
+		navAgentParam = "",
+		id = 3031100,
+		rendering = "3031100",
+		personal_ani = "",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
+	pg.base.island_unit_character[3031101] = {
+		describe_illustrated_guid = "",
+		english_name = "IJN Takao",
+		name = "{namecode:66}",
+		IslandShipIcon = "gaoxiong",
+		group = 30311,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/30311/30311_01/prefab/pre_char_30311_01",
+		is_active = 0,
+		navAgentParam = "",
+		id = 3031101,
+		rendering = "3031101",
+		personal_ani = "personal_30311_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
+	pg.base.island_unit_character[3031102] = {
+		describe_illustrated_guid = "",
+		english_name = "IJN Takao",
+		name = "{namecode:66}",
+		IslandShipIcon = "gaoxiong",
+		group = 30311,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/30311/30311_02/prefab/pre_char_30311_02",
+		is_active = 0,
+		navAgentParam = "",
+		id = 3031102,
+		rendering = "3031102",
+		personal_ani = "personal_30311_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
 	pg.base.island_unit_character[3031200] = {
 		describe_illustrated_guid = "Work? Missions? Who cares! Those can wait, but my lap pillow is only available here and now. Come, enjoy a little afternoon nap with me.",
 		english_name = "IJN Atago",
@@ -1710,6 +1881,8 @@ pg.base.island_unit_character = {}
 		CollisionParam = "",
 		personality = 1
 	}
+end)()
+;(function()
 	pg.base.island_unit_character[3120100] = {
 		describe_illustrated_guid = "Nyahaha~ The all-capable Akashi can use all the latest technology to upgrade your tools, nya! All it requires is a bit of compensation for the R&D costs and the materials~ Quite the good deal, nya?",
 		english_name = "IJN Akashi",
@@ -1863,8 +2036,6 @@ pg.base.island_unit_character = {}
 		CollisionParam = "",
 		personality = 1
 	}
-end)()
-;(function()
 	pg.base.island_unit_character[4990202] = {
 		describe_illustrated_guid = "",
 		english_name = "KMS Friedrich der Grosse",
@@ -1881,6 +2052,159 @@ end)()
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
+	}
+	pg.base.island_unit_character[4990600] = {
+		describe_illustrated_guid = "It's peaceful here. So peaceful that it makes me a bit restless... Are you planning to just sit back and relax, Commander? Maybe a change of pace every now and then... will make things more enjoyable, wouldn't you agree?",
+		english_name = "KMS August von Parseval",
+		name = "{namecode:481}",
+		IslandShipIcon = "aogusite",
+		group = 49906,
+		animator = "island/animator/ani_role_all_01_02",
+		model = "island/character/49906/49906_00/prefab/pre_char_49906_00",
+		is_active = 0,
+		navAgentParam = "",
+		id = 4990600,
+		rendering = "4990600",
+		personal_ani = "",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 2
+	}
+	pg.base.island_unit_character[4990601] = {
+		describe_illustrated_guid = "",
+		english_name = "",
+		name = "{namecode:481}",
+		IslandShipIcon = "aogusite",
+		group = 49906,
+		animator = "island/animator/ani_role_all_01_02",
+		model = "island/character/49906/49906_01/prefab/pre_char_49906_01",
+		is_active = 0,
+		navAgentParam = "",
+		id = 4990601,
+		rendering = "4990601",
+		personal_ani = "personal_49906_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 2
+	}
+	pg.base.island_unit_character[4990602] = {
+		describe_illustrated_guid = "",
+		english_name = "",
+		name = "{namecode:481}",
+		IslandShipIcon = "aogusite",
+		group = 49906,
+		animator = "island/animator/ani_role_all_01_02",
+		model = "island/character/49906/49906_02/prefab/pre_char_49906_02",
+		is_active = 0,
+		navAgentParam = "",
+		id = 4990602,
+		rendering = "4990602",
+		personal_ani = "personal_49906_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 2
+	}
+	pg.base.island_unit_character[5010700] = {
+		describe_illustrated_guid = "Wooow, what a huge forest! There's a little stream, rocky hills, and lots of flowers I've never seen before! Commander, Commander! Is it okay if Lady Yuen goes on an adventure?!",
+		english_name = "Fei Yuen",
+		name = "Fei Yuen",
+		IslandShipIcon = "feiyun",
+		group = 50107,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/50107/50107_00/prefab/pre_char_50107_00",
+		is_active = 0,
+		navAgentParam = "",
+		id = 5010700,
+		rendering = "5010700",
+		personal_ani = "",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
+	pg.base.island_unit_character[5010701] = {
+		describe_illustrated_guid = "",
+		english_name = "",
+		name = "Fei Yuen",
+		IslandShipIcon = "feiyun",
+		group = 50107,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/50107/50107_01/prefab/pre_char_50107_01",
+		is_active = 0,
+		navAgentParam = "",
+		id = 5010701,
+		rendering = "5010701",
+		personal_ani = "personal_50107_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
+	pg.base.island_unit_character[5010702] = {
+		describe_illustrated_guid = "",
+		english_name = "",
+		name = "Fei Yuen",
+		IslandShipIcon = "feiyun",
+		group = 50107,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/50107/50107_02/prefab/pre_char_50107_02",
+		is_active = 0,
+		navAgentParam = "",
+		id = 5010702,
+		rendering = "5010702",
+		personal_ani = "personal_50107_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
+	pg.base.island_unit_character[5020100] = {
+		describe_illustrated_guid = "The mornings here are exceptionally serene. The fragrance of tea mingles with the morning dew, weaving a sublimely calming atmosphere. I've made some tea, Commander. Feel free to join me.",
+		english_name = "Yat Sen",
+		name = "Yat Sen",
+		IslandShipIcon = "yixian",
+		group = 50201,
+		animator = "island/animator/ani_role_all_01_02",
+		model = "island/character/50201/50201_00/prefab/pre_char_50201_00",
+		is_active = 0,
+		navAgentParam = "",
+		id = 5020100,
+		rendering = "5020100",
+		personal_ani = "",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 2
+	}
+	pg.base.island_unit_character[5020101] = {
+		describe_illustrated_guid = "",
+		english_name = "",
+		name = "Yat Sen",
+		IslandShipIcon = "yixian",
+		group = 50201,
+		animator = "island/animator/ani_role_all_01_02",
+		model = "island/character/50201/50201_01/prefab/pre_char_50201_01",
+		is_active = 0,
+		navAgentParam = "",
+		id = 5020101,
+		rendering = "5020101",
+		personal_ani = "personal_50201_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 2
+	}
+	pg.base.island_unit_character[5020102] = {
+		describe_illustrated_guid = "",
+		english_name = "",
+		name = "Yat Sen",
+		IslandShipIcon = "yixian",
+		group = 50201,
+		animator = "island/animator/ani_role_all_01_02",
+		model = "island/character/50201/50201_02/prefab/pre_char_50201_02",
+		is_active = 0,
+		navAgentParam = "",
+		id = 5020102,
+		rendering = "5020102",
+		personal_ani = "personal_50201_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 2
 	}
 	pg.base.island_unit_character[5020400] = {
 		describe_illustrated_guid = "The tea is ready, and the inkstick has been ground. Commander, could I bother you to set aside your work for a moment and come appreciate this work-in-progress painting with me?",

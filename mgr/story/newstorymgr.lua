@@ -548,22 +548,9 @@ function var0_0.SendNotification(arg0_56, arg1_56, arg2_56)
 end
 
 function var0_0.CheckResDownload(arg0_57, arg1_57, arg2_57)
-	local var0_57 = arg0_57:_GetStoryPaintingsByName(arg1_57)
-	local var1_57 = table.concat(var0_57, ",")
+	local var0_57 = arg0_57:_GetResList(arg1_57)
 
-	originalPrint("start download res " .. var1_57)
-
-	local var2_57 = {}
-
-	for iter0_57, iter1_57 in ipairs(var0_57) do
-		PaintingGroupConst.AddPaintingNameWithFilteMap(var2_57, iter1_57)
-	end
-
-	PaintingGroupConst.PaintingDownload({
-		isShowBox = true,
-		paintingNameList = var2_57,
-		finishFunc = arg2_57
-	})
+	SplitPackConst.DownloadByLuaArr(var0_57, arg2_57)
 end
 
 local function var15_0(arg0_58, arg1_58)
@@ -1131,4 +1118,41 @@ function var0_0.Fix(arg0_105)
 			end
 		end
 	end
+end
+
+function var0_0._GetResList(arg0_107, arg1_107)
+	local var0_107 = "ui/newstoryui"
+	local var1_107 = arg1_107:GetDialogueStyleName()
+	local var2_107 = "ui/newstorydialogue" .. var1_107
+	local var3_107 = "ui/newstoryrecordui"
+	local var4_107 = arg0_107:_GetStoryPaintingsByName(arg1_107)
+	local var5_107 = {}
+
+	_.each(var4_107, function(arg0_108)
+		PaintingGroupConst.AddPaintingNameWithFilteMap(var5_107, arg0_108)
+	end)
+
+	local var6_107 = {}
+
+	_.each(var4_107, function(arg0_109)
+		table.insert(var6_107, "paintingface/" .. arg0_109)
+	end)
+
+	local var7_107 = {}
+
+	_.each(arg1_107.steps, function(arg0_110)
+		local var0_110 = arg0_110:GetResList()
+
+		_.each(var0_110, function(arg0_111)
+			table.insert(var7_107, arg0_111)
+		end)
+	end)
+
+	local var8_107 = SplitPackMediatorResMap.MergeLuaArr(var5_107, var6_107, var7_107)
+
+	table.insert(var8_107, var0_107)
+	table.insert(var8_107, var2_107)
+	table.insert(var8_107, var3_107)
+
+	return var8_107
 end

@@ -1,8 +1,6 @@
 local var0_0 = class("Live2dDrag")
 local var1_0 = 4
-local var2_0 = {
-	Live2D.DRAG_DOWN_ACTION
-}
+local var2_0 = {}
 local var3_0 = 1
 local var4_0 = 2
 local var5_0 = 3
@@ -15,6 +13,9 @@ function var0_0.Ctor(arg0_1, arg1_1, arg2_1, arg3_1)
 	arg0_1.live2dData = arg2_1
 	arg0_1.commonData = arg3_1
 	arg0_1.frameRate = Application.targetFrameRate or 60
+	var2_0 = {
+		Live2DPainting.DRAG_DOWN_ACTION
+	}
 	arg0_1.id = arg1_1.id
 	arg0_1.drawAbleName = arg1_1.draw_able_name or ""
 	arg0_1.parameterName = arg1_1.parameter
@@ -199,7 +200,7 @@ function var0_0.onListenerEvent(arg0_2, arg1_2, arg2_2)
 				end
 
 				if var18_2 and arg0_2.l2dIdleIndex ~= var18_2 then
-					arg0_2:onEventCallback(Live2D.EVENT_CHANGE_IDLE_INDEX, {
+					arg0_2:onEventCallback(Live2DPainting.EVENT_CHANGE_IDLE_INDEX, {
 						id = arg0_2.id,
 						idle = var18_2,
 						activeData = arg0_2.actionTriggerActive
@@ -211,29 +212,29 @@ function var0_0.onListenerEvent(arg0_2, arg1_2, arg2_2)
 end
 
 function var0_0.onListenerTrigger(arg0_3, arg1_3, arg2_3)
-	if arg1_3 == Live2D.ON_ACTION_DRAG_CLICK then
+	if arg1_3 == Live2DPainting.ON_ACTION_DRAG_CLICK then
 		if arg0_3.actionTrigger.click_cd and table.contains(arg0_3.actionTrigger.click_cd, arg2_3.draw_able_name) then
 			arg0_3.nextTriggerTime = arg0_3.limitTime
 		end
-	elseif arg1_3 == Live2D.ON_ACTION_PLAY then
+	elseif arg1_3 == Live2DPainting.ON_ACTION_PLAY then
 		arg0_3.nextTriggerTime = arg0_3.limitTime <= 1 and arg0_3.limitTime or 1
 	end
 end
 
 function var0_0.getChangeCheckName(arg0_4, arg1_4, arg2_4)
-	if arg1_4 == Live2D.ON_ACTION_PLAY then
+	if arg1_4 == Live2DPainting.ON_ACTION_PLAY then
 		return arg2_4.action
-	elseif arg1_4 == Live2D.ON_ACTION_DRAG_CLICK then
+	elseif arg1_4 == Live2DPainting.ON_ACTION_DRAG_CLICK then
 		return arg2_4.draw_able_name
-	elseif arg1_4 == Live2D.ON_ACTION_CHANGE_IDLE then
+	elseif arg1_4 == Live2DPainting.ON_ACTION_CHANGE_IDLE then
 		return arg2_4.idle
-	elseif arg1_4 == Live2D.ON_ACTION_PARAMETER then
+	elseif arg1_4 == Live2DPainting.ON_ACTION_PARAMETER then
 		-- block empty
-	elseif arg1_4 == Live2D.ON_ACTION_DOWN then
+	elseif arg1_4 == Live2DPainting.ON_ACTION_DOWN then
 		-- block empty
-	elseif arg1_4 == Live2D.ON_ACTION_XY_TRIGGER then
+	elseif arg1_4 == Live2DPainting.ON_ACTION_XY_TRIGGER then
 		-- block empty
-	elseif arg1_4 == Live2D.ON_ACTION_DRAG_TRIGGER then
+	elseif arg1_4 == Live2DPainting.ON_ACTION_DRAG_TRIGGER then
 		-- block empty
 	end
 
@@ -301,7 +302,7 @@ end
 function var0_0.checkResetTriggerTime(arg0_9)
 	local var0_9 = false
 
-	if arg0_9.actionTrigger.type == Live2D.DRAG_DOWN_ACTION and arg0_9.actionTrigger.last then
+	if arg0_9.actionTrigger.type == Live2DPainting.DRAG_DOWN_ACTION and arg0_9.actionTrigger.last then
 		var0_9 = true
 	end
 
@@ -322,7 +323,7 @@ function var0_0.updatePartsParameter(arg0_11)
 
 		if arg0_11.offsetX or arg0_11.offsetY then
 			var2_11 = true
-		elseif arg0_11.actionTrigger and arg0_11.actionTrigger.type == Live2D.DRAG_DOWN_TOUCH then
+		elseif arg0_11.actionTrigger and arg0_11.actionTrigger.type == Live2DPainting.DRAG_DOWN_TOUCH then
 			var2_11 = true
 		elseif arg0_11.offsetCirclePos then
 			var2_11 = true
@@ -416,7 +417,7 @@ function var0_0.setEventCallback(arg0_21, arg1_21)
 end
 
 function var0_0.onEventCallback(arg0_22, arg1_22, arg2_22, arg3_22)
-	if arg1_22 == Live2D.EVENT_ACTION_APPLY then
+	if arg1_22 == Live2DPainting.EVENT_ACTION_APPLY then
 		local var0_22 = {}
 		local var1_22
 		local var2_22 = false
@@ -539,17 +540,17 @@ function var0_0.onEventCallback(arg0_22, arg1_22, arg2_22, arg3_22)
 				arg0_22:actionApplyFinish()
 			end
 		}
-	elseif arg1_22 == Live2D.EVENT_ACTION_ABLE then
+	elseif arg1_22 == Live2DPainting.EVENT_ACTION_ABLE then
 		-- block empty
-	elseif arg1_22 == Live2D.EVENT_CHANGE_IDLE_INDEX then
+	elseif arg1_22 == Live2DPainting.EVENT_CHANGE_IDLE_INDEX then
 		print("change idle")
-	elseif arg1_22 == Live2D.EVENT_GET_PARAMETER then
+	elseif arg1_22 == Live2DPainting.EVENT_GET_PARAMETER then
 		arg2_22.callback = arg3_22
-	elseif arg1_22 == Live2D.EVENT_GET_DRAG_PARAMETER then
+	elseif arg1_22 == Live2DPainting.EVENT_GET_DRAG_PARAMETER then
 		arg2_22.callback = arg3_22
-	elseif arg1_22 == Live2D.EVENT_GET_WORLD_POSITION then
+	elseif arg1_22 == Live2DPainting.EVENT_GET_WORLD_POSITION then
 		arg2_22.callback = arg3_22
-	elseif arg1_22 == Live2D.EVENT_GAME_XIAQI then
+	elseif arg1_22 == Live2DPainting.EVENT_GAME_XIAQI then
 		arg2_22.callback = arg3_22
 	end
 
@@ -557,7 +558,7 @@ function var0_0.onEventCallback(arg0_22, arg1_22, arg2_22, arg3_22)
 end
 
 function var0_0.isApplyStopDrag(arg0_25)
-	if arg0_25.actionTrigger and arg0_25.actionTrigger.type == Live2D.DRAG_MOVE_DOWN_UP then
+	if arg0_25.actionTrigger and arg0_25.actionTrigger.type == Live2DPainting.DRAG_MOVE_DOWN_UP then
 		return false
 	end
 
@@ -646,9 +647,9 @@ function var0_0.updateStepData(arg0_36, arg1_36)
 end
 
 function var0_0.updateParameterUpdateFlag(arg0_37)
-	if arg0_37.actionTrigger.type == Live2D.DRAG_CLICK_ACTION then
+	if arg0_37.actionTrigger.type == Live2DPainting.DRAG_CLICK_ACTION then
 		arg0_37._parameterUpdateFlag = true
-	elseif arg0_37.actionTrigger.type == Live2D.DRAG_RELATION_IDLE then
+	elseif arg0_37.actionTrigger.type == Live2DPainting.DRAG_RELATION_IDLE then
 		if not arg0_37._parameterUpdateFlag then
 			if not arg0_37.l2dIsPlaying then
 				arg0_37._parameterUpdateFlag = true
@@ -664,17 +665,17 @@ function var0_0.updateParameterUpdateFlag(arg0_37)
 
 			arg0_37:changeParameComAble(false)
 		end
-	elseif arg0_37.actionTrigger.type == Live2D.DRAG_DOWN_TOUCH then
+	elseif arg0_37.actionTrigger.type == Live2DPainting.DRAG_DOWN_TOUCH then
 		arg0_37._parameterUpdateFlag = true
-	elseif arg0_37.actionTrigger.type == Live2D.DRAG_LISTENER_EVENT then
+	elseif arg0_37.actionTrigger.type == Live2DPainting.DRAG_LISTENER_EVENT then
 		arg0_37._parameterUpdateFlag = true
-	elseif arg0_37.actionTrigger.type == Live2D.DRAG_ANIMATION_PLAY then
+	elseif arg0_37.actionTrigger.type == Live2DPainting.DRAG_ANIMATION_PLAY then
 		arg0_37._parameterUpdateFlag = true
-	elseif arg0_37.actionTrigger.type == Live2D.DRAG_WITH_PARAMETER_MOVE then
+	elseif arg0_37.actionTrigger.type == Live2DPainting.DRAG_WITH_PARAMETER_MOVE then
 		arg0_37._parameterUpdateFlag = true
-	elseif arg0_37.actionTrigger.type == Live2D.DRAG_MOVE_DOWN_UP then
+	elseif arg0_37.actionTrigger.type == Live2DPainting.DRAG_MOVE_DOWN_UP then
 		arg0_37._parameterUpdateFlag = true
-	elseif arg0_37.actionTrigger.type == Live2D.DRAG_GAME_XIAQI then
+	elseif arg0_37.actionTrigger.type == Live2DPainting.DRAG_GAME_XIAQI then
 		arg0_37._parameterUpdateFlag = true
 	else
 		arg0_37._parameterUpdateFlag = false
@@ -689,13 +690,13 @@ function var0_0.changeParameComAble(arg0_38, arg1_38)
 	arg0_38.parameterComAdd = arg1_38
 
 	if arg1_38 then
-		arg0_38:onEventCallback(Live2D.EVENT_ADD_PARAMETER_COM, {
+		arg0_38:onEventCallback(Live2DPainting.EVENT_ADD_PARAMETER_COM, {
 			com = arg0_38._parameterCom,
 			start = arg0_38.startValue,
 			mode = arg0_38.mode
 		})
 	else
-		arg0_38:onEventCallback(Live2D.EVENT_REMOVE_PARAMETER_COM, {
+		arg0_38:onEventCallback(Live2DPainting.EVENT_REMOVE_PARAMETER_COM, {
 			com = arg0_38._parameterCom,
 			mode = arg0_38.mode
 		})
@@ -741,7 +742,7 @@ function var0_0.updateCircleDrag(arg0_40)
 
 	if arg0_40._active and arg0_40.mouseWorld ~= nil then
 		if not arg0_40.circleDragWorld then
-			arg0_40:onEventCallback(Live2D.EVENT_GET_WORLD_POSITION, {
+			arg0_40:onEventCallback(Live2DPainting.EVENT_GET_WORLD_POSITION, {
 				pos = arg0_40.offsetCirclePos,
 				name = arg0_40.drawAbleName
 			}, function(arg0_41)
@@ -886,17 +887,17 @@ function var0_0.updateRelationValue(arg0_46)
 		local var4_46
 		local var5_46
 
-		if var1_46 == Live2D.relation_type_drag_x then
+		if var1_46 == Live2DPainting.relation_type_drag_x then
 			var4_46 = arg0_46.offsetDragX or iter1_46.start or arg0_46.startValue or 0
 			var5_46 = true
-		elseif var1_46 == Live2D.relation_type_drag_y then
+		elseif var1_46 == Live2DPainting.relation_type_drag_y then
 			var4_46 = arg0_46.offsetDragY or iter1_46.start or arg0_46.startValue or 0
 			var5_46 = true
-		elseif var1_46 == Live2D.relation_type_action_index then
+		elseif var1_46 == Live2DPainting.relation_type_action_index then
 			var4_46 = var2_46[arg0_46.actionListIndex]
 			var4_46 = var4_46 or 0
 			var5_46 = true
-		elseif var1_46 == Live2D.relation_type_idle then
+		elseif var1_46 == Live2DPainting.relation_type_idle then
 			if arg0_46.loadL2dStep and arg0_46.l2dIdleIndex == var0_46.idle then
 				var5_46 = true
 			end
@@ -1056,15 +1057,15 @@ function var0_0.updateTrigger(arg0_52)
 		var3_52 = arg0_52.actionTrigger.action_list[arg0_52.actionListIndex].num
 	end
 
-	if var0_52 == Live2D.DRAG_TIME_ACTION then
+	if var0_52 == Live2DPainting.DRAG_TIME_ACTION then
 		if arg0_52._active then
 			if var3_52 and math.abs(arg0_52.parameterValue - var3_52) < math.abs(var3_52) * 0.25 then
 				arg0_52.triggerActionTime = arg0_52.triggerActionTime + Time.deltaTime
 
 				if var2_52 < arg0_52.triggerActionTime and not arg0_52.l2dIsPlaying then
-					arg0_52:onEventCallback(Live2D.EVENT_ACTION_APPLY, nil, function(arg0_53)
+					arg0_52:onEventCallback(Live2DPainting.EVENT_ACTION_APPLY, nil, function(arg0_53)
 						if arg0_53 then
-							arg0_52:onEventNotice(Live2D.ON_ACTION_DRAG_TRIGGER)
+							arg0_52:onEventNotice(Live2DPainting.ON_ACTION_DRAG_TRIGGER)
 						end
 					end)
 				end
@@ -1072,40 +1073,40 @@ function var0_0.updateTrigger(arg0_52)
 				print("配置id = " .. arg0_52.id .. " 缺少参数 num")
 			end
 		end
-	elseif var0_52 == Live2D.DRAG_CLICK_ACTION then
+	elseif var0_52 == Live2DPainting.DRAG_CLICK_ACTION then
 		if arg0_52:checkClickAction() then
-			arg0_52:onEventCallback(Live2D.EVENT_ACTION_APPLY, nil, function(arg0_54)
-				arg0_52:onEventNotice(Live2D.ON_ACTION_DRAG_CLICK)
+			arg0_52:onEventCallback(Live2DPainting.EVENT_ACTION_APPLY, nil, function(arg0_54)
+				arg0_52:onEventNotice(Live2DPainting.ON_ACTION_DRAG_CLICK)
 			end)
 		end
-	elseif var0_52 == Live2D.DRAG_CLICK_RANGE then
+	elseif var0_52 == Live2DPainting.DRAG_CLICK_RANGE then
 		if arg0_52:checkClickAction() then
 			local var4_52 = arg0_52.actionTrigger.parameter and arg0_52.actionTrigger.parameter or arg0_52.parameterName
 			local var5_52 = var3_52
 
-			arg0_52:onEventCallback(Live2D.EVENT_GET_PARAMETER, {
+			arg0_52:onEventCallback(Live2DPainting.EVENT_GET_PARAMETER, {
 				name = var4_52
 			}, function(arg0_55)
 				print("获取到数值 " .. var4_52 .. " = " .. arg0_55)
 
 				if arg0_55 >= var5_52[1] and arg0_55 < var5_52[2] then
 					print("数值范围内，开始触发动作  = " .. tostring(arg0_52.id))
-					arg0_52:onEventCallback(Live2D.EVENT_ACTION_APPLY, nil, function(arg0_56)
-						arg0_52:onEventNotice(Live2D.ON_ACTION_DRAG_CLICK)
+					arg0_52:onEventCallback(Live2DPainting.EVENT_ACTION_APPLY, nil, function(arg0_56)
+						arg0_52:onEventNotice(Live2DPainting.ON_ACTION_DRAG_CLICK)
 					end)
 				end
 			end)
 		end
-	elseif var0_52 == Live2D.DRAG_DOWN_ACTION then
+	elseif var0_52 == Live2DPainting.DRAG_DOWN_ACTION then
 		if arg0_52._active then
 			arg0_52:setAbleWithFlag(true)
 
 			if var2_52 <= Time.time - arg0_52.mouseInputDownTime and not arg0_52.l2dIsPlaying then
 				print("触发按压动作")
 				arg0_52:setAbleWithFlag(false)
-				arg0_52:onEventCallback(Live2D.EVENT_ACTION_APPLY, nil, function(arg0_57)
+				arg0_52:onEventCallback(Live2DPainting.EVENT_ACTION_APPLY, nil, function(arg0_57)
 					if arg0_57 then
-						arg0_52:onEventNotice(Live2D.ON_ACTION_DOWN)
+						arg0_52:onEventNotice(Live2DPainting.ON_ACTION_DOWN)
 					end
 				end)
 
@@ -1121,7 +1122,7 @@ function var0_0.updateTrigger(arg0_52)
 			arg0_52.actionListIndex = #arg0_52.actionTrigger.action_list
 
 			arg0_52:setAbleWithFlag(false)
-			arg0_52:onEventCallback(Live2D.EVENT_ACTION_APPLY, nil, function(arg0_58)
+			arg0_52:onEventCallback(Live2DPainting.EVENT_ACTION_APPLY, nil, function(arg0_58)
 				return
 			end)
 			arg0_52:resetNextTriggerTime()
@@ -1129,7 +1130,7 @@ function var0_0.updateTrigger(arg0_52)
 		else
 			arg0_52:setAbleWithFlag(false)
 		end
-	elseif var0_52 == Live2D.DRAG_RELATION_XY then
+	elseif var0_52 == Live2DPainting.DRAG_RELATION_XY then
 		if arg0_52._active then
 			local var6_52 = arg0_52:fixParameterTargetValue(arg0_52.offsetDragX, arg0_52.range, arg0_52.rangeAbs, arg0_52.dragDirect)
 			local var7_52 = arg0_52:fixParameterTargetValue(arg0_52.offsetDragY, arg0_52.range, arg0_52.rangeAbs, arg0_52.dragDirect)
@@ -1140,9 +1141,9 @@ function var0_0.updateTrigger(arg0_52)
 				arg0_52.triggerActionTime = arg0_52.triggerActionTime + Time.deltaTime
 
 				if var2_52 < arg0_52.triggerActionTime and not arg0_52.l2dIsPlaying then
-					arg0_52:onEventCallback(Live2D.EVENT_ACTION_APPLY, nil, function(arg0_59)
+					arg0_52:onEventCallback(Live2DPainting.EVENT_ACTION_APPLY, nil, function(arg0_59)
 						if arg0_59 then
-							arg0_52:onEventNotice(Live2D.ON_ACTION_XY_TRIGGER)
+							arg0_52:onEventNotice(Live2DPainting.ON_ACTION_XY_TRIGGER)
 						end
 					end)
 				end
@@ -1150,7 +1151,7 @@ function var0_0.updateTrigger(arg0_52)
 				arg0_52.triggerActionTime = arg0_52.triggerActionTime + 0
 			end
 		end
-	elseif var0_52 == Live2D.DRAG_RELATION_IDLE then
+	elseif var0_52 == Live2DPainting.DRAG_RELATION_IDLE then
 		if arg0_52.actionTrigger.const_fit then
 			for iter0_52 = 1, #arg0_52.actionTrigger.const_fit do
 				local var10_52 = arg0_52.actionTrigger.const_fit[iter0_52]
@@ -1160,15 +1161,15 @@ function var0_0.updateTrigger(arg0_52)
 				end
 			end
 		end
-	elseif var0_52 == Live2D.DRAG_CLICK_MANY then
+	elseif var0_52 == Live2DPainting.DRAG_CLICK_MANY then
 		if arg0_52:checkClickAction() then
-			arg0_52:onEventCallback(Live2D.EVENT_ACTION_APPLY)
+			arg0_52:onEventCallback(Live2DPainting.EVENT_ACTION_APPLY)
 		end
-	elseif var0_52 == Live2D.DRAG_LISTENER_EVENT then
+	elseif var0_52 == Live2DPainting.DRAG_LISTENER_EVENT then
 		if arg0_52._listenerTrigger then
-			arg0_52:onEventCallback(Live2D.EVENT_ACTION_APPLY)
+			arg0_52:onEventCallback(Live2DPainting.EVENT_ACTION_APPLY)
 		end
-	elseif var0_52 == Live2D.DRAG_DOWN_TOUCH then
+	elseif var0_52 == Live2DPainting.DRAG_DOWN_TOUCH then
 		arg0_52:setAbleWithFlag(arg0_52._active)
 
 		if arg0_52._active then
@@ -1178,23 +1179,23 @@ function var0_0.updateTrigger(arg0_52)
 
 			arg0_52:setTargetValue(var13_52)
 		end
-	elseif var0_52 == Live2D.DRAG_CLICK_PARAMETER then
+	elseif var0_52 == Live2DPainting.DRAG_CLICK_PARAMETER then
 		if arg0_52:checkClickAction() then
 			local var14_52 = var3_52
 			local var15_52 = arg0_52.actionTrigger.parameter
 
-			arg0_52:onEventCallback(Live2D.EVENT_GET_PARAMETER, {
+			arg0_52:onEventCallback(Live2DPainting.EVENT_GET_PARAMETER, {
 				name = var15_52
 			}, function(arg0_60)
 				if math.abs(var14_52 - arg0_60) <= 0.05 then
 					print("数值允许播放，开始执行动作 " .. arg0_52.actionTrigger.action)
-					arg0_52:onEventCallback(Live2D.EVENT_ACTION_APPLY, nil, function(arg0_61)
-						arg0_52:onEventNotice(Live2D.ON_ACTION_DRAG_CLICK)
+					arg0_52:onEventCallback(Live2DPainting.EVENT_ACTION_APPLY, nil, function(arg0_61)
+						arg0_52:onEventNotice(Live2DPainting.ON_ACTION_DRAG_CLICK)
 					end)
 				end
 			end)
 		end
-	elseif var0_52 == Live2D.DRAG_ANIMATION_PLAY then
+	elseif var0_52 == Live2DPainting.DRAG_ANIMATION_PLAY then
 		local var16_52 = arg0_52.actionTrigger.trigger_name
 
 		if arg0_52.actionTrigger.trigger_name == "idle" and arg0_52.actionTrigger.trigger_index and arg0_52.actionTrigger.trigger_index > 0 then
@@ -1209,7 +1210,7 @@ function var0_0.updateTrigger(arg0_52)
 				local var19_52 = var18_52[1]
 				local var20_52 = var18_52[2]
 
-				arg0_52:onEventCallback(Live2D.EVENT_GET_PARAMETER, {
+				arg0_52:onEventCallback(Live2DPainting.EVENT_GET_PARAMETER, {
 					name = var19_52
 				}, function(arg0_62)
 					if arg0_62 and arg0_62 >= var20_52[1] and arg0_62 < var20_52[2] then
@@ -1221,7 +1222,7 @@ function var0_0.updateTrigger(arg0_52)
 			end
 
 			if var17_52 and arg0_52.normalTime >= arg0_52.actionTrigger.trigger_rate and not arg0_52.animationPlayApply then
-				arg0_52:onEventCallback(Live2D.EVENT_ACTION_APPLY, nil, function()
+				arg0_52:onEventCallback(Live2DPainting.EVENT_ACTION_APPLY, nil, function()
 					return
 				end)
 				arg0_52:setTriggerActionFlag(false)
@@ -1231,11 +1232,11 @@ function var0_0.updateTrigger(arg0_52)
 		elseif arg0_52.animationPlayApply then
 			arg0_52.animationPlayApply = false
 		end
-	elseif var0_52 == Live2D.DRAG_EXTEND_ACTION_RULE then
+	elseif var0_52 == Live2DPainting.DRAG_EXTEND_ACTION_RULE then
 		if not arg0_52.extendActionFlag then
 			arg0_52.extendActionFlag = true
 		end
-	elseif var0_52 == Live2D.DRAG_WITH_PARAMETER_MOVE then
+	elseif var0_52 == Live2DPainting.DRAG_WITH_PARAMETER_MOVE then
 		if not arg0_52.l2dIsPlaying then
 			local var21_52
 			local var22_52
@@ -1248,7 +1249,7 @@ function var0_0.updateTrigger(arg0_52)
 			if var3_52 and var21_52 <= var22_52 and not arg0_52.parameterMoveTrigger then
 				arg0_52.parameterMoveTrigger = true
 
-				arg0_52:onEventCallback(Live2D.EVENT_ACTION_APPLY, nil, function(arg0_64)
+				arg0_52:onEventCallback(Live2DPainting.EVENT_ACTION_APPLY, nil, function(arg0_64)
 					return
 				end)
 			else
@@ -1272,7 +1273,7 @@ function var0_0.updateTrigger(arg0_52)
 
 					arg0_52.lastParameterMove = arg0_52.parameterMove
 
-					arg0_52:onEventCallback(Live2D.EVENT_GET_PARAMETER, {
+					arg0_52:onEventCallback(Live2DPainting.EVENT_GET_PARAMETER, {
 						name = var23_52
 					}, function(arg0_65)
 						arg0_52.parameterMove = arg0_65
@@ -1292,23 +1293,23 @@ function var0_0.updateTrigger(arg0_52)
 				end
 			end
 		end
-	elseif var0_52 == Live2D.DRAG_MOVE_DOWN_UP then
+	elseif var0_52 == Live2DPainting.DRAG_MOVE_DOWN_UP then
 		local var27_52 = arg0_52.actionTrigger.range
 
 		if arg0_52._active and arg0_52.actionTrigger.active == 1 then
 			if not arg0_52.dragMoveUp and arg0_52.parameterValue > var27_52[1] and arg0_52.parameterValue <= var27_52[2] then
 				arg0_52.dragMoveUp = true
 
-				arg0_52:onEventCallback(Live2D.EVENT_ACTION_APPLY, nil, function(arg0_66)
+				arg0_52:onEventCallback(Live2DPainting.EVENT_ACTION_APPLY, nil, function(arg0_66)
 					return
 				end)
 			end
 		elseif arg0_52.firstStop and arg0_52.actionTrigger.active == 0 then
-			arg0_52:onEventCallback(Live2D.EVENT_GET_PARAMETER, {
+			arg0_52:onEventCallback(Live2DPainting.EVENT_GET_PARAMETER, {
 				name = arg0_52.actionTrigger.parameter
 			}, function(arg0_67)
 				if arg0_67 > var27_52[1] and arg0_67 <= var27_52[2] then
-					arg0_52:onEventCallback(Live2D.EVENT_ACTION_APPLY, nil, function(arg0_68)
+					arg0_52:onEventCallback(Live2DPainting.EVENT_ACTION_APPLY, nil, function(arg0_68)
 						return
 					end)
 				end
@@ -1316,9 +1317,9 @@ function var0_0.updateTrigger(arg0_52)
 		elseif arg0_52._active == false and arg0_52.dragMoveUp then
 			arg0_52.dragMoveUp = false
 		end
-	elseif var0_52 == Live2D.DRAG_GAME_XIAQI then
+	elseif var0_52 == Live2DPainting.DRAG_GAME_XIAQI then
 		if arg0_52:checkClickAction() then
-			arg0_52:onEventCallback(Live2D.EVENT_GAME_XIAQI, {
+			arg0_52:onEventCallback(Live2DPainting.EVENT_GAME_XIAQI, {
 				parameter_value = arg0_52.parameterValue
 			}, function(arg0_69)
 				if arg0_69 and arg0_69.target then
@@ -1327,11 +1328,11 @@ function var0_0.updateTrigger(arg0_52)
 				end
 			end)
 		end
-	elseif var0_52 == Live2D.DRAG_GAME_XIAQI_RESULT and arg0_52.commonData and arg0_52.commonData[Live2D.COMMON_XIAQI_RESULT] ~= nil and (arg0_52.actionTrigger.win == 1 and true or false) == arg0_52.commonData[Live2D.COMMON_XIAQI_RESULT] then
-		arg0_52:onEventCallback(Live2D.EVENT_ACTION_APPLY, nil, function(arg0_70)
+	elseif var0_52 == Live2DPainting.DRAG_GAME_XIAQI_RESULT and arg0_52.commonData and arg0_52.commonData[Live2DPainting.COMMON_XIAQI_RESULT] ~= nil and (arg0_52.actionTrigger.win == 1 and true or false) == arg0_52.commonData[Live2DPainting.COMMON_XIAQI_RESULT] then
+		arg0_52:onEventCallback(Live2DPainting.EVENT_ACTION_APPLY, nil, function(arg0_70)
 			if arg0_70 then
 				arg0_52:setTriggerActionFlag(false)
-				arg0_52:setCommonData(Live2D.COMMON_XIAQI_RESULT, nil)
+				arg0_52:setCommonData(Live2DPainting.COMMON_XIAQI_RESULT, nil)
 			end
 		end)
 	end
@@ -1361,7 +1362,7 @@ function var0_0.checkActionInExtendFlag(arg0_74, arg1_74)
 	local var3_74 = arg0_74.actionTrigger.num
 	local var4_74 = false
 
-	arg0_74:onEventCallback(Live2D.EVENT_GET_DRAG_PARAMETER, {
+	arg0_74:onEventCallback(Live2DPainting.EVENT_GET_DRAG_PARAMETER, {
 		name = var2_74
 	}, function(arg0_75)
 		if arg0_75 > var3_74[1] and arg0_75 <= var3_74[2] then
@@ -1391,7 +1392,7 @@ function var0_0.setAbleWithFlag(arg0_76, arg1_76)
 	if arg0_76.ableFlag ~= arg1_76 then
 		arg0_76.ableFlag = arg1_76
 
-		arg0_76:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
+		arg0_76:onEventCallback(Live2DPainting.EVENT_ACTION_ABLE, {
 			ableFlag = arg1_76
 		})
 	end
@@ -1512,7 +1513,7 @@ function var0_0.saveData(arg0_81)
 		Live2dConst.SaveDragData(var0_81, var1_81, var2_81, arg0_81.parameterTargetValue)
 	end
 
-	if arg0_81.actionTrigger.type == Live2D.DRAG_CLICK_MANY then
+	if arg0_81.actionTrigger.type == Live2DPainting.DRAG_CLICK_MANY then
 		Live2dConst.SetDragActionIndex(var0_81, var1_81, var2_81, arg0_81.actionListIndex)
 	end
 
@@ -1547,7 +1548,7 @@ function var0_0.loadData(arg0_83)
 		end
 	end
 
-	if arg0_83.actionTrigger.type == Live2D.DRAG_CLICK_MANY then
+	if arg0_83.actionTrigger.type == Live2DPainting.DRAG_CLICK_MANY then
 		arg0_83.actionListIndex = Live2dConst.GetDragActionIndex(arg0_83.id, arg0_83.live2dData:GetShipSkinConfig().id, arg0_83.live2dData.ship.id) or 1
 	end
 
@@ -1571,7 +1572,7 @@ function var0_0.clearRelationValue(arg0_85)
 		for iter0_85 = 1, #arg0_85._relationParameterList do
 			local var0_85 = arg0_85._relationParameterList[iter0_85]
 
-			if var0_85.data.type == Live2D.relation_type_drag_x or var0_85.data.type == Live2D.relation_type_drag_y then
+			if var0_85.data.type == Live2DPainting.relation_type_drag_x or var0_85.data.type == Live2DPainting.relation_type_drag_y then
 				var0_85.value = var0_85.start or arg0_85.startValue or 0
 				var0_85.enable = true
 			end

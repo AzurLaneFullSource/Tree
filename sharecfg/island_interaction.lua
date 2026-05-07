@@ -314,6 +314,25 @@ pg.island_interaction.all = {
 	5842,
 	5843,
 	5844,
+	5845,
+	5846,
+	5847,
+	5848,
+	5849,
+	5850,
+	5851,
+	5852,
+	5853,
+	5854,
+	5855,
+	5856,
+	5857,
+	5858,
+	5859,
+	5860,
+	5861,
+	5862,
+	5863,
 	5901,
 	5902,
 	6001,
@@ -800,7 +819,26 @@ pg.island_interaction.get_id_list_by_groupId = {
 		5841,
 		5842,
 		5843,
-		5844
+		5844,
+		5845,
+		5846,
+		5847,
+		5848,
+		5849,
+		5850,
+		5851,
+		5852,
+		5853,
+		5854,
+		5855,
+		5856,
+		5857,
+		5858,
+		5859,
+		5860,
+		5861,
+		5862,
+		5863
 	},
 	[59] = {
 		5901,
@@ -5686,6 +5724,351 @@ end)()
 			{
 				4,
 				50003007
+			}
+		}
+	}
+	pg.base.island_interaction[5845] = {
+		text = "Peary?",
+		id = 5845,
+		only_self = 0,
+		type = 1,
+		groupId = 58,
+		icon = 9,
+		param = "ISLANDSIDE01609",
+		show_condition = {
+			{
+				2,
+				50000003
+			}
+		}
+	}
+	pg.base.island_interaction[5846] = {
+		text = "Gather Summer Specialties (1/7)",
+		id = 5846,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50001015",
+		show_condition = {
+			{
+				3,
+				50001015
+			}
+		}
+	}
+	pg.base.island_interaction[5847] = {
+		text = "Gather Summer Specialties (2/7)",
+		id = 5847,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50001016",
+		show_condition = {
+			{
+				3,
+				50001016
+			},
+			{
+				4,
+				50001015
+			}
+		}
+	}
+	pg.base.island_interaction[5848] = {
+		text = "Gather Summer Specialties (3/7)",
+		id = 5848,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50001017",
+		show_condition = {
+			{
+				3,
+				50001017
+			},
+			{
+				4,
+				50001016
+			}
+		}
+	}
+	pg.base.island_interaction[5849] = {
+		text = "Gather Summer Specialties (4/7)",
+		id = 5849,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50001018",
+		show_condition = {
+			{
+				3,
+				50001018
+			},
+			{
+				4,
+				50001017
+			}
+		}
+	}
+	pg.base.island_interaction[5850] = {
+		text = "Gather Summer Specialties (5/7)",
+		id = 5850,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50001019",
+		show_condition = {
+			{
+				3,
+				50001019
+			},
+			{
+				4,
+				50001018
+			}
+		}
+	}
+	pg.base.island_interaction[5851] = {
+		text = "Gather Summer Specialties (6/7)",
+		id = 5851,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50001020",
+		show_condition = {
+			{
+				3,
+				50001020
+			},
+			{
+				4,
+				50001019
+			}
+		}
+	}
+	pg.base.island_interaction[5852] = {
+		text = "Gather Summer Specialties (7/7)",
+		id = 5852,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50001021",
+		show_condition = {
+			{
+				3,
+				50001021
+			},
+			{
+				4,
+				50001020
+			}
+		}
+	}
+	pg.base.island_interaction[5853] = {
+		text = "Make Summer Specialties (1/7)",
+		id = 5853,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50002015",
+		show_condition = {
+			{
+				3,
+				50002015
+			}
+		}
+	}
+	pg.base.island_interaction[5854] = {
+		text = "Make Summer Specialties (2/7)",
+		id = 5854,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50002016",
+		show_condition = {
+			{
+				3,
+				50002016
+			},
+			{
+				4,
+				50002015
+			}
+		}
+	}
+	pg.base.island_interaction[5855] = {
+		text = "Make Summer Specialties (3/7)",
+		id = 5855,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50002017",
+		show_condition = {
+			{
+				3,
+				50002017
+			},
+			{
+				4,
+				50002016
+			}
+		}
+	}
+	pg.base.island_interaction[5856] = {
+		text = "Make Summer Specialties (4/7)",
+		id = 5856,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50002018",
+		show_condition = {
+			{
+				3,
+				50002018
+			},
+			{
+				4,
+				50002017
+			}
+		}
+	}
+	pg.base.island_interaction[5857] = {
+		text = "Make Summer Specialties (5/7)",
+		id = 5857,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50002019",
+		show_condition = {
+			{
+				3,
+				50002019
+			},
+			{
+				4,
+				50002018
+			}
+		}
+	}
+	pg.base.island_interaction[5858] = {
+		text = "Make Summer Specialties (6/7)",
+		id = 5858,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50002020",
+		show_condition = {
+			{
+				3,
+				50002020
+			},
+			{
+				4,
+				50002019
+			}
+		}
+	}
+	pg.base.island_interaction[5859] = {
+		text = "Make Summer Specialties (7/7)",
+		id = 5859,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50002021",
+		show_condition = {
+			{
+				3,
+				50002021
+			},
+			{
+				4,
+				50002020
+			}
+		}
+	}
+	pg.base.island_interaction[5860] = {
+		text = "Summer Specialty Order (1/4)",
+		id = 5860,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50003009",
+		show_condition = {
+			{
+				3,
+				50003009
+			}
+		}
+	}
+	pg.base.island_interaction[5861] = {
+		text = "Summer Specialty Order (2/4)",
+		id = 5861,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50003010",
+		show_condition = {
+			{
+				3,
+				50003010
+			},
+			{
+				4,
+				50003009
+			}
+		}
+	}
+	pg.base.island_interaction[5862] = {
+		text = "Summer Specialty Order (3/4)",
+		id = 5862,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50003011",
+		show_condition = {
+			{
+				3,
+				50003011
+			},
+			{
+				4,
+				50003010
+			}
+		}
+	}
+	pg.base.island_interaction[5863] = {
+		text = "Summer Specialty Order (4/4)",
+		id = 5863,
+		only_self = 0,
+		type = 12,
+		groupId = 58,
+		icon = 12,
+		param = "50003012",
+		show_condition = {
+			{
+				3,
+				50003012
+			},
+			{
+				4,
+				50003011
 			}
 		}
 	}

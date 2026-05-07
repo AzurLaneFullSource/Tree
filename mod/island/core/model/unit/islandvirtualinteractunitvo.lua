@@ -18,4 +18,12 @@ function var0_0.GetAssetPath(arg0_2)
 	return nil
 end
 
+function var0_0.GetPlayerParentPath(arg0_3, arg1_3)
+	if arg0_3.config.player_parent_path == "" or arg1_3 > #arg0_3.config.player_parent_path then
+		return nil
+	end
+
+	return arg0_3.config.player_parent_path[arg1_3]
+end
+
 return var0_0

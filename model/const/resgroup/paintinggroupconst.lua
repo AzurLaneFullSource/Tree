@@ -26,19 +26,7 @@ function var0_0.CalcPaintingListSize(arg0_3)
 end
 
 function var0_0.IsPaintingNeedCheck()
-	if Application.isEditor then
-		return false
-	end
-
-	if GroupHelper.IsGroupVerLastest(var0_0.PaintingGroupName) then
-		return false
-	end
-
-	if not GroupHelper.IsGroupWaitToUpdate(var0_0.PaintingGroupName) then
-		return false
-	end
-
-	return true
+	return DownloadConst.IsNeedCheck()
 end
 
 function var0_0.FiltePaintingRes(arg0_5)

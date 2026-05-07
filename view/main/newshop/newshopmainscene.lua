@@ -948,7 +948,7 @@ function var0_0.playHeartEffect(arg0_68)
 end
 
 function var0_0.createLive2D(arg0_70)
-	local var0_70 = Live2D.GenerateData({
+	local var0_70 = Live2DPainting.GenerateData({
 		ship = Ship.New({
 			configId = 312011
 		}),
@@ -962,7 +962,7 @@ function var0_0.createLive2D(arg0_70)
 		parent = arg0_70._tf:Find("frame/painting/live2d")
 	})
 
-	arg0_70.live2dChar = Live2D.New(var0_70, function(arg0_71)
+	arg0_70.live2dChar = Live2DPainting.New(var0_70, function(arg0_71)
 		arg0_71:setSortingLayer(LayerWeightConst.L2D_DEFAULT_LAYER)
 	end)
 end

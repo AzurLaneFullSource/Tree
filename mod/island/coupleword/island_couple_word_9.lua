@@ -1,7 +1,7 @@
 return {
 	{
 		characterId = 20603,
-		say = "那个……哥哥，可以陪独角兽一会儿吗？"
+		say = "Umm... C-could you stay with Unicorn, just a bit longer?"
 	},
 	{
 		emoji = 10,

@@ -102,6 +102,7 @@ var0_0.EffectEventMapClearFlag = 45
 var0_0.EffectEventBrokenClean = 48
 var0_0.EffectEventCatSalvage = 49
 var0_0.EffectEventAddWorldBossFreeCount = 50
+var0_0.EffectSideText = 52
 var0_0.EffectEventFOV = 1001
 var0_0.EffectEventCameraMove = 1002
 var0_0.EffectEventShakePlane = 1003
@@ -135,43 +136,48 @@ function var0_0.DebugPrint(arg0_7)
 		local var0_7 = {}
 		local var1_7 = pg.world_event_data[arg0_7.id].effect
 		local var2_7 = ""
+		local var3_7 = {}
+		local var4_7 = 1
+		local var5_7 = 1
 
-		if #arg0_7.effects > #var1_7 then
-			var2_7 = setColorStr("effect error !!!: " .. table.concat(arg0_7.effects, ", "), COLOR_RED)
-		else
-			local var3_7 = {}
+		while var5_7 <= #var1_7 do
+			local var6_7 = arg0_7.effects[#arg0_7.effects - var4_7 + 1]
+			local var7_7 = var1_7[#var1_7 - var5_7 + 1]
 
-			for iter0_7 = #var1_7, 1, -1 do
-				local var4_7 = arg0_7.effects[#arg0_7.effects - #var1_7 + iter0_7]
-				local var5_7 = var1_7[iter0_7]
+			if var6_7 == var7_7 then
+				table.insert(var3_7, 1, var6_7)
 
-				if not var4_7 then
-					table.insert(var3_7, 1, setColorStr(var5_7, COLOR_GREEN))
-				elseif var4_7 ~= var5_7 then
-					local var6_7 = pg.world_effect_data[var5_7].effect_type
+				var4_7, var5_7 = var4_7 + 1, var5_7 + 1
+			elseif not var6_7 then
+				table.insert(var3_7, 1, setColorStr(var7_7, COLOR_GREEN))
 
-					if var6_7 == 27 or var6_7 == 35 or var6_7 == 36 then
-						table.insert(var3_7, 1, setColorStr(var4_7, COLOR_BLUE))
-					else
-						table.insert(var3_7, 1, setColorStr(var4_7, COLOR_RED))
-					end
+				var5_7 = var5_7 + 1
+			else
+				local var8_7 = pg.world_effect_data[var7_7].effect_type
+
+				if var8_7 == 27 or var8_7 == 35 or var8_7 == 36 or var8_7 == 53 then
+					table.insert(var3_7, 1, setColorStr(var6_7, COLOR_BLUE))
+
+					var4_7 = var4_7 + 1
 				else
-					table.insert(var3_7, 1, var4_7)
+					table.insert(var3_7, 1, setColorStr(var6_7, COLOR_RED))
+
+					var4_7, var5_7 = var4_7 + 1, var5_7 + 1
 				end
 			end
-
-			var2_7 = var2_7 .. table.concat(var3_7, ", ")
 		end
 
-		for iter1_7, iter2_7 in ipairs(arg0_7.config.event_op) do
-			if iter1_7 <= #arg0_7.config.event_op - arg0_7.dataop then
-				table.insert(var0_7, setColorStr(iter2_7, COLOR_GREEN))
+		local var9_7 = var2_7 .. table.concat(var3_7, ", ")
+
+		for iter0_7, iter1_7 in ipairs(arg0_7.config.event_op) do
+			if iter0_7 <= #arg0_7.config.event_op - arg0_7.dataop then
+				table.insert(var0_7, setColorStr(iter1_7, COLOR_GREEN))
 			else
-				table.insert(var0_7, iter2_7)
+				table.insert(var0_7, iter1_7)
 			end
 		end
 
-		return string.format("事件  [id: %d]  [%s]  [位置: %d, %d]  [flag: %s]  [data: %d]  [感染值：%s]  [自动优先级：%s] \n     [effect: %s] \n     [effect_op: %s] \n     [buff: %s]", arg0_7.id, arg0_7.config.name, arg0_7.row, arg0_7.column, arg0_7.flag, arg0_7.data, setColorStr(arg0_7.config.infection_value, COLOR_RED), setColorStr(arg0_7.config.auto_pri, COLOR_YELLOW), var2_7, table.concat(var0_7, ", "), table.concat(arg0_7.buffList, ", "))
+		return string.format("事件  [id: %d]  [%s]  [位置: %d, %d]  [flag: %s]  [data: %d]  [感染值：%s]  [自动优先级：%s] \n     [effect: %s] \n     [effect_op: %s] \n     [buff: %s]", arg0_7.id, arg0_7.config.name, arg0_7.row, arg0_7.column, arg0_7.flag, arg0_7.data, setColorStr(arg0_7.config.infection_value, COLOR_RED), setColorStr(arg0_7.config.auto_pri, COLOR_YELLOW), var9_7, table.concat(var0_7, ", "), table.concat(arg0_7.buffList, ", "))
 	elseif var0_0.IsEnemyType(arg0_7.type) then
 		return string.format("敌人  [id: %s]  [%s]  [类型 %s]  [位置: %s, %s]  [flag: %s]  [data: %s]  [buff: %s]", arg0_7.id, arg0_7.config.name, arg0_7.type, arg0_7.row, arg0_7.column, tostring(arg0_7.flag), tostring(arg0_7.data), table.concat(arg0_7.buffList, ", "))
 	elseif arg0_7.type == var0_0.TypeTrap then

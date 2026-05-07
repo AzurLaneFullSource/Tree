@@ -1,13 +1,7 @@
 local var0_0 = class("ChargeCommand", pm.SimpleCommand)
 
 function var0_0.execute(arg0_1, arg1_1)
-	if PLATFORM_CODE == PLATFORM_JP then
-		if not pg.SdkMgr.GetInstance():YoStarCheckCanBuy() then
-			originalPrint("wait for a second, Do not click quickly~")
-
-			return
-		end
-	elseif PLATFORM_CODE == PLATFORM_US and not pg.SdkMgr.GetInstance():CheckAiriCanBuy() then
+	if (PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US) and not pg.SdkMgr.GetInstance():YoStarCheckCanBuy() then
 		originalPrint("wait for a second, Do not click quickly~")
 
 		return
@@ -36,36 +30,14 @@ function var0_0.execute(arg0_1, arg1_1)
 		if arg0_2.result == 0 then
 			if var1_1.tradeNoPrev ~= arg0_2.pay_id then
 				if (PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US) and pg.SdkMgr.GetInstance():GetIsPlatform() then
-					if PLATFORM_CODE == PLATFORM_JP then
-						local var0_2 = var4_1:getConfig("airijp_id")
-						local var1_2 = arg0_2.url
-						local var2_2 = arg0_2.pay_id
+					local var0_2 = var4_1:getConfig("airijp_id")
+					local var1_2 = arg0_2.url
+					local var2_2 = arg0_2.pay_id
 
-						originalPrint("请求购买的productId：" .. var0_2)
-						originalPrint("请求购买的url：" .. var1_2)
-						originalPrint("请求购买的id为：" .. var2_2)
-						pg.SdkMgr.GetInstance():YoStarPay(var0_2, var1_2, var2_2)
-					elseif PLATFORM_CODE == PLATFORM_US then
-						if pg.SdkMgr.GetInstance():CheckAudit() then
-							originalPrint("serverTag:audit 请求购买物品")
-							pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "audit", arg0_2.pay_id)
-						elseif pg.SdkMgr.GetInstance():CheckGoogleSimulator() then
-							originalPrint("serverTag:test 请求购买物品")
-							pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "test", arg0_2.pay_id)
-						elseif pg.SdkMgr.GetInstance():CheckPreAudit() then
-							originalPrint("serverTag:preAudit 请求购买物品")
-							pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "preAudit", arg0_2.pay_id)
-						elseif pg.SdkMgr.GetInstance():CheckPretest() then
-							originalPrint("serverTag:preTest 请求购买物品")
-							pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "preAudit", arg0_2.pay_id)
-						else
-							originalPrint("serverTag:production 请求购买物品")
-							pg.SdkMgr.GetInstance():AiriBuy(var4_1:getConfig("airijp_id"), "production", arg0_2.pay_id)
-						end
-
-						originalPrint("请求购买的airijp_id为：" .. var4_1:getConfig("airijp_id"))
-						originalPrint("请求购买的id为：" .. arg0_2.pay_id)
-					end
+					originalPrint("请求购买的productId：" .. var0_2)
+					originalPrint("请求购买的url：" .. var1_2)
+					originalPrint("请求购买的id为：" .. var2_2)
+					pg.SdkMgr.GetInstance():YoStarPay(var0_2, var1_2, var2_2)
 				else
 					local var3_2 = var4_1:firstPayDouble() and var3_1
 					local var4_2 = getProxy(PlayerProxy):getData()

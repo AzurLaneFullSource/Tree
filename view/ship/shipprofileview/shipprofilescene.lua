@@ -604,7 +604,7 @@ function var0_0.CreateLive2D(arg0_50)
 		}
 	end
 
-	local var5_50 = Live2D.GenerateData({
+	local var5_50 = Live2DPainting.GenerateData({
 		ship = Ship.New({
 			noChangeSkin = true,
 			configId = var0_50,
@@ -616,7 +616,7 @@ function var0_0.CreateLive2D(arg0_50)
 		parent = arg0_50.l2dRoot
 	})
 
-	arg0_50.l2dChar = Live2D.New(var5_50, function(arg0_51)
+	arg0_50.l2dChar = Live2DPainting.New(var5_50, function(arg0_51)
 		arg0_51:setSortingModeFrontZ()
 		arg0_50.live2DBtn:SetEnable(true)
 	end)

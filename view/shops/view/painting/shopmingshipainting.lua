@@ -8,7 +8,7 @@ function var0_0.Ctor(arg0_1, arg1_1)
 end
 
 function var0_0.Load(arg0_2, arg1_2, arg2_2, arg3_2)
-	local var0_2 = Live2D.GenerateData({
+	local var0_2 = Live2DPainting.GenerateData({
 		ship = Ship.New({
 			configId = 312011
 		}),
@@ -22,7 +22,7 @@ function var0_0.Load(arg0_2, arg1_2, arg2_2, arg3_2)
 		parent = arg0_2.live2dContainer
 	})
 
-	Live2D.New(var0_2, function(arg0_3)
+	Live2DPainting.New(var0_2, function(arg0_3)
 		arg0_2.live2dChar = arg0_3
 
 		if arg0_2.cacheAnimationName then

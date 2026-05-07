@@ -4019,6 +4019,13 @@ pg.memory_template.all = {
 	5105,
 	5106,
 	5107,
+	5111,
+	5112,
+	5113,
+	5114,
+	5115,
+	5116,
+	5117,
 	10011,
 	10012,
 	10013,
@@ -64606,6 +64613,111 @@ end)()
 			"SHANYAOHAIBINRICHANG7"
 		}
 	}
+	pg.base.memory_template[5111] = {
+		type = 1,
+		subtitle = "",
+		story = "MEIKELUNBAO1",
+		mask = "bg/bg_memory",
+		title = "The Witch's Pact",
+		condition = "Begin \"The Eternal Night's Oath Under the Blood Moon\" Chapter 1",
+		number = 0,
+		id = 5111,
+		icon = "memory_meikelunbao",
+		is_open = 0,
+		unlock_pre = {
+			"MEIKELUNBAO1"
+		}
+	}
+	pg.base.memory_template[5112] = {
+		type = 1,
+		subtitle = "",
+		story = "MEIKELUNBAO2",
+		mask = "bg/bg_memory",
+		title = "Whispers in the Dark Forest",
+		condition = "Begin \"The Eternal Night's Oath Under the Blood Moon\" Chapter 2",
+		number = 0,
+		id = 5112,
+		icon = "memory_meikelunbao",
+		is_open = 0,
+		unlock_pre = {
+			"MEIKELUNBAO2"
+		}
+	}
+	pg.base.memory_template[5113] = {
+		type = 1,
+		subtitle = "",
+		story = "MEIKELUNBAO3",
+		mask = "bg/bg_memory",
+		title = "Hall of Intersecting Stars",
+		condition = "Begin \"The Eternal Night's Oath Under the Blood Moon\" Chapter 3",
+		number = 0,
+		id = 5113,
+		icon = "memory_meikelunbao",
+		is_open = 0,
+		unlock_pre = {
+			"MEIKELUNBAO3"
+		}
+	}
+	pg.base.memory_template[5114] = {
+		type = 1,
+		subtitle = "",
+		story = "MEIKELUNBAO4",
+		mask = "bg/bg_memory",
+		title = "Imbibe the Spiritual Elixir",
+		condition = "Begin \"The Eternal Night's Oath Under the Blood Moon\" Chapter 4",
+		number = 0,
+		id = 5114,
+		icon = "memory_meikelunbao",
+		is_open = 0,
+		unlock_pre = {
+			"MEIKELUNBAO4"
+		}
+	}
+	pg.base.memory_template[5115] = {
+		type = 1,
+		subtitle = "",
+		story = "MEIKELUNBAO5",
+		mask = "bg/bg_memory",
+		title = "The Shackles that Bind",
+		condition = "Begin \"The Eternal Night's Oath Under the Blood Moon\" Chapter 5",
+		number = 0,
+		id = 5115,
+		icon = "memory_meikelunbao",
+		is_open = 0,
+		unlock_pre = {
+			"MEIKELUNBAO5"
+		}
+	}
+	pg.base.memory_template[5116] = {
+		type = 1,
+		subtitle = "",
+		story = "MEIKELUNBAO6",
+		mask = "bg/bg_memory",
+		title = "Soar Beneath the Blood Moon",
+		condition = "Begin \"The Eternal Night's Oath Under the Blood Moon\" Chapter 6",
+		number = 0,
+		id = 5116,
+		icon = "memory_meikelunbao",
+		is_open = 0,
+		unlock_pre = {
+			"MEIKELUNBAO6"
+		}
+	}
+	pg.base.memory_template[5117] = {
+		type = 1,
+		subtitle = "",
+		story = "MEIKELUNBAO7",
+		mask = "bg/bg_memory",
+		title = "Eternal Night's Companion",
+		condition = "Begin \"The Eternal Night's Oath Under the Blood Moon\" Chapter 7",
+		number = 0,
+		id = 5117,
+		icon = "memory_meikelunbao",
+		is_open = 0,
+		unlock_pre = {
+			"MEIKELUNBAO7"
+		}
+	}
 	pg.base.memory_template[10011] = {
 		type = 1,
 		subtitle = "",
@@ -65776,6 +65888,8 @@ end)()
 			"LINGHANGYUANYANGCHENGJIHUA21"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[20021] = {
 		type = 1,
 		subtitle = "",
@@ -65881,8 +65995,6 @@ end)()
 			"LINGHANGYUANYANGCHENGJIHUA28"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20028] = {
 		type = 1,
 		subtitle = "",
@@ -67278,6 +67390,8 @@ end)()
 			"LINGYANGZHEYANGCHENGJIHUA40"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[20121] = {
 		type = 1,
 		subtitle = "",
@@ -67383,8 +67497,6 @@ end)()
 			"LINGYANGZHEYANGCHENGJIHUA47"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20128] = {
 		type = 1,
 		subtitle = "",

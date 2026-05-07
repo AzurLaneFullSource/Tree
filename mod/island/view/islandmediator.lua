@@ -127,10 +127,11 @@ function var0_0._register(arg0_1)
 			op = IslandConst.FOLLOWER_OP_ADD
 		})
 	end)
-	arg0_1:bind(var0_0.DEL_FOLLOWER, function(arg0_7, arg1_7)
+	arg0_1:bind(var0_0.DEL_FOLLOWER, function(arg0_7, arg1_7, arg2_7)
 		arg0_1:sendNotification(GAME.ISLAND_FOLLOWER_OP, {
 			shipId = arg1_7,
-			op = IslandConst.FOLLOWER_OP_DEL
+			op = IslandConst.FOLLOWER_OP_DEL,
+			callback = arg2_7
 		})
 	end)
 	arg0_1:bind(var0_0.NPC_ACTION_AWARD, function(arg0_8, arg1_8, arg2_8)

@@ -651,7 +651,7 @@ function var0_0.UpdateLive2dPainting(arg0_53, arg1_53, arg2_53, arg3_53, arg4_53
 	local function var0_53(arg0_54)
 		local var0_54 = arg1_53:GetVirtualShip()
 		local var1_54 = arg1_53:GetLive2dPos()
-		local var2_54 = Live2D.GenerateData({
+		local var2_54 = Live2DPainting.GenerateData({
 			ship = var0_54,
 			offset = var0_54:GetSkinConfig().live2d_offset,
 			position = var1_54 or Vector3(0, 0, 0),
@@ -661,25 +661,21 @@ function var0_0.UpdateLive2dPainting(arg0_53, arg1_53, arg2_53, arg3_53, arg4_53
 
 		var3_54.blocksRaycasts = false
 
-		local var4_54 = Live2D.New(var2_54, function(arg0_55)
+		local var4_54 = Live2DPainting.New(var2_54, function(arg0_55)
 			arg0_55._go.name = arg1_53:GetPainting()
 
-			local var0_55 = arg0_55._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
+			local var0_55 = arg0_55._go:GetComponent(typeof(CubismRenderController))
 			local var1_55 = arg0_53.sortingOrder + 1
-			local var2_55 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
 
-			ReflectionHelp.RefSetProperty(var2_55, "SortingOrder", var0_55, var1_55)
+			var0_55.SortingOrder = var1_55
+			var0_55.SortingMode = CubismSortingMode.BackToFrontOrder
 
-			local var3_55 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Rendering.CubismSortingMode"), "BackToFrontOrder")
-
-			ReflectionHelp.RefSetProperty(var2_55, "SortingMode", var0_55, var3_55)
-
-			local var4_55 = GetOrAddComponent(arg0_53.front, typeof(Canvas))
+			local var2_55 = GetOrAddComponent(arg0_53.front, typeof(Canvas))
 
 			GetOrAddComponent(arg0_53.front, typeof(GraphicRaycaster))
 
-			var4_55.overrideSorting = true
-			var4_55.sortingOrder = var1_55 + arg0_55._tf:Find("Drawables").childCount
+			var2_55.overrideSorting = true
+			var2_55.sortingOrder = var1_55 + arg0_55._tf:Find("Drawables").childCount
 			var3_54.blocksRaycasts = true
 
 			if arg0_54 then
@@ -1575,18 +1571,17 @@ local function var13_0(arg0_111, arg1_111)
 	local var1_111 = false
 
 	if var0_111 and var0_111._go then
-		local var2_111 = var0_111._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
+		var0_111._go:GetComponent(typeof(CubismRenderController)).SortingOrder = 0
 
-		ReflectionHelp.RefSetProperty(typeof("Live2D.Cubism.Rendering.CubismRenderController"), "SortingOrder", var2_111, 0)
 		var0_111:Dispose()
 
 		arg0_111.live2dChars[arg1_111] = nil
 		var1_111 = true
 	end
 
-	local var3_111 = table.getCount(arg0_111.live2dChars) <= 0
+	local var2_111 = table.getCount(arg0_111.live2dChars) <= 0
 
-	if var1_111 and var3_111 then
+	if var1_111 and var2_111 then
 		RemoveComponent(arg0_111.front, "GraphicRaycaster")
 		RemoveComponent(arg0_111.front, "Canvas")
 	end

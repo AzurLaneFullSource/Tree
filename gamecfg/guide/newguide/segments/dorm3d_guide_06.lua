@@ -10,7 +10,7 @@ return {
 				dir = 1,
 				char = "char",
 				posY = -300,
-				posX = 177,
+				posX = 112,
 				uiset = {}
 			},
 			ui = {
