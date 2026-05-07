@@ -40,6 +40,7 @@ end
 
 function var0_0.GetSpecailBtns()
 	return {
+		MainActInsBtn,
 		MainActTraingCampBtn,
 		MainActRefluxBtn,
 		MainActNewServerBtn,
