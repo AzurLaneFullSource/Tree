@@ -374,7 +374,14 @@ pg.activity_sp_story.all = {
 	399,
 	400,
 	401,
-	402
+	402,
+	411,
+	412,
+	413,
+	414,
+	415,
+	416,
+	417
 }
 pg.base = pg.base or {}
 pg.base.activity_sp_story = {}
@@ -8036,6 +8043,223 @@ end)()
 				4,
 				401
 			}
+		}
+	}
+	pg.base.activity_sp_story[411] = {
+		story_type = 1,
+		pre_event = "",
+		label_key = "",
+		name = "EP-1 The First Sabbatical",
+		change_prefab = "",
+		change_background = "star_level_bg_706",
+		story = "HUIDIANYUZHAO1",
+		change_bgm = "story-darkplan",
+		id = 411,
+		lock = {
+			{
+				6,
+				27011
+			},
+			{
+				6,
+				27012
+			}
+		},
+		unlock_conditions = {
+			"Complete day 1 event missions",
+			"Complete day 1 event missions"
+		}
+	}
+	pg.base.activity_sp_story[412] = {
+		story_type = 1,
+		name = "EP-2 Hidden in Plain Sight",
+		label_key = "",
+		change_bgm = "storys-commander-up",
+		change_prefab = "",
+		change_background = "star_level_bg_306",
+		id = 412,
+		story = "HUIDIANYUZHAO2",
+		pre_event = {
+			411
+		},
+		lock = {
+			{
+				4,
+				411
+			},
+			{
+				6,
+				27013
+			},
+			{
+				6,
+				27014
+			}
+		},
+		unlock_conditions = {
+			"Clear EP-1",
+			"Complete day 2 event missions",
+			"Complete day 2 event missions"
+		}
+	}
+	pg.base.activity_sp_story[413] = {
+		story_type = 1,
+		name = "EP-3 Within the Fog",
+		label_key = "",
+		change_bgm = "theme-underheaven",
+		change_prefab = "",
+		change_background = "star_level_bg_493",
+		id = 413,
+		story = "HUIDIANYUZHAO3",
+		pre_event = {
+			412
+		},
+		lock = {
+			{
+				4,
+				412
+			},
+			{
+				6,
+				27015
+			},
+			{
+				6,
+				27016
+			}
+		},
+		unlock_conditions = {
+			"Clear EP-2",
+			"Complete day 3 event missions",
+			"Complete day 3 event missions"
+		}
+	}
+	pg.base.activity_sp_story[414] = {
+		story_type = 1,
+		name = "EP-4 Premonition",
+		label_key = "",
+		change_bgm = "battle-eagleunion",
+		change_prefab = "",
+		change_background = "star_level_bg_306",
+		id = 414,
+		story = "HUIDIANYUZHAO4",
+		pre_event = {
+			413
+		},
+		lock = {
+			{
+				4,
+				413
+			},
+			{
+				6,
+				27017
+			},
+			{
+				6,
+				27018
+			}
+		},
+		unlock_conditions = {
+			"Clear EP-3",
+			"Complete day 4 event missions",
+			"Complete day 4 event missions"
+		}
+	}
+	pg.base.activity_sp_story[415] = {
+		story_type = 1,
+		name = "EP-5 Analysis",
+		label_key = "",
+		change_bgm = "story-richang-light",
+		change_prefab = "",
+		change_background = "star_level_bg_307",
+		id = 415,
+		story = "HUIDIANYUZHAO5",
+		pre_event = {
+			414
+		},
+		lock = {
+			{
+				4,
+				414
+			},
+			{
+				6,
+				27019
+			},
+			{
+				6,
+				27020
+			}
+		},
+		unlock_conditions = {
+			"Clear EP-4",
+			"Complete day 5 event missions",
+			"Complete day 5 event missions"
+		}
+	}
+	pg.base.activity_sp_story[416] = {
+		story_type = 1,
+		name = "EP-6 Preparations",
+		label_key = "",
+		change_bgm = "story-shenguang-holy",
+		change_prefab = "",
+		change_background = "star_level_bg_507",
+		id = 416,
+		story = "HUIDIANYUZHAO6",
+		pre_event = {
+			415
+		},
+		lock = {
+			{
+				4,
+				415
+			},
+			{
+				6,
+				27021
+			},
+			{
+				6,
+				27022
+			}
+		},
+		unlock_conditions = {
+			"Clear EP-5",
+			"Complete day 6 event missions",
+			"Complete day 6 event missions"
+		}
+	}
+	pg.base.activity_sp_story[417] = {
+		story_type = 1,
+		name = "EP-7 Harmony",
+		label_key = "",
+		change_bgm = "battle-pacific",
+		change_prefab = "",
+		change_background = "star_level_bg_450",
+		id = 417,
+		story = "HUIDIANYUZHAO7",
+		pre_event = {
+			416
+		},
+		lock = {
+			{
+				4,
+				416
+			},
+			{
+				6,
+				27023
+			},
+			{
+				6,
+				27024
+			}
+		},
+		unlock_conditions = {
+			"Clear EP-6",
+			"Complete day 7 event missions",
+			"Complete day 7 event missions"
 		}
 	}
 end)()

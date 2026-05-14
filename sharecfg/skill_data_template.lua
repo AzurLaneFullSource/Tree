@@ -386,6 +386,7 @@ pg.skill_data_template.all = {
 	61070,
 	61080,
 	61090,
+	61100,
 	7000,
 	9010,
 	9020,
@@ -13705,6 +13706,20 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+	pg.base.skill_data_template[61100] = {
+		desc_get = "",
+		name = "Key to the Tribunal's Hand",
+		id = 61100,
+		type = 0,
+		max_level = 0,
+		desc = "At the start of battle: increases the entire fleet's SPD by 2 and reduces their DMG taken by 2.0% for 20s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	}
 	pg.base.skill_data_template[7000] = {
 		desc_get = "",
 		name = "Rhine Drill",
@@ -14497,6 +14512,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[9709] = {
 		desc_get = "",
 		name = "Future Content ",
@@ -14511,8 +14528,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[9711] = {
 		desc_get = "",
 		name = "布里之誓·purin",
@@ -21762,6 +21777,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[10970] = {
 		desc_get = "",
 		name = "Fighting Mary",
@@ -21868,8 +21885,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[10980] = {
 		desc_get = "",
 		name = "AA Protection",
@@ -30190,6 +30205,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[11960] = {
 		desc_get = "",
 		name = "Star of the Shimmering Fjord",
@@ -30251,8 +30268,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[11970] = {
 		desc_get = "",
 		name = "Morale Boost",
@@ -39663,6 +39678,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[13030] = {
 		desc_get = "",
 		name = "Warcry of Unity",
@@ -39724,8 +39741,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[13040] = {
 		desc_get = "",
 		name = "Mercurial Memories",
@@ -49383,6 +49398,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[14030] = {
 		desc_get = "",
 		name = "Ontological Rudder",
@@ -49444,8 +49461,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[14040] = {
 		desc_get = "",
 		name = "Protologia of Illumination",
@@ -60719,6 +60734,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[15030] = {
 		desc_get = "",
 		name = "Taking One for the Team",
@@ -60825,8 +60842,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[15040] = {
 		desc_get = "",
 		name = "Th-That Was an Accident!",
@@ -72593,6 +72608,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[16040] = {
 		desc_get = "",
 		name = "Tempestuous Blade",
@@ -72789,8 +72806,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[16050] = {
 		desc_get = "",
 		name = "Musashi's Guardianship",
@@ -84113,6 +84128,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[17050] = {
 		desc_get = "",
 		name = "荡涤诸恶跨队BUFFID占用",
@@ -84127,8 +84144,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[17060] = {
 		desc_get = "",
 		name = "Power o' Friendship",
@@ -95124,6 +95139,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[150120] = {
 		desc_get = "",
 		name = "Symphony Rehearsal",
@@ -95221,8 +95238,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[150130] = {
 		desc_get = "",
 		name = "Youthful Chorale",
@@ -106727,6 +106742,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[151100] = {
 		desc_get = "",
 		name = "Genius's Intuition",
@@ -106824,8 +106841,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[151110] = {
 		desc_get = "",
 		name = "I am Mad Scientist!",
@@ -118558,6 +118573,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[152070] = {
 		desc_get = "",
 		name = "I'll Whoop You!",
@@ -118619,8 +118636,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[152100] = {
 		desc_get = "",
 		name = "Atomic Core",
@@ -128522,6 +128537,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[19480] = {
 		desc_get = "",
 		name = "Hex-Principle of Dominance",
@@ -128673,8 +128690,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[19490] = {
 		desc_get = "",
 		name = "Legendary Voyage",
@@ -135440,6 +135455,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[20311] = {
 		desc_get = "",
 		name = "All Out Assault I",
@@ -135454,8 +135471,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[20312] = {
 		desc_get = "",
 		name = "All Out Assault Ⅱ",
@@ -136842,6 +136857,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[22272] = {
 		desc_get = "",
 		name = "All Out Assault II",
@@ -136856,8 +136873,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[22311] = {
 		desc_get = "",
 		name = "All Out Assault I",
@@ -138244,6 +138259,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[28212] = {
 		desc_get = "",
 		name = "All Out Assault Ⅱ",
@@ -138258,8 +138275,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[28221] = {
 		desc_get = "",
 		name = "All Out Assault I",
@@ -139650,6 +139665,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[29401] = {
 		desc_get = "",
 		name = "All Out Assault Ⅰ",
@@ -139664,8 +139681,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[29402] = {
 		desc_get = "",
 		name = "All Out Assault Ⅱ",
@@ -141056,6 +141071,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[29921] = {
 		desc_get = "",
 		name = "All Out Assault I",
@@ -141070,8 +141087,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[29922] = {
 		desc_get = "",
 		name = "All Out Assault II",
@@ -142458,6 +142473,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[30441] = {
 		desc_get = "",
 		name = "All Out Assault I",
@@ -142472,8 +142489,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[30442] = {
 		desc_get = "",
 		name = "All Out Assault II",
@@ -148701,6 +148716,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[106310] = {
 		desc_get = "",
 		name = "Iconic Direction",
@@ -148715,8 +148732,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[106320] = {
 		desc_get = "",
 		name = "Fitting Time",
@@ -157405,6 +157420,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[109130] = {
 		desc_get = "",
 		name = "Wild Growth",
@@ -157466,8 +157483,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[109140] = {
 		desc_get = "",
 		name = "Spirit Gift",
@@ -166409,6 +166424,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[114120] = {
 		desc_get = "",
 		name = "Luminous Wind+",
@@ -166542,8 +166559,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[114129] = {
 		desc_get = "",
 		name = "Alf's Justitia",
@@ -172398,6 +172413,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[800390] = {
 		desc_get = "",
 		name = "Cursed Outset",
@@ -172459,8 +172476,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[800400] = {
 		desc_get = "",
 		name = "Echoes of Annihilation – Yamashiro",
@@ -177507,6 +177522,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[800940] = {
 		desc_get = "",
 		name = "Decisions, Prudent Yet Audacious",
@@ -177613,8 +177630,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[800951] = {
 		desc_get = "",
 		name = "Framework of Logic - Jintsuu I",
@@ -182907,6 +182922,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[801485] = {
 		desc_get = "",
 		name = "Cinders of Hope - Giulio Cesare I",
@@ -182923,8 +182940,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[801487] = {
 		desc_get = "",
 		name = "Cinders of Hope - Giulio Cesare II",
@@ -188318,6 +188333,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[802047] = {
 		desc_get = "",
 		name = "Ashen Might - Cleveland II",
@@ -188334,8 +188351,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[802050] = {
 		desc_get = "",
 		name = "Ricarica fiammeggiante",
@@ -194358,6 +194373,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[1011440] = {
 		desc_get = "",
 		name = "The Bull of Scapa Flow+",
@@ -194457,8 +194474,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[1011120] = {
 		desc_get = "",
 		name = "Victorious Song+",
@@ -208183,6 +208198,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[1090210] = {
 		desc_get = "",
 		name = "Emergency Maneuvers - Fortune",
@@ -208244,8 +208261,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[1090220] = {
 		desc_get = "",
 		name = "Reload Command - Königsberg",

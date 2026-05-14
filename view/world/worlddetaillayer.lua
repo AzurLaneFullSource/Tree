@@ -238,21 +238,39 @@ function var0_0.updateToggleList(arg0_20)
 
 	for iter0_20 = 1, arg0_20.fleetToggleList.childCount do
 		local var1_20 = arg0_20.fleetToggleList:GetChild(iter0_20 - 1)
-		local var2_20 = arg0_20.fleets[iter0_20]
-		local var3_20, var4_20, var5_20 = nowWorld():BuildFormationIds()
+		local var2_20, var3_20, var4_20 = nowWorld():BuildFormationIds()
 
-		setActive(var1_20, iter0_20 <= var5_20)
-		setToggleEnabled(var1_20, tobool(var2_20))
-		setActive(var1_20:Find("lock"), not tobool(var2_20))
+		setActive(var1_20, iter0_20 <= var4_20)
 
-		if var2_20 then
+		local var5_20
+
+		if iter0_20 == arg0_20.fleetToggleList.childCount then
+			var5_20 = arg0_20.fleets[#arg0_20.fleets]
+
+			if var5_20 and var5_20:GetFleetType() ~= FleetType.Submarine then
+				var5_20 = nil
+			end
+		else
+			var5_20 = arg0_20.fleets[iter0_20]
+
+			if var5_20 and var5_20:GetFleetType() ~= FleetType.Normal then
+				var5_20 = nil
+			end
+		end
+
+		local var6_20 = tobool(var5_20)
+
+		setToggleEnabled(var1_20, var6_20)
+		setActive(var1_20:Find("lock"), not var6_20)
+
+		if var6_20 then
 			onToggle(arg0_20, var1_20, function(arg0_21)
-				if arg0_21 and var2_20.id ~= arg0_20.fleetIndex then
-					arg0_20:updateFleetIndex(iter0_20)
+				if arg0_21 and var5_20.id ~= arg0_20.fleetIndex then
+					arg0_20:updateFleetIndex(var5_20.id)
 				end
 			end, SFX_UI_TAG)
 
-			if var2_20.id == arg0_20.fleetIndex then
+			if var5_20.id == arg0_20.fleetIndex then
 				var0_20 = var1_20
 			end
 		else

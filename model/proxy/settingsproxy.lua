@@ -1277,4 +1277,8 @@ function var0_0.Reset(arg0_135)
 	arg0_135.educateCharTipList = {}
 end
 
+function var0_0.IsExchangeCodeActive()
+	return getGameset("exchangecode_ios_on")[1] == 1
+end
+
 return var0_0

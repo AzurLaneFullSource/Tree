@@ -34,6 +34,8 @@ function var0_0.init(arg0_2, ...)
 				if arg0_2.pageDic[var0_3.id] ~= nil then
 					setActive(arg2_3:Find("tip"), var0_3:readyToAchieve())
 					onToggle(arg0_2, arg2_3, function(arg0_5)
+						local var0_5 = arg2_3:Find("off")
+
 						if arg0_5 then
 							if var0_2 ~= var0_3.id then
 								arg0_2:selectActivity(var0_3)
@@ -42,6 +44,8 @@ function var0_0.init(arg0_2, ...)
 
 							var0_2 = var0_3.id
 						end
+
+						setActive(var0_5, not arg0_5)
 					end, SFX_PANEL)
 				end
 			end

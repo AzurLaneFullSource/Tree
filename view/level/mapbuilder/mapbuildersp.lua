@@ -691,33 +691,40 @@ function var0_0.UpdateStoryNodeStatus(arg0_38)
 		end
 
 		if not var12_38 and var9_38 then
+			local var13_38 = {}
+
 			_.each(var5_38:GetUnlockConditions(), function(arg0_40)
+				local var0_40 = true
+
 				if arg0_40[1] == ActivitySpStoryNode.CONDITION.TIME then
-					local var0_40 = pg.TimeMgr.GetInstance():parseTimeFromConfig(arg0_40[2])
-					local var1_40 = pg.TimeMgr.GetInstance():GetServerTime()
-
-					var9_38 = var9_38 and var0_40 <= var1_40
+					var0_40 = pg.TimeMgr.GetInstance():parseTimeFromConfig(arg0_40[2]) <= pg.TimeMgr.GetInstance():GetServerTime()
 				elseif arg0_40[1] == ActivitySpStoryNode.CONDITION.PASSCHAPTER then
-					local var2_40 = arg0_40[2]
+					local var1_40 = arg0_40[2]
 
-					var9_38 = var9_38 and _.all(var2_40, function(arg0_41)
+					var0_40 = _.all(var1_40, function(arg0_41)
 						return getProxy(ChapterProxy):getChapterById(arg0_41, true):isClear()
 					end)
 				elseif arg0_40[1] == ActivitySpStoryNode.CONDITION.PT then
-					local var3_40 = arg0_40[2][1]
-					local var4_40 = arg0_40[2][2]
-					local var5_40 = arg0_40[2][3]
-					local var6_40 = 0
+					local var2_40 = arg0_40[2][1]
+					local var3_40 = arg0_40[2][2]
+					local var4_40 = arg0_40[2][3]
+					local var5_40 = 0
 
-					if var3_40 == DROP_TYPE_RESOURCE then
-						var6_40 = getProxy(PlayerProxy):getRawData():getResource(arg0_40[2])
-					elseif var3_40 == DROP_TYPE_ITEM then
-						var6_40 = getProxy(BagProxy):getItemCountById(var4_40)
+					if var2_40 == DROP_TYPE_RESOURCE then
+						var5_40 = getProxy(PlayerProxy):getRawData():getResource(arg0_40[2])
+					elseif var2_40 == DROP_TYPE_ITEM then
+						var5_40 = getProxy(BagProxy):getItemCountById(var3_40)
 					end
 
-					var9_38 = var9_38 and var5_40 <= var6_40
+					var0_40 = var4_40 <= var5_40
 				end
+
+				table.insert(var13_38, var0_40)
+
+				var9_38 = var9_38 and var0_40
 			end)
+
+			var3_38[var6_38].conditionFinishedList = var13_38
 		end
 
 		if var12_38 then
@@ -1146,14 +1153,33 @@ function var0_0.UpdateStory(arg0_42)
 		local var22_42 = var21_42:Find("info/bk/title_form/title")
 
 		if var20_42 == var2_0 then
-			setScrollText(var22_42, HXSet.hxLan(var18_42:GetUnlockDesc()))
+			local var23_42 = var18_42:GetUnlockDesc()
+			local var24_42 = ""
+
+			if type(var23_42) == "table" then
+				local var25_42 = arg0_42.storyNodeStatus[var19_42].conditionFinishedList or {}
+
+				var24_42 = var23_42[1] or ""
+
+				for iter1_42, iter2_42 in ipairs(var23_42) do
+					if not var25_42[iter1_42] then
+						var24_42 = iter2_42 or ""
+
+						break
+					end
+				end
+			else
+				var24_42 = var23_42 or ""
+			end
+
+			setScrollText(var22_42, HXSet.hxLan(var24_42))
 			setTextAlpha(var22_42, 0.5)
 		else
 			setScrollText(var22_42, HXSet.hxLan(var18_42:GetDisplayName()))
 			setTextAlpha(var22_42, 1)
 		end
 
-		local var23_42 = var18_42:GetType()
+		local var26_42 = var18_42:GetType()
 
 		setActive(var21_42:Find("circle/lock"), var20_42 == var2_0)
 
@@ -1162,35 +1188,35 @@ function var0_0.UpdateStory(arg0_42)
 			setActive(var21_42:Find("circle/Battle"), false)
 			setActive(var21_42:Find("circle/Option"), false)
 			setText(var21_42:Find(""))
-		elseif var23_42 == ActivitySpStoryNode.NODE_TYPE.STORY then
+		elseif var26_42 == ActivitySpStoryNode.NODE_TYPE.STORY then
 			setActive(var21_42:Find("circle/Option"), false)
 			setActive(var21_42:Find("circle/Story"), true)
 			setActive(var21_42:Find("circle/Battle"), false)
 			setActive(var21_42:Find("circle/Story/Done"), var20_42 == var4_0)
-		elseif var23_42 == ActivitySpStoryNode.NODE_TYPE.OPTION_BRANCH then
+		elseif var26_42 == ActivitySpStoryNode.NODE_TYPE.OPTION_BRANCH then
 			setActive(var21_42:Find("circle/Option"), true)
 			setActive(var21_42:Find("circle/Story"), false)
 			setActive(var21_42:Find("circle/Battle"), false)
 			setActive(var21_42:Find("circle/Option/Done"), var20_42 == var4_0)
-		elseif var23_42 == ActivitySpStoryNode.NODE_TYPE.BATTLE then
+		elseif var26_42 == ActivitySpStoryNode.NODE_TYPE.BATTLE then
 			setActive(var21_42:Find("circle/Story"), false)
 			setActive(var21_42:Find("circle/Option"), false)
-			setActive(var21_42:Find("circle/Battle"), var23_42 == ActivitySpStoryNode.NODE_TYPE.BATTLE)
+			setActive(var21_42:Find("circle/Battle"), var26_42 == ActivitySpStoryNode.NODE_TYPE.BATTLE)
 			setActive(var21_42:Find("circle/Battle/Done"), var20_42 == var4_0)
 		end
 
-		local var24_42 = var20_42 == var4_0
+		local var27_42 = var20_42 == var4_0
 
-		setActive(var21_42:Find("circle/progress"), var24_42)
+		setActive(var21_42:Find("circle/progress"), var27_42)
 
-		local var25_42 = var18_42:IsRecrew()
+		local var28_42 = var18_42:IsRecrew()
 
-		if var25_42 == nil then
+		if var28_42 == nil then
 			setActive(var21_42:Find("recrew"), false)
 		else
 			setActive(var21_42:Find("recrew"), true)
-			setActive(var21_42:Find("recrew/recrewed"), var25_42)
-			setActive(var21_42:Find("recrew/not_recrew"), not var25_42)
+			setActive(var21_42:Find("recrew/recrewed"), var28_42)
+			setActive(var21_42:Find("recrew/not_recrew"), not var28_42)
 			setText(var21_42:Find("recrew/recrewed/label"), i18n("story_recrewed"))
 			setText(var21_42:Find("recrew/not_recrew/label"), i18n("story_not_recrew"))
 		end
@@ -1212,28 +1238,28 @@ function var0_0.UpdateStory(arg0_42)
 		end)
 	end
 
-	local var26_42 = arg0_42.storyReadCount
-	local var27_42 = arg0_42.storyReadMax
+	local var29_42 = arg0_42.storyReadCount
+	local var30_42 = arg0_42.storyReadMax
 
-	setText(arg0_42.progressText, var26_42 .. "/" .. var27_42)
+	setText(arg0_42.progressText, var29_42 .. "/" .. var30_42)
 	setActive(arg0_42.storyAward, tobool(arg0_42.storyTask))
 
 	if arg0_42.storyTask then
-		local var28_42 = arg0_42.storyTask:getConfig("award_display")
-		local var29_42 = Drop.New({
-			type = var28_42[1][1],
-			id = var28_42[1][2],
-			count = var28_42[1][3]
+		local var31_42 = arg0_42.storyTask:getConfig("award_display")
+		local var32_42 = Drop.New({
+			type = var31_42[1][1],
+			id = var31_42[1][2],
+			count = var31_42[1][3]
 		})
 
-		updateDrop(arg0_42.storyAward:GetChild(0), var29_42)
+		updateDrop(arg0_42.storyAward:GetChild(0), var32_42)
 
-		local var30_42 = arg0_42.storyTask:getTaskStatus()
+		local var33_42 = arg0_42.storyTask:getTaskStatus()
 
-		setActive(arg0_42.storyAward:Find("get"), var30_42 == 1)
-		setActive(arg0_42.storyAward:Find("got"), var30_42 == 2)
+		setActive(arg0_42.storyAward:Find("get"), var33_42 == 1)
+		setActive(arg0_42.storyAward:Find("got"), var33_42 == 2)
 		onButton(arg0_42, arg0_42.storyAward, function()
-			arg0_42:emit(BaseUI.ON_DROP, var29_42)
+			arg0_42:emit(BaseUI.ON_DROP, var32_42)
 		end)
 	end
 end

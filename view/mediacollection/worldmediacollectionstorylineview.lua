@@ -3,6 +3,7 @@ local var0_0 = class("WorldMediaCollectionStoryLineView")
 var0_0.START_GAP = 800
 var0_0.END_GAP = 1000
 var0_0.HRZ_GAP = 467
+var0_0.CHAPTER_PROGRESS_MIN_WIDTH = 120
 var0_0.NATION_LIST = {
 	{
 		key = -1,
@@ -210,54 +211,98 @@ function var0_0.updateChapterProgress(arg0_15)
 
 	local var0_15 = {}
 	local var1_15 = 0
-	local var2_15 = {}
 
 	for iter0_15, iter1_15 in pairs(arg0_15.nodeDataDict) do
 		var1_15 = var1_15 + 1
 
-		local var3_15 = iter1_15.VO:GetChapter()
+		local var2_15 = iter1_15.VO:GetChapter()
 
-		var0_15[var3_15] = var0_15[var3_15] and var0_15[var3_15] + 1 or 1
+		var0_15[var2_15] = var0_15[var2_15] and var0_15[var2_15] + 1 or 1
 	end
 
+	local var3_15 = {}
+
 	for iter2_15, iter3_15 in pairs(var0_15) do
-		local var4_15 = iter3_15 / var1_15 * arg0_15.chapterProgressTotalWidth
-		local var5_15 = {
-			w = var4_15
+		table.insert(var3_15, iter2_15)
+	end
+
+	table.sort(var3_15)
+
+	local var4_15 = #var3_15
+
+	if var4_15 == 0 then
+		return
+	end
+
+	local var5_15 = math.min(var0_0.CHAPTER_PROGRESS_MIN_WIDTH, arg0_15.chapterProgressTotalWidth / var4_15)
+	local var6_15 = {}
+	local var7_15 = {}
+	local var8_15 = arg0_15.chapterProgressTotalWidth
+	local var9_15 = var1_15
+	local var10_15 = true
+
+	while var10_15 and var9_15 > 0 do
+		var10_15 = false
+
+		for iter4_15, iter5_15 in ipairs(var3_15) do
+			if not var7_15[iter5_15] then
+				local var11_15 = var0_15[iter5_15]
+
+				if var5_15 > var8_15 * (var11_15 / var9_15) then
+					var6_15[iter5_15] = var5_15
+					var7_15[iter5_15] = true
+					var8_15 = var8_15 - var5_15
+					var9_15 = var9_15 - var11_15
+					var10_15 = true
+				end
+			end
+		end
+	end
+
+	for iter6_15, iter7_15 in ipairs(var3_15) do
+		if not var7_15[iter7_15] then
+			var6_15[iter7_15] = var9_15 > 0 and var8_15 * (var0_15[iter7_15] / var9_15) or 0
+		end
+	end
+
+	local var12_15 = 0
+
+	for iter8_15, iter9_15 in ipairs(var3_15) do
+		local var13_15 = {
+			w = var6_15[iter9_15],
+			x = var12_15
 		}
 
-		if iter2_15 == 0 then
-			var5_15.x = 0
-		else
-			local var6_15 = cloneTplTo(arg0_15.chapterProgressSplit, arg0_15.chapterProgressContainer)
+		if iter8_15 > 1 then
+			local var14_15 = cloneTplTo(arg0_15.chapterProgressSplit, arg0_15.chapterProgressContainer)
 
-			setActive(var6_15, true)
+			setActive(var14_15, true)
 
-			var5_15.x = arg0_15.progressDict[iter2_15 - 1].x + arg0_15.progressDict[iter2_15 - 1].w
-			var6_15.anchoredPosition = Vector2(var5_15.x, 2.86)
+			var14_15.anchoredPosition = Vector2(var13_15.x, 2.86)
 		end
 
-		var5_15.leftBound = var5_15.x
-		var5_15.rightBound = var5_15.x + var5_15.w
+		var13_15.leftBound = var13_15.x
+		var13_15.rightBound = var13_15.x + var13_15.w
 
-		local var7_15 = cloneTplTo(arg0_15.chapterProgressLabel, arg0_15.chapterProgressContainer)
+		local var15_15 = cloneTplTo(arg0_15.chapterProgressLabel, arg0_15.chapterProgressContainer)
 
-		var7_15.anchoredPosition = Vector2(var5_15.x, 12)
-		rtf(var7_15).sizeDelta = Vector2(var5_15.w, 32)
+		var15_15.anchoredPosition = Vector2(var13_15.x, 12)
+		rtf(var15_15).sizeDelta = Vector2(var13_15.w, 32)
 
-		setText(var7_15, i18n("storyline_chapter" .. iter2_15))
-		setActive(var7_15, true)
+		setText(var15_15, i18n("storyline_chapter" .. iter9_15))
+		setActive(var15_15, true)
 
-		local var8_15 = var7_15:Find("chapterWarpBtn")
+		local var16_15 = var15_15:Find("chapterWarpBtn")
 
-		onButton(arg0_15, var8_15, function()
-			local var0_16 = arg0_15.chapterHead[iter2_15]:GetConfigID()
+		onButton(arg0_15, var16_15, function()
+			local var0_16 = arg0_15.chapterHead[iter9_15]:GetConfigID()
 			local var1_16 = (arg0_15.nodeDataDict[var0_16].nodeTF.anchoredPosition.x - var0_0.START_GAP) / arg0_15.contentWidth
 
 			scrollTo(arg0_15.scroll, var1_16)
 		end)
 
-		arg0_15.progressDict[iter2_15] = var5_15
+		arg0_15.progressDict[iter9_15] = var13_15
+		var12_15 = var12_15 + var13_15.w
 	end
 end
 

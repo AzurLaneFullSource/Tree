@@ -60,8 +60,9 @@ function var0_0.GetPreEvent(arg0_8)
 end
 
 var0_0.CONDITION = {
-	PT = 3,
+	TASK_FINISHED = 6,
 	PRE_PASSED = 4,
+	PT = 3,
 	PASSCHAPTER = 2,
 	PRE_OPTION = 5,
 	TIME = 1

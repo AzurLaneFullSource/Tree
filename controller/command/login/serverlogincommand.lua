@@ -66,6 +66,8 @@ function var0_0.execute(arg0_1, arg1_1)
 				local var2_3 = math.floor(var0_3 / 100 + var1_3 / 1000 + 1)
 
 				arg0_1:sendNotification(GAME.SERVER_LOGIN_WAIT, var2_3)
+			elseif arg0_3.result == 1050 then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("login_game_midnightpressure"))
 			else
 				arg0_1:sendNotification(GAME.SERVER_LOGIN_FAILED, arg0_3.result)
 			end

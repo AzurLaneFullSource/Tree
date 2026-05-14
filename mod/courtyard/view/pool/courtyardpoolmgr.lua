@@ -44,12 +44,8 @@ function var0_0.GenPool(arg0_2, arg1_2)
 		table.insert(var3_2, function(arg0_3)
 			ResourceMgr.Inst:getAssetAsync("ui/" .. iter1_2, "", typeof(Object), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_4)
 				if arg0_2.exited then
-					Object.Destroy(arg0_4)
-
 					return
 				end
-
-				table.insert(arg0_2.goList, arg0_4)
 
 				local var0_4 = var1_2[iter0_2]
 				local var1_4 = Object.Instantiate(arg0_4)
@@ -65,12 +61,8 @@ function var0_0.GenPool(arg0_2, arg1_2)
 		table.insert(var3_2, function(arg0_5)
 			ResourceMgr.Inst:getAssetAsync("Effect/" .. iter3_2, "", typeof(Object), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg0_6)
 				if arg0_2.exited then
-					Object.Destroy(arg0_6)
-
 					return
 				end
-
-				table.insert(arg0_2.goList, arg0_6)
 
 				local var0_6 = Object.Instantiate(arg0_6)
 
@@ -130,11 +122,6 @@ function var0_0.Dispose(arg0_17)
 	end
 
 	arg0_17.pools = nil
-
-	for iter2_17, iter3_17 in ipairs(arg0_17.goList) do
-		Object.Destroy(iter3_17)
-	end
-
 	arg0_17.goList = nil
 	arg0_17.exited = true
 end

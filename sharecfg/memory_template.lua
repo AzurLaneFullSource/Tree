@@ -4026,6 +4026,18 @@ pg.memory_template.all = {
 	5115,
 	5116,
 	5117,
+	5121,
+	5122,
+	5123,
+	5124,
+	5125,
+	5126,
+	5127,
+	5131,
+	5132,
+	5133,
+	5134,
+	5135,
 	10011,
 	10012,
 	10013,
@@ -64718,6 +64730,186 @@ end)()
 			"MEIKELUNBAO7"
 		}
 	}
+	pg.base.memory_template[5121] = {
+		type = 1,
+		subtitle = "",
+		story = "HUIDIANYUZHAO1",
+		mask = "bg/bg_memory",
+		title = "The First Sabbatical",
+		condition = "Unlock Dust-Specked Omen Day 1",
+		number = 0,
+		id = 5121,
+		icon = "memory_huidianyuzhao",
+		is_open = 0,
+		unlock_pre = {
+			"HUIDIANYUZHAO1"
+		}
+	}
+	pg.base.memory_template[5122] = {
+		type = 1,
+		subtitle = "",
+		story = "HUIDIANYUZHAO2",
+		mask = "bg/bg_memory",
+		title = "Hidden in Plain Sight",
+		condition = "Unlock Dust-Specked Omen Day 2",
+		number = 0,
+		id = 5122,
+		icon = "memory_huidianyuzhao",
+		is_open = 0,
+		unlock_pre = {
+			"HUIDIANYUZHAO2"
+		}
+	}
+	pg.base.memory_template[5123] = {
+		type = 1,
+		subtitle = "",
+		story = "HUIDIANYUZHAO3",
+		mask = "bg/bg_memory",
+		title = "Within the Fog",
+		condition = "Unlock Dust-Specked Omen Day 3",
+		number = 0,
+		id = 5123,
+		icon = "memory_huidianyuzhao",
+		is_open = 0,
+		unlock_pre = {
+			"HUIDIANYUZHAO3"
+		}
+	}
+	pg.base.memory_template[5124] = {
+		type = 1,
+		subtitle = "",
+		story = "HUIDIANYUZHAO4",
+		mask = "bg/bg_memory",
+		title = "Premonition",
+		condition = "Unlock Dust-Specked Omen Day 4",
+		number = 0,
+		id = 5124,
+		icon = "memory_huidianyuzhao",
+		is_open = 0,
+		unlock_pre = {
+			"HUIDIANYUZHAO4"
+		}
+	}
+	pg.base.memory_template[5125] = {
+		type = 1,
+		subtitle = "",
+		story = "HUIDIANYUZHAO5",
+		mask = "bg/bg_memory",
+		title = "Analysis",
+		condition = "Unlock Dust-Specked Omen Day 5",
+		number = 0,
+		id = 5125,
+		icon = "memory_huidianyuzhao",
+		is_open = 0,
+		unlock_pre = {
+			"HUIDIANYUZHAO5"
+		}
+	}
+	pg.base.memory_template[5126] = {
+		type = 1,
+		subtitle = "",
+		story = "HUIDIANYUZHAO6",
+		mask = "bg/bg_memory",
+		title = "Preparations",
+		condition = "Unlock Dust-Specked Omen Day 6",
+		number = 0,
+		id = 5126,
+		icon = "memory_huidianyuzhao",
+		is_open = 0,
+		unlock_pre = {
+			"HUIDIANYUZHAO6"
+		}
+	}
+	pg.base.memory_template[5127] = {
+		type = 1,
+		subtitle = "",
+		story = "HUIDIANYUZHAO7",
+		mask = "bg/bg_memory",
+		title = "Harmony",
+		condition = "Unlock Dust-Specked Omen Day 7",
+		number = 0,
+		id = 5127,
+		icon = "memory_huidianyuzhao",
+		is_open = 0,
+		unlock_pre = {
+			"HUIDIANYUZHAO7"
+		}
+	}
+	pg.base.memory_template[5131] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGMEIHAOJIARIQUANSUQIANJIN1",
+		mask = "bg/bg_memory",
+		title = "A Secret Round Table Meeting",
+		condition = "Unlock Spring Towards Summer! Day 1",
+		number = 0,
+		id = 5131,
+		icon = "memory_xiangmeihaojiariquansuqianjin",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGMEIHAOJIARIQUANSUQIANJIN1"
+		}
+	}
+	pg.base.memory_template[5132] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGMEIHAOJIARIQUANSUQIANJIN2",
+		mask = "bg/bg_memory",
+		title = "Vacation Ideas Wanted!",
+		condition = "Unlock Spring Towards Summer! Day 2",
+		number = 0,
+		id = 5132,
+		icon = "memory_xiangmeihaojiariquansuqianjin",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGMEIHAOJIARIQUANSUQIANJIN2"
+		}
+	}
+	pg.base.memory_template[5133] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGMEIHAOJIARIQUANSUQIANJIN3",
+		mask = "bg/bg_memory",
+		title = "Food for Energy",
+		condition = "Unlock Spring Towards Summer! Day 3",
+		number = 0,
+		id = 5133,
+		icon = "memory_xiangmeihaojiariquansuqianjin",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGMEIHAOJIARIQUANSUQIANJIN3"
+		}
+	}
+	pg.base.memory_template[5134] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGMEIHAOJIARIQUANSUQIANJIN4",
+		mask = "bg/bg_memory",
+		title = "The Most Important Treasure",
+		condition = "Unlock Spring Towards Summer! Day 4",
+		number = 0,
+		id = 5134,
+		icon = "memory_xiangmeihaojiariquansuqianjin",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGMEIHAOJIARIQUANSUQIANJIN4"
+		}
+	}
+	pg.base.memory_template[5135] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGMEIHAOJIARIQUANSUQIANJIN5",
+		mask = "bg/bg_memory",
+		title = "An Exciting Vacation Awaits",
+		condition = "Unlock Spring Towards Summer! Day 5",
+		number = 0,
+		id = 5135,
+		icon = "memory_xiangmeihaojiariquansuqianjin",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGMEIHAOJIARIQUANSUQIANJIN5"
+		}
+	}
 	pg.base.memory_template[10011] = {
 		type = 1,
 		subtitle = "",
@@ -65708,6 +65900,8 @@ end)()
 			"LINGHANGYUANYANGCHENGJIHUA9"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[20009] = {
 		type = 1,
 		subtitle = "",
@@ -65888,8 +66082,6 @@ end)()
 			"LINGHANGYUANYANGCHENGJIHUA21"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20021] = {
 		type = 1,
 		subtitle = "",
@@ -67210,6 +67402,8 @@ end)()
 			"LINGYANGZHEYANGCHENGJIHUA28"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[20109] = {
 		type = 1,
 		subtitle = "",
@@ -67390,8 +67584,6 @@ end)()
 			"LINGYANGZHEYANGCHENGJIHUA40"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20121] = {
 		type = 1,
 		subtitle = "",
@@ -68712,6 +68904,8 @@ end)()
 			"TANSUOZHELAIFANGJISHI5"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[20211] = {
 		type = 1,
 		subtitle = "",

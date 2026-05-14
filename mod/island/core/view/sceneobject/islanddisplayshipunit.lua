@@ -95,6 +95,15 @@ end
 
 function var0_0.OnDetach(arg0_14)
 	arg0_14:ClearAnimationTools()
+	arg0_14.characterHandleController:AddStateEnterFunc(nil)
+	arg0_14.characterHandleController:AddStateExitFunc(nil)
+	arg0_14.characterHandleController:AddStateEnterFixCompleteFunc(nil)
+	arg0_14.characterHandleController:AddStateExitFixCompleteFunc(nil)
+
+	arg0_14._go = nil
+	arg0_14._tf = nil
+	arg0_14.objTfList = nil
+	arg0_14.characterHandleController = nil
 end
 
 return var0_0
